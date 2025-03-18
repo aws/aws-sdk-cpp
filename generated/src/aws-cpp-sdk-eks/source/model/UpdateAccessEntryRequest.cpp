@@ -12,16 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccessEntryRequest::UpdateAccessEntryRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_kubernetesGroupsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccessEntryRequest::SerializePayload() const
 {
   JsonValue payload;

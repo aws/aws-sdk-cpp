@@ -18,17 +18,7 @@ namespace XRay
 namespace Model
 {
 
-TimeSeriesServiceStatistics::TimeSeriesServiceStatistics() : 
-    m_timestampHasBeenSet(false),
-    m_edgeSummaryStatisticsHasBeenSet(false),
-    m_serviceSummaryStatisticsHasBeenSet(false),
-    m_serviceForecastStatisticsHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false)
-{
-}
-
 TimeSeriesServiceStatistics::TimeSeriesServiceStatistics(JsonView jsonValue)
-  : TimeSeriesServiceStatistics()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TimeSeriesServiceStatistics& TimeSeriesServiceStatistics::operator =(JsonView js
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeSummaryStatistics"))
   {
     m_edgeSummaryStatistics = jsonValue.GetObject("EdgeSummaryStatistics");
-
     m_edgeSummaryStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceSummaryStatistics"))
   {
     m_serviceSummaryStatistics = jsonValue.GetObject("ServiceSummaryStatistics");
-
     m_serviceSummaryStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceForecastStatistics"))
   {
     m_serviceForecastStatistics = jsonValue.GetObject("ServiceForecastStatistics");
-
     m_serviceForecastStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
     Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
@@ -72,7 +54,6 @@ TimeSeriesServiceStatistics& TimeSeriesServiceStatistics::operator =(JsonView js
     }
     m_responseTimeHistogramHasBeenSet = true;
   }
-
   return *this;
 }
 

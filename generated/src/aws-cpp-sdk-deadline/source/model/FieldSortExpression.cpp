@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FieldSortExpression::FieldSortExpression() : 
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 FieldSortExpression::FieldSortExpression(JsonView jsonValue)
-  : FieldSortExpression()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FieldSortExpression& FieldSortExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

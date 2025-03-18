@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SearchCriteria::SearchCriteria() : 
-    m_agentIdsHasBeenSet(false),
-    m_agentHierarchyGroupsHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_contactAnalysisHasBeenSet(false),
-    m_initiationMethodsHasBeenSet(false),
-    m_queueIdsHasBeenSet(false),
-    m_searchableContactAttributesHasBeenSet(false),
-    m_searchableSegmentAttributesHasBeenSet(false)
-{
-}
-
 SearchCriteria::SearchCriteria(JsonView jsonValue)
-  : SearchCriteria()
 {
   *this = jsonValue;
 }
@@ -47,14 +34,11 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_agentIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentHierarchyGroups"))
   {
     m_agentHierarchyGroups = jsonValue.GetObject("AgentHierarchyGroups");
-
     m_agentHierarchyGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channels"))
   {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
@@ -64,14 +48,11 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactAnalysis"))
   {
     m_contactAnalysis = jsonValue.GetObject("ContactAnalysis");
-
     m_contactAnalysisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiationMethods"))
   {
     Aws::Utils::Array<JsonView> initiationMethodsJsonList = jsonValue.GetArray("InitiationMethods");
@@ -81,7 +62,6 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_initiationMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueIds"))
   {
     Aws::Utils::Array<JsonView> queueIdsJsonList = jsonValue.GetArray("QueueIds");
@@ -91,21 +71,16 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_queueIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchableContactAttributes"))
   {
     m_searchableContactAttributes = jsonValue.GetObject("SearchableContactAttributes");
-
     m_searchableContactAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchableSegmentAttributes"))
   {
     m_searchableSegmentAttributes = jsonValue.GetObject("SearchableSegmentAttributes");
-
     m_searchableSegmentAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

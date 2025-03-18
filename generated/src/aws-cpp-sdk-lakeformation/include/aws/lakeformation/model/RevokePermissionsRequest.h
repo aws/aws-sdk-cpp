@@ -26,7 +26,7 @@ namespace Model
   class RevokePermissionsRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API RevokePermissionsRequest();
+    AWS_LAKEFORMATION_API RevokePermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,38 +44,36 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline RevokePermissionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline RevokePermissionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline RevokePermissionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    RevokePermissionsRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The principal to be revoked permissions on the resource.</p>
      */
-    inline const DataLakePrincipal& GetPrincipal() const{ return m_principal; }
+    inline const DataLakePrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const DataLakePrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(DataLakePrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline RevokePermissionsRequest& WithPrincipal(const DataLakePrincipal& value) { SetPrincipal(value); return *this;}
-    inline RevokePermissionsRequest& WithPrincipal(DataLakePrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = DataLakePrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = DataLakePrincipal>
+    RevokePermissionsRequest& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource to which permissions are to be revoked.</p>
      */
-    inline const Resource& GetResource() const{ return m_resource; }
+    inline const Resource& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline RevokePermissionsRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline RevokePermissionsRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    RevokePermissionsRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,24 +83,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline RevokePermissionsRequest& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline RevokePermissionsRequest& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline RevokePermissionsRequest& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline RevokePermissionsRequest& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    RevokePermissionsRequest& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    inline RevokePermissionsRequest& AddPermissions(Permission value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Condition& GetCondition() const{ return m_condition; }
+    inline const Condition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline RevokePermissionsRequest& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-    inline RevokePermissionsRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = Condition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Condition>
+    RevokePermissionsRequest& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +107,13 @@ namespace Model
      * <p>Indicates a list of permissions for which to revoke the grant option allowing
      * the principal to pass permissions to other principals.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissionsWithGrantOption() const{ return m_permissionsWithGrantOption; }
+    inline const Aws::Vector<Permission>& GetPermissionsWithGrantOption() const { return m_permissionsWithGrantOption; }
     inline bool PermissionsWithGrantOptionHasBeenSet() const { return m_permissionsWithGrantOptionHasBeenSet; }
-    inline void SetPermissionsWithGrantOption(const Aws::Vector<Permission>& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption = value; }
-    inline void SetPermissionsWithGrantOption(Aws::Vector<Permission>&& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption = std::move(value); }
-    inline RevokePermissionsRequest& WithPermissionsWithGrantOption(const Aws::Vector<Permission>& value) { SetPermissionsWithGrantOption(value); return *this;}
-    inline RevokePermissionsRequest& WithPermissionsWithGrantOption(Aws::Vector<Permission>&& value) { SetPermissionsWithGrantOption(std::move(value)); return *this;}
-    inline RevokePermissionsRequest& AddPermissionsWithGrantOption(const Permission& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption.push_back(value); return *this; }
-    inline RevokePermissionsRequest& AddPermissionsWithGrantOption(Permission&& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption.push_back(std::move(value)); return *this; }
+    template<typename PermissionsWithGrantOptionT = Aws::Vector<Permission>>
+    void SetPermissionsWithGrantOption(PermissionsWithGrantOptionT&& value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption = std::forward<PermissionsWithGrantOptionT>(value); }
+    template<typename PermissionsWithGrantOptionT = Aws::Vector<Permission>>
+    RevokePermissionsRequest& WithPermissionsWithGrantOption(PermissionsWithGrantOptionT&& value) { SetPermissionsWithGrantOption(std::forward<PermissionsWithGrantOptionT>(value)); return *this;}
+    inline RevokePermissionsRequest& AddPermissionsWithGrantOption(Permission value) { m_permissionsWithGrantOptionHasBeenSet = true; m_permissionsWithGrantOption.push_back(value); return *this; }
     ///@}
   private:
 

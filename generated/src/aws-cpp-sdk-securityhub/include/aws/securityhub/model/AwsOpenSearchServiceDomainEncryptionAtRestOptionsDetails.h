@@ -32,7 +32,7 @@ namespace Model
   class AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Whether encryption at rest is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The KMS key ID.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

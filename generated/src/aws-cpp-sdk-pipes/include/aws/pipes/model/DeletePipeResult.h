@@ -30,7 +30,7 @@ namespace Model
   class DeletePipeResult
   {
   public:
-    AWS_PIPES_API DeletePipeResult();
+    AWS_PIPES_API DeletePipeResult() = default;
     AWS_PIPES_API DeletePipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PIPES_API DeletePipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,59 +39,51 @@ namespace Model
     /**
      * <p>The ARN of the pipe.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DeletePipeResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeletePipeResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeletePipeResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeletePipeResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the pipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeletePipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeletePipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeletePipeResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeletePipeResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state the pipe should be in.</p>
      */
-    inline const RequestedPipeStateDescribeResponse& GetDesiredState() const{ return m_desiredState; }
-    inline void SetDesiredState(const RequestedPipeStateDescribeResponse& value) { m_desiredState = value; }
-    inline void SetDesiredState(RequestedPipeStateDescribeResponse&& value) { m_desiredState = std::move(value); }
-    inline DeletePipeResult& WithDesiredState(const RequestedPipeStateDescribeResponse& value) { SetDesiredState(value); return *this;}
-    inline DeletePipeResult& WithDesiredState(RequestedPipeStateDescribeResponse&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline RequestedPipeStateDescribeResponse GetDesiredState() const { return m_desiredState; }
+    inline void SetDesiredState(RequestedPipeStateDescribeResponse value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline DeletePipeResult& WithDesiredState(RequestedPipeStateDescribeResponse value) { SetDesiredState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state the pipe is in.</p>
      */
-    inline const PipeState& GetCurrentState() const{ return m_currentState; }
-    inline void SetCurrentState(const PipeState& value) { m_currentState = value; }
-    inline void SetCurrentState(PipeState&& value) { m_currentState = std::move(value); }
-    inline DeletePipeResult& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
-    inline DeletePipeResult& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
+    inline PipeState GetCurrentState() const { return m_currentState; }
+    inline void SetCurrentState(PipeState value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+    inline DeletePipeResult& WithCurrentState(PipeState value) { SetCurrentState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the pipe was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DeletePipeResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DeletePipeResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DeletePipeResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,38 +92,43 @@ namespace Model
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
      * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DeletePipeResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DeletePipeResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DeletePipeResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    RequestedPipeStateDescribeResponse m_desiredState;
+    RequestedPipeStateDescribeResponse m_desiredState{RequestedPipeStateDescribeResponse::NOT_SET};
+    bool m_desiredStateHasBeenSet = false;
 
-    PipeState m_currentState;
+    PipeState m_currentState{PipeState::NOT_SET};
+    bool m_currentStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

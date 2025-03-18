@@ -30,7 +30,7 @@ namespace Model
   class ProbabilisticRuleValue
   {
   public:
-    AWS_XRAY_API ProbabilisticRuleValue();
+    AWS_XRAY_API ProbabilisticRuleValue() = default;
     AWS_XRAY_API ProbabilisticRuleValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API ProbabilisticRuleValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p> Configured sampling percentage of traceIds. Note that sampling can be
      * subject to limits to ensure completeness of data. </p>
      */
-    inline double GetDesiredSamplingPercentage() const{ return m_desiredSamplingPercentage; }
+    inline double GetDesiredSamplingPercentage() const { return m_desiredSamplingPercentage; }
     inline bool DesiredSamplingPercentageHasBeenSet() const { return m_desiredSamplingPercentageHasBeenSet; }
     inline void SetDesiredSamplingPercentage(double value) { m_desiredSamplingPercentageHasBeenSet = true; m_desiredSamplingPercentage = value; }
     inline ProbabilisticRuleValue& WithDesiredSamplingPercentage(double value) { SetDesiredSamplingPercentage(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p> Applied sampling percentage of traceIds. </p>
      */
-    inline double GetActualSamplingPercentage() const{ return m_actualSamplingPercentage; }
+    inline double GetActualSamplingPercentage() const { return m_actualSamplingPercentage; }
     inline bool ActualSamplingPercentageHasBeenSet() const { return m_actualSamplingPercentageHasBeenSet; }
     inline void SetActualSamplingPercentage(double value) { m_actualSamplingPercentageHasBeenSet = true; m_actualSamplingPercentage = value; }
     inline ProbabilisticRuleValue& WithActualSamplingPercentage(double value) { SetActualSamplingPercentage(value); return *this;}
     ///@}
   private:
 
-    double m_desiredSamplingPercentage;
+    double m_desiredSamplingPercentage{0.0};
     bool m_desiredSamplingPercentageHasBeenSet = false;
 
-    double m_actualSamplingPercentage;
+    double m_actualSamplingPercentage{0.0};
     bool m_actualSamplingPercentageHasBeenSet = false;
   };
 

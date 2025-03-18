@@ -12,21 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAutomationRuleRequest::CreateAutomationRuleRequest() : 
-    m_tagsHasBeenSet(false),
-    m_ruleStatus(RuleStatus::NOT_SET),
-    m_ruleStatusHasBeenSet(false),
-    m_ruleOrder(0),
-    m_ruleOrderHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isTerminal(false),
-    m_isTerminalHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAutomationRuleRequest::SerializePayload() const
 {
   JsonValue payload;

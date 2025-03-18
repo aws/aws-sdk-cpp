@@ -18,18 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SupportedAssociation::SupportedAssociation() : 
-    m_resourceTypeHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_associationBehavior(RegistrationAssociationBehavior::NOT_SET),
-    m_associationBehaviorHasBeenSet(false),
-    m_disassociationBehavior(RegistrationDisassociationBehavior::NOT_SET),
-    m_disassociationBehaviorHasBeenSet(false)
-{
-}
-
 SupportedAssociation::SupportedAssociation(JsonView jsonValue)
-  : SupportedAssociation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SupportedAssociation& SupportedAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationBehavior"))
   {
     m_associationBehavior = RegistrationAssociationBehaviorMapper::GetRegistrationAssociationBehaviorForName(jsonValue.GetString("AssociationBehavior"));
-
     m_associationBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisassociationBehavior"))
   {
     m_disassociationBehavior = RegistrationDisassociationBehaviorMapper::GetRegistrationDisassociationBehaviorForName(jsonValue.GetString("DisassociationBehavior"));
-
     m_disassociationBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

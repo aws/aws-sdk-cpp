@@ -33,7 +33,7 @@ namespace Model
   class UpdateResult
   {
   public:
-    AWS_RDSDATASERVICE_API UpdateResult();
+    AWS_RDSDATASERVICE_API UpdateResult() = default;
     AWS_RDSDATASERVICE_API UpdateResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Values for fields generated during the request.</p>
      */
-    inline const Aws::Vector<Field>& GetGeneratedFields() const{ return m_generatedFields; }
+    inline const Aws::Vector<Field>& GetGeneratedFields() const { return m_generatedFields; }
     inline bool GeneratedFieldsHasBeenSet() const { return m_generatedFieldsHasBeenSet; }
-    inline void SetGeneratedFields(const Aws::Vector<Field>& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields = value; }
-    inline void SetGeneratedFields(Aws::Vector<Field>&& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields = std::move(value); }
-    inline UpdateResult& WithGeneratedFields(const Aws::Vector<Field>& value) { SetGeneratedFields(value); return *this;}
-    inline UpdateResult& WithGeneratedFields(Aws::Vector<Field>&& value) { SetGeneratedFields(std::move(value)); return *this;}
-    inline UpdateResult& AddGeneratedFields(const Field& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields.push_back(value); return *this; }
-    inline UpdateResult& AddGeneratedFields(Field&& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields.push_back(std::move(value)); return *this; }
+    template<typename GeneratedFieldsT = Aws::Vector<Field>>
+    void SetGeneratedFields(GeneratedFieldsT&& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields = std::forward<GeneratedFieldsT>(value); }
+    template<typename GeneratedFieldsT = Aws::Vector<Field>>
+    UpdateResult& WithGeneratedFields(GeneratedFieldsT&& value) { SetGeneratedFields(std::forward<GeneratedFieldsT>(value)); return *this;}
+    template<typename GeneratedFieldsT = Field>
+    UpdateResult& AddGeneratedFields(GeneratedFieldsT&& value) { m_generatedFieldsHasBeenSet = true; m_generatedFields.emplace_back(std::forward<GeneratedFieldsT>(value)); return *this; }
     ///@}
   private:
 

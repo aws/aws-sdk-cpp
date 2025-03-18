@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMissionProfileRequest::DeleteMissionProfileRequest() : 
-    m_missionProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMissionProfileRequest::SerializePayload() const
 {
   return {};

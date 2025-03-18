@@ -18,15 +18,7 @@ namespace drs
 namespace Model
 {
 
-DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters() : 
-    m_originAccountIDHasBeenSet(false),
-    m_originRegionHasBeenSet(false),
-    m_sourceNetworkIDsHasBeenSet(false)
-{
-}
-
 DescribeSourceNetworksRequestFilters::DescribeSourceNetworksRequestFilters(JsonView jsonValue)
-  : DescribeSourceNetworksRequestFilters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DescribeSourceNetworksRequestFilters& DescribeSourceNetworksRequestFilters::oper
   if(jsonValue.ValueExists("originAccountID"))
   {
     m_originAccountID = jsonValue.GetString("originAccountID");
-
     m_originAccountIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originRegion"))
   {
     m_originRegion = jsonValue.GetString("originRegion");
-
     m_originRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceNetworkIDs"))
   {
     Aws::Utils::Array<JsonView> sourceNetworkIDsJsonList = jsonValue.GetArray("sourceNetworkIDs");
@@ -56,7 +44,6 @@ DescribeSourceNetworksRequestFilters& DescribeSourceNetworksRequestFilters::oper
     }
     m_sourceNetworkIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

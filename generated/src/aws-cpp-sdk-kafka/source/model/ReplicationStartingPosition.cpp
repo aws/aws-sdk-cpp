@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ReplicationStartingPosition::ReplicationStartingPosition() : 
-    m_type(ReplicationStartingPositionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ReplicationStartingPosition::ReplicationStartingPosition(JsonView jsonValue)
-  : ReplicationStartingPosition()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplicationStartingPosition& ReplicationStartingPosition::operator =(JsonView js
   if(jsonValue.ValueExists("type"))
   {
     m_type = ReplicationStartingPositionTypeMapper::GetReplicationStartingPositionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

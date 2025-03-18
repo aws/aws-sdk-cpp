@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetNamedQueryRequest::BatchGetNamedQueryRequest() : 
-    m_namedQueryIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetNamedQueryRequest::SerializePayload() const
 {
   JsonValue payload;

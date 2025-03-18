@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateWorkflowStepGroupResult::UpdateWorkflowStepGroupResult()
-{
-}
-
 UpdateWorkflowStepGroupResult::UpdateWorkflowStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -60,8 +52,8 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
     }
+    m_toolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -69,8 +61,8 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
     {
       m_next.push_back(nextJsonList[nextIndex].AsString());
     }
+    m_nextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -78,20 +70,20 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
     {
       m_previous.push_back(previousJsonList[previousIndex].AsString());
     }
+    m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

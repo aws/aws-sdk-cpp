@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRetrieverRequest::GetRetrieverRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_retrieverIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRetrieverRequest::SerializePayload() const
 {
   return {};

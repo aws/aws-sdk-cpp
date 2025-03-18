@@ -18,20 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-ROS2PrimitiveMessageDefinition::ROS2PrimitiveMessageDefinition() : 
-    m_primitiveType(ROS2PrimitiveType::NOT_SET),
-    m_primitiveTypeHasBeenSet(false),
-    m_offset(0.0),
-    m_offsetHasBeenSet(false),
-    m_scaling(0.0),
-    m_scalingHasBeenSet(false),
-    m_upperBound(0),
-    m_upperBoundHasBeenSet(false)
-{
-}
-
 ROS2PrimitiveMessageDefinition::ROS2PrimitiveMessageDefinition(JsonView jsonValue)
-  : ROS2PrimitiveMessageDefinition()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ROS2PrimitiveMessageDefinition& ROS2PrimitiveMessageDefinition::operator =(JsonV
   if(jsonValue.ValueExists("primitiveType"))
   {
     m_primitiveType = ROS2PrimitiveTypeMapper::GetROS2PrimitiveTypeForName(jsonValue.GetString("primitiveType"));
-
     m_primitiveTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetDouble("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaling"))
   {
     m_scaling = jsonValue.GetDouble("scaling");
-
     m_scalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperBound"))
   {
     m_upperBound = jsonValue.GetInt64("upperBound");
-
     m_upperBoundHasBeenSet = true;
   }
-
   return *this;
 }
 

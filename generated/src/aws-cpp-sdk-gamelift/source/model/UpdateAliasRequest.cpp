@@ -12,14 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAliasRequest::UpdateAliasRequest() : 
-    m_aliasIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingStrategyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

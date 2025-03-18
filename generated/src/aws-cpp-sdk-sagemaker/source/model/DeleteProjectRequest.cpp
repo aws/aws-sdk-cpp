@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectRequest::DeleteProjectRequest() : 
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
   JsonValue payload;

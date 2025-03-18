@@ -27,7 +27,7 @@ namespace Model
   class CreateAlertResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API CreateAlertResult();
+    AWS_LOOKOUTMETRICS_API CreateAlertResult() = default;
     AWS_LOOKOUTMETRICS_API CreateAlertResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API CreateAlertResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the alert.</p>
      */
-    inline const Aws::String& GetAlertArn() const{ return m_alertArn; }
-    inline void SetAlertArn(const Aws::String& value) { m_alertArn = value; }
-    inline void SetAlertArn(Aws::String&& value) { m_alertArn = std::move(value); }
-    inline void SetAlertArn(const char* value) { m_alertArn.assign(value); }
-    inline CreateAlertResult& WithAlertArn(const Aws::String& value) { SetAlertArn(value); return *this;}
-    inline CreateAlertResult& WithAlertArn(Aws::String&& value) { SetAlertArn(std::move(value)); return *this;}
-    inline CreateAlertResult& WithAlertArn(const char* value) { SetAlertArn(value); return *this;}
+    inline const Aws::String& GetAlertArn() const { return m_alertArn; }
+    template<typename AlertArnT = Aws::String>
+    void SetAlertArn(AlertArnT&& value) { m_alertArnHasBeenSet = true; m_alertArn = std::forward<AlertArnT>(value); }
+    template<typename AlertArnT = Aws::String>
+    CreateAlertResult& WithAlertArn(AlertArnT&& value) { SetAlertArn(std::forward<AlertArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAlertResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAlertResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAlertResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAlertResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_alertArn;
+    bool m_alertArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

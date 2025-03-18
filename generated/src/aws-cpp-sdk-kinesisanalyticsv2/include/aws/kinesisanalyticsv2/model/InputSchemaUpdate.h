@@ -35,7 +35,7 @@ namespace Model
   class InputSchemaUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API InputSchemaUpdate();
+    AWS_KINESISANALYTICSV2_API InputSchemaUpdate() = default;
     AWS_KINESISANALYTICSV2_API InputSchemaUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API InputSchemaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
-    inline const RecordFormat& GetRecordFormatUpdate() const{ return m_recordFormatUpdate; }
+    inline const RecordFormat& GetRecordFormatUpdate() const { return m_recordFormatUpdate; }
     inline bool RecordFormatUpdateHasBeenSet() const { return m_recordFormatUpdateHasBeenSet; }
-    inline void SetRecordFormatUpdate(const RecordFormat& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = value; }
-    inline void SetRecordFormatUpdate(RecordFormat&& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = std::move(value); }
-    inline InputSchemaUpdate& WithRecordFormatUpdate(const RecordFormat& value) { SetRecordFormatUpdate(value); return *this;}
-    inline InputSchemaUpdate& WithRecordFormatUpdate(RecordFormat&& value) { SetRecordFormatUpdate(std::move(value)); return *this;}
+    template<typename RecordFormatUpdateT = RecordFormat>
+    void SetRecordFormatUpdate(RecordFormatUpdateT&& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = std::forward<RecordFormatUpdateT>(value); }
+    template<typename RecordFormatUpdateT = RecordFormat>
+    InputSchemaUpdate& WithRecordFormatUpdate(RecordFormatUpdateT&& value) { SetRecordFormatUpdate(std::forward<RecordFormatUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Specifies the encoding of the records in the streaming source; for example,
      * UTF-8.</p>
      */
-    inline const Aws::String& GetRecordEncodingUpdate() const{ return m_recordEncodingUpdate; }
+    inline const Aws::String& GetRecordEncodingUpdate() const { return m_recordEncodingUpdate; }
     inline bool RecordEncodingUpdateHasBeenSet() const { return m_recordEncodingUpdateHasBeenSet; }
-    inline void SetRecordEncodingUpdate(const Aws::String& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = value; }
-    inline void SetRecordEncodingUpdate(Aws::String&& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = std::move(value); }
-    inline void SetRecordEncodingUpdate(const char* value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate.assign(value); }
-    inline InputSchemaUpdate& WithRecordEncodingUpdate(const Aws::String& value) { SetRecordEncodingUpdate(value); return *this;}
-    inline InputSchemaUpdate& WithRecordEncodingUpdate(Aws::String&& value) { SetRecordEncodingUpdate(std::move(value)); return *this;}
-    inline InputSchemaUpdate& WithRecordEncodingUpdate(const char* value) { SetRecordEncodingUpdate(value); return *this;}
+    template<typename RecordEncodingUpdateT = Aws::String>
+    void SetRecordEncodingUpdate(RecordEncodingUpdateT&& value) { m_recordEncodingUpdateHasBeenSet = true; m_recordEncodingUpdate = std::forward<RecordEncodingUpdateT>(value); }
+    template<typename RecordEncodingUpdateT = Aws::String>
+    InputSchemaUpdate& WithRecordEncodingUpdate(RecordEncodingUpdateT&& value) { SetRecordEncodingUpdate(std::forward<RecordEncodingUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,14 @@ namespace Model
      * mapping of the streaming source element to the corresponding column in the
      * in-application stream.</p>
      */
-    inline const Aws::Vector<RecordColumn>& GetRecordColumnUpdates() const{ return m_recordColumnUpdates; }
+    inline const Aws::Vector<RecordColumn>& GetRecordColumnUpdates() const { return m_recordColumnUpdates; }
     inline bool RecordColumnUpdatesHasBeenSet() const { return m_recordColumnUpdatesHasBeenSet; }
-    inline void SetRecordColumnUpdates(const Aws::Vector<RecordColumn>& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = value; }
-    inline void SetRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = std::move(value); }
-    inline InputSchemaUpdate& WithRecordColumnUpdates(const Aws::Vector<RecordColumn>& value) { SetRecordColumnUpdates(value); return *this;}
-    inline InputSchemaUpdate& WithRecordColumnUpdates(Aws::Vector<RecordColumn>&& value) { SetRecordColumnUpdates(std::move(value)); return *this;}
-    inline InputSchemaUpdate& AddRecordColumnUpdates(const RecordColumn& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(value); return *this; }
-    inline InputSchemaUpdate& AddRecordColumnUpdates(RecordColumn&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(std::move(value)); return *this; }
+    template<typename RecordColumnUpdatesT = Aws::Vector<RecordColumn>>
+    void SetRecordColumnUpdates(RecordColumnUpdatesT&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates = std::forward<RecordColumnUpdatesT>(value); }
+    template<typename RecordColumnUpdatesT = Aws::Vector<RecordColumn>>
+    InputSchemaUpdate& WithRecordColumnUpdates(RecordColumnUpdatesT&& value) { SetRecordColumnUpdates(std::forward<RecordColumnUpdatesT>(value)); return *this;}
+    template<typename RecordColumnUpdatesT = RecordColumn>
+    InputSchemaUpdate& AddRecordColumnUpdates(RecordColumnUpdatesT&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.emplace_back(std::forward<RecordColumnUpdatesT>(value)); return *this; }
     ///@}
   private:
 

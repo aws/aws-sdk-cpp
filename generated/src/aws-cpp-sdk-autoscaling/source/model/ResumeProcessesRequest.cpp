@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-ResumeProcessesRequest::ResumeProcessesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scalingProcessesHasBeenSet(false)
-{
-}
-
 Aws::String ResumeProcessesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

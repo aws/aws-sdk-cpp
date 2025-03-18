@@ -18,14 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-DriftStatusSummary::DriftStatusSummary() : 
-    m_driftStatus(DriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false)
-{
-}
-
 DriftStatusSummary::DriftStatusSummary(JsonView jsonValue)
-  : DriftStatusSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DriftStatusSummary& DriftStatusSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("driftStatus"))
   {
     m_driftStatus = DriftStatusMapper::GetDriftStatusForName(jsonValue.GetString("driftStatus"));
-
     m_driftStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

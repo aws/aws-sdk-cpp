@@ -21,7 +21,7 @@ namespace Model
   class ListTableMetadataRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API ListTableMetadataRequest();
+    AWS_ATHENA_API ListTableMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the data catalog for which table metadata should be returned.</p>
      */
-    inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
+    inline const Aws::String& GetCatalogName() const { return m_catalogName; }
     inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
-    inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
-    inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
-    inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
-    inline ListTableMetadataRequest& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
-    inline ListTableMetadataRequest& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
-    inline ListTableMetadataRequest& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+    template<typename CatalogNameT = Aws::String>
+    void SetCatalogName(CatalogNameT&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::forward<CatalogNameT>(value); }
+    template<typename CatalogNameT = Aws::String>
+    ListTableMetadataRequest& WithCatalogName(CatalogNameT&& value) { SetCatalogName(std::forward<CatalogNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database for which table metadata should be returned.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline ListTableMetadataRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline ListTableMetadataRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline ListTableMetadataRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    ListTableMetadataRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * <p>A regex filter that pattern-matches table names. If no expression is
      * supplied, metadata for all tables are listed.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline ListTableMetadataRequest& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline ListTableMetadataRequest& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline ListTableMetadataRequest& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    ListTableMetadataRequest& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +77,19 @@ namespace Model
      * pagination if a previous request was truncated. To obtain the next set of pages,
      * pass in the NextToken from the response object of the previous page call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTableMetadataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTableMetadataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTableMetadataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTableMetadataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTableMetadataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -108,14 +100,12 @@ namespace Model
      * <p>The name of the workgroup for which the metadata is being fetched. Required
      * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline ListTableMetadataRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline ListTableMetadataRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline ListTableMetadataRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    ListTableMetadataRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
   private:
 
@@ -131,7 +121,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_workGroup;

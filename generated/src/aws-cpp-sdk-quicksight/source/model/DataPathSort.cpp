@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataPathSort::DataPathSort() : 
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_sortPathsHasBeenSet(false)
-{
-}
-
 DataPathSort::DataPathSort(JsonView jsonValue)
-  : DataPathSort()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DataPathSort& DataPathSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = SortDirectionMapper::GetSortDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortPaths"))
   {
     Aws::Utils::Array<JsonView> sortPathsJsonList = jsonValue.GetArray("SortPaths");
@@ -49,7 +39,6 @@ DataPathSort& DataPathSort::operator =(JsonView jsonValue)
     }
     m_sortPathsHasBeenSet = true;
   }
-
   return *this;
 }
 

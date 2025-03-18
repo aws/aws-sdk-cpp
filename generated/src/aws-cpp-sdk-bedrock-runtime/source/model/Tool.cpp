@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-Tool::Tool() : 
-    m_toolSpecHasBeenSet(false)
-{
-}
-
 Tool::Tool(JsonView jsonValue)
-  : Tool()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Tool& Tool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("toolSpec"))
   {
     m_toolSpec = jsonValue.GetObject("toolSpec");
-
     m_toolSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

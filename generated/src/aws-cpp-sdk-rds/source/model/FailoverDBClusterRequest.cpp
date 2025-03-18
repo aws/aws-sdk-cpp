@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-FailoverDBClusterRequest::FailoverDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_targetDBInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String FailoverDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

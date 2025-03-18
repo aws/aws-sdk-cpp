@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFaceSearchRequest::GetFaceSearchRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(FaceSearchSortBy::NOT_SET),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String GetFaceSearchRequest::SerializePayload() const
 {
   JsonValue payload;

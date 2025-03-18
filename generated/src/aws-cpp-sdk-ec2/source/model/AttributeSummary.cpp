@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttributeSummary::AttributeSummary() : 
-    m_attributeNameHasBeenSet(false),
-    m_mostFrequentValueHasBeenSet(false),
-    m_numberOfMatchedAccounts(0),
-    m_numberOfMatchedAccountsHasBeenSet(false),
-    m_numberOfUnmatchedAccounts(0),
-    m_numberOfUnmatchedAccountsHasBeenSet(false),
-    m_regionalSummariesHasBeenSet(false)
-{
-}
-
 AttributeSummary::AttributeSummary(const XmlNode& xmlNode)
-  : AttributeSummary()
 {
   *this = xmlNode;
 }
@@ -71,6 +59,7 @@ AttributeSummary& AttributeSummary::operator =(const XmlNode& xmlNode)
     if(!regionalSummariesNode.IsNull())
     {
       XmlNode regionalSummariesMember = regionalSummariesNode.FirstChild("item");
+      m_regionalSummariesHasBeenSet = !regionalSummariesMember.IsNull();
       while(!regionalSummariesMember.IsNull())
       {
         m_regionalSummaries.push_back(regionalSummariesMember);

@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserHierarchyGroupNameRequest::UpdateUserHierarchyGroupNameRequest() : 
-    m_nameHasBeenSet(false),
-    m_hierarchyGroupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserHierarchyGroupNameRequest::SerializePayload() const
 {
   JsonValue payload;

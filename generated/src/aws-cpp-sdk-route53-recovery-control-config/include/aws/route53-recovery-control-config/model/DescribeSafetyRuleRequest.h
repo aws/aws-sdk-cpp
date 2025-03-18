@@ -21,7 +21,7 @@ namespace Model
   class DescribeSafetyRuleRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeSafetyRuleRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeSafetyRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the safety rule.</p>
      */
-    inline const Aws::String& GetSafetyRuleArn() const{ return m_safetyRuleArn; }
+    inline const Aws::String& GetSafetyRuleArn() const { return m_safetyRuleArn; }
     inline bool SafetyRuleArnHasBeenSet() const { return m_safetyRuleArnHasBeenSet; }
-    inline void SetSafetyRuleArn(const Aws::String& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = value; }
-    inline void SetSafetyRuleArn(Aws::String&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::move(value); }
-    inline void SetSafetyRuleArn(const char* value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn.assign(value); }
-    inline DescribeSafetyRuleRequest& WithSafetyRuleArn(const Aws::String& value) { SetSafetyRuleArn(value); return *this;}
-    inline DescribeSafetyRuleRequest& WithSafetyRuleArn(Aws::String&& value) { SetSafetyRuleArn(std::move(value)); return *this;}
-    inline DescribeSafetyRuleRequest& WithSafetyRuleArn(const char* value) { SetSafetyRuleArn(value); return *this;}
+    template<typename SafetyRuleArnT = Aws::String>
+    void SetSafetyRuleArn(SafetyRuleArnT&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::forward<SafetyRuleArnT>(value); }
+    template<typename SafetyRuleArnT = Aws::String>
+    DescribeSafetyRuleRequest& WithSafetyRuleArn(SafetyRuleArnT&& value) { SetSafetyRuleArn(std::forward<SafetyRuleArnT>(value)); return *this;}
     ///@}
   private:
 

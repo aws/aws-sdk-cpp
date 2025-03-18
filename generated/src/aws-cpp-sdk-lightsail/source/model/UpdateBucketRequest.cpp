@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBucketRequest::UpdateBucketRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_accessRulesHasBeenSet(false),
-    m_versioningHasBeenSet(false),
-    m_readonlyAccessAccountsHasBeenSet(false),
-    m_accessLogConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBucketRequest::SerializePayload() const
 {
   JsonValue payload;

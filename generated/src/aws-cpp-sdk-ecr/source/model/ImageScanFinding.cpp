@@ -18,18 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ImageScanFinding::ImageScanFinding() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_severity(FindingSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ImageScanFinding::ImageScanFinding(JsonView jsonValue)
-  : ImageScanFinding()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ImageScanFinding& ImageScanFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = FindingSeverityMapper::GetFindingSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -73,7 +54,6 @@ ImageScanFinding& ImageScanFinding::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckCapacityRequest::CheckCapacityRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String CheckCapacityRequest::SerializePayload() const
 {
   JsonValue payload;

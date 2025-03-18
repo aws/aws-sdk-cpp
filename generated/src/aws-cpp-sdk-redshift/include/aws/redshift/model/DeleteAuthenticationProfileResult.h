@@ -28,7 +28,7 @@ namespace Model
   class DeleteAuthenticationProfileResult
   {
   public:
-    AWS_REDSHIFT_API DeleteAuthenticationProfileResult();
+    AWS_REDSHIFT_API DeleteAuthenticationProfileResult() = default;
     AWS_REDSHIFT_API DeleteAuthenticationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DeleteAuthenticationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The name of the authentication profile that was deleted.</p>
      */
-    inline const Aws::String& GetAuthenticationProfileName() const{ return m_authenticationProfileName; }
-    inline void SetAuthenticationProfileName(const Aws::String& value) { m_authenticationProfileName = value; }
-    inline void SetAuthenticationProfileName(Aws::String&& value) { m_authenticationProfileName = std::move(value); }
-    inline void SetAuthenticationProfileName(const char* value) { m_authenticationProfileName.assign(value); }
-    inline DeleteAuthenticationProfileResult& WithAuthenticationProfileName(const Aws::String& value) { SetAuthenticationProfileName(value); return *this;}
-    inline DeleteAuthenticationProfileResult& WithAuthenticationProfileName(Aws::String&& value) { SetAuthenticationProfileName(std::move(value)); return *this;}
-    inline DeleteAuthenticationProfileResult& WithAuthenticationProfileName(const char* value) { SetAuthenticationProfileName(value); return *this;}
+    inline const Aws::String& GetAuthenticationProfileName() const { return m_authenticationProfileName; }
+    template<typename AuthenticationProfileNameT = Aws::String>
+    void SetAuthenticationProfileName(AuthenticationProfileNameT&& value) { m_authenticationProfileNameHasBeenSet = true; m_authenticationProfileName = std::forward<AuthenticationProfileNameT>(value); }
+    template<typename AuthenticationProfileNameT = Aws::String>
+    DeleteAuthenticationProfileResult& WithAuthenticationProfileName(AuthenticationProfileNameT&& value) { SetAuthenticationProfileName(std::forward<AuthenticationProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteAuthenticationProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteAuthenticationProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteAuthenticationProfileResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authenticationProfileName;
+    bool m_authenticationProfileNameHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

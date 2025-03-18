@@ -12,18 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckoutLicenseRequest::CheckoutLicenseRequest() : 
-    m_productSKUHasBeenSet(false),
-    m_checkoutType(CheckoutType::NOT_SET),
-    m_checkoutTypeHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_beneficiaryHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String CheckoutLicenseRequest::SerializePayload() const
 {
   JsonValue payload;

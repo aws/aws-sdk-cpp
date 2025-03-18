@@ -24,7 +24,7 @@ namespace Model
   class UpdateAccountConfigurationRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateAccountConfigurationRequest();
+    AWS_MEDIALIVE_API UpdateAccountConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
 
     ///@{
     
-    inline const AccountConfiguration& GetAccountConfiguration() const{ return m_accountConfiguration; }
+    inline const AccountConfiguration& GetAccountConfiguration() const { return m_accountConfiguration; }
     inline bool AccountConfigurationHasBeenSet() const { return m_accountConfigurationHasBeenSet; }
-    inline void SetAccountConfiguration(const AccountConfiguration& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = value; }
-    inline void SetAccountConfiguration(AccountConfiguration&& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = std::move(value); }
-    inline UpdateAccountConfigurationRequest& WithAccountConfiguration(const AccountConfiguration& value) { SetAccountConfiguration(value); return *this;}
-    inline UpdateAccountConfigurationRequest& WithAccountConfiguration(AccountConfiguration&& value) { SetAccountConfiguration(std::move(value)); return *this;}
+    template<typename AccountConfigurationT = AccountConfiguration>
+    void SetAccountConfiguration(AccountConfigurationT&& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = std::forward<AccountConfigurationT>(value); }
+    template<typename AccountConfigurationT = AccountConfiguration>
+    UpdateAccountConfigurationRequest& WithAccountConfiguration(AccountConfigurationT&& value) { SetAccountConfiguration(std::forward<AccountConfigurationT>(value)); return *this;}
     ///@}
   private:
 

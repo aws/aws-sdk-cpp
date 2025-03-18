@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSchemaMergeResult::StartSchemaMergeResult() : 
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET)
-{
-}
-
 StartSchemaMergeResult::StartSchemaMergeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartSchemaMergeResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ StartSchemaMergeResult& StartSchemaMergeResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("sourceApiAssociationStatus"))
   {
     m_sourceApiAssociationStatus = SourceApiAssociationStatusMapper::GetSourceApiAssociationStatusForName(jsonValue.GetString("sourceApiAssociationStatus"));
-
+    m_sourceApiAssociationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

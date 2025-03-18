@@ -12,18 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePluginRequest::UpdatePluginRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_pluginIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_state(PluginState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_customPluginConfigurationHasBeenSet(false),
-    m_authConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePluginRequest::SerializePayload() const
 {
   JsonValue payload;

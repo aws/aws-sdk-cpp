@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SetParameterValueConfiguration::SetParameterValueConfiguration() : 
-    m_destinationParameterNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SetParameterValueConfiguration::SetParameterValueConfiguration(JsonView jsonValue)
-  : SetParameterValueConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SetParameterValueConfiguration& SetParameterValueConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("DestinationParameterName"))
   {
     m_destinationParameterName = jsonValue.GetString("DestinationParameterName");
-
     m_destinationParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

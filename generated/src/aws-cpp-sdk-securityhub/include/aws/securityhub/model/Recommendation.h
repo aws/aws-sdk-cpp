@@ -32,7 +32,7 @@ namespace Model
   class Recommendation
   {
   public:
-    AWS_SECURITYHUB_API Recommendation();
+    AWS_SECURITYHUB_API Recommendation() = default;
     AWS_SECURITYHUB_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
      * length.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline Recommendation& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline Recommendation& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline Recommendation& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    Recommendation& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>A URL to a page or site that contains information about how to remediate a
      * finding.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Recommendation& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Recommendation& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Recommendation& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Recommendation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

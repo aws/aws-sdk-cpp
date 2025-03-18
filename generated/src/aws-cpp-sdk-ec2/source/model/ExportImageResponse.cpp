@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportImageResponse::ExportImageResponse() : 
-    m_diskImageFormat(DiskImageFormat::NOT_SET)
-{
-}
-
 ExportImageResponse::ExportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ExportImageResponse()
 {
   *this = result;
 }
@@ -44,57 +38,68 @@ ExportImageResponse& ExportImageResponse::operator =(const Aws::AmazonWebService
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
     }
     XmlNode diskImageFormatNode = resultNode.FirstChild("diskImageFormat");
     if(!diskImageFormatNode.IsNull())
     {
-      m_diskImageFormat = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(diskImageFormatNode.GetText()).c_str()).c_str());
+      m_diskImageFormat = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(diskImageFormatNode.GetText()).c_str()));
+      m_diskImageFormatHasBeenSet = true;
     }
     XmlNode exportImageTaskIdNode = resultNode.FirstChild("exportImageTaskId");
     if(!exportImageTaskIdNode.IsNull())
     {
       m_exportImageTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(exportImageTaskIdNode.GetText());
+      m_exportImageTaskIdHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+      m_imageIdHasBeenSet = true;
     }
     XmlNode roleNameNode = resultNode.FirstChild("roleName");
     if(!roleNameNode.IsNull())
     {
       m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
+      m_roleNameHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
       m_progress = Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText());
+      m_progressHasBeenSet = true;
     }
     XmlNode s3ExportLocationNode = resultNode.FirstChild("s3ExportLocation");
     if(!s3ExportLocationNode.IsNull())
     {
       m_s3ExportLocation = s3ExportLocationNode;
+      m_s3ExportLocationHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
+      m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
+      m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -103,6 +108,7 @@ ExportImageResponse& ExportImageResponse::operator =(const Aws::AmazonWebService
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ExportImageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

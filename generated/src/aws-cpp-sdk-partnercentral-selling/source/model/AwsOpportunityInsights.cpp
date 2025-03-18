@@ -18,15 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsOpportunityInsights::AwsOpportunityInsights() : 
-    m_engagementScore(EngagementScore::NOT_SET),
-    m_engagementScoreHasBeenSet(false),
-    m_nextBestActionsHasBeenSet(false)
-{
-}
-
 AwsOpportunityInsights::AwsOpportunityInsights(JsonView jsonValue)
-  : AwsOpportunityInsights()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsOpportunityInsights& AwsOpportunityInsights::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EngagementScore"))
   {
     m_engagementScore = EngagementScoreMapper::GetEngagementScoreForName(jsonValue.GetString("EngagementScore"));
-
     m_engagementScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextBestActions"))
   {
     m_nextBestActions = jsonValue.GetString("NextBestActions");
-
     m_nextBestActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

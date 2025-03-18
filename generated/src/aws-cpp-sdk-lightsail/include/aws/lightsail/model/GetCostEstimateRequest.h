@@ -22,7 +22,7 @@ namespace Model
   class GetCostEstimateRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetCostEstimateRequest();
+    AWS_LIGHTSAIL_API GetCostEstimateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The resource name.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline GetCostEstimateRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline GetCostEstimateRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline GetCostEstimateRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    GetCostEstimateRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * converter like <a href="https://www.epochconverter.com/">Epoch
      * converter</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetCostEstimateRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetCostEstimateRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetCostEstimateRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +74,22 @@ namespace Model
      * <p>You can convert a human-friendly time to Unix time format using a converter
      * like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetCostEstimateRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetCostEstimateRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetCostEstimateRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

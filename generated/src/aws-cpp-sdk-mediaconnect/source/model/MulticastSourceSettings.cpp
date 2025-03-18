@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-MulticastSourceSettings::MulticastSourceSettings() : 
-    m_multicastSourceIpHasBeenSet(false)
-{
-}
-
 MulticastSourceSettings::MulticastSourceSettings(JsonView jsonValue)
-  : MulticastSourceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MulticastSourceSettings& MulticastSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("multicastSourceIp"))
   {
     m_multicastSourceIp = jsonValue.GetString("multicastSourceIp");
-
     m_multicastSourceIpHasBeenSet = true;
   }
-
   return *this;
 }
 

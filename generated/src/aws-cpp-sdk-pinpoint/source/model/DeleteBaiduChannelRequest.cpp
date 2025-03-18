@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBaiduChannelRequest::DeleteBaiduChannelRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBaiduChannelRequest::SerializePayload() const
 {
   return {};

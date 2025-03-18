@@ -32,7 +32,7 @@ namespace Model
   class SearchFilter
   {
   public:
-    AWS_RESOURCEEXPLORER2_API SearchFilter();
+    AWS_RESOURCEEXPLORER2_API SearchFilter() = default;
     AWS_RESOURCEEXPLORER2_API SearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API SearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search
      * query syntax</a>.</p>
      */
-    inline const Aws::String& GetFilterString() const{ return m_filterString; }
+    inline const Aws::String& GetFilterString() const { return m_filterString; }
     inline bool FilterStringHasBeenSet() const { return m_filterStringHasBeenSet; }
-    inline void SetFilterString(const Aws::String& value) { m_filterStringHasBeenSet = true; m_filterString = value; }
-    inline void SetFilterString(Aws::String&& value) { m_filterStringHasBeenSet = true; m_filterString = std::move(value); }
-    inline void SetFilterString(const char* value) { m_filterStringHasBeenSet = true; m_filterString.assign(value); }
-    inline SearchFilter& WithFilterString(const Aws::String& value) { SetFilterString(value); return *this;}
-    inline SearchFilter& WithFilterString(Aws::String&& value) { SetFilterString(std::move(value)); return *this;}
-    inline SearchFilter& WithFilterString(const char* value) { SetFilterString(value); return *this;}
+    template<typename FilterStringT = Aws::String>
+    void SetFilterString(FilterStringT&& value) { m_filterStringHasBeenSet = true; m_filterString = std::forward<FilterStringT>(value); }
+    template<typename FilterStringT = Aws::String>
+    SearchFilter& WithFilterString(FilterStringT&& value) { SetFilterString(std::forward<FilterStringT>(value)); return *this;}
     ///@}
   private:
 

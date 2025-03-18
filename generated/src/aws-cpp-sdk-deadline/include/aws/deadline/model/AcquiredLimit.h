@@ -32,7 +32,7 @@ namespace Model
   class AcquiredLimit
   {
   public:
-    AWS_DEADLINE_API AcquiredLimit();
+    AWS_DEADLINE_API AcquiredLimit() = default;
     AWS_DEADLINE_API AcquiredLimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AcquiredLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The unique identifier of the limit.</p>
      */
-    inline const Aws::String& GetLimitId() const{ return m_limitId; }
+    inline const Aws::String& GetLimitId() const { return m_limitId; }
     inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
-    inline void SetLimitId(const Aws::String& value) { m_limitIdHasBeenSet = true; m_limitId = value; }
-    inline void SetLimitId(Aws::String&& value) { m_limitIdHasBeenSet = true; m_limitId = std::move(value); }
-    inline void SetLimitId(const char* value) { m_limitIdHasBeenSet = true; m_limitId.assign(value); }
-    inline AcquiredLimit& WithLimitId(const Aws::String& value) { SetLimitId(value); return *this;}
-    inline AcquiredLimit& WithLimitId(Aws::String&& value) { SetLimitId(std::move(value)); return *this;}
-    inline AcquiredLimit& WithLimitId(const char* value) { SetLimitId(value); return *this;}
+    template<typename LimitIdT = Aws::String>
+    void SetLimitId(LimitIdT&& value) { m_limitIdHasBeenSet = true; m_limitId = std::forward<LimitIdT>(value); }
+    template<typename LimitIdT = Aws::String>
+    AcquiredLimit& WithLimitId(LimitIdT&& value) { SetLimitId(std::forward<LimitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of limit resources used.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline AcquiredLimit& WithCount(int value) { SetCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_limitId;
     bool m_limitIdHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

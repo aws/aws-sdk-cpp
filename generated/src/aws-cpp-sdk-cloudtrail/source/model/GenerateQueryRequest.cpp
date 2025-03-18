@@ -12,12 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateQueryRequest::GenerateQueryRequest() : 
-    m_eventDataStoresHasBeenSet(false),
-    m_promptHasBeenSet(false)
-{
-}
-
 Aws::String GenerateQueryRequest::SerializePayload() const
 {
   JsonValue payload;

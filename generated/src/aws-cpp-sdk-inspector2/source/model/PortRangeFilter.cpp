@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-PortRangeFilter::PortRangeFilter() : 
-    m_beginInclusive(0),
-    m_beginInclusiveHasBeenSet(false),
-    m_endInclusive(0),
-    m_endInclusiveHasBeenSet(false)
-{
-}
-
 PortRangeFilter::PortRangeFilter(JsonView jsonValue)
-  : PortRangeFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PortRangeFilter& PortRangeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("beginInclusive"))
   {
     m_beginInclusive = jsonValue.GetInteger("beginInclusive");
-
     m_beginInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endInclusive"))
   {
     m_endInclusive = jsonValue.GetInteger("endInclusive");
-
     m_endInclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

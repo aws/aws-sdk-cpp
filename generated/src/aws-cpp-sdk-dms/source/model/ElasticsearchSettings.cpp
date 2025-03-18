@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ElasticsearchSettings::ElasticsearchSettings() : 
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_endpointUriHasBeenSet(false),
-    m_fullLoadErrorPercentage(0),
-    m_fullLoadErrorPercentageHasBeenSet(false),
-    m_errorRetryDuration(0),
-    m_errorRetryDurationHasBeenSet(false),
-    m_useNewMappingType(false),
-    m_useNewMappingTypeHasBeenSet(false)
-{
-}
-
 ElasticsearchSettings::ElasticsearchSettings(JsonView jsonValue)
-  : ElasticsearchSettings()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ElasticsearchSettings& ElasticsearchSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointUri"))
   {
     m_endpointUri = jsonValue.GetString("EndpointUri");
-
     m_endpointUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FullLoadErrorPercentage"))
   {
     m_fullLoadErrorPercentage = jsonValue.GetInteger("FullLoadErrorPercentage");
-
     m_fullLoadErrorPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorRetryDuration"))
   {
     m_errorRetryDuration = jsonValue.GetInteger("ErrorRetryDuration");
-
     m_errorRetryDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseNewMappingType"))
   {
     m_useNewMappingType = jsonValue.GetBool("UseNewMappingType");
-
     m_useNewMappingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

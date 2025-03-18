@@ -32,7 +32,7 @@ namespace Model
   class FreeFormLayoutScreenCanvasSizeOptions
   {
   public:
-    AWS_QUICKSIGHT_API FreeFormLayoutScreenCanvasSizeOptions();
+    AWS_QUICKSIGHT_API FreeFormLayoutScreenCanvasSizeOptions() = default;
     AWS_QUICKSIGHT_API FreeFormLayoutScreenCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FreeFormLayoutScreenCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The width that the view port will be optimized for when the layout
      * renders.</p>
      */
-    inline const Aws::String& GetOptimizedViewPortWidth() const{ return m_optimizedViewPortWidth; }
+    inline const Aws::String& GetOptimizedViewPortWidth() const { return m_optimizedViewPortWidth; }
     inline bool OptimizedViewPortWidthHasBeenSet() const { return m_optimizedViewPortWidthHasBeenSet; }
-    inline void SetOptimizedViewPortWidth(const Aws::String& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = value; }
-    inline void SetOptimizedViewPortWidth(Aws::String&& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = std::move(value); }
-    inline void SetOptimizedViewPortWidth(const char* value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth.assign(value); }
-    inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const Aws::String& value) { SetOptimizedViewPortWidth(value); return *this;}
-    inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(Aws::String&& value) { SetOptimizedViewPortWidth(std::move(value)); return *this;}
-    inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const char* value) { SetOptimizedViewPortWidth(value); return *this;}
+    template<typename OptimizedViewPortWidthT = Aws::String>
+    void SetOptimizedViewPortWidth(OptimizedViewPortWidthT&& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = std::forward<OptimizedViewPortWidthT>(value); }
+    template<typename OptimizedViewPortWidthT = Aws::String>
+    FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(OptimizedViewPortWidthT&& value) { SetOptimizedViewPortWidth(std::forward<OptimizedViewPortWidthT>(value)); return *this;}
     ///@}
   private:
 

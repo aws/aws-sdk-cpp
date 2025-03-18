@@ -17,15 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutBucketAccelerateConfigurationRequest::PutBucketAccelerateConfigurationRequest() : 
-    m_bucketHasBeenSet(false),
-    m_accelerateConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool PutBucketAccelerateConfigurationRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterGroup::FilterGroup() : 
-    m_filterGroupIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_crossDataset(CrossDatasetTypes::NOT_SET),
-    m_crossDatasetHasBeenSet(false)
-{
-}
-
 FilterGroup::FilterGroup(JsonView jsonValue)
-  : FilterGroup()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ FilterGroup& FilterGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterGroupId"))
   {
     m_filterGroupId = jsonValue.GetString("FilterGroupId");
-
     m_filterGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
@@ -53,28 +39,21 @@ FilterGroup& FilterGroup::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScopeConfiguration"))
   {
     m_scopeConfiguration = jsonValue.GetObject("ScopeConfiguration");
-
     m_scopeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossDataset"))
   {
     m_crossDataset = CrossDatasetTypesMapper::GetCrossDatasetTypesForName(jsonValue.GetString("CrossDataset"));
-
     m_crossDatasetHasBeenSet = true;
   }
-
   return *this;
 }
 

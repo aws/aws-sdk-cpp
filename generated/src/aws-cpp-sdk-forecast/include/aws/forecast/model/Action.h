@@ -39,7 +39,7 @@ namespace Model
   class Action
   {
   public:
-    AWS_FORECASTSERVICE_API Action();
+    AWS_FORECASTSERVICE_API Action() = default;
     AWS_FORECASTSERVICE_API Action(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>The related time series that you are modifying. This value is case
      * insensitive.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline Action& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline Action& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline Action& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    Action& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,17 @@ namespace Model
      * <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by
      * <code>Value</code>.</p> </li> </ul>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
+    inline Operation GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Operation& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline Action& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline Action& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(Operation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline Action& WithOperation(Operation value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that is applied for the chosen <code>Operation</code>.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline Action& WithValue(double value) { SetValue(value); return *this;}
@@ -93,10 +89,10 @@ namespace Model
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    Operation m_operation;
+    Operation m_operation{Operation::NOT_SET};
     bool m_operationHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

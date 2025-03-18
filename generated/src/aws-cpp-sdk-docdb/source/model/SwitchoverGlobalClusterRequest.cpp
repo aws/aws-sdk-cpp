@@ -10,12 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-SwitchoverGlobalClusterRequest::SwitchoverGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_targetDbClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String SwitchoverGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

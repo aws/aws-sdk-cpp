@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DvbSdtSettings::DvbSdtSettings() : 
-    m_outputSdt(DvbSdtOutputSdt::NOT_SET),
-    m_outputSdtHasBeenSet(false),
-    m_repInterval(0),
-    m_repIntervalHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceProviderNameHasBeenSet(false)
-{
-}
-
 DvbSdtSettings::DvbSdtSettings(JsonView jsonValue)
-  : DvbSdtSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DvbSdtSettings& DvbSdtSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("outputSdt"))
   {
     m_outputSdt = DvbSdtOutputSdtMapper::GetDvbSdtOutputSdtForName(jsonValue.GetString("outputSdt"));
-
     m_outputSdtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repInterval"))
   {
     m_repInterval = jsonValue.GetInteger("repInterval");
-
     m_repIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceProviderName"))
   {
     m_serviceProviderName = jsonValue.GetString("serviceProviderName");
-
     m_serviceProviderNameHasBeenSet = true;
   }
-
   return *this;
 }
 

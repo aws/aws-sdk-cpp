@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcConnectionRequest::DeleteVpcConnectionRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcConnectionRequest::SerializePayload() const
 {
   return {};

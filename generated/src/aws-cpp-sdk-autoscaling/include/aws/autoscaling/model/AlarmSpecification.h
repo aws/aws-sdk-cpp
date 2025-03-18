@@ -33,7 +33,7 @@ namespace Model
   class AlarmSpecification
   {
   public:
-    AWS_AUTOSCALING_API AlarmSpecification();
+    AWS_AUTOSCALING_API AlarmSpecification() = default;
     AWS_AUTOSCALING_API AlarmSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API AlarmSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,15 +46,14 @@ namespace Model
      * <p>The names of one or more CloudWatch alarms to monitor for the instance
      * refresh. You can specify up to 10 alarms.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
+    inline const Aws::Vector<Aws::String>& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const Aws::Vector<Aws::String>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline AlarmSpecification& WithAlarms(const Aws::Vector<Aws::String>& value) { SetAlarms(value); return *this;}
-    inline AlarmSpecification& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
-    inline AlarmSpecification& AddAlarms(const Aws::String& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
-    inline AlarmSpecification& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
-    inline AlarmSpecification& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    template<typename AlarmsT = Aws::Vector<Aws::String>>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Aws::Vector<Aws::String>>
+    AlarmSpecification& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
+    template<typename AlarmsT = Aws::String>
+    AlarmSpecification& AddAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms.emplace_back(std::forward<AlarmsT>(value)); return *this; }
     ///@}
   private:
 

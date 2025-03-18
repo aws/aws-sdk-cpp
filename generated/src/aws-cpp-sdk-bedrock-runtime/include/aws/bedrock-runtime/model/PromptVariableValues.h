@@ -35,7 +35,7 @@ namespace Model
   class PromptVariableValues
   {
   public:
-    AWS_BEDROCKRUNTIME_API PromptVariableValues();
+    AWS_BEDROCKRUNTIME_API PromptVariableValues() = default;
     AWS_BEDROCKRUNTIME_API PromptVariableValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API PromptVariableValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The text value that the variable maps to.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline PromptVariableValues& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline PromptVariableValues& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline PromptVariableValues& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    PromptVariableValues& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

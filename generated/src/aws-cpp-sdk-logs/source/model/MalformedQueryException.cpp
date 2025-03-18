@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-MalformedQueryException::MalformedQueryException() : 
-    m_queryCompileErrorHasBeenSet(false)
-{
-}
-
 MalformedQueryException::MalformedQueryException(JsonView jsonValue)
-  : MalformedQueryException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MalformedQueryException& MalformedQueryException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queryCompileError"))
   {
     m_queryCompileError = jsonValue.GetObject("queryCompileError");
-
     m_queryCompileErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

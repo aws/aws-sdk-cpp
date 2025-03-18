@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AdapterVersionEvaluationMetric::AdapterVersionEvaluationMetric() : 
-    m_baselineHasBeenSet(false),
-    m_adapterVersionHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false)
-{
-}
-
 AdapterVersionEvaluationMetric::AdapterVersionEvaluationMetric(JsonView jsonValue)
-  : AdapterVersionEvaluationMetric()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AdapterVersionEvaluationMetric& AdapterVersionEvaluationMetric::operator =(JsonV
   if(jsonValue.ValueExists("Baseline"))
   {
     m_baseline = jsonValue.GetObject("Baseline");
-
     m_baselineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdapterVersion"))
   {
     m_adapterVersion = jsonValue.GetObject("AdapterVersion");
-
     m_adapterVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureType"))
   {
     m_featureType = FeatureTypeMapper::GetFeatureTypeForName(jsonValue.GetString("FeatureType"));
-
     m_featureTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

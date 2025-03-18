@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-MultiConditionalSplitActivity::MultiConditionalSplitActivity() : 
-    m_branchesHasBeenSet(false),
-    m_defaultActivityHasBeenSet(false),
-    m_evaluationWaitTimeHasBeenSet(false)
-{
-}
-
 MultiConditionalSplitActivity::MultiConditionalSplitActivity(JsonView jsonValue)
-  : MultiConditionalSplitActivity()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ MultiConditionalSplitActivity& MultiConditionalSplitActivity::operator =(JsonVie
     }
     m_branchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultActivity"))
   {
     m_defaultActivity = jsonValue.GetString("DefaultActivity");
-
     m_defaultActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationWaitTime"))
   {
     m_evaluationWaitTime = jsonValue.GetObject("EvaluationWaitTime");
-
     m_evaluationWaitTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

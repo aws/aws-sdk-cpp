@@ -18,14 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-ResourcePathComponent::ResourcePathComponent() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ResourcePathComponent::ResourcePathComponent(JsonView jsonValue)
-  : ResourcePathComponent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourcePathComponent& ResourcePathComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

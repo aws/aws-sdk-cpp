@@ -31,7 +31,7 @@ namespace Model
   class AudioCodecOptions
   {
   public:
-    AWS_ELASTICTRANSCODER_API AudioCodecOptions();
+    AWS_ELASTICTRANSCODER_API AudioCodecOptions() = default;
     AWS_ELASTICTRANSCODER_API AudioCodecOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API AudioCodecOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * profiles were added, Elastic Transcoder automatically updated your presets to
      * use AAC-LC. You can change the value as required.</p> 
      */
-    inline const Aws::String& GetProfile() const{ return m_profile; }
+    inline const Aws::String& GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const Aws::String& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(Aws::String&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline void SetProfile(const char* value) { m_profileHasBeenSet = true; m_profile.assign(value); }
-    inline AudioCodecOptions& WithProfile(const Aws::String& value) { SetProfile(value); return *this;}
-    inline AudioCodecOptions& WithProfile(Aws::String&& value) { SetProfile(std::move(value)); return *this;}
-    inline AudioCodecOptions& WithProfile(const char* value) { SetProfile(value); return *this;}
+    template<typename ProfileT = Aws::String>
+    void SetProfile(ProfileT&& value) { m_profileHasBeenSet = true; m_profile = std::forward<ProfileT>(value); }
+    template<typename ProfileT = Aws::String>
+    AudioCodecOptions& WithProfile(ProfileT&& value) { SetProfile(std::forward<ProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * values are <code>16</code> and <code>24</code>.</p> <p>The most common bit depth
      * is <code>24</code>.</p>
      */
-    inline const Aws::String& GetBitDepth() const{ return m_bitDepth; }
+    inline const Aws::String& GetBitDepth() const { return m_bitDepth; }
     inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
-    inline void SetBitDepth(const Aws::String& value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
-    inline void SetBitDepth(Aws::String&& value) { m_bitDepthHasBeenSet = true; m_bitDepth = std::move(value); }
-    inline void SetBitDepth(const char* value) { m_bitDepthHasBeenSet = true; m_bitDepth.assign(value); }
-    inline AudioCodecOptions& WithBitDepth(const Aws::String& value) { SetBitDepth(value); return *this;}
-    inline AudioCodecOptions& WithBitDepth(Aws::String&& value) { SetBitDepth(std::move(value)); return *this;}
-    inline AudioCodecOptions& WithBitDepth(const char* value) { SetBitDepth(value); return *this;}
+    template<typename BitDepthT = Aws::String>
+    void SetBitDepth(BitDepthT&& value) { m_bitDepthHasBeenSet = true; m_bitDepth = std::forward<BitDepthT>(value); }
+    template<typename BitDepthT = Aws::String>
+    AudioCodecOptions& WithBitDepth(BitDepthT&& value) { SetBitDepth(std::forward<BitDepthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * the value of Audio:Codec.</p> <p>The order the bits of a PCM sample are stored
      * in.</p> <p>The supported value is <code>LittleEndian</code>.</p>
      */
-    inline const Aws::String& GetBitOrder() const{ return m_bitOrder; }
+    inline const Aws::String& GetBitOrder() const { return m_bitOrder; }
     inline bool BitOrderHasBeenSet() const { return m_bitOrderHasBeenSet; }
-    inline void SetBitOrder(const Aws::String& value) { m_bitOrderHasBeenSet = true; m_bitOrder = value; }
-    inline void SetBitOrder(Aws::String&& value) { m_bitOrderHasBeenSet = true; m_bitOrder = std::move(value); }
-    inline void SetBitOrder(const char* value) { m_bitOrderHasBeenSet = true; m_bitOrder.assign(value); }
-    inline AudioCodecOptions& WithBitOrder(const Aws::String& value) { SetBitOrder(value); return *this;}
-    inline AudioCodecOptions& WithBitOrder(Aws::String&& value) { SetBitOrder(std::move(value)); return *this;}
-    inline AudioCodecOptions& WithBitOrder(const char* value) { SetBitOrder(value); return *this;}
+    template<typename BitOrderT = Aws::String>
+    void SetBitOrder(BitOrderT&& value) { m_bitOrderHasBeenSet = true; m_bitOrder = std::forward<BitOrderT>(value); }
+    template<typename BitOrderT = Aws::String>
+    AudioCodecOptions& WithBitOrder(BitOrderT&& value) { SetBitOrder(std::forward<BitOrderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +100,12 @@ namespace Model
      * represented with negative and positive numbers (signed) or only positive numbers
      * (unsigned).</p> <p>The supported value is <code>Signed</code>.</p>
      */
-    inline const Aws::String& GetSigned() const{ return m_signed; }
+    inline const Aws::String& GetSigned() const { return m_signed; }
     inline bool SignedHasBeenSet() const { return m_signedHasBeenSet; }
-    inline void SetSigned(const Aws::String& value) { m_signedHasBeenSet = true; m_signed = value; }
-    inline void SetSigned(Aws::String&& value) { m_signedHasBeenSet = true; m_signed = std::move(value); }
-    inline void SetSigned(const char* value) { m_signedHasBeenSet = true; m_signed.assign(value); }
-    inline AudioCodecOptions& WithSigned(const Aws::String& value) { SetSigned(value); return *this;}
-    inline AudioCodecOptions& WithSigned(Aws::String&& value) { SetSigned(std::move(value)); return *this;}
-    inline AudioCodecOptions& WithSigned(const char* value) { SetSigned(value); return *this;}
+    template<typename SignedT = Aws::String>
+    void SetSigned(SignedT&& value) { m_signedHasBeenSet = true; m_signed = std::forward<SignedT>(value); }
+    template<typename SignedT = Aws::String>
+    AudioCodecOptions& WithSigned(SignedT&& value) { SetSigned(std::forward<SignedT>(value)); return *this;}
     ///@}
   private:
 

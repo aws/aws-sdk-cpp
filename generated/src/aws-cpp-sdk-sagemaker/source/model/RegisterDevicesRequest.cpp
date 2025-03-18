@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDevicesRequest::RegisterDevicesRequest() : 
-    m_deviceFleetNameHasBeenSet(false),
-    m_devicesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteUniqueIdRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API BatchDeleteUniqueIdRequest();
+    AWS_ENTITYRESOLUTION_API BatchDeleteUniqueIdRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,43 +39,38 @@ namespace Model
     /**
      * <p>The input source for the batch delete unique ID operation.</p>
      */
-    inline const Aws::String& GetInputSource() const{ return m_inputSource; }
+    inline const Aws::String& GetInputSource() const { return m_inputSource; }
     inline bool InputSourceHasBeenSet() const { return m_inputSourceHasBeenSet; }
-    inline void SetInputSource(const Aws::String& value) { m_inputSourceHasBeenSet = true; m_inputSource = value; }
-    inline void SetInputSource(Aws::String&& value) { m_inputSourceHasBeenSet = true; m_inputSource = std::move(value); }
-    inline void SetInputSource(const char* value) { m_inputSourceHasBeenSet = true; m_inputSource.assign(value); }
-    inline BatchDeleteUniqueIdRequest& WithInputSource(const Aws::String& value) { SetInputSource(value); return *this;}
-    inline BatchDeleteUniqueIdRequest& WithInputSource(Aws::String&& value) { SetInputSource(std::move(value)); return *this;}
-    inline BatchDeleteUniqueIdRequest& WithInputSource(const char* value) { SetInputSource(value); return *this;}
+    template<typename InputSourceT = Aws::String>
+    void SetInputSource(InputSourceT&& value) { m_inputSourceHasBeenSet = true; m_inputSource = std::forward<InputSourceT>(value); }
+    template<typename InputSourceT = Aws::String>
+    BatchDeleteUniqueIdRequest& WithInputSource(InputSourceT&& value) { SetInputSource(std::forward<InputSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique IDs to delete.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUniqueIds() const{ return m_uniqueIds; }
+    inline const Aws::Vector<Aws::String>& GetUniqueIds() const { return m_uniqueIds; }
     inline bool UniqueIdsHasBeenSet() const { return m_uniqueIdsHasBeenSet; }
-    inline void SetUniqueIds(const Aws::Vector<Aws::String>& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds = value; }
-    inline void SetUniqueIds(Aws::Vector<Aws::String>&& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds = std::move(value); }
-    inline BatchDeleteUniqueIdRequest& WithUniqueIds(const Aws::Vector<Aws::String>& value) { SetUniqueIds(value); return *this;}
-    inline BatchDeleteUniqueIdRequest& WithUniqueIds(Aws::Vector<Aws::String>&& value) { SetUniqueIds(std::move(value)); return *this;}
-    inline BatchDeleteUniqueIdRequest& AddUniqueIds(const Aws::String& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds.push_back(value); return *this; }
-    inline BatchDeleteUniqueIdRequest& AddUniqueIds(Aws::String&& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteUniqueIdRequest& AddUniqueIds(const char* value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds.push_back(value); return *this; }
+    template<typename UniqueIdsT = Aws::Vector<Aws::String>>
+    void SetUniqueIds(UniqueIdsT&& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds = std::forward<UniqueIdsT>(value); }
+    template<typename UniqueIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteUniqueIdRequest& WithUniqueIds(UniqueIdsT&& value) { SetUniqueIds(std::forward<UniqueIdsT>(value)); return *this;}
+    template<typename UniqueIdsT = Aws::String>
+    BatchDeleteUniqueIdRequest& AddUniqueIds(UniqueIdsT&& value) { m_uniqueIdsHasBeenSet = true; m_uniqueIds.emplace_back(std::forward<UniqueIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-    inline BatchDeleteUniqueIdRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline BatchDeleteUniqueIdRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline BatchDeleteUniqueIdRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    BatchDeleteUniqueIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
   private:
 

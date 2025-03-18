@@ -12,14 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDomainRequest::RegisterDomainRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_workflowExecutionRetentionPeriodInDaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDomainRequest::SerializePayload() const
 {
   JsonValue payload;

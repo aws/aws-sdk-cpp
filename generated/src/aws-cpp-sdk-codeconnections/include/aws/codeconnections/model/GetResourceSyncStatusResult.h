@@ -29,7 +29,7 @@ namespace Model
   class GetResourceSyncStatusResult
   {
   public:
-    AWS_CODECONNECTIONS_API GetResourceSyncStatusResult();
+    AWS_CODECONNECTIONS_API GetResourceSyncStatusResult() = default;
     AWS_CODECONNECTIONS_API GetResourceSyncStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECONNECTIONS_API GetResourceSyncStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,22 +39,22 @@ namespace Model
      * <p>The desired state of the Amazon Web Services resource for the sync status
      * with the Git repository.</p>
      */
-    inline const Revision& GetDesiredState() const{ return m_desiredState; }
-    inline void SetDesiredState(const Revision& value) { m_desiredState = value; }
-    inline void SetDesiredState(Revision&& value) { m_desiredState = std::move(value); }
-    inline GetResourceSyncStatusResult& WithDesiredState(const Revision& value) { SetDesiredState(value); return *this;}
-    inline GetResourceSyncStatusResult& WithDesiredState(Revision&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline const Revision& GetDesiredState() const { return m_desiredState; }
+    template<typename DesiredStateT = Revision>
+    void SetDesiredState(DesiredStateT&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::forward<DesiredStateT>(value); }
+    template<typename DesiredStateT = Revision>
+    GetResourceSyncStatusResult& WithDesiredState(DesiredStateT&& value) { SetDesiredState(std::forward<DesiredStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest successful sync for the sync status with the Git repository.</p>
      */
-    inline const ResourceSyncAttempt& GetLatestSuccessfulSync() const{ return m_latestSuccessfulSync; }
-    inline void SetLatestSuccessfulSync(const ResourceSyncAttempt& value) { m_latestSuccessfulSync = value; }
-    inline void SetLatestSuccessfulSync(ResourceSyncAttempt&& value) { m_latestSuccessfulSync = std::move(value); }
-    inline GetResourceSyncStatusResult& WithLatestSuccessfulSync(const ResourceSyncAttempt& value) { SetLatestSuccessfulSync(value); return *this;}
-    inline GetResourceSyncStatusResult& WithLatestSuccessfulSync(ResourceSyncAttempt&& value) { SetLatestSuccessfulSync(std::move(value)); return *this;}
+    inline const ResourceSyncAttempt& GetLatestSuccessfulSync() const { return m_latestSuccessfulSync; }
+    template<typename LatestSuccessfulSyncT = ResourceSyncAttempt>
+    void SetLatestSuccessfulSync(LatestSuccessfulSyncT&& value) { m_latestSuccessfulSyncHasBeenSet = true; m_latestSuccessfulSync = std::forward<LatestSuccessfulSyncT>(value); }
+    template<typename LatestSuccessfulSyncT = ResourceSyncAttempt>
+    GetResourceSyncStatusResult& WithLatestSuccessfulSync(LatestSuccessfulSyncT&& value) { SetLatestSuccessfulSync(std::forward<LatestSuccessfulSyncT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,32 +62,34 @@ namespace Model
      * <p>The latest sync for the sync status with the Git repository, whether
      * successful or not.</p>
      */
-    inline const ResourceSyncAttempt& GetLatestSync() const{ return m_latestSync; }
-    inline void SetLatestSync(const ResourceSyncAttempt& value) { m_latestSync = value; }
-    inline void SetLatestSync(ResourceSyncAttempt&& value) { m_latestSync = std::move(value); }
-    inline GetResourceSyncStatusResult& WithLatestSync(const ResourceSyncAttempt& value) { SetLatestSync(value); return *this;}
-    inline GetResourceSyncStatusResult& WithLatestSync(ResourceSyncAttempt&& value) { SetLatestSync(std::move(value)); return *this;}
+    inline const ResourceSyncAttempt& GetLatestSync() const { return m_latestSync; }
+    template<typename LatestSyncT = ResourceSyncAttempt>
+    void SetLatestSync(LatestSyncT&& value) { m_latestSyncHasBeenSet = true; m_latestSync = std::forward<LatestSyncT>(value); }
+    template<typename LatestSyncT = ResourceSyncAttempt>
+    GetResourceSyncStatusResult& WithLatestSync(LatestSyncT&& value) { SetLatestSync(std::forward<LatestSyncT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceSyncStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceSyncStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceSyncStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceSyncStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Revision m_desiredState;
+    bool m_desiredStateHasBeenSet = false;
 
     ResourceSyncAttempt m_latestSuccessfulSync;
+    bool m_latestSuccessfulSyncHasBeenSet = false;
 
     ResourceSyncAttempt m_latestSync;
+    bool m_latestSyncHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

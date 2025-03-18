@@ -18,17 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HealthCheckConfig::HealthCheckConfig() : 
-    m_type(HealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcePathHasBeenSet(false),
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false)
-{
-}
-
 HealthCheckConfig::HealthCheckConfig(JsonView jsonValue)
-  : HealthCheckConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ HealthCheckConfig& HealthCheckConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = HealthCheckTypeMapper::GetHealthCheckTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourcePath"))
   {
     m_resourcePath = jsonValue.GetString("ResourcePath");
-
     m_resourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureThreshold"))
   {
     m_failureThreshold = jsonValue.GetInteger("FailureThreshold");
-
     m_failureThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

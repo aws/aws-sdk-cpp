@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFeedbackResult::DescribeFeedbackResult()
-{
-}
-
 DescribeFeedbackResult::DescribeFeedbackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFeedbackResult& DescribeFeedbackResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("InsightFeedback"))
   {
     m_insightFeedback = jsonValue.GetObject("InsightFeedback");
-
+    m_insightFeedbackHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

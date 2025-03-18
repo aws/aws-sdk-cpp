@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteHsmClientCertificateRequest::DeleteHsmClientCertificateRequest() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

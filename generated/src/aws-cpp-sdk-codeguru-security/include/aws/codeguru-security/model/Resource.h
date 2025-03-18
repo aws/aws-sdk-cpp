@@ -32,7 +32,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_CODEGURUSECURITY_API Resource();
+    AWS_CODEGURUSECURITY_API Resource() = default;
     AWS_CODEGURUSECURITY_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The <code>scanName</code> of the scan that was run on the resource.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Resource& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Resource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Resource& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Resource& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a section of the resource.</p>
      */
-    inline const Aws::String& GetSubResourceId() const{ return m_subResourceId; }
+    inline const Aws::String& GetSubResourceId() const { return m_subResourceId; }
     inline bool SubResourceIdHasBeenSet() const { return m_subResourceIdHasBeenSet; }
-    inline void SetSubResourceId(const Aws::String& value) { m_subResourceIdHasBeenSet = true; m_subResourceId = value; }
-    inline void SetSubResourceId(Aws::String&& value) { m_subResourceIdHasBeenSet = true; m_subResourceId = std::move(value); }
-    inline void SetSubResourceId(const char* value) { m_subResourceIdHasBeenSet = true; m_subResourceId.assign(value); }
-    inline Resource& WithSubResourceId(const Aws::String& value) { SetSubResourceId(value); return *this;}
-    inline Resource& WithSubResourceId(Aws::String&& value) { SetSubResourceId(std::move(value)); return *this;}
-    inline Resource& WithSubResourceId(const char* value) { SetSubResourceId(value); return *this;}
+    template<typename SubResourceIdT = Aws::String>
+    void SetSubResourceId(SubResourceIdT&& value) { m_subResourceIdHasBeenSet = true; m_subResourceId = std::forward<SubResourceIdT>(value); }
+    template<typename SubResourceIdT = Aws::String>
+    Resource& WithSubResourceId(SubResourceIdT&& value) { SetSubResourceId(std::forward<SubResourceIdT>(value)); return *this;}
     ///@}
   private:
 

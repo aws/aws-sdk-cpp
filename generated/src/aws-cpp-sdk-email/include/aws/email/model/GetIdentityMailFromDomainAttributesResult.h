@@ -36,7 +36,7 @@ namespace Model
   class GetIdentityMailFromDomainAttributesResult
   {
   public:
-    AWS_SES_API GetIdentityMailFromDomainAttributesResult();
+    AWS_SES_API GetIdentityMailFromDomainAttributesResult() = default;
     AWS_SES_API GetIdentityMailFromDomainAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API GetIdentityMailFromDomainAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,32 +45,32 @@ namespace Model
     /**
      * <p>A map of identities to custom MAIL FROM attributes.</p>
      */
-    inline const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& GetMailFromDomainAttributes() const{ return m_mailFromDomainAttributes; }
-    inline void SetMailFromDomainAttributes(const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& value) { m_mailFromDomainAttributes = value; }
-    inline void SetMailFromDomainAttributes(Aws::Map<Aws::String, IdentityMailFromDomainAttributes>&& value) { m_mailFromDomainAttributes = std::move(value); }
-    inline GetIdentityMailFromDomainAttributesResult& WithMailFromDomainAttributes(const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& value) { SetMailFromDomainAttributes(value); return *this;}
-    inline GetIdentityMailFromDomainAttributesResult& WithMailFromDomainAttributes(Aws::Map<Aws::String, IdentityMailFromDomainAttributes>&& value) { SetMailFromDomainAttributes(std::move(value)); return *this;}
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const Aws::String& key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(key, value); return *this; }
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(Aws::String&& key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(std::move(key), value); return *this; }
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const Aws::String& key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(key, std::move(value)); return *this; }
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(Aws::String&& key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const char* key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(key, std::move(value)); return *this; }
-    inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const char* key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& GetMailFromDomainAttributes() const { return m_mailFromDomainAttributes; }
+    template<typename MailFromDomainAttributesT = Aws::Map<Aws::String, IdentityMailFromDomainAttributes>>
+    void SetMailFromDomainAttributes(MailFromDomainAttributesT&& value) { m_mailFromDomainAttributesHasBeenSet = true; m_mailFromDomainAttributes = std::forward<MailFromDomainAttributesT>(value); }
+    template<typename MailFromDomainAttributesT = Aws::Map<Aws::String, IdentityMailFromDomainAttributes>>
+    GetIdentityMailFromDomainAttributesResult& WithMailFromDomainAttributes(MailFromDomainAttributesT&& value) { SetMailFromDomainAttributes(std::forward<MailFromDomainAttributesT>(value)); return *this;}
+    template<typename MailFromDomainAttributesKeyT = Aws::String, typename MailFromDomainAttributesValueT = IdentityMailFromDomainAttributes>
+    GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(MailFromDomainAttributesKeyT&& key, MailFromDomainAttributesValueT&& value) {
+      m_mailFromDomainAttributesHasBeenSet = true; m_mailFromDomainAttributes.emplace(std::forward<MailFromDomainAttributesKeyT>(key), std::forward<MailFromDomainAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetIdentityMailFromDomainAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetIdentityMailFromDomainAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetIdentityMailFromDomainAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, IdentityMailFromDomainAttributes> m_mailFromDomainAttributes;
+    bool m_mailFromDomainAttributesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

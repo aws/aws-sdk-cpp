@@ -18,18 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-IdleUtilizationMetric::IdleUtilizationMetric() : 
-    m_name(IdleMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 IdleUtilizationMetric::IdleUtilizationMetric(JsonView jsonValue)
-  : IdleUtilizationMetric()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ IdleUtilizationMetric& IdleUtilizationMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = IdleMetricNameMapper::GetIdleMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = MetricStatisticMapper::GetMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

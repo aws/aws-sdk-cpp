@@ -21,7 +21,7 @@ namespace Model
   class ConfirmTopicRuleDestinationRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ConfirmTopicRuleDestinationRequest();
+    AWS_IOT_API ConfirmTopicRuleDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The token used to confirm ownership or access to the topic rule confirmation
      * URL.</p>
      */
-    inline const Aws::String& GetConfirmationToken() const{ return m_confirmationToken; }
+    inline const Aws::String& GetConfirmationToken() const { return m_confirmationToken; }
     inline bool ConfirmationTokenHasBeenSet() const { return m_confirmationTokenHasBeenSet; }
-    inline void SetConfirmationToken(const Aws::String& value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken = value; }
-    inline void SetConfirmationToken(Aws::String&& value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken = std::move(value); }
-    inline void SetConfirmationToken(const char* value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken.assign(value); }
-    inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(const Aws::String& value) { SetConfirmationToken(value); return *this;}
-    inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(Aws::String&& value) { SetConfirmationToken(std::move(value)); return *this;}
-    inline ConfirmTopicRuleDestinationRequest& WithConfirmationToken(const char* value) { SetConfirmationToken(value); return *this;}
+    template<typename ConfirmationTokenT = Aws::String>
+    void SetConfirmationToken(ConfirmationTokenT&& value) { m_confirmationTokenHasBeenSet = true; m_confirmationToken = std::forward<ConfirmationTokenT>(value); }
+    template<typename ConfirmationTokenT = Aws::String>
+    ConfirmTopicRuleDestinationRequest& WithConfirmationToken(ConfirmationTokenT&& value) { SetConfirmationToken(std::forward<ConfirmationTokenT>(value)); return *this;}
     ///@}
   private:
 

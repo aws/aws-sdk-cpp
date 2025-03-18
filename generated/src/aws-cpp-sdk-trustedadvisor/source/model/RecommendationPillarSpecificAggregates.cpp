@@ -18,13 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationPillarSpecificAggregates::RecommendationPillarSpecificAggregates() : 
-    m_costOptimizingHasBeenSet(false)
-{
-}
-
 RecommendationPillarSpecificAggregates::RecommendationPillarSpecificAggregates(JsonView jsonValue)
-  : RecommendationPillarSpecificAggregates()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecommendationPillarSpecificAggregates& RecommendationPillarSpecificAggregates::
   if(jsonValue.ValueExists("costOptimizing"))
   {
     m_costOptimizing = jsonValue.GetObject("costOptimizing");
-
     m_costOptimizingHasBeenSet = true;
   }
-
   return *this;
 }
 

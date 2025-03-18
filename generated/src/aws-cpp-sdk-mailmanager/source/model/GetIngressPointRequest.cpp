@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIngressPointRequest::GetIngressPointRequest() : 
-    m_ingressPointIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIngressPointRequest::SerializePayload() const
 {
   JsonValue payload;

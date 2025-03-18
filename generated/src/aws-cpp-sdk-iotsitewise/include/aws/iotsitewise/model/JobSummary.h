@@ -32,7 +32,7 @@ namespace Model
   class JobSummary
   {
   public:
-    AWS_IOTSITEWISE_API JobSummary();
+    AWS_IOTSITEWISE_API JobSummary() = default;
     AWS_IOTSITEWISE_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the job.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline JobSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline JobSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline JobSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    JobSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name that helps identify the job request.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline JobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline JobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline JobSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    JobSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * You can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> </ul>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JobSummary& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline JobSummary& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobSummary& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -97,7 +91,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

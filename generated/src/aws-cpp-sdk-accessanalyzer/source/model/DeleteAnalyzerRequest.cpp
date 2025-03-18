@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAnalyzerRequest::DeleteAnalyzerRequest() : 
-    m_analyzerNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteAnalyzerRequest::SerializePayload() const
 {
   return {};

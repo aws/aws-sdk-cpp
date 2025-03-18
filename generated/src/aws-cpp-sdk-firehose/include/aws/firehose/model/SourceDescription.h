@@ -35,7 +35,7 @@ namespace Model
   class SourceDescription
   {
   public:
-    AWS_FIREHOSE_API SourceDescription();
+    AWS_FIREHOSE_API SourceDescription() = default;
     AWS_FIREHOSE_API SourceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API SourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Details about Direct PUT used as the source for a Firehose stream. </p>
      */
-    inline const DirectPutSourceDescription& GetDirectPutSourceDescription() const{ return m_directPutSourceDescription; }
+    inline const DirectPutSourceDescription& GetDirectPutSourceDescription() const { return m_directPutSourceDescription; }
     inline bool DirectPutSourceDescriptionHasBeenSet() const { return m_directPutSourceDescriptionHasBeenSet; }
-    inline void SetDirectPutSourceDescription(const DirectPutSourceDescription& value) { m_directPutSourceDescriptionHasBeenSet = true; m_directPutSourceDescription = value; }
-    inline void SetDirectPutSourceDescription(DirectPutSourceDescription&& value) { m_directPutSourceDescriptionHasBeenSet = true; m_directPutSourceDescription = std::move(value); }
-    inline SourceDescription& WithDirectPutSourceDescription(const DirectPutSourceDescription& value) { SetDirectPutSourceDescription(value); return *this;}
-    inline SourceDescription& WithDirectPutSourceDescription(DirectPutSourceDescription&& value) { SetDirectPutSourceDescription(std::move(value)); return *this;}
+    template<typename DirectPutSourceDescriptionT = DirectPutSourceDescription>
+    void SetDirectPutSourceDescription(DirectPutSourceDescriptionT&& value) { m_directPutSourceDescriptionHasBeenSet = true; m_directPutSourceDescription = std::forward<DirectPutSourceDescriptionT>(value); }
+    template<typename DirectPutSourceDescriptionT = DirectPutSourceDescription>
+    SourceDescription& WithDirectPutSourceDescription(DirectPutSourceDescriptionT&& value) { SetDirectPutSourceDescription(std::forward<DirectPutSourceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
-    inline const KinesisStreamSourceDescription& GetKinesisStreamSourceDescription() const{ return m_kinesisStreamSourceDescription; }
+    inline const KinesisStreamSourceDescription& GetKinesisStreamSourceDescription() const { return m_kinesisStreamSourceDescription; }
     inline bool KinesisStreamSourceDescriptionHasBeenSet() const { return m_kinesisStreamSourceDescriptionHasBeenSet; }
-    inline void SetKinesisStreamSourceDescription(const KinesisStreamSourceDescription& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = value; }
-    inline void SetKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = std::move(value); }
-    inline SourceDescription& WithKinesisStreamSourceDescription(const KinesisStreamSourceDescription& value) { SetKinesisStreamSourceDescription(value); return *this;}
-    inline SourceDescription& WithKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { SetKinesisStreamSourceDescription(std::move(value)); return *this;}
+    template<typename KinesisStreamSourceDescriptionT = KinesisStreamSourceDescription>
+    void SetKinesisStreamSourceDescription(KinesisStreamSourceDescriptionT&& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = std::forward<KinesisStreamSourceDescriptionT>(value); }
+    template<typename KinesisStreamSourceDescriptionT = KinesisStreamSourceDescription>
+    SourceDescription& WithKinesisStreamSourceDescription(KinesisStreamSourceDescriptionT&& value) { SetKinesisStreamSourceDescription(std::forward<KinesisStreamSourceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>The configuration description for the Amazon MSK cluster to be used as the
      * source for a delivery stream.</p>
      */
-    inline const MSKSourceDescription& GetMSKSourceDescription() const{ return m_mSKSourceDescription; }
+    inline const MSKSourceDescription& GetMSKSourceDescription() const { return m_mSKSourceDescription; }
     inline bool MSKSourceDescriptionHasBeenSet() const { return m_mSKSourceDescriptionHasBeenSet; }
-    inline void SetMSKSourceDescription(const MSKSourceDescription& value) { m_mSKSourceDescriptionHasBeenSet = true; m_mSKSourceDescription = value; }
-    inline void SetMSKSourceDescription(MSKSourceDescription&& value) { m_mSKSourceDescriptionHasBeenSet = true; m_mSKSourceDescription = std::move(value); }
-    inline SourceDescription& WithMSKSourceDescription(const MSKSourceDescription& value) { SetMSKSourceDescription(value); return *this;}
-    inline SourceDescription& WithMSKSourceDescription(MSKSourceDescription&& value) { SetMSKSourceDescription(std::move(value)); return *this;}
+    template<typename MSKSourceDescriptionT = MSKSourceDescription>
+    void SetMSKSourceDescription(MSKSourceDescriptionT&& value) { m_mSKSourceDescriptionHasBeenSet = true; m_mSKSourceDescription = std::forward<MSKSourceDescriptionT>(value); }
+    template<typename MSKSourceDescriptionT = MSKSourceDescription>
+    SourceDescription& WithMSKSourceDescription(MSKSourceDescriptionT&& value) { SetMSKSourceDescription(std::forward<MSKSourceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +84,12 @@ namespace Model
      * <p>Details about a database used as the source for a Firehose stream.</p>
      * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
-    inline const DatabaseSourceDescription& GetDatabaseSourceDescription() const{ return m_databaseSourceDescription; }
+    inline const DatabaseSourceDescription& GetDatabaseSourceDescription() const { return m_databaseSourceDescription; }
     inline bool DatabaseSourceDescriptionHasBeenSet() const { return m_databaseSourceDescriptionHasBeenSet; }
-    inline void SetDatabaseSourceDescription(const DatabaseSourceDescription& value) { m_databaseSourceDescriptionHasBeenSet = true; m_databaseSourceDescription = value; }
-    inline void SetDatabaseSourceDescription(DatabaseSourceDescription&& value) { m_databaseSourceDescriptionHasBeenSet = true; m_databaseSourceDescription = std::move(value); }
-    inline SourceDescription& WithDatabaseSourceDescription(const DatabaseSourceDescription& value) { SetDatabaseSourceDescription(value); return *this;}
-    inline SourceDescription& WithDatabaseSourceDescription(DatabaseSourceDescription&& value) { SetDatabaseSourceDescription(std::move(value)); return *this;}
+    template<typename DatabaseSourceDescriptionT = DatabaseSourceDescription>
+    void SetDatabaseSourceDescription(DatabaseSourceDescriptionT&& value) { m_databaseSourceDescriptionHasBeenSet = true; m_databaseSourceDescription = std::forward<DatabaseSourceDescriptionT>(value); }
+    template<typename DatabaseSourceDescriptionT = DatabaseSourceDescription>
+    SourceDescription& WithDatabaseSourceDescription(DatabaseSourceDescriptionT&& value) { SetDatabaseSourceDescription(std::forward<DatabaseSourceDescriptionT>(value)); return *this;}
     ///@}
   private:
 

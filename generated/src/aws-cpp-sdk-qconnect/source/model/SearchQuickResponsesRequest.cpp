@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchQuickResponsesRequest::SearchQuickResponsesRequest() : 
-    m_attributesHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_searchExpressionHasBeenSet(false)
-{
-}
-
 Aws::String SearchQuickResponsesRequest::SerializePayload() const
 {
   JsonValue payload;

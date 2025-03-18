@@ -32,7 +32,7 @@ namespace Model
   class CustomVocabularyEntryId
   {
   public:
-    AWS_LEXMODELSV2_API CustomVocabularyEntryId();
+    AWS_LEXMODELSV2_API CustomVocabularyEntryId() = default;
     AWS_LEXMODELSV2_API CustomVocabularyEntryId(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API CustomVocabularyEntryId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique item identifier for the custom vocabulary items.</p>
      */
-    inline const Aws::String& GetItemId() const{ return m_itemId; }
+    inline const Aws::String& GetItemId() const { return m_itemId; }
     inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
-    inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
-    inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
-    inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
-    inline CustomVocabularyEntryId& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
-    inline CustomVocabularyEntryId& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
-    inline CustomVocabularyEntryId& WithItemId(const char* value) { SetItemId(value); return *this;}
+    template<typename ItemIdT = Aws::String>
+    void SetItemId(ItemIdT&& value) { m_itemIdHasBeenSet = true; m_itemId = std::forward<ItemIdT>(value); }
+    template<typename ItemIdT = Aws::String>
+    CustomVocabularyEntryId& WithItemId(ItemIdT&& value) { SetItemId(std::forward<ItemIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ChimeSdkMeetingConcatenationConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
      * concatenation.</p>
      */
-    inline const ArtifactsConcatenationConfiguration& GetArtifactsConfiguration() const{ return m_artifactsConfiguration; }
+    inline const ArtifactsConcatenationConfiguration& GetArtifactsConfiguration() const { return m_artifactsConfiguration; }
     inline bool ArtifactsConfigurationHasBeenSet() const { return m_artifactsConfigurationHasBeenSet; }
-    inline void SetArtifactsConfiguration(const ArtifactsConcatenationConfiguration& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = value; }
-    inline void SetArtifactsConfiguration(ArtifactsConcatenationConfiguration&& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = std::move(value); }
-    inline ChimeSdkMeetingConcatenationConfiguration& WithArtifactsConfiguration(const ArtifactsConcatenationConfiguration& value) { SetArtifactsConfiguration(value); return *this;}
-    inline ChimeSdkMeetingConcatenationConfiguration& WithArtifactsConfiguration(ArtifactsConcatenationConfiguration&& value) { SetArtifactsConfiguration(std::move(value)); return *this;}
+    template<typename ArtifactsConfigurationT = ArtifactsConcatenationConfiguration>
+    void SetArtifactsConfiguration(ArtifactsConfigurationT&& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = std::forward<ArtifactsConfigurationT>(value); }
+    template<typename ArtifactsConfigurationT = ArtifactsConcatenationConfiguration>
+    ChimeSdkMeetingConcatenationConfiguration& WithArtifactsConfiguration(ArtifactsConfigurationT&& value) { SetArtifactsConfiguration(std::forward<ArtifactsConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricCharacteristics::MetricCharacteristics() : 
-    m_periodicSpikes(false),
-    m_periodicSpikesHasBeenSet(false)
-{
-}
-
 MetricCharacteristics::MetricCharacteristics(const XmlNode& xmlNode)
-  : MetricCharacteristics()
 {
   *this = xmlNode;
 }

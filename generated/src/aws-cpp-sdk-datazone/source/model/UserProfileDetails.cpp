@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-UserProfileDetails::UserProfileDetails() : 
-    m_iamHasBeenSet(false),
-    m_ssoHasBeenSet(false)
-{
-}
-
 UserProfileDetails::UserProfileDetails(JsonView jsonValue)
-  : UserProfileDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserProfileDetails& UserProfileDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iam"))
   {
     m_iam = jsonValue.GetObject("iam");
-
     m_iamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sso"))
   {
     m_sso = jsonValue.GetObject("sso");
-
     m_ssoHasBeenSet = true;
   }
-
   return *this;
 }
 

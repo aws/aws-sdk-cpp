@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPolicyTemplatesResult::ListPolicyTemplatesResult()
-{
-}
-
 ListPolicyTemplatesResult::ListPolicyTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListPolicyTemplatesResult& ListPolicyTemplatesResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyTemplates"))
   {
     Aws::Utils::Array<JsonView> policyTemplatesJsonList = jsonValue.GetArray("policyTemplates");
@@ -42,14 +37,15 @@ ListPolicyTemplatesResult& ListPolicyTemplatesResult::operator =(const Aws::Amaz
     {
       m_policyTemplates.push_back(policyTemplatesJsonList[policyTemplatesIndex].AsObject());
     }
+    m_policyTemplatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyWorkspaceStateRequest::ModifyWorkspaceStateRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_workspaceState(TargetWorkspaceState::NOT_SET),
-    m_workspaceStateHasBeenSet(false)
-{
-}
-
 Aws::String ModifyWorkspaceStateRequest::SerializePayload() const
 {
   JsonValue payload;

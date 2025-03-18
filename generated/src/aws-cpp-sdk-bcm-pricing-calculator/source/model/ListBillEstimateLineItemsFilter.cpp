@@ -18,17 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-ListBillEstimateLineItemsFilter::ListBillEstimateLineItemsFilter() : 
-    m_name(ListBillEstimateLineItemsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_matchOption(MatchOption::NOT_SET),
-    m_matchOptionHasBeenSet(false)
-{
-}
-
 ListBillEstimateLineItemsFilter::ListBillEstimateLineItemsFilter(JsonView jsonValue)
-  : ListBillEstimateLineItemsFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ListBillEstimateLineItemsFilter& ListBillEstimateLineItemsFilter::operator =(Jso
   if(jsonValue.ValueExists("name"))
   {
     m_name = ListBillEstimateLineItemsFilterNameMapper::GetListBillEstimateLineItemsFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -51,14 +39,11 @@ ListBillEstimateLineItemsFilter& ListBillEstimateLineItemsFilter::operator =(Jso
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchOption"))
   {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("matchOption"));
-
     m_matchOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

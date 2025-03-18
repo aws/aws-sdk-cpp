@@ -28,7 +28,7 @@ namespace Model
   class PutSipMediaApplicationLoggingConfigurationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutSipMediaApplicationLoggingConfigurationResult();
+    AWS_CHIMESDKVOICE_API PutSipMediaApplicationLoggingConfigurationResult() = default;
     AWS_CHIMESDKVOICE_API PutSipMediaApplicationLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutSipMediaApplicationLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The updated logging configuration for the specified SIP media
      * application.</p>
      */
-    inline const SipMediaApplicationLoggingConfiguration& GetSipMediaApplicationLoggingConfiguration() const{ return m_sipMediaApplicationLoggingConfiguration; }
-    inline void SetSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { m_sipMediaApplicationLoggingConfiguration = value; }
-    inline void SetSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { m_sipMediaApplicationLoggingConfiguration = std::move(value); }
-    inline PutSipMediaApplicationLoggingConfigurationResult& WithSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { SetSipMediaApplicationLoggingConfiguration(value); return *this;}
-    inline PutSipMediaApplicationLoggingConfigurationResult& WithSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { SetSipMediaApplicationLoggingConfiguration(std::move(value)); return *this;}
+    inline const SipMediaApplicationLoggingConfiguration& GetSipMediaApplicationLoggingConfiguration() const { return m_sipMediaApplicationLoggingConfiguration; }
+    template<typename SipMediaApplicationLoggingConfigurationT = SipMediaApplicationLoggingConfiguration>
+    void SetSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfigurationT&& value) { m_sipMediaApplicationLoggingConfigurationHasBeenSet = true; m_sipMediaApplicationLoggingConfiguration = std::forward<SipMediaApplicationLoggingConfigurationT>(value); }
+    template<typename SipMediaApplicationLoggingConfigurationT = SipMediaApplicationLoggingConfiguration>
+    PutSipMediaApplicationLoggingConfigurationResult& WithSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfigurationT&& value) { SetSipMediaApplicationLoggingConfiguration(std::forward<SipMediaApplicationLoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutSipMediaApplicationLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutSipMediaApplicationLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutSipMediaApplicationLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutSipMediaApplicationLoggingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SipMediaApplicationLoggingConfiguration m_sipMediaApplicationLoggingConfiguration;
+    bool m_sipMediaApplicationLoggingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

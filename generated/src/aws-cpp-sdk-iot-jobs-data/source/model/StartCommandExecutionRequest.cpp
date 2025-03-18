@@ -12,17 +12,6 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCommandExecutionRequest::StartCommandExecutionRequest() : 
-    m_targetArnHasBeenSet(false),
-    m_commandArnHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_executionTimeoutSeconds(0),
-    m_executionTimeoutSecondsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartCommandExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

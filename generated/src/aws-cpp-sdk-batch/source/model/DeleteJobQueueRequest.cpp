@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteJobQueueRequest::DeleteJobQueueRequest() : 
-    m_jobQueueHasBeenSet(false)
-{
-}
-
 Aws::String DeleteJobQueueRequest::SerializePayload() const
 {
   JsonValue payload;

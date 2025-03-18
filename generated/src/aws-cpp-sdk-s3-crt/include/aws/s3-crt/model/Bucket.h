@@ -32,7 +32,7 @@ namespace Model
   class Bucket
   {
   public:
-    AWS_S3CRT_API Bucket();
+    AWS_S3CRT_API Bucket() = default;
     AWS_S3CRT_API Bucket(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Bucket& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the bucket.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Bucket& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Bucket& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Bucket& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>Date the bucket was created. This date can change when making changes to your
      * bucket, such as editing its bucket policy.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline Bucket& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    Bucket& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,21 +70,19 @@ namespace Model
      * bucket is located. If the request contains at least one valid parameter, it is
      * included in the response.</p>
      */
-    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+    inline const Aws::String& GetBucketRegion() const { return m_bucketRegion; }
     inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
-    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
-    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
-    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
-    inline Bucket& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
-    inline Bucket& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
-    inline Bucket& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+    template<typename BucketRegionT = Aws::String>
+    void SetBucketRegion(BucketRegionT&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::forward<BucketRegionT>(value); }
+    template<typename BucketRegionT = Aws::String>
+    Bucket& WithBucketRegion(BucketRegionT&& value) { SetBucketRegion(std::forward<BucketRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::String m_bucketRegion;

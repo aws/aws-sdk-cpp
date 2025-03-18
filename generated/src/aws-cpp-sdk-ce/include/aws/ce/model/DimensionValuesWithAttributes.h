@@ -34,7 +34,7 @@ namespace Model
   class DimensionValuesWithAttributes
   {
   public:
-    AWS_COSTEXPLORER_API DimensionValuesWithAttributes();
+    AWS_COSTEXPLORER_API DimensionValuesWithAttributes() = default;
     AWS_COSTEXPLORER_API DimensionValuesWithAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API DimensionValuesWithAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,28 @@ namespace Model
     /**
      * <p>The value of a dimension with a specific attribute.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline DimensionValuesWithAttributes& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline DimensionValuesWithAttributes& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline DimensionValuesWithAttributes& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    DimensionValuesWithAttributes& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline DimensionValuesWithAttributes& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline DimensionValuesWithAttributes& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DimensionValuesWithAttributes& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline DimensionValuesWithAttributes& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    DimensionValuesWithAttributes& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    DimensionValuesWithAttributes& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

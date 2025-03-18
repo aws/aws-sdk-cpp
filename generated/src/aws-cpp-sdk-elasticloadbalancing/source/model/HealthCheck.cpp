@@ -20,21 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-HealthCheck::HealthCheck() : 
-    m_targetHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false),
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false)
-{
-}
-
 HealthCheck::HealthCheck(const XmlNode& xmlNode)
-  : HealthCheck()
 {
   *this = xmlNode;
 }

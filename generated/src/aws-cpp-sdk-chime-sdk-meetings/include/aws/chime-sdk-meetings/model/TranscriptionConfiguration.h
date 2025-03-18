@@ -34,7 +34,7 @@ namespace Model
   class TranscriptionConfiguration
   {
   public:
-    AWS_CHIMESDKMEETINGS_API TranscriptionConfiguration();
+    AWS_CHIMESDKMEETINGS_API TranscriptionConfiguration() = default;
     AWS_CHIMESDKMEETINGS_API TranscriptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API TranscriptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The transcription configuration settings passed to Amazon Transcribe.</p>
      */
-    inline const EngineTranscribeSettings& GetEngineTranscribeSettings() const{ return m_engineTranscribeSettings; }
+    inline const EngineTranscribeSettings& GetEngineTranscribeSettings() const { return m_engineTranscribeSettings; }
     inline bool EngineTranscribeSettingsHasBeenSet() const { return m_engineTranscribeSettingsHasBeenSet; }
-    inline void SetEngineTranscribeSettings(const EngineTranscribeSettings& value) { m_engineTranscribeSettingsHasBeenSet = true; m_engineTranscribeSettings = value; }
-    inline void SetEngineTranscribeSettings(EngineTranscribeSettings&& value) { m_engineTranscribeSettingsHasBeenSet = true; m_engineTranscribeSettings = std::move(value); }
-    inline TranscriptionConfiguration& WithEngineTranscribeSettings(const EngineTranscribeSettings& value) { SetEngineTranscribeSettings(value); return *this;}
-    inline TranscriptionConfiguration& WithEngineTranscribeSettings(EngineTranscribeSettings&& value) { SetEngineTranscribeSettings(std::move(value)); return *this;}
+    template<typename EngineTranscribeSettingsT = EngineTranscribeSettings>
+    void SetEngineTranscribeSettings(EngineTranscribeSettingsT&& value) { m_engineTranscribeSettingsHasBeenSet = true; m_engineTranscribeSettings = std::forward<EngineTranscribeSettingsT>(value); }
+    template<typename EngineTranscribeSettingsT = EngineTranscribeSettings>
+    TranscriptionConfiguration& WithEngineTranscribeSettings(EngineTranscribeSettingsT&& value) { SetEngineTranscribeSettings(std::forward<EngineTranscribeSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The transcription configuration settings passed to Amazon Transcribe
      * Medical.</p>
      */
-    inline const EngineTranscribeMedicalSettings& GetEngineTranscribeMedicalSettings() const{ return m_engineTranscribeMedicalSettings; }
+    inline const EngineTranscribeMedicalSettings& GetEngineTranscribeMedicalSettings() const { return m_engineTranscribeMedicalSettings; }
     inline bool EngineTranscribeMedicalSettingsHasBeenSet() const { return m_engineTranscribeMedicalSettingsHasBeenSet; }
-    inline void SetEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = value; }
-    inline void SetEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = std::move(value); }
-    inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(const EngineTranscribeMedicalSettings& value) { SetEngineTranscribeMedicalSettings(value); return *this;}
-    inline TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettings&& value) { SetEngineTranscribeMedicalSettings(std::move(value)); return *this;}
+    template<typename EngineTranscribeMedicalSettingsT = EngineTranscribeMedicalSettings>
+    void SetEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettingsT&& value) { m_engineTranscribeMedicalSettingsHasBeenSet = true; m_engineTranscribeMedicalSettings = std::forward<EngineTranscribeMedicalSettingsT>(value); }
+    template<typename EngineTranscribeMedicalSettingsT = EngineTranscribeMedicalSettings>
+    TranscriptionConfiguration& WithEngineTranscribeMedicalSettings(EngineTranscribeMedicalSettingsT&& value) { SetEngineTranscribeMedicalSettings(std::forward<EngineTranscribeMedicalSettingsT>(value)); return *this;}
     ///@}
   private:
 

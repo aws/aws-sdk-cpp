@@ -33,7 +33,7 @@ namespace Model
   class TransferCertificateResult
   {
   public:
-    AWS_IOT_API TransferCertificateResult();
+    AWS_IOT_API TransferCertificateResult() = default;
     AWS_IOT_API TransferCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API TransferCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The ARN of the certificate.</p>
      */
-    inline const Aws::String& GetTransferredCertificateArn() const{ return m_transferredCertificateArn; }
-    inline void SetTransferredCertificateArn(const Aws::String& value) { m_transferredCertificateArn = value; }
-    inline void SetTransferredCertificateArn(Aws::String&& value) { m_transferredCertificateArn = std::move(value); }
-    inline void SetTransferredCertificateArn(const char* value) { m_transferredCertificateArn.assign(value); }
-    inline TransferCertificateResult& WithTransferredCertificateArn(const Aws::String& value) { SetTransferredCertificateArn(value); return *this;}
-    inline TransferCertificateResult& WithTransferredCertificateArn(Aws::String&& value) { SetTransferredCertificateArn(std::move(value)); return *this;}
-    inline TransferCertificateResult& WithTransferredCertificateArn(const char* value) { SetTransferredCertificateArn(value); return *this;}
+    inline const Aws::String& GetTransferredCertificateArn() const { return m_transferredCertificateArn; }
+    template<typename TransferredCertificateArnT = Aws::String>
+    void SetTransferredCertificateArn(TransferredCertificateArnT&& value) { m_transferredCertificateArnHasBeenSet = true; m_transferredCertificateArn = std::forward<TransferredCertificateArnT>(value); }
+    template<typename TransferredCertificateArnT = Aws::String>
+    TransferCertificateResult& WithTransferredCertificateArn(TransferredCertificateArnT&& value) { SetTransferredCertificateArn(std::forward<TransferredCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TransferCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TransferCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TransferCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TransferCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transferredCertificateArn;
+    bool m_transferredCertificateArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

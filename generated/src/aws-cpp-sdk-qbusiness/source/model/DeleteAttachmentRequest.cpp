@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAttachmentRequest::DeleteAttachmentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttachmentRequest::SerializePayload() const
 {
   return {};

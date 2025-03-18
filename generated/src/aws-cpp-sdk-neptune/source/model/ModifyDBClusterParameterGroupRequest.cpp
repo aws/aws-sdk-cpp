@@ -10,12 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-ModifyDBClusterParameterGroupRequest::ModifyDBClusterParameterGroupRequest() : 
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class AwsElbLoadBalancerInstance
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerInstance();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerInstance() = default;
     AWS_SECURITYHUB_API AwsElbLoadBalancerInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLoadBalancerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The instance identifier.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AwsElbLoadBalancerInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AwsElbLoadBalancerInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AwsElbLoadBalancerInstance& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class UpdateGroupQueryResult
   {
   public:
-    AWS_RESOURCEGROUPS_API UpdateGroupQueryResult();
+    AWS_RESOURCEGROUPS_API UpdateGroupQueryResult() = default;
     AWS_RESOURCEGROUPS_API UpdateGroupQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API UpdateGroupQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The updated resource query associated with the resource group after the
      * update.</p>
      */
-    inline const GroupQuery& GetGroupQuery() const{ return m_groupQuery; }
-    inline void SetGroupQuery(const GroupQuery& value) { m_groupQuery = value; }
-    inline void SetGroupQuery(GroupQuery&& value) { m_groupQuery = std::move(value); }
-    inline UpdateGroupQueryResult& WithGroupQuery(const GroupQuery& value) { SetGroupQuery(value); return *this;}
-    inline UpdateGroupQueryResult& WithGroupQuery(GroupQuery&& value) { SetGroupQuery(std::move(value)); return *this;}
+    inline const GroupQuery& GetGroupQuery() const { return m_groupQuery; }
+    template<typename GroupQueryT = GroupQuery>
+    void SetGroupQuery(GroupQueryT&& value) { m_groupQueryHasBeenSet = true; m_groupQuery = std::forward<GroupQueryT>(value); }
+    template<typename GroupQueryT = GroupQuery>
+    UpdateGroupQueryResult& WithGroupQuery(GroupQueryT&& value) { SetGroupQuery(std::forward<GroupQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateGroupQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateGroupQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateGroupQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateGroupQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GroupQuery m_groupQuery;
+    bool m_groupQueryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

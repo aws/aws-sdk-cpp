@@ -21,7 +21,7 @@ namespace Model
   class GetIntegrationRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetIntegrationRequest();
+    AWS_CLOUDWATCHLOGS_API GetIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListIntegrations.html">ListIntegrations</a>
      * </p>
      */
-    inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
+    inline const Aws::String& GetIntegrationName() const { return m_integrationName; }
     inline bool IntegrationNameHasBeenSet() const { return m_integrationNameHasBeenSet; }
-    inline void SetIntegrationName(const Aws::String& value) { m_integrationNameHasBeenSet = true; m_integrationName = value; }
-    inline void SetIntegrationName(Aws::String&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::move(value); }
-    inline void SetIntegrationName(const char* value) { m_integrationNameHasBeenSet = true; m_integrationName.assign(value); }
-    inline GetIntegrationRequest& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-    inline GetIntegrationRequest& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-    inline GetIntegrationRequest& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    template<typename IntegrationNameT = Aws::String>
+    void SetIntegrationName(IntegrationNameT&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::forward<IntegrationNameT>(value); }
+    template<typename IntegrationNameT = Aws::String>
+    GetIntegrationRequest& WithIntegrationName(IntegrationNameT&& value) { SetIntegrationName(std::forward<IntegrationNameT>(value)); return *this;}
     ///@}
   private:
 

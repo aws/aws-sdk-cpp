@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ECPUPerSecond::ECPUPerSecond() : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false)
-{
-}
-
 ECPUPerSecond::ECPUPerSecond(const XmlNode& xmlNode)
-  : ECPUPerSecond()
 {
   *this = xmlNode;
 }

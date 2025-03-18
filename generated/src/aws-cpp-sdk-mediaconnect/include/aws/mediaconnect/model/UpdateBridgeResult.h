@@ -28,35 +28,35 @@ namespace Model
   class UpdateBridgeResult
   {
   public:
-    AWS_MEDIACONNECT_API UpdateBridgeResult();
+    AWS_MEDIACONNECT_API UpdateBridgeResult() = default;
     AWS_MEDIACONNECT_API UpdateBridgeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API UpdateBridgeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Bridge& GetBridge() const{ return m_bridge; }
-    inline void SetBridge(const Bridge& value) { m_bridge = value; }
-    inline void SetBridge(Bridge&& value) { m_bridge = std::move(value); }
-    inline UpdateBridgeResult& WithBridge(const Bridge& value) { SetBridge(value); return *this;}
-    inline UpdateBridgeResult& WithBridge(Bridge&& value) { SetBridge(std::move(value)); return *this;}
+    inline const Bridge& GetBridge() const { return m_bridge; }
+    template<typename BridgeT = Bridge>
+    void SetBridge(BridgeT&& value) { m_bridgeHasBeenSet = true; m_bridge = std::forward<BridgeT>(value); }
+    template<typename BridgeT = Bridge>
+    UpdateBridgeResult& WithBridge(BridgeT&& value) { SetBridge(std::forward<BridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateBridgeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateBridgeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateBridgeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateBridgeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Bridge m_bridge;
+    bool m_bridgeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

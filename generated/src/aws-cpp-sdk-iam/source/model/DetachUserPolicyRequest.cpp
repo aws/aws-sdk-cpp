@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachUserPolicyRequest::DetachUserPolicyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DetachUserPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

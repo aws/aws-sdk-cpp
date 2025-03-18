@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteMLTransformResult::DeleteMLTransformResult()
-{
-}
-
 DeleteMLTransformResult::DeleteMLTransformResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteMLTransformResult& DeleteMLTransformResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("TransformId"))
   {
     m_transformId = jsonValue.GetString("TransformId");
-
+    m_transformIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

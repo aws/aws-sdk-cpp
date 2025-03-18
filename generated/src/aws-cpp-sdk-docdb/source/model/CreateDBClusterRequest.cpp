@@ -10,39 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-CreateDBClusterRequest::CreateDBClusterRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_manageMasterUserPassword(false),
-    m_manageMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

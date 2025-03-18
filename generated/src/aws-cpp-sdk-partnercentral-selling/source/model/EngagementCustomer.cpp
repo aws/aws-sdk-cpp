@@ -18,18 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementCustomer::EngagementCustomer() : 
-    m_companyNameHasBeenSet(false),
-    m_countryCode(CountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_industry(Industry::NOT_SET),
-    m_industryHasBeenSet(false),
-    m_websiteUrlHasBeenSet(false)
-{
-}
-
 EngagementCustomer::EngagementCustomer(JsonView jsonValue)
-  : EngagementCustomer()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EngagementCustomer& EngagementCustomer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Industry"))
   {
     m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
-
     m_industryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebsiteUrl"))
   {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
-
     m_websiteUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

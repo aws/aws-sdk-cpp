@@ -25,7 +25,7 @@ namespace Model
   class OptimizePromptInitialResponse
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OptimizePromptInitialResponse();
+    AWS_BEDROCKAGENTRUNTIME_API OptimizePromptInitialResponse() = default;
     AWS_BEDROCKAGENTRUNTIME_API OptimizePromptInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OptimizePromptInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OptimizePromptInitialResponse(const Http::HeaderValueCollection& responseHeaders);

@@ -34,7 +34,7 @@ namespace Model
   class DistributionConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API DistributionConfiguration();
+    AWS_IMAGEBUILDER_API DistributionConfiguration() = default;
     AWS_IMAGEBUILDER_API DistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API DistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DistributionConfiguration& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DistributionConfiguration& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DistributionConfiguration& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DistributionConfiguration& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the distribution configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DistributionConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DistributionConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DistributionConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DistributionConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the distribution configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DistributionConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DistributionConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DistributionConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DistributionConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,21 +81,21 @@ namespace Model
      * <p>The distribution objects that apply Region-specific settings for the
      * deployment of the image to targeted Regions.</p>
      */
-    inline const Aws::Vector<Distribution>& GetDistributions() const{ return m_distributions; }
+    inline const Aws::Vector<Distribution>& GetDistributions() const { return m_distributions; }
     inline bool DistributionsHasBeenSet() const { return m_distributionsHasBeenSet; }
-    inline void SetDistributions(const Aws::Vector<Distribution>& value) { m_distributionsHasBeenSet = true; m_distributions = value; }
-    inline void SetDistributions(Aws::Vector<Distribution>&& value) { m_distributionsHasBeenSet = true; m_distributions = std::move(value); }
-    inline DistributionConfiguration& WithDistributions(const Aws::Vector<Distribution>& value) { SetDistributions(value); return *this;}
-    inline DistributionConfiguration& WithDistributions(Aws::Vector<Distribution>&& value) { SetDistributions(std::move(value)); return *this;}
-    inline DistributionConfiguration& AddDistributions(const Distribution& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(value); return *this; }
-    inline DistributionConfiguration& AddDistributions(Distribution&& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(std::move(value)); return *this; }
+    template<typename DistributionsT = Aws::Vector<Distribution>>
+    void SetDistributions(DistributionsT&& value) { m_distributionsHasBeenSet = true; m_distributions = std::forward<DistributionsT>(value); }
+    template<typename DistributionsT = Aws::Vector<Distribution>>
+    DistributionConfiguration& WithDistributions(DistributionsT&& value) { SetDistributions(std::forward<DistributionsT>(value)); return *this;}
+    template<typename DistributionsT = Distribution>
+    DistributionConfiguration& AddDistributions(DistributionsT&& value) { m_distributionsHasBeenSet = true; m_distributions.emplace_back(std::forward<DistributionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum duration in minutes for this distribution configuration.</p>
      */
-    inline int GetTimeoutMinutes() const{ return m_timeoutMinutes; }
+    inline int GetTimeoutMinutes() const { return m_timeoutMinutes; }
     inline bool TimeoutMinutesHasBeenSet() const { return m_timeoutMinutesHasBeenSet; }
     inline void SetTimeoutMinutes(int value) { m_timeoutMinutesHasBeenSet = true; m_timeoutMinutes = value; }
     inline DistributionConfiguration& WithTimeoutMinutes(int value) { SetTimeoutMinutes(value); return *this;}
@@ -111,47 +105,40 @@ namespace Model
     /**
      * <p>The date on which this distribution configuration was created.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline DistributionConfiguration& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline DistributionConfiguration& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline DistributionConfiguration& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    DistributionConfiguration& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date on which this distribution configuration was last updated.</p>
      */
-    inline const Aws::String& GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::String& GetDateUpdated() const { return m_dateUpdated; }
     inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
-    inline void SetDateUpdated(const Aws::String& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
-    inline void SetDateUpdated(Aws::String&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
-    inline void SetDateUpdated(const char* value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated.assign(value); }
-    inline DistributionConfiguration& WithDateUpdated(const Aws::String& value) { SetDateUpdated(value); return *this;}
-    inline DistributionConfiguration& WithDateUpdated(Aws::String&& value) { SetDateUpdated(std::move(value)); return *this;}
-    inline DistributionConfiguration& WithDateUpdated(const char* value) { SetDateUpdated(value); return *this;}
+    template<typename DateUpdatedT = Aws::String>
+    void SetDateUpdated(DateUpdatedT&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::forward<DateUpdatedT>(value); }
+    template<typename DateUpdatedT = Aws::String>
+    DistributionConfiguration& WithDateUpdated(DateUpdatedT&& value) { SetDateUpdated(std::forward<DateUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags of the distribution configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DistributionConfiguration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DistributionConfiguration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DistributionConfiguration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline DistributionConfiguration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline DistributionConfiguration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline DistributionConfiguration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DistributionConfiguration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline DistributionConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline DistributionConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DistributionConfiguration& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DistributionConfiguration& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -167,7 +154,7 @@ namespace Model
     Aws::Vector<Distribution> m_distributions;
     bool m_distributionsHasBeenSet = false;
 
-    int m_timeoutMinutes;
+    int m_timeoutMinutes{0};
     bool m_timeoutMinutesHasBeenSet = false;
 
     Aws::String m_dateCreated;

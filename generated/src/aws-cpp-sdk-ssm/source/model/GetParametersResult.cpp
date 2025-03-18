@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetParametersResult::GetParametersResult()
-{
-}
-
 GetParametersResult::GetParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetParametersResult& GetParametersResult::operator =(const Aws::AmazonWebService
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
+    m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidParameters"))
   {
     Aws::Utils::Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
@@ -45,14 +41,15 @@ GetParametersResult& GetParametersResult::operator =(const Aws::AmazonWebService
     {
       m_invalidParameters.push_back(invalidParametersJsonList[invalidParametersIndex].AsString());
     }
+    m_invalidParametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

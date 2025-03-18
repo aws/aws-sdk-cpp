@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstance::VerifiedAccessInstance() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_verifiedAccessTrustProvidersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fipsEnabled(false),
-    m_fipsEnabledHasBeenSet(false),
-    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstance::VerifiedAccessInstance(const XmlNode& xmlNode)
-  : VerifiedAccessInstance()
 {
   *this = xmlNode;
 }
@@ -61,6 +47,7 @@ VerifiedAccessInstance& VerifiedAccessInstance::operator =(const XmlNode& xmlNod
     if(!verifiedAccessTrustProvidersNode.IsNull())
     {
       XmlNode verifiedAccessTrustProvidersMember = verifiedAccessTrustProvidersNode.FirstChild("item");
+      m_verifiedAccessTrustProvidersHasBeenSet = !verifiedAccessTrustProvidersMember.IsNull();
       while(!verifiedAccessTrustProvidersMember.IsNull())
       {
         m_verifiedAccessTrustProviders.push_back(verifiedAccessTrustProvidersMember);
@@ -85,6 +72,7 @@ VerifiedAccessInstance& VerifiedAccessInstance::operator =(const XmlNode& xmlNod
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

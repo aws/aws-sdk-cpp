@@ -12,10 +12,6 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAutoshiftObserverNotificationStatusRequest::GetAutoshiftObserverNotificationStatusRequest()
-{
-}
-
 Aws::String GetAutoshiftObserverNotificationStatusRequest::SerializePayload() const
 {
   return {};

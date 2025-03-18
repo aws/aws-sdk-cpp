@@ -18,13 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-MappingRule::MappingRule() : 
-    m_specifierHasBeenSet(false)
-{
-}
-
 MappingRule::MappingRule(JsonView jsonValue)
-  : MappingRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MappingRule& MappingRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("specifier"))
   {
     m_specifier = jsonValue.GetString("specifier");
-
     m_specifierHasBeenSet = true;
   }
-
   return *this;
 }
 

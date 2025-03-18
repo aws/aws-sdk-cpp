@@ -31,7 +31,7 @@ namespace Model
   class AwsRdsDbOptionGroupMembership
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbOptionGroupMembership();
+    AWS_SECURITYHUB_API AwsRdsDbOptionGroupMembership() = default;
     AWS_SECURITYHUB_API AwsRdsDbOptionGroupMembership(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbOptionGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the option group.</p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline AwsRdsDbOptionGroupMembership& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline AwsRdsDbOptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline AwsRdsDbOptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    AwsRdsDbOptionGroupMembership& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the option group membership.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRdsDbOptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRdsDbOptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRdsDbOptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRdsDbOptionGroupMembership& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

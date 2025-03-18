@@ -12,18 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateMemberToFleetRequest::AssociateMemberToFleetRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false)
-{
-}
-
 Aws::String AssociateMemberToFleetRequest::SerializePayload() const
 {
   JsonValue payload;

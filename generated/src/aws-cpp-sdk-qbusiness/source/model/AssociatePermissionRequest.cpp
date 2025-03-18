@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePermissionRequest::AssociatePermissionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-DeploymentConfigurationValidationPolicy::DeploymentConfigurationValidationPolicy() : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
-{
-}
-
 DeploymentConfigurationValidationPolicy::DeploymentConfigurationValidationPolicy(JsonView jsonValue)
-  : DeploymentConfigurationValidationPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DeploymentConfigurationValidationPolicy& DeploymentConfigurationValidationPolicy
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

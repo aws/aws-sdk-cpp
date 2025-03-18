@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedAccessTypeStatistics::UnusedAccessTypeStatistics() : 
-    m_unusedAccessTypeHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 UnusedAccessTypeStatistics::UnusedAccessTypeStatistics(JsonView jsonValue)
-  : UnusedAccessTypeStatistics()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnusedAccessTypeStatistics& UnusedAccessTypeStatistics::operator =(JsonView json
   if(jsonValue.ValueExists("unusedAccessType"))
   {
     m_unusedAccessType = jsonValue.GetString("unusedAccessType");
-
     m_unusedAccessTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInteger("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

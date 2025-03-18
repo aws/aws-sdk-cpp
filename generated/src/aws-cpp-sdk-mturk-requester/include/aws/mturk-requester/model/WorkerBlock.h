@@ -33,7 +33,7 @@ namespace Model
   class WorkerBlock
   {
   public:
-    AWS_MTURK_API WorkerBlock();
+    AWS_MTURK_API WorkerBlock() = default;
     AWS_MTURK_API WorkerBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API WorkerBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline WorkerBlock& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline WorkerBlock& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline WorkerBlock& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    WorkerBlock& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline WorkerBlock& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline WorkerBlock& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline WorkerBlock& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    WorkerBlock& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

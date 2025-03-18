@@ -18,15 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-Hive::Hive() : 
-    m_queryHasBeenSet(false),
-    m_initQueryFileHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Hive::Hive(JsonView jsonValue)
-  : Hive()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Hive& Hive::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("query"))
   {
     m_query = jsonValue.GetString("query");
-
     m_queryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initQueryFile"))
   {
     m_initQueryFile = jsonValue.GetString("initQueryFile");
-
     m_initQueryFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetString("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

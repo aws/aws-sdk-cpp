@@ -32,7 +32,7 @@ namespace Model
   class ResourceSummary
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary();
+    AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary() = default;
     AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API ResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ResourceSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ResourceSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ResourceSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ResourceSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResourceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResourceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResourceSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResourceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ResourceSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ResourceSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResourceSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ResourceSummary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
   private:
 

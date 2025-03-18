@@ -33,7 +33,7 @@ namespace Model
   class RemixSettings
   {
   public:
-    AWS_MEDIACONVERT_API RemixSettings();
+    AWS_MEDIACONVERT_API RemixSettings() = default;
     AWS_MEDIACONVERT_API RemixSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * description data channel. For more information about audio description signals,
      * see the BBC WHP 198 and 051 white papers.
      */
-    inline int GetAudioDescriptionAudioChannel() const{ return m_audioDescriptionAudioChannel; }
+    inline int GetAudioDescriptionAudioChannel() const { return m_audioDescriptionAudioChannel; }
     inline bool AudioDescriptionAudioChannelHasBeenSet() const { return m_audioDescriptionAudioChannelHasBeenSet; }
     inline void SetAudioDescriptionAudioChannel(int value) { m_audioDescriptionAudioChannelHasBeenSet = true; m_audioDescriptionAudioChannel = value; }
     inline RemixSettings& WithAudioDescriptionAudioChannel(int value) { SetAudioDescriptionAudioChannel(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * description audio channel. For more information about audio description signals,
      * see the BBC WHP 198 and 051 white papers.
      */
-    inline int GetAudioDescriptionDataChannel() const{ return m_audioDescriptionDataChannel; }
+    inline int GetAudioDescriptionDataChannel() const { return m_audioDescriptionDataChannel; }
     inline bool AudioDescriptionDataChannelHasBeenSet() const { return m_audioDescriptionDataChannelHasBeenSet; }
     inline void SetAudioDescriptionDataChannel(int value) { m_audioDescriptionDataChannelHasBeenSet = true; m_audioDescriptionDataChannel = value; }
     inline RemixSettings& WithAudioDescriptionDataChannel(int value) { SetAudioDescriptionDataChannel(value); return *this;}
@@ -83,12 +83,12 @@ namespace Model
      * attenuation or amplification). Use InputChannels or InputChannelsFineTune to
      * specify your remix values. Don't use both.
      */
-    inline const ChannelMapping& GetChannelMapping() const{ return m_channelMapping; }
+    inline const ChannelMapping& GetChannelMapping() const { return m_channelMapping; }
     inline bool ChannelMappingHasBeenSet() const { return m_channelMappingHasBeenSet; }
-    inline void SetChannelMapping(const ChannelMapping& value) { m_channelMappingHasBeenSet = true; m_channelMapping = value; }
-    inline void SetChannelMapping(ChannelMapping&& value) { m_channelMappingHasBeenSet = true; m_channelMapping = std::move(value); }
-    inline RemixSettings& WithChannelMapping(const ChannelMapping& value) { SetChannelMapping(value); return *this;}
-    inline RemixSettings& WithChannelMapping(ChannelMapping&& value) { SetChannelMapping(std::move(value)); return *this;}
+    template<typename ChannelMappingT = ChannelMapping>
+    void SetChannelMapping(ChannelMappingT&& value) { m_channelMappingHasBeenSet = true; m_channelMapping = std::forward<ChannelMappingT>(value); }
+    template<typename ChannelMappingT = ChannelMapping>
+    RemixSettings& WithChannelMapping(ChannelMappingT&& value) { SetChannelMapping(std::forward<ChannelMappingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +100,7 @@ namespace Model
      * of output channels in your input mapping must be the same as the number of input
      * channels in your output mapping.
      */
-    inline int GetChannelsIn() const{ return m_channelsIn; }
+    inline int GetChannelsIn() const { return m_channelsIn; }
     inline bool ChannelsInHasBeenSet() const { return m_channelsInHasBeenSet; }
     inline void SetChannelsIn(int value) { m_channelsInHasBeenSet = true; m_channelsIn = value; }
     inline RemixSettings& WithChannelsIn(int value) { SetChannelsIn(value); return *this;}
@@ -114,26 +114,26 @@ namespace Model
      * your input mapping must be the same as the number of input channels in your
      * output mapping.
      */
-    inline int GetChannelsOut() const{ return m_channelsOut; }
+    inline int GetChannelsOut() const { return m_channelsOut; }
     inline bool ChannelsOutHasBeenSet() const { return m_channelsOutHasBeenSet; }
     inline void SetChannelsOut(int value) { m_channelsOutHasBeenSet = true; m_channelsOut = value; }
     inline RemixSettings& WithChannelsOut(int value) { SetChannelsOut(value); return *this;}
     ///@}
   private:
 
-    int m_audioDescriptionAudioChannel;
+    int m_audioDescriptionAudioChannel{0};
     bool m_audioDescriptionAudioChannelHasBeenSet = false;
 
-    int m_audioDescriptionDataChannel;
+    int m_audioDescriptionDataChannel{0};
     bool m_audioDescriptionDataChannelHasBeenSet = false;
 
     ChannelMapping m_channelMapping;
     bool m_channelMappingHasBeenSet = false;
 
-    int m_channelsIn;
+    int m_channelsIn{0};
     bool m_channelsInHasBeenSet = false;
 
-    int m_channelsOut;
+    int m_channelsOut{0};
     bool m_channelsOutHasBeenSet = false;
   };
 

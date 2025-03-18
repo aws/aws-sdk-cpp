@@ -26,7 +26,7 @@ namespace Model
   class ListPackageVersionsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListPackageVersionsRequest();
+    AWS_IOT_API ListPackageVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the target software package.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-    inline ListPackageVersionsRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline ListPackageVersionsRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    ListPackageVersionsRequest& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
      * version lifecycle</a>.</p>
      */
-    inline const PackageVersionStatus& GetStatus() const{ return m_status; }
+    inline PackageVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListPackageVersionsRequest& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
-    inline ListPackageVersionsRequest& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PackageVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListPackageVersionsRequest& WithStatus(PackageVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPackageVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,24 +77,22 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPackageVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPackageVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPackageVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_packageName;
     bool m_packageNameHasBeenSet = false;
 
-    PackageVersionStatus m_status;
+    PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

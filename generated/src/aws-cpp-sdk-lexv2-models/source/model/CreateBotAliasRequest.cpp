@@ -12,18 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBotAliasRequest::CreateBotAliasRequest() : 
-    m_botAliasNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_botAliasLocaleSettingsHasBeenSet(false),
-    m_conversationLogSettingsHasBeenSet(false),
-    m_sentimentAnalysisSettingsHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBotAliasRequest::SerializePayload() const
 {
   JsonValue payload;

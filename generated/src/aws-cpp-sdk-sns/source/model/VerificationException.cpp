@@ -20,14 +20,7 @@ namespace SNS
 namespace Model
 {
 
-VerificationException::VerificationException() : 
-    m_messageHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 VerificationException::VerificationException(const XmlNode& xmlNode)
-  : VerificationException()
 {
   *this = xmlNode;
 }

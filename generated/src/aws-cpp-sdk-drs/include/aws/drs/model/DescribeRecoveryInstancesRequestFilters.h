@@ -33,7 +33,7 @@ namespace Model
   class DescribeRecoveryInstancesRequestFilters
   {
   public:
-    AWS_DRS_API DescribeRecoveryInstancesRequestFilters();
+    AWS_DRS_API DescribeRecoveryInstancesRequestFilters() = default;
     AWS_DRS_API DescribeRecoveryInstancesRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API DescribeRecoveryInstancesRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>An array of Recovery Instance IDs that should be returned. An empty array
      * means all Recovery Instances.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecoveryInstanceIDs() const{ return m_recoveryInstanceIDs; }
+    inline const Aws::Vector<Aws::String>& GetRecoveryInstanceIDs() const { return m_recoveryInstanceIDs; }
     inline bool RecoveryInstanceIDsHasBeenSet() const { return m_recoveryInstanceIDsHasBeenSet; }
-    inline void SetRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = value; }
-    inline void SetRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = std::move(value); }
-    inline DescribeRecoveryInstancesRequestFilters& WithRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { SetRecoveryInstanceIDs(value); return *this;}
-    inline DescribeRecoveryInstancesRequestFilters& WithRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { SetRecoveryInstanceIDs(std::move(value)); return *this;}
-    inline DescribeRecoveryInstancesRequestFilters& AddRecoveryInstanceIDs(const Aws::String& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
-    inline DescribeRecoveryInstancesRequestFilters& AddRecoveryInstanceIDs(Aws::String&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(std::move(value)); return *this; }
-    inline DescribeRecoveryInstancesRequestFilters& AddRecoveryInstanceIDs(const char* value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
+    template<typename RecoveryInstanceIDsT = Aws::Vector<Aws::String>>
+    void SetRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = std::forward<RecoveryInstanceIDsT>(value); }
+    template<typename RecoveryInstanceIDsT = Aws::Vector<Aws::String>>
+    DescribeRecoveryInstancesRequestFilters& WithRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { SetRecoveryInstanceIDs(std::forward<RecoveryInstanceIDsT>(value)); return *this;}
+    template<typename RecoveryInstanceIDsT = Aws::String>
+    DescribeRecoveryInstancesRequestFilters& AddRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.emplace_back(std::forward<RecoveryInstanceIDsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>An array of Source Server IDs for which associated Recovery Instances should
      * be returned.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const{ return m_sourceServerIDs; }
+    inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const { return m_sourceServerIDs; }
     inline bool SourceServerIDsHasBeenSet() const { return m_sourceServerIDsHasBeenSet; }
-    inline void SetSourceServerIDs(const Aws::Vector<Aws::String>& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = value; }
-    inline void SetSourceServerIDs(Aws::Vector<Aws::String>&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = std::move(value); }
-    inline DescribeRecoveryInstancesRequestFilters& WithSourceServerIDs(const Aws::Vector<Aws::String>& value) { SetSourceServerIDs(value); return *this;}
-    inline DescribeRecoveryInstancesRequestFilters& WithSourceServerIDs(Aws::Vector<Aws::String>&& value) { SetSourceServerIDs(std::move(value)); return *this;}
-    inline DescribeRecoveryInstancesRequestFilters& AddSourceServerIDs(const Aws::String& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
-    inline DescribeRecoveryInstancesRequestFilters& AddSourceServerIDs(Aws::String&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(std::move(value)); return *this; }
-    inline DescribeRecoveryInstancesRequestFilters& AddSourceServerIDs(const char* value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
+    template<typename SourceServerIDsT = Aws::Vector<Aws::String>>
+    void SetSourceServerIDs(SourceServerIDsT&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = std::forward<SourceServerIDsT>(value); }
+    template<typename SourceServerIDsT = Aws::Vector<Aws::String>>
+    DescribeRecoveryInstancesRequestFilters& WithSourceServerIDs(SourceServerIDsT&& value) { SetSourceServerIDs(std::forward<SourceServerIDsT>(value)); return *this;}
+    template<typename SourceServerIDsT = Aws::String>
+    DescribeRecoveryInstancesRequestFilters& AddSourceServerIDs(SourceServerIDsT&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.emplace_back(std::forward<SourceServerIDsT>(value)); return *this; }
     ///@}
   private:
 

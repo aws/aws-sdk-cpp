@@ -25,7 +25,7 @@ namespace Model
   class ListApplicationComponentsRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListApplicationComponentsRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListApplicationComponentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
     /**
      * <p> Criteria for filtering the list of application components. </p>
      */
-    inline const ApplicationComponentCriteria& GetApplicationComponentCriteria() const{ return m_applicationComponentCriteria; }
+    inline ApplicationComponentCriteria GetApplicationComponentCriteria() const { return m_applicationComponentCriteria; }
     inline bool ApplicationComponentCriteriaHasBeenSet() const { return m_applicationComponentCriteriaHasBeenSet; }
-    inline void SetApplicationComponentCriteria(const ApplicationComponentCriteria& value) { m_applicationComponentCriteriaHasBeenSet = true; m_applicationComponentCriteria = value; }
-    inline void SetApplicationComponentCriteria(ApplicationComponentCriteria&& value) { m_applicationComponentCriteriaHasBeenSet = true; m_applicationComponentCriteria = std::move(value); }
-    inline ListApplicationComponentsRequest& WithApplicationComponentCriteria(const ApplicationComponentCriteria& value) { SetApplicationComponentCriteria(value); return *this;}
-    inline ListApplicationComponentsRequest& WithApplicationComponentCriteria(ApplicationComponentCriteria&& value) { SetApplicationComponentCriteria(std::move(value)); return *this;}
+    inline void SetApplicationComponentCriteria(ApplicationComponentCriteria value) { m_applicationComponentCriteriaHasBeenSet = true; m_applicationComponentCriteria = value; }
+    inline ListApplicationComponentsRequest& WithApplicationComponentCriteria(ApplicationComponentCriteria value) { SetApplicationComponentCriteria(value); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,26 @@ namespace Model
      * <code>server1</code>, then <a>ListApplicationComponents</a> returns all the
      * application components running on server1. </p>
      */
-    inline const Aws::String& GetFilterValue() const{ return m_filterValue; }
+    inline const Aws::String& GetFilterValue() const { return m_filterValue; }
     inline bool FilterValueHasBeenSet() const { return m_filterValueHasBeenSet; }
-    inline void SetFilterValue(const Aws::String& value) { m_filterValueHasBeenSet = true; m_filterValue = value; }
-    inline void SetFilterValue(Aws::String&& value) { m_filterValueHasBeenSet = true; m_filterValue = std::move(value); }
-    inline void SetFilterValue(const char* value) { m_filterValueHasBeenSet = true; m_filterValue.assign(value); }
-    inline ListApplicationComponentsRequest& WithFilterValue(const Aws::String& value) { SetFilterValue(value); return *this;}
-    inline ListApplicationComponentsRequest& WithFilterValue(Aws::String&& value) { SetFilterValue(std::move(value)); return *this;}
-    inline ListApplicationComponentsRequest& WithFilterValue(const char* value) { SetFilterValue(value); return *this;}
+    template<typename FilterValueT = Aws::String>
+    void SetFilterValue(FilterValueT&& value) { m_filterValueHasBeenSet = true; m_filterValue = std::forward<FilterValueT>(value); }
+    template<typename FilterValueT = Aws::String>
+    ListApplicationComponentsRequest& WithFilterValue(FilterValueT&& value) { SetFilterValue(std::forward<FilterValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The group ID specified in to filter on. </p>
      */
-    inline const Aws::Vector<Group>& GetGroupIdFilter() const{ return m_groupIdFilter; }
+    inline const Aws::Vector<Group>& GetGroupIdFilter() const { return m_groupIdFilter; }
     inline bool GroupIdFilterHasBeenSet() const { return m_groupIdFilterHasBeenSet; }
-    inline void SetGroupIdFilter(const Aws::Vector<Group>& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter = value; }
-    inline void SetGroupIdFilter(Aws::Vector<Group>&& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter = std::move(value); }
-    inline ListApplicationComponentsRequest& WithGroupIdFilter(const Aws::Vector<Group>& value) { SetGroupIdFilter(value); return *this;}
-    inline ListApplicationComponentsRequest& WithGroupIdFilter(Aws::Vector<Group>&& value) { SetGroupIdFilter(std::move(value)); return *this;}
-    inline ListApplicationComponentsRequest& AddGroupIdFilter(const Group& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter.push_back(value); return *this; }
-    inline ListApplicationComponentsRequest& AddGroupIdFilter(Group&& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter.push_back(std::move(value)); return *this; }
+    template<typename GroupIdFilterT = Aws::Vector<Group>>
+    void SetGroupIdFilter(GroupIdFilterT&& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter = std::forward<GroupIdFilterT>(value); }
+    template<typename GroupIdFilterT = Aws::Vector<Group>>
+    ListApplicationComponentsRequest& WithGroupIdFilter(GroupIdFilterT&& value) { SetGroupIdFilter(std::forward<GroupIdFilterT>(value)); return *this;}
+    template<typename GroupIdFilterT = Group>
+    ListApplicationComponentsRequest& AddGroupIdFilter(GroupIdFilterT&& value) { m_groupIdFilterHasBeenSet = true; m_groupIdFilter.emplace_back(std::forward<GroupIdFilterT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,7 +81,7 @@ namespace Model
      * <p> The maximum number of items to include in the response. The maximum value is
      * 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListApplicationComponentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,14 +95,12 @@ namespace Model
      * with a token. You then use the returned token to retrieve the next set of 10.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListApplicationComponentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationComponentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationComponentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationComponentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,16 +108,14 @@ namespace Model
      * <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
      * (<code>DESC</code>) order. </p>
      */
-    inline const SortOrder& GetSort() const{ return m_sort; }
+    inline SortOrder GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const SortOrder& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(SortOrder&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListApplicationComponentsRequest& WithSort(const SortOrder& value) { SetSort(value); return *this;}
-    inline ListApplicationComponentsRequest& WithSort(SortOrder&& value) { SetSort(std::move(value)); return *this;}
+    inline void SetSort(SortOrder value) { m_sortHasBeenSet = true; m_sort = value; }
+    inline ListApplicationComponentsRequest& WithSort(SortOrder value) { SetSort(value); return *this;}
     ///@}
   private:
 
-    ApplicationComponentCriteria m_applicationComponentCriteria;
+    ApplicationComponentCriteria m_applicationComponentCriteria{ApplicationComponentCriteria::NOT_SET};
     bool m_applicationComponentCriteriaHasBeenSet = false;
 
     Aws::String m_filterValue;
@@ -132,13 +124,13 @@ namespace Model
     Aws::Vector<Group> m_groupIdFilter;
     bool m_groupIdFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortOrder m_sort;
+    SortOrder m_sort{SortOrder::NOT_SET};
     bool m_sortHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class RadarChartAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API RadarChartAggregatedFieldWells();
+    AWS_QUICKSIGHT_API RadarChartAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API RadarChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RadarChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The aggregated field well categories of a radar chart.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
+    inline const Aws::Vector<DimensionField>& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RadarChartAggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
-    inline RadarChartAggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
-    inline RadarChartAggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-    inline RadarChartAggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    RadarChartAggregatedFieldWells& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
+    template<typename CategoryT = DimensionField>
+    RadarChartAggregatedFieldWells& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>The color that are assigned to the aggregated field wells of a radar
      * chart.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetColor() const{ return m_color; }
+    inline const Aws::Vector<DimensionField>& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::Vector<DimensionField>& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::Vector<DimensionField>&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline RadarChartAggregatedFieldWells& WithColor(const Aws::Vector<DimensionField>& value) { SetColor(value); return *this;}
-    inline RadarChartAggregatedFieldWells& WithColor(Aws::Vector<DimensionField>&& value) { SetColor(std::move(value)); return *this;}
-    inline RadarChartAggregatedFieldWells& AddColor(const DimensionField& value) { m_colorHasBeenSet = true; m_color.push_back(value); return *this; }
-    inline RadarChartAggregatedFieldWells& AddColor(DimensionField&& value) { m_colorHasBeenSet = true; m_color.push_back(std::move(value)); return *this; }
+    template<typename ColorT = Aws::Vector<DimensionField>>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::Vector<DimensionField>>
+    RadarChartAggregatedFieldWells& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
+    template<typename ColorT = DimensionField>
+    RadarChartAggregatedFieldWells& AddColor(ColorT&& value) { m_colorHasBeenSet = true; m_color.emplace_back(std::forward<ColorT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,14 +74,14 @@ namespace Model
      * <p>The values that are assigned to the aggregated field wells of a radar
      * chart.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<MeasureField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline RadarChartAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-    inline RadarChartAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-    inline RadarChartAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline RadarChartAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    RadarChartAggregatedFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = MeasureField>
+    RadarChartAggregatedFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

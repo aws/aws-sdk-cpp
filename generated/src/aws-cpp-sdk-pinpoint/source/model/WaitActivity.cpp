@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WaitActivity::WaitActivity() : 
-    m_nextActivityHasBeenSet(false),
-    m_waitTimeHasBeenSet(false)
-{
-}
-
 WaitActivity::WaitActivity(JsonView jsonValue)
-  : WaitActivity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WaitActivity& WaitActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NextActivity"))
   {
     m_nextActivity = jsonValue.GetString("NextActivity");
-
     m_nextActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitTime"))
   {
     m_waitTime = jsonValue.GetObject("WaitTime");
-
     m_waitTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

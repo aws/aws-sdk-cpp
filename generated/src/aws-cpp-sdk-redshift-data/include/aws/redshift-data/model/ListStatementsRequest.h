@@ -22,7 +22,7 @@ namespace Model
   class ListStatementsRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    AWS_REDSHIFTDATAAPISERVICE_API ListStatementsRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API ListStatementsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * returned. When providing <code>ClusterIdentifier</code>, then
      * <code>WorkgroupName</code> can't be specified.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline ListStatementsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline ListStatementsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline ListStatementsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    ListStatementsRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The name of the database when listing statements run against a
      * <code>ClusterIdentifier</code> or <code>WorkgroupName</code>. </p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline ListStatementsRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline ListStatementsRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline ListStatementsRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    ListStatementsRequest& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * statements exist than fit in one response, then <code>NextToken</code> is
      * returned to page through the results. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStatementsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
      * the next NextToken parameter and retrying the command. If the NextToken field is
      * empty, all response records have been retrieved for the request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStatementsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStatementsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStatementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStatementsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * run by the caller's IAM role in the current IAM session are returned. The
      * default is true. </p>
      */
-    inline bool GetRoleLevel() const{ return m_roleLevel; }
+    inline bool GetRoleLevel() const { return m_roleLevel; }
     inline bool RoleLevelHasBeenSet() const { return m_roleLevelHasBeenSet; }
     inline void SetRoleLevel(bool value) { m_roleLevelHasBeenSet = true; m_roleLevel = value; }
     inline ListStatementsRequest& WithRoleLevel(bool value) { SetRoleLevel(value); return *this;}
@@ -119,14 +113,12 @@ namespace Model
      * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
      * names to the prefix value you provide. </p>
      */
-    inline const Aws::String& GetStatementName() const{ return m_statementName; }
+    inline const Aws::String& GetStatementName() const { return m_statementName; }
     inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
-    inline void SetStatementName(const Aws::String& value) { m_statementNameHasBeenSet = true; m_statementName = value; }
-    inline void SetStatementName(Aws::String&& value) { m_statementNameHasBeenSet = true; m_statementName = std::move(value); }
-    inline void SetStatementName(const char* value) { m_statementNameHasBeenSet = true; m_statementName.assign(value); }
-    inline ListStatementsRequest& WithStatementName(const Aws::String& value) { SetStatementName(value); return *this;}
-    inline ListStatementsRequest& WithStatementName(Aws::String&& value) { SetStatementName(std::move(value)); return *this;}
-    inline ListStatementsRequest& WithStatementName(const char* value) { SetStatementName(value); return *this;}
+    template<typename StatementNameT = Aws::String>
+    void SetStatementName(StatementNameT&& value) { m_statementNameHasBeenSet = true; m_statementName = std::forward<StatementNameT>(value); }
+    template<typename StatementNameT = Aws::String>
+    ListStatementsRequest& WithStatementName(StatementNameT&& value) { SetStatementName(std::forward<StatementNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +132,10 @@ namespace Model
      * The query run has started. </p> </li> <li> <p>SUBMITTED - The query was
      * submitted, but not yet processed. </p> </li> </ul>
      */
-    inline const StatusString& GetStatus() const{ return m_status; }
+    inline StatusString GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusString& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusString&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListStatementsRequest& WithStatus(const StatusString& value) { SetStatus(value); return *this;}
-    inline ListStatementsRequest& WithStatus(StatusString&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusString value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListStatementsRequest& WithStatus(StatusString value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +145,12 @@ namespace Model
      * <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be
      * specified.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline ListStatementsRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline ListStatementsRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline ListStatementsRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    ListStatementsRequest& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -172,19 +160,19 @@ namespace Model
     Aws::String m_database;
     bool m_databaseHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_roleLevel;
+    bool m_roleLevel{false};
     bool m_roleLevelHasBeenSet = false;
 
     Aws::String m_statementName;
     bool m_statementNameHasBeenSet = false;
 
-    StatusString m_status;
+    StatusString m_status{StatusString::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workgroupName;

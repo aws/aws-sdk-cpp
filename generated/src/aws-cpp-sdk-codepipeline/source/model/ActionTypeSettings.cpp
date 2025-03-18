@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypeSettings::ActionTypeSettings() : 
-    m_thirdPartyConfigurationUrlHasBeenSet(false),
-    m_entityUrlTemplateHasBeenSet(false),
-    m_executionUrlTemplateHasBeenSet(false),
-    m_revisionUrlTemplateHasBeenSet(false)
-{
-}
-
 ActionTypeSettings::ActionTypeSettings(JsonView jsonValue)
-  : ActionTypeSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ActionTypeSettings& ActionTypeSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thirdPartyConfigurationUrl"))
   {
     m_thirdPartyConfigurationUrl = jsonValue.GetString("thirdPartyConfigurationUrl");
-
     m_thirdPartyConfigurationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityUrlTemplate"))
   {
     m_entityUrlTemplate = jsonValue.GetString("entityUrlTemplate");
-
     m_entityUrlTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionUrlTemplate"))
   {
     m_executionUrlTemplate = jsonValue.GetString("executionUrlTemplate");
-
     m_executionUrlTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionUrlTemplate"))
   {
     m_revisionUrlTemplate = jsonValue.GetString("revisionUrlTemplate");
-
     m_revisionUrlTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

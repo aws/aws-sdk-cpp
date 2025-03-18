@@ -34,7 +34,7 @@ namespace Model
   class UnsupportedLanguagePairException
   {
   public:
-    AWS_TRANSLATE_API UnsupportedLanguagePairException();
+    AWS_TRANSLATE_API UnsupportedLanguagePairException() = default;
     AWS_TRANSLATE_API UnsupportedLanguagePairException(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API UnsupportedLanguagePairException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline UnsupportedLanguagePairException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline UnsupportedLanguagePairException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline UnsupportedLanguagePairException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    UnsupportedLanguagePairException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The language code for the language of the input text. </p>
      */
-    inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
+    inline const Aws::String& GetSourceLanguageCode() const { return m_sourceLanguageCode; }
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
-    inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
-    inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
-    inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
-    inline UnsupportedLanguagePairException& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
-    inline UnsupportedLanguagePairException& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
-    inline UnsupportedLanguagePairException& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
+    template<typename SourceLanguageCodeT = Aws::String>
+    void SetSourceLanguageCode(SourceLanguageCodeT&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::forward<SourceLanguageCodeT>(value); }
+    template<typename SourceLanguageCodeT = Aws::String>
+    UnsupportedLanguagePairException& WithSourceLanguageCode(SourceLanguageCodeT&& value) { SetSourceLanguageCode(std::forward<SourceLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The language code for the language of the translated text. </p>
      */
-    inline const Aws::String& GetTargetLanguageCode() const{ return m_targetLanguageCode; }
+    inline const Aws::String& GetTargetLanguageCode() const { return m_targetLanguageCode; }
     inline bool TargetLanguageCodeHasBeenSet() const { return m_targetLanguageCodeHasBeenSet; }
-    inline void SetTargetLanguageCode(const Aws::String& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = value; }
-    inline void SetTargetLanguageCode(Aws::String&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::move(value); }
-    inline void SetTargetLanguageCode(const char* value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode.assign(value); }
-    inline UnsupportedLanguagePairException& WithTargetLanguageCode(const Aws::String& value) { SetTargetLanguageCode(value); return *this;}
-    inline UnsupportedLanguagePairException& WithTargetLanguageCode(Aws::String&& value) { SetTargetLanguageCode(std::move(value)); return *this;}
-    inline UnsupportedLanguagePairException& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
+    template<typename TargetLanguageCodeT = Aws::String>
+    void SetTargetLanguageCode(TargetLanguageCodeT&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::forward<TargetLanguageCodeT>(value); }
+    template<typename TargetLanguageCodeT = Aws::String>
+    UnsupportedLanguagePairException& WithTargetLanguageCode(TargetLanguageCodeT&& value) { SetTargetLanguageCode(std::forward<TargetLanguageCodeT>(value)); return *this;}
     ///@}
   private:
 

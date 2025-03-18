@@ -18,24 +18,7 @@ namespace SMS
 namespace Model
 {
 
-Connector::Connector() : 
-    m_connectorIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(ConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capabilityListHasBeenSet(false),
-    m_vmManagerNameHasBeenSet(false),
-    m_vmManagerType(VmManagerType::NOT_SET),
-    m_vmManagerTypeHasBeenSet(false),
-    m_vmManagerIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_associatedOnHasBeenSet(false)
-{
-}
-
 Connector::Connector(JsonView jsonValue)
-  : Connector()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ Connector& Connector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectorId"))
   {
     m_connectorId = jsonValue.GetString("connectorId");
-
     m_connectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityList"))
   {
     Aws::Utils::Array<JsonView> capabilityListJsonList = jsonValue.GetArray("capabilityList");
@@ -72,49 +49,36 @@ Connector& Connector::operator =(JsonView jsonValue)
     }
     m_capabilityListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmManagerName"))
   {
     m_vmManagerName = jsonValue.GetString("vmManagerName");
-
     m_vmManagerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmManagerType"))
   {
     m_vmManagerType = VmManagerTypeMapper::GetVmManagerTypeForName(jsonValue.GetString("vmManagerType"));
-
     m_vmManagerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmManagerId"))
   {
     m_vmManagerId = jsonValue.GetString("vmManagerId");
-
     m_vmManagerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macAddress"))
   {
     m_macAddress = jsonValue.GetString("macAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedOn"))
   {
     m_associatedOn = jsonValue.GetDouble("associatedOn");
-
     m_associatedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

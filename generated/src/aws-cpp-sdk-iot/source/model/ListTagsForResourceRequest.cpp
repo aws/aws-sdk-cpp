@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   return {};

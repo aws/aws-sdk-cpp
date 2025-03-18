@@ -18,20 +18,7 @@ namespace XRay
 namespace Model
 {
 
-SamplingTargetDocument::SamplingTargetDocument() : 
-    m_ruleNameHasBeenSet(false),
-    m_fixedRate(0.0),
-    m_fixedRateHasBeenSet(false),
-    m_reservoirQuota(0),
-    m_reservoirQuotaHasBeenSet(false),
-    m_reservoirQuotaTTLHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false)
-{
-}
-
 SamplingTargetDocument::SamplingTargetDocument(JsonView jsonValue)
-  : SamplingTargetDocument()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ SamplingTargetDocument& SamplingTargetDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedRate"))
   {
     m_fixedRate = jsonValue.GetDouble("FixedRate");
-
     m_fixedRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservoirQuota"))
   {
     m_reservoirQuota = jsonValue.GetInteger("ReservoirQuota");
-
     m_reservoirQuotaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservoirQuotaTTL"))
   {
     m_reservoirQuotaTTL = jsonValue.GetDouble("ReservoirQuotaTTL");
-
     m_reservoirQuotaTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   return *this;
 }
 

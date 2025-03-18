@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBrowserSettingsRequest::DeleteBrowserSettingsRequest() : 
-    m_browserSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBrowserSettingsRequest::SerializePayload() const
 {
   return {};

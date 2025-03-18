@@ -34,7 +34,7 @@ namespace Model
   class DeviceSecretVerifierConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A password verifier for a user's device. Used in SRP authentication.</p>
      */
-    inline const Aws::String& GetPasswordVerifier() const{ return m_passwordVerifier; }
+    inline const Aws::String& GetPasswordVerifier() const { return m_passwordVerifier; }
     inline bool PasswordVerifierHasBeenSet() const { return m_passwordVerifierHasBeenSet; }
-    inline void SetPasswordVerifier(const Aws::String& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = value; }
-    inline void SetPasswordVerifier(Aws::String&& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = std::move(value); }
-    inline void SetPasswordVerifier(const char* value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier.assign(value); }
-    inline DeviceSecretVerifierConfigType& WithPasswordVerifier(const Aws::String& value) { SetPasswordVerifier(value); return *this;}
-    inline DeviceSecretVerifierConfigType& WithPasswordVerifier(Aws::String&& value) { SetPasswordVerifier(std::move(value)); return *this;}
-    inline DeviceSecretVerifierConfigType& WithPasswordVerifier(const char* value) { SetPasswordVerifier(value); return *this;}
+    template<typename PasswordVerifierT = Aws::String>
+    void SetPasswordVerifier(PasswordVerifierT&& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = std::forward<PasswordVerifierT>(value); }
+    template<typename PasswordVerifierT = Aws::String>
+    DeviceSecretVerifierConfigType& WithPasswordVerifier(PasswordVerifierT&& value) { SetPasswordVerifier(std::forward<PasswordVerifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The salt that you want to use in SRP authentication with the user's
      * device.</p>
      */
-    inline const Aws::String& GetSalt() const{ return m_salt; }
+    inline const Aws::String& GetSalt() const { return m_salt; }
     inline bool SaltHasBeenSet() const { return m_saltHasBeenSet; }
-    inline void SetSalt(const Aws::String& value) { m_saltHasBeenSet = true; m_salt = value; }
-    inline void SetSalt(Aws::String&& value) { m_saltHasBeenSet = true; m_salt = std::move(value); }
-    inline void SetSalt(const char* value) { m_saltHasBeenSet = true; m_salt.assign(value); }
-    inline DeviceSecretVerifierConfigType& WithSalt(const Aws::String& value) { SetSalt(value); return *this;}
-    inline DeviceSecretVerifierConfigType& WithSalt(Aws::String&& value) { SetSalt(std::move(value)); return *this;}
-    inline DeviceSecretVerifierConfigType& WithSalt(const char* value) { SetSalt(value); return *this;}
+    template<typename SaltT = Aws::String>
+    void SetSalt(SaltT&& value) { m_saltHasBeenSet = true; m_salt = std::forward<SaltT>(value); }
+    template<typename SaltT = Aws::String>
+    DeviceSecretVerifierConfigType& WithSalt(SaltT&& value) { SetSalt(std::forward<SaltT>(value)); return *this;}
     ///@}
   private:
 

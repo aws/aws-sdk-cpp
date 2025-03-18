@@ -32,7 +32,7 @@ namespace Model
   class StringDatasetParameterDefaultValues
   {
   public:
-    AWS_QUICKSIGHT_API StringDatasetParameterDefaultValues();
+    AWS_QUICKSIGHT_API StringDatasetParameterDefaultValues() = default;
     AWS_QUICKSIGHT_API StringDatasetParameterDefaultValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API StringDatasetParameterDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>A list of static default values for a given string parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStaticValues() const{ return m_staticValues; }
+    inline const Aws::Vector<Aws::String>& GetStaticValues() const { return m_staticValues; }
     inline bool StaticValuesHasBeenSet() const { return m_staticValuesHasBeenSet; }
-    inline void SetStaticValues(const Aws::Vector<Aws::String>& value) { m_staticValuesHasBeenSet = true; m_staticValues = value; }
-    inline void SetStaticValues(Aws::Vector<Aws::String>&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::move(value); }
-    inline StringDatasetParameterDefaultValues& WithStaticValues(const Aws::Vector<Aws::String>& value) { SetStaticValues(value); return *this;}
-    inline StringDatasetParameterDefaultValues& WithStaticValues(Aws::Vector<Aws::String>&& value) { SetStaticValues(std::move(value)); return *this;}
-    inline StringDatasetParameterDefaultValues& AddStaticValues(const Aws::String& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
-    inline StringDatasetParameterDefaultValues& AddStaticValues(Aws::String&& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(std::move(value)); return *this; }
-    inline StringDatasetParameterDefaultValues& AddStaticValues(const char* value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
+    template<typename StaticValuesT = Aws::Vector<Aws::String>>
+    void SetStaticValues(StaticValuesT&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::forward<StaticValuesT>(value); }
+    template<typename StaticValuesT = Aws::Vector<Aws::String>>
+    StringDatasetParameterDefaultValues& WithStaticValues(StaticValuesT&& value) { SetStaticValues(std::forward<StaticValuesT>(value)); return *this;}
+    template<typename StaticValuesT = Aws::String>
+    StringDatasetParameterDefaultValues& AddStaticValues(StaticValuesT&& value) { m_staticValuesHasBeenSet = true; m_staticValues.emplace_back(std::forward<StaticValuesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-StopTimecode::StopTimecode() : 
-    m_lastFrameClippingBehavior(LastFrameClippingBehavior::NOT_SET),
-    m_lastFrameClippingBehaviorHasBeenSet(false),
-    m_timecodeHasBeenSet(false)
-{
-}
-
 StopTimecode::StopTimecode(JsonView jsonValue)
-  : StopTimecode()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StopTimecode& StopTimecode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastFrameClippingBehavior"))
   {
     m_lastFrameClippingBehavior = LastFrameClippingBehaviorMapper::GetLastFrameClippingBehaviorForName(jsonValue.GetString("lastFrameClippingBehavior"));
-
     m_lastFrameClippingBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecode"))
   {
     m_timecode = jsonValue.GetString("timecode");
-
     m_timecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

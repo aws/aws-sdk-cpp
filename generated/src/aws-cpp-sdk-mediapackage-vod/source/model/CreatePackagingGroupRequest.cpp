@@ -12,14 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePackagingGroupRequest::CreatePackagingGroupRequest() : 
-    m_authorizationHasBeenSet(false),
-    m_egressAccessLogsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePackagingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

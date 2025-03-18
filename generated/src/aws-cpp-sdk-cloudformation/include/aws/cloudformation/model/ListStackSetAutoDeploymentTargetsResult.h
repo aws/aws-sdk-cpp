@@ -30,7 +30,7 @@ namespace Model
   class ListStackSetAutoDeploymentTargetsResult
   {
   public:
-    AWS_CLOUDFORMATION_API ListStackSetAutoDeploymentTargetsResult();
+    AWS_CLOUDFORMATION_API ListStackSetAutoDeploymentTargetsResult() = default;
     AWS_CLOUDFORMATION_API ListStackSetAutoDeploymentTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API ListStackSetAutoDeploymentTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>An array of summaries of the deployment targets for the stack set.</p>
      */
-    inline const Aws::Vector<StackSetAutoDeploymentTargetSummary>& GetSummaries() const{ return m_summaries; }
-    inline void SetSummaries(const Aws::Vector<StackSetAutoDeploymentTargetSummary>& value) { m_summaries = value; }
-    inline void SetSummaries(Aws::Vector<StackSetAutoDeploymentTargetSummary>&& value) { m_summaries = std::move(value); }
-    inline ListStackSetAutoDeploymentTargetsResult& WithSummaries(const Aws::Vector<StackSetAutoDeploymentTargetSummary>& value) { SetSummaries(value); return *this;}
-    inline ListStackSetAutoDeploymentTargetsResult& WithSummaries(Aws::Vector<StackSetAutoDeploymentTargetSummary>&& value) { SetSummaries(std::move(value)); return *this;}
-    inline ListStackSetAutoDeploymentTargetsResult& AddSummaries(const StackSetAutoDeploymentTargetSummary& value) { m_summaries.push_back(value); return *this; }
-    inline ListStackSetAutoDeploymentTargetsResult& AddSummaries(StackSetAutoDeploymentTargetSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StackSetAutoDeploymentTargetSummary>& GetSummaries() const { return m_summaries; }
+    template<typename SummariesT = Aws::Vector<StackSetAutoDeploymentTargetSummary>>
+    void SetSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries = std::forward<SummariesT>(value); }
+    template<typename SummariesT = Aws::Vector<StackSetAutoDeploymentTargetSummary>>
+    ListStackSetAutoDeploymentTargetsResult& WithSummaries(SummariesT&& value) { SetSummaries(std::forward<SummariesT>(value)); return *this;}
+    template<typename SummariesT = StackSetAutoDeploymentTargetSummary>
+    ListStackSetAutoDeploymentTargetsResult& AddSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries.emplace_back(std::forward<SummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,30 +58,31 @@ namespace Model
      * request returns all results, <code>NextToken</code> is set to an empty
      * string.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStackSetAutoDeploymentTargetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListStackSetAutoDeploymentTargetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListStackSetAutoDeploymentTargetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListStackSetAutoDeploymentTargetsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StackSetAutoDeploymentTargetSummary> m_summaries;
+    bool m_summariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

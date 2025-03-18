@@ -12,12 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateManagedNotificationAdditionalChannelRequest::DisassociateManagedNotificationAdditionalChannelRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_managedNotificationConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateManagedNotificationAdditionalChannelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class RecommendationPillarSpecificAggregates
   {
   public:
-    AWS_TRUSTEDADVISOR_API RecommendationPillarSpecificAggregates();
+    AWS_TRUSTEDADVISOR_API RecommendationPillarSpecificAggregates() = default;
     AWS_TRUSTEDADVISOR_API RecommendationPillarSpecificAggregates(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API RecommendationPillarSpecificAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Cost optimizing aggregates</p>
      */
-    inline const RecommendationCostOptimizingAggregates& GetCostOptimizing() const{ return m_costOptimizing; }
+    inline const RecommendationCostOptimizingAggregates& GetCostOptimizing() const { return m_costOptimizing; }
     inline bool CostOptimizingHasBeenSet() const { return m_costOptimizingHasBeenSet; }
-    inline void SetCostOptimizing(const RecommendationCostOptimizingAggregates& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = value; }
-    inline void SetCostOptimizing(RecommendationCostOptimizingAggregates&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::move(value); }
-    inline RecommendationPillarSpecificAggregates& WithCostOptimizing(const RecommendationCostOptimizingAggregates& value) { SetCostOptimizing(value); return *this;}
-    inline RecommendationPillarSpecificAggregates& WithCostOptimizing(RecommendationCostOptimizingAggregates&& value) { SetCostOptimizing(std::move(value)); return *this;}
+    template<typename CostOptimizingT = RecommendationCostOptimizingAggregates>
+    void SetCostOptimizing(CostOptimizingT&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::forward<CostOptimizingT>(value); }
+    template<typename CostOptimizingT = RecommendationCostOptimizingAggregates>
+    RecommendationPillarSpecificAggregates& WithCostOptimizing(CostOptimizingT&& value) { SetCostOptimizing(std::forward<CostOptimizingT>(value)); return *this;}
     ///@}
   private:
 

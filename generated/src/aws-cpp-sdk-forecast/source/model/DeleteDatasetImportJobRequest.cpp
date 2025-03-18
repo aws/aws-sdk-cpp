@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatasetImportJobRequest::DeleteDatasetImportJobRequest() : 
-    m_datasetImportJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatasetImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

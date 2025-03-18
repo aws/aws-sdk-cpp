@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-EvaluationResult::EvaluationResult() : 
-    m_complianceStatus(PolicyComplianceStatusType::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_violatorCount(0),
-    m_violatorCountHasBeenSet(false),
-    m_evaluationLimitExceeded(false),
-    m_evaluationLimitExceededHasBeenSet(false)
-{
-}
-
 EvaluationResult::EvaluationResult(JsonView jsonValue)
-  : EvaluationResult()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplianceStatus"))
   {
     m_complianceStatus = PolicyComplianceStatusTypeMapper::GetPolicyComplianceStatusTypeForName(jsonValue.GetString("ComplianceStatus"));
-
     m_complianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatorCount"))
   {
     m_violatorCount = jsonValue.GetInt64("ViolatorCount");
-
     m_violatorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationLimitExceeded"))
   {
     m_evaluationLimitExceeded = jsonValue.GetBool("EvaluationLimitExceeded");
-
     m_evaluationLimitExceededHasBeenSet = true;
   }
-
   return *this;
 }
 

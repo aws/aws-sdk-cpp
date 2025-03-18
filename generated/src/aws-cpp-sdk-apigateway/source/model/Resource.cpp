@@ -19,18 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-Resource::Resource() : 
-    m_idHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_pathPartHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_resourceMethodsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -40,31 +29,23 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentId"))
   {
     m_parentId = jsonValue.GetString("parentId");
-
     m_parentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathPart"))
   {
     m_pathPart = jsonValue.GetString("pathPart");
-
     m_pathPartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceMethods"))
   {
     Aws::Map<Aws::String, JsonView> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
@@ -74,7 +55,6 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_resourceMethodsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class ListStreamsResult
   {
   public:
-    AWS_KINESIS_API ListStreamsResult();
+    AWS_KINESIS_API ListStreamsResult() = default;
     AWS_KINESIS_API ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,22 +45,21 @@ namespace Model
      * <p>The names of the streams that are associated with the Amazon Web Services
      * account making the <code>ListStreams</code> request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStreamNames() const{ return m_streamNames; }
-    inline void SetStreamNames(const Aws::Vector<Aws::String>& value) { m_streamNames = value; }
-    inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = std::move(value); }
-    inline ListStreamsResult& WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
-    inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(std::move(value)); return *this;}
-    inline ListStreamsResult& AddStreamNames(const Aws::String& value) { m_streamNames.push_back(value); return *this; }
-    inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(std::move(value)); return *this; }
-    inline ListStreamsResult& AddStreamNames(const char* value) { m_streamNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetStreamNames() const { return m_streamNames; }
+    template<typename StreamNamesT = Aws::Vector<Aws::String>>
+    void SetStreamNames(StreamNamesT&& value) { m_streamNamesHasBeenSet = true; m_streamNames = std::forward<StreamNamesT>(value); }
+    template<typename StreamNamesT = Aws::Vector<Aws::String>>
+    ListStreamsResult& WithStreamNames(StreamNamesT&& value) { SetStreamNames(std::forward<StreamNamesT>(value)); return *this;}
+    template<typename StreamNamesT = Aws::String>
+    ListStreamsResult& AddStreamNames(StreamNamesT&& value) { m_streamNamesHasBeenSet = true; m_streamNames.emplace_back(std::forward<StreamNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>If set to <code>true</code>, there are more streams available to list.</p>
      */
-    inline bool GetHasMoreStreams() const{ return m_hasMoreStreams; }
-    inline void SetHasMoreStreams(bool value) { m_hasMoreStreams = value; }
+    inline bool GetHasMoreStreams() const { return m_hasMoreStreams; }
+    inline void SetHasMoreStreams(bool value) { m_hasMoreStreamsHasBeenSet = true; m_hasMoreStreams = value; }
     inline ListStreamsResult& WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
     ///@}
 
@@ -68,49 +67,50 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<StreamSummary>& GetStreamSummaries() const{ return m_streamSummaries; }
-    inline void SetStreamSummaries(const Aws::Vector<StreamSummary>& value) { m_streamSummaries = value; }
-    inline void SetStreamSummaries(Aws::Vector<StreamSummary>&& value) { m_streamSummaries = std::move(value); }
-    inline ListStreamsResult& WithStreamSummaries(const Aws::Vector<StreamSummary>& value) { SetStreamSummaries(value); return *this;}
-    inline ListStreamsResult& WithStreamSummaries(Aws::Vector<StreamSummary>&& value) { SetStreamSummaries(std::move(value)); return *this;}
-    inline ListStreamsResult& AddStreamSummaries(const StreamSummary& value) { m_streamSummaries.push_back(value); return *this; }
-    inline ListStreamsResult& AddStreamSummaries(StreamSummary&& value) { m_streamSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamSummary>& GetStreamSummaries() const { return m_streamSummaries; }
+    template<typename StreamSummariesT = Aws::Vector<StreamSummary>>
+    void SetStreamSummaries(StreamSummariesT&& value) { m_streamSummariesHasBeenSet = true; m_streamSummaries = std::forward<StreamSummariesT>(value); }
+    template<typename StreamSummariesT = Aws::Vector<StreamSummary>>
+    ListStreamsResult& WithStreamSummaries(StreamSummariesT&& value) { SetStreamSummaries(std::forward<StreamSummariesT>(value)); return *this;}
+    template<typename StreamSummariesT = StreamSummary>
+    ListStreamsResult& AddStreamSummaries(StreamSummariesT&& value) { m_streamSummariesHasBeenSet = true; m_streamSummaries.emplace_back(std::forward<StreamSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_streamNames;
+    bool m_streamNamesHasBeenSet = false;
 
-    bool m_hasMoreStreams;
+    bool m_hasMoreStreams{false};
+    bool m_hasMoreStreamsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<StreamSummary> m_streamSummaries;
+    bool m_streamSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

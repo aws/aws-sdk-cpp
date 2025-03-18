@@ -12,11 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReportCreationRequest::StartReportCreationRequest() : 
-    m_s3BucketHasBeenSet(false)
-{
-}
-
 Aws::String StartReportCreationRequest::SerializePayload() const
 {
   JsonValue payload;

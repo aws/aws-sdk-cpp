@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRuntimeManagementConfigRequest::GetRuntimeManagementConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRuntimeManagementConfigRequest::SerializePayload() const
 {
   return {};

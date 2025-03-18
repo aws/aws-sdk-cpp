@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedPrincipalInput::SubscribedPrincipalInput() : 
-    m_projectHasBeenSet(false)
-{
-}
-
 SubscribedPrincipalInput::SubscribedPrincipalInput(JsonView jsonValue)
-  : SubscribedPrincipalInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SubscribedPrincipalInput& SubscribedPrincipalInput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetObject("project");
-
     m_projectHasBeenSet = true;
   }
-
   return *this;
 }
 

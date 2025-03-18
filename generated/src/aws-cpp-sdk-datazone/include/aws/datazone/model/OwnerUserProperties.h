@@ -31,7 +31,7 @@ namespace Model
   class OwnerUserProperties
   {
   public:
-    AWS_DATAZONE_API OwnerUserProperties();
+    AWS_DATAZONE_API OwnerUserProperties() = default;
     AWS_DATAZONE_API OwnerUserProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API OwnerUserProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the owner user.</p>
      */
-    inline const Aws::String& GetUserIdentifier() const{ return m_userIdentifier; }
+    inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
     inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
-    inline void SetUserIdentifier(const Aws::String& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = value; }
-    inline void SetUserIdentifier(Aws::String&& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = std::move(value); }
-    inline void SetUserIdentifier(const char* value) { m_userIdentifierHasBeenSet = true; m_userIdentifier.assign(value); }
-    inline OwnerUserProperties& WithUserIdentifier(const Aws::String& value) { SetUserIdentifier(value); return *this;}
-    inline OwnerUserProperties& WithUserIdentifier(Aws::String&& value) { SetUserIdentifier(std::move(value)); return *this;}
-    inline OwnerUserProperties& WithUserIdentifier(const char* value) { SetUserIdentifier(value); return *this;}
+    template<typename UserIdentifierT = Aws::String>
+    void SetUserIdentifier(UserIdentifierT&& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = std::forward<UserIdentifierT>(value); }
+    template<typename UserIdentifierT = Aws::String>
+    OwnerUserProperties& WithUserIdentifier(UserIdentifierT&& value) { SetUserIdentifier(std::forward<UserIdentifierT>(value)); return *this;}
     ///@}
   private:
 

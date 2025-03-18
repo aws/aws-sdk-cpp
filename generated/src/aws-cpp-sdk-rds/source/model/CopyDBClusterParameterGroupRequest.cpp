@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CopyDBClusterParameterGroupRequest::CopyDBClusterParameterGroupRequest() : 
-    m_sourceDBClusterParameterGroupIdentifierHasBeenSet(false),
-    m_targetDBClusterParameterGroupIdentifierHasBeenSet(false),
-    m_targetDBClusterParameterGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopyDBClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

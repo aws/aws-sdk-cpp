@@ -22,7 +22,7 @@ namespace Model
   class StartImportTaskRequest : public ApplicationDiscoveryServiceRequest
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API StartImportTaskRequest();
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartImportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * return information about the original import task with that client request
      * token.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartImportTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartImportTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartImportTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartImportTaskRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * servers that were included in this import task. We recommend that you use a
      * meaningful name for each import task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartImportTaskRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartImportTaskRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartImportTaskRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartImportTaskRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>If you're using the Amazon Web Services CLI, this URL is structured as
      * follows: <code>s3://BucketName/ImportFileName.CSV</code> </p> 
      */
-    inline const Aws::String& GetImportUrl() const{ return m_importUrl; }
+    inline const Aws::String& GetImportUrl() const { return m_importUrl; }
     inline bool ImportUrlHasBeenSet() const { return m_importUrlHasBeenSet; }
-    inline void SetImportUrl(const Aws::String& value) { m_importUrlHasBeenSet = true; m_importUrl = value; }
-    inline void SetImportUrl(Aws::String&& value) { m_importUrlHasBeenSet = true; m_importUrl = std::move(value); }
-    inline void SetImportUrl(const char* value) { m_importUrlHasBeenSet = true; m_importUrl.assign(value); }
-    inline StartImportTaskRequest& WithImportUrl(const Aws::String& value) { SetImportUrl(value); return *this;}
-    inline StartImportTaskRequest& WithImportUrl(Aws::String&& value) { SetImportUrl(std::move(value)); return *this;}
-    inline StartImportTaskRequest& WithImportUrl(const char* value) { SetImportUrl(value); return *this;}
+    template<typename ImportUrlT = Aws::String>
+    void SetImportUrl(ImportUrlT&& value) { m_importUrlHasBeenSet = true; m_importUrl = std::forward<ImportUrlT>(value); }
+    template<typename ImportUrlT = Aws::String>
+    StartImportTaskRequest& WithImportUrl(ImportUrlT&& value) { SetImportUrl(std::forward<ImportUrlT>(value)); return *this;}
     ///@}
   private:
 

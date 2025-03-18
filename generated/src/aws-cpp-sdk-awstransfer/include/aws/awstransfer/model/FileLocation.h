@@ -33,7 +33,7 @@ namespace Model
   class FileLocation
   {
   public:
-    AWS_TRANSFER_API FileLocation();
+    AWS_TRANSFER_API FileLocation() = default;
     AWS_TRANSFER_API FileLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>Specifies the S3 details for the file being used, such as bucket, ETag, and
      * so forth.</p>
      */
-    inline const S3FileLocation& GetS3FileLocation() const{ return m_s3FileLocation; }
+    inline const S3FileLocation& GetS3FileLocation() const { return m_s3FileLocation; }
     inline bool S3FileLocationHasBeenSet() const { return m_s3FileLocationHasBeenSet; }
-    inline void SetS3FileLocation(const S3FileLocation& value) { m_s3FileLocationHasBeenSet = true; m_s3FileLocation = value; }
-    inline void SetS3FileLocation(S3FileLocation&& value) { m_s3FileLocationHasBeenSet = true; m_s3FileLocation = std::move(value); }
-    inline FileLocation& WithS3FileLocation(const S3FileLocation& value) { SetS3FileLocation(value); return *this;}
-    inline FileLocation& WithS3FileLocation(S3FileLocation&& value) { SetS3FileLocation(std::move(value)); return *this;}
+    template<typename S3FileLocationT = S3FileLocation>
+    void SetS3FileLocation(S3FileLocationT&& value) { m_s3FileLocationHasBeenSet = true; m_s3FileLocation = std::forward<S3FileLocationT>(value); }
+    template<typename S3FileLocationT = S3FileLocation>
+    FileLocation& WithS3FileLocation(S3FileLocationT&& value) { SetS3FileLocation(std::forward<S3FileLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
-    inline const EfsFileLocation& GetEfsFileLocation() const{ return m_efsFileLocation; }
+    inline const EfsFileLocation& GetEfsFileLocation() const { return m_efsFileLocation; }
     inline bool EfsFileLocationHasBeenSet() const { return m_efsFileLocationHasBeenSet; }
-    inline void SetEfsFileLocation(const EfsFileLocation& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = value; }
-    inline void SetEfsFileLocation(EfsFileLocation&& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = std::move(value); }
-    inline FileLocation& WithEfsFileLocation(const EfsFileLocation& value) { SetEfsFileLocation(value); return *this;}
-    inline FileLocation& WithEfsFileLocation(EfsFileLocation&& value) { SetEfsFileLocation(std::move(value)); return *this;}
+    template<typename EfsFileLocationT = EfsFileLocation>
+    void SetEfsFileLocation(EfsFileLocationT&& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = std::forward<EfsFileLocationT>(value); }
+    template<typename EfsFileLocationT = EfsFileLocation>
+    FileLocation& WithEfsFileLocation(EfsFileLocationT&& value) { SetEfsFileLocation(std::forward<EfsFileLocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class MediaSourceConfig
   {
   public:
-    AWS_KINESISVIDEO_API MediaSourceConfig();
+    AWS_KINESISVIDEO_API MediaSourceConfig() = default;
     AWS_KINESISVIDEO_API MediaSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API MediaSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
      * the camera, or a local media file location.</p>
      */
-    inline const Aws::String& GetMediaUriSecretArn() const{ return m_mediaUriSecretArn; }
+    inline const Aws::String& GetMediaUriSecretArn() const { return m_mediaUriSecretArn; }
     inline bool MediaUriSecretArnHasBeenSet() const { return m_mediaUriSecretArnHasBeenSet; }
-    inline void SetMediaUriSecretArn(const Aws::String& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = value; }
-    inline void SetMediaUriSecretArn(Aws::String&& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = std::move(value); }
-    inline void SetMediaUriSecretArn(const char* value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn.assign(value); }
-    inline MediaSourceConfig& WithMediaUriSecretArn(const Aws::String& value) { SetMediaUriSecretArn(value); return *this;}
-    inline MediaSourceConfig& WithMediaUriSecretArn(Aws::String&& value) { SetMediaUriSecretArn(std::move(value)); return *this;}
-    inline MediaSourceConfig& WithMediaUriSecretArn(const char* value) { SetMediaUriSecretArn(value); return *this;}
+    template<typename MediaUriSecretArnT = Aws::String>
+    void SetMediaUriSecretArn(MediaUriSecretArnT&& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = std::forward<MediaUriSecretArnT>(value); }
+    template<typename MediaUriSecretArnT = Aws::String>
+    MediaSourceConfig& WithMediaUriSecretArn(MediaUriSecretArnT&& value) { SetMediaUriSecretArn(std::forward<MediaUriSecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * can be used to stream local media files.</p>  <p>Preview only supports the
      * <code>RTSP_URI</code> media source URI format .</p> 
      */
-    inline const MediaUriType& GetMediaUriType() const{ return m_mediaUriType; }
+    inline MediaUriType GetMediaUriType() const { return m_mediaUriType; }
     inline bool MediaUriTypeHasBeenSet() const { return m_mediaUriTypeHasBeenSet; }
-    inline void SetMediaUriType(const MediaUriType& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = value; }
-    inline void SetMediaUriType(MediaUriType&& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = std::move(value); }
-    inline MediaSourceConfig& WithMediaUriType(const MediaUriType& value) { SetMediaUriType(value); return *this;}
-    inline MediaSourceConfig& WithMediaUriType(MediaUriType&& value) { SetMediaUriType(std::move(value)); return *this;}
+    inline void SetMediaUriType(MediaUriType value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = value; }
+    inline MediaSourceConfig& WithMediaUriType(MediaUriType value) { SetMediaUriType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_mediaUriSecretArn;
     bool m_mediaUriSecretArnHasBeenSet = false;
 
-    MediaUriType m_mediaUriType;
+    MediaUriType m_mediaUriType{MediaUriType::NOT_SET};
     bool m_mediaUriTypeHasBeenSet = false;
   };
 

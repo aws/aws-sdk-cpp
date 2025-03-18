@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagPolicyRequest::TagPolicyRequest() : 
-    m_policyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

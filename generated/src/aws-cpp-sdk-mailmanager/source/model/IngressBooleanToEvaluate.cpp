@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressBooleanToEvaluate::IngressBooleanToEvaluate() : 
-    m_analysisHasBeenSet(false),
-    m_isInAddressListHasBeenSet(false)
-{
-}
-
 IngressBooleanToEvaluate::IngressBooleanToEvaluate(JsonView jsonValue)
-  : IngressBooleanToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IngressBooleanToEvaluate& IngressBooleanToEvaluate::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Analysis"))
   {
     m_analysis = jsonValue.GetObject("Analysis");
-
     m_analysisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsInAddressList"))
   {
     m_isInAddressList = jsonValue.GetObject("IsInAddressList");
-
     m_isInAddressListHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -40,7 +40,7 @@ namespace Model
   class FilterControl
   {
   public:
-    AWS_QUICKSIGHT_API FilterControl();
+    AWS_QUICKSIGHT_API FilterControl() = default;
     AWS_QUICKSIGHT_API FilterControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>A control from a date filter that is used to specify date and time.</p>
      */
-    inline const FilterDateTimePickerControl& GetDateTimePicker() const{ return m_dateTimePicker; }
+    inline const FilterDateTimePickerControl& GetDateTimePicker() const { return m_dateTimePicker; }
     inline bool DateTimePickerHasBeenSet() const { return m_dateTimePickerHasBeenSet; }
-    inline void SetDateTimePicker(const FilterDateTimePickerControl& value) { m_dateTimePickerHasBeenSet = true; m_dateTimePicker = value; }
-    inline void SetDateTimePicker(FilterDateTimePickerControl&& value) { m_dateTimePickerHasBeenSet = true; m_dateTimePicker = std::move(value); }
-    inline FilterControl& WithDateTimePicker(const FilterDateTimePickerControl& value) { SetDateTimePicker(value); return *this;}
-    inline FilterControl& WithDateTimePicker(FilterDateTimePickerControl&& value) { SetDateTimePicker(std::move(value)); return *this;}
+    template<typename DateTimePickerT = FilterDateTimePickerControl>
+    void SetDateTimePicker(DateTimePickerT&& value) { m_dateTimePickerHasBeenSet = true; m_dateTimePicker = std::forward<DateTimePickerT>(value); }
+    template<typename DateTimePickerT = FilterDateTimePickerControl>
+    FilterControl& WithDateTimePicker(DateTimePickerT&& value) { SetDateTimePicker(std::forward<DateTimePickerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>A control to display a list of buttons or boxes. This is used to select
      * either a single value or multiple values.</p>
      */
-    inline const FilterListControl& GetList() const{ return m_list; }
+    inline const FilterListControl& GetList() const { return m_list; }
     inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
-    inline void SetList(const FilterListControl& value) { m_listHasBeenSet = true; m_list = value; }
-    inline void SetList(FilterListControl&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
-    inline FilterControl& WithList(const FilterListControl& value) { SetList(value); return *this;}
-    inline FilterControl& WithList(FilterListControl&& value) { SetList(std::move(value)); return *this;}
+    template<typename ListT = FilterListControl>
+    void SetList(ListT&& value) { m_listHasBeenSet = true; m_list = std::forward<ListT>(value); }
+    template<typename ListT = FilterListControl>
+    FilterControl& WithList(ListT&& value) { SetList(std::forward<ListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,36 +76,36 @@ namespace Model
      * <p>A control to display a dropdown list with buttons that are used to select a
      * single value.</p>
      */
-    inline const FilterDropDownControl& GetDropdown() const{ return m_dropdown; }
+    inline const FilterDropDownControl& GetDropdown() const { return m_dropdown; }
     inline bool DropdownHasBeenSet() const { return m_dropdownHasBeenSet; }
-    inline void SetDropdown(const FilterDropDownControl& value) { m_dropdownHasBeenSet = true; m_dropdown = value; }
-    inline void SetDropdown(FilterDropDownControl&& value) { m_dropdownHasBeenSet = true; m_dropdown = std::move(value); }
-    inline FilterControl& WithDropdown(const FilterDropDownControl& value) { SetDropdown(value); return *this;}
-    inline FilterControl& WithDropdown(FilterDropDownControl&& value) { SetDropdown(std::move(value)); return *this;}
+    template<typename DropdownT = FilterDropDownControl>
+    void SetDropdown(DropdownT&& value) { m_dropdownHasBeenSet = true; m_dropdown = std::forward<DropdownT>(value); }
+    template<typename DropdownT = FilterDropDownControl>
+    FilterControl& WithDropdown(DropdownT&& value) { SetDropdown(std::forward<DropdownT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A control to display a text box that is used to enter a single entry.</p>
      */
-    inline const FilterTextFieldControl& GetTextField() const{ return m_textField; }
+    inline const FilterTextFieldControl& GetTextField() const { return m_textField; }
     inline bool TextFieldHasBeenSet() const { return m_textFieldHasBeenSet; }
-    inline void SetTextField(const FilterTextFieldControl& value) { m_textFieldHasBeenSet = true; m_textField = value; }
-    inline void SetTextField(FilterTextFieldControl&& value) { m_textFieldHasBeenSet = true; m_textField = std::move(value); }
-    inline FilterControl& WithTextField(const FilterTextFieldControl& value) { SetTextField(value); return *this;}
-    inline FilterControl& WithTextField(FilterTextFieldControl&& value) { SetTextField(std::move(value)); return *this;}
+    template<typename TextFieldT = FilterTextFieldControl>
+    void SetTextField(TextFieldT&& value) { m_textFieldHasBeenSet = true; m_textField = std::forward<TextFieldT>(value); }
+    template<typename TextFieldT = FilterTextFieldControl>
+    FilterControl& WithTextField(TextFieldT&& value) { SetTextField(std::forward<TextFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A control to display a text box that is used to enter multiple entries.</p>
      */
-    inline const FilterTextAreaControl& GetTextArea() const{ return m_textArea; }
+    inline const FilterTextAreaControl& GetTextArea() const { return m_textArea; }
     inline bool TextAreaHasBeenSet() const { return m_textAreaHasBeenSet; }
-    inline void SetTextArea(const FilterTextAreaControl& value) { m_textAreaHasBeenSet = true; m_textArea = value; }
-    inline void SetTextArea(FilterTextAreaControl&& value) { m_textAreaHasBeenSet = true; m_textArea = std::move(value); }
-    inline FilterControl& WithTextArea(const FilterTextAreaControl& value) { SetTextArea(value); return *this;}
-    inline FilterControl& WithTextArea(FilterTextAreaControl&& value) { SetTextArea(std::move(value)); return *this;}
+    template<typename TextAreaT = FilterTextAreaControl>
+    void SetTextArea(TextAreaT&& value) { m_textAreaHasBeenSet = true; m_textArea = std::forward<TextAreaT>(value); }
+    template<typename TextAreaT = FilterTextAreaControl>
+    FilterControl& WithTextArea(TextAreaT&& value) { SetTextArea(std::forward<TextAreaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,24 +113,24 @@ namespace Model
      * <p>A control to display a horizontal toggle bar. This is used to change a value
      * by sliding the toggle.</p>
      */
-    inline const FilterSliderControl& GetSlider() const{ return m_slider; }
+    inline const FilterSliderControl& GetSlider() const { return m_slider; }
     inline bool SliderHasBeenSet() const { return m_sliderHasBeenSet; }
-    inline void SetSlider(const FilterSliderControl& value) { m_sliderHasBeenSet = true; m_slider = value; }
-    inline void SetSlider(FilterSliderControl&& value) { m_sliderHasBeenSet = true; m_slider = std::move(value); }
-    inline FilterControl& WithSlider(const FilterSliderControl& value) { SetSlider(value); return *this;}
-    inline FilterControl& WithSlider(FilterSliderControl&& value) { SetSlider(std::move(value)); return *this;}
+    template<typename SliderT = FilterSliderControl>
+    void SetSlider(SliderT&& value) { m_sliderHasBeenSet = true; m_slider = std::forward<SliderT>(value); }
+    template<typename SliderT = FilterSliderControl>
+    FilterControl& WithSlider(SliderT&& value) { SetSlider(std::forward<SliderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A control from a date filter that is used to specify the relative date.</p>
      */
-    inline const FilterRelativeDateTimeControl& GetRelativeDateTime() const{ return m_relativeDateTime; }
+    inline const FilterRelativeDateTimeControl& GetRelativeDateTime() const { return m_relativeDateTime; }
     inline bool RelativeDateTimeHasBeenSet() const { return m_relativeDateTimeHasBeenSet; }
-    inline void SetRelativeDateTime(const FilterRelativeDateTimeControl& value) { m_relativeDateTimeHasBeenSet = true; m_relativeDateTime = value; }
-    inline void SetRelativeDateTime(FilterRelativeDateTimeControl&& value) { m_relativeDateTimeHasBeenSet = true; m_relativeDateTime = std::move(value); }
-    inline FilterControl& WithRelativeDateTime(const FilterRelativeDateTimeControl& value) { SetRelativeDateTime(value); return *this;}
-    inline FilterControl& WithRelativeDateTime(FilterRelativeDateTimeControl&& value) { SetRelativeDateTime(std::move(value)); return *this;}
+    template<typename RelativeDateTimeT = FilterRelativeDateTimeControl>
+    void SetRelativeDateTime(RelativeDateTimeT&& value) { m_relativeDateTimeHasBeenSet = true; m_relativeDateTime = std::forward<RelativeDateTimeT>(value); }
+    template<typename RelativeDateTimeT = FilterRelativeDateTimeControl>
+    FilterControl& WithRelativeDateTime(RelativeDateTimeT&& value) { SetRelativeDateTime(std::forward<RelativeDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +138,12 @@ namespace Model
      * <p>A control from a filter that is scoped across more than one sheet. This
      * represents your filter control on a sheet</p>
      */
-    inline const FilterCrossSheetControl& GetCrossSheet() const{ return m_crossSheet; }
+    inline const FilterCrossSheetControl& GetCrossSheet() const { return m_crossSheet; }
     inline bool CrossSheetHasBeenSet() const { return m_crossSheetHasBeenSet; }
-    inline void SetCrossSheet(const FilterCrossSheetControl& value) { m_crossSheetHasBeenSet = true; m_crossSheet = value; }
-    inline void SetCrossSheet(FilterCrossSheetControl&& value) { m_crossSheetHasBeenSet = true; m_crossSheet = std::move(value); }
-    inline FilterControl& WithCrossSheet(const FilterCrossSheetControl& value) { SetCrossSheet(value); return *this;}
-    inline FilterControl& WithCrossSheet(FilterCrossSheetControl&& value) { SetCrossSheet(std::move(value)); return *this;}
+    template<typename CrossSheetT = FilterCrossSheetControl>
+    void SetCrossSheet(CrossSheetT&& value) { m_crossSheetHasBeenSet = true; m_crossSheet = std::forward<CrossSheetT>(value); }
+    template<typename CrossSheetT = FilterCrossSheetControl>
+    FilterControl& WithCrossSheet(CrossSheetT&& value) { SetCrossSheet(std::forward<CrossSheetT>(value)); return *this;}
     ///@}
   private:
 

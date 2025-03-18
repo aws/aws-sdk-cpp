@@ -33,24 +33,23 @@ namespace Model
   class EnableSsoResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API EnableSsoResult();
+    AWS_DIRECTORYSERVICE_API EnableSsoResult() = default;
     AWS_DIRECTORYSERVICE_API EnableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API EnableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EnableSsoResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EnableSsoResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EnableSsoResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EnableSsoResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

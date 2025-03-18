@@ -25,7 +25,7 @@ namespace Model
   class ListStreamsRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API ListStreamsRequest();
+    AWS_KINESIS_API ListStreamsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * <p>The maximum number of streams to list. The default value is 100. If you
      * specify a value greater than 100, at most 100 results are returned.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>The name of the stream to start the list with.</p>
      */
-    inline const Aws::String& GetExclusiveStartStreamName() const{ return m_exclusiveStartStreamName; }
+    inline const Aws::String& GetExclusiveStartStreamName() const { return m_exclusiveStartStreamName; }
     inline bool ExclusiveStartStreamNameHasBeenSet() const { return m_exclusiveStartStreamNameHasBeenSet; }
-    inline void SetExclusiveStartStreamName(const Aws::String& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = value; }
-    inline void SetExclusiveStartStreamName(Aws::String&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = std::move(value); }
-    inline void SetExclusiveStartStreamName(const char* value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName.assign(value); }
-    inline ListStreamsRequest& WithExclusiveStartStreamName(const Aws::String& value) { SetExclusiveStartStreamName(value); return *this;}
-    inline ListStreamsRequest& WithExclusiveStartStreamName(Aws::String&& value) { SetExclusiveStartStreamName(std::move(value)); return *this;}
-    inline ListStreamsRequest& WithExclusiveStartStreamName(const char* value) { SetExclusiveStartStreamName(value); return *this;}
+    template<typename ExclusiveStartStreamNameT = Aws::String>
+    void SetExclusiveStartStreamName(ExclusiveStartStreamNameT&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = std::forward<ExclusiveStartStreamNameT>(value); }
+    template<typename ExclusiveStartStreamNameT = Aws::String>
+    ListStreamsRequest& WithExclusiveStartStreamName(ExclusiveStartStreamNameT&& value) { SetExclusiveStartStreamName(std::forward<ExclusiveStartStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartStreamName;

@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobParameters::ProtectedJobParameters() : 
-    m_analysisTemplateArnHasBeenSet(false)
-{
-}
-
 ProtectedJobParameters::ProtectedJobParameters(JsonView jsonValue)
-  : ProtectedJobParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedJobParameters& ProtectedJobParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("analysisTemplateArn"))
   {
     m_analysisTemplateArn = jsonValue.GetString("analysisTemplateArn");
-
     m_analysisTemplateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

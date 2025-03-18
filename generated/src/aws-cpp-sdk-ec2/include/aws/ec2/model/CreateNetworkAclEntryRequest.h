@@ -24,7 +24,7 @@ namespace Model
   class CreateNetworkAclEntryRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateNetworkAclEntryRequest();
+    AWS_EC2_API CreateNetworkAclEntryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The ID of the network ACL.</p>
      */
-    inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+    inline const Aws::String& GetNetworkAclId() const { return m_networkAclId; }
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-    inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-    inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-    inline CreateNetworkAclEntryRequest& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-    inline CreateNetworkAclEntryRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
+    template<typename NetworkAclIdT = Aws::String>
+    void SetNetworkAclId(NetworkAclIdT&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::forward<NetworkAclIdT>(value); }
+    template<typename NetworkAclIdT = Aws::String>
+    CreateNetworkAclEntryRequest& WithNetworkAclId(NetworkAclIdT&& value) { SetNetworkAclId(std::forward<NetworkAclIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
      * to 32766. The range 32767 to 65535 is reserved for internal use.</p>
      */
-    inline int GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const { return m_ruleNumber; }
     inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
     inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
     inline CreateNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
@@ -88,26 +86,22 @@ namespace Model
      * specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block,
      * you must specify an ICMP type and code.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline CreateNetworkAclEntryRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline CreateNetworkAclEntryRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    CreateNetworkAclEntryRequest& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
-    inline const RuleAction& GetRuleAction() const{ return m_ruleAction; }
+    inline RuleAction GetRuleAction() const { return m_ruleAction; }
     inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
-    inline void SetRuleAction(const RuleAction& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
-    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
-    inline CreateNetworkAclEntryRequest& WithRuleAction(const RuleAction& value) { SetRuleAction(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
+    inline void SetRuleAction(RuleAction value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
+    inline CreateNetworkAclEntryRequest& WithRuleAction(RuleAction value) { SetRuleAction(value); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +109,7 @@ namespace Model
      * <p>Indicates whether this is an egress rule (rule is applied to traffic leaving
      * the subnet).</p>
      */
-    inline bool GetEgress() const{ return m_egress; }
+    inline bool GetEgress() const { return m_egress; }
     inline bool EgressHasBeenSet() const { return m_egressHasBeenSet; }
     inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
     inline CreateNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
@@ -128,14 +122,12 @@ namespace Model
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
      * <code>100.68.0.0/18</code>.</p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline CreateNetworkAclEntryRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline CreateNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    CreateNetworkAclEntryRequest& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +135,12 @@ namespace Model
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
      * <code>2001:db8:1234:1a00::/64</code>).</p>
      */
-    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+    inline const Aws::String& GetIpv6CidrBlock() const { return m_ipv6CidrBlock; }
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-    inline CreateNetworkAclEntryRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-    inline CreateNetworkAclEntryRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+    template<typename Ipv6CidrBlockT = Aws::String>
+    void SetIpv6CidrBlock(Ipv6CidrBlockT&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::forward<Ipv6CidrBlockT>(value); }
+    template<typename Ipv6CidrBlockT = Aws::String>
+    CreateNetworkAclEntryRequest& WithIpv6CidrBlock(Ipv6CidrBlockT&& value) { SetIpv6CidrBlock(std::forward<Ipv6CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +148,12 @@ namespace Model
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying
      * protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
      */
-    inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
+    inline const IcmpTypeCode& GetIcmpTypeCode() const { return m_icmpTypeCode; }
     inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
-    inline void SetIcmpTypeCode(const IcmpTypeCode& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
-    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
-    inline CreateNetworkAclEntryRequest& WithIcmpTypeCode(const IcmpTypeCode& value) { SetIcmpTypeCode(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+    template<typename IcmpTypeCodeT = IcmpTypeCode>
+    void SetIcmpTypeCode(IcmpTypeCodeT&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::forward<IcmpTypeCodeT>(value); }
+    template<typename IcmpTypeCodeT = IcmpTypeCode>
+    CreateNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCodeT&& value) { SetIcmpTypeCode(std::forward<IcmpTypeCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,31 +161,31 @@ namespace Model
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
      * specifying protocol 6 (TCP) or 17 (UDP).</p>
      */
-    inline const PortRange& GetPortRange() const{ return m_portRange; }
+    inline const PortRange& GetPortRange() const { return m_portRange; }
     inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
-    inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
-    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
-    inline CreateNetworkAclEntryRequest& WithPortRange(const PortRange& value) { SetPortRange(value); return *this;}
-    inline CreateNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+    template<typename PortRangeT = PortRange>
+    void SetPortRange(PortRangeT&& value) { m_portRangeHasBeenSet = true; m_portRange = std::forward<PortRangeT>(value); }
+    template<typename PortRangeT = PortRange>
+    CreateNetworkAclEntryRequest& WithPortRange(PortRangeT&& value) { SetPortRange(std::forward<PortRangeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet = false;
 
-    int m_ruleNumber;
+    int m_ruleNumber{0};
     bool m_ruleNumberHasBeenSet = false;
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    RuleAction m_ruleAction;
+    RuleAction m_ruleAction{RuleAction::NOT_SET};
     bool m_ruleActionHasBeenSet = false;
 
-    bool m_egress;
+    bool m_egress{false};
     bool m_egressHasBeenSet = false;
 
     Aws::String m_cidrBlock;

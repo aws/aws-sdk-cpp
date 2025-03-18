@@ -32,7 +32,7 @@ namespace Model
   class Specifications
   {
   public:
-    AWS_LEXMODELSV2_API Specifications();
+    AWS_LEXMODELSV2_API Specifications() = default;
     AWS_LEXMODELSV2_API Specifications(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Specifications& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier assigned to the slot type.</p>
      */
-    inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
+    inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-    inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-    inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-    inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-    inline Specifications& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-    inline Specifications& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-    inline Specifications& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
+    template<typename SlotTypeIdT = Aws::String>
+    void SetSlotTypeId(SlotTypeIdT&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::forward<SlotTypeIdT>(value); }
+    template<typename SlotTypeIdT = Aws::String>
+    Specifications& WithSlotTypeId(SlotTypeIdT&& value) { SetSlotTypeId(std::forward<SlotTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>Specifies the elicitation setting details for constituent sub slots of a
      * composite slot.</p>
      */
-    inline const SubSlotValueElicitationSetting& GetValueElicitationSetting() const{ return m_valueElicitationSetting; }
+    inline const SubSlotValueElicitationSetting& GetValueElicitationSetting() const { return m_valueElicitationSetting; }
     inline bool ValueElicitationSettingHasBeenSet() const { return m_valueElicitationSettingHasBeenSet; }
-    inline void SetValueElicitationSetting(const SubSlotValueElicitationSetting& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = value; }
-    inline void SetValueElicitationSetting(SubSlotValueElicitationSetting&& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = std::move(value); }
-    inline Specifications& WithValueElicitationSetting(const SubSlotValueElicitationSetting& value) { SetValueElicitationSetting(value); return *this;}
-    inline Specifications& WithValueElicitationSetting(SubSlotValueElicitationSetting&& value) { SetValueElicitationSetting(std::move(value)); return *this;}
+    template<typename ValueElicitationSettingT = SubSlotValueElicitationSetting>
+    void SetValueElicitationSetting(ValueElicitationSettingT&& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = std::forward<ValueElicitationSettingT>(value); }
+    template<typename ValueElicitationSettingT = SubSlotValueElicitationSetting>
+    Specifications& WithValueElicitationSetting(ValueElicitationSettingT&& value) { SetValueElicitationSetting(std::forward<ValueElicitationSettingT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingOutput::ProcessingOutput() : 
-    m_outputNameHasBeenSet(false),
-    m_s3OutputHasBeenSet(false),
-    m_featureStoreOutputHasBeenSet(false),
-    m_appManaged(false),
-    m_appManagedHasBeenSet(false)
-{
-}
-
 ProcessingOutput::ProcessingOutput(JsonView jsonValue)
-  : ProcessingOutput()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProcessingOutput& ProcessingOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputName"))
   {
     m_outputName = jsonValue.GetString("OutputName");
-
     m_outputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Output"))
   {
     m_s3Output = jsonValue.GetObject("S3Output");
-
     m_s3OutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureStoreOutput"))
   {
     m_featureStoreOutput = jsonValue.GetObject("FeatureStoreOutput");
-
     m_featureStoreOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppManaged"))
   {
     m_appManaged = jsonValue.GetBool("AppManaged");
-
     m_appManagedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IdentityProviderOAuthSetting::IdentityProviderOAuthSetting() : 
-    m_dataSourceName(DataSourceName::NOT_SET),
-    m_dataSourceNameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 IdentityProviderOAuthSetting::IdentityProviderOAuthSetting(JsonView jsonValue)
-  : IdentityProviderOAuthSetting()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IdentityProviderOAuthSetting& IdentityProviderOAuthSetting::operator =(JsonView 
   if(jsonValue.ValueExists("DataSourceName"))
   {
     m_dataSourceName = DataSourceNameMapper::GetDataSourceNameForName(jsonValue.GetString("DataSourceName"));
-
     m_dataSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class DeploymentConfigurationValidationPolicy
   {
   public:
-    AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy();
+    AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy() = default;
     AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * updates. If the validation time exceeds this timeout, then the deployment
      * proceeds for the device.</p> <p>Default: <code>30</code> </p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline DeploymentConfigurationValidationPolicy& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
   };
 

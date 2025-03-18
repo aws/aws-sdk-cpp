@@ -10,12 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-BatchPutAttributesRequest::BatchPutAttributesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

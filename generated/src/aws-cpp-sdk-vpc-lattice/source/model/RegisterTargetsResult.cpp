@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterTargetsResult::RegisterTargetsResult()
-{
-}
-
 RegisterTargetsResult::RegisterTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ RegisterTargetsResult& RegisterTargetsResult::operator =(const Aws::AmazonWebSer
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
     }
+    m_successfulHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unsuccessful"))
   {
     Aws::Utils::Array<JsonView> unsuccessfulJsonList = jsonValue.GetArray("unsuccessful");
@@ -45,14 +41,15 @@ RegisterTargetsResult& RegisterTargetsResult::operator =(const Aws::AmazonWebSer
     {
       m_unsuccessful.push_back(unsuccessfulJsonList[unsuccessfulIndex].AsObject());
     }
+    m_unsuccessfulHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

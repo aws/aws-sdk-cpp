@@ -24,7 +24,7 @@ namespace Model
   class DescribeChannelRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API DescribeChannelRequest();
+    AWS_MEDIALIVE_API DescribeChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * channel ID
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-    inline DescribeChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline DescribeChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline DescribeChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    DescribeChannelRequest& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
   private:
 

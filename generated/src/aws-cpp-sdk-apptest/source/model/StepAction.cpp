@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-StepAction::StepAction() : 
-    m_resourceActionHasBeenSet(false),
-    m_mainframeActionHasBeenSet(false),
-    m_compareActionHasBeenSet(false)
-{
-}
-
 StepAction::StepAction(JsonView jsonValue)
-  : StepAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StepAction& StepAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceAction"))
   {
     m_resourceAction = jsonValue.GetObject("resourceAction");
-
     m_resourceActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mainframeAction"))
   {
     m_mainframeAction = jsonValue.GetObject("mainframeAction");
-
     m_mainframeActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compareAction"))
   {
     m_compareAction = jsonValue.GetObject("compareAction");
-
     m_compareActionHasBeenSet = true;
   }
-
   return *this;
 }
 

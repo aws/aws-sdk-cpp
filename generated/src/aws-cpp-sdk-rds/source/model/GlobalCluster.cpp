@@ -20,28 +20,7 @@ namespace RDS
 namespace Model
 {
 
-GlobalCluster::GlobalCluster() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_globalClusterResourceIdHasBeenSet(false),
-    m_globalClusterArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineLifecycleSupportHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_globalClusterMembersHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_failoverStateHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 GlobalCluster::GlobalCluster(const XmlNode& xmlNode)
-  : GlobalCluster()
 {
   *this = xmlNode;
 }
@@ -116,6 +95,7 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     if(!globalClusterMembersNode.IsNull())
     {
       XmlNode globalClusterMembersMember = globalClusterMembersNode.FirstChild("GlobalClusterMember");
+      m_globalClusterMembersHasBeenSet = !globalClusterMembersMember.IsNull();
       while(!globalClusterMembersMember.IsNull())
       {
         m_globalClusterMembers.push_back(globalClusterMembersMember);
@@ -140,6 +120,7 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

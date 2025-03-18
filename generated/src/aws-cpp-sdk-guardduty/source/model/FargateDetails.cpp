@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FargateDetails::FargateDetails() : 
-    m_issuesHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
-{
-}
-
 FargateDetails::FargateDetails(JsonView jsonValue)
-  : FargateDetails()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ FargateDetails& FargateDetails::operator =(JsonView jsonValue)
     }
     m_issuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managementType"))
   {
     m_managementType = ManagementTypeMapper::GetManagementTypeForName(jsonValue.GetString("managementType"));
-
     m_managementTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

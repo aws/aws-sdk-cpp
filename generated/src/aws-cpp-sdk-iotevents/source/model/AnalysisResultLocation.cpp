@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-AnalysisResultLocation::AnalysisResultLocation() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 AnalysisResultLocation::AnalysisResultLocation(JsonView jsonValue)
-  : AnalysisResultLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisResultLocation& AnalysisResultLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

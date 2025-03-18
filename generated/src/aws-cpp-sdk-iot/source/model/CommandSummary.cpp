@@ -18,21 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CommandSummary::CommandSummary() : 
-    m_commandArnHasBeenSet(false),
-    m_commandIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_deprecated(false),
-    m_deprecatedHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_pendingDeletion(false),
-    m_pendingDeletionHasBeenSet(false)
-{
-}
-
 CommandSummary::CommandSummary(JsonView jsonValue)
-  : CommandSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ CommandSummary& CommandSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commandArn"))
   {
     m_commandArn = jsonValue.GetString("commandArn");
-
     m_commandArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commandId"))
   {
     m_commandId = jsonValue.GetString("commandId");
-
     m_commandIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deprecated"))
   {
     m_deprecated = jsonValue.GetBool("deprecated");
-
     m_deprecatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingDeletion"))
   {
     m_pendingDeletion = jsonValue.GetBool("pendingDeletion");
-
     m_pendingDeletionHasBeenSet = true;
   }
-
   return *this;
 }
 

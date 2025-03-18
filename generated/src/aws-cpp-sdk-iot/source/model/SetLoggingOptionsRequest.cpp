@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetLoggingOptionsRequest::SetLoggingOptionsRequest() : 
-    m_loggingOptionsPayloadHasBeenSet(false)
-{
-}
-
 Aws::String SetLoggingOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AccountInfo::AccountInfo() : 
-    m_accountNameHasBeenSet(false),
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false),
-    m_authenticationTypeHasBeenSet(false),
-    m_accountSubscriptionStatusHasBeenSet(false),
-    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
-{
-}
-
 AccountInfo::AccountInfo(JsonView jsonValue)
-  : AccountInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AccountInfo& AccountInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountName"))
   {
     m_accountName = jsonValue.GetString("AccountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edition"))
   {
     m_edition = EditionMapper::GetEditionForName(jsonValue.GetString("Edition"));
-
     m_editionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationEmail"))
   {
     m_notificationEmail = jsonValue.GetString("NotificationEmail");
-
     m_notificationEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = jsonValue.GetString("AuthenticationType");
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountSubscriptionStatus"))
   {
     m_accountSubscriptionStatus = jsonValue.GetString("AccountSubscriptionStatus");
-
     m_accountSubscriptionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IAMIdentityCenterInstanceArn"))
   {
     m_iAMIdentityCenterInstanceArn = jsonValue.GetString("IAMIdentityCenterInstanceArn");
-
     m_iAMIdentityCenterInstanceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

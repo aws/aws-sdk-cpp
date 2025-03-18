@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-CloudWatchOutputConfig::CloudWatchOutputConfig() : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchOutputEnabled(false),
-    m_cloudWatchOutputEnabledHasBeenSet(false)
-{
-}
-
 CloudWatchOutputConfig::CloudWatchOutputConfig(JsonView jsonValue)
-  : CloudWatchOutputConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CloudWatchOutputConfig& CloudWatchOutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CloudWatchLogGroupName"))
   {
     m_cloudWatchLogGroupName = jsonValue.GetString("CloudWatchLogGroupName");
-
     m_cloudWatchLogGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchOutputEnabled"))
   {
     m_cloudWatchOutputEnabled = jsonValue.GetBool("CloudWatchOutputEnabled");
-
     m_cloudWatchOutputEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

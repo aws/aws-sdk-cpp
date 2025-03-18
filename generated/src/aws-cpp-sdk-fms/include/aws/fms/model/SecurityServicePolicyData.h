@@ -34,7 +34,7 @@ namespace Model
   class SecurityServicePolicyData
   {
   public:
-    AWS_FMS_API SecurityServicePolicyData();
+    AWS_FMS_API SecurityServicePolicyData() = default;
     AWS_FMS_API SecurityServicePolicyData(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API SecurityServicePolicyData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * audit policy. This is an adjustable limit that you can increase by contacting
      * Amazon Web Services Support.</p>
      */
-    inline const SecurityServiceType& GetType() const{ return m_type; }
+    inline SecurityServiceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityServiceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityServiceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SecurityServicePolicyData& WithType(const SecurityServiceType& value) { SetType(value); return *this;}
-    inline SecurityServicePolicyData& WithType(SecurityServiceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SecurityServiceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SecurityServicePolicyData& WithType(SecurityServiceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -282,14 +280,12 @@ namespace Model
      * <code>"{\"ruleGroups\":[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetManagedServiceData() const{ return m_managedServiceData; }
+    inline const Aws::String& GetManagedServiceData() const { return m_managedServiceData; }
     inline bool ManagedServiceDataHasBeenSet() const { return m_managedServiceDataHasBeenSet; }
-    inline void SetManagedServiceData(const Aws::String& value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData = value; }
-    inline void SetManagedServiceData(Aws::String&& value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData = std::move(value); }
-    inline void SetManagedServiceData(const char* value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData.assign(value); }
-    inline SecurityServicePolicyData& WithManagedServiceData(const Aws::String& value) { SetManagedServiceData(value); return *this;}
-    inline SecurityServicePolicyData& WithManagedServiceData(Aws::String&& value) { SetManagedServiceData(std::move(value)); return *this;}
-    inline SecurityServicePolicyData& WithManagedServiceData(const char* value) { SetManagedServiceData(value); return *this;}
+    template<typename ManagedServiceDataT = Aws::String>
+    void SetManagedServiceData(ManagedServiceDataT&& value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData = std::forward<ManagedServiceDataT>(value); }
+    template<typename ManagedServiceDataT = Aws::String>
+    SecurityServicePolicyData& WithManagedServiceData(ManagedServiceDataT&& value) { SetManagedServiceData(std::forward<ManagedServiceDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -297,16 +293,16 @@ namespace Model
      * <p>Contains the settings to configure a network ACL policy, a Network Firewall
      * firewall policy deployment model, or a third-party firewall policy.</p>
      */
-    inline const PolicyOption& GetPolicyOption() const{ return m_policyOption; }
+    inline const PolicyOption& GetPolicyOption() const { return m_policyOption; }
     inline bool PolicyOptionHasBeenSet() const { return m_policyOptionHasBeenSet; }
-    inline void SetPolicyOption(const PolicyOption& value) { m_policyOptionHasBeenSet = true; m_policyOption = value; }
-    inline void SetPolicyOption(PolicyOption&& value) { m_policyOptionHasBeenSet = true; m_policyOption = std::move(value); }
-    inline SecurityServicePolicyData& WithPolicyOption(const PolicyOption& value) { SetPolicyOption(value); return *this;}
-    inline SecurityServicePolicyData& WithPolicyOption(PolicyOption&& value) { SetPolicyOption(std::move(value)); return *this;}
+    template<typename PolicyOptionT = PolicyOption>
+    void SetPolicyOption(PolicyOptionT&& value) { m_policyOptionHasBeenSet = true; m_policyOption = std::forward<PolicyOptionT>(value); }
+    template<typename PolicyOptionT = PolicyOption>
+    SecurityServicePolicyData& WithPolicyOption(PolicyOptionT&& value) { SetPolicyOption(std::forward<PolicyOptionT>(value)); return *this;}
     ///@}
   private:
 
-    SecurityServiceType m_type;
+    SecurityServiceType m_type{SecurityServiceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_managedServiceData;

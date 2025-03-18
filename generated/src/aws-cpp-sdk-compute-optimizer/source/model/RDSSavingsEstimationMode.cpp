@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSSavingsEstimationMode::RDSSavingsEstimationMode() : 
-    m_source(RDSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 RDSSavingsEstimationMode::RDSSavingsEstimationMode(JsonView jsonValue)
-  : RDSSavingsEstimationMode()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RDSSavingsEstimationMode& RDSSavingsEstimationMode::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("source"))
   {
     m_source = RDSSavingsEstimationModeSourceMapper::GetRDSSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

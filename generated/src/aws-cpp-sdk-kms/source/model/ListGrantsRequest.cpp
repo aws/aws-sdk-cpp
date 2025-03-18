@@ -12,16 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGrantsRequest::ListGrantsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_grantIdHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String ListGrantsRequest::SerializePayload() const
 {
   JsonValue payload;

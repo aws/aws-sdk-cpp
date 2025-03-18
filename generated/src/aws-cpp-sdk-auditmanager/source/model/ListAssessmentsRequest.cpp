@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssessmentsRequest::ListAssessmentsRequest() : 
-    m_status(AssessmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssessmentsRequest::SerializePayload() const
 {
   return {};

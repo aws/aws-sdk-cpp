@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ValidateStateMachineDefinitionDiagnostic::ValidateStateMachineDefinitionDiagnostic() : 
-    m_severity(ValidateStateMachineDefinitionSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 ValidateStateMachineDefinitionDiagnostic::ValidateStateMachineDefinitionDiagnostic(JsonView jsonValue)
-  : ValidateStateMachineDefinitionDiagnostic()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ValidateStateMachineDefinitionDiagnostic& ValidateStateMachineDefinitionDiagnost
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = ValidateStateMachineDefinitionSeverityMapper::GetValidateStateMachineDefinitionSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

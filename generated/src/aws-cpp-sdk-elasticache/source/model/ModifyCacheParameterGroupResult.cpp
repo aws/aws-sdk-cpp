@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyCacheParameterGroupResult::ModifyCacheParameterGroupResult()
-{
-}
-
 ModifyCacheParameterGroupResult::ModifyCacheParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyCacheParameterGroupResult& ModifyCacheParameterGroupResult::operator =(con
     if(!cacheParameterGroupNameNode.IsNull())
     {
       m_cacheParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupNameNode.GetText());
+      m_cacheParameterGroupNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::ModifyCacheParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

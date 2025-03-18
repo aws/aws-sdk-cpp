@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration() : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueSource(DimensionValueSource::NOT_SET),
-    m_dimensionValueSourceHasBeenSet(false),
-    m_defaultDimensionValueHasBeenSet(false)
-{
-}
-
 CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(JsonView jsonValue)
-  : CloudWatchDimensionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(J
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = jsonValue.GetString("DimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueSource"))
   {
     m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(jsonValue.GetString("DimensionValueSource"));
-
     m_dimensionValueSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultDimensionValue"))
   {
     m_defaultDimensionValue = jsonValue.GetString("DefaultDimensionValue");
-
     m_defaultDimensionValueHasBeenSet = true;
   }
-
   return *this;
 }
 

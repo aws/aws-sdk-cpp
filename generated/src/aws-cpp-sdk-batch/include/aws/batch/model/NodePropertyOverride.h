@@ -39,7 +39,7 @@ namespace Model
   class NodePropertyOverride
   {
   public:
-    AWS_BATCH_API NodePropertyOverride();
+    AWS_BATCH_API NodePropertyOverride() = default;
     AWS_BATCH_API NodePropertyOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API NodePropertyOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,26 +54,24 @@ namespace Model
      * (<code>n:</code>), then the highest possible node index is used to end the
      * range.</p>
      */
-    inline const Aws::String& GetTargetNodes() const{ return m_targetNodes; }
+    inline const Aws::String& GetTargetNodes() const { return m_targetNodes; }
     inline bool TargetNodesHasBeenSet() const { return m_targetNodesHasBeenSet; }
-    inline void SetTargetNodes(const Aws::String& value) { m_targetNodesHasBeenSet = true; m_targetNodes = value; }
-    inline void SetTargetNodes(Aws::String&& value) { m_targetNodesHasBeenSet = true; m_targetNodes = std::move(value); }
-    inline void SetTargetNodes(const char* value) { m_targetNodesHasBeenSet = true; m_targetNodes.assign(value); }
-    inline NodePropertyOverride& WithTargetNodes(const Aws::String& value) { SetTargetNodes(value); return *this;}
-    inline NodePropertyOverride& WithTargetNodes(Aws::String&& value) { SetTargetNodes(std::move(value)); return *this;}
-    inline NodePropertyOverride& WithTargetNodes(const char* value) { SetTargetNodes(value); return *this;}
+    template<typename TargetNodesT = Aws::String>
+    void SetTargetNodes(TargetNodesT&& value) { m_targetNodesHasBeenSet = true; m_targetNodes = std::forward<TargetNodesT>(value); }
+    template<typename TargetNodesT = Aws::String>
+    NodePropertyOverride& WithTargetNodes(TargetNodesT&& value) { SetTargetNodes(std::forward<TargetNodesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overrides that are sent to a node range.</p>
      */
-    inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
+    inline const ContainerOverrides& GetContainerOverrides() const { return m_containerOverrides; }
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
-    inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
-    inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
-    inline NodePropertyOverride& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
-    inline NodePropertyOverride& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
+    template<typename ContainerOverridesT = ContainerOverrides>
+    void SetContainerOverrides(ContainerOverridesT&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::forward<ContainerOverridesT>(value); }
+    template<typename ContainerOverridesT = ContainerOverrides>
+    NodePropertyOverride& WithContainerOverrides(ContainerOverridesT&& value) { SetContainerOverrides(std::forward<ContainerOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +79,12 @@ namespace Model
      * <p>An object that contains the properties that you want to replace for the
      * existing Amazon ECS resources of a job.</p>
      */
-    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const{ return m_ecsPropertiesOverride; }
+    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const { return m_ecsPropertiesOverride; }
     inline bool EcsPropertiesOverrideHasBeenSet() const { return m_ecsPropertiesOverrideHasBeenSet; }
-    inline void SetEcsPropertiesOverride(const EcsPropertiesOverride& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = value; }
-    inline void SetEcsPropertiesOverride(EcsPropertiesOverride&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::move(value); }
-    inline NodePropertyOverride& WithEcsPropertiesOverride(const EcsPropertiesOverride& value) { SetEcsPropertiesOverride(value); return *this;}
-    inline NodePropertyOverride& WithEcsPropertiesOverride(EcsPropertiesOverride&& value) { SetEcsPropertiesOverride(std::move(value)); return *this;}
+    template<typename EcsPropertiesOverrideT = EcsPropertiesOverride>
+    void SetEcsPropertiesOverride(EcsPropertiesOverrideT&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::forward<EcsPropertiesOverrideT>(value); }
+    template<typename EcsPropertiesOverrideT = EcsPropertiesOverride>
+    NodePropertyOverride& WithEcsPropertiesOverride(EcsPropertiesOverrideT&& value) { SetEcsPropertiesOverride(std::forward<EcsPropertiesOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,15 +92,14 @@ namespace Model
      * <p>An object that contains the instance types that you want to replace for the
      * existing resources of a job.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
-    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-    inline NodePropertyOverride& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
-    inline NodePropertyOverride& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-    inline NodePropertyOverride& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-    inline NodePropertyOverride& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
-    inline NodePropertyOverride& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    void SetInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::forward<InstanceTypesT>(value); }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    NodePropertyOverride& WithInstanceTypes(InstanceTypesT&& value) { SetInstanceTypes(std::forward<InstanceTypesT>(value)); return *this;}
+    template<typename InstanceTypesT = Aws::String>
+    NodePropertyOverride& AddInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.emplace_back(std::forward<InstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,24 +107,24 @@ namespace Model
      * <p>An object that contains the properties that you want to replace for the
      * existing Amazon EKS resources of a job.</p>
      */
-    inline const EksPropertiesOverride& GetEksPropertiesOverride() const{ return m_eksPropertiesOverride; }
+    inline const EksPropertiesOverride& GetEksPropertiesOverride() const { return m_eksPropertiesOverride; }
     inline bool EksPropertiesOverrideHasBeenSet() const { return m_eksPropertiesOverrideHasBeenSet; }
-    inline void SetEksPropertiesOverride(const EksPropertiesOverride& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = value; }
-    inline void SetEksPropertiesOverride(EksPropertiesOverride&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::move(value); }
-    inline NodePropertyOverride& WithEksPropertiesOverride(const EksPropertiesOverride& value) { SetEksPropertiesOverride(value); return *this;}
-    inline NodePropertyOverride& WithEksPropertiesOverride(EksPropertiesOverride&& value) { SetEksPropertiesOverride(std::move(value)); return *this;}
+    template<typename EksPropertiesOverrideT = EksPropertiesOverride>
+    void SetEksPropertiesOverride(EksPropertiesOverrideT&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::forward<EksPropertiesOverrideT>(value); }
+    template<typename EksPropertiesOverrideT = EksPropertiesOverride>
+    NodePropertyOverride& WithEksPropertiesOverride(EksPropertiesOverrideT&& value) { SetEksPropertiesOverride(std::forward<EksPropertiesOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains overrides for the consumable resources of a job.</p>
      */
-    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const{ return m_consumableResourcePropertiesOverride; }
+    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const { return m_consumableResourcePropertiesOverride; }
     inline bool ConsumableResourcePropertiesOverrideHasBeenSet() const { return m_consumableResourcePropertiesOverrideHasBeenSet; }
-    inline void SetConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = value; }
-    inline void SetConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::move(value); }
-    inline NodePropertyOverride& WithConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { SetConsumableResourcePropertiesOverride(value); return *this;}
-    inline NodePropertyOverride& WithConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { SetConsumableResourcePropertiesOverride(std::move(value)); return *this;}
+    template<typename ConsumableResourcePropertiesOverrideT = ConsumableResourceProperties>
+    void SetConsumableResourcePropertiesOverride(ConsumableResourcePropertiesOverrideT&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::forward<ConsumableResourcePropertiesOverrideT>(value); }
+    template<typename ConsumableResourcePropertiesOverrideT = ConsumableResourceProperties>
+    NodePropertyOverride& WithConsumableResourcePropertiesOverride(ConsumableResourcePropertiesOverrideT&& value) { SetConsumableResourcePropertiesOverride(std::forward<ConsumableResourcePropertiesOverrideT>(value)); return *this;}
     ///@}
   private:
 

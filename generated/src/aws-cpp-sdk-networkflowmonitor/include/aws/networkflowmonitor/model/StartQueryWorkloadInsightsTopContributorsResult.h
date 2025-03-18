@@ -27,7 +27,7 @@ namespace Model
   class StartQueryWorkloadInsightsTopContributorsResult
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsResult();
+    AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsResult() = default;
     AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The identifier for the query. A query ID is an internally-generated
      * identifier for a specific query returned from an API call to start a query.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
-    inline void SetQueryId(const Aws::String& value) { m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryId.assign(value); }
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    StartQueryWorkloadInsightsTopContributorsResult& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartQueryWorkloadInsightsTopContributorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryId;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

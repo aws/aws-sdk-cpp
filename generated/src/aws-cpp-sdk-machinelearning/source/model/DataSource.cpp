@@ -18,35 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataLocationS3HasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_createdByIamUserHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_dataSizeInBytes(0),
-    m_dataSizeInBytesHasBeenSet(false),
-    m_numberOfFiles(0),
-    m_numberOfFilesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EntityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_redshiftMetadataHasBeenSet(false),
-    m_rDSMetadataHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false),
-    m_computeTime(0),
-    m_computeTimeHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -56,129 +28,93 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLocationS3"))
   {
     m_dataLocationS3 = jsonValue.GetString("DataLocationS3");
-
     m_dataLocationS3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRearrangement"))
   {
     m_dataRearrangement = jsonValue.GetString("DataRearrangement");
-
     m_dataRearrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedByIamUser"))
   {
     m_createdByIamUser = jsonValue.GetString("CreatedByIamUser");
-
     m_createdByIamUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSizeInBytes"))
   {
     m_dataSizeInBytes = jsonValue.GetInt64("DataSizeInBytes");
-
     m_dataSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFiles"))
   {
     m_numberOfFiles = jsonValue.GetInt64("NumberOfFiles");
-
     m_numberOfFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EntityStatusMapper::GetEntityStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftMetadata"))
   {
     m_redshiftMetadata = jsonValue.GetObject("RedshiftMetadata");
-
     m_redshiftMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RDSMetadata"))
   {
     m_rDSMetadata = jsonValue.GetObject("RDSMetadata");
-
     m_rDSMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeStatistics"))
   {
     m_computeStatistics = jsonValue.GetBool("ComputeStatistics");
-
     m_computeStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeTime"))
   {
     m_computeTime = jsonValue.GetInt64("ComputeTime");
-
     m_computeTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinishedAt"))
   {
     m_finishedAt = jsonValue.GetDouble("FinishedAt");
-
     m_finishedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

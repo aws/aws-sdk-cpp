@@ -18,21 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification() : 
-    m_successResponseHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_timeoutResponseHasBeenSet(false),
-    m_successNextStepHasBeenSet(false),
-    m_successConditionalHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_timeoutNextStepHasBeenSet(false),
-    m_timeoutConditionalHasBeenSet(false)
-{
-}
-
 PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification(JsonView jsonValue)
-  : PostFulfillmentStatusSpecification()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ PostFulfillmentStatusSpecification& PostFulfillmentStatusSpecification::operator
   if(jsonValue.ValueExists("successResponse"))
   {
     m_successResponse = jsonValue.GetObject("successResponse");
-
     m_successResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureResponse"))
   {
     m_failureResponse = jsonValue.GetObject("failureResponse");
-
     m_failureResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutResponse"))
   {
     m_timeoutResponse = jsonValue.GetObject("timeoutResponse");
-
     m_timeoutResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successNextStep"))
   {
     m_successNextStep = jsonValue.GetObject("successNextStep");
-
     m_successNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successConditional"))
   {
     m_successConditional = jsonValue.GetObject("successConditional");
-
     m_successConditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureNextStep"))
   {
     m_failureNextStep = jsonValue.GetObject("failureNextStep");
-
     m_failureNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureConditional"))
   {
     m_failureConditional = jsonValue.GetObject("failureConditional");
-
     m_failureConditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutNextStep"))
   {
     m_timeoutNextStep = jsonValue.GetObject("timeoutNextStep");
-
     m_timeoutNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutConditional"))
   {
     m_timeoutConditional = jsonValue.GetObject("timeoutConditional");
-
     m_timeoutConditionalHasBeenSet = true;
   }
-
   return *this;
 }
 

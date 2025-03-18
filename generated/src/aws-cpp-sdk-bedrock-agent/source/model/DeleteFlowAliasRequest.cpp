@@ -12,12 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFlowAliasRequest::DeleteFlowAliasRequest() : 
-    m_aliasIdentifierHasBeenSet(false),
-    m_flowIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFlowAliasRequest::SerializePayload() const
 {
   return {};

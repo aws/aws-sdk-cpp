@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UpgradePolicyRequest::UpgradePolicyRequest() : 
-    m_supportType(SupportType::NOT_SET),
-    m_supportTypeHasBeenSet(false)
-{
-}
-
 UpgradePolicyRequest::UpgradePolicyRequest(JsonView jsonValue)
-  : UpgradePolicyRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpgradePolicyRequest& UpgradePolicyRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("supportType"))
   {
     m_supportType = SupportTypeMapper::GetSupportTypeForName(jsonValue.GetString("supportType"));
-
     m_supportTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

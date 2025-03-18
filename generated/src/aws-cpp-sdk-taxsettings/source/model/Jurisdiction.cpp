@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-Jurisdiction::Jurisdiction() : 
-    m_countryCodeHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false)
-{
-}
-
 Jurisdiction::Jurisdiction(JsonView jsonValue)
-  : Jurisdiction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Jurisdiction& Jurisdiction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("countryCode"))
   {
     m_countryCode = jsonValue.GetString("countryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateOrRegion"))
   {
     m_stateOrRegion = jsonValue.GetString("stateOrRegion");
-
     m_stateOrRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

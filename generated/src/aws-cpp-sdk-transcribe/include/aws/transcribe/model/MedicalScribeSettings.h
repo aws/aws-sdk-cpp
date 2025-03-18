@@ -44,7 +44,7 @@ namespace Model
   class MedicalScribeSettings
   {
   public:
-    AWS_TRANSCRIBESERVICE_API MedicalScribeSettings();
+    AWS_TRANSCRIBESERVICE_API MedicalScribeSettings() = default;
     AWS_TRANSCRIBESERVICE_API MedicalScribeSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API MedicalScribeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,7 +60,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
-    inline bool GetShowSpeakerLabels() const{ return m_showSpeakerLabels; }
+    inline bool GetShowSpeakerLabels() const { return m_showSpeakerLabels; }
     inline bool ShowSpeakerLabelsHasBeenSet() const { return m_showSpeakerLabelsHasBeenSet; }
     inline void SetShowSpeakerLabels(bool value) { m_showSpeakerLabelsHasBeenSet = true; m_showSpeakerLabels = value; }
     inline MedicalScribeSettings& WithShowSpeakerLabels(bool value) { SetShowSpeakerLabels(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
-    inline int GetMaxSpeakerLabels() const{ return m_maxSpeakerLabels; }
+    inline int GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
     inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
     inline void SetMaxSpeakerLabels(int value) { m_maxSpeakerLabelsHasBeenSet = true; m_maxSpeakerLabels = value; }
     inline MedicalScribeSettings& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
-    inline bool GetChannelIdentification() const{ return m_channelIdentification; }
+    inline bool GetChannelIdentification() const { return m_channelIdentification; }
     inline bool ChannelIdentificationHasBeenSet() const { return m_channelIdentificationHasBeenSet; }
     inline void SetChannelIdentification(bool value) { m_channelIdentificationHasBeenSet = true; m_channelIdentification = value; }
     inline MedicalScribeSettings& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
@@ -100,14 +100,12 @@ namespace Model
      * <p>The name of the custom vocabulary you want to include in your Medical Scribe
      * request. Custom vocabulary names are case sensitive.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline MedicalScribeSettings& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline MedicalScribeSettings& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline MedicalScribeSettings& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    MedicalScribeSettings& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +115,12 @@ namespace Model
      * that if you include <code>VocabularyFilterName</code> in your request, you must
      * also include <code>VocabularyFilterMethod</code>.</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline MedicalScribeSettings& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline MedicalScribeSettings& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline MedicalScribeSettings& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    MedicalScribeSettings& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,34 +130,32 @@ namespace Model
      * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
      * flag words without changing them, choose <code>tag</code>.</p>
      */
-    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline VocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline MedicalScribeSettings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline MedicalScribeSettings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline MedicalScribeSettings& WithVocabularyFilterMethod(VocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify settings for the clinical note generation.</p>
      */
-    inline const ClinicalNoteGenerationSettings& GetClinicalNoteGenerationSettings() const{ return m_clinicalNoteGenerationSettings; }
+    inline const ClinicalNoteGenerationSettings& GetClinicalNoteGenerationSettings() const { return m_clinicalNoteGenerationSettings; }
     inline bool ClinicalNoteGenerationSettingsHasBeenSet() const { return m_clinicalNoteGenerationSettingsHasBeenSet; }
-    inline void SetClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = value; }
-    inline void SetClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = std::move(value); }
-    inline MedicalScribeSettings& WithClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { SetClinicalNoteGenerationSettings(value); return *this;}
-    inline MedicalScribeSettings& WithClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { SetClinicalNoteGenerationSettings(std::move(value)); return *this;}
+    template<typename ClinicalNoteGenerationSettingsT = ClinicalNoteGenerationSettings>
+    void SetClinicalNoteGenerationSettings(ClinicalNoteGenerationSettingsT&& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = std::forward<ClinicalNoteGenerationSettingsT>(value); }
+    template<typename ClinicalNoteGenerationSettingsT = ClinicalNoteGenerationSettings>
+    MedicalScribeSettings& WithClinicalNoteGenerationSettings(ClinicalNoteGenerationSettingsT&& value) { SetClinicalNoteGenerationSettings(std::forward<ClinicalNoteGenerationSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_showSpeakerLabels;
+    bool m_showSpeakerLabels{false};
     bool m_showSpeakerLabelsHasBeenSet = false;
 
-    int m_maxSpeakerLabels;
+    int m_maxSpeakerLabels{0};
     bool m_maxSpeakerLabelsHasBeenSet = false;
 
-    bool m_channelIdentification;
+    bool m_channelIdentification{false};
     bool m_channelIdentificationHasBeenSet = false;
 
     Aws::String m_vocabularyName;
@@ -170,7 +164,7 @@ namespace Model
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    VocabularyFilterMethod m_vocabularyFilterMethod;
+    VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     ClinicalNoteGenerationSettings m_clinicalNoteGenerationSettings;

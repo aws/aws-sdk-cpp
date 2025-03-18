@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDashboardPermissionsRequest::DescribeDashboardPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDashboardPermissionsRequest::SerializePayload() const
 {
   return {};

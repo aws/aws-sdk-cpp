@@ -30,7 +30,7 @@ namespace Model
   class VirtualNodeTcpConnectionPool
   {
   public:
-    AWS_APPMESH_API VirtualNodeTcpConnectionPool();
+    AWS_APPMESH_API VirtualNodeTcpConnectionPool() = default;
     AWS_APPMESH_API VirtualNodeTcpConnectionPool(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualNodeTcpConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
      * with all hosts in upstream cluster.</p>
      */
-    inline int GetMaxConnections() const{ return m_maxConnections; }
+    inline int GetMaxConnections() const { return m_maxConnections; }
     inline bool MaxConnectionsHasBeenSet() const { return m_maxConnectionsHasBeenSet; }
     inline void SetMaxConnections(int value) { m_maxConnectionsHasBeenSet = true; m_maxConnections = value; }
     inline VirtualNodeTcpConnectionPool& WithMaxConnections(int value) { SetMaxConnections(value); return *this;}
     ///@}
   private:
 
-    int m_maxConnections;
+    int m_maxConnections{0};
     bool m_maxConnectionsHasBeenSet = false;
   };
 

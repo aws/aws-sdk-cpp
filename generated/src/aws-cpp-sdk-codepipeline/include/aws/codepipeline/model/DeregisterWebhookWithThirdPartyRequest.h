@@ -21,7 +21,7 @@ namespace Model
   class DeregisterWebhookWithThirdPartyRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyRequest();
+    AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the webhook you want to deregister.</p>
      */
-    inline const Aws::String& GetWebhookName() const{ return m_webhookName; }
+    inline const Aws::String& GetWebhookName() const { return m_webhookName; }
     inline bool WebhookNameHasBeenSet() const { return m_webhookNameHasBeenSet; }
-    inline void SetWebhookName(const Aws::String& value) { m_webhookNameHasBeenSet = true; m_webhookName = value; }
-    inline void SetWebhookName(Aws::String&& value) { m_webhookNameHasBeenSet = true; m_webhookName = std::move(value); }
-    inline void SetWebhookName(const char* value) { m_webhookNameHasBeenSet = true; m_webhookName.assign(value); }
-    inline DeregisterWebhookWithThirdPartyRequest& WithWebhookName(const Aws::String& value) { SetWebhookName(value); return *this;}
-    inline DeregisterWebhookWithThirdPartyRequest& WithWebhookName(Aws::String&& value) { SetWebhookName(std::move(value)); return *this;}
-    inline DeregisterWebhookWithThirdPartyRequest& WithWebhookName(const char* value) { SetWebhookName(value); return *this;}
+    template<typename WebhookNameT = Aws::String>
+    void SetWebhookName(WebhookNameT&& value) { m_webhookNameHasBeenSet = true; m_webhookName = std::forward<WebhookNameT>(value); }
+    template<typename WebhookNameT = Aws::String>
+    DeregisterWebhookWithThirdPartyRequest& WithWebhookName(WebhookNameT&& value) { SetWebhookName(std::forward<WebhookNameT>(value)); return *this;}
     ///@}
   private:
 

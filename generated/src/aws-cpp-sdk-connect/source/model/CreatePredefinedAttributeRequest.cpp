@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePredefinedAttributeRequest::CreatePredefinedAttributeRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 Aws::String CreatePredefinedAttributeRequest::SerializePayload() const
 {
   JsonValue payload;

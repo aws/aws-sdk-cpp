@@ -13,14 +13,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SignPayloadRequest::SignPayloadRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_profileOwnerHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFormatHasBeenSet(false)
-{
-}
-
 Aws::String SignPayloadRequest::SerializePayload() const
 {
   JsonValue payload;

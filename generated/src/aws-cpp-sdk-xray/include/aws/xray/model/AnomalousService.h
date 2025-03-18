@@ -32,7 +32,7 @@ namespace Model
   class AnomalousService
   {
   public:
-    AWS_XRAY_API AnomalousService();
+    AWS_XRAY_API AnomalousService() = default;
     AWS_XRAY_API AnomalousService(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API AnomalousService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const ServiceId& GetServiceId() const{ return m_serviceId; }
+    inline const ServiceId& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const ServiceId& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(ServiceId&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline AnomalousService& WithServiceId(const ServiceId& value) { SetServiceId(value); return *this;}
-    inline AnomalousService& WithServiceId(ServiceId&& value) { SetServiceId(std::move(value)); return *this;}
+    template<typename ServiceIdT = ServiceId>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = ServiceId>
+    AnomalousService& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
   private:
 

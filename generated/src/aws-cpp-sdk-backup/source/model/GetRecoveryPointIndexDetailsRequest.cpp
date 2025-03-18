@@ -12,12 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecoveryPointIndexDetailsRequest::GetRecoveryPointIndexDetailsRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false)
-{
-}
-
 Aws::String GetRecoveryPointIndexDetailsRequest::SerializePayload() const
 {
   return {};

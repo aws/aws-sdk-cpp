@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationInstanceRequest::DescribeApplicationInstanceRequest() : 
-    m_applicationInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationInstanceRequest::SerializePayload() const
 {
   return {};

@@ -18,18 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisScanResultsAggregatedByChecksFilterCriteria::CisScanResultsAggregatedByChecksFilterCriteria() : 
-    m_accountIdFiltersHasBeenSet(false),
-    m_checkIdFiltersHasBeenSet(false),
-    m_failedResourcesFiltersHasBeenSet(false),
-    m_platformFiltersHasBeenSet(false),
-    m_securityLevelFiltersHasBeenSet(false),
-    m_titleFiltersHasBeenSet(false)
-{
-}
-
 CisScanResultsAggregatedByChecksFilterCriteria::CisScanResultsAggregatedByChecksFilterCriteria(JsonView jsonValue)
-  : CisScanResultsAggregatedByChecksFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_accountIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkIdFilters"))
   {
     Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
@@ -55,7 +43,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_checkIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedResourcesFilters"))
   {
     Aws::Utils::Array<JsonView> failedResourcesFiltersJsonList = jsonValue.GetArray("failedResourcesFilters");
@@ -65,7 +52,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_failedResourcesFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformFilters"))
   {
     Aws::Utils::Array<JsonView> platformFiltersJsonList = jsonValue.GetArray("platformFilters");
@@ -75,7 +61,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_platformFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityLevelFilters"))
   {
     Aws::Utils::Array<JsonView> securityLevelFiltersJsonList = jsonValue.GetArray("securityLevelFilters");
@@ -85,7 +70,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_securityLevelFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("titleFilters"))
   {
     Aws::Utils::Array<JsonView> titleFiltersJsonList = jsonValue.GetArray("titleFilters");
@@ -95,7 +79,6 @@ CisScanResultsAggregatedByChecksFilterCriteria& CisScanResultsAggregatedByChecks
     }
     m_titleFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

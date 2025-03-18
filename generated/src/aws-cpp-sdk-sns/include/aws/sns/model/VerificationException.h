@@ -32,7 +32,7 @@ namespace Model
   class VerificationException
   {
   public:
-    AWS_SNS_API VerificationException();
+    AWS_SNS_API VerificationException() = default;
     AWS_SNS_API VerificationException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SNS_API VerificationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,28 +42,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline VerificationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline VerificationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline VerificationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    VerificationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the verification error.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline VerificationException& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline VerificationException& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline VerificationException& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    VerificationException& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

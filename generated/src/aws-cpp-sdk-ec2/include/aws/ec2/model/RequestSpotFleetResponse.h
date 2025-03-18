@@ -33,7 +33,7 @@ namespace Model
   class RequestSpotFleetResponse
   {
   public:
-    AWS_EC2_API RequestSpotFleetResponse();
+    AWS_EC2_API RequestSpotFleetResponse() = default;
     AWS_EC2_API RequestSpotFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API RequestSpotFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The ID of the Spot Fleet request.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
-    inline RequestSpotFleetResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline RequestSpotFleetResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline RequestSpotFleetResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    inline const Aws::String& GetSpotFleetRequestId() const { return m_spotFleetRequestId; }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    void SetSpotFleetRequestId(SpotFleetRequestIdT&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::forward<SpotFleetRequestIdT>(value); }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    RequestSpotFleetResponse& WithSpotFleetRequestId(SpotFleetRequestIdT&& value) { SetSpotFleetRequestId(std::forward<SpotFleetRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RequestSpotFleetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RequestSpotFleetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RequestSpotFleetResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

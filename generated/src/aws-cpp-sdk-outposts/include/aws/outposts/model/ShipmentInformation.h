@@ -32,7 +32,7 @@ namespace Model
   class ShipmentInformation
   {
   public:
-    AWS_OUTPOSTS_API ShipmentInformation();
+    AWS_OUTPOSTS_API ShipmentInformation() = default;
     AWS_OUTPOSTS_API ShipmentInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API ShipmentInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p> The tracking number of the shipment. </p>
      */
-    inline const Aws::String& GetShipmentTrackingNumber() const{ return m_shipmentTrackingNumber; }
+    inline const Aws::String& GetShipmentTrackingNumber() const { return m_shipmentTrackingNumber; }
     inline bool ShipmentTrackingNumberHasBeenSet() const { return m_shipmentTrackingNumberHasBeenSet; }
-    inline void SetShipmentTrackingNumber(const Aws::String& value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber = value; }
-    inline void SetShipmentTrackingNumber(Aws::String&& value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber = std::move(value); }
-    inline void SetShipmentTrackingNumber(const char* value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber.assign(value); }
-    inline ShipmentInformation& WithShipmentTrackingNumber(const Aws::String& value) { SetShipmentTrackingNumber(value); return *this;}
-    inline ShipmentInformation& WithShipmentTrackingNumber(Aws::String&& value) { SetShipmentTrackingNumber(std::move(value)); return *this;}
-    inline ShipmentInformation& WithShipmentTrackingNumber(const char* value) { SetShipmentTrackingNumber(value); return *this;}
+    template<typename ShipmentTrackingNumberT = Aws::String>
+    void SetShipmentTrackingNumber(ShipmentTrackingNumberT&& value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber = std::forward<ShipmentTrackingNumberT>(value); }
+    template<typename ShipmentTrackingNumberT = Aws::String>
+    ShipmentInformation& WithShipmentTrackingNumber(ShipmentTrackingNumberT&& value) { SetShipmentTrackingNumber(std::forward<ShipmentTrackingNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The carrier of the shipment. </p>
      */
-    inline const ShipmentCarrier& GetShipmentCarrier() const{ return m_shipmentCarrier; }
+    inline ShipmentCarrier GetShipmentCarrier() const { return m_shipmentCarrier; }
     inline bool ShipmentCarrierHasBeenSet() const { return m_shipmentCarrierHasBeenSet; }
-    inline void SetShipmentCarrier(const ShipmentCarrier& value) { m_shipmentCarrierHasBeenSet = true; m_shipmentCarrier = value; }
-    inline void SetShipmentCarrier(ShipmentCarrier&& value) { m_shipmentCarrierHasBeenSet = true; m_shipmentCarrier = std::move(value); }
-    inline ShipmentInformation& WithShipmentCarrier(const ShipmentCarrier& value) { SetShipmentCarrier(value); return *this;}
-    inline ShipmentInformation& WithShipmentCarrier(ShipmentCarrier&& value) { SetShipmentCarrier(std::move(value)); return *this;}
+    inline void SetShipmentCarrier(ShipmentCarrier value) { m_shipmentCarrierHasBeenSet = true; m_shipmentCarrier = value; }
+    inline ShipmentInformation& WithShipmentCarrier(ShipmentCarrier value) { SetShipmentCarrier(value); return *this;}
     ///@}
   private:
 
     Aws::String m_shipmentTrackingNumber;
     bool m_shipmentTrackingNumberHasBeenSet = false;
 
-    ShipmentCarrier m_shipmentCarrier;
+    ShipmentCarrier m_shipmentCarrier{ShipmentCarrier::NOT_SET};
     bool m_shipmentCarrierHasBeenSet = false;
   };
 

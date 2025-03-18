@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGraphResult::CreateGraphResult()
-{
-}
-
 CreateGraphResult::CreateGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateGraphResult& CreateGraphResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
+    m_graphArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class CreateContainerFleetRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateContainerFleetRequest();
+    AWS_GAMELIFT_API CreateContainerFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,28 +55,24 @@ namespace Model
      * is created.</p> <p>IAM role ARN values use the following pattern:
      * <code>arn:aws:iam::[Amazon Web Services account]:role/[role name]</code>.</p>
      */
-    inline const Aws::String& GetFleetRoleArn() const{ return m_fleetRoleArn; }
+    inline const Aws::String& GetFleetRoleArn() const { return m_fleetRoleArn; }
     inline bool FleetRoleArnHasBeenSet() const { return m_fleetRoleArnHasBeenSet; }
-    inline void SetFleetRoleArn(const Aws::String& value) { m_fleetRoleArnHasBeenSet = true; m_fleetRoleArn = value; }
-    inline void SetFleetRoleArn(Aws::String&& value) { m_fleetRoleArnHasBeenSet = true; m_fleetRoleArn = std::move(value); }
-    inline void SetFleetRoleArn(const char* value) { m_fleetRoleArnHasBeenSet = true; m_fleetRoleArn.assign(value); }
-    inline CreateContainerFleetRequest& WithFleetRoleArn(const Aws::String& value) { SetFleetRoleArn(value); return *this;}
-    inline CreateContainerFleetRequest& WithFleetRoleArn(Aws::String&& value) { SetFleetRoleArn(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& WithFleetRoleArn(const char* value) { SetFleetRoleArn(value); return *this;}
+    template<typename FleetRoleArnT = Aws::String>
+    void SetFleetRoleArn(FleetRoleArnT&& value) { m_fleetRoleArnHasBeenSet = true; m_fleetRoleArn = std::forward<FleetRoleArnT>(value); }
+    template<typename FleetRoleArnT = Aws::String>
+    CreateContainerFleetRequest& WithFleetRoleArn(FleetRoleArnT&& value) { SetFleetRoleArn(std::forward<FleetRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A meaningful description of the container fleet.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateContainerFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateContainerFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateContainerFleetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
      * resource. </p>
      */
-    inline const Aws::String& GetGameServerContainerGroupDefinitionName() const{ return m_gameServerContainerGroupDefinitionName; }
+    inline const Aws::String& GetGameServerContainerGroupDefinitionName() const { return m_gameServerContainerGroupDefinitionName; }
     inline bool GameServerContainerGroupDefinitionNameHasBeenSet() const { return m_gameServerContainerGroupDefinitionNameHasBeenSet; }
-    inline void SetGameServerContainerGroupDefinitionName(const Aws::String& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = value; }
-    inline void SetGameServerContainerGroupDefinitionName(Aws::String&& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = std::move(value); }
-    inline void SetGameServerContainerGroupDefinitionName(const char* value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName.assign(value); }
-    inline CreateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(const Aws::String& value) { SetGameServerContainerGroupDefinitionName(value); return *this;}
-    inline CreateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(Aws::String&& value) { SetGameServerContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(const char* value) { SetGameServerContainerGroupDefinitionName(value); return *this;}
+    template<typename GameServerContainerGroupDefinitionNameT = Aws::String>
+    void SetGameServerContainerGroupDefinitionName(GameServerContainerGroupDefinitionNameT&& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = std::forward<GameServerContainerGroupDefinitionNameT>(value); }
+    template<typename GameServerContainerGroupDefinitionNameT = Aws::String>
+    CreateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(GameServerContainerGroupDefinitionNameT&& value) { SetGameServerContainerGroupDefinitionName(std::forward<GameServerContainerGroupDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +109,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a>
      * resource.</p>
      */
-    inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const{ return m_perInstanceContainerGroupDefinitionName; }
+    inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const { return m_perInstanceContainerGroupDefinitionName; }
     inline bool PerInstanceContainerGroupDefinitionNameHasBeenSet() const { return m_perInstanceContainerGroupDefinitionNameHasBeenSet; }
-    inline void SetPerInstanceContainerGroupDefinitionName(const Aws::String& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = value; }
-    inline void SetPerInstanceContainerGroupDefinitionName(Aws::String&& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = std::move(value); }
-    inline void SetPerInstanceContainerGroupDefinitionName(const char* value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName.assign(value); }
-    inline CreateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(const Aws::String& value) { SetPerInstanceContainerGroupDefinitionName(value); return *this;}
-    inline CreateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(Aws::String&& value) { SetPerInstanceContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(const char* value) { SetPerInstanceContainerGroupDefinitionName(value); return *this;}
+    template<typename PerInstanceContainerGroupDefinitionNameT = Aws::String>
+    void SetPerInstanceContainerGroupDefinitionName(PerInstanceContainerGroupDefinitionNameT&& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = std::forward<PerInstanceContainerGroupDefinitionNameT>(value); }
+    template<typename PerInstanceContainerGroupDefinitionNameT = Aws::String>
+    CreateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(PerInstanceContainerGroupDefinitionNameT&& value) { SetPerInstanceContainerGroupDefinitionName(std::forward<PerInstanceContainerGroupDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +134,12 @@ namespace Model
      * GameLift no longer calculates a port range for you, even if you later remove the
      * manual settings. </p> 
      */
-    inline const ConnectionPortRange& GetInstanceConnectionPortRange() const{ return m_instanceConnectionPortRange; }
+    inline const ConnectionPortRange& GetInstanceConnectionPortRange() const { return m_instanceConnectionPortRange; }
     inline bool InstanceConnectionPortRangeHasBeenSet() const { return m_instanceConnectionPortRangeHasBeenSet; }
-    inline void SetInstanceConnectionPortRange(const ConnectionPortRange& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = value; }
-    inline void SetInstanceConnectionPortRange(ConnectionPortRange&& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = std::move(value); }
-    inline CreateContainerFleetRequest& WithInstanceConnectionPortRange(const ConnectionPortRange& value) { SetInstanceConnectionPortRange(value); return *this;}
-    inline CreateContainerFleetRequest& WithInstanceConnectionPortRange(ConnectionPortRange&& value) { SetInstanceConnectionPortRange(std::move(value)); return *this;}
+    template<typename InstanceConnectionPortRangeT = ConnectionPortRange>
+    void SetInstanceConnectionPortRange(InstanceConnectionPortRangeT&& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = std::forward<InstanceConnectionPortRangeT>(value); }
+    template<typename InstanceConnectionPortRangeT = ConnectionPortRange>
+    CreateContainerFleetRequest& WithInstanceConnectionPortRange(InstanceConnectionPortRangeT&& value) { SetInstanceConnectionPortRange(std::forward<InstanceConnectionPortRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +161,14 @@ namespace Model
      * calculates a port range for you, even if you later remove the manual settings.
      * </p> 
      */
-    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissions() const{ return m_instanceInboundPermissions; }
+    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissions() const { return m_instanceInboundPermissions; }
     inline bool InstanceInboundPermissionsHasBeenSet() const { return m_instanceInboundPermissionsHasBeenSet; }
-    inline void SetInstanceInboundPermissions(const Aws::Vector<IpPermission>& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions = value; }
-    inline void SetInstanceInboundPermissions(Aws::Vector<IpPermission>&& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions = std::move(value); }
-    inline CreateContainerFleetRequest& WithInstanceInboundPermissions(const Aws::Vector<IpPermission>& value) { SetInstanceInboundPermissions(value); return *this;}
-    inline CreateContainerFleetRequest& WithInstanceInboundPermissions(Aws::Vector<IpPermission>&& value) { SetInstanceInboundPermissions(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& AddInstanceInboundPermissions(const IpPermission& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions.push_back(value); return *this; }
-    inline CreateContainerFleetRequest& AddInstanceInboundPermissions(IpPermission&& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions.push_back(std::move(value)); return *this; }
+    template<typename InstanceInboundPermissionsT = Aws::Vector<IpPermission>>
+    void SetInstanceInboundPermissions(InstanceInboundPermissionsT&& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions = std::forward<InstanceInboundPermissionsT>(value); }
+    template<typename InstanceInboundPermissionsT = Aws::Vector<IpPermission>>
+    CreateContainerFleetRequest& WithInstanceInboundPermissions(InstanceInboundPermissionsT&& value) { SetInstanceInboundPermissions(std::forward<InstanceInboundPermissionsT>(value)); return *this;}
+    template<typename InstanceInboundPermissionsT = IpPermission>
+    CreateContainerFleetRequest& AddInstanceInboundPermissions(InstanceInboundPermissionsT&& value) { m_instanceInboundPermissionsHasBeenSet = true; m_instanceInboundPermissions.emplace_back(std::forward<InstanceInboundPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,7 +181,7 @@ namespace Model
      * number manually, Amazon GameLift uses your value as long as it's less than the
      * calculated maximum.</p>
      */
-    inline int GetGameServerContainerGroupsPerInstance() const{ return m_gameServerContainerGroupsPerInstance; }
+    inline int GetGameServerContainerGroupsPerInstance() const { return m_gameServerContainerGroupsPerInstance; }
     inline bool GameServerContainerGroupsPerInstanceHasBeenSet() const { return m_gameServerContainerGroupsPerInstanceHasBeenSet; }
     inline void SetGameServerContainerGroupsPerInstance(int value) { m_gameServerContainerGroupsPerInstanceHasBeenSet = true; m_gameServerContainerGroupsPerInstance = value; }
     inline CreateContainerFleetRequest& WithGameServerContainerGroupsPerInstance(int value) { SetGameServerContainerGroupsPerInstance(value); return *this;}
@@ -209,14 +201,12 @@ namespace Model
      * Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
      * <p>You can't update this fleet property later.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline CreateContainerFleetRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline CreateContainerFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    CreateContainerFleetRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,12 +218,10 @@ namespace Model
      * the fleet is created.</p> <p>By default, this property is set to
      * <code>ON_DEMAND</code>.</p> <p>You can't update this fleet property later.</p>
      */
-    inline const ContainerFleetBillingType& GetBillingType() const{ return m_billingType; }
+    inline ContainerFleetBillingType GetBillingType() const { return m_billingType; }
     inline bool BillingTypeHasBeenSet() const { return m_billingTypeHasBeenSet; }
-    inline void SetBillingType(const ContainerFleetBillingType& value) { m_billingTypeHasBeenSet = true; m_billingType = value; }
-    inline void SetBillingType(ContainerFleetBillingType&& value) { m_billingTypeHasBeenSet = true; m_billingType = std::move(value); }
-    inline CreateContainerFleetRequest& WithBillingType(const ContainerFleetBillingType& value) { SetBillingType(value); return *this;}
-    inline CreateContainerFleetRequest& WithBillingType(ContainerFleetBillingType&& value) { SetBillingType(std::move(value)); return *this;}
+    inline void SetBillingType(ContainerFleetBillingType value) { m_billingTypeHasBeenSet = true; m_billingType = value; }
+    inline CreateContainerFleetRequest& WithBillingType(ContainerFleetBillingType value) { SetBillingType(value); return *this;}
     ///@}
 
     ///@{
@@ -247,14 +235,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
      * Amazon GameLift service locations</a> for managed hosting.</p>
      */
-    inline const Aws::Vector<LocationConfiguration>& GetLocations() const{ return m_locations; }
+    inline const Aws::Vector<LocationConfiguration>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
-    inline void SetLocations(const Aws::Vector<LocationConfiguration>& value) { m_locationsHasBeenSet = true; m_locations = value; }
-    inline void SetLocations(Aws::Vector<LocationConfiguration>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
-    inline CreateContainerFleetRequest& WithLocations(const Aws::Vector<LocationConfiguration>& value) { SetLocations(value); return *this;}
-    inline CreateContainerFleetRequest& WithLocations(Aws::Vector<LocationConfiguration>&& value) { SetLocations(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& AddLocations(const LocationConfiguration& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
-    inline CreateContainerFleetRequest& AddLocations(LocationConfiguration&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
+    template<typename LocationsT = Aws::Vector<LocationConfiguration>>
+    void SetLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations = std::forward<LocationsT>(value); }
+    template<typename LocationsT = Aws::Vector<LocationConfiguration>>
+    CreateContainerFleetRequest& WithLocations(LocationsT&& value) { SetLocations(std::forward<LocationsT>(value)); return *this;}
+    template<typename LocationsT = LocationConfiguration>
+    CreateContainerFleetRequest& AddLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations.emplace_back(std::forward<LocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -265,15 +253,14 @@ namespace Model
      * group. Each fleet can have only one metric group, but you can change this value
      * at any time. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+    inline const Aws::Vector<Aws::String>& GetMetricGroups() const { return m_metricGroups; }
     inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
-    inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
-    inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
-    inline CreateContainerFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
-    inline CreateContainerFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
-    inline CreateContainerFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
-    inline CreateContainerFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    void SetMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::forward<MetricGroupsT>(value); }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    CreateContainerFleetRequest& WithMetricGroups(MetricGroupsT&& value) { SetMetricGroups(std::forward<MetricGroupsT>(value)); return *this;}
+    template<typename MetricGroupsT = Aws::String>
+    CreateContainerFleetRequest& AddMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.emplace_back(std::forward<MetricGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -289,12 +276,10 @@ namespace Model
      * <code>ACTIVE</code> status can't be shut down.</p> </li> </ul> <p>By default,
      * this property is set to <code>NoProtection</code>. </p>
      */
-    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+    inline ProtectionPolicy GetNewGameSessionProtectionPolicy() const { return m_newGameSessionProtectionPolicy; }
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
-    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
-    inline CreateContainerFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
-    inline CreateContainerFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline CreateContainerFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy value) { SetNewGameSessionProtectionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -303,12 +288,12 @@ namespace Model
      * can create on instances in this fleet. The limit applies for a specified span of
      * time.</p>
      */
-    inline const GameSessionCreationLimitPolicy& GetGameSessionCreationLimitPolicy() const{ return m_gameSessionCreationLimitPolicy; }
+    inline const GameSessionCreationLimitPolicy& GetGameSessionCreationLimitPolicy() const { return m_gameSessionCreationLimitPolicy; }
     inline bool GameSessionCreationLimitPolicyHasBeenSet() const { return m_gameSessionCreationLimitPolicyHasBeenSet; }
-    inline void SetGameSessionCreationLimitPolicy(const GameSessionCreationLimitPolicy& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = value; }
-    inline void SetGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicy&& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = std::move(value); }
-    inline CreateContainerFleetRequest& WithGameSessionCreationLimitPolicy(const GameSessionCreationLimitPolicy& value) { SetGameSessionCreationLimitPolicy(value); return *this;}
-    inline CreateContainerFleetRequest& WithGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicy&& value) { SetGameSessionCreationLimitPolicy(std::move(value)); return *this;}
+    template<typename GameSessionCreationLimitPolicyT = GameSessionCreationLimitPolicy>
+    void SetGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicyT&& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = std::forward<GameSessionCreationLimitPolicyT>(value); }
+    template<typename GameSessionCreationLimitPolicyT = GameSessionCreationLimitPolicy>
+    CreateContainerFleetRequest& WithGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicyT&& value) { SetGameSessionCreationLimitPolicy(std::forward<GameSessionCreationLimitPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -326,12 +311,12 @@ namespace Model
      * included in the IAM fleet role for this container fleet (see
      * <code>FleetRoleArn)</code>.</p>
      */
-    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline CreateContainerFleetRequest& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline CreateContainerFleetRequest& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfiguration>
+    CreateContainerFleetRequest& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -344,14 +329,14 @@ namespace Model
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateContainerFleetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateContainerFleetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateContainerFleetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateContainerFleetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateContainerFleetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateContainerFleetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -373,13 +358,13 @@ namespace Model
     Aws::Vector<IpPermission> m_instanceInboundPermissions;
     bool m_instanceInboundPermissionsHasBeenSet = false;
 
-    int m_gameServerContainerGroupsPerInstance;
+    int m_gameServerContainerGroupsPerInstance{0};
     bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    ContainerFleetBillingType m_billingType;
+    ContainerFleetBillingType m_billingType{ContainerFleetBillingType::NOT_SET};
     bool m_billingTypeHasBeenSet = false;
 
     Aws::Vector<LocationConfiguration> m_locations;
@@ -388,7 +373,7 @@ namespace Model
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet = false;
 
-    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
     bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     GameSessionCreationLimitPolicy m_gameSessionCreationLimitPolicy;

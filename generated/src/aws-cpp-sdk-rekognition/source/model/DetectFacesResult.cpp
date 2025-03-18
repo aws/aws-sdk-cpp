@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectFacesResult::DetectFacesResult() : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
-{
-}
-
 DetectFacesResult::DetectFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DetectFacesResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ DetectFacesResult& DetectFacesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_faceDetails.push_back(faceDetailsJsonList[faceDetailsIndex].AsObject());
     }
+    m_faceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrientationCorrection"))
   {
     m_orientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("OrientationCorrection"));
-
+    m_orientationCorrectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class FontWeight
   {
   public:
-    AWS_QUICKSIGHT_API FontWeight();
+    AWS_QUICKSIGHT_API FontWeight() = default;
     AWS_QUICKSIGHT_API FontWeight(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FontWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The lexical name for the level of boldness of the text display.</p>
      */
-    inline const FontWeightName& GetName() const{ return m_name; }
+    inline FontWeightName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const FontWeightName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(FontWeightName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline FontWeight& WithName(const FontWeightName& value) { SetName(value); return *this;}
-    inline FontWeight& WithName(FontWeightName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(FontWeightName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline FontWeight& WithName(FontWeightName value) { SetName(value); return *this;}
     ///@}
   private:
 
-    FontWeightName m_name;
+    FontWeightName m_name{FontWeightName::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

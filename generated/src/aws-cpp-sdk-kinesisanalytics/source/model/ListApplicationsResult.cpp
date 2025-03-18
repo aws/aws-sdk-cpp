@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListApplicationsResult::ListApplicationsResult() : 
-    m_hasMoreApplications(false)
-{
-}
-
 ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListApplicationsResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebS
     {
       m_applicationSummaries.push_back(applicationSummariesJsonList[applicationSummariesIndex].AsObject());
     }
+    m_applicationSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreApplications"))
   {
     m_hasMoreApplications = jsonValue.GetBool("HasMoreApplications");
-
+    m_hasMoreApplicationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

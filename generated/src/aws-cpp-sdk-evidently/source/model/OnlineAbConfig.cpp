@@ -18,14 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-OnlineAbConfig::OnlineAbConfig() : 
-    m_controlTreatmentNameHasBeenSet(false),
-    m_treatmentWeightsHasBeenSet(false)
-{
-}
-
 OnlineAbConfig::OnlineAbConfig(JsonView jsonValue)
-  : OnlineAbConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OnlineAbConfig& OnlineAbConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("controlTreatmentName"))
   {
     m_controlTreatmentName = jsonValue.GetString("controlTreatmentName");
-
     m_controlTreatmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treatmentWeights"))
   {
     Aws::Map<Aws::String, JsonView> treatmentWeightsJsonMap = jsonValue.GetObject("treatmentWeights").GetAllObjects();
@@ -48,7 +39,6 @@ OnlineAbConfig& OnlineAbConfig::operator =(JsonView jsonValue)
     }
     m_treatmentWeightsHasBeenSet = true;
   }
-
   return *this;
 }
 

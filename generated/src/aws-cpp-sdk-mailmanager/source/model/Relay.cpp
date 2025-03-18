@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Relay::Relay() : 
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_relayIdHasBeenSet(false),
-    m_relayNameHasBeenSet(false)
-{
-}
-
 Relay::Relay(JsonView jsonValue)
-  : Relay()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Relay& Relay::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelayId"))
   {
     m_relayId = jsonValue.GetString("RelayId");
-
     m_relayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelayName"))
   {
     m_relayName = jsonValue.GetString("RelayName");
-
     m_relayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-RetrievedTrace::RetrievedTrace() : 
-    m_idHasBeenSet(false),
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_spansHasBeenSet(false)
-{
-}
-
 RetrievedTrace::RetrievedTrace(JsonView jsonValue)
-  : RetrievedTrace()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetrievedTrace& RetrievedTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetDouble("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Spans"))
   {
     Aws::Utils::Array<JsonView> spansJsonList = jsonValue.GetArray("Spans");
@@ -57,7 +44,6 @@ RetrievedTrace& RetrievedTrace::operator =(JsonView jsonValue)
     }
     m_spansHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-Acceptor::Acceptor() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Acceptor::Acceptor(JsonView jsonValue)
-  : Acceptor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Acceptor& Acceptor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

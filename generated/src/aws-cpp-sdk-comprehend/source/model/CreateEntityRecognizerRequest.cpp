@@ -12,23 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() : 
-    m_recognizerNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_modelPolicyHasBeenSet(false)
-{
-}
-
 Aws::String CreateEntityRecognizerRequest::SerializePayload() const
 {
   JsonValue payload;

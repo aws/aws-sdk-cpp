@@ -32,7 +32,7 @@ namespace Model
   class KubernetesConfiguration
   {
   public:
-    AWS_GUARDDUTY_API KubernetesConfiguration();
+    AWS_GUARDDUTY_API KubernetesConfiguration() = default;
     AWS_GUARDDUTY_API KubernetesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API KubernetesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The status of Kubernetes audit logs as a data source.</p>
      */
-    inline const KubernetesAuditLogsConfiguration& GetAuditLogs() const{ return m_auditLogs; }
+    inline const KubernetesAuditLogsConfiguration& GetAuditLogs() const { return m_auditLogs; }
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-    inline void SetAuditLogs(const KubernetesAuditLogsConfiguration& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-    inline void SetAuditLogs(KubernetesAuditLogsConfiguration&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-    inline KubernetesConfiguration& WithAuditLogs(const KubernetesAuditLogsConfiguration& value) { SetAuditLogs(value); return *this;}
-    inline KubernetesConfiguration& WithAuditLogs(KubernetesAuditLogsConfiguration&& value) { SetAuditLogs(std::move(value)); return *this;}
+    template<typename AuditLogsT = KubernetesAuditLogsConfiguration>
+    void SetAuditLogs(AuditLogsT&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::forward<AuditLogsT>(value); }
+    template<typename AuditLogsT = KubernetesAuditLogsConfiguration>
+    KubernetesConfiguration& WithAuditLogs(AuditLogsT&& value) { SetAuditLogs(std::forward<AuditLogsT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionSummary::FunctionSummary() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_functionConfigHasBeenSet(false),
-    m_functionMetadataHasBeenSet(false)
-{
-}
-
 FunctionSummary::FunctionSummary(const XmlNode& xmlNode)
-  : FunctionSummary()
 {
   *this = xmlNode;
 }

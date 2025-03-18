@@ -25,7 +25,7 @@ namespace Model
   class GetPlatformApplicationAttributesRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API GetPlatformApplicationAttributesRequest();
+    AWS_SNS_API GetPlatformApplicationAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p> <code>PlatformApplicationArn</code> for
      * GetPlatformApplicationAttributesInput.</p>
      */
-    inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
+    inline const Aws::String& GetPlatformApplicationArn() const { return m_platformApplicationArn; }
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
-    inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
-    inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
-    inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
-    inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
-    inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
-    inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
+    template<typename PlatformApplicationArnT = Aws::String>
+    void SetPlatformApplicationArn(PlatformApplicationArnT&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::forward<PlatformApplicationArnT>(value); }
+    template<typename PlatformApplicationArnT = Aws::String>
+    GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(PlatformApplicationArnT&& value) { SetPlatformApplicationArn(std::forward<PlatformApplicationArnT>(value)); return *this;}
     ///@}
   private:
 

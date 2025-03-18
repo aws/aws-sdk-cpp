@@ -31,7 +31,7 @@ namespace Model
   class DateInterval
   {
   public:
-    AWS_COSTEXPLORER_API DateInterval();
+    AWS_COSTEXPLORER_API DateInterval() = default;
     AWS_COSTEXPLORER_API DateInterval(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API DateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * start date must be equal to or no later than the current date to avoid a
      * validation error.</p>
      */
-    inline const Aws::String& GetStart() const{ return m_start; }
+    inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
-    inline DateInterval& WithStart(const Aws::String& value) { SetStart(value); return *this;}
-    inline DateInterval& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
-    inline DateInterval& WithStart(const char* value) { SetStart(value); return *this;}
+    template<typename StartT = Aws::String>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::String>
+    DateInterval& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * and usage data from the start date up to, but not including,
      * <code>2017-05-01</code>.</p>
      */
-    inline const Aws::String& GetEnd() const{ return m_end; }
+    inline const Aws::String& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
-    inline DateInterval& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
-    inline DateInterval& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
-    inline DateInterval& WithEnd(const char* value) { SetEnd(value); return *this;}
+    template<typename EndT = Aws::String>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::String>
+    DateInterval& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
   private:
 

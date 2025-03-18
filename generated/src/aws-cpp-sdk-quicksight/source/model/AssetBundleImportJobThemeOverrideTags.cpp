@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobThemeOverrideTags::AssetBundleImportJobThemeOverrideTags() : 
-    m_themeIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobThemeOverrideTags::AssetBundleImportJobThemeOverrideTags(JsonView jsonValue)
-  : AssetBundleImportJobThemeOverrideTags()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AssetBundleImportJobThemeOverrideTags& AssetBundleImportJobThemeOverrideTags::op
     }
     m_themeIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -51,7 +43,6 @@ AssetBundleImportJobThemeOverrideTags& AssetBundleImportJobThemeOverrideTags::op
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeSecurityGroupReferencesRequest::DescribeSecurityGroupReferencesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

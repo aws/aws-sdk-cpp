@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-StateReason::StateReason() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 StateReason::StateReason(const XmlNode& xmlNode)
-  : StateReason()
 {
   *this = xmlNode;
 }

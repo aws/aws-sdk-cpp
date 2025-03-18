@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_invalidParameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invalidParameter"))
   {
     m_invalidParameter = jsonValue.GetString("invalidParameter");
-
     m_invalidParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

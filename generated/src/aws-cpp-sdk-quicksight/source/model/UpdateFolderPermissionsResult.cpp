@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFolderPermissionsResult::UpdateFolderPermissionsResult() : 
-    m_status(0)
-{
-}
-
 UpdateFolderPermissionsResult::UpdateFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateFolderPermissionsResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ UpdateFolderPermissionsResult& UpdateFolderPermissionsResult::operator =(const A
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderId"))
   {
     m_folderId = jsonValue.GetString("FolderId");
-
+    m_folderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -56,14 +47,15 @@ UpdateFolderPermissionsResult& UpdateFolderPermissionsResult::operator =(const A
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
+    m_permissionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,21 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceRequest::CreateServiceRequest() : 
-    m_nameHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_dnsConfigHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckCustomConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(ServiceTypeOption::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

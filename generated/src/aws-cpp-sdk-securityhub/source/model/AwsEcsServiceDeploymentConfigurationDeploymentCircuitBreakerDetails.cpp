@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails() : 
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_rollback(false),
-    m_rollbackHasBeenSet(false)
-{
-}
-
 AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(JsonView jsonValue)
-  : AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& AwsEcsServi
   if(jsonValue.ValueExists("Enable"))
   {
     m_enable = jsonValue.GetBool("Enable");
-
     m_enableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rollback"))
   {
     m_rollback = jsonValue.GetBool("Rollback");
-
     m_rollbackHasBeenSet = true;
   }
-
   return *this;
 }
 

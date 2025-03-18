@@ -18,14 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-Interval::Interval() : 
-    m_rollingIntervalHasBeenSet(false),
-    m_calendarIntervalHasBeenSet(false)
-{
-}
-
 Interval::Interval(JsonView jsonValue)
-  : Interval()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Interval& Interval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RollingInterval"))
   {
     m_rollingInterval = jsonValue.GetObject("RollingInterval");
-
     m_rollingIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalendarInterval"))
   {
     m_calendarInterval = jsonValue.GetObject("CalendarInterval");
-
     m_calendarIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

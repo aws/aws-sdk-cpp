@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSecurityGroupMembership::ClusterSecurityGroupMembership() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClusterSecurityGroupMembership::ClusterSecurityGroupMembership(const XmlNode& xmlNode)
-  : ClusterSecurityGroupMembership()
 {
   *this = xmlNode;
 }

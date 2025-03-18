@@ -18,23 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-Activity::Activity() : 
-    m_cUSTOMHasBeenSet(false),
-    m_conditionalSplitHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eMAILHasBeenSet(false),
-    m_holdoutHasBeenSet(false),
-    m_multiConditionHasBeenSet(false),
-    m_pUSHHasBeenSet(false),
-    m_randomSplitHasBeenSet(false),
-    m_sMSHasBeenSet(false),
-    m_waitHasBeenSet(false),
-    m_contactCenterHasBeenSet(false)
-{
-}
-
 Activity::Activity(JsonView jsonValue)
-  : Activity()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ Activity& Activity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CUSTOM"))
   {
     m_cUSTOM = jsonValue.GetObject("CUSTOM");
-
     m_cUSTOMHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionalSplit"))
   {
     m_conditionalSplit = jsonValue.GetObject("ConditionalSplit");
-
     m_conditionalSplitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EMAIL"))
   {
     m_eMAIL = jsonValue.GetObject("EMAIL");
-
     m_eMAILHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Holdout"))
   {
     m_holdout = jsonValue.GetObject("Holdout");
-
     m_holdoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiCondition"))
   {
     m_multiCondition = jsonValue.GetObject("MultiCondition");
-
     m_multiConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PUSH"))
   {
     m_pUSH = jsonValue.GetObject("PUSH");
-
     m_pUSHHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RandomSplit"))
   {
     m_randomSplit = jsonValue.GetObject("RandomSplit");
-
     m_randomSplitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMS"))
   {
     m_sMS = jsonValue.GetObject("SMS");
-
     m_sMSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Wait"))
   {
     m_wait = jsonValue.GetObject("Wait");
-
     m_waitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactCenter"))
   {
     m_contactCenter = jsonValue.GetObject("ContactCenter");
-
     m_contactCenterHasBeenSet = true;
   }
-
   return *this;
 }
 

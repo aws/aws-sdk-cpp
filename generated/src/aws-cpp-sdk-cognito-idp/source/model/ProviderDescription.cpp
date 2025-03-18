@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-ProviderDescription::ProviderDescription() : 
-    m_providerNameHasBeenSet(false),
-    m_providerType(IdentityProviderTypeType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 ProviderDescription::ProviderDescription(JsonView jsonValue)
-  : ProviderDescription()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProviderDescription& ProviderDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProviderName"))
   {
     m_providerName = jsonValue.GetString("ProviderName");
-
     m_providerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = IdentityProviderTypeTypeMapper::GetIdentityProviderTypeTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

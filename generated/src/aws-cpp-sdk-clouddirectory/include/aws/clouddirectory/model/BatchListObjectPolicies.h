@@ -34,7 +34,7 @@ namespace Model
   class BatchListObjectPolicies
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListObjectPolicies();
+    AWS_CLOUDDIRECTORY_API BatchListObjectPolicies() = default;
     AWS_CLOUDDIRECTORY_API BatchListObjectPolicies(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListObjectPolicies& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,31 @@ namespace Model
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
-    inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+    inline const ObjectReference& GetObjectReference() const { return m_objectReference; }
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-    inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-    inline BatchListObjectPolicies& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-    inline BatchListObjectPolicies& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    template<typename ObjectReferenceT = ObjectReference>
+    void SetObjectReference(ObjectReferenceT&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::forward<ObjectReferenceT>(value); }
+    template<typename ObjectReferenceT = ObjectReference>
+    BatchListObjectPolicies& WithObjectReference(ObjectReferenceT&& value) { SetObjectReference(std::forward<ObjectReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListObjectPolicies& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListObjectPolicies& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListObjectPolicies& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListObjectPolicies& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline BatchListObjectPolicies& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

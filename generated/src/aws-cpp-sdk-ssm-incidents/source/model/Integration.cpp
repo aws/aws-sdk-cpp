@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-Integration::Integration() : 
-    m_pagerDutyConfigurationHasBeenSet(false)
-{
-}
-
 Integration::Integration(JsonView jsonValue)
-  : Integration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Integration& Integration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pagerDutyConfiguration"))
   {
     m_pagerDutyConfiguration = jsonValue.GetObject("pagerDutyConfiguration");
-
     m_pagerDutyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

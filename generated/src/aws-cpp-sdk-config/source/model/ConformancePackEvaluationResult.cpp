@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackEvaluationResult::ConformancePackEvaluationResult() : 
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_evaluationResultIdentifierHasBeenSet(false),
-    m_configRuleInvokedTimeHasBeenSet(false),
-    m_resultRecordedTimeHasBeenSet(false),
-    m_annotationHasBeenSet(false)
-{
-}
-
 ConformancePackEvaluationResult::ConformancePackEvaluationResult(JsonView jsonValue)
-  : ConformancePackEvaluationResult()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConformancePackEvaluationResult& ConformancePackEvaluationResult::operator =(Jso
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationResultIdentifier"))
   {
     m_evaluationResultIdentifier = jsonValue.GetObject("EvaluationResultIdentifier");
-
     m_evaluationResultIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleInvokedTime"))
   {
     m_configRuleInvokedTime = jsonValue.GetDouble("ConfigRuleInvokedTime");
-
     m_configRuleInvokedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultRecordedTime"))
   {
     m_resultRecordedTime = jsonValue.GetDouble("ResultRecordedTime");
-
     m_resultRecordedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Annotation"))
   {
     m_annotation = jsonValue.GetString("Annotation");
-
     m_annotationHasBeenSet = true;
   }
-
   return *this;
 }
 

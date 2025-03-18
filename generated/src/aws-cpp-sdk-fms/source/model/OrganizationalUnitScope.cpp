@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-OrganizationalUnitScope::OrganizationalUnitScope() : 
-    m_organizationalUnitsHasBeenSet(false),
-    m_allOrganizationalUnitsEnabled(false),
-    m_allOrganizationalUnitsEnabledHasBeenSet(false),
-    m_excludeSpecifiedOrganizationalUnits(false),
-    m_excludeSpecifiedOrganizationalUnitsHasBeenSet(false)
-{
-}
-
 OrganizationalUnitScope::OrganizationalUnitScope(JsonView jsonValue)
-  : OrganizationalUnitScope()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ OrganizationalUnitScope& OrganizationalUnitScope::operator =(JsonView jsonValue)
     }
     m_organizationalUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllOrganizationalUnitsEnabled"))
   {
     m_allOrganizationalUnitsEnabled = jsonValue.GetBool("AllOrganizationalUnitsEnabled");
-
     m_allOrganizationalUnitsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeSpecifiedOrganizationalUnits"))
   {
     m_excludeSpecifiedOrganizationalUnits = jsonValue.GetBool("ExcludeSpecifiedOrganizationalUnits");
-
     m_excludeSpecifiedOrganizationalUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

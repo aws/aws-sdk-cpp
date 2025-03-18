@@ -10,16 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeServerlessCacheSnapshotsRequest::DescribeServerlessCacheSnapshotsRequest() : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_serverlessCacheSnapshotNameHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServerlessCacheSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationTravelModeOptions::WaypointOptimizationTravelModeOptions() : 
-    m_pedestrianHasBeenSet(false),
-    m_truckHasBeenSet(false)
-{
-}
-
 WaypointOptimizationTravelModeOptions::WaypointOptimizationTravelModeOptions(JsonView jsonValue)
-  : WaypointOptimizationTravelModeOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WaypointOptimizationTravelModeOptions& WaypointOptimizationTravelModeOptions::op
   if(jsonValue.ValueExists("Pedestrian"))
   {
     m_pedestrian = jsonValue.GetObject("Pedestrian");
-
     m_pedestrianHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Truck"))
   {
     m_truck = jsonValue.GetObject("Truck");
-
     m_truckHasBeenSet = true;
   }
-
   return *this;
 }
 

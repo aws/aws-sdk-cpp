@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-SwitchoverDetail::SwitchoverDetail() : 
-    m_sourceMemberHasBeenSet(false),
-    m_targetMemberHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SwitchoverDetail::SwitchoverDetail(const XmlNode& xmlNode)
-  : SwitchoverDetail()
 {
   *this = xmlNode;
 }

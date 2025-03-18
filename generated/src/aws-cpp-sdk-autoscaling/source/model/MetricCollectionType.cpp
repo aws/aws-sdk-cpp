@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MetricCollectionType::MetricCollectionType() : 
-    m_metricHasBeenSet(false)
-{
-}
-
 MetricCollectionType::MetricCollectionType(const XmlNode& xmlNode)
-  : MetricCollectionType()
 {
   *this = xmlNode;
 }

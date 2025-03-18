@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCompatibleElasticsearchVersionsRequest::GetCompatibleElasticsearchVersionsRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCompatibleElasticsearchVersionsRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-ReEncryptionAttributes::ReEncryptionAttributes() : 
-    m_symmetricHasBeenSet(false),
-    m_dukptHasBeenSet(false)
-{
-}
-
 ReEncryptionAttributes::ReEncryptionAttributes(JsonView jsonValue)
-  : ReEncryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReEncryptionAttributes& ReEncryptionAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Symmetric"))
   {
     m_symmetric = jsonValue.GetObject("Symmetric");
-
     m_symmetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dukpt"))
   {
     m_dukpt = jsonValue.GetObject("Dukpt");
-
     m_dukptHasBeenSet = true;
   }
-
   return *this;
 }
 

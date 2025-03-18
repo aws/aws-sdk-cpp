@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminConfirmSignUpRequest::AdminConfirmSignUpRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String AdminConfirmSignUpRequest::SerializePayload() const
 {
   JsonValue payload;

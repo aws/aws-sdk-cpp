@@ -22,7 +22,7 @@ namespace Model
   class GetAlternateContactRequest : public AccountRequest
   {
   public:
-    AWS_ACCOUNT_API GetAlternateContactRequest();
+    AWS_ACCOUNT_API GetAlternateContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,33 +56,29 @@ namespace Model
      * specify this parameter, and call the operation using an identity belonging to
      * the account whose contacts you wish to retrieve or modify.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetAlternateContactRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetAlternateContactRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetAlternateContactRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetAlternateContactRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies which alternate contact you want to retrieve.</p>
      */
-    inline const AlternateContactType& GetAlternateContactType() const{ return m_alternateContactType; }
+    inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
     inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
-    inline void SetAlternateContactType(const AlternateContactType& value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = value; }
-    inline void SetAlternateContactType(AlternateContactType&& value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = std::move(value); }
-    inline GetAlternateContactRequest& WithAlternateContactType(const AlternateContactType& value) { SetAlternateContactType(value); return *this;}
-    inline GetAlternateContactRequest& WithAlternateContactType(AlternateContactType&& value) { SetAlternateContactType(std::move(value)); return *this;}
+    inline void SetAlternateContactType(AlternateContactType value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = value; }
+    inline GetAlternateContactRequest& WithAlternateContactType(AlternateContactType value) { SetAlternateContactType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AlternateContactType m_alternateContactType;
+    AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
     bool m_alternateContactTypeHasBeenSet = false;
   };
 

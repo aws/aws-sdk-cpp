@@ -29,7 +29,7 @@ namespace Model
   class CreateInferenceSchedulerResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult();
+    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult() = default;
     AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerArn() const{ return m_inferenceSchedulerArn; }
-    inline void SetInferenceSchedulerArn(const Aws::String& value) { m_inferenceSchedulerArn = value; }
-    inline void SetInferenceSchedulerArn(Aws::String&& value) { m_inferenceSchedulerArn = std::move(value); }
-    inline void SetInferenceSchedulerArn(const char* value) { m_inferenceSchedulerArn.assign(value); }
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerArn(const Aws::String& value) { SetInferenceSchedulerArn(value); return *this;}
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerArn(Aws::String&& value) { SetInferenceSchedulerArn(std::move(value)); return *this;}
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerArn(const char* value) { SetInferenceSchedulerArn(value); return *this;}
+    inline const Aws::String& GetInferenceSchedulerArn() const { return m_inferenceSchedulerArn; }
+    template<typename InferenceSchedulerArnT = Aws::String>
+    void SetInferenceSchedulerArn(InferenceSchedulerArnT&& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = std::forward<InferenceSchedulerArnT>(value); }
+    template<typename InferenceSchedulerArnT = Aws::String>
+    CreateInferenceSchedulerResult& WithInferenceSchedulerArn(InferenceSchedulerArnT&& value) { SetInferenceSchedulerArn(std::forward<InferenceSchedulerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of inference scheduler being created. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerName() const{ return m_inferenceSchedulerName; }
-    inline void SetInferenceSchedulerName(const Aws::String& value) { m_inferenceSchedulerName = value; }
-    inline void SetInferenceSchedulerName(Aws::String&& value) { m_inferenceSchedulerName = std::move(value); }
-    inline void SetInferenceSchedulerName(const char* value) { m_inferenceSchedulerName.assign(value); }
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerName(const Aws::String& value) { SetInferenceSchedulerName(value); return *this;}
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerName(Aws::String&& value) { SetInferenceSchedulerName(std::move(value)); return *this;}
-    inline CreateInferenceSchedulerResult& WithInferenceSchedulerName(const char* value) { SetInferenceSchedulerName(value); return *this;}
+    inline const Aws::String& GetInferenceSchedulerName() const { return m_inferenceSchedulerName; }
+    template<typename InferenceSchedulerNameT = Aws::String>
+    void SetInferenceSchedulerName(InferenceSchedulerNameT&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::forward<InferenceSchedulerNameT>(value); }
+    template<typename InferenceSchedulerNameT = Aws::String>
+    CreateInferenceSchedulerResult& WithInferenceSchedulerName(InferenceSchedulerNameT&& value) { SetInferenceSchedulerName(std::forward<InferenceSchedulerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,11 +61,9 @@ namespace Model
      * <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.
      * </p>
      */
-    inline const InferenceSchedulerStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const InferenceSchedulerStatus& value) { m_status = value; }
-    inline void SetStatus(InferenceSchedulerStatus&& value) { m_status = std::move(value); }
-    inline CreateInferenceSchedulerResult& WithStatus(const InferenceSchedulerStatus& value) { SetStatus(value); return *this;}
-    inline CreateInferenceSchedulerResult& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline InferenceSchedulerStatus GetStatus() const { return m_status; }
+    inline void SetStatus(InferenceSchedulerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateInferenceSchedulerResult& WithStatus(InferenceSchedulerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -88,34 +82,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
      * practices with Amazon Lookout for Equipment</a>.</p>
      */
-    inline const ModelQuality& GetModelQuality() const{ return m_modelQuality; }
-    inline void SetModelQuality(const ModelQuality& value) { m_modelQuality = value; }
-    inline void SetModelQuality(ModelQuality&& value) { m_modelQuality = std::move(value); }
-    inline CreateInferenceSchedulerResult& WithModelQuality(const ModelQuality& value) { SetModelQuality(value); return *this;}
-    inline CreateInferenceSchedulerResult& WithModelQuality(ModelQuality&& value) { SetModelQuality(std::move(value)); return *this;}
+    inline ModelQuality GetModelQuality() const { return m_modelQuality; }
+    inline void SetModelQuality(ModelQuality value) { m_modelQualityHasBeenSet = true; m_modelQuality = value; }
+    inline CreateInferenceSchedulerResult& WithModelQuality(ModelQuality value) { SetModelQuality(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateInferenceSchedulerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateInferenceSchedulerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateInferenceSchedulerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateInferenceSchedulerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceSchedulerArn;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
-    InferenceSchedulerStatus m_status;
+    InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    ModelQuality m_modelQuality;
+    ModelQuality m_modelQuality{ModelQuality::NOT_SET};
+    bool m_modelQualityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

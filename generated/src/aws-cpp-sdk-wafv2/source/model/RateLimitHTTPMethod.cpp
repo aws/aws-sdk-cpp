@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitHTTPMethod::RateLimitHTTPMethod()
-{
-}
-
 RateLimitHTTPMethod::RateLimitHTTPMethod(JsonView jsonValue)
 {
   *this = jsonValue;

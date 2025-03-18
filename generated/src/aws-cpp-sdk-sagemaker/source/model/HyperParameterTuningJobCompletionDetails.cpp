@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobCompletionDetails::HyperParameterTuningJobCompletionDetails() : 
-    m_numberOfTrainingJobsObjectiveNotImproving(0),
-    m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet(false),
-    m_convergenceDetectedTimeHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobCompletionDetails::HyperParameterTuningJobCompletionDetails(JsonView jsonValue)
-  : HyperParameterTuningJobCompletionDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HyperParameterTuningJobCompletionDetails& HyperParameterTuningJobCompletionDetai
   if(jsonValue.ValueExists("NumberOfTrainingJobsObjectiveNotImproving"))
   {
     m_numberOfTrainingJobsObjectiveNotImproving = jsonValue.GetInteger("NumberOfTrainingJobsObjectiveNotImproving");
-
     m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConvergenceDetectedTime"))
   {
     m_convergenceDetectedTime = jsonValue.GetDouble("ConvergenceDetectedTime");
-
     m_convergenceDetectedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

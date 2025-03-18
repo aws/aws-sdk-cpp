@@ -18,23 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-Bridge::Bridge() : 
-    m_bridgeArnHasBeenSet(false),
-    m_bridgeMessagesHasBeenSet(false),
-    m_bridgeState(BridgeState::NOT_SET),
-    m_bridgeStateHasBeenSet(false),
-    m_egressGatewayBridgeHasBeenSet(false),
-    m_ingressGatewayBridgeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_placementArnHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Bridge::Bridge(JsonView jsonValue)
-  : Bridge()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ Bridge& Bridge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bridgeArn"))
   {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
-
     m_bridgeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bridgeMessages"))
   {
     Aws::Utils::Array<JsonView> bridgeMessagesJsonList = jsonValue.GetArray("bridgeMessages");
@@ -57,35 +39,26 @@ Bridge& Bridge::operator =(JsonView jsonValue)
     }
     m_bridgeMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bridgeState"))
   {
     m_bridgeState = BridgeStateMapper::GetBridgeStateForName(jsonValue.GetString("bridgeState"));
-
     m_bridgeStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressGatewayBridge"))
   {
     m_egressGatewayBridge = jsonValue.GetObject("egressGatewayBridge");
-
     m_egressGatewayBridgeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingressGatewayBridge"))
   {
     m_ingressGatewayBridge = jsonValue.GetObject("ingressGatewayBridge");
-
     m_ingressGatewayBridgeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -95,21 +68,16 @@ Bridge& Bridge::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementArn"))
   {
     m_placementArn = jsonValue.GetString("placementArn");
-
     m_placementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceFailoverConfig"))
   {
     m_sourceFailoverConfig = jsonValue.GetObject("sourceFailoverConfig");
-
     m_sourceFailoverConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -119,7 +87,6 @@ Bridge& Bridge::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

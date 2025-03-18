@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGroupMembershipRequest::DescribeGroupMembershipRequest() : 
-    m_memberNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGroupMembershipRequest::SerializePayload() const
 {
   return {};

@@ -27,7 +27,7 @@ namespace Model
   class CreateRotationResult
   {
   public:
-    AWS_SSMCONTACTS_API CreateRotationResult();
+    AWS_SSMCONTACTS_API CreateRotationResult() = default;
     AWS_SSMCONTACTS_API CreateRotationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API CreateRotationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
      */
-    inline const Aws::String& GetRotationArn() const{ return m_rotationArn; }
-    inline void SetRotationArn(const Aws::String& value) { m_rotationArn = value; }
-    inline void SetRotationArn(Aws::String&& value) { m_rotationArn = std::move(value); }
-    inline void SetRotationArn(const char* value) { m_rotationArn.assign(value); }
-    inline CreateRotationResult& WithRotationArn(const Aws::String& value) { SetRotationArn(value); return *this;}
-    inline CreateRotationResult& WithRotationArn(Aws::String&& value) { SetRotationArn(std::move(value)); return *this;}
-    inline CreateRotationResult& WithRotationArn(const char* value) { SetRotationArn(value); return *this;}
+    inline const Aws::String& GetRotationArn() const { return m_rotationArn; }
+    template<typename RotationArnT = Aws::String>
+    void SetRotationArn(RotationArnT&& value) { m_rotationArnHasBeenSet = true; m_rotationArn = std::forward<RotationArnT>(value); }
+    template<typename RotationArnT = Aws::String>
+    CreateRotationResult& WithRotationArn(RotationArnT&& value) { SetRotationArn(std::forward<RotationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRotationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRotationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRotationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRotationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_rotationArn;
+    bool m_rotationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

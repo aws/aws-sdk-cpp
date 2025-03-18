@@ -31,7 +31,7 @@ namespace Model
   class SearchTermFilterExpression
   {
   public:
-    AWS_DEADLINE_API SearchTermFilterExpression();
+    AWS_DEADLINE_API SearchTermFilterExpression() = default;
     AWS_DEADLINE_API SearchTermFilterExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SearchTermFilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The term to search for.</p>
      */
-    inline const Aws::String& GetSearchTerm() const{ return m_searchTerm; }
+    inline const Aws::String& GetSearchTerm() const { return m_searchTerm; }
     inline bool SearchTermHasBeenSet() const { return m_searchTermHasBeenSet; }
-    inline void SetSearchTerm(const Aws::String& value) { m_searchTermHasBeenSet = true; m_searchTerm = value; }
-    inline void SetSearchTerm(Aws::String&& value) { m_searchTermHasBeenSet = true; m_searchTerm = std::move(value); }
-    inline void SetSearchTerm(const char* value) { m_searchTermHasBeenSet = true; m_searchTerm.assign(value); }
-    inline SearchTermFilterExpression& WithSearchTerm(const Aws::String& value) { SetSearchTerm(value); return *this;}
-    inline SearchTermFilterExpression& WithSearchTerm(Aws::String&& value) { SetSearchTerm(std::move(value)); return *this;}
-    inline SearchTermFilterExpression& WithSearchTerm(const char* value) { SetSearchTerm(value); return *this;}
+    template<typename SearchTermT = Aws::String>
+    void SetSearchTerm(SearchTermT&& value) { m_searchTermHasBeenSet = true; m_searchTerm = std::forward<SearchTermT>(value); }
+    template<typename SearchTermT = Aws::String>
+    SearchTermFilterExpression& WithSearchTerm(SearchTermT&& value) { SetSearchTerm(std::forward<SearchTermT>(value)); return *this;}
     ///@}
   private:
 

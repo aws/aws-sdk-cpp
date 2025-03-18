@@ -18,20 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdNamespaceSummary::IdNamespaceSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idMappingWorkflowPropertiesHasBeenSet(false),
-    m_idNamespaceArnHasBeenSet(false),
-    m_idNamespaceNameHasBeenSet(false),
-    m_type(IdNamespaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 IdNamespaceSummary::IdNamespaceSummary(JsonView jsonValue)
-  : IdNamespaceSummary()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ IdNamespaceSummary& IdNamespaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idMappingWorkflowProperties"))
   {
     Aws::Utils::Array<JsonView> idMappingWorkflowPropertiesJsonList = jsonValue.GetArray("idMappingWorkflowProperties");
@@ -61,35 +44,26 @@ IdNamespaceSummary& IdNamespaceSummary::operator =(JsonView jsonValue)
     }
     m_idMappingWorkflowPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idNamespaceArn"))
   {
     m_idNamespaceArn = jsonValue.GetString("idNamespaceArn");
-
     m_idNamespaceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idNamespaceName"))
   {
     m_idNamespaceName = jsonValue.GetString("idNamespaceName");
-
     m_idNamespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssetCompositeModelResult::DescribeAssetCompositeModelResult()
-{
-}
-
 DescribeAssetCompositeModelResult::DescribeAssetCompositeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator =
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
+    m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelId"))
   {
     m_assetCompositeModelId = jsonValue.GetString("assetCompositeModelId");
-
+    m_assetCompositeModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelExternalId"))
   {
     m_assetCompositeModelExternalId = jsonValue.GetString("assetCompositeModelExternalId");
-
+    m_assetCompositeModelExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelPath"))
   {
     Aws::Utils::Array<JsonView> assetCompositeModelPathJsonList = jsonValue.GetArray("assetCompositeModelPath");
@@ -54,26 +47,23 @@ DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator =
     {
       m_assetCompositeModelPath.push_back(assetCompositeModelPathJsonList[assetCompositeModelPathIndex].AsObject());
     }
+    m_assetCompositeModelPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelName"))
   {
     m_assetCompositeModelName = jsonValue.GetString("assetCompositeModelName");
-
+    m_assetCompositeModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelDescription"))
   {
     m_assetCompositeModelDescription = jsonValue.GetString("assetCompositeModelDescription");
-
+    m_assetCompositeModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelType"))
   {
     m_assetCompositeModelType = jsonValue.GetString("assetCompositeModelType");
-
+    m_assetCompositeModelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelProperties"))
   {
     Aws::Utils::Array<JsonView> assetCompositeModelPropertiesJsonList = jsonValue.GetArray("assetCompositeModelProperties");
@@ -81,8 +71,8 @@ DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator =
     {
       m_assetCompositeModelProperties.push_back(assetCompositeModelPropertiesJsonList[assetCompositeModelPropertiesIndex].AsObject());
     }
+    m_assetCompositeModelPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetCompositeModelSummaries"))
   {
     Aws::Utils::Array<JsonView> assetCompositeModelSummariesJsonList = jsonValue.GetArray("assetCompositeModelSummaries");
@@ -90,8 +80,8 @@ DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator =
     {
       m_assetCompositeModelSummaries.push_back(assetCompositeModelSummariesJsonList[assetCompositeModelSummariesIndex].AsObject());
     }
+    m_assetCompositeModelSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionDefinitions"))
   {
     Aws::Utils::Array<JsonView> actionDefinitionsJsonList = jsonValue.GetArray("actionDefinitions");
@@ -99,14 +89,15 @@ DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator =
     {
       m_actionDefinitions.push_back(actionDefinitionsJsonList[actionDefinitionsIndex].AsObject());
     }
+    m_actionDefinitionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

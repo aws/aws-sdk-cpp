@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails() : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails& AwsEc2LaunchTempla
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInteger("Max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetInteger("Min");
-
     m_minHasBeenSet = true;
   }
-
   return *this;
 }
 

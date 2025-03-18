@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AbortMultipartUploadResult::AbortMultipartUploadResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : AbortMultipartUploadResult()
 {
   *this = result;
 }
@@ -41,12 +35,14 @@ AbortMultipartUploadResult& AbortMultipartUploadResult::operator =(const Aws::Am
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

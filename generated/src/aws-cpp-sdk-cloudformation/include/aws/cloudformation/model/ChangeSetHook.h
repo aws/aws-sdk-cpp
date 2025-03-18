@@ -35,7 +35,7 @@ namespace Model
   class ChangeSetHook
   {
   public:
-    AWS_CLOUDFORMATION_API ChangeSetHook();
+    AWS_CLOUDFORMATION_API ChangeSetHook() = default;
     AWS_CLOUDFORMATION_API ChangeSetHook(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ChangeSetHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>Specifies the points in provisioning logic where a hook is invoked.</p>
      */
-    inline const HookInvocationPoint& GetInvocationPoint() const{ return m_invocationPoint; }
+    inline HookInvocationPoint GetInvocationPoint() const { return m_invocationPoint; }
     inline bool InvocationPointHasBeenSet() const { return m_invocationPointHasBeenSet; }
-    inline void SetInvocationPoint(const HookInvocationPoint& value) { m_invocationPointHasBeenSet = true; m_invocationPoint = value; }
-    inline void SetInvocationPoint(HookInvocationPoint&& value) { m_invocationPointHasBeenSet = true; m_invocationPoint = std::move(value); }
-    inline ChangeSetHook& WithInvocationPoint(const HookInvocationPoint& value) { SetInvocationPoint(value); return *this;}
-    inline ChangeSetHook& WithInvocationPoint(HookInvocationPoint&& value) { SetInvocationPoint(std::move(value)); return *this;}
+    inline void SetInvocationPoint(HookInvocationPoint value) { m_invocationPointHasBeenSet = true; m_invocationPoint = value; }
+    inline ChangeSetHook& WithInvocationPoint(HookInvocationPoint value) { SetInvocationPoint(value); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
      * message.</p> </li> </ul>
      */
-    inline const HookFailureMode& GetFailureMode() const{ return m_failureMode; }
+    inline HookFailureMode GetFailureMode() const { return m_failureMode; }
     inline bool FailureModeHasBeenSet() const { return m_failureModeHasBeenSet; }
-    inline void SetFailureMode(const HookFailureMode& value) { m_failureModeHasBeenSet = true; m_failureMode = value; }
-    inline void SetFailureMode(HookFailureMode&& value) { m_failureModeHasBeenSet = true; m_failureMode = std::move(value); }
-    inline ChangeSetHook& WithFailureMode(const HookFailureMode& value) { SetFailureMode(value); return *this;}
-    inline ChangeSetHook& WithFailureMode(HookFailureMode&& value) { SetFailureMode(std::move(value)); return *this;}
+    inline void SetFailureMode(HookFailureMode value) { m_failureModeHasBeenSet = true; m_failureMode = value; }
+    inline ChangeSetHook& WithFailureMode(HookFailureMode value) { SetFailureMode(value); return *this;}
     ///@}
 
     ///@{
@@ -82,61 +78,55 @@ namespace Model
      * <code>Custom</code> </p> </li> <li> <p> <code>Dev</code> </p> </li> </ul>
      * 
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ChangeSetHook& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ChangeSetHook& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ChangeSetHook& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ChangeSetHook& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version ID of the type specified.</p>
      */
-    inline const Aws::String& GetTypeVersionId() const{ return m_typeVersionId; }
+    inline const Aws::String& GetTypeVersionId() const { return m_typeVersionId; }
     inline bool TypeVersionIdHasBeenSet() const { return m_typeVersionIdHasBeenSet; }
-    inline void SetTypeVersionId(const Aws::String& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = value; }
-    inline void SetTypeVersionId(Aws::String&& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = std::move(value); }
-    inline void SetTypeVersionId(const char* value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId.assign(value); }
-    inline ChangeSetHook& WithTypeVersionId(const Aws::String& value) { SetTypeVersionId(value); return *this;}
-    inline ChangeSetHook& WithTypeVersionId(Aws::String&& value) { SetTypeVersionId(std::move(value)); return *this;}
-    inline ChangeSetHook& WithTypeVersionId(const char* value) { SetTypeVersionId(value); return *this;}
+    template<typename TypeVersionIdT = Aws::String>
+    void SetTypeVersionId(TypeVersionIdT&& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = std::forward<TypeVersionIdT>(value); }
+    template<typename TypeVersionIdT = Aws::String>
+    ChangeSetHook& WithTypeVersionId(TypeVersionIdT&& value) { SetTypeVersionId(std::forward<TypeVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version ID of the type configuration.</p>
      */
-    inline const Aws::String& GetTypeConfigurationVersionId() const{ return m_typeConfigurationVersionId; }
+    inline const Aws::String& GetTypeConfigurationVersionId() const { return m_typeConfigurationVersionId; }
     inline bool TypeConfigurationVersionIdHasBeenSet() const { return m_typeConfigurationVersionIdHasBeenSet; }
-    inline void SetTypeConfigurationVersionId(const Aws::String& value) { m_typeConfigurationVersionIdHasBeenSet = true; m_typeConfigurationVersionId = value; }
-    inline void SetTypeConfigurationVersionId(Aws::String&& value) { m_typeConfigurationVersionIdHasBeenSet = true; m_typeConfigurationVersionId = std::move(value); }
-    inline void SetTypeConfigurationVersionId(const char* value) { m_typeConfigurationVersionIdHasBeenSet = true; m_typeConfigurationVersionId.assign(value); }
-    inline ChangeSetHook& WithTypeConfigurationVersionId(const Aws::String& value) { SetTypeConfigurationVersionId(value); return *this;}
-    inline ChangeSetHook& WithTypeConfigurationVersionId(Aws::String&& value) { SetTypeConfigurationVersionId(std::move(value)); return *this;}
-    inline ChangeSetHook& WithTypeConfigurationVersionId(const char* value) { SetTypeConfigurationVersionId(value); return *this;}
+    template<typename TypeConfigurationVersionIdT = Aws::String>
+    void SetTypeConfigurationVersionId(TypeConfigurationVersionIdT&& value) { m_typeConfigurationVersionIdHasBeenSet = true; m_typeConfigurationVersionId = std::forward<TypeConfigurationVersionIdT>(value); }
+    template<typename TypeConfigurationVersionIdT = Aws::String>
+    ChangeSetHook& WithTypeConfigurationVersionId(TypeConfigurationVersionIdT&& value) { SetTypeConfigurationVersionId(std::forward<TypeConfigurationVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies details about the target that the hook will run against.</p>
      */
-    inline const ChangeSetHookTargetDetails& GetTargetDetails() const{ return m_targetDetails; }
+    inline const ChangeSetHookTargetDetails& GetTargetDetails() const { return m_targetDetails; }
     inline bool TargetDetailsHasBeenSet() const { return m_targetDetailsHasBeenSet; }
-    inline void SetTargetDetails(const ChangeSetHookTargetDetails& value) { m_targetDetailsHasBeenSet = true; m_targetDetails = value; }
-    inline void SetTargetDetails(ChangeSetHookTargetDetails&& value) { m_targetDetailsHasBeenSet = true; m_targetDetails = std::move(value); }
-    inline ChangeSetHook& WithTargetDetails(const ChangeSetHookTargetDetails& value) { SetTargetDetails(value); return *this;}
-    inline ChangeSetHook& WithTargetDetails(ChangeSetHookTargetDetails&& value) { SetTargetDetails(std::move(value)); return *this;}
+    template<typename TargetDetailsT = ChangeSetHookTargetDetails>
+    void SetTargetDetails(TargetDetailsT&& value) { m_targetDetailsHasBeenSet = true; m_targetDetails = std::forward<TargetDetailsT>(value); }
+    template<typename TargetDetailsT = ChangeSetHookTargetDetails>
+    ChangeSetHook& WithTargetDetails(TargetDetailsT&& value) { SetTargetDetails(std::forward<TargetDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    HookInvocationPoint m_invocationPoint;
+    HookInvocationPoint m_invocationPoint{HookInvocationPoint::NOT_SET};
     bool m_invocationPointHasBeenSet = false;
 
-    HookFailureMode m_failureMode;
+    HookFailureMode m_failureMode{HookFailureMode::NOT_SET};
     bool m_failureModeHasBeenSet = false;
 
     Aws::String m_typeName;

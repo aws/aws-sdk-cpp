@@ -12,13 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRegistriesRequest::DescribeRegistriesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRegistriesRequest::SerializePayload() const
 {
   JsonValue payload;

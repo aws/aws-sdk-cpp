@@ -27,7 +27,7 @@ namespace Model
   class ListMetricValuesRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListMetricValuesRequest();
+    AWS_IOT_API ListMetricValuesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,85 +45,77 @@ namespace Model
      * <p>The name of the thing for which security profile metric values are
      * returned.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline ListMetricValuesRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline ListMetricValuesRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline ListMetricValuesRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    ListMetricValuesRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the security profile metric for which values are returned.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline ListMetricValuesRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline ListMetricValuesRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline ListMetricValuesRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    ListMetricValuesRequest& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimension name.</p>
      */
-    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+    inline const Aws::String& GetDimensionName() const { return m_dimensionName; }
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
-    inline ListMetricValuesRequest& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
-    inline ListMetricValuesRequest& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
-    inline ListMetricValuesRequest& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+    template<typename DimensionNameT = Aws::String>
+    void SetDimensionName(DimensionNameT&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::forward<DimensionNameT>(value); }
+    template<typename DimensionNameT = Aws::String>
+    ListMetricValuesRequest& WithDimensionName(DimensionNameT&& value) { SetDimensionName(std::forward<DimensionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimension value operator.</p>
      */
-    inline const DimensionValueOperator& GetDimensionValueOperator() const{ return m_dimensionValueOperator; }
+    inline DimensionValueOperator GetDimensionValueOperator() const { return m_dimensionValueOperator; }
     inline bool DimensionValueOperatorHasBeenSet() const { return m_dimensionValueOperatorHasBeenSet; }
-    inline void SetDimensionValueOperator(const DimensionValueOperator& value) { m_dimensionValueOperatorHasBeenSet = true; m_dimensionValueOperator = value; }
-    inline void SetDimensionValueOperator(DimensionValueOperator&& value) { m_dimensionValueOperatorHasBeenSet = true; m_dimensionValueOperator = std::move(value); }
-    inline ListMetricValuesRequest& WithDimensionValueOperator(const DimensionValueOperator& value) { SetDimensionValueOperator(value); return *this;}
-    inline ListMetricValuesRequest& WithDimensionValueOperator(DimensionValueOperator&& value) { SetDimensionValueOperator(std::move(value)); return *this;}
+    inline void SetDimensionValueOperator(DimensionValueOperator value) { m_dimensionValueOperatorHasBeenSet = true; m_dimensionValueOperator = value; }
+    inline ListMetricValuesRequest& WithDimensionValueOperator(DimensionValueOperator value) { SetDimensionValueOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start of the time period for which metric values are returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ListMetricValuesRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ListMetricValuesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ListMetricValuesRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end of the time period for which metric values are returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ListMetricValuesRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ListMetricValuesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ListMetricValuesRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMetricValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -133,14 +125,12 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMetricValuesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetricValuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetricValuesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetricValuesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,16 +143,16 @@ namespace Model
     Aws::String m_dimensionName;
     bool m_dimensionNameHasBeenSet = false;
 
-    DimensionValueOperator m_dimensionValueOperator;
+    DimensionValueOperator m_dimensionValueOperator{DimensionValueOperator::NOT_SET};
     bool m_dimensionValueOperatorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -18,16 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-AcknowledgeAlarmActionRequest::AcknowledgeAlarmActionRequest() : 
-    m_requestIdHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_noteHasBeenSet(false)
-{
-}
-
 AcknowledgeAlarmActionRequest::AcknowledgeAlarmActionRequest(JsonView jsonValue)
-  : AcknowledgeAlarmActionRequest()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AcknowledgeAlarmActionRequest& AcknowledgeAlarmActionRequest::operator =(JsonVie
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelName"))
   {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
-
     m_alarmModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("note"))
   {
     m_note = jsonValue.GetString("note");
-
     m_noteHasBeenSet = true;
   }
-
   return *this;
 }
 

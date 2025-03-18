@@ -12,14 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_autoEnableOrganizationMembers(AutoEnableMembers::NOT_SET),
-    m_autoEnableOrganizationMembersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

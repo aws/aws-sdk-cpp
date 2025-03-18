@@ -40,7 +40,7 @@ namespace Model
   class ReplicaSpecification
   {
   public:
-    AWS_KEYSPACES_API ReplicaSpecification();
+    AWS_KEYSPACES_API ReplicaSpecification() = default;
     AWS_KEYSPACES_API ReplicaSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API ReplicaSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ReplicaSpecification& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ReplicaSpecification& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ReplicaSpecification& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ReplicaSpecification& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <p>The provisioned read capacity units for the multi-Region table in the
      * specified Amazon Web Services Region.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline ReplicaSpecification& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
@@ -76,19 +74,19 @@ namespace Model
      * <p>The read capacity auto scaling settings for the multi-Region table in the
      * specified Amazon Web Services Region.</p>
      */
-    inline const AutoScalingSettings& GetReadCapacityAutoScaling() const{ return m_readCapacityAutoScaling; }
+    inline const AutoScalingSettings& GetReadCapacityAutoScaling() const { return m_readCapacityAutoScaling; }
     inline bool ReadCapacityAutoScalingHasBeenSet() const { return m_readCapacityAutoScalingHasBeenSet; }
-    inline void SetReadCapacityAutoScaling(const AutoScalingSettings& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = value; }
-    inline void SetReadCapacityAutoScaling(AutoScalingSettings&& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = std::move(value); }
-    inline ReplicaSpecification& WithReadCapacityAutoScaling(const AutoScalingSettings& value) { SetReadCapacityAutoScaling(value); return *this;}
-    inline ReplicaSpecification& WithReadCapacityAutoScaling(AutoScalingSettings&& value) { SetReadCapacityAutoScaling(std::move(value)); return *this;}
+    template<typename ReadCapacityAutoScalingT = AutoScalingSettings>
+    void SetReadCapacityAutoScaling(ReadCapacityAutoScalingT&& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = std::forward<ReadCapacityAutoScalingT>(value); }
+    template<typename ReadCapacityAutoScalingT = AutoScalingSettings>
+    ReplicaSpecification& WithReadCapacityAutoScaling(ReadCapacityAutoScalingT&& value) { SetReadCapacityAutoScaling(std::forward<ReadCapacityAutoScalingT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettings m_readCapacityAutoScaling;

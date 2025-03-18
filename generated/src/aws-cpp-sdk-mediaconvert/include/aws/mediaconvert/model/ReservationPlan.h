@@ -35,7 +35,7 @@ namespace Model
   class ReservationPlan
   {
   public:
-    AWS_MEDIACONVERT_API ReservationPlan();
+    AWS_MEDIACONVERT_API ReservationPlan() = default;
     AWS_MEDIACONVERT_API ReservationPlan(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ReservationPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * The length of the term of your reserved queue pricing plan commitment.
      */
-    inline const Commitment& GetCommitment() const{ return m_commitment; }
+    inline Commitment GetCommitment() const { return m_commitment; }
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
-    inline void SetCommitment(const Commitment& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
-    inline void SetCommitment(Commitment&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
-    inline ReservationPlan& WithCommitment(const Commitment& value) { SetCommitment(value); return *this;}
-    inline ReservationPlan& WithCommitment(Commitment&& value) { SetCommitment(std::move(value)); return *this;}
+    inline void SetCommitment(Commitment value) { m_commitmentHasBeenSet = true; m_commitment = value; }
+    inline ReservationPlan& WithCommitment(Commitment value) { SetCommitment(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * The timestamp in epoch seconds for when the current pricing plan term for this
      * reserved queue expires.
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
-    inline ReservationPlan& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline ReservationPlan& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    ReservationPlan& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * The timestamp in epoch seconds for when you set up the current pricing plan for
      * this reserved queue.
      */
-    inline const Aws::Utils::DateTime& GetPurchasedAt() const{ return m_purchasedAt; }
+    inline const Aws::Utils::DateTime& GetPurchasedAt() const { return m_purchasedAt; }
     inline bool PurchasedAtHasBeenSet() const { return m_purchasedAtHasBeenSet; }
-    inline void SetPurchasedAt(const Aws::Utils::DateTime& value) { m_purchasedAtHasBeenSet = true; m_purchasedAt = value; }
-    inline void SetPurchasedAt(Aws::Utils::DateTime&& value) { m_purchasedAtHasBeenSet = true; m_purchasedAt = std::move(value); }
-    inline ReservationPlan& WithPurchasedAt(const Aws::Utils::DateTime& value) { SetPurchasedAt(value); return *this;}
-    inline ReservationPlan& WithPurchasedAt(Aws::Utils::DateTime&& value) { SetPurchasedAt(std::move(value)); return *this;}
+    template<typename PurchasedAtT = Aws::Utils::DateTime>
+    void SetPurchasedAt(PurchasedAtT&& value) { m_purchasedAtHasBeenSet = true; m_purchasedAt = std::forward<PurchasedAtT>(value); }
+    template<typename PurchasedAtT = Aws::Utils::DateTime>
+    ReservationPlan& WithPurchasedAt(PurchasedAtT&& value) { SetPurchasedAt(std::forward<PurchasedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,10 @@ namespace Model
      * Specifies whether the term of your reserved queue pricing plan is automatically
      * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
      */
-    inline const RenewalType& GetRenewalType() const{ return m_renewalType; }
+    inline RenewalType GetRenewalType() const { return m_renewalType; }
     inline bool RenewalTypeHasBeenSet() const { return m_renewalTypeHasBeenSet; }
-    inline void SetRenewalType(const RenewalType& value) { m_renewalTypeHasBeenSet = true; m_renewalType = value; }
-    inline void SetRenewalType(RenewalType&& value) { m_renewalTypeHasBeenSet = true; m_renewalType = std::move(value); }
-    inline ReservationPlan& WithRenewalType(const RenewalType& value) { SetRenewalType(value); return *this;}
-    inline ReservationPlan& WithRenewalType(RenewalType&& value) { SetRenewalType(std::move(value)); return *this;}
+    inline void SetRenewalType(RenewalType value) { m_renewalTypeHasBeenSet = true; m_renewalType = value; }
+    inline ReservationPlan& WithRenewalType(RenewalType value) { SetRenewalType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +97,7 @@ namespace Model
      * RTS. The new commitment begins when you purchase the additional capacity. You
      * can't decrease the number of RTS in your reserved queue.
      */
-    inline int GetReservedSlots() const{ return m_reservedSlots; }
+    inline int GetReservedSlots() const { return m_reservedSlots; }
     inline bool ReservedSlotsHasBeenSet() const { return m_reservedSlotsHasBeenSet; }
     inline void SetReservedSlots(int value) { m_reservedSlotsHasBeenSet = true; m_reservedSlots = value; }
     inline ReservationPlan& WithReservedSlots(int value) { SetReservedSlots(value); return *this;}
@@ -111,31 +107,29 @@ namespace Model
     /**
      * Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
      */
-    inline const ReservationPlanStatus& GetStatus() const{ return m_status; }
+    inline ReservationPlanStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReservationPlanStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReservationPlanStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReservationPlan& WithStatus(const ReservationPlanStatus& value) { SetStatus(value); return *this;}
-    inline ReservationPlan& WithStatus(ReservationPlanStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReservationPlanStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReservationPlan& WithStatus(ReservationPlanStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Commitment m_commitment;
+    Commitment m_commitment{Commitment::NOT_SET};
     bool m_commitmentHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
     bool m_expiresAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_purchasedAt;
+    Aws::Utils::DateTime m_purchasedAt{};
     bool m_purchasedAtHasBeenSet = false;
 
-    RenewalType m_renewalType;
+    RenewalType m_renewalType{RenewalType::NOT_SET};
     bool m_renewalTypeHasBeenSet = false;
 
-    int m_reservedSlots;
+    int m_reservedSlots{0};
     bool m_reservedSlotsHasBeenSet = false;
 
-    ReservationPlanStatus m_status;
+    ReservationPlanStatus m_status{ReservationPlanStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

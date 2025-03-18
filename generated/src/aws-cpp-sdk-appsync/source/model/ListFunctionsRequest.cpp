@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFunctionsRequest::ListFunctionsRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFunctionsRequest::SerializePayload() const
 {
   return {};

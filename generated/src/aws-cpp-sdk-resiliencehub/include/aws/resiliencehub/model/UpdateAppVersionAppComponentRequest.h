@@ -23,7 +23,7 @@ namespace Model
   class UpdateAppVersionAppComponentRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API UpdateAppVersionAppComponentRequest();
+    AWS_RESILIENCEHUB_API UpdateAppVersionAppComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,18 +39,16 @@ namespace Model
      * <p>Currently, there is no supported additional information for Application
      * Components.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAdditionalInfo() const{ return m_additionalInfo; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAdditionalInfo() const { return m_additionalInfo; }
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-    inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-    inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-    inline UpdateAppVersionAppComponentRequest& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAdditionalInfo(value); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithAdditionalInfo(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(const char* key, Aws::Vector<Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
-    inline UpdateAppVersionAppComponentRequest& AddAdditionalInfo(const char* key, const Aws::Vector<Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
+    template<typename AdditionalInfoT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetAdditionalInfo(AdditionalInfoT&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::forward<AdditionalInfoT>(value); }
+    template<typename AdditionalInfoT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    UpdateAppVersionAppComponentRequest& WithAdditionalInfo(AdditionalInfoT&& value) { SetAdditionalInfo(std::forward<AdditionalInfoT>(value)); return *this;}
+    template<typename AdditionalInfoKeyT = Aws::String, typename AdditionalInfoValueT = Aws::Vector<Aws::String>>
+    UpdateAppVersionAppComponentRequest& AddAdditionalInfo(AdditionalInfoKeyT&& key, AdditionalInfoValueT&& value) {
+      m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::forward<AdditionalInfoKeyT>(key), std::forward<AdditionalInfoValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -63,42 +61,36 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline UpdateAppVersionAppComponentRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    UpdateAppVersionAppComponentRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the Application Component.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateAppVersionAppComponentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateAppVersionAppComponentRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the Application Component.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAppVersionAppComponentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAppVersionAppComponentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +100,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline UpdateAppVersionAppComponentRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline UpdateAppVersionAppComponentRequest& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    UpdateAppVersionAppComponentRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

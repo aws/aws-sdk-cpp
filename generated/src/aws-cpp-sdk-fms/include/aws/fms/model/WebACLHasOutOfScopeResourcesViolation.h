@@ -34,7 +34,7 @@ namespace Model
   class WebACLHasOutOfScopeResourcesViolation
   {
   public:
-    AWS_FMS_API WebACLHasOutOfScopeResourcesViolation();
+    AWS_FMS_API WebACLHasOutOfScopeResourcesViolation() = default;
     AWS_FMS_API WebACLHasOutOfScopeResourcesViolation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API WebACLHasOutOfScopeResourcesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the web ACL. </p>
      */
-    inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
+    inline const Aws::String& GetWebACLArn() const { return m_webACLArn; }
     inline bool WebACLArnHasBeenSet() const { return m_webACLArnHasBeenSet; }
-    inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
-    inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
-    inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
-    inline WebACLHasOutOfScopeResourcesViolation& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
-    inline WebACLHasOutOfScopeResourcesViolation& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
-    inline WebACLHasOutOfScopeResourcesViolation& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
+    template<typename WebACLArnT = Aws::String>
+    void SetWebACLArn(WebACLArnT&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::forward<WebACLArnT>(value); }
+    template<typename WebACLArnT = Aws::String>
+    WebACLHasOutOfScopeResourcesViolation& WithWebACLArn(WebACLArnT&& value) { SetWebACLArn(std::forward<WebACLArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>An array of Amazon Resource Name (ARN) for the resources that are out of
      * scope of the policy and are associated with the web ACL. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOutOfScopeResourceList() const{ return m_outOfScopeResourceList; }
+    inline const Aws::Vector<Aws::String>& GetOutOfScopeResourceList() const { return m_outOfScopeResourceList; }
     inline bool OutOfScopeResourceListHasBeenSet() const { return m_outOfScopeResourceListHasBeenSet; }
-    inline void SetOutOfScopeResourceList(const Aws::Vector<Aws::String>& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList = value; }
-    inline void SetOutOfScopeResourceList(Aws::Vector<Aws::String>&& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList = std::move(value); }
-    inline WebACLHasOutOfScopeResourcesViolation& WithOutOfScopeResourceList(const Aws::Vector<Aws::String>& value) { SetOutOfScopeResourceList(value); return *this;}
-    inline WebACLHasOutOfScopeResourcesViolation& WithOutOfScopeResourceList(Aws::Vector<Aws::String>&& value) { SetOutOfScopeResourceList(std::move(value)); return *this;}
-    inline WebACLHasOutOfScopeResourcesViolation& AddOutOfScopeResourceList(const Aws::String& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList.push_back(value); return *this; }
-    inline WebACLHasOutOfScopeResourcesViolation& AddOutOfScopeResourceList(Aws::String&& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList.push_back(std::move(value)); return *this; }
-    inline WebACLHasOutOfScopeResourcesViolation& AddOutOfScopeResourceList(const char* value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList.push_back(value); return *this; }
+    template<typename OutOfScopeResourceListT = Aws::Vector<Aws::String>>
+    void SetOutOfScopeResourceList(OutOfScopeResourceListT&& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList = std::forward<OutOfScopeResourceListT>(value); }
+    template<typename OutOfScopeResourceListT = Aws::Vector<Aws::String>>
+    WebACLHasOutOfScopeResourcesViolation& WithOutOfScopeResourceList(OutOfScopeResourceListT&& value) { SetOutOfScopeResourceList(std::forward<OutOfScopeResourceListT>(value)); return *this;}
+    template<typename OutOfScopeResourceListT = Aws::String>
+    WebACLHasOutOfScopeResourcesViolation& AddOutOfScopeResourceList(OutOfScopeResourceListT&& value) { m_outOfScopeResourceListHasBeenSet = true; m_outOfScopeResourceList.emplace_back(std::forward<OutOfScopeResourceListT>(value)); return *this; }
     ///@}
   private:
 

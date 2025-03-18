@@ -33,7 +33,7 @@ namespace Model
   class CreateLoadBalancerResult
   {
   public:
-    AWS_ELASTICLOADBALANCING_API CreateLoadBalancerResult();
+    AWS_ELASTICLOADBALANCING_API CreateLoadBalancerResult() = default;
     AWS_ELASTICLOADBALANCING_API CreateLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCING_API CreateLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The DNS name of the load balancer.</p>
      */
-    inline const Aws::String& GetDNSName() const{ return m_dNSName; }
-    inline void SetDNSName(const Aws::String& value) { m_dNSName = value; }
-    inline void SetDNSName(Aws::String&& value) { m_dNSName = std::move(value); }
-    inline void SetDNSName(const char* value) { m_dNSName.assign(value); }
-    inline CreateLoadBalancerResult& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
-    inline CreateLoadBalancerResult& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
-    inline CreateLoadBalancerResult& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+    inline const Aws::String& GetDNSName() const { return m_dNSName; }
+    template<typename DNSNameT = Aws::String>
+    void SetDNSName(DNSNameT&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::forward<DNSNameT>(value); }
+    template<typename DNSNameT = Aws::String>
+    CreateLoadBalancerResult& WithDNSName(DNSNameT&& value) { SetDNSName(std::forward<DNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dNSName;
+    bool m_dNSNameHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

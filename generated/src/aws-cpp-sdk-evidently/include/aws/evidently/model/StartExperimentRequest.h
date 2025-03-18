@@ -22,7 +22,7 @@ namespace Model
   class StartExperimentRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API StartExperimentRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API StartExperimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,44 +38,40 @@ namespace Model
      * <p>The date and time to end the experiment. This must be no more than 30 days
      * after the experiment starts.</p>
      */
-    inline const Aws::Utils::DateTime& GetAnalysisCompleteTime() const{ return m_analysisCompleteTime; }
+    inline const Aws::Utils::DateTime& GetAnalysisCompleteTime() const { return m_analysisCompleteTime; }
     inline bool AnalysisCompleteTimeHasBeenSet() const { return m_analysisCompleteTimeHasBeenSet; }
-    inline void SetAnalysisCompleteTime(const Aws::Utils::DateTime& value) { m_analysisCompleteTimeHasBeenSet = true; m_analysisCompleteTime = value; }
-    inline void SetAnalysisCompleteTime(Aws::Utils::DateTime&& value) { m_analysisCompleteTimeHasBeenSet = true; m_analysisCompleteTime = std::move(value); }
-    inline StartExperimentRequest& WithAnalysisCompleteTime(const Aws::Utils::DateTime& value) { SetAnalysisCompleteTime(value); return *this;}
-    inline StartExperimentRequest& WithAnalysisCompleteTime(Aws::Utils::DateTime&& value) { SetAnalysisCompleteTime(std::move(value)); return *this;}
+    template<typename AnalysisCompleteTimeT = Aws::Utils::DateTime>
+    void SetAnalysisCompleteTime(AnalysisCompleteTimeT&& value) { m_analysisCompleteTimeHasBeenSet = true; m_analysisCompleteTime = std::forward<AnalysisCompleteTimeT>(value); }
+    template<typename AnalysisCompleteTimeT = Aws::Utils::DateTime>
+    StartExperimentRequest& WithAnalysisCompleteTime(AnalysisCompleteTimeT&& value) { SetAnalysisCompleteTime(std::forward<AnalysisCompleteTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the experiment to start.</p>
      */
-    inline const Aws::String& GetExperiment() const{ return m_experiment; }
+    inline const Aws::String& GetExperiment() const { return m_experiment; }
     inline bool ExperimentHasBeenSet() const { return m_experimentHasBeenSet; }
-    inline void SetExperiment(const Aws::String& value) { m_experimentHasBeenSet = true; m_experiment = value; }
-    inline void SetExperiment(Aws::String&& value) { m_experimentHasBeenSet = true; m_experiment = std::move(value); }
-    inline void SetExperiment(const char* value) { m_experimentHasBeenSet = true; m_experiment.assign(value); }
-    inline StartExperimentRequest& WithExperiment(const Aws::String& value) { SetExperiment(value); return *this;}
-    inline StartExperimentRequest& WithExperiment(Aws::String&& value) { SetExperiment(std::move(value)); return *this;}
-    inline StartExperimentRequest& WithExperiment(const char* value) { SetExperiment(value); return *this;}
+    template<typename ExperimentT = Aws::String>
+    void SetExperiment(ExperimentT&& value) { m_experimentHasBeenSet = true; m_experiment = std::forward<ExperimentT>(value); }
+    template<typename ExperimentT = Aws::String>
+    StartExperimentRequest& WithExperiment(ExperimentT&& value) { SetExperiment(std::forward<ExperimentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the project that contains the experiment to start.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline StartExperimentRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline StartExperimentRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline StartExperimentRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    StartExperimentRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_analysisCompleteTime;
+    Aws::Utils::DateTime m_analysisCompleteTime{};
     bool m_analysisCompleteTimeHasBeenSet = false;
 
     Aws::String m_experiment;

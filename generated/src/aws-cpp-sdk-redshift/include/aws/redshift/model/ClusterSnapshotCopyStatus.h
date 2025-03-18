@@ -32,7 +32,7 @@ namespace Model
   class ClusterSnapshotCopyStatus
   {
   public:
-    AWS_REDSHIFT_API ClusterSnapshotCopyStatus();
+    AWS_REDSHIFT_API ClusterSnapshotCopyStatus() = default;
     AWS_REDSHIFT_API ClusterSnapshotCopyStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ClusterSnapshotCopyStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.</p>
      */
-    inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
+    inline const Aws::String& GetDestinationRegion() const { return m_destinationRegion; }
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
-    inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
-    inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
-    inline ClusterSnapshotCopyStatus& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
-    inline ClusterSnapshotCopyStatus& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
-    inline ClusterSnapshotCopyStatus& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
+    template<typename DestinationRegionT = Aws::String>
+    void SetDestinationRegion(DestinationRegionT&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::forward<DestinationRegionT>(value); }
+    template<typename DestinationRegionT = Aws::String>
+    ClusterSnapshotCopyStatus& WithDestinationRegion(DestinationRegionT&& value) { SetDestinationRegion(std::forward<DestinationRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The number of days that automated snapshots are retained in the destination
      * region after they are copied from a source region.</p>
      */
-    inline long long GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline long long GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
     inline void SetRetentionPeriod(long long value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
     inline ClusterSnapshotCopyStatus& WithRetentionPeriod(long long value) { SetRetentionPeriod(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
      * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
      * an integer between 1 and 3,653.</p>
      */
-    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+    inline int GetManualSnapshotRetentionPeriod() const { return m_manualSnapshotRetentionPeriod; }
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
     inline ClusterSnapshotCopyStatus& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
@@ -83,24 +81,22 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
-    inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
+    inline const Aws::String& GetSnapshotCopyGrantName() const { return m_snapshotCopyGrantName; }
     inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
-    inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
-    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
-    inline void SetSnapshotCopyGrantName(const char* value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName.assign(value); }
-    inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
-    inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
-    inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
+    template<typename SnapshotCopyGrantNameT = Aws::String>
+    void SetSnapshotCopyGrantName(SnapshotCopyGrantNameT&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::forward<SnapshotCopyGrantNameT>(value); }
+    template<typename SnapshotCopyGrantNameT = Aws::String>
+    ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(SnapshotCopyGrantNameT&& value) { SetSnapshotCopyGrantName(std::forward<SnapshotCopyGrantNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet = false;
 
-    long long m_retentionPeriod;
+    long long m_retentionPeriod{0};
     bool m_retentionPeriodHasBeenSet = false;
 
-    int m_manualSnapshotRetentionPeriod;
+    int m_manualSnapshotRetentionPeriod{0};
     bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_snapshotCopyGrantName;

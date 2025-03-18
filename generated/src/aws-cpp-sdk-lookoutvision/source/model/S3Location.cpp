@@ -18,14 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

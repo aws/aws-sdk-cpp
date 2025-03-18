@@ -36,7 +36,7 @@ namespace Model
   class AudioChannelTaggingSettings
   {
   public:
-    AWS_MEDIACONVERT_API AudioChannelTaggingSettings();
+    AWS_MEDIACONVERT_API AudioChannelTaggingSettings() = default;
     AWS_MEDIACONVERT_API AudioChannelTaggingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioChannelTaggingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * your output has multiple single-channel audio tracks, enter a single channel
      * layout tag for each track.
      */
-    inline const AudioChannelTag& GetChannelTag() const{ return m_channelTag; }
+    inline AudioChannelTag GetChannelTag() const { return m_channelTag; }
     inline bool ChannelTagHasBeenSet() const { return m_channelTagHasBeenSet; }
-    inline void SetChannelTag(const AudioChannelTag& value) { m_channelTagHasBeenSet = true; m_channelTag = value; }
-    inline void SetChannelTag(AudioChannelTag&& value) { m_channelTagHasBeenSet = true; m_channelTag = std::move(value); }
-    inline AudioChannelTaggingSettings& WithChannelTag(const AudioChannelTag& value) { SetChannelTag(value); return *this;}
-    inline AudioChannelTaggingSettings& WithChannelTag(AudioChannelTag&& value) { SetChannelTag(std::move(value)); return *this;}
+    inline void SetChannelTag(AudioChannelTag value) { m_channelTagHasBeenSet = true; m_channelTag = value; }
+    inline AudioChannelTaggingSettings& WithChannelTag(AudioChannelTag value) { SetChannelTag(value); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,17 @@ namespace Model
      * your output has multiple single-channel audio tracks, enter a single channel
      * layout tag for each track.
      */
-    inline const Aws::Vector<AudioChannelTag>& GetChannelTags() const{ return m_channelTags; }
+    inline const Aws::Vector<AudioChannelTag>& GetChannelTags() const { return m_channelTags; }
     inline bool ChannelTagsHasBeenSet() const { return m_channelTagsHasBeenSet; }
-    inline void SetChannelTags(const Aws::Vector<AudioChannelTag>& value) { m_channelTagsHasBeenSet = true; m_channelTags = value; }
-    inline void SetChannelTags(Aws::Vector<AudioChannelTag>&& value) { m_channelTagsHasBeenSet = true; m_channelTags = std::move(value); }
-    inline AudioChannelTaggingSettings& WithChannelTags(const Aws::Vector<AudioChannelTag>& value) { SetChannelTags(value); return *this;}
-    inline AudioChannelTaggingSettings& WithChannelTags(Aws::Vector<AudioChannelTag>&& value) { SetChannelTags(std::move(value)); return *this;}
-    inline AudioChannelTaggingSettings& AddChannelTags(const AudioChannelTag& value) { m_channelTagsHasBeenSet = true; m_channelTags.push_back(value); return *this; }
-    inline AudioChannelTaggingSettings& AddChannelTags(AudioChannelTag&& value) { m_channelTagsHasBeenSet = true; m_channelTags.push_back(std::move(value)); return *this; }
+    template<typename ChannelTagsT = Aws::Vector<AudioChannelTag>>
+    void SetChannelTags(ChannelTagsT&& value) { m_channelTagsHasBeenSet = true; m_channelTags = std::forward<ChannelTagsT>(value); }
+    template<typename ChannelTagsT = Aws::Vector<AudioChannelTag>>
+    AudioChannelTaggingSettings& WithChannelTags(ChannelTagsT&& value) { SetChannelTags(std::forward<ChannelTagsT>(value)); return *this;}
+    inline AudioChannelTaggingSettings& AddChannelTags(AudioChannelTag value) { m_channelTagsHasBeenSet = true; m_channelTags.push_back(value); return *this; }
     ///@}
   private:
 
-    AudioChannelTag m_channelTag;
+    AudioChannelTag m_channelTag{AudioChannelTag::NOT_SET};
     bool m_channelTagHasBeenSet = false;
 
     Aws::Vector<AudioChannelTag> m_channelTags;

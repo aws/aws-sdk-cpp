@@ -12,11 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProfileObjectTypeTemplateRequest::GetProfileObjectTypeTemplateRequest() : 
-    m_templateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileObjectTypeTemplateRequest::SerializePayload() const
 {
   return {};

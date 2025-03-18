@@ -21,7 +21,7 @@ namespace Model
   class CancelJobRequest : public BraketRequest
   {
   public:
-    AWS_BRAKET_API CancelJobRequest();
+    AWS_BRAKET_API CancelJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the Amazon Braket job to cancel.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline CancelJobRequest& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline CancelJobRequest& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline CancelJobRequest& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    CancelJobRequest& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
   private:
 

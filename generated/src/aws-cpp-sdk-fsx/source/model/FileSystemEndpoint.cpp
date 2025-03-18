@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileSystemEndpoint::FileSystemEndpoint() : 
-    m_dNSNameHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false)
-{
-}
-
 FileSystemEndpoint::FileSystemEndpoint(JsonView jsonValue)
-  : FileSystemEndpoint()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FileSystemEndpoint& FileSystemEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DNSName"))
   {
     m_dNSName = jsonValue.GetString("DNSName");
-
     m_dNSNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddresses"))
   {
     Aws::Utils::Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
@@ -48,7 +39,6 @@ FileSystemEndpoint& FileSystemEndpoint::operator =(JsonView jsonValue)
     }
     m_ipAddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

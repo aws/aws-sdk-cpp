@@ -18,17 +18,7 @@ namespace QApps
 namespace Model
 {
 
-CardInput::CardInput() : 
-    m_textInputHasBeenSet(false),
-    m_qQueryHasBeenSet(false),
-    m_qPluginHasBeenSet(false),
-    m_fileUploadHasBeenSet(false),
-    m_formInputHasBeenSet(false)
-{
-}
-
 CardInput::CardInput(JsonView jsonValue)
-  : CardInput()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CardInput& CardInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textInput"))
   {
     m_textInput = jsonValue.GetObject("textInput");
-
     m_textInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qQuery"))
   {
     m_qQuery = jsonValue.GetObject("qQuery");
-
     m_qQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qPlugin"))
   {
     m_qPlugin = jsonValue.GetObject("qPlugin");
-
     m_qPluginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileUpload"))
   {
     m_fileUpload = jsonValue.GetObject("fileUpload");
-
     m_fileUploadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formInput"))
   {
     m_formInput = jsonValue.GetObject("formInput");
-
     m_formInputHasBeenSet = true;
   }
-
   return *this;
 }
 

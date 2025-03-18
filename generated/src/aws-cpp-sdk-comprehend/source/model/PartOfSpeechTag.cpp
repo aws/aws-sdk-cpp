@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-PartOfSpeechTag::PartOfSpeechTag() : 
-    m_tag(PartOfSpeechTagType::NOT_SET),
-    m_tagHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 PartOfSpeechTag::PartOfSpeechTag(JsonView jsonValue)
-  : PartOfSpeechTag()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PartOfSpeechTag& PartOfSpeechTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Tag"))
   {
     m_tag = PartOfSpeechTagTypeMapper::GetPartOfSpeechTagTypeForName(jsonValue.GetString("Tag"));
-
     m_tagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

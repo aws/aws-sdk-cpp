@@ -33,7 +33,7 @@ namespace Model
   class AdminAccount
   {
   public:
-    AWS_MACIE2_API AdminAccount();
+    AWS_MACIE2_API AdminAccount() = default;
     AWS_MACIE2_API AdminAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID for the account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AdminAccount& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AdminAccount& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AdminAccount& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AdminAccount& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The current status of the account as the delegated Amazon Macie administrator
      * account for the organization.</p>
      */
-    inline const AdminStatus& GetStatus() const{ return m_status; }
+    inline AdminStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AdminStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AdminStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AdminAccount& WithStatus(const AdminStatus& value) { SetStatus(value); return *this;}
-    inline AdminAccount& WithStatus(AdminStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AdminStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AdminAccount& WithStatus(AdminStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AdminStatus m_status;
+    AdminStatus m_status{AdminStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

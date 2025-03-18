@@ -36,7 +36,7 @@ namespace Model
   class EksPodProperties
   {
   public:
-    AWS_BATCH_API EksPodProperties();
+    AWS_BATCH_API EksPodProperties() = default;
     AWS_BATCH_API EksPodProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksPodProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure
      * service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::String& GetServiceAccountName() const{ return m_serviceAccountName; }
+    inline const Aws::String& GetServiceAccountName() const { return m_serviceAccountName; }
     inline bool ServiceAccountNameHasBeenSet() const { return m_serviceAccountNameHasBeenSet; }
-    inline void SetServiceAccountName(const Aws::String& value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName = value; }
-    inline void SetServiceAccountName(Aws::String&& value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName = std::move(value); }
-    inline void SetServiceAccountName(const char* value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName.assign(value); }
-    inline EksPodProperties& WithServiceAccountName(const Aws::String& value) { SetServiceAccountName(value); return *this;}
-    inline EksPodProperties& WithServiceAccountName(Aws::String&& value) { SetServiceAccountName(std::move(value)); return *this;}
-    inline EksPodProperties& WithServiceAccountName(const char* value) { SetServiceAccountName(value); return *this;}
+    template<typename ServiceAccountNameT = Aws::String>
+    void SetServiceAccountName(ServiceAccountNameT&& value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName = std::forward<ServiceAccountNameT>(value); }
+    template<typename ServiceAccountNameT = Aws::String>
+    EksPodProperties& WithServiceAccountName(ServiceAccountNameT&& value) { SetServiceAccountName(std::forward<ServiceAccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +74,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod
      * networking</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline bool GetHostNetwork() const{ return m_hostNetwork; }
+    inline bool GetHostNetwork() const { return m_hostNetwork; }
     inline bool HostNetworkHasBeenSet() const { return m_hostNetworkHasBeenSet; }
     inline void SetHostNetwork(bool value) { m_hostNetworkHasBeenSet = true; m_hostNetwork = value; }
     inline EksPodProperties& WithHostNetwork(bool value) { SetHostNetwork(value); return *this;}
@@ -95,14 +93,12 @@ namespace Model
      * <code>Default</code> | <code>ClusterFirst</code> |
      * <code>ClusterFirstWithHostNet</code> </p>
      */
-    inline const Aws::String& GetDnsPolicy() const{ return m_dnsPolicy; }
+    inline const Aws::String& GetDnsPolicy() const { return m_dnsPolicy; }
     inline bool DnsPolicyHasBeenSet() const { return m_dnsPolicyHasBeenSet; }
-    inline void SetDnsPolicy(const Aws::String& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = value; }
-    inline void SetDnsPolicy(Aws::String&& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = std::move(value); }
-    inline void SetDnsPolicy(const char* value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy.assign(value); }
-    inline EksPodProperties& WithDnsPolicy(const Aws::String& value) { SetDnsPolicy(value); return *this;}
-    inline EksPodProperties& WithDnsPolicy(Aws::String&& value) { SetDnsPolicy(std::move(value)); return *this;}
-    inline EksPodProperties& WithDnsPolicy(const char* value) { SetDnsPolicy(value); return *this;}
+    template<typename DnsPolicyT = Aws::String>
+    void SetDnsPolicy(DnsPolicyT&& value) { m_dnsPolicyHasBeenSet = true; m_dnsPolicy = std::forward<DnsPolicyT>(value); }
+    template<typename DnsPolicyT = Aws::String>
+    EksPodProperties& WithDnsPolicy(DnsPolicyT&& value) { SetDnsPolicy(std::forward<DnsPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +107,14 @@ namespace Model
      * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
-    inline const Aws::Vector<ImagePullSecret>& GetImagePullSecrets() const{ return m_imagePullSecrets; }
+    inline const Aws::Vector<ImagePullSecret>& GetImagePullSecrets() const { return m_imagePullSecrets; }
     inline bool ImagePullSecretsHasBeenSet() const { return m_imagePullSecretsHasBeenSet; }
-    inline void SetImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = value; }
-    inline void SetImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = std::move(value); }
-    inline EksPodProperties& WithImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { SetImagePullSecrets(value); return *this;}
-    inline EksPodProperties& WithImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { SetImagePullSecrets(std::move(value)); return *this;}
-    inline EksPodProperties& AddImagePullSecrets(const ImagePullSecret& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(value); return *this; }
-    inline EksPodProperties& AddImagePullSecrets(ImagePullSecret&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(std::move(value)); return *this; }
+    template<typename ImagePullSecretsT = Aws::Vector<ImagePullSecret>>
+    void SetImagePullSecrets(ImagePullSecretsT&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = std::forward<ImagePullSecretsT>(value); }
+    template<typename ImagePullSecretsT = Aws::Vector<ImagePullSecret>>
+    EksPodProperties& WithImagePullSecrets(ImagePullSecretsT&& value) { SetImagePullSecrets(std::forward<ImagePullSecretsT>(value)); return *this;}
+    template<typename ImagePullSecretsT = ImagePullSecret>
+    EksPodProperties& AddImagePullSecrets(ImagePullSecretsT&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.emplace_back(std::forward<ImagePullSecretsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +122,14 @@ namespace Model
      * <p>The properties of the container that's used on the Amazon EKS pod.</p> 
      * <p>This object is limited to 10 elements.</p> 
      */
-    inline const Aws::Vector<EksContainer>& GetContainers() const{ return m_containers; }
+    inline const Aws::Vector<EksContainer>& GetContainers() const { return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-    inline void SetContainers(const Aws::Vector<EksContainer>& value) { m_containersHasBeenSet = true; m_containers = value; }
-    inline void SetContainers(Aws::Vector<EksContainer>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-    inline EksPodProperties& WithContainers(const Aws::Vector<EksContainer>& value) { SetContainers(value); return *this;}
-    inline EksPodProperties& WithContainers(Aws::Vector<EksContainer>&& value) { SetContainers(std::move(value)); return *this;}
-    inline EksPodProperties& AddContainers(const EksContainer& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
-    inline EksPodProperties& AddContainers(EksContainer&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+    template<typename ContainersT = Aws::Vector<EksContainer>>
+    void SetContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers = std::forward<ContainersT>(value); }
+    template<typename ContainersT = Aws::Vector<EksContainer>>
+    EksPodProperties& WithContainers(ContainersT&& value) { SetContainers(std::forward<ContainersT>(value)); return *this;}
+    template<typename ContainersT = EksContainer>
+    EksPodProperties& AddContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers.emplace_back(std::forward<ContainersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,14 +143,14 @@ namespace Model
      * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
      * is limited to 10 elements.</p> 
      */
-    inline const Aws::Vector<EksContainer>& GetInitContainers() const{ return m_initContainers; }
+    inline const Aws::Vector<EksContainer>& GetInitContainers() const { return m_initContainers; }
     inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }
-    inline void SetInitContainers(const Aws::Vector<EksContainer>& value) { m_initContainersHasBeenSet = true; m_initContainers = value; }
-    inline void SetInitContainers(Aws::Vector<EksContainer>&& value) { m_initContainersHasBeenSet = true; m_initContainers = std::move(value); }
-    inline EksPodProperties& WithInitContainers(const Aws::Vector<EksContainer>& value) { SetInitContainers(value); return *this;}
-    inline EksPodProperties& WithInitContainers(Aws::Vector<EksContainer>&& value) { SetInitContainers(std::move(value)); return *this;}
-    inline EksPodProperties& AddInitContainers(const EksContainer& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(value); return *this; }
-    inline EksPodProperties& AddInitContainers(EksContainer&& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(std::move(value)); return *this; }
+    template<typename InitContainersT = Aws::Vector<EksContainer>>
+    void SetInitContainers(InitContainersT&& value) { m_initContainersHasBeenSet = true; m_initContainers = std::forward<InitContainersT>(value); }
+    template<typename InitContainersT = Aws::Vector<EksContainer>>
+    EksPodProperties& WithInitContainers(InitContainersT&& value) { SetInitContainers(std::forward<InitContainersT>(value)); return *this;}
+    template<typename InitContainersT = EksContainer>
+    EksPodProperties& AddInitContainers(InitContainersT&& value) { m_initContainersHasBeenSet = true; m_initContainers.emplace_back(std::forward<InitContainersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +158,14 @@ namespace Model
      * <p>Specifies the volumes for a job definition that uses Amazon EKS
      * resources.</p>
      */
-    inline const Aws::Vector<EksVolume>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<EksVolume>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<EksVolume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<EksVolume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline EksPodProperties& WithVolumes(const Aws::Vector<EksVolume>& value) { SetVolumes(value); return *this;}
-    inline EksPodProperties& WithVolumes(Aws::Vector<EksVolume>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline EksPodProperties& AddVolumes(const EksVolume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline EksPodProperties& AddVolumes(EksVolume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<EksVolume>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<EksVolume>>
+    EksPodProperties& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = EksVolume>
+    EksPodProperties& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -178,12 +174,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
      * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const EksMetadata& GetMetadata() const{ return m_metadata; }
+    inline const EksMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline EksPodProperties& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
-    inline EksPodProperties& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = EksMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = EksMetadata>
+    EksPodProperties& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,7 +189,7 @@ namespace Model
      * href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
      * Process Namespace between Containers in a Pod</a>.</p>
      */
-    inline bool GetShareProcessNamespace() const{ return m_shareProcessNamespace; }
+    inline bool GetShareProcessNamespace() const { return m_shareProcessNamespace; }
     inline bool ShareProcessNamespaceHasBeenSet() const { return m_shareProcessNamespaceHasBeenSet; }
     inline void SetShareProcessNamespace(bool value) { m_shareProcessNamespaceHasBeenSet = true; m_shareProcessNamespace = value; }
     inline EksPodProperties& WithShareProcessNamespace(bool value) { SetShareProcessNamespace(value); return *this;}
@@ -203,7 +199,7 @@ namespace Model
     Aws::String m_serviceAccountName;
     bool m_serviceAccountNameHasBeenSet = false;
 
-    bool m_hostNetwork;
+    bool m_hostNetwork{false};
     bool m_hostNetworkHasBeenSet = false;
 
     Aws::String m_dnsPolicy;
@@ -224,7 +220,7 @@ namespace Model
     EksMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    bool m_shareProcessNamespace;
+    bool m_shareProcessNamespace{false};
     bool m_shareProcessNamespaceHasBeenSet = false;
   };
 

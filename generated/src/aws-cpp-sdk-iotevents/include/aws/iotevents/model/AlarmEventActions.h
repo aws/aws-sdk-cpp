@@ -33,7 +33,7 @@ namespace Model
   class AlarmEventActions
   {
   public:
-    AWS_IOTEVENTS_API AlarmEventActions();
+    AWS_IOTEVENTS_API AlarmEventActions() = default;
     AWS_IOTEVENTS_API AlarmEventActions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API AlarmEventActions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Specifies one or more supported actions to receive notifications when the
      * alarm state changes.</p>
      */
-    inline const Aws::Vector<AlarmAction>& GetAlarmActions() const{ return m_alarmActions; }
+    inline const Aws::Vector<AlarmAction>& GetAlarmActions() const { return m_alarmActions; }
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
-    inline void SetAlarmActions(const Aws::Vector<AlarmAction>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
-    inline void SetAlarmActions(Aws::Vector<AlarmAction>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
-    inline AlarmEventActions& WithAlarmActions(const Aws::Vector<AlarmAction>& value) { SetAlarmActions(value); return *this;}
-    inline AlarmEventActions& WithAlarmActions(Aws::Vector<AlarmAction>&& value) { SetAlarmActions(std::move(value)); return *this;}
-    inline AlarmEventActions& AddAlarmActions(const AlarmAction& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
-    inline AlarmEventActions& AddAlarmActions(AlarmAction&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
+    template<typename AlarmActionsT = Aws::Vector<AlarmAction>>
+    void SetAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::forward<AlarmActionsT>(value); }
+    template<typename AlarmActionsT = Aws::Vector<AlarmAction>>
+    AlarmEventActions& WithAlarmActions(AlarmActionsT&& value) { SetAlarmActions(std::forward<AlarmActionsT>(value)); return *this;}
+    template<typename AlarmActionsT = AlarmAction>
+    AlarmEventActions& AddAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.emplace_back(std::forward<AlarmActionsT>(value)); return *this; }
     ///@}
   private:
 

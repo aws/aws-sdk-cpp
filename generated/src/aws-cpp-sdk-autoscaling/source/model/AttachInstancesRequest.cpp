@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-AttachInstancesRequest::AttachInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String AttachInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

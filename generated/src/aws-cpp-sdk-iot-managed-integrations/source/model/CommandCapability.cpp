@@ -18,16 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CommandCapability::CommandCapability() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 CommandCapability::CommandCapability(JsonView jsonValue)
-  : CommandCapability()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CommandCapability& CommandCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -64,7 +49,6 @@ CommandCapability& CommandCapability::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class ModifyInstanceGroupsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API ModifyInstanceGroupsRequest();
+    AWS_EMR_API ModifyInstanceGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline ModifyInstanceGroupsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline ModifyInstanceGroupsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline ModifyInstanceGroupsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    ModifyInstanceGroupsRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Instance groups to change.</p>
      */
-    inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+    inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const { return m_instanceGroups; }
     inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
-    inline void SetInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
-    inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
-    inline ModifyInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupModifyConfig>& value) { SetInstanceGroups(value); return *this;}
-    inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(std::move(value)); return *this;}
-    inline ModifyInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupModifyConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
-    inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroupModifyConfig>>
+    void SetInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::forward<InstanceGroupsT>(value); }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroupModifyConfig>>
+    ModifyInstanceGroupsRequest& WithInstanceGroups(InstanceGroupsT&& value) { SetInstanceGroups(std::forward<InstanceGroupsT>(value)); return *this;}
+    template<typename InstanceGroupsT = InstanceGroupModifyConfig>
+    ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.emplace_back(std::forward<InstanceGroupsT>(value)); return *this; }
     ///@}
   private:
 

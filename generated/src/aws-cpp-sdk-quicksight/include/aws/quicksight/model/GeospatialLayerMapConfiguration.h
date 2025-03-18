@@ -37,7 +37,7 @@ namespace Model
   class GeospatialLayerMapConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLayerMapConfiguration();
+    AWS_QUICKSIGHT_API GeospatialLayerMapConfiguration() = default;
     AWS_QUICKSIGHT_API GeospatialLayerMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLayerMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,60 +45,60 @@ namespace Model
 
     ///@{
     
-    inline const LegendOptions& GetLegend() const{ return m_legend; }
+    inline const LegendOptions& GetLegend() const { return m_legend; }
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-    inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-    inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-    inline GeospatialLayerMapConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-    inline GeospatialLayerMapConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    template<typename LegendT = LegendOptions>
+    void SetLegend(LegendT&& value) { m_legendHasBeenSet = true; m_legend = std::forward<LegendT>(value); }
+    template<typename LegendT = LegendOptions>
+    GeospatialLayerMapConfiguration& WithLegend(LegendT&& value) { SetLegend(std::forward<LegendT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The geospatial layers to visualize on the map.</p>
      */
-    inline const Aws::Vector<GeospatialLayerItem>& GetMapLayers() const{ return m_mapLayers; }
+    inline const Aws::Vector<GeospatialLayerItem>& GetMapLayers() const { return m_mapLayers; }
     inline bool MapLayersHasBeenSet() const { return m_mapLayersHasBeenSet; }
-    inline void SetMapLayers(const Aws::Vector<GeospatialLayerItem>& value) { m_mapLayersHasBeenSet = true; m_mapLayers = value; }
-    inline void SetMapLayers(Aws::Vector<GeospatialLayerItem>&& value) { m_mapLayersHasBeenSet = true; m_mapLayers = std::move(value); }
-    inline GeospatialLayerMapConfiguration& WithMapLayers(const Aws::Vector<GeospatialLayerItem>& value) { SetMapLayers(value); return *this;}
-    inline GeospatialLayerMapConfiguration& WithMapLayers(Aws::Vector<GeospatialLayerItem>&& value) { SetMapLayers(std::move(value)); return *this;}
-    inline GeospatialLayerMapConfiguration& AddMapLayers(const GeospatialLayerItem& value) { m_mapLayersHasBeenSet = true; m_mapLayers.push_back(value); return *this; }
-    inline GeospatialLayerMapConfiguration& AddMapLayers(GeospatialLayerItem&& value) { m_mapLayersHasBeenSet = true; m_mapLayers.push_back(std::move(value)); return *this; }
+    template<typename MapLayersT = Aws::Vector<GeospatialLayerItem>>
+    void SetMapLayers(MapLayersT&& value) { m_mapLayersHasBeenSet = true; m_mapLayers = std::forward<MapLayersT>(value); }
+    template<typename MapLayersT = Aws::Vector<GeospatialLayerItem>>
+    GeospatialLayerMapConfiguration& WithMapLayers(MapLayersT&& value) { SetMapLayers(std::forward<MapLayersT>(value)); return *this;}
+    template<typename MapLayersT = GeospatialLayerItem>
+    GeospatialLayerMapConfiguration& AddMapLayers(MapLayersT&& value) { m_mapLayersHasBeenSet = true; m_mapLayers.emplace_back(std::forward<MapLayersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The map state properties for the map.</p>
      */
-    inline const GeospatialMapState& GetMapState() const{ return m_mapState; }
+    inline const GeospatialMapState& GetMapState() const { return m_mapState; }
     inline bool MapStateHasBeenSet() const { return m_mapStateHasBeenSet; }
-    inline void SetMapState(const GeospatialMapState& value) { m_mapStateHasBeenSet = true; m_mapState = value; }
-    inline void SetMapState(GeospatialMapState&& value) { m_mapStateHasBeenSet = true; m_mapState = std::move(value); }
-    inline GeospatialLayerMapConfiguration& WithMapState(const GeospatialMapState& value) { SetMapState(value); return *this;}
-    inline GeospatialLayerMapConfiguration& WithMapState(GeospatialMapState&& value) { SetMapState(std::move(value)); return *this;}
+    template<typename MapStateT = GeospatialMapState>
+    void SetMapState(MapStateT&& value) { m_mapStateHasBeenSet = true; m_mapState = std::forward<MapStateT>(value); }
+    template<typename MapStateT = GeospatialMapState>
+    GeospatialLayerMapConfiguration& WithMapState(MapStateT&& value) { SetMapState(std::forward<MapStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The map style properties for the map.</p>
      */
-    inline const GeospatialMapStyle& GetMapStyle() const{ return m_mapStyle; }
+    inline const GeospatialMapStyle& GetMapStyle() const { return m_mapStyle; }
     inline bool MapStyleHasBeenSet() const { return m_mapStyleHasBeenSet; }
-    inline void SetMapStyle(const GeospatialMapStyle& value) { m_mapStyleHasBeenSet = true; m_mapStyle = value; }
-    inline void SetMapStyle(GeospatialMapStyle&& value) { m_mapStyleHasBeenSet = true; m_mapStyle = std::move(value); }
-    inline GeospatialLayerMapConfiguration& WithMapStyle(const GeospatialMapStyle& value) { SetMapStyle(value); return *this;}
-    inline GeospatialLayerMapConfiguration& WithMapStyle(GeospatialMapStyle&& value) { SetMapStyle(std::move(value)); return *this;}
+    template<typename MapStyleT = GeospatialMapStyle>
+    void SetMapStyle(MapStyleT&& value) { m_mapStyleHasBeenSet = true; m_mapStyle = std::forward<MapStyleT>(value); }
+    template<typename MapStyleT = GeospatialMapStyle>
+    GeospatialLayerMapConfiguration& WithMapStyle(MapStyleT&& value) { SetMapStyle(std::forward<MapStyleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline GeospatialLayerMapConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline GeospatialLayerMapConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    GeospatialLayerMapConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 

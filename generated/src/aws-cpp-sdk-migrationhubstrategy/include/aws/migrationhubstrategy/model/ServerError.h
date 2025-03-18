@@ -31,7 +31,7 @@ namespace Model
   class ServerError
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerError();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerError() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The error category of server analysis.</p>
      */
-    inline const ServerErrorCategory& GetServerErrorCategory() const{ return m_serverErrorCategory; }
+    inline ServerErrorCategory GetServerErrorCategory() const { return m_serverErrorCategory; }
     inline bool ServerErrorCategoryHasBeenSet() const { return m_serverErrorCategoryHasBeenSet; }
-    inline void SetServerErrorCategory(const ServerErrorCategory& value) { m_serverErrorCategoryHasBeenSet = true; m_serverErrorCategory = value; }
-    inline void SetServerErrorCategory(ServerErrorCategory&& value) { m_serverErrorCategoryHasBeenSet = true; m_serverErrorCategory = std::move(value); }
-    inline ServerError& WithServerErrorCategory(const ServerErrorCategory& value) { SetServerErrorCategory(value); return *this;}
-    inline ServerError& WithServerErrorCategory(ServerErrorCategory&& value) { SetServerErrorCategory(std::move(value)); return *this;}
+    inline void SetServerErrorCategory(ServerErrorCategory value) { m_serverErrorCategoryHasBeenSet = true; m_serverErrorCategory = value; }
+    inline ServerError& WithServerErrorCategory(ServerErrorCategory value) { SetServerErrorCategory(value); return *this;}
     ///@}
   private:
 
-    ServerErrorCategory m_serverErrorCategory;
+    ServerErrorCategory m_serverErrorCategory{ServerErrorCategory::NOT_SET};
     bool m_serverErrorCategoryHasBeenSet = false;
   };
 

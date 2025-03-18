@@ -35,7 +35,7 @@ namespace Model
   class ScheduledUpdateGroupActionRequest
   {
   public:
-    AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest();
+    AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest() = default;
     AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the scaling action.</p>
      */
-    inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-    inline ScheduledUpdateGroupActionRequest& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    template<typename ScheduledActionNameT = Aws::String>
+    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
+    template<typename ScheduledActionNameT = Aws::String>
+    ScheduledUpdateGroupActionRequest& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,24 +65,24 @@ namespace Model
      * specified recurrence.</p> <p>If you try to schedule the action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ScheduledUpdateGroupActionRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ScheduledUpdateGroupActionRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ScheduledUpdateGroupActionRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +97,19 @@ namespace Model
      * starts and stops.</p> <p>Cron expressions use Universal Coordinated Time (UTC)
      * by default.</p>
      */
-    inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
+    inline const Aws::String& GetRecurrence() const { return m_recurrence; }
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
-    inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
-    inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
-    inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
-    inline ScheduledUpdateGroupActionRequest& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
+    template<typename RecurrenceT = Aws::String>
+    void SetRecurrence(RecurrenceT&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::forward<RecurrenceT>(value); }
+    template<typename RecurrenceT = Aws::String>
+    ScheduledUpdateGroupActionRequest& WithRecurrence(RecurrenceT&& value) { SetRecurrence(std::forward<RecurrenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum size of the Auto Scaling group.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline ScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -123,7 +119,7 @@ namespace Model
     /**
      * <p>The maximum size of the Auto Scaling group.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline ScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -134,7 +130,7 @@ namespace Model
      * <p>The desired capacity is the initial capacity of the Auto Scaling group after
      * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
-    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
     inline ScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
@@ -149,36 +145,34 @@ namespace Model
      * see <a
      * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
      */
-    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+    inline const Aws::String& GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
-    inline ScheduledUpdateGroupActionRequest& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
-    inline ScheduledUpdateGroupActionRequest& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+    template<typename TimeZoneT = Aws::String>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = Aws::String>
+    ScheduledUpdateGroupActionRequest& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduledActionName;
     bool m_scheduledActionNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_recurrence;
     bool m_recurrenceHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
-    int m_desiredCapacity;
+    int m_desiredCapacity{0};
     bool m_desiredCapacityHasBeenSet = false;
 
     Aws::String m_timeZone;

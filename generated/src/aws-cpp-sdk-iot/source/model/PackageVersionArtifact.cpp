@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PackageVersionArtifact::PackageVersionArtifact() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 PackageVersionArtifact::PackageVersionArtifact(JsonView jsonValue)
-  : PackageVersionArtifact()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PackageVersionArtifact& PackageVersionArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

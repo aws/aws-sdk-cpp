@@ -12,18 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPerformanceAnalysisReportsRequest::ListPerformanceAnalysisReportsRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_listTags(false),
-    m_listTagsHasBeenSet(false)
-{
-}
-
 Aws::String ListPerformanceAnalysisReportsRequest::SerializePayload() const
 {
   JsonValue payload;

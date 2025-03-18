@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ModelTrainingDataChannel::ModelTrainingDataChannel() : 
-    m_mlInputChannelArnHasBeenSet(false),
-    m_channelNameHasBeenSet(false)
-{
-}
-
 ModelTrainingDataChannel::ModelTrainingDataChannel(JsonView jsonValue)
-  : ModelTrainingDataChannel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelTrainingDataChannel& ModelTrainingDataChannel::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("mlInputChannelArn"))
   {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
-
     m_mlInputChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

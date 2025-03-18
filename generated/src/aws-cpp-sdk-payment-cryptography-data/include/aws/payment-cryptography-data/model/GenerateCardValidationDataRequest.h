@@ -22,7 +22,7 @@ namespace Model
   class GenerateCardValidationDataRequest : public PaymentCryptographyDataRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateCardValidationDataRequest();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateCardValidationDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services
      * Payment Cryptography uses to generate card data.</p>
      */
-    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
+    inline const Aws::String& GetKeyIdentifier() const { return m_keyIdentifier; }
     inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-    inline GenerateCardValidationDataRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-    inline GenerateCardValidationDataRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-    inline GenerateCardValidationDataRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    template<typename KeyIdentifierT = Aws::String>
+    void SetKeyIdentifier(KeyIdentifierT&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::forward<KeyIdentifierT>(value); }
+    template<typename KeyIdentifierT = Aws::String>
+    GenerateCardValidationDataRequest& WithKeyIdentifier(KeyIdentifierT&& value) { SetKeyIdentifier(std::forward<KeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The Primary Account Number (PAN), a unique identifier for a payment credit or
      * debit card that associates the card with a specific account holder.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline const Aws::String& GetPrimaryAccountNumber() const { return m_primaryAccountNumber; }
     inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline GenerateCardValidationDataRequest& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline GenerateCardValidationDataRequest& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline GenerateCardValidationDataRequest& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    template<typename PrimaryAccountNumberT = Aws::String>
+    void SetPrimaryAccountNumber(PrimaryAccountNumberT&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::forward<PrimaryAccountNumberT>(value); }
+    template<typename PrimaryAccountNumberT = Aws::String>
+    GenerateCardValidationDataRequest& WithPrimaryAccountNumber(PrimaryAccountNumberT&& value) { SetPrimaryAccountNumber(std::forward<PrimaryAccountNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,19 +64,19 @@ namespace Model
      * <p>The algorithm for generating CVV or CSC values for the card within Amazon Web
      * Services Payment Cryptography.</p>
      */
-    inline const CardGenerationAttributes& GetGenerationAttributes() const{ return m_generationAttributes; }
+    inline const CardGenerationAttributes& GetGenerationAttributes() const { return m_generationAttributes; }
     inline bool GenerationAttributesHasBeenSet() const { return m_generationAttributesHasBeenSet; }
-    inline void SetGenerationAttributes(const CardGenerationAttributes& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = value; }
-    inline void SetGenerationAttributes(CardGenerationAttributes&& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = std::move(value); }
-    inline GenerateCardValidationDataRequest& WithGenerationAttributes(const CardGenerationAttributes& value) { SetGenerationAttributes(value); return *this;}
-    inline GenerateCardValidationDataRequest& WithGenerationAttributes(CardGenerationAttributes&& value) { SetGenerationAttributes(std::move(value)); return *this;}
+    template<typename GenerationAttributesT = CardGenerationAttributes>
+    void SetGenerationAttributes(GenerationAttributesT&& value) { m_generationAttributesHasBeenSet = true; m_generationAttributes = std::forward<GenerationAttributesT>(value); }
+    template<typename GenerationAttributesT = CardGenerationAttributes>
+    GenerateCardValidationDataRequest& WithGenerationAttributes(GenerationAttributesT&& value) { SetGenerationAttributes(std::forward<GenerationAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
      */
-    inline int GetValidationDataLength() const{ return m_validationDataLength; }
+    inline int GetValidationDataLength() const { return m_validationDataLength; }
     inline bool ValidationDataLengthHasBeenSet() const { return m_validationDataLengthHasBeenSet; }
     inline void SetValidationDataLength(int value) { m_validationDataLengthHasBeenSet = true; m_validationDataLength = value; }
     inline GenerateCardValidationDataRequest& WithValidationDataLength(int value) { SetValidationDataLength(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
     CardGenerationAttributes m_generationAttributes;
     bool m_generationAttributesHasBeenSet = false;
 
-    int m_validationDataLength;
+    int m_validationDataLength{0};
     bool m_validationDataLengthHasBeenSet = false;
   };
 

@@ -26,7 +26,7 @@ namespace Model
   class CreateLanguageModelRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CreateLanguageModelRequest();
+    AWS_TRANSCRIBESERVICE_API CreateLanguageModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,12 +54,10 @@ namespace Model
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
-    inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline CLMLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline CreateLanguageModelRequest& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline CreateLanguageModelRequest& WithLanguageCode(CLMLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(CLMLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CreateLanguageModelRequest& WithLanguageCode(CLMLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * transcribe audio with a sample rate less than 16,000 Hz, choose
      * <code>NarrowBand</code>.</p>
      */
-    inline const BaseModelName& GetBaseModelName() const{ return m_baseModelName; }
+    inline BaseModelName GetBaseModelName() const { return m_baseModelName; }
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
-    inline void SetBaseModelName(const BaseModelName& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
-    inline void SetBaseModelName(BaseModelName&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
-    inline CreateLanguageModelRequest& WithBaseModelName(const BaseModelName& value) { SetBaseModelName(value); return *this;}
-    inline CreateLanguageModelRequest& WithBaseModelName(BaseModelName&& value) { SetBaseModelName(std::move(value)); return *this;}
+    inline void SetBaseModelName(BaseModelName value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
+    inline CreateLanguageModelRequest& WithBaseModelName(BaseModelName value) { SetBaseModelName(value); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline CreateLanguageModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline CreateLanguageModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline CreateLanguageModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    CreateLanguageModelRequest& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +104,12 @@ namespace Model
      * locations for training and tuning data, the ARN you use must have permissions to
      * access both locations.</p>
      */
-    inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+    inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-    inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-    inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-    inline CreateLanguageModelRequest& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
-    inline CreateLanguageModelRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    template<typename InputDataConfigT = InputDataConfig>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = InputDataConfig>
+    CreateLanguageModelRequest& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,21 +120,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLanguageModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateLanguageModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLanguageModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLanguageModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateLanguageModelRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateLanguageModelRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    CLMLanguageCode m_languageCode;
+    CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    BaseModelName m_baseModelName;
+    BaseModelName m_baseModelName{BaseModelName::NOT_SET};
     bool m_baseModelNameHasBeenSet = false;
 
     Aws::String m_modelName;

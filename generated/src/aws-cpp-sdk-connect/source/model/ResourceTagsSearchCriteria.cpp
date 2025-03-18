@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ResourceTagsSearchCriteria::ResourceTagsSearchCriteria() : 
-    m_tagSearchConditionHasBeenSet(false)
-{
-}
-
 ResourceTagsSearchCriteria::ResourceTagsSearchCriteria(JsonView jsonValue)
-  : ResourceTagsSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceTagsSearchCriteria& ResourceTagsSearchCriteria::operator =(JsonView json
   if(jsonValue.ValueExists("TagSearchCondition"))
   {
     m_tagSearchCondition = jsonValue.GetObject("TagSearchCondition");
-
     m_tagSearchConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

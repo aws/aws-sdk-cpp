@@ -32,7 +32,7 @@ namespace Model
   class DbInstanceConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API DbInstanceConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API DbInstanceConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API DbInstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API DbInstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The DB instance class of the DB instance.</p>
      */
-    inline const Aws::String& GetDbInstanceClass() const{ return m_dbInstanceClass; }
+    inline const Aws::String& GetDbInstanceClass() const { return m_dbInstanceClass; }
     inline bool DbInstanceClassHasBeenSet() const { return m_dbInstanceClassHasBeenSet; }
-    inline void SetDbInstanceClass(const Aws::String& value) { m_dbInstanceClassHasBeenSet = true; m_dbInstanceClass = value; }
-    inline void SetDbInstanceClass(Aws::String&& value) { m_dbInstanceClassHasBeenSet = true; m_dbInstanceClass = std::move(value); }
-    inline void SetDbInstanceClass(const char* value) { m_dbInstanceClassHasBeenSet = true; m_dbInstanceClass.assign(value); }
-    inline DbInstanceConfiguration& WithDbInstanceClass(const Aws::String& value) { SetDbInstanceClass(value); return *this;}
-    inline DbInstanceConfiguration& WithDbInstanceClass(Aws::String&& value) { SetDbInstanceClass(std::move(value)); return *this;}
-    inline DbInstanceConfiguration& WithDbInstanceClass(const char* value) { SetDbInstanceClass(value); return *this;}
+    template<typename DbInstanceClassT = Aws::String>
+    void SetDbInstanceClass(DbInstanceClassT&& value) { m_dbInstanceClassHasBeenSet = true; m_dbInstanceClass = std::forward<DbInstanceClassT>(value); }
+    template<typename DbInstanceClassT = Aws::String>
+    DbInstanceConfiguration& WithDbInstanceClass(DbInstanceClassT&& value) { SetDbInstanceClass(std::forward<DbInstanceClassT>(value)); return *this;}
     ///@}
   private:
 

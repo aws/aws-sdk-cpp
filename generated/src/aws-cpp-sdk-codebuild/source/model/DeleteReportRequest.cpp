@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReportRequest::DeleteReportRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReportRequest::SerializePayload() const
 {
   JsonValue payload;

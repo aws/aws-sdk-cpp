@@ -33,7 +33,7 @@ namespace Model
   class GetLabelDetectionResult
   {
   public:
-    AWS_REKOGNITION_API GetLabelDetectionResult();
+    AWS_REKOGNITION_API GetLabelDetectionResult() = default;
     AWS_REKOGNITION_API GetLabelDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API GetLabelDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,9 @@ namespace Model
     /**
      * <p>The current status of the label detection job.</p>
      */
-    inline const VideoJobStatus& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const VideoJobStatus& value) { m_jobStatus = value; }
-    inline void SetJobStatus(VideoJobStatus&& value) { m_jobStatus = std::move(value); }
-    inline GetLabelDetectionResult& WithJobStatus(const VideoJobStatus& value) { SetJobStatus(value); return *this;}
-    inline GetLabelDetectionResult& WithJobStatus(VideoJobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline VideoJobStatus GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(VideoJobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline GetLabelDetectionResult& WithJobStatus(VideoJobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <p>If the job fails, <code>StatusMessage</code> provides a descriptive error
      * message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetLabelDetectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetLabelDetectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetLabelDetectionResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,11 +65,11 @@ namespace Model
      * <code>Videometadata</code> is returned in every page of paginated responses from
      * a Amazon Rekognition video operation.</p>
      */
-    inline const VideoMetadata& GetVideoMetadata() const{ return m_videoMetadata; }
-    inline void SetVideoMetadata(const VideoMetadata& value) { m_videoMetadata = value; }
-    inline void SetVideoMetadata(VideoMetadata&& value) { m_videoMetadata = std::move(value); }
-    inline GetLabelDetectionResult& WithVideoMetadata(const VideoMetadata& value) { SetVideoMetadata(value); return *this;}
-    inline GetLabelDetectionResult& WithVideoMetadata(VideoMetadata&& value) { SetVideoMetadata(std::move(value)); return *this;}
+    inline const VideoMetadata& GetVideoMetadata() const { return m_videoMetadata; }
+    template<typename VideoMetadataT = VideoMetadata>
+    void SetVideoMetadata(VideoMetadataT&& value) { m_videoMetadataHasBeenSet = true; m_videoMetadata = std::forward<VideoMetadataT>(value); }
+    template<typename VideoMetadataT = VideoMetadata>
+    GetLabelDetectionResult& WithVideoMetadata(VideoMetadataT&& value) { SetVideoMetadata(std::forward<VideoMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,13 +78,11 @@ namespace Model
      * that you can use in the subsequent request to retrieve the next set of
      * labels.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetLabelDetectionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetLabelDetectionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetLabelDetectionResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,13 +91,13 @@ namespace Model
      * label and the time, in milliseconds from the start of the video, that the label
      * was detected. </p>
      */
-    inline const Aws::Vector<LabelDetection>& GetLabels() const{ return m_labels; }
-    inline void SetLabels(const Aws::Vector<LabelDetection>& value) { m_labels = value; }
-    inline void SetLabels(Aws::Vector<LabelDetection>&& value) { m_labels = std::move(value); }
-    inline GetLabelDetectionResult& WithLabels(const Aws::Vector<LabelDetection>& value) { SetLabels(value); return *this;}
-    inline GetLabelDetectionResult& WithLabels(Aws::Vector<LabelDetection>&& value) { SetLabels(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& AddLabels(const LabelDetection& value) { m_labels.push_back(value); return *this; }
-    inline GetLabelDetectionResult& AddLabels(LabelDetection&& value) { m_labels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LabelDetection>& GetLabels() const { return m_labels; }
+    template<typename LabelsT = Aws::Vector<LabelDetection>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<LabelDetection>>
+    GetLabelDetectionResult& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = LabelDetection>
+    GetLabelDetectionResult& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,13 +105,11 @@ namespace Model
      * <p>Version number of the label detection model that was used to detect
      * labels.</p>
      */
-    inline const Aws::String& GetLabelModelVersion() const{ return m_labelModelVersion; }
-    inline void SetLabelModelVersion(const Aws::String& value) { m_labelModelVersion = value; }
-    inline void SetLabelModelVersion(Aws::String&& value) { m_labelModelVersion = std::move(value); }
-    inline void SetLabelModelVersion(const char* value) { m_labelModelVersion.assign(value); }
-    inline GetLabelDetectionResult& WithLabelModelVersion(const Aws::String& value) { SetLabelModelVersion(value); return *this;}
-    inline GetLabelDetectionResult& WithLabelModelVersion(Aws::String&& value) { SetLabelModelVersion(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithLabelModelVersion(const char* value) { SetLabelModelVersion(value); return *this;}
+    inline const Aws::String& GetLabelModelVersion() const { return m_labelModelVersion; }
+    template<typename LabelModelVersionT = Aws::String>
+    void SetLabelModelVersion(LabelModelVersionT&& value) { m_labelModelVersionHasBeenSet = true; m_labelModelVersion = std::forward<LabelModelVersionT>(value); }
+    template<typename LabelModelVersionT = Aws::String>
+    GetLabelDetectionResult& WithLabelModelVersion(LabelModelVersionT&& value) { SetLabelModelVersion(std::forward<LabelModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,22 +118,20 @@ namespace Model
      * results. The job identifer is returned by an initial call to
      * StartLabelDetection.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline GetLabelDetectionResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetLabelDetectionResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetLabelDetectionResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Video& GetVideo() const{ return m_video; }
-    inline void SetVideo(const Video& value) { m_video = value; }
-    inline void SetVideo(Video&& value) { m_video = std::move(value); }
-    inline GetLabelDetectionResult& WithVideo(const Video& value) { SetVideo(value); return *this;}
-    inline GetLabelDetectionResult& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+    inline const Video& GetVideo() const { return m_video; }
+    template<typename VideoT = Video>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = Video>
+    GetLabelDetectionResult& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,13 +140,11 @@ namespace Model
      * the job completion notification sent to your Amazon Simple Notification Service
      * topic.</p>
      */
-    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
-    inline void SetJobTag(const Aws::String& value) { m_jobTag = value; }
-    inline void SetJobTag(Aws::String&& value) { m_jobTag = std::move(value); }
-    inline void SetJobTag(const char* value) { m_jobTag.assign(value); }
-    inline GetLabelDetectionResult& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
-    inline GetLabelDetectionResult& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+    inline const Aws::String& GetJobTag() const { return m_jobTag; }
+    template<typename JobTagT = Aws::String>
+    void SetJobTag(JobTagT&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::forward<JobTagT>(value); }
+    template<typename JobTagT = Aws::String>
+    GetLabelDetectionResult& WithJobTag(JobTagT&& value) { SetJobTag(std::forward<JobTagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,46 +152,55 @@ namespace Model
      * <p>Information about the paramters used when getting a response. Includes
      * information on aggregation and sorting methods.</p>
      */
-    inline const GetLabelDetectionRequestMetadata& GetGetRequestMetadata() const{ return m_getRequestMetadata; }
-    inline void SetGetRequestMetadata(const GetLabelDetectionRequestMetadata& value) { m_getRequestMetadata = value; }
-    inline void SetGetRequestMetadata(GetLabelDetectionRequestMetadata&& value) { m_getRequestMetadata = std::move(value); }
-    inline GetLabelDetectionResult& WithGetRequestMetadata(const GetLabelDetectionRequestMetadata& value) { SetGetRequestMetadata(value); return *this;}
-    inline GetLabelDetectionResult& WithGetRequestMetadata(GetLabelDetectionRequestMetadata&& value) { SetGetRequestMetadata(std::move(value)); return *this;}
+    inline const GetLabelDetectionRequestMetadata& GetGetRequestMetadata() const { return m_getRequestMetadata; }
+    template<typename GetRequestMetadataT = GetLabelDetectionRequestMetadata>
+    void SetGetRequestMetadata(GetRequestMetadataT&& value) { m_getRequestMetadataHasBeenSet = true; m_getRequestMetadata = std::forward<GetRequestMetadataT>(value); }
+    template<typename GetRequestMetadataT = GetLabelDetectionRequestMetadata>
+    GetLabelDetectionResult& WithGetRequestMetadata(GetRequestMetadataT&& value) { SetGetRequestMetadata(std::forward<GetRequestMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLabelDetectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLabelDetectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLabelDetectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLabelDetectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    VideoJobStatus m_jobStatus;
+    VideoJobStatus m_jobStatus{VideoJobStatus::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     VideoMetadata m_videoMetadata;
+    bool m_videoMetadataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<LabelDetection> m_labels;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_labelModelVersion;
+    bool m_labelModelVersionHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Video m_video;
+    bool m_videoHasBeenSet = false;
 
     Aws::String m_jobTag;
+    bool m_jobTagHasBeenSet = false;
 
     GetLabelDetectionRequestMetadata m_getRequestMetadata;
+    bool m_getRequestMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

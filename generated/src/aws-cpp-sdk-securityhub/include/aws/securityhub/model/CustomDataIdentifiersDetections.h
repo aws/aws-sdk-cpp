@@ -33,7 +33,7 @@ namespace Model
   class CustomDataIdentifiersDetections
   {
   public:
-    AWS_SECURITYHUB_API CustomDataIdentifiersDetections();
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections() = default;
     AWS_SECURITYHUB_API CustomDataIdentifiersDetections(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API CustomDataIdentifiersDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The total number of occurrences of sensitive data that were detected.</p>
      */
-    inline long long GetCount() const{ return m_count; }
+    inline long long GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline CustomDataIdentifiersDetections& WithCount(long long value) { SetCount(value); return *this;}
@@ -54,44 +54,40 @@ namespace Model
      * <p>The ARN of the custom identifier that was used to detect the sensitive
      * data.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CustomDataIdentifiersDetections& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CustomDataIdentifiersDetections& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CustomDataIdentifiersDetections& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CustomDataIdentifiersDetections& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>he name of the custom identifier that detected the sensitive data.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CustomDataIdentifiersDetections& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CustomDataIdentifiersDetections& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CustomDataIdentifiersDetections& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CustomDataIdentifiersDetections& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the sensitive data that was detected.</p>
      */
-    inline const Occurrences& GetOccurrences() const{ return m_occurrences; }
+    inline const Occurrences& GetOccurrences() const { return m_occurrences; }
     inline bool OccurrencesHasBeenSet() const { return m_occurrencesHasBeenSet; }
-    inline void SetOccurrences(const Occurrences& value) { m_occurrencesHasBeenSet = true; m_occurrences = value; }
-    inline void SetOccurrences(Occurrences&& value) { m_occurrencesHasBeenSet = true; m_occurrences = std::move(value); }
-    inline CustomDataIdentifiersDetections& WithOccurrences(const Occurrences& value) { SetOccurrences(value); return *this;}
-    inline CustomDataIdentifiersDetections& WithOccurrences(Occurrences&& value) { SetOccurrences(std::move(value)); return *this;}
+    template<typename OccurrencesT = Occurrences>
+    void SetOccurrences(OccurrencesT&& value) { m_occurrencesHasBeenSet = true; m_occurrences = std::forward<OccurrencesT>(value); }
+    template<typename OccurrencesT = Occurrences>
+    CustomDataIdentifiersDetections& WithOccurrences(OccurrencesT&& value) { SetOccurrences(std::forward<OccurrencesT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_count;
+    long long m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_arn;

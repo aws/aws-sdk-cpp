@@ -32,7 +32,7 @@ namespace Model
   class DescribeDBLogFilesDetails
   {
   public:
-    AWS_RDS_API DescribeDBLogFilesDetails();
+    AWS_RDS_API DescribeDBLogFilesDetails() = default;
     AWS_RDS_API DescribeDBLogFilesDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DescribeDBLogFilesDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The name of the log file for the specified DB instance.</p>
      */
-    inline const Aws::String& GetLogFileName() const{ return m_logFileName; }
+    inline const Aws::String& GetLogFileName() const { return m_logFileName; }
     inline bool LogFileNameHasBeenSet() const { return m_logFileNameHasBeenSet; }
-    inline void SetLogFileName(const Aws::String& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
-    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::move(value); }
-    inline void SetLogFileName(const char* value) { m_logFileNameHasBeenSet = true; m_logFileName.assign(value); }
-    inline DescribeDBLogFilesDetails& WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
-    inline DescribeDBLogFilesDetails& WithLogFileName(Aws::String&& value) { SetLogFileName(std::move(value)); return *this;}
-    inline DescribeDBLogFilesDetails& WithLogFileName(const char* value) { SetLogFileName(value); return *this;}
+    template<typename LogFileNameT = Aws::String>
+    void SetLogFileName(LogFileNameT&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::forward<LogFileNameT>(value); }
+    template<typename LogFileNameT = Aws::String>
+    DescribeDBLogFilesDetails& WithLogFileName(LogFileNameT&& value) { SetLogFileName(std::forward<LogFileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A POSIX timestamp when the last log entry was written.</p>
      */
-    inline long long GetLastWritten() const{ return m_lastWritten; }
+    inline long long GetLastWritten() const { return m_lastWritten; }
     inline bool LastWrittenHasBeenSet() const { return m_lastWrittenHasBeenSet; }
     inline void SetLastWritten(long long value) { m_lastWrittenHasBeenSet = true; m_lastWritten = value; }
     inline DescribeDBLogFilesDetails& WithLastWritten(long long value) { SetLastWritten(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     /**
      * <p>The size, in bytes, of the log file for the specified DB instance.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline DescribeDBLogFilesDetails& WithSize(long long value) { SetSize(value); return *this;}
@@ -78,10 +76,10 @@ namespace Model
     Aws::String m_logFileName;
     bool m_logFileNameHasBeenSet = false;
 
-    long long m_lastWritten;
+    long long m_lastWritten{0};
     bool m_lastWrittenHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

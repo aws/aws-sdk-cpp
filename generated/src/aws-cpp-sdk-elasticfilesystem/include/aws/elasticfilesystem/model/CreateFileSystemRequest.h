@@ -26,7 +26,7 @@ namespace Model
   class CreateFileSystemRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API CreateFileSystemRequest();
+    AWS_EFS_API CreateFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>
      */
-    inline const Aws::String& GetCreationToken() const{ return m_creationToken; }
+    inline const Aws::String& GetCreationToken() const { return m_creationToken; }
     inline bool CreationTokenHasBeenSet() const { return m_creationTokenHasBeenSet; }
-    inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
-    inline void SetCreationToken(Aws::String&& value) { m_creationTokenHasBeenSet = true; m_creationToken = std::move(value); }
-    inline void SetCreationToken(const char* value) { m_creationTokenHasBeenSet = true; m_creationToken.assign(value); }
-    inline CreateFileSystemRequest& WithCreationToken(const Aws::String& value) { SetCreationToken(value); return *this;}
-    inline CreateFileSystemRequest& WithCreationToken(Aws::String&& value) { SetCreationToken(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
+    template<typename CreationTokenT = Aws::String>
+    void SetCreationToken(CreationTokenT&& value) { m_creationTokenHasBeenSet = true; m_creationToken = std::forward<CreationTokenT>(value); }
+    template<typename CreationTokenT = Aws::String>
+    CreateFileSystemRequest& WithCreationToken(CreationTokenT&& value) { SetCreationToken(std::forward<CreationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * performance mode for all file systems.</p>  <p>Default is
      * <code>generalPurpose</code>.</p>
      */
-    inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
+    inline PerformanceMode GetPerformanceMode() const { return m_performanceMode; }
     inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
-    inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
-    inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = std::move(value); }
-    inline CreateFileSystemRequest& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
-    inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
+    inline void SetPerformanceMode(PerformanceMode value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
+    inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode value) { SetPerformanceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
      * protect the encrypted file system. </p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline CreateFileSystemRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -106,14 +102,12 @@ namespace Model
      * <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with
      * Amazon EFS file systems.</p> 
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateFileSystemRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +123,10 @@ namespace Model
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
      */
-    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+    inline ThroughputMode GetThroughputMode() const { return m_throughputMode; }
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-    inline CreateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-    inline CreateFileSystemRequest& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    inline void SetThroughputMode(ThroughputMode value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+    inline CreateFileSystemRequest& WithThroughputMode(ThroughputMode value) { SetThroughputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +139,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
-    inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
+    inline double GetProvisionedThroughputInMibps() const { return m_provisionedThroughputInMibps; }
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
     inline CreateFileSystemRequest& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
@@ -164,14 +156,12 @@ namespace Model
      * Zone file systems are not available in all Availability Zones in Amazon Web
      * Services Regions where Amazon EFS is available.</p> 
      */
-    inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
+    inline const Aws::String& GetAvailabilityZoneName() const { return m_availabilityZoneName; }
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
-    inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
-    inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
-    inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
-    inline CreateFileSystemRequest& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
-    inline CreateFileSystemRequest& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
+    template<typename AvailabilityZoneNameT = Aws::String>
+    void SetAvailabilityZoneName(AvailabilityZoneNameT&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::forward<AvailabilityZoneNameT>(value); }
+    template<typename AvailabilityZoneNameT = Aws::String>
+    CreateFileSystemRequest& WithAvailabilityZoneName(AvailabilityZoneNameT&& value) { SetAvailabilityZoneName(std::forward<AvailabilityZoneNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +177,7 @@ namespace Model
      * <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS
      * is available.</p> 
      */
-    inline bool GetBackup() const{ return m_backup; }
+    inline bool GetBackup() const { return m_backup; }
     inline bool BackupHasBeenSet() const { return m_backupHasBeenSet; }
     inline void SetBackup(bool value) { m_backupHasBeenSet = true; m_backup = value; }
     inline CreateFileSystemRequest& WithBackup(bool value) { SetBackup(value); return *this;}
@@ -203,39 +193,39 @@ namespace Model
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
      * Reference Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFileSystemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFileSystemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFileSystemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFileSystemRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFileSystemRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_creationToken;
     bool m_creationTokenHasBeenSet = false;
 
-    PerformanceMode m_performanceMode;
+    PerformanceMode m_performanceMode{PerformanceMode::NOT_SET};
     bool m_performanceModeHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    ThroughputMode m_throughputMode;
+    ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
     bool m_throughputModeHasBeenSet = false;
 
-    double m_provisionedThroughputInMibps;
+    double m_provisionedThroughputInMibps{0.0};
     bool m_provisionedThroughputInMibpsHasBeenSet = false;
 
     Aws::String m_availabilityZoneName;
     bool m_availabilityZoneNameHasBeenSet = false;
 
-    bool m_backup;
+    bool m_backup{false};
     bool m_backupHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

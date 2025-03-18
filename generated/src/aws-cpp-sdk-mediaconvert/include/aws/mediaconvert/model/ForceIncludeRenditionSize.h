@@ -39,7 +39,7 @@ namespace Model
   class ForceIncludeRenditionSize
   {
   public:
-    AWS_MEDIACONVERT_API ForceIncludeRenditionSize();
+    AWS_MEDIACONVERT_API ForceIncludeRenditionSize() = default;
     AWS_MEDIACONVERT_API ForceIncludeRenditionSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ForceIncludeRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
     /**
      * Use Height to define the video resolution height, in pixels, for this rule.
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline ForceIncludeRenditionSize& WithHeight(int value) { SetHeight(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
     /**
      * Use Width to define the video resolution width, in pixels, for this rule.
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline ForceIncludeRenditionSize& WithWidth(int value) { SetWidth(value); return *this;}
     ///@}
   private:
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
   };
 

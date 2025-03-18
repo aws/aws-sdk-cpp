@@ -18,16 +18,7 @@ namespace SageMakerFeatureStoreRuntime
 namespace Model
 {
 
-BatchGetRecordError::BatchGetRecordError() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchGetRecordError::BatchGetRecordError(JsonView jsonValue)
-  : BatchGetRecordError()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BatchGetRecordError& BatchGetRecordError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordIdentifierValueAsString"))
   {
     m_recordIdentifierValueAsString = jsonValue.GetString("RecordIdentifierValueAsString");
-
     m_recordIdentifierValueAsStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

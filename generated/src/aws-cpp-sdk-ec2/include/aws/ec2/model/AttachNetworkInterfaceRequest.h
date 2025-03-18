@@ -26,7 +26,7 @@ namespace Model
   class AttachNetworkInterfaceRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AttachNetworkInterfaceRequest();
+    AWS_EC2_API AttachNetworkInterfaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * cards. The primary network interface must be assigned to network card index 0.
      * The default is network card index 0.</p>
      */
-    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+    inline int GetNetworkCardIndex() const { return m_networkCardIndex; }
     inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
     inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
     inline AttachNetworkInterfaceRequest& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
@@ -58,12 +58,12 @@ namespace Model
      * <p>Configures ENA Express for the network interface that this action attaches to
      * the instance.</p>
      */
-    inline const EnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+    inline const EnaSrdSpecification& GetEnaSrdSpecification() const { return m_enaSrdSpecification; }
     inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
-    inline void SetEnaSrdSpecification(const EnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
-    inline void SetEnaSrdSpecification(EnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
-    inline AttachNetworkInterfaceRequest& WithEnaSrdSpecification(const EnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
-    inline AttachNetworkInterfaceRequest& WithEnaSrdSpecification(EnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+    template<typename EnaSrdSpecificationT = EnaSrdSpecification>
+    void SetEnaSrdSpecification(EnaSrdSpecificationT&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::forward<EnaSrdSpecificationT>(value); }
+    template<typename EnaSrdSpecificationT = EnaSrdSpecification>
+    AttachNetworkInterfaceRequest& WithEnaSrdSpecification(EnaSrdSpecificationT&& value) { SetEnaSrdSpecification(std::forward<EnaSrdSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +73,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AttachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -83,48 +83,44 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    AttachNetworkInterfaceRequest& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AttachNetworkInterfaceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AttachNetworkInterfaceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AttachNetworkInterfaceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AttachNetworkInterfaceRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline int GetDeviceIndex() const{ return m_deviceIndex; }
+    inline int GetDeviceIndex() const { return m_deviceIndex; }
     inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
     inline AttachNetworkInterfaceRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
     ///@}
   private:
 
-    int m_networkCardIndex;
+    int m_networkCardIndex{0};
     bool m_networkCardIndexHasBeenSet = false;
 
     EnaSrdSpecification m_enaSrdSpecification;
     bool m_enaSrdSpecificationHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
@@ -133,7 +129,7 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    int m_deviceIndex;
+    int m_deviceIndex{0};
     bool m_deviceIndexHasBeenSet = false;
   };
 

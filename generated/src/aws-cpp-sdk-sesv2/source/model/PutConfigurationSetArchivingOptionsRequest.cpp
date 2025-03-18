@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationSetArchivingOptionsRequest::PutConfigurationSetArchivingOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_archiveArnHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetArchivingOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

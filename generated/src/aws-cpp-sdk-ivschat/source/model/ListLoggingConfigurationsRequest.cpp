@@ -12,13 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLoggingConfigurationsRequest::ListLoggingConfigurationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLoggingConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

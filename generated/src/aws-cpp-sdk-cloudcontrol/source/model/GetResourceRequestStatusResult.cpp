@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceRequestStatusResult::GetResourceRequestStatusResult()
-{
-}
-
 GetResourceRequestStatusResult::GetResourceRequestStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetResourceRequestStatusResult& GetResourceRequestStatusResult::operator =(const
   if(jsonValue.ValueExists("ProgressEvent"))
   {
     m_progressEvent = jsonValue.GetObject("ProgressEvent");
-
+    m_progressEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HooksProgressEvent"))
   {
     Aws::Utils::Array<JsonView> hooksProgressEventJsonList = jsonValue.GetArray("HooksProgressEvent");
@@ -42,14 +37,15 @@ GetResourceRequestStatusResult& GetResourceRequestStatusResult::operator =(const
     {
       m_hooksProgressEvent.push_back(hooksProgressEventJsonList[hooksProgressEventIndex].AsObject());
     }
+    m_hooksProgressEventHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackupVaultAccessPolicyResult::GetBackupVaultAccessPolicyResult()
-{
-}
-
 GetBackupVaultAccessPolicyResult::GetBackupVaultAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetBackupVaultAccessPolicyResult& GetBackupVaultAccessPolicyResult::operator =(c
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
+    m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
+    m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
+    m_policyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

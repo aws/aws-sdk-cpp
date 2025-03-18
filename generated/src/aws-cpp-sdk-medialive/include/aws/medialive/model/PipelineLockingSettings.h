@@ -29,7 +29,7 @@ namespace Model
   class PipelineLockingSettings
   {
   public:
-    AWS_MEDIALIVE_API PipelineLockingSettings();
+    AWS_MEDIALIVE_API PipelineLockingSettings() = default;
     AWS_MEDIALIVE_API PipelineLockingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API PipelineLockingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

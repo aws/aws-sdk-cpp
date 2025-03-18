@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric() : 
-    m_recommendedInstanceTypeHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
-{
-}
-
 RecommendedOptionProjectedMetric::RecommendedOptionProjectedMetric(JsonView jsonValue)
-  : RecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator =(J
   if(jsonValue.ValueExists("recommendedInstanceType"))
   {
     m_recommendedInstanceType = jsonValue.GetString("recommendedInstanceType");
-
     m_recommendedInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
@@ -57,7 +44,6 @@ RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator =(J
     }
     m_projectedMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

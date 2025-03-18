@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClusterSubnetGroupResult::CreateClusterSubnetGroupResult()
-{
-}
-
 CreateClusterSubnetGroupResult::CreateClusterSubnetGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateClusterSubnetGroupResult& CreateClusterSubnetGroupResult::operator =(const
     if(!clusterSubnetGroupNode.IsNull())
     {
       m_clusterSubnetGroup = clusterSubnetGroupNode;
+      m_clusterSubnetGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CreateClusterSubnetGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsMskClusterClusterInfoClientAuthenticationTlsDetails::AwsMskClusterClusterInfoClientAuthenticationTlsDetails() : 
-    m_certificateAuthorityArnListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AwsMskClusterClusterInfoClientAuthenticationTlsDetails::AwsMskClusterClusterInfoClientAuthenticationTlsDetails(JsonView jsonValue)
-  : AwsMskClusterClusterInfoClientAuthenticationTlsDetails()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AwsMskClusterClusterInfoClientAuthenticationTlsDetails& AwsMskClusterClusterInfo
     }
     m_certificateAuthorityArnListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

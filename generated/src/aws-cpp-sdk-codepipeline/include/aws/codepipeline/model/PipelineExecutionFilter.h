@@ -31,7 +31,7 @@ namespace Model
   class PipelineExecutionFilter
   {
   public:
-    AWS_CODEPIPELINE_API PipelineExecutionFilter();
+    AWS_CODEPIPELINE_API PipelineExecutionFilter() = default;
     AWS_CODEPIPELINE_API PipelineExecutionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineExecutionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>Filter for pipeline executions where the stage was successful in the current
      * pipeline version.</p>
      */
-    inline const SucceededInStageFilter& GetSucceededInStage() const{ return m_succeededInStage; }
+    inline const SucceededInStageFilter& GetSucceededInStage() const { return m_succeededInStage; }
     inline bool SucceededInStageHasBeenSet() const { return m_succeededInStageHasBeenSet; }
-    inline void SetSucceededInStage(const SucceededInStageFilter& value) { m_succeededInStageHasBeenSet = true; m_succeededInStage = value; }
-    inline void SetSucceededInStage(SucceededInStageFilter&& value) { m_succeededInStageHasBeenSet = true; m_succeededInStage = std::move(value); }
-    inline PipelineExecutionFilter& WithSucceededInStage(const SucceededInStageFilter& value) { SetSucceededInStage(value); return *this;}
-    inline PipelineExecutionFilter& WithSucceededInStage(SucceededInStageFilter&& value) { SetSucceededInStage(std::move(value)); return *this;}
+    template<typename SucceededInStageT = SucceededInStageFilter>
+    void SetSucceededInStage(SucceededInStageT&& value) { m_succeededInStageHasBeenSet = true; m_succeededInStage = std::forward<SucceededInStageT>(value); }
+    template<typename SucceededInStageT = SucceededInStageFilter>
+    PipelineExecutionFilter& WithSucceededInStage(SucceededInStageT&& value) { SetSucceededInStage(std::forward<SucceededInStageT>(value)); return *this;}
     ///@}
   private:
 

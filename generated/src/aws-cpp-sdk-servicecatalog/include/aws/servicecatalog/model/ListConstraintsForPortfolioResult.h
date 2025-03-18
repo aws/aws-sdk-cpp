@@ -29,7 +29,7 @@ namespace Model
   class ListConstraintsForPortfolioResult
   {
   public:
-    AWS_SERVICECATALOG_API ListConstraintsForPortfolioResult();
+    AWS_SERVICECATALOG_API ListConstraintsForPortfolioResult() = default;
     AWS_SERVICECATALOG_API ListConstraintsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListConstraintsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the constraints.</p>
      */
-    inline const Aws::Vector<ConstraintDetail>& GetConstraintDetails() const{ return m_constraintDetails; }
-    inline void SetConstraintDetails(const Aws::Vector<ConstraintDetail>& value) { m_constraintDetails = value; }
-    inline void SetConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { m_constraintDetails = std::move(value); }
-    inline ListConstraintsForPortfolioResult& WithConstraintDetails(const Aws::Vector<ConstraintDetail>& value) { SetConstraintDetails(value); return *this;}
-    inline ListConstraintsForPortfolioResult& WithConstraintDetails(Aws::Vector<ConstraintDetail>&& value) { SetConstraintDetails(std::move(value)); return *this;}
-    inline ListConstraintsForPortfolioResult& AddConstraintDetails(const ConstraintDetail& value) { m_constraintDetails.push_back(value); return *this; }
-    inline ListConstraintsForPortfolioResult& AddConstraintDetails(ConstraintDetail&& value) { m_constraintDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConstraintDetail>& GetConstraintDetails() const { return m_constraintDetails; }
+    template<typename ConstraintDetailsT = Aws::Vector<ConstraintDetail>>
+    void SetConstraintDetails(ConstraintDetailsT&& value) { m_constraintDetailsHasBeenSet = true; m_constraintDetails = std::forward<ConstraintDetailsT>(value); }
+    template<typename ConstraintDetailsT = Aws::Vector<ConstraintDetail>>
+    ListConstraintsForPortfolioResult& WithConstraintDetails(ConstraintDetailsT&& value) { SetConstraintDetails(std::forward<ConstraintDetailsT>(value)); return *this;}
+    template<typename ConstraintDetailsT = ConstraintDetail>
+    ListConstraintsForPortfolioResult& AddConstraintDetails(ConstraintDetailsT&& value) { m_constraintDetailsHasBeenSet = true; m_constraintDetails.emplace_back(std::forward<ConstraintDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListConstraintsForPortfolioResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListConstraintsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListConstraintsForPortfolioResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListConstraintsForPortfolioResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConstraintsForPortfolioResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConstraintsForPortfolioResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConstraintsForPortfolioResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConstraintsForPortfolioResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConstraintDetail> m_constraintDetails;
+    bool m_constraintDetailsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

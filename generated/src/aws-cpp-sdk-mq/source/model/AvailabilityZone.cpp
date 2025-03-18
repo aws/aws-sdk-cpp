@@ -18,13 +18,7 @@ namespace MQ
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(JsonView jsonValue)
-  : AvailabilityZone()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

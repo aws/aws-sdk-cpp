@@ -18,17 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration() : 
-    m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false),
-    m_overrideSearchType(SearchType::NOT_SET),
-    m_overrideSearchTypeHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue)
-  : KnowledgeBaseVectorSearchConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
-
     m_numberOfResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideSearchType"))
   {
     m_overrideSearchType = SearchTypeMapper::GetSearchTypeForName(jsonValue.GetString("overrideSearchType"));
-
     m_overrideSearchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetObject("filter");
-
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

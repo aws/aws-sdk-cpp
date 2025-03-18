@@ -18,30 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterInstanceGroupDetails::ClusterInstanceGroupDetails() : 
-    m_currentCount(0),
-    m_currentCountHasBeenSet(false),
-    m_targetCount(0),
-    m_targetCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false),
-    m_onStartDeepHealthChecksHasBeenSet(false),
-    m_status(InstanceGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trainingPlanArnHasBeenSet(false),
-    m_trainingPlanStatusHasBeenSet(false),
-    m_overrideVpcConfigHasBeenSet(false)
-{
-}
-
 ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue)
-  : ClusterInstanceGroupDetails()
 {
   *this = jsonValue;
 }
@@ -51,52 +28,38 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
   if(jsonValue.ValueExists("CurrentCount"))
   {
     m_currentCount = jsonValue.GetInteger("CurrentCount");
-
     m_currentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCount"))
   {
     m_targetCount = jsonValue.GetInteger("TargetCount");
-
     m_targetCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupName"))
   {
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
-
     m_instanceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycleConfig"))
   {
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
-
     m_lifeCycleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadsPerCore"))
   {
     m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
-
     m_threadsPerCoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStorageConfigs"))
   {
     Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
@@ -106,7 +69,6 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
     }
     m_instanceStorageConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnStartDeepHealthChecks"))
   {
     Aws::Utils::Array<JsonView> onStartDeepHealthChecksJsonList = jsonValue.GetArray("OnStartDeepHealthChecks");
@@ -116,35 +78,26 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator =(JsonView js
     }
     m_onStartDeepHealthChecksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InstanceGroupStatusMapper::GetInstanceGroupStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanArn"))
   {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
-
     m_trainingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanStatus"))
   {
     m_trainingPlanStatus = jsonValue.GetString("TrainingPlanStatus");
-
     m_trainingPlanStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideVpcConfig"))
   {
     m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
-
     m_overrideVpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

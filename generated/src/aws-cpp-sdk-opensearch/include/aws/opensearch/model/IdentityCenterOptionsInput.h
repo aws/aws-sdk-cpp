@@ -34,7 +34,7 @@ namespace Model
   class IdentityCenterOptionsInput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsInput();
+    AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsInput() = default;
     AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>True to enable IAM Identity Center for API access in Amazon OpenSearch
      * Service.</p>
      */
-    inline bool GetEnabledAPIAccess() const{ return m_enabledAPIAccess; }
+    inline bool GetEnabledAPIAccess() const { return m_enabledAPIAccess; }
     inline bool EnabledAPIAccessHasBeenSet() const { return m_enabledAPIAccessHasBeenSet; }
     inline void SetEnabledAPIAccess(bool value) { m_enabledAPIAccessHasBeenSet = true; m_enabledAPIAccess = value; }
     inline IdentityCenterOptionsInput& WithEnabledAPIAccess(bool value) { SetEnabledAPIAccess(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * <p>The ARN for IAM Identity Center Instance which will be used for IAM Identity
      * Center Application creation.</p>
      */
-    inline const Aws::String& GetIdentityCenterInstanceARN() const{ return m_identityCenterInstanceARN; }
+    inline const Aws::String& GetIdentityCenterInstanceARN() const { return m_identityCenterInstanceARN; }
     inline bool IdentityCenterInstanceARNHasBeenSet() const { return m_identityCenterInstanceARNHasBeenSet; }
-    inline void SetIdentityCenterInstanceARN(const Aws::String& value) { m_identityCenterInstanceARNHasBeenSet = true; m_identityCenterInstanceARN = value; }
-    inline void SetIdentityCenterInstanceARN(Aws::String&& value) { m_identityCenterInstanceARNHasBeenSet = true; m_identityCenterInstanceARN = std::move(value); }
-    inline void SetIdentityCenterInstanceARN(const char* value) { m_identityCenterInstanceARNHasBeenSet = true; m_identityCenterInstanceARN.assign(value); }
-    inline IdentityCenterOptionsInput& WithIdentityCenterInstanceARN(const Aws::String& value) { SetIdentityCenterInstanceARN(value); return *this;}
-    inline IdentityCenterOptionsInput& WithIdentityCenterInstanceARN(Aws::String&& value) { SetIdentityCenterInstanceARN(std::move(value)); return *this;}
-    inline IdentityCenterOptionsInput& WithIdentityCenterInstanceARN(const char* value) { SetIdentityCenterInstanceARN(value); return *this;}
+    template<typename IdentityCenterInstanceARNT = Aws::String>
+    void SetIdentityCenterInstanceARN(IdentityCenterInstanceARNT&& value) { m_identityCenterInstanceARNHasBeenSet = true; m_identityCenterInstanceARN = std::forward<IdentityCenterInstanceARNT>(value); }
+    template<typename IdentityCenterInstanceARNT = Aws::String>
+    IdentityCenterOptionsInput& WithIdentityCenterInstanceARN(IdentityCenterInstanceARNT&& value) { SetIdentityCenterInstanceARN(std::forward<IdentityCenterInstanceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * <p>Specify the attribute that contains the subject (username, userID, email) of
      * IAM Identity Center.</p>
      */
-    inline const SubjectKeyIdCOption& GetSubjectKey() const{ return m_subjectKey; }
+    inline SubjectKeyIdCOption GetSubjectKey() const { return m_subjectKey; }
     inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
-    inline void SetSubjectKey(const SubjectKeyIdCOption& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = value; }
-    inline void SetSubjectKey(SubjectKeyIdCOption&& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = std::move(value); }
-    inline IdentityCenterOptionsInput& WithSubjectKey(const SubjectKeyIdCOption& value) { SetSubjectKey(value); return *this;}
-    inline IdentityCenterOptionsInput& WithSubjectKey(SubjectKeyIdCOption&& value) { SetSubjectKey(std::move(value)); return *this;}
+    inline void SetSubjectKey(SubjectKeyIdCOption value) { m_subjectKeyHasBeenSet = true; m_subjectKey = value; }
+    inline IdentityCenterOptionsInput& WithSubjectKey(SubjectKeyIdCOption value) { SetSubjectKey(value); return *this;}
     ///@}
 
     ///@{
@@ -84,25 +80,23 @@ namespace Model
      * <p>Specify the attribute that contains the backend role (groupName, groupID) of
      * IAM Identity Center</p>
      */
-    inline const RolesKeyIdCOption& GetRolesKey() const{ return m_rolesKey; }
+    inline RolesKeyIdCOption GetRolesKey() const { return m_rolesKey; }
     inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }
-    inline void SetRolesKey(const RolesKeyIdCOption& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = value; }
-    inline void SetRolesKey(RolesKeyIdCOption&& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = std::move(value); }
-    inline IdentityCenterOptionsInput& WithRolesKey(const RolesKeyIdCOption& value) { SetRolesKey(value); return *this;}
-    inline IdentityCenterOptionsInput& WithRolesKey(RolesKeyIdCOption&& value) { SetRolesKey(std::move(value)); return *this;}
+    inline void SetRolesKey(RolesKeyIdCOption value) { m_rolesKeyHasBeenSet = true; m_rolesKey = value; }
+    inline IdentityCenterOptionsInput& WithRolesKey(RolesKeyIdCOption value) { SetRolesKey(value); return *this;}
     ///@}
   private:
 
-    bool m_enabledAPIAccess;
+    bool m_enabledAPIAccess{false};
     bool m_enabledAPIAccessHasBeenSet = false;
 
     Aws::String m_identityCenterInstanceARN;
     bool m_identityCenterInstanceARNHasBeenSet = false;
 
-    SubjectKeyIdCOption m_subjectKey;
+    SubjectKeyIdCOption m_subjectKey{SubjectKeyIdCOption::NOT_SET};
     bool m_subjectKeyHasBeenSet = false;
 
-    RolesKeyIdCOption m_rolesKey;
+    RolesKeyIdCOption m_rolesKey{RolesKeyIdCOption::NOT_SET};
     bool m_rolesKeyHasBeenSet = false;
   };
 

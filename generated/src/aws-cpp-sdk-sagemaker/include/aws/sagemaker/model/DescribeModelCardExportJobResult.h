@@ -31,7 +31,7 @@ namespace Model
   class DescribeModelCardExportJobResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeModelCardExportJobResult();
+    AWS_SAGEMAKER_API DescribeModelCardExportJobResult() = default;
     AWS_SAGEMAKER_API DescribeModelCardExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeModelCardExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The name of the model card export job to describe.</p>
      */
-    inline const Aws::String& GetModelCardExportJobName() const{ return m_modelCardExportJobName; }
-    inline void SetModelCardExportJobName(const Aws::String& value) { m_modelCardExportJobName = value; }
-    inline void SetModelCardExportJobName(Aws::String&& value) { m_modelCardExportJobName = std::move(value); }
-    inline void SetModelCardExportJobName(const char* value) { m_modelCardExportJobName.assign(value); }
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobName(const Aws::String& value) { SetModelCardExportJobName(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobName(Aws::String&& value) { SetModelCardExportJobName(std::move(value)); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobName(const char* value) { SetModelCardExportJobName(value); return *this;}
+    inline const Aws::String& GetModelCardExportJobName() const { return m_modelCardExportJobName; }
+    template<typename ModelCardExportJobNameT = Aws::String>
+    void SetModelCardExportJobName(ModelCardExportJobNameT&& value) { m_modelCardExportJobNameHasBeenSet = true; m_modelCardExportJobName = std::forward<ModelCardExportJobNameT>(value); }
+    template<typename ModelCardExportJobNameT = Aws::String>
+    DescribeModelCardExportJobResult& WithModelCardExportJobName(ModelCardExportJobNameT&& value) { SetModelCardExportJobName(std::forward<ModelCardExportJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the model card export job.</p>
      */
-    inline const Aws::String& GetModelCardExportJobArn() const{ return m_modelCardExportJobArn; }
-    inline void SetModelCardExportJobArn(const Aws::String& value) { m_modelCardExportJobArn = value; }
-    inline void SetModelCardExportJobArn(Aws::String&& value) { m_modelCardExportJobArn = std::move(value); }
-    inline void SetModelCardExportJobArn(const char* value) { m_modelCardExportJobArn.assign(value); }
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobArn(const Aws::String& value) { SetModelCardExportJobArn(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobArn(Aws::String&& value) { SetModelCardExportJobArn(std::move(value)); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardExportJobArn(const char* value) { SetModelCardExportJobArn(value); return *this;}
+    inline const Aws::String& GetModelCardExportJobArn() const { return m_modelCardExportJobArn; }
+    template<typename ModelCardExportJobArnT = Aws::String>
+    void SetModelCardExportJobArn(ModelCardExportJobArnT&& value) { m_modelCardExportJobArnHasBeenSet = true; m_modelCardExportJobArn = std::forward<ModelCardExportJobArnT>(value); }
+    template<typename ModelCardExportJobArnT = Aws::String>
+    DescribeModelCardExportJobResult& WithModelCardExportJobArn(ModelCardExportJobArnT&& value) { SetModelCardExportJobArn(std::forward<ModelCardExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,11 +67,9 @@ namespace Model
      * reason for the failure, see the <code>FailureReason</code> field in the response
      * to a <code>DescribeModelCardExportJob</code> call.</p> </li> </ul>
      */
-    inline const ModelCardExportJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ModelCardExportJobStatus& value) { m_status = value; }
-    inline void SetStatus(ModelCardExportJobStatus&& value) { m_status = std::move(value); }
-    inline DescribeModelCardExportJobResult& WithStatus(const ModelCardExportJobStatus& value) { SetStatus(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithStatus(ModelCardExportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ModelCardExportJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ModelCardExportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeModelCardExportJobResult& WithStatus(ModelCardExportJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +77,19 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the model card that the model
      * export job exports.</p>
      */
-    inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
-    inline void SetModelCardName(const Aws::String& value) { m_modelCardName = value; }
-    inline void SetModelCardName(Aws::String&& value) { m_modelCardName = std::move(value); }
-    inline void SetModelCardName(const char* value) { m_modelCardName.assign(value); }
-    inline DescribeModelCardExportJobResult& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
-    inline DescribeModelCardExportJobResult& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
+    inline const Aws::String& GetModelCardName() const { return m_modelCardName; }
+    template<typename ModelCardNameT = Aws::String>
+    void SetModelCardName(ModelCardNameT&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::forward<ModelCardNameT>(value); }
+    template<typename ModelCardNameT = Aws::String>
+    DescribeModelCardExportJobResult& WithModelCardName(ModelCardNameT&& value) { SetModelCardName(std::forward<ModelCardNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the model card that the model export job exports.</p>
      */
-    inline int GetModelCardVersion() const{ return m_modelCardVersion; }
-    inline void SetModelCardVersion(int value) { m_modelCardVersion = value; }
+    inline int GetModelCardVersion() const { return m_modelCardVersion; }
+    inline void SetModelCardVersion(int value) { m_modelCardVersionHasBeenSet = true; m_modelCardVersion = value; }
     inline DescribeModelCardExportJobResult& WithModelCardVersion(int value) { SetModelCardVersion(value); return *this;}
     ///@}
 
@@ -105,92 +97,99 @@ namespace Model
     /**
      * <p>The export output details for the model card.</p>
      */
-    inline const ModelCardExportOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-    inline void SetOutputConfig(const ModelCardExportOutputConfig& value) { m_outputConfig = value; }
-    inline void SetOutputConfig(ModelCardExportOutputConfig&& value) { m_outputConfig = std::move(value); }
-    inline DescribeModelCardExportJobResult& WithOutputConfig(const ModelCardExportOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithOutputConfig(ModelCardExportOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    inline const ModelCardExportOutputConfig& GetOutputConfig() const { return m_outputConfig; }
+    template<typename OutputConfigT = ModelCardExportOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = ModelCardExportOutputConfig>
+    DescribeModelCardExportJobResult& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the model export job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeModelCardExportJobResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeModelCardExportJobResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the model export job was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const{ return m_lastModifiedAt; }
-    inline void SetLastModifiedAt(const Aws::Utils::DateTime& value) { m_lastModifiedAt = value; }
-    inline void SetLastModifiedAt(Aws::Utils::DateTime&& value) { m_lastModifiedAt = std::move(value); }
-    inline DescribeModelCardExportJobResult& WithLastModifiedAt(const Aws::Utils::DateTime& value) { SetLastModifiedAt(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithLastModifiedAt(Aws::Utils::DateTime&& value) { SetLastModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    DescribeModelCardExportJobResult& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason if the model export job fails.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeModelCardExportJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeModelCardExportJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeModelCardExportJobResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The exported model card artifacts.</p>
      */
-    inline const ModelCardExportArtifacts& GetExportArtifacts() const{ return m_exportArtifacts; }
-    inline void SetExportArtifacts(const ModelCardExportArtifacts& value) { m_exportArtifacts = value; }
-    inline void SetExportArtifacts(ModelCardExportArtifacts&& value) { m_exportArtifacts = std::move(value); }
-    inline DescribeModelCardExportJobResult& WithExportArtifacts(const ModelCardExportArtifacts& value) { SetExportArtifacts(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithExportArtifacts(ModelCardExportArtifacts&& value) { SetExportArtifacts(std::move(value)); return *this;}
+    inline const ModelCardExportArtifacts& GetExportArtifacts() const { return m_exportArtifacts; }
+    template<typename ExportArtifactsT = ModelCardExportArtifacts>
+    void SetExportArtifacts(ExportArtifactsT&& value) { m_exportArtifactsHasBeenSet = true; m_exportArtifacts = std::forward<ExportArtifactsT>(value); }
+    template<typename ExportArtifactsT = ModelCardExportArtifacts>
+    DescribeModelCardExportJobResult& WithExportArtifacts(ExportArtifactsT&& value) { SetExportArtifacts(std::forward<ExportArtifactsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeModelCardExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeModelCardExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeModelCardExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeModelCardExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelCardExportJobName;
+    bool m_modelCardExportJobNameHasBeenSet = false;
 
     Aws::String m_modelCardExportJobArn;
+    bool m_modelCardExportJobArnHasBeenSet = false;
 
-    ModelCardExportJobStatus m_status;
+    ModelCardExportJobStatus m_status{ModelCardExportJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_modelCardName;
+    bool m_modelCardNameHasBeenSet = false;
 
-    int m_modelCardVersion;
+    int m_modelCardVersion{0};
+    bool m_modelCardVersionHasBeenSet = false;
 
     ModelCardExportOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAt;
+    Aws::Utils::DateTime m_lastModifiedAt{};
+    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     ModelCardExportArtifacts m_exportArtifacts;
+    bool m_exportArtifactsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

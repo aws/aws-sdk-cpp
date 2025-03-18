@@ -28,7 +28,7 @@ namespace Model
   class DeleteDefaultMessageTypeResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteDefaultMessageTypeResult();
+    AWS_PINPOINTSMSVOICEV2_API DeleteDefaultMessageTypeResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DeleteDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DeleteDefaultMessageTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configuration set.</p>
      */
-    inline const Aws::String& GetConfigurationSetArn() const{ return m_configurationSetArn; }
-    inline void SetConfigurationSetArn(const Aws::String& value) { m_configurationSetArn = value; }
-    inline void SetConfigurationSetArn(Aws::String&& value) { m_configurationSetArn = std::move(value); }
-    inline void SetConfigurationSetArn(const char* value) { m_configurationSetArn.assign(value); }
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(const Aws::String& value) { SetConfigurationSetArn(value); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(Aws::String&& value) { SetConfigurationSetArn(std::move(value)); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetArn(const char* value) { SetConfigurationSetArn(value); return *this;}
+    inline const Aws::String& GetConfigurationSetArn() const { return m_configurationSetArn; }
+    template<typename ConfigurationSetArnT = Aws::String>
+    void SetConfigurationSetArn(ConfigurationSetArnT&& value) { m_configurationSetArnHasBeenSet = true; m_configurationSetArn = std::forward<ConfigurationSetArnT>(value); }
+    template<typename ConfigurationSetArnT = Aws::String>
+    DeleteDefaultMessageTypeResult& WithConfigurationSetArn(ConfigurationSetArnT&& value) { SetConfigurationSetArn(std::forward<ConfigurationSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration set.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetName.assign(value); }
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    DeleteDefaultMessageTypeResult& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current message type for the configuration set.</p>
      */
-    inline const MessageType& GetMessageType() const{ return m_messageType; }
-    inline void SetMessageType(const MessageType& value) { m_messageType = value; }
-    inline void SetMessageType(MessageType&& value) { m_messageType = std::move(value); }
-    inline DeleteDefaultMessageTypeResult& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    inline MessageType GetMessageType() const { return m_messageType; }
+    inline void SetMessageType(MessageType value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline DeleteDefaultMessageTypeResult& WithMessageType(MessageType value) { SetMessageType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDefaultMessageTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDefaultMessageTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDefaultMessageTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationSetArn;
+    bool m_configurationSetArnHasBeenSet = false;
 
     Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet = false;
 
-    MessageType m_messageType;
+    MessageType m_messageType{MessageType::NOT_SET};
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

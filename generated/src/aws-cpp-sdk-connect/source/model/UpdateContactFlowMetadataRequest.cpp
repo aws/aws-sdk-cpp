@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactFlowMetadataRequest::UpdateContactFlowMetadataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contactFlowState(ContactFlowState::NOT_SET),
-    m_contactFlowStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactFlowMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

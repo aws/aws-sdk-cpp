@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AcceleratorTotalMemoryMiBRange::AcceleratorTotalMemoryMiBRange(JsonView jsonValue)
-  : AcceleratorTotalMemoryMiBRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AcceleratorTotalMemoryMiBRange& AcceleratorTotalMemoryMiBRange::operator =(JsonV
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetInteger("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetInteger("max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

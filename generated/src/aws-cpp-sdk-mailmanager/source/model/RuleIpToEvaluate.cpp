@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleIpToEvaluate::RuleIpToEvaluate() : 
-    m_attribute(RuleIpEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 RuleIpToEvaluate::RuleIpToEvaluate(JsonView jsonValue)
-  : RuleIpToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RuleIpToEvaluate& RuleIpToEvaluate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleIpEmailAttributeMapper::GetRuleIpEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

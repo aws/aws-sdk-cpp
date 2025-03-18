@@ -28,7 +28,7 @@ namespace Model
   class GetVpnConnectionDeviceSampleConfigurationResponse
   {
   public:
-    AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationResponse();
+    AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationResponse() = default;
     AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Sample configuration file for the specified customer gateway device.</p>
      */
-    inline const Aws::String& GetVpnConnectionDeviceSampleConfiguration() const{ return m_vpnConnectionDeviceSampleConfiguration; }
-    inline void SetVpnConnectionDeviceSampleConfiguration(const Aws::String& value) { m_vpnConnectionDeviceSampleConfiguration = value; }
-    inline void SetVpnConnectionDeviceSampleConfiguration(Aws::String&& value) { m_vpnConnectionDeviceSampleConfiguration = std::move(value); }
-    inline void SetVpnConnectionDeviceSampleConfiguration(const char* value) { m_vpnConnectionDeviceSampleConfiguration.assign(value); }
-    inline GetVpnConnectionDeviceSampleConfigurationResponse& WithVpnConnectionDeviceSampleConfiguration(const Aws::String& value) { SetVpnConnectionDeviceSampleConfiguration(value); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationResponse& WithVpnConnectionDeviceSampleConfiguration(Aws::String&& value) { SetVpnConnectionDeviceSampleConfiguration(std::move(value)); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationResponse& WithVpnConnectionDeviceSampleConfiguration(const char* value) { SetVpnConnectionDeviceSampleConfiguration(value); return *this;}
+    inline const Aws::String& GetVpnConnectionDeviceSampleConfiguration() const { return m_vpnConnectionDeviceSampleConfiguration; }
+    template<typename VpnConnectionDeviceSampleConfigurationT = Aws::String>
+    void SetVpnConnectionDeviceSampleConfiguration(VpnConnectionDeviceSampleConfigurationT&& value) { m_vpnConnectionDeviceSampleConfigurationHasBeenSet = true; m_vpnConnectionDeviceSampleConfiguration = std::forward<VpnConnectionDeviceSampleConfigurationT>(value); }
+    template<typename VpnConnectionDeviceSampleConfigurationT = Aws::String>
+    GetVpnConnectionDeviceSampleConfigurationResponse& WithVpnConnectionDeviceSampleConfiguration(VpnConnectionDeviceSampleConfigurationT&& value) { SetVpnConnectionDeviceSampleConfiguration(std::forward<VpnConnectionDeviceSampleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetVpnConnectionDeviceSampleConfigurationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetVpnConnectionDeviceSampleConfigurationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vpnConnectionDeviceSampleConfiguration;
+    bool m_vpnConnectionDeviceSampleConfigurationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

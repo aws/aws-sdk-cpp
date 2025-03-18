@@ -12,13 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReturnShippingLabelRequest::CreateReturnShippingLabelRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateReturnShippingLabelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class UpdateFormResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API UpdateFormResult();
+    AWS_AMPLIFYUIBUILDER_API UpdateFormResult() = default;
     AWS_AMPLIFYUIBUILDER_API UpdateFormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API UpdateFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Describes the configuration of the updated form.</p>
      */
-    inline const Form& GetEntity() const{ return m_entity; }
-    inline void SetEntity(const Form& value) { m_entity = value; }
-    inline void SetEntity(Form&& value) { m_entity = std::move(value); }
-    inline UpdateFormResult& WithEntity(const Form& value) { SetEntity(value); return *this;}
-    inline UpdateFormResult& WithEntity(Form&& value) { SetEntity(std::move(value)); return *this;}
+    inline const Form& GetEntity() const { return m_entity; }
+    template<typename EntityT = Form>
+    void SetEntity(EntityT&& value) { m_entityHasBeenSet = true; m_entity = std::forward<EntityT>(value); }
+    template<typename EntityT = Form>
+    UpdateFormResult& WithEntity(EntityT&& value) { SetEntity(std::forward<EntityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFormResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFormResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFormResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFormResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Form m_entity;
+    bool m_entityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

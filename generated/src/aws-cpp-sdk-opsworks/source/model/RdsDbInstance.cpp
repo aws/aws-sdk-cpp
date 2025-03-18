@@ -18,22 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-RdsDbInstance::RdsDbInstance() : 
-    m_rdsDbInstanceArnHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_dbPasswordHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_missingOnRds(false),
-    m_missingOnRdsHasBeenSet(false)
-{
-}
-
 RdsDbInstance::RdsDbInstance(JsonView jsonValue)
-  : RdsDbInstance()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ RdsDbInstance& RdsDbInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RdsDbInstanceArn"))
   {
     m_rdsDbInstanceArn = jsonValue.GetString("RdsDbInstanceArn");
-
     m_rdsDbInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbInstanceIdentifier"))
   {
     m_dbInstanceIdentifier = jsonValue.GetString("DbInstanceIdentifier");
-
     m_dbInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbUser"))
   {
     m_dbUser = jsonValue.GetString("DbUser");
-
     m_dbUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbPassword"))
   {
     m_dbPassword = jsonValue.GetString("DbPassword");
-
     m_dbPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingOnRds"))
   {
     m_missingOnRds = jsonValue.GetBool("MissingOnRds");
-
     m_missingOnRdsHasBeenSet = true;
   }
-
   return *this;
 }
 

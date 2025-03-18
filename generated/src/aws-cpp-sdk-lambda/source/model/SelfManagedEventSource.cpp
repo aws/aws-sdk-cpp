@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SelfManagedEventSource::SelfManagedEventSource() : 
-    m_endpointsHasBeenSet(false)
-{
-}
-
 SelfManagedEventSource::SelfManagedEventSource(JsonView jsonValue)
-  : SelfManagedEventSource()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ SelfManagedEventSource& SelfManagedEventSource::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

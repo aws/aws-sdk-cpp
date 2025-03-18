@@ -18,20 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NodeFromTemplateJob::NodeFromTemplateJob() : 
-    m_createdTimeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_status(NodeFromTemplateJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 NodeFromTemplateJob::NodeFromTemplateJob(JsonView jsonValue)
-  : NodeFromTemplateJob()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ NodeFromTemplateJob& NodeFromTemplateJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeName"))
   {
     m_nodeName = jsonValue.GetString("NodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NodeFromTemplateJobStatusMapper::GetNodeFromTemplateJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateType"))
   {
     m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("TemplateType"));
-
     m_templateTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

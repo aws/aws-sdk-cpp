@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TargetTableConfig::TargetTableConfig() : 
-    m_unnestSpec(UnnestSpec::NOT_SET),
-    m_unnestSpecHasBeenSet(false),
-    m_partitionSpecHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false)
-{
-}
-
 TargetTableConfig::TargetTableConfig(JsonView jsonValue)
-  : TargetTableConfig()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ TargetTableConfig& TargetTableConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UnnestSpec"))
   {
     m_unnestSpec = UnnestSpecMapper::GetUnnestSpecForName(jsonValue.GetString("UnnestSpec"));
-
     m_unnestSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionSpec"))
   {
     Aws::Utils::Array<JsonView> partitionSpecJsonList = jsonValue.GetArray("PartitionSpec");
@@ -50,14 +39,11 @@ TargetTableConfig& TargetTableConfig::operator =(JsonView jsonValue)
     }
     m_partitionSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTableName"))
   {
     m_targetTableName = jsonValue.GetString("TargetTableName");
-
     m_targetTableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class CopyDBSnapshotRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CopyDBSnapshotRequest();
+    AWS_RDS_API CopyDBSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,14 +59,12 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
-    inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
+    inline const Aws::String& GetSourceDBSnapshotIdentifier() const { return m_sourceDBSnapshotIdentifier; }
     inline bool SourceDBSnapshotIdentifierHasBeenSet() const { return m_sourceDBSnapshotIdentifierHasBeenSet; }
-    inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
-    inline void SetSourceDBSnapshotIdentifier(Aws::String&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = std::move(value); }
-    inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
-    inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
-    inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(Aws::String&& value) { SetSourceDBSnapshotIdentifier(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
+    template<typename SourceDBSnapshotIdentifierT = Aws::String>
+    void SetSourceDBSnapshotIdentifier(SourceDBSnapshotIdentifierT&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = std::forward<SourceDBSnapshotIdentifierT>(value); }
+    template<typename SourceDBSnapshotIdentifierT = Aws::String>
+    CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(SourceDBSnapshotIdentifierT&& value) { SetSourceDBSnapshotIdentifier(std::forward<SourceDBSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
-    inline const Aws::String& GetTargetDBSnapshotIdentifier() const{ return m_targetDBSnapshotIdentifier; }
+    inline const Aws::String& GetTargetDBSnapshotIdentifier() const { return m_targetDBSnapshotIdentifier; }
     inline bool TargetDBSnapshotIdentifierHasBeenSet() const { return m_targetDBSnapshotIdentifierHasBeenSet; }
-    inline void SetTargetDBSnapshotIdentifier(const Aws::String& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = value; }
-    inline void SetTargetDBSnapshotIdentifier(Aws::String&& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = std::move(value); }
-    inline void SetTargetDBSnapshotIdentifier(const char* value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier.assign(value); }
-    inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const Aws::String& value) { SetTargetDBSnapshotIdentifier(value); return *this;}
-    inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(Aws::String&& value) { SetTargetDBSnapshotIdentifier(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const char* value) { SetTargetDBSnapshotIdentifier(value); return *this;}
+    template<typename TargetDBSnapshotIdentifierT = Aws::String>
+    void SetTargetDBSnapshotIdentifier(TargetDBSnapshotIdentifierT&& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = std::forward<TargetDBSnapshotIdentifierT>(value); }
+    template<typename TargetDBSnapshotIdentifierT = Aws::String>
+    CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(TargetDBSnapshotIdentifierT&& value) { SetTargetDBSnapshotIdentifier(std::forward<TargetDBSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,26 +101,24 @@ namespace Model
      * they are created in, and you can't use KMS keys from one Amazon Web Services
      * Region in another Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CopyDBSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CopyDBSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CopyDBSnapshotRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CopyDBSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CopyDBSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CopyDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CopyDBSnapshotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CopyDBSnapshotRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -132,7 +126,7 @@ namespace Model
      * <p>Specifies whether to copy all tags from the source DB snapshot to the target
      * DB snapshot. By default, tags aren't copied.</p>
      */
-    inline bool GetCopyTags() const{ return m_copyTags; }
+    inline bool GetCopyTags() const { return m_copyTags; }
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
     inline CopyDBSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
@@ -188,14 +182,12 @@ namespace Model
      * autogenerates a presigned URL that is a valid request for the operation that can
      * run in the source Amazon Web Services Region.</p> 
      */
-    inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
+    inline const Aws::String& GetPreSignedUrl() const { return m_preSignedUrl; }
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
-    inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
-    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
-    inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
-    inline CopyDBSnapshotRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
-    inline CopyDBSnapshotRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
+    template<typename PreSignedUrlT = Aws::String>
+    void SetPreSignedUrl(PreSignedUrlT&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::forward<PreSignedUrlT>(value); }
+    template<typename PreSignedUrlT = Aws::String>
+    CopyDBSnapshotRequest& WithPreSignedUrl(PreSignedUrlT&& value) { SetPreSignedUrl(std::forward<PreSignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,14 +201,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline CopyDBSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline CopyDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    CopyDBSnapshotRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,14 +214,12 @@ namespace Model
      * <p>The external custom Availability Zone (CAZ) identifier for the target
      * CAZ.</p> <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
      */
-    inline const Aws::String& GetTargetCustomAvailabilityZone() const{ return m_targetCustomAvailabilityZone; }
+    inline const Aws::String& GetTargetCustomAvailabilityZone() const { return m_targetCustomAvailabilityZone; }
     inline bool TargetCustomAvailabilityZoneHasBeenSet() const { return m_targetCustomAvailabilityZoneHasBeenSet; }
-    inline void SetTargetCustomAvailabilityZone(const Aws::String& value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone = value; }
-    inline void SetTargetCustomAvailabilityZone(Aws::String&& value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone = std::move(value); }
-    inline void SetTargetCustomAvailabilityZone(const char* value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone.assign(value); }
-    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(const Aws::String& value) { SetTargetCustomAvailabilityZone(value); return *this;}
-    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(Aws::String&& value) { SetTargetCustomAvailabilityZone(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(const char* value) { SetTargetCustomAvailabilityZone(value); return *this;}
+    template<typename TargetCustomAvailabilityZoneT = Aws::String>
+    void SetTargetCustomAvailabilityZone(TargetCustomAvailabilityZoneT&& value) { m_targetCustomAvailabilityZoneHasBeenSet = true; m_targetCustomAvailabilityZone = std::forward<TargetCustomAvailabilityZoneT>(value); }
+    template<typename TargetCustomAvailabilityZoneT = Aws::String>
+    CopyDBSnapshotRequest& WithTargetCustomAvailabilityZone(TargetCustomAvailabilityZoneT&& value) { SetTargetCustomAvailabilityZone(std::forward<TargetCustomAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,7 +229,7 @@ namespace Model
      * DB snapshot. The associated option group can be copied only with cross-account
      * snapshot copy calls.</p>
      */
-    inline bool GetCopyOptionGroup() const{ return m_copyOptionGroup; }
+    inline bool GetCopyOptionGroup() const { return m_copyOptionGroup; }
     inline bool CopyOptionGroupHasBeenSet() const { return m_copyOptionGroupHasBeenSet; }
     inline void SetCopyOptionGroup(bool value) { m_copyOptionGroupHasBeenSet = true; m_copyOptionGroup = value; }
     inline CopyDBSnapshotRequest& WithCopyOptionGroup(bool value) { SetCopyOptionGroup(value); return *this;}
@@ -251,14 +239,12 @@ namespace Model
     /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
-    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+    inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
-    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
-    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
-    inline CopyDBSnapshotRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
-    inline CopyDBSnapshotRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
-    inline CopyDBSnapshotRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+    template<typename SourceRegionT = Aws::String>
+    void SetSourceRegion(SourceRegionT&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::forward<SourceRegionT>(value); }
+    template<typename SourceRegionT = Aws::String>
+    CopyDBSnapshotRequest& WithSourceRegion(SourceRegionT&& value) { SetSourceRegion(std::forward<SourceRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -274,7 +260,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_copyTags;
+    bool m_copyTags{false};
     bool m_copyTagsHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
@@ -286,7 +272,7 @@ namespace Model
     Aws::String m_targetCustomAvailabilityZone;
     bool m_targetCustomAvailabilityZoneHasBeenSet = false;
 
-    bool m_copyOptionGroup;
+    bool m_copyOptionGroup{false};
     bool m_copyOptionGroupHasBeenSet = false;
 
     Aws::String m_sourceRegion;

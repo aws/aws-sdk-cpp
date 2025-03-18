@@ -32,7 +32,7 @@ namespace Model
   class JmxExporterInfo
   {
   public:
-    AWS_KAFKA_API JmxExporterInfo();
+    AWS_KAFKA_API JmxExporterInfo() = default;
     AWS_KAFKA_API JmxExporterInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API JmxExporterInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * Exporter.</p>
          
      */
-    inline bool GetEnabledInBroker() const{ return m_enabledInBroker; }
+    inline bool GetEnabledInBroker() const { return m_enabledInBroker; }
     inline bool EnabledInBrokerHasBeenSet() const { return m_enabledInBrokerHasBeenSet; }
     inline void SetEnabledInBroker(bool value) { m_enabledInBrokerHasBeenSet = true; m_enabledInBroker = value; }
     inline JmxExporterInfo& WithEnabledInBroker(bool value) { SetEnabledInBroker(value); return *this;}
     ///@}
   private:
 
-    bool m_enabledInBroker;
+    bool m_enabledInBroker{false};
     bool m_enabledInBrokerHasBeenSet = false;
   };
 

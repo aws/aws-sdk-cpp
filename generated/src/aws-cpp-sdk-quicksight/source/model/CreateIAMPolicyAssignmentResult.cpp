@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult() : 
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateIAMPolicyAssignmentResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ CreateIAMPolicyAssignmentResult& CreateIAMPolicyAssignmentResult::operator =(con
   if(jsonValue.ValueExists("AssignmentName"))
   {
     m_assignmentName = jsonValue.GetString("AssignmentName");
-
+    m_assignmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentId"))
   {
     m_assignmentId = jsonValue.GetString("AssignmentId");
-
+    m_assignmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentStatus"))
   {
     m_assignmentStatus = AssignmentStatusMapper::GetAssignmentStatusForName(jsonValue.GetString("AssignmentStatus"));
-
+    m_assignmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
+    m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identities"))
   {
     Aws::Map<Aws::String, JsonView> identitiesJsonMap = jsonValue.GetObject("Identities").GetAllObjects();
@@ -70,18 +59,19 @@ CreateIAMPolicyAssignmentResult& CreateIAMPolicyAssignmentResult::operator =(con
       }
       m_identities[identitiesItem.first] = std::move(identityNameListList);
     }
+    m_identitiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

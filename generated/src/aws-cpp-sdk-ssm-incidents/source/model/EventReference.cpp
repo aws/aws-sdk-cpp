@@ -18,14 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-EventReference::EventReference() : 
-    m_relatedItemIdHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 EventReference::EventReference(JsonView jsonValue)
-  : EventReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventReference& EventReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("relatedItemId"))
   {
     m_relatedItemId = jsonValue.GetString("relatedItemId");
-
     m_relatedItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

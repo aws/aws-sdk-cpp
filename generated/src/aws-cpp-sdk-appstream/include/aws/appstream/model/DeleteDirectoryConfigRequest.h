@@ -21,7 +21,7 @@ namespace Model
   class DeleteDirectoryConfigRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API DeleteDirectoryConfigRequest();
+    AWS_APPSTREAM_API DeleteDirectoryConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the directory configuration.</p>
      */
-    inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
+    inline const Aws::String& GetDirectoryName() const { return m_directoryName; }
     inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
-    inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
-    inline void SetDirectoryName(Aws::String&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
-    inline void SetDirectoryName(const char* value) { m_directoryNameHasBeenSet = true; m_directoryName.assign(value); }
-    inline DeleteDirectoryConfigRequest& WithDirectoryName(const Aws::String& value) { SetDirectoryName(value); return *this;}
-    inline DeleteDirectoryConfigRequest& WithDirectoryName(Aws::String&& value) { SetDirectoryName(std::move(value)); return *this;}
-    inline DeleteDirectoryConfigRequest& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
+    template<typename DirectoryNameT = Aws::String>
+    void SetDirectoryName(DirectoryNameT&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::forward<DirectoryNameT>(value); }
+    template<typename DirectoryNameT = Aws::String>
+    DeleteDirectoryConfigRequest& WithDirectoryName(DirectoryNameT&& value) { SetDirectoryName(std::forward<DirectoryNameT>(value)); return *this;}
     ///@}
   private:
 

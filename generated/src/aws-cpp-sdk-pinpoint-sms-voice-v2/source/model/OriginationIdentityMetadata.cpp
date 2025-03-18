@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-OriginationIdentityMetadata::OriginationIdentityMetadata() : 
-    m_originationIdentityArnHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 OriginationIdentityMetadata::OriginationIdentityMetadata(JsonView jsonValue)
-  : OriginationIdentityMetadata()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OriginationIdentityMetadata& OriginationIdentityMetadata::operator =(JsonView js
   if(jsonValue.ValueExists("OriginationIdentityArn"))
   {
     m_originationIdentityArn = jsonValue.GetString("OriginationIdentityArn");
-
     m_originationIdentityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginationIdentity"))
   {
     m_originationIdentity = jsonValue.GetString("OriginationIdentity");
-
     m_originationIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberCapabilities"))
   {
     Aws::Utils::Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
@@ -65,14 +49,11 @@ OriginationIdentityMetadata& OriginationIdentityMetadata::operator =(JsonView js
     }
     m_numberCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

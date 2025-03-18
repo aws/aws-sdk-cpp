@@ -27,7 +27,7 @@ namespace Model
   class RegisterDefaultPatchBaselineResult
   {
   public:
-    AWS_SSM_API RegisterDefaultPatchBaselineResult();
+    AWS_SSM_API RegisterDefaultPatchBaselineResult() = default;
     AWS_SSM_API RegisterDefaultPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API RegisterDefaultPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID of the default patch baseline.</p>
      */
-    inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
-    inline void SetBaselineId(const Aws::String& value) { m_baselineId = value; }
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
-    inline void SetBaselineId(const char* value) { m_baselineId.assign(value); }
-    inline RegisterDefaultPatchBaselineResult& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-    inline RegisterDefaultPatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-    inline RegisterDefaultPatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+    inline const Aws::String& GetBaselineId() const { return m_baselineId; }
+    template<typename BaselineIdT = Aws::String>
+    void SetBaselineId(BaselineIdT&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::forward<BaselineIdT>(value); }
+    template<typename BaselineIdT = Aws::String>
+    RegisterDefaultPatchBaselineResult& WithBaselineId(BaselineIdT&& value) { SetBaselineId(std::forward<BaselineIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterDefaultPatchBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterDefaultPatchBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterDefaultPatchBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterDefaultPatchBaselineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_baselineId;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

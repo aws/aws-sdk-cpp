@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceDataSyncRequest::DeleteResourceDataSyncRequest() : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceDataSyncRequest::SerializePayload() const
 {
   JsonValue payload;

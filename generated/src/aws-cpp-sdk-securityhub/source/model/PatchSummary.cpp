@@ -18,29 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-PatchSummary::PatchSummary() : 
-    m_idHasBeenSet(false),
-    m_installedCount(0),
-    m_installedCountHasBeenSet(false),
-    m_missingCount(0),
-    m_missingCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false),
-    m_installedOtherCount(0),
-    m_installedOtherCountHasBeenSet(false),
-    m_installedRejectedCount(0),
-    m_installedRejectedCountHasBeenSet(false),
-    m_installedPendingReboot(0),
-    m_installedPendingRebootHasBeenSet(false),
-    m_operationStartTimeHasBeenSet(false),
-    m_operationEndTimeHasBeenSet(false),
-    m_rebootOptionHasBeenSet(false),
-    m_operationHasBeenSet(false)
-{
-}
-
 PatchSummary::PatchSummary(JsonView jsonValue)
-  : PatchSummary()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ PatchSummary& PatchSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstalledCount"))
   {
     m_installedCount = jsonValue.GetInteger("InstalledCount");
-
     m_installedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingCount"))
   {
     m_missingCount = jsonValue.GetInteger("MissingCount");
-
     m_missingCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedCount"))
   {
     m_failedCount = jsonValue.GetInteger("FailedCount");
-
     m_failedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstalledOtherCount"))
   {
     m_installedOtherCount = jsonValue.GetInteger("InstalledOtherCount");
-
     m_installedOtherCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstalledRejectedCount"))
   {
     m_installedRejectedCount = jsonValue.GetInteger("InstalledRejectedCount");
-
     m_installedRejectedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstalledPendingReboot"))
   {
     m_installedPendingReboot = jsonValue.GetInteger("InstalledPendingReboot");
-
     m_installedPendingRebootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationStartTime"))
   {
     m_operationStartTime = jsonValue.GetString("OperationStartTime");
-
     m_operationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationEndTime"))
   {
     m_operationEndTime = jsonValue.GetString("OperationEndTime");
-
     m_operationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RebootOption"))
   {
     m_rebootOption = jsonValue.GetString("RebootOption");
-
     m_rebootOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetString("Operation");
-
     m_operationHasBeenSet = true;
   }
-
   return *this;
 }
 

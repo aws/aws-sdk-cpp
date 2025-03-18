@@ -28,7 +28,7 @@ namespace Model
   class StartSchemaCreationResult
   {
   public:
-    AWS_APPSYNC_API StartSchemaCreationResult();
+    AWS_APPSYNC_API StartSchemaCreationResult() = default;
     AWS_APPSYNC_API StartSchemaCreationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API StartSchemaCreationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,26 @@ namespace Model
      * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
      * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
-    inline const SchemaStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SchemaStatus& value) { m_status = value; }
-    inline void SetStatus(SchemaStatus&& value) { m_status = std::move(value); }
-    inline StartSchemaCreationResult& WithStatus(const SchemaStatus& value) { SetStatus(value); return *this;}
-    inline StartSchemaCreationResult& WithStatus(SchemaStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SchemaStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SchemaStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartSchemaCreationResult& WithStatus(SchemaStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSchemaCreationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSchemaCreationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSchemaCreationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSchemaCreationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SchemaStatus m_status;
+    SchemaStatus m_status{SchemaStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

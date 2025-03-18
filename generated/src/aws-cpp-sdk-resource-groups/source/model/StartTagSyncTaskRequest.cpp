@@ -12,14 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTagSyncTaskRequest::StartTagSyncTaskRequest() : 
-    m_groupHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String StartTagSyncTaskRequest::SerializePayload() const
 {
   JsonValue payload;

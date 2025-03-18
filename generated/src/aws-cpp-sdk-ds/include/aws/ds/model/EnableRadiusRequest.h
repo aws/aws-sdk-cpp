@@ -26,7 +26,7 @@ namespace Model
   class EnableRadiusRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API EnableRadiusRequest();
+    AWS_DIRECTORYSERVICE_API EnableRadiusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to enable MFA.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline EnableRadiusRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline EnableRadiusRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline EnableRadiusRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    EnableRadiusRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server.</p>
      */
-    inline const RadiusSettings& GetRadiusSettings() const{ return m_radiusSettings; }
+    inline const RadiusSettings& GetRadiusSettings() const { return m_radiusSettings; }
     inline bool RadiusSettingsHasBeenSet() const { return m_radiusSettingsHasBeenSet; }
-    inline void SetRadiusSettings(const RadiusSettings& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = value; }
-    inline void SetRadiusSettings(RadiusSettings&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = std::move(value); }
-    inline EnableRadiusRequest& WithRadiusSettings(const RadiusSettings& value) { SetRadiusSettings(value); return *this;}
-    inline EnableRadiusRequest& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(std::move(value)); return *this;}
+    template<typename RadiusSettingsT = RadiusSettings>
+    void SetRadiusSettings(RadiusSettingsT&& value) { m_radiusSettingsHasBeenSet = true; m_radiusSettings = std::forward<RadiusSettingsT>(value); }
+    template<typename RadiusSettingsT = RadiusSettings>
+    EnableRadiusRequest& WithRadiusSettings(RadiusSettingsT&& value) { SetRadiusSettings(std::forward<RadiusSettingsT>(value)); return *this;}
     ///@}
   private:
 

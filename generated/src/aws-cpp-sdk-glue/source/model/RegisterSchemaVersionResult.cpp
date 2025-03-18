@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterSchemaVersionResult::RegisterSchemaVersionResult() : 
-    m_versionNumber(0),
-    m_status(SchemaVersionStatus::NOT_SET)
-{
-}
-
 RegisterSchemaVersionResult::RegisterSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RegisterSchemaVersionResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ RegisterSchemaVersionResult& RegisterSchemaVersionResult::operator =(const Aws::
   if(jsonValue.ValueExists("SchemaVersionId"))
   {
     m_schemaVersionId = jsonValue.GetString("SchemaVersionId");
-
+    m_schemaVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SchemaVersionStatusMapper::GetSchemaVersionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class Delegate
   {
   public:
-    AWS_WORKMAIL_API Delegate();
+    AWS_WORKMAIL_API Delegate() = default;
     AWS_WORKMAIL_API Delegate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Delegate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
      * <p>The identifier for the user or group associated as the resource's
      * delegate.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Delegate& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Delegate& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Delegate& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Delegate& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the delegate: user or group.</p>
      */
-    inline const MemberType& GetType() const{ return m_type; }
+    inline MemberType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MemberType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MemberType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Delegate& WithType(const MemberType& value) { SetType(value); return *this;}
-    inline Delegate& WithType(MemberType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MemberType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Delegate& WithType(MemberType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    MemberType m_type;
+    MemberType m_type{MemberType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

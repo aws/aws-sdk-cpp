@@ -18,15 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-DependencyRevision::DependencyRevision() : 
-    m_idHasBeenSet(false),
-    m_revisionNumber(0),
-    m_revisionNumberHasBeenSet(false)
-{
-}
-
 DependencyRevision::DependencyRevision(JsonView jsonValue)
-  : DependencyRevision()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DependencyRevision& DependencyRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionNumber"))
   {
     m_revisionNumber = jsonValue.GetInt64("revisionNumber");
-
     m_revisionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

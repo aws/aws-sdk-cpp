@@ -32,7 +32,7 @@ namespace Model
   class MediaStreamAttributesRequest
   {
   public:
-    AWS_MEDIACONNECT_API MediaStreamAttributesRequest();
+    AWS_MEDIACONNECT_API MediaStreamAttributesRequest() = default;
     AWS_MEDIACONNECT_API MediaStreamAttributesRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API MediaStreamAttributesRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * The settings that you want to use to define the media stream.
      */
-    inline const FmtpRequest& GetFmtp() const{ return m_fmtp; }
+    inline const FmtpRequest& GetFmtp() const { return m_fmtp; }
     inline bool FmtpHasBeenSet() const { return m_fmtpHasBeenSet; }
-    inline void SetFmtp(const FmtpRequest& value) { m_fmtpHasBeenSet = true; m_fmtp = value; }
-    inline void SetFmtp(FmtpRequest&& value) { m_fmtpHasBeenSet = true; m_fmtp = std::move(value); }
-    inline MediaStreamAttributesRequest& WithFmtp(const FmtpRequest& value) { SetFmtp(value); return *this;}
-    inline MediaStreamAttributesRequest& WithFmtp(FmtpRequest&& value) { SetFmtp(std::move(value)); return *this;}
+    template<typename FmtpT = FmtpRequest>
+    void SetFmtp(FmtpT&& value) { m_fmtpHasBeenSet = true; m_fmtp = std::forward<FmtpT>(value); }
+    template<typename FmtpT = FmtpRequest>
+    MediaStreamAttributesRequest& WithFmtp(FmtpT&& value) { SetFmtp(std::forward<FmtpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The audio language, in a format that is recognized by the receiver.
      */
-    inline const Aws::String& GetLang() const{ return m_lang; }
+    inline const Aws::String& GetLang() const { return m_lang; }
     inline bool LangHasBeenSet() const { return m_langHasBeenSet; }
-    inline void SetLang(const Aws::String& value) { m_langHasBeenSet = true; m_lang = value; }
-    inline void SetLang(Aws::String&& value) { m_langHasBeenSet = true; m_lang = std::move(value); }
-    inline void SetLang(const char* value) { m_langHasBeenSet = true; m_lang.assign(value); }
-    inline MediaStreamAttributesRequest& WithLang(const Aws::String& value) { SetLang(value); return *this;}
-    inline MediaStreamAttributesRequest& WithLang(Aws::String&& value) { SetLang(std::move(value)); return *this;}
-    inline MediaStreamAttributesRequest& WithLang(const char* value) { SetLang(value); return *this;}
+    template<typename LangT = Aws::String>
+    void SetLang(LangT&& value) { m_langHasBeenSet = true; m_lang = std::forward<LangT>(value); }
+    template<typename LangT = Aws::String>
+    MediaStreamAttributesRequest& WithLang(LangT&& value) { SetLang(std::forward<LangT>(value)); return *this;}
     ///@}
   private:
 

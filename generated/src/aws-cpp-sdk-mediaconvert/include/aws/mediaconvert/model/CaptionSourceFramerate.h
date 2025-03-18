@@ -34,7 +34,7 @@ namespace Model
   class CaptionSourceFramerate
   {
   public:
-    AWS_MEDIACONVERT_API CaptionSourceFramerate();
+    AWS_MEDIACONVERT_API CaptionSourceFramerate() = default;
     AWS_MEDIACONVERT_API CaptionSourceFramerate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CaptionSourceFramerate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * setting Caption source frame rate. Use this setting along with the setting
      * Framerate numerator.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline CaptionSourceFramerate& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -58,17 +58,17 @@ namespace Model
      * setting Caption source frame rate. Use this setting along with the setting
      * Framerate denominator.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline CaptionSourceFramerate& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
     ///@}
   private:
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
   };
 

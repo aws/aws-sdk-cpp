@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OptimizedPrompt::OptimizedPrompt() : 
-    m_textPromptHasBeenSet(false)
-{
-}
-
 OptimizedPrompt::OptimizedPrompt(JsonView jsonValue)
-  : OptimizedPrompt()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OptimizedPrompt& OptimizedPrompt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textPrompt"))
   {
     m_textPrompt = jsonValue.GetObject("textPrompt");
-
     m_textPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

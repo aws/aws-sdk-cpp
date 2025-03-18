@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueHoursOfOperationRequest::UpdateQueueHoursOfOperationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_hoursOfOperationIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueHoursOfOperationRequest::SerializePayload() const
 {
   JsonValue payload;

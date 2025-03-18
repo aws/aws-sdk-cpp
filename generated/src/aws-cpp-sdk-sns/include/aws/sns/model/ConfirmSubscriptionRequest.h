@@ -24,7 +24,7 @@ namespace Model
   class ConfirmSubscriptionRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API ConfirmSubscriptionRequest();
+    AWS_SNS_API ConfirmSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline ConfirmSubscriptionRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline ConfirmSubscriptionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline ConfirmSubscriptionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    ConfirmSubscriptionRequest& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
      * action.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline ConfirmSubscriptionRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline ConfirmSubscriptionRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline ConfirmSubscriptionRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    ConfirmSubscriptionRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * the endpoint. The unsubscribe action requires Amazon Web Services
      * authentication. </p>
      */
-    inline const Aws::String& GetAuthenticateOnUnsubscribe() const{ return m_authenticateOnUnsubscribe; }
+    inline const Aws::String& GetAuthenticateOnUnsubscribe() const { return m_authenticateOnUnsubscribe; }
     inline bool AuthenticateOnUnsubscribeHasBeenSet() const { return m_authenticateOnUnsubscribeHasBeenSet; }
-    inline void SetAuthenticateOnUnsubscribe(const Aws::String& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = value; }
-    inline void SetAuthenticateOnUnsubscribe(Aws::String&& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = std::move(value); }
-    inline void SetAuthenticateOnUnsubscribe(const char* value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe.assign(value); }
-    inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const Aws::String& value) { SetAuthenticateOnUnsubscribe(value); return *this;}
-    inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(Aws::String&& value) { SetAuthenticateOnUnsubscribe(std::move(value)); return *this;}
-    inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const char* value) { SetAuthenticateOnUnsubscribe(value); return *this;}
+    template<typename AuthenticateOnUnsubscribeT = Aws::String>
+    void SetAuthenticateOnUnsubscribe(AuthenticateOnUnsubscribeT&& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = std::forward<AuthenticateOnUnsubscribeT>(value); }
+    template<typename AuthenticateOnUnsubscribeT = Aws::String>
+    ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(AuthenticateOnUnsubscribeT&& value) { SetAuthenticateOnUnsubscribe(std::forward<AuthenticateOnUnsubscribeT>(value)); return *this;}
     ///@}
   private:
 

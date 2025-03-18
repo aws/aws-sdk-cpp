@@ -30,7 +30,7 @@ namespace Model
   class ScalableTargetAction
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API ScalableTargetAction();
+    AWS_APPLICATIONAUTOSCALING_API ScalableTargetAction() = default;
     AWS_APPLICATIONAUTOSCALING_API ScalableTargetAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API ScalableTargetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * settings, such as the target utilization level of a target tracking scaling
      * policy.</p>
      */
-    inline int GetMinCapacity() const{ return m_minCapacity; }
+    inline int GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ScalableTargetAction& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
@@ -61,17 +61,17 @@ namespace Model
      * endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ScalableTargetAction& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
     ///@}
   private:
 
-    int m_minCapacity;
+    int m_minCapacity{0};
     bool m_minCapacityHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
   };
 

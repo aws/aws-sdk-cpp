@@ -18,20 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-CdmaNmrObj::CdmaNmrObj() : 
-    m_pnOffset(0),
-    m_pnOffsetHasBeenSet(false),
-    m_cdmaChannel(0),
-    m_cdmaChannelHasBeenSet(false),
-    m_pilotPower(0),
-    m_pilotPowerHasBeenSet(false),
-    m_baseStationId(0),
-    m_baseStationIdHasBeenSet(false)
-{
-}
-
 CdmaNmrObj::CdmaNmrObj(JsonView jsonValue)
-  : CdmaNmrObj()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ CdmaNmrObj& CdmaNmrObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PnOffset"))
   {
     m_pnOffset = jsonValue.GetInteger("PnOffset");
-
     m_pnOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdmaChannel"))
   {
     m_cdmaChannel = jsonValue.GetInteger("CdmaChannel");
-
     m_cdmaChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PilotPower"))
   {
     m_pilotPower = jsonValue.GetInteger("PilotPower");
-
     m_pilotPowerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseStationId"))
   {
     m_baseStationId = jsonValue.GetInteger("BaseStationId");
-
     m_baseStationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

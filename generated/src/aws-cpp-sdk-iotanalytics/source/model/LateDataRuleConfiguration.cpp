@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-LateDataRuleConfiguration::LateDataRuleConfiguration() : 
-    m_deltaTimeSessionWindowConfigurationHasBeenSet(false)
-{
-}
-
 LateDataRuleConfiguration::LateDataRuleConfiguration(JsonView jsonValue)
-  : LateDataRuleConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LateDataRuleConfiguration& LateDataRuleConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("deltaTimeSessionWindowConfiguration"))
   {
     m_deltaTimeSessionWindowConfiguration = jsonValue.GetObject("deltaTimeSessionWindowConfiguration");
-
     m_deltaTimeSessionWindowConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

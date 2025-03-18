@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMessageTemplateRequest::GetMessageTemplateRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMessageTemplateRequest::SerializePayload() const
 {
   return {};

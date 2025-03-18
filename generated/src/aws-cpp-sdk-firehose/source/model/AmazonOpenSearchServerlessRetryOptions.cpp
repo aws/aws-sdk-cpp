@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-AmazonOpenSearchServerlessRetryOptions::AmazonOpenSearchServerlessRetryOptions() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 AmazonOpenSearchServerlessRetryOptions::AmazonOpenSearchServerlessRetryOptions(JsonView jsonValue)
-  : AmazonOpenSearchServerlessRetryOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AmazonOpenSearchServerlessRetryOptions& AmazonOpenSearchServerlessRetryOptions::
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

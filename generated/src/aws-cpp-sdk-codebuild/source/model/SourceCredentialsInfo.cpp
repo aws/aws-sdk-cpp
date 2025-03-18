@@ -18,18 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-SourceCredentialsInfo::SourceCredentialsInfo() : 
-    m_arnHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 SourceCredentialsInfo::SourceCredentialsInfo(JsonView jsonValue)
-  : SourceCredentialsInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SourceCredentialsInfo& SourceCredentialsInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverType"))
   {
     m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("serverType"));
-
     m_serverTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class DeleteDatasetRequest : public LookoutforVisionRequest
   {
   public:
-    AWS_LOOKOUTFORVISION_API DeleteDatasetRequest();
+    AWS_LOOKOUTFORVISION_API DeleteDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the project that contains the dataset that you want to
      * delete.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline DeleteDatasetRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DeleteDatasetRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DeleteDatasetRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DeleteDatasetRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * training dataset. Specify <code>test</code> to delete the test dataset. To
      * delete the dataset in a single dataset project, specify <code>train</code>.</p>
      */
-    inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
+    inline const Aws::String& GetDatasetType() const { return m_datasetType; }
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
-    inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
-    inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
-    inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
-    inline DeleteDatasetRequest& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
-    inline DeleteDatasetRequest& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
-    inline DeleteDatasetRequest& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
+    template<typename DatasetTypeT = Aws::String>
+    void SetDatasetType(DatasetTypeT&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::forward<DatasetTypeT>(value); }
+    template<typename DatasetTypeT = Aws::String>
+    DeleteDatasetRequest& WithDatasetType(DatasetTypeT&& value) { SetDatasetType(std::forward<DatasetTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>.
      * An idempotency token is active for 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteDatasetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteDatasetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteDatasetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteDatasetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

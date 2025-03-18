@@ -33,7 +33,7 @@ namespace Model
   class DescribeNodeFromTemplateJobResult
   {
   public:
-    AWS_PANORAMA_API DescribeNodeFromTemplateJobResult();
+    AWS_PANORAMA_API DescribeNodeFromTemplateJobResult() = default;
     AWS_PANORAMA_API DescribeNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API DescribeNodeFromTemplateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,192 +42,184 @@ namespace Model
     /**
      * <p>When the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    DescribeNodeFromTemplateJobResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's ID.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's tags.</p>
      */
-    inline const Aws::Vector<JobResourceTags>& GetJobTags() const{ return m_jobTags; }
-    inline void SetJobTags(const Aws::Vector<JobResourceTags>& value) { m_jobTags = value; }
-    inline void SetJobTags(Aws::Vector<JobResourceTags>&& value) { m_jobTags = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithJobTags(const Aws::Vector<JobResourceTags>& value) { SetJobTags(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithJobTags(Aws::Vector<JobResourceTags>&& value) { SetJobTags(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& AddJobTags(const JobResourceTags& value) { m_jobTags.push_back(value); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddJobTags(JobResourceTags&& value) { m_jobTags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobResourceTags>& GetJobTags() const { return m_jobTags; }
+    template<typename JobTagsT = Aws::Vector<JobResourceTags>>
+    void SetJobTags(JobTagsT&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::forward<JobTagsT>(value); }
+    template<typename JobTagsT = Aws::Vector<JobResourceTags>>
+    DescribeNodeFromTemplateJobResult& WithJobTags(JobTagsT&& value) { SetJobTags(std::forward<JobTagsT>(value)); return *this;}
+    template<typename JobTagsT = JobResourceTags>
+    DescribeNodeFromTemplateJobResult& AddJobTags(JobTagsT&& value) { m_jobTagsHasBeenSet = true; m_jobTags.emplace_back(std::forward<JobTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>When the job was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    DescribeNodeFromTemplateJobResult& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node's description.</p>
      */
-    inline const Aws::String& GetNodeDescription() const{ return m_nodeDescription; }
-    inline void SetNodeDescription(const Aws::String& value) { m_nodeDescription = value; }
-    inline void SetNodeDescription(Aws::String&& value) { m_nodeDescription = std::move(value); }
-    inline void SetNodeDescription(const char* value) { m_nodeDescription.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const Aws::String& value) { SetNodeDescription(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(Aws::String&& value) { SetNodeDescription(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithNodeDescription(const char* value) { SetNodeDescription(value); return *this;}
+    inline const Aws::String& GetNodeDescription() const { return m_nodeDescription; }
+    template<typename NodeDescriptionT = Aws::String>
+    void SetNodeDescription(NodeDescriptionT&& value) { m_nodeDescriptionHasBeenSet = true; m_nodeDescription = std::forward<NodeDescriptionT>(value); }
+    template<typename NodeDescriptionT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithNodeDescription(NodeDescriptionT&& value) { SetNodeDescription(std::forward<NodeDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node's name.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeName.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's output package name.</p>
      */
-    inline const Aws::String& GetOutputPackageName() const{ return m_outputPackageName; }
-    inline void SetOutputPackageName(const Aws::String& value) { m_outputPackageName = value; }
-    inline void SetOutputPackageName(Aws::String&& value) { m_outputPackageName = std::move(value); }
-    inline void SetOutputPackageName(const char* value) { m_outputPackageName.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageName(const Aws::String& value) { SetOutputPackageName(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageName(Aws::String&& value) { SetOutputPackageName(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageName(const char* value) { SetOutputPackageName(value); return *this;}
+    inline const Aws::String& GetOutputPackageName() const { return m_outputPackageName; }
+    template<typename OutputPackageNameT = Aws::String>
+    void SetOutputPackageName(OutputPackageNameT&& value) { m_outputPackageNameHasBeenSet = true; m_outputPackageName = std::forward<OutputPackageNameT>(value); }
+    template<typename OutputPackageNameT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithOutputPackageName(OutputPackageNameT&& value) { SetOutputPackageName(std::forward<OutputPackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's output package version.</p>
      */
-    inline const Aws::String& GetOutputPackageVersion() const{ return m_outputPackageVersion; }
-    inline void SetOutputPackageVersion(const Aws::String& value) { m_outputPackageVersion = value; }
-    inline void SetOutputPackageVersion(Aws::String&& value) { m_outputPackageVersion = std::move(value); }
-    inline void SetOutputPackageVersion(const char* value) { m_outputPackageVersion.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageVersion(const Aws::String& value) { SetOutputPackageVersion(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageVersion(Aws::String&& value) { SetOutputPackageVersion(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithOutputPackageVersion(const char* value) { SetOutputPackageVersion(value); return *this;}
+    inline const Aws::String& GetOutputPackageVersion() const { return m_outputPackageVersion; }
+    template<typename OutputPackageVersionT = Aws::String>
+    void SetOutputPackageVersion(OutputPackageVersionT&& value) { m_outputPackageVersionHasBeenSet = true; m_outputPackageVersion = std::forward<OutputPackageVersionT>(value); }
+    template<typename OutputPackageVersionT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithOutputPackageVersion(OutputPackageVersionT&& value) { SetOutputPackageVersion(std::forward<OutputPackageVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's status.</p>
      */
-    inline const NodeFromTemplateJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const NodeFromTemplateJobStatus& value) { m_status = value; }
-    inline void SetStatus(NodeFromTemplateJobStatus&& value) { m_status = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithStatus(const NodeFromTemplateJobStatus& value) { SetStatus(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithStatus(NodeFromTemplateJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline NodeFromTemplateJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(NodeFromTemplateJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeNodeFromTemplateJobResult& WithStatus(NodeFromTemplateJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's template parameters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const{ return m_templateParameters; }
-    inline void SetTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_templateParameters = value; }
-    inline void SetTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_templateParameters = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTemplateParameters(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTemplateParameters(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(const Aws::String& key, const Aws::String& value) { m_templateParameters.emplace(key, value); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(Aws::String&& key, const Aws::String& value) { m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(const Aws::String& key, Aws::String&& value) { m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(Aws::String&& key, Aws::String&& value) { m_templateParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(const char* key, Aws::String&& value) { m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(Aws::String&& key, const char* value) { m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeNodeFromTemplateJobResult& AddTemplateParameters(const char* key, const char* value) { m_templateParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const { return m_templateParameters; }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTemplateParameters(TemplateParametersT&& value) { m_templateParametersHasBeenSet = true; m_templateParameters = std::forward<TemplateParametersT>(value); }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    DescribeNodeFromTemplateJobResult& WithTemplateParameters(TemplateParametersT&& value) { SetTemplateParameters(std::forward<TemplateParametersT>(value)); return *this;}
+    template<typename TemplateParametersKeyT = Aws::String, typename TemplateParametersValueT = Aws::String>
+    DescribeNodeFromTemplateJobResult& AddTemplateParameters(TemplateParametersKeyT&& key, TemplateParametersValueT&& value) {
+      m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::forward<TemplateParametersKeyT>(key), std::forward<TemplateParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The job's template type.</p>
      */
-    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
-    inline void SetTemplateType(const TemplateType& value) { m_templateType = value; }
-    inline void SetTemplateType(TemplateType&& value) { m_templateType = std::move(value); }
-    inline DescribeNodeFromTemplateJobResult& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline TemplateType GetTemplateType() const { return m_templateType; }
+    inline void SetTemplateType(TemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline DescribeNodeFromTemplateJobResult& WithTemplateType(TemplateType value) { SetTemplateType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeNodeFromTemplateJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeNodeFromTemplateJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeNodeFromTemplateJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::Vector<JobResourceTags> m_jobTags;
+    bool m_jobTagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_nodeDescription;
+    bool m_nodeDescriptionHasBeenSet = false;
 
     Aws::String m_nodeName;
+    bool m_nodeNameHasBeenSet = false;
 
     Aws::String m_outputPackageName;
+    bool m_outputPackageNameHasBeenSet = false;
 
     Aws::String m_outputPackageVersion;
+    bool m_outputPackageVersionHasBeenSet = false;
 
-    NodeFromTemplateJobStatus m_status;
+    NodeFromTemplateJobStatus m_status{NodeFromTemplateJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_templateParameters;
+    bool m_templateParametersHasBeenSet = false;
 
-    TemplateType m_templateType;
+    TemplateType m_templateType{TemplateType::NOT_SET};
+    bool m_templateTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

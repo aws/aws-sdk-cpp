@@ -18,17 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-Attachment::Attachment() : 
-    m_subnetIdHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 Attachment::Attachment(JsonView jsonValue)
-  : Attachment()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Attachment& Attachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

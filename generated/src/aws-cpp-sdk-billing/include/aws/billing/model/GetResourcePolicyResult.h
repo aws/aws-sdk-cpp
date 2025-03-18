@@ -27,7 +27,7 @@ namespace Model
   class GetResourcePolicyResult
   {
   public:
-    AWS_BILLING_API GetResourcePolicyResult();
+    AWS_BILLING_API GetResourcePolicyResult() = default;
     AWS_BILLING_API GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLING_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the billing view resource to which the
      * policy is attached to. </p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline GetResourcePolicyResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetResourcePolicyResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetResourcePolicyResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetResourcePolicyResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * <p>The resource-based policy document attached to the resource in
      * <code>JSON</code> format. </p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-    inline GetResourcePolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline GetResourcePolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline GetResourcePolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    GetResourcePolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourcePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

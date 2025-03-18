@@ -34,7 +34,7 @@ namespace Model
   class MedicalScribeOutput
   {
   public:
-    AWS_TRANSCRIBESERVICE_API MedicalScribeOutput();
+    AWS_TRANSCRIBESERVICE_API MedicalScribeOutput() = default;
     AWS_TRANSCRIBESERVICE_API MedicalScribeOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API MedicalScribeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>Holds the Amazon S3 URI for the Transcript.</p>
      */
-    inline const Aws::String& GetTranscriptFileUri() const{ return m_transcriptFileUri; }
+    inline const Aws::String& GetTranscriptFileUri() const { return m_transcriptFileUri; }
     inline bool TranscriptFileUriHasBeenSet() const { return m_transcriptFileUriHasBeenSet; }
-    inline void SetTranscriptFileUri(const Aws::String& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = value; }
-    inline void SetTranscriptFileUri(Aws::String&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::move(value); }
-    inline void SetTranscriptFileUri(const char* value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri.assign(value); }
-    inline MedicalScribeOutput& WithTranscriptFileUri(const Aws::String& value) { SetTranscriptFileUri(value); return *this;}
-    inline MedicalScribeOutput& WithTranscriptFileUri(Aws::String&& value) { SetTranscriptFileUri(std::move(value)); return *this;}
-    inline MedicalScribeOutput& WithTranscriptFileUri(const char* value) { SetTranscriptFileUri(value); return *this;}
+    template<typename TranscriptFileUriT = Aws::String>
+    void SetTranscriptFileUri(TranscriptFileUriT&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::forward<TranscriptFileUriT>(value); }
+    template<typename TranscriptFileUriT = Aws::String>
+    MedicalScribeOutput& WithTranscriptFileUri(TranscriptFileUriT&& value) { SetTranscriptFileUri(std::forward<TranscriptFileUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Holds the Amazon S3 URI for the Clinical Document.</p>
      */
-    inline const Aws::String& GetClinicalDocumentUri() const{ return m_clinicalDocumentUri; }
+    inline const Aws::String& GetClinicalDocumentUri() const { return m_clinicalDocumentUri; }
     inline bool ClinicalDocumentUriHasBeenSet() const { return m_clinicalDocumentUriHasBeenSet; }
-    inline void SetClinicalDocumentUri(const Aws::String& value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri = value; }
-    inline void SetClinicalDocumentUri(Aws::String&& value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri = std::move(value); }
-    inline void SetClinicalDocumentUri(const char* value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri.assign(value); }
-    inline MedicalScribeOutput& WithClinicalDocumentUri(const Aws::String& value) { SetClinicalDocumentUri(value); return *this;}
-    inline MedicalScribeOutput& WithClinicalDocumentUri(Aws::String&& value) { SetClinicalDocumentUri(std::move(value)); return *this;}
-    inline MedicalScribeOutput& WithClinicalDocumentUri(const char* value) { SetClinicalDocumentUri(value); return *this;}
+    template<typename ClinicalDocumentUriT = Aws::String>
+    void SetClinicalDocumentUri(ClinicalDocumentUriT&& value) { m_clinicalDocumentUriHasBeenSet = true; m_clinicalDocumentUri = std::forward<ClinicalDocumentUriT>(value); }
+    template<typename ClinicalDocumentUriT = Aws::String>
+    MedicalScribeOutput& WithClinicalDocumentUri(ClinicalDocumentUriT&& value) { SetClinicalDocumentUri(std::forward<ClinicalDocumentUriT>(value)); return *this;}
     ///@}
   private:
 

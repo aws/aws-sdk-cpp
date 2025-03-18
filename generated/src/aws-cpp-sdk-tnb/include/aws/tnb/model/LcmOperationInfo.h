@@ -33,7 +33,7 @@ namespace Model
   class LcmOperationInfo
   {
   public:
-    AWS_TNB_API LcmOperationInfo();
+    AWS_TNB_API LcmOperationInfo() = default;
     AWS_TNB_API LcmOperationInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API LcmOperationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier of the network operation.</p>
      */
-    inline const Aws::String& GetNsLcmOpOccId() const{ return m_nsLcmOpOccId; }
+    inline const Aws::String& GetNsLcmOpOccId() const { return m_nsLcmOpOccId; }
     inline bool NsLcmOpOccIdHasBeenSet() const { return m_nsLcmOpOccIdHasBeenSet; }
-    inline void SetNsLcmOpOccId(const Aws::String& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = value; }
-    inline void SetNsLcmOpOccId(Aws::String&& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = std::move(value); }
-    inline void SetNsLcmOpOccId(const char* value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId.assign(value); }
-    inline LcmOperationInfo& WithNsLcmOpOccId(const Aws::String& value) { SetNsLcmOpOccId(value); return *this;}
-    inline LcmOperationInfo& WithNsLcmOpOccId(Aws::String&& value) { SetNsLcmOpOccId(std::move(value)); return *this;}
-    inline LcmOperationInfo& WithNsLcmOpOccId(const char* value) { SetNsLcmOpOccId(value); return *this;}
+    template<typename NsLcmOpOccIdT = Aws::String>
+    void SetNsLcmOpOccId(NsLcmOpOccIdT&& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = std::forward<NsLcmOpOccIdT>(value); }
+    template<typename NsLcmOpOccIdT = Aws::String>
+    LcmOperationInfo& WithNsLcmOpOccId(NsLcmOpOccIdT&& value) { SetNsLcmOpOccId(std::forward<NsLcmOpOccIdT>(value)); return *this;}
     ///@}
   private:
 

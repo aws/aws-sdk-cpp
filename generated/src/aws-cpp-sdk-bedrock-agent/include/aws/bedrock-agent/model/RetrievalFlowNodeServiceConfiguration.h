@@ -32,7 +32,7 @@ namespace Model
   class RetrievalFlowNodeServiceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RetrievalFlowNodeServiceConfiguration();
+    AWS_BEDROCKAGENT_API RetrievalFlowNodeServiceConfiguration() = default;
     AWS_BEDROCKAGENT_API RetrievalFlowNodeServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RetrievalFlowNodeServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains configurations for the Amazon S3 location from which to retrieve
      * data to return as the output from the node.</p>
      */
-    inline const RetrievalFlowNodeS3Configuration& GetS3() const{ return m_s3; }
+    inline const RetrievalFlowNodeS3Configuration& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const RetrievalFlowNodeS3Configuration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(RetrievalFlowNodeS3Configuration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline RetrievalFlowNodeServiceConfiguration& WithS3(const RetrievalFlowNodeS3Configuration& value) { SetS3(value); return *this;}
-    inline RetrievalFlowNodeServiceConfiguration& WithS3(RetrievalFlowNodeS3Configuration&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = RetrievalFlowNodeS3Configuration>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = RetrievalFlowNodeS3Configuration>
+    RetrievalFlowNodeServiceConfiguration& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

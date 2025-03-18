@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConfigurationDetails::ConfigurationDetails() : 
-    m_directAnalysisConfigurationDetailsHasBeenSet(false)
-{
-}
-
 ConfigurationDetails::ConfigurationDetails(JsonView jsonValue)
-  : ConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConfigurationDetails& ConfigurationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("directAnalysisConfigurationDetails"))
   {
     m_directAnalysisConfigurationDetails = jsonValue.GetObject("directAnalysisConfigurationDetails");
-
     m_directAnalysisConfigurationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

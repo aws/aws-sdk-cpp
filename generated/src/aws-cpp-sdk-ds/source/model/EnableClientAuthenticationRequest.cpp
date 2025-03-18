@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableClientAuthenticationRequest::EnableClientAuthenticationRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_type(ClientAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String EnableClientAuthenticationRequest::SerializePayload() const
 {
   JsonValue payload;

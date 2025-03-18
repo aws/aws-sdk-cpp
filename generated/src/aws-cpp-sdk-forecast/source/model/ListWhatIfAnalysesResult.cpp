@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWhatIfAnalysesResult::ListWhatIfAnalysesResult()
-{
-}
-
 ListWhatIfAnalysesResult::ListWhatIfAnalysesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListWhatIfAnalysesResult& ListWhatIfAnalysesResult::operator =(const Aws::Amazon
     {
       m_whatIfAnalyses.push_back(whatIfAnalysesJsonList[whatIfAnalysesIndex].AsObject());
     }
+    m_whatIfAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

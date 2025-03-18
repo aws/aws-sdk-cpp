@@ -18,15 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ServerShortInfoResponse::ServerShortInfoResponse() : 
-    m_serverIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_serverNameHasBeenSet(false)
-{
-}
-
 ServerShortInfoResponse::ServerShortInfoResponse(JsonView jsonValue)
-  : ServerShortInfoResponse()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServerShortInfoResponse& ServerShortInfoResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
-
     m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   return *this;
 }
 

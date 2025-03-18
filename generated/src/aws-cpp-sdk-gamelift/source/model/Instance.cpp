@@ -18,25 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-Instance::Instance() : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_type(EC2InstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

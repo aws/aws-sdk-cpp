@@ -18,14 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-MetadataUpdates::MetadataUpdates() : 
-    m_dICOMUpdatesHasBeenSet(false),
-    m_revertToVersionIdHasBeenSet(false)
-{
-}
-
 MetadataUpdates::MetadataUpdates(JsonView jsonValue)
-  : MetadataUpdates()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetadataUpdates& MetadataUpdates::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DICOMUpdates"))
   {
     m_dICOMUpdates = jsonValue.GetObject("DICOMUpdates");
-
     m_dICOMUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revertToVersionId"))
   {
     m_revertToVersionId = jsonValue.GetString("revertToVersionId");
-
     m_revertToVersionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

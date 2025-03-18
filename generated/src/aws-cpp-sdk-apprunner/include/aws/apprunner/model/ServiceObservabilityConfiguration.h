@@ -34,7 +34,7 @@ namespace Model
   class ServiceObservabilityConfiguration
   {
   public:
-    AWS_APPRUNNER_API ServiceObservabilityConfiguration();
+    AWS_APPRUNNER_API ServiceObservabilityConfiguration() = default;
     AWS_APPRUNNER_API ServiceObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API ServiceObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * with the service, and an <code>ObservabilityConfigurationArn</code> is
      * specified.</p>
      */
-    inline bool GetObservabilityEnabled() const{ return m_observabilityEnabled; }
+    inline bool GetObservabilityEnabled() const { return m_observabilityEnabled; }
     inline bool ObservabilityEnabledHasBeenSet() const { return m_observabilityEnabledHasBeenSet; }
     inline void SetObservabilityEnabled(bool value) { m_observabilityEnabledHasBeenSet = true; m_observabilityEnabled = value; }
     inline ServiceObservabilityConfiguration& WithObservabilityEnabled(bool value) { SetObservabilityEnabled(value); return *this;}
@@ -63,18 +63,16 @@ namespace Model
      * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
      * </p>
      */
-    inline const Aws::String& GetObservabilityConfigurationArn() const{ return m_observabilityConfigurationArn; }
+    inline const Aws::String& GetObservabilityConfigurationArn() const { return m_observabilityConfigurationArn; }
     inline bool ObservabilityConfigurationArnHasBeenSet() const { return m_observabilityConfigurationArnHasBeenSet; }
-    inline void SetObservabilityConfigurationArn(const Aws::String& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = value; }
-    inline void SetObservabilityConfigurationArn(Aws::String&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::move(value); }
-    inline void SetObservabilityConfigurationArn(const char* value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn.assign(value); }
-    inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(const Aws::String& value) { SetObservabilityConfigurationArn(value); return *this;}
-    inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(Aws::String&& value) { SetObservabilityConfigurationArn(std::move(value)); return *this;}
-    inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(const char* value) { SetObservabilityConfigurationArn(value); return *this;}
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    void SetObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::forward<ObservabilityConfigurationArnT>(value); }
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { SetObservabilityConfigurationArn(std::forward<ObservabilityConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_observabilityEnabled;
+    bool m_observabilityEnabled{false};
     bool m_observabilityEnabledHasBeenSet = false;
 
     Aws::String m_observabilityConfigurationArn;

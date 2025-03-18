@@ -12,12 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFirewallPolicyRequest::DeleteFirewallPolicyRequest() : 
-    m_firewallPolicyNameHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFirewallPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

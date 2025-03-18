@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FindingHistoryRecord::FindingHistoryRecord() : 
-    m_findingIdentifierHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_findingCreated(false),
-    m_findingCreatedHasBeenSet(false),
-    m_updateSourceHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 FindingHistoryRecord::FindingHistoryRecord(JsonView jsonValue)
-  : FindingHistoryRecord()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ FindingHistoryRecord& FindingHistoryRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FindingIdentifier"))
   {
     m_findingIdentifier = jsonValue.GetObject("FindingIdentifier");
-
     m_findingIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingCreated"))
   {
     m_findingCreated = jsonValue.GetBool("FindingCreated");
-
     m_findingCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateSource"))
   {
     m_updateSource = jsonValue.GetObject("UpdateSource");
-
     m_updateSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Updates"))
   {
     Aws::Utils::Array<JsonView> updatesJsonList = jsonValue.GetArray("Updates");
@@ -74,14 +54,11 @@ FindingHistoryRecord& FindingHistoryRecord::operator =(JsonView jsonValue)
     }
     m_updatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

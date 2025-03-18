@@ -29,7 +29,7 @@ namespace Model
   class ListProblemsResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API ListProblemsResult();
+    AWS_APPLICATIONINSIGHTS_API ListProblemsResult() = default;
     AWS_APPLICATIONINSIGHTS_API ListProblemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API ListProblemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of problems. </p>
      */
-    inline const Aws::Vector<Problem>& GetProblemList() const{ return m_problemList; }
-    inline void SetProblemList(const Aws::Vector<Problem>& value) { m_problemList = value; }
-    inline void SetProblemList(Aws::Vector<Problem>&& value) { m_problemList = std::move(value); }
-    inline ListProblemsResult& WithProblemList(const Aws::Vector<Problem>& value) { SetProblemList(value); return *this;}
-    inline ListProblemsResult& WithProblemList(Aws::Vector<Problem>&& value) { SetProblemList(std::move(value)); return *this;}
-    inline ListProblemsResult& AddProblemList(const Problem& value) { m_problemList.push_back(value); return *this; }
-    inline ListProblemsResult& AddProblemList(Problem&& value) { m_problemList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Problem>& GetProblemList() const { return m_problemList; }
+    template<typename ProblemListT = Aws::Vector<Problem>>
+    void SetProblemList(ProblemListT&& value) { m_problemListHasBeenSet = true; m_problemList = std::forward<ProblemListT>(value); }
+    template<typename ProblemListT = Aws::Vector<Problem>>
+    ListProblemsResult& WithProblemList(ProblemListT&& value) { SetProblemList(std::forward<ProblemListT>(value)); return *this;}
+    template<typename ProblemListT = Problem>
+    ListProblemsResult& AddProblemList(ProblemListT&& value) { m_problemListHasBeenSet = true; m_problemList.emplace_back(std::forward<ProblemListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,62 +52,59 @@ namespace Model
      * <p>The token used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProblemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProblemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProblemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProblemsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the resource group. </p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupName.assign(value); }
-    inline ListProblemsResult& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline ListProblemsResult& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline ListProblemsResult& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    ListProblemsResult& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID for the resource group owner.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-    inline ListProblemsResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListProblemsResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListProblemsResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListProblemsResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProblemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProblemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProblemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProblemsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Problem> m_problemList;
+    bool m_problemListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

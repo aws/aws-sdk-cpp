@@ -28,7 +28,7 @@ namespace Model
   class DeleteParametersResult
   {
   public:
-    AWS_SSM_API DeleteParametersResult();
+    AWS_SSM_API DeleteParametersResult() = default;
     AWS_SSM_API DeleteParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DeleteParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>The names of the deleted parameters.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeletedParameters() const{ return m_deletedParameters; }
-    inline void SetDeletedParameters(const Aws::Vector<Aws::String>& value) { m_deletedParameters = value; }
-    inline void SetDeletedParameters(Aws::Vector<Aws::String>&& value) { m_deletedParameters = std::move(value); }
-    inline DeleteParametersResult& WithDeletedParameters(const Aws::Vector<Aws::String>& value) { SetDeletedParameters(value); return *this;}
-    inline DeleteParametersResult& WithDeletedParameters(Aws::Vector<Aws::String>&& value) { SetDeletedParameters(std::move(value)); return *this;}
-    inline DeleteParametersResult& AddDeletedParameters(const Aws::String& value) { m_deletedParameters.push_back(value); return *this; }
-    inline DeleteParametersResult& AddDeletedParameters(Aws::String&& value) { m_deletedParameters.push_back(std::move(value)); return *this; }
-    inline DeleteParametersResult& AddDeletedParameters(const char* value) { m_deletedParameters.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDeletedParameters() const { return m_deletedParameters; }
+    template<typename DeletedParametersT = Aws::Vector<Aws::String>>
+    void SetDeletedParameters(DeletedParametersT&& value) { m_deletedParametersHasBeenSet = true; m_deletedParameters = std::forward<DeletedParametersT>(value); }
+    template<typename DeletedParametersT = Aws::Vector<Aws::String>>
+    DeleteParametersResult& WithDeletedParameters(DeletedParametersT&& value) { SetDeletedParameters(std::forward<DeletedParametersT>(value)); return *this;}
+    template<typename DeletedParametersT = Aws::String>
+    DeleteParametersResult& AddDeletedParameters(DeletedParametersT&& value) { m_deletedParametersHasBeenSet = true; m_deletedParameters.emplace_back(std::forward<DeletedParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,33 +51,33 @@ namespace Model
      * <p>The names of parameters that weren't deleted because the parameters aren't
      * valid.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInvalidParameters() const{ return m_invalidParameters; }
-    inline void SetInvalidParameters(const Aws::Vector<Aws::String>& value) { m_invalidParameters = value; }
-    inline void SetInvalidParameters(Aws::Vector<Aws::String>&& value) { m_invalidParameters = std::move(value); }
-    inline DeleteParametersResult& WithInvalidParameters(const Aws::Vector<Aws::String>& value) { SetInvalidParameters(value); return *this;}
-    inline DeleteParametersResult& WithInvalidParameters(Aws::Vector<Aws::String>&& value) { SetInvalidParameters(std::move(value)); return *this;}
-    inline DeleteParametersResult& AddInvalidParameters(const Aws::String& value) { m_invalidParameters.push_back(value); return *this; }
-    inline DeleteParametersResult& AddInvalidParameters(Aws::String&& value) { m_invalidParameters.push_back(std::move(value)); return *this; }
-    inline DeleteParametersResult& AddInvalidParameters(const char* value) { m_invalidParameters.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetInvalidParameters() const { return m_invalidParameters; }
+    template<typename InvalidParametersT = Aws::Vector<Aws::String>>
+    void SetInvalidParameters(InvalidParametersT&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters = std::forward<InvalidParametersT>(value); }
+    template<typename InvalidParametersT = Aws::Vector<Aws::String>>
+    DeleteParametersResult& WithInvalidParameters(InvalidParametersT&& value) { SetInvalidParameters(std::forward<InvalidParametersT>(value)); return *this;}
+    template<typename InvalidParametersT = Aws::String>
+    DeleteParametersResult& AddInvalidParameters(InvalidParametersT&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace_back(std::forward<InvalidParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteParametersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteParametersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteParametersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteParametersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_deletedParameters;
+    bool m_deletedParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_invalidParameters;
+    bool m_invalidParametersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

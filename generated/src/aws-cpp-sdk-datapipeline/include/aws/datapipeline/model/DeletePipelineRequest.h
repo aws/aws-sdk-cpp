@@ -24,7 +24,7 @@ namespace Model
   class DeletePipelineRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API DeletePipelineRequest();
+    AWS_DATAPIPELINE_API DeletePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline DeletePipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline DeletePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline DeletePipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    DeletePipelineRequest& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
   private:
 

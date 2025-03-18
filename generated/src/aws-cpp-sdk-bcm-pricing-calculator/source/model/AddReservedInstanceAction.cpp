@@ -18,15 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-AddReservedInstanceAction::AddReservedInstanceAction() : 
-    m_reservedInstancesOfferingIdHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
-{
-}
-
 AddReservedInstanceAction::AddReservedInstanceAction(JsonView jsonValue)
-  : AddReservedInstanceAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AddReservedInstanceAction& AddReservedInstanceAction::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("reservedInstancesOfferingId"))
   {
     m_reservedInstancesOfferingId = jsonValue.GetString("reservedInstancesOfferingId");
-
     m_reservedInstancesOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

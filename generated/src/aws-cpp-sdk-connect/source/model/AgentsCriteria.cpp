@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentsCriteria::AgentsCriteria() : 
-    m_agentIdsHasBeenSet(false)
-{
-}
-
 AgentsCriteria::AgentsCriteria(JsonView jsonValue)
-  : AgentsCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AgentsCriteria& AgentsCriteria::operator =(JsonView jsonValue)
     }
     m_agentIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

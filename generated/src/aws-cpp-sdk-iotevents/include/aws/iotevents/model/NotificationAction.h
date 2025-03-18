@@ -36,7 +36,7 @@ namespace Model
   class NotificationAction
   {
   public:
-    AWS_IOTEVENTS_API NotificationAction();
+    AWS_IOTEVENTS_API NotificationAction() = default;
     AWS_IOTEVENTS_API NotificationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API NotificationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,40 +49,40 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS
      * Lambda function provided by AWS IoT Events</a>.</p>
      */
-    inline const NotificationTargetActions& GetAction() const{ return m_action; }
+    inline const NotificationTargetActions& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const NotificationTargetActions& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(NotificationTargetActions&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline NotificationAction& WithAction(const NotificationTargetActions& value) { SetAction(value); return *this;}
-    inline NotificationAction& WithAction(NotificationTargetActions&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = NotificationTargetActions>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = NotificationTargetActions>
+    NotificationAction& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of SMS notifications.</p>
      */
-    inline const Aws::Vector<SMSConfiguration>& GetSmsConfigurations() const{ return m_smsConfigurations; }
+    inline const Aws::Vector<SMSConfiguration>& GetSmsConfigurations() const { return m_smsConfigurations; }
     inline bool SmsConfigurationsHasBeenSet() const { return m_smsConfigurationsHasBeenSet; }
-    inline void SetSmsConfigurations(const Aws::Vector<SMSConfiguration>& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations = value; }
-    inline void SetSmsConfigurations(Aws::Vector<SMSConfiguration>&& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations = std::move(value); }
-    inline NotificationAction& WithSmsConfigurations(const Aws::Vector<SMSConfiguration>& value) { SetSmsConfigurations(value); return *this;}
-    inline NotificationAction& WithSmsConfigurations(Aws::Vector<SMSConfiguration>&& value) { SetSmsConfigurations(std::move(value)); return *this;}
-    inline NotificationAction& AddSmsConfigurations(const SMSConfiguration& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations.push_back(value); return *this; }
-    inline NotificationAction& AddSmsConfigurations(SMSConfiguration&& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SmsConfigurationsT = Aws::Vector<SMSConfiguration>>
+    void SetSmsConfigurations(SmsConfigurationsT&& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations = std::forward<SmsConfigurationsT>(value); }
+    template<typename SmsConfigurationsT = Aws::Vector<SMSConfiguration>>
+    NotificationAction& WithSmsConfigurations(SmsConfigurationsT&& value) { SetSmsConfigurations(std::forward<SmsConfigurationsT>(value)); return *this;}
+    template<typename SmsConfigurationsT = SMSConfiguration>
+    NotificationAction& AddSmsConfigurations(SmsConfigurationsT&& value) { m_smsConfigurationsHasBeenSet = true; m_smsConfigurations.emplace_back(std::forward<SmsConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of email notifications.</p>
      */
-    inline const Aws::Vector<EmailConfiguration>& GetEmailConfigurations() const{ return m_emailConfigurations; }
+    inline const Aws::Vector<EmailConfiguration>& GetEmailConfigurations() const { return m_emailConfigurations; }
     inline bool EmailConfigurationsHasBeenSet() const { return m_emailConfigurationsHasBeenSet; }
-    inline void SetEmailConfigurations(const Aws::Vector<EmailConfiguration>& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations = value; }
-    inline void SetEmailConfigurations(Aws::Vector<EmailConfiguration>&& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations = std::move(value); }
-    inline NotificationAction& WithEmailConfigurations(const Aws::Vector<EmailConfiguration>& value) { SetEmailConfigurations(value); return *this;}
-    inline NotificationAction& WithEmailConfigurations(Aws::Vector<EmailConfiguration>&& value) { SetEmailConfigurations(std::move(value)); return *this;}
-    inline NotificationAction& AddEmailConfigurations(const EmailConfiguration& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations.push_back(value); return *this; }
-    inline NotificationAction& AddEmailConfigurations(EmailConfiguration&& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations.push_back(std::move(value)); return *this; }
+    template<typename EmailConfigurationsT = Aws::Vector<EmailConfiguration>>
+    void SetEmailConfigurations(EmailConfigurationsT&& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations = std::forward<EmailConfigurationsT>(value); }
+    template<typename EmailConfigurationsT = Aws::Vector<EmailConfiguration>>
+    NotificationAction& WithEmailConfigurations(EmailConfigurationsT&& value) { SetEmailConfigurations(std::forward<EmailConfigurationsT>(value)); return *this;}
+    template<typename EmailConfigurationsT = EmailConfiguration>
+    NotificationAction& AddEmailConfigurations(EmailConfigurationsT&& value) { m_emailConfigurationsHasBeenSet = true; m_emailConfigurations.emplace_back(std::forward<EmailConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

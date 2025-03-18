@@ -18,15 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-AppInstanceUserSummary::AppInstanceUserSummary() : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 AppInstanceUserSummary::AppInstanceUserSummary(JsonView jsonValue)
-  : AppInstanceUserSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AppInstanceUserSummary& AppInstanceUserSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppInstanceUserArn"))
   {
     m_appInstanceUserArn = jsonValue.GetString("AppInstanceUserArn");
-
     m_appInstanceUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetString("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-EndpointDetails::EndpointDetails() : 
-    m_awsGroundStationAgentEndpointHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_healthReasonsHasBeenSet(false),
-    m_healthStatus(CapabilityHealth::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_securityDetailsHasBeenSet(false)
-{
-}
-
 EndpointDetails::EndpointDetails(JsonView jsonValue)
-  : EndpointDetails()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsGroundStationAgentEndpoint"))
   {
     m_awsGroundStationAgentEndpoint = jsonValue.GetObject("awsGroundStationAgentEndpoint");
-
     m_awsGroundStationAgentEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthReasons"))
   {
     Aws::Utils::Array<JsonView> healthReasonsJsonList = jsonValue.GetArray("healthReasons");
@@ -59,21 +44,16 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     }
     m_healthReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthStatus"))
   {
     m_healthStatus = CapabilityHealthMapper::GetCapabilityHealthForName(jsonValue.GetString("healthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityDetails"))
   {
     m_securityDetails = jsonValue.GetObject("securityDetails");
-
     m_securityDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

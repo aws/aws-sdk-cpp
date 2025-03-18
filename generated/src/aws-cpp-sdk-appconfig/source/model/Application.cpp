@@ -19,16 +19,7 @@ namespace AppConfig
 namespace Model
 {
 
-Application::Application() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -38,24 +29,18 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

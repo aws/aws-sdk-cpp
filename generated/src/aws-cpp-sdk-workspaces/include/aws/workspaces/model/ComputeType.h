@@ -31,7 +31,7 @@ namespace Model
   class ComputeType
   {
   public:
-    AWS_WORKSPACES_API ComputeType();
+    AWS_WORKSPACES_API ComputeType() = default;
     AWS_WORKSPACES_API ComputeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API ComputeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The compute type.</p>
      */
-    inline const Compute& GetName() const{ return m_name; }
+    inline Compute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Compute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Compute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ComputeType& WithName(const Compute& value) { SetName(value); return *this;}
-    inline ComputeType& WithName(Compute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(Compute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ComputeType& WithName(Compute value) { SetName(value); return *this;}
     ///@}
   private:
 
-    Compute m_name;
+    Compute m_name{Compute::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

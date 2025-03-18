@@ -28,7 +28,7 @@ namespace Model
   class GetEnvironmentCredentialsResult
   {
   public:
-    AWS_DATAZONE_API GetEnvironmentCredentialsResult();
+    AWS_DATAZONE_API GetEnvironmentCredentialsResult() = default;
     AWS_DATAZONE_API GetEnvironmentCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API GetEnvironmentCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,70 @@ namespace Model
     /**
      * <p>The access key ID of the environment.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyId.assign(value); }
-    inline GetEnvironmentCredentialsResult& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline GetEnvironmentCredentialsResult& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline GetEnvironmentCredentialsResult& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    GetEnvironmentCredentialsResult& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration timestamp of the environment credentials.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
-    inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expiration = value; }
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expiration = std::move(value); }
-    inline GetEnvironmentCredentialsResult& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
-    inline GetEnvironmentCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiration() const { return m_expiration; }
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    GetEnvironmentCredentialsResult& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The secret access key of the environment credentials.</p>
      */
-    inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
-    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKey = value; }
-    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKey = std::move(value); }
-    inline void SetSecretAccessKey(const char* value) { m_secretAccessKey.assign(value); }
-    inline GetEnvironmentCredentialsResult& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
-    inline GetEnvironmentCredentialsResult& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
-    inline GetEnvironmentCredentialsResult& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
+    inline const Aws::String& GetSecretAccessKey() const { return m_secretAccessKey; }
+    template<typename SecretAccessKeyT = Aws::String>
+    void SetSecretAccessKey(SecretAccessKeyT&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::forward<SecretAccessKeyT>(value); }
+    template<typename SecretAccessKeyT = Aws::String>
+    GetEnvironmentCredentialsResult& WithSecretAccessKey(SecretAccessKeyT&& value) { SetSecretAccessKey(std::forward<SecretAccessKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session token of the environment credentials.</p>
      */
-    inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
-    inline void SetSessionToken(const Aws::String& value) { m_sessionToken = value; }
-    inline void SetSessionToken(Aws::String&& value) { m_sessionToken = std::move(value); }
-    inline void SetSessionToken(const char* value) { m_sessionToken.assign(value); }
-    inline GetEnvironmentCredentialsResult& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
-    inline GetEnvironmentCredentialsResult& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
-    inline GetEnvironmentCredentialsResult& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
+    inline const Aws::String& GetSessionToken() const { return m_sessionToken; }
+    template<typename SessionTokenT = Aws::String>
+    void SetSessionToken(SessionTokenT&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::forward<SessionTokenT>(value); }
+    template<typename SessionTokenT = Aws::String>
+    GetEnvironmentCredentialsResult& WithSessionToken(SessionTokenT&& value) { SetSessionToken(std::forward<SessionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEnvironmentCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEnvironmentCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEnvironmentCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEnvironmentCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiration;
+    Aws::Utils::DateTime m_expiration{};
+    bool m_expirationHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_sessionToken;
+    bool m_sessionTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

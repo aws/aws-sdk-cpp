@@ -27,7 +27,7 @@ namespace Model
   class AddNotificationChannelsRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API AddNotificationChannelsRequest();
+    AWS_CODEGURUPROFILER_API AddNotificationChannelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>One or 2 channels to report to when anomalies are detected.</p>
      */
-    inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
+    inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline AddNotificationChannelsRequest& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-    inline AddNotificationChannelsRequest& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-    inline AddNotificationChannelsRequest& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-    inline AddNotificationChannelsRequest& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    AddNotificationChannelsRequest& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsT = Channel>
+    AddNotificationChannelsRequest& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group that we are setting up notifications for.</p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline AddNotificationChannelsRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline AddNotificationChannelsRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline AddNotificationChannelsRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    AddNotificationChannelsRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
   private:
 

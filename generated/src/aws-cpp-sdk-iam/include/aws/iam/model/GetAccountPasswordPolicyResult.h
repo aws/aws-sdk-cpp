@@ -34,7 +34,7 @@ namespace Model
   class GetAccountPasswordPolicyResult
   {
   public:
-    AWS_IAM_API GetAccountPasswordPolicyResult();
+    AWS_IAM_API GetAccountPasswordPolicyResult() = default;
     AWS_IAM_API GetAccountPasswordPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetAccountPasswordPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p>A structure that contains details about the account's password policy.</p>
      */
-    inline const PasswordPolicy& GetPasswordPolicy() const{ return m_passwordPolicy; }
-    inline void SetPasswordPolicy(const PasswordPolicy& value) { m_passwordPolicy = value; }
-    inline void SetPasswordPolicy(PasswordPolicy&& value) { m_passwordPolicy = std::move(value); }
-    inline GetAccountPasswordPolicyResult& WithPasswordPolicy(const PasswordPolicy& value) { SetPasswordPolicy(value); return *this;}
-    inline GetAccountPasswordPolicyResult& WithPasswordPolicy(PasswordPolicy&& value) { SetPasswordPolicy(std::move(value)); return *this;}
+    inline const PasswordPolicy& GetPasswordPolicy() const { return m_passwordPolicy; }
+    template<typename PasswordPolicyT = PasswordPolicy>
+    void SetPasswordPolicy(PasswordPolicyT&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::forward<PasswordPolicyT>(value); }
+    template<typename PasswordPolicyT = PasswordPolicy>
+    GetAccountPasswordPolicyResult& WithPasswordPolicy(PasswordPolicyT&& value) { SetPasswordPolicy(std::forward<PasswordPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetAccountPasswordPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetAccountPasswordPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetAccountPasswordPolicyResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     PasswordPolicy m_passwordPolicy;
+    bool m_passwordPolicyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

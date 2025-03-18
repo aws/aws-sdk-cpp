@@ -24,7 +24,7 @@ namespace Model
   class CreateSipMediaApplicationRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API CreateSipMediaApplicationRequest();
+    AWS_CHIMESDKVOICE_API CreateSipMediaApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,56 +39,52 @@ namespace Model
     /**
      * <p>The AWS Region assigned to the SIP media application.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline CreateSipMediaApplicationRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline CreateSipMediaApplicationRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline CreateSipMediaApplicationRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    CreateSipMediaApplicationRequest& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SIP media application's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSipMediaApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSipMediaApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSipMediaApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSipMediaApplicationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
      */
-    inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline CreateSipMediaApplicationRequest& WithEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline CreateSipMediaApplicationRequest& WithEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline CreateSipMediaApplicationRequest& AddEndpoints(const SipMediaApplicationEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline CreateSipMediaApplicationRequest& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<SipMediaApplicationEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<SipMediaApplicationEndpoint>>
+    CreateSipMediaApplicationRequest& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = SipMediaApplicationEndpoint>
+    CreateSipMediaApplicationRequest& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the SIP media application.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSipMediaApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSipMediaApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSipMediaApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSipMediaApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSipMediaApplicationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSipMediaApplicationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

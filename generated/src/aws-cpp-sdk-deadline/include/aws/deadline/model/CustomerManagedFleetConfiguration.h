@@ -34,7 +34,7 @@ namespace Model
   class CustomerManagedFleetConfiguration
   {
   public:
-    AWS_DEADLINE_API CustomerManagedFleetConfiguration();
+    AWS_DEADLINE_API CustomerManagedFleetConfiguration() = default;
     AWS_DEADLINE_API CustomerManagedFleetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API CustomerManagedFleetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,38 @@ namespace Model
     /**
      * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
      */
-    inline const AutoScalingMode& GetMode() const{ return m_mode; }
+    inline AutoScalingMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AutoScalingMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AutoScalingMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline CustomerManagedFleetConfiguration& WithMode(const AutoScalingMode& value) { SetMode(value); return *this;}
-    inline CustomerManagedFleetConfiguration& WithMode(AutoScalingMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AutoScalingMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline CustomerManagedFleetConfiguration& WithMode(AutoScalingMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker capabilities for a customer managed fleet configuration.</p>
      */
-    inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const{ return m_workerCapabilities; }
+    inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const { return m_workerCapabilities; }
     inline bool WorkerCapabilitiesHasBeenSet() const { return m_workerCapabilitiesHasBeenSet; }
-    inline void SetWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = value; }
-    inline void SetWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = std::move(value); }
-    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { SetWorkerCapabilities(value); return *this;}
-    inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { SetWorkerCapabilities(std::move(value)); return *this;}
+    template<typename WorkerCapabilitiesT = CustomerManagedWorkerCapabilities>
+    void SetWorkerCapabilities(WorkerCapabilitiesT&& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = std::forward<WorkerCapabilitiesT>(value); }
+    template<typename WorkerCapabilitiesT = CustomerManagedWorkerCapabilities>
+    CustomerManagedFleetConfiguration& WithWorkerCapabilities(WorkerCapabilitiesT&& value) { SetWorkerCapabilities(std::forward<WorkerCapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage profile ID.</p>
      */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
+    inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
     inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-    inline CustomerManagedFleetConfiguration& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline CustomerManagedFleetConfiguration& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline CustomerManagedFleetConfiguration& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    template<typename StorageProfileIdT = Aws::String>
+    void SetStorageProfileId(StorageProfileIdT&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::forward<StorageProfileIdT>(value); }
+    template<typename StorageProfileIdT = Aws::String>
+    CustomerManagedFleetConfiguration& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
     ///@}
   private:
 
-    AutoScalingMode m_mode;
+    AutoScalingMode m_mode{AutoScalingMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     CustomerManagedWorkerCapabilities m_workerCapabilities;

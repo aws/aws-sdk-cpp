@@ -18,16 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-ConditionalForwarder::ConditionalForwarder() : 
-    m_remoteDomainNameHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_replicationScope(ReplicationScope::NOT_SET),
-    m_replicationScopeHasBeenSet(false)
-{
-}
-
 ConditionalForwarder::ConditionalForwarder(JsonView jsonValue)
-  : ConditionalForwarder()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ConditionalForwarder& ConditionalForwarder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RemoteDomainName"))
   {
     m_remoteDomainName = jsonValue.GetString("RemoteDomainName");
-
     m_remoteDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
     Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
@@ -50,14 +39,11 @@ ConditionalForwarder& ConditionalForwarder::operator =(JsonView jsonValue)
     }
     m_dnsIpAddrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationScope"))
   {
     m_replicationScope = ReplicationScopeMapper::GetReplicationScopeForName(jsonValue.GetString("ReplicationScope"));
-
     m_replicationScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,27 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ExecutionListItem::ExecutionListItem() : 
-    m_executionArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false),
-    m_redriveDateHasBeenSet(false)
-{
-}
-
 ExecutionListItem::ExecutionListItem(JsonView jsonValue)
-  : ExecutionListItem()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ ExecutionListItem& ExecutionListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionArn"))
   {
     m_executionArn = jsonValue.GetString("executionArn");
-
     m_executionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineArn"))
   {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");
-
     m_stateMachineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetDouble("startDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopDate"))
   {
     m_stopDate = jsonValue.GetDouble("stopDate");
-
     m_stopDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapRunArn"))
   {
     m_mapRunArn = jsonValue.GetString("mapRunArn");
-
     m_mapRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemCount"))
   {
     m_itemCount = jsonValue.GetInteger("itemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineVersionArn"))
   {
     m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
-
     m_stateMachineVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineAliasArn"))
   {
     m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
-
     m_stateMachineAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redriveCount"))
   {
     m_redriveCount = jsonValue.GetInteger("redriveCount");
-
     m_redriveCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redriveDate"))
   {
     m_redriveDate = jsonValue.GetDouble("redriveDate");
-
     m_redriveDateHasBeenSet = true;
   }
-
   return *this;
 }
 

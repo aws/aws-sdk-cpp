@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceEndpointAssociationRequest::DeleteResourceEndpointAssociationRequest() : 
-    m_resourceEndpointAssociationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceEndpointAssociationRequest::SerializePayload() const
 {
   return {};

@@ -31,7 +31,7 @@ namespace Model
   class IngestedEventStatistics
   {
   public:
-    AWS_FRAUDDETECTOR_API IngestedEventStatistics();
+    AWS_FRAUDDETECTOR_API IngestedEventStatistics() = default;
     AWS_FRAUDDETECTOR_API IngestedEventStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API IngestedEventStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The number of stored events.</p>
      */
-    inline long long GetNumberOfEvents() const{ return m_numberOfEvents; }
+    inline long long GetNumberOfEvents() const { return m_numberOfEvents; }
     inline bool NumberOfEventsHasBeenSet() const { return m_numberOfEventsHasBeenSet; }
     inline void SetNumberOfEvents(long long value) { m_numberOfEventsHasBeenSet = true; m_numberOfEvents = value; }
     inline IngestedEventStatistics& WithNumberOfEvents(long long value) { SetNumberOfEvents(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The total size of the stored events.</p>
      */
-    inline long long GetEventDataSizeInBytes() const{ return m_eventDataSizeInBytes; }
+    inline long long GetEventDataSizeInBytes() const { return m_eventDataSizeInBytes; }
     inline bool EventDataSizeInBytesHasBeenSet() const { return m_eventDataSizeInBytesHasBeenSet; }
     inline void SetEventDataSizeInBytes(long long value) { m_eventDataSizeInBytesHasBeenSet = true; m_eventDataSizeInBytes = value; }
     inline IngestedEventStatistics& WithEventDataSizeInBytes(long long value) { SetEventDataSizeInBytes(value); return *this;}
@@ -61,49 +61,43 @@ namespace Model
     /**
      * <p>The oldest stored event.</p>
      */
-    inline const Aws::String& GetLeastRecentEvent() const{ return m_leastRecentEvent; }
+    inline const Aws::String& GetLeastRecentEvent() const { return m_leastRecentEvent; }
     inline bool LeastRecentEventHasBeenSet() const { return m_leastRecentEventHasBeenSet; }
-    inline void SetLeastRecentEvent(const Aws::String& value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent = value; }
-    inline void SetLeastRecentEvent(Aws::String&& value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent = std::move(value); }
-    inline void SetLeastRecentEvent(const char* value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent.assign(value); }
-    inline IngestedEventStatistics& WithLeastRecentEvent(const Aws::String& value) { SetLeastRecentEvent(value); return *this;}
-    inline IngestedEventStatistics& WithLeastRecentEvent(Aws::String&& value) { SetLeastRecentEvent(std::move(value)); return *this;}
-    inline IngestedEventStatistics& WithLeastRecentEvent(const char* value) { SetLeastRecentEvent(value); return *this;}
+    template<typename LeastRecentEventT = Aws::String>
+    void SetLeastRecentEvent(LeastRecentEventT&& value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent = std::forward<LeastRecentEventT>(value); }
+    template<typename LeastRecentEventT = Aws::String>
+    IngestedEventStatistics& WithLeastRecentEvent(LeastRecentEventT&& value) { SetLeastRecentEvent(std::forward<LeastRecentEventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The newest stored event.</p>
      */
-    inline const Aws::String& GetMostRecentEvent() const{ return m_mostRecentEvent; }
+    inline const Aws::String& GetMostRecentEvent() const { return m_mostRecentEvent; }
     inline bool MostRecentEventHasBeenSet() const { return m_mostRecentEventHasBeenSet; }
-    inline void SetMostRecentEvent(const Aws::String& value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent = value; }
-    inline void SetMostRecentEvent(Aws::String&& value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent = std::move(value); }
-    inline void SetMostRecentEvent(const char* value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent.assign(value); }
-    inline IngestedEventStatistics& WithMostRecentEvent(const Aws::String& value) { SetMostRecentEvent(value); return *this;}
-    inline IngestedEventStatistics& WithMostRecentEvent(Aws::String&& value) { SetMostRecentEvent(std::move(value)); return *this;}
-    inline IngestedEventStatistics& WithMostRecentEvent(const char* value) { SetMostRecentEvent(value); return *this;}
+    template<typename MostRecentEventT = Aws::String>
+    void SetMostRecentEvent(MostRecentEventT&& value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent = std::forward<MostRecentEventT>(value); }
+    template<typename MostRecentEventT = Aws::String>
+    IngestedEventStatistics& WithMostRecentEvent(MostRecentEventT&& value) { SetMostRecentEvent(std::forward<MostRecentEventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp of when the stored event was last updated. </p>
      */
-    inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::String& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::String& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::String&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline void SetLastUpdatedTime(const char* value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime.assign(value); }
-    inline IngestedEventStatistics& WithLastUpdatedTime(const Aws::String& value) { SetLastUpdatedTime(value); return *this;}
-    inline IngestedEventStatistics& WithLastUpdatedTime(Aws::String&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-    inline IngestedEventStatistics& WithLastUpdatedTime(const char* value) { SetLastUpdatedTime(value); return *this;}
+    template<typename LastUpdatedTimeT = Aws::String>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::String>
+    IngestedEventStatistics& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_numberOfEvents;
+    long long m_numberOfEvents{0};
     bool m_numberOfEventsHasBeenSet = false;
 
-    long long m_eventDataSizeInBytes;
+    long long m_eventDataSizeInBytes{0};
     bool m_eventDataSizeInBytesHasBeenSet = false;
 
     Aws::String m_leastRecentEvent;

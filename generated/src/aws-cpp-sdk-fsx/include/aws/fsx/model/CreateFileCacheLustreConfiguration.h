@@ -34,7 +34,7 @@ namespace Model
   class CreateFileCacheLustreConfiguration
   {
   public:
-    AWS_FSX_API CreateFileCacheLustreConfiguration();
+    AWS_FSX_API CreateFileCacheLustreConfiguration() = default;
     AWS_FSX_API CreateFileCacheLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API CreateFileCacheLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * of cache storage capacity, in MB/s/TiB. The only supported value is
      * <code>1000</code>.</p>
      */
-    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+    inline int GetPerUnitStorageThroughput() const { return m_perUnitStorageThroughput; }
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
     inline CreateFileCacheLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
@@ -56,43 +56,39 @@ namespace Model
     /**
      * <p>Specifies the cache deployment type, which must be <code>CACHE_1</code>.</p>
      */
-    inline const FileCacheLustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline FileCacheLustreDeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const FileCacheLustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(FileCacheLustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline CreateFileCacheLustreConfiguration& WithDeploymentType(const FileCacheLustreDeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline CreateFileCacheLustreConfiguration& WithDeploymentType(FileCacheLustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(FileCacheLustreDeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline CreateFileCacheLustreConfiguration& WithDeploymentType(FileCacheLustreDeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline CreateFileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline CreateFileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline CreateFileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    CreateFileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
      */
-    inline const FileCacheLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+    inline const FileCacheLustreMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
     inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    inline void SetMetadataConfiguration(const FileCacheLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
-    inline void SetMetadataConfiguration(FileCacheLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
-    inline CreateFileCacheLustreConfiguration& WithMetadataConfiguration(const FileCacheLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
-    inline CreateFileCacheLustreConfiguration& WithMetadataConfiguration(FileCacheLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+    template<typename MetadataConfigurationT = FileCacheLustreMetadataConfiguration>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = FileCacheLustreMetadataConfiguration>
+    CreateFileCacheLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_perUnitStorageThroughput;
+    int m_perUnitStorageThroughput{0};
     bool m_perUnitStorageThroughputHasBeenSet = false;
 
-    FileCacheLustreDeploymentType m_deploymentType;
+    FileCacheLustreDeploymentType m_deploymentType{FileCacheLustreDeploymentType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;

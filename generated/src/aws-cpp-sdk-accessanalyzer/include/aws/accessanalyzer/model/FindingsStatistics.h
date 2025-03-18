@@ -34,7 +34,7 @@ namespace Model
   class FindingsStatistics
   {
   public:
-    AWS_ACCESSANALYZER_API FindingsStatistics();
+    AWS_ACCESSANALYZER_API FindingsStatistics() = default;
     AWS_ACCESSANALYZER_API FindingsStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API FindingsStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The aggregate statistics for an external access analyzer.</p>
      */
-    inline const ExternalAccessFindingsStatistics& GetExternalAccessFindingsStatistics() const{ return m_externalAccessFindingsStatistics; }
+    inline const ExternalAccessFindingsStatistics& GetExternalAccessFindingsStatistics() const { return m_externalAccessFindingsStatistics; }
     inline bool ExternalAccessFindingsStatisticsHasBeenSet() const { return m_externalAccessFindingsStatisticsHasBeenSet; }
-    inline void SetExternalAccessFindingsStatistics(const ExternalAccessFindingsStatistics& value) { m_externalAccessFindingsStatisticsHasBeenSet = true; m_externalAccessFindingsStatistics = value; }
-    inline void SetExternalAccessFindingsStatistics(ExternalAccessFindingsStatistics&& value) { m_externalAccessFindingsStatisticsHasBeenSet = true; m_externalAccessFindingsStatistics = std::move(value); }
-    inline FindingsStatistics& WithExternalAccessFindingsStatistics(const ExternalAccessFindingsStatistics& value) { SetExternalAccessFindingsStatistics(value); return *this;}
-    inline FindingsStatistics& WithExternalAccessFindingsStatistics(ExternalAccessFindingsStatistics&& value) { SetExternalAccessFindingsStatistics(std::move(value)); return *this;}
+    template<typename ExternalAccessFindingsStatisticsT = ExternalAccessFindingsStatistics>
+    void SetExternalAccessFindingsStatistics(ExternalAccessFindingsStatisticsT&& value) { m_externalAccessFindingsStatisticsHasBeenSet = true; m_externalAccessFindingsStatistics = std::forward<ExternalAccessFindingsStatisticsT>(value); }
+    template<typename ExternalAccessFindingsStatisticsT = ExternalAccessFindingsStatistics>
+    FindingsStatistics& WithExternalAccessFindingsStatistics(ExternalAccessFindingsStatisticsT&& value) { SetExternalAccessFindingsStatistics(std::forward<ExternalAccessFindingsStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregate statistics for an unused access analyzer.</p>
      */
-    inline const UnusedAccessFindingsStatistics& GetUnusedAccessFindingsStatistics() const{ return m_unusedAccessFindingsStatistics; }
+    inline const UnusedAccessFindingsStatistics& GetUnusedAccessFindingsStatistics() const { return m_unusedAccessFindingsStatistics; }
     inline bool UnusedAccessFindingsStatisticsHasBeenSet() const { return m_unusedAccessFindingsStatisticsHasBeenSet; }
-    inline void SetUnusedAccessFindingsStatistics(const UnusedAccessFindingsStatistics& value) { m_unusedAccessFindingsStatisticsHasBeenSet = true; m_unusedAccessFindingsStatistics = value; }
-    inline void SetUnusedAccessFindingsStatistics(UnusedAccessFindingsStatistics&& value) { m_unusedAccessFindingsStatisticsHasBeenSet = true; m_unusedAccessFindingsStatistics = std::move(value); }
-    inline FindingsStatistics& WithUnusedAccessFindingsStatistics(const UnusedAccessFindingsStatistics& value) { SetUnusedAccessFindingsStatistics(value); return *this;}
-    inline FindingsStatistics& WithUnusedAccessFindingsStatistics(UnusedAccessFindingsStatistics&& value) { SetUnusedAccessFindingsStatistics(std::move(value)); return *this;}
+    template<typename UnusedAccessFindingsStatisticsT = UnusedAccessFindingsStatistics>
+    void SetUnusedAccessFindingsStatistics(UnusedAccessFindingsStatisticsT&& value) { m_unusedAccessFindingsStatisticsHasBeenSet = true; m_unusedAccessFindingsStatistics = std::forward<UnusedAccessFindingsStatisticsT>(value); }
+    template<typename UnusedAccessFindingsStatisticsT = UnusedAccessFindingsStatistics>
+    FindingsStatistics& WithUnusedAccessFindingsStatistics(UnusedAccessFindingsStatisticsT&& value) { SetUnusedAccessFindingsStatistics(std::forward<UnusedAccessFindingsStatisticsT>(value)); return *this;}
     ///@}
   private:
 

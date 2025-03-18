@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceMetricsResult::GetResourceMetricsResult()
-{
-}
-
 GetResourceMetricsResult::GetResourceMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetResourceMetricsResult& GetResourceMetricsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("AlignedStartTime"))
   {
     m_alignedStartTime = jsonValue.GetDouble("AlignedStartTime");
-
+    m_alignedStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlignedEndTime"))
   {
     m_alignedEndTime = jsonValue.GetDouble("AlignedEndTime");
-
+    m_alignedEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
+    m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricList"))
   {
     Aws::Utils::Array<JsonView> metricListJsonList = jsonValue.GetArray("MetricList");
@@ -54,20 +47,20 @@ GetResourceMetricsResult& GetResourceMetricsResult::operator =(const Aws::Amazon
     {
       m_metricList.push_back(metricListJsonList[metricListIndex].AsObject());
     }
+    m_metricListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

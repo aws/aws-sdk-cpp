@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVoiceConnectorProxyResult::GetVoiceConnectorProxyResult()
-{
-}
-
 GetVoiceConnectorProxyResult::GetVoiceConnectorProxyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVoiceConnectorProxyResult& GetVoiceConnectorProxyResult::operator =(const Aws
   if(jsonValue.ValueExists("Proxy"))
   {
     m_proxy = jsonValue.GetObject("Proxy");
-
+    m_proxyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

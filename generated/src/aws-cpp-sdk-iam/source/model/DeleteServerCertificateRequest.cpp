@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteServerCertificateRequest::DeleteServerCertificateRequest() : 
-    m_serverCertificateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

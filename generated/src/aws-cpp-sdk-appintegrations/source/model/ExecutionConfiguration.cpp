@@ -18,16 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-ExecutionConfiguration::ExecutionConfiguration() : 
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_onDemandConfigurationHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false)
-{
-}
-
 ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue)
-  : ExecutionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecutionConfiguration& ExecutionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionMode"))
   {
     m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("ExecutionMode"));
-
     m_executionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandConfiguration"))
   {
     m_onDemandConfiguration = jsonValue.GetObject("OnDemandConfiguration");
-
     m_onDemandConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleConfiguration"))
   {
     m_scheduleConfiguration = jsonValue.GetObject("ScheduleConfiguration");
-
     m_scheduleConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

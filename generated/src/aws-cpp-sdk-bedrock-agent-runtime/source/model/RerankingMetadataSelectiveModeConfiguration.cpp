@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankingMetadataSelectiveModeConfiguration::RerankingMetadataSelectiveModeConfiguration() : 
-    m_fieldsToExcludeHasBeenSet(false),
-    m_fieldsToIncludeHasBeenSet(false)
-{
-}
-
 RerankingMetadataSelectiveModeConfiguration::RerankingMetadataSelectiveModeConfiguration(JsonView jsonValue)
-  : RerankingMetadataSelectiveModeConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfi
     }
     m_fieldsToExcludeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldsToInclude"))
   {
     Aws::Utils::Array<JsonView> fieldsToIncludeJsonList = jsonValue.GetArray("fieldsToInclude");
@@ -51,7 +43,6 @@ RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfi
     }
     m_fieldsToIncludeHasBeenSet = true;
   }
-
   return *this;
 }
 

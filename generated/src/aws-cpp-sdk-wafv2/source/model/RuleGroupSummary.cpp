@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RuleGroupSummary::RuleGroupSummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 RuleGroupSummary::RuleGroupSummary(JsonView jsonValue)
-  : RuleGroupSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RuleGroupSummary& RuleGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LockToken"))
   {
     m_lockToken = jsonValue.GetString("LockToken");
-
     m_lockTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

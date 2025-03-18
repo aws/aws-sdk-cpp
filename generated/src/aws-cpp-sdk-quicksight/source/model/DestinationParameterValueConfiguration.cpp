@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DestinationParameterValueConfiguration::DestinationParameterValueConfiguration() : 
-    m_customValuesConfigurationHasBeenSet(false),
-    m_selectAllValueOptions(SelectAllValueOptions::NOT_SET),
-    m_selectAllValueOptionsHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_sourceColumnHasBeenSet(false)
-{
-}
-
 DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(JsonView jsonValue)
-  : DestinationParameterValueConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DestinationParameterValueConfiguration& DestinationParameterValueConfiguration::
   if(jsonValue.ValueExists("CustomValuesConfiguration"))
   {
     m_customValuesConfiguration = jsonValue.GetObject("CustomValuesConfiguration");
-
     m_customValuesConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectAllValueOptions"))
   {
     m_selectAllValueOptions = SelectAllValueOptionsMapper::GetSelectAllValueOptionsForName(jsonValue.GetString("SelectAllValueOptions"));
-
     m_selectAllValueOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceParameterName"))
   {
     m_sourceParameterName = jsonValue.GetString("SourceParameterName");
-
     m_sourceParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceField"))
   {
     m_sourceField = jsonValue.GetString("SourceField");
-
     m_sourceFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceColumn"))
   {
     m_sourceColumn = jsonValue.GetObject("SourceColumn");
-
     m_sourceColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

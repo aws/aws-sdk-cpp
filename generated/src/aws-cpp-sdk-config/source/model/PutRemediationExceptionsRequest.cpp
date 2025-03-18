@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRemediationExceptionsRequest::PutRemediationExceptionsRequest() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceKeysHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
-{
-}
-
 Aws::String PutRemediationExceptionsRequest::SerializePayload() const
 {
   JsonValue payload;

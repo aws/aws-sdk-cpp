@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DonutCenterOptions::DonutCenterOptions() : 
-    m_labelVisibility(Visibility::NOT_SET),
-    m_labelVisibilityHasBeenSet(false)
-{
-}
-
 DonutCenterOptions::DonutCenterOptions(JsonView jsonValue)
-  : DonutCenterOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DonutCenterOptions& DonutCenterOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LabelVisibility"))
   {
     m_labelVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("LabelVisibility"));
-
     m_labelVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

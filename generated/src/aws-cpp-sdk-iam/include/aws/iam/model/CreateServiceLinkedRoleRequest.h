@@ -21,7 +21,7 @@ namespace Model
   class CreateServiceLinkedRoleRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API CreateServiceLinkedRoleRequest();
+    AWS_IAM_API CreateServiceLinkedRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,28 +49,24 @@ namespace Model
      * Choose the <b>Yes</b> link to view the service-linked role documentation for
      * that service.</p>
      */
-    inline const Aws::String& GetAWSServiceName() const{ return m_aWSServiceName; }
+    inline const Aws::String& GetAWSServiceName() const { return m_aWSServiceName; }
     inline bool AWSServiceNameHasBeenSet() const { return m_aWSServiceNameHasBeenSet; }
-    inline void SetAWSServiceName(const Aws::String& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = value; }
-    inline void SetAWSServiceName(Aws::String&& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = std::move(value); }
-    inline void SetAWSServiceName(const char* value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName.assign(value); }
-    inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const Aws::String& value) { SetAWSServiceName(value); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithAWSServiceName(Aws::String&& value) { SetAWSServiceName(std::move(value)); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const char* value) { SetAWSServiceName(value); return *this;}
+    template<typename AWSServiceNameT = Aws::String>
+    void SetAWSServiceName(AWSServiceNameT&& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = std::forward<AWSServiceNameT>(value); }
+    template<typename AWSServiceNameT = Aws::String>
+    CreateServiceLinkedRoleRequest& WithAWSServiceName(AWSServiceNameT&& value) { SetAWSServiceName(std::forward<AWSServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the role.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateServiceLinkedRoleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateServiceLinkedRoleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * provide an optional suffix and the operation fails, try the operation again
      * without the suffix.</p>
      */
-    inline const Aws::String& GetCustomSuffix() const{ return m_customSuffix; }
+    inline const Aws::String& GetCustomSuffix() const { return m_customSuffix; }
     inline bool CustomSuffixHasBeenSet() const { return m_customSuffixHasBeenSet; }
-    inline void SetCustomSuffix(const Aws::String& value) { m_customSuffixHasBeenSet = true; m_customSuffix = value; }
-    inline void SetCustomSuffix(Aws::String&& value) { m_customSuffixHasBeenSet = true; m_customSuffix = std::move(value); }
-    inline void SetCustomSuffix(const char* value) { m_customSuffixHasBeenSet = true; m_customSuffix.assign(value); }
-    inline CreateServiceLinkedRoleRequest& WithCustomSuffix(const Aws::String& value) { SetCustomSuffix(value); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithCustomSuffix(Aws::String&& value) { SetCustomSuffix(std::move(value)); return *this;}
-    inline CreateServiceLinkedRoleRequest& WithCustomSuffix(const char* value) { SetCustomSuffix(value); return *this;}
+    template<typename CustomSuffixT = Aws::String>
+    void SetCustomSuffix(CustomSuffixT&& value) { m_customSuffixHasBeenSet = true; m_customSuffix = std::forward<CustomSuffixT>(value); }
+    template<typename CustomSuffixT = Aws::String>
+    CreateServiceLinkedRoleRequest& WithCustomSuffix(CustomSuffixT&& value) { SetCustomSuffix(std::forward<CustomSuffixT>(value)); return *this;}
     ///@}
   private:
 

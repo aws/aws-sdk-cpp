@@ -28,7 +28,7 @@ namespace Model
   class StartPrimaryEmailUpdateResult
   {
   public:
-    AWS_ACCOUNT_API StartPrimaryEmailUpdateResult();
+    AWS_ACCOUNT_API StartPrimaryEmailUpdateResult() = default;
     AWS_ACCOUNT_API StartPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCOUNT_API StartPrimaryEmailUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The status of the primary email update request.</p>
      */
-    inline const PrimaryEmailUpdateStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const PrimaryEmailUpdateStatus& value) { m_status = value; }
-    inline void SetStatus(PrimaryEmailUpdateStatus&& value) { m_status = std::move(value); }
-    inline StartPrimaryEmailUpdateResult& WithStatus(const PrimaryEmailUpdateStatus& value) { SetStatus(value); return *this;}
-    inline StartPrimaryEmailUpdateResult& WithStatus(PrimaryEmailUpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PrimaryEmailUpdateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(PrimaryEmailUpdateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartPrimaryEmailUpdateResult& WithStatus(PrimaryEmailUpdateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartPrimaryEmailUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartPrimaryEmailUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartPrimaryEmailUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartPrimaryEmailUpdateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    PrimaryEmailUpdateStatus m_status;
+    PrimaryEmailUpdateStatus m_status{PrimaryEmailUpdateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

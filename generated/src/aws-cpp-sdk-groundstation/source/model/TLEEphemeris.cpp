@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-TLEEphemeris::TLEEphemeris() : 
-    m_s3ObjectHasBeenSet(false),
-    m_tleDataHasBeenSet(false)
-{
-}
-
 TLEEphemeris::TLEEphemeris(JsonView jsonValue)
-  : TLEEphemeris()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TLEEphemeris& TLEEphemeris::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Object"))
   {
     m_s3Object = jsonValue.GetObject("s3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tleData"))
   {
     Aws::Utils::Array<JsonView> tleDataJsonList = jsonValue.GetArray("tleData");
@@ -48,7 +39,6 @@ TLEEphemeris& TLEEphemeris::operator =(JsonView jsonValue)
     }
     m_tleDataHasBeenSet = true;
   }
-
   return *this;
 }
 

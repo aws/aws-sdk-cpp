@@ -22,7 +22,7 @@ namespace Model
   class DeleteFacesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DeleteFacesRequest();
+    AWS_REKOGNITION_API DeleteFacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>Collection from which to remove the specific faces.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline DeleteFacesRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline DeleteFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline DeleteFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    DeleteFacesRequest& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of face IDs to delete.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFaceIds() const{ return m_faceIds; }
+    inline const Aws::Vector<Aws::String>& GetFaceIds() const { return m_faceIds; }
     inline bool FaceIdsHasBeenSet() const { return m_faceIdsHasBeenSet; }
-    inline void SetFaceIds(const Aws::Vector<Aws::String>& value) { m_faceIdsHasBeenSet = true; m_faceIds = value; }
-    inline void SetFaceIds(Aws::Vector<Aws::String>&& value) { m_faceIdsHasBeenSet = true; m_faceIds = std::move(value); }
-    inline DeleteFacesRequest& WithFaceIds(const Aws::Vector<Aws::String>& value) { SetFaceIds(value); return *this;}
-    inline DeleteFacesRequest& WithFaceIds(Aws::Vector<Aws::String>&& value) { SetFaceIds(std::move(value)); return *this;}
-    inline DeleteFacesRequest& AddFaceIds(const Aws::String& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
-    inline DeleteFacesRequest& AddFaceIds(Aws::String&& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(std::move(value)); return *this; }
-    inline DeleteFacesRequest& AddFaceIds(const char* value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
+    template<typename FaceIdsT = Aws::Vector<Aws::String>>
+    void SetFaceIds(FaceIdsT&& value) { m_faceIdsHasBeenSet = true; m_faceIds = std::forward<FaceIdsT>(value); }
+    template<typename FaceIdsT = Aws::Vector<Aws::String>>
+    DeleteFacesRequest& WithFaceIds(FaceIdsT&& value) { SetFaceIds(std::forward<FaceIdsT>(value)); return *this;}
+    template<typename FaceIdsT = Aws::String>
+    DeleteFacesRequest& AddFaceIds(FaceIdsT&& value) { m_faceIdsHasBeenSet = true; m_faceIds.emplace_back(std::forward<FaceIdsT>(value)); return *this; }
     ///@}
   private:
 

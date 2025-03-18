@@ -34,7 +34,7 @@ namespace Model
   class DeleteClusterResult
   {
   public:
-    AWS_DSQL_API DeleteClusterResult();
+    AWS_DSQL_API DeleteClusterResult() = default;
     AWS_DSQL_API DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DSQL_API DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,82 +43,80 @@ namespace Model
     /**
      * <p>The ID of the deleted cluster.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
-    inline DeleteClusterResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline DeleteClusterResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline DeleteClusterResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    DeleteClusterResult& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the deleted cluster.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DeleteClusterResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteClusterResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteClusterResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteClusterResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the cluster.</p>
      */
-    inline const ClusterStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ClusterStatus& value) { m_status = value; }
-    inline void SetStatus(ClusterStatus&& value) { m_status = std::move(value); }
-    inline DeleteClusterResult& WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
-    inline DeleteClusterResult& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ClusterStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ClusterStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteClusterResult& WithStatus(ClusterStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of when the cluster was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DeleteClusterResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DeleteClusterResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DeleteClusterResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether deletion protection was enabled on the cluster.</p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
-    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabled = value; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline DeleteClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    ClusterStatus m_status;
+    ClusterStatus m_status{ClusterStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

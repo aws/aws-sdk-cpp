@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-InvalidRequestDetail::InvalidRequestDetail() : 
-    m_reason(InvalidRequestDetailReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InvalidRequestDetail::InvalidRequestDetail(JsonView jsonValue)
-  : InvalidRequestDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InvalidRequestDetail& InvalidRequestDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = InvalidRequestDetailReasonMapper::GetInvalidRequestDetailReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

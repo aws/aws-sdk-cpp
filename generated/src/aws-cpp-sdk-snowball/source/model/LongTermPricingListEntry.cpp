@@ -18,25 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-LongTermPricingListEntry::LongTermPricingListEntry() : 
-    m_longTermPricingIdHasBeenSet(false),
-    m_longTermPricingEndDateHasBeenSet(false),
-    m_longTermPricingStartDateHasBeenSet(false),
-    m_longTermPricingType(LongTermPricingType::NOT_SET),
-    m_longTermPricingTypeHasBeenSet(false),
-    m_currentActiveJobHasBeenSet(false),
-    m_replacementJobHasBeenSet(false),
-    m_isLongTermPricingAutoRenew(false),
-    m_isLongTermPricingAutoRenewHasBeenSet(false),
-    m_longTermPricingStatusHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_jobIdsHasBeenSet(false)
-{
-}
-
 LongTermPricingListEntry::LongTermPricingListEntry(JsonView jsonValue)
-  : LongTermPricingListEntry()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ LongTermPricingListEntry& LongTermPricingListEntry::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("LongTermPricingId"))
   {
     m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
-
     m_longTermPricingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongTermPricingEndDate"))
   {
     m_longTermPricingEndDate = jsonValue.GetDouble("LongTermPricingEndDate");
-
     m_longTermPricingEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongTermPricingStartDate"))
   {
     m_longTermPricingStartDate = jsonValue.GetDouble("LongTermPricingStartDate");
-
     m_longTermPricingStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongTermPricingType"))
   {
     m_longTermPricingType = LongTermPricingTypeMapper::GetLongTermPricingTypeForName(jsonValue.GetString("LongTermPricingType"));
-
     m_longTermPricingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentActiveJob"))
   {
     m_currentActiveJob = jsonValue.GetString("CurrentActiveJob");
-
     m_currentActiveJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplacementJob"))
   {
     m_replacementJob = jsonValue.GetString("ReplacementJob");
-
     m_replacementJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsLongTermPricingAutoRenew"))
   {
     m_isLongTermPricingAutoRenew = jsonValue.GetBool("IsLongTermPricingAutoRenew");
-
     m_isLongTermPricingAutoRenewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongTermPricingStatus"))
   {
     m_longTermPricingStatus = jsonValue.GetString("LongTermPricingStatus");
-
     m_longTermPricingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballType"))
   {
     m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
-
     m_snowballTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobIds"))
   {
     Aws::Utils::Array<JsonView> jobIdsJsonList = jsonValue.GetArray("JobIds");
@@ -115,7 +79,6 @@ LongTermPricingListEntry& LongTermPricingListEntry::operator =(JsonView jsonValu
     }
     m_jobIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

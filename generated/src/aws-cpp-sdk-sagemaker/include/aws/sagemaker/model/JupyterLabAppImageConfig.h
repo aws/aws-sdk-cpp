@@ -34,7 +34,7 @@ namespace Model
   class JupyterLabAppImageConfig
   {
   public:
-    AWS_SAGEMAKER_API JupyterLabAppImageConfig();
+    AWS_SAGEMAKER_API JupyterLabAppImageConfig() = default;
     AWS_SAGEMAKER_API JupyterLabAppImageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API JupyterLabAppImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,22 +42,22 @@ namespace Model
 
     ///@{
     
-    inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
+    inline const FileSystemConfig& GetFileSystemConfig() const { return m_fileSystemConfig; }
     inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
-    inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
-    inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
-    inline JupyterLabAppImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
-    inline JupyterLabAppImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
+    template<typename FileSystemConfigT = FileSystemConfig>
+    void SetFileSystemConfig(FileSystemConfigT&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::forward<FileSystemConfigT>(value); }
+    template<typename FileSystemConfigT = FileSystemConfig>
+    JupyterLabAppImageConfig& WithFileSystemConfig(FileSystemConfigT&& value) { SetFileSystemConfig(std::forward<FileSystemConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
+    inline const ContainerConfig& GetContainerConfig() const { return m_containerConfig; }
     inline bool ContainerConfigHasBeenSet() const { return m_containerConfigHasBeenSet; }
-    inline void SetContainerConfig(const ContainerConfig& value) { m_containerConfigHasBeenSet = true; m_containerConfig = value; }
-    inline void SetContainerConfig(ContainerConfig&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::move(value); }
-    inline JupyterLabAppImageConfig& WithContainerConfig(const ContainerConfig& value) { SetContainerConfig(value); return *this;}
-    inline JupyterLabAppImageConfig& WithContainerConfig(ContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
+    template<typename ContainerConfigT = ContainerConfig>
+    void SetContainerConfig(ContainerConfigT&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::forward<ContainerConfigT>(value); }
+    template<typename ContainerConfigT = ContainerConfig>
+    JupyterLabAppImageConfig& WithContainerConfig(ContainerConfigT&& value) { SetContainerConfig(std::forward<ContainerConfigT>(value)); return *this;}
     ///@}
   private:
 

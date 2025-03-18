@@ -34,7 +34,7 @@ namespace Model
   class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails() = default;
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,38 @@ namespace Model
     /**
      * <p>The values to use for the filter.</p>
      */
-    inline const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>& GetOperands() const{ return m_operands; }
+    inline const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>& GetOperands() const { return m_operands; }
     inline bool OperandsHasBeenSet() const { return m_operandsHasBeenSet; }
-    inline void SetOperands(const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>& value) { m_operandsHasBeenSet = true; m_operands = value; }
-    inline void SetOperands(Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>&& value) { m_operandsHasBeenSet = true; m_operands = std::move(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithOperands(const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>& value) { SetOperands(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithOperands(Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>&& value) { SetOperands(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& AddOperands(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails& value) { m_operandsHasBeenSet = true; m_operands.push_back(value); return *this; }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& AddOperands(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails&& value) { m_operandsHasBeenSet = true; m_operands.push_back(std::move(value)); return *this; }
+    template<typename OperandsT = Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>
+    void SetOperands(OperandsT&& value) { m_operandsHasBeenSet = true; m_operands = std::forward<OperandsT>(value); }
+    template<typename OperandsT = Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithOperands(OperandsT&& value) { SetOperands(std::forward<OperandsT>(value)); return *this;}
+    template<typename OperandsT = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& AddOperands(OperandsT&& value) { m_operandsHasBeenSet = true; m_operands.emplace_back(std::forward<OperandsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A prefix filter.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A tag filter.</p>
      */
-    inline const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails& GetTag() const{ return m_tag; }
+    inline const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails& GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithTag(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails& value) { SetTag(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithTag(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails&& value) { SetTag(std::move(value)); return *this;}
+    template<typename TagT = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>
+    void SetTag(TagT&& value) { m_tagHasBeenSet = true; m_tag = std::forward<TagT>(value); }
+    template<typename TagT = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithTag(TagT&& value) { SetTag(std::forward<TagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * Valid values are <code>LifecycleAndOperator</code> or
      * <code>LifecycleOrOperator</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

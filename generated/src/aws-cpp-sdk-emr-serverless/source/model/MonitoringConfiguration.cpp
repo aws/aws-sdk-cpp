@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-MonitoringConfiguration::MonitoringConfiguration() : 
-    m_s3MonitoringConfigurationHasBeenSet(false),
-    m_managedPersistenceMonitoringConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingConfigurationHasBeenSet(false),
-    m_prometheusMonitoringConfigurationHasBeenSet(false)
-{
-}
-
 MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue)
-  : MonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MonitoringConfiguration& MonitoringConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3MonitoringConfiguration"))
   {
     m_s3MonitoringConfiguration = jsonValue.GetObject("s3MonitoringConfiguration");
-
     m_s3MonitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedPersistenceMonitoringConfiguration"))
   {
     m_managedPersistenceMonitoringConfiguration = jsonValue.GetObject("managedPersistenceMonitoringConfiguration");
-
     m_managedPersistenceMonitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchLoggingConfiguration"))
   {
     m_cloudWatchLoggingConfiguration = jsonValue.GetObject("cloudWatchLoggingConfiguration");
-
     m_cloudWatchLoggingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prometheusMonitoringConfiguration"))
   {
     m_prometheusMonitoringConfiguration = jsonValue.GetObject("prometheusMonitoringConfiguration");
-
     m_prometheusMonitoringConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

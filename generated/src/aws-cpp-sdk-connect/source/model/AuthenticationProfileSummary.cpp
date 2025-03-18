@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AuthenticationProfileSummary::AuthenticationProfileSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 AuthenticationProfileSummary::AuthenticationProfileSummary(JsonView jsonValue)
-  : AuthenticationProfileSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AuthenticationProfileSummary& AuthenticationProfileSummary::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingRequest() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_reservedInstancesOfferingIdHasBeenSet(false),
-    m_purchaseTimeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_limitPriceHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

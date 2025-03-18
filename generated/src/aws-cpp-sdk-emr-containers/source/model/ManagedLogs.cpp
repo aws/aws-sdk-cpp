@@ -18,15 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-ManagedLogs::ManagedLogs() : 
-    m_allowAWSToRetainLogs(AllowAWSToRetainLogs::NOT_SET),
-    m_allowAWSToRetainLogsHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
-{
-}
-
 ManagedLogs::ManagedLogs(JsonView jsonValue)
-  : ManagedLogs()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ManagedLogs& ManagedLogs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowAWSToRetainLogs"))
   {
     m_allowAWSToRetainLogs = AllowAWSToRetainLogsMapper::GetAllowAWSToRetainLogsForName(jsonValue.GetString("allowAWSToRetainLogs"));
-
     m_allowAWSToRetainLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

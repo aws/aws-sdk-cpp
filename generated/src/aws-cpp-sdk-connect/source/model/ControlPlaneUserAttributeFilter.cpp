@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ControlPlaneUserAttributeFilter::ControlPlaneUserAttributeFilter() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionHasBeenSet(false),
-    m_tagConditionHasBeenSet(false),
-    m_hierarchyGroupConditionHasBeenSet(false)
-{
-}
-
 ControlPlaneUserAttributeFilter::ControlPlaneUserAttributeFilter(JsonView jsonValue)
-  : ControlPlaneUserAttributeFilter()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ ControlPlaneUserAttributeFilter& ControlPlaneUserAttributeFilter::operator =(Jso
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndCondition"))
   {
     m_andCondition = jsonValue.GetObject("AndCondition");
-
     m_andConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagCondition"))
   {
     m_tagCondition = jsonValue.GetObject("TagCondition");
-
     m_tagConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyGroupCondition"))
   {
     m_hierarchyGroupCondition = jsonValue.GetObject("HierarchyGroupCondition");
-
     m_hierarchyGroupConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

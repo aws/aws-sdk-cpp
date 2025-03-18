@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointTypesResult::DescribeEndpointTypesResult()
-{
-}
-
 DescribeEndpointTypesResult::DescribeEndpointTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedEndpointTypes"))
   {
     Aws::Utils::Array<JsonView> supportedEndpointTypesJsonList = jsonValue.GetArray("SupportedEndpointTypes");
@@ -42,14 +37,15 @@ DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::
     {
       m_supportedEndpointTypes.push_back(supportedEndpointTypesJsonList[supportedEndpointTypesIndex].AsObject());
     }
+    m_supportedEndpointTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

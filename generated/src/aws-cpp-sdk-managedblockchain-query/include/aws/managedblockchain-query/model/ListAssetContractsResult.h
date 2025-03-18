@@ -29,7 +29,7 @@ namespace Model
   class ListAssetContractsResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ListAssetContractsResult();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ListAssetContractsResult() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API ListAssetContractsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAINQUERY_API ListAssetContractsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>An array of contract objects that contain the properties for each
      * contract.</p>
      */
-    inline const Aws::Vector<AssetContract>& GetContracts() const{ return m_contracts; }
-    inline void SetContracts(const Aws::Vector<AssetContract>& value) { m_contracts = value; }
-    inline void SetContracts(Aws::Vector<AssetContract>&& value) { m_contracts = std::move(value); }
-    inline ListAssetContractsResult& WithContracts(const Aws::Vector<AssetContract>& value) { SetContracts(value); return *this;}
-    inline ListAssetContractsResult& WithContracts(Aws::Vector<AssetContract>&& value) { SetContracts(std::move(value)); return *this;}
-    inline ListAssetContractsResult& AddContracts(const AssetContract& value) { m_contracts.push_back(value); return *this; }
-    inline ListAssetContractsResult& AddContracts(AssetContract&& value) { m_contracts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssetContract>& GetContracts() const { return m_contracts; }
+    template<typename ContractsT = Aws::Vector<AssetContract>>
+    void SetContracts(ContractsT&& value) { m_contractsHasBeenSet = true; m_contracts = std::forward<ContractsT>(value); }
+    template<typename ContractsT = Aws::Vector<AssetContract>>
+    ListAssetContractsResult& WithContracts(ContractsT&& value) { SetContracts(std::forward<ContractsT>(value)); return *this;}
+    template<typename ContractsT = AssetContract>
+    ListAssetContractsResult& AddContracts(ContractsT&& value) { m_contractsHasBeenSet = true; m_contracts.emplace_back(std::forward<ContractsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAssetContractsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssetContractsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssetContractsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssetContractsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAssetContractsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAssetContractsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAssetContractsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAssetContractsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssetContract> m_contracts;
+    bool m_contractsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

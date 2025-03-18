@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult() : 
-    m_edgeDeploymentSuccess(0),
-    m_edgeDeploymentPending(0),
-    m_edgeDeploymentFailed(0)
-{
-}
-
 DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeEdgeDeploymentPlanResult()
 {
   *this = result;
 }
@@ -36,15 +28,13 @@ DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator =(c
   if(jsonValue.ValueExists("EdgeDeploymentPlanArn"))
   {
     m_edgeDeploymentPlanArn = jsonValue.GetString("EdgeDeploymentPlanArn");
-
+    m_edgeDeploymentPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeDeploymentPlanName"))
   {
     m_edgeDeploymentPlanName = jsonValue.GetString("EdgeDeploymentPlanName");
-
+    m_edgeDeploymentPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelConfigs"))
   {
     Aws::Utils::Array<JsonView> modelConfigsJsonList = jsonValue.GetArray("ModelConfigs");
@@ -52,32 +42,28 @@ DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator =(c
     {
       m_modelConfigs.push_back(modelConfigsJsonList[modelConfigsIndex].AsObject());
     }
+    m_modelConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceFleetName"))
   {
     m_deviceFleetName = jsonValue.GetString("DeviceFleetName");
-
+    m_deviceFleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeDeploymentSuccess"))
   {
     m_edgeDeploymentSuccess = jsonValue.GetInteger("EdgeDeploymentSuccess");
-
+    m_edgeDeploymentSuccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeDeploymentPending"))
   {
     m_edgeDeploymentPending = jsonValue.GetInteger("EdgeDeploymentPending");
-
+    m_edgeDeploymentPendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeDeploymentFailed"))
   {
     m_edgeDeploymentFailed = jsonValue.GetInteger("EdgeDeploymentFailed");
-
+    m_edgeDeploymentFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stages"))
   {
     Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("Stages");
@@ -85,32 +71,30 @@ DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator =(c
     {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());
     }
+    m_stagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

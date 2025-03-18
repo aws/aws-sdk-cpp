@@ -24,7 +24,7 @@ namespace Model
   class DeleteRecommendationPreferencesRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesRequest();
+    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
      * an Auto Scaling group.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline DeleteRecommendationPreferencesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline DeleteRecommendationPreferencesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline DeleteRecommendationPreferencesRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,30 +61,29 @@ namespace Model
      * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
      * Guide</i>.</p>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline DeleteRecommendationPreferencesRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline DeleteRecommendationPreferencesRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    DeleteRecommendationPreferencesRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the recommendation preference to delete.</p>
      */
-    inline const Aws::Vector<RecommendationPreferenceName>& GetRecommendationPreferenceNames() const{ return m_recommendationPreferenceNames; }
+    inline const Aws::Vector<RecommendationPreferenceName>& GetRecommendationPreferenceNames() const { return m_recommendationPreferenceNames; }
     inline bool RecommendationPreferenceNamesHasBeenSet() const { return m_recommendationPreferenceNamesHasBeenSet; }
-    inline void SetRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = value; }
-    inline void SetRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = std::move(value); }
-    inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { SetRecommendationPreferenceNames(value); return *this;}
-    inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { SetRecommendationPreferenceNames(std::move(value)); return *this;}
-    inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(const RecommendationPreferenceName& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(value); return *this; }
-    inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(RecommendationPreferenceName&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(std::move(value)); return *this; }
+    template<typename RecommendationPreferenceNamesT = Aws::Vector<RecommendationPreferenceName>>
+    void SetRecommendationPreferenceNames(RecommendationPreferenceNamesT&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = std::forward<RecommendationPreferenceNamesT>(value); }
+    template<typename RecommendationPreferenceNamesT = Aws::Vector<RecommendationPreferenceName>>
+    DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(RecommendationPreferenceNamesT&& value) { SetRecommendationPreferenceNames(std::forward<RecommendationPreferenceNamesT>(value)); return *this;}
+    inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(RecommendationPreferenceName value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(value); return *this; }
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Scope m_scope;

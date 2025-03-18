@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LabelOptions::LabelOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_customLabelHasBeenSet(false)
-{
-}
-
 LabelOptions::LabelOptions(JsonView jsonValue)
-  : LabelOptions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LabelOptions& LabelOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FontConfiguration"))
   {
     m_fontConfiguration = jsonValue.GetObject("FontConfiguration");
-
     m_fontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Output::Output() : 
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_format(OutputFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_partitionColumnsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_overwrite(false),
-    m_overwriteHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_maxOutputFiles(0),
-    m_maxOutputFilesHasBeenSet(false)
-{
-}
-
 Output::Output(JsonView jsonValue)
-  : Output()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ Output& Output::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompressionFormat"))
   {
     m_compressionFormat = CompressionFormatMapper::GetCompressionFormatForName(jsonValue.GetString("CompressionFormat"));
-
     m_compressionFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionColumns"))
   {
     Aws::Utils::Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("PartitionColumns");
@@ -64,35 +44,26 @@ Output& Output::operator =(JsonView jsonValue)
     }
     m_partitionColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Overwrite"))
   {
     m_overwrite = jsonValue.GetBool("Overwrite");
-
     m_overwriteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatOptions"))
   {
     m_formatOptions = jsonValue.GetObject("FormatOptions");
-
     m_formatOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxOutputFiles"))
   {
     m_maxOutputFiles = jsonValue.GetInteger("MaxOutputFiles");
-
     m_maxOutputFilesHasBeenSet = true;
   }
-
   return *this;
 }
 

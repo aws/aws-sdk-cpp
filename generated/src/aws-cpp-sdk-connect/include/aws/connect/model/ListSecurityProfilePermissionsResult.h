@@ -29,7 +29,7 @@ namespace Model
   class ListSecurityProfilePermissionsResult
   {
   public:
-    AWS_CONNECT_API ListSecurityProfilePermissionsResult();
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult() = default;
     AWS_CONNECT_API ListSecurityProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,14 +41,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
      * of security profile permissions</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissions = std::move(value); }
-    inline ListSecurityProfilePermissionsResult& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline ListSecurityProfilePermissionsResult& AddPermissions(const Aws::String& value) { m_permissions.push_back(value); return *this; }
-    inline ListSecurityProfilePermissionsResult& AddPermissions(Aws::String&& value) { m_permissions.push_back(std::move(value)); return *this; }
-    inline ListSecurityProfilePermissionsResult& AddPermissions(const char* value) { m_permissions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<Aws::String>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Aws::String>>
+    ListSecurityProfilePermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = Aws::String>
+    ListSecurityProfilePermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,60 +55,59 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSecurityProfilePermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSecurityProfilePermissionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline ListSecurityProfilePermissionsResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ListSecurityProfilePermissionsResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegion.assign(value); }
-    inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    ListSecurityProfilePermissionsResult& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSecurityProfilePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSecurityProfilePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSecurityProfilePermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;
+    bool m_lastModifiedRegionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

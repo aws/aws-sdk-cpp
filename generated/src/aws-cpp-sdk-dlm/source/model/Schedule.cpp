@@ -18,24 +18,7 @@ namespace DLM
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_nameHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_tagsToAddHasBeenSet(false),
-    m_variableTagsHasBeenSet(false),
-    m_createRuleHasBeenSet(false),
-    m_retainRuleHasBeenSet(false),
-    m_fastRestoreRuleHasBeenSet(false),
-    m_crossRegionCopyRulesHasBeenSet(false),
-    m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false),
-    m_archiveRuleHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTags"))
   {
     m_copyTags = jsonValue.GetBool("CopyTags");
-
     m_copyTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagsToAdd"))
   {
     Aws::Utils::Array<JsonView> tagsToAddJsonList = jsonValue.GetArray("TagsToAdd");
@@ -65,7 +44,6 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_tagsToAddHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VariableTags"))
   {
     Aws::Utils::Array<JsonView> variableTagsJsonList = jsonValue.GetArray("VariableTags");
@@ -75,28 +53,21 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_variableTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateRule"))
   {
     m_createRule = jsonValue.GetObject("CreateRule");
-
     m_createRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetainRule"))
   {
     m_retainRule = jsonValue.GetObject("RetainRule");
-
     m_retainRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FastRestoreRule"))
   {
     m_fastRestoreRule = jsonValue.GetObject("FastRestoreRule");
-
     m_fastRestoreRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossRegionCopyRules"))
   {
     Aws::Utils::Array<JsonView> crossRegionCopyRulesJsonList = jsonValue.GetArray("CrossRegionCopyRules");
@@ -106,7 +77,6 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_crossRegionCopyRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareRules"))
   {
     Aws::Utils::Array<JsonView> shareRulesJsonList = jsonValue.GetArray("ShareRules");
@@ -116,21 +86,16 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_shareRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeprecateRule"))
   {
     m_deprecateRule = jsonValue.GetObject("DeprecateRule");
-
     m_deprecateRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveRule"))
   {
     m_archiveRule = jsonValue.GetObject("ArchiveRule");
-
     m_archiveRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

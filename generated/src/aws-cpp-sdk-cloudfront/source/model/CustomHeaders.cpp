@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CustomHeaders::CustomHeaders() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 CustomHeaders::CustomHeaders(const XmlNode& xmlNode)
-  : CustomHeaders()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ CustomHeaders& CustomHeaders::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("OriginCustomHeader");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

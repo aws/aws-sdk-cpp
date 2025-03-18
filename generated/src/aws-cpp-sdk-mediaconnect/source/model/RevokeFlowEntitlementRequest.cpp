@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeFlowEntitlementRequest::RevokeFlowEntitlementRequest() : 
-    m_entitlementArnHasBeenSet(false),
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String RevokeFlowEntitlementRequest::SerializePayload() const
 {
   return {};

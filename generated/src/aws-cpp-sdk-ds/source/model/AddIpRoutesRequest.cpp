@@ -12,14 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddIpRoutesRequest::AddIpRoutesRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_ipRoutesHasBeenSet(false),
-    m_updateSecurityGroupForDirectoryControllers(false),
-    m_updateSecurityGroupForDirectoryControllersHasBeenSet(false)
-{
-}
-
 Aws::String AddIpRoutesRequest::SerializePayload() const
 {
   JsonValue payload;

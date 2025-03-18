@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-IotSiteWiseAction::IotSiteWiseAction() : 
-    m_putAssetPropertyValueEntriesHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue)
-  : IotSiteWiseAction()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ IotSiteWiseAction& IotSiteWiseAction::operator =(JsonView jsonValue)
     }
     m_putAssetPropertyValueEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProfileRequest::GetProfileRequest() : 
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters() : 
-    m_runCommandHasBeenSet(false),
-    m_automationHasBeenSet(false),
-    m_stepFunctionsHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
-{
-}
-
 MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters(JsonView jsonValue)
-  : MaintenanceWindowTaskInvocationParameters()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MaintenanceWindowTaskInvocationParameters& MaintenanceWindowTaskInvocationParame
   if(jsonValue.ValueExists("RunCommand"))
   {
     m_runCommand = jsonValue.GetObject("RunCommand");
-
     m_runCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Automation"))
   {
     m_automation = jsonValue.GetObject("Automation");
-
     m_automationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepFunctions"))
   {
     m_stepFunctions = jsonValue.GetObject("StepFunctions");
-
     m_stepFunctionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lambda"))
   {
     m_lambda = jsonValue.GetObject("Lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   return *this;
 }
 

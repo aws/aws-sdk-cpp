@@ -28,7 +28,7 @@ namespace Model
   class GetMetricsSummaryResult
   {
   public:
-    AWS_CODEGURUSECURITY_API GetMetricsSummaryResult();
+    AWS_CODEGURUSECURITY_API GetMetricsSummaryResult() = default;
     AWS_CODEGURUSECURITY_API GetMetricsSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUSECURITY_API GetMetricsSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The summary metrics from the specified date.</p>
      */
-    inline const MetricsSummary& GetMetricsSummary() const{ return m_metricsSummary; }
-    inline void SetMetricsSummary(const MetricsSummary& value) { m_metricsSummary = value; }
-    inline void SetMetricsSummary(MetricsSummary&& value) { m_metricsSummary = std::move(value); }
-    inline GetMetricsSummaryResult& WithMetricsSummary(const MetricsSummary& value) { SetMetricsSummary(value); return *this;}
-    inline GetMetricsSummaryResult& WithMetricsSummary(MetricsSummary&& value) { SetMetricsSummary(std::move(value)); return *this;}
+    inline const MetricsSummary& GetMetricsSummary() const { return m_metricsSummary; }
+    template<typename MetricsSummaryT = MetricsSummary>
+    void SetMetricsSummary(MetricsSummaryT&& value) { m_metricsSummaryHasBeenSet = true; m_metricsSummary = std::forward<MetricsSummaryT>(value); }
+    template<typename MetricsSummaryT = MetricsSummary>
+    GetMetricsSummaryResult& WithMetricsSummary(MetricsSummaryT&& value) { SetMetricsSummary(std::forward<MetricsSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMetricsSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMetricsSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMetricsSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMetricsSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MetricsSummary m_metricsSummary;
+    bool m_metricsSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

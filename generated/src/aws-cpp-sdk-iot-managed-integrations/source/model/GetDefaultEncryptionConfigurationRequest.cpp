@@ -12,10 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDefaultEncryptionConfigurationRequest::GetDefaultEncryptionConfigurationRequest()
-{
-}
-
 Aws::String GetDefaultEncryptionConfigurationRequest::SerializePayload() const
 {
   return {};

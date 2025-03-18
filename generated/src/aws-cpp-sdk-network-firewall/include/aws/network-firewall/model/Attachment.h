@@ -34,7 +34,7 @@ namespace Model
   class Attachment
   {
   public:
-    AWS_NETWORKFIREWALL_API Attachment();
+    AWS_NETWORKFIREWALL_API Attachment() = default;
     AWS_NETWORKFIREWALL_API Attachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The unique identifier of the subnet that you've specified to be used for a
      * firewall endpoint. </p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline Attachment& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline Attachment& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline Attachment& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    Attachment& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * the VPC route tables, when you redirect the VPC traffic through the endpoint.
      * </p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline Attachment& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline Attachment& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline Attachment& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    Attachment& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * reflect its state, for example <code>CREATING</code> or
      * <code>DELETING</code>.</p>
      */
-    inline const AttachmentStatus& GetStatus() const{ return m_status; }
+    inline AttachmentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AttachmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Attachment& WithStatus(const AttachmentStatus& value) { SetStatus(value); return *this;}
-    inline Attachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AttachmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Attachment& WithStatus(AttachmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * firewall endpoint failures</a> in the <i>Network Firewall Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline Attachment& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline Attachment& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline Attachment& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    Attachment& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,7 +112,7 @@ namespace Model
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
 
-    AttachmentStatus m_status;
+    AttachmentStatus m_status{AttachmentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

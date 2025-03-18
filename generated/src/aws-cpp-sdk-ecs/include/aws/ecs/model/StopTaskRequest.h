@@ -21,7 +21,7 @@ namespace Model
   class StopTaskRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API StopTaskRequest();
+    AWS_ECS_API StopTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * the task to stop. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline StopTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline StopTaskRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline StopTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    StopTaskRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Thefull Amazon Resource Name (ARN) of the task.</p>
      */
-    inline const Aws::String& GetTask() const{ return m_task; }
+    inline const Aws::String& GetTask() const { return m_task; }
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
-    inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
-    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
-    inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
-    inline StopTaskRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
-    inline StopTaskRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
-    inline StopTaskRequest& WithTask(const char* value) { SetTask(value); return *this;}
+    template<typename TaskT = Aws::String>
+    void SetTask(TaskT&& value) { m_taskHasBeenSet = true; m_task = std::forward<TaskT>(value); }
+    template<typename TaskT = Aws::String>
+    StopTaskRequest& WithTask(TaskT&& value) { SetTask(std::forward<TaskT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt;
      * API operations on this task.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline StopTaskRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline StopTaskRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline StopTaskRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    StopTaskRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

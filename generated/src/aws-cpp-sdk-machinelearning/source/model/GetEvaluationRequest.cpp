@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEvaluationRequest::GetEvaluationRequest() : 
-    m_evaluationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class InitiateMultipartUploadRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API InitiateMultipartUploadRequest();
+    AWS_GLACIER_API InitiateMultipartUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
      * ID associated with the credentials used to sign the request. If you use an
      * account ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline InitiateMultipartUploadRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline InitiateMultipartUploadRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline InitiateMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InitiateMultipartUploadRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-    inline InitiateMultipartUploadRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline InitiateMultipartUploadRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline InitiateMultipartUploadRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    InitiateMultipartUploadRequest& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum
      * allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
      */
-    inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+    inline const Aws::String& GetArchiveDescription() const { return m_archiveDescription; }
     inline bool ArchiveDescriptionHasBeenSet() const { return m_archiveDescriptionHasBeenSet; }
-    inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
-    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::move(value); }
-    inline void SetArchiveDescription(const char* value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription.assign(value); }
-    inline InitiateMultipartUploadRequest& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
-    inline InitiateMultipartUploadRequest& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(std::move(value)); return *this;}
-    inline InitiateMultipartUploadRequest& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
+    template<typename ArchiveDescriptionT = Aws::String>
+    void SetArchiveDescription(ArchiveDescriptionT&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::forward<ArchiveDescriptionT>(value); }
+    template<typename ArchiveDescriptionT = Aws::String>
+    InitiateMultipartUploadRequest& WithArchiveDescription(ArchiveDescriptionT&& value) { SetArchiveDescription(std::forward<ArchiveDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * <p>The size of each part except the last, in bytes. The last part can be smaller
      * than this part size.</p>
      */
-    inline const Aws::String& GetPartSize() const{ return m_partSize; }
+    inline const Aws::String& GetPartSize() const { return m_partSize; }
     inline bool PartSizeHasBeenSet() const { return m_partSizeHasBeenSet; }
-    inline void SetPartSize(const Aws::String& value) { m_partSizeHasBeenSet = true; m_partSize = value; }
-    inline void SetPartSize(Aws::String&& value) { m_partSizeHasBeenSet = true; m_partSize = std::move(value); }
-    inline void SetPartSize(const char* value) { m_partSizeHasBeenSet = true; m_partSize.assign(value); }
-    inline InitiateMultipartUploadRequest& WithPartSize(const Aws::String& value) { SetPartSize(value); return *this;}
-    inline InitiateMultipartUploadRequest& WithPartSize(Aws::String&& value) { SetPartSize(std::move(value)); return *this;}
-    inline InitiateMultipartUploadRequest& WithPartSize(const char* value) { SetPartSize(value); return *this;}
+    template<typename PartSizeT = Aws::String>
+    void SetPartSize(PartSizeT&& value) { m_partSizeHasBeenSet = true; m_partSize = std::forward<PartSizeT>(value); }
+    template<typename PartSizeT = Aws::String>
+    InitiateMultipartUploadRequest& WithPartSize(PartSizeT&& value) { SetPartSize(std::forward<PartSizeT>(value)); return *this;}
     ///@}
   private:
 

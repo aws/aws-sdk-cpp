@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceConditionNodeResultEvent::FlowTraceConditionNodeResultEvent() : 
-    m_nodeNameHasBeenSet(false),
-    m_satisfiedConditionsHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 FlowTraceConditionNodeResultEvent::FlowTraceConditionNodeResultEvent(JsonView jsonValue)
-  : FlowTraceConditionNodeResultEvent()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FlowTraceConditionNodeResultEvent& FlowTraceConditionNodeResultEvent::operator =
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("satisfiedConditions"))
   {
     Aws::Utils::Array<JsonView> satisfiedConditionsJsonList = jsonValue.GetArray("satisfiedConditions");
@@ -49,14 +39,11 @@ FlowTraceConditionNodeResultEvent& FlowTraceConditionNodeResultEvent::operator =
     }
     m_satisfiedConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-SelfManageResources::SelfManageResources() : 
-    m_targetDestinationHasBeenSet(false)
-{
-}
-
 SelfManageResources::SelfManageResources(JsonView jsonValue)
-  : SelfManageResources()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SelfManageResources& SelfManageResources::operator =(JsonView jsonValue)
     }
     m_targetDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

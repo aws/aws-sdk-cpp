@@ -19,7 +19,7 @@ namespace Model
   class DescribeEventConfigurationsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DescribeEventConfigurationsRequest();
+    AWS_IOT_API DescribeEventConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

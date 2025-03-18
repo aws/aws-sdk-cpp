@@ -12,19 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFileRequest::DeleteFileRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_parentCommitIdHasBeenSet(false),
-    m_keepEmptyFolders(false),
-    m_keepEmptyFoldersHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFileRequest::SerializePayload() const
 {
   JsonValue payload;

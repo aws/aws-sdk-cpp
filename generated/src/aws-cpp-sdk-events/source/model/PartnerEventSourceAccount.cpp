@@ -18,17 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-PartnerEventSourceAccount::PartnerEventSourceAccount() : 
-    m_accountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_state(EventSourceState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 PartnerEventSourceAccount::PartnerEventSourceAccount(JsonView jsonValue)
-  : PartnerEventSourceAccount()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PartnerEventSourceAccount& PartnerEventSourceAccount::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetString("Account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EventSourceStateMapper::GetEventSourceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

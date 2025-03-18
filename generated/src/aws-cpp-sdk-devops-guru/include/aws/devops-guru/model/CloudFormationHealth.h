@@ -34,7 +34,7 @@ namespace Model
   class CloudFormationHealth
   {
   public:
-    AWS_DEVOPSGURU_API CloudFormationHealth();
+    AWS_DEVOPSGURU_API CloudFormationHealth() = default;
     AWS_DEVOPSGURU_API CloudFormationHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API CloudFormationHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The name of the CloudFormation stack. </p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline CloudFormationHealth& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline CloudFormationHealth& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline CloudFormationHealth& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    CloudFormationHealth& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * including the number of open proactive, open reactive insights, and the Mean
      * Time to Recover (MTTR) of closed insights. </p>
      */
-    inline const InsightHealth& GetInsight() const{ return m_insight; }
+    inline const InsightHealth& GetInsight() const { return m_insight; }
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
-    inline void SetInsight(const InsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
-    inline void SetInsight(InsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
-    inline CloudFormationHealth& WithInsight(const InsightHealth& value) { SetInsight(value); return *this;}
-    inline CloudFormationHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
+    template<typename InsightT = InsightHealth>
+    void SetInsight(InsightT&& value) { m_insightHasBeenSet = true; m_insight = std::forward<InsightT>(value); }
+    template<typename InsightT = InsightHealth>
+    CloudFormationHealth& WithInsight(InsightT&& value) { SetInsight(std::forward<InsightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * <p> Number of resources that DevOps Guru is monitoring in your account that are
      * specified by an Amazon Web Services CloudFormation stack. </p>
      */
-    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+    inline long long GetAnalyzedResourceCount() const { return m_analyzedResourceCount; }
     inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
     inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
     inline CloudFormationHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
     InsightHealth m_insight;
     bool m_insightHasBeenSet = false;
 
-    long long m_analyzedResourceCount;
+    long long m_analyzedResourceCount{0};
     bool m_analyzedResourceCountHasBeenSet = false;
   };
 

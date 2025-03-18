@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Target::Target() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ Target& Target::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

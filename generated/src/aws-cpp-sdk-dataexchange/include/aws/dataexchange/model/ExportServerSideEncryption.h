@@ -34,7 +34,7 @@ namespace Model
   class ExportServerSideEncryption
   {
   public:
-    AWS_DATAEXCHANGE_API ExportServerSideEncryption();
+    AWS_DATAEXCHANGE_API ExportServerSideEncryption() = default;
     AWS_DATAEXCHANGE_API ExportServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API ExportServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
      * encryption type.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline ExportServerSideEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline ExportServerSideEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline ExportServerSideEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    ExportServerSideEncryption& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * <p>The type of server side encryption used for encrypting the objects in Amazon
      * S3.</p>
      */
-    inline const ServerSideEncryptionTypes& GetType() const{ return m_type; }
+    inline ServerSideEncryptionTypes GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ServerSideEncryptionTypes& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ServerSideEncryptionTypes&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ExportServerSideEncryption& WithType(const ServerSideEncryptionTypes& value) { SetType(value); return *this;}
-    inline ExportServerSideEncryption& WithType(ServerSideEncryptionTypes&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ServerSideEncryptionTypes value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ExportServerSideEncryption& WithType(ServerSideEncryptionTypes value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
 
-    ServerSideEncryptionTypes m_type;
+    ServerSideEncryptionTypes m_type{ServerSideEncryptionTypes::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

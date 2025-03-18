@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SessionContext::SessionContext() : 
-    m_attributesHasBeenSet(false),
-    m_sessionIssuerHasBeenSet(false)
-{
-}
-
 SessionContext::SessionContext(JsonView jsonValue)
-  : SessionContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SessionContext& SessionContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributes"))
   {
     m_attributes = jsonValue.GetObject("attributes");
-
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionIssuer"))
   {
     m_sessionIssuer = jsonValue.GetObject("sessionIssuer");
-
     m_sessionIssuerHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-AudioStandardOutputConfiguration::AudioStandardOutputConfiguration() : 
-    m_extractionHasBeenSet(false),
-    m_generativeFieldHasBeenSet(false)
-{
-}
-
 AudioStandardOutputConfiguration::AudioStandardOutputConfiguration(JsonView jsonValue)
-  : AudioStandardOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AudioStandardOutputConfiguration& AudioStandardOutputConfiguration::operator =(J
   if(jsonValue.ValueExists("extraction"))
   {
     m_extraction = jsonValue.GetObject("extraction");
-
     m_extractionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generativeField"))
   {
     m_generativeField = jsonValue.GetObject("generativeField");
-
     m_generativeFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

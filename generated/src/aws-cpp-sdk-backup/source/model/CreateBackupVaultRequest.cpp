@@ -12,14 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupVaultRequest::CreateBackupVaultRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultTagsHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateBackupVaultRequest::SerializePayload() const
 {
   JsonValue payload;

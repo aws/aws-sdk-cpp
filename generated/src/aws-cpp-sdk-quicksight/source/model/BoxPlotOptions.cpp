@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotOptions::BoxPlotOptions() : 
-    m_styleOptionsHasBeenSet(false),
-    m_outlierVisibility(Visibility::NOT_SET),
-    m_outlierVisibilityHasBeenSet(false),
-    m_allDataPointsVisibility(Visibility::NOT_SET),
-    m_allDataPointsVisibilityHasBeenSet(false)
-{
-}
-
 BoxPlotOptions::BoxPlotOptions(JsonView jsonValue)
-  : BoxPlotOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ BoxPlotOptions& BoxPlotOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StyleOptions"))
   {
     m_styleOptions = jsonValue.GetObject("StyleOptions");
-
     m_styleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutlierVisibility"))
   {
     m_outlierVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("OutlierVisibility"));
-
     m_outlierVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllDataPointsVisibility"))
   {
     m_allDataPointsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("AllDataPointsVisibility"));
-
     m_allDataPointsVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

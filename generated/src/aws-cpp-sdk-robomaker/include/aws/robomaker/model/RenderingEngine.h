@@ -32,7 +32,7 @@ namespace Model
   class RenderingEngine
   {
   public:
-    AWS_ROBOMAKER_API RenderingEngine();
+    AWS_ROBOMAKER_API RenderingEngine() = default;
     AWS_ROBOMAKER_API RenderingEngine(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API RenderingEngine& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The name of the rendering engine.</p>
      */
-    inline const RenderingEngineType& GetName() const{ return m_name; }
+    inline RenderingEngineType GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RenderingEngineType& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RenderingEngineType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RenderingEngine& WithName(const RenderingEngineType& value) { SetName(value); return *this;}
-    inline RenderingEngine& WithName(RenderingEngineType&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RenderingEngineType value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RenderingEngine& WithName(RenderingEngineType value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the rendering engine.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline RenderingEngine& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline RenderingEngine& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline RenderingEngine& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    RenderingEngine& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    RenderingEngineType m_name;
+    RenderingEngineType m_name{RenderingEngineType::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_version;

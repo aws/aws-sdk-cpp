@@ -21,7 +21,7 @@ namespace Model
   class GetPackageRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetPackageRequest();
+    AWS_IOT_API GetPackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the target software package.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-    inline GetPackageRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline GetPackageRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline GetPackageRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    GetPackageRequest& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
   private:
 

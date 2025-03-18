@@ -28,7 +28,7 @@ namespace Model
   class DescribeTargetedSentimentDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeTargetedSentimentDetectionJobResult();
+    AWS_COMPREHEND_API DescribeTargetedSentimentDetectionJobResult() = default;
     AWS_COMPREHEND_API DescribeTargetedSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeTargetedSentimentDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with a targeted sentiment
      * detection job.</p>
      */
-    inline const TargetedSentimentDetectionJobProperties& GetTargetedSentimentDetectionJobProperties() const{ return m_targetedSentimentDetectionJobProperties; }
-    inline void SetTargetedSentimentDetectionJobProperties(const TargetedSentimentDetectionJobProperties& value) { m_targetedSentimentDetectionJobProperties = value; }
-    inline void SetTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobProperties&& value) { m_targetedSentimentDetectionJobProperties = std::move(value); }
-    inline DescribeTargetedSentimentDetectionJobResult& WithTargetedSentimentDetectionJobProperties(const TargetedSentimentDetectionJobProperties& value) { SetTargetedSentimentDetectionJobProperties(value); return *this;}
-    inline DescribeTargetedSentimentDetectionJobResult& WithTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobProperties&& value) { SetTargetedSentimentDetectionJobProperties(std::move(value)); return *this;}
+    inline const TargetedSentimentDetectionJobProperties& GetTargetedSentimentDetectionJobProperties() const { return m_targetedSentimentDetectionJobProperties; }
+    template<typename TargetedSentimentDetectionJobPropertiesT = TargetedSentimentDetectionJobProperties>
+    void SetTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobPropertiesT&& value) { m_targetedSentimentDetectionJobPropertiesHasBeenSet = true; m_targetedSentimentDetectionJobProperties = std::forward<TargetedSentimentDetectionJobPropertiesT>(value); }
+    template<typename TargetedSentimentDetectionJobPropertiesT = TargetedSentimentDetectionJobProperties>
+    DescribeTargetedSentimentDetectionJobResult& WithTargetedSentimentDetectionJobProperties(TargetedSentimentDetectionJobPropertiesT&& value) { SetTargetedSentimentDetectionJobProperties(std::forward<TargetedSentimentDetectionJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTargetedSentimentDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTargetedSentimentDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TargetedSentimentDetectionJobProperties m_targetedSentimentDetectionJobProperties;
+    bool m_targetedSentimentDetectionJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

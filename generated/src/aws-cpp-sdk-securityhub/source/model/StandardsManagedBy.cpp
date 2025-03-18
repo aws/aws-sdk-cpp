@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsManagedBy::StandardsManagedBy() : 
-    m_companyHasBeenSet(false),
-    m_productHasBeenSet(false)
-{
-}
-
 StandardsManagedBy::StandardsManagedBy(JsonView jsonValue)
-  : StandardsManagedBy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StandardsManagedBy& StandardsManagedBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Company"))
   {
     m_company = jsonValue.GetString("Company");
-
     m_companyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetString("Product");
-
     m_productHasBeenSet = true;
   }
-
   return *this;
 }
 

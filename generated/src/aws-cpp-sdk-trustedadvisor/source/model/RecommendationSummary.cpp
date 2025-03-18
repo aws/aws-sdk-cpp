@@ -18,30 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationSummary::RecommendationSummary() : 
-    m_arnHasBeenSet(false),
-    m_awsServicesHasBeenSet(false),
-    m_checkArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleStage(RecommendationLifecycleStage::NOT_SET),
-    m_lifecycleStageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pillarSpecificAggregatesHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_resourcesAggregatesHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_status(RecommendationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RecommendationSummary::RecommendationSummary(JsonView jsonValue)
-  : RecommendationSummary()
 {
   *this = jsonValue;
 }
@@ -51,10 +28,8 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsServices"))
   {
     Aws::Utils::Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
@@ -64,56 +39,41 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     }
     m_awsServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkArn"))
   {
     m_checkArn = jsonValue.GetString("checkArn");
-
     m_checkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStage"))
   {
     m_lifecycleStage = RecommendationLifecycleStageMapper::GetRecommendationLifecycleStageForName(jsonValue.GetString("lifecycleStage"));
-
     m_lifecycleStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pillarSpecificAggregates"))
   {
     m_pillarSpecificAggregates = jsonValue.GetObject("pillarSpecificAggregates");
-
     m_pillarSpecificAggregatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pillars"))
   {
     Aws::Utils::Array<JsonView> pillarsJsonList = jsonValue.GetArray("pillars");
@@ -123,35 +83,26 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     }
     m_pillarsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesAggregates"))
   {
     m_resourcesAggregates = jsonValue.GetObject("resourcesAggregates");
-
     m_resourcesAggregatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = RecommendationSourceMapper::GetRecommendationSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RecommendationTypeMapper::GetRecommendationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

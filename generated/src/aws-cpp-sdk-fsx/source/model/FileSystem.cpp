@@ -18,37 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileSystem::FileSystem() : 
-    m_ownerIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemType(FileSystemType::NOT_SET),
-    m_fileSystemTypeHasBeenSet(false),
-    m_lifecycle(FileSystemLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
-{
-}
-
 FileSystem::FileSystem(JsonView jsonValue)
-  : FileSystem()
 {
   *this = jsonValue;
 }
@@ -58,66 +28,48 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemType"))
   {
     m_fileSystemType = FileSystemTypeMapper::GetFileSystemTypeForName(jsonValue.GetString("FileSystemType"));
-
     m_fileSystemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = FileSystemLifecycleMapper::GetFileSystemLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacity"))
   {
     m_storageCapacity = jsonValue.GetInteger("StorageCapacity");
-
     m_storageCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("StorageType"));
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -127,7 +79,6 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceIds"))
   {
     Aws::Utils::Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("NetworkInterfaceIds");
@@ -137,28 +88,21 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     }
     m_networkInterfaceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DNSName"))
   {
     m_dNSName = jsonValue.GetString("DNSName");
-
     m_dNSNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -168,21 +112,16 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowsConfiguration"))
   {
     m_windowsConfiguration = jsonValue.GetObject("WindowsConfiguration");
-
     m_windowsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LustreConfiguration"))
   {
     m_lustreConfiguration = jsonValue.GetObject("LustreConfiguration");
-
     m_lustreConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdministrativeActions"))
   {
     Aws::Utils::Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
@@ -192,28 +131,21 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     }
     m_administrativeActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OntapConfiguration"))
   {
     m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
-
     m_ontapConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemTypeVersion"))
   {
     m_fileSystemTypeVersion = jsonValue.GetString("FileSystemTypeVersion");
-
     m_fileSystemTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenZFSConfiguration"))
   {
     m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
-
     m_openZFSConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

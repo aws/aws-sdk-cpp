@@ -33,7 +33,7 @@ namespace Model
   class GetSuiteResult
   {
   public:
-    AWS_DEVICEFARM_API GetSuiteResult();
+    AWS_DEVICEFARM_API GetSuiteResult() = default;
     AWS_DEVICEFARM_API GetSuiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API GetSuiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>A collection of one or more tests.</p>
      */
-    inline const Suite& GetSuite() const{ return m_suite; }
-    inline void SetSuite(const Suite& value) { m_suite = value; }
-    inline void SetSuite(Suite&& value) { m_suite = std::move(value); }
-    inline GetSuiteResult& WithSuite(const Suite& value) { SetSuite(value); return *this;}
-    inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(std::move(value)); return *this;}
+    inline const Suite& GetSuite() const { return m_suite; }
+    template<typename SuiteT = Suite>
+    void SetSuite(SuiteT&& value) { m_suiteHasBeenSet = true; m_suite = std::forward<SuiteT>(value); }
+    template<typename SuiteT = Suite>
+    GetSuiteResult& WithSuite(SuiteT&& value) { SetSuite(std::forward<SuiteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSuiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSuiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSuiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSuiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Suite m_suite;
+    bool m_suiteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

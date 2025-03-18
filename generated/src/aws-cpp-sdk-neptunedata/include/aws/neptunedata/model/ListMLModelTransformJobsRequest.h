@@ -25,7 +25,7 @@ namespace Model
   class ListMLModelTransformJobsRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API ListMLModelTransformJobsRequest();
+    AWS_NEPTUNEDATA_API ListMLModelTransformJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * <p>The maximum number of items to return (from 1 to 1024; the default is
      * 10).</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListMLModelTransformJobsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * S3 resources. This must be listed in your DB cluster parameter group or an error
      * will occur.</p>
      */
-    inline const Aws::String& GetNeptuneIamRoleArn() const{ return m_neptuneIamRoleArn; }
+    inline const Aws::String& GetNeptuneIamRoleArn() const { return m_neptuneIamRoleArn; }
     inline bool NeptuneIamRoleArnHasBeenSet() const { return m_neptuneIamRoleArnHasBeenSet; }
-    inline void SetNeptuneIamRoleArn(const Aws::String& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = value; }
-    inline void SetNeptuneIamRoleArn(Aws::String&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::move(value); }
-    inline void SetNeptuneIamRoleArn(const char* value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn.assign(value); }
-    inline ListMLModelTransformJobsRequest& WithNeptuneIamRoleArn(const Aws::String& value) { SetNeptuneIamRoleArn(value); return *this;}
-    inline ListMLModelTransformJobsRequest& WithNeptuneIamRoleArn(Aws::String&& value) { SetNeptuneIamRoleArn(std::move(value)); return *this;}
-    inline ListMLModelTransformJobsRequest& WithNeptuneIamRoleArn(const char* value) { SetNeptuneIamRoleArn(value); return *this;}
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    void SetNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::forward<NeptuneIamRoleArnT>(value); }
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    ListMLModelTransformJobsRequest& WithNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { SetNeptuneIamRoleArn(std::forward<NeptuneIamRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_neptuneIamRoleArn;

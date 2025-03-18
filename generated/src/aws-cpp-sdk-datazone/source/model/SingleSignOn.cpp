@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SingleSignOn::SingleSignOn() : 
-    m_type(AuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userAssignment(UserAssignment::NOT_SET),
-    m_userAssignmentHasBeenSet(false)
-{
-}
-
 SingleSignOn::SingleSignOn(JsonView jsonValue)
-  : SingleSignOn()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SingleSignOn& SingleSignOn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAssignment"))
   {
     m_userAssignment = UserAssignmentMapper::GetUserAssignmentForName(jsonValue.GetString("userAssignment"));
-
     m_userAssignmentHasBeenSet = true;
   }
-
   return *this;
 }
 

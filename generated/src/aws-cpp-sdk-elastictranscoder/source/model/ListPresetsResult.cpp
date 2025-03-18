@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPresetsResult::ListPresetsResult()
-{
-}
-
 ListPresetsResult::ListPresetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListPresetsResult& ListPresetsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_presets.push_back(presetsJsonList[presetsIndex].AsObject());
     }
+    m_presetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

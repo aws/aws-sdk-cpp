@@ -33,7 +33,7 @@ namespace Model
   class ServiceEvent
   {
   public:
-    AWS_ECS_API ServiceEvent();
+    AWS_ECS_API ServiceEvent() = default;
     AWS_ECS_API ServiceEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,43 @@ namespace Model
     /**
      * <p>The ID string for the event.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ServiceEvent& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ServiceEvent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ServiceEvent& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceEvent& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for the time when the event was triggered.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ServiceEvent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ServiceEvent& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceEvent& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_message;

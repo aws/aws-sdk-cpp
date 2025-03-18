@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRouteResult::DeleteRouteResult()
-{
-}
-
 DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ DeleteRouteResult& DeleteRouteResult::operator =(const Aws::AmazonWebServiceResu
 {
   JsonView jsonValue = result.GetPayload().View();
   m_route = jsonValue;
+  m_routeHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

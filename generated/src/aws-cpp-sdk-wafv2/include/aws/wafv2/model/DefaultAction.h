@@ -34,7 +34,7 @@ namespace Model
   class DefaultAction
   {
   public:
-    AWS_WAFV2_API DefaultAction();
+    AWS_WAFV2_API DefaultAction() = default;
     AWS_WAFV2_API DefaultAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API DefaultAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>Specifies that WAF should block requests by default. </p>
      */
-    inline const BlockAction& GetBlock() const{ return m_block; }
+    inline const BlockAction& GetBlock() const { return m_block; }
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-    inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
-    inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-    inline DefaultAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
-    inline DefaultAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
+    template<typename BlockT = BlockAction>
+    void SetBlock(BlockT&& value) { m_blockHasBeenSet = true; m_block = std::forward<BlockT>(value); }
+    template<typename BlockT = BlockAction>
+    DefaultAction& WithBlock(BlockT&& value) { SetBlock(std::forward<BlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies that WAF should allow requests by default.</p>
      */
-    inline const AllowAction& GetAllow() const{ return m_allow; }
+    inline const AllowAction& GetAllow() const { return m_allow; }
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
-    inline void SetAllow(const AllowAction& value) { m_allowHasBeenSet = true; m_allow = value; }
-    inline void SetAllow(AllowAction&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
-    inline DefaultAction& WithAllow(const AllowAction& value) { SetAllow(value); return *this;}
-    inline DefaultAction& WithAllow(AllowAction&& value) { SetAllow(std::move(value)); return *this;}
+    template<typename AllowT = AllowAction>
+    void SetAllow(AllowT&& value) { m_allowHasBeenSet = true; m_allow = std::forward<AllowT>(value); }
+    template<typename AllowT = AllowAction>
+    DefaultAction& WithAllow(AllowT&& value) { SetAllow(std::forward<AllowT>(value)); return *this;}
     ///@}
   private:
 

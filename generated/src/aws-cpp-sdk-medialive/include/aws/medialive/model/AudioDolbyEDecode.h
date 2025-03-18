@@ -31,7 +31,7 @@ namespace Model
   class AudioDolbyEDecode
   {
   public:
-    AWS_MEDIALIVE_API AudioDolbyEDecode();
+    AWS_MEDIALIVE_API AudioDolbyEDecode() = default;
     AWS_MEDIALIVE_API AudioDolbyEDecode(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioDolbyEDecode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * means to ignore the program IDs and include all the channels in this selector;
      * useful if metadata is known to be incorrect.
      */
-    inline const DolbyEProgramSelection& GetProgramSelection() const{ return m_programSelection; }
+    inline DolbyEProgramSelection GetProgramSelection() const { return m_programSelection; }
     inline bool ProgramSelectionHasBeenSet() const { return m_programSelectionHasBeenSet; }
-    inline void SetProgramSelection(const DolbyEProgramSelection& value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
-    inline void SetProgramSelection(DolbyEProgramSelection&& value) { m_programSelectionHasBeenSet = true; m_programSelection = std::move(value); }
-    inline AudioDolbyEDecode& WithProgramSelection(const DolbyEProgramSelection& value) { SetProgramSelection(value); return *this;}
-    inline AudioDolbyEDecode& WithProgramSelection(DolbyEProgramSelection&& value) { SetProgramSelection(std::move(value)); return *this;}
+    inline void SetProgramSelection(DolbyEProgramSelection value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
+    inline AudioDolbyEDecode& WithProgramSelection(DolbyEProgramSelection value) { SetProgramSelection(value); return *this;}
     ///@}
   private:
 
-    DolbyEProgramSelection m_programSelection;
+    DolbyEProgramSelection m_programSelection{DolbyEProgramSelection::NOT_SET};
     bool m_programSelectionHasBeenSet = false;
   };
 

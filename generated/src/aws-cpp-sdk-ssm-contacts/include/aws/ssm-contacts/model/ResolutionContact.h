@@ -38,7 +38,7 @@ namespace Model
   class ResolutionContact
   {
   public:
-    AWS_SSMCONTACTS_API ResolutionContact();
+    AWS_SSMCONTACTS_API ResolutionContact() = default;
     AWS_SSMCONTACTS_API ResolutionContact(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API ResolutionContact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,33 +49,29 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution
      * process. </p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline ResolutionContact& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline ResolutionContact& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline ResolutionContact& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    ResolutionContact& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of contact for a resolution step.</p>
      */
-    inline const ContactType& GetType() const{ return m_type; }
+    inline ContactType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ContactType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ContactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ResolutionContact& WithType(const ContactType& value) { SetType(value); return *this;}
-    inline ResolutionContact& WithType(ContactType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ContactType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ResolutionContact& WithType(ContactType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stage in the escalation plan that resolves to this contact.</p>
      */
-    inline int GetStageIndex() const{ return m_stageIndex; }
+    inline int GetStageIndex() const { return m_stageIndex; }
     inline bool StageIndexHasBeenSet() const { return m_stageIndexHasBeenSet; }
     inline void SetStageIndex(int value) { m_stageIndexHasBeenSet = true; m_stageIndex = value; }
     inline ResolutionContact& WithStageIndex(int value) { SetStageIndex(value); return *this;}
@@ -85,10 +81,10 @@ namespace Model
     Aws::String m_contactArn;
     bool m_contactArnHasBeenSet = false;
 
-    ContactType m_type;
+    ContactType m_type{ContactType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_stageIndex;
+    int m_stageIndex{0};
     bool m_stageIndexHasBeenSet = false;
   };
 

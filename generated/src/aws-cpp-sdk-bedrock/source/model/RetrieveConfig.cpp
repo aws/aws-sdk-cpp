@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RetrieveConfig::RetrieveConfig() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_knowledgeBaseRetrievalConfigurationHasBeenSet(false)
-{
-}
-
 RetrieveConfig::RetrieveConfig(JsonView jsonValue)
-  : RetrieveConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RetrieveConfig& RetrieveConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseRetrievalConfiguration"))
   {
     m_knowledgeBaseRetrievalConfiguration = jsonValue.GetObject("knowledgeBaseRetrievalConfiguration");
-
     m_knowledgeBaseRetrievalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

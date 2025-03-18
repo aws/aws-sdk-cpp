@@ -25,7 +25,7 @@ namespace Model
   class FlushApiCacheRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API FlushApiCacheRequest();
+    AWS_APPSYNC_API FlushApiCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline FlushApiCacheRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline FlushApiCacheRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline FlushApiCacheRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    FlushApiCacheRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
   private:
 

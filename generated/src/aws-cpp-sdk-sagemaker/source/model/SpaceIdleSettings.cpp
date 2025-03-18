@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceIdleSettings::SpaceIdleSettings() : 
-    m_idleTimeoutInMinutes(0),
-    m_idleTimeoutInMinutesHasBeenSet(false)
-{
-}
-
 SpaceIdleSettings::SpaceIdleSettings(JsonView jsonValue)
-  : SpaceIdleSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SpaceIdleSettings& SpaceIdleSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdleTimeoutInMinutes"))
   {
     m_idleTimeoutInMinutes = jsonValue.GetInteger("IdleTimeoutInMinutes");
-
     m_idleTimeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

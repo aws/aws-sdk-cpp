@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEmailChannelRequest::UpdateEmailChannelRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_emailChannelRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEmailChannelRequest::SerializePayload() const
 {
   JsonValue payload;

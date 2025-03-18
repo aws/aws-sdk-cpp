@@ -32,7 +32,7 @@ namespace Model
   class IngestionInputConfiguration
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API IngestionInputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API IngestionInputConfiguration() = default;
     AWS_LOOKOUTEQUIPMENT_API IngestionInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API IngestionInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The location information for the S3 bucket used for input data for the data
      * ingestion. </p>
      */
-    inline const IngestionS3InputConfiguration& GetS3InputConfiguration() const{ return m_s3InputConfiguration; }
+    inline const IngestionS3InputConfiguration& GetS3InputConfiguration() const { return m_s3InputConfiguration; }
     inline bool S3InputConfigurationHasBeenSet() const { return m_s3InputConfigurationHasBeenSet; }
-    inline void SetS3InputConfiguration(const IngestionS3InputConfiguration& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = value; }
-    inline void SetS3InputConfiguration(IngestionS3InputConfiguration&& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = std::move(value); }
-    inline IngestionInputConfiguration& WithS3InputConfiguration(const IngestionS3InputConfiguration& value) { SetS3InputConfiguration(value); return *this;}
-    inline IngestionInputConfiguration& WithS3InputConfiguration(IngestionS3InputConfiguration&& value) { SetS3InputConfiguration(std::move(value)); return *this;}
+    template<typename S3InputConfigurationT = IngestionS3InputConfiguration>
+    void SetS3InputConfiguration(S3InputConfigurationT&& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = std::forward<S3InputConfigurationT>(value); }
+    template<typename S3InputConfigurationT = IngestionS3InputConfiguration>
+    IngestionInputConfiguration& WithS3InputConfiguration(S3InputConfigurationT&& value) { SetS3InputConfiguration(std::forward<S3InputConfigurationT>(value)); return *this;}
     ///@}
   private:
 

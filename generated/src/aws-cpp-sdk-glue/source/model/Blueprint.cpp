@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Blueprint::Blueprint() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_parameterSpecHasBeenSet(false),
-    m_blueprintLocationHasBeenSet(false),
-    m_blueprintServiceLocationHasBeenSet(false),
-    m_status(BlueprintStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastActiveDefinitionHasBeenSet(false)
-{
-}
-
 Blueprint::Blueprint(JsonView jsonValue)
-  : Blueprint()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ Blueprint& Blueprint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
     m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterSpec"))
   {
     m_parameterSpec = jsonValue.GetString("ParameterSpec");
-
     m_parameterSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlueprintLocation"))
   {
     m_blueprintLocation = jsonValue.GetString("BlueprintLocation");
-
     m_blueprintLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlueprintServiceLocation"))
   {
     m_blueprintServiceLocation = jsonValue.GetString("BlueprintServiceLocation");
-
     m_blueprintServiceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = BlueprintStatusMapper::GetBlueprintStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastActiveDefinition"))
   {
     m_lastActiveDefinition = jsonValue.GetObject("LastActiveDefinition");
-
     m_lastActiveDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

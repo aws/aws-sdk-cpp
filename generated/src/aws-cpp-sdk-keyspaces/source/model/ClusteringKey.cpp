@@ -18,15 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-ClusteringKey::ClusteringKey() : 
-    m_nameHasBeenSet(false),
-    m_orderBy(SortOrder::NOT_SET),
-    m_orderByHasBeenSet(false)
-{
-}
-
 ClusteringKey::ClusteringKey(JsonView jsonValue)
-  : ClusteringKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ClusteringKey& ClusteringKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderBy"))
   {
     m_orderBy = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("orderBy"));
-
     m_orderByHasBeenSet = true;
   }
-
   return *this;
 }
 

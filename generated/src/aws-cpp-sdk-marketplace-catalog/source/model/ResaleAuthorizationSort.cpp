@@ -18,16 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationSort::ResaleAuthorizationSort() : 
-    m_sortBy(ResaleAuthorizationSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationSort::ResaleAuthorizationSort(JsonView jsonValue)
-  : ResaleAuthorizationSort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResaleAuthorizationSort& ResaleAuthorizationSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = ResaleAuthorizationSortByMapper::GetResaleAuthorizationSortByForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

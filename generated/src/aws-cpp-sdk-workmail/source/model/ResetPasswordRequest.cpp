@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetPasswordRequest::ResetPasswordRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String ResetPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

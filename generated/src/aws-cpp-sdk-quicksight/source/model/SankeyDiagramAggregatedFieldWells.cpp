@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SankeyDiagramAggregatedFieldWells::SankeyDiagramAggregatedFieldWells() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_weightHasBeenSet(false)
-{
-}
-
 SankeyDiagramAggregatedFieldWells::SankeyDiagramAggregatedFieldWells(JsonView jsonValue)
-  : SankeyDiagramAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ SankeyDiagramAggregatedFieldWells& SankeyDiagramAggregatedFieldWells::operator =
     }
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     Aws::Utils::Array<JsonView> destinationJsonList = jsonValue.GetArray("Destination");
@@ -52,7 +43,6 @@ SankeyDiagramAggregatedFieldWells& SankeyDiagramAggregatedFieldWells::operator =
     }
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     Aws::Utils::Array<JsonView> weightJsonList = jsonValue.GetArray("Weight");
@@ -62,7 +52,6 @@ SankeyDiagramAggregatedFieldWells& SankeyDiagramAggregatedFieldWells::operator =
     }
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

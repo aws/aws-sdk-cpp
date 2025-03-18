@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRunGroupsRequest::ListRunGroupsRequest() : 
-    m_nameHasBeenSet(false),
-    m_startingTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRunGroupsRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEventBridgeRuleTemplatesResult::ListEventBridgeRuleTemplatesResult()
-{
-}
-
 ListEventBridgeRuleTemplatesResult::ListEventBridgeRuleTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListEventBridgeRuleTemplatesResult& ListEventBridgeRuleTemplatesResult::operator
     {
       m_eventBridgeRuleTemplates.push_back(eventBridgeRuleTemplatesJsonList[eventBridgeRuleTemplatesIndex].AsObject());
     }
+    m_eventBridgeRuleTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

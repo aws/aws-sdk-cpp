@@ -33,7 +33,7 @@ namespace Model
   class LoadBalancersConfig
   {
   public:
-    AWS_EC2_API LoadBalancersConfig();
+    AWS_EC2_API LoadBalancersConfig() = default;
     AWS_EC2_API LoadBalancersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LoadBalancersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The Classic Load Balancers.</p>
      */
-    inline const ClassicLoadBalancersConfig& GetClassicLoadBalancersConfig() const{ return m_classicLoadBalancersConfig; }
+    inline const ClassicLoadBalancersConfig& GetClassicLoadBalancersConfig() const { return m_classicLoadBalancersConfig; }
     inline bool ClassicLoadBalancersConfigHasBeenSet() const { return m_classicLoadBalancersConfigHasBeenSet; }
-    inline void SetClassicLoadBalancersConfig(const ClassicLoadBalancersConfig& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = value; }
-    inline void SetClassicLoadBalancersConfig(ClassicLoadBalancersConfig&& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = std::move(value); }
-    inline LoadBalancersConfig& WithClassicLoadBalancersConfig(const ClassicLoadBalancersConfig& value) { SetClassicLoadBalancersConfig(value); return *this;}
-    inline LoadBalancersConfig& WithClassicLoadBalancersConfig(ClassicLoadBalancersConfig&& value) { SetClassicLoadBalancersConfig(std::move(value)); return *this;}
+    template<typename ClassicLoadBalancersConfigT = ClassicLoadBalancersConfig>
+    void SetClassicLoadBalancersConfig(ClassicLoadBalancersConfigT&& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = std::forward<ClassicLoadBalancersConfigT>(value); }
+    template<typename ClassicLoadBalancersConfigT = ClassicLoadBalancersConfig>
+    LoadBalancersConfig& WithClassicLoadBalancersConfig(ClassicLoadBalancersConfigT&& value) { SetClassicLoadBalancersConfig(std::forward<ClassicLoadBalancersConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target groups.</p>
      */
-    inline const TargetGroupsConfig& GetTargetGroupsConfig() const{ return m_targetGroupsConfig; }
+    inline const TargetGroupsConfig& GetTargetGroupsConfig() const { return m_targetGroupsConfig; }
     inline bool TargetGroupsConfigHasBeenSet() const { return m_targetGroupsConfigHasBeenSet; }
-    inline void SetTargetGroupsConfig(const TargetGroupsConfig& value) { m_targetGroupsConfigHasBeenSet = true; m_targetGroupsConfig = value; }
-    inline void SetTargetGroupsConfig(TargetGroupsConfig&& value) { m_targetGroupsConfigHasBeenSet = true; m_targetGroupsConfig = std::move(value); }
-    inline LoadBalancersConfig& WithTargetGroupsConfig(const TargetGroupsConfig& value) { SetTargetGroupsConfig(value); return *this;}
-    inline LoadBalancersConfig& WithTargetGroupsConfig(TargetGroupsConfig&& value) { SetTargetGroupsConfig(std::move(value)); return *this;}
+    template<typename TargetGroupsConfigT = TargetGroupsConfig>
+    void SetTargetGroupsConfig(TargetGroupsConfigT&& value) { m_targetGroupsConfigHasBeenSet = true; m_targetGroupsConfig = std::forward<TargetGroupsConfigT>(value); }
+    template<typename TargetGroupsConfigT = TargetGroupsConfig>
+    LoadBalancersConfig& WithTargetGroupsConfig(TargetGroupsConfigT&& value) { SetTargetGroupsConfig(std::forward<TargetGroupsConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,10 +18,6 @@ namespace QBusiness
 namespace Model
 {
 
-NoAuthConfiguration::NoAuthConfiguration()
-{
-}
-
 NoAuthConfiguration::NoAuthConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

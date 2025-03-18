@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Property::Property() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_propertyTypesHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_dataOperationScopesHasBeenSet(false)
-{
-}
-
 Property::Property(JsonView jsonValue)
-  : Property()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Property& Property::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Required"))
   {
     m_required = jsonValue.GetBool("Required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyTypes"))
   {
     Aws::Utils::Array<JsonView> propertyTypesJsonList = jsonValue.GetArray("PropertyTypes");
@@ -75,7 +54,6 @@ Property& Property::operator =(JsonView jsonValue)
     }
     m_propertyTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("AllowedValues");
@@ -85,7 +63,6 @@ Property& Property::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataOperationScopes"))
   {
     Aws::Utils::Array<JsonView> dataOperationScopesJsonList = jsonValue.GetArray("DataOperationScopes");
@@ -95,7 +72,6 @@ Property& Property::operator =(JsonView jsonValue)
     }
     m_dataOperationScopesHasBeenSet = true;
   }
-
   return *this;
 }
 

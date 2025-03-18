@@ -18,19 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-AccountJiraConfigurationInput::AccountJiraConfigurationInput() : 
-    m_issueManagementStatus(AccountJiraIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_integrationStatus(IntegrationStatusInput::NOT_SET),
-    m_integrationStatusHasBeenSet(false)
-{
-}
-
 AccountJiraConfigurationInput::AccountJiraConfigurationInput(JsonView jsonValue)
-  : AccountJiraConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AccountJiraConfigurationInput& AccountJiraConfigurationInput::operator =(JsonVie
   if(jsonValue.ValueExists("IssueManagementStatus"))
   {
     m_issueManagementStatus = AccountJiraIssueManagementStatusMapper::GetAccountJiraIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
-
     m_issueManagementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueManagementType"))
   {
     m_issueManagementType = IssueManagementTypeMapper::GetIssueManagementTypeForName(jsonValue.GetString("IssueManagementType"));
-
     m_issueManagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraProjectKey"))
   {
     m_jiraProjectKey = jsonValue.GetString("JiraProjectKey");
-
     m_jiraProjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationStatus"))
   {
     m_integrationStatus = IntegrationStatusInputMapper::GetIntegrationStatusInputForName(jsonValue.GetString("IntegrationStatus"));
-
     m_integrationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

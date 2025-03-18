@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-IndexDocument::IndexDocument() : 
-    m_suffixHasBeenSet(false)
-{
-}
-
 IndexDocument::IndexDocument(const XmlNode& xmlNode)
-  : IndexDocument()
 {
   *this = xmlNode;
 }

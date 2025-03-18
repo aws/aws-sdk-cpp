@@ -33,7 +33,7 @@ namespace Model
   class FilledMapAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API FilledMapAggregatedFieldWells();
+    AWS_QUICKSIGHT_API FilledMapAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API FilledMapAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilledMapAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The aggregated location field well of the filled map. Values are grouped by
      * location fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetGeospatial() const{ return m_geospatial; }
+    inline const Aws::Vector<DimensionField>& GetGeospatial() const { return m_geospatial; }
     inline bool GeospatialHasBeenSet() const { return m_geospatialHasBeenSet; }
-    inline void SetGeospatial(const Aws::Vector<DimensionField>& value) { m_geospatialHasBeenSet = true; m_geospatial = value; }
-    inline void SetGeospatial(Aws::Vector<DimensionField>&& value) { m_geospatialHasBeenSet = true; m_geospatial = std::move(value); }
-    inline FilledMapAggregatedFieldWells& WithGeospatial(const Aws::Vector<DimensionField>& value) { SetGeospatial(value); return *this;}
-    inline FilledMapAggregatedFieldWells& WithGeospatial(Aws::Vector<DimensionField>&& value) { SetGeospatial(std::move(value)); return *this;}
-    inline FilledMapAggregatedFieldWells& AddGeospatial(const DimensionField& value) { m_geospatialHasBeenSet = true; m_geospatial.push_back(value); return *this; }
-    inline FilledMapAggregatedFieldWells& AddGeospatial(DimensionField&& value) { m_geospatialHasBeenSet = true; m_geospatial.push_back(std::move(value)); return *this; }
+    template<typename GeospatialT = Aws::Vector<DimensionField>>
+    void SetGeospatial(GeospatialT&& value) { m_geospatialHasBeenSet = true; m_geospatial = std::forward<GeospatialT>(value); }
+    template<typename GeospatialT = Aws::Vector<DimensionField>>
+    FilledMapAggregatedFieldWells& WithGeospatial(GeospatialT&& value) { SetGeospatial(std::forward<GeospatialT>(value)); return *this;}
+    template<typename GeospatialT = DimensionField>
+    FilledMapAggregatedFieldWells& AddGeospatial(GeospatialT&& value) { m_geospatialHasBeenSet = true; m_geospatial.emplace_back(std::forward<GeospatialT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>The aggregated color field well of a filled map. Values are aggregated based
      * on location fields.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<MeasureField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline FilledMapAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-    inline FilledMapAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-    inline FilledMapAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline FilledMapAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    FilledMapAggregatedFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = MeasureField>
+    FilledMapAggregatedFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

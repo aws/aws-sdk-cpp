@@ -32,7 +32,7 @@ namespace Model
   class BandwidthReductionFilterSettings
   {
   public:
-    AWS_MEDIALIVE_API BandwidthReductionFilterSettings();
+    AWS_MEDIALIVE_API BandwidthReductionFilterSettings() = default;
     AWS_MEDIALIVE_API BandwidthReductionFilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API BandwidthReductionFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ We recommend that you
      * the
 content.
      */
-    inline const BandwidthReductionPostFilterSharpening& GetPostFilterSharpening() const{ return m_postFilterSharpening; }
+    inline BandwidthReductionPostFilterSharpening GetPostFilterSharpening() const { return m_postFilterSharpening; }
     inline bool PostFilterSharpeningHasBeenSet() const { return m_postFilterSharpeningHasBeenSet; }
-    inline void SetPostFilterSharpening(const BandwidthReductionPostFilterSharpening& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = value; }
-    inline void SetPostFilterSharpening(BandwidthReductionPostFilterSharpening&& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = std::move(value); }
-    inline BandwidthReductionFilterSettings& WithPostFilterSharpening(const BandwidthReductionPostFilterSharpening& value) { SetPostFilterSharpening(value); return *this;}
-    inline BandwidthReductionFilterSettings& WithPostFilterSharpening(BandwidthReductionPostFilterSharpening&& value) { SetPostFilterSharpening(std::move(value)); return *this;}
+    inline void SetPostFilterSharpening(BandwidthReductionPostFilterSharpening value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = value; }
+    inline BandwidthReductionFilterSettings& WithPostFilterSharpening(BandwidthReductionPostFilterSharpening value) { SetPostFilterSharpening(value); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ content.
 enable this filter and use AUTO, to let MediaLive
      * apply the optimum filtering for the context.
      */
-    inline const BandwidthReductionFilterStrength& GetStrength() const{ return m_strength; }
+    inline BandwidthReductionFilterStrength GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-    inline void SetStrength(const BandwidthReductionFilterStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
-    inline void SetStrength(BandwidthReductionFilterStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
-    inline BandwidthReductionFilterSettings& WithStrength(const BandwidthReductionFilterStrength& value) { SetStrength(value); return *this;}
-    inline BandwidthReductionFilterSettings& WithStrength(BandwidthReductionFilterStrength&& value) { SetStrength(std::move(value)); return *this;}
+    inline void SetStrength(BandwidthReductionFilterStrength value) { m_strengthHasBeenSet = true; m_strength = value; }
+    inline BandwidthReductionFilterSettings& WithStrength(BandwidthReductionFilterStrength value) { SetStrength(value); return *this;}
     ///@}
   private:
 
-    BandwidthReductionPostFilterSharpening m_postFilterSharpening;
+    BandwidthReductionPostFilterSharpening m_postFilterSharpening{BandwidthReductionPostFilterSharpening::NOT_SET};
     bool m_postFilterSharpeningHasBeenSet = false;
 
-    BandwidthReductionFilterStrength m_strength;
+    BandwidthReductionFilterStrength m_strength{BandwidthReductionFilterStrength::NOT_SET};
     bool m_strengthHasBeenSet = false;
   };
 

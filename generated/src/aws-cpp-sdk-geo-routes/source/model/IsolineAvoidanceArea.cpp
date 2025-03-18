@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineAvoidanceArea::IsolineAvoidanceArea() : 
-    m_exceptHasBeenSet(false),
-    m_geometryHasBeenSet(false)
-{
-}
-
 IsolineAvoidanceArea::IsolineAvoidanceArea(JsonView jsonValue)
-  : IsolineAvoidanceArea()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ IsolineAvoidanceArea& IsolineAvoidanceArea::operator =(JsonView jsonValue)
     }
     m_exceptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   return *this;
 }
 

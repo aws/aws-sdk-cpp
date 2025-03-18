@@ -12,16 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDetectorModelRequest::UpdateDetectorModelRequest() : 
-    m_detectorModelNameHasBeenSet(false),
-    m_detectorModelDefinitionHasBeenSet(false),
-    m_detectorModelDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_evaluationMethod(EvaluationMethod::NOT_SET),
-    m_evaluationMethodHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDetectorModelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AudioLogDestination::AudioLogDestination() : 
-    m_s3BucketHasBeenSet(false)
-{
-}
-
 AudioLogDestination::AudioLogDestination(JsonView jsonValue)
-  : AudioLogDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AudioLogDestination& AudioLogDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   return *this;
 }
 

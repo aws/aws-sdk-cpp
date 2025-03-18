@@ -33,7 +33,7 @@ namespace Model
   class PieChartFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API PieChartFieldWells();
+    AWS_QUICKSIGHT_API PieChartFieldWells() = default;
     AWS_QUICKSIGHT_API PieChartFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PieChartFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The field well configuration of a pie chart.</p>
      */
-    inline const PieChartAggregatedFieldWells& GetPieChartAggregatedFieldWells() const{ return m_pieChartAggregatedFieldWells; }
+    inline const PieChartAggregatedFieldWells& GetPieChartAggregatedFieldWells() const { return m_pieChartAggregatedFieldWells; }
     inline bool PieChartAggregatedFieldWellsHasBeenSet() const { return m_pieChartAggregatedFieldWellsHasBeenSet; }
-    inline void SetPieChartAggregatedFieldWells(const PieChartAggregatedFieldWells& value) { m_pieChartAggregatedFieldWellsHasBeenSet = true; m_pieChartAggregatedFieldWells = value; }
-    inline void SetPieChartAggregatedFieldWells(PieChartAggregatedFieldWells&& value) { m_pieChartAggregatedFieldWellsHasBeenSet = true; m_pieChartAggregatedFieldWells = std::move(value); }
-    inline PieChartFieldWells& WithPieChartAggregatedFieldWells(const PieChartAggregatedFieldWells& value) { SetPieChartAggregatedFieldWells(value); return *this;}
-    inline PieChartFieldWells& WithPieChartAggregatedFieldWells(PieChartAggregatedFieldWells&& value) { SetPieChartAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename PieChartAggregatedFieldWellsT = PieChartAggregatedFieldWells>
+    void SetPieChartAggregatedFieldWells(PieChartAggregatedFieldWellsT&& value) { m_pieChartAggregatedFieldWellsHasBeenSet = true; m_pieChartAggregatedFieldWells = std::forward<PieChartAggregatedFieldWellsT>(value); }
+    template<typename PieChartAggregatedFieldWellsT = PieChartAggregatedFieldWells>
+    PieChartFieldWells& WithPieChartAggregatedFieldWells(PieChartAggregatedFieldWellsT&& value) { SetPieChartAggregatedFieldWells(std::forward<PieChartAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,37 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceGroup::InstanceGroup() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceGroupType(InstanceGroupType::NOT_SET),
-    m_instanceGroupTypeHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_requestedInstanceCount(0),
-    m_requestedInstanceCountHasBeenSet(false),
-    m_runningInstanceCount(0),
-    m_runningInstanceCountHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_configurationsVersion(0),
-    m_configurationsVersionHasBeenSet(false),
-    m_lastSuccessfullyAppliedConfigurationsHasBeenSet(false),
-    m_lastSuccessfullyAppliedConfigurationsVersion(0),
-    m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet(false),
-    m_ebsBlockDevicesHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false)
-{
-}
-
 InstanceGroup::InstanceGroup(JsonView jsonValue)
-  : InstanceGroup()
 {
   *this = jsonValue;
 }
@@ -58,66 +28,48 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Market"))
   {
     m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
-
     m_marketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupType"))
   {
     m_instanceGroupType = InstanceGroupTypeMapper::GetInstanceGroupTypeForName(jsonValue.GetString("InstanceGroupType"));
-
     m_instanceGroupTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BidPrice"))
   {
     m_bidPrice = jsonValue.GetString("BidPrice");
-
     m_bidPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedInstanceCount"))
   {
     m_requestedInstanceCount = jsonValue.GetInteger("RequestedInstanceCount");
-
     m_requestedInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunningInstanceCount"))
   {
     m_runningInstanceCount = jsonValue.GetInteger("RunningInstanceCount");
-
     m_runningInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configurations"))
   {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
@@ -127,14 +79,11 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
     }
     m_configurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationsVersion"))
   {
     m_configurationsVersion = jsonValue.GetInt64("ConfigurationsVersion");
-
     m_configurationsVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfullyAppliedConfigurations"))
   {
     Aws::Utils::Array<JsonView> lastSuccessfullyAppliedConfigurationsJsonList = jsonValue.GetArray("LastSuccessfullyAppliedConfigurations");
@@ -144,14 +93,11 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
     }
     m_lastSuccessfullyAppliedConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfullyAppliedConfigurationsVersion"))
   {
     m_lastSuccessfullyAppliedConfigurationsVersion = jsonValue.GetInt64("LastSuccessfullyAppliedConfigurationsVersion");
-
     m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsBlockDevices"))
   {
     Aws::Utils::Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
@@ -161,35 +107,26 @@ InstanceGroup& InstanceGroup::operator =(JsonView jsonValue)
     }
     m_ebsBlockDevicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimized"))
   {
     m_ebsOptimized = jsonValue.GetBool("EbsOptimized");
-
     m_ebsOptimizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShrinkPolicy"))
   {
     m_shrinkPolicy = jsonValue.GetObject("ShrinkPolicy");
-
     m_shrinkPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingPolicy"))
   {
     m_autoScalingPolicy = jsonValue.GetObject("AutoScalingPolicy");
-
     m_autoScalingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomAmiId"))
   {
     m_customAmiId = jsonValue.GetString("CustomAmiId");
-
     m_customAmiIdHasBeenSet = true;
   }
-
   return *this;
 }
 

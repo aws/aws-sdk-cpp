@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ListVariantImportJobsFilter::ListVariantImportJobsFilter() : 
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storeNameHasBeenSet(false)
-{
-}
-
 ListVariantImportJobsFilter::ListVariantImportJobsFilter(JsonView jsonValue)
-  : ListVariantImportJobsFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListVariantImportJobsFilter& ListVariantImportJobsFilter::operator =(JsonView js
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storeName"))
   {
     m_storeName = jsonValue.GetString("storeName");
-
     m_storeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

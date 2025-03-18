@@ -24,7 +24,7 @@ namespace Model
   class UpdateSchemaRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateSchemaRequest();
+    AWS_GLUE_API UpdateSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,12 @@ namespace Model
      * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
      * </ul>
      */
-    inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
+    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-    inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-    inline UpdateSchemaRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-    inline UpdateSchemaRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    template<typename SchemaIdT = SchemaId>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = SchemaId>
+    UpdateSchemaRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,38 +59,34 @@ namespace Model
      * <p>Version number required for check pointing. One of <code>VersionNumber</code>
      * or <code>Compatibility</code> has to be provided.</p>
      */
-    inline const SchemaVersionNumber& GetSchemaVersionNumber() const{ return m_schemaVersionNumber; }
+    inline const SchemaVersionNumber& GetSchemaVersionNumber() const { return m_schemaVersionNumber; }
     inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
-    inline void SetSchemaVersionNumber(const SchemaVersionNumber& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = value; }
-    inline void SetSchemaVersionNumber(SchemaVersionNumber&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::move(value); }
-    inline UpdateSchemaRequest& WithSchemaVersionNumber(const SchemaVersionNumber& value) { SetSchemaVersionNumber(value); return *this;}
-    inline UpdateSchemaRequest& WithSchemaVersionNumber(SchemaVersionNumber&& value) { SetSchemaVersionNumber(std::move(value)); return *this;}
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    void SetSchemaVersionNumber(SchemaVersionNumberT&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::forward<SchemaVersionNumberT>(value); }
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    UpdateSchemaRequest& WithSchemaVersionNumber(SchemaVersionNumberT&& value) { SetSchemaVersionNumber(std::forward<SchemaVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new compatibility setting for the schema.</p>
      */
-    inline const Compatibility& GetCompatibility() const{ return m_compatibility; }
+    inline Compatibility GetCompatibility() const { return m_compatibility; }
     inline bool CompatibilityHasBeenSet() const { return m_compatibilityHasBeenSet; }
-    inline void SetCompatibility(const Compatibility& value) { m_compatibilityHasBeenSet = true; m_compatibility = value; }
-    inline void SetCompatibility(Compatibility&& value) { m_compatibilityHasBeenSet = true; m_compatibility = std::move(value); }
-    inline UpdateSchemaRequest& WithCompatibility(const Compatibility& value) { SetCompatibility(value); return *this;}
-    inline UpdateSchemaRequest& WithCompatibility(Compatibility&& value) { SetCompatibility(std::move(value)); return *this;}
+    inline void SetCompatibility(Compatibility value) { m_compatibilityHasBeenSet = true; m_compatibility = value; }
+    inline UpdateSchemaRequest& WithCompatibility(Compatibility value) { SetCompatibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new description for the schema.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSchemaRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSchemaRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSchemaRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSchemaRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +96,7 @@ namespace Model
     SchemaVersionNumber m_schemaVersionNumber;
     bool m_schemaVersionNumberHasBeenSet = false;
 
-    Compatibility m_compatibility;
+    Compatibility m_compatibility{Compatibility::NOT_SET};
     bool m_compatibilityHasBeenSet = false;
 
     Aws::String m_description;

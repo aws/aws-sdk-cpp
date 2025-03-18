@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-DataResource::DataResource() : 
-    m_typeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DataResource::DataResource(JsonView jsonValue)
-  : DataResource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataResource& DataResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ DataResource& DataResource::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

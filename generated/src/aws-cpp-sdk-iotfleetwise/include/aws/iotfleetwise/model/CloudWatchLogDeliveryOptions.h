@@ -33,7 +33,7 @@ namespace Model
   class CloudWatchLogDeliveryOptions
   {
   public:
-    AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions();
+    AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions() = default;
     AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The type of log to send data to Amazon CloudWatch Logs.</p>
      */
-    inline const LogType& GetLogType() const{ return m_logType; }
+    inline LogType GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline CloudWatchLogDeliveryOptions& WithLogType(const LogType& value) { SetLogType(value); return *this;}
-    inline CloudWatchLogDeliveryOptions& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline CloudWatchLogDeliveryOptions& WithLogType(LogType value) { SetLogType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CloudWatchLogDeliveryOptions& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CloudWatchLogDeliveryOptions& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CloudWatchLogDeliveryOptions& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CloudWatchLogDeliveryOptions& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
   private:
 
-    LogType m_logType;
+    LogType m_logType{LogType::NOT_SET};
     bool m_logTypeHasBeenSet = false;
 
     Aws::String m_logGroupName;

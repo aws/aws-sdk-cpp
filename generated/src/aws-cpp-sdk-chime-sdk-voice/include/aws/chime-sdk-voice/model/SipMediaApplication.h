@@ -36,7 +36,7 @@ namespace Model
   class SipMediaApplication
   {
   public:
-    AWS_CHIMESDKVOICE_API SipMediaApplication();
+    AWS_CHIMESDKVOICE_API SipMediaApplication() = default;
     AWS_CHIMESDKVOICE_API SipMediaApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SipMediaApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>A SIP media application's ID.</p>
      */
-    inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
+    inline const Aws::String& GetSipMediaApplicationId() const { return m_sipMediaApplicationId; }
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
-    inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
-    inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
-    inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
-    inline SipMediaApplication& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
-    inline SipMediaApplication& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
-    inline SipMediaApplication& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
+    template<typename SipMediaApplicationIdT = Aws::String>
+    void SetSipMediaApplicationId(SipMediaApplicationIdT&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::forward<SipMediaApplicationIdT>(value); }
+    template<typename SipMediaApplicationIdT = Aws::String>
+    SipMediaApplication& WithSipMediaApplicationId(SipMediaApplicationIdT&& value) { SetSipMediaApplicationId(std::forward<SipMediaApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS Region in which the SIP media application is created.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline SipMediaApplication& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline SipMediaApplication& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline SipMediaApplication& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    SipMediaApplication& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SIP media application's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SipMediaApplication& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SipMediaApplication& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SipMediaApplication& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SipMediaApplication& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,52 +83,50 @@ namespace Model
      * <p>List of endpoints for a SIP media application. Currently, only one endpoint
      * per SIP media application is permitted.</p>
      */
-    inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline SipMediaApplication& WithEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline SipMediaApplication& WithEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline SipMediaApplication& AddEndpoints(const SipMediaApplicationEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline SipMediaApplication& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<SipMediaApplicationEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<SipMediaApplicationEndpoint>>
+    SipMediaApplication& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = SipMediaApplicationEndpoint>
+    SipMediaApplication& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline SipMediaApplication& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline SipMediaApplication& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    SipMediaApplication& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the SIP media application was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
-    inline SipMediaApplication& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline SipMediaApplication& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    SipMediaApplication& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the SIP media application.</p>
      */
-    inline const Aws::String& GetSipMediaApplicationArn() const{ return m_sipMediaApplicationArn; }
+    inline const Aws::String& GetSipMediaApplicationArn() const { return m_sipMediaApplicationArn; }
     inline bool SipMediaApplicationArnHasBeenSet() const { return m_sipMediaApplicationArnHasBeenSet; }
-    inline void SetSipMediaApplicationArn(const Aws::String& value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn = value; }
-    inline void SetSipMediaApplicationArn(Aws::String&& value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn = std::move(value); }
-    inline void SetSipMediaApplicationArn(const char* value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn.assign(value); }
-    inline SipMediaApplication& WithSipMediaApplicationArn(const Aws::String& value) { SetSipMediaApplicationArn(value); return *this;}
-    inline SipMediaApplication& WithSipMediaApplicationArn(Aws::String&& value) { SetSipMediaApplicationArn(std::move(value)); return *this;}
-    inline SipMediaApplication& WithSipMediaApplicationArn(const char* value) { SetSipMediaApplicationArn(value); return *this;}
+    template<typename SipMediaApplicationArnT = Aws::String>
+    void SetSipMediaApplicationArn(SipMediaApplicationArnT&& value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn = std::forward<SipMediaApplicationArnT>(value); }
+    template<typename SipMediaApplicationArnT = Aws::String>
+    SipMediaApplication& WithSipMediaApplicationArn(SipMediaApplicationArnT&& value) { SetSipMediaApplicationArn(std::forward<SipMediaApplicationArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -150,10 +142,10 @@ namespace Model
     Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
     bool m_endpointsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
     bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_sipMediaApplicationArn;

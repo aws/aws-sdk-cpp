@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DeltaTime::DeltaTime() : 
-    m_offsetSeconds(0),
-    m_offsetSecondsHasBeenSet(false),
-    m_timeExpressionHasBeenSet(false)
-{
-}
-
 DeltaTime::DeltaTime(JsonView jsonValue)
-  : DeltaTime()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeltaTime& DeltaTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("offsetSeconds"))
   {
     m_offsetSeconds = jsonValue.GetInteger("offsetSeconds");
-
     m_offsetSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeExpression"))
   {
     m_timeExpression = jsonValue.GetString("timeExpression");
-
     m_timeExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

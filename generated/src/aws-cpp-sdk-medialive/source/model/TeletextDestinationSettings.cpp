@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-TeletextDestinationSettings::TeletextDestinationSettings()
-{
-}
-
 TeletextDestinationSettings::TeletextDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

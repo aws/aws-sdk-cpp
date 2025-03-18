@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-EsamSignalProcessingNotification::EsamSignalProcessingNotification() : 
-    m_sccXmlHasBeenSet(false)
-{
-}
-
 EsamSignalProcessingNotification::EsamSignalProcessingNotification(JsonView jsonValue)
-  : EsamSignalProcessingNotification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EsamSignalProcessingNotification& EsamSignalProcessingNotification::operator =(J
   if(jsonValue.ValueExists("sccXml"))
   {
     m_sccXml = jsonValue.GetString("sccXml");
-
     m_sccXmlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayCertificateResult::GetWirelessGatewayCertificateResult()
-{
-}
-
 GetWirelessGatewayCertificateResult::GetWirelessGatewayCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetWirelessGatewayCertificateResult& GetWirelessGatewayCertificateResult::operat
   if(jsonValue.ValueExists("IotCertificateId"))
   {
     m_iotCertificateId = jsonValue.GetString("IotCertificateId");
-
+    m_iotCertificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoRaWANNetworkServerCertificateId"))
   {
     m_loRaWANNetworkServerCertificateId = jsonValue.GetString("LoRaWANNetworkServerCertificateId");
-
+    m_loRaWANNetworkServerCertificateIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

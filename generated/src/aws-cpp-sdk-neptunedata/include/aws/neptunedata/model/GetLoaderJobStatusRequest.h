@@ -25,7 +25,7 @@ namespace Model
   class GetLoaderJobStatusRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API GetLoaderJobStatusRequest();
+    AWS_NEPTUNEDATA_API GetLoaderJobStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The load ID of the load job to get the status of.</p>
      */
-    inline const Aws::String& GetLoadId() const{ return m_loadId; }
+    inline const Aws::String& GetLoadId() const { return m_loadId; }
     inline bool LoadIdHasBeenSet() const { return m_loadIdHasBeenSet; }
-    inline void SetLoadId(const Aws::String& value) { m_loadIdHasBeenSet = true; m_loadId = value; }
-    inline void SetLoadId(Aws::String&& value) { m_loadIdHasBeenSet = true; m_loadId = std::move(value); }
-    inline void SetLoadId(const char* value) { m_loadIdHasBeenSet = true; m_loadId.assign(value); }
-    inline GetLoaderJobStatusRequest& WithLoadId(const Aws::String& value) { SetLoadId(value); return *this;}
-    inline GetLoaderJobStatusRequest& WithLoadId(Aws::String&& value) { SetLoadId(std::move(value)); return *this;}
-    inline GetLoaderJobStatusRequest& WithLoadId(const char* value) { SetLoadId(value); return *this;}
+    template<typename LoadIdT = Aws::String>
+    void SetLoadId(LoadIdT&& value) { m_loadIdHasBeenSet = true; m_loadId = std::forward<LoadIdT>(value); }
+    template<typename LoadIdT = Aws::String>
+    GetLoaderJobStatusRequest& WithLoadId(LoadIdT&& value) { SetLoadId(std::forward<LoadIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * (<code>TRUE</code> or <code>FALSE</code>; the default is
      * <code>FALSE</code>).</p>
      */
-    inline bool GetDetails() const{ return m_details; }
+    inline bool GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
     inline void SetDetails(bool value) { m_detailsHasBeenSet = true; m_details = value; }
     inline GetLoaderJobStatusRequest& WithDetails(bool value) { SetDetails(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
      * and <code>errorsPerPage</code> parameters allow you to page through all the
      * errors.</p>
      */
-    inline bool GetErrors() const{ return m_errors; }
+    inline bool GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
     inline void SetErrors(bool value) { m_errorsHasBeenSet = true; m_errors = value; }
     inline GetLoaderJobStatusRequest& WithErrors(bool value) { SetErrors(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * Only valid when the <code>errors</code> parameter is set to
      * <code>TRUE</code>.</p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline GetLoaderJobStatusRequest& WithPage(int value) { SetPage(value); return *this;}
@@ -96,7 +94,7 @@ namespace Model
      * is <code>10</code>). Only valid when the <code>errors</code> parameter set to
      * <code>TRUE</code>.</p>
      */
-    inline int GetErrorsPerPage() const{ return m_errorsPerPage; }
+    inline int GetErrorsPerPage() const { return m_errorsPerPage; }
     inline bool ErrorsPerPageHasBeenSet() const { return m_errorsPerPageHasBeenSet; }
     inline void SetErrorsPerPage(int value) { m_errorsPerPageHasBeenSet = true; m_errorsPerPage = value; }
     inline GetLoaderJobStatusRequest& WithErrorsPerPage(int value) { SetErrorsPerPage(value); return *this;}
@@ -106,16 +104,16 @@ namespace Model
     Aws::String m_loadId;
     bool m_loadIdHasBeenSet = false;
 
-    bool m_details;
+    bool m_details{false};
     bool m_detailsHasBeenSet = false;
 
-    bool m_errors;
+    bool m_errors{false};
     bool m_errorsHasBeenSet = false;
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
 
-    int m_errorsPerPage;
+    int m_errorsPerPage{0};
     bool m_errorsPerPageHasBeenSet = false;
   };
 

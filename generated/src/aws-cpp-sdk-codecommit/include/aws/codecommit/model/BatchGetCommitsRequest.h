@@ -22,7 +22,7 @@ namespace Model
   class BatchGetCommitsRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API BatchGetCommitsRequest();
+    AWS_CODECOMMIT_API BatchGetCommitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,26 @@ namespace Model
      * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
      * IDs.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetCommitIds() const{ return m_commitIds; }
+    inline const Aws::Vector<Aws::String>& GetCommitIds() const { return m_commitIds; }
     inline bool CommitIdsHasBeenSet() const { return m_commitIdsHasBeenSet; }
-    inline void SetCommitIds(const Aws::Vector<Aws::String>& value) { m_commitIdsHasBeenSet = true; m_commitIds = value; }
-    inline void SetCommitIds(Aws::Vector<Aws::String>&& value) { m_commitIdsHasBeenSet = true; m_commitIds = std::move(value); }
-    inline BatchGetCommitsRequest& WithCommitIds(const Aws::Vector<Aws::String>& value) { SetCommitIds(value); return *this;}
-    inline BatchGetCommitsRequest& WithCommitIds(Aws::Vector<Aws::String>&& value) { SetCommitIds(std::move(value)); return *this;}
-    inline BatchGetCommitsRequest& AddCommitIds(const Aws::String& value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(value); return *this; }
-    inline BatchGetCommitsRequest& AddCommitIds(Aws::String&& value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(std::move(value)); return *this; }
-    inline BatchGetCommitsRequest& AddCommitIds(const char* value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(value); return *this; }
+    template<typename CommitIdsT = Aws::Vector<Aws::String>>
+    void SetCommitIds(CommitIdsT&& value) { m_commitIdsHasBeenSet = true; m_commitIds = std::forward<CommitIdsT>(value); }
+    template<typename CommitIdsT = Aws::Vector<Aws::String>>
+    BatchGetCommitsRequest& WithCommitIds(CommitIdsT&& value) { SetCommitIds(std::forward<CommitIdsT>(value)); return *this;}
+    template<typename CommitIdsT = Aws::String>
+    BatchGetCommitsRequest& AddCommitIds(CommitIdsT&& value) { m_commitIdsHasBeenSet = true; m_commitIds.emplace_back(std::forward<CommitIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository that contains the commits.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline BatchGetCommitsRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline BatchGetCommitsRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline BatchGetCommitsRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    BatchGetCommitsRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
   private:
 

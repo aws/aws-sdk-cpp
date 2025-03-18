@@ -34,7 +34,7 @@ namespace Model
   class PolicySummary
   {
   public:
-    AWS_ORGANIZATIONS_API PolicySummary();
+    AWS_ORGANIZATIONS_API PolicySummary() = default;
     AWS_ORGANIZATIONS_API PolicySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API PolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
      * or the underscore character (_).</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PolicySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PolicySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PolicySummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PolicySummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
      * Authorization Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PolicySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PolicySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PolicySummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PolicySummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,40 +78,34 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PolicySummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PolicySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PolicySummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PolicySummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PolicySummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of policy.</p>
      */
-    inline const PolicyType& GetType() const{ return m_type; }
+    inline PolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PolicySummary& WithType(const PolicyType& value) { SetType(value); return *this;}
-    inline PolicySummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PolicySummary& WithType(PolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -124,7 +114,7 @@ namespace Model
      * Services managed policy. If true, then you can attach the policy to roots, OUs,
      * or accounts, but you cannot edit it.</p>
      */
-    inline bool GetAwsManaged() const{ return m_awsManaged; }
+    inline bool GetAwsManaged() const { return m_awsManaged; }
     inline bool AwsManagedHasBeenSet() const { return m_awsManagedHasBeenSet; }
     inline void SetAwsManaged(bool value) { m_awsManagedHasBeenSet = true; m_awsManaged = value; }
     inline PolicySummary& WithAwsManaged(bool value) { SetAwsManaged(value); return *this;}
@@ -143,10 +133,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    PolicyType m_type;
+    PolicyType m_type{PolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    bool m_awsManaged;
+    bool m_awsManaged{false};
     bool m_awsManagedHasBeenSet = false;
   };
 

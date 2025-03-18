@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateQAppPermissionsResult::UpdateQAppPermissionsResult()
-{
-}
-
 UpdateQAppPermissionsResult::UpdateQAppPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ UpdateQAppPermissionsResult& UpdateQAppPermissionsResult::operator =(const Aws::
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
@@ -48,14 +42,15 @@ UpdateQAppPermissionsResult& UpdateQAppPermissionsResult::operator =(const Aws::
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
+    m_permissionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

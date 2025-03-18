@@ -12,12 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateControlPanelRequest::UpdateControlPanelRequest() : 
-    m_controlPanelArnHasBeenSet(false),
-    m_controlPanelNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateControlPanelRequest::SerializePayload() const
 {
   JsonValue payload;

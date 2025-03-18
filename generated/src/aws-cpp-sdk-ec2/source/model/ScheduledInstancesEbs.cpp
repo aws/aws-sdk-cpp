@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesEbs::ScheduledInstancesEbs() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 ScheduledInstancesEbs::ScheduledInstancesEbs(const XmlNode& xmlNode)
-  : ScheduledInstancesEbs()
 {
   *this = xmlNode;
 }

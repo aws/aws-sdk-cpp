@@ -12,13 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDelegatedAdminAccountsRequest::ListDelegatedAdminAccountsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDelegatedAdminAccountsRequest::SerializePayload() const
 {
   JsonValue payload;

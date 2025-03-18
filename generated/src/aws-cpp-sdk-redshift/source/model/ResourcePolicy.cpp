@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_resourceArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(const XmlNode& xmlNode)
-  : ResourcePolicy()
 {
   *this = xmlNode;
 }

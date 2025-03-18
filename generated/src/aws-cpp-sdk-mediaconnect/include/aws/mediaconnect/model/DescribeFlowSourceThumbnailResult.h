@@ -28,35 +28,35 @@ namespace Model
   class DescribeFlowSourceThumbnailResult
   {
   public:
-    AWS_MEDIACONNECT_API DescribeFlowSourceThumbnailResult();
+    AWS_MEDIACONNECT_API DescribeFlowSourceThumbnailResult() = default;
     AWS_MEDIACONNECT_API DescribeFlowSourceThumbnailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API DescribeFlowSourceThumbnailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ThumbnailDetails& GetThumbnailDetails() const{ return m_thumbnailDetails; }
-    inline void SetThumbnailDetails(const ThumbnailDetails& value) { m_thumbnailDetails = value; }
-    inline void SetThumbnailDetails(ThumbnailDetails&& value) { m_thumbnailDetails = std::move(value); }
-    inline DescribeFlowSourceThumbnailResult& WithThumbnailDetails(const ThumbnailDetails& value) { SetThumbnailDetails(value); return *this;}
-    inline DescribeFlowSourceThumbnailResult& WithThumbnailDetails(ThumbnailDetails&& value) { SetThumbnailDetails(std::move(value)); return *this;}
+    inline const ThumbnailDetails& GetThumbnailDetails() const { return m_thumbnailDetails; }
+    template<typename ThumbnailDetailsT = ThumbnailDetails>
+    void SetThumbnailDetails(ThumbnailDetailsT&& value) { m_thumbnailDetailsHasBeenSet = true; m_thumbnailDetails = std::forward<ThumbnailDetailsT>(value); }
+    template<typename ThumbnailDetailsT = ThumbnailDetails>
+    DescribeFlowSourceThumbnailResult& WithThumbnailDetails(ThumbnailDetailsT&& value) { SetThumbnailDetails(std::forward<ThumbnailDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFlowSourceThumbnailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFlowSourceThumbnailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFlowSourceThumbnailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFlowSourceThumbnailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ThumbnailDetails m_thumbnailDetails;
+    bool m_thumbnailDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

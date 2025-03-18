@@ -18,15 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-Metric::Metric() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 Metric::Metric(JsonView jsonValue)
-  : Metric()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Metric& Metric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -56,7 +44,6 @@ Metric& Metric::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

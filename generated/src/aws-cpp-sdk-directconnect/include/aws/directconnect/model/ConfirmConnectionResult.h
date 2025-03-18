@@ -28,7 +28,7 @@ namespace Model
   class ConfirmConnectionResult
   {
   public:
-    AWS_DIRECTCONNECT_API ConfirmConnectionResult();
+    AWS_DIRECTCONNECT_API ConfirmConnectionResult() = default;
     AWS_DIRECTCONNECT_API ConfirmConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API ConfirmConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -52,28 +52,26 @@ namespace Model
      * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
      * the connection is not available.</p> </li> </ul>
      */
-    inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
-    inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
-    inline ConfirmConnectionResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
-    inline ConfirmConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+    inline ConnectionState GetConnectionState() const { return m_connectionState; }
+    inline void SetConnectionState(ConnectionState value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline ConfirmConnectionResult& WithConnectionState(ConnectionState value) { SetConnectionState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfirmConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfirmConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfirmConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfirmConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectionState m_connectionState;
+    ConnectionState m_connectionState{ConnectionState::NOT_SET};
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,10 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeAccountAttributesRequest::DescribeAccountAttributesRequest()
-{
-}
-
 Aws::String DescribeAccountAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

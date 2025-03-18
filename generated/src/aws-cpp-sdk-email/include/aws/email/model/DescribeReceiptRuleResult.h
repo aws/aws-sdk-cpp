@@ -33,7 +33,7 @@ namespace Model
   class DescribeReceiptRuleResult
   {
   public:
-    AWS_SES_API DescribeReceiptRuleResult();
+    AWS_SES_API DescribeReceiptRuleResult() = default;
     AWS_SES_API DescribeReceiptRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API DescribeReceiptRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,26 +44,28 @@ namespace Model
      * recipients, domains, enabled status, scan status, and Transport Layer Security
      * (TLS) policy.</p>
      */
-    inline const ReceiptRule& GetRule() const{ return m_rule; }
-    inline void SetRule(const ReceiptRule& value) { m_rule = value; }
-    inline void SetRule(ReceiptRule&& value) { m_rule = std::move(value); }
-    inline DescribeReceiptRuleResult& WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
-    inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
+    inline const ReceiptRule& GetRule() const { return m_rule; }
+    template<typename RuleT = ReceiptRule>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = ReceiptRule>
+    DescribeReceiptRuleResult& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReceiptRuleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReceiptRuleResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReceiptRule m_rule;
+    bool m_ruleHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

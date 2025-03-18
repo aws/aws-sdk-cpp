@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-InnerFilter::InnerFilter() : 
-    m_categoryInnerFilterHasBeenSet(false)
-{
-}
-
 InnerFilter::InnerFilter(JsonView jsonValue)
-  : InnerFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InnerFilter& InnerFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CategoryInnerFilter"))
   {
     m_categoryInnerFilter = jsonValue.GetObject("CategoryInnerFilter");
-
     m_categoryInnerFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

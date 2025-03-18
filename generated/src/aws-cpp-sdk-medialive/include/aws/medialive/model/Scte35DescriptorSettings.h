@@ -31,7 +31,7 @@ namespace Model
   class Scte35DescriptorSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte35DescriptorSettings();
+    AWS_MEDIALIVE_API Scte35DescriptorSettings() = default;
     AWS_MEDIALIVE_API Scte35DescriptorSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte35DescriptorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * SCTE-35 Segmentation Descriptor.
      */
-    inline const Scte35SegmentationDescriptor& GetSegmentationDescriptorScte35DescriptorSettings() const{ return m_segmentationDescriptorScte35DescriptorSettings; }
+    inline const Scte35SegmentationDescriptor& GetSegmentationDescriptorScte35DescriptorSettings() const { return m_segmentationDescriptorScte35DescriptorSettings; }
     inline bool SegmentationDescriptorScte35DescriptorSettingsHasBeenSet() const { return m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet; }
-    inline void SetSegmentationDescriptorScte35DescriptorSettings(const Scte35SegmentationDescriptor& value) { m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = true; m_segmentationDescriptorScte35DescriptorSettings = value; }
-    inline void SetSegmentationDescriptorScte35DescriptorSettings(Scte35SegmentationDescriptor&& value) { m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = true; m_segmentationDescriptorScte35DescriptorSettings = std::move(value); }
-    inline Scte35DescriptorSettings& WithSegmentationDescriptorScte35DescriptorSettings(const Scte35SegmentationDescriptor& value) { SetSegmentationDescriptorScte35DescriptorSettings(value); return *this;}
-    inline Scte35DescriptorSettings& WithSegmentationDescriptorScte35DescriptorSettings(Scte35SegmentationDescriptor&& value) { SetSegmentationDescriptorScte35DescriptorSettings(std::move(value)); return *this;}
+    template<typename SegmentationDescriptorScte35DescriptorSettingsT = Scte35SegmentationDescriptor>
+    void SetSegmentationDescriptorScte35DescriptorSettings(SegmentationDescriptorScte35DescriptorSettingsT&& value) { m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = true; m_segmentationDescriptorScte35DescriptorSettings = std::forward<SegmentationDescriptorScte35DescriptorSettingsT>(value); }
+    template<typename SegmentationDescriptorScte35DescriptorSettingsT = Scte35SegmentationDescriptor>
+    Scte35DescriptorSettings& WithSegmentationDescriptorScte35DescriptorSettings(SegmentationDescriptorScte35DescriptorSettingsT&& value) { SetSegmentationDescriptorScte35DescriptorSettings(std::forward<SegmentationDescriptorScte35DescriptorSettingsT>(value)); return *this;}
     ///@}
   private:
 

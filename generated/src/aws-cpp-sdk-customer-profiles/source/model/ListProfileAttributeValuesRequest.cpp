@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProfileAttributeValuesRequest::ListProfileAttributeValuesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
-{
-}
-
 Aws::String ListProfileAttributeValuesRequest::SerializePayload() const
 {
   return {};

@@ -23,7 +23,7 @@ namespace Model
   class SearchVocabulariesRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API SearchVocabulariesRequest();
+    AWS_CONNECT_API SearchVocabulariesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline SearchVocabulariesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline SearchVocabulariesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline SearchVocabulariesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    SearchVocabulariesRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchVocabulariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,40 +63,34 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchVocabulariesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchVocabulariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchVocabulariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchVocabulariesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the custom vocabulary.</p>
      */
-    inline const VocabularyState& GetState() const{ return m_state; }
+    inline VocabularyState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VocabularyState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VocabularyState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline SearchVocabulariesRequest& WithState(const VocabularyState& value) { SetState(value); return *this;}
-    inline SearchVocabulariesRequest& WithState(VocabularyState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VocabularyState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline SearchVocabulariesRequest& WithState(VocabularyState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The starting pattern of the name of the vocabulary.</p>
      */
-    inline const Aws::String& GetNameStartsWith() const{ return m_nameStartsWith; }
+    inline const Aws::String& GetNameStartsWith() const { return m_nameStartsWith; }
     inline bool NameStartsWithHasBeenSet() const { return m_nameStartsWithHasBeenSet; }
-    inline void SetNameStartsWith(const Aws::String& value) { m_nameStartsWithHasBeenSet = true; m_nameStartsWith = value; }
-    inline void SetNameStartsWith(Aws::String&& value) { m_nameStartsWithHasBeenSet = true; m_nameStartsWith = std::move(value); }
-    inline void SetNameStartsWith(const char* value) { m_nameStartsWithHasBeenSet = true; m_nameStartsWith.assign(value); }
-    inline SearchVocabulariesRequest& WithNameStartsWith(const Aws::String& value) { SetNameStartsWith(value); return *this;}
-    inline SearchVocabulariesRequest& WithNameStartsWith(Aws::String&& value) { SetNameStartsWith(std::move(value)); return *this;}
-    inline SearchVocabulariesRequest& WithNameStartsWith(const char* value) { SetNameStartsWith(value); return *this;}
+    template<typename NameStartsWithT = Aws::String>
+    void SetNameStartsWith(NameStartsWithT&& value) { m_nameStartsWithHasBeenSet = true; m_nameStartsWith = std::forward<NameStartsWithT>(value); }
+    template<typename NameStartsWithT = Aws::String>
+    SearchVocabulariesRequest& WithNameStartsWith(NameStartsWithT&& value) { SetNameStartsWith(std::forward<NameStartsWithT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,31 +100,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What
      * is Amazon Transcribe?</a> </p>
      */
-    inline const VocabularyLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline VocabularyLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const VocabularyLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(VocabularyLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline SearchVocabulariesRequest& WithLanguageCode(const VocabularyLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline SearchVocabulariesRequest& WithLanguageCode(VocabularyLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(VocabularyLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline SearchVocabulariesRequest& WithLanguageCode(VocabularyLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    VocabularyState m_state;
+    VocabularyState m_state{VocabularyState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_nameStartsWith;
     bool m_nameStartsWithHasBeenSet = false;
 
-    VocabularyLanguageCode m_languageCode;
+    VocabularyLanguageCode m_languageCode{VocabularyLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

@@ -18,18 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-ImportFailureListItem::ImportFailureListItem() : 
-    m_locationHasBeenSet(false),
-    m_status(ImportFailureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ImportFailureListItem::ImportFailureListItem(JsonView jsonValue)
-  : ImportFailureListItem()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ImportFailureListItem& ImportFailureListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ImportFailureStatusMapper::GetImportFailureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = jsonValue.GetString("ErrorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

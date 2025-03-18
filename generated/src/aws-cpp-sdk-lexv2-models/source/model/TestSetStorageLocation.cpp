@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetStorageLocation::TestSetStorageLocation() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 TestSetStorageLocation::TestSetStorageLocation(JsonView jsonValue)
-  : TestSetStorageLocation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TestSetStorageLocation& TestSetStorageLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Path"))
   {
     m_s3Path = jsonValue.GetString("s3Path");
-
     m_s3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

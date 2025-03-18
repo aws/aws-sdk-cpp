@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeviceSummary::DeviceSummary() : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_iotThingNameHasBeenSet(false),
-    m_registrationTimeHasBeenSet(false),
-    m_latestHeartbeatHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
-{
-}
-
 DeviceSummary::DeviceSummary(JsonView jsonValue)
-  : DeviceSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceArn"))
   {
     m_deviceArn = jsonValue.GetString("DeviceArn");
-
     m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceFleetName"))
   {
     m_deviceFleetName = jsonValue.GetString("DeviceFleetName");
-
     m_deviceFleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IotThingName"))
   {
     m_iotThingName = jsonValue.GetString("IotThingName");
-
     m_iotThingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationTime"))
   {
     m_registrationTime = jsonValue.GetDouble("RegistrationTime");
-
     m_registrationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestHeartbeat"))
   {
     m_latestHeartbeat = jsonValue.GetDouble("LatestHeartbeat");
-
     m_latestHeartbeatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Models"))
   {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
@@ -97,14 +69,11 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     }
     m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentVersion"))
   {
     m_agentVersion = jsonValue.GetString("AgentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

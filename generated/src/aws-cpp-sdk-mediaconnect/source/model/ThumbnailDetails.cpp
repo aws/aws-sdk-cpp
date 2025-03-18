@@ -18,17 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-ThumbnailDetails::ThumbnailDetails() : 
-    m_flowArnHasBeenSet(false),
-    m_thumbnailHasBeenSet(false),
-    m_thumbnailMessagesHasBeenSet(false),
-    m_timecodeHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 ThumbnailDetails::ThumbnailDetails(JsonView jsonValue)
-  : ThumbnailDetails()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ThumbnailDetails& ThumbnailDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
     m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnail"))
   {
     m_thumbnail = jsonValue.GetString("thumbnail");
-
     m_thumbnailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailMessages"))
   {
     Aws::Utils::Array<JsonView> thumbnailMessagesJsonList = jsonValue.GetArray("thumbnailMessages");
@@ -58,21 +44,16 @@ ThumbnailDetails& ThumbnailDetails::operator =(JsonView jsonValue)
     }
     m_thumbnailMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecode"))
   {
     m_timecode = jsonValue.GetString("timecode");
-
     m_timecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class TestConnectionInput
   {
   public:
-    AWS_GLUE_API TestConnectionInput();
+    AWS_GLUE_API TestConnectionInput() = default;
     AWS_GLUE_API TestConnectionInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TestConnectionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>The type of connection to test. This operation is only available for the
      * <code>JDBC</code> or <code>SALESFORCE</code> connection types.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline TestConnectionInput& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline TestConnectionInput& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline TestConnectionInput& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,15 @@ namespace Model
      * configure SSL with JDBC.</p> </li> </ul> <p>SALESFORCE connections require the
      * <code>AuthenticationConfiguration</code> member to be configured.</p>
      */
-    inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
+    inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const { return m_connectionProperties; }
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
-    inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
-    inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
-    inline TestConnectionInput& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
-    inline TestConnectionInput& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
-    inline TestConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
-    inline TestConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
-    inline TestConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
-    inline TestConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline TestConnectionInput& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
-    inline TestConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
+    template<typename ConnectionPropertiesT = Aws::Map<ConnectionPropertyKey, Aws::String>>
+    void SetConnectionProperties(ConnectionPropertiesT&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::forward<ConnectionPropertiesT>(value); }
+    template<typename ConnectionPropertiesT = Aws::Map<ConnectionPropertyKey, Aws::String>>
+    TestConnectionInput& WithConnectionProperties(ConnectionPropertiesT&& value) { SetConnectionProperties(std::forward<ConnectionPropertiesT>(value)); return *this;}
+    inline TestConnectionInput& AddConnectionProperties(ConnectionPropertyKey key, Aws::String value) {
+      m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -87,16 +82,16 @@ namespace Model
      * <p>A structure containing the authentication configuration in the TestConnection
      * request. Required for a connection to Salesforce using OAuth authentication.</p>
      */
-    inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+    inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-    inline void SetAuthenticationConfiguration(const AuthenticationConfigurationInput& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
-    inline void SetAuthenticationConfiguration(AuthenticationConfigurationInput&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
-    inline TestConnectionInput& WithAuthenticationConfiguration(const AuthenticationConfigurationInput& value) { SetAuthenticationConfiguration(value); return *this;}
-    inline TestConnectionInput& WithAuthenticationConfiguration(AuthenticationConfigurationInput&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+    template<typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
+    void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value); }
+    template<typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
+    TestConnectionInput& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) { SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImageRecycleBinInfo::ImageRecycleBinInfo() : 
-    m_imageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recycleBinEnterTimeHasBeenSet(false),
-    m_recycleBinExitTimeHasBeenSet(false)
-{
-}
-
 ImageRecycleBinInfo::ImageRecycleBinInfo(const XmlNode& xmlNode)
-  : ImageRecycleBinInfo()
 {
   *this = xmlNode;
 }

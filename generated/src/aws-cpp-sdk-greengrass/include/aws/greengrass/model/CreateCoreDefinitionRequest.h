@@ -26,7 +26,7 @@ namespace Model
   class CreateCoreDefinitionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API CreateCoreDefinitionRequest();
+    AWS_GREENGRASS_API CreateCoreDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,59 +43,52 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
-    inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
+    inline const Aws::String& GetAmznClientToken() const { return m_amznClientToken; }
     inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
-    inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
-    inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
-    inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
-    inline CreateCoreDefinitionRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
-    inline CreateCoreDefinitionRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
-    inline CreateCoreDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+    template<typename AmznClientTokenT = Aws::String>
+    void SetAmznClientToken(AmznClientTokenT&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::forward<AmznClientTokenT>(value); }
+    template<typename AmznClientTokenT = Aws::String>
+    CreateCoreDefinitionRequest& WithAmznClientToken(AmznClientTokenT&& value) { SetAmznClientToken(std::forward<AmznClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Information about the initial version of the core definition.
      */
-    inline const CoreDefinitionVersion& GetInitialVersion() const{ return m_initialVersion; }
+    inline const CoreDefinitionVersion& GetInitialVersion() const { return m_initialVersion; }
     inline bool InitialVersionHasBeenSet() const { return m_initialVersionHasBeenSet; }
-    inline void SetInitialVersion(const CoreDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
-    inline void SetInitialVersion(CoreDefinitionVersion&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::move(value); }
-    inline CreateCoreDefinitionRequest& WithInitialVersion(const CoreDefinitionVersion& value) { SetInitialVersion(value); return *this;}
-    inline CreateCoreDefinitionRequest& WithInitialVersion(CoreDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
+    template<typename InitialVersionT = CoreDefinitionVersion>
+    void SetInitialVersion(InitialVersionT&& value) { m_initialVersionHasBeenSet = true; m_initialVersion = std::forward<InitialVersionT>(value); }
+    template<typename InitialVersionT = CoreDefinitionVersion>
+    CreateCoreDefinitionRequest& WithInitialVersion(InitialVersionT&& value) { SetInitialVersion(std::forward<InitialVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the core definition.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCoreDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCoreDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCoreDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCoreDefinitionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Tag(s) to add to the new resource.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCoreDefinitionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateCoreDefinitionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCoreDefinitionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateCoreDefinitionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateCoreDefinitionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateCoreDefinitionRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

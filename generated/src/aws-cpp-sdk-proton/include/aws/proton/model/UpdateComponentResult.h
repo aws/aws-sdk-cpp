@@ -28,7 +28,7 @@ namespace Model
   class UpdateComponentResult
   {
   public:
-    AWS_PROTON_API UpdateComponentResult();
+    AWS_PROTON_API UpdateComponentResult() = default;
     AWS_PROTON_API UpdateComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API UpdateComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the updated component.</p>
      */
-    inline const Component& GetComponent() const{ return m_component; }
-    inline void SetComponent(const Component& value) { m_component = value; }
-    inline void SetComponent(Component&& value) { m_component = std::move(value); }
-    inline UpdateComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
-    inline UpdateComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
+    inline const Component& GetComponent() const { return m_component; }
+    template<typename ComponentT = Component>
+    void SetComponent(ComponentT&& value) { m_componentHasBeenSet = true; m_component = std::forward<ComponentT>(value); }
+    template<typename ComponentT = Component>
+    UpdateComponentResult& WithComponent(ComponentT&& value) { SetComponent(std::forward<ComponentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Component m_component;
+    bool m_componentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

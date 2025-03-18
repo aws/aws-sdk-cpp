@@ -22,7 +22,7 @@ namespace Model
   class RegisterAgentRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API RegisterAgentRequest();
+    AWS_GROUNDSTATION_API RegisterAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,24 @@ namespace Model
     /**
      * <p>Detailed information about the agent being registered.</p>
      */
-    inline const AgentDetails& GetAgentDetails() const{ return m_agentDetails; }
+    inline const AgentDetails& GetAgentDetails() const { return m_agentDetails; }
     inline bool AgentDetailsHasBeenSet() const { return m_agentDetailsHasBeenSet; }
-    inline void SetAgentDetails(const AgentDetails& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = value; }
-    inline void SetAgentDetails(AgentDetails&& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = std::move(value); }
-    inline RegisterAgentRequest& WithAgentDetails(const AgentDetails& value) { SetAgentDetails(value); return *this;}
-    inline RegisterAgentRequest& WithAgentDetails(AgentDetails&& value) { SetAgentDetails(std::move(value)); return *this;}
+    template<typename AgentDetailsT = AgentDetails>
+    void SetAgentDetails(AgentDetailsT&& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = std::forward<AgentDetailsT>(value); }
+    template<typename AgentDetailsT = AgentDetails>
+    RegisterAgentRequest& WithAgentDetails(AgentDetailsT&& value) { SetAgentDetails(std::forward<AgentDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
-    inline const DiscoveryData& GetDiscoveryData() const{ return m_discoveryData; }
+    inline const DiscoveryData& GetDiscoveryData() const { return m_discoveryData; }
     inline bool DiscoveryDataHasBeenSet() const { return m_discoveryDataHasBeenSet; }
-    inline void SetDiscoveryData(const DiscoveryData& value) { m_discoveryDataHasBeenSet = true; m_discoveryData = value; }
-    inline void SetDiscoveryData(DiscoveryData&& value) { m_discoveryDataHasBeenSet = true; m_discoveryData = std::move(value); }
-    inline RegisterAgentRequest& WithDiscoveryData(const DiscoveryData& value) { SetDiscoveryData(value); return *this;}
-    inline RegisterAgentRequest& WithDiscoveryData(DiscoveryData&& value) { SetDiscoveryData(std::move(value)); return *this;}
+    template<typename DiscoveryDataT = DiscoveryData>
+    void SetDiscoveryData(DiscoveryDataT&& value) { m_discoveryDataHasBeenSet = true; m_discoveryData = std::forward<DiscoveryDataT>(value); }
+    template<typename DiscoveryDataT = DiscoveryData>
+    RegisterAgentRequest& WithDiscoveryData(DiscoveryDataT&& value) { SetDiscoveryData(std::forward<DiscoveryDataT>(value)); return *this;}
     ///@}
   private:
 

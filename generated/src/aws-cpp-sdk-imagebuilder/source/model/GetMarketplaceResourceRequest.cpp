@@ -12,14 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMarketplaceResourceRequest::GetMarketplaceResourceRequest() : 
-    m_resourceType(MarketplaceResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceLocationHasBeenSet(false)
-{
-}
-
 Aws::String GetMarketplaceResourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetMedicalVocabularyRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyRequest();
+    AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the custom medical vocabulary you want information about. Custom
      * medical vocabulary names are case sensitive.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline GetMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline GetMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline GetMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    GetMedicalVocabularyRequest& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
   private:
 

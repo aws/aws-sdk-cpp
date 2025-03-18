@@ -39,7 +39,7 @@ namespace Model
   class ConflictException
   {
   public:
-    AWS_ECS_API ConflictException();
+    AWS_ECS_API ConflictException() = default;
     AWS_ECS_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,15 +50,14 @@ namespace Model
      * <p>The existing task ARNs which are already associated with the
      * <code>clientToken</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline ConflictException& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline ConflictException& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline ConflictException& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline ConflictException& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline ConflictException& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    ConflictException& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    ConflictException& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 

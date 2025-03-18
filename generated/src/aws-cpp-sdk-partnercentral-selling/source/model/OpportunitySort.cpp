@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-OpportunitySort::OpportunitySort() : 
-    m_sortBy(OpportunitySortName::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 OpportunitySort::OpportunitySort(JsonView jsonValue)
-  : OpportunitySort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OpportunitySort& OpportunitySort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = OpportunitySortNameMapper::GetOpportunitySortNameForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

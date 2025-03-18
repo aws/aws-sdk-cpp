@@ -27,7 +27,7 @@ namespace Model
   class RemoveFlowMediaStreamResult
   {
   public:
-    AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult();
+    AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult() = default;
     AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the flow.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline RemoveFlowMediaStreamResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RemoveFlowMediaStreamResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RemoveFlowMediaStreamResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RemoveFlowMediaStreamResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the media stream that was removed.
      */
-    inline const Aws::String& GetMediaStreamName() const{ return m_mediaStreamName; }
-    inline void SetMediaStreamName(const Aws::String& value) { m_mediaStreamName = value; }
-    inline void SetMediaStreamName(Aws::String&& value) { m_mediaStreamName = std::move(value); }
-    inline void SetMediaStreamName(const char* value) { m_mediaStreamName.assign(value); }
-    inline RemoveFlowMediaStreamResult& WithMediaStreamName(const Aws::String& value) { SetMediaStreamName(value); return *this;}
-    inline RemoveFlowMediaStreamResult& WithMediaStreamName(Aws::String&& value) { SetMediaStreamName(std::move(value)); return *this;}
-    inline RemoveFlowMediaStreamResult& WithMediaStreamName(const char* value) { SetMediaStreamName(value); return *this;}
+    inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
+    template<typename MediaStreamNameT = Aws::String>
+    void SetMediaStreamName(MediaStreamNameT&& value) { m_mediaStreamNameHasBeenSet = true; m_mediaStreamName = std::forward<MediaStreamNameT>(value); }
+    template<typename MediaStreamNameT = Aws::String>
+    RemoveFlowMediaStreamResult& WithMediaStreamName(MediaStreamNameT&& value) { SetMediaStreamName(std::forward<MediaStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveFlowMediaStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveFlowMediaStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveFlowMediaStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveFlowMediaStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
+    bool m_mediaStreamNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

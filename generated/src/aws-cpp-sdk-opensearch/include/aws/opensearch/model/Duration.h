@@ -33,7 +33,7 @@ namespace Model
   class Duration
   {
   public:
-    AWS_OPENSEARCHSERVICE_API Duration();
+    AWS_OPENSEARCHSERVICE_API Duration() = default;
     AWS_OPENSEARCHSERVICE_API Duration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Integer to specify the value of a maintenance schedule duration.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
@@ -53,19 +53,17 @@ namespace Model
     /**
      * <p>The unit of measurement for the duration of a maintenance schedule.</p>
      */
-    inline const TimeUnit& GetUnit() const{ return m_unit; }
+    inline TimeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const TimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(TimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Duration& WithUnit(const TimeUnit& value) { SetUnit(value); return *this;}
-    inline Duration& WithUnit(TimeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(TimeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Duration& WithUnit(TimeUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
 
-    TimeUnit m_unit;
+    TimeUnit m_unit{TimeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

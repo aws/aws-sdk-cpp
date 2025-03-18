@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFileSystemAssociationsResult::ListFileSystemAssociationsResult()
-{
-}
-
 ListFileSystemAssociationsResult::ListFileSystemAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListFileSystemAssociationsResult& ListFileSystemAssociationsResult::operator =(c
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAssociationSummaryList"))
   {
     Aws::Utils::Array<JsonView> fileSystemAssociationSummaryListJsonList = jsonValue.GetArray("FileSystemAssociationSummaryList");
@@ -48,14 +42,15 @@ ListFileSystemAssociationsResult& ListFileSystemAssociationsResult::operator =(c
     {
       m_fileSystemAssociationSummaryList.push_back(fileSystemAssociationSummaryListJsonList[fileSystemAssociationSummaryListIndex].AsObject());
     }
+    m_fileSystemAssociationSummaryListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

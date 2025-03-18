@@ -32,7 +32,7 @@ namespace Model
   class GatewayInfo
   {
   public:
-    AWS_STORAGEGATEWAY_API GatewayInfo();
+    AWS_STORAGEGATEWAY_API GatewayInfo() = default;
     AWS_STORAGEGATEWAY_API GatewayInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API GatewayInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline GatewayInfo& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline GatewayInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline GatewayInfo& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    GatewayInfo& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * operation to return a list of gateways for your account and Amazon Web Services
      * Region.</p>
      */
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline GatewayInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline GatewayInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline GatewayInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    GatewayInfo& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this
      * blog post</a>.</p> 
      */
-    inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
+    inline const Aws::String& GetGatewayType() const { return m_gatewayType; }
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
-    inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
-    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
-    inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
-    inline GatewayInfo& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
-    inline GatewayInfo& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
-    inline GatewayInfo& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
+    template<typename GatewayTypeT = Aws::String>
+    void SetGatewayType(GatewayTypeT&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::forward<GatewayTypeT>(value); }
+    template<typename GatewayTypeT = Aws::String>
+    GatewayInfo& WithGatewayType(GatewayTypeT&& value) { SetGatewayType(std::forward<GatewayTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,56 +88,48 @@ namespace Model
      * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
      * <code>ACTIVE</code> </p>
      */
-    inline const Aws::String& GetGatewayOperationalState() const{ return m_gatewayOperationalState; }
+    inline const Aws::String& GetGatewayOperationalState() const { return m_gatewayOperationalState; }
     inline bool GatewayOperationalStateHasBeenSet() const { return m_gatewayOperationalStateHasBeenSet; }
-    inline void SetGatewayOperationalState(const Aws::String& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = value; }
-    inline void SetGatewayOperationalState(Aws::String&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = std::move(value); }
-    inline void SetGatewayOperationalState(const char* value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState.assign(value); }
-    inline GatewayInfo& WithGatewayOperationalState(const Aws::String& value) { SetGatewayOperationalState(value); return *this;}
-    inline GatewayInfo& WithGatewayOperationalState(Aws::String&& value) { SetGatewayOperationalState(std::move(value)); return *this;}
-    inline GatewayInfo& WithGatewayOperationalState(const char* value) { SetGatewayOperationalState(value); return *this;}
+    template<typename GatewayOperationalStateT = Aws::String>
+    void SetGatewayOperationalState(GatewayOperationalStateT&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = std::forward<GatewayOperationalStateT>(value); }
+    template<typename GatewayOperationalStateT = Aws::String>
+    GatewayInfo& WithGatewayOperationalState(GatewayOperationalStateT&& value) { SetGatewayOperationalState(std::forward<GatewayOperationalStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the gateway.</p>
      */
-    inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+    inline const Aws::String& GetGatewayName() const { return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
-    inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
-    inline void SetGatewayName(const char* value) { m_gatewayNameHasBeenSet = true; m_gatewayName.assign(value); }
-    inline GatewayInfo& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
-    inline GatewayInfo& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
-    inline GatewayInfo& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+    template<typename GatewayNameT = Aws::String>
+    void SetGatewayName(GatewayNameT&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::forward<GatewayNameT>(value); }
+    template<typename GatewayNameT = Aws::String>
+    GatewayInfo& WithGatewayName(GatewayNameT&& value) { SetGatewayName(std::forward<GatewayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
      */
-    inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+    inline const Aws::String& GetEc2InstanceId() const { return m_ec2InstanceId; }
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
-    inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
-    inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
-    inline GatewayInfo& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
-    inline GatewayInfo& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
-    inline GatewayInfo& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
+    template<typename Ec2InstanceIdT = Aws::String>
+    void SetEc2InstanceId(Ec2InstanceIdT&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::forward<Ec2InstanceIdT>(value); }
+    template<typename Ec2InstanceIdT = Aws::String>
+    GatewayInfo& WithEc2InstanceId(Ec2InstanceIdT&& value) { SetEc2InstanceId(std::forward<Ec2InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
-    inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
+    inline const Aws::String& GetEc2InstanceRegion() const { return m_ec2InstanceRegion; }
     inline bool Ec2InstanceRegionHasBeenSet() const { return m_ec2InstanceRegionHasBeenSet; }
-    inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegionHasBeenSet = true; m_ec2InstanceRegion = value; }
-    inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegionHasBeenSet = true; m_ec2InstanceRegion = std::move(value); }
-    inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegionHasBeenSet = true; m_ec2InstanceRegion.assign(value); }
-    inline GatewayInfo& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
-    inline GatewayInfo& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
-    inline GatewayInfo& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
+    template<typename Ec2InstanceRegionT = Aws::String>
+    void SetEc2InstanceRegion(Ec2InstanceRegionT&& value) { m_ec2InstanceRegionHasBeenSet = true; m_ec2InstanceRegion = std::forward<Ec2InstanceRegionT>(value); }
+    template<typename Ec2InstanceRegionT = Aws::String>
+    GatewayInfo& WithEc2InstanceRegion(Ec2InstanceRegionT&& value) { SetEc2InstanceRegion(std::forward<Ec2InstanceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +138,10 @@ namespace Model
      * running.</p>  <p>Tape Gateway is no longer available on Snow Family
      * devices.</p> 
      */
-    inline const HostEnvironment& GetHostEnvironment() const{ return m_hostEnvironment; }
+    inline HostEnvironment GetHostEnvironment() const { return m_hostEnvironment; }
     inline bool HostEnvironmentHasBeenSet() const { return m_hostEnvironmentHasBeenSet; }
-    inline void SetHostEnvironment(const HostEnvironment& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = value; }
-    inline void SetHostEnvironment(HostEnvironment&& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = std::move(value); }
-    inline GatewayInfo& WithHostEnvironment(const HostEnvironment& value) { SetHostEnvironment(value); return *this;}
-    inline GatewayInfo& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
+    inline void SetHostEnvironment(HostEnvironment value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = value; }
+    inline GatewayInfo& WithHostEnvironment(HostEnvironment value) { SetHostEnvironment(value); return *this;}
     ///@}
 
     ///@{
@@ -166,14 +150,12 @@ namespace Model
      * the gateway. This value is only available for certain host environments, and its
      * format depends on the host environment type.</p>
      */
-    inline const Aws::String& GetHostEnvironmentId() const{ return m_hostEnvironmentId; }
+    inline const Aws::String& GetHostEnvironmentId() const { return m_hostEnvironmentId; }
     inline bool HostEnvironmentIdHasBeenSet() const { return m_hostEnvironmentIdHasBeenSet; }
-    inline void SetHostEnvironmentId(const Aws::String& value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId = value; }
-    inline void SetHostEnvironmentId(Aws::String&& value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId = std::move(value); }
-    inline void SetHostEnvironmentId(const char* value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId.assign(value); }
-    inline GatewayInfo& WithHostEnvironmentId(const Aws::String& value) { SetHostEnvironmentId(value); return *this;}
-    inline GatewayInfo& WithHostEnvironmentId(Aws::String&& value) { SetHostEnvironmentId(std::move(value)); return *this;}
-    inline GatewayInfo& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
+    template<typename HostEnvironmentIdT = Aws::String>
+    void SetHostEnvironmentId(HostEnvironmentIdT&& value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId = std::forward<HostEnvironmentIdT>(value); }
+    template<typename HostEnvironmentIdT = Aws::String>
+    GatewayInfo& WithHostEnvironmentId(HostEnvironmentIdT&& value) { SetHostEnvironmentId(std::forward<HostEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,28 +163,24 @@ namespace Model
      * <p>Date after which this gateway will not receive software updates for new
      * features and bug fixes.</p>
      */
-    inline const Aws::String& GetDeprecationDate() const{ return m_deprecationDate; }
+    inline const Aws::String& GetDeprecationDate() const { return m_deprecationDate; }
     inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
-    inline void SetDeprecationDate(const Aws::String& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
-    inline void SetDeprecationDate(Aws::String&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = std::move(value); }
-    inline void SetDeprecationDate(const char* value) { m_deprecationDateHasBeenSet = true; m_deprecationDate.assign(value); }
-    inline GatewayInfo& WithDeprecationDate(const Aws::String& value) { SetDeprecationDate(value); return *this;}
-    inline GatewayInfo& WithDeprecationDate(Aws::String&& value) { SetDeprecationDate(std::move(value)); return *this;}
-    inline GatewayInfo& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
+    template<typename DeprecationDateT = Aws::String>
+    void SetDeprecationDate(DeprecationDateT&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = std::forward<DeprecationDateT>(value); }
+    template<typename DeprecationDateT = Aws::String>
+    GatewayInfo& WithDeprecationDate(DeprecationDateT&& value) { SetDeprecationDate(std::forward<DeprecationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the software running on the gateway appliance.</p>
      */
-    inline const Aws::String& GetSoftwareVersion() const{ return m_softwareVersion; }
+    inline const Aws::String& GetSoftwareVersion() const { return m_softwareVersion; }
     inline bool SoftwareVersionHasBeenSet() const { return m_softwareVersionHasBeenSet; }
-    inline void SetSoftwareVersion(const Aws::String& value) { m_softwareVersionHasBeenSet = true; m_softwareVersion = value; }
-    inline void SetSoftwareVersion(Aws::String&& value) { m_softwareVersionHasBeenSet = true; m_softwareVersion = std::move(value); }
-    inline void SetSoftwareVersion(const char* value) { m_softwareVersionHasBeenSet = true; m_softwareVersion.assign(value); }
-    inline GatewayInfo& WithSoftwareVersion(const Aws::String& value) { SetSoftwareVersion(value); return *this;}
-    inline GatewayInfo& WithSoftwareVersion(Aws::String&& value) { SetSoftwareVersion(std::move(value)); return *this;}
-    inline GatewayInfo& WithSoftwareVersion(const char* value) { SetSoftwareVersion(value); return *this;}
+    template<typename SoftwareVersionT = Aws::String>
+    void SetSoftwareVersion(SoftwareVersionT&& value) { m_softwareVersionHasBeenSet = true; m_softwareVersion = std::forward<SoftwareVersionT>(value); }
+    template<typename SoftwareVersionT = Aws::String>
+    GatewayInfo& WithSoftwareVersion(SoftwareVersionT&& value) { SetSoftwareVersion(std::forward<SoftwareVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -227,7 +205,7 @@ namespace Model
     Aws::String m_ec2InstanceRegion;
     bool m_ec2InstanceRegionHasBeenSet = false;
 
-    HostEnvironment m_hostEnvironment;
+    HostEnvironment m_hostEnvironment{HostEnvironment::NOT_SET};
     bool m_hostEnvironmentHasBeenSet = false;
 
     Aws::String m_hostEnvironmentId;

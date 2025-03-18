@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpointConnection::VpcEndpointConnection() : 
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_vpcEndpointState(State::NOT_SET),
-    m_vpcEndpointStateHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_vpcEndpointConnectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcEndpointRegionHasBeenSet(false)
-{
-}
-
 VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode)
-  : VpcEndpointConnection()
 {
   *this = xmlNode;
 }
@@ -71,7 +52,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     XmlNode vpcEndpointStateNode = resultNode.FirstChild("vpcEndpointState");
     if(!vpcEndpointStateNode.IsNull())
     {
-      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()).c_str());
+      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()));
       m_vpcEndpointStateHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
@@ -84,6 +65,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     if(!dnsEntriesNode.IsNull())
     {
       XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
+      m_dnsEntriesHasBeenSet = !dnsEntriesMember.IsNull();
       while(!dnsEntriesMember.IsNull())
       {
         m_dnsEntries.push_back(dnsEntriesMember);
@@ -96,6 +78,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     if(!networkLoadBalancerArnsNode.IsNull())
     {
       XmlNode networkLoadBalancerArnsMember = networkLoadBalancerArnsNode.FirstChild("item");
+      m_networkLoadBalancerArnsHasBeenSet = !networkLoadBalancerArnsMember.IsNull();
       while(!networkLoadBalancerArnsMember.IsNull())
       {
         m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsMember.GetText());
@@ -108,6 +91,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     if(!gatewayLoadBalancerArnsNode.IsNull())
     {
       XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
+      m_gatewayLoadBalancerArnsHasBeenSet = !gatewayLoadBalancerArnsMember.IsNull();
       while(!gatewayLoadBalancerArnsMember.IsNull())
       {
         m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
@@ -119,7 +103,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode vpcEndpointConnectionIdNode = resultNode.FirstChild("vpcEndpointConnectionId");
@@ -132,6 +116,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

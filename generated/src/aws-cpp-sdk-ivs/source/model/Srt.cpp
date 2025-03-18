@@ -18,14 +18,7 @@ namespace IVS
 namespace Model
 {
 
-Srt::Srt() : 
-    m_endpointHasBeenSet(false),
-    m_passphraseHasBeenSet(false)
-{
-}
-
 Srt::Srt(JsonView jsonValue)
-  : Srt()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Srt& Srt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passphrase"))
   {
     m_passphrase = jsonValue.GetString("passphrase");
-
     m_passphraseHasBeenSet = true;
   }
-
   return *this;
 }
 

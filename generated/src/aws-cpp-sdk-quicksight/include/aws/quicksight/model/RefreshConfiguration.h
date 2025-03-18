@@ -31,7 +31,7 @@ namespace Model
   class RefreshConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API RefreshConfiguration();
+    AWS_QUICKSIGHT_API RefreshConfiguration() = default;
     AWS_QUICKSIGHT_API RefreshConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RefreshConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The incremental refresh for the dataset.</p>
      */
-    inline const IncrementalRefresh& GetIncrementalRefresh() const{ return m_incrementalRefresh; }
+    inline const IncrementalRefresh& GetIncrementalRefresh() const { return m_incrementalRefresh; }
     inline bool IncrementalRefreshHasBeenSet() const { return m_incrementalRefreshHasBeenSet; }
-    inline void SetIncrementalRefresh(const IncrementalRefresh& value) { m_incrementalRefreshHasBeenSet = true; m_incrementalRefresh = value; }
-    inline void SetIncrementalRefresh(IncrementalRefresh&& value) { m_incrementalRefreshHasBeenSet = true; m_incrementalRefresh = std::move(value); }
-    inline RefreshConfiguration& WithIncrementalRefresh(const IncrementalRefresh& value) { SetIncrementalRefresh(value); return *this;}
-    inline RefreshConfiguration& WithIncrementalRefresh(IncrementalRefresh&& value) { SetIncrementalRefresh(std::move(value)); return *this;}
+    template<typename IncrementalRefreshT = IncrementalRefresh>
+    void SetIncrementalRefresh(IncrementalRefreshT&& value) { m_incrementalRefreshHasBeenSet = true; m_incrementalRefresh = std::forward<IncrementalRefreshT>(value); }
+    template<typename IncrementalRefreshT = IncrementalRefresh>
+    RefreshConfiguration& WithIncrementalRefresh(IncrementalRefreshT&& value) { SetIncrementalRefresh(std::forward<IncrementalRefreshT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CoverageNormalizedUnits::CoverageNormalizedUnits() : 
-    m_onDemandNormalizedUnitsHasBeenSet(false),
-    m_reservedNormalizedUnitsHasBeenSet(false),
-    m_totalRunningNormalizedUnitsHasBeenSet(false),
-    m_coverageNormalizedUnitsPercentageHasBeenSet(false)
-{
-}
-
 CoverageNormalizedUnits::CoverageNormalizedUnits(JsonView jsonValue)
-  : CoverageNormalizedUnits()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CoverageNormalizedUnits& CoverageNormalizedUnits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OnDemandNormalizedUnits"))
   {
     m_onDemandNormalizedUnits = jsonValue.GetString("OnDemandNormalizedUnits");
-
     m_onDemandNormalizedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedNormalizedUnits"))
   {
     m_reservedNormalizedUnits = jsonValue.GetString("ReservedNormalizedUnits");
-
     m_reservedNormalizedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRunningNormalizedUnits"))
   {
     m_totalRunningNormalizedUnits = jsonValue.GetString("TotalRunningNormalizedUnits");
-
     m_totalRunningNormalizedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoverageNormalizedUnitsPercentage"))
   {
     m_coverageNormalizedUnitsPercentage = jsonValue.GetString("CoverageNormalizedUnitsPercentage");
-
     m_coverageNormalizedUnitsPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-InstanceProperty::InstanceProperty() : 
-    m_failed(false),
-    m_failedHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_seenAtHasBeenSet(false)
-{
-}
-
 InstanceProperty::InstanceProperty(JsonView jsonValue)
-  : InstanceProperty()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ InstanceProperty& InstanceProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetBool("failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
@@ -50,14 +39,11 @@ InstanceProperty& InstanceProperty::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("seenAt"))
   {
     m_seenAt = jsonValue.GetString("seenAt");
-
     m_seenAtHasBeenSet = true;
   }
-
   return *this;
 }
 

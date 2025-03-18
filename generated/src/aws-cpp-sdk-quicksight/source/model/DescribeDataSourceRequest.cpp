@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDataSourceRequest::DescribeDataSourceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDataSourceRequest::SerializePayload() const
 {
   return {};

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() : 
-    m_carrierIpHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_ipOwnerIdHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode)
-  : InstanceNetworkInterfaceAssociation()
 {
   *this = xmlNode;
 }

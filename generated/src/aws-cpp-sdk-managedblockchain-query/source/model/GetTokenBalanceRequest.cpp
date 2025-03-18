@@ -12,13 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTokenBalanceRequest::GetTokenBalanceRequest() : 
-    m_tokenIdentifierHasBeenSet(false),
-    m_ownerIdentifierHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false)
-{
-}
-
 Aws::String GetTokenBalanceRequest::SerializePayload() const
 {
   JsonValue payload;

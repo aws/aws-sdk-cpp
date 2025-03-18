@@ -28,7 +28,7 @@ namespace Model
   class UpdateDirectConnectGatewayAssociationResult
   {
   public:
-    AWS_DIRECTCONNECT_API UpdateDirectConnectGatewayAssociationResult();
+    AWS_DIRECTCONNECT_API UpdateDirectConnectGatewayAssociationResult() = default;
     AWS_DIRECTCONNECT_API UpdateDirectConnectGatewayAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API UpdateDirectConnectGatewayAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about an association between a Direct Connect gateway and a
      * virtual private gateway or transit gateway.</p>
      */
-    inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
-    inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
-    inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }
-    inline UpdateDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { SetDirectConnectGatewayAssociation(value); return *this;}
-    inline UpdateDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { SetDirectConnectGatewayAssociation(std::move(value)); return *this;}
+    inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const { return m_directConnectGatewayAssociation; }
+    template<typename DirectConnectGatewayAssociationT = DirectConnectGatewayAssociation>
+    void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociationT&& value) { m_directConnectGatewayAssociationHasBeenSet = true; m_directConnectGatewayAssociation = std::forward<DirectConnectGatewayAssociationT>(value); }
+    template<typename DirectConnectGatewayAssociationT = DirectConnectGatewayAssociation>
+    UpdateDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociationT&& value) { SetDirectConnectGatewayAssociation(std::forward<DirectConnectGatewayAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDirectConnectGatewayAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDirectConnectGatewayAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDirectConnectGatewayAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDirectConnectGatewayAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DirectConnectGatewayAssociation m_directConnectGatewayAssociation;
+    bool m_directConnectGatewayAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

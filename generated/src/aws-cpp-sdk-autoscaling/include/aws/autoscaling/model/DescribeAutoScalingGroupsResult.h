@@ -30,7 +30,7 @@ namespace Model
   class DescribeAutoScalingGroupsResult
   {
   public:
-    AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult();
+    AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult() = default;
     AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The groups.</p>
      */
-    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
-    inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroups = value; }
-    inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroups = std::move(value); }
-    inline DescribeAutoScalingGroupsResult& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
-    inline DescribeAutoScalingGroupsResult& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
-    inline DescribeAutoScalingGroupsResult& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroups.push_back(value); return *this; }
-    inline DescribeAutoScalingGroupsResult& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const { return m_autoScalingGroups; }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    void SetAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::forward<AutoScalingGroupsT>(value); }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    DescribeAutoScalingGroupsResult& WithAutoScalingGroups(AutoScalingGroupsT&& value) { SetAutoScalingGroups(std::forward<AutoScalingGroupsT>(value)); return *this;}
+    template<typename AutoScalingGroupsT = AutoScalingGroup>
+    DescribeAutoScalingGroupsResult& AddAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * for the <code>NextToken</code> value when requesting the next set of items. This
      * value is null when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAutoScalingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAutoScalingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAutoScalingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAutoScalingGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAutoScalingGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAutoScalingGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAutoScalingGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

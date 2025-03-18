@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnknownConnectionSourceOutputFlowValidationDetails::UnknownConnectionSourceOutputFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 UnknownConnectionSourceOutputFlowValidationDetails::UnknownConnectionSourceOutputFlowValidationDetails(JsonView jsonValue)
-  : UnknownConnectionSourceOutputFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnknownConnectionSourceOutputFlowValidationDetails& UnknownConnectionSourceOutpu
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class ListPipelinesRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API ListPipelinesRequest();
+    AWS_DATAPIPELINE_API ListPipelinesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>ListPipelines</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListPipelinesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListPipelinesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListPipelinesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListPipelinesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 

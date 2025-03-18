@@ -42,7 +42,7 @@ namespace Model
   class AssessmentSummary
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssessmentSummary();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssessmentSummary() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssessmentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssessmentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,161 +52,157 @@ namespace Model
     /**
      * <p> The Amazon S3 object containing the anti-pattern report. </p>
      */
-    inline const S3Object& GetAntipatternReportS3Object() const{ return m_antipatternReportS3Object; }
+    inline const S3Object& GetAntipatternReportS3Object() const { return m_antipatternReportS3Object; }
     inline bool AntipatternReportS3ObjectHasBeenSet() const { return m_antipatternReportS3ObjectHasBeenSet; }
-    inline void SetAntipatternReportS3Object(const S3Object& value) { m_antipatternReportS3ObjectHasBeenSet = true; m_antipatternReportS3Object = value; }
-    inline void SetAntipatternReportS3Object(S3Object&& value) { m_antipatternReportS3ObjectHasBeenSet = true; m_antipatternReportS3Object = std::move(value); }
-    inline AssessmentSummary& WithAntipatternReportS3Object(const S3Object& value) { SetAntipatternReportS3Object(value); return *this;}
-    inline AssessmentSummary& WithAntipatternReportS3Object(S3Object&& value) { SetAntipatternReportS3Object(std::move(value)); return *this;}
+    template<typename AntipatternReportS3ObjectT = S3Object>
+    void SetAntipatternReportS3Object(AntipatternReportS3ObjectT&& value) { m_antipatternReportS3ObjectHasBeenSet = true; m_antipatternReportS3Object = std::forward<AntipatternReportS3ObjectT>(value); }
+    template<typename AntipatternReportS3ObjectT = S3Object>
+    AssessmentSummary& WithAntipatternReportS3Object(AntipatternReportS3ObjectT&& value) { SetAntipatternReportS3Object(std::forward<AntipatternReportS3ObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of the anti-pattern report. </p>
      */
-    inline const AntipatternReportStatus& GetAntipatternReportStatus() const{ return m_antipatternReportStatus; }
+    inline AntipatternReportStatus GetAntipatternReportStatus() const { return m_antipatternReportStatus; }
     inline bool AntipatternReportStatusHasBeenSet() const { return m_antipatternReportStatusHasBeenSet; }
-    inline void SetAntipatternReportStatus(const AntipatternReportStatus& value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = value; }
-    inline void SetAntipatternReportStatus(AntipatternReportStatus&& value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = std::move(value); }
-    inline AssessmentSummary& WithAntipatternReportStatus(const AntipatternReportStatus& value) { SetAntipatternReportStatus(value); return *this;}
-    inline AssessmentSummary& WithAntipatternReportStatus(AntipatternReportStatus&& value) { SetAntipatternReportStatus(std::move(value)); return *this;}
+    inline void SetAntipatternReportStatus(AntipatternReportStatus value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = value; }
+    inline AssessmentSummary& WithAntipatternReportStatus(AntipatternReportStatus value) { SetAntipatternReportStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status message of the anti-pattern report. </p>
      */
-    inline const Aws::String& GetAntipatternReportStatusMessage() const{ return m_antipatternReportStatusMessage; }
+    inline const Aws::String& GetAntipatternReportStatusMessage() const { return m_antipatternReportStatusMessage; }
     inline bool AntipatternReportStatusMessageHasBeenSet() const { return m_antipatternReportStatusMessageHasBeenSet; }
-    inline void SetAntipatternReportStatusMessage(const Aws::String& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = value; }
-    inline void SetAntipatternReportStatusMessage(Aws::String&& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = std::move(value); }
-    inline void SetAntipatternReportStatusMessage(const char* value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage.assign(value); }
-    inline AssessmentSummary& WithAntipatternReportStatusMessage(const Aws::String& value) { SetAntipatternReportStatusMessage(value); return *this;}
-    inline AssessmentSummary& WithAntipatternReportStatusMessage(Aws::String&& value) { SetAntipatternReportStatusMessage(std::move(value)); return *this;}
-    inline AssessmentSummary& WithAntipatternReportStatusMessage(const char* value) { SetAntipatternReportStatusMessage(value); return *this;}
+    template<typename AntipatternReportStatusMessageT = Aws::String>
+    void SetAntipatternReportStatusMessage(AntipatternReportStatusMessageT&& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = std::forward<AntipatternReportStatusMessageT>(value); }
+    template<typename AntipatternReportStatusMessageT = Aws::String>
+    AssessmentSummary& WithAntipatternReportStatusMessage(AntipatternReportStatusMessageT&& value) { SetAntipatternReportStatusMessage(std::forward<AntipatternReportStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time the assessment was performed. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastAnalyzedTimestamp() const{ return m_lastAnalyzedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastAnalyzedTimestamp() const { return m_lastAnalyzedTimestamp; }
     inline bool LastAnalyzedTimestampHasBeenSet() const { return m_lastAnalyzedTimestampHasBeenSet; }
-    inline void SetLastAnalyzedTimestamp(const Aws::Utils::DateTime& value) { m_lastAnalyzedTimestampHasBeenSet = true; m_lastAnalyzedTimestamp = value; }
-    inline void SetLastAnalyzedTimestamp(Aws::Utils::DateTime&& value) { m_lastAnalyzedTimestampHasBeenSet = true; m_lastAnalyzedTimestamp = std::move(value); }
-    inline AssessmentSummary& WithLastAnalyzedTimestamp(const Aws::Utils::DateTime& value) { SetLastAnalyzedTimestamp(value); return *this;}
-    inline AssessmentSummary& WithLastAnalyzedTimestamp(Aws::Utils::DateTime&& value) { SetLastAnalyzedTimestamp(std::move(value)); return *this;}
+    template<typename LastAnalyzedTimestampT = Aws::Utils::DateTime>
+    void SetLastAnalyzedTimestamp(LastAnalyzedTimestampT&& value) { m_lastAnalyzedTimestampHasBeenSet = true; m_lastAnalyzedTimestamp = std::forward<LastAnalyzedTimestampT>(value); }
+    template<typename LastAnalyzedTimestampT = Aws::Utils::DateTime>
+    AssessmentSummary& WithLastAnalyzedTimestamp(LastAnalyzedTimestampT&& value) { SetLastAnalyzedTimestamp(std::forward<LastAnalyzedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of AntipatternSeveritySummary. </p>
      */
-    inline const Aws::Vector<AntipatternSeveritySummary>& GetListAntipatternSeveritySummary() const{ return m_listAntipatternSeveritySummary; }
+    inline const Aws::Vector<AntipatternSeveritySummary>& GetListAntipatternSeveritySummary() const { return m_listAntipatternSeveritySummary; }
     inline bool ListAntipatternSeveritySummaryHasBeenSet() const { return m_listAntipatternSeveritySummaryHasBeenSet; }
-    inline void SetListAntipatternSeveritySummary(const Aws::Vector<AntipatternSeveritySummary>& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary = value; }
-    inline void SetListAntipatternSeveritySummary(Aws::Vector<AntipatternSeveritySummary>&& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary = std::move(value); }
-    inline AssessmentSummary& WithListAntipatternSeveritySummary(const Aws::Vector<AntipatternSeveritySummary>& value) { SetListAntipatternSeveritySummary(value); return *this;}
-    inline AssessmentSummary& WithListAntipatternSeveritySummary(Aws::Vector<AntipatternSeveritySummary>&& value) { SetListAntipatternSeveritySummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListAntipatternSeveritySummary(const AntipatternSeveritySummary& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListAntipatternSeveritySummary(AntipatternSeveritySummary&& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary.push_back(std::move(value)); return *this; }
+    template<typename ListAntipatternSeveritySummaryT = Aws::Vector<AntipatternSeveritySummary>>
+    void SetListAntipatternSeveritySummary(ListAntipatternSeveritySummaryT&& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary = std::forward<ListAntipatternSeveritySummaryT>(value); }
+    template<typename ListAntipatternSeveritySummaryT = Aws::Vector<AntipatternSeveritySummary>>
+    AssessmentSummary& WithListAntipatternSeveritySummary(ListAntipatternSeveritySummaryT&& value) { SetListAntipatternSeveritySummary(std::forward<ListAntipatternSeveritySummaryT>(value)); return *this;}
+    template<typename ListAntipatternSeveritySummaryT = AntipatternSeveritySummary>
+    AssessmentSummary& AddListAntipatternSeveritySummary(ListAntipatternSeveritySummaryT&& value) { m_listAntipatternSeveritySummaryHasBeenSet = true; m_listAntipatternSeveritySummary.emplace_back(std::forward<ListAntipatternSeveritySummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of status summaries of the analyzed application components.</p>
      */
-    inline const Aws::Vector<ApplicationComponentStatusSummary>& GetListApplicationComponentStatusSummary() const{ return m_listApplicationComponentStatusSummary; }
+    inline const Aws::Vector<ApplicationComponentStatusSummary>& GetListApplicationComponentStatusSummary() const { return m_listApplicationComponentStatusSummary; }
     inline bool ListApplicationComponentStatusSummaryHasBeenSet() const { return m_listApplicationComponentStatusSummaryHasBeenSet; }
-    inline void SetListApplicationComponentStatusSummary(const Aws::Vector<ApplicationComponentStatusSummary>& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary = value; }
-    inline void SetListApplicationComponentStatusSummary(Aws::Vector<ApplicationComponentStatusSummary>&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary = std::move(value); }
-    inline AssessmentSummary& WithListApplicationComponentStatusSummary(const Aws::Vector<ApplicationComponentStatusSummary>& value) { SetListApplicationComponentStatusSummary(value); return *this;}
-    inline AssessmentSummary& WithListApplicationComponentStatusSummary(Aws::Vector<ApplicationComponentStatusSummary>&& value) { SetListApplicationComponentStatusSummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListApplicationComponentStatusSummary(const ApplicationComponentStatusSummary& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListApplicationComponentStatusSummary(ApplicationComponentStatusSummary&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary.push_back(std::move(value)); return *this; }
+    template<typename ListApplicationComponentStatusSummaryT = Aws::Vector<ApplicationComponentStatusSummary>>
+    void SetListApplicationComponentStatusSummary(ListApplicationComponentStatusSummaryT&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary = std::forward<ListApplicationComponentStatusSummaryT>(value); }
+    template<typename ListApplicationComponentStatusSummaryT = Aws::Vector<ApplicationComponentStatusSummary>>
+    AssessmentSummary& WithListApplicationComponentStatusSummary(ListApplicationComponentStatusSummaryT&& value) { SetListApplicationComponentStatusSummary(std::forward<ListApplicationComponentStatusSummaryT>(value)); return *this;}
+    template<typename ListApplicationComponentStatusSummaryT = ApplicationComponentStatusSummary>
+    AssessmentSummary& AddListApplicationComponentStatusSummary(ListApplicationComponentStatusSummaryT&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary.emplace_back(std::forward<ListApplicationComponentStatusSummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of ApplicationComponentStrategySummary. </p>
      */
-    inline const Aws::Vector<StrategySummary>& GetListApplicationComponentStrategySummary() const{ return m_listApplicationComponentStrategySummary; }
+    inline const Aws::Vector<StrategySummary>& GetListApplicationComponentStrategySummary() const { return m_listApplicationComponentStrategySummary; }
     inline bool ListApplicationComponentStrategySummaryHasBeenSet() const { return m_listApplicationComponentStrategySummaryHasBeenSet; }
-    inline void SetListApplicationComponentStrategySummary(const Aws::Vector<StrategySummary>& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary = value; }
-    inline void SetListApplicationComponentStrategySummary(Aws::Vector<StrategySummary>&& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary = std::move(value); }
-    inline AssessmentSummary& WithListApplicationComponentStrategySummary(const Aws::Vector<StrategySummary>& value) { SetListApplicationComponentStrategySummary(value); return *this;}
-    inline AssessmentSummary& WithListApplicationComponentStrategySummary(Aws::Vector<StrategySummary>&& value) { SetListApplicationComponentStrategySummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListApplicationComponentStrategySummary(const StrategySummary& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListApplicationComponentStrategySummary(StrategySummary&& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary.push_back(std::move(value)); return *this; }
+    template<typename ListApplicationComponentStrategySummaryT = Aws::Vector<StrategySummary>>
+    void SetListApplicationComponentStrategySummary(ListApplicationComponentStrategySummaryT&& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary = std::forward<ListApplicationComponentStrategySummaryT>(value); }
+    template<typename ListApplicationComponentStrategySummaryT = Aws::Vector<StrategySummary>>
+    AssessmentSummary& WithListApplicationComponentStrategySummary(ListApplicationComponentStrategySummaryT&& value) { SetListApplicationComponentStrategySummary(std::forward<ListApplicationComponentStrategySummaryT>(value)); return *this;}
+    template<typename ListApplicationComponentStrategySummaryT = StrategySummary>
+    AssessmentSummary& AddListApplicationComponentStrategySummary(ListApplicationComponentStrategySummaryT&& value) { m_listApplicationComponentStrategySummaryHasBeenSet = true; m_listApplicationComponentStrategySummary.emplace_back(std::forward<ListApplicationComponentStrategySummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of ApplicationComponentSummary. </p>
      */
-    inline const Aws::Vector<ApplicationComponentSummary>& GetListApplicationComponentSummary() const{ return m_listApplicationComponentSummary; }
+    inline const Aws::Vector<ApplicationComponentSummary>& GetListApplicationComponentSummary() const { return m_listApplicationComponentSummary; }
     inline bool ListApplicationComponentSummaryHasBeenSet() const { return m_listApplicationComponentSummaryHasBeenSet; }
-    inline void SetListApplicationComponentSummary(const Aws::Vector<ApplicationComponentSummary>& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary = value; }
-    inline void SetListApplicationComponentSummary(Aws::Vector<ApplicationComponentSummary>&& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary = std::move(value); }
-    inline AssessmentSummary& WithListApplicationComponentSummary(const Aws::Vector<ApplicationComponentSummary>& value) { SetListApplicationComponentSummary(value); return *this;}
-    inline AssessmentSummary& WithListApplicationComponentSummary(Aws::Vector<ApplicationComponentSummary>&& value) { SetListApplicationComponentSummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListApplicationComponentSummary(const ApplicationComponentSummary& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListApplicationComponentSummary(ApplicationComponentSummary&& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary.push_back(std::move(value)); return *this; }
+    template<typename ListApplicationComponentSummaryT = Aws::Vector<ApplicationComponentSummary>>
+    void SetListApplicationComponentSummary(ListApplicationComponentSummaryT&& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary = std::forward<ListApplicationComponentSummaryT>(value); }
+    template<typename ListApplicationComponentSummaryT = Aws::Vector<ApplicationComponentSummary>>
+    AssessmentSummary& WithListApplicationComponentSummary(ListApplicationComponentSummaryT&& value) { SetListApplicationComponentSummary(std::forward<ListApplicationComponentSummaryT>(value)); return *this;}
+    template<typename ListApplicationComponentSummaryT = ApplicationComponentSummary>
+    AssessmentSummary& AddListApplicationComponentSummary(ListApplicationComponentSummaryT&& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary.emplace_back(std::forward<ListApplicationComponentSummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of status summaries of the analyzed servers.</p>
      */
-    inline const Aws::Vector<ServerStatusSummary>& GetListServerStatusSummary() const{ return m_listServerStatusSummary; }
+    inline const Aws::Vector<ServerStatusSummary>& GetListServerStatusSummary() const { return m_listServerStatusSummary; }
     inline bool ListServerStatusSummaryHasBeenSet() const { return m_listServerStatusSummaryHasBeenSet; }
-    inline void SetListServerStatusSummary(const Aws::Vector<ServerStatusSummary>& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary = value; }
-    inline void SetListServerStatusSummary(Aws::Vector<ServerStatusSummary>&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary = std::move(value); }
-    inline AssessmentSummary& WithListServerStatusSummary(const Aws::Vector<ServerStatusSummary>& value) { SetListServerStatusSummary(value); return *this;}
-    inline AssessmentSummary& WithListServerStatusSummary(Aws::Vector<ServerStatusSummary>&& value) { SetListServerStatusSummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListServerStatusSummary(const ServerStatusSummary& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListServerStatusSummary(ServerStatusSummary&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary.push_back(std::move(value)); return *this; }
+    template<typename ListServerStatusSummaryT = Aws::Vector<ServerStatusSummary>>
+    void SetListServerStatusSummary(ListServerStatusSummaryT&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary = std::forward<ListServerStatusSummaryT>(value); }
+    template<typename ListServerStatusSummaryT = Aws::Vector<ServerStatusSummary>>
+    AssessmentSummary& WithListServerStatusSummary(ListServerStatusSummaryT&& value) { SetListServerStatusSummary(std::forward<ListServerStatusSummaryT>(value)); return *this;}
+    template<typename ListServerStatusSummaryT = ServerStatusSummary>
+    AssessmentSummary& AddListServerStatusSummary(ListServerStatusSummaryT&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary.emplace_back(std::forward<ListServerStatusSummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of ServerStrategySummary. </p>
      */
-    inline const Aws::Vector<StrategySummary>& GetListServerStrategySummary() const{ return m_listServerStrategySummary; }
+    inline const Aws::Vector<StrategySummary>& GetListServerStrategySummary() const { return m_listServerStrategySummary; }
     inline bool ListServerStrategySummaryHasBeenSet() const { return m_listServerStrategySummaryHasBeenSet; }
-    inline void SetListServerStrategySummary(const Aws::Vector<StrategySummary>& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary = value; }
-    inline void SetListServerStrategySummary(Aws::Vector<StrategySummary>&& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary = std::move(value); }
-    inline AssessmentSummary& WithListServerStrategySummary(const Aws::Vector<StrategySummary>& value) { SetListServerStrategySummary(value); return *this;}
-    inline AssessmentSummary& WithListServerStrategySummary(Aws::Vector<StrategySummary>&& value) { SetListServerStrategySummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListServerStrategySummary(const StrategySummary& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListServerStrategySummary(StrategySummary&& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary.push_back(std::move(value)); return *this; }
+    template<typename ListServerStrategySummaryT = Aws::Vector<StrategySummary>>
+    void SetListServerStrategySummary(ListServerStrategySummaryT&& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary = std::forward<ListServerStrategySummaryT>(value); }
+    template<typename ListServerStrategySummaryT = Aws::Vector<StrategySummary>>
+    AssessmentSummary& WithListServerStrategySummary(ListServerStrategySummaryT&& value) { SetListServerStrategySummary(std::forward<ListServerStrategySummaryT>(value)); return *this;}
+    template<typename ListServerStrategySummaryT = StrategySummary>
+    AssessmentSummary& AddListServerStrategySummary(ListServerStrategySummaryT&& value) { m_listServerStrategySummaryHasBeenSet = true; m_listServerStrategySummary.emplace_back(std::forward<ListServerStrategySummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of ServerSummary. </p>
      */
-    inline const Aws::Vector<ServerSummary>& GetListServerSummary() const{ return m_listServerSummary; }
+    inline const Aws::Vector<ServerSummary>& GetListServerSummary() const { return m_listServerSummary; }
     inline bool ListServerSummaryHasBeenSet() const { return m_listServerSummaryHasBeenSet; }
-    inline void SetListServerSummary(const Aws::Vector<ServerSummary>& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary = value; }
-    inline void SetListServerSummary(Aws::Vector<ServerSummary>&& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary = std::move(value); }
-    inline AssessmentSummary& WithListServerSummary(const Aws::Vector<ServerSummary>& value) { SetListServerSummary(value); return *this;}
-    inline AssessmentSummary& WithListServerSummary(Aws::Vector<ServerSummary>&& value) { SetListServerSummary(std::move(value)); return *this;}
-    inline AssessmentSummary& AddListServerSummary(const ServerSummary& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary.push_back(value); return *this; }
-    inline AssessmentSummary& AddListServerSummary(ServerSummary&& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary.push_back(std::move(value)); return *this; }
+    template<typename ListServerSummaryT = Aws::Vector<ServerSummary>>
+    void SetListServerSummary(ListServerSummaryT&& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary = std::forward<ListServerSummaryT>(value); }
+    template<typename ListServerSummaryT = Aws::Vector<ServerSummary>>
+    AssessmentSummary& WithListServerSummary(ListServerSummaryT&& value) { SetListServerSummary(std::forward<ListServerSummaryT>(value)); return *this;}
+    template<typename ListServerSummaryT = ServerSummary>
+    AssessmentSummary& AddListServerSummary(ListServerSummaryT&& value) { m_listServerSummaryHasBeenSet = true; m_listServerSummary.emplace_back(std::forward<ListServerSummaryT>(value)); return *this; }
     ///@}
   private:
 
     S3Object m_antipatternReportS3Object;
     bool m_antipatternReportS3ObjectHasBeenSet = false;
 
-    AntipatternReportStatus m_antipatternReportStatus;
+    AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
     bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;
     bool m_antipatternReportStatusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAnalyzedTimestamp;
+    Aws::Utils::DateTime m_lastAnalyzedTimestamp{};
     bool m_lastAnalyzedTimestampHasBeenSet = false;
 
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;

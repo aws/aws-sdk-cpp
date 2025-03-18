@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AssociatedTranscript::AssociatedTranscript() : 
-    m_transcriptHasBeenSet(false)
-{
-}
-
 AssociatedTranscript::AssociatedTranscript(JsonView jsonValue)
-  : AssociatedTranscript()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssociatedTranscript& AssociatedTranscript::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transcript"))
   {
     m_transcript = jsonValue.GetString("transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   return *this;
 }
 

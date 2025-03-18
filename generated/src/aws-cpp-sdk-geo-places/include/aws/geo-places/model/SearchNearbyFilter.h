@@ -34,7 +34,7 @@ namespace Model
   class SearchNearbyFilter
   {
   public:
-    AWS_GEOPLACES_API SearchNearbyFilter();
+    AWS_GEOPLACES_API SearchNearbyFilter() = default;
     AWS_GEOPLACES_API SearchNearbyFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API SearchNearbyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * coordinates: <code>[{westward lng}, {southern lat}, {eastward lng}, {northern
      * lat}]</code> </p>
      */
-    inline const Aws::Vector<double>& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::Vector<double>& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::Vector<double>&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline SearchNearbyFilter& WithBoundingBox(const Aws::Vector<double>& value) { SetBoundingBox(value); return *this;}
-    inline SearchNearbyFilter& WithBoundingBox(Aws::Vector<double>&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    SearchNearbyFilter& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     inline SearchNearbyFilter& AddBoundingBox(double value) { m_boundingBoxHasBeenSet = true; m_boundingBox.push_back(value); return *this; }
     ///@}
 
@@ -61,105 +61,98 @@ namespace Model
      * <p>A list of countries that all results must be in. Countries are represented by
      * either their alpha-2 or alpha-3 character codes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const{ return m_includeCountries; }
+    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const { return m_includeCountries; }
     inline bool IncludeCountriesHasBeenSet() const { return m_includeCountriesHasBeenSet; }
-    inline void SetIncludeCountries(const Aws::Vector<Aws::String>& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = value; }
-    inline void SetIncludeCountries(Aws::Vector<Aws::String>&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::move(value); }
-    inline SearchNearbyFilter& WithIncludeCountries(const Aws::Vector<Aws::String>& value) { SetIncludeCountries(value); return *this;}
-    inline SearchNearbyFilter& WithIncludeCountries(Aws::Vector<Aws::String>&& value) { SetIncludeCountries(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddIncludeCountries(const Aws::String& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddIncludeCountries(Aws::String&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddIncludeCountries(const char* value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    void SetIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::forward<IncludeCountriesT>(value); }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithIncludeCountries(IncludeCountriesT&& value) { SetIncludeCountries(std::forward<IncludeCountriesT>(value)); return *this;}
+    template<typename IncludeCountriesT = Aws::String>
+    SearchNearbyFilter& AddIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.emplace_back(std::forward<IncludeCountriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Categories of results that results must belong too.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeCategories() const{ return m_includeCategories; }
+    inline const Aws::Vector<Aws::String>& GetIncludeCategories() const { return m_includeCategories; }
     inline bool IncludeCategoriesHasBeenSet() const { return m_includeCategoriesHasBeenSet; }
-    inline void SetIncludeCategories(const Aws::Vector<Aws::String>& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories = value; }
-    inline void SetIncludeCategories(Aws::Vector<Aws::String>&& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories = std::move(value); }
-    inline SearchNearbyFilter& WithIncludeCategories(const Aws::Vector<Aws::String>& value) { SetIncludeCategories(value); return *this;}
-    inline SearchNearbyFilter& WithIncludeCategories(Aws::Vector<Aws::String>&& value) { SetIncludeCategories(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddIncludeCategories(const Aws::String& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddIncludeCategories(Aws::String&& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddIncludeCategories(const char* value) { m_includeCategoriesHasBeenSet = true; m_includeCategories.push_back(value); return *this; }
+    template<typename IncludeCategoriesT = Aws::Vector<Aws::String>>
+    void SetIncludeCategories(IncludeCategoriesT&& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories = std::forward<IncludeCategoriesT>(value); }
+    template<typename IncludeCategoriesT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithIncludeCategories(IncludeCategoriesT&& value) { SetIncludeCategories(std::forward<IncludeCategoriesT>(value)); return *this;}
+    template<typename IncludeCategoriesT = Aws::String>
+    SearchNearbyFilter& AddIncludeCategories(IncludeCategoriesT&& value) { m_includeCategoriesHasBeenSet = true; m_includeCategories.emplace_back(std::forward<IncludeCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Categories of results that results are excluded from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeCategories() const{ return m_excludeCategories; }
+    inline const Aws::Vector<Aws::String>& GetExcludeCategories() const { return m_excludeCategories; }
     inline bool ExcludeCategoriesHasBeenSet() const { return m_excludeCategoriesHasBeenSet; }
-    inline void SetExcludeCategories(const Aws::Vector<Aws::String>& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories = value; }
-    inline void SetExcludeCategories(Aws::Vector<Aws::String>&& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories = std::move(value); }
-    inline SearchNearbyFilter& WithExcludeCategories(const Aws::Vector<Aws::String>& value) { SetExcludeCategories(value); return *this;}
-    inline SearchNearbyFilter& WithExcludeCategories(Aws::Vector<Aws::String>&& value) { SetExcludeCategories(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddExcludeCategories(const Aws::String& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddExcludeCategories(Aws::String&& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddExcludeCategories(const char* value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories.push_back(value); return *this; }
+    template<typename ExcludeCategoriesT = Aws::Vector<Aws::String>>
+    void SetExcludeCategories(ExcludeCategoriesT&& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories = std::forward<ExcludeCategoriesT>(value); }
+    template<typename ExcludeCategoriesT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithExcludeCategories(ExcludeCategoriesT&& value) { SetExcludeCategories(std::forward<ExcludeCategoriesT>(value)); return *this;}
+    template<typename ExcludeCategoriesT = Aws::String>
+    SearchNearbyFilter& AddExcludeCategories(ExcludeCategoriesT&& value) { m_excludeCategoriesHasBeenSet = true; m_excludeCategories.emplace_back(std::forward<ExcludeCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Business Chains associated with the place.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeBusinessChains() const{ return m_includeBusinessChains; }
+    inline const Aws::Vector<Aws::String>& GetIncludeBusinessChains() const { return m_includeBusinessChains; }
     inline bool IncludeBusinessChainsHasBeenSet() const { return m_includeBusinessChainsHasBeenSet; }
-    inline void SetIncludeBusinessChains(const Aws::Vector<Aws::String>& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains = value; }
-    inline void SetIncludeBusinessChains(Aws::Vector<Aws::String>&& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains = std::move(value); }
-    inline SearchNearbyFilter& WithIncludeBusinessChains(const Aws::Vector<Aws::String>& value) { SetIncludeBusinessChains(value); return *this;}
-    inline SearchNearbyFilter& WithIncludeBusinessChains(Aws::Vector<Aws::String>&& value) { SetIncludeBusinessChains(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddIncludeBusinessChains(const Aws::String& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddIncludeBusinessChains(Aws::String&& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddIncludeBusinessChains(const char* value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains.push_back(value); return *this; }
+    template<typename IncludeBusinessChainsT = Aws::Vector<Aws::String>>
+    void SetIncludeBusinessChains(IncludeBusinessChainsT&& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains = std::forward<IncludeBusinessChainsT>(value); }
+    template<typename IncludeBusinessChainsT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithIncludeBusinessChains(IncludeBusinessChainsT&& value) { SetIncludeBusinessChains(std::forward<IncludeBusinessChainsT>(value)); return *this;}
+    template<typename IncludeBusinessChainsT = Aws::String>
+    SearchNearbyFilter& AddIncludeBusinessChains(IncludeBusinessChainsT&& value) { m_includeBusinessChainsHasBeenSet = true; m_includeBusinessChains.emplace_back(std::forward<IncludeBusinessChainsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Business Chains associated with the place.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeBusinessChains() const{ return m_excludeBusinessChains; }
+    inline const Aws::Vector<Aws::String>& GetExcludeBusinessChains() const { return m_excludeBusinessChains; }
     inline bool ExcludeBusinessChainsHasBeenSet() const { return m_excludeBusinessChainsHasBeenSet; }
-    inline void SetExcludeBusinessChains(const Aws::Vector<Aws::String>& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains = value; }
-    inline void SetExcludeBusinessChains(Aws::Vector<Aws::String>&& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains = std::move(value); }
-    inline SearchNearbyFilter& WithExcludeBusinessChains(const Aws::Vector<Aws::String>& value) { SetExcludeBusinessChains(value); return *this;}
-    inline SearchNearbyFilter& WithExcludeBusinessChains(Aws::Vector<Aws::String>&& value) { SetExcludeBusinessChains(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddExcludeBusinessChains(const Aws::String& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddExcludeBusinessChains(Aws::String&& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddExcludeBusinessChains(const char* value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains.push_back(value); return *this; }
+    template<typename ExcludeBusinessChainsT = Aws::Vector<Aws::String>>
+    void SetExcludeBusinessChains(ExcludeBusinessChainsT&& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains = std::forward<ExcludeBusinessChainsT>(value); }
+    template<typename ExcludeBusinessChainsT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithExcludeBusinessChains(ExcludeBusinessChainsT&& value) { SetExcludeBusinessChains(std::forward<ExcludeBusinessChainsT>(value)); return *this;}
+    template<typename ExcludeBusinessChainsT = Aws::String>
+    SearchNearbyFilter& AddExcludeBusinessChains(ExcludeBusinessChainsT&& value) { m_excludeBusinessChainsHasBeenSet = true; m_excludeBusinessChains.emplace_back(std::forward<ExcludeBusinessChainsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Food types that results are included from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeFoodTypes() const{ return m_includeFoodTypes; }
+    inline const Aws::Vector<Aws::String>& GetIncludeFoodTypes() const { return m_includeFoodTypes; }
     inline bool IncludeFoodTypesHasBeenSet() const { return m_includeFoodTypesHasBeenSet; }
-    inline void SetIncludeFoodTypes(const Aws::Vector<Aws::String>& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes = value; }
-    inline void SetIncludeFoodTypes(Aws::Vector<Aws::String>&& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes = std::move(value); }
-    inline SearchNearbyFilter& WithIncludeFoodTypes(const Aws::Vector<Aws::String>& value) { SetIncludeFoodTypes(value); return *this;}
-    inline SearchNearbyFilter& WithIncludeFoodTypes(Aws::Vector<Aws::String>&& value) { SetIncludeFoodTypes(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddIncludeFoodTypes(const Aws::String& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddIncludeFoodTypes(Aws::String&& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddIncludeFoodTypes(const char* value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes.push_back(value); return *this; }
+    template<typename IncludeFoodTypesT = Aws::Vector<Aws::String>>
+    void SetIncludeFoodTypes(IncludeFoodTypesT&& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes = std::forward<IncludeFoodTypesT>(value); }
+    template<typename IncludeFoodTypesT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithIncludeFoodTypes(IncludeFoodTypesT&& value) { SetIncludeFoodTypes(std::forward<IncludeFoodTypesT>(value)); return *this;}
+    template<typename IncludeFoodTypesT = Aws::String>
+    SearchNearbyFilter& AddIncludeFoodTypes(IncludeFoodTypesT&& value) { m_includeFoodTypesHasBeenSet = true; m_includeFoodTypes.emplace_back(std::forward<IncludeFoodTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Food types that results are excluded from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeFoodTypes() const{ return m_excludeFoodTypes; }
+    inline const Aws::Vector<Aws::String>& GetExcludeFoodTypes() const { return m_excludeFoodTypes; }
     inline bool ExcludeFoodTypesHasBeenSet() const { return m_excludeFoodTypesHasBeenSet; }
-    inline void SetExcludeFoodTypes(const Aws::Vector<Aws::String>& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes = value; }
-    inline void SetExcludeFoodTypes(Aws::Vector<Aws::String>&& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes = std::move(value); }
-    inline SearchNearbyFilter& WithExcludeFoodTypes(const Aws::Vector<Aws::String>& value) { SetExcludeFoodTypes(value); return *this;}
-    inline SearchNearbyFilter& WithExcludeFoodTypes(Aws::Vector<Aws::String>&& value) { SetExcludeFoodTypes(std::move(value)); return *this;}
-    inline SearchNearbyFilter& AddExcludeFoodTypes(const Aws::String& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes.push_back(value); return *this; }
-    inline SearchNearbyFilter& AddExcludeFoodTypes(Aws::String&& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes.push_back(std::move(value)); return *this; }
-    inline SearchNearbyFilter& AddExcludeFoodTypes(const char* value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes.push_back(value); return *this; }
+    template<typename ExcludeFoodTypesT = Aws::Vector<Aws::String>>
+    void SetExcludeFoodTypes(ExcludeFoodTypesT&& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes = std::forward<ExcludeFoodTypesT>(value); }
+    template<typename ExcludeFoodTypesT = Aws::Vector<Aws::String>>
+    SearchNearbyFilter& WithExcludeFoodTypes(ExcludeFoodTypesT&& value) { SetExcludeFoodTypes(std::forward<ExcludeFoodTypesT>(value)); return *this;}
+    template<typename ExcludeFoodTypesT = Aws::String>
+    SearchNearbyFilter& AddExcludeFoodTypes(ExcludeFoodTypesT&& value) { m_excludeFoodTypesHasBeenSet = true; m_excludeFoodTypes.emplace_back(std::forward<ExcludeFoodTypesT>(value)); return *this; }
     ///@}
   private:
 

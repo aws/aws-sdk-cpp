@@ -12,15 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLicensesRequest::ListLicensesRequest() : 
-    m_licenseArnsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLicensesRequest::SerializePayload() const
 {
   JsonValue payload;

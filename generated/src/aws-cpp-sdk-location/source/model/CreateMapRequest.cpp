@@ -12,14 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMapRequest::CreateMapRequest() : 
-    m_mapNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMapRequest::SerializePayload() const
 {
   JsonValue payload;

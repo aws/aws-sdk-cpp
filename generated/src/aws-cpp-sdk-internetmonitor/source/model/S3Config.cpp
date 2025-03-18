@@ -18,16 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-S3Config::S3Config() : 
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_logDeliveryStatus(LogDeliveryStatus::NOT_SET),
-    m_logDeliveryStatusHasBeenSet(false)
-{
-}
-
 S3Config::S3Config(JsonView jsonValue)
-  : S3Config()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ S3Config& S3Config::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("BucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogDeliveryStatus"))
   {
     m_logDeliveryStatus = LogDeliveryStatusMapper::GetLogDeliveryStatusForName(jsonValue.GetString("LogDeliveryStatus"));
-
     m_logDeliveryStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

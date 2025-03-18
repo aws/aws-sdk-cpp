@@ -33,7 +33,7 @@ namespace Model
   class DeliverConfigSnapshotResult
   {
   public:
-    AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult();
+    AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult() = default;
     AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The ID of the snapshot that is being created.</p>
      */
-    inline const Aws::String& GetConfigSnapshotId() const{ return m_configSnapshotId; }
-    inline void SetConfigSnapshotId(const Aws::String& value) { m_configSnapshotId = value; }
-    inline void SetConfigSnapshotId(Aws::String&& value) { m_configSnapshotId = std::move(value); }
-    inline void SetConfigSnapshotId(const char* value) { m_configSnapshotId.assign(value); }
-    inline DeliverConfigSnapshotResult& WithConfigSnapshotId(const Aws::String& value) { SetConfigSnapshotId(value); return *this;}
-    inline DeliverConfigSnapshotResult& WithConfigSnapshotId(Aws::String&& value) { SetConfigSnapshotId(std::move(value)); return *this;}
-    inline DeliverConfigSnapshotResult& WithConfigSnapshotId(const char* value) { SetConfigSnapshotId(value); return *this;}
+    inline const Aws::String& GetConfigSnapshotId() const { return m_configSnapshotId; }
+    template<typename ConfigSnapshotIdT = Aws::String>
+    void SetConfigSnapshotId(ConfigSnapshotIdT&& value) { m_configSnapshotIdHasBeenSet = true; m_configSnapshotId = std::forward<ConfigSnapshotIdT>(value); }
+    template<typename ConfigSnapshotIdT = Aws::String>
+    DeliverConfigSnapshotResult& WithConfigSnapshotId(ConfigSnapshotIdT&& value) { SetConfigSnapshotId(std::forward<ConfigSnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeliverConfigSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeliverConfigSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeliverConfigSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeliverConfigSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configSnapshotId;
+    bool m_configSnapshotIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

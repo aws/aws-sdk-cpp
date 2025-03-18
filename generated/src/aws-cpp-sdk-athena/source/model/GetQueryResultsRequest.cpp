@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryResultsRequest::GetQueryResultsRequest() : 
-    m_queryExecutionIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryResultsRequest::SerializePayload() const
 {
   JsonValue payload;

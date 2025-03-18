@@ -47,7 +47,7 @@ namespace Model
   class RejectedRecordsException
   {
   public:
-    AWS_TIMESTREAMWRITE_API RejectedRecordsException();
+    AWS_TIMESTREAMWRITE_API RejectedRecordsException() = default;
     AWS_TIMESTREAMWRITE_API RejectedRecordsException(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API RejectedRecordsException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,28 +55,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline RejectedRecordsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline RejectedRecordsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline RejectedRecordsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    RejectedRecordsException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> </p>
      */
-    inline const Aws::Vector<RejectedRecord>& GetRejectedRecords() const{ return m_rejectedRecords; }
+    inline const Aws::Vector<RejectedRecord>& GetRejectedRecords() const { return m_rejectedRecords; }
     inline bool RejectedRecordsHasBeenSet() const { return m_rejectedRecordsHasBeenSet; }
-    inline void SetRejectedRecords(const Aws::Vector<RejectedRecord>& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = value; }
-    inline void SetRejectedRecords(Aws::Vector<RejectedRecord>&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = std::move(value); }
-    inline RejectedRecordsException& WithRejectedRecords(const Aws::Vector<RejectedRecord>& value) { SetRejectedRecords(value); return *this;}
-    inline RejectedRecordsException& WithRejectedRecords(Aws::Vector<RejectedRecord>&& value) { SetRejectedRecords(std::move(value)); return *this;}
-    inline RejectedRecordsException& AddRejectedRecords(const RejectedRecord& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(value); return *this; }
-    inline RejectedRecordsException& AddRejectedRecords(RejectedRecord&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.push_back(std::move(value)); return *this; }
+    template<typename RejectedRecordsT = Aws::Vector<RejectedRecord>>
+    void SetRejectedRecords(RejectedRecordsT&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords = std::forward<RejectedRecordsT>(value); }
+    template<typename RejectedRecordsT = Aws::Vector<RejectedRecord>>
+    RejectedRecordsException& WithRejectedRecords(RejectedRecordsT&& value) { SetRejectedRecords(std::forward<RejectedRecordsT>(value)); return *this;}
+    template<typename RejectedRecordsT = RejectedRecord>
+    RejectedRecordsException& AddRejectedRecords(RejectedRecordsT&& value) { m_rejectedRecordsHasBeenSet = true; m_rejectedRecords.emplace_back(std::forward<RejectedRecordsT>(value)); return *this; }
     ///@}
   private:
 

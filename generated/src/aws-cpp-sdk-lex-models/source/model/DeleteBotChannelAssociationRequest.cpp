@@ -12,13 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBotChannelAssociationRequest::DeleteBotChannelAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBotChannelAssociationRequest::SerializePayload() const
 {
   return {};

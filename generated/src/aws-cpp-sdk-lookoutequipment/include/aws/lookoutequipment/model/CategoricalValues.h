@@ -32,7 +32,7 @@ namespace Model
   class CategoricalValues
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API CategoricalValues();
+    AWS_LOOKOUTEQUIPMENT_API CategoricalValues() = default;
     AWS_LOOKOUTEQUIPMENT_API CategoricalValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API CategoricalValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,27 @@ namespace Model
      * <p> Indicates whether there is a potential data issue related to categorical
      * values. </p>
      */
-    inline const StatisticalIssueStatus& GetStatus() const{ return m_status; }
+    inline StatisticalIssueStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatisticalIssueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatisticalIssueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CategoricalValues& WithStatus(const StatisticalIssueStatus& value) { SetStatus(value); return *this;}
-    inline CategoricalValues& WithStatus(StatisticalIssueStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatisticalIssueStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CategoricalValues& WithStatus(StatisticalIssueStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates the number of categories in the data. </p>
      */
-    inline int GetNumberOfCategory() const{ return m_numberOfCategory; }
+    inline int GetNumberOfCategory() const { return m_numberOfCategory; }
     inline bool NumberOfCategoryHasBeenSet() const { return m_numberOfCategoryHasBeenSet; }
     inline void SetNumberOfCategory(int value) { m_numberOfCategoryHasBeenSet = true; m_numberOfCategory = value; }
     inline CategoricalValues& WithNumberOfCategory(int value) { SetNumberOfCategory(value); return *this;}
     ///@}
   private:
 
-    StatisticalIssueStatus m_status;
+    StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_numberOfCategory;
+    int m_numberOfCategory{0};
     bool m_numberOfCategoryHasBeenSet = false;
   };
 

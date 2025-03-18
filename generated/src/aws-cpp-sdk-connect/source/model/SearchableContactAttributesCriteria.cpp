@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SearchableContactAttributesCriteria::SearchableContactAttributesCriteria() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchableContactAttributesCriteria::SearchableContactAttributesCriteria(JsonView jsonValue)
-  : SearchableContactAttributesCriteria()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SearchableContactAttributesCriteria& SearchableContactAttributesCriteria::operat
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ SearchableContactAttributesCriteria& SearchableContactAttributesCriteria::operat
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

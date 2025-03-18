@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCostCategoryDefinitionRequest::DeleteCostCategoryDefinitionRequest() : 
-    m_costCategoryArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCostCategoryDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

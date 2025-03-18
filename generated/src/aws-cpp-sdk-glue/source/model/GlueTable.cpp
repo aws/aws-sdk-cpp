@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GlueTable::GlueTable() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false)
-{
-}
-
 GlueTable::GlueTable(JsonView jsonValue)
-  : GlueTable()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GlueTable& GlueTable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalOptionsJsonMap = jsonValue.GetObject("AdditionalOptions").GetAllObjects();
@@ -72,7 +54,6 @@ GlueTable& GlueTable::operator =(JsonView jsonValue)
     }
     m_additionalOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

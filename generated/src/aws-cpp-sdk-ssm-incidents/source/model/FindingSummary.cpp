@@ -18,14 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-FindingSummary::FindingSummary() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 FindingSummary::FindingSummary(JsonView jsonValue)
-  : FindingSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

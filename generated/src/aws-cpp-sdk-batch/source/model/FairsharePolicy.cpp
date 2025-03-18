@@ -18,17 +18,7 @@ namespace Batch
 namespace Model
 {
 
-FairsharePolicy::FairsharePolicy() : 
-    m_shareDecaySeconds(0),
-    m_shareDecaySecondsHasBeenSet(false),
-    m_computeReservation(0),
-    m_computeReservationHasBeenSet(false),
-    m_shareDistributionHasBeenSet(false)
-{
-}
-
 FairsharePolicy::FairsharePolicy(JsonView jsonValue)
-  : FairsharePolicy()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FairsharePolicy& FairsharePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("shareDecaySeconds"))
   {
     m_shareDecaySeconds = jsonValue.GetInteger("shareDecaySeconds");
-
     m_shareDecaySecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeReservation"))
   {
     m_computeReservation = jsonValue.GetInteger("computeReservation");
-
     m_computeReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shareDistribution"))
   {
     Aws::Utils::Array<JsonView> shareDistributionJsonList = jsonValue.GetArray("shareDistribution");
@@ -58,7 +44,6 @@ FairsharePolicy& FairsharePolicy::operator =(JsonView jsonValue)
     }
     m_shareDistributionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ElasticsearchVersionStatus::ElasticsearchVersionStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ElasticsearchVersionStatus::ElasticsearchVersionStatus(JsonView jsonValue)
-  : ElasticsearchVersionStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ElasticsearchVersionStatus& ElasticsearchVersionStatus::operator =(JsonView json
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetString("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

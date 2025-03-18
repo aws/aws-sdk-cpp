@@ -29,7 +29,7 @@ namespace Model
   class GetBucketTaggingResult
   {
   public:
-    AWS_S3CRT_API GetBucketTaggingResult();
+    AWS_S3CRT_API GetBucketTaggingResult() = default;
     AWS_S3CRT_API GetBucketTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Contains the tag set.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
-    inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSet = value; }
-    inline void SetTagSet(Aws::Vector<Tag>&& value) { m_tagSet = std::move(value); }
-    inline GetBucketTaggingResult& WithTagSet(const Aws::Vector<Tag>& value) { SetTagSet(value); return *this;}
-    inline GetBucketTaggingResult& WithTagSet(Aws::Vector<Tag>&& value) { SetTagSet(std::move(value)); return *this;}
-    inline GetBucketTaggingResult& AddTagSet(const Tag& value) { m_tagSet.push_back(value); return *this; }
-    inline GetBucketTaggingResult& AddTagSet(Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTagSet() const { return m_tagSet; }
+    template<typename TagSetT = Aws::Vector<Tag>>
+    void SetTagSet(TagSetT&& value) { m_tagSetHasBeenSet = true; m_tagSet = std::forward<TagSetT>(value); }
+    template<typename TagSetT = Aws::Vector<Tag>>
+    GetBucketTaggingResult& WithTagSet(TagSetT&& value) { SetTagSet(std::forward<TagSetT>(value)); return *this;}
+    template<typename TagSetT = Tag>
+    GetBucketTaggingResult& AddTagSet(TagSetT&& value) { m_tagSetHasBeenSet = true; m_tagSet.emplace_back(std::forward<TagSetT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketTaggingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Tag> m_tagSet;
+    bool m_tagSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

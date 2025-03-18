@@ -18,17 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ExperimentReport::ExperimentReport() : 
-    m_contentHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_reportName(ExperimentReportName::NOT_SET),
-    m_reportNameHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
-{
-}
-
 ExperimentReport::ExperimentReport(JsonView jsonValue)
-  : ExperimentReport()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExperimentReport& ExperimentReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportName"))
   {
     m_reportName = ExperimentReportNameMapper::GetExperimentReportNameForName(jsonValue.GetString("reportName"));
-
     m_reportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treatmentName"))
   {
     m_treatmentName = jsonValue.GetString("treatmentName");
-
     m_treatmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

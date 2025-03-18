@@ -18,23 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-DomainDescriptionType::DomainDescriptionType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_aWSAccountIdHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_cloudFrontDistributionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(DomainStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_customDomainConfigHasBeenSet(false),
-    m_managedLoginVersion(0),
-    m_managedLoginVersionHasBeenSet(false)
-{
-}
-
 DomainDescriptionType::DomainDescriptionType(JsonView jsonValue)
-  : DomainDescriptionType()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ DomainDescriptionType& DomainDescriptionType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSAccountId"))
   {
     m_aWSAccountId = jsonValue.GetString("AWSAccountId");
-
     m_aWSAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudFrontDistribution"))
   {
     m_cloudFrontDistribution = jsonValue.GetString("CloudFrontDistribution");
-
     m_cloudFrontDistributionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DomainStatusTypeMapper::GetDomainStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDomainConfig"))
   {
     m_customDomainConfig = jsonValue.GetObject("CustomDomainConfig");
-
     m_customDomainConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedLoginVersion"))
   {
     m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");
-
     m_managedLoginVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

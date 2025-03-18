@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDashboardSnapshotJobRequest::StartDashboardSnapshotJobRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_snapshotJobIdHasBeenSet(false),
-    m_userConfigurationHasBeenSet(false),
-    m_snapshotConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String StartDashboardSnapshotJobRequest::SerializePayload() const
 {
   JsonValue payload;

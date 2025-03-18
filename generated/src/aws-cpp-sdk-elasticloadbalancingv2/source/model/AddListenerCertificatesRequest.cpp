@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-AddListenerCertificatesRequest::AddListenerCertificatesRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_certificatesHasBeenSet(false)
-{
-}
-
 Aws::String AddListenerCertificatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

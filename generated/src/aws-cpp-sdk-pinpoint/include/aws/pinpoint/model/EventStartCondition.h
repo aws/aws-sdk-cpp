@@ -33,7 +33,7 @@ namespace Model
   class EventStartCondition
   {
   public:
-    AWS_PINPOINT_API EventStartCondition();
+    AWS_PINPOINT_API EventStartCondition() = default;
     AWS_PINPOINT_API EventStartCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EventStartCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const EventFilter& GetEventFilter() const{ return m_eventFilter; }
+    inline const EventFilter& GetEventFilter() const { return m_eventFilter; }
     inline bool EventFilterHasBeenSet() const { return m_eventFilterHasBeenSet; }
-    inline void SetEventFilter(const EventFilter& value) { m_eventFilterHasBeenSet = true; m_eventFilter = value; }
-    inline void SetEventFilter(EventFilter&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::move(value); }
-    inline EventStartCondition& WithEventFilter(const EventFilter& value) { SetEventFilter(value); return *this;}
-    inline EventStartCondition& WithEventFilter(EventFilter&& value) { SetEventFilter(std::move(value)); return *this;}
+    template<typename EventFilterT = EventFilter>
+    void SetEventFilter(EventFilterT&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::forward<EventFilterT>(value); }
+    template<typename EventFilterT = EventFilter>
+    EventStartCondition& WithEventFilter(EventFilterT&& value) { SetEventFilter(std::forward<EventFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline EventStartCondition& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline EventStartCondition& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline EventStartCondition& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    EventStartCondition& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
   private:
 

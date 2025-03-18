@@ -22,7 +22,7 @@ namespace Model
   class CreateTokenWithIAMRequest : public SSOOIDCRequest
   {
   public:
-    AWS_SSOOIDC_API CreateTokenWithIAMRequest();
+    AWS_SSOOIDC_API CreateTokenWithIAMRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The unique identifier string for the client or application. This value is an
      * application ARN that has OAuth grants configured.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline CreateTokenWithIAMRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    CreateTokenWithIAMRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> </p> <p>* Token
      * Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code> </p>
      */
-    inline const Aws::String& GetGrantType() const{ return m_grantType; }
+    inline const Aws::String& GetGrantType() const { return m_grantType; }
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-    inline void SetGrantType(const Aws::String& value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-    inline void SetGrantType(Aws::String&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::move(value); }
-    inline void SetGrantType(const char* value) { m_grantTypeHasBeenSet = true; m_grantType.assign(value); }
-    inline CreateTokenWithIAMRequest& WithGrantType(const Aws::String& value) { SetGrantType(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithGrantType(Aws::String&& value) { SetGrantType(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithGrantType(const char* value) { SetGrantType(value); return *this;}
+    template<typename GrantTypeT = Aws::String>
+    void SetGrantType(GrantTypeT&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::forward<GrantTypeT>(value); }
+    template<typename GrantTypeT = Aws::String>
+    CreateTokenWithIAMRequest& WithGrantType(GrantTypeT&& value) { SetGrantType(std::forward<GrantTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * obtained through a redirect from IAM Identity Center to a redirect URI persisted
      * in the Authorization Code GrantOptions for the application.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline CreateTokenWithIAMRequest& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    CreateTokenWithIAMRequest& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
      * Identity Center OIDC API Reference</a>.</p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-    inline CreateTokenWithIAMRequest& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    CreateTokenWithIAMRequest& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * authorize a trusted token issuer, configure the JWT Bearer GrantOptions for the
      * application.</p>
      */
-    inline const Aws::String& GetAssertion() const{ return m_assertion; }
+    inline const Aws::String& GetAssertion() const { return m_assertion; }
     inline bool AssertionHasBeenSet() const { return m_assertionHasBeenSet; }
-    inline void SetAssertion(const Aws::String& value) { m_assertionHasBeenSet = true; m_assertion = value; }
-    inline void SetAssertion(Aws::String&& value) { m_assertionHasBeenSet = true; m_assertion = std::move(value); }
-    inline void SetAssertion(const char* value) { m_assertionHasBeenSet = true; m_assertion.assign(value); }
-    inline CreateTokenWithIAMRequest& WithAssertion(const Aws::String& value) { SetAssertion(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithAssertion(Aws::String&& value) { SetAssertion(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithAssertion(const char* value) { SetAssertion(value); return *this;}
+    template<typename AssertionT = Aws::String>
+    void SetAssertion(AssertionT&& value) { m_assertionHasBeenSet = true; m_assertion = std::forward<AssertionT>(value); }
+    template<typename AssertionT = Aws::String>
+    CreateTokenWithIAMRequest& WithAssertion(AssertionT&& value) { SetAssertion(std::forward<AssertionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,15 +120,14 @@ namespace Model
      * application, including the following default scopes: <code>openid</code>,
      * <code>aws</code>, <code>sts:identity_context</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScope() const{ return m_scope; }
+    inline const Aws::Vector<Aws::String>& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Aws::Vector<Aws::String>& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Aws::Vector<Aws::String>&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CreateTokenWithIAMRequest& WithScope(const Aws::Vector<Aws::String>& value) { SetScope(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithScope(Aws::Vector<Aws::String>&& value) { SetScope(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& AddScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope.push_back(value); return *this; }
-    inline CreateTokenWithIAMRequest& AddScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope.push_back(std::move(value)); return *this; }
-    inline CreateTokenWithIAMRequest& AddScope(const char* value) { m_scopeHasBeenSet = true; m_scope.push_back(value); return *this; }
+    template<typename ScopeT = Aws::Vector<Aws::String>>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::Vector<Aws::String>>
+    CreateTokenWithIAMRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
+    template<typename ScopeT = Aws::String>
+    CreateTokenWithIAMRequest& AddScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope.emplace_back(std::forward<ScopeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,14 +136,12 @@ namespace Model
      * value specifies the location of the client or application that has registered to
      * receive the authorization code. </p>
      */
-    inline const Aws::String& GetRedirectUri() const{ return m_redirectUri; }
+    inline const Aws::String& GetRedirectUri() const { return m_redirectUri; }
     inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
-    inline void SetRedirectUri(const Aws::String& value) { m_redirectUriHasBeenSet = true; m_redirectUri = value; }
-    inline void SetRedirectUri(Aws::String&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::move(value); }
-    inline void SetRedirectUri(const char* value) { m_redirectUriHasBeenSet = true; m_redirectUri.assign(value); }
-    inline CreateTokenWithIAMRequest& WithRedirectUri(const Aws::String& value) { SetRedirectUri(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithRedirectUri(Aws::String&& value) { SetRedirectUri(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithRedirectUri(const char* value) { SetRedirectUri(value); return *this;}
+    template<typename RedirectUriT = Aws::String>
+    void SetRedirectUri(RedirectUriT&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::forward<RedirectUriT>(value); }
+    template<typename RedirectUriT = Aws::String>
+    CreateTokenWithIAMRequest& WithRedirectUri(RedirectUriT&& value) { SetRedirectUri(std::forward<RedirectUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,14 +152,12 @@ namespace Model
      * The access token must have authorized scopes that indicate the requested
      * application as a target audience.</p>
      */
-    inline const Aws::String& GetSubjectToken() const{ return m_subjectToken; }
+    inline const Aws::String& GetSubjectToken() const { return m_subjectToken; }
     inline bool SubjectTokenHasBeenSet() const { return m_subjectTokenHasBeenSet; }
-    inline void SetSubjectToken(const Aws::String& value) { m_subjectTokenHasBeenSet = true; m_subjectToken = value; }
-    inline void SetSubjectToken(Aws::String&& value) { m_subjectTokenHasBeenSet = true; m_subjectToken = std::move(value); }
-    inline void SetSubjectToken(const char* value) { m_subjectTokenHasBeenSet = true; m_subjectToken.assign(value); }
-    inline CreateTokenWithIAMRequest& WithSubjectToken(const Aws::String& value) { SetSubjectToken(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithSubjectToken(Aws::String&& value) { SetSubjectToken(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithSubjectToken(const char* value) { SetSubjectToken(value); return *this;}
+    template<typename SubjectTokenT = Aws::String>
+    void SetSubjectToken(SubjectTokenT&& value) { m_subjectTokenHasBeenSet = true; m_subjectToken = std::forward<SubjectTokenT>(value); }
+    template<typename SubjectTokenT = Aws::String>
+    CreateTokenWithIAMRequest& WithSubjectToken(SubjectTokenT&& value) { SetSubjectToken(std::forward<SubjectTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,14 +167,12 @@ namespace Model
      * following value is supported:</p> <p>* Access Token -
      * <code>urn:ietf:params:oauth:token-type:access_token</code> </p>
      */
-    inline const Aws::String& GetSubjectTokenType() const{ return m_subjectTokenType; }
+    inline const Aws::String& GetSubjectTokenType() const { return m_subjectTokenType; }
     inline bool SubjectTokenTypeHasBeenSet() const { return m_subjectTokenTypeHasBeenSet; }
-    inline void SetSubjectTokenType(const Aws::String& value) { m_subjectTokenTypeHasBeenSet = true; m_subjectTokenType = value; }
-    inline void SetSubjectTokenType(Aws::String&& value) { m_subjectTokenTypeHasBeenSet = true; m_subjectTokenType = std::move(value); }
-    inline void SetSubjectTokenType(const char* value) { m_subjectTokenTypeHasBeenSet = true; m_subjectTokenType.assign(value); }
-    inline CreateTokenWithIAMRequest& WithSubjectTokenType(const Aws::String& value) { SetSubjectTokenType(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithSubjectTokenType(Aws::String&& value) { SetSubjectTokenType(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithSubjectTokenType(const char* value) { SetSubjectTokenType(value); return *this;}
+    template<typename SubjectTokenTypeT = Aws::String>
+    void SetSubjectTokenType(SubjectTokenTypeT&& value) { m_subjectTokenTypeHasBeenSet = true; m_subjectTokenType = std::forward<SubjectTokenTypeT>(value); }
+    template<typename SubjectTokenTypeT = Aws::String>
+    CreateTokenWithIAMRequest& WithSubjectTokenType(SubjectTokenTypeT&& value) { SetSubjectTokenType(std::forward<SubjectTokenTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +183,12 @@ namespace Model
      * <code>urn:ietf:params:oauth:token-type:access_token</code> </p> <p>* Refresh
      * Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> </p>
      */
-    inline const Aws::String& GetRequestedTokenType() const{ return m_requestedTokenType; }
+    inline const Aws::String& GetRequestedTokenType() const { return m_requestedTokenType; }
     inline bool RequestedTokenTypeHasBeenSet() const { return m_requestedTokenTypeHasBeenSet; }
-    inline void SetRequestedTokenType(const Aws::String& value) { m_requestedTokenTypeHasBeenSet = true; m_requestedTokenType = value; }
-    inline void SetRequestedTokenType(Aws::String&& value) { m_requestedTokenTypeHasBeenSet = true; m_requestedTokenType = std::move(value); }
-    inline void SetRequestedTokenType(const char* value) { m_requestedTokenTypeHasBeenSet = true; m_requestedTokenType.assign(value); }
-    inline CreateTokenWithIAMRequest& WithRequestedTokenType(const Aws::String& value) { SetRequestedTokenType(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithRequestedTokenType(Aws::String&& value) { SetRequestedTokenType(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithRequestedTokenType(const char* value) { SetRequestedTokenType(value); return *this;}
+    template<typename RequestedTokenTypeT = Aws::String>
+    void SetRequestedTokenType(RequestedTokenTypeT&& value) { m_requestedTokenTypeHasBeenSet = true; m_requestedTokenType = std::forward<RequestedTokenTypeT>(value); }
+    template<typename RequestedTokenTypeT = Aws::String>
+    CreateTokenWithIAMRequest& WithRequestedTokenType(RequestedTokenTypeT&& value) { SetRequestedTokenType(std::forward<RequestedTokenTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,14 +197,12 @@ namespace Model
      * value is generated by the client and presented to validate the original code
      * challenge value the client passed at authorization time.</p>
      */
-    inline const Aws::String& GetCodeVerifier() const{ return m_codeVerifier; }
+    inline const Aws::String& GetCodeVerifier() const { return m_codeVerifier; }
     inline bool CodeVerifierHasBeenSet() const { return m_codeVerifierHasBeenSet; }
-    inline void SetCodeVerifier(const Aws::String& value) { m_codeVerifierHasBeenSet = true; m_codeVerifier = value; }
-    inline void SetCodeVerifier(Aws::String&& value) { m_codeVerifierHasBeenSet = true; m_codeVerifier = std::move(value); }
-    inline void SetCodeVerifier(const char* value) { m_codeVerifierHasBeenSet = true; m_codeVerifier.assign(value); }
-    inline CreateTokenWithIAMRequest& WithCodeVerifier(const Aws::String& value) { SetCodeVerifier(value); return *this;}
-    inline CreateTokenWithIAMRequest& WithCodeVerifier(Aws::String&& value) { SetCodeVerifier(std::move(value)); return *this;}
-    inline CreateTokenWithIAMRequest& WithCodeVerifier(const char* value) { SetCodeVerifier(value); return *this;}
+    template<typename CodeVerifierT = Aws::String>
+    void SetCodeVerifier(CodeVerifierT&& value) { m_codeVerifierHasBeenSet = true; m_codeVerifier = std::forward<CodeVerifierT>(value); }
+    template<typename CodeVerifierT = Aws::String>
+    CreateTokenWithIAMRequest& WithCodeVerifier(CodeVerifierT&& value) { SetCodeVerifier(std::forward<CodeVerifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateJourneyRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateJourneyRequest();
+    AWS_PINPOINT_API UpdateJourneyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,38 +38,34 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateJourneyRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateJourneyRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateJourneyRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateJourneyRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the journey.</p>
      */
-    inline const Aws::String& GetJourneyId() const{ return m_journeyId; }
+    inline const Aws::String& GetJourneyId() const { return m_journeyId; }
     inline bool JourneyIdHasBeenSet() const { return m_journeyIdHasBeenSet; }
-    inline void SetJourneyId(const Aws::String& value) { m_journeyIdHasBeenSet = true; m_journeyId = value; }
-    inline void SetJourneyId(Aws::String&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::move(value); }
-    inline void SetJourneyId(const char* value) { m_journeyIdHasBeenSet = true; m_journeyId.assign(value); }
-    inline UpdateJourneyRequest& WithJourneyId(const Aws::String& value) { SetJourneyId(value); return *this;}
-    inline UpdateJourneyRequest& WithJourneyId(Aws::String&& value) { SetJourneyId(std::move(value)); return *this;}
-    inline UpdateJourneyRequest& WithJourneyId(const char* value) { SetJourneyId(value); return *this;}
+    template<typename JourneyIdT = Aws::String>
+    void SetJourneyId(JourneyIdT&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::forward<JourneyIdT>(value); }
+    template<typename JourneyIdT = Aws::String>
+    UpdateJourneyRequest& WithJourneyId(JourneyIdT&& value) { SetJourneyId(std::forward<JourneyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WriteJourneyRequest& GetWriteJourneyRequest() const{ return m_writeJourneyRequest; }
+    inline const WriteJourneyRequest& GetWriteJourneyRequest() const { return m_writeJourneyRequest; }
     inline bool WriteJourneyRequestHasBeenSet() const { return m_writeJourneyRequestHasBeenSet; }
-    inline void SetWriteJourneyRequest(const WriteJourneyRequest& value) { m_writeJourneyRequestHasBeenSet = true; m_writeJourneyRequest = value; }
-    inline void SetWriteJourneyRequest(WriteJourneyRequest&& value) { m_writeJourneyRequestHasBeenSet = true; m_writeJourneyRequest = std::move(value); }
-    inline UpdateJourneyRequest& WithWriteJourneyRequest(const WriteJourneyRequest& value) { SetWriteJourneyRequest(value); return *this;}
-    inline UpdateJourneyRequest& WithWriteJourneyRequest(WriteJourneyRequest&& value) { SetWriteJourneyRequest(std::move(value)); return *this;}
+    template<typename WriteJourneyRequestT = WriteJourneyRequest>
+    void SetWriteJourneyRequest(WriteJourneyRequestT&& value) { m_writeJourneyRequestHasBeenSet = true; m_writeJourneyRequest = std::forward<WriteJourneyRequestT>(value); }
+    template<typename WriteJourneyRequestT = WriteJourneyRequest>
+    UpdateJourneyRequest& WithWriteJourneyRequest(WriteJourneyRequestT&& value) { SetWriteJourneyRequest(std::forward<WriteJourneyRequestT>(value)); return *this;}
     ///@}
   private:
 

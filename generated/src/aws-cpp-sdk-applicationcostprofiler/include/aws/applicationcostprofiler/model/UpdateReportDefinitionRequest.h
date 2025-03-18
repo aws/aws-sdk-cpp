@@ -24,7 +24,7 @@ namespace Model
   class UpdateReportDefinitionRequest : public ApplicationCostProfilerRequest
   {
   public:
-    AWS_APPLICATIONCOSTPROFILER_API UpdateReportDefinitionRequest();
+    AWS_APPLICATIONCOSTPROFILER_API UpdateReportDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,52 +39,44 @@ namespace Model
     /**
      * <p>Required. ID of the report to update.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
+    inline const Aws::String& GetReportId() const { return m_reportId; }
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-    inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-    inline UpdateReportDefinitionRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline UpdateReportDefinitionRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline UpdateReportDefinitionRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    UpdateReportDefinitionRequest& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. Description of the report.</p>
      */
-    inline const Aws::String& GetReportDescription() const{ return m_reportDescription; }
+    inline const Aws::String& GetReportDescription() const { return m_reportDescription; }
     inline bool ReportDescriptionHasBeenSet() const { return m_reportDescriptionHasBeenSet; }
-    inline void SetReportDescription(const Aws::String& value) { m_reportDescriptionHasBeenSet = true; m_reportDescription = value; }
-    inline void SetReportDescription(Aws::String&& value) { m_reportDescriptionHasBeenSet = true; m_reportDescription = std::move(value); }
-    inline void SetReportDescription(const char* value) { m_reportDescriptionHasBeenSet = true; m_reportDescription.assign(value); }
-    inline UpdateReportDefinitionRequest& WithReportDescription(const Aws::String& value) { SetReportDescription(value); return *this;}
-    inline UpdateReportDefinitionRequest& WithReportDescription(Aws::String&& value) { SetReportDescription(std::move(value)); return *this;}
-    inline UpdateReportDefinitionRequest& WithReportDescription(const char* value) { SetReportDescription(value); return *this;}
+    template<typename ReportDescriptionT = Aws::String>
+    void SetReportDescription(ReportDescriptionT&& value) { m_reportDescriptionHasBeenSet = true; m_reportDescription = std::forward<ReportDescriptionT>(value); }
+    template<typename ReportDescriptionT = Aws::String>
+    UpdateReportDefinitionRequest& WithReportDescription(ReportDescriptionT&& value) { SetReportDescription(std::forward<ReportDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. The cadence to generate the report.</p>
      */
-    inline const ReportFrequency& GetReportFrequency() const{ return m_reportFrequency; }
+    inline ReportFrequency GetReportFrequency() const { return m_reportFrequency; }
     inline bool ReportFrequencyHasBeenSet() const { return m_reportFrequencyHasBeenSet; }
-    inline void SetReportFrequency(const ReportFrequency& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
-    inline void SetReportFrequency(ReportFrequency&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::move(value); }
-    inline UpdateReportDefinitionRequest& WithReportFrequency(const ReportFrequency& value) { SetReportFrequency(value); return *this;}
-    inline UpdateReportDefinitionRequest& WithReportFrequency(ReportFrequency&& value) { SetReportFrequency(std::move(value)); return *this;}
+    inline void SetReportFrequency(ReportFrequency value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
+    inline UpdateReportDefinitionRequest& WithReportFrequency(ReportFrequency value) { SetReportFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. The format to use for the generated report.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline UpdateReportDefinitionRequest& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline UpdateReportDefinitionRequest& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline UpdateReportDefinitionRequest& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +84,12 @@ namespace Model
      * <p>Required. Amazon Simple Storage Service (Amazon S3) location where
      * Application Cost Profiler uploads the report.</p>
      */
-    inline const S3Location& GetDestinationS3Location() const{ return m_destinationS3Location; }
+    inline const S3Location& GetDestinationS3Location() const { return m_destinationS3Location; }
     inline bool DestinationS3LocationHasBeenSet() const { return m_destinationS3LocationHasBeenSet; }
-    inline void SetDestinationS3Location(const S3Location& value) { m_destinationS3LocationHasBeenSet = true; m_destinationS3Location = value; }
-    inline void SetDestinationS3Location(S3Location&& value) { m_destinationS3LocationHasBeenSet = true; m_destinationS3Location = std::move(value); }
-    inline UpdateReportDefinitionRequest& WithDestinationS3Location(const S3Location& value) { SetDestinationS3Location(value); return *this;}
-    inline UpdateReportDefinitionRequest& WithDestinationS3Location(S3Location&& value) { SetDestinationS3Location(std::move(value)); return *this;}
+    template<typename DestinationS3LocationT = S3Location>
+    void SetDestinationS3Location(DestinationS3LocationT&& value) { m_destinationS3LocationHasBeenSet = true; m_destinationS3Location = std::forward<DestinationS3LocationT>(value); }
+    template<typename DestinationS3LocationT = S3Location>
+    UpdateReportDefinitionRequest& WithDestinationS3Location(DestinationS3LocationT&& value) { SetDestinationS3Location(std::forward<DestinationS3LocationT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,10 +99,10 @@ namespace Model
     Aws::String m_reportDescription;
     bool m_reportDescriptionHasBeenSet = false;
 
-    ReportFrequency m_reportFrequency;
+    ReportFrequency m_reportFrequency{ReportFrequency::NOT_SET};
     bool m_reportFrequencyHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     S3Location m_destinationS3Location;

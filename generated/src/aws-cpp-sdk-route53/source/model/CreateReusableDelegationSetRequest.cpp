@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateReusableDelegationSetRequest::CreateReusableDelegationSetRequest() : 
-    m_callerReferenceHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
 
 Aws::String CreateReusableDelegationSetRequest::SerializePayload() const
 {

@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-KeyStoreAccessOption::KeyStoreAccessOption() : 
-    m_keyAccessRoleArnHasBeenSet(false),
-    m_keyStoreAccessEnabled(false),
-    m_keyStoreAccessEnabledHasBeenSet(false)
-{
-}
-
 KeyStoreAccessOption::KeyStoreAccessOption(JsonView jsonValue)
-  : KeyStoreAccessOption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KeyStoreAccessOption& KeyStoreAccessOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyAccessRoleArn"))
   {
     m_keyAccessRoleArn = jsonValue.GetString("KeyAccessRoleArn");
-
     m_keyAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyStoreAccessEnabled"))
   {
     m_keyStoreAccessEnabled = jsonValue.GetBool("KeyStoreAccessEnabled");
-
     m_keyStoreAccessEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

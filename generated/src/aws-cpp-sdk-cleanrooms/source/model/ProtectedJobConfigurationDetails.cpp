@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobConfigurationDetails::ProtectedJobConfigurationDetails() : 
-    m_directAnalysisConfigurationDetailsHasBeenSet(false)
-{
-}
-
 ProtectedJobConfigurationDetails::ProtectedJobConfigurationDetails(JsonView jsonValue)
-  : ProtectedJobConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedJobConfigurationDetails& ProtectedJobConfigurationDetails::operator =(J
   if(jsonValue.ValueExists("directAnalysisConfigurationDetails"))
   {
     m_directAnalysisConfigurationDetails = jsonValue.GetObject("directAnalysisConfigurationDetails");
-
     m_directAnalysisConfigurationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

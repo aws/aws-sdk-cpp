@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlatformApplicationAttributesResult::GetPlatformApplicationAttributesResult()
-{
-}
-
 GetPlatformApplicationAttributesResult::GetPlatformApplicationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
@@ -52,12 +49,14 @@ GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::
         attributesEntry = attributesEntry.NextNode("entry");
       }
 
+      m_attributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::GetPlatformApplicationAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

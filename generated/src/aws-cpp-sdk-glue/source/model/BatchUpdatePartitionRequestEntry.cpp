@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BatchUpdatePartitionRequestEntry::BatchUpdatePartitionRequestEntry() : 
-    m_partitionValueListHasBeenSet(false),
-    m_partitionInputHasBeenSet(false)
-{
-}
-
 BatchUpdatePartitionRequestEntry::BatchUpdatePartitionRequestEntry(JsonView jsonValue)
-  : BatchUpdatePartitionRequestEntry()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BatchUpdatePartitionRequestEntry& BatchUpdatePartitionRequestEntry::operator =(J
     }
     m_partitionValueListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionInput"))
   {
     m_partitionInput = jsonValue.GetObject("PartitionInput");
-
     m_partitionInputHasBeenSet = true;
   }
-
   return *this;
 }
 

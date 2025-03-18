@@ -32,7 +32,7 @@ namespace Model
   class AwsDmsReplicationInstanceReplicationSubnetGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsDmsReplicationInstanceReplicationSubnetGroupDetails();
+    AWS_SECURITYHUB_API AwsDmsReplicationInstanceReplicationSubnetGroupDetails() = default;
     AWS_SECURITYHUB_API AwsDmsReplicationInstanceReplicationSubnetGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDmsReplicationInstanceReplicationSubnetGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The identifier of the replication subnet group. </p>
      */
-    inline const Aws::String& GetReplicationSubnetGroupIdentifier() const{ return m_replicationSubnetGroupIdentifier; }
+    inline const Aws::String& GetReplicationSubnetGroupIdentifier() const { return m_replicationSubnetGroupIdentifier; }
     inline bool ReplicationSubnetGroupIdentifierHasBeenSet() const { return m_replicationSubnetGroupIdentifierHasBeenSet; }
-    inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
-    inline void SetReplicationSubnetGroupIdentifier(Aws::String&& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = std::move(value); }
-    inline void SetReplicationSubnetGroupIdentifier(const char* value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier.assign(value); }
-    inline AwsDmsReplicationInstanceReplicationSubnetGroupDetails& WithReplicationSubnetGroupIdentifier(const Aws::String& value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
-    inline AwsDmsReplicationInstanceReplicationSubnetGroupDetails& WithReplicationSubnetGroupIdentifier(Aws::String&& value) { SetReplicationSubnetGroupIdentifier(std::move(value)); return *this;}
-    inline AwsDmsReplicationInstanceReplicationSubnetGroupDetails& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
+    template<typename ReplicationSubnetGroupIdentifierT = Aws::String>
+    void SetReplicationSubnetGroupIdentifier(ReplicationSubnetGroupIdentifierT&& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = std::forward<ReplicationSubnetGroupIdentifierT>(value); }
+    template<typename ReplicationSubnetGroupIdentifierT = Aws::String>
+    AwsDmsReplicationInstanceReplicationSubnetGroupDetails& WithReplicationSubnetGroupIdentifier(ReplicationSubnetGroupIdentifierT&& value) { SetReplicationSubnetGroupIdentifier(std::forward<ReplicationSubnetGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

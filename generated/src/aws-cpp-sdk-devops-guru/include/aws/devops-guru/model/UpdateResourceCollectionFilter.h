@@ -34,7 +34,7 @@ namespace Model
   class UpdateResourceCollectionFilter
   {
   public:
-    AWS_DEVOPSGURU_API UpdateResourceCollectionFilter();
+    AWS_DEVOPSGURU_API UpdateResourceCollectionFilter() = default;
     AWS_DEVOPSGURU_API UpdateResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API UpdateResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p> A collection of Amazon Web Services CloudFormation stacks. You can specify
      * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
-    inline const UpdateCloudFormationCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
+    inline const UpdateCloudFormationCollectionFilter& GetCloudFormation() const { return m_cloudFormation; }
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
-    inline void SetCloudFormation(const UpdateCloudFormationCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
-    inline void SetCloudFormation(UpdateCloudFormationCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
-    inline UpdateResourceCollectionFilter& WithCloudFormation(const UpdateCloudFormationCollectionFilter& value) { SetCloudFormation(value); return *this;}
-    inline UpdateResourceCollectionFilter& WithCloudFormation(UpdateCloudFormationCollectionFilter&& value) { SetCloudFormation(std::move(value)); return *this;}
+    template<typename CloudFormationT = UpdateCloudFormationCollectionFilter>
+    void SetCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::forward<CloudFormationT>(value); }
+    template<typename CloudFormationT = UpdateCloudFormationCollectionFilter>
+    UpdateResourceCollectionFilter& WithCloudFormation(CloudFormationT&& value) { SetCloudFormation(std::forward<CloudFormationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +84,14 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::Vector<UpdateTagCollectionFilter>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<UpdateTagCollectionFilter>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<UpdateTagCollectionFilter>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<UpdateTagCollectionFilter>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline UpdateResourceCollectionFilter& WithTags(const Aws::Vector<UpdateTagCollectionFilter>& value) { SetTags(value); return *this;}
-    inline UpdateResourceCollectionFilter& WithTags(Aws::Vector<UpdateTagCollectionFilter>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateResourceCollectionFilter& AddTags(const UpdateTagCollectionFilter& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline UpdateResourceCollectionFilter& AddTags(UpdateTagCollectionFilter&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<UpdateTagCollectionFilter>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<UpdateTagCollectionFilter>>
+    UpdateResourceCollectionFilter& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = UpdateTagCollectionFilter>
+    UpdateResourceCollectionFilter& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

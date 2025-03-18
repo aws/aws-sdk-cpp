@@ -27,7 +27,7 @@ namespace Model
   class PutMaintenanceStartTimeResult
   {
   public:
-    AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult();
+    AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult() = default;
     AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPGATEWAY_API PutMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance
      * start time.</p>
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArn.assign(value); }
-    inline PutMaintenanceStartTimeResult& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline PutMaintenanceStartTimeResult& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline PutMaintenanceStartTimeResult& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    PutMaintenanceStartTimeResult& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutMaintenanceStartTimeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutMaintenanceStartTimeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutMaintenanceStartTimeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutMaintenanceStartTimeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayArn;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

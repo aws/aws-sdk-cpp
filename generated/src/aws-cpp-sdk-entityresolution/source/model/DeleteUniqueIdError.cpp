@@ -18,15 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-DeleteUniqueIdError::DeleteUniqueIdError() : 
-    m_errorType(DeleteUniqueIdErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false),
-    m_uniqueIdHasBeenSet(false)
-{
-}
-
 DeleteUniqueIdError::DeleteUniqueIdError(JsonView jsonValue)
-  : DeleteUniqueIdError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeleteUniqueIdError& DeleteUniqueIdError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = DeleteUniqueIdErrorTypeMapper::GetDeleteUniqueIdErrorTypeForName(jsonValue.GetString("errorType"));
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uniqueId"))
   {
     m_uniqueId = jsonValue.GetString("uniqueId");
-
     m_uniqueIdHasBeenSet = true;
   }
-
   return *this;
 }
 

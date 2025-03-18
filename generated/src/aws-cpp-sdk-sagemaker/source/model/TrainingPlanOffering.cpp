@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingPlanOffering::TrainingPlanOffering() : 
-    m_trainingPlanOfferingIdHasBeenSet(false),
-    m_targetResourcesHasBeenSet(false),
-    m_requestedStartTimeAfterHasBeenSet(false),
-    m_requestedEndTimeBeforeHasBeenSet(false),
-    m_durationHours(0),
-    m_durationHoursHasBeenSet(false),
-    m_durationMinutes(0),
-    m_durationMinutesHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_reservedCapacityOfferingsHasBeenSet(false)
-{
-}
-
 TrainingPlanOffering::TrainingPlanOffering(JsonView jsonValue)
-  : TrainingPlanOffering()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ TrainingPlanOffering& TrainingPlanOffering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingPlanOfferingId"))
   {
     m_trainingPlanOfferingId = jsonValue.GetString("TrainingPlanOfferingId");
-
     m_trainingPlanOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetResources"))
   {
     Aws::Utils::Array<JsonView> targetResourcesJsonList = jsonValue.GetArray("TargetResources");
@@ -57,49 +39,36 @@ TrainingPlanOffering& TrainingPlanOffering::operator =(JsonView jsonValue)
     }
     m_targetResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedStartTimeAfter"))
   {
     m_requestedStartTimeAfter = jsonValue.GetDouble("RequestedStartTimeAfter");
-
     m_requestedStartTimeAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedEndTimeBefore"))
   {
     m_requestedEndTimeBefore = jsonValue.GetDouble("RequestedEndTimeBefore");
-
     m_requestedEndTimeBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationHours"))
   {
     m_durationHours = jsonValue.GetInt64("DurationHours");
-
     m_durationHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMinutes"))
   {
     m_durationMinutes = jsonValue.GetInt64("DurationMinutes");
-
     m_durationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontFee"))
   {
     m_upfrontFee = jsonValue.GetString("UpfrontFee");
-
     m_upfrontFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedCapacityOfferings"))
   {
     Aws::Utils::Array<JsonView> reservedCapacityOfferingsJsonList = jsonValue.GetArray("ReservedCapacityOfferings");
@@ -109,7 +78,6 @@ TrainingPlanOffering& TrainingPlanOffering::operator =(JsonView jsonValue)
     }
     m_reservedCapacityOfferingsHasBeenSet = true;
   }
-
   return *this;
 }
 

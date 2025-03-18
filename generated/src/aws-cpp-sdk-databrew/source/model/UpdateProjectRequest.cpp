@@ -12,13 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProjectRequest::UpdateProjectRequest() : 
-    m_sampleHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProjectRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfileAssociationsResult::ListProfileAssociationsResult()
-{
-}
-
 ListProfileAssociationsResult::ListProfileAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListProfileAssociationsResult& ListProfileAssociationsResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileAssociations"))
   {
     Aws::Utils::Array<JsonView> profileAssociationsJsonList = jsonValue.GetArray("ProfileAssociations");
@@ -42,14 +37,15 @@ ListProfileAssociationsResult& ListProfileAssociationsResult::operator =(const A
     {
       m_profileAssociations.push_back(profileAssociationsJsonList[profileAssociationsIndex].AsObject());
     }
+    m_profileAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendAPIResourceConfig::BackendAPIResourceConfig() : 
-    m_additionalAuthTypesHasBeenSet(false),
-    m_apiNameHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_defaultAuthTypeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_transformSchemaHasBeenSet(false)
-{
-}
-
 BackendAPIResourceConfig::BackendAPIResourceConfig(JsonView jsonValue)
-  : BackendAPIResourceConfig()
 {
   *this = jsonValue;
 }
@@ -45,42 +34,31 @@ BackendAPIResourceConfig& BackendAPIResourceConfig::operator =(JsonView jsonValu
     }
     m_additionalAuthTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiName"))
   {
     m_apiName = jsonValue.GetString("apiName");
-
     m_apiNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conflictResolution"))
   {
     m_conflictResolution = jsonValue.GetObject("conflictResolution");
-
     m_conflictResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultAuthType"))
   {
     m_defaultAuthType = jsonValue.GetObject("defaultAuthType");
-
     m_defaultAuthTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformSchema"))
   {
     m_transformSchema = jsonValue.GetString("transformSchema");
-
     m_transformSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

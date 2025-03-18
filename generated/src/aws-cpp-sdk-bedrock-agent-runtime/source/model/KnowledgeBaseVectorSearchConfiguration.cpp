@@ -18,19 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration() : 
-    m_filterHasBeenSet(false),
-    m_implicitFilterConfigurationHasBeenSet(false),
-    m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false),
-    m_overrideSearchType(SearchType::NOT_SET),
-    m_overrideSearchTypeHasBeenSet(false),
-    m_rerankingConfigurationHasBeenSet(false)
-{
-}
-
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue)
-  : KnowledgeBaseVectorSearchConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetObject("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("implicitFilterConfiguration"))
   {
     m_implicitFilterConfiguration = jsonValue.GetObject("implicitFilterConfiguration");
-
     m_implicitFilterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
-
     m_numberOfResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideSearchType"))
   {
     m_overrideSearchType = SearchTypeMapper::GetSearchTypeForName(jsonValue.GetString("overrideSearchType"));
-
     m_overrideSearchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rerankingConfiguration"))
   {
     m_rerankingConfiguration = jsonValue.GetObject("rerankingConfiguration");
-
     m_rerankingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

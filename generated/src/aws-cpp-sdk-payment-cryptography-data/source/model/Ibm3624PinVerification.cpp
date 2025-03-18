@@ -18,16 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-Ibm3624PinVerification::Ibm3624PinVerification() : 
-    m_decimalizationTableHasBeenSet(false),
-    m_pinValidationDataPadCharacterHasBeenSet(false),
-    m_pinValidationDataHasBeenSet(false),
-    m_pinOffsetHasBeenSet(false)
-{
-}
-
 Ibm3624PinVerification::Ibm3624PinVerification(JsonView jsonValue)
-  : Ibm3624PinVerification()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Ibm3624PinVerification& Ibm3624PinVerification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DecimalizationTable"))
   {
     m_decimalizationTable = jsonValue.GetString("DecimalizationTable");
-
     m_decimalizationTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinValidationDataPadCharacter"))
   {
     m_pinValidationDataPadCharacter = jsonValue.GetString("PinValidationDataPadCharacter");
-
     m_pinValidationDataPadCharacterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinValidationData"))
   {
     m_pinValidationData = jsonValue.GetString("PinValidationData");
-
     m_pinValidationDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinOffset"))
   {
     m_pinOffset = jsonValue.GetString("PinOffset");
-
     m_pinOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

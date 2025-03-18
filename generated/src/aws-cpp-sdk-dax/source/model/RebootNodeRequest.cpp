@@ -12,12 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebootNodeRequest::RebootNodeRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String RebootNodeRequest::SerializePayload() const
 {
   JsonValue payload;

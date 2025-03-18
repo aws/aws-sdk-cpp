@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-GlobalAcceleratorForWorkSpace::GlobalAcceleratorForWorkSpace() : 
-    m_mode(AGAModeForWorkSpaceEnum::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_preferredProtocol(AGAPreferredProtocolForWorkSpace::NOT_SET),
-    m_preferredProtocolHasBeenSet(false)
-{
-}
-
 GlobalAcceleratorForWorkSpace::GlobalAcceleratorForWorkSpace(JsonView jsonValue)
-  : GlobalAcceleratorForWorkSpace()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GlobalAcceleratorForWorkSpace& GlobalAcceleratorForWorkSpace::operator =(JsonVie
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = AGAModeForWorkSpaceEnumMapper::GetAGAModeForWorkSpaceEnumForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredProtocol"))
   {
     m_preferredProtocol = AGAPreferredProtocolForWorkSpaceMapper::GetAGAPreferredProtocolForWorkSpaceForName(jsonValue.GetString("PreferredProtocol"));
-
     m_preferredProtocolHasBeenSet = true;
   }
-
   return *this;
 }
 

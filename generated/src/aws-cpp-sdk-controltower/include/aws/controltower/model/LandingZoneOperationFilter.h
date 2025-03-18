@@ -34,7 +34,7 @@ namespace Model
   class LandingZoneOperationFilter
   {
   public:
-    AWS_CONTROLTOWER_API LandingZoneOperationFilter();
+    AWS_CONTROLTOWER_API LandingZoneOperationFilter() = default;
     AWS_CONTROLTOWER_API LandingZoneOperationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API LandingZoneOperationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>The statuses of the set of landing zone operations selected by the
      * filter.</p>
      */
-    inline const Aws::Vector<LandingZoneOperationStatus>& GetStatuses() const{ return m_statuses; }
+    inline const Aws::Vector<LandingZoneOperationStatus>& GetStatuses() const { return m_statuses; }
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-    inline void SetStatuses(const Aws::Vector<LandingZoneOperationStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<LandingZoneOperationStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-    inline LandingZoneOperationFilter& WithStatuses(const Aws::Vector<LandingZoneOperationStatus>& value) { SetStatuses(value); return *this;}
-    inline LandingZoneOperationFilter& WithStatuses(Aws::Vector<LandingZoneOperationStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline LandingZoneOperationFilter& AddStatuses(const LandingZoneOperationStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
-    inline LandingZoneOperationFilter& AddStatuses(LandingZoneOperationStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+    template<typename StatusesT = Aws::Vector<LandingZoneOperationStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<LandingZoneOperationStatus>>
+    LandingZoneOperationFilter& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    inline LandingZoneOperationFilter& AddStatuses(LandingZoneOperationStatus value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The set of landing zone operation types selected by the filter.</p>
      */
-    inline const Aws::Vector<LandingZoneOperationType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<LandingZoneOperationType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<LandingZoneOperationType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<LandingZoneOperationType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline LandingZoneOperationFilter& WithTypes(const Aws::Vector<LandingZoneOperationType>& value) { SetTypes(value); return *this;}
-    inline LandingZoneOperationFilter& WithTypes(Aws::Vector<LandingZoneOperationType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline LandingZoneOperationFilter& AddTypes(const LandingZoneOperationType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline LandingZoneOperationFilter& AddTypes(LandingZoneOperationType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<LandingZoneOperationType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<LandingZoneOperationType>>
+    LandingZoneOperationFilter& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline LandingZoneOperationFilter& AddTypes(LandingZoneOperationType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
   private:
 

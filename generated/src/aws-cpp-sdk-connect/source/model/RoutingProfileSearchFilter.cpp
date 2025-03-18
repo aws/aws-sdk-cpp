@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfileSearchFilter::RoutingProfileSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 RoutingProfileSearchFilter::RoutingProfileSearchFilter(JsonView jsonValue)
-  : RoutingProfileSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RoutingProfileSearchFilter& RoutingProfileSearchFilter::operator =(JsonView json
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

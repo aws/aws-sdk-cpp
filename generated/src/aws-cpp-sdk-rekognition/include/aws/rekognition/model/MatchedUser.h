@@ -33,7 +33,7 @@ namespace Model
   class MatchedUser
   {
   public:
-    AWS_REKOGNITION_API MatchedUser();
+    AWS_REKOGNITION_API MatchedUser() = default;
     AWS_REKOGNITION_API MatchedUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API MatchedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>A provided ID for the UserID. Unique within the collection.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline MatchedUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline MatchedUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline MatchedUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    MatchedUser& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the user matched to a provided FaceID.</p>
      */
-    inline const UserStatus& GetUserStatus() const{ return m_userStatus; }
+    inline UserStatus GetUserStatus() const { return m_userStatus; }
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }
-    inline void SetUserStatus(const UserStatus& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
-    inline void SetUserStatus(UserStatus&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
-    inline MatchedUser& WithUserStatus(const UserStatus& value) { SetUserStatus(value); return *this;}
-    inline MatchedUser& WithUserStatus(UserStatus&& value) { SetUserStatus(std::move(value)); return *this;}
+    inline void SetUserStatus(UserStatus value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline MatchedUser& WithUserStatus(UserStatus value) { SetUserStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    UserStatus m_userStatus;
+    UserStatus m_userStatus{UserStatus::NOT_SET};
     bool m_userStatusHasBeenSet = false;
   };
 

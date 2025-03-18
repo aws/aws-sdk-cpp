@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DeleteAnalysisSchemeRequest::DeleteAnalysisSchemeRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_analysisSchemeNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAnalysisSchemeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

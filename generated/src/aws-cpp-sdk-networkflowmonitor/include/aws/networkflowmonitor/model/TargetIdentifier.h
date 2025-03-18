@@ -34,7 +34,7 @@ namespace Model
   class TargetIdentifier
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API TargetIdentifier();
+    AWS_NETWORKFLOWMONITOR_API TargetIdentifier() = default;
     AWS_NETWORKFLOWMONITOR_API TargetIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API TargetIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The identifier for a target.</p>
      */
-    inline const TargetId& GetTargetId() const{ return m_targetId; }
+    inline const TargetId& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const TargetId& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(TargetId&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline TargetIdentifier& WithTargetId(const TargetId& value) { SetTargetId(value); return *this;}
-    inline TargetIdentifier& WithTargetId(TargetId&& value) { SetTargetId(std::move(value)); return *this;}
+    template<typename TargetIdT = TargetId>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = TargetId>
+    TargetIdentifier& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +57,17 @@ namespace Model
      * <p>The type of a target. A target type is currently always <code>ACCOUNT</code>
      * because a target is currently a single Amazon Web Services account.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
+    inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline TargetIdentifier& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline TargetIdentifier& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline TargetIdentifier& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
   private:
 
     TargetId m_targetId;
     bool m_targetIdHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
   };
 

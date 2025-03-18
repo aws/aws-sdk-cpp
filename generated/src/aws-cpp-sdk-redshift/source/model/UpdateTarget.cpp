@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-UpdateTarget::UpdateTarget() : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_supportedOperationsHasBeenSet(false)
-{
-}
-
 UpdateTarget::UpdateTarget(const XmlNode& xmlNode)
-  : UpdateTarget()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ UpdateTarget& UpdateTarget::operator =(const XmlNode& xmlNode)
     if(!supportedOperationsNode.IsNull())
     {
       XmlNode supportedOperationsMember = supportedOperationsNode.FirstChild("SupportedOperation");
+      m_supportedOperationsHasBeenSet = !supportedOperationsMember.IsNull();
       while(!supportedOperationsMember.IsNull())
       {
         m_supportedOperations.push_back(supportedOperationsMember);

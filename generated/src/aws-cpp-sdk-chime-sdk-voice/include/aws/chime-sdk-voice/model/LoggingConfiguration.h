@@ -31,7 +31,7 @@ namespace Model
   class LoggingConfiguration
   {
   public:
-    AWS_CHIMESDKVOICE_API LoggingConfiguration();
+    AWS_CHIMESDKVOICE_API LoggingConfiguration() = default;
     AWS_CHIMESDKVOICE_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
      */
-    inline bool GetEnableSIPLogs() const{ return m_enableSIPLogs; }
+    inline bool GetEnableSIPLogs() const { return m_enableSIPLogs; }
     inline bool EnableSIPLogsHasBeenSet() const { return m_enableSIPLogsHasBeenSet; }
     inline void SetEnableSIPLogs(bool value) { m_enableSIPLogsHasBeenSet = true; m_enableSIPLogs = value; }
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>Enables or disables media metrics logging.</p>
      */
-    inline bool GetEnableMediaMetricLogs() const{ return m_enableMediaMetricLogs; }
+    inline bool GetEnableMediaMetricLogs() const { return m_enableMediaMetricLogs; }
     inline bool EnableMediaMetricLogsHasBeenSet() const { return m_enableMediaMetricLogsHasBeenSet; }
     inline void SetEnableMediaMetricLogs(bool value) { m_enableMediaMetricLogsHasBeenSet = true; m_enableMediaMetricLogs = value; }
     inline LoggingConfiguration& WithEnableMediaMetricLogs(bool value) { SetEnableMediaMetricLogs(value); return *this;}
     ///@}
   private:
 
-    bool m_enableSIPLogs;
+    bool m_enableSIPLogs{false};
     bool m_enableSIPLogsHasBeenSet = false;
 
-    bool m_enableMediaMetricLogs;
+    bool m_enableMediaMetricLogs{false};
     bool m_enableMediaMetricLogsHasBeenSet = false;
   };
 

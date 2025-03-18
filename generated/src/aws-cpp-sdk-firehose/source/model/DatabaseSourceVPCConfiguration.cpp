@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DatabaseSourceVPCConfiguration::DatabaseSourceVPCConfiguration() : 
-    m_vpcEndpointServiceNameHasBeenSet(false)
-{
-}
-
 DatabaseSourceVPCConfiguration::DatabaseSourceVPCConfiguration(JsonView jsonValue)
-  : DatabaseSourceVPCConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatabaseSourceVPCConfiguration& DatabaseSourceVPCConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("VpcEndpointServiceName"))
   {
     m_vpcEndpointServiceName = jsonValue.GetString("VpcEndpointServiceName");
-
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

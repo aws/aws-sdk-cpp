@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompleteWebAuthnRegistrationRequest::CompleteWebAuthnRegistrationRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_credentialHasBeenSet(false)
-{
-}
-
 Aws::String CompleteWebAuthnRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

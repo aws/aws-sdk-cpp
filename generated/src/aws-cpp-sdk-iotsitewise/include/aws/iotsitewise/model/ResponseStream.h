@@ -40,7 +40,7 @@ namespace Model
   class ResponseStream
   {
   public:
-    AWS_IOTSITEWISE_API ResponseStream();
+    AWS_IOTSITEWISE_API ResponseStream() = default;
     AWS_IOTSITEWISE_API ResponseStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ResponseStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,94 +51,94 @@ namespace Model
      * <p>Contains tracing information of the SiteWise Assistant's reasoning and data
      * access.</p>
      */
-    inline const Trace& GetTrace() const{ return m_trace; }
+    inline const Trace& GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const Trace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(Trace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline ResponseStream& WithTrace(const Trace& value) { SetTrace(value); return *this;}
-    inline ResponseStream& WithTrace(Trace&& value) { SetTrace(std::move(value)); return *this;}
+    template<typename TraceT = Trace>
+    void SetTrace(TraceT&& value) { m_traceHasBeenSet = true; m_trace = std::forward<TraceT>(value); }
+    template<typename TraceT = Trace>
+    ResponseStream& WithTrace(TraceT&& value) { SetTrace(std::forward<TraceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the SiteWise Assistant's response.</p>
      */
-    inline const InvocationOutput& GetOutput() const{ return m_output; }
+    inline const InvocationOutput& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const InvocationOutput& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(InvocationOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline ResponseStream& WithOutput(const InvocationOutput& value) { SetOutput(value); return *this;}
-    inline ResponseStream& WithOutput(InvocationOutput&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = InvocationOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = InvocationOutput>
+    ResponseStream& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AccessDeniedException& GetAccessDeniedException() const{ return m_accessDeniedException; }
+    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    inline void SetAccessDeniedException(const AccessDeniedException& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = value; }
-    inline void SetAccessDeniedException(AccessDeniedException&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::move(value); }
-    inline ResponseStream& WithAccessDeniedException(const AccessDeniedException& value) { SetAccessDeniedException(value); return *this;}
-    inline ResponseStream& WithAccessDeniedException(AccessDeniedException&& value) { SetAccessDeniedException(std::move(value)); return *this;}
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    ResponseStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConflictingOperationException& GetConflictingOperationException() const{ return m_conflictingOperationException; }
+    inline const ConflictingOperationException& GetConflictingOperationException() const { return m_conflictingOperationException; }
     inline bool ConflictingOperationExceptionHasBeenSet() const { return m_conflictingOperationExceptionHasBeenSet; }
-    inline void SetConflictingOperationException(const ConflictingOperationException& value) { m_conflictingOperationExceptionHasBeenSet = true; m_conflictingOperationException = value; }
-    inline void SetConflictingOperationException(ConflictingOperationException&& value) { m_conflictingOperationExceptionHasBeenSet = true; m_conflictingOperationException = std::move(value); }
-    inline ResponseStream& WithConflictingOperationException(const ConflictingOperationException& value) { SetConflictingOperationException(value); return *this;}
-    inline ResponseStream& WithConflictingOperationException(ConflictingOperationException&& value) { SetConflictingOperationException(std::move(value)); return *this;}
+    template<typename ConflictingOperationExceptionT = ConflictingOperationException>
+    void SetConflictingOperationException(ConflictingOperationExceptionT&& value) { m_conflictingOperationExceptionHasBeenSet = true; m_conflictingOperationException = std::forward<ConflictingOperationExceptionT>(value); }
+    template<typename ConflictingOperationExceptionT = ConflictingOperationException>
+    ResponseStream& WithConflictingOperationException(ConflictingOperationExceptionT&& value) { SetConflictingOperationException(std::forward<ConflictingOperationExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InternalFailureException& GetInternalFailureException() const{ return m_internalFailureException; }
+    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    inline void SetInternalFailureException(const InternalFailureException& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = value; }
-    inline void SetInternalFailureException(InternalFailureException&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::move(value); }
-    inline ResponseStream& WithInternalFailureException(const InternalFailureException& value) { SetInternalFailureException(value); return *this;}
-    inline ResponseStream& WithInternalFailureException(InternalFailureException&& value) { SetInternalFailureException(std::move(value)); return *this;}
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    ResponseStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InvalidRequestException& GetInvalidRequestException() const{ return m_invalidRequestException; }
+    inline const InvalidRequestException& GetInvalidRequestException() const { return m_invalidRequestException; }
     inline bool InvalidRequestExceptionHasBeenSet() const { return m_invalidRequestExceptionHasBeenSet; }
-    inline void SetInvalidRequestException(const InvalidRequestException& value) { m_invalidRequestExceptionHasBeenSet = true; m_invalidRequestException = value; }
-    inline void SetInvalidRequestException(InvalidRequestException&& value) { m_invalidRequestExceptionHasBeenSet = true; m_invalidRequestException = std::move(value); }
-    inline ResponseStream& WithInvalidRequestException(const InvalidRequestException& value) { SetInvalidRequestException(value); return *this;}
-    inline ResponseStream& WithInvalidRequestException(InvalidRequestException&& value) { SetInvalidRequestException(std::move(value)); return *this;}
+    template<typename InvalidRequestExceptionT = InvalidRequestException>
+    void SetInvalidRequestException(InvalidRequestExceptionT&& value) { m_invalidRequestExceptionHasBeenSet = true; m_invalidRequestException = std::forward<InvalidRequestExceptionT>(value); }
+    template<typename InvalidRequestExceptionT = InvalidRequestException>
+    ResponseStream& WithInvalidRequestException(InvalidRequestExceptionT&& value) { SetInvalidRequestException(std::forward<InvalidRequestExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LimitExceededException& GetLimitExceededException() const{ return m_limitExceededException; }
+    inline const LimitExceededException& GetLimitExceededException() const { return m_limitExceededException; }
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
-    inline void SetLimitExceededException(const LimitExceededException& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = value; }
-    inline void SetLimitExceededException(LimitExceededException&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::move(value); }
-    inline ResponseStream& WithLimitExceededException(const LimitExceededException& value) { SetLimitExceededException(value); return *this;}
-    inline ResponseStream& WithLimitExceededException(LimitExceededException&& value) { SetLimitExceededException(std::move(value)); return *this;}
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    void SetLimitExceededException(LimitExceededExceptionT&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::forward<LimitExceededExceptionT>(value); }
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    ResponseStream& WithLimitExceededException(LimitExceededExceptionT&& value) { SetLimitExceededException(std::forward<LimitExceededExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const{ return m_resourceNotFoundException; }
+    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    inline void SetResourceNotFoundException(const ResourceNotFoundException& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = value; }
-    inline void SetResourceNotFoundException(ResourceNotFoundException&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::move(value); }
-    inline ResponseStream& WithResourceNotFoundException(const ResourceNotFoundException& value) { SetResourceNotFoundException(value); return *this;}
-    inline ResponseStream& WithResourceNotFoundException(ResourceNotFoundException&& value) { SetResourceNotFoundException(std::move(value)); return *this;}
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    ResponseStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
+    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    inline void SetThrottlingException(const ThrottlingException& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = value; }
-    inline void SetThrottlingException(ThrottlingException&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::move(value); }
-    inline ResponseStream& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
-    inline ResponseStream& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    ResponseStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
   private:
 

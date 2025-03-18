@@ -12,14 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendInvitesRequest::SendInvitesRequest() : 
-    m_accessorIdsHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_spaceIdHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Aws::String SendInvitesRequest::SerializePayload() const
 {
   JsonValue payload;

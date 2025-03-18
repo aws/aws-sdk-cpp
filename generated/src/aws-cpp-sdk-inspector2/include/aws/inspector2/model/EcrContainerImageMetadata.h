@@ -34,7 +34,7 @@ namespace Model
   class EcrContainerImageMetadata
   {
   public:
-    AWS_INSPECTOR2_API EcrContainerImageMetadata();
+    AWS_INSPECTOR2_API EcrContainerImageMetadata() = default;
     AWS_INSPECTOR2_API EcrContainerImageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EcrContainerImageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,30 @@ namespace Model
     /**
      * <p>The date an image was last pulled at.</p>
      */
-    inline const Aws::Utils::DateTime& GetImagePulledAt() const{ return m_imagePulledAt; }
+    inline const Aws::Utils::DateTime& GetImagePulledAt() const { return m_imagePulledAt; }
     inline bool ImagePulledAtHasBeenSet() const { return m_imagePulledAtHasBeenSet; }
-    inline void SetImagePulledAt(const Aws::Utils::DateTime& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = value; }
-    inline void SetImagePulledAt(Aws::Utils::DateTime&& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = std::move(value); }
-    inline EcrContainerImageMetadata& WithImagePulledAt(const Aws::Utils::DateTime& value) { SetImagePulledAt(value); return *this;}
-    inline EcrContainerImageMetadata& WithImagePulledAt(Aws::Utils::DateTime&& value) { SetImagePulledAt(std::move(value)); return *this;}
+    template<typename ImagePulledAtT = Aws::Utils::DateTime>
+    void SetImagePulledAt(ImagePulledAtT&& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = std::forward<ImagePulledAtT>(value); }
+    template<typename ImagePulledAtT = Aws::Utils::DateTime>
+    EcrContainerImageMetadata& WithImagePulledAt(ImagePulledAtT&& value) { SetImagePulledAt(std::forward<ImagePulledAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags associated with the Amazon ECR image metadata.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline EcrContainerImageMetadata& WithTags(const Aws::Vector<Aws::String>& value) { SetTags(value); return *this;}
-    inline EcrContainerImageMetadata& WithTags(Aws::Vector<Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline EcrContainerImageMetadata& AddTags(const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline EcrContainerImageMetadata& AddTags(Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-    inline EcrContainerImageMetadata& AddTags(const char* value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    template<typename TagsT = Aws::Vector<Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Aws::String>>
+    EcrContainerImageMetadata& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Aws::String>
+    EcrContainerImageMetadata& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_imagePulledAt;
+    Aws::Utils::DateTime m_imagePulledAt{};
     bool m_imagePulledAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tags;

@@ -21,7 +21,7 @@ namespace Model
   class GetPullRequestOverrideStateRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API GetPullRequestOverrideStateRequest();
+    AWS_CODECOMMIT_API GetPullRequestOverrideStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the pull request for which you want to get information about
      * whether approval rules have been set aside (overridden).</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline GetPullRequestOverrideStateRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline GetPullRequestOverrideStateRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline GetPullRequestOverrideStateRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    GetPullRequestOverrideStateRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The system-generated ID of the revision for the pull request. To retrieve the
      * most recent revision ID, use <a>GetPullRequest</a>.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline GetPullRequestOverrideStateRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline GetPullRequestOverrideStateRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline GetPullRequestOverrideStateRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    GetPullRequestOverrideStateRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
   private:
 

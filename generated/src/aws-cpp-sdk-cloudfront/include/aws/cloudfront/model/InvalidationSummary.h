@@ -31,7 +31,7 @@ namespace Model
   class InvalidationSummary
   {
   public:
-    AWS_CLOUDFRONT_API InvalidationSummary();
+    AWS_CLOUDFRONT_API InvalidationSummary() = default;
     AWS_CLOUDFRONT_API InvalidationSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API InvalidationSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,47 +42,43 @@ namespace Model
     /**
      * <p>The unique ID for an invalidation request.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline InvalidationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline InvalidationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline InvalidationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    InvalidationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that an invalidation request was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline InvalidationSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    InvalidationSummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of an invalidation request.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline InvalidationSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline InvalidationSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline InvalidationSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    InvalidationSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
     Aws::String m_status;

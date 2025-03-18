@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ControlPlaneTagFilter::ControlPlaneTagFilter() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
-{
-}
-
 ControlPlaneTagFilter::ControlPlaneTagFilter(JsonView jsonValue)
-  : ControlPlaneTagFilter()
 {
   *this = jsonValue;
 }
@@ -49,7 +41,6 @@ ControlPlaneTagFilter& ControlPlaneTagFilter::operator =(JsonView jsonValue)
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -59,14 +50,11 @@ ControlPlaneTagFilter& ControlPlaneTagFilter::operator =(JsonView jsonValue)
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagCondition"))
   {
     m_tagCondition = jsonValue.GetObject("TagCondition");
-
     m_tagConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HumanLoopActivationConditionsConfig::HumanLoopActivationConditionsConfig() : 
-    m_humanLoopActivationConditionsHasBeenSet(false)
-{
-}
-
 HumanLoopActivationConditionsConfig::HumanLoopActivationConditionsConfig(JsonView jsonValue)
-  : HumanLoopActivationConditionsConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HumanLoopActivationConditionsConfig& HumanLoopActivationConditionsConfig::operat
   if(jsonValue.ValueExists("HumanLoopActivationConditions"))
   {
     m_humanLoopActivationConditions = jsonValue.GetString("HumanLoopActivationConditions");
-
     m_humanLoopActivationConditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-RedshiftDataParameters::RedshiftDataParameters() : 
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_withEvent(false),
-    m_withEventHasBeenSet(false),
-    m_sqlsHasBeenSet(false)
-{
-}
-
 RedshiftDataParameters::RedshiftDataParameters(JsonView jsonValue)
-  : RedshiftDataParameters()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ RedshiftDataParameters& RedshiftDataParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecretManagerArn"))
   {
     m_secretManagerArn = jsonValue.GetString("SecretManagerArn");
-
     m_secretManagerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbUser"))
   {
     m_dbUser = jsonValue.GetString("DbUser");
-
     m_dbUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sql"))
   {
     m_sql = jsonValue.GetString("Sql");
-
     m_sqlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatementName"))
   {
     m_statementName = jsonValue.GetString("StatementName");
-
     m_statementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WithEvent"))
   {
     m_withEvent = jsonValue.GetBool("WithEvent");
-
     m_withEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sqls"))
   {
     Aws::Utils::Array<JsonView> sqlsJsonList = jsonValue.GetArray("Sqls");
@@ -89,7 +64,6 @@ RedshiftDataParameters& RedshiftDataParameters::operator =(JsonView jsonValue)
     }
     m_sqlsHasBeenSet = true;
   }
-
   return *this;
 }
 

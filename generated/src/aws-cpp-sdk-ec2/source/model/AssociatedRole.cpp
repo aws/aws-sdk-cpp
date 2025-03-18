@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AssociatedRole::AssociatedRole() : 
-    m_associatedRoleArnHasBeenSet(false),
-    m_certificateS3BucketNameHasBeenSet(false),
-    m_certificateS3ObjectKeyHasBeenSet(false),
-    m_encryptionKmsKeyIdHasBeenSet(false)
-{
-}
-
 AssociatedRole::AssociatedRole(const XmlNode& xmlNode)
-  : AssociatedRole()
 {
   *this = xmlNode;
 }

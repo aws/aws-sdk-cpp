@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-RestrictedPeriod::RestrictedPeriod() : 
-    m_nameHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 RestrictedPeriod::RestrictedPeriod(JsonView jsonValue)
-  : RestrictedPeriod()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RestrictedPeriod& RestrictedPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetString("startDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDate"))
   {
     m_endDate = jsonValue.GetString("endDate");
-
     m_endDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class UpdatePhoneNumberResult
   {
   public:
-    AWS_CONNECT_API UpdatePhoneNumberResult();
+    AWS_CONNECT_API UpdatePhoneNumberResult() = default;
     AWS_CONNECT_API UpdatePhoneNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API UpdatePhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>A unique identifier for the phone number.</p>
      */
-    inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
-    inline void SetPhoneNumberId(const Aws::String& value) { m_phoneNumberId = value; }
-    inline void SetPhoneNumberId(Aws::String&& value) { m_phoneNumberId = std::move(value); }
-    inline void SetPhoneNumberId(const char* value) { m_phoneNumberId.assign(value); }
-    inline UpdatePhoneNumberResult& WithPhoneNumberId(const Aws::String& value) { SetPhoneNumberId(value); return *this;}
-    inline UpdatePhoneNumberResult& WithPhoneNumberId(Aws::String&& value) { SetPhoneNumberId(std::move(value)); return *this;}
-    inline UpdatePhoneNumberResult& WithPhoneNumberId(const char* value) { SetPhoneNumberId(value); return *this;}
+    inline const Aws::String& GetPhoneNumberId() const { return m_phoneNumberId; }
+    template<typename PhoneNumberIdT = Aws::String>
+    void SetPhoneNumberId(PhoneNumberIdT&& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = std::forward<PhoneNumberIdT>(value); }
+    template<typename PhoneNumberIdT = Aws::String>
+    UpdatePhoneNumberResult& WithPhoneNumberId(PhoneNumberIdT&& value) { SetPhoneNumberId(std::forward<PhoneNumberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the phone number.</p>
      */
-    inline const Aws::String& GetPhoneNumberArn() const{ return m_phoneNumberArn; }
-    inline void SetPhoneNumberArn(const Aws::String& value) { m_phoneNumberArn = value; }
-    inline void SetPhoneNumberArn(Aws::String&& value) { m_phoneNumberArn = std::move(value); }
-    inline void SetPhoneNumberArn(const char* value) { m_phoneNumberArn.assign(value); }
-    inline UpdatePhoneNumberResult& WithPhoneNumberArn(const Aws::String& value) { SetPhoneNumberArn(value); return *this;}
-    inline UpdatePhoneNumberResult& WithPhoneNumberArn(Aws::String&& value) { SetPhoneNumberArn(std::move(value)); return *this;}
-    inline UpdatePhoneNumberResult& WithPhoneNumberArn(const char* value) { SetPhoneNumberArn(value); return *this;}
+    inline const Aws::String& GetPhoneNumberArn() const { return m_phoneNumberArn; }
+    template<typename PhoneNumberArnT = Aws::String>
+    void SetPhoneNumberArn(PhoneNumberArnT&& value) { m_phoneNumberArnHasBeenSet = true; m_phoneNumberArn = std::forward<PhoneNumberArnT>(value); }
+    template<typename PhoneNumberArnT = Aws::String>
+    UpdatePhoneNumberResult& WithPhoneNumberArn(PhoneNumberArnT&& value) { SetPhoneNumberArn(std::forward<PhoneNumberArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePhoneNumberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePhoneNumberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePhoneNumberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePhoneNumberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_phoneNumberId;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_phoneNumberArn;
+    bool m_phoneNumberArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

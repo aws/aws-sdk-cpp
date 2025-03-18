@@ -29,7 +29,7 @@ namespace Model
   class DescribeContinuousExportsResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeContinuousExportsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeContinuousExportsResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API DescribeContinuousExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API DescribeContinuousExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of continuous export descriptions.</p>
      */
-    inline const Aws::Vector<ContinuousExportDescription>& GetDescriptions() const{ return m_descriptions; }
-    inline void SetDescriptions(const Aws::Vector<ContinuousExportDescription>& value) { m_descriptions = value; }
-    inline void SetDescriptions(Aws::Vector<ContinuousExportDescription>&& value) { m_descriptions = std::move(value); }
-    inline DescribeContinuousExportsResult& WithDescriptions(const Aws::Vector<ContinuousExportDescription>& value) { SetDescriptions(value); return *this;}
-    inline DescribeContinuousExportsResult& WithDescriptions(Aws::Vector<ContinuousExportDescription>&& value) { SetDescriptions(std::move(value)); return *this;}
-    inline DescribeContinuousExportsResult& AddDescriptions(const ContinuousExportDescription& value) { m_descriptions.push_back(value); return *this; }
-    inline DescribeContinuousExportsResult& AddDescriptions(ContinuousExportDescription&& value) { m_descriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContinuousExportDescription>& GetDescriptions() const { return m_descriptions; }
+    template<typename DescriptionsT = Aws::Vector<ContinuousExportDescription>>
+    void SetDescriptions(DescriptionsT&& value) { m_descriptionsHasBeenSet = true; m_descriptions = std::forward<DescriptionsT>(value); }
+    template<typename DescriptionsT = Aws::Vector<ContinuousExportDescription>>
+    DescribeContinuousExportsResult& WithDescriptions(DescriptionsT&& value) { SetDescriptions(std::forward<DescriptionsT>(value)); return *this;}
+    template<typename DescriptionsT = ContinuousExportDescription>
+    DescribeContinuousExportsResult& AddDescriptions(DescriptionsT&& value) { m_descriptionsHasBeenSet = true; m_descriptions.emplace_back(std::forward<DescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeContinuousExportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeContinuousExportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeContinuousExportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeContinuousExportsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeContinuousExportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeContinuousExportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeContinuousExportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeContinuousExportsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContinuousExportDescription> m_descriptions;
+    bool m_descriptionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

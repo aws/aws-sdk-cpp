@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminAddUserToGroupRequest::AdminAddUserToGroupRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 Aws::String AdminAddUserToGroupRequest::SerializePayload() const
 {
   JsonValue payload;

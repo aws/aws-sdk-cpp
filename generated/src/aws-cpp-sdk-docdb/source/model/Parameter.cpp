@@ -20,24 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_applyMethod(ApplyMethod::NOT_SET),
-    m_applyMethodHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(const XmlNode& xmlNode)
-  : Parameter()
 {
   *this = xmlNode;
 }
@@ -105,7 +88,7 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode applyMethodNode = resultNode.FirstChild("ApplyMethod");
     if(!applyMethodNode.IsNull())
     {
-      m_applyMethod = ApplyMethodMapper::GetApplyMethodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyMethodNode.GetText()).c_str()).c_str());
+      m_applyMethod = ApplyMethodMapper::GetApplyMethodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyMethodNode.GetText()).c_str()));
       m_applyMethodHasBeenSet = true;
     }
   }

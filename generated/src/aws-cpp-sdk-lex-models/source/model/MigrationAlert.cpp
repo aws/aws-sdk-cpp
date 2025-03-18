@@ -18,17 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-MigrationAlert::MigrationAlert() : 
-    m_type(MigrationAlertType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_referenceURLsHasBeenSet(false)
-{
-}
-
 MigrationAlert::MigrationAlert(JsonView jsonValue)
-  : MigrationAlert()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ MigrationAlert& MigrationAlert::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = MigrationAlertTypeMapper::GetMigrationAlertTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
@@ -58,7 +44,6 @@ MigrationAlert& MigrationAlert::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceURLs"))
   {
     Aws::Utils::Array<JsonView> referenceURLsJsonList = jsonValue.GetArray("referenceURLs");
@@ -68,7 +53,6 @@ MigrationAlert& MigrationAlert::operator =(JsonView jsonValue)
     }
     m_referenceURLsHasBeenSet = true;
   }
-
   return *this;
 }
 

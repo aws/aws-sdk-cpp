@@ -18,14 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryRunTimeline::CanaryRunTimeline() : 
-    m_startedHasBeenSet(false),
-    m_completedHasBeenSet(false)
-{
-}
-
 CanaryRunTimeline::CanaryRunTimeline(JsonView jsonValue)
-  : CanaryRunTimeline()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CanaryRunTimeline& CanaryRunTimeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Started"))
   {
     m_started = jsonValue.GetDouble("Started");
-
     m_startedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Completed"))
   {
     m_completed = jsonValue.GetDouble("Completed");
-
     m_completedHasBeenSet = true;
   }
-
   return *this;
 }
 

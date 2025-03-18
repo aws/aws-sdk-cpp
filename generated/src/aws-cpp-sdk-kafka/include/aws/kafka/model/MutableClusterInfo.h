@@ -45,7 +45,7 @@ namespace Model
   class MutableClusterInfo
   {
   public:
-    AWS_KAFKA_API MutableClusterInfo();
+    AWS_KAFKA_API MutableClusterInfo() = default;
     AWS_KAFKA_API MutableClusterInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API MutableClusterInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,14 @@ namespace Model
      * associated broker.</p>
          
      */
-    inline const Aws::Vector<BrokerEBSVolumeInfo>& GetBrokerEBSVolumeInfo() const{ return m_brokerEBSVolumeInfo; }
+    inline const Aws::Vector<BrokerEBSVolumeInfo>& GetBrokerEBSVolumeInfo() const { return m_brokerEBSVolumeInfo; }
     inline bool BrokerEBSVolumeInfoHasBeenSet() const { return m_brokerEBSVolumeInfoHasBeenSet; }
-    inline void SetBrokerEBSVolumeInfo(const Aws::Vector<BrokerEBSVolumeInfo>& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo = value; }
-    inline void SetBrokerEBSVolumeInfo(Aws::Vector<BrokerEBSVolumeInfo>&& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo = std::move(value); }
-    inline MutableClusterInfo& WithBrokerEBSVolumeInfo(const Aws::Vector<BrokerEBSVolumeInfo>& value) { SetBrokerEBSVolumeInfo(value); return *this;}
-    inline MutableClusterInfo& WithBrokerEBSVolumeInfo(Aws::Vector<BrokerEBSVolumeInfo>&& value) { SetBrokerEBSVolumeInfo(std::move(value)); return *this;}
-    inline MutableClusterInfo& AddBrokerEBSVolumeInfo(const BrokerEBSVolumeInfo& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo.push_back(value); return *this; }
-    inline MutableClusterInfo& AddBrokerEBSVolumeInfo(BrokerEBSVolumeInfo&& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo.push_back(std::move(value)); return *this; }
+    template<typename BrokerEBSVolumeInfoT = Aws::Vector<BrokerEBSVolumeInfo>>
+    void SetBrokerEBSVolumeInfo(BrokerEBSVolumeInfoT&& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo = std::forward<BrokerEBSVolumeInfoT>(value); }
+    template<typename BrokerEBSVolumeInfoT = Aws::Vector<BrokerEBSVolumeInfo>>
+    MutableClusterInfo& WithBrokerEBSVolumeInfo(BrokerEBSVolumeInfoT&& value) { SetBrokerEBSVolumeInfo(std::forward<BrokerEBSVolumeInfoT>(value)); return *this;}
+    template<typename BrokerEBSVolumeInfoT = BrokerEBSVolumeInfo>
+    MutableClusterInfo& AddBrokerEBSVolumeInfo(BrokerEBSVolumeInfoT&& value) { m_brokerEBSVolumeInfoHasBeenSet = true; m_brokerEBSVolumeInfo.emplace_back(std::forward<BrokerEBSVolumeInfoT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,12 +75,12 @@ namespace Model
      * brokers.</p>
          
      */
-    inline const ConfigurationInfo& GetConfigurationInfo() const{ return m_configurationInfo; }
+    inline const ConfigurationInfo& GetConfigurationInfo() const { return m_configurationInfo; }
     inline bool ConfigurationInfoHasBeenSet() const { return m_configurationInfoHasBeenSet; }
-    inline void SetConfigurationInfo(const ConfigurationInfo& value) { m_configurationInfoHasBeenSet = true; m_configurationInfo = value; }
-    inline void SetConfigurationInfo(ConfigurationInfo&& value) { m_configurationInfoHasBeenSet = true; m_configurationInfo = std::move(value); }
-    inline MutableClusterInfo& WithConfigurationInfo(const ConfigurationInfo& value) { SetConfigurationInfo(value); return *this;}
-    inline MutableClusterInfo& WithConfigurationInfo(ConfigurationInfo&& value) { SetConfigurationInfo(std::move(value)); return *this;}
+    template<typename ConfigurationInfoT = ConfigurationInfo>
+    void SetConfigurationInfo(ConfigurationInfoT&& value) { m_configurationInfoHasBeenSet = true; m_configurationInfo = std::forward<ConfigurationInfoT>(value); }
+    template<typename ConfigurationInfoT = ConfigurationInfo>
+    MutableClusterInfo& WithConfigurationInfo(ConfigurationInfoT&& value) { SetConfigurationInfo(std::forward<ConfigurationInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +89,7 @@ namespace Model
             <p>The number of broker nodes in the cluster.</p>
          
      */
-    inline int GetNumberOfBrokerNodes() const{ return m_numberOfBrokerNodes; }
+    inline int GetNumberOfBrokerNodes() const { return m_numberOfBrokerNodes; }
     inline bool NumberOfBrokerNodesHasBeenSet() const { return m_numberOfBrokerNodesHasBeenSet; }
     inline void SetNumberOfBrokerNodes(int value) { m_numberOfBrokerNodesHasBeenSet = true; m_numberOfBrokerNodes = value; }
     inline MutableClusterInfo& WithNumberOfBrokerNodes(int value) { SetNumberOfBrokerNodes(value); return *this;}
@@ -102,12 +102,10 @@ namespace Model
      * sends to Amazon CloudWatch for this cluster.</p>
          
      */
-    inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+    inline EnhancedMonitoring GetEnhancedMonitoring() const { return m_enhancedMonitoring; }
     inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
-    inline void SetEnhancedMonitoring(const EnhancedMonitoring& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
-    inline void SetEnhancedMonitoring(EnhancedMonitoring&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
-    inline MutableClusterInfo& WithEnhancedMonitoring(const EnhancedMonitoring& value) { SetEnhancedMonitoring(value); return *this;}
-    inline MutableClusterInfo& WithEnhancedMonitoring(EnhancedMonitoring&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
+    inline void SetEnhancedMonitoring(EnhancedMonitoring value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
+    inline MutableClusterInfo& WithEnhancedMonitoring(EnhancedMonitoring value) { SetEnhancedMonitoring(value); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +114,12 @@ namespace Model
             <p>The settings for open monitoring.</p>
          
      */
-    inline const OpenMonitoring& GetOpenMonitoring() const{ return m_openMonitoring; }
+    inline const OpenMonitoring& GetOpenMonitoring() const { return m_openMonitoring; }
     inline bool OpenMonitoringHasBeenSet() const { return m_openMonitoringHasBeenSet; }
-    inline void SetOpenMonitoring(const OpenMonitoring& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = value; }
-    inline void SetOpenMonitoring(OpenMonitoring&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::move(value); }
-    inline MutableClusterInfo& WithOpenMonitoring(const OpenMonitoring& value) { SetOpenMonitoring(value); return *this;}
-    inline MutableClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
+    template<typename OpenMonitoringT = OpenMonitoring>
+    void SetOpenMonitoring(OpenMonitoringT&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::forward<OpenMonitoringT>(value); }
+    template<typename OpenMonitoringT = OpenMonitoring>
+    MutableClusterInfo& WithOpenMonitoring(OpenMonitoringT&& value) { SetOpenMonitoring(std::forward<OpenMonitoringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +128,12 @@ namespace Model
             <p>The Apache Kafka version.</p>
             
      */
-    inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
+    inline const Aws::String& GetKafkaVersion() const { return m_kafkaVersion; }
     inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
-    inline void SetKafkaVersion(const Aws::String& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = value; }
-    inline void SetKafkaVersion(Aws::String&& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = std::move(value); }
-    inline void SetKafkaVersion(const char* value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion.assign(value); }
-    inline MutableClusterInfo& WithKafkaVersion(const Aws::String& value) { SetKafkaVersion(value); return *this;}
-    inline MutableClusterInfo& WithKafkaVersion(Aws::String&& value) { SetKafkaVersion(std::move(value)); return *this;}
-    inline MutableClusterInfo& WithKafkaVersion(const char* value) { SetKafkaVersion(value); return *this;}
+    template<typename KafkaVersionT = Aws::String>
+    void SetKafkaVersion(KafkaVersionT&& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = std::forward<KafkaVersionT>(value); }
+    template<typename KafkaVersionT = Aws::String>
+    MutableClusterInfo& WithKafkaVersion(KafkaVersionT&& value) { SetKafkaVersion(std::forward<KafkaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +144,12 @@ namespace Model
      * related to broker logs.</p>
             
      */
-    inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
+    inline const LoggingInfo& GetLoggingInfo() const { return m_loggingInfo; }
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
-    inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
-    inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
-    inline MutableClusterInfo& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
-    inline MutableClusterInfo& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+    template<typename LoggingInfoT = LoggingInfo>
+    void SetLoggingInfo(LoggingInfoT&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::forward<LoggingInfoT>(value); }
+    template<typename LoggingInfoT = LoggingInfo>
+    MutableClusterInfo& WithLoggingInfo(LoggingInfoT&& value) { SetLoggingInfo(std::forward<LoggingInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +158,12 @@ namespace Model
             <p>Information about the Amazon MSK broker type.</p>
             
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline MutableClusterInfo& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline MutableClusterInfo& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline MutableClusterInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    MutableClusterInfo& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +172,12 @@ namespace Model
             <p>Includes all client authentication information.</p>
          
      */
-    inline const ClientAuthentication& GetClientAuthentication() const{ return m_clientAuthentication; }
+    inline const ClientAuthentication& GetClientAuthentication() const { return m_clientAuthentication; }
     inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
-    inline void SetClientAuthentication(const ClientAuthentication& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
-    inline void SetClientAuthentication(ClientAuthentication&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
-    inline MutableClusterInfo& WithClientAuthentication(const ClientAuthentication& value) { SetClientAuthentication(value); return *this;}
-    inline MutableClusterInfo& WithClientAuthentication(ClientAuthentication&& value) { SetClientAuthentication(std::move(value)); return *this;}
+    template<typename ClientAuthenticationT = ClientAuthentication>
+    void SetClientAuthentication(ClientAuthenticationT&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::forward<ClientAuthenticationT>(value); }
+    template<typename ClientAuthenticationT = ClientAuthentication>
+    MutableClusterInfo& WithClientAuthentication(ClientAuthenticationT&& value) { SetClientAuthentication(std::forward<ClientAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +186,12 @@ namespace Model
             <p>Includes all encryption-related information.</p>
          
      */
-    inline const EncryptionInfo& GetEncryptionInfo() const{ return m_encryptionInfo; }
+    inline const EncryptionInfo& GetEncryptionInfo() const { return m_encryptionInfo; }
     inline bool EncryptionInfoHasBeenSet() const { return m_encryptionInfoHasBeenSet; }
-    inline void SetEncryptionInfo(const EncryptionInfo& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = value; }
-    inline void SetEncryptionInfo(EncryptionInfo&& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = std::move(value); }
-    inline MutableClusterInfo& WithEncryptionInfo(const EncryptionInfo& value) { SetEncryptionInfo(value); return *this;}
-    inline MutableClusterInfo& WithEncryptionInfo(EncryptionInfo&& value) { SetEncryptionInfo(std::move(value)); return *this;}
+    template<typename EncryptionInfoT = EncryptionInfo>
+    void SetEncryptionInfo(EncryptionInfoT&& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = std::forward<EncryptionInfoT>(value); }
+    template<typename EncryptionInfoT = EncryptionInfo>
+    MutableClusterInfo& WithEncryptionInfo(EncryptionInfoT&& value) { SetEncryptionInfo(std::forward<EncryptionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +200,12 @@ namespace Model
             <p>Information about the broker access configuration.</p>
          
      */
-    inline const ConnectivityInfo& GetConnectivityInfo() const{ return m_connectivityInfo; }
+    inline const ConnectivityInfo& GetConnectivityInfo() const { return m_connectivityInfo; }
     inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
-    inline void SetConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
-    inline void SetConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
-    inline MutableClusterInfo& WithConnectivityInfo(const ConnectivityInfo& value) { SetConnectivityInfo(value); return *this;}
-    inline MutableClusterInfo& WithConnectivityInfo(ConnectivityInfo&& value) { SetConnectivityInfo(std::move(value)); return *this;}
+    template<typename ConnectivityInfoT = ConnectivityInfo>
+    void SetConnectivityInfo(ConnectivityInfoT&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::forward<ConnectivityInfoT>(value); }
+    template<typename ConnectivityInfoT = ConnectivityInfo>
+    MutableClusterInfo& WithConnectivityInfo(ConnectivityInfoT&& value) { SetConnectivityInfo(std::forward<ConnectivityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,12 +215,10 @@ namespace Model
     
      *     
      */
-    inline const StorageMode& GetStorageMode() const{ return m_storageMode; }
+    inline StorageMode GetStorageMode() const { return m_storageMode; }
     inline bool StorageModeHasBeenSet() const { return m_storageModeHasBeenSet; }
-    inline void SetStorageMode(const StorageMode& value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
-    inline void SetStorageMode(StorageMode&& value) { m_storageModeHasBeenSet = true; m_storageMode = std::move(value); }
-    inline MutableClusterInfo& WithStorageMode(const StorageMode& value) { SetStorageMode(value); return *this;}
-    inline MutableClusterInfo& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
+    inline void SetStorageMode(StorageMode value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
+    inline MutableClusterInfo& WithStorageMode(StorageMode value) { SetStorageMode(value); return *this;}
     ///@}
 
     ///@{
@@ -236,12 +228,12 @@ namespace Model
      * update.</p>
          
      */
-    inline const BrokerCountUpdateInfo& GetBrokerCountUpdateInfo() const{ return m_brokerCountUpdateInfo; }
+    inline const BrokerCountUpdateInfo& GetBrokerCountUpdateInfo() const { return m_brokerCountUpdateInfo; }
     inline bool BrokerCountUpdateInfoHasBeenSet() const { return m_brokerCountUpdateInfoHasBeenSet; }
-    inline void SetBrokerCountUpdateInfo(const BrokerCountUpdateInfo& value) { m_brokerCountUpdateInfoHasBeenSet = true; m_brokerCountUpdateInfo = value; }
-    inline void SetBrokerCountUpdateInfo(BrokerCountUpdateInfo&& value) { m_brokerCountUpdateInfoHasBeenSet = true; m_brokerCountUpdateInfo = std::move(value); }
-    inline MutableClusterInfo& WithBrokerCountUpdateInfo(const BrokerCountUpdateInfo& value) { SetBrokerCountUpdateInfo(value); return *this;}
-    inline MutableClusterInfo& WithBrokerCountUpdateInfo(BrokerCountUpdateInfo&& value) { SetBrokerCountUpdateInfo(std::move(value)); return *this;}
+    template<typename BrokerCountUpdateInfoT = BrokerCountUpdateInfo>
+    void SetBrokerCountUpdateInfo(BrokerCountUpdateInfoT&& value) { m_brokerCountUpdateInfoHasBeenSet = true; m_brokerCountUpdateInfo = std::forward<BrokerCountUpdateInfoT>(value); }
+    template<typename BrokerCountUpdateInfoT = BrokerCountUpdateInfo>
+    MutableClusterInfo& WithBrokerCountUpdateInfo(BrokerCountUpdateInfoT&& value) { SetBrokerCountUpdateInfo(std::forward<BrokerCountUpdateInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -251,10 +243,10 @@ namespace Model
     ConfigurationInfo m_configurationInfo;
     bool m_configurationInfoHasBeenSet = false;
 
-    int m_numberOfBrokerNodes;
+    int m_numberOfBrokerNodes{0};
     bool m_numberOfBrokerNodesHasBeenSet = false;
 
-    EnhancedMonitoring m_enhancedMonitoring;
+    EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
     bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoring m_openMonitoring;
@@ -278,7 +270,7 @@ namespace Model
     ConnectivityInfo m_connectivityInfo;
     bool m_connectivityInfoHasBeenSet = false;
 
-    StorageMode m_storageMode;
+    StorageMode m_storageMode{StorageMode::NOT_SET};
     bool m_storageModeHasBeenSet = false;
 
     BrokerCountUpdateInfo m_brokerCountUpdateInfo;

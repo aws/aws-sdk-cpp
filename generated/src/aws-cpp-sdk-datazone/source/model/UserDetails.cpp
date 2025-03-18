@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-UserDetails::UserDetails() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 UserDetails::UserDetails(JsonView jsonValue)
-  : UserDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserDetails& UserDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

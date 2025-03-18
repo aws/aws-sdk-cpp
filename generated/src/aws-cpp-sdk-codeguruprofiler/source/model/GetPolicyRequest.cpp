@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest() : 
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetPolicyRequest::SerializePayload() const
 {
   return {};

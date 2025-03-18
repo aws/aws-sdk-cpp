@@ -26,7 +26,7 @@ namespace Model
   class PutConfigurationSetDeliveryOptionsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API PutConfigurationSetDeliveryOptionsRequest();
+    AWS_SESV2_API PutConfigurationSetDeliveryOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the configuration set to associate with a dedicated IP pool.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <code>Optional</code>, messages can be delivered in plain text if a TLS
      * connection can't be established.</p>
      */
-    inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
+    inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
     inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
-    inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
-    inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = std::move(value); }
-    inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
-    inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
+    inline void SetTlsPolicy(TlsPolicy value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
+    inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(TlsPolicy value) { SetTlsPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The name of the dedicated IP pool to associate with the configuration
      * set.</p>
      */
-    inline const Aws::String& GetSendingPoolName() const{ return m_sendingPoolName; }
+    inline const Aws::String& GetSendingPoolName() const { return m_sendingPoolName; }
     inline bool SendingPoolNameHasBeenSet() const { return m_sendingPoolNameHasBeenSet; }
-    inline void SetSendingPoolName(const Aws::String& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = value; }
-    inline void SetSendingPoolName(Aws::String&& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = std::move(value); }
-    inline void SetSendingPoolName(const char* value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName.assign(value); }
-    inline PutConfigurationSetDeliveryOptionsRequest& WithSendingPoolName(const Aws::String& value) { SetSendingPoolName(value); return *this;}
-    inline PutConfigurationSetDeliveryOptionsRequest& WithSendingPoolName(Aws::String&& value) { SetSendingPoolName(std::move(value)); return *this;}
-    inline PutConfigurationSetDeliveryOptionsRequest& WithSendingPoolName(const char* value) { SetSendingPoolName(value); return *this;}
+    template<typename SendingPoolNameT = Aws::String>
+    void SetSendingPoolName(SendingPoolNameT&& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = std::forward<SendingPoolNameT>(value); }
+    template<typename SendingPoolNameT = Aws::String>
+    PutConfigurationSetDeliveryOptionsRequest& WithSendingPoolName(SendingPoolNameT&& value) { SetSendingPoolName(std::forward<SendingPoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * delivery of email. If specified, the value must greater than or equal to 300
      * seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes). </p>
      */
-    inline long long GetMaxDeliverySeconds() const{ return m_maxDeliverySeconds; }
+    inline long long GetMaxDeliverySeconds() const { return m_maxDeliverySeconds; }
     inline bool MaxDeliverySecondsHasBeenSet() const { return m_maxDeliverySecondsHasBeenSet; }
     inline void SetMaxDeliverySeconds(long long value) { m_maxDeliverySecondsHasBeenSet = true; m_maxDeliverySeconds = value; }
     inline PutConfigurationSetDeliveryOptionsRequest& WithMaxDeliverySeconds(long long value) { SetMaxDeliverySeconds(value); return *this;}
@@ -98,13 +92,13 @@ namespace Model
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet = false;
 
-    TlsPolicy m_tlsPolicy;
+    TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
     bool m_tlsPolicyHasBeenSet = false;
 
     Aws::String m_sendingPoolName;
     bool m_sendingPoolNameHasBeenSet = false;
 
-    long long m_maxDeliverySeconds;
+    long long m_maxDeliverySeconds{0};
     bool m_maxDeliverySecondsHasBeenSet = false;
   };
 

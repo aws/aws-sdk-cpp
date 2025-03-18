@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-SchedulerConfiguration::SchedulerConfiguration() : 
-    m_queueTimeoutMinutes(0),
-    m_queueTimeoutMinutesHasBeenSet(false),
-    m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false)
-{
-}
-
 SchedulerConfiguration::SchedulerConfiguration(JsonView jsonValue)
-  : SchedulerConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SchedulerConfiguration& SchedulerConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueTimeoutMinutes"))
   {
     m_queueTimeoutMinutes = jsonValue.GetInteger("queueTimeoutMinutes");
-
     m_queueTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxConcurrentRuns"))
   {
     m_maxConcurrentRuns = jsonValue.GetInteger("maxConcurrentRuns");
-
     m_maxConcurrentRunsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeQPersonalizationConfigurationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DescribeQPersonalizationConfigurationRequest();
+    AWS_QUICKSIGHT_API DescribeQPersonalizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the personalization
      * configuration that the user wants described.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DescribeQPersonalizationConfigurationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DescribeQPersonalizationConfigurationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DescribeQPersonalizationConfigurationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DescribeQPersonalizationConfigurationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
   private:
 

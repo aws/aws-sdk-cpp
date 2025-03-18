@@ -18,14 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-TemplateLocation::TemplateLocation() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 TemplateLocation::TemplateLocation(JsonView jsonValue)
-  : TemplateLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TemplateLocation& TemplateLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   return *this;
 }
 

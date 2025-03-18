@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDomainUnitResult::DeleteDomainUnitResult()
-{
-}
-
 DeleteDomainUnitResult::DeleteDomainUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ DeleteDomainUnitResult& DeleteDomainUnitResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

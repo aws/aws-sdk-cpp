@@ -18,22 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-PresetWatermark::PresetWatermark() : 
-    m_idHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_horizontalAlignHasBeenSet(false),
-    m_horizontalOffsetHasBeenSet(false),
-    m_verticalAlignHasBeenSet(false),
-    m_verticalOffsetHasBeenSet(false),
-    m_opacityHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 PresetWatermark::PresetWatermark(JsonView jsonValue)
-  : PresetWatermark()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ PresetWatermark& PresetWatermark::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWidth"))
   {
     m_maxWidth = jsonValue.GetString("MaxWidth");
-
     m_maxWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxHeight"))
   {
     m_maxHeight = jsonValue.GetString("MaxHeight");
-
     m_maxHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizingPolicy"))
   {
     m_sizingPolicy = jsonValue.GetString("SizingPolicy");
-
     m_sizingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HorizontalAlign"))
   {
     m_horizontalAlign = jsonValue.GetString("HorizontalAlign");
-
     m_horizontalAlignHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HorizontalOffset"))
   {
     m_horizontalOffset = jsonValue.GetString("HorizontalOffset");
-
     m_horizontalOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerticalAlign"))
   {
     m_verticalAlign = jsonValue.GetString("VerticalAlign");
-
     m_verticalAlignHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerticalOffset"))
   {
     m_verticalOffset = jsonValue.GetString("VerticalOffset");
-
     m_verticalOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Opacity"))
   {
     m_opacity = jsonValue.GetString("Opacity");
-
     m_opacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

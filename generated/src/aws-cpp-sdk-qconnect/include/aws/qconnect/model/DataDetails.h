@@ -8,8 +8,8 @@
 #include <aws/qconnect/model/ContentDataDetails.h>
 #include <aws/qconnect/model/IntentDetectedDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -35,7 +35,7 @@ namespace Model
   class DataDetails
   {
   public:
-    AWS_QCONNECT_API DataDetails();
+    AWS_QCONNECT_API DataDetails() = default;
     AWS_QCONNECT_API DataDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API DataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,53 @@ namespace Model
     /**
      * <p>Details about the content data.</p>
      */
-    inline const ContentDataDetails& GetContentData() const{ return m_contentData; }
+    inline const ContentDataDetails& GetContentData() const { return m_contentData; }
     inline bool ContentDataHasBeenSet() const { return m_contentDataHasBeenSet; }
-    inline void SetContentData(const ContentDataDetails& value) { m_contentDataHasBeenSet = true; m_contentData = value; }
-    inline void SetContentData(ContentDataDetails&& value) { m_contentDataHasBeenSet = true; m_contentData = std::move(value); }
-    inline DataDetails& WithContentData(const ContentDataDetails& value) { SetContentData(value); return *this;}
-    inline DataDetails& WithContentData(ContentDataDetails&& value) { SetContentData(std::move(value)); return *this;}
+    template<typename ContentDataT = ContentDataDetails>
+    void SetContentData(ContentDataT&& value) { m_contentDataHasBeenSet = true; m_contentData = std::forward<ContentDataT>(value); }
+    template<typename ContentDataT = ContentDataDetails>
+    DataDetails& WithContentData(ContentDataT&& value) { SetContentData(std::forward<ContentDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Details about the generative data.</p>
      */
-    AWS_QCONNECT_API const GenerativeDataDetails& GetGenerativeData() const;
-    AWS_QCONNECT_API bool GenerativeDataHasBeenSet() const;
-    AWS_QCONNECT_API void SetGenerativeData(const GenerativeDataDetails& value);
-    AWS_QCONNECT_API void SetGenerativeData(GenerativeDataDetails&& value);
-    AWS_QCONNECT_API DataDetails& WithGenerativeData(const GenerativeDataDetails& value);
-    AWS_QCONNECT_API DataDetails& WithGenerativeData(GenerativeDataDetails&& value);
+    inline const GenerativeDataDetails& GetGenerativeData() const{
+      return *m_generativeData;
+    }
+    inline bool GenerativeDataHasBeenSet() const { return m_generativeDataHasBeenSet; }
+    template<typename GenerativeDataT = GenerativeDataDetails>
+    void SetGenerativeData(GenerativeDataT&& value) {
+      m_generativeDataHasBeenSet = true; 
+      m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", std::forward<GenerativeDataT>(value));
+    }
+    template<typename GenerativeDataT = GenerativeDataDetails>
+    DataDetails& WithGenerativeData(GenerativeDataT&& value) { SetGenerativeData(std::forward<GenerativeDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the intent data.</p>
      */
-    inline const IntentDetectedDataDetails& GetIntentDetectedData() const{ return m_intentDetectedData; }
+    inline const IntentDetectedDataDetails& GetIntentDetectedData() const { return m_intentDetectedData; }
     inline bool IntentDetectedDataHasBeenSet() const { return m_intentDetectedDataHasBeenSet; }
-    inline void SetIntentDetectedData(const IntentDetectedDataDetails& value) { m_intentDetectedDataHasBeenSet = true; m_intentDetectedData = value; }
-    inline void SetIntentDetectedData(IntentDetectedDataDetails&& value) { m_intentDetectedDataHasBeenSet = true; m_intentDetectedData = std::move(value); }
-    inline DataDetails& WithIntentDetectedData(const IntentDetectedDataDetails& value) { SetIntentDetectedData(value); return *this;}
-    inline DataDetails& WithIntentDetectedData(IntentDetectedDataDetails&& value) { SetIntentDetectedData(std::move(value)); return *this;}
+    template<typename IntentDetectedDataT = IntentDetectedDataDetails>
+    void SetIntentDetectedData(IntentDetectedDataT&& value) { m_intentDetectedDataHasBeenSet = true; m_intentDetectedData = std::forward<IntentDetectedDataT>(value); }
+    template<typename IntentDetectedDataT = IntentDetectedDataDetails>
+    DataDetails& WithIntentDetectedData(IntentDetectedDataT&& value) { SetIntentDetectedData(std::forward<IntentDetectedDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the content data.</p>
      */
-    inline const SourceContentDataDetails& GetSourceContentData() const{ return m_sourceContentData; }
+    inline const SourceContentDataDetails& GetSourceContentData() const { return m_sourceContentData; }
     inline bool SourceContentDataHasBeenSet() const { return m_sourceContentDataHasBeenSet; }
-    inline void SetSourceContentData(const SourceContentDataDetails& value) { m_sourceContentDataHasBeenSet = true; m_sourceContentData = value; }
-    inline void SetSourceContentData(SourceContentDataDetails&& value) { m_sourceContentDataHasBeenSet = true; m_sourceContentData = std::move(value); }
-    inline DataDetails& WithSourceContentData(const SourceContentDataDetails& value) { SetSourceContentData(value); return *this;}
-    inline DataDetails& WithSourceContentData(SourceContentDataDetails&& value) { SetSourceContentData(std::move(value)); return *this;}
+    template<typename SourceContentDataT = SourceContentDataDetails>
+    void SetSourceContentData(SourceContentDataT&& value) { m_sourceContentDataHasBeenSet = true; m_sourceContentData = std::forward<SourceContentDataT>(value); }
+    template<typename SourceContentDataT = SourceContentDataDetails>
+    DataDetails& WithSourceContentData(SourceContentDataT&& value) { SetSourceContentData(std::forward<SourceContentDataT>(value)); return *this;}
     ///@}
   private:
 

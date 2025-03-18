@@ -24,7 +24,7 @@ namespace Model
   class CreateSolutionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API CreateSolutionRequest();
+    AWS_PERSONALIZE_API CreateSolutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name for the solution.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSolutionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSolutionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSolutionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSolutionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * AutoML, this parameter is always <code>true</code> and you should not set it to
      * <code>false</code>.</p>
      */
-    inline bool GetPerformHPO() const{ return m_performHPO; }
+    inline bool GetPerformHPO() const { return m_performHPO; }
     inline bool PerformHPOHasBeenSet() const { return m_performHPOHasBeenSet; }
     inline void SetPerformHPO(bool value) { m_performHPOHasBeenSet = true; m_performHPO = value; }
     inline CreateSolutionRequest& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
@@ -79,7 +77,7 @@ namespace Model
      * for the hyperparameters. AutoML lengthens the training process as compared to
      * selecting a specific recipe.</p>
      */
-    inline bool GetPerformAutoML() const{ return m_performAutoML; }
+    inline bool GetPerformAutoML() const { return m_performAutoML; }
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
     inline CreateSolutionRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
@@ -104,7 +102,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
      * </p>
      */
-    inline bool GetPerformAutoTraining() const{ return m_performAutoTraining; }
+    inline bool GetPerformAutoTraining() const { return m_performAutoTraining; }
     inline bool PerformAutoTrainingHasBeenSet() const { return m_performAutoTrainingHasBeenSet; }
     inline void SetPerformAutoTraining(bool value) { m_performAutoTrainingHasBeenSet = true; m_performAutoTraining = value; }
     inline CreateSolutionRequest& WithPerformAutoTraining(bool value) { SetPerformAutoTraining(value); return *this;}
@@ -118,14 +116,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
      * a recipe</a>. </p>
      */
-    inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
+    inline const Aws::String& GetRecipeArn() const { return m_recipeArn; }
     inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
-    inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
-    inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
-    inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
-    inline CreateSolutionRequest& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
-    inline CreateSolutionRequest& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
-    inline CreateSolutionRequest& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}
+    template<typename RecipeArnT = Aws::String>
+    void SetRecipeArn(RecipeArnT&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::forward<RecipeArnT>(value); }
+    template<typename RecipeArnT = Aws::String>
+    CreateSolutionRequest& WithRecipeArn(RecipeArnT&& value) { SetRecipeArn(std::forward<RecipeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +129,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dataset group that provides the
      * training data.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline CreateSolutionRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline CreateSolutionRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline CreateSolutionRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    CreateSolutionRequest& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +145,12 @@ namespace Model
      * <code>eventType</code>, Amazon Personalize will use all interactions for
      * training with equal weight regardless of type.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline CreateSolutionRequest& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline CreateSolutionRequest& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline CreateSolutionRequest& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    CreateSolutionRequest& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +161,12 @@ namespace Model
      * <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
      * at this time.</p> 
      */
-    inline const SolutionConfig& GetSolutionConfig() const{ return m_solutionConfig; }
+    inline const SolutionConfig& GetSolutionConfig() const { return m_solutionConfig; }
     inline bool SolutionConfigHasBeenSet() const { return m_solutionConfigHasBeenSet; }
-    inline void SetSolutionConfig(const SolutionConfig& value) { m_solutionConfigHasBeenSet = true; m_solutionConfig = value; }
-    inline void SetSolutionConfig(SolutionConfig&& value) { m_solutionConfigHasBeenSet = true; m_solutionConfig = std::move(value); }
-    inline CreateSolutionRequest& WithSolutionConfig(const SolutionConfig& value) { SetSolutionConfig(value); return *this;}
-    inline CreateSolutionRequest& WithSolutionConfig(SolutionConfig&& value) { SetSolutionConfig(std::move(value)); return *this;}
+    template<typename SolutionConfigT = SolutionConfig>
+    void SetSolutionConfig(SolutionConfigT&& value) { m_solutionConfigHasBeenSet = true; m_solutionConfig = std::forward<SolutionConfigT>(value); }
+    template<typename SolutionConfigT = SolutionConfig>
+    CreateSolutionRequest& WithSolutionConfig(SolutionConfigT&& value) { SetSolutionConfig(std::forward<SolutionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,27 +175,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSolutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSolutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSolutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSolutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSolutionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSolutionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_performHPO;
+    bool m_performHPO{false};
     bool m_performHPOHasBeenSet = false;
 
-    bool m_performAutoML;
+    bool m_performAutoML{false};
     bool m_performAutoMLHasBeenSet = false;
 
-    bool m_performAutoTraining;
+    bool m_performAutoTraining{false};
     bool m_performAutoTrainingHasBeenSet = false;
 
     Aws::String m_recipeArn;

@@ -31,7 +31,7 @@ namespace Model
   class DimensionNameValue
   {
   public:
-    AWS_LOOKOUTMETRICS_API DimensionNameValue();
+    AWS_LOOKOUTMETRICS_API DimensionNameValue() = default;
     AWS_LOOKOUTMETRICS_API DimensionNameValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DimensionNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the dimension.</p>
      */
-    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+    inline const Aws::String& GetDimensionName() const { return m_dimensionName; }
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
-    inline DimensionNameValue& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
-    inline DimensionNameValue& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
-    inline DimensionNameValue& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+    template<typename DimensionNameT = Aws::String>
+    void SetDimensionName(DimensionNameT&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::forward<DimensionNameT>(value); }
+    template<typename DimensionNameT = Aws::String>
+    DimensionNameValue& WithDimensionName(DimensionNameT&& value) { SetDimensionName(std::forward<DimensionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the dimension.</p>
      */
-    inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
+    inline const Aws::String& GetDimensionValue() const { return m_dimensionValue; }
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
-    inline void SetDimensionValue(const Aws::String& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
-    inline void SetDimensionValue(Aws::String&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::move(value); }
-    inline void SetDimensionValue(const char* value) { m_dimensionValueHasBeenSet = true; m_dimensionValue.assign(value); }
-    inline DimensionNameValue& WithDimensionValue(const Aws::String& value) { SetDimensionValue(value); return *this;}
-    inline DimensionNameValue& WithDimensionValue(Aws::String&& value) { SetDimensionValue(std::move(value)); return *this;}
-    inline DimensionNameValue& WithDimensionValue(const char* value) { SetDimensionValue(value); return *this;}
+    template<typename DimensionValueT = Aws::String>
+    void SetDimensionValue(DimensionValueT&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::forward<DimensionValueT>(value); }
+    template<typename DimensionValueT = Aws::String>
+    DimensionNameValue& WithDimensionValue(DimensionValueT&& value) { SetDimensionValue(std::forward<DimensionValueT>(value)); return *this;}
     ///@}
   private:
 

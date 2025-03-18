@@ -12,12 +12,6 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExecutionRequest::GetExecutionRequest() : 
-    m_executionIdHasBeenSet(false),
-    m_exportArnHasBeenSet(false)
-{
-}
-
 Aws::String GetExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

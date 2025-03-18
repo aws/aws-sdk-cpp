@@ -35,7 +35,7 @@ namespace Model
   class AwsWafWebAclRule
   {
   public:
-    AWS_SECURITYHUB_API AwsWafWebAclRule();
+    AWS_SECURITYHUB_API AwsWafWebAclRule() = default;
     AWS_SECURITYHUB_API AwsWafWebAclRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafWebAclRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,26 @@ namespace Model
      * <p>Specifies the action that CloudFront or WAF takes when a web request matches
      * the conditions in the rule. </p>
      */
-    inline const WafAction& GetAction() const{ return m_action; }
+    inline const WafAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline AwsWafWebAclRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
-    inline AwsWafWebAclRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = WafAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = WafAction>
+    AwsWafWebAclRule& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Rules to exclude from a rule group.</p>
      */
-    inline const Aws::Vector<WafExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
+    inline const Aws::Vector<WafExcludedRule>& GetExcludedRules() const { return m_excludedRules; }
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
-    inline void SetExcludedRules(const Aws::Vector<WafExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
-    inline void SetExcludedRules(Aws::Vector<WafExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
-    inline AwsWafWebAclRule& WithExcludedRules(const Aws::Vector<WafExcludedRule>& value) { SetExcludedRules(value); return *this;}
-    inline AwsWafWebAclRule& WithExcludedRules(Aws::Vector<WafExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
-    inline AwsWafWebAclRule& AddExcludedRules(const WafExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
-    inline AwsWafWebAclRule& AddExcludedRules(WafExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+    template<typename ExcludedRulesT = Aws::Vector<WafExcludedRule>>
+    void SetExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::forward<ExcludedRulesT>(value); }
+    template<typename ExcludedRulesT = Aws::Vector<WafExcludedRule>>
+    AwsWafWebAclRule& WithExcludedRules(ExcludedRulesT&& value) { SetExcludedRules(std::forward<ExcludedRulesT>(value)); return *this;}
+    template<typename ExcludedRulesT = WafExcludedRule>
+    AwsWafWebAclRule& AddExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.emplace_back(std::forward<ExcludedRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
      * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
-    inline const WafOverrideAction& GetOverrideAction() const{ return m_overrideAction; }
+    inline const WafOverrideAction& GetOverrideAction() const { return m_overrideAction; }
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
-    inline void SetOverrideAction(const WafOverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
-    inline void SetOverrideAction(WafOverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
-    inline AwsWafWebAclRule& WithOverrideAction(const WafOverrideAction& value) { SetOverrideAction(value); return *this;}
-    inline AwsWafWebAclRule& WithOverrideAction(WafOverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
+    template<typename OverrideActionT = WafOverrideAction>
+    void SetOverrideAction(OverrideActionT&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::forward<OverrideActionT>(value); }
+    template<typename OverrideActionT = WafOverrideAction>
+    AwsWafWebAclRule& WithOverrideAction(OverrideActionT&& value) { SetOverrideAction(std::forward<OverrideActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +101,7 @@ namespace Model
      * value. The value must be a unique integer. If you add multiple rules to a web
      * ACL, the values don't need to be consecutive.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline AwsWafWebAclRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -111,14 +111,12 @@ namespace Model
     /**
      * <p>The identifier for a rule.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline AwsWafWebAclRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline AwsWafWebAclRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline AwsWafWebAclRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    AwsWafWebAclRule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +125,12 @@ namespace Model
      * <code>RATE_BASED</code> | <code>GROUP</code> </p> <p>The default is
      * <code>REGULAR</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsWafWebAclRule& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsWafWebAclRule& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsWafWebAclRule& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsWafWebAclRule& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,7 +143,7 @@ namespace Model
     WafOverrideAction m_overrideAction;
     bool m_overrideActionHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleId;

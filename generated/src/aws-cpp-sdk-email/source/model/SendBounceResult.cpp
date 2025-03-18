@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendBounceResult::SendBounceResult()
-{
-}
-
 SendBounceResult::SendBounceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ SendBounceResult& SendBounceResult::operator =(const Aws::AmazonWebServiceResult
     if(!messageIdNode.IsNull())
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
+      m_messageIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::SendBounceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

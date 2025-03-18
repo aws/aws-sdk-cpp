@@ -21,7 +21,7 @@ namespace Model
   class DeleteApplicationRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API DeleteApplicationRequest();
+    AWS_MGN_API DeleteApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>Account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline DeleteApplicationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline DeleteApplicationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline DeleteApplicationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    DeleteApplicationRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Application ID.</p>
      */
-    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+    inline const Aws::String& GetApplicationID() const { return m_applicationID; }
     inline bool ApplicationIDHasBeenSet() const { return m_applicationIDHasBeenSet; }
-    inline void SetApplicationID(const Aws::String& value) { m_applicationIDHasBeenSet = true; m_applicationID = value; }
-    inline void SetApplicationID(Aws::String&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::move(value); }
-    inline void SetApplicationID(const char* value) { m_applicationIDHasBeenSet = true; m_applicationID.assign(value); }
-    inline DeleteApplicationRequest& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
-    inline DeleteApplicationRequest& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
-    inline DeleteApplicationRequest& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
+    template<typename ApplicationIDT = Aws::String>
+    void SetApplicationID(ApplicationIDT&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::forward<ApplicationIDT>(value); }
+    template<typename ApplicationIDT = Aws::String>
+    DeleteApplicationRequest& WithApplicationID(ApplicationIDT&& value) { SetApplicationID(std::forward<ApplicationIDT>(value)); return *this;}
     ///@}
   private:
 

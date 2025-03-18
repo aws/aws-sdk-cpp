@@ -35,7 +35,7 @@ namespace Model
   class ComputeConfigRequest
   {
   public:
-    AWS_EKS_API ComputeConfigRequest();
+    AWS_EKS_API ComputeConfigRequest() = default;
     AWS_EKS_API ComputeConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ComputeConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * cluster. If the compute capability is enabled, EKS Auto Mode will create and
      * delete EC2 Managed Instances in your Amazon Web Services account.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ComputeConfigRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -59,15 +59,14 @@ namespace Model
      * Auto Mode cluster. For more information, see EKS Auto Mode Node Pools in the
      * <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNodePools() const{ return m_nodePools; }
+    inline const Aws::Vector<Aws::String>& GetNodePools() const { return m_nodePools; }
     inline bool NodePoolsHasBeenSet() const { return m_nodePoolsHasBeenSet; }
-    inline void SetNodePools(const Aws::Vector<Aws::String>& value) { m_nodePoolsHasBeenSet = true; m_nodePools = value; }
-    inline void SetNodePools(Aws::Vector<Aws::String>&& value) { m_nodePoolsHasBeenSet = true; m_nodePools = std::move(value); }
-    inline ComputeConfigRequest& WithNodePools(const Aws::Vector<Aws::String>& value) { SetNodePools(value); return *this;}
-    inline ComputeConfigRequest& WithNodePools(Aws::Vector<Aws::String>&& value) { SetNodePools(std::move(value)); return *this;}
-    inline ComputeConfigRequest& AddNodePools(const Aws::String& value) { m_nodePoolsHasBeenSet = true; m_nodePools.push_back(value); return *this; }
-    inline ComputeConfigRequest& AddNodePools(Aws::String&& value) { m_nodePoolsHasBeenSet = true; m_nodePools.push_back(std::move(value)); return *this; }
-    inline ComputeConfigRequest& AddNodePools(const char* value) { m_nodePoolsHasBeenSet = true; m_nodePools.push_back(value); return *this; }
+    template<typename NodePoolsT = Aws::Vector<Aws::String>>
+    void SetNodePools(NodePoolsT&& value) { m_nodePoolsHasBeenSet = true; m_nodePools = std::forward<NodePoolsT>(value); }
+    template<typename NodePoolsT = Aws::Vector<Aws::String>>
+    ComputeConfigRequest& WithNodePools(NodePoolsT&& value) { SetNodePools(std::forward<NodePoolsT>(value)); return *this;}
+    template<typename NodePoolsT = Aws::String>
+    ComputeConfigRequest& AddNodePools(NodePoolsT&& value) { m_nodePoolsHasBeenSet = true; m_nodePools.emplace_back(std::forward<NodePoolsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,18 +76,16 @@ namespace Model
      * EKS Auto Mode is enabled. For more information, see the IAM Reference in the
      * <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetNodeRoleArn() const{ return m_nodeRoleArn; }
+    inline const Aws::String& GetNodeRoleArn() const { return m_nodeRoleArn; }
     inline bool NodeRoleArnHasBeenSet() const { return m_nodeRoleArnHasBeenSet; }
-    inline void SetNodeRoleArn(const Aws::String& value) { m_nodeRoleArnHasBeenSet = true; m_nodeRoleArn = value; }
-    inline void SetNodeRoleArn(Aws::String&& value) { m_nodeRoleArnHasBeenSet = true; m_nodeRoleArn = std::move(value); }
-    inline void SetNodeRoleArn(const char* value) { m_nodeRoleArnHasBeenSet = true; m_nodeRoleArn.assign(value); }
-    inline ComputeConfigRequest& WithNodeRoleArn(const Aws::String& value) { SetNodeRoleArn(value); return *this;}
-    inline ComputeConfigRequest& WithNodeRoleArn(Aws::String&& value) { SetNodeRoleArn(std::move(value)); return *this;}
-    inline ComputeConfigRequest& WithNodeRoleArn(const char* value) { SetNodeRoleArn(value); return *this;}
+    template<typename NodeRoleArnT = Aws::String>
+    void SetNodeRoleArn(NodeRoleArnT&& value) { m_nodeRoleArnHasBeenSet = true; m_nodeRoleArn = std::forward<NodeRoleArnT>(value); }
+    template<typename NodeRoleArnT = Aws::String>
+    ComputeConfigRequest& WithNodeRoleArn(NodeRoleArnT&& value) { SetNodeRoleArn(std::forward<NodeRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodePools;

@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventSourcesConfigRequest::UpdateEventSourcesConfigRequest() : 
-    m_eventSourcesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventSourcesConfigRequest::SerializePayload() const
 {
   JsonValue payload;

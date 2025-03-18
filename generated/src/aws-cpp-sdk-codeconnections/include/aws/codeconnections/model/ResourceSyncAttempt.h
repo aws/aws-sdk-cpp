@@ -36,7 +36,7 @@ namespace Model
   class ResourceSyncAttempt
   {
   public:
-    AWS_CODECONNECTIONS_API ResourceSyncAttempt();
+    AWS_CODECONNECTIONS_API ResourceSyncAttempt() = default;
     AWS_CODECONNECTIONS_API ResourceSyncAttempt(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECONNECTIONS_API ResourceSyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>The events related to a resource sync attempt.</p>
      */
-    inline const Aws::Vector<ResourceSyncEvent>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<ResourceSyncEvent>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<ResourceSyncEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<ResourceSyncEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline ResourceSyncAttempt& WithEvents(const Aws::Vector<ResourceSyncEvent>& value) { SetEvents(value); return *this;}
-    inline ResourceSyncAttempt& WithEvents(Aws::Vector<ResourceSyncEvent>&& value) { SetEvents(std::move(value)); return *this;}
-    inline ResourceSyncAttempt& AddEvents(const ResourceSyncEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline ResourceSyncAttempt& AddEvents(ResourceSyncEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<ResourceSyncEvent>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<ResourceSyncEvent>>
+    ResourceSyncAttempt& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = ResourceSyncEvent>
+    ResourceSyncAttempt& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,24 +61,24 @@ namespace Model
      * <p>The current state of the resource as defined in the resource's
      * <code>config-file</code> in the linked repository.</p>
      */
-    inline const Revision& GetInitialRevision() const{ return m_initialRevision; }
+    inline const Revision& GetInitialRevision() const { return m_initialRevision; }
     inline bool InitialRevisionHasBeenSet() const { return m_initialRevisionHasBeenSet; }
-    inline void SetInitialRevision(const Revision& value) { m_initialRevisionHasBeenSet = true; m_initialRevision = value; }
-    inline void SetInitialRevision(Revision&& value) { m_initialRevisionHasBeenSet = true; m_initialRevision = std::move(value); }
-    inline ResourceSyncAttempt& WithInitialRevision(const Revision& value) { SetInitialRevision(value); return *this;}
-    inline ResourceSyncAttempt& WithInitialRevision(Revision&& value) { SetInitialRevision(std::move(value)); return *this;}
+    template<typename InitialRevisionT = Revision>
+    void SetInitialRevision(InitialRevisionT&& value) { m_initialRevisionHasBeenSet = true; m_initialRevision = std::forward<InitialRevisionT>(value); }
+    template<typename InitialRevisionT = Revision>
+    ResourceSyncAttempt& WithInitialRevision(InitialRevisionT&& value) { SetInitialRevision(std::forward<InitialRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time for a resource sync attempt.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline ResourceSyncAttempt& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline ResourceSyncAttempt& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    ResourceSyncAttempt& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +90,10 @@ namespace Model
      * successfully.</p> </li> <li> <p>SYNC_FAILED - A resource sync attempt has
      * failed.</p> </li> </ul>
      */
-    inline const ResourceSyncStatus& GetStatus() const{ return m_status; }
+    inline ResourceSyncStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceSyncStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceSyncStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResourceSyncAttempt& WithStatus(const ResourceSyncStatus& value) { SetStatus(value); return *this;}
-    inline ResourceSyncAttempt& WithStatus(ResourceSyncStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceSyncStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResourceSyncAttempt& WithStatus(ResourceSyncStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +102,12 @@ namespace Model
      * <code>config-file</code> in the linked repository. Git sync attempts to update
      * the resource to this state.</p>
      */
-    inline const Revision& GetTargetRevision() const{ return m_targetRevision; }
+    inline const Revision& GetTargetRevision() const { return m_targetRevision; }
     inline bool TargetRevisionHasBeenSet() const { return m_targetRevisionHasBeenSet; }
-    inline void SetTargetRevision(const Revision& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = value; }
-    inline void SetTargetRevision(Revision&& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = std::move(value); }
-    inline ResourceSyncAttempt& WithTargetRevision(const Revision& value) { SetTargetRevision(value); return *this;}
-    inline ResourceSyncAttempt& WithTargetRevision(Revision&& value) { SetTargetRevision(std::move(value)); return *this;}
+    template<typename TargetRevisionT = Revision>
+    void SetTargetRevision(TargetRevisionT&& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = std::forward<TargetRevisionT>(value); }
+    template<typename TargetRevisionT = Revision>
+    ResourceSyncAttempt& WithTargetRevision(TargetRevisionT&& value) { SetTargetRevision(std::forward<TargetRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +115,12 @@ namespace Model
      * <p>The name of the Amazon Web Services resource that is attempted to be
      * synchronized.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline ResourceSyncAttempt& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline ResourceSyncAttempt& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline ResourceSyncAttempt& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    ResourceSyncAttempt& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 
@@ -134,10 +130,10 @@ namespace Model
     Revision m_initialRevision;
     bool m_initialRevisionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
-    ResourceSyncStatus m_status;
+    ResourceSyncStatus m_status{ResourceSyncStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Revision m_targetRevision;

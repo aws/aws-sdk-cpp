@@ -29,7 +29,7 @@ namespace Model
   class RouteVehicleOverviewSummary
   {
   public:
-    AWS_GEOROUTES_API RouteVehicleOverviewSummary();
+    AWS_GEOROUTES_API RouteVehicleOverviewSummary() = default;
     AWS_GEOROUTES_API RouteVehicleOverviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteVehicleOverviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * duration possible to cover the leg.</p> <p> <b>Unit</b>: <code>seconds</code>
      * </p>
      */
-    inline long long GetBestCaseDuration() const{ return m_bestCaseDuration; }
+    inline long long GetBestCaseDuration() const { return m_bestCaseDuration; }
     inline bool BestCaseDurationHasBeenSet() const { return m_bestCaseDurationHasBeenSet; }
     inline void SetBestCaseDuration(long long value) { m_bestCaseDurationHasBeenSet = true; m_bestCaseDuration = value; }
     inline RouteVehicleOverviewSummary& WithBestCaseDuration(long long value) { SetBestCaseDuration(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Distance of the step.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RouteVehicleOverviewSummary& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>Duration of the step.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RouteVehicleOverviewSummary& WithDuration(long long value) { SetDuration(value); return *this;}
@@ -72,23 +72,23 @@ namespace Model
      * <p>Duration of the computed span under typical traffic congestion. </p> <p>
      * <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetTypicalDuration() const{ return m_typicalDuration; }
+    inline long long GetTypicalDuration() const { return m_typicalDuration; }
     inline bool TypicalDurationHasBeenSet() const { return m_typicalDurationHasBeenSet; }
     inline void SetTypicalDuration(long long value) { m_typicalDurationHasBeenSet = true; m_typicalDuration = value; }
     inline RouteVehicleOverviewSummary& WithTypicalDuration(long long value) { SetTypicalDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_bestCaseDuration;
+    long long m_bestCaseDuration{0};
     bool m_bestCaseDurationHasBeenSet = false;
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    long long m_typicalDuration;
+    long long m_typicalDuration{0};
     bool m_typicalDurationHasBeenSet = false;
   };
 

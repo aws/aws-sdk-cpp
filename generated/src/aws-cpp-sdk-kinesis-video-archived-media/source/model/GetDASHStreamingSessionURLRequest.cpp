@@ -12,23 +12,6 @@ using namespace Aws::KinesisVideoArchivedMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDASHStreamingSessionURLRequest::GetDASHStreamingSessionURLRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_playbackMode(DASHPlaybackMode::NOT_SET),
-    m_playbackModeHasBeenSet(false),
-    m_displayFragmentTimestamp(DASHDisplayFragmentTimestamp::NOT_SET),
-    m_displayFragmentTimestampHasBeenSet(false),
-    m_displayFragmentNumber(DASHDisplayFragmentNumber::NOT_SET),
-    m_displayFragmentNumberHasBeenSet(false),
-    m_dASHFragmentSelectorHasBeenSet(false),
-    m_expires(0),
-    m_expiresHasBeenSet(false),
-    m_maxManifestFragmentResults(0),
-    m_maxManifestFragmentResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetDASHStreamingSessionURLRequest::SerializePayload() const
 {
   JsonValue payload;

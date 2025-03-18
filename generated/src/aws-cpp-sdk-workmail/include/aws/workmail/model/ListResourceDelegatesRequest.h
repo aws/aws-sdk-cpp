@@ -21,7 +21,7 @@ namespace Model
   class ListResourceDelegatesRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API ListResourceDelegatesRequest();
+    AWS_WORKMAIL_API ListResourceDelegatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier for the organization that contains the resource for which
      * delegates are listed.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline ListResourceDelegatesRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline ListResourceDelegatesRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline ListResourceDelegatesRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    ListResourceDelegatesRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
      * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ListResourceDelegatesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ListResourceDelegatesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ListResourceDelegatesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ListResourceDelegatesRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,21 +68,19 @@ namespace Model
      * <p>The token used to paginate through the delegates associated with a
      * resource.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourceDelegatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceDelegatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceDelegatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceDelegatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of maximum results in a page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourceDelegatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -102,7 +96,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

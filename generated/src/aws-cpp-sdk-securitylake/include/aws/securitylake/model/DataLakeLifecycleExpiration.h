@@ -30,7 +30,7 @@ namespace Model
   class DataLakeLifecycleExpiration
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeLifecycleExpiration();
+    AWS_SECURITYLAKE_API DataLakeLifecycleExpiration() = default;
     AWS_SECURITYLAKE_API DataLakeLifecycleExpiration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeLifecycleExpiration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Number of days before data expires in the Amazon Security Lake object.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline DataLakeLifecycleExpiration& WithDays(int value) { SetDays(value); return *this;}
     ///@}
   private:
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDBStorageRecommendationOption::RDSDBStorageRecommendationOption() : 
-    m_storageConfigurationHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
-{
-}
-
 RDSDBStorageRecommendationOption::RDSDBStorageRecommendationOption(JsonView jsonValue)
-  : RDSDBStorageRecommendationOption()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RDSDBStorageRecommendationOption& RDSDBStorageRecommendationOption::operator =(J
   if(jsonValue.ValueExists("storageConfiguration"))
   {
     m_storageConfiguration = jsonValue.GetObject("storageConfiguration");
-
     m_storageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
   {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
-
   return *this;
 }
 

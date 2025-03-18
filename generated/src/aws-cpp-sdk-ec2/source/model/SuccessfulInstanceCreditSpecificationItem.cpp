@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode)
-  : SuccessfulInstanceCreditSpecificationItem()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry() : 
-    m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry(JsonView jsonValue)
-  : UpdateWirelessGatewayTaskEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateWirelessGatewayTaskEntry& UpdateWirelessGatewayTaskEntry::operator =(JsonV
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

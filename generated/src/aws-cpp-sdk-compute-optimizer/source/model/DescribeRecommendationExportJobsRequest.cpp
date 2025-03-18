@@ -12,15 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRecommendationExportJobsRequest::DescribeRecommendationExportJobsRequest() : 
-    m_jobIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecommendationExportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

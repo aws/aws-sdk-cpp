@@ -28,7 +28,7 @@ namespace Model
   class GetConfiguredTableAnalysisRuleResult
   {
   public:
-    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult();
+    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult() = default;
     AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The entire analysis rule output.</p>
      */
-    inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
-    inline void SetAnalysisRule(const ConfiguredTableAnalysisRule& value) { m_analysisRule = value; }
-    inline void SetAnalysisRule(ConfiguredTableAnalysisRule&& value) { m_analysisRule = std::move(value); }
-    inline GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(const ConfiguredTableAnalysisRule& value) { SetAnalysisRule(value); return *this;}
-    inline GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(ConfiguredTableAnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    inline const ConfiguredTableAnalysisRule& GetAnalysisRule() const { return m_analysisRule; }
+    template<typename AnalysisRuleT = ConfiguredTableAnalysisRule>
+    void SetAnalysisRule(AnalysisRuleT&& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = std::forward<AnalysisRuleT>(value); }
+    template<typename AnalysisRuleT = ConfiguredTableAnalysisRule>
+    GetConfiguredTableAnalysisRuleResult& WithAnalysisRule(AnalysisRuleT&& value) { SetAnalysisRule(std::forward<AnalysisRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConfiguredTableAnalysisRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConfiguredTableAnalysisRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConfiguredTableAnalysisRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConfiguredTableAnalysisRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConfiguredTableAnalysisRule m_analysisRule;
+    bool m_analysisRuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DiscardRegistrationVersionResult::DiscardRegistrationVersionResult() : 
-    m_versionNumber(0),
-    m_registrationVersionStatus(RegistrationVersionStatus::NOT_SET)
-{
-}
-
 DiscardRegistrationVersionResult::DiscardRegistrationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DiscardRegistrationVersionResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ DiscardRegistrationVersionResult& DiscardRegistrationVersionResult::operator =(c
   if(jsonValue.ValueExists("RegistrationArn"))
   {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
-
+    m_registrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
+    m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationVersionStatus"))
   {
     m_registrationVersionStatus = RegistrationVersionStatusMapper::GetRegistrationVersionStatusForName(jsonValue.GetString("RegistrationVersionStatus"));
-
+    m_registrationVersionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationVersionStatusHistory"))
   {
     m_registrationVersionStatusHistory = jsonValue.GetObject("RegistrationVersionStatusHistory");
-
+    m_registrationVersionStatusHistoryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

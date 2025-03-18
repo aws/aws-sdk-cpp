@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBuildBatchResult::DeleteBuildBatchResult()
-{
-}
-
 DeleteBuildBatchResult::DeleteBuildBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DeleteBuildBatchResult& DeleteBuildBatchResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildsDeleted"))
   {
     Aws::Utils::Array<JsonView> buildsDeletedJsonList = jsonValue.GetArray("buildsDeleted");
@@ -42,8 +37,8 @@ DeleteBuildBatchResult& DeleteBuildBatchResult::operator =(const Aws::AmazonWebS
     {
       m_buildsDeleted.push_back(buildsDeletedJsonList[buildsDeletedIndex].AsString());
     }
+    m_buildsDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildsNotDeleted"))
   {
     Aws::Utils::Array<JsonView> buildsNotDeletedJsonList = jsonValue.GetArray("buildsNotDeleted");
@@ -51,14 +46,15 @@ DeleteBuildBatchResult& DeleteBuildBatchResult::operator =(const Aws::AmazonWebS
     {
       m_buildsNotDeleted.push_back(buildsNotDeletedJsonList[buildsNotDeletedIndex].AsObject());
     }
+    m_buildsNotDeletedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

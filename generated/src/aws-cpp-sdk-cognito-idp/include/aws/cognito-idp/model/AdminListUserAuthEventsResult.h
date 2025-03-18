@@ -29,7 +29,7 @@ namespace Model
   class AdminListUserAuthEventsResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and
      * <code>EventResponse</code>.</p>
      */
-    inline const Aws::Vector<AuthEventType>& GetAuthEvents() const{ return m_authEvents; }
-    inline void SetAuthEvents(const Aws::Vector<AuthEventType>& value) { m_authEvents = value; }
-    inline void SetAuthEvents(Aws::Vector<AuthEventType>&& value) { m_authEvents = std::move(value); }
-    inline AdminListUserAuthEventsResult& WithAuthEvents(const Aws::Vector<AuthEventType>& value) { SetAuthEvents(value); return *this;}
-    inline AdminListUserAuthEventsResult& WithAuthEvents(Aws::Vector<AuthEventType>&& value) { SetAuthEvents(std::move(value)); return *this;}
-    inline AdminListUserAuthEventsResult& AddAuthEvents(const AuthEventType& value) { m_authEvents.push_back(value); return *this; }
-    inline AdminListUserAuthEventsResult& AddAuthEvents(AuthEventType&& value) { m_authEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthEventType>& GetAuthEvents() const { return m_authEvents; }
+    template<typename AuthEventsT = Aws::Vector<AuthEventType>>
+    void SetAuthEvents(AuthEventsT&& value) { m_authEventsHasBeenSet = true; m_authEvents = std::forward<AuthEventsT>(value); }
+    template<typename AuthEventsT = Aws::Vector<AuthEventType>>
+    AdminListUserAuthEventsResult& WithAuthEvents(AuthEventsT&& value) { SetAuthEvents(std::forward<AuthEventsT>(value)); return *this;}
+    template<typename AuthEventsT = AuthEventType>
+    AdminListUserAuthEventsResult& AddAuthEvents(AuthEventsT&& value) { m_authEventsHasBeenSet = true; m_authEvents.emplace_back(std::forward<AuthEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * returns the next set of items in the list. By use of this token, you can
      * paginate through the full list of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline AdminListUserAuthEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline AdminListUserAuthEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline AdminListUserAuthEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    AdminListUserAuthEventsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AdminListUserAuthEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AdminListUserAuthEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AdminListUserAuthEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AdminListUserAuthEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthEventType> m_authEvents;
+    bool m_authEventsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

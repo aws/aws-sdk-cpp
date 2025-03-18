@@ -35,7 +35,7 @@ namespace Model
   class GroupConfigurationParameter
   {
   public:
-    AWS_RESOURCEGROUPS_API GroupConfigurationParameter();
+    AWS_RESOURCEGROUPS_API GroupConfigurationParameter() = default;
     AWS_RESOURCEGROUPS_API GroupConfigurationParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API GroupConfigurationParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
      * resource types and parameters</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GroupConfigurationParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GroupConfigurationParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GroupConfigurationParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GroupConfigurationParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,15 +63,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
      * resource types and parameters</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline GroupConfigurationParameter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline GroupConfigurationParameter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline GroupConfigurationParameter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline GroupConfigurationParameter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline GroupConfigurationParameter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    GroupConfigurationParameter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    GroupConfigurationParameter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

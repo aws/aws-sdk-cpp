@@ -32,7 +32,7 @@ namespace Model
   class DeploymentConditionalField
   {
   public:
-    AWS_LAUNCHWIZARD_API DeploymentConditionalField();
+    AWS_LAUNCHWIZARD_API DeploymentConditionalField() = default;
     AWS_LAUNCHWIZARD_API DeploymentConditionalField(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API DeploymentConditionalField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
      * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
      * NotEqual</code> </p>
      */
-    inline const Aws::String& GetComparator() const{ return m_comparator; }
+    inline const Aws::String& GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const Aws::String& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(Aws::String&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline void SetComparator(const char* value) { m_comparatorHasBeenSet = true; m_comparator.assign(value); }
-    inline DeploymentConditionalField& WithComparator(const Aws::String& value) { SetComparator(value); return *this;}
-    inline DeploymentConditionalField& WithComparator(Aws::String&& value) { SetComparator(std::move(value)); return *this;}
-    inline DeploymentConditionalField& WithComparator(const char* value) { SetComparator(value); return *this;}
+    template<typename ComparatorT = Aws::String>
+    void SetComparator(ComparatorT&& value) { m_comparatorHasBeenSet = true; m_comparator = std::forward<ComparatorT>(value); }
+    template<typename ComparatorT = Aws::String>
+    DeploymentConditionalField& WithComparator(ComparatorT&& value) { SetComparator(std::forward<ComparatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment condition.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeploymentConditionalField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeploymentConditionalField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeploymentConditionalField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeploymentConditionalField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the condition.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline DeploymentConditionalField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline DeploymentConditionalField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline DeploymentConditionalField& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    DeploymentConditionalField& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

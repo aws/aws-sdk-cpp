@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileSystemFailureDetails::FileSystemFailureDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 FileSystemFailureDetails::FileSystemFailureDetails(JsonView jsonValue)
-  : FileSystemFailureDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FileSystemFailureDetails& FileSystemFailureDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

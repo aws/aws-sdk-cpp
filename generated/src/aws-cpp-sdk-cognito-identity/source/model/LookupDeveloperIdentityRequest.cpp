@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LookupDeveloperIdentityRequest::LookupDeveloperIdentityRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_developerUserIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String LookupDeveloperIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

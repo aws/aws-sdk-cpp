@@ -12,14 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAudienceExportJobRequest::StartAudienceExportJobRequest() : 
-    m_nameHasBeenSet(false),
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_audienceSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String StartAudienceExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

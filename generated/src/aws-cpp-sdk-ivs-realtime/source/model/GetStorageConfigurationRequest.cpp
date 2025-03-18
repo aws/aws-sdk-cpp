@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStorageConfigurationRequest::GetStorageConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetStorageConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

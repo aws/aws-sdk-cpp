@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FederationSourceException::FederationSourceException() : 
-    m_federationSourceErrorCode(FederationSourceErrorCode::NOT_SET),
-    m_federationSourceErrorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FederationSourceException::FederationSourceException(JsonView jsonValue)
-  : FederationSourceException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FederationSourceException& FederationSourceException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FederationSourceErrorCode"))
   {
     m_federationSourceErrorCode = FederationSourceErrorCodeMapper::GetFederationSourceErrorCodeForName(jsonValue.GetString("FederationSourceErrorCode"));
-
     m_federationSourceErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

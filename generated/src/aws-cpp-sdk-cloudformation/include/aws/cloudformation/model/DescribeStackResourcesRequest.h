@@ -25,7 +25,7 @@ namespace Model
   class DescribeStackResourcesRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackResourcesRequest();
+    AWS_CLOUDFORMATION_API DescribeStackResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * is no default value.</p> <p>Required: Conditional. If you don't specify
      * <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline DescribeStackResourcesRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline DescribeStackResourcesRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline DescribeStackResourcesRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    DescribeStackResourcesRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The logical name of the resource as specified in the template.</p>
      * <p>Default: There is no default value.</p>
      */
-    inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline void SetLogicalResourceId(const char* value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId.assign(value); }
-    inline DescribeStackResourcesRequest& WithLogicalResourceId(const Aws::String& value) { SetLogicalResourceId(value); return *this;}
-    inline DescribeStackResourcesRequest& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
-    inline DescribeStackResourcesRequest& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+    template<typename LogicalResourceIdT = Aws::String>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = Aws::String>
+    DescribeStackResourcesRequest& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * you don't specify <code>PhysicalResourceId</code>, you must specify
      * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
-    inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+    inline const Aws::String& GetPhysicalResourceId() const { return m_physicalResourceId; }
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
-    inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
-    inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
-    inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
-    inline DescribeStackResourcesRequest& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
-    inline DescribeStackResourcesRequest& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
-    inline DescribeStackResourcesRequest& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
+    template<typename PhysicalResourceIdT = Aws::String>
+    void SetPhysicalResourceId(PhysicalResourceIdT&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::forward<PhysicalResourceIdT>(value); }
+    template<typename PhysicalResourceIdT = Aws::String>
+    DescribeStackResourcesRequest& WithPhysicalResourceId(PhysicalResourceIdT&& value) { SetPhysicalResourceId(std::forward<PhysicalResourceIdT>(value)); return *this;}
     ///@}
   private:
 

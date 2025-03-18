@@ -24,7 +24,7 @@ namespace Model
   class NotifyResourceDeploymentStatusChangeRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API NotifyResourceDeploymentStatusChangeRequest();
+    AWS_PROTON_API NotifyResourceDeploymentStatusChangeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The deployment ID for your provisioned resource.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline NotifyResourceDeploymentStatusChangeRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    NotifyResourceDeploymentStatusChangeRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,54 +54,48 @@ namespace Model
      * <p>The provisioned resource state change detail data that's returned by
      * Proton.</p>
      */
-    inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<Output>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline NotifyResourceDeploymentStatusChangeRequest& WithOutputs(const Aws::Vector<Output>& value) { SetOutputs(value); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& AddOutputs(const Output& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline NotifyResourceDeploymentStatusChangeRequest& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<Output>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<Output>>
+    NotifyResourceDeploymentStatusChangeRequest& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = Output>
+    NotifyResourceDeploymentStatusChangeRequest& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The provisioned resource Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline NotifyResourceDeploymentStatusChangeRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    NotifyResourceDeploymentStatusChangeRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of your provisioned resource.</p>
      */
-    inline const ResourceDeploymentStatus& GetStatus() const{ return m_status; }
+    inline ResourceDeploymentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceDeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline NotifyResourceDeploymentStatusChangeRequest& WithStatus(const ResourceDeploymentStatus& value) { SetStatus(value); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithStatus(ResourceDeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceDeploymentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline NotifyResourceDeploymentStatusChangeRequest& WithStatus(ResourceDeploymentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deployment status message for your provisioned resource.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline NotifyResourceDeploymentStatusChangeRequest& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline NotifyResourceDeploymentStatusChangeRequest& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    NotifyResourceDeploymentStatusChangeRequest& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,7 +108,7 @@ namespace Model
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    ResourceDeploymentStatus m_status;
+    ResourceDeploymentStatus m_status{ResourceDeploymentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

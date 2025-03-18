@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableProfileRequest::DisableProfileRequest() : 
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableProfileRequest::SerializePayload() const
 {
   return {};

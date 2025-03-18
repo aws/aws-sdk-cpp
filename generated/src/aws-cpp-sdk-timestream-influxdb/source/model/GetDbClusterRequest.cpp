@@ -12,11 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDbClusterRequest::GetDbClusterRequest() : 
-    m_dbClusterIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDbClusterRequest::SerializePayload() const
 {
   JsonValue payload;

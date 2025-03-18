@@ -18,16 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-SimulationClock::SimulationClock() : 
-    m_status(ClockStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetStatus(ClockTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
-{
-}
-
 SimulationClock::SimulationClock(JsonView jsonValue)
-  : SimulationClock()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SimulationClock& SimulationClock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ClockStatusMapper::GetClockStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetStatus"))
   {
     m_targetStatus = ClockTargetStatusMapper::GetClockTargetStatusForName(jsonValue.GetString("TargetStatus"));
-
     m_targetStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

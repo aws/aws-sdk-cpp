@@ -12,14 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceSharePermissionsRequest::ListResourceSharePermissionsRequest() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceSharePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetUserAccessTasksRequest::BatchGetUserAccessTasksRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_taskIdListHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetUserAccessTasksRequest::SerializePayload() const
 {
   JsonValue payload;

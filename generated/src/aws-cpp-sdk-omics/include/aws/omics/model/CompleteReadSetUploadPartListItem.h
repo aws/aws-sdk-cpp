@@ -33,7 +33,7 @@ namespace Model
   class CompleteReadSetUploadPartListItem
   {
   public:
-    AWS_OMICS_API CompleteReadSetUploadPartListItem();
+    AWS_OMICS_API CompleteReadSetUploadPartListItem() = default;
     AWS_OMICS_API CompleteReadSetUploadPartListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API CompleteReadSetUploadPartListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> A number identifying the part in a read set upload. </p>
      */
-    inline int GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const { return m_partNumber; }
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
     inline CompleteReadSetUploadPartListItem& WithPartNumber(int value) { SetPartNumber(value); return *this;}
@@ -53,12 +53,10 @@ namespace Model
     /**
      * <p> The source file of the part being uploaded. </p>
      */
-    inline const ReadSetPartSource& GetPartSource() const{ return m_partSource; }
+    inline ReadSetPartSource GetPartSource() const { return m_partSource; }
     inline bool PartSourceHasBeenSet() const { return m_partSourceHasBeenSet; }
-    inline void SetPartSource(const ReadSetPartSource& value) { m_partSourceHasBeenSet = true; m_partSource = value; }
-    inline void SetPartSource(ReadSetPartSource&& value) { m_partSourceHasBeenSet = true; m_partSource = std::move(value); }
-    inline CompleteReadSetUploadPartListItem& WithPartSource(const ReadSetPartSource& value) { SetPartSource(value); return *this;}
-    inline CompleteReadSetUploadPartListItem& WithPartSource(ReadSetPartSource&& value) { SetPartSource(std::move(value)); return *this;}
+    inline void SetPartSource(ReadSetPartSource value) { m_partSourceHasBeenSet = true; m_partSource = value; }
+    inline CompleteReadSetUploadPartListItem& WithPartSource(ReadSetPartSource value) { SetPartSource(value); return *this;}
     ///@}
 
     ///@{
@@ -66,21 +64,19 @@ namespace Model
      * <p> A unique identifier used to confirm that parts are being added to the
      * correct upload. </p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline CompleteReadSetUploadPartListItem& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline CompleteReadSetUploadPartListItem& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline CompleteReadSetUploadPartListItem& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    CompleteReadSetUploadPartListItem& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
   private:
 
-    int m_partNumber;
+    int m_partNumber{0};
     bool m_partNumberHasBeenSet = false;
 
-    ReadSetPartSource m_partSource;
+    ReadSetPartSource m_partSource{ReadSetPartSource::NOT_SET};
     bool m_partSourceHasBeenSet = false;
 
     Aws::String m_checksum;

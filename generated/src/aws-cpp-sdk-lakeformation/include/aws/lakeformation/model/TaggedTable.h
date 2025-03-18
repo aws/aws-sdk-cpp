@@ -35,7 +35,7 @@ namespace Model
   class TaggedTable
   {
   public:
-    AWS_LAKEFORMATION_API TaggedTable();
+    AWS_LAKEFORMATION_API TaggedTable() = default;
     AWS_LAKEFORMATION_API TaggedTable(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API TaggedTable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,54 @@ namespace Model
     /**
      * <p>A table that has LF-tags attached to it.</p>
      */
-    inline const TableResource& GetTable() const{ return m_table; }
+    inline const TableResource& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const TableResource& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(TableResource&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline TaggedTable& WithTable(const TableResource& value) { SetTable(value); return *this;}
-    inline TaggedTable& WithTable(TableResource&& value) { SetTable(std::move(value)); return *this;}
+    template<typename TableT = TableResource>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = TableResource>
+    TaggedTable& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of LF-tags attached to the database where the table resides.</p>
      */
-    inline const Aws::Vector<LFTagPair>& GetLFTagOnDatabase() const{ return m_lFTagOnDatabase; }
+    inline const Aws::Vector<LFTagPair>& GetLFTagOnDatabase() const { return m_lFTagOnDatabase; }
     inline bool LFTagOnDatabaseHasBeenSet() const { return m_lFTagOnDatabaseHasBeenSet; }
-    inline void SetLFTagOnDatabase(const Aws::Vector<LFTagPair>& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase = value; }
-    inline void SetLFTagOnDatabase(Aws::Vector<LFTagPair>&& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase = std::move(value); }
-    inline TaggedTable& WithLFTagOnDatabase(const Aws::Vector<LFTagPair>& value) { SetLFTagOnDatabase(value); return *this;}
-    inline TaggedTable& WithLFTagOnDatabase(Aws::Vector<LFTagPair>&& value) { SetLFTagOnDatabase(std::move(value)); return *this;}
-    inline TaggedTable& AddLFTagOnDatabase(const LFTagPair& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase.push_back(value); return *this; }
-    inline TaggedTable& AddLFTagOnDatabase(LFTagPair&& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase.push_back(std::move(value)); return *this; }
+    template<typename LFTagOnDatabaseT = Aws::Vector<LFTagPair>>
+    void SetLFTagOnDatabase(LFTagOnDatabaseT&& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase = std::forward<LFTagOnDatabaseT>(value); }
+    template<typename LFTagOnDatabaseT = Aws::Vector<LFTagPair>>
+    TaggedTable& WithLFTagOnDatabase(LFTagOnDatabaseT&& value) { SetLFTagOnDatabase(std::forward<LFTagOnDatabaseT>(value)); return *this;}
+    template<typename LFTagOnDatabaseT = LFTagPair>
+    TaggedTable& AddLFTagOnDatabase(LFTagOnDatabaseT&& value) { m_lFTagOnDatabaseHasBeenSet = true; m_lFTagOnDatabase.emplace_back(std::forward<LFTagOnDatabaseT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of LF-tags attached to the table.</p>
      */
-    inline const Aws::Vector<LFTagPair>& GetLFTagsOnTable() const{ return m_lFTagsOnTable; }
+    inline const Aws::Vector<LFTagPair>& GetLFTagsOnTable() const { return m_lFTagsOnTable; }
     inline bool LFTagsOnTableHasBeenSet() const { return m_lFTagsOnTableHasBeenSet; }
-    inline void SetLFTagsOnTable(const Aws::Vector<LFTagPair>& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable = value; }
-    inline void SetLFTagsOnTable(Aws::Vector<LFTagPair>&& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable = std::move(value); }
-    inline TaggedTable& WithLFTagsOnTable(const Aws::Vector<LFTagPair>& value) { SetLFTagsOnTable(value); return *this;}
-    inline TaggedTable& WithLFTagsOnTable(Aws::Vector<LFTagPair>&& value) { SetLFTagsOnTable(std::move(value)); return *this;}
-    inline TaggedTable& AddLFTagsOnTable(const LFTagPair& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable.push_back(value); return *this; }
-    inline TaggedTable& AddLFTagsOnTable(LFTagPair&& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable.push_back(std::move(value)); return *this; }
+    template<typename LFTagsOnTableT = Aws::Vector<LFTagPair>>
+    void SetLFTagsOnTable(LFTagsOnTableT&& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable = std::forward<LFTagsOnTableT>(value); }
+    template<typename LFTagsOnTableT = Aws::Vector<LFTagPair>>
+    TaggedTable& WithLFTagsOnTable(LFTagsOnTableT&& value) { SetLFTagsOnTable(std::forward<LFTagsOnTableT>(value)); return *this;}
+    template<typename LFTagsOnTableT = LFTagPair>
+    TaggedTable& AddLFTagsOnTable(LFTagsOnTableT&& value) { m_lFTagsOnTableHasBeenSet = true; m_lFTagsOnTable.emplace_back(std::forward<LFTagsOnTableT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of LF-tags attached to columns in the table.</p>
      */
-    inline const Aws::Vector<ColumnLFTag>& GetLFTagsOnColumns() const{ return m_lFTagsOnColumns; }
+    inline const Aws::Vector<ColumnLFTag>& GetLFTagsOnColumns() const { return m_lFTagsOnColumns; }
     inline bool LFTagsOnColumnsHasBeenSet() const { return m_lFTagsOnColumnsHasBeenSet; }
-    inline void SetLFTagsOnColumns(const Aws::Vector<ColumnLFTag>& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns = value; }
-    inline void SetLFTagsOnColumns(Aws::Vector<ColumnLFTag>&& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns = std::move(value); }
-    inline TaggedTable& WithLFTagsOnColumns(const Aws::Vector<ColumnLFTag>& value) { SetLFTagsOnColumns(value); return *this;}
-    inline TaggedTable& WithLFTagsOnColumns(Aws::Vector<ColumnLFTag>&& value) { SetLFTagsOnColumns(std::move(value)); return *this;}
-    inline TaggedTable& AddLFTagsOnColumns(const ColumnLFTag& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns.push_back(value); return *this; }
-    inline TaggedTable& AddLFTagsOnColumns(ColumnLFTag&& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns.push_back(std::move(value)); return *this; }
+    template<typename LFTagsOnColumnsT = Aws::Vector<ColumnLFTag>>
+    void SetLFTagsOnColumns(LFTagsOnColumnsT&& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns = std::forward<LFTagsOnColumnsT>(value); }
+    template<typename LFTagsOnColumnsT = Aws::Vector<ColumnLFTag>>
+    TaggedTable& WithLFTagsOnColumns(LFTagsOnColumnsT&& value) { SetLFTagsOnColumns(std::forward<LFTagsOnColumnsT>(value)); return *this;}
+    template<typename LFTagsOnColumnsT = ColumnLFTag>
+    TaggedTable& AddLFTagsOnColumns(LFTagsOnColumnsT&& value) { m_lFTagsOnColumnsHasBeenSet = true; m_lFTagsOnColumns.emplace_back(std::forward<LFTagsOnColumnsT>(value)); return *this; }
     ///@}
   private:
 

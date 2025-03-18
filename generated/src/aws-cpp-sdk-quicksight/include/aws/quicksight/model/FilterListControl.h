@@ -36,7 +36,7 @@ namespace Model
   class FilterListControl
   {
   public:
-    AWS_QUICKSIGHT_API FilterListControl();
+    AWS_QUICKSIGHT_API FilterListControl() = default;
     AWS_QUICKSIGHT_API FilterListControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterListControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,54 +46,48 @@ namespace Model
     /**
      * <p>The ID of the <code>FilterListControl</code>.</p>
      */
-    inline const Aws::String& GetFilterControlId() const{ return m_filterControlId; }
+    inline const Aws::String& GetFilterControlId() const { return m_filterControlId; }
     inline bool FilterControlIdHasBeenSet() const { return m_filterControlIdHasBeenSet; }
-    inline void SetFilterControlId(const Aws::String& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = value; }
-    inline void SetFilterControlId(Aws::String&& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = std::move(value); }
-    inline void SetFilterControlId(const char* value) { m_filterControlIdHasBeenSet = true; m_filterControlId.assign(value); }
-    inline FilterListControl& WithFilterControlId(const Aws::String& value) { SetFilterControlId(value); return *this;}
-    inline FilterListControl& WithFilterControlId(Aws::String&& value) { SetFilterControlId(std::move(value)); return *this;}
-    inline FilterListControl& WithFilterControlId(const char* value) { SetFilterControlId(value); return *this;}
+    template<typename FilterControlIdT = Aws::String>
+    void SetFilterControlId(FilterControlIdT&& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = std::forward<FilterControlIdT>(value); }
+    template<typename FilterControlIdT = Aws::String>
+    FilterListControl& WithFilterControlId(FilterControlIdT&& value) { SetFilterControlId(std::forward<FilterControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the <code>FilterListControl</code>.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline FilterListControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline FilterListControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline FilterListControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    FilterListControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source filter ID of the <code>FilterListControl</code>.</p>
      */
-    inline const Aws::String& GetSourceFilterId() const{ return m_sourceFilterId; }
+    inline const Aws::String& GetSourceFilterId() const { return m_sourceFilterId; }
     inline bool SourceFilterIdHasBeenSet() const { return m_sourceFilterIdHasBeenSet; }
-    inline void SetSourceFilterId(const Aws::String& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = value; }
-    inline void SetSourceFilterId(Aws::String&& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = std::move(value); }
-    inline void SetSourceFilterId(const char* value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId.assign(value); }
-    inline FilterListControl& WithSourceFilterId(const Aws::String& value) { SetSourceFilterId(value); return *this;}
-    inline FilterListControl& WithSourceFilterId(Aws::String&& value) { SetSourceFilterId(std::move(value)); return *this;}
-    inline FilterListControl& WithSourceFilterId(const char* value) { SetSourceFilterId(value); return *this;}
+    template<typename SourceFilterIdT = Aws::String>
+    void SetSourceFilterId(SourceFilterIdT&& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = std::forward<SourceFilterIdT>(value); }
+    template<typename SourceFilterIdT = Aws::String>
+    FilterListControl& WithSourceFilterId(SourceFilterIdT&& value) { SetSourceFilterId(std::forward<SourceFilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const ListControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const ListControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const ListControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(ListControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline FilterListControl& WithDisplayOptions(const ListControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline FilterListControl& WithDisplayOptions(ListControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = ListControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = ListControlDisplayOptions>
+    FilterListControl& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,24 +97,22 @@ namespace Model
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
      */
-    inline const SheetControlListType& GetType() const{ return m_type; }
+    inline SheetControlListType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FilterListControl& WithType(const SheetControlListType& value) { SetType(value); return *this;}
-    inline FilterListControl& WithType(SheetControlListType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlListType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FilterListControl& WithType(SheetControlListType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of selectable values that are used in a control.</p>
      */
-    inline const FilterSelectableValues& GetSelectableValues() const{ return m_selectableValues; }
+    inline const FilterSelectableValues& GetSelectableValues() const { return m_selectableValues; }
     inline bool SelectableValuesHasBeenSet() const { return m_selectableValuesHasBeenSet; }
-    inline void SetSelectableValues(const FilterSelectableValues& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = value; }
-    inline void SetSelectableValues(FilterSelectableValues&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::move(value); }
-    inline FilterListControl& WithSelectableValues(const FilterSelectableValues& value) { SetSelectableValues(value); return *this;}
-    inline FilterListControl& WithSelectableValues(FilterSelectableValues&& value) { SetSelectableValues(std::move(value)); return *this;}
+    template<typename SelectableValuesT = FilterSelectableValues>
+    void SetSelectableValues(SelectableValuesT&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::forward<SelectableValuesT>(value); }
+    template<typename SelectableValuesT = FilterSelectableValues>
+    FilterListControl& WithSelectableValues(SelectableValuesT&& value) { SetSelectableValues(std::forward<SelectableValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +120,12 @@ namespace Model
      * <p>The values that are displayed in a control can be configured to only show
      * values that are valid based on what's selected in other controls.</p>
      */
-    inline const CascadingControlConfiguration& GetCascadingControlConfiguration() const{ return m_cascadingControlConfiguration; }
+    inline const CascadingControlConfiguration& GetCascadingControlConfiguration() const { return m_cascadingControlConfiguration; }
     inline bool CascadingControlConfigurationHasBeenSet() const { return m_cascadingControlConfigurationHasBeenSet; }
-    inline void SetCascadingControlConfiguration(const CascadingControlConfiguration& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = value; }
-    inline void SetCascadingControlConfiguration(CascadingControlConfiguration&& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = std::move(value); }
-    inline FilterListControl& WithCascadingControlConfiguration(const CascadingControlConfiguration& value) { SetCascadingControlConfiguration(value); return *this;}
-    inline FilterListControl& WithCascadingControlConfiguration(CascadingControlConfiguration&& value) { SetCascadingControlConfiguration(std::move(value)); return *this;}
+    template<typename CascadingControlConfigurationT = CascadingControlConfiguration>
+    void SetCascadingControlConfiguration(CascadingControlConfigurationT&& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = std::forward<CascadingControlConfigurationT>(value); }
+    template<typename CascadingControlConfigurationT = CascadingControlConfiguration>
+    FilterListControl& WithCascadingControlConfiguration(CascadingControlConfigurationT&& value) { SetCascadingControlConfiguration(std::forward<CascadingControlConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,7 +141,7 @@ namespace Model
     ListControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    SheetControlListType m_type;
+    SheetControlListType m_type{SheetControlListType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     FilterSelectableValues m_selectableValues;

@@ -12,16 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProjectRequest::CreateProjectRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recipeNameHasBeenSet(false),
-    m_sampleHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProjectRequest::SerializePayload() const
 {
   JsonValue payload;

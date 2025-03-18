@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PropertyValidationException::PropertyValidationException() : 
-    m_messageHasBeenSet(false),
-    m_propertyListHasBeenSet(false)
-{
-}
-
 PropertyValidationException::PropertyValidationException(JsonView jsonValue)
-  : PropertyValidationException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PropertyValidationException& PropertyValidationException::operator =(JsonView js
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyList"))
   {
     Aws::Utils::Array<JsonView> propertyListJsonList = jsonValue.GetArray("PropertyList");
@@ -48,7 +39,6 @@ PropertyValidationException& PropertyValidationException::operator =(JsonView js
     }
     m_propertyListHasBeenSet = true;
   }
-
   return *this;
 }
 

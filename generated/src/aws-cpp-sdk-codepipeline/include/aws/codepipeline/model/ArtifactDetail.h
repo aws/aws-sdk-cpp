@@ -33,7 +33,7 @@ namespace Model
   class ArtifactDetail
   {
   public:
-    AWS_CODEPIPELINE_API ArtifactDetail();
+    AWS_CODEPIPELINE_API ArtifactDetail() = default;
     AWS_CODEPIPELINE_API ArtifactDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ArtifactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The artifact object name for the action execution.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ArtifactDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ArtifactDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ArtifactDetail& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ArtifactDetail& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 artifact location for the action execution.</p>
      */
-    inline const S3Location& GetS3location() const{ return m_s3location; }
+    inline const S3Location& GetS3location() const { return m_s3location; }
     inline bool S3locationHasBeenSet() const { return m_s3locationHasBeenSet; }
-    inline void SetS3location(const S3Location& value) { m_s3locationHasBeenSet = true; m_s3location = value; }
-    inline void SetS3location(S3Location&& value) { m_s3locationHasBeenSet = true; m_s3location = std::move(value); }
-    inline ArtifactDetail& WithS3location(const S3Location& value) { SetS3location(value); return *this;}
-    inline ArtifactDetail& WithS3location(S3Location&& value) { SetS3location(std::move(value)); return *this;}
+    template<typename S3locationT = S3Location>
+    void SetS3location(S3locationT&& value) { m_s3locationHasBeenSet = true; m_s3location = std::forward<S3locationT>(value); }
+    template<typename S3locationT = S3Location>
+    ArtifactDetail& WithS3location(S3locationT&& value) { SetS3location(std::forward<S3locationT>(value)); return *this;}
     ///@}
   private:
 

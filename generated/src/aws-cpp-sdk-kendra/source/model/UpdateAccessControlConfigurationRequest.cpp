@@ -12,16 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccessControlConfigurationRequest::UpdateAccessControlConfigurationRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_hierarchicalAccessControlListHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccessControlConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

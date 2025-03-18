@@ -12,13 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAttributeGroupRequest::UpdateAttributeGroupRequest() : 
-    m_attributeGroupHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAttributeGroupRequest::SerializePayload() const
 {
   JsonValue payload;

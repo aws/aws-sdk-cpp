@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EventSubscription::EventSubscription() : 
-    m_customerAwsIdHasBeenSet(false),
-    m_custSubscriptionIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EventSubscription::EventSubscription(const XmlNode& xmlNode)
-  : EventSubscription()
 {
   *this = xmlNode;
 }
@@ -88,6 +71,7 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     if(!sourceIdsListNode.IsNull())
     {
       XmlNode sourceIdsListMember = sourceIdsListNode.FirstChild("SourceId");
+      m_sourceIdsListHasBeenSet = !sourceIdsListMember.IsNull();
       while(!sourceIdsListMember.IsNull())
       {
         m_sourceIdsList.push_back(sourceIdsListMember.GetText());
@@ -100,6 +84,7 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     if(!eventCategoriesListNode.IsNull())
     {
       XmlNode eventCategoriesListMember = eventCategoriesListNode.FirstChild("EventCategory");
+      m_eventCategoriesListHasBeenSet = !eventCategoriesListMember.IsNull();
       while(!eventCategoriesListMember.IsNull())
       {
         m_eventCategoriesList.push_back(eventCategoriesListMember.GetText());
@@ -124,6 +109,7 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

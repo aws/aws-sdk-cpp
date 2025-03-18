@@ -35,7 +35,7 @@ namespace Model
   class S3DirectTarget
   {
   public:
-    AWS_GLUE_API S3DirectTarget();
+    AWS_GLUE_API S3DirectTarget() = default;
     AWS_GLUE_API S3DirectTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API S3DirectTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,57 +45,52 @@ namespace Model
     /**
      * <p>The name of the data target.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3DirectTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3DirectTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3DirectTarget& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3DirectTarget& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The nodes that are inputs to the data target.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline S3DirectTarget& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline S3DirectTarget& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline S3DirectTarget& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline S3DirectTarget& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline S3DirectTarget& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    S3DirectTarget& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    S3DirectTarget& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies native partitioning using a sequence of keys.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const{ return m_partitionKeys; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const { return m_partitionKeys; }
     inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
-    inline void SetPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
-    inline void SetPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
-    inline S3DirectTarget& WithPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetPartitionKeys(value); return *this;}
-    inline S3DirectTarget& WithPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetPartitionKeys(std::move(value)); return *this;}
-    inline S3DirectTarget& AddPartitionKeys(const Aws::Vector<Aws::String>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
-    inline S3DirectTarget& AddPartitionKeys(Aws::Vector<Aws::String>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
+    template<typename PartitionKeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::forward<PartitionKeysT>(value); }
+    template<typename PartitionKeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    S3DirectTarget& WithPartitionKeys(PartitionKeysT&& value) { SetPartitionKeys(std::forward<PartitionKeysT>(value)); return *this;}
+    template<typename PartitionKeysT = Aws::Vector<Aws::String>>
+    S3DirectTarget& AddPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.emplace_back(std::forward<PartitionKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A single Amazon S3 path to write to.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline S3DirectTarget& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline S3DirectTarget& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline S3DirectTarget& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    S3DirectTarget& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,38 +99,34 @@ namespace Model
      * data has a standard file extension. Possible values are <code>"gzip"</code> and
      * <code>"bzip"</code>).</p>
      */
-    inline const Aws::String& GetCompression() const{ return m_compression; }
+    inline const Aws::String& GetCompression() const { return m_compression; }
     inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
-    inline void SetCompression(const Aws::String& value) { m_compressionHasBeenSet = true; m_compression = value; }
-    inline void SetCompression(Aws::String&& value) { m_compressionHasBeenSet = true; m_compression = std::move(value); }
-    inline void SetCompression(const char* value) { m_compressionHasBeenSet = true; m_compression.assign(value); }
-    inline S3DirectTarget& WithCompression(const Aws::String& value) { SetCompression(value); return *this;}
-    inline S3DirectTarget& WithCompression(Aws::String&& value) { SetCompression(std::move(value)); return *this;}
-    inline S3DirectTarget& WithCompression(const char* value) { SetCompression(value); return *this;}
+    template<typename CompressionT = Aws::String>
+    void SetCompression(CompressionT&& value) { m_compressionHasBeenSet = true; m_compression = std::forward<CompressionT>(value); }
+    template<typename CompressionT = Aws::String>
+    S3DirectTarget& WithCompression(CompressionT&& value) { SetCompression(std::forward<CompressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data output format for the target.</p>
      */
-    inline const TargetFormat& GetFormat() const{ return m_format; }
+    inline TargetFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const TargetFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(TargetFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline S3DirectTarget& WithFormat(const TargetFormat& value) { SetFormat(value); return *this;}
-    inline S3DirectTarget& WithFormat(TargetFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(TargetFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline S3DirectTarget& WithFormat(TargetFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A policy that specifies update behavior for the crawler.</p>
      */
-    inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
+    inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const { return m_schemaChangePolicy; }
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
-    inline void SetSchemaChangePolicy(const DirectSchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
-    inline void SetSchemaChangePolicy(DirectSchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
-    inline S3DirectTarget& WithSchemaChangePolicy(const DirectSchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
-    inline S3DirectTarget& WithSchemaChangePolicy(DirectSchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
+    template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
+    void SetSchemaChangePolicy(SchemaChangePolicyT&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::forward<SchemaChangePolicyT>(value); }
+    template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
+    S3DirectTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
     ///@}
   private:
 
@@ -154,7 +145,7 @@ namespace Model
     Aws::String m_compression;
     bool m_compressionHasBeenSet = false;
 
-    TargetFormat m_format;
+    TargetFormat m_format{TargetFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     DirectSchemaChangePolicy m_schemaChangePolicy;

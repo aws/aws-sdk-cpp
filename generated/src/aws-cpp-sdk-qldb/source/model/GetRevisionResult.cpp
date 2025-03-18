@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRevisionResult::GetRevisionResult()
-{
-}
-
 GetRevisionResult::GetRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRevisionResult& GetRevisionResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Proof"))
   {
     m_proof = jsonValue.GetObject("Proof");
-
+    m_proofHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetObject("Revision");
-
+    m_revisionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

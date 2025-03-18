@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MetricComparisonComputation::MetricComparisonComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_fromValueHasBeenSet(false),
-    m_targetValueHasBeenSet(false)
-{
-}
-
 MetricComparisonComputation::MetricComparisonComputation(JsonView jsonValue)
-  : MetricComparisonComputation()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ MetricComparisonComputation& MetricComparisonComputation::operator =(JsonView js
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromValue"))
   {
     m_fromValue = jsonValue.GetObject("FromValue");
-
     m_fromValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetObject("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

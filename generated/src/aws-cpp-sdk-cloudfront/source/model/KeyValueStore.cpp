@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KeyValueStore::KeyValueStore() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 KeyValueStore::KeyValueStore(const XmlNode& xmlNode)
-  : KeyValueStore()
 {
   *this = xmlNode;
 }

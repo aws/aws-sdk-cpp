@@ -27,7 +27,7 @@ namespace Model
   class PutConfigurationSetSuppressionOptionsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API PutConfigurationSetSuppressionOptionsRequest();
+    AWS_SESV2_API PutConfigurationSetSuppressionOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the configuration set to change the suppression list preferences
      * for.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,13 @@ namespace Model
      * Amazon SES adds an email address to the suppression list for your account when a
      * message sent to that address results in a hard bounce.</p> </li> </ul>
      */
-    inline const Aws::Vector<SuppressionListReason>& GetSuppressedReasons() const{ return m_suppressedReasons; }
+    inline const Aws::Vector<SuppressionListReason>& GetSuppressedReasons() const { return m_suppressedReasons; }
     inline bool SuppressedReasonsHasBeenSet() const { return m_suppressedReasonsHasBeenSet; }
-    inline void SetSuppressedReasons(const Aws::Vector<SuppressionListReason>& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = value; }
-    inline void SetSuppressedReasons(Aws::Vector<SuppressionListReason>&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = std::move(value); }
-    inline PutConfigurationSetSuppressionOptionsRequest& WithSuppressedReasons(const Aws::Vector<SuppressionListReason>& value) { SetSuppressedReasons(value); return *this;}
-    inline PutConfigurationSetSuppressionOptionsRequest& WithSuppressedReasons(Aws::Vector<SuppressionListReason>&& value) { SetSuppressedReasons(std::move(value)); return *this;}
-    inline PutConfigurationSetSuppressionOptionsRequest& AddSuppressedReasons(const SuppressionListReason& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(value); return *this; }
-    inline PutConfigurationSetSuppressionOptionsRequest& AddSuppressedReasons(SuppressionListReason&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(std::move(value)); return *this; }
+    template<typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+    void SetSuppressedReasons(SuppressedReasonsT&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = std::forward<SuppressedReasonsT>(value); }
+    template<typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+    PutConfigurationSetSuppressionOptionsRequest& WithSuppressedReasons(SuppressedReasonsT&& value) { SetSuppressedReasons(std::forward<SuppressedReasonsT>(value)); return *this;}
+    inline PutConfigurationSetSuppressionOptionsRequest& AddSuppressedReasons(SuppressionListReason value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(value); return *this; }
     ///@}
   private:
 

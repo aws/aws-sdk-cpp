@@ -35,7 +35,7 @@ namespace Model
   class ListTagsForResourcesResult
   {
   public:
-    AWS_ROUTE53_API ListTagsForResourcesResult();
+    AWS_ROUTE53_API ListTagsForResourcesResult() = default;
     AWS_ROUTE53_API ListTagsForResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListTagsForResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
      * specified resources.</p>
      */
-    inline const Aws::Vector<ResourceTagSet>& GetResourceTagSets() const{ return m_resourceTagSets; }
-    inline void SetResourceTagSets(const Aws::Vector<ResourceTagSet>& value) { m_resourceTagSets = value; }
-    inline void SetResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { m_resourceTagSets = std::move(value); }
-    inline ListTagsForResourcesResult& WithResourceTagSets(const Aws::Vector<ResourceTagSet>& value) { SetResourceTagSets(value); return *this;}
-    inline ListTagsForResourcesResult& WithResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { SetResourceTagSets(std::move(value)); return *this;}
-    inline ListTagsForResourcesResult& AddResourceTagSets(const ResourceTagSet& value) { m_resourceTagSets.push_back(value); return *this; }
-    inline ListTagsForResourcesResult& AddResourceTagSets(ResourceTagSet&& value) { m_resourceTagSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceTagSet>& GetResourceTagSets() const { return m_resourceTagSets; }
+    template<typename ResourceTagSetsT = Aws::Vector<ResourceTagSet>>
+    void SetResourceTagSets(ResourceTagSetsT&& value) { m_resourceTagSetsHasBeenSet = true; m_resourceTagSets = std::forward<ResourceTagSetsT>(value); }
+    template<typename ResourceTagSetsT = Aws::Vector<ResourceTagSet>>
+    ListTagsForResourcesResult& WithResourceTagSets(ResourceTagSetsT&& value) { SetResourceTagSets(std::forward<ResourceTagSetsT>(value)); return *this;}
+    template<typename ResourceTagSetsT = ResourceTagSet>
+    ListTagsForResourcesResult& AddResourceTagSets(ResourceTagSetsT&& value) { m_resourceTagSetsHasBeenSet = true; m_resourceTagSets.emplace_back(std::forward<ResourceTagSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTagsForResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTagsForResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTagsForResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTagsForResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceTagSet> m_resourceTagSets;
+    bool m_resourceTagSetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

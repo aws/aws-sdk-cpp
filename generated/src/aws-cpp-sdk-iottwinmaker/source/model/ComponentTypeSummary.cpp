@@ -18,19 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ComponentTypeSummary::ComponentTypeSummary() : 
-    m_arnHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_componentTypeNameHasBeenSet(false)
-{
-}
-
 ComponentTypeSummary::ComponentTypeSummary(JsonView jsonValue)
-  : ComponentTypeSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ComponentTypeSummary& ComponentTypeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
-
     m_componentTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeName"))
   {
     m_componentTypeName = jsonValue.GetString("componentTypeName");
-
     m_componentTypeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

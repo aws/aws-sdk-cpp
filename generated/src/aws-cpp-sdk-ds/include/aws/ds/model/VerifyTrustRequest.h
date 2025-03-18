@@ -26,7 +26,7 @@ namespace Model
   class VerifyTrustRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API VerifyTrustRequest();
+    AWS_DIRECTORYSERVICE_API VerifyTrustRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
-    inline const Aws::String& GetTrustId() const{ return m_trustId; }
+    inline const Aws::String& GetTrustId() const { return m_trustId; }
     inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
-    inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
-    inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
-    inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
-    inline VerifyTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-    inline VerifyTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-    inline VerifyTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
+    template<typename TrustIdT = Aws::String>
+    void SetTrustId(TrustIdT&& value) { m_trustIdHasBeenSet = true; m_trustId = std::forward<TrustIdT>(value); }
+    template<typename TrustIdT = Aws::String>
+    VerifyTrustRequest& WithTrustId(TrustIdT&& value) { SetTrustId(std::forward<TrustIdT>(value)); return *this;}
     ///@}
   private:
 

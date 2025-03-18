@@ -28,7 +28,7 @@ namespace Model
   class GetColumnStatisticsTaskSettingsResult
   {
   public:
-    AWS_GLUE_API GetColumnStatisticsTaskSettingsResult();
+    AWS_GLUE_API GetColumnStatisticsTaskSettingsResult() = default;
     AWS_GLUE_API GetColumnStatisticsTaskSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetColumnStatisticsTaskSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A <code>ColumnStatisticsTaskSettings</code> object representing the settings
      * for the column statistics task.</p>
      */
-    inline const ColumnStatisticsTaskSettings& GetColumnStatisticsTaskSettings() const{ return m_columnStatisticsTaskSettings; }
-    inline void SetColumnStatisticsTaskSettings(const ColumnStatisticsTaskSettings& value) { m_columnStatisticsTaskSettings = value; }
-    inline void SetColumnStatisticsTaskSettings(ColumnStatisticsTaskSettings&& value) { m_columnStatisticsTaskSettings = std::move(value); }
-    inline GetColumnStatisticsTaskSettingsResult& WithColumnStatisticsTaskSettings(const ColumnStatisticsTaskSettings& value) { SetColumnStatisticsTaskSettings(value); return *this;}
-    inline GetColumnStatisticsTaskSettingsResult& WithColumnStatisticsTaskSettings(ColumnStatisticsTaskSettings&& value) { SetColumnStatisticsTaskSettings(std::move(value)); return *this;}
+    inline const ColumnStatisticsTaskSettings& GetColumnStatisticsTaskSettings() const { return m_columnStatisticsTaskSettings; }
+    template<typename ColumnStatisticsTaskSettingsT = ColumnStatisticsTaskSettings>
+    void SetColumnStatisticsTaskSettings(ColumnStatisticsTaskSettingsT&& value) { m_columnStatisticsTaskSettingsHasBeenSet = true; m_columnStatisticsTaskSettings = std::forward<ColumnStatisticsTaskSettingsT>(value); }
+    template<typename ColumnStatisticsTaskSettingsT = ColumnStatisticsTaskSettings>
+    GetColumnStatisticsTaskSettingsResult& WithColumnStatisticsTaskSettings(ColumnStatisticsTaskSettingsT&& value) { SetColumnStatisticsTaskSettings(std::forward<ColumnStatisticsTaskSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetColumnStatisticsTaskSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetColumnStatisticsTaskSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetColumnStatisticsTaskSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetColumnStatisticsTaskSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ColumnStatisticsTaskSettings m_columnStatisticsTaskSettings;
+    bool m_columnStatisticsTaskSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

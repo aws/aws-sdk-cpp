@@ -18,13 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration() : 
-    m_kmsKeyHasBeenSet(false)
-{
-}
-
 CustomerContentEncryptionConfiguration::CustomerContentEncryptionConfiguration(JsonView jsonValue)
-  : CustomerContentEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomerContentEncryptionConfiguration& CustomerContentEncryptionConfiguration::
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

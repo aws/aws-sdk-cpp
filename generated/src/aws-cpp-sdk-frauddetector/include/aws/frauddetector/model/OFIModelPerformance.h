@@ -32,7 +32,7 @@ namespace Model
   class OFIModelPerformance
   {
   public:
-    AWS_FRAUDDETECTOR_API OFIModelPerformance();
+    AWS_FRAUDDETECTOR_API OFIModelPerformance() = default;
     AWS_FRAUDDETECTOR_API OFIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API OFIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * (tpr) and false positive rate (FPR) across all possible model score thresholds.
      * </p>
      */
-    inline double GetAuc() const{ return m_auc; }
+    inline double GetAuc() const { return m_auc; }
     inline bool AucHasBeenSet() const { return m_aucHasBeenSet; }
     inline void SetAuc(double value) { m_aucHasBeenSet = true; m_auc = value; }
     inline OFIModelPerformance& WithAuc(double value) { SetAuc(value); return *this;}
@@ -55,16 +55,16 @@ namespace Model
      * <p> Indicates the range of area under curve (auc) expected from the OFI model. A
      * range greater than 0.1 indicates higher model uncertainity. </p>
      */
-    inline const UncertaintyRange& GetUncertaintyRange() const{ return m_uncertaintyRange; }
+    inline const UncertaintyRange& GetUncertaintyRange() const { return m_uncertaintyRange; }
     inline bool UncertaintyRangeHasBeenSet() const { return m_uncertaintyRangeHasBeenSet; }
-    inline void SetUncertaintyRange(const UncertaintyRange& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = value; }
-    inline void SetUncertaintyRange(UncertaintyRange&& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = std::move(value); }
-    inline OFIModelPerformance& WithUncertaintyRange(const UncertaintyRange& value) { SetUncertaintyRange(value); return *this;}
-    inline OFIModelPerformance& WithUncertaintyRange(UncertaintyRange&& value) { SetUncertaintyRange(std::move(value)); return *this;}
+    template<typename UncertaintyRangeT = UncertaintyRange>
+    void SetUncertaintyRange(UncertaintyRangeT&& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = std::forward<UncertaintyRangeT>(value); }
+    template<typename UncertaintyRangeT = UncertaintyRange>
+    OFIModelPerformance& WithUncertaintyRange(UncertaintyRangeT&& value) { SetUncertaintyRange(std::forward<UncertaintyRangeT>(value)); return *this;}
     ///@}
   private:
 
-    double m_auc;
+    double m_auc{0.0};
     bool m_aucHasBeenSet = false;
 
     UncertaintyRange m_uncertaintyRange;

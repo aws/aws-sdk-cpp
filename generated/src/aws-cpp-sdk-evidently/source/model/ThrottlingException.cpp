@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaCode"))
   {
     m_quotaCode = jsonValue.GetString("quotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

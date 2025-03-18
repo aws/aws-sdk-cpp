@@ -34,7 +34,7 @@ namespace Model
   class ProvisionedPollerConfig
   {
   public:
-    AWS_LAMBDA_API ProvisionedPollerConfig();
+    AWS_LAMBDA_API ProvisionedPollerConfig() = default;
     AWS_LAMBDA_API ProvisionedPollerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API ProvisionedPollerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The minimum number of event pollers this event source can scale down to.</p>
      */
-    inline int GetMinimumPollers() const{ return m_minimumPollers; }
+    inline int GetMinimumPollers() const { return m_minimumPollers; }
     inline bool MinimumPollersHasBeenSet() const { return m_minimumPollersHasBeenSet; }
     inline void SetMinimumPollers(int value) { m_minimumPollersHasBeenSet = true; m_minimumPollers = value; }
     inline ProvisionedPollerConfig& WithMinimumPollers(int value) { SetMinimumPollers(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
     /**
      * <p>The maximum number of event pollers this event source can scale up to.</p>
      */
-    inline int GetMaximumPollers() const{ return m_maximumPollers; }
+    inline int GetMaximumPollers() const { return m_maximumPollers; }
     inline bool MaximumPollersHasBeenSet() const { return m_maximumPollersHasBeenSet; }
     inline void SetMaximumPollers(int value) { m_maximumPollersHasBeenSet = true; m_maximumPollers = value; }
     inline ProvisionedPollerConfig& WithMaximumPollers(int value) { SetMaximumPollers(value); return *this;}
     ///@}
   private:
 
-    int m_minimumPollers;
+    int m_minimumPollers{0};
     bool m_minimumPollersHasBeenSet = false;
 
-    int m_maximumPollers;
+    int m_maximumPollers{0};
     bool m_maximumPollersHasBeenSet = false;
   };
 

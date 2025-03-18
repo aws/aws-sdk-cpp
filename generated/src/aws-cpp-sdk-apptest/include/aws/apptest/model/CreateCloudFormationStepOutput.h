@@ -32,7 +32,7 @@ namespace Model
   class CreateCloudFormationStepOutput
   {
   public:
-    AWS_APPTEST_API CreateCloudFormationStepOutput();
+    AWS_APPTEST_API CreateCloudFormationStepOutput() = default;
     AWS_APPTEST_API CreateCloudFormationStepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CreateCloudFormationStepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,28 @@ namespace Model
     /**
      * <p>The stack ID of the CloudFormation step output.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline CreateCloudFormationStepOutput& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline CreateCloudFormationStepOutput& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline CreateCloudFormationStepOutput& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    CreateCloudFormationStepOutput& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The exports of the CloudFormation step output.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetExports() const{ return m_exports; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetExports() const { return m_exports; }
     inline bool ExportsHasBeenSet() const { return m_exportsHasBeenSet; }
-    inline void SetExports(const Aws::Map<Aws::String, Aws::String>& value) { m_exportsHasBeenSet = true; m_exports = value; }
-    inline void SetExports(Aws::Map<Aws::String, Aws::String>&& value) { m_exportsHasBeenSet = true; m_exports = std::move(value); }
-    inline CreateCloudFormationStepOutput& WithExports(const Aws::Map<Aws::String, Aws::String>& value) { SetExports(value); return *this;}
-    inline CreateCloudFormationStepOutput& WithExports(Aws::Map<Aws::String, Aws::String>&& value) { SetExports(std::move(value)); return *this;}
-    inline CreateCloudFormationStepOutput& AddExports(const Aws::String& key, const Aws::String& value) { m_exportsHasBeenSet = true; m_exports.emplace(key, value); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(Aws::String&& key, const Aws::String& value) { m_exportsHasBeenSet = true; m_exports.emplace(std::move(key), value); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(const Aws::String& key, Aws::String&& value) { m_exportsHasBeenSet = true; m_exports.emplace(key, std::move(value)); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(Aws::String&& key, Aws::String&& value) { m_exportsHasBeenSet = true; m_exports.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(const char* key, Aws::String&& value) { m_exportsHasBeenSet = true; m_exports.emplace(key, std::move(value)); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(Aws::String&& key, const char* value) { m_exportsHasBeenSet = true; m_exports.emplace(std::move(key), value); return *this; }
-    inline CreateCloudFormationStepOutput& AddExports(const char* key, const char* value) { m_exportsHasBeenSet = true; m_exports.emplace(key, value); return *this; }
+    template<typename ExportsT = Aws::Map<Aws::String, Aws::String>>
+    void SetExports(ExportsT&& value) { m_exportsHasBeenSet = true; m_exports = std::forward<ExportsT>(value); }
+    template<typename ExportsT = Aws::Map<Aws::String, Aws::String>>
+    CreateCloudFormationStepOutput& WithExports(ExportsT&& value) { SetExports(std::forward<ExportsT>(value)); return *this;}
+    template<typename ExportsKeyT = Aws::String, typename ExportsValueT = Aws::String>
+    CreateCloudFormationStepOutput& AddExports(ExportsKeyT&& key, ExportsValueT&& value) {
+      m_exportsHasBeenSet = true; m_exports.emplace(std::forward<ExportsKeyT>(key), std::forward<ExportsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

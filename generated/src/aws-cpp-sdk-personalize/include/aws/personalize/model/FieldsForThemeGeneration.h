@@ -32,7 +32,7 @@ namespace Model
   class FieldsForThemeGeneration
   {
   public:
-    AWS_PERSONALIZE_API FieldsForThemeGeneration();
+    AWS_PERSONALIZE_API FieldsForThemeGeneration() = default;
     AWS_PERSONALIZE_API FieldsForThemeGeneration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API FieldsForThemeGeneration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the Items dataset column that stores the name of each item in the
      * dataset.</p>
      */
-    inline const Aws::String& GetItemName() const{ return m_itemName; }
+    inline const Aws::String& GetItemName() const { return m_itemName; }
     inline bool ItemNameHasBeenSet() const { return m_itemNameHasBeenSet; }
-    inline void SetItemName(const Aws::String& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
-    inline void SetItemName(Aws::String&& value) { m_itemNameHasBeenSet = true; m_itemName = std::move(value); }
-    inline void SetItemName(const char* value) { m_itemNameHasBeenSet = true; m_itemName.assign(value); }
-    inline FieldsForThemeGeneration& WithItemName(const Aws::String& value) { SetItemName(value); return *this;}
-    inline FieldsForThemeGeneration& WithItemName(Aws::String&& value) { SetItemName(std::move(value)); return *this;}
-    inline FieldsForThemeGeneration& WithItemName(const char* value) { SetItemName(value); return *this;}
+    template<typename ItemNameT = Aws::String>
+    void SetItemName(ItemNameT&& value) { m_itemNameHasBeenSet = true; m_itemName = std::forward<ItemNameT>(value); }
+    template<typename ItemNameT = Aws::String>
+    FieldsForThemeGeneration& WithItemName(ItemNameT&& value) { SetItemName(std::forward<ItemNameT>(value)); return *this;}
     ///@}
   private:
 

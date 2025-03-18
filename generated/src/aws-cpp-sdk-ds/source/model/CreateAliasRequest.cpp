@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAliasRequest::CreateAliasRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 Aws::String CreateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Origins::Origins() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 Origins::Origins(const XmlNode& xmlNode)
-  : Origins()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ Origins& Origins::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Origin");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

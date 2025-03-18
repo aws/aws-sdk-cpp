@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterWorkspaceDirectoryRequest::DeregisterWorkspaceDirectoryRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterWorkspaceDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

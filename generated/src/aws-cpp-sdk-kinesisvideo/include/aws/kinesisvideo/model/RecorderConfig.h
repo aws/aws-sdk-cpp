@@ -34,7 +34,7 @@ namespace Model
   class RecorderConfig
   {
   public:
-    AWS_KINESISVIDEO_API RecorderConfig();
+    AWS_KINESISVIDEO_API RecorderConfig() = default;
     AWS_KINESISVIDEO_API RecorderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API RecorderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the
      * media files streamed to the camera. </p>
      */
-    inline const MediaSourceConfig& GetMediaSourceConfig() const{ return m_mediaSourceConfig; }
+    inline const MediaSourceConfig& GetMediaSourceConfig() const { return m_mediaSourceConfig; }
     inline bool MediaSourceConfigHasBeenSet() const { return m_mediaSourceConfigHasBeenSet; }
-    inline void SetMediaSourceConfig(const MediaSourceConfig& value) { m_mediaSourceConfigHasBeenSet = true; m_mediaSourceConfig = value; }
-    inline void SetMediaSourceConfig(MediaSourceConfig&& value) { m_mediaSourceConfigHasBeenSet = true; m_mediaSourceConfig = std::move(value); }
-    inline RecorderConfig& WithMediaSourceConfig(const MediaSourceConfig& value) { SetMediaSourceConfig(value); return *this;}
-    inline RecorderConfig& WithMediaSourceConfig(MediaSourceConfig&& value) { SetMediaSourceConfig(std::move(value)); return *this;}
+    template<typename MediaSourceConfigT = MediaSourceConfig>
+    void SetMediaSourceConfig(MediaSourceConfigT&& value) { m_mediaSourceConfigHasBeenSet = true; m_mediaSourceConfig = std::forward<MediaSourceConfigT>(value); }
+    template<typename MediaSourceConfigT = MediaSourceConfig>
+    RecorderConfig& WithMediaSourceConfig(MediaSourceConfigT&& value) { SetMediaSourceConfig(std::forward<MediaSourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent
      * will always be set to recording mode.</p>
      */
-    inline const ScheduleConfig& GetScheduleConfig() const{ return m_scheduleConfig; }
+    inline const ScheduleConfig& GetScheduleConfig() const { return m_scheduleConfig; }
     inline bool ScheduleConfigHasBeenSet() const { return m_scheduleConfigHasBeenSet; }
-    inline void SetScheduleConfig(const ScheduleConfig& value) { m_scheduleConfigHasBeenSet = true; m_scheduleConfig = value; }
-    inline void SetScheduleConfig(ScheduleConfig&& value) { m_scheduleConfigHasBeenSet = true; m_scheduleConfig = std::move(value); }
-    inline RecorderConfig& WithScheduleConfig(const ScheduleConfig& value) { SetScheduleConfig(value); return *this;}
-    inline RecorderConfig& WithScheduleConfig(ScheduleConfig&& value) { SetScheduleConfig(std::move(value)); return *this;}
+    template<typename ScheduleConfigT = ScheduleConfig>
+    void SetScheduleConfig(ScheduleConfigT&& value) { m_scheduleConfigHasBeenSet = true; m_scheduleConfig = std::forward<ScheduleConfigT>(value); }
+    template<typename ScheduleConfigT = ScheduleConfig>
+    RecorderConfig& WithScheduleConfig(ScheduleConfigT&& value) { SetScheduleConfig(std::forward<ScheduleConfigT>(value)); return *this;}
     ///@}
   private:
 

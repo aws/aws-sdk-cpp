@@ -18,17 +18,7 @@ namespace FSx
 namespace Model
 {
 
-WindowsAuditLogConfiguration::WindowsAuditLogConfiguration() : 
-    m_fileAccessAuditLogLevel(WindowsAccessAuditLogLevel::NOT_SET),
-    m_fileAccessAuditLogLevelHasBeenSet(false),
-    m_fileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel::NOT_SET),
-    m_fileShareAccessAuditLogLevelHasBeenSet(false),
-    m_auditLogDestinationHasBeenSet(false)
-{
-}
-
 WindowsAuditLogConfiguration::WindowsAuditLogConfiguration(JsonView jsonValue)
-  : WindowsAuditLogConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WindowsAuditLogConfiguration& WindowsAuditLogConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("FileAccessAuditLogLevel"))
   {
     m_fileAccessAuditLogLevel = WindowsAccessAuditLogLevelMapper::GetWindowsAccessAuditLogLevelForName(jsonValue.GetString("FileAccessAuditLogLevel"));
-
     m_fileAccessAuditLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareAccessAuditLogLevel"))
   {
     m_fileShareAccessAuditLogLevel = WindowsAccessAuditLogLevelMapper::GetWindowsAccessAuditLogLevelForName(jsonValue.GetString("FileShareAccessAuditLogLevel"));
-
     m_fileShareAccessAuditLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditLogDestination"))
   {
     m_auditLogDestination = jsonValue.GetString("AuditLogDestination");
-
     m_auditLogDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class UpdateTypedLinkFacetRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API UpdateTypedLinkFacetRequest();
+    AWS_CLOUDDIRECTORY_API UpdateTypedLinkFacetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,42 +41,38 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-    inline UpdateTypedLinkFacetRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    UpdateTypedLinkFacetRequest& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the typed link facet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateTypedLinkFacetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTypedLinkFacetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Attributes update structure.</p>
      */
-    inline const Aws::Vector<TypedLinkFacetAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+    inline const Aws::Vector<TypedLinkFacetAttributeUpdate>& GetAttributeUpdates() const { return m_attributeUpdates; }
     inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
-    inline void SetAttributeUpdates(const Aws::Vector<TypedLinkFacetAttributeUpdate>& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
-    inline void SetAttributeUpdates(Aws::Vector<TypedLinkFacetAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
-    inline UpdateTypedLinkFacetRequest& WithAttributeUpdates(const Aws::Vector<TypedLinkFacetAttributeUpdate>& value) { SetAttributeUpdates(value); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithAttributeUpdates(Aws::Vector<TypedLinkFacetAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
-    inline UpdateTypedLinkFacetRequest& AddAttributeUpdates(const TypedLinkFacetAttributeUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
-    inline UpdateTypedLinkFacetRequest& AddAttributeUpdates(TypedLinkFacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
+    template<typename AttributeUpdatesT = Aws::Vector<TypedLinkFacetAttributeUpdate>>
+    void SetAttributeUpdates(AttributeUpdatesT&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::forward<AttributeUpdatesT>(value); }
+    template<typename AttributeUpdatesT = Aws::Vector<TypedLinkFacetAttributeUpdate>>
+    UpdateTypedLinkFacetRequest& WithAttributeUpdates(AttributeUpdatesT&& value) { SetAttributeUpdates(std::forward<AttributeUpdatesT>(value)); return *this;}
+    template<typename AttributeUpdatesT = TypedLinkFacetAttributeUpdate>
+    UpdateTypedLinkFacetRequest& AddAttributeUpdates(AttributeUpdatesT&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace_back(std::forward<AttributeUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,15 +88,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
+    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const { return m_identityAttributeOrder; }
     inline bool IdentityAttributeOrderHasBeenSet() const { return m_identityAttributeOrderHasBeenSet; }
-    inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
-    inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
-    inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
-    inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
-    inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
-    inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
-    inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    void SetIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::forward<IdentityAttributeOrderT>(value); }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(IdentityAttributeOrderT&& value) { SetIdentityAttributeOrder(std::forward<IdentityAttributeOrderT>(value)); return *this;}
+    template<typename IdentityAttributeOrderT = Aws::String>
+    UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.emplace_back(std::forward<IdentityAttributeOrderT>(value)); return *this; }
     ///@}
   private:
 

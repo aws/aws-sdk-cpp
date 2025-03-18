@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-UspsZipPlus4::UspsZipPlus4() : 
-    m_recordTypeCode(RecordTypeCode::NOT_SET),
-    m_recordTypeCodeHasBeenSet(false)
-{
-}
-
 UspsZipPlus4::UspsZipPlus4(JsonView jsonValue)
-  : UspsZipPlus4()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UspsZipPlus4& UspsZipPlus4::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordTypeCode"))
   {
     m_recordTypeCode = RecordTypeCodeMapper::GetRecordTypeCodeForName(jsonValue.GetString("RecordTypeCode"));
-
     m_recordTypeCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

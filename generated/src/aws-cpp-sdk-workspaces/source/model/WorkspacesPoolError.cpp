@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspacesPoolError::WorkspacesPoolError() : 
-    m_errorCode(WorkspacesPoolErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 WorkspacesPoolError::WorkspacesPoolError(JsonView jsonValue)
-  : WorkspacesPoolError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkspacesPoolError& WorkspacesPoolError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = WorkspacesPoolErrorCodeMapper::GetWorkspacesPoolErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary() : 
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_estimatedPercentMonthlySavings(0.0),
-    m_estimatedPercentMonthlySavingsHasBeenSet(false)
-{
-}
-
 TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary(JsonView jsonValue)
-  : TrustedAdvisorCostOptimizingSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TrustedAdvisorCostOptimizingSummary& TrustedAdvisorCostOptimizingSummary::operat
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetDouble("estimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedPercentMonthlySavings"))
   {
     m_estimatedPercentMonthlySavings = jsonValue.GetDouble("estimatedPercentMonthlySavings");
-
     m_estimatedPercentMonthlySavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

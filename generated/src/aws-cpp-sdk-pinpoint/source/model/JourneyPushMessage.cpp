@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyPushMessage::JourneyPushMessage() : 
-    m_timeToLiveHasBeenSet(false)
-{
-}
-
 JourneyPushMessage::JourneyPushMessage(JsonView jsonValue)
-  : JourneyPushMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JourneyPushMessage& JourneyPushMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeToLive"))
   {
     m_timeToLive = jsonValue.GetString("TimeToLive");
-
     m_timeToLiveHasBeenSet = true;
   }
-
   return *this;
 }
 

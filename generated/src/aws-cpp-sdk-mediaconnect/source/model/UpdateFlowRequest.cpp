@@ -12,14 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowRequest::UpdateFlowRequest() : 
-    m_flowArnHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_maintenanceHasBeenSet(false),
-    m_sourceMonitoringConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlowRequest::SerializePayload() const
 {
   JsonValue payload;

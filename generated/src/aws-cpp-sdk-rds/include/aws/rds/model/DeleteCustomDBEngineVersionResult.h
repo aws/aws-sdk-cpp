@@ -42,7 +42,7 @@ namespace Model
   class DeleteCustomDBEngineVersionResult
   {
   public:
-    AWS_RDS_API DeleteCustomDBEngineVersionResult();
+    AWS_RDS_API DeleteCustomDBEngineVersionResult() = default;
     AWS_RDS_API DeleteCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteCustomDBEngineVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -51,65 +51,55 @@ namespace Model
     /**
      * <p>The name of the database engine.</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
-    inline void SetEngine(const Aws::String& value) { m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engine.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithEngine(const char* value) { SetEngine(value); return *this;}
+    inline const Aws::String& GetEngine() const { return m_engine; }
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the database engine.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the DB parameter group family for the database engine.</p>
      */
-    inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
-    inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamily = value; }
-    inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamily = std::move(value); }
-    inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamily.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
+    inline const Aws::String& GetDBParameterGroupFamily() const { return m_dBParameterGroupFamily; }
+    template<typename DBParameterGroupFamilyT = Aws::String>
+    void SetDBParameterGroupFamily(DBParameterGroupFamilyT&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::forward<DBParameterGroupFamilyT>(value); }
+    template<typename DBParameterGroupFamilyT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDBParameterGroupFamily(DBParameterGroupFamilyT&& value) { SetDBParameterGroupFamily(std::forward<DBParameterGroupFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the database engine.</p>
      */
-    inline const Aws::String& GetDBEngineDescription() const{ return m_dBEngineDescription; }
-    inline void SetDBEngineDescription(const Aws::String& value) { m_dBEngineDescription = value; }
-    inline void SetDBEngineDescription(Aws::String&& value) { m_dBEngineDescription = std::move(value); }
-    inline void SetDBEngineDescription(const char* value) { m_dBEngineDescription.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineDescription(const Aws::String& value) { SetDBEngineDescription(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineDescription(Aws::String&& value) { SetDBEngineDescription(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineDescription(const char* value) { SetDBEngineDescription(value); return *this;}
+    inline const Aws::String& GetDBEngineDescription() const { return m_dBEngineDescription; }
+    template<typename DBEngineDescriptionT = Aws::String>
+    void SetDBEngineDescription(DBEngineDescriptionT&& value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription = std::forward<DBEngineDescriptionT>(value); }
+    template<typename DBEngineDescriptionT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDBEngineDescription(DBEngineDescriptionT&& value) { SetDBEngineDescription(std::forward<DBEngineDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the database engine version.</p>
      */
-    inline const Aws::String& GetDBEngineVersionDescription() const{ return m_dBEngineVersionDescription; }
-    inline void SetDBEngineVersionDescription(const Aws::String& value) { m_dBEngineVersionDescription = value; }
-    inline void SetDBEngineVersionDescription(Aws::String&& value) { m_dBEngineVersionDescription = std::move(value); }
-    inline void SetDBEngineVersionDescription(const char* value) { m_dBEngineVersionDescription.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionDescription(const Aws::String& value) { SetDBEngineVersionDescription(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionDescription(Aws::String&& value) { SetDBEngineVersionDescription(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionDescription(const char* value) { SetDBEngineVersionDescription(value); return *this;}
+    inline const Aws::String& GetDBEngineVersionDescription() const { return m_dBEngineVersionDescription; }
+    template<typename DBEngineVersionDescriptionT = Aws::String>
+    void SetDBEngineVersionDescription(DBEngineVersionDescriptionT&& value) { m_dBEngineVersionDescriptionHasBeenSet = true; m_dBEngineVersionDescription = std::forward<DBEngineVersionDescriptionT>(value); }
+    template<typename DBEngineVersionDescriptionT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDBEngineVersionDescription(DBEngineVersionDescriptionT&& value) { SetDBEngineVersionDescription(std::forward<DBEngineVersionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,22 +108,22 @@ namespace Model
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified.</p>
      */
-    inline const CharacterSet& GetDefaultCharacterSet() const{ return m_defaultCharacterSet; }
-    inline void SetDefaultCharacterSet(const CharacterSet& value) { m_defaultCharacterSet = value; }
-    inline void SetDefaultCharacterSet(CharacterSet&& value) { m_defaultCharacterSet = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDefaultCharacterSet(const CharacterSet& value) { SetDefaultCharacterSet(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDefaultCharacterSet(CharacterSet&& value) { SetDefaultCharacterSet(std::move(value)); return *this;}
+    inline const CharacterSet& GetDefaultCharacterSet() const { return m_defaultCharacterSet; }
+    template<typename DefaultCharacterSetT = CharacterSet>
+    void SetDefaultCharacterSet(DefaultCharacterSetT&& value) { m_defaultCharacterSetHasBeenSet = true; m_defaultCharacterSet = std::forward<DefaultCharacterSetT>(value); }
+    template<typename DefaultCharacterSetT = CharacterSet>
+    DeleteCustomDBEngineVersionResult& WithDefaultCharacterSet(DefaultCharacterSetT&& value) { SetDefaultCharacterSet(std::forward<DefaultCharacterSetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The EC2 image</p>
      */
-    inline const CustomDBEngineVersionAMI& GetImage() const{ return m_image; }
-    inline void SetImage(const CustomDBEngineVersionAMI& value) { m_image = value; }
-    inline void SetImage(CustomDBEngineVersionAMI&& value) { m_image = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithImage(const CustomDBEngineVersionAMI& value) { SetImage(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithImage(CustomDBEngineVersionAMI&& value) { SetImage(std::move(value)); return *this;}
+    inline const CustomDBEngineVersionAMI& GetImage() const { return m_image; }
+    template<typename ImageT = CustomDBEngineVersionAMI>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = CustomDBEngineVersionAMI>
+    DeleteCustomDBEngineVersionResult& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,13 +131,11 @@ namespace Model
      * <p>A value that indicates the source media provider of the AMI based on the
      * usage operation. Applicable for RDS Custom for SQL Server.</p>
      */
-    inline const Aws::String& GetDBEngineMediaType() const{ return m_dBEngineMediaType; }
-    inline void SetDBEngineMediaType(const Aws::String& value) { m_dBEngineMediaType = value; }
-    inline void SetDBEngineMediaType(Aws::String&& value) { m_dBEngineMediaType = std::move(value); }
-    inline void SetDBEngineMediaType(const char* value) { m_dBEngineMediaType.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineMediaType(const Aws::String& value) { SetDBEngineMediaType(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineMediaType(Aws::String&& value) { SetDBEngineMediaType(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineMediaType(const char* value) { SetDBEngineMediaType(value); return *this;}
+    inline const Aws::String& GetDBEngineMediaType() const { return m_dBEngineMediaType; }
+    template<typename DBEngineMediaTypeT = Aws::String>
+    void SetDBEngineMediaType(DBEngineMediaTypeT&& value) { m_dBEngineMediaTypeHasBeenSet = true; m_dBEngineMediaType = std::forward<DBEngineMediaTypeT>(value); }
+    template<typename DBEngineMediaTypeT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDBEngineMediaType(DBEngineMediaTypeT&& value) { SetDBEngineMediaType(std::forward<DBEngineMediaTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,13 +144,13 @@ namespace Model
      * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
      * operation.</p>
      */
-    inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const{ return m_supportedCharacterSets; }
-    inline void SetSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedCharacterSets = value; }
-    inline void SetSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedCharacterSets = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedCharacterSets(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedCharacterSets(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedCharacterSets(const CharacterSet& value) { m_supportedCharacterSets.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const { return m_supportedCharacterSets; }
+    template<typename SupportedCharacterSetsT = Aws::Vector<CharacterSet>>
+    void SetSupportedCharacterSets(SupportedCharacterSetsT&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets = std::forward<SupportedCharacterSetsT>(value); }
+    template<typename SupportedCharacterSetsT = Aws::Vector<CharacterSet>>
+    DeleteCustomDBEngineVersionResult& WithSupportedCharacterSets(SupportedCharacterSetsT&& value) { SetSupportedCharacterSets(std::forward<SupportedCharacterSetsT>(value)); return *this;}
+    template<typename SupportedCharacterSetsT = CharacterSet>
+    DeleteCustomDBEngineVersionResult& AddSupportedCharacterSets(SupportedCharacterSetsT&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.emplace_back(std::forward<SupportedCharacterSetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -171,13 +159,13 @@ namespace Model
      * <code>NcharCharacterSetName</code> parameter of the
      * <code>CreateDBInstance</code> operation.</p>
      */
-    inline const Aws::Vector<CharacterSet>& GetSupportedNcharCharacterSets() const{ return m_supportedNcharCharacterSets; }
-    inline void SetSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedNcharCharacterSets = value; }
-    inline void SetSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedNcharCharacterSets = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedNcharCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedNcharCharacterSets(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedNcharCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedNcharCharacterSets(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedNcharCharacterSets(const CharacterSet& value) { m_supportedNcharCharacterSets.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedNcharCharacterSets(CharacterSet&& value) { m_supportedNcharCharacterSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CharacterSet>& GetSupportedNcharCharacterSets() const { return m_supportedNcharCharacterSets; }
+    template<typename SupportedNcharCharacterSetsT = Aws::Vector<CharacterSet>>
+    void SetSupportedNcharCharacterSets(SupportedNcharCharacterSetsT&& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets = std::forward<SupportedNcharCharacterSetsT>(value); }
+    template<typename SupportedNcharCharacterSetsT = Aws::Vector<CharacterSet>>
+    DeleteCustomDBEngineVersionResult& WithSupportedNcharCharacterSets(SupportedNcharCharacterSetsT&& value) { SetSupportedNcharCharacterSets(std::forward<SupportedNcharCharacterSetsT>(value)); return *this;}
+    template<typename SupportedNcharCharacterSetsT = CharacterSet>
+    DeleteCustomDBEngineVersionResult& AddSupportedNcharCharacterSets(SupportedNcharCharacterSetsT&& value) { m_supportedNcharCharacterSetsHasBeenSet = true; m_supportedNcharCharacterSets.emplace_back(std::forward<SupportedNcharCharacterSetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -185,13 +173,13 @@ namespace Model
      * <p>A list of engine versions that this database engine version can be upgraded
      * to.</p>
      */
-    inline const Aws::Vector<UpgradeTarget>& GetValidUpgradeTarget() const{ return m_validUpgradeTarget; }
-    inline void SetValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { m_validUpgradeTarget = value; }
-    inline void SetValidUpgradeTarget(Aws::Vector<UpgradeTarget>&& value) { m_validUpgradeTarget = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { SetValidUpgradeTarget(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithValidUpgradeTarget(Aws::Vector<UpgradeTarget>&& value) { SetValidUpgradeTarget(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddValidUpgradeTarget(const UpgradeTarget& value) { m_validUpgradeTarget.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddValidUpgradeTarget(UpgradeTarget&& value) { m_validUpgradeTarget.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UpgradeTarget>& GetValidUpgradeTarget() const { return m_validUpgradeTarget; }
+    template<typename ValidUpgradeTargetT = Aws::Vector<UpgradeTarget>>
+    void SetValidUpgradeTarget(ValidUpgradeTargetT&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget = std::forward<ValidUpgradeTargetT>(value); }
+    template<typename ValidUpgradeTargetT = Aws::Vector<UpgradeTarget>>
+    DeleteCustomDBEngineVersionResult& WithValidUpgradeTarget(ValidUpgradeTargetT&& value) { SetValidUpgradeTarget(std::forward<ValidUpgradeTargetT>(value)); return *this;}
+    template<typename ValidUpgradeTargetT = UpgradeTarget>
+    DeleteCustomDBEngineVersionResult& AddValidUpgradeTarget(ValidUpgradeTargetT&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.emplace_back(std::forward<ValidUpgradeTargetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -199,13 +187,13 @@ namespace Model
      * <p>A list of the time zones supported by this engine for the
      * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
      */
-    inline const Aws::Vector<Timezone>& GetSupportedTimezones() const{ return m_supportedTimezones; }
-    inline void SetSupportedTimezones(const Aws::Vector<Timezone>& value) { m_supportedTimezones = value; }
-    inline void SetSupportedTimezones(Aws::Vector<Timezone>&& value) { m_supportedTimezones = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedTimezones(const Aws::Vector<Timezone>& value) { SetSupportedTimezones(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedTimezones(Aws::Vector<Timezone>&& value) { SetSupportedTimezones(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedTimezones(const Timezone& value) { m_supportedTimezones.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedTimezones(Timezone&& value) { m_supportedTimezones.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Timezone>& GetSupportedTimezones() const { return m_supportedTimezones; }
+    template<typename SupportedTimezonesT = Aws::Vector<Timezone>>
+    void SetSupportedTimezones(SupportedTimezonesT&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones = std::forward<SupportedTimezonesT>(value); }
+    template<typename SupportedTimezonesT = Aws::Vector<Timezone>>
+    DeleteCustomDBEngineVersionResult& WithSupportedTimezones(SupportedTimezonesT&& value) { SetSupportedTimezones(std::forward<SupportedTimezonesT>(value)); return *this;}
+    template<typename SupportedTimezonesT = Timezone>
+    DeleteCustomDBEngineVersionResult& AddSupportedTimezones(SupportedTimezonesT&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones.emplace_back(std::forward<SupportedTimezonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -213,14 +201,13 @@ namespace Model
      * <p>The types of logs that the database engine has available for export to
      * CloudWatch Logs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportableLogTypes() const{ return m_exportableLogTypes; }
-    inline void SetExportableLogTypes(const Aws::Vector<Aws::String>& value) { m_exportableLogTypes = value; }
-    inline void SetExportableLogTypes(Aws::Vector<Aws::String>&& value) { m_exportableLogTypes = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithExportableLogTypes(const Aws::Vector<Aws::String>& value) { SetExportableLogTypes(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithExportableLogTypes(Aws::Vector<Aws::String>&& value) { SetExportableLogTypes(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddExportableLogTypes(const Aws::String& value) { m_exportableLogTypes.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddExportableLogTypes(Aws::String&& value) { m_exportableLogTypes.push_back(std::move(value)); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddExportableLogTypes(const char* value) { m_exportableLogTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetExportableLogTypes() const { return m_exportableLogTypes; }
+    template<typename ExportableLogTypesT = Aws::Vector<Aws::String>>
+    void SetExportableLogTypes(ExportableLogTypesT&& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes = std::forward<ExportableLogTypesT>(value); }
+    template<typename ExportableLogTypesT = Aws::Vector<Aws::String>>
+    DeleteCustomDBEngineVersionResult& WithExportableLogTypes(ExportableLogTypesT&& value) { SetExportableLogTypes(std::forward<ExportableLogTypesT>(value)); return *this;}
+    template<typename ExportableLogTypesT = Aws::String>
+    DeleteCustomDBEngineVersionResult& AddExportableLogTypes(ExportableLogTypesT&& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes.emplace_back(std::forward<ExportableLogTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -228,8 +215,8 @@ namespace Model
      * <p>Indicates whether the engine version supports exporting the log types
      * specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
-    inline bool GetSupportsLogExportsToCloudwatchLogs() const{ return m_supportsLogExportsToCloudwatchLogs; }
-    inline void SetSupportsLogExportsToCloudwatchLogs(bool value) { m_supportsLogExportsToCloudwatchLogs = value; }
+    inline bool GetSupportsLogExportsToCloudwatchLogs() const { return m_supportsLogExportsToCloudwatchLogs; }
+    inline void SetSupportsLogExportsToCloudwatchLogs(bool value) { m_supportsLogExportsToCloudwatchLogsHasBeenSet = true; m_supportsLogExportsToCloudwatchLogs = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
     ///@}
 
@@ -237,8 +224,8 @@ namespace Model
     /**
      * <p>Indicates whether the database engine version supports read replicas.</p>
      */
-    inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
-    inline void SetSupportsReadReplica(bool value) { m_supportsReadReplica = value; }
+    inline bool GetSupportsReadReplica() const { return m_supportsReadReplica; }
+    inline void SetSupportsReadReplica(bool value) { m_supportsReadReplicaHasBeenSet = true; m_supportsReadReplica = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
     ///@}
 
@@ -246,14 +233,13 @@ namespace Model
     /**
      * <p>A list of the supported DB engine modes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
-    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModes = value; }
-    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModes = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModes.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModes.push_back(std::move(value)); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedEngineModes(const char* value) { m_supportedEngineModes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const { return m_supportedEngineModes; }
+    template<typename SupportedEngineModesT = Aws::Vector<Aws::String>>
+    void SetSupportedEngineModes(SupportedEngineModesT&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::forward<SupportedEngineModesT>(value); }
+    template<typename SupportedEngineModesT = Aws::Vector<Aws::String>>
+    DeleteCustomDBEngineVersionResult& WithSupportedEngineModes(SupportedEngineModesT&& value) { SetSupportedEngineModes(std::forward<SupportedEngineModesT>(value)); return *this;}
+    template<typename SupportedEngineModesT = Aws::String>
+    DeleteCustomDBEngineVersionResult& AddSupportedEngineModes(SupportedEngineModesT&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.emplace_back(std::forward<SupportedEngineModesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -269,14 +255,13 @@ namespace Model
      * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
      * the output.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedFeatureNames() const{ return m_supportedFeatureNames; }
-    inline void SetSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { m_supportedFeatureNames = value; }
-    inline void SetSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { m_supportedFeatureNames = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { SetSupportedFeatureNames(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { SetSupportedFeatureNames(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(const Aws::String& value) { m_supportedFeatureNames.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(Aws::String&& value) { m_supportedFeatureNames.push_back(std::move(value)); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(const char* value) { m_supportedFeatureNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSupportedFeatureNames() const { return m_supportedFeatureNames; }
+    template<typename SupportedFeatureNamesT = Aws::Vector<Aws::String>>
+    void SetSupportedFeatureNames(SupportedFeatureNamesT&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames = std::forward<SupportedFeatureNamesT>(value); }
+    template<typename SupportedFeatureNamesT = Aws::Vector<Aws::String>>
+    DeleteCustomDBEngineVersionResult& WithSupportedFeatureNames(SupportedFeatureNamesT&& value) { SetSupportedFeatureNames(std::forward<SupportedFeatureNamesT>(value)); return *this;}
+    template<typename SupportedFeatureNamesT = Aws::String>
+    DeleteCustomDBEngineVersionResult& AddSupportedFeatureNames(SupportedFeatureNamesT&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.emplace_back(std::forward<SupportedFeatureNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -284,13 +269,11 @@ namespace Model
      * <p>The status of the DB engine version, either <code>available</code> or
      * <code>deprecated</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -298,8 +281,8 @@ namespace Model
      * <p>Indicates whether you can use Aurora parallel query with a specific DB engine
      * version.</p>
      */
-    inline bool GetSupportsParallelQuery() const{ return m_supportsParallelQuery; }
-    inline void SetSupportsParallelQuery(bool value) { m_supportsParallelQuery = value; }
+    inline bool GetSupportsParallelQuery() const { return m_supportsParallelQuery; }
+    inline void SetSupportsParallelQuery(bool value) { m_supportsParallelQueryHasBeenSet = true; m_supportsParallelQuery = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsParallelQuery(bool value) { SetSupportsParallelQuery(value); return *this;}
     ///@}
 
@@ -308,8 +291,8 @@ namespace Model
      * <p>Indicates whether you can use Aurora global databases with a specific DB
      * engine version.</p>
      */
-    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
-    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabases = value; }
+    inline bool GetSupportsGlobalDatabases() const { return m_supportsGlobalDatabases; }
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
     ///@}
 
@@ -317,13 +300,11 @@ namespace Model
     /**
      * <p>The major engine version of the CEV.</p>
      */
-    inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
-    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersion = value; }
-    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersion = std::move(value); }
-    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersion.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
+    inline const Aws::String& GetMajorEngineVersion() const { return m_majorEngineVersion; }
+    template<typename MajorEngineVersionT = Aws::String>
+    void SetMajorEngineVersion(MajorEngineVersionT&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::forward<MajorEngineVersionT>(value); }
+    template<typename MajorEngineVersionT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithMajorEngineVersion(MajorEngineVersionT&& value) { SetMajorEngineVersion(std::forward<MajorEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -331,13 +312,11 @@ namespace Model
      * <p>The name of the Amazon S3 bucket that contains your database installation
      * files.</p>
      */
-    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const{ return m_databaseInstallationFilesS3BucketName; }
-    inline void SetDatabaseInstallationFilesS3BucketName(const Aws::String& value) { m_databaseInstallationFilesS3BucketName = value; }
-    inline void SetDatabaseInstallationFilesS3BucketName(Aws::String&& value) { m_databaseInstallationFilesS3BucketName = std::move(value); }
-    inline void SetDatabaseInstallationFilesS3BucketName(const char* value) { m_databaseInstallationFilesS3BucketName.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3BucketName(const Aws::String& value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3BucketName(Aws::String&& value) { SetDatabaseInstallationFilesS3BucketName(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3BucketName(const char* value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
+    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const { return m_databaseInstallationFilesS3BucketName; }
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    void SetDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::forward<DatabaseInstallationFilesS3BucketNameT>(value); }
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { SetDatabaseInstallationFilesS3BucketName(std::forward<DatabaseInstallationFilesS3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -345,26 +324,22 @@ namespace Model
      * <p>The Amazon S3 directory that contains the database installation files. If not
      * specified, then no prefix is assumed.</p>
      */
-    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const{ return m_databaseInstallationFilesS3Prefix; }
-    inline void SetDatabaseInstallationFilesS3Prefix(const Aws::String& value) { m_databaseInstallationFilesS3Prefix = value; }
-    inline void SetDatabaseInstallationFilesS3Prefix(Aws::String&& value) { m_databaseInstallationFilesS3Prefix = std::move(value); }
-    inline void SetDatabaseInstallationFilesS3Prefix(const char* value) { m_databaseInstallationFilesS3Prefix.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3Prefix(const Aws::String& value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3Prefix(Aws::String&& value) { SetDatabaseInstallationFilesS3Prefix(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3Prefix(const char* value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
+    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const { return m_databaseInstallationFilesS3Prefix; }
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    void SetDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::forward<DatabaseInstallationFilesS3PrefixT>(value); }
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { SetDatabaseInstallationFilesS3Prefix(std::forward<DatabaseInstallationFilesS3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the custom engine version.</p>
      */
-    inline const Aws::String& GetDBEngineVersionArn() const{ return m_dBEngineVersionArn; }
-    inline void SetDBEngineVersionArn(const Aws::String& value) { m_dBEngineVersionArn = value; }
-    inline void SetDBEngineVersionArn(Aws::String&& value) { m_dBEngineVersionArn = std::move(value); }
-    inline void SetDBEngineVersionArn(const char* value) { m_dBEngineVersionArn.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionArn(const Aws::String& value) { SetDBEngineVersionArn(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionArn(Aws::String&& value) { SetDBEngineVersionArn(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithDBEngineVersionArn(const char* value) { SetDBEngineVersionArn(value); return *this;}
+    inline const Aws::String& GetDBEngineVersionArn() const { return m_dBEngineVersionArn; }
+    template<typename DBEngineVersionArnT = Aws::String>
+    void SetDBEngineVersionArn(DBEngineVersionArnT&& value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn = std::forward<DBEngineVersionArnT>(value); }
+    template<typename DBEngineVersionArnT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithDBEngineVersionArn(DBEngineVersionArnT&& value) { SetDBEngineVersionArn(std::forward<DBEngineVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -372,35 +347,33 @@ namespace Model
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
      * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyId.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the DB engine version.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    DeleteCustomDBEngineVersionResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    DeleteCustomDBEngineVersionResult& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    DeleteCustomDBEngineVersionResult& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -408,8 +381,8 @@ namespace Model
      * <p>Indicates whether the engine version supports Babelfish for Aurora
      * PostgreSQL.</p>
      */
-    inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
-    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfish = value; }
+    inline bool GetSupportsBabelfish() const { return m_supportsBabelfish; }
+    inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
     ///@}
 
@@ -423,13 +396,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
      * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
-    inline const Aws::String& GetCustomDBEngineVersionManifest() const{ return m_customDBEngineVersionManifest; }
-    inline void SetCustomDBEngineVersionManifest(const Aws::String& value) { m_customDBEngineVersionManifest = value; }
-    inline void SetCustomDBEngineVersionManifest(Aws::String&& value) { m_customDBEngineVersionManifest = std::move(value); }
-    inline void SetCustomDBEngineVersionManifest(const char* value) { m_customDBEngineVersionManifest.assign(value); }
-    inline DeleteCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(const Aws::String& value) { SetCustomDBEngineVersionManifest(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(Aws::String&& value) { SetCustomDBEngineVersionManifest(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(const char* value) { SetCustomDBEngineVersionManifest(value); return *this;}
+    inline const Aws::String& GetCustomDBEngineVersionManifest() const { return m_customDBEngineVersionManifest; }
+    template<typename CustomDBEngineVersionManifestT = Aws::String>
+    void SetCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest = std::forward<CustomDBEngineVersionManifestT>(value); }
+    template<typename CustomDBEngineVersionManifestT = Aws::String>
+    DeleteCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(CustomDBEngineVersionManifestT&& value) { SetCustomDBEngineVersionManifest(std::forward<CustomDBEngineVersionManifestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -437,8 +408,8 @@ namespace Model
      * <p>Indicates whether the DB engine version supports Aurora Limitless
      * Database.</p>
      */
-    inline bool GetSupportsLimitlessDatabase() const{ return m_supportsLimitlessDatabase; }
-    inline void SetSupportsLimitlessDatabase(bool value) { m_supportsLimitlessDatabase = value; }
+    inline bool GetSupportsLimitlessDatabase() const { return m_supportsLimitlessDatabase; }
+    inline void SetSupportsLimitlessDatabase(bool value) { m_supportsLimitlessDatabaseHasBeenSet = true; m_supportsLimitlessDatabase = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsLimitlessDatabase(bool value) { SetSupportsLimitlessDatabase(value); return *this;}
     ///@}
 
@@ -447,8 +418,8 @@ namespace Model
      * <p>Indicates whether the engine version supports rotating the server certificate
      * without rebooting the DB instance.</p>
      */
-    inline bool GetSupportsCertificateRotationWithoutRestart() const{ return m_supportsCertificateRotationWithoutRestart; }
-    inline void SetSupportsCertificateRotationWithoutRestart(bool value) { m_supportsCertificateRotationWithoutRestart = value; }
+    inline bool GetSupportsCertificateRotationWithoutRestart() const { return m_supportsCertificateRotationWithoutRestart; }
+    inline void SetSupportsCertificateRotationWithoutRestart(bool value) { m_supportsCertificateRotationWithoutRestartHasBeenSet = true; m_supportsCertificateRotationWithoutRestart = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsCertificateRotationWithoutRestart(bool value) { SetSupportsCertificateRotationWithoutRestart(value); return *this;}
     ///@}
 
@@ -463,14 +434,13 @@ namespace Model
      * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
      * Aurora User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedCACertificateIdentifiers() const{ return m_supportedCACertificateIdentifiers; }
-    inline void SetSupportedCACertificateIdentifiers(const Aws::Vector<Aws::String>& value) { m_supportedCACertificateIdentifiers = value; }
-    inline void SetSupportedCACertificateIdentifiers(Aws::Vector<Aws::String>&& value) { m_supportedCACertificateIdentifiers = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithSupportedCACertificateIdentifiers(const Aws::Vector<Aws::String>& value) { SetSupportedCACertificateIdentifiers(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithSupportedCACertificateIdentifiers(Aws::Vector<Aws::String>&& value) { SetSupportedCACertificateIdentifiers(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionResult& AddSupportedCACertificateIdentifiers(const Aws::String& value) { m_supportedCACertificateIdentifiers.push_back(value); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedCACertificateIdentifiers(Aws::String&& value) { m_supportedCACertificateIdentifiers.push_back(std::move(value)); return *this; }
-    inline DeleteCustomDBEngineVersionResult& AddSupportedCACertificateIdentifiers(const char* value) { m_supportedCACertificateIdentifiers.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSupportedCACertificateIdentifiers() const { return m_supportedCACertificateIdentifiers; }
+    template<typename SupportedCACertificateIdentifiersT = Aws::Vector<Aws::String>>
+    void SetSupportedCACertificateIdentifiers(SupportedCACertificateIdentifiersT&& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers = std::forward<SupportedCACertificateIdentifiersT>(value); }
+    template<typename SupportedCACertificateIdentifiersT = Aws::Vector<Aws::String>>
+    DeleteCustomDBEngineVersionResult& WithSupportedCACertificateIdentifiers(SupportedCACertificateIdentifiersT&& value) { SetSupportedCACertificateIdentifiers(std::forward<SupportedCACertificateIdentifiersT>(value)); return *this;}
+    template<typename SupportedCACertificateIdentifiersT = Aws::String>
+    DeleteCustomDBEngineVersionResult& AddSupportedCACertificateIdentifiers(SupportedCACertificateIdentifiersT&& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers.emplace_back(std::forward<SupportedCACertificateIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -480,8 +450,8 @@ namespace Model
      * default, write operations aren't allowed on reader DB instances.</p> <p>Valid
      * for: Aurora DB clusters only</p>
      */
-    inline bool GetSupportsLocalWriteForwarding() const{ return m_supportsLocalWriteForwarding; }
-    inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwarding = value; }
+    inline bool GetSupportsLocalWriteForwarding() const { return m_supportsLocalWriteForwarding; }
+    inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwardingHasBeenSet = true; m_supportsLocalWriteForwarding = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
     ///@}
 
@@ -490,8 +460,8 @@ namespace Model
      * <p>Indicates whether the DB engine version supports zero-ETL integrations with
      * Amazon Redshift.</p>
      */
-    inline bool GetSupportsIntegrations() const{ return m_supportsIntegrations; }
-    inline void SetSupportsIntegrations(bool value) { m_supportsIntegrations = value; }
+    inline bool GetSupportsIntegrations() const { return m_supportsIntegrations; }
+    inline void SetSupportsIntegrations(bool value) { m_supportsIntegrationsHasBeenSet = true; m_supportsIntegrations = value; }
     inline DeleteCustomDBEngineVersionResult& WithSupportsIntegrations(bool value) { SetSupportsIntegrations(value); return *this;}
     ///@}
 
@@ -504,94 +474,130 @@ namespace Model
      * supports certain Aurora Serverless v2 features before you attempt to use those
      * features. </p>
      */
-    inline const ServerlessV2FeaturesSupport& GetServerlessV2FeaturesSupport() const{ return m_serverlessV2FeaturesSupport; }
-    inline void SetServerlessV2FeaturesSupport(const ServerlessV2FeaturesSupport& value) { m_serverlessV2FeaturesSupport = value; }
-    inline void SetServerlessV2FeaturesSupport(ServerlessV2FeaturesSupport&& value) { m_serverlessV2FeaturesSupport = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithServerlessV2FeaturesSupport(const ServerlessV2FeaturesSupport& value) { SetServerlessV2FeaturesSupport(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithServerlessV2FeaturesSupport(ServerlessV2FeaturesSupport&& value) { SetServerlessV2FeaturesSupport(std::move(value)); return *this;}
+    inline const ServerlessV2FeaturesSupport& GetServerlessV2FeaturesSupport() const { return m_serverlessV2FeaturesSupport; }
+    template<typename ServerlessV2FeaturesSupportT = ServerlessV2FeaturesSupport>
+    void SetServerlessV2FeaturesSupport(ServerlessV2FeaturesSupportT&& value) { m_serverlessV2FeaturesSupportHasBeenSet = true; m_serverlessV2FeaturesSupport = std::forward<ServerlessV2FeaturesSupportT>(value); }
+    template<typename ServerlessV2FeaturesSupportT = ServerlessV2FeaturesSupport>
+    DeleteCustomDBEngineVersionResult& WithServerlessV2FeaturesSupport(ServerlessV2FeaturesSupportT&& value) { SetServerlessV2FeaturesSupport(std::forward<ServerlessV2FeaturesSupportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteCustomDBEngineVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteCustomDBEngineVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteCustomDBEngineVersionResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_dBEngineDescription;
+    bool m_dBEngineDescriptionHasBeenSet = false;
 
     Aws::String m_dBEngineVersionDescription;
+    bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
     CharacterSet m_defaultCharacterSet;
+    bool m_defaultCharacterSetHasBeenSet = false;
 
     CustomDBEngineVersionAMI m_image;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_dBEngineMediaType;
+    bool m_dBEngineMediaTypeHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
+    bool m_supportedCharacterSetsHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedNcharCharacterSets;
+    bool m_supportedNcharCharacterSetsHasBeenSet = false;
 
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
+    bool m_validUpgradeTargetHasBeenSet = false;
 
     Aws::Vector<Timezone> m_supportedTimezones;
+    bool m_supportedTimezonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportableLogTypes;
+    bool m_exportableLogTypesHasBeenSet = false;
 
-    bool m_supportsLogExportsToCloudwatchLogs;
+    bool m_supportsLogExportsToCloudwatchLogs{false};
+    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
-    bool m_supportsReadReplica;
+    bool m_supportsReadReplica{false};
+    bool m_supportsReadReplicaHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedFeatureNames;
+    bool m_supportedFeatureNamesHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    bool m_supportsParallelQuery;
+    bool m_supportsParallelQuery{false};
+    bool m_supportsParallelQueryHasBeenSet = false;
 
-    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabases{false};
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3BucketName;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3Prefix;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
     Aws::String m_dBEngineVersionArn;
+    bool m_dBEngineVersionArnHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet = false;
 
-    bool m_supportsBabelfish;
+    bool m_supportsBabelfish{false};
+    bool m_supportsBabelfishHasBeenSet = false;
 
     Aws::String m_customDBEngineVersionManifest;
+    bool m_customDBEngineVersionManifestHasBeenSet = false;
 
-    bool m_supportsLimitlessDatabase;
+    bool m_supportsLimitlessDatabase{false};
+    bool m_supportsLimitlessDatabaseHasBeenSet = false;
 
-    bool m_supportsCertificateRotationWithoutRestart;
+    bool m_supportsCertificateRotationWithoutRestart{false};
+    bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
+    bool m_supportedCACertificateIdentifiersHasBeenSet = false;
 
-    bool m_supportsLocalWriteForwarding;
+    bool m_supportsLocalWriteForwarding{false};
+    bool m_supportsLocalWriteForwardingHasBeenSet = false;
 
-    bool m_supportsIntegrations;
+    bool m_supportsIntegrations{false};
+    bool m_supportsIntegrationsHasBeenSet = false;
 
     ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
+    bool m_serverlessV2FeaturesSupportHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeactivateEvaluationFormRequest::DeactivateEvaluationFormRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateEvaluationFormRequest::SerializePayload() const
 {
   JsonValue payload;

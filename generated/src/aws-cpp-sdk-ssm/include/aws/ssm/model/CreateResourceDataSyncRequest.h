@@ -23,7 +23,7 @@ namespace Model
   class CreateResourceDataSyncRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API CreateResourceDataSyncRequest();
+    AWS_SSM_API CreateResourceDataSyncRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>A name for the configuration.</p>
      */
-    inline const Aws::String& GetSyncName() const{ return m_syncName; }
+    inline const Aws::String& GetSyncName() const { return m_syncName; }
     inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
-    inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
-    inline void SetSyncName(Aws::String&& value) { m_syncNameHasBeenSet = true; m_syncName = std::move(value); }
-    inline void SetSyncName(const char* value) { m_syncNameHasBeenSet = true; m_syncName.assign(value); }
-    inline CreateResourceDataSyncRequest& WithSyncName(const Aws::String& value) { SetSyncName(value); return *this;}
-    inline CreateResourceDataSyncRequest& WithSyncName(Aws::String&& value) { SetSyncName(std::move(value)); return *this;}
-    inline CreateResourceDataSyncRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
+    template<typename SyncNameT = Aws::String>
+    void SetSyncName(SyncNameT&& value) { m_syncNameHasBeenSet = true; m_syncName = std::forward<SyncNameT>(value); }
+    template<typename SyncNameT = Aws::String>
+    CreateResourceDataSyncRequest& WithSyncName(SyncNameT&& value) { SetSyncName(std::forward<SyncNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>Amazon S3 configuration details for the sync. This parameter is required if
      * the <code>SyncType</code> value is SyncToDestination.</p>
      */
-    inline const ResourceDataSyncS3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const ResourceDataSyncS3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const ResourceDataSyncS3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(ResourceDataSyncS3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline CreateResourceDataSyncRequest& WithS3Destination(const ResourceDataSyncS3Destination& value) { SetS3Destination(value); return *this;}
-    inline CreateResourceDataSyncRequest& WithS3Destination(ResourceDataSyncS3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = ResourceDataSyncS3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = ResourceDataSyncS3Destination>
+    CreateResourceDataSyncRequest& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * for <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
      */
-    inline const Aws::String& GetSyncType() const{ return m_syncType; }
+    inline const Aws::String& GetSyncType() const { return m_syncType; }
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-    inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-    inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-    inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
-    inline CreateResourceDataSyncRequest& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
-    inline CreateResourceDataSyncRequest& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
-    inline CreateResourceDataSyncRequest& WithSyncType(const char* value) { SetSyncType(value); return *this;}
+    template<typename SyncTypeT = Aws::String>
+    void SetSyncType(SyncTypeT&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::forward<SyncTypeT>(value); }
+    template<typename SyncTypeT = Aws::String>
+    CreateResourceDataSyncRequest& WithSyncType(SyncTypeT&& value) { SetSyncType(std::forward<SyncTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +86,12 @@ namespace Model
      * <p>Specify information about the data sources to synchronize. This parameter is
      * required if the <code>SyncType</code> value is SyncFromSource.</p>
      */
-    inline const ResourceDataSyncSource& GetSyncSource() const{ return m_syncSource; }
+    inline const ResourceDataSyncSource& GetSyncSource() const { return m_syncSource; }
     inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
-    inline void SetSyncSource(const ResourceDataSyncSource& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
-    inline void SetSyncSource(ResourceDataSyncSource&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
-    inline CreateResourceDataSyncRequest& WithSyncSource(const ResourceDataSyncSource& value) { SetSyncSource(value); return *this;}
-    inline CreateResourceDataSyncRequest& WithSyncSource(ResourceDataSyncSource&& value) { SetSyncSource(std::move(value)); return *this;}
+    template<typename SyncSourceT = ResourceDataSyncSource>
+    void SetSyncSource(SyncSourceT&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::forward<SyncSourceT>(value); }
+    template<typename SyncSourceT = ResourceDataSyncSource>
+    CreateResourceDataSyncRequest& WithSyncSource(SyncSourceT&& value) { SetSyncSource(std::forward<SyncSourceT>(value)); return *this;}
     ///@}
   private:
 

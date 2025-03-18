@@ -30,7 +30,7 @@ namespace Model
   class StatePersistenceConfigurations
   {
   public:
-    AWS_QUICKSIGHT_API StatePersistenceConfigurations();
+    AWS_QUICKSIGHT_API StatePersistenceConfigurations() = default;
     AWS_QUICKSIGHT_API StatePersistenceConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API StatePersistenceConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
      * turned on or off.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline StatePersistenceConfigurations& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

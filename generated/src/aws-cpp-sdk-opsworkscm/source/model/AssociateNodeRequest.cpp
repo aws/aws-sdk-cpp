@@ -12,13 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateNodeRequest::AssociateNodeRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_engineAttributesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateNodeRequest::SerializePayload() const
 {
   JsonValue payload;

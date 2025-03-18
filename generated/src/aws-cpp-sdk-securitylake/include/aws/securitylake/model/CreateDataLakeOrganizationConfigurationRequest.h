@@ -22,7 +22,7 @@ namespace Model
   class CreateDataLakeOrganizationConfigurationRequest : public SecurityLakeRequest
   {
   public:
-    AWS_SECURITYLAKE_API CreateDataLakeOrganizationConfigurationRequest();
+    AWS_SECURITYLAKE_API CreateDataLakeOrganizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p>Enable Security Lake with the specified configuration settings, to begin
      * collecting security data for new accounts in your organization.</p>
      */
-    inline const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& GetAutoEnableNewAccount() const{ return m_autoEnableNewAccount; }
+    inline const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& GetAutoEnableNewAccount() const { return m_autoEnableNewAccount; }
     inline bool AutoEnableNewAccountHasBeenSet() const { return m_autoEnableNewAccountHasBeenSet; }
-    inline void SetAutoEnableNewAccount(const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount = value; }
-    inline void SetAutoEnableNewAccount(Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount = std::move(value); }
-    inline CreateDataLakeOrganizationConfigurationRequest& WithAutoEnableNewAccount(const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& value) { SetAutoEnableNewAccount(value); return *this;}
-    inline CreateDataLakeOrganizationConfigurationRequest& WithAutoEnableNewAccount(Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>&& value) { SetAutoEnableNewAccount(std::move(value)); return *this;}
-    inline CreateDataLakeOrganizationConfigurationRequest& AddAutoEnableNewAccount(const DataLakeAutoEnableNewAccountConfiguration& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount.push_back(value); return *this; }
-    inline CreateDataLakeOrganizationConfigurationRequest& AddAutoEnableNewAccount(DataLakeAutoEnableNewAccountConfiguration&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount.push_back(std::move(value)); return *this; }
+    template<typename AutoEnableNewAccountT = Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>>
+    void SetAutoEnableNewAccount(AutoEnableNewAccountT&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount = std::forward<AutoEnableNewAccountT>(value); }
+    template<typename AutoEnableNewAccountT = Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>>
+    CreateDataLakeOrganizationConfigurationRequest& WithAutoEnableNewAccount(AutoEnableNewAccountT&& value) { SetAutoEnableNewAccount(std::forward<AutoEnableNewAccountT>(value)); return *this;}
+    template<typename AutoEnableNewAccountT = DataLakeAutoEnableNewAccountConfiguration>
+    CreateDataLakeOrganizationConfigurationRequest& AddAutoEnableNewAccount(AutoEnableNewAccountT&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount.emplace_back(std::forward<AutoEnableNewAccountT>(value)); return *this; }
     ///@}
   private:
 

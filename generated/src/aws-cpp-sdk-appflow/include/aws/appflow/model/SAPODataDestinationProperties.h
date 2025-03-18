@@ -36,7 +36,7 @@ namespace Model
   class SAPODataDestinationProperties
   {
   public:
-    AWS_APPFLOW_API SAPODataDestinationProperties();
+    AWS_APPFLOW_API SAPODataDestinationProperties() = default;
     AWS_APPFLOW_API SAPODataDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SAPODataDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The object path specified in the SAPOData flow destination.</p>
      */
-    inline const Aws::String& GetObjectPath() const{ return m_objectPath; }
+    inline const Aws::String& GetObjectPath() const { return m_objectPath; }
     inline bool ObjectPathHasBeenSet() const { return m_objectPathHasBeenSet; }
-    inline void SetObjectPath(const Aws::String& value) { m_objectPathHasBeenSet = true; m_objectPath = value; }
-    inline void SetObjectPath(Aws::String&& value) { m_objectPathHasBeenSet = true; m_objectPath = std::move(value); }
-    inline void SetObjectPath(const char* value) { m_objectPathHasBeenSet = true; m_objectPath.assign(value); }
-    inline SAPODataDestinationProperties& WithObjectPath(const Aws::String& value) { SetObjectPath(value); return *this;}
-    inline SAPODataDestinationProperties& WithObjectPath(Aws::String&& value) { SetObjectPath(std::move(value)); return *this;}
-    inline SAPODataDestinationProperties& WithObjectPath(const char* value) { SetObjectPath(value); return *this;}
+    template<typename ObjectPathT = Aws::String>
+    void SetObjectPath(ObjectPathT&& value) { m_objectPathHasBeenSet = true; m_objectPath = std::forward<ObjectPathT>(value); }
+    template<typename ObjectPathT = Aws::String>
+    SAPODataDestinationProperties& WithObjectPath(ObjectPathT&& value) { SetObjectPath(std::forward<ObjectPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,45 +61,42 @@ namespace Model
      * determine where to write the response from a destination connector upon a
      * successful insert operation.</p>
      */
-    inline const SuccessResponseHandlingConfig& GetSuccessResponseHandlingConfig() const{ return m_successResponseHandlingConfig; }
+    inline const SuccessResponseHandlingConfig& GetSuccessResponseHandlingConfig() const { return m_successResponseHandlingConfig; }
     inline bool SuccessResponseHandlingConfigHasBeenSet() const { return m_successResponseHandlingConfigHasBeenSet; }
-    inline void SetSuccessResponseHandlingConfig(const SuccessResponseHandlingConfig& value) { m_successResponseHandlingConfigHasBeenSet = true; m_successResponseHandlingConfig = value; }
-    inline void SetSuccessResponseHandlingConfig(SuccessResponseHandlingConfig&& value) { m_successResponseHandlingConfigHasBeenSet = true; m_successResponseHandlingConfig = std::move(value); }
-    inline SAPODataDestinationProperties& WithSuccessResponseHandlingConfig(const SuccessResponseHandlingConfig& value) { SetSuccessResponseHandlingConfig(value); return *this;}
-    inline SAPODataDestinationProperties& WithSuccessResponseHandlingConfig(SuccessResponseHandlingConfig&& value) { SetSuccessResponseHandlingConfig(std::move(value)); return *this;}
+    template<typename SuccessResponseHandlingConfigT = SuccessResponseHandlingConfig>
+    void SetSuccessResponseHandlingConfig(SuccessResponseHandlingConfigT&& value) { m_successResponseHandlingConfigHasBeenSet = true; m_successResponseHandlingConfig = std::forward<SuccessResponseHandlingConfigT>(value); }
+    template<typename SuccessResponseHandlingConfigT = SuccessResponseHandlingConfig>
+    SAPODataDestinationProperties& WithSuccessResponseHandlingConfig(SuccessResponseHandlingConfigT&& value) { SetSuccessResponseHandlingConfig(std::forward<SuccessResponseHandlingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const{ return m_idFieldNames; }
+    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const { return m_idFieldNames; }
     inline bool IdFieldNamesHasBeenSet() const { return m_idFieldNamesHasBeenSet; }
-    inline void SetIdFieldNames(const Aws::Vector<Aws::String>& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = value; }
-    inline void SetIdFieldNames(Aws::Vector<Aws::String>&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::move(value); }
-    inline SAPODataDestinationProperties& WithIdFieldNames(const Aws::Vector<Aws::String>& value) { SetIdFieldNames(value); return *this;}
-    inline SAPODataDestinationProperties& WithIdFieldNames(Aws::Vector<Aws::String>&& value) { SetIdFieldNames(std::move(value)); return *this;}
-    inline SAPODataDestinationProperties& AddIdFieldNames(const Aws::String& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
-    inline SAPODataDestinationProperties& AddIdFieldNames(Aws::String&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(std::move(value)); return *this; }
-    inline SAPODataDestinationProperties& AddIdFieldNames(const char* value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    void SetIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::forward<IdFieldNamesT>(value); }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    SAPODataDestinationProperties& WithIdFieldNames(IdFieldNamesT&& value) { SetIdFieldNames(std::forward<IdFieldNamesT>(value)); return *this;}
+    template<typename IdFieldNamesT = Aws::String>
+    SAPODataDestinationProperties& AddIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.emplace_back(std::forward<IdFieldNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const{ return m_errorHandlingConfig; }
+    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const { return m_errorHandlingConfig; }
     inline bool ErrorHandlingConfigHasBeenSet() const { return m_errorHandlingConfigHasBeenSet; }
-    inline void SetErrorHandlingConfig(const ErrorHandlingConfig& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = value; }
-    inline void SetErrorHandlingConfig(ErrorHandlingConfig&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::move(value); }
-    inline SAPODataDestinationProperties& WithErrorHandlingConfig(const ErrorHandlingConfig& value) { SetErrorHandlingConfig(value); return *this;}
-    inline SAPODataDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfig&& value) { SetErrorHandlingConfig(std::move(value)); return *this;}
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    void SetErrorHandlingConfig(ErrorHandlingConfigT&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::forward<ErrorHandlingConfigT>(value); }
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    SAPODataDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfigT&& value) { SetErrorHandlingConfig(std::forward<ErrorHandlingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WriteOperationType& GetWriteOperationType() const{ return m_writeOperationType; }
+    inline WriteOperationType GetWriteOperationType() const { return m_writeOperationType; }
     inline bool WriteOperationTypeHasBeenSet() const { return m_writeOperationTypeHasBeenSet; }
-    inline void SetWriteOperationType(const WriteOperationType& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
-    inline void SetWriteOperationType(WriteOperationType&& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = std::move(value); }
-    inline SAPODataDestinationProperties& WithWriteOperationType(const WriteOperationType& value) { SetWriteOperationType(value); return *this;}
-    inline SAPODataDestinationProperties& WithWriteOperationType(WriteOperationType&& value) { SetWriteOperationType(std::move(value)); return *this;}
+    inline void SetWriteOperationType(WriteOperationType value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
+    inline SAPODataDestinationProperties& WithWriteOperationType(WriteOperationType value) { SetWriteOperationType(value); return *this;}
     ///@}
   private:
 
@@ -117,7 +112,7 @@ namespace Model
     ErrorHandlingConfig m_errorHandlingConfig;
     bool m_errorHandlingConfigHasBeenSet = false;
 
-    WriteOperationType m_writeOperationType;
+    WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
     bool m_writeOperationTypeHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackStatisticsDataItem::AttackStatisticsDataItem() : 
-    m_attackVolumeHasBeenSet(false),
-    m_attackCount(0),
-    m_attackCountHasBeenSet(false)
-{
-}
-
 AttackStatisticsDataItem::AttackStatisticsDataItem(JsonView jsonValue)
-  : AttackStatisticsDataItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AttackStatisticsDataItem& AttackStatisticsDataItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AttackVolume"))
   {
     m_attackVolume = jsonValue.GetObject("AttackVolume");
-
     m_attackVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttackCount"))
   {
     m_attackCount = jsonValue.GetInt64("AttackCount");
-
     m_attackCountHasBeenSet = true;
   }
-
   return *this;
 }
 

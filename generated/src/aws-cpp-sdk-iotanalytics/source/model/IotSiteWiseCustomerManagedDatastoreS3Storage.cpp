@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-IotSiteWiseCustomerManagedDatastoreS3Storage::IotSiteWiseCustomerManagedDatastoreS3Storage() : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
-{
-}
-
 IotSiteWiseCustomerManagedDatastoreS3Storage::IotSiteWiseCustomerManagedDatastoreS3Storage(JsonView jsonValue)
-  : IotSiteWiseCustomerManagedDatastoreS3Storage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IotSiteWiseCustomerManagedDatastoreS3Storage& IotSiteWiseCustomerManagedDatastor
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

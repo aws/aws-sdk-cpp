@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAuditTasksRequest::ListAuditTasksRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_taskType(AuditTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_taskStatus(AuditTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAuditTasksRequest::SerializePayload() const
 {
   return {};

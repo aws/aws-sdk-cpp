@@ -39,7 +39,7 @@ namespace Model
   class BandwidthReductionFilter
   {
   public:
-    AWS_MEDIACONVERT_API BandwidthReductionFilter();
+    AWS_MEDIACONVERT_API BandwidthReductionFilter() = default;
     AWS_MEDIACONVERT_API BandwidthReductionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API BandwidthReductionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * Sharpening strength to Low to apply a minimal amount of sharpening, or High to
      * apply a maximum amount of sharpening.
      */
-    inline const BandwidthReductionFilterSharpening& GetSharpening() const{ return m_sharpening; }
+    inline BandwidthReductionFilterSharpening GetSharpening() const { return m_sharpening; }
     inline bool SharpeningHasBeenSet() const { return m_sharpeningHasBeenSet; }
-    inline void SetSharpening(const BandwidthReductionFilterSharpening& value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
-    inline void SetSharpening(BandwidthReductionFilterSharpening&& value) { m_sharpeningHasBeenSet = true; m_sharpening = std::move(value); }
-    inline BandwidthReductionFilter& WithSharpening(const BandwidthReductionFilterSharpening& value) { SetSharpening(value); return *this;}
-    inline BandwidthReductionFilter& WithSharpening(BandwidthReductionFilterSharpening&& value) { SetSharpening(std::move(value)); return *this;}
+    inline void SetSharpening(BandwidthReductionFilterSharpening value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
+    inline BandwidthReductionFilter& WithSharpening(BandwidthReductionFilterSharpening value) { SetSharpening(value); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +68,17 @@ namespace Model
      * recommend that you choose High for low bitrate outputs. Note that High may incur
      * a slight increase in the softness of your output.
      */
-    inline const BandwidthReductionFilterStrength& GetStrength() const{ return m_strength; }
+    inline BandwidthReductionFilterStrength GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-    inline void SetStrength(const BandwidthReductionFilterStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
-    inline void SetStrength(BandwidthReductionFilterStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
-    inline BandwidthReductionFilter& WithStrength(const BandwidthReductionFilterStrength& value) { SetStrength(value); return *this;}
-    inline BandwidthReductionFilter& WithStrength(BandwidthReductionFilterStrength&& value) { SetStrength(std::move(value)); return *this;}
+    inline void SetStrength(BandwidthReductionFilterStrength value) { m_strengthHasBeenSet = true; m_strength = value; }
+    inline BandwidthReductionFilter& WithStrength(BandwidthReductionFilterStrength value) { SetStrength(value); return *this;}
     ///@}
   private:
 
-    BandwidthReductionFilterSharpening m_sharpening;
+    BandwidthReductionFilterSharpening m_sharpening{BandwidthReductionFilterSharpening::NOT_SET};
     bool m_sharpeningHasBeenSet = false;
 
-    BandwidthReductionFilterStrength m_strength;
+    BandwidthReductionFilterStrength m_strength{BandwidthReductionFilterStrength::NOT_SET};
     bool m_strengthHasBeenSet = false;
   };
 

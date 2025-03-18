@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterCertificateRequest::RegisterCertificateRequest() : 
-    m_certificatePemHasBeenSet(false),
-    m_caCertificatePemHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String RegisterCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

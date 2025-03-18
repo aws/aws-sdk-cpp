@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-AgentCollaboratorInputPayload::AgentCollaboratorInputPayload() : 
-    m_returnControlResultsHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(PayloadType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AgentCollaboratorInputPayload::AgentCollaboratorInputPayload(JsonView jsonValue)
-  : AgentCollaboratorInputPayload()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AgentCollaboratorInputPayload& AgentCollaboratorInputPayload::operator =(JsonVie
   if(jsonValue.ValueExists("returnControlResults"))
   {
     m_returnControlResults = jsonValue.GetObject("returnControlResults");
-
     m_returnControlResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

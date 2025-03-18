@@ -33,7 +33,7 @@ namespace Model
   class Measurement
   {
   public:
-    AWS_IOTSITEWISE_API Measurement();
+    AWS_IOTSITEWISE_API Measurement() = default;
     AWS_IOTSITEWISE_API Measurement(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Measurement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * configure measurements to be kept at the edge or forwarded to the Amazon Web
      * Services Cloud. By default, measurements are forwarded to the cloud.</p>
      */
-    inline const MeasurementProcessingConfig& GetProcessingConfig() const{ return m_processingConfig; }
+    inline const MeasurementProcessingConfig& GetProcessingConfig() const { return m_processingConfig; }
     inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
-    inline void SetProcessingConfig(const MeasurementProcessingConfig& value) { m_processingConfigHasBeenSet = true; m_processingConfig = value; }
-    inline void SetProcessingConfig(MeasurementProcessingConfig&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::move(value); }
-    inline Measurement& WithProcessingConfig(const MeasurementProcessingConfig& value) { SetProcessingConfig(value); return *this;}
-    inline Measurement& WithProcessingConfig(MeasurementProcessingConfig&& value) { SetProcessingConfig(std::move(value)); return *this;}
+    template<typename ProcessingConfigT = MeasurementProcessingConfig>
+    void SetProcessingConfig(ProcessingConfigT&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::forward<ProcessingConfigT>(value); }
+    template<typename ProcessingConfigT = MeasurementProcessingConfig>
+    Measurement& WithProcessingConfig(ProcessingConfigT&& value) { SetProcessingConfig(std::forward<ProcessingConfigT>(value)); return *this;}
     ///@}
   private:
 

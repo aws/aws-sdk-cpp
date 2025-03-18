@@ -12,14 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSenderIdRequest::UpdateSenderIdRequest() : 
-    m_senderIdHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSenderIdRequest::SerializePayload() const
 {
   JsonValue payload;

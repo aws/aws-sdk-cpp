@@ -12,14 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;

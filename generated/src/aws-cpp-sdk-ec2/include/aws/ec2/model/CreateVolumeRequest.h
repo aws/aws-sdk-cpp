@@ -26,7 +26,7 @@ namespace Model
   class CreateVolumeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateVolumeRequest();
+    AWS_EC2_API CreateVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The ID of the Availability Zone in which to create the volume. For example,
      * <code>us-east-1a</code>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CreateVolumeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateVolumeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateVolumeRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline CreateVolumeRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -93,7 +91,7 @@ namespace Model
      * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code> volumes.</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
@@ -115,14 +113,12 @@ namespace Model
      * an ID, alias, or ARN that is not valid, the action can appear to complete, but
      * eventually fails.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateVolumeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateVolumeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateVolumeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateVolumeRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +129,12 @@ namespace Model
      * You can't use a volume created in an Amazon Web Services Region with an instance
      * on an Amazon Web Services outpost, or the other way around.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-    inline CreateVolumeRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline CreateVolumeRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline CreateVolumeRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    CreateVolumeRequest& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,7 +149,7 @@ namespace Model
      * 16,384 GiB</p> </li> <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
      * </ul>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
@@ -166,14 +160,12 @@ namespace Model
      * <p>The snapshot from which to create the volume. You must specify either a
      * snapshot ID or a volume size.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline CreateVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline CreateVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    CreateVolumeRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,26 +182,24 @@ namespace Model
      * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
      * <code>gp2</code> </p>
      */
-    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+    inline VolumeType GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-    inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+    inline void SetVolumeType(VolumeType value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline CreateVolumeRequest& WithVolumeType(VolumeType value) { SetVolumeType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the volume during creation.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVolumeRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVolumeRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVolumeRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVolumeRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateVolumeRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateVolumeRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -223,7 +213,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
      * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
-    inline bool GetMultiAttachEnabled() const{ return m_multiAttachEnabled; }
+    inline bool GetMultiAttachEnabled() const { return m_multiAttachEnabled; }
     inline bool MultiAttachEnabledHasBeenSet() const { return m_multiAttachEnabledHasBeenSet; }
     inline void SetMultiAttachEnabled(bool value) { m_multiAttachEnabledHasBeenSet = true; m_multiAttachEnabled = value; }
     inline CreateVolumeRequest& WithMultiAttachEnabled(bool value) { SetMultiAttachEnabled(value); return *this;}
@@ -235,7 +225,7 @@ namespace Model
      * <p>This parameter is valid only for <code>gp3</code> volumes.</p> <p>Valid
      * Range: Minimum value of 125. Maximum value of 1000.</p>
      */
-    inline int GetThroughput() const{ return m_throughput; }
+    inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline CreateVolumeRequest& WithThroughput(int value) { SetThroughput(value); return *this;}
@@ -248,26 +238,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure
      * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateVolumeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVolumeRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for internal use.</p>
      */
-    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline const OperatorRequest& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline CreateVolumeRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
-    inline CreateVolumeRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    template<typename OperatorT = OperatorRequest>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = OperatorRequest>
+    CreateVolumeRequest& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -277,7 +265,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -287,10 +275,10 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
@@ -299,22 +287,22 @@ namespace Model
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    VolumeType m_volumeType;
+    VolumeType m_volumeType{VolumeType::NOT_SET};
     bool m_volumeTypeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_multiAttachEnabled;
+    bool m_multiAttachEnabled{false};
     bool m_multiAttachEnabledHasBeenSet = false;
 
-    int m_throughput;
+    int m_throughput{0};
     bool m_throughputHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -323,7 +311,7 @@ namespace Model
     OperatorRequest m_operator;
     bool m_operatorHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

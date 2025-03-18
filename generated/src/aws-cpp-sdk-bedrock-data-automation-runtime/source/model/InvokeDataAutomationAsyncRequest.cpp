@@ -12,20 +12,6 @@ using namespace Aws::BedrockDataAutomationRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeDataAutomationAsyncRequest::InvokeDataAutomationAsyncRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_inputConfigurationHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_dataAutomationConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_blueprintsHasBeenSet(false),
-    m_dataAutomationProfileArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String InvokeDataAutomationAsyncRequest::SerializePayload() const
 {
   JsonValue payload;

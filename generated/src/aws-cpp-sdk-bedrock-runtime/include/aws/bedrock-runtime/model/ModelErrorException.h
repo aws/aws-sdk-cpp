@@ -32,7 +32,7 @@ namespace Model
   class ModelErrorException
   {
   public:
-    AWS_BEDROCKRUNTIME_API ModelErrorException();
+    AWS_BEDROCKRUNTIME_API ModelErrorException() = default;
     AWS_BEDROCKRUNTIME_API ModelErrorException(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ModelErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,21 +40,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ModelErrorException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ModelErrorException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ModelErrorException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ModelErrorException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The original status code.</p>
      */
-    inline int GetOriginalStatusCode() const{ return m_originalStatusCode; }
+    inline int GetOriginalStatusCode() const { return m_originalStatusCode; }
     inline bool OriginalStatusCodeHasBeenSet() const { return m_originalStatusCodeHasBeenSet; }
     inline void SetOriginalStatusCode(int value) { m_originalStatusCodeHasBeenSet = true; m_originalStatusCode = value; }
     inline ModelErrorException& WithOriginalStatusCode(int value) { SetOriginalStatusCode(value); return *this;}
@@ -64,21 +62,19 @@ namespace Model
     /**
      * <p>The resource name.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline ModelErrorException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline ModelErrorException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline ModelErrorException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    ModelErrorException& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_originalStatusCode;
+    int m_originalStatusCode{0};
     bool m_originalStatusCodeHasBeenSet = false;
 
     Aws::String m_resourceName;

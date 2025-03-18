@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ProvisionPublicIpv4PoolCidrRequest::ProvisionPublicIpv4PoolCidrRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 Aws::String ProvisionPublicIpv4PoolCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

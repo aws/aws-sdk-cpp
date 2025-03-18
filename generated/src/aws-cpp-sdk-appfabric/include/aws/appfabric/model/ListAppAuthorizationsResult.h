@@ -29,7 +29,7 @@ namespace Model
   class ListAppAuthorizationsResult
   {
   public:
-    AWS_APPFABRIC_API ListAppAuthorizationsResult();
+    AWS_APPFABRIC_API ListAppAuthorizationsResult() = default;
     AWS_APPFABRIC_API ListAppAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFABRIC_API ListAppAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Contains a list of app authorization summaries.</p>
      */
-    inline const Aws::Vector<AppAuthorizationSummary>& GetAppAuthorizationSummaryList() const{ return m_appAuthorizationSummaryList; }
-    inline void SetAppAuthorizationSummaryList(const Aws::Vector<AppAuthorizationSummary>& value) { m_appAuthorizationSummaryList = value; }
-    inline void SetAppAuthorizationSummaryList(Aws::Vector<AppAuthorizationSummary>&& value) { m_appAuthorizationSummaryList = std::move(value); }
-    inline ListAppAuthorizationsResult& WithAppAuthorizationSummaryList(const Aws::Vector<AppAuthorizationSummary>& value) { SetAppAuthorizationSummaryList(value); return *this;}
-    inline ListAppAuthorizationsResult& WithAppAuthorizationSummaryList(Aws::Vector<AppAuthorizationSummary>&& value) { SetAppAuthorizationSummaryList(std::move(value)); return *this;}
-    inline ListAppAuthorizationsResult& AddAppAuthorizationSummaryList(const AppAuthorizationSummary& value) { m_appAuthorizationSummaryList.push_back(value); return *this; }
-    inline ListAppAuthorizationsResult& AddAppAuthorizationSummaryList(AppAuthorizationSummary&& value) { m_appAuthorizationSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppAuthorizationSummary>& GetAppAuthorizationSummaryList() const { return m_appAuthorizationSummaryList; }
+    template<typename AppAuthorizationSummaryListT = Aws::Vector<AppAuthorizationSummary>>
+    void SetAppAuthorizationSummaryList(AppAuthorizationSummaryListT&& value) { m_appAuthorizationSummaryListHasBeenSet = true; m_appAuthorizationSummaryList = std::forward<AppAuthorizationSummaryListT>(value); }
+    template<typename AppAuthorizationSummaryListT = Aws::Vector<AppAuthorizationSummary>>
+    ListAppAuthorizationsResult& WithAppAuthorizationSummaryList(AppAuthorizationSummaryListT&& value) { SetAppAuthorizationSummaryList(std::forward<AppAuthorizationSummaryListT>(value)); return *this;}
+    template<typename AppAuthorizationSummaryListT = AppAuthorizationSummary>
+    ListAppAuthorizationsResult& AddAppAuthorizationSummaryList(AppAuthorizationSummaryListT&& value) { m_appAuthorizationSummaryListHasBeenSet = true; m_appAuthorizationSummaryList.emplace_back(std::forward<AppAuthorizationSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * an expired pagination token will return an <i>HTTP 400 InvalidToken
      * error</i>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppAuthorizationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppAuthorizationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppAuthorizationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppAuthorizationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppAuthorizationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppAuthorizationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppAuthorizationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppAuthorizationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AppAuthorizationSummary> m_appAuthorizationSummaryList;
+    bool m_appAuthorizationSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

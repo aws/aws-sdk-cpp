@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptInputDeviceTransferRequest::AcceptInputDeviceTransferRequest() : 
-    m_inputDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptInputDeviceTransferRequest::SerializePayload() const
 {
   return {};

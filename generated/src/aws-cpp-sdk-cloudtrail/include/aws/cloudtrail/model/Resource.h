@@ -32,7 +32,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_CLOUDTRAIL_API Resource();
+    AWS_CLOUDTRAIL_API Resource() = default;
     AWS_CLOUDTRAIL_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering
      * CloudTrail Events</a>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline Resource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline Resource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline Resource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    Resource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * resource name might be "auto-scaling-test-group" for an Auto Scaling Group or
      * "i-1234567" for an EC2 Instance.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline Resource& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline Resource& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline Resource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    Resource& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
   private:
 

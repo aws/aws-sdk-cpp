@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ForecastResult::ForecastResult() : 
-    m_timePeriodHasBeenSet(false),
-    m_meanValueHasBeenSet(false),
-    m_predictionIntervalLowerBoundHasBeenSet(false),
-    m_predictionIntervalUpperBoundHasBeenSet(false)
-{
-}
-
 ForecastResult::ForecastResult(JsonView jsonValue)
-  : ForecastResult()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ForecastResult& ForecastResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeanValue"))
   {
     m_meanValue = jsonValue.GetString("MeanValue");
-
     m_meanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionIntervalLowerBound"))
   {
     m_predictionIntervalLowerBound = jsonValue.GetString("PredictionIntervalLowerBound");
-
     m_predictionIntervalLowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionIntervalUpperBound"))
   {
     m_predictionIntervalUpperBound = jsonValue.GetString("PredictionIntervalUpperBound");
-
     m_predictionIntervalUpperBoundHasBeenSet = true;
   }
-
   return *this;
 }
 

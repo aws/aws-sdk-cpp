@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDatasetImportJobResult::CreateDatasetImportJobResult()
-{
-}
-
 CreateDatasetImportJobResult::CreateDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateDatasetImportJobResult& CreateDatasetImportJobResult::operator =(const Aws
   if(jsonValue.ValueExists("DatasetImportJobArn"))
   {
     m_datasetImportJobArn = jsonValue.GetString("DatasetImportJobArn");
-
+    m_datasetImportJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

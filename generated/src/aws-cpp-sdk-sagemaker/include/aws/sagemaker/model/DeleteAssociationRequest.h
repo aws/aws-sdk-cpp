@@ -21,7 +21,7 @@ namespace Model
   class DeleteAssociationRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteAssociationRequest();
+    AWS_SAGEMAKER_API DeleteAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ARN of the source.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline DeleteAssociationRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline DeleteAssociationRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline DeleteAssociationRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    DeleteAssociationRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline DeleteAssociationRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline DeleteAssociationRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline DeleteAssociationRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    DeleteAssociationRequest& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
   private:
 

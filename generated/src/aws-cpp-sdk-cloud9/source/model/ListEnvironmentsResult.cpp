@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEnvironmentsResult::ListEnvironmentsResult()
-{
-}
-
 ListEnvironmentsResult::ListEnvironmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentIds"))
   {
     Aws::Utils::Array<JsonView> environmentIdsJsonList = jsonValue.GetArray("environmentIds");
@@ -42,14 +37,15 @@ ListEnvironmentsResult& ListEnvironmentsResult::operator =(const Aws::AmazonWebS
     {
       m_environmentIds.push_back(environmentIdsJsonList[environmentIdsIndex].AsString());
     }
+    m_environmentIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

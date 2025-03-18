@@ -34,7 +34,7 @@ namespace Model
   class PlacementTemplate
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API PlacementTemplate();
+    AWS_IOT1CLICKPROJECTS_API PlacementTemplate() = default;
     AWS_IOT1CLICKPROJECTS_API PlacementTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API PlacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,19 +45,16 @@ namespace Model
      * <p>The default attributes (key/value pairs) to be applied to all placements
      * using this template.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultAttributes() const{ return m_defaultAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultAttributes() const { return m_defaultAttributes; }
     inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
-    inline void SetDefaultAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = value; }
-    inline void SetDefaultAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::move(value); }
-    inline PlacementTemplate& WithDefaultAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultAttributes(value); return *this;}
-    inline PlacementTemplate& WithDefaultAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultAttributes(std::move(value)); return *this;}
-    inline PlacementTemplate& AddDefaultAttributes(const Aws::String& key, const Aws::String& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(key, value); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(Aws::String&& key, const Aws::String& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(std::move(key), value); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(const Aws::String& key, Aws::String&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(key, std::move(value)); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(Aws::String&& key, Aws::String&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(const char* key, Aws::String&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(key, std::move(value)); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(Aws::String&& key, const char* value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(std::move(key), value); return *this; }
-    inline PlacementTemplate& AddDefaultAttributes(const char* key, const char* value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(key, value); return *this; }
+    template<typename DefaultAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
+    template<typename DefaultAttributesT = Aws::Map<Aws::String, Aws::String>>
+    PlacementTemplate& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
+    template<typename DefaultAttributesKeyT = Aws::String, typename DefaultAttributesValueT = Aws::String>
+    PlacementTemplate& AddDefaultAttributes(DefaultAttributesKeyT&& key, DefaultAttributesValueT&& value) {
+      m_defaultAttributesHasBeenSet = true; m_defaultAttributes.emplace(std::forward<DefaultAttributesKeyT>(key), std::forward<DefaultAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -65,18 +62,16 @@ namespace Model
      * <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
      * (<a>PlacementTemplate</a>) template.</p>
      */
-    inline const Aws::Map<Aws::String, DeviceTemplate>& GetDeviceTemplates() const{ return m_deviceTemplates; }
+    inline const Aws::Map<Aws::String, DeviceTemplate>& GetDeviceTemplates() const { return m_deviceTemplates; }
     inline bool DeviceTemplatesHasBeenSet() const { return m_deviceTemplatesHasBeenSet; }
-    inline void SetDeviceTemplates(const Aws::Map<Aws::String, DeviceTemplate>& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates = value; }
-    inline void SetDeviceTemplates(Aws::Map<Aws::String, DeviceTemplate>&& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates = std::move(value); }
-    inline PlacementTemplate& WithDeviceTemplates(const Aws::Map<Aws::String, DeviceTemplate>& value) { SetDeviceTemplates(value); return *this;}
-    inline PlacementTemplate& WithDeviceTemplates(Aws::Map<Aws::String, DeviceTemplate>&& value) { SetDeviceTemplates(std::move(value)); return *this;}
-    inline PlacementTemplate& AddDeviceTemplates(const Aws::String& key, const DeviceTemplate& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(key, value); return *this; }
-    inline PlacementTemplate& AddDeviceTemplates(Aws::String&& key, const DeviceTemplate& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(std::move(key), value); return *this; }
-    inline PlacementTemplate& AddDeviceTemplates(const Aws::String& key, DeviceTemplate&& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(key, std::move(value)); return *this; }
-    inline PlacementTemplate& AddDeviceTemplates(Aws::String&& key, DeviceTemplate&& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(std::move(key), std::move(value)); return *this; }
-    inline PlacementTemplate& AddDeviceTemplates(const char* key, DeviceTemplate&& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(key, std::move(value)); return *this; }
-    inline PlacementTemplate& AddDeviceTemplates(const char* key, const DeviceTemplate& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(key, value); return *this; }
+    template<typename DeviceTemplatesT = Aws::Map<Aws::String, DeviceTemplate>>
+    void SetDeviceTemplates(DeviceTemplatesT&& value) { m_deviceTemplatesHasBeenSet = true; m_deviceTemplates = std::forward<DeviceTemplatesT>(value); }
+    template<typename DeviceTemplatesT = Aws::Map<Aws::String, DeviceTemplate>>
+    PlacementTemplate& WithDeviceTemplates(DeviceTemplatesT&& value) { SetDeviceTemplates(std::forward<DeviceTemplatesT>(value)); return *this;}
+    template<typename DeviceTemplatesKeyT = Aws::String, typename DeviceTemplatesValueT = DeviceTemplate>
+    PlacementTemplate& AddDeviceTemplates(DeviceTemplatesKeyT&& key, DeviceTemplatesValueT&& value) {
+      m_deviceTemplatesHasBeenSet = true; m_deviceTemplates.emplace(std::forward<DeviceTemplatesKeyT>(key), std::forward<DeviceTemplatesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

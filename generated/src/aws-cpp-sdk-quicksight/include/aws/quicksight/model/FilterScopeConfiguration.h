@@ -34,7 +34,7 @@ namespace Model
   class FilterScopeConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FilterScopeConfiguration();
+    AWS_QUICKSIGHT_API FilterScopeConfiguration() = default;
     AWS_QUICKSIGHT_API FilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The configuration for applying a filter to specific sheets.</p>
      */
-    inline const SelectedSheetsFilterScopeConfiguration& GetSelectedSheets() const{ return m_selectedSheets; }
+    inline const SelectedSheetsFilterScopeConfiguration& GetSelectedSheets() const { return m_selectedSheets; }
     inline bool SelectedSheetsHasBeenSet() const { return m_selectedSheetsHasBeenSet; }
-    inline void SetSelectedSheets(const SelectedSheetsFilterScopeConfiguration& value) { m_selectedSheetsHasBeenSet = true; m_selectedSheets = value; }
-    inline void SetSelectedSheets(SelectedSheetsFilterScopeConfiguration&& value) { m_selectedSheetsHasBeenSet = true; m_selectedSheets = std::move(value); }
-    inline FilterScopeConfiguration& WithSelectedSheets(const SelectedSheetsFilterScopeConfiguration& value) { SetSelectedSheets(value); return *this;}
-    inline FilterScopeConfiguration& WithSelectedSheets(SelectedSheetsFilterScopeConfiguration&& value) { SetSelectedSheets(std::move(value)); return *this;}
+    template<typename SelectedSheetsT = SelectedSheetsFilterScopeConfiguration>
+    void SetSelectedSheets(SelectedSheetsT&& value) { m_selectedSheetsHasBeenSet = true; m_selectedSheets = std::forward<SelectedSheetsT>(value); }
+    template<typename SelectedSheetsT = SelectedSheetsFilterScopeConfiguration>
+    FilterScopeConfiguration& WithSelectedSheets(SelectedSheetsT&& value) { SetSelectedSheets(std::forward<SelectedSheetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
      * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
-    inline const AllSheetsFilterScopeConfiguration& GetAllSheets() const{ return m_allSheets; }
+    inline const AllSheetsFilterScopeConfiguration& GetAllSheets() const { return m_allSheets; }
     inline bool AllSheetsHasBeenSet() const { return m_allSheetsHasBeenSet; }
-    inline void SetAllSheets(const AllSheetsFilterScopeConfiguration& value) { m_allSheetsHasBeenSet = true; m_allSheets = value; }
-    inline void SetAllSheets(AllSheetsFilterScopeConfiguration&& value) { m_allSheetsHasBeenSet = true; m_allSheets = std::move(value); }
-    inline FilterScopeConfiguration& WithAllSheets(const AllSheetsFilterScopeConfiguration& value) { SetAllSheets(value); return *this;}
-    inline FilterScopeConfiguration& WithAllSheets(AllSheetsFilterScopeConfiguration&& value) { SetAllSheets(std::move(value)); return *this;}
+    template<typename AllSheetsT = AllSheetsFilterScopeConfiguration>
+    void SetAllSheets(AllSheetsT&& value) { m_allSheetsHasBeenSet = true; m_allSheets = std::forward<AllSheetsT>(value); }
+    template<typename AllSheetsT = AllSheetsFilterScopeConfiguration>
+    FilterScopeConfiguration& WithAllSheets(AllSheetsT&& value) { SetAllSheets(std::forward<AllSheetsT>(value)); return *this;}
     ///@}
   private:
 

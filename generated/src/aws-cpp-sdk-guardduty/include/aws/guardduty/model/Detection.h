@@ -33,7 +33,7 @@ namespace Model
   class Detection
   {
   public:
-    AWS_GUARDDUTY_API Detection();
+    AWS_GUARDDUTY_API Detection() = default;
     AWS_GUARDDUTY_API Detection(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Detection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The details about the anomalous activity that caused GuardDuty to generate
      * the finding.</p>
      */
-    inline const Anomaly& GetAnomaly() const{ return m_anomaly; }
+    inline const Anomaly& GetAnomaly() const { return m_anomaly; }
     inline bool AnomalyHasBeenSet() const { return m_anomalyHasBeenSet; }
-    inline void SetAnomaly(const Anomaly& value) { m_anomalyHasBeenSet = true; m_anomaly = value; }
-    inline void SetAnomaly(Anomaly&& value) { m_anomalyHasBeenSet = true; m_anomaly = std::move(value); }
-    inline Detection& WithAnomaly(const Anomaly& value) { SetAnomaly(value); return *this;}
-    inline Detection& WithAnomaly(Anomaly&& value) { SetAnomaly(std::move(value)); return *this;}
+    template<typename AnomalyT = Anomaly>
+    void SetAnomaly(AnomalyT&& value) { m_anomalyHasBeenSet = true; m_anomaly = std::forward<AnomalyT>(value); }
+    template<typename AnomalyT = Anomaly>
+    Detection& WithAnomaly(AnomalyT&& value) { SetAnomaly(std::forward<AnomalyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about the attack sequence.</p>
      */
-    inline const Sequence& GetSequence() const{ return m_sequence; }
+    inline const Sequence& GetSequence() const { return m_sequence; }
     inline bool SequenceHasBeenSet() const { return m_sequenceHasBeenSet; }
-    inline void SetSequence(const Sequence& value) { m_sequenceHasBeenSet = true; m_sequence = value; }
-    inline void SetSequence(Sequence&& value) { m_sequenceHasBeenSet = true; m_sequence = std::move(value); }
-    inline Detection& WithSequence(const Sequence& value) { SetSequence(value); return *this;}
-    inline Detection& WithSequence(Sequence&& value) { SetSequence(std::move(value)); return *this;}
+    template<typename SequenceT = Sequence>
+    void SetSequence(SequenceT&& value) { m_sequenceHasBeenSet = true; m_sequence = std::forward<SequenceT>(value); }
+    template<typename SequenceT = Sequence>
+    Detection& WithSequence(SequenceT&& value) { SetSequence(std::forward<SequenceT>(value)); return *this;}
     ///@}
   private:
 

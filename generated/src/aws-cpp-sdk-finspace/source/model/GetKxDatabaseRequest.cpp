@@ -12,12 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxDatabaseRequest::GetKxDatabaseRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKxDatabaseRequest::SerializePayload() const
 {
   return {};

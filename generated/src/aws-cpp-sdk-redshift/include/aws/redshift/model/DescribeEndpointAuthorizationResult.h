@@ -30,7 +30,7 @@ namespace Model
   class DescribeEndpointAuthorizationResult
   {
   public:
-    AWS_REDSHIFT_API DescribeEndpointAuthorizationResult();
+    AWS_REDSHIFT_API DescribeEndpointAuthorizationResult() = default;
     AWS_REDSHIFT_API DescribeEndpointAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeEndpointAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The authorizations to an endpoint.</p>
      */
-    inline const Aws::Vector<EndpointAuthorization>& GetEndpointAuthorizationList() const{ return m_endpointAuthorizationList; }
-    inline void SetEndpointAuthorizationList(const Aws::Vector<EndpointAuthorization>& value) { m_endpointAuthorizationList = value; }
-    inline void SetEndpointAuthorizationList(Aws::Vector<EndpointAuthorization>&& value) { m_endpointAuthorizationList = std::move(value); }
-    inline DescribeEndpointAuthorizationResult& WithEndpointAuthorizationList(const Aws::Vector<EndpointAuthorization>& value) { SetEndpointAuthorizationList(value); return *this;}
-    inline DescribeEndpointAuthorizationResult& WithEndpointAuthorizationList(Aws::Vector<EndpointAuthorization>&& value) { SetEndpointAuthorizationList(std::move(value)); return *this;}
-    inline DescribeEndpointAuthorizationResult& AddEndpointAuthorizationList(const EndpointAuthorization& value) { m_endpointAuthorizationList.push_back(value); return *this; }
-    inline DescribeEndpointAuthorizationResult& AddEndpointAuthorizationList(EndpointAuthorization&& value) { m_endpointAuthorizationList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EndpointAuthorization>& GetEndpointAuthorizationList() const { return m_endpointAuthorizationList; }
+    template<typename EndpointAuthorizationListT = Aws::Vector<EndpointAuthorization>>
+    void SetEndpointAuthorizationList(EndpointAuthorizationListT&& value) { m_endpointAuthorizationListHasBeenSet = true; m_endpointAuthorizationList = std::forward<EndpointAuthorizationListT>(value); }
+    template<typename EndpointAuthorizationListT = Aws::Vector<EndpointAuthorization>>
+    DescribeEndpointAuthorizationResult& WithEndpointAuthorizationList(EndpointAuthorizationListT&& value) { SetEndpointAuthorizationList(std::forward<EndpointAuthorizationListT>(value)); return *this;}
+    template<typename EndpointAuthorizationListT = EndpointAuthorization>
+    DescribeEndpointAuthorizationResult& AddEndpointAuthorizationList(EndpointAuthorizationListT&& value) { m_endpointAuthorizationListHasBeenSet = true; m_endpointAuthorizationList.emplace_back(std::forward<EndpointAuthorizationListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * specified, the response includes only records beyond the marker, up to the value
      * specified by the <code>MaxRecords</code> parameter.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeEndpointAuthorizationResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeEndpointAuthorizationResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeEndpointAuthorizationResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeEndpointAuthorizationResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeEndpointAuthorizationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeEndpointAuthorizationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeEndpointAuthorizationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EndpointAuthorization> m_endpointAuthorizationList;
+    bool m_endpointAuthorizationListHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

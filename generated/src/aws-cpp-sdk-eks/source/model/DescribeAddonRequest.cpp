@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAddonRequest::DescribeAddonRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddonRequest::SerializePayload() const
 {
   return {};

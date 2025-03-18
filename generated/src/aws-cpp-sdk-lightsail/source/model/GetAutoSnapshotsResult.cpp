@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAutoSnapshotsResult::GetAutoSnapshotsResult() : 
-    m_resourceType(ResourceType::NOT_SET)
-{
-}
-
 GetAutoSnapshotsResult::GetAutoSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAutoSnapshotsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetAutoSnapshotsResult& GetAutoSnapshotsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
+    m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
+    m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoSnapshots"))
   {
     Aws::Utils::Array<JsonView> autoSnapshotsJsonList = jsonValue.GetArray("autoSnapshots");
@@ -50,14 +42,15 @@ GetAutoSnapshotsResult& GetAutoSnapshotsResult::operator =(const Aws::AmazonWebS
     {
       m_autoSnapshots.push_back(autoSnapshotsJsonList[autoSnapshotsIndex].AsObject());
     }
+    m_autoSnapshotsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

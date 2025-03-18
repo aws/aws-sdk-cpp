@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Evidence::Evidence() : 
-    m_threatIntelligenceDetailsHasBeenSet(false)
-{
-}
-
 Evidence::Evidence(JsonView jsonValue)
-  : Evidence()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Evidence& Evidence::operator =(JsonView jsonValue)
     }
     m_threatIntelligenceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

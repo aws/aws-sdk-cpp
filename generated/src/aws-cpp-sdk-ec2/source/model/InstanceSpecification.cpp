@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceSpecification::InstanceSpecification() : 
-    m_instanceIdHasBeenSet(false),
-    m_excludeBootVolume(false),
-    m_excludeBootVolumeHasBeenSet(false),
-    m_excludeDataVolumeIdsHasBeenSet(false)
-{
-}
-
 InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode)
-  : InstanceSpecification()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ InstanceSpecification& InstanceSpecification::operator =(const XmlNode& xmlNode)
     if(!excludeDataVolumeIdsNode.IsNull())
     {
       XmlNode excludeDataVolumeIdsMember = excludeDataVolumeIdsNode.FirstChild("VolumeId");
+      m_excludeDataVolumeIdsHasBeenSet = !excludeDataVolumeIdsMember.IsNull();
       while(!excludeDataVolumeIdsMember.IsNull())
       {
         m_excludeDataVolumeIds.push_back(excludeDataVolumeIdsMember.GetText());

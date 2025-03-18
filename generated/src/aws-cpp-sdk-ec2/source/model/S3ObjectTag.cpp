@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-S3ObjectTag::S3ObjectTag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 S3ObjectTag::S3ObjectTag(const XmlNode& xmlNode)
-  : S3ObjectTag()
 {
   *this = xmlNode;
 }

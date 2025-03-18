@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DropDuplicates::DropDuplicates() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_columnsHasBeenSet(false)
-{
-}
-
 DropDuplicates::DropDuplicates(JsonView jsonValue)
-  : DropDuplicates()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DropDuplicates& DropDuplicates::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -49,7 +39,6 @@ DropDuplicates& DropDuplicates::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -66,7 +55,6 @@ DropDuplicates& DropDuplicates::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

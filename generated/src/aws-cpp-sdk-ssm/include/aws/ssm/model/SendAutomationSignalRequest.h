@@ -24,7 +24,7 @@ namespace Model
   class SendAutomationSignalRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API SendAutomationSignalRequest();
+    AWS_SSM_API SendAutomationSignalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,22 @@ namespace Model
      * <p>The unique identifier for an existing Automation execution that you want to
      * send the signal to.</p>
      */
-    inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
+    inline const Aws::String& GetAutomationExecutionId() const { return m_automationExecutionId; }
     inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
-    inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
-    inline void SetAutomationExecutionId(const char* value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId.assign(value); }
-    inline SendAutomationSignalRequest& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-    inline SendAutomationSignalRequest& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-    inline SendAutomationSignalRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    template<typename AutomationExecutionIdT = Aws::String>
+    void SetAutomationExecutionId(AutomationExecutionIdT&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::forward<AutomationExecutionIdT>(value); }
+    template<typename AutomationExecutionIdT = Aws::String>
+    SendAutomationSignalRequest& WithAutomationExecutionId(AutomationExecutionIdT&& value) { SetAutomationExecutionId(std::forward<AutomationExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of signal to send to an Automation execution. </p>
      */
-    inline const SignalType& GetSignalType() const{ return m_signalType; }
+    inline SignalType GetSignalType() const { return m_signalType; }
     inline bool SignalTypeHasBeenSet() const { return m_signalTypeHasBeenSet; }
-    inline void SetSignalType(const SignalType& value) { m_signalTypeHasBeenSet = true; m_signalType = value; }
-    inline void SetSignalType(SignalType&& value) { m_signalTypeHasBeenSet = true; m_signalType = std::move(value); }
-    inline SendAutomationSignalRequest& WithSignalType(const SignalType& value) { SetSignalType(value); return *this;}
-    inline SendAutomationSignalRequest& WithSignalType(SignalType&& value) { SetSignalType(std::move(value)); return *this;}
+    inline void SetSignalType(SignalType value) { m_signalTypeHasBeenSet = true; m_signalType = value; }
+    inline SendAutomationSignalRequest& WithSignalType(SignalType value) { SetSignalType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,25 +72,23 @@ namespace Model
      * type, you must send the step execution ID as the payload. For example:</p> <p>
      * <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetPayload() const{ return m_payload; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline SendAutomationSignalRequest& WithPayload(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetPayload(value); return *this;}
-    inline SendAutomationSignalRequest& WithPayload(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetPayload(std::move(value)); return *this;}
-    inline SendAutomationSignalRequest& AddPayload(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
-    inline SendAutomationSignalRequest& AddPayload(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), value); return *this; }
-    inline SendAutomationSignalRequest& AddPayload(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline SendAutomationSignalRequest& AddPayload(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendAutomationSignalRequest& AddPayload(const char* key, Aws::Vector<Aws::String>&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline SendAutomationSignalRequest& AddPayload(const char* key, const Aws::Vector<Aws::String>& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
+    template<typename PayloadT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    SendAutomationSignalRequest& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    template<typename PayloadKeyT = Aws::String, typename PayloadValueT = Aws::Vector<Aws::String>>
+    SendAutomationSignalRequest& AddPayload(PayloadKeyT&& key, PayloadValueT&& value) {
+      m_payloadHasBeenSet = true; m_payload.emplace(std::forward<PayloadKeyT>(key), std::forward<PayloadValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet = false;
 
-    SignalType m_signalType;
+    SignalType m_signalType{SignalType::NOT_SET};
     bool m_signalTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_payload;

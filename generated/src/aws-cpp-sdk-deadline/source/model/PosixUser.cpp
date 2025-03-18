@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-PosixUser::PosixUser() : 
-    m_userHasBeenSet(false),
-    m_groupHasBeenSet(false)
-{
-}
-
 PosixUser::PosixUser(JsonView jsonValue)
-  : PosixUser()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PosixUser& PosixUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   return *this;
 }
 

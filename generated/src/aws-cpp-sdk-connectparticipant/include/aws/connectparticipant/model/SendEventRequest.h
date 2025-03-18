@@ -22,7 +22,7 @@ namespace Model
   class SendEventRequest : public ConnectParticipantRequest
   {
   public:
-    AWS_CONNECTPARTICIPANT_API SendEventRequest();
+    AWS_CONNECTPARTICIPANT_API SendEventRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li> <li>
      * <p>application/vnd.amazonaws.connect.event.message.read</p> </li> </ul>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline SendEventRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline SendEventRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline SendEventRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    SendEventRequest& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>Sample Content:
      * "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline SendEventRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline SendEventRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline SendEventRequest& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    SendEventRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,28 +75,24 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline SendEventRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline SendEventRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline SendEventRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    SendEventRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication token associated with the participant's connection.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline SendEventRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline SendEventRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline SendEventRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    SendEventRequest& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
   private:
 

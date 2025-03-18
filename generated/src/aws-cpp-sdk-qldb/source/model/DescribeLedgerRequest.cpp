@@ -12,11 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLedgerRequest::DescribeLedgerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLedgerRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-RdsSalSettings::RdsSalSettings() : 
-    m_rdsSalCredentialsProviderHasBeenSet(false)
-{
-}
-
 RdsSalSettings::RdsSalSettings(JsonView jsonValue)
-  : RdsSalSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RdsSalSettings& RdsSalSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RdsSalCredentialsProvider"))
   {
     m_rdsSalCredentialsProvider = jsonValue.GetObject("RdsSalCredentialsProvider");
-
     m_rdsSalCredentialsProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

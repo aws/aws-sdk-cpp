@@ -29,7 +29,7 @@ namespace Model
   class ListProposalsResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API ListProposalsResult();
+    AWS_MANAGEDBLOCKCHAIN_API ListProposalsResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API ListProposalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API ListProposalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The summary of each proposal made on the network.</p>
      */
-    inline const Aws::Vector<ProposalSummary>& GetProposals() const{ return m_proposals; }
-    inline void SetProposals(const Aws::Vector<ProposalSummary>& value) { m_proposals = value; }
-    inline void SetProposals(Aws::Vector<ProposalSummary>&& value) { m_proposals = std::move(value); }
-    inline ListProposalsResult& WithProposals(const Aws::Vector<ProposalSummary>& value) { SetProposals(value); return *this;}
-    inline ListProposalsResult& WithProposals(Aws::Vector<ProposalSummary>&& value) { SetProposals(std::move(value)); return *this;}
-    inline ListProposalsResult& AddProposals(const ProposalSummary& value) { m_proposals.push_back(value); return *this; }
-    inline ListProposalsResult& AddProposals(ProposalSummary&& value) { m_proposals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProposalSummary>& GetProposals() const { return m_proposals; }
+    template<typename ProposalsT = Aws::Vector<ProposalSummary>>
+    void SetProposals(ProposalsT&& value) { m_proposalsHasBeenSet = true; m_proposals = std::forward<ProposalsT>(value); }
+    template<typename ProposalsT = Aws::Vector<ProposalSummary>>
+    ListProposalsResult& WithProposals(ProposalsT&& value) { SetProposals(std::forward<ProposalsT>(value)); return *this;}
+    template<typename ProposalsT = ProposalSummary>
+    ListProposalsResult& AddProposals(ProposalsT&& value) { m_proposalsHasBeenSet = true; m_proposals.emplace_back(std::forward<ProposalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProposalsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProposalsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProposalsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProposalsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProposalsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProposalsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProposalsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProposalsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProposalSummary> m_proposals;
+    bool m_proposalsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

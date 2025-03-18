@@ -34,7 +34,7 @@ namespace Model
   class RequestMetadata
   {
   public:
-    AWS_CODEGURUREVIEWER_API RequestMetadata();
+    AWS_CODEGURUREVIEWER_API RequestMetadata() = default;
     AWS_CODEGURUREVIEWER_API RequestMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API RequestMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the request. This is required for a pull request code review.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline RequestMetadata& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RequestMetadata& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RequestMetadata& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RequestMetadata& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,24 @@ namespace Model
      * requester. The <code>Requester</code> is used to capture the
      * <code>author/actor</code> name of the event request.</p>
      */
-    inline const Aws::String& GetRequester() const{ return m_requester; }
+    inline const Aws::String& GetRequester() const { return m_requester; }
     inline bool RequesterHasBeenSet() const { return m_requesterHasBeenSet; }
-    inline void SetRequester(const Aws::String& value) { m_requesterHasBeenSet = true; m_requester = value; }
-    inline void SetRequester(Aws::String&& value) { m_requesterHasBeenSet = true; m_requester = std::move(value); }
-    inline void SetRequester(const char* value) { m_requesterHasBeenSet = true; m_requester.assign(value); }
-    inline RequestMetadata& WithRequester(const Aws::String& value) { SetRequester(value); return *this;}
-    inline RequestMetadata& WithRequester(Aws::String&& value) { SetRequester(std::move(value)); return *this;}
-    inline RequestMetadata& WithRequester(const char* value) { SetRequester(value); return *this;}
+    template<typename RequesterT = Aws::String>
+    void SetRequester(RequesterT&& value) { m_requesterHasBeenSet = true; m_requester = std::forward<RequesterT>(value); }
+    template<typename RequesterT = Aws::String>
+    RequestMetadata& WithRequester(RequesterT&& value) { SetRequester(std::forward<RequesterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the event associated with a code review.</p>
      */
-    inline const EventInfo& GetEventInfo() const{ return m_eventInfo; }
+    inline const EventInfo& GetEventInfo() const { return m_eventInfo; }
     inline bool EventInfoHasBeenSet() const { return m_eventInfoHasBeenSet; }
-    inline void SetEventInfo(const EventInfo& value) { m_eventInfoHasBeenSet = true; m_eventInfo = value; }
-    inline void SetEventInfo(EventInfo&& value) { m_eventInfoHasBeenSet = true; m_eventInfo = std::move(value); }
-    inline RequestMetadata& WithEventInfo(const EventInfo& value) { SetEventInfo(value); return *this;}
-    inline RequestMetadata& WithEventInfo(EventInfo&& value) { SetEventInfo(std::move(value)); return *this;}
+    template<typename EventInfoT = EventInfo>
+    void SetEventInfo(EventInfoT&& value) { m_eventInfoHasBeenSet = true; m_eventInfo = std::forward<EventInfoT>(value); }
+    template<typename EventInfoT = EventInfo>
+    RequestMetadata& WithEventInfo(EventInfoT&& value) { SetEventInfo(std::forward<EventInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,10 @@ namespace Model
      * definition for <code>ProviderType</code> in <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
      */
-    inline const VendorName& GetVendorName() const{ return m_vendorName; }
+    inline VendorName GetVendorName() const { return m_vendorName; }
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
-    inline void SetVendorName(const VendorName& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
-    inline void SetVendorName(VendorName&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
-    inline RequestMetadata& WithVendorName(const VendorName& value) { SetVendorName(value); return *this;}
-    inline RequestMetadata& WithVendorName(VendorName&& value) { SetVendorName(std::move(value)); return *this;}
+    inline void SetVendorName(VendorName value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
+    inline RequestMetadata& WithVendorName(VendorName value) { SetVendorName(value); return *this;}
     ///@}
   private:
 
@@ -110,7 +104,7 @@ namespace Model
     EventInfo m_eventInfo;
     bool m_eventInfoHasBeenSet = false;
 
-    VendorName m_vendorName;
+    VendorName m_vendorName{VendorName::NOT_SET};
     bool m_vendorNameHasBeenSet = false;
   };
 

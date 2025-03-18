@@ -30,7 +30,7 @@ namespace Model
   class SslProperties
   {
   public:
-    AWS_QUICKSIGHT_API SslProperties();
+    AWS_QUICKSIGHT_API SslProperties() = default;
     AWS_QUICKSIGHT_API SslProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SslProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>A Boolean option to control whether SSL should be disabled.</p>
      */
-    inline bool GetDisableSsl() const{ return m_disableSsl; }
+    inline bool GetDisableSsl() const { return m_disableSsl; }
     inline bool DisableSslHasBeenSet() const { return m_disableSslHasBeenSet; }
     inline void SetDisableSsl(bool value) { m_disableSslHasBeenSet = true; m_disableSsl = value; }
     inline SslProperties& WithDisableSsl(bool value) { SetDisableSsl(value); return *this;}
     ///@}
   private:
 
-    bool m_disableSsl;
+    bool m_disableSsl{false};
     bool m_disableSslHasBeenSet = false;
   };
 

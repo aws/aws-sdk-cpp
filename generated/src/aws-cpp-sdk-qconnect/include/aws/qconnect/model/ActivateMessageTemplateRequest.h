@@ -21,7 +21,7 @@ namespace Model
   class ActivateMessageTemplateRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API ActivateMessageTemplateRequest();
+    AWS_QCONNECT_API ActivateMessageTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline ActivateMessageTemplateRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline ActivateMessageTemplateRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline ActivateMessageTemplateRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    ActivateMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,21 +50,19 @@ namespace Model
      * <p>The identifier of the message template. Can be either the ID or the ARN. It
      * cannot contain any qualifier.</p>
      */
-    inline const Aws::String& GetMessageTemplateId() const{ return m_messageTemplateId; }
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
     inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    inline void SetMessageTemplateId(const Aws::String& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = value; }
-    inline void SetMessageTemplateId(Aws::String&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::move(value); }
-    inline void SetMessageTemplateId(const char* value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId.assign(value); }
-    inline ActivateMessageTemplateRequest& WithMessageTemplateId(const Aws::String& value) { SetMessageTemplateId(value); return *this;}
-    inline ActivateMessageTemplateRequest& WithMessageTemplateId(Aws::String&& value) { SetMessageTemplateId(std::move(value)); return *this;}
-    inline ActivateMessageTemplateRequest& WithMessageTemplateId(const char* value) { SetMessageTemplateId(value); return *this;}
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    ActivateMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the message template version to activate.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline ActivateMessageTemplateRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
@@ -79,7 +75,7 @@ namespace Model
     Aws::String m_messageTemplateId;
     bool m_messageTemplateIdHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

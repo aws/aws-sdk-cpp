@@ -25,7 +25,7 @@ namespace Model
   class RestoreAnalysisRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API RestoreAnalysisRequest();
+    AWS_QUICKSIGHT_API RestoreAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that contains the analysis.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline RestoreAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline RestoreAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline RestoreAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    RestoreAnalysisRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the analysis that you're restoring.</p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-    inline RestoreAnalysisRequest& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline RestoreAnalysisRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline RestoreAnalysisRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    RestoreAnalysisRequest& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * resided folders. Restoring a restricted analysis requires this parameter to be
      * set to <code>True</code>.</p>
      */
-    inline bool GetRestoreToFolders() const{ return m_restoreToFolders; }
+    inline bool GetRestoreToFolders() const { return m_restoreToFolders; }
     inline bool RestoreToFoldersHasBeenSet() const { return m_restoreToFoldersHasBeenSet; }
     inline void SetRestoreToFolders(bool value) { m_restoreToFoldersHasBeenSet = true; m_restoreToFolders = value; }
     inline RestoreAnalysisRequest& WithRestoreToFolders(bool value) { SetRestoreToFolders(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_analysisId;
     bool m_analysisIdHasBeenSet = false;
 
-    bool m_restoreToFolders;
+    bool m_restoreToFolders{false};
     bool m_restoreToFoldersHasBeenSet = false;
   };
 

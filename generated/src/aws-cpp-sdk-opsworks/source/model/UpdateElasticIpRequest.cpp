@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateElasticIpRequest::UpdateElasticIpRequest() : 
-    m_elasticIpHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateElasticIpRequest::SerializePayload() const
 {
   JsonValue payload;

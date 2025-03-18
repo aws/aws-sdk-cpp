@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeICD10CMInferenceJobResult::DescribeICD10CMInferenceJobResult()
-{
-}
-
 DescribeICD10CMInferenceJobResult::DescribeICD10CMInferenceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeICD10CMInferenceJobResult& DescribeICD10CMInferenceJobResult::operator =
   if(jsonValue.ValueExists("ComprehendMedicalAsyncJobProperties"))
   {
     m_comprehendMedicalAsyncJobProperties = jsonValue.GetObject("ComprehendMedicalAsyncJobProperties");
-
+    m_comprehendMedicalAsyncJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

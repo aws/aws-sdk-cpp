@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeCarrierGatewaysRequest::DescribeCarrierGatewaysRequest() : 
-    m_carrierGatewayIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCarrierGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;

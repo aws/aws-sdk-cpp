@@ -33,7 +33,7 @@ namespace Model
   class KnowledgeBaseLookupOutput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseLookupOutput();
+    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseLookupOutput() = default;
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseLookupOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseLookupOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Contains metadata about the sources cited for the generated response.</p>
      */
-    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
+    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const { return m_retrievedReferences; }
     inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
-    inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
-    inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
-    inline KnowledgeBaseLookupOutput& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
-    inline KnowledgeBaseLookupOutput& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
-    inline KnowledgeBaseLookupOutput& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
-    inline KnowledgeBaseLookupOutput& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    void SetRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::forward<RetrievedReferencesT>(value); }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    KnowledgeBaseLookupOutput& WithRetrievedReferences(RetrievedReferencesT&& value) { SetRetrievedReferences(std::forward<RetrievedReferencesT>(value)); return *this;}
+    template<typename RetrievedReferencesT = RetrievedReference>
+    KnowledgeBaseLookupOutput& AddRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.emplace_back(std::forward<RetrievedReferencesT>(value)); return *this; }
     ///@}
   private:
 

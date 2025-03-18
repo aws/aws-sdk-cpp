@@ -25,7 +25,7 @@ namespace Model
   class DeleteXssMatchSetRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API DeleteXssMatchSetRequest();
+    AWS_WAF_API DeleteXssMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
      * delete. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and
      * by <a>ListXssMatchSets</a>.</p>
      */
-    inline const Aws::String& GetXssMatchSetId() const{ return m_xssMatchSetId; }
+    inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
     inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
-    inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
-    inline void SetXssMatchSetId(const char* value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId.assign(value); }
-    inline DeleteXssMatchSetRequest& WithXssMatchSetId(const Aws::String& value) { SetXssMatchSetId(value); return *this;}
-    inline DeleteXssMatchSetRequest& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
-    inline DeleteXssMatchSetRequest& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
+    template<typename XssMatchSetIdT = Aws::String>
+    void SetXssMatchSetId(XssMatchSetIdT&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::forward<XssMatchSetIdT>(value); }
+    template<typename XssMatchSetIdT = Aws::String>
+    DeleteXssMatchSetRequest& WithXssMatchSetId(XssMatchSetIdT&& value) { SetXssMatchSetId(std::forward<XssMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline DeleteXssMatchSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline DeleteXssMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline DeleteXssMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    DeleteXssMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
   private:
 

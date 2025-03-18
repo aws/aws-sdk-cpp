@@ -18,28 +18,7 @@ namespace Translate
 namespace Model
 {
 
-TextTranslationJobProperties::TextTranslationJobProperties() : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_jobDetailsHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_terminologyNamesHasBeenSet(false),
-    m_parallelDataNamesHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submittedTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue)
-  : TextTranslationJobProperties()
 {
   *this = jsonValue;
 }
@@ -49,38 +28,28 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDetails"))
   {
     m_jobDetails = jsonValue.GetObject("JobDetails");
-
     m_jobDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLanguageCode"))
   {
     m_sourceLanguageCode = jsonValue.GetString("SourceLanguageCode");
-
     m_sourceLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLanguageCodes"))
   {
     Aws::Utils::Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
@@ -90,7 +59,6 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     }
     m_targetLanguageCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminologyNames"))
   {
     Aws::Utils::Array<JsonView> terminologyNamesJsonList = jsonValue.GetArray("TerminologyNames");
@@ -100,7 +68,6 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     }
     m_terminologyNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelDataNames"))
   {
     Aws::Utils::Array<JsonView> parallelDataNamesJsonList = jsonValue.GetArray("ParallelDataNames");
@@ -110,56 +77,41 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     }
     m_parallelDataNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmittedTime"))
   {
     m_submittedTime = jsonValue.GetDouble("SubmittedTime");
-
     m_submittedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
-
     m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   return *this;
 }
 

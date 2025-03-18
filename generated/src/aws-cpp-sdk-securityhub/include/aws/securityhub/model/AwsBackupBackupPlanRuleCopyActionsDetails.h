@@ -33,7 +33,7 @@ namespace Model
   class AwsBackupBackupPlanRuleCopyActionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleCopyActionsDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleCopyActionsDetails() = default;
     AWS_SECURITYHUB_API AwsBackupBackupPlanRuleCopyActionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupBackupPlanRuleCopyActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. </p>
      */
-    inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
+    inline const Aws::String& GetDestinationBackupVaultArn() const { return m_destinationBackupVaultArn; }
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }
-    inline void SetDestinationBackupVaultArn(const Aws::String& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = value; }
-    inline void SetDestinationBackupVaultArn(Aws::String&& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = std::move(value); }
-    inline void SetDestinationBackupVaultArn(const char* value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn.assign(value); }
-    inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(const Aws::String& value) { SetDestinationBackupVaultArn(value); return *this;}
-    inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(Aws::String&& value) { SetDestinationBackupVaultArn(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(const char* value) { SetDestinationBackupVaultArn(value); return *this;}
+    template<typename DestinationBackupVaultArnT = Aws::String>
+    void SetDestinationBackupVaultArn(DestinationBackupVaultArnT&& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = std::forward<DestinationBackupVaultArnT>(value); }
+    template<typename DestinationBackupVaultArnT = Aws::String>
+    AwsBackupBackupPlanRuleCopyActionsDetails& WithDestinationBackupVaultArn(DestinationBackupVaultArnT&& value) { SetDestinationBackupVaultArn(std::forward<DestinationBackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days.</p>
      */
-    inline const AwsBackupBackupPlanLifecycleDetails& GetLifecycle() const{ return m_lifecycle; }
+    inline const AwsBackupBackupPlanLifecycleDetails& GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline AwsBackupBackupPlanRuleCopyActionsDetails& WithLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { SetLifecycle(value); return *this;}
-    inline AwsBackupBackupPlanRuleCopyActionsDetails& WithLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { SetLifecycle(std::move(value)); return *this;}
+    template<typename LifecycleT = AwsBackupBackupPlanLifecycleDetails>
+    void SetLifecycle(LifecycleT&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::forward<LifecycleT>(value); }
+    template<typename LifecycleT = AwsBackupBackupPlanLifecycleDetails>
+    AwsBackupBackupPlanRuleCopyActionsDetails& WithLifecycle(LifecycleT&& value) { SetLifecycle(std::forward<LifecycleT>(value)); return *this;}
     ///@}
   private:
 

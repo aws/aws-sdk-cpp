@@ -18,16 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary() : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false)
-{
-}
-
 ReviewTemplatePillarReviewSummary::ReviewTemplatePillarReviewSummary(JsonView jsonValue)
-  : ReviewTemplatePillarReviewSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReviewTemplatePillarReviewSummary& ReviewTemplatePillarReviewSummary::operator =
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarName"))
   {
     m_pillarName = jsonValue.GetString("PillarName");
-
     m_pillarNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionCounts"))
   {
     Aws::Map<Aws::String, JsonView> questionCountsJsonMap = jsonValue.GetObject("QuestionCounts").GetAllObjects();
@@ -64,7 +49,6 @@ ReviewTemplatePillarReviewSummary& ReviewTemplatePillarReviewSummary::operator =
     }
     m_questionCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

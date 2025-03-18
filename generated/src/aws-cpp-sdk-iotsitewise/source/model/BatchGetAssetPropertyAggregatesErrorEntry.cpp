@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyAggregatesErrorEntry::BatchGetAssetPropertyAggregatesErrorEntry() : 
-    m_errorCode(BatchGetAssetPropertyAggregatesErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_entryIdHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyAggregatesErrorEntry::BatchGetAssetPropertyAggregatesErrorEntry(JsonView jsonValue)
-  : BatchGetAssetPropertyAggregatesErrorEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchGetAssetPropertyAggregatesErrorEntry& BatchGetAssetPropertyAggregatesErrorE
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchGetAssetPropertyAggregatesErrorCodeMapper::GetBatchGetAssetPropertyAggregatesErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

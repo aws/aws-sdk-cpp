@@ -29,7 +29,7 @@ namespace Model
   class ListRecommendationTemplatesResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListRecommendationTemplatesResult();
+    AWS_RESILIENCEHUB_API ListRecommendationTemplatesResult() = default;
     AWS_RESILIENCEHUB_API ListRecommendationTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListRecommendationTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRecommendationTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecommendationTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecommendationTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecommendationTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recommendation templates for the Resilience Hub applications.</p>
      */
-    inline const Aws::Vector<RecommendationTemplate>& GetRecommendationTemplates() const{ return m_recommendationTemplates; }
-    inline void SetRecommendationTemplates(const Aws::Vector<RecommendationTemplate>& value) { m_recommendationTemplates = value; }
-    inline void SetRecommendationTemplates(Aws::Vector<RecommendationTemplate>&& value) { m_recommendationTemplates = std::move(value); }
-    inline ListRecommendationTemplatesResult& WithRecommendationTemplates(const Aws::Vector<RecommendationTemplate>& value) { SetRecommendationTemplates(value); return *this;}
-    inline ListRecommendationTemplatesResult& WithRecommendationTemplates(Aws::Vector<RecommendationTemplate>&& value) { SetRecommendationTemplates(std::move(value)); return *this;}
-    inline ListRecommendationTemplatesResult& AddRecommendationTemplates(const RecommendationTemplate& value) { m_recommendationTemplates.push_back(value); return *this; }
-    inline ListRecommendationTemplatesResult& AddRecommendationTemplates(RecommendationTemplate&& value) { m_recommendationTemplates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecommendationTemplate>& GetRecommendationTemplates() const { return m_recommendationTemplates; }
+    template<typename RecommendationTemplatesT = Aws::Vector<RecommendationTemplate>>
+    void SetRecommendationTemplates(RecommendationTemplatesT&& value) { m_recommendationTemplatesHasBeenSet = true; m_recommendationTemplates = std::forward<RecommendationTemplatesT>(value); }
+    template<typename RecommendationTemplatesT = Aws::Vector<RecommendationTemplate>>
+    ListRecommendationTemplatesResult& WithRecommendationTemplates(RecommendationTemplatesT&& value) { SetRecommendationTemplates(std::forward<RecommendationTemplatesT>(value)); return *this;}
+    template<typename RecommendationTemplatesT = RecommendationTemplate>
+    ListRecommendationTemplatesResult& AddRecommendationTemplates(RecommendationTemplatesT&& value) { m_recommendationTemplatesHasBeenSet = true; m_recommendationTemplates.emplace_back(std::forward<RecommendationTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRecommendationTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRecommendationTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRecommendationTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRecommendationTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RecommendationTemplate> m_recommendationTemplates;
+    bool m_recommendationTemplatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

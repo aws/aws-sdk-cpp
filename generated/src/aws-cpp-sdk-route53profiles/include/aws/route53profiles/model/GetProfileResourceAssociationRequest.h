@@ -21,7 +21,7 @@ namespace Model
   class GetProfileResourceAssociationRequest : public Route53ProfilesRequest
   {
   public:
-    AWS_ROUTE53PROFILES_API GetProfileResourceAssociationRequest();
+    AWS_ROUTE53PROFILES_API GetProfileResourceAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> <p>The ID of the profile resource association that you want to get
      * information about.</p> </p>
      */
-    inline const Aws::String& GetProfileResourceAssociationId() const{ return m_profileResourceAssociationId; }
+    inline const Aws::String& GetProfileResourceAssociationId() const { return m_profileResourceAssociationId; }
     inline bool ProfileResourceAssociationIdHasBeenSet() const { return m_profileResourceAssociationIdHasBeenSet; }
-    inline void SetProfileResourceAssociationId(const Aws::String& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = value; }
-    inline void SetProfileResourceAssociationId(Aws::String&& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = std::move(value); }
-    inline void SetProfileResourceAssociationId(const char* value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId.assign(value); }
-    inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(const Aws::String& value) { SetProfileResourceAssociationId(value); return *this;}
-    inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(Aws::String&& value) { SetProfileResourceAssociationId(std::move(value)); return *this;}
-    inline GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(const char* value) { SetProfileResourceAssociationId(value); return *this;}
+    template<typename ProfileResourceAssociationIdT = Aws::String>
+    void SetProfileResourceAssociationId(ProfileResourceAssociationIdT&& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = std::forward<ProfileResourceAssociationIdT>(value); }
+    template<typename ProfileResourceAssociationIdT = Aws::String>
+    GetProfileResourceAssociationRequest& WithProfileResourceAssociationId(ProfileResourceAssociationIdT&& value) { SetProfileResourceAssociationId(std::forward<ProfileResourceAssociationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateMlflowTrackingServerResult
   {
   public:
-    AWS_SAGEMAKER_API CreateMlflowTrackingServerResult();
+    AWS_SAGEMAKER_API CreateMlflowTrackingServerResult() = default;
     AWS_SAGEMAKER_API CreateMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateMlflowTrackingServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the tracking server.</p>
      */
-    inline const Aws::String& GetTrackingServerArn() const{ return m_trackingServerArn; }
-    inline void SetTrackingServerArn(const Aws::String& value) { m_trackingServerArn = value; }
-    inline void SetTrackingServerArn(Aws::String&& value) { m_trackingServerArn = std::move(value); }
-    inline void SetTrackingServerArn(const char* value) { m_trackingServerArn.assign(value); }
-    inline CreateMlflowTrackingServerResult& WithTrackingServerArn(const Aws::String& value) { SetTrackingServerArn(value); return *this;}
-    inline CreateMlflowTrackingServerResult& WithTrackingServerArn(Aws::String&& value) { SetTrackingServerArn(std::move(value)); return *this;}
-    inline CreateMlflowTrackingServerResult& WithTrackingServerArn(const char* value) { SetTrackingServerArn(value); return *this;}
+    inline const Aws::String& GetTrackingServerArn() const { return m_trackingServerArn; }
+    template<typename TrackingServerArnT = Aws::String>
+    void SetTrackingServerArn(TrackingServerArnT&& value) { m_trackingServerArnHasBeenSet = true; m_trackingServerArn = std::forward<TrackingServerArnT>(value); }
+    template<typename TrackingServerArnT = Aws::String>
+    CreateMlflowTrackingServerResult& WithTrackingServerArn(TrackingServerArnT&& value) { SetTrackingServerArn(std::forward<TrackingServerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMlflowTrackingServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMlflowTrackingServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMlflowTrackingServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMlflowTrackingServerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trackingServerArn;
+    bool m_trackingServerArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

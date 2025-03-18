@@ -28,7 +28,7 @@ namespace Model
   class GetGraphqlApiResult
   {
   public:
-    AWS_APPSYNC_API GetGraphqlApiResult();
+    AWS_APPSYNC_API GetGraphqlApiResult() = default;
     AWS_APPSYNC_API GetGraphqlApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API GetGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>GraphqlApi</code> object.</p>
      */
-    inline const GraphqlApi& GetGraphqlApi() const{ return m_graphqlApi; }
-    inline void SetGraphqlApi(const GraphqlApi& value) { m_graphqlApi = value; }
-    inline void SetGraphqlApi(GraphqlApi&& value) { m_graphqlApi = std::move(value); }
-    inline GetGraphqlApiResult& WithGraphqlApi(const GraphqlApi& value) { SetGraphqlApi(value); return *this;}
-    inline GetGraphqlApiResult& WithGraphqlApi(GraphqlApi&& value) { SetGraphqlApi(std::move(value)); return *this;}
+    inline const GraphqlApi& GetGraphqlApi() const { return m_graphqlApi; }
+    template<typename GraphqlApiT = GraphqlApi>
+    void SetGraphqlApi(GraphqlApiT&& value) { m_graphqlApiHasBeenSet = true; m_graphqlApi = std::forward<GraphqlApiT>(value); }
+    template<typename GraphqlApiT = GraphqlApi>
+    GetGraphqlApiResult& WithGraphqlApi(GraphqlApiT&& value) { SetGraphqlApi(std::forward<GraphqlApiT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGraphqlApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGraphqlApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGraphqlApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGraphqlApiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GraphqlApi m_graphqlApi;
+    bool m_graphqlApiHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

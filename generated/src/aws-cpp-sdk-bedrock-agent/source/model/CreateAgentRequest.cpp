@@ -12,29 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAgentRequest::CreateAgentRequest() : 
-    m_agentCollaboration(AgentCollaboration::NOT_SET),
-    m_agentCollaborationHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_agentResourceRoleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customOrchestrationHasBeenSet(false),
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_foundationModelHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_memoryConfigurationHasBeenSet(false),
-    m_orchestrationType(OrchestrationType::NOT_SET),
-    m_orchestrationTypeHasBeenSet(false),
-    m_promptOverrideConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAgentRequest::SerializePayload() const
 {
   JsonValue payload;

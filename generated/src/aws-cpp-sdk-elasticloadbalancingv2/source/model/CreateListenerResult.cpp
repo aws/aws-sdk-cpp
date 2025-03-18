@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateListenerResult::CreateListenerResult()
-{
-}
-
 CreateListenerResult::CreateListenerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServi
     if(!listenersNode.IsNull())
     {
       XmlNode listenersMember = listenersNode.FirstChild("member");
+      m_listenersHasBeenSet = !listenersMember.IsNull();
       while(!listenersMember.IsNull())
       {
         m_listeners.push_back(listenersMember);
         listenersMember = listenersMember.NextNode("member");
       }
 
+      m_listenersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::CreateListenerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

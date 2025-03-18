@@ -28,7 +28,7 @@ namespace Model
   class RegenerateSecurityTokenResult
   {
   public:
-    AWS_CHIME_API RegenerateSecurityTokenResult();
+    AWS_CHIME_API RegenerateSecurityTokenResult() = default;
     AWS_CHIME_API RegenerateSecurityTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API RegenerateSecurityTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A resource that allows Enterprise account administrators to configure an
      * interface that receives events from Amazon Chime.</p>
      */
-    inline const Bot& GetBot() const{ return m_bot; }
-    inline void SetBot(const Bot& value) { m_bot = value; }
-    inline void SetBot(Bot&& value) { m_bot = std::move(value); }
-    inline RegenerateSecurityTokenResult& WithBot(const Bot& value) { SetBot(value); return *this;}
-    inline RegenerateSecurityTokenResult& WithBot(Bot&& value) { SetBot(std::move(value)); return *this;}
+    inline const Bot& GetBot() const { return m_bot; }
+    template<typename BotT = Bot>
+    void SetBot(BotT&& value) { m_botHasBeenSet = true; m_bot = std::forward<BotT>(value); }
+    template<typename BotT = Bot>
+    RegenerateSecurityTokenResult& WithBot(BotT&& value) { SetBot(std::forward<BotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegenerateSecurityTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegenerateSecurityTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegenerateSecurityTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegenerateSecurityTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Bot m_bot;
+    bool m_botHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

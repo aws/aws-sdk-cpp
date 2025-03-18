@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCapacityReservationResponse::CreateCapacityReservationResponse()
-{
-}
-
 CreateCapacityReservationResponse::CreateCapacityReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateCapacityReservationResponse& CreateCapacityReservationResponse::operator =
     if(!capacityReservationNode.IsNull())
     {
       m_capacityReservation = capacityReservationNode;
+      m_capacityReservationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateCapacityReservationResponse& CreateCapacityReservationResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateCapacityReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,17 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-PlacementDescription::PlacementDescription() : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
-{
-}
-
 PlacementDescription::PlacementDescription(JsonView jsonValue)
-  : PlacementDescription()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ PlacementDescription& PlacementDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementName"))
   {
     m_placementName = jsonValue.GetString("placementName");
-
     m_placementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -58,21 +44,16 @@ PlacementDescription& PlacementDescription::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedDate"))
   {
     m_updatedDate = jsonValue.GetDouble("updatedDate");
-
     m_updatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

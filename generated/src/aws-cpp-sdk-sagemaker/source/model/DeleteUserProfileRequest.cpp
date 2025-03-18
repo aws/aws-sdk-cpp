@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserProfileRequest::DeleteUserProfileRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

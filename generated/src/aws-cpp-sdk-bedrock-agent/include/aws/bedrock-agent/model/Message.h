@@ -35,7 +35,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_BEDROCKAGENT_API Message();
+    AWS_BEDROCKAGENT_API Message() = default;
     AWS_BEDROCKAGENT_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>The content in the message.</p>
      */
-    inline const Aws::Vector<ContentBlock>& GetContent() const{ return m_content; }
+    inline const Aws::Vector<ContentBlock>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Vector<ContentBlock>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Vector<ContentBlock>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline Message& WithContent(const Aws::Vector<ContentBlock>& value) { SetContent(value); return *this;}
-    inline Message& WithContent(Aws::Vector<ContentBlock>&& value) { SetContent(std::move(value)); return *this;}
-    inline Message& AddContent(const ContentBlock& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-    inline Message& AddContent(ContentBlock&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+    template<typename ContentT = Aws::Vector<ContentBlock>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Vector<ContentBlock>>
+    Message& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentT = ContentBlock>
+    Message& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The role that the message belongs to.</p>
      */
-    inline const ConversationRole& GetRole() const{ return m_role; }
+    inline ConversationRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const ConversationRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(ConversationRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline Message& WithRole(const ConversationRole& value) { SetRole(value); return *this;}
-    inline Message& WithRole(ConversationRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(ConversationRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline Message& WithRole(ConversationRole value) { SetRole(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContentBlock> m_content;
     bool m_contentHasBeenSet = false;
 
-    ConversationRole m_role;
+    ConversationRole m_role{ConversationRole::NOT_SET};
     bool m_roleHasBeenSet = false;
   };
 

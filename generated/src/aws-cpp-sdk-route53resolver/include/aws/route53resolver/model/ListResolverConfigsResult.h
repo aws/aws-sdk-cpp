@@ -29,7 +29,7 @@ namespace Model
   class ListResolverConfigsResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListResolverConfigsResult();
+    AWS_ROUTE53RESOLVER_API ListResolverConfigsResult() = default;
     AWS_ROUTE53RESOLVER_API ListResolverConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API ListResolverConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,11 @@ namespace Model
      * <code>NextToken</code> that Amazon Route 53 returned in the previous response
      * and include it in <code>NextToken</code> in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResolverConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResolverConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResolverConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResolverConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,32 +57,33 @@ namespace Model
      * Resolver configuration that is associated with the current Amazon Web Services
      * account.</p>
      */
-    inline const Aws::Vector<ResolverConfig>& GetResolverConfigs() const{ return m_resolverConfigs; }
-    inline void SetResolverConfigs(const Aws::Vector<ResolverConfig>& value) { m_resolverConfigs = value; }
-    inline void SetResolverConfigs(Aws::Vector<ResolverConfig>&& value) { m_resolverConfigs = std::move(value); }
-    inline ListResolverConfigsResult& WithResolverConfigs(const Aws::Vector<ResolverConfig>& value) { SetResolverConfigs(value); return *this;}
-    inline ListResolverConfigsResult& WithResolverConfigs(Aws::Vector<ResolverConfig>&& value) { SetResolverConfigs(std::move(value)); return *this;}
-    inline ListResolverConfigsResult& AddResolverConfigs(const ResolverConfig& value) { m_resolverConfigs.push_back(value); return *this; }
-    inline ListResolverConfigsResult& AddResolverConfigs(ResolverConfig&& value) { m_resolverConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResolverConfig>& GetResolverConfigs() const { return m_resolverConfigs; }
+    template<typename ResolverConfigsT = Aws::Vector<ResolverConfig>>
+    void SetResolverConfigs(ResolverConfigsT&& value) { m_resolverConfigsHasBeenSet = true; m_resolverConfigs = std::forward<ResolverConfigsT>(value); }
+    template<typename ResolverConfigsT = Aws::Vector<ResolverConfig>>
+    ListResolverConfigsResult& WithResolverConfigs(ResolverConfigsT&& value) { SetResolverConfigs(std::forward<ResolverConfigsT>(value)); return *this;}
+    template<typename ResolverConfigsT = ResolverConfig>
+    ListResolverConfigsResult& AddResolverConfigs(ResolverConfigsT&& value) { m_resolverConfigsHasBeenSet = true; m_resolverConfigs.emplace_back(std::forward<ResolverConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResolverConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResolverConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResolverConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResolverConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ResolverConfig> m_resolverConfigs;
+    bool m_resolverConfigsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

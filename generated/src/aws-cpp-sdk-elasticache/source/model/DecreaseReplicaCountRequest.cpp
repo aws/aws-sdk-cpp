@@ -10,17 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DecreaseReplicaCountRequest::DecreaseReplicaCountRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_newReplicaCount(0),
-    m_newReplicaCountHasBeenSet(false),
-    m_replicaConfigurationHasBeenSet(false),
-    m_replicasToRemoveHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String DecreaseReplicaCountRequest::SerializePayload() const
 {
   Aws::StringStream ss;

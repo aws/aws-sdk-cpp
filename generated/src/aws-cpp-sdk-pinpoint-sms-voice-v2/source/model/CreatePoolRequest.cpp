@@ -12,19 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePoolRequest::CreatePoolRequest() : 
-    m_originationIdentityHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreatePoolRequest::SerializePayload() const
 {
   JsonValue payload;

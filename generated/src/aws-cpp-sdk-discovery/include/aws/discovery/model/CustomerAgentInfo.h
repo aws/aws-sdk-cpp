@@ -29,7 +29,7 @@ namespace Model
   class CustomerAgentInfo
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Number of active discovery agents.</p>
      */
-    inline int GetActiveAgents() const{ return m_activeAgents; }
+    inline int GetActiveAgents() const { return m_activeAgents; }
     inline bool ActiveAgentsHasBeenSet() const { return m_activeAgentsHasBeenSet; }
     inline void SetActiveAgents(int value) { m_activeAgentsHasBeenSet = true; m_activeAgents = value; }
     inline CustomerAgentInfo& WithActiveAgents(int value) { SetActiveAgents(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Number of healthy discovery agents</p>
      */
-    inline int GetHealthyAgents() const{ return m_healthyAgents; }
+    inline int GetHealthyAgents() const { return m_healthyAgents; }
     inline bool HealthyAgentsHasBeenSet() const { return m_healthyAgentsHasBeenSet; }
     inline void SetHealthyAgents(int value) { m_healthyAgentsHasBeenSet = true; m_healthyAgents = value; }
     inline CustomerAgentInfo& WithHealthyAgents(int value) { SetHealthyAgents(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Number of blacklisted discovery agents.</p>
      */
-    inline int GetBlackListedAgents() const{ return m_blackListedAgents; }
+    inline int GetBlackListedAgents() const { return m_blackListedAgents; }
     inline bool BlackListedAgentsHasBeenSet() const { return m_blackListedAgentsHasBeenSet; }
     inline void SetBlackListedAgents(int value) { m_blackListedAgentsHasBeenSet = true; m_blackListedAgents = value; }
     inline CustomerAgentInfo& WithBlackListedAgents(int value) { SetBlackListedAgents(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>Number of discovery agents with status SHUTDOWN.</p>
      */
-    inline int GetShutdownAgents() const{ return m_shutdownAgents; }
+    inline int GetShutdownAgents() const { return m_shutdownAgents; }
     inline bool ShutdownAgentsHasBeenSet() const { return m_shutdownAgentsHasBeenSet; }
     inline void SetShutdownAgents(int value) { m_shutdownAgentsHasBeenSet = true; m_shutdownAgents = value; }
     inline CustomerAgentInfo& WithShutdownAgents(int value) { SetShutdownAgents(value); return *this;}
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>Number of unhealthy discovery agents.</p>
      */
-    inline int GetUnhealthyAgents() const{ return m_unhealthyAgents; }
+    inline int GetUnhealthyAgents() const { return m_unhealthyAgents; }
     inline bool UnhealthyAgentsHasBeenSet() const { return m_unhealthyAgentsHasBeenSet; }
     inline void SetUnhealthyAgents(int value) { m_unhealthyAgentsHasBeenSet = true; m_unhealthyAgents = value; }
     inline CustomerAgentInfo& WithUnhealthyAgents(int value) { SetUnhealthyAgents(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Total number of discovery agents.</p>
      */
-    inline int GetTotalAgents() const{ return m_totalAgents; }
+    inline int GetTotalAgents() const { return m_totalAgents; }
     inline bool TotalAgentsHasBeenSet() const { return m_totalAgentsHasBeenSet; }
     inline void SetTotalAgents(int value) { m_totalAgentsHasBeenSet = true; m_totalAgents = value; }
     inline CustomerAgentInfo& WithTotalAgents(int value) { SetTotalAgents(value); return *this;}
@@ -99,32 +99,32 @@ namespace Model
     /**
      * <p>Number of unknown discovery agents.</p>
      */
-    inline int GetUnknownAgents() const{ return m_unknownAgents; }
+    inline int GetUnknownAgents() const { return m_unknownAgents; }
     inline bool UnknownAgentsHasBeenSet() const { return m_unknownAgentsHasBeenSet; }
     inline void SetUnknownAgents(int value) { m_unknownAgentsHasBeenSet = true; m_unknownAgents = value; }
     inline CustomerAgentInfo& WithUnknownAgents(int value) { SetUnknownAgents(value); return *this;}
     ///@}
   private:
 
-    int m_activeAgents;
+    int m_activeAgents{0};
     bool m_activeAgentsHasBeenSet = false;
 
-    int m_healthyAgents;
+    int m_healthyAgents{0};
     bool m_healthyAgentsHasBeenSet = false;
 
-    int m_blackListedAgents;
+    int m_blackListedAgents{0};
     bool m_blackListedAgentsHasBeenSet = false;
 
-    int m_shutdownAgents;
+    int m_shutdownAgents{0};
     bool m_shutdownAgentsHasBeenSet = false;
 
-    int m_unhealthyAgents;
+    int m_unhealthyAgents{0};
     bool m_unhealthyAgentsHasBeenSet = false;
 
-    int m_totalAgents;
+    int m_totalAgents{0};
     bool m_totalAgentsHasBeenSet = false;
 
-    int m_unknownAgents;
+    int m_unknownAgents{0};
     bool m_unknownAgentsHasBeenSet = false;
   };
 

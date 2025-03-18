@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQueriesRequest::ListQueriesRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_state(QueryStateInput::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Aws::String ListQueriesRequest::SerializePayload() const
 {
   return {};

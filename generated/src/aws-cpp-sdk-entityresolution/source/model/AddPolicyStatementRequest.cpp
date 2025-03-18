@@ -12,17 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddPolicyStatementRequest::AddPolicyStatementRequest() : 
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_effect(StatementEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 Aws::String AddPolicyStatementRequest::SerializePayload() const
 {
   JsonValue payload;

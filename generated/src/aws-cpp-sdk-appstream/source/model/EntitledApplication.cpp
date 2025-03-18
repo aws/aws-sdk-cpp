@@ -18,13 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-EntitledApplication::EntitledApplication() : 
-    m_applicationIdentifierHasBeenSet(false)
-{
-}
-
 EntitledApplication::EntitledApplication(JsonView jsonValue)
-  : EntitledApplication()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EntitledApplication& EntitledApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationIdentifier"))
   {
     m_applicationIdentifier = jsonValue.GetString("ApplicationIdentifier");
-
     m_applicationIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

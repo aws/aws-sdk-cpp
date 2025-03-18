@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InternetGateway::InternetGateway() : 
-    m_attachmentsHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InternetGateway::InternetGateway(const XmlNode& xmlNode)
-  : InternetGateway()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      m_attachmentsHasBeenSet = !attachmentsMember.IsNull();
       while(!attachmentsMember.IsNull())
       {
         m_attachments.push_back(attachmentsMember);
@@ -68,6 +60,7 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

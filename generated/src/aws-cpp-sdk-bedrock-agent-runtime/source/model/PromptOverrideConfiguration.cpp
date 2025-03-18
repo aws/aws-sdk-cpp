@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PromptOverrideConfiguration::PromptOverrideConfiguration() : 
-    m_overrideLambdaHasBeenSet(false),
-    m_promptConfigurationsHasBeenSet(false)
-{
-}
-
 PromptOverrideConfiguration::PromptOverrideConfiguration(JsonView jsonValue)
-  : PromptOverrideConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PromptOverrideConfiguration& PromptOverrideConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("overrideLambda"))
   {
     m_overrideLambda = jsonValue.GetString("overrideLambda");
-
     m_overrideLambdaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptConfigurations"))
   {
     Aws::Utils::Array<JsonView> promptConfigurationsJsonList = jsonValue.GetArray("promptConfigurations");
@@ -48,7 +39,6 @@ PromptOverrideConfiguration& PromptOverrideConfiguration::operator =(JsonView js
     }
     m_promptConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

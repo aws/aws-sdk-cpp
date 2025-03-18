@@ -36,7 +36,7 @@ namespace Model
   class ParsingConfiguration
   {
   public:
-    AWS_QCONNECT_API ParsingConfiguration();
+    AWS_QCONNECT_API ParsingConfiguration() = default;
     AWS_QCONNECT_API ParsingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ParsingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,31 +47,29 @@ namespace Model
      * <p>Settings for a foundation model used to parse documents for a data
      * source.</p>
      */
-    inline const BedrockFoundationModelConfigurationForParsing& GetBedrockFoundationModelConfiguration() const{ return m_bedrockFoundationModelConfiguration; }
+    inline const BedrockFoundationModelConfigurationForParsing& GetBedrockFoundationModelConfiguration() const { return m_bedrockFoundationModelConfiguration; }
     inline bool BedrockFoundationModelConfigurationHasBeenSet() const { return m_bedrockFoundationModelConfigurationHasBeenSet; }
-    inline void SetBedrockFoundationModelConfiguration(const BedrockFoundationModelConfigurationForParsing& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = value; }
-    inline void SetBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationForParsing&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::move(value); }
-    inline ParsingConfiguration& WithBedrockFoundationModelConfiguration(const BedrockFoundationModelConfigurationForParsing& value) { SetBedrockFoundationModelConfiguration(value); return *this;}
-    inline ParsingConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationForParsing&& value) { SetBedrockFoundationModelConfiguration(std::move(value)); return *this;}
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelConfigurationForParsing>
+    void SetBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::forward<BedrockFoundationModelConfigurationT>(value); }
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelConfigurationForParsing>
+    ParsingConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { SetBedrockFoundationModelConfiguration(std::forward<BedrockFoundationModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parsing strategy for the data source.</p>
      */
-    inline const ParsingStrategy& GetParsingStrategy() const{ return m_parsingStrategy; }
+    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
     inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
-    inline void SetParsingStrategy(const ParsingStrategy& value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
-    inline void SetParsingStrategy(ParsingStrategy&& value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = std::move(value); }
-    inline ParsingConfiguration& WithParsingStrategy(const ParsingStrategy& value) { SetParsingStrategy(value); return *this;}
-    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy&& value) { SetParsingStrategy(std::move(value)); return *this;}
+    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
+    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
     ///@}
   private:
 
     BedrockFoundationModelConfigurationForParsing m_bedrockFoundationModelConfiguration;
     bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
-    ParsingStrategy m_parsingStrategy;
+    ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
     bool m_parsingStrategyHasBeenSet = false;
   };
 

@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopBottomRankedComputation::TopBottomRankedComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_resultSize(0),
-    m_resultSizeHasBeenSet(false),
-    m_type(TopBottomComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TopBottomRankedComputation::TopBottomRankedComputation(JsonView jsonValue)
-  : TopBottomRankedComputation()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ TopBottomRankedComputation& TopBottomRankedComputation::operator =(JsonView json
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetObject("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultSize"))
   {
     m_resultSize = jsonValue.GetInteger("ResultSize");
-
     m_resultSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TopBottomComputationTypeMapper::GetTopBottomComputationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeRuleGroupMetadataResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult();
+    AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult() = default;
     AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * group after you create it.</p> <p>You must specify the ARN or the name, and you
      * can specify both. </p>
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArn.assign(value); }
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    DescribeRuleGroupMetadataResult& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,22 @@ namespace Model
      * group after you create it.</p> <p>You must specify the ARN or the name, and you
      * can specify both. </p>
      */
-    inline const Aws::String& GetRuleGroupName() const{ return m_ruleGroupName; }
-    inline void SetRuleGroupName(const Aws::String& value) { m_ruleGroupName = value; }
-    inline void SetRuleGroupName(Aws::String&& value) { m_ruleGroupName = std::move(value); }
-    inline void SetRuleGroupName(const char* value) { m_ruleGroupName.assign(value); }
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupName(const Aws::String& value) { SetRuleGroupName(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupName(Aws::String&& value) { SetRuleGroupName(std::move(value)); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRuleGroupName(const char* value) { SetRuleGroupName(value); return *this;}
+    inline const Aws::String& GetRuleGroupName() const { return m_ruleGroupName; }
+    template<typename RuleGroupNameT = Aws::String>
+    void SetRuleGroupName(RuleGroupNameT&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::forward<RuleGroupNameT>(value); }
+    template<typename RuleGroupNameT = Aws::String>
+    DescribeRuleGroupMetadataResult& WithRuleGroupName(RuleGroupNameT&& value) { SetRuleGroupName(std::forward<RuleGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the metadata objects for the specified rule group. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeRuleGroupMetadataResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeRuleGroupMetadataResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +79,9 @@ namespace Model
      * stateful rules. </p>  <p>This setting is required for requests that do not
      * include the <code>RuleGroupARN</code>.</p> 
      */
-    inline const RuleGroupType& GetType() const{ return m_type; }
-    inline void SetType(const RuleGroupType& value) { m_type = value; }
-    inline void SetType(RuleGroupType&& value) { m_type = std::move(value); }
-    inline DescribeRuleGroupMetadataResult& WithType(const RuleGroupType& value) { SetType(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline RuleGroupType GetType() const { return m_type; }
+    inline void SetType(RuleGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DescribeRuleGroupMetadataResult& WithType(RuleGroupType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,58 +94,64 @@ namespace Model
      * group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to
      * <code>TRUE</code>. </p>
      */
-    inline int GetCapacity() const{ return m_capacity; }
-    inline void SetCapacity(int value) { m_capacity = value; }
+    inline int GetCapacity() const { return m_capacity; }
+    inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline DescribeRuleGroupMetadataResult& WithCapacity(int value) { SetCapacity(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const StatefulRuleOptions& GetStatefulRuleOptions() const{ return m_statefulRuleOptions; }
-    inline void SetStatefulRuleOptions(const StatefulRuleOptions& value) { m_statefulRuleOptions = value; }
-    inline void SetStatefulRuleOptions(StatefulRuleOptions&& value) { m_statefulRuleOptions = std::move(value); }
-    inline DescribeRuleGroupMetadataResult& WithStatefulRuleOptions(const StatefulRuleOptions& value) { SetStatefulRuleOptions(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithStatefulRuleOptions(StatefulRuleOptions&& value) { SetStatefulRuleOptions(std::move(value)); return *this;}
+    inline const StatefulRuleOptions& GetStatefulRuleOptions() const { return m_statefulRuleOptions; }
+    template<typename StatefulRuleOptionsT = StatefulRuleOptions>
+    void SetStatefulRuleOptions(StatefulRuleOptionsT&& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = std::forward<StatefulRuleOptionsT>(value); }
+    template<typename StatefulRuleOptionsT = StatefulRuleOptions>
+    DescribeRuleGroupMetadataResult& WithStatefulRuleOptions(StatefulRuleOptionsT&& value) { SetStatefulRuleOptions(std::forward<StatefulRuleOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that the rule group was changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeRuleGroupMetadataResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeRuleGroupMetadataResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRuleGroupMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRuleGroupMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRuleGroupMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ruleGroupArn;
+    bool m_ruleGroupArnHasBeenSet = false;
 
     Aws::String m_ruleGroupName;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    RuleGroupType m_type;
+    RuleGroupType m_type{RuleGroupType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
-    int m_capacity;
+    int m_capacity{0};
+    bool m_capacityHasBeenSet = false;
 
     StatefulRuleOptions m_statefulRuleOptions;
+    bool m_statefulRuleOptionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

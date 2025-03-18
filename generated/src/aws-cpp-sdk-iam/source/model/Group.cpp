@@ -20,17 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Group::Group() : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 Group::Group(const XmlNode& xmlNode)
-  : Group()
 {
   *this = xmlNode;
 }

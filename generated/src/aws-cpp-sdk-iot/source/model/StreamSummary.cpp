@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StreamSummary::StreamSummary() : 
-    m_streamIdHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_streamVersion(0),
-    m_streamVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 StreamSummary::StreamSummary(JsonView jsonValue)
-  : StreamSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StreamSummary& StreamSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamArn"))
   {
     m_streamArn = jsonValue.GetString("streamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamVersion"))
   {
     m_streamVersion = jsonValue.GetInteger("streamVersion");
-
     m_streamVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

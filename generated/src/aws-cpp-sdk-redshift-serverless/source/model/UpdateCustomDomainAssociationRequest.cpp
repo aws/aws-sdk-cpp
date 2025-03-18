@@ -12,13 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomDomainAssociationRequest::UpdateCustomDomainAssociationRequest() : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomDomainAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

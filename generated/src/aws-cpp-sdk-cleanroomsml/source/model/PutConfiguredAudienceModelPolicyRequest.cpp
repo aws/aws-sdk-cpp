@@ -12,15 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfiguredAudienceModelPolicyRequest::PutConfiguredAudienceModelPolicyRequest() : 
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_configuredAudienceModelPolicyHasBeenSet(false),
-    m_previousPolicyHashHasBeenSet(false),
-    m_policyExistenceCondition(PolicyExistenceCondition::NOT_SET),
-    m_policyExistenceConditionHasBeenSet(false)
-{
-}
-
 Aws::String PutConfiguredAudienceModelPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

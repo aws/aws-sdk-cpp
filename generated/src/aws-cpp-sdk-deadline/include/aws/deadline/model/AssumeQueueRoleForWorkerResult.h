@@ -28,7 +28,7 @@ namespace Model
   class AssumeQueueRoleForWorkerResult
   {
   public:
-    AWS_DEADLINE_API AssumeQueueRoleForWorkerResult();
+    AWS_DEADLINE_API AssumeQueueRoleForWorkerResult() = default;
     AWS_DEADLINE_API AssumeQueueRoleForWorkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API AssumeQueueRoleForWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The Amazon Web Services credentials for the role that the worker is
      * assuming.</p>
      */
-    inline const AwsCredentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const AwsCredentials& value) { m_credentials = value; }
-    inline void SetCredentials(AwsCredentials&& value) { m_credentials = std::move(value); }
-    inline AssumeQueueRoleForWorkerResult& WithCredentials(const AwsCredentials& value) { SetCredentials(value); return *this;}
-    inline AssumeQueueRoleForWorkerResult& WithCredentials(AwsCredentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const AwsCredentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = AwsCredentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = AwsCredentials>
+    AssumeQueueRoleForWorkerResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssumeQueueRoleForWorkerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssumeQueueRoleForWorkerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssumeQueueRoleForWorkerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssumeQueueRoleForWorkerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AwsCredentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

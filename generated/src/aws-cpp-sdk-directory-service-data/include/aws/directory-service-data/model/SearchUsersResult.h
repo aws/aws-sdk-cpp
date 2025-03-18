@@ -29,7 +29,7 @@ namespace Model
   class SearchUsersResult
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API SearchUsersResult();
+    AWS_DIRECTORYSERVICEDATA_API SearchUsersResult() = default;
     AWS_DIRECTORYSERVICEDATA_API SearchUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICEDATA_API SearchUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p> The identifier (ID) of the directory where the address block is added. </p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
-    inline SearchUsersResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline SearchUsersResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline SearchUsersResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    SearchUsersResult& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,62 +50,61 @@ namespace Model
      * <p> An encoded paging token for paginated calls that can be passed back to
      * retrieve the next page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchUsersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchUsersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchUsersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchUsersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The domain that's associated with the user. </p>
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
-    inline void SetRealm(const Aws::String& value) { m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realm.assign(value); }
-    inline SearchUsersResult& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline SearchUsersResult& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline SearchUsersResult& WithRealm(const char* value) { SetRealm(value); return *this;}
+    inline const Aws::String& GetRealm() const { return m_realm; }
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    SearchUsersResult& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The user information that the request returns. </p>
      */
-    inline const Aws::Vector<User>& GetUsers() const{ return m_users; }
-    inline void SetUsers(const Aws::Vector<User>& value) { m_users = value; }
-    inline void SetUsers(Aws::Vector<User>&& value) { m_users = std::move(value); }
-    inline SearchUsersResult& WithUsers(const Aws::Vector<User>& value) { SetUsers(value); return *this;}
-    inline SearchUsersResult& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
-    inline SearchUsersResult& AddUsers(const User& value) { m_users.push_back(value); return *this; }
-    inline SearchUsersResult& AddUsers(User&& value) { m_users.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<User>& GetUsers() const { return m_users; }
+    template<typename UsersT = Aws::Vector<User>>
+    void SetUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users = std::forward<UsersT>(value); }
+    template<typename UsersT = Aws::Vector<User>>
+    SearchUsersResult& WithUsers(UsersT&& value) { SetUsers(std::forward<UsersT>(value)); return *this;}
+    template<typename UsersT = User>
+    SearchUsersResult& AddUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users.emplace_back(std::forward<UsersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchUsersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_realm;
+    bool m_realmHasBeenSet = false;
 
     Aws::Vector<User> m_users;
+    bool m_usersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

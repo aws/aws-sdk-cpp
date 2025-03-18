@@ -29,7 +29,7 @@ namespace Model
   class ListAutomaticTapeCreationPoliciesResult
   {
   public:
-    AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult();
+    AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult() = default;
     AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * policies, including the automatic tape creation rules and the gateway that is
      * using the policies.</p>
      */
-    inline const Aws::Vector<AutomaticTapeCreationPolicyInfo>& GetAutomaticTapeCreationPolicyInfos() const{ return m_automaticTapeCreationPolicyInfos; }
-    inline void SetAutomaticTapeCreationPolicyInfos(const Aws::Vector<AutomaticTapeCreationPolicyInfo>& value) { m_automaticTapeCreationPolicyInfos = value; }
-    inline void SetAutomaticTapeCreationPolicyInfos(Aws::Vector<AutomaticTapeCreationPolicyInfo>&& value) { m_automaticTapeCreationPolicyInfos = std::move(value); }
-    inline ListAutomaticTapeCreationPoliciesResult& WithAutomaticTapeCreationPolicyInfos(const Aws::Vector<AutomaticTapeCreationPolicyInfo>& value) { SetAutomaticTapeCreationPolicyInfos(value); return *this;}
-    inline ListAutomaticTapeCreationPoliciesResult& WithAutomaticTapeCreationPolicyInfos(Aws::Vector<AutomaticTapeCreationPolicyInfo>&& value) { SetAutomaticTapeCreationPolicyInfos(std::move(value)); return *this;}
-    inline ListAutomaticTapeCreationPoliciesResult& AddAutomaticTapeCreationPolicyInfos(const AutomaticTapeCreationPolicyInfo& value) { m_automaticTapeCreationPolicyInfos.push_back(value); return *this; }
-    inline ListAutomaticTapeCreationPoliciesResult& AddAutomaticTapeCreationPolicyInfos(AutomaticTapeCreationPolicyInfo&& value) { m_automaticTapeCreationPolicyInfos.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutomaticTapeCreationPolicyInfo>& GetAutomaticTapeCreationPolicyInfos() const { return m_automaticTapeCreationPolicyInfos; }
+    template<typename AutomaticTapeCreationPolicyInfosT = Aws::Vector<AutomaticTapeCreationPolicyInfo>>
+    void SetAutomaticTapeCreationPolicyInfos(AutomaticTapeCreationPolicyInfosT&& value) { m_automaticTapeCreationPolicyInfosHasBeenSet = true; m_automaticTapeCreationPolicyInfos = std::forward<AutomaticTapeCreationPolicyInfosT>(value); }
+    template<typename AutomaticTapeCreationPolicyInfosT = Aws::Vector<AutomaticTapeCreationPolicyInfo>>
+    ListAutomaticTapeCreationPoliciesResult& WithAutomaticTapeCreationPolicyInfos(AutomaticTapeCreationPolicyInfosT&& value) { SetAutomaticTapeCreationPolicyInfos(std::forward<AutomaticTapeCreationPolicyInfosT>(value)); return *this;}
+    template<typename AutomaticTapeCreationPolicyInfosT = AutomaticTapeCreationPolicyInfo>
+    ListAutomaticTapeCreationPoliciesResult& AddAutomaticTapeCreationPolicyInfos(AutomaticTapeCreationPolicyInfosT&& value) { m_automaticTapeCreationPolicyInfosHasBeenSet = true; m_automaticTapeCreationPolicyInfos.emplace_back(std::forward<AutomaticTapeCreationPolicyInfosT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAutomaticTapeCreationPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAutomaticTapeCreationPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAutomaticTapeCreationPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAutomaticTapeCreationPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AutomaticTapeCreationPolicyInfo> m_automaticTapeCreationPolicyInfos;
+    bool m_automaticTapeCreationPolicyInfosHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

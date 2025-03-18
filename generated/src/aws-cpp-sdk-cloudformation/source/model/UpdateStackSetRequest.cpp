@@ -10,33 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-UpdateStackSetRequest::UpdateStackSetRequest() : 
-    m_stackSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false),
-    m_usePreviousTemplate(false),
-    m_usePreviousTemplateHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_operationPreferencesHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_deploymentTargetsHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_operationId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_operationIdHasBeenSet(true),
-    m_accountsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStackSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

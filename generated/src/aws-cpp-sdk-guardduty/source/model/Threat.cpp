@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Threat::Threat() : 
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_itemPathsHasBeenSet(false)
-{
-}
-
 Threat::Threat(JsonView jsonValue)
-  : Threat()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Threat& Threat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemPaths"))
   {
     Aws::Utils::Array<JsonView> itemPathsJsonList = jsonValue.GetArray("itemPaths");
@@ -56,7 +44,6 @@ Threat& Threat::operator =(JsonView jsonValue)
     }
     m_itemPathsHasBeenSet = true;
   }
-
   return *this;
 }
 

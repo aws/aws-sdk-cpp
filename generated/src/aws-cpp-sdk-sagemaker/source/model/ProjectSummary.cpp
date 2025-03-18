@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProjectSummary::ProjectSummary() : 
-    m_projectNameHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_projectArnHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_projectStatus(ProjectStatus::NOT_SET),
-    m_projectStatusHasBeenSet(false)
-{
-}
-
 ProjectSummary::ProjectSummary(JsonView jsonValue)
-  : ProjectSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProjectName"))
   {
     m_projectName = jsonValue.GetString("ProjectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectDescription"))
   {
     m_projectDescription = jsonValue.GetString("ProjectDescription");
-
     m_projectDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectArn"))
   {
     m_projectArn = jsonValue.GetString("ProjectArn");
-
     m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectId"))
   {
     m_projectId = jsonValue.GetString("ProjectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectStatus"))
   {
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("ProjectStatus"));
-
     m_projectStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

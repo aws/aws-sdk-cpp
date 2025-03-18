@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetIdentityMailFromDomainAttributesRequest::GetIdentityMailFromDomainAttributesRequest() : 
-    m_identitiesHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityMailFromDomainAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,21 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppVersionResourceRequest::UpdateAppVersionResourceRequest() : 
-    m_additionalInfoHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_appComponentsHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppVersionResourceRequest::SerializePayload() const
 {
   JsonValue payload;

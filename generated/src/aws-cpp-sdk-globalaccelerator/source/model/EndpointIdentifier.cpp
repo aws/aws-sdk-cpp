@@ -18,15 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-EndpointIdentifier::EndpointIdentifier() : 
-    m_endpointIdHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
-{
-}
-
 EndpointIdentifier::EndpointIdentifier(JsonView jsonValue)
-  : EndpointIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EndpointIdentifier& EndpointIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientIPPreservationEnabled"))
   {
     m_clientIPPreservationEnabled = jsonValue.GetBool("ClientIPPreservationEnabled");
-
     m_clientIPPreservationEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

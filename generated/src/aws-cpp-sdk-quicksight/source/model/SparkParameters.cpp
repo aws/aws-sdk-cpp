@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SparkParameters::SparkParameters() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 SparkParameters::SparkParameters(JsonView jsonValue)
-  : SparkParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SparkParameters& SparkParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExchangeCodeForTokenResult::ExchangeCodeForTokenResult() : 
-    m_expiresIn(0)
-{
-}
-
 ExchangeCodeForTokenResult::ExchangeCodeForTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ExchangeCodeForTokenResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ ExchangeCodeForTokenResult& ExchangeCodeForTokenResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
+    m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresIn"))
   {
     m_expiresIn = jsonValue.GetInteger("expiresIn");
-
+    m_expiresInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
+    m_refreshTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

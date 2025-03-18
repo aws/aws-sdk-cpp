@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UnprocessedDataSourcesResult::UnprocessedDataSourcesResult() : 
-    m_malwareProtectionHasBeenSet(false)
-{
-}
-
 UnprocessedDataSourcesResult::UnprocessedDataSourcesResult(JsonView jsonValue)
-  : UnprocessedDataSourcesResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnprocessedDataSourcesResult& UnprocessedDataSourcesResult::operator =(JsonView 
   if(jsonValue.ValueExists("malwareProtection"))
   {
     m_malwareProtection = jsonValue.GetObject("malwareProtection");
-
     m_malwareProtectionHasBeenSet = true;
   }
-
   return *this;
 }
 

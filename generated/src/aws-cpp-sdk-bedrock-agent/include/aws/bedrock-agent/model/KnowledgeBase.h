@@ -36,7 +36,7 @@ namespace Model
   class KnowledgeBase
   {
   public:
-    AWS_BEDROCKAGENT_API KnowledgeBase();
+    AWS_BEDROCKAGENT_API KnowledgeBase() = default;
     AWS_BEDROCKAGENT_API KnowledgeBase(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API KnowledgeBase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,55 +46,50 @@ namespace Model
     /**
      * <p>The time the knowledge base was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline KnowledgeBase& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline KnowledgeBase& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    KnowledgeBase& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the knowledge base.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline KnowledgeBase& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline KnowledgeBase& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline KnowledgeBase& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    KnowledgeBase& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of reasons that the API operation on the knowledge base failed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const { return m_failureReasons; }
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
-    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
-    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
-    inline KnowledgeBase& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
-    inline KnowledgeBase& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
-    inline KnowledgeBase& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
-    inline KnowledgeBase& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
-    inline KnowledgeBase& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    void SetFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::forward<FailureReasonsT>(value); }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    KnowledgeBase& WithFailureReasons(FailureReasonsT&& value) { SetFailureReasons(std::forward<FailureReasonsT>(value)); return *this;}
+    template<typename FailureReasonsT = Aws::String>
+    KnowledgeBase& AddFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseArn() const{ return m_knowledgeBaseArn; }
+    inline const Aws::String& GetKnowledgeBaseArn() const { return m_knowledgeBaseArn; }
     inline bool KnowledgeBaseArnHasBeenSet() const { return m_knowledgeBaseArnHasBeenSet; }
-    inline void SetKnowledgeBaseArn(const Aws::String& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = value; }
-    inline void SetKnowledgeBaseArn(Aws::String&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::move(value); }
-    inline void SetKnowledgeBaseArn(const char* value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn.assign(value); }
-    inline KnowledgeBase& WithKnowledgeBaseArn(const Aws::String& value) { SetKnowledgeBaseArn(value); return *this;}
-    inline KnowledgeBase& WithKnowledgeBaseArn(Aws::String&& value) { SetKnowledgeBaseArn(std::move(value)); return *this;}
-    inline KnowledgeBase& WithKnowledgeBaseArn(const char* value) { SetKnowledgeBaseArn(value); return *this;}
+    template<typename KnowledgeBaseArnT = Aws::String>
+    void SetKnowledgeBaseArn(KnowledgeBaseArnT&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::forward<KnowledgeBaseArnT>(value); }
+    template<typename KnowledgeBaseArnT = Aws::String>
+    KnowledgeBase& WithKnowledgeBaseArn(KnowledgeBaseArnT&& value) { SetKnowledgeBaseArn(std::forward<KnowledgeBaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,40 +97,36 @@ namespace Model
      * <p>Contains details about the embeddings configuration of the knowledge
      * base.</p>
      */
-    inline const KnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const{ return m_knowledgeBaseConfiguration; }
+    inline const KnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
     inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
-    inline void SetKnowledgeBaseConfiguration(const KnowledgeBaseConfiguration& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = value; }
-    inline void SetKnowledgeBaseConfiguration(KnowledgeBaseConfiguration&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::move(value); }
-    inline KnowledgeBase& WithKnowledgeBaseConfiguration(const KnowledgeBaseConfiguration& value) { SetKnowledgeBaseConfiguration(value); return *this;}
-    inline KnowledgeBase& WithKnowledgeBaseConfiguration(KnowledgeBaseConfiguration&& value) { SetKnowledgeBaseConfiguration(std::move(value)); return *this;}
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
+    void SetKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::forward<KnowledgeBaseConfigurationT>(value); }
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseConfiguration>
+    KnowledgeBase& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the knowledge base.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline KnowledgeBase& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline KnowledgeBase& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline KnowledgeBase& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    KnowledgeBase& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the knowledge base.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline KnowledgeBase& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline KnowledgeBase& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline KnowledgeBase& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    KnowledgeBase& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +134,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
      * operations on the knowledge base.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline KnowledgeBase& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline KnowledgeBase& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline KnowledgeBase& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    KnowledgeBase& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,40 +151,38 @@ namespace Model
      * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
      * base API operation failed.</p> </li> </ul>
      */
-    inline const KnowledgeBaseStatus& GetStatus() const{ return m_status; }
+    inline KnowledgeBaseStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const KnowledgeBaseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(KnowledgeBaseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline KnowledgeBase& WithStatus(const KnowledgeBaseStatus& value) { SetStatus(value); return *this;}
-    inline KnowledgeBase& WithStatus(KnowledgeBaseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(KnowledgeBaseStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline KnowledgeBase& WithStatus(KnowledgeBaseStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the storage configuration of the knowledge base.</p>
      */
-    inline const StorageConfiguration& GetStorageConfiguration() const{ return m_storageConfiguration; }
+    inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
     inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
-    inline void SetStorageConfiguration(const StorageConfiguration& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = value; }
-    inline void SetStorageConfiguration(StorageConfiguration&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = std::move(value); }
-    inline KnowledgeBase& WithStorageConfiguration(const StorageConfiguration& value) { SetStorageConfiguration(value); return *this;}
-    inline KnowledgeBase& WithStorageConfiguration(StorageConfiguration&& value) { SetStorageConfiguration(std::move(value)); return *this;}
+    template<typename StorageConfigurationT = StorageConfiguration>
+    void SetStorageConfiguration(StorageConfigurationT&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = std::forward<StorageConfigurationT>(value); }
+    template<typename StorageConfigurationT = StorageConfiguration>
+    KnowledgeBase& WithStorageConfiguration(StorageConfigurationT&& value) { SetStorageConfiguration(std::forward<StorageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the knowledge base was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline KnowledgeBase& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline KnowledgeBase& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    KnowledgeBase& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
@@ -219,13 +206,13 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    KnowledgeBaseStatus m_status;
+    KnowledgeBaseStatus m_status{KnowledgeBaseStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     StorageConfiguration m_storageConfiguration;
     bool m_storageConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

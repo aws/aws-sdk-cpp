@@ -24,7 +24,7 @@ namespace Model
   class UpdateMetricAttributionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API UpdateMetricAttributionRequest();
+    AWS_PERSONALIZE_API UpdateMetricAttributionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,55 +41,52 @@ namespace Model
     /**
      * <p>Add new metric attributes to the metric attribution.</p>
      */
-    inline const Aws::Vector<MetricAttribute>& GetAddMetrics() const{ return m_addMetrics; }
+    inline const Aws::Vector<MetricAttribute>& GetAddMetrics() const { return m_addMetrics; }
     inline bool AddMetricsHasBeenSet() const { return m_addMetricsHasBeenSet; }
-    inline void SetAddMetrics(const Aws::Vector<MetricAttribute>& value) { m_addMetricsHasBeenSet = true; m_addMetrics = value; }
-    inline void SetAddMetrics(Aws::Vector<MetricAttribute>&& value) { m_addMetricsHasBeenSet = true; m_addMetrics = std::move(value); }
-    inline UpdateMetricAttributionRequest& WithAddMetrics(const Aws::Vector<MetricAttribute>& value) { SetAddMetrics(value); return *this;}
-    inline UpdateMetricAttributionRequest& WithAddMetrics(Aws::Vector<MetricAttribute>&& value) { SetAddMetrics(std::move(value)); return *this;}
-    inline UpdateMetricAttributionRequest& AddAddMetrics(const MetricAttribute& value) { m_addMetricsHasBeenSet = true; m_addMetrics.push_back(value); return *this; }
-    inline UpdateMetricAttributionRequest& AddAddMetrics(MetricAttribute&& value) { m_addMetricsHasBeenSet = true; m_addMetrics.push_back(std::move(value)); return *this; }
+    template<typename AddMetricsT = Aws::Vector<MetricAttribute>>
+    void SetAddMetrics(AddMetricsT&& value) { m_addMetricsHasBeenSet = true; m_addMetrics = std::forward<AddMetricsT>(value); }
+    template<typename AddMetricsT = Aws::Vector<MetricAttribute>>
+    UpdateMetricAttributionRequest& WithAddMetrics(AddMetricsT&& value) { SetAddMetrics(std::forward<AddMetricsT>(value)); return *this;}
+    template<typename AddMetricsT = MetricAttribute>
+    UpdateMetricAttributionRequest& AddAddMetrics(AddMetricsT&& value) { m_addMetricsHasBeenSet = true; m_addMetrics.emplace_back(std::forward<AddMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Remove metric attributes from the metric attribution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveMetrics() const{ return m_removeMetrics; }
+    inline const Aws::Vector<Aws::String>& GetRemoveMetrics() const { return m_removeMetrics; }
     inline bool RemoveMetricsHasBeenSet() const { return m_removeMetricsHasBeenSet; }
-    inline void SetRemoveMetrics(const Aws::Vector<Aws::String>& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics = value; }
-    inline void SetRemoveMetrics(Aws::Vector<Aws::String>&& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics = std::move(value); }
-    inline UpdateMetricAttributionRequest& WithRemoveMetrics(const Aws::Vector<Aws::String>& value) { SetRemoveMetrics(value); return *this;}
-    inline UpdateMetricAttributionRequest& WithRemoveMetrics(Aws::Vector<Aws::String>&& value) { SetRemoveMetrics(std::move(value)); return *this;}
-    inline UpdateMetricAttributionRequest& AddRemoveMetrics(const Aws::String& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics.push_back(value); return *this; }
-    inline UpdateMetricAttributionRequest& AddRemoveMetrics(Aws::String&& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics.push_back(std::move(value)); return *this; }
-    inline UpdateMetricAttributionRequest& AddRemoveMetrics(const char* value) { m_removeMetricsHasBeenSet = true; m_removeMetrics.push_back(value); return *this; }
+    template<typename RemoveMetricsT = Aws::Vector<Aws::String>>
+    void SetRemoveMetrics(RemoveMetricsT&& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics = std::forward<RemoveMetricsT>(value); }
+    template<typename RemoveMetricsT = Aws::Vector<Aws::String>>
+    UpdateMetricAttributionRequest& WithRemoveMetrics(RemoveMetricsT&& value) { SetRemoveMetrics(std::forward<RemoveMetricsT>(value)); return *this;}
+    template<typename RemoveMetricsT = Aws::String>
+    UpdateMetricAttributionRequest& AddRemoveMetrics(RemoveMetricsT&& value) { m_removeMetricsHasBeenSet = true; m_removeMetrics.emplace_back(std::forward<RemoveMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An output config for the metric attribution.</p>
      */
-    inline const MetricAttributionOutput& GetMetricsOutputConfig() const{ return m_metricsOutputConfig; }
+    inline const MetricAttributionOutput& GetMetricsOutputConfig() const { return m_metricsOutputConfig; }
     inline bool MetricsOutputConfigHasBeenSet() const { return m_metricsOutputConfigHasBeenSet; }
-    inline void SetMetricsOutputConfig(const MetricAttributionOutput& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = value; }
-    inline void SetMetricsOutputConfig(MetricAttributionOutput&& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = std::move(value); }
-    inline UpdateMetricAttributionRequest& WithMetricsOutputConfig(const MetricAttributionOutput& value) { SetMetricsOutputConfig(value); return *this;}
-    inline UpdateMetricAttributionRequest& WithMetricsOutputConfig(MetricAttributionOutput&& value) { SetMetricsOutputConfig(std::move(value)); return *this;}
+    template<typename MetricsOutputConfigT = MetricAttributionOutput>
+    void SetMetricsOutputConfig(MetricsOutputConfigT&& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = std::forward<MetricsOutputConfigT>(value); }
+    template<typename MetricsOutputConfigT = MetricAttributionOutput>
+    UpdateMetricAttributionRequest& WithMetricsOutputConfig(MetricsOutputConfigT&& value) { SetMetricsOutputConfig(std::forward<MetricsOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
      */
-    inline const Aws::String& GetMetricAttributionArn() const{ return m_metricAttributionArn; }
+    inline const Aws::String& GetMetricAttributionArn() const { return m_metricAttributionArn; }
     inline bool MetricAttributionArnHasBeenSet() const { return m_metricAttributionArnHasBeenSet; }
-    inline void SetMetricAttributionArn(const Aws::String& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = value; }
-    inline void SetMetricAttributionArn(Aws::String&& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = std::move(value); }
-    inline void SetMetricAttributionArn(const char* value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn.assign(value); }
-    inline UpdateMetricAttributionRequest& WithMetricAttributionArn(const Aws::String& value) { SetMetricAttributionArn(value); return *this;}
-    inline UpdateMetricAttributionRequest& WithMetricAttributionArn(Aws::String&& value) { SetMetricAttributionArn(std::move(value)); return *this;}
-    inline UpdateMetricAttributionRequest& WithMetricAttributionArn(const char* value) { SetMetricAttributionArn(value); return *this;}
+    template<typename MetricAttributionArnT = Aws::String>
+    void SetMetricAttributionArn(MetricAttributionArnT&& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = std::forward<MetricAttributionArnT>(value); }
+    template<typename MetricAttributionArnT = Aws::String>
+    UpdateMetricAttributionRequest& WithMetricAttributionArn(MetricAttributionArnT&& value) { SetMetricAttributionArn(std::forward<MetricAttributionArnT>(value)); return *this;}
     ///@}
   private:
 

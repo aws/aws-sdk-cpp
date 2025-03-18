@@ -20,50 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ResponseLaunchTemplateData::ResponseLaunchTemplateData() : 
-    m_kernelIdHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_ramDiskIdHasBeenSet(false),
-    m_disableApiTermination(false),
-    m_disableApiTerminationHasBeenSet(false),
-    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_elasticGpuSpecificationsHasBeenSet(false),
-    m_elasticInferenceAcceleratorsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false),
-    m_disableApiStop(false),
-    m_disableApiStopHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_networkPerformanceOptionsHasBeenSet(false)
-{
-}
-
 ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode)
-  : ResponseLaunchTemplateData()
 {
   *this = xmlNode;
 }
@@ -96,6 +53,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
@@ -108,6 +66,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("item");
+      m_networkInterfacesHasBeenSet = !networkInterfacesMember.IsNull();
       while(!networkInterfacesMember.IsNull())
       {
         m_networkInterfaces.push_back(networkInterfacesMember);
@@ -125,7 +84,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
@@ -161,7 +120,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     XmlNode instanceInitiatedShutdownBehaviorNode = resultNode.FirstChild("instanceInitiatedShutdownBehavior");
     if(!instanceInitiatedShutdownBehaviorNode.IsNull())
     {
-      m_instanceInitiatedShutdownBehavior = ShutdownBehaviorMapper::GetShutdownBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInitiatedShutdownBehaviorNode.GetText()).c_str()).c_str());
+      m_instanceInitiatedShutdownBehavior = ShutdownBehaviorMapper::GetShutdownBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInitiatedShutdownBehaviorNode.GetText()).c_str()));
       m_instanceInitiatedShutdownBehaviorHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("userData");
@@ -174,6 +133,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!tagSpecificationsNode.IsNull())
     {
       XmlNode tagSpecificationsMember = tagSpecificationsNode.FirstChild("item");
+      m_tagSpecificationsHasBeenSet = !tagSpecificationsMember.IsNull();
       while(!tagSpecificationsMember.IsNull())
       {
         m_tagSpecifications.push_back(tagSpecificationsMember);
@@ -186,6 +146,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!elasticGpuSpecificationsNode.IsNull())
     {
       XmlNode elasticGpuSpecificationsMember = elasticGpuSpecificationsNode.FirstChild("item");
+      m_elasticGpuSpecificationsHasBeenSet = !elasticGpuSpecificationsMember.IsNull();
       while(!elasticGpuSpecificationsMember.IsNull())
       {
         m_elasticGpuSpecifications.push_back(elasticGpuSpecificationsMember);
@@ -198,6 +159,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!elasticInferenceAcceleratorsNode.IsNull())
     {
       XmlNode elasticInferenceAcceleratorsMember = elasticInferenceAcceleratorsNode.FirstChild("item");
+      m_elasticInferenceAcceleratorsHasBeenSet = !elasticInferenceAcceleratorsMember.IsNull();
       while(!elasticInferenceAcceleratorsMember.IsNull())
       {
         m_elasticInferenceAccelerators.push_back(elasticInferenceAcceleratorsMember);
@@ -210,6 +172,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
@@ -222,6 +185,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember.GetText());
@@ -258,6 +222,7 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     if(!licenseSpecificationsNode.IsNull())
     {
       XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      m_licenseSpecificationsHasBeenSet = !licenseSpecificationsMember.IsNull();
       while(!licenseSpecificationsMember.IsNull())
       {
         m_licenseSpecifications.push_back(licenseSpecificationsMember);

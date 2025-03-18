@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-Resource::Resource() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

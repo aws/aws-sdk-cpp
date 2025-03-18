@@ -33,7 +33,7 @@ namespace Model
   class IngressPointAuthConfiguration
   {
   public:
-    AWS_MAILMANAGER_API IngressPointAuthConfiguration();
+    AWS_MAILMANAGER_API IngressPointAuthConfiguration() = default;
     AWS_MAILMANAGER_API IngressPointAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressPointAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The ingress endpoint password configuration for the ingress endpoint
      * resource.</p>
      */
-    inline const IngressPointPasswordConfiguration& GetIngressPointPasswordConfiguration() const{ return m_ingressPointPasswordConfiguration; }
+    inline const IngressPointPasswordConfiguration& GetIngressPointPasswordConfiguration() const { return m_ingressPointPasswordConfiguration; }
     inline bool IngressPointPasswordConfigurationHasBeenSet() const { return m_ingressPointPasswordConfigurationHasBeenSet; }
-    inline void SetIngressPointPasswordConfiguration(const IngressPointPasswordConfiguration& value) { m_ingressPointPasswordConfigurationHasBeenSet = true; m_ingressPointPasswordConfiguration = value; }
-    inline void SetIngressPointPasswordConfiguration(IngressPointPasswordConfiguration&& value) { m_ingressPointPasswordConfigurationHasBeenSet = true; m_ingressPointPasswordConfiguration = std::move(value); }
-    inline IngressPointAuthConfiguration& WithIngressPointPasswordConfiguration(const IngressPointPasswordConfiguration& value) { SetIngressPointPasswordConfiguration(value); return *this;}
-    inline IngressPointAuthConfiguration& WithIngressPointPasswordConfiguration(IngressPointPasswordConfiguration&& value) { SetIngressPointPasswordConfiguration(std::move(value)); return *this;}
+    template<typename IngressPointPasswordConfigurationT = IngressPointPasswordConfiguration>
+    void SetIngressPointPasswordConfiguration(IngressPointPasswordConfigurationT&& value) { m_ingressPointPasswordConfigurationHasBeenSet = true; m_ingressPointPasswordConfiguration = std::forward<IngressPointPasswordConfigurationT>(value); }
+    template<typename IngressPointPasswordConfigurationT = IngressPointPasswordConfiguration>
+    IngressPointAuthConfiguration& WithIngressPointPasswordConfiguration(IngressPointPasswordConfigurationT&& value) { SetIngressPointPasswordConfiguration(std::forward<IngressPointPasswordConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * <p>The ingress endpoint SecretsManager::Secret ARN configuration for the ingress
      * endpoint resource.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline IngressPointAuthConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline IngressPointAuthConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline IngressPointAuthConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    IngressPointAuthConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

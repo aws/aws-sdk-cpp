@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformS3DataSource::TransformS3DataSource() : 
-    m_s3DataType(S3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 TransformS3DataSource::TransformS3DataSource(JsonView jsonValue)
-  : TransformS3DataSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TransformS3DataSource& TransformS3DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3DataType"))
   {
     m_s3DataType = S3DataTypeMapper::GetS3DataTypeForName(jsonValue.GetString("S3DataType"));
-
     m_s3DataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

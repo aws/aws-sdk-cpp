@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CloudFormationProperties::CloudFormationProperties() : 
-    m_templateUrlHasBeenSet(false)
-{
-}
-
 CloudFormationProperties::CloudFormationProperties(JsonView jsonValue)
-  : CloudFormationProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudFormationProperties& CloudFormationProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("templateUrl"))
   {
     m_templateUrl = jsonValue.GetString("templateUrl");
-
     m_templateUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

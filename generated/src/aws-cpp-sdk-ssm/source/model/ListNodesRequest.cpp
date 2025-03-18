@@ -12,15 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListNodesRequest::ListNodesRequest() : 
-    m_syncNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListNodesRequest::SerializePayload() const
 {
   JsonValue payload;

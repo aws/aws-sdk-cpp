@@ -36,7 +36,7 @@ namespace Model
   class SlotCaptureSetting
   {
   public:
-    AWS_LEXMODELSV2_API SlotCaptureSetting();
+    AWS_LEXMODELSV2_API SlotCaptureSetting() = default;
     AWS_LEXMODELSV2_API SlotCaptureSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotCaptureSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const ResponseSpecification& GetCaptureResponse() const{ return m_captureResponse; }
+    inline const ResponseSpecification& GetCaptureResponse() const { return m_captureResponse; }
     inline bool CaptureResponseHasBeenSet() const { return m_captureResponseHasBeenSet; }
-    inline void SetCaptureResponse(const ResponseSpecification& value) { m_captureResponseHasBeenSet = true; m_captureResponse = value; }
-    inline void SetCaptureResponse(ResponseSpecification&& value) { m_captureResponseHasBeenSet = true; m_captureResponse = std::move(value); }
-    inline SlotCaptureSetting& WithCaptureResponse(const ResponseSpecification& value) { SetCaptureResponse(value); return *this;}
-    inline SlotCaptureSetting& WithCaptureResponse(ResponseSpecification&& value) { SetCaptureResponse(std::move(value)); return *this;}
+    template<typename CaptureResponseT = ResponseSpecification>
+    void SetCaptureResponse(CaptureResponseT&& value) { m_captureResponseHasBeenSet = true; m_captureResponse = std::forward<CaptureResponseT>(value); }
+    template<typename CaptureResponseT = ResponseSpecification>
+    SlotCaptureSetting& WithCaptureResponse(CaptureResponseT&& value) { SetCaptureResponse(std::forward<CaptureResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Specifies the next step that the bot runs when the slot value is captured
      * before the code hook times out.</p>
      */
-    inline const DialogState& GetCaptureNextStep() const{ return m_captureNextStep; }
+    inline const DialogState& GetCaptureNextStep() const { return m_captureNextStep; }
     inline bool CaptureNextStepHasBeenSet() const { return m_captureNextStepHasBeenSet; }
-    inline void SetCaptureNextStep(const DialogState& value) { m_captureNextStepHasBeenSet = true; m_captureNextStep = value; }
-    inline void SetCaptureNextStep(DialogState&& value) { m_captureNextStepHasBeenSet = true; m_captureNextStep = std::move(value); }
-    inline SlotCaptureSetting& WithCaptureNextStep(const DialogState& value) { SetCaptureNextStep(value); return *this;}
-    inline SlotCaptureSetting& WithCaptureNextStep(DialogState&& value) { SetCaptureNextStep(std::move(value)); return *this;}
+    template<typename CaptureNextStepT = DialogState>
+    void SetCaptureNextStep(CaptureNextStepT&& value) { m_captureNextStepHasBeenSet = true; m_captureNextStep = std::forward<CaptureNextStepT>(value); }
+    template<typename CaptureNextStepT = DialogState>
+    SlotCaptureSetting& WithCaptureNextStep(CaptureNextStepT&& value) { SetCaptureNextStep(std::forward<CaptureNextStepT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,22 +70,22 @@ namespace Model
      * <p>A list of conditional branches to evaluate after the slot value is
      * captured.</p>
      */
-    inline const ConditionalSpecification& GetCaptureConditional() const{ return m_captureConditional; }
+    inline const ConditionalSpecification& GetCaptureConditional() const { return m_captureConditional; }
     inline bool CaptureConditionalHasBeenSet() const { return m_captureConditionalHasBeenSet; }
-    inline void SetCaptureConditional(const ConditionalSpecification& value) { m_captureConditionalHasBeenSet = true; m_captureConditional = value; }
-    inline void SetCaptureConditional(ConditionalSpecification&& value) { m_captureConditionalHasBeenSet = true; m_captureConditional = std::move(value); }
-    inline SlotCaptureSetting& WithCaptureConditional(const ConditionalSpecification& value) { SetCaptureConditional(value); return *this;}
-    inline SlotCaptureSetting& WithCaptureConditional(ConditionalSpecification&& value) { SetCaptureConditional(std::move(value)); return *this;}
+    template<typename CaptureConditionalT = ConditionalSpecification>
+    void SetCaptureConditional(CaptureConditionalT&& value) { m_captureConditionalHasBeenSet = true; m_captureConditional = std::forward<CaptureConditionalT>(value); }
+    template<typename CaptureConditionalT = ConditionalSpecification>
+    SlotCaptureSetting& WithCaptureConditional(CaptureConditionalT&& value) { SetCaptureConditional(std::forward<CaptureConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseSpecification& GetFailureResponse() const{ return m_failureResponse; }
+    inline const ResponseSpecification& GetFailureResponse() const { return m_failureResponse; }
     inline bool FailureResponseHasBeenSet() const { return m_failureResponseHasBeenSet; }
-    inline void SetFailureResponse(const ResponseSpecification& value) { m_failureResponseHasBeenSet = true; m_failureResponse = value; }
-    inline void SetFailureResponse(ResponseSpecification&& value) { m_failureResponseHasBeenSet = true; m_failureResponse = std::move(value); }
-    inline SlotCaptureSetting& WithFailureResponse(const ResponseSpecification& value) { SetFailureResponse(value); return *this;}
-    inline SlotCaptureSetting& WithFailureResponse(ResponseSpecification&& value) { SetFailureResponse(std::move(value)); return *this;}
+    template<typename FailureResponseT = ResponseSpecification>
+    void SetFailureResponse(FailureResponseT&& value) { m_failureResponseHasBeenSet = true; m_failureResponse = std::forward<FailureResponseT>(value); }
+    template<typename FailureResponseT = ResponseSpecification>
+    SlotCaptureSetting& WithFailureResponse(FailureResponseT&& value) { SetFailureResponse(std::forward<FailureResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +93,12 @@ namespace Model
      * <p>Specifies the next step that the bot runs when the slot value code is not
      * recognized.</p>
      */
-    inline const DialogState& GetFailureNextStep() const{ return m_failureNextStep; }
+    inline const DialogState& GetFailureNextStep() const { return m_failureNextStep; }
     inline bool FailureNextStepHasBeenSet() const { return m_failureNextStepHasBeenSet; }
-    inline void SetFailureNextStep(const DialogState& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = value; }
-    inline void SetFailureNextStep(DialogState&& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = std::move(value); }
-    inline SlotCaptureSetting& WithFailureNextStep(const DialogState& value) { SetFailureNextStep(value); return *this;}
-    inline SlotCaptureSetting& WithFailureNextStep(DialogState&& value) { SetFailureNextStep(std::move(value)); return *this;}
+    template<typename FailureNextStepT = DialogState>
+    void SetFailureNextStep(FailureNextStepT&& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = std::forward<FailureNextStepT>(value); }
+    template<typename FailureNextStepT = DialogState>
+    SlotCaptureSetting& WithFailureNextStep(FailureNextStepT&& value) { SetFailureNextStep(std::forward<FailureNextStepT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,36 +106,36 @@ namespace Model
      * <p>A list of conditional branches to evaluate when the slot value isn't
      * captured.</p>
      */
-    inline const ConditionalSpecification& GetFailureConditional() const{ return m_failureConditional; }
+    inline const ConditionalSpecification& GetFailureConditional() const { return m_failureConditional; }
     inline bool FailureConditionalHasBeenSet() const { return m_failureConditionalHasBeenSet; }
-    inline void SetFailureConditional(const ConditionalSpecification& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = value; }
-    inline void SetFailureConditional(ConditionalSpecification&& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = std::move(value); }
-    inline SlotCaptureSetting& WithFailureConditional(const ConditionalSpecification& value) { SetFailureConditional(value); return *this;}
-    inline SlotCaptureSetting& WithFailureConditional(ConditionalSpecification&& value) { SetFailureConditional(std::move(value)); return *this;}
+    template<typename FailureConditionalT = ConditionalSpecification>
+    void SetFailureConditional(FailureConditionalT&& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = std::forward<FailureConditionalT>(value); }
+    template<typename FailureConditionalT = ConditionalSpecification>
+    SlotCaptureSetting& WithFailureConditional(FailureConditionalT&& value) { SetFailureConditional(std::forward<FailureConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
      */
-    inline const DialogCodeHookInvocationSetting& GetCodeHook() const{ return m_codeHook; }
+    inline const DialogCodeHookInvocationSetting& GetCodeHook() const { return m_codeHook; }
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-    inline void SetCodeHook(const DialogCodeHookInvocationSetting& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-    inline void SetCodeHook(DialogCodeHookInvocationSetting&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-    inline SlotCaptureSetting& WithCodeHook(const DialogCodeHookInvocationSetting& value) { SetCodeHook(value); return *this;}
-    inline SlotCaptureSetting& WithCodeHook(DialogCodeHookInvocationSetting&& value) { SetCodeHook(std::move(value)); return *this;}
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    void SetCodeHook(CodeHookT&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::forward<CodeHookT>(value); }
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    SlotCaptureSetting& WithCodeHook(CodeHookT&& value) { SetCodeHook(std::forward<CodeHookT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
      */
-    inline const ElicitationCodeHookInvocationSetting& GetElicitationCodeHook() const{ return m_elicitationCodeHook; }
+    inline const ElicitationCodeHookInvocationSetting& GetElicitationCodeHook() const { return m_elicitationCodeHook; }
     inline bool ElicitationCodeHookHasBeenSet() const { return m_elicitationCodeHookHasBeenSet; }
-    inline void SetElicitationCodeHook(const ElicitationCodeHookInvocationSetting& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = value; }
-    inline void SetElicitationCodeHook(ElicitationCodeHookInvocationSetting&& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = std::move(value); }
-    inline SlotCaptureSetting& WithElicitationCodeHook(const ElicitationCodeHookInvocationSetting& value) { SetElicitationCodeHook(value); return *this;}
-    inline SlotCaptureSetting& WithElicitationCodeHook(ElicitationCodeHookInvocationSetting&& value) { SetElicitationCodeHook(std::move(value)); return *this;}
+    template<typename ElicitationCodeHookT = ElicitationCodeHookInvocationSetting>
+    void SetElicitationCodeHook(ElicitationCodeHookT&& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = std::forward<ElicitationCodeHookT>(value); }
+    template<typename ElicitationCodeHookT = ElicitationCodeHookInvocationSetting>
+    SlotCaptureSetting& WithElicitationCodeHook(ElicitationCodeHookT&& value) { SetElicitationCodeHook(std::forward<ElicitationCodeHookT>(value)); return *this;}
     ///@}
   private:
 

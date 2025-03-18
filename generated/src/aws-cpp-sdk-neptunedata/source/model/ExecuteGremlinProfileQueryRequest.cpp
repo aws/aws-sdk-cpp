@@ -12,18 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteGremlinProfileQueryRequest::ExecuteGremlinProfileQueryRequest() : 
-    m_gremlinQueryHasBeenSet(false),
-    m_results(false),
-    m_resultsHasBeenSet(false),
-    m_chop(0),
-    m_chopHasBeenSet(false),
-    m_serializerHasBeenSet(false),
-    m_indexOps(false),
-    m_indexOpsHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteGremlinProfileQueryRequest::SerializePayload() const
 {
   JsonValue payload;

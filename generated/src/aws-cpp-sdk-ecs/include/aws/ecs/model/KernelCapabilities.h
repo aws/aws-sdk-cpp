@@ -55,7 +55,7 @@ namespace Model
   class KernelCapabilities
   {
   public:
-    AWS_ECS_API KernelCapabilities();
+    AWS_ECS_API KernelCapabilities() = default;
     AWS_ECS_API KernelCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API KernelCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,15 +77,14 @@ namespace Model
      * "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" |
      * "SYSLOG" | "WAKE_ALARM"</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdd() const{ return m_add; }
+    inline const Aws::Vector<Aws::String>& GetAdd() const { return m_add; }
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
-    inline void SetAdd(const Aws::Vector<Aws::String>& value) { m_addHasBeenSet = true; m_add = value; }
-    inline void SetAdd(Aws::Vector<Aws::String>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
-    inline KernelCapabilities& WithAdd(const Aws::Vector<Aws::String>& value) { SetAdd(value); return *this;}
-    inline KernelCapabilities& WithAdd(Aws::Vector<Aws::String>&& value) { SetAdd(std::move(value)); return *this;}
-    inline KernelCapabilities& AddAdd(const Aws::String& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
-    inline KernelCapabilities& AddAdd(Aws::String&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
-    inline KernelCapabilities& AddAdd(const char* value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
+    template<typename AddT = Aws::Vector<Aws::String>>
+    void SetAdd(AddT&& value) { m_addHasBeenSet = true; m_add = std::forward<AddT>(value); }
+    template<typename AddT = Aws::Vector<Aws::String>>
+    KernelCapabilities& WithAdd(AddT&& value) { SetAdd(std::forward<AddT>(value)); return *this;}
+    template<typename AddT = Aws::String>
+    KernelCapabilities& AddAdd(AddT&& value) { m_addHasBeenSet = true; m_add.emplace_back(std::forward<AddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,15 +102,14 @@ namespace Model
      * "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDrop() const{ return m_drop; }
+    inline const Aws::Vector<Aws::String>& GetDrop() const { return m_drop; }
     inline bool DropHasBeenSet() const { return m_dropHasBeenSet; }
-    inline void SetDrop(const Aws::Vector<Aws::String>& value) { m_dropHasBeenSet = true; m_drop = value; }
-    inline void SetDrop(Aws::Vector<Aws::String>&& value) { m_dropHasBeenSet = true; m_drop = std::move(value); }
-    inline KernelCapabilities& WithDrop(const Aws::Vector<Aws::String>& value) { SetDrop(value); return *this;}
-    inline KernelCapabilities& WithDrop(Aws::Vector<Aws::String>&& value) { SetDrop(std::move(value)); return *this;}
-    inline KernelCapabilities& AddDrop(const Aws::String& value) { m_dropHasBeenSet = true; m_drop.push_back(value); return *this; }
-    inline KernelCapabilities& AddDrop(Aws::String&& value) { m_dropHasBeenSet = true; m_drop.push_back(std::move(value)); return *this; }
-    inline KernelCapabilities& AddDrop(const char* value) { m_dropHasBeenSet = true; m_drop.push_back(value); return *this; }
+    template<typename DropT = Aws::Vector<Aws::String>>
+    void SetDrop(DropT&& value) { m_dropHasBeenSet = true; m_drop = std::forward<DropT>(value); }
+    template<typename DropT = Aws::Vector<Aws::String>>
+    KernelCapabilities& WithDrop(DropT&& value) { SetDrop(std::forward<DropT>(value)); return *this;}
+    template<typename DropT = Aws::String>
+    KernelCapabilities& AddDrop(DropT&& value) { m_dropHasBeenSet = true; m_drop.emplace_back(std::forward<DropT>(value)); return *this; }
     ///@}
   private:
 

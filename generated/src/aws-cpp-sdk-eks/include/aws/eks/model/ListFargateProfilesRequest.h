@@ -25,7 +25,7 @@ namespace Model
   class ListFargateProfilesRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API ListFargateProfilesRequest();
+    AWS_EKS_API ListFargateProfilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ListFargateProfilesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ListFargateProfilesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ListFargateProfilesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ListFargateProfilesRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * value can be between 1 and 100. If you don't use this parameter, 100 results and
      * a <code>nextToken</code> value, if applicable, are returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFargateProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -77,21 +75,19 @@ namespace Model
      * identifier that is used only to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFargateProfilesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFargateProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFargateProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFargateProfilesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

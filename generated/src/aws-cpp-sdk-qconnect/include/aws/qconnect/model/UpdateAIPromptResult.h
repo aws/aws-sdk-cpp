@@ -28,7 +28,7 @@ namespace Model
   class UpdateAIPromptResult
   {
   public:
-    AWS_QCONNECT_API UpdateAIPromptResult();
+    AWS_QCONNECT_API UpdateAIPromptResult() = default;
     AWS_QCONNECT_API UpdateAIPromptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API UpdateAIPromptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The data of the updated Amazon Q in Connect AI Prompt.</p>
      */
-    inline const AIPromptData& GetAiPrompt() const{ return m_aiPrompt; }
-    inline void SetAiPrompt(const AIPromptData& value) { m_aiPrompt = value; }
-    inline void SetAiPrompt(AIPromptData&& value) { m_aiPrompt = std::move(value); }
-    inline UpdateAIPromptResult& WithAiPrompt(const AIPromptData& value) { SetAiPrompt(value); return *this;}
-    inline UpdateAIPromptResult& WithAiPrompt(AIPromptData&& value) { SetAiPrompt(std::move(value)); return *this;}
+    inline const AIPromptData& GetAiPrompt() const { return m_aiPrompt; }
+    template<typename AiPromptT = AIPromptData>
+    void SetAiPrompt(AiPromptT&& value) { m_aiPromptHasBeenSet = true; m_aiPrompt = std::forward<AiPromptT>(value); }
+    template<typename AiPromptT = AIPromptData>
+    UpdateAIPromptResult& WithAiPrompt(AiPromptT&& value) { SetAiPrompt(std::forward<AiPromptT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAIPromptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAIPromptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAIPromptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAIPromptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AIPromptData m_aiPrompt;
+    bool m_aiPromptHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

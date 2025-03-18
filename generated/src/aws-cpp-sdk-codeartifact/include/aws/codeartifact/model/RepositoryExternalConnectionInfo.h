@@ -34,7 +34,7 @@ namespace Model
   class RepositoryExternalConnectionInfo
   {
   public:
-    AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo();
+    AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo() = default;
     AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The name of the external connection associated with a repository. </p>
      */
-    inline const Aws::String& GetExternalConnectionName() const{ return m_externalConnectionName; }
+    inline const Aws::String& GetExternalConnectionName() const { return m_externalConnectionName; }
     inline bool ExternalConnectionNameHasBeenSet() const { return m_externalConnectionNameHasBeenSet; }
-    inline void SetExternalConnectionName(const Aws::String& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = value; }
-    inline void SetExternalConnectionName(Aws::String&& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = std::move(value); }
-    inline void SetExternalConnectionName(const char* value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName.assign(value); }
-    inline RepositoryExternalConnectionInfo& WithExternalConnectionName(const Aws::String& value) { SetExternalConnectionName(value); return *this;}
-    inline RepositoryExternalConnectionInfo& WithExternalConnectionName(Aws::String&& value) { SetExternalConnectionName(std::move(value)); return *this;}
-    inline RepositoryExternalConnectionInfo& WithExternalConnectionName(const char* value) { SetExternalConnectionName(value); return *this;}
+    template<typename ExternalConnectionNameT = Aws::String>
+    void SetExternalConnectionName(ExternalConnectionNameT&& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = std::forward<ExternalConnectionNameT>(value); }
+    template<typename ExternalConnectionNameT = Aws::String>
+    RepositoryExternalConnectionInfo& WithExternalConnectionName(ExternalConnectionNameT&& value) { SetExternalConnectionName(std::forward<ExternalConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * A Ruby package. </p> </li> <li> <p> <code>swift</code>: A Swift package. </p>
      * </li> <li> <p> <code>cargo</code>: A Cargo package. </p> </li> </ul>
      */
-    inline const PackageFormat& GetPackageFormat() const{ return m_packageFormat; }
+    inline PackageFormat GetPackageFormat() const { return m_packageFormat; }
     inline bool PackageFormatHasBeenSet() const { return m_packageFormatHasBeenSet; }
-    inline void SetPackageFormat(const PackageFormat& value) { m_packageFormatHasBeenSet = true; m_packageFormat = value; }
-    inline void SetPackageFormat(PackageFormat&& value) { m_packageFormatHasBeenSet = true; m_packageFormat = std::move(value); }
-    inline RepositoryExternalConnectionInfo& WithPackageFormat(const PackageFormat& value) { SetPackageFormat(value); return *this;}
-    inline RepositoryExternalConnectionInfo& WithPackageFormat(PackageFormat&& value) { SetPackageFormat(std::move(value)); return *this;}
+    inline void SetPackageFormat(PackageFormat value) { m_packageFormatHasBeenSet = true; m_packageFormat = value; }
+    inline RepositoryExternalConnectionInfo& WithPackageFormat(PackageFormat value) { SetPackageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -79,22 +75,20 @@ namespace Model
      * <p> The status of the external connection of a repository. There is one valid
      * value, <code>Available</code>. </p>
      */
-    inline const ExternalConnectionStatus& GetStatus() const{ return m_status; }
+    inline ExternalConnectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExternalConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExternalConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RepositoryExternalConnectionInfo& WithStatus(const ExternalConnectionStatus& value) { SetStatus(value); return *this;}
-    inline RepositoryExternalConnectionInfo& WithStatus(ExternalConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExternalConnectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RepositoryExternalConnectionInfo& WithStatus(ExternalConnectionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_externalConnectionName;
     bool m_externalConnectionNameHasBeenSet = false;
 
-    PackageFormat m_packageFormat;
+    PackageFormat m_packageFormat{PackageFormat::NOT_SET};
     bool m_packageFormatHasBeenSet = false;
 
-    ExternalConnectionStatus m_status;
+    ExternalConnectionStatus m_status{ExternalConnectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

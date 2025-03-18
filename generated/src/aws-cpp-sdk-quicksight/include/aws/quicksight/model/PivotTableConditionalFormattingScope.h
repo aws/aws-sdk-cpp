@@ -32,7 +32,7 @@ namespace Model
   class PivotTableConditionalFormattingScope
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableConditionalFormattingScope();
+    AWS_QUICKSIGHT_API PivotTableConditionalFormattingScope() = default;
     AWS_QUICKSIGHT_API PivotTableConditionalFormattingScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableConditionalFormattingScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The role (field, field total, grand total) of the cell for conditional
      * formatting.</p>
      */
-    inline const PivotTableConditionalFormattingScopeRole& GetRole() const{ return m_role; }
+    inline PivotTableConditionalFormattingScopeRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const PivotTableConditionalFormattingScopeRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(PivotTableConditionalFormattingScopeRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline PivotTableConditionalFormattingScope& WithRole(const PivotTableConditionalFormattingScopeRole& value) { SetRole(value); return *this;}
-    inline PivotTableConditionalFormattingScope& WithRole(PivotTableConditionalFormattingScopeRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(PivotTableConditionalFormattingScopeRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline PivotTableConditionalFormattingScope& WithRole(PivotTableConditionalFormattingScopeRole value) { SetRole(value); return *this;}
     ///@}
   private:
 
-    PivotTableConditionalFormattingScopeRole m_role;
+    PivotTableConditionalFormattingScopeRole m_role{PivotTableConditionalFormattingScopeRole::NOT_SET};
     bool m_roleHasBeenSet = false;
   };
 

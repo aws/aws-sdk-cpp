@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RecognizeCelebritiesRequest::RecognizeCelebritiesRequest() : 
-    m_imageHasBeenSet(false)
-{
-}
-
 Aws::String RecognizeCelebritiesRequest::SerializePayload() const
 {
   JsonValue payload;

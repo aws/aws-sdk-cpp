@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ContributionAnalysisTimeRanges::ContributionAnalysisTimeRanges() : 
-    m_startRangeHasBeenSet(false),
-    m_endRangeHasBeenSet(false)
-{
-}
-
 ContributionAnalysisTimeRanges::ContributionAnalysisTimeRanges(JsonView jsonValue)
-  : ContributionAnalysisTimeRanges()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContributionAnalysisTimeRanges& ContributionAnalysisTimeRanges::operator =(JsonV
   if(jsonValue.ValueExists("StartRange"))
   {
     m_startRange = jsonValue.GetObject("StartRange");
-
     m_startRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndRange"))
   {
     m_endRange = jsonValue.GetObject("EndRange");
-
     m_endRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

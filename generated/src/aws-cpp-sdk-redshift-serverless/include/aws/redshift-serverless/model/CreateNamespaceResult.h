@@ -28,7 +28,7 @@ namespace Model
   class CreateNamespaceResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API CreateNamespaceResult();
+    AWS_REDSHIFTSERVERLESS_API CreateNamespaceResult() = default;
     AWS_REDSHIFTSERVERLESS_API CreateNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API CreateNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The created namespace object.</p>
      */
-    inline const Namespace& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Namespace& value) { m_namespace = value; }
-    inline void SetNamespace(Namespace&& value) { m_namespace = std::move(value); }
-    inline CreateNamespaceResult& WithNamespace(const Namespace& value) { SetNamespace(value); return *this;}
-    inline CreateNamespaceResult& WithNamespace(Namespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline const Namespace& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Namespace>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Namespace>
+    CreateNamespaceResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNamespaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Namespace m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-DeletionTaskFailureReasonType::DeletionTaskFailureReasonType() : 
-    m_reasonHasBeenSet(false),
-    m_roleUsageListHasBeenSet(false)
-{
-}
-
 DeletionTaskFailureReasonType::DeletionTaskFailureReasonType(const XmlNode& xmlNode)
-  : DeletionTaskFailureReasonType()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ DeletionTaskFailureReasonType& DeletionTaskFailureReasonType::operator =(const X
     if(!roleUsageListNode.IsNull())
     {
       XmlNode roleUsageListMember = roleUsageListNode.FirstChild("member");
+      m_roleUsageListHasBeenSet = !roleUsageListMember.IsNull();
       while(!roleUsageListMember.IsNull())
       {
         m_roleUsageList.push_back(roleUsageListMember);

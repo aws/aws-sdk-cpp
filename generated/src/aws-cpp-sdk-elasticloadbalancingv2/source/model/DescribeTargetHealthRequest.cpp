@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeTargetHealthRequest::DescribeTargetHealthRequest() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_includeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTargetHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;

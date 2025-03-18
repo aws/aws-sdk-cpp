@@ -32,7 +32,7 @@ namespace Model
   class ExportErrorDetails
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetails();
+    AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetails() = default;
     AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The structure for returning the export error details while exporting results
      * of an Earth Observation job.</p>
      */
-    inline const ExportErrorDetailsOutput& GetExportResults() const{ return m_exportResults; }
+    inline const ExportErrorDetailsOutput& GetExportResults() const { return m_exportResults; }
     inline bool ExportResultsHasBeenSet() const { return m_exportResultsHasBeenSet; }
-    inline void SetExportResults(const ExportErrorDetailsOutput& value) { m_exportResultsHasBeenSet = true; m_exportResults = value; }
-    inline void SetExportResults(ExportErrorDetailsOutput&& value) { m_exportResultsHasBeenSet = true; m_exportResults = std::move(value); }
-    inline ExportErrorDetails& WithExportResults(const ExportErrorDetailsOutput& value) { SetExportResults(value); return *this;}
-    inline ExportErrorDetails& WithExportResults(ExportErrorDetailsOutput&& value) { SetExportResults(std::move(value)); return *this;}
+    template<typename ExportResultsT = ExportErrorDetailsOutput>
+    void SetExportResults(ExportResultsT&& value) { m_exportResultsHasBeenSet = true; m_exportResults = std::forward<ExportResultsT>(value); }
+    template<typename ExportResultsT = ExportErrorDetailsOutput>
+    ExportErrorDetails& WithExportResults(ExportResultsT&& value) { SetExportResults(std::forward<ExportResultsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The structure for returning the export error details while exporting the
      * source images of an Earth Observation job.</p>
      */
-    inline const ExportErrorDetailsOutput& GetExportSourceImages() const{ return m_exportSourceImages; }
+    inline const ExportErrorDetailsOutput& GetExportSourceImages() const { return m_exportSourceImages; }
     inline bool ExportSourceImagesHasBeenSet() const { return m_exportSourceImagesHasBeenSet; }
-    inline void SetExportSourceImages(const ExportErrorDetailsOutput& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = value; }
-    inline void SetExportSourceImages(ExportErrorDetailsOutput&& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = std::move(value); }
-    inline ExportErrorDetails& WithExportSourceImages(const ExportErrorDetailsOutput& value) { SetExportSourceImages(value); return *this;}
-    inline ExportErrorDetails& WithExportSourceImages(ExportErrorDetailsOutput&& value) { SetExportSourceImages(std::move(value)); return *this;}
+    template<typename ExportSourceImagesT = ExportErrorDetailsOutput>
+    void SetExportSourceImages(ExportSourceImagesT&& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = std::forward<ExportSourceImagesT>(value); }
+    template<typename ExportSourceImagesT = ExportErrorDetailsOutput>
+    ExportErrorDetails& WithExportSourceImages(ExportSourceImagesT&& value) { SetExportSourceImages(std::forward<ExportSourceImagesT>(value)); return *this;}
     ///@}
   private:
 

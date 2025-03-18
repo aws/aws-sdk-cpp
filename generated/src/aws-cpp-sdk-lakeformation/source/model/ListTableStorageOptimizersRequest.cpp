@@ -12,18 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTableStorageOptimizersRequest::ListTableStorageOptimizersRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_storageOptimizerType(OptimizerType::NOT_SET),
-    m_storageOptimizerTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTableStorageOptimizersRequest::SerializePayload() const
 {
   JsonValue payload;

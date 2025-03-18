@@ -21,7 +21,7 @@ namespace Model
   class CancelJournalKinesisStreamRequest : public QLDBRequest
   {
   public:
-    AWS_QLDB_API CancelJournalKinesisStreamRequest();
+    AWS_QLDB_API CancelJournalKinesisStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the ledger.</p>
      */
-    inline const Aws::String& GetLedgerName() const{ return m_ledgerName; }
+    inline const Aws::String& GetLedgerName() const { return m_ledgerName; }
     inline bool LedgerNameHasBeenSet() const { return m_ledgerNameHasBeenSet; }
-    inline void SetLedgerName(const Aws::String& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = value; }
-    inline void SetLedgerName(Aws::String&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::move(value); }
-    inline void SetLedgerName(const char* value) { m_ledgerNameHasBeenSet = true; m_ledgerName.assign(value); }
-    inline CancelJournalKinesisStreamRequest& WithLedgerName(const Aws::String& value) { SetLedgerName(value); return *this;}
-    inline CancelJournalKinesisStreamRequest& WithLedgerName(Aws::String&& value) { SetLedgerName(std::move(value)); return *this;}
-    inline CancelJournalKinesisStreamRequest& WithLedgerName(const char* value) { SetLedgerName(value); return *this;}
+    template<typename LedgerNameT = Aws::String>
+    void SetLedgerName(LedgerNameT&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::forward<LedgerNameT>(value); }
+    template<typename LedgerNameT = Aws::String>
+    CancelJournalKinesisStreamRequest& WithLedgerName(LedgerNameT&& value) { SetLedgerName(std::forward<LedgerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
      * be canceled.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline CancelJournalKinesisStreamRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline CancelJournalKinesisStreamRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline CancelJournalKinesisStreamRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    CancelJournalKinesisStreamRequest& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
   private:
 

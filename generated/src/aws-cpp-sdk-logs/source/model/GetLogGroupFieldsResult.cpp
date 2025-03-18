@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogGroupFieldsResult::GetLogGroupFieldsResult()
-{
-}
-
 GetLogGroupFieldsResult::GetLogGroupFieldsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetLogGroupFieldsResult& GetLogGroupFieldsResult::operator =(const Aws::AmazonWe
     {
       m_logGroupFields.push_back(logGroupFieldsJsonList[logGroupFieldsIndex].AsObject());
     }
+    m_logGroupFieldsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

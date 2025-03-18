@@ -32,7 +32,7 @@ namespace Model
   class ExternalSourceSetting
   {
   public:
-    AWS_LEXMODELSV2_API ExternalSourceSetting();
+    AWS_LEXMODELSV2_API ExternalSourceSetting() = default;
     AWS_LEXMODELSV2_API ExternalSourceSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ExternalSourceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Settings required for a slot type based on a grammar that you provide.</p>
      */
-    inline const GrammarSlotTypeSetting& GetGrammarSlotTypeSetting() const{ return m_grammarSlotTypeSetting; }
+    inline const GrammarSlotTypeSetting& GetGrammarSlotTypeSetting() const { return m_grammarSlotTypeSetting; }
     inline bool GrammarSlotTypeSettingHasBeenSet() const { return m_grammarSlotTypeSettingHasBeenSet; }
-    inline void SetGrammarSlotTypeSetting(const GrammarSlotTypeSetting& value) { m_grammarSlotTypeSettingHasBeenSet = true; m_grammarSlotTypeSetting = value; }
-    inline void SetGrammarSlotTypeSetting(GrammarSlotTypeSetting&& value) { m_grammarSlotTypeSettingHasBeenSet = true; m_grammarSlotTypeSetting = std::move(value); }
-    inline ExternalSourceSetting& WithGrammarSlotTypeSetting(const GrammarSlotTypeSetting& value) { SetGrammarSlotTypeSetting(value); return *this;}
-    inline ExternalSourceSetting& WithGrammarSlotTypeSetting(GrammarSlotTypeSetting&& value) { SetGrammarSlotTypeSetting(std::move(value)); return *this;}
+    template<typename GrammarSlotTypeSettingT = GrammarSlotTypeSetting>
+    void SetGrammarSlotTypeSetting(GrammarSlotTypeSettingT&& value) { m_grammarSlotTypeSettingHasBeenSet = true; m_grammarSlotTypeSetting = std::forward<GrammarSlotTypeSettingT>(value); }
+    template<typename GrammarSlotTypeSettingT = GrammarSlotTypeSetting>
+    ExternalSourceSetting& WithGrammarSlotTypeSetting(GrammarSlotTypeSettingT&& value) { SetGrammarSlotTypeSetting(std::forward<GrammarSlotTypeSettingT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The path on the container to mount the host volume at.</p>
      */
-    inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
+    inline const Aws::String& GetContainerPath() const { return m_containerPath; }
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
-    inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
-    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
-    inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
+    template<typename ContainerPathT = Aws::String>
+    void SetContainerPath(ContainerPathT&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::forward<ContainerPathT>(value); }
+    template<typename ContainerPathT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithContainerPath(ContainerPathT&& value) { SetContainerPath(std::forward<ContainerPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the container has read-only access to the volume.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
      * <p>The name of the volume to mount. Must match the name of a volume listed in
      * <code>VolumeDetails</code> for the task definition.</p>
      */
-    inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
+    inline const Aws::String& GetSourceVolume() const { return m_sourceVolume; }
     inline bool SourceVolumeHasBeenSet() const { return m_sourceVolumeHasBeenSet; }
-    inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
-    inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
-    inline void SetSourceVolume(const char* value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithSourceVolume(const Aws::String& value) { SetSourceVolume(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
+    template<typename SourceVolumeT = Aws::String>
+    void SetSourceVolume(SourceVolumeT&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::forward<SourceVolumeT>(value); }
+    template<typename SourceVolumeT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& WithSourceVolume(SourceVolumeT&& value) { SetSourceVolume(std::forward<SourceVolumeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_containerPath;
     bool m_containerPathHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
 
     Aws::String m_sourceVolume;

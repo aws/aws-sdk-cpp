@@ -12,12 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVaultNotificationsRequest::DeleteVaultNotificationsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVaultNotificationsRequest::SerializePayload() const
 {
   return {};

@@ -12,13 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLogPatternRequest::DeleteLogPatternRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_patternSetNameHasBeenSet(false),
-    m_patternNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLogPatternRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class UpdateClassificationScopeRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateClassificationScopeRequest();
+    AWS_MACIE2_API UpdateClassificationScopeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The unique identifier for the Amazon Macie resource that the request applies
      * to.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateClassificationScopeRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateClassificationScopeRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateClassificationScopeRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateClassificationScopeRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * <p>The S3 buckets to add or remove from the exclusion list defined by the
      * classification scope.</p>
      */
-    inline const S3ClassificationScopeUpdate& GetS3() const{ return m_s3; }
+    inline const S3ClassificationScopeUpdate& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3ClassificationScopeUpdate& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3ClassificationScopeUpdate&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline UpdateClassificationScopeRequest& WithS3(const S3ClassificationScopeUpdate& value) { SetS3(value); return *this;}
-    inline UpdateClassificationScopeRequest& WithS3(S3ClassificationScopeUpdate&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3ClassificationScopeUpdate>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3ClassificationScopeUpdate>
+    UpdateClassificationScopeRequest& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

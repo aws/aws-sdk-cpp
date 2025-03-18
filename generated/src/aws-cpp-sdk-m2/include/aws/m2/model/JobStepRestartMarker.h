@@ -32,7 +32,7 @@ namespace Model
   class JobStepRestartMarker
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API JobStepRestartMarker();
+    AWS_MAINFRAMEMODERNIZATION_API JobStepRestartMarker() = default;
     AWS_MAINFRAMEMODERNIZATION_API JobStepRestartMarker(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API JobStepRestartMarker& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>The procedure step name that a batch job was restarted from.</p>
      */
-    inline const Aws::String& GetFromProcStep() const{ return m_fromProcStep; }
+    inline const Aws::String& GetFromProcStep() const { return m_fromProcStep; }
     inline bool FromProcStepHasBeenSet() const { return m_fromProcStepHasBeenSet; }
-    inline void SetFromProcStep(const Aws::String& value) { m_fromProcStepHasBeenSet = true; m_fromProcStep = value; }
-    inline void SetFromProcStep(Aws::String&& value) { m_fromProcStepHasBeenSet = true; m_fromProcStep = std::move(value); }
-    inline void SetFromProcStep(const char* value) { m_fromProcStepHasBeenSet = true; m_fromProcStep.assign(value); }
-    inline JobStepRestartMarker& WithFromProcStep(const Aws::String& value) { SetFromProcStep(value); return *this;}
-    inline JobStepRestartMarker& WithFromProcStep(Aws::String&& value) { SetFromProcStep(std::move(value)); return *this;}
-    inline JobStepRestartMarker& WithFromProcStep(const char* value) { SetFromProcStep(value); return *this;}
+    template<typename FromProcStepT = Aws::String>
+    void SetFromProcStep(FromProcStepT&& value) { m_fromProcStepHasBeenSet = true; m_fromProcStep = std::forward<FromProcStepT>(value); }
+    template<typename FromProcStepT = Aws::String>
+    JobStepRestartMarker& WithFromProcStep(FromProcStepT&& value) { SetFromProcStep(std::forward<FromProcStepT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step name that a batch job was restarted from.</p>
      */
-    inline const Aws::String& GetFromStep() const{ return m_fromStep; }
+    inline const Aws::String& GetFromStep() const { return m_fromStep; }
     inline bool FromStepHasBeenSet() const { return m_fromStepHasBeenSet; }
-    inline void SetFromStep(const Aws::String& value) { m_fromStepHasBeenSet = true; m_fromStep = value; }
-    inline void SetFromStep(Aws::String&& value) { m_fromStepHasBeenSet = true; m_fromStep = std::move(value); }
-    inline void SetFromStep(const char* value) { m_fromStepHasBeenSet = true; m_fromStep.assign(value); }
-    inline JobStepRestartMarker& WithFromStep(const Aws::String& value) { SetFromStep(value); return *this;}
-    inline JobStepRestartMarker& WithFromStep(Aws::String&& value) { SetFromStep(std::move(value)); return *this;}
-    inline JobStepRestartMarker& WithFromStep(const char* value) { SetFromStep(value); return *this;}
+    template<typename FromStepT = Aws::String>
+    void SetFromStep(FromStepT&& value) { m_fromStepHasBeenSet = true; m_fromStep = std::forward<FromStepT>(value); }
+    template<typename FromStepT = Aws::String>
+    JobStepRestartMarker& WithFromStep(FromStepT&& value) { SetFromStep(std::forward<FromStepT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The procedure step name that a batch job was restarted to.</p>
      */
-    inline const Aws::String& GetToProcStep() const{ return m_toProcStep; }
+    inline const Aws::String& GetToProcStep() const { return m_toProcStep; }
     inline bool ToProcStepHasBeenSet() const { return m_toProcStepHasBeenSet; }
-    inline void SetToProcStep(const Aws::String& value) { m_toProcStepHasBeenSet = true; m_toProcStep = value; }
-    inline void SetToProcStep(Aws::String&& value) { m_toProcStepHasBeenSet = true; m_toProcStep = std::move(value); }
-    inline void SetToProcStep(const char* value) { m_toProcStepHasBeenSet = true; m_toProcStep.assign(value); }
-    inline JobStepRestartMarker& WithToProcStep(const Aws::String& value) { SetToProcStep(value); return *this;}
-    inline JobStepRestartMarker& WithToProcStep(Aws::String&& value) { SetToProcStep(std::move(value)); return *this;}
-    inline JobStepRestartMarker& WithToProcStep(const char* value) { SetToProcStep(value); return *this;}
+    template<typename ToProcStepT = Aws::String>
+    void SetToProcStep(ToProcStepT&& value) { m_toProcStepHasBeenSet = true; m_toProcStep = std::forward<ToProcStepT>(value); }
+    template<typename ToProcStepT = Aws::String>
+    JobStepRestartMarker& WithToProcStep(ToProcStepT&& value) { SetToProcStep(std::forward<ToProcStepT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step name that a batch job was restarted to.</p>
      */
-    inline const Aws::String& GetToStep() const{ return m_toStep; }
+    inline const Aws::String& GetToStep() const { return m_toStep; }
     inline bool ToStepHasBeenSet() const { return m_toStepHasBeenSet; }
-    inline void SetToStep(const Aws::String& value) { m_toStepHasBeenSet = true; m_toStep = value; }
-    inline void SetToStep(Aws::String&& value) { m_toStepHasBeenSet = true; m_toStep = std::move(value); }
-    inline void SetToStep(const char* value) { m_toStepHasBeenSet = true; m_toStep.assign(value); }
-    inline JobStepRestartMarker& WithToStep(const Aws::String& value) { SetToStep(value); return *this;}
-    inline JobStepRestartMarker& WithToStep(Aws::String&& value) { SetToStep(std::move(value)); return *this;}
-    inline JobStepRestartMarker& WithToStep(const char* value) { SetToStep(value); return *this;}
+    template<typename ToStepT = Aws::String>
+    void SetToStep(ToStepT&& value) { m_toStepHasBeenSet = true; m_toStep = std::forward<ToStepT>(value); }
+    template<typename ToStepT = Aws::String>
+    JobStepRestartMarker& WithToStep(ToStepT&& value) { SetToStep(std::forward<ToStepT>(value)); return *this;}
     ///@}
   private:
 

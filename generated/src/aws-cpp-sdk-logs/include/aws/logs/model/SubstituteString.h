@@ -37,7 +37,7 @@ namespace Model
   class SubstituteString
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SubstituteString();
+    AWS_CLOUDWATCHLOGS_API SubstituteString() = default;
     AWS_CLOUDWATCHLOGS_API SubstituteString(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SubstituteString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>An array of objects, where each object contains the information about one key
      * to match and replace. </p>
      */
-    inline const Aws::Vector<SubstituteStringEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<SubstituteStringEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<SubstituteStringEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<SubstituteStringEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline SubstituteString& WithEntries(const Aws::Vector<SubstituteStringEntry>& value) { SetEntries(value); return *this;}
-    inline SubstituteString& WithEntries(Aws::Vector<SubstituteStringEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline SubstituteString& AddEntries(const SubstituteStringEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline SubstituteString& AddEntries(SubstituteStringEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<SubstituteStringEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<SubstituteStringEntry>>
+    SubstituteString& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = SubstituteStringEntry>
+    SubstituteString& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class HistogramEntry
   {
   public:
-    AWS_XRAY_API HistogramEntry();
+    AWS_XRAY_API HistogramEntry() = default;
     AWS_XRAY_API HistogramEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API HistogramEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The value of the entry.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline HistogramEntry& WithValue(double value) { SetValue(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The prevalence of the entry.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline HistogramEntry& WithCount(int value) { SetCount(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

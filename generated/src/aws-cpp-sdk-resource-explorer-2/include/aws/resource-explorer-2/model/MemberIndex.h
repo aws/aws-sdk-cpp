@@ -34,7 +34,7 @@ namespace Model
   class MemberIndex
   {
   public:
-    AWS_RESOURCEEXPLORER2_API MemberIndex();
+    AWS_RESOURCEEXPLORER2_API MemberIndex() = default;
     AWS_RESOURCEEXPLORER2_API MemberIndex(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API MemberIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The account ID for the index.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline MemberIndex& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline MemberIndex& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline MemberIndex& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    MemberIndex& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the index.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline MemberIndex& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline MemberIndex& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline MemberIndex& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    MemberIndex& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region in which the index exists.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline MemberIndex& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline MemberIndex& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline MemberIndex& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    MemberIndex& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,10 @@ namespace Model
      * search results in the Region with the aggregator index to include resources from
      * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
-    inline const IndexType& GetType() const{ return m_type; }
+    inline IndexType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IndexType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IndexType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MemberIndex& WithType(const IndexType& value) { SetType(value); return *this;}
-    inline MemberIndex& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MemberIndex& WithType(IndexType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    IndexType m_type;
+    IndexType m_type{IndexType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

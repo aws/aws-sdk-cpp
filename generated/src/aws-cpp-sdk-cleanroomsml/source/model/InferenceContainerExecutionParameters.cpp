@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InferenceContainerExecutionParameters::InferenceContainerExecutionParameters() : 
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false)
-{
-}
-
 InferenceContainerExecutionParameters::InferenceContainerExecutionParameters(JsonView jsonValue)
-  : InferenceContainerExecutionParameters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InferenceContainerExecutionParameters& InferenceContainerExecutionParameters::op
   if(jsonValue.ValueExists("maxPayloadInMB"))
   {
     m_maxPayloadInMB = jsonValue.GetInteger("maxPayloadInMB");
-
     m_maxPayloadInMBHasBeenSet = true;
   }
-
   return *this;
 }
 

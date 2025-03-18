@@ -27,7 +27,7 @@ namespace Model
   class ListChannelMessagesRequest : public ChimeSDKMessagingRequest
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ListChannelMessagesRequest();
+    AWS_CHIMESDKMESSAGING_API ListChannelMessagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ARN of the channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline ListChannelMessagesRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline ListChannelMessagesRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline ListChannelMessagesRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    ListChannelMessagesRequest& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,43 +59,41 @@ namespace Model
      * <p>The order in which you want messages sorted. Default is Descending, based on
      * time created.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListChannelMessagesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListChannelMessagesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListChannelMessagesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The initial or starting time stamp for your requested messages.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const { return m_notBefore; }
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
-    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-    inline ListChannelMessagesRequest& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
-    inline ListChannelMessagesRequest& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    void SetNotBefore(NotBeforeT&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::forward<NotBeforeT>(value); }
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    ListChannelMessagesRequest& WithNotBefore(NotBeforeT&& value) { SetNotBefore(std::forward<NotBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The final or ending time stamp for your requested messages.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const { return m_notAfter; }
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
-    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
-    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
-    inline ListChannelMessagesRequest& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
-    inline ListChannelMessagesRequest& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    void SetNotAfter(NotAfterT&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::forward<NotAfterT>(value); }
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    ListChannelMessagesRequest& WithNotAfter(NotAfterT&& value) { SetNotAfter(std::forward<NotAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of messages that you want returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListChannelMessagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -108,14 +104,12 @@ namespace Model
      * <p>The token passed by previous API calls until all requested messages are
      * returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListChannelMessagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChannelMessagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChannelMessagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChannelMessagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +117,12 @@ namespace Model
      * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
      * that makes the API call.</p>
      */
-    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+    inline const Aws::String& GetChimeBearer() const { return m_chimeBearer; }
     inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
-    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
-    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
-    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
-    inline ListChannelMessagesRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
-    inline ListChannelMessagesRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
-    inline ListChannelMessagesRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
+    template<typename ChimeBearerT = Aws::String>
+    void SetChimeBearer(ChimeBearerT&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::forward<ChimeBearerT>(value); }
+    template<typename ChimeBearerT = Aws::String>
+    ListChannelMessagesRequest& WithChimeBearer(ChimeBearerT&& value) { SetChimeBearer(std::forward<ChimeBearerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,30 +130,28 @@ namespace Model
      * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
      * listing the messages in a SubChannel that the user belongs to.</p> 
      */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+    inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
     inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
-    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
-    inline ListChannelMessagesRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-    inline ListChannelMessagesRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-    inline ListChannelMessagesRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+    template<typename SubChannelIdT = Aws::String>
+    void SetSubChannelId(SubChannelIdT&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::forward<SubChannelIdT>(value); }
+    template<typename SubChannelIdT = Aws::String>
+    ListChannelMessagesRequest& WithSubChannelId(SubChannelIdT&& value) { SetSubChannelId(std::forward<SubChannelIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notBefore;
+    Aws::Utils::DateTime m_notBefore{};
     bool m_notBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notAfter;
+    Aws::Utils::DateTime m_notAfter{};
     bool m_notAfterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

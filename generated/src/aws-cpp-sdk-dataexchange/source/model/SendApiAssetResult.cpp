@@ -15,31 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendApiAssetResult::SendApiAssetResult()
-{
-}
-
-SendApiAssetResult::SendApiAssetResult(SendApiAssetResult&& toMove) : 
-    m_body(std::move(toMove.m_body)),
-    m_responseHeaders(std::move(toMove.m_responseHeaders)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-SendApiAssetResult& SendApiAssetResult::operator=(SendApiAssetResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_body = std::move(toMove.m_body);
-   m_responseHeaders = std::move(toMove.m_responseHeaders);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 SendApiAssetResult::SendApiAssetResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -48,6 +23,7 @@ SendApiAssetResult::SendApiAssetResult(Aws::AmazonWebServiceResult<ResponseStrea
 SendApiAssetResult& SendApiAssetResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
+  m_bodyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   std::size_t prefixSize = sizeof("") - 1; //subtract the NULL terminator out
@@ -58,6 +34,7 @@ SendApiAssetResult& SendApiAssetResult::operator =(Aws::AmazonWebServiceResult<R
     if(foundPrefix != std::string::npos)
     {
       m_responseHeaders[item.first.substr(prefixSize)] = item.second;
+      m_responseHeadersHasBeenSet = true;
     }
   }
 
@@ -65,6 +42,7 @@ SendApiAssetResult& SendApiAssetResult::operator =(Aws::AmazonWebServiceResult<R
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

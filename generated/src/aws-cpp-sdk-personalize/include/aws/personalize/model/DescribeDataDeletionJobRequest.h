@@ -21,7 +21,7 @@ namespace Model
   class DescribeDataDeletionJobRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeDataDeletionJobRequest();
+    AWS_PERSONALIZE_API DescribeDataDeletionJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
      */
-    inline const Aws::String& GetDataDeletionJobArn() const{ return m_dataDeletionJobArn; }
+    inline const Aws::String& GetDataDeletionJobArn() const { return m_dataDeletionJobArn; }
     inline bool DataDeletionJobArnHasBeenSet() const { return m_dataDeletionJobArnHasBeenSet; }
-    inline void SetDataDeletionJobArn(const Aws::String& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = value; }
-    inline void SetDataDeletionJobArn(Aws::String&& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = std::move(value); }
-    inline void SetDataDeletionJobArn(const char* value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn.assign(value); }
-    inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(const Aws::String& value) { SetDataDeletionJobArn(value); return *this;}
-    inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(Aws::String&& value) { SetDataDeletionJobArn(std::move(value)); return *this;}
-    inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(const char* value) { SetDataDeletionJobArn(value); return *this;}
+    template<typename DataDeletionJobArnT = Aws::String>
+    void SetDataDeletionJobArn(DataDeletionJobArnT&& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = std::forward<DataDeletionJobArnT>(value); }
+    template<typename DataDeletionJobArnT = Aws::String>
+    DescribeDataDeletionJobRequest& WithDataDeletionJobArn(DataDeletionJobArnT&& value) { SetDataDeletionJobArn(std::forward<DataDeletionJobArnT>(value)); return *this;}
     ///@}
   private:
 

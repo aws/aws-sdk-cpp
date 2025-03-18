@@ -32,7 +32,7 @@ namespace Model
   class TemplateCreateMessageBody
   {
   public:
-    AWS_PINPOINT_API TemplateCreateMessageBody();
+    AWS_PINPOINT_API TemplateCreateMessageBody() = default;
     AWS_PINPOINT_API TemplateCreateMessageBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplateCreateMessageBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline TemplateCreateMessageBody& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline TemplateCreateMessageBody& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline TemplateCreateMessageBody& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    TemplateCreateMessageBody& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The message that's returned from the API for the request to create the
      * message template.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline TemplateCreateMessageBody& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline TemplateCreateMessageBody& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline TemplateCreateMessageBody& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    TemplateCreateMessageBody& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the request to create the message template.</p>
      */
-    inline const Aws::String& GetRequestID() const{ return m_requestID; }
+    inline const Aws::String& GetRequestID() const { return m_requestID; }
     inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
-    inline void SetRequestID(const Aws::String& value) { m_requestIDHasBeenSet = true; m_requestID = value; }
-    inline void SetRequestID(Aws::String&& value) { m_requestIDHasBeenSet = true; m_requestID = std::move(value); }
-    inline void SetRequestID(const char* value) { m_requestIDHasBeenSet = true; m_requestID.assign(value); }
-    inline TemplateCreateMessageBody& WithRequestID(const Aws::String& value) { SetRequestID(value); return *this;}
-    inline TemplateCreateMessageBody& WithRequestID(Aws::String&& value) { SetRequestID(std::move(value)); return *this;}
-    inline TemplateCreateMessageBody& WithRequestID(const char* value) { SetRequestID(value); return *this;}
+    template<typename RequestIDT = Aws::String>
+    void SetRequestID(RequestIDT&& value) { m_requestIDHasBeenSet = true; m_requestID = std::forward<RequestIDT>(value); }
+    template<typename RequestIDT = Aws::String>
+    TemplateCreateMessageBody& WithRequestID(RequestIDT&& value) { SetRequestID(std::forward<RequestIDT>(value)); return *this;}
     ///@}
   private:
 

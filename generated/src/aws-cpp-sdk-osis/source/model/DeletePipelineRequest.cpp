@@ -12,11 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipelineRequest::DeletePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePipelineRequest::SerializePayload() const
 {
   return {};

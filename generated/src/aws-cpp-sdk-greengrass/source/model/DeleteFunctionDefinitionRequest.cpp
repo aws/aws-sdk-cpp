@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFunctionDefinitionRequest::DeleteFunctionDefinitionRequest() : 
-    m_functionDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFunctionDefinitionRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MergeBranchesByThreeWayResult::MergeBranchesByThreeWayResult()
-{
-}
-
 MergeBranchesByThreeWayResult::MergeBranchesByThreeWayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ MergeBranchesByThreeWayResult& MergeBranchesByThreeWayResult::operator =(const A
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
+    m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treeId"))
   {
     m_treeId = jsonValue.GetString("treeId");
-
+    m_treeIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

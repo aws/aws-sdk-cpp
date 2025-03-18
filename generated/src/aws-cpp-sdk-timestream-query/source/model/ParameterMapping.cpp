@@ -18,14 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ParameterMapping::ParameterMapping() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ParameterMapping::ParameterMapping(JsonView jsonValue)
-  : ParameterMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParameterMapping& ParameterMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetObject("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

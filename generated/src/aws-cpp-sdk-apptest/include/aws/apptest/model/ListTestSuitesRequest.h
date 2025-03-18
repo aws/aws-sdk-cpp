@@ -26,7 +26,7 @@ namespace Model
   class ListTestSuitesRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API ListTestSuitesRequest();
+    AWS_APPTEST_API ListTestSuitesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,36 +43,33 @@ namespace Model
     /**
      * <p>The suite ID of the test suites.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTestSuiteIds() const{ return m_testSuiteIds; }
+    inline const Aws::Vector<Aws::String>& GetTestSuiteIds() const { return m_testSuiteIds; }
     inline bool TestSuiteIdsHasBeenSet() const { return m_testSuiteIdsHasBeenSet; }
-    inline void SetTestSuiteIds(const Aws::Vector<Aws::String>& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds = value; }
-    inline void SetTestSuiteIds(Aws::Vector<Aws::String>&& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds = std::move(value); }
-    inline ListTestSuitesRequest& WithTestSuiteIds(const Aws::Vector<Aws::String>& value) { SetTestSuiteIds(value); return *this;}
-    inline ListTestSuitesRequest& WithTestSuiteIds(Aws::Vector<Aws::String>&& value) { SetTestSuiteIds(std::move(value)); return *this;}
-    inline ListTestSuitesRequest& AddTestSuiteIds(const Aws::String& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds.push_back(value); return *this; }
-    inline ListTestSuitesRequest& AddTestSuiteIds(Aws::String&& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds.push_back(std::move(value)); return *this; }
-    inline ListTestSuitesRequest& AddTestSuiteIds(const char* value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds.push_back(value); return *this; }
+    template<typename TestSuiteIdsT = Aws::Vector<Aws::String>>
+    void SetTestSuiteIds(TestSuiteIdsT&& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds = std::forward<TestSuiteIdsT>(value); }
+    template<typename TestSuiteIdsT = Aws::Vector<Aws::String>>
+    ListTestSuitesRequest& WithTestSuiteIds(TestSuiteIdsT&& value) { SetTestSuiteIds(std::forward<TestSuiteIdsT>(value)); return *this;}
+    template<typename TestSuiteIdsT = Aws::String>
+    ListTestSuitesRequest& AddTestSuiteIds(TestSuiteIdsT&& value) { m_testSuiteIdsHasBeenSet = true; m_testSuiteIds.emplace_back(std::forward<TestSuiteIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token from a previous request to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTestSuitesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestSuitesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestSuitesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestSuitesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of test suites to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTestSuitesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

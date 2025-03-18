@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NavbarStyle::NavbarStyle() : 
-    m_globalNavbarHasBeenSet(false),
-    m_contextualNavbarHasBeenSet(false)
-{
-}
-
 NavbarStyle::NavbarStyle(JsonView jsonValue)
-  : NavbarStyle()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NavbarStyle& NavbarStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlobalNavbar"))
   {
     m_globalNavbar = jsonValue.GetObject("GlobalNavbar");
-
     m_globalNavbarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextualNavbar"))
   {
     m_contextualNavbar = jsonValue.GetObject("ContextualNavbar");
-
     m_contextualNavbarHasBeenSet = true;
   }
-
   return *this;
 }
 

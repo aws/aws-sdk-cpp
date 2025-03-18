@@ -12,12 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerRequest::CreateContainerRequest() : 
-    m_containerNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateContainerRequest::SerializePayload() const
 {
   JsonValue payload;

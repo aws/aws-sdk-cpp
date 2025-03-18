@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForStreamRequest::ListTagsForStreamRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForStreamRequest::SerializePayload() const
 {
   JsonValue payload;

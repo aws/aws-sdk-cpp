@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-AccessDeniedException::AccessDeniedException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 AccessDeniedException::AccessDeniedException(JsonView jsonValue)
-  : AccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

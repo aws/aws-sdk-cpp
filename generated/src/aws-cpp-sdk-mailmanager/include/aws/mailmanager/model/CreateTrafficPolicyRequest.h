@@ -26,7 +26,7 @@ namespace Model
   class CreateTrafficPolicyRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API CreateTrafficPolicyRequest();
+    AWS_MAILMANAGER_API CreateTrafficPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateTrafficPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTrafficPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * messages that fall outside of (or not addressed by) the conditions of your
      * policy statements</p>
      */
-    inline const AcceptAction& GetDefaultAction() const{ return m_defaultAction; }
+    inline AcceptAction GetDefaultAction() const { return m_defaultAction; }
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    inline void SetDefaultAction(const AcceptAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
-    inline void SetDefaultAction(AcceptAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
-    inline CreateTrafficPolicyRequest& WithDefaultAction(const AcceptAction& value) { SetDefaultAction(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithDefaultAction(AcceptAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+    inline void SetDefaultAction(AcceptAction value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
+    inline CreateTrafficPolicyRequest& WithDefaultAction(AcceptAction value) { SetDefaultAction(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>The maximum message size in bytes of email which is allowed in by this
      * traffic policy—anything larger will be blocked.</p>
      */
-    inline int GetMaxMessageSizeBytes() const{ return m_maxMessageSizeBytes; }
+    inline int GetMaxMessageSizeBytes() const { return m_maxMessageSizeBytes; }
     inline bool MaxMessageSizeBytesHasBeenSet() const { return m_maxMessageSizeBytesHasBeenSet; }
     inline void SetMaxMessageSizeBytes(int value) { m_maxMessageSizeBytesHasBeenSet = true; m_maxMessageSizeBytes = value; }
     inline CreateTrafficPolicyRequest& WithMaxMessageSizeBytes(int value) { SetMaxMessageSizeBytes(value); return *this;}
@@ -83,14 +79,14 @@ namespace Model
     /**
      * <p>Conditional statements for filtering email traffic.</p>
      */
-    inline const Aws::Vector<PolicyStatement>& GetPolicyStatements() const{ return m_policyStatements; }
+    inline const Aws::Vector<PolicyStatement>& GetPolicyStatements() const { return m_policyStatements; }
     inline bool PolicyStatementsHasBeenSet() const { return m_policyStatementsHasBeenSet; }
-    inline void SetPolicyStatements(const Aws::Vector<PolicyStatement>& value) { m_policyStatementsHasBeenSet = true; m_policyStatements = value; }
-    inline void SetPolicyStatements(Aws::Vector<PolicyStatement>&& value) { m_policyStatementsHasBeenSet = true; m_policyStatements = std::move(value); }
-    inline CreateTrafficPolicyRequest& WithPolicyStatements(const Aws::Vector<PolicyStatement>& value) { SetPolicyStatements(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithPolicyStatements(Aws::Vector<PolicyStatement>&& value) { SetPolicyStatements(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& AddPolicyStatements(const PolicyStatement& value) { m_policyStatementsHasBeenSet = true; m_policyStatements.push_back(value); return *this; }
-    inline CreateTrafficPolicyRequest& AddPolicyStatements(PolicyStatement&& value) { m_policyStatementsHasBeenSet = true; m_policyStatements.push_back(std::move(value)); return *this; }
+    template<typename PolicyStatementsT = Aws::Vector<PolicyStatement>>
+    void SetPolicyStatements(PolicyStatementsT&& value) { m_policyStatementsHasBeenSet = true; m_policyStatements = std::forward<PolicyStatementsT>(value); }
+    template<typename PolicyStatementsT = Aws::Vector<PolicyStatement>>
+    CreateTrafficPolicyRequest& WithPolicyStatements(PolicyStatementsT&& value) { SetPolicyStatements(std::forward<PolicyStatementsT>(value)); return *this;}
+    template<typename PolicyStatementsT = PolicyStatement>
+    CreateTrafficPolicyRequest& AddPolicyStatements(PolicyStatementsT&& value) { m_policyStatementsHasBeenSet = true; m_policyStatements.emplace_back(std::forward<PolicyStatementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,38 +94,36 @@ namespace Model
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTrafficPolicyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTrafficPolicyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTrafficPolicyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTrafficPolicyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly name for the traffic policy resource.</p>
      */
-    inline const Aws::String& GetTrafficPolicyName() const{ return m_trafficPolicyName; }
+    inline const Aws::String& GetTrafficPolicyName() const { return m_trafficPolicyName; }
     inline bool TrafficPolicyNameHasBeenSet() const { return m_trafficPolicyNameHasBeenSet; }
-    inline void SetTrafficPolicyName(const Aws::String& value) { m_trafficPolicyNameHasBeenSet = true; m_trafficPolicyName = value; }
-    inline void SetTrafficPolicyName(Aws::String&& value) { m_trafficPolicyNameHasBeenSet = true; m_trafficPolicyName = std::move(value); }
-    inline void SetTrafficPolicyName(const char* value) { m_trafficPolicyNameHasBeenSet = true; m_trafficPolicyName.assign(value); }
-    inline CreateTrafficPolicyRequest& WithTrafficPolicyName(const Aws::String& value) { SetTrafficPolicyName(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithTrafficPolicyName(Aws::String&& value) { SetTrafficPolicyName(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& WithTrafficPolicyName(const char* value) { SetTrafficPolicyName(value); return *this;}
+    template<typename TrafficPolicyNameT = Aws::String>
+    void SetTrafficPolicyName(TrafficPolicyNameT&& value) { m_trafficPolicyNameHasBeenSet = true; m_trafficPolicyName = std::forward<TrafficPolicyNameT>(value); }
+    template<typename TrafficPolicyNameT = Aws::String>
+    CreateTrafficPolicyRequest& WithTrafficPolicyName(TrafficPolicyNameT&& value) { SetTrafficPolicyName(std::forward<TrafficPolicyNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    AcceptAction m_defaultAction;
+    AcceptAction m_defaultAction{AcceptAction::NOT_SET};
     bool m_defaultActionHasBeenSet = false;
 
-    int m_maxMessageSizeBytes;
+    int m_maxMessageSizeBytes{0};
     bool m_maxMessageSizeBytesHasBeenSet = false;
 
     Aws::Vector<PolicyStatement> m_policyStatements;

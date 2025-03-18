@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IKEVersionsRequestListValue::IKEVersionsRequestListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 IKEVersionsRequestListValue::IKEVersionsRequestListValue(const XmlNode& xmlNode)
-  : IKEVersionsRequestListValue()
 {
   *this = xmlNode;
 }

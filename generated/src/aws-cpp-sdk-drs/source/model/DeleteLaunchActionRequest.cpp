@@ -12,12 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLaunchActionRequest::DeleteLaunchActionRequest() : 
-    m_actionIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLaunchActionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class CreateParallelDataResult
   {
   public:
-    AWS_TRANSLATE_API CreateParallelDataResult();
+    AWS_TRANSLATE_API CreateParallelDataResult() = default;
     AWS_TRANSLATE_API CreateParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSLATE_API CreateParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The custom name that you assigned to the parallel data resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateParallelDataResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateParallelDataResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateParallelDataResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateParallelDataResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,29 @@ namespace Model
      * <p>The status of the parallel data resource. When the resource is ready for you
      * to use, the status is <code>ACTIVE</code>.</p>
      */
-    inline const ParallelDataStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ParallelDataStatus& value) { m_status = value; }
-    inline void SetStatus(ParallelDataStatus&& value) { m_status = std::move(value); }
-    inline CreateParallelDataResult& WithStatus(const ParallelDataStatus& value) { SetStatus(value); return *this;}
-    inline CreateParallelDataResult& WithStatus(ParallelDataStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ParallelDataStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ParallelDataStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateParallelDataResult& WithStatus(ParallelDataStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateParallelDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateParallelDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateParallelDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateParallelDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    ParallelDataStatus m_status;
+    ParallelDataStatus m_status{ParallelDataStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

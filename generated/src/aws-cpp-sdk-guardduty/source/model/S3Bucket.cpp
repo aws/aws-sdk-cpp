@@ -18,24 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-S3Bucket::S3Bucket() : 
-    m_ownerIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_effectivePermissionHasBeenSet(false),
-    m_publicReadAccess(PublicAccessStatus::NOT_SET),
-    m_publicReadAccessHasBeenSet(false),
-    m_publicWriteAccess(PublicAccessStatus::NOT_SET),
-    m_publicWriteAccessHasBeenSet(false),
-    m_accountPublicAccessHasBeenSet(false),
-    m_bucketPublicAccessHasBeenSet(false),
-    m_s3ObjectUidsHasBeenSet(false)
-{
-}
-
 S3Bucket::S3Bucket(JsonView jsonValue)
-  : S3Bucket()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ownerId"))
   {
     m_ownerId = jsonValue.GetString("ownerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = jsonValue.GetString("encryptionType");
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectivePermission"))
   {
     m_effectivePermission = jsonValue.GetString("effectivePermission");
-
     m_effectivePermissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicReadAccess"))
   {
     m_publicReadAccess = PublicAccessStatusMapper::GetPublicAccessStatusForName(jsonValue.GetString("publicReadAccess"));
-
     m_publicReadAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicWriteAccess"))
   {
     m_publicWriteAccess = PublicAccessStatusMapper::GetPublicAccessStatusForName(jsonValue.GetString("publicWriteAccess"));
-
     m_publicWriteAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountPublicAccess"))
   {
     m_accountPublicAccess = jsonValue.GetObject("accountPublicAccess");
-
     m_accountPublicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPublicAccess"))
   {
     m_bucketPublicAccess = jsonValue.GetObject("bucketPublicAccess");
-
     m_bucketPublicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ObjectUids"))
   {
     Aws::Utils::Array<JsonView> s3ObjectUidsJsonList = jsonValue.GetArray("s3ObjectUids");
@@ -114,7 +79,6 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
     }
     m_s3ObjectUidsHasBeenSet = true;
   }
-
   return *this;
 }
 

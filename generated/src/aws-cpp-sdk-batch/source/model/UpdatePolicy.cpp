@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-UpdatePolicy::UpdatePolicy() : 
-    m_terminateJobsOnUpdate(false),
-    m_terminateJobsOnUpdateHasBeenSet(false),
-    m_jobExecutionTimeoutMinutes(0),
-    m_jobExecutionTimeoutMinutesHasBeenSet(false)
-{
-}
-
 UpdatePolicy::UpdatePolicy(JsonView jsonValue)
-  : UpdatePolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UpdatePolicy& UpdatePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("terminateJobsOnUpdate"))
   {
     m_terminateJobsOnUpdate = jsonValue.GetBool("terminateJobsOnUpdate");
-
     m_terminateJobsOnUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobExecutionTimeoutMinutes"))
   {
     m_jobExecutionTimeoutMinutes = jsonValue.GetInt64("jobExecutionTimeoutMinutes");
-
     m_jobExecutionTimeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

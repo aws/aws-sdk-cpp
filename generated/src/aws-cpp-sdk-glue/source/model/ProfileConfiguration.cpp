@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ProfileConfiguration::ProfileConfiguration() : 
-    m_sessionConfigurationHasBeenSet(false),
-    m_jobConfigurationHasBeenSet(false)
-{
-}
-
 ProfileConfiguration::ProfileConfiguration(JsonView jsonValue)
-  : ProfileConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
     }
     m_sessionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> jobConfigurationJsonMap = jsonValue.GetObject("JobConfiguration").GetAllObjects();
@@ -51,7 +43,6 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
     }
     m_jobConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

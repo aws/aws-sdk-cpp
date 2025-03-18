@@ -12,19 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_publishAttributionMetricsToS3(false),
-    m_publishAttributionMetricsToS3HasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

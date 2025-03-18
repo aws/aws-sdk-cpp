@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStandbyWorkspacesResult::CreateStandbyWorkspacesResult()
-{
-}
-
 CreateStandbyWorkspacesResult::CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator =(const A
     {
       m_failedStandbyRequests.push_back(failedStandbyRequestsJsonList[failedStandbyRequestsIndex].AsObject());
     }
+    m_failedStandbyRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingStandbyRequests"))
   {
     Aws::Utils::Array<JsonView> pendingStandbyRequestsJsonList = jsonValue.GetArray("PendingStandbyRequests");
@@ -45,14 +41,15 @@ CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator =(const A
     {
       m_pendingStandbyRequests.push_back(pendingStandbyRequestsJsonList[pendingStandbyRequestsIndex].AsObject());
     }
+    m_pendingStandbyRequestsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

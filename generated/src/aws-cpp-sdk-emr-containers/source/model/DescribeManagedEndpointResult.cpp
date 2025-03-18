@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeManagedEndpointResult::DescribeManagedEndpointResult()
-{
-}
-
 DescribeManagedEndpointResult::DescribeManagedEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeManagedEndpointResult& DescribeManagedEndpointResult::operator =(const A
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
-
+    m_endpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

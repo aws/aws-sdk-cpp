@@ -21,7 +21,7 @@ namespace Model
   class CancelParticipantAuthenticationRequest : public ConnectParticipantRequest
   {
   public:
-    AWS_CONNECTPARTICIPANT_API CancelParticipantAuthenticationRequest();
+    AWS_CONNECTPARTICIPANT_API CancelParticipantAuthenticationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The <code>sessionId</code> provided in the
      * <code>authenticationInitiated</code> event.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline CancelParticipantAuthenticationRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline CancelParticipantAuthenticationRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline CancelParticipantAuthenticationRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    CancelParticipantAuthenticationRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication token associated with the participant's connection.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline CancelParticipantAuthenticationRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline CancelParticipantAuthenticationRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline CancelParticipantAuthenticationRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    CancelParticipantAuthenticationRequest& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
   private:
 

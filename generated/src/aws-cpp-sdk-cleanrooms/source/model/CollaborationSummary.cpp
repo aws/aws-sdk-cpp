@@ -18,25 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-CollaborationSummary::CollaborationSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_creatorDisplayNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_memberStatus(MemberStatus::NOT_SET),
-    m_memberStatusHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_analyticsEngine(AnalyticsEngine::NOT_SET),
-    m_analyticsEngineHasBeenSet(false)
-{
-}
-
 CollaborationSummary::CollaborationSummary(JsonView jsonValue)
-  : CollaborationSummary()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ CollaborationSummary& CollaborationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorDisplayName"))
   {
     m_creatorDisplayName = jsonValue.GetString("creatorDisplayName");
-
     m_creatorDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberStatus"))
   {
     m_memberStatus = MemberStatusMapper::GetMemberStatusForName(jsonValue.GetString("memberStatus"));
-
     m_memberStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analyticsEngine"))
   {
     m_analyticsEngine = AnalyticsEngineMapper::GetAnalyticsEngineForName(jsonValue.GetString("analyticsEngine"));
-
     m_analyticsEngineHasBeenSet = true;
   }
-
   return *this;
 }
 

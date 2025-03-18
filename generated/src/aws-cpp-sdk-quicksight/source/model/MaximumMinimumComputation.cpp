@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MaximumMinimumComputation::MaximumMinimumComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(MaximumMinimumComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MaximumMinimumComputation::MaximumMinimumComputation(JsonView jsonValue)
-  : MaximumMinimumComputation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ MaximumMinimumComputation& MaximumMinimumComputation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MaximumMinimumComputationTypeMapper::GetMaximumMinimumComputationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

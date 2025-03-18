@@ -28,7 +28,7 @@ namespace Model
   class StartBgpFailoverTestResult
   {
   public:
-    AWS_DIRECTCONNECT_API StartBgpFailoverTestResult();
+    AWS_DIRECTCONNECT_API StartBgpFailoverTestResult() = default;
     AWS_DIRECTCONNECT_API StartBgpFailoverTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API StartBgpFailoverTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the virtual interface failover test.</p>
      */
-    inline const VirtualInterfaceTestHistory& GetVirtualInterfaceTest() const{ return m_virtualInterfaceTest; }
-    inline void SetVirtualInterfaceTest(const VirtualInterfaceTestHistory& value) { m_virtualInterfaceTest = value; }
-    inline void SetVirtualInterfaceTest(VirtualInterfaceTestHistory&& value) { m_virtualInterfaceTest = std::move(value); }
-    inline StartBgpFailoverTestResult& WithVirtualInterfaceTest(const VirtualInterfaceTestHistory& value) { SetVirtualInterfaceTest(value); return *this;}
-    inline StartBgpFailoverTestResult& WithVirtualInterfaceTest(VirtualInterfaceTestHistory&& value) { SetVirtualInterfaceTest(std::move(value)); return *this;}
+    inline const VirtualInterfaceTestHistory& GetVirtualInterfaceTest() const { return m_virtualInterfaceTest; }
+    template<typename VirtualInterfaceTestT = VirtualInterfaceTestHistory>
+    void SetVirtualInterfaceTest(VirtualInterfaceTestT&& value) { m_virtualInterfaceTestHasBeenSet = true; m_virtualInterfaceTest = std::forward<VirtualInterfaceTestT>(value); }
+    template<typename VirtualInterfaceTestT = VirtualInterfaceTestHistory>
+    StartBgpFailoverTestResult& WithVirtualInterfaceTest(VirtualInterfaceTestT&& value) { SetVirtualInterfaceTest(std::forward<VirtualInterfaceTestT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBgpFailoverTestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBgpFailoverTestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBgpFailoverTestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBgpFailoverTestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualInterfaceTestHistory m_virtualInterfaceTest;
+    bool m_virtualInterfaceTestHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

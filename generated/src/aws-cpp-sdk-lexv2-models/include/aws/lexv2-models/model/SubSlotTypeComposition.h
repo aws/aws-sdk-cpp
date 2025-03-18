@@ -31,7 +31,7 @@ namespace Model
   class SubSlotTypeComposition
   {
   public:
-    AWS_LEXMODELSV2_API SubSlotTypeComposition();
+    AWS_LEXMODELSV2_API SubSlotTypeComposition() = default;
     AWS_LEXMODELSV2_API SubSlotTypeComposition(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SubSlotTypeComposition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Name of a constituent sub slot inside a composite slot.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SubSlotTypeComposition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SubSlotTypeComposition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SubSlotTypeComposition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SubSlotTypeComposition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The unique identifier assigned to a slot type. This refers to either a
      * built-in slot type or the unique slotTypeId of a custom slot type.</p>
      */
-    inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
+    inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-    inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-    inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-    inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-    inline SubSlotTypeComposition& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-    inline SubSlotTypeComposition& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-    inline SubSlotTypeComposition& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
+    template<typename SlotTypeIdT = Aws::String>
+    void SetSlotTypeId(SlotTypeIdT&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::forward<SlotTypeIdT>(value); }
+    template<typename SlotTypeIdT = Aws::String>
+    SubSlotTypeComposition& WithSlotTypeId(SlotTypeIdT&& value) { SetSlotTypeId(std::forward<SlotTypeIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-SetFileModeEntry::SetFileModeEntry() : 
-    m_filePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
-{
-}
-
 SetFileModeEntry::SetFileModeEntry(JsonView jsonValue)
-  : SetFileModeEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SetFileModeEntry& SetFileModeEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileMode"))
   {
     m_fileMode = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("fileMode"));
-
     m_fileModeHasBeenSet = true;
   }
-
   return *this;
 }
 

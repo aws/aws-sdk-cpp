@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-AutoTrainingConfig::AutoTrainingConfig() : 
-    m_schedulingExpressionHasBeenSet(false)
-{
-}
-
 AutoTrainingConfig::AutoTrainingConfig(JsonView jsonValue)
-  : AutoTrainingConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoTrainingConfig& AutoTrainingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schedulingExpression"))
   {
     m_schedulingExpression = jsonValue.GetString("schedulingExpression");
-
     m_schedulingExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

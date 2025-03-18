@@ -29,52 +29,51 @@ namespace Model
   class ListVolumeRecoveryPointsResult
   {
   public:
-    AWS_STORAGEGATEWAY_API ListVolumeRecoveryPointsResult();
+    AWS_STORAGEGATEWAY_API ListVolumeRecoveryPointsResult() = default;
     AWS_STORAGEGATEWAY_API ListVolumeRecoveryPointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API ListVolumeRecoveryPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline ListVolumeRecoveryPointsResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline ListVolumeRecoveryPointsResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline ListVolumeRecoveryPointsResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    ListVolumeRecoveryPointsResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
      */
-    inline const Aws::Vector<VolumeRecoveryPointInfo>& GetVolumeRecoveryPointInfos() const{ return m_volumeRecoveryPointInfos; }
-    inline void SetVolumeRecoveryPointInfos(const Aws::Vector<VolumeRecoveryPointInfo>& value) { m_volumeRecoveryPointInfos = value; }
-    inline void SetVolumeRecoveryPointInfos(Aws::Vector<VolumeRecoveryPointInfo>&& value) { m_volumeRecoveryPointInfos = std::move(value); }
-    inline ListVolumeRecoveryPointsResult& WithVolumeRecoveryPointInfos(const Aws::Vector<VolumeRecoveryPointInfo>& value) { SetVolumeRecoveryPointInfos(value); return *this;}
-    inline ListVolumeRecoveryPointsResult& WithVolumeRecoveryPointInfos(Aws::Vector<VolumeRecoveryPointInfo>&& value) { SetVolumeRecoveryPointInfos(std::move(value)); return *this;}
-    inline ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(const VolumeRecoveryPointInfo& value) { m_volumeRecoveryPointInfos.push_back(value); return *this; }
-    inline ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(VolumeRecoveryPointInfo&& value) { m_volumeRecoveryPointInfos.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VolumeRecoveryPointInfo>& GetVolumeRecoveryPointInfos() const { return m_volumeRecoveryPointInfos; }
+    template<typename VolumeRecoveryPointInfosT = Aws::Vector<VolumeRecoveryPointInfo>>
+    void SetVolumeRecoveryPointInfos(VolumeRecoveryPointInfosT&& value) { m_volumeRecoveryPointInfosHasBeenSet = true; m_volumeRecoveryPointInfos = std::forward<VolumeRecoveryPointInfosT>(value); }
+    template<typename VolumeRecoveryPointInfosT = Aws::Vector<VolumeRecoveryPointInfo>>
+    ListVolumeRecoveryPointsResult& WithVolumeRecoveryPointInfos(VolumeRecoveryPointInfosT&& value) { SetVolumeRecoveryPointInfos(std::forward<VolumeRecoveryPointInfosT>(value)); return *this;}
+    template<typename VolumeRecoveryPointInfosT = VolumeRecoveryPointInfo>
+    ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(VolumeRecoveryPointInfosT&& value) { m_volumeRecoveryPointInfosHasBeenSet = true; m_volumeRecoveryPointInfos.emplace_back(std::forward<VolumeRecoveryPointInfosT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVolumeRecoveryPointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVolumeRecoveryPointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVolumeRecoveryPointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVolumeRecoveryPointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<VolumeRecoveryPointInfo> m_volumeRecoveryPointInfos;
+    bool m_volumeRecoveryPointInfosHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

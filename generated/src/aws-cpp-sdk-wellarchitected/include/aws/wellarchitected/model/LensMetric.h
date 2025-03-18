@@ -35,7 +35,7 @@ namespace Model
   class LensMetric
   {
   public:
-    AWS_WELLARCHITECTED_API LensMetric();
+    AWS_WELLARCHITECTED_API LensMetric() = default;
     AWS_WELLARCHITECTED_API LensMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API LensMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,39 @@ namespace Model
     /**
      * <p>The lens ARN.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-    inline LensMetric& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline LensMetric& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline LensMetric& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    LensMetric& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metrics for the pillars in a lens.</p>
      */
-    inline const Aws::Vector<PillarMetric>& GetPillars() const{ return m_pillars; }
+    inline const Aws::Vector<PillarMetric>& GetPillars() const { return m_pillars; }
     inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
-    inline void SetPillars(const Aws::Vector<PillarMetric>& value) { m_pillarsHasBeenSet = true; m_pillars = value; }
-    inline void SetPillars(Aws::Vector<PillarMetric>&& value) { m_pillarsHasBeenSet = true; m_pillars = std::move(value); }
-    inline LensMetric& WithPillars(const Aws::Vector<PillarMetric>& value) { SetPillars(value); return *this;}
-    inline LensMetric& WithPillars(Aws::Vector<PillarMetric>&& value) { SetPillars(std::move(value)); return *this;}
-    inline LensMetric& AddPillars(const PillarMetric& value) { m_pillarsHasBeenSet = true; m_pillars.push_back(value); return *this; }
-    inline LensMetric& AddPillars(PillarMetric&& value) { m_pillarsHasBeenSet = true; m_pillars.push_back(std::move(value)); return *this; }
+    template<typename PillarsT = Aws::Vector<PillarMetric>>
+    void SetPillars(PillarsT&& value) { m_pillarsHasBeenSet = true; m_pillars = std::forward<PillarsT>(value); }
+    template<typename PillarsT = Aws::Vector<PillarMetric>>
+    LensMetric& WithPillars(PillarsT&& value) { SetPillars(std::forward<PillarsT>(value)); return *this;}
+    template<typename PillarsT = PillarMetric>
+    LensMetric& AddPillars(PillarsT&& value) { m_pillarsHasBeenSet = true; m_pillars.emplace_back(std::forward<PillarsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
+    inline const Aws::Map<Risk, int>& GetRiskCounts() const { return m_riskCounts; }
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-    inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-    inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-    inline LensMetric& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-    inline LensMetric& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-    inline LensMetric& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-    inline LensMetric& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    void SetRiskCounts(RiskCountsT&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::forward<RiskCountsT>(value); }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    LensMetric& WithRiskCounts(RiskCountsT&& value) { SetRiskCounts(std::forward<RiskCountsT>(value)); return *this;}
+    inline LensMetric& AddRiskCounts(Risk key, int value) {
+      m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

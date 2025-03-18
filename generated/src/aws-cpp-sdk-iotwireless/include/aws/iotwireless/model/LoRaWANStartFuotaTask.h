@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANStartFuotaTask
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANStartFuotaTask();
+    AWS_IOTWIRELESS_API LoRaWANStartFuotaTask() = default;
     AWS_IOTWIRELESS_API LoRaWANStartFuotaTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANStartFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,16 +40,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline LoRaWANStartFuotaTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline LoRaWANStartFuotaTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    LoRaWANStartFuotaTask& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

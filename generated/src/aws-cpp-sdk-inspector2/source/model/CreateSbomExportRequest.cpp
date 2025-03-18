@@ -12,14 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSbomExportRequest::CreateSbomExportRequest() : 
-    m_reportFormat(SbomReportFormat::NOT_SET),
-    m_reportFormatHasBeenSet(false),
-    m_resourceFilterCriteriaHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 Aws::String CreateSbomExportRequest::SerializePayload() const
 {
   JsonValue payload;

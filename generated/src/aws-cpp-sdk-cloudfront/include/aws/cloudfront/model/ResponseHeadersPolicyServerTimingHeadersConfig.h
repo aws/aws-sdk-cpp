@@ -40,7 +40,7 @@ namespace Model
   class ResponseHeadersPolicyServerTimingHeadersConfig
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,7 +54,7 @@ namespace Model
      * requests that match a cache behavior that's associated with this response
      * headers policy.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ResponseHeadersPolicyServerTimingHeadersConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -71,17 +71,17 @@ namespace Model
      * cache behavior. You can set the sampling rate to any number 0–100 with up to
      * four decimal places.</p>
      */
-    inline double GetSamplingRate() const{ return m_samplingRate; }
+    inline double GetSamplingRate() const { return m_samplingRate; }
     inline bool SamplingRateHasBeenSet() const { return m_samplingRateHasBeenSet; }
     inline void SetSamplingRate(double value) { m_samplingRateHasBeenSet = true; m_samplingRate = value; }
     inline ResponseHeadersPolicyServerTimingHeadersConfig& WithSamplingRate(double value) { SetSamplingRate(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    double m_samplingRate;
+    double m_samplingRate{0.0};
     bool m_samplingRateHasBeenSet = false;
   };
 

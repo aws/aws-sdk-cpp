@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetIntegrationResponsesRequest::GetIntegrationResponsesRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_integrationIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetIntegrationResponsesRequest::SerializePayload() const
 {
   return {};

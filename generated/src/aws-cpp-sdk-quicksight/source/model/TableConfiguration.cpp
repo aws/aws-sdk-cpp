@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableConfiguration::TableConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_tableOptionsHasBeenSet(false),
-    m_totalOptionsHasBeenSet(false),
-    m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false),
-    m_tableInlineVisualizationsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 TableConfiguration::TableConfiguration(JsonView jsonValue)
-  : TableConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ TableConfiguration& TableConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableOptions"))
   {
     m_tableOptions = jsonValue.GetObject("TableOptions");
-
     m_tableOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalOptions"))
   {
     m_totalOptions = jsonValue.GetObject("TotalOptions");
-
     m_totalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldOptions"))
   {
     m_fieldOptions = jsonValue.GetObject("FieldOptions");
-
     m_fieldOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginatedReportOptions"))
   {
     m_paginatedReportOptions = jsonValue.GetObject("PaginatedReportOptions");
-
     m_paginatedReportOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableInlineVisualizations"))
   {
     Aws::Utils::Array<JsonView> tableInlineVisualizationsJsonList = jsonValue.GetArray("TableInlineVisualizations");
@@ -89,14 +64,11 @@ TableConfiguration& TableConfiguration::operator =(JsonView jsonValue)
     }
     m_tableInlineVisualizationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

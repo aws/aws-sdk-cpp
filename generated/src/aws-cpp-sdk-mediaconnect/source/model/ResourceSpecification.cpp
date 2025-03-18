@@ -18,16 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-ResourceSpecification::ResourceSpecification() : 
-    m_reservedBitrate(0),
-    m_reservedBitrateHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceSpecification::ResourceSpecification(JsonView jsonValue)
-  : ResourceSpecification()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResourceSpecification& ResourceSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reservedBitrate"))
   {
     m_reservedBitrate = jsonValue.GetInteger("reservedBitrate");
-
     m_reservedBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

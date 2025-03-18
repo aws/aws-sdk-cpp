@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetArchiveRequest::GetArchiveRequest() : 
-    m_archiveIdHasBeenSet(false)
-{
-}
-
 Aws::String GetArchiveRequest::SerializePayload() const
 {
   JsonValue payload;

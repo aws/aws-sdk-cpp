@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-UserTokenConfiguration::UserTokenConfiguration() : 
-    m_jwtTokenTypeConfigurationHasBeenSet(false),
-    m_jsonTokenTypeConfigurationHasBeenSet(false)
-{
-}
-
 UserTokenConfiguration::UserTokenConfiguration(JsonView jsonValue)
-  : UserTokenConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserTokenConfiguration& UserTokenConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JwtTokenTypeConfiguration"))
   {
     m_jwtTokenTypeConfiguration = jsonValue.GetObject("JwtTokenTypeConfiguration");
-
     m_jwtTokenTypeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonTokenTypeConfiguration"))
   {
     m_jsonTokenTypeConfiguration = jsonValue.GetObject("JsonTokenTypeConfiguration");
-
     m_jsonTokenTypeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

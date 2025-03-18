@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-OnDemandProvisioningSpecification::OnDemandProvisioningSpecification() : 
-    m_allocationStrategy(OnDemandProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_capacityReservationOptionsHasBeenSet(false)
-{
-}
-
 OnDemandProvisioningSpecification::OnDemandProvisioningSpecification(JsonView jsonValue)
-  : OnDemandProvisioningSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OnDemandProvisioningSpecification& OnDemandProvisioningSpecification::operator =
   if(jsonValue.ValueExists("AllocationStrategy"))
   {
     m_allocationStrategy = OnDemandProvisioningAllocationStrategyMapper::GetOnDemandProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
-
     m_allocationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityReservationOptions"))
   {
     m_capacityReservationOptions = jsonValue.GetObject("CapacityReservationOptions");
-
     m_capacityReservationOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

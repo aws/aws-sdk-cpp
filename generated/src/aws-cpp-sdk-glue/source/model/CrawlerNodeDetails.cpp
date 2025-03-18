@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CrawlerNodeDetails::CrawlerNodeDetails() : 
-    m_crawlsHasBeenSet(false)
-{
-}
-
 CrawlerNodeDetails::CrawlerNodeDetails(JsonView jsonValue)
-  : CrawlerNodeDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CrawlerNodeDetails& CrawlerNodeDetails::operator =(JsonView jsonValue)
     }
     m_crawlsHasBeenSet = true;
   }
-
   return *this;
 }
 

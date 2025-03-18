@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateApplicationResult::CreateApplicationResult() : 
-    m_isVerifiedAuthor(false)
-{
-}
-
 CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateApplicationResult()
 {
   *this = result;
 }
@@ -34,39 +28,33 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
+    m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("author"))
   {
     m_author = jsonValue.GetString("author");
-
+    m_authorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("homePageUrl"))
   {
     m_homePageUrl = jsonValue.GetString("homePageUrl");
-
+    m_homePageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isVerifiedAuthor"))
   {
     m_isVerifiedAuthor = jsonValue.GetBool("isVerifiedAuthor");
-
+    m_isVerifiedAuthorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
@@ -74,50 +62,45 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
     }
+    m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseUrl"))
   {
     m_licenseUrl = jsonValue.GetString("licenseUrl");
-
+    m_licenseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readmeUrl"))
   {
     m_readmeUrl = jsonValue.GetString("readmeUrl");
-
+    m_readmeUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spdxLicenseId"))
   {
     m_spdxLicenseId = jsonValue.GetString("spdxLicenseId");
-
+    m_spdxLicenseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verifiedAuthorUrl"))
   {
     m_verifiedAuthorUrl = jsonValue.GetString("verifiedAuthorUrl");
-
+    m_verifiedAuthorUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetObject("version");
-
+    m_versionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

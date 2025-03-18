@@ -35,7 +35,7 @@ namespace Model
   class PermissionModel
   {
   public:
-    AWS_RESILIENCEHUB_API PermissionModel();
+    AWS_RESILIENCEHUB_API PermissionModel() = default;
     AWS_RESILIENCEHUB_API PermissionModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API PermissionModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,15 +52,14 @@ namespace Model
      * <code>iam:AssumeRole</code> permission to the invoker role in the primary
      * account.</p> </li> </ul> 
      */
-    inline const Aws::Vector<Aws::String>& GetCrossAccountRoleArns() const{ return m_crossAccountRoleArns; }
+    inline const Aws::Vector<Aws::String>& GetCrossAccountRoleArns() const { return m_crossAccountRoleArns; }
     inline bool CrossAccountRoleArnsHasBeenSet() const { return m_crossAccountRoleArnsHasBeenSet; }
-    inline void SetCrossAccountRoleArns(const Aws::Vector<Aws::String>& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns = value; }
-    inline void SetCrossAccountRoleArns(Aws::Vector<Aws::String>&& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns = std::move(value); }
-    inline PermissionModel& WithCrossAccountRoleArns(const Aws::Vector<Aws::String>& value) { SetCrossAccountRoleArns(value); return *this;}
-    inline PermissionModel& WithCrossAccountRoleArns(Aws::Vector<Aws::String>&& value) { SetCrossAccountRoleArns(std::move(value)); return *this;}
-    inline PermissionModel& AddCrossAccountRoleArns(const Aws::String& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns.push_back(value); return *this; }
-    inline PermissionModel& AddCrossAccountRoleArns(Aws::String&& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns.push_back(std::move(value)); return *this; }
-    inline PermissionModel& AddCrossAccountRoleArns(const char* value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns.push_back(value); return *this; }
+    template<typename CrossAccountRoleArnsT = Aws::Vector<Aws::String>>
+    void SetCrossAccountRoleArns(CrossAccountRoleArnsT&& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns = std::forward<CrossAccountRoleArnsT>(value); }
+    template<typename CrossAccountRoleArnsT = Aws::Vector<Aws::String>>
+    PermissionModel& WithCrossAccountRoleArns(CrossAccountRoleArnsT&& value) { SetCrossAccountRoleArns(std::forward<CrossAccountRoleArnsT>(value)); return *this;}
+    template<typename CrossAccountRoleArnsT = Aws::String>
+    PermissionModel& AddCrossAccountRoleArns(CrossAccountRoleArnsT&& value) { m_crossAccountRoleArnsHasBeenSet = true; m_crossAccountRoleArns.emplace_back(std::forward<CrossAccountRoleArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +75,12 @@ namespace Model
      * the application.</p> </li> <li> <p>Currently, <code>invokerRoleName</code>
      * accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li> </ul> 
      */
-    inline const Aws::String& GetInvokerRoleName() const{ return m_invokerRoleName; }
+    inline const Aws::String& GetInvokerRoleName() const { return m_invokerRoleName; }
     inline bool InvokerRoleNameHasBeenSet() const { return m_invokerRoleNameHasBeenSet; }
-    inline void SetInvokerRoleName(const Aws::String& value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName = value; }
-    inline void SetInvokerRoleName(Aws::String&& value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName = std::move(value); }
-    inline void SetInvokerRoleName(const char* value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName.assign(value); }
-    inline PermissionModel& WithInvokerRoleName(const Aws::String& value) { SetInvokerRoleName(value); return *this;}
-    inline PermissionModel& WithInvokerRoleName(Aws::String&& value) { SetInvokerRoleName(std::move(value)); return *this;}
-    inline PermissionModel& WithInvokerRoleName(const char* value) { SetInvokerRoleName(value); return *this;}
+    template<typename InvokerRoleNameT = Aws::String>
+    void SetInvokerRoleName(InvokerRoleNameT&& value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName = std::forward<InvokerRoleNameT>(value); }
+    template<typename InvokerRoleNameT = Aws::String>
+    PermissionModel& WithInvokerRoleName(InvokerRoleNameT&& value) { SetInvokerRoleName(std::forward<InvokerRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +89,10 @@ namespace Model
      * resources by using a pre-existing role in your Amazon Web Services account, or
      * by using the credentials of the current IAM user.</p>
      */
-    inline const PermissionModelType& GetType() const{ return m_type; }
+    inline PermissionModelType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PermissionModelType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PermissionModelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PermissionModel& WithType(const PermissionModelType& value) { SetType(value); return *this;}
-    inline PermissionModel& WithType(PermissionModelType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PermissionModelType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PermissionModel& WithType(PermissionModelType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -107,7 +102,7 @@ namespace Model
     Aws::String m_invokerRoleName;
     bool m_invokerRoleNameHasBeenSet = false;
 
-    PermissionModelType m_type;
+    PermissionModelType m_type{PermissionModelType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

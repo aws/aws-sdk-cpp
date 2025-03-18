@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataMaintenanceOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataMaintenanceOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataMaintenanceOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataMaintenanceOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> Disables the automatic recovery behavior of your instance or sets it to
      * default. </p>
      */
-    inline const Aws::String& GetAutoRecovery() const{ return m_autoRecovery; }
+    inline const Aws::String& GetAutoRecovery() const { return m_autoRecovery; }
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-    inline void SetAutoRecovery(const Aws::String& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-    inline void SetAutoRecovery(Aws::String&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-    inline void SetAutoRecovery(const char* value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery.assign(value); }
-    inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(const Aws::String& value) { SetAutoRecovery(value); return *this;}
-    inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(Aws::String&& value) { SetAutoRecovery(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(const char* value) { SetAutoRecovery(value); return *this;}
+    template<typename AutoRecoveryT = Aws::String>
+    void SetAutoRecovery(AutoRecoveryT&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::forward<AutoRecoveryT>(value); }
+    template<typename AutoRecoveryT = Aws::String>
+    AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& WithAutoRecovery(AutoRecoveryT&& value) { SetAutoRecovery(std::forward<AutoRecoveryT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class VerifiedAccessLogCloudWatchLogsDestinationOptions
   {
   public:
-    AWS_EC2_API VerifiedAccessLogCloudWatchLogsDestinationOptions();
+    AWS_EC2_API VerifiedAccessLogCloudWatchLogsDestinationOptions() = default;
     AWS_EC2_API VerifiedAccessLogCloudWatchLogsDestinationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessLogCloudWatchLogsDestinationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether logging is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VerifiedAccessLogCloudWatchLogsDestinationOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
     /**
      * <p>The ID of the CloudWatch Logs log group.</p>
      */
-    inline const Aws::String& GetLogGroup() const{ return m_logGroup; }
+    inline const Aws::String& GetLogGroup() const { return m_logGroup; }
     inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
-    inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
-    inline void SetLogGroup(Aws::String&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::move(value); }
-    inline void SetLogGroup(const char* value) { m_logGroupHasBeenSet = true; m_logGroup.assign(value); }
-    inline VerifiedAccessLogCloudWatchLogsDestinationOptions& WithLogGroup(const Aws::String& value) { SetLogGroup(value); return *this;}
-    inline VerifiedAccessLogCloudWatchLogsDestinationOptions& WithLogGroup(Aws::String&& value) { SetLogGroup(std::move(value)); return *this;}
-    inline VerifiedAccessLogCloudWatchLogsDestinationOptions& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
+    template<typename LogGroupT = Aws::String>
+    void SetLogGroup(LogGroupT&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::forward<LogGroupT>(value); }
+    template<typename LogGroupT = Aws::String>
+    VerifiedAccessLogCloudWatchLogsDestinationOptions& WithLogGroup(LogGroupT&& value) { SetLogGroup(std::forward<LogGroupT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_logGroup;

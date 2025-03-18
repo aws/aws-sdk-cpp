@@ -27,7 +27,7 @@ namespace Model
   class StartDashboardRefreshResult
   {
   public:
-    AWS_CLOUDTRAIL_API StartDashboardRefreshResult();
+    AWS_CLOUDTRAIL_API StartDashboardRefreshResult() = default;
     AWS_CLOUDTRAIL_API StartDashboardRefreshResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API StartDashboardRefreshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p> The refresh ID for the dashboard. </p>
      */
-    inline const Aws::String& GetRefreshId() const{ return m_refreshId; }
-    inline void SetRefreshId(const Aws::String& value) { m_refreshId = value; }
-    inline void SetRefreshId(Aws::String&& value) { m_refreshId = std::move(value); }
-    inline void SetRefreshId(const char* value) { m_refreshId.assign(value); }
-    inline StartDashboardRefreshResult& WithRefreshId(const Aws::String& value) { SetRefreshId(value); return *this;}
-    inline StartDashboardRefreshResult& WithRefreshId(Aws::String&& value) { SetRefreshId(std::move(value)); return *this;}
-    inline StartDashboardRefreshResult& WithRefreshId(const char* value) { SetRefreshId(value); return *this;}
+    inline const Aws::String& GetRefreshId() const { return m_refreshId; }
+    template<typename RefreshIdT = Aws::String>
+    void SetRefreshId(RefreshIdT&& value) { m_refreshIdHasBeenSet = true; m_refreshId = std::forward<RefreshIdT>(value); }
+    template<typename RefreshIdT = Aws::String>
+    StartDashboardRefreshResult& WithRefreshId(RefreshIdT&& value) { SetRefreshId(std::forward<RefreshIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDashboardRefreshResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDashboardRefreshResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDashboardRefreshResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDashboardRefreshResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_refreshId;
+    bool m_refreshIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

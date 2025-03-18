@@ -18,17 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-EntityDetail::EntityDetail() : 
-    m_entityTypeHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_detailsDocumentHasBeenSet(false)
-{
-}
-
 EntityDetail::EntityDetail(JsonView jsonValue)
-  : EntityDetail()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ EntityDetail& EntityDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityType"))
   {
     m_entityType = jsonValue.GetString("EntityType");
-
     m_entityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityArn"))
   {
     m_entityArn = jsonValue.GetString("EntityArn");
-
     m_entityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityIdentifier"))
   {
     m_entityIdentifier = jsonValue.GetString("EntityIdentifier");
-
     m_entityIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailsDocument"))
   {
     m_detailsDocument = jsonValue.GetObject("DetailsDocument");
-
     m_detailsDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

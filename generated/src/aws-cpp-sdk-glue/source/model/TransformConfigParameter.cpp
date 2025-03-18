@@ -18,22 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TransformConfigParameter::TransformConfigParameter() : 
-    m_nameHasBeenSet(false),
-    m_type(ParamType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validationRuleHasBeenSet(false),
-    m_validationMessageHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_listType(ParamType::NOT_SET),
-    m_listTypeHasBeenSet(false),
-    m_isOptional(false),
-    m_isOptionalHasBeenSet(false)
-{
-}
-
 TransformConfigParameter::TransformConfigParameter(JsonView jsonValue)
-  : TransformConfigParameter()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ TransformConfigParameter& TransformConfigParameter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParamTypeMapper::GetParamTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationRule"))
   {
     m_validationRule = jsonValue.GetString("ValidationRule");
-
     m_validationRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationMessage"))
   {
     m_validationMessage = jsonValue.GetString("ValidationMessage");
-
     m_validationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -77,21 +54,16 @@ TransformConfigParameter& TransformConfigParameter::operator =(JsonView jsonValu
     }
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListType"))
   {
     m_listType = ParamTypeMapper::GetParamTypeForName(jsonValue.GetString("ListType"));
-
     m_listTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsOptional"))
   {
     m_isOptional = jsonValue.GetBool("IsOptional");
-
     m_isOptionalHasBeenSet = true;
   }
-
   return *this;
 }
 

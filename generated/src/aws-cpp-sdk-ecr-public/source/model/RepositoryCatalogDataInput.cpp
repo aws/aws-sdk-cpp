@@ -19,18 +19,7 @@ namespace ECRPublic
 namespace Model
 {
 
-RepositoryCatalogDataInput::RepositoryCatalogDataInput() : 
-    m_descriptionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_logoImageBlobHasBeenSet(false),
-    m_aboutTextHasBeenSet(false),
-    m_usageTextHasBeenSet(false)
-{
-}
-
 RepositoryCatalogDataInput::RepositoryCatalogDataInput(JsonView jsonValue)
-  : RepositoryCatalogDataInput()
 {
   *this = jsonValue;
 }
@@ -40,10 +29,8 @@ RepositoryCatalogDataInput& RepositoryCatalogDataInput::operator =(JsonView json
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architectures"))
   {
     Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
@@ -53,7 +40,6 @@ RepositoryCatalogDataInput& RepositoryCatalogDataInput::operator =(JsonView json
     }
     m_architecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystems"))
   {
     Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
@@ -63,27 +49,21 @@ RepositoryCatalogDataInput& RepositoryCatalogDataInput::operator =(JsonView json
     }
     m_operatingSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logoImageBlob"))
   {
     m_logoImageBlob = HashingUtils::Base64Decode(jsonValue.GetString("logoImageBlob"));
     m_logoImageBlobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aboutText"))
   {
     m_aboutText = jsonValue.GetString("aboutText");
-
     m_aboutTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageText"))
   {
     m_usageText = jsonValue.GetString("usageText");
-
     m_usageTextHasBeenSet = true;
   }
-
   return *this;
 }
 

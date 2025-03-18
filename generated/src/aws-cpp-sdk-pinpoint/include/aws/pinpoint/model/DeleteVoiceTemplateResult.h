@@ -28,35 +28,35 @@ namespace Model
   class DeleteVoiceTemplateResult
   {
   public:
-    AWS_PINPOINT_API DeleteVoiceTemplateResult();
+    AWS_PINPOINT_API DeleteVoiceTemplateResult() = default;
     AWS_PINPOINT_API DeleteVoiceTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API DeleteVoiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const MessageBody& GetMessageBody() const{ return m_messageBody; }
-    inline void SetMessageBody(const MessageBody& value) { m_messageBody = value; }
-    inline void SetMessageBody(MessageBody&& value) { m_messageBody = std::move(value); }
-    inline DeleteVoiceTemplateResult& WithMessageBody(const MessageBody& value) { SetMessageBody(value); return *this;}
-    inline DeleteVoiceTemplateResult& WithMessageBody(MessageBody&& value) { SetMessageBody(std::move(value)); return *this;}
+    inline const MessageBody& GetMessageBody() const { return m_messageBody; }
+    template<typename MessageBodyT = MessageBody>
+    void SetMessageBody(MessageBodyT&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::forward<MessageBodyT>(value); }
+    template<typename MessageBodyT = MessageBody>
+    DeleteVoiceTemplateResult& WithMessageBody(MessageBodyT&& value) { SetMessageBody(std::forward<MessageBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVoiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVoiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVoiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVoiceTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessageBody m_messageBody;
+    bool m_messageBodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

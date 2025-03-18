@@ -32,7 +32,7 @@ namespace Model
   class BadRequestException
   {
   public:
-    AWS_PINPOINT_API BadRequestException();
+    AWS_PINPOINT_API BadRequestException() = default;
     AWS_PINPOINT_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The message that's returned from the API.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BadRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BadRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BadRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BadRequestException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the request or response.</p>
      */
-    inline const Aws::String& GetRequestID() const{ return m_requestID; }
+    inline const Aws::String& GetRequestID() const { return m_requestID; }
     inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
-    inline void SetRequestID(const Aws::String& value) { m_requestIDHasBeenSet = true; m_requestID = value; }
-    inline void SetRequestID(Aws::String&& value) { m_requestIDHasBeenSet = true; m_requestID = std::move(value); }
-    inline void SetRequestID(const char* value) { m_requestIDHasBeenSet = true; m_requestID.assign(value); }
-    inline BadRequestException& WithRequestID(const Aws::String& value) { SetRequestID(value); return *this;}
-    inline BadRequestException& WithRequestID(Aws::String&& value) { SetRequestID(std::move(value)); return *this;}
-    inline BadRequestException& WithRequestID(const char* value) { SetRequestID(value); return *this;}
+    template<typename RequestIDT = Aws::String>
+    void SetRequestID(RequestIDT&& value) { m_requestIDHasBeenSet = true; m_requestID = std::forward<RequestIDT>(value); }
+    template<typename RequestIDT = Aws::String>
+    BadRequestException& WithRequestID(RequestIDT&& value) { SetRequestID(std::forward<RequestIDT>(value)); return *this;}
     ///@}
   private:
 

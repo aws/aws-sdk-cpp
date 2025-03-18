@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddBridgeOutputsRequest::AddBridgeOutputsRequest() : 
-    m_bridgeArnHasBeenSet(false),
-    m_outputsHasBeenSet(false)
-{
-}
-
 Aws::String AddBridgeOutputsRequest::SerializePayload() const
 {
   JsonValue payload;

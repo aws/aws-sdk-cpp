@@ -22,7 +22,7 @@ namespace Model
   class ListTriggersRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API ListTriggersRequest();
+    AWS_GLUE_API ListTriggersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>A continuation token, if this is a continuation request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTriggersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTriggersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTriggersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTriggersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,21 +53,19 @@ namespace Model
      * start this job is returned. If there is no such trigger, all triggers are
      * returned.</p>
      */
-    inline const Aws::String& GetDependentJobName() const{ return m_dependentJobName; }
+    inline const Aws::String& GetDependentJobName() const { return m_dependentJobName; }
     inline bool DependentJobNameHasBeenSet() const { return m_dependentJobNameHasBeenSet; }
-    inline void SetDependentJobName(const Aws::String& value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName = value; }
-    inline void SetDependentJobName(Aws::String&& value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName = std::move(value); }
-    inline void SetDependentJobName(const char* value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName.assign(value); }
-    inline ListTriggersRequest& WithDependentJobName(const Aws::String& value) { SetDependentJobName(value); return *this;}
-    inline ListTriggersRequest& WithDependentJobName(Aws::String&& value) { SetDependentJobName(std::move(value)); return *this;}
-    inline ListTriggersRequest& WithDependentJobName(const char* value) { SetDependentJobName(value); return *this;}
+    template<typename DependentJobNameT = Aws::String>
+    void SetDependentJobName(DependentJobNameT&& value) { m_dependentJobNameHasBeenSet = true; m_dependentJobName = std::forward<DependentJobNameT>(value); }
+    template<typename DependentJobNameT = Aws::String>
+    ListTriggersRequest& WithDependentJobName(DependentJobNameT&& value) { SetDependentJobName(std::forward<DependentJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum size of a list to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTriggersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -79,19 +75,16 @@ namespace Model
     /**
      * <p>Specifies to return only these tagged resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ListTriggersRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ListTriggersRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ListTriggersRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ListTriggersRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ListTriggersRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ListTriggersRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListTriggersRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ListTriggersRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ListTriggersRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ListTriggersRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ListTriggersRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -101,7 +94,7 @@ namespace Model
     Aws::String m_dependentJobName;
     bool m_dependentJobNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

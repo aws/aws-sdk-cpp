@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Scale::Scale() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unit(ScaleUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 Scale::Scale(JsonView jsonValue)
-  : Scale()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Scale& Scale::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = ScaleUnitMapper::GetScaleUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

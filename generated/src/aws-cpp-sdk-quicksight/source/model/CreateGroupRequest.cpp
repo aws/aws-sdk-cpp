@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupRequest::CreateGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

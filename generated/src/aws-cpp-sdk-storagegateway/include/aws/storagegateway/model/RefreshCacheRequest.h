@@ -25,7 +25,7 @@ namespace Model
   class RefreshCacheRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API RefreshCacheRequest();
+    AWS_STORAGEGATEWAY_API RefreshCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
      */
-    inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
+    inline const Aws::String& GetFileShareARN() const { return m_fileShareARN; }
     inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
-    inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
-    inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
-    inline RefreshCacheRequest& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-    inline RefreshCacheRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-    inline RefreshCacheRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+    template<typename FileShareARNT = Aws::String>
+    void SetFileShareARN(FileShareARNT&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::forward<FileShareARNT>(value); }
+    template<typename FileShareARNT = Aws::String>
+    RefreshCacheRequest& WithFileShareARN(FileShareARNT&& value) { SetFileShareARN(std::forward<FileShareARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * For example, you would specify <code>samplefolder</code> rather than
      * <code>samplefolder/</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFolderList() const{ return m_folderList; }
+    inline const Aws::Vector<Aws::String>& GetFolderList() const { return m_folderList; }
     inline bool FolderListHasBeenSet() const { return m_folderListHasBeenSet; }
-    inline void SetFolderList(const Aws::Vector<Aws::String>& value) { m_folderListHasBeenSet = true; m_folderList = value; }
-    inline void SetFolderList(Aws::Vector<Aws::String>&& value) { m_folderListHasBeenSet = true; m_folderList = std::move(value); }
-    inline RefreshCacheRequest& WithFolderList(const Aws::Vector<Aws::String>& value) { SetFolderList(value); return *this;}
-    inline RefreshCacheRequest& WithFolderList(Aws::Vector<Aws::String>&& value) { SetFolderList(std::move(value)); return *this;}
-    inline RefreshCacheRequest& AddFolderList(const Aws::String& value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
-    inline RefreshCacheRequest& AddFolderList(Aws::String&& value) { m_folderListHasBeenSet = true; m_folderList.push_back(std::move(value)); return *this; }
-    inline RefreshCacheRequest& AddFolderList(const char* value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
+    template<typename FolderListT = Aws::Vector<Aws::String>>
+    void SetFolderList(FolderListT&& value) { m_folderListHasBeenSet = true; m_folderList = std::forward<FolderListT>(value); }
+    template<typename FolderListT = Aws::Vector<Aws::String>>
+    RefreshCacheRequest& WithFolderList(FolderListT&& value) { SetFolderList(std::forward<FolderListT>(value)); return *this;}
+    template<typename FolderListT = Aws::String>
+    RefreshCacheRequest& AddFolderList(FolderListT&& value) { m_folderListHasBeenSet = true; m_folderList.emplace_back(std::forward<FolderListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,7 +81,7 @@ namespace Model
      * found and used for the update. The default is <code>true</code>.</p> <p>Valid
      * Values: <code>true</code> | <code>false</code> </p>
      */
-    inline bool GetRecursive() const{ return m_recursive; }
+    inline bool GetRecursive() const { return m_recursive; }
     inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
     inline RefreshCacheRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
@@ -97,7 +94,7 @@ namespace Model
     Aws::Vector<Aws::String> m_folderList;
     bool m_folderListHasBeenSet = false;
 
-    bool m_recursive;
+    bool m_recursive{false};
     bool m_recursiveHasBeenSet = false;
   };
 

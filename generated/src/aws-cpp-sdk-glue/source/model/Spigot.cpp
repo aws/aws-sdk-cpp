@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Spigot::Spigot() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_topk(0),
-    m_topkHasBeenSet(false),
-    m_prob(0.0),
-    m_probHasBeenSet(false)
-{
-}
-
 Spigot::Spigot(JsonView jsonValue)
-  : Spigot()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ Spigot& Spigot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -53,28 +39,21 @@ Spigot& Spigot::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Topk"))
   {
     m_topk = jsonValue.GetInteger("Topk");
-
     m_topkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prob"))
   {
     m_prob = jsonValue.GetDouble("Prob");
-
     m_probHasBeenSet = true;
   }
-
   return *this;
 }
 

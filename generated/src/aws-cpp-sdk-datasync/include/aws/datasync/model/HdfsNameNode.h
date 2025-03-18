@@ -35,7 +35,7 @@ namespace Model
   class HdfsNameNode
   {
   public:
-    AWS_DATASYNC_API HdfsNameNode();
+    AWS_DATASYNC_API HdfsNameNode() = default;
     AWS_DATASYNC_API HdfsNameNode(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API HdfsNameNode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,21 +48,19 @@ namespace Model
      * installed on-premises uses this hostname to communicate with the NameNode in the
      * network.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline HdfsNameNode& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline HdfsNameNode& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline HdfsNameNode& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    HdfsNameNode& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port that the NameNode uses to listen to client requests.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline HdfsNameNode& WithPort(int value) { SetPort(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class FormDataTypeConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormDataTypeConfig();
+    AWS_AMPLIFYUIBUILDER_API FormDataTypeConfig() = default;
     AWS_AMPLIFYUIBUILDER_API FormDataTypeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormDataTypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The data source type, either an Amplify DataStore model or a custom data
      * type.</p>
      */
-    inline const FormDataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
+    inline FormDataSourceType GetDataSourceType() const { return m_dataSourceType; }
     inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-    inline void SetDataSourceType(const FormDataSourceType& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-    inline void SetDataSourceType(FormDataSourceType&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::move(value); }
-    inline FormDataTypeConfig& WithDataSourceType(const FormDataSourceType& value) { SetDataSourceType(value); return *this;}
-    inline FormDataTypeConfig& WithDataSourceType(FormDataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    inline void SetDataSourceType(FormDataSourceType value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
+    inline FormDataTypeConfig& WithDataSourceType(FormDataSourceType value) { SetDataSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * <p>The unique name of the data type you are using as the data source for the
      * form.</p>
      */
-    inline const Aws::String& GetDataTypeName() const{ return m_dataTypeName; }
+    inline const Aws::String& GetDataTypeName() const { return m_dataTypeName; }
     inline bool DataTypeNameHasBeenSet() const { return m_dataTypeNameHasBeenSet; }
-    inline void SetDataTypeName(const Aws::String& value) { m_dataTypeNameHasBeenSet = true; m_dataTypeName = value; }
-    inline void SetDataTypeName(Aws::String&& value) { m_dataTypeNameHasBeenSet = true; m_dataTypeName = std::move(value); }
-    inline void SetDataTypeName(const char* value) { m_dataTypeNameHasBeenSet = true; m_dataTypeName.assign(value); }
-    inline FormDataTypeConfig& WithDataTypeName(const Aws::String& value) { SetDataTypeName(value); return *this;}
-    inline FormDataTypeConfig& WithDataTypeName(Aws::String&& value) { SetDataTypeName(std::move(value)); return *this;}
-    inline FormDataTypeConfig& WithDataTypeName(const char* value) { SetDataTypeName(value); return *this;}
+    template<typename DataTypeNameT = Aws::String>
+    void SetDataTypeName(DataTypeNameT&& value) { m_dataTypeNameHasBeenSet = true; m_dataTypeName = std::forward<DataTypeNameT>(value); }
+    template<typename DataTypeNameT = Aws::String>
+    FormDataTypeConfig& WithDataTypeName(DataTypeNameT&& value) { SetDataTypeName(std::forward<DataTypeNameT>(value)); return *this;}
     ///@}
   private:
 
-    FormDataSourceType m_dataSourceType;
+    FormDataSourceType m_dataSourceType{FormDataSourceType::NOT_SET};
     bool m_dataSourceTypeHasBeenSet = false;
 
     Aws::String m_dataTypeName;

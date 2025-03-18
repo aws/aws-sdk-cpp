@@ -18,24 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-AnomalyMonitor::AnomalyMonitor() : 
-    m_monitorArnHasBeenSet(false),
-    m_monitorNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_lastEvaluatedDateHasBeenSet(false),
-    m_monitorType(MonitorType::NOT_SET),
-    m_monitorTypeHasBeenSet(false),
-    m_monitorDimension(MonitorDimension::NOT_SET),
-    m_monitorDimensionHasBeenSet(false),
-    m_monitorSpecificationHasBeenSet(false),
-    m_dimensionalValueCount(0),
-    m_dimensionalValueCountHasBeenSet(false)
-{
-}
-
 AnomalyMonitor::AnomalyMonitor(JsonView jsonValue)
-  : AnomalyMonitor()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ AnomalyMonitor& AnomalyMonitor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorName"))
   {
     m_monitorName = jsonValue.GetString("MonitorName");
-
     m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("LastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedDate"))
   {
     m_lastEvaluatedDate = jsonValue.GetString("LastEvaluatedDate");
-
     m_lastEvaluatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorType"))
   {
     m_monitorType = MonitorTypeMapper::GetMonitorTypeForName(jsonValue.GetString("MonitorType"));
-
     m_monitorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorDimension"))
   {
     m_monitorDimension = MonitorDimensionMapper::GetMonitorDimensionForName(jsonValue.GetString("MonitorDimension"));
-
     m_monitorDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorSpecification"))
   {
     m_monitorSpecification = jsonValue.GetObject("MonitorSpecification");
-
     m_monitorSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionalValueCount"))
   {
     m_dimensionalValueCount = jsonValue.GetInteger("DimensionalValueCount");
-
     m_dimensionalValueCountHasBeenSet = true;
   }
-
   return *this;
 }
 

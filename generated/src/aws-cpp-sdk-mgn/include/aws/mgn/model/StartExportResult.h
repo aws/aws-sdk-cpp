@@ -33,7 +33,7 @@ namespace Model
   class StartExportResult
   {
   public:
-    AWS_MGN_API StartExportResult();
+    AWS_MGN_API StartExportResult() = default;
     AWS_MGN_API StartExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MGN_API StartExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>Start export response export task.</p>
      */
-    inline const ExportTask& GetExportTask() const{ return m_exportTask; }
-    inline void SetExportTask(const ExportTask& value) { m_exportTask = value; }
-    inline void SetExportTask(ExportTask&& value) { m_exportTask = std::move(value); }
-    inline StartExportResult& WithExportTask(const ExportTask& value) { SetExportTask(value); return *this;}
-    inline StartExportResult& WithExportTask(ExportTask&& value) { SetExportTask(std::move(value)); return *this;}
+    inline const ExportTask& GetExportTask() const { return m_exportTask; }
+    template<typename ExportTaskT = ExportTask>
+    void SetExportTask(ExportTaskT&& value) { m_exportTaskHasBeenSet = true; m_exportTask = std::forward<ExportTaskT>(value); }
+    template<typename ExportTaskT = ExportTask>
+    StartExportResult& WithExportTask(ExportTaskT&& value) { SetExportTask(std::forward<ExportTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExportTask m_exportTask;
+    bool m_exportTaskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,20 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConsolidatedPolicyCustom::ConsolidatedPolicyCustom() : 
-    m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false),
-    m_disallowedOutputColumnsHasBeenSet(false),
-    m_differentialPrivacyHasBeenSet(false),
-    m_allowedResultReceiversHasBeenSet(false),
-    m_allowedAdditionalAnalysesHasBeenSet(false)
-{
-}
-
 ConsolidatedPolicyCustom::ConsolidatedPolicyCustom(JsonView jsonValue)
-  : ConsolidatedPolicyCustom()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ ConsolidatedPolicyCustom& ConsolidatedPolicyCustom::operator =(JsonView jsonValu
     }
     m_allowedAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAnalysisProviders"))
   {
     Aws::Utils::Array<JsonView> allowedAnalysisProvidersJsonList = jsonValue.GetArray("allowedAnalysisProviders");
@@ -57,14 +43,11 @@ ConsolidatedPolicyCustom& ConsolidatedPolicyCustom::operator =(JsonView jsonValu
     }
     m_allowedAnalysisProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disallowedOutputColumns"))
   {
     Aws::Utils::Array<JsonView> disallowedOutputColumnsJsonList = jsonValue.GetArray("disallowedOutputColumns");
@@ -74,14 +57,11 @@ ConsolidatedPolicyCustom& ConsolidatedPolicyCustom::operator =(JsonView jsonValu
     }
     m_disallowedOutputColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("differentialPrivacy"))
   {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
-
     m_differentialPrivacyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedResultReceivers"))
   {
     Aws::Utils::Array<JsonView> allowedResultReceiversJsonList = jsonValue.GetArray("allowedResultReceivers");
@@ -91,7 +71,6 @@ ConsolidatedPolicyCustom& ConsolidatedPolicyCustom::operator =(JsonView jsonValu
     }
     m_allowedResultReceiversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAdditionalAnalyses"))
   {
     Aws::Utils::Array<JsonView> allowedAdditionalAnalysesJsonList = jsonValue.GetArray("allowedAdditionalAnalyses");
@@ -101,7 +80,6 @@ ConsolidatedPolicyCustom& ConsolidatedPolicyCustom::operator =(JsonView jsonValu
     }
     m_allowedAdditionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

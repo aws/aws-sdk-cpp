@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HubS3StorageConfig::HubS3StorageConfig() : 
-    m_s3OutputPathHasBeenSet(false)
-{
-}
-
 HubS3StorageConfig::HubS3StorageConfig(JsonView jsonValue)
-  : HubS3StorageConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HubS3StorageConfig& HubS3StorageConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   return *this;
 }
 

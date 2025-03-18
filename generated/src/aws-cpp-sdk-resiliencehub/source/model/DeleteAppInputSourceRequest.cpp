@@ -12,16 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppInputSourceRequest::DeleteAppInputSourceRequest() : 
-    m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_eksSourceClusterNamespaceHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_terraformSourceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppInputSourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMetricFilterRequest::DeleteMetricFilterRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_filterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMetricFilterRequest::SerializePayload() const
 {
   JsonValue payload;

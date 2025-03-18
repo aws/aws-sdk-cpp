@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCommandInvocationRequest::GetCommandInvocationRequest() : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_pluginNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCommandInvocationRequest::SerializePayload() const
 {
   JsonValue payload;

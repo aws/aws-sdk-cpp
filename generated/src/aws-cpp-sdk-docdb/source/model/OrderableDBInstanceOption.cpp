@@ -20,20 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-OrderableDBInstanceOption::OrderableDBInstanceOption() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode)
-  : OrderableDBInstanceOption()
 {
   *this = xmlNode;
 }
@@ -72,6 +59,7 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);

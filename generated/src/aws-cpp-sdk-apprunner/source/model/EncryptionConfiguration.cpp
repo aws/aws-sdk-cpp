@@ -18,13 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_kmsKeyHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

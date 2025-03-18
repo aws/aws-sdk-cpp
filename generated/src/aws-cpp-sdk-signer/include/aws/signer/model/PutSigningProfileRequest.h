@@ -25,7 +25,7 @@ namespace Model
   class PutSigningProfileRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API PutSigningProfileRequest();
+    AWS_SIGNER_API PutSigningProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the signing profile to be created.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline PutSigningProfileRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline PutSigningProfileRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline PutSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    PutSigningProfileRequest& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The AWS Certificate Manager certificate that will be used to sign code with
      * the new signing profile.</p>
      */
-    inline const SigningMaterial& GetSigningMaterial() const{ return m_signingMaterial; }
+    inline const SigningMaterial& GetSigningMaterial() const { return m_signingMaterial; }
     inline bool SigningMaterialHasBeenSet() const { return m_signingMaterialHasBeenSet; }
-    inline void SetSigningMaterial(const SigningMaterial& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = value; }
-    inline void SetSigningMaterial(SigningMaterial&& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = std::move(value); }
-    inline PutSigningProfileRequest& WithSigningMaterial(const SigningMaterial& value) { SetSigningMaterial(value); return *this;}
-    inline PutSigningProfileRequest& WithSigningMaterial(SigningMaterial&& value) { SetSigningMaterial(std::move(value)); return *this;}
+    template<typename SigningMaterialT = SigningMaterial>
+    void SetSigningMaterial(SigningMaterialT&& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = std::forward<SigningMaterialT>(value); }
+    template<typename SigningMaterialT = SigningMaterial>
+    PutSigningProfileRequest& WithSigningMaterial(SigningMaterialT&& value) { SetSigningMaterial(std::forward<SigningMaterialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +66,24 @@ namespace Model
      * <p>The default validity period override for any signature generated using this
      * signing profile. If unspecified, the default is 135 months.</p>
      */
-    inline const SignatureValidityPeriod& GetSignatureValidityPeriod() const{ return m_signatureValidityPeriod; }
+    inline const SignatureValidityPeriod& GetSignatureValidityPeriod() const { return m_signatureValidityPeriod; }
     inline bool SignatureValidityPeriodHasBeenSet() const { return m_signatureValidityPeriodHasBeenSet; }
-    inline void SetSignatureValidityPeriod(const SignatureValidityPeriod& value) { m_signatureValidityPeriodHasBeenSet = true; m_signatureValidityPeriod = value; }
-    inline void SetSignatureValidityPeriod(SignatureValidityPeriod&& value) { m_signatureValidityPeriodHasBeenSet = true; m_signatureValidityPeriod = std::move(value); }
-    inline PutSigningProfileRequest& WithSignatureValidityPeriod(const SignatureValidityPeriod& value) { SetSignatureValidityPeriod(value); return *this;}
-    inline PutSigningProfileRequest& WithSignatureValidityPeriod(SignatureValidityPeriod&& value) { SetSignatureValidityPeriod(std::move(value)); return *this;}
+    template<typename SignatureValidityPeriodT = SignatureValidityPeriod>
+    void SetSignatureValidityPeriod(SignatureValidityPeriodT&& value) { m_signatureValidityPeriodHasBeenSet = true; m_signatureValidityPeriod = std::forward<SignatureValidityPeriodT>(value); }
+    template<typename SignatureValidityPeriodT = SignatureValidityPeriod>
+    PutSigningProfileRequest& WithSignatureValidityPeriod(SignatureValidityPeriodT&& value) { SetSignatureValidityPeriod(std::forward<SignatureValidityPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the signing platform to be created.</p>
      */
-    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+    inline const Aws::String& GetPlatformId() const { return m_platformId; }
     inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
-    inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
-    inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
-    inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
-    inline PutSigningProfileRequest& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
-    inline PutSigningProfileRequest& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
-    inline PutSigningProfileRequest& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+    template<typename PlatformIdT = Aws::String>
+    void SetPlatformId(PlatformIdT&& value) { m_platformIdHasBeenSet = true; m_platformId = std::forward<PlatformIdT>(value); }
+    template<typename PlatformIdT = Aws::String>
+    PutSigningProfileRequest& WithPlatformId(PlatformIdT&& value) { SetPlatformId(std::forward<PlatformIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * configuration options that you want to apply to the chosen platform (such as a
      * different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
      */
-    inline const SigningPlatformOverrides& GetOverrides() const{ return m_overrides; }
+    inline const SigningPlatformOverrides& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const SigningPlatformOverrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(SigningPlatformOverrides&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline PutSigningProfileRequest& WithOverrides(const SigningPlatformOverrides& value) { SetOverrides(value); return *this;}
-    inline PutSigningProfileRequest& WithOverrides(SigningPlatformOverrides&& value) { SetOverrides(std::move(value)); return *this;}
+    template<typename OverridesT = SigningPlatformOverrides>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = SigningPlatformOverrides>
+    PutSigningProfileRequest& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,38 +105,32 @@ namespace Model
      * <p>Map of key-value pairs for signing. These can include any information that
      * you want to use during signing.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const{ return m_signingParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const { return m_signingParameters; }
     inline bool SigningParametersHasBeenSet() const { return m_signingParametersHasBeenSet; }
-    inline void SetSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_signingParametersHasBeenSet = true; m_signingParameters = value; }
-    inline void SetSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_signingParametersHasBeenSet = true; m_signingParameters = std::move(value); }
-    inline PutSigningProfileRequest& WithSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetSigningParameters(value); return *this;}
-    inline PutSigningProfileRequest& WithSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetSigningParameters(std::move(value)); return *this;}
-    inline PutSigningProfileRequest& AddSigningParameters(const Aws::String& key, const Aws::String& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, value); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(Aws::String&& key, const Aws::String& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), value); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(const Aws::String& key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(Aws::String&& key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(const char* key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(Aws::String&& key, const char* value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), value); return *this; }
-    inline PutSigningProfileRequest& AddSigningParameters(const char* key, const char* value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, value); return *this; }
+    template<typename SigningParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetSigningParameters(SigningParametersT&& value) { m_signingParametersHasBeenSet = true; m_signingParameters = std::forward<SigningParametersT>(value); }
+    template<typename SigningParametersT = Aws::Map<Aws::String, Aws::String>>
+    PutSigningProfileRequest& WithSigningParameters(SigningParametersT&& value) { SetSigningParameters(std::forward<SigningParametersT>(value)); return *this;}
+    template<typename SigningParametersKeyT = Aws::String, typename SigningParametersValueT = Aws::String>
+    PutSigningProfileRequest& AddSigningParameters(SigningParametersKeyT&& key, SigningParametersValueT&& value) {
+      m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::forward<SigningParametersKeyT>(key), std::forward<SigningParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Tags to be associated with the signing profile that is being created.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutSigningProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline PutSigningProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutSigningProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline PutSigningProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PutSigningProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PutSigningProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PutSigningProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    PutSigningProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    PutSigningProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

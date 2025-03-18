@@ -23,7 +23,7 @@ namespace Model
   class ListInvestigationsRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API ListInvestigationsRequest();
+    AWS_DETECTIVE_API ListInvestigationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline ListInvestigationsRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline ListInvestigationsRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline ListInvestigationsRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    ListInvestigationsRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,21 +54,19 @@ namespace Model
      * pagination token expires after 24 hours. Using an expired pagination token will
      * return a Validation Exception error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListInvestigationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInvestigationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInvestigationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInvestigationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the maximum number of investigations in a page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListInvestigationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -80,24 +76,24 @@ namespace Model
     /**
      * <p>Filters the investigation results based on a criteria.</p>
      */
-    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline ListInvestigationsRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline ListInvestigationsRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = FilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = FilterCriteria>
+    ListInvestigationsRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sorts the investigation results based on a criteria.</p>
      */
-    inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+    inline const SortCriteria& GetSortCriteria() const { return m_sortCriteria; }
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-    inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-    inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-    inline ListInvestigationsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
-    inline ListInvestigationsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
+    template<typename SortCriteriaT = SortCriteria>
+    void SetSortCriteria(SortCriteriaT&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::forward<SortCriteriaT>(value); }
+    template<typename SortCriteriaT = SortCriteria>
+    ListInvestigationsRequest& WithSortCriteria(SortCriteriaT&& value) { SetSortCriteria(std::forward<SortCriteriaT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +103,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;

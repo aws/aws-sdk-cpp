@@ -33,7 +33,7 @@ namespace Model
   class AvailableCapacity
   {
   public:
-    AWS_EC2_API AvailableCapacity();
+    AWS_EC2_API AvailableCapacity() = default;
     AWS_EC2_API AvailableCapacity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AvailableCapacity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,14 @@ namespace Model
      * multiple instance types, this parameter represents the number of instances for
      * each instance size that is supported on the host.</p>
      */
-    inline const Aws::Vector<InstanceCapacity>& GetAvailableInstanceCapacity() const{ return m_availableInstanceCapacity; }
+    inline const Aws::Vector<InstanceCapacity>& GetAvailableInstanceCapacity() const { return m_availableInstanceCapacity; }
     inline bool AvailableInstanceCapacityHasBeenSet() const { return m_availableInstanceCapacityHasBeenSet; }
-    inline void SetAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
-    inline void SetAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = std::move(value); }
-    inline AvailableCapacity& WithAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { SetAvailableInstanceCapacity(value); return *this;}
-    inline AvailableCapacity& WithAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { SetAvailableInstanceCapacity(std::move(value)); return *this;}
-    inline AvailableCapacity& AddAvailableInstanceCapacity(const InstanceCapacity& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(value); return *this; }
-    inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(std::move(value)); return *this; }
+    template<typename AvailableInstanceCapacityT = Aws::Vector<InstanceCapacity>>
+    void SetAvailableInstanceCapacity(AvailableInstanceCapacityT&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = std::forward<AvailableInstanceCapacityT>(value); }
+    template<typename AvailableInstanceCapacityT = Aws::Vector<InstanceCapacity>>
+    AvailableCapacity& WithAvailableInstanceCapacity(AvailableInstanceCapacityT&& value) { SetAvailableInstanceCapacity(std::forward<AvailableInstanceCapacityT>(value)); return *this;}
+    template<typename AvailableInstanceCapacityT = InstanceCapacity>
+    AvailableCapacity& AddAvailableInstanceCapacity(AvailableInstanceCapacityT&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.emplace_back(std::forward<AvailableInstanceCapacityT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,7 +63,7 @@ namespace Model
      * <p>The number of vCPUs available for launching instances onto the Dedicated
      * Host.</p>
      */
-    inline int GetAvailableVCpus() const{ return m_availableVCpus; }
+    inline int GetAvailableVCpus() const { return m_availableVCpus; }
     inline bool AvailableVCpusHasBeenSet() const { return m_availableVCpusHasBeenSet; }
     inline void SetAvailableVCpus(int value) { m_availableVCpusHasBeenSet = true; m_availableVCpus = value; }
     inline AvailableCapacity& WithAvailableVCpus(int value) { SetAvailableVCpus(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
     Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
     bool m_availableInstanceCapacityHasBeenSet = false;
 
-    int m_availableVCpus;
+    int m_availableVCpus{0};
     bool m_availableVCpusHasBeenSet = false;
   };
 

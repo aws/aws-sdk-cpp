@@ -34,7 +34,7 @@ namespace Model
   class LoRaWANMulticast
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANMulticast();
+    AWS_IOTWIRELESS_API LoRaWANMulticast() = default;
     AWS_IOTWIRELESS_API LoRaWANMulticast(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANMulticast& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,39 +42,35 @@ namespace Model
 
     ///@{
     
-    inline const SupportedRfRegion& GetRfRegion() const{ return m_rfRegion; }
+    inline SupportedRfRegion GetRfRegion() const { return m_rfRegion; }
     inline bool RfRegionHasBeenSet() const { return m_rfRegionHasBeenSet; }
-    inline void SetRfRegion(const SupportedRfRegion& value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
-    inline void SetRfRegion(SupportedRfRegion&& value) { m_rfRegionHasBeenSet = true; m_rfRegion = std::move(value); }
-    inline LoRaWANMulticast& WithRfRegion(const SupportedRfRegion& value) { SetRfRegion(value); return *this;}
-    inline LoRaWANMulticast& WithRfRegion(SupportedRfRegion&& value) { SetRfRegion(std::move(value)); return *this;}
+    inline void SetRfRegion(SupportedRfRegion value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
+    inline LoRaWANMulticast& WithRfRegion(SupportedRfRegion value) { SetRfRegion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DlClass& GetDlClass() const{ return m_dlClass; }
+    inline DlClass GetDlClass() const { return m_dlClass; }
     inline bool DlClassHasBeenSet() const { return m_dlClassHasBeenSet; }
-    inline void SetDlClass(const DlClass& value) { m_dlClassHasBeenSet = true; m_dlClass = value; }
-    inline void SetDlClass(DlClass&& value) { m_dlClassHasBeenSet = true; m_dlClass = std::move(value); }
-    inline LoRaWANMulticast& WithDlClass(const DlClass& value) { SetDlClass(value); return *this;}
-    inline LoRaWANMulticast& WithDlClass(DlClass&& value) { SetDlClass(std::move(value)); return *this;}
+    inline void SetDlClass(DlClass value) { m_dlClassHasBeenSet = true; m_dlClass = value; }
+    inline LoRaWANMulticast& WithDlClass(DlClass value) { SetDlClass(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ParticipatingGatewaysMulticast& GetParticipatingGateways() const{ return m_participatingGateways; }
+    inline const ParticipatingGatewaysMulticast& GetParticipatingGateways() const { return m_participatingGateways; }
     inline bool ParticipatingGatewaysHasBeenSet() const { return m_participatingGatewaysHasBeenSet; }
-    inline void SetParticipatingGateways(const ParticipatingGatewaysMulticast& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = value; }
-    inline void SetParticipatingGateways(ParticipatingGatewaysMulticast&& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = std::move(value); }
-    inline LoRaWANMulticast& WithParticipatingGateways(const ParticipatingGatewaysMulticast& value) { SetParticipatingGateways(value); return *this;}
-    inline LoRaWANMulticast& WithParticipatingGateways(ParticipatingGatewaysMulticast&& value) { SetParticipatingGateways(std::move(value)); return *this;}
+    template<typename ParticipatingGatewaysT = ParticipatingGatewaysMulticast>
+    void SetParticipatingGateways(ParticipatingGatewaysT&& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = std::forward<ParticipatingGatewaysT>(value); }
+    template<typename ParticipatingGatewaysT = ParticipatingGatewaysMulticast>
+    LoRaWANMulticast& WithParticipatingGateways(ParticipatingGatewaysT&& value) { SetParticipatingGateways(std::forward<ParticipatingGatewaysT>(value)); return *this;}
     ///@}
   private:
 
-    SupportedRfRegion m_rfRegion;
+    SupportedRfRegion m_rfRegion{SupportedRfRegion::NOT_SET};
     bool m_rfRegionHasBeenSet = false;
 
-    DlClass m_dlClass;
+    DlClass m_dlClass{DlClass::NOT_SET};
     bool m_dlClassHasBeenSet = false;
 
     ParticipatingGatewaysMulticast m_participatingGateways;

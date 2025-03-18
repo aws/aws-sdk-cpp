@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCACertificateRequest::DeleteCACertificateRequest() : 
-    m_certificateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCACertificateRequest::SerializePayload() const
 {
   return {};

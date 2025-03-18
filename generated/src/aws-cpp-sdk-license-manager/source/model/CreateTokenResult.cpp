@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTokenResult::CreateTokenResult() : 
-    m_tokenType(TokenType::NOT_SET)
-{
-}
-
 CreateTokenResult::CreateTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateTokenResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateTokenResult& CreateTokenResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("TokenId"))
   {
     m_tokenId = jsonValue.GetString("TokenId");
-
+    m_tokenIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenType"))
   {
     m_tokenType = TokenTypeMapper::GetTokenTypeForName(jsonValue.GetString("TokenType"));
-
+    m_tokenTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Token"))
   {
     m_token = jsonValue.GetString("Token");
-
+    m_tokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

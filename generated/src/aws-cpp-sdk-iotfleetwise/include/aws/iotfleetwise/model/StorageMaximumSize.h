@@ -36,7 +36,7 @@ namespace Model
   class StorageMaximumSize
   {
   public:
-    AWS_IOTFLEETWISE_API StorageMaximumSize();
+    AWS_IOTFLEETWISE_API StorageMaximumSize() = default;
     AWS_IOTFLEETWISE_API StorageMaximumSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API StorageMaximumSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
     /**
      * <p>The data type of the data to store.</p>
      */
-    inline const StorageMaximumSizeUnit& GetUnit() const{ return m_unit; }
+    inline StorageMaximumSizeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const StorageMaximumSizeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(StorageMaximumSizeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline StorageMaximumSize& WithUnit(const StorageMaximumSizeUnit& value) { SetUnit(value); return *this;}
-    inline StorageMaximumSize& WithUnit(StorageMaximumSizeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(StorageMaximumSizeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline StorageMaximumSize& WithUnit(StorageMaximumSizeUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum amount of time to store data.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline StorageMaximumSize& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    StorageMaximumSizeUnit m_unit;
+    StorageMaximumSizeUnit m_unit{StorageMaximumSizeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIpRestrictionResult::DescribeIpRestrictionResult() : 
-    m_enabled(false),
-    m_status(0)
-{
-}
-
 DescribeIpRestrictionResult::DescribeIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeIpRestrictionResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
+    m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRestrictionRuleMap"))
   {
     Aws::Map<Aws::String, JsonView> ipRestrictionRuleMapJsonMap = jsonValue.GetObject("IpRestrictionRuleMap").GetAllObjects();
@@ -45,8 +37,8 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
     {
       m_ipRestrictionRuleMap[ipRestrictionRuleMapItem.first] = ipRestrictionRuleMapItem.second.AsString();
     }
+    m_ipRestrictionRuleMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcIdRestrictionRuleMap"))
   {
     Aws::Map<Aws::String, JsonView> vpcIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcIdRestrictionRuleMap").GetAllObjects();
@@ -54,8 +46,8 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
     {
       m_vpcIdRestrictionRuleMap[vpcIdRestrictionRuleMapItem.first] = vpcIdRestrictionRuleMapItem.second.AsString();
     }
+    m_vpcIdRestrictionRuleMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointIdRestrictionRuleMap"))
   {
     Aws::Map<Aws::String, JsonView> vpcEndpointIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcEndpointIdRestrictionRuleMap").GetAllObjects();
@@ -63,24 +55,24 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
     {
       m_vpcEndpointIdRestrictionRuleMap[vpcEndpointIdRestrictionRuleMapItem.first] = vpcEndpointIdRestrictionRuleMapItem.second.AsString();
     }
+    m_vpcEndpointIdRestrictionRuleMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
+    m_enabledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

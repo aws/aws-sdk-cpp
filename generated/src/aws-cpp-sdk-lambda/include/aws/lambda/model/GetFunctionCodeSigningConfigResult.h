@@ -27,7 +27,7 @@ namespace Model
   class GetFunctionCodeSigningConfigResult
   {
   public:
-    AWS_LAMBDA_API GetFunctionCodeSigningConfigResult();
+    AWS_LAMBDA_API GetFunctionCodeSigningConfigResult() = default;
     AWS_LAMBDA_API GetFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API GetFunctionCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
      */
-    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
-    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArn = value; }
-    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArn = std::move(value); }
-    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArn.assign(value); }
-    inline GetFunctionCodeSigningConfigResult& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+    inline const Aws::String& GetCodeSigningConfigArn() const { return m_codeSigningConfigArn; }
+    template<typename CodeSigningConfigArnT = Aws::String>
+    void SetCodeSigningConfigArn(CodeSigningConfigArnT&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::forward<CodeSigningConfigArnT>(value); }
+    template<typename CodeSigningConfigArnT = Aws::String>
+    GetFunctionCodeSigningConfigResult& WithCodeSigningConfigArn(CodeSigningConfigArnT&& value) { SetCodeSigningConfigArn(std::forward<CodeSigningConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,31 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionName.assign(value); }
-    inline GetFunctionCodeSigningConfigResult& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    GetFunctionCodeSigningConfigResult& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFunctionCodeSigningConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFunctionCodeSigningConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFunctionCodeSigningConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_codeSigningConfigArn;
+    bool m_codeSigningConfigArnHasBeenSet = false;
 
     Aws::String m_functionName;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

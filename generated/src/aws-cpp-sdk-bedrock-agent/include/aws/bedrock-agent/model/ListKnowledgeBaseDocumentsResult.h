@@ -29,7 +29,7 @@ namespace Model
   class ListKnowledgeBaseDocumentsResult
   {
   public:
-    AWS_BEDROCKAGENT_API ListKnowledgeBaseDocumentsResult();
+    AWS_BEDROCKAGENT_API ListKnowledgeBaseDocumentsResult() = default;
     AWS_BEDROCKAGENT_API ListKnowledgeBaseDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ListKnowledgeBaseDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of objects, each of which contains information about the documents
      * that were retrieved.</p>
      */
-    inline const Aws::Vector<KnowledgeBaseDocumentDetail>& GetDocumentDetails() const{ return m_documentDetails; }
-    inline void SetDocumentDetails(const Aws::Vector<KnowledgeBaseDocumentDetail>& value) { m_documentDetails = value; }
-    inline void SetDocumentDetails(Aws::Vector<KnowledgeBaseDocumentDetail>&& value) { m_documentDetails = std::move(value); }
-    inline ListKnowledgeBaseDocumentsResult& WithDocumentDetails(const Aws::Vector<KnowledgeBaseDocumentDetail>& value) { SetDocumentDetails(value); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& WithDocumentDetails(Aws::Vector<KnowledgeBaseDocumentDetail>&& value) { SetDocumentDetails(std::move(value)); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& AddDocumentDetails(const KnowledgeBaseDocumentDetail& value) { m_documentDetails.push_back(value); return *this; }
-    inline ListKnowledgeBaseDocumentsResult& AddDocumentDetails(KnowledgeBaseDocumentDetail&& value) { m_documentDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KnowledgeBaseDocumentDetail>& GetDocumentDetails() const { return m_documentDetails; }
+    template<typename DocumentDetailsT = Aws::Vector<KnowledgeBaseDocumentDetail>>
+    void SetDocumentDetails(DocumentDetailsT&& value) { m_documentDetailsHasBeenSet = true; m_documentDetails = std::forward<DocumentDetailsT>(value); }
+    template<typename DocumentDetailsT = Aws::Vector<KnowledgeBaseDocumentDetail>>
+    ListKnowledgeBaseDocumentsResult& WithDocumentDetails(DocumentDetailsT&& value) { SetDocumentDetails(std::forward<DocumentDetailsT>(value)); return *this;}
+    template<typename DocumentDetailsT = KnowledgeBaseDocumentDetail>
+    ListKnowledgeBaseDocumentsResult& AddDocumentDetails(DocumentDetailsT&& value) { m_documentDetailsHasBeenSet = true; m_documentDetails.emplace_back(std::forward<DocumentDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * value provided in the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKnowledgeBaseDocumentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKnowledgeBaseDocumentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKnowledgeBaseDocumentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKnowledgeBaseDocumentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKnowledgeBaseDocumentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KnowledgeBaseDocumentDetail> m_documentDetails;
+    bool m_documentDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-RuleEvaluation::RuleEvaluation() : 
-    m_simpleRuleEvaluationHasBeenSet(false)
-{
-}
-
 RuleEvaluation::RuleEvaluation(JsonView jsonValue)
-  : RuleEvaluation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleEvaluation& RuleEvaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("simpleRuleEvaluation"))
   {
     m_simpleRuleEvaluation = jsonValue.GetObject("simpleRuleEvaluation");
-
     m_simpleRuleEvaluationHasBeenSet = true;
   }
-
   return *this;
 }
 

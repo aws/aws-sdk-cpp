@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentReviews::DocumentReviews() : 
-    m_action(DocumentReviewAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 DocumentReviews::DocumentReviews(JsonView jsonValue)
-  : DocumentReviews()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DocumentReviews& DocumentReviews::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = DocumentReviewActionMapper::GetDocumentReviewActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     Aws::Utils::Array<JsonView> commentJsonList = jsonValue.GetArray("Comment");
@@ -49,7 +39,6 @@ DocumentReviews& DocumentReviews::operator =(JsonView jsonValue)
     }
     m_commentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteVirtualMFADeviceRequest::DeleteVirtualMFADeviceRequest() : 
-    m_serialNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVirtualMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

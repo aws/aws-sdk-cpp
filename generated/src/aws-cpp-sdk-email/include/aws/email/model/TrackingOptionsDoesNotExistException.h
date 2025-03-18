@@ -32,7 +32,7 @@ namespace Model
   class TrackingOptionsDoesNotExistException
   {
   public:
-    AWS_SES_API TrackingOptionsDoesNotExistException();
+    AWS_SES_API TrackingOptionsDoesNotExistException() = default;
     AWS_SES_API TrackingOptionsDoesNotExistException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API TrackingOptionsDoesNotExistException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>Indicates that a TrackingOptions object does not exist in the specified
      * configuration set.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline TrackingOptionsDoesNotExistException& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline TrackingOptionsDoesNotExistException& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline TrackingOptionsDoesNotExistException& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    TrackingOptionsDoesNotExistException& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
   private:
 

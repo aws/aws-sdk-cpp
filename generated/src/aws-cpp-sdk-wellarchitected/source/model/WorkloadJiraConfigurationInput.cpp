@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadJiraConfigurationInput::WorkloadJiraConfigurationInput() : 
-    m_issueManagementStatus(WorkloadIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false)
-{
-}
-
 WorkloadJiraConfigurationInput::WorkloadJiraConfigurationInput(JsonView jsonValue)
-  : WorkloadJiraConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WorkloadJiraConfigurationInput& WorkloadJiraConfigurationInput::operator =(JsonV
   if(jsonValue.ValueExists("IssueManagementStatus"))
   {
     m_issueManagementStatus = WorkloadIssueManagementStatusMapper::GetWorkloadIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
-
     m_issueManagementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueManagementType"))
   {
     m_issueManagementType = IssueManagementTypeMapper::GetIssueManagementTypeForName(jsonValue.GetString("IssueManagementType"));
-
     m_issueManagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraProjectKey"))
   {
     m_jiraProjectKey = jsonValue.GetString("JiraProjectKey");
-
     m_jiraProjectKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

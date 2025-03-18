@@ -20,25 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistributionSummary::StreamingDistributionSummary() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_s3OriginHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode)
-  : StreamingDistributionSummary()
 {
   *this = xmlNode;
 }
@@ -106,7 +88,7 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
     if(!priceClassNode.IsNull())
     {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()).c_str());
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");

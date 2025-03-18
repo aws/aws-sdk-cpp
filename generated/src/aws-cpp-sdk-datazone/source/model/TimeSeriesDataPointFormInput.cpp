@@ -18,17 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput() : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput(JsonView jsonValue)
-  : TimeSeriesDataPointFormInput()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TimeSeriesDataPointFormInput& TimeSeriesDataPointFormInput::operator =(JsonView 
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formName"))
   {
     m_formName = jsonValue.GetString("formName");
-
     m_formNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeIdentifier"))
   {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
-
     m_typeIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

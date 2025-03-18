@@ -12,12 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOrganizationRequest::CreateOrganizationRequest() : 
-    m_featureSet(OrganizationFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false)
-{
-}
-
 Aws::String CreateOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

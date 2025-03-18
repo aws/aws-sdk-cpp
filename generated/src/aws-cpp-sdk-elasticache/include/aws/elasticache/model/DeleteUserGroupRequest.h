@@ -21,7 +21,7 @@ namespace Model
   class DeleteUserGroupRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DeleteUserGroupRequest();
+    AWS_ELASTICACHE_API DeleteUserGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the user group.</p>
      */
-    inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
+    inline const Aws::String& GetUserGroupId() const { return m_userGroupId; }
     inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }
-    inline void SetUserGroupId(const Aws::String& value) { m_userGroupIdHasBeenSet = true; m_userGroupId = value; }
-    inline void SetUserGroupId(Aws::String&& value) { m_userGroupIdHasBeenSet = true; m_userGroupId = std::move(value); }
-    inline void SetUserGroupId(const char* value) { m_userGroupIdHasBeenSet = true; m_userGroupId.assign(value); }
-    inline DeleteUserGroupRequest& WithUserGroupId(const Aws::String& value) { SetUserGroupId(value); return *this;}
-    inline DeleteUserGroupRequest& WithUserGroupId(Aws::String&& value) { SetUserGroupId(std::move(value)); return *this;}
-    inline DeleteUserGroupRequest& WithUserGroupId(const char* value) { SetUserGroupId(value); return *this;}
+    template<typename UserGroupIdT = Aws::String>
+    void SetUserGroupId(UserGroupIdT&& value) { m_userGroupIdHasBeenSet = true; m_userGroupId = std::forward<UserGroupIdT>(value); }
+    template<typename UserGroupIdT = Aws::String>
+    DeleteUserGroupRequest& WithUserGroupId(UserGroupIdT&& value) { SetUserGroupId(std::forward<UserGroupIdT>(value)); return *this;}
     ///@}
   private:
 

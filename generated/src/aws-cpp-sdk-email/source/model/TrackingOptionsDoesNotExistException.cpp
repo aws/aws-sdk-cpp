@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException(const XmlNode& xmlNode)
-  : TrackingOptionsDoesNotExistException()
 {
   *this = xmlNode;
 }

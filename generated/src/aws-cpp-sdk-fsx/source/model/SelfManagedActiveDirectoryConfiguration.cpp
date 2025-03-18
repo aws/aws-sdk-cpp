@@ -18,18 +18,7 @@ namespace FSx
 namespace Model
 {
 
-SelfManagedActiveDirectoryConfiguration::SelfManagedActiveDirectoryConfiguration() : 
-    m_domainNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_fileSystemAdministratorsGroupHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
-{
-}
-
 SelfManagedActiveDirectoryConfiguration::SelfManagedActiveDirectoryConfiguration(JsonView jsonValue)
-  : SelfManagedActiveDirectoryConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SelfManagedActiveDirectoryConfiguration& SelfManagedActiveDirectoryConfiguration
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedName"))
   {
     m_organizationalUnitDistinguishedName = jsonValue.GetString("OrganizationalUnitDistinguishedName");
-
     m_organizationalUnitDistinguishedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAdministratorsGroup"))
   {
     m_fileSystemAdministratorsGroup = jsonValue.GetString("FileSystemAdministratorsGroup");
-
     m_fileSystemAdministratorsGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIps"))
   {
     Aws::Utils::Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
@@ -80,7 +59,6 @@ SelfManagedActiveDirectoryConfiguration& SelfManagedActiveDirectoryConfiguration
     }
     m_dnsIpsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ECR
 namespace Model
 {
 
-LayerFailure::LayerFailure() : 
-    m_layerDigestHasBeenSet(false),
-    m_failureCode(LayerFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 LayerFailure::LayerFailure(JsonView jsonValue)
-  : LayerFailure()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LayerFailure& LayerFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("layerDigest"))
   {
     m_layerDigest = jsonValue.GetString("layerDigest");
-
     m_layerDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = LayerFailureCodeMapper::GetLayerFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

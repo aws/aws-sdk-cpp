@@ -33,7 +33,7 @@ namespace Model
   class CisSessionMessage
   {
   public:
-    AWS_INSPECTOR2_API CisSessionMessage();
+    AWS_INSPECTOR2_API CisSessionMessage() = default;
     AWS_INSPECTOR2_API CisSessionMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisSessionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,44 @@ namespace Model
     /**
      * <p>The CIS rule details for the CIS session message.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCisRuleDetails() const{ return m_cisRuleDetails; }
+    inline const Aws::Utils::ByteBuffer& GetCisRuleDetails() const { return m_cisRuleDetails; }
     inline bool CisRuleDetailsHasBeenSet() const { return m_cisRuleDetailsHasBeenSet; }
-    inline void SetCisRuleDetails(const Aws::Utils::ByteBuffer& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = value; }
-    inline void SetCisRuleDetails(Aws::Utils::ByteBuffer&& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = std::move(value); }
-    inline CisSessionMessage& WithCisRuleDetails(const Aws::Utils::ByteBuffer& value) { SetCisRuleDetails(value); return *this;}
-    inline CisSessionMessage& WithCisRuleDetails(Aws::Utils::ByteBuffer&& value) { SetCisRuleDetails(std::move(value)); return *this;}
+    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
+    void SetCisRuleDetails(CisRuleDetailsT&& value) { m_cisRuleDetailsHasBeenSet = true; m_cisRuleDetails = std::forward<CisRuleDetailsT>(value); }
+    template<typename CisRuleDetailsT = Aws::Utils::ByteBuffer>
+    CisSessionMessage& WithCisRuleDetails(CisRuleDetailsT&& value) { SetCisRuleDetails(std::forward<CisRuleDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule ID for the CIS session message.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline CisSessionMessage& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline CisSessionMessage& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline CisSessionMessage& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    CisSessionMessage& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the CIS session message.</p>
      */
-    inline const CisRuleStatus& GetStatus() const{ return m_status; }
+    inline CisRuleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CisRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CisRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CisSessionMessage& WithStatus(const CisRuleStatus& value) { SetStatus(value); return *this;}
-    inline CisSessionMessage& WithStatus(CisRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CisRuleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CisSessionMessage& WithStatus(CisRuleStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_cisRuleDetails;
+    Aws::Utils::ByteBuffer m_cisRuleDetails{};
     bool m_cisRuleDetailsHasBeenSet = false;
 
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet = false;
 
-    CisRuleStatus m_status;
+    CisRuleStatus m_status{CisRuleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateCampaignFlowAssociationRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignFlowAssociationRequest();
+    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignFlowAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateCampaignFlowAssociationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateCampaignFlowAssociationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateCampaignFlowAssociationRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateCampaignFlowAssociationRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetConnectCampaignFlowArn() const{ return m_connectCampaignFlowArn; }
+    inline const Aws::String& GetConnectCampaignFlowArn() const { return m_connectCampaignFlowArn; }
     inline bool ConnectCampaignFlowArnHasBeenSet() const { return m_connectCampaignFlowArnHasBeenSet; }
-    inline void SetConnectCampaignFlowArn(const Aws::String& value) { m_connectCampaignFlowArnHasBeenSet = true; m_connectCampaignFlowArn = value; }
-    inline void SetConnectCampaignFlowArn(Aws::String&& value) { m_connectCampaignFlowArnHasBeenSet = true; m_connectCampaignFlowArn = std::move(value); }
-    inline void SetConnectCampaignFlowArn(const char* value) { m_connectCampaignFlowArnHasBeenSet = true; m_connectCampaignFlowArn.assign(value); }
-    inline UpdateCampaignFlowAssociationRequest& WithConnectCampaignFlowArn(const Aws::String& value) { SetConnectCampaignFlowArn(value); return *this;}
-    inline UpdateCampaignFlowAssociationRequest& WithConnectCampaignFlowArn(Aws::String&& value) { SetConnectCampaignFlowArn(std::move(value)); return *this;}
-    inline UpdateCampaignFlowAssociationRequest& WithConnectCampaignFlowArn(const char* value) { SetConnectCampaignFlowArn(value); return *this;}
+    template<typename ConnectCampaignFlowArnT = Aws::String>
+    void SetConnectCampaignFlowArn(ConnectCampaignFlowArnT&& value) { m_connectCampaignFlowArnHasBeenSet = true; m_connectCampaignFlowArn = std::forward<ConnectCampaignFlowArnT>(value); }
+    template<typename ConnectCampaignFlowArnT = Aws::String>
+    UpdateCampaignFlowAssociationRequest& WithConnectCampaignFlowArn(ConnectCampaignFlowArnT&& value) { SetConnectCampaignFlowArn(std::forward<ConnectCampaignFlowArnT>(value)); return *this;}
     ///@}
   private:
 

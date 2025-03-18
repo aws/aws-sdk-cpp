@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetInstanceProfileRequest::GetInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

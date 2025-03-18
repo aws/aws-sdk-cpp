@@ -32,7 +32,7 @@ namespace Model
   class InvokeDataAutomationAsyncResult
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncResult();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncResult() = default;
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>ARN of the automation job</p>
      */
-    inline const Aws::String& GetInvocationArn() const{ return m_invocationArn; }
-    inline void SetInvocationArn(const Aws::String& value) { m_invocationArn = value; }
-    inline void SetInvocationArn(Aws::String&& value) { m_invocationArn = std::move(value); }
-    inline void SetInvocationArn(const char* value) { m_invocationArn.assign(value); }
-    inline InvokeDataAutomationAsyncResult& WithInvocationArn(const Aws::String& value) { SetInvocationArn(value); return *this;}
-    inline InvokeDataAutomationAsyncResult& WithInvocationArn(Aws::String&& value) { SetInvocationArn(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncResult& WithInvocationArn(const char* value) { SetInvocationArn(value); return *this;}
+    inline const Aws::String& GetInvocationArn() const { return m_invocationArn; }
+    template<typename InvocationArnT = Aws::String>
+    void SetInvocationArn(InvocationArnT&& value) { m_invocationArnHasBeenSet = true; m_invocationArn = std::forward<InvocationArnT>(value); }
+    template<typename InvocationArnT = Aws::String>
+    InvokeDataAutomationAsyncResult& WithInvocationArn(InvocationArnT&& value) { SetInvocationArn(std::forward<InvocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InvokeDataAutomationAsyncResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InvokeDataAutomationAsyncResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InvokeDataAutomationAsyncResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_invocationArn;
+    bool m_invocationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

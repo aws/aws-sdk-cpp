@@ -21,7 +21,7 @@ namespace Model
   class ListParticipantEventsRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API ListParticipantEventsRequest();
+    AWS_IVSREALTIME_API ListParticipantEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>Stage ARN.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline const Aws::String& GetStageArn() const { return m_stageArn; }
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline ListParticipantEventsRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline ListParticipantEventsRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline ListParticipantEventsRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    template<typename StageArnT = Aws::String>
+    void SetStageArn(StageArnT&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::forward<StageArnT>(value); }
+    template<typename StageArnT = Aws::String>
+    ListParticipantEventsRequest& WithStageArn(StageArnT&& value) { SetStageArn(std::forward<StageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of a session within the stage.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ListParticipantEventsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListParticipantEventsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListParticipantEventsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ListParticipantEventsRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +61,12 @@ namespace Model
      * <p>Unique identifier for this participant. This is assigned by IVS and returned
      * by <a>CreateParticipantToken</a>.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline ListParticipantEventsRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline ListParticipantEventsRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline ListParticipantEventsRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    ListParticipantEventsRequest& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,21 +74,19 @@ namespace Model
      * <p>The first participant event to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListParticipantEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListParticipantEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListParticipantEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListParticipantEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to return. Default: 50.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListParticipantEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -113,7 +105,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

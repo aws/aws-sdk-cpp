@@ -31,7 +31,7 @@ namespace Model
   class ContentBlockDeltaEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API ContentBlockDeltaEvent();
+    AWS_BEDROCKRUNTIME_API ContentBlockDeltaEvent() = default;
     AWS_BEDROCKRUNTIME_API ContentBlockDeltaEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ContentBlockDeltaEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The delta for a content block delta event.</p>
      */
-    inline const ContentBlockDelta& GetDelta() const{ return m_delta; }
+    inline const ContentBlockDelta& GetDelta() const { return m_delta; }
     inline bool DeltaHasBeenSet() const { return m_deltaHasBeenSet; }
-    inline void SetDelta(const ContentBlockDelta& value) { m_deltaHasBeenSet = true; m_delta = value; }
-    inline void SetDelta(ContentBlockDelta&& value) { m_deltaHasBeenSet = true; m_delta = std::move(value); }
-    inline ContentBlockDeltaEvent& WithDelta(const ContentBlockDelta& value) { SetDelta(value); return *this;}
-    inline ContentBlockDeltaEvent& WithDelta(ContentBlockDelta&& value) { SetDelta(std::move(value)); return *this;}
+    template<typename DeltaT = ContentBlockDelta>
+    void SetDelta(DeltaT&& value) { m_deltaHasBeenSet = true; m_delta = std::forward<DeltaT>(value); }
+    template<typename DeltaT = ContentBlockDelta>
+    ContentBlockDeltaEvent& WithDelta(DeltaT&& value) { SetDelta(std::forward<DeltaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The block index for a content block delta event. </p>
      */
-    inline int GetContentBlockIndex() const{ return m_contentBlockIndex; }
+    inline int GetContentBlockIndex() const { return m_contentBlockIndex; }
     inline bool ContentBlockIndexHasBeenSet() const { return m_contentBlockIndexHasBeenSet; }
     inline void SetContentBlockIndex(int value) { m_contentBlockIndexHasBeenSet = true; m_contentBlockIndex = value; }
     inline ContentBlockDeltaEvent& WithContentBlockIndex(int value) { SetContentBlockIndex(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     ContentBlockDelta m_delta;
     bool m_deltaHasBeenSet = false;
 
-    int m_contentBlockIndex;
+    int m_contentBlockIndex{0};
     bool m_contentBlockIndexHasBeenSet = false;
   };
 

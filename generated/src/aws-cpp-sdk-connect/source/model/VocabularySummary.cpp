@@ -18,21 +18,7 @@ namespace Connect
 namespace Model
 {
 
-VocabularySummary::VocabularySummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_state(VocabularyState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 VocabularySummary::VocabularySummary(JsonView jsonValue)
-  : VocabularySummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ VocabularySummary& VocabularySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = VocabularyLanguageCodeMapper::GetVocabularyLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

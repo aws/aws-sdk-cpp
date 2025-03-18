@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotRecommendationResults::BotRecommendationResults() : 
-    m_botLocaleExportUrlHasBeenSet(false),
-    m_associatedTranscriptsUrlHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
-{
-}
-
 BotRecommendationResults::BotRecommendationResults(JsonView jsonValue)
-  : BotRecommendationResults()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BotRecommendationResults& BotRecommendationResults::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("botLocaleExportUrl"))
   {
     m_botLocaleExportUrl = jsonValue.GetString("botLocaleExportUrl");
-
     m_botLocaleExportUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedTranscriptsUrl"))
   {
     m_associatedTranscriptsUrl = jsonValue.GetString("associatedTranscriptsUrl");
-
     m_associatedTranscriptsUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistics"))
   {
     m_statistics = jsonValue.GetObject("statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

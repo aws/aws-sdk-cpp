@@ -12,15 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReportGroupTrendRequest::GetReportGroupTrendRequest() : 
-    m_reportGroupArnHasBeenSet(false),
-    m_numOfReports(0),
-    m_numOfReportsHasBeenSet(false),
-    m_trendField(ReportGroupTrendFieldType::NOT_SET),
-    m_trendFieldHasBeenSet(false)
-{
-}
-
 Aws::String GetReportGroupTrendRequest::SerializePayload() const
 {
   JsonValue payload;

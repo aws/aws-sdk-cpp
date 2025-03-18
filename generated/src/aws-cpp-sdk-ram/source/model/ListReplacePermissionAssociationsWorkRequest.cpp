@@ -12,16 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReplacePermissionAssociationsWorkRequest::ListReplacePermissionAssociationsWorkRequest() : 
-    m_workIdsHasBeenSet(false),
-    m_status(ReplacePermissionAssociationsWorkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListReplacePermissionAssociationsWorkRequest::SerializePayload() const
 {
   JsonValue payload;

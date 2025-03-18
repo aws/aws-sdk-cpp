@@ -12,18 +12,6 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MeterUsageRequest::MeterUsageRequest() : 
-    m_productCodeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_usageDimensionHasBeenSet(false),
-    m_usageQuantity(0),
-    m_usageQuantityHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_usageAllocationsHasBeenSet(false)
-{
-}
-
 Aws::String MeterUsageRequest::SerializePayload() const
 {
   JsonValue payload;

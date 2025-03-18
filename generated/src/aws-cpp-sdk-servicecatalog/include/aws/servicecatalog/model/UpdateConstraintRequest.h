@@ -21,7 +21,7 @@ namespace Model
   class UpdateConstraintRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API UpdateConstraintRequest();
+    AWS_SERVICECATALOG_API UpdateConstraintRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline UpdateConstraintRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline UpdateConstraintRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline UpdateConstraintRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    UpdateConstraintRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the constraint.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateConstraintRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateConstraintRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateConstraintRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateConstraintRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated description of the constraint.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateConstraintRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateConstraintRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateConstraintRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateConstraintRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
-    inline const Aws::String& GetParameters() const{ return m_parameters; }
+    inline const Aws::String& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
-    inline UpdateConstraintRequest& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
-    inline UpdateConstraintRequest& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
-    inline UpdateConstraintRequest& WithParameters(const char* value) { SetParameters(value); return *this;}
+    template<typename ParametersT = Aws::String>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::String>
+    UpdateConstraintRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
   private:
 

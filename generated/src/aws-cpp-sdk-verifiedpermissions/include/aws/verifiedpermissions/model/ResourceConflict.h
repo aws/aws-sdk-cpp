@@ -32,7 +32,7 @@ namespace Model
   class ResourceConflict
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API ResourceConflict();
+    AWS_VERIFIEDPERMISSIONS_API ResourceConflict() = default;
     AWS_VERIFIEDPERMISSIONS_API ResourceConflict(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API ResourceConflict& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The unique identifier of the resource involved in a conflict.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResourceConflict& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResourceConflict& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResourceConflict& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResourceConflict& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the resource involved in a conflict.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ResourceConflict& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline ResourceConflict& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ResourceConflict& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

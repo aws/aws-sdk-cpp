@@ -30,7 +30,7 @@ namespace Model
   class BatchUpdateBillScenarioUsageModificationResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioUsageModificationResult();
+    AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioUsageModificationResult() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioUsageModificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioUsageModificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p> Returns the list of successful usage line items that were updated for a Bill
      * Scenario. </p>
      */
-    inline const Aws::Vector<BillScenarioUsageModificationItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<BillScenarioUsageModificationItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<BillScenarioUsageModificationItem>&& value) { m_items = std::move(value); }
-    inline BatchUpdateBillScenarioUsageModificationResult& WithItems(const Aws::Vector<BillScenarioUsageModificationItem>& value) { SetItems(value); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& WithItems(Aws::Vector<BillScenarioUsageModificationItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& AddItems(const BillScenarioUsageModificationItem& value) { m_items.push_back(value); return *this; }
-    inline BatchUpdateBillScenarioUsageModificationResult& AddItems(BillScenarioUsageModificationItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BillScenarioUsageModificationItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<BillScenarioUsageModificationItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<BillScenarioUsageModificationItem>>
+    BatchUpdateBillScenarioUsageModificationResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = BillScenarioUsageModificationItem>
+    BatchUpdateBillScenarioUsageModificationResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p> Returns the list of error reasons and usage line item IDs that could not be
      * updated for the Bill Scenario. </p>
      */
-    inline const Aws::Vector<BatchUpdateBillScenarioUsageModificationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchUpdateBillScenarioUsageModificationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchUpdateBillScenarioUsageModificationError>&& value) { m_errors = std::move(value); }
-    inline BatchUpdateBillScenarioUsageModificationResult& WithErrors(const Aws::Vector<BatchUpdateBillScenarioUsageModificationError>& value) { SetErrors(value); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& WithErrors(Aws::Vector<BatchUpdateBillScenarioUsageModificationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& AddErrors(const BatchUpdateBillScenarioUsageModificationError& value) { m_errors.push_back(value); return *this; }
-    inline BatchUpdateBillScenarioUsageModificationResult& AddErrors(BatchUpdateBillScenarioUsageModificationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchUpdateBillScenarioUsageModificationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateBillScenarioUsageModificationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateBillScenarioUsageModificationError>>
+    BatchUpdateBillScenarioUsageModificationResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchUpdateBillScenarioUsageModificationError>
+    BatchUpdateBillScenarioUsageModificationResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateBillScenarioUsageModificationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateBillScenarioUsageModificationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateBillScenarioUsageModificationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BillScenarioUsageModificationItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::Vector<BatchUpdateBillScenarioUsageModificationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

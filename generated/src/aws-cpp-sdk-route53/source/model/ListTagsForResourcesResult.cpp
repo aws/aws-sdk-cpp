@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourcesResult::ListTagsForResourcesResult()
-{
-}
-
 ListTagsForResourcesResult::ListTagsForResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const Aws::Am
     if(!resourceTagSetsNode.IsNull())
     {
       XmlNode resourceTagSetsMember = resourceTagSetsNode.FirstChild("ResourceTagSet");
+      m_resourceTagSetsHasBeenSet = !resourceTagSetsMember.IsNull();
       while(!resourceTagSetsMember.IsNull())
       {
         m_resourceTagSets.push_back(resourceTagSetsMember);
         resourceTagSetsMember = resourceTagSetsMember.NextNode("ResourceTagSet");
       }
 
+      m_resourceTagSetsHasBeenSet = true;
     }
   }
 
@@ -50,6 +48,7 @@ ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

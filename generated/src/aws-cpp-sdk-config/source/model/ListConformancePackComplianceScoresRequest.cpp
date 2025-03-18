@@ -12,18 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConformancePackComplianceScoresRequest::ListConformancePackComplianceScoresRequest() : 
-    m_filtersHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(SortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConformancePackComplianceScoresRequest::SerializePayload() const
 {
   JsonValue payload;

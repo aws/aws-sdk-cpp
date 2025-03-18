@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateSecurityGroupVpcRequest::AssociateSecurityGroupVpcRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSecurityGroupVpcRequest::SerializePayload() const
 {
   Aws::StringStream ss;

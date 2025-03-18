@@ -35,7 +35,7 @@ namespace Model
   class RecommendationRelatedAnomalySourceDetail
   {
   public:
-    AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail();
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail() = default;
     AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
      * information about the analyzed metrics that displayed anomalous behavior. </p>
      */
-    inline const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& GetCloudWatchMetrics() const{ return m_cloudWatchMetrics; }
+    inline const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& GetCloudWatchMetrics() const { return m_cloudWatchMetrics; }
     inline bool CloudWatchMetricsHasBeenSet() const { return m_cloudWatchMetricsHasBeenSet; }
-    inline void SetCloudWatchMetrics(const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = value; }
-    inline void SetCloudWatchMetrics(Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::move(value); }
-    inline RecommendationRelatedAnomalySourceDetail& WithCloudWatchMetrics(const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& value) { SetCloudWatchMetrics(value); return *this;}
-    inline RecommendationRelatedAnomalySourceDetail& WithCloudWatchMetrics(Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>&& value) { SetCloudWatchMetrics(std::move(value)); return *this;}
-    inline RecommendationRelatedAnomalySourceDetail& AddCloudWatchMetrics(const RecommendationRelatedCloudWatchMetricsSourceDetail& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(value); return *this; }
-    inline RecommendationRelatedAnomalySourceDetail& AddCloudWatchMetrics(RecommendationRelatedCloudWatchMetricsSourceDetail&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(std::move(value)); return *this; }
+    template<typename CloudWatchMetricsT = Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>>
+    void SetCloudWatchMetrics(CloudWatchMetricsT&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::forward<CloudWatchMetricsT>(value); }
+    template<typename CloudWatchMetricsT = Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>>
+    RecommendationRelatedAnomalySourceDetail& WithCloudWatchMetrics(CloudWatchMetricsT&& value) { SetCloudWatchMetrics(std::forward<CloudWatchMetricsT>(value)); return *this;}
+    template<typename CloudWatchMetricsT = RecommendationRelatedCloudWatchMetricsSourceDetail>
+    RecommendationRelatedAnomalySourceDetail& AddCloudWatchMetrics(CloudWatchMetricsT&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.emplace_back(std::forward<CloudWatchMetricsT>(value)); return *this; }
     ///@}
   private:
 

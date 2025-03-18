@@ -24,7 +24,7 @@ namespace Model
   class DescribeAlarmsRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API DescribeAlarmsRequest();
+    AWS_CLOUDWATCH_API DescribeAlarmsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The names of the alarms to retrieve information about.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
+    inline const Aws::Vector<Aws::String>& GetAlarmNames() const { return m_alarmNames; }
     inline bool AlarmNamesHasBeenSet() const { return m_alarmNamesHasBeenSet; }
-    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
-    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::move(value); }
-    inline DescribeAlarmsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
-    inline DescribeAlarmsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
-    inline DescribeAlarmsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(std::move(value)); return *this; }
-    inline DescribeAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+    template<typename AlarmNamesT = Aws::Vector<Aws::String>>
+    void SetAlarmNames(AlarmNamesT&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::forward<AlarmNamesT>(value); }
+    template<typename AlarmNamesT = Aws::Vector<Aws::String>>
+    DescribeAlarmsRequest& WithAlarmNames(AlarmNamesT&& value) { SetAlarmNames(std::forward<AlarmNamesT>(value)); return *this;}
+    template<typename AlarmNamesT = Aws::String>
+    DescribeAlarmsRequest& AddAlarmNames(AlarmNamesT&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.emplace_back(std::forward<AlarmNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +59,12 @@ namespace Model
      * about all alarms that have names that start with this prefix.</p> <p>If this
      * parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
      */
-    inline const Aws::String& GetAlarmNamePrefix() const{ return m_alarmNamePrefix; }
+    inline const Aws::String& GetAlarmNamePrefix() const { return m_alarmNamePrefix; }
     inline bool AlarmNamePrefixHasBeenSet() const { return m_alarmNamePrefixHasBeenSet; }
-    inline void SetAlarmNamePrefix(const Aws::String& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = value; }
-    inline void SetAlarmNamePrefix(Aws::String&& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = std::move(value); }
-    inline void SetAlarmNamePrefix(const char* value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix.assign(value); }
-    inline DescribeAlarmsRequest& WithAlarmNamePrefix(const Aws::String& value) { SetAlarmNamePrefix(value); return *this;}
-    inline DescribeAlarmsRequest& WithAlarmNamePrefix(Aws::String&& value) { SetAlarmNamePrefix(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& WithAlarmNamePrefix(const char* value) { SetAlarmNamePrefix(value); return *this;}
+    template<typename AlarmNamePrefixT = Aws::String>
+    void SetAlarmNamePrefix(AlarmNamePrefixT&& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = std::forward<AlarmNamePrefixT>(value); }
+    template<typename AlarmNamePrefixT = Aws::String>
+    DescribeAlarmsRequest& WithAlarmNamePrefix(AlarmNamePrefixT&& value) { SetAlarmNamePrefix(std::forward<AlarmNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +78,13 @@ namespace Model
      * <code>CompositeAlarms</code>, the operation returns only a list of composite
      * alarms, and does not return any metric alarms.</p>
      */
-    inline const Aws::Vector<AlarmType>& GetAlarmTypes() const{ return m_alarmTypes; }
+    inline const Aws::Vector<AlarmType>& GetAlarmTypes() const { return m_alarmTypes; }
     inline bool AlarmTypesHasBeenSet() const { return m_alarmTypesHasBeenSet; }
-    inline void SetAlarmTypes(const Aws::Vector<AlarmType>& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = value; }
-    inline void SetAlarmTypes(Aws::Vector<AlarmType>&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = std::move(value); }
-    inline DescribeAlarmsRequest& WithAlarmTypes(const Aws::Vector<AlarmType>& value) { SetAlarmTypes(value); return *this;}
-    inline DescribeAlarmsRequest& WithAlarmTypes(Aws::Vector<AlarmType>&& value) { SetAlarmTypes(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& AddAlarmTypes(const AlarmType& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(value); return *this; }
-    inline DescribeAlarmsRequest& AddAlarmTypes(AlarmType&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(std::move(value)); return *this; }
+    template<typename AlarmTypesT = Aws::Vector<AlarmType>>
+    void SetAlarmTypes(AlarmTypesT&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = std::forward<AlarmTypesT>(value); }
+    template<typename AlarmTypesT = Aws::Vector<AlarmType>>
+    DescribeAlarmsRequest& WithAlarmTypes(AlarmTypesT&& value) { SetAlarmTypes(std::forward<AlarmTypesT>(value)); return *this;}
+    inline DescribeAlarmsRequest& AddAlarmTypes(AlarmType value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * operation and specify the parent alarm names in the <code>AlarmNames</code>
      * parameter.</p> 
      */
-    inline const Aws::String& GetChildrenOfAlarmName() const{ return m_childrenOfAlarmName; }
+    inline const Aws::String& GetChildrenOfAlarmName() const { return m_childrenOfAlarmName; }
     inline bool ChildrenOfAlarmNameHasBeenSet() const { return m_childrenOfAlarmNameHasBeenSet; }
-    inline void SetChildrenOfAlarmName(const Aws::String& value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName = value; }
-    inline void SetChildrenOfAlarmName(Aws::String&& value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName = std::move(value); }
-    inline void SetChildrenOfAlarmName(const char* value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName.assign(value); }
-    inline DescribeAlarmsRequest& WithChildrenOfAlarmName(const Aws::String& value) { SetChildrenOfAlarmName(value); return *this;}
-    inline DescribeAlarmsRequest& WithChildrenOfAlarmName(Aws::String&& value) { SetChildrenOfAlarmName(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& WithChildrenOfAlarmName(const char* value) { SetChildrenOfAlarmName(value); return *this;}
+    template<typename ChildrenOfAlarmNameT = Aws::String>
+    void SetChildrenOfAlarmName(ChildrenOfAlarmNameT&& value) { m_childrenOfAlarmNameHasBeenSet = true; m_childrenOfAlarmName = std::forward<ChildrenOfAlarmNameT>(value); }
+    template<typename ChildrenOfAlarmNameT = Aws::String>
+    DescribeAlarmsRequest& WithChildrenOfAlarmName(ChildrenOfAlarmNameT&& value) { SetChildrenOfAlarmName(std::forward<ChildrenOfAlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +128,12 @@ namespace Model
      * alarms, perform another <code>DescribeAlarms</code> operation and specify the
      * parent alarm names in the <code>AlarmNames</code> parameter.</p> 
      */
-    inline const Aws::String& GetParentsOfAlarmName() const{ return m_parentsOfAlarmName; }
+    inline const Aws::String& GetParentsOfAlarmName() const { return m_parentsOfAlarmName; }
     inline bool ParentsOfAlarmNameHasBeenSet() const { return m_parentsOfAlarmNameHasBeenSet; }
-    inline void SetParentsOfAlarmName(const Aws::String& value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName = value; }
-    inline void SetParentsOfAlarmName(Aws::String&& value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName = std::move(value); }
-    inline void SetParentsOfAlarmName(const char* value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName.assign(value); }
-    inline DescribeAlarmsRequest& WithParentsOfAlarmName(const Aws::String& value) { SetParentsOfAlarmName(value); return *this;}
-    inline DescribeAlarmsRequest& WithParentsOfAlarmName(Aws::String&& value) { SetParentsOfAlarmName(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& WithParentsOfAlarmName(const char* value) { SetParentsOfAlarmName(value); return *this;}
+    template<typename ParentsOfAlarmNameT = Aws::String>
+    void SetParentsOfAlarmName(ParentsOfAlarmNameT&& value) { m_parentsOfAlarmNameHasBeenSet = true; m_parentsOfAlarmName = std::forward<ParentsOfAlarmNameT>(value); }
+    template<typename ParentsOfAlarmNameT = Aws::String>
+    DescribeAlarmsRequest& WithParentsOfAlarmName(ParentsOfAlarmNameT&& value) { SetParentsOfAlarmName(std::forward<ParentsOfAlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +141,10 @@ namespace Model
      * <p>Specify this parameter to receive information only about alarms that are
      * currently in the state that you specify.</p>
      */
-    inline const StateValue& GetStateValue() const{ return m_stateValue; }
+    inline StateValue GetStateValue() const { return m_stateValue; }
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
-    inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
-    inline void SetStateValue(StateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
-    inline DescribeAlarmsRequest& WithStateValue(const StateValue& value) { SetStateValue(value); return *this;}
-    inline DescribeAlarmsRequest& WithStateValue(StateValue&& value) { SetStateValue(std::move(value)); return *this;}
+    inline void SetStateValue(StateValue value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+    inline DescribeAlarmsRequest& WithStateValue(StateValue value) { SetStateValue(value); return *this;}
     ///@}
 
     ///@{
@@ -163,21 +153,19 @@ namespace Model
      * alarms that use a certain alarm action. For example, you could specify the ARN
      * of an SNS topic to find all alarms that send notifications to that topic.</p>
      */
-    inline const Aws::String& GetActionPrefix() const{ return m_actionPrefix; }
+    inline const Aws::String& GetActionPrefix() const { return m_actionPrefix; }
     inline bool ActionPrefixHasBeenSet() const { return m_actionPrefixHasBeenSet; }
-    inline void SetActionPrefix(const Aws::String& value) { m_actionPrefixHasBeenSet = true; m_actionPrefix = value; }
-    inline void SetActionPrefix(Aws::String&& value) { m_actionPrefixHasBeenSet = true; m_actionPrefix = std::move(value); }
-    inline void SetActionPrefix(const char* value) { m_actionPrefixHasBeenSet = true; m_actionPrefix.assign(value); }
-    inline DescribeAlarmsRequest& WithActionPrefix(const Aws::String& value) { SetActionPrefix(value); return *this;}
-    inline DescribeAlarmsRequest& WithActionPrefix(Aws::String&& value) { SetActionPrefix(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& WithActionPrefix(const char* value) { SetActionPrefix(value); return *this;}
+    template<typename ActionPrefixT = Aws::String>
+    void SetActionPrefix(ActionPrefixT&& value) { m_actionPrefixHasBeenSet = true; m_actionPrefix = std::forward<ActionPrefixT>(value); }
+    template<typename ActionPrefixT = Aws::String>
+    DescribeAlarmsRequest& WithActionPrefix(ActionPrefixT&& value) { SetActionPrefix(std::forward<ActionPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of alarm descriptions to retrieve.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeAlarmsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -188,14 +176,12 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeAlarmsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAlarmsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAlarmsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAlarmsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -214,13 +200,13 @@ namespace Model
     Aws::String m_parentsOfAlarmName;
     bool m_parentsOfAlarmNameHasBeenSet = false;
 
-    StateValue m_stateValue;
+    StateValue m_stateValue{StateValue::NOT_SET};
     bool m_stateValueHasBeenSet = false;
 
     Aws::String m_actionPrefix;
     bool m_actionPrefixHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

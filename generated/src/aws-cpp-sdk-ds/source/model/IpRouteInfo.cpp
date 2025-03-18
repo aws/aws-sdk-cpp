@@ -18,19 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-IpRouteInfo::IpRouteInfo() : 
-    m_directoryIdHasBeenSet(false),
-    m_cidrIpHasBeenSet(false),
-    m_ipRouteStatusMsg(IpRouteStatusMsg::NOT_SET),
-    m_ipRouteStatusMsgHasBeenSet(false),
-    m_addedDateTimeHasBeenSet(false),
-    m_ipRouteStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 IpRouteInfo::IpRouteInfo(JsonView jsonValue)
-  : IpRouteInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ IpRouteInfo& IpRouteInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrIp"))
   {
     m_cidrIp = jsonValue.GetString("CidrIp");
-
     m_cidrIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRouteStatusMsg"))
   {
     m_ipRouteStatusMsg = IpRouteStatusMsgMapper::GetIpRouteStatusMsgForName(jsonValue.GetString("IpRouteStatusMsg"));
-
     m_ipRouteStatusMsgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddedDateTime"))
   {
     m_addedDateTime = jsonValue.GetDouble("AddedDateTime");
-
     m_addedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRouteStatusReason"))
   {
     m_ipRouteStatusReason = jsonValue.GetString("IpRouteStatusReason");
-
     m_ipRouteStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

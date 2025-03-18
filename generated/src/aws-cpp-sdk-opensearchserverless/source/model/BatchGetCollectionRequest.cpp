@@ -12,12 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCollectionRequest::BatchGetCollectionRequest() : 
-    m_idsHasBeenSet(false),
-    m_namesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCollectionRequest::SerializePayload() const
 {
   JsonValue payload;

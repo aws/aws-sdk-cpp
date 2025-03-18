@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateActiveModelVersionResult::UpdateActiveModelVersionResult() : 
-    m_currentActiveVersion(0),
-    m_previousActiveVersion(0)
-{
-}
-
 UpdateActiveModelVersionResult::UpdateActiveModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateActiveModelVersionResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ UpdateActiveModelVersionResult& UpdateActiveModelVersionResult::operator =(const
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
+    m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
+    m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentActiveVersion"))
   {
     m_currentActiveVersion = jsonValue.GetInt64("CurrentActiveVersion");
-
+    m_currentActiveVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousActiveVersion"))
   {
     m_previousActiveVersion = jsonValue.GetInt64("PreviousActiveVersion");
-
+    m_previousActiveVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentActiveVersionArn"))
   {
     m_currentActiveVersionArn = jsonValue.GetString("CurrentActiveVersionArn");
-
+    m_currentActiveVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousActiveVersionArn"))
   {
     m_previousActiveVersionArn = jsonValue.GetString("PreviousActiveVersionArn");
-
+    m_previousActiveVersionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

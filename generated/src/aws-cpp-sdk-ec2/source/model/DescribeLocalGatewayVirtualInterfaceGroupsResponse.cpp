@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocalGatewayVirtualInterfaceGroupsResponse::DescribeLocalGatewayVirtualInterfaceGroupsResponse()
-{
-}
-
 DescribeLocalGatewayVirtualInterfaceGroupsResponse::DescribeLocalGatewayVirtualInterfaceGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualI
     if(!localGatewayVirtualInterfaceGroupsNode.IsNull())
     {
       XmlNode localGatewayVirtualInterfaceGroupsMember = localGatewayVirtualInterfaceGroupsNode.FirstChild("item");
+      m_localGatewayVirtualInterfaceGroupsHasBeenSet = !localGatewayVirtualInterfaceGroupsMember.IsNull();
       while(!localGatewayVirtualInterfaceGroupsMember.IsNull())
       {
         m_localGatewayVirtualInterfaceGroups.push_back(localGatewayVirtualInterfaceGroupsMember);
         localGatewayVirtualInterfaceGroupsMember = localGatewayVirtualInterfaceGroupsMember.NextNode("item");
       }
 
+      m_localGatewayVirtualInterfaceGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualI
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLocalGatewayVirtualInterfaceGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

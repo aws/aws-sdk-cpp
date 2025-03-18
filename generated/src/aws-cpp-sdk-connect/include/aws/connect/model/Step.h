@@ -34,7 +34,7 @@ namespace Model
   class Step
   {
   public:
-    AWS_CONNECT_API Step();
+    AWS_CONNECT_API Step() = default;
     AWS_CONNECT_API Step(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,34 @@ namespace Model
     /**
      * <p>An object to specify the expiration of a routing step.</p>
      */
-    inline const Expiry& GetExpiry() const{ return m_expiry; }
+    inline const Expiry& GetExpiry() const { return m_expiry; }
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-    inline void SetExpiry(const Expiry& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-    inline void SetExpiry(Expiry&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-    inline Step& WithExpiry(const Expiry& value) { SetExpiry(value); return *this;}
-    inline Step& WithExpiry(Expiry&& value) { SetExpiry(std::move(value)); return *this;}
+    template<typename ExpiryT = Expiry>
+    void SetExpiry(ExpiryT&& value) { m_expiryHasBeenSet = true; m_expiry = std::forward<ExpiryT>(value); }
+    template<typename ExpiryT = Expiry>
+    Step& WithExpiry(ExpiryT&& value) { SetExpiry(std::forward<ExpiryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A tagged union to specify expression for a routing step.</p>
      */
-    inline const Expression& GetExpression() const{ return m_expression; }
+    inline const Expression& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Expression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Expression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline Step& WithExpression(const Expression& value) { SetExpression(value); return *this;}
-    inline Step& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
+    template<typename ExpressionT = Expression>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Expression>
+    Step& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents status of the Routing step.</p>
      */
-    inline const RoutingCriteriaStepStatus& GetStatus() const{ return m_status; }
+    inline RoutingCriteriaStepStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RoutingCriteriaStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RoutingCriteriaStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Step& WithStatus(const RoutingCriteriaStepStatus& value) { SetStatus(value); return *this;}
-    inline Step& WithStatus(RoutingCriteriaStepStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RoutingCriteriaStepStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Step& WithStatus(RoutingCriteriaStepStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +81,7 @@ namespace Model
     Expression m_expression;
     bool m_expressionHasBeenSet = false;
 
-    RoutingCriteriaStepStatus m_status;
+    RoutingCriteriaStepStatus m_status{RoutingCriteriaStepStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

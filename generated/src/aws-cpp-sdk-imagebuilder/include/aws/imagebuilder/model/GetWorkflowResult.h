@@ -28,7 +28,7 @@ namespace Model
   class GetWorkflowResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetWorkflowResult();
+    AWS_IMAGEBUILDER_API GetWorkflowResult() = default;
     AWS_IMAGEBUILDER_API GetWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The workflow resource specified in the request.</p>
      */
-    inline const Workflow& GetWorkflow() const{ return m_workflow; }
-    inline void SetWorkflow(const Workflow& value) { m_workflow = value; }
-    inline void SetWorkflow(Workflow&& value) { m_workflow = std::move(value); }
-    inline GetWorkflowResult& WithWorkflow(const Workflow& value) { SetWorkflow(value); return *this;}
-    inline GetWorkflowResult& WithWorkflow(Workflow&& value) { SetWorkflow(std::move(value)); return *this;}
+    inline const Workflow& GetWorkflow() const { return m_workflow; }
+    template<typename WorkflowT = Workflow>
+    void SetWorkflow(WorkflowT&& value) { m_workflowHasBeenSet = true; m_workflow = std::forward<WorkflowT>(value); }
+    template<typename WorkflowT = Workflow>
+    GetWorkflowResult& WithWorkflow(WorkflowT&& value) { SetWorkflow(std::forward<WorkflowT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkflowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Workflow m_workflow;
+    bool m_workflowHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-PrivateRegistryAccess::PrivateRegistryAccess() : 
-    m_ecrImagePullerRoleHasBeenSet(false)
-{
-}
-
 PrivateRegistryAccess::PrivateRegistryAccess(JsonView jsonValue)
-  : PrivateRegistryAccess()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrivateRegistryAccess& PrivateRegistryAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ecrImagePullerRole"))
   {
     m_ecrImagePullerRole = jsonValue.GetObject("ecrImagePullerRole");
-
     m_ecrImagePullerRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

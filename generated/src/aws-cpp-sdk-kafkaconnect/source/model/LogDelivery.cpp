@@ -18,13 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-LogDelivery::LogDelivery() : 
-    m_workerLogDeliveryHasBeenSet(false)
-{
-}
-
 LogDelivery::LogDelivery(JsonView jsonValue)
-  : LogDelivery()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LogDelivery& LogDelivery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workerLogDelivery"))
   {
     m_workerLogDelivery = jsonValue.GetObject("workerLogDelivery");
-
     m_workerLogDeliveryHasBeenSet = true;
   }
-
   return *this;
 }
 

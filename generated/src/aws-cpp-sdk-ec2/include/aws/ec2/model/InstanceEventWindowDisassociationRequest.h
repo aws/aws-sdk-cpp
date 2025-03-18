@@ -34,7 +34,7 @@ namespace Model
   class InstanceEventWindowDisassociationRequest
   {
   public:
-    AWS_EC2_API InstanceEventWindowDisassociationRequest();
+    AWS_EC2_API InstanceEventWindowDisassociationRequest() = default;
     AWS_EC2_API InstanceEventWindowDisassociationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceEventWindowDisassociationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,15 +46,14 @@ namespace Model
     /**
      * <p>The IDs of the instances to disassociate from the event window.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+    inline const Aws::Vector<Aws::String>& GetInstanceIds() const { return m_instanceIds; }
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-    inline InstanceEventWindowDisassociationRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-    inline InstanceEventWindowDisassociationRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-    inline InstanceEventWindowDisassociationRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    inline InstanceEventWindowDisassociationRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-    inline InstanceEventWindowDisassociationRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    void SetInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::forward<InstanceIdsT>(value); }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    InstanceEventWindowDisassociationRequest& WithInstanceIds(InstanceIdsT&& value) { SetInstanceIds(std::forward<InstanceIdsT>(value)); return *this;}
+    template<typename InstanceIdsT = Aws::String>
+    InstanceEventWindowDisassociationRequest& AddInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.emplace_back(std::forward<InstanceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,29 +61,28 @@ namespace Model
      * <p>The instance tags to disassociate from the event window. Any instances
      * associated with the tags will be disassociated from the event window.</p>
      */
-    inline const Aws::Vector<Tag>& GetInstanceTags() const{ return m_instanceTags; }
+    inline const Aws::Vector<Tag>& GetInstanceTags() const { return m_instanceTags; }
     inline bool InstanceTagsHasBeenSet() const { return m_instanceTagsHasBeenSet; }
-    inline void SetInstanceTags(const Aws::Vector<Tag>& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = value; }
-    inline void SetInstanceTags(Aws::Vector<Tag>&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::move(value); }
-    inline InstanceEventWindowDisassociationRequest& WithInstanceTags(const Aws::Vector<Tag>& value) { SetInstanceTags(value); return *this;}
-    inline InstanceEventWindowDisassociationRequest& WithInstanceTags(Aws::Vector<Tag>&& value) { SetInstanceTags(std::move(value)); return *this;}
-    inline InstanceEventWindowDisassociationRequest& AddInstanceTags(const Tag& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.push_back(value); return *this; }
-    inline InstanceEventWindowDisassociationRequest& AddInstanceTags(Tag&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.push_back(std::move(value)); return *this; }
+    template<typename InstanceTagsT = Aws::Vector<Tag>>
+    void SetInstanceTags(InstanceTagsT&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::forward<InstanceTagsT>(value); }
+    template<typename InstanceTagsT = Aws::Vector<Tag>>
+    InstanceEventWindowDisassociationRequest& WithInstanceTags(InstanceTagsT&& value) { SetInstanceTags(std::forward<InstanceTagsT>(value)); return *this;}
+    template<typename InstanceTagsT = Tag>
+    InstanceEventWindowDisassociationRequest& AddInstanceTags(InstanceTagsT&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace_back(std::forward<InstanceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDedicatedHostIds() const{ return m_dedicatedHostIds; }
+    inline const Aws::Vector<Aws::String>& GetDedicatedHostIds() const { return m_dedicatedHostIds; }
     inline bool DedicatedHostIdsHasBeenSet() const { return m_dedicatedHostIdsHasBeenSet; }
-    inline void SetDedicatedHostIds(const Aws::Vector<Aws::String>& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = value; }
-    inline void SetDedicatedHostIds(Aws::Vector<Aws::String>&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = std::move(value); }
-    inline InstanceEventWindowDisassociationRequest& WithDedicatedHostIds(const Aws::Vector<Aws::String>& value) { SetDedicatedHostIds(value); return *this;}
-    inline InstanceEventWindowDisassociationRequest& WithDedicatedHostIds(Aws::Vector<Aws::String>&& value) { SetDedicatedHostIds(std::move(value)); return *this;}
-    inline InstanceEventWindowDisassociationRequest& AddDedicatedHostIds(const Aws::String& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(value); return *this; }
-    inline InstanceEventWindowDisassociationRequest& AddDedicatedHostIds(Aws::String&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(std::move(value)); return *this; }
-    inline InstanceEventWindowDisassociationRequest& AddDedicatedHostIds(const char* value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(value); return *this; }
+    template<typename DedicatedHostIdsT = Aws::Vector<Aws::String>>
+    void SetDedicatedHostIds(DedicatedHostIdsT&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = std::forward<DedicatedHostIdsT>(value); }
+    template<typename DedicatedHostIdsT = Aws::Vector<Aws::String>>
+    InstanceEventWindowDisassociationRequest& WithDedicatedHostIds(DedicatedHostIdsT&& value) { SetDedicatedHostIds(std::forward<DedicatedHostIdsT>(value)); return *this;}
+    template<typename DedicatedHostIdsT = Aws::String>
+    InstanceEventWindowDisassociationRequest& AddDedicatedHostIds(DedicatedHostIdsT&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.emplace_back(std::forward<DedicatedHostIdsT>(value)); return *this; }
     ///@}
   private:
 

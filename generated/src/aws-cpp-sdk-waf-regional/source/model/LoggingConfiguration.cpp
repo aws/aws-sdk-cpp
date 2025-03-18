@@ -18,15 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_resourceArnHasBeenSet(false),
-    m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogDestinationConfigs"))
   {
     Aws::Utils::Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
@@ -49,7 +39,6 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     }
     m_logDestinationConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedactedFields"))
   {
     Aws::Utils::Array<JsonView> redactedFieldsJsonList = jsonValue.GetArray("RedactedFields");
@@ -59,7 +48,6 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     }
     m_redactedFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

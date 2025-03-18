@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcBlockPublicAccessOptionsRequest::ModifyVpcBlockPublicAccessOptionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_internetGatewayBlockMode(InternetGatewayBlockMode::NOT_SET),
-    m_internetGatewayBlockModeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcBlockPublicAccessOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

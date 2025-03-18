@@ -34,7 +34,7 @@ namespace Model
   class ReviewInformation
   {
   public:
-    AWS_SSM_API ReviewInformation();
+    AWS_SSM_API ReviewInformation() = default;
     AWS_SSM_API ReviewInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ReviewInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,41 @@ namespace Model
     /**
      * <p>The time that the reviewer took action on the document review request.</p>
      */
-    inline const Aws::Utils::DateTime& GetReviewedTime() const{ return m_reviewedTime; }
+    inline const Aws::Utils::DateTime& GetReviewedTime() const { return m_reviewedTime; }
     inline bool ReviewedTimeHasBeenSet() const { return m_reviewedTimeHasBeenSet; }
-    inline void SetReviewedTime(const Aws::Utils::DateTime& value) { m_reviewedTimeHasBeenSet = true; m_reviewedTime = value; }
-    inline void SetReviewedTime(Aws::Utils::DateTime&& value) { m_reviewedTimeHasBeenSet = true; m_reviewedTime = std::move(value); }
-    inline ReviewInformation& WithReviewedTime(const Aws::Utils::DateTime& value) { SetReviewedTime(value); return *this;}
-    inline ReviewInformation& WithReviewedTime(Aws::Utils::DateTime&& value) { SetReviewedTime(std::move(value)); return *this;}
+    template<typename ReviewedTimeT = Aws::Utils::DateTime>
+    void SetReviewedTime(ReviewedTimeT&& value) { m_reviewedTimeHasBeenSet = true; m_reviewedTime = std::forward<ReviewedTimeT>(value); }
+    template<typename ReviewedTimeT = Aws::Utils::DateTime>
+    ReviewInformation& WithReviewedTime(ReviewedTimeT&& value) { SetReviewedTime(std::forward<ReviewedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the document review request.</p>
      */
-    inline const ReviewStatus& GetStatus() const{ return m_status; }
+    inline ReviewStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReviewStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReviewStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReviewInformation& WithStatus(const ReviewStatus& value) { SetStatus(value); return *this;}
-    inline ReviewInformation& WithStatus(ReviewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReviewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReviewInformation& WithStatus(ReviewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reviewer assigned to take action on the document review request.</p>
      */
-    inline const Aws::String& GetReviewer() const{ return m_reviewer; }
+    inline const Aws::String& GetReviewer() const { return m_reviewer; }
     inline bool ReviewerHasBeenSet() const { return m_reviewerHasBeenSet; }
-    inline void SetReviewer(const Aws::String& value) { m_reviewerHasBeenSet = true; m_reviewer = value; }
-    inline void SetReviewer(Aws::String&& value) { m_reviewerHasBeenSet = true; m_reviewer = std::move(value); }
-    inline void SetReviewer(const char* value) { m_reviewerHasBeenSet = true; m_reviewer.assign(value); }
-    inline ReviewInformation& WithReviewer(const Aws::String& value) { SetReviewer(value); return *this;}
-    inline ReviewInformation& WithReviewer(Aws::String&& value) { SetReviewer(std::move(value)); return *this;}
-    inline ReviewInformation& WithReviewer(const char* value) { SetReviewer(value); return *this;}
+    template<typename ReviewerT = Aws::String>
+    void SetReviewer(ReviewerT&& value) { m_reviewerHasBeenSet = true; m_reviewer = std::forward<ReviewerT>(value); }
+    template<typename ReviewerT = Aws::String>
+    ReviewInformation& WithReviewer(ReviewerT&& value) { SetReviewer(std::forward<ReviewerT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_reviewedTime;
+    Aws::Utils::DateTime m_reviewedTime{};
     bool m_reviewedTimeHasBeenSet = false;
 
-    ReviewStatus m_status;
+    ReviewStatus m_status{ReviewStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reviewer;

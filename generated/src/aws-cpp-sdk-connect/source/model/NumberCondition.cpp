@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-NumberCondition::NumberCondition() : 
-    m_fieldNameHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_comparisonType(NumberComparisonType::NOT_SET),
-    m_comparisonTypeHasBeenSet(false)
-{
-}
-
 NumberCondition::NumberCondition(JsonView jsonValue)
-  : NumberCondition()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ NumberCondition& NumberCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetInteger("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetInteger("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonType"))
   {
     m_comparisonType = NumberComparisonTypeMapper::GetNumberComparisonTypeForName(jsonValue.GetString("ComparisonType"));
-
     m_comparisonTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

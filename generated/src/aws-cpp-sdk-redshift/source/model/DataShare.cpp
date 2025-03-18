@@ -20,20 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DataShare::DataShare() : 
-    m_dataShareArnHasBeenSet(false),
-    m_producerArnHasBeenSet(false),
-    m_allowPubliclyAccessibleConsumers(false),
-    m_allowPubliclyAccessibleConsumersHasBeenSet(false),
-    m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_dataShareType(DataShareType::NOT_SET),
-    m_dataShareTypeHasBeenSet(false)
-{
-}
-
 DataShare::DataShare(const XmlNode& xmlNode)
-  : DataShare()
 {
   *this = xmlNode;
 }
@@ -66,6 +53,7 @@ DataShare& DataShare::operator =(const XmlNode& xmlNode)
     if(!dataShareAssociationsNode.IsNull())
     {
       XmlNode dataShareAssociationsMember = dataShareAssociationsNode.FirstChild("member");
+      m_dataShareAssociationsHasBeenSet = !dataShareAssociationsMember.IsNull();
       while(!dataShareAssociationsMember.IsNull())
       {
         m_dataShareAssociations.push_back(dataShareAssociationsMember);
@@ -83,7 +71,7 @@ DataShare& DataShare::operator =(const XmlNode& xmlNode)
     XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
     if(!dataShareTypeNode.IsNull())
     {
-      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()).c_str());
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()));
       m_dataShareTypeHasBeenSet = true;
     }
   }

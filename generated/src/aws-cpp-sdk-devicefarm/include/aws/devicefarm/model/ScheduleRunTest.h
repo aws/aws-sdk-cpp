@@ -35,7 +35,7 @@ namespace Model
   class ScheduleRunTest
   {
   public:
-    AWS_DEVICEFARM_API ScheduleRunTest();
+    AWS_DEVICEFARM_API ScheduleRunTest() = default;
     AWS_DEVICEFARM_API ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,54 +52,46 @@ namespace Model
      * <p>APPIUM_WEB_RUBY</p> </li> <li> <p>INSTRUMENTATION</p> </li> <li>
      * <p>XCTEST</p> </li> <li> <p>XCTEST_UI</p> </li> </ul>
      */
-    inline const TestType& GetType() const{ return m_type; }
+    inline TestType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TestType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ScheduleRunTest& WithType(const TestType& value) { SetType(value); return *this;}
-    inline ScheduleRunTest& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TestType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ScheduleRunTest& WithType(TestType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the uploaded test to be run.</p>
      */
-    inline const Aws::String& GetTestPackageArn() const{ return m_testPackageArn; }
+    inline const Aws::String& GetTestPackageArn() const { return m_testPackageArn; }
     inline bool TestPackageArnHasBeenSet() const { return m_testPackageArnHasBeenSet; }
-    inline void SetTestPackageArn(const Aws::String& value) { m_testPackageArnHasBeenSet = true; m_testPackageArn = value; }
-    inline void SetTestPackageArn(Aws::String&& value) { m_testPackageArnHasBeenSet = true; m_testPackageArn = std::move(value); }
-    inline void SetTestPackageArn(const char* value) { m_testPackageArnHasBeenSet = true; m_testPackageArn.assign(value); }
-    inline ScheduleRunTest& WithTestPackageArn(const Aws::String& value) { SetTestPackageArn(value); return *this;}
-    inline ScheduleRunTest& WithTestPackageArn(Aws::String&& value) { SetTestPackageArn(std::move(value)); return *this;}
-    inline ScheduleRunTest& WithTestPackageArn(const char* value) { SetTestPackageArn(value); return *this;}
+    template<typename TestPackageArnT = Aws::String>
+    void SetTestPackageArn(TestPackageArnT&& value) { m_testPackageArnHasBeenSet = true; m_testPackageArn = std::forward<TestPackageArnT>(value); }
+    template<typename TestPackageArnT = Aws::String>
+    ScheduleRunTest& WithTestPackageArn(TestPackageArnT&& value) { SetTestPackageArn(std::forward<TestPackageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the YAML-formatted test specification.</p>
      */
-    inline const Aws::String& GetTestSpecArn() const{ return m_testSpecArn; }
+    inline const Aws::String& GetTestSpecArn() const { return m_testSpecArn; }
     inline bool TestSpecArnHasBeenSet() const { return m_testSpecArnHasBeenSet; }
-    inline void SetTestSpecArn(const Aws::String& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = value; }
-    inline void SetTestSpecArn(Aws::String&& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = std::move(value); }
-    inline void SetTestSpecArn(const char* value) { m_testSpecArnHasBeenSet = true; m_testSpecArn.assign(value); }
-    inline ScheduleRunTest& WithTestSpecArn(const Aws::String& value) { SetTestSpecArn(value); return *this;}
-    inline ScheduleRunTest& WithTestSpecArn(Aws::String&& value) { SetTestSpecArn(std::move(value)); return *this;}
-    inline ScheduleRunTest& WithTestSpecArn(const char* value) { SetTestSpecArn(value); return *this;}
+    template<typename TestSpecArnT = Aws::String>
+    void SetTestSpecArn(TestSpecArnT&& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = std::forward<TestSpecArnT>(value); }
+    template<typename TestSpecArnT = Aws::String>
+    ScheduleRunTest& WithTestSpecArn(TestSpecArnT&& value) { SetTestSpecArn(std::forward<TestSpecArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test's filter.</p>
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline ScheduleRunTest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline ScheduleRunTest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline ScheduleRunTest& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    ScheduleRunTest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,23 +125,20 @@ namespace Model
      * <code>LoginTests/testValid,LoginTests/testInvalid</code> </p> </li> </ul> </li>
      * </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ScheduleRunTest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline ScheduleRunTest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ScheduleRunTest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ScheduleRunTest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ScheduleRunTest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ScheduleRunTest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    ScheduleRunTest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    ScheduleRunTest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    TestType m_type;
+    TestType m_type{TestType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_testPackageArn;

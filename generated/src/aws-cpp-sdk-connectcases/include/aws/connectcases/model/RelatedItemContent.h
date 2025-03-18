@@ -34,7 +34,7 @@ namespace Model
   class RelatedItemContent
   {
   public:
-    AWS_CONNECTCASES_API RelatedItemContent();
+    AWS_CONNECTCASES_API RelatedItemContent() = default;
     AWS_CONNECTCASES_API RelatedItemContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API RelatedItemContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Represents the content of a comment to be returned to agents.</p>
      */
-    inline const CommentContent& GetComment() const{ return m_comment; }
+    inline const CommentContent& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const CommentContent& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(CommentContent&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline RelatedItemContent& WithComment(const CommentContent& value) { SetComment(value); return *this;}
-    inline RelatedItemContent& WithComment(CommentContent&& value) { SetComment(std::move(value)); return *this;}
+    template<typename CommentT = CommentContent>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = CommentContent>
+    RelatedItemContent& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the content of a contact to be returned to agents.</p>
      */
-    inline const ContactContent& GetContact() const{ return m_contact; }
+    inline const ContactContent& GetContact() const { return m_contact; }
     inline bool ContactHasBeenSet() const { return m_contactHasBeenSet; }
-    inline void SetContact(const ContactContent& value) { m_contactHasBeenSet = true; m_contact = value; }
-    inline void SetContact(ContactContent&& value) { m_contactHasBeenSet = true; m_contact = std::move(value); }
-    inline RelatedItemContent& WithContact(const ContactContent& value) { SetContact(value); return *this;}
-    inline RelatedItemContent& WithContact(ContactContent&& value) { SetContact(std::move(value)); return *this;}
+    template<typename ContactT = ContactContent>
+    void SetContact(ContactT&& value) { m_contactHasBeenSet = true; m_contact = std::forward<ContactT>(value); }
+    template<typename ContactT = ContactContent>
+    RelatedItemContent& WithContact(ContactT&& value) { SetContact(std::forward<ContactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the content of a File to be returned to agents.</p>
      */
-    inline const FileContent& GetFile() const{ return m_file; }
+    inline const FileContent& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const FileContent& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(FileContent&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline RelatedItemContent& WithFile(const FileContent& value) { SetFile(value); return *this;}
-    inline RelatedItemContent& WithFile(FileContent&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = FileContent>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = FileContent>
+    RelatedItemContent& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchCreateChannelMembershipResult::BatchCreateChannelMembershipResult()
-{
-}
-
 BatchCreateChannelMembershipResult::BatchCreateChannelMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchCreateChannelMembershipResult& BatchCreateChannelMembershipResult::operator
   if(jsonValue.ValueExists("BatchChannelMemberships"))
   {
     m_batchChannelMemberships = jsonValue.GetObject("BatchChannelMemberships");
-
+    m_batchChannelMembershipsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -42,14 +37,15 @@ BatchCreateChannelMembershipResult& BatchCreateChannelMembershipResult::operator
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

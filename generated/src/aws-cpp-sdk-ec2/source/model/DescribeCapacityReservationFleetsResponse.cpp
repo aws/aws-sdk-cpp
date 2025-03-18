@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCapacityReservationFleetsResponse::DescribeCapacityReservationFleetsResponse()
-{
-}
-
 DescribeCapacityReservationFleetsResponse::DescribeCapacityReservationFleetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeCapacityReservationFleetsResponse& DescribeCapacityReservationFleetsResp
     if(!capacityReservationFleetsNode.IsNull())
     {
       XmlNode capacityReservationFleetsMember = capacityReservationFleetsNode.FirstChild("item");
+      m_capacityReservationFleetsHasBeenSet = !capacityReservationFleetsMember.IsNull();
       while(!capacityReservationFleetsMember.IsNull())
       {
         m_capacityReservationFleets.push_back(capacityReservationFleetsMember);
         capacityReservationFleetsMember = capacityReservationFleetsMember.NextNode("item");
       }
 
+      m_capacityReservationFleetsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeCapacityReservationFleetsResponse& DescribeCapacityReservationFleetsResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeCapacityReservationFleetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

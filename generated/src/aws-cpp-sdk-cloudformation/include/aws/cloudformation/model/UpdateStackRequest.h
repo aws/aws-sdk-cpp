@@ -29,7 +29,7 @@ namespace Model
   class UpdateStackRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API UpdateStackRequest();
+    AWS_CLOUDFORMATION_API UpdateStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline UpdateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline UpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    UpdateStackRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * the following parameters: <code>TemplateBody</code>, <code>TemplateURL</code>,
      * or set the <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline UpdateStackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline UpdateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    UpdateStackRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
      * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
-    inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+    inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-    inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-    inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-    inline UpdateStackRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-    inline UpdateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    template<typename TemplateURLT = Aws::String>
+    void SetTemplateURL(TemplateURLT&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::forward<TemplateURLT>(value); }
+    template<typename TemplateURLT = Aws::String>
+    UpdateStackRequest& WithTemplateURL(TemplateURLT&& value) { SetTemplateURL(std::forward<TemplateURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * parameters: <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
      * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
-    inline bool GetUsePreviousTemplate() const{ return m_usePreviousTemplate; }
+    inline bool GetUsePreviousTemplate() const { return m_usePreviousTemplate; }
     inline bool UsePreviousTemplateHasBeenSet() const { return m_usePreviousTemplateHasBeenSet; }
     inline void SetUsePreviousTemplate(bool value) { m_usePreviousTemplateHasBeenSet = true; m_usePreviousTemplate = value; }
     inline UpdateStackRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
@@ -116,14 +110,12 @@ namespace Model
      * during this update. If you don't specify a stack policy, the current policy that
      * is associated with the stack will be used.</p>
      */
-    inline const Aws::String& GetStackPolicyDuringUpdateBody() const{ return m_stackPolicyDuringUpdateBody; }
+    inline const Aws::String& GetStackPolicyDuringUpdateBody() const { return m_stackPolicyDuringUpdateBody; }
     inline bool StackPolicyDuringUpdateBodyHasBeenSet() const { return m_stackPolicyDuringUpdateBodyHasBeenSet; }
-    inline void SetStackPolicyDuringUpdateBody(const Aws::String& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
-    inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = std::move(value); }
-    inline void SetStackPolicyDuringUpdateBody(const char* value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody.assign(value); }
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const Aws::String& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const char* value) { SetStackPolicyDuringUpdateBody(value); return *this;}
+    template<typename StackPolicyDuringUpdateBodyT = Aws::String>
+    void SetStackPolicyDuringUpdateBody(StackPolicyDuringUpdateBodyT&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = std::forward<StackPolicyDuringUpdateBodyT>(value); }
+    template<typename StackPolicyDuringUpdateBodyT = Aws::String>
+    UpdateStackRequest& WithStackPolicyDuringUpdateBody(StackPolicyDuringUpdateBodyT&& value) { SetStackPolicyDuringUpdateBody(std::forward<StackPolicyDuringUpdateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +130,12 @@ namespace Model
      * during this update. If you don't specify a stack policy, the current policy that
      * is associated with the stack will be used.</p>
      */
-    inline const Aws::String& GetStackPolicyDuringUpdateURL() const{ return m_stackPolicyDuringUpdateURL; }
+    inline const Aws::String& GetStackPolicyDuringUpdateURL() const { return m_stackPolicyDuringUpdateURL; }
     inline bool StackPolicyDuringUpdateURLHasBeenSet() const { return m_stackPolicyDuringUpdateURLHasBeenSet; }
-    inline void SetStackPolicyDuringUpdateURL(const Aws::String& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
-    inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = std::move(value); }
-    inline void SetStackPolicyDuringUpdateURL(const char* value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL.assign(value); }
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const Aws::String& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const char* value) { SetStackPolicyDuringUpdateURL(value); return *this;}
+    template<typename StackPolicyDuringUpdateURLT = Aws::String>
+    void SetStackPolicyDuringUpdateURL(StackPolicyDuringUpdateURLT&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = std::forward<StackPolicyDuringUpdateURLT>(value); }
+    template<typename StackPolicyDuringUpdateURLT = Aws::String>
+    UpdateStackRequest& WithStackPolicyDuringUpdateURL(StackPolicyDuringUpdateURLT&& value) { SetStackPolicyDuringUpdateURL(std::forward<StackPolicyDuringUpdateURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +145,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline UpdateStackRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline UpdateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    UpdateStackRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    UpdateStackRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -228,14 +218,13 @@ namespace Model
      * </li> </ul>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
      */
-    inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline UpdateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-    inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    UpdateStackRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline UpdateStackRequest& AddCapabilities(Capability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -252,15 +241,14 @@ namespace Model
      * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
      * specified.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline UpdateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    UpdateStackRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    UpdateStackRequest& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -275,14 +263,12 @@ namespace Model
      * stack. If no role is available, CloudFormation uses a temporary session that is
      * generated from your user credentials.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline UpdateStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    UpdateStackRequest& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,12 +276,12 @@ namespace Model
      * <p>The rollback triggers for CloudFormation to monitor during stack creation and
      * updating operations, and for the specified monitoring period afterwards.</p>
      */
-    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+    inline const RollbackConfiguration& GetRollbackConfiguration() const { return m_rollbackConfiguration; }
     inline bool RollbackConfigurationHasBeenSet() const { return m_rollbackConfigurationHasBeenSet; }
-    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
-    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
-    inline UpdateStackRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
-    inline UpdateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    void SetRollbackConfiguration(RollbackConfigurationT&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::forward<RollbackConfigurationT>(value); }
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    UpdateStackRequest& WithRollbackConfiguration(RollbackConfigurationT&& value) { SetRollbackConfiguration(std::forward<RollbackConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -307,14 +293,12 @@ namespace Model
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
-    inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
+    inline const Aws::String& GetStackPolicyBody() const { return m_stackPolicyBody; }
     inline bool StackPolicyBodyHasBeenSet() const { return m_stackPolicyBodyHasBeenSet; }
-    inline void SetStackPolicyBody(const Aws::String& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
-    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::move(value); }
-    inline void SetStackPolicyBody(const char* value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody.assign(value); }
-    inline UpdateStackRequest& WithStackPolicyBody(const Aws::String& value) { SetStackPolicyBody(value); return *this;}
-    inline UpdateStackRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
+    template<typename StackPolicyBodyT = Aws::String>
+    void SetStackPolicyBody(StackPolicyBodyT&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::forward<StackPolicyBodyT>(value); }
+    template<typename StackPolicyBodyT = Aws::String>
+    UpdateStackRequest& WithStackPolicyBody(StackPolicyBodyT&& value) { SetStackPolicyBody(std::forward<StackPolicyBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -328,14 +312,12 @@ namespace Model
      * you created during a stack update. If you don't specify a stack policy, the
      * current policy that is associated with the stack is unchanged.</p>
      */
-    inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
+    inline const Aws::String& GetStackPolicyURL() const { return m_stackPolicyURL; }
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }
-    inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
-    inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::move(value); }
-    inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
-    inline UpdateStackRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
-    inline UpdateStackRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
+    template<typename StackPolicyURLT = Aws::String>
+    void SetStackPolicyURL(StackPolicyURLT&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::forward<StackPolicyURLT>(value); }
+    template<typename StackPolicyURLT = Aws::String>
+    UpdateStackRequest& WithStackPolicyURL(StackPolicyURLT&& value) { SetStackPolicyURL(std::forward<StackPolicyURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -344,15 +326,14 @@ namespace Model
      * CloudFormation associates with the stack. Specify an empty list to remove all
      * notification topics.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
+    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const { return m_notificationARNs; }
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
-    inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
-    inline UpdateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
-    inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
-    inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
-    inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    void SetNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::forward<NotificationARNsT>(value); }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    UpdateStackRequest& WithNotificationARNs(NotificationARNsT&& value) { SetNotificationARNs(std::forward<NotificationARNsT>(value)); return *this;}
+    template<typename NotificationARNsT = Aws::String>
+    UpdateStackRequest& AddNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.emplace_back(std::forward<NotificationARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -363,14 +344,14 @@ namespace Model
      * modify the stack's tags. If you specify an empty value, CloudFormation removes
      * all associated tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline UpdateStackRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdateStackRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdateStackRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -378,7 +359,7 @@ namespace Model
      * <p>Preserve the state of previously provisioned resources when an operation
      * fails.</p> <p>Default: <code>False</code> </p>
      */
-    inline bool GetDisableRollback() const{ return m_disableRollback; }
+    inline bool GetDisableRollback() const { return m_disableRollback; }
     inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
     inline UpdateStackRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
@@ -403,14 +384,12 @@ namespace Model
      * format:
      * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateStackRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -419,7 +398,7 @@ namespace Model
      * operation rolls back. This includes newly created resources marked with a
      * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+    inline bool GetRetainExceptOnCreate() const { return m_retainExceptOnCreate; }
     inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
     inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
     inline UpdateStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
@@ -435,7 +414,7 @@ namespace Model
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet = false;
 
-    bool m_usePreviousTemplate;
+    bool m_usePreviousTemplate{false};
     bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::String m_stackPolicyDuringUpdateBody;
@@ -471,13 +450,13 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_disableRollback;
+    bool m_disableRollback{false};
     bool m_disableRollbackHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreate{false};
     bool m_retainExceptOnCreateHasBeenSet = false;
   };
 

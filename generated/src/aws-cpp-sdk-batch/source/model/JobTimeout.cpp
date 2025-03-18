@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-JobTimeout::JobTimeout() : 
-    m_attemptDurationSeconds(0),
-    m_attemptDurationSecondsHasBeenSet(false)
-{
-}
-
 JobTimeout::JobTimeout(JsonView jsonValue)
-  : JobTimeout()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JobTimeout& JobTimeout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attemptDurationSeconds"))
   {
     m_attemptDurationSeconds = jsonValue.GetInteger("attemptDurationSeconds");
-
     m_attemptDurationSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

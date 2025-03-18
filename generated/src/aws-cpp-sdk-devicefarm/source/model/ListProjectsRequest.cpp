@@ -12,12 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProjectsRequest::ListProjectsRequest() : 
-    m_arnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

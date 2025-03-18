@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-LoadBalancerInfo::LoadBalancerInfo() : 
-    m_elbInfoListHasBeenSet(false),
-    m_targetGroupInfoListHasBeenSet(false),
-    m_targetGroupPairInfoListHasBeenSet(false)
-{
-}
-
 LoadBalancerInfo::LoadBalancerInfo(JsonView jsonValue)
-  : LoadBalancerInfo()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
     }
     m_elbInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetGroupInfoList"))
   {
     Aws::Utils::Array<JsonView> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
@@ -52,7 +43,6 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
     }
     m_targetGroupInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetGroupPairInfoList"))
   {
     Aws::Utils::Array<JsonView> targetGroupPairInfoListJsonList = jsonValue.GetArray("targetGroupPairInfoList");
@@ -62,7 +52,6 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
     }
     m_targetGroupPairInfoListHasBeenSet = true;
   }
-
   return *this;
 }
 

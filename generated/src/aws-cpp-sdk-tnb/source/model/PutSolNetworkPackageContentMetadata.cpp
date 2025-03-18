@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-PutSolNetworkPackageContentMetadata::PutSolNetworkPackageContentMetadata() : 
-    m_nsdHasBeenSet(false)
-{
-}
-
 PutSolNetworkPackageContentMetadata::PutSolNetworkPackageContentMetadata(JsonView jsonValue)
-  : PutSolNetworkPackageContentMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PutSolNetworkPackageContentMetadata& PutSolNetworkPackageContentMetadata::operat
   if(jsonValue.ValueExists("nsd"))
   {
     m_nsd = jsonValue.GetObject("nsd");
-
     m_nsdHasBeenSet = true;
   }
-
   return *this;
 }
 

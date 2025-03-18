@@ -32,7 +32,7 @@ namespace Model
   class MemberLogPublishingConfiguration
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration() = default;
     AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Configuration properties for logging events associated with a member of a
      * Managed Blockchain network using the Hyperledger Fabric framework.</p>
      */
-    inline const MemberFabricLogPublishingConfiguration& GetFabric() const{ return m_fabric; }
+    inline const MemberFabricLogPublishingConfiguration& GetFabric() const { return m_fabric; }
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-    inline void SetFabric(const MemberFabricLogPublishingConfiguration& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-    inline void SetFabric(MemberFabricLogPublishingConfiguration&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-    inline MemberLogPublishingConfiguration& WithFabric(const MemberFabricLogPublishingConfiguration& value) { SetFabric(value); return *this;}
-    inline MemberLogPublishingConfiguration& WithFabric(MemberFabricLogPublishingConfiguration&& value) { SetFabric(std::move(value)); return *this;}
+    template<typename FabricT = MemberFabricLogPublishingConfiguration>
+    void SetFabric(FabricT&& value) { m_fabricHasBeenSet = true; m_fabric = std::forward<FabricT>(value); }
+    template<typename FabricT = MemberFabricLogPublishingConfiguration>
+    MemberLogPublishingConfiguration& WithFabric(FabricT&& value) { SetFabric(std::forward<FabricT>(value)); return *this;}
     ///@}
   private:
 

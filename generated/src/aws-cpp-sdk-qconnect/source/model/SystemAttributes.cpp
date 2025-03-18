@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SystemAttributes::SystemAttributes() : 
-    m_customerEndpointHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_systemEndpointHasBeenSet(false)
-{
-}
-
 SystemAttributes::SystemAttributes(JsonView jsonValue)
-  : SystemAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SystemAttributes& SystemAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerEndpoint"))
   {
     m_customerEndpoint = jsonValue.GetObject("customerEndpoint");
-
     m_customerEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemEndpoint"))
   {
     m_systemEndpoint = jsonValue.GetObject("systemEndpoint");
-
     m_systemEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace deadline
 namespace Model
 {
 
-QueueLimitAssociationSummary::QueueLimitAssociationSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false),
-    m_status(QueueLimitAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 QueueLimitAssociationSummary::QueueLimitAssociationSummary(JsonView jsonValue)
-  : QueueLimitAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ QueueLimitAssociationSummary& QueueLimitAssociationSummary::operator =(JsonView 
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("limitId"))
   {
     m_limitId = jsonValue.GetString("limitId");
-
     m_limitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueueLimitAssociationStatusMapper::GetQueueLimitAssociationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

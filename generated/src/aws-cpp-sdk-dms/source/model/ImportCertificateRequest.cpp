@@ -13,14 +13,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportCertificateRequest::ImportCertificateRequest() : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_certificatePemHasBeenSet(false),
-    m_certificateWalletHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

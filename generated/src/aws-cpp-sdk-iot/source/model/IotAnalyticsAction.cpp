@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-IotAnalyticsAction::IotAnalyticsAction() : 
-    m_channelArnHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IotAnalyticsAction::IotAnalyticsAction(JsonView jsonValue)
-  : IotAnalyticsAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IotAnalyticsAction& IotAnalyticsAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelArn"))
   {
     m_channelArn = jsonValue.GetString("channelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchMode"))
   {
     m_batchMode = jsonValue.GetBool("batchMode");
-
     m_batchModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

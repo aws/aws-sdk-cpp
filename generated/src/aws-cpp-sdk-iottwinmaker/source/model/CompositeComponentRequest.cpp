@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-CompositeComponentRequest::CompositeComponentRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false)
-{
-}
-
 CompositeComponentRequest::CompositeComponentRequest(JsonView jsonValue)
-  : CompositeComponentRequest()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CompositeComponentRequest& CompositeComponentRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
@@ -49,7 +39,6 @@ CompositeComponentRequest& CompositeComponentRequest::operator =(JsonView jsonVa
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyGroups"))
   {
     Aws::Map<Aws::String, JsonView> propertyGroupsJsonMap = jsonValue.GetObject("propertyGroups").GetAllObjects();
@@ -59,7 +48,6 @@ CompositeComponentRequest& CompositeComponentRequest::operator =(JsonView jsonVa
     }
     m_propertyGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

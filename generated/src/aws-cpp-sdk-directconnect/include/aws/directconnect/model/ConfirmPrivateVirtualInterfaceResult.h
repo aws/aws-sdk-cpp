@@ -28,7 +28,7 @@ namespace Model
   class ConfirmPrivateVirtualInterfaceResult
   {
   public:
-    AWS_DIRECTCONNECT_API ConfirmPrivateVirtualInterfaceResult();
+    AWS_DIRECTCONNECT_API ConfirmPrivateVirtualInterfaceResult() = default;
     AWS_DIRECTCONNECT_API ConfirmPrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API ConfirmPrivateVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -58,28 +58,26 @@ namespace Model
      * <code>unknown</code>: The state of the virtual interface is not available.</p>
      * </li> </ul>
      */
-    inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
-    inline void SetVirtualInterfaceState(const VirtualInterfaceState& value) { m_virtualInterfaceState = value; }
-    inline void SetVirtualInterfaceState(VirtualInterfaceState&& value) { m_virtualInterfaceState = std::move(value); }
-    inline ConfirmPrivateVirtualInterfaceResult& WithVirtualInterfaceState(const VirtualInterfaceState& value) { SetVirtualInterfaceState(value); return *this;}
-    inline ConfirmPrivateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(std::move(value)); return *this;}
+    inline VirtualInterfaceState GetVirtualInterfaceState() const { return m_virtualInterfaceState; }
+    inline void SetVirtualInterfaceState(VirtualInterfaceState value) { m_virtualInterfaceStateHasBeenSet = true; m_virtualInterfaceState = value; }
+    inline ConfirmPrivateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState value) { SetVirtualInterfaceState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfirmPrivateVirtualInterfaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfirmPrivateVirtualInterfaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfirmPrivateVirtualInterfaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfirmPrivateVirtualInterfaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    VirtualInterfaceState m_virtualInterfaceState;
+    VirtualInterfaceState m_virtualInterfaceState{VirtualInterfaceState::NOT_SET};
+    bool m_virtualInterfaceStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

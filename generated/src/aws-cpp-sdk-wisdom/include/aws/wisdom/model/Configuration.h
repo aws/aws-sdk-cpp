@@ -32,7 +32,7 @@ namespace Model
   class Configuration
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API Configuration();
+    AWS_CONNECTWISDOMSERVICE_API Configuration() = default;
     AWS_CONNECTWISDOMSERVICE_API Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration information of the Amazon Connect data source.</p>
      */
-    inline const ConnectConfiguration& GetConnectConfiguration() const{ return m_connectConfiguration; }
+    inline const ConnectConfiguration& GetConnectConfiguration() const { return m_connectConfiguration; }
     inline bool ConnectConfigurationHasBeenSet() const { return m_connectConfigurationHasBeenSet; }
-    inline void SetConnectConfiguration(const ConnectConfiguration& value) { m_connectConfigurationHasBeenSet = true; m_connectConfiguration = value; }
-    inline void SetConnectConfiguration(ConnectConfiguration&& value) { m_connectConfigurationHasBeenSet = true; m_connectConfiguration = std::move(value); }
-    inline Configuration& WithConnectConfiguration(const ConnectConfiguration& value) { SetConnectConfiguration(value); return *this;}
-    inline Configuration& WithConnectConfiguration(ConnectConfiguration&& value) { SetConnectConfiguration(std::move(value)); return *this;}
+    template<typename ConnectConfigurationT = ConnectConfiguration>
+    void SetConnectConfiguration(ConnectConfigurationT&& value) { m_connectConfigurationHasBeenSet = true; m_connectConfiguration = std::forward<ConnectConfigurationT>(value); }
+    template<typename ConnectConfigurationT = ConnectConfiguration>
+    Configuration& WithConnectConfiguration(ConnectConfigurationT&& value) { SetConnectConfiguration(std::forward<ConnectConfigurationT>(value)); return *this;}
     ///@}
   private:
 

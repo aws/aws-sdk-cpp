@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionConfiguration::BodySectionConfiguration() : 
-    m_sectionIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_pageBreakConfigurationHasBeenSet(false),
-    m_repeatConfigurationHasBeenSet(false)
-{
-}
-
 BodySectionConfiguration::BodySectionConfiguration(JsonView jsonValue)
-  : BodySectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ BodySectionConfiguration& BodySectionConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SectionId"))
   {
     m_sectionId = jsonValue.GetString("SectionId");
-
     m_sectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetObject("Style");
-
     m_styleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageBreakConfiguration"))
   {
     m_pageBreakConfiguration = jsonValue.GetObject("PageBreakConfiguration");
-
     m_pageBreakConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepeatConfiguration"))
   {
     m_repeatConfiguration = jsonValue.GetObject("RepeatConfiguration");
-
     m_repeatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

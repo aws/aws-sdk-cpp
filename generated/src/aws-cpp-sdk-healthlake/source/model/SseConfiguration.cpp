@@ -18,13 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-SseConfiguration::SseConfiguration() : 
-    m_kmsEncryptionConfigHasBeenSet(false)
-{
-}
-
 SseConfiguration::SseConfiguration(JsonView jsonValue)
-  : SseConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SseConfiguration& SseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsEncryptionConfig"))
   {
     m_kmsEncryptionConfig = jsonValue.GetObject("KmsEncryptionConfig");
-
     m_kmsEncryptionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

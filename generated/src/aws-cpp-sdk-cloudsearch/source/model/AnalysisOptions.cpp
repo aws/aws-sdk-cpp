@@ -20,18 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-AnalysisOptions::AnalysisOptions() : 
-    m_synonymsHasBeenSet(false),
-    m_stopwordsHasBeenSet(false),
-    m_stemmingDictionaryHasBeenSet(false),
-    m_japaneseTokenizationDictionaryHasBeenSet(false),
-    m_algorithmicStemming(AlgorithmicStemming::NOT_SET),
-    m_algorithmicStemmingHasBeenSet(false)
-{
-}
-
 AnalysisOptions::AnalysisOptions(const XmlNode& xmlNode)
-  : AnalysisOptions()
 {
   *this = xmlNode;
 }
@@ -69,7 +58,7 @@ AnalysisOptions& AnalysisOptions::operator =(const XmlNode& xmlNode)
     XmlNode algorithmicStemmingNode = resultNode.FirstChild("AlgorithmicStemming");
     if(!algorithmicStemmingNode.IsNull())
     {
-      m_algorithmicStemming = AlgorithmicStemmingMapper::GetAlgorithmicStemmingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(algorithmicStemmingNode.GetText()).c_str()).c_str());
+      m_algorithmicStemming = AlgorithmicStemmingMapper::GetAlgorithmicStemmingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(algorithmicStemmingNode.GetText()).c_str()));
       m_algorithmicStemmingHasBeenSet = true;
     }
   }

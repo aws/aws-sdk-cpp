@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableVpcClassicLinkRequest::DisableVpcClassicLinkRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableVpcClassicLinkRequest::SerializePayload() const
 {
   Aws::StringStream ss;

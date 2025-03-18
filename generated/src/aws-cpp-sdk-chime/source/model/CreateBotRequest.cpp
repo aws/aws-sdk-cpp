@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBotRequest::CreateBotRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_domainHasBeenSet(false)
-{
-}
-
 Aws::String CreateBotRequest::SerializePayload() const
 {
   JsonValue payload;

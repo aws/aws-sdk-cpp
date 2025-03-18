@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-HttpEndpointRequestConfiguration::HttpEndpointRequestConfiguration() : 
-    m_contentEncoding(ContentEncoding::NOT_SET),
-    m_contentEncodingHasBeenSet(false),
-    m_commonAttributesHasBeenSet(false)
-{
-}
-
 HttpEndpointRequestConfiguration::HttpEndpointRequestConfiguration(JsonView jsonValue)
-  : HttpEndpointRequestConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ HttpEndpointRequestConfiguration& HttpEndpointRequestConfiguration::operator =(J
   if(jsonValue.ValueExists("ContentEncoding"))
   {
     m_contentEncoding = ContentEncodingMapper::GetContentEncodingForName(jsonValue.GetString("ContentEncoding"));
-
     m_contentEncodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommonAttributes"))
   {
     Aws::Utils::Array<JsonView> commonAttributesJsonList = jsonValue.GetArray("CommonAttributes");
@@ -49,7 +39,6 @@ HttpEndpointRequestConfiguration& HttpEndpointRequestConfiguration::operator =(J
     }
     m_commonAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

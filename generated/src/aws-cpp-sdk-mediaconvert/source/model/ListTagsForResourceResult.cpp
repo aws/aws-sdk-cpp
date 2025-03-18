@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourceResult::ListTagsForResourceResult()
-{
-}
-
 ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("resourceTags"))
   {
     m_resourceTags = jsonValue.GetObject("resourceTags");
-
+    m_resourceTagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

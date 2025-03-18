@@ -18,20 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaConcatenationPipeline::MediaConcatenationPipeline() : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 MediaConcatenationPipeline::MediaConcatenationPipeline(JsonView jsonValue)
-  : MediaConcatenationPipeline()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView json
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
@@ -61,7 +44,6 @@ MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView json
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sinks"))
   {
     Aws::Utils::Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
@@ -71,28 +53,21 @@ MediaConcatenationPipeline& MediaConcatenationPipeline::operator =(JsonView json
     }
     m_sinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

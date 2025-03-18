@@ -31,7 +31,7 @@ namespace Model
   class RetrieveAndGenerateResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateResult();
+    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,35 +41,33 @@ namespace Model
      * <p>A list of segments of the generated response that are based on sources in the
      * knowledge base, alongside information about the sources.</p>
      */
-    inline const Aws::Vector<Citation>& GetCitations() const{ return m_citations; }
-    inline void SetCitations(const Aws::Vector<Citation>& value) { m_citations = value; }
-    inline void SetCitations(Aws::Vector<Citation>&& value) { m_citations = std::move(value); }
-    inline RetrieveAndGenerateResult& WithCitations(const Aws::Vector<Citation>& value) { SetCitations(value); return *this;}
-    inline RetrieveAndGenerateResult& WithCitations(Aws::Vector<Citation>&& value) { SetCitations(std::move(value)); return *this;}
-    inline RetrieveAndGenerateResult& AddCitations(const Citation& value) { m_citations.push_back(value); return *this; }
-    inline RetrieveAndGenerateResult& AddCitations(Citation&& value) { m_citations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Citation>& GetCitations() const { return m_citations; }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    void SetCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations = std::forward<CitationsT>(value); }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    RetrieveAndGenerateResult& WithCitations(CitationsT&& value) { SetCitations(std::forward<CitationsT>(value)); return *this;}
+    template<typename CitationsT = Citation>
+    RetrieveAndGenerateResult& AddCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations.emplace_back(std::forward<CitationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies if there is a guardrail intervention in the response.</p>
      */
-    inline const GuadrailAction& GetGuardrailAction() const{ return m_guardrailAction; }
-    inline void SetGuardrailAction(const GuadrailAction& value) { m_guardrailAction = value; }
-    inline void SetGuardrailAction(GuadrailAction&& value) { m_guardrailAction = std::move(value); }
-    inline RetrieveAndGenerateResult& WithGuardrailAction(const GuadrailAction& value) { SetGuardrailAction(value); return *this;}
-    inline RetrieveAndGenerateResult& WithGuardrailAction(GuadrailAction&& value) { SetGuardrailAction(std::move(value)); return *this;}
+    inline GuadrailAction GetGuardrailAction() const { return m_guardrailAction; }
+    inline void SetGuardrailAction(GuadrailAction value) { m_guardrailActionHasBeenSet = true; m_guardrailAction = value; }
+    inline RetrieveAndGenerateResult& WithGuardrailAction(GuadrailAction value) { SetGuardrailAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the response generated from querying the knowledge base.</p>
      */
-    inline const RetrieveAndGenerateOutput& GetOutput() const{ return m_output; }
-    inline void SetOutput(const RetrieveAndGenerateOutput& value) { m_output = value; }
-    inline void SetOutput(RetrieveAndGenerateOutput&& value) { m_output = std::move(value); }
-    inline RetrieveAndGenerateResult& WithOutput(const RetrieveAndGenerateOutput& value) { SetOutput(value); return *this;}
-    inline RetrieveAndGenerateResult& WithOutput(RetrieveAndGenerateOutput&& value) { SetOutput(std::move(value)); return *this;}
+    inline const RetrieveAndGenerateOutput& GetOutput() const { return m_output; }
+    template<typename OutputT = RetrieveAndGenerateOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = RetrieveAndGenerateOutput>
+    RetrieveAndGenerateResult& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,36 +79,37 @@ namespace Model
      * knowledge from previous interactions. You can't explicitly set the
      * <code>sessionId</code> yourself.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline RetrieveAndGenerateResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline RetrieveAndGenerateResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline RetrieveAndGenerateResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    RetrieveAndGenerateResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RetrieveAndGenerateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RetrieveAndGenerateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RetrieveAndGenerateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RetrieveAndGenerateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Citation> m_citations;
+    bool m_citationsHasBeenSet = false;
 
-    GuadrailAction m_guardrailAction;
+    GuadrailAction m_guardrailAction{GuadrailAction::NOT_SET};
+    bool m_guardrailActionHasBeenSet = false;
 
     RetrieveAndGenerateOutput m_output;
+    bool m_outputHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrustAnchorRequest::DeleteTrustAnchorRequest() : 
-    m_trustAnchorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrustAnchorRequest::SerializePayload() const
 {
   return {};

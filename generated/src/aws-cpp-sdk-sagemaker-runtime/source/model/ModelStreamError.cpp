@@ -18,14 +18,7 @@ namespace SageMakerRuntime
 namespace Model
 {
 
-ModelStreamError::ModelStreamError() : 
-    m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 ModelStreamError::ModelStreamError(JsonView jsonValue)
-  : ModelStreamError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelStreamError& ModelStreamError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

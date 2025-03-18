@@ -33,7 +33,7 @@ namespace Model
   class ControlPanel
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel() = default;
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the cluster that includes the control
      * panel.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline ControlPanel& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline ControlPanel& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline ControlPanel& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    ControlPanel& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
-    inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
+    inline const Aws::String& GetControlPanelArn() const { return m_controlPanelArn; }
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-    inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-    inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-    inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-    inline ControlPanel& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-    inline ControlPanel& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-    inline ControlPanel& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    template<typename ControlPanelArnT = Aws::String>
+    void SetControlPanelArn(ControlPanelArnT&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::forward<ControlPanelArnT>(value); }
+    template<typename ControlPanelArnT = Aws::String>
+    ControlPanel& WithControlPanelArn(ControlPanelArnT&& value) { SetControlPanelArn(std::forward<ControlPanelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * sets this flag for that control panel. If you create a control panel yourself,
      * this flag is set to false.</p>
      */
-    inline bool GetDefaultControlPanel() const{ return m_defaultControlPanel; }
+    inline bool GetDefaultControlPanel() const { return m_defaultControlPanel; }
     inline bool DefaultControlPanelHasBeenSet() const { return m_defaultControlPanelHasBeenSet; }
     inline void SetDefaultControlPanel(bool value) { m_defaultControlPanelHasBeenSet = true; m_defaultControlPanel = value; }
     inline ControlPanel& WithDefaultControlPanel(bool value) { SetDefaultControlPanel(value); return *this;}
@@ -87,21 +83,19 @@ namespace Model
      * <p>The name of the control panel. You can use any non-white space character in
      * the name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ControlPanel& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ControlPanel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ControlPanel& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ControlPanel& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of routing controls in the control panel.</p>
      */
-    inline int GetRoutingControlCount() const{ return m_routingControlCount; }
+    inline int GetRoutingControlCount() const { return m_routingControlCount; }
     inline bool RoutingControlCountHasBeenSet() const { return m_routingControlCountHasBeenSet; }
     inline void SetRoutingControlCount(int value) { m_routingControlCountHasBeenSet = true; m_routingControlCount = value; }
     inline ControlPanel& WithRoutingControlCount(int value) { SetRoutingControlCount(value); return *this;}
@@ -112,26 +106,22 @@ namespace Model
      * <p>The deployment status of control panel. Status can be one of the following:
      * PENDING, DEPLOYED, PENDING_DELETION.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ControlPanel& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline ControlPanel& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ControlPanel& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the control panel owner.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline ControlPanel& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline ControlPanel& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline ControlPanel& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    ControlPanel& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
   private:
 
@@ -141,16 +131,16 @@ namespace Model
     Aws::String m_controlPanelArn;
     bool m_controlPanelArnHasBeenSet = false;
 
-    bool m_defaultControlPanel;
+    bool m_defaultControlPanel{false};
     bool m_defaultControlPanelHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_routingControlCount;
+    int m_routingControlCount{0};
     bool m_routingControlCountHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_owner;

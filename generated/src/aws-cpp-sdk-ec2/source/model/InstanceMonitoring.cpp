@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceMonitoring::InstanceMonitoring() : 
-    m_instanceIdHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
-{
-}
-
 InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode)
-  : InstanceMonitoring()
 {
   *this = xmlNode;
 }

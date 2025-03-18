@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePipelineDefinitionForExecutionResult::DescribePipelineDefinitionForExecutionResult()
-{
-}
-
 DescribePipelineDefinitionForExecutionResult::DescribePipelineDefinitionForExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribePipelineDefinitionForExecutionResult& DescribePipelineDefinitionForExecu
   if(jsonValue.ValueExists("PipelineDefinition"))
   {
     m_pipelineDefinition = jsonValue.GetString("PipelineDefinition");
-
+    m_pipelineDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

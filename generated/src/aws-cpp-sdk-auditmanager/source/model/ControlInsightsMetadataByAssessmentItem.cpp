@@ -18,17 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-ControlInsightsMetadataByAssessmentItem::ControlInsightsMetadataByAssessmentItem() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_evidenceInsightsHasBeenSet(false),
-    m_controlSetNameHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
-{
-}
-
 ControlInsightsMetadataByAssessmentItem::ControlInsightsMetadataByAssessmentItem(JsonView jsonValue)
-  : ControlInsightsMetadataByAssessmentItem()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ControlInsightsMetadataByAssessmentItem& ControlInsightsMetadataByAssessmentItem
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceInsights"))
   {
     m_evidenceInsights = jsonValue.GetObject("evidenceInsights");
-
     m_evidenceInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlSetName"))
   {
     m_controlSetName = jsonValue.GetString("controlSetName");
-
     m_controlSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   return *this;
 }
 

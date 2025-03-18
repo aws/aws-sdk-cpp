@@ -12,11 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPhoneNumberRequest::GetPhoneNumberRequest() : 
-    m_phoneNumberIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPhoneNumberRequest::SerializePayload() const
 {
   return {};

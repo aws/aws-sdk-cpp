@@ -12,13 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateQualificationFromWorkerRequest::DisassociateQualificationFromWorkerRequest() : 
-    m_workerIdHasBeenSet(false),
-    m_qualificationTypeIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateQualificationFromWorkerRequest::SerializePayload() const
 {
   JsonValue payload;

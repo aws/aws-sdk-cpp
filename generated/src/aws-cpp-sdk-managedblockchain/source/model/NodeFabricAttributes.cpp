@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NodeFabricAttributes::NodeFabricAttributes() : 
-    m_peerEndpointHasBeenSet(false),
-    m_peerEventEndpointHasBeenSet(false)
-{
-}
-
 NodeFabricAttributes::NodeFabricAttributes(JsonView jsonValue)
-  : NodeFabricAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeFabricAttributes& NodeFabricAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PeerEndpoint"))
   {
     m_peerEndpoint = jsonValue.GetString("PeerEndpoint");
-
     m_peerEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerEventEndpoint"))
   {
     m_peerEventEndpoint = jsonValue.GetString("PeerEventEndpoint");
-
     m_peerEventEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

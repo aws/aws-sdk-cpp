@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-NotificationChannel::NotificationChannel() : 
-    m_sNSTopicArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 NotificationChannel::NotificationChannel(JsonView jsonValue)
-  : NotificationChannel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotificationChannel& NotificationChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SNSTopicArn"))
   {
     m_sNSTopicArn = jsonValue.GetString("SNSTopicArn");
-
     m_sNSTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class AddonPodIdentityAssociations
   {
   public:
-    AWS_EKS_API AddonPodIdentityAssociations();
+    AWS_EKS_API AddonPodIdentityAssociations() = default;
     AWS_EKS_API AddonPodIdentityAssociations(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API AddonPodIdentityAssociations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of a Kubernetes Service Account.</p>
      */
-    inline const Aws::String& GetServiceAccount() const{ return m_serviceAccount; }
+    inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
-    inline void SetServiceAccount(const Aws::String& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = value; }
-    inline void SetServiceAccount(Aws::String&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::move(value); }
-    inline void SetServiceAccount(const char* value) { m_serviceAccountHasBeenSet = true; m_serviceAccount.assign(value); }
-    inline AddonPodIdentityAssociations& WithServiceAccount(const Aws::String& value) { SetServiceAccount(value); return *this;}
-    inline AddonPodIdentityAssociations& WithServiceAccount(Aws::String&& value) { SetServiceAccount(std::move(value)); return *this;}
-    inline AddonPodIdentityAssociations& WithServiceAccount(const char* value) { SetServiceAccount(value); return *this;}
+    template<typename ServiceAccountT = Aws::String>
+    void SetServiceAccount(ServiceAccountT&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::forward<ServiceAccountT>(value); }
+    template<typename ServiceAccountT = Aws::String>
+    AddonPodIdentityAssociations& WithServiceAccount(ServiceAccountT&& value) { SetServiceAccount(std::forward<ServiceAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of an IAM Role.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AddonPodIdentityAssociations& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AddonPodIdentityAssociations& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AddonPodIdentityAssociations& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AddonPodIdentityAssociations& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

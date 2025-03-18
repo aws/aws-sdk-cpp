@@ -35,7 +35,7 @@ namespace Model
   class QueryRuntimeStatistics
   {
   public:
-    AWS_ATHENA_API QueryRuntimeStatistics();
+    AWS_ATHENA_API QueryRuntimeStatistics() = default;
     AWS_ATHENA_API QueryRuntimeStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API QueryRuntimeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,22 +43,22 @@ namespace Model
 
     ///@{
     
-    inline const QueryRuntimeStatisticsTimeline& GetTimeline() const{ return m_timeline; }
+    inline const QueryRuntimeStatisticsTimeline& GetTimeline() const { return m_timeline; }
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-    inline void SetTimeline(const QueryRuntimeStatisticsTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-    inline void SetTimeline(QueryRuntimeStatisticsTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-    inline QueryRuntimeStatistics& WithTimeline(const QueryRuntimeStatisticsTimeline& value) { SetTimeline(value); return *this;}
-    inline QueryRuntimeStatistics& WithTimeline(QueryRuntimeStatisticsTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    template<typename TimelineT = QueryRuntimeStatisticsTimeline>
+    void SetTimeline(TimelineT&& value) { m_timelineHasBeenSet = true; m_timeline = std::forward<TimelineT>(value); }
+    template<typename TimelineT = QueryRuntimeStatisticsTimeline>
+    QueryRuntimeStatistics& WithTimeline(TimelineT&& value) { SetTimeline(std::forward<TimelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const QueryRuntimeStatisticsRows& GetRows() const{ return m_rows; }
+    inline const QueryRuntimeStatisticsRows& GetRows() const { return m_rows; }
     inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
-    inline void SetRows(const QueryRuntimeStatisticsRows& value) { m_rowsHasBeenSet = true; m_rows = value; }
-    inline void SetRows(QueryRuntimeStatisticsRows&& value) { m_rowsHasBeenSet = true; m_rows = std::move(value); }
-    inline QueryRuntimeStatistics& WithRows(const QueryRuntimeStatisticsRows& value) { SetRows(value); return *this;}
-    inline QueryRuntimeStatistics& WithRows(QueryRuntimeStatisticsRows&& value) { SetRows(std::move(value)); return *this;}
+    template<typename RowsT = QueryRuntimeStatisticsRows>
+    void SetRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows = std::forward<RowsT>(value); }
+    template<typename RowsT = QueryRuntimeStatisticsRows>
+    QueryRuntimeStatistics& WithRows(RowsT&& value) { SetRows(std::forward<RowsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +67,12 @@ namespace Model
      * stage state. This information also includes substages and the query stage
      * plan.</p>
      */
-    inline const QueryStage& GetOutputStage() const{ return m_outputStage; }
+    inline const QueryStage& GetOutputStage() const { return m_outputStage; }
     inline bool OutputStageHasBeenSet() const { return m_outputStageHasBeenSet; }
-    inline void SetOutputStage(const QueryStage& value) { m_outputStageHasBeenSet = true; m_outputStage = value; }
-    inline void SetOutputStage(QueryStage&& value) { m_outputStageHasBeenSet = true; m_outputStage = std::move(value); }
-    inline QueryRuntimeStatistics& WithOutputStage(const QueryStage& value) { SetOutputStage(value); return *this;}
-    inline QueryRuntimeStatistics& WithOutputStage(QueryStage&& value) { SetOutputStage(std::move(value)); return *this;}
+    template<typename OutputStageT = QueryStage>
+    void SetOutputStage(OutputStageT&& value) { m_outputStageHasBeenSet = true; m_outputStage = std::forward<OutputStageT>(value); }
+    template<typename OutputStageT = QueryStage>
+    QueryRuntimeStatistics& WithOutputStage(OutputStageT&& value) { SetOutputStage(std::forward<OutputStageT>(value)); return *this;}
     ///@}
   private:
 

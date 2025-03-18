@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PanelTitleOptions::PanelTitleOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_horizontalTextAlignment(HorizontalTextAlignment::NOT_SET),
-    m_horizontalTextAlignmentHasBeenSet(false)
-{
-}
-
 PanelTitleOptions::PanelTitleOptions(JsonView jsonValue)
-  : PanelTitleOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PanelTitleOptions& PanelTitleOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FontConfiguration"))
   {
     m_fontConfiguration = jsonValue.GetObject("FontConfiguration");
-
     m_fontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HorizontalTextAlignment"))
   {
     m_horizontalTextAlignment = HorizontalTextAlignmentMapper::GetHorizontalTextAlignmentForName(jsonValue.GetString("HorizontalTextAlignment"));
-
     m_horizontalTextAlignmentHasBeenSet = true;
   }
-
   return *this;
 }
 

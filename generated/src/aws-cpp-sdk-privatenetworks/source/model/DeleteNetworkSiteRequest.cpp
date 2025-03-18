@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteNetworkSiteRequest::DeleteNetworkSiteRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkSiteRequest::SerializePayload() const
 {
   return {};

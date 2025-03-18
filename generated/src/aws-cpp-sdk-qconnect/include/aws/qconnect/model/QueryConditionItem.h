@@ -33,7 +33,7 @@ namespace Model
   class QueryConditionItem
   {
   public:
-    AWS_QCONNECT_API QueryConditionItem();
+    AWS_QCONNECT_API QueryConditionItem() = default;
     AWS_QCONNECT_API QueryConditionItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API QueryConditionItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,39 @@ namespace Model
     /**
      * <p>The comparison operator for query condition to query on.</p>
      */
-    inline const QueryConditionComparisonOperator& GetComparator() const{ return m_comparator; }
+    inline QueryConditionComparisonOperator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const QueryConditionComparisonOperator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(QueryConditionComparisonOperator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline QueryConditionItem& WithComparator(const QueryConditionComparisonOperator& value) { SetComparator(value); return *this;}
-    inline QueryConditionItem& WithComparator(QueryConditionComparisonOperator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(QueryConditionComparisonOperator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline QueryConditionItem& WithComparator(QueryConditionComparisonOperator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the field for query condition to query on.</p>
      */
-    inline const QueryConditionFieldName& GetField() const{ return m_field; }
+    inline QueryConditionFieldName GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const QueryConditionFieldName& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(QueryConditionFieldName&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline QueryConditionItem& WithField(const QueryConditionFieldName& value) { SetField(value); return *this;}
-    inline QueryConditionItem& WithField(QueryConditionFieldName&& value) { SetField(std::move(value)); return *this;}
+    inline void SetField(QueryConditionFieldName value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline QueryConditionItem& WithField(QueryConditionFieldName value) { SetField(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value for the query condition to query on.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline QueryConditionItem& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline QueryConditionItem& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline QueryConditionItem& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    QueryConditionItem& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    QueryConditionComparisonOperator m_comparator;
+    QueryConditionComparisonOperator m_comparator{QueryConditionComparisonOperator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
-    QueryConditionFieldName m_field;
+    QueryConditionFieldName m_field{QueryConditionFieldName::NOT_SET};
     bool m_fieldHasBeenSet = false;
 
     Aws::String m_value;

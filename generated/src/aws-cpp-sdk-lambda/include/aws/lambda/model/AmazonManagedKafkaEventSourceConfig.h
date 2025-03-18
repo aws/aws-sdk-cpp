@@ -32,7 +32,7 @@ namespace Model
   class AmazonManagedKafkaEventSourceConfig
   {
   public:
-    AWS_LAMBDA_API AmazonManagedKafkaEventSourceConfig();
+    AWS_LAMBDA_API AmazonManagedKafkaEventSourceConfig() = default;
     AWS_LAMBDA_API AmazonManagedKafkaEventSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API AmazonManagedKafkaEventSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
      * consumer group ID</a>.</p>
      */
-    inline const Aws::String& GetConsumerGroupId() const{ return m_consumerGroupId; }
+    inline const Aws::String& GetConsumerGroupId() const { return m_consumerGroupId; }
     inline bool ConsumerGroupIdHasBeenSet() const { return m_consumerGroupIdHasBeenSet; }
-    inline void SetConsumerGroupId(const Aws::String& value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId = value; }
-    inline void SetConsumerGroupId(Aws::String&& value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId = std::move(value); }
-    inline void SetConsumerGroupId(const char* value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId.assign(value); }
-    inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(const Aws::String& value) { SetConsumerGroupId(value); return *this;}
-    inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(Aws::String&& value) { SetConsumerGroupId(std::move(value)); return *this;}
-    inline AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(const char* value) { SetConsumerGroupId(value); return *this;}
+    template<typename ConsumerGroupIdT = Aws::String>
+    void SetConsumerGroupId(ConsumerGroupIdT&& value) { m_consumerGroupIdHasBeenSet = true; m_consumerGroupId = std::forward<ConsumerGroupIdT>(value); }
+    template<typename ConsumerGroupIdT = Aws::String>
+    AmazonManagedKafkaEventSourceConfig& WithConsumerGroupId(ConsumerGroupIdT&& value) { SetConsumerGroupId(std::forward<ConsumerGroupIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDomainMaintenanceRequest::StartDomainMaintenanceRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_action(MaintenanceType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String StartDomainMaintenanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-IncorrectFileSystemLifeCycleState::IncorrectFileSystemLifeCycleState() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 IncorrectFileSystemLifeCycleState::IncorrectFileSystemLifeCycleState(JsonView jsonValue)
-  : IncorrectFileSystemLifeCycleState()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IncorrectFileSystemLifeCycleState& IncorrectFileSystemLifeCycleState::operator =
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

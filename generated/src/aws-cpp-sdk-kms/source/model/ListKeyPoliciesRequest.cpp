@@ -12,14 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListKeyPoliciesRequest::ListKeyPoliciesRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListKeyPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

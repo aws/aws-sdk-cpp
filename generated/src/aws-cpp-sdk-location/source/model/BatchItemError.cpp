@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-BatchItemError::BatchItemError() : 
-    m_code(BatchItemErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchItemError::BatchItemError(JsonView jsonValue)
-  : BatchItemError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchItemError& BatchItemError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = BatchItemErrorCodeMapper::GetBatchItemErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

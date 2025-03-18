@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAlarmRecommendationsResult::ListAlarmRecommendationsResult()
-{
-}
-
 ListAlarmRecommendationsResult::ListAlarmRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListAlarmRecommendationsResult& ListAlarmRecommendationsResult::operator =(const
     {
       m_alarmRecommendations.push_back(alarmRecommendationsJsonList[alarmRecommendationsIndex].AsObject());
     }
+    m_alarmRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

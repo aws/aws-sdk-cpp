@@ -32,7 +32,7 @@ namespace Model
   class HyperParameterTuningJobCompletionDetails
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobCompletionDetails();
+    AWS_SAGEMAKER_API HyperParameterTuningJobCompletionDetails() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobCompletionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobCompletionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * (1% or less) as measured by model performance evaluated against an objective
      * function.</p>
      */
-    inline int GetNumberOfTrainingJobsObjectiveNotImproving() const{ return m_numberOfTrainingJobsObjectiveNotImproving; }
+    inline int GetNumberOfTrainingJobsObjectiveNotImproving() const { return m_numberOfTrainingJobsObjectiveNotImproving; }
     inline bool NumberOfTrainingJobsObjectiveNotImprovingHasBeenSet() const { return m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet; }
     inline void SetNumberOfTrainingJobsObjectiveNotImproving(int value) { m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = true; m_numberOfTrainingJobsObjectiveNotImproving = value; }
     inline HyperParameterTuningJobCompletionDetails& WithNumberOfTrainingJobsObjectiveNotImproving(int value) { SetNumberOfTrainingJobsObjectiveNotImproving(value); return *this;}
@@ -56,19 +56,19 @@ namespace Model
      * by a lack of significant improvement over time based on criteria developed over
      * a wide range of diverse benchmarking tests.</p>
      */
-    inline const Aws::Utils::DateTime& GetConvergenceDetectedTime() const{ return m_convergenceDetectedTime; }
+    inline const Aws::Utils::DateTime& GetConvergenceDetectedTime() const { return m_convergenceDetectedTime; }
     inline bool ConvergenceDetectedTimeHasBeenSet() const { return m_convergenceDetectedTimeHasBeenSet; }
-    inline void SetConvergenceDetectedTime(const Aws::Utils::DateTime& value) { m_convergenceDetectedTimeHasBeenSet = true; m_convergenceDetectedTime = value; }
-    inline void SetConvergenceDetectedTime(Aws::Utils::DateTime&& value) { m_convergenceDetectedTimeHasBeenSet = true; m_convergenceDetectedTime = std::move(value); }
-    inline HyperParameterTuningJobCompletionDetails& WithConvergenceDetectedTime(const Aws::Utils::DateTime& value) { SetConvergenceDetectedTime(value); return *this;}
-    inline HyperParameterTuningJobCompletionDetails& WithConvergenceDetectedTime(Aws::Utils::DateTime&& value) { SetConvergenceDetectedTime(std::move(value)); return *this;}
+    template<typename ConvergenceDetectedTimeT = Aws::Utils::DateTime>
+    void SetConvergenceDetectedTime(ConvergenceDetectedTimeT&& value) { m_convergenceDetectedTimeHasBeenSet = true; m_convergenceDetectedTime = std::forward<ConvergenceDetectedTimeT>(value); }
+    template<typename ConvergenceDetectedTimeT = Aws::Utils::DateTime>
+    HyperParameterTuningJobCompletionDetails& WithConvergenceDetectedTime(ConvergenceDetectedTimeT&& value) { SetConvergenceDetectedTime(std::forward<ConvergenceDetectedTimeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_numberOfTrainingJobsObjectiveNotImproving;
+    int m_numberOfTrainingJobsObjectiveNotImproving{0};
     bool m_numberOfTrainingJobsObjectiveNotImprovingHasBeenSet = false;
 
-    Aws::Utils::DateTime m_convergenceDetectedTime;
+    Aws::Utils::DateTime m_convergenceDetectedTime{};
     bool m_convergenceDetectedTimeHasBeenSet = false;
   };
 

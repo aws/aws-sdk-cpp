@@ -12,16 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVolumeFromBackupRequest::CreateVolumeFromBackupRequest() : 
-    m_backupIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVolumeFromBackupRequest::SerializePayload() const
 {
   JsonValue payload;

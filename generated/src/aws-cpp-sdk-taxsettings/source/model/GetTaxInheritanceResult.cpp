@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTaxInheritanceResult::GetTaxInheritanceResult() : 
-    m_heritageStatus(HeritageStatus::NOT_SET)
-{
-}
-
 GetTaxInheritanceResult::GetTaxInheritanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTaxInheritanceResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetTaxInheritanceResult& GetTaxInheritanceResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("heritageStatus"))
   {
     m_heritageStatus = HeritageStatusMapper::GetHeritageStatusForName(jsonValue.GetString("heritageStatus"));
-
+    m_heritageStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

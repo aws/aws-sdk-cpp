@@ -28,7 +28,7 @@ namespace Model
   class DescribeVPCConnectionResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeVPCConnectionResult();
+    AWS_QUICKSIGHT_API DescribeVPCConnectionResult() = default;
     AWS_QUICKSIGHT_API DescribeVPCConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeVPCConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,40 @@ namespace Model
      * <p>A response object that provides information for the specified VPC
      * connection.</p>
      */
-    inline const VPCConnection& GetVPCConnection() const{ return m_vPCConnection; }
-    inline void SetVPCConnection(const VPCConnection& value) { m_vPCConnection = value; }
-    inline void SetVPCConnection(VPCConnection&& value) { m_vPCConnection = std::move(value); }
-    inline DescribeVPCConnectionResult& WithVPCConnection(const VPCConnection& value) { SetVPCConnection(value); return *this;}
-    inline DescribeVPCConnectionResult& WithVPCConnection(VPCConnection&& value) { SetVPCConnection(std::move(value)); return *this;}
+    inline const VPCConnection& GetVPCConnection() const { return m_vPCConnection; }
+    template<typename VPCConnectionT = VPCConnection>
+    void SetVPCConnection(VPCConnectionT&& value) { m_vPCConnectionHasBeenSet = true; m_vPCConnection = std::forward<VPCConnectionT>(value); }
+    template<typename VPCConnectionT = VPCConnection>
+    DescribeVPCConnectionResult& WithVPCConnection(VPCConnectionT&& value) { SetVPCConnection(std::forward<VPCConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVPCConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVPCConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVPCConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVPCConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeVPCConnectionResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     VPCConnection m_vPCConnection;
+    bool m_vPCConnectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

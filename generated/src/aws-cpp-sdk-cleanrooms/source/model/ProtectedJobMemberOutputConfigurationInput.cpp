@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobMemberOutputConfigurationInput::ProtectedJobMemberOutputConfigurationInput() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 ProtectedJobMemberOutputConfigurationInput::ProtectedJobMemberOutputConfigurationInput(JsonView jsonValue)
-  : ProtectedJobMemberOutputConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedJobMemberOutputConfigurationInput& ProtectedJobMemberOutputConfiguratio
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

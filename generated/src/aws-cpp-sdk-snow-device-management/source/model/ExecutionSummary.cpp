@@ -18,17 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-ExecutionSummary::ExecutionSummary() : 
-    m_executionIdHasBeenSet(false),
-    m_managedDeviceIdHasBeenSet(false),
-    m_state(ExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 ExecutionSummary::ExecutionSummary(JsonView jsonValue)
-  : ExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExecutionSummary& ExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDeviceId"))
   {
     m_managedDeviceId = jsonValue.GetString("managedDeviceId");
-
     m_managedDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ExecutionStateMapper::GetExecutionStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   return *this;
 }
 

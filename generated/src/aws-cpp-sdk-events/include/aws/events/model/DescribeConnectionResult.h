@@ -31,7 +31,7 @@ namespace Model
   class DescribeConnectionResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API DescribeConnectionResult();
+    AWS_CLOUDWATCHEVENTS_API DescribeConnectionResult() = default;
     AWS_CLOUDWATCHEVENTS_API DescribeConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API DescribeConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,74 +40,62 @@ namespace Model
     /**
      * <p>The ARN of the connection retrieved.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArn.assign(value); }
-    inline DescribeConnectionResult& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline DescribeConnectionResult& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    DescribeConnectionResult& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the connection retrieved.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeConnectionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeConnectionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeConnectionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the connection retrieved.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeConnectionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeConnectionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeConnectionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the connection retrieved.</p>
      */
-    inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
-    inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
-    inline DescribeConnectionResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
-    inline DescribeConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+    inline ConnectionState GetConnectionState() const { return m_connectionState; }
+    inline void SetConnectionState(ConnectionState value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline DescribeConnectionResult& WithConnectionState(ConnectionState value) { SetConnectionState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that the connection is in the current connection state.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReason.assign(value); }
-    inline DescribeConnectionResult& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline DescribeConnectionResult& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    DescribeConnectionResult& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authorization specified for the connection.</p>
      */
-    inline const ConnectionAuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
-    inline void SetAuthorizationType(const ConnectionAuthorizationType& value) { m_authorizationType = value; }
-    inline void SetAuthorizationType(ConnectionAuthorizationType&& value) { m_authorizationType = std::move(value); }
-    inline DescribeConnectionResult& WithAuthorizationType(const ConnectionAuthorizationType& value) { SetAuthorizationType(value); return *this;}
-    inline DescribeConnectionResult& WithAuthorizationType(ConnectionAuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
+    inline ConnectionAuthorizationType GetAuthorizationType() const { return m_authorizationType; }
+    inline void SetAuthorizationType(ConnectionAuthorizationType value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
+    inline DescribeConnectionResult& WithAuthorizationType(ConnectionAuthorizationType value) { SetAuthorizationType(value); return *this;}
     ///@}
 
     ///@{
@@ -115,94 +103,102 @@ namespace Model
      * <p>The ARN of the secret created from the authorization parameters specified for
      * the connection.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArn.assign(value); }
-    inline DescribeConnectionResult& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline DescribeConnectionResult& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    DescribeConnectionResult& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters to use for authorization for the connection.</p>
      */
-    inline const ConnectionAuthResponseParameters& GetAuthParameters() const{ return m_authParameters; }
-    inline void SetAuthParameters(const ConnectionAuthResponseParameters& value) { m_authParameters = value; }
-    inline void SetAuthParameters(ConnectionAuthResponseParameters&& value) { m_authParameters = std::move(value); }
-    inline DescribeConnectionResult& WithAuthParameters(const ConnectionAuthResponseParameters& value) { SetAuthParameters(value); return *this;}
-    inline DescribeConnectionResult& WithAuthParameters(ConnectionAuthResponseParameters&& value) { SetAuthParameters(std::move(value)); return *this;}
+    inline const ConnectionAuthResponseParameters& GetAuthParameters() const { return m_authParameters; }
+    template<typename AuthParametersT = ConnectionAuthResponseParameters>
+    void SetAuthParameters(AuthParametersT&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::forward<AuthParametersT>(value); }
+    template<typename AuthParametersT = ConnectionAuthResponseParameters>
+    DescribeConnectionResult& WithAuthParameters(AuthParametersT&& value) { SetAuthParameters(std::forward<AuthParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A time stamp for the time that the connection was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeConnectionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeConnectionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeConnectionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A time stamp for the time that the connection was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeConnectionResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeConnectionResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeConnectionResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A time stamp for the time that the connection was last authorized.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAuthorizedTime() const{ return m_lastAuthorizedTime; }
-    inline void SetLastAuthorizedTime(const Aws::Utils::DateTime& value) { m_lastAuthorizedTime = value; }
-    inline void SetLastAuthorizedTime(Aws::Utils::DateTime&& value) { m_lastAuthorizedTime = std::move(value); }
-    inline DescribeConnectionResult& WithLastAuthorizedTime(const Aws::Utils::DateTime& value) { SetLastAuthorizedTime(value); return *this;}
-    inline DescribeConnectionResult& WithLastAuthorizedTime(Aws::Utils::DateTime&& value) { SetLastAuthorizedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastAuthorizedTime() const { return m_lastAuthorizedTime; }
+    template<typename LastAuthorizedTimeT = Aws::Utils::DateTime>
+    void SetLastAuthorizedTime(LastAuthorizedTimeT&& value) { m_lastAuthorizedTimeHasBeenSet = true; m_lastAuthorizedTime = std::forward<LastAuthorizedTimeT>(value); }
+    template<typename LastAuthorizedTimeT = Aws::Utils::DateTime>
+    DescribeConnectionResult& WithLastAuthorizedTime(LastAuthorizedTimeT&& value) { SetLastAuthorizedTime(std::forward<LastAuthorizedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectionArn;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    ConnectionState m_connectionState;
+    ConnectionState m_connectionState{ConnectionState::NOT_SET};
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_stateReason;
+    bool m_stateReasonHasBeenSet = false;
 
-    ConnectionAuthorizationType m_authorizationType;
+    ConnectionAuthorizationType m_authorizationType{ConnectionAuthorizationType::NOT_SET};
+    bool m_authorizationTypeHasBeenSet = false;
 
     Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
 
     ConnectionAuthResponseParameters m_authParameters;
+    bool m_authParametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAuthorizedTime;
+    Aws::Utils::DateTime m_lastAuthorizedTime{};
+    bool m_lastAuthorizedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

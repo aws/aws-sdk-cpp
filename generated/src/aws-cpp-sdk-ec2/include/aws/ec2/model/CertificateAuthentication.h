@@ -32,7 +32,7 @@ namespace Model
   class CertificateAuthentication
   {
   public:
-    AWS_EC2_API CertificateAuthentication();
+    AWS_EC2_API CertificateAuthentication() = default;
     AWS_EC2_API CertificateAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CertificateAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ARN of the client certificate. </p>
      */
-    inline const Aws::String& GetClientRootCertificateChain() const{ return m_clientRootCertificateChain; }
+    inline const Aws::String& GetClientRootCertificateChain() const { return m_clientRootCertificateChain; }
     inline bool ClientRootCertificateChainHasBeenSet() const { return m_clientRootCertificateChainHasBeenSet; }
-    inline void SetClientRootCertificateChain(const Aws::String& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = value; }
-    inline void SetClientRootCertificateChain(Aws::String&& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = std::move(value); }
-    inline void SetClientRootCertificateChain(const char* value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain.assign(value); }
-    inline CertificateAuthentication& WithClientRootCertificateChain(const Aws::String& value) { SetClientRootCertificateChain(value); return *this;}
-    inline CertificateAuthentication& WithClientRootCertificateChain(Aws::String&& value) { SetClientRootCertificateChain(std::move(value)); return *this;}
-    inline CertificateAuthentication& WithClientRootCertificateChain(const char* value) { SetClientRootCertificateChain(value); return *this;}
+    template<typename ClientRootCertificateChainT = Aws::String>
+    void SetClientRootCertificateChain(ClientRootCertificateChainT&& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = std::forward<ClientRootCertificateChainT>(value); }
+    template<typename ClientRootCertificateChainT = Aws::String>
+    CertificateAuthentication& WithClientRootCertificateChain(ClientRootCertificateChainT&& value) { SetClientRootCertificateChain(std::forward<ClientRootCertificateChainT>(value)); return *this;}
     ///@}
   private:
 

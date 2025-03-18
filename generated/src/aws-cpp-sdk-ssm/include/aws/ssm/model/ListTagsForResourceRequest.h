@@ -22,7 +22,7 @@ namespace Model
   class ListTagsForResourceRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API ListTagsForResourceRequest();
+    AWS_SSM_API ListTagsForResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,30 +39,26 @@ namespace Model
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
      */
-    inline const ResourceTypeForTagging& GetResourceType() const{ return m_resourceType; }
+    inline ResourceTypeForTagging GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceTypeForTagging& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ListTagsForResourceRequest& WithResourceType(const ResourceTypeForTagging& value) { SetResourceType(value); return *this;}
-    inline ListTagsForResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceTypeForTagging value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ListTagsForResourceRequest& WithResourceType(ResourceTypeForTagging value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ListTagsForResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ListTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ListTagsForResourceRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
   private:
 
-    ResourceTypeForTagging m_resourceType;
+    ResourceTypeForTagging m_resourceType{ResourceTypeForTagging::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;

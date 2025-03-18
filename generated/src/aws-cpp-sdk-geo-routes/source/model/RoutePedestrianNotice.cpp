@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianNotice::RoutePedestrianNotice() : 
-    m_code(RoutePedestrianNoticeCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_impact(RouteNoticeImpact::NOT_SET),
-    m_impactHasBeenSet(false)
-{
-}
-
 RoutePedestrianNotice::RoutePedestrianNotice(JsonView jsonValue)
-  : RoutePedestrianNotice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RoutePedestrianNotice& RoutePedestrianNotice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RoutePedestrianNoticeCodeMapper::GetRoutePedestrianNoticeCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = RouteNoticeImpactMapper::GetRouteNoticeImpactForName(jsonValue.GetString("Impact"));
-
     m_impactHasBeenSet = true;
   }
-
   return *this;
 }
 

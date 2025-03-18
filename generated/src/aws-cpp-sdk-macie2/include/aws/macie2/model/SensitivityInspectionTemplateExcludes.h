@@ -37,7 +37,7 @@ namespace Model
   class SensitivityInspectionTemplateExcludes
   {
   public:
-    AWS_MACIE2_API SensitivityInspectionTemplateExcludes();
+    AWS_MACIE2_API SensitivityInspectionTemplateExcludes() = default;
     AWS_MACIE2_API SensitivityInspectionTemplateExcludes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SensitivityInspectionTemplateExcludes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,15 +49,14 @@ namespace Model
      * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
      * operation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
+    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const { return m_managedDataIdentifierIds; }
     inline bool ManagedDataIdentifierIdsHasBeenSet() const { return m_managedDataIdentifierIdsHasBeenSet; }
-    inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = value; }
-    inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::move(value); }
-    inline SensitivityInspectionTemplateExcludes& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
-    inline SensitivityInspectionTemplateExcludes& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
-    inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
-    inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
-    inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    void SetManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::forward<ManagedDataIdentifierIdsT>(value); }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    SensitivityInspectionTemplateExcludes& WithManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { SetManagedDataIdentifierIds(std::forward<ManagedDataIdentifierIdsT>(value)); return *this;}
+    template<typename ManagedDataIdentifierIdsT = Aws::String>
+    SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.emplace_back(std::forward<ManagedDataIdentifierIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -10,26 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateBlueGreenDeploymentRequest::CreateBlueGreenDeploymentRequest() : 
-    m_blueGreenDeploymentNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetEngineVersionHasBeenSet(false),
-    m_targetDBParameterGroupNameHasBeenSet(false),
-    m_targetDBClusterParameterGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetDBInstanceClassHasBeenSet(false),
-    m_upgradeTargetStorageConfig(false),
-    m_upgradeTargetStorageConfigHasBeenSet(false),
-    m_targetIops(0),
-    m_targetIopsHasBeenSet(false),
-    m_targetStorageTypeHasBeenSet(false),
-    m_targetAllocatedStorage(0),
-    m_targetAllocatedStorageHasBeenSet(false),
-    m_targetStorageThroughput(0),
-    m_targetStorageThroughputHasBeenSet(false)
-{
-}
-
 Aws::String CreateBlueGreenDeploymentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class AwsIamUserPolicy
   {
   public:
-    AWS_SECURITYHUB_API AwsIamUserPolicy();
+    AWS_SECURITYHUB_API AwsIamUserPolicy() = default;
     AWS_SECURITYHUB_API AwsIamUserPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsIamUserPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline AwsIamUserPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline AwsIamUserPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline AwsIamUserPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    AwsIamUserPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
   private:
 

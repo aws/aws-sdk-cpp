@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRequestValidatorRequest::DeleteRequestValidatorRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_requestValidatorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRequestValidatorRequest::SerializePayload() const
 {
   return {};

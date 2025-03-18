@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTokenResult::GetTokenResult()
-{
-}
-
 GetTokenResult::GetTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetTokenResult& GetTokenResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("challengeCode"))
   {
     m_challengeCode = jsonValue.GetString("challengeCode");
-
+    m_challengeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ttl"))
   {
     m_ttl = jsonValue.GetString("ttl");
-
+    m_ttlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

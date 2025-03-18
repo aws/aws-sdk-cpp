@@ -35,7 +35,7 @@ namespace Model
   class UpdateCondition
   {
   public:
-    AWS_SIMPLEDB_API UpdateCondition();
+    AWS_SIMPLEDB_API UpdateCondition() = default;
     AWS_SIMPLEDB_API UpdateCondition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SIMPLEDB_API UpdateCondition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the attribute involved in the condition.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCondition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCondition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCondition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCondition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The value of an attribute. This value can only be specified when the
      * <code>Exists</code> parameter is equal to <code>true</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline UpdateCondition& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline UpdateCondition& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline UpdateCondition& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    UpdateCondition& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * satisfied. Specify <code>false</code> if the attribute should not exist in order
      * for the update condition to be satisfied.</p>
      */
-    inline bool GetExists() const{ return m_exists; }
+    inline bool GetExists() const { return m_exists; }
     inline bool ExistsHasBeenSet() const { return m_existsHasBeenSet; }
     inline void SetExists(bool value) { m_existsHasBeenSet = true; m_exists = value; }
     inline UpdateCondition& WithExists(bool value) { SetExists(value); return *this;}
@@ -93,7 +89,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_exists;
+    bool m_exists{false};
     bool m_existsHasBeenSet = false;
   };
 

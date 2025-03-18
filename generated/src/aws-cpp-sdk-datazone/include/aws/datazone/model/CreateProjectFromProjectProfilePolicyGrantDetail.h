@@ -33,7 +33,7 @@ namespace Model
   class CreateProjectFromProjectProfilePolicyGrantDetail
   {
   public:
-    AWS_DATAZONE_API CreateProjectFromProjectProfilePolicyGrantDetail();
+    AWS_DATAZONE_API CreateProjectFromProjectProfilePolicyGrantDetail() = default;
     AWS_DATAZONE_API CreateProjectFromProjectProfilePolicyGrantDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API CreateProjectFromProjectProfilePolicyGrantDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Specifies whether to include child domain units when creating a project from
      * project profile policy grant details</p>
      */
-    inline bool GetIncludeChildDomainUnits() const{ return m_includeChildDomainUnits; }
+    inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
     inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
     inline void SetIncludeChildDomainUnits(bool value) { m_includeChildDomainUnitsHasBeenSet = true; m_includeChildDomainUnits = value; }
     inline CreateProjectFromProjectProfilePolicyGrantDetail& WithIncludeChildDomainUnits(bool value) { SetIncludeChildDomainUnits(value); return *this;}
@@ -55,19 +55,18 @@ namespace Model
      * <p>Specifies project profiles when creating a project from project profile
      * policy grant details</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProjectProfiles() const{ return m_projectProfiles; }
+    inline const Aws::Vector<Aws::String>& GetProjectProfiles() const { return m_projectProfiles; }
     inline bool ProjectProfilesHasBeenSet() const { return m_projectProfilesHasBeenSet; }
-    inline void SetProjectProfiles(const Aws::Vector<Aws::String>& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles = value; }
-    inline void SetProjectProfiles(Aws::Vector<Aws::String>&& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles = std::move(value); }
-    inline CreateProjectFromProjectProfilePolicyGrantDetail& WithProjectProfiles(const Aws::Vector<Aws::String>& value) { SetProjectProfiles(value); return *this;}
-    inline CreateProjectFromProjectProfilePolicyGrantDetail& WithProjectProfiles(Aws::Vector<Aws::String>&& value) { SetProjectProfiles(std::move(value)); return *this;}
-    inline CreateProjectFromProjectProfilePolicyGrantDetail& AddProjectProfiles(const Aws::String& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles.push_back(value); return *this; }
-    inline CreateProjectFromProjectProfilePolicyGrantDetail& AddProjectProfiles(Aws::String&& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles.push_back(std::move(value)); return *this; }
-    inline CreateProjectFromProjectProfilePolicyGrantDetail& AddProjectProfiles(const char* value) { m_projectProfilesHasBeenSet = true; m_projectProfiles.push_back(value); return *this; }
+    template<typename ProjectProfilesT = Aws::Vector<Aws::String>>
+    void SetProjectProfiles(ProjectProfilesT&& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles = std::forward<ProjectProfilesT>(value); }
+    template<typename ProjectProfilesT = Aws::Vector<Aws::String>>
+    CreateProjectFromProjectProfilePolicyGrantDetail& WithProjectProfiles(ProjectProfilesT&& value) { SetProjectProfiles(std::forward<ProjectProfilesT>(value)); return *this;}
+    template<typename ProjectProfilesT = Aws::String>
+    CreateProjectFromProjectProfilePolicyGrantDetail& AddProjectProfiles(ProjectProfilesT&& value) { m_projectProfilesHasBeenSet = true; m_projectProfiles.emplace_back(std::forward<ProjectProfilesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_includeChildDomainUnits;
+    bool m_includeChildDomainUnits{false};
     bool m_includeChildDomainUnitsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_projectProfiles;

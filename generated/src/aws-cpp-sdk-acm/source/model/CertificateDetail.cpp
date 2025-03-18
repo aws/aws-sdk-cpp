@@ -18,44 +18,7 @@ namespace ACM
 namespace Model
 {
 
-CertificateDetail::CertificateDetail() : 
-    m_certificateArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_importedAtHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revocationReason(RevocationReason::NOT_SET),
-    m_revocationReasonHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false),
-    m_inUseByHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_renewalEligibility(RenewalEligibility::NOT_SET),
-    m_renewalEligibilityHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 CertificateDetail::CertificateDetail(JsonView jsonValue)
-  : CertificateDetail()
 {
   *this = jsonValue;
 }
@@ -65,17 +28,13 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectAlternativeNames"))
   {
     Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
@@ -85,7 +44,6 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
     Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
@@ -95,98 +53,71 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_domainValidationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Serial"))
   {
     m_serial = jsonValue.GetString("Serial");
-
     m_serialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssuedAt"))
   {
     m_issuedAt = jsonValue.GetDouble("IssuedAt");
-
     m_issuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedAt"))
   {
     m_importedAt = jsonValue.GetDouble("ImportedAt");
-
     m_importedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevokedAt"))
   {
     m_revokedAt = jsonValue.GetDouble("RevokedAt");
-
     m_revokedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevocationReason"))
   {
     m_revocationReason = RevocationReasonMapper::GetRevocationReasonForName(jsonValue.GetString("RevocationReason"));
-
     m_revocationReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotBefore"))
   {
     m_notBefore = jsonValue.GetDouble("NotBefore");
-
     m_notBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotAfter"))
   {
     m_notAfter = jsonValue.GetDouble("NotAfter");
-
     m_notAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAlgorithm"))
   {
     m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
-
     m_keyAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignatureAlgorithm"))
   {
     m_signatureAlgorithm = jsonValue.GetString("SignatureAlgorithm");
-
     m_signatureAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InUseBy"))
   {
     Aws::Utils::Array<JsonView> inUseByJsonList = jsonValue.GetArray("InUseBy");
@@ -196,28 +127,21 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_inUseByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("FailureReason"));
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalSummary"))
   {
     m_renewalSummary = jsonValue.GetObject("RenewalSummary");
-
     m_renewalSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsages"))
   {
     Aws::Utils::Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
@@ -227,7 +151,6 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_keyUsagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendedKeyUsages"))
   {
     Aws::Utils::Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
@@ -237,28 +160,21 @@ CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
     }
     m_extendedKeyUsagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateAuthorityArn"))
   {
     m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
-
     m_certificateAuthorityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalEligibility"))
   {
     m_renewalEligibility = RenewalEligibilityMapper::GetRenewalEligibilityForName(jsonValue.GetString("RenewalEligibility"));
-
     m_renewalEligibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

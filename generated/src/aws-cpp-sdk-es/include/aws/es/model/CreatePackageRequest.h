@@ -27,7 +27,7 @@ namespace Model
   class CreatePackageRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API CreatePackageRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreatePackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,40 +42,34 @@ namespace Model
     /**
      * <p>Unique identifier for the package.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-    inline CreatePackageRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline CreatePackageRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline CreatePackageRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    CreatePackageRequest& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
      */
-    inline const PackageType& GetPackageType() const{ return m_packageType; }
+    inline PackageType GetPackageType() const { return m_packageType; }
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
-    inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
-    inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
-    inline CreatePackageRequest& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
-    inline CreatePackageRequest& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
+    inline void SetPackageType(PackageType value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+    inline CreatePackageRequest& WithPackageType(PackageType value) { SetPackageType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the package.</p>
      */
-    inline const Aws::String& GetPackageDescription() const{ return m_packageDescription; }
+    inline const Aws::String& GetPackageDescription() const { return m_packageDescription; }
     inline bool PackageDescriptionHasBeenSet() const { return m_packageDescriptionHasBeenSet; }
-    inline void SetPackageDescription(const Aws::String& value) { m_packageDescriptionHasBeenSet = true; m_packageDescription = value; }
-    inline void SetPackageDescription(Aws::String&& value) { m_packageDescriptionHasBeenSet = true; m_packageDescription = std::move(value); }
-    inline void SetPackageDescription(const char* value) { m_packageDescriptionHasBeenSet = true; m_packageDescription.assign(value); }
-    inline CreatePackageRequest& WithPackageDescription(const Aws::String& value) { SetPackageDescription(value); return *this;}
-    inline CreatePackageRequest& WithPackageDescription(Aws::String&& value) { SetPackageDescription(std::move(value)); return *this;}
-    inline CreatePackageRequest& WithPackageDescription(const char* value) { SetPackageDescription(value); return *this;}
+    template<typename PackageDescriptionT = Aws::String>
+    void SetPackageDescription(PackageDescriptionT&& value) { m_packageDescriptionHasBeenSet = true; m_packageDescription = std::forward<PackageDescriptionT>(value); }
+    template<typename PackageDescriptionT = Aws::String>
+    CreatePackageRequest& WithPackageDescription(PackageDescriptionT&& value) { SetPackageDescription(std::forward<PackageDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +77,19 @@ namespace Model
      * <p>The customer S3 location <code>PackageSource</code> for importing the
      * package.</p>
      */
-    inline const PackageSource& GetPackageSource() const{ return m_packageSource; }
+    inline const PackageSource& GetPackageSource() const { return m_packageSource; }
     inline bool PackageSourceHasBeenSet() const { return m_packageSourceHasBeenSet; }
-    inline void SetPackageSource(const PackageSource& value) { m_packageSourceHasBeenSet = true; m_packageSource = value; }
-    inline void SetPackageSource(PackageSource&& value) { m_packageSourceHasBeenSet = true; m_packageSource = std::move(value); }
-    inline CreatePackageRequest& WithPackageSource(const PackageSource& value) { SetPackageSource(value); return *this;}
-    inline CreatePackageRequest& WithPackageSource(PackageSource&& value) { SetPackageSource(std::move(value)); return *this;}
+    template<typename PackageSourceT = PackageSource>
+    void SetPackageSource(PackageSourceT&& value) { m_packageSourceHasBeenSet = true; m_packageSource = std::forward<PackageSourceT>(value); }
+    template<typename PackageSourceT = PackageSource>
+    CreatePackageRequest& WithPackageSource(PackageSourceT&& value) { SetPackageSource(std::forward<PackageSourceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_packageName;
     bool m_packageNameHasBeenSet = false;
 
-    PackageType m_packageType;
+    PackageType m_packageType{PackageType::NOT_SET};
     bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;

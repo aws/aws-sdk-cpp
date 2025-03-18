@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutContainerRecipePolicyResult::PutContainerRecipePolicyResult()
-{
-}
-
 PutContainerRecipePolicyResult::PutContainerRecipePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ PutContainerRecipePolicyResult& PutContainerRecipePolicyResult::operator =(const
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerRecipeArn"))
   {
     m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
-
+    m_containerRecipeArnHasBeenSet = true;
   }
-
 
 
   return *this;

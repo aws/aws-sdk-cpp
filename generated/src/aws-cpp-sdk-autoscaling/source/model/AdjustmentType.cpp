@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AdjustmentType::AdjustmentType() : 
-    m_adjustmentTypeHasBeenSet(false)
-{
-}
-
 AdjustmentType::AdjustmentType(const XmlNode& xmlNode)
-  : AdjustmentType()
 {
   *this = xmlNode;
 }

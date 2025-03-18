@@ -33,7 +33,7 @@ namespace Model
   class AppMonitorSummary
   {
   public:
-    AWS_CLOUDWATCHRUM_API AppMonitorSummary();
+    AWS_CLOUDWATCHRUM_API AppMonitorSummary() = default;
     AWS_CLOUDWATCHRUM_API AppMonitorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API AppMonitorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The date and time that the app monitor was created.</p>
      */
-    inline const Aws::String& GetCreated() const{ return m_created; }
+    inline const Aws::String& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::String& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::String&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline void SetCreated(const char* value) { m_createdHasBeenSet = true; m_created.assign(value); }
-    inline AppMonitorSummary& WithCreated(const Aws::String& value) { SetCreated(value); return *this;}
-    inline AppMonitorSummary& WithCreated(Aws::String&& value) { SetCreated(std::move(value)); return *this;}
-    inline AppMonitorSummary& WithCreated(const char* value) { SetCreated(value); return *this;}
+    template<typename CreatedT = Aws::String>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::String>
+    AppMonitorSummary& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of this app monitor.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AppMonitorSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AppMonitorSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AppMonitorSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AppMonitorSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,40 +68,34 @@ namespace Model
      * <p>The date and time of the most recent changes to this app monitor's
      * configuration.</p>
      */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::String& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-    inline AppMonitorSummary& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-    inline AppMonitorSummary& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
-    inline AppMonitorSummary& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    template<typename LastModifiedT = Aws::String>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::String>
+    AppMonitorSummary& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this app monitor.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AppMonitorSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AppMonitorSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AppMonitorSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AppMonitorSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of this app monitor.</p>
      */
-    inline const StateEnum& GetState() const{ return m_state; }
+    inline StateEnum GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const StateEnum& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(StateEnum&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AppMonitorSummary& WithState(const StateEnum& value) { SetState(value); return *this;}
-    inline AppMonitorSummary& WithState(StateEnum&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(StateEnum value) { m_stateHasBeenSet = true; m_state = value; }
+    inline AppMonitorSummary& WithState(StateEnum value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -121,7 +111,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    StateEnum m_state;
+    StateEnum m_state{StateEnum::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

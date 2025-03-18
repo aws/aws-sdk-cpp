@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DistributeDataset::DistributeDataset() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 DistributeDataset::DistributeDataset(JsonView jsonValue)
-  : DistributeDataset()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DistributeDataset& DistributeDataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePlaybackConfigurationRequest::DeletePlaybackConfigurationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlaybackConfigurationRequest::SerializePayload() const
 {
   return {};

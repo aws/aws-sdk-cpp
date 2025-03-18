@@ -12,17 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAnomalySubscriptionRequest::UpdateAnomalySubscriptionRequest() : 
-    m_subscriptionArnHasBeenSet(false),
-    m_frequency(AnomalySubscriptionFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_monitorArnListHasBeenSet(false),
-    m_subscribersHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false),
-    m_thresholdExpressionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

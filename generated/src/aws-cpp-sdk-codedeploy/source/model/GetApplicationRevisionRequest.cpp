@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRevisionRequest::GetApplicationRevisionRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

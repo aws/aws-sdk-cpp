@@ -12,16 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatastoreRequest::CreateDatastoreRequest() : 
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStorageHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false),
-    m_datastorePartitionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatastoreRequest::SerializePayload() const
 {
   JsonValue payload;

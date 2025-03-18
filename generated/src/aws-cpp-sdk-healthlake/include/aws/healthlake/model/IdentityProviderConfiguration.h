@@ -33,7 +33,7 @@ namespace Model
   class IdentityProviderConfiguration
   {
   public:
-    AWS_HEALTHLAKE_API IdentityProviderConfiguration();
+    AWS_HEALTHLAKE_API IdentityProviderConfiguration() = default;
     AWS_HEALTHLAKE_API IdentityProviderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API IdentityProviderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The authorization strategy that you selected when you created the data
      * store.</p>
      */
-    inline const AuthorizationStrategy& GetAuthorizationStrategy() const{ return m_authorizationStrategy; }
+    inline AuthorizationStrategy GetAuthorizationStrategy() const { return m_authorizationStrategy; }
     inline bool AuthorizationStrategyHasBeenSet() const { return m_authorizationStrategyHasBeenSet; }
-    inline void SetAuthorizationStrategy(const AuthorizationStrategy& value) { m_authorizationStrategyHasBeenSet = true; m_authorizationStrategy = value; }
-    inline void SetAuthorizationStrategy(AuthorizationStrategy&& value) { m_authorizationStrategyHasBeenSet = true; m_authorizationStrategy = std::move(value); }
-    inline IdentityProviderConfiguration& WithAuthorizationStrategy(const AuthorizationStrategy& value) { SetAuthorizationStrategy(value); return *this;}
-    inline IdentityProviderConfiguration& WithAuthorizationStrategy(AuthorizationStrategy&& value) { SetAuthorizationStrategy(std::move(value)); return *this;}
+    inline void SetAuthorizationStrategy(AuthorizationStrategy value) { m_authorizationStrategyHasBeenSet = true; m_authorizationStrategy = value; }
+    inline IdentityProviderConfiguration& WithAuthorizationStrategy(AuthorizationStrategy value) { SetAuthorizationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>If you enabled fine-grained authorization when you created the data
      * store.</p>
      */
-    inline bool GetFineGrainedAuthorizationEnabled() const{ return m_fineGrainedAuthorizationEnabled; }
+    inline bool GetFineGrainedAuthorizationEnabled() const { return m_fineGrainedAuthorizationEnabled; }
     inline bool FineGrainedAuthorizationEnabledHasBeenSet() const { return m_fineGrainedAuthorizationEnabledHasBeenSet; }
     inline void SetFineGrainedAuthorizationEnabled(bool value) { m_fineGrainedAuthorizationEnabledHasBeenSet = true; m_fineGrainedAuthorizationEnabled = value; }
     inline IdentityProviderConfiguration& WithFineGrainedAuthorizationEnabled(bool value) { SetFineGrainedAuthorizationEnabled(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
      * supported PKCE code challenge methods. You must include the <code>S256</code>
      * method in the array of PKCE code challenge methods.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline IdentityProviderConfiguration& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline IdentityProviderConfiguration& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline IdentityProviderConfiguration& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    IdentityProviderConfiguration& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,21 +92,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to
      * decode the access token created by the authorization server.</p>
      */
-    inline const Aws::String& GetIdpLambdaArn() const{ return m_idpLambdaArn; }
+    inline const Aws::String& GetIdpLambdaArn() const { return m_idpLambdaArn; }
     inline bool IdpLambdaArnHasBeenSet() const { return m_idpLambdaArnHasBeenSet; }
-    inline void SetIdpLambdaArn(const Aws::String& value) { m_idpLambdaArnHasBeenSet = true; m_idpLambdaArn = value; }
-    inline void SetIdpLambdaArn(Aws::String&& value) { m_idpLambdaArnHasBeenSet = true; m_idpLambdaArn = std::move(value); }
-    inline void SetIdpLambdaArn(const char* value) { m_idpLambdaArnHasBeenSet = true; m_idpLambdaArn.assign(value); }
-    inline IdentityProviderConfiguration& WithIdpLambdaArn(const Aws::String& value) { SetIdpLambdaArn(value); return *this;}
-    inline IdentityProviderConfiguration& WithIdpLambdaArn(Aws::String&& value) { SetIdpLambdaArn(std::move(value)); return *this;}
-    inline IdentityProviderConfiguration& WithIdpLambdaArn(const char* value) { SetIdpLambdaArn(value); return *this;}
+    template<typename IdpLambdaArnT = Aws::String>
+    void SetIdpLambdaArn(IdpLambdaArnT&& value) { m_idpLambdaArnHasBeenSet = true; m_idpLambdaArn = std::forward<IdpLambdaArnT>(value); }
+    template<typename IdpLambdaArnT = Aws::String>
+    IdentityProviderConfiguration& WithIdpLambdaArn(IdpLambdaArnT&& value) { SetIdpLambdaArn(std::forward<IdpLambdaArnT>(value)); return *this;}
     ///@}
   private:
 
-    AuthorizationStrategy m_authorizationStrategy;
+    AuthorizationStrategy m_authorizationStrategy{AuthorizationStrategy::NOT_SET};
     bool m_authorizationStrategyHasBeenSet = false;
 
-    bool m_fineGrainedAuthorizationEnabled;
+    bool m_fineGrainedAuthorizationEnabled{false};
     bool m_fineGrainedAuthorizationEnabledHasBeenSet = false;
 
     Aws::String m_metadata;

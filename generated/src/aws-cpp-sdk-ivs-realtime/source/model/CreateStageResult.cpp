@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStageResult::CreateStageResult()
-{
-}
-
 CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetObject("stage");
-
+    m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participantTokens"))
   {
     Aws::Utils::Array<JsonView> participantTokensJsonList = jsonValue.GetArray("participantTokens");
@@ -42,14 +37,15 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_participantTokens.push_back(participantTokensJsonList[participantTokensIndex].AsObject());
     }
+    m_participantTokensHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

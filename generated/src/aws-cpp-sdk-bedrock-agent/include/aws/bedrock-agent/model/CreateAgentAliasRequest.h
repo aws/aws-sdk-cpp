@@ -25,7 +25,7 @@ namespace Model
   class CreateAgentAliasRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API CreateAgentAliasRequest();
+    AWS_BEDROCKAGENT_API CreateAgentAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The name of the alias.</p>
      */
-    inline const Aws::String& GetAgentAliasName() const{ return m_agentAliasName; }
+    inline const Aws::String& GetAgentAliasName() const { return m_agentAliasName; }
     inline bool AgentAliasNameHasBeenSet() const { return m_agentAliasNameHasBeenSet; }
-    inline void SetAgentAliasName(const Aws::String& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = value; }
-    inline void SetAgentAliasName(Aws::String&& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = std::move(value); }
-    inline void SetAgentAliasName(const char* value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName.assign(value); }
-    inline CreateAgentAliasRequest& WithAgentAliasName(const Aws::String& value) { SetAgentAliasName(value); return *this;}
-    inline CreateAgentAliasRequest& WithAgentAliasName(Aws::String&& value) { SetAgentAliasName(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& WithAgentAliasName(const char* value) { SetAgentAliasName(value); return *this;}
+    template<typename AgentAliasNameT = Aws::String>
+    void SetAgentAliasName(AgentAliasNameT&& value) { m_agentAliasNameHasBeenSet = true; m_agentAliasName = std::forward<AgentAliasNameT>(value); }
+    template<typename AgentAliasNameT = Aws::String>
+    CreateAgentAliasRequest& WithAgentAliasName(AgentAliasNameT&& value) { SetAgentAliasName(std::forward<AgentAliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline CreateAgentAliasRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline CreateAgentAliasRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    CreateAgentAliasRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,61 +68,54 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAgentAliasRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAgentAliasRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAgentAliasRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the alias of the agent.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAgentAliasRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAgentAliasRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAgentAliasRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the routing configuration of the alias.</p>
      */
-    inline const Aws::Vector<AgentAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const{ return m_routingConfiguration; }
+    inline const Aws::Vector<AgentAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const { return m_routingConfiguration; }
     inline bool RoutingConfigurationHasBeenSet() const { return m_routingConfigurationHasBeenSet; }
-    inline void SetRoutingConfiguration(const Aws::Vector<AgentAliasRoutingConfigurationListItem>& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = value; }
-    inline void SetRoutingConfiguration(Aws::Vector<AgentAliasRoutingConfigurationListItem>&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::move(value); }
-    inline CreateAgentAliasRequest& WithRoutingConfiguration(const Aws::Vector<AgentAliasRoutingConfigurationListItem>& value) { SetRoutingConfiguration(value); return *this;}
-    inline CreateAgentAliasRequest& WithRoutingConfiguration(Aws::Vector<AgentAliasRoutingConfigurationListItem>&& value) { SetRoutingConfiguration(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& AddRoutingConfiguration(const AgentAliasRoutingConfigurationListItem& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.push_back(value); return *this; }
-    inline CreateAgentAliasRequest& AddRoutingConfiguration(AgentAliasRoutingConfigurationListItem&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.push_back(std::move(value)); return *this; }
+    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
+    void SetRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration = std::forward<RoutingConfigurationT>(value); }
+    template<typename RoutingConfigurationT = Aws::Vector<AgentAliasRoutingConfigurationListItem>>
+    CreateAgentAliasRequest& WithRoutingConfiguration(RoutingConfigurationT&& value) { SetRoutingConfiguration(std::forward<RoutingConfigurationT>(value)); return *this;}
+    template<typename RoutingConfigurationT = AgentAliasRoutingConfigurationListItem>
+    CreateAgentAliasRequest& AddRoutingConfiguration(RoutingConfigurationT&& value) { m_routingConfigurationHasBeenSet = true; m_routingConfiguration.emplace_back(std::forward<RoutingConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any tags that you want to attach to the alias of the agent.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAgentAliasRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAgentAliasRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAgentAliasRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAgentAliasRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAgentAliasRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAgentAliasRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAgentAliasRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAgentAliasRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAgentAliasRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentAliasRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAgentAliasRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

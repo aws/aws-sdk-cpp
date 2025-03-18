@@ -21,7 +21,7 @@ namespace Model
   class GetBudgetRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API GetBudgetRequest();
+    AWS_DEADLINE_API GetBudgetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The farm ID of the farm connected to the budget.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline GetBudgetRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline GetBudgetRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline GetBudgetRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    GetBudgetRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The budget ID.</p>
      */
-    inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
+    inline const Aws::String& GetBudgetId() const { return m_budgetId; }
     inline bool BudgetIdHasBeenSet() const { return m_budgetIdHasBeenSet; }
-    inline void SetBudgetId(const Aws::String& value) { m_budgetIdHasBeenSet = true; m_budgetId = value; }
-    inline void SetBudgetId(Aws::String&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::move(value); }
-    inline void SetBudgetId(const char* value) { m_budgetIdHasBeenSet = true; m_budgetId.assign(value); }
-    inline GetBudgetRequest& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
-    inline GetBudgetRequest& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
-    inline GetBudgetRequest& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
+    template<typename BudgetIdT = Aws::String>
+    void SetBudgetId(BudgetIdT&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::forward<BudgetIdT>(value); }
+    template<typename BudgetIdT = Aws::String>
+    GetBudgetRequest& WithBudgetId(BudgetIdT&& value) { SetBudgetId(std::forward<BudgetIdT>(value)); return *this;}
     ///@}
   private:
 

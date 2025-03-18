@@ -36,7 +36,7 @@ namespace Model
   class ListSolNetworkInstanceInfo
   {
   public:
-    AWS_TNB_API ListSolNetworkInstanceInfo();
+    AWS_TNB_API ListSolNetworkInstanceInfo() = default;
     AWS_TNB_API ListSolNetworkInstanceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ListSolNetworkInstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,108 +46,94 @@ namespace Model
     /**
      * <p>Network instance ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListSolNetworkInstanceInfo& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the network instance.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ListSolNetworkInstanceInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata of the network instance.</p>
      */
-    inline const ListSolNetworkInstanceMetadata& GetMetadata() const{ return m_metadata; }
+    inline const ListSolNetworkInstanceMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const ListSolNetworkInstanceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(ListSolNetworkInstanceMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ListSolNetworkInstanceInfo& WithMetadata(const ListSolNetworkInstanceMetadata& value) { SetMetadata(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithMetadata(ListSolNetworkInstanceMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = ListSolNetworkInstanceMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ListSolNetworkInstanceMetadata>
+    ListSolNetworkInstanceInfo& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Human-readable description of the network instance.</p>
      */
-    inline const Aws::String& GetNsInstanceDescription() const{ return m_nsInstanceDescription; }
+    inline const Aws::String& GetNsInstanceDescription() const { return m_nsInstanceDescription; }
     inline bool NsInstanceDescriptionHasBeenSet() const { return m_nsInstanceDescriptionHasBeenSet; }
-    inline void SetNsInstanceDescription(const Aws::String& value) { m_nsInstanceDescriptionHasBeenSet = true; m_nsInstanceDescription = value; }
-    inline void SetNsInstanceDescription(Aws::String&& value) { m_nsInstanceDescriptionHasBeenSet = true; m_nsInstanceDescription = std::move(value); }
-    inline void SetNsInstanceDescription(const char* value) { m_nsInstanceDescriptionHasBeenSet = true; m_nsInstanceDescription.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithNsInstanceDescription(const Aws::String& value) { SetNsInstanceDescription(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsInstanceDescription(Aws::String&& value) { SetNsInstanceDescription(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsInstanceDescription(const char* value) { SetNsInstanceDescription(value); return *this;}
+    template<typename NsInstanceDescriptionT = Aws::String>
+    void SetNsInstanceDescription(NsInstanceDescriptionT&& value) { m_nsInstanceDescriptionHasBeenSet = true; m_nsInstanceDescription = std::forward<NsInstanceDescriptionT>(value); }
+    template<typename NsInstanceDescriptionT = Aws::String>
+    ListSolNetworkInstanceInfo& WithNsInstanceDescription(NsInstanceDescriptionT&& value) { SetNsInstanceDescription(std::forward<NsInstanceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Human-readable name of the network instance.</p>
      */
-    inline const Aws::String& GetNsInstanceName() const{ return m_nsInstanceName; }
+    inline const Aws::String& GetNsInstanceName() const { return m_nsInstanceName; }
     inline bool NsInstanceNameHasBeenSet() const { return m_nsInstanceNameHasBeenSet; }
-    inline void SetNsInstanceName(const Aws::String& value) { m_nsInstanceNameHasBeenSet = true; m_nsInstanceName = value; }
-    inline void SetNsInstanceName(Aws::String&& value) { m_nsInstanceNameHasBeenSet = true; m_nsInstanceName = std::move(value); }
-    inline void SetNsInstanceName(const char* value) { m_nsInstanceNameHasBeenSet = true; m_nsInstanceName.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithNsInstanceName(const Aws::String& value) { SetNsInstanceName(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsInstanceName(Aws::String&& value) { SetNsInstanceName(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsInstanceName(const char* value) { SetNsInstanceName(value); return *this;}
+    template<typename NsInstanceNameT = Aws::String>
+    void SetNsInstanceName(NsInstanceNameT&& value) { m_nsInstanceNameHasBeenSet = true; m_nsInstanceName = std::forward<NsInstanceNameT>(value); }
+    template<typename NsInstanceNameT = Aws::String>
+    ListSolNetworkInstanceInfo& WithNsInstanceName(NsInstanceNameT&& value) { SetNsInstanceName(std::forward<NsInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the network instance.</p>
      */
-    inline const NsState& GetNsState() const{ return m_nsState; }
+    inline NsState GetNsState() const { return m_nsState; }
     inline bool NsStateHasBeenSet() const { return m_nsStateHasBeenSet; }
-    inline void SetNsState(const NsState& value) { m_nsStateHasBeenSet = true; m_nsState = value; }
-    inline void SetNsState(NsState&& value) { m_nsStateHasBeenSet = true; m_nsState = std::move(value); }
-    inline ListSolNetworkInstanceInfo& WithNsState(const NsState& value) { SetNsState(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsState(NsState&& value) { SetNsState(std::move(value)); return *this;}
+    inline void SetNsState(NsState value) { m_nsStateHasBeenSet = true; m_nsState = value; }
+    inline ListSolNetworkInstanceInfo& WithNsState(NsState value) { SetNsState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the network service descriptor in the network package.</p>
      */
-    inline const Aws::String& GetNsdId() const{ return m_nsdId; }
+    inline const Aws::String& GetNsdId() const { return m_nsdId; }
     inline bool NsdIdHasBeenSet() const { return m_nsdIdHasBeenSet; }
-    inline void SetNsdId(const Aws::String& value) { m_nsdIdHasBeenSet = true; m_nsdId = value; }
-    inline void SetNsdId(Aws::String&& value) { m_nsdIdHasBeenSet = true; m_nsdId = std::move(value); }
-    inline void SetNsdId(const char* value) { m_nsdIdHasBeenSet = true; m_nsdId.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithNsdId(const Aws::String& value) { SetNsdId(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsdId(Aws::String&& value) { SetNsdId(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsdId(const char* value) { SetNsdId(value); return *this;}
+    template<typename NsdIdT = Aws::String>
+    void SetNsdId(NsdIdT&& value) { m_nsdIdHasBeenSet = true; m_nsdId = std::forward<NsdIdT>(value); }
+    template<typename NsdIdT = Aws::String>
+    ListSolNetworkInstanceInfo& WithNsdId(NsdIdT&& value) { SetNsdId(std::forward<NsdIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the network service descriptor in the network package.</p>
      */
-    inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
+    inline const Aws::String& GetNsdInfoId() const { return m_nsdInfoId; }
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-    inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-    inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-    inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-    inline ListSolNetworkInstanceInfo& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-    inline ListSolNetworkInstanceInfo& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    template<typename NsdInfoIdT = Aws::String>
+    void SetNsdInfoId(NsdInfoIdT&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::forward<NsdInfoIdT>(value); }
+    template<typename NsdInfoIdT = Aws::String>
+    ListSolNetworkInstanceInfo& WithNsdInfoId(NsdInfoIdT&& value) { SetNsdInfoId(std::forward<NsdInfoIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,7 +152,7 @@ namespace Model
     Aws::String m_nsInstanceName;
     bool m_nsInstanceNameHasBeenSet = false;
 
-    NsState m_nsState;
+    NsState m_nsState{NsState::NOT_SET};
     bool m_nsStateHasBeenSet = false;
 
     Aws::String m_nsdId;

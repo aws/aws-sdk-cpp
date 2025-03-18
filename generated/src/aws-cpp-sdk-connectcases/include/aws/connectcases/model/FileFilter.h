@@ -32,7 +32,7 @@ namespace Model
   class FileFilter
   {
   public:
-    AWS_CONNECTCASES_API FileFilter();
+    AWS_CONNECTCASES_API FileFilter() = default;
     AWS_CONNECTCASES_API FileFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API FileFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file.</p>
      */
-    inline const Aws::String& GetFileArn() const{ return m_fileArn; }
+    inline const Aws::String& GetFileArn() const { return m_fileArn; }
     inline bool FileArnHasBeenSet() const { return m_fileArnHasBeenSet; }
-    inline void SetFileArn(const Aws::String& value) { m_fileArnHasBeenSet = true; m_fileArn = value; }
-    inline void SetFileArn(Aws::String&& value) { m_fileArnHasBeenSet = true; m_fileArn = std::move(value); }
-    inline void SetFileArn(const char* value) { m_fileArnHasBeenSet = true; m_fileArn.assign(value); }
-    inline FileFilter& WithFileArn(const Aws::String& value) { SetFileArn(value); return *this;}
-    inline FileFilter& WithFileArn(Aws::String&& value) { SetFileArn(std::move(value)); return *this;}
-    inline FileFilter& WithFileArn(const char* value) { SetFileArn(value); return *this;}
+    template<typename FileArnT = Aws::String>
+    void SetFileArn(FileArnT&& value) { m_fileArnHasBeenSet = true; m_fileArn = std::forward<FileArnT>(value); }
+    template<typename FileArnT = Aws::String>
+    FileFilter& WithFileArn(FileArnT&& value) { SetFileArn(std::forward<FileArnT>(value)); return *this;}
     ///@}
   private:
 

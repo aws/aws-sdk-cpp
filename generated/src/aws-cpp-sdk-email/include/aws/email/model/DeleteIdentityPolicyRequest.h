@@ -28,7 +28,7 @@ namespace Model
   class DeleteIdentityPolicyRequest : public SESRequest
   {
   public:
-    AWS_SES_API DeleteIdentityPolicyRequest();
+    AWS_SES_API DeleteIdentityPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,28 +51,24 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this operation, you must own the identity.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline DeleteIdentityPolicyRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline DeleteIdentityPolicyRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline DeleteIdentityPolicyRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    DeleteIdentityPolicyRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy to be deleted.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline DeleteIdentityPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline DeleteIdentityPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline DeleteIdentityPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    DeleteIdentityPolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,21 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGameSessionRequest::CreateGameSessionRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_aliasIdHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_gameSessionIdHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String CreateGameSessionRequest::SerializePayload() const
 {
   JsonValue payload;

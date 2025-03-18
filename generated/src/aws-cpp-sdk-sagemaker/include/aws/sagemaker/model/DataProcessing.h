@@ -40,7 +40,7 @@ namespace Model
   class DataProcessing
   {
   public:
-    AWS_SAGEMAKER_API DataProcessing();
+    AWS_SAGEMAKER_API DataProcessing() = default;
     AWS_SAGEMAKER_API DataProcessing(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DataProcessing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
      * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
-    inline const Aws::String& GetInputFilter() const{ return m_inputFilter; }
+    inline const Aws::String& GetInputFilter() const { return m_inputFilter; }
     inline bool InputFilterHasBeenSet() const { return m_inputFilterHasBeenSet; }
-    inline void SetInputFilter(const Aws::String& value) { m_inputFilterHasBeenSet = true; m_inputFilter = value; }
-    inline void SetInputFilter(Aws::String&& value) { m_inputFilterHasBeenSet = true; m_inputFilter = std::move(value); }
-    inline void SetInputFilter(const char* value) { m_inputFilterHasBeenSet = true; m_inputFilter.assign(value); }
-    inline DataProcessing& WithInputFilter(const Aws::String& value) { SetInputFilter(value); return *this;}
-    inline DataProcessing& WithInputFilter(Aws::String&& value) { SetInputFilter(std::move(value)); return *this;}
-    inline DataProcessing& WithInputFilter(const char* value) { SetInputFilter(value); return *this;}
+    template<typename InputFilterT = Aws::String>
+    void SetInputFilter(InputFilterT&& value) { m_inputFilterHasBeenSet = true; m_inputFilter = std::forward<InputFilterT>(value); }
+    template<typename InputFilterT = Aws::String>
+    DataProcessing& WithInputFilter(InputFilterT&& value) { SetInputFilter(std::forward<InputFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
-    inline const Aws::String& GetOutputFilter() const{ return m_outputFilter; }
+    inline const Aws::String& GetOutputFilter() const { return m_outputFilter; }
     inline bool OutputFilterHasBeenSet() const { return m_outputFilterHasBeenSet; }
-    inline void SetOutputFilter(const Aws::String& value) { m_outputFilterHasBeenSet = true; m_outputFilter = value; }
-    inline void SetOutputFilter(Aws::String&& value) { m_outputFilterHasBeenSet = true; m_outputFilter = std::move(value); }
-    inline void SetOutputFilter(const char* value) { m_outputFilterHasBeenSet = true; m_outputFilter.assign(value); }
-    inline DataProcessing& WithOutputFilter(const Aws::String& value) { SetOutputFilter(value); return *this;}
-    inline DataProcessing& WithOutputFilter(Aws::String&& value) { SetOutputFilter(std::move(value)); return *this;}
-    inline DataProcessing& WithOutputFilter(const char* value) { SetOutputFilter(value); return *this;}
+    template<typename OutputFilterT = Aws::String>
+    void SetOutputFilter(OutputFilterT&& value) { m_outputFilterHasBeenSet = true; m_outputFilter = std::forward<OutputFilterT>(value); }
+    template<typename OutputFilterT = Aws::String>
+    DataProcessing& WithOutputFilter(OutputFilterT&& value) { SetOutputFilter(std::forward<OutputFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +105,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
      * for Associating Inferences with Input Records</a>.</p>
      */
-    inline const JoinSource& GetJoinSource() const{ return m_joinSource; }
+    inline JoinSource GetJoinSource() const { return m_joinSource; }
     inline bool JoinSourceHasBeenSet() const { return m_joinSourceHasBeenSet; }
-    inline void SetJoinSource(const JoinSource& value) { m_joinSourceHasBeenSet = true; m_joinSource = value; }
-    inline void SetJoinSource(JoinSource&& value) { m_joinSourceHasBeenSet = true; m_joinSource = std::move(value); }
-    inline DataProcessing& WithJoinSource(const JoinSource& value) { SetJoinSource(value); return *this;}
-    inline DataProcessing& WithJoinSource(JoinSource&& value) { SetJoinSource(std::move(value)); return *this;}
+    inline void SetJoinSource(JoinSource value) { m_joinSourceHasBeenSet = true; m_joinSource = value; }
+    inline DataProcessing& WithJoinSource(JoinSource value) { SetJoinSource(value); return *this;}
     ///@}
   private:
 
@@ -124,7 +118,7 @@ namespace Model
     Aws::String m_outputFilter;
     bool m_outputFilterHasBeenSet = false;
 
-    JoinSource m_joinSource;
+    JoinSource m_joinSource{JoinSource::NOT_SET};
     bool m_joinSourceHasBeenSet = false;
   };
 

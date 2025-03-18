@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Output::Output() : 
-    m_audioDescriptionNamesHasBeenSet(false),
-    m_captionDescriptionNamesHasBeenSet(false),
-    m_outputNameHasBeenSet(false),
-    m_outputSettingsHasBeenSet(false),
-    m_videoDescriptionNameHasBeenSet(false)
-{
-}
-
 Output::Output(JsonView jsonValue)
-  : Output()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ Output& Output::operator =(JsonView jsonValue)
     }
     m_audioDescriptionNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionDescriptionNames"))
   {
     Aws::Utils::Array<JsonView> captionDescriptionNamesJsonList = jsonValue.GetArray("captionDescriptionNames");
@@ -54,28 +43,21 @@ Output& Output::operator =(JsonView jsonValue)
     }
     m_captionDescriptionNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputName"))
   {
     m_outputName = jsonValue.GetString("outputName");
-
     m_outputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSettings"))
   {
     m_outputSettings = jsonValue.GetObject("outputSettings");
-
     m_outputSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoDescriptionName"))
   {
     m_videoDescriptionName = jsonValue.GetString("videoDescriptionName");
-
     m_videoDescriptionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

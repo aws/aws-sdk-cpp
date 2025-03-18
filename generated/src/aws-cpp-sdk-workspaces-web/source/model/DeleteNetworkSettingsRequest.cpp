@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNetworkSettingsRequest::DeleteNetworkSettingsRequest() : 
-    m_networkSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkSettingsRequest::SerializePayload() const
 {
   return {};

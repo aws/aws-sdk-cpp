@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting() : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
-{
-}
-
 KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting(JsonView jsonValue)
-  : KPIActualValueConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KPIActualValueConditionalFormatting& KPIActualValueConditionalFormatting::operat
   if(jsonValue.ValueExists("TextColor"))
   {
     m_textColor = jsonValue.GetObject("TextColor");
-
     m_textColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Icon"))
   {
     m_icon = jsonValue.GetObject("Icon");
-
     m_iconHasBeenSet = true;
   }
-
   return *this;
 }
 

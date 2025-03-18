@@ -12,14 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeadLetterSourceQueuesRequest::ListDeadLetterSourceQueuesRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDeadLetterSourceQueuesRequest::SerializePayload() const
 {
   JsonValue payload;

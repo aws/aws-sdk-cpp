@@ -31,7 +31,7 @@ namespace Model
   class RefreshStatisticsIdMap
   {
   public:
-    AWS_NEPTUNEDATA_API RefreshStatisticsIdMap();
+    AWS_NEPTUNEDATA_API RefreshStatisticsIdMap() = default;
     AWS_NEPTUNEDATA_API RefreshStatisticsIdMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API RefreshStatisticsIdMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the statistics generation run that is currently occurring.</p>
      */
-    inline const Aws::String& GetStatisticsId() const{ return m_statisticsId; }
+    inline const Aws::String& GetStatisticsId() const { return m_statisticsId; }
     inline bool StatisticsIdHasBeenSet() const { return m_statisticsIdHasBeenSet; }
-    inline void SetStatisticsId(const Aws::String& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = value; }
-    inline void SetStatisticsId(Aws::String&& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = std::move(value); }
-    inline void SetStatisticsId(const char* value) { m_statisticsIdHasBeenSet = true; m_statisticsId.assign(value); }
-    inline RefreshStatisticsIdMap& WithStatisticsId(const Aws::String& value) { SetStatisticsId(value); return *this;}
-    inline RefreshStatisticsIdMap& WithStatisticsId(Aws::String&& value) { SetStatisticsId(std::move(value)); return *this;}
-    inline RefreshStatisticsIdMap& WithStatisticsId(const char* value) { SetStatisticsId(value); return *this;}
+    template<typename StatisticsIdT = Aws::String>
+    void SetStatisticsId(StatisticsIdT&& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = std::forward<StatisticsIdT>(value); }
+    template<typename StatisticsIdT = Aws::String>
+    RefreshStatisticsIdMap& WithStatisticsId(StatisticsIdT&& value) { SetStatisticsId(std::forward<StatisticsIdT>(value)); return *this;}
     ///@}
   private:
 

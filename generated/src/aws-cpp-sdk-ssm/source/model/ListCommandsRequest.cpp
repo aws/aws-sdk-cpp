@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCommandsRequest::ListCommandsRequest() : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListCommandsRequest::SerializePayload() const
 {
   JsonValue payload;

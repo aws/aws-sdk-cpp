@@ -29,7 +29,7 @@ namespace Model
   class ListMonitoringSchedulesResult
   {
   public:
-    AWS_SAGEMAKER_API ListMonitoringSchedulesResult();
+    AWS_SAGEMAKER_API ListMonitoringSchedulesResult() = default;
     AWS_SAGEMAKER_API ListMonitoringSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListMonitoringSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A JSON array in which each element is a summary for a monitoring
      * schedule.</p>
      */
-    inline const Aws::Vector<MonitoringScheduleSummary>& GetMonitoringScheduleSummaries() const{ return m_monitoringScheduleSummaries; }
-    inline void SetMonitoringScheduleSummaries(const Aws::Vector<MonitoringScheduleSummary>& value) { m_monitoringScheduleSummaries = value; }
-    inline void SetMonitoringScheduleSummaries(Aws::Vector<MonitoringScheduleSummary>&& value) { m_monitoringScheduleSummaries = std::move(value); }
-    inline ListMonitoringSchedulesResult& WithMonitoringScheduleSummaries(const Aws::Vector<MonitoringScheduleSummary>& value) { SetMonitoringScheduleSummaries(value); return *this;}
-    inline ListMonitoringSchedulesResult& WithMonitoringScheduleSummaries(Aws::Vector<MonitoringScheduleSummary>&& value) { SetMonitoringScheduleSummaries(std::move(value)); return *this;}
-    inline ListMonitoringSchedulesResult& AddMonitoringScheduleSummaries(const MonitoringScheduleSummary& value) { m_monitoringScheduleSummaries.push_back(value); return *this; }
-    inline ListMonitoringSchedulesResult& AddMonitoringScheduleSummaries(MonitoringScheduleSummary&& value) { m_monitoringScheduleSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MonitoringScheduleSummary>& GetMonitoringScheduleSummaries() const { return m_monitoringScheduleSummaries; }
+    template<typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
+    void SetMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { m_monitoringScheduleSummariesHasBeenSet = true; m_monitoringScheduleSummaries = std::forward<MonitoringScheduleSummariesT>(value); }
+    template<typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
+    ListMonitoringSchedulesResult& WithMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { SetMonitoringScheduleSummaries(std::forward<MonitoringScheduleSummariesT>(value)); return *this;}
+    template<typename MonitoringScheduleSummariesT = MonitoringScheduleSummary>
+    ListMonitoringSchedulesResult& AddMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { m_monitoringScheduleSummariesHasBeenSet = true; m_monitoringScheduleSummaries.emplace_back(std::forward<MonitoringScheduleSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token returned if the response is truncated. To retrieve the next set of
      * job executions, use it in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMonitoringSchedulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMonitoringSchedulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMonitoringSchedulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMonitoringSchedulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMonitoringSchedulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMonitoringSchedulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMonitoringSchedulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMonitoringSchedulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MonitoringScheduleSummary> m_monitoringScheduleSummaries;
+    bool m_monitoringScheduleSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

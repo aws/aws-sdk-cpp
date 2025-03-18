@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCachePolicies2020_05_31Request::ListCachePolicies2020_05_31Request() : 
-    m_type(CachePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListCachePolicies2020_05_31Request::SerializePayload() const
 {

@@ -10,22 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBClusterSnapshotsRequest::DescribeDBClusterSnapshotsRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterSnapshotIdentifierHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_includeShared(false),
-    m_includeSharedHasBeenSet(false),
-    m_includePublic(false),
-    m_includePublicHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBClusterSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

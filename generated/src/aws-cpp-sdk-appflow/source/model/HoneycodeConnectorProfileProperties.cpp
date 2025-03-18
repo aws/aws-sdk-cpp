@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-HoneycodeConnectorProfileProperties::HoneycodeConnectorProfileProperties()
-{
-}
-
 HoneycodeConnectorProfileProperties::HoneycodeConnectorProfileProperties(JsonView jsonValue)
 {
   *this = jsonValue;

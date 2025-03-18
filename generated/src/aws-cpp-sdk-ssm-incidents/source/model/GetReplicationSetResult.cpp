@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReplicationSetResult::GetReplicationSetResult()
-{
-}
-
 GetReplicationSetResult::GetReplicationSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetReplicationSetResult& GetReplicationSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("replicationSet"))
   {
     m_replicationSet = jsonValue.GetObject("replicationSet");
-
+    m_replicationSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -37,7 +37,7 @@ namespace Model
   class ListTargetsFilter
   {
   public:
-    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter();
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter() = default;
     AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The name of the attribute you want to use to filter the returned targets.</p>
      */
-    inline const ListTargetsFilterName& GetName() const{ return m_name; }
+    inline ListTargetsFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ListTargetsFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ListTargetsFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ListTargetsFilter& WithName(const ListTargetsFilterName& value) { SetName(value); return *this;}
-    inline ListTargetsFilter& WithName(ListTargetsFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ListTargetsFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ListTargetsFilter& WithName(ListTargetsFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * For example, if you specify <code>SNS</code> for the Target type, you could
      * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ListTargetsFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ListTargetsFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ListTargetsFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ListTargetsFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ListTargetsFilterName m_name;
+    ListTargetsFilterName m_name{ListTargetsFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

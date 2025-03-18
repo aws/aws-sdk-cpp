@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-WindowSummary::WindowSummary() : 
-    m_testWindowStartHasBeenSet(false),
-    m_testWindowEndHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_evaluationType(EvaluationType::NOT_SET),
-    m_evaluationTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 WindowSummary::WindowSummary(JsonView jsonValue)
-  : WindowSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ WindowSummary& WindowSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TestWindowStart"))
   {
     m_testWindowStart = jsonValue.GetDouble("TestWindowStart");
-
     m_testWindowStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestWindowEnd"))
   {
     m_testWindowEnd = jsonValue.GetDouble("TestWindowEnd");
-
     m_testWindowEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInteger("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationType"))
   {
     m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
-
     m_evaluationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   return *this;
 }
 

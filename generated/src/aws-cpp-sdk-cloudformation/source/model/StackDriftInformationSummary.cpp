@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackDriftInformationSummary::StackDriftInformationSummary() : 
-    m_stackDriftStatus(StackDriftStatus::NOT_SET),
-    m_stackDriftStatusHasBeenSet(false),
-    m_lastCheckTimestampHasBeenSet(false)
-{
-}
-
 StackDriftInformationSummary::StackDriftInformationSummary(const XmlNode& xmlNode)
-  : StackDriftInformationSummary()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ StackDriftInformationSummary& StackDriftInformationSummary::operator =(const Xml
     XmlNode stackDriftStatusNode = resultNode.FirstChild("StackDriftStatus");
     if(!stackDriftStatusNode.IsNull())
     {
-      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()).c_str());
+      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()));
       m_stackDriftStatusHasBeenSet = true;
     }
     XmlNode lastCheckTimestampNode = resultNode.FirstChild("LastCheckTimestamp");

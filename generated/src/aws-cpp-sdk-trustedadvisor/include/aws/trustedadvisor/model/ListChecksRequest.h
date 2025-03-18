@@ -28,7 +28,7 @@ namespace Model
   class ListChecksRequest : public TrustedAdvisorRequest
   {
   public:
-    AWS_TRUSTEDADVISOR_API ListChecksRequest();
+    AWS_TRUSTEDADVISOR_API ListChecksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The aws service associated with the check</p>
      */
-    inline const Aws::String& GetAwsService() const{ return m_awsService; }
+    inline const Aws::String& GetAwsService() const { return m_awsService; }
     inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
-    inline void SetAwsService(const Aws::String& value) { m_awsServiceHasBeenSet = true; m_awsService = value; }
-    inline void SetAwsService(Aws::String&& value) { m_awsServiceHasBeenSet = true; m_awsService = std::move(value); }
-    inline void SetAwsService(const char* value) { m_awsServiceHasBeenSet = true; m_awsService.assign(value); }
-    inline ListChecksRequest& WithAwsService(const Aws::String& value) { SetAwsService(value); return *this;}
-    inline ListChecksRequest& WithAwsService(Aws::String&& value) { SetAwsService(std::move(value)); return *this;}
-    inline ListChecksRequest& WithAwsService(const char* value) { SetAwsService(value); return *this;}
+    template<typename AwsServiceT = Aws::String>
+    void SetAwsService(AwsServiceT&& value) { m_awsServiceHasBeenSet = true; m_awsService = std::forward<AwsServiceT>(value); }
+    template<typename AwsServiceT = Aws::String>
+    ListChecksRequest& WithAwsService(AwsServiceT&& value) { SetAwsService(std::forward<AwsServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The ISO 639-1 code for the language that you want your checks to appear
      * in.</p>
      */
-    inline const RecommendationLanguage& GetLanguage() const{ return m_language; }
+    inline RecommendationLanguage GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const RecommendationLanguage& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(RecommendationLanguage&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline ListChecksRequest& WithLanguage(const RecommendationLanguage& value) { SetLanguage(value); return *this;}
-    inline ListChecksRequest& WithLanguage(RecommendationLanguage&& value) { SetLanguage(std::move(value)); return *this;}
+    inline void SetLanguage(RecommendationLanguage value) { m_languageHasBeenSet = true; m_language = value; }
+    inline ListChecksRequest& WithLanguage(RecommendationLanguage value) { SetLanguage(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListChecksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,57 +79,51 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListChecksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChecksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChecksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChecksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pillar of the check</p>
      */
-    inline const RecommendationPillar& GetPillar() const{ return m_pillar; }
+    inline RecommendationPillar GetPillar() const { return m_pillar; }
     inline bool PillarHasBeenSet() const { return m_pillarHasBeenSet; }
-    inline void SetPillar(const RecommendationPillar& value) { m_pillarHasBeenSet = true; m_pillar = value; }
-    inline void SetPillar(RecommendationPillar&& value) { m_pillarHasBeenSet = true; m_pillar = std::move(value); }
-    inline ListChecksRequest& WithPillar(const RecommendationPillar& value) { SetPillar(value); return *this;}
-    inline ListChecksRequest& WithPillar(RecommendationPillar&& value) { SetPillar(std::move(value)); return *this;}
+    inline void SetPillar(RecommendationPillar value) { m_pillarHasBeenSet = true; m_pillar = value; }
+    inline ListChecksRequest& WithPillar(RecommendationPillar value) { SetPillar(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the check</p>
      */
-    inline const RecommendationSource& GetSource() const{ return m_source; }
+    inline RecommendationSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const RecommendationSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(RecommendationSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ListChecksRequest& WithSource(const RecommendationSource& value) { SetSource(value); return *this;}
-    inline ListChecksRequest& WithSource(RecommendationSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(RecommendationSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ListChecksRequest& WithSource(RecommendationSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
     Aws::String m_awsService;
     bool m_awsServiceHasBeenSet = false;
 
-    RecommendationLanguage m_language;
+    RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
     bool m_languageHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    RecommendationPillar m_pillar;
+    RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
     bool m_pillarHasBeenSet = false;
 
-    RecommendationSource m_source;
+    RecommendationSource m_source{RecommendationSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

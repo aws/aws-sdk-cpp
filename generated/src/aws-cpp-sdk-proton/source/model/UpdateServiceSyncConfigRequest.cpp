@@ -12,16 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceSyncConfigRequest::UpdateServiceSyncConfigRequest() : 
-    m_branchHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceSyncConfigRequest::SerializePayload() const
 {
   JsonValue payload;

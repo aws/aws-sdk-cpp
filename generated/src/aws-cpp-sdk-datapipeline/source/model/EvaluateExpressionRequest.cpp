@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvaluateExpressionRequest::EvaluateExpressionRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_objectIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 Aws::String EvaluateExpressionRequest::SerializePayload() const
 {
   JsonValue payload;

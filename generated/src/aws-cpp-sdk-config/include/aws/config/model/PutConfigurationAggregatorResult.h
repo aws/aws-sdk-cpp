@@ -28,7 +28,7 @@ namespace Model
   class PutConfigurationAggregatorResult
   {
   public:
-    AWS_CONFIGSERVICE_API PutConfigurationAggregatorResult();
+    AWS_CONFIGSERVICE_API PutConfigurationAggregatorResult() = default;
     AWS_CONFIGSERVICE_API PutConfigurationAggregatorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API PutConfigurationAggregatorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns a ConfigurationAggregator object.</p>
      */
-    inline const ConfigurationAggregator& GetConfigurationAggregator() const{ return m_configurationAggregator; }
-    inline void SetConfigurationAggregator(const ConfigurationAggregator& value) { m_configurationAggregator = value; }
-    inline void SetConfigurationAggregator(ConfigurationAggregator&& value) { m_configurationAggregator = std::move(value); }
-    inline PutConfigurationAggregatorResult& WithConfigurationAggregator(const ConfigurationAggregator& value) { SetConfigurationAggregator(value); return *this;}
-    inline PutConfigurationAggregatorResult& WithConfigurationAggregator(ConfigurationAggregator&& value) { SetConfigurationAggregator(std::move(value)); return *this;}
+    inline const ConfigurationAggregator& GetConfigurationAggregator() const { return m_configurationAggregator; }
+    template<typename ConfigurationAggregatorT = ConfigurationAggregator>
+    void SetConfigurationAggregator(ConfigurationAggregatorT&& value) { m_configurationAggregatorHasBeenSet = true; m_configurationAggregator = std::forward<ConfigurationAggregatorT>(value); }
+    template<typename ConfigurationAggregatorT = ConfigurationAggregator>
+    PutConfigurationAggregatorResult& WithConfigurationAggregator(ConfigurationAggregatorT&& value) { SetConfigurationAggregator(std::forward<ConfigurationAggregatorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutConfigurationAggregatorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutConfigurationAggregatorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutConfigurationAggregatorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutConfigurationAggregatorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConfigurationAggregator m_configurationAggregator;
+    bool m_configurationAggregatorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

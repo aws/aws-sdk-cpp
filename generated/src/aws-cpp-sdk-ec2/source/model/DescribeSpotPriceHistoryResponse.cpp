@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSpotPriceHistoryResponse::DescribeSpotPriceHistoryResponse()
-{
-}
-
 DescribeSpotPriceHistoryResponse::DescribeSpotPriceHistoryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(c
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode spotPriceHistoryNode = resultNode.FirstChild("spotPriceHistorySet");
     if(!spotPriceHistoryNode.IsNull())
     {
       XmlNode spotPriceHistoryMember = spotPriceHistoryNode.FirstChild("item");
+      m_spotPriceHistoryHasBeenSet = !spotPriceHistoryMember.IsNull();
       while(!spotPriceHistoryMember.IsNull())
       {
         m_spotPriceHistory.push_back(spotPriceHistoryMember);
         spotPriceHistoryMember = spotPriceHistoryMember.NextNode("item");
       }
 
+      m_spotPriceHistoryHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotPriceHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

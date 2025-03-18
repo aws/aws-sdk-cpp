@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceConnectTlsConfiguration::ServiceConnectTlsConfiguration() : 
-    m_issuerCertificateAuthorityHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 ServiceConnectTlsConfiguration::ServiceConnectTlsConfiguration(JsonView jsonValue)
-  : ServiceConnectTlsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceConnectTlsConfiguration& ServiceConnectTlsConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("issuerCertificateAuthority"))
   {
     m_issuerCertificateAuthority = jsonValue.GetObject("issuerCertificateAuthority");
-
     m_issuerCertificateAuthorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKey"))
   {
     m_kmsKey = jsonValue.GetString("kmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

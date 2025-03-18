@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TemplateConfiguration::TemplateConfiguration() : 
-    m_emailTemplateHasBeenSet(false),
-    m_pushTemplateHasBeenSet(false),
-    m_sMSTemplateHasBeenSet(false),
-    m_voiceTemplateHasBeenSet(false),
-    m_inAppTemplateHasBeenSet(false)
-{
-}
-
 TemplateConfiguration::TemplateConfiguration(JsonView jsonValue)
-  : TemplateConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TemplateConfiguration& TemplateConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EmailTemplate"))
   {
     m_emailTemplate = jsonValue.GetObject("EmailTemplate");
-
     m_emailTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PushTemplate"))
   {
     m_pushTemplate = jsonValue.GetObject("PushTemplate");
-
     m_pushTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMSTemplate"))
   {
     m_sMSTemplate = jsonValue.GetObject("SMSTemplate");
-
     m_sMSTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceTemplate"))
   {
     m_voiceTemplate = jsonValue.GetObject("VoiceTemplate");
-
     m_voiceTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InAppTemplate"))
   {
     m_inAppTemplate = jsonValue.GetObject("InAppTemplate");
-
     m_inAppTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

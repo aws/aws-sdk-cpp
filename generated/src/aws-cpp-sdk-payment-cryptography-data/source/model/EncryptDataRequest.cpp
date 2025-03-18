@@ -12,14 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EncryptDataRequest::EncryptDataRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_plainTextHasBeenSet(false),
-    m_encryptionAttributesHasBeenSet(false),
-    m_wrappedKeyHasBeenSet(false)
-{
-}
-
 Aws::String EncryptDataRequest::SerializePayload() const
 {
   JsonValue payload;

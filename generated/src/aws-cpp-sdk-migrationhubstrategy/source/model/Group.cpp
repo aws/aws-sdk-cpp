@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-Group::Group() : 
-    m_name(GroupName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Group::Group(JsonView jsonValue)
-  : Group()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Group& Group::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = GroupNameMapper::GetGroupNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

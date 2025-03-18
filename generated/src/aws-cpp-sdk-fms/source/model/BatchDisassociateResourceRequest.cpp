@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDisassociateResourceRequest::BatchDisassociateResourceRequest() : 
-    m_resourceSetIdentifierHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDisassociateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

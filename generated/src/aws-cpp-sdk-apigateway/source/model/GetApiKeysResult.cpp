@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApiKeysResult::GetApiKeysResult()
-{
-}
-
 GetApiKeysResult::GetApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,13 @@ GetApiKeysResult& GetApiKeysResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
+    m_warningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetString("position");
-
+    m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("item"))
   {
     Aws::Utils::Array<JsonView> itemJsonList = jsonValue.GetArray("item");
@@ -51,14 +46,15 @@ GetApiKeysResult& GetApiKeysResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_items.push_back(itemJsonList[itemIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

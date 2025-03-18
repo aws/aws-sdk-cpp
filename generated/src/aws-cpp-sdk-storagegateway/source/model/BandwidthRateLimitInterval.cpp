@@ -18,25 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-BandwidthRateLimitInterval::BandwidthRateLimitInterval() : 
-    m_startHourOfDay(0),
-    m_startHourOfDayHasBeenSet(false),
-    m_startMinuteOfHour(0),
-    m_startMinuteOfHourHasBeenSet(false),
-    m_endHourOfDay(0),
-    m_endHourOfDayHasBeenSet(false),
-    m_endMinuteOfHour(0),
-    m_endMinuteOfHourHasBeenSet(false),
-    m_daysOfWeekHasBeenSet(false),
-    m_averageUploadRateLimitInBitsPerSec(0),
-    m_averageUploadRateLimitInBitsPerSecHasBeenSet(false),
-    m_averageDownloadRateLimitInBitsPerSec(0),
-    m_averageDownloadRateLimitInBitsPerSecHasBeenSet(false)
-{
-}
-
 BandwidthRateLimitInterval::BandwidthRateLimitInterval(JsonView jsonValue)
-  : BandwidthRateLimitInterval()
 {
   *this = jsonValue;
 }
@@ -46,31 +28,23 @@ BandwidthRateLimitInterval& BandwidthRateLimitInterval::operator =(JsonView json
   if(jsonValue.ValueExists("StartHourOfDay"))
   {
     m_startHourOfDay = jsonValue.GetInteger("StartHourOfDay");
-
     m_startHourOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartMinuteOfHour"))
   {
     m_startMinuteOfHour = jsonValue.GetInteger("StartMinuteOfHour");
-
     m_startMinuteOfHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndHourOfDay"))
   {
     m_endHourOfDay = jsonValue.GetInteger("EndHourOfDay");
-
     m_endHourOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndMinuteOfHour"))
   {
     m_endMinuteOfHour = jsonValue.GetInteger("EndMinuteOfHour");
-
     m_endMinuteOfHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DaysOfWeek"))
   {
     Aws::Utils::Array<JsonView> daysOfWeekJsonList = jsonValue.GetArray("DaysOfWeek");
@@ -80,21 +54,16 @@ BandwidthRateLimitInterval& BandwidthRateLimitInterval::operator =(JsonView json
     }
     m_daysOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageUploadRateLimitInBitsPerSec"))
   {
     m_averageUploadRateLimitInBitsPerSec = jsonValue.GetInt64("AverageUploadRateLimitInBitsPerSec");
-
     m_averageUploadRateLimitInBitsPerSecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageDownloadRateLimitInBitsPerSec"))
   {
     m_averageDownloadRateLimitInBitsPerSec = jsonValue.GetInt64("AverageDownloadRateLimitInBitsPerSec");
-
     m_averageDownloadRateLimitInBitsPerSecHasBeenSet = true;
   }
-
   return *this;
 }
 

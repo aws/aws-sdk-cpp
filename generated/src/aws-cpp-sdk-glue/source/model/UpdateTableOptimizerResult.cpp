@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTableOptimizerResult::UpdateTableOptimizerResult()
-{
-}
-
 UpdateTableOptimizerResult::UpdateTableOptimizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ UpdateTableOptimizerResult& UpdateTableOptimizerResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

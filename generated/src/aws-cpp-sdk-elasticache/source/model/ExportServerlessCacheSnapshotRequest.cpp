@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ExportServerlessCacheSnapshotRequest::ExportServerlessCacheSnapshotRequest() : 
-    m_serverlessCacheSnapshotNameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
-{
-}
-
 Aws::String ExportServerlessCacheSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

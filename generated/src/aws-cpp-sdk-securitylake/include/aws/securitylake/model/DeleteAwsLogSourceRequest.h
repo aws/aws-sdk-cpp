@@ -22,7 +22,7 @@ namespace Model
   class DeleteAwsLogSourceRequest : public SecurityLakeRequest
   {
   public:
-    AWS_SECURITYLAKE_API DeleteAwsLogSourceRequest();
+    AWS_SECURITYLAKE_API DeleteAwsLogSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p>Specify the natively-supported Amazon Web Services service to remove as a
      * source in Security Lake.</p>
      */
-    inline const Aws::Vector<AwsLogSourceConfiguration>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<AwsLogSourceConfiguration>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<AwsLogSourceConfiguration>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<AwsLogSourceConfiguration>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline DeleteAwsLogSourceRequest& WithSources(const Aws::Vector<AwsLogSourceConfiguration>& value) { SetSources(value); return *this;}
-    inline DeleteAwsLogSourceRequest& WithSources(Aws::Vector<AwsLogSourceConfiguration>&& value) { SetSources(std::move(value)); return *this;}
-    inline DeleteAwsLogSourceRequest& AddSources(const AwsLogSourceConfiguration& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline DeleteAwsLogSourceRequest& AddSources(AwsLogSourceConfiguration&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<AwsLogSourceConfiguration>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<AwsLogSourceConfiguration>>
+    DeleteAwsLogSourceRequest& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = AwsLogSourceConfiguration>
+    DeleteAwsLogSourceRequest& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 

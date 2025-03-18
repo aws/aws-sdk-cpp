@@ -18,34 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansPurchaseAnalysisDetails::SavingsPlansPurchaseAnalysisDetails() : 
-    m_currencyCodeHasBeenSet(false),
-    m_lookbackPeriodInHoursHasBeenSet(false),
-    m_currentAverageCoverageHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentOnDemandSpendHasBeenSet(false),
-    m_existingHourlyCommitmentHasBeenSet(false),
-    m_hourlyCommitmentToPurchaseHasBeenSet(false),
-    m_estimatedAverageCoverageHasBeenSet(false),
-    m_estimatedAverageUtilizationHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
-    m_estimatedROIHasBeenSet(false),
-    m_estimatedSavingsAmountHasBeenSet(false),
-    m_estimatedSavingsPercentageHasBeenSet(false),
-    m_estimatedCommitmentCostHasBeenSet(false),
-    m_latestUsageTimestampHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_additionalMetadataHasBeenSet(false),
-    m_metricsOverLookbackPeriodHasBeenSet(false)
-{
-}
-
 SavingsPlansPurchaseAnalysisDetails::SavingsPlansPurchaseAnalysisDetails(JsonView jsonValue)
-  : SavingsPlansPurchaseAnalysisDetails()
 {
   *this = jsonValue;
 }
@@ -55,150 +28,108 @@ SavingsPlansPurchaseAnalysisDetails& SavingsPlansPurchaseAnalysisDetails::operat
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackPeriodInHours"))
   {
     m_lookbackPeriodInHours = jsonValue.GetString("LookbackPeriodInHours");
-
     m_lookbackPeriodInHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAverageCoverage"))
   {
     m_currentAverageCoverage = jsonValue.GetString("CurrentAverageCoverage");
-
     m_currentAverageCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAverageHourlyOnDemandSpend"))
   {
     m_currentAverageHourlyOnDemandSpend = jsonValue.GetString("CurrentAverageHourlyOnDemandSpend");
-
     m_currentAverageHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentMaximumHourlyOnDemandSpend"))
   {
     m_currentMaximumHourlyOnDemandSpend = jsonValue.GetString("CurrentMaximumHourlyOnDemandSpend");
-
     m_currentMaximumHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentMinimumHourlyOnDemandSpend"))
   {
     m_currentMinimumHourlyOnDemandSpend = jsonValue.GetString("CurrentMinimumHourlyOnDemandSpend");
-
     m_currentMinimumHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentOnDemandSpend"))
   {
     m_currentOnDemandSpend = jsonValue.GetString("CurrentOnDemandSpend");
-
     m_currentOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExistingHourlyCommitment"))
   {
     m_existingHourlyCommitment = jsonValue.GetString("ExistingHourlyCommitment");
-
     m_existingHourlyCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HourlyCommitmentToPurchase"))
   {
     m_hourlyCommitmentToPurchase = jsonValue.GetString("HourlyCommitmentToPurchase");
-
     m_hourlyCommitmentToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedAverageCoverage"))
   {
     m_estimatedAverageCoverage = jsonValue.GetString("EstimatedAverageCoverage");
-
     m_estimatedAverageCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedAverageUtilization"))
   {
     m_estimatedAverageUtilization = jsonValue.GetString("EstimatedAverageUtilization");
-
     m_estimatedAverageUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlySavingsAmount"))
   {
     m_estimatedMonthlySavingsAmount = jsonValue.GetString("EstimatedMonthlySavingsAmount");
-
     m_estimatedMonthlySavingsAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedOnDemandCost"))
   {
     m_estimatedOnDemandCost = jsonValue.GetString("EstimatedOnDemandCost");
-
     m_estimatedOnDemandCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedOnDemandCostWithCurrentCommitment"))
   {
     m_estimatedOnDemandCostWithCurrentCommitment = jsonValue.GetString("EstimatedOnDemandCostWithCurrentCommitment");
-
     m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedROI"))
   {
     m_estimatedROI = jsonValue.GetString("EstimatedROI");
-
     m_estimatedROIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedSavingsAmount"))
   {
     m_estimatedSavingsAmount = jsonValue.GetString("EstimatedSavingsAmount");
-
     m_estimatedSavingsAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedSavingsPercentage"))
   {
     m_estimatedSavingsPercentage = jsonValue.GetString("EstimatedSavingsPercentage");
-
     m_estimatedSavingsPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedCommitmentCost"))
   {
     m_estimatedCommitmentCost = jsonValue.GetString("EstimatedCommitmentCost");
-
     m_estimatedCommitmentCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUsageTimestamp"))
   {
     m_latestUsageTimestamp = jsonValue.GetString("LatestUsageTimestamp");
-
     m_latestUsageTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontCost"))
   {
     m_upfrontCost = jsonValue.GetString("UpfrontCost");
-
     m_upfrontCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalMetadata"))
   {
     m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
-
     m_additionalMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricsOverLookbackPeriod"))
   {
     Aws::Utils::Array<JsonView> metricsOverLookbackPeriodJsonList = jsonValue.GetArray("MetricsOverLookbackPeriod");
@@ -208,7 +139,6 @@ SavingsPlansPurchaseAnalysisDetails& SavingsPlansPurchaseAnalysisDetails::operat
     }
     m_metricsOverLookbackPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

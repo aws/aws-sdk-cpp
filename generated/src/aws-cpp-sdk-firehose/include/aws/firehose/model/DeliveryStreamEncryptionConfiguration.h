@@ -38,7 +38,7 @@ namespace Model
   class DeliveryStreamEncryptionConfiguration
   {
   public:
-    AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration();
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration() = default;
     AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
      * <code>KeyARN</code>.</p>
      */
-    inline const Aws::String& GetKeyARN() const{ return m_keyARN; }
+    inline const Aws::String& GetKeyARN() const { return m_keyARN; }
     inline bool KeyARNHasBeenSet() const { return m_keyARNHasBeenSet; }
-    inline void SetKeyARN(const Aws::String& value) { m_keyARNHasBeenSet = true; m_keyARN = value; }
-    inline void SetKeyARN(Aws::String&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::move(value); }
-    inline void SetKeyARN(const char* value) { m_keyARNHasBeenSet = true; m_keyARN.assign(value); }
-    inline DeliveryStreamEncryptionConfiguration& WithKeyARN(const Aws::String& value) { SetKeyARN(value); return *this;}
-    inline DeliveryStreamEncryptionConfiguration& WithKeyARN(Aws::String&& value) { SetKeyARN(std::move(value)); return *this;}
-    inline DeliveryStreamEncryptionConfiguration& WithKeyARN(const char* value) { SetKeyARN(value); return *this;}
+    template<typename KeyARNT = Aws::String>
+    void SetKeyARN(KeyARNT&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::forward<KeyARNT>(value); }
+    template<typename KeyARNT = Aws::String>
+    DeliveryStreamEncryptionConfiguration& WithKeyARN(KeyARNT&& value) { SetKeyARN(std::forward<KeyARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
-    inline const KeyType& GetKeyType() const{ return m_keyType; }
+    inline KeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline DeliveryStreamEncryptionConfiguration& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-    inline DeliveryStreamEncryptionConfiguration& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline void SetKeyType(KeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline DeliveryStreamEncryptionConfiguration& WithKeyType(KeyType value) { SetKeyType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * is the status of the most recent attempt to enable or disable SSE,
      * respectively.</p>
      */
-    inline const DeliveryStreamEncryptionStatus& GetStatus() const{ return m_status; }
+    inline DeliveryStreamEncryptionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DeliveryStreamEncryptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DeliveryStreamEncryptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DeliveryStreamEncryptionConfiguration& WithStatus(const DeliveryStreamEncryptionStatus& value) { SetStatus(value); return *this;}
-    inline DeliveryStreamEncryptionConfiguration& WithStatus(DeliveryStreamEncryptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DeliveryStreamEncryptionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeliveryStreamEncryptionConfiguration& WithStatus(DeliveryStreamEncryptionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -101,22 +95,22 @@ namespace Model
      * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
      * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
      */
-    inline const FailureDescription& GetFailureDescription() const{ return m_failureDescription; }
+    inline const FailureDescription& GetFailureDescription() const { return m_failureDescription; }
     inline bool FailureDescriptionHasBeenSet() const { return m_failureDescriptionHasBeenSet; }
-    inline void SetFailureDescription(const FailureDescription& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = value; }
-    inline void SetFailureDescription(FailureDescription&& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = std::move(value); }
-    inline DeliveryStreamEncryptionConfiguration& WithFailureDescription(const FailureDescription& value) { SetFailureDescription(value); return *this;}
-    inline DeliveryStreamEncryptionConfiguration& WithFailureDescription(FailureDescription&& value) { SetFailureDescription(std::move(value)); return *this;}
+    template<typename FailureDescriptionT = FailureDescription>
+    void SetFailureDescription(FailureDescriptionT&& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = std::forward<FailureDescriptionT>(value); }
+    template<typename FailureDescriptionT = FailureDescription>
+    DeliveryStreamEncryptionConfiguration& WithFailureDescription(FailureDescriptionT&& value) { SetFailureDescription(std::forward<FailureDescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyARN;
     bool m_keyARNHasBeenSet = false;
 
-    KeyType m_keyType;
+    KeyType m_keyType{KeyType::NOT_SET};
     bool m_keyTypeHasBeenSet = false;
 
-    DeliveryStreamEncryptionStatus m_status;
+    DeliveryStreamEncryptionStatus m_status{DeliveryStreamEncryptionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     FailureDescription m_failureDescription;

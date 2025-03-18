@@ -29,7 +29,7 @@ namespace Model
   class CopyImageSetResult
   {
   public:
-    AWS_MEDICALIMAGING_API CopyImageSetResult();
+    AWS_MEDICALIMAGING_API CopyImageSetResult() = default;
     AWS_MEDICALIMAGING_API CopyImageSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDICALIMAGING_API CopyImageSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,56 +38,56 @@ namespace Model
     /**
      * <p>The data store identifier.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
-    inline CopyImageSetResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline CopyImageSetResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline CopyImageSetResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    CopyImageSetResult& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the source image set.</p>
      */
-    inline const CopySourceImageSetProperties& GetSourceImageSetProperties() const{ return m_sourceImageSetProperties; }
-    inline void SetSourceImageSetProperties(const CopySourceImageSetProperties& value) { m_sourceImageSetProperties = value; }
-    inline void SetSourceImageSetProperties(CopySourceImageSetProperties&& value) { m_sourceImageSetProperties = std::move(value); }
-    inline CopyImageSetResult& WithSourceImageSetProperties(const CopySourceImageSetProperties& value) { SetSourceImageSetProperties(value); return *this;}
-    inline CopyImageSetResult& WithSourceImageSetProperties(CopySourceImageSetProperties&& value) { SetSourceImageSetProperties(std::move(value)); return *this;}
+    inline const CopySourceImageSetProperties& GetSourceImageSetProperties() const { return m_sourceImageSetProperties; }
+    template<typename SourceImageSetPropertiesT = CopySourceImageSetProperties>
+    void SetSourceImageSetProperties(SourceImageSetPropertiesT&& value) { m_sourceImageSetPropertiesHasBeenSet = true; m_sourceImageSetProperties = std::forward<SourceImageSetPropertiesT>(value); }
+    template<typename SourceImageSetPropertiesT = CopySourceImageSetProperties>
+    CopyImageSetResult& WithSourceImageSetProperties(SourceImageSetPropertiesT&& value) { SetSourceImageSetProperties(std::forward<SourceImageSetPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the destination image set.</p>
      */
-    inline const CopyDestinationImageSetProperties& GetDestinationImageSetProperties() const{ return m_destinationImageSetProperties; }
-    inline void SetDestinationImageSetProperties(const CopyDestinationImageSetProperties& value) { m_destinationImageSetProperties = value; }
-    inline void SetDestinationImageSetProperties(CopyDestinationImageSetProperties&& value) { m_destinationImageSetProperties = std::move(value); }
-    inline CopyImageSetResult& WithDestinationImageSetProperties(const CopyDestinationImageSetProperties& value) { SetDestinationImageSetProperties(value); return *this;}
-    inline CopyImageSetResult& WithDestinationImageSetProperties(CopyDestinationImageSetProperties&& value) { SetDestinationImageSetProperties(std::move(value)); return *this;}
+    inline const CopyDestinationImageSetProperties& GetDestinationImageSetProperties() const { return m_destinationImageSetProperties; }
+    template<typename DestinationImageSetPropertiesT = CopyDestinationImageSetProperties>
+    void SetDestinationImageSetProperties(DestinationImageSetPropertiesT&& value) { m_destinationImageSetPropertiesHasBeenSet = true; m_destinationImageSetProperties = std::forward<DestinationImageSetPropertiesT>(value); }
+    template<typename DestinationImageSetPropertiesT = CopyDestinationImageSetProperties>
+    CopyImageSetResult& WithDestinationImageSetProperties(DestinationImageSetPropertiesT&& value) { SetDestinationImageSetProperties(std::forward<DestinationImageSetPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CopyImageSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CopyImageSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CopyImageSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CopyImageSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datastoreId;
+    bool m_datastoreIdHasBeenSet = false;
 
     CopySourceImageSetProperties m_sourceImageSetProperties;
+    bool m_sourceImageSetPropertiesHasBeenSet = false;
 
     CopyDestinationImageSetProperties m_destinationImageSetProperties;
+    bool m_destinationImageSetPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

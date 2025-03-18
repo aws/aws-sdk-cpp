@@ -18,21 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreJobSummary::RestoreJobSummary() : 
-    m_regionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_state(RestoreJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 RestoreJobSummary::RestoreJobSummary(JsonView jsonValue)
-  : RestoreJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ RestoreJobSummary& RestoreJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = RestoreJobStateMapper::GetRestoreJobStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

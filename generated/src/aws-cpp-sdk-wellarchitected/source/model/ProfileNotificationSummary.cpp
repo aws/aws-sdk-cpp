@@ -18,20 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileNotificationSummary::ProfileNotificationSummary() : 
-    m_currentProfileVersionHasBeenSet(false),
-    m_latestProfileVersionHasBeenSet(false),
-    m_type(ProfileNotificationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
-{
-}
-
 ProfileNotificationSummary::ProfileNotificationSummary(JsonView jsonValue)
-  : ProfileNotificationSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ProfileNotificationSummary& ProfileNotificationSummary::operator =(JsonView json
   if(jsonValue.ValueExists("CurrentProfileVersion"))
   {
     m_currentProfileVersion = jsonValue.GetString("CurrentProfileVersion");
-
     m_currentProfileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestProfileVersion"))
   {
     m_latestProfileVersion = jsonValue.GetString("LatestProfileVersion");
-
     m_latestProfileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ProfileNotificationTypeMapper::GetProfileNotificationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileArn"))
   {
     m_profileArn = jsonValue.GetString("ProfileArn");
-
     m_profileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileName"))
   {
     m_profileName = jsonValue.GetString("ProfileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   return *this;
 }
 

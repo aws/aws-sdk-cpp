@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApiDestinationsRequest::ListApiDestinationsRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListApiDestinationsRequest::SerializePayload() const
 {
   JsonValue payload;

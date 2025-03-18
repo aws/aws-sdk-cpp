@@ -12,11 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurgeQueueRequest::PurgeQueueRequest() : 
-    m_queueUrlHasBeenSet(false)
-{
-}
-
 Aws::String PurgeQueueRequest::SerializePayload() const
 {
   JsonValue payload;

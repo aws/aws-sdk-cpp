@@ -27,7 +27,7 @@ namespace Model
   class UpdateNodegroupConfigRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API UpdateNodegroupConfigRequest();
+    AWS_EKS_API UpdateNodegroupConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline UpdateNodegroupConfigRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline UpdateNodegroupConfigRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    UpdateNodegroupConfigRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the managed node group to update.</p>
      */
-    inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
+    inline const Aws::String& GetNodegroupName() const { return m_nodegroupName; }
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-    inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-    inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-    inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-    inline UpdateNodegroupConfigRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-    inline UpdateNodegroupConfigRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    template<typename NodegroupNameT = Aws::String>
+    void SetNodegroupName(NodegroupNameT&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::forward<NodegroupNameT>(value); }
+    template<typename NodegroupNameT = Aws::String>
+    UpdateNodegroupConfigRequest& WithNodegroupName(NodegroupNameT&& value) { SetNodegroupName(std::forward<NodegroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,12 @@ namespace Model
      * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
      * after the update.</p>
      */
-    inline const UpdateLabelsPayload& GetLabels() const{ return m_labels; }
+    inline const UpdateLabelsPayload& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const UpdateLabelsPayload& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(UpdateLabelsPayload&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline UpdateNodegroupConfigRequest& WithLabels(const UpdateLabelsPayload& value) { SetLabels(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithLabels(UpdateLabelsPayload&& value) { SetLabels(std::move(value)); return *this;}
+    template<typename LabelsT = UpdateLabelsPayload>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = UpdateLabelsPayload>
+    UpdateNodegroupConfigRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
      * taints on managed node groups</a>.</p>
      */
-    inline const UpdateTaintsPayload& GetTaints() const{ return m_taints; }
+    inline const UpdateTaintsPayload& GetTaints() const { return m_taints; }
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
-    inline void SetTaints(const UpdateTaintsPayload& value) { m_taintsHasBeenSet = true; m_taints = value; }
-    inline void SetTaints(UpdateTaintsPayload&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
-    inline UpdateNodegroupConfigRequest& WithTaints(const UpdateTaintsPayload& value) { SetTaints(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithTaints(UpdateTaintsPayload&& value) { SetTaints(std::move(value)); return *this;}
+    template<typename TaintsT = UpdateTaintsPayload>
+    void SetTaints(TaintsT&& value) { m_taintsHasBeenSet = true; m_taints = std::forward<TaintsT>(value); }
+    template<typename TaintsT = UpdateTaintsPayload>
+    UpdateNodegroupConfigRequest& WithTaints(TaintsT&& value) { SetTaints(std::forward<TaintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,36 +95,36 @@ namespace Model
      * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
-    inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+    inline const NodegroupScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-    inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
-    inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
-    inline UpdateNodegroupConfigRequest& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+    template<typename ScalingConfigT = NodegroupScalingConfig>
+    void SetScalingConfig(ScalingConfigT&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::forward<ScalingConfigT>(value); }
+    template<typename ScalingConfigT = NodegroupScalingConfig>
+    UpdateNodegroupConfigRequest& WithScalingConfig(ScalingConfigT&& value) { SetScalingConfig(std::forward<ScalingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node group update configuration.</p>
      */
-    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const { return m_updateConfig; }
     inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
-    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
-    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
-    inline UpdateNodegroupConfigRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+    template<typename UpdateConfigT = NodegroupUpdateConfig>
+    void SetUpdateConfig(UpdateConfigT&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::forward<UpdateConfigT>(value); }
+    template<typename UpdateConfigT = NodegroupUpdateConfig>
+    UpdateNodegroupConfigRequest& WithUpdateConfig(UpdateConfigT&& value) { SetUpdateConfig(std::forward<UpdateConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node auto repair configuration for the node group.</p>
      */
-    inline const NodeRepairConfig& GetNodeRepairConfig() const{ return m_nodeRepairConfig; }
+    inline const NodeRepairConfig& GetNodeRepairConfig() const { return m_nodeRepairConfig; }
     inline bool NodeRepairConfigHasBeenSet() const { return m_nodeRepairConfigHasBeenSet; }
-    inline void SetNodeRepairConfig(const NodeRepairConfig& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = value; }
-    inline void SetNodeRepairConfig(NodeRepairConfig&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::move(value); }
-    inline UpdateNodegroupConfigRequest& WithNodeRepairConfig(const NodeRepairConfig& value) { SetNodeRepairConfig(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithNodeRepairConfig(NodeRepairConfig&& value) { SetNodeRepairConfig(std::move(value)); return *this;}
+    template<typename NodeRepairConfigT = NodeRepairConfig>
+    void SetNodeRepairConfig(NodeRepairConfigT&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::forward<NodeRepairConfigT>(value); }
+    template<typename NodeRepairConfigT = NodeRepairConfig>
+    UpdateNodegroupConfigRequest& WithNodeRepairConfig(NodeRepairConfigT&& value) { SetNodeRepairConfig(std::forward<NodeRepairConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +132,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateNodegroupConfigRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateNodegroupConfigRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateNodegroupConfigRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateNodegroupConfigRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

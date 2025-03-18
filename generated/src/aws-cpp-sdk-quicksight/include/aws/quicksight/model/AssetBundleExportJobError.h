@@ -32,7 +32,7 @@ namespace Model
   class AssetBundleExportJobError
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleExportJobError();
+    AWS_QUICKSIGHT_API AssetBundleExportJobError() = default;
     AWS_QUICKSIGHT_API AssetBundleExportJobError(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleExportJobError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The ARN of the resource whose processing caused an error.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssetBundleExportJobError& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssetBundleExportJobError& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssetBundleExportJobError& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssetBundleExportJobError& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specific error type of the error that occurred.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AssetBundleExportJobError& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AssetBundleExportJobError& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AssetBundleExportJobError& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AssetBundleExportJobError& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AssetBundleExportJobError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AssetBundleExportJobError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AssetBundleExportJobError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AssetBundleExportJobError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

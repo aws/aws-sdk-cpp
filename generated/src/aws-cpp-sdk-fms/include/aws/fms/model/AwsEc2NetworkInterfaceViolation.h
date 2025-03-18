@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2NetworkInterfaceViolation
   {
   public:
-    AWS_FMS_API AwsEc2NetworkInterfaceViolation();
+    AWS_FMS_API AwsEc2NetworkInterfaceViolation() = default;
     AWS_FMS_API AwsEc2NetworkInterfaceViolation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API AwsEc2NetworkInterfaceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The resource ID of the network interface.</p>
      */
-    inline const Aws::String& GetViolationTarget() const{ return m_violationTarget; }
+    inline const Aws::String& GetViolationTarget() const { return m_violationTarget; }
     inline bool ViolationTargetHasBeenSet() const { return m_violationTargetHasBeenSet; }
-    inline void SetViolationTarget(const Aws::String& value) { m_violationTargetHasBeenSet = true; m_violationTarget = value; }
-    inline void SetViolationTarget(Aws::String&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::move(value); }
-    inline void SetViolationTarget(const char* value) { m_violationTargetHasBeenSet = true; m_violationTarget.assign(value); }
-    inline AwsEc2NetworkInterfaceViolation& WithViolationTarget(const Aws::String& value) { SetViolationTarget(value); return *this;}
-    inline AwsEc2NetworkInterfaceViolation& WithViolationTarget(Aws::String&& value) { SetViolationTarget(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceViolation& WithViolationTarget(const char* value) { SetViolationTarget(value); return *this;}
+    template<typename ViolationTargetT = Aws::String>
+    void SetViolationTarget(ViolationTargetT&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::forward<ViolationTargetT>(value); }
+    template<typename ViolationTargetT = Aws::String>
+    AwsEc2NetworkInterfaceViolation& WithViolationTarget(ViolationTargetT&& value) { SetViolationTarget(std::forward<ViolationTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * <p>List of security groups that violate the rules specified in the primary
      * security group of the Firewall Manager policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetViolatingSecurityGroups() const{ return m_violatingSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetViolatingSecurityGroups() const { return m_violatingSecurityGroups; }
     inline bool ViolatingSecurityGroupsHasBeenSet() const { return m_violatingSecurityGroupsHasBeenSet; }
-    inline void SetViolatingSecurityGroups(const Aws::Vector<Aws::String>& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups = value; }
-    inline void SetViolatingSecurityGroups(Aws::Vector<Aws::String>&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups = std::move(value); }
-    inline AwsEc2NetworkInterfaceViolation& WithViolatingSecurityGroups(const Aws::Vector<Aws::String>& value) { SetViolatingSecurityGroups(value); return *this;}
-    inline AwsEc2NetworkInterfaceViolation& WithViolatingSecurityGroups(Aws::Vector<Aws::String>&& value) { SetViolatingSecurityGroups(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(const Aws::String& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(value); return *this; }
-    inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(Aws::String&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(std::move(value)); return *this; }
-    inline AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(const char* value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.push_back(value); return *this; }
+    template<typename ViolatingSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetViolatingSecurityGroups(ViolatingSecurityGroupsT&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups = std::forward<ViolatingSecurityGroupsT>(value); }
+    template<typename ViolatingSecurityGroupsT = Aws::Vector<Aws::String>>
+    AwsEc2NetworkInterfaceViolation& WithViolatingSecurityGroups(ViolatingSecurityGroupsT&& value) { SetViolatingSecurityGroups(std::forward<ViolatingSecurityGroupsT>(value)); return *this;}
+    template<typename ViolatingSecurityGroupsT = Aws::String>
+    AwsEc2NetworkInterfaceViolation& AddViolatingSecurityGroups(ViolatingSecurityGroupsT&& value) { m_violatingSecurityGroupsHasBeenSet = true; m_violatingSecurityGroups.emplace_back(std::forward<ViolatingSecurityGroupsT>(value)); return *this; }
     ///@}
   private:
 

@@ -40,7 +40,7 @@ namespace Model
   class RuleAction
   {
   public:
-    AWS_MAILMANAGER_API RuleAction();
+    AWS_MAILMANAGER_API RuleAction() = default;
     AWS_MAILMANAGER_API RuleAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,12 @@ namespace Model
      * <p>This action adds a header. This can be used to add arbitrary email
      * headers.</p>
      */
-    inline const AddHeaderAction& GetAddHeader() const{ return m_addHeader; }
+    inline const AddHeaderAction& GetAddHeader() const { return m_addHeader; }
     inline bool AddHeaderHasBeenSet() const { return m_addHeaderHasBeenSet; }
-    inline void SetAddHeader(const AddHeaderAction& value) { m_addHeaderHasBeenSet = true; m_addHeader = value; }
-    inline void SetAddHeader(AddHeaderAction&& value) { m_addHeaderHasBeenSet = true; m_addHeader = std::move(value); }
-    inline RuleAction& WithAddHeader(const AddHeaderAction& value) { SetAddHeader(value); return *this;}
-    inline RuleAction& WithAddHeader(AddHeaderAction&& value) { SetAddHeader(std::move(value)); return *this;}
+    template<typename AddHeaderT = AddHeaderAction>
+    void SetAddHeader(AddHeaderT&& value) { m_addHeaderHasBeenSet = true; m_addHeader = std::forward<AddHeaderT>(value); }
+    template<typename AddHeaderT = AddHeaderAction>
+    RuleAction& WithAddHeader(AddHeaderT&& value) { SetAddHeader(std::forward<AddHeaderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +64,24 @@ namespace Model
      * <p>This action archives the email. This can be used to deliver an email to an
      * archive.</p>
      */
-    inline const ArchiveAction& GetArchive() const{ return m_archive; }
+    inline const ArchiveAction& GetArchive() const { return m_archive; }
     inline bool ArchiveHasBeenSet() const { return m_archiveHasBeenSet; }
-    inline void SetArchive(const ArchiveAction& value) { m_archiveHasBeenSet = true; m_archive = value; }
-    inline void SetArchive(ArchiveAction&& value) { m_archiveHasBeenSet = true; m_archive = std::move(value); }
-    inline RuleAction& WithArchive(const ArchiveAction& value) { SetArchive(value); return *this;}
-    inline RuleAction& WithArchive(ArchiveAction&& value) { SetArchive(std::move(value)); return *this;}
+    template<typename ArchiveT = ArchiveAction>
+    void SetArchive(ArchiveT&& value) { m_archiveHasBeenSet = true; m_archive = std::forward<ArchiveT>(value); }
+    template<typename ArchiveT = ArchiveAction>
+    RuleAction& WithArchive(ArchiveT&& value) { SetArchive(std::forward<ArchiveT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This action delivers an email to a WorkMail mailbox.</p>
      */
-    inline const DeliverToMailboxAction& GetDeliverToMailbox() const{ return m_deliverToMailbox; }
+    inline const DeliverToMailboxAction& GetDeliverToMailbox() const { return m_deliverToMailbox; }
     inline bool DeliverToMailboxHasBeenSet() const { return m_deliverToMailboxHasBeenSet; }
-    inline void SetDeliverToMailbox(const DeliverToMailboxAction& value) { m_deliverToMailboxHasBeenSet = true; m_deliverToMailbox = value; }
-    inline void SetDeliverToMailbox(DeliverToMailboxAction&& value) { m_deliverToMailboxHasBeenSet = true; m_deliverToMailbox = std::move(value); }
-    inline RuleAction& WithDeliverToMailbox(const DeliverToMailboxAction& value) { SetDeliverToMailbox(value); return *this;}
-    inline RuleAction& WithDeliverToMailbox(DeliverToMailboxAction&& value) { SetDeliverToMailbox(std::move(value)); return *this;}
+    template<typename DeliverToMailboxT = DeliverToMailboxAction>
+    void SetDeliverToMailbox(DeliverToMailboxT&& value) { m_deliverToMailboxHasBeenSet = true; m_deliverToMailbox = std::forward<DeliverToMailboxT>(value); }
+    template<typename DeliverToMailboxT = DeliverToMailboxAction>
+    RuleAction& WithDeliverToMailbox(DeliverToMailboxT&& value) { SetDeliverToMailbox(std::forward<DeliverToMailboxT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,36 +89,36 @@ namespace Model
      * <p>This action delivers an email to an Amazon Q Business application for
      * ingestion into its knowledge base.</p>
      */
-    inline const DeliverToQBusinessAction& GetDeliverToQBusiness() const{ return m_deliverToQBusiness; }
+    inline const DeliverToQBusinessAction& GetDeliverToQBusiness() const { return m_deliverToQBusiness; }
     inline bool DeliverToQBusinessHasBeenSet() const { return m_deliverToQBusinessHasBeenSet; }
-    inline void SetDeliverToQBusiness(const DeliverToQBusinessAction& value) { m_deliverToQBusinessHasBeenSet = true; m_deliverToQBusiness = value; }
-    inline void SetDeliverToQBusiness(DeliverToQBusinessAction&& value) { m_deliverToQBusinessHasBeenSet = true; m_deliverToQBusiness = std::move(value); }
-    inline RuleAction& WithDeliverToQBusiness(const DeliverToQBusinessAction& value) { SetDeliverToQBusiness(value); return *this;}
-    inline RuleAction& WithDeliverToQBusiness(DeliverToQBusinessAction&& value) { SetDeliverToQBusiness(std::move(value)); return *this;}
+    template<typename DeliverToQBusinessT = DeliverToQBusinessAction>
+    void SetDeliverToQBusiness(DeliverToQBusinessT&& value) { m_deliverToQBusinessHasBeenSet = true; m_deliverToQBusiness = std::forward<DeliverToQBusinessT>(value); }
+    template<typename DeliverToQBusinessT = DeliverToQBusinessAction>
+    RuleAction& WithDeliverToQBusiness(DeliverToQBusinessT&& value) { SetDeliverToQBusiness(std::forward<DeliverToQBusinessT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This action terminates the evaluation of rules in the rule set.</p>
      */
-    inline const DropAction& GetDrop() const{ return m_drop; }
+    inline const DropAction& GetDrop() const { return m_drop; }
     inline bool DropHasBeenSet() const { return m_dropHasBeenSet; }
-    inline void SetDrop(const DropAction& value) { m_dropHasBeenSet = true; m_drop = value; }
-    inline void SetDrop(DropAction&& value) { m_dropHasBeenSet = true; m_drop = std::move(value); }
-    inline RuleAction& WithDrop(const DropAction& value) { SetDrop(value); return *this;}
-    inline RuleAction& WithDrop(DropAction&& value) { SetDrop(std::move(value)); return *this;}
+    template<typename DropT = DropAction>
+    void SetDrop(DropT&& value) { m_dropHasBeenSet = true; m_drop = std::forward<DropT>(value); }
+    template<typename DropT = DropAction>
+    RuleAction& WithDrop(DropT&& value) { SetDrop(std::forward<DropT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This action relays the email to another SMTP server.</p>
      */
-    inline const RelayAction& GetRelay() const{ return m_relay; }
+    inline const RelayAction& GetRelay() const { return m_relay; }
     inline bool RelayHasBeenSet() const { return m_relayHasBeenSet; }
-    inline void SetRelay(const RelayAction& value) { m_relayHasBeenSet = true; m_relay = value; }
-    inline void SetRelay(RelayAction&& value) { m_relayHasBeenSet = true; m_relay = std::move(value); }
-    inline RuleAction& WithRelay(const RelayAction& value) { SetRelay(value); return *this;}
-    inline RuleAction& WithRelay(RelayAction&& value) { SetRelay(std::move(value)); return *this;}
+    template<typename RelayT = RelayAction>
+    void SetRelay(RelayT&& value) { m_relayHasBeenSet = true; m_relay = std::forward<RelayT>(value); }
+    template<typename RelayT = RelayAction>
+    RuleAction& WithRelay(RelayT&& value) { SetRelay(std::forward<RelayT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,36 +126,36 @@ namespace Model
      * <p>The action replaces certain or all recipients with a different set of
      * recipients.</p>
      */
-    inline const ReplaceRecipientAction& GetReplaceRecipient() const{ return m_replaceRecipient; }
+    inline const ReplaceRecipientAction& GetReplaceRecipient() const { return m_replaceRecipient; }
     inline bool ReplaceRecipientHasBeenSet() const { return m_replaceRecipientHasBeenSet; }
-    inline void SetReplaceRecipient(const ReplaceRecipientAction& value) { m_replaceRecipientHasBeenSet = true; m_replaceRecipient = value; }
-    inline void SetReplaceRecipient(ReplaceRecipientAction&& value) { m_replaceRecipientHasBeenSet = true; m_replaceRecipient = std::move(value); }
-    inline RuleAction& WithReplaceRecipient(const ReplaceRecipientAction& value) { SetReplaceRecipient(value); return *this;}
-    inline RuleAction& WithReplaceRecipient(ReplaceRecipientAction&& value) { SetReplaceRecipient(std::move(value)); return *this;}
+    template<typename ReplaceRecipientT = ReplaceRecipientAction>
+    void SetReplaceRecipient(ReplaceRecipientT&& value) { m_replaceRecipientHasBeenSet = true; m_replaceRecipient = std::forward<ReplaceRecipientT>(value); }
+    template<typename ReplaceRecipientT = ReplaceRecipientAction>
+    RuleAction& WithReplaceRecipient(ReplaceRecipientT&& value) { SetReplaceRecipient(std::forward<ReplaceRecipientT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This action sends the email to the internet.</p>
      */
-    inline const SendAction& GetSend() const{ return m_send; }
+    inline const SendAction& GetSend() const { return m_send; }
     inline bool SendHasBeenSet() const { return m_sendHasBeenSet; }
-    inline void SetSend(const SendAction& value) { m_sendHasBeenSet = true; m_send = value; }
-    inline void SetSend(SendAction&& value) { m_sendHasBeenSet = true; m_send = std::move(value); }
-    inline RuleAction& WithSend(const SendAction& value) { SetSend(value); return *this;}
-    inline RuleAction& WithSend(SendAction&& value) { SetSend(std::move(value)); return *this;}
+    template<typename SendT = SendAction>
+    void SetSend(SendT&& value) { m_sendHasBeenSet = true; m_send = std::forward<SendT>(value); }
+    template<typename SendT = SendAction>
+    RuleAction& WithSend(SendT&& value) { SetSend(std::forward<SendT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This action writes the MIME content of the email to an S3 bucket.</p>
      */
-    inline const S3Action& GetWriteToS3() const{ return m_writeToS3; }
+    inline const S3Action& GetWriteToS3() const { return m_writeToS3; }
     inline bool WriteToS3HasBeenSet() const { return m_writeToS3HasBeenSet; }
-    inline void SetWriteToS3(const S3Action& value) { m_writeToS3HasBeenSet = true; m_writeToS3 = value; }
-    inline void SetWriteToS3(S3Action&& value) { m_writeToS3HasBeenSet = true; m_writeToS3 = std::move(value); }
-    inline RuleAction& WithWriteToS3(const S3Action& value) { SetWriteToS3(value); return *this;}
-    inline RuleAction& WithWriteToS3(S3Action&& value) { SetWriteToS3(std::move(value)); return *this;}
+    template<typename WriteToS3T = S3Action>
+    void SetWriteToS3(WriteToS3T&& value) { m_writeToS3HasBeenSet = true; m_writeToS3 = std::forward<WriteToS3T>(value); }
+    template<typename WriteToS3T = S3Action>
+    RuleAction& WithWriteToS3(WriteToS3T&& value) { SetWriteToS3(std::forward<WriteToS3T>(value)); return *this;}
     ///@}
   private:
 

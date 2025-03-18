@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuntimeConfigurationRequest::UpdateRuntimeConfigurationRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuntimeConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class StartTagSyncTaskRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API StartTagSyncTaskRequest();
+    AWS_RESOURCEGROUPS_API StartTagSyncTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon resource name (ARN) or name of the application group for which you
      * want to create a tag-sync task. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline StartTagSyncTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline StartTagSyncTaskRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline StartTagSyncTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    StartTagSyncTaskRequest& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * the application. If a resource with this tag is later untagged, the tag-sync
      * task removes the resource from the application. </p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline StartTagSyncTaskRequest& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline StartTagSyncTaskRequest& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline StartTagSyncTaskRequest& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    StartTagSyncTaskRequest& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * the application. If a resource with this tag is later untagged, the tag-sync
      * task removes the resource from the application. </p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-    inline StartTagSyncTaskRequest& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline StartTagSyncTaskRequest& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline StartTagSyncTaskRequest& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    StartTagSyncTaskRequest& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * <p>The Amazon resource name (ARN) of the role assumed by the service to tag and
      * untag resources on your behalf.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StartTagSyncTaskRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartTagSyncTaskRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartTagSyncTaskRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartTagSyncTaskRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AlarmSpecification::AlarmSpecification() : 
-    m_alarmsHasBeenSet(false)
-{
-}
-
 AlarmSpecification::AlarmSpecification(const XmlNode& xmlNode)
-  : AlarmSpecification()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ AlarmSpecification& AlarmSpecification::operator =(const XmlNode& xmlNode)
     if(!alarmsNode.IsNull())
     {
       XmlNode alarmsMember = alarmsNode.FirstChild("member");
+      m_alarmsHasBeenSet = !alarmsMember.IsNull();
       while(!alarmsMember.IsNull())
       {
         m_alarms.push_back(alarmsMember.GetText());

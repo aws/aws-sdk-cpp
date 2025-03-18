@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FindingTypeStatistics::FindingTypeStatistics() : 
-    m_findingTypeHasBeenSet(false),
-    m_lastGeneratedAtHasBeenSet(false),
-    m_totalFindings(0),
-    m_totalFindingsHasBeenSet(false)
-{
-}
-
 FindingTypeStatistics::FindingTypeStatistics(JsonView jsonValue)
-  : FindingTypeStatistics()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FindingTypeStatistics& FindingTypeStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("findingType"))
   {
     m_findingType = jsonValue.GetString("findingType");
-
     m_findingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastGeneratedAt"))
   {
     m_lastGeneratedAt = jsonValue.GetDouble("lastGeneratedAt");
-
     m_lastGeneratedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalFindings"))
   {
     m_totalFindings = jsonValue.GetInteger("totalFindings");
-
     m_totalFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

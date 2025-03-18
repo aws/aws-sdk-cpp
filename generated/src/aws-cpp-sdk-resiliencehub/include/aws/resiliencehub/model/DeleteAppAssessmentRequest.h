@@ -22,7 +22,7 @@ namespace Model
   class DeleteAppAssessmentRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API DeleteAppAssessmentRequest();
+    AWS_RESILIENCEHUB_API DeleteAppAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
+    inline const Aws::String& GetAssessmentArn() const { return m_assessmentArn; }
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
-    inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
-    inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
-    inline DeleteAppAssessmentRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
-    inline DeleteAppAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
-    inline DeleteAppAssessmentRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
+    template<typename AssessmentArnT = Aws::String>
+    void SetAssessmentArn(AssessmentArnT&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::forward<AssessmentArnT>(value); }
+    template<typename AssessmentArnT = Aws::String>
+    DeleteAppAssessmentRequest& WithAssessmentArn(AssessmentArnT&& value) { SetAssessmentArn(std::forward<AssessmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * string of up to 64 ASCII characters. You should not reuse the same client token
      * for other API requests.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteAppAssessmentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteAppAssessmentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteAppAssessmentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteAppAssessmentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

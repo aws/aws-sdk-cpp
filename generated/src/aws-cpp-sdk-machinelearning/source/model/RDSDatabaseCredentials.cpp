@@ -18,14 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RDSDatabaseCredentials::RDSDatabaseCredentials() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 RDSDatabaseCredentials::RDSDatabaseCredentials(JsonView jsonValue)
-  : RDSDatabaseCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RDSDatabaseCredentials& RDSDatabaseCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   return *this;
 }
 

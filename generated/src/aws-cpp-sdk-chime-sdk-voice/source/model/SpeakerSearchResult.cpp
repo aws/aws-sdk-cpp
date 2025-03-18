@@ -18,15 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SpeakerSearchResult::SpeakerSearchResult() : 
-    m_confidenceScore(0.0),
-    m_confidenceScoreHasBeenSet(false),
-    m_voiceProfileIdHasBeenSet(false)
-{
-}
-
 SpeakerSearchResult::SpeakerSearchResult(JsonView jsonValue)
-  : SpeakerSearchResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SpeakerSearchResult& SpeakerSearchResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfidenceScore"))
   {
     m_confidenceScore = jsonValue.GetDouble("ConfidenceScore");
-
     m_confidenceScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceProfileId"))
   {
     m_voiceProfileId = jsonValue.GetString("VoiceProfileId");
-
     m_voiceProfileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

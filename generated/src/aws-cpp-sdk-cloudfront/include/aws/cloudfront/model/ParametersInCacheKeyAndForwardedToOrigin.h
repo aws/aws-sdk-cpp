@@ -40,7 +40,7 @@ namespace Model
   class ParametersInCacheKeyAndForwardedToOrigin
   {
   public:
-    AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin();
+    AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin() = default;
     AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -73,7 +73,7 @@ namespace Model
      * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
      * header.</p>
      */
-    inline bool GetEnableAcceptEncodingGzip() const{ return m_enableAcceptEncodingGzip; }
+    inline bool GetEnableAcceptEncodingGzip() const { return m_enableAcceptEncodingGzip; }
     inline bool EnableAcceptEncodingGzipHasBeenSet() const { return m_enableAcceptEncodingGzipHasBeenSet; }
     inline void SetEnableAcceptEncodingGzip(bool value) { m_enableAcceptEncodingGzipHasBeenSet = true; m_enableAcceptEncodingGzip = value; }
     inline ParametersInCacheKeyAndForwardedToOrigin& WithEnableAcceptEncodingGzip(bool value) { SetEnableAcceptEncodingGzip(value); return *this;}
@@ -105,7 +105,7 @@ namespace Model
      * <code>Accept-Encoding</code> to the headers whitelist like any other HTTP
      * header.</p>
      */
-    inline bool GetEnableAcceptEncodingBrotli() const{ return m_enableAcceptEncodingBrotli; }
+    inline bool GetEnableAcceptEncodingBrotli() const { return m_enableAcceptEncodingBrotli; }
     inline bool EnableAcceptEncodingBrotliHasBeenSet() const { return m_enableAcceptEncodingBrotliHasBeenSet; }
     inline void SetEnableAcceptEncodingBrotli(bool value) { m_enableAcceptEncodingBrotliHasBeenSet = true; m_enableAcceptEncodingBrotli = value; }
     inline ParametersInCacheKeyAndForwardedToOrigin& WithEnableAcceptEncodingBrotli(bool value) { SetEnableAcceptEncodingBrotli(value); return *this;}
@@ -117,12 +117,12 @@ namespace Model
      * are included in the cache key and in requests that CloudFront sends to the
      * origin.</p>
      */
-    inline const CachePolicyHeadersConfig& GetHeadersConfig() const{ return m_headersConfig; }
+    inline const CachePolicyHeadersConfig& GetHeadersConfig() const { return m_headersConfig; }
     inline bool HeadersConfigHasBeenSet() const { return m_headersConfigHasBeenSet; }
-    inline void SetHeadersConfig(const CachePolicyHeadersConfig& value) { m_headersConfigHasBeenSet = true; m_headersConfig = value; }
-    inline void SetHeadersConfig(CachePolicyHeadersConfig&& value) { m_headersConfigHasBeenSet = true; m_headersConfig = std::move(value); }
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithHeadersConfig(const CachePolicyHeadersConfig& value) { SetHeadersConfig(value); return *this;}
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithHeadersConfig(CachePolicyHeadersConfig&& value) { SetHeadersConfig(std::move(value)); return *this;}
+    template<typename HeadersConfigT = CachePolicyHeadersConfig>
+    void SetHeadersConfig(HeadersConfigT&& value) { m_headersConfigHasBeenSet = true; m_headersConfig = std::forward<HeadersConfigT>(value); }
+    template<typename HeadersConfigT = CachePolicyHeadersConfig>
+    ParametersInCacheKeyAndForwardedToOrigin& WithHeadersConfig(HeadersConfigT&& value) { SetHeadersConfig(std::forward<HeadersConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +131,12 @@ namespace Model
      * which cookies) are included in the cache key and in requests that CloudFront
      * sends to the origin.</p>
      */
-    inline const CachePolicyCookiesConfig& GetCookiesConfig() const{ return m_cookiesConfig; }
+    inline const CachePolicyCookiesConfig& GetCookiesConfig() const { return m_cookiesConfig; }
     inline bool CookiesConfigHasBeenSet() const { return m_cookiesConfigHasBeenSet; }
-    inline void SetCookiesConfig(const CachePolicyCookiesConfig& value) { m_cookiesConfigHasBeenSet = true; m_cookiesConfig = value; }
-    inline void SetCookiesConfig(CachePolicyCookiesConfig&& value) { m_cookiesConfigHasBeenSet = true; m_cookiesConfig = std::move(value); }
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithCookiesConfig(const CachePolicyCookiesConfig& value) { SetCookiesConfig(value); return *this;}
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithCookiesConfig(CachePolicyCookiesConfig&& value) { SetCookiesConfig(std::move(value)); return *this;}
+    template<typename CookiesConfigT = CachePolicyCookiesConfig>
+    void SetCookiesConfig(CookiesConfigT&& value) { m_cookiesConfigHasBeenSet = true; m_cookiesConfig = std::forward<CookiesConfigT>(value); }
+    template<typename CookiesConfigT = CachePolicyCookiesConfig>
+    ParametersInCacheKeyAndForwardedToOrigin& WithCookiesConfig(CookiesConfigT&& value) { SetCookiesConfig(std::forward<CookiesConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,19 +145,19 @@ namespace Model
      * (and if so, which query strings) are included in the cache key and in requests
      * that CloudFront sends to the origin.</p>
      */
-    inline const CachePolicyQueryStringsConfig& GetQueryStringsConfig() const{ return m_queryStringsConfig; }
+    inline const CachePolicyQueryStringsConfig& GetQueryStringsConfig() const { return m_queryStringsConfig; }
     inline bool QueryStringsConfigHasBeenSet() const { return m_queryStringsConfigHasBeenSet; }
-    inline void SetQueryStringsConfig(const CachePolicyQueryStringsConfig& value) { m_queryStringsConfigHasBeenSet = true; m_queryStringsConfig = value; }
-    inline void SetQueryStringsConfig(CachePolicyQueryStringsConfig&& value) { m_queryStringsConfigHasBeenSet = true; m_queryStringsConfig = std::move(value); }
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithQueryStringsConfig(const CachePolicyQueryStringsConfig& value) { SetQueryStringsConfig(value); return *this;}
-    inline ParametersInCacheKeyAndForwardedToOrigin& WithQueryStringsConfig(CachePolicyQueryStringsConfig&& value) { SetQueryStringsConfig(std::move(value)); return *this;}
+    template<typename QueryStringsConfigT = CachePolicyQueryStringsConfig>
+    void SetQueryStringsConfig(QueryStringsConfigT&& value) { m_queryStringsConfigHasBeenSet = true; m_queryStringsConfig = std::forward<QueryStringsConfigT>(value); }
+    template<typename QueryStringsConfigT = CachePolicyQueryStringsConfig>
+    ParametersInCacheKeyAndForwardedToOrigin& WithQueryStringsConfig(QueryStringsConfigT&& value) { SetQueryStringsConfig(std::forward<QueryStringsConfigT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableAcceptEncodingGzip;
+    bool m_enableAcceptEncodingGzip{false};
     bool m_enableAcceptEncodingGzipHasBeenSet = false;
 
-    bool m_enableAcceptEncodingBrotli;
+    bool m_enableAcceptEncodingBrotli{false};
     bool m_enableAcceptEncodingBrotliHasBeenSet = false;
 
     CachePolicyHeadersConfig m_headersConfig;

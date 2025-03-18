@@ -25,7 +25,7 @@ namespace Model
   class RestoreFromSnapshotRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API RestoreFromSnapshotRequest();
+    AWS_DIRECTORYSERVICE_API RestoreFromSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the snapshot to restore from.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline RestoreFromSnapshotRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline RestoreFromSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline RestoreFromSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    RestoreFromSnapshotRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
   private:
 

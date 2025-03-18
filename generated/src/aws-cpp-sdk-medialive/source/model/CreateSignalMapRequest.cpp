@@ -12,18 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSignalMapRequest::CreateSignalMapRequest() : 
-    m_cloudWatchAlarmTemplateGroupIdentifiersHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_discoveryEntryPointArnHasBeenSet(false),
-    m_eventBridgeRuleTemplateGroupIdentifiersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true)
-{
-}
-
 Aws::String CreateSignalMapRequest::SerializePayload() const
 {
   JsonValue payload;

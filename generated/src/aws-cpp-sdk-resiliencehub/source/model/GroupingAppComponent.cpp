@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-GroupingAppComponent::GroupingAppComponent() : 
-    m_appComponentIdHasBeenSet(false),
-    m_appComponentNameHasBeenSet(false),
-    m_appComponentTypeHasBeenSet(false)
-{
-}
-
 GroupingAppComponent::GroupingAppComponent(JsonView jsonValue)
-  : GroupingAppComponent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GroupingAppComponent& GroupingAppComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentId"))
   {
     m_appComponentId = jsonValue.GetString("appComponentId");
-
     m_appComponentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appComponentType"))
   {
     m_appComponentType = jsonValue.GetString("appComponentType");
-
     m_appComponentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

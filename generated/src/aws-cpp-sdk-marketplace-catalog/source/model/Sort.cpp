@@ -18,15 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-Sort::Sort() : 
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Sort::Sort(JsonView jsonValue)
-  : Sort()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Sort& Sort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = jsonValue.GetString("SortBy");
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

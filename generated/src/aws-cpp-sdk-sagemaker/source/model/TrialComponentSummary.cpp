@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponentSummary::TrialComponentSummary() : 
-    m_trialComponentNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_trialComponentSourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false)
-{
-}
-
 TrialComponentSummary::TrialComponentSummary(JsonView jsonValue)
-  : TrialComponentSummary()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ TrialComponentSummary& TrialComponentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrialComponentName"))
   {
     m_trialComponentName = jsonValue.GetString("TrialComponentName");
-
     m_trialComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialComponentArn"))
   {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");
-
     m_trialComponentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialComponentSource"))
   {
     m_trialComponentSource = jsonValue.GetObject("TrialComponentSource");
-
     m_trialComponentSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   return *this;
 }
 

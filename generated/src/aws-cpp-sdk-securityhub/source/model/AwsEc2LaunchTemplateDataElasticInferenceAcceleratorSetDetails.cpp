@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& AwsEc2LaunchTempl
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

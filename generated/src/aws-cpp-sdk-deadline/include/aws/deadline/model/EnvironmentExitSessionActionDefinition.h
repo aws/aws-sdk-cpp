@@ -32,7 +32,7 @@ namespace Model
   class EnvironmentExitSessionActionDefinition
   {
   public:
-    AWS_DEADLINE_API EnvironmentExitSessionActionDefinition();
+    AWS_DEADLINE_API EnvironmentExitSessionActionDefinition() = default;
     AWS_DEADLINE_API EnvironmentExitSessionActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API EnvironmentExitSessionActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The environment ID.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline EnvironmentExitSessionActionDefinition& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline EnvironmentExitSessionActionDefinition& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline EnvironmentExitSessionActionDefinition& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    EnvironmentExitSessionActionDefinition& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
   private:
 

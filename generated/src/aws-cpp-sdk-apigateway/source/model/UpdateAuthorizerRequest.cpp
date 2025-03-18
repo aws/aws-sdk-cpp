@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAuthorizerRequest::UpdateAuthorizerRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;

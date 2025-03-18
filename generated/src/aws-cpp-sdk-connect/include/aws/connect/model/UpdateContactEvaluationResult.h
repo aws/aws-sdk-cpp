@@ -27,7 +27,7 @@ namespace Model
   class UpdateContactEvaluationResult
   {
   public:
-    AWS_CONNECT_API UpdateContactEvaluationResult();
+    AWS_CONNECT_API UpdateContactEvaluationResult() = default;
     AWS_CONNECT_API UpdateContactEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API UpdateContactEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>A unique identifier for the contact evaluation.</p>
      */
-    inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
-    inline void SetEvaluationId(const Aws::String& value) { m_evaluationId = value; }
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationId = std::move(value); }
-    inline void SetEvaluationId(const char* value) { m_evaluationId.assign(value); }
-    inline UpdateContactEvaluationResult& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-    inline UpdateContactEvaluationResult& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-    inline UpdateContactEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
+    template<typename EvaluationIdT = Aws::String>
+    void SetEvaluationId(EvaluationIdT&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::forward<EvaluationIdT>(value); }
+    template<typename EvaluationIdT = Aws::String>
+    UpdateContactEvaluationResult& WithEvaluationId(EvaluationIdT&& value) { SetEvaluationId(std::forward<EvaluationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
      */
-    inline const Aws::String& GetEvaluationArn() const{ return m_evaluationArn; }
-    inline void SetEvaluationArn(const Aws::String& value) { m_evaluationArn = value; }
-    inline void SetEvaluationArn(Aws::String&& value) { m_evaluationArn = std::move(value); }
-    inline void SetEvaluationArn(const char* value) { m_evaluationArn.assign(value); }
-    inline UpdateContactEvaluationResult& WithEvaluationArn(const Aws::String& value) { SetEvaluationArn(value); return *this;}
-    inline UpdateContactEvaluationResult& WithEvaluationArn(Aws::String&& value) { SetEvaluationArn(std::move(value)); return *this;}
-    inline UpdateContactEvaluationResult& WithEvaluationArn(const char* value) { SetEvaluationArn(value); return *this;}
+    inline const Aws::String& GetEvaluationArn() const { return m_evaluationArn; }
+    template<typename EvaluationArnT = Aws::String>
+    void SetEvaluationArn(EvaluationArnT&& value) { m_evaluationArnHasBeenSet = true; m_evaluationArn = std::forward<EvaluationArnT>(value); }
+    template<typename EvaluationArnT = Aws::String>
+    UpdateContactEvaluationResult& WithEvaluationArn(EvaluationArnT&& value) { SetEvaluationArn(std::forward<EvaluationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateContactEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateContactEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateContactEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateContactEvaluationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_evaluationId;
+    bool m_evaluationIdHasBeenSet = false;
 
     Aws::String m_evaluationArn;
+    bool m_evaluationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

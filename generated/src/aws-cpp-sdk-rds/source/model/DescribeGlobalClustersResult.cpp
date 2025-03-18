@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGlobalClustersResult::DescribeGlobalClustersResult()
-{
-}
-
 DescribeGlobalClustersResult::DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeGlobalClustersResult& DescribeGlobalClustersResult::operator =(const Aws
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode globalClustersNode = resultNode.FirstChild("GlobalClusters");
     if(!globalClustersNode.IsNull())
     {
       XmlNode globalClustersMember = globalClustersNode.FirstChild("GlobalClusterMember");
+      m_globalClustersHasBeenSet = !globalClustersMember.IsNull();
       while(!globalClustersMember.IsNull())
       {
         m_globalClusters.push_back(globalClustersMember);
         globalClustersMember = globalClustersMember.NextNode("GlobalClusterMember");
       }
 
+      m_globalClustersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeGlobalClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

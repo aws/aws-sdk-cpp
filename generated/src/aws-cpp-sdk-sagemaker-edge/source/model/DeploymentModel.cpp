@@ -18,23 +18,7 @@ namespace SagemakerEdgeManager
 namespace Model
 {
 
-DeploymentModel::DeploymentModel() : 
-    m_modelHandleHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_desiredState(ModelState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_state(ModelState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_rollbackFailureReasonHasBeenSet(false)
-{
-}
-
 DeploymentModel::DeploymentModel(JsonView jsonValue)
-  : DeploymentModel()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ DeploymentModel& DeploymentModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelHandle"))
   {
     m_modelHandle = jsonValue.GetString("ModelHandle");
-
     m_modelHandleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = ModelStateMapper::GetModelStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ModelStateMapper::GetModelStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackFailureReason"))
   {
     m_rollbackFailureReason = jsonValue.GetString("RollbackFailureReason");
-
     m_rollbackFailureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

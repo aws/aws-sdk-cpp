@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMountTargetsResult::DescribeMountTargetsResult()
-{
-}
-
 DescribeMountTargetsResult::DescribeMountTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountTargets"))
   {
     Aws::Utils::Array<JsonView> mountTargetsJsonList = jsonValue.GetArray("MountTargets");
@@ -42,20 +37,20 @@ DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::Am
     {
       m_mountTargets.push_back(mountTargetsJsonList[mountTargetsIndex].AsObject());
     }
+    m_mountTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

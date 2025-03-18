@@ -34,7 +34,7 @@ namespace Model
   class CreateTransitGatewayMulticastDomainRequestOptions
   {
   public:
-    AWS_EC2_API CreateTransitGatewayMulticastDomainRequestOptions();
+    AWS_EC2_API CreateTransitGatewayMulticastDomainRequestOptions() = default;
     AWS_EC2_API CreateTransitGatewayMulticastDomainRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CreateTransitGatewayMulticastDomainRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,10 @@ namespace Model
      * <p>Specify whether to enable Internet Group Management Protocol (IGMP) version 2
      * for the transit gateway multicast domain.</p>
      */
-    inline const Igmpv2SupportValue& GetIgmpv2Support() const{ return m_igmpv2Support; }
+    inline Igmpv2SupportValue GetIgmpv2Support() const { return m_igmpv2Support; }
     inline bool Igmpv2SupportHasBeenSet() const { return m_igmpv2SupportHasBeenSet; }
-    inline void SetIgmpv2Support(const Igmpv2SupportValue& value) { m_igmpv2SupportHasBeenSet = true; m_igmpv2Support = value; }
-    inline void SetIgmpv2Support(Igmpv2SupportValue&& value) { m_igmpv2SupportHasBeenSet = true; m_igmpv2Support = std::move(value); }
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithIgmpv2Support(const Igmpv2SupportValue& value) { SetIgmpv2Support(value); return *this;}
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithIgmpv2Support(Igmpv2SupportValue&& value) { SetIgmpv2Support(std::move(value)); return *this;}
+    inline void SetIgmpv2Support(Igmpv2SupportValue value) { m_igmpv2SupportHasBeenSet = true; m_igmpv2Support = value; }
+    inline CreateTransitGatewayMulticastDomainRequestOptions& WithIgmpv2Support(Igmpv2SupportValue value) { SetIgmpv2Support(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <p>Specify whether to enable support for statically configuring multicast group
      * sources for a domain.</p>
      */
-    inline const StaticSourcesSupportValue& GetStaticSourcesSupport() const{ return m_staticSourcesSupport; }
+    inline StaticSourcesSupportValue GetStaticSourcesSupport() const { return m_staticSourcesSupport; }
     inline bool StaticSourcesSupportHasBeenSet() const { return m_staticSourcesSupportHasBeenSet; }
-    inline void SetStaticSourcesSupport(const StaticSourcesSupportValue& value) { m_staticSourcesSupportHasBeenSet = true; m_staticSourcesSupport = value; }
-    inline void SetStaticSourcesSupport(StaticSourcesSupportValue&& value) { m_staticSourcesSupportHasBeenSet = true; m_staticSourcesSupport = std::move(value); }
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithStaticSourcesSupport(const StaticSourcesSupportValue& value) { SetStaticSourcesSupport(value); return *this;}
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithStaticSourcesSupport(StaticSourcesSupportValue&& value) { SetStaticSourcesSupport(std::move(value)); return *this;}
+    inline void SetStaticSourcesSupport(StaticSourcesSupportValue value) { m_staticSourcesSupportHasBeenSet = true; m_staticSourcesSupport = value; }
+    inline CreateTransitGatewayMulticastDomainRequestOptions& WithStaticSourcesSupport(StaticSourcesSupportValue value) { SetStaticSourcesSupport(value); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +69,20 @@ namespace Model
      * <p>Indicates whether to automatically accept cross-account subnet associations
      * that are associated with the transit gateway multicast domain.</p>
      */
-    inline const AutoAcceptSharedAssociationsValue& GetAutoAcceptSharedAssociations() const{ return m_autoAcceptSharedAssociations; }
+    inline AutoAcceptSharedAssociationsValue GetAutoAcceptSharedAssociations() const { return m_autoAcceptSharedAssociations; }
     inline bool AutoAcceptSharedAssociationsHasBeenSet() const { return m_autoAcceptSharedAssociationsHasBeenSet; }
-    inline void SetAutoAcceptSharedAssociations(const AutoAcceptSharedAssociationsValue& value) { m_autoAcceptSharedAssociationsHasBeenSet = true; m_autoAcceptSharedAssociations = value; }
-    inline void SetAutoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue&& value) { m_autoAcceptSharedAssociationsHasBeenSet = true; m_autoAcceptSharedAssociations = std::move(value); }
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithAutoAcceptSharedAssociations(const AutoAcceptSharedAssociationsValue& value) { SetAutoAcceptSharedAssociations(value); return *this;}
-    inline CreateTransitGatewayMulticastDomainRequestOptions& WithAutoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue&& value) { SetAutoAcceptSharedAssociations(std::move(value)); return *this;}
+    inline void SetAutoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue value) { m_autoAcceptSharedAssociationsHasBeenSet = true; m_autoAcceptSharedAssociations = value; }
+    inline CreateTransitGatewayMulticastDomainRequestOptions& WithAutoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue value) { SetAutoAcceptSharedAssociations(value); return *this;}
     ///@}
   private:
 
-    Igmpv2SupportValue m_igmpv2Support;
+    Igmpv2SupportValue m_igmpv2Support{Igmpv2SupportValue::NOT_SET};
     bool m_igmpv2SupportHasBeenSet = false;
 
-    StaticSourcesSupportValue m_staticSourcesSupport;
+    StaticSourcesSupportValue m_staticSourcesSupport{StaticSourcesSupportValue::NOT_SET};
     bool m_staticSourcesSupportHasBeenSet = false;
 
-    AutoAcceptSharedAssociationsValue m_autoAcceptSharedAssociations;
+    AutoAcceptSharedAssociationsValue m_autoAcceptSharedAssociations{AutoAcceptSharedAssociationsValue::NOT_SET};
     bool m_autoAcceptSharedAssociationsHasBeenSet = false;
   };
 

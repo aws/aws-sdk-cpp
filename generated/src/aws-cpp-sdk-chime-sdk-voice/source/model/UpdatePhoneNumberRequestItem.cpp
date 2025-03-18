@@ -18,17 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_callingNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue)
-  : UpdatePhoneNumberRequestItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ UpdatePhoneNumberRequestItem& UpdatePhoneNumberRequestItem::operator =(JsonView 
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductType"))
   {
     m_productType = PhoneNumberProductTypeMapper::GetPhoneNumberProductTypeForName(jsonValue.GetString("ProductType"));
-
     m_productTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallingName"))
   {
     m_callingName = jsonValue.GetString("CallingName");
-
     m_callingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

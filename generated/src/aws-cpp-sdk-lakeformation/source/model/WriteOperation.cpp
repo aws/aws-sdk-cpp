@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-WriteOperation::WriteOperation() : 
-    m_addObjectHasBeenSet(false),
-    m_deleteObjectHasBeenSet(false)
-{
-}
-
 WriteOperation::WriteOperation(JsonView jsonValue)
-  : WriteOperation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WriteOperation& WriteOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddObject"))
   {
     m_addObject = jsonValue.GetObject("AddObject");
-
     m_addObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteObject"))
   {
     m_deleteObject = jsonValue.GetObject("DeleteObject");
-
     m_deleteObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

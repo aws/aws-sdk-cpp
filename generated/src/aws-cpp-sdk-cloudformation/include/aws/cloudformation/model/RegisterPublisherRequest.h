@@ -21,7 +21,7 @@ namespace Model
   class RegisterPublisherRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API RegisterPublisherRequest();
+    AWS_CLOUDFORMATION_API RegisterPublisherRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * extensions to the CloudFormation registry.</p> <p>The default is
      * <code>false</code>.</p>
      */
-    inline bool GetAcceptTermsAndConditions() const{ return m_acceptTermsAndConditions; }
+    inline bool GetAcceptTermsAndConditions() const { return m_acceptTermsAndConditions; }
     inline bool AcceptTermsAndConditionsHasBeenSet() const { return m_acceptTermsAndConditionsHasBeenSet; }
     inline void SetAcceptTermsAndConditions(bool value) { m_acceptTermsAndConditionsHasBeenSet = true; m_acceptTermsAndConditions = value; }
     inline RegisterPublisherRequest& WithAcceptTermsAndConditions(bool value) { SetAcceptTermsAndConditions(value); return *this;}
@@ -60,18 +60,16 @@ namespace Model
      * Registering your account to publish CloudFormation extensions</a> in the
      * <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline RegisterPublisherRequest& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline RegisterPublisherRequest& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline RegisterPublisherRequest& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    RegisterPublisherRequest& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_acceptTermsAndConditions;
+    bool m_acceptTermsAndConditions{false};
     bool m_acceptTermsAndConditionsHasBeenSet = false;
 
     Aws::String m_connectionArn;

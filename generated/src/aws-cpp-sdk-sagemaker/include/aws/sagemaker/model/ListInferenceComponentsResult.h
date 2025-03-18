@@ -29,7 +29,7 @@ namespace Model
   class ListInferenceComponentsResult
   {
   public:
-    AWS_SAGEMAKER_API ListInferenceComponentsResult();
+    AWS_SAGEMAKER_API ListInferenceComponentsResult() = default;
     AWS_SAGEMAKER_API ListInferenceComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListInferenceComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of inference components and their properties that matches any of the
      * filters you specified in the request.</p>
      */
-    inline const Aws::Vector<InferenceComponentSummary>& GetInferenceComponents() const{ return m_inferenceComponents; }
-    inline void SetInferenceComponents(const Aws::Vector<InferenceComponentSummary>& value) { m_inferenceComponents = value; }
-    inline void SetInferenceComponents(Aws::Vector<InferenceComponentSummary>&& value) { m_inferenceComponents = std::move(value); }
-    inline ListInferenceComponentsResult& WithInferenceComponents(const Aws::Vector<InferenceComponentSummary>& value) { SetInferenceComponents(value); return *this;}
-    inline ListInferenceComponentsResult& WithInferenceComponents(Aws::Vector<InferenceComponentSummary>&& value) { SetInferenceComponents(std::move(value)); return *this;}
-    inline ListInferenceComponentsResult& AddInferenceComponents(const InferenceComponentSummary& value) { m_inferenceComponents.push_back(value); return *this; }
-    inline ListInferenceComponentsResult& AddInferenceComponents(InferenceComponentSummary&& value) { m_inferenceComponents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InferenceComponentSummary>& GetInferenceComponents() const { return m_inferenceComponents; }
+    template<typename InferenceComponentsT = Aws::Vector<InferenceComponentSummary>>
+    void SetInferenceComponents(InferenceComponentsT&& value) { m_inferenceComponentsHasBeenSet = true; m_inferenceComponents = std::forward<InferenceComponentsT>(value); }
+    template<typename InferenceComponentsT = Aws::Vector<InferenceComponentSummary>>
+    ListInferenceComponentsResult& WithInferenceComponents(InferenceComponentsT&& value) { SetInferenceComponents(std::forward<InferenceComponentsT>(value)); return *this;}
+    template<typename InferenceComponentsT = InferenceComponentSummary>
+    ListInferenceComponentsResult& AddInferenceComponents(InferenceComponentsT&& value) { m_inferenceComponentsHasBeenSet = true; m_inferenceComponents.emplace_back(std::forward<InferenceComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to use in a subsequent request to get the next set of results
      * following a truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInferenceComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInferenceComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInferenceComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInferenceComponentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInferenceComponentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInferenceComponentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInferenceComponentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInferenceComponentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InferenceComponentSummary> m_inferenceComponents;
+    bool m_inferenceComponentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

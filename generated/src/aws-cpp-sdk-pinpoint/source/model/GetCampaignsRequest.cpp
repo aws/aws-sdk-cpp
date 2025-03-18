@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCampaignsRequest::GetCampaignsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCampaignsRequest::SerializePayload() const
 {
   return {};

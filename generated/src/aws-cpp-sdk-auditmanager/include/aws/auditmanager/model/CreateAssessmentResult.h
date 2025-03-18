@@ -28,35 +28,35 @@ namespace Model
   class CreateAssessmentResult
   {
   public:
-    AWS_AUDITMANAGER_API CreateAssessmentResult();
+    AWS_AUDITMANAGER_API CreateAssessmentResult() = default;
     AWS_AUDITMANAGER_API CreateAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API CreateAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Assessment& GetAssessment() const{ return m_assessment; }
-    inline void SetAssessment(const Assessment& value) { m_assessment = value; }
-    inline void SetAssessment(Assessment&& value) { m_assessment = std::move(value); }
-    inline CreateAssessmentResult& WithAssessment(const Assessment& value) { SetAssessment(value); return *this;}
-    inline CreateAssessmentResult& WithAssessment(Assessment&& value) { SetAssessment(std::move(value)); return *this;}
+    inline const Assessment& GetAssessment() const { return m_assessment; }
+    template<typename AssessmentT = Assessment>
+    void SetAssessment(AssessmentT&& value) { m_assessmentHasBeenSet = true; m_assessment = std::forward<AssessmentT>(value); }
+    template<typename AssessmentT = Assessment>
+    CreateAssessmentResult& WithAssessment(AssessmentT&& value) { SetAssessment(std::forward<AssessmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAssessmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Assessment m_assessment;
+    bool m_assessmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

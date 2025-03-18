@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ForecastGeofenceEventsResult::ForecastGeofenceEventsResult() : 
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_speedUnit(SpeedUnit::NOT_SET)
-{
-}
-
 ForecastGeofenceEventsResult::ForecastGeofenceEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ForecastGeofenceEventsResult()
 {
   *this = result;
 }
@@ -39,32 +32,30 @@ ForecastGeofenceEventsResult& ForecastGeofenceEventsResult::operator =(const Aws
     {
       m_forecastedEvents.push_back(forecastedEventsJsonList[forecastedEventsIndex].AsObject());
     }
+    m_forecastedEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DistanceUnit"))
   {
     m_distanceUnit = DistanceUnitMapper::GetDistanceUnitForName(jsonValue.GetString("DistanceUnit"));
-
+    m_distanceUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeedUnit"))
   {
     m_speedUnit = SpeedUnitMapper::GetSpeedUnitForName(jsonValue.GetString("SpeedUnit"));
-
+    m_speedUnitHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,20 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-LinkedWhatsAppBusinessAccountSummary::LinkedWhatsAppBusinessAccountSummary() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_wabaIdHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_linkDateHasBeenSet(false),
-    m_wabaNameHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false)
-{
-}
-
 LinkedWhatsAppBusinessAccountSummary::LinkedWhatsAppBusinessAccountSummary(JsonView jsonValue)
-  : LinkedWhatsAppBusinessAccountSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ LinkedWhatsAppBusinessAccountSummary& LinkedWhatsAppBusinessAccountSummary::oper
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wabaId"))
   {
     m_wabaId = jsonValue.GetString("wabaId");
-
     m_wabaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linkDate"))
   {
     m_linkDate = jsonValue.GetDouble("linkDate");
-
     m_linkDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wabaName"))
   {
     m_wabaName = jsonValue.GetString("wabaName");
-
     m_wabaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDestinations"))
   {
     Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("eventDestinations");
@@ -89,7 +64,6 @@ LinkedWhatsAppBusinessAccountSummary& LinkedWhatsAppBusinessAccountSummary::oper
     }
     m_eventDestinationsHasBeenSet = true;
   }
-
   return *this;
 }
 

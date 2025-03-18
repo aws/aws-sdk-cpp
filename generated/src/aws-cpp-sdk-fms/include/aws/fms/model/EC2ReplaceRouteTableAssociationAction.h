@@ -33,7 +33,7 @@ namespace Model
   class EC2ReplaceRouteTableAssociationAction
   {
   public:
-    AWS_FMS_API EC2ReplaceRouteTableAssociationAction();
+    AWS_FMS_API EC2ReplaceRouteTableAssociationAction() = default;
     AWS_FMS_API EC2ReplaceRouteTableAssociationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EC2ReplaceRouteTableAssociationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EC2ReplaceRouteTableAssociationAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EC2ReplaceRouteTableAssociationAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EC2ReplaceRouteTableAssociationAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EC2ReplaceRouteTableAssociationAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the association ID.</p>
      */
-    inline const ActionTarget& GetAssociationId() const{ return m_associationId; }
+    inline const ActionTarget& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const ActionTarget& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(ActionTarget&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline EC2ReplaceRouteTableAssociationAction& WithAssociationId(const ActionTarget& value) { SetAssociationId(value); return *this;}
-    inline EC2ReplaceRouteTableAssociationAction& WithAssociationId(ActionTarget&& value) { SetAssociationId(std::move(value)); return *this;}
+    template<typename AssociationIdT = ActionTarget>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = ActionTarget>
+    EC2ReplaceRouteTableAssociationAction& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,12 @@ namespace Model
      * <p>Information about the ID of the new route table to associate with the
      * subnet.</p>
      */
-    inline const ActionTarget& GetRouteTableId() const{ return m_routeTableId; }
+    inline const ActionTarget& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const ActionTarget& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(ActionTarget&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline EC2ReplaceRouteTableAssociationAction& WithRouteTableId(const ActionTarget& value) { SetRouteTableId(value); return *this;}
-    inline EC2ReplaceRouteTableAssociationAction& WithRouteTableId(ActionTarget&& value) { SetRouteTableId(std::move(value)); return *this;}
+    template<typename RouteTableIdT = ActionTarget>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = ActionTarget>
+    EC2ReplaceRouteTableAssociationAction& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
   private:
 

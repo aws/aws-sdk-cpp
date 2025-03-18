@@ -18,19 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationConfigRule::OrganizationConfigRule() : 
-    m_organizationConfigRuleNameHasBeenSet(false),
-    m_organizationConfigRuleArnHasBeenSet(false),
-    m_organizationManagedRuleMetadataHasBeenSet(false),
-    m_organizationCustomRuleMetadataHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
-{
-}
-
 OrganizationConfigRule::OrganizationConfigRule(JsonView jsonValue)
-  : OrganizationConfigRule()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ OrganizationConfigRule& OrganizationConfigRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OrganizationConfigRuleName"))
   {
     m_organizationConfigRuleName = jsonValue.GetString("OrganizationConfigRuleName");
-
     m_organizationConfigRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationConfigRuleArn"))
   {
     m_organizationConfigRuleArn = jsonValue.GetString("OrganizationConfigRuleArn");
-
     m_organizationConfigRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationManagedRuleMetadata"))
   {
     m_organizationManagedRuleMetadata = jsonValue.GetObject("OrganizationManagedRuleMetadata");
-
     m_organizationManagedRuleMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationCustomRuleMetadata"))
   {
     m_organizationCustomRuleMetadata = jsonValue.GetObject("OrganizationCustomRuleMetadata");
-
     m_organizationCustomRuleMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludedAccounts"))
   {
     Aws::Utils::Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
@@ -74,21 +54,16 @@ OrganizationConfigRule& OrganizationConfigRule::operator =(JsonView jsonValue)
     }
     m_excludedAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationCustomPolicyRuleMetadata"))
   {
     m_organizationCustomPolicyRuleMetadata = jsonValue.GetObject("OrganizationCustomPolicyRuleMetadata");
-
     m_organizationCustomPolicyRuleMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

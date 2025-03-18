@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIPromptTemplateConfiguration::AIPromptTemplateConfiguration() : 
-    m_textFullAIPromptEditTemplateConfigurationHasBeenSet(false)
-{
-}
-
 AIPromptTemplateConfiguration::AIPromptTemplateConfiguration(JsonView jsonValue)
-  : AIPromptTemplateConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AIPromptTemplateConfiguration& AIPromptTemplateConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("textFullAIPromptEditTemplateConfiguration"))
   {
     m_textFullAIPromptEditTemplateConfiguration = jsonValue.GetObject("textFullAIPromptEditTemplateConfiguration");
-
     m_textFullAIPromptEditTemplateConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DmsTransferSettings::DmsTransferSettings() : 
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 DmsTransferSettings::DmsTransferSettings(JsonView jsonValue)
-  : DmsTransferSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DmsTransferSettings& DmsTransferSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFlywheelRequest::DeleteFlywheelRequest() : 
-    m_flywheelArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFlywheelRequest::SerializePayload() const
 {
   JsonValue payload;

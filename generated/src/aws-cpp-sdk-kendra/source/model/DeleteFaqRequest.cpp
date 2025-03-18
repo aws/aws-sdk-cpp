@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFaqRequest::DeleteFaqRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFaqRequest::SerializePayload() const
 {
   JsonValue payload;

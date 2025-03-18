@@ -18,16 +18,7 @@ namespace PI
 namespace Model
 {
 
-DimensionKeyDetail::DimensionKeyDetail() : 
-    m_valueHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_status(DetailStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DimensionKeyDetail::DimensionKeyDetail(JsonView jsonValue)
-  : DimensionKeyDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DimensionKeyDetail& DimensionKeyDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimension"))
   {
     m_dimension = jsonValue.GetString("Dimension");
-
     m_dimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DetailStatusMapper::GetDetailStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

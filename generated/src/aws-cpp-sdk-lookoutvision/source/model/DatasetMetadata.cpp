@@ -18,17 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DatasetMetadata::DatasetMetadata() : 
-    m_datasetTypeHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 DatasetMetadata::DatasetMetadata(JsonView jsonValue)
-  : DatasetMetadata()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetType"))
   {
     m_datasetType = jsonValue.GetString("DatasetType");
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

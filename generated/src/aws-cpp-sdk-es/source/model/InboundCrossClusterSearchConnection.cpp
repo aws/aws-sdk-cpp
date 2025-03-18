@@ -18,16 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-InboundCrossClusterSearchConnection::InboundCrossClusterSearchConnection() : 
-    m_sourceDomainInfoHasBeenSet(false),
-    m_destinationDomainInfoHasBeenSet(false),
-    m_crossClusterSearchConnectionIdHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
-{
-}
-
 InboundCrossClusterSearchConnection::InboundCrossClusterSearchConnection(JsonView jsonValue)
-  : InboundCrossClusterSearchConnection()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InboundCrossClusterSearchConnection& InboundCrossClusterSearchConnection::operat
   if(jsonValue.ValueExists("SourceDomainInfo"))
   {
     m_sourceDomainInfo = jsonValue.GetObject("SourceDomainInfo");
-
     m_sourceDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDomainInfo"))
   {
     m_destinationDomainInfo = jsonValue.GetObject("DestinationDomainInfo");
-
     m_destinationDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossClusterSearchConnectionId"))
   {
     m_crossClusterSearchConnectionId = jsonValue.GetString("CrossClusterSearchConnectionId");
-
     m_crossClusterSearchConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = jsonValue.GetObject("ConnectionStatus");
-
     m_connectionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

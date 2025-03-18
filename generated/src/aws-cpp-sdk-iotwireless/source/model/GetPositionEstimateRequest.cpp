@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPositionEstimateRequest::GetPositionEstimateRequest() : 
-    m_wiFiAccessPointsHasBeenSet(false),
-    m_cellTowersHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_gnssHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 Aws::String GetPositionEstimateRequest::SerializePayload() const
 {
   JsonValue payload;

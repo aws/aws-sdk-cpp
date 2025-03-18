@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-BucketLoggingStatus::BucketLoggingStatus() : 
-    m_loggingEnabledHasBeenSet(false)
-{
-}
-
 BucketLoggingStatus::BucketLoggingStatus(const XmlNode& xmlNode)
-  : BucketLoggingStatus()
 {
   *this = xmlNode;
 }

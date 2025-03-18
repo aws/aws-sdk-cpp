@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-SecurityDetails::SecurityDetails() : 
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 SecurityDetails::SecurityDetails(JsonView jsonValue)
-  : SecurityDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SecurityDetails& SecurityDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -49,7 +39,6 @@ SecurityDetails& SecurityDetails::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -59,7 +48,6 @@ SecurityDetails& SecurityDetails::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

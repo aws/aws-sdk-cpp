@@ -22,7 +22,7 @@ namespace Model
   class SetTimeBasedAutoScalingRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API SetTimeBasedAutoScalingRequest();
+    AWS_OPSWORKS_API SetTimeBasedAutoScalingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline SetTimeBasedAutoScalingRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline SetTimeBasedAutoScalingRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline SetTimeBasedAutoScalingRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    SetTimeBasedAutoScalingRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
      */
-    inline const WeeklyAutoScalingSchedule& GetAutoScalingSchedule() const{ return m_autoScalingSchedule; }
+    inline const WeeklyAutoScalingSchedule& GetAutoScalingSchedule() const { return m_autoScalingSchedule; }
     inline bool AutoScalingScheduleHasBeenSet() const { return m_autoScalingScheduleHasBeenSet; }
-    inline void SetAutoScalingSchedule(const WeeklyAutoScalingSchedule& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = value; }
-    inline void SetAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = std::move(value); }
-    inline SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(const WeeklyAutoScalingSchedule& value) { SetAutoScalingSchedule(value); return *this;}
-    inline SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(WeeklyAutoScalingSchedule&& value) { SetAutoScalingSchedule(std::move(value)); return *this;}
+    template<typename AutoScalingScheduleT = WeeklyAutoScalingSchedule>
+    void SetAutoScalingSchedule(AutoScalingScheduleT&& value) { m_autoScalingScheduleHasBeenSet = true; m_autoScalingSchedule = std::forward<AutoScalingScheduleT>(value); }
+    template<typename AutoScalingScheduleT = WeeklyAutoScalingSchedule>
+    SetTimeBasedAutoScalingRequest& WithAutoScalingSchedule(AutoScalingScheduleT&& value) { SetAutoScalingSchedule(std::forward<AutoScalingScheduleT>(value)); return *this;}
     ///@}
   private:
 

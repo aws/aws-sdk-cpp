@@ -47,7 +47,7 @@ namespace Model
   class PriorityConfigurationOverride
   {
   public:
-    AWS_GAMELIFT_API PriorityConfigurationOverride();
+    AWS_GAMELIFT_API PriorityConfigurationOverride() = default;
     AWS_GAMELIFT_API PriorityConfigurationOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API PriorityConfigurationOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,12 +66,10 @@ namespace Model
      * Continue to use the override list for all rounds of placement attempts until the
      * placement request times out.</p> </li> </ul>
      */
-    inline const PlacementFallbackStrategy& GetPlacementFallbackStrategy() const{ return m_placementFallbackStrategy; }
+    inline PlacementFallbackStrategy GetPlacementFallbackStrategy() const { return m_placementFallbackStrategy; }
     inline bool PlacementFallbackStrategyHasBeenSet() const { return m_placementFallbackStrategyHasBeenSet; }
-    inline void SetPlacementFallbackStrategy(const PlacementFallbackStrategy& value) { m_placementFallbackStrategyHasBeenSet = true; m_placementFallbackStrategy = value; }
-    inline void SetPlacementFallbackStrategy(PlacementFallbackStrategy&& value) { m_placementFallbackStrategyHasBeenSet = true; m_placementFallbackStrategy = std::move(value); }
-    inline PriorityConfigurationOverride& WithPlacementFallbackStrategy(const PlacementFallbackStrategy& value) { SetPlacementFallbackStrategy(value); return *this;}
-    inline PriorityConfigurationOverride& WithPlacementFallbackStrategy(PlacementFallbackStrategy&& value) { SetPlacementFallbackStrategy(std::move(value)); return *this;}
+    inline void SetPlacementFallbackStrategy(PlacementFallbackStrategy value) { m_placementFallbackStrategyHasBeenSet = true; m_placementFallbackStrategy = value; }
+    inline PriorityConfigurationOverride& WithPlacementFallbackStrategy(PlacementFallbackStrategy value) { SetPlacementFallbackStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +81,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
      * GameLift service locations.</a> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLocationOrder() const{ return m_locationOrder; }
+    inline const Aws::Vector<Aws::String>& GetLocationOrder() const { return m_locationOrder; }
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }
-    inline void SetLocationOrder(const Aws::Vector<Aws::String>& value) { m_locationOrderHasBeenSet = true; m_locationOrder = value; }
-    inline void SetLocationOrder(Aws::Vector<Aws::String>&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::move(value); }
-    inline PriorityConfigurationOverride& WithLocationOrder(const Aws::Vector<Aws::String>& value) { SetLocationOrder(value); return *this;}
-    inline PriorityConfigurationOverride& WithLocationOrder(Aws::Vector<Aws::String>&& value) { SetLocationOrder(std::move(value)); return *this;}
-    inline PriorityConfigurationOverride& AddLocationOrder(const Aws::String& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
-    inline PriorityConfigurationOverride& AddLocationOrder(Aws::String&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(std::move(value)); return *this; }
-    inline PriorityConfigurationOverride& AddLocationOrder(const char* value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
+    template<typename LocationOrderT = Aws::Vector<Aws::String>>
+    void SetLocationOrder(LocationOrderT&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::forward<LocationOrderT>(value); }
+    template<typename LocationOrderT = Aws::Vector<Aws::String>>
+    PriorityConfigurationOverride& WithLocationOrder(LocationOrderT&& value) { SetLocationOrder(std::forward<LocationOrderT>(value)); return *this;}
+    template<typename LocationOrderT = Aws::String>
+    PriorityConfigurationOverride& AddLocationOrder(LocationOrderT&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.emplace_back(std::forward<LocationOrderT>(value)); return *this; }
     ///@}
   private:
 
-    PlacementFallbackStrategy m_placementFallbackStrategy;
+    PlacementFallbackStrategy m_placementFallbackStrategy{PlacementFallbackStrategy::NOT_SET};
     bool m_placementFallbackStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_locationOrder;

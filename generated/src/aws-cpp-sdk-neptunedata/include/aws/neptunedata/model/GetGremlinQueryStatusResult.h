@@ -28,7 +28,7 @@ namespace Model
   class GetGremlinQueryStatusResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetGremlinQueryStatusResult();
+    AWS_NEPTUNEDATA_API GetGremlinQueryStatusResult() = default;
     AWS_NEPTUNEDATA_API GetGremlinQueryStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetGremlinQueryStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,56 @@ namespace Model
     /**
      * <p>The ID of the query for which status is being returned.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
-    inline void SetQueryId(const Aws::String& value) { m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryId.assign(value); }
-    inline GetGremlinQueryStatusResult& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline GetGremlinQueryStatusResult& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline GetGremlinQueryStatusResult& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    GetGremlinQueryStatusResult& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Gremlin query string.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
-    inline void SetQueryString(const Aws::String& value) { m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryString.assign(value); }
-    inline GetGremlinQueryStatusResult& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline GetGremlinQueryStatusResult& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline GetGremlinQueryStatusResult& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    GetGremlinQueryStatusResult& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The evaluation status of the Gremlin query.</p>
      */
-    inline const QueryEvalStats& GetQueryEvalStats() const{ return m_queryEvalStats; }
-    inline void SetQueryEvalStats(const QueryEvalStats& value) { m_queryEvalStats = value; }
-    inline void SetQueryEvalStats(QueryEvalStats&& value) { m_queryEvalStats = std::move(value); }
-    inline GetGremlinQueryStatusResult& WithQueryEvalStats(const QueryEvalStats& value) { SetQueryEvalStats(value); return *this;}
-    inline GetGremlinQueryStatusResult& WithQueryEvalStats(QueryEvalStats&& value) { SetQueryEvalStats(std::move(value)); return *this;}
+    inline const QueryEvalStats& GetQueryEvalStats() const { return m_queryEvalStats; }
+    template<typename QueryEvalStatsT = QueryEvalStats>
+    void SetQueryEvalStats(QueryEvalStatsT&& value) { m_queryEvalStatsHasBeenSet = true; m_queryEvalStats = std::forward<QueryEvalStatsT>(value); }
+    template<typename QueryEvalStatsT = QueryEvalStats>
+    GetGremlinQueryStatusResult& WithQueryEvalStats(QueryEvalStatsT&& value) { SetQueryEvalStats(std::forward<QueryEvalStatsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGremlinQueryStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGremlinQueryStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGremlinQueryStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGremlinQueryStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryId;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::String m_queryString;
+    bool m_queryStringHasBeenSet = false;
 
     QueryEvalStats m_queryEvalStats;
+    bool m_queryEvalStatsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

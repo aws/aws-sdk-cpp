@@ -35,7 +35,7 @@ namespace Model
   class MonitoredResourceInfo
   {
   public:
-    AWS_LIGHTSAIL_API MonitoredResourceInfo();
+    AWS_LIGHTSAIL_API MonitoredResourceInfo() = default;
     AWS_LIGHTSAIL_API MonitoredResourceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API MonitoredResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline MonitoredResourceInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline MonitoredResourceInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline MonitoredResourceInfo& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    MonitoredResourceInfo& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Lightsail resource being monitored.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MonitoredResourceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MonitoredResourceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MonitoredResourceInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MonitoredResourceInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * <p>Instances, load balancers, and relational databases are the only Lightsail
      * resources that can currently be monitored by alarms.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline MonitoredResourceInfo& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline MonitoredResourceInfo& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline MonitoredResourceInfo& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -90,7 +84,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

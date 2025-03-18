@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspacesConnectionStatusRequest::DescribeWorkspacesConnectionStatusRequest() : 
-    m_workspaceIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspacesConnectionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

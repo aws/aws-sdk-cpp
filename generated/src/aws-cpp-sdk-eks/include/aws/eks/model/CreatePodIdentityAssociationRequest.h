@@ -23,7 +23,7 @@ namespace Model
   class CreatePodIdentityAssociationRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API CreatePodIdentityAssociationRequest();
+    AWS_EKS_API CreatePodIdentityAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the cluster to create the association in.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CreatePodIdentityAssociationRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * association in. The service account and the pods that use the service account
      * must be in this namespace.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline CreatePodIdentityAssociationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>The name of the Kubernetes service account inside the cluster to associate
      * the IAM credentials with.</p>
      */
-    inline const Aws::String& GetServiceAccount() const{ return m_serviceAccount; }
+    inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
-    inline void SetServiceAccount(const Aws::String& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = value; }
-    inline void SetServiceAccount(Aws::String&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::move(value); }
-    inline void SetServiceAccount(const char* value) { m_serviceAccountHasBeenSet = true; m_serviceAccount.assign(value); }
-    inline CreatePodIdentityAssociationRequest& WithServiceAccount(const Aws::String& value) { SetServiceAccount(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithServiceAccount(Aws::String&& value) { SetServiceAccount(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithServiceAccount(const char* value) { SetServiceAccount(value); return *this;}
+    template<typename ServiceAccountT = Aws::String>
+    void SetServiceAccount(ServiceAccountT&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::forward<ServiceAccountT>(value); }
+    template<typename ServiceAccountT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithServiceAccount(ServiceAccountT&& value) { SetServiceAccount(std::forward<ServiceAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * account. The EKS Pod Identity agent manages credentials to assume this role for
      * applications in the containers in the pods that use this service account.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreatePodIdentityAssociationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreatePodIdentityAssociationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreatePodIdentityAssociationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,19 +120,16 @@ namespace Model
      * values with this prefix. Tags with this prefix do not count against your tags
      * per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePodIdentityAssociationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreatePodIdentityAssociationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePodIdentityAssociationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePodIdentityAssociationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreatePodIdentityAssociationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreatePodIdentityAssociationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

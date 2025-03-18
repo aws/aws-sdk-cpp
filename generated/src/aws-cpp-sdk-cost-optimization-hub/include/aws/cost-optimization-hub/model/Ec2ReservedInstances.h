@@ -33,7 +33,7 @@ namespace Model
   class Ec2ReservedInstances
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstances();
+    AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstances() = default;
     AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstances(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstances& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The EC2 reserved instances configuration used for recommendations.</p>
      */
-    inline const Ec2ReservedInstancesConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const Ec2ReservedInstancesConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Ec2ReservedInstancesConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Ec2ReservedInstancesConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline Ec2ReservedInstances& WithConfiguration(const Ec2ReservedInstancesConfiguration& value) { SetConfiguration(value); return *this;}
-    inline Ec2ReservedInstances& WithConfiguration(Ec2ReservedInstancesConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Ec2ReservedInstancesConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Ec2ReservedInstancesConfiguration>
+    Ec2ReservedInstances& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the purchase recommendation.</p>
      */
-    inline const ReservedInstancesCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ReservedInstancesCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ReservedInstancesCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ReservedInstancesCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline Ec2ReservedInstances& WithCostCalculation(const ReservedInstancesCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline Ec2ReservedInstances& WithCostCalculation(ReservedInstancesCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ReservedInstancesCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ReservedInstancesCostCalculation>
+    Ec2ReservedInstances& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

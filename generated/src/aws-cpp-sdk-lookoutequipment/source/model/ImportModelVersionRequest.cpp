@@ -12,21 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportModelVersionRequest::ImportModelVersionRequest() : 
-    m_sourceModelVersionArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_labelsInputConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_roleArnHasBeenSet(false),
-    m_serverSideKmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_inferenceDataImportStrategy(InferenceDataImportStrategy::NOT_SET),
-    m_inferenceDataImportStrategyHasBeenSet(false)
-{
-}
-
 Aws::String ImportModelVersionRequest::SerializePayload() const
 {
   JsonValue payload;

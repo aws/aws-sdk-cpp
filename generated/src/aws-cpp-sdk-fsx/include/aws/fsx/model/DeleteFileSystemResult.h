@@ -37,7 +37,7 @@ namespace Model
   class DeleteFileSystemResult
   {
   public:
-    AWS_FSX_API DeleteFileSystemResult();
+    AWS_FSX_API DeleteFileSystemResult() = default;
     AWS_FSX_API DeleteFileSystemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DeleteFileSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,11 @@ namespace Model
     /**
      * <p>The ID of the file system that's being deleted.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
-    inline DeleteFileSystemResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline DeleteFileSystemResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline DeleteFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    DeleteFileSystemResult& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,29 +59,27 @@ namespace Model
      * <code>DeleteFileSystem</code> operation is successful, this status is
      * <code>DELETING</code>.</p>
      */
-    inline const FileSystemLifecycle& GetLifecycle() const{ return m_lifecycle; }
-    inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycle = value; }
-    inline void SetLifecycle(FileSystemLifecycle&& value) { m_lifecycle = std::move(value); }
-    inline DeleteFileSystemResult& WithLifecycle(const FileSystemLifecycle& value) { SetLifecycle(value); return *this;}
-    inline DeleteFileSystemResult& WithLifecycle(FileSystemLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline FileSystemLifecycle GetLifecycle() const { return m_lifecycle; }
+    inline void SetLifecycle(FileSystemLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline DeleteFileSystemResult& WithLifecycle(FileSystemLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeleteFileSystemWindowsResponse& GetWindowsResponse() const{ return m_windowsResponse; }
-    inline void SetWindowsResponse(const DeleteFileSystemWindowsResponse& value) { m_windowsResponse = value; }
-    inline void SetWindowsResponse(DeleteFileSystemWindowsResponse&& value) { m_windowsResponse = std::move(value); }
-    inline DeleteFileSystemResult& WithWindowsResponse(const DeleteFileSystemWindowsResponse& value) { SetWindowsResponse(value); return *this;}
-    inline DeleteFileSystemResult& WithWindowsResponse(DeleteFileSystemWindowsResponse&& value) { SetWindowsResponse(std::move(value)); return *this;}
+    inline const DeleteFileSystemWindowsResponse& GetWindowsResponse() const { return m_windowsResponse; }
+    template<typename WindowsResponseT = DeleteFileSystemWindowsResponse>
+    void SetWindowsResponse(WindowsResponseT&& value) { m_windowsResponseHasBeenSet = true; m_windowsResponse = std::forward<WindowsResponseT>(value); }
+    template<typename WindowsResponseT = DeleteFileSystemWindowsResponse>
+    DeleteFileSystemResult& WithWindowsResponse(WindowsResponseT&& value) { SetWindowsResponse(std::forward<WindowsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeleteFileSystemLustreResponse& GetLustreResponse() const{ return m_lustreResponse; }
-    inline void SetLustreResponse(const DeleteFileSystemLustreResponse& value) { m_lustreResponse = value; }
-    inline void SetLustreResponse(DeleteFileSystemLustreResponse&& value) { m_lustreResponse = std::move(value); }
-    inline DeleteFileSystemResult& WithLustreResponse(const DeleteFileSystemLustreResponse& value) { SetLustreResponse(value); return *this;}
-    inline DeleteFileSystemResult& WithLustreResponse(DeleteFileSystemLustreResponse&& value) { SetLustreResponse(std::move(value)); return *this;}
+    inline const DeleteFileSystemLustreResponse& GetLustreResponse() const { return m_lustreResponse; }
+    template<typename LustreResponseT = DeleteFileSystemLustreResponse>
+    void SetLustreResponse(LustreResponseT&& value) { m_lustreResponseHasBeenSet = true; m_lustreResponse = std::forward<LustreResponseT>(value); }
+    template<typename LustreResponseT = DeleteFileSystemLustreResponse>
+    DeleteFileSystemResult& WithLustreResponse(LustreResponseT&& value) { SetLustreResponse(std::forward<LustreResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,36 +87,40 @@ namespace Model
      * <p>The response object for the OpenZFS file system that's being deleted in the
      * <code>DeleteFileSystem</code> operation.</p>
      */
-    inline const DeleteFileSystemOpenZFSResponse& GetOpenZFSResponse() const{ return m_openZFSResponse; }
-    inline void SetOpenZFSResponse(const DeleteFileSystemOpenZFSResponse& value) { m_openZFSResponse = value; }
-    inline void SetOpenZFSResponse(DeleteFileSystemOpenZFSResponse&& value) { m_openZFSResponse = std::move(value); }
-    inline DeleteFileSystemResult& WithOpenZFSResponse(const DeleteFileSystemOpenZFSResponse& value) { SetOpenZFSResponse(value); return *this;}
-    inline DeleteFileSystemResult& WithOpenZFSResponse(DeleteFileSystemOpenZFSResponse&& value) { SetOpenZFSResponse(std::move(value)); return *this;}
+    inline const DeleteFileSystemOpenZFSResponse& GetOpenZFSResponse() const { return m_openZFSResponse; }
+    template<typename OpenZFSResponseT = DeleteFileSystemOpenZFSResponse>
+    void SetOpenZFSResponse(OpenZFSResponseT&& value) { m_openZFSResponseHasBeenSet = true; m_openZFSResponse = std::forward<OpenZFSResponseT>(value); }
+    template<typename OpenZFSResponseT = DeleteFileSystemOpenZFSResponse>
+    DeleteFileSystemResult& WithOpenZFSResponse(OpenZFSResponseT&& value) { SetOpenZFSResponse(std::forward<OpenZFSResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteFileSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteFileSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteFileSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteFileSystemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileSystemId;
+    bool m_fileSystemIdHasBeenSet = false;
 
-    FileSystemLifecycle m_lifecycle;
+    FileSystemLifecycle m_lifecycle{FileSystemLifecycle::NOT_SET};
+    bool m_lifecycleHasBeenSet = false;
 
     DeleteFileSystemWindowsResponse m_windowsResponse;
+    bool m_windowsResponseHasBeenSet = false;
 
     DeleteFileSystemLustreResponse m_lustreResponse;
+    bool m_lustreResponseHasBeenSet = false;
 
     DeleteFileSystemOpenZFSResponse m_openZFSResponse;
+    bool m_openZFSResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

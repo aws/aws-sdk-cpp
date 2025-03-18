@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventsEndpointRoutingConfigDetails::AwsEventsEndpointRoutingConfigDetails() : 
-    m_failoverConfigHasBeenSet(false)
-{
-}
-
 AwsEventsEndpointRoutingConfigDetails::AwsEventsEndpointRoutingConfigDetails(JsonView jsonValue)
-  : AwsEventsEndpointRoutingConfigDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEventsEndpointRoutingConfigDetails& AwsEventsEndpointRoutingConfigDetails::op
   if(jsonValue.ValueExists("FailoverConfig"))
   {
     m_failoverConfig = jsonValue.GetObject("FailoverConfig");
-
     m_failoverConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

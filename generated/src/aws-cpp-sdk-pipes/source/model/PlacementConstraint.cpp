@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PlacementConstraint::PlacementConstraint() : 
-    m_type(PlacementConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 PlacementConstraint::PlacementConstraint(JsonView jsonValue)
-  : PlacementConstraint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PlacementConstraint& PlacementConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = PlacementConstraintTypeMapper::GetPlacementConstraintTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

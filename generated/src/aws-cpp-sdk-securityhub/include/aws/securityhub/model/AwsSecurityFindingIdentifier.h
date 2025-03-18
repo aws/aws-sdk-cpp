@@ -32,7 +32,7 @@ namespace Model
   class AwsSecurityFindingIdentifier
   {
   public:
-    AWS_SECURITYHUB_API AwsSecurityFindingIdentifier();
+    AWS_SECURITYHUB_API AwsSecurityFindingIdentifier() = default;
     AWS_SECURITYHUB_API AwsSecurityFindingIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsSecurityFindingIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the finding that was specified by the finding provider.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsSecurityFindingIdentifier& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsSecurityFindingIdentifier& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsSecurityFindingIdentifier& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsSecurityFindingIdentifier& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * generates findings. This can be the ARN for a third-party product that is
      * integrated with Security Hub, or the ARN for a custom integration.</p>
      */
-    inline const Aws::String& GetProductArn() const{ return m_productArn; }
+    inline const Aws::String& GetProductArn() const { return m_productArn; }
     inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-    inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
-    inline void SetProductArn(Aws::String&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
-    inline void SetProductArn(const char* value) { m_productArnHasBeenSet = true; m_productArn.assign(value); }
-    inline AwsSecurityFindingIdentifier& WithProductArn(const Aws::String& value) { SetProductArn(value); return *this;}
-    inline AwsSecurityFindingIdentifier& WithProductArn(Aws::String&& value) { SetProductArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingIdentifier& WithProductArn(const char* value) { SetProductArn(value); return *this;}
+    template<typename ProductArnT = Aws::String>
+    void SetProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn = std::forward<ProductArnT>(value); }
+    template<typename ProductArnT = Aws::String>
+    AwsSecurityFindingIdentifier& WithProductArn(ProductArnT&& value) { SetProductArn(std::forward<ProductArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSecurityConfigRequest::GetSecurityConfigRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetSecurityConfigRequest::SerializePayload() const
 {
   JsonValue payload;

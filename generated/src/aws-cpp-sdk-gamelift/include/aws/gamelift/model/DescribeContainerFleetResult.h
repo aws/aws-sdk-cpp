@@ -28,7 +28,7 @@ namespace Model
   class DescribeContainerFleetResult
   {
   public:
-    AWS_GAMELIFT_API DescribeContainerFleetResult();
+    AWS_GAMELIFT_API DescribeContainerFleetResult() = default;
     AWS_GAMELIFT_API DescribeContainerFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeContainerFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The properties for the requested container fleet, including current
      * status.</p>
      */
-    inline const ContainerFleet& GetContainerFleet() const{ return m_containerFleet; }
-    inline void SetContainerFleet(const ContainerFleet& value) { m_containerFleet = value; }
-    inline void SetContainerFleet(ContainerFleet&& value) { m_containerFleet = std::move(value); }
-    inline DescribeContainerFleetResult& WithContainerFleet(const ContainerFleet& value) { SetContainerFleet(value); return *this;}
-    inline DescribeContainerFleetResult& WithContainerFleet(ContainerFleet&& value) { SetContainerFleet(std::move(value)); return *this;}
+    inline const ContainerFleet& GetContainerFleet() const { return m_containerFleet; }
+    template<typename ContainerFleetT = ContainerFleet>
+    void SetContainerFleet(ContainerFleetT&& value) { m_containerFleetHasBeenSet = true; m_containerFleet = std::forward<ContainerFleetT>(value); }
+    template<typename ContainerFleetT = ContainerFleet>
+    DescribeContainerFleetResult& WithContainerFleet(ContainerFleetT&& value) { SetContainerFleet(std::forward<ContainerFleetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeContainerFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeContainerFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeContainerFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeContainerFleetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerFleet m_containerFleet;
+    bool m_containerFleetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

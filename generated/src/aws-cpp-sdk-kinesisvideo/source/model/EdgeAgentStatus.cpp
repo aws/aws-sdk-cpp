@@ -18,14 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-EdgeAgentStatus::EdgeAgentStatus() : 
-    m_lastRecorderStatusHasBeenSet(false),
-    m_lastUploaderStatusHasBeenSet(false)
-{
-}
-
 EdgeAgentStatus::EdgeAgentStatus(JsonView jsonValue)
-  : EdgeAgentStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EdgeAgentStatus& EdgeAgentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastRecorderStatus"))
   {
     m_lastRecorderStatus = jsonValue.GetObject("LastRecorderStatus");
-
     m_lastRecorderStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUploaderStatus"))
   {
     m_lastUploaderStatus = jsonValue.GetObject("LastUploaderStatus");
-
     m_lastUploaderStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

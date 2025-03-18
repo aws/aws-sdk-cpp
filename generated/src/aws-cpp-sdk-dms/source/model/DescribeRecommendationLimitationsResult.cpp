@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRecommendationLimitationsResult::DescribeRecommendationLimitationsResult()
-{
-}
-
 DescribeRecommendationLimitationsResult::DescribeRecommendationLimitationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeRecommendationLimitationsResult& DescribeRecommendationLimitationsResult
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limitations"))
   {
     Aws::Utils::Array<JsonView> limitationsJsonList = jsonValue.GetArray("Limitations");
@@ -42,14 +37,15 @@ DescribeRecommendationLimitationsResult& DescribeRecommendationLimitationsResult
     {
       m_limitations.push_back(limitationsJsonList[limitationsIndex].AsObject());
     }
+    m_limitationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

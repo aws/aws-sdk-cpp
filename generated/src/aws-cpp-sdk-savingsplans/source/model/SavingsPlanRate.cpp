@@ -18,24 +18,7 @@ namespace SavingsPlans
 namespace Model
 {
 
-SavingsPlanRate::SavingsPlanRate() : 
-    m_rateHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_unit(SavingsPlanRateUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_productType(SavingsPlanProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_serviceCode(SavingsPlanRateServiceCode::NOT_SET),
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 SavingsPlanRate::SavingsPlanRate(JsonView jsonValue)
-  : SavingsPlanRate()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ SavingsPlanRate& SavingsPlanRate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rate"))
   {
     m_rate = jsonValue.GetString("rate");
-
     m_rateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = SavingsPlanRateUnitMapper::GetSavingsPlanRateUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productType"))
   {
     m_productType = SavingsPlanProductTypeMapper::GetSavingsPlanProductTypeForName(jsonValue.GetString("productType"));
-
     m_productTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = SavingsPlanRateServiceCodeMapper::GetSavingsPlanRateServiceCodeForName(jsonValue.GetString("serviceCode"));
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -100,7 +69,6 @@ SavingsPlanRate& SavingsPlanRate::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

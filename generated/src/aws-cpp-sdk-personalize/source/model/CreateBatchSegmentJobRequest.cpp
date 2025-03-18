@@ -12,19 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBatchSegmentJobRequest::CreateBatchSegmentJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_jobInputHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBatchSegmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,57 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingJob::TrainingJob() : 
-    m_trainingJobNameHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tuningJobArnHasBeenSet(false),
-    m_labelingJobArnHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_modelArtifactsHasBeenSet(false),
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_trainingJobStatusHasBeenSet(false),
-    m_secondaryStatus(SecondaryStatus::NOT_SET),
-    m_secondaryStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_algorithmSpecificationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_secondaryStatusTransitionsHasBeenSet(false),
-    m_finalMetricDataListHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false),
-    m_trainingTimeInSeconds(0),
-    m_trainingTimeInSecondsHasBeenSet(false),
-    m_billableTimeInSeconds(0),
-    m_billableTimeInSecondsHasBeenSet(false),
-    m_debugHookConfigHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_debugRuleConfigurationsHasBeenSet(false),
-    m_tensorBoardOutputConfigHasBeenSet(false),
-    m_debugRuleEvaluationStatusesHasBeenSet(false),
-    m_profilerConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrainingJob::TrainingJob(JsonView jsonValue)
-  : TrainingJob()
 {
   *this = jsonValue;
 }
@@ -78,66 +28,48 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingJobName"))
   {
     m_trainingJobName = jsonValue.GetString("TrainingJobName");
-
     m_trainingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobArn"))
   {
     m_trainingJobArn = jsonValue.GetString("TrainingJobArn");
-
     m_trainingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TuningJobArn"))
   {
     m_tuningJobArn = jsonValue.GetString("TuningJobArn");
-
     m_tuningJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelingJobArn"))
   {
     m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
-
     m_labelingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMLJobArn"))
   {
     m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
-
     m_autoMLJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArtifacts"))
   {
     m_modelArtifacts = jsonValue.GetObject("ModelArtifacts");
-
     m_modelArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobStatus"))
   {
     m_trainingJobStatus = TrainingJobStatusMapper::GetTrainingJobStatusForName(jsonValue.GetString("TrainingJobStatus"));
-
     m_trainingJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryStatus"))
   {
     m_secondaryStatus = SecondaryStatusMapper::GetSecondaryStatusForName(jsonValue.GetString("SecondaryStatus"));
-
     m_secondaryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
@@ -147,21 +79,16 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_hyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlgorithmSpecification"))
   {
     m_algorithmSpecification = jsonValue.GetObject("AlgorithmSpecification");
-
     m_algorithmSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
@@ -171,63 +98,46 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceConfig"))
   {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
-
     m_resourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
     m_stoppingConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingStartTime"))
   {
     m_trainingStartTime = jsonValue.GetDouble("TrainingStartTime");
-
     m_trainingStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingEndTime"))
   {
     m_trainingEndTime = jsonValue.GetDouble("TrainingEndTime");
-
     m_trainingEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryStatusTransitions"))
   {
     Aws::Utils::Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
@@ -237,7 +147,6 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_secondaryStatusTransitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalMetricDataList"))
   {
     Aws::Utils::Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
@@ -247,63 +156,46 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_finalMetricDataListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableNetworkIsolation"))
   {
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
-
     m_enableNetworkIsolationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
   {
     m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
-
     m_enableInterContainerTrafficEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableManagedSpotTraining"))
   {
     m_enableManagedSpotTraining = jsonValue.GetBool("EnableManagedSpotTraining");
-
     m_enableManagedSpotTrainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CheckpointConfig"))
   {
     m_checkpointConfig = jsonValue.GetObject("CheckpointConfig");
-
     m_checkpointConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingTimeInSeconds"))
   {
     m_trainingTimeInSeconds = jsonValue.GetInteger("TrainingTimeInSeconds");
-
     m_trainingTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillableTimeInSeconds"))
   {
     m_billableTimeInSeconds = jsonValue.GetInteger("BillableTimeInSeconds");
-
     m_billableTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DebugHookConfig"))
   {
     m_debugHookConfig = jsonValue.GetObject("DebugHookConfig");
-
     m_debugHookConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentConfig"))
   {
     m_experimentConfig = jsonValue.GetObject("ExperimentConfig");
-
     m_experimentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DebugRuleConfigurations"))
   {
     Aws::Utils::Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
@@ -313,14 +205,11 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_debugRuleConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TensorBoardOutputConfig"))
   {
     m_tensorBoardOutputConfig = jsonValue.GetObject("TensorBoardOutputConfig");
-
     m_tensorBoardOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DebugRuleEvaluationStatuses"))
   {
     Aws::Utils::Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
@@ -330,14 +219,11 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_debugRuleEvaluationStatusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfilerConfig"))
   {
     m_profilerConfig = jsonValue.GetObject("ProfilerConfig");
-
     m_profilerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -347,14 +233,11 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryStrategy"))
   {
     m_retryStrategy = jsonValue.GetObject("RetryStrategy");
-
     m_retryStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -364,7 +247,6 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

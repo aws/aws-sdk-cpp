@@ -28,7 +28,7 @@ namespace Model
   class DescribeBatchSegmentJobResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeBatchSegmentJobResult();
+    AWS_PERSONALIZE_API DescribeBatchSegmentJobResult() = default;
     AWS_PERSONALIZE_API DescribeBatchSegmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeBatchSegmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information on the specified batch segment job.</p>
      */
-    inline const BatchSegmentJob& GetBatchSegmentJob() const{ return m_batchSegmentJob; }
-    inline void SetBatchSegmentJob(const BatchSegmentJob& value) { m_batchSegmentJob = value; }
-    inline void SetBatchSegmentJob(BatchSegmentJob&& value) { m_batchSegmentJob = std::move(value); }
-    inline DescribeBatchSegmentJobResult& WithBatchSegmentJob(const BatchSegmentJob& value) { SetBatchSegmentJob(value); return *this;}
-    inline DescribeBatchSegmentJobResult& WithBatchSegmentJob(BatchSegmentJob&& value) { SetBatchSegmentJob(std::move(value)); return *this;}
+    inline const BatchSegmentJob& GetBatchSegmentJob() const { return m_batchSegmentJob; }
+    template<typename BatchSegmentJobT = BatchSegmentJob>
+    void SetBatchSegmentJob(BatchSegmentJobT&& value) { m_batchSegmentJobHasBeenSet = true; m_batchSegmentJob = std::forward<BatchSegmentJobT>(value); }
+    template<typename BatchSegmentJobT = BatchSegmentJob>
+    DescribeBatchSegmentJobResult& WithBatchSegmentJob(BatchSegmentJobT&& value) { SetBatchSegmentJob(std::forward<BatchSegmentJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBatchSegmentJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBatchSegmentJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBatchSegmentJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBatchSegmentJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BatchSegmentJob m_batchSegmentJob;
+    bool m_batchSegmentJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

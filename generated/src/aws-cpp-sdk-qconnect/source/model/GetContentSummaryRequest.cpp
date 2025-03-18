@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContentSummaryRequest::GetContentSummaryRequest() : 
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetContentSummaryRequest::SerializePayload() const
 {
   return {};

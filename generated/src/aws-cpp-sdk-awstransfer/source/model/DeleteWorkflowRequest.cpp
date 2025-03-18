@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkflowRequest::DeleteWorkflowRequest() : 
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

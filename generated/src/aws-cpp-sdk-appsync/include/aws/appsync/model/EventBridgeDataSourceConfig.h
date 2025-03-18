@@ -32,7 +32,7 @@ namespace Model
   class EventBridgeDataSourceConfig
   {
   public:
-    AWS_APPSYNC_API EventBridgeDataSourceConfig();
+    AWS_APPSYNC_API EventBridgeDataSourceConfig() = default;
     AWS_APPSYNC_API EventBridgeDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API EventBridgeDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
      * EventBridge event buses</a>.</p>
      */
-    inline const Aws::String& GetEventBusArn() const{ return m_eventBusArn; }
+    inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
     inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
-    inline void SetEventBusArn(const Aws::String& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = value; }
-    inline void SetEventBusArn(Aws::String&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::move(value); }
-    inline void SetEventBusArn(const char* value) { m_eventBusArnHasBeenSet = true; m_eventBusArn.assign(value); }
-    inline EventBridgeDataSourceConfig& WithEventBusArn(const Aws::String& value) { SetEventBusArn(value); return *this;}
-    inline EventBridgeDataSourceConfig& WithEventBusArn(Aws::String&& value) { SetEventBusArn(std::move(value)); return *this;}
-    inline EventBridgeDataSourceConfig& WithEventBusArn(const char* value) { SetEventBusArn(value); return *this;}
+    template<typename EventBusArnT = Aws::String>
+    void SetEventBusArn(EventBusArnT&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::forward<EventBusArnT>(value); }
+    template<typename EventBusArnT = Aws::String>
+    EventBridgeDataSourceConfig& WithEventBusArn(EventBusArnT&& value) { SetEventBusArn(std::forward<EventBusArnT>(value)); return *this;}
     ///@}
   private:
 

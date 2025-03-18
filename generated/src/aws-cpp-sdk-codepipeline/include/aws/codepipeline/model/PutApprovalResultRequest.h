@@ -26,7 +26,7 @@ namespace Model
   class PutApprovalResultRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API PutApprovalResultRequest();
+    AWS_CODEPIPELINE_API PutApprovalResultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,54 +43,48 @@ namespace Model
     /**
      * <p>The name of the pipeline that contains the action. </p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline PutApprovalResultRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline PutApprovalResultRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline PutApprovalResultRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    PutApprovalResultRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stage that contains the action.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline PutApprovalResultRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline PutApprovalResultRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline PutApprovalResultRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    PutApprovalResultRequest& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the action for which approval is requested.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline PutApprovalResultRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline PutApprovalResultRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline PutApprovalResultRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    PutApprovalResultRequest& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about the result of the approval request.</p>
      */
-    inline const ApprovalResult& GetResult() const{ return m_result; }
+    inline const ApprovalResult& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const ApprovalResult& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(ApprovalResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline PutApprovalResultRequest& WithResult(const ApprovalResult& value) { SetResult(value); return *this;}
-    inline PutApprovalResultRequest& WithResult(ApprovalResult&& value) { SetResult(std::move(value)); return *this;}
+    template<typename ResultT = ApprovalResult>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = ApprovalResult>
+    PutApprovalResultRequest& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * <a>ListActionExecutions</a> action as the token in the approval request.</p>
      * 
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline PutApprovalResultRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline PutApprovalResultRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline PutApprovalResultRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    PutApprovalResultRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
   private:
 

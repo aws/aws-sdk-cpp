@@ -12,14 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateModelRequest::UpdateModelRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_labelsInputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateModelRequest::SerializePayload() const
 {
   JsonValue payload;

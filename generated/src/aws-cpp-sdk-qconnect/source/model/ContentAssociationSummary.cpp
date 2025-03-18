@@ -18,22 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ContentAssociationSummary::ContentAssociationSummary() : 
-    m_associationDataHasBeenSet(false),
-    m_associationType(ContentAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_contentArnHasBeenSet(false),
-    m_contentAssociationArnHasBeenSet(false),
-    m_contentAssociationIdHasBeenSet(false),
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ContentAssociationSummary::ContentAssociationSummary(JsonView jsonValue)
-  : ContentAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ContentAssociationSummary& ContentAssociationSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("associationData"))
   {
     m_associationData = jsonValue.GetObject("associationData");
-
     m_associationDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationType"))
   {
     m_associationType = ContentAssociationTypeMapper::GetContentAssociationTypeForName(jsonValue.GetString("associationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentArn"))
   {
     m_contentArn = jsonValue.GetString("contentArn");
-
     m_contentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentAssociationArn"))
   {
     m_contentAssociationArn = jsonValue.GetString("contentAssociationArn");
-
     m_contentAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentAssociationId"))
   {
     m_contentAssociationId = jsonValue.GetString("contentAssociationId");
-
     m_contentAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentId"))
   {
     m_contentId = jsonValue.GetString("contentId");
-
     m_contentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -105,7 +74,6 @@ ContentAssociationSummary& ContentAssociationSummary::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

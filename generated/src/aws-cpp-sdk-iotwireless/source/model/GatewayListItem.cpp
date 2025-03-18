@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-GatewayListItem::GatewayListItem() : 
-    m_gatewayIdHasBeenSet(false),
-    m_downlinkFrequency(0),
-    m_downlinkFrequencyHasBeenSet(false)
-{
-}
-
 GatewayListItem::GatewayListItem(JsonView jsonValue)
-  : GatewayListItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GatewayListItem& GatewayListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DownlinkFrequency"))
   {
     m_downlinkFrequency = jsonValue.GetInteger("DownlinkFrequency");
-
     m_downlinkFrequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

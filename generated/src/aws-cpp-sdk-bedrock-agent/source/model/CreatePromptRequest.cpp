@@ -12,18 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePromptRequest::CreatePromptRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_defaultVariantHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_variantsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePromptRequest::SerializePayload() const
 {
   JsonValue payload;

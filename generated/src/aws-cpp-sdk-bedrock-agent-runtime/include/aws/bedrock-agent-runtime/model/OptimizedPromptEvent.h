@@ -31,7 +31,7 @@ namespace Model
   class OptimizedPromptEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptEvent();
+    AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Contains information about the optimized prompt.</p>
      */
-    inline const OptimizedPrompt& GetOptimizedPrompt() const{ return m_optimizedPrompt; }
+    inline const OptimizedPrompt& GetOptimizedPrompt() const { return m_optimizedPrompt; }
     inline bool OptimizedPromptHasBeenSet() const { return m_optimizedPromptHasBeenSet; }
-    inline void SetOptimizedPrompt(const OptimizedPrompt& value) { m_optimizedPromptHasBeenSet = true; m_optimizedPrompt = value; }
-    inline void SetOptimizedPrompt(OptimizedPrompt&& value) { m_optimizedPromptHasBeenSet = true; m_optimizedPrompt = std::move(value); }
-    inline OptimizedPromptEvent& WithOptimizedPrompt(const OptimizedPrompt& value) { SetOptimizedPrompt(value); return *this;}
-    inline OptimizedPromptEvent& WithOptimizedPrompt(OptimizedPrompt&& value) { SetOptimizedPrompt(std::move(value)); return *this;}
+    template<typename OptimizedPromptT = OptimizedPrompt>
+    void SetOptimizedPrompt(OptimizedPromptT&& value) { m_optimizedPromptHasBeenSet = true; m_optimizedPrompt = std::forward<OptimizedPromptT>(value); }
+    template<typename OptimizedPromptT = OptimizedPrompt>
+    OptimizedPromptEvent& WithOptimizedPrompt(OptimizedPromptT&& value) { SetOptimizedPrompt(std::forward<OptimizedPromptT>(value)); return *this;}
     ///@}
   private:
 

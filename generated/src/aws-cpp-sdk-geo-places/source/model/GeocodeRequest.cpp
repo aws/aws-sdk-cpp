@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GeocodeRequest::GeocodeRequest() : 
-    m_queryTextHasBeenSet(false),
-    m_queryComponentsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_additionalFeaturesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_intendedUse(GeocodeIntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GeocodeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,20 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginAccessControlConfig::OriginAccessControlConfig() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signingProtocol(OriginAccessControlSigningProtocols::NOT_SET),
-    m_signingProtocolHasBeenSet(false),
-    m_signingBehavior(OriginAccessControlSigningBehaviors::NOT_SET),
-    m_signingBehaviorHasBeenSet(false),
-    m_originAccessControlOriginType(OriginAccessControlOriginTypes::NOT_SET),
-    m_originAccessControlOriginTypeHasBeenSet(false)
-{
-}
-
 OriginAccessControlConfig::OriginAccessControlConfig(const XmlNode& xmlNode)
-  : OriginAccessControlConfig()
 {
   *this = xmlNode;
 }
@@ -59,19 +46,19 @@ OriginAccessControlConfig& OriginAccessControlConfig::operator =(const XmlNode& 
     XmlNode signingProtocolNode = resultNode.FirstChild("SigningProtocol");
     if(!signingProtocolNode.IsNull())
     {
-      m_signingProtocol = OriginAccessControlSigningProtocolsMapper::GetOriginAccessControlSigningProtocolsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(signingProtocolNode.GetText()).c_str()).c_str());
+      m_signingProtocol = OriginAccessControlSigningProtocolsMapper::GetOriginAccessControlSigningProtocolsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(signingProtocolNode.GetText()).c_str()));
       m_signingProtocolHasBeenSet = true;
     }
     XmlNode signingBehaviorNode = resultNode.FirstChild("SigningBehavior");
     if(!signingBehaviorNode.IsNull())
     {
-      m_signingBehavior = OriginAccessControlSigningBehaviorsMapper::GetOriginAccessControlSigningBehaviorsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(signingBehaviorNode.GetText()).c_str()).c_str());
+      m_signingBehavior = OriginAccessControlSigningBehaviorsMapper::GetOriginAccessControlSigningBehaviorsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(signingBehaviorNode.GetText()).c_str()));
       m_signingBehaviorHasBeenSet = true;
     }
     XmlNode originAccessControlOriginTypeNode = resultNode.FirstChild("OriginAccessControlOriginType");
     if(!originAccessControlOriginTypeNode.IsNull())
     {
-      m_originAccessControlOriginType = OriginAccessControlOriginTypesMapper::GetOriginAccessControlOriginTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originAccessControlOriginTypeNode.GetText()).c_str()).c_str());
+      m_originAccessControlOriginType = OriginAccessControlOriginTypesMapper::GetOriginAccessControlOriginTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originAccessControlOriginTypeNode.GetText()).c_str()));
       m_originAccessControlOriginTypeHasBeenSet = true;
     }
   }

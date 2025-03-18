@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UserPausedDetails::UserPausedDetails() : 
-    m_jobExpiresAtHasBeenSet(false),
-    m_jobImminentExpirationHealthEventArnHasBeenSet(false),
-    m_jobPausedAtHasBeenSet(false)
-{
-}
-
 UserPausedDetails::UserPausedDetails(JsonView jsonValue)
-  : UserPausedDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UserPausedDetails& UserPausedDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobExpiresAt"))
   {
     m_jobExpiresAt = jsonValue.GetString("jobExpiresAt");
-
     m_jobExpiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobImminentExpirationHealthEventArn"))
   {
     m_jobImminentExpirationHealthEventArn = jsonValue.GetString("jobImminentExpirationHealthEventArn");
-
     m_jobImminentExpirationHealthEventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobPausedAt"))
   {
     m_jobPausedAt = jsonValue.GetString("jobPausedAt");
-
     m_jobPausedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

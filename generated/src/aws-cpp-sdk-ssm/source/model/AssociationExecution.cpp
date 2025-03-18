@@ -18,22 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AssociationExecution::AssociationExecution() : 
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_resourceCountByStatusHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
-{
-}
-
 AssociationExecution::AssociationExecution(JsonView jsonValue)
-  : AssociationExecution()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AssociationExecution& AssociationExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationVersion"))
   {
     m_associationVersion = jsonValue.GetString("AssociationVersion");
-
     m_associationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionId"))
   {
     m_executionId = jsonValue.GetString("ExecutionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailedStatus"))
   {
     m_detailedStatus = jsonValue.GetString("DetailedStatus");
-
     m_detailedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionDate"))
   {
     m_lastExecutionDate = jsonValue.GetDouble("LastExecutionDate");
-
     m_lastExecutionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCountByStatus"))
   {
     m_resourceCountByStatus = jsonValue.GetString("ResourceCountByStatus");
-
     m_resourceCountByStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -112,7 +79,6 @@ AssociationExecution& AssociationExecution::operator =(JsonView jsonValue)
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

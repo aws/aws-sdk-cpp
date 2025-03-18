@@ -32,7 +32,7 @@ namespace Model
   class Provider
   {
   public:
-    AWS_EKS_API Provider();
+    AWS_EKS_API Provider() = default;
     AWS_EKS_API Provider(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Provider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * users in other accounts to use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline Provider& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline Provider& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline Provider& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    Provider& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
   private:
 

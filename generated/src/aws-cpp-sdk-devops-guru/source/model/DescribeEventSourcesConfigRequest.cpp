@@ -12,10 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventSourcesConfigRequest::DescribeEventSourcesConfigRequest()
-{
-}
-
 Aws::String DescribeEventSourcesConfigRequest::SerializePayload() const
 {
   return {};

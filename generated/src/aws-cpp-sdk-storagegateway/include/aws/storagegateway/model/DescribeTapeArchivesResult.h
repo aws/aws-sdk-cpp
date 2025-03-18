@@ -34,7 +34,7 @@ namespace Model
   class DescribeTapeArchivesResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeTapeArchivesResult();
+    AWS_STORAGEGATEWAY_API DescribeTapeArchivesResult() = default;
     AWS_STORAGEGATEWAY_API DescribeTapeArchivesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeTapeArchivesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,13 +47,13 @@ namespace Model
      * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
-    inline const Aws::Vector<TapeArchive>& GetTapeArchives() const{ return m_tapeArchives; }
-    inline void SetTapeArchives(const Aws::Vector<TapeArchive>& value) { m_tapeArchives = value; }
-    inline void SetTapeArchives(Aws::Vector<TapeArchive>&& value) { m_tapeArchives = std::move(value); }
-    inline DescribeTapeArchivesResult& WithTapeArchives(const Aws::Vector<TapeArchive>& value) { SetTapeArchives(value); return *this;}
-    inline DescribeTapeArchivesResult& WithTapeArchives(Aws::Vector<TapeArchive>&& value) { SetTapeArchives(std::move(value)); return *this;}
-    inline DescribeTapeArchivesResult& AddTapeArchives(const TapeArchive& value) { m_tapeArchives.push_back(value); return *this; }
-    inline DescribeTapeArchivesResult& AddTapeArchives(TapeArchive&& value) { m_tapeArchives.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TapeArchive>& GetTapeArchives() const { return m_tapeArchives; }
+    template<typename TapeArchivesT = Aws::Vector<TapeArchive>>
+    void SetTapeArchives(TapeArchivesT&& value) { m_tapeArchivesHasBeenSet = true; m_tapeArchives = std::forward<TapeArchivesT>(value); }
+    template<typename TapeArchivesT = Aws::Vector<TapeArchive>>
+    DescribeTapeArchivesResult& WithTapeArchives(TapeArchivesT&& value) { SetTapeArchives(std::forward<TapeArchivesT>(value)); return *this;}
+    template<typename TapeArchivesT = TapeArchive>
+    DescribeTapeArchivesResult& AddTapeArchives(TapeArchivesT&& value) { m_tapeArchivesHasBeenSet = true; m_tapeArchives.emplace_back(std::forward<TapeArchivesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,32 +64,31 @@ namespace Model
      * are no more virtual tapes to describe, this field does not appear in the
      * response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeTapeArchivesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeTapeArchivesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeTapeArchivesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeTapeArchivesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTapeArchivesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTapeArchivesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTapeArchivesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTapeArchivesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TapeArchive> m_tapeArchives;
+    bool m_tapeArchivesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class CustomerProfilesIntegrationConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationConfig();
+    AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,30 +41,25 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-    inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-    inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-    inline CustomerProfilesIntegrationConfig& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-    inline CustomerProfilesIntegrationConfig& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-    inline CustomerProfilesIntegrationConfig& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    CustomerProfilesIntegrationConfig& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<EventType, Aws::String>& GetObjectTypeNames() const{ return m_objectTypeNames; }
+    inline const Aws::Map<EventType, Aws::String>& GetObjectTypeNames() const { return m_objectTypeNames; }
     inline bool ObjectTypeNamesHasBeenSet() const { return m_objectTypeNamesHasBeenSet; }
-    inline void SetObjectTypeNames(const Aws::Map<EventType, Aws::String>& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames = value; }
-    inline void SetObjectTypeNames(Aws::Map<EventType, Aws::String>&& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames = std::move(value); }
-    inline CustomerProfilesIntegrationConfig& WithObjectTypeNames(const Aws::Map<EventType, Aws::String>& value) { SetObjectTypeNames(value); return *this;}
-    inline CustomerProfilesIntegrationConfig& WithObjectTypeNames(Aws::Map<EventType, Aws::String>&& value) { SetObjectTypeNames(std::move(value)); return *this;}
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(const EventType& key, const Aws::String& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(key, value); return *this; }
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(EventType&& key, const Aws::String& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(std::move(key), value); return *this; }
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(const EventType& key, Aws::String&& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(key, std::move(value)); return *this; }
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(EventType&& key, Aws::String&& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(std::move(key), std::move(value)); return *this; }
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(EventType&& key, const char* value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(std::move(key), value); return *this; }
-    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(const EventType& key, const char* value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(key, value); return *this; }
+    template<typename ObjectTypeNamesT = Aws::Map<EventType, Aws::String>>
+    void SetObjectTypeNames(ObjectTypeNamesT&& value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames = std::forward<ObjectTypeNamesT>(value); }
+    template<typename ObjectTypeNamesT = Aws::Map<EventType, Aws::String>>
+    CustomerProfilesIntegrationConfig& WithObjectTypeNames(ObjectTypeNamesT&& value) { SetObjectTypeNames(std::forward<ObjectTypeNamesT>(value)); return *this;}
+    inline CustomerProfilesIntegrationConfig& AddObjectTypeNames(EventType key, Aws::String value) {
+      m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

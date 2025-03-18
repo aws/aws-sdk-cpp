@@ -33,7 +33,7 @@ namespace Model
   class SmsMfaConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * Your user pool replaces the placeholder with the MFA code. If this parameter
      * isn't provided, your user pool sends a default message.</p>
      */
-    inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
+    inline const Aws::String& GetSmsAuthenticationMessage() const { return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
-    inline void SetSmsAuthenticationMessage(const Aws::String& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = value; }
-    inline void SetSmsAuthenticationMessage(Aws::String&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::move(value); }
-    inline void SetSmsAuthenticationMessage(const char* value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage.assign(value); }
-    inline SmsMfaConfigType& WithSmsAuthenticationMessage(const Aws::String& value) { SetSmsAuthenticationMessage(value); return *this;}
-    inline SmsMfaConfigType& WithSmsAuthenticationMessage(Aws::String&& value) { SetSmsAuthenticationMessage(std::move(value)); return *this;}
-    inline SmsMfaConfigType& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
+    template<typename SmsAuthenticationMessageT = Aws::String>
+    void SetSmsAuthenticationMessage(SmsAuthenticationMessageT&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::forward<SmsAuthenticationMessageT>(value); }
+    template<typename SmsAuthenticationMessageT = Aws::String>
+    SmsMfaConfigType& WithSmsAuthenticationMessage(SmsAuthenticationMessageT&& value) { SetSmsAuthenticationMessage(std::forward<SmsAuthenticationMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * set <code>SmsConfiguration</code> in <code>CreateUserPool</code> and <code>
      * UpdateUserPool</code>, or in <code>SetUserPoolMfaConfig</code>.</p>
      */
-    inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+    inline const SmsConfigurationType& GetSmsConfiguration() const { return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
-    inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
-    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
-    inline SmsMfaConfigType& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
-    inline SmsMfaConfigType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
+    template<typename SmsConfigurationT = SmsConfigurationType>
+    void SetSmsConfiguration(SmsConfigurationT&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::forward<SmsConfigurationT>(value); }
+    template<typename SmsConfigurationT = SmsConfigurationType>
+    SmsMfaConfigType& WithSmsConfiguration(SmsConfigurationT&& value) { SetSmsConfiguration(std::forward<SmsConfigurationT>(value)); return *this;}
     ///@}
   private:
 

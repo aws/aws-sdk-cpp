@@ -12,12 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecipeVersionRequest::DeleteRecipeVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecipeVersionRequest::SerializePayload() const
 {
   return {};

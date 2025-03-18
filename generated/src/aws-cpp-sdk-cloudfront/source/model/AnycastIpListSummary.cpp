@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-AnycastIpListSummary::AnycastIpListSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_ipCount(0),
-    m_ipCountHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 AnycastIpListSummary::AnycastIpListSummary(const XmlNode& xmlNode)
-  : AnycastIpListSummary()
 {
   *this = xmlNode;
 }

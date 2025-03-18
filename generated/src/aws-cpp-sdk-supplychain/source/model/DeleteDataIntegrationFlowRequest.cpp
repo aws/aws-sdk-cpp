@@ -12,12 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataIntegrationFlowRequest::DeleteDataIntegrationFlowRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataIntegrationFlowRequest::SerializePayload() const
 {
   return {};

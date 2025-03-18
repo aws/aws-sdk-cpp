@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DestinationFlowConfig::DestinationFlowConfig() : 
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_apiVersionHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_destinationConnectorPropertiesHasBeenSet(false)
-{
-}
-
 DestinationFlowConfig::DestinationFlowConfig(JsonView jsonValue)
-  : DestinationFlowConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DestinationFlowConfig& DestinationFlowConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectorType"))
   {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiVersion"))
   {
     m_apiVersion = jsonValue.GetString("apiVersion");
-
     m_apiVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorProfileName"))
   {
     m_connectorProfileName = jsonValue.GetString("connectorProfileName");
-
     m_connectorProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConnectorProperties"))
   {
     m_destinationConnectorProperties = jsonValue.GetObject("destinationConnectorProperties");
-
     m_destinationConnectorPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

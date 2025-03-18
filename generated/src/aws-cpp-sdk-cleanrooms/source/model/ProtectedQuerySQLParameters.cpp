@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQuerySQLParameters::ProtectedQuerySQLParameters() : 
-    m_queryStringHasBeenSet(false),
-    m_analysisTemplateArnHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 ProtectedQuerySQLParameters::ProtectedQuerySQLParameters(JsonView jsonValue)
-  : ProtectedQuerySQLParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProtectedQuerySQLParameters& ProtectedQuerySQLParameters::operator =(JsonView js
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisTemplateArn"))
   {
     m_analysisTemplateArn = jsonValue.GetString("analysisTemplateArn");
-
     m_analysisTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -56,7 +44,6 @@ ProtectedQuerySQLParameters& ProtectedQuerySQLParameters::operator =(JsonView js
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

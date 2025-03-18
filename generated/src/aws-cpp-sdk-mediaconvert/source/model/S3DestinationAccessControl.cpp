@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-S3DestinationAccessControl::S3DestinationAccessControl() : 
-    m_cannedAcl(S3ObjectCannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
-{
-}
-
 S3DestinationAccessControl::S3DestinationAccessControl(JsonView jsonValue)
-  : S3DestinationAccessControl()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3DestinationAccessControl& S3DestinationAccessControl::operator =(JsonView json
   if(jsonValue.ValueExists("cannedAcl"))
   {
     m_cannedAcl = S3ObjectCannedAclMapper::GetS3ObjectCannedAclForName(jsonValue.GetString("cannedAcl"));
-
     m_cannedAclHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetConnectionRequest::GetConnectionRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_withSecret(false),
-    m_withSecretHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectionRequest::SerializePayload() const
 {
   return {};

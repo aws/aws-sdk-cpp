@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EgressOnlyInternetGateway::EgressOnlyInternetGateway() : 
-    m_attachmentsHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EgressOnlyInternetGateway::EgressOnlyInternetGateway(const XmlNode& xmlNode)
-  : EgressOnlyInternetGateway()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      m_attachmentsHasBeenSet = !attachmentsMember.IsNull();
       while(!attachmentsMember.IsNull())
       {
         m_attachments.push_back(attachmentsMember);
@@ -61,6 +54,7 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

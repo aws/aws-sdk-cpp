@@ -21,7 +21,7 @@ namespace Model
   class DescribeThemeForStackRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API DescribeThemeForStackRequest();
+    AWS_APPSTREAM_API DescribeThemeForStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the stack for the theme.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline DescribeThemeForStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline DescribeThemeForStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline DescribeThemeForStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    DescribeThemeForStackRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
   private:
 

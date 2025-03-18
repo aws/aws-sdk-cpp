@@ -18,16 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-GatingRuleUpdate::GatingRuleUpdate() : 
-    m_nameHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
-{
-}
-
 GatingRuleUpdate::GatingRuleUpdate(JsonView jsonValue)
-  : GatingRuleUpdate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GatingRuleUpdate& GatingRuleUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SafetyRuleArn"))
   {
     m_safetyRuleArn = jsonValue.GetString("SafetyRuleArn");
-
     m_safetyRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitPeriodMs"))
   {
     m_waitPeriodMs = jsonValue.GetInteger("WaitPeriodMs");
-
     m_waitPeriodMsHasBeenSet = true;
   }
-
   return *this;
 }
 

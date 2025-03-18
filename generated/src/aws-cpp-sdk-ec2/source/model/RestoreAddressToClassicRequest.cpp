@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RestoreAddressToClassicRequest::RestoreAddressToClassicRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 Aws::String RestoreAddressToClassicRequest::SerializePayload() const
 {
   Aws::StringStream ss;

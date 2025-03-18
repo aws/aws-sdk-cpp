@@ -32,7 +32,7 @@ namespace Model
   class PathStatement
   {
   public:
-    AWS_EC2_API PathStatement();
+    AWS_EC2_API PathStatement() = default;
     AWS_EC2_API PathStatement(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PathStatement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The packet header statement.</p>
      */
-    inline const PacketHeaderStatement& GetPacketHeaderStatement() const{ return m_packetHeaderStatement; }
+    inline const PacketHeaderStatement& GetPacketHeaderStatement() const { return m_packetHeaderStatement; }
     inline bool PacketHeaderStatementHasBeenSet() const { return m_packetHeaderStatementHasBeenSet; }
-    inline void SetPacketHeaderStatement(const PacketHeaderStatement& value) { m_packetHeaderStatementHasBeenSet = true; m_packetHeaderStatement = value; }
-    inline void SetPacketHeaderStatement(PacketHeaderStatement&& value) { m_packetHeaderStatementHasBeenSet = true; m_packetHeaderStatement = std::move(value); }
-    inline PathStatement& WithPacketHeaderStatement(const PacketHeaderStatement& value) { SetPacketHeaderStatement(value); return *this;}
-    inline PathStatement& WithPacketHeaderStatement(PacketHeaderStatement&& value) { SetPacketHeaderStatement(std::move(value)); return *this;}
+    template<typename PacketHeaderStatementT = PacketHeaderStatement>
+    void SetPacketHeaderStatement(PacketHeaderStatementT&& value) { m_packetHeaderStatementHasBeenSet = true; m_packetHeaderStatement = std::forward<PacketHeaderStatementT>(value); }
+    template<typename PacketHeaderStatementT = PacketHeaderStatement>
+    PathStatement& WithPacketHeaderStatement(PacketHeaderStatementT&& value) { SetPacketHeaderStatement(std::forward<PacketHeaderStatementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource statement.</p>
      */
-    inline const ResourceStatement& GetResourceStatement() const{ return m_resourceStatement; }
+    inline const ResourceStatement& GetResourceStatement() const { return m_resourceStatement; }
     inline bool ResourceStatementHasBeenSet() const { return m_resourceStatementHasBeenSet; }
-    inline void SetResourceStatement(const ResourceStatement& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = value; }
-    inline void SetResourceStatement(ResourceStatement&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::move(value); }
-    inline PathStatement& WithResourceStatement(const ResourceStatement& value) { SetResourceStatement(value); return *this;}
-    inline PathStatement& WithResourceStatement(ResourceStatement&& value) { SetResourceStatement(std::move(value)); return *this;}
+    template<typename ResourceStatementT = ResourceStatement>
+    void SetResourceStatement(ResourceStatementT&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::forward<ResourceStatementT>(value); }
+    template<typename ResourceStatementT = ResourceStatement>
+    PathStatement& WithResourceStatement(ResourceStatementT&& value) { SetResourceStatement(std::forward<ResourceStatementT>(value)); return *this;}
     ///@}
   private:
 

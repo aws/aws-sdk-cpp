@@ -29,7 +29,7 @@ namespace Model
   class GetRelationalDatabaseSnapshotsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseSnapshotsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseSnapshotsResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An object describing the result of your get relational database snapshots
      * request.</p>
      */
-    inline const Aws::Vector<RelationalDatabaseSnapshot>& GetRelationalDatabaseSnapshots() const{ return m_relationalDatabaseSnapshots; }
-    inline void SetRelationalDatabaseSnapshots(const Aws::Vector<RelationalDatabaseSnapshot>& value) { m_relationalDatabaseSnapshots = value; }
-    inline void SetRelationalDatabaseSnapshots(Aws::Vector<RelationalDatabaseSnapshot>&& value) { m_relationalDatabaseSnapshots = std::move(value); }
-    inline GetRelationalDatabaseSnapshotsResult& WithRelationalDatabaseSnapshots(const Aws::Vector<RelationalDatabaseSnapshot>& value) { SetRelationalDatabaseSnapshots(value); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& WithRelationalDatabaseSnapshots(Aws::Vector<RelationalDatabaseSnapshot>&& value) { SetRelationalDatabaseSnapshots(std::move(value)); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& AddRelationalDatabaseSnapshots(const RelationalDatabaseSnapshot& value) { m_relationalDatabaseSnapshots.push_back(value); return *this; }
-    inline GetRelationalDatabaseSnapshotsResult& AddRelationalDatabaseSnapshots(RelationalDatabaseSnapshot&& value) { m_relationalDatabaseSnapshots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RelationalDatabaseSnapshot>& GetRelationalDatabaseSnapshots() const { return m_relationalDatabaseSnapshots; }
+    template<typename RelationalDatabaseSnapshotsT = Aws::Vector<RelationalDatabaseSnapshot>>
+    void SetRelationalDatabaseSnapshots(RelationalDatabaseSnapshotsT&& value) { m_relationalDatabaseSnapshotsHasBeenSet = true; m_relationalDatabaseSnapshots = std::forward<RelationalDatabaseSnapshotsT>(value); }
+    template<typename RelationalDatabaseSnapshotsT = Aws::Vector<RelationalDatabaseSnapshot>>
+    GetRelationalDatabaseSnapshotsResult& WithRelationalDatabaseSnapshots(RelationalDatabaseSnapshotsT&& value) { SetRelationalDatabaseSnapshots(std::forward<RelationalDatabaseSnapshotsT>(value)); return *this;}
+    template<typename RelationalDatabaseSnapshotsT = RelationalDatabaseSnapshot>
+    GetRelationalDatabaseSnapshotsResult& AddRelationalDatabaseSnapshots(RelationalDatabaseSnapshotsT&& value) { m_relationalDatabaseSnapshotsHasBeenSet = true; m_relationalDatabaseSnapshots.emplace_back(std::forward<RelationalDatabaseSnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>GetRelationalDatabaseSnapshots</code> request and specify the next page
      * token using the <code>pageToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetRelationalDatabaseSnapshotsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetRelationalDatabaseSnapshotsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseSnapshotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RelationalDatabaseSnapshot> m_relationalDatabaseSnapshots;
+    bool m_relationalDatabaseSnapshotsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

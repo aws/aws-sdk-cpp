@@ -18,19 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-DeliverabilityTestReport::DeliverabilityTestReport() : 
-    m_reportIdHasBeenSet(false),
-    m_reportNameHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_deliverabilityTestStatus(DeliverabilityTestStatus::NOT_SET),
-    m_deliverabilityTestStatusHasBeenSet(false)
-{
-}
-
 DeliverabilityTestReport::DeliverabilityTestReport(JsonView jsonValue)
-  : DeliverabilityTestReport()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DeliverabilityTestReport& DeliverabilityTestReport::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ReportId"))
   {
     m_reportId = jsonValue.GetString("ReportId");
-
     m_reportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportName"))
   {
     m_reportName = jsonValue.GetString("ReportName");
-
     m_reportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromEmailAddress"))
   {
     m_fromEmailAddress = jsonValue.GetString("FromEmailAddress");
-
     m_fromEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliverabilityTestStatus"))
   {
     m_deliverabilityTestStatus = DeliverabilityTestStatusMapper::GetDeliverabilityTestStatusForName(jsonValue.GetString("DeliverabilityTestStatus"));
-
     m_deliverabilityTestStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

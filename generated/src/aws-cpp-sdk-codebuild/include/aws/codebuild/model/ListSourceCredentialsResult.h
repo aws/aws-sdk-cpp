@@ -29,7 +29,7 @@ namespace Model
   class ListSourceCredentialsResult
   {
   public:
-    AWS_CODEBUILD_API ListSourceCredentialsResult();
+    AWS_CODEBUILD_API ListSourceCredentialsResult() = default;
     AWS_CODEBUILD_API ListSourceCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API ListSourceCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * <code>SourceCredentialsInfo</code> object includes the authentication type,
      * token ARN, and type of source provider for one set of credentials. </p>
      */
-    inline const Aws::Vector<SourceCredentialsInfo>& GetSourceCredentialsInfos() const{ return m_sourceCredentialsInfos; }
-    inline void SetSourceCredentialsInfos(const Aws::Vector<SourceCredentialsInfo>& value) { m_sourceCredentialsInfos = value; }
-    inline void SetSourceCredentialsInfos(Aws::Vector<SourceCredentialsInfo>&& value) { m_sourceCredentialsInfos = std::move(value); }
-    inline ListSourceCredentialsResult& WithSourceCredentialsInfos(const Aws::Vector<SourceCredentialsInfo>& value) { SetSourceCredentialsInfos(value); return *this;}
-    inline ListSourceCredentialsResult& WithSourceCredentialsInfos(Aws::Vector<SourceCredentialsInfo>&& value) { SetSourceCredentialsInfos(std::move(value)); return *this;}
-    inline ListSourceCredentialsResult& AddSourceCredentialsInfos(const SourceCredentialsInfo& value) { m_sourceCredentialsInfos.push_back(value); return *this; }
-    inline ListSourceCredentialsResult& AddSourceCredentialsInfos(SourceCredentialsInfo&& value) { m_sourceCredentialsInfos.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SourceCredentialsInfo>& GetSourceCredentialsInfos() const { return m_sourceCredentialsInfos; }
+    template<typename SourceCredentialsInfosT = Aws::Vector<SourceCredentialsInfo>>
+    void SetSourceCredentialsInfos(SourceCredentialsInfosT&& value) { m_sourceCredentialsInfosHasBeenSet = true; m_sourceCredentialsInfos = std::forward<SourceCredentialsInfosT>(value); }
+    template<typename SourceCredentialsInfosT = Aws::Vector<SourceCredentialsInfo>>
+    ListSourceCredentialsResult& WithSourceCredentialsInfos(SourceCredentialsInfosT&& value) { SetSourceCredentialsInfos(std::forward<SourceCredentialsInfosT>(value)); return *this;}
+    template<typename SourceCredentialsInfosT = SourceCredentialsInfo>
+    ListSourceCredentialsResult& AddSourceCredentialsInfos(SourceCredentialsInfosT&& value) { m_sourceCredentialsInfosHasBeenSet = true; m_sourceCredentialsInfos.emplace_back(std::forward<SourceCredentialsInfosT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSourceCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSourceCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSourceCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSourceCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SourceCredentialsInfo> m_sourceCredentialsInfos;
+    bool m_sourceCredentialsInfosHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

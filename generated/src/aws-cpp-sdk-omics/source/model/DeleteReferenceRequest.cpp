@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReferenceRequest::DeleteReferenceRequest() : 
-    m_idHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReferenceRequest::SerializePayload() const
 {
   return {};

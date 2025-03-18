@@ -18,33 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-IBMDb2Settings::IBMDb2Settings() : 
-    m_databaseNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_setDataCaptureChanges(false),
-    m_setDataCaptureChangesHasBeenSet(false),
-    m_currentLsnHasBeenSet(false),
-    m_maxKBytesPerRead(0),
-    m_maxKBytesPerReadHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_loadTimeout(0),
-    m_loadTimeoutHasBeenSet(false),
-    m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_keepCsvFiles(false),
-    m_keepCsvFilesHasBeenSet(false)
-{
-}
-
 IBMDb2Settings::IBMDb2Settings(JsonView jsonValue)
-  : IBMDb2Settings()
 {
   *this = jsonValue;
 }
@@ -54,101 +28,73 @@ IBMDb2Settings& IBMDb2Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetDataCaptureChanges"))
   {
     m_setDataCaptureChanges = jsonValue.GetBool("SetDataCaptureChanges");
-
     m_setDataCaptureChangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentLsn"))
   {
     m_currentLsn = jsonValue.GetString("CurrentLsn");
-
     m_currentLsnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxKBytesPerRead"))
   {
     m_maxKBytesPerRead = jsonValue.GetInteger("MaxKBytesPerRead");
-
     m_maxKBytesPerReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadTimeout"))
   {
     m_loadTimeout = jsonValue.GetInteger("LoadTimeout");
-
     m_loadTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteBufferSize"))
   {
     m_writeBufferSize = jsonValue.GetInteger("WriteBufferSize");
-
     m_writeBufferSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFileSize"))
   {
     m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
-
     m_maxFileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeepCsvFiles"))
   {
     m_keepCsvFiles = jsonValue.GetBool("KeepCsvFiles");
-
     m_keepCsvFilesHasBeenSet = true;
   }
-
   return *this;
 }
 

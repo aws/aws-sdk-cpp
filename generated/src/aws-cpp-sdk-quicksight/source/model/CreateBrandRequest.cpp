@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBrandRequest::CreateBrandRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_brandIdHasBeenSet(false),
-    m_brandDefinitionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBrandRequest::SerializePayload() const
 {
   JsonValue payload;

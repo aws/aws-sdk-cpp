@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-SortCriteria::SortCriteria() : 
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
-{
-}
-
 SortCriteria::SortCriteria(JsonView jsonValue)
-  : SortCriteria()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SortCriteria& SortCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributeName"))
   {
     m_attributeName = jsonValue.GetString("attributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderBy"))
   {
     m_orderBy = OrderByMapper::GetOrderByForName(jsonValue.GetString("orderBy"));
-
     m_orderByHasBeenSet = true;
   }
-
   return *this;
 }
 

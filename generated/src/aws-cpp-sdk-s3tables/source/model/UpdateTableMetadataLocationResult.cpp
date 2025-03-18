@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTableMetadataLocationResult::UpdateTableMetadataLocationResult()
-{
-}
-
 UpdateTableMetadataLocationResult::UpdateTableMetadataLocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ UpdateTableMetadataLocationResult& UpdateTableMetadataLocationResult::operator =
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableARN"))
   {
     m_tableARN = jsonValue.GetString("tableARN");
-
+    m_tableARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     Aws::Utils::Array<JsonView> namespaceJsonList = jsonValue.GetArray("namespace");
@@ -48,26 +42,25 @@ UpdateTableMetadataLocationResult& UpdateTableMetadataLocationResult::operator =
     {
       m_namespace.push_back(namespaceJsonList[namespaceIndex].AsString());
     }
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionToken"))
   {
     m_versionToken = jsonValue.GetString("versionToken");
-
+    m_versionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataLocation"))
   {
     m_metadataLocation = jsonValue.GetString("metadataLocation");
-
+    m_metadataLocationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

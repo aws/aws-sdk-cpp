@@ -40,7 +40,7 @@ namespace Model
   class ImageCriterionRequest
   {
   public:
-    AWS_EC2_API ImageCriterionRequest();
+    AWS_EC2_API ImageCriterionRequest() = default;
     AWS_EC2_API ImageCriterionRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ImageCriterionRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -61,15 +61,14 @@ namespace Model
      * your own account only. When <code>none</code> is specified, no other values can
      * be specified.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageProviders() const{ return m_imageProviders; }
+    inline const Aws::Vector<Aws::String>& GetImageProviders() const { return m_imageProviders; }
     inline bool ImageProvidersHasBeenSet() const { return m_imageProvidersHasBeenSet; }
-    inline void SetImageProviders(const Aws::Vector<Aws::String>& value) { m_imageProvidersHasBeenSet = true; m_imageProviders = value; }
-    inline void SetImageProviders(Aws::Vector<Aws::String>&& value) { m_imageProvidersHasBeenSet = true; m_imageProviders = std::move(value); }
-    inline ImageCriterionRequest& WithImageProviders(const Aws::Vector<Aws::String>& value) { SetImageProviders(value); return *this;}
-    inline ImageCriterionRequest& WithImageProviders(Aws::Vector<Aws::String>&& value) { SetImageProviders(std::move(value)); return *this;}
-    inline ImageCriterionRequest& AddImageProviders(const Aws::String& value) { m_imageProvidersHasBeenSet = true; m_imageProviders.push_back(value); return *this; }
-    inline ImageCriterionRequest& AddImageProviders(Aws::String&& value) { m_imageProvidersHasBeenSet = true; m_imageProviders.push_back(std::move(value)); return *this; }
-    inline ImageCriterionRequest& AddImageProviders(const char* value) { m_imageProvidersHasBeenSet = true; m_imageProviders.push_back(value); return *this; }
+    template<typename ImageProvidersT = Aws::Vector<Aws::String>>
+    void SetImageProviders(ImageProvidersT&& value) { m_imageProvidersHasBeenSet = true; m_imageProviders = std::forward<ImageProvidersT>(value); }
+    template<typename ImageProvidersT = Aws::Vector<Aws::String>>
+    ImageCriterionRequest& WithImageProviders(ImageProvidersT&& value) { SetImageProviders(std::forward<ImageProvidersT>(value)); return *this;}
+    template<typename ImageProvidersT = Aws::String>
+    ImageCriterionRequest& AddImageProviders(ImageProvidersT&& value) { m_imageProvidersHasBeenSet = true; m_imageProviders.emplace_back(std::forward<ImageProvidersT>(value)); return *this; }
     ///@}
   private:
 

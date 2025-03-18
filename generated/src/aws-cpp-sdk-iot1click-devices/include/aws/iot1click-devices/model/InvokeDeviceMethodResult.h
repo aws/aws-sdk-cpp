@@ -27,7 +27,7 @@ namespace Model
   class InvokeDeviceMethodResult
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodResult();
+    AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodResult() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A JSON encoded string containing the device method response.</p>
      */
-    inline const Aws::String& GetDeviceMethodResponse() const{ return m_deviceMethodResponse; }
-    inline void SetDeviceMethodResponse(const Aws::String& value) { m_deviceMethodResponse = value; }
-    inline void SetDeviceMethodResponse(Aws::String&& value) { m_deviceMethodResponse = std::move(value); }
-    inline void SetDeviceMethodResponse(const char* value) { m_deviceMethodResponse.assign(value); }
-    inline InvokeDeviceMethodResult& WithDeviceMethodResponse(const Aws::String& value) { SetDeviceMethodResponse(value); return *this;}
-    inline InvokeDeviceMethodResult& WithDeviceMethodResponse(Aws::String&& value) { SetDeviceMethodResponse(std::move(value)); return *this;}
-    inline InvokeDeviceMethodResult& WithDeviceMethodResponse(const char* value) { SetDeviceMethodResponse(value); return *this;}
+    inline const Aws::String& GetDeviceMethodResponse() const { return m_deviceMethodResponse; }
+    template<typename DeviceMethodResponseT = Aws::String>
+    void SetDeviceMethodResponse(DeviceMethodResponseT&& value) { m_deviceMethodResponseHasBeenSet = true; m_deviceMethodResponse = std::forward<DeviceMethodResponseT>(value); }
+    template<typename DeviceMethodResponseT = Aws::String>
+    InvokeDeviceMethodResult& WithDeviceMethodResponse(DeviceMethodResponseT&& value) { SetDeviceMethodResponse(std::forward<DeviceMethodResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InvokeDeviceMethodResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InvokeDeviceMethodResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InvokeDeviceMethodResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InvokeDeviceMethodResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceMethodResponse;
+    bool m_deviceMethodResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

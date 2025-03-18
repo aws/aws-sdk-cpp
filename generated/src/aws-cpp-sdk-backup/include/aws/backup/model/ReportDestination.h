@@ -33,7 +33,7 @@ namespace Model
   class ReportDestination
   {
   public:
-    AWS_BACKUP_API ReportDestination();
+    AWS_BACKUP_API ReportDestination() = default;
     AWS_BACKUP_API ReportDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API ReportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline ReportDestination& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline ReportDestination& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline ReportDestination& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    ReportDestination& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetS3Keys() const{ return m_s3Keys; }
+    inline const Aws::Vector<Aws::String>& GetS3Keys() const { return m_s3Keys; }
     inline bool S3KeysHasBeenSet() const { return m_s3KeysHasBeenSet; }
-    inline void SetS3Keys(const Aws::Vector<Aws::String>& value) { m_s3KeysHasBeenSet = true; m_s3Keys = value; }
-    inline void SetS3Keys(Aws::Vector<Aws::String>&& value) { m_s3KeysHasBeenSet = true; m_s3Keys = std::move(value); }
-    inline ReportDestination& WithS3Keys(const Aws::Vector<Aws::String>& value) { SetS3Keys(value); return *this;}
-    inline ReportDestination& WithS3Keys(Aws::Vector<Aws::String>&& value) { SetS3Keys(std::move(value)); return *this;}
-    inline ReportDestination& AddS3Keys(const Aws::String& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
-    inline ReportDestination& AddS3Keys(Aws::String&& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(std::move(value)); return *this; }
-    inline ReportDestination& AddS3Keys(const char* value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
+    template<typename S3KeysT = Aws::Vector<Aws::String>>
+    void SetS3Keys(S3KeysT&& value) { m_s3KeysHasBeenSet = true; m_s3Keys = std::forward<S3KeysT>(value); }
+    template<typename S3KeysT = Aws::Vector<Aws::String>>
+    ReportDestination& WithS3Keys(S3KeysT&& value) { SetS3Keys(std::forward<S3KeysT>(value)); return *this;}
+    template<typename S3KeysT = Aws::String>
+    ReportDestination& AddS3Keys(S3KeysT&& value) { m_s3KeysHasBeenSet = true; m_s3Keys.emplace_back(std::forward<S3KeysT>(value)); return *this; }
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class Exclusions
   {
   public:
-    AWS_DLM_API Exclusions();
+    AWS_DLM_API Exclusions() = default;
     AWS_DLM_API Exclusions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Exclusions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * exclude boot volumes, only volumes attached as data (non-boot) volumes will be
      * backed up by the policy. To exclude boot volumes, specify <code>true</code>.</p>
      */
-    inline bool GetExcludeBootVolumes() const{ return m_excludeBootVolumes; }
+    inline bool GetExcludeBootVolumes() const { return m_excludeBootVolumes; }
     inline bool ExcludeBootVolumesHasBeenSet() const { return m_excludeBootVolumesHasBeenSet; }
     inline void SetExcludeBootVolumes(bool value) { m_excludeBootVolumesHasBeenSet = true; m_excludeBootVolumes = value; }
     inline Exclusions& WithExcludeBootVolumes(bool value) { SetExcludeBootVolumes(value); return *this;}
@@ -61,15 +61,14 @@ namespace Model
      * to exclude. Volumes of the specified types will not be targeted by the
      * policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeVolumeTypes() const{ return m_excludeVolumeTypes; }
+    inline const Aws::Vector<Aws::String>& GetExcludeVolumeTypes() const { return m_excludeVolumeTypes; }
     inline bool ExcludeVolumeTypesHasBeenSet() const { return m_excludeVolumeTypesHasBeenSet; }
-    inline void SetExcludeVolumeTypes(const Aws::Vector<Aws::String>& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes = value; }
-    inline void SetExcludeVolumeTypes(Aws::Vector<Aws::String>&& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes = std::move(value); }
-    inline Exclusions& WithExcludeVolumeTypes(const Aws::Vector<Aws::String>& value) { SetExcludeVolumeTypes(value); return *this;}
-    inline Exclusions& WithExcludeVolumeTypes(Aws::Vector<Aws::String>&& value) { SetExcludeVolumeTypes(std::move(value)); return *this;}
-    inline Exclusions& AddExcludeVolumeTypes(const Aws::String& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes.push_back(value); return *this; }
-    inline Exclusions& AddExcludeVolumeTypes(Aws::String&& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes.push_back(std::move(value)); return *this; }
-    inline Exclusions& AddExcludeVolumeTypes(const char* value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes.push_back(value); return *this; }
+    template<typename ExcludeVolumeTypesT = Aws::Vector<Aws::String>>
+    void SetExcludeVolumeTypes(ExcludeVolumeTypesT&& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes = std::forward<ExcludeVolumeTypesT>(value); }
+    template<typename ExcludeVolumeTypesT = Aws::Vector<Aws::String>>
+    Exclusions& WithExcludeVolumeTypes(ExcludeVolumeTypesT&& value) { SetExcludeVolumeTypes(std::forward<ExcludeVolumeTypesT>(value)); return *this;}
+    template<typename ExcludeVolumeTypesT = Aws::String>
+    Exclusions& AddExcludeVolumeTypes(ExcludeVolumeTypesT&& value) { m_excludeVolumeTypesHasBeenSet = true; m_excludeVolumeTypes.emplace_back(std::forward<ExcludeVolumeTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,18 +76,18 @@ namespace Model
      * <p> <b>[Default policies for EBS-backed AMIs only]</b> Specifies whether to
      * exclude volumes that have specific tags. </p>
      */
-    inline const Aws::Vector<Tag>& GetExcludeTags() const{ return m_excludeTags; }
+    inline const Aws::Vector<Tag>& GetExcludeTags() const { return m_excludeTags; }
     inline bool ExcludeTagsHasBeenSet() const { return m_excludeTagsHasBeenSet; }
-    inline void SetExcludeTags(const Aws::Vector<Tag>& value) { m_excludeTagsHasBeenSet = true; m_excludeTags = value; }
-    inline void SetExcludeTags(Aws::Vector<Tag>&& value) { m_excludeTagsHasBeenSet = true; m_excludeTags = std::move(value); }
-    inline Exclusions& WithExcludeTags(const Aws::Vector<Tag>& value) { SetExcludeTags(value); return *this;}
-    inline Exclusions& WithExcludeTags(Aws::Vector<Tag>&& value) { SetExcludeTags(std::move(value)); return *this;}
-    inline Exclusions& AddExcludeTags(const Tag& value) { m_excludeTagsHasBeenSet = true; m_excludeTags.push_back(value); return *this; }
-    inline Exclusions& AddExcludeTags(Tag&& value) { m_excludeTagsHasBeenSet = true; m_excludeTags.push_back(std::move(value)); return *this; }
+    template<typename ExcludeTagsT = Aws::Vector<Tag>>
+    void SetExcludeTags(ExcludeTagsT&& value) { m_excludeTagsHasBeenSet = true; m_excludeTags = std::forward<ExcludeTagsT>(value); }
+    template<typename ExcludeTagsT = Aws::Vector<Tag>>
+    Exclusions& WithExcludeTags(ExcludeTagsT&& value) { SetExcludeTags(std::forward<ExcludeTagsT>(value)); return *this;}
+    template<typename ExcludeTagsT = Tag>
+    Exclusions& AddExcludeTags(ExcludeTagsT&& value) { m_excludeTagsHasBeenSet = true; m_excludeTags.emplace_back(std::forward<ExcludeTagsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_excludeBootVolumes;
+    bool m_excludeBootVolumes{false};
     bool m_excludeBootVolumesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeVolumeTypes;

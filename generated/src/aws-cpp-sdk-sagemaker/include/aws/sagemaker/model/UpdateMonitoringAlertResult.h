@@ -27,7 +27,7 @@ namespace Model
   class UpdateMonitoringAlertResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateMonitoringAlertResult();
+    AWS_SAGEMAKER_API UpdateMonitoringAlertResult() = default;
     AWS_SAGEMAKER_API UpdateMonitoringAlertResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateMonitoringAlertResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
      */
-    inline const Aws::String& GetMonitoringScheduleArn() const{ return m_monitoringScheduleArn; }
-    inline void SetMonitoringScheduleArn(const Aws::String& value) { m_monitoringScheduleArn = value; }
-    inline void SetMonitoringScheduleArn(Aws::String&& value) { m_monitoringScheduleArn = std::move(value); }
-    inline void SetMonitoringScheduleArn(const char* value) { m_monitoringScheduleArn.assign(value); }
-    inline UpdateMonitoringAlertResult& WithMonitoringScheduleArn(const Aws::String& value) { SetMonitoringScheduleArn(value); return *this;}
-    inline UpdateMonitoringAlertResult& WithMonitoringScheduleArn(Aws::String&& value) { SetMonitoringScheduleArn(std::move(value)); return *this;}
-    inline UpdateMonitoringAlertResult& WithMonitoringScheduleArn(const char* value) { SetMonitoringScheduleArn(value); return *this;}
+    inline const Aws::String& GetMonitoringScheduleArn() const { return m_monitoringScheduleArn; }
+    template<typename MonitoringScheduleArnT = Aws::String>
+    void SetMonitoringScheduleArn(MonitoringScheduleArnT&& value) { m_monitoringScheduleArnHasBeenSet = true; m_monitoringScheduleArn = std::forward<MonitoringScheduleArnT>(value); }
+    template<typename MonitoringScheduleArnT = Aws::String>
+    UpdateMonitoringAlertResult& WithMonitoringScheduleArn(MonitoringScheduleArnT&& value) { SetMonitoringScheduleArn(std::forward<MonitoringScheduleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a monitoring alert.</p>
      */
-    inline const Aws::String& GetMonitoringAlertName() const{ return m_monitoringAlertName; }
-    inline void SetMonitoringAlertName(const Aws::String& value) { m_monitoringAlertName = value; }
-    inline void SetMonitoringAlertName(Aws::String&& value) { m_monitoringAlertName = std::move(value); }
-    inline void SetMonitoringAlertName(const char* value) { m_monitoringAlertName.assign(value); }
-    inline UpdateMonitoringAlertResult& WithMonitoringAlertName(const Aws::String& value) { SetMonitoringAlertName(value); return *this;}
-    inline UpdateMonitoringAlertResult& WithMonitoringAlertName(Aws::String&& value) { SetMonitoringAlertName(std::move(value)); return *this;}
-    inline UpdateMonitoringAlertResult& WithMonitoringAlertName(const char* value) { SetMonitoringAlertName(value); return *this;}
+    inline const Aws::String& GetMonitoringAlertName() const { return m_monitoringAlertName; }
+    template<typename MonitoringAlertNameT = Aws::String>
+    void SetMonitoringAlertName(MonitoringAlertNameT&& value) { m_monitoringAlertNameHasBeenSet = true; m_monitoringAlertName = std::forward<MonitoringAlertNameT>(value); }
+    template<typename MonitoringAlertNameT = Aws::String>
+    UpdateMonitoringAlertResult& WithMonitoringAlertName(MonitoringAlertNameT&& value) { SetMonitoringAlertName(std::forward<MonitoringAlertNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMonitoringAlertResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMonitoringAlertResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMonitoringAlertResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMonitoringAlertResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_monitoringScheduleArn;
+    bool m_monitoringScheduleArnHasBeenSet = false;
 
     Aws::String m_monitoringAlertName;
+    bool m_monitoringAlertNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

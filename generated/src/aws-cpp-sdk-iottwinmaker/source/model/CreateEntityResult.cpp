@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEntityResult::CreateEntityResult() : 
-    m_state(State::NOT_SET)
-{
-}
-
 CreateEntityResult::CreateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateEntityResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ CreateEntityResult& CreateEntityResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
+    m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

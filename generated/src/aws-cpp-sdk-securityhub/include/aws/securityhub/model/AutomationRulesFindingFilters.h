@@ -36,7 +36,7 @@ namespace Model
   class AutomationRulesFindingFilters
   {
   public:
-    AWS_SECURITYHUB_API AutomationRulesFindingFilters();
+    AWS_SECURITYHUB_API AutomationRulesFindingFilters() = default;
     AWS_SECURITYHUB_API AutomationRulesFindingFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AutomationRulesFindingFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * finding in Security Hub. </p> <p> Array Members: Minimum number of 1 item.
      * Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetProductArn() const{ return m_productArn; }
+    inline const Aws::Vector<StringFilter>& GetProductArn() const { return m_productArn; }
     inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-    inline void SetProductArn(const Aws::Vector<StringFilter>& value) { m_productArnHasBeenSet = true; m_productArn = value; }
-    inline void SetProductArn(Aws::Vector<StringFilter>&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
-    inline AutomationRulesFindingFilters& WithProductArn(const Aws::Vector<StringFilter>& value) { SetProductArn(value); return *this;}
-    inline AutomationRulesFindingFilters& WithProductArn(Aws::Vector<StringFilter>&& value) { SetProductArn(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddProductArn(const StringFilter& value) { m_productArnHasBeenSet = true; m_productArn.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddProductArn(StringFilter&& value) { m_productArnHasBeenSet = true; m_productArn.push_back(std::move(value)); return *this; }
+    template<typename ProductArnT = Aws::Vector<StringFilter>>
+    void SetProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn = std::forward<ProductArnT>(value); }
+    template<typename ProductArnT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithProductArn(ProductArnT&& value) { SetProductArn(std::forward<ProductArnT>(value)); return *this;}
+    template<typename ProductArnT = StringFilter>
+    AutomationRulesFindingFilters& AddProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn.emplace_back(std::forward<ProductArnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * <p>The Amazon Web Services account ID in which a finding was generated.</p> <p>
      * Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::Vector<StringFilter>& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
+    template<typename AwsAccountIdT = Aws::Vector<StringFilter>>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
+    template<typename AwsAccountIdT = StringFilter>
+    AutomationRulesFindingFilters& AddAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.emplace_back(std::forward<AwsAccountIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +78,14 @@ namespace Model
      * <p> The product-specific identifier for a finding. </p> <p> Array Members:
      * Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetId() const{ return m_id; }
+    inline const Aws::Vector<StringFilter>& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::Vector<StringFilter>& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::Vector<StringFilter>&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline AutomationRulesFindingFilters& WithId(const Aws::Vector<StringFilter>& value) { SetId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithId(Aws::Vector<StringFilter>&& value) { SetId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddId(const StringFilter& value) { m_idHasBeenSet = true; m_id.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddId(StringFilter&& value) { m_idHasBeenSet = true; m_id.push_back(std::move(value)); return *this; }
+    template<typename IdT = Aws::Vector<StringFilter>>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    template<typename IdT = StringFilter>
+    AutomationRulesFindingFilters& AddId(IdT&& value) { m_idHasBeenSet = true; m_id.emplace_back(std::forward<IdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +94,14 @@ namespace Model
      * </p> <p> Array Members: Minimum number of 1 item. Maximum number of 100 items.
      * </p>
      */
-    inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
+    inline const Aws::Vector<StringFilter>& GetGeneratorId() const { return m_generatorId; }
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
-    inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
-    inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
+    template<typename GeneratorIdT = Aws::Vector<StringFilter>>
+    void SetGeneratorId(GeneratorIdT&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::forward<GeneratorIdT>(value); }
+    template<typename GeneratorIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithGeneratorId(GeneratorIdT&& value) { SetGeneratorId(std::forward<GeneratorIdT>(value)); return *this;}
+    template<typename GeneratorIdT = StringFilter>
+    AutomationRulesFindingFilters& AddGeneratorId(GeneratorIdT&& value) { m_generatorIdHasBeenSet = true; m_generatorId.emplace_back(std::forward<GeneratorIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,14 +113,14 @@ namespace Model
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetType() const{ return m_type; }
+    inline const Aws::Vector<StringFilter>& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::Vector<StringFilter>& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::Vector<StringFilter>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AutomationRulesFindingFilters& WithType(const Aws::Vector<StringFilter>& value) { SetType(value); return *this;}
-    inline AutomationRulesFindingFilters& WithType(Aws::Vector<StringFilter>&& value) { SetType(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddType(const StringFilter& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddType(StringFilter&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+    template<typename TypeT = Aws::Vector<StringFilter>>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
+    template<typename TypeT = StringFilter>
+    AutomationRulesFindingFilters& AddType(TypeT&& value) { m_typeHasBeenSet = true; m_type.emplace_back(std::forward<TypeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -132,14 +132,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
+    inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const { return m_firstObservedAt; }
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
-    inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
-    inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
-    inline AutomationRulesFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
-    inline AutomationRulesFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddFirstObservedAt(DateFilter&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(std::move(value)); return *this; }
+    template<typename FirstObservedAtT = Aws::Vector<DateFilter>>
+    void SetFirstObservedAt(FirstObservedAtT&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::forward<FirstObservedAtT>(value); }
+    template<typename FirstObservedAtT = Aws::Vector<DateFilter>>
+    AutomationRulesFindingFilters& WithFirstObservedAt(FirstObservedAtT&& value) { SetFirstObservedAt(std::forward<FirstObservedAtT>(value)); return *this;}
+    template<typename FirstObservedAtT = DateFilter>
+    AutomationRulesFindingFilters& AddFirstObservedAt(FirstObservedAtT&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.emplace_back(std::forward<FirstObservedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,14 +151,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
+    inline const Aws::Vector<DateFilter>& GetLastObservedAt() const { return m_lastObservedAt; }
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
-    inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
-    inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
-    inline AutomationRulesFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
-    inline AutomationRulesFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddLastObservedAt(DateFilter&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(std::move(value)); return *this; }
+    template<typename LastObservedAtT = Aws::Vector<DateFilter>>
+    void SetLastObservedAt(LastObservedAtT&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::forward<LastObservedAtT>(value); }
+    template<typename LastObservedAtT = Aws::Vector<DateFilter>>
+    AutomationRulesFindingFilters& WithLastObservedAt(LastObservedAtT&& value) { SetLastObservedAt(std::forward<LastObservedAtT>(value)); return *this;}
+    template<typename LastObservedAtT = DateFilter>
+    AutomationRulesFindingFilters& AddLastObservedAt(LastObservedAtT&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.emplace_back(std::forward<LastObservedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,14 +169,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Vector<DateFilter>& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AutomationRulesFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
-    inline AutomationRulesFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddCreatedAt(DateFilter&& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(std::move(value)); return *this; }
+    template<typename CreatedAtT = Aws::Vector<DateFilter>>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Vector<DateFilter>>
+    AutomationRulesFindingFilters& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    template<typename CreatedAtT = DateFilter>
+    AutomationRulesFindingFilters& AddCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt.emplace_back(std::forward<CreatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -187,14 +187,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Vector<DateFilter>& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline AutomationRulesFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
-    inline AutomationRulesFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
+    template<typename UpdatedAtT = Aws::Vector<DateFilter>>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Vector<DateFilter>>
+    AutomationRulesFindingFilters& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    template<typename UpdatedAtT = DateFilter>
+    AutomationRulesFindingFilters& AddUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.emplace_back(std::forward<UpdatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -210,14 +210,14 @@ namespace Model
      * in the <i>Security Hub User Guide</i>.</p> <p> Array Members: Minimum number of
      * 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<NumberFilter>& GetConfidence() const{ return m_confidence; }
+    inline const Aws::Vector<NumberFilter>& GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-    inline void SetConfidence(const Aws::Vector<NumberFilter>& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-    inline void SetConfidence(Aws::Vector<NumberFilter>&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
-    inline AutomationRulesFindingFilters& WithConfidence(const Aws::Vector<NumberFilter>& value) { SetConfidence(value); return *this;}
-    inline AutomationRulesFindingFilters& WithConfidence(Aws::Vector<NumberFilter>&& value) { SetConfidence(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddConfidence(const NumberFilter& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddConfidence(NumberFilter&& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(std::move(value)); return *this; }
+    template<typename ConfidenceT = Aws::Vector<NumberFilter>>
+    void SetConfidence(ConfidenceT&& value) { m_confidenceHasBeenSet = true; m_confidence = std::forward<ConfidenceT>(value); }
+    template<typename ConfidenceT = Aws::Vector<NumberFilter>>
+    AutomationRulesFindingFilters& WithConfidence(ConfidenceT&& value) { SetConfidence(std::forward<ConfidenceT>(value)); return *this;}
+    template<typename ConfidenceT = NumberFilter>
+    AutomationRulesFindingFilters& AddConfidence(ConfidenceT&& value) { m_confidenceHasBeenSet = true; m_confidence.emplace_back(std::forward<ConfidenceT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -232,14 +232,14 @@ namespace Model
      * in the <i>Security Hub User Guide</i>.</p> <p> Array Members: Minimum number of
      * 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<NumberFilter>& GetCriticality() const{ return m_criticality; }
+    inline const Aws::Vector<NumberFilter>& GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
-    inline void SetCriticality(const Aws::Vector<NumberFilter>& value) { m_criticalityHasBeenSet = true; m_criticality = value; }
-    inline void SetCriticality(Aws::Vector<NumberFilter>&& value) { m_criticalityHasBeenSet = true; m_criticality = std::move(value); }
-    inline AutomationRulesFindingFilters& WithCriticality(const Aws::Vector<NumberFilter>& value) { SetCriticality(value); return *this;}
-    inline AutomationRulesFindingFilters& WithCriticality(Aws::Vector<NumberFilter>&& value) { SetCriticality(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddCriticality(const NumberFilter& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddCriticality(NumberFilter&& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(std::move(value)); return *this; }
+    template<typename CriticalityT = Aws::Vector<NumberFilter>>
+    void SetCriticality(CriticalityT&& value) { m_criticalityHasBeenSet = true; m_criticality = std::forward<CriticalityT>(value); }
+    template<typename CriticalityT = Aws::Vector<NumberFilter>>
+    AutomationRulesFindingFilters& WithCriticality(CriticalityT&& value) { SetCriticality(std::forward<CriticalityT>(value)); return *this;}
+    template<typename CriticalityT = NumberFilter>
+    AutomationRulesFindingFilters& AddCriticality(CriticalityT&& value) { m_criticalityHasBeenSet = true; m_criticality.emplace_back(std::forward<CriticalityT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -247,14 +247,14 @@ namespace Model
      * <p> A finding's title. </p> <p> Array Members: Minimum number of 1 item. Maximum
      * number of 100 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetTitle() const{ return m_title; }
+    inline const Aws::Vector<StringFilter>& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::Vector<StringFilter>& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::Vector<StringFilter>&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline AutomationRulesFindingFilters& WithTitle(const Aws::Vector<StringFilter>& value) { SetTitle(value); return *this;}
-    inline AutomationRulesFindingFilters& WithTitle(Aws::Vector<StringFilter>&& value) { SetTitle(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddTitle(const StringFilter& value) { m_titleHasBeenSet = true; m_title.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddTitle(StringFilter&& value) { m_titleHasBeenSet = true; m_title.push_back(std::move(value)); return *this; }
+    template<typename TitleT = Aws::Vector<StringFilter>>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    template<typename TitleT = StringFilter>
+    AutomationRulesFindingFilters& AddTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title.emplace_back(std::forward<TitleT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -262,14 +262,14 @@ namespace Model
      * <p> A finding's description. </p> <p> Array Members: Minimum number of 1 item.
      * Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetDescription() const{ return m_description; }
+    inline const Aws::Vector<StringFilter>& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::Vector<StringFilter>& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::Vector<StringFilter>&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline AutomationRulesFindingFilters& WithDescription(const Aws::Vector<StringFilter>& value) { SetDescription(value); return *this;}
-    inline AutomationRulesFindingFilters& WithDescription(Aws::Vector<StringFilter>&& value) { SetDescription(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddDescription(const StringFilter& value) { m_descriptionHasBeenSet = true; m_description.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddDescription(StringFilter&& value) { m_descriptionHasBeenSet = true; m_description.push_back(std::move(value)); return *this; }
+    template<typename DescriptionT = Aws::Vector<StringFilter>>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    template<typename DescriptionT = StringFilter>
+    AutomationRulesFindingFilters& AddDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description.emplace_back(std::forward<DescriptionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -278,14 +278,14 @@ namespace Model
      * product. </p> <p> Array Members: Minimum number of 1 item. Maximum number of 20
      * items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetSourceUrl() const{ return m_sourceUrl; }
+    inline const Aws::Vector<StringFilter>& GetSourceUrl() const { return m_sourceUrl; }
     inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
-    inline void SetSourceUrl(const Aws::Vector<StringFilter>& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
-    inline void SetSourceUrl(Aws::Vector<StringFilter>&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
-    inline AutomationRulesFindingFilters& WithSourceUrl(const Aws::Vector<StringFilter>& value) { SetSourceUrl(value); return *this;}
-    inline AutomationRulesFindingFilters& WithSourceUrl(Aws::Vector<StringFilter>&& value) { SetSourceUrl(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddSourceUrl(const StringFilter& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddSourceUrl(StringFilter&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(std::move(value)); return *this; }
+    template<typename SourceUrlT = Aws::Vector<StringFilter>>
+    void SetSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::forward<SourceUrlT>(value); }
+    template<typename SourceUrlT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithSourceUrl(SourceUrlT&& value) { SetSourceUrl(std::forward<SourceUrlT>(value)); return *this;}
+    template<typename SourceUrlT = StringFilter>
+    AutomationRulesFindingFilters& AddSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.emplace_back(std::forward<SourceUrlT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -294,14 +294,14 @@ namespace Model
      * control-based findings, the product name is Security Hub. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetProductName() const{ return m_productName; }
+    inline const Aws::Vector<StringFilter>& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const Aws::Vector<StringFilter>& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(Aws::Vector<StringFilter>&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline AutomationRulesFindingFilters& WithProductName(const Aws::Vector<StringFilter>& value) { SetProductName(value); return *this;}
-    inline AutomationRulesFindingFilters& WithProductName(Aws::Vector<StringFilter>&& value) { SetProductName(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddProductName(const StringFilter& value) { m_productNameHasBeenSet = true; m_productName.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddProductName(StringFilter&& value) { m_productNameHasBeenSet = true; m_productName.push_back(std::move(value)); return *this; }
+    template<typename ProductNameT = Aws::Vector<StringFilter>>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
+    template<typename ProductNameT = StringFilter>
+    AutomationRulesFindingFilters& AddProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName.emplace_back(std::forward<ProductNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -310,14 +310,14 @@ namespace Model
      * control-based findings, the company is Amazon Web Services. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetCompanyName() const{ return m_companyName; }
+    inline const Aws::Vector<StringFilter>& GetCompanyName() const { return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    inline void SetCompanyName(const Aws::Vector<StringFilter>& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
-    inline void SetCompanyName(Aws::Vector<StringFilter>&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
-    inline AutomationRulesFindingFilters& WithCompanyName(const Aws::Vector<StringFilter>& value) { SetCompanyName(value); return *this;}
-    inline AutomationRulesFindingFilters& WithCompanyName(Aws::Vector<StringFilter>&& value) { SetCompanyName(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddCompanyName(const StringFilter& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddCompanyName(StringFilter&& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(std::move(value)); return *this; }
+    template<typename CompanyNameT = Aws::Vector<StringFilter>>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
+    template<typename CompanyNameT = StringFilter>
+    AutomationRulesFindingFilters& AddCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName.emplace_back(std::forward<CompanyNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -325,14 +325,14 @@ namespace Model
      * <p> The severity value of the finding. </p> <p> Array Members: Minimum number of
      * 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetSeverityLabel() const{ return m_severityLabel; }
+    inline const Aws::Vector<StringFilter>& GetSeverityLabel() const { return m_severityLabel; }
     inline bool SeverityLabelHasBeenSet() const { return m_severityLabelHasBeenSet; }
-    inline void SetSeverityLabel(const Aws::Vector<StringFilter>& value) { m_severityLabelHasBeenSet = true; m_severityLabel = value; }
-    inline void SetSeverityLabel(Aws::Vector<StringFilter>&& value) { m_severityLabelHasBeenSet = true; m_severityLabel = std::move(value); }
-    inline AutomationRulesFindingFilters& WithSeverityLabel(const Aws::Vector<StringFilter>& value) { SetSeverityLabel(value); return *this;}
-    inline AutomationRulesFindingFilters& WithSeverityLabel(Aws::Vector<StringFilter>&& value) { SetSeverityLabel(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddSeverityLabel(const StringFilter& value) { m_severityLabelHasBeenSet = true; m_severityLabel.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddSeverityLabel(StringFilter&& value) { m_severityLabelHasBeenSet = true; m_severityLabel.push_back(std::move(value)); return *this; }
+    template<typename SeverityLabelT = Aws::Vector<StringFilter>>
+    void SetSeverityLabel(SeverityLabelT&& value) { m_severityLabelHasBeenSet = true; m_severityLabel = std::forward<SeverityLabelT>(value); }
+    template<typename SeverityLabelT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithSeverityLabel(SeverityLabelT&& value) { SetSeverityLabel(std::forward<SeverityLabelT>(value)); return *this;}
+    template<typename SeverityLabelT = StringFilter>
+    AutomationRulesFindingFilters& AddSeverityLabel(SeverityLabelT&& value) { m_severityLabelHasBeenSet = true; m_severityLabel.emplace_back(std::forward<SeverityLabelT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -340,14 +340,14 @@ namespace Model
      * <p> The type of resource that the finding pertains to. </p> <p> Array Members:
      * Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::Vector<StringFilter>& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::Vector<StringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::Vector<StringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceType(const Aws::Vector<StringFilter>& value) { SetResourceType(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceType(Aws::Vector<StringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceType(const StringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceType(StringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypeT = Aws::Vector<StringFilter>>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
+    template<typename ResourceTypeT = StringFilter>
+    AutomationRulesFindingFilters& AddResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.emplace_back(std::forward<ResourceTypeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -360,14 +360,14 @@ namespace Model
      * associated with the resource. </p> <p> Array Members: Minimum number of 1 item.
      * Maximum number of 100 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::Vector<StringFilter>& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::Vector<StringFilter>& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::Vector<StringFilter>&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceId(const Aws::Vector<StringFilter>& value) { SetResourceId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceId(Aws::Vector<StringFilter>&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceId(const StringFilter& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceId(StringFilter&& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(std::move(value)); return *this; }
+    template<typename ResourceIdT = Aws::Vector<StringFilter>>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    template<typename ResourceIdT = StringFilter>
+    AutomationRulesFindingFilters& AddResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId.emplace_back(std::forward<ResourceIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -377,14 +377,14 @@ namespace Model
      * account is scoped to one partition. </p> <p> Array Members: Minimum number of 1
      * item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourcePartition() const{ return m_resourcePartition; }
+    inline const Aws::Vector<StringFilter>& GetResourcePartition() const { return m_resourcePartition; }
     inline bool ResourcePartitionHasBeenSet() const { return m_resourcePartitionHasBeenSet; }
-    inline void SetResourcePartition(const Aws::Vector<StringFilter>& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = value; }
-    inline void SetResourcePartition(Aws::Vector<StringFilter>&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourcePartition(const Aws::Vector<StringFilter>& value) { SetResourcePartition(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourcePartition(Aws::Vector<StringFilter>&& value) { SetResourcePartition(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourcePartition(const StringFilter& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourcePartition(StringFilter&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(std::move(value)); return *this; }
+    template<typename ResourcePartitionT = Aws::Vector<StringFilter>>
+    void SetResourcePartition(ResourcePartitionT&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::forward<ResourcePartitionT>(value); }
+    template<typename ResourcePartitionT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourcePartition(ResourcePartitionT&& value) { SetResourcePartition(std::forward<ResourcePartitionT>(value)); return *this;}
+    template<typename ResourcePartitionT = StringFilter>
+    AutomationRulesFindingFilters& AddResourcePartition(ResourcePartitionT&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.emplace_back(std::forward<ResourcePartitionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -393,14 +393,14 @@ namespace Model
      * is located. </p> <p> Array Members: Minimum number of 1 item. Maximum number of
      * 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::Vector<StringFilter>& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::Vector<StringFilter>& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::Vector<StringFilter>&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceRegion(const Aws::Vector<StringFilter>& value) { SetResourceRegion(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceRegion(Aws::Vector<StringFilter>&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceRegion(const StringFilter& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceRegion(StringFilter&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(std::move(value)); return *this; }
+    template<typename ResourceRegionT = Aws::Vector<StringFilter>>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
+    template<typename ResourceRegionT = StringFilter>
+    AutomationRulesFindingFilters& AddResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.emplace_back(std::forward<ResourceRegionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -409,14 +409,14 @@ namespace Model
      * the finding was processed. </p> <p> Array Members: Minimum number of 1 item.
      * Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<MapFilter>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<MapFilter>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<MapFilter>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<MapFilter>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceTags(const Aws::Vector<MapFilter>& value) { SetResourceTags(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceTags(Aws::Vector<MapFilter>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceTags(const MapFilter& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceTags(MapFilter&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<MapFilter>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<MapFilter>>
+    AutomationRulesFindingFilters& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = MapFilter>
+    AutomationRulesFindingFilters& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -424,14 +424,14 @@ namespace Model
      * <p> Custom fields and values about the resource that a finding pertains to. </p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<MapFilter>& GetResourceDetailsOther() const{ return m_resourceDetailsOther; }
+    inline const Aws::Vector<MapFilter>& GetResourceDetailsOther() const { return m_resourceDetailsOther; }
     inline bool ResourceDetailsOtherHasBeenSet() const { return m_resourceDetailsOtherHasBeenSet; }
-    inline void SetResourceDetailsOther(const Aws::Vector<MapFilter>& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = value; }
-    inline void SetResourceDetailsOther(Aws::Vector<MapFilter>&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceDetailsOther(const Aws::Vector<MapFilter>& value) { SetResourceDetailsOther(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceDetailsOther(Aws::Vector<MapFilter>&& value) { SetResourceDetailsOther(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceDetailsOther(const MapFilter& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceDetailsOther(MapFilter&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.push_back(std::move(value)); return *this; }
+    template<typename ResourceDetailsOtherT = Aws::Vector<MapFilter>>
+    void SetResourceDetailsOther(ResourceDetailsOtherT&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = std::forward<ResourceDetailsOtherT>(value); }
+    template<typename ResourceDetailsOtherT = Aws::Vector<MapFilter>>
+    AutomationRulesFindingFilters& WithResourceDetailsOther(ResourceDetailsOtherT&& value) { SetResourceDetailsOther(std::forward<ResourceDetailsOtherT>(value)); return *this;}
+    template<typename ResourceDetailsOtherT = MapFilter>
+    AutomationRulesFindingFilters& AddResourceDetailsOther(ResourceDetailsOtherT&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.emplace_back(std::forward<ResourceDetailsOtherT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -440,14 +440,14 @@ namespace Model
      * generated from controls. </p> <p> Array Members: Minimum number of 1 item.
      * Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceStatus() const{ return m_complianceStatus; }
+    inline const Aws::Vector<StringFilter>& GetComplianceStatus() const { return m_complianceStatus; }
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
-    inline void SetComplianceStatus(const Aws::Vector<StringFilter>& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
-    inline void SetComplianceStatus(Aws::Vector<StringFilter>&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
-    inline AutomationRulesFindingFilters& WithComplianceStatus(const Aws::Vector<StringFilter>& value) { SetComplianceStatus(value); return *this;}
-    inline AutomationRulesFindingFilters& WithComplianceStatus(Aws::Vector<StringFilter>&& value) { SetComplianceStatus(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddComplianceStatus(const StringFilter& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddComplianceStatus(StringFilter&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(std::move(value)); return *this; }
+    template<typename ComplianceStatusT = Aws::Vector<StringFilter>>
+    void SetComplianceStatus(ComplianceStatusT&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::forward<ComplianceStatusT>(value); }
+    template<typename ComplianceStatusT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithComplianceStatus(ComplianceStatusT&& value) { SetComplianceStatus(std::forward<ComplianceStatusT>(value)); return *this;}
+    template<typename ComplianceStatusT = StringFilter>
+    AutomationRulesFindingFilters& AddComplianceStatus(ComplianceStatusT&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.emplace_back(std::forward<ComplianceStatusT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -456,14 +456,14 @@ namespace Model
      * IDs are the same across standards.</p> <p> Array Members: Minimum number of 1
      * item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const{ return m_complianceSecurityControlId; }
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const { return m_complianceSecurityControlId; }
     inline bool ComplianceSecurityControlIdHasBeenSet() const { return m_complianceSecurityControlIdHasBeenSet; }
-    inline void SetComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = value; }
-    inline void SetComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddComplianceSecurityControlId(const StringFilter& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddComplianceSecurityControlId(StringFilter&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(std::move(value)); return *this; }
+    template<typename ComplianceSecurityControlIdT = Aws::Vector<StringFilter>>
+    void SetComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = std::forward<ComplianceSecurityControlIdT>(value); }
+    template<typename ComplianceSecurityControlIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { SetComplianceSecurityControlId(std::forward<ComplianceSecurityControlIdT>(value)); return *this;}
+    template<typename ComplianceSecurityControlIdT = StringFilter>
+    AutomationRulesFindingFilters& AddComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.emplace_back(std::forward<ComplianceSecurityControlIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -475,14 +475,14 @@ namespace Model
      * API response.</p> <p> Array Members: Minimum number of 1 item. Maximum number of
      * 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceAssociatedStandardsId() const{ return m_complianceAssociatedStandardsId; }
+    inline const Aws::Vector<StringFilter>& GetComplianceAssociatedStandardsId() const { return m_complianceAssociatedStandardsId; }
     inline bool ComplianceAssociatedStandardsIdHasBeenSet() const { return m_complianceAssociatedStandardsIdHasBeenSet; }
-    inline void SetComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = value; }
-    inline void SetComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { SetComplianceAssociatedStandardsId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { SetComplianceAssociatedStandardsId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddComplianceAssociatedStandardsId(const StringFilter& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
+    template<typename ComplianceAssociatedStandardsIdT = Aws::Vector<StringFilter>>
+    void SetComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = std::forward<ComplianceAssociatedStandardsIdT>(value); }
+    template<typename ComplianceAssociatedStandardsIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { SetComplianceAssociatedStandardsId(std::forward<ComplianceAssociatedStandardsIdT>(value)); return *this;}
+    template<typename ComplianceAssociatedStandardsIdT = StringFilter>
+    AutomationRulesFindingFilters& AddComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.emplace_back(std::forward<ComplianceAssociatedStandardsIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -490,14 +490,14 @@ namespace Model
      * <p> Provides the veracity of a finding. </p> <p> Array Members: Minimum number
      * of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetVerificationState() const{ return m_verificationState; }
+    inline const Aws::Vector<StringFilter>& GetVerificationState() const { return m_verificationState; }
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(const Aws::Vector<StringFilter>& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline void SetVerificationState(Aws::Vector<StringFilter>&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
-    inline AutomationRulesFindingFilters& WithVerificationState(const Aws::Vector<StringFilter>& value) { SetVerificationState(value); return *this;}
-    inline AutomationRulesFindingFilters& WithVerificationState(Aws::Vector<StringFilter>&& value) { SetVerificationState(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddVerificationState(const StringFilter& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddVerificationState(StringFilter&& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(std::move(value)); return *this; }
+    template<typename VerificationStateT = Aws::Vector<StringFilter>>
+    void SetVerificationState(VerificationStateT&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::forward<VerificationStateT>(value); }
+    template<typename VerificationStateT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithVerificationState(VerificationStateT&& value) { SetVerificationState(std::forward<VerificationStateT>(value)); return *this;}
+    template<typename VerificationStateT = StringFilter>
+    AutomationRulesFindingFilters& AddVerificationState(VerificationStateT&& value) { m_verificationStateHasBeenSet = true; m_verificationState.emplace_back(std::forward<VerificationStateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -506,14 +506,14 @@ namespace Model
      * </p> <p> Array Members: Minimum number of 1 item. Maximum number of 20 items.
      * </p>
      */
-    inline const Aws::Vector<StringFilter>& GetWorkflowStatus() const{ return m_workflowStatus; }
+    inline const Aws::Vector<StringFilter>& GetWorkflowStatus() const { return m_workflowStatus; }
     inline bool WorkflowStatusHasBeenSet() const { return m_workflowStatusHasBeenSet; }
-    inline void SetWorkflowStatus(const Aws::Vector<StringFilter>& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = value; }
-    inline void SetWorkflowStatus(Aws::Vector<StringFilter>&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = std::move(value); }
-    inline AutomationRulesFindingFilters& WithWorkflowStatus(const Aws::Vector<StringFilter>& value) { SetWorkflowStatus(value); return *this;}
-    inline AutomationRulesFindingFilters& WithWorkflowStatus(Aws::Vector<StringFilter>&& value) { SetWorkflowStatus(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddWorkflowStatus(const StringFilter& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddWorkflowStatus(StringFilter&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(std::move(value)); return *this; }
+    template<typename WorkflowStatusT = Aws::Vector<StringFilter>>
+    void SetWorkflowStatus(WorkflowStatusT&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = std::forward<WorkflowStatusT>(value); }
+    template<typename WorkflowStatusT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithWorkflowStatus(WorkflowStatusT&& value) { SetWorkflowStatus(std::forward<WorkflowStatusT>(value)); return *this;}
+    template<typename WorkflowStatusT = StringFilter>
+    AutomationRulesFindingFilters& AddWorkflowStatus(WorkflowStatusT&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.emplace_back(std::forward<WorkflowStatusT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -521,14 +521,14 @@ namespace Model
      * <p> Provides the current state of a finding. </p> <p> Array Members: Minimum
      * number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetRecordState() const{ return m_recordState; }
+    inline const Aws::Vector<StringFilter>& GetRecordState() const { return m_recordState; }
     inline bool RecordStateHasBeenSet() const { return m_recordStateHasBeenSet; }
-    inline void SetRecordState(const Aws::Vector<StringFilter>& value) { m_recordStateHasBeenSet = true; m_recordState = value; }
-    inline void SetRecordState(Aws::Vector<StringFilter>&& value) { m_recordStateHasBeenSet = true; m_recordState = std::move(value); }
-    inline AutomationRulesFindingFilters& WithRecordState(const Aws::Vector<StringFilter>& value) { SetRecordState(value); return *this;}
-    inline AutomationRulesFindingFilters& WithRecordState(Aws::Vector<StringFilter>&& value) { SetRecordState(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddRecordState(const StringFilter& value) { m_recordStateHasBeenSet = true; m_recordState.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddRecordState(StringFilter&& value) { m_recordStateHasBeenSet = true; m_recordState.push_back(std::move(value)); return *this; }
+    template<typename RecordStateT = Aws::Vector<StringFilter>>
+    void SetRecordState(RecordStateT&& value) { m_recordStateHasBeenSet = true; m_recordState = std::forward<RecordStateT>(value); }
+    template<typename RecordStateT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithRecordState(RecordStateT&& value) { SetRecordState(std::forward<RecordStateT>(value)); return *this;}
+    template<typename RecordStateT = StringFilter>
+    AutomationRulesFindingFilters& AddRecordState(RecordStateT&& value) { m_recordStateHasBeenSet = true; m_recordState.emplace_back(std::forward<RecordStateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -536,14 +536,14 @@ namespace Model
      * <p> The ARN for the product that generated a related finding. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetRelatedFindingsProductArn() const{ return m_relatedFindingsProductArn; }
+    inline const Aws::Vector<StringFilter>& GetRelatedFindingsProductArn() const { return m_relatedFindingsProductArn; }
     inline bool RelatedFindingsProductArnHasBeenSet() const { return m_relatedFindingsProductArnHasBeenSet; }
-    inline void SetRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = value; }
-    inline void SetRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = std::move(value); }
-    inline AutomationRulesFindingFilters& WithRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { SetRelatedFindingsProductArn(value); return *this;}
-    inline AutomationRulesFindingFilters& WithRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { SetRelatedFindingsProductArn(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddRelatedFindingsProductArn(const StringFilter& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddRelatedFindingsProductArn(StringFilter&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    void SetRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = std::forward<RelatedFindingsProductArnT>(value); }
+    template<typename RelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { SetRelatedFindingsProductArn(std::forward<RelatedFindingsProductArnT>(value)); return *this;}
+    template<typename RelatedFindingsProductArnT = StringFilter>
+    AutomationRulesFindingFilters& AddRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.emplace_back(std::forward<RelatedFindingsProductArnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -551,14 +551,14 @@ namespace Model
      * <p> The product-generated identifier for a related finding. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetRelatedFindingsId() const{ return m_relatedFindingsId; }
+    inline const Aws::Vector<StringFilter>& GetRelatedFindingsId() const { return m_relatedFindingsId; }
     inline bool RelatedFindingsIdHasBeenSet() const { return m_relatedFindingsIdHasBeenSet; }
-    inline void SetRelatedFindingsId(const Aws::Vector<StringFilter>& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = value; }
-    inline void SetRelatedFindingsId(Aws::Vector<StringFilter>&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = std::move(value); }
-    inline AutomationRulesFindingFilters& WithRelatedFindingsId(const Aws::Vector<StringFilter>& value) { SetRelatedFindingsId(value); return *this;}
-    inline AutomationRulesFindingFilters& WithRelatedFindingsId(Aws::Vector<StringFilter>&& value) { SetRelatedFindingsId(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddRelatedFindingsId(const StringFilter& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddRelatedFindingsId(StringFilter&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsIdT = Aws::Vector<StringFilter>>
+    void SetRelatedFindingsId(RelatedFindingsIdT&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = std::forward<RelatedFindingsIdT>(value); }
+    template<typename RelatedFindingsIdT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithRelatedFindingsId(RelatedFindingsIdT&& value) { SetRelatedFindingsId(std::forward<RelatedFindingsIdT>(value)); return *this;}
+    template<typename RelatedFindingsIdT = StringFilter>
+    AutomationRulesFindingFilters& AddRelatedFindingsId(RelatedFindingsIdT&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.emplace_back(std::forward<RelatedFindingsIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -566,14 +566,14 @@ namespace Model
      * <p> The text of a user-defined note that's added to a finding. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetNoteText() const{ return m_noteText; }
+    inline const Aws::Vector<StringFilter>& GetNoteText() const { return m_noteText; }
     inline bool NoteTextHasBeenSet() const { return m_noteTextHasBeenSet; }
-    inline void SetNoteText(const Aws::Vector<StringFilter>& value) { m_noteTextHasBeenSet = true; m_noteText = value; }
-    inline void SetNoteText(Aws::Vector<StringFilter>&& value) { m_noteTextHasBeenSet = true; m_noteText = std::move(value); }
-    inline AutomationRulesFindingFilters& WithNoteText(const Aws::Vector<StringFilter>& value) { SetNoteText(value); return *this;}
-    inline AutomationRulesFindingFilters& WithNoteText(Aws::Vector<StringFilter>&& value) { SetNoteText(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddNoteText(const StringFilter& value) { m_noteTextHasBeenSet = true; m_noteText.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddNoteText(StringFilter&& value) { m_noteTextHasBeenSet = true; m_noteText.push_back(std::move(value)); return *this; }
+    template<typename NoteTextT = Aws::Vector<StringFilter>>
+    void SetNoteText(NoteTextT&& value) { m_noteTextHasBeenSet = true; m_noteText = std::forward<NoteTextT>(value); }
+    template<typename NoteTextT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithNoteText(NoteTextT&& value) { SetNoteText(std::forward<NoteTextT>(value)); return *this;}
+    template<typename NoteTextT = StringFilter>
+    AutomationRulesFindingFilters& AddNoteText(NoteTextT&& value) { m_noteTextHasBeenSet = true; m_noteText.emplace_back(std::forward<NoteTextT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -583,14 +583,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<DateFilter>& GetNoteUpdatedAt() const{ return m_noteUpdatedAt; }
+    inline const Aws::Vector<DateFilter>& GetNoteUpdatedAt() const { return m_noteUpdatedAt; }
     inline bool NoteUpdatedAtHasBeenSet() const { return m_noteUpdatedAtHasBeenSet; }
-    inline void SetNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = value; }
-    inline void SetNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = std::move(value); }
-    inline AutomationRulesFindingFilters& WithNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { SetNoteUpdatedAt(value); return *this;}
-    inline AutomationRulesFindingFilters& WithNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { SetNoteUpdatedAt(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddNoteUpdatedAt(const DateFilter& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddNoteUpdatedAt(DateFilter&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(std::move(value)); return *this; }
+    template<typename NoteUpdatedAtT = Aws::Vector<DateFilter>>
+    void SetNoteUpdatedAt(NoteUpdatedAtT&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = std::forward<NoteUpdatedAtT>(value); }
+    template<typename NoteUpdatedAtT = Aws::Vector<DateFilter>>
+    AutomationRulesFindingFilters& WithNoteUpdatedAt(NoteUpdatedAtT&& value) { SetNoteUpdatedAt(std::forward<NoteUpdatedAtT>(value)); return *this;}
+    template<typename NoteUpdatedAtT = DateFilter>
+    AutomationRulesFindingFilters& AddNoteUpdatedAt(NoteUpdatedAtT&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.emplace_back(std::forward<NoteUpdatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -598,14 +598,14 @@ namespace Model
      * <p> The principal that created a note. </p> <p> Array Members: Minimum number of
      * 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetNoteUpdatedBy() const{ return m_noteUpdatedBy; }
+    inline const Aws::Vector<StringFilter>& GetNoteUpdatedBy() const { return m_noteUpdatedBy; }
     inline bool NoteUpdatedByHasBeenSet() const { return m_noteUpdatedByHasBeenSet; }
-    inline void SetNoteUpdatedBy(const Aws::Vector<StringFilter>& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = value; }
-    inline void SetNoteUpdatedBy(Aws::Vector<StringFilter>&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = std::move(value); }
-    inline AutomationRulesFindingFilters& WithNoteUpdatedBy(const Aws::Vector<StringFilter>& value) { SetNoteUpdatedBy(value); return *this;}
-    inline AutomationRulesFindingFilters& WithNoteUpdatedBy(Aws::Vector<StringFilter>&& value) { SetNoteUpdatedBy(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddNoteUpdatedBy(const StringFilter& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddNoteUpdatedBy(StringFilter&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.push_back(std::move(value)); return *this; }
+    template<typename NoteUpdatedByT = Aws::Vector<StringFilter>>
+    void SetNoteUpdatedBy(NoteUpdatedByT&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = std::forward<NoteUpdatedByT>(value); }
+    template<typename NoteUpdatedByT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithNoteUpdatedBy(NoteUpdatedByT&& value) { SetNoteUpdatedBy(std::forward<NoteUpdatedByT>(value)); return *this;}
+    template<typename NoteUpdatedByT = StringFilter>
+    AutomationRulesFindingFilters& AddNoteUpdatedBy(NoteUpdatedByT&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.emplace_back(std::forward<NoteUpdatedByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -613,14 +613,14 @@ namespace Model
      * <p> A list of user-defined name and value string pairs added to a finding. </p>
      * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<MapFilter>& GetUserDefinedFields() const{ return m_userDefinedFields; }
+    inline const Aws::Vector<MapFilter>& GetUserDefinedFields() const { return m_userDefinedFields; }
     inline bool UserDefinedFieldsHasBeenSet() const { return m_userDefinedFieldsHasBeenSet; }
-    inline void SetUserDefinedFields(const Aws::Vector<MapFilter>& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = value; }
-    inline void SetUserDefinedFields(Aws::Vector<MapFilter>&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::move(value); }
-    inline AutomationRulesFindingFilters& WithUserDefinedFields(const Aws::Vector<MapFilter>& value) { SetUserDefinedFields(value); return *this;}
-    inline AutomationRulesFindingFilters& WithUserDefinedFields(Aws::Vector<MapFilter>&& value) { SetUserDefinedFields(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddUserDefinedFields(const MapFilter& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddUserDefinedFields(MapFilter&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.push_back(std::move(value)); return *this; }
+    template<typename UserDefinedFieldsT = Aws::Vector<MapFilter>>
+    void SetUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::forward<UserDefinedFieldsT>(value); }
+    template<typename UserDefinedFieldsT = Aws::Vector<MapFilter>>
+    AutomationRulesFindingFilters& WithUserDefinedFields(UserDefinedFieldsT&& value) { SetUserDefinedFields(std::forward<UserDefinedFieldsT>(value)); return *this;}
+    template<typename UserDefinedFieldsT = MapFilter>
+    AutomationRulesFindingFilters& AddUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace_back(std::forward<UserDefinedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -629,14 +629,14 @@ namespace Model
      * finding. </p> <p> Array Members: Minimum number of 1 item. Maximum number of 20
      * items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const{ return m_resourceApplicationArn; }
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const { return m_resourceApplicationArn; }
     inline bool ResourceApplicationArnHasBeenSet() const { return m_resourceApplicationArnHasBeenSet; }
-    inline void SetResourceApplicationArn(const Aws::Vector<StringFilter>& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = value; }
-    inline void SetResourceApplicationArn(Aws::Vector<StringFilter>&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceApplicationArn(const Aws::Vector<StringFilter>& value) { SetResourceApplicationArn(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceApplicationArn(Aws::Vector<StringFilter>&& value) { SetResourceApplicationArn(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceApplicationArn(const StringFilter& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceApplicationArn(StringFilter&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(std::move(value)); return *this; }
+    template<typename ResourceApplicationArnT = Aws::Vector<StringFilter>>
+    void SetResourceApplicationArn(ResourceApplicationArnT&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::forward<ResourceApplicationArnT>(value); }
+    template<typename ResourceApplicationArnT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourceApplicationArn(ResourceApplicationArnT&& value) { SetResourceApplicationArn(std::forward<ResourceApplicationArnT>(value)); return *this;}
+    template<typename ResourceApplicationArnT = StringFilter>
+    AutomationRulesFindingFilters& AddResourceApplicationArn(ResourceApplicationArnT&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.emplace_back(std::forward<ResourceApplicationArnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -644,14 +644,14 @@ namespace Model
      * <p> The name of the application that is related to a finding. </p> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const{ return m_resourceApplicationName; }
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const { return m_resourceApplicationName; }
     inline bool ResourceApplicationNameHasBeenSet() const { return m_resourceApplicationNameHasBeenSet; }
-    inline void SetResourceApplicationName(const Aws::Vector<StringFilter>& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = value; }
-    inline void SetResourceApplicationName(Aws::Vector<StringFilter>&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::move(value); }
-    inline AutomationRulesFindingFilters& WithResourceApplicationName(const Aws::Vector<StringFilter>& value) { SetResourceApplicationName(value); return *this;}
-    inline AutomationRulesFindingFilters& WithResourceApplicationName(Aws::Vector<StringFilter>&& value) { SetResourceApplicationName(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddResourceApplicationName(const StringFilter& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddResourceApplicationName(StringFilter&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(std::move(value)); return *this; }
+    template<typename ResourceApplicationNameT = Aws::Vector<StringFilter>>
+    void SetResourceApplicationName(ResourceApplicationNameT&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::forward<ResourceApplicationNameT>(value); }
+    template<typename ResourceApplicationNameT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithResourceApplicationName(ResourceApplicationNameT&& value) { SetResourceApplicationName(std::forward<ResourceApplicationNameT>(value)); return *this;}
+    template<typename ResourceApplicationNameT = StringFilter>
+    AutomationRulesFindingFilters& AddResourceApplicationName(ResourceApplicationNameT&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.emplace_back(std::forward<ResourceApplicationNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -660,14 +660,14 @@ namespace Model
      * </p> <p> Array Members: Minimum number of 1 item. Maximum number of 20 items.
      * </p>
      */
-    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const{ return m_awsAccountName; }
+    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const { return m_awsAccountName; }
     inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
-    inline void SetAwsAccountName(const Aws::Vector<StringFilter>& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
-    inline void SetAwsAccountName(Aws::Vector<StringFilter>&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
-    inline AutomationRulesFindingFilters& WithAwsAccountName(const Aws::Vector<StringFilter>& value) { SetAwsAccountName(value); return *this;}
-    inline AutomationRulesFindingFilters& WithAwsAccountName(Aws::Vector<StringFilter>&& value) { SetAwsAccountName(std::move(value)); return *this;}
-    inline AutomationRulesFindingFilters& AddAwsAccountName(const StringFilter& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(value); return *this; }
-    inline AutomationRulesFindingFilters& AddAwsAccountName(StringFilter&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(std::move(value)); return *this; }
+    template<typename AwsAccountNameT = Aws::Vector<StringFilter>>
+    void SetAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::forward<AwsAccountNameT>(value); }
+    template<typename AwsAccountNameT = Aws::Vector<StringFilter>>
+    AutomationRulesFindingFilters& WithAwsAccountName(AwsAccountNameT&& value) { SetAwsAccountName(std::forward<AwsAccountNameT>(value)); return *this;}
+    template<typename AwsAccountNameT = StringFilter>
+    AutomationRulesFindingFilters& AddAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.emplace_back(std::forward<AwsAccountNameT>(value)); return *this; }
     ///@}
   private:
 

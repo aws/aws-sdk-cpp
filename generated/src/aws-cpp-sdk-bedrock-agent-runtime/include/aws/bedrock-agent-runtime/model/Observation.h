@@ -39,7 +39,7 @@ namespace Model
   class Observation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Observation();
+    AWS_BEDROCKAGENTRUNTIME_API Observation() = default;
     AWS_BEDROCKAGENTRUNTIME_API Observation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,24 +50,24 @@ namespace Model
      * <p>Contains the JSON-formatted string returned by the API invoked by the action
      * group.</p>
      */
-    inline const ActionGroupInvocationOutput& GetActionGroupInvocationOutput() const{ return m_actionGroupInvocationOutput; }
+    inline const ActionGroupInvocationOutput& GetActionGroupInvocationOutput() const { return m_actionGroupInvocationOutput; }
     inline bool ActionGroupInvocationOutputHasBeenSet() const { return m_actionGroupInvocationOutputHasBeenSet; }
-    inline void SetActionGroupInvocationOutput(const ActionGroupInvocationOutput& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = value; }
-    inline void SetActionGroupInvocationOutput(ActionGroupInvocationOutput&& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = std::move(value); }
-    inline Observation& WithActionGroupInvocationOutput(const ActionGroupInvocationOutput& value) { SetActionGroupInvocationOutput(value); return *this;}
-    inline Observation& WithActionGroupInvocationOutput(ActionGroupInvocationOutput&& value) { SetActionGroupInvocationOutput(std::move(value)); return *this;}
+    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
+    void SetActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { m_actionGroupInvocationOutputHasBeenSet = true; m_actionGroupInvocationOutput = std::forward<ActionGroupInvocationOutputT>(value); }
+    template<typename ActionGroupInvocationOutputT = ActionGroupInvocationOutput>
+    Observation& WithActionGroupInvocationOutput(ActionGroupInvocationOutputT&& value) { SetActionGroupInvocationOutput(std::forward<ActionGroupInvocationOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collaborator's invocation output.</p>
      */
-    inline const AgentCollaboratorInvocationOutput& GetAgentCollaboratorInvocationOutput() const{ return m_agentCollaboratorInvocationOutput; }
+    inline const AgentCollaboratorInvocationOutput& GetAgentCollaboratorInvocationOutput() const { return m_agentCollaboratorInvocationOutput; }
     inline bool AgentCollaboratorInvocationOutputHasBeenSet() const { return m_agentCollaboratorInvocationOutputHasBeenSet; }
-    inline void SetAgentCollaboratorInvocationOutput(const AgentCollaboratorInvocationOutput& value) { m_agentCollaboratorInvocationOutputHasBeenSet = true; m_agentCollaboratorInvocationOutput = value; }
-    inline void SetAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutput&& value) { m_agentCollaboratorInvocationOutputHasBeenSet = true; m_agentCollaboratorInvocationOutput = std::move(value); }
-    inline Observation& WithAgentCollaboratorInvocationOutput(const AgentCollaboratorInvocationOutput& value) { SetAgentCollaboratorInvocationOutput(value); return *this;}
-    inline Observation& WithAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutput&& value) { SetAgentCollaboratorInvocationOutput(std::move(value)); return *this;}
+    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
+    void SetAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { m_agentCollaboratorInvocationOutputHasBeenSet = true; m_agentCollaboratorInvocationOutput = std::forward<AgentCollaboratorInvocationOutputT>(value); }
+    template<typename AgentCollaboratorInvocationOutputT = AgentCollaboratorInvocationOutput>
+    Observation& WithAgentCollaboratorInvocationOutput(AgentCollaboratorInvocationOutputT&& value) { SetAgentCollaboratorInvocationOutput(std::forward<AgentCollaboratorInvocationOutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,62 +75,60 @@ namespace Model
      * <p>Contains the JSON-formatted string returned by the API invoked by the code
      * interpreter.</p>
      */
-    inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const{ return m_codeInterpreterInvocationOutput; }
+    inline const CodeInterpreterInvocationOutput& GetCodeInterpreterInvocationOutput() const { return m_codeInterpreterInvocationOutput; }
     inline bool CodeInterpreterInvocationOutputHasBeenSet() const { return m_codeInterpreterInvocationOutputHasBeenSet; }
-    inline void SetCodeInterpreterInvocationOutput(const CodeInterpreterInvocationOutput& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = value; }
-    inline void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutput&& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = std::move(value); }
-    inline Observation& WithCodeInterpreterInvocationOutput(const CodeInterpreterInvocationOutput& value) { SetCodeInterpreterInvocationOutput(value); return *this;}
-    inline Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutput&& value) { SetCodeInterpreterInvocationOutput(std::move(value)); return *this;}
+    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+    void SetCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { m_codeInterpreterInvocationOutputHasBeenSet = true; m_codeInterpreterInvocationOutput = std::forward<CodeInterpreterInvocationOutputT>(value); }
+    template<typename CodeInterpreterInvocationOutputT = CodeInterpreterInvocationOutput>
+    Observation& WithCodeInterpreterInvocationOutput(CodeInterpreterInvocationOutputT&& value) { SetCodeInterpreterInvocationOutput(std::forward<CodeInterpreterInvocationOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the response to the user.</p>
      */
-    inline const FinalResponse& GetFinalResponse() const{ return m_finalResponse; }
+    inline const FinalResponse& GetFinalResponse() const { return m_finalResponse; }
     inline bool FinalResponseHasBeenSet() const { return m_finalResponseHasBeenSet; }
-    inline void SetFinalResponse(const FinalResponse& value) { m_finalResponseHasBeenSet = true; m_finalResponse = value; }
-    inline void SetFinalResponse(FinalResponse&& value) { m_finalResponseHasBeenSet = true; m_finalResponse = std::move(value); }
-    inline Observation& WithFinalResponse(const FinalResponse& value) { SetFinalResponse(value); return *this;}
-    inline Observation& WithFinalResponse(FinalResponse&& value) { SetFinalResponse(std::move(value)); return *this;}
+    template<typename FinalResponseT = FinalResponse>
+    void SetFinalResponse(FinalResponseT&& value) { m_finalResponseHasBeenSet = true; m_finalResponse = std::forward<FinalResponseT>(value); }
+    template<typename FinalResponseT = FinalResponse>
+    Observation& WithFinalResponse(FinalResponseT&& value) { SetFinalResponse(std::forward<FinalResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the results from looking up the knowledge base.</p>
      */
-    inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const{ return m_knowledgeBaseLookupOutput; }
+    inline const KnowledgeBaseLookupOutput& GetKnowledgeBaseLookupOutput() const { return m_knowledgeBaseLookupOutput; }
     inline bool KnowledgeBaseLookupOutputHasBeenSet() const { return m_knowledgeBaseLookupOutputHasBeenSet; }
-    inline void SetKnowledgeBaseLookupOutput(const KnowledgeBaseLookupOutput& value) { m_knowledgeBaseLookupOutputHasBeenSet = true; m_knowledgeBaseLookupOutput = value; }
-    inline void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutput&& value) { m_knowledgeBaseLookupOutputHasBeenSet = true; m_knowledgeBaseLookupOutput = std::move(value); }
-    inline Observation& WithKnowledgeBaseLookupOutput(const KnowledgeBaseLookupOutput& value) { SetKnowledgeBaseLookupOutput(value); return *this;}
-    inline Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutput&& value) { SetKnowledgeBaseLookupOutput(std::move(value)); return *this;}
+    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+    void SetKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { m_knowledgeBaseLookupOutputHasBeenSet = true; m_knowledgeBaseLookupOutput = std::forward<KnowledgeBaseLookupOutputT>(value); }
+    template<typename KnowledgeBaseLookupOutputT = KnowledgeBaseLookupOutput>
+    Observation& WithKnowledgeBaseLookupOutput(KnowledgeBaseLookupOutputT&& value) { SetKnowledgeBaseLookupOutput(std::forward<KnowledgeBaseLookupOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the response to reprompt the input.</p>
      */
-    inline const RepromptResponse& GetRepromptResponse() const{ return m_repromptResponse; }
+    inline const RepromptResponse& GetRepromptResponse() const { return m_repromptResponse; }
     inline bool RepromptResponseHasBeenSet() const { return m_repromptResponseHasBeenSet; }
-    inline void SetRepromptResponse(const RepromptResponse& value) { m_repromptResponseHasBeenSet = true; m_repromptResponse = value; }
-    inline void SetRepromptResponse(RepromptResponse&& value) { m_repromptResponseHasBeenSet = true; m_repromptResponse = std::move(value); }
-    inline Observation& WithRepromptResponse(const RepromptResponse& value) { SetRepromptResponse(value); return *this;}
-    inline Observation& WithRepromptResponse(RepromptResponse&& value) { SetRepromptResponse(std::move(value)); return *this;}
+    template<typename RepromptResponseT = RepromptResponse>
+    void SetRepromptResponse(RepromptResponseT&& value) { m_repromptResponseHasBeenSet = true; m_repromptResponse = std::forward<RepromptResponseT>(value); }
+    template<typename RepromptResponseT = RepromptResponse>
+    Observation& WithRepromptResponse(RepromptResponseT&& value) { SetRepromptResponse(std::forward<RepromptResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the trace.</p>
      */
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-    inline Observation& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-    inline Observation& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-    inline Observation& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    Observation& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +142,10 @@ namespace Model
      * – The agent asks the user a question.</p> </li> <li> <p> <code>REPROMPT</code> –
      * The agent prompts the user again for the same information.</p> </li> </ul>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Observation& WithType(const Type& value) { SetType(value); return *this;}
-    inline Observation& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Observation& WithType(Type value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -174,7 +170,7 @@ namespace Model
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

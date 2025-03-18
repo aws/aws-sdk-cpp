@@ -18,13 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ActivityStartedEventDetails::ActivityStartedEventDetails() : 
-    m_workerNameHasBeenSet(false)
-{
-}
-
 ActivityStartedEventDetails::ActivityStartedEventDetails(JsonView jsonValue)
-  : ActivityStartedEventDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActivityStartedEventDetails& ActivityStartedEventDetails::operator =(JsonView js
   if(jsonValue.ValueExists("workerName"))
   {
     m_workerName = jsonValue.GetString("workerName");
-
     m_workerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

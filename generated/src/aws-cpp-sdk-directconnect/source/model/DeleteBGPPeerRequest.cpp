@@ -12,15 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBGPPeerRequest::DeleteBGPPeerRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_bgpPeerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBGPPeerRequest::SerializePayload() const
 {
   JsonValue payload;

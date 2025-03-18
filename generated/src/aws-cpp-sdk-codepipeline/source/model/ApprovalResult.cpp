@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ApprovalResult::ApprovalResult() : 
-    m_summaryHasBeenSet(false),
-    m_status(ApprovalStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ApprovalResult::ApprovalResult(JsonView jsonValue)
-  : ApprovalResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApprovalResult& ApprovalResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ApprovalStatusMapper::GetApprovalStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

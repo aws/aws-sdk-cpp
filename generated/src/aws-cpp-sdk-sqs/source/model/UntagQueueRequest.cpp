@@ -12,12 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UntagQueueRequest::UntagQueueRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagQueueRequest::SerializePayload() const
 {
   JsonValue payload;

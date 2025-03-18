@@ -38,7 +38,7 @@ namespace Model
   class PushNotificationTemplateResponse
   {
   public:
-    AWS_PINPOINT_API PushNotificationTemplateResponse();
+    AWS_PINPOINT_API PushNotificationTemplateResponse() = default;
     AWS_PINPOINT_API PushNotificationTemplateResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API PushNotificationTemplateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * channel. This message template overrides the default template for push
      * notification channels (DefaultPushNotificationTemplate).</p>
      */
-    inline const AndroidPushNotificationTemplate& GetADM() const{ return m_aDM; }
+    inline const AndroidPushNotificationTemplate& GetADM() const { return m_aDM; }
     inline bool ADMHasBeenSet() const { return m_aDMHasBeenSet; }
-    inline void SetADM(const AndroidPushNotificationTemplate& value) { m_aDMHasBeenSet = true; m_aDM = value; }
-    inline void SetADM(AndroidPushNotificationTemplate&& value) { m_aDMHasBeenSet = true; m_aDM = std::move(value); }
-    inline PushNotificationTemplateResponse& WithADM(const AndroidPushNotificationTemplate& value) { SetADM(value); return *this;}
-    inline PushNotificationTemplateResponse& WithADM(AndroidPushNotificationTemplate&& value) { SetADM(std::move(value)); return *this;}
+    template<typename ADMT = AndroidPushNotificationTemplate>
+    void SetADM(ADMT&& value) { m_aDMHasBeenSet = true; m_aDM = std::forward<ADMT>(value); }
+    template<typename ADMT = AndroidPushNotificationTemplate>
+    PushNotificationTemplateResponse& WithADM(ADMT&& value) { SetADM(std::forward<ADMT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,26 +64,24 @@ namespace Model
      * service) channel. This message template overrides the default template for push
      * notification channels (DefaultPushNotificationTemplate).</p>
      */
-    inline const APNSPushNotificationTemplate& GetAPNS() const{ return m_aPNS; }
+    inline const APNSPushNotificationTemplate& GetAPNS() const { return m_aPNS; }
     inline bool APNSHasBeenSet() const { return m_aPNSHasBeenSet; }
-    inline void SetAPNS(const APNSPushNotificationTemplate& value) { m_aPNSHasBeenSet = true; m_aPNS = value; }
-    inline void SetAPNS(APNSPushNotificationTemplate&& value) { m_aPNSHasBeenSet = true; m_aPNS = std::move(value); }
-    inline PushNotificationTemplateResponse& WithAPNS(const APNSPushNotificationTemplate& value) { SetAPNS(value); return *this;}
-    inline PushNotificationTemplateResponse& WithAPNS(APNSPushNotificationTemplate&& value) { SetAPNS(std::move(value)); return *this;}
+    template<typename APNST = APNSPushNotificationTemplate>
+    void SetAPNS(APNST&& value) { m_aPNSHasBeenSet = true; m_aPNS = std::forward<APNST>(value); }
+    template<typename APNST = APNSPushNotificationTemplate>
+    PushNotificationTemplateResponse& WithAPNS(APNST&& value) { SetAPNS(std::forward<APNST>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the message template.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PushNotificationTemplateResponse& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PushNotificationTemplateResponse& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PushNotificationTemplateResponse& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,38 +90,36 @@ namespace Model
      * This message template overrides the default template for push notification
      * channels (DefaultPushNotificationTemplate).</p>
      */
-    inline const AndroidPushNotificationTemplate& GetBaidu() const{ return m_baidu; }
+    inline const AndroidPushNotificationTemplate& GetBaidu() const { return m_baidu; }
     inline bool BaiduHasBeenSet() const { return m_baiduHasBeenSet; }
-    inline void SetBaidu(const AndroidPushNotificationTemplate& value) { m_baiduHasBeenSet = true; m_baidu = value; }
-    inline void SetBaidu(AndroidPushNotificationTemplate&& value) { m_baiduHasBeenSet = true; m_baidu = std::move(value); }
-    inline PushNotificationTemplateResponse& WithBaidu(const AndroidPushNotificationTemplate& value) { SetBaidu(value); return *this;}
-    inline PushNotificationTemplateResponse& WithBaidu(AndroidPushNotificationTemplate&& value) { SetBaidu(std::move(value)); return *this;}
+    template<typename BaiduT = AndroidPushNotificationTemplate>
+    void SetBaidu(BaiduT&& value) { m_baiduHasBeenSet = true; m_baidu = std::forward<BaiduT>(value); }
+    template<typename BaiduT = AndroidPushNotificationTemplate>
+    PushNotificationTemplateResponse& WithBaidu(BaiduT&& value) { SetBaidu(std::forward<BaiduT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline PushNotificationTemplateResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline PushNotificationTemplateResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    PushNotificationTemplateResponse& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default message template that's used for push notification channels.</p>
      */
-    inline const DefaultPushNotificationTemplate& GetDefault() const{ return m_default; }
+    inline const DefaultPushNotificationTemplate& GetDefault() const { return m_default; }
     inline bool DefaultHasBeenSet() const { return m_defaultHasBeenSet; }
-    inline void SetDefault(const DefaultPushNotificationTemplate& value) { m_defaultHasBeenSet = true; m_default = value; }
-    inline void SetDefault(DefaultPushNotificationTemplate&& value) { m_defaultHasBeenSet = true; m_default = std::move(value); }
-    inline PushNotificationTemplateResponse& WithDefault(const DefaultPushNotificationTemplate& value) { SetDefault(value); return *this;}
-    inline PushNotificationTemplateResponse& WithDefault(DefaultPushNotificationTemplate&& value) { SetDefault(std::move(value)); return *this;}
+    template<typename DefaultT = DefaultPushNotificationTemplate>
+    void SetDefault(DefaultT&& value) { m_defaultHasBeenSet = true; m_default = std::forward<DefaultT>(value); }
+    template<typename DefaultT = DefaultPushNotificationTemplate>
+    PushNotificationTemplateResponse& WithDefault(DefaultT&& value) { SetDefault(std::forward<DefaultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +129,12 @@ namespace Model
      * key defines a message variable in the template. The corresponding value defines
      * the default value for that variable.</p>
      */
-    inline const Aws::String& GetDefaultSubstitutions() const{ return m_defaultSubstitutions; }
+    inline const Aws::String& GetDefaultSubstitutions() const { return m_defaultSubstitutions; }
     inline bool DefaultSubstitutionsHasBeenSet() const { return m_defaultSubstitutionsHasBeenSet; }
-    inline void SetDefaultSubstitutions(const Aws::String& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = value; }
-    inline void SetDefaultSubstitutions(Aws::String&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::move(value); }
-    inline void SetDefaultSubstitutions(const char* value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions.assign(value); }
-    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(const Aws::String& value) { SetDefaultSubstitutions(value); return *this;}
-    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(Aws::String&& value) { SetDefaultSubstitutions(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(const char* value) { SetDefaultSubstitutions(value); return *this;}
+    template<typename DefaultSubstitutionsT = Aws::String>
+    void SetDefaultSubstitutions(DefaultSubstitutionsT&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::forward<DefaultSubstitutionsT>(value); }
+    template<typename DefaultSubstitutionsT = Aws::String>
+    PushNotificationTemplateResponse& WithDefaultSubstitutions(DefaultSubstitutionsT&& value) { SetDefaultSubstitutions(std::forward<DefaultSubstitutionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +144,12 @@ namespace Model
      * Messaging (GCM), service. This message template overrides the default template
      * for push notification channels (DefaultPushNotificationTemplate).</p>
      */
-    inline const AndroidPushNotificationTemplate& GetGCM() const{ return m_gCM; }
+    inline const AndroidPushNotificationTemplate& GetGCM() const { return m_gCM; }
     inline bool GCMHasBeenSet() const { return m_gCMHasBeenSet; }
-    inline void SetGCM(const AndroidPushNotificationTemplate& value) { m_gCMHasBeenSet = true; m_gCM = value; }
-    inline void SetGCM(AndroidPushNotificationTemplate&& value) { m_gCMHasBeenSet = true; m_gCM = std::move(value); }
-    inline PushNotificationTemplateResponse& WithGCM(const AndroidPushNotificationTemplate& value) { SetGCM(value); return *this;}
-    inline PushNotificationTemplateResponse& WithGCM(AndroidPushNotificationTemplate&& value) { SetGCM(std::move(value)); return *this;}
+    template<typename GCMT = AndroidPushNotificationTemplate>
+    void SetGCM(GCMT&& value) { m_gCMHasBeenSet = true; m_gCM = std::forward<GCMT>(value); }
+    template<typename GCMT = AndroidPushNotificationTemplate>
+    PushNotificationTemplateResponse& WithGCM(GCMT&& value) { SetGCM(std::forward<GCMT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +157,12 @@ namespace Model
      * <p>The date, in ISO 8601 format, when the message template was last
      * modified.</p>
      */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::String& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-    inline PushNotificationTemplateResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-    inline PushNotificationTemplateResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    template<typename LastModifiedDateT = Aws::String>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::String>
+    PushNotificationTemplateResponse& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +170,12 @@ namespace Model
      * <p>The unique identifier for the recommender model that's used by the message
      * template.</p>
      */
-    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+    inline const Aws::String& GetRecommenderId() const { return m_recommenderId; }
     inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
-    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
-    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
-    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
-    inline PushNotificationTemplateResponse& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
-    inline PushNotificationTemplateResponse& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+    template<typename RecommenderIdT = Aws::String>
+    void SetRecommenderId(RecommenderIdT&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::forward<RecommenderIdT>(value); }
+    template<typename RecommenderIdT = Aws::String>
+    PushNotificationTemplateResponse& WithRecommenderId(RecommenderIdT&& value) { SetRecommenderId(std::forward<RecommenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,47 +184,40 @@ namespace Model
      * associated with the message template. Each tag consists of a required tag key
      * and an associated tag value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PushNotificationTemplateResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline PushNotificationTemplateResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PushNotificationTemplateResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    PushNotificationTemplateResponse& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    PushNotificationTemplateResponse& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The custom description of the message template.</p>
      */
-    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+    inline const Aws::String& GetTemplateDescription() const { return m_templateDescription; }
     inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
-    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
-    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
-    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
-    inline PushNotificationTemplateResponse& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
-    inline PushNotificationTemplateResponse& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+    template<typename TemplateDescriptionT = Aws::String>
+    void SetTemplateDescription(TemplateDescriptionT&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::forward<TemplateDescriptionT>(value); }
+    template<typename TemplateDescriptionT = Aws::String>
+    PushNotificationTemplateResponse& WithTemplateDescription(TemplateDescriptionT&& value) { SetTemplateDescription(std::forward<TemplateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the message template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline PushNotificationTemplateResponse& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline PushNotificationTemplateResponse& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    PushNotificationTemplateResponse& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,12 +225,10 @@ namespace Model
      * <p>The type of channel that the message template is designed for. For a push
      * notification template, this value is PUSH.</p>
      */
-    inline const TemplateType& GetTemplateType() const{ return m_templateType; }
+    inline TemplateType GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline PushNotificationTemplateResponse& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
-    inline PushNotificationTemplateResponse& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline void SetTemplateType(TemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline PushNotificationTemplateResponse& WithTemplateType(TemplateType value) { SetTemplateType(value); return *this;}
     ///@}
 
     ///@{
@@ -256,14 +237,12 @@ namespace Model
      * template, or the version of the template that you specified by using the version
      * parameter in your request.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline PushNotificationTemplateResponse& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline PushNotificationTemplateResponse& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline PushNotificationTemplateResponse& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    PushNotificationTemplateResponse& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -306,7 +285,7 @@ namespace Model
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet = false;
 
-    TemplateType m_templateType;
+    TemplateType m_templateType{TemplateType::NOT_SET};
     bool m_templateTypeHasBeenSet = false;
 
     Aws::String m_version;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAIGuardrailResult::CreateAIGuardrailResult()
-{
-}
-
 CreateAIGuardrailResult::CreateAIGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAIGuardrailResult& CreateAIGuardrailResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("aiGuardrail"))
   {
     m_aiGuardrail = jsonValue.GetObject("aiGuardrail");
-
+    m_aiGuardrailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

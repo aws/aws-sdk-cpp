@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorkspaceBundleResult::CreateWorkspaceBundleResult()
-{
-}
-
 CreateWorkspaceBundleResult::CreateWorkspaceBundleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWorkspaceBundleResult& CreateWorkspaceBundleResult::operator =(const Aws::
   if(jsonValue.ValueExists("WorkspaceBundle"))
   {
     m_workspaceBundle = jsonValue.GetObject("WorkspaceBundle");
-
+    m_workspaceBundleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

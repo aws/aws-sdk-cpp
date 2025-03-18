@@ -35,7 +35,7 @@ namespace Model
   class ViewBillingResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API ViewBillingResult();
+    AWS_ROUTE53DOMAINS_API ViewBillingResult() = default;
     AWS_ROUTE53DOMAINS_API ViewBillingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API ViewBillingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,45 +46,44 @@ namespace Model
      * <code>MaxItems</code> in the request, submit another request and include the
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
-    inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
-    inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
-    inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
-    inline ViewBillingResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
-    inline ViewBillingResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
-    inline ViewBillingResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
+    inline const Aws::String& GetNextPageMarker() const { return m_nextPageMarker; }
+    template<typename NextPageMarkerT = Aws::String>
+    void SetNextPageMarker(NextPageMarkerT&& value) { m_nextPageMarkerHasBeenSet = true; m_nextPageMarker = std::forward<NextPageMarkerT>(value); }
+    template<typename NextPageMarkerT = Aws::String>
+    ViewBillingResult& WithNextPageMarker(NextPageMarkerT&& value) { SetNextPageMarker(std::forward<NextPageMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A summary of billing records.</p>
      */
-    inline const Aws::Vector<BillingRecord>& GetBillingRecords() const{ return m_billingRecords; }
-    inline void SetBillingRecords(const Aws::Vector<BillingRecord>& value) { m_billingRecords = value; }
-    inline void SetBillingRecords(Aws::Vector<BillingRecord>&& value) { m_billingRecords = std::move(value); }
-    inline ViewBillingResult& WithBillingRecords(const Aws::Vector<BillingRecord>& value) { SetBillingRecords(value); return *this;}
-    inline ViewBillingResult& WithBillingRecords(Aws::Vector<BillingRecord>&& value) { SetBillingRecords(std::move(value)); return *this;}
-    inline ViewBillingResult& AddBillingRecords(const BillingRecord& value) { m_billingRecords.push_back(value); return *this; }
-    inline ViewBillingResult& AddBillingRecords(BillingRecord&& value) { m_billingRecords.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BillingRecord>& GetBillingRecords() const { return m_billingRecords; }
+    template<typename BillingRecordsT = Aws::Vector<BillingRecord>>
+    void SetBillingRecords(BillingRecordsT&& value) { m_billingRecordsHasBeenSet = true; m_billingRecords = std::forward<BillingRecordsT>(value); }
+    template<typename BillingRecordsT = Aws::Vector<BillingRecord>>
+    ViewBillingResult& WithBillingRecords(BillingRecordsT&& value) { SetBillingRecords(std::forward<BillingRecordsT>(value)); return *this;}
+    template<typename BillingRecordsT = BillingRecord>
+    ViewBillingResult& AddBillingRecords(BillingRecordsT&& value) { m_billingRecordsHasBeenSet = true; m_billingRecords.emplace_back(std::forward<BillingRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ViewBillingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ViewBillingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ViewBillingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ViewBillingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextPageMarker;
+    bool m_nextPageMarkerHasBeenSet = false;
 
     Aws::Vector<BillingRecord> m_billingRecords;
+    bool m_billingRecordsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

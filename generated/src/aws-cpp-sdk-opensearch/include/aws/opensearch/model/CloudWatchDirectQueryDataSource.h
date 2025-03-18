@@ -32,7 +32,7 @@ namespace Model
   class CloudWatchDirectQueryDataSource
   {
   public:
-    AWS_OPENSEARCHSERVICE_API CloudWatchDirectQueryDataSource();
+    AWS_OPENSEARCHSERVICE_API CloudWatchDirectQueryDataSource() = default;
     AWS_OPENSEARCHSERVICE_API CloudWatchDirectQueryDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API CloudWatchDirectQueryDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The unique identifier of the IAM role that grants OpenSearch Service
      * permission to access the specified data source. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CloudWatchDirectQueryDataSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CloudWatchDirectQueryDataSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CloudWatchDirectQueryDataSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CloudWatchDirectQueryDataSource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

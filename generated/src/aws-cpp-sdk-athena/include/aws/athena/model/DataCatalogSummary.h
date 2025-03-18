@@ -35,7 +35,7 @@ namespace Model
   class DataCatalogSummary
   {
   public:
-    AWS_ATHENA_API DataCatalogSummary();
+    AWS_ATHENA_API DataCatalogSummary() = default;
     AWS_ATHENA_API DataCatalogSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API DataCatalogSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,22 @@ namespace Model
      * or hyphen characters. The remainder of the length constraint of 256 is reserved
      * for use by Athena.</p>
      */
-    inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
+    inline const Aws::String& GetCatalogName() const { return m_catalogName; }
     inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
-    inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
-    inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
-    inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
-    inline DataCatalogSummary& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
-    inline DataCatalogSummary& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
-    inline DataCatalogSummary& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+    template<typename CatalogNameT = Aws::String>
+    void SetCatalogName(CatalogNameT&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::forward<CatalogNameT>(value); }
+    template<typename CatalogNameT = Aws::String>
+    DataCatalogSummary& WithCatalogName(CatalogNameT&& value) { SetCatalogName(std::forward<CatalogNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data catalog type.</p>
      */
-    inline const DataCatalogType& GetType() const{ return m_type; }
+    inline DataCatalogType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataCatalogType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataCatalogType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataCatalogSummary& WithType(const DataCatalogType& value) { SetType(value); return *this;}
-    inline DataCatalogSummary& WithType(DataCatalogType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataCatalogType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataCatalogSummary& WithType(DataCatalogType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,10 @@ namespace Model
      * Federated data catalog deleted.</p> </li> <li> <p> <code>DELETE_FAILED</code>:
      * Federated data catalog could not be deleted.</p> </li> </ul>
      */
-    inline const DataCatalogStatus& GetStatus() const{ return m_status; }
+    inline DataCatalogStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataCatalogStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataCatalogStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataCatalogSummary& WithStatus(const DataCatalogStatus& value) { SetStatus(value); return *this;}
-    inline DataCatalogSummary& WithStatus(DataCatalogStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataCatalogStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataCatalogSummary& WithStatus(DataCatalogStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,39 +102,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available
      * data source connectors</a>.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline DataCatalogSummary& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline DataCatalogSummary& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline DataCatalogSummary& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Text of the error that occurred during data catalog creation or deletion.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline DataCatalogSummary& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline DataCatalogSummary& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline DataCatalogSummary& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    DataCatalogSummary& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalogName;
     bool m_catalogNameHasBeenSet = false;
 
-    DataCatalogType m_type;
+    DataCatalogType m_type{DataCatalogType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    DataCatalogStatus m_status;
+    DataCatalogStatus m_status{DataCatalogStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_error;

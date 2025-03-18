@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ExplainerConfig::ExplainerConfig() : 
-    m_clarifyExplainerConfigHasBeenSet(false)
-{
-}
-
 ExplainerConfig::ExplainerConfig(JsonView jsonValue)
-  : ExplainerConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExplainerConfig& ExplainerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClarifyExplainerConfig"))
   {
     m_clarifyExplainerConfig = jsonValue.GetObject("ClarifyExplainerConfig");
-
     m_clarifyExplainerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

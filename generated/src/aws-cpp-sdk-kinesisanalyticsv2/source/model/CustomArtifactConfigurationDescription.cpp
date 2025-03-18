@@ -18,16 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-CustomArtifactConfigurationDescription::CustomArtifactConfigurationDescription() : 
-    m_artifactType(ArtifactType::NOT_SET),
-    m_artifactTypeHasBeenSet(false),
-    m_s3ContentLocationDescriptionHasBeenSet(false),
-    m_mavenReferenceDescriptionHasBeenSet(false)
-{
-}
-
 CustomArtifactConfigurationDescription::CustomArtifactConfigurationDescription(JsonView jsonValue)
-  : CustomArtifactConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomArtifactConfigurationDescription& CustomArtifactConfigurationDescription::
   if(jsonValue.ValueExists("ArtifactType"))
   {
     m_artifactType = ArtifactTypeMapper::GetArtifactTypeForName(jsonValue.GetString("ArtifactType"));
-
     m_artifactTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ContentLocationDescription"))
   {
     m_s3ContentLocationDescription = jsonValue.GetObject("S3ContentLocationDescription");
-
     m_s3ContentLocationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MavenReferenceDescription"))
   {
     m_mavenReferenceDescription = jsonValue.GetObject("MavenReferenceDescription");
-
     m_mavenReferenceDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartImportResult::StartImportResult() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_importStatus(ImportStatus::NOT_SET)
-{
-}
-
 StartImportResult::StartImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartImportResult()
 {
   *this = result;
 }
@@ -36,33 +28,28 @@ StartImportResult& StartImportResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
+    m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeStrategy"))
   {
     m_mergeStrategy = MergeStrategyMapper::GetMergeStrategyForName(jsonValue.GetString("mergeStrategy"));
-
+    m_mergeStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importId"))
   {
     m_importId = jsonValue.GetString("importId");
-
+    m_importIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("importStatus"));
-
+    m_importStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -70,20 +57,20 @@ StartImportResult& StartImportResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

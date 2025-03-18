@@ -34,7 +34,7 @@ namespace Model
   class EksContainerVolumeMount
   {
   public:
-    AWS_BATCH_API EksContainerVolumeMount();
+    AWS_BATCH_API EksContainerVolumeMount() = default;
     AWS_BATCH_API EksContainerVolumeMount(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksContainerVolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,36 @@ namespace Model
      * <p>The name the volume mount. This must match the name of one of the volumes in
      * the pod.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EksContainerVolumeMount& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EksContainerVolumeMount& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EksContainerVolumeMount& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EksContainerVolumeMount& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path on the container where the volume is mounted.</p>
      */
-    inline const Aws::String& GetMountPath() const{ return m_mountPath; }
+    inline const Aws::String& GetMountPath() const { return m_mountPath; }
     inline bool MountPathHasBeenSet() const { return m_mountPathHasBeenSet; }
-    inline void SetMountPath(const Aws::String& value) { m_mountPathHasBeenSet = true; m_mountPath = value; }
-    inline void SetMountPath(Aws::String&& value) { m_mountPathHasBeenSet = true; m_mountPath = std::move(value); }
-    inline void SetMountPath(const char* value) { m_mountPathHasBeenSet = true; m_mountPath.assign(value); }
-    inline EksContainerVolumeMount& WithMountPath(const Aws::String& value) { SetMountPath(value); return *this;}
-    inline EksContainerVolumeMount& WithMountPath(Aws::String&& value) { SetMountPath(std::move(value)); return *this;}
-    inline EksContainerVolumeMount& WithMountPath(const char* value) { SetMountPath(value); return *this;}
+    template<typename MountPathT = Aws::String>
+    void SetMountPath(MountPathT&& value) { m_mountPathHasBeenSet = true; m_mountPath = std::forward<MountPathT>(value); }
+    template<typename MountPathT = Aws::String>
+    EksContainerVolumeMount& WithMountPath(MountPathT&& value) { SetMountPath(std::forward<MountPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A sub-path inside the referenced volume instead of its root.</p>
      */
-    inline const Aws::String& GetSubPath() const{ return m_subPath; }
+    inline const Aws::String& GetSubPath() const { return m_subPath; }
     inline bool SubPathHasBeenSet() const { return m_subPathHasBeenSet; }
-    inline void SetSubPath(const Aws::String& value) { m_subPathHasBeenSet = true; m_subPath = value; }
-    inline void SetSubPath(Aws::String&& value) { m_subPathHasBeenSet = true; m_subPath = std::move(value); }
-    inline void SetSubPath(const char* value) { m_subPathHasBeenSet = true; m_subPath.assign(value); }
-    inline EksContainerVolumeMount& WithSubPath(const Aws::String& value) { SetSubPath(value); return *this;}
-    inline EksContainerVolumeMount& WithSubPath(Aws::String&& value) { SetSubPath(std::move(value)); return *this;}
-    inline EksContainerVolumeMount& WithSubPath(const char* value) { SetSubPath(value); return *this;}
+    template<typename SubPathT = Aws::String>
+    void SetSubPath(SubPathT&& value) { m_subPathHasBeenSet = true; m_subPath = std::forward<SubPathT>(value); }
+    template<typename SubPathT = Aws::String>
+    EksContainerVolumeMount& WithSubPath(SubPathT&& value) { SetSubPath(std::forward<SubPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline EksContainerVolumeMount& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_subPath;
     bool m_subPathHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
   };
 

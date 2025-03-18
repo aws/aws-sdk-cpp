@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-DestinationConfiguration::DestinationConfiguration() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

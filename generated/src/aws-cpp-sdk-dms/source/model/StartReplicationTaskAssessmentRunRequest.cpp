@@ -12,20 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReplicationTaskAssessmentRunRequest::StartReplicationTaskAssessmentRunRequest() : 
-    m_replicationTaskArnHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_resultLocationBucketHasBeenSet(false),
-    m_resultLocationFolderHasBeenSet(false),
-    m_resultEncryptionModeHasBeenSet(false),
-    m_resultKmsKeyArnHasBeenSet(false),
-    m_assessmentRunNameHasBeenSet(false),
-    m_includeOnlyHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartReplicationTaskAssessmentRunRequest::SerializePayload() const
 {
   JsonValue payload;

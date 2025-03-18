@@ -18,17 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverDnssecConfig::ResolverDnssecConfig() : 
-    m_idHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_validationStatus(ResolverDNSSECValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
-{
-}
-
 ResolverDnssecConfig::ResolverDnssecConfig(JsonView jsonValue)
-  : ResolverDnssecConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ResolverDnssecConfig& ResolverDnssecConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationStatus"))
   {
     m_validationStatus = ResolverDNSSECValidationStatusMapper::GetResolverDNSSECValidationStatusForName(jsonValue.GetString("ValidationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLensReviewsResult::ListLensReviewsResult() : 
-    m_milestoneNumber(0)
-{
-}
-
 ListLensReviewsResult::ListLensReviewsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListLensReviewsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListLensReviewsResult& ListLensReviewsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MilestoneNumber"))
   {
     m_milestoneNumber = jsonValue.GetInteger("MilestoneNumber");
-
+    m_milestoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensReviewSummaries"))
   {
     Aws::Utils::Array<JsonView> lensReviewSummariesJsonList = jsonValue.GetArray("LensReviewSummaries");
@@ -50,20 +42,20 @@ ListLensReviewsResult& ListLensReviewsResult::operator =(const Aws::AmazonWebSer
     {
       m_lensReviewSummaries.push_back(lensReviewSummariesJsonList[lensReviewSummariesIndex].AsObject());
     }
+    m_lensReviewSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -10,20 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeOrderableDBInstanceOptionsRequest::DescribeOrderableDBInstanceOptionsRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrderableDBInstanceOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

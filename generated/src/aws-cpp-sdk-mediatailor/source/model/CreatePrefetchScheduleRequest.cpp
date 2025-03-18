@@ -12,15 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePrefetchScheduleRequest::CreatePrefetchScheduleRequest() : 
-    m_consumptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playbackConfigurationNameHasBeenSet(false),
-    m_retrievalHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 Aws::String CreatePrefetchScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

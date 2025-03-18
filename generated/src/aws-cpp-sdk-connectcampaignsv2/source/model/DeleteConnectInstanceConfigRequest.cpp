@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteConnectInstanceConfigRequest::DeleteConnectInstanceConfigRequest() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_campaignDeletionPolicy(CampaignDeletionPolicy::NOT_SET),
-    m_campaignDeletionPolicyHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectInstanceConfigRequest::SerializePayload() const
 {
   return {};

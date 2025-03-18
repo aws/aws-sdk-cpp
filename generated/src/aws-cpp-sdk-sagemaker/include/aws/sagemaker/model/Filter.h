@@ -57,7 +57,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_SAGEMAKER_API Filter();
+    AWS_SAGEMAKER_API Filter() = default;
     AWS_SAGEMAKER_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>.
      * You must specify a valid property for the resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Filter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Filter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +117,10 @@ namespace Model
      * <code>SearchExpression</code>, the result is the following error message:
      * "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p> </dd> </dl>
      */
-    inline const Operator& GetOperator() const{ return m_operator; }
+    inline Operator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline Filter& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-    inline Filter& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(Operator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline Filter& WithOperator(Operator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -135,21 +131,19 @@ namespace Model
      * properties, <code>Value</code> must be an ISO 8601 date-time string of the
      * following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Filter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Filter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Operator m_operator;
+    Operator m_operator{Operator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::String m_value;

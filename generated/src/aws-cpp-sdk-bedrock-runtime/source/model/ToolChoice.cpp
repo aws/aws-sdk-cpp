@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolChoice::ToolChoice() : 
-    m_autoHasBeenSet(false),
-    m_anyHasBeenSet(false),
-    m_toolHasBeenSet(false)
-{
-}
-
 ToolChoice::ToolChoice(JsonView jsonValue)
-  : ToolChoice()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ToolChoice& ToolChoice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("auto"))
   {
     m_auto = jsonValue.GetObject("auto");
-
     m_autoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("any"))
   {
     m_any = jsonValue.GetObject("any");
-
     m_anyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tool"))
   {
     m_tool = jsonValue.GetObject("tool");
-
     m_toolHasBeenSet = true;
   }
-
   return *this;
 }
 

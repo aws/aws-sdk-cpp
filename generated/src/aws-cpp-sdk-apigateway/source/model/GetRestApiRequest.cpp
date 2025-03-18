@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRestApiRequest::GetRestApiRequest() : 
-    m_restApiIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRestApiRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class AnalyticsUtteranceAttributeResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsUtteranceAttributeResult();
+    AWS_LEXMODELSV2_API AnalyticsUtteranceAttributeResult() = default;
     AWS_LEXMODELSV2_API AnalyticsUtteranceAttributeResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsUtteranceAttributeResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The intent that the bot mapped the utterance to.</p>
      */
-    inline const Aws::String& GetLastUsedIntent() const{ return m_lastUsedIntent; }
+    inline const Aws::String& GetLastUsedIntent() const { return m_lastUsedIntent; }
     inline bool LastUsedIntentHasBeenSet() const { return m_lastUsedIntentHasBeenSet; }
-    inline void SetLastUsedIntent(const Aws::String& value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent = value; }
-    inline void SetLastUsedIntent(Aws::String&& value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent = std::move(value); }
-    inline void SetLastUsedIntent(const char* value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent.assign(value); }
-    inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(const Aws::String& value) { SetLastUsedIntent(value); return *this;}
-    inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(Aws::String&& value) { SetLastUsedIntent(std::move(value)); return *this;}
-    inline AnalyticsUtteranceAttributeResult& WithLastUsedIntent(const char* value) { SetLastUsedIntent(value); return *this;}
+    template<typename LastUsedIntentT = Aws::String>
+    void SetLastUsedIntent(LastUsedIntentT&& value) { m_lastUsedIntentHasBeenSet = true; m_lastUsedIntent = std::forward<LastUsedIntentT>(value); }
+    template<typename LastUsedIntentT = Aws::String>
+    AnalyticsUtteranceAttributeResult& WithLastUsedIntent(LastUsedIntentT&& value) { SetLastUsedIntent(std::forward<LastUsedIntentT>(value)); return *this;}
     ///@}
   private:
 

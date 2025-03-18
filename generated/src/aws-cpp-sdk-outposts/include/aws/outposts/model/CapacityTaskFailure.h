@@ -32,7 +32,7 @@ namespace Model
   class CapacityTaskFailure
   {
   public:
-    AWS_OUTPOSTS_API CapacityTaskFailure();
+    AWS_OUTPOSTS_API CapacityTaskFailure() = default;
     AWS_OUTPOSTS_API CapacityTaskFailure(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API CapacityTaskFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The reason that the specified capacity task failed.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline CapacityTaskFailure& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline CapacityTaskFailure& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline CapacityTaskFailure& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    CapacityTaskFailure& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of failure.</p>
      */
-    inline const CapacityTaskFailureType& GetType() const{ return m_type; }
+    inline CapacityTaskFailureType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CapacityTaskFailureType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CapacityTaskFailureType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CapacityTaskFailure& WithType(const CapacityTaskFailureType& value) { SetType(value); return *this;}
-    inline CapacityTaskFailure& WithType(CapacityTaskFailureType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CapacityTaskFailureType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CapacityTaskFailure& WithType(CapacityTaskFailureType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    CapacityTaskFailureType m_type;
+    CapacityTaskFailureType m_type{CapacityTaskFailureType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

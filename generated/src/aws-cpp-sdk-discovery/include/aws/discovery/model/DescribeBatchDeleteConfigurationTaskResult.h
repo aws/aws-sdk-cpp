@@ -28,7 +28,7 @@ namespace Model
   class DescribeBatchDeleteConfigurationTaskResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeBatchDeleteConfigurationTaskResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeBatchDeleteConfigurationTaskResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API DescribeBatchDeleteConfigurationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API DescribeBatchDeleteConfigurationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion
      * task being executed. </p>
      */
-    inline const BatchDeleteConfigurationTask& GetTask() const{ return m_task; }
-    inline void SetTask(const BatchDeleteConfigurationTask& value) { m_task = value; }
-    inline void SetTask(BatchDeleteConfigurationTask&& value) { m_task = std::move(value); }
-    inline DescribeBatchDeleteConfigurationTaskResult& WithTask(const BatchDeleteConfigurationTask& value) { SetTask(value); return *this;}
-    inline DescribeBatchDeleteConfigurationTaskResult& WithTask(BatchDeleteConfigurationTask&& value) { SetTask(std::move(value)); return *this;}
+    inline const BatchDeleteConfigurationTask& GetTask() const { return m_task; }
+    template<typename TaskT = BatchDeleteConfigurationTask>
+    void SetTask(TaskT&& value) { m_taskHasBeenSet = true; m_task = std::forward<TaskT>(value); }
+    template<typename TaskT = BatchDeleteConfigurationTask>
+    DescribeBatchDeleteConfigurationTaskResult& WithTask(TaskT&& value) { SetTask(std::forward<TaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBatchDeleteConfigurationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBatchDeleteConfigurationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBatchDeleteConfigurationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBatchDeleteConfigurationTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BatchDeleteConfigurationTask m_task;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

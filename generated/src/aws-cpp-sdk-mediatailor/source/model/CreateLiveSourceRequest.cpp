@@ -12,14 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLiveSourceRequest::CreateLiveSourceRequest() : 
-    m_httpPackageConfigurationsHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLiveSourceRequest::SerializePayload() const
 {
   JsonValue payload;

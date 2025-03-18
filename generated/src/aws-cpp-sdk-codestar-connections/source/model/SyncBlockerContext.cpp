@@ -18,14 +18,7 @@ namespace CodeStarconnections
 namespace Model
 {
 
-SyncBlockerContext::SyncBlockerContext() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SyncBlockerContext::SyncBlockerContext(JsonView jsonValue)
-  : SyncBlockerContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SyncBlockerContext& SyncBlockerContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

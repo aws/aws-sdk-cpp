@@ -33,7 +33,7 @@ namespace Model
   class CreateFaceLivenessSessionRequestSettings
   {
   public:
-    AWS_REKOGNITION_API CreateFaceLivenessSessionRequestSettings();
+    AWS_REKOGNITION_API CreateFaceLivenessSessionRequestSettings() = default;
     AWS_REKOGNITION_API CreateFaceLivenessSessionRequestSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API CreateFaceLivenessSessionRequestSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * system. Requires that the caller has the <code>s3:PutObject</code> permission on
      * the Amazon S3 bucket.</p>
      */
-    inline const LivenessOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+    inline const LivenessOutputConfig& GetOutputConfig() const { return m_outputConfig; }
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-    inline void SetOutputConfig(const LivenessOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-    inline void SetOutputConfig(LivenessOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-    inline CreateFaceLivenessSessionRequestSettings& WithOutputConfig(const LivenessOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline CreateFaceLivenessSessionRequestSettings& WithOutputConfig(LivenessOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    template<typename OutputConfigT = LivenessOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = LivenessOutputConfig>
+    CreateFaceLivenessSessionRequestSettings& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +63,7 @@ namespace Model
      * the response. By default, it is set to 0. The limit is best effort and is based
      * on the actual duration of the selfie-video.</p>
      */
-    inline int GetAuditImagesLimit() const{ return m_auditImagesLimit; }
+    inline int GetAuditImagesLimit() const { return m_auditImagesLimit; }
     inline bool AuditImagesLimitHasBeenSet() const { return m_auditImagesLimitHasBeenSet; }
     inline void SetAuditImagesLimit(int value) { m_auditImagesLimitHasBeenSet = true; m_auditImagesLimit = value; }
     inline CreateFaceLivenessSessionRequestSettings& WithAuditImagesLimit(int value) { SetAuditImagesLimit(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
     LivenessOutputConfig m_outputConfig;
     bool m_outputConfigHasBeenSet = false;
 
-    int m_auditImagesLimit;
+    int m_auditImagesLimit{0};
     bool m_auditImagesLimitHasBeenSet = false;
   };
 

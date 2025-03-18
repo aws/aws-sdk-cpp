@@ -32,7 +32,7 @@ namespace Model
   class PagerDutyIncidentConfiguration
   {
   public:
-    AWS_SSMINCIDENTS_API PagerDutyIncidentConfiguration();
+    AWS_SSMINCIDENTS_API PagerDutyIncidentConfiguration() = default;
     AWS_SSMINCIDENTS_API PagerDutyIncidentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API PagerDutyIncidentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the PagerDuty service that the response plan associates with an
      * incident when it launches.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline PagerDutyIncidentConfiguration& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline PagerDutyIncidentConfiguration& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline PagerDutyIncidentConfiguration& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    PagerDutyIncidentConfiguration& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
   private:
 

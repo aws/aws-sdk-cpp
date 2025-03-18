@@ -27,7 +27,7 @@ namespace Model
   class UpdateFlowRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API UpdateFlowRequest();
+    AWS_MEDIACONNECT_API UpdateFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,44 +42,42 @@ namespace Model
     /**
      * The flow that you want to update.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline UpdateFlowRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline UpdateFlowRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline UpdateFlowRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    UpdateFlowRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateFailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
+    inline const UpdateFailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
-    inline void SetSourceFailoverConfig(const UpdateFailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
-    inline void SetSourceFailoverConfig(UpdateFailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
-    inline UpdateFlowRequest& WithSourceFailoverConfig(const UpdateFailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
-    inline UpdateFlowRequest& WithSourceFailoverConfig(UpdateFailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+    template<typename SourceFailoverConfigT = UpdateFailoverConfig>
+    void SetSourceFailoverConfig(SourceFailoverConfigT&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::forward<SourceFailoverConfigT>(value); }
+    template<typename SourceFailoverConfigT = UpdateFailoverConfig>
+    UpdateFlowRequest& WithSourceFailoverConfig(SourceFailoverConfigT&& value) { SetSourceFailoverConfig(std::forward<SourceFailoverConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateMaintenance& GetMaintenance() const{ return m_maintenance; }
+    inline const UpdateMaintenance& GetMaintenance() const { return m_maintenance; }
     inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
-    inline void SetMaintenance(const UpdateMaintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
-    inline void SetMaintenance(UpdateMaintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
-    inline UpdateFlowRequest& WithMaintenance(const UpdateMaintenance& value) { SetMaintenance(value); return *this;}
-    inline UpdateFlowRequest& WithMaintenance(UpdateMaintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+    template<typename MaintenanceT = UpdateMaintenance>
+    void SetMaintenance(MaintenanceT&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::forward<MaintenanceT>(value); }
+    template<typename MaintenanceT = UpdateMaintenance>
+    UpdateFlowRequest& WithMaintenance(MaintenanceT&& value) { SetMaintenance(std::forward<MaintenanceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitoringConfig& GetSourceMonitoringConfig() const{ return m_sourceMonitoringConfig; }
+    inline const MonitoringConfig& GetSourceMonitoringConfig() const { return m_sourceMonitoringConfig; }
     inline bool SourceMonitoringConfigHasBeenSet() const { return m_sourceMonitoringConfigHasBeenSet; }
-    inline void SetSourceMonitoringConfig(const MonitoringConfig& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = value; }
-    inline void SetSourceMonitoringConfig(MonitoringConfig&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::move(value); }
-    inline UpdateFlowRequest& WithSourceMonitoringConfig(const MonitoringConfig& value) { SetSourceMonitoringConfig(value); return *this;}
-    inline UpdateFlowRequest& WithSourceMonitoringConfig(MonitoringConfig&& value) { SetSourceMonitoringConfig(std::move(value)); return *this;}
+    template<typename SourceMonitoringConfigT = MonitoringConfig>
+    void SetSourceMonitoringConfig(SourceMonitoringConfigT&& value) { m_sourceMonitoringConfigHasBeenSet = true; m_sourceMonitoringConfig = std::forward<SourceMonitoringConfigT>(value); }
+    template<typename SourceMonitoringConfigT = MonitoringConfig>
+    UpdateFlowRequest& WithSourceMonitoringConfig(SourceMonitoringConfigT&& value) { SetSourceMonitoringConfig(std::forward<SourceMonitoringConfigT>(value)); return *this;}
     ///@}
   private:
 

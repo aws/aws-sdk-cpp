@@ -12,19 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTraceSummariesRequest::GetTraceSummariesRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_timeRangeType(TimeRangeType::NOT_SET),
-    m_timeRangeTypeHasBeenSet(false),
-    m_sampling(false),
-    m_samplingHasBeenSet(false),
-    m_samplingStrategyHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTraceSummariesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,24 +18,7 @@ namespace Chime
 namespace Model
 {
 
-Account::Account() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accountType(AccountType::NOT_SET),
-    m_accountTypeHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_defaultLicense(License::NOT_SET),
-    m_defaultLicenseHasBeenSet(false),
-    m_supportedLicensesHasBeenSet(false),
-    m_accountStatus(AccountStatus::NOT_SET),
-    m_accountStatusHasBeenSet(false),
-    m_signinDelegateGroupsHasBeenSet(false)
-{
-}
-
 Account::Account(JsonView jsonValue)
-  : Account()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ Account& Account::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountType"))
   {
     m_accountType = AccountTypeMapper::GetAccountTypeForName(jsonValue.GetString("AccountType"));
-
     m_accountTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultLicense"))
   {
     m_defaultLicense = LicenseMapper::GetLicenseForName(jsonValue.GetString("DefaultLicense"));
-
     m_defaultLicenseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedLicenses"))
   {
     Aws::Utils::Array<JsonView> supportedLicensesJsonList = jsonValue.GetArray("SupportedLicenses");
@@ -93,14 +64,11 @@ Account& Account::operator =(JsonView jsonValue)
     }
     m_supportedLicensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountStatus"))
   {
     m_accountStatus = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("AccountStatus"));
-
     m_accountStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigninDelegateGroups"))
   {
     Aws::Utils::Array<JsonView> signinDelegateGroupsJsonList = jsonValue.GetArray("SigninDelegateGroups");
@@ -110,7 +78,6 @@ Account& Account::operator =(JsonView jsonValue)
     }
     m_signinDelegateGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

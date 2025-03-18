@@ -22,7 +22,7 @@ namespace Model
   class DescribeFleetCapacityRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeFleetCapacityRequest();
+    AWS_GAMELIFT_API DescribeFleetCapacityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
      * capacity information for all fleets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+    inline const Aws::Vector<Aws::String>& GetFleetIds() const { return m_fleetIds; }
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-    inline DescribeFleetCapacityRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-    inline DescribeFleetCapacityRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-    inline DescribeFleetCapacityRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    inline DescribeFleetCapacityRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-    inline DescribeFleetCapacityRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    void SetFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::forward<FleetIdsT>(value); }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    DescribeFleetCapacityRequest& WithFleetIds(FleetIdsT&& value) { SetFleetIds(std::forward<FleetIdsT>(value)); return *this;}
+    template<typename FleetIdsT = Aws::String>
+    DescribeFleetCapacityRequest& AddFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.emplace_back(std::forward<FleetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,7 +57,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeFleetCapacityRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -71,21 +70,19 @@ namespace Model
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFleetCapacityRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFleetCapacityRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFleetCapacityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFleetCapacityRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_fleetIds;
     bool m_fleetIdsHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

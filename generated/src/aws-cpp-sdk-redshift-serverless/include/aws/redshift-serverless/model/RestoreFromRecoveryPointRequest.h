@@ -21,7 +21,7 @@ namespace Model
   class RestoreFromRecoveryPointRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API RestoreFromRecoveryPointRequest();
+    AWS_REDSHIFTSERVERLESS_API RestoreFromRecoveryPointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The name of the namespace to restore data into.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline RestoreFromRecoveryPointRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    RestoreFromRecoveryPointRequest& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the recovery point to restore from.</p>
      */
-    inline const Aws::String& GetRecoveryPointId() const{ return m_recoveryPointId; }
+    inline const Aws::String& GetRecoveryPointId() const { return m_recoveryPointId; }
     inline bool RecoveryPointIdHasBeenSet() const { return m_recoveryPointIdHasBeenSet; }
-    inline void SetRecoveryPointId(const Aws::String& value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId = value; }
-    inline void SetRecoveryPointId(Aws::String&& value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId = std::move(value); }
-    inline void SetRecoveryPointId(const char* value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId.assign(value); }
-    inline RestoreFromRecoveryPointRequest& WithRecoveryPointId(const Aws::String& value) { SetRecoveryPointId(value); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithRecoveryPointId(Aws::String&& value) { SetRecoveryPointId(std::move(value)); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithRecoveryPointId(const char* value) { SetRecoveryPointId(value); return *this;}
+    template<typename RecoveryPointIdT = Aws::String>
+    void SetRecoveryPointId(RecoveryPointIdT&& value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId = std::forward<RecoveryPointIdT>(value); }
+    template<typename RecoveryPointIdT = Aws::String>
+    RestoreFromRecoveryPointRequest& WithRecoveryPointId(RecoveryPointIdT&& value) { SetRecoveryPointId(std::forward<RecoveryPointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workgroup used to restore data.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline RestoreFromRecoveryPointRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline RestoreFromRecoveryPointRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    RestoreFromRecoveryPointRequest& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
   private:
 

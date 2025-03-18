@@ -18,16 +18,7 @@ namespace ServiceQuotas
 namespace Model
 {
 
-QuotaContextInfo::QuotaContextInfo() : 
-    m_contextScope(QuotaContextScope::NOT_SET),
-    m_contextScopeHasBeenSet(false),
-    m_contextScopeTypeHasBeenSet(false),
-    m_contextIdHasBeenSet(false)
-{
-}
-
 QuotaContextInfo::QuotaContextInfo(JsonView jsonValue)
-  : QuotaContextInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ QuotaContextInfo& QuotaContextInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContextScope"))
   {
     m_contextScope = QuotaContextScopeMapper::GetQuotaContextScopeForName(jsonValue.GetString("ContextScope"));
-
     m_contextScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextScopeType"))
   {
     m_contextScopeType = jsonValue.GetString("ContextScopeType");
-
     m_contextScopeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextId"))
   {
     m_contextId = jsonValue.GetString("ContextId");
-
     m_contextIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLocalGatewayRouteResponse::DeleteLocalGatewayRouteResponse()
-{
-}
-
 DeleteLocalGatewayRouteResponse::DeleteLocalGatewayRouteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteLocalGatewayRouteResponse& DeleteLocalGatewayRouteResponse::operator =(con
     if(!routeNode.IsNull())
     {
       m_route = routeNode;
+      m_routeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteLocalGatewayRouteResponse& DeleteLocalGatewayRouteResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteLocalGatewayRouteResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

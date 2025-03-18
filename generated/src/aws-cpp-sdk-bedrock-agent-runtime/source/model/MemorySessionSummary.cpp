@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-MemorySessionSummary::MemorySessionSummary() : 
-    m_memoryIdHasBeenSet(false),
-    m_sessionExpiryTimeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionStartTimeHasBeenSet(false),
-    m_summaryTextHasBeenSet(false)
-{
-}
-
 MemorySessionSummary::MemorySessionSummary(JsonView jsonValue)
-  : MemorySessionSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ MemorySessionSummary& MemorySessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("memoryId"))
   {
     m_memoryId = jsonValue.GetString("memoryId");
-
     m_memoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionExpiryTime"))
   {
     m_sessionExpiryTime = jsonValue.GetString("sessionExpiryTime");
-
     m_sessionExpiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionStartTime"))
   {
     m_sessionStartTime = jsonValue.GetString("sessionStartTime");
-
     m_sessionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summaryText"))
   {
     m_summaryText = jsonValue.GetString("summaryText");
-
     m_summaryTextHasBeenSet = true;
   }
-
   return *this;
 }
 

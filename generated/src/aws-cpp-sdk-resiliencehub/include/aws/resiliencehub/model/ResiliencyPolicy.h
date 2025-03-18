@@ -45,7 +45,7 @@ namespace Model
   class ResiliencyPolicy
   {
   public:
-    AWS_RESILIENCEHUB_API ResiliencyPolicy();
+    AWS_RESILIENCEHUB_API ResiliencyPolicy() = default;
     AWS_RESILIENCEHUB_API ResiliencyPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ResiliencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
     /**
      * <p>Date and time when the resiliency policy was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ResiliencyPolicy& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ResiliencyPolicy& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ResiliencyPolicy& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,40 +68,35 @@ namespace Model
      * <p>Specifies a high-level geographical location constraint for where your
      * resilience policy data can be stored.</p>
      */
-    inline const DataLocationConstraint& GetDataLocationConstraint() const{ return m_dataLocationConstraint; }
+    inline DataLocationConstraint GetDataLocationConstraint() const { return m_dataLocationConstraint; }
     inline bool DataLocationConstraintHasBeenSet() const { return m_dataLocationConstraintHasBeenSet; }
-    inline void SetDataLocationConstraint(const DataLocationConstraint& value) { m_dataLocationConstraintHasBeenSet = true; m_dataLocationConstraint = value; }
-    inline void SetDataLocationConstraint(DataLocationConstraint&& value) { m_dataLocationConstraintHasBeenSet = true; m_dataLocationConstraint = std::move(value); }
-    inline ResiliencyPolicy& WithDataLocationConstraint(const DataLocationConstraint& value) { SetDataLocationConstraint(value); return *this;}
-    inline ResiliencyPolicy& WithDataLocationConstraint(DataLocationConstraint&& value) { SetDataLocationConstraint(std::move(value)); return *this;}
+    inline void SetDataLocationConstraint(DataLocationConstraint value) { m_dataLocationConstraintHasBeenSet = true; m_dataLocationConstraint = value; }
+    inline ResiliencyPolicy& WithDataLocationConstraint(DataLocationConstraint value) { SetDataLocationConstraint(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the estimated cost tier of the resiliency policy.</p>
      */
-    inline const EstimatedCostTier& GetEstimatedCostTier() const{ return m_estimatedCostTier; }
+    inline EstimatedCostTier GetEstimatedCostTier() const { return m_estimatedCostTier; }
     inline bool EstimatedCostTierHasBeenSet() const { return m_estimatedCostTierHasBeenSet; }
-    inline void SetEstimatedCostTier(const EstimatedCostTier& value) { m_estimatedCostTierHasBeenSet = true; m_estimatedCostTier = value; }
-    inline void SetEstimatedCostTier(EstimatedCostTier&& value) { m_estimatedCostTierHasBeenSet = true; m_estimatedCostTier = std::move(value); }
-    inline ResiliencyPolicy& WithEstimatedCostTier(const EstimatedCostTier& value) { SetEstimatedCostTier(value); return *this;}
-    inline ResiliencyPolicy& WithEstimatedCostTier(EstimatedCostTier&& value) { SetEstimatedCostTier(std::move(value)); return *this;}
+    inline void SetEstimatedCostTier(EstimatedCostTier value) { m_estimatedCostTierHasBeenSet = true; m_estimatedCostTier = value; }
+    inline ResiliencyPolicy& WithEstimatedCostTier(EstimatedCostTier value) { SetEstimatedCostTier(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resiliency policy.</p>
      */
-    inline const Aws::Map<DisruptionType, FailurePolicy>& GetPolicy() const{ return m_policy; }
+    inline const Aws::Map<DisruptionType, FailurePolicy>& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::Map<DisruptionType, FailurePolicy>& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::Map<DisruptionType, FailurePolicy>&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline ResiliencyPolicy& WithPolicy(const Aws::Map<DisruptionType, FailurePolicy>& value) { SetPolicy(value); return *this;}
-    inline ResiliencyPolicy& WithPolicy(Aws::Map<DisruptionType, FailurePolicy>&& value) { SetPolicy(std::move(value)); return *this;}
-    inline ResiliencyPolicy& AddPolicy(const DisruptionType& key, const FailurePolicy& value) { m_policyHasBeenSet = true; m_policy.emplace(key, value); return *this; }
-    inline ResiliencyPolicy& AddPolicy(DisruptionType&& key, const FailurePolicy& value) { m_policyHasBeenSet = true; m_policy.emplace(std::move(key), value); return *this; }
-    inline ResiliencyPolicy& AddPolicy(const DisruptionType& key, FailurePolicy&& value) { m_policyHasBeenSet = true; m_policy.emplace(key, std::move(value)); return *this; }
-    inline ResiliencyPolicy& AddPolicy(DisruptionType&& key, FailurePolicy&& value) { m_policyHasBeenSet = true; m_policy.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename PolicyT = Aws::Map<DisruptionType, FailurePolicy>>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::Map<DisruptionType, FailurePolicy>>
+    ResiliencyPolicy& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
+    inline ResiliencyPolicy& AddPolicy(DisruptionType key, FailurePolicy value) {
+      m_policyHasBeenSet = true; m_policy.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -114,42 +109,36 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline ResiliencyPolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline ResiliencyPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline ResiliencyPolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    ResiliencyPolicy& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the resiliency policy.</p>
      */
-    inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
+    inline const Aws::String& GetPolicyDescription() const { return m_policyDescription; }
     inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
-    inline void SetPolicyDescription(const Aws::String& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = value; }
-    inline void SetPolicyDescription(Aws::String&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::move(value); }
-    inline void SetPolicyDescription(const char* value) { m_policyDescriptionHasBeenSet = true; m_policyDescription.assign(value); }
-    inline ResiliencyPolicy& WithPolicyDescription(const Aws::String& value) { SetPolicyDescription(value); return *this;}
-    inline ResiliencyPolicy& WithPolicyDescription(Aws::String&& value) { SetPolicyDescription(std::move(value)); return *this;}
-    inline ResiliencyPolicy& WithPolicyDescription(const char* value) { SetPolicyDescription(value); return *this;}
+    template<typename PolicyDescriptionT = Aws::String>
+    void SetPolicyDescription(PolicyDescriptionT&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::forward<PolicyDescriptionT>(value); }
+    template<typename PolicyDescriptionT = Aws::String>
+    ResiliencyPolicy& WithPolicyDescription(PolicyDescriptionT&& value) { SetPolicyDescription(std::forward<PolicyDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline ResiliencyPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline ResiliencyPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline ResiliencyPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    ResiliencyPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,19 +146,16 @@ namespace Model
      * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
      * Web Services resource. Each tag consists of a key/value pair.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResiliencyPolicy& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ResiliencyPolicy& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResiliencyPolicy& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ResiliencyPolicy& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ResiliencyPolicy& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ResiliencyPolicy& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ResiliencyPolicy& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ResiliencyPolicy& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ResiliencyPolicy& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ResiliencyPolicy& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ResiliencyPolicy& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -177,22 +163,20 @@ namespace Model
      * <p>The tier for this resiliency policy, ranging from the highest severity
      * (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
      */
-    inline const ResiliencyPolicyTier& GetTier() const{ return m_tier; }
+    inline ResiliencyPolicyTier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const ResiliencyPolicyTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(ResiliencyPolicyTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline ResiliencyPolicy& WithTier(const ResiliencyPolicyTier& value) { SetTier(value); return *this;}
-    inline ResiliencyPolicy& WithTier(ResiliencyPolicyTier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(ResiliencyPolicyTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline ResiliencyPolicy& WithTier(ResiliencyPolicyTier value) { SetTier(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    DataLocationConstraint m_dataLocationConstraint;
+    DataLocationConstraint m_dataLocationConstraint{DataLocationConstraint::NOT_SET};
     bool m_dataLocationConstraintHasBeenSet = false;
 
-    EstimatedCostTier m_estimatedCostTier;
+    EstimatedCostTier m_estimatedCostTier{EstimatedCostTier::NOT_SET};
     bool m_estimatedCostTierHasBeenSet = false;
 
     Aws::Map<DisruptionType, FailurePolicy> m_policy;
@@ -210,7 +194,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    ResiliencyPolicyTier m_tier;
+    ResiliencyPolicyTier m_tier{ResiliencyPolicyTier::NOT_SET};
     bool m_tierHasBeenSet = false;
   };
 

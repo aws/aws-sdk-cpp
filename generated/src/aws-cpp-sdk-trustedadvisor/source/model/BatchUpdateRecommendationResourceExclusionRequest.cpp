@@ -12,11 +12,6 @@ using namespace Aws::TrustedAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateRecommendationResourceExclusionRequest::BatchUpdateRecommendationResourceExclusionRequest() : 
-    m_recommendationResourceExclusionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateRecommendationResourceExclusionRequest::SerializePayload() const
 {
   JsonValue payload;

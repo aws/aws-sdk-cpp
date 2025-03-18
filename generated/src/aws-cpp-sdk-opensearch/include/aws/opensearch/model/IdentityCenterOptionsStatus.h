@@ -33,7 +33,7 @@ namespace Model
   class IdentityCenterOptionsStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsStatus() = default;
     AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API IdentityCenterOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Container for IAM Identity Center Options settings.</p>
      */
-    inline const IdentityCenterOptions& GetOptions() const{ return m_options; }
+    inline const IdentityCenterOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const IdentityCenterOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(IdentityCenterOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline IdentityCenterOptionsStatus& WithOptions(const IdentityCenterOptions& value) { SetOptions(value); return *this;}
-    inline IdentityCenterOptionsStatus& WithOptions(IdentityCenterOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = IdentityCenterOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = IdentityCenterOptions>
+    IdentityCenterOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of IAM Identity Center Options settings for a domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IdentityCenterOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline IdentityCenterOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    IdentityCenterOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

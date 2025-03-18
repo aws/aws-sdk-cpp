@@ -12,15 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachVolumeRequest::AttachVolumeRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_targetNameHasBeenSet(false),
-    m_volumeARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_diskIdHasBeenSet(false)
-{
-}
-
 Aws::String AttachVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-StorageConfiguration::StorageConfiguration() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 StorageConfiguration::StorageConfiguration(JsonView jsonValue)
-  : StorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

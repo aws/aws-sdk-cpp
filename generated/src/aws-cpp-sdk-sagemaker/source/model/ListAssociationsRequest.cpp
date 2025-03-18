@@ -12,25 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAssociationsRequest::ListAssociationsRequest() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_destinationTypeHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_sortBy(SortAssociationsBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

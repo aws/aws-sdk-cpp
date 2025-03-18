@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-PolicyDefinitionItem::PolicyDefinitionItem() : 
-    m_staticHasBeenSet(false),
-    m_templateLinkedHasBeenSet(false)
-{
-}
-
 PolicyDefinitionItem::PolicyDefinitionItem(JsonView jsonValue)
-  : PolicyDefinitionItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PolicyDefinitionItem& PolicyDefinitionItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("static"))
   {
     m_static = jsonValue.GetObject("static");
-
     m_staticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateLinked"))
   {
     m_templateLinked = jsonValue.GetObject("templateLinked");
-
     m_templateLinkedHasBeenSet = true;
   }
-
   return *this;
 }
 

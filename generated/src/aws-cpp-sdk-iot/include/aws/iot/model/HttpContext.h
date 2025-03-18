@@ -33,7 +33,7 @@ namespace Model
   class HttpContext
   {
   public:
-    AWS_IOT_API HttpContext();
+    AWS_IOT_API HttpContext() = default;
     AWS_IOT_API HttpContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API HttpContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,28 @@ namespace Model
     /**
      * <p>The header keys and values in an HTTP authorization request.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const{ return m_headers; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline HttpContext& WithHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetHeaders(value); return *this;}
-    inline HttpContext& WithHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetHeaders(std::move(value)); return *this;}
-    inline HttpContext& AddHeaders(const Aws::String& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers.emplace(key, value); return *this; }
-    inline HttpContext& AddHeaders(Aws::String&& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), value); return *this; }
-    inline HttpContext& AddHeaders(const Aws::String& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(key, std::move(value)); return *this; }
-    inline HttpContext& AddHeaders(Aws::String&& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), std::move(value)); return *this; }
-    inline HttpContext& AddHeaders(const char* key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(key, std::move(value)); return *this; }
-    inline HttpContext& AddHeaders(Aws::String&& key, const char* value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), value); return *this; }
-    inline HttpContext& AddHeaders(const char* key, const char* value) { m_headersHasBeenSet = true; m_headers.emplace(key, value); return *this; }
+    template<typename HeadersT = Aws::Map<Aws::String, Aws::String>>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Aws::Map<Aws::String, Aws::String>>
+    HttpContext& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
+    template<typename HeadersKeyT = Aws::String, typename HeadersValueT = Aws::String>
+    HttpContext& AddHeaders(HeadersKeyT&& key, HeadersValueT&& value) {
+      m_headersHasBeenSet = true; m_headers.emplace(std::forward<HeadersKeyT>(key), std::forward<HeadersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The query string keys and values in an HTTP authorization request.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline HttpContext& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline HttpContext& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline HttpContext& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    HttpContext& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
   private:
 

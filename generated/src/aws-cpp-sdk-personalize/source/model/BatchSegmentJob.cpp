@@ -18,25 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchSegmentJob::BatchSegmentJob() : 
-    m_jobNameHasBeenSet(false),
-    m_batchSegmentJobArnHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_jobInputHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 BatchSegmentJob::BatchSegmentJob(JsonView jsonValue)
-  : BatchSegmentJob()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ BatchSegmentJob& BatchSegmentJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchSegmentJobArn"))
   {
     m_batchSegmentJobArn = jsonValue.GetString("batchSegmentJobArn");
-
     m_batchSegmentJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterArn"))
   {
     m_filterArn = jsonValue.GetString("filterArn");
-
     m_filterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionVersionArn"))
   {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
-
     m_solutionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numResults"))
   {
     m_numResults = jsonValue.GetInteger("numResults");
-
     m_numResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobInput"))
   {
     m_jobInput = jsonValue.GetObject("jobInput");
-
     m_jobInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobOutput"))
   {
     m_jobOutput = jsonValue.GetObject("jobOutput");
-
     m_jobOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class CreateConfigurationResult
   {
   public:
-    AWS_MQ_API CreateConfigurationResult();
+    AWS_MQ_API CreateConfigurationResult() = default;
     AWS_MQ_API CreateConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MQ_API CreateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,46 +51,42 @@ namespace Model
      * <p>Optional. The authentication strategy associated with the configuration. The
      * default is SIMPLE.</p>
      */
-    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
-    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategy = value; }
-    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategy = std::move(value); }
-    inline CreateConfigurationResult& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
-    inline CreateConfigurationResult& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
+    inline AuthenticationStrategy GetAuthenticationStrategy() const { return m_authenticationStrategy; }
+    inline void SetAuthenticationStrategy(AuthenticationStrategy value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+    inline CreateConfigurationResult& WithAuthenticationStrategy(AuthenticationStrategy value) { SetAuthenticationStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. The date and time of the configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
-    inline CreateConfigurationResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline CreateConfigurationResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    CreateConfigurationResult& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateConfigurationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest revision of the configuration.</p>
      */
-    inline const ConfigurationRevision& GetLatestRevision() const{ return m_latestRevision; }
-    inline void SetLatestRevision(const ConfigurationRevision& value) { m_latestRevision = value; }
-    inline void SetLatestRevision(ConfigurationRevision&& value) { m_latestRevision = std::move(value); }
-    inline CreateConfigurationResult& WithLatestRevision(const ConfigurationRevision& value) { SetLatestRevision(value); return *this;}
-    inline CreateConfigurationResult& WithLatestRevision(ConfigurationRevision&& value) { SetLatestRevision(std::move(value)); return *this;}
+    inline const ConfigurationRevision& GetLatestRevision() const { return m_latestRevision; }
+    template<typename LatestRevisionT = ConfigurationRevision>
+    void SetLatestRevision(LatestRevisionT&& value) { m_latestRevisionHasBeenSet = true; m_latestRevision = std::forward<LatestRevisionT>(value); }
+    template<typename LatestRevisionT = ConfigurationRevision>
+    CreateConfigurationResult& WithLatestRevision(LatestRevisionT&& value) { SetLatestRevision(std::forward<LatestRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,40 +95,43 @@ namespace Model
      * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
      * This value must be 1-150 characters long.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    AuthenticationStrategy m_authenticationStrategy;
+    AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
+    bool m_authenticationStrategyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     ConfigurationRevision m_latestRevision;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

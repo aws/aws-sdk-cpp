@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-OutputGroupDetail::OutputGroupDetail() : 
-    m_outputDetailsHasBeenSet(false)
-{
-}
-
 OutputGroupDetail::OutputGroupDetail(JsonView jsonValue)
-  : OutputGroupDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OutputGroupDetail& OutputGroupDetail::operator =(JsonView jsonValue)
     }
     m_outputDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

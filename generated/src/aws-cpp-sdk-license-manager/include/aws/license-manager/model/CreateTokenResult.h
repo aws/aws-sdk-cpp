@@ -28,7 +28,7 @@ namespace Model
   class CreateTokenResult
   {
   public:
-    AWS_LICENSEMANAGER_API CreateTokenResult();
+    AWS_LICENSEMANAGER_API CreateTokenResult() = default;
     AWS_LICENSEMANAGER_API CreateTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API CreateTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>Token ID.</p>
      */
-    inline const Aws::String& GetTokenId() const{ return m_tokenId; }
-    inline void SetTokenId(const Aws::String& value) { m_tokenId = value; }
-    inline void SetTokenId(Aws::String&& value) { m_tokenId = std::move(value); }
-    inline void SetTokenId(const char* value) { m_tokenId.assign(value); }
-    inline CreateTokenResult& WithTokenId(const Aws::String& value) { SetTokenId(value); return *this;}
-    inline CreateTokenResult& WithTokenId(Aws::String&& value) { SetTokenId(std::move(value)); return *this;}
-    inline CreateTokenResult& WithTokenId(const char* value) { SetTokenId(value); return *this;}
+    inline const Aws::String& GetTokenId() const { return m_tokenId; }
+    template<typename TokenIdT = Aws::String>
+    void SetTokenId(TokenIdT&& value) { m_tokenIdHasBeenSet = true; m_tokenId = std::forward<TokenIdT>(value); }
+    template<typename TokenIdT = Aws::String>
+    CreateTokenResult& WithTokenId(TokenIdT&& value) { SetTokenId(std::forward<TokenIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token type.</p>
      */
-    inline const TokenType& GetTokenType() const{ return m_tokenType; }
-    inline void SetTokenType(const TokenType& value) { m_tokenType = value; }
-    inline void SetTokenType(TokenType&& value) { m_tokenType = std::move(value); }
-    inline CreateTokenResult& WithTokenType(const TokenType& value) { SetTokenType(value); return *this;}
-    inline CreateTokenResult& WithTokenType(TokenType&& value) { SetTokenType(std::move(value)); return *this;}
+    inline TokenType GetTokenType() const { return m_tokenType; }
+    inline void SetTokenType(TokenType value) { m_tokenTypeHasBeenSet = true; m_tokenType = value; }
+    inline CreateTokenResult& WithTokenType(TokenType value) { SetTokenType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Refresh token, encoded as a JWT token.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
-    inline void SetToken(const Aws::String& value) { m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_token.assign(value); }
-    inline CreateTokenResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline CreateTokenResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline CreateTokenResult& WithToken(const char* value) { SetToken(value); return *this;}
+    inline const Aws::String& GetToken() const { return m_token; }
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    CreateTokenResult& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tokenId;
+    bool m_tokenIdHasBeenSet = false;
 
-    TokenType m_tokenType;
+    TokenType m_tokenType{TokenType::NOT_SET};
+    bool m_tokenTypeHasBeenSet = false;
 
     Aws::String m_token;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

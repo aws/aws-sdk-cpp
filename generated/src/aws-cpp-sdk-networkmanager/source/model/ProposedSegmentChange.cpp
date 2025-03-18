@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ProposedSegmentChange::ProposedSegmentChange() : 
-    m_tagsHasBeenSet(false),
-    m_attachmentPolicyRuleNumber(0),
-    m_attachmentPolicyRuleNumberHasBeenSet(false),
-    m_segmentNameHasBeenSet(false)
-{
-}
-
 ProposedSegmentChange::ProposedSegmentChange(JsonView jsonValue)
-  : ProposedSegmentChange()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ ProposedSegmentChange& ProposedSegmentChange::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentPolicyRuleNumber"))
   {
     m_attachmentPolicyRuleNumber = jsonValue.GetInteger("AttachmentPolicyRuleNumber");
-
     m_attachmentPolicyRuleNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

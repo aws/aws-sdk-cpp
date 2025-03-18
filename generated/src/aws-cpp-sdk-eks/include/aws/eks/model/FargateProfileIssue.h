@@ -34,7 +34,7 @@ namespace Model
   class FargateProfileIssue
   {
   public:
-    AWS_EKS_API FargateProfileIssue();
+    AWS_EKS_API FargateProfileIssue() = default;
     AWS_EKS_API FargateProfileIssue(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API FargateProfileIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,40 @@ namespace Model
     /**
      * <p>A brief description of the error.</p>
      */
-    inline const FargateProfileIssueCode& GetCode() const{ return m_code; }
+    inline FargateProfileIssueCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const FargateProfileIssueCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(FargateProfileIssueCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline FargateProfileIssue& WithCode(const FargateProfileIssueCode& value) { SetCode(value); return *this;}
-    inline FargateProfileIssue& WithCode(FargateProfileIssueCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(FargateProfileIssueCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline FargateProfileIssue& WithCode(FargateProfileIssueCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message associated with the issue.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FargateProfileIssue& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FargateProfileIssue& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FargateProfileIssue& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FargateProfileIssue& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services resources that are affected by this issue.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline FargateProfileIssue& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline FargateProfileIssue& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline FargateProfileIssue& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline FargateProfileIssue& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline FargateProfileIssue& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    FargateProfileIssue& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    FargateProfileIssue& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
-    FargateProfileIssueCode m_code;
+    FargateProfileIssueCode m_code{FargateProfileIssueCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

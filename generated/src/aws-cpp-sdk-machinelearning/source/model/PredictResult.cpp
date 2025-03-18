@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PredictResult::PredictResult()
-{
-}
-
 PredictResult::PredictResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PredictResult& PredictResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("Prediction"))
   {
     m_prediction = jsonValue.GetObject("Prediction");
-
+    m_predictionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

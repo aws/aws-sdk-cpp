@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLifecycleExecutionResult::GetLifecycleExecutionResult()
-{
-}
-
 GetLifecycleExecutionResult::GetLifecycleExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetLifecycleExecutionResult& GetLifecycleExecutionResult::operator =(const Aws::
   if(jsonValue.ValueExists("lifecycleExecution"))
   {
     m_lifecycleExecution = jsonValue.GetObject("lifecycleExecution");
-
+    m_lifecycleExecutionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

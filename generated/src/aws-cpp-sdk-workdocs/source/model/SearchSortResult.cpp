@@ -18,16 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-SearchSortResult::SearchSortResult() : 
-    m_field(OrderByFieldType::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 SearchSortResult::SearchSortResult(JsonView jsonValue)
-  : SearchSortResult()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SearchSortResult& SearchSortResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Field"))
   {
     m_field = OrderByFieldTypeMapper::GetOrderByFieldTypeForName(jsonValue.GetString("Field"));
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("Order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

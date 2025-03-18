@@ -12,22 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartWorkflowExecutionRequest::StartWorkflowExecutionRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
-{
-}
-
 Aws::String StartWorkflowExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

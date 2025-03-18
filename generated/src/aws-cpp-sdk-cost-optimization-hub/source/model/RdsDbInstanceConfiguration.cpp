@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-RdsDbInstanceConfiguration::RdsDbInstanceConfiguration() : 
-    m_instanceHasBeenSet(false)
-{
-}
-
 RdsDbInstanceConfiguration::RdsDbInstanceConfiguration(JsonView jsonValue)
-  : RdsDbInstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RdsDbInstanceConfiguration& RdsDbInstanceConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("instance"))
   {
     m_instance = jsonValue.GetObject("instance");
-
     m_instanceHasBeenSet = true;
   }
-
   return *this;
 }
 

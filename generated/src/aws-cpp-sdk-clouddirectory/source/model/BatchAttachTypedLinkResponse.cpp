@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse() : 
-    m_typedLinkSpecifierHasBeenSet(false)
-{
-}
-
 BatchAttachTypedLinkResponse::BatchAttachTypedLinkResponse(JsonView jsonValue)
-  : BatchAttachTypedLinkResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchAttachTypedLinkResponse& BatchAttachTypedLinkResponse::operator =(JsonView 
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
-
     m_typedLinkSpecifierHasBeenSet = true;
   }
-
   return *this;
 }
 

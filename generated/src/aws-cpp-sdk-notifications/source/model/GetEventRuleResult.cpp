@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventRuleResult::GetEventRuleResult()
-{
-}
-
 GetEventRuleResult::GetEventRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,33 @@ GetEventRuleResult& GetEventRuleResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationConfigurationArn"))
   {
     m_notificationConfigurationArn = jsonValue.GetString("notificationConfigurationArn");
-
+    m_notificationConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
+    m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
+    m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventPattern"))
   {
     m_eventPattern = jsonValue.GetString("eventPattern");
-
+    m_eventPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
@@ -72,8 +62,8 @@ GetEventRuleResult& GetEventRuleResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
     }
+    m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedRules"))
   {
     Aws::Utils::Array<JsonView> managedRulesJsonList = jsonValue.GetArray("managedRules");
@@ -81,8 +71,8 @@ GetEventRuleResult& GetEventRuleResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_managedRules.push_back(managedRulesJsonList[managedRulesIndex].AsString());
     }
+    m_managedRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusSummaryByRegion"))
   {
     Aws::Map<Aws::String, JsonView> statusSummaryByRegionJsonMap = jsonValue.GetObject("statusSummaryByRegion").GetAllObjects();
@@ -90,14 +80,15 @@ GetEventRuleResult& GetEventRuleResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_statusSummaryByRegion[statusSummaryByRegionItem.first] = statusSummaryByRegionItem.second.AsObject();
     }
+    m_statusSummaryByRegionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

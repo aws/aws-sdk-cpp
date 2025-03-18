@@ -22,7 +22,7 @@ namespace Model
   class PutEncryptionConfigRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API PutEncryptionConfigRequest();
+    AWS_XRAY_API PutEncryptionConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline PutEncryptionConfigRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline PutEncryptionConfigRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline PutEncryptionConfigRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    PutEncryptionConfigRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The type of encryption. Set to <code>KMS</code> to use your own key for
      * encryption. Set to <code>NONE</code> for default encryption.</p>
      */
-    inline const EncryptionType& GetType() const{ return m_type; }
+    inline EncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PutEncryptionConfigRequest& WithType(const EncryptionType& value) { SetType(value); return *this;}
-    inline PutEncryptionConfigRequest& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PutEncryptionConfigRequest& WithType(EncryptionType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    EncryptionType m_type;
+    EncryptionType m_type{EncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

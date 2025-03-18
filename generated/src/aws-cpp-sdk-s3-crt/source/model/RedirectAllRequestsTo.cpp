@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-RedirectAllRequestsTo::RedirectAllRequestsTo() : 
-    m_hostNameHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 RedirectAllRequestsTo::RedirectAllRequestsTo(const XmlNode& xmlNode)
-  : RedirectAllRequestsTo()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
   }

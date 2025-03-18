@@ -35,7 +35,7 @@ namespace Model
   class InstancesToExclude
   {
   public:
-    AWS_OUTPOSTS_API InstancesToExclude();
+    AWS_OUTPOSTS_API InstancesToExclude() = default;
     AWS_OUTPOSTS_API InstancesToExclude(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API InstancesToExclude& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
     /**
      * <p>List of user-specified instances that must not be stopped.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstances() const{ return m_instances; }
+    inline const Aws::Vector<Aws::String>& GetInstances() const { return m_instances; }
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
-    inline void SetInstances(const Aws::Vector<Aws::String>& value) { m_instancesHasBeenSet = true; m_instances = value; }
-    inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
-    inline InstancesToExclude& WithInstances(const Aws::Vector<Aws::String>& value) { SetInstances(value); return *this;}
-    inline InstancesToExclude& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
-    inline InstancesToExclude& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
-    inline InstancesToExclude& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
-    inline InstancesToExclude& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+    template<typename InstancesT = Aws::Vector<Aws::String>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<Aws::String>>
+    InstancesToExclude& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = Aws::String>
+    InstancesToExclude& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>IDs of the accounts that own each instance that must not be stopped.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline InstancesToExclude& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline InstancesToExclude& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline InstancesToExclude& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline InstancesToExclude& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline InstancesToExclude& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    InstancesToExclude& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    InstancesToExclude& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +74,13 @@ namespace Model
      * <p>Names of the services that own each instance that must not be stopped in
      * order to free up the capacity needed to run the capacity task.</p>
      */
-    inline const Aws::Vector<AWSServiceName>& GetServices() const{ return m_services; }
+    inline const Aws::Vector<AWSServiceName>& GetServices() const { return m_services; }
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
-    inline void SetServices(const Aws::Vector<AWSServiceName>& value) { m_servicesHasBeenSet = true; m_services = value; }
-    inline void SetServices(Aws::Vector<AWSServiceName>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
-    inline InstancesToExclude& WithServices(const Aws::Vector<AWSServiceName>& value) { SetServices(value); return *this;}
-    inline InstancesToExclude& WithServices(Aws::Vector<AWSServiceName>&& value) { SetServices(std::move(value)); return *this;}
-    inline InstancesToExclude& AddServices(const AWSServiceName& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
-    inline InstancesToExclude& AddServices(AWSServiceName&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
+    template<typename ServicesT = Aws::Vector<AWSServiceName>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<AWSServiceName>>
+    InstancesToExclude& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    inline InstancesToExclude& AddServices(AWSServiceName value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class RandomSplitActivity
   {
   public:
-    AWS_PINPOINT_API RandomSplitActivity();
+    AWS_PINPOINT_API RandomSplitActivity() = default;
     AWS_PINPOINT_API RandomSplitActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API RandomSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>The paths for the activity, including the percentage of participants to enter
      * each path and the activity to perform for each path.</p>
      */
-    inline const Aws::Vector<RandomSplitEntry>& GetBranches() const{ return m_branches; }
+    inline const Aws::Vector<RandomSplitEntry>& GetBranches() const { return m_branches; }
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-    inline void SetBranches(const Aws::Vector<RandomSplitEntry>& value) { m_branchesHasBeenSet = true; m_branches = value; }
-    inline void SetBranches(Aws::Vector<RandomSplitEntry>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-    inline RandomSplitActivity& WithBranches(const Aws::Vector<RandomSplitEntry>& value) { SetBranches(value); return *this;}
-    inline RandomSplitActivity& WithBranches(Aws::Vector<RandomSplitEntry>&& value) { SetBranches(std::move(value)); return *this;}
-    inline RandomSplitActivity& AddBranches(const RandomSplitEntry& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
-    inline RandomSplitActivity& AddBranches(RandomSplitEntry&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
+    template<typename BranchesT = Aws::Vector<RandomSplitEntry>>
+    void SetBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches = std::forward<BranchesT>(value); }
+    template<typename BranchesT = Aws::Vector<RandomSplitEntry>>
+    RandomSplitActivity& WithBranches(BranchesT&& value) { SetBranches(std::forward<BranchesT>(value)); return *this;}
+    template<typename BranchesT = RandomSplitEntry>
+    RandomSplitActivity& AddBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches.emplace_back(std::forward<BranchesT>(value)); return *this; }
     ///@}
   private:
 

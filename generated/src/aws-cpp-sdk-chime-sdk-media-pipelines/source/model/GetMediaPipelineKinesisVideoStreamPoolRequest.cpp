@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMediaPipelineKinesisVideoStreamPoolRequest::GetMediaPipelineKinesisVideoStreamPoolRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetMediaPipelineKinesisVideoStreamPoolRequest::SerializePayload() const
 {
   return {};

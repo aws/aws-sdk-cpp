@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-OverallVolume::OverallVolume() : 
-    m_volumeStatisticsHasBeenSet(false),
-    m_readRatePercent(0.0),
-    m_readRatePercentHasBeenSet(false),
-    m_domainIspPlacementsHasBeenSet(false)
-{
-}
-
 OverallVolume::OverallVolume(JsonView jsonValue)
-  : OverallVolume()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OverallVolume& OverallVolume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeStatistics"))
   {
     m_volumeStatistics = jsonValue.GetObject("VolumeStatistics");
-
     m_volumeStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadRatePercent"))
   {
     m_readRatePercent = jsonValue.GetDouble("ReadRatePercent");
-
     m_readRatePercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainIspPlacements"))
   {
     Aws::Utils::Array<JsonView> domainIspPlacementsJsonList = jsonValue.GetArray("DomainIspPlacements");
@@ -57,7 +44,6 @@ OverallVolume& OverallVolume::operator =(JsonView jsonValue)
     }
     m_domainIspPlacementsHasBeenSet = true;
   }
-
   return *this;
 }
 

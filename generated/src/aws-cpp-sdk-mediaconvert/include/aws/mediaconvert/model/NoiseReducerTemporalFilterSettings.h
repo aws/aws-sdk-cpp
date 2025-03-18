@@ -32,7 +32,7 @@ namespace Model
   class NoiseReducerTemporalFilterSettings
   {
   public:
-    AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings();
+    AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings() = default;
     AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * stronger temporal filtering. This filters highly complex scenes more
      * aggressively and creates better VQ for low bitrate outputs.
      */
-    inline int GetAggressiveMode() const{ return m_aggressiveMode; }
+    inline int GetAggressiveMode() const { return m_aggressiveMode; }
     inline bool AggressiveModeHasBeenSet() const { return m_aggressiveModeHasBeenSet; }
     inline void SetAggressiveMode(int value) { m_aggressiveModeHasBeenSet = true; m_aggressiveMode = value; }
     inline NoiseReducerTemporalFilterSettings& WithAggressiveMode(int value) { SetAggressiveMode(value); return *this;}
@@ -62,12 +62,10 @@ namespace Model
      * sharpening strength. Set Post temporal sharpening to Disabled to not apply
      * sharpening.
      */
-    inline const NoiseFilterPostTemporalSharpening& GetPostTemporalSharpening() const{ return m_postTemporalSharpening; }
+    inline NoiseFilterPostTemporalSharpening GetPostTemporalSharpening() const { return m_postTemporalSharpening; }
     inline bool PostTemporalSharpeningHasBeenSet() const { return m_postTemporalSharpeningHasBeenSet; }
-    inline void SetPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
-    inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = std::move(value); }
-    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { SetPostTemporalSharpening(value); return *this;}
-    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { SetPostTemporalSharpening(std::move(value)); return *this;}
+    inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening value) { SetPostTemporalSharpening(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * transcoder applies to your output. Set Post temporal sharpening strength to Low,
      * Medium, or High to indicate the amount of sharpening.
      */
-    inline const NoiseFilterPostTemporalSharpeningStrength& GetPostTemporalSharpeningStrength() const{ return m_postTemporalSharpeningStrength; }
+    inline NoiseFilterPostTemporalSharpeningStrength GetPostTemporalSharpeningStrength() const { return m_postTemporalSharpeningStrength; }
     inline bool PostTemporalSharpeningStrengthHasBeenSet() const { return m_postTemporalSharpeningStrengthHasBeenSet; }
-    inline void SetPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = value; }
-    inline void SetPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = std::move(value); }
-    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { SetPostTemporalSharpeningStrength(value); return *this;}
-    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { SetPostTemporalSharpeningStrength(std::move(value)); return *this;}
+    inline void SetPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = value; }
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength value) { SetPostTemporalSharpeningStrength(value); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * at the cost of transcode time, high setting improves transcode time at the cost
      * of bit rate.
      */
-    inline int GetSpeed() const{ return m_speed; }
+    inline int GetSpeed() const { return m_speed; }
     inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
     inline void SetSpeed(int value) { m_speedHasBeenSet = true; m_speed = value; }
     inline NoiseReducerTemporalFilterSettings& WithSpeed(int value) { SetSpeed(value); return *this;}
@@ -104,26 +100,26 @@ namespace Model
      * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
      * a high level of complexity reduction
      */
-    inline int GetStrength() const{ return m_strength; }
+    inline int GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
     inline NoiseReducerTemporalFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
     ///@}
   private:
 
-    int m_aggressiveMode;
+    int m_aggressiveMode{0};
     bool m_aggressiveModeHasBeenSet = false;
 
-    NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
+    NoiseFilterPostTemporalSharpening m_postTemporalSharpening{NoiseFilterPostTemporalSharpening::NOT_SET};
     bool m_postTemporalSharpeningHasBeenSet = false;
 
-    NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength;
+    NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength{NoiseFilterPostTemporalSharpeningStrength::NOT_SET};
     bool m_postTemporalSharpeningStrengthHasBeenSet = false;
 
-    int m_speed;
+    int m_speed{0};
     bool m_speedHasBeenSet = false;
 
-    int m_strength;
+    int m_strength{0};
     bool m_strengthHasBeenSet = false;
   };
 

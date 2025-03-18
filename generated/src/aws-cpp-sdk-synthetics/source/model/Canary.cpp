@@ -18,33 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-Canary::Canary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_runConfigHasBeenSet(false),
-    m_successRetentionPeriodInDays(0),
-    m_successRetentionPeriodInDaysHasBeenSet(false),
-    m_failureRetentionPeriodInDays(0),
-    m_failureRetentionPeriodInDaysHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_timelineHasBeenSet(false),
-    m_artifactS3LocationHasBeenSet(false),
-    m_engineArnHasBeenSet(false),
-    m_runtimeVersionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_visualReferenceHasBeenSet(false),
-    m_provisionedResourceCleanup(ProvisionedResourceCleanupSetting::NOT_SET),
-    m_provisionedResourceCleanupHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_artifactConfigHasBeenSet(false)
-{
-}
-
 Canary::Canary(JsonView jsonValue)
-  : Canary()
 {
   *this = jsonValue;
 }
@@ -54,115 +28,83 @@ Canary& Canary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetObject("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunConfig"))
   {
     m_runConfig = jsonValue.GetObject("RunConfig");
-
     m_runConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessRetentionPeriodInDays"))
   {
     m_successRetentionPeriodInDays = jsonValue.GetInteger("SuccessRetentionPeriodInDays");
-
     m_successRetentionPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureRetentionPeriodInDays"))
   {
     m_failureRetentionPeriodInDays = jsonValue.GetInteger("FailureRetentionPeriodInDays");
-
     m_failureRetentionPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeline"))
   {
     m_timeline = jsonValue.GetObject("Timeline");
-
     m_timelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactS3Location"))
   {
     m_artifactS3Location = jsonValue.GetString("ArtifactS3Location");
-
     m_artifactS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineArn"))
   {
     m_engineArn = jsonValue.GetString("EngineArn");
-
     m_engineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeVersion"))
   {
     m_runtimeVersion = jsonValue.GetString("RuntimeVersion");
-
     m_runtimeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualReference"))
   {
     m_visualReference = jsonValue.GetObject("VisualReference");
-
     m_visualReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedResourceCleanup"))
   {
     m_provisionedResourceCleanup = ProvisionedResourceCleanupSettingMapper::GetProvisionedResourceCleanupSettingForName(jsonValue.GetString("ProvisionedResourceCleanup"));
-
     m_provisionedResourceCleanupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -172,14 +114,11 @@ Canary& Canary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactConfig"))
   {
     m_artifactConfig = jsonValue.GetObject("ArtifactConfig");
-
     m_artifactConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

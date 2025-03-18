@@ -33,35 +33,35 @@ namespace Model
   class GetWorkloadResult
   {
   public:
-    AWS_WELLARCHITECTED_API GetWorkloadResult();
+    AWS_WELLARCHITECTED_API GetWorkloadResult() = default;
     AWS_WELLARCHITECTED_API GetWorkloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API GetWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Workload& GetWorkload() const{ return m_workload; }
-    inline void SetWorkload(const Workload& value) { m_workload = value; }
-    inline void SetWorkload(Workload&& value) { m_workload = std::move(value); }
-    inline GetWorkloadResult& WithWorkload(const Workload& value) { SetWorkload(value); return *this;}
-    inline GetWorkloadResult& WithWorkload(Workload&& value) { SetWorkload(std::move(value)); return *this;}
+    inline const Workload& GetWorkload() const { return m_workload; }
+    template<typename WorkloadT = Workload>
+    void SetWorkload(WorkloadT&& value) { m_workloadHasBeenSet = true; m_workload = std::forward<WorkloadT>(value); }
+    template<typename WorkloadT = Workload>
+    GetWorkloadResult& WithWorkload(WorkloadT&& value) { SetWorkload(std::forward<WorkloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkloadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Workload m_workload;
+    bool m_workloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

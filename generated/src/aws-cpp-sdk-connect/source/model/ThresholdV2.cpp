@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ThresholdV2::ThresholdV2() : 
-    m_comparisonHasBeenSet(false),
-    m_thresholdValue(0.0),
-    m_thresholdValueHasBeenSet(false)
-{
-}
-
 ThresholdV2::ThresholdV2(JsonView jsonValue)
-  : ThresholdV2()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ThresholdV2& ThresholdV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Comparison"))
   {
     m_comparison = jsonValue.GetString("Comparison");
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdValue"))
   {
     m_thresholdValue = jsonValue.GetDouble("ThresholdValue");
-
     m_thresholdValueHasBeenSet = true;
   }
-
   return *this;
 }
 

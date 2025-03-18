@@ -28,7 +28,7 @@ namespace Model
   class CreateKeyResult
   {
   public:
-    AWS_LOCATIONSERVICE_API CreateKeyResult();
+    AWS_LOCATIONSERVICE_API CreateKeyResult() = default;
     AWS_LOCATIONSERVICE_API CreateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API CreateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * to authorize the call. For example, see <a
      * href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
-    inline void SetKey(const Aws::String& value) { m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_key.assign(value); }
-    inline CreateKeyResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline CreateKeyResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline CreateKeyResult& WithKey(const char* value) { SetKey(value); return *this;}
+    inline const Aws::String& GetKey() const { return m_key; }
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    CreateKeyResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,26 +53,22 @@ namespace Model
      * example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArn.assign(value); }
-    inline CreateKeyResult& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline CreateKeyResult& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline CreateKeyResult& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    CreateKeyResult& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the API key resource.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
-    inline CreateKeyResult& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline CreateKeyResult& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline CreateKeyResult& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    CreateKeyResult& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,34 +77,37 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline CreateKeyResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline CreateKeyResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    CreateKeyResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_keyArn;
+    bool m_keyArnHasBeenSet = false;
 
     Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

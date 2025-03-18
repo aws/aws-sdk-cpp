@@ -35,7 +35,7 @@ namespace Model
   class DescribeInboundConnectionsResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DescribeInboundConnectionsResult();
+    AWS_OPENSEARCHSERVICE_API DescribeInboundConnectionsResult() = default;
     AWS_OPENSEARCHSERVICE_API DescribeInboundConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API DescribeInboundConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>List of inbound connections.</p>
      */
-    inline const Aws::Vector<InboundConnection>& GetConnections() const{ return m_connections; }
-    inline void SetConnections(const Aws::Vector<InboundConnection>& value) { m_connections = value; }
-    inline void SetConnections(Aws::Vector<InboundConnection>&& value) { m_connections = std::move(value); }
-    inline DescribeInboundConnectionsResult& WithConnections(const Aws::Vector<InboundConnection>& value) { SetConnections(value); return *this;}
-    inline DescribeInboundConnectionsResult& WithConnections(Aws::Vector<InboundConnection>&& value) { SetConnections(std::move(value)); return *this;}
-    inline DescribeInboundConnectionsResult& AddConnections(const InboundConnection& value) { m_connections.push_back(value); return *this; }
-    inline DescribeInboundConnectionsResult& AddConnections(InboundConnection&& value) { m_connections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InboundConnection>& GetConnections() const { return m_connections; }
+    template<typename ConnectionsT = Aws::Vector<InboundConnection>>
+    void SetConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections = std::forward<ConnectionsT>(value); }
+    template<typename ConnectionsT = Aws::Vector<InboundConnection>>
+    DescribeInboundConnectionsResult& WithConnections(ConnectionsT&& value) { SetConnections(std::forward<ConnectionsT>(value)); return *this;}
+    template<typename ConnectionsT = InboundConnection>
+    DescribeInboundConnectionsResult& AddConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections.emplace_back(std::forward<ConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Send the request again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeInboundConnectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInboundConnectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInboundConnectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeInboundConnectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInboundConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInboundConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInboundConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInboundConnectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InboundConnection> m_connections;
+    bool m_connectionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

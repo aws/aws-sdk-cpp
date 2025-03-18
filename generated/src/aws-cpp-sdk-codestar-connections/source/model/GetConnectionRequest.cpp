@@ -12,11 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectionRequest::GetConnectionRequest() : 
-    m_connectionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

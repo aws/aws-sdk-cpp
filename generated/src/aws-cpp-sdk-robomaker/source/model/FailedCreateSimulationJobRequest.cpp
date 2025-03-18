@@ -18,17 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-FailedCreateSimulationJobRequest::FailedCreateSimulationJobRequest() : 
-    m_requestHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCode(SimulationJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failedAtHasBeenSet(false)
-{
-}
-
 FailedCreateSimulationJobRequest::FailedCreateSimulationJobRequest(JsonView jsonValue)
-  : FailedCreateSimulationJobRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ FailedCreateSimulationJobRequest& FailedCreateSimulationJobRequest::operator =(J
   if(jsonValue.ValueExists("request"))
   {
     m_request = jsonValue.GetObject("request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = SimulationJobErrorCodeMapper::GetSimulationJobErrorCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedAt"))
   {
     m_failedAt = jsonValue.GetDouble("failedAt");
-
     m_failedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

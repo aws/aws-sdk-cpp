@@ -35,7 +35,7 @@ namespace Model
   class Expression
   {
   public:
-    AWS_BILLING_API Expression();
+    AWS_BILLING_API Expression() = default;
     AWS_BILLING_API Expression(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p> The specific <code>Dimension</code> to use for <code>Expression</code>. </p>
      */
-    inline const DimensionValues& GetDimensions() const{ return m_dimensions; }
+    inline const DimensionValues& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const DimensionValues& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(DimensionValues&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline Expression& WithDimensions(const DimensionValues& value) { SetDimensions(value); return *this;}
-    inline Expression& WithDimensions(DimensionValues&& value) { SetDimensions(std::move(value)); return *this;}
+    template<typename DimensionsT = DimensionValues>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = DimensionValues>
+    Expression& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The specific <code>Tag</code> to use for <code>Expression</code>. </p>
      */
-    inline const TagValues& GetTags() const{ return m_tags; }
+    inline const TagValues& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const TagValues& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(TagValues&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Expression& WithTags(const TagValues& value) { SetTags(value); return *this;}
-    inline Expression& WithTags(TagValues&& value) { SetTags(std::move(value)); return *this;}
+    template<typename TagsT = TagValues>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = TagValues>
+    Expression& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
   private:
 

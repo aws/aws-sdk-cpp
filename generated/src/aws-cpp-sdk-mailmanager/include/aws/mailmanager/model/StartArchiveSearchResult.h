@@ -32,7 +32,7 @@ namespace Model
   class StartArchiveSearchResult
   {
   public:
-    AWS_MAILMANAGER_API StartArchiveSearchResult();
+    AWS_MAILMANAGER_API StartArchiveSearchResult() = default;
     AWS_MAILMANAGER_API StartArchiveSearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API StartArchiveSearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>The unique identifier for the initiated search job.</p>
      */
-    inline const Aws::String& GetSearchId() const{ return m_searchId; }
-    inline void SetSearchId(const Aws::String& value) { m_searchId = value; }
-    inline void SetSearchId(Aws::String&& value) { m_searchId = std::move(value); }
-    inline void SetSearchId(const char* value) { m_searchId.assign(value); }
-    inline StartArchiveSearchResult& WithSearchId(const Aws::String& value) { SetSearchId(value); return *this;}
-    inline StartArchiveSearchResult& WithSearchId(Aws::String&& value) { SetSearchId(std::move(value)); return *this;}
-    inline StartArchiveSearchResult& WithSearchId(const char* value) { SetSearchId(value); return *this;}
+    inline const Aws::String& GetSearchId() const { return m_searchId; }
+    template<typename SearchIdT = Aws::String>
+    void SetSearchId(SearchIdT&& value) { m_searchIdHasBeenSet = true; m_searchId = std::forward<SearchIdT>(value); }
+    template<typename SearchIdT = Aws::String>
+    StartArchiveSearchResult& WithSearchId(SearchIdT&& value) { SetSearchId(std::forward<SearchIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartArchiveSearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartArchiveSearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartArchiveSearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartArchiveSearchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_searchId;
+    bool m_searchIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

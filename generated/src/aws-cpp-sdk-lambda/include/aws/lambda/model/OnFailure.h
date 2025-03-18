@@ -31,7 +31,7 @@ namespace Model
   class OnFailure
   {
   public:
-    AWS_LAMBDA_API OnFailure();
+    AWS_LAMBDA_API OnFailure() = default;
     AWS_LAMBDA_API OnFailure(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API OnFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3
      * bucket as the destination.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline OnFailure& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline OnFailure& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline OnFailure& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    OnFailure& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

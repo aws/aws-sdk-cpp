@@ -27,7 +27,7 @@ namespace Model
   class UpdateFirewallDeleteProtectionResult
   {
   public:
-    AWS_NETWORKFIREWALL_API UpdateFirewallDeleteProtectionResult();
+    AWS_NETWORKFIREWALL_API UpdateFirewallDeleteProtectionResult() = default;
     AWS_NETWORKFIREWALL_API UpdateFirewallDeleteProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API UpdateFirewallDeleteProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the firewall.</p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArn.assign(value); }
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    UpdateFirewallDeleteProtectionResult& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +48,11 @@ namespace Model
      * <p>The descriptive name of the firewall. You can't change the name of a firewall
      * after you create it.</p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallName.assign(value); }
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    UpdateFirewallDeleteProtectionResult& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,8 +63,8 @@ namespace Model
      * When you create a firewall, the operation initializes this flag to
      * <code>TRUE</code>.</p>
      */
-    inline bool GetDeleteProtection() const{ return m_deleteProtection; }
-    inline void SetDeleteProtection(bool value) { m_deleteProtection = value; }
+    inline bool GetDeleteProtection() const { return m_deleteProtection; }
+    inline void SetDeleteProtection(bool value) { m_deleteProtectionHasBeenSet = true; m_deleteProtection = value; }
     inline UpdateFirewallDeleteProtectionResult& WithDeleteProtection(bool value) { SetDeleteProtection(value); return *this;}
     ///@}
 
@@ -87,36 +83,37 @@ namespace Model
      * to get a current copy of it with a new token. Reapply your changes as needed,
      * then try the operation again using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-    inline UpdateFirewallDeleteProtectionResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    UpdateFirewallDeleteProtectionResult& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFirewallDeleteProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFirewallDeleteProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFirewallDeleteProtectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_firewallArn;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
+    bool m_firewallNameHasBeenSet = false;
 
-    bool m_deleteProtection;
+    bool m_deleteProtection{false};
+    bool m_deleteProtectionHasBeenSet = false;
 
     Aws::String m_updateToken;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

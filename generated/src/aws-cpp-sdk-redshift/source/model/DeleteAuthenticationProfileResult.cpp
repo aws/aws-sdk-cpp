@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAuthenticationProfileResult::DeleteAuthenticationProfileResult()
-{
-}
-
 DeleteAuthenticationProfileResult::DeleteAuthenticationProfileResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteAuthenticationProfileResult& DeleteAuthenticationProfileResult::operator =
     if(!authenticationProfileNameNode.IsNull())
     {
       m_authenticationProfileName = Aws::Utils::Xml::DecodeEscapedXmlText(authenticationProfileNameNode.GetText());
+      m_authenticationProfileNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DeleteAuthenticationProfileResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

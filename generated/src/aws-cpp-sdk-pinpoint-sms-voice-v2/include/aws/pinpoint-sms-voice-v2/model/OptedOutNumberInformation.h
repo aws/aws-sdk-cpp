@@ -33,7 +33,7 @@ namespace Model
   class OptedOutNumberInformation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation();
+    AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation() = default;
     AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The phone number that is opted out.</p>
      */
-    inline const Aws::String& GetOptedOutNumber() const{ return m_optedOutNumber; }
+    inline const Aws::String& GetOptedOutNumber() const { return m_optedOutNumber; }
     inline bool OptedOutNumberHasBeenSet() const { return m_optedOutNumberHasBeenSet; }
-    inline void SetOptedOutNumber(const Aws::String& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = value; }
-    inline void SetOptedOutNumber(Aws::String&& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = std::move(value); }
-    inline void SetOptedOutNumber(const char* value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber.assign(value); }
-    inline OptedOutNumberInformation& WithOptedOutNumber(const Aws::String& value) { SetOptedOutNumber(value); return *this;}
-    inline OptedOutNumberInformation& WithOptedOutNumber(Aws::String&& value) { SetOptedOutNumber(std::move(value)); return *this;}
-    inline OptedOutNumberInformation& WithOptedOutNumber(const char* value) { SetOptedOutNumber(value); return *this;}
+    template<typename OptedOutNumberT = Aws::String>
+    void SetOptedOutNumber(OptedOutNumberT&& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = std::forward<OptedOutNumberT>(value); }
+    template<typename OptedOutNumberT = Aws::String>
+    OptedOutNumberInformation& WithOptedOutNumber(OptedOutNumberT&& value) { SetOptedOutNumber(std::forward<OptedOutNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,19 @@ namespace Model
      * <p>The time that the op tout occurred, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetOptedOutTimestamp() const{ return m_optedOutTimestamp; }
+    inline const Aws::Utils::DateTime& GetOptedOutTimestamp() const { return m_optedOutTimestamp; }
     inline bool OptedOutTimestampHasBeenSet() const { return m_optedOutTimestampHasBeenSet; }
-    inline void SetOptedOutTimestamp(const Aws::Utils::DateTime& value) { m_optedOutTimestampHasBeenSet = true; m_optedOutTimestamp = value; }
-    inline void SetOptedOutTimestamp(Aws::Utils::DateTime&& value) { m_optedOutTimestampHasBeenSet = true; m_optedOutTimestamp = std::move(value); }
-    inline OptedOutNumberInformation& WithOptedOutTimestamp(const Aws::Utils::DateTime& value) { SetOptedOutTimestamp(value); return *this;}
-    inline OptedOutNumberInformation& WithOptedOutTimestamp(Aws::Utils::DateTime&& value) { SetOptedOutTimestamp(std::move(value)); return *this;}
+    template<typename OptedOutTimestampT = Aws::Utils::DateTime>
+    void SetOptedOutTimestamp(OptedOutTimestampT&& value) { m_optedOutTimestampHasBeenSet = true; m_optedOutTimestamp = std::forward<OptedOutTimestampT>(value); }
+    template<typename OptedOutTimestampT = Aws::Utils::DateTime>
+    OptedOutNumberInformation& WithOptedOutTimestamp(OptedOutTimestampT&& value) { SetOptedOutTimestamp(std::forward<OptedOutTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This is set to true if it was the end recipient that opted out.</p>
      */
-    inline bool GetEndUserOptedOut() const{ return m_endUserOptedOut; }
+    inline bool GetEndUserOptedOut() const { return m_endUserOptedOut; }
     inline bool EndUserOptedOutHasBeenSet() const { return m_endUserOptedOutHasBeenSet; }
     inline void SetEndUserOptedOut(bool value) { m_endUserOptedOutHasBeenSet = true; m_endUserOptedOut = value; }
     inline OptedOutNumberInformation& WithEndUserOptedOut(bool value) { SetEndUserOptedOut(value); return *this;}
@@ -80,10 +78,10 @@ namespace Model
     Aws::String m_optedOutNumber;
     bool m_optedOutNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_optedOutTimestamp;
+    Aws::Utils::DateTime m_optedOutTimestamp{};
     bool m_optedOutTimestampHasBeenSet = false;
 
-    bool m_endUserOptedOut;
+    bool m_endUserOptedOut{false};
     bool m_endUserOptedOutHasBeenSet = false;
   };
 

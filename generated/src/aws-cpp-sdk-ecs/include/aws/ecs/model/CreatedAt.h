@@ -34,7 +34,7 @@ namespace Model
   class CreatedAt
   {
   public:
-    AWS_ECS_API CreatedAt();
+    AWS_ECS_API CreatedAt() = default;
     AWS_ECS_API CreatedAt(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API CreatedAt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Include service deployments in the result that were created before this time.
      * The format is yyyy-MM-dd HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetBefore() const{ return m_before; }
+    inline const Aws::Utils::DateTime& GetBefore() const { return m_before; }
     inline bool BeforeHasBeenSet() const { return m_beforeHasBeenSet; }
-    inline void SetBefore(const Aws::Utils::DateTime& value) { m_beforeHasBeenSet = true; m_before = value; }
-    inline void SetBefore(Aws::Utils::DateTime&& value) { m_beforeHasBeenSet = true; m_before = std::move(value); }
-    inline CreatedAt& WithBefore(const Aws::Utils::DateTime& value) { SetBefore(value); return *this;}
-    inline CreatedAt& WithBefore(Aws::Utils::DateTime&& value) { SetBefore(std::move(value)); return *this;}
+    template<typename BeforeT = Aws::Utils::DateTime>
+    void SetBefore(BeforeT&& value) { m_beforeHasBeenSet = true; m_before = std::forward<BeforeT>(value); }
+    template<typename BeforeT = Aws::Utils::DateTime>
+    CreatedAt& WithBefore(BeforeT&& value) { SetBefore(std::forward<BeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +58,19 @@ namespace Model
      * <p>Include service deployments in the result that were created after this time.
      * The format is yyyy-MM-dd HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetAfter() const{ return m_after; }
+    inline const Aws::Utils::DateTime& GetAfter() const { return m_after; }
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-    inline void SetAfter(const Aws::Utils::DateTime& value) { m_afterHasBeenSet = true; m_after = value; }
-    inline void SetAfter(Aws::Utils::DateTime&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
-    inline CreatedAt& WithAfter(const Aws::Utils::DateTime& value) { SetAfter(value); return *this;}
-    inline CreatedAt& WithAfter(Aws::Utils::DateTime&& value) { SetAfter(std::move(value)); return *this;}
+    template<typename AfterT = Aws::Utils::DateTime>
+    void SetAfter(AfterT&& value) { m_afterHasBeenSet = true; m_after = std::forward<AfterT>(value); }
+    template<typename AfterT = Aws::Utils::DateTime>
+    CreatedAt& WithAfter(AfterT&& value) { SetAfter(std::forward<AfterT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_before;
+    Aws::Utils::DateTime m_before{};
     bool m_beforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_after;
+    Aws::Utils::DateTime m_after{};
     bool m_afterHasBeenSet = false;
   };
 

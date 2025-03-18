@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SuggestRequest::SuggestRequest() : 
-    m_queryHasBeenSet(false),
-    m_suggesterHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 Aws::String SuggestRequest::SerializePayload() const
 {
   return {};

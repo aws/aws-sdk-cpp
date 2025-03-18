@@ -29,7 +29,7 @@ namespace Model
   class DescribePredictorBacktestExportJobResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribePredictorBacktestExportJobResult();
+    AWS_FORECASTSERVICE_API DescribePredictorBacktestExportJobResult() = default;
     AWS_FORECASTSERVICE_API DescribePredictorBacktestExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribePredictorBacktestExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,48 +38,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
      */
-    inline const Aws::String& GetPredictorBacktestExportJobArn() const{ return m_predictorBacktestExportJobArn; }
-    inline void SetPredictorBacktestExportJobArn(const Aws::String& value) { m_predictorBacktestExportJobArn = value; }
-    inline void SetPredictorBacktestExportJobArn(Aws::String&& value) { m_predictorBacktestExportJobArn = std::move(value); }
-    inline void SetPredictorBacktestExportJobArn(const char* value) { m_predictorBacktestExportJobArn.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobArn(const Aws::String& value) { SetPredictorBacktestExportJobArn(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobArn(Aws::String&& value) { SetPredictorBacktestExportJobArn(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobArn(const char* value) { SetPredictorBacktestExportJobArn(value); return *this;}
+    inline const Aws::String& GetPredictorBacktestExportJobArn() const { return m_predictorBacktestExportJobArn; }
+    template<typename PredictorBacktestExportJobArnT = Aws::String>
+    void SetPredictorBacktestExportJobArn(PredictorBacktestExportJobArnT&& value) { m_predictorBacktestExportJobArnHasBeenSet = true; m_predictorBacktestExportJobArn = std::forward<PredictorBacktestExportJobArnT>(value); }
+    template<typename PredictorBacktestExportJobArnT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobArn(PredictorBacktestExportJobArnT&& value) { SetPredictorBacktestExportJobArn(std::forward<PredictorBacktestExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the predictor backtest export job.</p>
      */
-    inline const Aws::String& GetPredictorBacktestExportJobName() const{ return m_predictorBacktestExportJobName; }
-    inline void SetPredictorBacktestExportJobName(const Aws::String& value) { m_predictorBacktestExportJobName = value; }
-    inline void SetPredictorBacktestExportJobName(Aws::String&& value) { m_predictorBacktestExportJobName = std::move(value); }
-    inline void SetPredictorBacktestExportJobName(const char* value) { m_predictorBacktestExportJobName.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobName(const Aws::String& value) { SetPredictorBacktestExportJobName(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobName(Aws::String&& value) { SetPredictorBacktestExportJobName(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobName(const char* value) { SetPredictorBacktestExportJobName(value); return *this;}
+    inline const Aws::String& GetPredictorBacktestExportJobName() const { return m_predictorBacktestExportJobName; }
+    template<typename PredictorBacktestExportJobNameT = Aws::String>
+    void SetPredictorBacktestExportJobName(PredictorBacktestExportJobNameT&& value) { m_predictorBacktestExportJobNameHasBeenSet = true; m_predictorBacktestExportJobName = std::forward<PredictorBacktestExportJobNameT>(value); }
+    template<typename PredictorBacktestExportJobNameT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithPredictorBacktestExportJobName(PredictorBacktestExportJobNameT&& value) { SetPredictorBacktestExportJobName(std::forward<PredictorBacktestExportJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArn.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataDestination& GetDestination() const{ return m_destination; }
-    inline void SetDestination(const DataDestination& value) { m_destination = value; }
-    inline void SetDestination(DataDestination&& value) { m_destination = std::move(value); }
-    inline DescribePredictorBacktestExportJobResult& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline const DataDestination& GetDestination() const { return m_destination; }
+    template<typename DestinationT = DataDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = DataDestination>
+    DescribePredictorBacktestExportJobResult& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,13 +81,11 @@ namespace Model
      * <p>Information about any errors that may have occurred during the backtest
      * export.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,24 +97,22 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the predictor backtest export job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribePredictorBacktestExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribePredictorBacktestExportJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,57 +125,63 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribePredictorBacktestExportJobResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribePredictorBacktestExportJobResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the exported data, CSV or PARQUET.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
-    inline void SetFormat(const Aws::String& value) { m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_format.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+    inline const Aws::String& GetFormat() const { return m_format; }
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePredictorBacktestExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePredictorBacktestExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePredictorBacktestExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_predictorBacktestExportJobArn;
+    bool m_predictorBacktestExportJobArnHasBeenSet = false;
 
     Aws::String m_predictorBacktestExportJobName;
+    bool m_predictorBacktestExportJobNameHasBeenSet = false;
 
     Aws::String m_predictorArn;
+    bool m_predictorArnHasBeenSet = false;
 
     DataDestination m_destination;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_format;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

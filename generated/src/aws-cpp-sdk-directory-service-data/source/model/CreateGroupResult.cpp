@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupResult::CreateGroupResult()
-{
-}
-
 CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
+    m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAMAccountName"))
   {
     m_sAMAccountName = jsonValue.GetString("SAMAccountName");
-
+    m_sAMAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SID"))
   {
     m_sID = jsonValue.GetString("SID");
-
+    m_sIDHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

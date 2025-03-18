@@ -12,15 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCapacityProvidersRequest::DescribeCapacityProvidersRequest() : 
-    m_capacityProvidersHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCapacityProvidersRequest::SerializePayload() const
 {
   JsonValue payload;

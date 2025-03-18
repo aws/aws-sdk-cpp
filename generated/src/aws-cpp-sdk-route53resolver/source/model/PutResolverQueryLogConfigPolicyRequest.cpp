@@ -12,12 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResolverQueryLogConfigPolicyRequest::PutResolverQueryLogConfigPolicyRequest() : 
-    m_arnHasBeenSet(false),
-    m_resolverQueryLogConfigPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutResolverQueryLogConfigPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

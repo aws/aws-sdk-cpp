@@ -33,7 +33,7 @@ namespace Model
   class TrustStoreRevocation
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TrustStoreRevocation();
+    AWS_ELASTICLOADBALANCINGV2_API TrustStoreRevocation() = default;
     AWS_ELASTICLOADBALANCINGV2_API TrustStoreRevocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TrustStoreRevocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,21 +45,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline TrustStoreRevocation& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline TrustStoreRevocation& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline TrustStoreRevocation& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    TrustStoreRevocation& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revocation ID of the revocation file.</p>
      */
-    inline long long GetRevocationId() const{ return m_revocationId; }
+    inline long long GetRevocationId() const { return m_revocationId; }
     inline bool RevocationIdHasBeenSet() const { return m_revocationIdHasBeenSet; }
     inline void SetRevocationId(long long value) { m_revocationIdHasBeenSet = true; m_revocationId = value; }
     inline TrustStoreRevocation& WithRevocationId(long long value) { SetRevocationId(value); return *this;}
@@ -69,19 +67,17 @@ namespace Model
     /**
      * <p>The type of revocation file.</p>
      */
-    inline const RevocationType& GetRevocationType() const{ return m_revocationType; }
+    inline RevocationType GetRevocationType() const { return m_revocationType; }
     inline bool RevocationTypeHasBeenSet() const { return m_revocationTypeHasBeenSet; }
-    inline void SetRevocationType(const RevocationType& value) { m_revocationTypeHasBeenSet = true; m_revocationType = value; }
-    inline void SetRevocationType(RevocationType&& value) { m_revocationTypeHasBeenSet = true; m_revocationType = std::move(value); }
-    inline TrustStoreRevocation& WithRevocationType(const RevocationType& value) { SetRevocationType(value); return *this;}
-    inline TrustStoreRevocation& WithRevocationType(RevocationType&& value) { SetRevocationType(std::move(value)); return *this;}
+    inline void SetRevocationType(RevocationType value) { m_revocationTypeHasBeenSet = true; m_revocationType = value; }
+    inline TrustStoreRevocation& WithRevocationType(RevocationType value) { SetRevocationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of revoked certificates.</p>
      */
-    inline long long GetNumberOfRevokedEntries() const{ return m_numberOfRevokedEntries; }
+    inline long long GetNumberOfRevokedEntries() const { return m_numberOfRevokedEntries; }
     inline bool NumberOfRevokedEntriesHasBeenSet() const { return m_numberOfRevokedEntriesHasBeenSet; }
     inline void SetNumberOfRevokedEntries(long long value) { m_numberOfRevokedEntriesHasBeenSet = true; m_numberOfRevokedEntries = value; }
     inline TrustStoreRevocation& WithNumberOfRevokedEntries(long long value) { SetNumberOfRevokedEntries(value); return *this;}
@@ -91,13 +87,13 @@ namespace Model
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
 
-    long long m_revocationId;
+    long long m_revocationId{0};
     bool m_revocationIdHasBeenSet = false;
 
-    RevocationType m_revocationType;
+    RevocationType m_revocationType{RevocationType::NOT_SET};
     bool m_revocationTypeHasBeenSet = false;
 
-    long long m_numberOfRevokedEntries;
+    long long m_numberOfRevokedEntries{0};
     bool m_numberOfRevokedEntriesHasBeenSet = false;
   };
 

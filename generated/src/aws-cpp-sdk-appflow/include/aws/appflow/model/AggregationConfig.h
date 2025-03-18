@@ -32,7 +32,7 @@ namespace Model
   class AggregationConfig
   {
   public:
-    AWS_APPFLOW_API AggregationConfig();
+    AWS_APPFLOW_API AggregationConfig() = default;
     AWS_APPFLOW_API AggregationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API AggregationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
      * file, or leave them unaggregated. </p>
      */
-    inline const AggregationType& GetAggregationType() const{ return m_aggregationType; }
+    inline AggregationType GetAggregationType() const { return m_aggregationType; }
     inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
-    inline void SetAggregationType(const AggregationType& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
-    inline void SetAggregationType(AggregationType&& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = std::move(value); }
-    inline AggregationConfig& WithAggregationType(const AggregationType& value) { SetAggregationType(value); return *this;}
-    inline AggregationConfig& WithAggregationType(AggregationType&& value) { SetAggregationType(std::move(value)); return *this;}
+    inline void SetAggregationType(AggregationType value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
+    inline AggregationConfig& WithAggregationType(AggregationType value) { SetAggregationType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,17 +56,17 @@ namespace Model
      * size that you specify. The actual file sizes might differ from this target based
      * on the number and size of the records that each file contains.</p>
      */
-    inline long long GetTargetFileSize() const{ return m_targetFileSize; }
+    inline long long GetTargetFileSize() const { return m_targetFileSize; }
     inline bool TargetFileSizeHasBeenSet() const { return m_targetFileSizeHasBeenSet; }
     inline void SetTargetFileSize(long long value) { m_targetFileSizeHasBeenSet = true; m_targetFileSize = value; }
     inline AggregationConfig& WithTargetFileSize(long long value) { SetTargetFileSize(value); return *this;}
     ///@}
   private:
 
-    AggregationType m_aggregationType;
+    AggregationType m_aggregationType{AggregationType::NOT_SET};
     bool m_aggregationTypeHasBeenSet = false;
 
-    long long m_targetFileSize;
+    long long m_targetFileSize{0};
     bool m_targetFileSizeHasBeenSet = false;
   };
 

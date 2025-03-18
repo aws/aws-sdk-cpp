@@ -33,7 +33,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_DLM_API EncryptionConfiguration();
+    AWS_DLM_API EncryptionConfiguration() = default;
     AWS_DLM_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * snapshots are encrypted, even if this parameter is false or when encryption by
      * default is not enabled.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline EncryptionConfiguration& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -58,18 +58,16 @@ namespace Model
      * this parameter is not specified, the default KMS key for the account is
      * used.</p>
      */
-    inline const Aws::String& GetCmkArn() const{ return m_cmkArn; }
+    inline const Aws::String& GetCmkArn() const { return m_cmkArn; }
     inline bool CmkArnHasBeenSet() const { return m_cmkArnHasBeenSet; }
-    inline void SetCmkArn(const Aws::String& value) { m_cmkArnHasBeenSet = true; m_cmkArn = value; }
-    inline void SetCmkArn(Aws::String&& value) { m_cmkArnHasBeenSet = true; m_cmkArn = std::move(value); }
-    inline void SetCmkArn(const char* value) { m_cmkArnHasBeenSet = true; m_cmkArn.assign(value); }
-    inline EncryptionConfiguration& WithCmkArn(const Aws::String& value) { SetCmkArn(value); return *this;}
-    inline EncryptionConfiguration& WithCmkArn(Aws::String&& value) { SetCmkArn(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithCmkArn(const char* value) { SetCmkArn(value); return *this;}
+    template<typename CmkArnT = Aws::String>
+    void SetCmkArn(CmkArnT&& value) { m_cmkArnHasBeenSet = true; m_cmkArn = std::forward<CmkArnT>(value); }
+    template<typename CmkArnT = Aws::String>
+    EncryptionConfiguration& WithCmkArn(CmkArnT&& value) { SetCmkArn(std::forward<CmkArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;

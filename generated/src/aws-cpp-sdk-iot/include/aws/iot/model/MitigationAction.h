@@ -33,7 +33,7 @@ namespace Model
   class MitigationAction
   {
   public:
-    AWS_IOT_API MitigationAction();
+    AWS_IOT_API MitigationAction() = default;
     AWS_IOT_API MitigationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MitigationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>A user-friendly name for the mitigation action.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MitigationAction& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MitigationAction& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MitigationAction& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MitigationAction& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the mitigation action.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline MitigationAction& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline MitigationAction& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline MitigationAction& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    MitigationAction& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN used to apply this mitigation action.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline MitigationAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline MitigationAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline MitigationAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    MitigationAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,12 @@ namespace Model
      * <p>The set of parameters for this mitigation action. The parameters vary,
      * depending on the kind of action you apply.</p>
      */
-    inline const MitigationActionParams& GetActionParams() const{ return m_actionParams; }
+    inline const MitigationActionParams& GetActionParams() const { return m_actionParams; }
     inline bool ActionParamsHasBeenSet() const { return m_actionParamsHasBeenSet; }
-    inline void SetActionParams(const MitigationActionParams& value) { m_actionParamsHasBeenSet = true; m_actionParams = value; }
-    inline void SetActionParams(MitigationActionParams&& value) { m_actionParamsHasBeenSet = true; m_actionParams = std::move(value); }
-    inline MitigationAction& WithActionParams(const MitigationActionParams& value) { SetActionParams(value); return *this;}
-    inline MitigationAction& WithActionParams(MitigationActionParams&& value) { SetActionParams(std::move(value)); return *this;}
+    template<typename ActionParamsT = MitigationActionParams>
+    void SetActionParams(ActionParamsT&& value) { m_actionParamsHasBeenSet = true; m_actionParams = std::forward<ActionParamsT>(value); }
+    template<typename ActionParamsT = MitigationActionParams>
+    MitigationAction& WithActionParams(ActionParamsT&& value) { SetActionParams(std::forward<ActionParamsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionLayer::AwsLambdaFunctionLayer() : 
-    m_arnHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionLayer::AwsLambdaFunctionLayer(JsonView jsonValue)
-  : AwsLambdaFunctionLayer()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsLambdaFunctionLayer& AwsLambdaFunctionLayer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSize"))
   {
     m_codeSize = jsonValue.GetInteger("CodeSize");
-
     m_codeSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

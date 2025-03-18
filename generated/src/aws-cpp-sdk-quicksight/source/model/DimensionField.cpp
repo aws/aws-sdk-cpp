@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DimensionField::DimensionField() : 
-    m_numericalDimensionFieldHasBeenSet(false),
-    m_categoricalDimensionFieldHasBeenSet(false),
-    m_dateDimensionFieldHasBeenSet(false)
-{
-}
-
 DimensionField::DimensionField(JsonView jsonValue)
-  : DimensionField()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DimensionField& DimensionField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumericalDimensionField"))
   {
     m_numericalDimensionField = jsonValue.GetObject("NumericalDimensionField");
-
     m_numericalDimensionFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoricalDimensionField"))
   {
     m_categoricalDimensionField = jsonValue.GetObject("CategoricalDimensionField");
-
     m_categoricalDimensionFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateDimensionField"))
   {
     m_dateDimensionField = jsonValue.GetObject("DateDimensionField");
-
     m_dateDimensionFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

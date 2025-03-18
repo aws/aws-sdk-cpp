@@ -18,26 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WirelessDeviceStatistics::WirelessDeviceStatistics() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(WirelessDeviceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_lastUplinkReceivedAtHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false),
-    m_fuotaDeviceStatus(FuotaDeviceStatus::NOT_SET),
-    m_fuotaDeviceStatusHasBeenSet(false),
-    m_multicastDeviceStatusHasBeenSet(false),
-    m_mcGroupId(0),
-    m_mcGroupIdHasBeenSet(false)
-{
-}
-
 WirelessDeviceStatistics::WirelessDeviceStatistics(JsonView jsonValue)
-  : WirelessDeviceStatistics()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ WirelessDeviceStatistics& WirelessDeviceStatistics::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = WirelessDeviceTypeMapper::GetWirelessDeviceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationName"))
   {
     m_destinationName = jsonValue.GetString("DestinationName");
-
     m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUplinkReceivedAt"))
   {
     m_lastUplinkReceivedAt = jsonValue.GetString("LastUplinkReceivedAt");
-
     m_lastUplinkReceivedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FuotaDeviceStatus"))
   {
     m_fuotaDeviceStatus = FuotaDeviceStatusMapper::GetFuotaDeviceStatusForName(jsonValue.GetString("FuotaDeviceStatus"));
-
     m_fuotaDeviceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MulticastDeviceStatus"))
   {
     m_multicastDeviceStatus = jsonValue.GetString("MulticastDeviceStatus");
-
     m_multicastDeviceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("McGroupId"))
   {
     m_mcGroupId = jsonValue.GetInteger("McGroupId");
-
     m_mcGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

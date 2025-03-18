@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateListenerResult::UpdateListenerResult() : 
-    m_port(0),
-    m_protocol(ListenerProtocol::NOT_SET)
-{
-}
-
 UpdateListenerResult::UpdateListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateListenerResult()
 {
   *this = result;
 }
@@ -35,57 +28,50 @@ UpdateListenerResult& UpdateListenerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultAction"))
   {
     m_defaultAction = jsonValue.GetObject("defaultAction");
-
+    m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
+    m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
-
+    m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceArn"))
   {
     m_serviceArn = jsonValue.GetString("serviceArn");
-
+    m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceId"))
   {
     m_serviceId = jsonValue.GetString("serviceId");
-
+    m_serviceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

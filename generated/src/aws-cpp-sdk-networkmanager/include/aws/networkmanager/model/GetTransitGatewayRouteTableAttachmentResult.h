@@ -28,7 +28,7 @@ namespace Model
   class GetTransitGatewayRouteTableAttachmentResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetTransitGatewayRouteTableAttachmentResult();
+    AWS_NETWORKMANAGER_API GetTransitGatewayRouteTableAttachmentResult() = default;
     AWS_NETWORKMANAGER_API GetTransitGatewayRouteTableAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetTransitGatewayRouteTableAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns information about the transit gateway route table attachment.</p>
      */
-    inline const TransitGatewayRouteTableAttachment& GetTransitGatewayRouteTableAttachment() const{ return m_transitGatewayRouteTableAttachment; }
-    inline void SetTransitGatewayRouteTableAttachment(const TransitGatewayRouteTableAttachment& value) { m_transitGatewayRouteTableAttachment = value; }
-    inline void SetTransitGatewayRouteTableAttachment(TransitGatewayRouteTableAttachment&& value) { m_transitGatewayRouteTableAttachment = std::move(value); }
-    inline GetTransitGatewayRouteTableAttachmentResult& WithTransitGatewayRouteTableAttachment(const TransitGatewayRouteTableAttachment& value) { SetTransitGatewayRouteTableAttachment(value); return *this;}
-    inline GetTransitGatewayRouteTableAttachmentResult& WithTransitGatewayRouteTableAttachment(TransitGatewayRouteTableAttachment&& value) { SetTransitGatewayRouteTableAttachment(std::move(value)); return *this;}
+    inline const TransitGatewayRouteTableAttachment& GetTransitGatewayRouteTableAttachment() const { return m_transitGatewayRouteTableAttachment; }
+    template<typename TransitGatewayRouteTableAttachmentT = TransitGatewayRouteTableAttachment>
+    void SetTransitGatewayRouteTableAttachment(TransitGatewayRouteTableAttachmentT&& value) { m_transitGatewayRouteTableAttachmentHasBeenSet = true; m_transitGatewayRouteTableAttachment = std::forward<TransitGatewayRouteTableAttachmentT>(value); }
+    template<typename TransitGatewayRouteTableAttachmentT = TransitGatewayRouteTableAttachment>
+    GetTransitGatewayRouteTableAttachmentResult& WithTransitGatewayRouteTableAttachment(TransitGatewayRouteTableAttachmentT&& value) { SetTransitGatewayRouteTableAttachment(std::forward<TransitGatewayRouteTableAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTransitGatewayRouteTableAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTransitGatewayRouteTableAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTransitGatewayRouteTableAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTransitGatewayRouteTableAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayRouteTableAttachment m_transitGatewayRouteTableAttachment;
+    bool m_transitGatewayRouteTableAttachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

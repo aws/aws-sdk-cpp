@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-Treatment::Treatment() : 
-    m_descriptionHasBeenSet(false),
-    m_featureVariationsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Treatment::Treatment(JsonView jsonValue)
-  : Treatment()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Treatment& Treatment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureVariations"))
   {
     Aws::Map<Aws::String, JsonView> featureVariationsJsonMap = jsonValue.GetObject("featureVariations").GetAllObjects();
@@ -49,14 +39,11 @@ Treatment& Treatment::operator =(JsonView jsonValue)
     }
     m_featureVariationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

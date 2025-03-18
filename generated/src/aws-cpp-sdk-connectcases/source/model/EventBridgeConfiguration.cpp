@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-EventBridgeConfiguration::EventBridgeConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_includedDataHasBeenSet(false)
-{
-}
-
 EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue)
-  : EventBridgeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EventBridgeConfiguration& EventBridgeConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includedData"))
   {
     m_includedData = jsonValue.GetObject("includedData");
-
     m_includedDataHasBeenSet = true;
   }
-
   return *this;
 }
 

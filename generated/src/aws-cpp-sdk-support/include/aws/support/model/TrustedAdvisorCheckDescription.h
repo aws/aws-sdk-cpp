@@ -33,7 +33,7 @@ namespace Model
   class TrustedAdvisorCheckDescription
   {
   public:
-    AWS_SUPPORT_API TrustedAdvisorCheckDescription();
+    AWS_SUPPORT_API TrustedAdvisorCheckDescription() = default;
     AWS_SUPPORT_API TrustedAdvisorCheckDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API TrustedAdvisorCheckDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TrustedAdvisorCheckDescription& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TrustedAdvisorCheckDescription& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckDescription& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TrustedAdvisorCheckDescription& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name for the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TrustedAdvisorCheckDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TrustedAdvisorCheckDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TrustedAdvisorCheckDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,28 +68,24 @@ namespace Model
      * <p>The description of the Trusted Advisor check, which includes the alert
      * criteria and recommended operations (contains HTML markup).</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TrustedAdvisorCheckDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TrustedAdvisorCheckDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TrustedAdvisorCheckDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category of the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline TrustedAdvisorCheckDescription& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline TrustedAdvisorCheckDescription& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckDescription& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    TrustedAdvisorCheckDescription& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,15 +96,14 @@ namespace Model
      * check. <b>Metadata</b> contains all the data that is shown in the Excel
      * download, even in those cases where the UI shows just summary data. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Vector<Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Vector<Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Vector<Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline TrustedAdvisorCheckDescription& WithMetadata(const Aws::Vector<Aws::String>& value) { SetMetadata(value); return *this;}
-    inline TrustedAdvisorCheckDescription& WithMetadata(Aws::Vector<Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckDescription& AddMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
-    inline TrustedAdvisorCheckDescription& AddMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.push_back(std::move(value)); return *this; }
-    inline TrustedAdvisorCheckDescription& AddMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
+    template<typename MetadataT = Aws::Vector<Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Vector<Aws::String>>
+    TrustedAdvisorCheckDescription& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataT = Aws::String>
+    TrustedAdvisorCheckDescription& AddMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata.emplace_back(std::forward<MetadataT>(value)); return *this; }
     ///@}
   private:
 

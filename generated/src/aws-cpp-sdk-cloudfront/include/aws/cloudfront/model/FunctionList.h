@@ -32,7 +32,7 @@ namespace Model
   class FunctionList
   {
   public:
-    AWS_CLOUDFRONT_API FunctionList();
+    AWS_CLOUDFRONT_API FunctionList() = default;
     AWS_CLOUDFRONT_API FunctionList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FunctionList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,21 +46,19 @@ namespace Model
      * field of a subsequent request to continue listing functions where you left
      * off.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline FunctionList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline FunctionList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline FunctionList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    FunctionList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of functions requested.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline FunctionList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     /**
      * <p>The number of functions returned in the response.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline FunctionList& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -80,24 +78,24 @@ namespace Model
     /**
      * <p>Contains the functions in the list.</p>
      */
-    inline const Aws::Vector<FunctionSummary>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<FunctionSummary>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<FunctionSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<FunctionSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline FunctionList& WithItems(const Aws::Vector<FunctionSummary>& value) { SetItems(value); return *this;}
-    inline FunctionList& WithItems(Aws::Vector<FunctionSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline FunctionList& AddItems(const FunctionSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline FunctionList& AddItems(FunctionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<FunctionSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<FunctionSummary>>
+    FunctionList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = FunctionSummary>
+    FunctionList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<FunctionSummary> m_items;

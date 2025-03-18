@@ -12,12 +12,6 @@ using namespace Aws::MarketplaceReporting::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBuyerDashboardRequest::GetBuyerDashboardRequest() : 
-    m_dashboardIdentifierHasBeenSet(false),
-    m_embeddingDomainsHasBeenSet(false)
-{
-}
-
 Aws::String GetBuyerDashboardRequest::SerializePayload() const
 {
   JsonValue payload;

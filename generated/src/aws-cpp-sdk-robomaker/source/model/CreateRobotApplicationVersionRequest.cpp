@@ -12,14 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRobotApplicationVersionRequest::CreateRobotApplicationVersionRequest() : 
-    m_applicationHasBeenSet(false),
-    m_currentRevisionIdHasBeenSet(false),
-    m_s3EtagsHasBeenSet(false),
-    m_imageDigestHasBeenSet(false)
-{
-}
-
 Aws::String CreateRobotApplicationVersionRequest::SerializePayload() const
 {
   JsonValue payload;

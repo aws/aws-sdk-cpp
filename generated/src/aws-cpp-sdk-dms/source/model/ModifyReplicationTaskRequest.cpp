@@ -12,20 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyReplicationTaskRequest::ModifyReplicationTaskRequest() : 
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskIdentifierHasBeenSet(false),
-    m_migrationType(MigrationTypeValue::NOT_SET),
-    m_migrationTypeHasBeenSet(false),
-    m_tableMappingsHasBeenSet(false),
-    m_replicationTaskSettingsHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_taskDataHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReplicationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

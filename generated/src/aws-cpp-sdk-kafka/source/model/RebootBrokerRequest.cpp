@@ -12,12 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebootBrokerRequest::RebootBrokerRequest() : 
-    m_brokerIdsHasBeenSet(false),
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String RebootBrokerRequest::SerializePayload() const
 {
   JsonValue payload;

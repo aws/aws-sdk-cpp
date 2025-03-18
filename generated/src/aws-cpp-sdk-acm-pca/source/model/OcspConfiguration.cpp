@@ -18,15 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-OcspConfiguration::OcspConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ocspCustomCnameHasBeenSet(false)
-{
-}
-
 OcspConfiguration::OcspConfiguration(JsonView jsonValue)
-  : OcspConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OcspConfiguration& OcspConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OcspCustomCname"))
   {
     m_ocspCustomCname = jsonValue.GetString("OcspCustomCname");
-
     m_ocspCustomCnameHasBeenSet = true;
   }
-
   return *this;
 }
 

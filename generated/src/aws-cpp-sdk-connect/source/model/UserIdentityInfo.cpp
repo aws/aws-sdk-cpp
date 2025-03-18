@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserIdentityInfo::UserIdentityInfo() : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_secondaryEmailHasBeenSet(false),
-    m_mobileHasBeenSet(false)
-{
-}
-
 UserIdentityInfo::UserIdentityInfo(JsonView jsonValue)
-  : UserIdentityInfo()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ UserIdentityInfo& UserIdentityInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryEmail"))
   {
     m_secondaryEmail = jsonValue.GetString("SecondaryEmail");
-
     m_secondaryEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mobile"))
   {
     m_mobile = jsonValue.GetString("Mobile");
-
     m_mobileHasBeenSet = true;
   }
-
   return *this;
 }
 

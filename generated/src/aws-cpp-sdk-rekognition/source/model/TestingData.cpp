@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-TestingData::TestingData() : 
-    m_assetsHasBeenSet(false),
-    m_autoCreate(false),
-    m_autoCreateHasBeenSet(false)
-{
-}
-
 TestingData::TestingData(JsonView jsonValue)
-  : TestingData()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ TestingData& TestingData::operator =(JsonView jsonValue)
     }
     m_assetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoCreate"))
   {
     m_autoCreate = jsonValue.GetBool("AutoCreate");
-
     m_autoCreateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,24 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetSummary::StackSetSummary() : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_driftStatus(StackDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
-{
-}
-
 StackSetSummary::StackSetSummary(const XmlNode& xmlNode)
-  : StackSetSummary()
 {
   *this = xmlNode;
 }
@@ -69,7 +52,7 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode autoDeploymentNode = resultNode.FirstChild("AutoDeployment");
@@ -81,13 +64,13 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
     if(!permissionModelNode.IsNull())
     {
-      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()));
       m_permissionModelHasBeenSet = true;
     }
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
     {
-      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()).c_str());
+      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()));
       m_driftStatusHasBeenSet = true;
     }
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");

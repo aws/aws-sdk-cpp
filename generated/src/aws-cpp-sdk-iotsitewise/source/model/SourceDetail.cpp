@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-SourceDetail::SourceDetail() : 
-    m_kendraHasBeenSet(false)
-{
-}
-
 SourceDetail::SourceDetail(JsonView jsonValue)
-  : SourceDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceDetail& SourceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kendra"))
   {
     m_kendra = jsonValue.GetObject("kendra");
-
     m_kendraHasBeenSet = true;
   }
-
   return *this;
 }
 

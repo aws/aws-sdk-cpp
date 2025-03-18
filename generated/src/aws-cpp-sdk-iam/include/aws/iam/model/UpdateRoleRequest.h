@@ -21,7 +21,7 @@ namespace Model
   class UpdateRoleRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateRoleRequest();
+    AWS_IAM_API UpdateRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The name of the role that you want to modify.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline UpdateRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline UpdateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline UpdateRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    UpdateRoleRequest& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new description that you want to apply to the specified role.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRoleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRoleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRoleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * provided by Amazon EC2 instances assigned to the role are not subject to the
      * specified maximum session duration.</p> 
      */
-    inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+    inline int GetMaxSessionDuration() const { return m_maxSessionDuration; }
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
     inline UpdateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
@@ -97,7 +93,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_maxSessionDuration;
+    int m_maxSessionDuration{0};
     bool m_maxSessionDurationHasBeenSet = false;
   };
 

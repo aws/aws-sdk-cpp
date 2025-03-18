@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEmailIdentityResult::CreateEmailIdentityResult() : 
-    m_identityType(IdentityType::NOT_SET),
-    m_verifiedForSendingStatus(false)
-{
-}
-
 CreateEmailIdentityResult::CreateEmailIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateEmailIdentityResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ CreateEmailIdentityResult& CreateEmailIdentityResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("IdentityType"))
   {
     m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("IdentityType"));
-
+    m_identityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerifiedForSendingStatus"))
   {
     m_verifiedForSendingStatus = jsonValue.GetBool("VerifiedForSendingStatus");
-
+    m_verifiedForSendingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DkimAttributes"))
   {
     m_dkimAttributes = jsonValue.GetObject("DkimAttributes");
-
+    m_dkimAttributesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

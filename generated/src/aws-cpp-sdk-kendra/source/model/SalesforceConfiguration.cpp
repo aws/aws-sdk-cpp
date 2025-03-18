@@ -18,22 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SalesforceConfiguration::SalesforceConfiguration() : 
-    m_serverUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_standardObjectConfigurationsHasBeenSet(false),
-    m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_chatterFeedConfigurationHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_standardObjectAttachmentConfigurationHasBeenSet(false),
-    m_includeAttachmentFilePatternsHasBeenSet(false),
-    m_excludeAttachmentFilePatternsHasBeenSet(false)
-{
-}
-
 SalesforceConfiguration::SalesforceConfiguration(JsonView jsonValue)
-  : SalesforceConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServerUrl"))
   {
     m_serverUrl = jsonValue.GetString("ServerUrl");
-
     m_serverUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardObjectConfigurations"))
   {
     Aws::Utils::Array<JsonView> standardObjectConfigurationsJsonList = jsonValue.GetArray("StandardObjectConfigurations");
@@ -63,35 +44,26 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
     }
     m_standardObjectConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KnowledgeArticleConfiguration"))
   {
     m_knowledgeArticleConfiguration = jsonValue.GetObject("KnowledgeArticleConfiguration");
-
     m_knowledgeArticleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChatterFeedConfiguration"))
   {
     m_chatterFeedConfiguration = jsonValue.GetObject("ChatterFeedConfiguration");
-
     m_chatterFeedConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlAttachments"))
   {
     m_crawlAttachments = jsonValue.GetBool("CrawlAttachments");
-
     m_crawlAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardObjectAttachmentConfiguration"))
   {
     m_standardObjectAttachmentConfiguration = jsonValue.GetObject("StandardObjectAttachmentConfiguration");
-
     m_standardObjectAttachmentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeAttachmentFilePatterns"))
   {
     Aws::Utils::Array<JsonView> includeAttachmentFilePatternsJsonList = jsonValue.GetArray("IncludeAttachmentFilePatterns");
@@ -101,7 +73,6 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
     }
     m_includeAttachmentFilePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeAttachmentFilePatterns"))
   {
     Aws::Utils::Array<JsonView> excludeAttachmentFilePatternsJsonList = jsonValue.GetArray("ExcludeAttachmentFilePatterns");
@@ -111,7 +82,6 @@ SalesforceConfiguration& SalesforceConfiguration::operator =(JsonView jsonValue)
     }
     m_excludeAttachmentFilePatternsHasBeenSet = true;
   }
-
   return *this;
 }
 

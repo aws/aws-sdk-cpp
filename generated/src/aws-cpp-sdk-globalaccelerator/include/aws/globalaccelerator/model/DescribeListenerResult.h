@@ -28,7 +28,7 @@ namespace Model
   class DescribeListenerResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API DescribeListenerResult();
+    AWS_GLOBALACCELERATOR_API DescribeListenerResult() = default;
     AWS_GLOBALACCELERATOR_API DescribeListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API DescribeListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of a listener.</p>
      */
-    inline const Listener& GetListener() const{ return m_listener; }
-    inline void SetListener(const Listener& value) { m_listener = value; }
-    inline void SetListener(Listener&& value) { m_listener = std::move(value); }
-    inline DescribeListenerResult& WithListener(const Listener& value) { SetListener(value); return *this;}
-    inline DescribeListenerResult& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
+    inline const Listener& GetListener() const { return m_listener; }
+    template<typename ListenerT = Listener>
+    void SetListener(ListenerT&& value) { m_listenerHasBeenSet = true; m_listener = std::forward<ListenerT>(value); }
+    template<typename ListenerT = Listener>
+    DescribeListenerResult& WithListener(ListenerT&& value) { SetListener(std::forward<ListenerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeListenerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeListenerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeListenerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeListenerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Listener m_listener;
+    bool m_listenerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

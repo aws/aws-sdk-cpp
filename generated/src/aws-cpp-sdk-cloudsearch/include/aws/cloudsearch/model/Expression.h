@@ -33,7 +33,7 @@ namespace Model
   class Expression
   {
   public:
-    AWS_CLOUDSEARCH_API Expression();
+    AWS_CLOUDSEARCH_API Expression() = default;
     AWS_CLOUDSEARCH_API Expression(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API Expression& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,26 +43,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
+    inline const Aws::String& GetExpressionName() const { return m_expressionName; }
     inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
-    inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
-    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
-    inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
-    inline Expression& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
-    inline Expression& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
-    inline Expression& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
+    template<typename ExpressionNameT = Aws::String>
+    void SetExpressionName(ExpressionNameT&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::forward<ExpressionNameT>(value); }
+    template<typename ExpressionNameT = Aws::String>
+    Expression& WithExpressionName(ExpressionNameT&& value) { SetExpressionName(std::forward<ExpressionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetExpressionValue() const{ return m_expressionValue; }
+    inline const Aws::String& GetExpressionValue() const { return m_expressionValue; }
     inline bool ExpressionValueHasBeenSet() const { return m_expressionValueHasBeenSet; }
-    inline void SetExpressionValue(const Aws::String& value) { m_expressionValueHasBeenSet = true; m_expressionValue = value; }
-    inline void SetExpressionValue(Aws::String&& value) { m_expressionValueHasBeenSet = true; m_expressionValue = std::move(value); }
-    inline void SetExpressionValue(const char* value) { m_expressionValueHasBeenSet = true; m_expressionValue.assign(value); }
-    inline Expression& WithExpressionValue(const Aws::String& value) { SetExpressionValue(value); return *this;}
-    inline Expression& WithExpressionValue(Aws::String&& value) { SetExpressionValue(std::move(value)); return *this;}
-    inline Expression& WithExpressionValue(const char* value) { SetExpressionValue(value); return *this;}
+    template<typename ExpressionValueT = Aws::String>
+    void SetExpressionValue(ExpressionValueT&& value) { m_expressionValueHasBeenSet = true; m_expressionValue = std::forward<ExpressionValueT>(value); }
+    template<typename ExpressionValueT = Aws::String>
+    Expression& WithExpressionValue(ExpressionValueT&& value) { SetExpressionValue(std::forward<ExpressionValueT>(value)); return *this;}
     ///@}
   private:
 

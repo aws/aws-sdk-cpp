@@ -12,14 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventTypesRequest::GetEventTypesRequest() : 
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetEventTypesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTrafficPolicyResult::DeleteTrafficPolicyResult()
-{
-}
-
 DeleteTrafficPolicyResult::DeleteTrafficPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ DeleteTrafficPolicyResult& DeleteTrafficPolicyResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

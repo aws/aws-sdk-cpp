@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MemoryGiBPerVCpu::MemoryGiBPerVCpu() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 MemoryGiBPerVCpu::MemoryGiBPerVCpu(const XmlNode& xmlNode)
-  : MemoryGiBPerVCpu()
 {
   *this = xmlNode;
 }

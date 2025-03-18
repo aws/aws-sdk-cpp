@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SupportedRegionDetail::SupportedRegionDetail() : 
-    m_regionHasBeenSet(false),
-    m_serviceStateHasBeenSet(false)
-{
-}
-
 SupportedRegionDetail::SupportedRegionDetail(const XmlNode& xmlNode)
-  : SupportedRegionDetail()
 {
   *this = xmlNode;
 }

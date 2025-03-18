@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePublicIpv4PoolsResponse::DescribePublicIpv4PoolsResponse()
-{
-}
-
 DescribePublicIpv4PoolsResponse::DescribePublicIpv4PoolsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribePublicIpv4PoolsResponse& DescribePublicIpv4PoolsResponse::operator =(con
     if(!publicIpv4PoolsNode.IsNull())
     {
       XmlNode publicIpv4PoolsMember = publicIpv4PoolsNode.FirstChild("item");
+      m_publicIpv4PoolsHasBeenSet = !publicIpv4PoolsMember.IsNull();
       while(!publicIpv4PoolsMember.IsNull())
       {
         m_publicIpv4Pools.push_back(publicIpv4PoolsMember);
         publicIpv4PoolsMember = publicIpv4PoolsMember.NextNode("item");
       }
 
+      m_publicIpv4PoolsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribePublicIpv4PoolsResponse& DescribePublicIpv4PoolsResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribePublicIpv4PoolsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

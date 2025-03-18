@@ -12,17 +12,6 @@ using namespace Aws::SimSpaceWeaver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAppRequest::StartAppRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_launchOverridesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String StartAppRequest::SerializePayload() const
 {
   JsonValue payload;

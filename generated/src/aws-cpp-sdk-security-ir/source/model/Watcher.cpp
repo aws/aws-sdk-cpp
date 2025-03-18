@@ -18,15 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-Watcher::Watcher() : 
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_jobTitleHasBeenSet(false)
-{
-}
-
 Watcher::Watcher(JsonView jsonValue)
-  : Watcher()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Watcher& Watcher::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTitle"))
   {
     m_jobTitle = jsonValue.GetString("jobTitle");
-
     m_jobTitleHasBeenSet = true;
   }
-
   return *this;
 }
 

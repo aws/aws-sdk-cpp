@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchUpdateLinkAttributes::BatchUpdateLinkAttributes() : 
-    m_typedLinkSpecifierHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false)
-{
-}
-
 BatchUpdateLinkAttributes::BatchUpdateLinkAttributes(JsonView jsonValue)
-  : BatchUpdateLinkAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
-
     m_typedLinkSpecifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeUpdates"))
   {
     Aws::Utils::Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
@@ -48,7 +39,6 @@ BatchUpdateLinkAttributes& BatchUpdateLinkAttributes::operator =(JsonView jsonVa
     }
     m_attributeUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class VoiceEnhancementSinkConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API VoiceEnhancementSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline VoiceEnhancementSinkConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
     ///@}
   private:
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
   };
 

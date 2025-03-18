@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSpaceResult::DescribeSpaceResult() : 
-    m_status(SpaceStatus::NOT_SET)
-{
-}
-
 DescribeSpaceResult::DescribeSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeSpaceResult()
 {
   *this = result;
 }
@@ -34,87 +28,75 @@ DescribeSpaceResult& DescribeSpaceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("DomainId"))
   {
     m_domainId = jsonValue.GetString("DomainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceArn"))
   {
     m_spaceArn = jsonValue.GetString("SpaceArn");
-
+    m_spaceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceName"))
   {
     m_spaceName = jsonValue.GetString("SpaceName");
-
+    m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeEfsFileSystemUid"))
   {
     m_homeEfsFileSystemUid = jsonValue.GetString("HomeEfsFileSystemUid");
-
+    m_homeEfsFileSystemUidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SpaceStatusMapper::GetSpaceStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceSettings"))
   {
     m_spaceSettings = jsonValue.GetObject("SpaceSettings");
-
+    m_spaceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnershipSettings"))
   {
     m_ownershipSettings = jsonValue.GetObject("OwnershipSettings");
-
+    m_ownershipSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceSharingSettings"))
   {
     m_spaceSharingSettings = jsonValue.GetObject("SpaceSharingSettings");
-
+    m_spaceSharingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceDisplayName"))
   {
     m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
-
+    m_spaceDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
+    m_urlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

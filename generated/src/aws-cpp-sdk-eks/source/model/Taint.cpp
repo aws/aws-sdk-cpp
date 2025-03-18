@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Taint::Taint() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_effect(TaintEffect::NOT_SET),
-    m_effectHasBeenSet(false)
-{
-}
-
 Taint::Taint(JsonView jsonValue)
-  : Taint()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Taint& Taint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effect"))
   {
     m_effect = TaintEffectMapper::GetTaintEffectForName(jsonValue.GetString("effect"));
-
     m_effectHasBeenSet = true;
   }
-
   return *this;
 }
 

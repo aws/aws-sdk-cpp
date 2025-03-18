@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ImageLayerAggregation::ImageLayerAggregation() : 
-    m_layerHashesHasBeenSet(false),
-    m_repositoriesHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(ImageLayerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 ImageLayerAggregation::ImageLayerAggregation(JsonView jsonValue)
-  : ImageLayerAggregation()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
     }
     m_layerHashesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositories"))
   {
     Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
@@ -56,7 +43,6 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
     }
     m_repositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -66,21 +52,16 @@ ImageLayerAggregation& ImageLayerAggregation::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = ImageLayerSortByMapper::GetImageLayerSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

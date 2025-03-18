@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetConfiguration::DataSetConfiguration() : 
-    m_placeholderHasBeenSet(false),
-    m_dataSetSchemaHasBeenSet(false),
-    m_columnGroupSchemaListHasBeenSet(false)
-{
-}
-
 DataSetConfiguration::DataSetConfiguration(JsonView jsonValue)
-  : DataSetConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataSetConfiguration& DataSetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Placeholder"))
   {
     m_placeholder = jsonValue.GetString("Placeholder");
-
     m_placeholderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetSchema"))
   {
     m_dataSetSchema = jsonValue.GetObject("DataSetSchema");
-
     m_dataSetSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnGroupSchemaList"))
   {
     Aws::Utils::Array<JsonView> columnGroupSchemaListJsonList = jsonValue.GetArray("ColumnGroupSchemaList");
@@ -56,7 +44,6 @@ DataSetConfiguration& DataSetConfiguration::operator =(JsonView jsonValue)
     }
     m_columnGroupSchemaListHasBeenSet = true;
   }
-
   return *this;
 }
 

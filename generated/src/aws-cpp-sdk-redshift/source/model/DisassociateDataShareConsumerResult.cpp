@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateDataShareConsumerResult::DisassociateDataShareConsumerResult() : 
-    m_allowPubliclyAccessibleConsumers(false),
-    m_dataShareType(DataShareType::NOT_SET)
-{
-}
-
 DisassociateDataShareConsumerResult::DisassociateDataShareConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisassociateDataShareConsumerResult()
 {
   *this = result;
 }
@@ -45,43 +38,51 @@ DisassociateDataShareConsumerResult& DisassociateDataShareConsumerResult::operat
     if(!dataShareArnNode.IsNull())
     {
       m_dataShareArn = Aws::Utils::Xml::DecodeEscapedXmlText(dataShareArnNode.GetText());
+      m_dataShareArnHasBeenSet = true;
     }
     XmlNode producerArnNode = resultNode.FirstChild("ProducerArn");
     if(!producerArnNode.IsNull())
     {
       m_producerArn = Aws::Utils::Xml::DecodeEscapedXmlText(producerArnNode.GetText());
+      m_producerArnHasBeenSet = true;
     }
     XmlNode allowPubliclyAccessibleConsumersNode = resultNode.FirstChild("AllowPubliclyAccessibleConsumers");
     if(!allowPubliclyAccessibleConsumersNode.IsNull())
     {
       m_allowPubliclyAccessibleConsumers = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowPubliclyAccessibleConsumersNode.GetText()).c_str()).c_str());
+      m_allowPubliclyAccessibleConsumersHasBeenSet = true;
     }
     XmlNode dataShareAssociationsNode = resultNode.FirstChild("DataShareAssociations");
     if(!dataShareAssociationsNode.IsNull())
     {
       XmlNode dataShareAssociationsMember = dataShareAssociationsNode.FirstChild("member");
+      m_dataShareAssociationsHasBeenSet = !dataShareAssociationsMember.IsNull();
       while(!dataShareAssociationsMember.IsNull())
       {
         m_dataShareAssociations.push_back(dataShareAssociationsMember);
         dataShareAssociationsMember = dataShareAssociationsMember.NextNode("member");
       }
 
+      m_dataShareAssociationsHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
     if(!managedByNode.IsNull())
     {
       m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+      m_managedByHasBeenSet = true;
     }
     XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
     if(!dataShareTypeNode.IsNull())
     {
-      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()).c_str());
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()));
+      m_dataShareTypeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DisassociateDataShareConsumerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

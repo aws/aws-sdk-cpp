@@ -18,14 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-ConnectionCredentials::ConnectionCredentials() : 
-    m_connectionTokenHasBeenSet(false),
-    m_expiryHasBeenSet(false)
-{
-}
-
 ConnectionCredentials::ConnectionCredentials(JsonView jsonValue)
-  : ConnectionCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConnectionCredentials& ConnectionCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionToken"))
   {
     m_connectionToken = jsonValue.GetString("ConnectionToken");
-
     m_connectionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expiry"))
   {
     m_expiry = jsonValue.GetString("Expiry");
-
     m_expiryHasBeenSet = true;
   }
-
   return *this;
 }
 

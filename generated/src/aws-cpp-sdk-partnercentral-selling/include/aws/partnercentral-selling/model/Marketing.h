@@ -36,7 +36,7 @@ namespace Model
   class Marketing
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Marketing();
+    AWS_PARTNERCENTRALSELLING_API Marketing() = default;
     AWS_PARTNERCENTRALSELLING_API Marketing(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Marketing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>Indicates if the <code>Opportunity</code> is a marketing development fund
      * (MDF) funded activity.</p>
      */
-    inline const AwsFundingUsed& GetAwsFundingUsed() const{ return m_awsFundingUsed; }
+    inline AwsFundingUsed GetAwsFundingUsed() const { return m_awsFundingUsed; }
     inline bool AwsFundingUsedHasBeenSet() const { return m_awsFundingUsedHasBeenSet; }
-    inline void SetAwsFundingUsed(const AwsFundingUsed& value) { m_awsFundingUsedHasBeenSet = true; m_awsFundingUsed = value; }
-    inline void SetAwsFundingUsed(AwsFundingUsed&& value) { m_awsFundingUsedHasBeenSet = true; m_awsFundingUsed = std::move(value); }
-    inline Marketing& WithAwsFundingUsed(const AwsFundingUsed& value) { SetAwsFundingUsed(value); return *this;}
-    inline Marketing& WithAwsFundingUsed(AwsFundingUsed&& value) { SetAwsFundingUsed(std::move(value)); return *this;}
+    inline void SetAwsFundingUsed(AwsFundingUsed value) { m_awsFundingUsedHasBeenSet = true; m_awsFundingUsed = value; }
+    inline Marketing& WithAwsFundingUsed(AwsFundingUsed value) { SetAwsFundingUsed(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * have a campaign code, contact your Amazon Web Services point of contact to
      * obtain one.</p>
      */
-    inline const Aws::String& GetCampaignName() const{ return m_campaignName; }
+    inline const Aws::String& GetCampaignName() const { return m_campaignName; }
     inline bool CampaignNameHasBeenSet() const { return m_campaignNameHasBeenSet; }
-    inline void SetCampaignName(const Aws::String& value) { m_campaignNameHasBeenSet = true; m_campaignName = value; }
-    inline void SetCampaignName(Aws::String&& value) { m_campaignNameHasBeenSet = true; m_campaignName = std::move(value); }
-    inline void SetCampaignName(const char* value) { m_campaignNameHasBeenSet = true; m_campaignName.assign(value); }
-    inline Marketing& WithCampaignName(const Aws::String& value) { SetCampaignName(value); return *this;}
-    inline Marketing& WithCampaignName(Aws::String&& value) { SetCampaignName(std::move(value)); return *this;}
-    inline Marketing& WithCampaignName(const char* value) { SetCampaignName(value); return *this;}
+    template<typename CampaignNameT = Aws::String>
+    void SetCampaignName(CampaignNameT&& value) { m_campaignNameHasBeenSet = true; m_campaignName = std::forward<CampaignNameT>(value); }
+    template<typename CampaignNameT = Aws::String>
+    Marketing& WithCampaignName(CampaignNameT&& value) { SetCampaignName(std::forward<CampaignNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,13 @@ namespace Model
      * about the specific marketing channel that contributed to the generation of the
      * lead or contact.</p>
      */
-    inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
+    inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline Marketing& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-    inline Marketing& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-    inline Marketing& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-    inline Marketing& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    Marketing& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    inline Marketing& AddChannels(Channel value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -100,12 +95,10 @@ namespace Model
      * investments and enables better distribution of marketing budgets among
      * partners.</p>
      */
-    inline const MarketingSource& GetSource() const{ return m_source; }
+    inline MarketingSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const MarketingSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(MarketingSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline Marketing& WithSource(const MarketingSource& value) { SetSource(value); return *this;}
-    inline Marketing& WithSource(MarketingSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(MarketingSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline Marketing& WithSource(MarketingSource value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
@@ -122,19 +115,18 @@ namespace Model
      * Networking &amp; Content Delivery | Quantum Technologies | Robotics | Satellite
      * | Security | Serverless | Storage | VR &amp; AR</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetUseCases() const{ return m_useCases; }
+    inline const Aws::Vector<Aws::String>& GetUseCases() const { return m_useCases; }
     inline bool UseCasesHasBeenSet() const { return m_useCasesHasBeenSet; }
-    inline void SetUseCases(const Aws::Vector<Aws::String>& value) { m_useCasesHasBeenSet = true; m_useCases = value; }
-    inline void SetUseCases(Aws::Vector<Aws::String>&& value) { m_useCasesHasBeenSet = true; m_useCases = std::move(value); }
-    inline Marketing& WithUseCases(const Aws::Vector<Aws::String>& value) { SetUseCases(value); return *this;}
-    inline Marketing& WithUseCases(Aws::Vector<Aws::String>&& value) { SetUseCases(std::move(value)); return *this;}
-    inline Marketing& AddUseCases(const Aws::String& value) { m_useCasesHasBeenSet = true; m_useCases.push_back(value); return *this; }
-    inline Marketing& AddUseCases(Aws::String&& value) { m_useCasesHasBeenSet = true; m_useCases.push_back(std::move(value)); return *this; }
-    inline Marketing& AddUseCases(const char* value) { m_useCasesHasBeenSet = true; m_useCases.push_back(value); return *this; }
+    template<typename UseCasesT = Aws::Vector<Aws::String>>
+    void SetUseCases(UseCasesT&& value) { m_useCasesHasBeenSet = true; m_useCases = std::forward<UseCasesT>(value); }
+    template<typename UseCasesT = Aws::Vector<Aws::String>>
+    Marketing& WithUseCases(UseCasesT&& value) { SetUseCases(std::forward<UseCasesT>(value)); return *this;}
+    template<typename UseCasesT = Aws::String>
+    Marketing& AddUseCases(UseCasesT&& value) { m_useCasesHasBeenSet = true; m_useCases.emplace_back(std::forward<UseCasesT>(value)); return *this; }
     ///@}
   private:
 
-    AwsFundingUsed m_awsFundingUsed;
+    AwsFundingUsed m_awsFundingUsed{AwsFundingUsed::NOT_SET};
     bool m_awsFundingUsedHasBeenSet = false;
 
     Aws::String m_campaignName;
@@ -143,7 +135,7 @@ namespace Model
     Aws::Vector<Channel> m_channels;
     bool m_channelsHasBeenSet = false;
 
-    MarketingSource m_source;
+    MarketingSource m_source{MarketingSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_useCases;

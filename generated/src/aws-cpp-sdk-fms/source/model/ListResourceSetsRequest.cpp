@@ -12,13 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceSetsRequest::ListResourceSetsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceSetsRequest::SerializePayload() const
 {
   JsonValue payload;

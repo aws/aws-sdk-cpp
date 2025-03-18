@@ -31,7 +31,7 @@ namespace Model
   class DynamoDBTarget
   {
   public:
-    AWS_GLUE_API DynamoDBTarget();
+    AWS_GLUE_API DynamoDBTarget() = default;
     AWS_GLUE_API DynamoDBTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DynamoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the DynamoDB table to crawl.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline DynamoDBTarget& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline DynamoDBTarget& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline DynamoDBTarget& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    DynamoDBTarget& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * while a value of <code>false</code> means to sample the records. If no value is
      * specified, the value defaults to <code>true</code>.</p>
      */
-    inline bool GetScanAll() const{ return m_scanAll; }
+    inline bool GetScanAll() const { return m_scanAll; }
     inline bool ScanAllHasBeenSet() const { return m_scanAllHasBeenSet; }
     inline void SetScanAll(bool value) { m_scanAllHasBeenSet = true; m_scanAll = value; }
     inline DynamoDBTarget& WithScanAll(bool value) { SetScanAll(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of
      * the max configured Read Capacity Unit (for tables using on-demand mode).</p>
      */
-    inline double GetScanRate() const{ return m_scanRate; }
+    inline double GetScanRate() const { return m_scanRate; }
     inline bool ScanRateHasBeenSet() const { return m_scanRateHasBeenSet; }
     inline void SetScanRate(double value) { m_scanRateHasBeenSet = true; m_scanRate = value; }
     inline DynamoDBTarget& WithScanRate(double value) { SetScanRate(value); return *this;}
@@ -85,10 +83,10 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    bool m_scanAll;
+    bool m_scanAll{false};
     bool m_scanAllHasBeenSet = false;
 
-    double m_scanRate;
+    double m_scanRate{0.0};
     bool m_scanRateHasBeenSet = false;
   };
 

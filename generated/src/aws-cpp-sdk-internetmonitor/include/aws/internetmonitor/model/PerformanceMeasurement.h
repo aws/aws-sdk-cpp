@@ -48,7 +48,7 @@ namespace Model
   class PerformanceMeasurement
   {
   public:
-    AWS_INTERNETMONITOR_API PerformanceMeasurement();
+    AWS_INTERNETMONITOR_API PerformanceMeasurement() = default;
     AWS_INTERNETMONITOR_API PerformanceMeasurement(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API PerformanceMeasurement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,7 +70,7 @@ namespace Model
      * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
      * Guide</i>.</p>
      */
-    inline double GetExperienceScore() const{ return m_experienceScore; }
+    inline double GetExperienceScore() const { return m_experienceScore; }
     inline bool ExperienceScoreHasBeenSet() const { return m_experienceScoreHasBeenSet; }
     inline void SetExperienceScore(double value) { m_experienceScoreHasBeenSet = true; m_experienceScore = value; }
     inline PerformanceMeasurement& WithExperienceScore(double value) { SetExperienceScore(value); return *this;}
@@ -87,7 +87,7 @@ namespace Model
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
-    inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
+    inline double GetPercentOfTotalTrafficImpacted() const { return m_percentOfTotalTrafficImpacted; }
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
     inline PerformanceMeasurement& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
@@ -104,7 +104,7 @@ namespace Model
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
-    inline double GetPercentOfClientLocationImpacted() const{ return m_percentOfClientLocationImpacted; }
+    inline double GetPercentOfClientLocationImpacted() const { return m_percentOfClientLocationImpacted; }
     inline bool PercentOfClientLocationImpactedHasBeenSet() const { return m_percentOfClientLocationImpactedHasBeenSet; }
     inline void SetPercentOfClientLocationImpacted(double value) { m_percentOfClientLocationImpactedHasBeenSet = true; m_percentOfClientLocationImpacted = value; }
     inline PerformanceMeasurement& WithPercentOfClientLocationImpacted(double value) { SetPercentOfClientLocationImpacted(value); return *this;}
@@ -119,22 +119,22 @@ namespace Model
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
-    inline const RoundTripTime& GetRoundTripTime() const{ return m_roundTripTime; }
+    inline const RoundTripTime& GetRoundTripTime() const { return m_roundTripTime; }
     inline bool RoundTripTimeHasBeenSet() const { return m_roundTripTimeHasBeenSet; }
-    inline void SetRoundTripTime(const RoundTripTime& value) { m_roundTripTimeHasBeenSet = true; m_roundTripTime = value; }
-    inline void SetRoundTripTime(RoundTripTime&& value) { m_roundTripTimeHasBeenSet = true; m_roundTripTime = std::move(value); }
-    inline PerformanceMeasurement& WithRoundTripTime(const RoundTripTime& value) { SetRoundTripTime(value); return *this;}
-    inline PerformanceMeasurement& WithRoundTripTime(RoundTripTime&& value) { SetRoundTripTime(std::move(value)); return *this;}
+    template<typename RoundTripTimeT = RoundTripTime>
+    void SetRoundTripTime(RoundTripTimeT&& value) { m_roundTripTimeHasBeenSet = true; m_roundTripTime = std::forward<RoundTripTimeT>(value); }
+    template<typename RoundTripTimeT = RoundTripTime>
+    PerformanceMeasurement& WithRoundTripTime(RoundTripTimeT&& value) { SetRoundTripTime(std::forward<RoundTripTimeT>(value)); return *this;}
     ///@}
   private:
 
-    double m_experienceScore;
+    double m_experienceScore{0.0};
     bool m_experienceScoreHasBeenSet = false;
 
-    double m_percentOfTotalTrafficImpacted;
+    double m_percentOfTotalTrafficImpacted{0.0};
     bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
 
-    double m_percentOfClientLocationImpacted;
+    double m_percentOfClientLocationImpacted{0.0};
     bool m_percentOfClientLocationImpactedHasBeenSet = false;
 
     RoundTripTime m_roundTripTime;

@@ -29,7 +29,7 @@ namespace Model
   class UpdateJobQueueRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API UpdateJobQueueRequest();
+    AWS_BATCH_API UpdateJobQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
+    inline const Aws::String& GetJobQueue() const { return m_jobQueue; }
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
-    inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
-    inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
-    inline UpdateJobQueueRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
-    inline UpdateJobQueueRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
-    inline UpdateJobQueueRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
+    template<typename JobQueueT = Aws::String>
+    void SetJobQueue(JobQueueT&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::forward<JobQueueT>(value); }
+    template<typename JobQueueT = Aws::String>
+    UpdateJobQueueRequest& WithJobQueue(JobQueueT&& value) { SetJobQueue(std::forward<JobQueueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
-    inline const JQState& GetState() const{ return m_state; }
+    inline JQState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateJobQueueRequest& WithState(const JQState& value) { SetState(value); return *this;}
-    inline UpdateJobQueueRequest& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(JQState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateJobQueueRequest& WithState(JQState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
-    inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
+    inline const Aws::String& GetSchedulingPolicyArn() const { return m_schedulingPolicyArn; }
     inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
-    inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
-    inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
-    inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
-    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
-    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
-    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}
+    template<typename SchedulingPolicyArnT = Aws::String>
+    void SetSchedulingPolicyArn(SchedulingPolicyArnT&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::forward<SchedulingPolicyArnT>(value); }
+    template<typename SchedulingPolicyArnT = Aws::String>
+    UpdateJobQueueRequest& WithSchedulingPolicyArn(SchedulingPolicyArnT&& value) { SetSchedulingPolicyArn(std::forward<SchedulingPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +94,7 @@ namespace Model
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline UpdateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -119,14 +113,14 @@ namespace Model
      * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
-    inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
+    inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const { return m_computeEnvironmentOrder; }
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
-    inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
-    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
-    inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
-    inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
-    inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
-    inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
+    template<typename ComputeEnvironmentOrderT = Aws::Vector<ComputeEnvironmentOrder>>
+    void SetComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::forward<ComputeEnvironmentOrderT>(value); }
+    template<typename ComputeEnvironmentOrderT = Aws::Vector<ComputeEnvironmentOrder>>
+    UpdateJobQueueRequest& WithComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { SetComputeEnvironmentOrder(std::forward<ComputeEnvironmentOrderT>(value)); return *this;}
+    template<typename ComputeEnvironmentOrderT = ComputeEnvironmentOrder>
+    UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.emplace_back(std::forward<ComputeEnvironmentOrderT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,27 +131,27 @@ namespace Model
      * minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is
      * 86,400 (24 hours).)</p>
      */
-    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const{ return m_jobStateTimeLimitActions; }
+    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const { return m_jobStateTimeLimitActions; }
     inline bool JobStateTimeLimitActionsHasBeenSet() const { return m_jobStateTimeLimitActionsHasBeenSet; }
-    inline void SetJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = value; }
-    inline void SetJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::move(value); }
-    inline UpdateJobQueueRequest& WithJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { SetJobStateTimeLimitActions(value); return *this;}
-    inline UpdateJobQueueRequest& WithJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { SetJobStateTimeLimitActions(std::move(value)); return *this;}
-    inline UpdateJobQueueRequest& AddJobStateTimeLimitActions(const JobStateTimeLimitAction& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(value); return *this; }
-    inline UpdateJobQueueRequest& AddJobStateTimeLimitActions(JobStateTimeLimitAction&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(std::move(value)); return *this; }
+    template<typename JobStateTimeLimitActionsT = Aws::Vector<JobStateTimeLimitAction>>
+    void SetJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::forward<JobStateTimeLimitActionsT>(value); }
+    template<typename JobStateTimeLimitActionsT = Aws::Vector<JobStateTimeLimitAction>>
+    UpdateJobQueueRequest& WithJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { SetJobStateTimeLimitActions(std::forward<JobStateTimeLimitActionsT>(value)); return *this;}
+    template<typename JobStateTimeLimitActionsT = JobStateTimeLimitAction>
+    UpdateJobQueueRequest& AddJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.emplace_back(std::forward<JobStateTimeLimitActionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet = false;
 
-    JQState m_state;
+    JQState m_state{JQState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_schedulingPolicyArn;
     bool m_schedulingPolicyArnHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetConfigurationRequest::TargetConfigurationRequest() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 TargetConfigurationRequest::TargetConfigurationRequest(const XmlNode& xmlNode)
-  : TargetConfigurationRequest()
 {
   *this = xmlNode;
 }

@@ -12,19 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionTargetRequest::UpdateSubscriptionTargetRequest() : 
-    m_applicableAssetTypesHasBeenSet(false),
-    m_authorizedPrincipalsHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_manageAccessRoleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_subscriptionTargetConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionTargetRequest::SerializePayload() const
 {
   JsonValue payload;

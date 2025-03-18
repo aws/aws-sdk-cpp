@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-PositionSolverDetails::PositionSolverDetails() : 
-    m_semtechGnssHasBeenSet(false)
-{
-}
-
 PositionSolverDetails::PositionSolverDetails(JsonView jsonValue)
-  : PositionSolverDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PositionSolverDetails& PositionSolverDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SemtechGnss"))
   {
     m_semtechGnss = jsonValue.GetObject("SemtechGnss");
-
     m_semtechGnssHasBeenSet = true;
   }
-
   return *this;
 }
 

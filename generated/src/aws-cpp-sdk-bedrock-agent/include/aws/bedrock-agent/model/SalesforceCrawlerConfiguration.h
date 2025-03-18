@@ -32,7 +32,7 @@ namespace Model
   class SalesforceCrawlerConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SalesforceCrawlerConfiguration();
+    AWS_BEDROCKAGENT_API SalesforceCrawlerConfiguration() = default;
     AWS_BEDROCKAGENT_API SalesforceCrawlerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SalesforceCrawlerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * configuring regular expression patterns to include or exclude certain
      * content.</p>
      */
-    inline const CrawlFilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+    inline const CrawlFilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
     inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
-    inline void SetFilterConfiguration(const CrawlFilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
-    inline void SetFilterConfiguration(CrawlFilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
-    inline SalesforceCrawlerConfiguration& WithFilterConfiguration(const CrawlFilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
-    inline SalesforceCrawlerConfiguration& WithFilterConfiguration(CrawlFilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+    template<typename FilterConfigurationT = CrawlFilterConfiguration>
+    void SetFilterConfiguration(FilterConfigurationT&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::forward<FilterConfigurationT>(value); }
+    template<typename FilterConfigurationT = CrawlFilterConfiguration>
+    SalesforceCrawlerConfiguration& WithFilterConfiguration(FilterConfigurationT&& value) { SetFilterConfiguration(std::forward<FilterConfigurationT>(value)); return *this;}
     ///@}
   private:
 

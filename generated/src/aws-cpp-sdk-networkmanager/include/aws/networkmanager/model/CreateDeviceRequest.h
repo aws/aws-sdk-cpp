@@ -25,7 +25,7 @@ namespace Model
   class CreateDeviceRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API CreateDeviceRequest();
+    AWS_NETWORKMANAGER_API CreateDeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline CreateDeviceRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline CreateDeviceRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    CreateDeviceRequest& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The Amazon Web Services location of the device, if applicable. For an
      * on-premises device, you can omit this parameter.</p>
      */
-    inline const AWSLocation& GetAWSLocation() const{ return m_aWSLocation; }
+    inline const AWSLocation& GetAWSLocation() const { return m_aWSLocation; }
     inline bool AWSLocationHasBeenSet() const { return m_aWSLocationHasBeenSet; }
-    inline void SetAWSLocation(const AWSLocation& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = value; }
-    inline void SetAWSLocation(AWSLocation&& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = std::move(value); }
-    inline CreateDeviceRequest& WithAWSLocation(const AWSLocation& value) { SetAWSLocation(value); return *this;}
-    inline CreateDeviceRequest& WithAWSLocation(AWSLocation&& value) { SetAWSLocation(std::move(value)); return *this;}
+    template<typename AWSLocationT = AWSLocation>
+    void SetAWSLocation(AWSLocationT&& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = std::forward<AWSLocationT>(value); }
+    template<typename AWSLocationT = AWSLocation>
+    CreateDeviceRequest& WithAWSLocation(AWSLocationT&& value) { SetAWSLocation(std::forward<AWSLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,28 +66,24 @@ namespace Model
      * <p>A description of the device.</p> <p>Constraints: Maximum length of 256
      * characters.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateDeviceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateDeviceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateDeviceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the device.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline CreateDeviceRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline CreateDeviceRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    CreateDeviceRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * <p>The vendor of the device.</p> <p>Constraints: Maximum length of 128
      * characters.</p>
      */
-    inline const Aws::String& GetVendor() const{ return m_vendor; }
+    inline const Aws::String& GetVendor() const { return m_vendor; }
     inline bool VendorHasBeenSet() const { return m_vendorHasBeenSet; }
-    inline void SetVendor(const Aws::String& value) { m_vendorHasBeenSet = true; m_vendor = value; }
-    inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
-    inline void SetVendor(const char* value) { m_vendorHasBeenSet = true; m_vendor.assign(value); }
-    inline CreateDeviceRequest& WithVendor(const Aws::String& value) { SetVendor(value); return *this;}
-    inline CreateDeviceRequest& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithVendor(const char* value) { SetVendor(value); return *this;}
+    template<typename VendorT = Aws::String>
+    void SetVendor(VendorT&& value) { m_vendorHasBeenSet = true; m_vendor = std::forward<VendorT>(value); }
+    template<typename VendorT = Aws::String>
+    CreateDeviceRequest& WithVendor(VendorT&& value) { SetVendor(std::forward<VendorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * <p>The model of the device.</p> <p>Constraints: Maximum length of 128
      * characters.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-    inline CreateDeviceRequest& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline CreateDeviceRequest& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithModel(const char* value) { SetModel(value); return *this;}
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    CreateDeviceRequest& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,54 +117,50 @@ namespace Model
      * <p>The serial number of the device.</p> <p>Constraints: Maximum length of 128
      * characters.</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-    inline CreateDeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline CreateDeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    CreateDeviceRequest& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the device.</p>
      */
-    inline const Location& GetLocation() const{ return m_location; }
+    inline const Location& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline CreateDeviceRequest& WithLocation(const Location& value) { SetLocation(value); return *this;}
-    inline CreateDeviceRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = Location>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Location>
+    CreateDeviceRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the site.</p>
      */
-    inline const Aws::String& GetSiteId() const{ return m_siteId; }
+    inline const Aws::String& GetSiteId() const { return m_siteId; }
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
-    inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
-    inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
-    inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
-    inline CreateDeviceRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
-    inline CreateDeviceRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
-    inline CreateDeviceRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
+    template<typename SiteIdT = Aws::String>
+    void SetSiteId(SiteIdT&& value) { m_siteIdHasBeenSet = true; m_siteId = std::forward<SiteIdT>(value); }
+    template<typename SiteIdT = Aws::String>
+    CreateDeviceRequest& WithSiteId(SiteIdT&& value) { SetSiteId(std::forward<SiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the resource during creation.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDeviceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDeviceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDeviceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDeviceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDeviceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDeviceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

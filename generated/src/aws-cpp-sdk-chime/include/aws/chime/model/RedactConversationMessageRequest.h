@@ -21,7 +21,7 @@ namespace Model
   class RedactConversationMessageRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API RedactConversationMessageRequest();
+    AWS_CHIME_API RedactConversationMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline RedactConversationMessageRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline RedactConversationMessageRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline RedactConversationMessageRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    RedactConversationMessageRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The conversation ID.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline RedactConversationMessageRequest& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline RedactConversationMessageRequest& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline RedactConversationMessageRequest& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    RedactConversationMessageRequest& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message ID.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline RedactConversationMessageRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline RedactConversationMessageRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline RedactConversationMessageRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    RedactConversationMessageRequest& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,33 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-TranscriptionJobSummary::TranscriptionJobSummary() : 
-    m_transcriptionJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_transcriptionJobStatus(TranscriptionJobStatus::NOT_SET),
-    m_transcriptionJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_outputLocationType(OutputLocationType::NOT_SET),
-    m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false),
-    m_modelSettingsHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_identifyMultipleLanguages(false),
-    m_identifyMultipleLanguagesHasBeenSet(false),
-    m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false),
-    m_languageCodesHasBeenSet(false),
-    m_toxicityDetectionHasBeenSet(false)
-{
-}
-
 TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue)
-  : TranscriptionJobSummary()
 {
   *this = jsonValue;
 }
@@ -54,94 +28,68 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TranscriptionJobName"))
   {
     m_transcriptionJobName = jsonValue.GetString("TranscriptionJobName");
-
     m_transcriptionJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TranscriptionJobStatus"))
   {
     m_transcriptionJobStatus = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("TranscriptionJobStatus"));
-
     m_transcriptionJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputLocationType"))
   {
     m_outputLocationType = OutputLocationTypeMapper::GetOutputLocationTypeForName(jsonValue.GetString("OutputLocationType"));
-
     m_outputLocationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentRedaction"))
   {
     m_contentRedaction = jsonValue.GetObject("ContentRedaction");
-
     m_contentRedactionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelSettings"))
   {
     m_modelSettings = jsonValue.GetObject("ModelSettings");
-
     m_modelSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifyLanguage"))
   {
     m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
-
     m_identifyLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
   {
     m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
-
     m_identifyMultipleLanguagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifiedLanguageScore"))
   {
     m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
-
     m_identifiedLanguageScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCodes"))
   {
     Aws::Utils::Array<JsonView> languageCodesJsonList = jsonValue.GetArray("LanguageCodes");
@@ -151,7 +99,6 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     }
     m_languageCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToxicityDetection"))
   {
     Aws::Utils::Array<JsonView> toxicityDetectionJsonList = jsonValue.GetArray("ToxicityDetection");
@@ -161,7 +108,6 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     }
     m_toxicityDetectionHasBeenSet = true;
   }
-
   return *this;
 }
 

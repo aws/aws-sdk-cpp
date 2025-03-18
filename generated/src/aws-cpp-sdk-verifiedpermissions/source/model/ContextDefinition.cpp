@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-ContextDefinition::ContextDefinition() : 
-    m_contextMapHasBeenSet(false),
-    m_cedarJsonHasBeenSet(false)
-{
-}
-
 ContextDefinition::ContextDefinition(JsonView jsonValue)
-  : ContextDefinition()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ContextDefinition& ContextDefinition::operator =(JsonView jsonValue)
     }
     m_contextMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cedarJson"))
   {
     m_cedarJson = jsonValue.GetString("cedarJson");
-
     m_cedarJsonHasBeenSet = true;
   }
-
   return *this;
 }
 

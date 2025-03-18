@@ -18,13 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-SourceManifestConfig::SourceManifestConfig() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 SourceManifestConfig::SourceManifestConfig(JsonView jsonValue)
-  : SourceManifestConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceManifestConfig& SourceManifestConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

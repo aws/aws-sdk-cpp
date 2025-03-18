@@ -32,7 +32,7 @@ namespace Model
   class AmplitudeConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API AmplitudeConnectorProfileCredentials();
+    AWS_APPFLOW_API AmplitudeConnectorProfileCredentials() = default;
     AWS_APPFLOW_API AmplitudeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API AmplitudeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
      * calling program to your API. </p>
      */
-    inline const Aws::String& GetApiKey() const{ return m_apiKey; }
+    inline const Aws::String& GetApiKey() const { return m_apiKey; }
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-    inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-    inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-    inline AmplitudeConnectorProfileCredentials& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-    inline AmplitudeConnectorProfileCredentials& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-    inline AmplitudeConnectorProfileCredentials& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    template<typename ApiKeyT = Aws::String>
+    void SetApiKey(ApiKeyT&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::forward<ApiKeyT>(value); }
+    template<typename ApiKeyT = Aws::String>
+    AmplitudeConnectorProfileCredentials& WithApiKey(ApiKeyT&& value) { SetApiKey(std::forward<ApiKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Secret Access Key portion of the credentials. </p>
      */
-    inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
+    inline const Aws::String& GetSecretKey() const { return m_secretKey; }
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
-    inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
-    inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::move(value); }
-    inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
-    inline AmplitudeConnectorProfileCredentials& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
-    inline AmplitudeConnectorProfileCredentials& WithSecretKey(Aws::String&& value) { SetSecretKey(std::move(value)); return *this;}
-    inline AmplitudeConnectorProfileCredentials& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
+    template<typename SecretKeyT = Aws::String>
+    void SetSecretKey(SecretKeyT&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::forward<SecretKeyT>(value); }
+    template<typename SecretKeyT = Aws::String>
+    AmplitudeConnectorProfileCredentials& WithSecretKey(SecretKeyT&& value) { SetSecretKey(std::forward<SecretKeyT>(value)); return *this;}
     ///@}
   private:
 

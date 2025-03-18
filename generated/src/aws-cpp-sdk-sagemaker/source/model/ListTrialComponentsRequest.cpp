@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTrialComponentsRequest::ListTrialComponentsRequest() : 
-    m_experimentNameHasBeenSet(false),
-    m_trialNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_sortBy(SortTrialComponentsBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTrialComponentsRequest::SerializePayload() const
 {
   JsonValue payload;

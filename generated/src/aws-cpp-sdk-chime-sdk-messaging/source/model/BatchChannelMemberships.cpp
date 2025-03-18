@@ -18,18 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-BatchChannelMemberships::BatchChannelMemberships() : 
-    m_invitedByHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 BatchChannelMemberships::BatchChannelMemberships(JsonView jsonValue)
-  : BatchChannelMemberships()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvitedBy"))
   {
     m_invitedBy = jsonValue.GetObject("InvitedBy");
-
     m_invitedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChannelMembershipTypeMapper::GetChannelMembershipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Members"))
   {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
@@ -59,21 +44,16 @@ BatchChannelMemberships& BatchChannelMemberships::operator =(JsonView jsonValue)
     }
     m_membersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubChannelId"))
   {
     m_subChannelId = jsonValue.GetString("SubChannelId");
-
     m_subChannelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

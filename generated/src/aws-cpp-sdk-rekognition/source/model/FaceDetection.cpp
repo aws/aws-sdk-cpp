@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-FaceDetection::FaceDetection() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_faceHasBeenSet(false)
-{
-}
-
 FaceDetection::FaceDetection(JsonView jsonValue)
-  : FaceDetection()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FaceDetection& FaceDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Face"))
   {
     m_face = jsonValue.GetObject("Face");
-
     m_faceHasBeenSet = true;
   }
-
   return *this;
 }
 

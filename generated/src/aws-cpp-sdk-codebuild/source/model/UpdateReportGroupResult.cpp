@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateReportGroupResult::UpdateReportGroupResult()
-{
-}
-
 UpdateReportGroupResult::UpdateReportGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateReportGroupResult& UpdateReportGroupResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("reportGroup"))
   {
     m_reportGroup = jsonValue.GetObject("reportGroup");
-
+    m_reportGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

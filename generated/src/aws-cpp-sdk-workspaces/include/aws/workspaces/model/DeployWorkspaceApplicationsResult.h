@@ -28,7 +28,7 @@ namespace Model
   class DeployWorkspaceApplicationsResult
   {
   public:
-    AWS_WORKSPACES_API DeployWorkspaceApplicationsResult();
+    AWS_WORKSPACES_API DeployWorkspaceApplicationsResult() = default;
     AWS_WORKSPACES_API DeployWorkspaceApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DeployWorkspaceApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The list of deployed associations and information about them.</p>
      */
-    inline const WorkSpaceApplicationDeployment& GetDeployment() const{ return m_deployment; }
-    inline void SetDeployment(const WorkSpaceApplicationDeployment& value) { m_deployment = value; }
-    inline void SetDeployment(WorkSpaceApplicationDeployment&& value) { m_deployment = std::move(value); }
-    inline DeployWorkspaceApplicationsResult& WithDeployment(const WorkSpaceApplicationDeployment& value) { SetDeployment(value); return *this;}
-    inline DeployWorkspaceApplicationsResult& WithDeployment(WorkSpaceApplicationDeployment&& value) { SetDeployment(std::move(value)); return *this;}
+    inline const WorkSpaceApplicationDeployment& GetDeployment() const { return m_deployment; }
+    template<typename DeploymentT = WorkSpaceApplicationDeployment>
+    void SetDeployment(DeploymentT&& value) { m_deploymentHasBeenSet = true; m_deployment = std::forward<DeploymentT>(value); }
+    template<typename DeploymentT = WorkSpaceApplicationDeployment>
+    DeployWorkspaceApplicationsResult& WithDeployment(DeploymentT&& value) { SetDeployment(std::forward<DeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeployWorkspaceApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeployWorkspaceApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeployWorkspaceApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeployWorkspaceApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WorkSpaceApplicationDeployment m_deployment;
+    bool m_deploymentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ namespace Model
   class BulkDeploymentMetrics
   {
   public:
-    AWS_GREENGRASS_API BulkDeploymentMetrics();
+    AWS_GREENGRASS_API BulkDeploymentMetrics() = default;
     AWS_GREENGRASS_API BulkDeploymentMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API BulkDeploymentMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * specifies a nonexistent group version, or if the execution role doesn't grant
      * permission to deploy a group or group version.
      */
-    inline int GetInvalidInputRecords() const{ return m_invalidInputRecords; }
+    inline int GetInvalidInputRecords() const { return m_invalidInputRecords; }
     inline bool InvalidInputRecordsHasBeenSet() const { return m_invalidInputRecordsHasBeenSet; }
     inline void SetInvalidInputRecords(int value) { m_invalidInputRecordsHasBeenSet = true; m_invalidInputRecords = value; }
     inline BulkDeploymentMetrics& WithInvalidInputRecords(int value) { SetInvalidInputRecords(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * The total number of group records from the input file that have been processed
      * so far, or attempted.
      */
-    inline int GetRecordsProcessed() const{ return m_recordsProcessed; }
+    inline int GetRecordsProcessed() const { return m_recordsProcessed; }
     inline bool RecordsProcessedHasBeenSet() const { return m_recordsProcessedHasBeenSet; }
     inline void SetRecordsProcessed(int value) { m_recordsProcessedHasBeenSet = true; m_recordsProcessed = value; }
     inline BulkDeploymentMetrics& WithRecordsProcessed(int value) { SetRecordsProcessed(value); return *this;}
@@ -67,20 +67,20 @@ namespace Model
      * throttling error. ''StartBulkDeployment'' retries a group deployment up to five
      * times.
      */
-    inline int GetRetryAttempts() const{ return m_retryAttempts; }
+    inline int GetRetryAttempts() const { return m_retryAttempts; }
     inline bool RetryAttemptsHasBeenSet() const { return m_retryAttemptsHasBeenSet; }
     inline void SetRetryAttempts(int value) { m_retryAttemptsHasBeenSet = true; m_retryAttempts = value; }
     inline BulkDeploymentMetrics& WithRetryAttempts(int value) { SetRetryAttempts(value); return *this;}
     ///@}
   private:
 
-    int m_invalidInputRecords;
+    int m_invalidInputRecords{0};
     bool m_invalidInputRecordsHasBeenSet = false;
 
-    int m_recordsProcessed;
+    int m_recordsProcessed{0};
     bool m_recordsProcessedHasBeenSet = false;
 
-    int m_retryAttempts;
+    int m_retryAttempts{0};
     bool m_retryAttemptsHasBeenSet = false;
   };
 

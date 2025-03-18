@@ -25,7 +25,7 @@ namespace Model
   class StartUserImportJobRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the user pool that you want to start importing users into.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline StartUserImportJobRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline StartUserImportJobRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline StartUserImportJobRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    StartUserImportJobRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a user import job that you previously created.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline StartUserImportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline StartUserImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline StartUserImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    StartUserImportJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
   private:
 

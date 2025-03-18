@@ -27,7 +27,7 @@ namespace Model
   class CreatePresignedDomainUrlResult
   {
   public:
-    AWS_SAGEMAKER_API CreatePresignedDomainUrlResult();
+    AWS_SAGEMAKER_API CreatePresignedDomainUrlResult() = default;
     AWS_SAGEMAKER_API CreatePresignedDomainUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreatePresignedDomainUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The presigned URL.</p>
      */
-    inline const Aws::String& GetAuthorizedUrl() const{ return m_authorizedUrl; }
-    inline void SetAuthorizedUrl(const Aws::String& value) { m_authorizedUrl = value; }
-    inline void SetAuthorizedUrl(Aws::String&& value) { m_authorizedUrl = std::move(value); }
-    inline void SetAuthorizedUrl(const char* value) { m_authorizedUrl.assign(value); }
-    inline CreatePresignedDomainUrlResult& WithAuthorizedUrl(const Aws::String& value) { SetAuthorizedUrl(value); return *this;}
-    inline CreatePresignedDomainUrlResult& WithAuthorizedUrl(Aws::String&& value) { SetAuthorizedUrl(std::move(value)); return *this;}
-    inline CreatePresignedDomainUrlResult& WithAuthorizedUrl(const char* value) { SetAuthorizedUrl(value); return *this;}
+    inline const Aws::String& GetAuthorizedUrl() const { return m_authorizedUrl; }
+    template<typename AuthorizedUrlT = Aws::String>
+    void SetAuthorizedUrl(AuthorizedUrlT&& value) { m_authorizedUrlHasBeenSet = true; m_authorizedUrl = std::forward<AuthorizedUrlT>(value); }
+    template<typename AuthorizedUrlT = Aws::String>
+    CreatePresignedDomainUrlResult& WithAuthorizedUrl(AuthorizedUrlT&& value) { SetAuthorizedUrl(std::forward<AuthorizedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePresignedDomainUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePresignedDomainUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePresignedDomainUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePresignedDomainUrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authorizedUrl;
+    bool m_authorizedUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

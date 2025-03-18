@@ -18,14 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-MlConfigDefinition::MlConfigDefinition() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 MlConfigDefinition::MlConfigDefinition(JsonView jsonValue)
-  : MlConfigDefinition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MlConfigDefinition& MlConfigDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

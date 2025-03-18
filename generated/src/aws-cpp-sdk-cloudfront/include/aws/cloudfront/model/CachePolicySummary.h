@@ -31,7 +31,7 @@ namespace Model
   class CachePolicySummary
   {
   public:
-    AWS_CLOUDFRONT_API CachePolicySummary();
+    AWS_CLOUDFRONT_API CachePolicySummary() = default;
     AWS_CLOUDFRONT_API CachePolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachePolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,26 @@ namespace Model
      * Services) or <code>custom</code> (created in this Amazon Web Services
      * account).</p>
      */
-    inline const CachePolicyType& GetType() const{ return m_type; }
+    inline CachePolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CachePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CachePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CachePolicySummary& WithType(const CachePolicyType& value) { SetType(value); return *this;}
-    inline CachePolicySummary& WithType(CachePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CachePolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CachePolicySummary& WithType(CachePolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cache policy.</p>
      */
-    inline const CachePolicy& GetCachePolicy() const{ return m_cachePolicy; }
+    inline const CachePolicy& GetCachePolicy() const { return m_cachePolicy; }
     inline bool CachePolicyHasBeenSet() const { return m_cachePolicyHasBeenSet; }
-    inline void SetCachePolicy(const CachePolicy& value) { m_cachePolicyHasBeenSet = true; m_cachePolicy = value; }
-    inline void SetCachePolicy(CachePolicy&& value) { m_cachePolicyHasBeenSet = true; m_cachePolicy = std::move(value); }
-    inline CachePolicySummary& WithCachePolicy(const CachePolicy& value) { SetCachePolicy(value); return *this;}
-    inline CachePolicySummary& WithCachePolicy(CachePolicy&& value) { SetCachePolicy(std::move(value)); return *this;}
+    template<typename CachePolicyT = CachePolicy>
+    void SetCachePolicy(CachePolicyT&& value) { m_cachePolicyHasBeenSet = true; m_cachePolicy = std::forward<CachePolicyT>(value); }
+    template<typename CachePolicyT = CachePolicy>
+    CachePolicySummary& WithCachePolicy(CachePolicyT&& value) { SetCachePolicy(std::forward<CachePolicyT>(value)); return *this;}
     ///@}
   private:
 
-    CachePolicyType m_type;
+    CachePolicyType m_type{CachePolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     CachePolicy m_cachePolicy;

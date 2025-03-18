@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteThingTypeRequest::DeleteThingTypeRequest() : 
-    m_thingTypeNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThingTypeRequest::SerializePayload() const
 {
   return {};

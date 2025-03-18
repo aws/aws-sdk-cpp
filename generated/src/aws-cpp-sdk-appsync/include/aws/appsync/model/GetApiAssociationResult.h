@@ -28,7 +28,7 @@ namespace Model
   class GetApiAssociationResult
   {
   public:
-    AWS_APPSYNC_API GetApiAssociationResult();
+    AWS_APPSYNC_API GetApiAssociationResult() = default;
     AWS_APPSYNC_API GetApiAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API GetApiAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>ApiAssociation</code> object.</p>
      */
-    inline const ApiAssociation& GetApiAssociation() const{ return m_apiAssociation; }
-    inline void SetApiAssociation(const ApiAssociation& value) { m_apiAssociation = value; }
-    inline void SetApiAssociation(ApiAssociation&& value) { m_apiAssociation = std::move(value); }
-    inline GetApiAssociationResult& WithApiAssociation(const ApiAssociation& value) { SetApiAssociation(value); return *this;}
-    inline GetApiAssociationResult& WithApiAssociation(ApiAssociation&& value) { SetApiAssociation(std::move(value)); return *this;}
+    inline const ApiAssociation& GetApiAssociation() const { return m_apiAssociation; }
+    template<typename ApiAssociationT = ApiAssociation>
+    void SetApiAssociation(ApiAssociationT&& value) { m_apiAssociationHasBeenSet = true; m_apiAssociation = std::forward<ApiAssociationT>(value); }
+    template<typename ApiAssociationT = ApiAssociation>
+    GetApiAssociationResult& WithApiAssociation(ApiAssociationT&& value) { SetApiAssociation(std::forward<ApiAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApiAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApiAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApiAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApiAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApiAssociation m_apiAssociation;
+    bool m_apiAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

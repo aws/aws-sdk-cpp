@@ -19,14 +19,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-VideoSource::VideoSource() : 
-    m_bytesHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 VideoSource::VideoSource(JsonView jsonValue)
-  : VideoSource()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ VideoSource& VideoSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

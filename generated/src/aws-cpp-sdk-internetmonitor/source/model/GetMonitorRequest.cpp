@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMonitorRequest::GetMonitorRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_linkedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMonitorRequest::SerializePayload() const
 {
   return {};

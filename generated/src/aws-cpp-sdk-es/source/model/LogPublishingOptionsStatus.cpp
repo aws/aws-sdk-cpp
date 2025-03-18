@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-LogPublishingOptionsStatus::LogPublishingOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 LogPublishingOptionsStatus::LogPublishingOptionsStatus(JsonView jsonValue)
-  : LogPublishingOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ LogPublishingOptionsStatus& LogPublishingOptionsStatus::operator =(JsonView json
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

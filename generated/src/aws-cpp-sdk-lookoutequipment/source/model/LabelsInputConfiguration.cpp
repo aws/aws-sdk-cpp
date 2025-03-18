@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-LabelsInputConfiguration::LabelsInputConfiguration() : 
-    m_s3InputConfigurationHasBeenSet(false),
-    m_labelGroupNameHasBeenSet(false)
-{
-}
-
 LabelsInputConfiguration::LabelsInputConfiguration(JsonView jsonValue)
-  : LabelsInputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LabelsInputConfiguration& LabelsInputConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("S3InputConfiguration"))
   {
     m_s3InputConfiguration = jsonValue.GetObject("S3InputConfiguration");
-
     m_s3InputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelGroupName"))
   {
     m_labelGroupName = jsonValue.GetString("LabelGroupName");
-
     m_labelGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

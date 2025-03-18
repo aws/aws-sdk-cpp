@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-GatewayPlatform::GatewayPlatform() : 
-    m_greengrassHasBeenSet(false),
-    m_greengrassV2HasBeenSet(false),
-    m_siemensIEHasBeenSet(false)
-{
-}
-
 GatewayPlatform::GatewayPlatform(JsonView jsonValue)
-  : GatewayPlatform()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GatewayPlatform& GatewayPlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("greengrass"))
   {
     m_greengrass = jsonValue.GetObject("greengrass");
-
     m_greengrassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greengrassV2"))
   {
     m_greengrassV2 = jsonValue.GetObject("greengrassV2");
-
     m_greengrassV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("siemensIE"))
   {
     m_siemensIE = jsonValue.GetObject("siemensIE");
-
     m_siemensIEHasBeenSet = true;
   }
-
   return *this;
 }
 

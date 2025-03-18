@@ -21,7 +21,7 @@ namespace Model
   class DescribeDatasetRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeDatasetRequest();
+    AWS_IOTSITEWISE_API DescribeDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
+    inline const Aws::String& GetDatasetId() const { return m_datasetId; }
     inline bool DatasetIdHasBeenSet() const { return m_datasetIdHasBeenSet; }
-    inline void SetDatasetId(const Aws::String& value) { m_datasetIdHasBeenSet = true; m_datasetId = value; }
-    inline void SetDatasetId(Aws::String&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::move(value); }
-    inline void SetDatasetId(const char* value) { m_datasetIdHasBeenSet = true; m_datasetId.assign(value); }
-    inline DescribeDatasetRequest& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
-    inline DescribeDatasetRequest& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
-    inline DescribeDatasetRequest& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+    template<typename DatasetIdT = Aws::String>
+    void SetDatasetId(DatasetIdT&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::forward<DatasetIdT>(value); }
+    template<typename DatasetIdT = Aws::String>
+    DescribeDatasetRequest& WithDatasetId(DatasetIdT&& value) { SetDatasetId(std::forward<DatasetIdT>(value)); return *this;}
     ///@}
   private:
 

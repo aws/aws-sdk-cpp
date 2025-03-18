@@ -22,7 +22,7 @@ namespace Model
   class DescribeSettingsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeSettingsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to retrieve information.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeSettingsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeSettingsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeSettingsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeSettingsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the directory settings for which to retrieve information.</p>
      */
-    inline const DirectoryConfigurationStatus& GetStatus() const{ return m_status; }
+    inline DirectoryConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DirectoryConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DirectoryConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DescribeSettingsRequest& WithStatus(const DirectoryConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline DescribeSettingsRequest& WithStatus(DirectoryConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DirectoryConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeSettingsRequest& WithStatus(DirectoryConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -66,21 +62,19 @@ namespace Model
      * <p>The <code>DescribeSettingsResult.NextToken</code> value from a previous call
      * to <a>DescribeSettings</a>. Pass null if this is the first call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSettingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSettingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSettingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSettingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    DirectoryConfigurationStatus m_status;
+    DirectoryConfigurationStatus m_status{DirectoryConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;

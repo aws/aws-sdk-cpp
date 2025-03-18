@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-QnAIntentConfiguration::QnAIntentConfiguration() : 
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_bedrockModelConfigurationHasBeenSet(false)
-{
-}
-
 QnAIntentConfiguration::QnAIntentConfiguration(JsonView jsonValue)
-  : QnAIntentConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QnAIntentConfiguration& QnAIntentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSourceConfiguration"))
   {
     m_dataSourceConfiguration = jsonValue.GetObject("dataSourceConfiguration");
-
     m_dataSourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bedrockModelConfiguration"))
   {
     m_bedrockModelConfiguration = jsonValue.GetObject("bedrockModelConfiguration");
-
     m_bedrockModelConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

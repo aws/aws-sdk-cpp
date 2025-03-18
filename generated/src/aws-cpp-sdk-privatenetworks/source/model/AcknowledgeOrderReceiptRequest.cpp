@@ -12,11 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcknowledgeOrderReceiptRequest::AcknowledgeOrderReceiptRequest() : 
-    m_orderArnHasBeenSet(false)
-{
-}
-
 Aws::String AcknowledgeOrderReceiptRequest::SerializePayload() const
 {
   JsonValue payload;

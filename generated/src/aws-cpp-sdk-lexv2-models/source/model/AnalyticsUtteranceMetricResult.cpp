@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsUtteranceMetricResult::AnalyticsUtteranceMetricResult() : 
-    m_name(AnalyticsUtteranceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(AnalyticsMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AnalyticsUtteranceMetricResult::AnalyticsUtteranceMetricResult(JsonView jsonValue)
-  : AnalyticsUtteranceMetricResult()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AnalyticsUtteranceMetricResult& AnalyticsUtteranceMetricResult::operator =(JsonV
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsUtteranceMetricNameMapper::GetAnalyticsUtteranceMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = AnalyticsMetricStatisticMapper::GetAnalyticsMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

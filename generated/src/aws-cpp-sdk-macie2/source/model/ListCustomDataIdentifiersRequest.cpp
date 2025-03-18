@@ -12,13 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCustomDataIdentifiersRequest::ListCustomDataIdentifiersRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCustomDataIdentifiersRequest::SerializePayload() const
 {
   JsonValue payload;

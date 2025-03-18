@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-MonitoringSubscription::MonitoringSubscription() : 
-    m_realtimeMetricsSubscriptionConfigHasBeenSet(false)
-{
-}
-
 MonitoringSubscription::MonitoringSubscription(const XmlNode& xmlNode)
-  : MonitoringSubscription()
 {
   *this = xmlNode;
 }

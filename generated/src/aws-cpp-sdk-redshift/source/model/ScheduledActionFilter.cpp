@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ScheduledActionFilter::ScheduledActionFilter() : 
-    m_name(ScheduledActionFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ScheduledActionFilter::ScheduledActionFilter(const XmlNode& xmlNode)
-  : ScheduledActionFilter()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ ScheduledActionFilter& ScheduledActionFilter::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = ScheduledActionFilterNameMapper::GetScheduledActionFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = ScheduledActionFilterNameMapper::GetScheduledActionFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

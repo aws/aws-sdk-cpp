@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDocumentPermissionRequest::DescribeDocumentPermissionRequest() : 
-    m_nameHasBeenSet(false),
-    m_permissionType(DocumentPermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDocumentPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

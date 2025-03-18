@@ -12,27 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkgroupRequest::UpdateWorkgroupRequest() : 
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_configParametersHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_pricePerformanceTargetHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_trackNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkgroupRequest::SerializePayload() const
 {
   JsonValue payload;

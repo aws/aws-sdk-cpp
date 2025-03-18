@@ -34,7 +34,7 @@ namespace Model
   class ConfigurationEvent
   {
   public:
-    AWS_QBUSINESS_API ConfigurationEvent();
+    AWS_QBUSINESS_API ConfigurationEvent() = default;
     AWS_QBUSINESS_API ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,36 +58,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation
      * settings</a>.</p>
      */
-    inline const ChatMode& GetChatMode() const{ return m_chatMode; }
+    inline ChatMode GetChatMode() const { return m_chatMode; }
     inline bool ChatModeHasBeenSet() const { return m_chatModeHasBeenSet; }
-    inline void SetChatMode(const ChatMode& value) { m_chatModeHasBeenSet = true; m_chatMode = value; }
-    inline void SetChatMode(ChatMode&& value) { m_chatModeHasBeenSet = true; m_chatMode = std::move(value); }
-    inline ConfigurationEvent& WithChatMode(const ChatMode& value) { SetChatMode(value); return *this;}
-    inline ConfigurationEvent& WithChatMode(ChatMode&& value) { SetChatMode(std::move(value)); return *this;}
+    inline void SetChatMode(ChatMode value) { m_chatModeHasBeenSet = true; m_chatMode = value; }
+    inline ConfigurationEvent& WithChatMode(ChatMode value) { SetChatMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ChatModeConfiguration& GetChatModeConfiguration() const{ return m_chatModeConfiguration; }
+    inline const ChatModeConfiguration& GetChatModeConfiguration() const { return m_chatModeConfiguration; }
     inline bool ChatModeConfigurationHasBeenSet() const { return m_chatModeConfigurationHasBeenSet; }
-    inline void SetChatModeConfiguration(const ChatModeConfiguration& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = value; }
-    inline void SetChatModeConfiguration(ChatModeConfiguration&& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = std::move(value); }
-    inline ConfigurationEvent& WithChatModeConfiguration(const ChatModeConfiguration& value) { SetChatModeConfiguration(value); return *this;}
-    inline ConfigurationEvent& WithChatModeConfiguration(ChatModeConfiguration&& value) { SetChatModeConfiguration(std::move(value)); return *this;}
+    template<typename ChatModeConfigurationT = ChatModeConfiguration>
+    void SetChatModeConfiguration(ChatModeConfigurationT&& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = std::forward<ChatModeConfigurationT>(value); }
+    template<typename ChatModeConfigurationT = ChatModeConfiguration>
+    ConfigurationEvent& WithChatModeConfiguration(ChatModeConfigurationT&& value) { SetChatModeConfiguration(std::forward<ChatModeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline ConfigurationEvent& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline ConfigurationEvent& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    ConfigurationEvent& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
   private:
 
-    ChatMode m_chatMode;
+    ChatMode m_chatMode{ChatMode::NOT_SET};
     bool m_chatModeHasBeenSet = false;
 
     ChatModeConfiguration m_chatModeConfiguration;

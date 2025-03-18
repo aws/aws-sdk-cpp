@@ -18,19 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-MetricDefinition::MetricDefinition() : 
-    m_dimensionKeysHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_metricDefinitionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_unitLabelHasBeenSet(false),
-    m_valueKeyHasBeenSet(false)
-{
-}
-
 MetricDefinition::MetricDefinition(JsonView jsonValue)
-  : MetricDefinition()
 {
   *this = jsonValue;
 }
@@ -46,49 +34,36 @@ MetricDefinition& MetricDefinition::operator =(JsonView jsonValue)
     }
     m_dimensionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventPattern"))
   {
     m_eventPattern = jsonValue.GetString("EventPattern");
-
     m_eventPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDefinitionId"))
   {
     m_metricDefinitionId = jsonValue.GetString("MetricDefinitionId");
-
     m_metricDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnitLabel"))
   {
     m_unitLabel = jsonValue.GetString("UnitLabel");
-
     m_unitLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueKey"))
   {
     m_valueKey = jsonValue.GetString("ValueKey");
-
     m_valueKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

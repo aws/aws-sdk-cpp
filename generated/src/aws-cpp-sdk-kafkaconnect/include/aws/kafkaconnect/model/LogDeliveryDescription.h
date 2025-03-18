@@ -31,7 +31,7 @@ namespace Model
   class LogDeliveryDescription
   {
   public:
-    AWS_KAFKACONNECT_API LogDeliveryDescription();
+    AWS_KAFKACONNECT_API LogDeliveryDescription() = default;
     AWS_KAFKACONNECT_API LogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API LogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>The workers can send worker logs to different destination types. This
      * configuration specifies the details of these destinations.</p>
      */
-    inline const WorkerLogDeliveryDescription& GetWorkerLogDelivery() const{ return m_workerLogDelivery; }
+    inline const WorkerLogDeliveryDescription& GetWorkerLogDelivery() const { return m_workerLogDelivery; }
     inline bool WorkerLogDeliveryHasBeenSet() const { return m_workerLogDeliveryHasBeenSet; }
-    inline void SetWorkerLogDelivery(const WorkerLogDeliveryDescription& value) { m_workerLogDeliveryHasBeenSet = true; m_workerLogDelivery = value; }
-    inline void SetWorkerLogDelivery(WorkerLogDeliveryDescription&& value) { m_workerLogDeliveryHasBeenSet = true; m_workerLogDelivery = std::move(value); }
-    inline LogDeliveryDescription& WithWorkerLogDelivery(const WorkerLogDeliveryDescription& value) { SetWorkerLogDelivery(value); return *this;}
-    inline LogDeliveryDescription& WithWorkerLogDelivery(WorkerLogDeliveryDescription&& value) { SetWorkerLogDelivery(std::move(value)); return *this;}
+    template<typename WorkerLogDeliveryT = WorkerLogDeliveryDescription>
+    void SetWorkerLogDelivery(WorkerLogDeliveryT&& value) { m_workerLogDeliveryHasBeenSet = true; m_workerLogDelivery = std::forward<WorkerLogDeliveryT>(value); }
+    template<typename WorkerLogDeliveryT = WorkerLogDeliveryDescription>
+    LogDeliveryDescription& WithWorkerLogDelivery(WorkerLogDeliveryT&& value) { SetWorkerLogDelivery(std::forward<WorkerLogDeliveryT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class DeleteRestApiRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API DeleteRestApiRequest();
+    AWS_APIGATEWAY_API DeleteRestApiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline DeleteRestApiRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline DeleteRestApiRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline DeleteRestApiRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    DeleteRestApiRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
   private:
 

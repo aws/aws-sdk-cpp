@@ -18,18 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-ScheduleGroupSummary::ScheduleGroupSummary() : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModificationDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ScheduleGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ScheduleGroupSummary::ScheduleGroupSummary(JsonView jsonValue)
-  : ScheduleGroupSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ScheduleGroupSummary& ScheduleGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationDate"))
   {
     m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-
     m_lastModificationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ScheduleGroupStateMapper::GetScheduleGroupStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

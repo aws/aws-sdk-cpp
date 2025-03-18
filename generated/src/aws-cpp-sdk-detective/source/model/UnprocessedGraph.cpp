@@ -18,14 +18,7 @@ namespace Detective
 namespace Model
 {
 
-UnprocessedGraph::UnprocessedGraph() : 
-    m_graphArnHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 UnprocessedGraph::UnprocessedGraph(JsonView jsonValue)
-  : UnprocessedGraph()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnprocessedGraph& UnprocessedGraph::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
     m_graphArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

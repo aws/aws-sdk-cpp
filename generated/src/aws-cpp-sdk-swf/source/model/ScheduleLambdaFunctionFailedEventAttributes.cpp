@@ -18,18 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ScheduleLambdaFunctionFailedEventAttributes::ScheduleLambdaFunctionFailedEventAttributes() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cause(ScheduleLambdaFunctionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 ScheduleLambdaFunctionFailedEventAttributes::ScheduleLambdaFunctionFailedEventAttributes(JsonView jsonValue)
-  : ScheduleLambdaFunctionFailedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ScheduleLambdaFunctionFailedEventAttributes& ScheduleLambdaFunctionFailedEventAt
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = ScheduleLambdaFunctionFailedCauseMapper::GetScheduleLambdaFunctionFailedCauseForName(jsonValue.GetString("cause"));
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

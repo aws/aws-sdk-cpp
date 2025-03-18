@@ -34,7 +34,7 @@ namespace Model
   class IngressTlsProtocolExpression
   {
   public:
-    AWS_MAILMANAGER_API IngressTlsProtocolExpression();
+    AWS_MAILMANAGER_API IngressTlsProtocolExpression() = default;
     AWS_MAILMANAGER_API IngressTlsProtocolExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressTlsProtocolExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,46 +44,42 @@ namespace Model
     /**
      * <p>The left hand side argument of a TLS condition expression.</p>
      */
-    inline const IngressTlsProtocolToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const IngressTlsProtocolToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const IngressTlsProtocolToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(IngressTlsProtocolToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline IngressTlsProtocolExpression& WithEvaluate(const IngressTlsProtocolToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline IngressTlsProtocolExpression& WithEvaluate(IngressTlsProtocolToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = IngressTlsProtocolToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = IngressTlsProtocolToEvaluate>
+    IngressTlsProtocolExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The matching operator for a TLS condition expression.</p>
      */
-    inline const IngressTlsProtocolOperator& GetOperator() const{ return m_operator; }
+    inline IngressTlsProtocolOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const IngressTlsProtocolOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(IngressTlsProtocolOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline IngressTlsProtocolExpression& WithOperator(const IngressTlsProtocolOperator& value) { SetOperator(value); return *this;}
-    inline IngressTlsProtocolExpression& WithOperator(IngressTlsProtocolOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(IngressTlsProtocolOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline IngressTlsProtocolExpression& WithOperator(IngressTlsProtocolOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The right hand side argument of a TLS condition expression.</p>
      */
-    inline const IngressTlsProtocolAttribute& GetValue() const{ return m_value; }
+    inline IngressTlsProtocolAttribute GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const IngressTlsProtocolAttribute& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(IngressTlsProtocolAttribute&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline IngressTlsProtocolExpression& WithValue(const IngressTlsProtocolAttribute& value) { SetValue(value); return *this;}
-    inline IngressTlsProtocolExpression& WithValue(IngressTlsProtocolAttribute&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(IngressTlsProtocolAttribute value) { m_valueHasBeenSet = true; m_value = value; }
+    inline IngressTlsProtocolExpression& WithValue(IngressTlsProtocolAttribute value) { SetValue(value); return *this;}
     ///@}
   private:
 
     IngressTlsProtocolToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    IngressTlsProtocolOperator m_operator;
+    IngressTlsProtocolOperator m_operator{IngressTlsProtocolOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    IngressTlsProtocolAttribute m_value;
+    IngressTlsProtocolAttribute m_value{IngressTlsProtocolAttribute::NOT_SET};
     bool m_valueHasBeenSet = false;
   };
 

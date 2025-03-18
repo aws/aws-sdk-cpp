@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpPermission::IpPermission() : 
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_userIdGroupPairsHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ipv6RangesHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false)
-{
-}
-
 IpPermission::IpPermission(const XmlNode& xmlNode)
-  : IpPermission()
 {
   *this = xmlNode;
 }
@@ -67,6 +53,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     if(!userIdGroupPairsNode.IsNull())
     {
       XmlNode userIdGroupPairsMember = userIdGroupPairsNode.FirstChild("item");
+      m_userIdGroupPairsHasBeenSet = !userIdGroupPairsMember.IsNull();
       while(!userIdGroupPairsMember.IsNull())
       {
         m_userIdGroupPairs.push_back(userIdGroupPairsMember);
@@ -79,6 +66,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     if(!ipRangesNode.IsNull())
     {
       XmlNode ipRangesMember = ipRangesNode.FirstChild("item");
+      m_ipRangesHasBeenSet = !ipRangesMember.IsNull();
       while(!ipRangesMember.IsNull())
       {
         m_ipRanges.push_back(ipRangesMember);
@@ -91,6 +79,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     if(!ipv6RangesNode.IsNull())
     {
       XmlNode ipv6RangesMember = ipv6RangesNode.FirstChild("item");
+      m_ipv6RangesHasBeenSet = !ipv6RangesMember.IsNull();
       while(!ipv6RangesMember.IsNull())
       {
         m_ipv6Ranges.push_back(ipv6RangesMember);
@@ -103,6 +92,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     if(!prefixListIdsNode.IsNull())
     {
       XmlNode prefixListIdsMember = prefixListIdsNode.FirstChild("item");
+      m_prefixListIdsHasBeenSet = !prefixListIdsMember.IsNull();
       while(!prefixListIdsMember.IsNull())
       {
         m_prefixListIds.push_back(prefixListIdsMember);

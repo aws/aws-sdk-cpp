@@ -29,7 +29,7 @@ namespace Model
   class UpdatePackageScopeResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpdatePackageScopeResult();
+    AWS_OPENSEARCHSERVICE_API UpdatePackageScopeResult() = default;
     AWS_OPENSEARCHSERVICE_API UpdatePackageScopeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API UpdatePackageScopeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,59 +38,56 @@ namespace Model
     /**
      * <p> ID of the package whose scope was updated.</p>
      */
-    inline const Aws::String& GetPackageID() const{ return m_packageID; }
-    inline void SetPackageID(const Aws::String& value) { m_packageID = value; }
-    inline void SetPackageID(Aws::String&& value) { m_packageID = std::move(value); }
-    inline void SetPackageID(const char* value) { m_packageID.assign(value); }
-    inline UpdatePackageScopeResult& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-    inline UpdatePackageScopeResult& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-    inline UpdatePackageScopeResult& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    inline const Aws::String& GetPackageID() const { return m_packageID; }
+    template<typename PackageIDT = Aws::String>
+    void SetPackageID(PackageIDT&& value) { m_packageIDHasBeenSet = true; m_packageID = std::forward<PackageIDT>(value); }
+    template<typename PackageIDT = Aws::String>
+    UpdatePackageScopeResult& WithPackageID(PackageIDT&& value) { SetPackageID(std::forward<PackageIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operation that was performed on the package scope.</p>
      */
-    inline const PackageScopeOperationEnum& GetOperation() const{ return m_operation; }
-    inline void SetOperation(const PackageScopeOperationEnum& value) { m_operation = value; }
-    inline void SetOperation(PackageScopeOperationEnum&& value) { m_operation = std::move(value); }
-    inline UpdatePackageScopeResult& WithOperation(const PackageScopeOperationEnum& value) { SetOperation(value); return *this;}
-    inline UpdatePackageScopeResult& WithOperation(PackageScopeOperationEnum&& value) { SetOperation(std::move(value)); return *this;}
+    inline PackageScopeOperationEnum GetOperation() const { return m_operation; }
+    inline void SetOperation(PackageScopeOperationEnum value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline UpdatePackageScopeResult& WithOperation(PackageScopeOperationEnum value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of users who have access to the package after the scope update.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPackageUserList() const{ return m_packageUserList; }
-    inline void SetPackageUserList(const Aws::Vector<Aws::String>& value) { m_packageUserList = value; }
-    inline void SetPackageUserList(Aws::Vector<Aws::String>&& value) { m_packageUserList = std::move(value); }
-    inline UpdatePackageScopeResult& WithPackageUserList(const Aws::Vector<Aws::String>& value) { SetPackageUserList(value); return *this;}
-    inline UpdatePackageScopeResult& WithPackageUserList(Aws::Vector<Aws::String>&& value) { SetPackageUserList(std::move(value)); return *this;}
-    inline UpdatePackageScopeResult& AddPackageUserList(const Aws::String& value) { m_packageUserList.push_back(value); return *this; }
-    inline UpdatePackageScopeResult& AddPackageUserList(Aws::String&& value) { m_packageUserList.push_back(std::move(value)); return *this; }
-    inline UpdatePackageScopeResult& AddPackageUserList(const char* value) { m_packageUserList.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPackageUserList() const { return m_packageUserList; }
+    template<typename PackageUserListT = Aws::Vector<Aws::String>>
+    void SetPackageUserList(PackageUserListT&& value) { m_packageUserListHasBeenSet = true; m_packageUserList = std::forward<PackageUserListT>(value); }
+    template<typename PackageUserListT = Aws::Vector<Aws::String>>
+    UpdatePackageScopeResult& WithPackageUserList(PackageUserListT&& value) { SetPackageUserList(std::forward<PackageUserListT>(value)); return *this;}
+    template<typename PackageUserListT = Aws::String>
+    UpdatePackageScopeResult& AddPackageUserList(PackageUserListT&& value) { m_packageUserListHasBeenSet = true; m_packageUserList.emplace_back(std::forward<PackageUserListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePackageScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePackageScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePackageScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePackageScopeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_packageID;
+    bool m_packageIDHasBeenSet = false;
 
-    PackageScopeOperationEnum m_operation;
+    PackageScopeOperationEnum m_operation{PackageScopeOperationEnum::NOT_SET};
+    bool m_operationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_packageUserList;
+    bool m_packageUserListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

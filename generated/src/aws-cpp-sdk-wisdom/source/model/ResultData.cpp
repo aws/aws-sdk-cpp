@@ -18,16 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-ResultData::ResultData() : 
-    m_documentHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false),
-    m_resultIdHasBeenSet(false)
-{
-}
-
 ResultData::ResultData(JsonView jsonValue)
-  : ResultData()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResultData& ResultData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relevanceScore"))
   {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
-
     m_relevanceScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultId"))
   {
     m_resultId = jsonValue.GetString("resultId");
-
     m_resultIdHasBeenSet = true;
   }
-
   return *this;
 }
 

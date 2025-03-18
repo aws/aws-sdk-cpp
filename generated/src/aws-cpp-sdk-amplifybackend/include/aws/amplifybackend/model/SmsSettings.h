@@ -31,7 +31,7 @@ namespace Model
   class SmsSettings
   {
   public:
-    AWS_AMPLIFYBACKEND_API SmsSettings();
+    AWS_AMPLIFYBACKEND_API SmsSettings() = default;
     AWS_AMPLIFYBACKEND_API SmsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API SmsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The contents of the SMS message.</p>
      */
-    inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
+    inline const Aws::String& GetSmsMessage() const { return m_smsMessage; }
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
-    inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
-    inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
-    inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
-    inline SmsSettings& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
-    inline SmsSettings& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
-    inline SmsSettings& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
+    template<typename SmsMessageT = Aws::String>
+    void SetSmsMessage(SmsMessageT&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::forward<SmsMessageT>(value); }
+    template<typename SmsMessageT = Aws::String>
+    SmsSettings& WithSmsMessage(SmsMessageT&& value) { SetSmsMessage(std::forward<SmsMessageT>(value)); return *this;}
     ///@}
   private:
 

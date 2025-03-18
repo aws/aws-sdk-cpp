@@ -34,7 +34,7 @@ namespace Model
   class BucketLevelPermissions
   {
   public:
-    AWS_MACIE2_API BucketLevelPermissions();
+    AWS_MACIE2_API BucketLevelPermissions() = default;
     AWS_MACIE2_API BucketLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
      * <p>The permissions settings of the access control list (ACL) for the bucket.
      * This value is null if an ACL hasn't been defined for the bucket.</p>
      */
-    inline const AccessControlList& GetAccessControlList() const{ return m_accessControlList; }
+    inline const AccessControlList& GetAccessControlList() const { return m_accessControlList; }
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
-    inline void SetAccessControlList(const AccessControlList& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
-    inline void SetAccessControlList(AccessControlList&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
-    inline BucketLevelPermissions& WithAccessControlList(const AccessControlList& value) { SetAccessControlList(value); return *this;}
-    inline BucketLevelPermissions& WithAccessControlList(AccessControlList&& value) { SetAccessControlList(std::move(value)); return *this;}
+    template<typename AccessControlListT = AccessControlList>
+    void SetAccessControlList(AccessControlListT&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::forward<AccessControlListT>(value); }
+    template<typename AccessControlListT = AccessControlList>
+    BucketLevelPermissions& WithAccessControlList(AccessControlListT&& value) { SetAccessControlList(std::forward<AccessControlListT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The block public access settings for the bucket.</p>
      */
-    inline const BlockPublicAccess& GetBlockPublicAccess() const{ return m_blockPublicAccess; }
+    inline const BlockPublicAccess& GetBlockPublicAccess() const { return m_blockPublicAccess; }
     inline bool BlockPublicAccessHasBeenSet() const { return m_blockPublicAccessHasBeenSet; }
-    inline void SetBlockPublicAccess(const BlockPublicAccess& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = value; }
-    inline void SetBlockPublicAccess(BlockPublicAccess&& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = std::move(value); }
-    inline BucketLevelPermissions& WithBlockPublicAccess(const BlockPublicAccess& value) { SetBlockPublicAccess(value); return *this;}
-    inline BucketLevelPermissions& WithBlockPublicAccess(BlockPublicAccess&& value) { SetBlockPublicAccess(std::move(value)); return *this;}
+    template<typename BlockPublicAccessT = BlockPublicAccess>
+    void SetBlockPublicAccess(BlockPublicAccessT&& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = std::forward<BlockPublicAccessT>(value); }
+    template<typename BlockPublicAccessT = BlockPublicAccess>
+    BucketLevelPermissions& WithBlockPublicAccess(BlockPublicAccessT&& value) { SetBlockPublicAccess(std::forward<BlockPublicAccessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <p>The permissions settings of the bucket policy for the bucket. This value is
      * null if a bucket policy hasn't been defined for the bucket.</p>
      */
-    inline const BucketPolicy& GetBucketPolicy() const{ return m_bucketPolicy; }
+    inline const BucketPolicy& GetBucketPolicy() const { return m_bucketPolicy; }
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-    inline void SetBucketPolicy(const BucketPolicy& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-    inline void SetBucketPolicy(BucketPolicy&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-    inline BucketLevelPermissions& WithBucketPolicy(const BucketPolicy& value) { SetBucketPolicy(value); return *this;}
-    inline BucketLevelPermissions& WithBucketPolicy(BucketPolicy&& value) { SetBucketPolicy(std::move(value)); return *this;}
+    template<typename BucketPolicyT = BucketPolicy>
+    void SetBucketPolicy(BucketPolicyT&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::forward<BucketPolicyT>(value); }
+    template<typename BucketPolicyT = BucketPolicy>
+    BucketLevelPermissions& WithBucketPolicy(BucketPolicyT&& value) { SetBucketPolicy(std::forward<BucketPolicyT>(value)); return *this;}
     ///@}
   private:
 

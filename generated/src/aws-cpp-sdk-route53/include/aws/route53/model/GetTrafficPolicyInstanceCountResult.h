@@ -34,7 +34,7 @@ namespace Model
   class GetTrafficPolicyInstanceCountResult
   {
   public:
-    AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult();
+    AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult() = default;
     AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,26 +44,26 @@ namespace Model
      * <p>The number of traffic policy instances that are associated with the current
      * Amazon Web Services account.</p>
      */
-    inline int GetTrafficPolicyInstanceCount() const{ return m_trafficPolicyInstanceCount; }
-    inline void SetTrafficPolicyInstanceCount(int value) { m_trafficPolicyInstanceCount = value; }
+    inline int GetTrafficPolicyInstanceCount() const { return m_trafficPolicyInstanceCount; }
+    inline void SetTrafficPolicyInstanceCount(int value) { m_trafficPolicyInstanceCountHasBeenSet = true; m_trafficPolicyInstanceCount = value; }
     inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(int value) { SetTrafficPolicyInstanceCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTrafficPolicyInstanceCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTrafficPolicyInstanceCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTrafficPolicyInstanceCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTrafficPolicyInstanceCountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_trafficPolicyInstanceCount;
+    int m_trafficPolicyInstanceCount{0};
+    bool m_trafficPolicyInstanceCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

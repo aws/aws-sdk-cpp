@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-InforNexusConnectorProfileCredentials::InforNexusConnectorProfileCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_datakeyHasBeenSet(false)
-{
-}
-
 InforNexusConnectorProfileCredentials::InforNexusConnectorProfileCredentials(JsonView jsonValue)
-  : InforNexusConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InforNexusConnectorProfileCredentials& InforNexusConnectorProfileCredentials::op
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datakey"))
   {
     m_datakey = jsonValue.GetString("datakey");
-
     m_datakeyHasBeenSet = true;
   }
-
   return *this;
 }
 

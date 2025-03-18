@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateEnvironmentActionResult::UpdateEnvironmentActionResult()
-{
-}
-
 UpdateEnvironmentActionResult::UpdateEnvironmentActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,45 +28,40 @@ UpdateEnvironmentActionResult& UpdateEnvironmentActionResult::operator =(const A
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
-
+    m_parametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

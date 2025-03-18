@@ -12,11 +12,6 @@ using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRawMessageContentRequest::GetRawMessageContentRequest() : 
-    m_messageIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRawMessageContentRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-EnvironmentPropertyDescriptions::EnvironmentPropertyDescriptions() : 
-    m_propertyGroupDescriptionsHasBeenSet(false)
-{
-}
-
 EnvironmentPropertyDescriptions::EnvironmentPropertyDescriptions(JsonView jsonValue)
-  : EnvironmentPropertyDescriptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EnvironmentPropertyDescriptions& EnvironmentPropertyDescriptions::operator =(Jso
     }
     m_propertyGroupDescriptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

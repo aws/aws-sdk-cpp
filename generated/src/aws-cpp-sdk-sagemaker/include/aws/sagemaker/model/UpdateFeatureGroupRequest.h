@@ -25,7 +25,7 @@ namespace Model
   class UpdateFeatureGroupRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateFeatureGroupRequest();
+    AWS_SAGEMAKER_API UpdateFeatureGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the feature group that you're
      * updating.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline UpdateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline UpdateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline UpdateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    UpdateFeatureGroupRequest& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,36 +58,36 @@ namespace Model
      * takes some time after you've made a valid request for Feature Store to update
      * the feature group.</p>
      */
-    inline const Aws::Vector<FeatureDefinition>& GetFeatureAdditions() const{ return m_featureAdditions; }
+    inline const Aws::Vector<FeatureDefinition>& GetFeatureAdditions() const { return m_featureAdditions; }
     inline bool FeatureAdditionsHasBeenSet() const { return m_featureAdditionsHasBeenSet; }
-    inline void SetFeatureAdditions(const Aws::Vector<FeatureDefinition>& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions = value; }
-    inline void SetFeatureAdditions(Aws::Vector<FeatureDefinition>&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions = std::move(value); }
-    inline UpdateFeatureGroupRequest& WithFeatureAdditions(const Aws::Vector<FeatureDefinition>& value) { SetFeatureAdditions(value); return *this;}
-    inline UpdateFeatureGroupRequest& WithFeatureAdditions(Aws::Vector<FeatureDefinition>&& value) { SetFeatureAdditions(std::move(value)); return *this;}
-    inline UpdateFeatureGroupRequest& AddFeatureAdditions(const FeatureDefinition& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(value); return *this; }
-    inline UpdateFeatureGroupRequest& AddFeatureAdditions(FeatureDefinition&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(std::move(value)); return *this; }
+    template<typename FeatureAdditionsT = Aws::Vector<FeatureDefinition>>
+    void SetFeatureAdditions(FeatureAdditionsT&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions = std::forward<FeatureAdditionsT>(value); }
+    template<typename FeatureAdditionsT = Aws::Vector<FeatureDefinition>>
+    UpdateFeatureGroupRequest& WithFeatureAdditions(FeatureAdditionsT&& value) { SetFeatureAdditions(std::forward<FeatureAdditionsT>(value)); return *this;}
+    template<typename FeatureAdditionsT = FeatureDefinition>
+    UpdateFeatureGroupRequest& AddFeatureAdditions(FeatureAdditionsT&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.emplace_back(std::forward<FeatureAdditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Updates the feature group online store configuration.</p>
      */
-    inline const OnlineStoreConfigUpdate& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
+    inline const OnlineStoreConfigUpdate& GetOnlineStoreConfig() const { return m_onlineStoreConfig; }
     inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
-    inline void SetOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
-    inline void SetOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
-    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { SetOnlineStoreConfig(value); return *this;}
-    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
+    template<typename OnlineStoreConfigT = OnlineStoreConfigUpdate>
+    void SetOnlineStoreConfig(OnlineStoreConfigT&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::forward<OnlineStoreConfigT>(value); }
+    template<typename OnlineStoreConfigT = OnlineStoreConfigUpdate>
+    UpdateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigT&& value) { SetOnlineStoreConfig(std::forward<OnlineStoreConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ThroughputConfigUpdate& GetThroughputConfig() const{ return m_throughputConfig; }
+    inline const ThroughputConfigUpdate& GetThroughputConfig() const { return m_throughputConfig; }
     inline bool ThroughputConfigHasBeenSet() const { return m_throughputConfigHasBeenSet; }
-    inline void SetThroughputConfig(const ThroughputConfigUpdate& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = value; }
-    inline void SetThroughputConfig(ThroughputConfigUpdate&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::move(value); }
-    inline UpdateFeatureGroupRequest& WithThroughputConfig(const ThroughputConfigUpdate& value) { SetThroughputConfig(value); return *this;}
-    inline UpdateFeatureGroupRequest& WithThroughputConfig(ThroughputConfigUpdate&& value) { SetThroughputConfig(std::move(value)); return *this;}
+    template<typename ThroughputConfigT = ThroughputConfigUpdate>
+    void SetThroughputConfig(ThroughputConfigT&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::forward<ThroughputConfigT>(value); }
+    template<typename ThroughputConfigT = ThroughputConfigUpdate>
+    UpdateFeatureGroupRequest& WithThroughputConfig(ThroughputConfigT&& value) { SetThroughputConfig(std::forward<ThroughputConfigT>(value)); return *this;}
     ///@}
   private:
 

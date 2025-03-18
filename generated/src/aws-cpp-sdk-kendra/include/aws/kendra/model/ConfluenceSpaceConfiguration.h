@@ -34,7 +34,7 @@ namespace Model
   class ConfluenceSpaceConfiguration
   {
   public:
-    AWS_KENDRA_API ConfluenceSpaceConfiguration();
+    AWS_KENDRA_API ConfluenceSpaceConfiguration() = default;
     AWS_KENDRA_API ConfluenceSpaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ConfluenceSpaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
      * on user context</a>.</p>
      */
-    inline bool GetCrawlPersonalSpaces() const{ return m_crawlPersonalSpaces; }
+    inline bool GetCrawlPersonalSpaces() const { return m_crawlPersonalSpaces; }
     inline bool CrawlPersonalSpacesHasBeenSet() const { return m_crawlPersonalSpacesHasBeenSet; }
     inline void SetCrawlPersonalSpaces(bool value) { m_crawlPersonalSpacesHasBeenSet = true; m_crawlPersonalSpaces = value; }
     inline ConfluenceSpaceConfiguration& WithCrawlPersonalSpaces(bool value) { SetCrawlPersonalSpaces(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p> <code>TRUE</code> to index archived spaces.</p>
      */
-    inline bool GetCrawlArchivedSpaces() const{ return m_crawlArchivedSpaces; }
+    inline bool GetCrawlArchivedSpaces() const { return m_crawlArchivedSpaces; }
     inline bool CrawlArchivedSpacesHasBeenSet() const { return m_crawlArchivedSpacesHasBeenSet; }
     inline void SetCrawlArchivedSpaces(bool value) { m_crawlArchivedSpacesHasBeenSet = true; m_crawlArchivedSpaces = value; }
     inline ConfluenceSpaceConfiguration& WithCrawlArchivedSpaces(bool value) { SetCrawlArchivedSpaces(value); return *this;}
@@ -74,15 +74,14 @@ namespace Model
      * <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is
      * excluded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeSpaces() const{ return m_includeSpaces; }
+    inline const Aws::Vector<Aws::String>& GetIncludeSpaces() const { return m_includeSpaces; }
     inline bool IncludeSpacesHasBeenSet() const { return m_includeSpacesHasBeenSet; }
-    inline void SetIncludeSpaces(const Aws::Vector<Aws::String>& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces = value; }
-    inline void SetIncludeSpaces(Aws::Vector<Aws::String>&& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces = std::move(value); }
-    inline ConfluenceSpaceConfiguration& WithIncludeSpaces(const Aws::Vector<Aws::String>& value) { SetIncludeSpaces(value); return *this;}
-    inline ConfluenceSpaceConfiguration& WithIncludeSpaces(Aws::Vector<Aws::String>&& value) { SetIncludeSpaces(std::move(value)); return *this;}
-    inline ConfluenceSpaceConfiguration& AddIncludeSpaces(const Aws::String& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces.push_back(value); return *this; }
-    inline ConfluenceSpaceConfiguration& AddIncludeSpaces(Aws::String&& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces.push_back(std::move(value)); return *this; }
-    inline ConfluenceSpaceConfiguration& AddIncludeSpaces(const char* value) { m_includeSpacesHasBeenSet = true; m_includeSpaces.push_back(value); return *this; }
+    template<typename IncludeSpacesT = Aws::Vector<Aws::String>>
+    void SetIncludeSpaces(IncludeSpacesT&& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces = std::forward<IncludeSpacesT>(value); }
+    template<typename IncludeSpacesT = Aws::Vector<Aws::String>>
+    ConfluenceSpaceConfiguration& WithIncludeSpaces(IncludeSpacesT&& value) { SetIncludeSpaces(std::forward<IncludeSpacesT>(value)); return *this;}
+    template<typename IncludeSpacesT = Aws::String>
+    ConfluenceSpaceConfiguration& AddIncludeSpaces(IncludeSpacesT&& value) { m_includeSpacesHasBeenSet = true; m_includeSpaces.emplace_back(std::forward<IncludeSpacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,15 +91,14 @@ namespace Model
      * the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the
      * space is excluded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeSpaces() const{ return m_excludeSpaces; }
+    inline const Aws::Vector<Aws::String>& GetExcludeSpaces() const { return m_excludeSpaces; }
     inline bool ExcludeSpacesHasBeenSet() const { return m_excludeSpacesHasBeenSet; }
-    inline void SetExcludeSpaces(const Aws::Vector<Aws::String>& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces = value; }
-    inline void SetExcludeSpaces(Aws::Vector<Aws::String>&& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces = std::move(value); }
-    inline ConfluenceSpaceConfiguration& WithExcludeSpaces(const Aws::Vector<Aws::String>& value) { SetExcludeSpaces(value); return *this;}
-    inline ConfluenceSpaceConfiguration& WithExcludeSpaces(Aws::Vector<Aws::String>&& value) { SetExcludeSpaces(std::move(value)); return *this;}
-    inline ConfluenceSpaceConfiguration& AddExcludeSpaces(const Aws::String& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces.push_back(value); return *this; }
-    inline ConfluenceSpaceConfiguration& AddExcludeSpaces(Aws::String&& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces.push_back(std::move(value)); return *this; }
-    inline ConfluenceSpaceConfiguration& AddExcludeSpaces(const char* value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces.push_back(value); return *this; }
+    template<typename ExcludeSpacesT = Aws::Vector<Aws::String>>
+    void SetExcludeSpaces(ExcludeSpacesT&& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces = std::forward<ExcludeSpacesT>(value); }
+    template<typename ExcludeSpacesT = Aws::Vector<Aws::String>>
+    ConfluenceSpaceConfiguration& WithExcludeSpaces(ExcludeSpacesT&& value) { SetExcludeSpaces(std::forward<ExcludeSpacesT>(value)); return *this;}
+    template<typename ExcludeSpacesT = Aws::String>
+    ConfluenceSpaceConfiguration& AddExcludeSpaces(ExcludeSpacesT&& value) { m_excludeSpacesHasBeenSet = true; m_excludeSpaces.emplace_back(std::forward<ExcludeSpacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,21 +112,21 @@ namespace Model
      * <code>SpaceFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
-    inline const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& GetSpaceFieldMappings() const{ return m_spaceFieldMappings; }
+    inline const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& GetSpaceFieldMappings() const { return m_spaceFieldMappings; }
     inline bool SpaceFieldMappingsHasBeenSet() const { return m_spaceFieldMappingsHasBeenSet; }
-    inline void SetSpaceFieldMappings(const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings = value; }
-    inline void SetSpaceFieldMappings(Aws::Vector<ConfluenceSpaceToIndexFieldMapping>&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings = std::move(value); }
-    inline ConfluenceSpaceConfiguration& WithSpaceFieldMappings(const Aws::Vector<ConfluenceSpaceToIndexFieldMapping>& value) { SetSpaceFieldMappings(value); return *this;}
-    inline ConfluenceSpaceConfiguration& WithSpaceFieldMappings(Aws::Vector<ConfluenceSpaceToIndexFieldMapping>&& value) { SetSpaceFieldMappings(std::move(value)); return *this;}
-    inline ConfluenceSpaceConfiguration& AddSpaceFieldMappings(const ConfluenceSpaceToIndexFieldMapping& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings.push_back(value); return *this; }
-    inline ConfluenceSpaceConfiguration& AddSpaceFieldMappings(ConfluenceSpaceToIndexFieldMapping&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename SpaceFieldMappingsT = Aws::Vector<ConfluenceSpaceToIndexFieldMapping>>
+    void SetSpaceFieldMappings(SpaceFieldMappingsT&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings = std::forward<SpaceFieldMappingsT>(value); }
+    template<typename SpaceFieldMappingsT = Aws::Vector<ConfluenceSpaceToIndexFieldMapping>>
+    ConfluenceSpaceConfiguration& WithSpaceFieldMappings(SpaceFieldMappingsT&& value) { SetSpaceFieldMappings(std::forward<SpaceFieldMappingsT>(value)); return *this;}
+    template<typename SpaceFieldMappingsT = ConfluenceSpaceToIndexFieldMapping>
+    ConfluenceSpaceConfiguration& AddSpaceFieldMappings(SpaceFieldMappingsT&& value) { m_spaceFieldMappingsHasBeenSet = true; m_spaceFieldMappings.emplace_back(std::forward<SpaceFieldMappingsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_crawlPersonalSpaces;
+    bool m_crawlPersonalSpaces{false};
     bool m_crawlPersonalSpacesHasBeenSet = false;
 
-    bool m_crawlArchivedSpaces;
+    bool m_crawlArchivedSpaces{false};
     bool m_crawlArchivedSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeSpaces;

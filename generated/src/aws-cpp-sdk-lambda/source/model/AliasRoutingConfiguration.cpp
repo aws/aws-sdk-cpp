@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-AliasRoutingConfiguration::AliasRoutingConfiguration() : 
-    m_additionalVersionWeightsHasBeenSet(false)
-{
-}
-
 AliasRoutingConfiguration::AliasRoutingConfiguration(JsonView jsonValue)
-  : AliasRoutingConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AliasRoutingConfiguration& AliasRoutingConfiguration::operator =(JsonView jsonVa
     }
     m_additionalVersionWeightsHasBeenSet = true;
   }
-
   return *this;
 }
 

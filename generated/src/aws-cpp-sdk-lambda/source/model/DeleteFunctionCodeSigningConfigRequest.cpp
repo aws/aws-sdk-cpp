@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFunctionCodeSigningConfigRequest::DeleteFunctionCodeSigningConfigRequest() : 
-    m_functionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFunctionCodeSigningConfigRequest::SerializePayload() const
 {
   return {};

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeThemePermissionsResult::DescribeThemePermissionsResult() : 
-    m_status(0)
-{
-}
-
 DescribeThemePermissionsResult::DescribeThemePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeThemePermissionsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeThemePermissionsResult& DescribeThemePermissionsResult::operator =(const
   if(jsonValue.ValueExists("ThemeId"))
   {
     m_themeId = jsonValue.GetString("ThemeId");
-
+    m_themeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeArn"))
   {
     m_themeArn = jsonValue.GetString("ThemeArn");
-
+    m_themeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -50,18 +42,19 @@ DescribeThemePermissionsResult& DescribeThemePermissionsResult::operator =(const
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
+    m_permissionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

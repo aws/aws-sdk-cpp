@@ -23,7 +23,7 @@ namespace Model
   class TestFunction2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API TestFunction2020_05_31Request();
+    AWS_CLOUDFRONT_API TestFunction2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the function that you are testing.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TestFunction2020_05_31Request& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TestFunction2020_05_31Request& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TestFunction2020_05_31Request& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TestFunction2020_05_31Request& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The current version (<code>ETag</code> value) of the function that you are
      * testing, which you can get using <code>DescribeFunction</code>.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline TestFunction2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline TestFunction2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline TestFunction2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    TestFunction2020_05_31Request& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,10 @@ namespace Model
      * <p>The stage of the function that you are testing, either
      * <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
      */
-    inline const FunctionStage& GetStage() const{ return m_stage; }
+    inline FunctionStage GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline TestFunction2020_05_31Request& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
-    inline TestFunction2020_05_31Request& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
+    inline void SetStage(FunctionStage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline TestFunction2020_05_31Request& WithStage(FunctionStage value) { SetStage(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing
      * functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetEventObject() const{ return m_eventObject; }
+    inline const Aws::Utils::CryptoBuffer& GetEventObject() const { return m_eventObject; }
     inline bool EventObjectHasBeenSet() const { return m_eventObjectHasBeenSet; }
-    inline void SetEventObject(const Aws::Utils::CryptoBuffer& value) { m_eventObjectHasBeenSet = true; m_eventObject = value; }
-    inline void SetEventObject(Aws::Utils::CryptoBuffer&& value) { m_eventObjectHasBeenSet = true; m_eventObject = std::move(value); }
-    inline TestFunction2020_05_31Request& WithEventObject(const Aws::Utils::CryptoBuffer& value) { SetEventObject(value); return *this;}
-    inline TestFunction2020_05_31Request& WithEventObject(Aws::Utils::CryptoBuffer&& value) { SetEventObject(std::move(value)); return *this;}
+    template<typename EventObjectT = Aws::Utils::CryptoBuffer>
+    void SetEventObject(EventObjectT&& value) { m_eventObjectHasBeenSet = true; m_eventObject = std::forward<EventObjectT>(value); }
+    template<typename EventObjectT = Aws::Utils::CryptoBuffer>
+    TestFunction2020_05_31Request& WithEventObject(EventObjectT&& value) { SetEventObject(std::forward<EventObjectT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,10 +94,10 @@ namespace Model
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet = false;
 
-    FunctionStage m_stage;
+    FunctionStage m_stage{FunctionStage::NOT_SET};
     bool m_stageHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_eventObject;
+    Aws::Utils::CryptoBuffer m_eventObject{};
     bool m_eventObjectHasBeenSet = false;
   };
 

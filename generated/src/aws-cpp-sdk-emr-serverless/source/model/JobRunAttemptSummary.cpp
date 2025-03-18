@@ -18,30 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-JobRunAttemptSummary::JobRunAttemptSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_jobCreatedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false)
-{
-}
-
 JobRunAttemptSummary::JobRunAttemptSummary(JsonView jsonValue)
-  : JobRunAttemptSummary()
 {
   *this = jsonValue;
 }
@@ -51,108 +28,78 @@ JobRunAttemptSummary& JobRunAttemptSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = JobRunModeMapper::GetJobRunModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobCreatedAt"))
   {
     m_jobCreatedAt = jsonValue.GetDouble("jobCreatedAt");
-
     m_jobCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attempt"))
   {
     m_attempt = jsonValue.GetInteger("attempt");
-
     m_attemptHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataCatalogsRequest::ListDataCatalogsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String ListDataCatalogsRequest::SerializePayload() const
 {
   JsonValue payload;

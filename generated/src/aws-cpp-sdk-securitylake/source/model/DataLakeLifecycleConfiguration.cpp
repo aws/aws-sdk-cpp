@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeLifecycleConfiguration::DataLakeLifecycleConfiguration() : 
-    m_expirationHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
-{
-}
-
 DataLakeLifecycleConfiguration::DataLakeLifecycleConfiguration(JsonView jsonValue)
-  : DataLakeLifecycleConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataLakeLifecycleConfiguration& DataLakeLifecycleConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetObject("expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitions"))
   {
     Aws::Utils::Array<JsonView> transitionsJsonList = jsonValue.GetArray("transitions");
@@ -48,7 +39,6 @@ DataLakeLifecycleConfiguration& DataLakeLifecycleConfiguration::operator =(JsonV
     }
     m_transitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

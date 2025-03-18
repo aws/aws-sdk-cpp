@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddTagsResult::AddTagsResult()
-{
-}
-
 AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ AddTagsResult& AddTagsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::AddTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

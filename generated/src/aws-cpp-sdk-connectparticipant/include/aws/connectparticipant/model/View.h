@@ -33,7 +33,7 @@ namespace Model
   class View
   {
   public:
-    AWS_CONNECTPARTICIPANT_API View();
+    AWS_CONNECTPARTICIPANT_API View() = default;
     AWS_CONNECTPARTICIPANT_API View(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API View& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,49 +43,43 @@ namespace Model
     /**
      * <p>The identifier of the view.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline View& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline View& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline View& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    View& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the view.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline View& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline View& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline View& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    View& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the view.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline View& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline View& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline View& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    View& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the view.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline View& WithVersion(int value) { SetVersion(value); return *this;}
@@ -96,12 +90,12 @@ namespace Model
      * <p>View content containing all content necessary to render a view except for
      * runtime input data.</p>
      */
-    inline const ViewContent& GetContent() const{ return m_content; }
+    inline const ViewContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const ViewContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(ViewContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline View& WithContent(const ViewContent& value) { SetContent(value); return *this;}
-    inline View& WithContent(ViewContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = ViewContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = ViewContent>
+    View& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
     ViewContent m_content;

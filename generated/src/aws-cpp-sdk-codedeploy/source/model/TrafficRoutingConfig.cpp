@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TrafficRoutingConfig::TrafficRoutingConfig() : 
-    m_type(TrafficRoutingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_timeBasedCanaryHasBeenSet(false),
-    m_timeBasedLinearHasBeenSet(false)
-{
-}
-
 TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue)
-  : TrafficRoutingConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TrafficRoutingConfig& TrafficRoutingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = TrafficRoutingTypeMapper::GetTrafficRoutingTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeBasedCanary"))
   {
     m_timeBasedCanary = jsonValue.GetObject("timeBasedCanary");
-
     m_timeBasedCanaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeBasedLinear"))
   {
     m_timeBasedLinear = jsonValue.GetObject("timeBasedLinear");
-
     m_timeBasedLinearHasBeenSet = true;
   }
-
   return *this;
 }
 

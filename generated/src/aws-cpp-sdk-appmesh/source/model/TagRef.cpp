@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TagRef::TagRef() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TagRef::TagRef(JsonView jsonValue)
-  : TagRef()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TagRef& TagRef::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

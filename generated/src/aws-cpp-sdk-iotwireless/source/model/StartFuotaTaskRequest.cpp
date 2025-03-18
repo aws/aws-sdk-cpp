@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFuotaTaskRequest::StartFuotaTaskRequest() : 
-    m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 Aws::String StartFuotaTaskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DefaultConditionalBranch::DefaultConditionalBranch() : 
-    m_nextStepHasBeenSet(false),
-    m_responseHasBeenSet(false)
-{
-}
-
 DefaultConditionalBranch::DefaultConditionalBranch(JsonView jsonValue)
-  : DefaultConditionalBranch()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultConditionalBranch& DefaultConditionalBranch::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("nextStep"))
   {
     m_nextStep = jsonValue.GetObject("nextStep");
-
     m_nextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("response"))
   {
     m_response = jsonValue.GetObject("response");
-
     m_responseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRetrieverRequest::CreateRetrieverRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRetrieverRequest::SerializePayload() const
 {
   JsonValue payload;

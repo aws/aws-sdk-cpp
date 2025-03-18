@@ -12,22 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRunGroupRequest::CreateRunGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_maxCpus(0),
-    m_maxCpusHasBeenSet(false),
-    m_maxRuns(0),
-    m_maxRunsHasBeenSet(false),
-    m_maxDuration(0),
-    m_maxDurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_maxGpus(0),
-    m_maxGpusHasBeenSet(false)
-{
-}
-
 Aws::String CreateRunGroupRequest::SerializePayload() const
 {
   JsonValue payload;

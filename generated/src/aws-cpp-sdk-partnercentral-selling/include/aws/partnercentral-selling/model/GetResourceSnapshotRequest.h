@@ -22,7 +22,7 @@ namespace Model
   class GetResourceSnapshotRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API GetResourceSnapshotRequest();
+    AWS_PARTNERCENTRALSELLING_API GetResourceSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <li> <p>Sandbox: Retrieves the snapshot from a sandbox environment used for
      * testing or development purposes.</p> </li> </ul>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline GetResourceSnapshotRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline GetResourceSnapshotRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline GetResourceSnapshotRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetResourceSnapshotRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The unique identifier of the engagement associated with the snapshot. This
      * field links the snapshot to a specific engagement context.</p>
      */
-    inline const Aws::String& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
+    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    inline void SetEngagementIdentifier(const Aws::String& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = value; }
-    inline void SetEngagementIdentifier(Aws::String&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::move(value); }
-    inline void SetEngagementIdentifier(const char* value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.assign(value); }
-    inline GetResourceSnapshotRequest& WithEngagementIdentifier(const Aws::String& value) { SetEngagementIdentifier(value); return *this;}
-    inline GetResourceSnapshotRequest& WithEngagementIdentifier(Aws::String&& value) { SetEngagementIdentifier(std::move(value)); return *this;}
-    inline GetResourceSnapshotRequest& WithEngagementIdentifier(const char* value) { SetEngagementIdentifier(value); return *this;}
+    template<typename EngagementIdentifierT = Aws::String>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::String>
+    GetResourceSnapshotRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * For <code>Opportunity</code> type, it will be an <code>opportunity ID</code>
      * </p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline GetResourceSnapshotRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline GetResourceSnapshotRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline GetResourceSnapshotRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    GetResourceSnapshotRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * snapshot and must correspond to an existing and valid template for the specified
      * <code>ResourceType</code>.</p>
      */
-    inline const Aws::String& GetResourceSnapshotTemplateIdentifier() const{ return m_resourceSnapshotTemplateIdentifier; }
+    inline const Aws::String& GetResourceSnapshotTemplateIdentifier() const { return m_resourceSnapshotTemplateIdentifier; }
     inline bool ResourceSnapshotTemplateIdentifierHasBeenSet() const { return m_resourceSnapshotTemplateIdentifierHasBeenSet; }
-    inline void SetResourceSnapshotTemplateIdentifier(const Aws::String& value) { m_resourceSnapshotTemplateIdentifierHasBeenSet = true; m_resourceSnapshotTemplateIdentifier = value; }
-    inline void SetResourceSnapshotTemplateIdentifier(Aws::String&& value) { m_resourceSnapshotTemplateIdentifierHasBeenSet = true; m_resourceSnapshotTemplateIdentifier = std::move(value); }
-    inline void SetResourceSnapshotTemplateIdentifier(const char* value) { m_resourceSnapshotTemplateIdentifierHasBeenSet = true; m_resourceSnapshotTemplateIdentifier.assign(value); }
-    inline GetResourceSnapshotRequest& WithResourceSnapshotTemplateIdentifier(const Aws::String& value) { SetResourceSnapshotTemplateIdentifier(value); return *this;}
-    inline GetResourceSnapshotRequest& WithResourceSnapshotTemplateIdentifier(Aws::String&& value) { SetResourceSnapshotTemplateIdentifier(std::move(value)); return *this;}
-    inline GetResourceSnapshotRequest& WithResourceSnapshotTemplateIdentifier(const char* value) { SetResourceSnapshotTemplateIdentifier(value); return *this;}
+    template<typename ResourceSnapshotTemplateIdentifierT = Aws::String>
+    void SetResourceSnapshotTemplateIdentifier(ResourceSnapshotTemplateIdentifierT&& value) { m_resourceSnapshotTemplateIdentifierHasBeenSet = true; m_resourceSnapshotTemplateIdentifier = std::forward<ResourceSnapshotTemplateIdentifierT>(value); }
+    template<typename ResourceSnapshotTemplateIdentifierT = Aws::String>
+    GetResourceSnapshotRequest& WithResourceSnapshotTemplateIdentifier(ResourceSnapshotTemplateIdentifierT&& value) { SetResourceSnapshotTemplateIdentifier(std::forward<ResourceSnapshotTemplateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +99,10 @@ namespace Model
      * the structure and content of the snapshot payload. Valid value
      * includes:<code>Opportunity</code>: For opportunity-related data. </p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetResourceSnapshotRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline GetResourceSnapshotRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetResourceSnapshotRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +110,7 @@ namespace Model
      * <p>Specifies which revision of the snapshot to retrieve. If omitted returns the
      * latest revision.</p>
      */
-    inline int GetRevision() const{ return m_revision; }
+    inline int GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline GetResourceSnapshotRequest& WithRevision(int value) { SetRevision(value); return *this;}
@@ -139,10 +129,10 @@ namespace Model
     Aws::String m_resourceSnapshotTemplateIdentifier;
     bool m_resourceSnapshotTemplateIdentifierHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    int m_revision;
+    int m_revision{0};
     bool m_revisionHasBeenSet = false;
   };
 

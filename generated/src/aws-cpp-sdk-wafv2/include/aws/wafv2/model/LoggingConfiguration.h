@@ -62,7 +62,7 @@ namespace Model
   class LoggingConfiguration
   {
   public:
-    AWS_WAFV2_API LoggingConfiguration();
+    AWS_WAFV2_API LoggingConfiguration() = default;
     AWS_WAFV2_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -73,14 +73,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * <code>LogDestinationConfigs</code>.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline LoggingConfiguration& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline LoggingConfiguration& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline LoggingConfiguration& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    LoggingConfiguration& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,15 +87,14 @@ namespace Model
      * ACL.</p>  <p>You can associate one logging destination to a web ACL.</p>
      * 
      */
-    inline const Aws::Vector<Aws::String>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
+    inline const Aws::Vector<Aws::String>& GetLogDestinationConfigs() const { return m_logDestinationConfigs; }
     inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
-    inline void SetLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = value; }
-    inline void SetLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::move(value); }
-    inline LoggingConfiguration& WithLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { SetLogDestinationConfigs(value); return *this;}
-    inline LoggingConfiguration& WithLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { SetLogDestinationConfigs(std::move(value)); return *this;}
-    inline LoggingConfiguration& AddLogDestinationConfigs(const Aws::String& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
-    inline LoggingConfiguration& AddLogDestinationConfigs(Aws::String&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(std::move(value)); return *this; }
-    inline LoggingConfiguration& AddLogDestinationConfigs(const char* value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
+    template<typename LogDestinationConfigsT = Aws::Vector<Aws::String>>
+    void SetLogDestinationConfigs(LogDestinationConfigsT&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::forward<LogDestinationConfigsT>(value); }
+    template<typename LogDestinationConfigsT = Aws::Vector<Aws::String>>
+    LoggingConfiguration& WithLogDestinationConfigs(LogDestinationConfigsT&& value) { SetLogDestinationConfigs(std::forward<LogDestinationConfigsT>(value)); return *this;}
+    template<typename LogDestinationConfigsT = Aws::String>
+    LoggingConfiguration& AddLogDestinationConfigs(LogDestinationConfigsT&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.emplace_back(std::forward<LogDestinationConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,14 +115,14 @@ namespace Model
      * sampling in the web ACL visibility configuration or by configuring data
      * protection for the web ACL.</p> 
      */
-    inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
+    inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const { return m_redactedFields; }
     inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }
-    inline void SetRedactedFields(const Aws::Vector<FieldToMatch>& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = value; }
-    inline void SetRedactedFields(Aws::Vector<FieldToMatch>&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = std::move(value); }
-    inline LoggingConfiguration& WithRedactedFields(const Aws::Vector<FieldToMatch>& value) { SetRedactedFields(value); return *this;}
-    inline LoggingConfiguration& WithRedactedFields(Aws::Vector<FieldToMatch>&& value) { SetRedactedFields(std::move(value)); return *this;}
-    inline LoggingConfiguration& AddRedactedFields(const FieldToMatch& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(value); return *this; }
-    inline LoggingConfiguration& AddRedactedFields(FieldToMatch&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(std::move(value)); return *this; }
+    template<typename RedactedFieldsT = Aws::Vector<FieldToMatch>>
+    void SetRedactedFields(RedactedFieldsT&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = std::forward<RedactedFieldsT>(value); }
+    template<typename RedactedFieldsT = Aws::Vector<FieldToMatch>>
+    LoggingConfiguration& WithRedactedFields(RedactedFieldsT&& value) { SetRedactedFields(std::forward<RedactedFieldsT>(value)); return *this;}
+    template<typename RedactedFieldsT = FieldToMatch>
+    LoggingConfiguration& AddRedactedFields(RedactedFieldsT&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.emplace_back(std::forward<RedactedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -141,7 +138,7 @@ namespace Model
      * set to true. For either case, any corresponding logging configuration will
      * indicate <code>ManagedByFirewallManager</code>.</p>
      */
-    inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
+    inline bool GetManagedByFirewallManager() const { return m_managedByFirewallManager; }
     inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
     inline void SetManagedByFirewallManager(bool value) { m_managedByFirewallManagerHasBeenSet = true; m_managedByFirewallManager = value; }
     inline LoggingConfiguration& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
@@ -153,12 +150,12 @@ namespace Model
      * are dropped. You can filter on the rule action and on the web request labels
      * that were applied by matching rules during web ACL evaluation. </p>
      */
-    inline const LoggingFilter& GetLoggingFilter() const{ return m_loggingFilter; }
+    inline const LoggingFilter& GetLoggingFilter() const { return m_loggingFilter; }
     inline bool LoggingFilterHasBeenSet() const { return m_loggingFilterHasBeenSet; }
-    inline void SetLoggingFilter(const LoggingFilter& value) { m_loggingFilterHasBeenSet = true; m_loggingFilter = value; }
-    inline void SetLoggingFilter(LoggingFilter&& value) { m_loggingFilterHasBeenSet = true; m_loggingFilter = std::move(value); }
-    inline LoggingConfiguration& WithLoggingFilter(const LoggingFilter& value) { SetLoggingFilter(value); return *this;}
-    inline LoggingConfiguration& WithLoggingFilter(LoggingFilter&& value) { SetLoggingFilter(std::move(value)); return *this;}
+    template<typename LoggingFilterT = LoggingFilter>
+    void SetLoggingFilter(LoggingFilterT&& value) { m_loggingFilterHasBeenSet = true; m_loggingFilter = std::forward<LoggingFilterT>(value); }
+    template<typename LoggingFilterT = LoggingFilter>
+    LoggingConfiguration& WithLoggingFilter(LoggingFilterT&& value) { SetLoggingFilter(std::forward<LoggingFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +163,10 @@ namespace Model
      * <p>Used to distinguish between various logging options. Currently, there is one
      * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
      */
-    inline const LogType& GetLogType() const{ return m_logType; }
+    inline LogType GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline LoggingConfiguration& WithLogType(const LogType& value) { SetLogType(value); return *this;}
-    inline LoggingConfiguration& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline LoggingConfiguration& WithLogType(LogType value) { SetLogType(value); return *this;}
     ///@}
 
     ///@{
@@ -186,12 +181,10 @@ namespace Model
      * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
      * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
      */
-    inline const LogScope& GetLogScope() const{ return m_logScope; }
+    inline LogScope GetLogScope() const { return m_logScope; }
     inline bool LogScopeHasBeenSet() const { return m_logScopeHasBeenSet; }
-    inline void SetLogScope(const LogScope& value) { m_logScopeHasBeenSet = true; m_logScope = value; }
-    inline void SetLogScope(LogScope&& value) { m_logScopeHasBeenSet = true; m_logScope = std::move(value); }
-    inline LoggingConfiguration& WithLogScope(const LogScope& value) { SetLogScope(value); return *this;}
-    inline LoggingConfiguration& WithLogScope(LogScope&& value) { SetLogScope(std::move(value)); return *this;}
+    inline void SetLogScope(LogScope value) { m_logScopeHasBeenSet = true; m_logScope = value; }
+    inline LoggingConfiguration& WithLogScope(LogScope value) { SetLogScope(value); return *this;}
     ///@}
   private:
 
@@ -204,16 +197,16 @@ namespace Model
     Aws::Vector<FieldToMatch> m_redactedFields;
     bool m_redactedFieldsHasBeenSet = false;
 
-    bool m_managedByFirewallManager;
+    bool m_managedByFirewallManager{false};
     bool m_managedByFirewallManagerHasBeenSet = false;
 
     LoggingFilter m_loggingFilter;
     bool m_loggingFilterHasBeenSet = false;
 
-    LogType m_logType;
+    LogType m_logType{LogType::NOT_SET};
     bool m_logTypeHasBeenSet = false;
 
-    LogScope m_logScope;
+    LogScope m_logScope{LogScope::NOT_SET};
     bool m_logScopeHasBeenSet = false;
   };
 

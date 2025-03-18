@@ -33,7 +33,7 @@ namespace Model
   class AssociatedPackage
   {
   public:
-    AWS_CODEARTIFACT_API AssociatedPackage();
+    AWS_CODEARTIFACT_API AssociatedPackage() = default;
     AWS_CODEARTIFACT_API AssociatedPackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API AssociatedPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>A format that specifies the type of the associated package.</p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
+    inline PackageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline AssociatedPackage& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline AssociatedPackage& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline AssociatedPackage& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,24 @@ namespace Model
      * package versions do not contain a corresponding component, package versions of
      * those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline AssociatedPackage& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline AssociatedPackage& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline AssociatedPackage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    AssociatedPackage& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the associated package. </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
+    inline const Aws::String& GetPackage() const { return m_package; }
     inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
-    inline void SetPackage(const Aws::String& value) { m_packageHasBeenSet = true; m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_packageHasBeenSet = true; m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_packageHasBeenSet = true; m_package.assign(value); }
-    inline AssociatedPackage& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline AssociatedPackage& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline AssociatedPackage& WithPackage(const char* value) { SetPackage(value); return *this;}
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    AssociatedPackage& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,16 +91,14 @@ namespace Model
      * group definition syntax and matching behavior</a> in the <i>CodeArtifact User
      * Guide</i>.</p>
      */
-    inline const PackageGroupAssociationType& GetAssociationType() const{ return m_associationType; }
+    inline PackageGroupAssociationType GetAssociationType() const { return m_associationType; }
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(const PackageGroupAssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline void SetAssociationType(PackageGroupAssociationType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-    inline AssociatedPackage& WithAssociationType(const PackageGroupAssociationType& value) { SetAssociationType(value); return *this;}
-    inline AssociatedPackage& WithAssociationType(PackageGroupAssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    inline void SetAssociationType(PackageGroupAssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline AssociatedPackage& WithAssociationType(PackageGroupAssociationType value) { SetAssociationType(value); return *this;}
     ///@}
   private:
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_package;
     bool m_packageHasBeenSet = false;
 
-    PackageGroupAssociationType m_associationType;
+    PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
   };
 

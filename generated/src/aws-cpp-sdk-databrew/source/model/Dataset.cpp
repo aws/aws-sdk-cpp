@@ -18,27 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Dataset::Dataset() : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_format(InputFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_source(Source::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_pathOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Dataset::Dataset(JsonView jsonValue)
-  : Dataset()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ Dataset& Dataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatOptions"))
   {
     m_formatOptions = jsonValue.GetObject("FormatOptions");
-
     m_formatOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetObject("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = SourceMapper::GetSourceForName(jsonValue.GetString("Source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PathOptions"))
   {
     m_pathOptions = jsonValue.GetObject("PathOptions");
-
     m_pathOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -131,14 +89,11 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ServiceCollection
   {
   public:
-    AWS_DEVOPSGURU_API ServiceCollection();
+    AWS_DEVOPSGURU_API ServiceCollection() = default;
     AWS_DEVOPSGURU_API ServiceCollection(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ServiceCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p>An array of strings that each specifies the name of an Amazon Web Services
      * service.</p>
      */
-    inline const Aws::Vector<ServiceName>& GetServiceNames() const{ return m_serviceNames; }
+    inline const Aws::Vector<ServiceName>& GetServiceNames() const { return m_serviceNames; }
     inline bool ServiceNamesHasBeenSet() const { return m_serviceNamesHasBeenSet; }
-    inline void SetServiceNames(const Aws::Vector<ServiceName>& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = value; }
-    inline void SetServiceNames(Aws::Vector<ServiceName>&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::move(value); }
-    inline ServiceCollection& WithServiceNames(const Aws::Vector<ServiceName>& value) { SetServiceNames(value); return *this;}
-    inline ServiceCollection& WithServiceNames(Aws::Vector<ServiceName>&& value) { SetServiceNames(std::move(value)); return *this;}
-    inline ServiceCollection& AddServiceNames(const ServiceName& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
-    inline ServiceCollection& AddServiceNames(ServiceName&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(std::move(value)); return *this; }
+    template<typename ServiceNamesT = Aws::Vector<ServiceName>>
+    void SetServiceNames(ServiceNamesT&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::forward<ServiceNamesT>(value); }
+    template<typename ServiceNamesT = Aws::Vector<ServiceName>>
+    ServiceCollection& WithServiceNames(ServiceNamesT&& value) { SetServiceNames(std::forward<ServiceNamesT>(value)); return *this;}
+    inline ServiceCollection& AddServiceNames(ServiceName value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
     ///@}
   private:
 

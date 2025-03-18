@@ -12,16 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointRequest::UpdateEndpointRequest() : 
-    m_endpointArnHasBeenSet(false),
-    m_desiredModelArnHasBeenSet(false),
-    m_desiredInferenceUnits(0),
-    m_desiredInferenceUnitsHasBeenSet(false),
-    m_desiredDataAccessRoleArnHasBeenSet(false),
-    m_flywheelArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class GetArchiveMessageRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API GetArchiveMessageRequest();
+    AWS_MAILMANAGER_API GetArchiveMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the archived email message.</p>
      */
-    inline const Aws::String& GetArchivedMessageId() const{ return m_archivedMessageId; }
+    inline const Aws::String& GetArchivedMessageId() const { return m_archivedMessageId; }
     inline bool ArchivedMessageIdHasBeenSet() const { return m_archivedMessageIdHasBeenSet; }
-    inline void SetArchivedMessageId(const Aws::String& value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId = value; }
-    inline void SetArchivedMessageId(Aws::String&& value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId = std::move(value); }
-    inline void SetArchivedMessageId(const char* value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId.assign(value); }
-    inline GetArchiveMessageRequest& WithArchivedMessageId(const Aws::String& value) { SetArchivedMessageId(value); return *this;}
-    inline GetArchiveMessageRequest& WithArchivedMessageId(Aws::String&& value) { SetArchivedMessageId(std::move(value)); return *this;}
-    inline GetArchiveMessageRequest& WithArchivedMessageId(const char* value) { SetArchivedMessageId(value); return *this;}
+    template<typename ArchivedMessageIdT = Aws::String>
+    void SetArchivedMessageId(ArchivedMessageIdT&& value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId = std::forward<ArchivedMessageIdT>(value); }
+    template<typename ArchivedMessageIdT = Aws::String>
+    GetArchiveMessageRequest& WithArchivedMessageId(ArchivedMessageIdT&& value) { SetArchivedMessageId(std::forward<ArchivedMessageIdT>(value)); return *this;}
     ///@}
   private:
 

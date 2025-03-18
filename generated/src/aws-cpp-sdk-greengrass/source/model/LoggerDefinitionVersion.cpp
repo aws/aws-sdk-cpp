@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-LoggerDefinitionVersion::LoggerDefinitionVersion() : 
-    m_loggersHasBeenSet(false)
-{
-}
-
 LoggerDefinitionVersion::LoggerDefinitionVersion(JsonView jsonValue)
-  : LoggerDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LoggerDefinitionVersion& LoggerDefinitionVersion::operator =(JsonView jsonValue)
     }
     m_loggersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException() : 
-    m_syncNameHasBeenSet(false)
-{
-}
-
 ResourceDataSyncAlreadyExistsException::ResourceDataSyncAlreadyExistsException(JsonView jsonValue)
-  : ResourceDataSyncAlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDataSyncAlreadyExistsException& ResourceDataSyncAlreadyExistsException::
   if(jsonValue.ValueExists("SyncName"))
   {
     m_syncName = jsonValue.GetString("SyncName");
-
     m_syncNameHasBeenSet = true;
   }
-
   return *this;
 }
 

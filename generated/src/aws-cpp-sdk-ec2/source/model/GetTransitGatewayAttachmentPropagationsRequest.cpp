@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetTransitGatewayAttachmentPropagationsRequest::GetTransitGatewayAttachmentPropagationsRequest() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetTransitGatewayAttachmentPropagationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

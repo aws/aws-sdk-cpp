@@ -21,7 +21,7 @@ namespace Model
   class StopWorkflowRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API StopWorkflowRunRequest();
+    AWS_GLUE_API StopWorkflowRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the workflow to stop.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StopWorkflowRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StopWorkflowRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StopWorkflowRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StopWorkflowRunRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workflow run to stop.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline StopWorkflowRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline StopWorkflowRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline StopWorkflowRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    StopWorkflowRunRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
   private:
 

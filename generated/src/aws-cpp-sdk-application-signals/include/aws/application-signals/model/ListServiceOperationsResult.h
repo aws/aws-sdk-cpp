@@ -30,7 +30,7 @@ namespace Model
   class ListServiceOperationsResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ListServiceOperationsResult();
+    AWS_APPLICATIONSIGNALS_API ListServiceOperationsResult() = default;
     AWS_APPLICATIONSIGNALS_API ListServiceOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API ListServiceOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
      * Signals used for the request. It might not match your request exactly, because
      * it was rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline ListServiceOperationsResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ListServiceOperationsResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ListServiceOperationsResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,11 +58,11 @@ namespace Model
      * Signals used for the request. It might not match your request exactly, because
      * it was rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline ListServiceOperationsResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ListServiceOperationsResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ListServiceOperationsResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +70,13 @@ namespace Model
      * <p>An array of structures that each contain information about one operation of
      * this service.</p>
      */
-    inline const Aws::Vector<ServiceOperation>& GetServiceOperations() const{ return m_serviceOperations; }
-    inline void SetServiceOperations(const Aws::Vector<ServiceOperation>& value) { m_serviceOperations = value; }
-    inline void SetServiceOperations(Aws::Vector<ServiceOperation>&& value) { m_serviceOperations = std::move(value); }
-    inline ListServiceOperationsResult& WithServiceOperations(const Aws::Vector<ServiceOperation>& value) { SetServiceOperations(value); return *this;}
-    inline ListServiceOperationsResult& WithServiceOperations(Aws::Vector<ServiceOperation>&& value) { SetServiceOperations(std::move(value)); return *this;}
-    inline ListServiceOperationsResult& AddServiceOperations(const ServiceOperation& value) { m_serviceOperations.push_back(value); return *this; }
-    inline ListServiceOperationsResult& AddServiceOperations(ServiceOperation&& value) { m_serviceOperations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceOperation>& GetServiceOperations() const { return m_serviceOperations; }
+    template<typename ServiceOperationsT = Aws::Vector<ServiceOperation>>
+    void SetServiceOperations(ServiceOperationsT&& value) { m_serviceOperationsHasBeenSet = true; m_serviceOperations = std::forward<ServiceOperationsT>(value); }
+    template<typename ServiceOperationsT = Aws::Vector<ServiceOperation>>
+    ListServiceOperationsResult& WithServiceOperations(ServiceOperationsT&& value) { SetServiceOperations(std::forward<ServiceOperationsT>(value)); return *this;}
+    template<typename ServiceOperationsT = ServiceOperation>
+    ListServiceOperationsResult& AddServiceOperations(ServiceOperationsT&& value) { m_serviceOperationsHasBeenSet = true; m_serviceOperations.emplace_back(std::forward<ServiceOperationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,36 +84,37 @@ namespace Model
      * <p>Include this value in your next use of this API to get next set of service
      * operations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceOperationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<ServiceOperation> m_serviceOperations;
+    bool m_serviceOperationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class EmailAddress
   {
   public:
-    AWS_CODECATALYST_API EmailAddress();
+    AWS_CODECATALYST_API EmailAddress() = default;
     AWS_CODECATALYST_API EmailAddress(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API EmailAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The email address.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline EmailAddress& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline EmailAddress& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline EmailAddress& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    EmailAddress& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the email address has been verified.</p>
      */
-    inline bool GetVerified() const{ return m_verified; }
+    inline bool GetVerified() const { return m_verified; }
     inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }
     inline void SetVerified(bool value) { m_verifiedHasBeenSet = true; m_verified = value; }
     inline EmailAddress& WithVerified(bool value) { SetVerified(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
 
-    bool m_verified;
+    bool m_verified{false};
     bool m_verifiedHasBeenSet = false;
   };
 

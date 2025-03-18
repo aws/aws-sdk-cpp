@@ -29,7 +29,7 @@ namespace Model
   class ListAppComponentCompliancesResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult();
+    AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult() = default;
     AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * object. This object contains the names of the Application Components,
      * compliances, costs, resiliency scores, outage scores, and more.</p>
      */
-    inline const Aws::Vector<AppComponentCompliance>& GetComponentCompliances() const{ return m_componentCompliances; }
-    inline void SetComponentCompliances(const Aws::Vector<AppComponentCompliance>& value) { m_componentCompliances = value; }
-    inline void SetComponentCompliances(Aws::Vector<AppComponentCompliance>&& value) { m_componentCompliances = std::move(value); }
-    inline ListAppComponentCompliancesResult& WithComponentCompliances(const Aws::Vector<AppComponentCompliance>& value) { SetComponentCompliances(value); return *this;}
-    inline ListAppComponentCompliancesResult& WithComponentCompliances(Aws::Vector<AppComponentCompliance>&& value) { SetComponentCompliances(std::move(value)); return *this;}
-    inline ListAppComponentCompliancesResult& AddComponentCompliances(const AppComponentCompliance& value) { m_componentCompliances.push_back(value); return *this; }
-    inline ListAppComponentCompliancesResult& AddComponentCompliances(AppComponentCompliance&& value) { m_componentCompliances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppComponentCompliance>& GetComponentCompliances() const { return m_componentCompliances; }
+    template<typename ComponentCompliancesT = Aws::Vector<AppComponentCompliance>>
+    void SetComponentCompliances(ComponentCompliancesT&& value) { m_componentCompliancesHasBeenSet = true; m_componentCompliances = std::forward<ComponentCompliancesT>(value); }
+    template<typename ComponentCompliancesT = Aws::Vector<AppComponentCompliance>>
+    ListAppComponentCompliancesResult& WithComponentCompliances(ComponentCompliancesT&& value) { SetComponentCompliances(std::forward<ComponentCompliancesT>(value)); return *this;}
+    template<typename ComponentCompliancesT = AppComponentCompliance>
+    ListAppComponentCompliancesResult& AddComponentCompliances(ComponentCompliancesT&& value) { m_componentCompliancesHasBeenSet = true; m_componentCompliances.emplace_back(std::forward<ComponentCompliancesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppComponentCompliancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppComponentCompliancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppComponentCompliancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppComponentCompliancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppComponentCompliancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppComponentCompliancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppComponentCompliancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppComponentCompliancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AppComponentCompliance> m_componentCompliances;
+    bool m_componentCompliancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

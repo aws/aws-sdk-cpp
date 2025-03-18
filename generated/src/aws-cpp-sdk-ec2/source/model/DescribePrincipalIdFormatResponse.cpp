@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePrincipalIdFormatResponse::DescribePrincipalIdFormatResponse()
-{
-}
-
 DescribePrincipalIdFormatResponse::DescribePrincipalIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribePrincipalIdFormatResponse& DescribePrincipalIdFormatResponse::operator =
     if(!principalsNode.IsNull())
     {
       XmlNode principalsMember = principalsNode.FirstChild("item");
+      m_principalsHasBeenSet = !principalsMember.IsNull();
       while(!principalsMember.IsNull())
       {
         m_principals.push_back(principalsMember);
         principalsMember = principalsMember.NextNode("item");
       }
 
+      m_principalsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribePrincipalIdFormatResponse& DescribePrincipalIdFormatResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribePrincipalIdFormatResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

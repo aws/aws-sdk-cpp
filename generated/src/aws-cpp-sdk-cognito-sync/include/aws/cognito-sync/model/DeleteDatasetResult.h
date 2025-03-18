@@ -33,7 +33,7 @@ namespace Model
   class DeleteDatasetResult
   {
   public:
-    AWS_COGNITOSYNC_API DeleteDatasetResult();
+    AWS_COGNITOSYNC_API DeleteDatasetResult() = default;
     AWS_COGNITOSYNC_API DeleteDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API DeleteDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * automatically created if they don't exist. Data is synced by dataset, and a
      * dataset can hold up to 1MB of key-value pairs.
      */
-    inline const Dataset& GetDataset() const{ return m_dataset; }
-    inline void SetDataset(const Dataset& value) { m_dataset = value; }
-    inline void SetDataset(Dataset&& value) { m_dataset = std::move(value); }
-    inline DeleteDatasetResult& WithDataset(const Dataset& value) { SetDataset(value); return *this;}
-    inline DeleteDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
+    inline const Dataset& GetDataset() const { return m_dataset; }
+    template<typename DatasetT = Dataset>
+    void SetDataset(DatasetT&& value) { m_datasetHasBeenSet = true; m_dataset = std::forward<DatasetT>(value); }
+    template<typename DatasetT = Dataset>
+    DeleteDatasetResult& WithDataset(DatasetT&& value) { SetDataset(std::forward<DatasetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Dataset m_dataset;
+    bool m_datasetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

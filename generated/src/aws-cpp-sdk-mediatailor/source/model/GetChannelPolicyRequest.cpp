@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChannelPolicyRequest::GetChannelPolicyRequest() : 
-    m_channelNameHasBeenSet(false)
-{
-}
-
 Aws::String GetChannelPolicyRequest::SerializePayload() const
 {
   return {};

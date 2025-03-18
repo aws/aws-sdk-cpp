@@ -28,7 +28,7 @@ namespace Model
   class RegisterTypeResult
   {
   public:
-    AWS_CLOUDFORMATION_API RegisterTypeResult();
+    AWS_CLOUDFORMATION_API RegisterTypeResult() = default;
     AWS_CLOUDFORMATION_API RegisterTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API RegisterTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * token when calling <a>DescribeTypeRegistration</a>, which returns information
      * about the status and IDs of the extension registration.</p>
      */
-    inline const Aws::String& GetRegistrationToken() const{ return m_registrationToken; }
-    inline void SetRegistrationToken(const Aws::String& value) { m_registrationToken = value; }
-    inline void SetRegistrationToken(Aws::String&& value) { m_registrationToken = std::move(value); }
-    inline void SetRegistrationToken(const char* value) { m_registrationToken.assign(value); }
-    inline RegisterTypeResult& WithRegistrationToken(const Aws::String& value) { SetRegistrationToken(value); return *this;}
-    inline RegisterTypeResult& WithRegistrationToken(Aws::String&& value) { SetRegistrationToken(std::move(value)); return *this;}
-    inline RegisterTypeResult& WithRegistrationToken(const char* value) { SetRegistrationToken(value); return *this;}
+    inline const Aws::String& GetRegistrationToken() const { return m_registrationToken; }
+    template<typename RegistrationTokenT = Aws::String>
+    void SetRegistrationToken(RegistrationTokenT&& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = std::forward<RegistrationTokenT>(value); }
+    template<typename RegistrationTokenT = Aws::String>
+    RegisterTypeResult& WithRegistrationToken(RegistrationTokenT&& value) { SetRegistrationToken(std::forward<RegistrationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RegisterTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RegisterTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RegisterTypeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationToken;
+    bool m_registrationTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

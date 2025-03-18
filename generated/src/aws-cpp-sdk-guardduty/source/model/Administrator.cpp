@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Administrator::Administrator() : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false),
-    m_invitedAtHasBeenSet(false)
-{
-}
-
 Administrator::Administrator(JsonView jsonValue)
-  : Administrator()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Administrator& Administrator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitationId"))
   {
     m_invitationId = jsonValue.GetString("invitationId");
-
     m_invitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = jsonValue.GetString("relationshipStatus");
-
     m_relationshipStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitedAt"))
   {
     m_invitedAt = jsonValue.GetString("invitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

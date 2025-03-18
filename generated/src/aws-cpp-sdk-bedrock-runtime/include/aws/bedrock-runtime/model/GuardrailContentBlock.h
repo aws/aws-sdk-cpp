@@ -33,7 +33,7 @@ namespace Model
   class GuardrailContentBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailContentBlock();
+    AWS_BEDROCKRUNTIME_API GuardrailContentBlock() = default;
     AWS_BEDROCKRUNTIME_API GuardrailContentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailContentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Text within content block to be evaluated by the guardrail.</p>
      */
-    inline const GuardrailTextBlock& GetText() const{ return m_text; }
+    inline const GuardrailTextBlock& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const GuardrailTextBlock& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(GuardrailTextBlock&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline GuardrailContentBlock& WithText(const GuardrailTextBlock& value) { SetText(value); return *this;}
-    inline GuardrailContentBlock& WithText(GuardrailTextBlock&& value) { SetText(std::move(value)); return *this;}
+    template<typename TextT = GuardrailTextBlock>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = GuardrailTextBlock>
+    GuardrailContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Image within guardrail content block to be evaluated by the guardrail.</p>
      */
-    inline const GuardrailImageBlock& GetImage() const{ return m_image; }
+    inline const GuardrailImageBlock& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const GuardrailImageBlock& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(GuardrailImageBlock&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline GuardrailContentBlock& WithImage(const GuardrailImageBlock& value) { SetImage(value); return *this;}
-    inline GuardrailContentBlock& WithImage(GuardrailImageBlock&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = GuardrailImageBlock>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = GuardrailImageBlock>
+    GuardrailContentBlock& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
   private:
 

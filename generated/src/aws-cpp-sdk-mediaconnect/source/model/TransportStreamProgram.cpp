@@ -18,20 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-TransportStreamProgram::TransportStreamProgram() : 
-    m_pcrPid(0),
-    m_pcrPidHasBeenSet(false),
-    m_programNameHasBeenSet(false),
-    m_programNumber(0),
-    m_programNumberHasBeenSet(false),
-    m_programPid(0),
-    m_programPidHasBeenSet(false),
-    m_streamsHasBeenSet(false)
-{
-}
-
 TransportStreamProgram::TransportStreamProgram(JsonView jsonValue)
-  : TransportStreamProgram()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TransportStreamProgram& TransportStreamProgram::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pcrPid"))
   {
     m_pcrPid = jsonValue.GetInteger("pcrPid");
-
     m_pcrPidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");
-
     m_programNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programNumber"))
   {
     m_programNumber = jsonValue.GetInteger("programNumber");
-
     m_programNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programPid"))
   {
     m_programPid = jsonValue.GetInteger("programPid");
-
     m_programPidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streams"))
   {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
@@ -75,7 +54,6 @@ TransportStreamProgram& TransportStreamProgram::operator =(JsonView jsonValue)
     }
     m_streamsHasBeenSet = true;
   }
-
   return *this;
 }
 

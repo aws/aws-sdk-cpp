@@ -32,7 +32,7 @@ namespace Model
   class Section
   {
   public:
-    AWS_CONNECTCASES_API Section();
+    AWS_CONNECTCASES_API Section() = default;
     AWS_CONNECTCASES_API Section(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Section& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Consists of a group of fields and associated properties.</p>
      */
-    inline const FieldGroup& GetFieldGroup() const{ return m_fieldGroup; }
+    inline const FieldGroup& GetFieldGroup() const { return m_fieldGroup; }
     inline bool FieldGroupHasBeenSet() const { return m_fieldGroupHasBeenSet; }
-    inline void SetFieldGroup(const FieldGroup& value) { m_fieldGroupHasBeenSet = true; m_fieldGroup = value; }
-    inline void SetFieldGroup(FieldGroup&& value) { m_fieldGroupHasBeenSet = true; m_fieldGroup = std::move(value); }
-    inline Section& WithFieldGroup(const FieldGroup& value) { SetFieldGroup(value); return *this;}
-    inline Section& WithFieldGroup(FieldGroup&& value) { SetFieldGroup(std::move(value)); return *this;}
+    template<typename FieldGroupT = FieldGroup>
+    void SetFieldGroup(FieldGroupT&& value) { m_fieldGroupHasBeenSet = true; m_fieldGroup = std::forward<FieldGroupT>(value); }
+    template<typename FieldGroupT = FieldGroup>
+    Section& WithFieldGroup(FieldGroupT&& value) { SetFieldGroup(std::forward<FieldGroupT>(value)); return *this;}
     ///@}
   private:
 

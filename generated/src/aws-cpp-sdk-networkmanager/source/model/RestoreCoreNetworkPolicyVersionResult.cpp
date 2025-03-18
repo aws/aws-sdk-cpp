@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreCoreNetworkPolicyVersionResult::RestoreCoreNetworkPolicyVersionResult()
-{
-}
-
 RestoreCoreNetworkPolicyVersionResult::RestoreCoreNetworkPolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RestoreCoreNetworkPolicyVersionResult& RestoreCoreNetworkPolicyVersionResult::op
   if(jsonValue.ValueExists("CoreNetworkPolicy"))
   {
     m_coreNetworkPolicy = jsonValue.GetObject("CoreNetworkPolicy");
-
+    m_coreNetworkPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

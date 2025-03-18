@@ -34,7 +34,7 @@ namespace Model
   class RecordColumn
   {
   public:
-    AWS_KINESISANALYTICSV2_API RecordColumn();
+    AWS_KINESISANALYTICSV2_API RecordColumn() = default;
     AWS_KINESISANALYTICSV2_API RecordColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API RecordColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the column that is created in the in-application input stream or
      * reference table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RecordColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RecordColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RecordColumn& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RecordColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>A reference to the data element in the streaming input or the reference data
      * source.</p>
      */
-    inline const Aws::String& GetMapping() const{ return m_mapping; }
+    inline const Aws::String& GetMapping() const { return m_mapping; }
     inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
-    inline void SetMapping(const Aws::String& value) { m_mappingHasBeenSet = true; m_mapping = value; }
-    inline void SetMapping(Aws::String&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
-    inline void SetMapping(const char* value) { m_mappingHasBeenSet = true; m_mapping.assign(value); }
-    inline RecordColumn& WithMapping(const Aws::String& value) { SetMapping(value); return *this;}
-    inline RecordColumn& WithMapping(Aws::String&& value) { SetMapping(std::move(value)); return *this;}
-    inline RecordColumn& WithMapping(const char* value) { SetMapping(value); return *this;}
+    template<typename MappingT = Aws::String>
+    void SetMapping(MappingT&& value) { m_mappingHasBeenSet = true; m_mapping = std::forward<MappingT>(value); }
+    template<typename MappingT = Aws::String>
+    RecordColumn& WithMapping(MappingT&& value) { SetMapping(std::forward<MappingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The type of column created in the in-application input stream or reference
      * table.</p>
      */
-    inline const Aws::String& GetSqlType() const{ return m_sqlType; }
+    inline const Aws::String& GetSqlType() const { return m_sqlType; }
     inline bool SqlTypeHasBeenSet() const { return m_sqlTypeHasBeenSet; }
-    inline void SetSqlType(const Aws::String& value) { m_sqlTypeHasBeenSet = true; m_sqlType = value; }
-    inline void SetSqlType(Aws::String&& value) { m_sqlTypeHasBeenSet = true; m_sqlType = std::move(value); }
-    inline void SetSqlType(const char* value) { m_sqlTypeHasBeenSet = true; m_sqlType.assign(value); }
-    inline RecordColumn& WithSqlType(const Aws::String& value) { SetSqlType(value); return *this;}
-    inline RecordColumn& WithSqlType(Aws::String&& value) { SetSqlType(std::move(value)); return *this;}
-    inline RecordColumn& WithSqlType(const char* value) { SetSqlType(value); return *this;}
+    template<typename SqlTypeT = Aws::String>
+    void SetSqlType(SqlTypeT&& value) { m_sqlTypeHasBeenSet = true; m_sqlType = std::forward<SqlTypeT>(value); }
+    template<typename SqlTypeT = Aws::String>
+    RecordColumn& WithSqlType(SqlTypeT&& value) { SetSqlType(std::forward<SqlTypeT>(value)); return *this;}
     ///@}
   private:
 

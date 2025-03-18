@@ -18,30 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Service::Service() : 
-    m_actionHasBeenSet(false),
-    m_evidenceHasBeenSet(false),
-    m_archived(false),
-    m_archivedHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_eventFirstSeenHasBeenSet(false),
-    m_eventLastSeenHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_ebsVolumeScanDetailsHasBeenSet(false),
-    m_runtimeDetailsHasBeenSet(false),
-    m_detectionHasBeenSet(false),
-    m_malwareScanDetailsHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -51,115 +28,83 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidence"))
   {
     m_evidence = jsonValue.GetObject("evidence");
-
     m_evidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("archived"))
   {
     m_archived = jsonValue.GetBool("archived");
-
     m_archivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventFirstSeen"))
   {
     m_eventFirstSeen = jsonValue.GetString("eventFirstSeen");
-
     m_eventFirstSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventLastSeen"))
   {
     m_eventLastSeen = jsonValue.GetString("eventLastSeen");
-
     m_eventLastSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRole"))
   {
     m_resourceRole = jsonValue.GetString("resourceRole");
-
     m_resourceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userFeedback"))
   {
     m_userFeedback = jsonValue.GetString("userFeedback");
-
     m_userFeedbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalInfo"))
   {
     m_additionalInfo = jsonValue.GetObject("additionalInfo");
-
     m_additionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureName"))
   {
     m_featureName = jsonValue.GetString("featureName");
-
     m_featureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsVolumeScanDetails"))
   {
     m_ebsVolumeScanDetails = jsonValue.GetObject("ebsVolumeScanDetails");
-
     m_ebsVolumeScanDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeDetails"))
   {
     m_runtimeDetails = jsonValue.GetObject("runtimeDetails");
-
     m_runtimeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detection"))
   {
     m_detection = jsonValue.GetObject("detection");
-
     m_detectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("malwareScanDetails"))
   {
     m_malwareScanDetails = jsonValue.GetObject("malwareScanDetails");
-
     m_malwareScanDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

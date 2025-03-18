@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProjectProfileRequest::CreateProjectProfileRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_domainUnitIdentifierHasBeenSet(false),
-    m_environmentConfigurationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String CreateProjectProfileRequest::SerializePayload() const
 {
   JsonValue payload;

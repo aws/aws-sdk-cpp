@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Sort::Sort() : 
-    m_fieldName(SortableFieldName::NOT_SET),
-    m_fieldNameHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 Sort::Sort(JsonView jsonValue)
-  : Sort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Sort& Sort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = SortableFieldNameMapper::GetSortableFieldNameForName(jsonValue.GetString("FieldName"));
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("Order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

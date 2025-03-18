@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetProfileRequest::GetProfileRequest() : 
-    m_acceptHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxDepth(0),
-    m_maxDepthHasBeenSet(false),
-    m_periodHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileRequest::SerializePayload() const
 {
   return {};

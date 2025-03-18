@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-Relationship::Relationship() : 
-    m_type(RelationshipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idsHasBeenSet(false)
-{
-}
-
 Relationship::Relationship(JsonView jsonValue)
-  : Relationship()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Relationship& Relationship::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ids"))
   {
     Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
@@ -49,7 +39,6 @@ Relationship& Relationship::operator =(JsonView jsonValue)
     }
     m_idsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class DashboardInvalidInputError
   {
   public:
-    AWS_CLOUDWATCH_API DashboardInvalidInputError();
+    AWS_CLOUDWATCH_API DashboardInvalidInputError() = default;
     AWS_CLOUDWATCH_API DashboardInvalidInputError(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API DashboardInvalidInputError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,26 +43,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DashboardInvalidInputError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DashboardInvalidInputError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DashboardInvalidInputError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DashboardInvalidInputError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const{ return m_dashboardValidationMessages; }
+    inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const { return m_dashboardValidationMessages; }
     inline bool DashboardValidationMessagesHasBeenSet() const { return m_dashboardValidationMessagesHasBeenSet; }
-    inline void SetDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = value; }
-    inline void SetDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = std::move(value); }
-    inline DashboardInvalidInputError& WithDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { SetDashboardValidationMessages(value); return *this;}
-    inline DashboardInvalidInputError& WithDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { SetDashboardValidationMessages(std::move(value)); return *this;}
-    inline DashboardInvalidInputError& AddDashboardValidationMessages(const DashboardValidationMessage& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.push_back(value); return *this; }
-    inline DashboardInvalidInputError& AddDashboardValidationMessages(DashboardValidationMessage&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.push_back(std::move(value)); return *this; }
+    template<typename DashboardValidationMessagesT = Aws::Vector<DashboardValidationMessage>>
+    void SetDashboardValidationMessages(DashboardValidationMessagesT&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = std::forward<DashboardValidationMessagesT>(value); }
+    template<typename DashboardValidationMessagesT = Aws::Vector<DashboardValidationMessage>>
+    DashboardInvalidInputError& WithDashboardValidationMessages(DashboardValidationMessagesT&& value) { SetDashboardValidationMessages(std::forward<DashboardValidationMessagesT>(value)); return *this;}
+    template<typename DashboardValidationMessagesT = DashboardValidationMessage>
+    DashboardInvalidInputError& AddDashboardValidationMessages(DashboardValidationMessagesT&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.emplace_back(std::forward<DashboardValidationMessagesT>(value)); return *this; }
     ///@}
   private:
 

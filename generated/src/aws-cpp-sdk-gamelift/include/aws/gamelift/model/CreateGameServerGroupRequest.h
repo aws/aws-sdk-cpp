@@ -28,7 +28,7 @@ namespace Model
   class CreateGameServerGroupRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateGameServerGroupRequest();
+    AWS_GAMELIFT_API CreateGameServerGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * GameLift FleetIQ game server group. The name must be unique per Region per
      * Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline CreateGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline CreateGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline CreateGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    CreateGameServerGroupRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
      * Scaling groups.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateGameServerGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateGameServerGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateGameServerGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateGameServerGroupRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * directly in the Auto Scaling group using the Amazon Web Services console or
      * APIs.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline CreateGameServerGroupRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
      * this value directly in the Auto Scaling group using the Amazon Web Services
      * console or APIs.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline CreateGameServerGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -120,12 +116,12 @@ namespace Model
      * specified in the launch template, Amazon GameLift FleetIQ uses your account's
      * default VPC.</p> 
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline CreateGameServerGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline CreateGameServerGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    CreateGameServerGroupRequest& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +139,14 @@ namespace Model
      * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
      * Scaling User Guide.</p>
      */
-    inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
+    inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const { return m_instanceDefinitions; }
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
-    inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
-    inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
-    inline CreateGameServerGroupRequest& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
-    inline CreateGameServerGroupRequest& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
-    inline CreateGameServerGroupRequest& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
-    inline CreateGameServerGroupRequest& AddInstanceDefinitions(InstanceDefinition&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(std::move(value)); return *this; }
+    template<typename InstanceDefinitionsT = Aws::Vector<InstanceDefinition>>
+    void SetInstanceDefinitions(InstanceDefinitionsT&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::forward<InstanceDefinitionsT>(value); }
+    template<typename InstanceDefinitionsT = Aws::Vector<InstanceDefinition>>
+    CreateGameServerGroupRequest& WithInstanceDefinitions(InstanceDefinitionsT&& value) { SetInstanceDefinitions(std::forward<InstanceDefinitionsT>(value)); return *this;}
+    template<typename InstanceDefinitionsT = InstanceDefinition>
+    CreateGameServerGroupRequest& AddInstanceDefinitions(InstanceDefinitionsT&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.emplace_back(std::forward<InstanceDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,12 +158,12 @@ namespace Model
      * Scaling group is created, update this value directly in the Auto Scaling group
      * using the Amazon Web Services console or APIs.</p>
      */
-    inline const GameServerGroupAutoScalingPolicy& GetAutoScalingPolicy() const{ return m_autoScalingPolicy; }
+    inline const GameServerGroupAutoScalingPolicy& GetAutoScalingPolicy() const { return m_autoScalingPolicy; }
     inline bool AutoScalingPolicyHasBeenSet() const { return m_autoScalingPolicyHasBeenSet; }
-    inline void SetAutoScalingPolicy(const GameServerGroupAutoScalingPolicy& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = value; }
-    inline void SetAutoScalingPolicy(GameServerGroupAutoScalingPolicy&& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = std::move(value); }
-    inline CreateGameServerGroupRequest& WithAutoScalingPolicy(const GameServerGroupAutoScalingPolicy& value) { SetAutoScalingPolicy(value); return *this;}
-    inline CreateGameServerGroupRequest& WithAutoScalingPolicy(GameServerGroupAutoScalingPolicy&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
+    template<typename AutoScalingPolicyT = GameServerGroupAutoScalingPolicy>
+    void SetAutoScalingPolicy(AutoScalingPolicyT&& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = std::forward<AutoScalingPolicyT>(value); }
+    template<typename AutoScalingPolicyT = GameServerGroupAutoScalingPolicy>
+    CreateGameServerGroupRequest& WithAutoScalingPolicy(AutoScalingPolicyT&& value) { SetAutoScalingPolicy(std::forward<AutoScalingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +185,10 @@ namespace Model
      * used, even when available, while this balancing strategy is in force.</p> </li>
      * </ul>
      */
-    inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
+    inline BalancingStrategy GetBalancingStrategy() const { return m_balancingStrategy; }
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
-    inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
-    inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
-    inline CreateGameServerGroupRequest& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
-    inline CreateGameServerGroupRequest& WithBalancingStrategy(BalancingStrategy&& value) { SetBalancingStrategy(std::move(value)); return *this;}
+    inline void SetBalancingStrategy(BalancingStrategy value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
+    inline CreateGameServerGroupRequest& WithBalancingStrategy(BalancingStrategy value) { SetBalancingStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +202,10 @@ namespace Model
      * can be terminated by Amazon Web Services regardless of protection status. This
      * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
-    inline const GameServerProtectionPolicy& GetGameServerProtectionPolicy() const{ return m_gameServerProtectionPolicy; }
+    inline GameServerProtectionPolicy GetGameServerProtectionPolicy() const { return m_gameServerProtectionPolicy; }
     inline bool GameServerProtectionPolicyHasBeenSet() const { return m_gameServerProtectionPolicyHasBeenSet; }
-    inline void SetGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
-    inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = std::move(value); }
-    inline CreateGameServerGroupRequest& WithGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { SetGameServerProtectionPolicy(value); return *this;}
-    inline CreateGameServerGroupRequest& WithGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { SetGameServerProtectionPolicy(std::move(value)); return *this;}
+    inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
+    inline CreateGameServerGroupRequest& WithGameServerProtectionPolicy(GameServerProtectionPolicy value) { SetGameServerProtectionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -226,15 +218,14 @@ namespace Model
      * value that is set with this request, even if the Auto Scaling group is updated
      * directly.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSubnets() const{ return m_vpcSubnets; }
+    inline const Aws::Vector<Aws::String>& GetVpcSubnets() const { return m_vpcSubnets; }
     inline bool VpcSubnetsHasBeenSet() const { return m_vpcSubnetsHasBeenSet; }
-    inline void SetVpcSubnets(const Aws::Vector<Aws::String>& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = value; }
-    inline void SetVpcSubnets(Aws::Vector<Aws::String>&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = std::move(value); }
-    inline CreateGameServerGroupRequest& WithVpcSubnets(const Aws::Vector<Aws::String>& value) { SetVpcSubnets(value); return *this;}
-    inline CreateGameServerGroupRequest& WithVpcSubnets(Aws::Vector<Aws::String>&& value) { SetVpcSubnets(std::move(value)); return *this;}
-    inline CreateGameServerGroupRequest& AddVpcSubnets(const Aws::String& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
-    inline CreateGameServerGroupRequest& AddVpcSubnets(Aws::String&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(std::move(value)); return *this; }
-    inline CreateGameServerGroupRequest& AddVpcSubnets(const char* value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.push_back(value); return *this; }
+    template<typename VpcSubnetsT = Aws::Vector<Aws::String>>
+    void SetVpcSubnets(VpcSubnetsT&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets = std::forward<VpcSubnetsT>(value); }
+    template<typename VpcSubnetsT = Aws::Vector<Aws::String>>
+    CreateGameServerGroupRequest& WithVpcSubnets(VpcSubnetsT&& value) { SetVpcSubnets(std::forward<VpcSubnetsT>(value)); return *this;}
+    template<typename VpcSubnetsT = Aws::String>
+    CreateGameServerGroupRequest& AddVpcSubnets(VpcSubnetsT&& value) { m_vpcSubnetsHasBeenSet = true; m_vpcSubnets.emplace_back(std::forward<VpcSubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -247,14 +238,14 @@ namespace Model
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateGameServerGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateGameServerGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateGameServerGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateGameServerGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateGameServerGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateGameServerGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -264,10 +255,10 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
@@ -279,10 +270,10 @@ namespace Model
     GameServerGroupAutoScalingPolicy m_autoScalingPolicy;
     bool m_autoScalingPolicyHasBeenSet = false;
 
-    BalancingStrategy m_balancingStrategy;
+    BalancingStrategy m_balancingStrategy{BalancingStrategy::NOT_SET};
     bool m_balancingStrategyHasBeenSet = false;
 
-    GameServerProtectionPolicy m_gameServerProtectionPolicy;
+    GameServerProtectionPolicy m_gameServerProtectionPolicy{GameServerProtectionPolicy::NOT_SET};
     bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnets;

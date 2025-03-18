@@ -31,7 +31,7 @@ namespace Model
   class EnabledMetric
   {
   public:
-    AWS_AUTOSCALING_API EnabledMetric();
+    AWS_AUTOSCALING_API EnabledMetric() = default;
     AWS_AUTOSCALING_API EnabledMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API EnabledMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -66,14 +66,12 @@ namespace Model
      * CloudWatch metrics for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline EnabledMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline EnabledMetric& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    EnabledMetric& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * <p>The granularity of the metric. The only valid value is
      * <code>1Minute</code>.</p>
      */
-    inline const Aws::String& GetGranularity() const{ return m_granularity; }
+    inline const Aws::String& GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline void SetGranularity(const char* value) { m_granularityHasBeenSet = true; m_granularity.assign(value); }
-    inline EnabledMetric& WithGranularity(const Aws::String& value) { SetGranularity(value); return *this;}
-    inline EnabledMetric& WithGranularity(Aws::String&& value) { SetGranularity(std::move(value)); return *this;}
-    inline EnabledMetric& WithGranularity(const char* value) { SetGranularity(value); return *this;}
+    template<typename GranularityT = Aws::String>
+    void SetGranularity(GranularityT&& value) { m_granularityHasBeenSet = true; m_granularity = std::forward<GranularityT>(value); }
+    template<typename GranularityT = Aws::String>
+    EnabledMetric& WithGranularity(GranularityT&& value) { SetGranularity(std::forward<GranularityT>(value)); return *this;}
     ///@}
   private:
 

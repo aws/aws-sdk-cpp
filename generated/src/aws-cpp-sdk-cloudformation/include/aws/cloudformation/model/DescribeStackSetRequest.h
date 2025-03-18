@@ -22,7 +22,7 @@ namespace Model
   class DescribeStackSetRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackSetRequest();
+    AWS_CLOUDFORMATION_API DescribeStackSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name or unique ID of the stack set whose description you want.</p>
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline DescribeStackSetRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline DescribeStackSetRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline DescribeStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    DescribeStackSetRequest& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +64,17 @@ namespace Model
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
      */
-    inline const CallAs& GetCallAs() const{ return m_callAs; }
+    inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
-    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
-    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
-    inline DescribeStackSetRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
-    inline DescribeStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+    inline void SetCallAs(CallAs value) { m_callAsHasBeenSet = true; m_callAs = value; }
+    inline DescribeStackSetRequest& WithCallAs(CallAs value) { SetCallAs(value); return *this;}
     ///@}
   private:
 
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet = false;
 
-    CallAs m_callAs;
+    CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class MonitoringJsonDatasetFormat
   {
   public:
-    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat();
+    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat() = default;
     AWS_SAGEMAKER_API MonitoringJsonDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringJsonDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Indicates if the file should be read as a JSON object per line. </p>
      */
-    inline bool GetLine() const{ return m_line; }
+    inline bool GetLine() const { return m_line; }
     inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
     inline void SetLine(bool value) { m_lineHasBeenSet = true; m_line = value; }
     inline MonitoringJsonDatasetFormat& WithLine(bool value) { SetLine(value); return *this;}
     ///@}
   private:
 
-    bool m_line;
+    bool m_line{false};
     bool m_lineHasBeenSet = false;
   };
 

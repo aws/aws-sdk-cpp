@@ -33,7 +33,7 @@ namespace Model
   class CreateDeploymentGroupResult
   {
   public:
-    AWS_CODEDEPLOY_API CreateDeploymentGroupResult();
+    AWS_CODEDEPLOY_API CreateDeploymentGroupResult() = default;
     AWS_CODEDEPLOY_API CreateDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API CreateDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>A unique deployment group ID.</p>
      */
-    inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
-    inline void SetDeploymentGroupId(const Aws::String& value) { m_deploymentGroupId = value; }
-    inline void SetDeploymentGroupId(Aws::String&& value) { m_deploymentGroupId = std::move(value); }
-    inline void SetDeploymentGroupId(const char* value) { m_deploymentGroupId.assign(value); }
-    inline CreateDeploymentGroupResult& WithDeploymentGroupId(const Aws::String& value) { SetDeploymentGroupId(value); return *this;}
-    inline CreateDeploymentGroupResult& WithDeploymentGroupId(Aws::String&& value) { SetDeploymentGroupId(std::move(value)); return *this;}
-    inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
+    inline const Aws::String& GetDeploymentGroupId() const { return m_deploymentGroupId; }
+    template<typename DeploymentGroupIdT = Aws::String>
+    void SetDeploymentGroupId(DeploymentGroupIdT&& value) { m_deploymentGroupIdHasBeenSet = true; m_deploymentGroupId = std::forward<DeploymentGroupIdT>(value); }
+    template<typename DeploymentGroupIdT = Aws::String>
+    CreateDeploymentGroupResult& WithDeploymentGroupId(DeploymentGroupIdT&& value) { SetDeploymentGroupId(std::forward<DeploymentGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeploymentGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeploymentGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeploymentGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeploymentGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deploymentGroupId;
+    bool m_deploymentGroupIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-PolandAdditionalInfo::PolandAdditionalInfo() : 
-    m_individualRegistrationNumberHasBeenSet(false),
-    m_isGroupVatEnabled(false),
-    m_isGroupVatEnabledHasBeenSet(false)
-{
-}
-
 PolandAdditionalInfo::PolandAdditionalInfo(JsonView jsonValue)
-  : PolandAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PolandAdditionalInfo& PolandAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("individualRegistrationNumber"))
   {
     m_individualRegistrationNumber = jsonValue.GetString("individualRegistrationNumber");
-
     m_individualRegistrationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isGroupVatEnabled"))
   {
     m_isGroupVatEnabled = jsonValue.GetBool("isGroupVatEnabled");
-
     m_isGroupVatEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class CancelJobRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API CancelJobRequest();
+    AWS_IOT_API CancelJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline CancelJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline CancelJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline CancelJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    CancelJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>(Optional)A reason code string that explains why the job was canceled.</p>
      */
-    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
-    inline CancelJobRequest& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
-    inline CancelJobRequest& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
-    inline CancelJobRequest& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    CancelJobRequest& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional comment string describing why the job was canceled.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline CancelJobRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline CancelJobRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline CancelJobRequest& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    CancelJobRequest& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * update the job execution status. Use caution and ensure that each device
      * executing a job which is canceled is able to recover to a valid state.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline CancelJobRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_comment;
     bool m_commentHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

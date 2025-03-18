@@ -32,7 +32,7 @@ namespace Model
   class ColorsConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ColorsConfiguration();
+    AWS_QUICKSIGHT_API ColorsConfiguration() = default;
     AWS_QUICKSIGHT_API ColorsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColorsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>A list of up to 50 custom colors.</p>
      */
-    inline const Aws::Vector<CustomColor>& GetCustomColors() const{ return m_customColors; }
+    inline const Aws::Vector<CustomColor>& GetCustomColors() const { return m_customColors; }
     inline bool CustomColorsHasBeenSet() const { return m_customColorsHasBeenSet; }
-    inline void SetCustomColors(const Aws::Vector<CustomColor>& value) { m_customColorsHasBeenSet = true; m_customColors = value; }
-    inline void SetCustomColors(Aws::Vector<CustomColor>&& value) { m_customColorsHasBeenSet = true; m_customColors = std::move(value); }
-    inline ColorsConfiguration& WithCustomColors(const Aws::Vector<CustomColor>& value) { SetCustomColors(value); return *this;}
-    inline ColorsConfiguration& WithCustomColors(Aws::Vector<CustomColor>&& value) { SetCustomColors(std::move(value)); return *this;}
-    inline ColorsConfiguration& AddCustomColors(const CustomColor& value) { m_customColorsHasBeenSet = true; m_customColors.push_back(value); return *this; }
-    inline ColorsConfiguration& AddCustomColors(CustomColor&& value) { m_customColorsHasBeenSet = true; m_customColors.push_back(std::move(value)); return *this; }
+    template<typename CustomColorsT = Aws::Vector<CustomColor>>
+    void SetCustomColors(CustomColorsT&& value) { m_customColorsHasBeenSet = true; m_customColors = std::forward<CustomColorsT>(value); }
+    template<typename CustomColorsT = Aws::Vector<CustomColor>>
+    ColorsConfiguration& WithCustomColors(CustomColorsT&& value) { SetCustomColors(std::forward<CustomColorsT>(value)); return *this;}
+    template<typename CustomColorsT = CustomColor>
+    ColorsConfiguration& AddCustomColors(CustomColorsT&& value) { m_customColorsHasBeenSet = true; m_customColors.emplace_back(std::forward<CustomColorsT>(value)); return *this; }
     ///@}
   private:
 

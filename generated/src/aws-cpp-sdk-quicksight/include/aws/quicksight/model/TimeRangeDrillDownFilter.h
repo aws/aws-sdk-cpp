@@ -33,7 +33,7 @@ namespace Model
   class TimeRangeDrillDownFilter
   {
   public:
-    AWS_QUICKSIGHT_API TimeRangeDrillDownFilter();
+    AWS_QUICKSIGHT_API TimeRangeDrillDownFilter() = default;
     AWS_QUICKSIGHT_API TimeRangeDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TimeRangeDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>The column that the filter is applied to.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline TimeRangeDrillDownFilter& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline TimeRangeDrillDownFilter& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    TimeRangeDrillDownFilter& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum value for the filter value range.</p>
      */
-    inline const Aws::Utils::DateTime& GetRangeMinimum() const{ return m_rangeMinimum; }
+    inline const Aws::Utils::DateTime& GetRangeMinimum() const { return m_rangeMinimum; }
     inline bool RangeMinimumHasBeenSet() const { return m_rangeMinimumHasBeenSet; }
-    inline void SetRangeMinimum(const Aws::Utils::DateTime& value) { m_rangeMinimumHasBeenSet = true; m_rangeMinimum = value; }
-    inline void SetRangeMinimum(Aws::Utils::DateTime&& value) { m_rangeMinimumHasBeenSet = true; m_rangeMinimum = std::move(value); }
-    inline TimeRangeDrillDownFilter& WithRangeMinimum(const Aws::Utils::DateTime& value) { SetRangeMinimum(value); return *this;}
-    inline TimeRangeDrillDownFilter& WithRangeMinimum(Aws::Utils::DateTime&& value) { SetRangeMinimum(std::move(value)); return *this;}
+    template<typename RangeMinimumT = Aws::Utils::DateTime>
+    void SetRangeMinimum(RangeMinimumT&& value) { m_rangeMinimumHasBeenSet = true; m_rangeMinimum = std::forward<RangeMinimumT>(value); }
+    template<typename RangeMinimumT = Aws::Utils::DateTime>
+    TimeRangeDrillDownFilter& WithRangeMinimum(RangeMinimumT&& value) { SetRangeMinimum(std::forward<RangeMinimumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum value for the filter value range.</p>
      */
-    inline const Aws::Utils::DateTime& GetRangeMaximum() const{ return m_rangeMaximum; }
+    inline const Aws::Utils::DateTime& GetRangeMaximum() const { return m_rangeMaximum; }
     inline bool RangeMaximumHasBeenSet() const { return m_rangeMaximumHasBeenSet; }
-    inline void SetRangeMaximum(const Aws::Utils::DateTime& value) { m_rangeMaximumHasBeenSet = true; m_rangeMaximum = value; }
-    inline void SetRangeMaximum(Aws::Utils::DateTime&& value) { m_rangeMaximumHasBeenSet = true; m_rangeMaximum = std::move(value); }
-    inline TimeRangeDrillDownFilter& WithRangeMaximum(const Aws::Utils::DateTime& value) { SetRangeMaximum(value); return *this;}
-    inline TimeRangeDrillDownFilter& WithRangeMaximum(Aws::Utils::DateTime&& value) { SetRangeMaximum(std::move(value)); return *this;}
+    template<typename RangeMaximumT = Aws::Utils::DateTime>
+    void SetRangeMaximum(RangeMaximumT&& value) { m_rangeMaximumHasBeenSet = true; m_rangeMaximum = std::forward<RangeMaximumT>(value); }
+    template<typename RangeMaximumT = Aws::Utils::DateTime>
+    TimeRangeDrillDownFilter& WithRangeMaximum(RangeMaximumT&& value) { SetRangeMaximum(std::forward<RangeMaximumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,25 +80,23 @@ namespace Model
      * <p>The level of time precision that is used to aggregate <code>DateTime</code>
      * values.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline TimeRangeDrillDownFilter& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline TimeRangeDrillDownFilter& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline TimeRangeDrillDownFilter& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
   private:
 
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_rangeMinimum;
+    Aws::Utils::DateTime m_rangeMinimum{};
     bool m_rangeMinimumHasBeenSet = false;
 
-    Aws::Utils::DateTime m_rangeMaximum;
+    Aws::Utils::DateTime m_rangeMaximum{};
     bool m_rangeMaximumHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
   };
 

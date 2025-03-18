@@ -25,7 +25,7 @@ namespace Model
   class GetSegmentVersionsRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API GetSegmentVersionsRequest();
+    AWS_PINPOINT_API GetSegmentVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline GetSegmentVersionsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetSegmentVersionsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetSegmentVersionsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetSegmentVersionsRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
-    inline const Aws::String& GetPageSize() const{ return m_pageSize; }
+    inline const Aws::String& GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-    inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-    inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
-    inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
-    inline GetSegmentVersionsRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
-    inline GetSegmentVersionsRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
-    inline GetSegmentVersionsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+    template<typename PageSizeT = Aws::String>
+    void SetPageSize(PageSizeT&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::forward<PageSizeT>(value); }
+    template<typename PageSizeT = Aws::String>
+    GetSegmentVersionsRequest& WithPageSize(PageSizeT&& value) { SetPageSize(std::forward<PageSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the segment.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline GetSegmentVersionsRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline GetSegmentVersionsRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline GetSegmentVersionsRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    GetSegmentVersionsRequest& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The NextToken string that specifies which page of results to return in a
      * paginated response.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline GetSegmentVersionsRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline GetSegmentVersionsRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline GetSegmentVersionsRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    GetSegmentVersionsRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,29 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-CloudWatchLogsLogStream::CloudWatchLogsLogStream() : 
-    m_logGroupNameHasBeenSet(false),
-    m_datetimeFormatHasBeenSet(false),
-    m_timeZone(CloudWatchLogsTimeZone::NOT_SET),
-    m_timeZoneHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_fileFingerprintLinesHasBeenSet(false),
-    m_multiLineStartPatternHasBeenSet(false),
-    m_initialPosition(CloudWatchLogsInitialPosition::NOT_SET),
-    m_initialPositionHasBeenSet(false),
-    m_encoding(CloudWatchLogsEncoding::NOT_SET),
-    m_encodingHasBeenSet(false),
-    m_bufferDuration(0),
-    m_bufferDurationHasBeenSet(false),
-    m_batchCount(0),
-    m_batchCountHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false)
-{
-}
-
 CloudWatchLogsLogStream::CloudWatchLogsLogStream(JsonView jsonValue)
-  : CloudWatchLogsLogStream()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ CloudWatchLogsLogStream& CloudWatchLogsLogStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatetimeFormat"))
   {
     m_datetimeFormat = jsonValue.GetString("DatetimeFormat");
-
     m_datetimeFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = CloudWatchLogsTimeZoneMapper::GetCloudWatchLogsTimeZoneForName(jsonValue.GetString("TimeZone"));
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("File"))
   {
     m_file = jsonValue.GetString("File");
-
     m_fileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileFingerprintLines"))
   {
     m_fileFingerprintLines = jsonValue.GetString("FileFingerprintLines");
-
     m_fileFingerprintLinesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiLineStartPattern"))
   {
     m_multiLineStartPattern = jsonValue.GetString("MultiLineStartPattern");
-
     m_multiLineStartPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialPosition"))
   {
     m_initialPosition = CloudWatchLogsInitialPositionMapper::GetCloudWatchLogsInitialPositionForName(jsonValue.GetString("InitialPosition"));
-
     m_initialPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encoding"))
   {
     m_encoding = CloudWatchLogsEncodingMapper::GetCloudWatchLogsEncodingForName(jsonValue.GetString("Encoding"));
-
     m_encodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferDuration"))
   {
     m_bufferDuration = jsonValue.GetInteger("BufferDuration");
-
     m_bufferDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchCount"))
   {
     m_batchCount = jsonValue.GetInteger("BatchCount");
-
     m_batchCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

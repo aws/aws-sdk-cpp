@@ -18,37 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobSearchSummary::JobSearchSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lifecycleStatus(JobLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_lifecycleStatusMessageHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_maxFailedTasksCount(0),
-    m_maxFailedTasksCountHasBeenSet(false),
-    m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_jobParametersHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_sourceJobIdHasBeenSet(false)
-{
-}
-
 JobSearchSummary::JobSearchSummary(JsonView jsonValue)
-  : JobSearchSummary()
 {
   *this = jsonValue;
 }
@@ -58,52 +28,38 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStatus"))
   {
     m_lifecycleStatus = JobLifecycleStatusMapper::GetJobLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
-
     m_lifecycleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStatusMessage"))
   {
     m_lifecycleStatusMessage = jsonValue.GetString("lifecycleStatusMessage");
-
     m_lifecycleStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRunStatus"))
   {
     m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
-
     m_taskRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetTaskRunStatus"))
   {
     m_targetTaskRunStatus = JobTargetTaskRunStatusMapper::GetJobTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
-
     m_targetTaskRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRunStatusCounts"))
   {
     Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
@@ -113,56 +69,41 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFailedTasksCount"))
   {
     m_maxFailedTasksCount = jsonValue.GetInteger("maxFailedTasksCount");
-
     m_maxFailedTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxRetriesPerTask"))
   {
     m_maxRetriesPerTask = jsonValue.GetInteger("maxRetriesPerTask");
-
     m_maxRetriesPerTaskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobParameters"))
   {
     Aws::Map<Aws::String, JsonView> jobParametersJsonMap = jsonValue.GetObject("jobParameters").GetAllObjects();
@@ -172,21 +113,16 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     }
     m_jobParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxWorkerCount"))
   {
     m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
-
     m_maxWorkerCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceJobId"))
   {
     m_sourceJobId = jsonValue.GetString("sourceJobId");
-
     m_sourceJobIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSizeConstraintSetRequest::GetSizeConstraintSetRequest() : 
-    m_sizeConstraintSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSizeConstraintSetRequest::SerializePayload() const
 {
   JsonValue payload;

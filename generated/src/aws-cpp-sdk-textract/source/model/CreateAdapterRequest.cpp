@@ -12,18 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAdapterRequest::CreateAdapterRequest() : 
-    m_adapterNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_featureTypesHasBeenSet(false),
-    m_autoUpdate(AutoUpdate::NOT_SET),
-    m_autoUpdateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAdapterRequest::SerializePayload() const
 {
   JsonValue payload;

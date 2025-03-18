@@ -12,17 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChimeWebhookConfigurationRequest::CreateChimeWebhookConfigurationRequest() : 
-    m_webhookDescriptionHasBeenSet(false),
-    m_webhookUrlHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChimeWebhookConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

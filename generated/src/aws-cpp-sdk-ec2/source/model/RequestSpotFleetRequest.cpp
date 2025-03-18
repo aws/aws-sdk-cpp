@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RequestSpotFleetRequest::RequestSpotFleetRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false)
-{
-}
-
 Aws::String RequestSpotFleetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

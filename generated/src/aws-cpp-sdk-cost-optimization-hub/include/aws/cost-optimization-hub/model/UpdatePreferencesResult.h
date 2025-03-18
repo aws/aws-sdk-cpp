@@ -29,7 +29,7 @@ namespace Model
   class UpdatePreferencesResult
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API UpdatePreferencesResult();
+    AWS_COSTOPTIMIZATIONHUB_API UpdatePreferencesResult() = default;
     AWS_COSTOPTIMIZATIONHUB_API UpdatePreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTOPTIMIZATIONHUB_API UpdatePreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,38 @@ namespace Model
     /**
      * <p>Shows the status of the "savings estimation mode" preference.</p>
      */
-    inline const SavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
-    inline void SetSavingsEstimationMode(const SavingsEstimationMode& value) { m_savingsEstimationMode = value; }
-    inline void SetSavingsEstimationMode(SavingsEstimationMode&& value) { m_savingsEstimationMode = std::move(value); }
-    inline UpdatePreferencesResult& WithSavingsEstimationMode(const SavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-    inline UpdatePreferencesResult& WithSavingsEstimationMode(SavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+    inline SavingsEstimationMode GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
+    inline void SetSavingsEstimationMode(SavingsEstimationMode value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
+    inline UpdatePreferencesResult& WithSavingsEstimationMode(SavingsEstimationMode value) { SetSavingsEstimationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Shows the status of the "member account discount visibility" preference.</p>
      */
-    inline const MemberAccountDiscountVisibility& GetMemberAccountDiscountVisibility() const{ return m_memberAccountDiscountVisibility; }
-    inline void SetMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { m_memberAccountDiscountVisibility = value; }
-    inline void SetMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { m_memberAccountDiscountVisibility = std::move(value); }
-    inline UpdatePreferencesResult& WithMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { SetMemberAccountDiscountVisibility(value); return *this;}
-    inline UpdatePreferencesResult& WithMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { SetMemberAccountDiscountVisibility(std::move(value)); return *this;}
+    inline MemberAccountDiscountVisibility GetMemberAccountDiscountVisibility() const { return m_memberAccountDiscountVisibility; }
+    inline void SetMemberAccountDiscountVisibility(MemberAccountDiscountVisibility value) { m_memberAccountDiscountVisibilityHasBeenSet = true; m_memberAccountDiscountVisibility = value; }
+    inline UpdatePreferencesResult& WithMemberAccountDiscountVisibility(MemberAccountDiscountVisibility value) { SetMemberAccountDiscountVisibility(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePreferencesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePreferencesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePreferencesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePreferencesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SavingsEstimationMode m_savingsEstimationMode;
+    SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
+    bool m_savingsEstimationModeHasBeenSet = false;
 
-    MemberAccountDiscountVisibility m_memberAccountDiscountVisibility;
+    MemberAccountDiscountVisibility m_memberAccountDiscountVisibility{MemberAccountDiscountVisibility::NOT_SET};
+    bool m_memberAccountDiscountVisibilityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

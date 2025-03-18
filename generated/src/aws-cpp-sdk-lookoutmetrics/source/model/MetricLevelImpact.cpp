@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-MetricLevelImpact::MetricLevelImpact() : 
-    m_metricNameHasBeenSet(false),
-    m_numTimeSeries(0),
-    m_numTimeSeriesHasBeenSet(false),
-    m_contributionMatrixHasBeenSet(false)
-{
-}
-
 MetricLevelImpact::MetricLevelImpact(JsonView jsonValue)
-  : MetricLevelImpact()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetricLevelImpact& MetricLevelImpact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumTimeSeries"))
   {
     m_numTimeSeries = jsonValue.GetInteger("NumTimeSeries");
-
     m_numTimeSeriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributionMatrix"))
   {
     m_contributionMatrix = jsonValue.GetObject("ContributionMatrix");
-
     m_contributionMatrixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class StartSessionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API StartSessionRequest();
+    AWS_SSM_API StartSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The managed node to connect to for the session.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline StartSessionRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline StartSessionRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline StartSessionRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    StartSessionRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
      * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+    inline const Aws::String& GetDocumentName() const { return m_documentName; }
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
-    inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
-    inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
-    inline StartSessionRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-    inline StartSessionRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-    inline StartSessionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    template<typename DocumentNameT = Aws::String>
+    void SetDocumentName(DocumentNameT&& value) { m_documentNameHasBeenSet = true; m_documentName = std::forward<DocumentNameT>(value); }
+    template<typename DocumentNameT = Aws::String>
+    StartSessionRequest& WithDocumentName(DocumentNameT&& value) { SetDocumentName(std::forward<DocumentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * details for the Amazon CloudWatch Events event created when you start the
      * session.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline StartSessionRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline StartSessionRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline StartSessionRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    StartSessionRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,18 +89,16 @@ namespace Model
      * a Session Manager preferences document</a> in the <i>Amazon Web Services Systems
      * Manager User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline StartSessionRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
-    inline StartSessionRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
-    inline StartSessionRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline StartSessionRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline StartSessionRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StartSessionRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartSessionRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StartSessionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    StartSessionRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::Vector<Aws::String>>
+    StartSessionRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

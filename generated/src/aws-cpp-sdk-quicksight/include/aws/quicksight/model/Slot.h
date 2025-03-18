@@ -31,7 +31,7 @@ namespace Model
   class Slot
   {
   public:
-    AWS_QUICKSIGHT_API Slot();
+    AWS_QUICKSIGHT_API Slot() = default;
     AWS_QUICKSIGHT_API Slot(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The slot ID of the slot.</p>
      */
-    inline const Aws::String& GetSlotId() const{ return m_slotId; }
+    inline const Aws::String& GetSlotId() const { return m_slotId; }
     inline bool SlotIdHasBeenSet() const { return m_slotIdHasBeenSet; }
-    inline void SetSlotId(const Aws::String& value) { m_slotIdHasBeenSet = true; m_slotId = value; }
-    inline void SetSlotId(Aws::String&& value) { m_slotIdHasBeenSet = true; m_slotId = std::move(value); }
-    inline void SetSlotId(const char* value) { m_slotIdHasBeenSet = true; m_slotId.assign(value); }
-    inline Slot& WithSlotId(const Aws::String& value) { SetSlotId(value); return *this;}
-    inline Slot& WithSlotId(Aws::String&& value) { SetSlotId(std::move(value)); return *this;}
-    inline Slot& WithSlotId(const char* value) { SetSlotId(value); return *this;}
+    template<typename SlotIdT = Aws::String>
+    void SetSlotId(SlotIdT&& value) { m_slotIdHasBeenSet = true; m_slotId = std::forward<SlotIdT>(value); }
+    template<typename SlotIdT = Aws::String>
+    Slot& WithSlotId(SlotIdT&& value) { SetSlotId(std::forward<SlotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visual ID for the slot.</p>
      */
-    inline const Aws::String& GetVisualId() const{ return m_visualId; }
+    inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }
-    inline void SetVisualId(const Aws::String& value) { m_visualIdHasBeenSet = true; m_visualId = value; }
-    inline void SetVisualId(Aws::String&& value) { m_visualIdHasBeenSet = true; m_visualId = std::move(value); }
-    inline void SetVisualId(const char* value) { m_visualIdHasBeenSet = true; m_visualId.assign(value); }
-    inline Slot& WithVisualId(const Aws::String& value) { SetVisualId(value); return *this;}
-    inline Slot& WithVisualId(Aws::String&& value) { SetVisualId(std::move(value)); return *this;}
-    inline Slot& WithVisualId(const char* value) { SetVisualId(value); return *this;}
+    template<typename VisualIdT = Aws::String>
+    void SetVisualId(VisualIdT&& value) { m_visualIdHasBeenSet = true; m_visualId = std::forward<VisualIdT>(value); }
+    template<typename VisualIdT = Aws::String>
+    Slot& WithVisualId(VisualIdT&& value) { SetVisualId(std::forward<VisualIdT>(value)); return *this;}
     ///@}
   private:
 

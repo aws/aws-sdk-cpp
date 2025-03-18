@@ -33,7 +33,7 @@ namespace Model
   class TimestampStructure
   {
   public:
-    AWS_CODEGURUPROFILER_API TimestampStructure();
+    AWS_CODEGURUPROFILER_API TimestampStructure() = default;
     AWS_CODEGURUPROFILER_API TimestampStructure(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API TimestampStructure& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,16 @@ namespace Model
      * example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020
      * 1:15:02 PM UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetValue() const{ return m_value; }
+    inline const Aws::Utils::DateTime& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::DateTime& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::DateTime&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline TimestampStructure& WithValue(const Aws::Utils::DateTime& value) { SetValue(value); return *this;}
-    inline TimestampStructure& WithValue(Aws::Utils::DateTime&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::DateTime>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::DateTime>
+    TimestampStructure& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_value;
+    Aws::Utils::DateTime m_value{};
     bool m_valueHasBeenSet = false;
   };
 

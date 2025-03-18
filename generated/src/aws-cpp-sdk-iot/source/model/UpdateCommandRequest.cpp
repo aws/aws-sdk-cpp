@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCommandRequest::UpdateCommandRequest() : 
-    m_commandIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecated(false),
-    m_deprecatedHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCommandRequest::SerializePayload() const
 {
   JsonValue payload;

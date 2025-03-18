@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-WebDataSourceConfiguration::WebDataSourceConfiguration() : 
-    m_crawlerConfigurationHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false)
-{
-}
-
 WebDataSourceConfiguration::WebDataSourceConfiguration(JsonView jsonValue)
-  : WebDataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WebDataSourceConfiguration& WebDataSourceConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("crawlerConfiguration"))
   {
     m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
-
     m_crawlerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

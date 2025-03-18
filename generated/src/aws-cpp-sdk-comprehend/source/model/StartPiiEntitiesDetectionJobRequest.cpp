@@ -12,22 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartPiiEntitiesDetectionJobRequest::StartPiiEntitiesDetectionJobRequest() : 
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_mode(PiiEntitiesDetectionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_redactionConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartPiiEntitiesDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

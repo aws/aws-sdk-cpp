@@ -32,7 +32,7 @@ namespace Model
   class AnomalyDetectorConfig
   {
   public:
-    AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig();
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig() = default;
     AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The frequency at which the detector analyzes its source data.</p>
      */
-    inline const Frequency& GetAnomalyDetectorFrequency() const{ return m_anomalyDetectorFrequency; }
+    inline Frequency GetAnomalyDetectorFrequency() const { return m_anomalyDetectorFrequency; }
     inline bool AnomalyDetectorFrequencyHasBeenSet() const { return m_anomalyDetectorFrequencyHasBeenSet; }
-    inline void SetAnomalyDetectorFrequency(const Frequency& value) { m_anomalyDetectorFrequencyHasBeenSet = true; m_anomalyDetectorFrequency = value; }
-    inline void SetAnomalyDetectorFrequency(Frequency&& value) { m_anomalyDetectorFrequencyHasBeenSet = true; m_anomalyDetectorFrequency = std::move(value); }
-    inline AnomalyDetectorConfig& WithAnomalyDetectorFrequency(const Frequency& value) { SetAnomalyDetectorFrequency(value); return *this;}
-    inline AnomalyDetectorConfig& WithAnomalyDetectorFrequency(Frequency&& value) { SetAnomalyDetectorFrequency(std::move(value)); return *this;}
+    inline void SetAnomalyDetectorFrequency(Frequency value) { m_anomalyDetectorFrequencyHasBeenSet = true; m_anomalyDetectorFrequency = value; }
+    inline AnomalyDetectorConfig& WithAnomalyDetectorFrequency(Frequency value) { SetAnomalyDetectorFrequency(value); return *this;}
     ///@}
   private:
 
-    Frequency m_anomalyDetectorFrequency;
+    Frequency m_anomalyDetectorFrequency{Frequency::NOT_SET};
     bool m_anomalyDetectorFrequencyHasBeenSet = false;
   };
 

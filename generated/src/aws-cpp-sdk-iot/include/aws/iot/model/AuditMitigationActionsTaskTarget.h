@@ -35,7 +35,7 @@ namespace Model
   class AuditMitigationActionsTaskTarget
   {
   public:
-    AWS_IOT_API AuditMitigationActionsTaskTarget();
+    AWS_IOT_API AuditMitigationActionsTaskTarget() = default;
     AWS_IOT_API AuditMitigationActionsTaskTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuditMitigationActionsTaskTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>If the task will apply a mitigation action to findings from a specific audit,
      * this value uniquely identifies the audit.</p>
      */
-    inline const Aws::String& GetAuditTaskId() const{ return m_auditTaskId; }
+    inline const Aws::String& GetAuditTaskId() const { return m_auditTaskId; }
     inline bool AuditTaskIdHasBeenSet() const { return m_auditTaskIdHasBeenSet; }
-    inline void SetAuditTaskId(const Aws::String& value) { m_auditTaskIdHasBeenSet = true; m_auditTaskId = value; }
-    inline void SetAuditTaskId(Aws::String&& value) { m_auditTaskIdHasBeenSet = true; m_auditTaskId = std::move(value); }
-    inline void SetAuditTaskId(const char* value) { m_auditTaskIdHasBeenSet = true; m_auditTaskId.assign(value); }
-    inline AuditMitigationActionsTaskTarget& WithAuditTaskId(const Aws::String& value) { SetAuditTaskId(value); return *this;}
-    inline AuditMitigationActionsTaskTarget& WithAuditTaskId(Aws::String&& value) { SetAuditTaskId(std::move(value)); return *this;}
-    inline AuditMitigationActionsTaskTarget& WithAuditTaskId(const char* value) { SetAuditTaskId(value); return *this;}
+    template<typename AuditTaskIdT = Aws::String>
+    void SetAuditTaskId(AuditTaskIdT&& value) { m_auditTaskIdHasBeenSet = true; m_auditTaskId = std::forward<AuditTaskIdT>(value); }
+    template<typename AuditTaskIdT = Aws::String>
+    AuditMitigationActionsTaskTarget& WithAuditTaskId(AuditTaskIdT&& value) { SetAuditTaskId(std::forward<AuditTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p>If the task will apply a mitigation action to one or more listed findings,
      * this value uniquely identifies those findings.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
+    inline const Aws::Vector<Aws::String>& GetFindingIds() const { return m_findingIds; }
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
-    inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
-    inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
-    inline AuditMitigationActionsTaskTarget& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
-    inline AuditMitigationActionsTaskTarget& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
-    inline AuditMitigationActionsTaskTarget& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    void SetFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::forward<FindingIdsT>(value); }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    AuditMitigationActionsTaskTarget& WithFindingIds(FindingIdsT&& value) { SetFindingIds(std::forward<FindingIdsT>(value)); return *this;}
+    template<typename FindingIdsT = Aws::String>
+    AuditMitigationActionsTaskTarget& AddFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds.emplace_back(std::forward<FindingIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,18 +75,16 @@ namespace Model
      * identify the findings from the audit to which the audit mitigation actions task
      * apply.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAuditCheckToReasonCodeFilter() const{ return m_auditCheckToReasonCodeFilter; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAuditCheckToReasonCodeFilter() const { return m_auditCheckToReasonCodeFilter; }
     inline bool AuditCheckToReasonCodeFilterHasBeenSet() const { return m_auditCheckToReasonCodeFilterHasBeenSet; }
-    inline void SetAuditCheckToReasonCodeFilter(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter = value; }
-    inline void SetAuditCheckToReasonCodeFilter(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter = std::move(value); }
-    inline AuditMitigationActionsTaskTarget& WithAuditCheckToReasonCodeFilter(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAuditCheckToReasonCodeFilter(value); return *this;}
-    inline AuditMitigationActionsTaskTarget& WithAuditCheckToReasonCodeFilter(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAuditCheckToReasonCodeFilter(std::move(value)); return *this;}
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(key, value); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(std::move(key), value); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(key, std::move(value)); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(const char* key, Aws::Vector<Aws::String>&& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(key, std::move(value)); return *this; }
-    inline AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(const char* key, const Aws::Vector<Aws::String>& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(key, value); return *this; }
+    template<typename AuditCheckToReasonCodeFilterT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetAuditCheckToReasonCodeFilter(AuditCheckToReasonCodeFilterT&& value) { m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter = std::forward<AuditCheckToReasonCodeFilterT>(value); }
+    template<typename AuditCheckToReasonCodeFilterT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    AuditMitigationActionsTaskTarget& WithAuditCheckToReasonCodeFilter(AuditCheckToReasonCodeFilterT&& value) { SetAuditCheckToReasonCodeFilter(std::forward<AuditCheckToReasonCodeFilterT>(value)); return *this;}
+    template<typename AuditCheckToReasonCodeFilterKeyT = Aws::String, typename AuditCheckToReasonCodeFilterValueT = Aws::Vector<Aws::String>>
+    AuditMitigationActionsTaskTarget& AddAuditCheckToReasonCodeFilter(AuditCheckToReasonCodeFilterKeyT&& key, AuditCheckToReasonCodeFilterValueT&& value) {
+      m_auditCheckToReasonCodeFilterHasBeenSet = true; m_auditCheckToReasonCodeFilter.emplace(std::forward<AuditCheckToReasonCodeFilterKeyT>(key), std::forward<AuditCheckToReasonCodeFilterValueT>(value)); return *this;
+    }
     ///@}
   private:
 

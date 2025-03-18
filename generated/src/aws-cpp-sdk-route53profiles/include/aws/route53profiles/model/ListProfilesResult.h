@@ -29,7 +29,7 @@ namespace Model
   class ListProfilesResult
   {
   public:
-    AWS_ROUTE53PROFILES_API ListProfilesResult();
+    AWS_ROUTE53PROFILES_API ListProfilesResult() = default;
     AWS_ROUTE53PROFILES_API ListProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53PROFILES_API ListProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * get the next group of results. In the next request, specify the value of
      * <code>NextToken</code> from the previous response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Summary information about the Profiles. </p>
      */
-    inline const Aws::Vector<ProfileSummary>& GetProfileSummaries() const{ return m_profileSummaries; }
-    inline void SetProfileSummaries(const Aws::Vector<ProfileSummary>& value) { m_profileSummaries = value; }
-    inline void SetProfileSummaries(Aws::Vector<ProfileSummary>&& value) { m_profileSummaries = std::move(value); }
-    inline ListProfilesResult& WithProfileSummaries(const Aws::Vector<ProfileSummary>& value) { SetProfileSummaries(value); return *this;}
-    inline ListProfilesResult& WithProfileSummaries(Aws::Vector<ProfileSummary>&& value) { SetProfileSummaries(std::move(value)); return *this;}
-    inline ListProfilesResult& AddProfileSummaries(const ProfileSummary& value) { m_profileSummaries.push_back(value); return *this; }
-    inline ListProfilesResult& AddProfileSummaries(ProfileSummary&& value) { m_profileSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProfileSummary>& GetProfileSummaries() const { return m_profileSummaries; }
+    template<typename ProfileSummariesT = Aws::Vector<ProfileSummary>>
+    void SetProfileSummaries(ProfileSummariesT&& value) { m_profileSummariesHasBeenSet = true; m_profileSummaries = std::forward<ProfileSummariesT>(value); }
+    template<typename ProfileSummariesT = Aws::Vector<ProfileSummary>>
+    ListProfilesResult& WithProfileSummaries(ProfileSummariesT&& value) { SetProfileSummaries(std::forward<ProfileSummariesT>(value)); return *this;}
+    template<typename ProfileSummariesT = ProfileSummary>
+    ListProfilesResult& AddProfileSummaries(ProfileSummariesT&& value) { m_profileSummariesHasBeenSet = true; m_profileSummaries.emplace_back(std::forward<ProfileSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ProfileSummary> m_profileSummaries;
+    bool m_profileSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

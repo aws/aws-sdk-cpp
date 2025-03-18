@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-WavSettings::WavSettings() : 
-    m_bitDepth(0.0),
-    m_bitDepthHasBeenSet(false),
-    m_codingMode(WavCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_sampleRate(0.0),
-    m_sampleRateHasBeenSet(false)
-{
-}
-
 WavSettings::WavSettings(JsonView jsonValue)
-  : WavSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ WavSettings& WavSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bitDepth"))
   {
     m_bitDepth = jsonValue.GetDouble("bitDepth");
-
     m_bitDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codingMode"))
   {
     m_codingMode = WavCodingModeMapper::GetWavCodingModeForName(jsonValue.GetString("codingMode"));
-
     m_codingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetDouble("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

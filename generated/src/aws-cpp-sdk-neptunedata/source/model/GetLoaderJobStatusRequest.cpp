@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLoaderJobStatusRequest::GetLoaderJobStatusRequest() : 
-    m_loadIdHasBeenSet(false),
-    m_details(false),
-    m_detailsHasBeenSet(false),
-    m_errors(false),
-    m_errorsHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_errorsPerPage(0),
-    m_errorsPerPageHasBeenSet(false)
-{
-}
-
 Aws::String GetLoaderJobStatusRequest::SerializePayload() const
 {
   return {};

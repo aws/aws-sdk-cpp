@@ -38,7 +38,7 @@ namespace Model
   class StorageDescriptor
   {
   public:
-    AWS_GLUE_API StorageDescriptor();
+    AWS_GLUE_API StorageDescriptor() = default;
     AWS_GLUE_API StorageDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API StorageDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
     /**
      * <p>A list of the <code>Columns</code> in the table.</p>
      */
-    inline const Aws::Vector<Column>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<Column>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<Column>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<Column>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline StorageDescriptor& WithColumns(const Aws::Vector<Column>& value) { SetColumns(value); return *this;}
-    inline StorageDescriptor& WithColumns(Aws::Vector<Column>&& value) { SetColumns(std::move(value)); return *this;}
-    inline StorageDescriptor& AddColumns(const Column& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline StorageDescriptor& AddColumns(Column&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+    template<typename ColumnsT = Aws::Vector<Column>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<Column>>
+    StorageDescriptor& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = Column>
+    StorageDescriptor& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,12 @@ namespace Model
      * warehouse location, followed by the database location in the warehouse, followed
      * by the table name.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline StorageDescriptor& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline StorageDescriptor& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline StorageDescriptor& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    StorageDescriptor& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,15 +77,14 @@ namespace Model
      * <p>A list of locations that point to the path where a Delta table is
      * located.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalLocations() const{ return m_additionalLocations; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalLocations() const { return m_additionalLocations; }
     inline bool AdditionalLocationsHasBeenSet() const { return m_additionalLocationsHasBeenSet; }
-    inline void SetAdditionalLocations(const Aws::Vector<Aws::String>& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = value; }
-    inline void SetAdditionalLocations(Aws::Vector<Aws::String>&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = std::move(value); }
-    inline StorageDescriptor& WithAdditionalLocations(const Aws::Vector<Aws::String>& value) { SetAdditionalLocations(value); return *this;}
-    inline StorageDescriptor& WithAdditionalLocations(Aws::Vector<Aws::String>&& value) { SetAdditionalLocations(std::move(value)); return *this;}
-    inline StorageDescriptor& AddAdditionalLocations(const Aws::String& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
-    inline StorageDescriptor& AddAdditionalLocations(Aws::String&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(std::move(value)); return *this; }
-    inline StorageDescriptor& AddAdditionalLocations(const char* value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
+    template<typename AdditionalLocationsT = Aws::Vector<Aws::String>>
+    void SetAdditionalLocations(AdditionalLocationsT&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = std::forward<AdditionalLocationsT>(value); }
+    template<typename AdditionalLocationsT = Aws::Vector<Aws::String>>
+    StorageDescriptor& WithAdditionalLocations(AdditionalLocationsT&& value) { SetAdditionalLocations(std::forward<AdditionalLocationsT>(value)); return *this;}
+    template<typename AdditionalLocationsT = Aws::String>
+    StorageDescriptor& AddAdditionalLocations(AdditionalLocationsT&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.emplace_back(std::forward<AdditionalLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +92,12 @@ namespace Model
      * <p>The input format: <code>SequenceFileInputFormat</code> (binary), or
      * <code>TextInputFormat</code>, or a custom format.</p>
      */
-    inline const Aws::String& GetInputFormat() const{ return m_inputFormat; }
+    inline const Aws::String& GetInputFormat() const { return m_inputFormat; }
     inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
-    inline void SetInputFormat(const Aws::String& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
-    inline void SetInputFormat(Aws::String&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::move(value); }
-    inline void SetInputFormat(const char* value) { m_inputFormatHasBeenSet = true; m_inputFormat.assign(value); }
-    inline StorageDescriptor& WithInputFormat(const Aws::String& value) { SetInputFormat(value); return *this;}
-    inline StorageDescriptor& WithInputFormat(Aws::String&& value) { SetInputFormat(std::move(value)); return *this;}
-    inline StorageDescriptor& WithInputFormat(const char* value) { SetInputFormat(value); return *this;}
+    template<typename InputFormatT = Aws::String>
+    void SetInputFormat(InputFormatT&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::forward<InputFormatT>(value); }
+    template<typename InputFormatT = Aws::String>
+    StorageDescriptor& WithInputFormat(InputFormatT&& value) { SetInputFormat(std::forward<InputFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +105,12 @@ namespace Model
      * <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or
      * <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
      */
-    inline const Aws::String& GetOutputFormat() const{ return m_outputFormat; }
+    inline const Aws::String& GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const Aws::String& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(Aws::String&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline void SetOutputFormat(const char* value) { m_outputFormatHasBeenSet = true; m_outputFormat.assign(value); }
-    inline StorageDescriptor& WithOutputFormat(const Aws::String& value) { SetOutputFormat(value); return *this;}
-    inline StorageDescriptor& WithOutputFormat(Aws::String&& value) { SetOutputFormat(std::move(value)); return *this;}
-    inline StorageDescriptor& WithOutputFormat(const char* value) { SetOutputFormat(value); return *this;}
+    template<typename OutputFormatT = Aws::String>
+    void SetOutputFormat(OutputFormatT&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::forward<OutputFormatT>(value); }
+    template<typename OutputFormatT = Aws::String>
+    StorageDescriptor& WithOutputFormat(OutputFormatT&& value) { SetOutputFormat(std::forward<OutputFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +118,7 @@ namespace Model
      * <p> <code>True</code> if the data in the table is compressed, or
      * <code>False</code> if not.</p>
      */
-    inline bool GetCompressed() const{ return m_compressed; }
+    inline bool GetCompressed() const { return m_compressed; }
     inline bool CompressedHasBeenSet() const { return m_compressedHasBeenSet; }
     inline void SetCompressed(bool value) { m_compressedHasBeenSet = true; m_compressed = value; }
     inline StorageDescriptor& WithCompressed(bool value) { SetCompressed(value); return *this;}
@@ -135,7 +128,7 @@ namespace Model
     /**
      * <p>Must be specified if the table contains any dimension columns.</p>
      */
-    inline int GetNumberOfBuckets() const{ return m_numberOfBuckets; }
+    inline int GetNumberOfBuckets() const { return m_numberOfBuckets; }
     inline bool NumberOfBucketsHasBeenSet() const { return m_numberOfBucketsHasBeenSet; }
     inline void SetNumberOfBuckets(int value) { m_numberOfBucketsHasBeenSet = true; m_numberOfBuckets = value; }
     inline StorageDescriptor& WithNumberOfBuckets(int value) { SetNumberOfBuckets(value); return *this;}
@@ -145,12 +138,12 @@ namespace Model
     /**
      * <p>The serialization/deserialization (SerDe) information.</p>
      */
-    inline const SerDeInfo& GetSerdeInfo() const{ return m_serdeInfo; }
+    inline const SerDeInfo& GetSerdeInfo() const { return m_serdeInfo; }
     inline bool SerdeInfoHasBeenSet() const { return m_serdeInfoHasBeenSet; }
-    inline void SetSerdeInfo(const SerDeInfo& value) { m_serdeInfoHasBeenSet = true; m_serdeInfo = value; }
-    inline void SetSerdeInfo(SerDeInfo&& value) { m_serdeInfoHasBeenSet = true; m_serdeInfo = std::move(value); }
-    inline StorageDescriptor& WithSerdeInfo(const SerDeInfo& value) { SetSerdeInfo(value); return *this;}
-    inline StorageDescriptor& WithSerdeInfo(SerDeInfo&& value) { SetSerdeInfo(std::move(value)); return *this;}
+    template<typename SerdeInfoT = SerDeInfo>
+    void SetSerdeInfo(SerdeInfoT&& value) { m_serdeInfoHasBeenSet = true; m_serdeInfo = std::forward<SerdeInfoT>(value); }
+    template<typename SerdeInfoT = SerDeInfo>
+    StorageDescriptor& WithSerdeInfo(SerdeInfoT&& value) { SetSerdeInfo(std::forward<SerdeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,48 +151,44 @@ namespace Model
      * <p>A list of reducer grouping columns, clustering columns, and bucketing columns
      * in the table.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBucketColumns() const{ return m_bucketColumns; }
+    inline const Aws::Vector<Aws::String>& GetBucketColumns() const { return m_bucketColumns; }
     inline bool BucketColumnsHasBeenSet() const { return m_bucketColumnsHasBeenSet; }
-    inline void SetBucketColumns(const Aws::Vector<Aws::String>& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns = value; }
-    inline void SetBucketColumns(Aws::Vector<Aws::String>&& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns = std::move(value); }
-    inline StorageDescriptor& WithBucketColumns(const Aws::Vector<Aws::String>& value) { SetBucketColumns(value); return *this;}
-    inline StorageDescriptor& WithBucketColumns(Aws::Vector<Aws::String>&& value) { SetBucketColumns(std::move(value)); return *this;}
-    inline StorageDescriptor& AddBucketColumns(const Aws::String& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns.push_back(value); return *this; }
-    inline StorageDescriptor& AddBucketColumns(Aws::String&& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns.push_back(std::move(value)); return *this; }
-    inline StorageDescriptor& AddBucketColumns(const char* value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns.push_back(value); return *this; }
+    template<typename BucketColumnsT = Aws::Vector<Aws::String>>
+    void SetBucketColumns(BucketColumnsT&& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns = std::forward<BucketColumnsT>(value); }
+    template<typename BucketColumnsT = Aws::Vector<Aws::String>>
+    StorageDescriptor& WithBucketColumns(BucketColumnsT&& value) { SetBucketColumns(std::forward<BucketColumnsT>(value)); return *this;}
+    template<typename BucketColumnsT = Aws::String>
+    StorageDescriptor& AddBucketColumns(BucketColumnsT&& value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns.emplace_back(std::forward<BucketColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list specifying the sort order of each bucket in the table.</p>
      */
-    inline const Aws::Vector<Order>& GetSortColumns() const{ return m_sortColumns; }
+    inline const Aws::Vector<Order>& GetSortColumns() const { return m_sortColumns; }
     inline bool SortColumnsHasBeenSet() const { return m_sortColumnsHasBeenSet; }
-    inline void SetSortColumns(const Aws::Vector<Order>& value) { m_sortColumnsHasBeenSet = true; m_sortColumns = value; }
-    inline void SetSortColumns(Aws::Vector<Order>&& value) { m_sortColumnsHasBeenSet = true; m_sortColumns = std::move(value); }
-    inline StorageDescriptor& WithSortColumns(const Aws::Vector<Order>& value) { SetSortColumns(value); return *this;}
-    inline StorageDescriptor& WithSortColumns(Aws::Vector<Order>&& value) { SetSortColumns(std::move(value)); return *this;}
-    inline StorageDescriptor& AddSortColumns(const Order& value) { m_sortColumnsHasBeenSet = true; m_sortColumns.push_back(value); return *this; }
-    inline StorageDescriptor& AddSortColumns(Order&& value) { m_sortColumnsHasBeenSet = true; m_sortColumns.push_back(std::move(value)); return *this; }
+    template<typename SortColumnsT = Aws::Vector<Order>>
+    void SetSortColumns(SortColumnsT&& value) { m_sortColumnsHasBeenSet = true; m_sortColumns = std::forward<SortColumnsT>(value); }
+    template<typename SortColumnsT = Aws::Vector<Order>>
+    StorageDescriptor& WithSortColumns(SortColumnsT&& value) { SetSortColumns(std::forward<SortColumnsT>(value)); return *this;}
+    template<typename SortColumnsT = Order>
+    StorageDescriptor& AddSortColumns(SortColumnsT&& value) { m_sortColumnsHasBeenSet = true; m_sortColumns.emplace_back(std::forward<SortColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The user-supplied properties in key-value form.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline StorageDescriptor& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline StorageDescriptor& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline StorageDescriptor& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline StorageDescriptor& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline StorageDescriptor& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StorageDescriptor& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline StorageDescriptor& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StorageDescriptor& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline StorageDescriptor& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    StorageDescriptor& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    StorageDescriptor& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -207,12 +196,12 @@ namespace Model
      * <p>The information about values that appear frequently in a column (skewed
      * values).</p>
      */
-    inline const SkewedInfo& GetSkewedInfo() const{ return m_skewedInfo; }
+    inline const SkewedInfo& GetSkewedInfo() const { return m_skewedInfo; }
     inline bool SkewedInfoHasBeenSet() const { return m_skewedInfoHasBeenSet; }
-    inline void SetSkewedInfo(const SkewedInfo& value) { m_skewedInfoHasBeenSet = true; m_skewedInfo = value; }
-    inline void SetSkewedInfo(SkewedInfo&& value) { m_skewedInfoHasBeenSet = true; m_skewedInfo = std::move(value); }
-    inline StorageDescriptor& WithSkewedInfo(const SkewedInfo& value) { SetSkewedInfo(value); return *this;}
-    inline StorageDescriptor& WithSkewedInfo(SkewedInfo&& value) { SetSkewedInfo(std::move(value)); return *this;}
+    template<typename SkewedInfoT = SkewedInfo>
+    void SetSkewedInfo(SkewedInfoT&& value) { m_skewedInfoHasBeenSet = true; m_skewedInfo = std::forward<SkewedInfoT>(value); }
+    template<typename SkewedInfoT = SkewedInfo>
+    StorageDescriptor& WithSkewedInfo(SkewedInfoT&& value) { SetSkewedInfo(std::forward<SkewedInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,7 +209,7 @@ namespace Model
      * <p> <code>True</code> if the table data is stored in subdirectories, or
      * <code>False</code> if not.</p>
      */
-    inline bool GetStoredAsSubDirectories() const{ return m_storedAsSubDirectories; }
+    inline bool GetStoredAsSubDirectories() const { return m_storedAsSubDirectories; }
     inline bool StoredAsSubDirectoriesHasBeenSet() const { return m_storedAsSubDirectoriesHasBeenSet; }
     inline void SetStoredAsSubDirectories(bool value) { m_storedAsSubDirectoriesHasBeenSet = true; m_storedAsSubDirectories = value; }
     inline StorageDescriptor& WithStoredAsSubDirectories(bool value) { SetStoredAsSubDirectories(value); return *this;}
@@ -232,12 +221,12 @@ namespace Model
      * <p>When creating a table, you can pass an empty list of columns for the schema,
      * and instead use a schema reference.</p>
      */
-    inline const SchemaReference& GetSchemaReference() const{ return m_schemaReference; }
+    inline const SchemaReference& GetSchemaReference() const { return m_schemaReference; }
     inline bool SchemaReferenceHasBeenSet() const { return m_schemaReferenceHasBeenSet; }
-    inline void SetSchemaReference(const SchemaReference& value) { m_schemaReferenceHasBeenSet = true; m_schemaReference = value; }
-    inline void SetSchemaReference(SchemaReference&& value) { m_schemaReferenceHasBeenSet = true; m_schemaReference = std::move(value); }
-    inline StorageDescriptor& WithSchemaReference(const SchemaReference& value) { SetSchemaReference(value); return *this;}
-    inline StorageDescriptor& WithSchemaReference(SchemaReference&& value) { SetSchemaReference(std::move(value)); return *this;}
+    template<typename SchemaReferenceT = SchemaReference>
+    void SetSchemaReference(SchemaReferenceT&& value) { m_schemaReferenceHasBeenSet = true; m_schemaReference = std::forward<SchemaReferenceT>(value); }
+    template<typename SchemaReferenceT = SchemaReference>
+    StorageDescriptor& WithSchemaReference(SchemaReferenceT&& value) { SetSchemaReference(std::forward<SchemaReferenceT>(value)); return *this;}
     ///@}
   private:
 
@@ -256,10 +245,10 @@ namespace Model
     Aws::String m_outputFormat;
     bool m_outputFormatHasBeenSet = false;
 
-    bool m_compressed;
+    bool m_compressed{false};
     bool m_compressedHasBeenSet = false;
 
-    int m_numberOfBuckets;
+    int m_numberOfBuckets{0};
     bool m_numberOfBucketsHasBeenSet = false;
 
     SerDeInfo m_serdeInfo;
@@ -277,7 +266,7 @@ namespace Model
     SkewedInfo m_skewedInfo;
     bool m_skewedInfoHasBeenSet = false;
 
-    bool m_storedAsSubDirectories;
+    bool m_storedAsSubDirectories{false};
     bool m_storedAsSubDirectoriesHasBeenSet = false;
 
     SchemaReference m_schemaReference;

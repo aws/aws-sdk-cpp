@@ -33,7 +33,7 @@ namespace Model
   class DetectorAdditionalConfiguration
   {
   public:
-    AWS_GUARDDUTY_API DetectorAdditionalConfiguration();
+    AWS_GUARDDUTY_API DetectorAdditionalConfiguration() = default;
     AWS_GUARDDUTY_API DetectorAdditionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API DetectorAdditionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>Name of the additional configuration.</p>
      */
-    inline const FeatureAdditionalConfiguration& GetName() const{ return m_name; }
+    inline FeatureAdditionalConfiguration GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const FeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(FeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DetectorAdditionalConfiguration& WithName(const FeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-    inline DetectorAdditionalConfiguration& WithName(FeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(FeatureAdditionalConfiguration value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DetectorAdditionalConfiguration& WithName(FeatureAdditionalConfiguration value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the additional configuration.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DetectorAdditionalConfiguration& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline DetectorAdditionalConfiguration& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DetectorAdditionalConfiguration& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    FeatureAdditionalConfiguration m_name;
+    FeatureAdditionalConfiguration m_name{FeatureAdditionalConfiguration::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

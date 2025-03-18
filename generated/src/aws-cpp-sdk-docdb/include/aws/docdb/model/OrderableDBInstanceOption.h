@@ -33,7 +33,7 @@ namespace Model
   class OrderableDBInstanceOption
   {
   public:
-    AWS_DOCDB_API OrderableDBInstanceOption();
+    AWS_DOCDB_API OrderableDBInstanceOption() = default;
     AWS_DOCDB_API OrderableDBInstanceOption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_DOCDB_API OrderableDBInstanceOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,77 +45,69 @@ namespace Model
     /**
      * <p>The engine type of an instance.</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline OrderableDBInstanceOption& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline OrderableDBInstanceOption& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    OrderableDBInstanceOption& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The engine version of an instance.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline OrderableDBInstanceOption& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline OrderableDBInstanceOption& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    OrderableDBInstanceOption& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance class for an instance.</p>
      */
-    inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+    inline const Aws::String& GetDBInstanceClass() const { return m_dBInstanceClass; }
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
-    inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
-    inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
-    inline OrderableDBInstanceOption& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
-    inline OrderableDBInstanceOption& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+    template<typename DBInstanceClassT = Aws::String>
+    void SetDBInstanceClass(DBInstanceClassT&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::forward<DBInstanceClassT>(value); }
+    template<typename DBInstanceClassT = Aws::String>
+    OrderableDBInstanceOption& WithDBInstanceClass(DBInstanceClassT&& value) { SetDBInstanceClass(std::forward<DBInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The license model for an instance.</p>
      */
-    inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+    inline const Aws::String& GetLicenseModel() const { return m_licenseModel; }
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
-    inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
-    inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
-    inline OrderableDBInstanceOption& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
-    inline OrderableDBInstanceOption& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+    template<typename LicenseModelT = Aws::String>
+    void SetLicenseModel(LicenseModelT&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::forward<LicenseModelT>(value); }
+    template<typename LicenseModelT = Aws::String>
+    OrderableDBInstanceOption& WithLicenseModel(LicenseModelT&& value) { SetLicenseModel(std::forward<LicenseModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Availability Zones for an instance.</p>
      */
-    inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline OrderableDBInstanceOption& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
-    inline OrderableDBInstanceOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline OrderableDBInstanceOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZone>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZone>>
+    OrderableDBInstanceOption& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = AvailabilityZone>
+    OrderableDBInstanceOption& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
      */
-    inline bool GetVpc() const{ return m_vpc; }
+    inline bool GetVpc() const { return m_vpc; }
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
     inline OrderableDBInstanceOption& WithVpc(bool value) { SetVpc(value); return *this;}
@@ -125,14 +117,12 @@ namespace Model
     /**
      * <p>The storage type to associate with the DB cluster</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline OrderableDBInstanceOption& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline OrderableDBInstanceOption& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline OrderableDBInstanceOption& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    OrderableDBInstanceOption& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,7 +141,7 @@ namespace Model
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet = false;
 
-    bool m_vpc;
+    bool m_vpc{false};
     bool m_vpcHasBeenSet = false;
 
     Aws::String m_storageType;

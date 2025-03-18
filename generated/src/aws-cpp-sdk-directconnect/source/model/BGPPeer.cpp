@@ -18,26 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-BGPPeer::BGPPeer() : 
-    m_bgpPeerIdHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_bgpPeerState(BGPPeerState::NOT_SET),
-    m_bgpPeerStateHasBeenSet(false),
-    m_bgpStatus(BGPStatus::NOT_SET),
-    m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false)
-{
-}
-
 BGPPeer::BGPPeer(JsonView jsonValue)
-  : BGPPeer()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ BGPPeer& BGPPeer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bgpPeerId"))
   {
     m_bgpPeerId = jsonValue.GetString("bgpPeerId");
-
     m_bgpPeerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetInteger("asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
-
     m_authKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressFamily"))
   {
     m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
-
     m_addressFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonAddress"))
   {
     m_amazonAddress = jsonValue.GetString("amazonAddress");
-
     m_amazonAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerAddress"))
   {
     m_customerAddress = jsonValue.GetString("customerAddress");
-
     m_customerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bgpPeerState"))
   {
     m_bgpPeerState = BGPPeerStateMapper::GetBGPPeerStateForName(jsonValue.GetString("bgpPeerState"));
-
     m_bgpPeerStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bgpStatus"))
   {
     m_bgpStatus = BGPStatusMapper::GetBGPStatusForName(jsonValue.GetString("bgpStatus"));
-
     m_bgpStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
     m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class PurchaseReservedDBInstancesOfferingRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API PurchaseReservedDBInstancesOfferingRequest();
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The ID of the Reserved DB instance offering to purchase.</p> <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
      */
-    inline const Aws::String& GetReservedDBInstancesOfferingId() const{ return m_reservedDBInstancesOfferingId; }
+    inline const Aws::String& GetReservedDBInstancesOfferingId() const { return m_reservedDBInstancesOfferingId; }
     inline bool ReservedDBInstancesOfferingIdHasBeenSet() const { return m_reservedDBInstancesOfferingIdHasBeenSet; }
-    inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
-    inline void SetReservedDBInstancesOfferingId(Aws::String&& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = std::move(value); }
-    inline void SetReservedDBInstancesOfferingId(const char* value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId.assign(value); }
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(const Aws::String& value) { SetReservedDBInstancesOfferingId(value); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(Aws::String&& value) { SetReservedDBInstancesOfferingId(std::move(value)); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
+    template<typename ReservedDBInstancesOfferingIdT = Aws::String>
+    void SetReservedDBInstancesOfferingId(ReservedDBInstancesOfferingIdT&& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = std::forward<ReservedDBInstancesOfferingIdT>(value); }
+    template<typename ReservedDBInstancesOfferingIdT = Aws::String>
+    PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(ReservedDBInstancesOfferingIdT&& value) { SetReservedDBInstancesOfferingId(std::forward<ReservedDBInstancesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,21 +59,19 @@ namespace Model
      * <p>Customer-specified identifier to track this reservation.</p> <p>Example:
      * myreservationID</p>
      */
-    inline const Aws::String& GetReservedDBInstanceId() const{ return m_reservedDBInstanceId; }
+    inline const Aws::String& GetReservedDBInstanceId() const { return m_reservedDBInstanceId; }
     inline bool ReservedDBInstanceIdHasBeenSet() const { return m_reservedDBInstanceIdHasBeenSet; }
-    inline void SetReservedDBInstanceId(const Aws::String& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
-    inline void SetReservedDBInstanceId(Aws::String&& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = std::move(value); }
-    inline void SetReservedDBInstanceId(const char* value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId.assign(value); }
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(const Aws::String& value) { SetReservedDBInstanceId(value); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(Aws::String&& value) { SetReservedDBInstanceId(std::move(value)); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(const char* value) { SetReservedDBInstanceId(value); return *this;}
+    template<typename ReservedDBInstanceIdT = Aws::String>
+    void SetReservedDBInstanceId(ReservedDBInstanceIdT&& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = std::forward<ReservedDBInstanceIdT>(value); }
+    template<typename ReservedDBInstanceIdT = Aws::String>
+    PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(ReservedDBInstanceIdT&& value) { SetReservedDBInstanceId(std::forward<ReservedDBInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
-    inline int GetDBInstanceCount() const{ return m_dBInstanceCount; }
+    inline int GetDBInstanceCount() const { return m_dBInstanceCount; }
     inline bool DBInstanceCountHasBeenSet() const { return m_dBInstanceCountHasBeenSet; }
     inline void SetDBInstanceCount(int value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
     inline PurchaseReservedDBInstancesOfferingRequest& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
@@ -83,14 +79,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PurchaseReservedDBInstancesOfferingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PurchaseReservedDBInstancesOfferingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PurchaseReservedDBInstancesOfferingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PurchaseReservedDBInstancesOfferingRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PurchaseReservedDBInstancesOfferingRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -100,7 +96,7 @@ namespace Model
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet = false;
 
-    int m_dBInstanceCount;
+    int m_dBInstanceCount{0};
     bool m_dBInstanceCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

@@ -31,7 +31,7 @@ namespace Model
   class GeospatialLineStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLineStyle();
+    AWS_QUICKSIGHT_API GeospatialLineStyle() = default;
     AWS_QUICKSIGHT_API GeospatialLineStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLineStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The symbol style for a line style.</p>
      */
-    inline const GeospatialLineSymbolStyle& GetLineSymbolStyle() const{ return m_lineSymbolStyle; }
+    inline const GeospatialLineSymbolStyle& GetLineSymbolStyle() const { return m_lineSymbolStyle; }
     inline bool LineSymbolStyleHasBeenSet() const { return m_lineSymbolStyleHasBeenSet; }
-    inline void SetLineSymbolStyle(const GeospatialLineSymbolStyle& value) { m_lineSymbolStyleHasBeenSet = true; m_lineSymbolStyle = value; }
-    inline void SetLineSymbolStyle(GeospatialLineSymbolStyle&& value) { m_lineSymbolStyleHasBeenSet = true; m_lineSymbolStyle = std::move(value); }
-    inline GeospatialLineStyle& WithLineSymbolStyle(const GeospatialLineSymbolStyle& value) { SetLineSymbolStyle(value); return *this;}
-    inline GeospatialLineStyle& WithLineSymbolStyle(GeospatialLineSymbolStyle&& value) { SetLineSymbolStyle(std::move(value)); return *this;}
+    template<typename LineSymbolStyleT = GeospatialLineSymbolStyle>
+    void SetLineSymbolStyle(LineSymbolStyleT&& value) { m_lineSymbolStyleHasBeenSet = true; m_lineSymbolStyle = std::forward<LineSymbolStyleT>(value); }
+    template<typename LineSymbolStyleT = GeospatialLineSymbolStyle>
+    GeospatialLineStyle& WithLineSymbolStyle(LineSymbolStyleT&& value) { SetLineSymbolStyle(std::forward<LineSymbolStyleT>(value)); return *this;}
     ///@}
   private:
 

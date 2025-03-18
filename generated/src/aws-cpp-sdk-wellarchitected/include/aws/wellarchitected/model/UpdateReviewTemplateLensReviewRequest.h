@@ -22,7 +22,7 @@ namespace Model
   class UpdateReviewTemplateLensReviewRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateReviewTemplateLensReviewRequest();
+    AWS_WELLARCHITECTED_API UpdateReviewTemplateLensReviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,55 +37,46 @@ namespace Model
     /**
      * <p>The review template ARN.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline UpdateReviewTemplateLensReviewRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    UpdateReviewTemplateLensReviewRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline UpdateReviewTemplateLensReviewRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    UpdateReviewTemplateLensReviewRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensNotes() const{ return m_lensNotes; }
+    inline const Aws::String& GetLensNotes() const { return m_lensNotes; }
     inline bool LensNotesHasBeenSet() const { return m_lensNotesHasBeenSet; }
-    inline void SetLensNotes(const Aws::String& value) { m_lensNotesHasBeenSet = true; m_lensNotes = value; }
-    inline void SetLensNotes(Aws::String&& value) { m_lensNotesHasBeenSet = true; m_lensNotes = std::move(value); }
-    inline void SetLensNotes(const char* value) { m_lensNotesHasBeenSet = true; m_lensNotes.assign(value); }
-    inline UpdateReviewTemplateLensReviewRequest& WithLensNotes(const Aws::String& value) { SetLensNotes(value); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithLensNotes(Aws::String&& value) { SetLensNotes(std::move(value)); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithLensNotes(const char* value) { SetLensNotes(value); return *this;}
+    template<typename LensNotesT = Aws::String>
+    void SetLensNotes(LensNotesT&& value) { m_lensNotesHasBeenSet = true; m_lensNotes = std::forward<LensNotesT>(value); }
+    template<typename LensNotesT = Aws::String>
+    UpdateReviewTemplateLensReviewRequest& WithLensNotes(LensNotesT&& value) { SetLensNotes(std::forward<LensNotesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetPillarNotes() const{ return m_pillarNotes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPillarNotes() const { return m_pillarNotes; }
     inline bool PillarNotesHasBeenSet() const { return m_pillarNotesHasBeenSet; }
-    inline void SetPillarNotes(const Aws::Map<Aws::String, Aws::String>& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = value; }
-    inline void SetPillarNotes(Aws::Map<Aws::String, Aws::String>&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = std::move(value); }
-    inline UpdateReviewTemplateLensReviewRequest& WithPillarNotes(const Aws::Map<Aws::String, Aws::String>& value) { SetPillarNotes(value); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& WithPillarNotes(Aws::Map<Aws::String, Aws::String>&& value) { SetPillarNotes(std::move(value)); return *this;}
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(const Aws::String& key, const Aws::String& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, value); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(Aws::String&& key, const Aws::String& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), value); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(const Aws::String& key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, std::move(value)); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(Aws::String&& key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(const char* key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, std::move(value)); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(Aws::String&& key, const char* value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), value); return *this; }
-    inline UpdateReviewTemplateLensReviewRequest& AddPillarNotes(const char* key, const char* value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, value); return *this; }
+    template<typename PillarNotesT = Aws::Map<Aws::String, Aws::String>>
+    void SetPillarNotes(PillarNotesT&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = std::forward<PillarNotesT>(value); }
+    template<typename PillarNotesT = Aws::Map<Aws::String, Aws::String>>
+    UpdateReviewTemplateLensReviewRequest& WithPillarNotes(PillarNotesT&& value) { SetPillarNotes(std::forward<PillarNotesT>(value)); return *this;}
+    template<typename PillarNotesKeyT = Aws::String, typename PillarNotesValueT = Aws::String>
+    UpdateReviewTemplateLensReviewRequest& AddPillarNotes(PillarNotesKeyT&& key, PillarNotesValueT&& value) {
+      m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::forward<PillarNotesKeyT>(key), std::forward<PillarNotesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

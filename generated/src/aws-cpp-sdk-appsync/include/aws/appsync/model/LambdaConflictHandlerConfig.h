@@ -32,7 +32,7 @@ namespace Model
   class LambdaConflictHandlerConfig
   {
   public:
-    AWS_APPSYNC_API LambdaConflictHandlerConfig();
+    AWS_APPSYNC_API LambdaConflictHandlerConfig() = default;
     AWS_APPSYNC_API LambdaConflictHandlerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API LambdaConflictHandlerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict
      * Handler.</p>
      */
-    inline const Aws::String& GetLambdaConflictHandlerArn() const{ return m_lambdaConflictHandlerArn; }
+    inline const Aws::String& GetLambdaConflictHandlerArn() const { return m_lambdaConflictHandlerArn; }
     inline bool LambdaConflictHandlerArnHasBeenSet() const { return m_lambdaConflictHandlerArnHasBeenSet; }
-    inline void SetLambdaConflictHandlerArn(const Aws::String& value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn = value; }
-    inline void SetLambdaConflictHandlerArn(Aws::String&& value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn = std::move(value); }
-    inline void SetLambdaConflictHandlerArn(const char* value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn.assign(value); }
-    inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(const Aws::String& value) { SetLambdaConflictHandlerArn(value); return *this;}
-    inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(Aws::String&& value) { SetLambdaConflictHandlerArn(std::move(value)); return *this;}
-    inline LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(const char* value) { SetLambdaConflictHandlerArn(value); return *this;}
+    template<typename LambdaConflictHandlerArnT = Aws::String>
+    void SetLambdaConflictHandlerArn(LambdaConflictHandlerArnT&& value) { m_lambdaConflictHandlerArnHasBeenSet = true; m_lambdaConflictHandlerArn = std::forward<LambdaConflictHandlerArnT>(value); }
+    template<typename LambdaConflictHandlerArnT = Aws::String>
+    LambdaConflictHandlerConfig& WithLambdaConflictHandlerArn(LambdaConflictHandlerArnT&& value) { SetLambdaConflictHandlerArn(std::forward<LambdaConflictHandlerArnT>(value)); return *this;}
     ///@}
   private:
 

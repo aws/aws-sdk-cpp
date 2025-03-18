@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateHITTypeOfHITRequest::UpdateHITTypeOfHITRequest() : 
-    m_hITIdHasBeenSet(false),
-    m_hITTypeIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateHITTypeOfHITRequest::SerializePayload() const
 {
   JsonValue payload;

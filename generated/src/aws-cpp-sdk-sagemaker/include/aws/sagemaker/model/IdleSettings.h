@@ -32,7 +32,7 @@ namespace Model
   class IdleSettings
   {
   public:
-    AWS_SAGEMAKER_API IdleSettings();
+    AWS_SAGEMAKER_API IdleSettings() = default;
     AWS_SAGEMAKER_API IdleSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API IdleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>Indicates whether idle shutdown is activated for the application type.</p>
      */
-    inline const LifecycleManagement& GetLifecycleManagement() const{ return m_lifecycleManagement; }
+    inline LifecycleManagement GetLifecycleManagement() const { return m_lifecycleManagement; }
     inline bool LifecycleManagementHasBeenSet() const { return m_lifecycleManagementHasBeenSet; }
-    inline void SetLifecycleManagement(const LifecycleManagement& value) { m_lifecycleManagementHasBeenSet = true; m_lifecycleManagement = value; }
-    inline void SetLifecycleManagement(LifecycleManagement&& value) { m_lifecycleManagementHasBeenSet = true; m_lifecycleManagement = std::move(value); }
-    inline IdleSettings& WithLifecycleManagement(const LifecycleManagement& value) { SetLifecycleManagement(value); return *this;}
-    inline IdleSettings& WithLifecycleManagement(LifecycleManagement&& value) { SetLifecycleManagement(std::move(value)); return *this;}
+    inline void SetLifecycleManagement(LifecycleManagement value) { m_lifecycleManagementHasBeenSet = true; m_lifecycleManagement = value; }
+    inline IdleSettings& WithLifecycleManagement(LifecycleManagement value) { SetLifecycleManagement(value); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>The time that SageMaker waits after the application becomes idle before
      * shutting it down.</p>
      */
-    inline int GetIdleTimeoutInMinutes() const{ return m_idleTimeoutInMinutes; }
+    inline int GetIdleTimeoutInMinutes() const { return m_idleTimeoutInMinutes; }
     inline bool IdleTimeoutInMinutesHasBeenSet() const { return m_idleTimeoutInMinutesHasBeenSet; }
     inline void SetIdleTimeoutInMinutes(int value) { m_idleTimeoutInMinutesHasBeenSet = true; m_idleTimeoutInMinutes = value; }
     inline IdleSettings& WithIdleTimeoutInMinutes(int value) { SetIdleTimeoutInMinutes(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
      * <p>The minimum value in minutes that custom idle shutdown can be set to by the
      * user.</p>
      */
-    inline int GetMinIdleTimeoutInMinutes() const{ return m_minIdleTimeoutInMinutes; }
+    inline int GetMinIdleTimeoutInMinutes() const { return m_minIdleTimeoutInMinutes; }
     inline bool MinIdleTimeoutInMinutesHasBeenSet() const { return m_minIdleTimeoutInMinutesHasBeenSet; }
     inline void SetMinIdleTimeoutInMinutes(int value) { m_minIdleTimeoutInMinutesHasBeenSet = true; m_minIdleTimeoutInMinutes = value; }
     inline IdleSettings& WithMinIdleTimeoutInMinutes(int value) { SetMinIdleTimeoutInMinutes(value); return *this;}
@@ -77,23 +75,23 @@ namespace Model
      * <p>The maximum value in minutes that custom idle shutdown can be set to by the
      * user.</p>
      */
-    inline int GetMaxIdleTimeoutInMinutes() const{ return m_maxIdleTimeoutInMinutes; }
+    inline int GetMaxIdleTimeoutInMinutes() const { return m_maxIdleTimeoutInMinutes; }
     inline bool MaxIdleTimeoutInMinutesHasBeenSet() const { return m_maxIdleTimeoutInMinutesHasBeenSet; }
     inline void SetMaxIdleTimeoutInMinutes(int value) { m_maxIdleTimeoutInMinutesHasBeenSet = true; m_maxIdleTimeoutInMinutes = value; }
     inline IdleSettings& WithMaxIdleTimeoutInMinutes(int value) { SetMaxIdleTimeoutInMinutes(value); return *this;}
     ///@}
   private:
 
-    LifecycleManagement m_lifecycleManagement;
+    LifecycleManagement m_lifecycleManagement{LifecycleManagement::NOT_SET};
     bool m_lifecycleManagementHasBeenSet = false;
 
-    int m_idleTimeoutInMinutes;
+    int m_idleTimeoutInMinutes{0};
     bool m_idleTimeoutInMinutesHasBeenSet = false;
 
-    int m_minIdleTimeoutInMinutes;
+    int m_minIdleTimeoutInMinutes{0};
     bool m_minIdleTimeoutInMinutesHasBeenSet = false;
 
-    int m_maxIdleTimeoutInMinutes;
+    int m_maxIdleTimeoutInMinutes{0};
     bool m_maxIdleTimeoutInMinutesHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class DescribeLedgerResult
   {
   public:
-    AWS_QLDB_API DescribeLedgerResult();
+    AWS_QLDB_API DescribeLedgerResult() = default;
     AWS_QLDB_API DescribeLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API DescribeLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,37 +40,31 @@ namespace Model
     /**
      * <p>The name of the ledger.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeLedgerResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeLedgerResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeLedgerResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeLedgerResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the ledger.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeLedgerResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeLedgerResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeLedgerResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeLedgerResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the ledger.</p>
      */
-    inline const LedgerState& GetState() const{ return m_state; }
-    inline void SetState(const LedgerState& value) { m_state = value; }
-    inline void SetState(LedgerState&& value) { m_state = std::move(value); }
-    inline DescribeLedgerResult& WithState(const LedgerState& value) { SetState(value); return *this;}
-    inline DescribeLedgerResult& WithState(LedgerState&& value) { SetState(std::move(value)); return *this;}
+    inline LedgerState GetState() const { return m_state; }
+    inline void SetState(LedgerState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DescribeLedgerResult& WithState(LedgerState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -79,22 +73,20 @@ namespace Model
      * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
      * UTC.)</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline DescribeLedgerResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DescribeLedgerResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DescribeLedgerResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permissions mode of the ledger.</p>
      */
-    inline const PermissionsMode& GetPermissionsMode() const{ return m_permissionsMode; }
-    inline void SetPermissionsMode(const PermissionsMode& value) { m_permissionsMode = value; }
-    inline void SetPermissionsMode(PermissionsMode&& value) { m_permissionsMode = std::move(value); }
-    inline DescribeLedgerResult& WithPermissionsMode(const PermissionsMode& value) { SetPermissionsMode(value); return *this;}
-    inline DescribeLedgerResult& WithPermissionsMode(PermissionsMode&& value) { SetPermissionsMode(std::move(value)); return *this;}
+    inline PermissionsMode GetPermissionsMode() const { return m_permissionsMode; }
+    inline void SetPermissionsMode(PermissionsMode value) { m_permissionsModeHasBeenSet = true; m_permissionsMode = value; }
+    inline DescribeLedgerResult& WithPermissionsMode(PermissionsMode value) { SetPermissionsMode(value); return *this;}
     ///@}
 
     ///@{
@@ -106,8 +98,8 @@ namespace Model
      * <code>UpdateLedger</code> operation to set this parameter to
      * <code>false</code>.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
-    inline void SetDeletionProtection(bool value) { m_deletionProtection = value; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline DescribeLedgerResult& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
     ///@}
 
@@ -118,40 +110,46 @@ namespace Model
      * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
      * Services owned KMS key for encryption.</p>
      */
-    inline const LedgerEncryptionDescription& GetEncryptionDescription() const{ return m_encryptionDescription; }
-    inline void SetEncryptionDescription(const LedgerEncryptionDescription& value) { m_encryptionDescription = value; }
-    inline void SetEncryptionDescription(LedgerEncryptionDescription&& value) { m_encryptionDescription = std::move(value); }
-    inline DescribeLedgerResult& WithEncryptionDescription(const LedgerEncryptionDescription& value) { SetEncryptionDescription(value); return *this;}
-    inline DescribeLedgerResult& WithEncryptionDescription(LedgerEncryptionDescription&& value) { SetEncryptionDescription(std::move(value)); return *this;}
+    inline const LedgerEncryptionDescription& GetEncryptionDescription() const { return m_encryptionDescription; }
+    template<typename EncryptionDescriptionT = LedgerEncryptionDescription>
+    void SetEncryptionDescription(EncryptionDescriptionT&& value) { m_encryptionDescriptionHasBeenSet = true; m_encryptionDescription = std::forward<EncryptionDescriptionT>(value); }
+    template<typename EncryptionDescriptionT = LedgerEncryptionDescription>
+    DescribeLedgerResult& WithEncryptionDescription(EncryptionDescriptionT&& value) { SetEncryptionDescription(std::forward<EncryptionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLedgerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLedgerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLedgerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLedgerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    LedgerState m_state;
+    LedgerState m_state{LedgerState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    PermissionsMode m_permissionsMode;
+    PermissionsMode m_permissionsMode{PermissionsMode::NOT_SET};
+    bool m_permissionsModeHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
+    bool m_deletionProtectionHasBeenSet = false;
 
     LedgerEncryptionDescription m_encryptionDescription;
+    bool m_encryptionDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

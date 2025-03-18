@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Attendee::Attendee() : 
-    m_attendeeIdHasBeenSet(false),
-    m_joinTokenHasBeenSet(false)
-{
-}
-
 Attendee::Attendee(JsonView jsonValue)
-  : Attendee()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Attendee& Attendee::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttendeeId"))
   {
     m_attendeeId = jsonValue.GetString("AttendeeId");
-
     m_attendeeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinToken"))
   {
     m_joinToken = jsonValue.GetString("JoinToken");
-
     m_joinTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

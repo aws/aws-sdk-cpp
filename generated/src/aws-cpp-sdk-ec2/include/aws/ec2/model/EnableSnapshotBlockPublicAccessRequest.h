@@ -21,7 +21,7 @@ namespace Model
   class EnableSnapshotBlockPublicAccessRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableSnapshotBlockPublicAccessRequest();
+    AWS_EC2_API EnableSnapshotBlockPublicAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,12 +50,10 @@ namespace Model
      * available.</p> </li> </ul> <p> <code>unblocked</code> is not a valid value for
      * <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
-    inline const SnapshotBlockPublicAccessState& GetState() const{ return m_state; }
+    inline SnapshotBlockPublicAccessState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const SnapshotBlockPublicAccessState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(SnapshotBlockPublicAccessState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline EnableSnapshotBlockPublicAccessRequest& WithState(const SnapshotBlockPublicAccessState& value) { SetState(value); return *this;}
-    inline EnableSnapshotBlockPublicAccessRequest& WithState(SnapshotBlockPublicAccessState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(SnapshotBlockPublicAccessState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline EnableSnapshotBlockPublicAccessRequest& WithState(SnapshotBlockPublicAccessState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -65,17 +63,17 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableSnapshotBlockPublicAccessRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    SnapshotBlockPublicAccessState m_state;
+    SnapshotBlockPublicAccessState m_state{SnapshotBlockPublicAccessState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

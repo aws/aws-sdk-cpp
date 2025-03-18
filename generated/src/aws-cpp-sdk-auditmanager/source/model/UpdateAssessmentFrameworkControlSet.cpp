@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-UpdateAssessmentFrameworkControlSet::UpdateAssessmentFrameworkControlSet() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlsHasBeenSet(false)
-{
-}
-
 UpdateAssessmentFrameworkControlSet::UpdateAssessmentFrameworkControlSet(JsonView jsonValue)
-  : UpdateAssessmentFrameworkControlSet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateAssessmentFrameworkControlSet& UpdateAssessmentFrameworkControlSet::operat
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controls"))
   {
     Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
@@ -56,7 +44,6 @@ UpdateAssessmentFrameworkControlSet& UpdateAssessmentFrameworkControlSet::operat
     }
     m_controlsHasBeenSet = true;
   }
-
   return *this;
 }
 

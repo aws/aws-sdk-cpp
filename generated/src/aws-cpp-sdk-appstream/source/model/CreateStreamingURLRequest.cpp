@@ -12,17 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamingURLRequest::CreateStreamingURLRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_validity(0),
-    m_validityHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamingURLRequest::SerializePayload() const
 {
   JsonValue payload;

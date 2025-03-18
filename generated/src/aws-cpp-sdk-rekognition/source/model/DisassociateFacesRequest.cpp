@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateFacesRequest::DisassociateFacesRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_faceIdsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateFacesRequest::SerializePayload() const
 {
   JsonValue payload;

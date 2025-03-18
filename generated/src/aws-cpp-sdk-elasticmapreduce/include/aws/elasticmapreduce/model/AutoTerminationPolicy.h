@@ -33,7 +33,7 @@ namespace Model
   class AutoTerminationPolicy
   {
   public:
-    AWS_EMR_API AutoTerminationPolicy();
+    AWS_EMR_API AutoTerminationPolicy() = default;
     AWS_EMR_API AutoTerminationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API AutoTerminationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * automatically terminates. You can specify a minimum of 60 seconds and a maximum
      * of 604800 seconds (seven days).</p>
      */
-    inline long long GetIdleTimeout() const{ return m_idleTimeout; }
+    inline long long GetIdleTimeout() const { return m_idleTimeout; }
     inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
     inline void SetIdleTimeout(long long value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
     inline AutoTerminationPolicy& WithIdleTimeout(long long value) { SetIdleTimeout(value); return *this;}
     ///@}
   private:
 
-    long long m_idleTimeout;
+    long long m_idleTimeout{0};
     bool m_idleTimeoutHasBeenSet = false;
   };
 

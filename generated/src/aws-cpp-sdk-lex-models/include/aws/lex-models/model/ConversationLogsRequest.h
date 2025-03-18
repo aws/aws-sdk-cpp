@@ -34,7 +34,7 @@ namespace Model
   class ConversationLogsRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsRequest() = default;
     AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>The settings for your conversation logs. You can log the conversation text,
      * conversation audio, or both.</p>
      */
-    inline const Aws::Vector<LogSettingsRequest>& GetLogSettings() const{ return m_logSettings; }
+    inline const Aws::Vector<LogSettingsRequest>& GetLogSettings() const { return m_logSettings; }
     inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
-    inline void SetLogSettings(const Aws::Vector<LogSettingsRequest>& value) { m_logSettingsHasBeenSet = true; m_logSettings = value; }
-    inline void SetLogSettings(Aws::Vector<LogSettingsRequest>&& value) { m_logSettingsHasBeenSet = true; m_logSettings = std::move(value); }
-    inline ConversationLogsRequest& WithLogSettings(const Aws::Vector<LogSettingsRequest>& value) { SetLogSettings(value); return *this;}
-    inline ConversationLogsRequest& WithLogSettings(Aws::Vector<LogSettingsRequest>&& value) { SetLogSettings(std::move(value)); return *this;}
-    inline ConversationLogsRequest& AddLogSettings(const LogSettingsRequest& value) { m_logSettingsHasBeenSet = true; m_logSettings.push_back(value); return *this; }
-    inline ConversationLogsRequest& AddLogSettings(LogSettingsRequest&& value) { m_logSettingsHasBeenSet = true; m_logSettings.push_back(std::move(value)); return *this; }
+    template<typename LogSettingsT = Aws::Vector<LogSettingsRequest>>
+    void SetLogSettings(LogSettingsT&& value) { m_logSettingsHasBeenSet = true; m_logSettings = std::forward<LogSettingsT>(value); }
+    template<typename LogSettingsT = Aws::Vector<LogSettingsRequest>>
+    ConversationLogsRequest& WithLogSettings(LogSettingsT&& value) { SetLogSettings(std::forward<LogSettingsT>(value)); return *this;}
+    template<typename LogSettingsT = LogSettingsRequest>
+    ConversationLogsRequest& AddLogSettings(LogSettingsT&& value) { m_logSettingsHasBeenSet = true; m_logSettings.emplace_back(std::forward<LogSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
      * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline ConversationLogsRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline ConversationLogsRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline ConversationLogsRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    ConversationLogsRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
   private:
 

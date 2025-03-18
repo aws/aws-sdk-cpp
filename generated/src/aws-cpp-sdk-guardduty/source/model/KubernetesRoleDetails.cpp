@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesRoleDetails::KubernetesRoleDetails() : 
-    m_kindHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uidHasBeenSet(false)
-{
-}
-
 KubernetesRoleDetails::KubernetesRoleDetails(JsonView jsonValue)
-  : KubernetesRoleDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KubernetesRoleDetails& KubernetesRoleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kind"))
   {
     m_kind = jsonValue.GetString("kind");
-
     m_kindHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   return *this;
 }
 

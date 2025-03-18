@@ -35,7 +35,7 @@ namespace Model
   class ResultConfigurationUpdates
   {
   public:
-    AWS_ATHENA_API ResultConfigurationUpdates();
+    AWS_ATHENA_API ResultConfigurationUpdates() = default;
     AWS_ATHENA_API ResultConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API ResultConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
-    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
+    inline const Aws::String& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
-    inline ResultConfigurationUpdates& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
-    inline ResultConfigurationUpdates& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
-    inline ResultConfigurationUpdates& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
+    template<typename OutputLocationT = Aws::String>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = Aws::String>
+    ResultConfigurationUpdates& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline bool GetRemoveOutputLocation() const{ return m_removeOutputLocation; }
+    inline bool GetRemoveOutputLocation() const { return m_removeOutputLocation; }
     inline bool RemoveOutputLocationHasBeenSet() const { return m_removeOutputLocationHasBeenSet; }
     inline void SetRemoveOutputLocation(bool value) { m_removeOutputLocationHasBeenSet = true; m_removeOutputLocation = value; }
     inline ResultConfigurationUpdates& WithRemoveOutputLocation(bool value) { SetRemoveOutputLocation(value); return *this;}
@@ -84,12 +82,12 @@ namespace Model
     /**
      * <p>The encryption configuration for query and calculation results.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline ResultConfigurationUpdates& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline ResultConfigurationUpdates& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    ResultConfigurationUpdates& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +103,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline bool GetRemoveEncryptionConfiguration() const{ return m_removeEncryptionConfiguration; }
+    inline bool GetRemoveEncryptionConfiguration() const { return m_removeEncryptionConfiguration; }
     inline bool RemoveEncryptionConfigurationHasBeenSet() const { return m_removeEncryptionConfigurationHasBeenSet; }
     inline void SetRemoveEncryptionConfiguration(bool value) { m_removeEncryptionConfigurationHasBeenSet = true; m_removeEncryptionConfiguration = value; }
     inline ResultConfigurationUpdates& WithRemoveEncryptionConfiguration(bool value) { SetRemoveEncryptionConfiguration(value); return *this;}
@@ -127,14 +125,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline ResultConfigurationUpdates& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline ResultConfigurationUpdates& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline ResultConfigurationUpdates& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    ResultConfigurationUpdates& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,7 +145,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline bool GetRemoveExpectedBucketOwner() const{ return m_removeExpectedBucketOwner; }
+    inline bool GetRemoveExpectedBucketOwner() const { return m_removeExpectedBucketOwner; }
     inline bool RemoveExpectedBucketOwnerHasBeenSet() const { return m_removeExpectedBucketOwnerHasBeenSet; }
     inline void SetRemoveExpectedBucketOwner(bool value) { m_removeExpectedBucketOwnerHasBeenSet = true; m_removeExpectedBucketOwner = value; }
     inline ResultConfigurationUpdates& WithRemoveExpectedBucketOwner(bool value) { SetRemoveExpectedBucketOwner(value); return *this;}
@@ -159,12 +155,12 @@ namespace Model
     /**
      * <p>The ACL configuration for the query results.</p>
      */
-    inline const AclConfiguration& GetAclConfiguration() const{ return m_aclConfiguration; }
+    inline const AclConfiguration& GetAclConfiguration() const { return m_aclConfiguration; }
     inline bool AclConfigurationHasBeenSet() const { return m_aclConfigurationHasBeenSet; }
-    inline void SetAclConfiguration(const AclConfiguration& value) { m_aclConfigurationHasBeenSet = true; m_aclConfiguration = value; }
-    inline void SetAclConfiguration(AclConfiguration&& value) { m_aclConfigurationHasBeenSet = true; m_aclConfiguration = std::move(value); }
-    inline ResultConfigurationUpdates& WithAclConfiguration(const AclConfiguration& value) { SetAclConfiguration(value); return *this;}
-    inline ResultConfigurationUpdates& WithAclConfiguration(AclConfiguration&& value) { SetAclConfiguration(std::move(value)); return *this;}
+    template<typename AclConfigurationT = AclConfiguration>
+    void SetAclConfiguration(AclConfigurationT&& value) { m_aclConfigurationHasBeenSet = true; m_aclConfiguration = std::forward<AclConfigurationT>(value); }
+    template<typename AclConfigurationT = AclConfiguration>
+    ResultConfigurationUpdates& WithAclConfiguration(AclConfigurationT&& value) { SetAclConfiguration(std::forward<AclConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,7 +175,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline bool GetRemoveAclConfiguration() const{ return m_removeAclConfiguration; }
+    inline bool GetRemoveAclConfiguration() const { return m_removeAclConfiguration; }
     inline bool RemoveAclConfigurationHasBeenSet() const { return m_removeAclConfigurationHasBeenSet; }
     inline void SetRemoveAclConfiguration(bool value) { m_removeAclConfigurationHasBeenSet = true; m_removeAclConfiguration = value; }
     inline ResultConfigurationUpdates& WithRemoveAclConfiguration(bool value) { SetRemoveAclConfiguration(value); return *this;}
@@ -189,25 +185,25 @@ namespace Model
     Aws::String m_outputLocation;
     bool m_outputLocationHasBeenSet = false;
 
-    bool m_removeOutputLocation;
+    bool m_removeOutputLocation{false};
     bool m_removeOutputLocationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet = false;
 
-    bool m_removeEncryptionConfiguration;
+    bool m_removeEncryptionConfiguration{false};
     bool m_removeEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
 
-    bool m_removeExpectedBucketOwner;
+    bool m_removeExpectedBucketOwner{false};
     bool m_removeExpectedBucketOwnerHasBeenSet = false;
 
     AclConfiguration m_aclConfiguration;
     bool m_aclConfigurationHasBeenSet = false;
 
-    bool m_removeAclConfiguration;
+    bool m_removeAclConfiguration{false};
     bool m_removeAclConfigurationHasBeenSet = false;
   };
 

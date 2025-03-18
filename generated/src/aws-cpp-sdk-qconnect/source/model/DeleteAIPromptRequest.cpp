@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAIPromptRequest::DeleteAIPromptRequest() : 
-    m_aiPromptIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAIPromptRequest::SerializePayload() const
 {
   return {};

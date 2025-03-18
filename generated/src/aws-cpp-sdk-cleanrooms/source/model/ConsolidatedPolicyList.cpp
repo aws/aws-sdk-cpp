@@ -18,19 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConsolidatedPolicyList::ConsolidatedPolicyList() : 
-    m_joinColumnsHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_listColumnsHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false),
-    m_allowedResultReceiversHasBeenSet(false),
-    m_allowedAdditionalAnalysesHasBeenSet(false)
-{
-}
-
 ConsolidatedPolicyList::ConsolidatedPolicyList(JsonView jsonValue)
-  : ConsolidatedPolicyList()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ ConsolidatedPolicyList& ConsolidatedPolicyList::operator =(JsonView jsonValue)
     }
     m_joinColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedJoinOperators"))
   {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
@@ -56,7 +43,6 @@ ConsolidatedPolicyList& ConsolidatedPolicyList::operator =(JsonView jsonValue)
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listColumns"))
   {
     Aws::Utils::Array<JsonView> listColumnsJsonList = jsonValue.GetArray("listColumns");
@@ -66,14 +52,11 @@ ConsolidatedPolicyList& ConsolidatedPolicyList::operator =(JsonView jsonValue)
     }
     m_listColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedResultReceivers"))
   {
     Aws::Utils::Array<JsonView> allowedResultReceiversJsonList = jsonValue.GetArray("allowedResultReceivers");
@@ -83,7 +66,6 @@ ConsolidatedPolicyList& ConsolidatedPolicyList::operator =(JsonView jsonValue)
     }
     m_allowedResultReceiversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAdditionalAnalyses"))
   {
     Aws::Utils::Array<JsonView> allowedAdditionalAnalysesJsonList = jsonValue.GetArray("allowedAdditionalAnalyses");
@@ -93,7 +75,6 @@ ConsolidatedPolicyList& ConsolidatedPolicyList::operator =(JsonView jsonValue)
     }
     m_allowedAdditionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

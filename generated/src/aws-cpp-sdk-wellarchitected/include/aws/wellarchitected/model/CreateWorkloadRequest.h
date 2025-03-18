@@ -30,7 +30,7 @@ namespace Model
   class CreateWorkloadRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API CreateWorkloadRequest();
+    AWS_WELLARCHITECTED_API CreateWorkloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,192 +43,166 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline CreateWorkloadRequest& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline CreateWorkloadRequest& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    CreateWorkloadRequest& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateWorkloadRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateWorkloadRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateWorkloadRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WorkloadEnvironment& GetEnvironment() const{ return m_environment; }
+    inline WorkloadEnvironment GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const WorkloadEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(WorkloadEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline CreateWorkloadRequest& WithEnvironment(const WorkloadEnvironment& value) { SetEnvironment(value); return *this;}
-    inline CreateWorkloadRequest& WithEnvironment(WorkloadEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+    inline void SetEnvironment(WorkloadEnvironment value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline CreateWorkloadRequest& WithEnvironment(WorkloadEnvironment value) { SetEnvironment(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline CreateWorkloadRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline CreateWorkloadRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    CreateWorkloadRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetAwsRegions() const{ return m_awsRegions; }
+    inline const Aws::Vector<Aws::String>& GetAwsRegions() const { return m_awsRegions; }
     inline bool AwsRegionsHasBeenSet() const { return m_awsRegionsHasBeenSet; }
-    inline void SetAwsRegions(const Aws::Vector<Aws::String>& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = value; }
-    inline void SetAwsRegions(Aws::Vector<Aws::String>&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = std::move(value); }
-    inline CreateWorkloadRequest& WithAwsRegions(const Aws::Vector<Aws::String>& value) { SetAwsRegions(value); return *this;}
-    inline CreateWorkloadRequest& WithAwsRegions(Aws::Vector<Aws::String>&& value) { SetAwsRegions(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddAwsRegions(const Aws::String& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddAwsRegions(Aws::String&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddAwsRegions(const char* value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(value); return *this; }
+    template<typename AwsRegionsT = Aws::Vector<Aws::String>>
+    void SetAwsRegions(AwsRegionsT&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = std::forward<AwsRegionsT>(value); }
+    template<typename AwsRegionsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithAwsRegions(AwsRegionsT&& value) { SetAwsRegions(std::forward<AwsRegionsT>(value)); return *this;}
+    template<typename AwsRegionsT = Aws::String>
+    CreateWorkloadRequest& AddAwsRegions(AwsRegionsT&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.emplace_back(std::forward<AwsRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetNonAwsRegions() const{ return m_nonAwsRegions; }
+    inline const Aws::Vector<Aws::String>& GetNonAwsRegions() const { return m_nonAwsRegions; }
     inline bool NonAwsRegionsHasBeenSet() const { return m_nonAwsRegionsHasBeenSet; }
-    inline void SetNonAwsRegions(const Aws::Vector<Aws::String>& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions = value; }
-    inline void SetNonAwsRegions(Aws::Vector<Aws::String>&& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions = std::move(value); }
-    inline CreateWorkloadRequest& WithNonAwsRegions(const Aws::Vector<Aws::String>& value) { SetNonAwsRegions(value); return *this;}
-    inline CreateWorkloadRequest& WithNonAwsRegions(Aws::Vector<Aws::String>&& value) { SetNonAwsRegions(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddNonAwsRegions(const Aws::String& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddNonAwsRegions(Aws::String&& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddNonAwsRegions(const char* value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions.push_back(value); return *this; }
+    template<typename NonAwsRegionsT = Aws::Vector<Aws::String>>
+    void SetNonAwsRegions(NonAwsRegionsT&& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions = std::forward<NonAwsRegionsT>(value); }
+    template<typename NonAwsRegionsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithNonAwsRegions(NonAwsRegionsT&& value) { SetNonAwsRegions(std::forward<NonAwsRegionsT>(value)); return *this;}
+    template<typename NonAwsRegionsT = Aws::String>
+    CreateWorkloadRequest& AddNonAwsRegions(NonAwsRegionsT&& value) { m_nonAwsRegionsHasBeenSet = true; m_nonAwsRegions.emplace_back(std::forward<NonAwsRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetPillarPriorities() const{ return m_pillarPriorities; }
+    inline const Aws::Vector<Aws::String>& GetPillarPriorities() const { return m_pillarPriorities; }
     inline bool PillarPrioritiesHasBeenSet() const { return m_pillarPrioritiesHasBeenSet; }
-    inline void SetPillarPriorities(const Aws::Vector<Aws::String>& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities = value; }
-    inline void SetPillarPriorities(Aws::Vector<Aws::String>&& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities = std::move(value); }
-    inline CreateWorkloadRequest& WithPillarPriorities(const Aws::Vector<Aws::String>& value) { SetPillarPriorities(value); return *this;}
-    inline CreateWorkloadRequest& WithPillarPriorities(Aws::Vector<Aws::String>&& value) { SetPillarPriorities(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddPillarPriorities(const Aws::String& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddPillarPriorities(Aws::String&& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddPillarPriorities(const char* value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities.push_back(value); return *this; }
+    template<typename PillarPrioritiesT = Aws::Vector<Aws::String>>
+    void SetPillarPriorities(PillarPrioritiesT&& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities = std::forward<PillarPrioritiesT>(value); }
+    template<typename PillarPrioritiesT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithPillarPriorities(PillarPrioritiesT&& value) { SetPillarPriorities(std::forward<PillarPrioritiesT>(value)); return *this;}
+    template<typename PillarPrioritiesT = Aws::String>
+    CreateWorkloadRequest& AddPillarPriorities(PillarPrioritiesT&& value) { m_pillarPrioritiesHasBeenSet = true; m_pillarPriorities.emplace_back(std::forward<PillarPrioritiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetArchitecturalDesign() const{ return m_architecturalDesign; }
+    inline const Aws::String& GetArchitecturalDesign() const { return m_architecturalDesign; }
     inline bool ArchitecturalDesignHasBeenSet() const { return m_architecturalDesignHasBeenSet; }
-    inline void SetArchitecturalDesign(const Aws::String& value) { m_architecturalDesignHasBeenSet = true; m_architecturalDesign = value; }
-    inline void SetArchitecturalDesign(Aws::String&& value) { m_architecturalDesignHasBeenSet = true; m_architecturalDesign = std::move(value); }
-    inline void SetArchitecturalDesign(const char* value) { m_architecturalDesignHasBeenSet = true; m_architecturalDesign.assign(value); }
-    inline CreateWorkloadRequest& WithArchitecturalDesign(const Aws::String& value) { SetArchitecturalDesign(value); return *this;}
-    inline CreateWorkloadRequest& WithArchitecturalDesign(Aws::String&& value) { SetArchitecturalDesign(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithArchitecturalDesign(const char* value) { SetArchitecturalDesign(value); return *this;}
+    template<typename ArchitecturalDesignT = Aws::String>
+    void SetArchitecturalDesign(ArchitecturalDesignT&& value) { m_architecturalDesignHasBeenSet = true; m_architecturalDesign = std::forward<ArchitecturalDesignT>(value); }
+    template<typename ArchitecturalDesignT = Aws::String>
+    CreateWorkloadRequest& WithArchitecturalDesign(ArchitecturalDesignT&& value) { SetArchitecturalDesign(std::forward<ArchitecturalDesignT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetReviewOwner() const{ return m_reviewOwner; }
+    inline const Aws::String& GetReviewOwner() const { return m_reviewOwner; }
     inline bool ReviewOwnerHasBeenSet() const { return m_reviewOwnerHasBeenSet; }
-    inline void SetReviewOwner(const Aws::String& value) { m_reviewOwnerHasBeenSet = true; m_reviewOwner = value; }
-    inline void SetReviewOwner(Aws::String&& value) { m_reviewOwnerHasBeenSet = true; m_reviewOwner = std::move(value); }
-    inline void SetReviewOwner(const char* value) { m_reviewOwnerHasBeenSet = true; m_reviewOwner.assign(value); }
-    inline CreateWorkloadRequest& WithReviewOwner(const Aws::String& value) { SetReviewOwner(value); return *this;}
-    inline CreateWorkloadRequest& WithReviewOwner(Aws::String&& value) { SetReviewOwner(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithReviewOwner(const char* value) { SetReviewOwner(value); return *this;}
+    template<typename ReviewOwnerT = Aws::String>
+    void SetReviewOwner(ReviewOwnerT&& value) { m_reviewOwnerHasBeenSet = true; m_reviewOwner = std::forward<ReviewOwnerT>(value); }
+    template<typename ReviewOwnerT = Aws::String>
+    CreateWorkloadRequest& WithReviewOwner(ReviewOwnerT&& value) { SetReviewOwner(std::forward<ReviewOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetIndustryType() const{ return m_industryType; }
+    inline const Aws::String& GetIndustryType() const { return m_industryType; }
     inline bool IndustryTypeHasBeenSet() const { return m_industryTypeHasBeenSet; }
-    inline void SetIndustryType(const Aws::String& value) { m_industryTypeHasBeenSet = true; m_industryType = value; }
-    inline void SetIndustryType(Aws::String&& value) { m_industryTypeHasBeenSet = true; m_industryType = std::move(value); }
-    inline void SetIndustryType(const char* value) { m_industryTypeHasBeenSet = true; m_industryType.assign(value); }
-    inline CreateWorkloadRequest& WithIndustryType(const Aws::String& value) { SetIndustryType(value); return *this;}
-    inline CreateWorkloadRequest& WithIndustryType(Aws::String&& value) { SetIndustryType(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithIndustryType(const char* value) { SetIndustryType(value); return *this;}
+    template<typename IndustryTypeT = Aws::String>
+    void SetIndustryType(IndustryTypeT&& value) { m_industryTypeHasBeenSet = true; m_industryType = std::forward<IndustryTypeT>(value); }
+    template<typename IndustryTypeT = Aws::String>
+    CreateWorkloadRequest& WithIndustryType(IndustryTypeT&& value) { SetIndustryType(std::forward<IndustryTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetIndustry() const{ return m_industry; }
+    inline const Aws::String& GetIndustry() const { return m_industry; }
     inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
-    inline void SetIndustry(const Aws::String& value) { m_industryHasBeenSet = true; m_industry = value; }
-    inline void SetIndustry(Aws::String&& value) { m_industryHasBeenSet = true; m_industry = std::move(value); }
-    inline void SetIndustry(const char* value) { m_industryHasBeenSet = true; m_industry.assign(value); }
-    inline CreateWorkloadRequest& WithIndustry(const Aws::String& value) { SetIndustry(value); return *this;}
-    inline CreateWorkloadRequest& WithIndustry(Aws::String&& value) { SetIndustry(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithIndustry(const char* value) { SetIndustry(value); return *this;}
+    template<typename IndustryT = Aws::String>
+    void SetIndustry(IndustryT&& value) { m_industryHasBeenSet = true; m_industry = std::forward<IndustryT>(value); }
+    template<typename IndustryT = Aws::String>
+    CreateWorkloadRequest& WithIndustry(IndustryT&& value) { SetIndustry(std::forward<IndustryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetLenses() const{ return m_lenses; }
+    inline const Aws::Vector<Aws::String>& GetLenses() const { return m_lenses; }
     inline bool LensesHasBeenSet() const { return m_lensesHasBeenSet; }
-    inline void SetLenses(const Aws::Vector<Aws::String>& value) { m_lensesHasBeenSet = true; m_lenses = value; }
-    inline void SetLenses(Aws::Vector<Aws::String>&& value) { m_lensesHasBeenSet = true; m_lenses = std::move(value); }
-    inline CreateWorkloadRequest& WithLenses(const Aws::Vector<Aws::String>& value) { SetLenses(value); return *this;}
-    inline CreateWorkloadRequest& WithLenses(Aws::Vector<Aws::String>&& value) { SetLenses(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddLenses(const Aws::String& value) { m_lensesHasBeenSet = true; m_lenses.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddLenses(Aws::String&& value) { m_lensesHasBeenSet = true; m_lenses.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddLenses(const char* value) { m_lensesHasBeenSet = true; m_lenses.push_back(value); return *this; }
+    template<typename LensesT = Aws::Vector<Aws::String>>
+    void SetLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses = std::forward<LensesT>(value); }
+    template<typename LensesT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithLenses(LensesT&& value) { SetLenses(std::forward<LensesT>(value)); return *this;}
+    template<typename LensesT = Aws::String>
+    CreateWorkloadRequest& AddLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses.emplace_back(std::forward<LensesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline CreateWorkloadRequest& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline CreateWorkloadRequest& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    CreateWorkloadRequest& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateWorkloadRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateWorkloadRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateWorkloadRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to be associated with the workload.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWorkloadRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateWorkloadRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateWorkloadRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkloadRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkloadRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWorkloadRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateWorkloadRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -236,69 +210,66 @@ namespace Model
      * <p>Well-Architected discovery configuration settings associated to the
      * workload.</p>
      */
-    inline const WorkloadDiscoveryConfig& GetDiscoveryConfig() const{ return m_discoveryConfig; }
+    inline const WorkloadDiscoveryConfig& GetDiscoveryConfig() const { return m_discoveryConfig; }
     inline bool DiscoveryConfigHasBeenSet() const { return m_discoveryConfigHasBeenSet; }
-    inline void SetDiscoveryConfig(const WorkloadDiscoveryConfig& value) { m_discoveryConfigHasBeenSet = true; m_discoveryConfig = value; }
-    inline void SetDiscoveryConfig(WorkloadDiscoveryConfig&& value) { m_discoveryConfigHasBeenSet = true; m_discoveryConfig = std::move(value); }
-    inline CreateWorkloadRequest& WithDiscoveryConfig(const WorkloadDiscoveryConfig& value) { SetDiscoveryConfig(value); return *this;}
-    inline CreateWorkloadRequest& WithDiscoveryConfig(WorkloadDiscoveryConfig&& value) { SetDiscoveryConfig(std::move(value)); return *this;}
+    template<typename DiscoveryConfigT = WorkloadDiscoveryConfig>
+    void SetDiscoveryConfig(DiscoveryConfigT&& value) { m_discoveryConfigHasBeenSet = true; m_discoveryConfig = std::forward<DiscoveryConfigT>(value); }
+    template<typename DiscoveryConfigT = WorkloadDiscoveryConfig>
+    CreateWorkloadRequest& WithDiscoveryConfig(DiscoveryConfigT&& value) { SetDiscoveryConfig(std::forward<DiscoveryConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of AppRegistry application ARNs associated to the workload.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplications() const{ return m_applications; }
+    inline const Aws::Vector<Aws::String>& GetApplications() const { return m_applications; }
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
-    inline void SetApplications(const Aws::Vector<Aws::String>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
-    inline void SetApplications(Aws::Vector<Aws::String>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
-    inline CreateWorkloadRequest& WithApplications(const Aws::Vector<Aws::String>& value) { SetApplications(value); return *this;}
-    inline CreateWorkloadRequest& WithApplications(Aws::Vector<Aws::String>&& value) { SetApplications(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddApplications(const Aws::String& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddApplications(Aws::String&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddApplications(const char* value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+    template<typename ApplicationsT = Aws::Vector<Aws::String>>
+    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
+    template<typename ApplicationsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
+    template<typename ApplicationsT = Aws::String>
+    CreateWorkloadRequest& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of profile ARNs associated with the workload.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProfileArns() const{ return m_profileArns; }
+    inline const Aws::Vector<Aws::String>& GetProfileArns() const { return m_profileArns; }
     inline bool ProfileArnsHasBeenSet() const { return m_profileArnsHasBeenSet; }
-    inline void SetProfileArns(const Aws::Vector<Aws::String>& value) { m_profileArnsHasBeenSet = true; m_profileArns = value; }
-    inline void SetProfileArns(Aws::Vector<Aws::String>&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::move(value); }
-    inline CreateWorkloadRequest& WithProfileArns(const Aws::Vector<Aws::String>& value) { SetProfileArns(value); return *this;}
-    inline CreateWorkloadRequest& WithProfileArns(Aws::Vector<Aws::String>&& value) { SetProfileArns(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddProfileArns(const Aws::String& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddProfileArns(Aws::String&& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddProfileArns(const char* value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
+    template<typename ProfileArnsT = Aws::Vector<Aws::String>>
+    void SetProfileArns(ProfileArnsT&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::forward<ProfileArnsT>(value); }
+    template<typename ProfileArnsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithProfileArns(ProfileArnsT&& value) { SetProfileArns(std::forward<ProfileArnsT>(value)); return *this;}
+    template<typename ProfileArnsT = Aws::String>
+    CreateWorkloadRequest& AddProfileArns(ProfileArnsT&& value) { m_profileArnsHasBeenSet = true; m_profileArns.emplace_back(std::forward<ProfileArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of review template ARNs to associate with the workload.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReviewTemplateArns() const{ return m_reviewTemplateArns; }
+    inline const Aws::Vector<Aws::String>& GetReviewTemplateArns() const { return m_reviewTemplateArns; }
     inline bool ReviewTemplateArnsHasBeenSet() const { return m_reviewTemplateArnsHasBeenSet; }
-    inline void SetReviewTemplateArns(const Aws::Vector<Aws::String>& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns = value; }
-    inline void SetReviewTemplateArns(Aws::Vector<Aws::String>&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns = std::move(value); }
-    inline CreateWorkloadRequest& WithReviewTemplateArns(const Aws::Vector<Aws::String>& value) { SetReviewTemplateArns(value); return *this;}
-    inline CreateWorkloadRequest& WithReviewTemplateArns(Aws::Vector<Aws::String>&& value) { SetReviewTemplateArns(std::move(value)); return *this;}
-    inline CreateWorkloadRequest& AddReviewTemplateArns(const Aws::String& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(value); return *this; }
-    inline CreateWorkloadRequest& AddReviewTemplateArns(Aws::String&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(std::move(value)); return *this; }
-    inline CreateWorkloadRequest& AddReviewTemplateArns(const char* value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(value); return *this; }
+    template<typename ReviewTemplateArnsT = Aws::Vector<Aws::String>>
+    void SetReviewTemplateArns(ReviewTemplateArnsT&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns = std::forward<ReviewTemplateArnsT>(value); }
+    template<typename ReviewTemplateArnsT = Aws::Vector<Aws::String>>
+    CreateWorkloadRequest& WithReviewTemplateArns(ReviewTemplateArnsT&& value) { SetReviewTemplateArns(std::forward<ReviewTemplateArnsT>(value)); return *this;}
+    template<typename ReviewTemplateArnsT = Aws::String>
+    CreateWorkloadRequest& AddReviewTemplateArns(ReviewTemplateArnsT&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.emplace_back(std::forward<ReviewTemplateArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Jira configuration settings when creating a workload.</p>
      */
-    inline const WorkloadJiraConfigurationInput& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+    inline const WorkloadJiraConfigurationInput& GetJiraConfiguration() const { return m_jiraConfiguration; }
     inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
-    inline void SetJiraConfiguration(const WorkloadJiraConfigurationInput& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
-    inline void SetJiraConfiguration(WorkloadJiraConfigurationInput&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
-    inline CreateWorkloadRequest& WithJiraConfiguration(const WorkloadJiraConfigurationInput& value) { SetJiraConfiguration(value); return *this;}
-    inline CreateWorkloadRequest& WithJiraConfiguration(WorkloadJiraConfigurationInput&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+    template<typename JiraConfigurationT = WorkloadJiraConfigurationInput>
+    void SetJiraConfiguration(JiraConfigurationT&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::forward<JiraConfigurationT>(value); }
+    template<typename JiraConfigurationT = WorkloadJiraConfigurationInput>
+    CreateWorkloadRequest& WithJiraConfiguration(JiraConfigurationT&& value) { SetJiraConfiguration(std::forward<JiraConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -308,7 +279,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    WorkloadEnvironment m_environment;
+    WorkloadEnvironment m_environment{WorkloadEnvironment::NOT_SET};
     bool m_environmentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;

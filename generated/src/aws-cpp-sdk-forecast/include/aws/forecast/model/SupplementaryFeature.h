@@ -49,7 +49,7 @@ namespace Model
   class SupplementaryFeature
   {
   public:
-    AWS_FORECASTSERVICE_API SupplementaryFeature();
+    AWS_FORECASTSERVICE_API SupplementaryFeature() = default;
     AWS_FORECASTSERVICE_API SupplementaryFeature(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API SupplementaryFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,12 @@ namespace Model
      * <p>The name of the feature. Valid values: <code>"holiday"</code> and
      * <code>"weather"</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SupplementaryFeature& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SupplementaryFeature& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SupplementaryFeature& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SupplementaryFeature& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +103,12 @@ namespace Model
      * </li> <li> <p>"US" - UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p>
      * </li> <li> <p>"UY" - URUGUAY</p> </li> <li> <p>"VE" - VENEZUELA</p> </li> </ul>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SupplementaryFeature& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SupplementaryFeature& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SupplementaryFeature& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SupplementaryFeature& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

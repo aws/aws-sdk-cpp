@@ -32,7 +32,7 @@ namespace Model
   class KeyListEntry
   {
   public:
-    AWS_KMS_API KeyListEntry();
+    AWS_KMS_API KeyListEntry() = default;
     AWS_KMS_API KeyListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API KeyListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Unique identifier of the key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline KeyListEntry& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline KeyListEntry& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline KeyListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    KeyListEntry& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the key.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline KeyListEntry& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline KeyListEntry& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline KeyListEntry& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    KeyListEntry& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
   private:
 

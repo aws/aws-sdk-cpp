@@ -29,7 +29,7 @@ namespace Model
   class ListAppVersionAppComponentsResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListAppVersionAppComponentsResult();
+    AWS_RESILIENCEHUB_API ListAppVersionAppComponentsResult() = default;
     AWS_RESILIENCEHUB_API ListAppVersionAppComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListAppVersionAppComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,75 +44,72 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline ListAppVersionAppComponentsResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ListAppVersionAppComponentsResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ListAppVersionAppComponentsResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ListAppVersionAppComponentsResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines an Application Component.</p>
      */
-    inline const Aws::Vector<AppComponent>& GetAppComponents() const{ return m_appComponents; }
-    inline void SetAppComponents(const Aws::Vector<AppComponent>& value) { m_appComponents = value; }
-    inline void SetAppComponents(Aws::Vector<AppComponent>&& value) { m_appComponents = std::move(value); }
-    inline ListAppVersionAppComponentsResult& WithAppComponents(const Aws::Vector<AppComponent>& value) { SetAppComponents(value); return *this;}
-    inline ListAppVersionAppComponentsResult& WithAppComponents(Aws::Vector<AppComponent>&& value) { SetAppComponents(std::move(value)); return *this;}
-    inline ListAppVersionAppComponentsResult& AddAppComponents(const AppComponent& value) { m_appComponents.push_back(value); return *this; }
-    inline ListAppVersionAppComponentsResult& AddAppComponents(AppComponent&& value) { m_appComponents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppComponent>& GetAppComponents() const { return m_appComponents; }
+    template<typename AppComponentsT = Aws::Vector<AppComponent>>
+    void SetAppComponents(AppComponentsT&& value) { m_appComponentsHasBeenSet = true; m_appComponents = std::forward<AppComponentsT>(value); }
+    template<typename AppComponentsT = Aws::Vector<AppComponent>>
+    ListAppVersionAppComponentsResult& WithAppComponents(AppComponentsT&& value) { SetAppComponents(std::forward<AppComponentsT>(value)); return *this;}
+    template<typename AppComponentsT = AppComponent>
+    ListAppVersionAppComponentsResult& AddAppComponents(AppComponentsT&& value) { m_appComponentsHasBeenSet = true; m_appComponents.emplace_back(std::forward<AppComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Resilience Hub application version.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline ListAppVersionAppComponentsResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline ListAppVersionAppComponentsResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline ListAppVersionAppComponentsResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    ListAppVersionAppComponentsResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppVersionAppComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppVersionAppComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppVersionAppComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppVersionAppComponentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppVersionAppComponentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppVersionAppComponentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppVersionAppComponentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppVersionAppComponentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<AppComponent> m_appComponents;
+    bool m_appComponentsHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class ExecuteQueryRequest : public IoTTwinMakerRequest
   {
   public:
-    AWS_IOTTWINMAKER_API ExecuteQueryRequest();
+    AWS_IOTTWINMAKER_API ExecuteQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,35 +36,31 @@ namespace Model
     /**
      * <p>The ID of the workspace.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline ExecuteQueryRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline ExecuteQueryRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline ExecuteQueryRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    ExecuteQueryRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query statement.</p>
      */
-    inline const Aws::String& GetQueryStatement() const{ return m_queryStatement; }
+    inline const Aws::String& GetQueryStatement() const { return m_queryStatement; }
     inline bool QueryStatementHasBeenSet() const { return m_queryStatementHasBeenSet; }
-    inline void SetQueryStatement(const Aws::String& value) { m_queryStatementHasBeenSet = true; m_queryStatement = value; }
-    inline void SetQueryStatement(Aws::String&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::move(value); }
-    inline void SetQueryStatement(const char* value) { m_queryStatementHasBeenSet = true; m_queryStatement.assign(value); }
-    inline ExecuteQueryRequest& WithQueryStatement(const Aws::String& value) { SetQueryStatement(value); return *this;}
-    inline ExecuteQueryRequest& WithQueryStatement(Aws::String&& value) { SetQueryStatement(std::move(value)); return *this;}
-    inline ExecuteQueryRequest& WithQueryStatement(const char* value) { SetQueryStatement(value); return *this;}
+    template<typename QueryStatementT = Aws::String>
+    void SetQueryStatement(QueryStatementT&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::forward<QueryStatementT>(value); }
+    template<typename QueryStatementT = Aws::String>
+    ExecuteQueryRequest& WithQueryStatement(QueryStatementT&& value) { SetQueryStatement(std::forward<QueryStatementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time. The default is 50.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ExecuteQueryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -74,14 +70,12 @@ namespace Model
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ExecuteQueryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ExecuteQueryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ExecuteQueryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ExecuteQueryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -91,7 +85,7 @@ namespace Model
     Aws::String m_queryStatement;
     bool m_queryStatementHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

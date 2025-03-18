@@ -30,7 +30,7 @@ namespace Model
   class AcceleratorTotalMemoryMiBRange
   {
   public:
-    AWS_DEADLINE_API AcceleratorTotalMemoryMiBRange();
+    AWS_DEADLINE_API AcceleratorTotalMemoryMiBRange() = default;
     AWS_DEADLINE_API AcceleratorTotalMemoryMiBRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AcceleratorTotalMemoryMiBRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The minimum amount of memory to use for the accelerator, measured in MiB.</p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline AcceleratorTotalMemoryMiBRange& WithMin(int value) { SetMin(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum amount of memory to use for the accelerator, measured in MiB.</p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline AcceleratorTotalMemoryMiBRange& WithMax(int value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
   };
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTestConfigurationsRequest::ListTestConfigurationsRequest() : 
-    m_testConfigurationIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTestConfigurationsRequest::SerializePayload() const
 {
   return {};

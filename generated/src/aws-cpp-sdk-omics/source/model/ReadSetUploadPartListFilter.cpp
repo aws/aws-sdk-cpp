@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadSetUploadPartListFilter::ReadSetUploadPartListFilter() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
-{
-}
-
 ReadSetUploadPartListFilter::ReadSetUploadPartListFilter(JsonView jsonValue)
-  : ReadSetUploadPartListFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReadSetUploadPartListFilter& ReadSetUploadPartListFilter::operator =(JsonView js
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBefore"))
   {
     m_createdBefore = jsonValue.GetString("createdBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

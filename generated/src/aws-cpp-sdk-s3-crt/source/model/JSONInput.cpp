@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-JSONInput::JSONInput() : 
-    m_type(JSONType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 JSONInput::JSONInput(const XmlNode& xmlNode)
-  : JSONInput()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ JSONInput& JSONInput::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = JSONTypeMapper::GetJSONTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = JSONTypeMapper::GetJSONTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
   }

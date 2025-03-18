@@ -18,16 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AntennaUplinkConfig::AntennaUplinkConfig() : 
-    m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false),
-    m_transmitDisabled(false),
-    m_transmitDisabledHasBeenSet(false)
-{
-}
-
 AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue)
-  : AntennaUplinkConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AntennaUplinkConfig& AntennaUplinkConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("spectrumConfig"))
   {
     m_spectrumConfig = jsonValue.GetObject("spectrumConfig");
-
     m_spectrumConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetEirp"))
   {
     m_targetEirp = jsonValue.GetObject("targetEirp");
-
     m_targetEirpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transmitDisabled"))
   {
     m_transmitDisabled = jsonValue.GetBool("transmitDisabled");
-
     m_transmitDisabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ConsumedLicenseSummary::ConsumedLicenseSummary() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false)
-{
-}
-
 ConsumedLicenseSummary::ConsumedLicenseSummary(JsonView jsonValue)
-  : ConsumedLicenseSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConsumedLicenseSummary& ConsumedLicenseSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenses"))
   {
     m_consumedLicenses = jsonValue.GetInt64("ConsumedLicenses");
-
     m_consumedLicensesHasBeenSet = true;
   }
-
   return *this;
 }
 

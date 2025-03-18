@@ -30,7 +30,7 @@ namespace Model
   class PortRange
   {
   public:
-    AWS_GLOBALACCELERATOR_API PortRange();
+    AWS_GLOBALACCELERATOR_API PortRange() = default;
     AWS_GLOBALACCELERATOR_API PortRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The first port in the range of ports, inclusive.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline PortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The last port in the range of ports, inclusive.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline PortRange& WithToPort(int value) { SetToPort(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
   };
 

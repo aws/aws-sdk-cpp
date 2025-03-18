@@ -18,14 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-DelegatedService::DelegatedService() : 
-    m_servicePrincipalHasBeenSet(false),
-    m_delegationEnabledDateHasBeenSet(false)
-{
-}
-
 DelegatedService::DelegatedService(JsonView jsonValue)
-  : DelegatedService()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DelegatedService& DelegatedService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServicePrincipal"))
   {
     m_servicePrincipal = jsonValue.GetString("ServicePrincipal");
-
     m_servicePrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DelegationEnabledDate"))
   {
     m_delegationEnabledDate = jsonValue.GetDouble("DelegationEnabledDate");
-
     m_delegationEnabledDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-MetadataFormReference::MetadataFormReference() : 
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 MetadataFormReference::MetadataFormReference(JsonView jsonValue)
-  : MetadataFormReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetadataFormReference& MetadataFormReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("typeIdentifier"))
   {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
-
     m_typeIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

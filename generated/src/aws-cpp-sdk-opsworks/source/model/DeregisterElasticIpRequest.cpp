@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterElasticIpRequest::DeregisterElasticIpRequest() : 
-    m_elasticIpHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterElasticIpRequest::SerializePayload() const
 {
   JsonValue payload;

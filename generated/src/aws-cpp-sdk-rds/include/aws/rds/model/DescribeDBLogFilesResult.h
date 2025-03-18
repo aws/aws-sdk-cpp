@@ -36,7 +36,7 @@ namespace Model
   class DescribeDBLogFilesResult
   {
   public:
-    AWS_RDS_API DescribeDBLogFilesResult();
+    AWS_RDS_API DescribeDBLogFilesResult() = default;
     AWS_RDS_API DescribeDBLogFilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeDBLogFilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,13 @@ namespace Model
     /**
      * <p>The DB log files returned.</p>
      */
-    inline const Aws::Vector<DescribeDBLogFilesDetails>& GetDescribeDBLogFiles() const{ return m_describeDBLogFiles; }
-    inline void SetDescribeDBLogFiles(const Aws::Vector<DescribeDBLogFilesDetails>& value) { m_describeDBLogFiles = value; }
-    inline void SetDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { m_describeDBLogFiles = std::move(value); }
-    inline DescribeDBLogFilesResult& WithDescribeDBLogFiles(const Aws::Vector<DescribeDBLogFilesDetails>& value) { SetDescribeDBLogFiles(value); return *this;}
-    inline DescribeDBLogFilesResult& WithDescribeDBLogFiles(Aws::Vector<DescribeDBLogFilesDetails>&& value) { SetDescribeDBLogFiles(std::move(value)); return *this;}
-    inline DescribeDBLogFilesResult& AddDescribeDBLogFiles(const DescribeDBLogFilesDetails& value) { m_describeDBLogFiles.push_back(value); return *this; }
-    inline DescribeDBLogFilesResult& AddDescribeDBLogFiles(DescribeDBLogFilesDetails&& value) { m_describeDBLogFiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DescribeDBLogFilesDetails>& GetDescribeDBLogFiles() const { return m_describeDBLogFiles; }
+    template<typename DescribeDBLogFilesT = Aws::Vector<DescribeDBLogFilesDetails>>
+    void SetDescribeDBLogFiles(DescribeDBLogFilesT&& value) { m_describeDBLogFilesHasBeenSet = true; m_describeDBLogFiles = std::forward<DescribeDBLogFilesT>(value); }
+    template<typename DescribeDBLogFilesT = Aws::Vector<DescribeDBLogFilesDetails>>
+    DescribeDBLogFilesResult& WithDescribeDBLogFiles(DescribeDBLogFilesT&& value) { SetDescribeDBLogFiles(std::forward<DescribeDBLogFilesT>(value)); return *this;}
+    template<typename DescribeDBLogFilesT = DescribeDBLogFilesDetails>
+    DescribeDBLogFilesResult& AddDescribeDBLogFiles(DescribeDBLogFilesT&& value) { m_describeDBLogFilesHasBeenSet = true; m_describeDBLogFiles.emplace_back(std::forward<DescribeDBLogFilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,30 +59,31 @@ namespace Model
      * <p>A pagination token that can be used in a later
      * <code>DescribeDBLogFiles</code> request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDBLogFilesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDBLogFilesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDBLogFilesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDBLogFilesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDBLogFilesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDBLogFilesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDBLogFilesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DescribeDBLogFilesDetails> m_describeDBLogFiles;
+    bool m_describeDBLogFilesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

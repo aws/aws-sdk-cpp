@@ -33,7 +33,7 @@ namespace Model
   class ForwardActionConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,26 +46,26 @@ namespace Model
      * <p>The target groups. For Network Load Balancers, you can specify a single
      * target group.</p>
      */
-    inline const Aws::Vector<TargetGroupTuple>& GetTargetGroups() const{ return m_targetGroups; }
+    inline const Aws::Vector<TargetGroupTuple>& GetTargetGroups() const { return m_targetGroups; }
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
-    inline void SetTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
-    inline void SetTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
-    inline ForwardActionConfig& WithTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { SetTargetGroups(value); return *this;}
-    inline ForwardActionConfig& WithTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { SetTargetGroups(std::move(value)); return *this;}
-    inline ForwardActionConfig& AddTargetGroups(const TargetGroupTuple& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
-    inline ForwardActionConfig& AddTargetGroups(TargetGroupTuple&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroupTuple>>
+    void SetTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::forward<TargetGroupsT>(value); }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroupTuple>>
+    ForwardActionConfig& WithTargetGroups(TargetGroupsT&& value) { SetTargetGroups(std::forward<TargetGroupsT>(value)); return *this;}
+    template<typename TargetGroupsT = TargetGroupTuple>
+    ForwardActionConfig& AddTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.emplace_back(std::forward<TargetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The target group stickiness for the rule.</p>
      */
-    inline const TargetGroupStickinessConfig& GetTargetGroupStickinessConfig() const{ return m_targetGroupStickinessConfig; }
+    inline const TargetGroupStickinessConfig& GetTargetGroupStickinessConfig() const { return m_targetGroupStickinessConfig; }
     inline bool TargetGroupStickinessConfigHasBeenSet() const { return m_targetGroupStickinessConfigHasBeenSet; }
-    inline void SetTargetGroupStickinessConfig(const TargetGroupStickinessConfig& value) { m_targetGroupStickinessConfigHasBeenSet = true; m_targetGroupStickinessConfig = value; }
-    inline void SetTargetGroupStickinessConfig(TargetGroupStickinessConfig&& value) { m_targetGroupStickinessConfigHasBeenSet = true; m_targetGroupStickinessConfig = std::move(value); }
-    inline ForwardActionConfig& WithTargetGroupStickinessConfig(const TargetGroupStickinessConfig& value) { SetTargetGroupStickinessConfig(value); return *this;}
-    inline ForwardActionConfig& WithTargetGroupStickinessConfig(TargetGroupStickinessConfig&& value) { SetTargetGroupStickinessConfig(std::move(value)); return *this;}
+    template<typename TargetGroupStickinessConfigT = TargetGroupStickinessConfig>
+    void SetTargetGroupStickinessConfig(TargetGroupStickinessConfigT&& value) { m_targetGroupStickinessConfigHasBeenSet = true; m_targetGroupStickinessConfig = std::forward<TargetGroupStickinessConfigT>(value); }
+    template<typename TargetGroupStickinessConfigT = TargetGroupStickinessConfig>
+    ForwardActionConfig& WithTargetGroupStickinessConfig(TargetGroupStickinessConfigT&& value) { SetTargetGroupStickinessConfig(std::forward<TargetGroupStickinessConfigT>(value)); return *this;}
     ///@}
   private:
 

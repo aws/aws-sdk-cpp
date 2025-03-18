@@ -33,7 +33,7 @@ namespace Model
   class UpdateFPorts
   {
   public:
-    AWS_IOTWIRELESS_API UpdateFPorts();
+    AWS_IOTWIRELESS_API UpdateFPorts() = default;
     AWS_IOTWIRELESS_API UpdateFPorts(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API UpdateFPorts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
      */
-    inline const Positioning& GetPositioning() const{ return m_positioning; }
+    inline const Positioning& GetPositioning() const { return m_positioning; }
     inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
-    inline void SetPositioning(const Positioning& value) { m_positioningHasBeenSet = true; m_positioning = value; }
-    inline void SetPositioning(Positioning&& value) { m_positioningHasBeenSet = true; m_positioning = std::move(value); }
-    inline UpdateFPorts& WithPositioning(const Positioning& value) { SetPositioning(value); return *this;}
-    inline UpdateFPorts& WithPositioning(Positioning&& value) { SetPositioning(std::move(value)); return *this;}
+    template<typename PositioningT = Positioning>
+    void SetPositioning(PositioningT&& value) { m_positioningHasBeenSet = true; m_positioning = std::forward<PositioningT>(value); }
+    template<typename PositioningT = Positioning>
+    UpdateFPorts& WithPositioning(PositioningT&& value) { SetPositioning(std::forward<PositioningT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,14 @@ namespace Model
      * <p>LoRaWAN application, which can be used for geolocation by activating
      * positioning.</p>
      */
-    inline const Aws::Vector<ApplicationConfig>& GetApplications() const{ return m_applications; }
+    inline const Aws::Vector<ApplicationConfig>& GetApplications() const { return m_applications; }
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
-    inline void SetApplications(const Aws::Vector<ApplicationConfig>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
-    inline void SetApplications(Aws::Vector<ApplicationConfig>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
-    inline UpdateFPorts& WithApplications(const Aws::Vector<ApplicationConfig>& value) { SetApplications(value); return *this;}
-    inline UpdateFPorts& WithApplications(Aws::Vector<ApplicationConfig>&& value) { SetApplications(std::move(value)); return *this;}
-    inline UpdateFPorts& AddApplications(const ApplicationConfig& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
-    inline UpdateFPorts& AddApplications(ApplicationConfig&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+    template<typename ApplicationsT = Aws::Vector<ApplicationConfig>>
+    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
+    template<typename ApplicationsT = Aws::Vector<ApplicationConfig>>
+    UpdateFPorts& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
+    template<typename ApplicationsT = ApplicationConfig>
+    UpdateFPorts& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
     ///@}
   private:
 

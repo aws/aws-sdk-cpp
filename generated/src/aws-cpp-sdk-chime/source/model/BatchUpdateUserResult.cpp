@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUpdateUserResult::BatchUpdateUserResult()
-{
-}
-
 BatchUpdateUserResult::BatchUpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchUpdateUserResult& BatchUpdateUserResult::operator =(const Aws::AmazonWebSer
     {
       m_userErrors.push_back(userErrorsJsonList[userErrorsIndex].AsObject());
     }
+    m_userErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

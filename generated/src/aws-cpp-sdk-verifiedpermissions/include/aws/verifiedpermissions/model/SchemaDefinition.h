@@ -35,7 +35,7 @@ namespace Model
   class SchemaDefinition
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API SchemaDefinition();
+    AWS_VERIFIEDPERMISSIONS_API SchemaDefinition() = default;
     AWS_VERIFIEDPERMISSIONS_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
      * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
      */
-    inline const Aws::String& GetCedarJson() const{ return m_cedarJson; }
+    inline const Aws::String& GetCedarJson() const { return m_cedarJson; }
     inline bool CedarJsonHasBeenSet() const { return m_cedarJsonHasBeenSet; }
-    inline void SetCedarJson(const Aws::String& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = value; }
-    inline void SetCedarJson(Aws::String&& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = std::move(value); }
-    inline void SetCedarJson(const char* value) { m_cedarJsonHasBeenSet = true; m_cedarJson.assign(value); }
-    inline SchemaDefinition& WithCedarJson(const Aws::String& value) { SetCedarJson(value); return *this;}
-    inline SchemaDefinition& WithCedarJson(Aws::String&& value) { SetCedarJson(std::move(value)); return *this;}
-    inline SchemaDefinition& WithCedarJson(const char* value) { SetCedarJson(value); return *this;}
+    template<typename CedarJsonT = Aws::String>
+    void SetCedarJson(CedarJsonT&& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = std::forward<CedarJsonT>(value); }
+    template<typename CedarJsonT = Aws::String>
+    SchemaDefinition& WithCedarJson(CedarJsonT&& value) { SetCedarJson(std::forward<CedarJsonT>(value)); return *this;}
     ///@}
   private:
 

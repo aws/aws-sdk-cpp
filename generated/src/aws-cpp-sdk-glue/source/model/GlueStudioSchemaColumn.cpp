@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GlueStudioSchemaColumn::GlueStudioSchemaColumn() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 GlueStudioSchemaColumn::GlueStudioSchemaColumn(JsonView jsonValue)
-  : GlueStudioSchemaColumn()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GlueStudioSchemaColumn& GlueStudioSchemaColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

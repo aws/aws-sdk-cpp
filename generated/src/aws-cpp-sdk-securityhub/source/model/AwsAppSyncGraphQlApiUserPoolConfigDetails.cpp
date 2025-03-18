@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAppSyncGraphQlApiUserPoolConfigDetails::AwsAppSyncGraphQlApiUserPoolConfigDetails() : 
-    m_appIdClientRegexHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false)
-{
-}
-
 AwsAppSyncGraphQlApiUserPoolConfigDetails::AwsAppSyncGraphQlApiUserPoolConfigDetails(JsonView jsonValue)
-  : AwsAppSyncGraphQlApiUserPoolConfigDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsAppSyncGraphQlApiUserPoolConfigDetails& AwsAppSyncGraphQlApiUserPoolConfigDet
   if(jsonValue.ValueExists("AppIdClientRegex"))
   {
     m_appIdClientRegex = jsonValue.GetString("AppIdClientRegex");
-
     m_appIdClientRegexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = jsonValue.GetString("DefaultAction");
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   return *this;
 }
 

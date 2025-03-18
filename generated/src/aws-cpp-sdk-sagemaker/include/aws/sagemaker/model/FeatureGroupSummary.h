@@ -36,7 +36,7 @@ namespace Model
   class FeatureGroupSummary
   {
   public:
-    AWS_SAGEMAKER_API FeatureGroupSummary();
+    AWS_SAGEMAKER_API FeatureGroupSummary() = default;
     AWS_SAGEMAKER_API FeatureGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API FeatureGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline FeatureGroupSummary& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline FeatureGroupSummary& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline FeatureGroupSummary& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    FeatureGroupSummary& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier for the <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::String& GetFeatureGroupArn() const{ return m_featureGroupArn; }
+    inline const Aws::String& GetFeatureGroupArn() const { return m_featureGroupArn; }
     inline bool FeatureGroupArnHasBeenSet() const { return m_featureGroupArnHasBeenSet; }
-    inline void SetFeatureGroupArn(const Aws::String& value) { m_featureGroupArnHasBeenSet = true; m_featureGroupArn = value; }
-    inline void SetFeatureGroupArn(Aws::String&& value) { m_featureGroupArnHasBeenSet = true; m_featureGroupArn = std::move(value); }
-    inline void SetFeatureGroupArn(const char* value) { m_featureGroupArnHasBeenSet = true; m_featureGroupArn.assign(value); }
-    inline FeatureGroupSummary& WithFeatureGroupArn(const Aws::String& value) { SetFeatureGroupArn(value); return *this;}
-    inline FeatureGroupSummary& WithFeatureGroupArn(Aws::String&& value) { SetFeatureGroupArn(std::move(value)); return *this;}
-    inline FeatureGroupSummary& WithFeatureGroupArn(const char* value) { SetFeatureGroupArn(value); return *this;}
+    template<typename FeatureGroupArnT = Aws::String>
+    void SetFeatureGroupArn(FeatureGroupArnT&& value) { m_featureGroupArnHasBeenSet = true; m_featureGroupArn = std::forward<FeatureGroupArnT>(value); }
+    template<typename FeatureGroupArnT = Aws::String>
+    FeatureGroupSummary& WithFeatureGroupArn(FeatureGroupArnT&& value) { SetFeatureGroupArn(std::forward<FeatureGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,12 @@ namespace Model
      * <p>A timestamp indicating the time of creation time of the
      * <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline FeatureGroupSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline FeatureGroupSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    FeatureGroupSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>,
      * <code>Deleting</code> or <code>DetailFail</code>. </p>
      */
-    inline const FeatureGroupStatus& GetFeatureGroupStatus() const{ return m_featureGroupStatus; }
+    inline FeatureGroupStatus GetFeatureGroupStatus() const { return m_featureGroupStatus; }
     inline bool FeatureGroupStatusHasBeenSet() const { return m_featureGroupStatusHasBeenSet; }
-    inline void SetFeatureGroupStatus(const FeatureGroupStatus& value) { m_featureGroupStatusHasBeenSet = true; m_featureGroupStatus = value; }
-    inline void SetFeatureGroupStatus(FeatureGroupStatus&& value) { m_featureGroupStatusHasBeenSet = true; m_featureGroupStatus = std::move(value); }
-    inline FeatureGroupSummary& WithFeatureGroupStatus(const FeatureGroupStatus& value) { SetFeatureGroupStatus(value); return *this;}
-    inline FeatureGroupSummary& WithFeatureGroupStatus(FeatureGroupStatus&& value) { SetFeatureGroupStatus(std::move(value)); return *this;}
+    inline void SetFeatureGroupStatus(FeatureGroupStatus value) { m_featureGroupStatusHasBeenSet = true; m_featureGroupStatus = value; }
+    inline FeatureGroupSummary& WithFeatureGroupStatus(FeatureGroupStatus value) { SetFeatureGroupStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,12 @@ namespace Model
      * <p>Notifies you if replicating data into the <code>OfflineStore</code> has
      * failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
      */
-    inline const OfflineStoreStatus& GetOfflineStoreStatus() const{ return m_offlineStoreStatus; }
+    inline const OfflineStoreStatus& GetOfflineStoreStatus() const { return m_offlineStoreStatus; }
     inline bool OfflineStoreStatusHasBeenSet() const { return m_offlineStoreStatusHasBeenSet; }
-    inline void SetOfflineStoreStatus(const OfflineStoreStatus& value) { m_offlineStoreStatusHasBeenSet = true; m_offlineStoreStatus = value; }
-    inline void SetOfflineStoreStatus(OfflineStoreStatus&& value) { m_offlineStoreStatusHasBeenSet = true; m_offlineStoreStatus = std::move(value); }
-    inline FeatureGroupSummary& WithOfflineStoreStatus(const OfflineStoreStatus& value) { SetOfflineStoreStatus(value); return *this;}
-    inline FeatureGroupSummary& WithOfflineStoreStatus(OfflineStoreStatus&& value) { SetOfflineStoreStatus(std::move(value)); return *this;}
+    template<typename OfflineStoreStatusT = OfflineStoreStatus>
+    void SetOfflineStoreStatus(OfflineStoreStatusT&& value) { m_offlineStoreStatusHasBeenSet = true; m_offlineStoreStatus = std::forward<OfflineStoreStatusT>(value); }
+    template<typename OfflineStoreStatusT = OfflineStoreStatus>
+    FeatureGroupSummary& WithOfflineStoreStatus(OfflineStoreStatusT&& value) { SetOfflineStoreStatus(std::forward<OfflineStoreStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,10 +111,10 @@ namespace Model
     Aws::String m_featureGroupArn;
     bool m_featureGroupArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    FeatureGroupStatus m_featureGroupStatus;
+    FeatureGroupStatus m_featureGroupStatus{FeatureGroupStatus::NOT_SET};
     bool m_featureGroupStatusHasBeenSet = false;
 
     OfflineStoreStatus m_offlineStoreStatus;

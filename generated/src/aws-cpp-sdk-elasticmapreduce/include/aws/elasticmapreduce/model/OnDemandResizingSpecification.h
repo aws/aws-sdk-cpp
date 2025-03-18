@@ -33,7 +33,7 @@ namespace Model
   class OnDemandResizingSpecification
   {
   public:
-    AWS_EMR_API OnDemandResizingSpecification();
+    AWS_EMR_API OnDemandResizingSpecification() = default;
     AWS_EMR_API OnDemandResizingSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API OnDemandResizingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by
      * Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
      */
-    inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
+    inline int GetTimeoutDurationMinutes() const { return m_timeoutDurationMinutes; }
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
     inline OnDemandResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
@@ -60,29 +60,27 @@ namespace Model
      * <p>Specifies the allocation strategy to use to launch On-Demand instances during
      * a resize. The default is <code>lowest-price</code>.</p>
      */
-    inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline OnDemandProvisioningAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline OnDemandResizingSpecification& WithAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline OnDemandResizingSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline OnDemandResizingSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const { return m_capacityReservationOptions; }
     inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
-    inline void SetCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
-    inline void SetCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
-    inline OnDemandResizingSpecification& WithCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
-    inline OnDemandResizingSpecification& WithCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
+    template<typename CapacityReservationOptionsT = OnDemandCapacityReservationOptions>
+    void SetCapacityReservationOptions(CapacityReservationOptionsT&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::forward<CapacityReservationOptionsT>(value); }
+    template<typename CapacityReservationOptionsT = OnDemandCapacityReservationOptions>
+    OnDemandResizingSpecification& WithCapacityReservationOptions(CapacityReservationOptionsT&& value) { SetCapacityReservationOptions(std::forward<CapacityReservationOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_timeoutDurationMinutes;
+    int m_timeoutDurationMinutes{0};
     bool m_timeoutDurationMinutesHasBeenSet = false;
 
-    OnDemandProvisioningAllocationStrategy m_allocationStrategy;
+    OnDemandProvisioningAllocationStrategy m_allocationStrategy{OnDemandProvisioningAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandCapacityReservationOptions m_capacityReservationOptions;

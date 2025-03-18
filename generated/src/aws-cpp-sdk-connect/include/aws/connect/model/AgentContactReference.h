@@ -38,7 +38,7 @@ namespace Model
   class AgentContactReference
   {
   public:
-    AWS_CONNECT_API AgentContactReference();
+    AWS_CONNECT_API AgentContactReference() = default;
     AWS_CONNECT_API AgentContactReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentContactReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,38 +48,32 @@ namespace Model
     /**
      * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline AgentContactReference& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline AgentContactReference& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline AgentContactReference& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    AgentContactReference& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel of the contact.</p>
      */
-    inline const Channel& GetChannel() const{ return m_channel; }
+    inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline AgentContactReference& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline AgentContactReference& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    inline void SetChannel(Channel value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline AgentContactReference& WithChannel(Channel value) { SetChannel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How the contact was initiated.</p>
      */
-    inline const ContactInitiationMethod& GetInitiationMethod() const{ return m_initiationMethod; }
+    inline ContactInitiationMethod GetInitiationMethod() const { return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }
-    inline void SetInitiationMethod(const ContactInitiationMethod& value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = value; }
-    inline void SetInitiationMethod(ContactInitiationMethod&& value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = std::move(value); }
-    inline AgentContactReference& WithInitiationMethod(const ContactInitiationMethod& value) { SetInitiationMethod(value); return *this;}
-    inline AgentContactReference& WithInitiationMethod(ContactInitiationMethod&& value) { SetInitiationMethod(std::move(value)); return *this;}
+    inline void SetInitiationMethod(ContactInitiationMethod value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = value; }
+    inline AgentContactReference& WithInitiationMethod(ContactInitiationMethod value) { SetInitiationMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -91,65 +85,63 @@ namespace Model
      * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
      * <code>CONNECTED</code> to the agent.</p> 
      */
-    inline const ContactState& GetAgentContactState() const{ return m_agentContactState; }
+    inline ContactState GetAgentContactState() const { return m_agentContactState; }
     inline bool AgentContactStateHasBeenSet() const { return m_agentContactStateHasBeenSet; }
-    inline void SetAgentContactState(const ContactState& value) { m_agentContactStateHasBeenSet = true; m_agentContactState = value; }
-    inline void SetAgentContactState(ContactState&& value) { m_agentContactStateHasBeenSet = true; m_agentContactState = std::move(value); }
-    inline AgentContactReference& WithAgentContactState(const ContactState& value) { SetAgentContactState(value); return *this;}
-    inline AgentContactReference& WithAgentContactState(ContactState&& value) { SetAgentContactState(std::move(value)); return *this;}
+    inline void SetAgentContactState(ContactState value) { m_agentContactStateHasBeenSet = true; m_agentContactState = value; }
+    inline AgentContactReference& WithAgentContactState(ContactState value) { SetAgentContactState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The epoch timestamp when the contact state started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateStartTimestamp() const{ return m_stateStartTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateStartTimestamp() const { return m_stateStartTimestamp; }
     inline bool StateStartTimestampHasBeenSet() const { return m_stateStartTimestampHasBeenSet; }
-    inline void SetStateStartTimestamp(const Aws::Utils::DateTime& value) { m_stateStartTimestampHasBeenSet = true; m_stateStartTimestamp = value; }
-    inline void SetStateStartTimestamp(Aws::Utils::DateTime&& value) { m_stateStartTimestampHasBeenSet = true; m_stateStartTimestamp = std::move(value); }
-    inline AgentContactReference& WithStateStartTimestamp(const Aws::Utils::DateTime& value) { SetStateStartTimestamp(value); return *this;}
-    inline AgentContactReference& WithStateStartTimestamp(Aws::Utils::DateTime&& value) { SetStateStartTimestamp(std::move(value)); return *this;}
+    template<typename StateStartTimestampT = Aws::Utils::DateTime>
+    void SetStateStartTimestamp(StateStartTimestampT&& value) { m_stateStartTimestampHasBeenSet = true; m_stateStartTimestamp = std::forward<StateStartTimestampT>(value); }
+    template<typename StateStartTimestampT = Aws::Utils::DateTime>
+    AgentContactReference& WithStateStartTimestamp(StateStartTimestampT&& value) { SetStateStartTimestamp(std::forward<StateStartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the contact was connected to an agent.</p>
      */
-    inline const Aws::Utils::DateTime& GetConnectedToAgentTimestamp() const{ return m_connectedToAgentTimestamp; }
+    inline const Aws::Utils::DateTime& GetConnectedToAgentTimestamp() const { return m_connectedToAgentTimestamp; }
     inline bool ConnectedToAgentTimestampHasBeenSet() const { return m_connectedToAgentTimestampHasBeenSet; }
-    inline void SetConnectedToAgentTimestamp(const Aws::Utils::DateTime& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = value; }
-    inline void SetConnectedToAgentTimestamp(Aws::Utils::DateTime&& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = std::move(value); }
-    inline AgentContactReference& WithConnectedToAgentTimestamp(const Aws::Utils::DateTime& value) { SetConnectedToAgentTimestamp(value); return *this;}
-    inline AgentContactReference& WithConnectedToAgentTimestamp(Aws::Utils::DateTime&& value) { SetConnectedToAgentTimestamp(std::move(value)); return *this;}
+    template<typename ConnectedToAgentTimestampT = Aws::Utils::DateTime>
+    void SetConnectedToAgentTimestamp(ConnectedToAgentTimestampT&& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = std::forward<ConnectedToAgentTimestampT>(value); }
+    template<typename ConnectedToAgentTimestampT = Aws::Utils::DateTime>
+    AgentContactReference& WithConnectedToAgentTimestamp(ConnectedToAgentTimestampT&& value) { SetConnectedToAgentTimestamp(std::forward<ConnectedToAgentTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const QueueReference& GetQueue() const{ return m_queue; }
+    inline const QueueReference& GetQueue() const { return m_queue; }
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-    inline void SetQueue(const QueueReference& value) { m_queueHasBeenSet = true; m_queue = value; }
-    inline void SetQueue(QueueReference&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-    inline AgentContactReference& WithQueue(const QueueReference& value) { SetQueue(value); return *this;}
-    inline AgentContactReference& WithQueue(QueueReference&& value) { SetQueue(std::move(value)); return *this;}
+    template<typename QueueT = QueueReference>
+    void SetQueue(QueueT&& value) { m_queueHasBeenSet = true; m_queue = std::forward<QueueT>(value); }
+    template<typename QueueT = QueueReference>
+    AgentContactReference& WithQueue(QueueT&& value) { SetQueue(std::forward<QueueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contactId;
     bool m_contactIdHasBeenSet = false;
 
-    Channel m_channel;
+    Channel m_channel{Channel::NOT_SET};
     bool m_channelHasBeenSet = false;
 
-    ContactInitiationMethod m_initiationMethod;
+    ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
     bool m_initiationMethodHasBeenSet = false;
 
-    ContactState m_agentContactState;
+    ContactState m_agentContactState{ContactState::NOT_SET};
     bool m_agentContactStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateStartTimestamp;
+    Aws::Utils::DateTime m_stateStartTimestamp{};
     bool m_stateStartTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_connectedToAgentTimestamp;
+    Aws::Utils::DateTime m_connectedToAgentTimestamp{};
     bool m_connectedToAgentTimestampHasBeenSet = false;
 
     QueueReference m_queue;

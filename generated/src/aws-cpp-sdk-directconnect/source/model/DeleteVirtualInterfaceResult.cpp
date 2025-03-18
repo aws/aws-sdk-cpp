@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult() : 
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
-{
-}
-
 DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteVirtualInterfaceResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteVirtualInterfaceResult& DeleteVirtualInterfaceResult::operator =(const Aws
   if(jsonValue.ValueExists("virtualInterfaceState"))
   {
     m_virtualInterfaceState = VirtualInterfaceStateMapper::GetVirtualInterfaceStateForName(jsonValue.GetString("virtualInterfaceState"));
-
+    m_virtualInterfaceStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

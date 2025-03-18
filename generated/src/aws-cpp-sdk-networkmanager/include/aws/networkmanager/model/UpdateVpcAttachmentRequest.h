@@ -23,7 +23,7 @@ namespace Model
   class UpdateVpcAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API UpdateVpcAttachmentRequest();
+    AWS_NETWORKMANAGER_API UpdateVpcAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,56 +38,52 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline UpdateVpcAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline UpdateVpcAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline UpdateVpcAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    UpdateVpcAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Adds a subnet ARN to the VPC attachment.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddSubnetArns() const{ return m_addSubnetArns; }
+    inline const Aws::Vector<Aws::String>& GetAddSubnetArns() const { return m_addSubnetArns; }
     inline bool AddSubnetArnsHasBeenSet() const { return m_addSubnetArnsHasBeenSet; }
-    inline void SetAddSubnetArns(const Aws::Vector<Aws::String>& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns = value; }
-    inline void SetAddSubnetArns(Aws::Vector<Aws::String>&& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns = std::move(value); }
-    inline UpdateVpcAttachmentRequest& WithAddSubnetArns(const Aws::Vector<Aws::String>& value) { SetAddSubnetArns(value); return *this;}
-    inline UpdateVpcAttachmentRequest& WithAddSubnetArns(Aws::Vector<Aws::String>&& value) { SetAddSubnetArns(std::move(value)); return *this;}
-    inline UpdateVpcAttachmentRequest& AddAddSubnetArns(const Aws::String& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns.push_back(value); return *this; }
-    inline UpdateVpcAttachmentRequest& AddAddSubnetArns(Aws::String&& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns.push_back(std::move(value)); return *this; }
-    inline UpdateVpcAttachmentRequest& AddAddSubnetArns(const char* value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns.push_back(value); return *this; }
+    template<typename AddSubnetArnsT = Aws::Vector<Aws::String>>
+    void SetAddSubnetArns(AddSubnetArnsT&& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns = std::forward<AddSubnetArnsT>(value); }
+    template<typename AddSubnetArnsT = Aws::Vector<Aws::String>>
+    UpdateVpcAttachmentRequest& WithAddSubnetArns(AddSubnetArnsT&& value) { SetAddSubnetArns(std::forward<AddSubnetArnsT>(value)); return *this;}
+    template<typename AddSubnetArnsT = Aws::String>
+    UpdateVpcAttachmentRequest& AddAddSubnetArns(AddSubnetArnsT&& value) { m_addSubnetArnsHasBeenSet = true; m_addSubnetArns.emplace_back(std::forward<AddSubnetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Removes a subnet ARN from the attachment.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveSubnetArns() const{ return m_removeSubnetArns; }
+    inline const Aws::Vector<Aws::String>& GetRemoveSubnetArns() const { return m_removeSubnetArns; }
     inline bool RemoveSubnetArnsHasBeenSet() const { return m_removeSubnetArnsHasBeenSet; }
-    inline void SetRemoveSubnetArns(const Aws::Vector<Aws::String>& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns = value; }
-    inline void SetRemoveSubnetArns(Aws::Vector<Aws::String>&& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns = std::move(value); }
-    inline UpdateVpcAttachmentRequest& WithRemoveSubnetArns(const Aws::Vector<Aws::String>& value) { SetRemoveSubnetArns(value); return *this;}
-    inline UpdateVpcAttachmentRequest& WithRemoveSubnetArns(Aws::Vector<Aws::String>&& value) { SetRemoveSubnetArns(std::move(value)); return *this;}
-    inline UpdateVpcAttachmentRequest& AddRemoveSubnetArns(const Aws::String& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns.push_back(value); return *this; }
-    inline UpdateVpcAttachmentRequest& AddRemoveSubnetArns(Aws::String&& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns.push_back(std::move(value)); return *this; }
-    inline UpdateVpcAttachmentRequest& AddRemoveSubnetArns(const char* value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns.push_back(value); return *this; }
+    template<typename RemoveSubnetArnsT = Aws::Vector<Aws::String>>
+    void SetRemoveSubnetArns(RemoveSubnetArnsT&& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns = std::forward<RemoveSubnetArnsT>(value); }
+    template<typename RemoveSubnetArnsT = Aws::Vector<Aws::String>>
+    UpdateVpcAttachmentRequest& WithRemoveSubnetArns(RemoveSubnetArnsT&& value) { SetRemoveSubnetArns(std::forward<RemoveSubnetArnsT>(value)); return *this;}
+    template<typename RemoveSubnetArnsT = Aws::String>
+    UpdateVpcAttachmentRequest& AddRemoveSubnetArns(RemoveSubnetArnsT&& value) { m_removeSubnetArnsHasBeenSet = true; m_removeSubnetArns.emplace_back(std::forward<RemoveSubnetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Additional options for updating the VPC attachment. </p>
      */
-    inline const VpcOptions& GetOptions() const{ return m_options; }
+    inline const VpcOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const VpcOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(VpcOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline UpdateVpcAttachmentRequest& WithOptions(const VpcOptions& value) { SetOptions(value); return *this;}
-    inline UpdateVpcAttachmentRequest& WithOptions(VpcOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = VpcOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = VpcOptions>
+    UpdateVpcAttachmentRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

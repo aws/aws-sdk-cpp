@@ -18,16 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-ApplicationState::ApplicationState() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ApplicationState::ApplicationState(JsonView jsonValue)
-  : ApplicationState()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ApplicationState& ApplicationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationStatus"))
   {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));
-
     m_applicationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

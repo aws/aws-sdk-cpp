@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-BucketInfo::BucketInfo() : 
-    m_dataRedundancy(DataRedundancy::NOT_SET),
-    m_dataRedundancyHasBeenSet(false),
-    m_type(BucketType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 BucketInfo::BucketInfo(const XmlNode& xmlNode)
-  : BucketInfo()
 {
   *this = xmlNode;
 }
@@ -43,13 +34,13 @@ BucketInfo& BucketInfo::operator =(const XmlNode& xmlNode)
     XmlNode dataRedundancyNode = resultNode.FirstChild("DataRedundancy");
     if(!dataRedundancyNode.IsNull())
     {
-      m_dataRedundancy = DataRedundancyMapper::GetDataRedundancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataRedundancyNode.GetText()).c_str()).c_str());
+      m_dataRedundancy = DataRedundancyMapper::GetDataRedundancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataRedundancyNode.GetText()).c_str()));
       m_dataRedundancyHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = BucketTypeMapper::GetBucketTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = BucketTypeMapper::GetBucketTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
   }

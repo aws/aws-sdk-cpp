@@ -26,7 +26,7 @@ namespace Model
   class ListRecommendationFeedbackRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackRequest();
+    AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * the call again using the returned token to retrieve the next page. Keep all
      * other arguments unchanged.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRecommendationFeedbackRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecommendationFeedbackRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecommendationFeedbackRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecommendationFeedbackRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The maximum number of results that are returned per call. The default is
      * 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRecommendationFeedbackRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,14 +71,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
      * object. </p>
      */
-    inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
+    inline const Aws::String& GetCodeReviewArn() const { return m_codeReviewArn; }
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
-    inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
-    inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
-    inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
-    inline ListRecommendationFeedbackRequest& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
-    inline ListRecommendationFeedbackRequest& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
-    inline ListRecommendationFeedbackRequest& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
+    template<typename CodeReviewArnT = Aws::String>
+    void SetCodeReviewArn(CodeReviewArnT&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::forward<CodeReviewArnT>(value); }
+    template<typename CodeReviewArnT = Aws::String>
+    ListRecommendationFeedbackRequest& WithCodeReviewArn(CodeReviewArnT&& value) { SetCodeReviewArn(std::forward<CodeReviewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,37 +90,35 @@ namespace Model
      * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
      * Management User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+    inline const Aws::Vector<Aws::String>& GetUserIds() const { return m_userIds; }
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
-    inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
-    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
-    inline ListRecommendationFeedbackRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
-    inline ListRecommendationFeedbackRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
-    inline ListRecommendationFeedbackRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
-    inline ListRecommendationFeedbackRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
-    inline ListRecommendationFeedbackRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
+    template<typename UserIdsT = Aws::Vector<Aws::String>>
+    void SetUserIds(UserIdsT&& value) { m_userIdsHasBeenSet = true; m_userIds = std::forward<UserIdsT>(value); }
+    template<typename UserIdsT = Aws::Vector<Aws::String>>
+    ListRecommendationFeedbackRequest& WithUserIds(UserIdsT&& value) { SetUserIds(std::forward<UserIdsT>(value)); return *this;}
+    template<typename UserIdsT = Aws::String>
+    ListRecommendationFeedbackRequest& AddUserIds(UserIdsT&& value) { m_userIdsHasBeenSet = true; m_userIds.emplace_back(std::forward<UserIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Used to query the recommendation feedback for a given recommendation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const{ return m_recommendationIds; }
+    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
     inline bool RecommendationIdsHasBeenSet() const { return m_recommendationIdsHasBeenSet; }
-    inline void SetRecommendationIds(const Aws::Vector<Aws::String>& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = value; }
-    inline void SetRecommendationIds(Aws::Vector<Aws::String>&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::move(value); }
-    inline ListRecommendationFeedbackRequest& WithRecommendationIds(const Aws::Vector<Aws::String>& value) { SetRecommendationIds(value); return *this;}
-    inline ListRecommendationFeedbackRequest& WithRecommendationIds(Aws::Vector<Aws::String>&& value) { SetRecommendationIds(std::move(value)); return *this;}
-    inline ListRecommendationFeedbackRequest& AddRecommendationIds(const Aws::String& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
-    inline ListRecommendationFeedbackRequest& AddRecommendationIds(Aws::String&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(std::move(value)); return *this; }
-    inline ListRecommendationFeedbackRequest& AddRecommendationIds(const char* value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    void SetRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::forward<RecommendationIdsT>(value); }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    ListRecommendationFeedbackRequest& WithRecommendationIds(RecommendationIdsT&& value) { SetRecommendationIds(std::forward<RecommendationIdsT>(value)); return *this;}
+    template<typename RecommendationIdsT = Aws::String>
+    ListRecommendationFeedbackRequest& AddRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.emplace_back(std::forward<RecommendationIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_codeReviewArn;

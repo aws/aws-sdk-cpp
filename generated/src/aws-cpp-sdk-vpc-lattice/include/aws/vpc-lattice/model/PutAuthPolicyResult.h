@@ -28,7 +28,7 @@ namespace Model
   class PutAuthPolicyResult
   {
   public:
-    AWS_VPCLATTICE_API PutAuthPolicyResult();
+    AWS_VPCLATTICE_API PutAuthPolicyResult() = default;
     AWS_VPCLATTICE_API PutAuthPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API PutAuthPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The auth policy. The policy string in JSON must not contain newlines or blank
      * lines.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-    inline PutAuthPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutAuthPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutAuthPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutAuthPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,30 +55,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */
-    inline const AuthPolicyState& GetState() const{ return m_state; }
-    inline void SetState(const AuthPolicyState& value) { m_state = value; }
-    inline void SetState(AuthPolicyState&& value) { m_state = std::move(value); }
-    inline PutAuthPolicyResult& WithState(const AuthPolicyState& value) { SetState(value); return *this;}
-    inline PutAuthPolicyResult& WithState(AuthPolicyState&& value) { SetState(std::move(value)); return *this;}
+    inline AuthPolicyState GetState() const { return m_state; }
+    inline void SetState(AuthPolicyState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline PutAuthPolicyResult& WithState(AuthPolicyState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAuthPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAuthPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAuthPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAuthPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
-    AuthPolicyState m_state;
+    AuthPolicyState m_state{AuthPolicyState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

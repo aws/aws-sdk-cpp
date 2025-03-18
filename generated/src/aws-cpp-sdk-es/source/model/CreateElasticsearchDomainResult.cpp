@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateElasticsearchDomainResult::CreateElasticsearchDomainResult()
-{
-}
-
 CreateElasticsearchDomainResult::CreateElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateElasticsearchDomainResult& CreateElasticsearchDomainResult::operator =(con
   if(jsonValue.ValueExists("DomainStatus"))
   {
     m_domainStatus = jsonValue.GetObject("DomainStatus");
-
+    m_domainStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

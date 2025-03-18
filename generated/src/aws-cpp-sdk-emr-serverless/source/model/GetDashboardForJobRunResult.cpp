@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDashboardForJobRunResult::GetDashboardForJobRunResult()
-{
-}
-
 GetDashboardForJobRunResult::GetDashboardForJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDashboardForJobRunResult& GetDashboardForJobRunResult::operator =(const Aws::
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
+    m_urlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

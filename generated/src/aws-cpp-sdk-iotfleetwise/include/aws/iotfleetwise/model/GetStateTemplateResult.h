@@ -29,7 +29,7 @@ namespace Model
   class GetStateTemplateResult
   {
   public:
-    AWS_IOTFLEETWISE_API GetStateTemplateResult();
+    AWS_IOTFLEETWISE_API GetStateTemplateResult() = default;
     AWS_IOTFLEETWISE_API GetStateTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API GetStateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,52 +38,44 @@ namespace Model
     /**
      * <p>The name of the state template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetStateTemplateResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetStateTemplateResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetStateTemplateResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the state template.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetStateTemplateResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetStateTemplateResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetStateTemplateResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the state template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetStateTemplateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetStateTemplateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetStateTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the signal catalog associated with the state template.</p>
      */
-    inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
-    inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArn = value; }
-    inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArn = std::move(value); }
-    inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArn.assign(value); }
-    inline GetStateTemplateResult& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
-    inline GetStateTemplateResult& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
+    inline const Aws::String& GetSignalCatalogArn() const { return m_signalCatalogArn; }
+    template<typename SignalCatalogArnT = Aws::String>
+    void SetSignalCatalogArn(SignalCatalogArnT&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::forward<SignalCatalogArnT>(value); }
+    template<typename SignalCatalogArnT = Aws::String>
+    GetStateTemplateResult& WithSignalCatalogArn(SignalCatalogArnT&& value) { SetSignalCatalogArn(std::forward<SignalCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +83,13 @@ namespace Model
      * <p>A list of signals from which data is collected. The state template properties
      * contain the fully qualified names of the signals.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStateTemplateProperties() const{ return m_stateTemplateProperties; }
-    inline void SetStateTemplateProperties(const Aws::Vector<Aws::String>& value) { m_stateTemplateProperties = value; }
-    inline void SetStateTemplateProperties(Aws::Vector<Aws::String>&& value) { m_stateTemplateProperties = std::move(value); }
-    inline GetStateTemplateResult& WithStateTemplateProperties(const Aws::Vector<Aws::String>& value) { SetStateTemplateProperties(value); return *this;}
-    inline GetStateTemplateResult& WithStateTemplateProperties(Aws::Vector<Aws::String>&& value) { SetStateTemplateProperties(std::move(value)); return *this;}
-    inline GetStateTemplateResult& AddStateTemplateProperties(const Aws::String& value) { m_stateTemplateProperties.push_back(value); return *this; }
-    inline GetStateTemplateResult& AddStateTemplateProperties(Aws::String&& value) { m_stateTemplateProperties.push_back(std::move(value)); return *this; }
-    inline GetStateTemplateResult& AddStateTemplateProperties(const char* value) { m_stateTemplateProperties.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetStateTemplateProperties() const { return m_stateTemplateProperties; }
+    template<typename StateTemplatePropertiesT = Aws::Vector<Aws::String>>
+    void SetStateTemplateProperties(StateTemplatePropertiesT&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties = std::forward<StateTemplatePropertiesT>(value); }
+    template<typename StateTemplatePropertiesT = Aws::Vector<Aws::String>>
+    GetStateTemplateResult& WithStateTemplateProperties(StateTemplatePropertiesT&& value) { SetStateTemplateProperties(std::forward<StateTemplatePropertiesT>(value)); return *this;}
+    template<typename StateTemplatePropertiesT = Aws::String>
+    GetStateTemplateResult& AddStateTemplateProperties(StateTemplatePropertiesT&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties.emplace_back(std::forward<StateTemplatePropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +97,13 @@ namespace Model
      * <p>A list of vehicle attributes associated with the payload published on the
      * state template's MQTT topic. </p> <p>Default: An empty array</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
-    inline void SetDataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_dataExtraDimensions = value; }
-    inline void SetDataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_dataExtraDimensions = std::move(value); }
-    inline GetStateTemplateResult& WithDataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetDataExtraDimensions(value); return *this;}
-    inline GetStateTemplateResult& WithDataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetDataExtraDimensions(std::move(value)); return *this;}
-    inline GetStateTemplateResult& AddDataExtraDimensions(const Aws::String& value) { m_dataExtraDimensions.push_back(value); return *this; }
-    inline GetStateTemplateResult& AddDataExtraDimensions(Aws::String&& value) { m_dataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline GetStateTemplateResult& AddDataExtraDimensions(const char* value) { m_dataExtraDimensions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const { return m_dataExtraDimensions; }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::forward<DataExtraDimensionsT>(value); }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    GetStateTemplateResult& WithDataExtraDimensions(DataExtraDimensionsT&& value) { SetDataExtraDimensions(std::forward<DataExtraDimensionsT>(value)); return *this;}
+    template<typename DataExtraDimensionsT = Aws::String>
+    GetStateTemplateResult& AddDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.emplace_back(std::forward<DataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,14 +112,13 @@ namespace Model
      * messages published on the state template's MQTT topic.</p> <p>Default: An empty
      * array</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetadataExtraDimensions() const{ return m_metadataExtraDimensions; }
-    inline void SetMetadataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_metadataExtraDimensions = value; }
-    inline void SetMetadataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_metadataExtraDimensions = std::move(value); }
-    inline GetStateTemplateResult& WithMetadataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetMetadataExtraDimensions(value); return *this;}
-    inline GetStateTemplateResult& WithMetadataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetMetadataExtraDimensions(std::move(value)); return *this;}
-    inline GetStateTemplateResult& AddMetadataExtraDimensions(const Aws::String& value) { m_metadataExtraDimensions.push_back(value); return *this; }
-    inline GetStateTemplateResult& AddMetadataExtraDimensions(Aws::String&& value) { m_metadataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline GetStateTemplateResult& AddMetadataExtraDimensions(const char* value) { m_metadataExtraDimensions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetMetadataExtraDimensions() const { return m_metadataExtraDimensions; }
+    template<typename MetadataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions = std::forward<MetadataExtraDimensionsT>(value); }
+    template<typename MetadataExtraDimensionsT = Aws::Vector<Aws::String>>
+    GetStateTemplateResult& WithMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { SetMetadataExtraDimensions(std::forward<MetadataExtraDimensionsT>(value)); return *this;}
+    template<typename MetadataExtraDimensionsT = Aws::String>
+    GetStateTemplateResult& AddMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions.emplace_back(std::forward<MetadataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,11 +126,11 @@ namespace Model
      * <p>The time the state template was created in seconds since epoch (January 1,
      * 1970 at midnight UTC time).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetStateTemplateResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetStateTemplateResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetStateTemplateResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,59 +138,66 @@ namespace Model
      * <p>The time the state template was last updated in seconds since epoch (January
      * 1, 1970 at midnight UTC time).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline GetStateTemplateResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline GetStateTemplateResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    GetStateTemplateResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the state template.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetStateTemplateResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetStateTemplateResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetStateTemplateResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStateTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStateTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStateTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStateTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_signalCatalogArn;
+    bool m_signalCatalogArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stateTemplateProperties;
+    bool m_stateTemplatePropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataExtraDimensions;
+    bool m_dataExtraDimensionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metadataExtraDimensions;
+    bool m_metadataExtraDimensionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

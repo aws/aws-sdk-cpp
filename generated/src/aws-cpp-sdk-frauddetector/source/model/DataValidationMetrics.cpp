@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-DataValidationMetrics::DataValidationMetrics() : 
-    m_fileLevelMessagesHasBeenSet(false),
-    m_fieldLevelMessagesHasBeenSet(false)
-{
-}
-
 DataValidationMetrics::DataValidationMetrics(JsonView jsonValue)
-  : DataValidationMetrics()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ DataValidationMetrics& DataValidationMetrics::operator =(JsonView jsonValue)
     }
     m_fileLevelMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldLevelMessages"))
   {
     Aws::Utils::Array<JsonView> fieldLevelMessagesJsonList = jsonValue.GetArray("fieldLevelMessages");
@@ -51,7 +43,6 @@ DataValidationMetrics& DataValidationMetrics::operator =(JsonView jsonValue)
     }
     m_fieldLevelMessagesHasBeenSet = true;
   }
-
   return *this;
 }
 

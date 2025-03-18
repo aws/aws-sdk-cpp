@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLCandidateStep::AutoMLCandidateStep() : 
-    m_candidateStepType(CandidateStepType::NOT_SET),
-    m_candidateStepTypeHasBeenSet(false),
-    m_candidateStepArnHasBeenSet(false),
-    m_candidateStepNameHasBeenSet(false)
-{
-}
-
 AutoMLCandidateStep::AutoMLCandidateStep(JsonView jsonValue)
-  : AutoMLCandidateStep()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AutoMLCandidateStep& AutoMLCandidateStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CandidateStepType"))
   {
     m_candidateStepType = CandidateStepTypeMapper::GetCandidateStepTypeForName(jsonValue.GetString("CandidateStepType"));
-
     m_candidateStepTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateStepArn"))
   {
     m_candidateStepArn = jsonValue.GetString("CandidateStepArn");
-
     m_candidateStepArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateStepName"))
   {
     m_candidateStepName = jsonValue.GetString("CandidateStepName");
-
     m_candidateStepNameHasBeenSet = true;
   }
-
   return *this;
 }
 

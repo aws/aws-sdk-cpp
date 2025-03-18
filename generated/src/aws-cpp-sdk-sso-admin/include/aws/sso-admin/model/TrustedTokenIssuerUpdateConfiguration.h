@@ -33,7 +33,7 @@ namespace Model
   class TrustedTokenIssuerUpdateConfiguration
   {
   public:
-    AWS_SSOADMIN_API TrustedTokenIssuerUpdateConfiguration();
+    AWS_SSOADMIN_API TrustedTokenIssuerUpdateConfiguration() = default;
     AWS_SSOADMIN_API TrustedTokenIssuerUpdateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API TrustedTokenIssuerUpdateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>A structure that describes an updated configuration for a trusted token
      * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
      */
-    inline const OidcJwtUpdateConfiguration& GetOidcJwtConfiguration() const{ return m_oidcJwtConfiguration; }
+    inline const OidcJwtUpdateConfiguration& GetOidcJwtConfiguration() const { return m_oidcJwtConfiguration; }
     inline bool OidcJwtConfigurationHasBeenSet() const { return m_oidcJwtConfigurationHasBeenSet; }
-    inline void SetOidcJwtConfiguration(const OidcJwtUpdateConfiguration& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = value; }
-    inline void SetOidcJwtConfiguration(OidcJwtUpdateConfiguration&& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = std::move(value); }
-    inline TrustedTokenIssuerUpdateConfiguration& WithOidcJwtConfiguration(const OidcJwtUpdateConfiguration& value) { SetOidcJwtConfiguration(value); return *this;}
-    inline TrustedTokenIssuerUpdateConfiguration& WithOidcJwtConfiguration(OidcJwtUpdateConfiguration&& value) { SetOidcJwtConfiguration(std::move(value)); return *this;}
+    template<typename OidcJwtConfigurationT = OidcJwtUpdateConfiguration>
+    void SetOidcJwtConfiguration(OidcJwtConfigurationT&& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = std::forward<OidcJwtConfigurationT>(value); }
+    template<typename OidcJwtConfigurationT = OidcJwtUpdateConfiguration>
+    TrustedTokenIssuerUpdateConfiguration& WithOidcJwtConfiguration(OidcJwtConfigurationT&& value) { SetOidcJwtConfiguration(std::forward<OidcJwtConfigurationT>(value)); return *this;}
     ///@}
   private:
 

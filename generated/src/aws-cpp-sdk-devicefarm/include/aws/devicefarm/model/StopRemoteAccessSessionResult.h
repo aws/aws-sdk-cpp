@@ -34,7 +34,7 @@ namespace Model
   class StopRemoteAccessSessionResult
   {
   public:
-    AWS_DEVICEFARM_API StopRemoteAccessSessionResult();
+    AWS_DEVICEFARM_API StopRemoteAccessSessionResult() = default;
     AWS_DEVICEFARM_API StopRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API StopRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
-    inline const RemoteAccessSession& GetRemoteAccessSession() const{ return m_remoteAccessSession; }
-    inline void SetRemoteAccessSession(const RemoteAccessSession& value) { m_remoteAccessSession = value; }
-    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
-    inline StopRemoteAccessSessionResult& WithRemoteAccessSession(const RemoteAccessSession& value) { SetRemoteAccessSession(value); return *this;}
-    inline StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
+    inline const RemoteAccessSession& GetRemoteAccessSession() const { return m_remoteAccessSession; }
+    template<typename RemoteAccessSessionT = RemoteAccessSession>
+    void SetRemoteAccessSession(RemoteAccessSessionT&& value) { m_remoteAccessSessionHasBeenSet = true; m_remoteAccessSession = std::forward<RemoteAccessSessionT>(value); }
+    template<typename RemoteAccessSessionT = RemoteAccessSession>
+    StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSessionT&& value) { SetRemoteAccessSession(std::forward<RemoteAccessSessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopRemoteAccessSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopRemoteAccessSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopRemoteAccessSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopRemoteAccessSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RemoteAccessSession m_remoteAccessSession;
+    bool m_remoteAccessSessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

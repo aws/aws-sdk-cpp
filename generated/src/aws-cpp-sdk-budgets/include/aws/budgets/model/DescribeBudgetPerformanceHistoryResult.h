@@ -28,7 +28,7 @@ namespace Model
   class DescribeBudgetPerformanceHistoryResult
   {
   public:
-    AWS_BUDGETS_API DescribeBudgetPerformanceHistoryResult();
+    AWS_BUDGETS_API DescribeBudgetPerformanceHistoryResult() = default;
     AWS_BUDGETS_API DescribeBudgetPerformanceHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BUDGETS_API DescribeBudgetPerformanceHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,41 +42,40 @@ namespace Model
      * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
      * the last four quarters.</p>
      */
-    inline const BudgetPerformanceHistory& GetBudgetPerformanceHistory() const{ return m_budgetPerformanceHistory; }
-    inline void SetBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { m_budgetPerformanceHistory = value; }
-    inline void SetBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { m_budgetPerformanceHistory = std::move(value); }
-    inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { SetBudgetPerformanceHistory(value); return *this;}
-    inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { SetBudgetPerformanceHistory(std::move(value)); return *this;}
+    inline const BudgetPerformanceHistory& GetBudgetPerformanceHistory() const { return m_budgetPerformanceHistory; }
+    template<typename BudgetPerformanceHistoryT = BudgetPerformanceHistory>
+    void SetBudgetPerformanceHistory(BudgetPerformanceHistoryT&& value) { m_budgetPerformanceHistoryHasBeenSet = true; m_budgetPerformanceHistory = std::forward<BudgetPerformanceHistoryT>(value); }
+    template<typename BudgetPerformanceHistoryT = BudgetPerformanceHistory>
+    DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(BudgetPerformanceHistoryT&& value) { SetBudgetPerformanceHistory(std::forward<BudgetPerformanceHistoryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeBudgetPerformanceHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeBudgetPerformanceHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeBudgetPerformanceHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeBudgetPerformanceHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBudgetPerformanceHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBudgetPerformanceHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBudgetPerformanceHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBudgetPerformanceHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BudgetPerformanceHistory m_budgetPerformanceHistory;
+    bool m_budgetPerformanceHistoryHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

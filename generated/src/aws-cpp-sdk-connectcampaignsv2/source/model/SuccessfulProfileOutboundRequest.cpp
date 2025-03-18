@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-SuccessfulProfileOutboundRequest::SuccessfulProfileOutboundRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 SuccessfulProfileOutboundRequest::SuccessfulProfileOutboundRequest(JsonView jsonValue)
-  : SuccessfulProfileOutboundRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SuccessfulProfileOutboundRequest& SuccessfulProfileOutboundRequest::operator =(J
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

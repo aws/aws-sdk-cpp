@@ -30,7 +30,7 @@ namespace Model
   class SearchPlaceIndexForTextResult
   {
   public:
-    AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult() = default;
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,11 +44,11 @@ namespace Model
      * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
      * results. </p>
      */
-    inline const SearchPlaceIndexForTextSummary& GetSummary() const{ return m_summary; }
-    inline void SetSummary(const SearchPlaceIndexForTextSummary& value) { m_summary = value; }
-    inline void SetSummary(SearchPlaceIndexForTextSummary&& value) { m_summary = std::move(value); }
-    inline SearchPlaceIndexForTextResult& WithSummary(const SearchPlaceIndexForTextSummary& value) { SetSummary(value); return *this;}
-    inline SearchPlaceIndexForTextResult& WithSummary(SearchPlaceIndexForTextSummary&& value) { SetSummary(std::move(value)); return *this;}
+    inline const SearchPlaceIndexForTextSummary& GetSummary() const { return m_summary; }
+    template<typename SummaryT = SearchPlaceIndexForTextSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = SearchPlaceIndexForTextSummary>
+    SearchPlaceIndexForTextResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,32 +58,33 @@ namespace Model
      * properties are included with all responses. Some properties may only be returned
      * by specific data partners.</p>
      */
-    inline const Aws::Vector<SearchForTextResult>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<SearchForTextResult>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<SearchForTextResult>&& value) { m_results = std::move(value); }
-    inline SearchPlaceIndexForTextResult& WithResults(const Aws::Vector<SearchForTextResult>& value) { SetResults(value); return *this;}
-    inline SearchPlaceIndexForTextResult& WithResults(Aws::Vector<SearchForTextResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline SearchPlaceIndexForTextResult& AddResults(const SearchForTextResult& value) { m_results.push_back(value); return *this; }
-    inline SearchPlaceIndexForTextResult& AddResults(SearchForTextResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SearchForTextResult>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<SearchForTextResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<SearchForTextResult>>
+    SearchPlaceIndexForTextResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = SearchForTextResult>
+    SearchPlaceIndexForTextResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchPlaceIndexForTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchPlaceIndexForTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchPlaceIndexForTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchPlaceIndexForTextResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SearchPlaceIndexForTextSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::Vector<SearchForTextResult> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

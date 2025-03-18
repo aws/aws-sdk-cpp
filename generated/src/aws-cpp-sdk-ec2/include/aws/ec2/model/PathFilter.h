@@ -33,7 +33,7 @@ namespace Model
   class PathFilter
   {
   public:
-    AWS_EC2_API PathFilter();
+    AWS_EC2_API PathFilter() = default;
     AWS_EC2_API PathFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PathFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,52 +45,48 @@ namespace Model
     /**
      * <p>The source IPv4 address.</p>
      */
-    inline const Aws::String& GetSourceAddress() const{ return m_sourceAddress; }
+    inline const Aws::String& GetSourceAddress() const { return m_sourceAddress; }
     inline bool SourceAddressHasBeenSet() const { return m_sourceAddressHasBeenSet; }
-    inline void SetSourceAddress(const Aws::String& value) { m_sourceAddressHasBeenSet = true; m_sourceAddress = value; }
-    inline void SetSourceAddress(Aws::String&& value) { m_sourceAddressHasBeenSet = true; m_sourceAddress = std::move(value); }
-    inline void SetSourceAddress(const char* value) { m_sourceAddressHasBeenSet = true; m_sourceAddress.assign(value); }
-    inline PathFilter& WithSourceAddress(const Aws::String& value) { SetSourceAddress(value); return *this;}
-    inline PathFilter& WithSourceAddress(Aws::String&& value) { SetSourceAddress(std::move(value)); return *this;}
-    inline PathFilter& WithSourceAddress(const char* value) { SetSourceAddress(value); return *this;}
+    template<typename SourceAddressT = Aws::String>
+    void SetSourceAddress(SourceAddressT&& value) { m_sourceAddressHasBeenSet = true; m_sourceAddress = std::forward<SourceAddressT>(value); }
+    template<typename SourceAddressT = Aws::String>
+    PathFilter& WithSourceAddress(SourceAddressT&& value) { SetSourceAddress(std::forward<SourceAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source port range.</p>
      */
-    inline const FilterPortRange& GetSourcePortRange() const{ return m_sourcePortRange; }
+    inline const FilterPortRange& GetSourcePortRange() const { return m_sourcePortRange; }
     inline bool SourcePortRangeHasBeenSet() const { return m_sourcePortRangeHasBeenSet; }
-    inline void SetSourcePortRange(const FilterPortRange& value) { m_sourcePortRangeHasBeenSet = true; m_sourcePortRange = value; }
-    inline void SetSourcePortRange(FilterPortRange&& value) { m_sourcePortRangeHasBeenSet = true; m_sourcePortRange = std::move(value); }
-    inline PathFilter& WithSourcePortRange(const FilterPortRange& value) { SetSourcePortRange(value); return *this;}
-    inline PathFilter& WithSourcePortRange(FilterPortRange&& value) { SetSourcePortRange(std::move(value)); return *this;}
+    template<typename SourcePortRangeT = FilterPortRange>
+    void SetSourcePortRange(SourcePortRangeT&& value) { m_sourcePortRangeHasBeenSet = true; m_sourcePortRange = std::forward<SourcePortRangeT>(value); }
+    template<typename SourcePortRangeT = FilterPortRange>
+    PathFilter& WithSourcePortRange(SourcePortRangeT&& value) { SetSourcePortRange(std::forward<SourcePortRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination IPv4 address.</p>
      */
-    inline const Aws::String& GetDestinationAddress() const{ return m_destinationAddress; }
+    inline const Aws::String& GetDestinationAddress() const { return m_destinationAddress; }
     inline bool DestinationAddressHasBeenSet() const { return m_destinationAddressHasBeenSet; }
-    inline void SetDestinationAddress(const Aws::String& value) { m_destinationAddressHasBeenSet = true; m_destinationAddress = value; }
-    inline void SetDestinationAddress(Aws::String&& value) { m_destinationAddressHasBeenSet = true; m_destinationAddress = std::move(value); }
-    inline void SetDestinationAddress(const char* value) { m_destinationAddressHasBeenSet = true; m_destinationAddress.assign(value); }
-    inline PathFilter& WithDestinationAddress(const Aws::String& value) { SetDestinationAddress(value); return *this;}
-    inline PathFilter& WithDestinationAddress(Aws::String&& value) { SetDestinationAddress(std::move(value)); return *this;}
-    inline PathFilter& WithDestinationAddress(const char* value) { SetDestinationAddress(value); return *this;}
+    template<typename DestinationAddressT = Aws::String>
+    void SetDestinationAddress(DestinationAddressT&& value) { m_destinationAddressHasBeenSet = true; m_destinationAddress = std::forward<DestinationAddressT>(value); }
+    template<typename DestinationAddressT = Aws::String>
+    PathFilter& WithDestinationAddress(DestinationAddressT&& value) { SetDestinationAddress(std::forward<DestinationAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination port range.</p>
      */
-    inline const FilterPortRange& GetDestinationPortRange() const{ return m_destinationPortRange; }
+    inline const FilterPortRange& GetDestinationPortRange() const { return m_destinationPortRange; }
     inline bool DestinationPortRangeHasBeenSet() const { return m_destinationPortRangeHasBeenSet; }
-    inline void SetDestinationPortRange(const FilterPortRange& value) { m_destinationPortRangeHasBeenSet = true; m_destinationPortRange = value; }
-    inline void SetDestinationPortRange(FilterPortRange&& value) { m_destinationPortRangeHasBeenSet = true; m_destinationPortRange = std::move(value); }
-    inline PathFilter& WithDestinationPortRange(const FilterPortRange& value) { SetDestinationPortRange(value); return *this;}
-    inline PathFilter& WithDestinationPortRange(FilterPortRange&& value) { SetDestinationPortRange(std::move(value)); return *this;}
+    template<typename DestinationPortRangeT = FilterPortRange>
+    void SetDestinationPortRange(DestinationPortRangeT&& value) { m_destinationPortRangeHasBeenSet = true; m_destinationPortRange = std::forward<DestinationPortRangeT>(value); }
+    template<typename DestinationPortRangeT = FilterPortRange>
+    PathFilter& WithDestinationPortRange(DestinationPortRangeT&& value) { SetDestinationPortRange(std::forward<DestinationPortRangeT>(value)); return *this;}
     ///@}
   private:
 

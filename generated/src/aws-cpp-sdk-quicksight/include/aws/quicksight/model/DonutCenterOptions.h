@@ -32,7 +32,7 @@ namespace Model
   class DonutCenterOptions
   {
   public:
-    AWS_QUICKSIGHT_API DonutCenterOptions();
+    AWS_QUICKSIGHT_API DonutCenterOptions() = default;
     AWS_QUICKSIGHT_API DonutCenterOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DonutCenterOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Determines the visibility of the label in a donut chart. In the Amazon
      * QuickSight console, this option is called <code>'Show total'</code>.</p>
      */
-    inline const Visibility& GetLabelVisibility() const{ return m_labelVisibility; }
+    inline Visibility GetLabelVisibility() const { return m_labelVisibility; }
     inline bool LabelVisibilityHasBeenSet() const { return m_labelVisibilityHasBeenSet; }
-    inline void SetLabelVisibility(const Visibility& value) { m_labelVisibilityHasBeenSet = true; m_labelVisibility = value; }
-    inline void SetLabelVisibility(Visibility&& value) { m_labelVisibilityHasBeenSet = true; m_labelVisibility = std::move(value); }
-    inline DonutCenterOptions& WithLabelVisibility(const Visibility& value) { SetLabelVisibility(value); return *this;}
-    inline DonutCenterOptions& WithLabelVisibility(Visibility&& value) { SetLabelVisibility(std::move(value)); return *this;}
+    inline void SetLabelVisibility(Visibility value) { m_labelVisibilityHasBeenSet = true; m_labelVisibility = value; }
+    inline DonutCenterOptions& WithLabelVisibility(Visibility value) { SetLabelVisibility(value); return *this;}
     ///@}
   private:
 
-    Visibility m_labelVisibility;
+    Visibility m_labelVisibility{Visibility::NOT_SET};
     bool m_labelVisibilityHasBeenSet = false;
   };
 

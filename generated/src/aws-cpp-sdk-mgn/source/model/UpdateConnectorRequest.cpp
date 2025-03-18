@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConnectorRequest::UpdateConnectorRequest() : 
-    m_connectorIDHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ssmCommandConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

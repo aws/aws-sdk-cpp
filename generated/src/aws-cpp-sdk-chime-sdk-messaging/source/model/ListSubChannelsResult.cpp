@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSubChannelsResult::ListSubChannelsResult()
-{
-}
-
 ListSubChannelsResult::ListSubChannelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSubChannelsResult& ListSubChannelsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
+    m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubChannels"))
   {
     Aws::Utils::Array<JsonView> subChannelsJsonList = jsonValue.GetArray("SubChannels");
@@ -42,20 +37,20 @@ ListSubChannelsResult& ListSubChannelsResult::operator =(const Aws::AmazonWebSer
     {
       m_subChannels.push_back(subChannelsJsonList[subChannelsIndex].AsObject());
     }
+    m_subChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

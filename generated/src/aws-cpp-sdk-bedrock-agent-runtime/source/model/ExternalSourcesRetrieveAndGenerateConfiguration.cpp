@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGenerateConfiguration() : 
-    m_generationConfigurationHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 ExternalSourcesRetrieveAndGenerateConfiguration::ExternalSourcesRetrieveAndGenerateConfiguration(JsonView jsonValue)
-  : ExternalSourcesRetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExternalSourcesRetrieveAndGenerateConfiguration& ExternalSourcesRetrieveAndGener
   if(jsonValue.ValueExists("generationConfiguration"))
   {
     m_generationConfiguration = jsonValue.GetObject("generationConfiguration");
-
     m_generationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -56,7 +44,6 @@ ExternalSourcesRetrieveAndGenerateConfiguration& ExternalSourcesRetrieveAndGener
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

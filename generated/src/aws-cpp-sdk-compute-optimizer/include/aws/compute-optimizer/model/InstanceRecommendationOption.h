@@ -39,7 +39,7 @@ namespace Model
   class InstanceRecommendationOption
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption();
+    AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption() = default;
     AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The instance type of the instance recommendation.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceRecommendationOption& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceRecommendationOption& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceRecommendationOption& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceRecommendationOption& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p> Describes the GPU accelerator settings for the recommended instance type.
      * </p>
      */
-    inline const GpuInfo& GetInstanceGpuInfo() const{ return m_instanceGpuInfo; }
+    inline const GpuInfo& GetInstanceGpuInfo() const { return m_instanceGpuInfo; }
     inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
-    inline void SetInstanceGpuInfo(const GpuInfo& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = value; }
-    inline void SetInstanceGpuInfo(GpuInfo&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::move(value); }
-    inline InstanceRecommendationOption& WithInstanceGpuInfo(const GpuInfo& value) { SetInstanceGpuInfo(value); return *this;}
-    inline InstanceRecommendationOption& WithInstanceGpuInfo(GpuInfo&& value) { SetInstanceGpuInfo(std::move(value)); return *this;}
+    template<typename InstanceGpuInfoT = GpuInfo>
+    void SetInstanceGpuInfo(InstanceGpuInfoT&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::forward<InstanceGpuInfoT>(value); }
+    template<typename InstanceGpuInfoT = GpuInfo>
+    InstanceRecommendationOption& WithInstanceGpuInfo(InstanceGpuInfoT&& value) { SetInstanceGpuInfo(std::forward<InstanceGpuInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
-    inline const Aws::Vector<UtilizationMetric>& GetProjectedUtilizationMetrics() const{ return m_projectedUtilizationMetrics; }
+    inline const Aws::Vector<UtilizationMetric>& GetProjectedUtilizationMetrics() const { return m_projectedUtilizationMetrics; }
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
-    inline void SetProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = value; }
-    inline void SetProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::move(value); }
-    inline InstanceRecommendationOption& WithProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { SetProjectedUtilizationMetrics(value); return *this;}
-    inline InstanceRecommendationOption& WithProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { SetProjectedUtilizationMetrics(std::move(value)); return *this;}
-    inline InstanceRecommendationOption& AddProjectedUtilizationMetrics(const UtilizationMetric& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(value); return *this; }
-    inline InstanceRecommendationOption& AddProjectedUtilizationMetrics(UtilizationMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    void SetProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::forward<ProjectedUtilizationMetricsT>(value); }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    InstanceRecommendationOption& WithProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { SetProjectedUtilizationMetrics(std::forward<ProjectedUtilizationMetricsT>(value)); return *this;}
+    template<typename ProjectedUtilizationMetricsT = UtilizationMetric>
+    InstanceRecommendationOption& AddProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.emplace_back(std::forward<ProjectedUtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -184,14 +182,13 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
      * Types</a>.</p> </li> </ul>
      */
-    inline const Aws::Vector<PlatformDifference>& GetPlatformDifferences() const{ return m_platformDifferences; }
+    inline const Aws::Vector<PlatformDifference>& GetPlatformDifferences() const { return m_platformDifferences; }
     inline bool PlatformDifferencesHasBeenSet() const { return m_platformDifferencesHasBeenSet; }
-    inline void SetPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = value; }
-    inline void SetPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = std::move(value); }
-    inline InstanceRecommendationOption& WithPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { SetPlatformDifferences(value); return *this;}
-    inline InstanceRecommendationOption& WithPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { SetPlatformDifferences(std::move(value)); return *this;}
-    inline InstanceRecommendationOption& AddPlatformDifferences(const PlatformDifference& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(value); return *this; }
-    inline InstanceRecommendationOption& AddPlatformDifferences(PlatformDifference&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(std::move(value)); return *this; }
+    template<typename PlatformDifferencesT = Aws::Vector<PlatformDifference>>
+    void SetPlatformDifferences(PlatformDifferencesT&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = std::forward<PlatformDifferencesT>(value); }
+    template<typename PlatformDifferencesT = Aws::Vector<PlatformDifference>>
+    InstanceRecommendationOption& WithPlatformDifferences(PlatformDifferencesT&& value) { SetPlatformDifferences(std::forward<PlatformDifferencesT>(value)); return *this;}
+    inline InstanceRecommendationOption& AddPlatformDifferences(PlatformDifference value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -210,7 +207,7 @@ namespace Model
      * the recommendation will meet the performance requirements of your workload
      * before migrating your resource.</p>
      */
-    inline double GetPerformanceRisk() const{ return m_performanceRisk; }
+    inline double GetPerformanceRisk() const { return m_performanceRisk; }
     inline bool PerformanceRiskHasBeenSet() const { return m_performanceRiskHasBeenSet; }
     inline void SetPerformanceRisk(double value) { m_performanceRiskHasBeenSet = true; m_performanceRisk = value; }
     inline InstanceRecommendationOption& WithPerformanceRisk(double value) { SetPerformanceRisk(value); return *this;}
@@ -221,7 +218,7 @@ namespace Model
      * <p>The rank of the instance recommendation option.</p> <p>The top recommendation
      * option is ranked as <code>1</code>.</p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline InstanceRecommendationOption& WithRank(int value) { SetRank(value); return *this;}
@@ -233,12 +230,12 @@ namespace Model
      * recommendation option. Savings opportunity includes the estimated monthly
      * savings amount and percentage.</p>
      */
-    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+    inline const SavingsOpportunity& GetSavingsOpportunity() const { return m_savingsOpportunity; }
     inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
-    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
-    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
-    inline InstanceRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
-    inline InstanceRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    void SetSavingsOpportunity(SavingsOpportunityT&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::forward<SavingsOpportunityT>(value); }
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    InstanceRecommendationOption& WithSavingsOpportunity(SavingsOpportunityT&& value) { SetSavingsOpportunity(std::forward<SavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,12 +245,12 @@ namespace Model
      * discounts. Savings opportunity includes the estimated monthly savings and
      * percentage. </p>
      */
-    inline const InstanceSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+    inline const InstanceSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const { return m_savingsOpportunityAfterDiscounts; }
     inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
-    inline void SetSavingsOpportunityAfterDiscounts(const InstanceSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
-    inline void SetSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
-    inline InstanceRecommendationOption& WithSavingsOpportunityAfterDiscounts(const InstanceSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
-    inline InstanceRecommendationOption& WithSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+    template<typename SavingsOpportunityAfterDiscountsT = InstanceSavingsOpportunityAfterDiscounts>
+    void SetSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::forward<SavingsOpportunityAfterDiscountsT>(value); }
+    template<typename SavingsOpportunityAfterDiscountsT = InstanceSavingsOpportunityAfterDiscounts>
+    InstanceRecommendationOption& WithSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { SetSavingsOpportunityAfterDiscounts(std::forward<SavingsOpportunityAfterDiscountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,12 +264,10 @@ namespace Model
      * <code>VeryLow</code> if both the current and recommended instance types are of
      * the same CPU architecture.</p>
      */
-    inline const MigrationEffort& GetMigrationEffort() const{ return m_migrationEffort; }
+    inline MigrationEffort GetMigrationEffort() const { return m_migrationEffort; }
     inline bool MigrationEffortHasBeenSet() const { return m_migrationEffortHasBeenSet; }
-    inline void SetMigrationEffort(const MigrationEffort& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = value; }
-    inline void SetMigrationEffort(MigrationEffort&& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = std::move(value); }
-    inline InstanceRecommendationOption& WithMigrationEffort(const MigrationEffort& value) { SetMigrationEffort(value); return *this;}
-    inline InstanceRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
+    inline void SetMigrationEffort(MigrationEffort value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = value; }
+    inline InstanceRecommendationOption& WithMigrationEffort(MigrationEffort value) { SetMigrationEffort(value); return *this;}
     ///@}
   private:
 
@@ -288,10 +283,10 @@ namespace Model
     Aws::Vector<PlatformDifference> m_platformDifferences;
     bool m_platformDifferencesHasBeenSet = false;
 
-    double m_performanceRisk;
+    double m_performanceRisk{0.0};
     bool m_performanceRiskHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
@@ -300,7 +295,7 @@ namespace Model
     InstanceSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
     bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
-    MigrationEffort m_migrationEffort;
+    MigrationEffort m_migrationEffort{MigrationEffort::NOT_SET};
     bool m_migrationEffortHasBeenSet = false;
   };
 

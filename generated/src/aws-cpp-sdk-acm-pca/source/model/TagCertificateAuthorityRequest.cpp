@@ -12,12 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagCertificateAuthorityRequest::TagCertificateAuthorityRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagCertificateAuthorityRequest::SerializePayload() const
 {
   JsonValue payload;

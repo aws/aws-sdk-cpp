@@ -12,10 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateAdminAccountRequest::DisassociateAdminAccountRequest()
-{
-}
-
 Aws::String DisassociateAdminAccountRequest::SerializePayload() const
 {
   return "{}";

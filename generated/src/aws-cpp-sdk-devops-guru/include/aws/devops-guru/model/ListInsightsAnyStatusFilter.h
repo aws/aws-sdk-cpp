@@ -33,7 +33,7 @@ namespace Model
   class ListInsightsAnyStatusFilter
   {
   public:
-    AWS_DEVOPSGURU_API ListInsightsAnyStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsAnyStatusFilter() = default;
     AWS_DEVOPSGURU_API ListInsightsAnyStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ListInsightsAnyStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
      * insights. </p>
      */
-    inline const InsightType& GetType() const{ return m_type; }
+    inline InsightType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InsightType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InsightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListInsightsAnyStatusFilter& WithType(const InsightType& value) { SetType(value); return *this;}
-    inline ListInsightsAnyStatusFilter& WithType(InsightType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InsightType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListInsightsAnyStatusFilter& WithType(InsightType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p> A time range used to specify when the behavior of the filtered insights
      * started. </p>
      */
-    inline const StartTimeRange& GetStartTimeRange() const{ return m_startTimeRange; }
+    inline const StartTimeRange& GetStartTimeRange() const { return m_startTimeRange; }
     inline bool StartTimeRangeHasBeenSet() const { return m_startTimeRangeHasBeenSet; }
-    inline void SetStartTimeRange(const StartTimeRange& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = value; }
-    inline void SetStartTimeRange(StartTimeRange&& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = std::move(value); }
-    inline ListInsightsAnyStatusFilter& WithStartTimeRange(const StartTimeRange& value) { SetStartTimeRange(value); return *this;}
-    inline ListInsightsAnyStatusFilter& WithStartTimeRange(StartTimeRange&& value) { SetStartTimeRange(std::move(value)); return *this;}
+    template<typename StartTimeRangeT = StartTimeRange>
+    void SetStartTimeRange(StartTimeRangeT&& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = std::forward<StartTimeRangeT>(value); }
+    template<typename StartTimeRangeT = StartTimeRange>
+    ListInsightsAnyStatusFilter& WithStartTimeRange(StartTimeRangeT&& value) { SetStartTimeRange(std::forward<StartTimeRangeT>(value)); return *this;}
     ///@}
   private:
 
-    InsightType m_type;
+    InsightType m_type{InsightType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     StartTimeRange m_startTimeRange;

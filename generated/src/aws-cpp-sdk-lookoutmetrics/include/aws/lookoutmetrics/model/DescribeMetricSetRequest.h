@@ -21,7 +21,7 @@ namespace Model
   class DescribeMetricSetRequest : public LookoutMetricsRequest
   {
   public:
-    AWS_LOOKOUTMETRICS_API DescribeMetricSetRequest();
+    AWS_LOOKOUTMETRICS_API DescribeMetricSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the dataset.</p>
      */
-    inline const Aws::String& GetMetricSetArn() const{ return m_metricSetArn; }
+    inline const Aws::String& GetMetricSetArn() const { return m_metricSetArn; }
     inline bool MetricSetArnHasBeenSet() const { return m_metricSetArnHasBeenSet; }
-    inline void SetMetricSetArn(const Aws::String& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = value; }
-    inline void SetMetricSetArn(Aws::String&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::move(value); }
-    inline void SetMetricSetArn(const char* value) { m_metricSetArnHasBeenSet = true; m_metricSetArn.assign(value); }
-    inline DescribeMetricSetRequest& WithMetricSetArn(const Aws::String& value) { SetMetricSetArn(value); return *this;}
-    inline DescribeMetricSetRequest& WithMetricSetArn(Aws::String&& value) { SetMetricSetArn(std::move(value)); return *this;}
-    inline DescribeMetricSetRequest& WithMetricSetArn(const char* value) { SetMetricSetArn(value); return *this;}
+    template<typename MetricSetArnT = Aws::String>
+    void SetMetricSetArn(MetricSetArnT&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::forward<MetricSetArnT>(value); }
+    template<typename MetricSetArnT = Aws::String>
+    DescribeMetricSetRequest& WithMetricSetArn(MetricSetArnT&& value) { SetMetricSetArn(std::forward<MetricSetArnT>(value)); return *this;}
     ///@}
   private:
 

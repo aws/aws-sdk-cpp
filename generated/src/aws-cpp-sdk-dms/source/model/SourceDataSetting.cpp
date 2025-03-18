@@ -18,16 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SourceDataSetting::SourceDataSetting() : 
-    m_cDCStartPositionHasBeenSet(false),
-    m_cDCStartTimeHasBeenSet(false),
-    m_cDCStopTimeHasBeenSet(false),
-    m_slotNameHasBeenSet(false)
-{
-}
-
 SourceDataSetting::SourceDataSetting(JsonView jsonValue)
-  : SourceDataSetting()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SourceDataSetting& SourceDataSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CDCStartPosition"))
   {
     m_cDCStartPosition = jsonValue.GetString("CDCStartPosition");
-
     m_cDCStartPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CDCStartTime"))
   {
     m_cDCStartTime = jsonValue.GetString("CDCStartTime");
-
     m_cDCStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CDCStopTime"))
   {
     m_cDCStopTime = jsonValue.GetString("CDCStopTime");
-
     m_cDCStopTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlotName"))
   {
     m_slotName = jsonValue.GetString("SlotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   return *this;
 }
 

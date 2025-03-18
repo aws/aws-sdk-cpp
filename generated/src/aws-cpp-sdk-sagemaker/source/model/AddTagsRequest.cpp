@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsRequest::SerializePayload() const
 {
   JsonValue payload;

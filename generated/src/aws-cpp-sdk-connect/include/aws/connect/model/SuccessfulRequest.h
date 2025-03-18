@@ -32,7 +32,7 @@ namespace Model
   class SuccessfulRequest
   {
   public:
-    AWS_CONNECT_API SuccessfulRequest();
+    AWS_CONNECT_API SuccessfulRequest() = default;
     AWS_CONNECT_API SuccessfulRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API SuccessfulRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Request identifier provided in the API call in the ContactDataRequest to
      * create a contact.</p>
      */
-    inline const Aws::String& GetRequestIdentifier() const{ return m_requestIdentifier; }
+    inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
     inline bool RequestIdentifierHasBeenSet() const { return m_requestIdentifierHasBeenSet; }
-    inline void SetRequestIdentifier(const Aws::String& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = value; }
-    inline void SetRequestIdentifier(Aws::String&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::move(value); }
-    inline void SetRequestIdentifier(const char* value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier.assign(value); }
-    inline SuccessfulRequest& WithRequestIdentifier(const Aws::String& value) { SetRequestIdentifier(value); return *this;}
-    inline SuccessfulRequest& WithRequestIdentifier(Aws::String&& value) { SetRequestIdentifier(std::move(value)); return *this;}
-    inline SuccessfulRequest& WithRequestIdentifier(const char* value) { SetRequestIdentifier(value); return *this;}
+    template<typename RequestIdentifierT = Aws::String>
+    void SetRequestIdentifier(RequestIdentifierT&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::forward<RequestIdentifierT>(value); }
+    template<typename RequestIdentifierT = Aws::String>
+    SuccessfulRequest& WithRequestIdentifier(RequestIdentifierT&& value) { SetRequestIdentifier(std::forward<RequestIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contactId of the contact that was created successfully.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline SuccessfulRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline SuccessfulRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline SuccessfulRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    SuccessfulRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
   private:
 

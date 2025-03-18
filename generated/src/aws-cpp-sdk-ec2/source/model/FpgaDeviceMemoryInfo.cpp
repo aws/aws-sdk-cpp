@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo(const XmlNode& xmlNode)
-  : FpgaDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

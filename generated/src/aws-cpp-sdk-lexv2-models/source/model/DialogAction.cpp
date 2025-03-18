@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DialogAction::DialogAction() : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_suppressNextMessage(false),
-    m_suppressNextMessageHasBeenSet(false)
-{
-}
-
 DialogAction::DialogAction(JsonView jsonValue)
-  : DialogAction()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = DialogActionTypeMapper::GetDialogActionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotToElicit"))
   {
     m_slotToElicit = jsonValue.GetString("slotToElicit");
-
     m_slotToElicitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressNextMessage"))
   {
     m_suppressNextMessage = jsonValue.GetBool("suppressNextMessage");
-
     m_suppressNextMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

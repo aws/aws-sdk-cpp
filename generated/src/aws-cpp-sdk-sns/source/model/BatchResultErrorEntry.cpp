@@ -20,17 +20,7 @@ namespace SNS
 namespace Model
 {
 
-BatchResultErrorEntry::BatchResultErrorEntry() : 
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false)
-{
-}
-
 BatchResultErrorEntry::BatchResultErrorEntry(const XmlNode& xmlNode)
-  : BatchResultErrorEntry()
 {
   *this = xmlNode;
 }

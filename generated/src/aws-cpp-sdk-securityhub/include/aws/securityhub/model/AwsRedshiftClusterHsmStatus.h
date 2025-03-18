@@ -33,7 +33,7 @@ namespace Model
   class AwsRedshiftClusterHsmStatus
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterHsmStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterHsmStatus() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterHsmStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterHsmStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the HSM client certificate that the Amazon Redshift cluster uses
      * to retrieve the data encryption keys that are stored in an HSM.</p>
      */
-    inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
+    inline const Aws::String& GetHsmClientCertificateIdentifier() const { return m_hsmClientCertificateIdentifier; }
     inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
-    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
-    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
-    inline AwsRedshiftClusterHsmStatus& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    template<typename HsmClientCertificateIdentifierT = Aws::String>
+    void SetHsmClientCertificateIdentifier(HsmClientCertificateIdentifierT&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::forward<HsmClientCertificateIdentifierT>(value); }
+    template<typename HsmClientCertificateIdentifierT = Aws::String>
+    AwsRedshiftClusterHsmStatus& WithHsmClientCertificateIdentifier(HsmClientCertificateIdentifierT&& value) { SetHsmClientCertificateIdentifier(std::forward<HsmClientCertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The name of the HSM configuration that contains the information that the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
+    inline const Aws::String& GetHsmConfigurationIdentifier() const { return m_hsmConfigurationIdentifier; }
     inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
-    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
-    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
-    inline AwsRedshiftClusterHsmStatus& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+    template<typename HsmConfigurationIdentifierT = Aws::String>
+    void SetHsmConfigurationIdentifier(HsmConfigurationIdentifierT&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::forward<HsmConfigurationIdentifierT>(value); }
+    template<typename HsmConfigurationIdentifierT = Aws::String>
+    AwsRedshiftClusterHsmStatus& WithHsmConfigurationIdentifier(HsmConfigurationIdentifierT&& value) { SetHsmConfigurationIdentifier(std::forward<HsmConfigurationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * settings changes specified in a modify cluster command.</p> <p>Type: String</p>
      * <p>Valid values: <code>active</code> | <code>applying</code> </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRedshiftClusterHsmStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRedshiftClusterHsmStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRedshiftClusterHsmStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

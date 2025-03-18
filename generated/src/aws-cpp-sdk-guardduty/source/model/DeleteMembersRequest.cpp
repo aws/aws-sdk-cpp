@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMembersRequest::DeleteMembersRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMembersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class ListTagsForResourceRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListTagsForResourceRequest();
+    AWS_WELLARCHITECTED_API ListTagsForResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadArn() const{ return m_workloadArn; }
+    inline const Aws::String& GetWorkloadArn() const { return m_workloadArn; }
     inline bool WorkloadArnHasBeenSet() const { return m_workloadArnHasBeenSet; }
-    inline void SetWorkloadArn(const Aws::String& value) { m_workloadArnHasBeenSet = true; m_workloadArn = value; }
-    inline void SetWorkloadArn(Aws::String&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::move(value); }
-    inline void SetWorkloadArn(const char* value) { m_workloadArnHasBeenSet = true; m_workloadArn.assign(value); }
-    inline ListTagsForResourceRequest& WithWorkloadArn(const Aws::String& value) { SetWorkloadArn(value); return *this;}
-    inline ListTagsForResourceRequest& WithWorkloadArn(Aws::String&& value) { SetWorkloadArn(std::move(value)); return *this;}
-    inline ListTagsForResourceRequest& WithWorkloadArn(const char* value) { SetWorkloadArn(value); return *this;}
+    template<typename WorkloadArnT = Aws::String>
+    void SetWorkloadArn(WorkloadArnT&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::forward<WorkloadArnT>(value); }
+    template<typename WorkloadArnT = Aws::String>
+    ListTagsForResourceRequest& WithWorkloadArn(WorkloadArnT&& value) { SetWorkloadArn(std::forward<WorkloadArnT>(value)); return *this;}
     ///@}
   private:
 

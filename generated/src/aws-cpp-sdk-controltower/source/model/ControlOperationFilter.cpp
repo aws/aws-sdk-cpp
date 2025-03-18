@@ -18,17 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-ControlOperationFilter::ControlOperationFilter() : 
-    m_controlIdentifiersHasBeenSet(false),
-    m_controlOperationTypesHasBeenSet(false),
-    m_enabledControlIdentifiersHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_targetIdentifiersHasBeenSet(false)
-{
-}
-
 ControlOperationFilter::ControlOperationFilter(JsonView jsonValue)
-  : ControlOperationFilter()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ ControlOperationFilter& ControlOperationFilter::operator =(JsonView jsonValue)
     }
     m_controlIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlOperationTypes"))
   {
     Aws::Utils::Array<JsonView> controlOperationTypesJsonList = jsonValue.GetArray("controlOperationTypes");
@@ -54,7 +43,6 @@ ControlOperationFilter& ControlOperationFilter::operator =(JsonView jsonValue)
     }
     m_controlOperationTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabledControlIdentifiers"))
   {
     Aws::Utils::Array<JsonView> enabledControlIdentifiersJsonList = jsonValue.GetArray("enabledControlIdentifiers");
@@ -64,7 +52,6 @@ ControlOperationFilter& ControlOperationFilter::operator =(JsonView jsonValue)
     }
     m_enabledControlIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statuses"))
   {
     Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
@@ -74,7 +61,6 @@ ControlOperationFilter& ControlOperationFilter::operator =(JsonView jsonValue)
     }
     m_statusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetIdentifiers"))
   {
     Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
@@ -84,7 +70,6 @@ ControlOperationFilter& ControlOperationFilter::operator =(JsonView jsonValue)
     }
     m_targetIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

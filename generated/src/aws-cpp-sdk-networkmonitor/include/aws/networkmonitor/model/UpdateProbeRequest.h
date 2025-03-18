@@ -23,7 +23,7 @@ namespace Model
   class UpdateProbeRequest : public NetworkMonitorRequest
   {
   public:
-    AWS_NETWORKMONITOR_API UpdateProbeRequest();
+    AWS_NETWORKMONITOR_API UpdateProbeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,40 +38,34 @@ namespace Model
     /**
      * <p>The name of the monitor that the probe was updated for.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline UpdateProbeRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline UpdateProbeRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline UpdateProbeRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    UpdateProbeRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the probe to update.</p>
      */
-    inline const Aws::String& GetProbeId() const{ return m_probeId; }
+    inline const Aws::String& GetProbeId() const { return m_probeId; }
     inline bool ProbeIdHasBeenSet() const { return m_probeIdHasBeenSet; }
-    inline void SetProbeId(const Aws::String& value) { m_probeIdHasBeenSet = true; m_probeId = value; }
-    inline void SetProbeId(Aws::String&& value) { m_probeIdHasBeenSet = true; m_probeId = std::move(value); }
-    inline void SetProbeId(const char* value) { m_probeIdHasBeenSet = true; m_probeId.assign(value); }
-    inline UpdateProbeRequest& WithProbeId(const Aws::String& value) { SetProbeId(value); return *this;}
-    inline UpdateProbeRequest& WithProbeId(Aws::String&& value) { SetProbeId(std::move(value)); return *this;}
-    inline UpdateProbeRequest& WithProbeId(const char* value) { SetProbeId(value); return *this;}
+    template<typename ProbeIdT = Aws::String>
+    void SetProbeId(ProbeIdT&& value) { m_probeIdHasBeenSet = true; m_probeId = std::forward<ProbeIdT>(value); }
+    template<typename ProbeIdT = Aws::String>
+    UpdateProbeRequest& WithProbeId(ProbeIdT&& value) { SetProbeId(std::forward<ProbeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the probe update.</p>
      */
-    inline const ProbeState& GetState() const{ return m_state; }
+    inline ProbeState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ProbeState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ProbeState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateProbeRequest& WithState(const ProbeState& value) { SetState(value); return *this;}
-    inline UpdateProbeRequest& WithState(ProbeState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ProbeState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateProbeRequest& WithState(ProbeState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +73,12 @@ namespace Model
      * <p>The updated IP address for the probe destination. This must be either an IPv4
      * or IPv6 address.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline UpdateProbeRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline UpdateProbeRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline UpdateProbeRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    UpdateProbeRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +87,7 @@ namespace Model
      * <code>protocol</code> is <code>TCP</code> and must be a number between
      * <code>1</code> and <code>65536</code>.</p>
      */
-    inline int GetDestinationPort() const{ return m_destinationPort; }
+    inline int GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
     inline void SetDestinationPort(int value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
     inline UpdateProbeRequest& WithDestinationPort(int value) { SetDestinationPort(value); return *this;}
@@ -107,12 +99,10 @@ namespace Model
      * <code>TCP</code> or <code>ICMP</code>. If the protocol is <code>TCP</code>, then
      * <code>port</code> is also required.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline UpdateProbeRequest& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline UpdateProbeRequest& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline UpdateProbeRequest& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +111,7 @@ namespace Model
      * destination. This must be a number between <code>56</code> and
      * <code>8500</code>.</p>
      */
-    inline int GetPacketSize() const{ return m_packetSize; }
+    inline int GetPacketSize() const { return m_packetSize; }
     inline bool PacketSizeHasBeenSet() const { return m_packetSizeHasBeenSet; }
     inline void SetPacketSize(int value) { m_packetSizeHasBeenSet = true; m_packetSize = value; }
     inline UpdateProbeRequest& WithPacketSize(int value) { SetPacketSize(value); return *this;}
@@ -134,19 +124,19 @@ namespace Model
     Aws::String m_probeId;
     bool m_probeIdHasBeenSet = false;
 
-    ProbeState m_state;
+    ProbeState m_state{ProbeState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
 
-    int m_destinationPort;
+    int m_destinationPort{0};
     bool m_destinationPortHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_packetSize;
+    int m_packetSize{0};
     bool m_packetSizeHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListSchemaVersionsResult
   {
   public:
-    AWS_GLUE_API ListSchemaVersionsResult();
+    AWS_GLUE_API ListSchemaVersionsResult() = default;
     AWS_GLUE_API ListSchemaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API ListSchemaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>SchemaVersionList</code> objects containing details of each
      * schema version.</p>
      */
-    inline const Aws::Vector<SchemaVersionListItem>& GetSchemas() const{ return m_schemas; }
-    inline void SetSchemas(const Aws::Vector<SchemaVersionListItem>& value) { m_schemas = value; }
-    inline void SetSchemas(Aws::Vector<SchemaVersionListItem>&& value) { m_schemas = std::move(value); }
-    inline ListSchemaVersionsResult& WithSchemas(const Aws::Vector<SchemaVersionListItem>& value) { SetSchemas(value); return *this;}
-    inline ListSchemaVersionsResult& WithSchemas(Aws::Vector<SchemaVersionListItem>&& value) { SetSchemas(std::move(value)); return *this;}
-    inline ListSchemaVersionsResult& AddSchemas(const SchemaVersionListItem& value) { m_schemas.push_back(value); return *this; }
-    inline ListSchemaVersionsResult& AddSchemas(SchemaVersionListItem&& value) { m_schemas.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SchemaVersionListItem>& GetSchemas() const { return m_schemas; }
+    template<typename SchemasT = Aws::Vector<SchemaVersionListItem>>
+    void SetSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas = std::forward<SchemasT>(value); }
+    template<typename SchemasT = Aws::Vector<SchemaVersionListItem>>
+    ListSchemaVersionsResult& WithSchemas(SchemasT&& value) { SetSchemas(std::forward<SchemasT>(value)); return *this;}
+    template<typename SchemasT = SchemaVersionListItem>
+    ListSchemaVersionsResult& AddSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas.emplace_back(std::forward<SchemasT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>A continuation token for paginating the returned list of tokens, returned if
      * the current segment of the list is not the last.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSchemaVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSchemaVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSchemaVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSchemaVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSchemaVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSchemaVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSchemaVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSchemaVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SchemaVersionListItem> m_schemas;
+    bool m_schemasHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

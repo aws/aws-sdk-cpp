@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecution::WorkflowExecution() : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 WorkflowExecution::WorkflowExecution(JsonView jsonValue)
-  : WorkflowExecution()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WorkflowExecution& WorkflowExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   return *this;
 }
 

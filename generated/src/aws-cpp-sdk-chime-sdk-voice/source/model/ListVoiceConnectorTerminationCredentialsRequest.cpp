@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVoiceConnectorTerminationCredentialsRequest::ListVoiceConnectorTerminationCredentialsRequest() : 
-    m_voiceConnectorIdHasBeenSet(false)
-{
-}
-
 Aws::String ListVoiceConnectorTerminationCredentialsRequest::SerializePayload() const
 {
   return {};

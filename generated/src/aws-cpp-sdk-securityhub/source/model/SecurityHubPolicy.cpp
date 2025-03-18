@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SecurityHubPolicy::SecurityHubPolicy() : 
-    m_serviceEnabled(false),
-    m_serviceEnabledHasBeenSet(false),
-    m_enabledStandardIdentifiersHasBeenSet(false),
-    m_securityControlsConfigurationHasBeenSet(false)
-{
-}
-
 SecurityHubPolicy::SecurityHubPolicy(JsonView jsonValue)
-  : SecurityHubPolicy()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ SecurityHubPolicy& SecurityHubPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceEnabled"))
   {
     m_serviceEnabled = jsonValue.GetBool("ServiceEnabled");
-
     m_serviceEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledStandardIdentifiers"))
   {
     Aws::Utils::Array<JsonView> enabledStandardIdentifiersJsonList = jsonValue.GetArray("EnabledStandardIdentifiers");
@@ -50,14 +39,11 @@ SecurityHubPolicy& SecurityHubPolicy::operator =(JsonView jsonValue)
     }
     m_enabledStandardIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlsConfiguration"))
   {
     m_securityControlsConfiguration = jsonValue.GetObject("SecurityControlsConfiguration");
-
     m_securityControlsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

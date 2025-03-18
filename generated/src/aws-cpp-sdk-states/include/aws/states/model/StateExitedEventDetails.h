@@ -35,7 +35,7 @@ namespace Model
   class StateExitedEventDetails
   {
   public:
-    AWS_SFN_API StateExitedEventDetails();
+    AWS_SFN_API StateExitedEventDetails() = default;
     AWS_SFN_API StateExitedEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API StateExitedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * </li> </ul> <p>To enable logging with CloudWatch Logs, the name should only
      * contain 0-9, A-Z, a-z, - and _.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StateExitedEventDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StateExitedEventDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StateExitedEventDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StateExitedEventDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,57 +64,52 @@ namespace Model
      * <p>The JSON output data of the state. Length constraints apply to the payload
      * size, and are expressed as bytes in UTF-8 encoding.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline StateExitedEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline StateExitedEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline StateExitedEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    StateExitedEventDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the output of an execution history event.</p>
      */
-    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
+    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const { return m_outputDetails; }
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-    inline void SetOutputDetails(const HistoryEventExecutionDataDetails& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-    inline void SetOutputDetails(HistoryEventExecutionDataDetails&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-    inline StateExitedEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-    inline StateExitedEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    void SetOutputDetails(OutputDetailsT&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::forward<OutputDetailsT>(value); }
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    StateExitedEventDetails& WithOutputDetails(OutputDetailsT&& value) { SetOutputDetails(std::forward<OutputDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Map of variable name and value as a serialized JSON representation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAssignedVariables() const{ return m_assignedVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAssignedVariables() const { return m_assignedVariables; }
     inline bool AssignedVariablesHasBeenSet() const { return m_assignedVariablesHasBeenSet; }
-    inline void SetAssignedVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables = value; }
-    inline void SetAssignedVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables = std::move(value); }
-    inline StateExitedEventDetails& WithAssignedVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetAssignedVariables(value); return *this;}
-    inline StateExitedEventDetails& WithAssignedVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetAssignedVariables(std::move(value)); return *this;}
-    inline StateExitedEventDetails& AddAssignedVariables(const Aws::String& key, const Aws::String& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, value); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, const Aws::String& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), value); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(const Aws::String& key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, std::move(value)); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(const char* key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, std::move(value)); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, const char* value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), value); return *this; }
-    inline StateExitedEventDetails& AddAssignedVariables(const char* key, const char* value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, value); return *this; }
+    template<typename AssignedVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAssignedVariables(AssignedVariablesT&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables = std::forward<AssignedVariablesT>(value); }
+    template<typename AssignedVariablesT = Aws::Map<Aws::String, Aws::String>>
+    StateExitedEventDetails& WithAssignedVariables(AssignedVariablesT&& value) { SetAssignedVariables(std::forward<AssignedVariablesT>(value)); return *this;}
+    template<typename AssignedVariablesKeyT = Aws::String, typename AssignedVariablesValueT = Aws::String>
+    StateExitedEventDetails& AddAssignedVariables(AssignedVariablesKeyT&& key, AssignedVariablesValueT&& value) {
+      m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::forward<AssignedVariablesKeyT>(key), std::forward<AssignedVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Provides details about input or output in an execution history event.</p>
      */
-    inline const AssignedVariablesDetails& GetAssignedVariablesDetails() const{ return m_assignedVariablesDetails; }
+    inline const AssignedVariablesDetails& GetAssignedVariablesDetails() const { return m_assignedVariablesDetails; }
     inline bool AssignedVariablesDetailsHasBeenSet() const { return m_assignedVariablesDetailsHasBeenSet; }
-    inline void SetAssignedVariablesDetails(const AssignedVariablesDetails& value) { m_assignedVariablesDetailsHasBeenSet = true; m_assignedVariablesDetails = value; }
-    inline void SetAssignedVariablesDetails(AssignedVariablesDetails&& value) { m_assignedVariablesDetailsHasBeenSet = true; m_assignedVariablesDetails = std::move(value); }
-    inline StateExitedEventDetails& WithAssignedVariablesDetails(const AssignedVariablesDetails& value) { SetAssignedVariablesDetails(value); return *this;}
-    inline StateExitedEventDetails& WithAssignedVariablesDetails(AssignedVariablesDetails&& value) { SetAssignedVariablesDetails(std::move(value)); return *this;}
+    template<typename AssignedVariablesDetailsT = AssignedVariablesDetails>
+    void SetAssignedVariablesDetails(AssignedVariablesDetailsT&& value) { m_assignedVariablesDetailsHasBeenSet = true; m_assignedVariablesDetails = std::forward<AssignedVariablesDetailsT>(value); }
+    template<typename AssignedVariablesDetailsT = AssignedVariablesDetails>
+    StateExitedEventDetails& WithAssignedVariablesDetails(AssignedVariablesDetailsT&& value) { SetAssignedVariablesDetails(std::forward<AssignedVariablesDetailsT>(value)); return *this;}
     ///@}
   private:
 

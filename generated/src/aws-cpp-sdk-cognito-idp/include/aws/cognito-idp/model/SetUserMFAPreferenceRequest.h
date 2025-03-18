@@ -24,7 +24,7 @@ namespace Model
   class SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetUserMFAPreferenceRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUserMFAPreferenceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and
      * sets it as the preferred MFA method when multiple methods are available.</p>
      */
-    inline const SMSMfaSettingsType& GetSMSMfaSettings() const{ return m_sMSMfaSettings; }
+    inline const SMSMfaSettingsType& GetSMSMfaSettings() const { return m_sMSMfaSettings; }
     inline bool SMSMfaSettingsHasBeenSet() const { return m_sMSMfaSettingsHasBeenSet; }
-    inline void SetSMSMfaSettings(const SMSMfaSettingsType& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = value; }
-    inline void SetSMSMfaSettings(SMSMfaSettingsType&& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = std::move(value); }
-    inline SetUserMFAPreferenceRequest& WithSMSMfaSettings(const SMSMfaSettingsType& value) { SetSMSMfaSettings(value); return *this;}
-    inline SetUserMFAPreferenceRequest& WithSMSMfaSettings(SMSMfaSettingsType&& value) { SetSMSMfaSettings(std::move(value)); return *this;}
+    template<typename SMSMfaSettingsT = SMSMfaSettingsType>
+    void SetSMSMfaSettings(SMSMfaSettingsT&& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = std::forward<SMSMfaSettingsT>(value); }
+    template<typename SMSMfaSettingsT = SMSMfaSettingsType>
+    SetUserMFAPreferenceRequest& WithSMSMfaSettings(SMSMfaSettingsT&& value) { SetSMSMfaSettings(std::forward<SMSMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * methods are available. Users must register a TOTP authenticator before they set
      * this as their preferred MFA method.</p>
      */
-    inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
+    inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const { return m_softwareTokenMfaSettings; }
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
-    inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
-    inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
-    inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
-    inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
+    template<typename SoftwareTokenMfaSettingsT = SoftwareTokenMfaSettingsType>
+    void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsT&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::forward<SoftwareTokenMfaSettingsT>(value); }
+    template<typename SoftwareTokenMfaSettingsT = SoftwareTokenMfaSettingsType>
+    SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsT&& value) { SetSoftwareTokenMfaSettings(std::forward<SoftwareTokenMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
      * Essentials tier</a> or higher.</p>
      */
-    inline const EmailMfaSettingsType& GetEmailMfaSettings() const{ return m_emailMfaSettings; }
+    inline const EmailMfaSettingsType& GetEmailMfaSettings() const { return m_emailMfaSettings; }
     inline bool EmailMfaSettingsHasBeenSet() const { return m_emailMfaSettingsHasBeenSet; }
-    inline void SetEmailMfaSettings(const EmailMfaSettingsType& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = value; }
-    inline void SetEmailMfaSettings(EmailMfaSettingsType&& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = std::move(value); }
-    inline SetUserMFAPreferenceRequest& WithEmailMfaSettings(const EmailMfaSettingsType& value) { SetEmailMfaSettings(value); return *this;}
-    inline SetUserMFAPreferenceRequest& WithEmailMfaSettings(EmailMfaSettingsType&& value) { SetEmailMfaSettings(std::move(value)); return *this;}
+    template<typename EmailMfaSettingsT = EmailMfaSettingsType>
+    void SetEmailMfaSettings(EmailMfaSettingsT&& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = std::forward<EmailMfaSettingsT>(value); }
+    template<typename EmailMfaSettingsT = EmailMfaSettingsType>
+    SetUserMFAPreferenceRequest& WithEmailMfaSettings(EmailMfaSettingsT&& value) { SetEmailMfaSettings(std::forward<EmailMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +87,12 @@ namespace Model
      * user. Must include a scope claim for
      * <code>aws.cognito.signin.user.admin</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline SetUserMFAPreferenceRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline SetUserMFAPreferenceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline SetUserMFAPreferenceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    SetUserMFAPreferenceRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
   private:
 

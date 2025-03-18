@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCollaborationTrainedModelExportJobsRequest::ListCollaborationTrainedModelExportJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false)
-{
-}
-
 Aws::String ListCollaborationTrainedModelExportJobsRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class SchemaConversionRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API SchemaConversionRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API SchemaConversionRequest() = default;
     AWS_DATABASEMIGRATIONSERVICE_API SchemaConversionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API SchemaConversionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,62 +44,56 @@ namespace Model
     /**
      * <p>The schema conversion action status.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline SchemaConversionRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline SchemaConversionRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline SchemaConversionRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    SchemaConversionRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the schema conversion action.</p>
      */
-    inline const Aws::String& GetRequestIdentifier() const{ return m_requestIdentifier; }
+    inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
     inline bool RequestIdentifierHasBeenSet() const { return m_requestIdentifierHasBeenSet; }
-    inline void SetRequestIdentifier(const Aws::String& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = value; }
-    inline void SetRequestIdentifier(Aws::String&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::move(value); }
-    inline void SetRequestIdentifier(const char* value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier.assign(value); }
-    inline SchemaConversionRequest& WithRequestIdentifier(const Aws::String& value) { SetRequestIdentifier(value); return *this;}
-    inline SchemaConversionRequest& WithRequestIdentifier(Aws::String&& value) { SetRequestIdentifier(std::move(value)); return *this;}
-    inline SchemaConversionRequest& WithRequestIdentifier(const char* value) { SetRequestIdentifier(value); return *this;}
+    template<typename RequestIdentifierT = Aws::String>
+    void SetRequestIdentifier(RequestIdentifierT&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::forward<RequestIdentifierT>(value); }
+    template<typename RequestIdentifierT = Aws::String>
+    SchemaConversionRequest& WithRequestIdentifier(RequestIdentifierT&& value) { SetRequestIdentifier(std::forward<RequestIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The migration project ARN.</p>
      */
-    inline const Aws::String& GetMigrationProjectArn() const{ return m_migrationProjectArn; }
+    inline const Aws::String& GetMigrationProjectArn() const { return m_migrationProjectArn; }
     inline bool MigrationProjectArnHasBeenSet() const { return m_migrationProjectArnHasBeenSet; }
-    inline void SetMigrationProjectArn(const Aws::String& value) { m_migrationProjectArnHasBeenSet = true; m_migrationProjectArn = value; }
-    inline void SetMigrationProjectArn(Aws::String&& value) { m_migrationProjectArnHasBeenSet = true; m_migrationProjectArn = std::move(value); }
-    inline void SetMigrationProjectArn(const char* value) { m_migrationProjectArnHasBeenSet = true; m_migrationProjectArn.assign(value); }
-    inline SchemaConversionRequest& WithMigrationProjectArn(const Aws::String& value) { SetMigrationProjectArn(value); return *this;}
-    inline SchemaConversionRequest& WithMigrationProjectArn(Aws::String&& value) { SetMigrationProjectArn(std::move(value)); return *this;}
-    inline SchemaConversionRequest& WithMigrationProjectArn(const char* value) { SetMigrationProjectArn(value); return *this;}
+    template<typename MigrationProjectArnT = Aws::String>
+    void SetMigrationProjectArn(MigrationProjectArnT&& value) { m_migrationProjectArnHasBeenSet = true; m_migrationProjectArn = std::forward<MigrationProjectArnT>(value); }
+    template<typename MigrationProjectArnT = Aws::String>
+    SchemaConversionRequest& WithMigrationProjectArn(MigrationProjectArnT&& value) { SetMigrationProjectArn(std::forward<MigrationProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ErrorDetails& GetError() const{ return m_error; }
+    inline const ErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline SchemaConversionRequest& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-    inline SchemaConversionRequest& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetails>
+    SchemaConversionRequest& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExportSqlDetails& GetExportSqlDetails() const{ return m_exportSqlDetails; }
+    inline const ExportSqlDetails& GetExportSqlDetails() const { return m_exportSqlDetails; }
     inline bool ExportSqlDetailsHasBeenSet() const { return m_exportSqlDetailsHasBeenSet; }
-    inline void SetExportSqlDetails(const ExportSqlDetails& value) { m_exportSqlDetailsHasBeenSet = true; m_exportSqlDetails = value; }
-    inline void SetExportSqlDetails(ExportSqlDetails&& value) { m_exportSqlDetailsHasBeenSet = true; m_exportSqlDetails = std::move(value); }
-    inline SchemaConversionRequest& WithExportSqlDetails(const ExportSqlDetails& value) { SetExportSqlDetails(value); return *this;}
-    inline SchemaConversionRequest& WithExportSqlDetails(ExportSqlDetails&& value) { SetExportSqlDetails(std::move(value)); return *this;}
+    template<typename ExportSqlDetailsT = ExportSqlDetails>
+    void SetExportSqlDetails(ExportSqlDetailsT&& value) { m_exportSqlDetailsHasBeenSet = true; m_exportSqlDetails = std::forward<ExportSqlDetailsT>(value); }
+    template<typename ExportSqlDetailsT = ExportSqlDetails>
+    SchemaConversionRequest& WithExportSqlDetails(ExportSqlDetailsT&& value) { SetExportSqlDetails(std::forward<ExportSqlDetailsT>(value)); return *this;}
     ///@}
   private:
 

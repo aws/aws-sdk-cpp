@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeRecommendationFeedbackRequest::DescribeRecommendationFeedbackRequest() : 
-    m_codeReviewArnHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecommendationFeedbackRequest::SerializePayload() const
 {
   return {};

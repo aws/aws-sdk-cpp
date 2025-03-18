@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelFlowSummary::ChannelFlowSummary() : 
-    m_channelFlowArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_processorsHasBeenSet(false)
-{
-}
-
 ChannelFlowSummary::ChannelFlowSummary(JsonView jsonValue)
-  : ChannelFlowSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ChannelFlowSummary& ChannelFlowSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelFlowArn"))
   {
     m_channelFlowArn = jsonValue.GetString("ChannelFlowArn");
-
     m_channelFlowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Processors"))
   {
     Aws::Utils::Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
@@ -56,7 +44,6 @@ ChannelFlowSummary& ChannelFlowSummary::operator =(JsonView jsonValue)
     }
     m_processorsHasBeenSet = true;
   }
-
   return *this;
 }
 

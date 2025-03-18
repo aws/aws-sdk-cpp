@@ -18,20 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SensitivityAggregations::SensitivityAggregations() : 
-    m_classifiableSizeInBytes(0),
-    m_classifiableSizeInBytesHasBeenSet(false),
-    m_publiclyAccessibleCount(0),
-    m_publiclyAccessibleCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_totalSizeInBytes(0),
-    m_totalSizeInBytesHasBeenSet(false)
-{
-}
-
 SensitivityAggregations::SensitivityAggregations(JsonView jsonValue)
-  : SensitivityAggregations()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SensitivityAggregations& SensitivityAggregations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("classifiableSizeInBytes"))
   {
     m_classifiableSizeInBytes = jsonValue.GetInt64("classifiableSizeInBytes");
-
     m_classifiableSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyAccessibleCount"))
   {
     m_publiclyAccessibleCount = jsonValue.GetInt64("publiclyAccessibleCount");
-
     m_publiclyAccessibleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalCount"))
   {
     m_totalCount = jsonValue.GetInt64("totalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalSizeInBytes"))
   {
     m_totalSizeInBytes = jsonValue.GetInt64("totalSizeInBytes");
-
     m_totalSizeInBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ReportWithRawData::ReportWithRawData() : 
-    m_reportArnHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 ReportWithRawData::ReportWithRawData(JsonView jsonValue)
-  : ReportWithRawData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReportWithRawData& ReportWithRawData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reportArn"))
   {
     m_reportArn = jsonValue.GetString("reportArn");
-
     m_reportArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

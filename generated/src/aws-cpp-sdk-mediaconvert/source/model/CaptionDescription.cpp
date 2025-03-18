@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CaptionDescription::CaptionDescription() : 
-    m_captionSelectorNameHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
-{
-}
-
 CaptionDescription::CaptionDescription(JsonView jsonValue)
-  : CaptionDescription()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("captionSelectorName"))
   {
     m_captionSelectorName = jsonValue.GetString("captionSelectorName");
-
     m_captionSelectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
-
     m_customLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageDescription"))
   {
     m_languageDescription = jsonValue.GetString("languageDescription");
-
     m_languageDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

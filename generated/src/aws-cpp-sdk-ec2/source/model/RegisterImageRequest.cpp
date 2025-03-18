@@ -10,34 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RegisterImageRequest::RegisterImageRequest() : 
-    m_imageLocationHasBeenSet(false),
-    m_billingProductsHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_tpmSupport(TpmSupportValues::NOT_SET),
-    m_tpmSupportHasBeenSet(false),
-    m_uefiDataHasBeenSet(false),
-    m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false)
-{
-}
-
 Aws::String RegisterImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

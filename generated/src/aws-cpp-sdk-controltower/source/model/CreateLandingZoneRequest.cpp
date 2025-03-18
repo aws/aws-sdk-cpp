@@ -12,13 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLandingZoneRequest::CreateLandingZoneRequest() : 
-    m_manifestHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String CreateLandingZoneRequest::SerializePayload() const
 {
   JsonValue payload;

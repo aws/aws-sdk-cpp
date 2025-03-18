@@ -12,17 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfiguredAudienceModelAssociationRequest::CreateConfiguredAudienceModelAssociationRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_configuredAudienceModelAssociationNameHasBeenSet(false),
-    m_manageResourcePolicies(false),
-    m_manageResourcePoliciesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfiguredAudienceModelAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

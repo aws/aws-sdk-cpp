@@ -21,7 +21,7 @@ namespace Model
   class DescribeViewRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DescribeViewRequest();
+    AWS_CONNECT_API DescribeViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
      * the ARN of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeViewRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeViewRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeViewRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeViewRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
      * views.</p>
      */
-    inline const Aws::String& GetViewId() const{ return m_viewId; }
+    inline const Aws::String& GetViewId() const { return m_viewId; }
     inline bool ViewIdHasBeenSet() const { return m_viewIdHasBeenSet; }
-    inline void SetViewId(const Aws::String& value) { m_viewIdHasBeenSet = true; m_viewId = value; }
-    inline void SetViewId(Aws::String&& value) { m_viewIdHasBeenSet = true; m_viewId = std::move(value); }
-    inline void SetViewId(const char* value) { m_viewIdHasBeenSet = true; m_viewId.assign(value); }
-    inline DescribeViewRequest& WithViewId(const Aws::String& value) { SetViewId(value); return *this;}
-    inline DescribeViewRequest& WithViewId(Aws::String&& value) { SetViewId(std::move(value)); return *this;}
-    inline DescribeViewRequest& WithViewId(const char* value) { SetViewId(value); return *this;}
+    template<typename ViewIdT = Aws::String>
+    void SetViewId(ViewIdT&& value) { m_viewIdHasBeenSet = true; m_viewId = std::forward<ViewIdT>(value); }
+    template<typename ViewIdT = Aws::String>
+    DescribeViewRequest& WithViewId(ViewIdT&& value) { SetViewId(std::forward<ViewIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class StreamConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API StreamConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API StreamConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API StreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API StreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline StreamConfiguration& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline StreamConfiguration& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline StreamConfiguration& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    StreamConfiguration& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the fragment to begin processing.</p>
      */
-    inline const Aws::String& GetFragmentNumber() const{ return m_fragmentNumber; }
+    inline const Aws::String& GetFragmentNumber() const { return m_fragmentNumber; }
     inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
-    inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
-    inline void SetFragmentNumber(Aws::String&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::move(value); }
-    inline void SetFragmentNumber(const char* value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber.assign(value); }
-    inline StreamConfiguration& WithFragmentNumber(const Aws::String& value) { SetFragmentNumber(value); return *this;}
-    inline StreamConfiguration& WithFragmentNumber(Aws::String&& value) { SetFragmentNumber(std::move(value)); return *this;}
-    inline StreamConfiguration& WithFragmentNumber(const char* value) { SetFragmentNumber(value); return *this;}
+    template<typename FragmentNumberT = Aws::String>
+    void SetFragmentNumber(FragmentNumberT&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::forward<FragmentNumberT>(value); }
+    template<typename FragmentNumberT = Aws::String>
+    StreamConfiguration& WithFragmentNumber(FragmentNumberT&& value) { SetFragmentNumber(std::forward<FragmentNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The streaming channel definition in the stream configuration.</p>
      */
-    inline const StreamChannelDefinition& GetStreamChannelDefinition() const{ return m_streamChannelDefinition; }
+    inline const StreamChannelDefinition& GetStreamChannelDefinition() const { return m_streamChannelDefinition; }
     inline bool StreamChannelDefinitionHasBeenSet() const { return m_streamChannelDefinitionHasBeenSet; }
-    inline void SetStreamChannelDefinition(const StreamChannelDefinition& value) { m_streamChannelDefinitionHasBeenSet = true; m_streamChannelDefinition = value; }
-    inline void SetStreamChannelDefinition(StreamChannelDefinition&& value) { m_streamChannelDefinitionHasBeenSet = true; m_streamChannelDefinition = std::move(value); }
-    inline StreamConfiguration& WithStreamChannelDefinition(const StreamChannelDefinition& value) { SetStreamChannelDefinition(value); return *this;}
-    inline StreamConfiguration& WithStreamChannelDefinition(StreamChannelDefinition&& value) { SetStreamChannelDefinition(std::move(value)); return *this;}
+    template<typename StreamChannelDefinitionT = StreamChannelDefinition>
+    void SetStreamChannelDefinition(StreamChannelDefinitionT&& value) { m_streamChannelDefinitionHasBeenSet = true; m_streamChannelDefinition = std::forward<StreamChannelDefinitionT>(value); }
+    template<typename StreamChannelDefinitionT = StreamChannelDefinition>
+    StreamConfiguration& WithStreamChannelDefinition(StreamChannelDefinitionT&& value) { SetStreamChannelDefinition(std::forward<StreamChannelDefinitionT>(value)); return *this;}
     ///@}
   private:
 

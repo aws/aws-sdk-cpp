@@ -13,12 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelRequest::DeleteChannelRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelRequest::SerializePayload() const
 {
   return {};

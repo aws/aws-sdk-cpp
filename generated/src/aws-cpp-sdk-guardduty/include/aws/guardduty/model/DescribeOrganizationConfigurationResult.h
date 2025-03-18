@@ -30,7 +30,7 @@ namespace Model
   class DescribeOrganizationConfigurationResult
   {
   public:
-    AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult();
+    AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult() = default;
     AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,8 +40,8 @@ namespace Model
      * <p>Indicates whether the maximum number of allowed member accounts are already
      * associated with the delegated administrator account for your organization.</p>
      */
-    inline bool GetMemberAccountLimitReached() const{ return m_memberAccountLimitReached; }
-    inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReached = value; }
+    inline bool GetMemberAccountLimitReached() const { return m_memberAccountLimitReached; }
+    inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReachedHasBeenSet = true; m_memberAccountLimitReached = value; }
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
     ///@}
 
@@ -49,13 +49,13 @@ namespace Model
     /**
      * <p>A list of features that are configured for this organization.</p>
      */
-    inline const Aws::Vector<OrganizationFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
-    inline void SetFeatures(const Aws::Vector<OrganizationFeatureConfigurationResult>& value) { m_features = value; }
-    inline void SetFeatures(Aws::Vector<OrganizationFeatureConfigurationResult>&& value) { m_features = std::move(value); }
-    inline DescribeOrganizationConfigurationResult& WithFeatures(const Aws::Vector<OrganizationFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithFeatures(Aws::Vector<OrganizationFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline DescribeOrganizationConfigurationResult& AddFeatures(const OrganizationFeatureConfigurationResult& value) { m_features.push_back(value); return *this; }
-    inline DescribeOrganizationConfigurationResult& AddFeatures(OrganizationFeatureConfigurationResult&& value) { m_features.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationFeatureConfigurationResult>& GetFeatures() const { return m_features; }
+    template<typename FeaturesT = Aws::Vector<OrganizationFeatureConfigurationResult>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<OrganizationFeatureConfigurationResult>>
+    DescribeOrganizationConfigurationResult& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    template<typename FeaturesT = OrganizationFeatureConfigurationResult>
+    DescribeOrganizationConfigurationResult& AddFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features.emplace_back(std::forward<FeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,13 +63,11 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeOrganizationConfigurationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeOrganizationConfigurationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,34 +91,35 @@ namespace Model
      * auto-enable settings, no new account will have the corresponding option as
      * enabled.</p> </li> </ul>
      */
-    inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
-    inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembers = value; }
-    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembers = std::move(value); }
-    inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+    inline AutoEnableMembers GetAutoEnableOrganizationMembers() const { return m_autoEnableOrganizationMembers; }
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMembers value) { SetAutoEnableOrganizationMembers(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrganizationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_memberAccountLimitReached;
+    bool m_memberAccountLimitReached{false};
+    bool m_memberAccountLimitReachedHasBeenSet = false;
 
     Aws::Vector<OrganizationFeatureConfigurationResult> m_features;
+    bool m_featuresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    AutoEnableMembers m_autoEnableOrganizationMembers;
+    AutoEnableMembers m_autoEnableOrganizationMembers{AutoEnableMembers::NOT_SET};
+    bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

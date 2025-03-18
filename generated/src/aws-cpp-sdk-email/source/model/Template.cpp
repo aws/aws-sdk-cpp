@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-Template::Template() : 
-    m_templateNameHasBeenSet(false),
-    m_subjectPartHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_htmlPartHasBeenSet(false)
-{
-}
-
 Template::Template(const XmlNode& xmlNode)
-  : Template()
 {
   *this = xmlNode;
 }

@@ -18,16 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldOption::FieldOption() : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FieldOption::FieldOption(JsonView jsonValue)
-  : FieldOption()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FieldOption& FieldOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

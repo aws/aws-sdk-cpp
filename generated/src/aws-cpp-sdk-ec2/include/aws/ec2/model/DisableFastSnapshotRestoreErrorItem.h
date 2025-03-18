@@ -34,7 +34,7 @@ namespace Model
   class DisableFastSnapshotRestoreErrorItem
   {
   public:
-    AWS_EC2_API DisableFastSnapshotRestoreErrorItem();
+    AWS_EC2_API DisableFastSnapshotRestoreErrorItem() = default;
     AWS_EC2_API DisableFastSnapshotRestoreErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DisableFastSnapshotRestoreErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline DisableFastSnapshotRestoreErrorItem& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline DisableFastSnapshotRestoreErrorItem& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline DisableFastSnapshotRestoreErrorItem& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    DisableFastSnapshotRestoreErrorItem& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The errors.</p>
      */
-    inline const Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>& GetFastSnapshotRestoreStateErrors() const{ return m_fastSnapshotRestoreStateErrors; }
+    inline const Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>& GetFastSnapshotRestoreStateErrors() const { return m_fastSnapshotRestoreStateErrors; }
     inline bool FastSnapshotRestoreStateErrorsHasBeenSet() const { return m_fastSnapshotRestoreStateErrorsHasBeenSet; }
-    inline void SetFastSnapshotRestoreStateErrors(const Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors = value; }
-    inline void SetFastSnapshotRestoreStateErrors(Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>&& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors = std::move(value); }
-    inline DisableFastSnapshotRestoreErrorItem& WithFastSnapshotRestoreStateErrors(const Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>& value) { SetFastSnapshotRestoreStateErrors(value); return *this;}
-    inline DisableFastSnapshotRestoreErrorItem& WithFastSnapshotRestoreStateErrors(Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>&& value) { SetFastSnapshotRestoreStateErrors(std::move(value)); return *this;}
-    inline DisableFastSnapshotRestoreErrorItem& AddFastSnapshotRestoreStateErrors(const DisableFastSnapshotRestoreStateErrorItem& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors.push_back(value); return *this; }
-    inline DisableFastSnapshotRestoreErrorItem& AddFastSnapshotRestoreStateErrors(DisableFastSnapshotRestoreStateErrorItem&& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors.push_back(std::move(value)); return *this; }
+    template<typename FastSnapshotRestoreStateErrorsT = Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>>
+    void SetFastSnapshotRestoreStateErrors(FastSnapshotRestoreStateErrorsT&& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors = std::forward<FastSnapshotRestoreStateErrorsT>(value); }
+    template<typename FastSnapshotRestoreStateErrorsT = Aws::Vector<DisableFastSnapshotRestoreStateErrorItem>>
+    DisableFastSnapshotRestoreErrorItem& WithFastSnapshotRestoreStateErrors(FastSnapshotRestoreStateErrorsT&& value) { SetFastSnapshotRestoreStateErrors(std::forward<FastSnapshotRestoreStateErrorsT>(value)); return *this;}
+    template<typename FastSnapshotRestoreStateErrorsT = DisableFastSnapshotRestoreStateErrorItem>
+    DisableFastSnapshotRestoreErrorItem& AddFastSnapshotRestoreStateErrors(FastSnapshotRestoreStateErrorsT&& value) { m_fastSnapshotRestoreStateErrorsHasBeenSet = true; m_fastSnapshotRestoreStateErrors.emplace_back(std::forward<FastSnapshotRestoreStateErrorsT>(value)); return *this; }
     ///@}
   private:
 

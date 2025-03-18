@@ -28,7 +28,7 @@ namespace Model
   class AssociateTransitGatewayConnectPeerResult
   {
   public:
-    AWS_NETWORKMANAGER_API AssociateTransitGatewayConnectPeerResult();
+    AWS_NETWORKMANAGER_API AssociateTransitGatewayConnectPeerResult() = default;
     AWS_NETWORKMANAGER_API AssociateTransitGatewayConnectPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API AssociateTransitGatewayConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The transit gateway Connect peer association.</p>
      */
-    inline const TransitGatewayConnectPeerAssociation& GetTransitGatewayConnectPeerAssociation() const{ return m_transitGatewayConnectPeerAssociation; }
-    inline void SetTransitGatewayConnectPeerAssociation(const TransitGatewayConnectPeerAssociation& value) { m_transitGatewayConnectPeerAssociation = value; }
-    inline void SetTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociation&& value) { m_transitGatewayConnectPeerAssociation = std::move(value); }
-    inline AssociateTransitGatewayConnectPeerResult& WithTransitGatewayConnectPeerAssociation(const TransitGatewayConnectPeerAssociation& value) { SetTransitGatewayConnectPeerAssociation(value); return *this;}
-    inline AssociateTransitGatewayConnectPeerResult& WithTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociation&& value) { SetTransitGatewayConnectPeerAssociation(std::move(value)); return *this;}
+    inline const TransitGatewayConnectPeerAssociation& GetTransitGatewayConnectPeerAssociation() const { return m_transitGatewayConnectPeerAssociation; }
+    template<typename TransitGatewayConnectPeerAssociationT = TransitGatewayConnectPeerAssociation>
+    void SetTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociationT&& value) { m_transitGatewayConnectPeerAssociationHasBeenSet = true; m_transitGatewayConnectPeerAssociation = std::forward<TransitGatewayConnectPeerAssociationT>(value); }
+    template<typename TransitGatewayConnectPeerAssociationT = TransitGatewayConnectPeerAssociation>
+    AssociateTransitGatewayConnectPeerResult& WithTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociationT&& value) { SetTransitGatewayConnectPeerAssociation(std::forward<TransitGatewayConnectPeerAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateTransitGatewayConnectPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateTransitGatewayConnectPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateTransitGatewayConnectPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateTransitGatewayConnectPeerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayConnectPeerAssociation m_transitGatewayConnectPeerAssociation;
+    bool m_transitGatewayConnectPeerAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

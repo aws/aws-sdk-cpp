@@ -12,13 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfigRequest::CreateConfigRequest() : 
-    m_configDataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigRequest::SerializePayload() const
 {
   JsonValue payload;

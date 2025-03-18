@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FindMatchesParameters::FindMatchesParameters() : 
-    m_primaryKeyColumnNameHasBeenSet(false),
-    m_precisionRecallTradeoff(0.0),
-    m_precisionRecallTradeoffHasBeenSet(false),
-    m_accuracyCostTradeoff(0.0),
-    m_accuracyCostTradeoffHasBeenSet(false),
-    m_enforceProvidedLabels(false),
-    m_enforceProvidedLabelsHasBeenSet(false)
-{
-}
-
 FindMatchesParameters::FindMatchesParameters(JsonView jsonValue)
-  : FindMatchesParameters()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ FindMatchesParameters& FindMatchesParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryKeyColumnName"))
   {
     m_primaryKeyColumnName = jsonValue.GetString("PrimaryKeyColumnName");
-
     m_primaryKeyColumnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrecisionRecallTradeoff"))
   {
     m_precisionRecallTradeoff = jsonValue.GetDouble("PrecisionRecallTradeoff");
-
     m_precisionRecallTradeoffHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccuracyCostTradeoff"))
   {
     m_accuracyCostTradeoff = jsonValue.GetDouble("AccuracyCostTradeoff");
-
     m_accuracyCostTradeoffHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforceProvidedLabels"))
   {
     m_enforceProvidedLabels = jsonValue.GetBool("EnforceProvidedLabels");
-
     m_enforceProvidedLabelsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,33 +28,35 @@ namespace Model
   class RestoreFromClusterSnapshotResult
   {
   public:
-    AWS_REDSHIFT_API RestoreFromClusterSnapshotResult();
+    AWS_REDSHIFT_API RestoreFromClusterSnapshotResult() = default;
     AWS_REDSHIFT_API RestoreFromClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API RestoreFromClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Cluster& GetCluster() const{ return m_cluster; }
-    inline void SetCluster(const Cluster& value) { m_cluster = value; }
-    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-    inline RestoreFromClusterSnapshotResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-    inline RestoreFromClusterSnapshotResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    inline const Cluster& GetCluster() const { return m_cluster; }
+    template<typename ClusterT = Cluster>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Cluster>
+    RestoreFromClusterSnapshotResult& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RestoreFromClusterSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RestoreFromClusterSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RestoreFromClusterSnapshotResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Cluster m_cluster;
+    bool m_clusterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,19 +19,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DetectAnomalyResult::DetectAnomalyResult() : 
-    m_sourceHasBeenSet(false),
-    m_isAnomalous(false),
-    m_isAnomalousHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_anomaliesHasBeenSet(false),
-    m_anomalyMaskHasBeenSet(false)
-{
-}
-
 DetectAnomalyResult::DetectAnomalyResult(JsonView jsonValue)
-  : DetectAnomalyResult()
 {
   *this = jsonValue;
 }
@@ -41,24 +29,18 @@ DetectAnomalyResult& DetectAnomalyResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsAnomalous"))
   {
     m_isAnomalous = jsonValue.GetBool("IsAnomalous");
-
     m_isAnomalousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Anomalies"))
   {
     Aws::Utils::Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
@@ -68,13 +50,11 @@ DetectAnomalyResult& DetectAnomalyResult::operator =(JsonView jsonValue)
     }
     m_anomaliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyMask"))
   {
     m_anomalyMask = HashingUtils::Base64Decode(jsonValue.GetString("AnomalyMask"));
     m_anomalyMaskHasBeenSet = true;
   }
-
   return *this;
 }
 

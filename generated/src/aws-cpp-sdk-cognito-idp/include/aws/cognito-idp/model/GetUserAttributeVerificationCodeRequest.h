@@ -26,7 +26,7 @@ namespace Model
   class GetUserAttributeVerificationCodeRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GetUserAttributeVerificationCodeRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API GetUserAttributeVerificationCodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * user. Must include a scope claim for
      * <code>aws.cognito.signin.user.admin</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline GetUserAttributeVerificationCodeRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    GetUserAttributeVerificationCodeRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The name of the attribute that the user wants to verify, for example
      * <code>email</code>.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline GetUserAttributeVerificationCodeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    GetUserAttributeVerificationCodeRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,19 +91,16 @@ namespace Model
      * <code>ClientMetadata</code> value. Don't send sensitive information in this
      * parameter.</p> </li> </ul> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const { return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
-    inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
-    inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
-    inline GetUserAttributeVerificationCodeRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline GetUserAttributeVerificationCodeRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetClientMetadata(ClientMetadataT&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::forward<ClientMetadataT>(value); }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    GetUserAttributeVerificationCodeRequest& WithClientMetadata(ClientMetadataT&& value) { SetClientMetadata(std::forward<ClientMetadataT>(value)); return *this;}
+    template<typename ClientMetadataKeyT = Aws::String, typename ClientMetadataValueT = Aws::String>
+    GetUserAttributeVerificationCodeRequest& AddClientMetadata(ClientMetadataKeyT&& key, ClientMetadataValueT&& value) {
+      m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::forward<ClientMetadataKeyT>(key), std::forward<ClientMetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 

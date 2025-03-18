@@ -32,7 +32,7 @@ namespace Model
   class SceneError
   {
   public:
-    AWS_IOTTWINMAKER_API SceneError();
+    AWS_IOTTWINMAKER_API SceneError() = default;
     AWS_IOTTWINMAKER_API SceneError(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API SceneError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The SceneError code.</p>
      */
-    inline const SceneErrorCode& GetCode() const{ return m_code; }
+    inline SceneErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const SceneErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(SceneErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline SceneError& WithCode(const SceneErrorCode& value) { SetCode(value); return *this;}
-    inline SceneError& WithCode(SceneErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(SceneErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline SceneError& WithCode(SceneErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SceneError message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline SceneError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline SceneError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline SceneError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    SceneError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    SceneErrorCode m_code;
+    SceneErrorCode m_code{SceneErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

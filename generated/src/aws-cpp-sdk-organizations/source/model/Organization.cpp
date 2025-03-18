@@ -18,20 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Organization::Organization() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_featureSet(OrganizationFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_masterAccountArnHasBeenSet(false),
-    m_masterAccountIdHasBeenSet(false),
-    m_masterAccountEmailHasBeenSet(false),
-    m_availablePolicyTypesHasBeenSet(false)
-{
-}
-
 Organization::Organization(JsonView jsonValue)
-  : Organization()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Organization& Organization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureSet"))
   {
     m_featureSet = OrganizationFeatureSetMapper::GetOrganizationFeatureSetForName(jsonValue.GetString("FeatureSet"));
-
     m_featureSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterAccountArn"))
   {
     m_masterAccountArn = jsonValue.GetString("MasterAccountArn");
-
     m_masterAccountArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterAccountId"))
   {
     m_masterAccountId = jsonValue.GetString("MasterAccountId");
-
     m_masterAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterAccountEmail"))
   {
     m_masterAccountEmail = jsonValue.GetString("MasterAccountEmail");
-
     m_masterAccountEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailablePolicyTypes"))
   {
     Aws::Utils::Array<JsonView> availablePolicyTypesJsonList = jsonValue.GetArray("AvailablePolicyTypes");
@@ -89,7 +64,6 @@ Organization& Organization::operator =(JsonView jsonValue)
     }
     m_availablePolicyTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

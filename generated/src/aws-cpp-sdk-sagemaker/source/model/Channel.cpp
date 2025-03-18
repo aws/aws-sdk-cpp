@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Channel::Channel() : 
-    m_channelNameHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_recordWrapperType(RecordWrapper::NOT_SET),
-    m_recordWrapperTypeHasBeenSet(false),
-    m_inputMode(TrainingInputMode::NOT_SET),
-    m_inputModeHasBeenSet(false),
-    m_shuffleConfigHasBeenSet(false)
-{
-}
-
 Channel::Channel(JsonView jsonValue)
-  : Channel()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Channel& Channel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordWrapperType"))
   {
     m_recordWrapperType = RecordWrapperMapper::GetRecordWrapperForName(jsonValue.GetString("RecordWrapperType"));
-
     m_recordWrapperTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputMode"))
   {
     m_inputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("InputMode"));
-
     m_inputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShuffleConfig"))
   {
     m_shuffleConfig = jsonValue.GetObject("ShuffleConfig");
-
     m_shuffleConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class MSKSourceConfiguration
   {
   public:
-    AWS_FIREHOSE_API MSKSourceConfiguration();
+    AWS_FIREHOSE_API MSKSourceConfiguration() = default;
     AWS_FIREHOSE_API MSKSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API MSKSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The ARN of the Amazon MSK cluster.</p>
      */
-    inline const Aws::String& GetMSKClusterARN() const{ return m_mSKClusterARN; }
+    inline const Aws::String& GetMSKClusterARN() const { return m_mSKClusterARN; }
     inline bool MSKClusterARNHasBeenSet() const { return m_mSKClusterARNHasBeenSet; }
-    inline void SetMSKClusterARN(const Aws::String& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = value; }
-    inline void SetMSKClusterARN(Aws::String&& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = std::move(value); }
-    inline void SetMSKClusterARN(const char* value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN.assign(value); }
-    inline MSKSourceConfiguration& WithMSKClusterARN(const Aws::String& value) { SetMSKClusterARN(value); return *this;}
-    inline MSKSourceConfiguration& WithMSKClusterARN(Aws::String&& value) { SetMSKClusterARN(std::move(value)); return *this;}
-    inline MSKSourceConfiguration& WithMSKClusterARN(const char* value) { SetMSKClusterARN(value); return *this;}
+    template<typename MSKClusterARNT = Aws::String>
+    void SetMSKClusterARN(MSKClusterARNT&& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = std::forward<MSKClusterARNT>(value); }
+    template<typename MSKClusterARNT = Aws::String>
+    MSKSourceConfiguration& WithMSKClusterARN(MSKClusterARNT&& value) { SetMSKClusterARN(std::forward<MSKClusterARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The topic name within the Amazon MSK cluster. </p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline MSKSourceConfiguration& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline MSKSourceConfiguration& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline MSKSourceConfiguration& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    MSKSourceConfiguration& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication configuration of the Amazon MSK cluster.</p>
      */
-    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-    inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
-    inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
-    inline MSKSourceConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
-    inline MSKSourceConfiguration& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value); }
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    MSKSourceConfiguration& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) { SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * Earliest start position from SDK or CLI, you need to set the
      * <code>ReadFromTimestamp</code> parameter to Epoch (1970-01-01T00:00:00Z). </p>
      */
-    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const{ return m_readFromTimestamp; }
+    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const { return m_readFromTimestamp; }
     inline bool ReadFromTimestampHasBeenSet() const { return m_readFromTimestampHasBeenSet; }
-    inline void SetReadFromTimestamp(const Aws::Utils::DateTime& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = value; }
-    inline void SetReadFromTimestamp(Aws::Utils::DateTime&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::move(value); }
-    inline MSKSourceConfiguration& WithReadFromTimestamp(const Aws::Utils::DateTime& value) { SetReadFromTimestamp(value); return *this;}
-    inline MSKSourceConfiguration& WithReadFromTimestamp(Aws::Utils::DateTime&& value) { SetReadFromTimestamp(std::move(value)); return *this;}
+    template<typename ReadFromTimestampT = Aws::Utils::DateTime>
+    void SetReadFromTimestamp(ReadFromTimestampT&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::forward<ReadFromTimestampT>(value); }
+    template<typename ReadFromTimestampT = Aws::Utils::DateTime>
+    MSKSourceConfiguration& WithReadFromTimestamp(ReadFromTimestampT&& value) { SetReadFromTimestamp(std::forward<ReadFromTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +102,7 @@ namespace Model
     AuthenticationConfiguration m_authenticationConfiguration;
     bool m_authenticationConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_readFromTimestamp;
+    Aws::Utils::DateTime m_readFromTimestamp{};
     bool m_readFromTimestampHasBeenSet = false;
   };
 

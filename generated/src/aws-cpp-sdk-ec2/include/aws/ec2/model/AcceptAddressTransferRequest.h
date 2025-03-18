@@ -23,7 +23,7 @@ namespace Model
   class AcceptAddressTransferRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AcceptAddressTransferRequest();
+    AWS_EC2_API AcceptAddressTransferRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Elastic IP address you are accepting for transfer.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline AcceptAddressTransferRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline AcceptAddressTransferRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline AcceptAddressTransferRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    AcceptAddressTransferRequest& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline AcceptAddressTransferRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline AcceptAddressTransferRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline AcceptAddressTransferRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline AcceptAddressTransferRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    AcceptAddressTransferRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    AcceptAddressTransferRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AcceptAddressTransferRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -91,7 +89,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

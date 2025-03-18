@@ -33,7 +33,7 @@ namespace Model
   class ReportExportConfig
   {
   public:
-    AWS_CODEBUILD_API ReportExportConfig();
+    AWS_CODEBUILD_API ReportExportConfig() = default;
     AWS_CODEBUILD_API ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
      * </ul>
      */
-    inline const ReportExportConfigType& GetExportConfigType() const{ return m_exportConfigType; }
+    inline ReportExportConfigType GetExportConfigType() const { return m_exportConfigType; }
     inline bool ExportConfigTypeHasBeenSet() const { return m_exportConfigTypeHasBeenSet; }
-    inline void SetExportConfigType(const ReportExportConfigType& value) { m_exportConfigTypeHasBeenSet = true; m_exportConfigType = value; }
-    inline void SetExportConfigType(ReportExportConfigType&& value) { m_exportConfigTypeHasBeenSet = true; m_exportConfigType = std::move(value); }
-    inline ReportExportConfig& WithExportConfigType(const ReportExportConfigType& value) { SetExportConfigType(value); return *this;}
-    inline ReportExportConfig& WithExportConfigType(ReportExportConfigType&& value) { SetExportConfigType(std::move(value)); return *this;}
+    inline void SetExportConfigType(ReportExportConfigType value) { m_exportConfigTypeHasBeenSet = true; m_exportConfigType = value; }
+    inline ReportExportConfig& WithExportConfigType(ReportExportConfigType value) { SetExportConfigType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,16 +57,16 @@ namespace Model
      * <p> A <code>S3ReportExportConfig</code> object that contains information about
      * the S3 bucket where the run of a report is exported. </p>
      */
-    inline const S3ReportExportConfig& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3ReportExportConfig& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3ReportExportConfig& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3ReportExportConfig&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline ReportExportConfig& WithS3Destination(const S3ReportExportConfig& value) { SetS3Destination(value); return *this;}
-    inline ReportExportConfig& WithS3Destination(S3ReportExportConfig&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3ReportExportConfig>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3ReportExportConfig>
+    ReportExportConfig& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 
-    ReportExportConfigType m_exportConfigType;
+    ReportExportConfigType m_exportConfigType{ReportExportConfigType::NOT_SET};
     bool m_exportConfigTypeHasBeenSet = false;
 
     S3ReportExportConfig m_s3Destination;

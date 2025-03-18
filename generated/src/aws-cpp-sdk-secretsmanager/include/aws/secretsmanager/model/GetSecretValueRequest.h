@@ -21,7 +21,7 @@ namespace Model
   class GetSecretValueRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API GetSecretValueRequest();
+    AWS_SECRETSMANAGER_API GetSecretValueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
      * a secret from a partial ARN</a>.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline GetSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline GetSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline GetSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    GetSecretValueRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value with 32 hexadecimal digits.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline GetSecretValueRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline GetSecretValueRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline GetSecretValueRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    GetSecretValueRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager
      * returns the <code>AWSCURRENT</code> version.</p>
      */
-    inline const Aws::String& GetVersionStage() const{ return m_versionStage; }
+    inline const Aws::String& GetVersionStage() const { return m_versionStage; }
     inline bool VersionStageHasBeenSet() const { return m_versionStageHasBeenSet; }
-    inline void SetVersionStage(const Aws::String& value) { m_versionStageHasBeenSet = true; m_versionStage = value; }
-    inline void SetVersionStage(Aws::String&& value) { m_versionStageHasBeenSet = true; m_versionStage = std::move(value); }
-    inline void SetVersionStage(const char* value) { m_versionStageHasBeenSet = true; m_versionStage.assign(value); }
-    inline GetSecretValueRequest& WithVersionStage(const Aws::String& value) { SetVersionStage(value); return *this;}
-    inline GetSecretValueRequest& WithVersionStage(Aws::String&& value) { SetVersionStage(std::move(value)); return *this;}
-    inline GetSecretValueRequest& WithVersionStage(const char* value) { SetVersionStage(value); return *this;}
+    template<typename VersionStageT = Aws::String>
+    void SetVersionStage(VersionStageT&& value) { m_versionStageHasBeenSet = true; m_versionStage = std::forward<VersionStageT>(value); }
+    template<typename VersionStageT = Aws::String>
+    GetSecretValueRequest& WithVersionStage(VersionStageT&& value) { SetVersionStage(std::forward<VersionStageT>(value)); return *this;}
     ///@}
   private:
 

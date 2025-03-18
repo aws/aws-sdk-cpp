@@ -18,14 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-DefaultRouteInput::DefaultRouteInput() : 
-    m_activationState(RouteActivationState::NOT_SET),
-    m_activationStateHasBeenSet(false)
-{
-}
-
 DefaultRouteInput::DefaultRouteInput(JsonView jsonValue)
-  : DefaultRouteInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DefaultRouteInput& DefaultRouteInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActivationState"))
   {
     m_activationState = RouteActivationStateMapper::GetRouteActivationStateForName(jsonValue.GetString("ActivationState"));
-
     m_activationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

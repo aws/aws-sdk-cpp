@@ -36,7 +36,7 @@ namespace Model
   class ImportFilter
   {
   public:
-    AWS_LEXMODELSV2_API ImportFilter();
+    AWS_LEXMODELSV2_API ImportFilter() = default;
     AWS_LEXMODELSV2_API ImportFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ImportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>The name of the field to use for filtering.</p>
      */
-    inline const ImportFilterName& GetName() const{ return m_name; }
+    inline ImportFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ImportFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ImportFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ImportFilter& WithName(const ImportFilterName& value) { SetName(value); return *this;}
-    inline ImportFilter& WithName(ImportFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ImportFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ImportFilter& WithName(ImportFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>The values to use to filter the response. The values must be
      * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ImportFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ImportFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ImportFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ImportFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ImportFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ImportFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ImportFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,22 +74,20 @@ namespace Model
      * the specified value. Specify CO when the <code>ListImports</code> operation
      * should return resource types that contain the specified value.</p>
      */
-    inline const ImportFilterOperator& GetOperator() const{ return m_operator; }
+    inline ImportFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const ImportFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(ImportFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline ImportFilter& WithOperator(const ImportFilterOperator& value) { SetOperator(value); return *this;}
-    inline ImportFilter& WithOperator(ImportFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(ImportFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline ImportFilter& WithOperator(ImportFilterOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    ImportFilterName m_name;
+    ImportFilterName m_name{ImportFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    ImportFilterOperator m_operator;
+    ImportFilterOperator m_operator{ImportFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

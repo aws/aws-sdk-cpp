@@ -18,15 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-ChefConfiguration::ChefConfiguration() : 
-    m_manageBerkshelf(false),
-    m_manageBerkshelfHasBeenSet(false),
-    m_berkshelfVersionHasBeenSet(false)
-{
-}
-
 ChefConfiguration::ChefConfiguration(JsonView jsonValue)
-  : ChefConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ChefConfiguration& ChefConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManageBerkshelf"))
   {
     m_manageBerkshelf = jsonValue.GetBool("ManageBerkshelf");
-
     m_manageBerkshelfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BerkshelfVersion"))
   {
     m_berkshelfVersion = jsonValue.GetString("BerkshelfVersion");
-
     m_berkshelfVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

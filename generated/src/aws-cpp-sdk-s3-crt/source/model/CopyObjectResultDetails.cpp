@@ -20,21 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-CopyObjectResultDetails::CopyObjectResultDetails() : 
-    m_eTagHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
-{
-}
-
 CopyObjectResultDetails::CopyObjectResultDetails(const XmlNode& xmlNode)
-  : CopyObjectResultDetails()
 {
   *this = xmlNode;
 }
@@ -60,7 +46,7 @@ CopyObjectResultDetails& CopyObjectResultDetails::operator =(const XmlNode& xmlN
     XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
     if(!checksumTypeNode.IsNull())
     {
-      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
       m_checksumTypeHasBeenSet = true;
     }
     XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateKxScalingGroupResult::CreateKxScalingGroupResult() : 
-    m_status(KxScalingGroupStatus::NOT_SET)
-{
-}
-
 CreateKxScalingGroupResult::CreateKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateKxScalingGroupResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ CreateKxScalingGroupResult& CreateKxScalingGroupResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingGroupName"))
   {
     m_scalingGroupName = jsonValue.GetString("scalingGroupName");
-
+    m_scalingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostType"))
   {
     m_hostType = jsonValue.GetString("hostType");
-
+    m_hostTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
-
+    m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = KxScalingGroupStatusMapper::GetKxScalingGroupStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
+    m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,16 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportModelRequest::ImportModelRequest() : 
-    m_sourceModelArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportModelRequest::SerializePayload() const
 {
   JsonValue payload;

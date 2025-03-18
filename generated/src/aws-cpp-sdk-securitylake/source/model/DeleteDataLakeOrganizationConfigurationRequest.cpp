@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataLakeOrganizationConfigurationRequest::DeleteDataLakeOrganizationConfigurationRequest() : 
-    m_autoEnableNewAccountHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataLakeOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

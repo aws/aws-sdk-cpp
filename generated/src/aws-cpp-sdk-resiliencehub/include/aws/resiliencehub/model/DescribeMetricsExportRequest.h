@@ -21,7 +21,7 @@ namespace Model
   class DescribeMetricsExportRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeMetricsExportRequest();
+    AWS_RESILIENCEHUB_API DescribeMetricsExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Identifier of the metrics export task.</p>
      */
-    inline const Aws::String& GetMetricsExportId() const{ return m_metricsExportId; }
+    inline const Aws::String& GetMetricsExportId() const { return m_metricsExportId; }
     inline bool MetricsExportIdHasBeenSet() const { return m_metricsExportIdHasBeenSet; }
-    inline void SetMetricsExportId(const Aws::String& value) { m_metricsExportIdHasBeenSet = true; m_metricsExportId = value; }
-    inline void SetMetricsExportId(Aws::String&& value) { m_metricsExportIdHasBeenSet = true; m_metricsExportId = std::move(value); }
-    inline void SetMetricsExportId(const char* value) { m_metricsExportIdHasBeenSet = true; m_metricsExportId.assign(value); }
-    inline DescribeMetricsExportRequest& WithMetricsExportId(const Aws::String& value) { SetMetricsExportId(value); return *this;}
-    inline DescribeMetricsExportRequest& WithMetricsExportId(Aws::String&& value) { SetMetricsExportId(std::move(value)); return *this;}
-    inline DescribeMetricsExportRequest& WithMetricsExportId(const char* value) { SetMetricsExportId(value); return *this;}
+    template<typename MetricsExportIdT = Aws::String>
+    void SetMetricsExportId(MetricsExportIdT&& value) { m_metricsExportIdHasBeenSet = true; m_metricsExportId = std::forward<MetricsExportIdT>(value); }
+    template<typename MetricsExportIdT = Aws::String>
+    DescribeMetricsExportRequest& WithMetricsExportId(MetricsExportIdT&& value) { SetMetricsExportId(std::forward<MetricsExportIdT>(value)); return *this;}
     ///@}
   private:
 

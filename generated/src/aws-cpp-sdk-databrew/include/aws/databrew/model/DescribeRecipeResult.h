@@ -31,7 +31,7 @@ namespace Model
   class DescribeRecipeResult
   {
   public:
-    AWS_GLUEDATABREW_API DescribeRecipeResult();
+    AWS_GLUEDATABREW_API DescribeRecipeResult() = default;
     AWS_GLUEDATABREW_API DescribeRecipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUEDATABREW_API DescribeRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,111 +40,99 @@ namespace Model
     /**
      * <p>The identifier (user name) of the user who created the recipe.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline DescribeRecipeResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline DescribeRecipeResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    DescribeRecipeResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the recipe was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = std::move(value); }
-    inline DescribeRecipeResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline DescribeRecipeResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    DescribeRecipeResult& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier (user name) of the user who last modified the recipe.</p>
      */
-    inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedBy = std::move(value); }
-    inline void SetLastModifiedBy(const char* value) { m_lastModifiedBy.assign(value); }
-    inline DescribeRecipeResult& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
-    inline DescribeRecipeResult& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = Aws::String>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = Aws::String>
+    DescribeRecipeResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the recipe was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline DescribeRecipeResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline DescribeRecipeResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    DescribeRecipeResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project associated with this recipe.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
-    inline void SetProjectName(const Aws::String& value) { m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectName.assign(value); }
-    inline DescribeRecipeResult& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DescribeRecipeResult& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DescribeRecipeResult& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier (user name) of the user who last published the recipe.</p>
      */
-    inline const Aws::String& GetPublishedBy() const{ return m_publishedBy; }
-    inline void SetPublishedBy(const Aws::String& value) { m_publishedBy = value; }
-    inline void SetPublishedBy(Aws::String&& value) { m_publishedBy = std::move(value); }
-    inline void SetPublishedBy(const char* value) { m_publishedBy.assign(value); }
-    inline DescribeRecipeResult& WithPublishedBy(const Aws::String& value) { SetPublishedBy(value); return *this;}
-    inline DescribeRecipeResult& WithPublishedBy(Aws::String&& value) { SetPublishedBy(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithPublishedBy(const char* value) { SetPublishedBy(value); return *this;}
+    inline const Aws::String& GetPublishedBy() const { return m_publishedBy; }
+    template<typename PublishedByT = Aws::String>
+    void SetPublishedBy(PublishedByT&& value) { m_publishedByHasBeenSet = true; m_publishedBy = std::forward<PublishedByT>(value); }
+    template<typename PublishedByT = Aws::String>
+    DescribeRecipeResult& WithPublishedBy(PublishedByT&& value) { SetPublishedBy(std::forward<PublishedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the recipe was last published.</p>
      */
-    inline const Aws::Utils::DateTime& GetPublishedDate() const{ return m_publishedDate; }
-    inline void SetPublishedDate(const Aws::Utils::DateTime& value) { m_publishedDate = value; }
-    inline void SetPublishedDate(Aws::Utils::DateTime&& value) { m_publishedDate = std::move(value); }
-    inline DescribeRecipeResult& WithPublishedDate(const Aws::Utils::DateTime& value) { SetPublishedDate(value); return *this;}
-    inline DescribeRecipeResult& WithPublishedDate(Aws::Utils::DateTime&& value) { SetPublishedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetPublishedDate() const { return m_publishedDate; }
+    template<typename PublishedDateT = Aws::Utils::DateTime>
+    void SetPublishedDate(PublishedDateT&& value) { m_publishedDateHasBeenSet = true; m_publishedDate = std::forward<PublishedDateT>(value); }
+    template<typename PublishedDateT = Aws::Utils::DateTime>
+    DescribeRecipeResult& WithPublishedDate(PublishedDateT&& value) { SetPublishedDate(std::forward<PublishedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the recipe.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeRecipeResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeRecipeResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeRecipeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the recipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeRecipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeRecipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeRecipeResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,98 +140,103 @@ namespace Model
      * <p>One or more steps to be performed by the recipe. Each step consists of an
      * action, and the conditions under which the action should succeed.</p>
      */
-    inline const Aws::Vector<RecipeStep>& GetSteps() const{ return m_steps; }
-    inline void SetSteps(const Aws::Vector<RecipeStep>& value) { m_steps = value; }
-    inline void SetSteps(Aws::Vector<RecipeStep>&& value) { m_steps = std::move(value); }
-    inline DescribeRecipeResult& WithSteps(const Aws::Vector<RecipeStep>& value) { SetSteps(value); return *this;}
-    inline DescribeRecipeResult& WithSteps(Aws::Vector<RecipeStep>&& value) { SetSteps(std::move(value)); return *this;}
-    inline DescribeRecipeResult& AddSteps(const RecipeStep& value) { m_steps.push_back(value); return *this; }
-    inline DescribeRecipeResult& AddSteps(RecipeStep&& value) { m_steps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecipeStep>& GetSteps() const { return m_steps; }
+    template<typename StepsT = Aws::Vector<RecipeStep>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<RecipeStep>>
+    DescribeRecipeResult& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = RecipeStep>
+    DescribeRecipeResult& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Metadata tags associated with this project.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeRecipeResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeRecipeResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeRecipeResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeRecipeResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeRecipeResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeRecipeResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeRecipeResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeRecipeResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeRecipeResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeRecipeResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeRecipeResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the recipe.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline DescribeRecipeResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline DescribeRecipeResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DescribeRecipeResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recipe version identifier.</p>
      */
-    inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
-    inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersion = value; }
-    inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersion = std::move(value); }
-    inline void SetRecipeVersion(const char* value) { m_recipeVersion.assign(value); }
-    inline DescribeRecipeResult& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-    inline DescribeRecipeResult& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
+    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
+    template<typename RecipeVersionT = Aws::String>
+    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
+    template<typename RecipeVersionT = Aws::String>
+    DescribeRecipeResult& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRecipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_publishedBy;
+    bool m_publishedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_publishedDate;
+    Aws::Utils::DateTime m_publishedDate{};
+    bool m_publishedDateHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<RecipeStep> m_steps;
+    bool m_stepsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_recipeVersion;
+    bool m_recipeVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

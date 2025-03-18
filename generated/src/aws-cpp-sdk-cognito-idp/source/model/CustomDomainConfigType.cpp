@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-CustomDomainConfigType::CustomDomainConfigType() : 
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 CustomDomainConfigType::CustomDomainConfigType(JsonView jsonValue)
-  : CustomDomainConfigType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomDomainConfigType& CustomDomainConfigType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

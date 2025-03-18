@@ -18,21 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-S3BucketDetail::S3BucketDetail() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultServerSideEncryptionHasBeenSet(false),
-    m_publicAccessHasBeenSet(false),
-    m_s3ObjectDetailsHasBeenSet(false)
-{
-}
-
 S3BucketDetail::S3BucketDetail(JsonView jsonValue)
-  : S3BucketDetail()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ S3BucketDetail& S3BucketDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetObject("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -83,21 +59,16 @@ S3BucketDetail& S3BucketDetail::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultServerSideEncryption"))
   {
     m_defaultServerSideEncryption = jsonValue.GetObject("defaultServerSideEncryption");
-
     m_defaultServerSideEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAccess"))
   {
     m_publicAccess = jsonValue.GetObject("publicAccess");
-
     m_publicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ObjectDetails"))
   {
     Aws::Utils::Array<JsonView> s3ObjectDetailsJsonList = jsonValue.GetArray("s3ObjectDetails");
@@ -107,7 +78,6 @@ S3BucketDetail& S3BucketDetail::operator =(JsonView jsonValue)
     }
     m_s3ObjectDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

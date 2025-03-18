@@ -18,17 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-RecommendationSummary::RecommendationSummary() : 
-    m_groupHasBeenSet(false),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_recommendationCount(0),
-    m_recommendationCountHasBeenSet(false)
-{
-}
-
 RecommendationSummary::RecommendationSummary(JsonView jsonValue)
-  : RecommendationSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetDouble("estimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationCount"))
   {
     m_recommendationCount = jsonValue.GetInteger("recommendationCount");
-
     m_recommendationCountHasBeenSet = true;
   }
-
   return *this;
 }
 

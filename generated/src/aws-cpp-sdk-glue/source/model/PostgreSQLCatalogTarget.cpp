@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-PostgreSQLCatalogTarget::PostgreSQLCatalogTarget() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
-{
-}
-
 PostgreSQLCatalogTarget::PostgreSQLCatalogTarget(JsonView jsonValue)
-  : PostgreSQLCatalogTarget()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ PostgreSQLCatalogTarget& PostgreSQLCatalogTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,21 +39,16 @@ PostgreSQLCatalogTarget& PostgreSQLCatalogTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   return *this;
 }
 

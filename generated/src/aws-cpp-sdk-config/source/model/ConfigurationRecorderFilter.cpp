@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigurationRecorderFilter::ConfigurationRecorderFilter() : 
-    m_filterName(ConfigurationRecorderFilterName::NOT_SET),
-    m_filterNameHasBeenSet(false),
-    m_filterValueHasBeenSet(false)
-{
-}
-
 ConfigurationRecorderFilter::ConfigurationRecorderFilter(JsonView jsonValue)
-  : ConfigurationRecorderFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ConfigurationRecorderFilter& ConfigurationRecorderFilter::operator =(JsonView js
   if(jsonValue.ValueExists("filterName"))
   {
     m_filterName = ConfigurationRecorderFilterNameMapper::GetConfigurationRecorderFilterNameForName(jsonValue.GetString("filterName"));
-
     m_filterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterValue"))
   {
     Aws::Utils::Array<JsonView> filterValueJsonList = jsonValue.GetArray("filterValue");
@@ -49,7 +39,6 @@ ConfigurationRecorderFilter& ConfigurationRecorderFilter::operator =(JsonView js
     }
     m_filterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

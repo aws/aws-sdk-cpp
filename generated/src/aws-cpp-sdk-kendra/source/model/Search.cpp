@@ -18,20 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Search::Search() : 
-    m_facetable(false),
-    m_facetableHasBeenSet(false),
-    m_searchable(false),
-    m_searchableHasBeenSet(false),
-    m_displayable(false),
-    m_displayableHasBeenSet(false),
-    m_sortable(false),
-    m_sortableHasBeenSet(false)
-{
-}
-
 Search::Search(JsonView jsonValue)
-  : Search()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Search& Search::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Facetable"))
   {
     m_facetable = jsonValue.GetBool("Facetable");
-
     m_facetableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Searchable"))
   {
     m_searchable = jsonValue.GetBool("Searchable");
-
     m_searchableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Displayable"))
   {
     m_displayable = jsonValue.GetBool("Displayable");
-
     m_displayableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sortable"))
   {
     m_sortable = jsonValue.GetBool("Sortable");
-
     m_sortableHasBeenSet = true;
   }
-
   return *this;
 }
 

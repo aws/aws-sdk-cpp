@@ -12,14 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomRoutingListenerRequest::CreateCustomRoutingListenerRequest() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateCustomRoutingListenerRequest::SerializePayload() const
 {
   JsonValue payload;

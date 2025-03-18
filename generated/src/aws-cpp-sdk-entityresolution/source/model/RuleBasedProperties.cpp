@@ -18,17 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-RuleBasedProperties::RuleBasedProperties() : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_matchPurpose(MatchPurpose::NOT_SET),
-    m_matchPurposeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 RuleBasedProperties::RuleBasedProperties(JsonView jsonValue)
-  : RuleBasedProperties()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ RuleBasedProperties& RuleBasedProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
-
     m_attributeMatchingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchPurpose"))
   {
     m_matchPurpose = MatchPurposeMapper::GetMatchPurposeForName(jsonValue.GetString("matchPurpose"));
-
     m_matchPurposeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -58,7 +44,6 @@ RuleBasedProperties& RuleBasedProperties::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

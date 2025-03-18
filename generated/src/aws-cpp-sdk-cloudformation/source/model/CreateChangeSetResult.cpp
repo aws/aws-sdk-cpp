@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChangeSetResult::CreateChangeSetResult()
-{
-}
-
 CreateChangeSetResult::CreateChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ CreateChangeSetResult& CreateChangeSetResult::operator =(const Aws::AmazonWebSer
     if(!idNode.IsNull())
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
+      m_stackIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::CreateChangeSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

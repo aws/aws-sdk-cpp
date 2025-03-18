@@ -28,7 +28,7 @@ namespace Model
   class DescribeAppInstanceUserEndpointResult
   {
   public:
-    AWS_CHIMESDKIDENTITY_API DescribeAppInstanceUserEndpointResult();
+    AWS_CHIMESDKIDENTITY_API DescribeAppInstanceUserEndpointResult() = default;
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceUserEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceUserEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * messages, state, and created and last updated timestamps. All timestamps use
      * epoch milliseconds.</p>
      */
-    inline const AppInstanceUserEndpoint& GetAppInstanceUserEndpoint() const{ return m_appInstanceUserEndpoint; }
-    inline void SetAppInstanceUserEndpoint(const AppInstanceUserEndpoint& value) { m_appInstanceUserEndpoint = value; }
-    inline void SetAppInstanceUserEndpoint(AppInstanceUserEndpoint&& value) { m_appInstanceUserEndpoint = std::move(value); }
-    inline DescribeAppInstanceUserEndpointResult& WithAppInstanceUserEndpoint(const AppInstanceUserEndpoint& value) { SetAppInstanceUserEndpoint(value); return *this;}
-    inline DescribeAppInstanceUserEndpointResult& WithAppInstanceUserEndpoint(AppInstanceUserEndpoint&& value) { SetAppInstanceUserEndpoint(std::move(value)); return *this;}
+    inline const AppInstanceUserEndpoint& GetAppInstanceUserEndpoint() const { return m_appInstanceUserEndpoint; }
+    template<typename AppInstanceUserEndpointT = AppInstanceUserEndpoint>
+    void SetAppInstanceUserEndpoint(AppInstanceUserEndpointT&& value) { m_appInstanceUserEndpointHasBeenSet = true; m_appInstanceUserEndpoint = std::forward<AppInstanceUserEndpointT>(value); }
+    template<typename AppInstanceUserEndpointT = AppInstanceUserEndpoint>
+    DescribeAppInstanceUserEndpointResult& WithAppInstanceUserEndpoint(AppInstanceUserEndpointT&& value) { SetAppInstanceUserEndpoint(std::forward<AppInstanceUserEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppInstanceUserEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppInstanceUserEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppInstanceUserEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppInstanceUserEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppInstanceUserEndpoint m_appInstanceUserEndpoint;
+    bool m_appInstanceUserEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

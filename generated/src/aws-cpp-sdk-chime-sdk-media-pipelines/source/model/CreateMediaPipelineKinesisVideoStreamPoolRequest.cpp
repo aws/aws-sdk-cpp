@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMediaPipelineKinesisVideoStreamPoolRequest::CreateMediaPipelineKinesisVideoStreamPoolRequest() : 
-    m_streamConfigurationHasBeenSet(false),
-    m_poolNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMediaPipelineKinesisVideoStreamPoolRequest::SerializePayload() const
 {
   JsonValue payload;

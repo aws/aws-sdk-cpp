@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJournalS3ExportsForLedgerRequest::ListJournalS3ExportsForLedgerRequest() : 
-    m_nameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListJournalS3ExportsForLedgerRequest::SerializePayload() const
 {
   return {};

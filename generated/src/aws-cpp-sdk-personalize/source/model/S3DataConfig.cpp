@@ -18,14 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-S3DataConfig::S3DataConfig() : 
-    m_pathHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3DataConfig::S3DataConfig(JsonView jsonValue)
-  : S3DataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3DataConfig& S3DataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

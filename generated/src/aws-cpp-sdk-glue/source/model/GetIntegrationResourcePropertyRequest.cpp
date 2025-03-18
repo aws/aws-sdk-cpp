@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIntegrationResourcePropertyRequest::GetIntegrationResourcePropertyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetIntegrationResourcePropertyRequest::SerializePayload() const
 {
   JsonValue payload;

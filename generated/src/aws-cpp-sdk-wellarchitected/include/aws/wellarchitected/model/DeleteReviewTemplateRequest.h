@@ -26,7 +26,7 @@ namespace Model
   class DeleteReviewTemplateRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API DeleteReviewTemplateRequest();
+    AWS_WELLARCHITECTED_API DeleteReviewTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The review template ARN.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline DeleteReviewTemplateRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline DeleteReviewTemplateRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline DeleteReviewTemplateRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    DeleteReviewTemplateRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline DeleteReviewTemplateRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline DeleteReviewTemplateRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline DeleteReviewTemplateRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    DeleteReviewTemplateRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

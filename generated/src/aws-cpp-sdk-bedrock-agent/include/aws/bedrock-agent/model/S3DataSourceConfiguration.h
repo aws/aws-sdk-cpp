@@ -33,7 +33,7 @@ namespace Model
   class S3DataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API S3DataSourceConfiguration();
+    AWS_BEDROCKAGENT_API S3DataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the S3 bucket that contains your data.</p>
      */
-    inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
-    inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
-    inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
-    inline void SetBucketArn(const char* value) { m_bucketArnHasBeenSet = true; m_bucketArn.assign(value); }
-    inline S3DataSourceConfiguration& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
-    inline S3DataSourceConfiguration& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    S3DataSourceConfiguration& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID for the owner of the S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
+    inline const Aws::String& GetBucketOwnerAccountId() const { return m_bucketOwnerAccountId; }
     inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
-    inline void SetBucketOwnerAccountId(const Aws::String& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = value; }
-    inline void SetBucketOwnerAccountId(Aws::String&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::move(value); }
-    inline void SetBucketOwnerAccountId(const char* value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId.assign(value); }
-    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const Aws::String& value) { SetBucketOwnerAccountId(value); return *this;}
-    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(Aws::String&& value) { SetBucketOwnerAccountId(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const char* value) { SetBucketOwnerAccountId(value); return *this;}
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    void SetBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::forward<BucketOwnerAccountIdT>(value); }
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    S3DataSourceConfiguration& WithBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { SetBucketOwnerAccountId(std::forward<BucketOwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +70,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
      * objects using prefixes</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPrefixes() const{ return m_inclusionPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPrefixes() const { return m_inclusionPrefixes; }
     inline bool InclusionPrefixesHasBeenSet() const { return m_inclusionPrefixesHasBeenSet; }
-    inline void SetInclusionPrefixes(const Aws::Vector<Aws::String>& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = value; }
-    inline void SetInclusionPrefixes(Aws::Vector<Aws::String>&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = std::move(value); }
-    inline S3DataSourceConfiguration& WithInclusionPrefixes(const Aws::Vector<Aws::String>& value) { SetInclusionPrefixes(value); return *this;}
-    inline S3DataSourceConfiguration& WithInclusionPrefixes(Aws::Vector<Aws::String>&& value) { SetInclusionPrefixes(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(const Aws::String& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(Aws::String&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(std::move(value)); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(const char* value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
+    template<typename InclusionPrefixesT = Aws::Vector<Aws::String>>
+    void SetInclusionPrefixes(InclusionPrefixesT&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = std::forward<InclusionPrefixesT>(value); }
+    template<typename InclusionPrefixesT = Aws::Vector<Aws::String>>
+    S3DataSourceConfiguration& WithInclusionPrefixes(InclusionPrefixesT&& value) { SetInclusionPrefixes(std::forward<InclusionPrefixesT>(value)); return *this;}
+    template<typename InclusionPrefixesT = Aws::String>
+    S3DataSourceConfiguration& AddInclusionPrefixes(InclusionPrefixesT&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.emplace_back(std::forward<InclusionPrefixesT>(value)); return *this; }
     ///@}
   private:
 

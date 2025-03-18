@@ -12,19 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFeaturedResultsSetRequest::CreateFeaturedResultsSetRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_featuredResultsSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_queryTextsHasBeenSet(false),
-    m_featuredDocumentsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFeaturedResultsSetRequest::SerializePayload() const
 {
   JsonValue payload;

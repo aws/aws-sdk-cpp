@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration() : 
-    m_bedrockKnowledgeBaseArnHasBeenSet(false),
-    m_exactResponse(false),
-    m_exactResponseHasBeenSet(false),
-    m_exactResponseFieldsHasBeenSet(false)
-{
-}
-
 BedrockKnowledgeStoreConfiguration::BedrockKnowledgeStoreConfiguration(JsonView jsonValue)
-  : BedrockKnowledgeStoreConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BedrockKnowledgeStoreConfiguration& BedrockKnowledgeStoreConfiguration::operator
   if(jsonValue.ValueExists("bedrockKnowledgeBaseArn"))
   {
     m_bedrockKnowledgeBaseArn = jsonValue.GetString("bedrockKnowledgeBaseArn");
-
     m_bedrockKnowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactResponse"))
   {
     m_exactResponse = jsonValue.GetBool("exactResponse");
-
     m_exactResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactResponseFields"))
   {
     m_exactResponseFields = jsonValue.GetObject("exactResponseFields");
-
     m_exactResponseFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

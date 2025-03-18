@@ -12,11 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentRequest::DeleteEnvironmentRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

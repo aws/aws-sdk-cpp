@@ -18,17 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-RuntimeConfiguration::RuntimeConfiguration() : 
-    m_serverProcessesHasBeenSet(false),
-    m_maxConcurrentGameSessionActivations(0),
-    m_maxConcurrentGameSessionActivationsHasBeenSet(false),
-    m_gameSessionActivationTimeoutSeconds(0),
-    m_gameSessionActivationTimeoutSecondsHasBeenSet(false)
-{
-}
-
 RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue)
-  : RuntimeConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ RuntimeConfiguration& RuntimeConfiguration::operator =(JsonView jsonValue)
     }
     m_serverProcessesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrentGameSessionActivations"))
   {
     m_maxConcurrentGameSessionActivations = jsonValue.GetInteger("MaxConcurrentGameSessionActivations");
-
     m_maxConcurrentGameSessionActivationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionActivationTimeoutSeconds"))
   {
     m_gameSessionActivationTimeoutSeconds = jsonValue.GetInteger("GameSessionActivationTimeoutSeconds");
-
     m_gameSessionActivationTimeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

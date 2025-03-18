@@ -32,7 +32,7 @@ namespace Model
   class TargetGroupTuple
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TargetGroupTuple();
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroupTuple() = default;
     AWS_ELASTICLOADBALANCINGV2_API TargetGroupTuple(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TargetGroupTuple& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline TargetGroupTuple& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline TargetGroupTuple& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline TargetGroupTuple& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    TargetGroupTuple& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The weight. The range is 0 to 999.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline TargetGroupTuple& WithWeight(int value) { SetWeight(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
   };
 

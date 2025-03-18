@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BedrockModelSpecification::BedrockModelSpecification() : 
-    m_modelArnHasBeenSet(false),
-    m_guardrailHasBeenSet(false),
-    m_traceStatus(BedrockTraceStatus::NOT_SET),
-    m_traceStatusHasBeenSet(false),
-    m_customPromptHasBeenSet(false)
-{
-}
-
 BedrockModelSpecification::BedrockModelSpecification(JsonView jsonValue)
-  : BedrockModelSpecification()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BedrockModelSpecification& BedrockModelSpecification::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrail"))
   {
     m_guardrail = jsonValue.GetObject("guardrail");
-
     m_guardrailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceStatus"))
   {
     m_traceStatus = BedrockTraceStatusMapper::GetBedrockTraceStatusForName(jsonValue.GetString("traceStatus"));
-
     m_traceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customPrompt"))
   {
     m_customPrompt = jsonValue.GetString("customPrompt");
-
     m_customPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-IPRange::IPRange() : 
-    m_statusHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IPRange::IPRange(const XmlNode& xmlNode)
-  : IPRange()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

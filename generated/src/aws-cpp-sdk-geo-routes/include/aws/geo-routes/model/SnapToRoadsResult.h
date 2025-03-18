@@ -32,7 +32,7 @@ namespace Model
   class SnapToRoadsResult
   {
   public:
-    AWS_GEOROUTES_API SnapToRoadsResult();
+    AWS_GEOROUTES_API SnapToRoadsResult() = default;
     AWS_GEOROUTES_API SnapToRoadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GEOROUTES_API SnapToRoadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,86 +42,86 @@ namespace Model
      * <p>Notices are additional information returned that indicate issues that
      * occurred during route calculation.</p>
      */
-    inline const Aws::Vector<RoadSnapNotice>& GetNotices() const{ return m_notices; }
-    inline void SetNotices(const Aws::Vector<RoadSnapNotice>& value) { m_notices = value; }
-    inline void SetNotices(Aws::Vector<RoadSnapNotice>&& value) { m_notices = std::move(value); }
-    inline SnapToRoadsResult& WithNotices(const Aws::Vector<RoadSnapNotice>& value) { SetNotices(value); return *this;}
-    inline SnapToRoadsResult& WithNotices(Aws::Vector<RoadSnapNotice>&& value) { SetNotices(std::move(value)); return *this;}
-    inline SnapToRoadsResult& AddNotices(const RoadSnapNotice& value) { m_notices.push_back(value); return *this; }
-    inline SnapToRoadsResult& AddNotices(RoadSnapNotice&& value) { m_notices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RoadSnapNotice>& GetNotices() const { return m_notices; }
+    template<typename NoticesT = Aws::Vector<RoadSnapNotice>>
+    void SetNotices(NoticesT&& value) { m_noticesHasBeenSet = true; m_notices = std::forward<NoticesT>(value); }
+    template<typename NoticesT = Aws::Vector<RoadSnapNotice>>
+    SnapToRoadsResult& WithNotices(NoticesT&& value) { SetNotices(std::forward<NoticesT>(value)); return *this;}
+    template<typename NoticesT = RoadSnapNotice>
+    SnapToRoadsResult& AddNotices(NoticesT&& value) { m_noticesHasBeenSet = true; m_notices.emplace_back(std::forward<NoticesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pricing bucket for which the query is charged at.</p>
      */
-    inline const Aws::String& GetPricingBucket() const{ return m_pricingBucket; }
-    inline void SetPricingBucket(const Aws::String& value) { m_pricingBucket = value; }
-    inline void SetPricingBucket(Aws::String&& value) { m_pricingBucket = std::move(value); }
-    inline void SetPricingBucket(const char* value) { m_pricingBucket.assign(value); }
-    inline SnapToRoadsResult& WithPricingBucket(const Aws::String& value) { SetPricingBucket(value); return *this;}
-    inline SnapToRoadsResult& WithPricingBucket(Aws::String&& value) { SetPricingBucket(std::move(value)); return *this;}
-    inline SnapToRoadsResult& WithPricingBucket(const char* value) { SetPricingBucket(value); return *this;}
+    inline const Aws::String& GetPricingBucket() const { return m_pricingBucket; }
+    template<typename PricingBucketT = Aws::String>
+    void SetPricingBucket(PricingBucketT&& value) { m_pricingBucketHasBeenSet = true; m_pricingBucket = std::forward<PricingBucketT>(value); }
+    template<typename PricingBucketT = Aws::String>
+    SnapToRoadsResult& WithPricingBucket(PricingBucketT&& value) { SetPricingBucket(std::forward<PricingBucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The interpolated geometry for the snapped route onto the road network.</p>
      */
-    inline const RoadSnapSnappedGeometry& GetSnappedGeometry() const{ return m_snappedGeometry; }
-    inline void SetSnappedGeometry(const RoadSnapSnappedGeometry& value) { m_snappedGeometry = value; }
-    inline void SetSnappedGeometry(RoadSnapSnappedGeometry&& value) { m_snappedGeometry = std::move(value); }
-    inline SnapToRoadsResult& WithSnappedGeometry(const RoadSnapSnappedGeometry& value) { SetSnappedGeometry(value); return *this;}
-    inline SnapToRoadsResult& WithSnappedGeometry(RoadSnapSnappedGeometry&& value) { SetSnappedGeometry(std::move(value)); return *this;}
+    inline const RoadSnapSnappedGeometry& GetSnappedGeometry() const { return m_snappedGeometry; }
+    template<typename SnappedGeometryT = RoadSnapSnappedGeometry>
+    void SetSnappedGeometry(SnappedGeometryT&& value) { m_snappedGeometryHasBeenSet = true; m_snappedGeometry = std::forward<SnappedGeometryT>(value); }
+    template<typename SnappedGeometryT = RoadSnapSnappedGeometry>
+    SnapToRoadsResult& WithSnappedGeometry(SnappedGeometryT&& value) { SetSnappedGeometry(std::forward<SnappedGeometryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the format of the geometry returned for each leg of the route.</p>
      */
-    inline const GeometryFormat& GetSnappedGeometryFormat() const{ return m_snappedGeometryFormat; }
-    inline void SetSnappedGeometryFormat(const GeometryFormat& value) { m_snappedGeometryFormat = value; }
-    inline void SetSnappedGeometryFormat(GeometryFormat&& value) { m_snappedGeometryFormat = std::move(value); }
-    inline SnapToRoadsResult& WithSnappedGeometryFormat(const GeometryFormat& value) { SetSnappedGeometryFormat(value); return *this;}
-    inline SnapToRoadsResult& WithSnappedGeometryFormat(GeometryFormat&& value) { SetSnappedGeometryFormat(std::move(value)); return *this;}
+    inline GeometryFormat GetSnappedGeometryFormat() const { return m_snappedGeometryFormat; }
+    inline void SetSnappedGeometryFormat(GeometryFormat value) { m_snappedGeometryFormatHasBeenSet = true; m_snappedGeometryFormat = value; }
+    inline SnapToRoadsResult& WithSnappedGeometryFormat(GeometryFormat value) { SetSnappedGeometryFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trace points snapped onto the road network. </p>
      */
-    inline const Aws::Vector<RoadSnapSnappedTracePoint>& GetSnappedTracePoints() const{ return m_snappedTracePoints; }
-    inline void SetSnappedTracePoints(const Aws::Vector<RoadSnapSnappedTracePoint>& value) { m_snappedTracePoints = value; }
-    inline void SetSnappedTracePoints(Aws::Vector<RoadSnapSnappedTracePoint>&& value) { m_snappedTracePoints = std::move(value); }
-    inline SnapToRoadsResult& WithSnappedTracePoints(const Aws::Vector<RoadSnapSnappedTracePoint>& value) { SetSnappedTracePoints(value); return *this;}
-    inline SnapToRoadsResult& WithSnappedTracePoints(Aws::Vector<RoadSnapSnappedTracePoint>&& value) { SetSnappedTracePoints(std::move(value)); return *this;}
-    inline SnapToRoadsResult& AddSnappedTracePoints(const RoadSnapSnappedTracePoint& value) { m_snappedTracePoints.push_back(value); return *this; }
-    inline SnapToRoadsResult& AddSnappedTracePoints(RoadSnapSnappedTracePoint&& value) { m_snappedTracePoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RoadSnapSnappedTracePoint>& GetSnappedTracePoints() const { return m_snappedTracePoints; }
+    template<typename SnappedTracePointsT = Aws::Vector<RoadSnapSnappedTracePoint>>
+    void SetSnappedTracePoints(SnappedTracePointsT&& value) { m_snappedTracePointsHasBeenSet = true; m_snappedTracePoints = std::forward<SnappedTracePointsT>(value); }
+    template<typename SnappedTracePointsT = Aws::Vector<RoadSnapSnappedTracePoint>>
+    SnapToRoadsResult& WithSnappedTracePoints(SnappedTracePointsT&& value) { SetSnappedTracePoints(std::forward<SnappedTracePointsT>(value)); return *this;}
+    template<typename SnappedTracePointsT = RoadSnapSnappedTracePoint>
+    SnapToRoadsResult& AddSnappedTracePoints(SnappedTracePointsT&& value) { m_snappedTracePointsHasBeenSet = true; m_snappedTracePoints.emplace_back(std::forward<SnappedTracePointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SnapToRoadsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SnapToRoadsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SnapToRoadsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SnapToRoadsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RoadSnapNotice> m_notices;
+    bool m_noticesHasBeenSet = false;
 
     Aws::String m_pricingBucket;
+    bool m_pricingBucketHasBeenSet = false;
 
     RoadSnapSnappedGeometry m_snappedGeometry;
+    bool m_snappedGeometryHasBeenSet = false;
 
-    GeometryFormat m_snappedGeometryFormat;
+    GeometryFormat m_snappedGeometryFormat{GeometryFormat::NOT_SET};
+    bool m_snappedGeometryFormatHasBeenSet = false;
 
     Aws::Vector<RoadSnapSnappedTracePoint> m_snappedTracePoints;
+    bool m_snappedTracePointsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

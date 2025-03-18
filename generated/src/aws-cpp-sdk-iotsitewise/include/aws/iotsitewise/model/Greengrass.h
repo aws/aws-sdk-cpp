@@ -37,7 +37,7 @@ namespace Model
   class Greengrass
   {
   public:
-    AWS_IOTSITEWISE_API Greengrass();
+    AWS_IOTSITEWISE_API Greengrass() = default;
     AWS_IOTSITEWISE_API Greengrass(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Greengrass& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v1/apireference/getgroup-get.html">GetGroup</a>
      * in the <i>IoT Greengrass V1 API Reference</i>.</p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-    inline Greengrass& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline Greengrass& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline Greengrass& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    Greengrass& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
   private:
 

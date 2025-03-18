@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotAnonymousUserRedacted::SnapshotAnonymousUserRedacted() : 
-    m_rowLevelPermissionTagKeysHasBeenSet(false)
-{
-}
-
 SnapshotAnonymousUserRedacted::SnapshotAnonymousUserRedacted(JsonView jsonValue)
-  : SnapshotAnonymousUserRedacted()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnapshotAnonymousUserRedacted& SnapshotAnonymousUserRedacted::operator =(JsonVie
     }
     m_rowLevelPermissionTagKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

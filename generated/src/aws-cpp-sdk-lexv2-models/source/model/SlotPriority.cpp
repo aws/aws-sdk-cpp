@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotPriority::SlotPriority() : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_slotIdHasBeenSet(false)
-{
-}
-
 SlotPriority::SlotPriority(JsonView jsonValue)
-  : SlotPriority()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SlotPriority& SlotPriority::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotId"))
   {
     m_slotId = jsonValue.GetString("slotId");
-
     m_slotIdHasBeenSet = true;
   }
-
   return *this;
 }
 

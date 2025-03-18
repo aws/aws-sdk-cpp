@@ -18,18 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfiguration() : 
-    m_answerGenerationAIGuardrailIdHasBeenSet(false),
-    m_answerGenerationAIPromptIdHasBeenSet(false),
-    m_associationConfigurationsHasBeenSet(false),
-    m_intentLabelingGenerationAIPromptIdHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_queryReformulationAIPromptIdHasBeenSet(false)
-{
-}
-
 AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfiguration(JsonView jsonValue)
-  : AnswerRecommendationAIAgentConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
   if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
   {
     m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
-
     m_answerGenerationAIGuardrailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
-
     m_answerGenerationAIPromptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationConfigurations"))
   {
     Aws::Utils::Array<JsonView> associationConfigurationsJsonList = jsonValue.GetArray("associationConfigurations");
@@ -59,28 +44,21 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
     }
     m_associationConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentLabelingGenerationAIPromptId"))
   {
     m_intentLabelingGenerationAIPromptId = jsonValue.GetString("intentLabelingGenerationAIPromptId");
-
     m_intentLabelingGenerationAIPromptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locale"))
   {
     m_locale = jsonValue.GetString("locale");
-
     m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryReformulationAIPromptId"))
   {
     m_queryReformulationAIPromptId = jsonValue.GetString("queryReformulationAIPromptId");
-
     m_queryReformulationAIPromptIdHasBeenSet = true;
   }
-
   return *this;
 }
 

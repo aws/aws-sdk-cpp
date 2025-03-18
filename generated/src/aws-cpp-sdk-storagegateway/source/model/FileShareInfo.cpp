@@ -18,18 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-FileShareInfo::FileShareInfo() : 
-    m_fileShareType(FileShareType::NOT_SET),
-    m_fileShareTypeHasBeenSet(false),
-    m_fileShareARNHasBeenSet(false),
-    m_fileShareIdHasBeenSet(false),
-    m_fileShareStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 FileShareInfo::FileShareInfo(JsonView jsonValue)
-  : FileShareInfo()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FileShareInfo& FileShareInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileShareType"))
   {
     m_fileShareType = FileShareTypeMapper::GetFileShareTypeForName(jsonValue.GetString("FileShareType"));
-
     m_fileShareTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");
-
     m_fileShareARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareId"))
   {
     m_fileShareId = jsonValue.GetString("FileShareId");
-
     m_fileShareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareStatus"))
   {
     m_fileShareStatus = jsonValue.GetString("FileShareStatus");
-
     m_fileShareStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   return *this;
 }
 

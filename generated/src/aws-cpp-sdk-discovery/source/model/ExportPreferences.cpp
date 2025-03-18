@@ -18,13 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-ExportPreferences::ExportPreferences() : 
-    m_ec2RecommendationsPreferencesHasBeenSet(false)
-{
-}
-
 ExportPreferences::ExportPreferences(JsonView jsonValue)
-  : ExportPreferences()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportPreferences& ExportPreferences::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ec2RecommendationsPreferences"))
   {
     m_ec2RecommendationsPreferences = jsonValue.GetObject("ec2RecommendationsPreferences");
-
     m_ec2RecommendationsPreferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

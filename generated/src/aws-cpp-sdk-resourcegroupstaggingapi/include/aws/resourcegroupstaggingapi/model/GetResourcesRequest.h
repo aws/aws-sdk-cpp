@@ -23,7 +23,7 @@ namespace Model
   class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * request to indicate that you want the next page of results. Leave this parameter
      * empty in your initial request.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-    inline GetResourcesRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline GetResourcesRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    GetResourcesRequest& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,14 @@ namespace Model
      * resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
      * key2=value4) and (key3, any or no value)</code> </p> </li> </ul> </li> </ul>
      */
-    inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+    inline const Aws::Vector<TagFilter>& GetTagFilters() const { return m_tagFilters; }
     inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
-    inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
-    inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
-    inline GetResourcesRequest& WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
-    inline GetResourcesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
-    inline GetResourcesRequest& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
-    inline GetResourcesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
+    template<typename TagFiltersT = Aws::Vector<TagFilter>>
+    void SetTagFilters(TagFiltersT&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::forward<TagFiltersT>(value); }
+    template<typename TagFiltersT = Aws::Vector<TagFilter>>
+    GetResourcesRequest& WithTagFilters(TagFiltersT&& value) { SetTagFilters(std::forward<TagFiltersT>(value)); return *this;}
+    template<typename TagFiltersT = TagFilter>
+    GetResourcesRequest& AddTagFilters(TagFiltersT&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.emplace_back(std::forward<TagFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,7 +97,7 @@ namespace Model
      * to see if there are more results. You can specify a minimum of 1 and a maximum
      * value of 100.</p>
      */
-    inline int GetResourcesPerPage() const{ return m_resourcesPerPage; }
+    inline int GetResourcesPerPage() const { return m_resourcesPerPage; }
     inline bool ResourcesPerPageHasBeenSet() const { return m_resourcesPerPageHasBeenSet; }
     inline void SetResourcesPerPage(int value) { m_resourcesPerPageHasBeenSet = true; m_resourcesPerPage = value; }
     inline GetResourcesRequest& WithResourcesPerPage(int value) { SetResourcesPerPage(value); return *this;}
@@ -124,7 +122,7 @@ namespace Model
      * <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
      * items.</p>
      */
-    inline int GetTagsPerPage() const{ return m_tagsPerPage; }
+    inline int GetTagsPerPage() const { return m_tagsPerPage; }
     inline bool TagsPerPageHasBeenSet() const { return m_tagsPerPageHasBeenSet; }
     inline void SetTagsPerPage(int value) { m_tagsPerPageHasBeenSet = true; m_tagsPerPage = value; }
     inline GetResourcesRequest& WithTagsPerPage(int value) { SetTagsPerPage(value); return *this;}
@@ -148,15 +146,14 @@ namespace Model
      * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
      * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const { return m_resourceTypeFilters; }
     inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
-    inline void SetResourceTypeFilters(const Aws::Vector<Aws::String>& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = value; }
-    inline void SetResourceTypeFilters(Aws::Vector<Aws::String>&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::move(value); }
-    inline GetResourcesRequest& WithResourceTypeFilters(const Aws::Vector<Aws::String>& value) { SetResourceTypeFilters(value); return *this;}
-    inline GetResourcesRequest& WithResourceTypeFilters(Aws::Vector<Aws::String>&& value) { SetResourceTypeFilters(std::move(value)); return *this;}
-    inline GetResourcesRequest& AddResourceTypeFilters(const Aws::String& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
-    inline GetResourcesRequest& AddResourceTypeFilters(Aws::String&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(std::move(value)); return *this; }
-    inline GetResourcesRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
+    template<typename ResourceTypeFiltersT = Aws::Vector<Aws::String>>
+    void SetResourceTypeFilters(ResourceTypeFiltersT&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::forward<ResourceTypeFiltersT>(value); }
+    template<typename ResourceTypeFiltersT = Aws::Vector<Aws::String>>
+    GetResourcesRequest& WithResourceTypeFilters(ResourceTypeFiltersT&& value) { SetResourceTypeFilters(std::forward<ResourceTypeFiltersT>(value)); return *this;}
+    template<typename ResourceTypeFiltersT = Aws::String>
+    GetResourcesRequest& AddResourceTypeFilters(ResourceTypeFiltersT&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.emplace_back(std::forward<ResourceTypeFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,7 +162,7 @@ namespace Model
      * effective tag policy. Set this to <code>true</code> to determine whether
      * resources are compliant with the tag policy and to get details.</p>
      */
-    inline bool GetIncludeComplianceDetails() const{ return m_includeComplianceDetails; }
+    inline bool GetIncludeComplianceDetails() const { return m_includeComplianceDetails; }
     inline bool IncludeComplianceDetailsHasBeenSet() const { return m_includeComplianceDetailsHasBeenSet; }
     inline void SetIncludeComplianceDetails(bool value) { m_includeComplianceDetailsHasBeenSet = true; m_includeComplianceDetails = value; }
     inline GetResourcesRequest& WithIncludeComplianceDetails(bool value) { SetIncludeComplianceDetails(value); return *this;}
@@ -179,7 +176,7 @@ namespace Model
      * only if the <code>IncludeComplianceDetails</code> parameter is also set to
      * <code>true</code>.</p>
      */
-    inline bool GetExcludeCompliantResources() const{ return m_excludeCompliantResources; }
+    inline bool GetExcludeCompliantResources() const { return m_excludeCompliantResources; }
     inline bool ExcludeCompliantResourcesHasBeenSet() const { return m_excludeCompliantResourcesHasBeenSet; }
     inline void SetExcludeCompliantResources(bool value) { m_excludeCompliantResourcesHasBeenSet = true; m_excludeCompliantResources = value; }
     inline GetResourcesRequest& WithExcludeCompliantResources(bool value) { SetExcludeCompliantResources(value); return *this;}
@@ -199,15 +196,14 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceARNList() const{ return m_resourceARNList; }
+    inline const Aws::Vector<Aws::String>& GetResourceARNList() const { return m_resourceARNList; }
     inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
-    inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
-    inline void SetResourceARNList(Aws::Vector<Aws::String>&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::move(value); }
-    inline GetResourcesRequest& WithResourceARNList(const Aws::Vector<Aws::String>& value) { SetResourceARNList(value); return *this;}
-    inline GetResourcesRequest& WithResourceARNList(Aws::Vector<Aws::String>&& value) { SetResourceARNList(std::move(value)); return *this;}
-    inline GetResourcesRequest& AddResourceARNList(const Aws::String& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
-    inline GetResourcesRequest& AddResourceARNList(Aws::String&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(std::move(value)); return *this; }
-    inline GetResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
+    template<typename ResourceARNListT = Aws::Vector<Aws::String>>
+    void SetResourceARNList(ResourceARNListT&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::forward<ResourceARNListT>(value); }
+    template<typename ResourceARNListT = Aws::Vector<Aws::String>>
+    GetResourcesRequest& WithResourceARNList(ResourceARNListT&& value) { SetResourceARNList(std::forward<ResourceARNListT>(value)); return *this;}
+    template<typename ResourceARNListT = Aws::String>
+    GetResourcesRequest& AddResourceARNList(ResourceARNListT&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.emplace_back(std::forward<ResourceARNListT>(value)); return *this; }
     ///@}
   private:
 
@@ -217,19 +213,19 @@ namespace Model
     Aws::Vector<TagFilter> m_tagFilters;
     bool m_tagFiltersHasBeenSet = false;
 
-    int m_resourcesPerPage;
+    int m_resourcesPerPage{0};
     bool m_resourcesPerPageHasBeenSet = false;
 
-    int m_tagsPerPage;
+    int m_tagsPerPage{0};
     bool m_tagsPerPageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
     bool m_resourceTypeFiltersHasBeenSet = false;
 
-    bool m_includeComplianceDetails;
+    bool m_includeComplianceDetails{false};
     bool m_includeComplianceDetailsHasBeenSet = false;
 
-    bool m_excludeCompliantResources;
+    bool m_excludeCompliantResources{false};
     bool m_excludeCompliantResourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceARNList;

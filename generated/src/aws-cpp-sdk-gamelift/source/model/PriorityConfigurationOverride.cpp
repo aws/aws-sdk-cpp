@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-PriorityConfigurationOverride::PriorityConfigurationOverride() : 
-    m_placementFallbackStrategy(PlacementFallbackStrategy::NOT_SET),
-    m_placementFallbackStrategyHasBeenSet(false),
-    m_locationOrderHasBeenSet(false)
-{
-}
-
 PriorityConfigurationOverride::PriorityConfigurationOverride(JsonView jsonValue)
-  : PriorityConfigurationOverride()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PriorityConfigurationOverride& PriorityConfigurationOverride::operator =(JsonVie
   if(jsonValue.ValueExists("PlacementFallbackStrategy"))
   {
     m_placementFallbackStrategy = PlacementFallbackStrategyMapper::GetPlacementFallbackStrategyForName(jsonValue.GetString("PlacementFallbackStrategy"));
-
     m_placementFallbackStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationOrder"))
   {
     Aws::Utils::Array<JsonView> locationOrderJsonList = jsonValue.GetArray("LocationOrder");
@@ -49,7 +39,6 @@ PriorityConfigurationOverride& PriorityConfigurationOverride::operator =(JsonVie
     }
     m_locationOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeFleetDeploymentResult
   {
   public:
-    AWS_GAMELIFT_API DescribeFleetDeploymentResult();
+    AWS_GAMELIFT_API DescribeFleetDeploymentResult() = default;
     AWS_GAMELIFT_API DescribeFleetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeFleetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>The requested deployment information.</p>
      */
-    inline const FleetDeployment& GetFleetDeployment() const{ return m_fleetDeployment; }
-    inline void SetFleetDeployment(const FleetDeployment& value) { m_fleetDeployment = value; }
-    inline void SetFleetDeployment(FleetDeployment&& value) { m_fleetDeployment = std::move(value); }
-    inline DescribeFleetDeploymentResult& WithFleetDeployment(const FleetDeployment& value) { SetFleetDeployment(value); return *this;}
-    inline DescribeFleetDeploymentResult& WithFleetDeployment(FleetDeployment&& value) { SetFleetDeployment(std::move(value)); return *this;}
+    inline const FleetDeployment& GetFleetDeployment() const { return m_fleetDeployment; }
+    template<typename FleetDeploymentT = FleetDeployment>
+    void SetFleetDeployment(FleetDeploymentT&& value) { m_fleetDeploymentHasBeenSet = true; m_fleetDeployment = std::forward<FleetDeploymentT>(value); }
+    template<typename FleetDeploymentT = FleetDeployment>
+    DescribeFleetDeploymentResult& WithFleetDeployment(FleetDeploymentT&& value) { SetFleetDeployment(std::forward<FleetDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,36 +51,35 @@ namespace Model
      * <p>If the deployment is for a multi-location fleet, the requests returns the
      * deployment status in each fleet location.</p>
      */
-    inline const Aws::Map<Aws::String, LocationalDeployment>& GetLocationalDeployments() const{ return m_locationalDeployments; }
-    inline void SetLocationalDeployments(const Aws::Map<Aws::String, LocationalDeployment>& value) { m_locationalDeployments = value; }
-    inline void SetLocationalDeployments(Aws::Map<Aws::String, LocationalDeployment>&& value) { m_locationalDeployments = std::move(value); }
-    inline DescribeFleetDeploymentResult& WithLocationalDeployments(const Aws::Map<Aws::String, LocationalDeployment>& value) { SetLocationalDeployments(value); return *this;}
-    inline DescribeFleetDeploymentResult& WithLocationalDeployments(Aws::Map<Aws::String, LocationalDeployment>&& value) { SetLocationalDeployments(std::move(value)); return *this;}
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(const Aws::String& key, const LocationalDeployment& value) { m_locationalDeployments.emplace(key, value); return *this; }
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(Aws::String&& key, const LocationalDeployment& value) { m_locationalDeployments.emplace(std::move(key), value); return *this; }
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(const Aws::String& key, LocationalDeployment&& value) { m_locationalDeployments.emplace(key, std::move(value)); return *this; }
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(Aws::String&& key, LocationalDeployment&& value) { m_locationalDeployments.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(const char* key, LocationalDeployment&& value) { m_locationalDeployments.emplace(key, std::move(value)); return *this; }
-    inline DescribeFleetDeploymentResult& AddLocationalDeployments(const char* key, const LocationalDeployment& value) { m_locationalDeployments.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, LocationalDeployment>& GetLocationalDeployments() const { return m_locationalDeployments; }
+    template<typename LocationalDeploymentsT = Aws::Map<Aws::String, LocationalDeployment>>
+    void SetLocationalDeployments(LocationalDeploymentsT&& value) { m_locationalDeploymentsHasBeenSet = true; m_locationalDeployments = std::forward<LocationalDeploymentsT>(value); }
+    template<typename LocationalDeploymentsT = Aws::Map<Aws::String, LocationalDeployment>>
+    DescribeFleetDeploymentResult& WithLocationalDeployments(LocationalDeploymentsT&& value) { SetLocationalDeployments(std::forward<LocationalDeploymentsT>(value)); return *this;}
+    template<typename LocationalDeploymentsKeyT = Aws::String, typename LocationalDeploymentsValueT = LocationalDeployment>
+    DescribeFleetDeploymentResult& AddLocationalDeployments(LocationalDeploymentsKeyT&& key, LocationalDeploymentsValueT&& value) {
+      m_locationalDeploymentsHasBeenSet = true; m_locationalDeployments.emplace(std::forward<LocationalDeploymentsKeyT>(key), std::forward<LocationalDeploymentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFleetDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFleetDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFleetDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFleetDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FleetDeployment m_fleetDeployment;
+    bool m_fleetDeploymentHasBeenSet = false;
 
     Aws::Map<Aws::String, LocationalDeployment> m_locationalDeployments;
+    bool m_locationalDeploymentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

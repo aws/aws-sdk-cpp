@@ -12,13 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToStreamRequest::AddTagsToStreamRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToStreamRequest::SerializePayload() const
 {
   JsonValue payload;

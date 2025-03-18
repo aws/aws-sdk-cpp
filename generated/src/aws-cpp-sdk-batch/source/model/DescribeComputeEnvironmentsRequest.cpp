@@ -12,14 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeComputeEnvironmentsRequest::DescribeComputeEnvironmentsRequest() : 
-    m_computeEnvironmentsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeComputeEnvironmentsRequest::SerializePayload() const
 {
   JsonValue payload;

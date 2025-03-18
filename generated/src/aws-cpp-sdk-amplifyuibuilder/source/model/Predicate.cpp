@@ -18,18 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-Predicate::Predicate() : 
-    m_orHasBeenSet(false),
-    m_andHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_operandHasBeenSet(false),
-    m_operandTypeHasBeenSet(false)
-{
-}
-
 Predicate::Predicate(JsonView jsonValue)
-  : Predicate()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ Predicate& Predicate::operator =(JsonView jsonValue)
     }
     m_orHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("and"))
   {
     Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
@@ -55,35 +43,26 @@ Predicate& Predicate::operator =(JsonView jsonValue)
     }
     m_andHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetString("field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = jsonValue.GetString("operator");
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operand"))
   {
     m_operand = jsonValue.GetString("operand");
-
     m_operandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operandType"))
   {
     m_operandType = jsonValue.GetString("operandType");
-
     m_operandTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

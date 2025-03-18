@@ -18,15 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-SubnetMapping::SubnetMapping() : 
-    m_subnetIdHasBeenSet(false),
-    m_iPAddressType(IPAddressType::NOT_SET),
-    m_iPAddressTypeHasBeenSet(false)
-{
-}
-
 SubnetMapping::SubnetMapping(JsonView jsonValue)
-  : SubnetMapping()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SubnetMapping& SubnetMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IPAddressType"))
   {
     m_iPAddressType = IPAddressTypeMapper::GetIPAddressTypeForName(jsonValue.GetString("IPAddressType"));
-
     m_iPAddressTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

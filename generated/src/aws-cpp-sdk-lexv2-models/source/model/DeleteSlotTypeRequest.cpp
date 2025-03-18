@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteSlotTypeRequest::DeleteSlotTypeRequest() : 
-    m_slotTypeIdHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_skipResourceInUseCheck(false),
-    m_skipResourceInUseCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlotTypeRequest::SerializePayload() const
 {
   return {};

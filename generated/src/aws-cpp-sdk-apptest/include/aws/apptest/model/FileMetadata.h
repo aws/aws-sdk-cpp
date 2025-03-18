@@ -33,7 +33,7 @@ namespace Model
   class FileMetadata
   {
   public:
-    AWS_APPTEST_API FileMetadata();
+    AWS_APPTEST_API FileMetadata() = default;
     AWS_APPTEST_API FileMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API FileMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>The data sets of the file metadata.</p>
      */
-    inline const Aws::Vector<DataSet>& GetDataSets() const{ return m_dataSets; }
+    inline const Aws::Vector<DataSet>& GetDataSets() const { return m_dataSets; }
     inline bool DataSetsHasBeenSet() const { return m_dataSetsHasBeenSet; }
-    inline void SetDataSets(const Aws::Vector<DataSet>& value) { m_dataSetsHasBeenSet = true; m_dataSets = value; }
-    inline void SetDataSets(Aws::Vector<DataSet>&& value) { m_dataSetsHasBeenSet = true; m_dataSets = std::move(value); }
-    inline FileMetadata& WithDataSets(const Aws::Vector<DataSet>& value) { SetDataSets(value); return *this;}
-    inline FileMetadata& WithDataSets(Aws::Vector<DataSet>&& value) { SetDataSets(std::move(value)); return *this;}
-    inline FileMetadata& AddDataSets(const DataSet& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(value); return *this; }
-    inline FileMetadata& AddDataSets(DataSet&& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(std::move(value)); return *this; }
+    template<typename DataSetsT = Aws::Vector<DataSet>>
+    void SetDataSets(DataSetsT&& value) { m_dataSetsHasBeenSet = true; m_dataSets = std::forward<DataSetsT>(value); }
+    template<typename DataSetsT = Aws::Vector<DataSet>>
+    FileMetadata& WithDataSets(DataSetsT&& value) { SetDataSets(std::forward<DataSetsT>(value)); return *this;}
+    template<typename DataSetsT = DataSet>
+    FileMetadata& AddDataSets(DataSetsT&& value) { m_dataSetsHasBeenSet = true; m_dataSets.emplace_back(std::forward<DataSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The database CDC of the file metadata.</p>
      */
-    inline const DatabaseCDC& GetDatabaseCDC() const{ return m_databaseCDC; }
+    inline const DatabaseCDC& GetDatabaseCDC() const { return m_databaseCDC; }
     inline bool DatabaseCDCHasBeenSet() const { return m_databaseCDCHasBeenSet; }
-    inline void SetDatabaseCDC(const DatabaseCDC& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = value; }
-    inline void SetDatabaseCDC(DatabaseCDC&& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = std::move(value); }
-    inline FileMetadata& WithDatabaseCDC(const DatabaseCDC& value) { SetDatabaseCDC(value); return *this;}
-    inline FileMetadata& WithDatabaseCDC(DatabaseCDC&& value) { SetDatabaseCDC(std::move(value)); return *this;}
+    template<typename DatabaseCDCT = DatabaseCDC>
+    void SetDatabaseCDC(DatabaseCDCT&& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = std::forward<DatabaseCDCT>(value); }
+    template<typename DatabaseCDCT = DatabaseCDC>
+    FileMetadata& WithDatabaseCDC(DatabaseCDCT&& value) { SetDatabaseCDC(std::forward<DatabaseCDCT>(value)); return *this;}
     ///@}
   private:
 

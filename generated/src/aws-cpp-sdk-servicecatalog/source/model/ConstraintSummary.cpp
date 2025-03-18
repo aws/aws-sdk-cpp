@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ConstraintSummary::ConstraintSummary() : 
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ConstraintSummary::ConstraintSummary(JsonView jsonValue)
-  : ConstraintSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConstraintSummary& ConstraintSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

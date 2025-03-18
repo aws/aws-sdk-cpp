@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTaskResult::GetTaskResult() : 
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_failureRetryCount(0)
-{
-}
-
 GetTaskResult::GetTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTaskResult()
 {
   *this = result;
 }
@@ -36,39 +28,33 @@ GetTaskResult& GetTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStatus"))
   {
     m_runStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("runStatus"));
-
+    m_runStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRunStatus"))
   {
     m_targetRunStatus = TaskTargetRunStatusMapper::GetTaskTargetRunStatusForName(jsonValue.GetString("targetRunStatus"));
-
+    m_targetRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureRetryCount"))
   {
     m_failureRetryCount = jsonValue.GetInteger("failureRetryCount");
-
+    m_failureRetryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -76,44 +62,40 @@ GetTaskResult& GetTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsObject();
     }
+    m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
+    m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
+    m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
+    m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestSessionActionId"))
   {
     m_latestSessionActionId = jsonValue.GetString("latestSessionActionId");
-
+    m_latestSessionActionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

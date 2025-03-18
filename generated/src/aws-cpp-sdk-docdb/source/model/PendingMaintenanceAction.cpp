@@ -20,18 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-PendingMaintenanceAction::PendingMaintenanceAction() : 
-    m_actionHasBeenSet(false),
-    m_autoAppliedAfterDateHasBeenSet(false),
-    m_forcedApplyDateHasBeenSet(false),
-    m_optInStatusHasBeenSet(false),
-    m_currentApplyDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 PendingMaintenanceAction::PendingMaintenanceAction(const XmlNode& xmlNode)
-  : PendingMaintenanceAction()
 {
   *this = xmlNode;
 }

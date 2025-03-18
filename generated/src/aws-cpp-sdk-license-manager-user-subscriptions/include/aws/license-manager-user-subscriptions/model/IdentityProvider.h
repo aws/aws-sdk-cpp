@@ -31,7 +31,7 @@ namespace Model
   class IdentityProvider
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>The <code>ActiveDirectoryIdentityProvider</code> resource contains settings
      * and other details about a specific Active Directory identity provider.</p>
      */
-    inline const ActiveDirectoryIdentityProvider& GetActiveDirectoryIdentityProvider() const{ return m_activeDirectoryIdentityProvider; }
+    inline const ActiveDirectoryIdentityProvider& GetActiveDirectoryIdentityProvider() const { return m_activeDirectoryIdentityProvider; }
     inline bool ActiveDirectoryIdentityProviderHasBeenSet() const { return m_activeDirectoryIdentityProviderHasBeenSet; }
-    inline void SetActiveDirectoryIdentityProvider(const ActiveDirectoryIdentityProvider& value) { m_activeDirectoryIdentityProviderHasBeenSet = true; m_activeDirectoryIdentityProvider = value; }
-    inline void SetActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProvider&& value) { m_activeDirectoryIdentityProviderHasBeenSet = true; m_activeDirectoryIdentityProvider = std::move(value); }
-    inline IdentityProvider& WithActiveDirectoryIdentityProvider(const ActiveDirectoryIdentityProvider& value) { SetActiveDirectoryIdentityProvider(value); return *this;}
-    inline IdentityProvider& WithActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProvider&& value) { SetActiveDirectoryIdentityProvider(std::move(value)); return *this;}
+    template<typename ActiveDirectoryIdentityProviderT = ActiveDirectoryIdentityProvider>
+    void SetActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProviderT&& value) { m_activeDirectoryIdentityProviderHasBeenSet = true; m_activeDirectoryIdentityProvider = std::forward<ActiveDirectoryIdentityProviderT>(value); }
+    template<typename ActiveDirectoryIdentityProviderT = ActiveDirectoryIdentityProvider>
+    IdentityProvider& WithActiveDirectoryIdentityProvider(ActiveDirectoryIdentityProviderT&& value) { SetActiveDirectoryIdentityProvider(std::forward<ActiveDirectoryIdentityProviderT>(value)); return *this;}
     ///@}
   private:
 

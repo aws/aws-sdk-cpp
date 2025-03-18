@@ -21,7 +21,7 @@ namespace Model
   class StopActivityStreamRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API StopActivityStreamRequest();
+    AWS_RDS_API StopActivityStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * stream. For example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline StopActivityStreamRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline StopActivityStreamRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline StopActivityStreamRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    StopActivityStreamRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Specifies whether or not the database activity stream is to stop as soon as
      * possible, regardless of the maintenance window for the database.</p>
      */
-    inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
     inline StopActivityStreamRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    bool m_applyImmediately;
+    bool m_applyImmediately{false};
     bool m_applyImmediatelyHasBeenSet = false;
   };
 

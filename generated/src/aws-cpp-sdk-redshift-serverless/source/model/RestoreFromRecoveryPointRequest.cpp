@@ -12,13 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreFromRecoveryPointRequest::RestoreFromRecoveryPointRequest() : 
-    m_namespaceNameHasBeenSet(false),
-    m_recoveryPointIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String RestoreFromRecoveryPointRequest::SerializePayload() const
 {
   JsonValue payload;

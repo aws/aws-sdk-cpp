@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDistributionsRequest::GetDistributionsRequest() : 
-    m_distributionNameHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDistributionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressTlsProtocolToEvaluate::IngressTlsProtocolToEvaluate() : 
-    m_attribute(IngressTlsAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 IngressTlsProtocolToEvaluate::IngressTlsProtocolToEvaluate(JsonView jsonValue)
-  : IngressTlsProtocolToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IngressTlsProtocolToEvaluate& IngressTlsProtocolToEvaluate::operator =(JsonView 
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = IngressTlsAttributeMapper::GetIngressTlsAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

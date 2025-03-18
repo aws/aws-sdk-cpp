@@ -28,7 +28,7 @@ namespace Model
   class UpdateACLResult
   {
   public:
-    AWS_MEMORYDB_API UpdateACLResult();
+    AWS_MEMORYDB_API UpdateACLResult() = default;
     AWS_MEMORYDB_API UpdateACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API UpdateACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated Access Control List.</p>
      */
-    inline const ACL& GetACL() const{ return m_aCL; }
-    inline void SetACL(const ACL& value) { m_aCL = value; }
-    inline void SetACL(ACL&& value) { m_aCL = std::move(value); }
-    inline UpdateACLResult& WithACL(const ACL& value) { SetACL(value); return *this;}
-    inline UpdateACLResult& WithACL(ACL&& value) { SetACL(std::move(value)); return *this;}
+    inline const ACL& GetACL() const { return m_aCL; }
+    template<typename ACLT = ACL>
+    void SetACL(ACLT&& value) { m_aCLHasBeenSet = true; m_aCL = std::forward<ACLT>(value); }
+    template<typename ACLT = ACL>
+    UpdateACLResult& WithACL(ACLT&& value) { SetACL(std::forward<ACLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateACLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateACLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateACLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateACLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ACL m_aCL;
+    bool m_aCLHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

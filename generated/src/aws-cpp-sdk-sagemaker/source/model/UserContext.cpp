@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-UserContext::UserContext() : 
-    m_userProfileArnHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_iamIdentityHasBeenSet(false)
-{
-}
-
 UserContext::UserContext(JsonView jsonValue)
-  : UserContext()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UserContext& UserContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserProfileArn"))
   {
     m_userProfileArn = jsonValue.GetString("UserProfileArn");
-
     m_userProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserProfileName"))
   {
     m_userProfileName = jsonValue.GetString("UserProfileName");
-
     m_userProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainId"))
   {
     m_domainId = jsonValue.GetString("DomainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamIdentity"))
   {
     m_iamIdentity = jsonValue.GetObject("IamIdentity");
-
     m_iamIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

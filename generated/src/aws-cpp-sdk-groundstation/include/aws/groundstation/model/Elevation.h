@@ -32,7 +32,7 @@ namespace Model
   class Elevation
   {
   public:
-    AWS_GROUNDSTATION_API Elevation();
+    AWS_GROUNDSTATION_API Elevation() = default;
     AWS_GROUNDSTATION_API Elevation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Elevation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>Elevation angle units.</p>
      */
-    inline const AngleUnits& GetUnit() const{ return m_unit; }
+    inline AngleUnits GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const AngleUnits& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(AngleUnits&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Elevation& WithUnit(const AngleUnits& value) { SetUnit(value); return *this;}
-    inline Elevation& WithUnit(AngleUnits&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(AngleUnits value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Elevation& WithUnit(AngleUnits value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Elevation angle value.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline Elevation& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AngleUnits m_unit;
+    AngleUnits m_unit{AngleUnits::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

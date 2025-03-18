@@ -34,7 +34,7 @@ namespace Model
   class CostEstimate
   {
   public:
-    AWS_LIGHTSAIL_API CostEstimate();
+    AWS_LIGHTSAIL_API CostEstimate() = default;
     AWS_LIGHTSAIL_API CostEstimate(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CostEstimate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>The types of usage that are included in the estimate, such as costs, usage,
      * or data transfer.</p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline CostEstimate& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline CostEstimate& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline CostEstimate& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    CostEstimate& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cost estimate result that's associated with a time period.</p>
      */
-    inline const Aws::Vector<EstimateByTime>& GetResultsByTime() const{ return m_resultsByTime; }
+    inline const Aws::Vector<EstimateByTime>& GetResultsByTime() const { return m_resultsByTime; }
     inline bool ResultsByTimeHasBeenSet() const { return m_resultsByTimeHasBeenSet; }
-    inline void SetResultsByTime(const Aws::Vector<EstimateByTime>& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = value; }
-    inline void SetResultsByTime(Aws::Vector<EstimateByTime>&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = std::move(value); }
-    inline CostEstimate& WithResultsByTime(const Aws::Vector<EstimateByTime>& value) { SetResultsByTime(value); return *this;}
-    inline CostEstimate& WithResultsByTime(Aws::Vector<EstimateByTime>&& value) { SetResultsByTime(std::move(value)); return *this;}
-    inline CostEstimate& AddResultsByTime(const EstimateByTime& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.push_back(value); return *this; }
-    inline CostEstimate& AddResultsByTime(EstimateByTime&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.push_back(std::move(value)); return *this; }
+    template<typename ResultsByTimeT = Aws::Vector<EstimateByTime>>
+    void SetResultsByTime(ResultsByTimeT&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = std::forward<ResultsByTimeT>(value); }
+    template<typename ResultsByTimeT = Aws::Vector<EstimateByTime>>
+    CostEstimate& WithResultsByTime(ResultsByTimeT&& value) { SetResultsByTime(std::forward<ResultsByTimeT>(value)); return *this;}
+    template<typename ResultsByTimeT = EstimateByTime>
+    CostEstimate& AddResultsByTime(ResultsByTimeT&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.emplace_back(std::forward<ResultsByTimeT>(value)); return *this; }
     ///@}
   private:
 

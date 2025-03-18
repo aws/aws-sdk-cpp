@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DeleteMetricStreamRequest::DeleteMetricStreamRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMetricStreamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

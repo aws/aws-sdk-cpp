@@ -18,23 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-HealthCheckConfiguration::HealthCheckConfiguration() : 
-    m_protocol(HealthCheckProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false)
-{
-}
-
 HealthCheckConfiguration::HealthCheckConfiguration(JsonView jsonValue)
-  : HealthCheckConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ HealthCheckConfiguration& HealthCheckConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = HealthCheckProtocolMapper::GetHealthCheckProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthyThreshold"))
   {
     m_healthyThreshold = jsonValue.GetInteger("HealthyThreshold");
-
     m_healthyThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnhealthyThreshold"))
   {
     m_unhealthyThreshold = jsonValue.GetInteger("UnhealthyThreshold");
-
     m_unhealthyThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

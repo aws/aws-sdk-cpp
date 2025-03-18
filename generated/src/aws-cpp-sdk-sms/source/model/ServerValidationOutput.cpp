@@ -18,13 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerValidationOutput::ServerValidationOutput() : 
-    m_serverHasBeenSet(false)
-{
-}
-
 ServerValidationOutput::ServerValidationOutput(JsonView jsonValue)
-  : ServerValidationOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerValidationOutput& ServerValidationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("server"))
   {
     m_server = jsonValue.GetObject("server");
-
     m_serverHasBeenSet = true;
   }
-
   return *this;
 }
 

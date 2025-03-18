@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ThreatsDetectedItemCount::ThreatsDetectedItemCount() : 
-    m_files(0),
-    m_filesHasBeenSet(false)
-{
-}
-
 ThreatsDetectedItemCount::ThreatsDetectedItemCount(JsonView jsonValue)
-  : ThreatsDetectedItemCount()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ThreatsDetectedItemCount& ThreatsDetectedItemCount::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("files"))
   {
     m_files = jsonValue.GetInteger("files");
-
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

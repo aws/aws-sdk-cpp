@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep() : 
-    m_name(RecoveryInstanceDataReplicationInitiationStepName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(RecoveryInstanceDataReplicationInitiationStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RecoveryInstanceDataReplicationInitiationStep::RecoveryInstanceDataReplicationInitiationStep(JsonView jsonValue)
-  : RecoveryInstanceDataReplicationInitiationStep()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RecoveryInstanceDataReplicationInitiationStep& RecoveryInstanceDataReplicationIn
   if(jsonValue.ValueExists("name"))
   {
     m_name = RecoveryInstanceDataReplicationInitiationStepNameMapper::GetRecoveryInstanceDataReplicationInitiationStepNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecoveryInstanceDataReplicationInitiationStepStatusMapper::GetRecoveryInstanceDataReplicationInitiationStepStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

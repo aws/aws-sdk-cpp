@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AccessPolicy::AccessPolicy() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 AccessPolicy::AccessPolicy(JsonView jsonValue)
-  : AccessPolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccessPolicy& AccessPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeSchemaResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeSchemaResult();
+    AWS_PERSONALIZE_API DescribeSchemaResult() = default;
     AWS_PERSONALIZE_API DescribeSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The requested schema.</p>
      */
-    inline const DatasetSchema& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const DatasetSchema& value) { m_schema = value; }
-    inline void SetSchema(DatasetSchema&& value) { m_schema = std::move(value); }
-    inline DescribeSchemaResult& WithSchema(const DatasetSchema& value) { SetSchema(value); return *this;}
-    inline DescribeSchemaResult& WithSchema(DatasetSchema&& value) { SetSchema(std::move(value)); return *this;}
+    inline const DatasetSchema& GetSchema() const { return m_schema; }
+    template<typename SchemaT = DatasetSchema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = DatasetSchema>
+    DescribeSchemaResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DatasetSchema m_schema;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

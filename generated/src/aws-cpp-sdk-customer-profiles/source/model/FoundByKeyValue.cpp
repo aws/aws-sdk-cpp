@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-FoundByKeyValue::FoundByKeyValue() : 
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FoundByKeyValue::FoundByKeyValue(JsonView jsonValue)
-  : FoundByKeyValue()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FoundByKeyValue& FoundByKeyValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ FoundByKeyValue& FoundByKeyValue::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

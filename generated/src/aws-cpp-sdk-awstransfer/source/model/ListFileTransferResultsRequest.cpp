@@ -12,15 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFileTransferResultsRequest::ListFileTransferResultsRequest() : 
-    m_connectorIdHasBeenSet(false),
-    m_transferIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFileTransferResultsRequest::SerializePayload() const
 {
   JsonValue payload;

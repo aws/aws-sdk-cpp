@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-DeviceType::DeviceType() : 
-    m_deviceKeyHasBeenSet(false),
-    m_deviceAttributesHasBeenSet(false),
-    m_deviceCreateDateHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false),
-    m_deviceLastAuthenticatedDateHasBeenSet(false)
-{
-}
-
 DeviceType::DeviceType(JsonView jsonValue)
-  : DeviceType()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DeviceType& DeviceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceKey"))
   {
     m_deviceKey = jsonValue.GetString("DeviceKey");
-
     m_deviceKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceAttributes"))
   {
     Aws::Utils::Array<JsonView> deviceAttributesJsonList = jsonValue.GetArray("DeviceAttributes");
@@ -51,28 +39,21 @@ DeviceType& DeviceType::operator =(JsonView jsonValue)
     }
     m_deviceAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceCreateDate"))
   {
     m_deviceCreateDate = jsonValue.GetDouble("DeviceCreateDate");
-
     m_deviceCreateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceLastModifiedDate"))
   {
     m_deviceLastModifiedDate = jsonValue.GetDouble("DeviceLastModifiedDate");
-
     m_deviceLastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceLastAuthenticatedDate"))
   {
     m_deviceLastAuthenticatedDate = jsonValue.GetDouble("DeviceLastAuthenticatedDate");
-
     m_deviceLastAuthenticatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

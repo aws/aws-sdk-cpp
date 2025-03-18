@@ -36,7 +36,7 @@ namespace Model
   class ResourceChangeDetail
   {
   public:
-    AWS_CLOUDFORMATION_API ResourceChangeDetail();
+    AWS_CLOUDFORMATION_API ResourceChangeDetail() = default;
     AWS_CLOUDFORMATION_API ResourceChangeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ResourceChangeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,12 @@ namespace Model
      * <p>A <code>ResourceTargetDefinition</code> structure that describes the field
      * that CloudFormation will change and whether the resource will be recreated.</p>
      */
-    inline const ResourceTargetDefinition& GetTarget() const{ return m_target; }
+    inline const ResourceTargetDefinition& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const ResourceTargetDefinition& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(ResourceTargetDefinition&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline ResourceChangeDetail& WithTarget(const ResourceTargetDefinition& value) { SetTarget(value); return *this;}
-    inline ResourceChangeDetail& WithTarget(ResourceTargetDefinition&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = ResourceTargetDefinition>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = ResourceTargetDefinition>
+    ResourceChangeDetail& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,10 @@ namespace Model
      * resource is recreated, it will have a new physical ID, so all references to that
      * resource will also be updated.</p>
      */
-    inline const EvaluationType& GetEvaluation() const{ return m_evaluation; }
+    inline EvaluationType GetEvaluation() const { return m_evaluation; }
     inline bool EvaluationHasBeenSet() const { return m_evaluationHasBeenSet; }
-    inline void SetEvaluation(const EvaluationType& value) { m_evaluationHasBeenSet = true; m_evaluation = value; }
-    inline void SetEvaluation(EvaluationType&& value) { m_evaluationHasBeenSet = true; m_evaluation = std::move(value); }
-    inline ResourceChangeDetail& WithEvaluation(const EvaluationType& value) { SetEvaluation(value); return *this;}
-    inline ResourceChangeDetail& WithEvaluation(EvaluationType&& value) { SetEvaluation(std::move(value)); return *this;}
+    inline void SetEvaluation(EvaluationType value) { m_evaluationHasBeenSet = true; m_evaluation = value; }
+    inline ResourceChangeDetail& WithEvaluation(EvaluationType value) { SetEvaluation(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +101,10 @@ namespace Model
      * template might have changed. Changes to a nested stack's template aren't visible
      * to CloudFormation until you run an update on the parent stack.</p> </li> </ul>
      */
-    inline const ChangeSource& GetChangeSource() const{ return m_changeSource; }
+    inline ChangeSource GetChangeSource() const { return m_changeSource; }
     inline bool ChangeSourceHasBeenSet() const { return m_changeSourceHasBeenSet; }
-    inline void SetChangeSource(const ChangeSource& value) { m_changeSourceHasBeenSet = true; m_changeSource = value; }
-    inline void SetChangeSource(ChangeSource&& value) { m_changeSourceHasBeenSet = true; m_changeSource = std::move(value); }
-    inline ResourceChangeDetail& WithChangeSource(const ChangeSource& value) { SetChangeSource(value); return *this;}
-    inline ResourceChangeDetail& WithChangeSource(ChangeSource&& value) { SetChangeSource(std::move(value)); return *this;}
+    inline void SetChangeSource(ChangeSource value) { m_changeSourceHasBeenSet = true; m_changeSource = value; }
+    inline ResourceChangeDetail& WithChangeSource(ChangeSource value) { SetChangeSource(value); return *this;}
     ///@}
 
     ///@{
@@ -121,24 +117,22 @@ namespace Model
      * <code>DirectModification</code>, no value is given for
      * <code>CausingEntity</code>.</p>
      */
-    inline const Aws::String& GetCausingEntity() const{ return m_causingEntity; }
+    inline const Aws::String& GetCausingEntity() const { return m_causingEntity; }
     inline bool CausingEntityHasBeenSet() const { return m_causingEntityHasBeenSet; }
-    inline void SetCausingEntity(const Aws::String& value) { m_causingEntityHasBeenSet = true; m_causingEntity = value; }
-    inline void SetCausingEntity(Aws::String&& value) { m_causingEntityHasBeenSet = true; m_causingEntity = std::move(value); }
-    inline void SetCausingEntity(const char* value) { m_causingEntityHasBeenSet = true; m_causingEntity.assign(value); }
-    inline ResourceChangeDetail& WithCausingEntity(const Aws::String& value) { SetCausingEntity(value); return *this;}
-    inline ResourceChangeDetail& WithCausingEntity(Aws::String&& value) { SetCausingEntity(std::move(value)); return *this;}
-    inline ResourceChangeDetail& WithCausingEntity(const char* value) { SetCausingEntity(value); return *this;}
+    template<typename CausingEntityT = Aws::String>
+    void SetCausingEntity(CausingEntityT&& value) { m_causingEntityHasBeenSet = true; m_causingEntity = std::forward<CausingEntityT>(value); }
+    template<typename CausingEntityT = Aws::String>
+    ResourceChangeDetail& WithCausingEntity(CausingEntityT&& value) { SetCausingEntity(std::forward<CausingEntityT>(value)); return *this;}
     ///@}
   private:
 
     ResourceTargetDefinition m_target;
     bool m_targetHasBeenSet = false;
 
-    EvaluationType m_evaluation;
+    EvaluationType m_evaluation{EvaluationType::NOT_SET};
     bool m_evaluationHasBeenSet = false;
 
-    ChangeSource m_changeSource;
+    ChangeSource m_changeSource{ChangeSource::NOT_SET};
     bool m_changeSourceHasBeenSet = false;
 
     Aws::String m_causingEntity;

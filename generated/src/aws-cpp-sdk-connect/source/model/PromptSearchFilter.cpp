@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PromptSearchFilter::PromptSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 PromptSearchFilter::PromptSearchFilter(JsonView jsonValue)
-  : PromptSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptSearchFilter& PromptSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

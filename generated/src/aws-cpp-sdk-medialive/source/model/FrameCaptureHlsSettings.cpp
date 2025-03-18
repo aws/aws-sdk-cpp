@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-FrameCaptureHlsSettings::FrameCaptureHlsSettings()
-{
-}
-
 FrameCaptureHlsSettings::FrameCaptureHlsSettings(JsonView jsonValue)
 {
   *this = jsonValue;

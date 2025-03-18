@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkflowRunResult::GetWorkflowRunResult() : 
-    m_status(WorkflowRunStatus::NOT_SET)
-{
-}
-
 GetWorkflowRunResult::GetWorkflowRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWorkflowRunResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ GetWorkflowRunResult& GetWorkflowRunResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("spaceName"))
   {
     m_spaceName = jsonValue.GetString("spaceName");
-
+    m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
+    m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowRunStatusMapper::GetWorkflowRunStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReasons"))
   {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
@@ -68,32 +57,30 @@ GetWorkflowRunResult& GetWorkflowRunResult::operator =(const Aws::AmazonWebServi
     {
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsObject());
     }
+    m_statusReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
+    m_lastUpdatedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

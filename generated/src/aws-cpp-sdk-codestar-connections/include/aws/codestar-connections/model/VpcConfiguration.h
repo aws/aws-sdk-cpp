@@ -32,7 +32,7 @@ namespace Model
   class VpcConfiguration
   {
   public:
-    AWS_CODESTARCONNECTIONS_API VpcConfiguration();
+    AWS_CODESTARCONNECTIONS_API VpcConfiguration() = default;
     AWS_CODESTARCONNECTIONS_API VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the Amazon VPC connected to the infrastructure where your provider
      * type is installed.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline VpcConfiguration& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline VpcConfiguration& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline VpcConfiguration& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    VpcConfiguration& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * <p>The ID of the subnet or subnets associated with the Amazon VPC connected to
      * the infrastructure where your provider type is installed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline VpcConfiguration& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline VpcConfiguration& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline VpcConfiguration& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline VpcConfiguration& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline VpcConfiguration& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    VpcConfiguration& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    VpcConfiguration& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,15 +71,14 @@ namespace Model
      * <p>The ID of the security group or security groups associated with the Amazon
      * VPC connected to the infrastructure where your provider type is installed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline VpcConfiguration& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline VpcConfiguration& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline VpcConfiguration& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline VpcConfiguration& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline VpcConfiguration& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    VpcConfiguration& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    VpcConfiguration& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * <p>The value of the Transport Layer Security (TLS) certificate associated with
      * the infrastructure where your provider type is installed.</p>
      */
-    inline const Aws::String& GetTlsCertificate() const{ return m_tlsCertificate; }
+    inline const Aws::String& GetTlsCertificate() const { return m_tlsCertificate; }
     inline bool TlsCertificateHasBeenSet() const { return m_tlsCertificateHasBeenSet; }
-    inline void SetTlsCertificate(const Aws::String& value) { m_tlsCertificateHasBeenSet = true; m_tlsCertificate = value; }
-    inline void SetTlsCertificate(Aws::String&& value) { m_tlsCertificateHasBeenSet = true; m_tlsCertificate = std::move(value); }
-    inline void SetTlsCertificate(const char* value) { m_tlsCertificateHasBeenSet = true; m_tlsCertificate.assign(value); }
-    inline VpcConfiguration& WithTlsCertificate(const Aws::String& value) { SetTlsCertificate(value); return *this;}
-    inline VpcConfiguration& WithTlsCertificate(Aws::String&& value) { SetTlsCertificate(std::move(value)); return *this;}
-    inline VpcConfiguration& WithTlsCertificate(const char* value) { SetTlsCertificate(value); return *this;}
+    template<typename TlsCertificateT = Aws::String>
+    void SetTlsCertificate(TlsCertificateT&& value) { m_tlsCertificateHasBeenSet = true; m_tlsCertificate = std::forward<TlsCertificateT>(value); }
+    template<typename TlsCertificateT = Aws::String>
+    VpcConfiguration& WithTlsCertificate(TlsCertificateT&& value) { SetTlsCertificate(std::forward<TlsCertificateT>(value)); return *this;}
     ///@}
   private:
 

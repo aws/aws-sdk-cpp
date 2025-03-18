@@ -32,7 +32,7 @@ namespace Model
   class FetchPageRequest
   {
   public:
-    AWS_QLDBSESSION_API FetchPageRequest();
+    AWS_QLDBSESSION_API FetchPageRequest() = default;
     AWS_QLDBSESSION_API FetchPageRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API FetchPageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Specifies the transaction ID of the page to be fetched.</p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline FetchPageRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline FetchPageRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline FetchPageRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    FetchPageRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the next page token of the page to be fetched.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline FetchPageRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline FetchPageRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline FetchPageRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    FetchPageRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
   private:
 

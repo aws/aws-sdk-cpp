@@ -40,7 +40,7 @@ namespace Model
   class EmailConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,28 +67,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline EmailConfigurationType& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline EmailConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline EmailConfigurationType& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    EmailConfigurationType& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination to which the receiver of the email should reply.</p>
      */
-    inline const Aws::String& GetReplyToEmailAddress() const{ return m_replyToEmailAddress; }
+    inline const Aws::String& GetReplyToEmailAddress() const { return m_replyToEmailAddress; }
     inline bool ReplyToEmailAddressHasBeenSet() const { return m_replyToEmailAddressHasBeenSet; }
-    inline void SetReplyToEmailAddress(const Aws::String& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = value; }
-    inline void SetReplyToEmailAddress(Aws::String&& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = std::move(value); }
-    inline void SetReplyToEmailAddress(const char* value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress.assign(value); }
-    inline EmailConfigurationType& WithReplyToEmailAddress(const Aws::String& value) { SetReplyToEmailAddress(value); return *this;}
-    inline EmailConfigurationType& WithReplyToEmailAddress(Aws::String&& value) { SetReplyToEmailAddress(std::move(value)); return *this;}
-    inline EmailConfigurationType& WithReplyToEmailAddress(const char* value) { SetReplyToEmailAddress(value); return *this;}
+    template<typename ReplyToEmailAddressT = Aws::String>
+    void SetReplyToEmailAddress(ReplyToEmailAddressT&& value) { m_replyToEmailAddressHasBeenSet = true; m_replyToEmailAddress = std::forward<ReplyToEmailAddressT>(value); }
+    template<typename ReplyToEmailAddressT = Aws::String>
+    EmailConfigurationType& WithReplyToEmailAddress(ReplyToEmailAddressT&& value) { SetReplyToEmailAddress(std::forward<ReplyToEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +121,10 @@ namespace Model
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
      */
-    inline const EmailSendingAccountType& GetEmailSendingAccount() const{ return m_emailSendingAccount; }
+    inline EmailSendingAccountType GetEmailSendingAccount() const { return m_emailSendingAccount; }
     inline bool EmailSendingAccountHasBeenSet() const { return m_emailSendingAccountHasBeenSet; }
-    inline void SetEmailSendingAccount(const EmailSendingAccountType& value) { m_emailSendingAccountHasBeenSet = true; m_emailSendingAccount = value; }
-    inline void SetEmailSendingAccount(EmailSendingAccountType&& value) { m_emailSendingAccountHasBeenSet = true; m_emailSendingAccount = std::move(value); }
-    inline EmailConfigurationType& WithEmailSendingAccount(const EmailSendingAccountType& value) { SetEmailSendingAccount(value); return *this;}
-    inline EmailConfigurationType& WithEmailSendingAccount(EmailSendingAccountType&& value) { SetEmailSendingAccount(std::move(value)); return *this;}
+    inline void SetEmailSendingAccount(EmailSendingAccountType value) { m_emailSendingAccountHasBeenSet = true; m_emailSendingAccount = value; }
+    inline EmailConfigurationType& WithEmailSendingAccount(EmailSendingAccountType value) { SetEmailSendingAccount(value); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +134,12 @@ namespace Model
      * &lt;testuser@example.com&gt;</code>. This address appears before the body of the
      * email.</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline EmailConfigurationType& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline EmailConfigurationType& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline EmailConfigurationType& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    EmailConfigurationType& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,14 +158,12 @@ namespace Model
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </dd> </dl>
      */
-    inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+    inline const Aws::String& GetConfigurationSet() const { return m_configurationSet; }
     inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
-    inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
-    inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
-    inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
-    inline EmailConfigurationType& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
-    inline EmailConfigurationType& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
-    inline EmailConfigurationType& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
+    template<typename ConfigurationSetT = Aws::String>
+    void SetConfigurationSet(ConfigurationSetT&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::forward<ConfigurationSetT>(value); }
+    template<typename ConfigurationSetT = Aws::String>
+    EmailConfigurationType& WithConfigurationSet(ConfigurationSetT&& value) { SetConfigurationSet(std::forward<ConfigurationSetT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,7 +173,7 @@ namespace Model
     Aws::String m_replyToEmailAddress;
     bool m_replyToEmailAddressHasBeenSet = false;
 
-    EmailSendingAccountType m_emailSendingAccount;
+    EmailSendingAccountType m_emailSendingAccount{EmailSendingAccountType::NOT_SET};
     bool m_emailSendingAccountHasBeenSet = false;
 
     Aws::String m_from;

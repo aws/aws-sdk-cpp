@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteSAMLProviderRequest::DeleteSAMLProviderRequest() : 
-    m_sAMLProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

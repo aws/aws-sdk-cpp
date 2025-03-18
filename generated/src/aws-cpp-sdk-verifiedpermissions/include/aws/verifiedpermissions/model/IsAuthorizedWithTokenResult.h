@@ -32,7 +32,7 @@ namespace Model
   class IsAuthorizedWithTokenResult
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API IsAuthorizedWithTokenResult();
+    AWS_VERIFIEDPERMISSIONS_API IsAuthorizedWithTokenResult() = default;
     AWS_VERIFIEDPERMISSIONS_API IsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VERIFIEDPERMISSIONS_API IsAuthorizedWithTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,9 @@ namespace Model
      * <p>An authorization decision that indicates if the authorization request should
      * be allowed or denied.</p>
      */
-    inline const Decision& GetDecision() const{ return m_decision; }
-    inline void SetDecision(const Decision& value) { m_decision = value; }
-    inline void SetDecision(Decision&& value) { m_decision = std::move(value); }
-    inline IsAuthorizedWithTokenResult& WithDecision(const Decision& value) { SetDecision(value); return *this;}
-    inline IsAuthorizedWithTokenResult& WithDecision(Decision&& value) { SetDecision(std::move(value)); return *this;}
+    inline Decision GetDecision() const { return m_decision; }
+    inline void SetDecision(Decision value) { m_decisionHasBeenSet = true; m_decision = value; }
+    inline IsAuthorizedWithTokenResult& WithDecision(Decision value) { SetDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -58,13 +56,13 @@ namespace Model
      * policies are the determining policies. When no policies match and the response
      * is the default DENY, there are no determining policies.</p>
      */
-    inline const Aws::Vector<DeterminingPolicyItem>& GetDeterminingPolicies() const{ return m_determiningPolicies; }
-    inline void SetDeterminingPolicies(const Aws::Vector<DeterminingPolicyItem>& value) { m_determiningPolicies = value; }
-    inline void SetDeterminingPolicies(Aws::Vector<DeterminingPolicyItem>&& value) { m_determiningPolicies = std::move(value); }
-    inline IsAuthorizedWithTokenResult& WithDeterminingPolicies(const Aws::Vector<DeterminingPolicyItem>& value) { SetDeterminingPolicies(value); return *this;}
-    inline IsAuthorizedWithTokenResult& WithDeterminingPolicies(Aws::Vector<DeterminingPolicyItem>&& value) { SetDeterminingPolicies(std::move(value)); return *this;}
-    inline IsAuthorizedWithTokenResult& AddDeterminingPolicies(const DeterminingPolicyItem& value) { m_determiningPolicies.push_back(value); return *this; }
-    inline IsAuthorizedWithTokenResult& AddDeterminingPolicies(DeterminingPolicyItem&& value) { m_determiningPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeterminingPolicyItem>& GetDeterminingPolicies() const { return m_determiningPolicies; }
+    template<typename DeterminingPoliciesT = Aws::Vector<DeterminingPolicyItem>>
+    void SetDeterminingPolicies(DeterminingPoliciesT&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies = std::forward<DeterminingPoliciesT>(value); }
+    template<typename DeterminingPoliciesT = Aws::Vector<DeterminingPolicyItem>>
+    IsAuthorizedWithTokenResult& WithDeterminingPolicies(DeterminingPoliciesT&& value) { SetDeterminingPolicies(std::forward<DeterminingPoliciesT>(value)); return *this;}
+    template<typename DeterminingPoliciesT = DeterminingPolicyItem>
+    IsAuthorizedWithTokenResult& AddDeterminingPolicies(DeterminingPoliciesT&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies.emplace_back(std::forward<DeterminingPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,47 +71,50 @@ namespace Model
      * policy references an entity or entity attribute that does not exist in the
      * slice.</p>
      */
-    inline const Aws::Vector<EvaluationErrorItem>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<EvaluationErrorItem>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<EvaluationErrorItem>&& value) { m_errors = std::move(value); }
-    inline IsAuthorizedWithTokenResult& WithErrors(const Aws::Vector<EvaluationErrorItem>& value) { SetErrors(value); return *this;}
-    inline IsAuthorizedWithTokenResult& WithErrors(Aws::Vector<EvaluationErrorItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline IsAuthorizedWithTokenResult& AddErrors(const EvaluationErrorItem& value) { m_errors.push_back(value); return *this; }
-    inline IsAuthorizedWithTokenResult& AddErrors(EvaluationErrorItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EvaluationErrorItem>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<EvaluationErrorItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<EvaluationErrorItem>>
+    IsAuthorizedWithTokenResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = EvaluationErrorItem>
+    IsAuthorizedWithTokenResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the principal in the ID or access token.</p>
      */
-    inline const EntityIdentifier& GetPrincipal() const{ return m_principal; }
-    inline void SetPrincipal(const EntityIdentifier& value) { m_principal = value; }
-    inline void SetPrincipal(EntityIdentifier&& value) { m_principal = std::move(value); }
-    inline IsAuthorizedWithTokenResult& WithPrincipal(const EntityIdentifier& value) { SetPrincipal(value); return *this;}
-    inline IsAuthorizedWithTokenResult& WithPrincipal(EntityIdentifier&& value) { SetPrincipal(std::move(value)); return *this;}
+    inline const EntityIdentifier& GetPrincipal() const { return m_principal; }
+    template<typename PrincipalT = EntityIdentifier>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = EntityIdentifier>
+    IsAuthorizedWithTokenResult& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline IsAuthorizedWithTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline IsAuthorizedWithTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline IsAuthorizedWithTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    IsAuthorizedWithTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Decision m_decision;
+    Decision m_decision{Decision::NOT_SET};
+    bool m_decisionHasBeenSet = false;
 
     Aws::Vector<DeterminingPolicyItem> m_determiningPolicies;
+    bool m_determiningPoliciesHasBeenSet = false;
 
     Aws::Vector<EvaluationErrorItem> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     EntityIdentifier m_principal;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

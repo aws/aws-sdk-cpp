@@ -39,7 +39,7 @@ namespace Model
   class ServiceConnectService
   {
   public:
-    AWS_ECS_API ServiceConnectService();
+    AWS_ECS_API ServiceConnectService() = default;
     AWS_ECS_API ServiceConnectService(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceConnectService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <code>portMappings</code> from all the containers in the task definition of this
      * Amazon ECS service.</p>
      */
-    inline const Aws::String& GetPortName() const{ return m_portName; }
+    inline const Aws::String& GetPortName() const { return m_portName; }
     inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
-    inline void SetPortName(const Aws::String& value) { m_portNameHasBeenSet = true; m_portName = value; }
-    inline void SetPortName(Aws::String&& value) { m_portNameHasBeenSet = true; m_portName = std::move(value); }
-    inline void SetPortName(const char* value) { m_portNameHasBeenSet = true; m_portName.assign(value); }
-    inline ServiceConnectService& WithPortName(const Aws::String& value) { SetPortName(value); return *this;}
-    inline ServiceConnectService& WithPortName(Aws::String&& value) { SetPortName(std::move(value)); return *this;}
-    inline ServiceConnectService& WithPortName(const char* value) { SetPortName(value); return *this;}
+    template<typename PortNameT = Aws::String>
+    void SetPortName(PortNameT&& value) { m_portNameHasBeenSet = true; m_portName = std::forward<PortNameT>(value); }
+    template<typename PortNameT = Aws::String>
+    ServiceConnectService& WithPortName(PortNameT&& value) { SetPortName(std::forward<PortNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * specified, the port mapping name from the task definition is used in
      * <code>portName.namespace</code>.</p>
      */
-    inline const Aws::String& GetDiscoveryName() const{ return m_discoveryName; }
+    inline const Aws::String& GetDiscoveryName() const { return m_discoveryName; }
     inline bool DiscoveryNameHasBeenSet() const { return m_discoveryNameHasBeenSet; }
-    inline void SetDiscoveryName(const Aws::String& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = value; }
-    inline void SetDiscoveryName(Aws::String&& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = std::move(value); }
-    inline void SetDiscoveryName(const char* value) { m_discoveryNameHasBeenSet = true; m_discoveryName.assign(value); }
-    inline ServiceConnectService& WithDiscoveryName(const Aws::String& value) { SetDiscoveryName(value); return *this;}
-    inline ServiceConnectService& WithDiscoveryName(Aws::String&& value) { SetDiscoveryName(std::move(value)); return *this;}
-    inline ServiceConnectService& WithDiscoveryName(const char* value) { SetDiscoveryName(value); return *this;}
+    template<typename DiscoveryNameT = Aws::String>
+    void SetDiscoveryName(DiscoveryNameT&& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = std::forward<DiscoveryNameT>(value); }
+    template<typename DiscoveryNameT = Aws::String>
+    ServiceConnectService& WithDiscoveryName(DiscoveryNameT&& value) { SetDiscoveryName(std::forward<DiscoveryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,14 @@ namespace Model
      * <code>ServiceConnectService</code>, you must provide at least one
      * <code>clientAlias</code> with one <code>port</code>.</p>
      */
-    inline const Aws::Vector<ServiceConnectClientAlias>& GetClientAliases() const{ return m_clientAliases; }
+    inline const Aws::Vector<ServiceConnectClientAlias>& GetClientAliases() const { return m_clientAliases; }
     inline bool ClientAliasesHasBeenSet() const { return m_clientAliasesHasBeenSet; }
-    inline void SetClientAliases(const Aws::Vector<ServiceConnectClientAlias>& value) { m_clientAliasesHasBeenSet = true; m_clientAliases = value; }
-    inline void SetClientAliases(Aws::Vector<ServiceConnectClientAlias>&& value) { m_clientAliasesHasBeenSet = true; m_clientAliases = std::move(value); }
-    inline ServiceConnectService& WithClientAliases(const Aws::Vector<ServiceConnectClientAlias>& value) { SetClientAliases(value); return *this;}
-    inline ServiceConnectService& WithClientAliases(Aws::Vector<ServiceConnectClientAlias>&& value) { SetClientAliases(std::move(value)); return *this;}
-    inline ServiceConnectService& AddClientAliases(const ServiceConnectClientAlias& value) { m_clientAliasesHasBeenSet = true; m_clientAliases.push_back(value); return *this; }
-    inline ServiceConnectService& AddClientAliases(ServiceConnectClientAlias&& value) { m_clientAliasesHasBeenSet = true; m_clientAliases.push_back(std::move(value)); return *this; }
+    template<typename ClientAliasesT = Aws::Vector<ServiceConnectClientAlias>>
+    void SetClientAliases(ClientAliasesT&& value) { m_clientAliasesHasBeenSet = true; m_clientAliases = std::forward<ClientAliasesT>(value); }
+    template<typename ClientAliasesT = Aws::Vector<ServiceConnectClientAlias>>
+    ServiceConnectService& WithClientAliases(ClientAliasesT&& value) { SetClientAliases(std::forward<ClientAliasesT>(value)); return *this;}
+    template<typename ClientAliasesT = ServiceConnectClientAlias>
+    ServiceConnectService& AddClientAliases(ClientAliasesT&& value) { m_clientAliasesHasBeenSet = true; m_clientAliases.emplace_back(std::forward<ClientAliasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,7 +109,7 @@ namespace Model
      * number is in the <code>portMapping</code> in the task definition. In bridge
      * mode, the default value is the ephemeral port of the Service Connect proxy.</p>
      */
-    inline int GetIngressPortOverride() const{ return m_ingressPortOverride; }
+    inline int GetIngressPortOverride() const { return m_ingressPortOverride; }
     inline bool IngressPortOverrideHasBeenSet() const { return m_ingressPortOverrideHasBeenSet; }
     inline void SetIngressPortOverride(int value) { m_ingressPortOverrideHasBeenSet = true; m_ingressPortOverride = value; }
     inline ServiceConnectService& WithIngressPortOverride(int value) { SetIngressPortOverride(value); return *this;}
@@ -124,12 +120,12 @@ namespace Model
      * <p>A reference to an object that represents the configured timeouts for Service
      * Connect.</p>
      */
-    inline const TimeoutConfiguration& GetTimeout() const{ return m_timeout; }
+    inline const TimeoutConfiguration& GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(const TimeoutConfiguration& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline void SetTimeout(TimeoutConfiguration&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
-    inline ServiceConnectService& WithTimeout(const TimeoutConfiguration& value) { SetTimeout(value); return *this;}
-    inline ServiceConnectService& WithTimeout(TimeoutConfiguration&& value) { SetTimeout(std::move(value)); return *this;}
+    template<typename TimeoutT = TimeoutConfiguration>
+    void SetTimeout(TimeoutT&& value) { m_timeoutHasBeenSet = true; m_timeout = std::forward<TimeoutT>(value); }
+    template<typename TimeoutT = TimeoutConfiguration>
+    ServiceConnectService& WithTimeout(TimeoutT&& value) { SetTimeout(std::forward<TimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +133,12 @@ namespace Model
      * <p>A reference to an object that represents a Transport Layer Security (TLS)
      * configuration.</p>
      */
-    inline const ServiceConnectTlsConfiguration& GetTls() const{ return m_tls; }
+    inline const ServiceConnectTlsConfiguration& GetTls() const { return m_tls; }
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-    inline void SetTls(const ServiceConnectTlsConfiguration& value) { m_tlsHasBeenSet = true; m_tls = value; }
-    inline void SetTls(ServiceConnectTlsConfiguration&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-    inline ServiceConnectService& WithTls(const ServiceConnectTlsConfiguration& value) { SetTls(value); return *this;}
-    inline ServiceConnectService& WithTls(ServiceConnectTlsConfiguration&& value) { SetTls(std::move(value)); return *this;}
+    template<typename TlsT = ServiceConnectTlsConfiguration>
+    void SetTls(TlsT&& value) { m_tlsHasBeenSet = true; m_tls = std::forward<TlsT>(value); }
+    template<typename TlsT = ServiceConnectTlsConfiguration>
+    ServiceConnectService& WithTls(TlsT&& value) { SetTls(std::forward<TlsT>(value)); return *this;}
     ///@}
   private:
 
@@ -155,7 +151,7 @@ namespace Model
     Aws::Vector<ServiceConnectClientAlias> m_clientAliases;
     bool m_clientAliasesHasBeenSet = false;
 
-    int m_ingressPortOverride;
+    int m_ingressPortOverride{0};
     bool m_ingressPortOverrideHasBeenSet = false;
 
     TimeoutConfiguration m_timeout;

@@ -34,7 +34,7 @@ namespace Model
   class SearchTypesResultItem
   {
   public:
-    AWS_DATAZONE_API SearchTypesResultItem();
+    AWS_DATAZONE_API SearchTypesResultItem() = default;
     AWS_DATAZONE_API SearchTypesResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SearchTypesResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The asset type included in the results of the <code>SearchTypes</code>
      * action.</p>
      */
-    inline const AssetTypeItem& GetAssetTypeItem() const{ return m_assetTypeItem; }
+    inline const AssetTypeItem& GetAssetTypeItem() const { return m_assetTypeItem; }
     inline bool AssetTypeItemHasBeenSet() const { return m_assetTypeItemHasBeenSet; }
-    inline void SetAssetTypeItem(const AssetTypeItem& value) { m_assetTypeItemHasBeenSet = true; m_assetTypeItem = value; }
-    inline void SetAssetTypeItem(AssetTypeItem&& value) { m_assetTypeItemHasBeenSet = true; m_assetTypeItem = std::move(value); }
-    inline SearchTypesResultItem& WithAssetTypeItem(const AssetTypeItem& value) { SetAssetTypeItem(value); return *this;}
-    inline SearchTypesResultItem& WithAssetTypeItem(AssetTypeItem&& value) { SetAssetTypeItem(std::move(value)); return *this;}
+    template<typename AssetTypeItemT = AssetTypeItem>
+    void SetAssetTypeItem(AssetTypeItemT&& value) { m_assetTypeItemHasBeenSet = true; m_assetTypeItem = std::forward<AssetTypeItemT>(value); }
+    template<typename AssetTypeItemT = AssetTypeItem>
+    SearchTypesResultItem& WithAssetTypeItem(AssetTypeItemT&& value) { SetAssetTypeItem(std::forward<AssetTypeItemT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,24 +58,24 @@ namespace Model
      * <p>The form type included in the results of the <code>SearchTypes</code>
      * action.</p>
      */
-    inline const FormTypeData& GetFormTypeItem() const{ return m_formTypeItem; }
+    inline const FormTypeData& GetFormTypeItem() const { return m_formTypeItem; }
     inline bool FormTypeItemHasBeenSet() const { return m_formTypeItemHasBeenSet; }
-    inline void SetFormTypeItem(const FormTypeData& value) { m_formTypeItemHasBeenSet = true; m_formTypeItem = value; }
-    inline void SetFormTypeItem(FormTypeData&& value) { m_formTypeItemHasBeenSet = true; m_formTypeItem = std::move(value); }
-    inline SearchTypesResultItem& WithFormTypeItem(const FormTypeData& value) { SetFormTypeItem(value); return *this;}
-    inline SearchTypesResultItem& WithFormTypeItem(FormTypeData&& value) { SetFormTypeItem(std::move(value)); return *this;}
+    template<typename FormTypeItemT = FormTypeData>
+    void SetFormTypeItem(FormTypeItemT&& value) { m_formTypeItemHasBeenSet = true; m_formTypeItem = std::forward<FormTypeItemT>(value); }
+    template<typename FormTypeItemT = FormTypeData>
+    SearchTypesResultItem& WithFormTypeItem(FormTypeItemT&& value) { SetFormTypeItem(std::forward<FormTypeItemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of a data lineage node type.</p>
      */
-    inline const LineageNodeTypeItem& GetLineageNodeTypeItem() const{ return m_lineageNodeTypeItem; }
+    inline const LineageNodeTypeItem& GetLineageNodeTypeItem() const { return m_lineageNodeTypeItem; }
     inline bool LineageNodeTypeItemHasBeenSet() const { return m_lineageNodeTypeItemHasBeenSet; }
-    inline void SetLineageNodeTypeItem(const LineageNodeTypeItem& value) { m_lineageNodeTypeItemHasBeenSet = true; m_lineageNodeTypeItem = value; }
-    inline void SetLineageNodeTypeItem(LineageNodeTypeItem&& value) { m_lineageNodeTypeItemHasBeenSet = true; m_lineageNodeTypeItem = std::move(value); }
-    inline SearchTypesResultItem& WithLineageNodeTypeItem(const LineageNodeTypeItem& value) { SetLineageNodeTypeItem(value); return *this;}
-    inline SearchTypesResultItem& WithLineageNodeTypeItem(LineageNodeTypeItem&& value) { SetLineageNodeTypeItem(std::move(value)); return *this;}
+    template<typename LineageNodeTypeItemT = LineageNodeTypeItem>
+    void SetLineageNodeTypeItem(LineageNodeTypeItemT&& value) { m_lineageNodeTypeItemHasBeenSet = true; m_lineageNodeTypeItem = std::forward<LineageNodeTypeItemT>(value); }
+    template<typename LineageNodeTypeItemT = LineageNodeTypeItem>
+    SearchTypesResultItem& WithLineageNodeTypeItem(LineageNodeTypeItemT&& value) { SetLineageNodeTypeItem(std::forward<LineageNodeTypeItemT>(value)); return *this;}
     ///@}
   private:
 

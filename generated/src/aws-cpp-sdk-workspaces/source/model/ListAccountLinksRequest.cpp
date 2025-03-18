@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccountLinksRequest::ListAccountLinksRequest() : 
-    m_linkStatusFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountLinksRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class TableOptimizer
   {
   public:
-    AWS_GLUE_API TableOptimizer();
+    AWS_GLUE_API TableOptimizer() = default;
     AWS_GLUE_API TableOptimizer(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TableOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * for managing the deletion of orphan files with a table optimizer.</p> </li>
      * </ul>
      */
-    inline const TableOptimizerType& GetType() const{ return m_type; }
+    inline TableOptimizerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TableOptimizerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TableOptimizerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TableOptimizer& WithType(const TableOptimizerType& value) { SetType(value); return *this;}
-    inline TableOptimizer& WithType(TableOptimizerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TableOptimizerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TableOptimizer& WithType(TableOptimizerType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <p>A <code>TableOptimizerConfiguration</code> object that was specified when
      * creating or updating a table optimizer.</p>
      */
-    inline const TableOptimizerConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const TableOptimizerConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const TableOptimizerConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(TableOptimizerConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline TableOptimizer& WithConfiguration(const TableOptimizerConfiguration& value) { SetConfiguration(value); return *this;}
-    inline TableOptimizer& WithConfiguration(TableOptimizerConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = TableOptimizerConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = TableOptimizerConfiguration>
+    TableOptimizer& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,16 +73,16 @@ namespace Model
      * <p>A <code>TableOptimizerRun</code> object representing the last run of the
      * table optimizer.</p>
      */
-    inline const TableOptimizerRun& GetLastRun() const{ return m_lastRun; }
+    inline const TableOptimizerRun& GetLastRun() const { return m_lastRun; }
     inline bool LastRunHasBeenSet() const { return m_lastRunHasBeenSet; }
-    inline void SetLastRun(const TableOptimizerRun& value) { m_lastRunHasBeenSet = true; m_lastRun = value; }
-    inline void SetLastRun(TableOptimizerRun&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::move(value); }
-    inline TableOptimizer& WithLastRun(const TableOptimizerRun& value) { SetLastRun(value); return *this;}
-    inline TableOptimizer& WithLastRun(TableOptimizerRun&& value) { SetLastRun(std::move(value)); return *this;}
+    template<typename LastRunT = TableOptimizerRun>
+    void SetLastRun(LastRunT&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::forward<LastRunT>(value); }
+    template<typename LastRunT = TableOptimizerRun>
+    TableOptimizer& WithLastRun(LastRunT&& value) { SetLastRun(std::forward<LastRunT>(value)); return *this;}
     ///@}
   private:
 
-    TableOptimizerType m_type;
+    TableOptimizerType m_type{TableOptimizerType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     TableOptimizerConfiguration m_configuration;

@@ -32,7 +32,7 @@ namespace Model
   class EnrichmentStrategyConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API EnrichmentStrategyConfiguration();
+    AWS_BEDROCKAGENT_API EnrichmentStrategyConfiguration() = default;
     AWS_BEDROCKAGENT_API EnrichmentStrategyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API EnrichmentStrategyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The method used for the context enrichment strategy.</p>
      */
-    inline const EnrichmentStrategyMethod& GetMethod() const{ return m_method; }
+    inline EnrichmentStrategyMethod GetMethod() const { return m_method; }
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
-    inline void SetMethod(const EnrichmentStrategyMethod& value) { m_methodHasBeenSet = true; m_method = value; }
-    inline void SetMethod(EnrichmentStrategyMethod&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
-    inline EnrichmentStrategyConfiguration& WithMethod(const EnrichmentStrategyMethod& value) { SetMethod(value); return *this;}
-    inline EnrichmentStrategyConfiguration& WithMethod(EnrichmentStrategyMethod&& value) { SetMethod(std::move(value)); return *this;}
+    inline void SetMethod(EnrichmentStrategyMethod value) { m_methodHasBeenSet = true; m_method = value; }
+    inline EnrichmentStrategyConfiguration& WithMethod(EnrichmentStrategyMethod value) { SetMethod(value); return *this;}
     ///@}
   private:
 
-    EnrichmentStrategyMethod m_method;
+    EnrichmentStrategyMethod m_method{EnrichmentStrategyMethod::NOT_SET};
     bool m_methodHasBeenSet = false;
   };
 

@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterKeyHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_usePreviousValue(false),
-    m_usePreviousValueHasBeenSet(false),
-    m_resolvedValueHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(const XmlNode& xmlNode)
-  : Parameter()
 {
   *this = xmlNode;
 }

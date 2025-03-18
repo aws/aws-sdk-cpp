@@ -18,25 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Metadata::Metadata() : 
-    m_configurationSetHasBeenSet(false),
-    m_ingressPointIdHasBeenSet(false),
-    m_ruleSetIdHasBeenSet(false),
-    m_senderHostnameHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sendingMethodHasBeenSet(false),
-    m_sendingPoolHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_tlsCipherSuiteHasBeenSet(false),
-    m_tlsProtocolHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false)
-{
-}
-
 Metadata::Metadata(JsonView jsonValue)
-  : Metadata()
 {
   *this = jsonValue;
 }
@@ -46,94 +28,68 @@ Metadata& Metadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationSet"))
   {
     m_configurationSet = jsonValue.GetString("ConfigurationSet");
-
     m_configurationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
-
     m_ingressPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetId"))
   {
     m_ruleSetId = jsonValue.GetString("RuleSetId");
-
     m_ruleSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderHostname"))
   {
     m_senderHostname = jsonValue.GetString("SenderHostname");
-
     m_senderHostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderIpAddress"))
   {
     m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
-
     m_senderIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendingMethod"))
   {
     m_sendingMethod = jsonValue.GetString("SendingMethod");
-
     m_sendingMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendingPool"))
   {
     m_sendingPool = jsonValue.GetString("SendingPool");
-
     m_sendingPoolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIdentity"))
   {
     m_sourceIdentity = jsonValue.GetString("SourceIdentity");
-
     m_sourceIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlsCipherSuite"))
   {
     m_tlsCipherSuite = jsonValue.GetString("TlsCipherSuite");
-
     m_tlsCipherSuiteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlsProtocol"))
   {
     m_tlsProtocol = jsonValue.GetString("TlsProtocol");
-
     m_tlsProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
-
     m_trafficPolicyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

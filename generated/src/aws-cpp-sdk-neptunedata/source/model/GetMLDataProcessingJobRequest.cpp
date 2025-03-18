@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMLDataProcessingJobRequest::GetMLDataProcessingJobRequest() : 
-    m_idHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String GetMLDataProcessingJobRequest::SerializePayload() const
 {
   return {};

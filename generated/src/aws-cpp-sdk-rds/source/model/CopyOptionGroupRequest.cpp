@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CopyOptionGroupRequest::CopyOptionGroupRequest() : 
-    m_sourceOptionGroupIdentifierHasBeenSet(false),
-    m_targetOptionGroupIdentifierHasBeenSet(false),
-    m_targetOptionGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopyOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -27,7 +27,7 @@ namespace Model
   class GetResolverRulePolicyResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetResolverRulePolicyResult();
+    AWS_ROUTE53RESOLVER_API GetResolverRulePolicyResult() = default;
     AWS_ROUTE53RESOLVER_API GetResolverRulePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API GetResolverRulePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
-    inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
-    inline void SetResolverRulePolicy(const Aws::String& value) { m_resolverRulePolicy = value; }
-    inline void SetResolverRulePolicy(Aws::String&& value) { m_resolverRulePolicy = std::move(value); }
-    inline void SetResolverRulePolicy(const char* value) { m_resolverRulePolicy.assign(value); }
-    inline GetResolverRulePolicyResult& WithResolverRulePolicy(const Aws::String& value) { SetResolverRulePolicy(value); return *this;}
-    inline GetResolverRulePolicyResult& WithResolverRulePolicy(Aws::String&& value) { SetResolverRulePolicy(std::move(value)); return *this;}
-    inline GetResolverRulePolicyResult& WithResolverRulePolicy(const char* value) { SetResolverRulePolicy(value); return *this;}
+    inline const Aws::String& GetResolverRulePolicy() const { return m_resolverRulePolicy; }
+    template<typename ResolverRulePolicyT = Aws::String>
+    void SetResolverRulePolicy(ResolverRulePolicyT&& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = std::forward<ResolverRulePolicyT>(value); }
+    template<typename ResolverRulePolicyT = Aws::String>
+    GetResolverRulePolicyResult& WithResolverRulePolicy(ResolverRulePolicyT&& value) { SetResolverRulePolicy(std::forward<ResolverRulePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResolverRulePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResolverRulePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResolverRulePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResolverRulePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resolverRulePolicy;
+    bool m_resolverRulePolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

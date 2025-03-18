@@ -32,7 +32,7 @@ namespace Model
   class TotalAggregationFunction
   {
   public:
-    AWS_QUICKSIGHT_API TotalAggregationFunction();
+    AWS_QUICKSIGHT_API TotalAggregationFunction() = default;
     AWS_QUICKSIGHT_API TotalAggregationFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TotalAggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>A built in aggregation function for total values.</p>
      */
-    inline const SimpleTotalAggregationFunction& GetSimpleTotalAggregationFunction() const{ return m_simpleTotalAggregationFunction; }
+    inline SimpleTotalAggregationFunction GetSimpleTotalAggregationFunction() const { return m_simpleTotalAggregationFunction; }
     inline bool SimpleTotalAggregationFunctionHasBeenSet() const { return m_simpleTotalAggregationFunctionHasBeenSet; }
-    inline void SetSimpleTotalAggregationFunction(const SimpleTotalAggregationFunction& value) { m_simpleTotalAggregationFunctionHasBeenSet = true; m_simpleTotalAggregationFunction = value; }
-    inline void SetSimpleTotalAggregationFunction(SimpleTotalAggregationFunction&& value) { m_simpleTotalAggregationFunctionHasBeenSet = true; m_simpleTotalAggregationFunction = std::move(value); }
-    inline TotalAggregationFunction& WithSimpleTotalAggregationFunction(const SimpleTotalAggregationFunction& value) { SetSimpleTotalAggregationFunction(value); return *this;}
-    inline TotalAggregationFunction& WithSimpleTotalAggregationFunction(SimpleTotalAggregationFunction&& value) { SetSimpleTotalAggregationFunction(std::move(value)); return *this;}
+    inline void SetSimpleTotalAggregationFunction(SimpleTotalAggregationFunction value) { m_simpleTotalAggregationFunctionHasBeenSet = true; m_simpleTotalAggregationFunction = value; }
+    inline TotalAggregationFunction& WithSimpleTotalAggregationFunction(SimpleTotalAggregationFunction value) { SetSimpleTotalAggregationFunction(value); return *this;}
     ///@}
   private:
 
-    SimpleTotalAggregationFunction m_simpleTotalAggregationFunction;
+    SimpleTotalAggregationFunction m_simpleTotalAggregationFunction{SimpleTotalAggregationFunction::NOT_SET};
     bool m_simpleTotalAggregationFunctionHasBeenSet = false;
   };
 

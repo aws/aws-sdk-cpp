@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReferenceImportJobRequest::GetReferenceImportJobRequest() : 
-    m_idHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String GetReferenceImportJobRequest::SerializePayload() const
 {
   return {};

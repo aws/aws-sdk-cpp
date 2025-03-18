@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendOTPMessageResult::SendOTPMessageResult()
-{
-}
-
 SendOTPMessageResult::SendOTPMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ SendOTPMessageResult& SendOTPMessageResult::operator =(const Aws::AmazonWebServi
 {
   JsonView jsonValue = result.GetPayload().View();
   m_messageResponse = jsonValue;
+  m_messageResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

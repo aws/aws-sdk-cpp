@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBProxiesResult::DescribeDBProxiesResult()
-{
-}
-
 DescribeDBProxiesResult::DescribeDBProxiesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBProxiesResult& DescribeDBProxiesResult::operator =(const Aws::AmazonWe
     if(!dBProxiesNode.IsNull())
     {
       XmlNode dBProxiesMember = dBProxiesNode.FirstChild("member");
+      m_dBProxiesHasBeenSet = !dBProxiesMember.IsNull();
       while(!dBProxiesMember.IsNull())
       {
         m_dBProxies.push_back(dBProxiesMember);
         dBProxiesMember = dBProxiesMember.NextNode("member");
       }
 
+      m_dBProxiesHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBProxiesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

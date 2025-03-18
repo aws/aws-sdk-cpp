@@ -27,7 +27,7 @@ namespace Model
   class GetGroupCertificateAuthorityResult
   {
   public:
-    AWS_GREENGRASS_API GetGroupCertificateAuthorityResult();
+    AWS_GREENGRASS_API GetGroupCertificateAuthorityResult() = default;
     AWS_GREENGRASS_API GetGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API GetGroupCertificateAuthorityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * The ARN of the certificate authority for the group.
      */
-    inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
-    inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArn = value; }
-    inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArn = std::move(value); }
-    inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArn.assign(value); }
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
+    inline const Aws::String& GetGroupCertificateAuthorityArn() const { return m_groupCertificateAuthorityArn; }
+    template<typename GroupCertificateAuthorityArnT = Aws::String>
+    void SetGroupCertificateAuthorityArn(GroupCertificateAuthorityArnT&& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = std::forward<GroupCertificateAuthorityArnT>(value); }
+    template<typename GroupCertificateAuthorityArnT = Aws::String>
+    GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(GroupCertificateAuthorityArnT&& value) { SetGroupCertificateAuthorityArn(std::forward<GroupCertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the certificate authority for the group.
      */
-    inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
-    inline void SetGroupCertificateAuthorityId(const Aws::String& value) { m_groupCertificateAuthorityId = value; }
-    inline void SetGroupCertificateAuthorityId(Aws::String&& value) { m_groupCertificateAuthorityId = std::move(value); }
-    inline void SetGroupCertificateAuthorityId(const char* value) { m_groupCertificateAuthorityId.assign(value); }
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const Aws::String& value) { SetGroupCertificateAuthorityId(value); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(Aws::String&& value) { SetGroupCertificateAuthorityId(std::move(value)); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
+    inline const Aws::String& GetGroupCertificateAuthorityId() const { return m_groupCertificateAuthorityId; }
+    template<typename GroupCertificateAuthorityIdT = Aws::String>
+    void SetGroupCertificateAuthorityId(GroupCertificateAuthorityIdT&& value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId = std::forward<GroupCertificateAuthorityIdT>(value); }
+    template<typename GroupCertificateAuthorityIdT = Aws::String>
+    GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(GroupCertificateAuthorityIdT&& value) { SetGroupCertificateAuthorityId(std::forward<GroupCertificateAuthorityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The PEM encoded certificate for the group.
      */
-    inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
-    inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
-    inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
-    inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
-    inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
+    inline const Aws::String& GetPemEncodedCertificate() const { return m_pemEncodedCertificate; }
+    template<typename PemEncodedCertificateT = Aws::String>
+    void SetPemEncodedCertificate(PemEncodedCertificateT&& value) { m_pemEncodedCertificateHasBeenSet = true; m_pemEncodedCertificate = std::forward<PemEncodedCertificateT>(value); }
+    template<typename PemEncodedCertificateT = Aws::String>
+    GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(PemEncodedCertificateT&& value) { SetPemEncodedCertificate(std::forward<PemEncodedCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGroupCertificateAuthorityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGroupCertificateAuthorityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGroupCertificateAuthorityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_groupCertificateAuthorityArn;
+    bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_groupCertificateAuthorityId;
+    bool m_groupCertificateAuthorityIdHasBeenSet = false;
 
     Aws::String m_pemEncodedCertificate;
+    bool m_pemEncodedCertificateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

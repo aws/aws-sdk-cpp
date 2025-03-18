@@ -32,7 +32,7 @@ namespace Model
   class ExportImageResponse
   {
   public:
-    AWS_EC2_API ExportImageResponse();
+    AWS_EC2_API ExportImageResponse() = default;
     AWS_EC2_API ExportImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ExportImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,50 +41,42 @@ namespace Model
     /**
      * <p>A description of the image being exported.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline ExportImageResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ExportImageResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ExportImageResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ExportImageResponse& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The disk image format for the exported image.</p>
      */
-    inline const DiskImageFormat& GetDiskImageFormat() const{ return m_diskImageFormat; }
-    inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormat = value; }
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormat = std::move(value); }
-    inline ExportImageResponse& WithDiskImageFormat(const DiskImageFormat& value) { SetDiskImageFormat(value); return *this;}
-    inline ExportImageResponse& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
+    inline DiskImageFormat GetDiskImageFormat() const { return m_diskImageFormat; }
+    inline void SetDiskImageFormat(DiskImageFormat value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline ExportImageResponse& WithDiskImageFormat(DiskImageFormat value) { SetDiskImageFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the export image task.</p>
      */
-    inline const Aws::String& GetExportImageTaskId() const{ return m_exportImageTaskId; }
-    inline void SetExportImageTaskId(const Aws::String& value) { m_exportImageTaskId = value; }
-    inline void SetExportImageTaskId(Aws::String&& value) { m_exportImageTaskId = std::move(value); }
-    inline void SetExportImageTaskId(const char* value) { m_exportImageTaskId.assign(value); }
-    inline ExportImageResponse& WithExportImageTaskId(const Aws::String& value) { SetExportImageTaskId(value); return *this;}
-    inline ExportImageResponse& WithExportImageTaskId(Aws::String&& value) { SetExportImageTaskId(std::move(value)); return *this;}
-    inline ExportImageResponse& WithExportImageTaskId(const char* value) { SetExportImageTaskId(value); return *this;}
+    inline const Aws::String& GetExportImageTaskId() const { return m_exportImageTaskId; }
+    template<typename ExportImageTaskIdT = Aws::String>
+    void SetExportImageTaskId(ExportImageTaskIdT&& value) { m_exportImageTaskIdHasBeenSet = true; m_exportImageTaskId = std::forward<ExportImageTaskIdT>(value); }
+    template<typename ExportImageTaskIdT = Aws::String>
+    ExportImageResponse& WithExportImageTaskId(ExportImageTaskIdT&& value) { SetExportImageTaskId(std::forward<ExportImageTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the image.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageId.assign(value); }
-    inline ExportImageResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline ExportImageResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline ExportImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+    inline const Aws::String& GetImageId() const { return m_imageId; }
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    ExportImageResponse& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,37 +84,33 @@ namespace Model
      * <p>The name of the role that grants VM Import/Export permission to export images
      * to your Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
-    inline ExportImageResponse& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline ExportImageResponse& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline ExportImageResponse& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    ExportImageResponse& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percent complete of the export image task.</p>
      */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
-    inline void SetProgress(const Aws::String& value) { m_progress = value; }
-    inline void SetProgress(Aws::String&& value) { m_progress = std::move(value); }
-    inline void SetProgress(const char* value) { m_progress.assign(value); }
-    inline ExportImageResponse& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-    inline ExportImageResponse& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-    inline ExportImageResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+    inline const Aws::String& GetProgress() const { return m_progress; }
+    template<typename ProgressT = Aws::String>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = Aws::String>
+    ExportImageResponse& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the destination Amazon S3 bucket.</p>
      */
-    inline const ExportTaskS3Location& GetS3ExportLocation() const{ return m_s3ExportLocation; }
-    inline void SetS3ExportLocation(const ExportTaskS3Location& value) { m_s3ExportLocation = value; }
-    inline void SetS3ExportLocation(ExportTaskS3Location&& value) { m_s3ExportLocation = std::move(value); }
-    inline ExportImageResponse& WithS3ExportLocation(const ExportTaskS3Location& value) { SetS3ExportLocation(value); return *this;}
-    inline ExportImageResponse& WithS3ExportLocation(ExportTaskS3Location&& value) { SetS3ExportLocation(std::move(value)); return *this;}
+    inline const ExportTaskS3Location& GetS3ExportLocation() const { return m_s3ExportLocation; }
+    template<typename S3ExportLocationT = ExportTaskS3Location>
+    void SetS3ExportLocation(S3ExportLocationT&& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = std::forward<S3ExportLocationT>(value); }
+    template<typename S3ExportLocationT = ExportTaskS3Location>
+    ExportImageResponse& WithS3ExportLocation(S3ExportLocationT&& value) { SetS3ExportLocation(std::forward<S3ExportLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,72 +119,79 @@ namespace Model
      * <code>active</code>, <code>completed</code>, <code>deleting</code>, and
      * <code>deleted</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline ExportImageResponse& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ExportImageResponse& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ExportImageResponse& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ExportImageResponse& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message for the export image task.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline ExportImageResponse& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ExportImageResponse& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ExportImageResponse& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ExportImageResponse& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags assigned to the export image task.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline ExportImageResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ExportImageResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ExportImageResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline ExportImageResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ExportImageResponse& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ExportImageResponse& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ExportImageResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ExportImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ExportImageResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    DiskImageFormat m_diskImageFormat;
+    DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
+    bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_exportImageTaskId;
+    bool m_exportImageTaskIdHasBeenSet = false;
 
     Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_progress;
+    bool m_progressHasBeenSet = false;
 
     ExportTaskS3Location m_s3ExportLocation;
+    bool m_s3ExportLocationHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

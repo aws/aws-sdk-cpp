@@ -18,17 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-CollectionSummary::CollectionSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 CollectionSummary::CollectionSummary(JsonView jsonValue)
-  : CollectionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CollectionSummary& CollectionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CollectionStatusMapper::GetCollectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

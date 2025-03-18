@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateLibraryItemResult::UpdateLibraryItemResult() : 
-    m_appVersion(0),
-    m_ratingCount(0),
-    m_isRatedByUser(false),
-    m_userCount(0),
-    m_isVerified(false)
-{
-}
-
 UpdateLibraryItemResult::UpdateLibraryItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateLibraryItemResult()
 {
   *this = result;
 }
@@ -38,21 +28,18 @@ UpdateLibraryItemResult& UpdateLibraryItemResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("libraryItemId"))
   {
     m_libraryItemId = jsonValue.GetString("libraryItemId");
-
+    m_libraryItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetInteger("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("categories");
@@ -60,68 +47,60 @@ UpdateLibraryItemResult& UpdateLibraryItemResult::operator =(const Aws::AmazonWe
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());
     }
+    m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
+    m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ratingCount"))
   {
     m_ratingCount = jsonValue.GetInteger("ratingCount");
-
+    m_ratingCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isRatedByUser"))
   {
     m_isRatedByUser = jsonValue.GetBool("isRatedByUser");
-
+    m_isRatedByUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userCount"))
   {
     m_userCount = jsonValue.GetInteger("userCount");
-
+    m_userCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isVerified"))
   {
     m_isVerified = jsonValue.GetBool("isVerified");
-
+    m_isVerifiedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

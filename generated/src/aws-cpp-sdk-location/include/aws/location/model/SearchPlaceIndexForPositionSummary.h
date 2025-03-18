@@ -33,7 +33,7 @@ namespace Model
   class SearchPlaceIndexForPositionSummary
   {
   public:
-    AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary() = default;
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The position specified in the request.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline SearchPlaceIndexForPositionSummary& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline SearchPlaceIndexForPositionSummary& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    SearchPlaceIndexForPositionSummary& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline SearchPlaceIndexForPositionSummary& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -57,7 +57,7 @@ namespace Model
      * <p>Contains the optional result count limit that is specified in the
      * request.</p> <p>Default value: <code>50</code> </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchPlaceIndexForPositionSummary& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -72,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-    inline SearchPlaceIndexForPositionSummary& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline SearchPlaceIndexForPositionSummary& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline SearchPlaceIndexForPositionSummary& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    SearchPlaceIndexForPositionSummary& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,21 +86,19 @@ namespace Model
      * request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP
      * 47</a> language tag, for example, <code>en</code> for English.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline SearchPlaceIndexForPositionSummary& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline SearchPlaceIndexForPositionSummary& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline SearchPlaceIndexForPositionSummary& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    SearchPlaceIndexForPositionSummary& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_dataSource;

@@ -32,7 +32,7 @@ namespace Model
   class CredentialsProvider
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API CredentialsProvider();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API CredentialsProvider() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API CredentialsProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API CredentialsProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Identifies the Secrets Manager secret that contains credentials needed for
      * user administration in the Active Directory.</p>
      */
-    inline const SecretsManagerCredentialsProvider& GetSecretsManagerCredentialsProvider() const{ return m_secretsManagerCredentialsProvider; }
+    inline const SecretsManagerCredentialsProvider& GetSecretsManagerCredentialsProvider() const { return m_secretsManagerCredentialsProvider; }
     inline bool SecretsManagerCredentialsProviderHasBeenSet() const { return m_secretsManagerCredentialsProviderHasBeenSet; }
-    inline void SetSecretsManagerCredentialsProvider(const SecretsManagerCredentialsProvider& value) { m_secretsManagerCredentialsProviderHasBeenSet = true; m_secretsManagerCredentialsProvider = value; }
-    inline void SetSecretsManagerCredentialsProvider(SecretsManagerCredentialsProvider&& value) { m_secretsManagerCredentialsProviderHasBeenSet = true; m_secretsManagerCredentialsProvider = std::move(value); }
-    inline CredentialsProvider& WithSecretsManagerCredentialsProvider(const SecretsManagerCredentialsProvider& value) { SetSecretsManagerCredentialsProvider(value); return *this;}
-    inline CredentialsProvider& WithSecretsManagerCredentialsProvider(SecretsManagerCredentialsProvider&& value) { SetSecretsManagerCredentialsProvider(std::move(value)); return *this;}
+    template<typename SecretsManagerCredentialsProviderT = SecretsManagerCredentialsProvider>
+    void SetSecretsManagerCredentialsProvider(SecretsManagerCredentialsProviderT&& value) { m_secretsManagerCredentialsProviderHasBeenSet = true; m_secretsManagerCredentialsProvider = std::forward<SecretsManagerCredentialsProviderT>(value); }
+    template<typename SecretsManagerCredentialsProviderT = SecretsManagerCredentialsProvider>
+    CredentialsProvider& WithSecretsManagerCredentialsProvider(SecretsManagerCredentialsProviderT&& value) { SetSecretsManagerCredentialsProvider(std::forward<SecretsManagerCredentialsProviderT>(value)); return *this;}
     ///@}
   private:
 

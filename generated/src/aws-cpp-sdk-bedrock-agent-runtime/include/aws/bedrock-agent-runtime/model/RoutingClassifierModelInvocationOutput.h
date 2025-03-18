@@ -34,7 +34,7 @@ namespace Model
   class RoutingClassifierModelInvocationOutput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierModelInvocationOutput();
+    AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierModelInvocationOutput() = default;
     AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierModelInvocationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierModelInvocationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>The invocation's metadata.</p>
      */
-    inline const Metadata& GetMetadata() const{ return m_metadata; }
+    inline const Metadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline RoutingClassifierModelInvocationOutput& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
-    inline RoutingClassifierModelInvocationOutput& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    RoutingClassifierModelInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's raw response.</p>
      */
-    inline const RawResponse& GetRawResponse() const{ return m_rawResponse; }
+    inline const RawResponse& GetRawResponse() const { return m_rawResponse; }
     inline bool RawResponseHasBeenSet() const { return m_rawResponseHasBeenSet; }
-    inline void SetRawResponse(const RawResponse& value) { m_rawResponseHasBeenSet = true; m_rawResponse = value; }
-    inline void SetRawResponse(RawResponse&& value) { m_rawResponseHasBeenSet = true; m_rawResponse = std::move(value); }
-    inline RoutingClassifierModelInvocationOutput& WithRawResponse(const RawResponse& value) { SetRawResponse(value); return *this;}
-    inline RoutingClassifierModelInvocationOutput& WithRawResponse(RawResponse&& value) { SetRawResponse(std::move(value)); return *this;}
+    template<typename RawResponseT = RawResponse>
+    void SetRawResponse(RawResponseT&& value) { m_rawResponseHasBeenSet = true; m_rawResponse = std::forward<RawResponseT>(value); }
+    template<typename RawResponseT = RawResponse>
+    RoutingClassifierModelInvocationOutput& WithRawResponse(RawResponseT&& value) { SetRawResponse(std::forward<RawResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's trace ID.</p>
      */
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-    inline RoutingClassifierModelInvocationOutput& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-    inline RoutingClassifierModelInvocationOutput& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-    inline RoutingClassifierModelInvocationOutput& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    RoutingClassifierModelInvocationOutput& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
   private:
 

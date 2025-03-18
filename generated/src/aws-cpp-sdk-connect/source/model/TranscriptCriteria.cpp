@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TranscriptCriteria::TranscriptCriteria() : 
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_searchTextHasBeenSet(false),
-    m_matchType(SearchContactsMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false)
-{
-}
-
 TranscriptCriteria::TranscriptCriteria(JsonView jsonValue)
-  : TranscriptCriteria()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ TranscriptCriteria& TranscriptCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchText"))
   {
     Aws::Utils::Array<JsonView> searchTextJsonList = jsonValue.GetArray("SearchText");
@@ -51,14 +39,11 @@ TranscriptCriteria& TranscriptCriteria::operator =(JsonView jsonValue)
     }
     m_searchTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchType"))
   {
     m_matchType = SearchContactsMatchTypeMapper::GetSearchContactsMatchTypeForName(jsonValue.GetString("MatchType"));
-
     m_matchTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateByteMatchSetRequest::UpdateByteMatchSetRequest() : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateByteMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

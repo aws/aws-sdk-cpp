@@ -36,7 +36,7 @@ namespace Model
   class EFSVolumeConfiguration
   {
   public:
-    AWS_BATCH_API EFSVolumeConfiguration();
+    AWS_BATCH_API EFSVolumeConfiguration() = default;
     AWS_BATCH_API EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon EFS file system ID to use.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline EFSVolumeConfiguration& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline EFSVolumeConfiguration& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline EFSVolumeConfiguration& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    EFSVolumeConfiguration& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * the root directory parameter must either be omitted or set to <code>/</code>,
      * which enforces the path set on the Amazon EFS access point.</p> 
      */
-    inline const Aws::String& GetRootDirectory() const{ return m_rootDirectory; }
+    inline const Aws::String& GetRootDirectory() const { return m_rootDirectory; }
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
-    inline void SetRootDirectory(const Aws::String& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
-    inline void SetRootDirectory(Aws::String&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
-    inline void SetRootDirectory(const char* value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory.assign(value); }
-    inline EFSVolumeConfiguration& WithRootDirectory(const Aws::String& value) { SetRootDirectory(value); return *this;}
-    inline EFSVolumeConfiguration& WithRootDirectory(Aws::String&& value) { SetRootDirectory(std::move(value)); return *this;}
-    inline EFSVolumeConfiguration& WithRootDirectory(const char* value) { SetRootDirectory(value); return *this;}
+    template<typename RootDirectoryT = Aws::String>
+    void SetRootDirectory(RootDirectoryT&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::forward<RootDirectoryT>(value); }
+    template<typename RootDirectoryT = Aws::String>
+    EFSVolumeConfiguration& WithRootDirectory(RootDirectoryT&& value) { SetRootDirectory(std::forward<RootDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
-    inline const EFSTransitEncryption& GetTransitEncryption() const{ return m_transitEncryption; }
+    inline EFSTransitEncryption GetTransitEncryption() const { return m_transitEncryption; }
     inline bool TransitEncryptionHasBeenSet() const { return m_transitEncryptionHasBeenSet; }
-    inline void SetTransitEncryption(const EFSTransitEncryption& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = value; }
-    inline void SetTransitEncryption(EFSTransitEncryption&& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = std::move(value); }
-    inline EFSVolumeConfiguration& WithTransitEncryption(const EFSTransitEncryption& value) { SetTransitEncryption(value); return *this;}
-    inline EFSVolumeConfiguration& WithTransitEncryption(EFSTransitEncryption&& value) { SetTransitEncryption(std::move(value)); return *this;}
+    inline void SetTransitEncryption(EFSTransitEncryption value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = value; }
+    inline EFSVolumeConfiguration& WithTransitEncryption(EFSTransitEncryption value) { SetTransitEncryption(value); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount
      * helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
-    inline int GetTransitEncryptionPort() const{ return m_transitEncryptionPort; }
+    inline int GetTransitEncryptionPort() const { return m_transitEncryptionPort; }
     inline bool TransitEncryptionPortHasBeenSet() const { return m_transitEncryptionPortHasBeenSet; }
     inline void SetTransitEncryptionPort(int value) { m_transitEncryptionPortHasBeenSet = true; m_transitEncryptionPort = value; }
     inline EFSVolumeConfiguration& WithTransitEncryptionPort(int value) { SetTransitEncryptionPort(value); return *this;}
@@ -113,12 +107,12 @@ namespace Model
     /**
      * <p>The authorization configuration details for the Amazon EFS file system.</p>
      */
-    inline const EFSAuthorizationConfig& GetAuthorizationConfig() const{ return m_authorizationConfig; }
+    inline const EFSAuthorizationConfig& GetAuthorizationConfig() const { return m_authorizationConfig; }
     inline bool AuthorizationConfigHasBeenSet() const { return m_authorizationConfigHasBeenSet; }
-    inline void SetAuthorizationConfig(const EFSAuthorizationConfig& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = value; }
-    inline void SetAuthorizationConfig(EFSAuthorizationConfig&& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = std::move(value); }
-    inline EFSVolumeConfiguration& WithAuthorizationConfig(const EFSAuthorizationConfig& value) { SetAuthorizationConfig(value); return *this;}
-    inline EFSVolumeConfiguration& WithAuthorizationConfig(EFSAuthorizationConfig&& value) { SetAuthorizationConfig(std::move(value)); return *this;}
+    template<typename AuthorizationConfigT = EFSAuthorizationConfig>
+    void SetAuthorizationConfig(AuthorizationConfigT&& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = std::forward<AuthorizationConfigT>(value); }
+    template<typename AuthorizationConfigT = EFSAuthorizationConfig>
+    EFSVolumeConfiguration& WithAuthorizationConfig(AuthorizationConfigT&& value) { SetAuthorizationConfig(std::forward<AuthorizationConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -128,10 +122,10 @@ namespace Model
     Aws::String m_rootDirectory;
     bool m_rootDirectoryHasBeenSet = false;
 
-    EFSTransitEncryption m_transitEncryption;
+    EFSTransitEncryption m_transitEncryption{EFSTransitEncryption::NOT_SET};
     bool m_transitEncryptionHasBeenSet = false;
 
-    int m_transitEncryptionPort;
+    int m_transitEncryptionPort{0};
     bool m_transitEncryptionPortHasBeenSet = false;
 
     EFSAuthorizationConfig m_authorizationConfig;

@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceGenerationJobDataSource::AudienceGenerationJobDataSource() : 
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_sqlParametersHasBeenSet(false),
-    m_sqlComputeConfigurationHasBeenSet(false)
-{
-}
-
 AudienceGenerationJobDataSource::AudienceGenerationJobDataSource(JsonView jsonValue)
-  : AudienceGenerationJobDataSource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AudienceGenerationJobDataSource& AudienceGenerationJobDataSource::operator =(Jso
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetObject("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqlParameters"))
   {
     m_sqlParameters = jsonValue.GetObject("sqlParameters");
-
     m_sqlParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqlComputeConfiguration"))
   {
     m_sqlComputeConfiguration = jsonValue.GetObject("sqlComputeConfiguration");
-
     m_sqlComputeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

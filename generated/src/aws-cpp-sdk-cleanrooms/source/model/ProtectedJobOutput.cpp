@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobOutput::ProtectedJobOutput() : 
-    m_s3HasBeenSet(false),
-    m_memberListHasBeenSet(false)
-{
-}
-
 ProtectedJobOutput::ProtectedJobOutput(JsonView jsonValue)
-  : ProtectedJobOutput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProtectedJobOutput& ProtectedJobOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberList"))
   {
     Aws::Utils::Array<JsonView> memberListJsonList = jsonValue.GetArray("memberList");
@@ -48,7 +39,6 @@ ProtectedJobOutput& ProtectedJobOutput::operator =(JsonView jsonValue)
     }
     m_memberListHasBeenSet = true;
   }
-
   return *this;
 }
 

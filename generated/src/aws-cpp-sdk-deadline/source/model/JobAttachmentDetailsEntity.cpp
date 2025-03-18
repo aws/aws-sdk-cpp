@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobAttachmentDetailsEntity::JobAttachmentDetailsEntity() : 
-    m_jobIdHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
-{
-}
-
 JobAttachmentDetailsEntity::JobAttachmentDetailsEntity(JsonView jsonValue)
-  : JobAttachmentDetailsEntity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobAttachmentDetailsEntity& JobAttachmentDetailsEntity::operator =(JsonView json
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachments"))
   {
     m_attachments = jsonValue.GetObject("attachments");
-
     m_attachmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

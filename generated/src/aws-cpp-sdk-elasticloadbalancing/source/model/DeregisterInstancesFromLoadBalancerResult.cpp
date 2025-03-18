@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterInstancesFromLoadBalancerResult::DeregisterInstancesFromLoadBalancerResult()
-{
-}
-
 DeregisterInstancesFromLoadBalancerResult::DeregisterInstancesFromLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DeregisterInstancesFromLoadBalancerResult& DeregisterInstancesFromLoadBalancerRe
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("member");
       }
 
+      m_instancesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DeregisterInstancesFromLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

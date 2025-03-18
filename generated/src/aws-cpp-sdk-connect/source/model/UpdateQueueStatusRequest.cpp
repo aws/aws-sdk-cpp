@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueStatusRequest::UpdateQueueStatusRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueStatusRequest::SerializePayload() const
 {
   JsonValue payload;

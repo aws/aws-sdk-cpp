@@ -18,47 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentDescription::DocumentDescription() : 
-    m_sha1HasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_hashType(DocumentHashType::NOT_SET),
-    m_hashTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_platformTypesHasBeenSet(false),
-    m_documentType(DocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_reviewInformationHasBeenSet(false),
-    m_approvedVersionHasBeenSet(false),
-    m_pendingReviewVersionHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_categoryEnumHasBeenSet(false)
-{
-}
-
 DocumentDescription::DocumentDescription(JsonView jsonValue)
-  : DocumentDescription()
 {
   *this = jsonValue;
 }
@@ -68,87 +28,63 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Sha1"))
   {
     m_sha1 = jsonValue.GetString("Sha1");
-
     m_sha1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hash"))
   {
     m_hash = jsonValue.GetString("Hash");
-
     m_hashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HashType"))
   {
     m_hashType = DocumentHashTypeMapper::GetDocumentHashTypeForName(jsonValue.GetString("HashType"));
-
     m_hashTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusInformation"))
   {
     m_statusInformation = jsonValue.GetString("StatusInformation");
-
     m_statusInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -158,7 +94,6 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformTypes"))
   {
     Aws::Utils::Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
@@ -168,49 +103,36 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_platformTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     m_documentType = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("DocumentType"));
-
     m_documentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersion"))
   {
     m_latestVersion = jsonValue.GetString("LatestVersion");
-
     m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultVersion"))
   {
     m_defaultVersion = jsonValue.GetString("DefaultVersion");
-
     m_defaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentFormat"))
   {
     m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
-
     m_documentFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = jsonValue.GetString("TargetType");
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -220,7 +142,6 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentsInformation"))
   {
     Aws::Utils::Array<JsonView> attachmentsInformationJsonList = jsonValue.GetArray("AttachmentsInformation");
@@ -230,7 +151,6 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_attachmentsInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Requires"))
   {
     Aws::Utils::Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
@@ -240,14 +160,11 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_requiresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Author"))
   {
     m_author = jsonValue.GetString("Author");
-
     m_authorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewInformation"))
   {
     Aws::Utils::Array<JsonView> reviewInformationJsonList = jsonValue.GetArray("ReviewInformation");
@@ -257,28 +174,21 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_reviewInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedVersion"))
   {
     m_approvedVersion = jsonValue.GetString("ApprovedVersion");
-
     m_approvedVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingReviewVersion"))
   {
     m_pendingReviewVersion = jsonValue.GetString("PendingReviewVersion");
-
     m_pendingReviewVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     Aws::Utils::Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
@@ -288,7 +198,6 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryEnum"))
   {
     Aws::Utils::Array<JsonView> categoryEnumJsonList = jsonValue.GetArray("CategoryEnum");
@@ -298,7 +207,6 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     }
     m_categoryEnumHasBeenSet = true;
   }
-
   return *this;
 }
 

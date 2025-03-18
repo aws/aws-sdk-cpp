@@ -28,7 +28,7 @@ namespace Model
   class GetVoiceConnectorEmergencyCallingConfigurationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorEmergencyCallingConfigurationResult();
+    AWS_CHIMESDKVOICE_API GetVoiceConnectorEmergencyCallingConfigurationResult() = default;
     AWS_CHIMESDKVOICE_API GetVoiceConnectorEmergencyCallingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API GetVoiceConnectorEmergencyCallingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the emergency calling configuration.</p>
      */
-    inline const EmergencyCallingConfiguration& GetEmergencyCallingConfiguration() const{ return m_emergencyCallingConfiguration; }
-    inline void SetEmergencyCallingConfiguration(const EmergencyCallingConfiguration& value) { m_emergencyCallingConfiguration = value; }
-    inline void SetEmergencyCallingConfiguration(EmergencyCallingConfiguration&& value) { m_emergencyCallingConfiguration = std::move(value); }
-    inline GetVoiceConnectorEmergencyCallingConfigurationResult& WithEmergencyCallingConfiguration(const EmergencyCallingConfiguration& value) { SetEmergencyCallingConfiguration(value); return *this;}
-    inline GetVoiceConnectorEmergencyCallingConfigurationResult& WithEmergencyCallingConfiguration(EmergencyCallingConfiguration&& value) { SetEmergencyCallingConfiguration(std::move(value)); return *this;}
+    inline const EmergencyCallingConfiguration& GetEmergencyCallingConfiguration() const { return m_emergencyCallingConfiguration; }
+    template<typename EmergencyCallingConfigurationT = EmergencyCallingConfiguration>
+    void SetEmergencyCallingConfiguration(EmergencyCallingConfigurationT&& value) { m_emergencyCallingConfigurationHasBeenSet = true; m_emergencyCallingConfiguration = std::forward<EmergencyCallingConfigurationT>(value); }
+    template<typename EmergencyCallingConfigurationT = EmergencyCallingConfiguration>
+    GetVoiceConnectorEmergencyCallingConfigurationResult& WithEmergencyCallingConfiguration(EmergencyCallingConfigurationT&& value) { SetEmergencyCallingConfiguration(std::forward<EmergencyCallingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVoiceConnectorEmergencyCallingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVoiceConnectorEmergencyCallingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVoiceConnectorEmergencyCallingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVoiceConnectorEmergencyCallingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EmergencyCallingConfiguration m_emergencyCallingConfiguration;
+    bool m_emergencyCallingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

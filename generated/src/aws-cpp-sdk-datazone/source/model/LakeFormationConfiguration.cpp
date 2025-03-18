@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LakeFormationConfiguration::LakeFormationConfiguration() : 
-    m_locationRegistrationExcludeS3LocationsHasBeenSet(false),
-    m_locationRegistrationRoleHasBeenSet(false)
-{
-}
-
 LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue)
-  : LakeFormationConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ LakeFormationConfiguration& LakeFormationConfiguration::operator =(JsonView json
     }
     m_locationRegistrationExcludeS3LocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locationRegistrationRole"))
   {
     m_locationRegistrationRole = jsonValue.GetString("locationRegistrationRole");
-
     m_locationRegistrationRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

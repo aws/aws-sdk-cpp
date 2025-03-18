@@ -38,7 +38,7 @@ namespace Model
   class DeltaTimeSessionWindowConfiguration
   {
   public:
-    AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration();
+    AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration() = default;
     AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,14 @@ namespace Model
      * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
      * Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
      */
-    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+    inline int GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
     inline DeltaTimeSessionWindowConfiguration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutInMinutes;
+    int m_timeoutInMinutes{0};
     bool m_timeoutInMinutesHasBeenSet = false;
   };
 

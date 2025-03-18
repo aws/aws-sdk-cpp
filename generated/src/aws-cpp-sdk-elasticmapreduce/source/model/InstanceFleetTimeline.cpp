@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceFleetTimeline::InstanceFleetTimeline() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue)
-  : InstanceFleetTimeline()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InstanceFleetTimeline& InstanceFleetTimeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadyDateTime"))
   {
     m_readyDateTime = jsonValue.GetDouble("ReadyDateTime");
-
     m_readyDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

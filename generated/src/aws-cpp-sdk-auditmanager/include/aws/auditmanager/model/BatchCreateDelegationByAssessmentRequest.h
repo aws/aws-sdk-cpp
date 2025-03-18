@@ -23,7 +23,7 @@ namespace Model
   class BatchCreateDelegationByAssessmentRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentRequest();
+    AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,26 @@ namespace Model
     /**
      * <p> The API request to batch create delegations in Audit Manager. </p>
      */
-    inline const Aws::Vector<CreateDelegationRequest>& GetCreateDelegationRequests() const{ return m_createDelegationRequests; }
+    inline const Aws::Vector<CreateDelegationRequest>& GetCreateDelegationRequests() const { return m_createDelegationRequests; }
     inline bool CreateDelegationRequestsHasBeenSet() const { return m_createDelegationRequestsHasBeenSet; }
-    inline void SetCreateDelegationRequests(const Aws::Vector<CreateDelegationRequest>& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests = value; }
-    inline void SetCreateDelegationRequests(Aws::Vector<CreateDelegationRequest>&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests = std::move(value); }
-    inline BatchCreateDelegationByAssessmentRequest& WithCreateDelegationRequests(const Aws::Vector<CreateDelegationRequest>& value) { SetCreateDelegationRequests(value); return *this;}
-    inline BatchCreateDelegationByAssessmentRequest& WithCreateDelegationRequests(Aws::Vector<CreateDelegationRequest>&& value) { SetCreateDelegationRequests(std::move(value)); return *this;}
-    inline BatchCreateDelegationByAssessmentRequest& AddCreateDelegationRequests(const CreateDelegationRequest& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests.push_back(value); return *this; }
-    inline BatchCreateDelegationByAssessmentRequest& AddCreateDelegationRequests(CreateDelegationRequest&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests.push_back(std::move(value)); return *this; }
+    template<typename CreateDelegationRequestsT = Aws::Vector<CreateDelegationRequest>>
+    void SetCreateDelegationRequests(CreateDelegationRequestsT&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests = std::forward<CreateDelegationRequestsT>(value); }
+    template<typename CreateDelegationRequestsT = Aws::Vector<CreateDelegationRequest>>
+    BatchCreateDelegationByAssessmentRequest& WithCreateDelegationRequests(CreateDelegationRequestsT&& value) { SetCreateDelegationRequests(std::forward<CreateDelegationRequestsT>(value)); return *this;}
+    template<typename CreateDelegationRequestsT = CreateDelegationRequest>
+    BatchCreateDelegationByAssessmentRequest& AddCreateDelegationRequests(CreateDelegationRequestsT&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests.emplace_back(std::forward<CreateDelegationRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline BatchCreateDelegationByAssessmentRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline BatchCreateDelegationByAssessmentRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline BatchCreateDelegationByAssessmentRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    BatchCreateDelegationByAssessmentRequest& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
   private:
 

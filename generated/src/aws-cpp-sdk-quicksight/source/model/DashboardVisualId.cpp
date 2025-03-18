@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardVisualId::DashboardVisualId() : 
-    m_dashboardIdHasBeenSet(false),
-    m_sheetIdHasBeenSet(false),
-    m_visualIdHasBeenSet(false)
-{
-}
-
 DashboardVisualId::DashboardVisualId(JsonView jsonValue)
-  : DashboardVisualId()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DashboardVisualId& DashboardVisualId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
     m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetId"))
   {
     m_sheetId = jsonValue.GetString("SheetId");
-
     m_sheetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetNotificationSettingsRequest::ResetNotificationSettingsRequest() : 
-    m_notificationSettingKeysHasBeenSet(false),
-    m_trustAnchorIdHasBeenSet(false)
-{
-}
-
 Aws::String ResetNotificationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

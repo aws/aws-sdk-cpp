@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-SortProperty::SortProperty() : 
-    m_fieldHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false)
-{
-}
-
 SortProperty::SortProperty(JsonView jsonValue)
-  : SortProperty()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SortProperty& SortProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetString("field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("direction"))
   {
     m_direction = SortDirectionMapper::GetSortDirectionForName(jsonValue.GetString("direction"));
-
     m_directionHasBeenSet = true;
   }
-
   return *this;
 }
 

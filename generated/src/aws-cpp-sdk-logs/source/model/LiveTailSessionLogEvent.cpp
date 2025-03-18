@@ -18,19 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-LiveTailSessionLogEvent::LiveTailSessionLogEvent() : 
-    m_logStreamNameHasBeenSet(false),
-    m_logGroupIdentifierHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false)
-{
-}
-
 LiveTailSessionLogEvent::LiveTailSessionLogEvent(JsonView jsonValue)
-  : LiveTailSessionLogEvent()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ LiveTailSessionLogEvent& LiveTailSessionLogEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logStreamName"))
   {
     m_logStreamName = jsonValue.GetString("logStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupIdentifier"))
   {
     m_logGroupIdentifier = jsonValue.GetString("logGroupIdentifier");
-
     m_logGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestionTime"))
   {
     m_ingestionTime = jsonValue.GetInt64("ingestionTime");
-
     m_ingestionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

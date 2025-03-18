@@ -18,28 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ScheduledQueryDescription::ScheduledQueryDescription() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(ScheduledQueryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_previousInvocationTimeHasBeenSet(false),
-    m_nextInvocationTimeHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false),
-    m_scheduledQueryExecutionRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_errorReportConfigurationHasBeenSet(false),
-    m_lastRunSummaryHasBeenSet(false),
-    m_recentlyFailedRunsHasBeenSet(false)
-{
-}
-
 ScheduledQueryDescription::ScheduledQueryDescription(JsonView jsonValue)
-  : ScheduledQueryDescription()
 {
   *this = jsonValue;
 }
@@ -49,101 +28,73 @@ ScheduledQueryDescription& ScheduledQueryDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ScheduledQueryStateMapper::GetScheduledQueryStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousInvocationTime"))
   {
     m_previousInvocationTime = jsonValue.GetDouble("PreviousInvocationTime");
-
     m_previousInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextInvocationTime"))
   {
     m_nextInvocationTime = jsonValue.GetDouble("NextInvocationTime");
-
     m_nextInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleConfiguration"))
   {
     m_scheduleConfiguration = jsonValue.GetObject("ScheduleConfiguration");
-
     m_scheduleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfiguration"))
   {
     m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");
-
     m_notificationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetConfiguration"))
   {
     m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
-
     m_targetConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledQueryExecutionRoleArn"))
   {
     m_scheduledQueryExecutionRoleArn = jsonValue.GetString("ScheduledQueryExecutionRoleArn");
-
     m_scheduledQueryExecutionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorReportConfiguration"))
   {
     m_errorReportConfiguration = jsonValue.GetObject("ErrorReportConfiguration");
-
     m_errorReportConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRunSummary"))
   {
     m_lastRunSummary = jsonValue.GetObject("LastRunSummary");
-
     m_lastRunSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecentlyFailedRuns"))
   {
     Aws::Utils::Array<JsonView> recentlyFailedRunsJsonList = jsonValue.GetArray("RecentlyFailedRuns");
@@ -153,7 +104,6 @@ ScheduledQueryDescription& ScheduledQueryDescription::operator =(JsonView jsonVa
     }
     m_recentlyFailedRunsHasBeenSet = true;
   }
-
   return *this;
 }
 

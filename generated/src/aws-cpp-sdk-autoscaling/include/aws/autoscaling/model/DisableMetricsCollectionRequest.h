@@ -22,7 +22,7 @@ namespace Model
   class DisableMetricsCollectionRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DisableMetricsCollectionRequest();
+    AWS_AUTOSCALING_API DisableMetricsCollectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DisableMetricsCollectionRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DisableMetricsCollectionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DisableMetricsCollectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DisableMetricsCollectionRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,15 +77,14 @@ namespace Model
      * CloudWatch metrics for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<Aws::String>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline DisableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
-    inline DisableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline DisableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline DisableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
-    inline DisableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    DisableMetricsCollectionRequest& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = Aws::String>
+    DisableMetricsCollectionRequest& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-UpdateRecommenderConfiguration::UpdateRecommenderConfiguration() : 
-    m_attributesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recommendationProviderIdTypeHasBeenSet(false),
-    m_recommendationProviderRoleArnHasBeenSet(false),
-    m_recommendationProviderUriHasBeenSet(false),
-    m_recommendationTransformerUriHasBeenSet(false),
-    m_recommendationsDisplayNameHasBeenSet(false),
-    m_recommendationsPerMessage(0),
-    m_recommendationsPerMessageHasBeenSet(false)
-{
-}
-
 UpdateRecommenderConfiguration::UpdateRecommenderConfiguration(JsonView jsonValue)
-  : UpdateRecommenderConfiguration()
 {
   *this = jsonValue;
 }
@@ -49,63 +34,46 @@ UpdateRecommenderConfiguration& UpdateRecommenderConfiguration::operator =(JsonV
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationProviderIdType"))
   {
     m_recommendationProviderIdType = jsonValue.GetString("RecommendationProviderIdType");
-
     m_recommendationProviderIdTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationProviderRoleArn"))
   {
     m_recommendationProviderRoleArn = jsonValue.GetString("RecommendationProviderRoleArn");
-
     m_recommendationProviderRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationProviderUri"))
   {
     m_recommendationProviderUri = jsonValue.GetString("RecommendationProviderUri");
-
     m_recommendationProviderUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationTransformerUri"))
   {
     m_recommendationTransformerUri = jsonValue.GetString("RecommendationTransformerUri");
-
     m_recommendationTransformerUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationsDisplayName"))
   {
     m_recommendationsDisplayName = jsonValue.GetString("RecommendationsDisplayName");
-
     m_recommendationsDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationsPerMessage"))
   {
     m_recommendationsPerMessage = jsonValue.GetInteger("RecommendationsPerMessage");
-
     m_recommendationsPerMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

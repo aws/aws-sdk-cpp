@@ -36,7 +36,7 @@ namespace Model
   class DescribeCacheSecurityGroupsResult
   {
   public:
-    AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult();
+    AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult() = default;
     AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeCacheSecurityGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeCacheSecurityGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeCacheSecurityGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeCacheSecurityGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,30 +57,33 @@ namespace Model
      * <p>A list of cache security groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline const Aws::Vector<CacheSecurityGroup>& GetCacheSecurityGroups() const{ return m_cacheSecurityGroups; }
-    inline void SetCacheSecurityGroups(const Aws::Vector<CacheSecurityGroup>& value) { m_cacheSecurityGroups = value; }
-    inline void SetCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { m_cacheSecurityGroups = std::move(value); }
-    inline DescribeCacheSecurityGroupsResult& WithCacheSecurityGroups(const Aws::Vector<CacheSecurityGroup>& value) { SetCacheSecurityGroups(value); return *this;}
-    inline DescribeCacheSecurityGroupsResult& WithCacheSecurityGroups(Aws::Vector<CacheSecurityGroup>&& value) { SetCacheSecurityGroups(std::move(value)); return *this;}
-    inline DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(const CacheSecurityGroup& value) { m_cacheSecurityGroups.push_back(value); return *this; }
-    inline DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(CacheSecurityGroup&& value) { m_cacheSecurityGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CacheSecurityGroup>& GetCacheSecurityGroups() const { return m_cacheSecurityGroups; }
+    template<typename CacheSecurityGroupsT = Aws::Vector<CacheSecurityGroup>>
+    void SetCacheSecurityGroups(CacheSecurityGroupsT&& value) { m_cacheSecurityGroupsHasBeenSet = true; m_cacheSecurityGroups = std::forward<CacheSecurityGroupsT>(value); }
+    template<typename CacheSecurityGroupsT = Aws::Vector<CacheSecurityGroup>>
+    DescribeCacheSecurityGroupsResult& WithCacheSecurityGroups(CacheSecurityGroupsT&& value) { SetCacheSecurityGroups(std::forward<CacheSecurityGroupsT>(value)); return *this;}
+    template<typename CacheSecurityGroupsT = CacheSecurityGroup>
+    DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(CacheSecurityGroupsT&& value) { m_cacheSecurityGroupsHasBeenSet = true; m_cacheSecurityGroups.emplace_back(std::forward<CacheSecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCacheSecurityGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<CacheSecurityGroup> m_cacheSecurityGroups;
+    bool m_cacheSecurityGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

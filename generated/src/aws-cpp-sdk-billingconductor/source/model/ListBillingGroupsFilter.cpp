@@ -18,17 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListBillingGroupsFilter::ListBillingGroupsFilter() : 
-    m_arnsHasBeenSet(false),
-    m_pricingPlanHasBeenSet(false),
-    m_statusesHasBeenSet(false),
-    m_autoAssociate(false),
-    m_autoAssociateHasBeenSet(false)
-{
-}
-
 ListBillingGroupsFilter::ListBillingGroupsFilter(JsonView jsonValue)
-  : ListBillingGroupsFilter()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ ListBillingGroupsFilter& ListBillingGroupsFilter::operator =(JsonView jsonValue)
     }
     m_arnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PricingPlan"))
   {
     m_pricingPlan = jsonValue.GetString("PricingPlan");
-
     m_pricingPlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statuses"))
   {
     Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("Statuses");
@@ -61,14 +48,11 @@ ListBillingGroupsFilter& ListBillingGroupsFilter::operator =(JsonView jsonValue)
     }
     m_statusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAssociate"))
   {
     m_autoAssociate = jsonValue.GetBool("AutoAssociate");
-
     m_autoAssociateHasBeenSet = true;
   }
-
   return *this;
 }
 

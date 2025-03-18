@@ -21,7 +21,7 @@ namespace Model
   class DeleteEndpointGroupRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API DeleteEndpointGroupRequest();
+    AWS_GLOBALACCELERATOR_API DeleteEndpointGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
      */
-    inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
+    inline const Aws::String& GetEndpointGroupArn() const { return m_endpointGroupArn; }
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-    inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-    inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-    inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-    inline DeleteEndpointGroupRequest& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-    inline DeleteEndpointGroupRequest& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-    inline DeleteEndpointGroupRequest& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    template<typename EndpointGroupArnT = Aws::String>
+    void SetEndpointGroupArn(EndpointGroupArnT&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::forward<EndpointGroupArnT>(value); }
+    template<typename EndpointGroupArnT = Aws::String>
+    DeleteEndpointGroupRequest& WithEndpointGroupArn(EndpointGroupArnT&& value) { SetEndpointGroupArn(std::forward<EndpointGroupArnT>(value)); return *this;}
     ///@}
   private:
 

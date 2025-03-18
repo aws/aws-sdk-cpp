@@ -28,35 +28,35 @@ namespace Model
   class UpdateVoiceChannelResult
   {
   public:
-    AWS_PINPOINT_API UpdateVoiceChannelResult();
+    AWS_PINPOINT_API UpdateVoiceChannelResult() = default;
     AWS_PINPOINT_API UpdateVoiceChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API UpdateVoiceChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const VoiceChannelResponse& GetVoiceChannelResponse() const{ return m_voiceChannelResponse; }
-    inline void SetVoiceChannelResponse(const VoiceChannelResponse& value) { m_voiceChannelResponse = value; }
-    inline void SetVoiceChannelResponse(VoiceChannelResponse&& value) { m_voiceChannelResponse = std::move(value); }
-    inline UpdateVoiceChannelResult& WithVoiceChannelResponse(const VoiceChannelResponse& value) { SetVoiceChannelResponse(value); return *this;}
-    inline UpdateVoiceChannelResult& WithVoiceChannelResponse(VoiceChannelResponse&& value) { SetVoiceChannelResponse(std::move(value)); return *this;}
+    inline const VoiceChannelResponse& GetVoiceChannelResponse() const { return m_voiceChannelResponse; }
+    template<typename VoiceChannelResponseT = VoiceChannelResponse>
+    void SetVoiceChannelResponse(VoiceChannelResponseT&& value) { m_voiceChannelResponseHasBeenSet = true; m_voiceChannelResponse = std::forward<VoiceChannelResponseT>(value); }
+    template<typename VoiceChannelResponseT = VoiceChannelResponse>
+    UpdateVoiceChannelResult& WithVoiceChannelResponse(VoiceChannelResponseT&& value) { SetVoiceChannelResponse(std::forward<VoiceChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateVoiceChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateVoiceChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateVoiceChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateVoiceChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VoiceChannelResponse m_voiceChannelResponse;
+    bool m_voiceChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

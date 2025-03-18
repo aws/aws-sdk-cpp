@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-TableLFTagPolicyAndPermissions::TableLFTagPolicyAndPermissions() : 
-    m_expressionHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 TableLFTagPolicyAndPermissions::TableLFTagPolicyAndPermissions(JsonView jsonValue)
-  : TableLFTagPolicyAndPermissions()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ TableLFTagPolicyAndPermissions& TableLFTagPolicyAndPermissions::operator =(JsonV
     }
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -51,7 +43,6 @@ TableLFTagPolicyAndPermissions& TableLFTagPolicyAndPermissions::operator =(JsonV
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedPrefixListAssociationsResponse::GetManagedPrefixListAssociationsResponse()
-{
-}
-
 GetManagedPrefixListAssociationsResponse::GetManagedPrefixListAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsRespon
     if(!prefixListAssociationsNode.IsNull())
     {
       XmlNode prefixListAssociationsMember = prefixListAssociationsNode.FirstChild("item");
+      m_prefixListAssociationsHasBeenSet = !prefixListAssociationsMember.IsNull();
       while(!prefixListAssociationsMember.IsNull())
       {
         m_prefixListAssociations.push_back(prefixListAssociationsMember);
         prefixListAssociationsMember = prefixListAssociationsMember.NextNode("item");
       }
 
+      m_prefixListAssociationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetManagedPrefixListAssociationsResponse& GetManagedPrefixListAssociationsRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetManagedPrefixListAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -28,7 +28,7 @@ namespace Model
   class PutVoiceConnectorLoggingConfigurationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorLoggingConfigurationResult();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorLoggingConfigurationResult() = default;
     AWS_CHIMESDKVOICE_API PutVoiceConnectorLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutVoiceConnectorLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated logging configuration.</p>
      */
-    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
-    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
-    inline PutVoiceConnectorLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-    inline PutVoiceConnectorLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    PutVoiceConnectorLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutVoiceConnectorLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutVoiceConnectorLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutVoiceConnectorLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutVoiceConnectorLoggingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

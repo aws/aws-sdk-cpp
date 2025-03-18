@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TargetGroupPairInfo::TargetGroupPairInfo() : 
-    m_targetGroupsHasBeenSet(false),
-    m_prodTrafficRouteHasBeenSet(false),
-    m_testTrafficRouteHasBeenSet(false)
-{
-}
-
 TargetGroupPairInfo::TargetGroupPairInfo(JsonView jsonValue)
-  : TargetGroupPairInfo()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ TargetGroupPairInfo& TargetGroupPairInfo::operator =(JsonView jsonValue)
     }
     m_targetGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prodTrafficRoute"))
   {
     m_prodTrafficRoute = jsonValue.GetObject("prodTrafficRoute");
-
     m_prodTrafficRouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testTrafficRoute"))
   {
     m_testTrafficRoute = jsonValue.GetObject("testTrafficRoute");
-
     m_testTrafficRouteHasBeenSet = true;
   }
-
   return *this;
 }
 

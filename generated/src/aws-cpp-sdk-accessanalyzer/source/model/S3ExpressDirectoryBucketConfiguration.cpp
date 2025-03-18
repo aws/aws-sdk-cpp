@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-S3ExpressDirectoryBucketConfiguration::S3ExpressDirectoryBucketConfiguration() : 
-    m_bucketPolicyHasBeenSet(false)
-{
-}
-
 S3ExpressDirectoryBucketConfiguration::S3ExpressDirectoryBucketConfiguration(JsonView jsonValue)
-  : S3ExpressDirectoryBucketConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ExpressDirectoryBucketConfiguration& S3ExpressDirectoryBucketConfiguration::op
   if(jsonValue.ValueExists("bucketPolicy"))
   {
     m_bucketPolicy = jsonValue.GetString("bucketPolicy");
-
     m_bucketPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

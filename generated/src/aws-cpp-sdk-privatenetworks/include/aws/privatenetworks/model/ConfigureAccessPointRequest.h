@@ -22,7 +22,7 @@ namespace Model
   class ConfigureAccessPointRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API ConfigureAccessPointRequest();
+    AWS_PRIVATENETWORKS_API ConfigureAccessPointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network resource.</p>
      */
-    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+    inline const Aws::String& GetAccessPointArn() const { return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-    inline ConfigureAccessPointRequest& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-    inline ConfigureAccessPointRequest& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-    inline ConfigureAccessPointRequest& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    template<typename AccessPointArnT = Aws::String>
+    void SetAccessPointArn(AccessPointArnT&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::forward<AccessPointArnT>(value); }
+    template<typename AccessPointArnT = Aws::String>
+    ConfigureAccessPointRequest& WithAccessPointArn(AccessPointArnT&& value) { SetAccessPointArn(std::forward<AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>A Base64 encoded string of the CPI certificate associated with the CPI user
      * who is certifying the coordinates of the network resource. </p>
      */
-    inline const Aws::String& GetCpiSecretKey() const{ return m_cpiSecretKey; }
+    inline const Aws::String& GetCpiSecretKey() const { return m_cpiSecretKey; }
     inline bool CpiSecretKeyHasBeenSet() const { return m_cpiSecretKeyHasBeenSet; }
-    inline void SetCpiSecretKey(const Aws::String& value) { m_cpiSecretKeyHasBeenSet = true; m_cpiSecretKey = value; }
-    inline void SetCpiSecretKey(Aws::String&& value) { m_cpiSecretKeyHasBeenSet = true; m_cpiSecretKey = std::move(value); }
-    inline void SetCpiSecretKey(const char* value) { m_cpiSecretKeyHasBeenSet = true; m_cpiSecretKey.assign(value); }
-    inline ConfigureAccessPointRequest& WithCpiSecretKey(const Aws::String& value) { SetCpiSecretKey(value); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiSecretKey(Aws::String&& value) { SetCpiSecretKey(std::move(value)); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiSecretKey(const char* value) { SetCpiSecretKey(value); return *this;}
+    template<typename CpiSecretKeyT = Aws::String>
+    void SetCpiSecretKey(CpiSecretKeyT&& value) { m_cpiSecretKeyHasBeenSet = true; m_cpiSecretKey = std::forward<CpiSecretKeyT>(value); }
+    template<typename CpiSecretKeyT = Aws::String>
+    ConfigureAccessPointRequest& WithCpiSecretKey(CpiSecretKeyT&& value) { SetCpiSecretKey(std::forward<CpiSecretKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * <p>The CPI user ID of the CPI user who is certifying the coordinates of the
      * network resource. </p>
      */
-    inline const Aws::String& GetCpiUserId() const{ return m_cpiUserId; }
+    inline const Aws::String& GetCpiUserId() const { return m_cpiUserId; }
     inline bool CpiUserIdHasBeenSet() const { return m_cpiUserIdHasBeenSet; }
-    inline void SetCpiUserId(const Aws::String& value) { m_cpiUserIdHasBeenSet = true; m_cpiUserId = value; }
-    inline void SetCpiUserId(Aws::String&& value) { m_cpiUserIdHasBeenSet = true; m_cpiUserId = std::move(value); }
-    inline void SetCpiUserId(const char* value) { m_cpiUserIdHasBeenSet = true; m_cpiUserId.assign(value); }
-    inline ConfigureAccessPointRequest& WithCpiUserId(const Aws::String& value) { SetCpiUserId(value); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUserId(Aws::String&& value) { SetCpiUserId(std::move(value)); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUserId(const char* value) { SetCpiUserId(value); return *this;}
+    template<typename CpiUserIdT = Aws::String>
+    void SetCpiUserId(CpiUserIdT&& value) { m_cpiUserIdHasBeenSet = true; m_cpiUserId = std::forward<CpiUserIdT>(value); }
+    template<typename CpiUserIdT = Aws::String>
+    ConfigureAccessPointRequest& WithCpiUserId(CpiUserIdT&& value) { SetCpiUserId(std::forward<CpiUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +76,12 @@ namespace Model
      * <p>The CPI password associated with the CPI certificate in
      * <code>cpiSecretKey</code>.</p>
      */
-    inline const Aws::String& GetCpiUserPassword() const{ return m_cpiUserPassword; }
+    inline const Aws::String& GetCpiUserPassword() const { return m_cpiUserPassword; }
     inline bool CpiUserPasswordHasBeenSet() const { return m_cpiUserPasswordHasBeenSet; }
-    inline void SetCpiUserPassword(const Aws::String& value) { m_cpiUserPasswordHasBeenSet = true; m_cpiUserPassword = value; }
-    inline void SetCpiUserPassword(Aws::String&& value) { m_cpiUserPasswordHasBeenSet = true; m_cpiUserPassword = std::move(value); }
-    inline void SetCpiUserPassword(const char* value) { m_cpiUserPasswordHasBeenSet = true; m_cpiUserPassword.assign(value); }
-    inline ConfigureAccessPointRequest& WithCpiUserPassword(const Aws::String& value) { SetCpiUserPassword(value); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUserPassword(Aws::String&& value) { SetCpiUserPassword(std::move(value)); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUserPassword(const char* value) { SetCpiUserPassword(value); return *this;}
+    template<typename CpiUserPasswordT = Aws::String>
+    void SetCpiUserPassword(CpiUserPasswordT&& value) { m_cpiUserPasswordHasBeenSet = true; m_cpiUserPassword = std::forward<CpiUserPasswordT>(value); }
+    template<typename CpiUserPasswordT = Aws::String>
+    ConfigureAccessPointRequest& WithCpiUserPassword(CpiUserPasswordT&& value) { SetCpiUserPassword(std::forward<CpiUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,26 +89,24 @@ namespace Model
      * <p>The CPI user name of the CPI user who is certifying the coordinates of the
      * radio unit.</p>
      */
-    inline const Aws::String& GetCpiUsername() const{ return m_cpiUsername; }
+    inline const Aws::String& GetCpiUsername() const { return m_cpiUsername; }
     inline bool CpiUsernameHasBeenSet() const { return m_cpiUsernameHasBeenSet; }
-    inline void SetCpiUsername(const Aws::String& value) { m_cpiUsernameHasBeenSet = true; m_cpiUsername = value; }
-    inline void SetCpiUsername(Aws::String&& value) { m_cpiUsernameHasBeenSet = true; m_cpiUsername = std::move(value); }
-    inline void SetCpiUsername(const char* value) { m_cpiUsernameHasBeenSet = true; m_cpiUsername.assign(value); }
-    inline ConfigureAccessPointRequest& WithCpiUsername(const Aws::String& value) { SetCpiUsername(value); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUsername(Aws::String&& value) { SetCpiUsername(std::move(value)); return *this;}
-    inline ConfigureAccessPointRequest& WithCpiUsername(const char* value) { SetCpiUsername(value); return *this;}
+    template<typename CpiUsernameT = Aws::String>
+    void SetCpiUsername(CpiUsernameT&& value) { m_cpiUsernameHasBeenSet = true; m_cpiUsername = std::forward<CpiUsernameT>(value); }
+    template<typename CpiUsernameT = Aws::String>
+    ConfigureAccessPointRequest& WithCpiUsername(CpiUsernameT&& value) { SetCpiUsername(std::forward<CpiUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The position of the network resource.</p>
      */
-    inline const Position& GetPosition() const{ return m_position; }
+    inline const Position& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Position& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Position&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline ConfigureAccessPointRequest& WithPosition(const Position& value) { SetPosition(value); return *this;}
-    inline ConfigureAccessPointRequest& WithPosition(Position&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Position>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Position>
+    ConfigureAccessPointRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
   private:
 

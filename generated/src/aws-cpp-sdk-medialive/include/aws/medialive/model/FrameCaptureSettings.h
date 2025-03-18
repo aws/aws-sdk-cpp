@@ -32,7 +32,7 @@ namespace Model
   class FrameCaptureSettings
   {
   public:
-    AWS_MEDIALIVE_API FrameCaptureSettings();
+    AWS_MEDIALIVE_API FrameCaptureSettings() = default;
     AWS_MEDIALIVE_API FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * specified in either seconds or milliseconds, as specified by
      * captureIntervalUnits.
      */
-    inline int GetCaptureInterval() const{ return m_captureInterval; }
+    inline int GetCaptureInterval() const { return m_captureInterval; }
     inline bool CaptureIntervalHasBeenSet() const { return m_captureIntervalHasBeenSet; }
     inline void SetCaptureInterval(int value) { m_captureIntervalHasBeenSet = true; m_captureInterval = value; }
     inline FrameCaptureSettings& WithCaptureInterval(int value) { SetCaptureInterval(value); return *this;}
@@ -54,31 +54,29 @@ namespace Model
     /**
      * Unit for the frame capture interval.
      */
-    inline const FrameCaptureIntervalUnit& GetCaptureIntervalUnits() const{ return m_captureIntervalUnits; }
+    inline FrameCaptureIntervalUnit GetCaptureIntervalUnits() const { return m_captureIntervalUnits; }
     inline bool CaptureIntervalUnitsHasBeenSet() const { return m_captureIntervalUnitsHasBeenSet; }
-    inline void SetCaptureIntervalUnits(const FrameCaptureIntervalUnit& value) { m_captureIntervalUnitsHasBeenSet = true; m_captureIntervalUnits = value; }
-    inline void SetCaptureIntervalUnits(FrameCaptureIntervalUnit&& value) { m_captureIntervalUnitsHasBeenSet = true; m_captureIntervalUnits = std::move(value); }
-    inline FrameCaptureSettings& WithCaptureIntervalUnits(const FrameCaptureIntervalUnit& value) { SetCaptureIntervalUnits(value); return *this;}
-    inline FrameCaptureSettings& WithCaptureIntervalUnits(FrameCaptureIntervalUnit&& value) { SetCaptureIntervalUnits(std::move(value)); return *this;}
+    inline void SetCaptureIntervalUnits(FrameCaptureIntervalUnit value) { m_captureIntervalUnitsHasBeenSet = true; m_captureIntervalUnits = value; }
+    inline FrameCaptureSettings& WithCaptureIntervalUnits(FrameCaptureIntervalUnit value) { SetCaptureIntervalUnits(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Timecode burn-in settings
      */
-    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const { return m_timecodeBurninSettings; }
     inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
-    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
-    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
-    inline FrameCaptureSettings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
-    inline FrameCaptureSettings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+    template<typename TimecodeBurninSettingsT = TimecodeBurninSettings>
+    void SetTimecodeBurninSettings(TimecodeBurninSettingsT&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::forward<TimecodeBurninSettingsT>(value); }
+    template<typename TimecodeBurninSettingsT = TimecodeBurninSettings>
+    FrameCaptureSettings& WithTimecodeBurninSettings(TimecodeBurninSettingsT&& value) { SetTimecodeBurninSettings(std::forward<TimecodeBurninSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_captureInterval;
+    int m_captureInterval{0};
     bool m_captureIntervalHasBeenSet = false;
 
-    FrameCaptureIntervalUnit m_captureIntervalUnits;
+    FrameCaptureIntervalUnit m_captureIntervalUnits{FrameCaptureIntervalUnit::NOT_SET};
     bool m_captureIntervalUnitsHasBeenSet = false;
 
     TimecodeBurninSettings m_timecodeBurninSettings;

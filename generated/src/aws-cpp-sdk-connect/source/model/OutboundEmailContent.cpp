@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OutboundEmailContent::OutboundEmailContent() : 
-    m_messageSourceType(OutboundMessageSourceType::NOT_SET),
-    m_messageSourceTypeHasBeenSet(false),
-    m_templatedMessageConfigHasBeenSet(false),
-    m_rawMessageHasBeenSet(false)
-{
-}
-
 OutboundEmailContent::OutboundEmailContent(JsonView jsonValue)
-  : OutboundEmailContent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ OutboundEmailContent& OutboundEmailContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageSourceType"))
   {
     m_messageSourceType = OutboundMessageSourceTypeMapper::GetOutboundMessageSourceTypeForName(jsonValue.GetString("MessageSourceType"));
-
     m_messageSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplatedMessageConfig"))
   {
     m_templatedMessageConfig = jsonValue.GetObject("TemplatedMessageConfig");
-
     m_templatedMessageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawMessage"))
   {
     m_rawMessage = jsonValue.GetObject("RawMessage");
-
     m_rawMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

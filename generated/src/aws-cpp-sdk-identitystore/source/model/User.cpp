@@ -18,28 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-User::User() : 
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_externalIdsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_nickNameHasBeenSet(false),
-    m_profileUrlHasBeenSet(false),
-    m_emailsHasBeenSet(false),
-    m_addressesHasBeenSet(false),
-    m_phoneNumbersHasBeenSet(false),
-    m_userTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_preferredLanguageHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -49,17 +28,13 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalIds"))
   {
     Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
@@ -69,35 +44,26 @@ User& User::operator =(JsonView jsonValue)
     }
     m_externalIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetObject("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NickName"))
   {
     m_nickName = jsonValue.GetString("NickName");
-
     m_nickNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileUrl"))
   {
     m_profileUrl = jsonValue.GetString("ProfileUrl");
-
     m_profileUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Emails"))
   {
     Aws::Utils::Array<JsonView> emailsJsonList = jsonValue.GetArray("Emails");
@@ -107,7 +73,6 @@ User& User::operator =(JsonView jsonValue)
     }
     m_emailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Addresses"))
   {
     Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
@@ -117,7 +82,6 @@ User& User::operator =(JsonView jsonValue)
     }
     m_addressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumbers"))
   {
     Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
@@ -127,49 +91,36 @@ User& User::operator =(JsonView jsonValue)
     }
     m_phoneNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserType"))
   {
     m_userType = jsonValue.GetString("UserType");
-
     m_userTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredLanguage"))
   {
     m_preferredLanguage = jsonValue.GetString("PreferredLanguage");
-
     m_preferredLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locale"))
   {
     m_locale = jsonValue.GetString("Locale");
-
     m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   return *this;
 }
 

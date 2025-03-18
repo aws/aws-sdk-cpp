@@ -36,7 +36,7 @@ namespace Model
   class ListPoliciesGrantingServiceAccessEntry
   {
   public:
-    AWS_IAM_API ListPoliciesGrantingServiceAccessEntry();
+    AWS_IAM_API ListPoliciesGrantingServiceAccessEntry() = default;
     AWS_IAM_API ListPoliciesGrantingServiceAccessEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API ListPoliciesGrantingServiceAccessEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,14 +58,12 @@ namespace Model
      * Web Services service namespaces</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline const Aws::String& GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
-    inline ListPoliciesGrantingServiceAccessEntry& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
-    inline ListPoliciesGrantingServiceAccessEntry& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
-    inline ListPoliciesGrantingServiceAccessEntry& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}
+    template<typename ServiceNamespaceT = Aws::String>
+    void SetServiceNamespace(ServiceNamespaceT&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::forward<ServiceNamespaceT>(value); }
+    template<typename ServiceNamespaceT = Aws::String>
+    ListPoliciesGrantingServiceAccessEntry& WithServiceNamespace(ServiceNamespaceT&& value) { SetServiceNamespace(std::forward<ServiceNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details
      * about the policy.</p>
      */
-    inline const Aws::Vector<PolicyGrantingServiceAccess>& GetPolicies() const{ return m_policies; }
+    inline const Aws::Vector<PolicyGrantingServiceAccess>& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const Aws::Vector<PolicyGrantingServiceAccess>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(Aws::Vector<PolicyGrantingServiceAccess>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline ListPoliciesGrantingServiceAccessEntry& WithPolicies(const Aws::Vector<PolicyGrantingServiceAccess>& value) { SetPolicies(value); return *this;}
-    inline ListPoliciesGrantingServiceAccessEntry& WithPolicies(Aws::Vector<PolicyGrantingServiceAccess>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline ListPoliciesGrantingServiceAccessEntry& AddPolicies(const PolicyGrantingServiceAccess& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-    inline ListPoliciesGrantingServiceAccessEntry& AddPolicies(PolicyGrantingServiceAccess&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+    template<typename PoliciesT = Aws::Vector<PolicyGrantingServiceAccess>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Vector<PolicyGrantingServiceAccess>>
+    ListPoliciesGrantingServiceAccessEntry& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesT = PolicyGrantingServiceAccess>
+    ListPoliciesGrantingServiceAccessEntry& AddPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies.emplace_back(std::forward<PoliciesT>(value)); return *this; }
     ///@}
   private:
 

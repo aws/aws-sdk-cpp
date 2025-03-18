@@ -35,7 +35,7 @@ namespace Model
   class VideoSelector
   {
   public:
-    AWS_MEDIALIVE_API VideoSelector();
+    AWS_MEDIALIVE_API VideoSelector() = default;
     AWS_MEDIALIVE_API VideoSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,22 @@ namespace Model
      * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
      * if any conversion will be performed.
      */
-    inline const VideoSelectorColorSpace& GetColorSpace() const{ return m_colorSpace; }
+    inline VideoSelectorColorSpace GetColorSpace() const { return m_colorSpace; }
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
-    inline void SetColorSpace(const VideoSelectorColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
-    inline void SetColorSpace(VideoSelectorColorSpace&& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = std::move(value); }
-    inline VideoSelector& WithColorSpace(const VideoSelectorColorSpace& value) { SetColorSpace(value); return *this;}
-    inline VideoSelector& WithColorSpace(VideoSelectorColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
+    inline void SetColorSpace(VideoSelectorColorSpace value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
+    inline VideoSelector& WithColorSpace(VideoSelectorColorSpace value) { SetColorSpace(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Color space settings
      */
-    inline const VideoSelectorColorSpaceSettings& GetColorSpaceSettings() const{ return m_colorSpaceSettings; }
+    inline const VideoSelectorColorSpaceSettings& GetColorSpaceSettings() const { return m_colorSpaceSettings; }
     inline bool ColorSpaceSettingsHasBeenSet() const { return m_colorSpaceSettingsHasBeenSet; }
-    inline void SetColorSpaceSettings(const VideoSelectorColorSpaceSettings& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = value; }
-    inline void SetColorSpaceSettings(VideoSelectorColorSpaceSettings&& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = std::move(value); }
-    inline VideoSelector& WithColorSpaceSettings(const VideoSelectorColorSpaceSettings& value) { SetColorSpaceSettings(value); return *this;}
-    inline VideoSelector& WithColorSpaceSettings(VideoSelectorColorSpaceSettings&& value) { SetColorSpaceSettings(std::move(value)); return *this;}
+    template<typename ColorSpaceSettingsT = VideoSelectorColorSpaceSettings>
+    void SetColorSpaceSettings(ColorSpaceSettingsT&& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = std::forward<ColorSpaceSettingsT>(value); }
+    template<typename ColorSpaceSettingsT = VideoSelectorColorSpaceSettings>
+    VideoSelector& WithColorSpaceSettings(ColorSpaceSettingsT&& value) { SetColorSpaceSettings(std::forward<ColorSpaceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,34 +76,32 @@ namespace Model
      * colorSpace. Choose force if your input usually has no color space data or might
      * have unreliable color space data.
      */
-    inline const VideoSelectorColorSpaceUsage& GetColorSpaceUsage() const{ return m_colorSpaceUsage; }
+    inline VideoSelectorColorSpaceUsage GetColorSpaceUsage() const { return m_colorSpaceUsage; }
     inline bool ColorSpaceUsageHasBeenSet() const { return m_colorSpaceUsageHasBeenSet; }
-    inline void SetColorSpaceUsage(const VideoSelectorColorSpaceUsage& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
-    inline void SetColorSpaceUsage(VideoSelectorColorSpaceUsage&& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = std::move(value); }
-    inline VideoSelector& WithColorSpaceUsage(const VideoSelectorColorSpaceUsage& value) { SetColorSpaceUsage(value); return *this;}
-    inline VideoSelector& WithColorSpaceUsage(VideoSelectorColorSpaceUsage&& value) { SetColorSpaceUsage(std::move(value)); return *this;}
+    inline void SetColorSpaceUsage(VideoSelectorColorSpaceUsage value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
+    inline VideoSelector& WithColorSpaceUsage(VideoSelectorColorSpaceUsage value) { SetColorSpaceUsage(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The video selector settings.
      */
-    inline const VideoSelectorSettings& GetSelectorSettings() const{ return m_selectorSettings; }
+    inline const VideoSelectorSettings& GetSelectorSettings() const { return m_selectorSettings; }
     inline bool SelectorSettingsHasBeenSet() const { return m_selectorSettingsHasBeenSet; }
-    inline void SetSelectorSettings(const VideoSelectorSettings& value) { m_selectorSettingsHasBeenSet = true; m_selectorSettings = value; }
-    inline void SetSelectorSettings(VideoSelectorSettings&& value) { m_selectorSettingsHasBeenSet = true; m_selectorSettings = std::move(value); }
-    inline VideoSelector& WithSelectorSettings(const VideoSelectorSettings& value) { SetSelectorSettings(value); return *this;}
-    inline VideoSelector& WithSelectorSettings(VideoSelectorSettings&& value) { SetSelectorSettings(std::move(value)); return *this;}
+    template<typename SelectorSettingsT = VideoSelectorSettings>
+    void SetSelectorSettings(SelectorSettingsT&& value) { m_selectorSettingsHasBeenSet = true; m_selectorSettings = std::forward<SelectorSettingsT>(value); }
+    template<typename SelectorSettingsT = VideoSelectorSettings>
+    VideoSelector& WithSelectorSettings(SelectorSettingsT&& value) { SetSelectorSettings(std::forward<SelectorSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    VideoSelectorColorSpace m_colorSpace;
+    VideoSelectorColorSpace m_colorSpace{VideoSelectorColorSpace::NOT_SET};
     bool m_colorSpaceHasBeenSet = false;
 
     VideoSelectorColorSpaceSettings m_colorSpaceSettings;
     bool m_colorSpaceSettingsHasBeenSet = false;
 
-    VideoSelectorColorSpaceUsage m_colorSpaceUsage;
+    VideoSelectorColorSpaceUsage m_colorSpaceUsage{VideoSelectorColorSpaceUsage::NOT_SET};
     bool m_colorSpaceUsageHasBeenSet = false;
 
     VideoSelectorSettings m_selectorSettings;

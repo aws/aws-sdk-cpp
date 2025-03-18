@@ -18,24 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CreateFormData::CreateFormData() : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_formActionType(FormActionType::NOT_SET),
-    m_formActionTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_styleHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_ctaHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_labelDecorator(LabelDecorator::NOT_SET),
-    m_labelDecoratorHasBeenSet(false)
-{
-}
-
 CreateFormData::CreateFormData(JsonView jsonValue)
-  : CreateFormData()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = jsonValue.GetObject("dataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formActionType"))
   {
     m_formActionType = FormActionTypeMapper::GetFormActionTypeForName(jsonValue.GetString("formActionType"));
-
     m_formActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
@@ -72,14 +49,11 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("style"))
   {
     m_style = jsonValue.GetObject("style");
-
     m_styleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sectionalElements"))
   {
     Aws::Map<Aws::String, JsonView> sectionalElementsJsonMap = jsonValue.GetObject("sectionalElements").GetAllObjects();
@@ -89,21 +63,16 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     }
     m_sectionalElementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cta"))
   {
     m_cta = jsonValue.GetObject("cta");
-
     m_ctaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -113,14 +82,11 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labelDecorator"))
   {
     m_labelDecorator = LabelDecoratorMapper::GetLabelDecoratorForName(jsonValue.GetString("labelDecorator"));
-
     m_labelDecoratorHasBeenSet = true;
   }
-
   return *this;
 }
 

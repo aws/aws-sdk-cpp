@@ -21,7 +21,7 @@ namespace Model
   class DeleteOrganizationConformancePackRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteOrganizationConformancePackRequest();
+    AWS_CONFIGSERVICE_API DeleteOrganizationConformancePackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of organization conformance pack that you want to delete.</p>
      */
-    inline const Aws::String& GetOrganizationConformancePackName() const{ return m_organizationConformancePackName; }
+    inline const Aws::String& GetOrganizationConformancePackName() const { return m_organizationConformancePackName; }
     inline bool OrganizationConformancePackNameHasBeenSet() const { return m_organizationConformancePackNameHasBeenSet; }
-    inline void SetOrganizationConformancePackName(const Aws::String& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = value; }
-    inline void SetOrganizationConformancePackName(Aws::String&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::move(value); }
-    inline void SetOrganizationConformancePackName(const char* value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName.assign(value); }
-    inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(const Aws::String& value) { SetOrganizationConformancePackName(value); return *this;}
-    inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(Aws::String&& value) { SetOrganizationConformancePackName(std::move(value)); return *this;}
-    inline DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(const char* value) { SetOrganizationConformancePackName(value); return *this;}
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    void SetOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::forward<OrganizationConformancePackNameT>(value); }
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    DeleteOrganizationConformancePackRequest& WithOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { SetOrganizationConformancePackName(std::forward<OrganizationConformancePackNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateRoleRequest::UpdateRoleRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

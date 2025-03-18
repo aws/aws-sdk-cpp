@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDefaultSubnetResponse::CreateDefaultSubnetResponse()
-{
-}
-
 CreateDefaultSubnetResponse::CreateDefaultSubnetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateDefaultSubnetResponse& CreateDefaultSubnetResponse::operator =(const Aws::
     if(!subnetNode.IsNull())
     {
       m_subnet = subnetNode;
+      m_subnetHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateDefaultSubnetResponse& CreateDefaultSubnetResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateDefaultSubnetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

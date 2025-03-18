@@ -18,13 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ArnResource::ArnResource() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 ArnResource::ArnResource(JsonView jsonValue)
-  : ArnResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ArnResource& ArnResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

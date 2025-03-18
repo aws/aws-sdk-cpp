@@ -29,7 +29,7 @@ namespace Model
   class DescribeMigrationProjectsResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeMigrationProjectsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeMigrationProjectsResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeMigrationProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeMigrationProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
      * call again using the returned token and keeping all other arguments
      * unchanged.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeMigrationProjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeMigrationProjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeMigrationProjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeMigrationProjectsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of migration projects.</p>
      */
-    inline const Aws::Vector<MigrationProject>& GetMigrationProjects() const{ return m_migrationProjects; }
-    inline void SetMigrationProjects(const Aws::Vector<MigrationProject>& value) { m_migrationProjects = value; }
-    inline void SetMigrationProjects(Aws::Vector<MigrationProject>&& value) { m_migrationProjects = std::move(value); }
-    inline DescribeMigrationProjectsResult& WithMigrationProjects(const Aws::Vector<MigrationProject>& value) { SetMigrationProjects(value); return *this;}
-    inline DescribeMigrationProjectsResult& WithMigrationProjects(Aws::Vector<MigrationProject>&& value) { SetMigrationProjects(std::move(value)); return *this;}
-    inline DescribeMigrationProjectsResult& AddMigrationProjects(const MigrationProject& value) { m_migrationProjects.push_back(value); return *this; }
-    inline DescribeMigrationProjectsResult& AddMigrationProjects(MigrationProject&& value) { m_migrationProjects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MigrationProject>& GetMigrationProjects() const { return m_migrationProjects; }
+    template<typename MigrationProjectsT = Aws::Vector<MigrationProject>>
+    void SetMigrationProjects(MigrationProjectsT&& value) { m_migrationProjectsHasBeenSet = true; m_migrationProjects = std::forward<MigrationProjectsT>(value); }
+    template<typename MigrationProjectsT = Aws::Vector<MigrationProject>>
+    DescribeMigrationProjectsResult& WithMigrationProjects(MigrationProjectsT&& value) { SetMigrationProjects(std::forward<MigrationProjectsT>(value)); return *this;}
+    template<typename MigrationProjectsT = MigrationProject>
+    DescribeMigrationProjectsResult& AddMigrationProjects(MigrationProjectsT&& value) { m_migrationProjectsHasBeenSet = true; m_migrationProjects.emplace_back(std::forward<MigrationProjectsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMigrationProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMigrationProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMigrationProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMigrationProjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<MigrationProject> m_migrationProjects;
+    bool m_migrationProjectsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

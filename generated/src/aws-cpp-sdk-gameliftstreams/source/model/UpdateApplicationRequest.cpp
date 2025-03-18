@@ -12,14 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationLogOutputUriHasBeenSet(false),
-    m_applicationLogPathsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

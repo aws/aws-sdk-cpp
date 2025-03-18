@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyDetail::PolicyDetail() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 PolicyDetail::PolicyDetail(const XmlNode& xmlNode)
-  : PolicyDetail()
 {
   *this = xmlNode;
 }

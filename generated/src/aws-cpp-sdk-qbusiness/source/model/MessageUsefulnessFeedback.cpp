@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-MessageUsefulnessFeedback::MessageUsefulnessFeedback() : 
-    m_usefulness(MessageUsefulness::NOT_SET),
-    m_usefulnessHasBeenSet(false),
-    m_reason(MessageUsefulnessReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_submittedAtHasBeenSet(false)
-{
-}
-
 MessageUsefulnessFeedback::MessageUsefulnessFeedback(JsonView jsonValue)
-  : MessageUsefulnessFeedback()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MessageUsefulnessFeedback& MessageUsefulnessFeedback::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("usefulness"))
   {
     m_usefulness = MessageUsefulnessMapper::GetMessageUsefulnessForName(jsonValue.GetString("usefulness"));
-
     m_usefulnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = MessageUsefulnessReasonMapper::GetMessageUsefulnessReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submittedAt"))
   {
     m_submittedAt = jsonValue.GetDouble("submittedAt");
-
     m_submittedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

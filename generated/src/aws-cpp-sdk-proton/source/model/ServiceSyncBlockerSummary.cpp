@@ -18,15 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceSyncBlockerSummary::ServiceSyncBlockerSummary() : 
-    m_latestBlockersHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 ServiceSyncBlockerSummary::ServiceSyncBlockerSummary(JsonView jsonValue)
-  : ServiceSyncBlockerSummary()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ServiceSyncBlockerSummary& ServiceSyncBlockerSummary::operator =(JsonView jsonVa
     }
     m_latestBlockersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceInstanceName"))
   {
     m_serviceInstanceName = jsonValue.GetString("serviceInstanceName");
-
     m_serviceInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

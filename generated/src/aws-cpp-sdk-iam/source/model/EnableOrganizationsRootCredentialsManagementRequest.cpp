@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-EnableOrganizationsRootCredentialsManagementRequest::EnableOrganizationsRootCredentialsManagementRequest()
-{
-}
-
 Aws::String EnableOrganizationsRootCredentialsManagementRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -41,7 +41,7 @@ namespace Model
   class IPSetUpdate
   {
   public:
-    AWS_WAF_API IPSetUpdate();
+    AWS_WAF_API IPSetUpdate() = default;
     AWS_WAF_API IPSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API IPSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline IPSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline IPSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -65,16 +63,16 @@ namespace Model
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from.</p>
      */
-    inline const IPSetDescriptor& GetIPSetDescriptor() const{ return m_iPSetDescriptor; }
+    inline const IPSetDescriptor& GetIPSetDescriptor() const { return m_iPSetDescriptor; }
     inline bool IPSetDescriptorHasBeenSet() const { return m_iPSetDescriptorHasBeenSet; }
-    inline void SetIPSetDescriptor(const IPSetDescriptor& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = value; }
-    inline void SetIPSetDescriptor(IPSetDescriptor&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = std::move(value); }
-    inline IPSetUpdate& WithIPSetDescriptor(const IPSetDescriptor& value) { SetIPSetDescriptor(value); return *this;}
-    inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(std::move(value)); return *this;}
+    template<typename IPSetDescriptorT = IPSetDescriptor>
+    void SetIPSetDescriptor(IPSetDescriptorT&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = std::forward<IPSetDescriptorT>(value); }
+    template<typename IPSetDescriptorT = IPSetDescriptor>
+    IPSetUpdate& WithIPSetDescriptor(IPSetDescriptorT&& value) { SetIPSetDescriptor(std::forward<IPSetDescriptorT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     IPSetDescriptor m_iPSetDescriptor;

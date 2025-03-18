@@ -18,18 +18,7 @@ namespace RAM
 namespace Model
 {
 
-Principal::Principal() : 
-    m_idHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_external(false),
-    m_externalHasBeenSet(false)
-{
-}
-
 Principal::Principal(JsonView jsonValue)
-  : Principal()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Principal& Principal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceShareArn"))
   {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
-
     m_resourceShareArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("external"))
   {
     m_external = jsonValue.GetBool("external");
-
     m_externalHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class ListProvisionedProductPlansRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API ListProvisionedProductPlansRequest();
+    AWS_SERVICECATALOG_API ListProvisionedProductPlansRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,35 +40,31 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline ListProvisionedProductPlansRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline ListProvisionedProductPlansRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline ListProvisionedProductPlansRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    ListProvisionedProductPlansRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier.</p>
      */
-    inline const Aws::String& GetProvisionProductId() const{ return m_provisionProductId; }
+    inline const Aws::String& GetProvisionProductId() const { return m_provisionProductId; }
     inline bool ProvisionProductIdHasBeenSet() const { return m_provisionProductIdHasBeenSet; }
-    inline void SetProvisionProductId(const Aws::String& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = value; }
-    inline void SetProvisionProductId(Aws::String&& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = std::move(value); }
-    inline void SetProvisionProductId(const char* value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId.assign(value); }
-    inline ListProvisionedProductPlansRequest& WithProvisionProductId(const Aws::String& value) { SetProvisionProductId(value); return *this;}
-    inline ListProvisionedProductPlansRequest& WithProvisionProductId(Aws::String&& value) { SetProvisionProductId(std::move(value)); return *this;}
-    inline ListProvisionedProductPlansRequest& WithProvisionProductId(const char* value) { SetProvisionProductId(value); return *this;}
+    template<typename ProvisionProductIdT = Aws::String>
+    void SetProvisionProductId(ProvisionProductIdT&& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = std::forward<ProvisionProductIdT>(value); }
+    template<typename ProvisionProductIdT = Aws::String>
+    ListProvisionedProductPlansRequest& WithProvisionProductId(ProvisionProductIdT&& value) { SetProvisionProductId(std::forward<ProvisionProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListProvisionedProductPlansRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -79,14 +75,12 @@ namespace Model
      * <p>The page token for the next set of results. To retrieve the first set of
      * results, use null.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline ListProvisionedProductPlansRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline ListProvisionedProductPlansRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline ListProvisionedProductPlansRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    ListProvisionedProductPlansRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,12 @@ namespace Model
      * <p>The access level to use to obtain results. The default is
      * <code>User</code>.</p>
      */
-    inline const AccessLevelFilter& GetAccessLevelFilter() const{ return m_accessLevelFilter; }
+    inline const AccessLevelFilter& GetAccessLevelFilter() const { return m_accessLevelFilter; }
     inline bool AccessLevelFilterHasBeenSet() const { return m_accessLevelFilterHasBeenSet; }
-    inline void SetAccessLevelFilter(const AccessLevelFilter& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = value; }
-    inline void SetAccessLevelFilter(AccessLevelFilter&& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = std::move(value); }
-    inline ListProvisionedProductPlansRequest& WithAccessLevelFilter(const AccessLevelFilter& value) { SetAccessLevelFilter(value); return *this;}
-    inline ListProvisionedProductPlansRequest& WithAccessLevelFilter(AccessLevelFilter&& value) { SetAccessLevelFilter(std::move(value)); return *this;}
+    template<typename AccessLevelFilterT = AccessLevelFilter>
+    void SetAccessLevelFilter(AccessLevelFilterT&& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = std::forward<AccessLevelFilterT>(value); }
+    template<typename AccessLevelFilterT = AccessLevelFilter>
+    ListProvisionedProductPlansRequest& WithAccessLevelFilter(AccessLevelFilterT&& value) { SetAccessLevelFilter(std::forward<AccessLevelFilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -109,7 +103,7 @@ namespace Model
     Aws::String m_provisionProductId;
     bool m_provisionProductIdHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_pageToken;

@@ -20,16 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-AnalysisScheme::AnalysisScheme() : 
-    m_analysisSchemeNameHasBeenSet(false),
-    m_analysisSchemeLanguage(AnalysisSchemeLanguage::NOT_SET),
-    m_analysisSchemeLanguageHasBeenSet(false),
-    m_analysisOptionsHasBeenSet(false)
-{
-}
-
 AnalysisScheme::AnalysisScheme(const XmlNode& xmlNode)
-  : AnalysisScheme()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ AnalysisScheme& AnalysisScheme::operator =(const XmlNode& xmlNode)
     XmlNode analysisSchemeLanguageNode = resultNode.FirstChild("AnalysisSchemeLanguage");
     if(!analysisSchemeLanguageNode.IsNull())
     {
-      m_analysisSchemeLanguage = AnalysisSchemeLanguageMapper::GetAnalysisSchemeLanguageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeLanguageNode.GetText()).c_str()).c_str());
+      m_analysisSchemeLanguage = AnalysisSchemeLanguageMapper::GetAnalysisSchemeLanguageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeLanguageNode.GetText()).c_str()));
       m_analysisSchemeLanguageHasBeenSet = true;
     }
     XmlNode analysisOptionsNode = resultNode.FirstChild("AnalysisOptions");

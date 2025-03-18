@@ -32,7 +32,7 @@ namespace Model
   class SingleSignOn
   {
   public:
-    AWS_DATAZONE_API SingleSignOn();
+    AWS_DATAZONE_API SingleSignOn() = default;
     AWS_DATAZONE_API SingleSignOn(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SingleSignOn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The type of single sign-on in Amazon DataZone.</p>
      */
-    inline const AuthType& GetType() const{ return m_type; }
+    inline AuthType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AuthType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SingleSignOn& WithType(const AuthType& value) { SetType(value); return *this;}
-    inline SingleSignOn& WithType(AuthType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AuthType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SingleSignOn& WithType(AuthType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The single sign-on user assignment in Amazon DataZone.</p>
      */
-    inline const UserAssignment& GetUserAssignment() const{ return m_userAssignment; }
+    inline UserAssignment GetUserAssignment() const { return m_userAssignment; }
     inline bool UserAssignmentHasBeenSet() const { return m_userAssignmentHasBeenSet; }
-    inline void SetUserAssignment(const UserAssignment& value) { m_userAssignmentHasBeenSet = true; m_userAssignment = value; }
-    inline void SetUserAssignment(UserAssignment&& value) { m_userAssignmentHasBeenSet = true; m_userAssignment = std::move(value); }
-    inline SingleSignOn& WithUserAssignment(const UserAssignment& value) { SetUserAssignment(value); return *this;}
-    inline SingleSignOn& WithUserAssignment(UserAssignment&& value) { SetUserAssignment(std::move(value)); return *this;}
+    inline void SetUserAssignment(UserAssignment value) { m_userAssignmentHasBeenSet = true; m_userAssignment = value; }
+    inline SingleSignOn& WithUserAssignment(UserAssignment value) { SetUserAssignment(value); return *this;}
     ///@}
   private:
 
-    AuthType m_type;
+    AuthType m_type{AuthType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    UserAssignment m_userAssignment;
+    UserAssignment m_userAssignment{UserAssignment::NOT_SET};
     bool m_userAssignmentHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class CanaryLastRun
   {
   public:
-    AWS_SYNTHETICS_API CanaryLastRun();
+    AWS_SYNTHETICS_API CanaryLastRun() = default;
     AWS_SYNTHETICS_API CanaryLastRun(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryLastRun& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the canary.</p>
      */
-    inline const Aws::String& GetCanaryName() const{ return m_canaryName; }
+    inline const Aws::String& GetCanaryName() const { return m_canaryName; }
     inline bool CanaryNameHasBeenSet() const { return m_canaryNameHasBeenSet; }
-    inline void SetCanaryName(const Aws::String& value) { m_canaryNameHasBeenSet = true; m_canaryName = value; }
-    inline void SetCanaryName(Aws::String&& value) { m_canaryNameHasBeenSet = true; m_canaryName = std::move(value); }
-    inline void SetCanaryName(const char* value) { m_canaryNameHasBeenSet = true; m_canaryName.assign(value); }
-    inline CanaryLastRun& WithCanaryName(const Aws::String& value) { SetCanaryName(value); return *this;}
-    inline CanaryLastRun& WithCanaryName(Aws::String&& value) { SetCanaryName(std::move(value)); return *this;}
-    inline CanaryLastRun& WithCanaryName(const char* value) { SetCanaryName(value); return *this;}
+    template<typename CanaryNameT = Aws::String>
+    void SetCanaryName(CanaryNameT&& value) { m_canaryNameHasBeenSet = true; m_canaryName = std::forward<CanaryNameT>(value); }
+    template<typename CanaryNameT = Aws::String>
+    CanaryLastRun& WithCanaryName(CanaryNameT&& value) { SetCanaryName(std::forward<CanaryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results from this canary's most recent run.</p>
      */
-    inline const CanaryRun& GetLastRun() const{ return m_lastRun; }
+    inline const CanaryRun& GetLastRun() const { return m_lastRun; }
     inline bool LastRunHasBeenSet() const { return m_lastRunHasBeenSet; }
-    inline void SetLastRun(const CanaryRun& value) { m_lastRunHasBeenSet = true; m_lastRun = value; }
-    inline void SetLastRun(CanaryRun&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::move(value); }
-    inline CanaryLastRun& WithLastRun(const CanaryRun& value) { SetLastRun(value); return *this;}
-    inline CanaryLastRun& WithLastRun(CanaryRun&& value) { SetLastRun(std::move(value)); return *this;}
+    template<typename LastRunT = CanaryRun>
+    void SetLastRun(LastRunT&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::forward<LastRunT>(value); }
+    template<typename LastRunT = CanaryRun>
+    CanaryLastRun& WithLastRun(LastRunT&& value) { SetLastRun(std::forward<LastRunT>(value)); return *this;}
     ///@}
   private:
 

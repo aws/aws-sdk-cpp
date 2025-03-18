@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FreeFormLayoutScreenCanvasSizeOptions::FreeFormLayoutScreenCanvasSizeOptions() : 
-    m_optimizedViewPortWidthHasBeenSet(false)
-{
-}
-
 FreeFormLayoutScreenCanvasSizeOptions::FreeFormLayoutScreenCanvasSizeOptions(JsonView jsonValue)
-  : FreeFormLayoutScreenCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FreeFormLayoutScreenCanvasSizeOptions& FreeFormLayoutScreenCanvasSizeOptions::op
   if(jsonValue.ValueExists("OptimizedViewPortWidth"))
   {
     m_optimizedViewPortWidth = jsonValue.GetString("OptimizedViewPortWidth");
-
     m_optimizedViewPortWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

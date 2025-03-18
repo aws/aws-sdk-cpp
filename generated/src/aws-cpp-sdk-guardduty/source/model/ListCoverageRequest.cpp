@@ -12,16 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCoverageRequest::ListCoverageRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String ListCoverageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-GitPushFilter::GitPushFilter() : 
-    m_tagsHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
-{
-}
-
 GitPushFilter::GitPushFilter(JsonView jsonValue)
-  : GitPushFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GitPushFilter& GitPushFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tags"))
   {
     m_tags = jsonValue.GetObject("tags");
-
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branches"))
   {
     m_branches = jsonValue.GetObject("branches");
-
     m_branchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePaths"))
   {
     m_filePaths = jsonValue.GetObject("filePaths");
-
     m_filePathsHasBeenSet = true;
   }
-
   return *this;
 }
 

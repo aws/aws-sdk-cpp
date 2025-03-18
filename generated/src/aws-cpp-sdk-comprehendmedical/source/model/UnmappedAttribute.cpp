@@ -18,15 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-UnmappedAttribute::UnmappedAttribute() : 
-    m_type(EntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_attributeHasBeenSet(false)
-{
-}
-
 UnmappedAttribute::UnmappedAttribute(JsonView jsonValue)
-  : UnmappedAttribute()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnmappedAttribute& UnmappedAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = jsonValue.GetObject("Attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ListenerTls::ListenerTls() : 
-    m_certificateHasBeenSet(false),
-    m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_validationHasBeenSet(false)
-{
-}
-
 ListenerTls::ListenerTls(JsonView jsonValue)
-  : ListenerTls()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ListenerTls& ListenerTls::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetObject("certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = ListenerTlsModeMapper::GetListenerTlsModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validation"))
   {
     m_validation = jsonValue.GetObject("validation");
-
     m_validationHasBeenSet = true;
   }
-
   return *this;
 }
 

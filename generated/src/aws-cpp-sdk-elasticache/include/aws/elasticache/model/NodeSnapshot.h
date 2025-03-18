@@ -34,7 +34,7 @@ namespace Model
   class NodeSnapshot
   {
   public:
-    AWS_ELASTICACHE_API NodeSnapshot();
+    AWS_ELASTICACHE_API NodeSnapshot() = default;
     AWS_ELASTICACHE_API NodeSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API NodeSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,80 +46,72 @@ namespace Model
     /**
      * <p>A unique identifier for the source cluster.</p>
      */
-    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+    inline const Aws::String& GetCacheClusterId() const { return m_cacheClusterId; }
     inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
-    inline NodeSnapshot& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
-    inline NodeSnapshot& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
-    inline NodeSnapshot& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+    template<typename CacheClusterIdT = Aws::String>
+    void SetCacheClusterId(CacheClusterIdT&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::forward<CacheClusterIdT>(value); }
+    template<typename CacheClusterIdT = Aws::String>
+    NodeSnapshot& WithCacheClusterId(CacheClusterIdT&& value) { SetCacheClusterId(std::forward<CacheClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the source node group (shard).</p>
      */
-    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+    inline const Aws::String& GetNodeGroupId() const { return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
-    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
-    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
-    inline NodeSnapshot& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
-    inline NodeSnapshot& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
-    inline NodeSnapshot& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+    template<typename NodeGroupIdT = Aws::String>
+    void SetNodeGroupId(NodeGroupIdT&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::forward<NodeGroupIdT>(value); }
+    template<typename NodeGroupIdT = Aws::String>
+    NodeSnapshot& WithNodeGroupId(NodeGroupIdT&& value) { SetNodeGroupId(std::forward<NodeGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cache node identifier for the node in the source cluster.</p>
      */
-    inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
+    inline const Aws::String& GetCacheNodeId() const { return m_cacheNodeId; }
     inline bool CacheNodeIdHasBeenSet() const { return m_cacheNodeIdHasBeenSet; }
-    inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
-    inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = std::move(value); }
-    inline void SetCacheNodeId(const char* value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId.assign(value); }
-    inline NodeSnapshot& WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
-    inline NodeSnapshot& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(std::move(value)); return *this;}
-    inline NodeSnapshot& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
+    template<typename CacheNodeIdT = Aws::String>
+    void SetCacheNodeId(CacheNodeIdT&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = std::forward<CacheNodeIdT>(value); }
+    template<typename CacheNodeIdT = Aws::String>
+    NodeSnapshot& WithCacheNodeId(CacheNodeIdT&& value) { SetCacheNodeId(std::forward<CacheNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the source node group (shard).</p>
      */
-    inline const NodeGroupConfiguration& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
+    inline const NodeGroupConfiguration& GetNodeGroupConfiguration() const { return m_nodeGroupConfiguration; }
     inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
-    inline void SetNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
-    inline void SetNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = std::move(value); }
-    inline NodeSnapshot& WithNodeGroupConfiguration(const NodeGroupConfiguration& value) { SetNodeGroupConfiguration(value); return *this;}
-    inline NodeSnapshot& WithNodeGroupConfiguration(NodeGroupConfiguration&& value) { SetNodeGroupConfiguration(std::move(value)); return *this;}
+    template<typename NodeGroupConfigurationT = NodeGroupConfiguration>
+    void SetNodeGroupConfiguration(NodeGroupConfigurationT&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = std::forward<NodeGroupConfigurationT>(value); }
+    template<typename NodeGroupConfigurationT = NodeGroupConfiguration>
+    NodeSnapshot& WithNodeGroupConfiguration(NodeGroupConfigurationT&& value) { SetNodeGroupConfiguration(std::forward<NodeGroupConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the cache on the source cache node.</p>
      */
-    inline const Aws::String& GetCacheSize() const{ return m_cacheSize; }
+    inline const Aws::String& GetCacheSize() const { return m_cacheSize; }
     inline bool CacheSizeHasBeenSet() const { return m_cacheSizeHasBeenSet; }
-    inline void SetCacheSize(const Aws::String& value) { m_cacheSizeHasBeenSet = true; m_cacheSize = value; }
-    inline void SetCacheSize(Aws::String&& value) { m_cacheSizeHasBeenSet = true; m_cacheSize = std::move(value); }
-    inline void SetCacheSize(const char* value) { m_cacheSizeHasBeenSet = true; m_cacheSize.assign(value); }
-    inline NodeSnapshot& WithCacheSize(const Aws::String& value) { SetCacheSize(value); return *this;}
-    inline NodeSnapshot& WithCacheSize(Aws::String&& value) { SetCacheSize(std::move(value)); return *this;}
-    inline NodeSnapshot& WithCacheSize(const char* value) { SetCacheSize(value); return *this;}
+    template<typename CacheSizeT = Aws::String>
+    void SetCacheSize(CacheSizeT&& value) { m_cacheSizeHasBeenSet = true; m_cacheSize = std::forward<CacheSizeT>(value); }
+    template<typename CacheSizeT = Aws::String>
+    NodeSnapshot& WithCacheSize(CacheSizeT&& value) { SetCacheSize(std::forward<CacheSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the cache node was created in the source cluster.</p>
      */
-    inline const Aws::Utils::DateTime& GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
+    inline const Aws::Utils::DateTime& GetCacheNodeCreateTime() const { return m_cacheNodeCreateTime; }
     inline bool CacheNodeCreateTimeHasBeenSet() const { return m_cacheNodeCreateTimeHasBeenSet; }
-    inline void SetCacheNodeCreateTime(const Aws::Utils::DateTime& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
-    inline void SetCacheNodeCreateTime(Aws::Utils::DateTime&& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = std::move(value); }
-    inline NodeSnapshot& WithCacheNodeCreateTime(const Aws::Utils::DateTime& value) { SetCacheNodeCreateTime(value); return *this;}
-    inline NodeSnapshot& WithCacheNodeCreateTime(Aws::Utils::DateTime&& value) { SetCacheNodeCreateTime(std::move(value)); return *this;}
+    template<typename CacheNodeCreateTimeT = Aws::Utils::DateTime>
+    void SetCacheNodeCreateTime(CacheNodeCreateTimeT&& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = std::forward<CacheNodeCreateTimeT>(value); }
+    template<typename CacheNodeCreateTimeT = Aws::Utils::DateTime>
+    NodeSnapshot& WithCacheNodeCreateTime(CacheNodeCreateTimeT&& value) { SetCacheNodeCreateTime(std::forward<CacheNodeCreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +119,12 @@ namespace Model
      * <p>The date and time when the source node's metadata and cache data set was
      * obtained for the snapshot.</p>
      */
-    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const { return m_snapshotCreateTime; }
     inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
-    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
-    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
-    inline NodeSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
-    inline NodeSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
+    template<typename SnapshotCreateTimeT = Aws::Utils::DateTime>
+    void SetSnapshotCreateTime(SnapshotCreateTimeT&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::forward<SnapshotCreateTimeT>(value); }
+    template<typename SnapshotCreateTimeT = Aws::Utils::DateTime>
+    NodeSnapshot& WithSnapshotCreateTime(SnapshotCreateTimeT&& value) { SetSnapshotCreateTime(std::forward<SnapshotCreateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,10 +143,10 @@ namespace Model
     Aws::String m_cacheSize;
     bool m_cacheSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_cacheNodeCreateTime;
+    Aws::Utils::DateTime m_cacheNodeCreateTime{};
     bool m_cacheNodeCreateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime{};
     bool m_snapshotCreateTimeHasBeenSet = false;
   };
 

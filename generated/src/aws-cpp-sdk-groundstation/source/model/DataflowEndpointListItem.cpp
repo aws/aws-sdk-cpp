@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-DataflowEndpointListItem::DataflowEndpointListItem() : 
-    m_dataflowEndpointGroupArnHasBeenSet(false),
-    m_dataflowEndpointGroupIdHasBeenSet(false)
-{
-}
-
 DataflowEndpointListItem::DataflowEndpointListItem(JsonView jsonValue)
-  : DataflowEndpointListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataflowEndpointListItem& DataflowEndpointListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("dataflowEndpointGroupArn"))
   {
     m_dataflowEndpointGroupArn = jsonValue.GetString("dataflowEndpointGroupArn");
-
     m_dataflowEndpointGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataflowEndpointGroupId"))
   {
     m_dataflowEndpointGroupId = jsonValue.GetString("dataflowEndpointGroupId");
-
     m_dataflowEndpointGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

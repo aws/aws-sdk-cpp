@@ -26,7 +26,7 @@ namespace Model
   class GetResourcesRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API GetResourcesRequest();
+    AWS_WORKDOCS_API GetResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline GetResourcesRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline GetResourcesRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    GetResourcesRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,33 +59,29 @@ namespace Model
      * <p>The user ID for the resource collection. This is a required field for
      * accessing the API operation using IAM credentials.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline GetResourcesRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetResourcesRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetResourcesRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collection type.</p>
      */
-    inline const ResourceCollectionType& GetCollectionType() const{ return m_collectionType; }
+    inline ResourceCollectionType GetCollectionType() const { return m_collectionType; }
     inline bool CollectionTypeHasBeenSet() const { return m_collectionTypeHasBeenSet; }
-    inline void SetCollectionType(const ResourceCollectionType& value) { m_collectionTypeHasBeenSet = true; m_collectionType = value; }
-    inline void SetCollectionType(ResourceCollectionType&& value) { m_collectionTypeHasBeenSet = true; m_collectionType = std::move(value); }
-    inline GetResourcesRequest& WithCollectionType(const ResourceCollectionType& value) { SetCollectionType(value); return *this;}
-    inline GetResourcesRequest& WithCollectionType(ResourceCollectionType&& value) { SetCollectionType(std::move(value)); return *this;}
+    inline void SetCollectionType(ResourceCollectionType value) { m_collectionTypeHasBeenSet = true; m_collectionType = value; }
+    inline GetResourcesRequest& WithCollectionType(ResourceCollectionType value) { SetCollectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of resources to return.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -98,14 +92,12 @@ namespace Model
      * <p>The marker for the next set of results. This marker was received from a
      * previous call.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline GetResourcesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline GetResourcesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    GetResourcesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,10 +107,10 @@ namespace Model
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    ResourceCollectionType m_collectionType;
+    ResourceCollectionType m_collectionType{ResourceCollectionType::NOT_SET};
     bool m_collectionTypeHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;

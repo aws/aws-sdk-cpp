@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ObfuscationSetting::ObfuscationSetting() : 
-    m_obfuscationSettingType(ObfuscationSettingType::NOT_SET),
-    m_obfuscationSettingTypeHasBeenSet(false)
-{
-}
-
 ObfuscationSetting::ObfuscationSetting(JsonView jsonValue)
-  : ObfuscationSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ObfuscationSetting& ObfuscationSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("obfuscationSettingType"))
   {
     m_obfuscationSettingType = ObfuscationSettingTypeMapper::GetObfuscationSettingTypeForName(jsonValue.GetString("obfuscationSettingType"));
-
     m_obfuscationSettingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

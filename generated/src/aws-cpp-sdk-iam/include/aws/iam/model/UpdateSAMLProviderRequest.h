@@ -22,7 +22,7 @@ namespace Model
   class UpdateSAMLProviderRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateSAMLProviderRequest();
+    AWS_IAM_API UpdateSAMLProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your IdP.</p>
      */
-    inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
+    inline const Aws::String& GetSAMLMetadataDocument() const { return m_sAMLMetadataDocument; }
     inline bool SAMLMetadataDocumentHasBeenSet() const { return m_sAMLMetadataDocumentHasBeenSet; }
-    inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = value; }
-    inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::move(value); }
-    inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument.assign(value); }
-    inline UpdateSAMLProviderRequest& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
-    inline UpdateSAMLProviderRequest& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(std::move(value)); return *this;}
-    inline UpdateSAMLProviderRequest& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    void SetSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::forward<SAMLMetadataDocumentT>(value); }
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    UpdateSAMLProviderRequest& WithSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { SetSAMLMetadataDocument(std::forward<SAMLMetadataDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +61,22 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
+    inline const Aws::String& GetSAMLProviderArn() const { return m_sAMLProviderArn; }
     inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
-    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
-    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
-    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
-    inline UpdateSAMLProviderRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-    inline UpdateSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-    inline UpdateSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    template<typename SAMLProviderArnT = Aws::String>
+    void SetSAMLProviderArn(SAMLProviderArnT&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::forward<SAMLProviderArnT>(value); }
+    template<typename SAMLProviderArnT = Aws::String>
+    UpdateSAMLProviderRequest& WithSAMLProviderArn(SAMLProviderArnT&& value) { SetSAMLProviderArn(std::forward<SAMLProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the encryption setting for the SAML provider.</p>
      */
-    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
+    inline AssertionEncryptionModeType GetAssertionEncryptionMode() const { return m_assertionEncryptionMode; }
     inline bool AssertionEncryptionModeHasBeenSet() const { return m_assertionEncryptionModeHasBeenSet; }
-    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
-    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = std::move(value); }
-    inline UpdateSAMLProviderRequest& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
-    inline UpdateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
+    inline UpdateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType value) { SetAssertionEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -91,28 +85,24 @@ namespace Model
      * private key must be a .pem file that uses AES-GCM or AES-CBC encryption
      * algorithm to decrypt SAML assertions.</p>
      */
-    inline const Aws::String& GetAddPrivateKey() const{ return m_addPrivateKey; }
+    inline const Aws::String& GetAddPrivateKey() const { return m_addPrivateKey; }
     inline bool AddPrivateKeyHasBeenSet() const { return m_addPrivateKeyHasBeenSet; }
-    inline void SetAddPrivateKey(const Aws::String& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = value; }
-    inline void SetAddPrivateKey(Aws::String&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::move(value); }
-    inline void SetAddPrivateKey(const char* value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey.assign(value); }
-    inline UpdateSAMLProviderRequest& WithAddPrivateKey(const Aws::String& value) { SetAddPrivateKey(value); return *this;}
-    inline UpdateSAMLProviderRequest& WithAddPrivateKey(Aws::String&& value) { SetAddPrivateKey(std::move(value)); return *this;}
-    inline UpdateSAMLProviderRequest& WithAddPrivateKey(const char* value) { SetAddPrivateKey(value); return *this;}
+    template<typename AddPrivateKeyT = Aws::String>
+    void SetAddPrivateKey(AddPrivateKeyT&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::forward<AddPrivateKeyT>(value); }
+    template<typename AddPrivateKeyT = Aws::String>
+    UpdateSAMLProviderRequest& WithAddPrivateKey(AddPrivateKeyT&& value) { SetAddPrivateKey(std::forward<AddPrivateKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Key ID of the private key to remove.</p>
      */
-    inline const Aws::String& GetRemovePrivateKey() const{ return m_removePrivateKey; }
+    inline const Aws::String& GetRemovePrivateKey() const { return m_removePrivateKey; }
     inline bool RemovePrivateKeyHasBeenSet() const { return m_removePrivateKeyHasBeenSet; }
-    inline void SetRemovePrivateKey(const Aws::String& value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey = value; }
-    inline void SetRemovePrivateKey(Aws::String&& value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey = std::move(value); }
-    inline void SetRemovePrivateKey(const char* value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey.assign(value); }
-    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(const Aws::String& value) { SetRemovePrivateKey(value); return *this;}
-    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(Aws::String&& value) { SetRemovePrivateKey(std::move(value)); return *this;}
-    inline UpdateSAMLProviderRequest& WithRemovePrivateKey(const char* value) { SetRemovePrivateKey(value); return *this;}
+    template<typename RemovePrivateKeyT = Aws::String>
+    void SetRemovePrivateKey(RemovePrivateKeyT&& value) { m_removePrivateKeyHasBeenSet = true; m_removePrivateKey = std::forward<RemovePrivateKeyT>(value); }
+    template<typename RemovePrivateKeyT = Aws::String>
+    UpdateSAMLProviderRequest& WithRemovePrivateKey(RemovePrivateKeyT&& value) { SetRemovePrivateKey(std::forward<RemovePrivateKeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -122,7 +112,7 @@ namespace Model
     Aws::String m_sAMLProviderArn;
     bool m_sAMLProviderArnHasBeenSet = false;
 
-    AssertionEncryptionModeType m_assertionEncryptionMode;
+    AssertionEncryptionModeType m_assertionEncryptionMode{AssertionEncryptionModeType::NOT_SET};
     bool m_assertionEncryptionModeHasBeenSet = false;
 
     Aws::String m_addPrivateKey;

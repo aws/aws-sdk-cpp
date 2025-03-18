@@ -33,7 +33,7 @@ namespace Model
   class Isoline
   {
   public:
-    AWS_GEOROUTES_API Isoline();
+    AWS_GEOROUTES_API Isoline() = default;
     AWS_GEOROUTES_API Isoline(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Isoline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,21 @@ namespace Model
      * by ferry links. These components are returned as separate polygons while the
      * ferry links are returned as connections.</p>
      */
-    inline const Aws::Vector<IsolineConnection>& GetConnections() const{ return m_connections; }
+    inline const Aws::Vector<IsolineConnection>& GetConnections() const { return m_connections; }
     inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
-    inline void SetConnections(const Aws::Vector<IsolineConnection>& value) { m_connectionsHasBeenSet = true; m_connections = value; }
-    inline void SetConnections(Aws::Vector<IsolineConnection>&& value) { m_connectionsHasBeenSet = true; m_connections = std::move(value); }
-    inline Isoline& WithConnections(const Aws::Vector<IsolineConnection>& value) { SetConnections(value); return *this;}
-    inline Isoline& WithConnections(Aws::Vector<IsolineConnection>&& value) { SetConnections(std::move(value)); return *this;}
-    inline Isoline& AddConnections(const IsolineConnection& value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
-    inline Isoline& AddConnections(IsolineConnection&& value) { m_connectionsHasBeenSet = true; m_connections.push_back(std::move(value)); return *this; }
+    template<typename ConnectionsT = Aws::Vector<IsolineConnection>>
+    void SetConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections = std::forward<ConnectionsT>(value); }
+    template<typename ConnectionsT = Aws::Vector<IsolineConnection>>
+    Isoline& WithConnections(ConnectionsT&& value) { SetConnections(std::forward<ConnectionsT>(value)); return *this;}
+    template<typename ConnectionsT = IsolineConnection>
+    Isoline& AddConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections.emplace_back(std::forward<ConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Distance threshold corresponding to the calculated Isoline.</p>
      */
-    inline long long GetDistanceThreshold() const{ return m_distanceThreshold; }
+    inline long long GetDistanceThreshold() const { return m_distanceThreshold; }
     inline bool DistanceThresholdHasBeenSet() const { return m_distanceThresholdHasBeenSet; }
     inline void SetDistanceThreshold(long long value) { m_distanceThresholdHasBeenSet = true; m_distanceThreshold = value; }
     inline Isoline& WithDistanceThreshold(long long value) { SetDistanceThreshold(value); return *this;}
@@ -69,21 +69,21 @@ namespace Model
     /**
      * <p>Geometries for the Calculated isolines.</p>
      */
-    inline const Aws::Vector<IsolineShapeGeometry>& GetGeometries() const{ return m_geometries; }
+    inline const Aws::Vector<IsolineShapeGeometry>& GetGeometries() const { return m_geometries; }
     inline bool GeometriesHasBeenSet() const { return m_geometriesHasBeenSet; }
-    inline void SetGeometries(const Aws::Vector<IsolineShapeGeometry>& value) { m_geometriesHasBeenSet = true; m_geometries = value; }
-    inline void SetGeometries(Aws::Vector<IsolineShapeGeometry>&& value) { m_geometriesHasBeenSet = true; m_geometries = std::move(value); }
-    inline Isoline& WithGeometries(const Aws::Vector<IsolineShapeGeometry>& value) { SetGeometries(value); return *this;}
-    inline Isoline& WithGeometries(Aws::Vector<IsolineShapeGeometry>&& value) { SetGeometries(std::move(value)); return *this;}
-    inline Isoline& AddGeometries(const IsolineShapeGeometry& value) { m_geometriesHasBeenSet = true; m_geometries.push_back(value); return *this; }
-    inline Isoline& AddGeometries(IsolineShapeGeometry&& value) { m_geometriesHasBeenSet = true; m_geometries.push_back(std::move(value)); return *this; }
+    template<typename GeometriesT = Aws::Vector<IsolineShapeGeometry>>
+    void SetGeometries(GeometriesT&& value) { m_geometriesHasBeenSet = true; m_geometries = std::forward<GeometriesT>(value); }
+    template<typename GeometriesT = Aws::Vector<IsolineShapeGeometry>>
+    Isoline& WithGeometries(GeometriesT&& value) { SetGeometries(std::forward<GeometriesT>(value)); return *this;}
+    template<typename GeometriesT = IsolineShapeGeometry>
+    Isoline& AddGeometries(GeometriesT&& value) { m_geometriesHasBeenSet = true; m_geometries.emplace_back(std::forward<GeometriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Time threshold corresponding to the calculated isoline.</p>
      */
-    inline long long GetTimeThreshold() const{ return m_timeThreshold; }
+    inline long long GetTimeThreshold() const { return m_timeThreshold; }
     inline bool TimeThresholdHasBeenSet() const { return m_timeThresholdHasBeenSet; }
     inline void SetTimeThreshold(long long value) { m_timeThresholdHasBeenSet = true; m_timeThreshold = value; }
     inline Isoline& WithTimeThreshold(long long value) { SetTimeThreshold(value); return *this;}
@@ -93,13 +93,13 @@ namespace Model
     Aws::Vector<IsolineConnection> m_connections;
     bool m_connectionsHasBeenSet = false;
 
-    long long m_distanceThreshold;
+    long long m_distanceThreshold{0};
     bool m_distanceThresholdHasBeenSet = false;
 
     Aws::Vector<IsolineShapeGeometry> m_geometries;
     bool m_geometriesHasBeenSet = false;
 
-    long long m_timeThreshold;
+    long long m_timeThreshold{0};
     bool m_timeThresholdHasBeenSet = false;
   };
 

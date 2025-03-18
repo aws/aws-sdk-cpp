@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InferenceReceiverMember::InferenceReceiverMember() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 InferenceReceiverMember::InferenceReceiverMember(JsonView jsonValue)
-  : InferenceReceiverMember()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceReceiverMember& InferenceReceiverMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

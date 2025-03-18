@@ -12,13 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportPlaybackKeyPairRequest::ImportPlaybackKeyPairRequest() : 
-    m_nameHasBeenSet(false),
-    m_publicKeyMaterialHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportPlaybackKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

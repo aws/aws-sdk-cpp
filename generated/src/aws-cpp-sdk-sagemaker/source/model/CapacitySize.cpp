@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CapacitySize::CapacitySize() : 
-    m_type(CapacitySizeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 CapacitySize::CapacitySize(JsonView jsonValue)
-  : CapacitySize()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CapacitySize& CapacitySize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CapacitySizeTypeMapper::GetCapacitySizeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInteger("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

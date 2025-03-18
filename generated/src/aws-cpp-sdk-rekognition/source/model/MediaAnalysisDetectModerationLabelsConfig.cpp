@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig() : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_projectVersionHasBeenSet(false)
-{
-}
-
 MediaAnalysisDetectModerationLabelsConfig::MediaAnalysisDetectModerationLabelsConfig(JsonView jsonValue)
-  : MediaAnalysisDetectModerationLabelsConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MediaAnalysisDetectModerationLabelsConfig& MediaAnalysisDetectModerationLabelsCo
   if(jsonValue.ValueExists("MinConfidence"))
   {
     m_minConfidence = jsonValue.GetDouble("MinConfidence");
-
     m_minConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectVersion"))
   {
     m_projectVersion = jsonValue.GetString("ProjectVersion");
-
     m_projectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

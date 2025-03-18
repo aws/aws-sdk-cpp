@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDomainConfigurationRequest::DeleteDomainConfigurationRequest() : 
-    m_domainConfigurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class EndpointDescription
   {
   public:
-    AWS_GLOBALACCELERATOR_API EndpointDescription();
+    AWS_GLOBALACCELERATOR_API EndpointDescription() = default;
     AWS_GLOBALACCELERATOR_API EndpointDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API EndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * </p> <p>An Application Load Balancer can be either internal or
      * internet-facing.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline EndpointDescription& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline EndpointDescription& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline EndpointDescription& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    EndpointDescription& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * weights</a> in the <i>Global Accelerator Developer Guide</i>. </p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline EndpointDescription& WithWeight(int value) { SetWeight(value); return *this;}
@@ -79,26 +77,22 @@ namespace Model
     /**
      * <p>The health status of the endpoint.</p>
      */
-    inline const HealthState& GetHealthState() const{ return m_healthState; }
+    inline HealthState GetHealthState() const { return m_healthState; }
     inline bool HealthStateHasBeenSet() const { return m_healthStateHasBeenSet; }
-    inline void SetHealthState(const HealthState& value) { m_healthStateHasBeenSet = true; m_healthState = value; }
-    inline void SetHealthState(HealthState&& value) { m_healthStateHasBeenSet = true; m_healthState = std::move(value); }
-    inline EndpointDescription& WithHealthState(const HealthState& value) { SetHealthState(value); return *this;}
-    inline EndpointDescription& WithHealthState(HealthState&& value) { SetHealthState(std::move(value)); return *this;}
+    inline void SetHealthState(HealthState value) { m_healthStateHasBeenSet = true; m_healthState = value; }
+    inline EndpointDescription& WithHealthState(HealthState value) { SetHealthState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a null result.</p>
      */
-    inline const Aws::String& GetHealthReason() const{ return m_healthReason; }
+    inline const Aws::String& GetHealthReason() const { return m_healthReason; }
     inline bool HealthReasonHasBeenSet() const { return m_healthReasonHasBeenSet; }
-    inline void SetHealthReason(const Aws::String& value) { m_healthReasonHasBeenSet = true; m_healthReason = value; }
-    inline void SetHealthReason(Aws::String&& value) { m_healthReasonHasBeenSet = true; m_healthReason = std::move(value); }
-    inline void SetHealthReason(const char* value) { m_healthReasonHasBeenSet = true; m_healthReason.assign(value); }
-    inline EndpointDescription& WithHealthReason(const Aws::String& value) { SetHealthReason(value); return *this;}
-    inline EndpointDescription& WithHealthReason(Aws::String&& value) { SetHealthReason(std::move(value)); return *this;}
-    inline EndpointDescription& WithHealthReason(const char* value) { SetHealthReason(value); return *this;}
+    template<typename HealthReasonT = Aws::String>
+    void SetHealthReason(HealthReasonT&& value) { m_healthReasonHasBeenSet = true; m_healthReason = std::forward<HealthReasonT>(value); }
+    template<typename HealthReasonT = Aws::String>
+    EndpointDescription& WithHealthReason(HealthReasonT&& value) { SetHealthReason(std::forward<HealthReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +111,7 @@ namespace Model
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
-    inline bool GetClientIPPreservationEnabled() const{ return m_clientIPPreservationEnabled; }
+    inline bool GetClientIPPreservationEnabled() const { return m_clientIPPreservationEnabled; }
     inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }
     inline void SetClientIPPreservationEnabled(bool value) { m_clientIPPreservationEnabledHasBeenSet = true; m_clientIPPreservationEnabled = value; }
     inline EndpointDescription& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}
@@ -127,16 +121,16 @@ namespace Model
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    HealthState m_healthState;
+    HealthState m_healthState{HealthState::NOT_SET};
     bool m_healthStateHasBeenSet = false;
 
     Aws::String m_healthReason;
     bool m_healthReasonHasBeenSet = false;
 
-    bool m_clientIPPreservationEnabled;
+    bool m_clientIPPreservationEnabled{false};
     bool m_clientIPPreservationEnabledHasBeenSet = false;
   };
 

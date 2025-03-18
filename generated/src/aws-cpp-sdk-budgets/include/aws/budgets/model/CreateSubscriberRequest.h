@@ -26,7 +26,7 @@ namespace Model
   class CreateSubscriberRequest : public BudgetsRequest
   {
   public:
-    AWS_BUDGETS_API CreateSubscriberRequest();
+    AWS_BUDGETS_API CreateSubscriberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget that you want
      * to create a subscriber for.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateSubscriberRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateSubscriberRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateSubscriberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateSubscriberRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,38 +57,36 @@ namespace Model
      * <p>The name of the budget that you want to subscribe to. Budget names must be
      * unique within an account.</p>
      */
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline CreateSubscriberRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline CreateSubscriberRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline CreateSubscriberRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    CreateSubscriberRequest& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The notification that you want to create a subscriber for.</p>
      */
-    inline const Notification& GetNotification() const{ return m_notification; }
+    inline const Notification& GetNotification() const { return m_notification; }
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
-    inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
-    inline CreateSubscriberRequest& WithNotification(const Notification& value) { SetNotification(value); return *this;}
-    inline CreateSubscriberRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+    template<typename NotificationT = Notification>
+    void SetNotification(NotificationT&& value) { m_notificationHasBeenSet = true; m_notification = std::forward<NotificationT>(value); }
+    template<typename NotificationT = Notification>
+    CreateSubscriberRequest& WithNotification(NotificationT&& value) { SetNotification(std::forward<NotificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscriber that you want to associate with a budget notification.</p>
      */
-    inline const Subscriber& GetSubscriber() const{ return m_subscriber; }
+    inline const Subscriber& GetSubscriber() const { return m_subscriber; }
     inline bool SubscriberHasBeenSet() const { return m_subscriberHasBeenSet; }
-    inline void SetSubscriber(const Subscriber& value) { m_subscriberHasBeenSet = true; m_subscriber = value; }
-    inline void SetSubscriber(Subscriber&& value) { m_subscriberHasBeenSet = true; m_subscriber = std::move(value); }
-    inline CreateSubscriberRequest& WithSubscriber(const Subscriber& value) { SetSubscriber(value); return *this;}
-    inline CreateSubscriberRequest& WithSubscriber(Subscriber&& value) { SetSubscriber(std::move(value)); return *this;}
+    template<typename SubscriberT = Subscriber>
+    void SetSubscriber(SubscriberT&& value) { m_subscriberHasBeenSet = true; m_subscriber = std::forward<SubscriberT>(value); }
+    template<typename SubscriberT = Subscriber>
+    CreateSubscriberRequest& WithSubscriber(SubscriberT&& value) { SetSubscriber(std::forward<SubscriberT>(value)); return *this;}
     ///@}
   private:
 

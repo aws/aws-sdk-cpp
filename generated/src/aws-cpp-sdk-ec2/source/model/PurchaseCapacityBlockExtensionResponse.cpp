@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseCapacityBlockExtensionResponse::PurchaseCapacityBlockExtensionResponse()
-{
-}
-
 PurchaseCapacityBlockExtensionResponse::PurchaseCapacityBlockExtensionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ PurchaseCapacityBlockExtensionResponse& PurchaseCapacityBlockExtensionResponse::
     if(!capacityBlockExtensionsNode.IsNull())
     {
       XmlNode capacityBlockExtensionsMember = capacityBlockExtensionsNode.FirstChild("item");
+      m_capacityBlockExtensionsHasBeenSet = !capacityBlockExtensionsMember.IsNull();
       while(!capacityBlockExtensionsMember.IsNull())
       {
         m_capacityBlockExtensions.push_back(capacityBlockExtensionsMember);
         capacityBlockExtensionsMember = capacityBlockExtensionsMember.NextNode("item");
       }
 
+      m_capacityBlockExtensionsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ PurchaseCapacityBlockExtensionResponse& PurchaseCapacityBlockExtensionResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseCapacityBlockExtensionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

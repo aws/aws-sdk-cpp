@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixDestination::RouteMatrixDestination() : 
-    m_optionsHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 RouteMatrixDestination::RouteMatrixDestination(JsonView jsonValue)
-  : RouteMatrixDestination()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteMatrixDestination& RouteMatrixDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -48,7 +39,6 @@ RouteMatrixDestination& RouteMatrixDestination::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

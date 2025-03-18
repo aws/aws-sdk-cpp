@@ -31,7 +31,7 @@ namespace Model
   class MappingEntry
   {
   public:
-    AWS_GLUE_API MappingEntry();
+    AWS_GLUE_API MappingEntry() = default;
     AWS_GLUE_API MappingEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API MappingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,84 +41,72 @@ namespace Model
     /**
      * <p>The name of the source table.</p>
      */
-    inline const Aws::String& GetSourceTable() const{ return m_sourceTable; }
+    inline const Aws::String& GetSourceTable() const { return m_sourceTable; }
     inline bool SourceTableHasBeenSet() const { return m_sourceTableHasBeenSet; }
-    inline void SetSourceTable(const Aws::String& value) { m_sourceTableHasBeenSet = true; m_sourceTable = value; }
-    inline void SetSourceTable(Aws::String&& value) { m_sourceTableHasBeenSet = true; m_sourceTable = std::move(value); }
-    inline void SetSourceTable(const char* value) { m_sourceTableHasBeenSet = true; m_sourceTable.assign(value); }
-    inline MappingEntry& WithSourceTable(const Aws::String& value) { SetSourceTable(value); return *this;}
-    inline MappingEntry& WithSourceTable(Aws::String&& value) { SetSourceTable(std::move(value)); return *this;}
-    inline MappingEntry& WithSourceTable(const char* value) { SetSourceTable(value); return *this;}
+    template<typename SourceTableT = Aws::String>
+    void SetSourceTable(SourceTableT&& value) { m_sourceTableHasBeenSet = true; m_sourceTable = std::forward<SourceTableT>(value); }
+    template<typename SourceTableT = Aws::String>
+    MappingEntry& WithSourceTable(SourceTableT&& value) { SetSourceTable(std::forward<SourceTableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source path.</p>
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline MappingEntry& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline MappingEntry& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline MappingEntry& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    MappingEntry& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source type.</p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline MappingEntry& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline MappingEntry& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline MappingEntry& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    MappingEntry& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target table.</p>
      */
-    inline const Aws::String& GetTargetTable() const{ return m_targetTable; }
+    inline const Aws::String& GetTargetTable() const { return m_targetTable; }
     inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
-    inline void SetTargetTable(const Aws::String& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
-    inline void SetTargetTable(Aws::String&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
-    inline void SetTargetTable(const char* value) { m_targetTableHasBeenSet = true; m_targetTable.assign(value); }
-    inline MappingEntry& WithTargetTable(const Aws::String& value) { SetTargetTable(value); return *this;}
-    inline MappingEntry& WithTargetTable(Aws::String&& value) { SetTargetTable(std::move(value)); return *this;}
-    inline MappingEntry& WithTargetTable(const char* value) { SetTargetTable(value); return *this;}
+    template<typename TargetTableT = Aws::String>
+    void SetTargetTable(TargetTableT&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::forward<TargetTableT>(value); }
+    template<typename TargetTableT = Aws::String>
+    MappingEntry& WithTargetTable(TargetTableT&& value) { SetTargetTable(std::forward<TargetTableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target path.</p>
      */
-    inline const Aws::String& GetTargetPath() const{ return m_targetPath; }
+    inline const Aws::String& GetTargetPath() const { return m_targetPath; }
     inline bool TargetPathHasBeenSet() const { return m_targetPathHasBeenSet; }
-    inline void SetTargetPath(const Aws::String& value) { m_targetPathHasBeenSet = true; m_targetPath = value; }
-    inline void SetTargetPath(Aws::String&& value) { m_targetPathHasBeenSet = true; m_targetPath = std::move(value); }
-    inline void SetTargetPath(const char* value) { m_targetPathHasBeenSet = true; m_targetPath.assign(value); }
-    inline MappingEntry& WithTargetPath(const Aws::String& value) { SetTargetPath(value); return *this;}
-    inline MappingEntry& WithTargetPath(Aws::String&& value) { SetTargetPath(std::move(value)); return *this;}
-    inline MappingEntry& WithTargetPath(const char* value) { SetTargetPath(value); return *this;}
+    template<typename TargetPathT = Aws::String>
+    void SetTargetPath(TargetPathT&& value) { m_targetPathHasBeenSet = true; m_targetPath = std::forward<TargetPathT>(value); }
+    template<typename TargetPathT = Aws::String>
+    MappingEntry& WithTargetPath(TargetPathT&& value) { SetTargetPath(std::forward<TargetPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target type.</p>
      */
-    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+    inline const Aws::String& GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
-    inline MappingEntry& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
-    inline MappingEntry& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
-    inline MappingEntry& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+    template<typename TargetTypeT = Aws::String>
+    void SetTargetType(TargetTypeT&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::forward<TargetTypeT>(value); }
+    template<typename TargetTypeT = Aws::String>
+    MappingEntry& WithTargetType(TargetTypeT&& value) { SetTargetType(std::forward<TargetTypeT>(value)); return *this;}
     ///@}
   private:
 

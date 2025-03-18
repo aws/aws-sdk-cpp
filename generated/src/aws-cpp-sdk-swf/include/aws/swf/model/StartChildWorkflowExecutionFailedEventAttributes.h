@@ -34,7 +34,7 @@ namespace Model
   class StartChildWorkflowExecutionFailedEventAttributes
   {
   public:
-    AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes() = default;
     AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The workflow type provided in the <code>StartChildWorkflowExecution</code>
      * <a>Decision</a> that failed.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline const WorkflowType& GetWorkflowType() const { return m_workflowType; }
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    template<typename WorkflowTypeT = WorkflowType>
+    void SetWorkflowType(WorkflowTypeT&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::forward<WorkflowTypeT>(value); }
+    template<typename WorkflowTypeT = WorkflowType>
+    StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(WorkflowTypeT&& value) { SetWorkflowType(std::forward<WorkflowTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +63,22 @@ namespace Model
      * Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF
      * Developer Guide</i>.</p> 
      */
-    inline const StartChildWorkflowExecutionFailedCause& GetCause() const{ return m_cause; }
+    inline StartChildWorkflowExecutionFailedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const StartChildWorkflowExecutionFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(StartChildWorkflowExecutionFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithCause(const StartChildWorkflowExecutionFailedCause& value) { SetCause(value); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithCause(StartChildWorkflowExecutionFailedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(StartChildWorkflowExecutionFailedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline StartChildWorkflowExecutionFailedEventAttributes& WithCause(StartChildWorkflowExecutionFailedCause value) { SetCause(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>workflowId</code> of the child workflow execution.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    StartChildWorkflowExecutionFailedEventAttributes& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +93,7 @@ namespace Model
      * set to <code>0</code> because the
      * <code>StartChildWorkflowExecutionInitiated</code> event doesn't exist.</p>
      */
-    inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
+    inline long long GetInitiatedEventId() const { return m_initiatedEventId; }
     inline bool InitiatedEventIdHasBeenSet() const { return m_initiatedEventIdHasBeenSet; }
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
     inline StartChildWorkflowExecutionFailedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
@@ -110,7 +106,7 @@ namespace Model
      * <a>Decision</a> to request this child workflow execution. This information can
      * be useful for diagnosing problems by tracing back the chain of events.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline StartChildWorkflowExecutionFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -121,30 +117,28 @@ namespace Model
      * <p>The data attached to the event that the decider can use in subsequent
      * workflow tasks. This data isn't sent to the child workflow execution.</p>
      */
-    inline const Aws::String& GetControl() const{ return m_control; }
+    inline const Aws::String& GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-    inline StartChildWorkflowExecutionFailedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    template<typename ControlT = Aws::String>
+    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
+    template<typename ControlT = Aws::String>
+    StartChildWorkflowExecutionFailedEventAttributes& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
     ///@}
   private:
 
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet = false;
 
-    StartChildWorkflowExecutionFailedCause m_cause;
+    StartChildWorkflowExecutionFailedCause m_cause{StartChildWorkflowExecutionFailedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
 
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet = false;
 
-    long long m_initiatedEventId;
+    long long m_initiatedEventId{0};
     bool m_initiatedEventIdHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;

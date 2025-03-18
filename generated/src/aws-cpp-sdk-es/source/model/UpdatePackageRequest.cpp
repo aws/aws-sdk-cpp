@@ -12,14 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePackageRequest::UpdatePackageRequest() : 
-    m_packageIDHasBeenSet(false),
-    m_packageSourceHasBeenSet(false),
-    m_packageDescriptionHasBeenSet(false),
-    m_commitMessageHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePackageRequest::SerializePayload() const
 {
   JsonValue payload;

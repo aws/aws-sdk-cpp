@@ -23,7 +23,7 @@ namespace Model
   class UpdateChannelRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API UpdateChannelRequest();
+    AWS_IOTANALYTICS_API UpdateChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the channel to be updated.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline UpdateChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline UpdateChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    UpdateChannelRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * specified, the default is <code>serviceManagedS3</code>. You can't change this
      * storage option after the channel is created.</p>
      */
-    inline const ChannelStorage& GetChannelStorage() const{ return m_channelStorage; }
+    inline const ChannelStorage& GetChannelStorage() const { return m_channelStorage; }
     inline bool ChannelStorageHasBeenSet() const { return m_channelStorageHasBeenSet; }
-    inline void SetChannelStorage(const ChannelStorage& value) { m_channelStorageHasBeenSet = true; m_channelStorage = value; }
-    inline void SetChannelStorage(ChannelStorage&& value) { m_channelStorageHasBeenSet = true; m_channelStorage = std::move(value); }
-    inline UpdateChannelRequest& WithChannelStorage(const ChannelStorage& value) { SetChannelStorage(value); return *this;}
-    inline UpdateChannelRequest& WithChannelStorage(ChannelStorage&& value) { SetChannelStorage(std::move(value)); return *this;}
+    template<typename ChannelStorageT = ChannelStorage>
+    void SetChannelStorage(ChannelStorageT&& value) { m_channelStorageHasBeenSet = true; m_channelStorage = std::forward<ChannelStorageT>(value); }
+    template<typename ChannelStorageT = ChannelStorage>
+    UpdateChannelRequest& WithChannelStorage(ChannelStorageT&& value) { SetChannelStorage(std::forward<ChannelStorageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>How long, in days, message data is kept for the channel. The retention period
      * can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
      */
-    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline const RetentionPeriod& GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline UpdateChannelRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline UpdateChannelRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    template<typename RetentionPeriodT = RetentionPeriod>
+    void SetRetentionPeriod(RetentionPeriodT&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::forward<RetentionPeriodT>(value); }
+    template<typename RetentionPeriodT = RetentionPeriod>
+    UpdateChannelRequest& WithRetentionPeriod(RetentionPeriodT&& value) { SetRetentionPeriod(std::forward<RetentionPeriodT>(value)); return *this;}
     ///@}
   private:
 

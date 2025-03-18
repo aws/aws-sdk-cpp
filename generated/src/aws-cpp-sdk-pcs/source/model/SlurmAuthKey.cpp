@@ -18,14 +18,7 @@ namespace PCS
 namespace Model
 {
 
-SlurmAuthKey::SlurmAuthKey() : 
-    m_secretArnHasBeenSet(false),
-    m_secretVersionHasBeenSet(false)
-{
-}
-
 SlurmAuthKey::SlurmAuthKey(JsonView jsonValue)
-  : SlurmAuthKey()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SlurmAuthKey& SlurmAuthKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretVersion"))
   {
     m_secretVersion = jsonValue.GetString("secretVersion");
-
     m_secretVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

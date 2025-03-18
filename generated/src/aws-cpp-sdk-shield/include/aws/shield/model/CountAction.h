@@ -32,7 +32,7 @@ namespace Model
   class CountAction
   {
   public:
-    AWS_SHIELD_API CountAction();
+    AWS_SHIELD_API CountAction() = default;
     AWS_SHIELD_API CountAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API CountAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;

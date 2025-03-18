@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyDBClusterSnapshotResult::CopyDBClusterSnapshotResult()
-{
-}
-
 CopyDBClusterSnapshotResult::CopyDBClusterSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CopyDBClusterSnapshotResult& CopyDBClusterSnapshotResult::operator =(const Aws::
     if(!dBClusterSnapshotNode.IsNull())
     {
       m_dBClusterSnapshot = dBClusterSnapshotNode;
+      m_dBClusterSnapshotHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::CopyDBClusterSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

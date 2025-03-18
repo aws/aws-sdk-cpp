@@ -32,7 +32,7 @@ namespace Model
   class DICOMStudyDateAndTime
   {
   public:
-    AWS_MEDICALIMAGING_API DICOMStudyDateAndTime();
+    AWS_MEDICALIMAGING_API DICOMStudyDateAndTime() = default;
     AWS_MEDICALIMAGING_API DICOMStudyDateAndTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API DICOMStudyDateAndTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
      */
-    inline const Aws::String& GetDICOMStudyDate() const{ return m_dICOMStudyDate; }
+    inline const Aws::String& GetDICOMStudyDate() const { return m_dICOMStudyDate; }
     inline bool DICOMStudyDateHasBeenSet() const { return m_dICOMStudyDateHasBeenSet; }
-    inline void SetDICOMStudyDate(const Aws::String& value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate = value; }
-    inline void SetDICOMStudyDate(Aws::String&& value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate = std::move(value); }
-    inline void SetDICOMStudyDate(const char* value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate.assign(value); }
-    inline DICOMStudyDateAndTime& WithDICOMStudyDate(const Aws::String& value) { SetDICOMStudyDate(value); return *this;}
-    inline DICOMStudyDateAndTime& WithDICOMStudyDate(Aws::String&& value) { SetDICOMStudyDate(std::move(value)); return *this;}
-    inline DICOMStudyDateAndTime& WithDICOMStudyDate(const char* value) { SetDICOMStudyDate(value); return *this;}
+    template<typename DICOMStudyDateT = Aws::String>
+    void SetDICOMStudyDate(DICOMStudyDateT&& value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate = std::forward<DICOMStudyDateT>(value); }
+    template<typename DICOMStudyDateT = Aws::String>
+    DICOMStudyDateAndTime& WithDICOMStudyDate(DICOMStudyDateT&& value) { SetDICOMStudyDate(std::forward<DICOMStudyDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
      */
-    inline const Aws::String& GetDICOMStudyTime() const{ return m_dICOMStudyTime; }
+    inline const Aws::String& GetDICOMStudyTime() const { return m_dICOMStudyTime; }
     inline bool DICOMStudyTimeHasBeenSet() const { return m_dICOMStudyTimeHasBeenSet; }
-    inline void SetDICOMStudyTime(const Aws::String& value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime = value; }
-    inline void SetDICOMStudyTime(Aws::String&& value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime = std::move(value); }
-    inline void SetDICOMStudyTime(const char* value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime.assign(value); }
-    inline DICOMStudyDateAndTime& WithDICOMStudyTime(const Aws::String& value) { SetDICOMStudyTime(value); return *this;}
-    inline DICOMStudyDateAndTime& WithDICOMStudyTime(Aws::String&& value) { SetDICOMStudyTime(std::move(value)); return *this;}
-    inline DICOMStudyDateAndTime& WithDICOMStudyTime(const char* value) { SetDICOMStudyTime(value); return *this;}
+    template<typename DICOMStudyTimeT = Aws::String>
+    void SetDICOMStudyTime(DICOMStudyTimeT&& value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime = std::forward<DICOMStudyTimeT>(value); }
+    template<typename DICOMStudyTimeT = Aws::String>
+    DICOMStudyDateAndTime& WithDICOMStudyTime(DICOMStudyTimeT&& value) { SetDICOMStudyTime(std::forward<DICOMStudyTimeT>(value)); return *this;}
     ///@}
   private:
 

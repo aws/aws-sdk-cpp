@@ -18,13 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AutoSnapshotAddOnRequest::AutoSnapshotAddOnRequest() : 
-    m_snapshotTimeOfDayHasBeenSet(false)
-{
-}
-
 AutoSnapshotAddOnRequest::AutoSnapshotAddOnRequest(JsonView jsonValue)
-  : AutoSnapshotAddOnRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoSnapshotAddOnRequest& AutoSnapshotAddOnRequest::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("snapshotTimeOfDay"))
   {
     m_snapshotTimeOfDay = jsonValue.GetString("snapshotTimeOfDay");
-
     m_snapshotTimeOfDayHasBeenSet = true;
   }
-
   return *this;
 }
 

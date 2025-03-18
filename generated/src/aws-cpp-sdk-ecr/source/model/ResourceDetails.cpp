@@ -18,13 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_awsEcrContainerImageHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsEcrContainerImage"))
   {
     m_awsEcrContainerImage = jsonValue.GetObject("awsEcrContainerImage");
-
     m_awsEcrContainerImageHasBeenSet = true;
   }
-
   return *this;
 }
 

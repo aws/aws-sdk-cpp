@@ -12,16 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProvisionedProductPlansRequest::ListProvisionedProductPlansRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_provisionProductIdHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_accessLevelFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListProvisionedProductPlansRequest::SerializePayload() const
 {
   JsonValue payload;

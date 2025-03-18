@@ -21,7 +21,7 @@ namespace Model
   class RegisterComputeNodeGroupInstanceRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API RegisterComputeNodeGroupInstanceRequest();
+    AWS_PCS_API RegisterComputeNodeGroupInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The name or ID of the cluster to register the compute node group instance
      * in.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline RegisterComputeNodeGroupInstanceRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline RegisterComputeNodeGroupInstanceRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline RegisterComputeNodeGroupInstanceRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    RegisterComputeNodeGroupInstanceRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client-generated token to allow for retries.</p>
      */
-    inline const Aws::String& GetBootstrapId() const{ return m_bootstrapId; }
+    inline const Aws::String& GetBootstrapId() const { return m_bootstrapId; }
     inline bool BootstrapIdHasBeenSet() const { return m_bootstrapIdHasBeenSet; }
-    inline void SetBootstrapId(const Aws::String& value) { m_bootstrapIdHasBeenSet = true; m_bootstrapId = value; }
-    inline void SetBootstrapId(Aws::String&& value) { m_bootstrapIdHasBeenSet = true; m_bootstrapId = std::move(value); }
-    inline void SetBootstrapId(const char* value) { m_bootstrapIdHasBeenSet = true; m_bootstrapId.assign(value); }
-    inline RegisterComputeNodeGroupInstanceRequest& WithBootstrapId(const Aws::String& value) { SetBootstrapId(value); return *this;}
-    inline RegisterComputeNodeGroupInstanceRequest& WithBootstrapId(Aws::String&& value) { SetBootstrapId(std::move(value)); return *this;}
-    inline RegisterComputeNodeGroupInstanceRequest& WithBootstrapId(const char* value) { SetBootstrapId(value); return *this;}
+    template<typename BootstrapIdT = Aws::String>
+    void SetBootstrapId(BootstrapIdT&& value) { m_bootstrapIdHasBeenSet = true; m_bootstrapId = std::forward<BootstrapIdT>(value); }
+    template<typename BootstrapIdT = Aws::String>
+    RegisterComputeNodeGroupInstanceRequest& WithBootstrapId(BootstrapIdT&& value) { SetBootstrapId(std::forward<BootstrapIdT>(value)); return *this;}
     ///@}
   private:
 

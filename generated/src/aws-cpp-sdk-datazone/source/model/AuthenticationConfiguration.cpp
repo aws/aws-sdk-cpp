@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AuthenticationConfiguration::AuthenticationConfiguration() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("authenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
-
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

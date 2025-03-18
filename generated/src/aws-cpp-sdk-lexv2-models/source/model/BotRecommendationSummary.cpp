@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotRecommendationSummary::BotRecommendationSummary() : 
-    m_botRecommendationStatus(BotRecommendationStatus::NOT_SET),
-    m_botRecommendationStatusHasBeenSet(false),
-    m_botRecommendationIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 BotRecommendationSummary::BotRecommendationSummary(JsonView jsonValue)
-  : BotRecommendationSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BotRecommendationSummary& BotRecommendationSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("botRecommendationStatus"))
   {
     m_botRecommendationStatus = BotRecommendationStatusMapper::GetBotRecommendationStatusForName(jsonValue.GetString("botRecommendationStatus"));
-
     m_botRecommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botRecommendationId"))
   {
     m_botRecommendationId = jsonValue.GetString("botRecommendationId");
-
     m_botRecommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

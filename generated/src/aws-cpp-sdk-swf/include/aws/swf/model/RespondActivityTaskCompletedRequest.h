@@ -21,7 +21,7 @@ namespace Model
   class RespondActivityTaskCompletedRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RespondActivityTaskCompletedRequest();
+    AWS_SWF_API RespondActivityTaskCompletedRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results.</p> 
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline RespondActivityTaskCompletedRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline RespondActivityTaskCompletedRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline RespondActivityTaskCompletedRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    RespondActivityTaskCompletedRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The result of the activity task. It is a free form string that is
      * implementation specific.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
+    inline const Aws::String& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-    inline RespondActivityTaskCompletedRequest& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline RespondActivityTaskCompletedRequest& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline RespondActivityTaskCompletedRequest& WithResult(const char* value) { SetResult(value); return *this;}
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    RespondActivityTaskCompletedRequest& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
   private:
 

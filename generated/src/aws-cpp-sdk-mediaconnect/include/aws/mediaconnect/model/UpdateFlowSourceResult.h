@@ -28,7 +28,7 @@ namespace Model
   class UpdateFlowSourceResult
   {
   public:
-    AWS_MEDIACONNECT_API UpdateFlowSourceResult();
+    AWS_MEDIACONNECT_API UpdateFlowSourceResult() = default;
     AWS_MEDIACONNECT_API UpdateFlowSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API UpdateFlowSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * The ARN of the flow that you want to update.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline UpdateFlowSourceResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline UpdateFlowSourceResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline UpdateFlowSourceResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    UpdateFlowSourceResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The settings for the source of the flow.
      */
-    inline const Source& GetSource() const{ return m_source; }
-    inline void SetSource(const Source& value) { m_source = value; }
-    inline void SetSource(Source&& value) { m_source = std::move(value); }
-    inline UpdateFlowSourceResult& WithSource(const Source& value) { SetSource(value); return *this;}
-    inline UpdateFlowSourceResult& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    inline const Source& GetSource() const { return m_source; }
+    template<typename SourceT = Source>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Source>
+    UpdateFlowSourceResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFlowSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFlowSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFlowSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFlowSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Source m_source;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

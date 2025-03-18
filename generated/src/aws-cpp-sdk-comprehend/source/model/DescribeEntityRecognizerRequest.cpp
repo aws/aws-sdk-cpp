@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEntityRecognizerRequest::DescribeEntityRecognizerRequest() : 
-    m_entityRecognizerArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEntityRecognizerRequest::SerializePayload() const
 {
   JsonValue payload;

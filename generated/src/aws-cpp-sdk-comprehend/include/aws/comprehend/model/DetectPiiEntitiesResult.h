@@ -29,7 +29,7 @@ namespace Model
   class DetectPiiEntitiesResult
   {
   public:
-    AWS_COMPREHEND_API DetectPiiEntitiesResult();
+    AWS_COMPREHEND_API DetectPiiEntitiesResult() = default;
     AWS_COMPREHEND_API DetectPiiEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DetectPiiEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * the response provides the entity type, where the entity text begins and ends,
      * and the level of confidence that Amazon Comprehend has in the detection.</p>
      */
-    inline const Aws::Vector<PiiEntity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<PiiEntity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<PiiEntity>&& value) { m_entities = std::move(value); }
-    inline DetectPiiEntitiesResult& WithEntities(const Aws::Vector<PiiEntity>& value) { SetEntities(value); return *this;}
-    inline DetectPiiEntitiesResult& WithEntities(Aws::Vector<PiiEntity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline DetectPiiEntitiesResult& AddEntities(const PiiEntity& value) { m_entities.push_back(value); return *this; }
-    inline DetectPiiEntitiesResult& AddEntities(PiiEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PiiEntity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<PiiEntity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<PiiEntity>>
+    DetectPiiEntitiesResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = PiiEntity>
+    DetectPiiEntitiesResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectPiiEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectPiiEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectPiiEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectPiiEntitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PiiEntity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

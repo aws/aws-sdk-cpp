@@ -31,7 +31,7 @@ namespace Model
   class RoutingCriteriaInputStepExpiry
   {
   public:
-    AWS_CONNECT_API RoutingCriteriaInputStepExpiry();
+    AWS_CONNECT_API RoutingCriteriaInputStepExpiry() = default;
     AWS_CONNECT_API RoutingCriteriaInputStepExpiry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingCriteriaInputStepExpiry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p>The number of seconds that the contact will be routed only to agents matching
      * this routing&#x2028; step, if expiry was configured for this routing step.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline RoutingCriteriaInputStepExpiry& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

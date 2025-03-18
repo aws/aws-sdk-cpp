@@ -34,7 +34,7 @@ namespace Model
   class ColorCorrection
   {
   public:
-    AWS_MEDIALIVE_API ColorCorrection();
+    AWS_MEDIALIVE_API ColorCorrection() = default;
     AWS_MEDIALIVE_API ColorCorrection(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ColorCorrection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,39 @@ namespace Model
     /**
      * The color space of the input.
      */
-    inline const ColorSpace& GetInputColorSpace() const{ return m_inputColorSpace; }
+    inline ColorSpace GetInputColorSpace() const { return m_inputColorSpace; }
     inline bool InputColorSpaceHasBeenSet() const { return m_inputColorSpaceHasBeenSet; }
-    inline void SetInputColorSpace(const ColorSpace& value) { m_inputColorSpaceHasBeenSet = true; m_inputColorSpace = value; }
-    inline void SetInputColorSpace(ColorSpace&& value) { m_inputColorSpaceHasBeenSet = true; m_inputColorSpace = std::move(value); }
-    inline ColorCorrection& WithInputColorSpace(const ColorSpace& value) { SetInputColorSpace(value); return *this;}
-    inline ColorCorrection& WithInputColorSpace(ColorSpace&& value) { SetInputColorSpace(std::move(value)); return *this;}
+    inline void SetInputColorSpace(ColorSpace value) { m_inputColorSpaceHasBeenSet = true; m_inputColorSpace = value; }
+    inline ColorCorrection& WithInputColorSpace(ColorSpace value) { SetInputColorSpace(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The color space of the output.
      */
-    inline const ColorSpace& GetOutputColorSpace() const{ return m_outputColorSpace; }
+    inline ColorSpace GetOutputColorSpace() const { return m_outputColorSpace; }
     inline bool OutputColorSpaceHasBeenSet() const { return m_outputColorSpaceHasBeenSet; }
-    inline void SetOutputColorSpace(const ColorSpace& value) { m_outputColorSpaceHasBeenSet = true; m_outputColorSpace = value; }
-    inline void SetOutputColorSpace(ColorSpace&& value) { m_outputColorSpaceHasBeenSet = true; m_outputColorSpace = std::move(value); }
-    inline ColorCorrection& WithOutputColorSpace(const ColorSpace& value) { SetOutputColorSpace(value); return *this;}
-    inline ColorCorrection& WithOutputColorSpace(ColorSpace&& value) { SetOutputColorSpace(std::move(value)); return *this;}
+    inline void SetOutputColorSpace(ColorSpace value) { m_outputColorSpaceHasBeenSet = true; m_outputColorSpace = value; }
+    inline ColorCorrection& WithOutputColorSpace(ColorSpace value) { SetOutputColorSpace(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':.
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline ColorCorrection& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline ColorCorrection& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline ColorCorrection& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    ColorCorrection& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 
-    ColorSpace m_inputColorSpace;
+    ColorSpace m_inputColorSpace{ColorSpace::NOT_SET};
     bool m_inputColorSpaceHasBeenSet = false;
 
-    ColorSpace m_outputColorSpace;
+    ColorSpace m_outputColorSpace{ColorSpace::NOT_SET};
     bool m_outputColorSpaceHasBeenSet = false;
 
     Aws::String m_uri;

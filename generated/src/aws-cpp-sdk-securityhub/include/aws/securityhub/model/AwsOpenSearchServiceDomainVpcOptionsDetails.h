@@ -33,7 +33,7 @@ namespace Model
   class AwsOpenSearchServiceDomainVpcOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainVpcOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainVpcOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainVpcOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainVpcOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The list of security group IDs that are associated with the VPC endpoints for
      * the domain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    AwsOpenSearchServiceDomainVpcOptionsDetails& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>A list of subnet IDs that are associated with the VPC endpoints for the
      * domain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    AwsOpenSearchServiceDomainVpcOptionsDetails& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputWhitelistRule::InputWhitelistRule() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 InputWhitelistRule::InputWhitelistRule(JsonView jsonValue)
-  : InputWhitelistRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputWhitelistRule& InputWhitelistRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cidr"))
   {
     m_cidr = jsonValue.GetString("cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   return *this;
 }
 

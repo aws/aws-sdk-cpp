@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobS3Output
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobS3Output();
+    AWS_CLEANROOMS_API ProtectedJobS3Output() = default;
     AWS_CLEANROOMS_API ProtectedJobS3Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobS3Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The S3 location for the protected job output.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ProtectedJobS3Output& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ProtectedJobS3Output& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ProtectedJobS3Output& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ProtectedJobS3Output& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ImageConfiguration::ImageConfiguration() : 
-    m_runtimeEnvironmentVariablesHasBeenSet(false),
-    m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_runtimeEnvironmentSecretsHasBeenSet(false)
-{
-}
-
 ImageConfiguration::ImageConfiguration(JsonView jsonValue)
-  : ImageConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ ImageConfiguration& ImageConfiguration::operator =(JsonView jsonValue)
     }
     m_runtimeEnvironmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartCommand"))
   {
     m_startCommand = jsonValue.GetString("StartCommand");
-
     m_startCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetString("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeEnvironmentSecrets"))
   {
     Aws::Map<Aws::String, JsonView> runtimeEnvironmentSecretsJsonMap = jsonValue.GetObject("RuntimeEnvironmentSecrets").GetAllObjects();
@@ -67,7 +53,6 @@ ImageConfiguration& ImageConfiguration::operator =(JsonView jsonValue)
     }
     m_runtimeEnvironmentSecretsHasBeenSet = true;
   }
-
   return *this;
 }
 

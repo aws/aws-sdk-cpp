@@ -35,7 +35,7 @@ namespace Model
   class CatalogHudiSource
   {
   public:
-    AWS_GLUE_API CatalogHudiSource();
+    AWS_GLUE_API CatalogHudiSource() = default;
     AWS_GLUE_API CatalogHudiSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CatalogHudiSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,75 +45,66 @@ namespace Model
     /**
      * <p>The name of the Hudi data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CatalogHudiSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CatalogHudiSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CatalogHudiSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CatalogHudiSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database to read from.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline CatalogHudiSource& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline CatalogHudiSource& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline CatalogHudiSource& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    CatalogHudiSource& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table in the database to read from.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline CatalogHudiSource& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline CatalogHudiSource& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline CatalogHudiSource& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    CatalogHudiSource& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional connection options.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalHudiOptions() const{ return m_additionalHudiOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalHudiOptions() const { return m_additionalHudiOptions; }
     inline bool AdditionalHudiOptionsHasBeenSet() const { return m_additionalHudiOptionsHasBeenSet; }
-    inline void SetAdditionalHudiOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = value; }
-    inline void SetAdditionalHudiOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = std::move(value); }
-    inline CatalogHudiSource& WithAdditionalHudiOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalHudiOptions(value); return *this;}
-    inline CatalogHudiSource& WithAdditionalHudiOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalHudiOptions(std::move(value)); return *this;}
-    inline CatalogHudiSource& AddAdditionalHudiOptions(const Aws::String& key, const Aws::String& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, value); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(Aws::String&& key, const Aws::String& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), value); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(const Aws::String& key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, std::move(value)); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(Aws::String&& key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(const char* key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, std::move(value)); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(Aws::String&& key, const char* value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), value); return *this; }
-    inline CatalogHudiSource& AddAdditionalHudiOptions(const char* key, const char* value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, value); return *this; }
+    template<typename AdditionalHudiOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalHudiOptions(AdditionalHudiOptionsT&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = std::forward<AdditionalHudiOptionsT>(value); }
+    template<typename AdditionalHudiOptionsT = Aws::Map<Aws::String, Aws::String>>
+    CatalogHudiSource& WithAdditionalHudiOptions(AdditionalHudiOptionsT&& value) { SetAdditionalHudiOptions(std::forward<AdditionalHudiOptionsT>(value)); return *this;}
+    template<typename AdditionalHudiOptionsKeyT = Aws::String, typename AdditionalHudiOptionsValueT = Aws::String>
+    CatalogHudiSource& AddAdditionalHudiOptions(AdditionalHudiOptionsKeyT&& key, AdditionalHudiOptionsValueT&& value) {
+      m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::forward<AdditionalHudiOptionsKeyT>(key), std::forward<AdditionalHudiOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data schema for the Hudi source.</p>
      */
-    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
-    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
-    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
-    inline CatalogHudiSource& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
-    inline CatalogHudiSource& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
-    inline CatalogHudiSource& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
-    inline CatalogHudiSource& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    CatalogHudiSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    CatalogHudiSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 

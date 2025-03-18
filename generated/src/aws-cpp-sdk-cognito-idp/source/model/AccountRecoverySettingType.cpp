@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AccountRecoverySettingType::AccountRecoverySettingType() : 
-    m_recoveryMechanismsHasBeenSet(false)
-{
-}
-
 AccountRecoverySettingType::AccountRecoverySettingType(JsonView jsonValue)
-  : AccountRecoverySettingType()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AccountRecoverySettingType& AccountRecoverySettingType::operator =(JsonView json
     }
     m_recoveryMechanismsHasBeenSet = true;
   }
-
   return *this;
 }
 

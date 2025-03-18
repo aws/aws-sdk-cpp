@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ApplicationPreferences::ApplicationPreferences() : 
-    m_managementPreferenceHasBeenSet(false)
-{
-}
-
 ApplicationPreferences::ApplicationPreferences(JsonView jsonValue)
-  : ApplicationPreferences()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ApplicationPreferences& ApplicationPreferences::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("managementPreference"))
   {
     m_managementPreference = jsonValue.GetObject("managementPreference");
-
     m_managementPreferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

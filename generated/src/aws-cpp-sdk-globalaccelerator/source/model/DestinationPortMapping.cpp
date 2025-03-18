@@ -18,22 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-DestinationPortMapping::DestinationPortMapping() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_acceleratorSocketAddressesHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_destinationSocketAddressHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_destinationTrafficState(CustomRoutingDestinationTrafficState::NOT_SET),
-    m_destinationTrafficStateHasBeenSet(false)
-{
-}
-
 DestinationPortMapping::DestinationPortMapping(JsonView jsonValue)
-  : DestinationPortMapping()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ DestinationPortMapping& DestinationPortMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AcceleratorArn"))
   {
     m_acceleratorArn = jsonValue.GetString("AcceleratorArn");
-
     m_acceleratorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceleratorSocketAddresses"))
   {
     Aws::Utils::Array<JsonView> acceleratorSocketAddressesJsonList = jsonValue.GetArray("AcceleratorSocketAddresses");
@@ -56,49 +39,36 @@ DestinationPortMapping& DestinationPortMapping::operator =(JsonView jsonValue)
     }
     m_acceleratorSocketAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupArn"))
   {
     m_endpointGroupArn = jsonValue.GetString("EndpointGroupArn");
-
     m_endpointGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupRegion"))
   {
     m_endpointGroupRegion = jsonValue.GetString("EndpointGroupRegion");
-
     m_endpointGroupRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationSocketAddress"))
   {
     m_destinationSocketAddress = jsonValue.GetObject("DestinationSocketAddress");
-
     m_destinationSocketAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationTrafficState"))
   {
     m_destinationTrafficState = CustomRoutingDestinationTrafficStateMapper::GetCustomRoutingDestinationTrafficStateForName(jsonValue.GetString("DestinationTrafficState"));
-
     m_destinationTrafficStateHasBeenSet = true;
   }
-
   return *this;
 }
 

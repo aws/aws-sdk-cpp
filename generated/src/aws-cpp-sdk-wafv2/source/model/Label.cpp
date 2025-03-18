@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Label::Label() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Label::Label(JsonView jsonValue)
-  : Label()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Label& Label::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

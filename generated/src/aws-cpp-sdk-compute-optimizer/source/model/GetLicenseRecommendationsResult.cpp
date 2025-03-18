@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLicenseRecommendationsResult::GetLicenseRecommendationsResult()
-{
-}
-
 GetLicenseRecommendationsResult::GetLicenseRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetLicenseRecommendationsResult& GetLicenseRecommendationsResult::operator =(con
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseRecommendations"))
   {
     Aws::Utils::Array<JsonView> licenseRecommendationsJsonList = jsonValue.GetArray("licenseRecommendations");
@@ -42,8 +37,8 @@ GetLicenseRecommendationsResult& GetLicenseRecommendationsResult::operator =(con
     {
       m_licenseRecommendations.push_back(licenseRecommendationsJsonList[licenseRecommendationsIndex].AsObject());
     }
+    m_licenseRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetLicenseRecommendationsResult& GetLicenseRecommendationsResult::operator =(con
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

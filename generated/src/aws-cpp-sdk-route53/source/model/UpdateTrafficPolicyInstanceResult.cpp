@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTrafficPolicyInstanceResult::UpdateTrafficPolicyInstanceResult()
-{
-}
-
 UpdateTrafficPolicyInstanceResult::UpdateTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ UpdateTrafficPolicyInstanceResult& UpdateTrafficPolicyInstanceResult::operator =
     if(!trafficPolicyInstanceNode.IsNull())
     {
       m_trafficPolicyInstance = trafficPolicyInstanceNode;
+      m_trafficPolicyInstanceHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ UpdateTrafficPolicyInstanceResult& UpdateTrafficPolicyInstanceResult::operator =
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

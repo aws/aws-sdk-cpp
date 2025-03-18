@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkResourceCount::NetworkResourceCount() : 
-    m_resourceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 NetworkResourceCount::NetworkResourceCount(JsonView jsonValue)
-  : NetworkResourceCount()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NetworkResourceCount& NetworkResourceCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

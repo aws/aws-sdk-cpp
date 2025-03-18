@@ -29,7 +29,7 @@ namespace Model
   class CreateNetworkRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API CreateNetworkRequest();
+    AWS_MEDIALIVE_API CreateNetworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,14 @@ namespace Model
      * NATnetworks) and for output destinations (only in Bridge networks).
      * EachIpPoolUpdateRequest specifies one CIDR block.
      */
-    inline const Aws::Vector<IpPoolCreateRequest>& GetIpPools() const{ return m_ipPools; }
+    inline const Aws::Vector<IpPoolCreateRequest>& GetIpPools() const { return m_ipPools; }
     inline bool IpPoolsHasBeenSet() const { return m_ipPoolsHasBeenSet; }
-    inline void SetIpPools(const Aws::Vector<IpPoolCreateRequest>& value) { m_ipPoolsHasBeenSet = true; m_ipPools = value; }
-    inline void SetIpPools(Aws::Vector<IpPoolCreateRequest>&& value) { m_ipPoolsHasBeenSet = true; m_ipPools = std::move(value); }
-    inline CreateNetworkRequest& WithIpPools(const Aws::Vector<IpPoolCreateRequest>& value) { SetIpPools(value); return *this;}
-    inline CreateNetworkRequest& WithIpPools(Aws::Vector<IpPoolCreateRequest>&& value) { SetIpPools(std::move(value)); return *this;}
-    inline CreateNetworkRequest& AddIpPools(const IpPoolCreateRequest& value) { m_ipPoolsHasBeenSet = true; m_ipPools.push_back(value); return *this; }
-    inline CreateNetworkRequest& AddIpPools(IpPoolCreateRequest&& value) { m_ipPoolsHasBeenSet = true; m_ipPools.push_back(std::move(value)); return *this; }
+    template<typename IpPoolsT = Aws::Vector<IpPoolCreateRequest>>
+    void SetIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools = std::forward<IpPoolsT>(value); }
+    template<typename IpPoolsT = Aws::Vector<IpPoolCreateRequest>>
+    CreateNetworkRequest& WithIpPools(IpPoolsT&& value) { SetIpPools(std::forward<IpPoolsT>(value)); return *this;}
+    template<typename IpPoolsT = IpPoolCreateRequest>
+    CreateNetworkRequest& AddIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools.emplace_back(std::forward<IpPoolsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * Specify a name that is unique in the AWS account. We recommend that you assign a
      * name that hints at the type of traffic on the network. Names are case-sensitive.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateNetworkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateNetworkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateNetworkRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * An ID that you assign to a create request. This ID ensures idempotency when
      * creating resources.
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline CreateNetworkRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNetworkRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNetworkRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,33 +89,30 @@ namespace Model
      * An array of routes that MediaLive Anywhere needs to know about in order to route
      * encoding traffic.
      */
-    inline const Aws::Vector<RouteCreateRequest>& GetRoutes() const{ return m_routes; }
+    inline const Aws::Vector<RouteCreateRequest>& GetRoutes() const { return m_routes; }
     inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
-    inline void SetRoutes(const Aws::Vector<RouteCreateRequest>& value) { m_routesHasBeenSet = true; m_routes = value; }
-    inline void SetRoutes(Aws::Vector<RouteCreateRequest>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-    inline CreateNetworkRequest& WithRoutes(const Aws::Vector<RouteCreateRequest>& value) { SetRoutes(value); return *this;}
-    inline CreateNetworkRequest& WithRoutes(Aws::Vector<RouteCreateRequest>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline CreateNetworkRequest& AddRoutes(const RouteCreateRequest& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-    inline CreateNetworkRequest& AddRoutes(RouteCreateRequest&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
+    template<typename RoutesT = Aws::Vector<RouteCreateRequest>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<RouteCreateRequest>>
+    CreateNetworkRequest& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = RouteCreateRequest>
+    CreateNetworkRequest& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A collection of key-value pairs.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNetworkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateNetworkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNetworkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNetworkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNetworkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNetworkRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateNetworkRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteDelegationByAssessmentResult
   {
   public:
-    AWS_AUDITMANAGER_API BatchDeleteDelegationByAssessmentResult();
+    AWS_AUDITMANAGER_API BatchDeleteDelegationByAssessmentResult() = default;
     AWS_AUDITMANAGER_API BatchDeleteDelegationByAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API BatchDeleteDelegationByAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API
      * returned. </p>
      */
-    inline const Aws::Vector<BatchDeleteDelegationByAssessmentError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteDelegationByAssessmentError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteDelegationByAssessmentError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteDelegationByAssessmentResult& WithErrors(const Aws::Vector<BatchDeleteDelegationByAssessmentError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteDelegationByAssessmentResult& WithErrors(Aws::Vector<BatchDeleteDelegationByAssessmentError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteDelegationByAssessmentResult& AddErrors(const BatchDeleteDelegationByAssessmentError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteDelegationByAssessmentResult& AddErrors(BatchDeleteDelegationByAssessmentError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteDelegationByAssessmentError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteDelegationByAssessmentError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteDelegationByAssessmentError>>
+    BatchDeleteDelegationByAssessmentResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteDelegationByAssessmentError>
+    BatchDeleteDelegationByAssessmentResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteDelegationByAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteDelegationByAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteDelegationByAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteDelegationByAssessmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteDelegationByAssessmentError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

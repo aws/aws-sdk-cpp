@@ -30,7 +30,7 @@ namespace Model
   class Resolution
   {
   public:
-    AWS_DEVICEFARM_API Resolution();
+    AWS_DEVICEFARM_API Resolution() = default;
     AWS_DEVICEFARM_API Resolution(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Resolution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline Resolution& WithWidth(int value) { SetWidth(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline Resolution& WithHeight(int value) { SetHeight(value); return *this;}
     ///@}
   private:
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-RoutingConfig::RoutingConfig() : 
-    m_failoverConfigHasBeenSet(false)
-{
-}
-
 RoutingConfig::RoutingConfig(JsonView jsonValue)
-  : RoutingConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RoutingConfig& RoutingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailoverConfig"))
   {
     m_failoverConfig = jsonValue.GetObject("FailoverConfig");
-
     m_failoverConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

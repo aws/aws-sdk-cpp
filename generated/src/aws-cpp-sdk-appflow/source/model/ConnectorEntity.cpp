@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ConnectorEntity::ConnectorEntity() : 
-    m_nameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_hasNestedEntities(false),
-    m_hasNestedEntitiesHasBeenSet(false)
-{
-}
-
 ConnectorEntity::ConnectorEntity(JsonView jsonValue)
-  : ConnectorEntity()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConnectorEntity& ConnectorEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("label"))
   {
     m_label = jsonValue.GetString("label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasNestedEntities"))
   {
     m_hasNestedEntities = jsonValue.GetBool("hasNestedEntities");
-
     m_hasNestedEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

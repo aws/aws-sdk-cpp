@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSegmentDefinitionRequest::DeleteSegmentDefinitionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_segmentDefinitionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSegmentDefinitionRequest::SerializePayload() const
 {
   return {};

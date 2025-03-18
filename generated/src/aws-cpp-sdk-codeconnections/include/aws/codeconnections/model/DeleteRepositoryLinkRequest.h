@@ -21,7 +21,7 @@ namespace Model
   class DeleteRepositoryLinkRequest : public CodeConnectionsRequest
   {
   public:
-    AWS_CODECONNECTIONS_API DeleteRepositoryLinkRequest();
+    AWS_CODECONNECTIONS_API DeleteRepositoryLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the repository link to be deleted.</p>
      */
-    inline const Aws::String& GetRepositoryLinkId() const{ return m_repositoryLinkId; }
+    inline const Aws::String& GetRepositoryLinkId() const { return m_repositoryLinkId; }
     inline bool RepositoryLinkIdHasBeenSet() const { return m_repositoryLinkIdHasBeenSet; }
-    inline void SetRepositoryLinkId(const Aws::String& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = value; }
-    inline void SetRepositoryLinkId(Aws::String&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::move(value); }
-    inline void SetRepositoryLinkId(const char* value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId.assign(value); }
-    inline DeleteRepositoryLinkRequest& WithRepositoryLinkId(const Aws::String& value) { SetRepositoryLinkId(value); return *this;}
-    inline DeleteRepositoryLinkRequest& WithRepositoryLinkId(Aws::String&& value) { SetRepositoryLinkId(std::move(value)); return *this;}
-    inline DeleteRepositoryLinkRequest& WithRepositoryLinkId(const char* value) { SetRepositoryLinkId(value); return *this;}
+    template<typename RepositoryLinkIdT = Aws::String>
+    void SetRepositoryLinkId(RepositoryLinkIdT&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::forward<RepositoryLinkIdT>(value); }
+    template<typename RepositoryLinkIdT = Aws::String>
+    DeleteRepositoryLinkRequest& WithRepositoryLinkId(RepositoryLinkIdT&& value) { SetRepositoryLinkId(std::forward<RepositoryLinkIdT>(value)); return *this;}
     ///@}
   private:
 

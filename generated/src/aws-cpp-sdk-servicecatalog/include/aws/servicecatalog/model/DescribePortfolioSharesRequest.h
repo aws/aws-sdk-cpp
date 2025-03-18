@@ -22,7 +22,7 @@ namespace Model
   class DescribePortfolioSharesRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API DescribePortfolioSharesRequest();
+    AWS_SERVICECATALOG_API DescribePortfolioSharesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The unique identifier of the portfolio for which shares will be
      * retrieved.</p>
      */
-    inline const Aws::String& GetPortfolioId() const{ return m_portfolioId; }
+    inline const Aws::String& GetPortfolioId() const { return m_portfolioId; }
     inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
-    inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
-    inline void SetPortfolioId(const char* value) { m_portfolioIdHasBeenSet = true; m_portfolioId.assign(value); }
-    inline DescribePortfolioSharesRequest& WithPortfolioId(const Aws::String& value) { SetPortfolioId(value); return *this;}
-    inline DescribePortfolioSharesRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
-    inline DescribePortfolioSharesRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+    template<typename PortfolioIdT = Aws::String>
+    void SetPortfolioId(PortfolioIdT&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::forward<PortfolioIdT>(value); }
+    template<typename PortfolioIdT = Aws::String>
+    DescribePortfolioSharesRequest& WithPortfolioId(PortfolioIdT&& value) { SetPortfolioId(std::forward<PortfolioIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * unit.</p> <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to
      * an account in the organization.</p>
      */
-    inline const DescribePortfolioShareType& GetType() const{ return m_type; }
+    inline DescribePortfolioShareType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DescribePortfolioShareType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DescribePortfolioShareType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DescribePortfolioSharesRequest& WithType(const DescribePortfolioShareType& value) { SetType(value); return *this;}
-    inline DescribePortfolioSharesRequest& WithType(DescribePortfolioShareType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DescribePortfolioShareType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DescribePortfolioSharesRequest& WithType(DescribePortfolioShareType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,21 +70,19 @@ namespace Model
      * <p>The page token for the next set of results. To retrieve the first set of
      * results, use null.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline DescribePortfolioSharesRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline DescribePortfolioSharesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline DescribePortfolioSharesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    DescribePortfolioSharesRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline DescribePortfolioSharesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -98,13 +92,13 @@ namespace Model
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet = false;
 
-    DescribePortfolioShareType m_type;
+    DescribePortfolioShareType m_type{DescribePortfolioShareType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

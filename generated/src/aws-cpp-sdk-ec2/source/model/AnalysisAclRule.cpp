@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisAclRule::AnalysisAclRule() : 
-    m_cidrHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false)
-{
-}
-
 AnalysisAclRule::AnalysisAclRule(const XmlNode& xmlNode)
-  : AnalysisAclRule()
 {
   *this = xmlNode;
 }

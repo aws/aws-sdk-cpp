@@ -32,7 +32,7 @@ namespace Model
   class GeospatialCategoricalDataColor
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialCategoricalDataColor();
+    AWS_QUICKSIGHT_API GeospatialCategoricalDataColor() = default;
     AWS_QUICKSIGHT_API GeospatialCategoricalDataColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialCategoricalDataColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The color and opacity values for the category data color.</p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline GeospatialCategoricalDataColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline GeospatialCategoricalDataColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline GeospatialCategoricalDataColor& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    GeospatialCategoricalDataColor& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data value for the category data color.</p>
      */
-    inline const Aws::String& GetDataValue() const{ return m_dataValue; }
+    inline const Aws::String& GetDataValue() const { return m_dataValue; }
     inline bool DataValueHasBeenSet() const { return m_dataValueHasBeenSet; }
-    inline void SetDataValue(const Aws::String& value) { m_dataValueHasBeenSet = true; m_dataValue = value; }
-    inline void SetDataValue(Aws::String&& value) { m_dataValueHasBeenSet = true; m_dataValue = std::move(value); }
-    inline void SetDataValue(const char* value) { m_dataValueHasBeenSet = true; m_dataValue.assign(value); }
-    inline GeospatialCategoricalDataColor& WithDataValue(const Aws::String& value) { SetDataValue(value); return *this;}
-    inline GeospatialCategoricalDataColor& WithDataValue(Aws::String&& value) { SetDataValue(std::move(value)); return *this;}
-    inline GeospatialCategoricalDataColor& WithDataValue(const char* value) { SetDataValue(value); return *this;}
+    template<typename DataValueT = Aws::String>
+    void SetDataValue(DataValueT&& value) { m_dataValueHasBeenSet = true; m_dataValue = std::forward<DataValueT>(value); }
+    template<typename DataValueT = Aws::String>
+    GeospatialCategoricalDataColor& WithDataValue(DataValueT&& value) { SetDataValue(std::forward<DataValueT>(value)); return *this;}
     ///@}
   private:
 

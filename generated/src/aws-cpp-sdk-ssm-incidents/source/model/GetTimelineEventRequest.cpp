@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTimelineEventRequest::GetTimelineEventRequest() : 
-    m_eventIdHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTimelineEventRequest::SerializePayload() const
 {
   return {};

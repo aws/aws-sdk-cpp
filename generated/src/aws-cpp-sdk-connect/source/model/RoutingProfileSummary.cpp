@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfileSummary::RoutingProfileSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 RoutingProfileSummary::RoutingProfileSummary(JsonView jsonValue)
-  : RoutingProfileSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RoutingProfileSummary& RoutingProfileSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

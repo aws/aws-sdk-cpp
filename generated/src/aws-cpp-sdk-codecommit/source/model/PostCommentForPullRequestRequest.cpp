@@ -12,18 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostCommentForPullRequestRequest::PostCommentForPullRequestRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String PostCommentForPullRequestRequest::SerializePayload() const
 {
   JsonValue payload;

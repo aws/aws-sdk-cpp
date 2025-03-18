@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(const XmlNode& xmlNode)
-  : SourceConfiguration()
 {
   *this = xmlNode;
 }

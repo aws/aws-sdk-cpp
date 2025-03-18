@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult()
-{
-}
-
 EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBala
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 
+      m_availabilityZonesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::EnableAvailabilityZonesForLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

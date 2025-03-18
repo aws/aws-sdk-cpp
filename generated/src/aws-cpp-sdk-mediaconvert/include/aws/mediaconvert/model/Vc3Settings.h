@@ -37,7 +37,7 @@ namespace Model
   class Vc3Settings
   {
   public:
-    AWS_MEDIACONVERT_API Vc3Settings();
+    AWS_MEDIACONVERT_API Vc3Settings() = default;
     AWS_MEDIACONVERT_API Vc3Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Vc3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const Vc3FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline Vc3FramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const Vc3FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(Vc3FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline Vc3Settings& WithFramerateControl(const Vc3FramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline Vc3Settings& WithFramerateControl(Vc3FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(Vc3FramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline Vc3Settings& WithFramerateControl(Vc3FramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const Vc3FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline Vc3FramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const Vc3FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(Vc3FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline Vc3Settings& WithFramerateConversionAlgorithm(const Vc3FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline Vc3Settings& WithFramerateConversionAlgorithm(Vc3FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(Vc3FramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline Vc3Settings& WithFramerateConversionAlgorithm(Vc3FramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +92,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline Vc3Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -111,7 +107,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline Vc3Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -122,12 +118,10 @@ namespace Model
      * Optional. Choose the scan line type for this output. If you don't specify a
      * value, MediaConvert will create a progressive output.
      */
-    inline const Vc3InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline Vc3InterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const Vc3InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(Vc3InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline Vc3Settings& WithInterlaceMode(const Vc3InterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline Vc3Settings& WithInterlaceMode(Vc3InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(Vc3InterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline Vc3Settings& WithInterlaceMode(Vc3InterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +139,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const Vc3ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline Vc3ScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const Vc3ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(Vc3ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline Vc3Settings& WithScanTypeConversionMode(const Vc3ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline Vc3Settings& WithScanTypeConversionMode(Vc3ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(Vc3ScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline Vc3Settings& WithScanTypeConversionMode(Vc3ScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -161,12 +153,10 @@ namespace Model
      * reduce the duration of your video. Related settings: You must also set Framerate
      * to 25.
      */
-    inline const Vc3SlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline Vc3SlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const Vc3SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(Vc3SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline Vc3Settings& WithSlowPal(const Vc3SlowPal& value) { SetSlowPal(value); return *this;}
-    inline Vc3Settings& WithSlowPal(Vc3SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(Vc3SlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline Vc3Settings& WithSlowPal(Vc3SlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +167,10 @@ namespace Model
      * MediaConvert does a standard frame rate conversion to 29.97 without doing
      * anything with the field polarity to create a smoother picture.
      */
-    inline const Vc3Telecine& GetTelecine() const{ return m_telecine; }
+    inline Vc3Telecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const Vc3Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(Vc3Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline Vc3Settings& WithTelecine(const Vc3Telecine& value) { SetTelecine(value); return *this;}
-    inline Vc3Settings& WithTelecine(Vc3Telecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(Vc3Telecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline Vc3Settings& WithTelecine(Vc3Telecine value) { SetTelecine(value); return *this;}
     ///@}
 
     ///@{
@@ -196,40 +184,38 @@ namespace Model
      * approximately 220 Mbps. VC3 class also specifies the color bit depth of your
      * output.
      */
-    inline const Vc3Class& GetVc3Class() const{ return m_vc3Class; }
+    inline Vc3Class GetVc3Class() const { return m_vc3Class; }
     inline bool Vc3ClassHasBeenSet() const { return m_vc3ClassHasBeenSet; }
-    inline void SetVc3Class(const Vc3Class& value) { m_vc3ClassHasBeenSet = true; m_vc3Class = value; }
-    inline void SetVc3Class(Vc3Class&& value) { m_vc3ClassHasBeenSet = true; m_vc3Class = std::move(value); }
-    inline Vc3Settings& WithVc3Class(const Vc3Class& value) { SetVc3Class(value); return *this;}
-    inline Vc3Settings& WithVc3Class(Vc3Class&& value) { SetVc3Class(std::move(value)); return *this;}
+    inline void SetVc3Class(Vc3Class value) { m_vc3ClassHasBeenSet = true; m_vc3Class = value; }
+    inline Vc3Settings& WithVc3Class(Vc3Class value) { SetVc3Class(value); return *this;}
     ///@}
   private:
 
-    Vc3FramerateControl m_framerateControl;
+    Vc3FramerateControl m_framerateControl{Vc3FramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    Vc3FramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    Vc3FramerateConversionAlgorithm m_framerateConversionAlgorithm{Vc3FramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    Vc3InterlaceMode m_interlaceMode;
+    Vc3InterlaceMode m_interlaceMode{Vc3InterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    Vc3ScanTypeConversionMode m_scanTypeConversionMode;
+    Vc3ScanTypeConversionMode m_scanTypeConversionMode{Vc3ScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    Vc3SlowPal m_slowPal;
+    Vc3SlowPal m_slowPal{Vc3SlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    Vc3Telecine m_telecine;
+    Vc3Telecine m_telecine{Vc3Telecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
 
-    Vc3Class m_vc3Class;
+    Vc3Class m_vc3Class{Vc3Class::NOT_SET};
     bool m_vc3ClassHasBeenSet = false;
   };
 

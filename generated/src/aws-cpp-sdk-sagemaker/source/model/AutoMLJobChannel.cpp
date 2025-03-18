@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobChannel::AutoMLJobChannel() : 
-    m_channelType(AutoMLChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
-{
-}
-
 AutoMLJobChannel::AutoMLJobChannel(JsonView jsonValue)
-  : AutoMLJobChannel()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AutoMLJobChannel& AutoMLJobChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelType"))
   {
     m_channelType = AutoMLChannelTypeMapper::GetAutoMLChannelTypeForName(jsonValue.GetString("ChannelType"));
-
     m_channelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

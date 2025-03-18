@@ -34,7 +34,7 @@ namespace Model
   class BatchUpdateDevicePositionError
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError();
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError() = default;
     AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The device associated with the failed location update.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline BatchUpdateDevicePositionError& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline BatchUpdateDevicePositionError& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline BatchUpdateDevicePositionError& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    BatchUpdateDevicePositionError& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
+    inline const Aws::Utils::DateTime& GetSampleTime() const { return m_sampleTime; }
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
-    inline BatchUpdateDevicePositionError& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-    inline BatchUpdateDevicePositionError& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    void SetSampleTime(SampleTimeT&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::forward<SampleTimeT>(value); }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    BatchUpdateDevicePositionError& WithSampleTime(SampleTimeT&& value) { SetSampleTime(std::forward<SampleTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,19 @@ namespace Model
      * <p>Contains details related to the error code such as the error code and error
      * message.</p>
      */
-    inline const BatchItemError& GetError() const{ return m_error; }
+    inline const BatchItemError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline BatchUpdateDevicePositionError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-    inline BatchUpdateDevicePositionError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = BatchItemError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = BatchItemError>
+    BatchUpdateDevicePositionError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Utils::DateTime m_sampleTime{};
     bool m_sampleTimeHasBeenSet = false;
 
     BatchItemError m_error;

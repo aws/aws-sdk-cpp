@@ -33,7 +33,7 @@ namespace Model
   class RuleBooleanExpression
   {
   public:
-    AWS_MAILMANAGER_API RuleBooleanExpression();
+    AWS_MAILMANAGER_API RuleBooleanExpression() = default;
     AWS_MAILMANAGER_API RuleBooleanExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleBooleanExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The operand on which to perform a boolean condition operation.</p>
      */
-    inline const RuleBooleanToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const RuleBooleanToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const RuleBooleanToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(RuleBooleanToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline RuleBooleanExpression& WithEvaluate(const RuleBooleanToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline RuleBooleanExpression& WithEvaluate(RuleBooleanToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = RuleBooleanToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = RuleBooleanToEvaluate>
+    RuleBooleanExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The matching operator for a boolean condition expression.</p>
      */
-    inline const RuleBooleanOperator& GetOperator() const{ return m_operator; }
+    inline RuleBooleanOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const RuleBooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(RuleBooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline RuleBooleanExpression& WithOperator(const RuleBooleanOperator& value) { SetOperator(value); return *this;}
-    inline RuleBooleanExpression& WithOperator(RuleBooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(RuleBooleanOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline RuleBooleanExpression& WithOperator(RuleBooleanOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
     RuleBooleanToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    RuleBooleanOperator m_operator;
+    RuleBooleanOperator m_operator{RuleBooleanOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

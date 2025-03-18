@@ -13,12 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveAllResourcePermissionsRequest::RemoveAllResourcePermissionsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAllResourcePermissionsRequest::SerializePayload() const
 {
   return {};

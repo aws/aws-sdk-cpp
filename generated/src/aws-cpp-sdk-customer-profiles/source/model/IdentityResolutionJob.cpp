@@ -18,21 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-IdentityResolutionJob::IdentityResolutionJob() : 
-    m_domainNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_status(IdentityResolutionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_jobStartTimeHasBeenSet(false),
-    m_jobEndTimeHasBeenSet(false),
-    m_jobStatsHasBeenSet(false),
-    m_exportingLocationHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 IdentityResolutionJob::IdentityResolutionJob(JsonView jsonValue)
-  : IdentityResolutionJob()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ IdentityResolutionJob& IdentityResolutionJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IdentityResolutionJobStatusMapper::GetIdentityResolutionJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStartTime"))
   {
     m_jobStartTime = jsonValue.GetDouble("JobStartTime");
-
     m_jobStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobEndTime"))
   {
     m_jobEndTime = jsonValue.GetDouble("JobEndTime");
-
     m_jobEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStats"))
   {
     m_jobStats = jsonValue.GetObject("JobStats");
-
     m_jobStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportingLocation"))
   {
     m_exportingLocation = jsonValue.GetObject("ExportingLocation");
-
     m_exportingLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

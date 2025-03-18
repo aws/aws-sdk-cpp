@@ -38,7 +38,7 @@ namespace Model
   class EndpointBatchItem
   {
   public:
-    AWS_PINPOINT_API EndpointBatchItem();
+    AWS_PINPOINT_API EndpointBatchItem() = default;
     AWS_PINPOINT_API EndpointBatchItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EndpointBatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * registration token. For the SMS channel, use a phone number in E.164 format,
      * such as +12065550100. For the email channel, use an email address.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline EndpointBatchItem& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline EndpointBatchItem& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    EndpointBatchItem& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,18 +74,16 @@ namespace Model
      * console can't display attribute names that contain these characters. This
      * restriction doesn't apply to attribute values.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline EndpointBatchItem& WithAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAttributes(value); return *this;}
-    inline EndpointBatchItem& WithAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline EndpointBatchItem& AddAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline EndpointBatchItem& AddAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline EndpointBatchItem& AddAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline EndpointBatchItem& AddAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline EndpointBatchItem& AddAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline EndpointBatchItem& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    EndpointBatchItem& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::Vector<Aws::String>>
+    EndpointBatchItem& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -95,12 +91,10 @@ namespace Model
      * <p>The channel to use when sending messages or push notifications to the
      * endpoint.</p>
      */
-    inline const ChannelType& GetChannelType() const{ return m_channelType; }
+    inline ChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline EndpointBatchItem& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
-    inline EndpointBatchItem& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(ChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline EndpointBatchItem& WithChannelType(ChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,12 @@ namespace Model
      * <p>The demographic information for the endpoint, such as the time zone and
      * platform.</p>
      */
-    inline const EndpointDemographic& GetDemographic() const{ return m_demographic; }
+    inline const EndpointDemographic& GetDemographic() const { return m_demographic; }
     inline bool DemographicHasBeenSet() const { return m_demographicHasBeenSet; }
-    inline void SetDemographic(const EndpointDemographic& value) { m_demographicHasBeenSet = true; m_demographic = value; }
-    inline void SetDemographic(EndpointDemographic&& value) { m_demographicHasBeenSet = true; m_demographic = std::move(value); }
-    inline EndpointBatchItem& WithDemographic(const EndpointDemographic& value) { SetDemographic(value); return *this;}
-    inline EndpointBatchItem& WithDemographic(EndpointDemographic&& value) { SetDemographic(std::move(value)); return *this;}
+    template<typename DemographicT = EndpointDemographic>
+    void SetDemographic(DemographicT&& value) { m_demographicHasBeenSet = true; m_demographic = std::forward<DemographicT>(value); }
+    template<typename DemographicT = EndpointDemographic>
+    EndpointBatchItem& WithDemographic(DemographicT&& value) { SetDemographic(std::forward<DemographicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * <p>The date and time, in ISO 8601 format, when the endpoint was created or
      * updated.</p>
      */
-    inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
+    inline const Aws::String& GetEffectiveDate() const { return m_effectiveDate; }
     inline bool EffectiveDateHasBeenSet() const { return m_effectiveDateHasBeenSet; }
-    inline void SetEffectiveDate(const Aws::String& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
-    inline void SetEffectiveDate(Aws::String&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
-    inline void SetEffectiveDate(const char* value) { m_effectiveDateHasBeenSet = true; m_effectiveDate.assign(value); }
-    inline EndpointBatchItem& WithEffectiveDate(const Aws::String& value) { SetEffectiveDate(value); return *this;}
-    inline EndpointBatchItem& WithEffectiveDate(Aws::String&& value) { SetEffectiveDate(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
+    template<typename EffectiveDateT = Aws::String>
+    void SetEffectiveDate(EffectiveDateT&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::forward<EffectiveDateT>(value); }
+    template<typename EffectiveDateT = Aws::String>
+    EndpointBatchItem& WithEffectiveDate(EffectiveDateT&& value) { SetEffectiveDate(std::forward<EffectiveDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,40 +132,36 @@ namespace Model
      * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
      * endpoint that has the same address specified by the Address property.</p>
      */
-    inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
+    inline const Aws::String& GetEndpointStatus() const { return m_endpointStatus; }
     inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
-    inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
-    inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
-    inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
-    inline EndpointBatchItem& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
-    inline EndpointBatchItem& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
+    template<typename EndpointStatusT = Aws::String>
+    void SetEndpointStatus(EndpointStatusT&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::forward<EndpointStatusT>(value); }
+    template<typename EndpointStatusT = Aws::String>
+    EndpointBatchItem& WithEndpointStatus(EndpointStatusT&& value) { SetEndpointStatus(std::forward<EndpointStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the endpoint in the context of the batch.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline EndpointBatchItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline EndpointBatchItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    EndpointBatchItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The geographic information for the endpoint.</p>
      */
-    inline const EndpointLocation& GetLocation() const{ return m_location; }
+    inline const EndpointLocation& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const EndpointLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(EndpointLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline EndpointBatchItem& WithLocation(const EndpointLocation& value) { SetLocation(value); return *this;}
-    inline EndpointBatchItem& WithLocation(EndpointLocation&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = EndpointLocation>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = EndpointLocation>
+    EndpointBatchItem& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,15 +169,15 @@ namespace Model
      * <p>One or more custom metrics that your app reports to Amazon Pinpoint for the
      * endpoint.</p>
      */
-    inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Map<Aws::String, double>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Map<Aws::String, double>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Map<Aws::String, double>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline EndpointBatchItem& WithMetrics(const Aws::Map<Aws::String, double>& value) { SetMetrics(value); return *this;}
-    inline EndpointBatchItem& WithMetrics(Aws::Map<Aws::String, double>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline EndpointBatchItem& AddMetrics(const Aws::String& key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
-    inline EndpointBatchItem& AddMetrics(Aws::String&& key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
-    inline EndpointBatchItem& AddMetrics(const char* key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+    template<typename MetricsT = Aws::Map<Aws::String, double>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Map<Aws::String, double>>
+    EndpointBatchItem& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    inline EndpointBatchItem& AddMetrics(Aws::String key, double value) {
+      m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -200,28 +188,24 @@ namespace Model
      * notifications; and, NONE, the user hasn't opted out and wants to receive all
      * messages and push notifications.</p>
      */
-    inline const Aws::String& GetOptOut() const{ return m_optOut; }
+    inline const Aws::String& GetOptOut() const { return m_optOut; }
     inline bool OptOutHasBeenSet() const { return m_optOutHasBeenSet; }
-    inline void SetOptOut(const Aws::String& value) { m_optOutHasBeenSet = true; m_optOut = value; }
-    inline void SetOptOut(Aws::String&& value) { m_optOutHasBeenSet = true; m_optOut = std::move(value); }
-    inline void SetOptOut(const char* value) { m_optOutHasBeenSet = true; m_optOut.assign(value); }
-    inline EndpointBatchItem& WithOptOut(const Aws::String& value) { SetOptOut(value); return *this;}
-    inline EndpointBatchItem& WithOptOut(Aws::String&& value) { SetOptOut(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithOptOut(const char* value) { SetOptOut(value); return *this;}
+    template<typename OptOutT = Aws::String>
+    void SetOptOut(OptOutT&& value) { m_optOutHasBeenSet = true; m_optOut = std::forward<OptOutT>(value); }
+    template<typename OptOutT = Aws::String>
+    EndpointBatchItem& WithOptOut(OptOutT&& value) { SetOptOut(std::forward<OptOutT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the request to create or update the endpoint.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline EndpointBatchItem& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EndpointBatchItem& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EndpointBatchItem& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EndpointBatchItem& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +213,12 @@ namespace Model
      * <p>One or more custom attributes that describe the user who's associated with
      * the endpoint.</p>
      */
-    inline const EndpointUser& GetUser() const{ return m_user; }
+    inline const EndpointUser& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const EndpointUser& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(EndpointUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline EndpointBatchItem& WithUser(const EndpointUser& value) { SetUser(value); return *this;}
-    inline EndpointBatchItem& WithUser(EndpointUser&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = EndpointUser>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = EndpointUser>
+    EndpointBatchItem& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 
@@ -244,7 +228,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    ChannelType m_channelType;
+    ChannelType m_channelType{ChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
     EndpointDemographic m_demographic;

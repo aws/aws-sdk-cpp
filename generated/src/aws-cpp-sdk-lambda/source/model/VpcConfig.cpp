@@ -18,16 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-VpcConfig::VpcConfig() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_ipv6AllowedForDualStack(false),
-    m_ipv6AllowedForDualStackHasBeenSet(false)
-{
-}
-
 VpcConfig::VpcConfig(JsonView jsonValue)
-  : VpcConfig()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -53,14 +43,11 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6AllowedForDualStack"))
   {
     m_ipv6AllowedForDualStack = jsonValue.GetBool("Ipv6AllowedForDualStack");
-
     m_ipv6AllowedForDualStackHasBeenSet = true;
   }
-
   return *this;
 }
 

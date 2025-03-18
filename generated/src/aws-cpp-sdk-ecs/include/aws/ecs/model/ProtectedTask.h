@@ -37,7 +37,7 @@ namespace Model
   class ProtectedTask
   {
   public:
-    AWS_ECS_API ProtectedTask();
+    AWS_ECS_API ProtectedTask() = default;
     AWS_ECS_API ProtectedTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ProtectedTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The task ARN.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-    inline ProtectedTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline ProtectedTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline ProtectedTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    ProtectedTask& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <p>The protection status of the task. If scale-in protection is on for a task,
      * the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
      */
-    inline bool GetProtectionEnabled() const{ return m_protectionEnabled; }
+    inline bool GetProtectionEnabled() const { return m_protectionEnabled; }
     inline bool ProtectionEnabledHasBeenSet() const { return m_protectionEnabledHasBeenSet; }
     inline void SetProtectionEnabled(bool value) { m_protectionEnabledHasBeenSet = true; m_protectionEnabled = value; }
     inline ProtectedTask& WithProtectionEnabled(bool value) { SetProtectionEnabled(value); return *this;}
@@ -72,22 +70,22 @@ namespace Model
     /**
      * <p>The epoch time when protection for the task will expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-    inline ProtectedTask& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline ProtectedTask& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    ProtectedTask& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet = false;
 
-    bool m_protectionEnabled;
+    bool m_protectionEnabled{false};
     bool m_protectionEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
     bool m_expirationDateHasBeenSet = false;
   };
 

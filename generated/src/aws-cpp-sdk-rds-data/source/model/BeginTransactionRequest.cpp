@@ -12,14 +12,6 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BeginTransactionRequest::BeginTransactionRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 Aws::String BeginTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -13,15 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFacetRequest::UpdateFacetRequest() : 
-    m_schemaArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false),
-    m_objectType(ObjectType::NOT_SET),
-    m_objectTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFacetRequest::SerializePayload() const
 {
   JsonValue payload;

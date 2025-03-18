@@ -12,13 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTestGridProjectsRequest::ListTestGridProjectsRequest() : 
-    m_maxResult(0),
-    m_maxResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTestGridProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

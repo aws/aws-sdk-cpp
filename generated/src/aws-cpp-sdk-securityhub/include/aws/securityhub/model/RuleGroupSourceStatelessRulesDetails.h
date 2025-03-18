@@ -31,7 +31,7 @@ namespace Model
   class RuleGroupSourceStatelessRulesDetails
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>Indicates the order in which to run this rule relative to all of the rules in
      * the stateless rule group.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RuleGroupSourceStatelessRulesDetails& WithPriority(int value) { SetPriority(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
     /**
      * <p>Provides the definition of the stateless rule.</p>
      */
-    inline const RuleGroupSourceStatelessRuleDefinition& GetRuleDefinition() const{ return m_ruleDefinition; }
+    inline const RuleGroupSourceStatelessRuleDefinition& GetRuleDefinition() const { return m_ruleDefinition; }
     inline bool RuleDefinitionHasBeenSet() const { return m_ruleDefinitionHasBeenSet; }
-    inline void SetRuleDefinition(const RuleGroupSourceStatelessRuleDefinition& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = value; }
-    inline void SetRuleDefinition(RuleGroupSourceStatelessRuleDefinition&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::move(value); }
-    inline RuleGroupSourceStatelessRulesDetails& WithRuleDefinition(const RuleGroupSourceStatelessRuleDefinition& value) { SetRuleDefinition(value); return *this;}
-    inline RuleGroupSourceStatelessRulesDetails& WithRuleDefinition(RuleGroupSourceStatelessRuleDefinition&& value) { SetRuleDefinition(std::move(value)); return *this;}
+    template<typename RuleDefinitionT = RuleGroupSourceStatelessRuleDefinition>
+    void SetRuleDefinition(RuleDefinitionT&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::forward<RuleDefinitionT>(value); }
+    template<typename RuleDefinitionT = RuleGroupSourceStatelessRuleDefinition>
+    RuleGroupSourceStatelessRulesDetails& WithRuleDefinition(RuleDefinitionT&& value) { SetRuleDefinition(std::forward<RuleDefinitionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     RuleGroupSourceStatelessRuleDefinition m_ruleDefinition;

@@ -22,7 +22,7 @@ namespace Model
   class PutLifecycleEventHookExecutionStatusRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusRequest();
+    AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
      * validates a deployment lifecycle event. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
      * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
-    inline const Aws::String& GetLifecycleEventHookExecutionId() const{ return m_lifecycleEventHookExecutionId; }
+    inline const Aws::String& GetLifecycleEventHookExecutionId() const { return m_lifecycleEventHookExecutionId; }
     inline bool LifecycleEventHookExecutionIdHasBeenSet() const { return m_lifecycleEventHookExecutionIdHasBeenSet; }
-    inline void SetLifecycleEventHookExecutionId(const Aws::String& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = value; }
-    inline void SetLifecycleEventHookExecutionId(Aws::String&& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = std::move(value); }
-    inline void SetLifecycleEventHookExecutionId(const char* value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId.assign(value); }
-    inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(const Aws::String& value) { SetLifecycleEventHookExecutionId(value); return *this;}
-    inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(Aws::String&& value) { SetLifecycleEventHookExecutionId(std::move(value)); return *this;}
-    inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(const char* value) { SetLifecycleEventHookExecutionId(value); return *this;}
+    template<typename LifecycleEventHookExecutionIdT = Aws::String>
+    void SetLifecycleEventHookExecutionId(LifecycleEventHookExecutionIdT&& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = std::forward<LifecycleEventHookExecutionIdT>(value); }
+    template<typename LifecycleEventHookExecutionIdT = Aws::String>
+    PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(LifecycleEventHookExecutionIdT&& value) { SetLifecycleEventHookExecutionId(std::forward<LifecycleEventHookExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * general; however, only <code>Succeeded</code> and <code>Failed</code> can be
      * passed successfully in your API call.</p>
      */
-    inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
+    inline LifecycleEventStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
-    inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LifecycleEventStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PutLifecycleEventHookExecutionStatusRequest& WithStatus(LifecycleEventStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +81,7 @@ namespace Model
     Aws::String m_lifecycleEventHookExecutionId;
     bool m_lifecycleEventHookExecutionIdHasBeenSet = false;
 
-    LifecycleEventStatus m_status;
+    LifecycleEventStatus m_status{LifecycleEventStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

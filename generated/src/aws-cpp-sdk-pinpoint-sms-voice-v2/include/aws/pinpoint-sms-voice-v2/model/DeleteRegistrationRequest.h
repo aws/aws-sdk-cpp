@@ -21,7 +21,7 @@ namespace Model
   class DeleteRegistrationRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationRequest();
+    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-    inline DeleteRegistrationRequest& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline DeleteRegistrationRequest& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline DeleteRegistrationRequest& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    DeleteRegistrationRequest& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
   private:
 

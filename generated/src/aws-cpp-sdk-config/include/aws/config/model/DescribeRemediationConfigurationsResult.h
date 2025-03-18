@@ -29,7 +29,7 @@ namespace Model
   class DescribeRemediationConfigurationsResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeRemediationConfigurationsResult();
+    AWS_CONFIGSERVICE_API DescribeRemediationConfigurationsResult() = default;
     AWS_CONFIGSERVICE_API DescribeRemediationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeRemediationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Returns a remediation configuration object.</p>
      */
-    inline const Aws::Vector<RemediationConfiguration>& GetRemediationConfigurations() const{ return m_remediationConfigurations; }
-    inline void SetRemediationConfigurations(const Aws::Vector<RemediationConfiguration>& value) { m_remediationConfigurations = value; }
-    inline void SetRemediationConfigurations(Aws::Vector<RemediationConfiguration>&& value) { m_remediationConfigurations = std::move(value); }
-    inline DescribeRemediationConfigurationsResult& WithRemediationConfigurations(const Aws::Vector<RemediationConfiguration>& value) { SetRemediationConfigurations(value); return *this;}
-    inline DescribeRemediationConfigurationsResult& WithRemediationConfigurations(Aws::Vector<RemediationConfiguration>&& value) { SetRemediationConfigurations(std::move(value)); return *this;}
-    inline DescribeRemediationConfigurationsResult& AddRemediationConfigurations(const RemediationConfiguration& value) { m_remediationConfigurations.push_back(value); return *this; }
-    inline DescribeRemediationConfigurationsResult& AddRemediationConfigurations(RemediationConfiguration&& value) { m_remediationConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RemediationConfiguration>& GetRemediationConfigurations() const { return m_remediationConfigurations; }
+    template<typename RemediationConfigurationsT = Aws::Vector<RemediationConfiguration>>
+    void SetRemediationConfigurations(RemediationConfigurationsT&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations = std::forward<RemediationConfigurationsT>(value); }
+    template<typename RemediationConfigurationsT = Aws::Vector<RemediationConfiguration>>
+    DescribeRemediationConfigurationsResult& WithRemediationConfigurations(RemediationConfigurationsT&& value) { SetRemediationConfigurations(std::forward<RemediationConfigurationsT>(value)); return *this;}
+    template<typename RemediationConfigurationsT = RemediationConfiguration>
+    DescribeRemediationConfigurationsResult& AddRemediationConfigurations(RemediationConfigurationsT&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations.emplace_back(std::forward<RemediationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRemediationConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRemediationConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRemediationConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRemediationConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RemediationConfiguration> m_remediationConfigurations;
+    bool m_remediationConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

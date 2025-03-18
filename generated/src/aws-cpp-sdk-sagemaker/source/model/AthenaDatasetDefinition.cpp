@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AthenaDatasetDefinition::AthenaDatasetDefinition() : 
-    m_catalogHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_outputFormat(AthenaResultFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_outputCompression(AthenaResultCompressionType::NOT_SET),
-    m_outputCompressionHasBeenSet(false)
-{
-}
-
 AthenaDatasetDefinition::AthenaDatasetDefinition(JsonView jsonValue)
-  : AthenaDatasetDefinition()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AthenaDatasetDefinition& AthenaDatasetDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroup"))
   {
     m_workGroup = jsonValue.GetString("WorkGroup");
-
     m_workGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3Uri"))
   {
     m_outputS3Uri = jsonValue.GetString("OutputS3Uri");
-
     m_outputS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFormat"))
   {
     m_outputFormat = AthenaResultFormatMapper::GetAthenaResultFormatForName(jsonValue.GetString("OutputFormat"));
-
     m_outputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputCompression"))
   {
     m_outputCompression = AthenaResultCompressionTypeMapper::GetAthenaResultCompressionTypeForName(jsonValue.GetString("OutputCompression"));
-
     m_outputCompressionHasBeenSet = true;
   }
-
   return *this;
 }
 

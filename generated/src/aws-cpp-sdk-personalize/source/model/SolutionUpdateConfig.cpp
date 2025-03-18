@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-SolutionUpdateConfig::SolutionUpdateConfig() : 
-    m_autoTrainingConfigHasBeenSet(false)
-{
-}
-
 SolutionUpdateConfig::SolutionUpdateConfig(JsonView jsonValue)
-  : SolutionUpdateConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SolutionUpdateConfig& SolutionUpdateConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoTrainingConfig"))
   {
     m_autoTrainingConfig = jsonValue.GetObject("autoTrainingConfig");
-
     m_autoTrainingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

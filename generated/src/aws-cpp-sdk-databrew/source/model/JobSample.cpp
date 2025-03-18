@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-JobSample::JobSample() : 
-    m_mode(SampleMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 JobSample::JobSample(JsonView jsonValue)
-  : JobSample()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ JobSample& JobSample::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = SampleModeMapper::GetSampleModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInt64("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

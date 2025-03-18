@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcConnectorRequest::DeleteVpcConnectorRequest() : 
-    m_vpcConnectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

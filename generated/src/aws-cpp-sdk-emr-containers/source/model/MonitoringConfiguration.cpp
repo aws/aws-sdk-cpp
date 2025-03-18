@@ -18,18 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-MonitoringConfiguration::MonitoringConfiguration() : 
-    m_managedLogsHasBeenSet(false),
-    m_persistentAppUI(PersistentAppUI::NOT_SET),
-    m_persistentAppUIHasBeenSet(false),
-    m_cloudWatchMonitoringConfigurationHasBeenSet(false),
-    m_s3MonitoringConfigurationHasBeenSet(false),
-    m_containerLogRotationConfigurationHasBeenSet(false)
-{
-}
-
 MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue)
-  : MonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ MonitoringConfiguration& MonitoringConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("managedLogs"))
   {
     m_managedLogs = jsonValue.GetObject("managedLogs");
-
     m_managedLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("persistentAppUI"))
   {
     m_persistentAppUI = PersistentAppUIMapper::GetPersistentAppUIForName(jsonValue.GetString("persistentAppUI"));
-
     m_persistentAppUIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchMonitoringConfiguration"))
   {
     m_cloudWatchMonitoringConfiguration = jsonValue.GetObject("cloudWatchMonitoringConfiguration");
-
     m_cloudWatchMonitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3MonitoringConfiguration"))
   {
     m_s3MonitoringConfiguration = jsonValue.GetObject("s3MonitoringConfiguration");
-
     m_s3MonitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerLogRotationConfiguration"))
   {
     m_containerLogRotationConfiguration = jsonValue.GetObject("containerLogRotationConfiguration");
-
     m_containerLogRotationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

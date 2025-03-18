@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGraphqlApiResult::CreateGraphqlApiResult()
-{
-}
-
 CreateGraphqlApiResult::CreateGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateGraphqlApiResult& CreateGraphqlApiResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("graphqlApi"))
   {
     m_graphqlApi = jsonValue.GetObject("graphqlApi");
-
+    m_graphqlApiHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

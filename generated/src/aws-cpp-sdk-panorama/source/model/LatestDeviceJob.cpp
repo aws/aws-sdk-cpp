@@ -18,17 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-LatestDeviceJob::LatestDeviceJob() : 
-    m_imageVersionHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_status(UpdateProgress::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 LatestDeviceJob::LatestDeviceJob(JsonView jsonValue)
-  : LatestDeviceJob()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LatestDeviceJob& LatestDeviceJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageVersion"))
   {
     m_imageVersion = jsonValue.GetString("ImageVersion");
-
     m_imageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = UpdateProgressMapper::GetUpdateProgressForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftQueryEngineRedshiftStorageConfiguration::RedshiftQueryEngineRedshiftStorageConfiguration() : 
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 RedshiftQueryEngineRedshiftStorageConfiguration::RedshiftQueryEngineRedshiftStorageConfiguration(JsonView jsonValue)
-  : RedshiftQueryEngineRedshiftStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RedshiftQueryEngineRedshiftStorageConfiguration& RedshiftQueryEngineRedshiftStor
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   return *this;
 }
 

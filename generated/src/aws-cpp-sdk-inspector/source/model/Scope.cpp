@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-Scope::Scope() : 
-    m_key(ScopeType::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Scope::Scope(JsonView jsonValue)
-  : Scope()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Scope& Scope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = ScopeTypeMapper::GetScopeTypeForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

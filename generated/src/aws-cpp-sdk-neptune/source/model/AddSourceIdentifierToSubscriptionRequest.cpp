@@ -10,12 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-AddSourceIdentifierToSubscriptionRequest::AddSourceIdentifierToSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false),
-    m_sourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String AddSourceIdentifierToSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

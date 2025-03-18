@@ -12,14 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventStreamRequest::CreateEventStreamRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_eventStreamNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventStreamRequest::SerializePayload() const
 {
   JsonValue payload;

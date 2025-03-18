@@ -32,7 +32,7 @@ namespace Model
   class AwsRdsDbDomainMembership
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbDomainMembership();
+    AWS_SECURITYHUB_API AwsRdsDbDomainMembership() = default;
     AWS_SECURITYHUB_API AwsRdsDbDomainMembership(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbDomainMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The identifier of the Active Directory domain.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline AwsRdsDbDomainMembership& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline AwsRdsDbDomainMembership& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline AwsRdsDbDomainMembership& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    AwsRdsDbDomainMembership& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the Active Directory Domain membership for the DB instance.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRdsDbDomainMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRdsDbDomainMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRdsDbDomainMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRdsDbDomainMembership& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fully qualified domain name of the Active Directory domain.</p>
      */
-    inline const Aws::String& GetFqdn() const{ return m_fqdn; }
+    inline const Aws::String& GetFqdn() const { return m_fqdn; }
     inline bool FqdnHasBeenSet() const { return m_fqdnHasBeenSet; }
-    inline void SetFqdn(const Aws::String& value) { m_fqdnHasBeenSet = true; m_fqdn = value; }
-    inline void SetFqdn(Aws::String&& value) { m_fqdnHasBeenSet = true; m_fqdn = std::move(value); }
-    inline void SetFqdn(const char* value) { m_fqdnHasBeenSet = true; m_fqdn.assign(value); }
-    inline AwsRdsDbDomainMembership& WithFqdn(const Aws::String& value) { SetFqdn(value); return *this;}
-    inline AwsRdsDbDomainMembership& WithFqdn(Aws::String&& value) { SetFqdn(std::move(value)); return *this;}
-    inline AwsRdsDbDomainMembership& WithFqdn(const char* value) { SetFqdn(value); return *this;}
+    template<typename FqdnT = Aws::String>
+    void SetFqdn(FqdnT&& value) { m_fqdnHasBeenSet = true; m_fqdn = std::forward<FqdnT>(value); }
+    template<typename FqdnT = Aws::String>
+    AwsRdsDbDomainMembership& WithFqdn(FqdnT&& value) { SetFqdn(std::forward<FqdnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p>The name of the IAM role to use when making API calls to the Directory
      * Service.</p>
      */
-    inline const Aws::String& GetIamRoleName() const{ return m_iamRoleName; }
+    inline const Aws::String& GetIamRoleName() const { return m_iamRoleName; }
     inline bool IamRoleNameHasBeenSet() const { return m_iamRoleNameHasBeenSet; }
-    inline void SetIamRoleName(const Aws::String& value) { m_iamRoleNameHasBeenSet = true; m_iamRoleName = value; }
-    inline void SetIamRoleName(Aws::String&& value) { m_iamRoleNameHasBeenSet = true; m_iamRoleName = std::move(value); }
-    inline void SetIamRoleName(const char* value) { m_iamRoleNameHasBeenSet = true; m_iamRoleName.assign(value); }
-    inline AwsRdsDbDomainMembership& WithIamRoleName(const Aws::String& value) { SetIamRoleName(value); return *this;}
-    inline AwsRdsDbDomainMembership& WithIamRoleName(Aws::String&& value) { SetIamRoleName(std::move(value)); return *this;}
-    inline AwsRdsDbDomainMembership& WithIamRoleName(const char* value) { SetIamRoleName(value); return *this;}
+    template<typename IamRoleNameT = Aws::String>
+    void SetIamRoleName(IamRoleNameT&& value) { m_iamRoleNameHasBeenSet = true; m_iamRoleName = std::forward<IamRoleNameT>(value); }
+    template<typename IamRoleNameT = Aws::String>
+    AwsRdsDbDomainMembership& WithIamRoleName(IamRoleNameT&& value) { SetIamRoleName(std::forward<IamRoleNameT>(value)); return *this;}
     ///@}
   private:
 

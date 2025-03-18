@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBucketBundlesRequest::GetBucketBundlesRequest() : 
-    m_includeInactive(false),
-    m_includeInactiveHasBeenSet(false)
-{
-}
-
 Aws::String GetBucketBundlesRequest::SerializePayload() const
 {
   JsonValue payload;

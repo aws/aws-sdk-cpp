@@ -36,7 +36,7 @@ namespace Model
   class GlobalConfiguration
   {
   public:
-    AWS_MEDIALIVE_API GlobalConfiguration();
+    AWS_MEDIALIVE_API GlobalConfiguration() = default;
     AWS_MEDIALIVE_API GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * Value to set the initial audio gain for the Live Event.
      */
-    inline int GetInitialAudioGain() const{ return m_initialAudioGain; }
+    inline int GetInitialAudioGain() const { return m_initialAudioGain; }
     inline bool InitialAudioGainHasBeenSet() const { return m_initialAudioGainHasBeenSet; }
     inline void SetInitialAudioGain(int value) { m_initialAudioGainHasBeenSet = true; m_initialAudioGain = value; }
     inline GlobalConfiguration& WithInitialAudioGain(int value) { SetInitialAudioGain(value); return *this;}
@@ -61,24 +61,22 @@ namespace Model
      * "Input Loss Behavior" configuration until the next input switch occurs (which is
      * controlled through the Channel Schedule API).
      */
-    inline const GlobalConfigurationInputEndAction& GetInputEndAction() const{ return m_inputEndAction; }
+    inline GlobalConfigurationInputEndAction GetInputEndAction() const { return m_inputEndAction; }
     inline bool InputEndActionHasBeenSet() const { return m_inputEndActionHasBeenSet; }
-    inline void SetInputEndAction(const GlobalConfigurationInputEndAction& value) { m_inputEndActionHasBeenSet = true; m_inputEndAction = value; }
-    inline void SetInputEndAction(GlobalConfigurationInputEndAction&& value) { m_inputEndActionHasBeenSet = true; m_inputEndAction = std::move(value); }
-    inline GlobalConfiguration& WithInputEndAction(const GlobalConfigurationInputEndAction& value) { SetInputEndAction(value); return *this;}
-    inline GlobalConfiguration& WithInputEndAction(GlobalConfigurationInputEndAction&& value) { SetInputEndAction(std::move(value)); return *this;}
+    inline void SetInputEndAction(GlobalConfigurationInputEndAction value) { m_inputEndActionHasBeenSet = true; m_inputEndAction = value; }
+    inline GlobalConfiguration& WithInputEndAction(GlobalConfigurationInputEndAction value) { SetInputEndAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for system actions when input is lost.
      */
-    inline const InputLossBehavior& GetInputLossBehavior() const{ return m_inputLossBehavior; }
+    inline const InputLossBehavior& GetInputLossBehavior() const { return m_inputLossBehavior; }
     inline bool InputLossBehaviorHasBeenSet() const { return m_inputLossBehaviorHasBeenSet; }
-    inline void SetInputLossBehavior(const InputLossBehavior& value) { m_inputLossBehaviorHasBeenSet = true; m_inputLossBehavior = value; }
-    inline void SetInputLossBehavior(InputLossBehavior&& value) { m_inputLossBehaviorHasBeenSet = true; m_inputLossBehavior = std::move(value); }
-    inline GlobalConfiguration& WithInputLossBehavior(const InputLossBehavior& value) { SetInputLossBehavior(value); return *this;}
-    inline GlobalConfiguration& WithInputLossBehavior(InputLossBehavior&& value) { SetInputLossBehavior(std::move(value)); return *this;}
+    template<typename InputLossBehaviorT = InputLossBehavior>
+    void SetInputLossBehavior(InputLossBehaviorT&& value) { m_inputLossBehaviorHasBeenSet = true; m_inputLossBehavior = std::forward<InputLossBehaviorT>(value); }
+    template<typename InputLossBehaviorT = InputLossBehavior>
+    GlobalConfiguration& WithInputLossBehavior(InputLossBehaviorT&& value) { SetInputLossBehavior(std::forward<InputLossBehaviorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,10 @@ DISABLED - MediaLive will not attempt to synchronize
      * has negative side effects in most workflows. For more information, see the
      * section about output locking (pipeline locking) in the Medialive user guide.
      */
-    inline const GlobalConfigurationOutputLockingMode& GetOutputLockingMode() const{ return m_outputLockingMode; }
+    inline GlobalConfigurationOutputLockingMode GetOutputLockingMode() const { return m_outputLockingMode; }
     inline bool OutputLockingModeHasBeenSet() const { return m_outputLockingModeHasBeenSet; }
-    inline void SetOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = value; }
-    inline void SetOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = std::move(value); }
-    inline GlobalConfiguration& WithOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { SetOutputLockingMode(value); return *this;}
-    inline GlobalConfiguration& WithOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { SetOutputLockingMode(std::move(value)); return *this;}
+    inline void SetOutputLockingMode(GlobalConfigurationOutputLockingMode value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = value; }
+    inline GlobalConfiguration& WithOutputLockingMode(GlobalConfigurationOutputLockingMode value) { SetOutputLockingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,10 @@ DISABLED - MediaLive will not attempt to synchronize
      * or should be locked to the clock of the source that is providing the input
      * stream.
      */
-    inline const GlobalConfigurationOutputTimingSource& GetOutputTimingSource() const{ return m_outputTimingSource; }
+    inline GlobalConfigurationOutputTimingSource GetOutputTimingSource() const { return m_outputTimingSource; }
     inline bool OutputTimingSourceHasBeenSet() const { return m_outputTimingSourceHasBeenSet; }
-    inline void SetOutputTimingSource(const GlobalConfigurationOutputTimingSource& value) { m_outputTimingSourceHasBeenSet = true; m_outputTimingSource = value; }
-    inline void SetOutputTimingSource(GlobalConfigurationOutputTimingSource&& value) { m_outputTimingSourceHasBeenSet = true; m_outputTimingSource = std::move(value); }
-    inline GlobalConfiguration& WithOutputTimingSource(const GlobalConfigurationOutputTimingSource& value) { SetOutputTimingSource(value); return *this;}
-    inline GlobalConfiguration& WithOutputTimingSource(GlobalConfigurationOutputTimingSource&& value) { SetOutputTimingSource(std::move(value)); return *this;}
+    inline void SetOutputTimingSource(GlobalConfigurationOutputTimingSource value) { m_outputTimingSourceHasBeenSet = true; m_outputTimingSource = value; }
+    inline GlobalConfiguration& WithOutputTimingSource(GlobalConfigurationOutputTimingSource value) { SetOutputTimingSource(value); return *this;}
     ///@}
 
     ///@{
@@ -124,43 +118,41 @@ DISABLED - MediaLive will not attempt to synchronize
      * commonly set to enabled for music channels with less than one video frame per
      * second.
      */
-    inline const GlobalConfigurationLowFramerateInputs& GetSupportLowFramerateInputs() const{ return m_supportLowFramerateInputs; }
+    inline GlobalConfigurationLowFramerateInputs GetSupportLowFramerateInputs() const { return m_supportLowFramerateInputs; }
     inline bool SupportLowFramerateInputsHasBeenSet() const { return m_supportLowFramerateInputsHasBeenSet; }
-    inline void SetSupportLowFramerateInputs(const GlobalConfigurationLowFramerateInputs& value) { m_supportLowFramerateInputsHasBeenSet = true; m_supportLowFramerateInputs = value; }
-    inline void SetSupportLowFramerateInputs(GlobalConfigurationLowFramerateInputs&& value) { m_supportLowFramerateInputsHasBeenSet = true; m_supportLowFramerateInputs = std::move(value); }
-    inline GlobalConfiguration& WithSupportLowFramerateInputs(const GlobalConfigurationLowFramerateInputs& value) { SetSupportLowFramerateInputs(value); return *this;}
-    inline GlobalConfiguration& WithSupportLowFramerateInputs(GlobalConfigurationLowFramerateInputs&& value) { SetSupportLowFramerateInputs(std::move(value)); return *this;}
+    inline void SetSupportLowFramerateInputs(GlobalConfigurationLowFramerateInputs value) { m_supportLowFramerateInputsHasBeenSet = true; m_supportLowFramerateInputs = value; }
+    inline GlobalConfiguration& WithSupportLowFramerateInputs(GlobalConfigurationLowFramerateInputs value) { SetSupportLowFramerateInputs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Advanced output locking settings
      */
-    inline const OutputLockingSettings& GetOutputLockingSettings() const{ return m_outputLockingSettings; }
+    inline const OutputLockingSettings& GetOutputLockingSettings() const { return m_outputLockingSettings; }
     inline bool OutputLockingSettingsHasBeenSet() const { return m_outputLockingSettingsHasBeenSet; }
-    inline void SetOutputLockingSettings(const OutputLockingSettings& value) { m_outputLockingSettingsHasBeenSet = true; m_outputLockingSettings = value; }
-    inline void SetOutputLockingSettings(OutputLockingSettings&& value) { m_outputLockingSettingsHasBeenSet = true; m_outputLockingSettings = std::move(value); }
-    inline GlobalConfiguration& WithOutputLockingSettings(const OutputLockingSettings& value) { SetOutputLockingSettings(value); return *this;}
-    inline GlobalConfiguration& WithOutputLockingSettings(OutputLockingSettings&& value) { SetOutputLockingSettings(std::move(value)); return *this;}
+    template<typename OutputLockingSettingsT = OutputLockingSettings>
+    void SetOutputLockingSettings(OutputLockingSettingsT&& value) { m_outputLockingSettingsHasBeenSet = true; m_outputLockingSettings = std::forward<OutputLockingSettingsT>(value); }
+    template<typename OutputLockingSettingsT = OutputLockingSettings>
+    GlobalConfiguration& WithOutputLockingSettings(OutputLockingSettingsT&& value) { SetOutputLockingSettings(std::forward<OutputLockingSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_initialAudioGain;
+    int m_initialAudioGain{0};
     bool m_initialAudioGainHasBeenSet = false;
 
-    GlobalConfigurationInputEndAction m_inputEndAction;
+    GlobalConfigurationInputEndAction m_inputEndAction{GlobalConfigurationInputEndAction::NOT_SET};
     bool m_inputEndActionHasBeenSet = false;
 
     InputLossBehavior m_inputLossBehavior;
     bool m_inputLossBehaviorHasBeenSet = false;
 
-    GlobalConfigurationOutputLockingMode m_outputLockingMode;
+    GlobalConfigurationOutputLockingMode m_outputLockingMode{GlobalConfigurationOutputLockingMode::NOT_SET};
     bool m_outputLockingModeHasBeenSet = false;
 
-    GlobalConfigurationOutputTimingSource m_outputTimingSource;
+    GlobalConfigurationOutputTimingSource m_outputTimingSource{GlobalConfigurationOutputTimingSource::NOT_SET};
     bool m_outputTimingSourceHasBeenSet = false;
 
-    GlobalConfigurationLowFramerateInputs m_supportLowFramerateInputs;
+    GlobalConfigurationLowFramerateInputs m_supportLowFramerateInputs{GlobalConfigurationLowFramerateInputs::NOT_SET};
     bool m_supportLowFramerateInputsHasBeenSet = false;
 
     OutputLockingSettings m_outputLockingSettings;

@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFunctionConcurrencyRequest::DeleteFunctionConcurrencyRequest() : 
-    m_functionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFunctionConcurrencyRequest::SerializePayload() const
 {
   return {};

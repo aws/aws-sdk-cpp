@@ -21,7 +21,7 @@ namespace Model
   class GetFindingsStatisticsRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API GetFindingsStatisticsRequest();
+    AWS_ACCESSANALYZER_API GetFindingsStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
      * of the analyzer</a> used to generate the statistics.</p>
      */
-    inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
+    inline const Aws::String& GetAnalyzerArn() const { return m_analyzerArn; }
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-    inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-    inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-    inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-    inline GetFindingsStatisticsRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-    inline GetFindingsStatisticsRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-    inline GetFindingsStatisticsRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    template<typename AnalyzerArnT = Aws::String>
+    void SetAnalyzerArn(AnalyzerArnT&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::forward<AnalyzerArnT>(value); }
+    template<typename AnalyzerArnT = Aws::String>
+    GetFindingsStatisticsRequest& WithAnalyzerArn(AnalyzerArnT&& value) { SetAnalyzerArn(std::forward<AnalyzerArnT>(value)); return *this;}
     ///@}
   private:
 

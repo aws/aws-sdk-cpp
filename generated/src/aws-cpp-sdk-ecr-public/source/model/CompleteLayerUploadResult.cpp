@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompleteLayerUploadResult::CompleteLayerUploadResult()
-{
-}
-
 CompleteLayerUploadResult::CompleteLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CompleteLayerUploadResult& CompleteLayerUploadResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
+    m_uploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerDigest"))
   {
     m_layerDigest = jsonValue.GetString("layerDigest");
-
+    m_layerDigestHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

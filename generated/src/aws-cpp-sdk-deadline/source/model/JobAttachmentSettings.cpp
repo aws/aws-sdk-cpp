@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobAttachmentSettings::JobAttachmentSettings() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_rootPrefixHasBeenSet(false)
-{
-}
-
 JobAttachmentSettings::JobAttachmentSettings(JsonView jsonValue)
-  : JobAttachmentSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobAttachmentSettings& JobAttachmentSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootPrefix"))
   {
     m_rootPrefix = jsonValue.GetString("rootPrefix");
-
     m_rootPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

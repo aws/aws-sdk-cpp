@@ -19,59 +19,33 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StructuredMessageListDefinition::StructuredMessageListDefinition() : 
-    m_nameHasBeenSet(false),
-    m_memberTypeHasBeenSet(false),
-    m_listType(StructuredMessageListType::NOT_SET),
-    m_listTypeHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false)
-{
-}
-
 StructuredMessageListDefinition::StructuredMessageListDefinition(JsonView jsonValue)
-  : StructuredMessageListDefinition()
 {
   *this = jsonValue;
 }
-
-const StructuredMessage& StructuredMessageListDefinition::GetMemberType() const{ return *m_memberType; }
-bool StructuredMessageListDefinition::MemberTypeHasBeenSet() const { return m_memberTypeHasBeenSet; }
-void StructuredMessageListDefinition::SetMemberType(const StructuredMessage& value) { m_memberTypeHasBeenSet = true; m_memberType = Aws::MakeShared<StructuredMessage>("StructuredMessageListDefinition", value); }
-void StructuredMessageListDefinition::SetMemberType(StructuredMessage&& value) { m_memberTypeHasBeenSet = true; m_memberType = Aws::MakeShared<StructuredMessage>("StructuredMessageListDefinition", std::move(value)); }
-StructuredMessageListDefinition& StructuredMessageListDefinition::WithMemberType(const StructuredMessage& value) { SetMemberType(value); return *this;}
-StructuredMessageListDefinition& StructuredMessageListDefinition::WithMemberType(StructuredMessage&& value) { SetMemberType(std::move(value)); return *this;}
 
 StructuredMessageListDefinition& StructuredMessageListDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberType"))
   {
     m_memberType = Aws::MakeShared<StructuredMessage>("StructuredMessageListDefinition", jsonValue.GetObject("memberType"));
-
     m_memberTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listType"))
   {
     m_listType = StructuredMessageListTypeMapper::GetStructuredMessageListTypeForName(jsonValue.GetString("listType"));
-
     m_listTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacity"))
   {
     m_capacity = jsonValue.GetInteger("capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   return *this;
 }
 

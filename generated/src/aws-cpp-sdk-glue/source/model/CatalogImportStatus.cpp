@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogImportStatus::CatalogImportStatus() : 
-    m_importCompleted(false),
-    m_importCompletedHasBeenSet(false),
-    m_importTimeHasBeenSet(false),
-    m_importedByHasBeenSet(false)
-{
-}
-
 CatalogImportStatus::CatalogImportStatus(JsonView jsonValue)
-  : CatalogImportStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CatalogImportStatus& CatalogImportStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImportCompleted"))
   {
     m_importCompleted = jsonValue.GetBool("ImportCompleted");
-
     m_importCompletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportTime"))
   {
     m_importTime = jsonValue.GetDouble("ImportTime");
-
     m_importTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedBy"))
   {
     m_importedBy = jsonValue.GetString("ImportedBy");
-
     m_importedByHasBeenSet = true;
   }
-
   return *this;
 }
 

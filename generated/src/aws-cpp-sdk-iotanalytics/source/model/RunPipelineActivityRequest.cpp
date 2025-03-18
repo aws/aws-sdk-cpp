@@ -13,12 +13,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RunPipelineActivityRequest::RunPipelineActivityRequest() : 
-    m_pipelineActivityHasBeenSet(false),
-    m_payloadsHasBeenSet(false)
-{
-}
-
 Aws::String RunPipelineActivityRequest::SerializePayload() const
 {
   JsonValue payload;

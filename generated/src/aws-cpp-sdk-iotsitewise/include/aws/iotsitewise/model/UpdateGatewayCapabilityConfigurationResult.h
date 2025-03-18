@@ -28,7 +28,7 @@ namespace Model
   class UpdateGatewayCapabilityConfigurationResult
   {
   public:
-    AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationResult();
+    AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationResult() = default;
     AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The namespace of the gateway capability.</p>
      */
-    inline const Aws::String& GetCapabilityNamespace() const{ return m_capabilityNamespace; }
-    inline void SetCapabilityNamespace(const Aws::String& value) { m_capabilityNamespace = value; }
-    inline void SetCapabilityNamespace(Aws::String&& value) { m_capabilityNamespace = std::move(value); }
-    inline void SetCapabilityNamespace(const char* value) { m_capabilityNamespace.assign(value); }
-    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilityNamespace(const Aws::String& value) { SetCapabilityNamespace(value); return *this;}
-    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilityNamespace(Aws::String&& value) { SetCapabilityNamespace(std::move(value)); return *this;}
-    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilityNamespace(const char* value) { SetCapabilityNamespace(value); return *this;}
+    inline const Aws::String& GetCapabilityNamespace() const { return m_capabilityNamespace; }
+    template<typename CapabilityNamespaceT = Aws::String>
+    void SetCapabilityNamespace(CapabilityNamespaceT&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::forward<CapabilityNamespaceT>(value); }
+    template<typename CapabilityNamespaceT = Aws::String>
+    UpdateGatewayCapabilityConfigurationResult& WithCapabilityNamespace(CapabilityNamespaceT&& value) { SetCapabilityNamespace(std::forward<CapabilityNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,30 +60,29 @@ namespace Model
      * capability configuration, its sync status is <code>OUT_OF_SYNC</code> until the
      * gateway receives and applies or rejects the updated configuration.</p>
      */
-    inline const CapabilitySyncStatus& GetCapabilitySyncStatus() const{ return m_capabilitySyncStatus; }
-    inline void SetCapabilitySyncStatus(const CapabilitySyncStatus& value) { m_capabilitySyncStatus = value; }
-    inline void SetCapabilitySyncStatus(CapabilitySyncStatus&& value) { m_capabilitySyncStatus = std::move(value); }
-    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(const CapabilitySyncStatus& value) { SetCapabilitySyncStatus(value); return *this;}
-    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(CapabilitySyncStatus&& value) { SetCapabilitySyncStatus(std::move(value)); return *this;}
+    inline CapabilitySyncStatus GetCapabilitySyncStatus() const { return m_capabilitySyncStatus; }
+    inline void SetCapabilitySyncStatus(CapabilitySyncStatus value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = value; }
+    inline UpdateGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(CapabilitySyncStatus value) { SetCapabilitySyncStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateGatewayCapabilityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateGatewayCapabilityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateGatewayCapabilityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateGatewayCapabilityConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_capabilityNamespace;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
-    CapabilitySyncStatus m_capabilitySyncStatus;
+    CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
+    bool m_capabilitySyncStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

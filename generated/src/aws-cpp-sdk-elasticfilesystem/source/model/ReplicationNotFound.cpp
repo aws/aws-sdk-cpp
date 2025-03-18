@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-ReplicationNotFound::ReplicationNotFound() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ReplicationNotFound::ReplicationNotFound(JsonView jsonValue)
-  : ReplicationNotFound()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReplicationNotFound& ReplicationNotFound::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

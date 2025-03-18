@@ -22,7 +22,7 @@ namespace Model
   class GetResourcePoliciesRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API GetResourcePoliciesRequest();
+    AWS_RAM_API GetResourcePoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * Resource Names (ARNs)</a> of the resources whose policies you want to
      * retrieve.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline GetResourcePoliciesRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline GetResourcePoliciesRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline GetResourcePoliciesRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline GetResourcePoliciesRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline GetResourcePoliciesRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    GetResourcePoliciesRequest& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    GetResourcePoliciesRequest& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the principal.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline GetResourcePoliciesRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline GetResourcePoliciesRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline GetResourcePoliciesRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    GetResourcePoliciesRequest& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +70,12 @@ namespace Model
      * provided by the previous call's <code>NextToken</code> response to request the
      * next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetResourcePoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetResourcePoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetResourcePoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetResourcePoliciesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +90,7 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetResourcePoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -111,7 +106,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

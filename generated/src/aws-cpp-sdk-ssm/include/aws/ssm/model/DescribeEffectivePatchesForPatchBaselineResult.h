@@ -29,7 +29,7 @@ namespace Model
   class DescribeEffectivePatchesForPatchBaselineResult
   {
   public:
-    AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult();
+    AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult() = default;
     AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of patches and patch status.</p>
      */
-    inline const Aws::Vector<EffectivePatch>& GetEffectivePatches() const{ return m_effectivePatches; }
-    inline void SetEffectivePatches(const Aws::Vector<EffectivePatch>& value) { m_effectivePatches = value; }
-    inline void SetEffectivePatches(Aws::Vector<EffectivePatch>&& value) { m_effectivePatches = std::move(value); }
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithEffectivePatches(const Aws::Vector<EffectivePatch>& value) { SetEffectivePatches(value); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithEffectivePatches(Aws::Vector<EffectivePatch>&& value) { SetEffectivePatches(std::move(value)); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(const EffectivePatch& value) { m_effectivePatches.push_back(value); return *this; }
-    inline DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(EffectivePatch&& value) { m_effectivePatches.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EffectivePatch>& GetEffectivePatches() const { return m_effectivePatches; }
+    template<typename EffectivePatchesT = Aws::Vector<EffectivePatch>>
+    void SetEffectivePatches(EffectivePatchesT&& value) { m_effectivePatchesHasBeenSet = true; m_effectivePatches = std::forward<EffectivePatchesT>(value); }
+    template<typename EffectivePatchesT = Aws::Vector<EffectivePatch>>
+    DescribeEffectivePatchesForPatchBaselineResult& WithEffectivePatches(EffectivePatchesT&& value) { SetEffectivePatches(std::forward<EffectivePatchesT>(value)); return *this;}
+    template<typename EffectivePatchesT = EffectivePatch>
+    DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(EffectivePatchesT&& value) { m_effectivePatchesHasBeenSet = true; m_effectivePatches.emplace_back(std::forward<EffectivePatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EffectivePatch> m_effectivePatches;
+    bool m_effectivePatchesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

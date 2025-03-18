@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetControlInfoIconLabelOptions::SheetControlInfoIconLabelOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_infoIconTextHasBeenSet(false)
-{
-}
-
 SheetControlInfoIconLabelOptions::SheetControlInfoIconLabelOptions(JsonView jsonValue)
-  : SheetControlInfoIconLabelOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SheetControlInfoIconLabelOptions& SheetControlInfoIconLabelOptions::operator =(J
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfoIconText"))
   {
     m_infoIconText = jsonValue.GetString("InfoIconText");
-
     m_infoIconTextHasBeenSet = true;
   }
-
   return *this;
 }
 

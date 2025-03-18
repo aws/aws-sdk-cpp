@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemplateRequest::GetTemplateRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateRequest::SerializePayload() const
 {
   return {};

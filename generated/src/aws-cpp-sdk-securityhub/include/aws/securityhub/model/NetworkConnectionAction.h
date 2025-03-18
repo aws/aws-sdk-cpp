@@ -36,7 +36,7 @@ namespace Model
   class NetworkConnectionAction
   {
   public:
-    AWS_SECURITYHUB_API NetworkConnectionAction();
+    AWS_SECURITYHUB_API NetworkConnectionAction() = default;
     AWS_SECURITYHUB_API NetworkConnectionAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API NetworkConnectionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The direction of the network connection request (<code>IN</code> or
      * <code>OUT</code>).</p>
      */
-    inline const Aws::String& GetConnectionDirection() const{ return m_connectionDirection; }
+    inline const Aws::String& GetConnectionDirection() const { return m_connectionDirection; }
     inline bool ConnectionDirectionHasBeenSet() const { return m_connectionDirectionHasBeenSet; }
-    inline void SetConnectionDirection(const Aws::String& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = value; }
-    inline void SetConnectionDirection(Aws::String&& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = std::move(value); }
-    inline void SetConnectionDirection(const char* value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection.assign(value); }
-    inline NetworkConnectionAction& WithConnectionDirection(const Aws::String& value) { SetConnectionDirection(value); return *this;}
-    inline NetworkConnectionAction& WithConnectionDirection(Aws::String&& value) { SetConnectionDirection(std::move(value)); return *this;}
-    inline NetworkConnectionAction& WithConnectionDirection(const char* value) { SetConnectionDirection(value); return *this;}
+    template<typename ConnectionDirectionT = Aws::String>
+    void SetConnectionDirection(ConnectionDirectionT&& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = std::forward<ConnectionDirectionT>(value); }
+    template<typename ConnectionDirectionT = Aws::String>
+    NetworkConnectionAction& WithConnectionDirection(ConnectionDirectionT&& value) { SetConnectionDirection(std::forward<ConnectionDirectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,36 +60,36 @@ namespace Model
      * <p>Information about the remote IP address that issued the network connection
      * request.</p>
      */
-    inline const ActionRemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
+    inline const ActionRemoteIpDetails& GetRemoteIpDetails() const { return m_remoteIpDetails; }
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
-    inline void SetRemoteIpDetails(const ActionRemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
-    inline void SetRemoteIpDetails(ActionRemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
-    inline NetworkConnectionAction& WithRemoteIpDetails(const ActionRemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
-    inline NetworkConnectionAction& WithRemoteIpDetails(ActionRemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
+    template<typename RemoteIpDetailsT = ActionRemoteIpDetails>
+    void SetRemoteIpDetails(RemoteIpDetailsT&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::forward<RemoteIpDetailsT>(value); }
+    template<typename RemoteIpDetailsT = ActionRemoteIpDetails>
+    NetworkConnectionAction& WithRemoteIpDetails(RemoteIpDetailsT&& value) { SetRemoteIpDetails(std::forward<RemoteIpDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the port on the remote IP address.</p>
      */
-    inline const ActionRemotePortDetails& GetRemotePortDetails() const{ return m_remotePortDetails; }
+    inline const ActionRemotePortDetails& GetRemotePortDetails() const { return m_remotePortDetails; }
     inline bool RemotePortDetailsHasBeenSet() const { return m_remotePortDetailsHasBeenSet; }
-    inline void SetRemotePortDetails(const ActionRemotePortDetails& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = value; }
-    inline void SetRemotePortDetails(ActionRemotePortDetails&& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = std::move(value); }
-    inline NetworkConnectionAction& WithRemotePortDetails(const ActionRemotePortDetails& value) { SetRemotePortDetails(value); return *this;}
-    inline NetworkConnectionAction& WithRemotePortDetails(ActionRemotePortDetails&& value) { SetRemotePortDetails(std::move(value)); return *this;}
+    template<typename RemotePortDetailsT = ActionRemotePortDetails>
+    void SetRemotePortDetails(RemotePortDetailsT&& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = std::forward<RemotePortDetailsT>(value); }
+    template<typename RemotePortDetailsT = ActionRemotePortDetails>
+    NetworkConnectionAction& WithRemotePortDetails(RemotePortDetailsT&& value) { SetRemotePortDetails(std::forward<RemotePortDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the port on the EC2 instance.</p>
      */
-    inline const ActionLocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
+    inline const ActionLocalPortDetails& GetLocalPortDetails() const { return m_localPortDetails; }
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
-    inline void SetLocalPortDetails(const ActionLocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
-    inline void SetLocalPortDetails(ActionLocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
-    inline NetworkConnectionAction& WithLocalPortDetails(const ActionLocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
-    inline NetworkConnectionAction& WithLocalPortDetails(ActionLocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
+    template<typename LocalPortDetailsT = ActionLocalPortDetails>
+    void SetLocalPortDetails(LocalPortDetailsT&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::forward<LocalPortDetailsT>(value); }
+    template<typename LocalPortDetailsT = ActionLocalPortDetails>
+    NetworkConnectionAction& WithLocalPortDetails(LocalPortDetailsT&& value) { SetLocalPortDetails(std::forward<LocalPortDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +97,19 @@ namespace Model
      * <p>The protocol used to make the network connection request.</p> <p>Length
      * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline NetworkConnectionAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline NetworkConnectionAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline NetworkConnectionAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    NetworkConnectionAction& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the network connection attempt was blocked.</p>
      */
-    inline bool GetBlocked() const{ return m_blocked; }
+    inline bool GetBlocked() const { return m_blocked; }
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
     inline NetworkConnectionAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
@@ -135,7 +131,7 @@ namespace Model
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    bool m_blocked;
+    bool m_blocked{false};
     bool m_blockedHasBeenSet = false;
   };
 

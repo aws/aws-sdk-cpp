@@ -28,7 +28,7 @@ namespace Model
   class GetTemplateSyncConfigResult
   {
   public:
-    AWS_PROTON_API GetTemplateSyncConfigResult();
+    AWS_PROTON_API GetTemplateSyncConfigResult() = default;
     AWS_PROTON_API GetTemplateSyncConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetTemplateSyncConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The template sync configuration detail data that's returned by Proton.</p>
      */
-    inline const TemplateSyncConfig& GetTemplateSyncConfig() const{ return m_templateSyncConfig; }
-    inline void SetTemplateSyncConfig(const TemplateSyncConfig& value) { m_templateSyncConfig = value; }
-    inline void SetTemplateSyncConfig(TemplateSyncConfig&& value) { m_templateSyncConfig = std::move(value); }
-    inline GetTemplateSyncConfigResult& WithTemplateSyncConfig(const TemplateSyncConfig& value) { SetTemplateSyncConfig(value); return *this;}
-    inline GetTemplateSyncConfigResult& WithTemplateSyncConfig(TemplateSyncConfig&& value) { SetTemplateSyncConfig(std::move(value)); return *this;}
+    inline const TemplateSyncConfig& GetTemplateSyncConfig() const { return m_templateSyncConfig; }
+    template<typename TemplateSyncConfigT = TemplateSyncConfig>
+    void SetTemplateSyncConfig(TemplateSyncConfigT&& value) { m_templateSyncConfigHasBeenSet = true; m_templateSyncConfig = std::forward<TemplateSyncConfigT>(value); }
+    template<typename TemplateSyncConfigT = TemplateSyncConfig>
+    GetTemplateSyncConfigResult& WithTemplateSyncConfig(TemplateSyncConfigT&& value) { SetTemplateSyncConfig(std::forward<TemplateSyncConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTemplateSyncConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTemplateSyncConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTemplateSyncConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTemplateSyncConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TemplateSyncConfig m_templateSyncConfig;
+    bool m_templateSyncConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class GetFunctionRecursionConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API GetFunctionRecursionConfigRequest();
+    AWS_LAMBDA_API GetFunctionRecursionConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline GetFunctionRecursionConfigRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline GetFunctionRecursionConfigRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline GetFunctionRecursionConfigRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    GetFunctionRecursionConfigRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
   private:
 

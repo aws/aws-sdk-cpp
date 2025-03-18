@@ -18,15 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedMetricSetConfig::DetectedMetricSetConfig() : 
-    m_offsetHasBeenSet(false),
-    m_metricSetFrequencyHasBeenSet(false),
-    m_metricSourceHasBeenSet(false)
-{
-}
-
 DetectedMetricSetConfig::DetectedMetricSetConfig(JsonView jsonValue)
-  : DetectedMetricSetConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DetectedMetricSetConfig& DetectedMetricSetConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Offset"))
   {
     m_offset = jsonValue.GetObject("Offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricSetFrequency"))
   {
     m_metricSetFrequency = jsonValue.GetObject("MetricSetFrequency");
-
     m_metricSetFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricSource"))
   {
     m_metricSource = jsonValue.GetObject("MetricSource");
-
     m_metricSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

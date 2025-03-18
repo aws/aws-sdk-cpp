@@ -35,7 +35,7 @@ namespace Model
   class ReservedNode
   {
   public:
-    AWS_MEMORYDB_API ReservedNode();
+    AWS_MEMORYDB_API ReservedNode() = default;
     AWS_MEMORYDB_API ReservedNode(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ReservedNode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,61 +45,55 @@ namespace Model
     /**
      * <p>A customer-specified identifier to track this reservation.</p>
      */
-    inline const Aws::String& GetReservationId() const{ return m_reservationId; }
+    inline const Aws::String& GetReservationId() const { return m_reservationId; }
     inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
-    inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
-    inline void SetReservationId(Aws::String&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::move(value); }
-    inline void SetReservationId(const char* value) { m_reservationIdHasBeenSet = true; m_reservationId.assign(value); }
-    inline ReservedNode& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
-    inline ReservedNode& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
-    inline ReservedNode& WithReservationId(const char* value) { SetReservationId(value); return *this;}
+    template<typename ReservationIdT = Aws::String>
+    void SetReservationId(ReservationIdT&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::forward<ReservationIdT>(value); }
+    template<typename ReservationIdT = Aws::String>
+    ReservedNode& WithReservationId(ReservationIdT&& value) { SetReservationId(std::forward<ReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the reserved node offering to purchase.</p>
      */
-    inline const Aws::String& GetReservedNodesOfferingId() const{ return m_reservedNodesOfferingId; }
+    inline const Aws::String& GetReservedNodesOfferingId() const { return m_reservedNodesOfferingId; }
     inline bool ReservedNodesOfferingIdHasBeenSet() const { return m_reservedNodesOfferingIdHasBeenSet; }
-    inline void SetReservedNodesOfferingId(const Aws::String& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = value; }
-    inline void SetReservedNodesOfferingId(Aws::String&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::move(value); }
-    inline void SetReservedNodesOfferingId(const char* value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId.assign(value); }
-    inline ReservedNode& WithReservedNodesOfferingId(const Aws::String& value) { SetReservedNodesOfferingId(value); return *this;}
-    inline ReservedNode& WithReservedNodesOfferingId(Aws::String&& value) { SetReservedNodesOfferingId(std::move(value)); return *this;}
-    inline ReservedNode& WithReservedNodesOfferingId(const char* value) { SetReservedNodesOfferingId(value); return *this;}
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    void SetReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::forward<ReservedNodesOfferingIdT>(value); }
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    ReservedNode& WithReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { SetReservedNodesOfferingId(std::forward<ReservedNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node type for the reserved nodes.</p>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline ReservedNode& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline ReservedNode& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline ReservedNode& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    ReservedNode& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the reservation started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ReservedNode& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ReservedNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ReservedNode& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline ReservedNode& WithDuration(int value) { SetDuration(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
     /**
      * <p>The fixed price charged for this reserved node.</p>
      */
-    inline double GetFixedPrice() const{ return m_fixedPrice; }
+    inline double GetFixedPrice() const { return m_fixedPrice; }
     inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
     inline ReservedNode& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
@@ -119,7 +113,7 @@ namespace Model
     /**
      * <p>The number of nodes that have been reserved.</p>
      */
-    inline int GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const { return m_nodeCount; }
     inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
     inline ReservedNode& WithNodeCount(int value) { SetNodeCount(value); return *this;}
@@ -129,56 +123,50 @@ namespace Model
     /**
      * <p>The offering type of this reserved node.</p>
      */
-    inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+    inline const Aws::String& GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
-    inline ReservedNode& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
-    inline ReservedNode& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
-    inline ReservedNode& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+    template<typename OfferingTypeT = Aws::String>
+    void SetOfferingType(OfferingTypeT&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::forward<OfferingTypeT>(value); }
+    template<typename OfferingTypeT = Aws::String>
+    ReservedNode& WithOfferingType(OfferingTypeT&& value) { SetOfferingType(std::forward<OfferingTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the reserved node.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline ReservedNode& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline ReservedNode& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline ReservedNode& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    ReservedNode& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recurring price charged to run this reserved node.</p>
      */
-    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const { return m_recurringCharges; }
     inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
-    inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
-    inline ReservedNode& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
-    inline ReservedNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
-    inline ReservedNode& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
-    inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
+    template<typename RecurringChargesT = Aws::Vector<RecurringCharge>>
+    void SetRecurringCharges(RecurringChargesT&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::forward<RecurringChargesT>(value); }
+    template<typename RecurringChargesT = Aws::Vector<RecurringCharge>>
+    ReservedNode& WithRecurringCharges(RecurringChargesT&& value) { SetRecurringCharges(std::forward<RecurringChargesT>(value)); return *this;}
+    template<typename RecurringChargesT = RecurringCharge>
+    ReservedNode& AddRecurringCharges(RecurringChargesT&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.emplace_back(std::forward<RecurringChargesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the reserved node.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline ReservedNode& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline ReservedNode& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline ReservedNode& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    ReservedNode& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -191,16 +179,16 @@ namespace Model
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    double m_fixedPrice;
+    double m_fixedPrice{0.0};
     bool m_fixedPriceHasBeenSet = false;
 
-    int m_nodeCount;
+    int m_nodeCount{0};
     bool m_nodeCountHasBeenSet = false;
 
     Aws::String m_offeringType;

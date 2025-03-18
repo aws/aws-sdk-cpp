@@ -36,7 +36,7 @@ namespace Model
   class StartLiveTailResponseStream
   {
   public:
-    AWS_CLOUDWATCHLOGS_API StartLiveTailResponseStream();
+    AWS_CLOUDWATCHLOGS_API StartLiveTailResponseStream() = default;
     AWS_CLOUDWATCHLOGS_API StartLiveTailResponseStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API StartLiveTailResponseStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,24 @@ namespace Model
      * <p>This object contains information about this Live Tail session, including the
      * log groups included and the log stream filters, if any.</p>
      */
-    inline const LiveTailSessionStart& GetSessionStart() const{ return m_sessionStart; }
+    inline const LiveTailSessionStart& GetSessionStart() const { return m_sessionStart; }
     inline bool SessionStartHasBeenSet() const { return m_sessionStartHasBeenSet; }
-    inline void SetSessionStart(const LiveTailSessionStart& value) { m_sessionStartHasBeenSet = true; m_sessionStart = value; }
-    inline void SetSessionStart(LiveTailSessionStart&& value) { m_sessionStartHasBeenSet = true; m_sessionStart = std::move(value); }
-    inline StartLiveTailResponseStream& WithSessionStart(const LiveTailSessionStart& value) { SetSessionStart(value); return *this;}
-    inline StartLiveTailResponseStream& WithSessionStart(LiveTailSessionStart&& value) { SetSessionStart(std::move(value)); return *this;}
+    template<typename SessionStartT = LiveTailSessionStart>
+    void SetSessionStart(SessionStartT&& value) { m_sessionStartHasBeenSet = true; m_sessionStart = std::forward<SessionStartT>(value); }
+    template<typename SessionStartT = LiveTailSessionStart>
+    StartLiveTailResponseStream& WithSessionStart(SessionStartT&& value) { SetSessionStart(std::forward<SessionStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This object contains the log events and session metadata.</p>
      */
-    inline const LiveTailSessionUpdate& GetSessionUpdate() const{ return m_sessionUpdate; }
+    inline const LiveTailSessionUpdate& GetSessionUpdate() const { return m_sessionUpdate; }
     inline bool SessionUpdateHasBeenSet() const { return m_sessionUpdateHasBeenSet; }
-    inline void SetSessionUpdate(const LiveTailSessionUpdate& value) { m_sessionUpdateHasBeenSet = true; m_sessionUpdate = value; }
-    inline void SetSessionUpdate(LiveTailSessionUpdate&& value) { m_sessionUpdateHasBeenSet = true; m_sessionUpdate = std::move(value); }
-    inline StartLiveTailResponseStream& WithSessionUpdate(const LiveTailSessionUpdate& value) { SetSessionUpdate(value); return *this;}
-    inline StartLiveTailResponseStream& WithSessionUpdate(LiveTailSessionUpdate&& value) { SetSessionUpdate(std::move(value)); return *this;}
+    template<typename SessionUpdateT = LiveTailSessionUpdate>
+    void SetSessionUpdate(SessionUpdateT&& value) { m_sessionUpdateHasBeenSet = true; m_sessionUpdate = std::forward<SessionUpdateT>(value); }
+    template<typename SessionUpdateT = LiveTailSessionUpdate>
+    StartLiveTailResponseStream& WithSessionUpdate(SessionUpdateT&& value) { SetSessionUpdate(std::forward<SessionUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,24 +72,24 @@ namespace Model
      * <p>This exception is returned in the stream when the Live Tail session times
      * out. Live Tail sessions time out after three hours.</p>
      */
-    inline const SessionTimeoutException& GetSessionTimeoutException() const{ return m_sessionTimeoutException; }
+    inline const SessionTimeoutException& GetSessionTimeoutException() const { return m_sessionTimeoutException; }
     inline bool SessionTimeoutExceptionHasBeenSet() const { return m_sessionTimeoutExceptionHasBeenSet; }
-    inline void SetSessionTimeoutException(const SessionTimeoutException& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = value; }
-    inline void SetSessionTimeoutException(SessionTimeoutException&& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = std::move(value); }
-    inline StartLiveTailResponseStream& WithSessionTimeoutException(const SessionTimeoutException& value) { SetSessionTimeoutException(value); return *this;}
-    inline StartLiveTailResponseStream& WithSessionTimeoutException(SessionTimeoutException&& value) { SetSessionTimeoutException(std::move(value)); return *this;}
+    template<typename SessionTimeoutExceptionT = SessionTimeoutException>
+    void SetSessionTimeoutException(SessionTimeoutExceptionT&& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = std::forward<SessionTimeoutExceptionT>(value); }
+    template<typename SessionTimeoutExceptionT = SessionTimeoutException>
+    StartLiveTailResponseStream& WithSessionTimeoutException(SessionTimeoutExceptionT&& value) { SetSessionTimeoutException(std::forward<SessionTimeoutExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This exception is returned if an unknown error occurs.</p>
      */
-    inline const SessionStreamingException& GetSessionStreamingException() const{ return m_sessionStreamingException; }
+    inline const SessionStreamingException& GetSessionStreamingException() const { return m_sessionStreamingException; }
     inline bool SessionStreamingExceptionHasBeenSet() const { return m_sessionStreamingExceptionHasBeenSet; }
-    inline void SetSessionStreamingException(const SessionStreamingException& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = value; }
-    inline void SetSessionStreamingException(SessionStreamingException&& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = std::move(value); }
-    inline StartLiveTailResponseStream& WithSessionStreamingException(const SessionStreamingException& value) { SetSessionStreamingException(value); return *this;}
-    inline StartLiveTailResponseStream& WithSessionStreamingException(SessionStreamingException&& value) { SetSessionStreamingException(std::move(value)); return *this;}
+    template<typename SessionStreamingExceptionT = SessionStreamingException>
+    void SetSessionStreamingException(SessionStreamingExceptionT&& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = std::forward<SessionStreamingExceptionT>(value); }
+    template<typename SessionStreamingExceptionT = SessionStreamingException>
+    StartLiveTailResponseStream& WithSessionStreamingException(SessionStreamingExceptionT&& value) { SetSessionStreamingException(std::forward<SessionStreamingExceptionT>(value)); return *this;}
     ///@}
   private:
 

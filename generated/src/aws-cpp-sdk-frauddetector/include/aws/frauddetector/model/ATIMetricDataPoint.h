@@ -30,7 +30,7 @@ namespace Model
   class ATIMetricDataPoint
   {
   public:
-    AWS_FRAUDDETECTOR_API ATIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint() = default;
     AWS_FRAUDDETECTOR_API ATIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ATIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * model recommends to challenge such as one-time password, multi-factor
      * authentication, and investigations. </p>
      */
-    inline double GetCr() const{ return m_cr; }
+    inline double GetCr() const { return m_cr; }
     inline bool CrHasBeenSet() const { return m_crHasBeenSet; }
     inline void SetCr(double value) { m_crHasBeenSet = true; m_cr = value; }
     inline ATIMetricDataPoint& WithCr(double value) { SetCr(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * model, but would also require challenging a larger percentage of login events,
      * leading to a higher customer friction. </p>
      */
-    inline double GetAdr() const{ return m_adr; }
+    inline double GetAdr() const { return m_adr; }
     inline bool AdrHasBeenSet() const { return m_adrHasBeenSet; }
     inline void SetAdr(double value) { m_adrHasBeenSet = true; m_adr = value; }
     inline ATIMetricDataPoint& WithAdr(double value) { SetAdr(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * example, a threshold of 500 means any model score 500 or above is labeled as
      * fraud. </p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline ATIMetricDataPoint& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -82,23 +82,23 @@ namespace Model
      * at-least one labeled account takeover event is present in the ingested dataset.
      * </p>
      */
-    inline double GetAtodr() const{ return m_atodr; }
+    inline double GetAtodr() const { return m_atodr; }
     inline bool AtodrHasBeenSet() const { return m_atodrHasBeenSet; }
     inline void SetAtodr(double value) { m_atodrHasBeenSet = true; m_atodr = value; }
     inline ATIMetricDataPoint& WithAtodr(double value) { SetAtodr(value); return *this;}
     ///@}
   private:
 
-    double m_cr;
+    double m_cr{0.0};
     bool m_crHasBeenSet = false;
 
-    double m_adr;
+    double m_adr{0.0};
     bool m_adrHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    double m_atodr;
+    double m_atodr{0.0};
     bool m_atodrHasBeenSet = false;
   };
 

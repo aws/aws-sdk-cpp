@@ -28,7 +28,7 @@ namespace Model
   class GetFunctionRecursionConfigResult
   {
   public:
-    AWS_LAMBDA_API GetFunctionRecursionConfigResult();
+    AWS_LAMBDA_API GetFunctionRecursionConfigResult() = default;
     AWS_LAMBDA_API GetFunctionRecursionConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API GetFunctionRecursionConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,26 @@ namespace Model
      * function's configuration to <code>Terminate</code>. You can update this
      * configuration using the <a>PutFunctionRecursionConfig</a> action.</p>
      */
-    inline const RecursiveLoop& GetRecursiveLoop() const{ return m_recursiveLoop; }
-    inline void SetRecursiveLoop(const RecursiveLoop& value) { m_recursiveLoop = value; }
-    inline void SetRecursiveLoop(RecursiveLoop&& value) { m_recursiveLoop = std::move(value); }
-    inline GetFunctionRecursionConfigResult& WithRecursiveLoop(const RecursiveLoop& value) { SetRecursiveLoop(value); return *this;}
-    inline GetFunctionRecursionConfigResult& WithRecursiveLoop(RecursiveLoop&& value) { SetRecursiveLoop(std::move(value)); return *this;}
+    inline RecursiveLoop GetRecursiveLoop() const { return m_recursiveLoop; }
+    inline void SetRecursiveLoop(RecursiveLoop value) { m_recursiveLoopHasBeenSet = true; m_recursiveLoop = value; }
+    inline GetFunctionRecursionConfigResult& WithRecursiveLoop(RecursiveLoop value) { SetRecursiveLoop(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFunctionRecursionConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFunctionRecursionConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFunctionRecursionConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFunctionRecursionConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    RecursiveLoop m_recursiveLoop;
+    RecursiveLoop m_recursiveLoop{RecursiveLoop::NOT_SET};
+    bool m_recursiveLoopHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

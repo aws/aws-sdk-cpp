@@ -23,7 +23,7 @@ namespace Model
   class DescribeClustersRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DescribeClustersRequest();
+    AWS_ECS_API DescribeClustersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
      * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClusters() const{ return m_clusters; }
+    inline const Aws::Vector<Aws::String>& GetClusters() const { return m_clusters; }
     inline bool ClustersHasBeenSet() const { return m_clustersHasBeenSet; }
-    inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clustersHasBeenSet = true; m_clusters = value; }
-    inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clustersHasBeenSet = true; m_clusters = std::move(value); }
-    inline DescribeClustersRequest& WithClusters(const Aws::Vector<Aws::String>& value) { SetClusters(value); return *this;}
-    inline DescribeClustersRequest& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(std::move(value)); return *this;}
-    inline DescribeClustersRequest& AddClusters(const Aws::String& value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
-    inline DescribeClustersRequest& AddClusters(Aws::String&& value) { m_clustersHasBeenSet = true; m_clusters.push_back(std::move(value)); return *this; }
-    inline DescribeClustersRequest& AddClusters(const char* value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
+    template<typename ClustersT = Aws::Vector<Aws::String>>
+    void SetClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters = std::forward<ClustersT>(value); }
+    template<typename ClustersT = Aws::Vector<Aws::String>>
+    DescribeClustersRequest& WithClusters(ClustersT&& value) { SetClusters(std::forward<ClustersT>(value)); return *this;}
+    template<typename ClustersT = Aws::String>
+    DescribeClustersRequest& AddClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters.emplace_back(std::forward<ClustersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +64,13 @@ namespace Model
      * <p>If <code>TAGS</code> is specified, the metadata tags associated with the
      * cluster are included.</p>
      */
-    inline const Aws::Vector<ClusterField>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<ClusterField>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<ClusterField>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<ClusterField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline DescribeClustersRequest& WithInclude(const Aws::Vector<ClusterField>& value) { SetInclude(value); return *this;}
-    inline DescribeClustersRequest& WithInclude(Aws::Vector<ClusterField>&& value) { SetInclude(std::move(value)); return *this;}
-    inline DescribeClustersRequest& AddInclude(const ClusterField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline DescribeClustersRequest& AddInclude(ClusterField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+    template<typename IncludeT = Aws::Vector<ClusterField>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<ClusterField>>
+    DescribeClustersRequest& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    inline DescribeClustersRequest& AddInclude(ClusterField value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-PipelineStatusReason::PipelineStatusReason() : 
-    m_descriptionHasBeenSet(false)
-{
-}
-
 PipelineStatusReason::PipelineStatusReason(JsonView jsonValue)
-  : PipelineStatusReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PipelineStatusReason& PipelineStatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

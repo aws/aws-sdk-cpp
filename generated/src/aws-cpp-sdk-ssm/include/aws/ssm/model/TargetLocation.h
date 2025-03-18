@@ -36,7 +36,7 @@ namespace Model
   class TargetLocation
   {
   public:
-    AWS_SSM_API TargetLocation();
+    AWS_SSM_API TargetLocation() = default;
     AWS_SSM_API TargetLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API TargetLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>The Amazon Web Services accounts targeted by the current Automation
      * execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<Aws::String>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline TargetLocation& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-    inline TargetLocation& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline TargetLocation& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline TargetLocation& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-    inline TargetLocation& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    TargetLocation& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = Aws::String>
+    TargetLocation& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,15 +62,14 @@ namespace Model
      * <p>The Amazon Web Services Regions targeted by the current Automation
      * execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline TargetLocation& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline TargetLocation& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline TargetLocation& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline TargetLocation& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline TargetLocation& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    TargetLocation& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    TargetLocation& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
      * accounts allowed to run the Automation concurrently.</p>
      */
-    inline const Aws::String& GetTargetLocationMaxConcurrency() const{ return m_targetLocationMaxConcurrency; }
+    inline const Aws::String& GetTargetLocationMaxConcurrency() const { return m_targetLocationMaxConcurrency; }
     inline bool TargetLocationMaxConcurrencyHasBeenSet() const { return m_targetLocationMaxConcurrencyHasBeenSet; }
-    inline void SetTargetLocationMaxConcurrency(const Aws::String& value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency = value; }
-    inline void SetTargetLocationMaxConcurrency(Aws::String&& value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency = std::move(value); }
-    inline void SetTargetLocationMaxConcurrency(const char* value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency.assign(value); }
-    inline TargetLocation& WithTargetLocationMaxConcurrency(const Aws::String& value) { SetTargetLocationMaxConcurrency(value); return *this;}
-    inline TargetLocation& WithTargetLocationMaxConcurrency(Aws::String&& value) { SetTargetLocationMaxConcurrency(std::move(value)); return *this;}
-    inline TargetLocation& WithTargetLocationMaxConcurrency(const char* value) { SetTargetLocationMaxConcurrency(value); return *this;}
+    template<typename TargetLocationMaxConcurrencyT = Aws::String>
+    void SetTargetLocationMaxConcurrency(TargetLocationMaxConcurrencyT&& value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency = std::forward<TargetLocationMaxConcurrencyT>(value); }
+    template<typename TargetLocationMaxConcurrencyT = Aws::String>
+    TargetLocation& WithTargetLocationMaxConcurrency(TargetLocationMaxConcurrencyT&& value) { SetTargetLocationMaxConcurrency(std::forward<TargetLocationMaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,12 @@ namespace Model
      * <p>The maximum number of errors allowed before the system stops queueing
      * additional Automation executions for the currently running Automation.</p>
      */
-    inline const Aws::String& GetTargetLocationMaxErrors() const{ return m_targetLocationMaxErrors; }
+    inline const Aws::String& GetTargetLocationMaxErrors() const { return m_targetLocationMaxErrors; }
     inline bool TargetLocationMaxErrorsHasBeenSet() const { return m_targetLocationMaxErrorsHasBeenSet; }
-    inline void SetTargetLocationMaxErrors(const Aws::String& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = value; }
-    inline void SetTargetLocationMaxErrors(Aws::String&& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = std::move(value); }
-    inline void SetTargetLocationMaxErrors(const char* value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors.assign(value); }
-    inline TargetLocation& WithTargetLocationMaxErrors(const Aws::String& value) { SetTargetLocationMaxErrors(value); return *this;}
-    inline TargetLocation& WithTargetLocationMaxErrors(Aws::String&& value) { SetTargetLocationMaxErrors(std::move(value)); return *this;}
-    inline TargetLocation& WithTargetLocationMaxErrors(const char* value) { SetTargetLocationMaxErrors(value); return *this;}
+    template<typename TargetLocationMaxErrorsT = Aws::String>
+    void SetTargetLocationMaxErrors(TargetLocationMaxErrorsT&& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = std::forward<TargetLocationMaxErrorsT>(value); }
+    template<typename TargetLocationMaxErrorsT = Aws::String>
+    TargetLocation& WithTargetLocationMaxErrors(TargetLocationMaxErrorsT&& value) { SetTargetLocationMaxErrors(std::forward<TargetLocationMaxErrorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,24 +104,22 @@ namespace Model
      * not specified, the default value is
      * <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
      */
-    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+    inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
-    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
-    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
-    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
-    inline TargetLocation& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
-    inline TargetLocation& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
-    inline TargetLocation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
+    template<typename ExecutionRoleNameT = Aws::String>
+    void SetExecutionRoleName(ExecutionRoleNameT&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::forward<ExecutionRoleNameT>(value); }
+    template<typename ExecutionRoleNameT = Aws::String>
+    TargetLocation& WithExecutionRoleName(ExecutionRoleNameT&& value) { SetExecutionRoleName(std::forward<ExecutionRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AlarmConfiguration& GetTargetLocationAlarmConfiguration() const{ return m_targetLocationAlarmConfiguration; }
+    inline const AlarmConfiguration& GetTargetLocationAlarmConfiguration() const { return m_targetLocationAlarmConfiguration; }
     inline bool TargetLocationAlarmConfigurationHasBeenSet() const { return m_targetLocationAlarmConfigurationHasBeenSet; }
-    inline void SetTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = value; }
-    inline void SetTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = std::move(value); }
-    inline TargetLocation& WithTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { SetTargetLocationAlarmConfiguration(value); return *this;}
-    inline TargetLocation& WithTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { SetTargetLocationAlarmConfiguration(std::move(value)); return *this;}
+    template<typename TargetLocationAlarmConfigurationT = AlarmConfiguration>
+    void SetTargetLocationAlarmConfiguration(TargetLocationAlarmConfigurationT&& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = std::forward<TargetLocationAlarmConfigurationT>(value); }
+    template<typename TargetLocationAlarmConfigurationT = AlarmConfiguration>
+    TargetLocation& WithTargetLocationAlarmConfiguration(TargetLocationAlarmConfigurationT&& value) { SetTargetLocationAlarmConfiguration(std::forward<TargetLocationAlarmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,7 +127,7 @@ namespace Model
      * <p>Indicates whether to include child organizational units (OUs) that are
      * children of the targeted OUs. The default is <code>false</code>.</p>
      */
-    inline bool GetIncludeChildOrganizationUnits() const{ return m_includeChildOrganizationUnits; }
+    inline bool GetIncludeChildOrganizationUnits() const { return m_includeChildOrganizationUnits; }
     inline bool IncludeChildOrganizationUnitsHasBeenSet() const { return m_includeChildOrganizationUnitsHasBeenSet; }
     inline void SetIncludeChildOrganizationUnits(bool value) { m_includeChildOrganizationUnitsHasBeenSet = true; m_includeChildOrganizationUnits = value; }
     inline TargetLocation& WithIncludeChildOrganizationUnits(bool value) { SetIncludeChildOrganizationUnits(value); return *this;}
@@ -146,15 +138,14 @@ namespace Model
      * <p>Amazon Web Services accounts or organizational units to exclude as expanded
      * targets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeAccounts() const{ return m_excludeAccounts; }
+    inline const Aws::Vector<Aws::String>& GetExcludeAccounts() const { return m_excludeAccounts; }
     inline bool ExcludeAccountsHasBeenSet() const { return m_excludeAccountsHasBeenSet; }
-    inline void SetExcludeAccounts(const Aws::Vector<Aws::String>& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts = value; }
-    inline void SetExcludeAccounts(Aws::Vector<Aws::String>&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts = std::move(value); }
-    inline TargetLocation& WithExcludeAccounts(const Aws::Vector<Aws::String>& value) { SetExcludeAccounts(value); return *this;}
-    inline TargetLocation& WithExcludeAccounts(Aws::Vector<Aws::String>&& value) { SetExcludeAccounts(std::move(value)); return *this;}
-    inline TargetLocation& AddExcludeAccounts(const Aws::String& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(value); return *this; }
-    inline TargetLocation& AddExcludeAccounts(Aws::String&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(std::move(value)); return *this; }
-    inline TargetLocation& AddExcludeAccounts(const char* value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.push_back(value); return *this; }
+    template<typename ExcludeAccountsT = Aws::Vector<Aws::String>>
+    void SetExcludeAccounts(ExcludeAccountsT&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts = std::forward<ExcludeAccountsT>(value); }
+    template<typename ExcludeAccountsT = Aws::Vector<Aws::String>>
+    TargetLocation& WithExcludeAccounts(ExcludeAccountsT&& value) { SetExcludeAccounts(std::forward<ExcludeAccountsT>(value)); return *this;}
+    template<typename ExcludeAccountsT = Aws::String>
+    TargetLocation& AddExcludeAccounts(ExcludeAccountsT&& value) { m_excludeAccountsHasBeenSet = true; m_excludeAccounts.emplace_back(std::forward<ExcludeAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,14 +156,14 @@ namespace Model
      * takes precedence over the <code>StartAutomationExecution:Targets</code>
      * parameter if both are supplied.</p>
      */
-    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline TargetLocation& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-    inline TargetLocation& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-    inline TargetLocation& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline TargetLocation& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    template<typename TargetsT = Aws::Vector<Target>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Target>>
+    TargetLocation& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Target>
+    TargetLocation& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -182,14 +173,12 @@ namespace Model
      * <code>StartAutomationExecution:MaxConcurrency</code> parameter if both are
      * supplied.</p>
      */
-    inline const Aws::String& GetTargetsMaxConcurrency() const{ return m_targetsMaxConcurrency; }
+    inline const Aws::String& GetTargetsMaxConcurrency() const { return m_targetsMaxConcurrency; }
     inline bool TargetsMaxConcurrencyHasBeenSet() const { return m_targetsMaxConcurrencyHasBeenSet; }
-    inline void SetTargetsMaxConcurrency(const Aws::String& value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency = value; }
-    inline void SetTargetsMaxConcurrency(Aws::String&& value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency = std::move(value); }
-    inline void SetTargetsMaxConcurrency(const char* value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency.assign(value); }
-    inline TargetLocation& WithTargetsMaxConcurrency(const Aws::String& value) { SetTargetsMaxConcurrency(value); return *this;}
-    inline TargetLocation& WithTargetsMaxConcurrency(Aws::String&& value) { SetTargetsMaxConcurrency(std::move(value)); return *this;}
-    inline TargetLocation& WithTargetsMaxConcurrency(const char* value) { SetTargetsMaxConcurrency(value); return *this;}
+    template<typename TargetsMaxConcurrencyT = Aws::String>
+    void SetTargetsMaxConcurrency(TargetsMaxConcurrencyT&& value) { m_targetsMaxConcurrencyHasBeenSet = true; m_targetsMaxConcurrency = std::forward<TargetsMaxConcurrencyT>(value); }
+    template<typename TargetsMaxConcurrencyT = Aws::String>
+    TargetLocation& WithTargetsMaxConcurrency(TargetsMaxConcurrencyT&& value) { SetTargetsMaxConcurrency(std::forward<TargetsMaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +189,12 @@ namespace Model
      * <code>StartAutomationExecution:MaxErrors</code> parameter if both are
      * supplied.</p>
      */
-    inline const Aws::String& GetTargetsMaxErrors() const{ return m_targetsMaxErrors; }
+    inline const Aws::String& GetTargetsMaxErrors() const { return m_targetsMaxErrors; }
     inline bool TargetsMaxErrorsHasBeenSet() const { return m_targetsMaxErrorsHasBeenSet; }
-    inline void SetTargetsMaxErrors(const Aws::String& value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors = value; }
-    inline void SetTargetsMaxErrors(Aws::String&& value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors = std::move(value); }
-    inline void SetTargetsMaxErrors(const char* value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors.assign(value); }
-    inline TargetLocation& WithTargetsMaxErrors(const Aws::String& value) { SetTargetsMaxErrors(value); return *this;}
-    inline TargetLocation& WithTargetsMaxErrors(Aws::String&& value) { SetTargetsMaxErrors(std::move(value)); return *this;}
-    inline TargetLocation& WithTargetsMaxErrors(const char* value) { SetTargetsMaxErrors(value); return *this;}
+    template<typename TargetsMaxErrorsT = Aws::String>
+    void SetTargetsMaxErrors(TargetsMaxErrorsT&& value) { m_targetsMaxErrorsHasBeenSet = true; m_targetsMaxErrors = std::forward<TargetsMaxErrorsT>(value); }
+    template<typename TargetsMaxErrorsT = Aws::String>
+    TargetLocation& WithTargetsMaxErrors(TargetsMaxErrorsT&& value) { SetTargetsMaxErrors(std::forward<TargetsMaxErrorsT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,7 +216,7 @@ namespace Model
     AlarmConfiguration m_targetLocationAlarmConfiguration;
     bool m_targetLocationAlarmConfigurationHasBeenSet = false;
 
-    bool m_includeChildOrganizationUnits;
+    bool m_includeChildOrganizationUnits{false};
     bool m_includeChildOrganizationUnitsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAccounts;

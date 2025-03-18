@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ServerlessV2ScalingConfiguration::ServerlessV2ScalingConfiguration() : 
-    m_minCapacity(0.0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false)
-{
-}
-
 ServerlessV2ScalingConfiguration::ServerlessV2ScalingConfiguration(const XmlNode& xmlNode)
-  : ServerlessV2ScalingConfiguration()
 {
   *this = xmlNode;
 }

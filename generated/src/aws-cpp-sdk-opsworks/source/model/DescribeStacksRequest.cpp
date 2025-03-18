@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStacksRequest::DescribeStacksRequest() : 
-    m_stackIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStacksRequest::SerializePayload() const
 {
   JsonValue payload;

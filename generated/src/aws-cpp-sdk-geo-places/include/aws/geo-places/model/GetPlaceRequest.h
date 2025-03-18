@@ -28,7 +28,7 @@ namespace Model
   class GetPlaceRequest : public GeoPlacesRequest
   {
   public:
-    AWS_GEOPLACES_API GetPlaceRequest();
+    AWS_GEOPLACES_API GetPlaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The <code>PlaceId</code> of the place you wish to receive the information
      * for.</p>
      */
-    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+    inline const Aws::String& GetPlaceId() const { return m_placeId; }
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
-    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
-    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
-    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
-    inline GetPlaceRequest& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
-    inline GetPlaceRequest& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
-    inline GetPlaceRequest& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+    template<typename PlaceIdT = Aws::String>
+    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
+    template<typename PlaceIdT = Aws::String>
+    GetPlaceRequest& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,13 @@ namespace Model
      * <p>A list of optional additional parameters such as time zone that can be
      * requested for each result.</p>
      */
-    inline const Aws::Vector<GetPlaceAdditionalFeature>& GetAdditionalFeatures() const{ return m_additionalFeatures; }
+    inline const Aws::Vector<GetPlaceAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
     inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
-    inline void SetAdditionalFeatures(const Aws::Vector<GetPlaceAdditionalFeature>& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = value; }
-    inline void SetAdditionalFeatures(Aws::Vector<GetPlaceAdditionalFeature>&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::move(value); }
-    inline GetPlaceRequest& WithAdditionalFeatures(const Aws::Vector<GetPlaceAdditionalFeature>& value) { SetAdditionalFeatures(value); return *this;}
-    inline GetPlaceRequest& WithAdditionalFeatures(Aws::Vector<GetPlaceAdditionalFeature>&& value) { SetAdditionalFeatures(std::move(value)); return *this;}
-    inline GetPlaceRequest& AddAdditionalFeatures(const GetPlaceAdditionalFeature& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
-    inline GetPlaceRequest& AddAdditionalFeatures(GetPlaceAdditionalFeature&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(std::move(value)); return *this; }
+    template<typename AdditionalFeaturesT = Aws::Vector<GetPlaceAdditionalFeature>>
+    void SetAdditionalFeatures(AdditionalFeaturesT&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::forward<AdditionalFeaturesT>(value); }
+    template<typename AdditionalFeaturesT = Aws::Vector<GetPlaceAdditionalFeature>>
+    GetPlaceRequest& WithAdditionalFeatures(AdditionalFeaturesT&& value) { SetAdditionalFeatures(std::forward<AdditionalFeaturesT>(value)); return *this;}
+    inline GetPlaceRequest& AddAdditionalFeatures(GetPlaceAdditionalFeature value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +75,12 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline GetPlaceRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline GetPlaceRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline GetPlaceRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    GetPlaceRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +89,12 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline GetPlaceRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline GetPlaceRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline GetPlaceRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    GetPlaceRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +102,10 @@ namespace Model
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
      * if left empty.</p>
      */
-    inline const GetPlaceIntendedUse& GetIntendedUse() const{ return m_intendedUse; }
+    inline GetPlaceIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-    inline void SetIntendedUse(const GetPlaceIntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-    inline void SetIntendedUse(GetPlaceIntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-    inline GetPlaceRequest& WithIntendedUse(const GetPlaceIntendedUse& value) { SetIntendedUse(value); return *this;}
-    inline GetPlaceRequest& WithIntendedUse(GetPlaceIntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
+    inline void SetIntendedUse(GetPlaceIntendedUse value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
+    inline GetPlaceRequest& WithIntendedUse(GetPlaceIntendedUse value) { SetIntendedUse(value); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +113,12 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetPlaceRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetPlaceRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetPlaceRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetPlaceRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -145,7 +134,7 @@ namespace Model
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
 
-    GetPlaceIntendedUse m_intendedUse;
+    GetPlaceIntendedUse m_intendedUse{GetPlaceIntendedUse::NOT_SET};
     bool m_intendedUseHasBeenSet = false;
 
     Aws::String m_key;

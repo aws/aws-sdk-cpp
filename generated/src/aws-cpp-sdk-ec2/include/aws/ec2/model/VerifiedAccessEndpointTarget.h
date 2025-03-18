@@ -32,7 +32,7 @@ namespace Model
   class VerifiedAccessEndpointTarget
   {
   public:
-    AWS_EC2_API VerifiedAccessEndpointTarget();
+    AWS_EC2_API VerifiedAccessEndpointTarget() = default;
     AWS_EC2_API VerifiedAccessEndpointTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessEndpointTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The ID of the Verified Access endpoint.</p>
      */
-    inline const Aws::String& GetVerifiedAccessEndpointId() const{ return m_verifiedAccessEndpointId; }
+    inline const Aws::String& GetVerifiedAccessEndpointId() const { return m_verifiedAccessEndpointId; }
     inline bool VerifiedAccessEndpointIdHasBeenSet() const { return m_verifiedAccessEndpointIdHasBeenSet; }
-    inline void SetVerifiedAccessEndpointId(const Aws::String& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = value; }
-    inline void SetVerifiedAccessEndpointId(Aws::String&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::move(value); }
-    inline void SetVerifiedAccessEndpointId(const char* value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId.assign(value); }
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointId(const Aws::String& value) { SetVerifiedAccessEndpointId(value); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointId(Aws::String&& value) { SetVerifiedAccessEndpointId(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointId(const char* value) { SetVerifiedAccessEndpointId(value); return *this;}
+    template<typename VerifiedAccessEndpointIdT = Aws::String>
+    void SetVerifiedAccessEndpointId(VerifiedAccessEndpointIdT&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::forward<VerifiedAccessEndpointIdT>(value); }
+    template<typename VerifiedAccessEndpointIdT = Aws::String>
+    VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointId(VerifiedAccessEndpointIdT&& value) { SetVerifiedAccessEndpointId(std::forward<VerifiedAccessEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address of the target.</p>
      */
-    inline const Aws::String& GetVerifiedAccessEndpointTargetIpAddress() const{ return m_verifiedAccessEndpointTargetIpAddress; }
+    inline const Aws::String& GetVerifiedAccessEndpointTargetIpAddress() const { return m_verifiedAccessEndpointTargetIpAddress; }
     inline bool VerifiedAccessEndpointTargetIpAddressHasBeenSet() const { return m_verifiedAccessEndpointTargetIpAddressHasBeenSet; }
-    inline void SetVerifiedAccessEndpointTargetIpAddress(const Aws::String& value) { m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true; m_verifiedAccessEndpointTargetIpAddress = value; }
-    inline void SetVerifiedAccessEndpointTargetIpAddress(Aws::String&& value) { m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true; m_verifiedAccessEndpointTargetIpAddress = std::move(value); }
-    inline void SetVerifiedAccessEndpointTargetIpAddress(const char* value) { m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true; m_verifiedAccessEndpointTargetIpAddress.assign(value); }
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetIpAddress(const Aws::String& value) { SetVerifiedAccessEndpointTargetIpAddress(value); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetIpAddress(Aws::String&& value) { SetVerifiedAccessEndpointTargetIpAddress(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetIpAddress(const char* value) { SetVerifiedAccessEndpointTargetIpAddress(value); return *this;}
+    template<typename VerifiedAccessEndpointTargetIpAddressT = Aws::String>
+    void SetVerifiedAccessEndpointTargetIpAddress(VerifiedAccessEndpointTargetIpAddressT&& value) { m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true; m_verifiedAccessEndpointTargetIpAddress = std::forward<VerifiedAccessEndpointTargetIpAddressT>(value); }
+    template<typename VerifiedAccessEndpointTargetIpAddressT = Aws::String>
+    VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetIpAddress(VerifiedAccessEndpointTargetIpAddressT&& value) { SetVerifiedAccessEndpointTargetIpAddress(std::forward<VerifiedAccessEndpointTargetIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DNS name of the target.</p>
      */
-    inline const Aws::String& GetVerifiedAccessEndpointTargetDns() const{ return m_verifiedAccessEndpointTargetDns; }
+    inline const Aws::String& GetVerifiedAccessEndpointTargetDns() const { return m_verifiedAccessEndpointTargetDns; }
     inline bool VerifiedAccessEndpointTargetDnsHasBeenSet() const { return m_verifiedAccessEndpointTargetDnsHasBeenSet; }
-    inline void SetVerifiedAccessEndpointTargetDns(const Aws::String& value) { m_verifiedAccessEndpointTargetDnsHasBeenSet = true; m_verifiedAccessEndpointTargetDns = value; }
-    inline void SetVerifiedAccessEndpointTargetDns(Aws::String&& value) { m_verifiedAccessEndpointTargetDnsHasBeenSet = true; m_verifiedAccessEndpointTargetDns = std::move(value); }
-    inline void SetVerifiedAccessEndpointTargetDns(const char* value) { m_verifiedAccessEndpointTargetDnsHasBeenSet = true; m_verifiedAccessEndpointTargetDns.assign(value); }
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetDns(const Aws::String& value) { SetVerifiedAccessEndpointTargetDns(value); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetDns(Aws::String&& value) { SetVerifiedAccessEndpointTargetDns(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetDns(const char* value) { SetVerifiedAccessEndpointTargetDns(value); return *this;}
+    template<typename VerifiedAccessEndpointTargetDnsT = Aws::String>
+    void SetVerifiedAccessEndpointTargetDns(VerifiedAccessEndpointTargetDnsT&& value) { m_verifiedAccessEndpointTargetDnsHasBeenSet = true; m_verifiedAccessEndpointTargetDns = std::forward<VerifiedAccessEndpointTargetDnsT>(value); }
+    template<typename VerifiedAccessEndpointTargetDnsT = Aws::String>
+    VerifiedAccessEndpointTarget& WithVerifiedAccessEndpointTargetDns(VerifiedAccessEndpointTargetDnsT&& value) { SetVerifiedAccessEndpointTargetDns(std::forward<VerifiedAccessEndpointTargetDnsT>(value)); return *this;}
     ///@}
   private:
 

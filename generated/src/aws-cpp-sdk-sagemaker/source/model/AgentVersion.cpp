@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AgentVersion::AgentVersion() : 
-    m_versionHasBeenSet(false),
-    m_agentCount(0),
-    m_agentCountHasBeenSet(false)
-{
-}
-
 AgentVersion::AgentVersion(JsonView jsonValue)
-  : AgentVersion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentCount"))
   {
     m_agentCount = jsonValue.GetInt64("AgentCount");
-
     m_agentCountHasBeenSet = true;
   }
-
   return *this;
 }
 

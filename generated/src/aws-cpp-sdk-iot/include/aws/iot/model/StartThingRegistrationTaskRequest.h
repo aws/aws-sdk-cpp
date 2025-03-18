@@ -21,7 +21,7 @@ namespace Model
   class StartThingRegistrationTaskRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API StartThingRegistrationTaskRequest();
+    AWS_IOT_API StartThingRegistrationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The provisioning template.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline StartThingRegistrationTaskRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline StartThingRegistrationTaskRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline StartThingRegistrationTaskRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    StartThingRegistrationTaskRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket that contains the input file.</p>
      */
-    inline const Aws::String& GetInputFileBucket() const{ return m_inputFileBucket; }
+    inline const Aws::String& GetInputFileBucket() const { return m_inputFileBucket; }
     inline bool InputFileBucketHasBeenSet() const { return m_inputFileBucketHasBeenSet; }
-    inline void SetInputFileBucket(const Aws::String& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = value; }
-    inline void SetInputFileBucket(Aws::String&& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = std::move(value); }
-    inline void SetInputFileBucket(const char* value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket.assign(value); }
-    inline StartThingRegistrationTaskRequest& WithInputFileBucket(const Aws::String& value) { SetInputFileBucket(value); return *this;}
-    inline StartThingRegistrationTaskRequest& WithInputFileBucket(Aws::String&& value) { SetInputFileBucket(std::move(value)); return *this;}
-    inline StartThingRegistrationTaskRequest& WithInputFileBucket(const char* value) { SetInputFileBucket(value); return *this;}
+    template<typename InputFileBucketT = Aws::String>
+    void SetInputFileBucket(InputFileBucketT&& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = std::forward<InputFileBucketT>(value); }
+    template<typename InputFileBucketT = Aws::String>
+    StartThingRegistrationTaskRequest& WithInputFileBucket(InputFileBucketT&& value) { SetInputFileBucket(std::forward<InputFileBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +62,24 @@ namespace Model
      * delimited JSON file. Each line contains the parameter values to provision one
      * device (thing).</p>
      */
-    inline const Aws::String& GetInputFileKey() const{ return m_inputFileKey; }
+    inline const Aws::String& GetInputFileKey() const { return m_inputFileKey; }
     inline bool InputFileKeyHasBeenSet() const { return m_inputFileKeyHasBeenSet; }
-    inline void SetInputFileKey(const Aws::String& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = value; }
-    inline void SetInputFileKey(Aws::String&& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = std::move(value); }
-    inline void SetInputFileKey(const char* value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey.assign(value); }
-    inline StartThingRegistrationTaskRequest& WithInputFileKey(const Aws::String& value) { SetInputFileKey(value); return *this;}
-    inline StartThingRegistrationTaskRequest& WithInputFileKey(Aws::String&& value) { SetInputFileKey(std::move(value)); return *this;}
-    inline StartThingRegistrationTaskRequest& WithInputFileKey(const char* value) { SetInputFileKey(value); return *this;}
+    template<typename InputFileKeyT = Aws::String>
+    void SetInputFileKey(InputFileKeyT&& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = std::forward<InputFileKeyT>(value); }
+    template<typename InputFileKeyT = Aws::String>
+    StartThingRegistrationTaskRequest& WithInputFileKey(InputFileKeyT&& value) { SetInputFileKey(std::forward<InputFileKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN that grants permission the input file.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StartThingRegistrationTaskRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartThingRegistrationTaskRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartThingRegistrationTaskRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartThingRegistrationTaskRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

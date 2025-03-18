@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-WeeklySchedule::WeeklySchedule() : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false)
-{
-}
-
 WeeklySchedule::WeeklySchedule(JsonView jsonValue)
-  : WeeklySchedule()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("dayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class RouteMatrixTravelModeOptions
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixTravelModeOptions();
+    AWS_GEOROUTES_API RouteMatrixTravelModeOptions() = default;
     AWS_GEOROUTES_API RouteMatrixTravelModeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixTravelModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Travel mode options when the provided travel mode is "Car"</p>
      */
-    inline const RouteMatrixCarOptions& GetCar() const{ return m_car; }
+    inline const RouteMatrixCarOptions& GetCar() const { return m_car; }
     inline bool CarHasBeenSet() const { return m_carHasBeenSet; }
-    inline void SetCar(const RouteMatrixCarOptions& value) { m_carHasBeenSet = true; m_car = value; }
-    inline void SetCar(RouteMatrixCarOptions&& value) { m_carHasBeenSet = true; m_car = std::move(value); }
-    inline RouteMatrixTravelModeOptions& WithCar(const RouteMatrixCarOptions& value) { SetCar(value); return *this;}
-    inline RouteMatrixTravelModeOptions& WithCar(RouteMatrixCarOptions&& value) { SetCar(std::move(value)); return *this;}
+    template<typename CarT = RouteMatrixCarOptions>
+    void SetCar(CarT&& value) { m_carHasBeenSet = true; m_car = std::forward<CarT>(value); }
+    template<typename CarT = RouteMatrixCarOptions>
+    RouteMatrixTravelModeOptions& WithCar(CarT&& value) { SetCar(std::forward<CarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * avoidance option <code>ControlledAccessHighways</code> defaults to
      * <code>true</code>.</p> 
      */
-    inline const RouteMatrixScooterOptions& GetScooter() const{ return m_scooter; }
+    inline const RouteMatrixScooterOptions& GetScooter() const { return m_scooter; }
     inline bool ScooterHasBeenSet() const { return m_scooterHasBeenSet; }
-    inline void SetScooter(const RouteMatrixScooterOptions& value) { m_scooterHasBeenSet = true; m_scooter = value; }
-    inline void SetScooter(RouteMatrixScooterOptions&& value) { m_scooterHasBeenSet = true; m_scooter = std::move(value); }
-    inline RouteMatrixTravelModeOptions& WithScooter(const RouteMatrixScooterOptions& value) { SetScooter(value); return *this;}
-    inline RouteMatrixTravelModeOptions& WithScooter(RouteMatrixScooterOptions&& value) { SetScooter(std::move(value)); return *this;}
+    template<typename ScooterT = RouteMatrixScooterOptions>
+    void SetScooter(ScooterT&& value) { m_scooterHasBeenSet = true; m_scooter = std::forward<ScooterT>(value); }
+    template<typename ScooterT = RouteMatrixScooterOptions>
+    RouteMatrixTravelModeOptions& WithScooter(ScooterT&& value) { SetScooter(std::forward<ScooterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Travel mode options when the provided travel mode is "Truck"</p>
      */
-    inline const RouteMatrixTruckOptions& GetTruck() const{ return m_truck; }
+    inline const RouteMatrixTruckOptions& GetTruck() const { return m_truck; }
     inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }
-    inline void SetTruck(const RouteMatrixTruckOptions& value) { m_truckHasBeenSet = true; m_truck = value; }
-    inline void SetTruck(RouteMatrixTruckOptions&& value) { m_truckHasBeenSet = true; m_truck = std::move(value); }
-    inline RouteMatrixTravelModeOptions& WithTruck(const RouteMatrixTruckOptions& value) { SetTruck(value); return *this;}
-    inline RouteMatrixTravelModeOptions& WithTruck(RouteMatrixTruckOptions&& value) { SetTruck(std::move(value)); return *this;}
+    template<typename TruckT = RouteMatrixTruckOptions>
+    void SetTruck(TruckT&& value) { m_truckHasBeenSet = true; m_truck = std::forward<TruckT>(value); }
+    template<typename TruckT = RouteMatrixTruckOptions>
+    RouteMatrixTravelModeOptions& WithTruck(TruckT&& value) { SetTruck(std::forward<TruckT>(value)); return *this;}
     ///@}
   private:
 

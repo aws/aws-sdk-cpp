@@ -20,13 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-  : AvailabilityZone()
 {
   *this = xmlNode;
 }

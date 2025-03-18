@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GenerateOrganizationsAccessReportRequest::GenerateOrganizationsAccessReportRequest() : 
-    m_entityPathHasBeenSet(false),
-    m_organizationsPolicyIdHasBeenSet(false)
-{
-}
-
 Aws::String GenerateOrganizationsAccessReportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

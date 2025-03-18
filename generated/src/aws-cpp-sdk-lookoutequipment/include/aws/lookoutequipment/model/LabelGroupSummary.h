@@ -32,7 +32,7 @@ namespace Model
   class LabelGroupSummary
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API LabelGroupSummary();
+    AWS_LOOKOUTEQUIPMENT_API LabelGroupSummary() = default;
     AWS_LOOKOUTEQUIPMENT_API LabelGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API LabelGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,52 +42,48 @@ namespace Model
     /**
      * <p> The name of the label group. </p>
      */
-    inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
+    inline const Aws::String& GetLabelGroupName() const { return m_labelGroupName; }
     inline bool LabelGroupNameHasBeenSet() const { return m_labelGroupNameHasBeenSet; }
-    inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = value; }
-    inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::move(value); }
-    inline void SetLabelGroupName(const char* value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName.assign(value); }
-    inline LabelGroupSummary& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
-    inline LabelGroupSummary& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
-    inline LabelGroupSummary& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
+    template<typename LabelGroupNameT = Aws::String>
+    void SetLabelGroupName(LabelGroupNameT&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::forward<LabelGroupNameT>(value); }
+    template<typename LabelGroupNameT = Aws::String>
+    LabelGroupSummary& WithLabelGroupName(LabelGroupNameT&& value) { SetLabelGroupName(std::forward<LabelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
-    inline const Aws::String& GetLabelGroupArn() const{ return m_labelGroupArn; }
+    inline const Aws::String& GetLabelGroupArn() const { return m_labelGroupArn; }
     inline bool LabelGroupArnHasBeenSet() const { return m_labelGroupArnHasBeenSet; }
-    inline void SetLabelGroupArn(const Aws::String& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = value; }
-    inline void SetLabelGroupArn(Aws::String&& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = std::move(value); }
-    inline void SetLabelGroupArn(const char* value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn.assign(value); }
-    inline LabelGroupSummary& WithLabelGroupArn(const Aws::String& value) { SetLabelGroupArn(value); return *this;}
-    inline LabelGroupSummary& WithLabelGroupArn(Aws::String&& value) { SetLabelGroupArn(std::move(value)); return *this;}
-    inline LabelGroupSummary& WithLabelGroupArn(const char* value) { SetLabelGroupArn(value); return *this;}
+    template<typename LabelGroupArnT = Aws::String>
+    void SetLabelGroupArn(LabelGroupArnT&& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = std::forward<LabelGroupArnT>(value); }
+    template<typename LabelGroupArnT = Aws::String>
+    LabelGroupSummary& WithLabelGroupArn(LabelGroupArnT&& value) { SetLabelGroupArn(std::forward<LabelGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time at which the label group was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline LabelGroupSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline LabelGroupSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    LabelGroupSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time at which the label group was updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline LabelGroupSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline LabelGroupSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    LabelGroupSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,10 +93,10 @@ namespace Model
     Aws::String m_labelGroupArn;
     bool m_labelGroupArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateDataKeyResult::GenerateDataKeyResult()
-{
-}
-
 GenerateDataKeyResult::GenerateDataKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,30 +29,30 @@ GenerateDataKeyResult& GenerateDataKeyResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
+    m_ciphertextBlobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
+    m_plaintextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CiphertextForRecipient"))
   {
     m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+    m_ciphertextForRecipientHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

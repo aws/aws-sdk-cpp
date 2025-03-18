@@ -33,7 +33,7 @@ namespace Model
   class AttachmentDetails
   {
   public:
-    AWS_SUPPORT_API AttachmentDetails();
+    AWS_SUPPORT_API AttachmentDetails() = default;
     AWS_SUPPORT_API AttachmentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API AttachmentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline AttachmentDetails& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline AttachmentDetails& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline AttachmentDetails& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    AttachmentDetails& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file name of the attachment.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline AttachmentDetails& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline AttachmentDetails& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline AttachmentDetails& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    AttachmentDetails& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
   private:
 

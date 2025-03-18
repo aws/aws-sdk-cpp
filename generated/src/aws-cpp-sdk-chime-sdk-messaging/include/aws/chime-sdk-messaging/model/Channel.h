@@ -37,7 +37,7 @@ namespace Model
   class Channel
   {
   public:
-    AWS_CHIMESDKMESSAGING_API Channel();
+    AWS_CHIMESDKMESSAGING_API Channel() = default;
     AWS_CHIMESDKMESSAGING_API Channel(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,128 +47,116 @@ namespace Model
     /**
      * <p>The name of a channel.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Channel& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Channel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Channel& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Channel& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline Channel& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline Channel& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline Channel& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    Channel& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mode of the channel.</p>
      */
-    inline const ChannelMode& GetMode() const{ return m_mode; }
+    inline ChannelMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ChannelMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ChannelMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline Channel& WithMode(const ChannelMode& value) { SetMode(value); return *this;}
-    inline Channel& WithMode(ChannelMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ChannelMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline Channel& WithMode(ChannelMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel's privacy setting.</p>
      */
-    inline const ChannelPrivacy& GetPrivacy() const{ return m_privacy; }
+    inline ChannelPrivacy GetPrivacy() const { return m_privacy; }
     inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
-    inline void SetPrivacy(const ChannelPrivacy& value) { m_privacyHasBeenSet = true; m_privacy = value; }
-    inline void SetPrivacy(ChannelPrivacy&& value) { m_privacyHasBeenSet = true; m_privacy = std::move(value); }
-    inline Channel& WithPrivacy(const ChannelPrivacy& value) { SetPrivacy(value); return *this;}
-    inline Channel& WithPrivacy(ChannelPrivacy&& value) { SetPrivacy(std::move(value)); return *this;}
+    inline void SetPrivacy(ChannelPrivacy value) { m_privacyHasBeenSet = true; m_privacy = value; }
+    inline Channel& WithPrivacy(ChannelPrivacy value) { SetPrivacy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel's metadata.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline Channel& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline Channel& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline Channel& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    Channel& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>AppInstanceUser</code> who created the channel.</p>
      */
-    inline const Identity& GetCreatedBy() const{ return m_createdBy; }
+    inline const Identity& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Identity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Identity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline Channel& WithCreatedBy(const Identity& value) { SetCreatedBy(value); return *this;}
-    inline Channel& WithCreatedBy(Identity&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = Identity>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Identity>
+    Channel& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline Channel& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline Channel& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    Channel& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which a member sent the last message in the channel.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const{ return m_lastMessageTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const { return m_lastMessageTimestamp; }
     inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
-    inline void SetLastMessageTimestamp(const Aws::Utils::DateTime& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = value; }
-    inline void SetLastMessageTimestamp(Aws::Utils::DateTime&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::move(value); }
-    inline Channel& WithLastMessageTimestamp(const Aws::Utils::DateTime& value) { SetLastMessageTimestamp(value); return *this;}
-    inline Channel& WithLastMessageTimestamp(Aws::Utils::DateTime&& value) { SetLastMessageTimestamp(std::move(value)); return *this;}
+    template<typename LastMessageTimestampT = Aws::Utils::DateTime>
+    void SetLastMessageTimestamp(LastMessageTimestampT&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::forward<LastMessageTimestampT>(value); }
+    template<typename LastMessageTimestampT = Aws::Utils::DateTime>
+    Channel& WithLastMessageTimestamp(LastMessageTimestampT&& value) { SetLastMessageTimestamp(std::forward<LastMessageTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which a channel was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
-    inline Channel& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline Channel& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    Channel& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the channel flow.</p>
      */
-    inline const Aws::String& GetChannelFlowArn() const{ return m_channelFlowArn; }
+    inline const Aws::String& GetChannelFlowArn() const { return m_channelFlowArn; }
     inline bool ChannelFlowArnHasBeenSet() const { return m_channelFlowArnHasBeenSet; }
-    inline void SetChannelFlowArn(const Aws::String& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = value; }
-    inline void SetChannelFlowArn(Aws::String&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::move(value); }
-    inline void SetChannelFlowArn(const char* value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn.assign(value); }
-    inline Channel& WithChannelFlowArn(const Aws::String& value) { SetChannelFlowArn(value); return *this;}
-    inline Channel& WithChannelFlowArn(Aws::String&& value) { SetChannelFlowArn(std::move(value)); return *this;}
-    inline Channel& WithChannelFlowArn(const char* value) { SetChannelFlowArn(value); return *this;}
+    template<typename ChannelFlowArnT = Aws::String>
+    void SetChannelFlowArn(ChannelFlowArnT&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::forward<ChannelFlowArnT>(value); }
+    template<typename ChannelFlowArnT = Aws::String>
+    Channel& WithChannelFlowArn(ChannelFlowArnT&& value) { SetChannelFlowArn(std::forward<ChannelFlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,24 +164,24 @@ namespace Model
      * <p>The attributes required to configure and create an elastic channel. An
      * elastic channel can support a maximum of 1-million members.</p>
      */
-    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const{ return m_elasticChannelConfiguration; }
+    inline const ElasticChannelConfiguration& GetElasticChannelConfiguration() const { return m_elasticChannelConfiguration; }
     inline bool ElasticChannelConfigurationHasBeenSet() const { return m_elasticChannelConfigurationHasBeenSet; }
-    inline void SetElasticChannelConfiguration(const ElasticChannelConfiguration& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = value; }
-    inline void SetElasticChannelConfiguration(ElasticChannelConfiguration&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::move(value); }
-    inline Channel& WithElasticChannelConfiguration(const ElasticChannelConfiguration& value) { SetElasticChannelConfiguration(value); return *this;}
-    inline Channel& WithElasticChannelConfiguration(ElasticChannelConfiguration&& value) { SetElasticChannelConfiguration(std::move(value)); return *this;}
+    template<typename ElasticChannelConfigurationT = ElasticChannelConfiguration>
+    void SetElasticChannelConfiguration(ElasticChannelConfigurationT&& value) { m_elasticChannelConfigurationHasBeenSet = true; m_elasticChannelConfiguration = std::forward<ElasticChannelConfigurationT>(value); }
+    template<typename ElasticChannelConfigurationT = ElasticChannelConfiguration>
+    Channel& WithElasticChannelConfiguration(ElasticChannelConfigurationT&& value) { SetElasticChannelConfiguration(std::forward<ElasticChannelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings that control when a channel expires.</p>
      */
-    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
+    inline const ExpirationSettings& GetExpirationSettings() const { return m_expirationSettings; }
     inline bool ExpirationSettingsHasBeenSet() const { return m_expirationSettingsHasBeenSet; }
-    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = value; }
-    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::move(value); }
-    inline Channel& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
-    inline Channel& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+    template<typename ExpirationSettingsT = ExpirationSettings>
+    void SetExpirationSettings(ExpirationSettingsT&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::forward<ExpirationSettingsT>(value); }
+    template<typename ExpirationSettingsT = ExpirationSettings>
+    Channel& WithExpirationSettings(ExpirationSettingsT&& value) { SetExpirationSettings(std::forward<ExpirationSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -203,10 +191,10 @@ namespace Model
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
-    ChannelMode m_mode;
+    ChannelMode m_mode{ChannelMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    ChannelPrivacy m_privacy;
+    ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
     bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
@@ -215,13 +203,13 @@ namespace Model
     Identity m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastMessageTimestamp;
+    Aws::Utils::DateTime m_lastMessageTimestamp{};
     bool m_lastMessageTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_channelFlowArn;

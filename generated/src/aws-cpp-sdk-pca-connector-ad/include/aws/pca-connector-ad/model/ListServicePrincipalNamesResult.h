@@ -29,7 +29,7 @@ namespace Model
   class ListServicePrincipalNamesResult
   {
   public:
-    AWS_PCACONNECTORAD_API ListServicePrincipalNamesResult();
+    AWS_PCACONNECTORAD_API ListServicePrincipalNamesResult() = default;
     AWS_PCACONNECTORAD_API ListServicePrincipalNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCACONNECTORAD_API ListServicePrincipalNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * receive a response with truncated results. Set it to the value of the
      * <code>NextToken</code> parameter from the response you just received.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServicePrincipalNamesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServicePrincipalNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServicePrincipalNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServicePrincipalNamesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,32 +52,33 @@ namespace Model
      * <p>The service principal name, if any, that the connector uses to authenticate
      * with Active Directory.</p>
      */
-    inline const Aws::Vector<ServicePrincipalNameSummary>& GetServicePrincipalNames() const{ return m_servicePrincipalNames; }
-    inline void SetServicePrincipalNames(const Aws::Vector<ServicePrincipalNameSummary>& value) { m_servicePrincipalNames = value; }
-    inline void SetServicePrincipalNames(Aws::Vector<ServicePrincipalNameSummary>&& value) { m_servicePrincipalNames = std::move(value); }
-    inline ListServicePrincipalNamesResult& WithServicePrincipalNames(const Aws::Vector<ServicePrincipalNameSummary>& value) { SetServicePrincipalNames(value); return *this;}
-    inline ListServicePrincipalNamesResult& WithServicePrincipalNames(Aws::Vector<ServicePrincipalNameSummary>&& value) { SetServicePrincipalNames(std::move(value)); return *this;}
-    inline ListServicePrincipalNamesResult& AddServicePrincipalNames(const ServicePrincipalNameSummary& value) { m_servicePrincipalNames.push_back(value); return *this; }
-    inline ListServicePrincipalNamesResult& AddServicePrincipalNames(ServicePrincipalNameSummary&& value) { m_servicePrincipalNames.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServicePrincipalNameSummary>& GetServicePrincipalNames() const { return m_servicePrincipalNames; }
+    template<typename ServicePrincipalNamesT = Aws::Vector<ServicePrincipalNameSummary>>
+    void SetServicePrincipalNames(ServicePrincipalNamesT&& value) { m_servicePrincipalNamesHasBeenSet = true; m_servicePrincipalNames = std::forward<ServicePrincipalNamesT>(value); }
+    template<typename ServicePrincipalNamesT = Aws::Vector<ServicePrincipalNameSummary>>
+    ListServicePrincipalNamesResult& WithServicePrincipalNames(ServicePrincipalNamesT&& value) { SetServicePrincipalNames(std::forward<ServicePrincipalNamesT>(value)); return *this;}
+    template<typename ServicePrincipalNamesT = ServicePrincipalNameSummary>
+    ListServicePrincipalNamesResult& AddServicePrincipalNames(ServicePrincipalNamesT&& value) { m_servicePrincipalNamesHasBeenSet = true; m_servicePrincipalNames.emplace_back(std::forward<ServicePrincipalNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServicePrincipalNamesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServicePrincipalNamesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServicePrincipalNamesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServicePrincipalNamesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ServicePrincipalNameSummary> m_servicePrincipalNames;
+    bool m_servicePrincipalNamesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

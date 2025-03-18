@@ -36,7 +36,7 @@ namespace Model
   class AutoTuneMaintenanceSchedule
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule() = default;
     AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>Specifies timestamp at which Auto-Tune maintenance schedule start. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartAt() const{ return m_startAt; }
+    inline const Aws::Utils::DateTime& GetStartAt() const { return m_startAt; }
     inline bool StartAtHasBeenSet() const { return m_startAtHasBeenSet; }
-    inline void SetStartAt(const Aws::Utils::DateTime& value) { m_startAtHasBeenSet = true; m_startAt = value; }
-    inline void SetStartAt(Aws::Utils::DateTime&& value) { m_startAtHasBeenSet = true; m_startAt = std::move(value); }
-    inline AutoTuneMaintenanceSchedule& WithStartAt(const Aws::Utils::DateTime& value) { SetStartAt(value); return *this;}
-    inline AutoTuneMaintenanceSchedule& WithStartAt(Aws::Utils::DateTime&& value) { SetStartAt(std::move(value)); return *this;}
+    template<typename StartAtT = Aws::Utils::DateTime>
+    void SetStartAt(StartAtT&& value) { m_startAtHasBeenSet = true; m_startAt = std::forward<StartAtT>(value); }
+    template<typename StartAtT = Aws::Utils::DateTime>
+    AutoTuneMaintenanceSchedule& WithStartAt(StartAtT&& value) { SetStartAt(std::forward<StartAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
      * target="_blank">Developer Guide</a> for more information.</p>
      */
-    inline const Duration& GetDuration() const{ return m_duration; }
+    inline const Duration& GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(const Duration& value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline void SetDuration(Duration&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-    inline AutoTuneMaintenanceSchedule& WithDuration(const Duration& value) { SetDuration(value); return *this;}
-    inline AutoTuneMaintenanceSchedule& WithDuration(Duration&& value) { SetDuration(std::move(value)); return *this;}
+    template<typename DurationT = Duration>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Duration>
+    AutoTuneMaintenanceSchedule& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,18 +75,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
      * target="_blank">Developer Guide</a> for more information.</p>
      */
-    inline const Aws::String& GetCronExpressionForRecurrence() const{ return m_cronExpressionForRecurrence; }
+    inline const Aws::String& GetCronExpressionForRecurrence() const { return m_cronExpressionForRecurrence; }
     inline bool CronExpressionForRecurrenceHasBeenSet() const { return m_cronExpressionForRecurrenceHasBeenSet; }
-    inline void SetCronExpressionForRecurrence(const Aws::String& value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence = value; }
-    inline void SetCronExpressionForRecurrence(Aws::String&& value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence = std::move(value); }
-    inline void SetCronExpressionForRecurrence(const char* value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence.assign(value); }
-    inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(const Aws::String& value) { SetCronExpressionForRecurrence(value); return *this;}
-    inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(Aws::String&& value) { SetCronExpressionForRecurrence(std::move(value)); return *this;}
-    inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(const char* value) { SetCronExpressionForRecurrence(value); return *this;}
+    template<typename CronExpressionForRecurrenceT = Aws::String>
+    void SetCronExpressionForRecurrence(CronExpressionForRecurrenceT&& value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence = std::forward<CronExpressionForRecurrenceT>(value); }
+    template<typename CronExpressionForRecurrenceT = Aws::String>
+    AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(CronExpressionForRecurrenceT&& value) { SetCronExpressionForRecurrence(std::forward<CronExpressionForRecurrenceT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startAt;
+    Aws::Utils::DateTime m_startAt{};
     bool m_startAtHasBeenSet = false;
 
     Duration m_duration;

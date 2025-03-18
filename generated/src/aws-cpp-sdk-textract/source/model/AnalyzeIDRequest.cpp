@@ -12,11 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AnalyzeIDRequest::AnalyzeIDRequest() : 
-    m_documentPagesHasBeenSet(false)
-{
-}
-
 Aws::String AnalyzeIDRequest::SerializePayload() const
 {
   JsonValue payload;

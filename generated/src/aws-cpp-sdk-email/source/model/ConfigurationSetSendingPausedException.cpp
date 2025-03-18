@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException(const XmlNode& xmlNode)
-  : ConfigurationSetSendingPausedException()
 {
   *this = xmlNode;
 }

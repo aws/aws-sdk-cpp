@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduleRequest::DeleteScheduleRequest() : 
-    m_channelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduleRequest::SerializePayload() const
 {
   return {};

@@ -18,20 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-VolumeDetail::VolumeDetail() : 
-    m_volumeArnHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 VolumeDetail::VolumeDetail(JsonView jsonValue)
-  : VolumeDetail()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ VolumeDetail& VolumeDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("volumeArn"))
   {
     m_volumeArn = jsonValue.GetString("volumeArn");
-
     m_volumeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeType"))
   {
     m_volumeType = jsonValue.GetString("volumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("volumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = jsonValue.GetString("encryptionType");
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotArn"))
   {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
-
     m_snapshotArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

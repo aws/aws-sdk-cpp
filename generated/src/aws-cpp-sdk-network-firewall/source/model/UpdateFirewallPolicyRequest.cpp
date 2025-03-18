@@ -12,18 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallPolicyRequest::UpdateFirewallPolicyRequest() : 
-    m_updateTokenHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_firewallPolicyNameHasBeenSet(false),
-    m_firewallPolicyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

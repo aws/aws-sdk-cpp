@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SeriesItem::SeriesItem() : 
-    m_fieldSeriesItemHasBeenSet(false),
-    m_dataFieldSeriesItemHasBeenSet(false)
-{
-}
-
 SeriesItem::SeriesItem(JsonView jsonValue)
-  : SeriesItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SeriesItem& SeriesItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldSeriesItem"))
   {
     m_fieldSeriesItem = jsonValue.GetObject("FieldSeriesItem");
-
     m_fieldSeriesItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataFieldSeriesItem"))
   {
     m_dataFieldSeriesItem = jsonValue.GetObject("DataFieldSeriesItem");
-
     m_dataFieldSeriesItemHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SAMLPrivateKey::SAMLPrivateKey() : 
-    m_keyIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 SAMLPrivateKey::SAMLPrivateKey(const XmlNode& xmlNode)
-  : SAMLPrivateKey()
 {
   *this = xmlNode;
 }

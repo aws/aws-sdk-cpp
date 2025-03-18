@@ -34,7 +34,7 @@ namespace Model
   class DeploymentIoTJobConfiguration
   {
   public:
-    AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration();
+    AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration() = default;
     AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API DeploymentIoTJobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The rollout configuration for the job. This configuration defines the rate at
      * which the job rolls out to the fleet of target devices.</p>
      */
-    inline const IoTJobExecutionsRolloutConfig& GetJobExecutionsRolloutConfig() const{ return m_jobExecutionsRolloutConfig; }
+    inline const IoTJobExecutionsRolloutConfig& GetJobExecutionsRolloutConfig() const { return m_jobExecutionsRolloutConfig; }
     inline bool JobExecutionsRolloutConfigHasBeenSet() const { return m_jobExecutionsRolloutConfigHasBeenSet; }
-    inline void SetJobExecutionsRolloutConfig(const IoTJobExecutionsRolloutConfig& value) { m_jobExecutionsRolloutConfigHasBeenSet = true; m_jobExecutionsRolloutConfig = value; }
-    inline void SetJobExecutionsRolloutConfig(IoTJobExecutionsRolloutConfig&& value) { m_jobExecutionsRolloutConfigHasBeenSet = true; m_jobExecutionsRolloutConfig = std::move(value); }
-    inline DeploymentIoTJobConfiguration& WithJobExecutionsRolloutConfig(const IoTJobExecutionsRolloutConfig& value) { SetJobExecutionsRolloutConfig(value); return *this;}
-    inline DeploymentIoTJobConfiguration& WithJobExecutionsRolloutConfig(IoTJobExecutionsRolloutConfig&& value) { SetJobExecutionsRolloutConfig(std::move(value)); return *this;}
+    template<typename JobExecutionsRolloutConfigT = IoTJobExecutionsRolloutConfig>
+    void SetJobExecutionsRolloutConfig(JobExecutionsRolloutConfigT&& value) { m_jobExecutionsRolloutConfigHasBeenSet = true; m_jobExecutionsRolloutConfig = std::forward<JobExecutionsRolloutConfigT>(value); }
+    template<typename JobExecutionsRolloutConfigT = IoTJobExecutionsRolloutConfig>
+    DeploymentIoTJobConfiguration& WithJobExecutionsRolloutConfig(JobExecutionsRolloutConfigT&& value) { SetJobExecutionsRolloutConfig(std::forward<JobExecutionsRolloutConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The stop configuration for the job. This configuration defines when and how
      * to stop a job rollout.</p>
      */
-    inline const IoTJobAbortConfig& GetAbortConfig() const{ return m_abortConfig; }
+    inline const IoTJobAbortConfig& GetAbortConfig() const { return m_abortConfig; }
     inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
-    inline void SetAbortConfig(const IoTJobAbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
-    inline void SetAbortConfig(IoTJobAbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
-    inline DeploymentIoTJobConfiguration& WithAbortConfig(const IoTJobAbortConfig& value) { SetAbortConfig(value); return *this;}
-    inline DeploymentIoTJobConfiguration& WithAbortConfig(IoTJobAbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
+    template<typename AbortConfigT = IoTJobAbortConfig>
+    void SetAbortConfig(AbortConfigT&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::forward<AbortConfigT>(value); }
+    template<typename AbortConfigT = IoTJobAbortConfig>
+    DeploymentIoTJobConfiguration& WithAbortConfig(AbortConfigT&& value) { SetAbortConfig(std::forward<AbortConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>The timeout configuration for the job. This configuration defines the amount
      * of time each device has to complete the job.</p>
      */
-    inline const IoTJobTimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+    inline const IoTJobTimeoutConfig& GetTimeoutConfig() const { return m_timeoutConfig; }
     inline bool TimeoutConfigHasBeenSet() const { return m_timeoutConfigHasBeenSet; }
-    inline void SetTimeoutConfig(const IoTJobTimeoutConfig& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = value; }
-    inline void SetTimeoutConfig(IoTJobTimeoutConfig&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::move(value); }
-    inline DeploymentIoTJobConfiguration& WithTimeoutConfig(const IoTJobTimeoutConfig& value) { SetTimeoutConfig(value); return *this;}
-    inline DeploymentIoTJobConfiguration& WithTimeoutConfig(IoTJobTimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
+    template<typename TimeoutConfigT = IoTJobTimeoutConfig>
+    void SetTimeoutConfig(TimeoutConfigT&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::forward<TimeoutConfigT>(value); }
+    template<typename TimeoutConfigT = IoTJobTimeoutConfig>
+    DeploymentIoTJobConfiguration& WithTimeoutConfig(TimeoutConfigT&& value) { SetTimeoutConfig(std::forward<TimeoutConfigT>(value)); return *this;}
     ///@}
   private:
 

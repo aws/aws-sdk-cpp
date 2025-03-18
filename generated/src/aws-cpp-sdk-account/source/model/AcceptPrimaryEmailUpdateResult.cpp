@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptPrimaryEmailUpdateResult::AcceptPrimaryEmailUpdateResult() : 
-    m_status(PrimaryEmailUpdateStatus::NOT_SET)
-{
-}
-
 AcceptPrimaryEmailUpdateResult::AcceptPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AcceptPrimaryEmailUpdateResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ AcceptPrimaryEmailUpdateResult& AcceptPrimaryEmailUpdateResult::operator =(const
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PrimaryEmailUpdateStatusMapper::GetPrimaryEmailUpdateStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

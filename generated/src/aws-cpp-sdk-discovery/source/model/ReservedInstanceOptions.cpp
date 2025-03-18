@@ -18,18 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-ReservedInstanceOptions::ReservedInstanceOptions() : 
-    m_purchasingOption(PurchasingOption::NOT_SET),
-    m_purchasingOptionHasBeenSet(false),
-    m_offeringClass(OfferingClass::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_termLength(TermLength::NOT_SET),
-    m_termLengthHasBeenSet(false)
-{
-}
-
 ReservedInstanceOptions::ReservedInstanceOptions(JsonView jsonValue)
-  : ReservedInstanceOptions()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ReservedInstanceOptions& ReservedInstanceOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("purchasingOption"))
   {
     m_purchasingOption = PurchasingOptionMapper::GetPurchasingOptionForName(jsonValue.GetString("purchasingOption"));
-
     m_purchasingOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offeringClass"))
   {
     m_offeringClass = OfferingClassMapper::GetOfferingClassForName(jsonValue.GetString("offeringClass"));
-
     m_offeringClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("termLength"))
   {
     m_termLength = TermLengthMapper::GetTermLengthForName(jsonValue.GetString("termLength"));
-
     m_termLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

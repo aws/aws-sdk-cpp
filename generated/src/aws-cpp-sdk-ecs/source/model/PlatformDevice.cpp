@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-PlatformDevice::PlatformDevice() : 
-    m_idHasBeenSet(false),
-    m_type(PlatformDeviceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 PlatformDevice::PlatformDevice(JsonView jsonValue)
-  : PlatformDevice()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PlatformDevice& PlatformDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PlatformDeviceTypeMapper::GetPlatformDeviceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

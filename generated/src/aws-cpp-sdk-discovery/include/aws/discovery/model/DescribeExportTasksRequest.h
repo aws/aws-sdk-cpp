@@ -23,7 +23,7 @@ namespace Model
   class DescribeExportTasksRequest : public ApplicationDiscoveryServiceRequest
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeExportTasksRequest();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeExportTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * <p>One or more unique identifiers used to query the status of an export
      * request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportIds() const{ return m_exportIds; }
+    inline const Aws::Vector<Aws::String>& GetExportIds() const { return m_exportIds; }
     inline bool ExportIdsHasBeenSet() const { return m_exportIdsHasBeenSet; }
-    inline void SetExportIds(const Aws::Vector<Aws::String>& value) { m_exportIdsHasBeenSet = true; m_exportIds = value; }
-    inline void SetExportIds(Aws::Vector<Aws::String>&& value) { m_exportIdsHasBeenSet = true; m_exportIds = std::move(value); }
-    inline DescribeExportTasksRequest& WithExportIds(const Aws::Vector<Aws::String>& value) { SetExportIds(value); return *this;}
-    inline DescribeExportTasksRequest& WithExportIds(Aws::Vector<Aws::String>&& value) { SetExportIds(std::move(value)); return *this;}
-    inline DescribeExportTasksRequest& AddExportIds(const Aws::String& value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(value); return *this; }
-    inline DescribeExportTasksRequest& AddExportIds(Aws::String&& value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(std::move(value)); return *this; }
-    inline DescribeExportTasksRequest& AddExportIds(const char* value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(value); return *this; }
+    template<typename ExportIdsT = Aws::Vector<Aws::String>>
+    void SetExportIds(ExportIdsT&& value) { m_exportIdsHasBeenSet = true; m_exportIds = std::forward<ExportIdsT>(value); }
+    template<typename ExportIdsT = Aws::Vector<Aws::String>>
+    DescribeExportTasksRequest& WithExportIds(ExportIdsT&& value) { SetExportIds(std::forward<ExportIdsT>(value)); return *this;}
+    template<typename ExportIdsT = Aws::String>
+    DescribeExportTasksRequest& AddExportIds(ExportIdsT&& value) { m_exportIdsHasBeenSet = true; m_exportIds.emplace_back(std::forward<ExportIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,14 +56,14 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
      * whose collected data will be exported</p> </li> </ul>
      */
-    inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ExportFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ExportFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ExportFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<ExportFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeExportTasksRequest& WithFilters(Aws::Vector<ExportFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeExportTasksRequest& AddFilters(const ExportFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeExportTasksRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ExportFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ExportFilter>>
+    DescribeExportTasksRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ExportFilter>
+    DescribeExportTasksRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +74,7 @@ namespace Model
      * results in a single page along with a <code>nextToken</code> response
      * element.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeExportTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,14 +88,12 @@ namespace Model
      * the end of the previous results that returned the <code>nextToken</code> value.
      * This value is null when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeExportTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeExportTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeExportTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeExportTasksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +103,7 @@ namespace Model
     Aws::Vector<ExportFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

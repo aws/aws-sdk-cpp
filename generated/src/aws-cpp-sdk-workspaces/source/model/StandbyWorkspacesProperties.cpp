@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-StandbyWorkspacesProperties::StandbyWorkspacesProperties() : 
-    m_standbyWorkspaceIdHasBeenSet(false),
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false),
-    m_recoverySnapshotTimeHasBeenSet(false)
-{
-}
-
 StandbyWorkspacesProperties::StandbyWorkspacesProperties(JsonView jsonValue)
-  : StandbyWorkspacesProperties()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StandbyWorkspacesProperties& StandbyWorkspacesProperties::operator =(JsonView js
   if(jsonValue.ValueExists("StandbyWorkspaceId"))
   {
     m_standbyWorkspaceId = jsonValue.GetString("StandbyWorkspaceId");
-
     m_standbyWorkspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataReplication"))
   {
     m_dataReplication = DataReplicationMapper::GetDataReplicationForName(jsonValue.GetString("DataReplication"));
-
     m_dataReplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoverySnapshotTime"))
   {
     m_recoverySnapshotTime = jsonValue.GetDouble("RecoverySnapshotTime");
-
     m_recoverySnapshotTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

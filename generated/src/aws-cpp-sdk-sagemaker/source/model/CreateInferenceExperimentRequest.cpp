@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInferenceExperimentRequest::CreateInferenceExperimentRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(InferenceExperimentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_modelVariantsHasBeenSet(false),
-    m_dataStorageConfigHasBeenSet(false),
-    m_shadowModeConfigHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInferenceExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

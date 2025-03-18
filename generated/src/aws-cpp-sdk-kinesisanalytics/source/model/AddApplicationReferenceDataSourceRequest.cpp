@@ -12,14 +12,6 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddApplicationReferenceDataSourceRequest::AddApplicationReferenceDataSourceRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false),
-    m_referenceDataSourceHasBeenSet(false)
-{
-}
-
 Aws::String AddApplicationReferenceDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

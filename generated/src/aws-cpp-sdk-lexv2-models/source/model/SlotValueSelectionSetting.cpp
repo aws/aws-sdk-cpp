@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotValueSelectionSetting::SlotValueSelectionSetting() : 
-    m_resolutionStrategy(SlotValueResolutionStrategy::NOT_SET),
-    m_resolutionStrategyHasBeenSet(false),
-    m_regexFilterHasBeenSet(false),
-    m_advancedRecognitionSettingHasBeenSet(false)
-{
-}
-
 SlotValueSelectionSetting::SlotValueSelectionSetting(JsonView jsonValue)
-  : SlotValueSelectionSetting()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SlotValueSelectionSetting& SlotValueSelectionSetting::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("resolutionStrategy"))
   {
     m_resolutionStrategy = SlotValueResolutionStrategyMapper::GetSlotValueResolutionStrategyForName(jsonValue.GetString("resolutionStrategy"));
-
     m_resolutionStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regexFilter"))
   {
     m_regexFilter = jsonValue.GetObject("regexFilter");
-
     m_regexFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("advancedRecognitionSetting"))
   {
     m_advancedRecognitionSetting = jsonValue.GetObject("advancedRecognitionSetting");
-
     m_advancedRecognitionSettingHasBeenSet = true;
   }
-
   return *this;
 }
 

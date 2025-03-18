@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInboundDmarcSettingsRequest::DescribeInboundDmarcSettingsRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInboundDmarcSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

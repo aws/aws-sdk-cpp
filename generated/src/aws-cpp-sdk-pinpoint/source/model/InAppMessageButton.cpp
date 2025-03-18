@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-InAppMessageButton::InAppMessageButton() : 
-    m_androidHasBeenSet(false),
-    m_defaultConfigHasBeenSet(false),
-    m_iOSHasBeenSet(false),
-    m_webHasBeenSet(false)
-{
-}
-
 InAppMessageButton::InAppMessageButton(JsonView jsonValue)
-  : InAppMessageButton()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InAppMessageButton& InAppMessageButton::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Android"))
   {
     m_android = jsonValue.GetObject("Android");
-
     m_androidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultConfig"))
   {
     m_defaultConfig = jsonValue.GetObject("DefaultConfig");
-
     m_defaultConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IOS"))
   {
     m_iOS = jsonValue.GetObject("IOS");
-
     m_iOSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Web"))
   {
     m_web = jsonValue.GetObject("Web");
-
     m_webHasBeenSet = true;
   }
-
   return *this;
 }
 

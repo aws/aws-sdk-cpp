@@ -12,19 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProvisioningArtifactRequest::UpdateProvisioningArtifactRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProvisioningArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

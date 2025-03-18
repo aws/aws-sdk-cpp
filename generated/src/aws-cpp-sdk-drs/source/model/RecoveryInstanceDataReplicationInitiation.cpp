@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceDataReplicationInitiation::RecoveryInstanceDataReplicationInitiation() : 
-    m_startDateTimeHasBeenSet(false),
-    m_stepsHasBeenSet(false)
-{
-}
-
 RecoveryInstanceDataReplicationInitiation::RecoveryInstanceDataReplicationInitiation(JsonView jsonValue)
-  : RecoveryInstanceDataReplicationInitiation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecoveryInstanceDataReplicationInitiation& RecoveryInstanceDataReplicationInitia
   if(jsonValue.ValueExists("startDateTime"))
   {
     m_startDateTime = jsonValue.GetString("startDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -48,7 +39,6 @@ RecoveryInstanceDataReplicationInitiation& RecoveryInstanceDataReplicationInitia
     }
     m_stepsHasBeenSet = true;
   }
-
   return *this;
 }
 

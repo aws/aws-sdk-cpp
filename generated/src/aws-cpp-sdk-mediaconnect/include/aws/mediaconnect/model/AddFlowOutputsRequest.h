@@ -26,7 +26,7 @@ namespace Model
   class AddFlowOutputsRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddFlowOutputsRequest();
+    AWS_MEDIACONNECT_API AddFlowOutputsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
     /**
      * The flow that you want to add outputs to.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline AddFlowOutputsRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline AddFlowOutputsRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline AddFlowOutputsRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    AddFlowOutputsRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of outputs that you want to add.
      */
-    inline const Aws::Vector<AddOutputRequest>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<AddOutputRequest>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<AddOutputRequest>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<AddOutputRequest>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline AddFlowOutputsRequest& WithOutputs(const Aws::Vector<AddOutputRequest>& value) { SetOutputs(value); return *this;}
-    inline AddFlowOutputsRequest& WithOutputs(Aws::Vector<AddOutputRequest>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline AddFlowOutputsRequest& AddOutputs(const AddOutputRequest& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline AddFlowOutputsRequest& AddOutputs(AddOutputRequest&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<AddOutputRequest>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<AddOutputRequest>>
+    AddFlowOutputsRequest& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = AddOutputRequest>
+    AddFlowOutputsRequest& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
   private:
 

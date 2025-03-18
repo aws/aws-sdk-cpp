@@ -18,14 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-InstanceBlockDeviceMapping::InstanceBlockDeviceMapping() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
-{
-}
-
 InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(JsonView jsonValue)
-  : InstanceBlockDeviceMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InstanceBlockDeviceMapping& InstanceBlockDeviceMapping::operator =(JsonView json
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebs"))
   {
     m_ebs = jsonValue.GetObject("ebs");
-
     m_ebsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetFormTypeRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API GetFormTypeRequest();
+    AWS_DATAZONE_API GetFormTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which this metadata form type
      * exists.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline GetFormTypeRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline GetFormTypeRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline GetFormTypeRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    GetFormTypeRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the metadata form type.</p>
      */
-    inline const Aws::String& GetFormTypeIdentifier() const{ return m_formTypeIdentifier; }
+    inline const Aws::String& GetFormTypeIdentifier() const { return m_formTypeIdentifier; }
     inline bool FormTypeIdentifierHasBeenSet() const { return m_formTypeIdentifierHasBeenSet; }
-    inline void SetFormTypeIdentifier(const Aws::String& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = value; }
-    inline void SetFormTypeIdentifier(Aws::String&& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = std::move(value); }
-    inline void SetFormTypeIdentifier(const char* value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier.assign(value); }
-    inline GetFormTypeRequest& WithFormTypeIdentifier(const Aws::String& value) { SetFormTypeIdentifier(value); return *this;}
-    inline GetFormTypeRequest& WithFormTypeIdentifier(Aws::String&& value) { SetFormTypeIdentifier(std::move(value)); return *this;}
-    inline GetFormTypeRequest& WithFormTypeIdentifier(const char* value) { SetFormTypeIdentifier(value); return *this;}
+    template<typename FormTypeIdentifierT = Aws::String>
+    void SetFormTypeIdentifier(FormTypeIdentifierT&& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = std::forward<FormTypeIdentifierT>(value); }
+    template<typename FormTypeIdentifierT = Aws::String>
+    GetFormTypeRequest& WithFormTypeIdentifier(FormTypeIdentifierT&& value) { SetFormTypeIdentifier(std::forward<FormTypeIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of this metadata form type.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline GetFormTypeRequest& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline GetFormTypeRequest& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline GetFormTypeRequest& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    GetFormTypeRequest& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
   private:
 

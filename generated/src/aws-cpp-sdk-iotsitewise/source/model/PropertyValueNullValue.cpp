@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PropertyValueNullValue::PropertyValueNullValue() : 
-    m_valueType(RawValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false)
-{
-}
-
 PropertyValueNullValue::PropertyValueNullValue(JsonView jsonValue)
-  : PropertyValueNullValue()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PropertyValueNullValue& PropertyValueNullValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("valueType"))
   {
     m_valueType = RawValueTypeMapper::GetRawValueTypeForName(jsonValue.GetString("valueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

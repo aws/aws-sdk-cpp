@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidS3ConfigurationException::InvalidS3ConfigurationException() : 
-    m_bucketHasBeenSet(false)
-{
-}
-
 InvalidS3ConfigurationException::InvalidS3ConfigurationException(const XmlNode& xmlNode)
-  : InvalidS3ConfigurationException()
 {
   *this = xmlNode;
 }

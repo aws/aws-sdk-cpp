@@ -35,7 +35,7 @@ namespace Model
   class GetResourceConfigHistoryResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetResourceConfigHistoryResult();
+    AWS_CONFIGSERVICE_API GetResourceConfigHistoryResult() = default;
     AWS_CONFIGSERVICE_API GetResourceConfigHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetResourceConfigHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>A list that contains the configuration history of one or more resources.</p>
      */
-    inline const Aws::Vector<ConfigurationItem>& GetConfigurationItems() const{ return m_configurationItems; }
-    inline void SetConfigurationItems(const Aws::Vector<ConfigurationItem>& value) { m_configurationItems = value; }
-    inline void SetConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { m_configurationItems = std::move(value); }
-    inline GetResourceConfigHistoryResult& WithConfigurationItems(const Aws::Vector<ConfigurationItem>& value) { SetConfigurationItems(value); return *this;}
-    inline GetResourceConfigHistoryResult& WithConfigurationItems(Aws::Vector<ConfigurationItem>&& value) { SetConfigurationItems(std::move(value)); return *this;}
-    inline GetResourceConfigHistoryResult& AddConfigurationItems(const ConfigurationItem& value) { m_configurationItems.push_back(value); return *this; }
-    inline GetResourceConfigHistoryResult& AddConfigurationItems(ConfigurationItem&& value) { m_configurationItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfigurationItem>& GetConfigurationItems() const { return m_configurationItems; }
+    template<typename ConfigurationItemsT = Aws::Vector<ConfigurationItem>>
+    void SetConfigurationItems(ConfigurationItemsT&& value) { m_configurationItemsHasBeenSet = true; m_configurationItems = std::forward<ConfigurationItemsT>(value); }
+    template<typename ConfigurationItemsT = Aws::Vector<ConfigurationItem>>
+    GetResourceConfigHistoryResult& WithConfigurationItems(ConfigurationItemsT&& value) { SetConfigurationItems(std::forward<ConfigurationItemsT>(value)); return *this;}
+    template<typename ConfigurationItemsT = ConfigurationItem>
+    GetResourceConfigHistoryResult& AddConfigurationItems(ConfigurationItemsT&& value) { m_configurationItemsHasBeenSet = true; m_configurationItems.emplace_back(std::forward<ConfigurationItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetResourceConfigHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetResourceConfigHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetResourceConfigHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetResourceConfigHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceConfigHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceConfigHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceConfigHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceConfigHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConfigurationItem> m_configurationItems;
+    bool m_configurationItemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

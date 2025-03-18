@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSpeakerRequest::DeleteSpeakerRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_speakerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSpeakerRequest::SerializePayload() const
 {
   JsonValue payload;

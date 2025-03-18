@@ -33,7 +33,7 @@ namespace Model
   class DescribeApplicationInstanceResult
   {
   public:
-    AWS_PANORAMA_API DescribeApplicationInstanceResult();
+    AWS_PANORAMA_API DescribeApplicationInstanceResult() = default;
     AWS_PANORAMA_API DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API DescribeApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,237 +42,226 @@ namespace Model
     /**
      * <p>The application instance's ID.</p>
      */
-    inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
-    inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceId = value; }
-    inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceId = std::move(value); }
-    inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceId.assign(value); }
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
+    inline const Aws::String& GetApplicationInstanceId() const { return m_applicationInstanceId; }
+    template<typename ApplicationInstanceIdT = Aws::String>
+    void SetApplicationInstanceId(ApplicationInstanceIdT&& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = std::forward<ApplicationInstanceIdT>(value); }
+    template<typename ApplicationInstanceIdT = Aws::String>
+    DescribeApplicationInstanceResult& WithApplicationInstanceId(ApplicationInstanceIdT&& value) { SetApplicationInstanceId(std::forward<ApplicationInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the application instance that this instance replaced.</p>
      */
-    inline const Aws::String& GetApplicationInstanceIdToReplace() const{ return m_applicationInstanceIdToReplace; }
-    inline void SetApplicationInstanceIdToReplace(const Aws::String& value) { m_applicationInstanceIdToReplace = value; }
-    inline void SetApplicationInstanceIdToReplace(Aws::String&& value) { m_applicationInstanceIdToReplace = std::move(value); }
-    inline void SetApplicationInstanceIdToReplace(const char* value) { m_applicationInstanceIdToReplace.assign(value); }
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const Aws::String& value) { SetApplicationInstanceIdToReplace(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(Aws::String&& value) { SetApplicationInstanceIdToReplace(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(const char* value) { SetApplicationInstanceIdToReplace(value); return *this;}
+    inline const Aws::String& GetApplicationInstanceIdToReplace() const { return m_applicationInstanceIdToReplace; }
+    template<typename ApplicationInstanceIdToReplaceT = Aws::String>
+    void SetApplicationInstanceIdToReplace(ApplicationInstanceIdToReplaceT&& value) { m_applicationInstanceIdToReplaceHasBeenSet = true; m_applicationInstanceIdToReplace = std::forward<ApplicationInstanceIdToReplaceT>(value); }
+    template<typename ApplicationInstanceIdToReplaceT = Aws::String>
+    DescribeApplicationInstanceResult& WithApplicationInstanceIdToReplace(ApplicationInstanceIdToReplaceT&& value) { SetApplicationInstanceIdToReplace(std::forward<ApplicationInstanceIdToReplaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeApplicationInstanceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeApplicationInstanceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the application instance was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    DescribeApplicationInstanceResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's ID.</p>
      */
-    inline const Aws::String& GetDefaultRuntimeContextDevice() const{ return m_defaultRuntimeContextDevice; }
-    inline void SetDefaultRuntimeContextDevice(const Aws::String& value) { m_defaultRuntimeContextDevice = value; }
-    inline void SetDefaultRuntimeContextDevice(Aws::String&& value) { m_defaultRuntimeContextDevice = std::move(value); }
-    inline void SetDefaultRuntimeContextDevice(const char* value) { m_defaultRuntimeContextDevice.assign(value); }
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDevice(const Aws::String& value) { SetDefaultRuntimeContextDevice(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDevice(Aws::String&& value) { SetDefaultRuntimeContextDevice(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDevice(const char* value) { SetDefaultRuntimeContextDevice(value); return *this;}
+    inline const Aws::String& GetDefaultRuntimeContextDevice() const { return m_defaultRuntimeContextDevice; }
+    template<typename DefaultRuntimeContextDeviceT = Aws::String>
+    void SetDefaultRuntimeContextDevice(DefaultRuntimeContextDeviceT&& value) { m_defaultRuntimeContextDeviceHasBeenSet = true; m_defaultRuntimeContextDevice = std::forward<DefaultRuntimeContextDeviceT>(value); }
+    template<typename DefaultRuntimeContextDeviceT = Aws::String>
+    DescribeApplicationInstanceResult& WithDefaultRuntimeContextDevice(DefaultRuntimeContextDeviceT&& value) { SetDefaultRuntimeContextDevice(std::forward<DefaultRuntimeContextDeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's bane.</p>
      */
-    inline const Aws::String& GetDefaultRuntimeContextDeviceName() const{ return m_defaultRuntimeContextDeviceName; }
-    inline void SetDefaultRuntimeContextDeviceName(const Aws::String& value) { m_defaultRuntimeContextDeviceName = value; }
-    inline void SetDefaultRuntimeContextDeviceName(Aws::String&& value) { m_defaultRuntimeContextDeviceName = std::move(value); }
-    inline void SetDefaultRuntimeContextDeviceName(const char* value) { m_defaultRuntimeContextDeviceName.assign(value); }
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDeviceName(const Aws::String& value) { SetDefaultRuntimeContextDeviceName(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDeviceName(Aws::String&& value) { SetDefaultRuntimeContextDeviceName(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithDefaultRuntimeContextDeviceName(const char* value) { SetDefaultRuntimeContextDeviceName(value); return *this;}
+    inline const Aws::String& GetDefaultRuntimeContextDeviceName() const { return m_defaultRuntimeContextDeviceName; }
+    template<typename DefaultRuntimeContextDeviceNameT = Aws::String>
+    void SetDefaultRuntimeContextDeviceName(DefaultRuntimeContextDeviceNameT&& value) { m_defaultRuntimeContextDeviceNameHasBeenSet = true; m_defaultRuntimeContextDeviceName = std::forward<DefaultRuntimeContextDeviceNameT>(value); }
+    template<typename DefaultRuntimeContextDeviceNameT = Aws::String>
+    DescribeApplicationInstanceResult& WithDefaultRuntimeContextDeviceName(DefaultRuntimeContextDeviceNameT&& value) { SetDefaultRuntimeContextDeviceName(std::forward<DefaultRuntimeContextDeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeApplicationInstanceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeApplicationInstanceResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's health status.</p>
      */
-    inline const ApplicationInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
-    inline void SetHealthStatus(const ApplicationInstanceHealthStatus& value) { m_healthStatus = value; }
-    inline void SetHealthStatus(ApplicationInstanceHealthStatus&& value) { m_healthStatus = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithHealthStatus(const ApplicationInstanceHealthStatus& value) { SetHealthStatus(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithHealthStatus(ApplicationInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+    inline ApplicationInstanceHealthStatus GetHealthStatus() const { return m_healthStatus; }
+    inline void SetHealthStatus(ApplicationInstanceHealthStatus value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+    inline DescribeApplicationInstanceResult& WithHealthStatus(ApplicationInstanceHealthStatus value) { SetHealthStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    DescribeApplicationInstanceResult& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeApplicationInstanceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeApplicationInstanceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's state.</p>
      */
-    inline const Aws::Vector<ReportedRuntimeContextState>& GetRuntimeContextStates() const{ return m_runtimeContextStates; }
-    inline void SetRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { m_runtimeContextStates = value; }
-    inline void SetRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { m_runtimeContextStates = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { SetRuntimeContextStates(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { SetRuntimeContextStates(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& AddRuntimeContextStates(const ReportedRuntimeContextState& value) { m_runtimeContextStates.push_back(value); return *this; }
-    inline DescribeApplicationInstanceResult& AddRuntimeContextStates(ReportedRuntimeContextState&& value) { m_runtimeContextStates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReportedRuntimeContextState>& GetRuntimeContextStates() const { return m_runtimeContextStates; }
+    template<typename RuntimeContextStatesT = Aws::Vector<ReportedRuntimeContextState>>
+    void SetRuntimeContextStates(RuntimeContextStatesT&& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates = std::forward<RuntimeContextStatesT>(value); }
+    template<typename RuntimeContextStatesT = Aws::Vector<ReportedRuntimeContextState>>
+    DescribeApplicationInstanceResult& WithRuntimeContextStates(RuntimeContextStatesT&& value) { SetRuntimeContextStates(std::forward<RuntimeContextStatesT>(value)); return *this;}
+    template<typename RuntimeContextStatesT = ReportedRuntimeContextState>
+    DescribeApplicationInstanceResult& AddRuntimeContextStates(RuntimeContextStatesT&& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates.emplace_back(std::forward<RuntimeContextStatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The application instance's runtime role ARN.</p>
      */
-    inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
-    inline void SetRuntimeRoleArn(const Aws::String& value) { m_runtimeRoleArn = value; }
-    inline void SetRuntimeRoleArn(Aws::String&& value) { m_runtimeRoleArn = std::move(value); }
-    inline void SetRuntimeRoleArn(const char* value) { m_runtimeRoleArn.assign(value); }
-    inline DescribeApplicationInstanceResult& WithRuntimeRoleArn(const Aws::String& value) { SetRuntimeRoleArn(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithRuntimeRoleArn(Aws::String&& value) { SetRuntimeRoleArn(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithRuntimeRoleArn(const char* value) { SetRuntimeRoleArn(value); return *this;}
+    inline const Aws::String& GetRuntimeRoleArn() const { return m_runtimeRoleArn; }
+    template<typename RuntimeRoleArnT = Aws::String>
+    void SetRuntimeRoleArn(RuntimeRoleArnT&& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = std::forward<RuntimeRoleArnT>(value); }
+    template<typename RuntimeRoleArnT = Aws::String>
+    DescribeApplicationInstanceResult& WithRuntimeRoleArn(RuntimeRoleArnT&& value) { SetRuntimeRoleArn(std::forward<RuntimeRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's status.</p>
      */
-    inline const ApplicationInstanceStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ApplicationInstanceStatus& value) { m_status = value; }
-    inline void SetStatus(ApplicationInstanceStatus&& value) { m_status = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithStatus(const ApplicationInstanceStatus& value) { SetStatus(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithStatus(ApplicationInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ApplicationInstanceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ApplicationInstanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeApplicationInstanceResult& WithStatus(ApplicationInstanceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's status description.</p>
      */
-    inline const Aws::String& GetStatusDescription() const{ return m_statusDescription; }
-    inline void SetStatusDescription(const Aws::String& value) { m_statusDescription = value; }
-    inline void SetStatusDescription(Aws::String&& value) { m_statusDescription = std::move(value); }
-    inline void SetStatusDescription(const char* value) { m_statusDescription.assign(value); }
-    inline DescribeApplicationInstanceResult& WithStatusDescription(const Aws::String& value) { SetStatusDescription(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithStatusDescription(Aws::String&& value) { SetStatusDescription(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
+    inline const Aws::String& GetStatusDescription() const { return m_statusDescription; }
+    template<typename StatusDescriptionT = Aws::String>
+    void SetStatusDescription(StatusDescriptionT&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::forward<StatusDescriptionT>(value); }
+    template<typename StatusDescriptionT = Aws::String>
+    DescribeApplicationInstanceResult& WithStatusDescription(StatusDescriptionT&& value) { SetStatusDescription(std::forward<StatusDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application instance's tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeApplicationInstanceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeApplicationInstanceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeApplicationInstanceResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeApplicationInstanceResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeApplicationInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeApplicationInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeApplicationInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeApplicationInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationInstanceId;
+    bool m_applicationInstanceIdHasBeenSet = false;
 
     Aws::String m_applicationInstanceIdToReplace;
+    bool m_applicationInstanceIdToReplaceHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDevice;
+    bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDeviceName;
+    bool m_defaultRuntimeContextDeviceNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    ApplicationInstanceHealthStatus m_healthStatus;
+    ApplicationInstanceHealthStatus m_healthStatus{ApplicationInstanceHealthStatus::NOT_SET};
+    bool m_healthStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<ReportedRuntimeContextState> m_runtimeContextStates;
+    bool m_runtimeContextStatesHasBeenSet = false;
 
     Aws::String m_runtimeRoleArn;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
-    ApplicationInstanceStatus m_status;
+    ApplicationInstanceStatus m_status{ApplicationInstanceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;
+    bool m_statusDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

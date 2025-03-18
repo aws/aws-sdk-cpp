@@ -32,7 +32,7 @@ namespace Model
   class EndpointInfo
   {
   public:
-    AWS_CONNECT_API EndpointInfo();
+    AWS_CONNECT_API EndpointInfo() = default;
     AWS_CONNECT_API EndpointInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>Type of endpoint.</p>
      */
-    inline const EndpointType& GetType() const{ return m_type; }
+    inline EndpointType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EndpointType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EndpointType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EndpointInfo& WithType(const EndpointType& value) { SetType(value); return *this;}
-    inline EndpointInfo& WithType(EndpointType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EndpointType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EndpointInfo& WithType(EndpointType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Address of the endpoint.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline EndpointInfo& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline EndpointInfo& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline EndpointInfo& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    EndpointInfo& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Display name of the endpoint.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline EndpointInfo& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline EndpointInfo& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline EndpointInfo& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    EndpointInfo& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 
-    EndpointType m_type;
+    EndpointType m_type{EndpointType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_address;

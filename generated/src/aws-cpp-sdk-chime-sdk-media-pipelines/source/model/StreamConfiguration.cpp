@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-StreamConfiguration::StreamConfiguration() : 
-    m_streamArnHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false),
-    m_streamChannelDefinitionHasBeenSet(false)
-{
-}
-
 StreamConfiguration::StreamConfiguration(JsonView jsonValue)
-  : StreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StreamConfiguration& StreamConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FragmentNumber"))
   {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
-
     m_fragmentNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamChannelDefinition"))
   {
     m_streamChannelDefinition = jsonValue.GetObject("StreamChannelDefinition");
-
     m_streamChannelDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

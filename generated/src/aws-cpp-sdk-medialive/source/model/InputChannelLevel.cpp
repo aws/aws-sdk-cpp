@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputChannelLevel::InputChannelLevel() : 
-    m_gain(0),
-    m_gainHasBeenSet(false),
-    m_inputChannel(0),
-    m_inputChannelHasBeenSet(false)
-{
-}
-
 InputChannelLevel::InputChannelLevel(JsonView jsonValue)
-  : InputChannelLevel()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InputChannelLevel& InputChannelLevel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("gain"))
   {
     m_gain = jsonValue.GetInteger("gain");
-
     m_gainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputChannel"))
   {
     m_inputChannel = jsonValue.GetInteger("inputChannel");
-
     m_inputChannelHasBeenSet = true;
   }
-
   return *this;
 }
 

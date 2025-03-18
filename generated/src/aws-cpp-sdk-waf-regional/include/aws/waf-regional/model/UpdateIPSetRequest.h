@@ -23,7 +23,7 @@ namespace Model
   class UpdateIPSetRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API UpdateIPSetRequest();
+    AWS_WAFREGIONAL_API UpdateIPSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
-    inline const Aws::String& GetIPSetId() const{ return m_iPSetId; }
+    inline const Aws::String& GetIPSetId() const { return m_iPSetId; }
     inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
-    inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
-    inline void SetIPSetId(const char* value) { m_iPSetIdHasBeenSet = true; m_iPSetId.assign(value); }
-    inline UpdateIPSetRequest& WithIPSetId(const Aws::String& value) { SetIPSetId(value); return *this;}
-    inline UpdateIPSetRequest& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
-    inline UpdateIPSetRequest& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
+    template<typename IPSetIdT = Aws::String>
+    void SetIPSetId(IPSetIdT&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::forward<IPSetIdT>(value); }
+    template<typename IPSetIdT = Aws::String>
+    UpdateIPSetRequest& WithIPSetId(IPSetIdT&& value) { SetIPSetId(std::forward<IPSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline UpdateIPSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline UpdateIPSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline UpdateIPSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    UpdateIPSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,14 @@ namespace Model
      * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
      * insert a maximum of 1000 addresses in a single request.</p>
      */
-    inline const Aws::Vector<IPSetUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<IPSetUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<IPSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<IPSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline UpdateIPSetRequest& WithUpdates(const Aws::Vector<IPSetUpdate>& value) { SetUpdates(value); return *this;}
-    inline UpdateIPSetRequest& WithUpdates(Aws::Vector<IPSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline UpdateIPSetRequest& AddUpdates(const IPSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline UpdateIPSetRequest& AddUpdates(IPSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<IPSetUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<IPSetUpdate>>
+    UpdateIPSetRequest& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = IPSetUpdate>
+    UpdateIPSetRequest& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
   private:
 

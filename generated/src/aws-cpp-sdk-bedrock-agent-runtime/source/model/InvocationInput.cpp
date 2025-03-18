@@ -18,19 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvocationInput::InvocationInput() : 
-    m_actionGroupInvocationInputHasBeenSet(false),
-    m_agentCollaboratorInvocationInputHasBeenSet(false),
-    m_codeInterpreterInvocationInputHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false),
-    m_knowledgeBaseLookupInputHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 InvocationInput::InvocationInput(JsonView jsonValue)
-  : InvocationInput()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InvocationInput& InvocationInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroupInvocationInput"))
   {
     m_actionGroupInvocationInput = jsonValue.GetObject("actionGroupInvocationInput");
-
     m_actionGroupInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentCollaboratorInvocationInput"))
   {
     m_agentCollaboratorInvocationInput = jsonValue.GetObject("agentCollaboratorInvocationInput");
-
     m_agentCollaboratorInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeInterpreterInvocationInput"))
   {
     m_codeInterpreterInvocationInput = jsonValue.GetObject("codeInterpreterInvocationInput");
-
     m_codeInterpreterInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationType"))
   {
     m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(jsonValue.GetString("invocationType"));
-
     m_invocationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseLookupInput"))
   {
     m_knowledgeBaseLookupInput = jsonValue.GetObject("knowledgeBaseLookupInput");
-
     m_knowledgeBaseLookupInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

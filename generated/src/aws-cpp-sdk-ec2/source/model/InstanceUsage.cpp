@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceUsage::InstanceUsage() : 
-    m_accountIdHasBeenSet(false),
-    m_usedInstanceCount(0),
-    m_usedInstanceCountHasBeenSet(false)
-{
-}
-
 InstanceUsage::InstanceUsage(const XmlNode& xmlNode)
-  : InstanceUsage()
 {
   *this = xmlNode;
 }

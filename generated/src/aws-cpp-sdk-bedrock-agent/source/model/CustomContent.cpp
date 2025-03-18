@@ -18,17 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CustomContent::CustomContent() : 
-    m_customDocumentIdentifierHasBeenSet(false),
-    m_inlineContentHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_sourceType(CustomSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 CustomContent::CustomContent(JsonView jsonValue)
-  : CustomContent()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CustomContent& CustomContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customDocumentIdentifier"))
   {
     m_customDocumentIdentifier = jsonValue.GetObject("customDocumentIdentifier");
-
     m_customDocumentIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inlineContent"))
   {
     m_inlineContent = jsonValue.GetObject("inlineContent");
-
     m_inlineContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = CustomSourceTypeMapper::GetCustomSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

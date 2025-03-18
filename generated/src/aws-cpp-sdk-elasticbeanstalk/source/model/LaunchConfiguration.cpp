@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-LaunchConfiguration::LaunchConfiguration() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode)
-  : LaunchConfiguration()
 {
   *this = xmlNode;
 }

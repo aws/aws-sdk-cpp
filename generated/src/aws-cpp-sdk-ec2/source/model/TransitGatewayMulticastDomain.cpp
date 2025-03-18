@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastDomain::TransitGatewayMulticastDomain() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_state(TransitGatewayMulticastDomainState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastDomain::TransitGatewayMulticastDomain(const XmlNode& xmlNode)
-  : TransitGatewayMulticastDomain()
 {
   *this = xmlNode;
 }
@@ -78,7 +64,7 @@ TransitGatewayMulticastDomain& TransitGatewayMulticastDomain::operator =(const X
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayMulticastDomainStateMapper::GetTransitGatewayMulticastDomainStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayMulticastDomainStateMapper::GetTransitGatewayMulticastDomainStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
@@ -91,6 +77,7 @@ TransitGatewayMulticastDomain& TransitGatewayMulticastDomain::operator =(const X
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

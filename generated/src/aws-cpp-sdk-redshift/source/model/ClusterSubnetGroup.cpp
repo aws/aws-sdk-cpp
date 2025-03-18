@@ -20,19 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSubnetGroup::ClusterSubnetGroup() : 
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportedClusterIpAddressTypesHasBeenSet(false)
-{
-}
-
 ClusterSubnetGroup::ClusterSubnetGroup(const XmlNode& xmlNode)
-  : ClusterSubnetGroup()
 {
   *this = xmlNode;
 }
@@ -71,6 +59,7 @@ ClusterSubnetGroup& ClusterSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("Subnet");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);
@@ -83,6 +72,7 @@ ClusterSubnetGroup& ClusterSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -95,6 +85,7 @@ ClusterSubnetGroup& ClusterSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!supportedClusterIpAddressTypesNode.IsNull())
     {
       XmlNode supportedClusterIpAddressTypesMember = supportedClusterIpAddressTypesNode.FirstChild("item");
+      m_supportedClusterIpAddressTypesHasBeenSet = !supportedClusterIpAddressTypesMember.IsNull();
       while(!supportedClusterIpAddressTypesMember.IsNull())
       {
         m_supportedClusterIpAddressTypes.push_back(supportedClusterIpAddressTypesMember.GetText());

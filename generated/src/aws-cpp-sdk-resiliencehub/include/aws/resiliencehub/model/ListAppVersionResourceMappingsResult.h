@@ -29,7 +29,7 @@ namespace Model
   class ListAppVersionResourceMappingsResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListAppVersionResourceMappingsResult();
+    AWS_RESILIENCEHUB_API ListAppVersionResourceMappingsResult() = default;
     AWS_RESILIENCEHUB_API ListAppVersionResourceMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListAppVersionResourceMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppVersionResourceMappingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppVersionResourceMappingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppVersionResourceMappingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppVersionResourceMappingsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,33 @@ namespace Model
      * the mapping type <code>CFN_STACK</code> if the application is backed by a
      * CloudFormation stack.</p>
      */
-    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const{ return m_resourceMappings; }
-    inline void SetResourceMappings(const Aws::Vector<ResourceMapping>& value) { m_resourceMappings = value; }
-    inline void SetResourceMappings(Aws::Vector<ResourceMapping>&& value) { m_resourceMappings = std::move(value); }
-    inline ListAppVersionResourceMappingsResult& WithResourceMappings(const Aws::Vector<ResourceMapping>& value) { SetResourceMappings(value); return *this;}
-    inline ListAppVersionResourceMappingsResult& WithResourceMappings(Aws::Vector<ResourceMapping>&& value) { SetResourceMappings(std::move(value)); return *this;}
-    inline ListAppVersionResourceMappingsResult& AddResourceMappings(const ResourceMapping& value) { m_resourceMappings.push_back(value); return *this; }
-    inline ListAppVersionResourceMappingsResult& AddResourceMappings(ResourceMapping&& value) { m_resourceMappings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const { return m_resourceMappings; }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    void SetResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings = std::forward<ResourceMappingsT>(value); }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    ListAppVersionResourceMappingsResult& WithResourceMappings(ResourceMappingsT&& value) { SetResourceMappings(std::forward<ResourceMappingsT>(value)); return *this;}
+    template<typename ResourceMappingsT = ResourceMapping>
+    ListAppVersionResourceMappingsResult& AddResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings.emplace_back(std::forward<ResourceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppVersionResourceMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppVersionResourceMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppVersionResourceMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppVersionResourceMappingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ResourceMapping> m_resourceMappings;
+    bool m_resourceMappingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

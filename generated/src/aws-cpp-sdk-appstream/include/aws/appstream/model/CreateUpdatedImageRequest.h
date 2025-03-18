@@ -22,7 +22,7 @@ namespace Model
   class CreateUpdatedImageRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateUpdatedImageRequest();
+    AWS_APPSTREAM_API CreateUpdatedImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the image to update.</p>
      */
-    inline const Aws::String& GetExistingImageName() const{ return m_existingImageName; }
+    inline const Aws::String& GetExistingImageName() const { return m_existingImageName; }
     inline bool ExistingImageNameHasBeenSet() const { return m_existingImageNameHasBeenSet; }
-    inline void SetExistingImageName(const Aws::String& value) { m_existingImageNameHasBeenSet = true; m_existingImageName = value; }
-    inline void SetExistingImageName(Aws::String&& value) { m_existingImageNameHasBeenSet = true; m_existingImageName = std::move(value); }
-    inline void SetExistingImageName(const char* value) { m_existingImageNameHasBeenSet = true; m_existingImageName.assign(value); }
-    inline CreateUpdatedImageRequest& WithExistingImageName(const Aws::String& value) { SetExistingImageName(value); return *this;}
-    inline CreateUpdatedImageRequest& WithExistingImageName(Aws::String&& value) { SetExistingImageName(std::move(value)); return *this;}
-    inline CreateUpdatedImageRequest& WithExistingImageName(const char* value) { SetExistingImageName(value); return *this;}
+    template<typename ExistingImageNameT = Aws::String>
+    void SetExistingImageName(ExistingImageNameT&& value) { m_existingImageNameHasBeenSet = true; m_existingImageName = std::forward<ExistingImageNameT>(value); }
+    template<typename ExistingImageNameT = Aws::String>
+    CreateUpdatedImageRequest& WithExistingImageName(ExistingImageNameT&& value) { SetExistingImageName(std::forward<ExistingImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,42 +52,36 @@ namespace Model
      * <p>The name of the new image. The name must be unique within the AWS account and
      * Region.</p>
      */
-    inline const Aws::String& GetNewImageName() const{ return m_newImageName; }
+    inline const Aws::String& GetNewImageName() const { return m_newImageName; }
     inline bool NewImageNameHasBeenSet() const { return m_newImageNameHasBeenSet; }
-    inline void SetNewImageName(const Aws::String& value) { m_newImageNameHasBeenSet = true; m_newImageName = value; }
-    inline void SetNewImageName(Aws::String&& value) { m_newImageNameHasBeenSet = true; m_newImageName = std::move(value); }
-    inline void SetNewImageName(const char* value) { m_newImageNameHasBeenSet = true; m_newImageName.assign(value); }
-    inline CreateUpdatedImageRequest& WithNewImageName(const Aws::String& value) { SetNewImageName(value); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageName(Aws::String&& value) { SetNewImageName(std::move(value)); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageName(const char* value) { SetNewImageName(value); return *this;}
+    template<typename NewImageNameT = Aws::String>
+    void SetNewImageName(NewImageNameT&& value) { m_newImageNameHasBeenSet = true; m_newImageName = std::forward<NewImageNameT>(value); }
+    template<typename NewImageNameT = Aws::String>
+    CreateUpdatedImageRequest& WithNewImageName(NewImageNameT&& value) { SetNewImageName(std::forward<NewImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description to display for the new image.</p>
      */
-    inline const Aws::String& GetNewImageDescription() const{ return m_newImageDescription; }
+    inline const Aws::String& GetNewImageDescription() const { return m_newImageDescription; }
     inline bool NewImageDescriptionHasBeenSet() const { return m_newImageDescriptionHasBeenSet; }
-    inline void SetNewImageDescription(const Aws::String& value) { m_newImageDescriptionHasBeenSet = true; m_newImageDescription = value; }
-    inline void SetNewImageDescription(Aws::String&& value) { m_newImageDescriptionHasBeenSet = true; m_newImageDescription = std::move(value); }
-    inline void SetNewImageDescription(const char* value) { m_newImageDescriptionHasBeenSet = true; m_newImageDescription.assign(value); }
-    inline CreateUpdatedImageRequest& WithNewImageDescription(const Aws::String& value) { SetNewImageDescription(value); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageDescription(Aws::String&& value) { SetNewImageDescription(std::move(value)); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageDescription(const char* value) { SetNewImageDescription(value); return *this;}
+    template<typename NewImageDescriptionT = Aws::String>
+    void SetNewImageDescription(NewImageDescriptionT&& value) { m_newImageDescriptionHasBeenSet = true; m_newImageDescription = std::forward<NewImageDescriptionT>(value); }
+    template<typename NewImageDescriptionT = Aws::String>
+    CreateUpdatedImageRequest& WithNewImageDescription(NewImageDescriptionT&& value) { SetNewImageDescription(std::forward<NewImageDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name to display for the new image.</p>
      */
-    inline const Aws::String& GetNewImageDisplayName() const{ return m_newImageDisplayName; }
+    inline const Aws::String& GetNewImageDisplayName() const { return m_newImageDisplayName; }
     inline bool NewImageDisplayNameHasBeenSet() const { return m_newImageDisplayNameHasBeenSet; }
-    inline void SetNewImageDisplayName(const Aws::String& value) { m_newImageDisplayNameHasBeenSet = true; m_newImageDisplayName = value; }
-    inline void SetNewImageDisplayName(Aws::String&& value) { m_newImageDisplayNameHasBeenSet = true; m_newImageDisplayName = std::move(value); }
-    inline void SetNewImageDisplayName(const char* value) { m_newImageDisplayNameHasBeenSet = true; m_newImageDisplayName.assign(value); }
-    inline CreateUpdatedImageRequest& WithNewImageDisplayName(const Aws::String& value) { SetNewImageDisplayName(value); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageDisplayName(Aws::String&& value) { SetNewImageDisplayName(std::move(value)); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageDisplayName(const char* value) { SetNewImageDisplayName(value); return *this;}
+    template<typename NewImageDisplayNameT = Aws::String>
+    void SetNewImageDisplayName(NewImageDisplayNameT&& value) { m_newImageDisplayNameHasBeenSet = true; m_newImageDisplayName = std::forward<NewImageDisplayNameT>(value); }
+    template<typename NewImageDisplayNameT = Aws::String>
+    CreateUpdatedImageRequest& WithNewImageDisplayName(NewImageDisplayNameT&& value) { SetNewImageDisplayName(std::forward<NewImageDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,19 +95,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetNewImageTags() const{ return m_newImageTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetNewImageTags() const { return m_newImageTags; }
     inline bool NewImageTagsHasBeenSet() const { return m_newImageTagsHasBeenSet; }
-    inline void SetNewImageTags(const Aws::Map<Aws::String, Aws::String>& value) { m_newImageTagsHasBeenSet = true; m_newImageTags = value; }
-    inline void SetNewImageTags(Aws::Map<Aws::String, Aws::String>&& value) { m_newImageTagsHasBeenSet = true; m_newImageTags = std::move(value); }
-    inline CreateUpdatedImageRequest& WithNewImageTags(const Aws::Map<Aws::String, Aws::String>& value) { SetNewImageTags(value); return *this;}
-    inline CreateUpdatedImageRequest& WithNewImageTags(Aws::Map<Aws::String, Aws::String>&& value) { SetNewImageTags(std::move(value)); return *this;}
-    inline CreateUpdatedImageRequest& AddNewImageTags(const Aws::String& key, const Aws::String& value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(key, value); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(Aws::String&& key, const Aws::String& value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(std::move(key), value); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(const Aws::String& key, Aws::String&& value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(key, std::move(value)); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(Aws::String&& key, Aws::String&& value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(const char* key, Aws::String&& value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(key, std::move(value)); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(Aws::String&& key, const char* value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(std::move(key), value); return *this; }
-    inline CreateUpdatedImageRequest& AddNewImageTags(const char* key, const char* value) { m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(key, value); return *this; }
+    template<typename NewImageTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetNewImageTags(NewImageTagsT&& value) { m_newImageTagsHasBeenSet = true; m_newImageTags = std::forward<NewImageTagsT>(value); }
+    template<typename NewImageTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateUpdatedImageRequest& WithNewImageTags(NewImageTagsT&& value) { SetNewImageTags(std::forward<NewImageTagsT>(value)); return *this;}
+    template<typename NewImageTagsKeyT = Aws::String, typename NewImageTagsValueT = Aws::String>
+    CreateUpdatedImageRequest& AddNewImageTags(NewImageTagsKeyT&& key, NewImageTagsValueT&& value) {
+      m_newImageTagsHasBeenSet = true; m_newImageTags.emplace(std::forward<NewImageTagsKeyT>(key), std::forward<NewImageTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -127,7 +116,7 @@ namespace Model
      * initiates the process of creating a new updated image without displaying whether
      * image updates are available.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateUpdatedImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -149,7 +138,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_newImageTags;
     bool m_newImageTagsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

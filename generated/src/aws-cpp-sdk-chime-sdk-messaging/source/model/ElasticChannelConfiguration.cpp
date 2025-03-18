@@ -18,18 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ElasticChannelConfiguration::ElasticChannelConfiguration() : 
-    m_maximumSubChannels(0),
-    m_maximumSubChannelsHasBeenSet(false),
-    m_targetMembershipsPerSubChannel(0),
-    m_targetMembershipsPerSubChannelHasBeenSet(false),
-    m_minimumMembershipPercentage(0),
-    m_minimumMembershipPercentageHasBeenSet(false)
-{
-}
-
 ElasticChannelConfiguration::ElasticChannelConfiguration(JsonView jsonValue)
-  : ElasticChannelConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ElasticChannelConfiguration& ElasticChannelConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("MaximumSubChannels"))
   {
     m_maximumSubChannels = jsonValue.GetInteger("MaximumSubChannels");
-
     m_maximumSubChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMembershipsPerSubChannel"))
   {
     m_targetMembershipsPerSubChannel = jsonValue.GetInteger("TargetMembershipsPerSubChannel");
-
     m_targetMembershipsPerSubChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumMembershipPercentage"))
   {
     m_minimumMembershipPercentage = jsonValue.GetInteger("MinimumMembershipPercentage");
-
     m_minimumMembershipPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

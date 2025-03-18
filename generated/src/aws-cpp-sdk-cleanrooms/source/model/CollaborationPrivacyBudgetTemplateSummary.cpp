@@ -18,21 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-CollaborationPrivacyBudgetTemplateSummary::CollaborationPrivacyBudgetTemplateSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_privacyBudgetType(PrivacyBudgetType::NOT_SET),
-    m_privacyBudgetTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 CollaborationPrivacyBudgetTemplateSummary::CollaborationPrivacyBudgetTemplateSummary(JsonView jsonValue)
-  : CollaborationPrivacyBudgetTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ CollaborationPrivacyBudgetTemplateSummary& CollaborationPrivacyBudgetTemplateSum
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationArn"))
   {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
-
     m_collaborationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privacyBudgetType"))
   {
     m_privacyBudgetType = PrivacyBudgetTypeMapper::GetPrivacyBudgetTypeForName(jsonValue.GetString("privacyBudgetType"));
-
     m_privacyBudgetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class DescribeAppResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeAppResult();
+    AWS_SAGEMAKER_API DescribeAppResult() = default;
     AWS_SAGEMAKER_API DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,63 +40,53 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline DescribeAppResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DescribeAppResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DescribeAppResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DescribeAppResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of app.</p>
      */
-    inline const AppType& GetAppType() const{ return m_appType; }
-    inline void SetAppType(const AppType& value) { m_appType = value; }
-    inline void SetAppType(AppType&& value) { m_appType = std::move(value); }
-    inline DescribeAppResult& WithAppType(const AppType& value) { SetAppType(value); return *this;}
-    inline DescribeAppResult& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
+    inline AppType GetAppType() const { return m_appType; }
+    inline void SetAppType(AppType value) { m_appTypeHasBeenSet = true; m_appType = value; }
+    inline DescribeAppResult& WithAppType(AppType value) { SetAppType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the app.</p>
      */
-    inline const Aws::String& GetAppName() const{ return m_appName; }
-    inline void SetAppName(const Aws::String& value) { m_appName = value; }
-    inline void SetAppName(Aws::String&& value) { m_appName = std::move(value); }
-    inline void SetAppName(const char* value) { m_appName.assign(value); }
-    inline DescribeAppResult& WithAppName(const Aws::String& value) { SetAppName(value); return *this;}
-    inline DescribeAppResult& WithAppName(Aws::String&& value) { SetAppName(std::move(value)); return *this;}
-    inline DescribeAppResult& WithAppName(const char* value) { SetAppName(value); return *this;}
+    inline const Aws::String& GetAppName() const { return m_appName; }
+    template<typename AppNameT = Aws::String>
+    void SetAppName(AppNameT&& value) { m_appNameHasBeenSet = true; m_appName = std::forward<AppNameT>(value); }
+    template<typename AppNameT = Aws::String>
+    DescribeAppResult& WithAppName(AppNameT&& value) { SetAppName(std::forward<AppNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain ID.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline DescribeAppResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DescribeAppResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DescribeAppResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DescribeAppResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user profile name.</p>
      */
-    inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
-    inline void SetUserProfileName(const Aws::String& value) { m_userProfileName = value; }
-    inline void SetUserProfileName(Aws::String&& value) { m_userProfileName = std::move(value); }
-    inline void SetUserProfileName(const char* value) { m_userProfileName.assign(value); }
-    inline DescribeAppResult& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-    inline DescribeAppResult& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-    inline DescribeAppResult& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
+    inline const Aws::String& GetUserProfileName() const { return m_userProfileName; }
+    template<typename UserProfileNameT = Aws::String>
+    void SetUserProfileName(UserProfileNameT&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::forward<UserProfileNameT>(value); }
+    template<typename UserProfileNameT = Aws::String>
+    DescribeAppResult& WithUserProfileName(UserProfileNameT&& value) { SetUserProfileName(std::forward<UserProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,35 +94,31 @@ namespace Model
      * <p>The name of the space. If this value is not set, then
      * <code>UserProfileName</code> must be set.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-    inline DescribeAppResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline DescribeAppResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline DescribeAppResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    DescribeAppResult& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status.</p>
      */
-    inline const AppStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AppStatus& value) { m_status = value; }
-    inline void SetStatus(AppStatus&& value) { m_status = std::move(value); }
-    inline DescribeAppResult& WithStatus(const AppStatus& value) { SetStatus(value); return *this;}
-    inline DescribeAppResult& WithStatus(AppStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AppStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AppStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeAppResult& WithStatus(AppStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the last health check.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastHealthCheckTimestamp() const{ return m_lastHealthCheckTimestamp; }
-    inline void SetLastHealthCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastHealthCheckTimestamp = value; }
-    inline void SetLastHealthCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastHealthCheckTimestamp = std::move(value); }
-    inline DescribeAppResult& WithLastHealthCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastHealthCheckTimestamp(value); return *this;}
-    inline DescribeAppResult& WithLastHealthCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastHealthCheckTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastHealthCheckTimestamp() const { return m_lastHealthCheckTimestamp; }
+    template<typename LastHealthCheckTimestampT = Aws::Utils::DateTime>
+    void SetLastHealthCheckTimestamp(LastHealthCheckTimestampT&& value) { m_lastHealthCheckTimestampHasBeenSet = true; m_lastHealthCheckTimestamp = std::forward<LastHealthCheckTimestampT>(value); }
+    template<typename LastHealthCheckTimestampT = Aws::Utils::DateTime>
+    DescribeAppResult& WithLastHealthCheckTimestamp(LastHealthCheckTimestampT&& value) { SetLastHealthCheckTimestamp(std::forward<LastHealthCheckTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,11 +128,11 @@ namespace Model
      * performs health checks without user activity. As a result, this value is set to
      * the same value as <code>LastHealthCheckTimestamp</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUserActivityTimestamp() const{ return m_lastUserActivityTimestamp; }
-    inline void SetLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { m_lastUserActivityTimestamp = value; }
-    inline void SetLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { m_lastUserActivityTimestamp = std::move(value); }
-    inline DescribeAppResult& WithLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { SetLastUserActivityTimestamp(value); return *this;}
-    inline DescribeAppResult& WithLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { SetLastUserActivityTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUserActivityTimestamp() const { return m_lastUserActivityTimestamp; }
+    template<typename LastUserActivityTimestampT = Aws::Utils::DateTime>
+    void SetLastUserActivityTimestamp(LastUserActivityTimestampT&& value) { m_lastUserActivityTimestampHasBeenSet = true; m_lastUserActivityTimestamp = std::forward<LastUserActivityTimestampT>(value); }
+    template<typename LastUserActivityTimestampT = Aws::Utils::DateTime>
+    DescribeAppResult& WithLastUserActivityTimestamp(LastUserActivityTimestampT&& value) { SetLastUserActivityTimestamp(std::forward<LastUserActivityTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,24 +145,22 @@ namespace Model
      * considered a new application rather than an update of the previous
      * application.</p> 
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeAppResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeAppResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeAppResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeAppResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeAppResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeAppResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeAppResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,11 +168,11 @@ namespace Model
      * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker AI
      * image created on the instance.</p>
      */
-    inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
-    inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpec = value; }
-    inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpec = std::move(value); }
-    inline DescribeAppResult& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
-    inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
+    inline const ResourceSpec& GetResourceSpec() const { return m_resourceSpec; }
+    template<typename ResourceSpecT = ResourceSpec>
+    void SetResourceSpec(ResourceSpecT&& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = std::forward<ResourceSpecT>(value); }
+    template<typename ResourceSpecT = ResourceSpec>
+    DescribeAppResult& WithResourceSpec(ResourceSpecT&& value) { SetResourceSpec(std::forward<ResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,54 +180,64 @@ namespace Model
      * <p>The lifecycle configuration that runs before the default lifecycle
      * configuration</p>
      */
-    inline const Aws::String& GetBuiltInLifecycleConfigArn() const{ return m_builtInLifecycleConfigArn; }
-    inline void SetBuiltInLifecycleConfigArn(const Aws::String& value) { m_builtInLifecycleConfigArn = value; }
-    inline void SetBuiltInLifecycleConfigArn(Aws::String&& value) { m_builtInLifecycleConfigArn = std::move(value); }
-    inline void SetBuiltInLifecycleConfigArn(const char* value) { m_builtInLifecycleConfigArn.assign(value); }
-    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(const Aws::String& value) { SetBuiltInLifecycleConfigArn(value); return *this;}
-    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(Aws::String&& value) { SetBuiltInLifecycleConfigArn(std::move(value)); return *this;}
-    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(const char* value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    inline const Aws::String& GetBuiltInLifecycleConfigArn() const { return m_builtInLifecycleConfigArn; }
+    template<typename BuiltInLifecycleConfigArnT = Aws::String>
+    void SetBuiltInLifecycleConfigArn(BuiltInLifecycleConfigArnT&& value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn = std::forward<BuiltInLifecycleConfigArnT>(value); }
+    template<typename BuiltInLifecycleConfigArnT = Aws::String>
+    DescribeAppResult& WithBuiltInLifecycleConfigArn(BuiltInLifecycleConfigArnT&& value) { SetBuiltInLifecycleConfigArn(std::forward<BuiltInLifecycleConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
-    AppType m_appType;
+    AppType m_appType{AppType::NOT_SET};
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
+    bool m_appNameHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
+    bool m_userProfileNameHasBeenSet = false;
 
     Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
 
-    AppStatus m_status;
+    AppStatus m_status{AppStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastHealthCheckTimestamp;
+    Aws::Utils::DateTime m_lastHealthCheckTimestamp{};
+    bool m_lastHealthCheckTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUserActivityTimestamp;
+    Aws::Utils::DateTime m_lastUserActivityTimestamp{};
+    bool m_lastUserActivityTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     ResourceSpec m_resourceSpec;
+    bool m_resourceSpecHasBeenSet = false;
 
     Aws::String m_builtInLifecycleConfigArn;
+    bool m_builtInLifecycleConfigArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

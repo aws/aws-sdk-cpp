@@ -33,7 +33,7 @@ namespace Model
   class S3ExportSpecification
   {
   public:
-    AWS_BACKUPSEARCH_API S3ExportSpecification();
+    AWS_BACKUPSEARCH_API S3ExportSpecification() = default;
     AWS_BACKUPSEARCH_API S3ExportSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API S3ExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>This specifies the destination Amazon S3 bucket for the export job.</p>
      */
-    inline const Aws::String& GetDestinationBucket() const{ return m_destinationBucket; }
+    inline const Aws::String& GetDestinationBucket() const { return m_destinationBucket; }
     inline bool DestinationBucketHasBeenSet() const { return m_destinationBucketHasBeenSet; }
-    inline void SetDestinationBucket(const Aws::String& value) { m_destinationBucketHasBeenSet = true; m_destinationBucket = value; }
-    inline void SetDestinationBucket(Aws::String&& value) { m_destinationBucketHasBeenSet = true; m_destinationBucket = std::move(value); }
-    inline void SetDestinationBucket(const char* value) { m_destinationBucketHasBeenSet = true; m_destinationBucket.assign(value); }
-    inline S3ExportSpecification& WithDestinationBucket(const Aws::String& value) { SetDestinationBucket(value); return *this;}
-    inline S3ExportSpecification& WithDestinationBucket(Aws::String&& value) { SetDestinationBucket(std::move(value)); return *this;}
-    inline S3ExportSpecification& WithDestinationBucket(const char* value) { SetDestinationBucket(value); return *this;}
+    template<typename DestinationBucketT = Aws::String>
+    void SetDestinationBucket(DestinationBucketT&& value) { m_destinationBucketHasBeenSet = true; m_destinationBucket = std::forward<DestinationBucketT>(value); }
+    template<typename DestinationBucketT = Aws::String>
+    S3ExportSpecification& WithDestinationBucket(DestinationBucketT&& value) { SetDestinationBucket(std::forward<DestinationBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>This specifies the prefix for the destination Amazon S3 bucket for the export
      * job.</p>
      */
-    inline const Aws::String& GetDestinationPrefix() const{ return m_destinationPrefix; }
+    inline const Aws::String& GetDestinationPrefix() const { return m_destinationPrefix; }
     inline bool DestinationPrefixHasBeenSet() const { return m_destinationPrefixHasBeenSet; }
-    inline void SetDestinationPrefix(const Aws::String& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
-    inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = std::move(value); }
-    inline void SetDestinationPrefix(const char* value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix.assign(value); }
-    inline S3ExportSpecification& WithDestinationPrefix(const Aws::String& value) { SetDestinationPrefix(value); return *this;}
-    inline S3ExportSpecification& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(std::move(value)); return *this;}
-    inline S3ExportSpecification& WithDestinationPrefix(const char* value) { SetDestinationPrefix(value); return *this;}
+    template<typename DestinationPrefixT = Aws::String>
+    void SetDestinationPrefix(DestinationPrefixT&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = std::forward<DestinationPrefixT>(value); }
+    template<typename DestinationPrefixT = Aws::String>
+    S3ExportSpecification& WithDestinationPrefix(DestinationPrefixT&& value) { SetDestinationPrefix(std::forward<DestinationPrefixT>(value)); return *this;}
     ///@}
   private:
 

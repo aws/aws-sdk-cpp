@@ -18,18 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-HlsContentProtection::HlsContentProtection() : 
-    m_methodHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_licenseAcquisitionUrlHasBeenSet(false),
-    m_keyStoragePolicyHasBeenSet(false)
-{
-}
-
 HlsContentProtection::HlsContentProtection(JsonView jsonValue)
-  : HlsContentProtection()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ HlsContentProtection& HlsContentProtection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Method"))
   {
     m_method = jsonValue.GetString("Method");
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyMd5"))
   {
     m_keyMd5 = jsonValue.GetString("KeyMd5");
-
     m_keyMd5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseAcquisitionUrl"))
   {
     m_licenseAcquisitionUrl = jsonValue.GetString("LicenseAcquisitionUrl");
-
     m_licenseAcquisitionUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyStoragePolicy"))
   {
     m_keyStoragePolicy = jsonValue.GetString("KeyStoragePolicy");
-
     m_keyStoragePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

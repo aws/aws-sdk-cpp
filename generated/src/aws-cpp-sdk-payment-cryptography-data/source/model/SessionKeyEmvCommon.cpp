@@ -18,15 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-SessionKeyEmvCommon::SessionKeyEmvCommon() : 
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
-{
-}
-
 SessionKeyEmvCommon::SessionKeyEmvCommon(JsonView jsonValue)
-  : SessionKeyEmvCommon()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SessionKeyEmvCommon& SessionKeyEmvCommon::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   return *this;
 }
 

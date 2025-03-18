@@ -18,19 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-DomainSummary::DomainSummary() : 
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
-{
-}
-
 DomainSummary::DomainSummary(JsonView jsonValue)
-  : DomainSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

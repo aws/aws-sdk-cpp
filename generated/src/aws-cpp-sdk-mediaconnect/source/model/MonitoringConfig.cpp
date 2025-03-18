@@ -18,18 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-MonitoringConfig::MonitoringConfig() : 
-    m_thumbnailState(ThumbnailState::NOT_SET),
-    m_thumbnailStateHasBeenSet(false),
-    m_audioMonitoringSettingsHasBeenSet(false),
-    m_contentQualityAnalysisState(ContentQualityAnalysisState::NOT_SET),
-    m_contentQualityAnalysisStateHasBeenSet(false),
-    m_videoMonitoringSettingsHasBeenSet(false)
-{
-}
-
 MonitoringConfig::MonitoringConfig(JsonView jsonValue)
-  : MonitoringConfig()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ MonitoringConfig& MonitoringConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thumbnailState"))
   {
     m_thumbnailState = ThumbnailStateMapper::GetThumbnailStateForName(jsonValue.GetString("thumbnailState"));
-
     m_thumbnailStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioMonitoringSettings"))
   {
     Aws::Utils::Array<JsonView> audioMonitoringSettingsJsonList = jsonValue.GetArray("audioMonitoringSettings");
@@ -52,14 +39,11 @@ MonitoringConfig& MonitoringConfig::operator =(JsonView jsonValue)
     }
     m_audioMonitoringSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentQualityAnalysisState"))
   {
     m_contentQualityAnalysisState = ContentQualityAnalysisStateMapper::GetContentQualityAnalysisStateForName(jsonValue.GetString("contentQualityAnalysisState"));
-
     m_contentQualityAnalysisStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoMonitoringSettings"))
   {
     Aws::Utils::Array<JsonView> videoMonitoringSettingsJsonList = jsonValue.GetArray("videoMonitoringSettings");
@@ -69,7 +53,6 @@ MonitoringConfig& MonitoringConfig::operator =(JsonView jsonValue)
     }
     m_videoMonitoringSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

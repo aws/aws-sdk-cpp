@@ -18,15 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverRuleConfig::ResolverRuleConfig() : 
-    m_nameHasBeenSet(false),
-    m_targetIpsHasBeenSet(false),
-    m_resolverEndpointIdHasBeenSet(false)
-{
-}
-
 ResolverRuleConfig::ResolverRuleConfig(JsonView jsonValue)
-  : ResolverRuleConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResolverRuleConfig& ResolverRuleConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetIps"))
   {
     Aws::Utils::Array<JsonView> targetIpsJsonList = jsonValue.GetArray("TargetIps");
@@ -49,14 +39,11 @@ ResolverRuleConfig& ResolverRuleConfig::operator =(JsonView jsonValue)
     }
     m_targetIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverEndpointId"))
   {
     m_resolverEndpointId = jsonValue.GetString("ResolverEndpointId");
-
     m_resolverEndpointIdHasBeenSet = true;
   }
-
   return *this;
 }
 

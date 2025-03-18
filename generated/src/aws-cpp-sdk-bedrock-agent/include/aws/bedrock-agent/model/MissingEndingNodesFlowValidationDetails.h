@@ -30,7 +30,7 @@ namespace Model
   class MissingEndingNodesFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API MissingEndingNodesFlowValidationDetails();
+    AWS_BEDROCKAGENT_API MissingEndingNodesFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API MissingEndingNodesFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API MissingEndingNodesFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

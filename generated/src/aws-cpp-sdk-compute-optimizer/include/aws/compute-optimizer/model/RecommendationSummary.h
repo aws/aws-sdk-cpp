@@ -38,7 +38,7 @@ namespace Model
   class RecommendationSummary
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RecommendationSummary();
+    AWS_COMPUTEOPTIMIZER_API RecommendationSummary() = default;
     AWS_COMPUTEOPTIMIZER_API RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,54 +48,50 @@ namespace Model
     /**
      * <p>An array of objects that describe a recommendation summary.</p>
      */
-    inline const Aws::Vector<Summary>& GetSummaries() const{ return m_summaries; }
+    inline const Aws::Vector<Summary>& GetSummaries() const { return m_summaries; }
     inline bool SummariesHasBeenSet() const { return m_summariesHasBeenSet; }
-    inline void SetSummaries(const Aws::Vector<Summary>& value) { m_summariesHasBeenSet = true; m_summaries = value; }
-    inline void SetSummaries(Aws::Vector<Summary>&& value) { m_summariesHasBeenSet = true; m_summaries = std::move(value); }
-    inline RecommendationSummary& WithSummaries(const Aws::Vector<Summary>& value) { SetSummaries(value); return *this;}
-    inline RecommendationSummary& WithSummaries(Aws::Vector<Summary>&& value) { SetSummaries(std::move(value)); return *this;}
-    inline RecommendationSummary& AddSummaries(const Summary& value) { m_summariesHasBeenSet = true; m_summaries.push_back(value); return *this; }
-    inline RecommendationSummary& AddSummaries(Summary&& value) { m_summariesHasBeenSet = true; m_summaries.push_back(std::move(value)); return *this; }
+    template<typename SummariesT = Aws::Vector<Summary>>
+    void SetSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries = std::forward<SummariesT>(value); }
+    template<typename SummariesT = Aws::Vector<Summary>>
+    RecommendationSummary& WithSummaries(SummariesT&& value) { SetSummaries(std::forward<SummariesT>(value)); return *this;}
+    template<typename SummariesT = Summary>
+    RecommendationSummary& AddSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries.emplace_back(std::forward<SummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Describes the findings summary of the idle resources. </p>
      */
-    inline const Aws::Vector<IdleSummary>& GetIdleSummaries() const{ return m_idleSummaries; }
+    inline const Aws::Vector<IdleSummary>& GetIdleSummaries() const { return m_idleSummaries; }
     inline bool IdleSummariesHasBeenSet() const { return m_idleSummariesHasBeenSet; }
-    inline void SetIdleSummaries(const Aws::Vector<IdleSummary>& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries = value; }
-    inline void SetIdleSummaries(Aws::Vector<IdleSummary>&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries = std::move(value); }
-    inline RecommendationSummary& WithIdleSummaries(const Aws::Vector<IdleSummary>& value) { SetIdleSummaries(value); return *this;}
-    inline RecommendationSummary& WithIdleSummaries(Aws::Vector<IdleSummary>&& value) { SetIdleSummaries(std::move(value)); return *this;}
-    inline RecommendationSummary& AddIdleSummaries(const IdleSummary& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries.push_back(value); return *this; }
-    inline RecommendationSummary& AddIdleSummaries(IdleSummary&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries.push_back(std::move(value)); return *this; }
+    template<typename IdleSummariesT = Aws::Vector<IdleSummary>>
+    void SetIdleSummaries(IdleSummariesT&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries = std::forward<IdleSummariesT>(value); }
+    template<typename IdleSummariesT = Aws::Vector<IdleSummary>>
+    RecommendationSummary& WithIdleSummaries(IdleSummariesT&& value) { SetIdleSummaries(std::forward<IdleSummariesT>(value)); return *this;}
+    template<typename IdleSummariesT = IdleSummary>
+    RecommendationSummary& AddIdleSummaries(IdleSummariesT&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries.emplace_back(std::forward<IdleSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource type that the recommendation summary applies to.</p>
      */
-    inline const RecommendationSourceType& GetRecommendationResourceType() const{ return m_recommendationResourceType; }
+    inline RecommendationSourceType GetRecommendationResourceType() const { return m_recommendationResourceType; }
     inline bool RecommendationResourceTypeHasBeenSet() const { return m_recommendationResourceTypeHasBeenSet; }
-    inline void SetRecommendationResourceType(const RecommendationSourceType& value) { m_recommendationResourceTypeHasBeenSet = true; m_recommendationResourceType = value; }
-    inline void SetRecommendationResourceType(RecommendationSourceType&& value) { m_recommendationResourceTypeHasBeenSet = true; m_recommendationResourceType = std::move(value); }
-    inline RecommendationSummary& WithRecommendationResourceType(const RecommendationSourceType& value) { SetRecommendationResourceType(value); return *this;}
-    inline RecommendationSummary& WithRecommendationResourceType(RecommendationSourceType&& value) { SetRecommendationResourceType(std::move(value)); return *this;}
+    inline void SetRecommendationResourceType(RecommendationSourceType value) { m_recommendationResourceTypeHasBeenSet = true; m_recommendationResourceType = value; }
+    inline RecommendationSummary& WithRecommendationResourceType(RecommendationSourceType value) { SetRecommendationResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the recommendation summary.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline RecommendationSummary& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline RecommendationSummary& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline RecommendationSummary& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    RecommendationSummary& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,32 +100,32 @@ namespace Model
      * Savings opportunity includes the estimated monthly savings amount and
      * percentage.</p>
      */
-    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+    inline const SavingsOpportunity& GetSavingsOpportunity() const { return m_savingsOpportunity; }
     inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
-    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
-    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
-    inline RecommendationSummary& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
-    inline RecommendationSummary& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    void SetSavingsOpportunity(SavingsOpportunityT&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::forward<SavingsOpportunityT>(value); }
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    RecommendationSummary& WithSavingsOpportunity(SavingsOpportunityT&& value) { SetSavingsOpportunity(std::forward<SavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SavingsOpportunity& GetIdleSavingsOpportunity() const{ return m_idleSavingsOpportunity; }
+    inline const SavingsOpportunity& GetIdleSavingsOpportunity() const { return m_idleSavingsOpportunity; }
     inline bool IdleSavingsOpportunityHasBeenSet() const { return m_idleSavingsOpportunityHasBeenSet; }
-    inline void SetIdleSavingsOpportunity(const SavingsOpportunity& value) { m_idleSavingsOpportunityHasBeenSet = true; m_idleSavingsOpportunity = value; }
-    inline void SetIdleSavingsOpportunity(SavingsOpportunity&& value) { m_idleSavingsOpportunityHasBeenSet = true; m_idleSavingsOpportunity = std::move(value); }
-    inline RecommendationSummary& WithIdleSavingsOpportunity(const SavingsOpportunity& value) { SetIdleSavingsOpportunity(value); return *this;}
-    inline RecommendationSummary& WithIdleSavingsOpportunity(SavingsOpportunity&& value) { SetIdleSavingsOpportunity(std::move(value)); return *this;}
+    template<typename IdleSavingsOpportunityT = SavingsOpportunity>
+    void SetIdleSavingsOpportunity(IdleSavingsOpportunityT&& value) { m_idleSavingsOpportunityHasBeenSet = true; m_idleSavingsOpportunity = std::forward<IdleSavingsOpportunityT>(value); }
+    template<typename IdleSavingsOpportunityT = SavingsOpportunity>
+    RecommendationSummary& WithIdleSavingsOpportunity(IdleSavingsOpportunityT&& value) { SetIdleSavingsOpportunity(std::forward<IdleSavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SavingsOpportunity& GetAggregatedSavingsOpportunity() const{ return m_aggregatedSavingsOpportunity; }
+    inline const SavingsOpportunity& GetAggregatedSavingsOpportunity() const { return m_aggregatedSavingsOpportunity; }
     inline bool AggregatedSavingsOpportunityHasBeenSet() const { return m_aggregatedSavingsOpportunityHasBeenSet; }
-    inline void SetAggregatedSavingsOpportunity(const SavingsOpportunity& value) { m_aggregatedSavingsOpportunityHasBeenSet = true; m_aggregatedSavingsOpportunity = value; }
-    inline void SetAggregatedSavingsOpportunity(SavingsOpportunity&& value) { m_aggregatedSavingsOpportunityHasBeenSet = true; m_aggregatedSavingsOpportunity = std::move(value); }
-    inline RecommendationSummary& WithAggregatedSavingsOpportunity(const SavingsOpportunity& value) { SetAggregatedSavingsOpportunity(value); return *this;}
-    inline RecommendationSummary& WithAggregatedSavingsOpportunity(SavingsOpportunity&& value) { SetAggregatedSavingsOpportunity(std::move(value)); return *this;}
+    template<typename AggregatedSavingsOpportunityT = SavingsOpportunity>
+    void SetAggregatedSavingsOpportunity(AggregatedSavingsOpportunityT&& value) { m_aggregatedSavingsOpportunityHasBeenSet = true; m_aggregatedSavingsOpportunity = std::forward<AggregatedSavingsOpportunityT>(value); }
+    template<typename AggregatedSavingsOpportunityT = SavingsOpportunity>
+    RecommendationSummary& WithAggregatedSavingsOpportunity(AggregatedSavingsOpportunityT&& value) { SetAggregatedSavingsOpportunity(std::forward<AggregatedSavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +133,12 @@ namespace Model
      * <p>An object that describes the performance risk ratings for a given resource
      * type.</p>
      */
-    inline const CurrentPerformanceRiskRatings& GetCurrentPerformanceRiskRatings() const{ return m_currentPerformanceRiskRatings; }
+    inline const CurrentPerformanceRiskRatings& GetCurrentPerformanceRiskRatings() const { return m_currentPerformanceRiskRatings; }
     inline bool CurrentPerformanceRiskRatingsHasBeenSet() const { return m_currentPerformanceRiskRatingsHasBeenSet; }
-    inline void SetCurrentPerformanceRiskRatings(const CurrentPerformanceRiskRatings& value) { m_currentPerformanceRiskRatingsHasBeenSet = true; m_currentPerformanceRiskRatings = value; }
-    inline void SetCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatings&& value) { m_currentPerformanceRiskRatingsHasBeenSet = true; m_currentPerformanceRiskRatings = std::move(value); }
-    inline RecommendationSummary& WithCurrentPerformanceRiskRatings(const CurrentPerformanceRiskRatings& value) { SetCurrentPerformanceRiskRatings(value); return *this;}
-    inline RecommendationSummary& WithCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatings&& value) { SetCurrentPerformanceRiskRatings(std::move(value)); return *this;}
+    template<typename CurrentPerformanceRiskRatingsT = CurrentPerformanceRiskRatings>
+    void SetCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatingsT&& value) { m_currentPerformanceRiskRatingsHasBeenSet = true; m_currentPerformanceRiskRatings = std::forward<CurrentPerformanceRiskRatingsT>(value); }
+    template<typename CurrentPerformanceRiskRatingsT = CurrentPerformanceRiskRatings>
+    RecommendationSummary& WithCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatingsT&& value) { SetCurrentPerformanceRiskRatings(std::forward<CurrentPerformanceRiskRatingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +148,14 @@ namespace Model
      * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
-    inline const Aws::Vector<InferredWorkloadSaving>& GetInferredWorkloadSavings() const{ return m_inferredWorkloadSavings; }
+    inline const Aws::Vector<InferredWorkloadSaving>& GetInferredWorkloadSavings() const { return m_inferredWorkloadSavings; }
     inline bool InferredWorkloadSavingsHasBeenSet() const { return m_inferredWorkloadSavingsHasBeenSet; }
-    inline void SetInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = value; }
-    inline void SetInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = std::move(value); }
-    inline RecommendationSummary& WithInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { SetInferredWorkloadSavings(value); return *this;}
-    inline RecommendationSummary& WithInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { SetInferredWorkloadSavings(std::move(value)); return *this;}
-    inline RecommendationSummary& AddInferredWorkloadSavings(const InferredWorkloadSaving& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(value); return *this; }
-    inline RecommendationSummary& AddInferredWorkloadSavings(InferredWorkloadSaving&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(std::move(value)); return *this; }
+    template<typename InferredWorkloadSavingsT = Aws::Vector<InferredWorkloadSaving>>
+    void SetInferredWorkloadSavings(InferredWorkloadSavingsT&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = std::forward<InferredWorkloadSavingsT>(value); }
+    template<typename InferredWorkloadSavingsT = Aws::Vector<InferredWorkloadSaving>>
+    RecommendationSummary& WithInferredWorkloadSavings(InferredWorkloadSavingsT&& value) { SetInferredWorkloadSavings(std::forward<InferredWorkloadSavingsT>(value)); return *this;}
+    template<typename InferredWorkloadSavingsT = InferredWorkloadSaving>
+    RecommendationSummary& AddInferredWorkloadSavings(InferredWorkloadSavingsT&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.emplace_back(std::forward<InferredWorkloadSavingsT>(value)); return *this; }
     ///@}
   private:
 
@@ -169,7 +165,7 @@ namespace Model
     Aws::Vector<IdleSummary> m_idleSummaries;
     bool m_idleSummariesHasBeenSet = false;
 
-    RecommendationSourceType m_recommendationResourceType;
+    RecommendationSourceType m_recommendationResourceType{RecommendationSourceType::NOT_SET};
     bool m_recommendationResourceTypeHasBeenSet = false;
 
     Aws::String m_accountId;

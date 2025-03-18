@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-TimeRange::TimeRange() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 TimeRange::TimeRange(JsonView jsonValue)
-  : TimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeRange& TimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

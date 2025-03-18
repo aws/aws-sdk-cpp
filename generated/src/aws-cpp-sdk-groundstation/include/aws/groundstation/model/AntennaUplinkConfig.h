@@ -33,7 +33,7 @@ namespace Model
   class AntennaUplinkConfig
   {
   public:
-    AWS_GROUNDSTATION_API AntennaUplinkConfig();
+    AWS_GROUNDSTATION_API AntennaUplinkConfig() = default;
     AWS_GROUNDSTATION_API AntennaUplinkConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API AntennaUplinkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,31 @@ namespace Model
     /**
      * <p>Information about the uplink spectral <code>Config</code>.</p>
      */
-    inline const UplinkSpectrumConfig& GetSpectrumConfig() const{ return m_spectrumConfig; }
+    inline const UplinkSpectrumConfig& GetSpectrumConfig() const { return m_spectrumConfig; }
     inline bool SpectrumConfigHasBeenSet() const { return m_spectrumConfigHasBeenSet; }
-    inline void SetSpectrumConfig(const UplinkSpectrumConfig& value) { m_spectrumConfigHasBeenSet = true; m_spectrumConfig = value; }
-    inline void SetSpectrumConfig(UplinkSpectrumConfig&& value) { m_spectrumConfigHasBeenSet = true; m_spectrumConfig = std::move(value); }
-    inline AntennaUplinkConfig& WithSpectrumConfig(const UplinkSpectrumConfig& value) { SetSpectrumConfig(value); return *this;}
-    inline AntennaUplinkConfig& WithSpectrumConfig(UplinkSpectrumConfig&& value) { SetSpectrumConfig(std::move(value)); return *this;}
+    template<typename SpectrumConfigT = UplinkSpectrumConfig>
+    void SetSpectrumConfig(SpectrumConfigT&& value) { m_spectrumConfigHasBeenSet = true; m_spectrumConfig = std::forward<SpectrumConfigT>(value); }
+    template<typename SpectrumConfigT = UplinkSpectrumConfig>
+    AntennaUplinkConfig& WithSpectrumConfig(SpectrumConfigT&& value) { SetSpectrumConfig(std::forward<SpectrumConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>EIRP of the target.</p>
      */
-    inline const Eirp& GetTargetEirp() const{ return m_targetEirp; }
+    inline const Eirp& GetTargetEirp() const { return m_targetEirp; }
     inline bool TargetEirpHasBeenSet() const { return m_targetEirpHasBeenSet; }
-    inline void SetTargetEirp(const Eirp& value) { m_targetEirpHasBeenSet = true; m_targetEirp = value; }
-    inline void SetTargetEirp(Eirp&& value) { m_targetEirpHasBeenSet = true; m_targetEirp = std::move(value); }
-    inline AntennaUplinkConfig& WithTargetEirp(const Eirp& value) { SetTargetEirp(value); return *this;}
-    inline AntennaUplinkConfig& WithTargetEirp(Eirp&& value) { SetTargetEirp(std::move(value)); return *this;}
+    template<typename TargetEirpT = Eirp>
+    void SetTargetEirp(TargetEirpT&& value) { m_targetEirpHasBeenSet = true; m_targetEirp = std::forward<TargetEirpT>(value); }
+    template<typename TargetEirpT = Eirp>
+    AntennaUplinkConfig& WithTargetEirp(TargetEirpT&& value) { SetTargetEirp(std::forward<TargetEirpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether or not uplink transmit is disabled.</p>
      */
-    inline bool GetTransmitDisabled() const{ return m_transmitDisabled; }
+    inline bool GetTransmitDisabled() const { return m_transmitDisabled; }
     inline bool TransmitDisabledHasBeenSet() const { return m_transmitDisabledHasBeenSet; }
     inline void SetTransmitDisabled(bool value) { m_transmitDisabledHasBeenSet = true; m_transmitDisabled = value; }
     inline AntennaUplinkConfig& WithTransmitDisabled(bool value) { SetTransmitDisabled(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
     Eirp m_targetEirp;
     bool m_targetEirpHasBeenSet = false;
 
-    bool m_transmitDisabled;
+    bool m_transmitDisabled{false};
     bool m_transmitDisabledHasBeenSet = false;
   };
 

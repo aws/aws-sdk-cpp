@@ -18,19 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint() : 
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_auditResults(AuditResults::NOT_SET),
-    m_auditResultsHasBeenSet(false),
-    m_egressAddressHasBeenSet(false),
-    m_ingressAddressHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AwsGroundStationAgentEndpoint::AwsGroundStationAgentEndpoint(JsonView jsonValue)
-  : AwsGroundStationAgentEndpoint()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsGroundStationAgentEndpoint& AwsGroundStationAgentEndpoint::operator =(JsonVie
   if(jsonValue.ValueExists("agentStatus"))
   {
     m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
-
     m_agentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auditResults"))
   {
     m_auditResults = AuditResultsMapper::GetAuditResultsForName(jsonValue.GetString("auditResults"));
-
     m_auditResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressAddress"))
   {
     m_egressAddress = jsonValue.GetObject("egressAddress");
-
     m_egressAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingressAddress"))
   {
     m_ingressAddress = jsonValue.GetObject("ingressAddress");
-
     m_ingressAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAutoScalingGroupRecommendationsResult::GetAutoScalingGroupRecommendationsResult()
-{
-}
-
 GetAutoScalingGroupRecommendationsResult::GetAutoScalingGroupRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetAutoScalingGroupRecommendationsResult& GetAutoScalingGroupRecommendationsResu
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroupRecommendations"))
   {
     Aws::Utils::Array<JsonView> autoScalingGroupRecommendationsJsonList = jsonValue.GetArray("autoScalingGroupRecommendations");
@@ -42,8 +37,8 @@ GetAutoScalingGroupRecommendationsResult& GetAutoScalingGroupRecommendationsResu
     {
       m_autoScalingGroupRecommendations.push_back(autoScalingGroupRecommendationsJsonList[autoScalingGroupRecommendationsIndex].AsObject());
     }
+    m_autoScalingGroupRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetAutoScalingGroupRecommendationsResult& GetAutoScalingGroupRecommendationsResu
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

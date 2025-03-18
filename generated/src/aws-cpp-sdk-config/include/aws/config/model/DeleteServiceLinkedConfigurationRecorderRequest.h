@@ -21,7 +21,7 @@ namespace Model
   class DeleteServiceLinkedConfigurationRecorderRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteServiceLinkedConfigurationRecorderRequest();
+    AWS_CONFIGSERVICE_API DeleteServiceLinkedConfigurationRecorderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The service principal of the Amazon Web Services service for the
      * service-linked configuration recorder that you want to delete.</p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline DeleteServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline DeleteServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline DeleteServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    DeleteServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
   private:
 

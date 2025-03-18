@@ -26,7 +26,7 @@ namespace Model
   class DisableAvailabilityZonesForLoadBalancerRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DisableAvailabilityZonesForLoadBalancerRequest();
+    AWS_ELASTICLOADBALANCING_API DisableAvailabilityZonesForLoadBalancerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline DisableAvailabilityZonesForLoadBalancerRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline DisableAvailabilityZonesForLoadBalancerRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    DisableAvailabilityZonesForLoadBalancerRequest& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
   private:
 

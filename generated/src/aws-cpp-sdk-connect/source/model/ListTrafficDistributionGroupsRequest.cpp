@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTrafficDistributionGroupsRequest::ListTrafficDistributionGroupsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String ListTrafficDistributionGroupsRequest::SerializePayload() const
 {
   return {};

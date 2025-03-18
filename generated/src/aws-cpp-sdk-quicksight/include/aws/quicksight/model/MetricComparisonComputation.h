@@ -34,7 +34,7 @@ namespace Model
   class MetricComparisonComputation
   {
   public:
-    AWS_QUICKSIGHT_API MetricComparisonComputation();
+    AWS_QUICKSIGHT_API MetricComparisonComputation() = default;
     AWS_QUICKSIGHT_API MetricComparisonComputation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API MetricComparisonComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,64 +44,60 @@ namespace Model
     /**
      * <p>The ID for a computation.</p>
      */
-    inline const Aws::String& GetComputationId() const{ return m_computationId; }
+    inline const Aws::String& GetComputationId() const { return m_computationId; }
     inline bool ComputationIdHasBeenSet() const { return m_computationIdHasBeenSet; }
-    inline void SetComputationId(const Aws::String& value) { m_computationIdHasBeenSet = true; m_computationId = value; }
-    inline void SetComputationId(Aws::String&& value) { m_computationIdHasBeenSet = true; m_computationId = std::move(value); }
-    inline void SetComputationId(const char* value) { m_computationIdHasBeenSet = true; m_computationId.assign(value); }
-    inline MetricComparisonComputation& WithComputationId(const Aws::String& value) { SetComputationId(value); return *this;}
-    inline MetricComparisonComputation& WithComputationId(Aws::String&& value) { SetComputationId(std::move(value)); return *this;}
-    inline MetricComparisonComputation& WithComputationId(const char* value) { SetComputationId(value); return *this;}
+    template<typename ComputationIdT = Aws::String>
+    void SetComputationId(ComputationIdT&& value) { m_computationIdHasBeenSet = true; m_computationId = std::forward<ComputationIdT>(value); }
+    template<typename ComputationIdT = Aws::String>
+    MetricComparisonComputation& WithComputationId(ComputationIdT&& value) { SetComputationId(std::forward<ComputationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a computation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MetricComparisonComputation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MetricComparisonComputation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MetricComparisonComputation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MetricComparisonComputation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time field that is used in a computation.</p>
      */
-    inline const DimensionField& GetTime() const{ return m_time; }
+    inline const DimensionField& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const DimensionField& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(DimensionField&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline MetricComparisonComputation& WithTime(const DimensionField& value) { SetTime(value); return *this;}
-    inline MetricComparisonComputation& WithTime(DimensionField&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = DimensionField>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = DimensionField>
+    MetricComparisonComputation& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field that is used in a metric comparison from value setup.</p>
      */
-    inline const MeasureField& GetFromValue() const{ return m_fromValue; }
+    inline const MeasureField& GetFromValue() const { return m_fromValue; }
     inline bool FromValueHasBeenSet() const { return m_fromValueHasBeenSet; }
-    inline void SetFromValue(const MeasureField& value) { m_fromValueHasBeenSet = true; m_fromValue = value; }
-    inline void SetFromValue(MeasureField&& value) { m_fromValueHasBeenSet = true; m_fromValue = std::move(value); }
-    inline MetricComparisonComputation& WithFromValue(const MeasureField& value) { SetFromValue(value); return *this;}
-    inline MetricComparisonComputation& WithFromValue(MeasureField&& value) { SetFromValue(std::move(value)); return *this;}
+    template<typename FromValueT = MeasureField>
+    void SetFromValue(FromValueT&& value) { m_fromValueHasBeenSet = true; m_fromValue = std::forward<FromValueT>(value); }
+    template<typename FromValueT = MeasureField>
+    MetricComparisonComputation& WithFromValue(FromValueT&& value) { SetFromValue(std::forward<FromValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field that is used in a metric comparison to value setup.</p>
      */
-    inline const MeasureField& GetTargetValue() const{ return m_targetValue; }
+    inline const MeasureField& GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
-    inline void SetTargetValue(const MeasureField& value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
-    inline void SetTargetValue(MeasureField&& value) { m_targetValueHasBeenSet = true; m_targetValue = std::move(value); }
-    inline MetricComparisonComputation& WithTargetValue(const MeasureField& value) { SetTargetValue(value); return *this;}
-    inline MetricComparisonComputation& WithTargetValue(MeasureField&& value) { SetTargetValue(std::move(value)); return *this;}
+    template<typename TargetValueT = MeasureField>
+    void SetTargetValue(TargetValueT&& value) { m_targetValueHasBeenSet = true; m_targetValue = std::forward<TargetValueT>(value); }
+    template<typename TargetValueT = MeasureField>
+    MetricComparisonComputation& WithTargetValue(TargetValueT&& value) { SetTargetValue(std::forward<TargetValueT>(value)); return *this;}
     ///@}
   private:
 

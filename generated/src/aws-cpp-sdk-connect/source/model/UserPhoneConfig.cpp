@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserPhoneConfig::UserPhoneConfig() : 
-    m_phoneType(PhoneType::NOT_SET),
-    m_phoneTypeHasBeenSet(false),
-    m_autoAccept(false),
-    m_autoAcceptHasBeenSet(false),
-    m_afterContactWorkTimeLimit(0),
-    m_afterContactWorkTimeLimitHasBeenSet(false),
-    m_deskPhoneNumberHasBeenSet(false)
-{
-}
-
 UserPhoneConfig::UserPhoneConfig(JsonView jsonValue)
-  : UserPhoneConfig()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ UserPhoneConfig& UserPhoneConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneType"))
   {
     m_phoneType = PhoneTypeMapper::GetPhoneTypeForName(jsonValue.GetString("PhoneType"));
-
     m_phoneTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAccept"))
   {
     m_autoAccept = jsonValue.GetBool("AutoAccept");
-
     m_autoAcceptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AfterContactWorkTimeLimit"))
   {
     m_afterContactWorkTimeLimit = jsonValue.GetInteger("AfterContactWorkTimeLimit");
-
     m_afterContactWorkTimeLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeskPhoneNumber"))
   {
     m_deskPhoneNumber = jsonValue.GetString("DeskPhoneNumber");
-
     m_deskPhoneNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

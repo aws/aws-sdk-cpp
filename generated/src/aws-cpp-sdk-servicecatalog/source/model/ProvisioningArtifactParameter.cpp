@@ -18,19 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactParameter::ProvisioningArtifactParameter() : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_parameterTypeHasBeenSet(false),
-    m_isNoEcho(false),
-    m_isNoEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parameterConstraintsHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactParameter::ProvisioningArtifactParameter(JsonView jsonValue)
-  : ProvisioningArtifactParameter()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ProvisioningArtifactParameter& ProvisioningArtifactParameter::operator =(JsonVie
   if(jsonValue.ValueExists("ParameterKey"))
   {
     m_parameterKey = jsonValue.GetString("ParameterKey");
-
     m_parameterKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterType"))
   {
     m_parameterType = jsonValue.GetString("ParameterType");
-
     m_parameterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNoEcho"))
   {
     m_isNoEcho = jsonValue.GetBool("IsNoEcho");
-
     m_isNoEchoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterConstraints"))
   {
     m_parameterConstraints = jsonValue.GetObject("ParameterConstraints");
-
     m_parameterConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteProjectRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteProjectRequest();
+    AWS_SAGEMAKER_API DeleteProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the project to delete.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline DeleteProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DeleteProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DeleteProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DeleteProjectRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
   private:
 

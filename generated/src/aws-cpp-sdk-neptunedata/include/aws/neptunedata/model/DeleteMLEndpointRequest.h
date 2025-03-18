@@ -25,7 +25,7 @@ namespace Model
   class DeleteMLEndpointRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API DeleteMLEndpointRequest();
+    AWS_NEPTUNEDATA_API DeleteMLEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the inference endpoint.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteMLEndpointRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteMLEndpointRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteMLEndpointRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteMLEndpointRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * resources. This must be listed in your DB cluster parameter group or an error
      * will be thrown.</p>
      */
-    inline const Aws::String& GetNeptuneIamRoleArn() const{ return m_neptuneIamRoleArn; }
+    inline const Aws::String& GetNeptuneIamRoleArn() const { return m_neptuneIamRoleArn; }
     inline bool NeptuneIamRoleArnHasBeenSet() const { return m_neptuneIamRoleArnHasBeenSet; }
-    inline void SetNeptuneIamRoleArn(const Aws::String& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = value; }
-    inline void SetNeptuneIamRoleArn(Aws::String&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::move(value); }
-    inline void SetNeptuneIamRoleArn(const char* value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn.assign(value); }
-    inline DeleteMLEndpointRequest& WithNeptuneIamRoleArn(const Aws::String& value) { SetNeptuneIamRoleArn(value); return *this;}
-    inline DeleteMLEndpointRequest& WithNeptuneIamRoleArn(Aws::String&& value) { SetNeptuneIamRoleArn(std::move(value)); return *this;}
-    inline DeleteMLEndpointRequest& WithNeptuneIamRoleArn(const char* value) { SetNeptuneIamRoleArn(value); return *this;}
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    void SetNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::forward<NeptuneIamRoleArnT>(value); }
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    DeleteMLEndpointRequest& WithNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { SetNeptuneIamRoleArn(std::forward<NeptuneIamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should
      * be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
      */
-    inline bool GetClean() const{ return m_clean; }
+    inline bool GetClean() const { return m_clean; }
     inline bool CleanHasBeenSet() const { return m_cleanHasBeenSet; }
     inline void SetClean(bool value) { m_cleanHasBeenSet = true; m_clean = value; }
     inline DeleteMLEndpointRequest& WithClean(bool value) { SetClean(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_neptuneIamRoleArn;
     bool m_neptuneIamRoleArnHasBeenSet = false;
 
-    bool m_clean;
+    bool m_clean{false};
     bool m_cleanHasBeenSet = false;
   };
 

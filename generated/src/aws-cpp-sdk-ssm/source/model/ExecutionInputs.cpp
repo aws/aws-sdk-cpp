@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ExecutionInputs::ExecutionInputs() : 
-    m_automationHasBeenSet(false)
-{
-}
-
 ExecutionInputs::ExecutionInputs(JsonView jsonValue)
-  : ExecutionInputs()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExecutionInputs& ExecutionInputs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Automation"))
   {
     m_automation = jsonValue.GetObject("Automation");
-
     m_automationHasBeenSet = true;
   }
-
   return *this;
 }
 

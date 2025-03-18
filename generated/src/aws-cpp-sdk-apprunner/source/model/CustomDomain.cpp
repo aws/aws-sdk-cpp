@@ -18,18 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-CustomDomain::CustomDomain() : 
-    m_domainNameHasBeenSet(false),
-    m_enableWWWSubdomain(false),
-    m_enableWWWSubdomainHasBeenSet(false),
-    m_certificateValidationRecordsHasBeenSet(false),
-    m_status(CustomDomainAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CustomDomain::CustomDomain(JsonView jsonValue)
-  : CustomDomain()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ CustomDomain& CustomDomain::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableWWWSubdomain"))
   {
     m_enableWWWSubdomain = jsonValue.GetBool("EnableWWWSubdomain");
-
     m_enableWWWSubdomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateValidationRecords"))
   {
     Aws::Utils::Array<JsonView> certificateValidationRecordsJsonList = jsonValue.GetArray("CertificateValidationRecords");
@@ -59,14 +44,11 @@ CustomDomain& CustomDomain::operator =(JsonView jsonValue)
     }
     m_certificateValidationRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CustomDomainAssociationStatusMapper::GetCustomDomainAssociationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

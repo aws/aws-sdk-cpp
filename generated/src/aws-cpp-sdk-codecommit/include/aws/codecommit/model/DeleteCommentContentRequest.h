@@ -21,7 +21,7 @@ namespace Model
   class DeleteCommentContentRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API DeleteCommentContentRequest();
+    AWS_CODECOMMIT_API DeleteCommentContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique, system-generated ID of the comment. To get this ID, use
      * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-    inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-    inline DeleteCommentContentRequest& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline DeleteCommentContentRequest& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline DeleteCommentContentRequest& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    DeleteCommentContentRequest& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
   private:
 

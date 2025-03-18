@@ -12,16 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetConnectorMetadataCacheRequest::ResetConnectorMetadataCacheRequest() : 
-    m_connectorProfileNameHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorEntityNameHasBeenSet(false),
-    m_entitiesPathHasBeenSet(false),
-    m_apiVersionHasBeenSet(false)
-{
-}
-
 Aws::String ResetConnectorMetadataCacheRequest::SerializePayload() const
 {
   JsonValue payload;

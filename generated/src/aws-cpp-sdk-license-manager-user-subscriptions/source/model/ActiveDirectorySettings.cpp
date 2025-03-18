@@ -18,16 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-ActiveDirectorySettings::ActiveDirectorySettings() : 
-    m_domainCredentialsProviderHasBeenSet(false),
-    m_domainIpv4ListHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainNetworkSettingsHasBeenSet(false)
-{
-}
-
 ActiveDirectorySettings::ActiveDirectorySettings(JsonView jsonValue)
-  : ActiveDirectorySettings()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ActiveDirectorySettings& ActiveDirectorySettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainCredentialsProvider"))
   {
     m_domainCredentialsProvider = jsonValue.GetObject("DomainCredentialsProvider");
-
     m_domainCredentialsProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainIpv4List"))
   {
     Aws::Utils::Array<JsonView> domainIpv4ListJsonList = jsonValue.GetArray("DomainIpv4List");
@@ -50,21 +39,16 @@ ActiveDirectorySettings& ActiveDirectorySettings::operator =(JsonView jsonValue)
     }
     m_domainIpv4ListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainNetworkSettings"))
   {
     m_domainNetworkSettings = jsonValue.GetObject("DomainNetworkSettings");
-
     m_domainNetworkSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOriginEndpointRequest::DeleteOriginEndpointRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOriginEndpointRequest::SerializePayload() const
 {
   return {};

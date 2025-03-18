@@ -21,7 +21,7 @@ namespace Model
   class RejectAccountLinkInvitationRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API RejectAccountLinkInvitationRequest();
+    AWS_WORKSPACES_API RejectAccountLinkInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the account link</p>
      */
-    inline const Aws::String& GetLinkId() const{ return m_linkId; }
+    inline const Aws::String& GetLinkId() const { return m_linkId; }
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-    inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-    inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-    inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-    inline RejectAccountLinkInvitationRequest& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-    inline RejectAccountLinkInvitationRequest& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-    inline RejectAccountLinkInvitationRequest& WithLinkId(const char* value) { SetLinkId(value); return *this;}
+    template<typename LinkIdT = Aws::String>
+    void SetLinkId(LinkIdT&& value) { m_linkIdHasBeenSet = true; m_linkId = std::forward<LinkIdT>(value); }
+    template<typename LinkIdT = Aws::String>
+    RejectAccountLinkInvitationRequest& WithLinkId(LinkIdT&& value) { SetLinkId(std::forward<LinkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client token of the account link invitation to reject.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RejectAccountLinkInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RejectAccountLinkInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RejectAccountLinkInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RejectAccountLinkInvitationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

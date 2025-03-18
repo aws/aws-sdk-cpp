@@ -29,7 +29,7 @@ namespace Model
   class DescribeSlackUserIdentitiesResult
   {
   public:
-    AWS_CHATBOT_API DescribeSlackUserIdentitiesResult();
+    AWS_CHATBOT_API DescribeSlackUserIdentitiesResult() = default;
     AWS_CHATBOT_API DescribeSlackUserIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API DescribeSlackUserIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of Slack User Identities.</p>
      */
-    inline const Aws::Vector<SlackUserIdentity>& GetSlackUserIdentities() const{ return m_slackUserIdentities; }
-    inline void SetSlackUserIdentities(const Aws::Vector<SlackUserIdentity>& value) { m_slackUserIdentities = value; }
-    inline void SetSlackUserIdentities(Aws::Vector<SlackUserIdentity>&& value) { m_slackUserIdentities = std::move(value); }
-    inline DescribeSlackUserIdentitiesResult& WithSlackUserIdentities(const Aws::Vector<SlackUserIdentity>& value) { SetSlackUserIdentities(value); return *this;}
-    inline DescribeSlackUserIdentitiesResult& WithSlackUserIdentities(Aws::Vector<SlackUserIdentity>&& value) { SetSlackUserIdentities(std::move(value)); return *this;}
-    inline DescribeSlackUserIdentitiesResult& AddSlackUserIdentities(const SlackUserIdentity& value) { m_slackUserIdentities.push_back(value); return *this; }
-    inline DescribeSlackUserIdentitiesResult& AddSlackUserIdentities(SlackUserIdentity&& value) { m_slackUserIdentities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SlackUserIdentity>& GetSlackUserIdentities() const { return m_slackUserIdentities; }
+    template<typename SlackUserIdentitiesT = Aws::Vector<SlackUserIdentity>>
+    void SetSlackUserIdentities(SlackUserIdentitiesT&& value) { m_slackUserIdentitiesHasBeenSet = true; m_slackUserIdentities = std::forward<SlackUserIdentitiesT>(value); }
+    template<typename SlackUserIdentitiesT = Aws::Vector<SlackUserIdentity>>
+    DescribeSlackUserIdentitiesResult& WithSlackUserIdentities(SlackUserIdentitiesT&& value) { SetSlackUserIdentities(std::forward<SlackUserIdentitiesT>(value)); return *this;}
+    template<typename SlackUserIdentitiesT = SlackUserIdentity>
+    DescribeSlackUserIdentitiesResult& AddSlackUserIdentities(SlackUserIdentitiesT&& value) { m_slackUserIdentitiesHasBeenSet = true; m_slackUserIdentities.emplace_back(std::forward<SlackUserIdentitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSlackUserIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSlackUserIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSlackUserIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSlackUserIdentitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSlackUserIdentitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSlackUserIdentitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSlackUserIdentitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSlackUserIdentitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SlackUserIdentity> m_slackUserIdentities;
+    bool m_slackUserIdentitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class CisResultStatusFilter
   {
   public:
-    AWS_INSPECTOR2_API CisResultStatusFilter();
+    AWS_INSPECTOR2_API CisResultStatusFilter() = default;
     AWS_INSPECTOR2_API CisResultStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisResultStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The comparison value of the CIS result status filter.</p>
      */
-    inline const CisResultStatusComparison& GetComparison() const{ return m_comparison; }
+    inline CisResultStatusComparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const CisResultStatusComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(CisResultStatusComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline CisResultStatusFilter& WithComparison(const CisResultStatusComparison& value) { SetComparison(value); return *this;}
-    inline CisResultStatusFilter& WithComparison(CisResultStatusComparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(CisResultStatusComparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline CisResultStatusFilter& WithComparison(CisResultStatusComparison value) { SetComparison(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the CIS result status filter.</p>
      */
-    inline const CisResultStatus& GetValue() const{ return m_value; }
+    inline CisResultStatus GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const CisResultStatus& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(CisResultStatus&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline CisResultStatusFilter& WithValue(const CisResultStatus& value) { SetValue(value); return *this;}
-    inline CisResultStatusFilter& WithValue(CisResultStatus&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(CisResultStatus value) { m_valueHasBeenSet = true; m_value = value; }
+    inline CisResultStatusFilter& WithValue(CisResultStatus value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    CisResultStatusComparison m_comparison;
+    CisResultStatusComparison m_comparison{CisResultStatusComparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
 
-    CisResultStatus m_value;
+    CisResultStatus m_value{CisResultStatus::NOT_SET};
     bool m_valueHasBeenSet = false;
   };
 

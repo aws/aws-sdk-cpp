@@ -10,16 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SubscribeRequest::SubscribeRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_returnSubscriptionArn(false),
-    m_returnSubscriptionArnHasBeenSet(false)
-{
-}
-
 Aws::String SubscribeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

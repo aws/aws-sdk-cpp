@@ -29,7 +29,7 @@ namespace Model
   class ListMicrosoftTeamsChannelConfigurationsResult
   {
   public:
-    AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsResult();
+    AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsResult() = default;
     AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMicrosoftTeamsChannelConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of AWS Chatbot channel configurations for Microsoft Teams.</p>
      */
-    inline const Aws::Vector<TeamsChannelConfiguration>& GetTeamChannelConfigurations() const{ return m_teamChannelConfigurations; }
-    inline void SetTeamChannelConfigurations(const Aws::Vector<TeamsChannelConfiguration>& value) { m_teamChannelConfigurations = value; }
-    inline void SetTeamChannelConfigurations(Aws::Vector<TeamsChannelConfiguration>&& value) { m_teamChannelConfigurations = std::move(value); }
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithTeamChannelConfigurations(const Aws::Vector<TeamsChannelConfiguration>& value) { SetTeamChannelConfigurations(value); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithTeamChannelConfigurations(Aws::Vector<TeamsChannelConfiguration>&& value) { SetTeamChannelConfigurations(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& AddTeamChannelConfigurations(const TeamsChannelConfiguration& value) { m_teamChannelConfigurations.push_back(value); return *this; }
-    inline ListMicrosoftTeamsChannelConfigurationsResult& AddTeamChannelConfigurations(TeamsChannelConfiguration&& value) { m_teamChannelConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TeamsChannelConfiguration>& GetTeamChannelConfigurations() const { return m_teamChannelConfigurations; }
+    template<typename TeamChannelConfigurationsT = Aws::Vector<TeamsChannelConfiguration>>
+    void SetTeamChannelConfigurations(TeamChannelConfigurationsT&& value) { m_teamChannelConfigurationsHasBeenSet = true; m_teamChannelConfigurations = std::forward<TeamChannelConfigurationsT>(value); }
+    template<typename TeamChannelConfigurationsT = Aws::Vector<TeamsChannelConfiguration>>
+    ListMicrosoftTeamsChannelConfigurationsResult& WithTeamChannelConfigurations(TeamChannelConfigurationsT&& value) { SetTeamChannelConfigurations(std::forward<TeamChannelConfigurationsT>(value)); return *this;}
+    template<typename TeamChannelConfigurationsT = TeamsChannelConfiguration>
+    ListMicrosoftTeamsChannelConfigurationsResult& AddTeamChannelConfigurations(TeamChannelConfigurationsT&& value) { m_teamChannelConfigurationsHasBeenSet = true; m_teamChannelConfigurations.emplace_back(std::forward<TeamChannelConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMicrosoftTeamsChannelConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<TeamsChannelConfiguration> m_teamChannelConfigurations;
+    bool m_teamChannelConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UsageByAccount::UsageByAccount() : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_estimatedCostHasBeenSet(false),
-    m_serviceLimitHasBeenSet(false),
-    m_type(UsageType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 UsageByAccount::UsageByAccount(JsonView jsonValue)
-  : UsageByAccount()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UsageByAccount& UsageByAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedCost"))
   {
     m_estimatedCost = jsonValue.GetString("estimatedCost");
-
     m_estimatedCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceLimit"))
   {
     m_serviceLimit = jsonValue.GetObject("serviceLimit");
-
     m_serviceLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

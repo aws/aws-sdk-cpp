@@ -28,35 +28,35 @@ namespace Model
   class ListTagsForResourceResult
   {
   public:
-    AWS_PINPOINT_API ListTagsForResourceResult();
+    AWS_PINPOINT_API ListTagsForResourceResult() = default;
     AWS_PINPOINT_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const TagsModel& GetTagsModel() const{ return m_tagsModel; }
-    inline void SetTagsModel(const TagsModel& value) { m_tagsModel = value; }
-    inline void SetTagsModel(TagsModel&& value) { m_tagsModel = std::move(value); }
-    inline ListTagsForResourceResult& WithTagsModel(const TagsModel& value) { SetTagsModel(value); return *this;}
-    inline ListTagsForResourceResult& WithTagsModel(TagsModel&& value) { SetTagsModel(std::move(value)); return *this;}
+    inline const TagsModel& GetTagsModel() const { return m_tagsModel; }
+    template<typename TagsModelT = TagsModel>
+    void SetTagsModel(TagsModelT&& value) { m_tagsModelHasBeenSet = true; m_tagsModel = std::forward<TagsModelT>(value); }
+    template<typename TagsModelT = TagsModel>
+    ListTagsForResourceResult& WithTagsModel(TagsModelT&& value) { SetTagsModel(std::forward<TagsModelT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTagsForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTagsForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTagsForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTagsForResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TagsModel m_tagsModel;
+    bool m_tagsModelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class MessageMetadata
   {
   public:
-    AWS_CONNECTPARTICIPANT_API MessageMetadata();
+    AWS_CONNECTPARTICIPANT_API MessageMetadata() = default;
     AWS_CONNECTPARTICIPANT_API MessageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API MessageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The identifier of the message that contains the metadata information. </p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline MessageMetadata& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline MessageMetadata& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline MessageMetadata& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    MessageMetadata& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of receipt information for a message for different recipients.</p>
      */
-    inline const Aws::Vector<Receipt>& GetReceipts() const{ return m_receipts; }
+    inline const Aws::Vector<Receipt>& GetReceipts() const { return m_receipts; }
     inline bool ReceiptsHasBeenSet() const { return m_receiptsHasBeenSet; }
-    inline void SetReceipts(const Aws::Vector<Receipt>& value) { m_receiptsHasBeenSet = true; m_receipts = value; }
-    inline void SetReceipts(Aws::Vector<Receipt>&& value) { m_receiptsHasBeenSet = true; m_receipts = std::move(value); }
-    inline MessageMetadata& WithReceipts(const Aws::Vector<Receipt>& value) { SetReceipts(value); return *this;}
-    inline MessageMetadata& WithReceipts(Aws::Vector<Receipt>&& value) { SetReceipts(std::move(value)); return *this;}
-    inline MessageMetadata& AddReceipts(const Receipt& value) { m_receiptsHasBeenSet = true; m_receipts.push_back(value); return *this; }
-    inline MessageMetadata& AddReceipts(Receipt&& value) { m_receiptsHasBeenSet = true; m_receipts.push_back(std::move(value)); return *this; }
+    template<typename ReceiptsT = Aws::Vector<Receipt>>
+    void SetReceipts(ReceiptsT&& value) { m_receiptsHasBeenSet = true; m_receipts = std::forward<ReceiptsT>(value); }
+    template<typename ReceiptsT = Aws::Vector<Receipt>>
+    MessageMetadata& WithReceipts(ReceiptsT&& value) { SetReceipts(std::forward<ReceiptsT>(value)); return *this;}
+    template<typename ReceiptsT = Receipt>
+    MessageMetadata& AddReceipts(ReceiptsT&& value) { m_receiptsHasBeenSet = true; m_receipts.emplace_back(std::forward<ReceiptsT>(value)); return *this; }
     ///@}
   private:
 

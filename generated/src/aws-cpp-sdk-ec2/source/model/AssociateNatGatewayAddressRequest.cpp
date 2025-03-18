@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateNatGatewayAddressRequest::AssociateNatGatewayAddressRequest() : 
-    m_natGatewayIdHasBeenSet(false),
-    m_allocationIdsHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateNatGatewayAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

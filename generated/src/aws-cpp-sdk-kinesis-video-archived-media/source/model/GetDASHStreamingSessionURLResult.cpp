@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDASHStreamingSessionURLResult::GetDASHStreamingSessionURLResult()
-{
-}
-
 GetDASHStreamingSessionURLResult::GetDASHStreamingSessionURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDASHStreamingSessionURLResult& GetDASHStreamingSessionURLResult::operator =(c
   if(jsonValue.ValueExists("DASHStreamingSessionURL"))
   {
     m_dASHStreamingSessionURL = jsonValue.GetString("DASHStreamingSessionURL");
-
+    m_dASHStreamingSessionURLHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

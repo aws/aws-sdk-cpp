@@ -12,18 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVolumeRequest::CreateVolumeRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

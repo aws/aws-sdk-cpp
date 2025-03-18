@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTestConfigurationRequest::GetTestConfigurationRequest() : 
-    m_testConfigurationIdHasBeenSet(false),
-    m_testConfigurationVersion(0),
-    m_testConfigurationVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTestConfigurationRequest::SerializePayload() const
 {
   return {};

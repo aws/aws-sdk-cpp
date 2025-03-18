@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ExportReadSet::ExportReadSet() : 
-    m_readSetIdHasBeenSet(false)
-{
-}
-
 ExportReadSet::ExportReadSet(JsonView jsonValue)
-  : ExportReadSet()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportReadSet& ExportReadSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("readSetId"))
   {
     m_readSetId = jsonValue.GetString("readSetId");
-
     m_readSetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

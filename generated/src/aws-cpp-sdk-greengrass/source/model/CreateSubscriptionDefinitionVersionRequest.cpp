@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionDefinitionVersionRequest::CreateSubscriptionDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_subscriptionDefinitionIdHasBeenSet(false),
-    m_subscriptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriptionDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportKeyPairRequest::ImportKeyPairRequest() : 
-    m_keyPairNameHasBeenSet(false),
-    m_publicKeyBase64HasBeenSet(false)
-{
-}
-
 Aws::String ImportKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

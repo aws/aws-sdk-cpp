@@ -18,21 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkTelemetry::NetworkTelemetry() : 
-    m_registeredGatewayArnHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_healthHasBeenSet(false)
-{
-}
-
 NetworkTelemetry::NetworkTelemetry(JsonView jsonValue)
-  : NetworkTelemetry()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ NetworkTelemetry& NetworkTelemetry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegisteredGatewayArn"))
   {
     m_registeredGatewayArn = jsonValue.GetString("RegisteredGatewayArn");
-
     m_registeredGatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Health"))
   {
     m_health = jsonValue.GetObject("Health");
-
     m_healthHasBeenSet = true;
   }
-
   return *this;
 }
 

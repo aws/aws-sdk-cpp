@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-UpdateVehicleResponseItem::UpdateVehicleResponseItem() : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 UpdateVehicleResponseItem::UpdateVehicleResponseItem(JsonView jsonValue)
-  : UpdateVehicleResponseItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateVehicleResponseItem& UpdateVehicleResponseItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("vehicleName"))
   {
     m_vehicleName = jsonValue.GetString("vehicleName");
-
     m_vehicleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

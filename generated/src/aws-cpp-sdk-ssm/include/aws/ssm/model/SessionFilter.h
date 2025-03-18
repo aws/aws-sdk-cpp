@@ -33,7 +33,7 @@ namespace Model
   class SessionFilter
   {
   public:
-    AWS_SSM_API SessionFilter();
+    AWS_SSM_API SessionFilter() = default;
     AWS_SSM_API SessionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API SessionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline const SessionFilterKey& GetKey() const{ return m_key; }
+    inline SessionFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const SessionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(SessionFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline SessionFilter& WithKey(const SessionFilterKey& value) { SetKey(value); return *this;}
-    inline SessionFilter& WithKey(SessionFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(SessionFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline SessionFilter& WithKey(SessionFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,16 @@ namespace Model
      * <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to
      * return details about the session.</p> </li> </ul>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SessionFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SessionFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SessionFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SessionFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    SessionFilterKey m_key;
+    SessionFilterKey m_key{SessionFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::String m_value;

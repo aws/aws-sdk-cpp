@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVariantImportJobResult::GetVariantImportJobResult() : 
-    m_status(JobStatus::NOT_SET),
-    m_runLeftNormalization(false)
-{
-}
-
 GetVariantImportJobResult::GetVariantImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetVariantImportJobResult()
 {
   *this = result;
 }
@@ -35,51 +28,43 @@ GetVariantImportJobResult& GetVariantImportJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationName"))
   {
     m_destinationName = jsonValue.GetString("destinationName");
-
+    m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetString("completionTime");
-
+    m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -87,14 +72,13 @@ GetVariantImportJobResult& GetVariantImportJobResult::operator =(const Aws::Amaz
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runLeftNormalization"))
   {
     m_runLeftNormalization = jsonValue.GetBool("runLeftNormalization");
-
+    m_runLeftNormalizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("annotationFields"))
   {
     Aws::Map<Aws::String, JsonView> annotationFieldsJsonMap = jsonValue.GetObject("annotationFields").GetAllObjects();
@@ -102,14 +86,15 @@ GetVariantImportJobResult& GetVariantImportJobResult::operator =(const Aws::Amaz
     {
       m_annotationFields[annotationFieldsItem.first] = annotationFieldsItem.second.AsString();
     }
+    m_annotationFieldsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

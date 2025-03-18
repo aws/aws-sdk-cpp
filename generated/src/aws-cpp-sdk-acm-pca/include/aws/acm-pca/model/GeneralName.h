@@ -38,7 +38,7 @@ namespace Model
   class GeneralName
   {
   public:
-    AWS_ACMPCA_API GeneralName();
+    AWS_ACMPCA_API GeneralName() = default;
     AWS_ACMPCA_API GeneralName(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>Represents <code>GeneralName</code> using an <code>OtherName</code>
      * object.</p>
      */
-    inline const OtherName& GetOtherName() const{ return m_otherName; }
+    inline const OtherName& GetOtherName() const { return m_otherName; }
     inline bool OtherNameHasBeenSet() const { return m_otherNameHasBeenSet; }
-    inline void SetOtherName(const OtherName& value) { m_otherNameHasBeenSet = true; m_otherName = value; }
-    inline void SetOtherName(OtherName&& value) { m_otherNameHasBeenSet = true; m_otherName = std::move(value); }
-    inline GeneralName& WithOtherName(const OtherName& value) { SetOtherName(value); return *this;}
-    inline GeneralName& WithOtherName(OtherName&& value) { SetOtherName(std::move(value)); return *this;}
+    template<typename OtherNameT = OtherName>
+    void SetOtherName(OtherNameT&& value) { m_otherNameHasBeenSet = true; m_otherName = std::forward<OtherNameT>(value); }
+    template<typename OtherNameT = OtherName>
+    GeneralName& WithOtherName(OtherNameT&& value) { SetOtherName(std::forward<OtherNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,38 +63,34 @@ namespace Model
      * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
      * address.</p>
      */
-    inline const Aws::String& GetRfc822Name() const{ return m_rfc822Name; }
+    inline const Aws::String& GetRfc822Name() const { return m_rfc822Name; }
     inline bool Rfc822NameHasBeenSet() const { return m_rfc822NameHasBeenSet; }
-    inline void SetRfc822Name(const Aws::String& value) { m_rfc822NameHasBeenSet = true; m_rfc822Name = value; }
-    inline void SetRfc822Name(Aws::String&& value) { m_rfc822NameHasBeenSet = true; m_rfc822Name = std::move(value); }
-    inline void SetRfc822Name(const char* value) { m_rfc822NameHasBeenSet = true; m_rfc822Name.assign(value); }
-    inline GeneralName& WithRfc822Name(const Aws::String& value) { SetRfc822Name(value); return *this;}
-    inline GeneralName& WithRfc822Name(Aws::String&& value) { SetRfc822Name(std::move(value)); return *this;}
-    inline GeneralName& WithRfc822Name(const char* value) { SetRfc822Name(value); return *this;}
+    template<typename Rfc822NameT = Aws::String>
+    void SetRfc822Name(Rfc822NameT&& value) { m_rfc822NameHasBeenSet = true; m_rfc822Name = std::forward<Rfc822NameT>(value); }
+    template<typename Rfc822NameT = Aws::String>
+    GeneralName& WithRfc822Name(Rfc822NameT&& value) { SetRfc822Name(std::forward<Rfc822NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents <code>GeneralName</code> as a DNS name.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline GeneralName& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline GeneralName& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline GeneralName& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    GeneralName& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ASN1Subject& GetDirectoryName() const{ return m_directoryName; }
+    inline const ASN1Subject& GetDirectoryName() const { return m_directoryName; }
     inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
-    inline void SetDirectoryName(const ASN1Subject& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
-    inline void SetDirectoryName(ASN1Subject&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
-    inline GeneralName& WithDirectoryName(const ASN1Subject& value) { SetDirectoryName(value); return *this;}
-    inline GeneralName& WithDirectoryName(ASN1Subject&& value) { SetDirectoryName(std::move(value)); return *this;}
+    template<typename DirectoryNameT = ASN1Subject>
+    void SetDirectoryName(DirectoryNameT&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::forward<DirectoryNameT>(value); }
+    template<typename DirectoryNameT = ASN1Subject>
+    GeneralName& WithDirectoryName(DirectoryNameT&& value) { SetDirectoryName(std::forward<DirectoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,54 +98,48 @@ namespace Model
      * <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code>
      * object.</p>
      */
-    inline const EdiPartyName& GetEdiPartyName() const{ return m_ediPartyName; }
+    inline const EdiPartyName& GetEdiPartyName() const { return m_ediPartyName; }
     inline bool EdiPartyNameHasBeenSet() const { return m_ediPartyNameHasBeenSet; }
-    inline void SetEdiPartyName(const EdiPartyName& value) { m_ediPartyNameHasBeenSet = true; m_ediPartyName = value; }
-    inline void SetEdiPartyName(EdiPartyName&& value) { m_ediPartyNameHasBeenSet = true; m_ediPartyName = std::move(value); }
-    inline GeneralName& WithEdiPartyName(const EdiPartyName& value) { SetEdiPartyName(value); return *this;}
-    inline GeneralName& WithEdiPartyName(EdiPartyName&& value) { SetEdiPartyName(std::move(value)); return *this;}
+    template<typename EdiPartyNameT = EdiPartyName>
+    void SetEdiPartyName(EdiPartyNameT&& value) { m_ediPartyNameHasBeenSet = true; m_ediPartyName = std::forward<EdiPartyNameT>(value); }
+    template<typename EdiPartyNameT = EdiPartyName>
+    GeneralName& WithEdiPartyName(EdiPartyNameT&& value) { SetEdiPartyName(std::forward<EdiPartyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents <code>GeneralName</code> as a URI.</p>
      */
-    inline const Aws::String& GetUniformResourceIdentifier() const{ return m_uniformResourceIdentifier; }
+    inline const Aws::String& GetUniformResourceIdentifier() const { return m_uniformResourceIdentifier; }
     inline bool UniformResourceIdentifierHasBeenSet() const { return m_uniformResourceIdentifierHasBeenSet; }
-    inline void SetUniformResourceIdentifier(const Aws::String& value) { m_uniformResourceIdentifierHasBeenSet = true; m_uniformResourceIdentifier = value; }
-    inline void SetUniformResourceIdentifier(Aws::String&& value) { m_uniformResourceIdentifierHasBeenSet = true; m_uniformResourceIdentifier = std::move(value); }
-    inline void SetUniformResourceIdentifier(const char* value) { m_uniformResourceIdentifierHasBeenSet = true; m_uniformResourceIdentifier.assign(value); }
-    inline GeneralName& WithUniformResourceIdentifier(const Aws::String& value) { SetUniformResourceIdentifier(value); return *this;}
-    inline GeneralName& WithUniformResourceIdentifier(Aws::String&& value) { SetUniformResourceIdentifier(std::move(value)); return *this;}
-    inline GeneralName& WithUniformResourceIdentifier(const char* value) { SetUniformResourceIdentifier(value); return *this;}
+    template<typename UniformResourceIdentifierT = Aws::String>
+    void SetUniformResourceIdentifier(UniformResourceIdentifierT&& value) { m_uniformResourceIdentifierHasBeenSet = true; m_uniformResourceIdentifier = std::forward<UniformResourceIdentifierT>(value); }
+    template<typename UniformResourceIdentifierT = Aws::String>
+    GeneralName& WithUniformResourceIdentifier(UniformResourceIdentifierT&& value) { SetUniformResourceIdentifier(std::forward<UniformResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline GeneralName& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline GeneralName& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline GeneralName& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    GeneralName& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
      */
-    inline const Aws::String& GetRegisteredId() const{ return m_registeredId; }
+    inline const Aws::String& GetRegisteredId() const { return m_registeredId; }
     inline bool RegisteredIdHasBeenSet() const { return m_registeredIdHasBeenSet; }
-    inline void SetRegisteredId(const Aws::String& value) { m_registeredIdHasBeenSet = true; m_registeredId = value; }
-    inline void SetRegisteredId(Aws::String&& value) { m_registeredIdHasBeenSet = true; m_registeredId = std::move(value); }
-    inline void SetRegisteredId(const char* value) { m_registeredIdHasBeenSet = true; m_registeredId.assign(value); }
-    inline GeneralName& WithRegisteredId(const Aws::String& value) { SetRegisteredId(value); return *this;}
-    inline GeneralName& WithRegisteredId(Aws::String&& value) { SetRegisteredId(std::move(value)); return *this;}
-    inline GeneralName& WithRegisteredId(const char* value) { SetRegisteredId(value); return *this;}
+    template<typename RegisteredIdT = Aws::String>
+    void SetRegisteredId(RegisteredIdT&& value) { m_registeredIdHasBeenSet = true; m_registeredId = std::forward<RegisteredIdT>(value); }
+    template<typename RegisteredIdT = Aws::String>
+    GeneralName& WithRegisteredId(RegisteredIdT&& value) { SetRegisteredId(std::forward<RegisteredIdT>(value)); return *this;}
     ///@}
   private:
 

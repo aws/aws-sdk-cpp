@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult() : 
-    m_reactiveInsights(0),
-    m_proactiveInsights(0)
-{
-}
-
 DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeOrganizationOverviewResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ DescribeOrganizationOverviewResult& DescribeOrganizationOverviewResult::operator
   if(jsonValue.ValueExists("ReactiveInsights"))
   {
     m_reactiveInsights = jsonValue.GetInteger("ReactiveInsights");
-
+    m_reactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProactiveInsights"))
   {
     m_proactiveInsights = jsonValue.GetInteger("ProactiveInsights");
-
+    m_proactiveInsightsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

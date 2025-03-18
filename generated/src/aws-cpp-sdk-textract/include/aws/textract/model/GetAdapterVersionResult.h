@@ -35,7 +35,7 @@ namespace Model
   class GetAdapterVersionResult
   {
   public:
-    AWS_TEXTRACT_API GetAdapterVersionResult();
+    AWS_TEXTRACT_API GetAdapterVersionResult() = default;
     AWS_TEXTRACT_API GetAdapterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TEXTRACT_API GetAdapterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,74 +44,65 @@ namespace Model
     /**
      * <p>A string containing a unique ID for the adapter version being retrieved.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterId.assign(value); }
-    inline GetAdapterVersionResult& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline GetAdapterVersionResult& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    GetAdapterVersionResult& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string containing the adapter version that has been retrieved.</p>
      */
-    inline const Aws::String& GetAdapterVersion() const{ return m_adapterVersion; }
-    inline void SetAdapterVersion(const Aws::String& value) { m_adapterVersion = value; }
-    inline void SetAdapterVersion(Aws::String&& value) { m_adapterVersion = std::move(value); }
-    inline void SetAdapterVersion(const char* value) { m_adapterVersion.assign(value); }
-    inline GetAdapterVersionResult& WithAdapterVersion(const Aws::String& value) { SetAdapterVersion(value); return *this;}
-    inline GetAdapterVersionResult& WithAdapterVersion(Aws::String&& value) { SetAdapterVersion(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& WithAdapterVersion(const char* value) { SetAdapterVersion(value); return *this;}
+    inline const Aws::String& GetAdapterVersion() const { return m_adapterVersion; }
+    template<typename AdapterVersionT = Aws::String>
+    void SetAdapterVersion(AdapterVersionT&& value) { m_adapterVersionHasBeenSet = true; m_adapterVersion = std::forward<AdapterVersionT>(value); }
+    template<typename AdapterVersionT = Aws::String>
+    GetAdapterVersionResult& WithAdapterVersion(AdapterVersionT&& value) { SetAdapterVersion(std::forward<AdapterVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the adapter version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetAdapterVersionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetAdapterVersionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetAdapterVersionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of the targeted feature types for the requested adapter version.</p>
      */
-    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
-    inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypes = std::move(value); }
-    inline GetAdapterVersionResult& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
-    inline GetAdapterVersionResult& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& AddFeatureTypes(const FeatureType& value) { m_featureTypes.push_back(value); return *this; }
-    inline GetAdapterVersionResult& AddFeatureTypes(FeatureType&& value) { m_featureTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const { return m_featureTypes; }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    GetAdapterVersionResult& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline GetAdapterVersionResult& AddFeatureTypes(FeatureType value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the adapter version that has been requested.</p>
      */
-    inline const AdapterVersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AdapterVersionStatus& value) { m_status = value; }
-    inline void SetStatus(AdapterVersionStatus&& value) { m_status = std::move(value); }
-    inline GetAdapterVersionResult& WithStatus(const AdapterVersionStatus& value) { SetStatus(value); return *this;}
-    inline GetAdapterVersionResult& WithStatus(AdapterVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AdapterVersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AdapterVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAdapterVersionResult& WithStatus(AdapterVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that describes the status of the requested adapter version.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetAdapterVersionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetAdapterVersionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetAdapterVersionResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,11 +110,11 @@ namespace Model
      * <p>Specifies a dataset used to train a new adapter version. Takes a
      * ManifestS3Objec as the value.</p>
      */
-    inline const AdapterVersionDatasetConfig& GetDatasetConfig() const{ return m_datasetConfig; }
-    inline void SetDatasetConfig(const AdapterVersionDatasetConfig& value) { m_datasetConfig = value; }
-    inline void SetDatasetConfig(AdapterVersionDatasetConfig&& value) { m_datasetConfig = std::move(value); }
-    inline GetAdapterVersionResult& WithDatasetConfig(const AdapterVersionDatasetConfig& value) { SetDatasetConfig(value); return *this;}
-    inline GetAdapterVersionResult& WithDatasetConfig(AdapterVersionDatasetConfig&& value) { SetDatasetConfig(std::move(value)); return *this;}
+    inline const AdapterVersionDatasetConfig& GetDatasetConfig() const { return m_datasetConfig; }
+    template<typename DatasetConfigT = AdapterVersionDatasetConfig>
+    void SetDatasetConfig(DatasetConfigT&& value) { m_datasetConfigHasBeenSet = true; m_datasetConfig = std::forward<DatasetConfigT>(value); }
+    template<typename DatasetConfigT = AdapterVersionDatasetConfig>
+    GetAdapterVersionResult& WithDatasetConfig(DatasetConfigT&& value) { SetDatasetConfig(std::forward<DatasetConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,22 +122,20 @@ namespace Model
      * <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to
      * encrypt your documents.</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyId.assign(value); }
-    inline GetAdapterVersionResult& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline GetAdapterVersionResult& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    GetAdapterVersionResult& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-    inline void SetOutputConfig(const OutputConfig& value) { m_outputConfig = value; }
-    inline void SetOutputConfig(OutputConfig&& value) { m_outputConfig = std::move(value); }
-    inline GetAdapterVersionResult& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline GetAdapterVersionResult& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
+    template<typename OutputConfigT = OutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = OutputConfig>
+    GetAdapterVersionResult& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,13 +143,13 @@ namespace Model
      * <p>The evaluation metrics (F1 score, Precision, and Recall) for the requested
      * version, grouped by baseline metrics and adapter version.</p>
      */
-    inline const Aws::Vector<AdapterVersionEvaluationMetric>& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
-    inline void SetEvaluationMetrics(const Aws::Vector<AdapterVersionEvaluationMetric>& value) { m_evaluationMetrics = value; }
-    inline void SetEvaluationMetrics(Aws::Vector<AdapterVersionEvaluationMetric>&& value) { m_evaluationMetrics = std::move(value); }
-    inline GetAdapterVersionResult& WithEvaluationMetrics(const Aws::Vector<AdapterVersionEvaluationMetric>& value) { SetEvaluationMetrics(value); return *this;}
-    inline GetAdapterVersionResult& WithEvaluationMetrics(Aws::Vector<AdapterVersionEvaluationMetric>&& value) { SetEvaluationMetrics(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& AddEvaluationMetrics(const AdapterVersionEvaluationMetric& value) { m_evaluationMetrics.push_back(value); return *this; }
-    inline GetAdapterVersionResult& AddEvaluationMetrics(AdapterVersionEvaluationMetric&& value) { m_evaluationMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdapterVersionEvaluationMetric>& GetEvaluationMetrics() const { return m_evaluationMetrics; }
+    template<typename EvaluationMetricsT = Aws::Vector<AdapterVersionEvaluationMetric>>
+    void SetEvaluationMetrics(EvaluationMetricsT&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = std::forward<EvaluationMetricsT>(value); }
+    template<typename EvaluationMetricsT = Aws::Vector<AdapterVersionEvaluationMetric>>
+    GetAdapterVersionResult& WithEvaluationMetrics(EvaluationMetricsT&& value) { SetEvaluationMetrics(std::forward<EvaluationMetricsT>(value)); return *this;}
+    template<typename EvaluationMetricsT = AdapterVersionEvaluationMetric>
+    GetAdapterVersionResult& AddEvaluationMetrics(EvaluationMetricsT&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics.emplace_back(std::forward<EvaluationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -168,55 +157,62 @@ namespace Model
      * <p>A set of tags (key-value pairs) that are associated with the adapter
      * version.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetAdapterVersionResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetAdapterVersionResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetAdapterVersionResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetAdapterVersionResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetAdapterVersionResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetAdapterVersionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetAdapterVersionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetAdapterVersionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetAdapterVersionResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetAdapterVersionResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAdapterVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAdapterVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAdapterVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAdapterVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_adapterId;
+    bool m_adapterIdHasBeenSet = false;
 
     Aws::String m_adapterVersion;
+    bool m_adapterVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<FeatureType> m_featureTypes;
+    bool m_featureTypesHasBeenSet = false;
 
-    AdapterVersionStatus m_status;
+    AdapterVersionStatus m_status{AdapterVersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     AdapterVersionDatasetConfig m_datasetConfig;
+    bool m_datasetConfigHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     OutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::Vector<AdapterVersionEvaluationMetric> m_evaluationMetrics;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class SignalWorkflowExecutionRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API SignalWorkflowExecutionRequest();
+    AWS_SWF_API SignalWorkflowExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution to signal.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline SignalWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline SignalWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline SignalWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    SignalWorkflowExecutionRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflowId of the workflow execution to signal.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline SignalWorkflowExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline SignalWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline SignalWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    SignalWorkflowExecutionRequest& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runId of the workflow execution to signal.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline SignalWorkflowExecutionRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline SignalWorkflowExecutionRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline SignalWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    SignalWorkflowExecutionRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +75,12 @@ namespace Model
      * <p>The name of the signal. This name must be meaningful to the target
      * workflow.</p>
      */
-    inline const Aws::String& GetSignalName() const{ return m_signalName; }
+    inline const Aws::String& GetSignalName() const { return m_signalName; }
     inline bool SignalNameHasBeenSet() const { return m_signalNameHasBeenSet; }
-    inline void SetSignalName(const Aws::String& value) { m_signalNameHasBeenSet = true; m_signalName = value; }
-    inline void SetSignalName(Aws::String&& value) { m_signalNameHasBeenSet = true; m_signalName = std::move(value); }
-    inline void SetSignalName(const char* value) { m_signalNameHasBeenSet = true; m_signalName.assign(value); }
-    inline SignalWorkflowExecutionRequest& WithSignalName(const Aws::String& value) { SetSignalName(value); return *this;}
-    inline SignalWorkflowExecutionRequest& WithSignalName(Aws::String&& value) { SetSignalName(std::move(value)); return *this;}
-    inline SignalWorkflowExecutionRequest& WithSignalName(const char* value) { SetSignalName(value); return *this;}
+    template<typename SignalNameT = Aws::String>
+    void SetSignalName(SignalNameT&& value) { m_signalNameHasBeenSet = true; m_signalName = std::forward<SignalNameT>(value); }
+    template<typename SignalNameT = Aws::String>
+    SignalWorkflowExecutionRequest& WithSignalName(SignalNameT&& value) { SetSignalName(std::forward<SignalNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +88,12 @@ namespace Model
      * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
      * target workflow execution's history.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline SignalWorkflowExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline SignalWorkflowExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline SignalWorkflowExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    SignalWorkflowExecutionRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class CommunicationTimeConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CommunicationTimeConfig();
+    AWS_CONNECTCAMPAIGNSV2_API CommunicationTimeConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API CommunicationTimeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CommunicationTimeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,42 +40,42 @@ namespace Model
 
     ///@{
     
-    inline const LocalTimeZoneConfig& GetLocalTimeZoneConfig() const{ return m_localTimeZoneConfig; }
+    inline const LocalTimeZoneConfig& GetLocalTimeZoneConfig() const { return m_localTimeZoneConfig; }
     inline bool LocalTimeZoneConfigHasBeenSet() const { return m_localTimeZoneConfigHasBeenSet; }
-    inline void SetLocalTimeZoneConfig(const LocalTimeZoneConfig& value) { m_localTimeZoneConfigHasBeenSet = true; m_localTimeZoneConfig = value; }
-    inline void SetLocalTimeZoneConfig(LocalTimeZoneConfig&& value) { m_localTimeZoneConfigHasBeenSet = true; m_localTimeZoneConfig = std::move(value); }
-    inline CommunicationTimeConfig& WithLocalTimeZoneConfig(const LocalTimeZoneConfig& value) { SetLocalTimeZoneConfig(value); return *this;}
-    inline CommunicationTimeConfig& WithLocalTimeZoneConfig(LocalTimeZoneConfig&& value) { SetLocalTimeZoneConfig(std::move(value)); return *this;}
+    template<typename LocalTimeZoneConfigT = LocalTimeZoneConfig>
+    void SetLocalTimeZoneConfig(LocalTimeZoneConfigT&& value) { m_localTimeZoneConfigHasBeenSet = true; m_localTimeZoneConfig = std::forward<LocalTimeZoneConfigT>(value); }
+    template<typename LocalTimeZoneConfigT = LocalTimeZoneConfig>
+    CommunicationTimeConfig& WithLocalTimeZoneConfig(LocalTimeZoneConfigT&& value) { SetLocalTimeZoneConfig(std::forward<LocalTimeZoneConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TimeWindow& GetTelephony() const{ return m_telephony; }
+    inline const TimeWindow& GetTelephony() const { return m_telephony; }
     inline bool TelephonyHasBeenSet() const { return m_telephonyHasBeenSet; }
-    inline void SetTelephony(const TimeWindow& value) { m_telephonyHasBeenSet = true; m_telephony = value; }
-    inline void SetTelephony(TimeWindow&& value) { m_telephonyHasBeenSet = true; m_telephony = std::move(value); }
-    inline CommunicationTimeConfig& WithTelephony(const TimeWindow& value) { SetTelephony(value); return *this;}
-    inline CommunicationTimeConfig& WithTelephony(TimeWindow&& value) { SetTelephony(std::move(value)); return *this;}
+    template<typename TelephonyT = TimeWindow>
+    void SetTelephony(TelephonyT&& value) { m_telephonyHasBeenSet = true; m_telephony = std::forward<TelephonyT>(value); }
+    template<typename TelephonyT = TimeWindow>
+    CommunicationTimeConfig& WithTelephony(TelephonyT&& value) { SetTelephony(std::forward<TelephonyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TimeWindow& GetSms() const{ return m_sms; }
+    inline const TimeWindow& GetSms() const { return m_sms; }
     inline bool SmsHasBeenSet() const { return m_smsHasBeenSet; }
-    inline void SetSms(const TimeWindow& value) { m_smsHasBeenSet = true; m_sms = value; }
-    inline void SetSms(TimeWindow&& value) { m_smsHasBeenSet = true; m_sms = std::move(value); }
-    inline CommunicationTimeConfig& WithSms(const TimeWindow& value) { SetSms(value); return *this;}
-    inline CommunicationTimeConfig& WithSms(TimeWindow&& value) { SetSms(std::move(value)); return *this;}
+    template<typename SmsT = TimeWindow>
+    void SetSms(SmsT&& value) { m_smsHasBeenSet = true; m_sms = std::forward<SmsT>(value); }
+    template<typename SmsT = TimeWindow>
+    CommunicationTimeConfig& WithSms(SmsT&& value) { SetSms(std::forward<SmsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TimeWindow& GetEmail() const{ return m_email; }
+    inline const TimeWindow& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const TimeWindow& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(TimeWindow&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline CommunicationTimeConfig& WithEmail(const TimeWindow& value) { SetEmail(value); return *this;}
-    inline CommunicationTimeConfig& WithEmail(TimeWindow&& value) { SetEmail(std::move(value)); return *this;}
+    template<typename EmailT = TimeWindow>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = TimeWindow>
+    CommunicationTimeConfig& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
   private:
 

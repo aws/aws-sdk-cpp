@@ -12,14 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMetadataTransferJobRequest::CreateMetadataTransferJobRequest() : 
-    m_metadataTransferJobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 Aws::String CreateMetadataTransferJobRequest::SerializePayload() const
 {
   JsonValue payload;

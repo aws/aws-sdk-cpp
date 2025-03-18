@@ -12,14 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWorkloadsRequest::ListWorkloadsRequest() : 
-    m_workloadNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkloadsRequest::SerializePayload() const
 {
   JsonValue payload;

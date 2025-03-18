@@ -13,18 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLimitRequest::CreateLimitRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_displayNameHasBeenSet(false),
-    m_amountRequirementNameHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateLimitRequest::SerializePayload() const
 {
   JsonValue payload;

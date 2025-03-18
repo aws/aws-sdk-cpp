@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-InstanceTypeItem::InstanceTypeItem() : 
-    m_instanceTypeHasBeenSet(false),
-    m_vCPUs(0),
-    m_vCPUsHasBeenSet(false)
-{
-}
-
 InstanceTypeItem::InstanceTypeItem(JsonView jsonValue)
-  : InstanceTypeItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InstanceTypeItem& InstanceTypeItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VCPUs"))
   {
     m_vCPUs = jsonValue.GetInteger("VCPUs");
-
     m_vCPUsHasBeenSet = true;
   }
-
   return *this;
 }
 

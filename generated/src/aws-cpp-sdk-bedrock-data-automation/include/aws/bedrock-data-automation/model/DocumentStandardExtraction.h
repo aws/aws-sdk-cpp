@@ -32,7 +32,7 @@ namespace Model
   class DocumentStandardExtraction
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DocumentStandardExtraction();
+    AWS_BEDROCKDATAAUTOMATION_API DocumentStandardExtraction() = default;
     AWS_BEDROCKDATAAUTOMATION_API DocumentStandardExtraction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DocumentStandardExtraction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const DocumentExtractionGranularity& GetGranularity() const{ return m_granularity; }
+    inline const DocumentExtractionGranularity& GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const DocumentExtractionGranularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(DocumentExtractionGranularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline DocumentStandardExtraction& WithGranularity(const DocumentExtractionGranularity& value) { SetGranularity(value); return *this;}
-    inline DocumentStandardExtraction& WithGranularity(DocumentExtractionGranularity&& value) { SetGranularity(std::move(value)); return *this;}
+    template<typename GranularityT = DocumentExtractionGranularity>
+    void SetGranularity(GranularityT&& value) { m_granularityHasBeenSet = true; m_granularity = std::forward<GranularityT>(value); }
+    template<typename GranularityT = DocumentExtractionGranularity>
+    DocumentStandardExtraction& WithGranularity(GranularityT&& value) { SetGranularity(std::forward<GranularityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentBoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+    inline const DocumentBoundingBox& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const DocumentBoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(DocumentBoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline DocumentStandardExtraction& WithBoundingBox(const DocumentBoundingBox& value) { SetBoundingBox(value); return *this;}
-    inline DocumentStandardExtraction& WithBoundingBox(DocumentBoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = DocumentBoundingBox>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = DocumentBoundingBox>
+    DocumentStandardExtraction& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-QueryConstraintRequireOverlap::QueryConstraintRequireOverlap() : 
-    m_columnsHasBeenSet(false)
-{
-}
-
 QueryConstraintRequireOverlap::QueryConstraintRequireOverlap(JsonView jsonValue)
-  : QueryConstraintRequireOverlap()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ QueryConstraintRequireOverlap& QueryConstraintRequireOverlap::operator =(JsonVie
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

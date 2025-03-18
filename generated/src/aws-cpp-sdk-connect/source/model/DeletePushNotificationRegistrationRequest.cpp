@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePushNotificationRegistrationRequest::DeletePushNotificationRegistrationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePushNotificationRegistrationRequest::SerializePayload() const
 {
   return {};

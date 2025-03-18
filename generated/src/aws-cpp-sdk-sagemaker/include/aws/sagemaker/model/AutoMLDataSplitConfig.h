@@ -32,7 +32,7 @@ namespace Model
   class AutoMLDataSplitConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLDataSplitConfig();
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig() = default;
     AWS_SAGEMAKER_API AutoMLDataSplitConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLDataSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * values must be greater than 0 and less than 1. We recommend setting this value
      * to be less than 0.5.</p>
      */
-    inline double GetValidationFraction() const{ return m_validationFraction; }
+    inline double GetValidationFraction() const { return m_validationFraction; }
     inline bool ValidationFractionHasBeenSet() const { return m_validationFractionHasBeenSet; }
     inline void SetValidationFraction(double value) { m_validationFractionHasBeenSet = true; m_validationFraction = value; }
     inline AutoMLDataSplitConfig& WithValidationFraction(double value) { SetValidationFraction(value); return *this;}
     ///@}
   private:
 
-    double m_validationFraction;
+    double m_validationFraction{0.0};
     bool m_validationFractionHasBeenSet = false;
   };
 

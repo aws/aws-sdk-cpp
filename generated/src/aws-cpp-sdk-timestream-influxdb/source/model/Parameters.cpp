@@ -18,13 +18,7 @@ namespace TimestreamInfluxDB
 namespace Model
 {
 
-Parameters::Parameters() : 
-    m_influxDBv2HasBeenSet(false)
-{
-}
-
 Parameters::Parameters(JsonView jsonValue)
-  : Parameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Parameters& Parameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InfluxDBv2"))
   {
     m_influxDBv2 = jsonValue.GetObject("InfluxDBv2");
-
     m_influxDBv2HasBeenSet = true;
   }
-
   return *this;
 }
 

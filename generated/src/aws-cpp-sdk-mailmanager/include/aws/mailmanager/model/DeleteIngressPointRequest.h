@@ -21,7 +21,7 @@ namespace Model
   class DeleteIngressPointRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API DeleteIngressPointRequest();
+    AWS_MAILMANAGER_API DeleteIngressPointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the ingress endpoint resource that you want to delete.</p>
      */
-    inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
+    inline const Aws::String& GetIngressPointId() const { return m_ingressPointId; }
     inline bool IngressPointIdHasBeenSet() const { return m_ingressPointIdHasBeenSet; }
-    inline void SetIngressPointId(const Aws::String& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = value; }
-    inline void SetIngressPointId(Aws::String&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::move(value); }
-    inline void SetIngressPointId(const char* value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId.assign(value); }
-    inline DeleteIngressPointRequest& WithIngressPointId(const Aws::String& value) { SetIngressPointId(value); return *this;}
-    inline DeleteIngressPointRequest& WithIngressPointId(Aws::String&& value) { SetIngressPointId(std::move(value)); return *this;}
-    inline DeleteIngressPointRequest& WithIngressPointId(const char* value) { SetIngressPointId(value); return *this;}
+    template<typename IngressPointIdT = Aws::String>
+    void SetIngressPointId(IngressPointIdT&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::forward<IngressPointIdT>(value); }
+    template<typename IngressPointIdT = Aws::String>
+    DeleteIngressPointRequest& WithIngressPointId(IngressPointIdT&& value) { SetIngressPointId(std::forward<IngressPointIdT>(value)); return *this;}
     ///@}
   private:
 

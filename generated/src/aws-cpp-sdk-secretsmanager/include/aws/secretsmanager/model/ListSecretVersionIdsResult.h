@@ -29,7 +29,7 @@ namespace Model
   class ListSecretVersionIdsResult
   {
   public:
-    AWS_SECRETSMANAGER_API ListSecretVersionIdsResult();
+    AWS_SECRETSMANAGER_API ListSecretVersionIdsResult() = default;
     AWS_SECRETSMANAGER_API ListSecretVersionIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API ListSecretVersionIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of the versions of the secret.</p>
      */
-    inline const Aws::Vector<SecretVersionsListEntry>& GetVersions() const{ return m_versions; }
-    inline void SetVersions(const Aws::Vector<SecretVersionsListEntry>& value) { m_versions = value; }
-    inline void SetVersions(Aws::Vector<SecretVersionsListEntry>&& value) { m_versions = std::move(value); }
-    inline ListSecretVersionIdsResult& WithVersions(const Aws::Vector<SecretVersionsListEntry>& value) { SetVersions(value); return *this;}
-    inline ListSecretVersionIdsResult& WithVersions(Aws::Vector<SecretVersionsListEntry>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ListSecretVersionIdsResult& AddVersions(const SecretVersionsListEntry& value) { m_versions.push_back(value); return *this; }
-    inline ListSecretVersionIdsResult& AddVersions(SecretVersionsListEntry&& value) { m_versions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecretVersionsListEntry>& GetVersions() const { return m_versions; }
+    template<typename VersionsT = Aws::Vector<SecretVersionsListEntry>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<SecretVersionsListEntry>>
+    ListSecretVersionIdsResult& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = SecretVersionsListEntry>
+    ListSecretVersionIdsResult& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,62 +55,59 @@ namespace Model
      * list. To get the next results, call <code>ListSecretVersionIds</code> again with
      * this value. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSecretVersionIdsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSecretVersionIdsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSecretVersionIdsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSecretVersionIdsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the secret.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
-    inline void SetARN(const Aws::String& value) { m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRN.assign(value); }
-    inline ListSecretVersionIdsResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline ListSecretVersionIdsResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline ListSecretVersionIdsResult& WithARN(const char* value) { SetARN(value); return *this;}
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    ListSecretVersionIdsResult& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the secret.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline ListSecretVersionIdsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListSecretVersionIdsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListSecretVersionIdsResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListSecretVersionIdsResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSecretVersionIdsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSecretVersionIdsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSecretVersionIdsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSecretVersionIdsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SecretVersionsListEntry> m_versions;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

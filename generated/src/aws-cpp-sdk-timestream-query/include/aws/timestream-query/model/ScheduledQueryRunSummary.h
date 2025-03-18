@@ -36,7 +36,7 @@ namespace Model
   class ScheduledQueryRunSummary
   {
   public:
-    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary();
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary() = default;
     AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,48 +48,46 @@ namespace Model
      * to run. Parameter <code>@scheduled_runtime</code> can be used in the query to
      * get the value. </p>
      */
-    inline const Aws::Utils::DateTime& GetInvocationTime() const{ return m_invocationTime; }
+    inline const Aws::Utils::DateTime& GetInvocationTime() const { return m_invocationTime; }
     inline bool InvocationTimeHasBeenSet() const { return m_invocationTimeHasBeenSet; }
-    inline void SetInvocationTime(const Aws::Utils::DateTime& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = value; }
-    inline void SetInvocationTime(Aws::Utils::DateTime&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::move(value); }
-    inline ScheduledQueryRunSummary& WithInvocationTime(const Aws::Utils::DateTime& value) { SetInvocationTime(value); return *this;}
-    inline ScheduledQueryRunSummary& WithInvocationTime(Aws::Utils::DateTime&& value) { SetInvocationTime(std::move(value)); return *this;}
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    void SetInvocationTime(InvocationTimeT&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::forward<InvocationTimeT>(value); }
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    ScheduledQueryRunSummary& WithInvocationTime(InvocationTimeT&& value) { SetInvocationTime(std::forward<InvocationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual time when the query was run.</p>
      */
-    inline const Aws::Utils::DateTime& GetTriggerTime() const{ return m_triggerTime; }
+    inline const Aws::Utils::DateTime& GetTriggerTime() const { return m_triggerTime; }
     inline bool TriggerTimeHasBeenSet() const { return m_triggerTimeHasBeenSet; }
-    inline void SetTriggerTime(const Aws::Utils::DateTime& value) { m_triggerTimeHasBeenSet = true; m_triggerTime = value; }
-    inline void SetTriggerTime(Aws::Utils::DateTime&& value) { m_triggerTimeHasBeenSet = true; m_triggerTime = std::move(value); }
-    inline ScheduledQueryRunSummary& WithTriggerTime(const Aws::Utils::DateTime& value) { SetTriggerTime(value); return *this;}
-    inline ScheduledQueryRunSummary& WithTriggerTime(Aws::Utils::DateTime&& value) { SetTriggerTime(std::move(value)); return *this;}
+    template<typename TriggerTimeT = Aws::Utils::DateTime>
+    void SetTriggerTime(TriggerTimeT&& value) { m_triggerTimeHasBeenSet = true; m_triggerTime = std::forward<TriggerTimeT>(value); }
+    template<typename TriggerTimeT = Aws::Utils::DateTime>
+    ScheduledQueryRunSummary& WithTriggerTime(TriggerTimeT&& value) { SetTriggerTime(std::forward<TriggerTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a scheduled query run.</p>
      */
-    inline const ScheduledQueryRunStatus& GetRunStatus() const{ return m_runStatus; }
+    inline ScheduledQueryRunStatus GetRunStatus() const { return m_runStatus; }
     inline bool RunStatusHasBeenSet() const { return m_runStatusHasBeenSet; }
-    inline void SetRunStatus(const ScheduledQueryRunStatus& value) { m_runStatusHasBeenSet = true; m_runStatus = value; }
-    inline void SetRunStatus(ScheduledQueryRunStatus&& value) { m_runStatusHasBeenSet = true; m_runStatus = std::move(value); }
-    inline ScheduledQueryRunSummary& WithRunStatus(const ScheduledQueryRunStatus& value) { SetRunStatus(value); return *this;}
-    inline ScheduledQueryRunSummary& WithRunStatus(ScheduledQueryRunStatus&& value) { SetRunStatus(std::move(value)); return *this;}
+    inline void SetRunStatus(ScheduledQueryRunStatus value) { m_runStatusHasBeenSet = true; m_runStatus = value; }
+    inline ScheduledQueryRunSummary& WithRunStatus(ScheduledQueryRunStatus value) { SetRunStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Runtime statistics for a scheduled run.</p>
      */
-    inline const ExecutionStats& GetExecutionStats() const{ return m_executionStats; }
+    inline const ExecutionStats& GetExecutionStats() const { return m_executionStats; }
     inline bool ExecutionStatsHasBeenSet() const { return m_executionStatsHasBeenSet; }
-    inline void SetExecutionStats(const ExecutionStats& value) { m_executionStatsHasBeenSet = true; m_executionStats = value; }
-    inline void SetExecutionStats(ExecutionStats&& value) { m_executionStatsHasBeenSet = true; m_executionStats = std::move(value); }
-    inline ScheduledQueryRunSummary& WithExecutionStats(const ExecutionStats& value) { SetExecutionStats(value); return *this;}
-    inline ScheduledQueryRunSummary& WithExecutionStats(ExecutionStats&& value) { SetExecutionStats(std::move(value)); return *this;}
+    template<typename ExecutionStatsT = ExecutionStats>
+    void SetExecutionStats(ExecutionStatsT&& value) { m_executionStatsHasBeenSet = true; m_executionStats = std::forward<ExecutionStatsT>(value); }
+    template<typename ExecutionStatsT = ExecutionStats>
+    ScheduledQueryRunSummary& WithExecutionStats(ExecutionStatsT&& value) { SetExecutionStats(std::forward<ExecutionStatsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,24 +95,24 @@ namespace Model
      * <p>Provides various insights and metrics related to the run summary of the
      * scheduled query.</p>
      */
-    inline const ScheduledQueryInsightsResponse& GetQueryInsightsResponse() const{ return m_queryInsightsResponse; }
+    inline const ScheduledQueryInsightsResponse& GetQueryInsightsResponse() const { return m_queryInsightsResponse; }
     inline bool QueryInsightsResponseHasBeenSet() const { return m_queryInsightsResponseHasBeenSet; }
-    inline void SetQueryInsightsResponse(const ScheduledQueryInsightsResponse& value) { m_queryInsightsResponseHasBeenSet = true; m_queryInsightsResponse = value; }
-    inline void SetQueryInsightsResponse(ScheduledQueryInsightsResponse&& value) { m_queryInsightsResponseHasBeenSet = true; m_queryInsightsResponse = std::move(value); }
-    inline ScheduledQueryRunSummary& WithQueryInsightsResponse(const ScheduledQueryInsightsResponse& value) { SetQueryInsightsResponse(value); return *this;}
-    inline ScheduledQueryRunSummary& WithQueryInsightsResponse(ScheduledQueryInsightsResponse&& value) { SetQueryInsightsResponse(std::move(value)); return *this;}
+    template<typename QueryInsightsResponseT = ScheduledQueryInsightsResponse>
+    void SetQueryInsightsResponse(QueryInsightsResponseT&& value) { m_queryInsightsResponseHasBeenSet = true; m_queryInsightsResponse = std::forward<QueryInsightsResponseT>(value); }
+    template<typename QueryInsightsResponseT = ScheduledQueryInsightsResponse>
+    ScheduledQueryRunSummary& WithQueryInsightsResponse(QueryInsightsResponseT&& value) { SetQueryInsightsResponse(std::forward<QueryInsightsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>S3 location for error report.</p>
      */
-    inline const ErrorReportLocation& GetErrorReportLocation() const{ return m_errorReportLocation; }
+    inline const ErrorReportLocation& GetErrorReportLocation() const { return m_errorReportLocation; }
     inline bool ErrorReportLocationHasBeenSet() const { return m_errorReportLocationHasBeenSet; }
-    inline void SetErrorReportLocation(const ErrorReportLocation& value) { m_errorReportLocationHasBeenSet = true; m_errorReportLocation = value; }
-    inline void SetErrorReportLocation(ErrorReportLocation&& value) { m_errorReportLocationHasBeenSet = true; m_errorReportLocation = std::move(value); }
-    inline ScheduledQueryRunSummary& WithErrorReportLocation(const ErrorReportLocation& value) { SetErrorReportLocation(value); return *this;}
-    inline ScheduledQueryRunSummary& WithErrorReportLocation(ErrorReportLocation&& value) { SetErrorReportLocation(std::move(value)); return *this;}
+    template<typename ErrorReportLocationT = ErrorReportLocation>
+    void SetErrorReportLocation(ErrorReportLocationT&& value) { m_errorReportLocationHasBeenSet = true; m_errorReportLocation = std::forward<ErrorReportLocationT>(value); }
+    template<typename ErrorReportLocationT = ErrorReportLocation>
+    ScheduledQueryRunSummary& WithErrorReportLocation(ErrorReportLocationT&& value) { SetErrorReportLocation(std::forward<ErrorReportLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,24 +120,22 @@ namespace Model
      * <p>Error message for the scheduled query in case of failure. You might have to
      * look at the error report to get more detailed error reasons. </p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline ScheduledQueryRunSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline ScheduledQueryRunSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline ScheduledQueryRunSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    ScheduledQueryRunSummary& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_invocationTime;
+    Aws::Utils::DateTime m_invocationTime{};
     bool m_invocationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_triggerTime;
+    Aws::Utils::DateTime m_triggerTime{};
     bool m_triggerTimeHasBeenSet = false;
 
-    ScheduledQueryRunStatus m_runStatus;
+    ScheduledQueryRunStatus m_runStatus{ScheduledQueryRunStatus::NOT_SET};
     bool m_runStatusHasBeenSet = false;
 
     ExecutionStats m_executionStats;

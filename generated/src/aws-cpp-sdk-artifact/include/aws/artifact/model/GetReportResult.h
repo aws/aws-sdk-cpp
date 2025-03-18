@@ -27,7 +27,7 @@ namespace Model
   class GetReportResult
   {
   public:
-    AWS_ARTIFACT_API GetReportResult();
+    AWS_ARTIFACT_API GetReportResult() = default;
     AWS_ARTIFACT_API GetReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARTIFACT_API GetReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Presigned S3 url to access the report content.</p>
      */
-    inline const Aws::String& GetDocumentPresignedUrl() const{ return m_documentPresignedUrl; }
-    inline void SetDocumentPresignedUrl(const Aws::String& value) { m_documentPresignedUrl = value; }
-    inline void SetDocumentPresignedUrl(Aws::String&& value) { m_documentPresignedUrl = std::move(value); }
-    inline void SetDocumentPresignedUrl(const char* value) { m_documentPresignedUrl.assign(value); }
-    inline GetReportResult& WithDocumentPresignedUrl(const Aws::String& value) { SetDocumentPresignedUrl(value); return *this;}
-    inline GetReportResult& WithDocumentPresignedUrl(Aws::String&& value) { SetDocumentPresignedUrl(std::move(value)); return *this;}
-    inline GetReportResult& WithDocumentPresignedUrl(const char* value) { SetDocumentPresignedUrl(value); return *this;}
+    inline const Aws::String& GetDocumentPresignedUrl() const { return m_documentPresignedUrl; }
+    template<typename DocumentPresignedUrlT = Aws::String>
+    void SetDocumentPresignedUrl(DocumentPresignedUrlT&& value) { m_documentPresignedUrlHasBeenSet = true; m_documentPresignedUrl = std::forward<DocumentPresignedUrlT>(value); }
+    template<typename DocumentPresignedUrlT = Aws::String>
+    GetReportResult& WithDocumentPresignedUrl(DocumentPresignedUrlT&& value) { SetDocumentPresignedUrl(std::forward<DocumentPresignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_documentPresignedUrl;
+    bool m_documentPresignedUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

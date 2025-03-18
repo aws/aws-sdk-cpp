@@ -35,7 +35,7 @@ namespace Model
   class HibernationOptions
   {
   public:
-    AWS_EC2_API HibernationOptions();
+    AWS_EC2_API HibernationOptions() = default;
     AWS_EC2_API HibernationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API HibernationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,14 @@ namespace Model
      * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
      * is not enabled for hibernation.</p>
      */
-    inline bool GetConfigured() const{ return m_configured; }
+    inline bool GetConfigured() const { return m_configured; }
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
     inline HibernationOptions& WithConfigured(bool value) { SetConfigured(value); return *this;}
     ///@}
   private:
 
-    bool m_configured;
+    bool m_configured{false};
     bool m_configuredHasBeenSet = false;
   };
 

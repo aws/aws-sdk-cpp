@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UserData::UserData() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 UserData::UserData(const XmlNode& xmlNode)
-  : UserData()
 {
   *this = xmlNode;
 }

@@ -12,13 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFolderRequest::GetFolderRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_commitSpecifierHasBeenSet(false),
-    m_folderPathHasBeenSet(false)
-{
-}
-
 Aws::String GetFolderRequest::SerializePayload() const
 {
   JsonValue payload;

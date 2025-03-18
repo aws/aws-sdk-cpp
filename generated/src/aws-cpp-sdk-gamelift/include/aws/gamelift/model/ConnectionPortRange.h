@@ -31,7 +31,7 @@ namespace Model
   class ConnectionPortRange
   {
   public:
-    AWS_GAMELIFT_API ConnectionPortRange();
+    AWS_GAMELIFT_API ConnectionPortRange() = default;
     AWS_GAMELIFT_API ConnectionPortRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ConnectionPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Starting value for the port range.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline ConnectionPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Ending value for the port. Port numbers are end-inclusive. This value must be
      * equal to or greater than <code>FromPort</code>.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline ConnectionPortRange& WithToPort(int value) { SetToPort(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
   };
 

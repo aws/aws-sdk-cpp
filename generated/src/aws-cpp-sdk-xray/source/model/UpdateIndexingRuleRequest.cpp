@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIndexingRuleRequest::UpdateIndexingRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIndexingRuleRequest::SerializePayload() const
 {
   JsonValue payload;

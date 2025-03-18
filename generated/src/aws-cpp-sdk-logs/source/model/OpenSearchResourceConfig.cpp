@@ -18,18 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchResourceConfig::OpenSearchResourceConfig() : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_dataSourceRoleArnHasBeenSet(false),
-    m_dashboardViewerPrincipalsHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
-{
-}
-
 OpenSearchResourceConfig::OpenSearchResourceConfig(JsonView jsonValue)
-  : OpenSearchResourceConfig()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ OpenSearchResourceConfig& OpenSearchResourceConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceRoleArn"))
   {
     m_dataSourceRoleArn = jsonValue.GetString("dataSourceRoleArn");
-
     m_dataSourceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashboardViewerPrincipals"))
   {
     Aws::Utils::Array<JsonView> dashboardViewerPrincipalsJsonList = jsonValue.GetArray("dashboardViewerPrincipals");
@@ -59,21 +44,16 @@ OpenSearchResourceConfig& OpenSearchResourceConfig::operator =(JsonView jsonValu
     }
     m_dashboardViewerPrincipalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionDays"))
   {
     m_retentionDays = jsonValue.GetInteger("retentionDays");
-
     m_retentionDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

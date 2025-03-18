@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSchemaMappingRequest::GetSchemaMappingRequest() : 
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 Aws::String GetSchemaMappingRequest::SerializePayload() const
 {
   return {};

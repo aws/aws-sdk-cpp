@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-FeaturizationMethod::FeaturizationMethod() : 
-    m_featurizationMethodName(FeaturizationMethodName::NOT_SET),
-    m_featurizationMethodNameHasBeenSet(false),
-    m_featurizationMethodParametersHasBeenSet(false)
-{
-}
-
 FeaturizationMethod::FeaturizationMethod(JsonView jsonValue)
-  : FeaturizationMethod()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FeaturizationMethod& FeaturizationMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeaturizationMethodName"))
   {
     m_featurizationMethodName = FeaturizationMethodNameMapper::GetFeaturizationMethodNameForName(jsonValue.GetString("FeaturizationMethodName"));
-
     m_featurizationMethodNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturizationMethodParameters"))
   {
     Aws::Map<Aws::String, JsonView> featurizationMethodParametersJsonMap = jsonValue.GetObject("FeaturizationMethodParameters").GetAllObjects();
@@ -49,7 +39,6 @@ FeaturizationMethod& FeaturizationMethod::operator =(JsonView jsonValue)
     }
     m_featurizationMethodParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

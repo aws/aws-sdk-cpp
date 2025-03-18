@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobDashboardOverridePermissions::AssetBundleImportJobDashboardOverridePermissions() : 
-    m_dashboardIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_linkSharingConfigurationHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobDashboardOverridePermissions::AssetBundleImportJobDashboardOverridePermissions(JsonView jsonValue)
-  : AssetBundleImportJobDashboardOverridePermissions()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ AssetBundleImportJobDashboardOverridePermissions& AssetBundleImportJobDashboardO
     }
     m_dashboardIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     m_permissions = jsonValue.GetObject("Permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkSharingConfiguration"))
   {
     m_linkSharingConfiguration = jsonValue.GetObject("LinkSharingConfiguration");
-
     m_linkSharingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

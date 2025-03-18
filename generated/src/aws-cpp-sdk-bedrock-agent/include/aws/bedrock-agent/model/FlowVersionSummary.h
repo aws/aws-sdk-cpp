@@ -36,7 +36,7 @@ namespace Model
   class FlowVersionSummary
   {
   public:
-    AWS_BEDROCKAGENT_API FlowVersionSummary();
+    AWS_BEDROCKAGENT_API FlowVersionSummary() = default;
     AWS_BEDROCKAGENT_API FlowVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,79 +46,71 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the flow that the version belongs to.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FlowVersionSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FlowVersionSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FlowVersionSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FlowVersionSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at the version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline FlowVersionSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline FlowVersionSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    FlowVersionSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the flow.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FlowVersionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FlowVersionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FlowVersionSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FlowVersionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the flow.</p>
      */
-    inline const FlowStatus& GetStatus() const{ return m_status; }
+    inline FlowStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FlowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FlowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FlowVersionSummary& WithStatus(const FlowStatus& value) { SetStatus(value); return *this;}
-    inline FlowVersionSummary& WithStatus(FlowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FlowStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FlowVersionSummary& WithStatus(FlowStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the flow.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline FlowVersionSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline FlowVersionSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline FlowVersionSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    FlowVersionSummary& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    FlowStatus m_status;
+    FlowStatus m_status{FlowStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_version;

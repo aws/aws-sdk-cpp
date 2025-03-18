@@ -35,7 +35,7 @@ namespace Model
   class Media
   {
   public:
-    AWS_TRANSCRIBESERVICE_API Media();
+    AWS_TRANSCRIBESERVICE_API Media() = default;
     AWS_TRANSCRIBESERVICE_API Media(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Media& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * located in the same Amazon Web Services Region where you're making your
      * transcription request.</p>
      */
-    inline const Aws::String& GetMediaFileUri() const{ return m_mediaFileUri; }
+    inline const Aws::String& GetMediaFileUri() const { return m_mediaFileUri; }
     inline bool MediaFileUriHasBeenSet() const { return m_mediaFileUriHasBeenSet; }
-    inline void SetMediaFileUri(const Aws::String& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = value; }
-    inline void SetMediaFileUri(Aws::String&& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = std::move(value); }
-    inline void SetMediaFileUri(const char* value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri.assign(value); }
-    inline Media& WithMediaFileUri(const Aws::String& value) { SetMediaFileUri(value); return *this;}
-    inline Media& WithMediaFileUri(Aws::String&& value) { SetMediaFileUri(std::move(value)); return *this;}
-    inline Media& WithMediaFileUri(const char* value) { SetMediaFileUri(value); return *this;}
+    template<typename MediaFileUriT = Aws::String>
+    void SetMediaFileUri(MediaFileUriT&& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = std::forward<MediaFileUriT>(value); }
+    template<typename MediaFileUriT = Aws::String>
+    Media& WithMediaFileUri(MediaFileUriT&& value) { SetMediaFileUri(std::forward<MediaFileUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * a redacted transcript. It is only supported for Call Analytics
      * (<code>StartCallAnalyticsJob</code>) transcription requests.</p> 
      */
-    inline const Aws::String& GetRedactedMediaFileUri() const{ return m_redactedMediaFileUri; }
+    inline const Aws::String& GetRedactedMediaFileUri() const { return m_redactedMediaFileUri; }
     inline bool RedactedMediaFileUriHasBeenSet() const { return m_redactedMediaFileUriHasBeenSet; }
-    inline void SetRedactedMediaFileUri(const Aws::String& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = value; }
-    inline void SetRedactedMediaFileUri(Aws::String&& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = std::move(value); }
-    inline void SetRedactedMediaFileUri(const char* value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri.assign(value); }
-    inline Media& WithRedactedMediaFileUri(const Aws::String& value) { SetRedactedMediaFileUri(value); return *this;}
-    inline Media& WithRedactedMediaFileUri(Aws::String&& value) { SetRedactedMediaFileUri(std::move(value)); return *this;}
-    inline Media& WithRedactedMediaFileUri(const char* value) { SetRedactedMediaFileUri(value); return *this;}
+    template<typename RedactedMediaFileUriT = Aws::String>
+    void SetRedactedMediaFileUri(RedactedMediaFileUriT&& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = std::forward<RedactedMediaFileUriT>(value); }
+    template<typename RedactedMediaFileUriT = Aws::String>
+    Media& WithRedactedMediaFileUri(RedactedMediaFileUriT&& value) { SetRedactedMediaFileUri(std::forward<RedactedMediaFileUriT>(value)); return *this;}
     ///@}
   private:
 

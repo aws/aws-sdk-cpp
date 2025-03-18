@@ -12,16 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyClusterSnapshotRequest::CopyClusterSnapshotRequest() : 
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String CopyClusterSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -26,7 +26,7 @@ namespace Model
   class UpdateKxClusterCodeConfigurationRequest : public FinspaceRequest
   {
   public:
-    AWS_FINSPACE_API UpdateKxClusterCodeConfigurationRequest();
+    AWS_FINSPACE_API UpdateKxClusterCodeConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,52 +41,46 @@ namespace Model
     /**
      * <p> A unique identifier of the kdb environment. </p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    UpdateKxClusterCodeConfigurationRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    UpdateKxClusterCodeConfigurationRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateKxClusterCodeConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CodeConfiguration& GetCode() const{ return m_code; }
+    inline const CodeConfiguration& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const CodeConfiguration& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(CodeConfiguration&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithCode(const CodeConfiguration& value) { SetCode(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithCode(CodeConfiguration&& value) { SetCode(std::move(value)); return *this;}
+    template<typename CodeT = CodeConfiguration>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = CodeConfiguration>
+    UpdateKxClusterCodeConfigurationRequest& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
      * <code>NO_RESTART</code> deployment.</p>
      */
-    inline const Aws::String& GetInitializationScript() const{ return m_initializationScript; }
+    inline const Aws::String& GetInitializationScript() const { return m_initializationScript; }
     inline bool InitializationScriptHasBeenSet() const { return m_initializationScriptHasBeenSet; }
-    inline void SetInitializationScript(const Aws::String& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = value; }
-    inline void SetInitializationScript(Aws::String&& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = std::move(value); }
-    inline void SetInitializationScript(const char* value) { m_initializationScriptHasBeenSet = true; m_initializationScript.assign(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(const Aws::String& value) { SetInitializationScript(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(Aws::String&& value) { SetInitializationScript(std::move(value)); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(const char* value) { SetInitializationScript(value); return *this;}
+    template<typename InitializationScriptT = Aws::String>
+    void SetInitializationScript(InitializationScriptT&& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = std::forward<InitializationScriptT>(value); }
+    template<typename InitializationScriptT = Aws::String>
+    UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(InitializationScriptT&& value) { SetInitializationScript(std::forward<InitializationScriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,14 @@ namespace Model
      * <p>You cannot update this parameter for a <code>NO_RESTART</code>
      * deployment.</p>
      */
-    inline const Aws::Vector<KxCommandLineArgument>& GetCommandLineArguments() const{ return m_commandLineArguments; }
+    inline const Aws::Vector<KxCommandLineArgument>& GetCommandLineArguments() const { return m_commandLineArguments; }
     inline bool CommandLineArgumentsHasBeenSet() const { return m_commandLineArgumentsHasBeenSet; }
-    inline void SetCommandLineArguments(const Aws::Vector<KxCommandLineArgument>& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments = value; }
-    inline void SetCommandLineArguments(Aws::Vector<KxCommandLineArgument>&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments = std::move(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithCommandLineArguments(const Aws::Vector<KxCommandLineArgument>& value) { SetCommandLineArguments(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithCommandLineArguments(Aws::Vector<KxCommandLineArgument>&& value) { SetCommandLineArguments(std::move(value)); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& AddCommandLineArguments(const KxCommandLineArgument& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments.push_back(value); return *this; }
-    inline UpdateKxClusterCodeConfigurationRequest& AddCommandLineArguments(KxCommandLineArgument&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments.push_back(std::move(value)); return *this; }
+    template<typename CommandLineArgumentsT = Aws::Vector<KxCommandLineArgument>>
+    void SetCommandLineArguments(CommandLineArgumentsT&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments = std::forward<CommandLineArgumentsT>(value); }
+    template<typename CommandLineArgumentsT = Aws::Vector<KxCommandLineArgument>>
+    UpdateKxClusterCodeConfigurationRequest& WithCommandLineArguments(CommandLineArgumentsT&& value) { SetCommandLineArguments(std::forward<CommandLineArgumentsT>(value)); return *this;}
+    template<typename CommandLineArgumentsT = KxCommandLineArgument>
+    UpdateKxClusterCodeConfigurationRequest& AddCommandLineArguments(CommandLineArgumentsT&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments.emplace_back(std::forward<CommandLineArgumentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -128,12 +120,12 @@ namespace Model
      * <p> The configuration that allows you to choose how you want to update the code
      * on a cluster. </p>
      */
-    inline const KxClusterCodeDeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+    inline const KxClusterCodeDeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
-    inline void SetDeploymentConfiguration(const KxClusterCodeDeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
-    inline void SetDeploymentConfiguration(KxClusterCodeDeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
-    inline UpdateKxClusterCodeConfigurationRequest& WithDeploymentConfiguration(const KxClusterCodeDeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
-    inline UpdateKxClusterCodeConfigurationRequest& WithDeploymentConfiguration(KxClusterCodeDeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+    template<typename DeploymentConfigurationT = KxClusterCodeDeploymentConfiguration>
+    void SetDeploymentConfiguration(DeploymentConfigurationT&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::forward<DeploymentConfigurationT>(value); }
+    template<typename DeploymentConfigurationT = KxClusterCodeDeploymentConfiguration>
+    UpdateKxClusterCodeConfigurationRequest& WithDeploymentConfiguration(DeploymentConfigurationT&& value) { SetDeploymentConfiguration(std::forward<DeploymentConfigurationT>(value)); return *this;}
     ///@}
   private:
 

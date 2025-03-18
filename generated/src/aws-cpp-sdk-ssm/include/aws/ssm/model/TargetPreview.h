@@ -32,7 +32,7 @@ namespace Model
   class TargetPreview
   {
   public:
-    AWS_SSM_API TargetPreview();
+    AWS_SSM_API TargetPreview() = default;
     AWS_SSM_API TargetPreview(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API TargetPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of resources of a certain type included in an execution
      * preview.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline TargetPreview& WithCount(int value) { SetCount(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>A type of resource that was included in the execution preview.</p>
      */
-    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+    inline const Aws::String& GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
-    inline TargetPreview& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
-    inline TargetPreview& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
-    inline TargetPreview& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+    template<typename TargetTypeT = Aws::String>
+    void SetTargetType(TargetTypeT&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::forward<TargetTypeT>(value); }
+    template<typename TargetTypeT = Aws::String>
+    TargetPreview& WithTargetType(TargetTypeT&& value) { SetTargetType(std::forward<TargetTypeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_targetType;

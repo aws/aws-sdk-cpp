@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLoginProfileResult::CreateLoginProfileResult()
-{
-}
-
 CreateLoginProfileResult::CreateLoginProfileResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateLoginProfileResult& CreateLoginProfileResult::operator =(const Aws::Amazon
     if(!loginProfileNode.IsNull())
     {
       m_loginProfile = loginProfileNode;
+      m_loginProfileHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreateLoginProfileResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

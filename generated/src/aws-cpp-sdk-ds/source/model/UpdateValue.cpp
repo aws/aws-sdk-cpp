@@ -18,13 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-UpdateValue::UpdateValue() : 
-    m_oSUpdateSettingsHasBeenSet(false)
-{
-}
-
 UpdateValue::UpdateValue(JsonView jsonValue)
-  : UpdateValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateValue& UpdateValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OSUpdateSettings"))
   {
     m_oSUpdateSettings = jsonValue.GetObject("OSUpdateSettings");
-
     m_oSUpdateSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

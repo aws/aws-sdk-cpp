@@ -29,7 +29,7 @@ namespace Model
   class ListMigrationTaskUpdatesResult
   {
   public:
-    AWS_MIGRATIONHUB_API ListMigrationTaskUpdatesResult();
+    AWS_MIGRATIONHUB_API ListMigrationTaskUpdatesResult() = default;
     AWS_MIGRATIONHUB_API ListMigrationTaskUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUB_API ListMigrationTaskUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
      * 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken
      * error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMigrationTaskUpdatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMigrationTaskUpdatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMigrationTaskUpdatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMigrationTaskUpdatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of migration-task updates.</p>
      */
-    inline const Aws::Vector<MigrationTaskUpdate>& GetMigrationTaskUpdateList() const{ return m_migrationTaskUpdateList; }
-    inline void SetMigrationTaskUpdateList(const Aws::Vector<MigrationTaskUpdate>& value) { m_migrationTaskUpdateList = value; }
-    inline void SetMigrationTaskUpdateList(Aws::Vector<MigrationTaskUpdate>&& value) { m_migrationTaskUpdateList = std::move(value); }
-    inline ListMigrationTaskUpdatesResult& WithMigrationTaskUpdateList(const Aws::Vector<MigrationTaskUpdate>& value) { SetMigrationTaskUpdateList(value); return *this;}
-    inline ListMigrationTaskUpdatesResult& WithMigrationTaskUpdateList(Aws::Vector<MigrationTaskUpdate>&& value) { SetMigrationTaskUpdateList(std::move(value)); return *this;}
-    inline ListMigrationTaskUpdatesResult& AddMigrationTaskUpdateList(const MigrationTaskUpdate& value) { m_migrationTaskUpdateList.push_back(value); return *this; }
-    inline ListMigrationTaskUpdatesResult& AddMigrationTaskUpdateList(MigrationTaskUpdate&& value) { m_migrationTaskUpdateList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MigrationTaskUpdate>& GetMigrationTaskUpdateList() const { return m_migrationTaskUpdateList; }
+    template<typename MigrationTaskUpdateListT = Aws::Vector<MigrationTaskUpdate>>
+    void SetMigrationTaskUpdateList(MigrationTaskUpdateListT&& value) { m_migrationTaskUpdateListHasBeenSet = true; m_migrationTaskUpdateList = std::forward<MigrationTaskUpdateListT>(value); }
+    template<typename MigrationTaskUpdateListT = Aws::Vector<MigrationTaskUpdate>>
+    ListMigrationTaskUpdatesResult& WithMigrationTaskUpdateList(MigrationTaskUpdateListT&& value) { SetMigrationTaskUpdateList(std::forward<MigrationTaskUpdateListT>(value)); return *this;}
+    template<typename MigrationTaskUpdateListT = MigrationTaskUpdate>
+    ListMigrationTaskUpdatesResult& AddMigrationTaskUpdateList(MigrationTaskUpdateListT&& value) { m_migrationTaskUpdateListHasBeenSet = true; m_migrationTaskUpdateList.emplace_back(std::forward<MigrationTaskUpdateListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMigrationTaskUpdatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMigrationTaskUpdatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMigrationTaskUpdatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMigrationTaskUpdatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MigrationTaskUpdate> m_migrationTaskUpdateList;
+    bool m_migrationTaskUpdateListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelInput::ModelInput() : 
-    m_dataInputConfigHasBeenSet(false)
-{
-}
-
 ModelInput::ModelInput(JsonView jsonValue)
-  : ModelInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelInput& ModelInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataInputConfig"))
   {
     m_dataInputConfig = jsonValue.GetString("DataInputConfig");
-
     m_dataInputConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

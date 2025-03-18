@@ -35,7 +35,7 @@ namespace Model
   class SlotTypeFilter
   {
   public:
-    AWS_LEXMODELSV2_API SlotTypeFilter();
+    AWS_LEXMODELSV2_API SlotTypeFilter() = default;
     AWS_LEXMODELSV2_API SlotTypeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,24 @@ namespace Model
     /**
      * <p>The name of the field to use for filtering.</p>
      */
-    inline const SlotTypeFilterName& GetName() const{ return m_name; }
+    inline SlotTypeFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SlotTypeFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SlotTypeFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SlotTypeFilter& WithName(const SlotTypeFilterName& value) { SetName(value); return *this;}
-    inline SlotTypeFilter& WithName(SlotTypeFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SlotTypeFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SlotTypeFilter& WithName(SlotTypeFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to use to filter the response.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SlotTypeFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SlotTypeFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SlotTypeFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SlotTypeFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SlotTypeFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SlotTypeFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SlotTypeFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,22 +72,20 @@ namespace Model
      * specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code>
      * operation should return aliases that contain the specified value.</p>
      */
-    inline const SlotTypeFilterOperator& GetOperator() const{ return m_operator; }
+    inline SlotTypeFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const SlotTypeFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(SlotTypeFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline SlotTypeFilter& WithOperator(const SlotTypeFilterOperator& value) { SetOperator(value); return *this;}
-    inline SlotTypeFilter& WithOperator(SlotTypeFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(SlotTypeFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SlotTypeFilter& WithOperator(SlotTypeFilterOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    SlotTypeFilterName m_name;
+    SlotTypeFilterName m_name{SlotTypeFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    SlotTypeFilterOperator m_operator;
+    SlotTypeFilterOperator m_operator{SlotTypeFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

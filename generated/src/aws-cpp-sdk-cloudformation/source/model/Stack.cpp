@@ -20,44 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Stack::Stack() : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_stackStatus(StackStatus::NOT_SET),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false),
-    m_deletionMode(DeletionMode::NOT_SET),
-    m_deletionModeHasBeenSet(false),
-    m_detailedStatus(DetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
-{
-}
-
 Stack::Stack(const XmlNode& xmlNode)
-  : Stack()
 {
   *this = xmlNode;
 }
@@ -96,6 +59,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
@@ -131,7 +95,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
     if(!stackStatusNode.IsNull())
     {
-      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()).c_str());
+      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()));
       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
@@ -150,6 +114,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     if(!notificationARNsNode.IsNull())
     {
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
+      m_notificationARNsHasBeenSet = !notificationARNsMember.IsNull();
       while(!notificationARNsMember.IsNull())
       {
         m_notificationARNs.push_back(notificationARNsMember.GetText());
@@ -168,6 +133,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     if(!capabilitiesNode.IsNull())
     {
       XmlNode capabilitiesMember = capabilitiesNode.FirstChild("member");
+      m_capabilitiesHasBeenSet = !capabilitiesMember.IsNull();
       while(!capabilitiesMember.IsNull())
       {
         m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(StringUtils::Trim(capabilitiesMember.GetText().c_str())));
@@ -180,6 +146,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     if(!outputsNode.IsNull())
     {
       XmlNode outputsMember = outputsNode.FirstChild("member");
+      m_outputsHasBeenSet = !outputsMember.IsNull();
       while(!outputsMember.IsNull())
       {
         m_outputs.push_back(outputsMember);
@@ -198,6 +165,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -239,13 +207,13 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode deletionModeNode = resultNode.FirstChild("DeletionMode");
     if(!deletionModeNode.IsNull())
     {
-      m_deletionMode = DeletionModeMapper::GetDeletionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionModeNode.GetText()).c_str()).c_str());
+      m_deletionMode = DeletionModeMapper::GetDeletionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionModeNode.GetText()).c_str()));
       m_deletionModeHasBeenSet = true;
     }
     XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
     if(!detailedStatusNode.IsNull())
     {
-      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()));
       m_detailedStatusHasBeenSet = true;
     }
   }

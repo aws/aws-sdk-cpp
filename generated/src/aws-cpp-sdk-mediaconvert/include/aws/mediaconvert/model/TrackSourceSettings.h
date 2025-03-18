@@ -32,7 +32,7 @@ namespace Model
   class TrackSourceSettings
   {
   public:
-    AWS_MEDIACONVERT_API TrackSourceSettings();
+    AWS_MEDIACONVERT_API TrackSourceSettings() = default;
     AWS_MEDIACONVERT_API TrackSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API TrackSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * include more than one captions track in your job outputs, create multiple input
      * captions selectors. Specify one track per selector.
      */
-    inline int GetTrackNumber() const{ return m_trackNumber; }
+    inline int GetTrackNumber() const { return m_trackNumber; }
     inline bool TrackNumberHasBeenSet() const { return m_trackNumberHasBeenSet; }
     inline void SetTrackNumber(int value) { m_trackNumberHasBeenSet = true; m_trackNumber = value; }
     inline TrackSourceSettings& WithTrackNumber(int value) { SetTrackNumber(value); return *this;}
     ///@}
   private:
 
-    int m_trackNumber;
+    int m_trackNumber{0};
     bool m_trackNumberHasBeenSet = false;
   };
 

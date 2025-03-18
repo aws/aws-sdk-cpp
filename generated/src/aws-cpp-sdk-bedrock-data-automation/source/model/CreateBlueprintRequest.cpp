@@ -12,20 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBlueprintRequest::CreateBlueprintRequest() : 
-    m_blueprintNameHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_blueprintStage(BlueprintStage::NOT_SET),
-    m_blueprintStageHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBlueprintRequest::SerializePayload() const
 {
   JsonValue payload;

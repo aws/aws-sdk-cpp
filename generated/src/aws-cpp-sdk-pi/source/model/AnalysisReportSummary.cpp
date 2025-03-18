@@ -18,19 +18,7 @@ namespace PI
 namespace Model
 {
 
-AnalysisReportSummary::AnalysisReportSummary() : 
-    m_analysisReportIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AnalysisReportSummary::AnalysisReportSummary(JsonView jsonValue)
-  : AnalysisReportSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AnalysisReportSummary& AnalysisReportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnalysisReportId"))
   {
     m_analysisReportId = jsonValue.GetString("AnalysisReportId");
-
     m_analysisReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AnalysisStatusMapper::GetAnalysisStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -81,7 +59,6 @@ AnalysisReportSummary& AnalysisReportSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

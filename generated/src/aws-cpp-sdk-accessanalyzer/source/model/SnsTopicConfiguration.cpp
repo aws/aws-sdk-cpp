@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-SnsTopicConfiguration::SnsTopicConfiguration() : 
-    m_topicPolicyHasBeenSet(false)
-{
-}
-
 SnsTopicConfiguration::SnsTopicConfiguration(JsonView jsonValue)
-  : SnsTopicConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnsTopicConfiguration& SnsTopicConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("topicPolicy"))
   {
     m_topicPolicy = jsonValue.GetString("topicPolicy");
-
     m_topicPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

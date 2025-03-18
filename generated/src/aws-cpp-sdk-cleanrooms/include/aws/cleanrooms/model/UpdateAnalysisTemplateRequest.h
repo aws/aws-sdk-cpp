@@ -21,7 +21,7 @@ namespace Model
   class UpdateAnalysisTemplateRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateAnalysisTemplateRequest();
+    AWS_CLEANROOMS_API UpdateAnalysisTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The identifier for a membership resource.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline UpdateAnalysisTemplateRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    UpdateAnalysisTemplateRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the analysis template resource.</p>
      */
-    inline const Aws::String& GetAnalysisTemplateIdentifier() const{ return m_analysisTemplateIdentifier; }
+    inline const Aws::String& GetAnalysisTemplateIdentifier() const { return m_analysisTemplateIdentifier; }
     inline bool AnalysisTemplateIdentifierHasBeenSet() const { return m_analysisTemplateIdentifierHasBeenSet; }
-    inline void SetAnalysisTemplateIdentifier(const Aws::String& value) { m_analysisTemplateIdentifierHasBeenSet = true; m_analysisTemplateIdentifier = value; }
-    inline void SetAnalysisTemplateIdentifier(Aws::String&& value) { m_analysisTemplateIdentifierHasBeenSet = true; m_analysisTemplateIdentifier = std::move(value); }
-    inline void SetAnalysisTemplateIdentifier(const char* value) { m_analysisTemplateIdentifierHasBeenSet = true; m_analysisTemplateIdentifier.assign(value); }
-    inline UpdateAnalysisTemplateRequest& WithAnalysisTemplateIdentifier(const Aws::String& value) { SetAnalysisTemplateIdentifier(value); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithAnalysisTemplateIdentifier(Aws::String&& value) { SetAnalysisTemplateIdentifier(std::move(value)); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithAnalysisTemplateIdentifier(const char* value) { SetAnalysisTemplateIdentifier(value); return *this;}
+    template<typename AnalysisTemplateIdentifierT = Aws::String>
+    void SetAnalysisTemplateIdentifier(AnalysisTemplateIdentifierT&& value) { m_analysisTemplateIdentifierHasBeenSet = true; m_analysisTemplateIdentifier = std::forward<AnalysisTemplateIdentifierT>(value); }
+    template<typename AnalysisTemplateIdentifierT = Aws::String>
+    UpdateAnalysisTemplateRequest& WithAnalysisTemplateIdentifier(AnalysisTemplateIdentifierT&& value) { SetAnalysisTemplateIdentifier(std::forward<AnalysisTemplateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the analysis template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAnalysisTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAnalysisTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAnalysisTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

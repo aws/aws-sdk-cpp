@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationFsxOpenZfsResult::DescribeLocationFsxOpenZfsResult()
-{
-}
-
 DescribeLocationFsxOpenZfsResult::DescribeLocationFsxOpenZfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeLocationFsxOpenZfsResult& DescribeLocationFsxOpenZfsResult::operator =(c
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupArns"))
   {
     Aws::Utils::Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
@@ -48,26 +42,25 @@ DescribeLocationFsxOpenZfsResult& DescribeLocationFsxOpenZfsResult::operator =(c
     {
       m_securityGroupArns.push_back(securityGroupArnsJsonList[securityGroupArnsIndex].AsString());
     }
+    m_securityGroupArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetObject("Protocol");
-
+    m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

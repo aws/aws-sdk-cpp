@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSignedBluinsightsUrlResult::GetSignedBluinsightsUrlResult()
-{
-}
-
 GetSignedBluinsightsUrlResult::GetSignedBluinsightsUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSignedBluinsightsUrlResult& GetSignedBluinsightsUrlResult::operator =(const A
   if(jsonValue.ValueExists("signedBiUrl"))
   {
     m_signedBiUrl = jsonValue.GetString("signedBiUrl");
-
+    m_signedBiUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

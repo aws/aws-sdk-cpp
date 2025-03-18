@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-StatefulRuleGroupReference::StatefulRuleGroupReference() : 
-    m_resourceArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_overrideHasBeenSet(false)
-{
-}
-
 StatefulRuleGroupReference::StatefulRuleGroupReference(JsonView jsonValue)
-  : StatefulRuleGroupReference()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StatefulRuleGroupReference& StatefulRuleGroupReference::operator =(JsonView json
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Override"))
   {
     m_override = jsonValue.GetObject("Override");
-
     m_overrideHasBeenSet = true;
   }
-
   return *this;
 }
 

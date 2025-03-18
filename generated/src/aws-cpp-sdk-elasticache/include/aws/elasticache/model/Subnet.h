@@ -37,7 +37,7 @@ namespace Model
   class Subnet
   {
   public:
-    AWS_ELASTICACHE_API Subnet();
+    AWS_ELASTICACHE_API Subnet() = default;
     AWS_ELASTICACHE_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,38 +49,36 @@ namespace Model
     /**
      * <p>The unique identifier for the subnet.</p>
      */
-    inline const Aws::String& GetSubnetIdentifier() const{ return m_subnetIdentifier; }
+    inline const Aws::String& GetSubnetIdentifier() const { return m_subnetIdentifier; }
     inline bool SubnetIdentifierHasBeenSet() const { return m_subnetIdentifierHasBeenSet; }
-    inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
-    inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = std::move(value); }
-    inline void SetSubnetIdentifier(const char* value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier.assign(value); }
-    inline Subnet& WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
-    inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(std::move(value)); return *this;}
-    inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
+    template<typename SubnetIdentifierT = Aws::String>
+    void SetSubnetIdentifier(SubnetIdentifierT&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = std::forward<SubnetIdentifierT>(value); }
+    template<typename SubnetIdentifierT = Aws::String>
+    Subnet& WithSubnetIdentifier(SubnetIdentifierT&& value) { SetSubnetIdentifier(std::forward<SubnetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone associated with the subnet.</p>
      */
-    inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
+    inline const AvailabilityZone& GetSubnetAvailabilityZone() const { return m_subnetAvailabilityZone; }
     inline bool SubnetAvailabilityZoneHasBeenSet() const { return m_subnetAvailabilityZoneHasBeenSet; }
-    inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
-    inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::move(value); }
-    inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
-    inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
+    template<typename SubnetAvailabilityZoneT = AvailabilityZone>
+    void SetSubnetAvailabilityZone(SubnetAvailabilityZoneT&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::forward<SubnetAvailabilityZoneT>(value); }
+    template<typename SubnetAvailabilityZoneT = AvailabilityZone>
+    Subnet& WithSubnetAvailabilityZone(SubnetAvailabilityZoneT&& value) { SetSubnetAvailabilityZone(std::forward<SubnetAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outpost ARN of the subnet.</p>
      */
-    inline const SubnetOutpost& GetSubnetOutpost() const{ return m_subnetOutpost; }
+    inline const SubnetOutpost& GetSubnetOutpost() const { return m_subnetOutpost; }
     inline bool SubnetOutpostHasBeenSet() const { return m_subnetOutpostHasBeenSet; }
-    inline void SetSubnetOutpost(const SubnetOutpost& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = value; }
-    inline void SetSubnetOutpost(SubnetOutpost&& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = std::move(value); }
-    inline Subnet& WithSubnetOutpost(const SubnetOutpost& value) { SetSubnetOutpost(value); return *this;}
-    inline Subnet& WithSubnetOutpost(SubnetOutpost&& value) { SetSubnetOutpost(std::move(value)); return *this;}
+    template<typename SubnetOutpostT = SubnetOutpost>
+    void SetSubnetOutpost(SubnetOutpostT&& value) { m_subnetOutpostHasBeenSet = true; m_subnetOutpost = std::forward<SubnetOutpostT>(value); }
+    template<typename SubnetOutpostT = SubnetOutpost>
+    Subnet& WithSubnetOutpost(SubnetOutpostT&& value) { SetSubnetOutpost(std::forward<SubnetOutpostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +88,13 @@ namespace Model
      * 6.2 to 7.1 or Memcached engine version 1.6.6 and above on all instances built on
      * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
-    inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
+    inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const { return m_supportedNetworkTypes; }
     inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
-    inline void SetSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
-    inline void SetSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
-    inline Subnet& WithSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { SetSupportedNetworkTypes(value); return *this;}
-    inline Subnet& WithSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
-    inline Subnet& AddSupportedNetworkTypes(const NetworkType& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
-    inline Subnet& AddSupportedNetworkTypes(NetworkType&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    void SetSupportedNetworkTypes(SupportedNetworkTypesT&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::forward<SupportedNetworkTypesT>(value); }
+    template<typename SupportedNetworkTypesT = Aws::Vector<NetworkType>>
+    Subnet& WithSupportedNetworkTypes(SupportedNetworkTypesT&& value) { SetSupportedNetworkTypes(std::forward<SupportedNetworkTypesT>(value)); return *this;}
+    inline Subnet& AddSupportedNetworkTypes(NetworkType value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
     ///@}
   private:
 

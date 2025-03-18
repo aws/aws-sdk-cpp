@@ -18,26 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-Item::Item() : 
-    m_absoluteTimeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(ChatItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_messageMetadataHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Item::Item(JsonView jsonValue)
-  : Item()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ Item& Item::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AbsoluteTime"))
   {
     m_absoluteTime = jsonValue.GetString("AbsoluteTime");
-
     m_absoluteTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChatItemTypeMapper::GetChatItemTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantId"))
   {
     m_participantId = jsonValue.GetString("ParticipantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attachments"))
   {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
@@ -109,28 +74,21 @@ Item& Item::operator =(JsonView jsonValue)
     }
     m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageMetadata"))
   {
     m_messageMetadata = jsonValue.GetObject("MessageMetadata");
-
     m_messageMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedContactId"))
   {
     m_relatedContactId = jsonValue.GetString("RelatedContactId");
-
     m_relatedContactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

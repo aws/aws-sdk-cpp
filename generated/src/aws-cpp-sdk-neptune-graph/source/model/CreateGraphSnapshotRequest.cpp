@@ -12,13 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGraphSnapshotRequest::CreateGraphSnapshotRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGraphSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

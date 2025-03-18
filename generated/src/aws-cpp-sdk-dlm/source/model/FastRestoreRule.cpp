@@ -18,19 +18,7 @@ namespace DLM
 namespace Model
 {
 
-FastRestoreRule::FastRestoreRule() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 FastRestoreRule::FastRestoreRule(JsonView jsonValue)
-  : FastRestoreRule()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ FastRestoreRule& FastRestoreRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntervalUnit"))
   {
     m_intervalUnit = RetentionIntervalUnitValuesMapper::GetRetentionIntervalUnitValuesForName(jsonValue.GetString("IntervalUnit"));
-
     m_intervalUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -67,7 +49,6 @@ FastRestoreRule& FastRestoreRule::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class SecurityGroupMembership
   {
   public:
-    AWS_DAX_API SecurityGroupMembership();
+    AWS_DAX_API SecurityGroupMembership() = default;
     AWS_DAX_API SecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API SecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The unique ID for this security group.</p>
      */
-    inline const Aws::String& GetSecurityGroupIdentifier() const{ return m_securityGroupIdentifier; }
+    inline const Aws::String& GetSecurityGroupIdentifier() const { return m_securityGroupIdentifier; }
     inline bool SecurityGroupIdentifierHasBeenSet() const { return m_securityGroupIdentifierHasBeenSet; }
-    inline void SetSecurityGroupIdentifier(const Aws::String& value) { m_securityGroupIdentifierHasBeenSet = true; m_securityGroupIdentifier = value; }
-    inline void SetSecurityGroupIdentifier(Aws::String&& value) { m_securityGroupIdentifierHasBeenSet = true; m_securityGroupIdentifier = std::move(value); }
-    inline void SetSecurityGroupIdentifier(const char* value) { m_securityGroupIdentifierHasBeenSet = true; m_securityGroupIdentifier.assign(value); }
-    inline SecurityGroupMembership& WithSecurityGroupIdentifier(const Aws::String& value) { SetSecurityGroupIdentifier(value); return *this;}
-    inline SecurityGroupMembership& WithSecurityGroupIdentifier(Aws::String&& value) { SetSecurityGroupIdentifier(std::move(value)); return *this;}
-    inline SecurityGroupMembership& WithSecurityGroupIdentifier(const char* value) { SetSecurityGroupIdentifier(value); return *this;}
+    template<typename SecurityGroupIdentifierT = Aws::String>
+    void SetSecurityGroupIdentifier(SecurityGroupIdentifierT&& value) { m_securityGroupIdentifierHasBeenSet = true; m_securityGroupIdentifier = std::forward<SecurityGroupIdentifierT>(value); }
+    template<typename SecurityGroupIdentifierT = Aws::String>
+    SecurityGroupMembership& WithSecurityGroupIdentifier(SecurityGroupIdentifierT&& value) { SetSecurityGroupIdentifier(std::forward<SecurityGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this security group.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline SecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline SecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline SecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    SecurityGroupMembership& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

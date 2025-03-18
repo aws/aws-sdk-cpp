@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleActionTokenHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
 {
   Aws::StringStream ss;

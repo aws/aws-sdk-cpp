@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DataProperties::DataProperties() : 
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 DataProperties::DataProperties(JsonView jsonValue)
-  : DataProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataProperties& DataProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

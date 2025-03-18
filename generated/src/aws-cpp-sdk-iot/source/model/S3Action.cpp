@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-S3Action::S3Action() : 
-    m_roleArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_cannedAcl(CannedAccessControlList::NOT_SET),
-    m_cannedAclHasBeenSet(false)
-{
-}
-
 S3Action::S3Action(JsonView jsonValue)
-  : S3Action()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ S3Action& S3Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cannedAcl"))
   {
     m_cannedAcl = CannedAccessControlListMapper::GetCannedAccessControlListForName(jsonValue.GetString("cannedAcl"));
-
     m_cannedAclHasBeenSet = true;
   }
-
   return *this;
 }
 

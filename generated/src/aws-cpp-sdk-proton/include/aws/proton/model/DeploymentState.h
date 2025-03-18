@@ -35,7 +35,7 @@ namespace Model
   class DeploymentState
   {
   public:
-    AWS_PROTON_API DeploymentState();
+    AWS_PROTON_API DeploymentState() = default;
     AWS_PROTON_API DeploymentState(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API DeploymentState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,48 @@ namespace Model
     /**
      * <p>The state of the component associated with the deployment.</p>
      */
-    inline const ComponentState& GetComponent() const{ return m_component; }
+    inline const ComponentState& GetComponent() const { return m_component; }
     inline bool ComponentHasBeenSet() const { return m_componentHasBeenSet; }
-    inline void SetComponent(const ComponentState& value) { m_componentHasBeenSet = true; m_component = value; }
-    inline void SetComponent(ComponentState&& value) { m_componentHasBeenSet = true; m_component = std::move(value); }
-    inline DeploymentState& WithComponent(const ComponentState& value) { SetComponent(value); return *this;}
-    inline DeploymentState& WithComponent(ComponentState&& value) { SetComponent(std::move(value)); return *this;}
+    template<typename ComponentT = ComponentState>
+    void SetComponent(ComponentT&& value) { m_componentHasBeenSet = true; m_component = std::forward<ComponentT>(value); }
+    template<typename ComponentT = ComponentState>
+    DeploymentState& WithComponent(ComponentT&& value) { SetComponent(std::forward<ComponentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the environment associated with the deployment.</p>
      */
-    inline const EnvironmentState& GetEnvironment() const{ return m_environment; }
+    inline const EnvironmentState& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const EnvironmentState& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(EnvironmentState&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline DeploymentState& WithEnvironment(const EnvironmentState& value) { SetEnvironment(value); return *this;}
-    inline DeploymentState& WithEnvironment(EnvironmentState&& value) { SetEnvironment(std::move(value)); return *this;}
+    template<typename EnvironmentT = EnvironmentState>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = EnvironmentState>
+    DeploymentState& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the service instance associated with the deployment.</p>
      */
-    inline const ServiceInstanceState& GetServiceInstance() const{ return m_serviceInstance; }
+    inline const ServiceInstanceState& GetServiceInstance() const { return m_serviceInstance; }
     inline bool ServiceInstanceHasBeenSet() const { return m_serviceInstanceHasBeenSet; }
-    inline void SetServiceInstance(const ServiceInstanceState& value) { m_serviceInstanceHasBeenSet = true; m_serviceInstance = value; }
-    inline void SetServiceInstance(ServiceInstanceState&& value) { m_serviceInstanceHasBeenSet = true; m_serviceInstance = std::move(value); }
-    inline DeploymentState& WithServiceInstance(const ServiceInstanceState& value) { SetServiceInstance(value); return *this;}
-    inline DeploymentState& WithServiceInstance(ServiceInstanceState&& value) { SetServiceInstance(std::move(value)); return *this;}
+    template<typename ServiceInstanceT = ServiceInstanceState>
+    void SetServiceInstance(ServiceInstanceT&& value) { m_serviceInstanceHasBeenSet = true; m_serviceInstance = std::forward<ServiceInstanceT>(value); }
+    template<typename ServiceInstanceT = ServiceInstanceState>
+    DeploymentState& WithServiceInstance(ServiceInstanceT&& value) { SetServiceInstance(std::forward<ServiceInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the service pipeline associated with the deployment.</p>
      */
-    inline const ServicePipelineState& GetServicePipeline() const{ return m_servicePipeline; }
+    inline const ServicePipelineState& GetServicePipeline() const { return m_servicePipeline; }
     inline bool ServicePipelineHasBeenSet() const { return m_servicePipelineHasBeenSet; }
-    inline void SetServicePipeline(const ServicePipelineState& value) { m_servicePipelineHasBeenSet = true; m_servicePipeline = value; }
-    inline void SetServicePipeline(ServicePipelineState&& value) { m_servicePipelineHasBeenSet = true; m_servicePipeline = std::move(value); }
-    inline DeploymentState& WithServicePipeline(const ServicePipelineState& value) { SetServicePipeline(value); return *this;}
-    inline DeploymentState& WithServicePipeline(ServicePipelineState&& value) { SetServicePipeline(std::move(value)); return *this;}
+    template<typename ServicePipelineT = ServicePipelineState>
+    void SetServicePipeline(ServicePipelineT&& value) { m_servicePipelineHasBeenSet = true; m_servicePipeline = std::forward<ServicePipelineT>(value); }
+    template<typename ServicePipelineT = ServicePipelineState>
+    DeploymentState& WithServicePipeline(ServicePipelineT&& value) { SetServicePipeline(std::forward<ServicePipelineT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLendingAnalysisSummaryRequest::GetLendingAnalysisSummaryRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLendingAnalysisSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

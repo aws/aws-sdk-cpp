@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-GenerativeAiSettings::GenerativeAiSettings() : 
-    m_amazonBedrockRoleArnHasBeenSet(false)
-{
-}
-
 GenerativeAiSettings::GenerativeAiSettings(JsonView jsonValue)
-  : GenerativeAiSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GenerativeAiSettings& GenerativeAiSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AmazonBedrockRoleArn"))
   {
     m_amazonBedrockRoleArn = jsonValue.GetString("AmazonBedrockRoleArn");
-
     m_amazonBedrockRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

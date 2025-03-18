@@ -35,7 +35,7 @@ namespace Model
   class ValidateSolFunctionPackageContentMetadata
   {
   public:
-    AWS_TNB_API ValidateSolFunctionPackageContentMetadata();
+    AWS_TNB_API ValidateSolFunctionPackageContentMetadata() = default;
     AWS_TNB_API ValidateSolFunctionPackageContentMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ValidateSolFunctionPackageContentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const FunctionArtifactMeta& GetVnfd() const{ return m_vnfd; }
+    inline const FunctionArtifactMeta& GetVnfd() const { return m_vnfd; }
     inline bool VnfdHasBeenSet() const { return m_vnfdHasBeenSet; }
-    inline void SetVnfd(const FunctionArtifactMeta& value) { m_vnfdHasBeenSet = true; m_vnfd = value; }
-    inline void SetVnfd(FunctionArtifactMeta&& value) { m_vnfdHasBeenSet = true; m_vnfd = std::move(value); }
-    inline ValidateSolFunctionPackageContentMetadata& WithVnfd(const FunctionArtifactMeta& value) { SetVnfd(value); return *this;}
-    inline ValidateSolFunctionPackageContentMetadata& WithVnfd(FunctionArtifactMeta&& value) { SetVnfd(std::move(value)); return *this;}
+    template<typename VnfdT = FunctionArtifactMeta>
+    void SetVnfd(VnfdT&& value) { m_vnfdHasBeenSet = true; m_vnfd = std::forward<VnfdT>(value); }
+    template<typename VnfdT = FunctionArtifactMeta>
+    ValidateSolFunctionPackageContentMetadata& WithVnfd(VnfdT&& value) { SetVnfd(std::forward<VnfdT>(value)); return *this;}
     ///@}
   private:
 

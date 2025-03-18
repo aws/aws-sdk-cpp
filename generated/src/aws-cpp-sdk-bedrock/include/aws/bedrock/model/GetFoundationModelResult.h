@@ -28,7 +28,7 @@ namespace Model
   class GetFoundationModelResult
   {
   public:
-    AWS_BEDROCK_API GetFoundationModelResult();
+    AWS_BEDROCK_API GetFoundationModelResult() = default;
     AWS_BEDROCK_API GetFoundationModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API GetFoundationModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the foundation model.</p>
      */
-    inline const FoundationModelDetails& GetModelDetails() const{ return m_modelDetails; }
-    inline void SetModelDetails(const FoundationModelDetails& value) { m_modelDetails = value; }
-    inline void SetModelDetails(FoundationModelDetails&& value) { m_modelDetails = std::move(value); }
-    inline GetFoundationModelResult& WithModelDetails(const FoundationModelDetails& value) { SetModelDetails(value); return *this;}
-    inline GetFoundationModelResult& WithModelDetails(FoundationModelDetails&& value) { SetModelDetails(std::move(value)); return *this;}
+    inline const FoundationModelDetails& GetModelDetails() const { return m_modelDetails; }
+    template<typename ModelDetailsT = FoundationModelDetails>
+    void SetModelDetails(ModelDetailsT&& value) { m_modelDetailsHasBeenSet = true; m_modelDetails = std::forward<ModelDetailsT>(value); }
+    template<typename ModelDetailsT = FoundationModelDetails>
+    GetFoundationModelResult& WithModelDetails(ModelDetailsT&& value) { SetModelDetails(std::forward<ModelDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFoundationModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFoundationModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFoundationModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFoundationModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FoundationModelDetails m_modelDetails;
+    bool m_modelDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

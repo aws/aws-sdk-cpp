@@ -25,7 +25,7 @@ namespace Model
   class CreateIPSetRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API CreateIPSetRequest();
+    AWS_WAFV2_API CreateIPSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
      * after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateIPSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateIPSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateIPSetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateIPSetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,22 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CreateIPSetRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline CreateIPSetRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline CreateIPSetRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the IP set that helps with identification. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateIPSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIPSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIPSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateIPSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * <p>The version of the IP addresses, either <code>IPV4</code> or
      * <code>IPV6</code>. </p>
      */
-    inline const IPAddressVersion& GetIPAddressVersion() const{ return m_iPAddressVersion; }
+    inline IPAddressVersion GetIPAddressVersion() const { return m_iPAddressVersion; }
     inline bool IPAddressVersionHasBeenSet() const { return m_iPAddressVersionHasBeenSet; }
-    inline void SetIPAddressVersion(const IPAddressVersion& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
-    inline void SetIPAddressVersion(IPAddressVersion&& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = std::move(value); }
-    inline CreateIPSetRequest& WithIPAddressVersion(const IPAddressVersion& value) { SetIPAddressVersion(value); return *this;}
-    inline CreateIPSetRequest& WithIPAddressVersion(IPAddressVersion&& value) { SetIPAddressVersion(std::move(value)); return *this;}
+    inline void SetIPAddressVersion(IPAddressVersion value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
+    inline CreateIPSetRequest& WithIPAddressVersion(IPAddressVersion value) { SetIPAddressVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -123,42 +115,41 @@ namespace Model
      * </li> <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetAddresses() const{ return m_addresses; }
+    inline const Aws::Vector<Aws::String>& GetAddresses() const { return m_addresses; }
     inline bool AddressesHasBeenSet() const { return m_addressesHasBeenSet; }
-    inline void SetAddresses(const Aws::Vector<Aws::String>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
-    inline void SetAddresses(Aws::Vector<Aws::String>&& value) { m_addressesHasBeenSet = true; m_addresses = std::move(value); }
-    inline CreateIPSetRequest& WithAddresses(const Aws::Vector<Aws::String>& value) { SetAddresses(value); return *this;}
-    inline CreateIPSetRequest& WithAddresses(Aws::Vector<Aws::String>&& value) { SetAddresses(std::move(value)); return *this;}
-    inline CreateIPSetRequest& AddAddresses(const Aws::String& value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
-    inline CreateIPSetRequest& AddAddresses(Aws::String&& value) { m_addressesHasBeenSet = true; m_addresses.push_back(std::move(value)); return *this; }
-    inline CreateIPSetRequest& AddAddresses(const char* value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
+    template<typename AddressesT = Aws::Vector<Aws::String>>
+    void SetAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses = std::forward<AddressesT>(value); }
+    template<typename AddressesT = Aws::Vector<Aws::String>>
+    CreateIPSetRequest& WithAddresses(AddressesT&& value) { SetAddresses(std::forward<AddressesT>(value)); return *this;}
+    template<typename AddressesT = Aws::String>
+    CreateIPSetRequest& AddAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses.emplace_back(std::forward<AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of key:value pairs to associate with the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateIPSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateIPSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateIPSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateIPSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateIPSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateIPSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    IPAddressVersion m_iPAddressVersion;
+    IPAddressVersion m_iPAddressVersion{IPAddressVersion::NOT_SET};
     bool m_iPAddressVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addresses;

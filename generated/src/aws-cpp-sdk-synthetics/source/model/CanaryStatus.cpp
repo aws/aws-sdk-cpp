@@ -18,17 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryStatus::CanaryStatus() : 
-    m_state(CanaryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonCode(CanaryStateReasonCode::NOT_SET),
-    m_stateReasonCodeHasBeenSet(false)
-{
-}
-
 CanaryStatus::CanaryStatus(JsonView jsonValue)
-  : CanaryStatus()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CanaryStatus& CanaryStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = CanaryStateMapper::GetCanaryStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReasonCode"))
   {
     m_stateReasonCode = CanaryStateReasonCodeMapper::GetCanaryStateReasonCodeForName(jsonValue.GetString("StateReasonCode"));
-
     m_stateReasonCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

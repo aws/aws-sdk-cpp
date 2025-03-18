@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DatabaseSourceAuthenticationConfiguration::DatabaseSourceAuthenticationConfiguration() : 
-    m_secretsManagerConfigurationHasBeenSet(false)
-{
-}
-
 DatabaseSourceAuthenticationConfiguration::DatabaseSourceAuthenticationConfiguration(JsonView jsonValue)
-  : DatabaseSourceAuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatabaseSourceAuthenticationConfiguration& DatabaseSourceAuthenticationConfigura
   if(jsonValue.ValueExists("SecretsManagerConfiguration"))
   {
     m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
-
     m_secretsManagerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

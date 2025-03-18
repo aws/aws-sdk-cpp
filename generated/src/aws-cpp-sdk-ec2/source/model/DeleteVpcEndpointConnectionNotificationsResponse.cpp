@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVpcEndpointConnectionNotificationsResponse::DeleteVpcEndpointConnectionNotificationsResponse()
-{
-}
-
 DeleteVpcEndpointConnectionNotificationsResponse::DeleteVpcEndpointConnectionNotificationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteVpcEndpointConnectionNotificationsResponse& DeleteVpcEndpointConnectionNot
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");
+      m_unsuccessfulHasBeenSet = !unsuccessfulMember.IsNull();
       while(!unsuccessfulMember.IsNull())
       {
         m_unsuccessful.push_back(unsuccessfulMember);
         unsuccessfulMember = unsuccessfulMember.NextNode("item");
       }
 
+      m_unsuccessfulHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DeleteVpcEndpointConnectionNotificationsResponse& DeleteVpcEndpointConnectionNot
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteVpcEndpointConnectionNotificationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -41,7 +41,7 @@ namespace Model
   class ReceiptRule
   {
   public:
-    AWS_SES_API ReceiptRule();
+    AWS_SES_API ReceiptRule() = default;
     AWS_SES_API ReceiptRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ReceiptRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,14 +57,12 @@ namespace Model
      * end with a letter or number.</p> </li> <li> <p>Contain 64 characters or
      * fewer.</p> </li> </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ReceiptRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ReceiptRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ReceiptRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ReceiptRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <p>If <code>true</code>, the receipt rule is active. The default value is
      * <code>false</code>.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ReceiptRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -85,12 +83,10 @@ namespace Model
      * parameter is set to <code>Require</code>, Amazon SES bounces emails that are not
      * received over TLS. The default is <code>Optional</code>.</p>
      */
-    inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
+    inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
     inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
-    inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
-    inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = std::move(value); }
-    inline ReceiptRule& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
-    inline ReceiptRule& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
+    inline void SetTlsPolicy(TlsPolicy value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
+    inline ReceiptRule& WithTlsPolicy(TlsPolicy value) { SetTlsPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -99,15 +95,14 @@ namespace Model
      * If this field is not specified, this rule matches all recipients on all verified
      * domains.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecipients() const{ return m_recipients; }
+    inline const Aws::Vector<Aws::String>& GetRecipients() const { return m_recipients; }
     inline bool RecipientsHasBeenSet() const { return m_recipientsHasBeenSet; }
-    inline void SetRecipients(const Aws::Vector<Aws::String>& value) { m_recipientsHasBeenSet = true; m_recipients = value; }
-    inline void SetRecipients(Aws::Vector<Aws::String>&& value) { m_recipientsHasBeenSet = true; m_recipients = std::move(value); }
-    inline ReceiptRule& WithRecipients(const Aws::Vector<Aws::String>& value) { SetRecipients(value); return *this;}
-    inline ReceiptRule& WithRecipients(Aws::Vector<Aws::String>&& value) { SetRecipients(std::move(value)); return *this;}
-    inline ReceiptRule& AddRecipients(const Aws::String& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
-    inline ReceiptRule& AddRecipients(Aws::String&& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(std::move(value)); return *this; }
-    inline ReceiptRule& AddRecipients(const char* value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
+    template<typename RecipientsT = Aws::Vector<Aws::String>>
+    void SetRecipients(RecipientsT&& value) { m_recipientsHasBeenSet = true; m_recipients = std::forward<RecipientsT>(value); }
+    template<typename RecipientsT = Aws::Vector<Aws::String>>
+    ReceiptRule& WithRecipients(RecipientsT&& value) { SetRecipients(std::forward<RecipientsT>(value)); return *this;}
+    template<typename RecipientsT = Aws::String>
+    ReceiptRule& AddRecipients(RecipientsT&& value) { m_recipientsHasBeenSet = true; m_recipients.emplace_back(std::forward<RecipientsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,14 +110,14 @@ namespace Model
      * <p>An ordered list of actions to perform on messages that match at least one of
      * the recipient email addresses or domains specified in the receipt rule.</p>
      */
-    inline const Aws::Vector<ReceiptAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<ReceiptAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<ReceiptAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<ReceiptAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline ReceiptRule& WithActions(const Aws::Vector<ReceiptAction>& value) { SetActions(value); return *this;}
-    inline ReceiptRule& WithActions(Aws::Vector<ReceiptAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline ReceiptRule& AddActions(const ReceiptAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline ReceiptRule& AddActions(ReceiptAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<ReceiptAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<ReceiptAction>>
+    ReceiptRule& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = ReceiptAction>
+    ReceiptRule& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,7 +125,7 @@ namespace Model
      * <p>If <code>true</code>, then messages that this receipt rule applies to are
      * scanned for spam and viruses. The default value is <code>false</code>.</p>
      */
-    inline bool GetScanEnabled() const{ return m_scanEnabled; }
+    inline bool GetScanEnabled() const { return m_scanEnabled; }
     inline bool ScanEnabledHasBeenSet() const { return m_scanEnabledHasBeenSet; }
     inline void SetScanEnabled(bool value) { m_scanEnabledHasBeenSet = true; m_scanEnabled = value; }
     inline ReceiptRule& WithScanEnabled(bool value) { SetScanEnabled(value); return *this;}
@@ -140,10 +135,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    TlsPolicy m_tlsPolicy;
+    TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
     bool m_tlsPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recipients;
@@ -152,7 +147,7 @@ namespace Model
     Aws::Vector<ReceiptAction> m_actions;
     bool m_actionsHasBeenSet = false;
 
-    bool m_scanEnabled;
+    bool m_scanEnabled{false};
     bool m_scanEnabledHasBeenSet = false;
   };
 

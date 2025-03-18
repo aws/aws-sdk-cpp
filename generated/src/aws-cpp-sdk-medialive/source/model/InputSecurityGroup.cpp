@@ -18,19 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputSecurityGroup::InputSecurityGroup() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_state(InputSecurityGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_whitelistRulesHasBeenSet(false)
-{
-}
-
 InputSecurityGroup::InputSecurityGroup(JsonView jsonValue)
-  : InputSecurityGroup()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -60,14 +44,11 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = InputSecurityGroupStateMapper::GetInputSecurityGroupStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -77,7 +58,6 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("whitelistRules"))
   {
     Aws::Utils::Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
@@ -87,7 +67,6 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
     }
     m_whitelistRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

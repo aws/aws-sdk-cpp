@@ -18,16 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceResizePolicy::InstanceResizePolicy() : 
-    m_instancesToTerminateHasBeenSet(false),
-    m_instancesToProtectHasBeenSet(false),
-    m_instanceTerminationTimeout(0),
-    m_instanceTerminationTimeoutHasBeenSet(false)
-{
-}
-
 InstanceResizePolicy::InstanceResizePolicy(JsonView jsonValue)
-  : InstanceResizePolicy()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ InstanceResizePolicy& InstanceResizePolicy::operator =(JsonView jsonValue)
     }
     m_instancesToTerminateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstancesToProtect"))
   {
     Aws::Utils::Array<JsonView> instancesToProtectJsonList = jsonValue.GetArray("InstancesToProtect");
@@ -53,14 +43,11 @@ InstanceResizePolicy& InstanceResizePolicy::operator =(JsonView jsonValue)
     }
     m_instancesToProtectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceTerminationTimeout"))
   {
     m_instanceTerminationTimeout = jsonValue.GetInteger("InstanceTerminationTimeout");
-
     m_instanceTerminationTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

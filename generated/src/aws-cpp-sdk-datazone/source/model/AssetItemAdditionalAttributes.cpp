@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetItemAdditionalAttributes::AssetItemAdditionalAttributes() : 
-    m_formsOutputHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsOutputHasBeenSet(false),
-    m_readOnlyFormsOutputHasBeenSet(false)
-{
-}
-
 AssetItemAdditionalAttributes::AssetItemAdditionalAttributes(JsonView jsonValue)
-  : AssetItemAdditionalAttributes()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ AssetItemAdditionalAttributes& AssetItemAdditionalAttributes::operator =(JsonVie
     }
     m_formsOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestTimeSeriesDataPointFormsOutput"))
   {
     Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsOutputJsonList = jsonValue.GetArray("latestTimeSeriesDataPointFormsOutput");
@@ -52,7 +43,6 @@ AssetItemAdditionalAttributes& AssetItemAdditionalAttributes::operator =(JsonVie
     }
     m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readOnlyFormsOutput"))
   {
     Aws::Utils::Array<JsonView> readOnlyFormsOutputJsonList = jsonValue.GetArray("readOnlyFormsOutput");
@@ -62,7 +52,6 @@ AssetItemAdditionalAttributes& AssetItemAdditionalAttributes::operator =(JsonVie
     }
     m_readOnlyFormsOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

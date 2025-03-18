@@ -12,15 +12,6 @@ using namespace Aws::KinesisVideoSignalingChannels::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIceServerConfigRequest::GetIceServerConfigRequest() : 
-    m_channelARNHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_service(Service::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String GetIceServerConfigRequest::SerializePayload() const
 {
   JsonValue payload;

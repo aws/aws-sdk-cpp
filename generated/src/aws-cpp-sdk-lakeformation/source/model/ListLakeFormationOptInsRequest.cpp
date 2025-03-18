@@ -12,15 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLakeFormationOptInsRequest::ListLakeFormationOptInsRequest() : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLakeFormationOptInsRequest::SerializePayload() const
 {
   JsonValue payload;

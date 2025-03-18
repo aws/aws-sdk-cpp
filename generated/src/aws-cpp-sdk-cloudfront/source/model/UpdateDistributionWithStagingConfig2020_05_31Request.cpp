@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateDistributionWithStagingConfig2020_05_31Request::UpdateDistributionWithStagingConfig2020_05_31Request() : 
-    m_idHasBeenSet(false),
-    m_stagingDistributionIdHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateDistributionWithStagingConfig2020_05_31Request::SerializePayload() const
 {

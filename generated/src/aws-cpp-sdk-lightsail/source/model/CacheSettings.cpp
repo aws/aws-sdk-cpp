@@ -18,23 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-CacheSettings::CacheSettings() : 
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_minimumTTL(0),
-    m_minimumTTLHasBeenSet(false),
-    m_maximumTTL(0),
-    m_maximumTTLHasBeenSet(false),
-    m_allowedHTTPMethodsHasBeenSet(false),
-    m_cachedHTTPMethodsHasBeenSet(false),
-    m_forwardedCookiesHasBeenSet(false),
-    m_forwardedHeadersHasBeenSet(false),
-    m_forwardedQueryStringsHasBeenSet(false)
-{
-}
-
 CacheSettings::CacheSettings(JsonView jsonValue)
-  : CacheSettings()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ CacheSettings& CacheSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultTTL"))
   {
     m_defaultTTL = jsonValue.GetInt64("defaultTTL");
-
     m_defaultTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumTTL"))
   {
     m_minimumTTL = jsonValue.GetInt64("minimumTTL");
-
     m_minimumTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumTTL"))
   {
     m_maximumTTL = jsonValue.GetInt64("maximumTTL");
-
     m_maximumTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedHTTPMethods"))
   {
     m_allowedHTTPMethods = jsonValue.GetString("allowedHTTPMethods");
-
     m_allowedHTTPMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cachedHTTPMethods"))
   {
     m_cachedHTTPMethods = jsonValue.GetString("cachedHTTPMethods");
-
     m_cachedHTTPMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forwardedCookies"))
   {
     m_forwardedCookies = jsonValue.GetObject("forwardedCookies");
-
     m_forwardedCookiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forwardedHeaders"))
   {
     m_forwardedHeaders = jsonValue.GetObject("forwardedHeaders");
-
     m_forwardedHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forwardedQueryStrings"))
   {
     m_forwardedQueryStrings = jsonValue.GetObject("forwardedQueryStrings");
-
     m_forwardedQueryStringsHasBeenSet = true;
   }
-
   return *this;
 }
 

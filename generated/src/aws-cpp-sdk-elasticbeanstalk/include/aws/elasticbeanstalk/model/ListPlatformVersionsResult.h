@@ -30,7 +30,7 @@ namespace Model
   class ListPlatformVersionsResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API ListPlatformVersionsResult();
+    AWS_ELASTICBEANSTALK_API ListPlatformVersionsResult() = default;
     AWS_ELASTICBEANSTALK_API ListPlatformVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API ListPlatformVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Summary information about the platform versions.</p>
      */
-    inline const Aws::Vector<PlatformSummary>& GetPlatformSummaryList() const{ return m_platformSummaryList; }
-    inline void SetPlatformSummaryList(const Aws::Vector<PlatformSummary>& value) { m_platformSummaryList = value; }
-    inline void SetPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { m_platformSummaryList = std::move(value); }
-    inline ListPlatformVersionsResult& WithPlatformSummaryList(const Aws::Vector<PlatformSummary>& value) { SetPlatformSummaryList(value); return *this;}
-    inline ListPlatformVersionsResult& WithPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { SetPlatformSummaryList(std::move(value)); return *this;}
-    inline ListPlatformVersionsResult& AddPlatformSummaryList(const PlatformSummary& value) { m_platformSummaryList.push_back(value); return *this; }
-    inline ListPlatformVersionsResult& AddPlatformSummaryList(PlatformSummary&& value) { m_platformSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PlatformSummary>& GetPlatformSummaryList() const { return m_platformSummaryList; }
+    template<typename PlatformSummaryListT = Aws::Vector<PlatformSummary>>
+    void SetPlatformSummaryList(PlatformSummaryListT&& value) { m_platformSummaryListHasBeenSet = true; m_platformSummaryList = std::forward<PlatformSummaryListT>(value); }
+    template<typename PlatformSummaryListT = Aws::Vector<PlatformSummary>>
+    ListPlatformVersionsResult& WithPlatformSummaryList(PlatformSummaryListT&& value) { SetPlatformSummaryList(std::forward<PlatformSummaryListT>(value)); return *this;}
+    template<typename PlatformSummaryListT = PlatformSummary>
+    ListPlatformVersionsResult& AddPlatformSummaryList(PlatformSummaryListT&& value) { m_platformSummaryListHasBeenSet = true; m_platformSummaryList.emplace_back(std::forward<PlatformSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>In a paginated request, if this value isn't <code>null</code>, it's the token
      * that you can pass in a subsequent request to get the next response page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPlatformVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPlatformVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPlatformVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPlatformVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListPlatformVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListPlatformVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListPlatformVersionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PlatformSummary> m_platformSummaryList;
+    bool m_platformSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

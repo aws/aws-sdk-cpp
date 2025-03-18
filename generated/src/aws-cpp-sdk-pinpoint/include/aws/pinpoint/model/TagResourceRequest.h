@@ -22,7 +22,7 @@ namespace Model
   class TagResourceRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API TagResourceRequest();
+    AWS_PINPOINT_API TagResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    TagResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TagsModel& GetTagsModel() const{ return m_tagsModel; }
+    inline const TagsModel& GetTagsModel() const { return m_tagsModel; }
     inline bool TagsModelHasBeenSet() const { return m_tagsModelHasBeenSet; }
-    inline void SetTagsModel(const TagsModel& value) { m_tagsModelHasBeenSet = true; m_tagsModel = value; }
-    inline void SetTagsModel(TagsModel&& value) { m_tagsModelHasBeenSet = true; m_tagsModel = std::move(value); }
-    inline TagResourceRequest& WithTagsModel(const TagsModel& value) { SetTagsModel(value); return *this;}
-    inline TagResourceRequest& WithTagsModel(TagsModel&& value) { SetTagsModel(std::move(value)); return *this;}
+    template<typename TagsModelT = TagsModel>
+    void SetTagsModel(TagsModelT&& value) { m_tagsModelHasBeenSet = true; m_tagsModel = std::forward<TagsModelT>(value); }
+    template<typename TagsModelT = TagsModel>
+    TagResourceRequest& WithTagsModel(TagsModelT&& value) { SetTagsModel(std::forward<TagsModelT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListRegexMatchSetsResult
   {
   public:
-    AWS_WAFREGIONAL_API ListRegexMatchSetsResult();
+    AWS_WAFREGIONAL_API ListRegexMatchSetsResult() = default;
     AWS_WAFREGIONAL_API ListRegexMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API ListRegexMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
      * <code>NextMarker</code> value from the response in the <code>NextMarker</code>
      * value in the next request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListRegexMatchSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListRegexMatchSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListRegexMatchSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListRegexMatchSetsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <a>RegexMatchSetSummary</a> objects.</p>
      */
-    inline const Aws::Vector<RegexMatchSetSummary>& GetRegexMatchSets() const{ return m_regexMatchSets; }
-    inline void SetRegexMatchSets(const Aws::Vector<RegexMatchSetSummary>& value) { m_regexMatchSets = value; }
-    inline void SetRegexMatchSets(Aws::Vector<RegexMatchSetSummary>&& value) { m_regexMatchSets = std::move(value); }
-    inline ListRegexMatchSetsResult& WithRegexMatchSets(const Aws::Vector<RegexMatchSetSummary>& value) { SetRegexMatchSets(value); return *this;}
-    inline ListRegexMatchSetsResult& WithRegexMatchSets(Aws::Vector<RegexMatchSetSummary>&& value) { SetRegexMatchSets(std::move(value)); return *this;}
-    inline ListRegexMatchSetsResult& AddRegexMatchSets(const RegexMatchSetSummary& value) { m_regexMatchSets.push_back(value); return *this; }
-    inline ListRegexMatchSetsResult& AddRegexMatchSets(RegexMatchSetSummary&& value) { m_regexMatchSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RegexMatchSetSummary>& GetRegexMatchSets() const { return m_regexMatchSets; }
+    template<typename RegexMatchSetsT = Aws::Vector<RegexMatchSetSummary>>
+    void SetRegexMatchSets(RegexMatchSetsT&& value) { m_regexMatchSetsHasBeenSet = true; m_regexMatchSets = std::forward<RegexMatchSetsT>(value); }
+    template<typename RegexMatchSetsT = Aws::Vector<RegexMatchSetSummary>>
+    ListRegexMatchSetsResult& WithRegexMatchSets(RegexMatchSetsT&& value) { SetRegexMatchSets(std::forward<RegexMatchSetsT>(value)); return *this;}
+    template<typename RegexMatchSetsT = RegexMatchSetSummary>
+    ListRegexMatchSetsResult& AddRegexMatchSets(RegexMatchSetsT&& value) { m_regexMatchSetsHasBeenSet = true; m_regexMatchSets.emplace_back(std::forward<RegexMatchSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRegexMatchSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRegexMatchSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRegexMatchSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRegexMatchSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<RegexMatchSetSummary> m_regexMatchSets;
+    bool m_regexMatchSetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

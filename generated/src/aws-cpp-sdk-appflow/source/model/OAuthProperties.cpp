@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-OAuthProperties::OAuthProperties() : 
-    m_tokenUrlHasBeenSet(false),
-    m_authCodeUrlHasBeenSet(false),
-    m_oAuthScopesHasBeenSet(false)
-{
-}
-
 OAuthProperties::OAuthProperties(JsonView jsonValue)
-  : OAuthProperties()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OAuthProperties& OAuthProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authCodeUrl"))
   {
     m_authCodeUrl = jsonValue.GetString("authCodeUrl");
-
     m_authCodeUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthScopes"))
   {
     Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
@@ -56,7 +44,6 @@ OAuthProperties& OAuthProperties::operator =(JsonView jsonValue)
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   return *this;
 }
 

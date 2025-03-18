@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StageContext::StageContext() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 StageContext::StageContext(JsonView jsonValue)
-  : StageContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StageContext& StageContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

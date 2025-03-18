@@ -34,7 +34,7 @@ namespace Model
   class TargetResource
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API TargetResource();
+    AWS_NETWORKFLOWMONITOR_API TargetResource() = default;
     AWS_NETWORKFLOWMONITOR_API TargetResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API TargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
      * is included in a target. A target identifier includes the target ID and the
      * target type.</p>
      */
-    inline const TargetIdentifier& GetTargetIdentifier() const{ return m_targetIdentifier; }
+    inline const TargetIdentifier& GetTargetIdentifier() const { return m_targetIdentifier; }
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-    inline void SetTargetIdentifier(const TargetIdentifier& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
-    inline void SetTargetIdentifier(TargetIdentifier&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
-    inline TargetResource& WithTargetIdentifier(const TargetIdentifier& value) { SetTargetIdentifier(value); return *this;}
-    inline TargetResource& WithTargetIdentifier(TargetIdentifier&& value) { SetTargetIdentifier(std::move(value)); return *this;}
+    template<typename TargetIdentifierT = TargetIdentifier>
+    void SetTargetIdentifier(TargetIdentifierT&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::forward<TargetIdentifierT>(value); }
+    template<typename TargetIdentifierT = TargetIdentifier>
+    TargetResource& WithTargetIdentifier(TargetIdentifierT&& value) { SetTargetIdentifier(std::forward<TargetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the target resource is located.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline TargetResource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline TargetResource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline TargetResource& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    TargetResource& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

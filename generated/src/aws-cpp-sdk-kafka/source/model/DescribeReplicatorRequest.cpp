@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReplicatorRequest::DescribeReplicatorRequest() : 
-    m_replicatorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReplicatorRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-OrderedPhoneNumber::OrderedPhoneNumber() : 
-    m_e164PhoneNumberHasBeenSet(false),
-    m_status(OrderedPhoneNumberStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OrderedPhoneNumber::OrderedPhoneNumber(JsonView jsonValue)
-  : OrderedPhoneNumber()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OrderedPhoneNumber& OrderedPhoneNumber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("E164PhoneNumber"))
   {
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
-
     m_e164PhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrderedPhoneNumberStatusMapper::GetOrderedPhoneNumberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class StartDeclarativePoliciesReportResponse
   {
   public:
-    AWS_EC2_API StartDeclarativePoliciesReportResponse();
+    AWS_EC2_API StartDeclarativePoliciesReportResponse() = default;
     AWS_EC2_API StartDeclarativePoliciesReportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API StartDeclarativePoliciesReportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the report.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
-    inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportId.assign(value); }
-    inline StartDeclarativePoliciesReportResponse& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline StartDeclarativePoliciesReportResponse& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline StartDeclarativePoliciesReportResponse& WithReportId(const char* value) { SetReportId(value); return *this;}
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    StartDeclarativePoliciesReportResponse& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartDeclarativePoliciesReportResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartDeclarativePoliciesReportResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartDeclarativePoliciesReportResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

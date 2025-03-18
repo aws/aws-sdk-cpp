@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVpcAttachmentResult::GetVpcAttachmentResult()
-{
-}
-
 GetVpcAttachmentResult::GetVpcAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVpcAttachmentResult& GetVpcAttachmentResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("VpcAttachment"))
   {
     m_vpcAttachment = jsonValue.GetObject("VpcAttachment");
-
+    m_vpcAttachmentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

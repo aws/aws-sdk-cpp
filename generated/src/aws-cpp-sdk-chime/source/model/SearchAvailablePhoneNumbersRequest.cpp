@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchAvailablePhoneNumbersRequest::SearchAvailablePhoneNumbersRequest() : 
-    m_areaCodeHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tollFreePrefixHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchAvailablePhoneNumbersRequest::SerializePayload() const
 {
   return {};

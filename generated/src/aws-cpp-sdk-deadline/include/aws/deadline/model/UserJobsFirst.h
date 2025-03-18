@@ -32,7 +32,7 @@ namespace Model
   class UserJobsFirst
   {
   public:
-    AWS_DEADLINE_API UserJobsFirst();
+    AWS_DEADLINE_API UserJobsFirst() = default;
     AWS_DEADLINE_API UserJobsFirst(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API UserJobsFirst& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The user's ID.</p>
      */
-    inline const Aws::String& GetUserIdentityId() const{ return m_userIdentityId; }
+    inline const Aws::String& GetUserIdentityId() const { return m_userIdentityId; }
     inline bool UserIdentityIdHasBeenSet() const { return m_userIdentityIdHasBeenSet; }
-    inline void SetUserIdentityId(const Aws::String& value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId = value; }
-    inline void SetUserIdentityId(Aws::String&& value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId = std::move(value); }
-    inline void SetUserIdentityId(const char* value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId.assign(value); }
-    inline UserJobsFirst& WithUserIdentityId(const Aws::String& value) { SetUserIdentityId(value); return *this;}
-    inline UserJobsFirst& WithUserIdentityId(Aws::String&& value) { SetUserIdentityId(std::move(value)); return *this;}
-    inline UserJobsFirst& WithUserIdentityId(const char* value) { SetUserIdentityId(value); return *this;}
+    template<typename UserIdentityIdT = Aws::String>
+    void SetUserIdentityId(UserIdentityIdT&& value) { m_userIdentityIdHasBeenSet = true; m_userIdentityId = std::forward<UserIdentityIdT>(value); }
+    template<typename UserIdentityIdT = Aws::String>
+    UserJobsFirst& WithUserIdentityId(UserIdentityIdT&& value) { SetUserIdentityId(std::forward<UserIdentityIdT>(value)); return *this;}
     ///@}
   private:
 

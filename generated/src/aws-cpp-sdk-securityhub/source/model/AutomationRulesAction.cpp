@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AutomationRulesAction::AutomationRulesAction() : 
-    m_type(AutomationRulesActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_findingFieldsUpdateHasBeenSet(false)
-{
-}
-
 AutomationRulesAction::AutomationRulesAction(JsonView jsonValue)
-  : AutomationRulesAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutomationRulesAction& AutomationRulesAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AutomationRulesActionTypeMapper::GetAutomationRulesActionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingFieldsUpdate"))
   {
     m_findingFieldsUpdate = jsonValue.GetObject("FindingFieldsUpdate");
-
     m_findingFieldsUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

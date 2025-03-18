@@ -23,7 +23,7 @@ namespace Model
   class UpdateAgentCollaboratorRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API UpdateAgentCollaboratorRequest();
+    AWS_BEDROCKAGENT_API UpdateAgentCollaboratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,94 +38,82 @@ namespace Model
     /**
      * <p>An agent descriptor for the agent collaborator.</p>
      */
-    inline const AgentDescriptor& GetAgentDescriptor() const{ return m_agentDescriptor; }
+    inline const AgentDescriptor& GetAgentDescriptor() const { return m_agentDescriptor; }
     inline bool AgentDescriptorHasBeenSet() const { return m_agentDescriptorHasBeenSet; }
-    inline void SetAgentDescriptor(const AgentDescriptor& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = value; }
-    inline void SetAgentDescriptor(AgentDescriptor&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::move(value); }
-    inline UpdateAgentCollaboratorRequest& WithAgentDescriptor(const AgentDescriptor& value) { SetAgentDescriptor(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithAgentDescriptor(AgentDescriptor&& value) { SetAgentDescriptor(std::move(value)); return *this;}
+    template<typename AgentDescriptorT = AgentDescriptor>
+    void SetAgentDescriptor(AgentDescriptorT&& value) { m_agentDescriptorHasBeenSet = true; m_agentDescriptor = std::forward<AgentDescriptorT>(value); }
+    template<typename AgentDescriptorT = AgentDescriptor>
+    UpdateAgentCollaboratorRequest& WithAgentDescriptor(AgentDescriptorT&& value) { SetAgentDescriptor(std::forward<AgentDescriptorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent's ID.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline UpdateAgentCollaboratorRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    UpdateAgentCollaboratorRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent's version.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline UpdateAgentCollaboratorRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    UpdateAgentCollaboratorRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Instruction for the collaborator.</p>
      */
-    inline const Aws::String& GetCollaborationInstruction() const{ return m_collaborationInstruction; }
+    inline const Aws::String& GetCollaborationInstruction() const { return m_collaborationInstruction; }
     inline bool CollaborationInstructionHasBeenSet() const { return m_collaborationInstructionHasBeenSet; }
-    inline void SetCollaborationInstruction(const Aws::String& value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction = value; }
-    inline void SetCollaborationInstruction(Aws::String&& value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction = std::move(value); }
-    inline void SetCollaborationInstruction(const char* value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction.assign(value); }
-    inline UpdateAgentCollaboratorRequest& WithCollaborationInstruction(const Aws::String& value) { SetCollaborationInstruction(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaborationInstruction(Aws::String&& value) { SetCollaborationInstruction(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaborationInstruction(const char* value) { SetCollaborationInstruction(value); return *this;}
+    template<typename CollaborationInstructionT = Aws::String>
+    void SetCollaborationInstruction(CollaborationInstructionT&& value) { m_collaborationInstructionHasBeenSet = true; m_collaborationInstruction = std::forward<CollaborationInstructionT>(value); }
+    template<typename CollaborationInstructionT = Aws::String>
+    UpdateAgentCollaboratorRequest& WithCollaborationInstruction(CollaborationInstructionT&& value) { SetCollaborationInstruction(std::forward<CollaborationInstructionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collaborator's ID.</p>
      */
-    inline const Aws::String& GetCollaboratorId() const{ return m_collaboratorId; }
+    inline const Aws::String& GetCollaboratorId() const { return m_collaboratorId; }
     inline bool CollaboratorIdHasBeenSet() const { return m_collaboratorIdHasBeenSet; }
-    inline void SetCollaboratorId(const Aws::String& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = value; }
-    inline void SetCollaboratorId(Aws::String&& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = std::move(value); }
-    inline void SetCollaboratorId(const char* value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId.assign(value); }
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorId(const Aws::String& value) { SetCollaboratorId(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorId(Aws::String&& value) { SetCollaboratorId(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorId(const char* value) { SetCollaboratorId(value); return *this;}
+    template<typename CollaboratorIdT = Aws::String>
+    void SetCollaboratorId(CollaboratorIdT&& value) { m_collaboratorIdHasBeenSet = true; m_collaboratorId = std::forward<CollaboratorIdT>(value); }
+    template<typename CollaboratorIdT = Aws::String>
+    UpdateAgentCollaboratorRequest& WithCollaboratorId(CollaboratorIdT&& value) { SetCollaboratorId(std::forward<CollaboratorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collaborator's name.</p>
      */
-    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
     inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
-    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
-    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
-    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
+    template<typename CollaboratorNameT = Aws::String>
+    void SetCollaboratorName(CollaboratorNameT&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::forward<CollaboratorNameT>(value); }
+    template<typename CollaboratorNameT = Aws::String>
+    UpdateAgentCollaboratorRequest& WithCollaboratorName(CollaboratorNameT&& value) { SetCollaboratorName(std::forward<CollaboratorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A relay conversation history for the collaborator.</p>
      */
-    inline const RelayConversationHistory& GetRelayConversationHistory() const{ return m_relayConversationHistory; }
+    inline RelayConversationHistory GetRelayConversationHistory() const { return m_relayConversationHistory; }
     inline bool RelayConversationHistoryHasBeenSet() const { return m_relayConversationHistoryHasBeenSet; }
-    inline void SetRelayConversationHistory(const RelayConversationHistory& value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = value; }
-    inline void SetRelayConversationHistory(RelayConversationHistory&& value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = std::move(value); }
-    inline UpdateAgentCollaboratorRequest& WithRelayConversationHistory(const RelayConversationHistory& value) { SetRelayConversationHistory(value); return *this;}
-    inline UpdateAgentCollaboratorRequest& WithRelayConversationHistory(RelayConversationHistory&& value) { SetRelayConversationHistory(std::move(value)); return *this;}
+    inline void SetRelayConversationHistory(RelayConversationHistory value) { m_relayConversationHistoryHasBeenSet = true; m_relayConversationHistory = value; }
+    inline UpdateAgentCollaboratorRequest& WithRelayConversationHistory(RelayConversationHistory value) { SetRelayConversationHistory(value); return *this;}
     ///@}
   private:
 
@@ -147,7 +135,7 @@ namespace Model
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
 
-    RelayConversationHistory m_relayConversationHistory;
+    RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
     bool m_relayConversationHistoryHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult()
-{
-}
-
 DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ DescribeConfigurationRevisionResult& DescribeConfigurationRevisionResult::operat
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
-
+    m_configurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetString("created");
-
+    m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
+    m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

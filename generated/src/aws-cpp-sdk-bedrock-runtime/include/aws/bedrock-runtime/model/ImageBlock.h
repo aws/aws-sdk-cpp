@@ -32,7 +32,7 @@ namespace Model
   class ImageBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API ImageBlock();
+    AWS_BEDROCKRUNTIME_API ImageBlock() = default;
     AWS_BEDROCKRUNTIME_API ImageBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ImageBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The format of the image.</p>
      */
-    inline const ImageFormat& GetFormat() const{ return m_format; }
+    inline ImageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const ImageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(ImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ImageBlock& WithFormat(const ImageFormat& value) { SetFormat(value); return *this;}
-    inline ImageBlock& WithFormat(ImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(ImageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ImageBlock& WithFormat(ImageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source for the image.</p>
      */
-    inline const ImageSource& GetSource() const{ return m_source; }
+    inline const ImageSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ImageBlock& WithSource(const ImageSource& value) { SetSource(value); return *this;}
-    inline ImageBlock& WithSource(ImageSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ImageSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ImageSource>
+    ImageBlock& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    ImageFormat m_format;
+    ImageFormat m_format{ImageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     ImageSource m_source;

@@ -12,12 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSchemaRequest::DeleteSchemaRequest() : 
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSchemaRequest::SerializePayload() const
 {
   return {};

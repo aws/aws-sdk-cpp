@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationalUnitRequest::DescribeOrganizationalUnitRequest() : 
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationalUnitRequest::SerializePayload() const
 {
   JsonValue payload;

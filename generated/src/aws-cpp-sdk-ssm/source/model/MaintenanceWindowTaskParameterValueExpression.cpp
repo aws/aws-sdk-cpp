@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 MaintenanceWindowTaskParameterValueExpression::MaintenanceWindowTaskParameterValueExpression(JsonView jsonValue)
-  : MaintenanceWindowTaskParameterValueExpression()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ MaintenanceWindowTaskParameterValueExpression& MaintenanceWindowTaskParameterVal
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

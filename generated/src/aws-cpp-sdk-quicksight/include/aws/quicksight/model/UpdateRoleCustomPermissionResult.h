@@ -27,35 +27,35 @@ namespace Model
   class UpdateRoleCustomPermissionResult
   {
   public:
-    AWS_QUICKSIGHT_API UpdateRoleCustomPermissionResult();
+    AWS_QUICKSIGHT_API UpdateRoleCustomPermissionResult() = default;
     AWS_QUICKSIGHT_API UpdateRoleCustomPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API UpdateRoleCustomPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRoleCustomPermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRoleCustomPermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRoleCustomPermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRoleCustomPermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline UpdateRoleCustomPermissionResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

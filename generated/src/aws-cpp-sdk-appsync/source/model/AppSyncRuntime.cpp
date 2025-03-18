@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-AppSyncRuntime::AppSyncRuntime() : 
-    m_name(RuntimeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_runtimeVersionHasBeenSet(false)
-{
-}
-
 AppSyncRuntime::AppSyncRuntime(JsonView jsonValue)
-  : AppSyncRuntime()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AppSyncRuntime& AppSyncRuntime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = RuntimeNameMapper::GetRuntimeNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeVersion"))
   {
     m_runtimeVersion = jsonValue.GetString("runtimeVersion");
-
     m_runtimeVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

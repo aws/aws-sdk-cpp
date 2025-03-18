@@ -18,16 +18,7 @@ namespace QApps
 namespace Model
 {
 
-CardStatus::CardStatus() : 
-    m_currentState(ExecutionStatus::NOT_SET),
-    m_currentStateHasBeenSet(false),
-    m_currentValueHasBeenSet(false),
-    m_submissionsHasBeenSet(false)
-{
-}
-
 CardStatus::CardStatus(JsonView jsonValue)
-  : CardStatus()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CardStatus& CardStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currentState"))
   {
     m_currentState = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("currentState"));
-
     m_currentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentValue"))
   {
     m_currentValue = jsonValue.GetString("currentValue");
-
     m_currentValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submissions"))
   {
     Aws::Utils::Array<JsonView> submissionsJsonList = jsonValue.GetArray("submissions");
@@ -57,7 +44,6 @@ CardStatus& CardStatus::operator =(JsonView jsonValue)
     }
     m_submissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

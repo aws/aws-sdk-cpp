@@ -25,7 +25,7 @@ namespace Model
   class UpdateDataSourceRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API UpdateDataSourceRequest();
+    AWS_QBUSINESS_API UpdateDataSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,104 +41,92 @@ namespace Model
      * <p> The identifier of the Amazon Q Business application the data source is
      * attached to.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateDataSourceRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateDataSourceRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateDataSourceRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the index attached to the data source connector.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline UpdateDataSourceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline UpdateDataSourceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    UpdateDataSourceRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the data source connector.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline UpdateDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline UpdateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    UpdateDataSourceRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name of the data source connector.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateDataSourceRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateDataSourceRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateDataSourceRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline Aws::Utils::DocumentView GetConfiguration() const{ return m_configuration; }
+    inline Aws::Utils::DocumentView GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::Utils::Document& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::Utils::Document&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateDataSourceRequest& WithConfiguration(const Aws::Utils::Document& value) { SetConfiguration(value); return *this;}
-    inline UpdateDataSourceRequest& WithConfiguration(Aws::Utils::Document&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Aws::Utils::Document>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Utils::Document>
+    UpdateDataSourceRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline UpdateDataSourceRequest& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline UpdateDataSourceRequest& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    UpdateDataSourceRequest& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the data source connector.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateDataSourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateDataSourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateDataSourceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The chosen update frequency for your data source.</p>
      */
-    inline const Aws::String& GetSyncSchedule() const{ return m_syncSchedule; }
+    inline const Aws::String& GetSyncSchedule() const { return m_syncSchedule; }
     inline bool SyncScheduleHasBeenSet() const { return m_syncScheduleHasBeenSet; }
-    inline void SetSyncSchedule(const Aws::String& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = value; }
-    inline void SetSyncSchedule(Aws::String&& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = std::move(value); }
-    inline void SetSyncSchedule(const char* value) { m_syncScheduleHasBeenSet = true; m_syncSchedule.assign(value); }
-    inline UpdateDataSourceRequest& WithSyncSchedule(const Aws::String& value) { SetSyncSchedule(value); return *this;}
-    inline UpdateDataSourceRequest& WithSyncSchedule(Aws::String&& value) { SetSyncSchedule(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithSyncSchedule(const char* value) { SetSyncSchedule(value); return *this;}
+    template<typename SyncScheduleT = Aws::String>
+    void SetSyncSchedule(SyncScheduleT&& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = std::forward<SyncScheduleT>(value); }
+    template<typename SyncScheduleT = Aws::String>
+    UpdateDataSourceRequest& WithSyncSchedule(SyncScheduleT&& value) { SetSyncSchedule(std::forward<SyncScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,24 +134,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the
      * data source and required resources.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateDataSourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateDataSourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateDataSourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateDataSourceRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const{ return m_documentEnrichmentConfiguration; }
+    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const { return m_documentEnrichmentConfiguration; }
     inline bool DocumentEnrichmentConfigurationHasBeenSet() const { return m_documentEnrichmentConfigurationHasBeenSet; }
-    inline void SetDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = value; }
-    inline void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::move(value); }
-    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
-    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+    template<typename DocumentEnrichmentConfigurationT = DocumentEnrichmentConfiguration>
+    void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationT&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::forward<DocumentEnrichmentConfigurationT>(value); }
+    template<typename DocumentEnrichmentConfigurationT = DocumentEnrichmentConfiguration>
+    UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationT&& value) { SetDocumentEnrichmentConfiguration(std::forward<DocumentEnrichmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,12 +157,12 @@ namespace Model
      * <p>The configuration for extracting information from media in documents for your
      * data source.</p>
      */
-    inline const MediaExtractionConfiguration& GetMediaExtractionConfiguration() const{ return m_mediaExtractionConfiguration; }
+    inline const MediaExtractionConfiguration& GetMediaExtractionConfiguration() const { return m_mediaExtractionConfiguration; }
     inline bool MediaExtractionConfigurationHasBeenSet() const { return m_mediaExtractionConfigurationHasBeenSet; }
-    inline void SetMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { m_mediaExtractionConfigurationHasBeenSet = true; m_mediaExtractionConfiguration = value; }
-    inline void SetMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { m_mediaExtractionConfigurationHasBeenSet = true; m_mediaExtractionConfiguration = std::move(value); }
-    inline UpdateDataSourceRequest& WithMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { SetMediaExtractionConfiguration(value); return *this;}
-    inline UpdateDataSourceRequest& WithMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { SetMediaExtractionConfiguration(std::move(value)); return *this;}
+    template<typename MediaExtractionConfigurationT = MediaExtractionConfiguration>
+    void SetMediaExtractionConfiguration(MediaExtractionConfigurationT&& value) { m_mediaExtractionConfigurationHasBeenSet = true; m_mediaExtractionConfiguration = std::forward<MediaExtractionConfigurationT>(value); }
+    template<typename MediaExtractionConfigurationT = MediaExtractionConfiguration>
+    UpdateDataSourceRequest& WithMediaExtractionConfiguration(MediaExtractionConfigurationT&& value) { SetMediaExtractionConfiguration(std::forward<MediaExtractionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

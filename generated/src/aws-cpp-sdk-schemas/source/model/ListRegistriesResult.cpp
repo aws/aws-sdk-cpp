@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRegistriesResult::ListRegistriesResult()
-{
-}
-
 ListRegistriesResult::ListRegistriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRegistriesResult& ListRegistriesResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Registries"))
   {
     Aws::Utils::Array<JsonView> registriesJsonList = jsonValue.GetArray("Registries");
@@ -42,14 +37,15 @@ ListRegistriesResult& ListRegistriesResult::operator =(const Aws::AmazonWebServi
     {
       m_registries.push_back(registriesJsonList[registriesIndex].AsObject());
     }
+    m_registriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

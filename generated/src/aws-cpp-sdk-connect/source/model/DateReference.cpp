@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DateReference::DateReference() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DateReference::DateReference(JsonView jsonValue)
-  : DateReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateReference& DateReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

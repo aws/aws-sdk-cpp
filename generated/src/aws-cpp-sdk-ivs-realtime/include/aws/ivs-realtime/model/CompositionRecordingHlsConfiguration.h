@@ -30,7 +30,7 @@ namespace Model
   class CompositionRecordingHlsConfiguration
   {
   public:
-    AWS_IVSREALTIME_API CompositionRecordingHlsConfiguration();
+    AWS_IVSREALTIME_API CompositionRecordingHlsConfiguration() = default;
     AWS_IVSREALTIME_API CompositionRecordingHlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API CompositionRecordingHlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * composite recording. Segments may have durations shorter than the specified
      * value when needed to ensure each segment begins with a keyframe. Default: 2.</p>
      */
-    inline int GetTargetSegmentDurationSeconds() const{ return m_targetSegmentDurationSeconds; }
+    inline int GetTargetSegmentDurationSeconds() const { return m_targetSegmentDurationSeconds; }
     inline bool TargetSegmentDurationSecondsHasBeenSet() const { return m_targetSegmentDurationSecondsHasBeenSet; }
     inline void SetTargetSegmentDurationSeconds(int value) { m_targetSegmentDurationSecondsHasBeenSet = true; m_targetSegmentDurationSeconds = value; }
     inline CompositionRecordingHlsConfiguration& WithTargetSegmentDurationSeconds(int value) { SetTargetSegmentDurationSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_targetSegmentDurationSeconds;
+    int m_targetSegmentDurationSeconds{0};
     bool m_targetSegmentDurationSecondsHasBeenSet = false;
   };
 

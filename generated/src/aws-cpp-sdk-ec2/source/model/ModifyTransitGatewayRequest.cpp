@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyTransitGatewayRequest::ModifyTransitGatewayRequest() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTransitGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

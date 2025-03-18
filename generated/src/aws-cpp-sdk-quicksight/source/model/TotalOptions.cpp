@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TotalOptions::TotalOptions() : 
-    m_totalsVisibility(Visibility::NOT_SET),
-    m_totalsVisibilityHasBeenSet(false),
-    m_placement(TableTotalsPlacement::NOT_SET),
-    m_placementHasBeenSet(false),
-    m_scrollStatus(TableTotalsScrollStatus::NOT_SET),
-    m_scrollStatusHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_totalCellStyleHasBeenSet(false),
-    m_totalAggregationOptionsHasBeenSet(false)
-{
-}
-
 TotalOptions::TotalOptions(JsonView jsonValue)
-  : TotalOptions()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ TotalOptions& TotalOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalsVisibility"))
   {
     m_totalsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("TotalsVisibility"));
-
     m_totalsVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Placement"))
   {
     m_placement = TableTotalsPlacementMapper::GetTableTotalsPlacementForName(jsonValue.GetString("Placement"));
-
     m_placementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScrollStatus"))
   {
     m_scrollStatus = TableTotalsScrollStatusMapper::GetTableTotalsScrollStatusForName(jsonValue.GetString("ScrollStatus"));
-
     m_scrollStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCellStyle"))
   {
     m_totalCellStyle = jsonValue.GetObject("TotalCellStyle");
-
     m_totalCellStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAggregationOptions"))
   {
     Aws::Utils::Array<JsonView> totalAggregationOptionsJsonList = jsonValue.GetArray("TotalAggregationOptions");
@@ -83,7 +59,6 @@ TotalOptions& TotalOptions::operator =(JsonView jsonValue)
     }
     m_totalAggregationOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

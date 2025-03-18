@@ -25,7 +25,7 @@ namespace Model
   class DescribeObjectsRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API DescribeObjectsRequest();
+    AWS_DATAPIPELINE_API DescribeObjectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline DescribeObjectsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline DescribeObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline DescribeObjectsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    DescribeObjectsRequest& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * You can pass as many as 25 identifiers in a single call to
      * <code>DescribeObjects</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectIds() const{ return m_objectIds; }
+    inline const Aws::Vector<Aws::String>& GetObjectIds() const { return m_objectIds; }
     inline bool ObjectIdsHasBeenSet() const { return m_objectIdsHasBeenSet; }
-    inline void SetObjectIds(const Aws::Vector<Aws::String>& value) { m_objectIdsHasBeenSet = true; m_objectIds = value; }
-    inline void SetObjectIds(Aws::Vector<Aws::String>&& value) { m_objectIdsHasBeenSet = true; m_objectIds = std::move(value); }
-    inline DescribeObjectsRequest& WithObjectIds(const Aws::Vector<Aws::String>& value) { SetObjectIds(value); return *this;}
-    inline DescribeObjectsRequest& WithObjectIds(Aws::Vector<Aws::String>&& value) { SetObjectIds(std::move(value)); return *this;}
-    inline DescribeObjectsRequest& AddObjectIds(const Aws::String& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
-    inline DescribeObjectsRequest& AddObjectIds(Aws::String&& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(std::move(value)); return *this; }
-    inline DescribeObjectsRequest& AddObjectIds(const char* value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
+    template<typename ObjectIdsT = Aws::Vector<Aws::String>>
+    void SetObjectIds(ObjectIdsT&& value) { m_objectIdsHasBeenSet = true; m_objectIds = std::forward<ObjectIdsT>(value); }
+    template<typename ObjectIdsT = Aws::Vector<Aws::String>>
+    DescribeObjectsRequest& WithObjectIds(ObjectIdsT&& value) { SetObjectIds(std::forward<ObjectIdsT>(value)); return *this;}
+    template<typename ObjectIdsT = Aws::String>
+    DescribeObjectsRequest& AddObjectIds(ObjectIdsT&& value) { m_objectIdsHasBeenSet = true; m_objectIds.emplace_back(std::forward<ObjectIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,7 +71,7 @@ namespace Model
      * <p>Indicates whether any expressions in the object should be evaluated when the
      * object descriptions are returned.</p>
      */
-    inline bool GetEvaluateExpressions() const{ return m_evaluateExpressions; }
+    inline bool GetEvaluateExpressions() const { return m_evaluateExpressions; }
     inline bool EvaluateExpressionsHasBeenSet() const { return m_evaluateExpressionsHasBeenSet; }
     inline void SetEvaluateExpressions(bool value) { m_evaluateExpressionsHasBeenSet = true; m_evaluateExpressions = value; }
     inline DescribeObjectsRequest& WithEvaluateExpressions(bool value) { SetEvaluateExpressions(value); return *this;}
@@ -87,14 +84,12 @@ namespace Model
      * <code>DescribeObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeObjectsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeObjectsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +99,7 @@ namespace Model
     Aws::Vector<Aws::String> m_objectIds;
     bool m_objectIdsHasBeenSet = false;
 
-    bool m_evaluateExpressions;
+    bool m_evaluateExpressions{false};
     bool m_evaluateExpressionsHasBeenSet = false;
 
     Aws::String m_marker;

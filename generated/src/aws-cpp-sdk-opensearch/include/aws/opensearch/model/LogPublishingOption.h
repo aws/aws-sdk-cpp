@@ -37,7 +37,7 @@ namespace Model
   class LogPublishingOption
   {
   public:
-    AWS_OPENSEARCHSERVICE_API LogPublishingOption();
+    AWS_OPENSEARCHSERVICE_API LogPublishingOption() = default;
     AWS_OPENSEARCHSERVICE_API LogPublishingOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API LogPublishingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,21 +48,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs
      * to.</p>
      */
-    inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
+    inline const Aws::String& GetCloudWatchLogsLogGroupArn() const { return m_cloudWatchLogsLogGroupArn; }
     inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
-    inline void SetCloudWatchLogsLogGroupArn(const Aws::String& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
-    inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogsLogGroupArn(const char* value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn.assign(value); }
-    inline LogPublishingOption& WithCloudWatchLogsLogGroupArn(const Aws::String& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
-    inline LogPublishingOption& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
-    inline LogPublishingOption& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
+    template<typename CloudWatchLogsLogGroupArnT = Aws::String>
+    void SetCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::forward<CloudWatchLogsLogGroupArnT>(value); }
+    template<typename CloudWatchLogsLogGroupArnT = Aws::String>
+    LogPublishingOption& WithCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { SetCloudWatchLogsLogGroupArn(std::forward<CloudWatchLogsLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the log should be published.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline LogPublishingOption& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     Aws::String m_cloudWatchLogsLogGroupArn;
     bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

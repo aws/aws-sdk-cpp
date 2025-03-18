@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateNetworkSettingsRequest::AssociateNetworkSettingsRequest() : 
-    m_networkSettingsArnHasBeenSet(false),
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateNetworkSettingsRequest::SerializePayload() const
 {
   return {};

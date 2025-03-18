@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-MapRunRedrivenEventDetails::MapRunRedrivenEventDetails() : 
-    m_mapRunArnHasBeenSet(false),
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false)
-{
-}
-
 MapRunRedrivenEventDetails::MapRunRedrivenEventDetails(JsonView jsonValue)
-  : MapRunRedrivenEventDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MapRunRedrivenEventDetails& MapRunRedrivenEventDetails::operator =(JsonView json
   if(jsonValue.ValueExists("mapRunArn"))
   {
     m_mapRunArn = jsonValue.GetString("mapRunArn");
-
     m_mapRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redriveCount"))
   {
     m_redriveCount = jsonValue.GetInteger("redriveCount");
-
     m_redriveCountHasBeenSet = true;
   }
-
   return *this;
 }
 

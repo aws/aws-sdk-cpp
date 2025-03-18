@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-FileValidationMessage::FileValidationMessage() : 
-    m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 FileValidationMessage::FileValidationMessage(JsonView jsonValue)
-  : FileValidationMessage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FileValidationMessage& FileValidationMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

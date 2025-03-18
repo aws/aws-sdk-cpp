@@ -32,7 +32,7 @@ namespace Model
   class Spacing
   {
   public:
-    AWS_QUICKSIGHT_API Spacing();
+    AWS_QUICKSIGHT_API Spacing() = default;
     AWS_QUICKSIGHT_API Spacing(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Spacing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>Define the top spacing.</p>
      */
-    inline const Aws::String& GetTop() const{ return m_top; }
+    inline const Aws::String& GetTop() const { return m_top; }
     inline bool TopHasBeenSet() const { return m_topHasBeenSet; }
-    inline void SetTop(const Aws::String& value) { m_topHasBeenSet = true; m_top = value; }
-    inline void SetTop(Aws::String&& value) { m_topHasBeenSet = true; m_top = std::move(value); }
-    inline void SetTop(const char* value) { m_topHasBeenSet = true; m_top.assign(value); }
-    inline Spacing& WithTop(const Aws::String& value) { SetTop(value); return *this;}
-    inline Spacing& WithTop(Aws::String&& value) { SetTop(std::move(value)); return *this;}
-    inline Spacing& WithTop(const char* value) { SetTop(value); return *this;}
+    template<typename TopT = Aws::String>
+    void SetTop(TopT&& value) { m_topHasBeenSet = true; m_top = std::forward<TopT>(value); }
+    template<typename TopT = Aws::String>
+    Spacing& WithTop(TopT&& value) { SetTop(std::forward<TopT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Define the bottom spacing.</p>
      */
-    inline const Aws::String& GetBottom() const{ return m_bottom; }
+    inline const Aws::String& GetBottom() const { return m_bottom; }
     inline bool BottomHasBeenSet() const { return m_bottomHasBeenSet; }
-    inline void SetBottom(const Aws::String& value) { m_bottomHasBeenSet = true; m_bottom = value; }
-    inline void SetBottom(Aws::String&& value) { m_bottomHasBeenSet = true; m_bottom = std::move(value); }
-    inline void SetBottom(const char* value) { m_bottomHasBeenSet = true; m_bottom.assign(value); }
-    inline Spacing& WithBottom(const Aws::String& value) { SetBottom(value); return *this;}
-    inline Spacing& WithBottom(Aws::String&& value) { SetBottom(std::move(value)); return *this;}
-    inline Spacing& WithBottom(const char* value) { SetBottom(value); return *this;}
+    template<typename BottomT = Aws::String>
+    void SetBottom(BottomT&& value) { m_bottomHasBeenSet = true; m_bottom = std::forward<BottomT>(value); }
+    template<typename BottomT = Aws::String>
+    Spacing& WithBottom(BottomT&& value) { SetBottom(std::forward<BottomT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Define the left spacing.</p>
      */
-    inline const Aws::String& GetLeft() const{ return m_left; }
+    inline const Aws::String& GetLeft() const { return m_left; }
     inline bool LeftHasBeenSet() const { return m_leftHasBeenSet; }
-    inline void SetLeft(const Aws::String& value) { m_leftHasBeenSet = true; m_left = value; }
-    inline void SetLeft(Aws::String&& value) { m_leftHasBeenSet = true; m_left = std::move(value); }
-    inline void SetLeft(const char* value) { m_leftHasBeenSet = true; m_left.assign(value); }
-    inline Spacing& WithLeft(const Aws::String& value) { SetLeft(value); return *this;}
-    inline Spacing& WithLeft(Aws::String&& value) { SetLeft(std::move(value)); return *this;}
-    inline Spacing& WithLeft(const char* value) { SetLeft(value); return *this;}
+    template<typename LeftT = Aws::String>
+    void SetLeft(LeftT&& value) { m_leftHasBeenSet = true; m_left = std::forward<LeftT>(value); }
+    template<typename LeftT = Aws::String>
+    Spacing& WithLeft(LeftT&& value) { SetLeft(std::forward<LeftT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Define the right spacing.</p>
      */
-    inline const Aws::String& GetRight() const{ return m_right; }
+    inline const Aws::String& GetRight() const { return m_right; }
     inline bool RightHasBeenSet() const { return m_rightHasBeenSet; }
-    inline void SetRight(const Aws::String& value) { m_rightHasBeenSet = true; m_right = value; }
-    inline void SetRight(Aws::String&& value) { m_rightHasBeenSet = true; m_right = std::move(value); }
-    inline void SetRight(const char* value) { m_rightHasBeenSet = true; m_right.assign(value); }
-    inline Spacing& WithRight(const Aws::String& value) { SetRight(value); return *this;}
-    inline Spacing& WithRight(Aws::String&& value) { SetRight(std::move(value)); return *this;}
-    inline Spacing& WithRight(const char* value) { SetRight(value); return *this;}
+    template<typename RightT = Aws::String>
+    void SetRight(RightT&& value) { m_rightHasBeenSet = true; m_right = std::forward<RightT>(value); }
+    template<typename RightT = Aws::String>
+    Spacing& WithRight(RightT&& value) { SetRight(std::forward<RightT>(value)); return *this;}
     ///@}
   private:
 

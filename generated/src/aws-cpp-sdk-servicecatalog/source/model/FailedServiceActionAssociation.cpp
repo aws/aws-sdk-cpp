@@ -18,18 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-FailedServiceActionAssociation::FailedServiceActionAssociation() : 
-    m_serviceActionIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_errorCode(ServiceActionAssociationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedServiceActionAssociation::FailedServiceActionAssociation(JsonView jsonValue)
-  : FailedServiceActionAssociation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FailedServiceActionAssociation& FailedServiceActionAssociation::operator =(JsonV
   if(jsonValue.ValueExists("ServiceActionId"))
   {
     m_serviceActionId = jsonValue.GetString("ServiceActionId");
-
     m_serviceActionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ServiceActionAssociationErrorCodeMapper::GetServiceActionAssociationErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

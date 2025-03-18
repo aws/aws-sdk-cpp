@@ -18,23 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-AssessmentControlSet::AssessmentControlSet() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ControlSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_controlsHasBeenSet(false),
-    m_delegationsHasBeenSet(false),
-    m_systemEvidenceCount(0),
-    m_systemEvidenceCountHasBeenSet(false),
-    m_manualEvidenceCount(0),
-    m_manualEvidenceCountHasBeenSet(false)
-{
-}
-
 AssessmentControlSet::AssessmentControlSet(JsonView jsonValue)
-  : AssessmentControlSet()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ControlSetStatusMapper::GetControlSetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roles"))
   {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("roles");
@@ -71,7 +49,6 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
     }
     m_rolesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controls"))
   {
     Aws::Utils::Array<JsonView> controlsJsonList = jsonValue.GetArray("controls");
@@ -81,7 +58,6 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
     }
     m_controlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("delegations"))
   {
     Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");
@@ -91,21 +67,16 @@ AssessmentControlSet& AssessmentControlSet::operator =(JsonView jsonValue)
     }
     m_delegationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemEvidenceCount"))
   {
     m_systemEvidenceCount = jsonValue.GetInteger("systemEvidenceCount");
-
     m_systemEvidenceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manualEvidenceCount"))
   {
     m_manualEvidenceCount = jsonValue.GetInteger("manualEvidenceCount");
-
     m_manualEvidenceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

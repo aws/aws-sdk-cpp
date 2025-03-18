@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceHubAccessConfig::InferenceHubAccessConfig() : 
-    m_hubContentArnHasBeenSet(false)
-{
-}
-
 InferenceHubAccessConfig::InferenceHubAccessConfig(JsonView jsonValue)
-  : InferenceHubAccessConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceHubAccessConfig& InferenceHubAccessConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("HubContentArn"))
   {
     m_hubContentArn = jsonValue.GetString("HubContentArn");
-
     m_hubContentArnHasBeenSet = true;
   }
-
   return *this;
 }
 

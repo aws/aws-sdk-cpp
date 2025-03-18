@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ApplicationLayerAutomaticResponseConfiguration::ApplicationLayerAutomaticResponseConfiguration() : 
-    m_status(ApplicationLayerAutomaticResponseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_actionHasBeenSet(false)
-{
-}
-
 ApplicationLayerAutomaticResponseConfiguration::ApplicationLayerAutomaticResponseConfiguration(JsonView jsonValue)
-  : ApplicationLayerAutomaticResponseConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApplicationLayerAutomaticResponseConfiguration& ApplicationLayerAutomaticRespons
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ApplicationLayerAutomaticResponseStatusMapper::GetApplicationLayerAutomaticResponseStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

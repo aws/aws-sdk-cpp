@@ -18,13 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-TargetSummary::TargetSummary() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 TargetSummary::TargetSummary(JsonView jsonValue)
-  : TargetSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetSummary& TargetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

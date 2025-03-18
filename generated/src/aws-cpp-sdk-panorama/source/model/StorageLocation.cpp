@@ -18,17 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-StorageLocation::StorageLocation() : 
-    m_binaryPrefixLocationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_generatedPrefixLocationHasBeenSet(false),
-    m_manifestPrefixLocationHasBeenSet(false),
-    m_repoPrefixLocationHasBeenSet(false)
-{
-}
-
 StorageLocation::StorageLocation(JsonView jsonValue)
-  : StorageLocation()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ StorageLocation& StorageLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BinaryPrefixLocation"))
   {
     m_binaryPrefixLocation = jsonValue.GetString("BinaryPrefixLocation");
-
     m_binaryPrefixLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedPrefixLocation"))
   {
     m_generatedPrefixLocation = jsonValue.GetString("GeneratedPrefixLocation");
-
     m_generatedPrefixLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestPrefixLocation"))
   {
     m_manifestPrefixLocation = jsonValue.GetString("ManifestPrefixLocation");
-
     m_manifestPrefixLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepoPrefixLocation"))
   {
     m_repoPrefixLocation = jsonValue.GetString("RepoPrefixLocation");
-
     m_repoPrefixLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPoolSourceResourceRequest::IpamPoolSourceResourceRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IpamPoolSourceResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 IpamPoolSourceResourceRequest::IpamPoolSourceResourceRequest(const XmlNode& xmlNode)
-  : IpamPoolSourceResourceRequest()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ IpamPoolSourceResourceRequest& IpamPoolSourceResourceRequest::operator =(const X
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("ResourceRegion");

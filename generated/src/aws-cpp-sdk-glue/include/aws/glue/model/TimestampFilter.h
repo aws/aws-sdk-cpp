@@ -31,7 +31,7 @@ namespace Model
   class TimestampFilter
   {
   public:
-    AWS_GLUE_API TimestampFilter();
+    AWS_GLUE_API TimestampFilter() = default;
     AWS_GLUE_API TimestampFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TimestampFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,31 +41,31 @@ namespace Model
     /**
      * <p>The timestamp before which statistics should be included in the results.</p>
      */
-    inline const Aws::Utils::DateTime& GetRecordedBefore() const{ return m_recordedBefore; }
+    inline const Aws::Utils::DateTime& GetRecordedBefore() const { return m_recordedBefore; }
     inline bool RecordedBeforeHasBeenSet() const { return m_recordedBeforeHasBeenSet; }
-    inline void SetRecordedBefore(const Aws::Utils::DateTime& value) { m_recordedBeforeHasBeenSet = true; m_recordedBefore = value; }
-    inline void SetRecordedBefore(Aws::Utils::DateTime&& value) { m_recordedBeforeHasBeenSet = true; m_recordedBefore = std::move(value); }
-    inline TimestampFilter& WithRecordedBefore(const Aws::Utils::DateTime& value) { SetRecordedBefore(value); return *this;}
-    inline TimestampFilter& WithRecordedBefore(Aws::Utils::DateTime&& value) { SetRecordedBefore(std::move(value)); return *this;}
+    template<typename RecordedBeforeT = Aws::Utils::DateTime>
+    void SetRecordedBefore(RecordedBeforeT&& value) { m_recordedBeforeHasBeenSet = true; m_recordedBefore = std::forward<RecordedBeforeT>(value); }
+    template<typename RecordedBeforeT = Aws::Utils::DateTime>
+    TimestampFilter& WithRecordedBefore(RecordedBeforeT&& value) { SetRecordedBefore(std::forward<RecordedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp after which statistics should be included in the results.</p>
      */
-    inline const Aws::Utils::DateTime& GetRecordedAfter() const{ return m_recordedAfter; }
+    inline const Aws::Utils::DateTime& GetRecordedAfter() const { return m_recordedAfter; }
     inline bool RecordedAfterHasBeenSet() const { return m_recordedAfterHasBeenSet; }
-    inline void SetRecordedAfter(const Aws::Utils::DateTime& value) { m_recordedAfterHasBeenSet = true; m_recordedAfter = value; }
-    inline void SetRecordedAfter(Aws::Utils::DateTime&& value) { m_recordedAfterHasBeenSet = true; m_recordedAfter = std::move(value); }
-    inline TimestampFilter& WithRecordedAfter(const Aws::Utils::DateTime& value) { SetRecordedAfter(value); return *this;}
-    inline TimestampFilter& WithRecordedAfter(Aws::Utils::DateTime&& value) { SetRecordedAfter(std::move(value)); return *this;}
+    template<typename RecordedAfterT = Aws::Utils::DateTime>
+    void SetRecordedAfter(RecordedAfterT&& value) { m_recordedAfterHasBeenSet = true; m_recordedAfter = std::forward<RecordedAfterT>(value); }
+    template<typename RecordedAfterT = Aws::Utils::DateTime>
+    TimestampFilter& WithRecordedAfter(RecordedAfterT&& value) { SetRecordedAfter(std::forward<RecordedAfterT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_recordedBefore;
+    Aws::Utils::DateTime m_recordedBefore{};
     bool m_recordedBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_recordedAfter;
+    Aws::Utils::DateTime m_recordedAfter{};
     bool m_recordedAfterHasBeenSet = false;
   };
 

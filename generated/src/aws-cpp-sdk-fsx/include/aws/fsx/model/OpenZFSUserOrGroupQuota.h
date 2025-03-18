@@ -34,7 +34,7 @@ namespace Model
   class OpenZFSUserOrGroupQuota
   {
   public:
-    AWS_FSX_API OpenZFSUserOrGroupQuota();
+    AWS_FSX_API OpenZFSUserOrGroupQuota() = default;
     AWS_FSX_API OpenZFSUserOrGroupQuota(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OpenZFSUserOrGroupQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,17 @@ namespace Model
     /**
      * <p>Specifies whether the quota applies to a user or group.</p>
      */
-    inline const OpenZFSQuotaType& GetType() const{ return m_type; }
+    inline OpenZFSQuotaType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OpenZFSQuotaType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OpenZFSQuotaType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline OpenZFSUserOrGroupQuota& WithType(const OpenZFSQuotaType& value) { SetType(value); return *this;}
-    inline OpenZFSUserOrGroupQuota& WithType(OpenZFSQuotaType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OpenZFSQuotaType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline OpenZFSUserOrGroupQuota& WithType(OpenZFSQuotaType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user or group that the quota applies to.</p>
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline OpenZFSUserOrGroupQuota& WithId(int value) { SetId(value); return *this;}
@@ -66,20 +64,20 @@ namespace Model
     /**
      * <p>The user or group's storage quota, in gibibytes (GiB).</p>
      */
-    inline int GetStorageCapacityQuotaGiB() const{ return m_storageCapacityQuotaGiB; }
+    inline int GetStorageCapacityQuotaGiB() const { return m_storageCapacityQuotaGiB; }
     inline bool StorageCapacityQuotaGiBHasBeenSet() const { return m_storageCapacityQuotaGiBHasBeenSet; }
     inline void SetStorageCapacityQuotaGiB(int value) { m_storageCapacityQuotaGiBHasBeenSet = true; m_storageCapacityQuotaGiB = value; }
     inline OpenZFSUserOrGroupQuota& WithStorageCapacityQuotaGiB(int value) { SetStorageCapacityQuotaGiB(value); return *this;}
     ///@}
   private:
 
-    OpenZFSQuotaType m_type;
+    OpenZFSQuotaType m_type{OpenZFSQuotaType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
-    int m_storageCapacityQuotaGiB;
+    int m_storageCapacityQuotaGiB{0};
     bool m_storageCapacityQuotaGiBHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class RestoreStatus
   {
   public:
-    AWS_S3CRT_API RestoreStatus();
+    AWS_S3CRT_API RestoreStatus() = default;
     AWS_S3CRT_API RestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API RestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,7 +55,7 @@ namespace Model
      * RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p> <p>If the object hasn't
      * been restored, there is no header response.</p>
      */
-    inline bool GetIsRestoreInProgress() const{ return m_isRestoreInProgress; }
+    inline bool GetIsRestoreInProgress() const { return m_isRestoreInProgress; }
     inline bool IsRestoreInProgressHasBeenSet() const { return m_isRestoreInProgressHasBeenSet; }
     inline void SetIsRestoreInProgress(bool value) { m_isRestoreInProgressHasBeenSet = true; m_isRestoreInProgress = value; }
     inline RestoreStatus& WithIsRestoreInProgress(bool value) { SetIsRestoreInProgress(value); return *this;}
@@ -68,19 +68,19 @@ namespace Model
      * <code>x-amz-optional-object-attributes: IsRestoreInProgress="false",
      * RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetRestoreExpiryDate() const{ return m_restoreExpiryDate; }
+    inline const Aws::Utils::DateTime& GetRestoreExpiryDate() const { return m_restoreExpiryDate; }
     inline bool RestoreExpiryDateHasBeenSet() const { return m_restoreExpiryDateHasBeenSet; }
-    inline void SetRestoreExpiryDate(const Aws::Utils::DateTime& value) { m_restoreExpiryDateHasBeenSet = true; m_restoreExpiryDate = value; }
-    inline void SetRestoreExpiryDate(Aws::Utils::DateTime&& value) { m_restoreExpiryDateHasBeenSet = true; m_restoreExpiryDate = std::move(value); }
-    inline RestoreStatus& WithRestoreExpiryDate(const Aws::Utils::DateTime& value) { SetRestoreExpiryDate(value); return *this;}
-    inline RestoreStatus& WithRestoreExpiryDate(Aws::Utils::DateTime&& value) { SetRestoreExpiryDate(std::move(value)); return *this;}
+    template<typename RestoreExpiryDateT = Aws::Utils::DateTime>
+    void SetRestoreExpiryDate(RestoreExpiryDateT&& value) { m_restoreExpiryDateHasBeenSet = true; m_restoreExpiryDate = std::forward<RestoreExpiryDateT>(value); }
+    template<typename RestoreExpiryDateT = Aws::Utils::DateTime>
+    RestoreStatus& WithRestoreExpiryDate(RestoreExpiryDateT&& value) { SetRestoreExpiryDate(std::forward<RestoreExpiryDateT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isRestoreInProgress;
+    bool m_isRestoreInProgress{false};
     bool m_isRestoreInProgressHasBeenSet = false;
 
-    Aws::Utils::DateTime m_restoreExpiryDate;
+    Aws::Utils::DateTime m_restoreExpiryDate{};
     bool m_restoreExpiryDateHasBeenSet = false;
   };
 

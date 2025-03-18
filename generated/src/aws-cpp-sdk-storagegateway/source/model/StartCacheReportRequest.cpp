@@ -12,19 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCacheReportRequest::StartCacheReportRequest() : 
-    m_fileShareARNHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false),
-    m_vPCEndpointDNSNameHasBeenSet(false),
-    m_inclusionFiltersHasBeenSet(false),
-    m_exclusionFiltersHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartCacheReportRequest::SerializePayload() const
 {
   JsonValue payload;

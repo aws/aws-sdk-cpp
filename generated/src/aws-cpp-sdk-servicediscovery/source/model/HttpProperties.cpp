@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HttpProperties::HttpProperties() : 
-    m_httpNameHasBeenSet(false)
-{
-}
-
 HttpProperties::HttpProperties(JsonView jsonValue)
-  : HttpProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpProperties& HttpProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HttpName"))
   {
     m_httpName = jsonValue.GetString("HttpName");
-
     m_httpNameHasBeenSet = true;
   }
-
   return *this;
 }
 

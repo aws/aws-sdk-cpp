@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualTableQuerySort::PluginVisualTableQuerySort() : 
-    m_rowSortHasBeenSet(false),
-    m_itemsLimitConfigurationHasBeenSet(false)
-{
-}
-
 PluginVisualTableQuerySort::PluginVisualTableQuerySort(JsonView jsonValue)
-  : PluginVisualTableQuerySort()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ PluginVisualTableQuerySort& PluginVisualTableQuerySort::operator =(JsonView json
     }
     m_rowSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemsLimitConfiguration"))
   {
     m_itemsLimitConfiguration = jsonValue.GetObject("ItemsLimitConfiguration");
-
     m_itemsLimitConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

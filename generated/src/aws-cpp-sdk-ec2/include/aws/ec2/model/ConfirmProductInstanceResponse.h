@@ -28,7 +28,7 @@ namespace Model
   class ConfirmProductInstanceResponse
   {
   public:
-    AWS_EC2_API ConfirmProductInstanceResponse();
+    AWS_EC2_API ConfirmProductInstanceResponse() = default;
     AWS_EC2_API ConfirmProductInstanceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ConfirmProductInstanceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,8 +39,8 @@ namespace Model
      * product code is owned by the requester and associated with the specified
      * instance.</p>
      */
-    inline bool GetReturn() const{ return m_return; }
-    inline void SetReturn(bool value) { m_return = value; }
+    inline bool GetReturn() const { return m_return; }
+    inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }
     inline ConfirmProductInstanceResponse& WithReturn(bool value) { SetReturn(value); return *this;}
     ///@}
 
@@ -49,30 +49,31 @@ namespace Model
      * <p>The Amazon Web Services account ID of the instance owner. This is only
      * present if the product code is attached to the instance.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
-    inline ConfirmProductInstanceResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline ConfirmProductInstanceResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline ConfirmProductInstanceResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    ConfirmProductInstanceResponse& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ConfirmProductInstanceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ConfirmProductInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ConfirmProductInstanceResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_return;
+    bool m_return{false};
+    bool m_returnHasBeenSet = false;
 
     Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

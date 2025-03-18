@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-PropertygraphSummaryValueMap::PropertygraphSummaryValueMap() : 
-    m_versionHasBeenSet(false),
-    m_lastStatisticsComputationTimeHasBeenSet(false),
-    m_graphSummaryHasBeenSet(false)
-{
-}
-
 PropertygraphSummaryValueMap::PropertygraphSummaryValueMap(JsonView jsonValue)
-  : PropertygraphSummaryValueMap()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PropertygraphSummaryValueMap& PropertygraphSummaryValueMap::operator =(JsonView 
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatisticsComputationTime"))
   {
     m_lastStatisticsComputationTime = jsonValue.GetString("lastStatisticsComputationTime");
-
     m_lastStatisticsComputationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("graphSummary"))
   {
     m_graphSummary = jsonValue.GetObject("graphSummary");
-
     m_graphSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

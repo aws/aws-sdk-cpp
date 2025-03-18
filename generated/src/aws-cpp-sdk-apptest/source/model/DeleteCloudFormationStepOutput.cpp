@@ -18,10 +18,6 @@ namespace AppTest
 namespace Model
 {
 
-DeleteCloudFormationStepOutput::DeleteCloudFormationStepOutput()
-{
-}
-
 DeleteCloudFormationStepOutput::DeleteCloudFormationStepOutput(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EFSFileSystem::EFSFileSystem() : 
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 EFSFileSystem::EFSFileSystem(JsonView jsonValue)
-  : EFSFileSystem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EFSFileSystem& EFSFileSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

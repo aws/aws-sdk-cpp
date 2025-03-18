@@ -35,7 +35,7 @@ namespace Model
   class CreateTopicReviewedAnswer
   {
   public:
-    AWS_QUICKSIGHT_API CreateTopicReviewedAnswer();
+    AWS_QUICKSIGHT_API CreateTopicReviewedAnswer() = default;
     AWS_QUICKSIGHT_API CreateTopicReviewedAnswer(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CreateTopicReviewedAnswer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,48 @@ namespace Model
     /**
      * <p>The answer ID for the <code>CreateTopicReviewedAnswer</code>.</p>
      */
-    inline const Aws::String& GetAnswerId() const{ return m_answerId; }
+    inline const Aws::String& GetAnswerId() const { return m_answerId; }
     inline bool AnswerIdHasBeenSet() const { return m_answerIdHasBeenSet; }
-    inline void SetAnswerId(const Aws::String& value) { m_answerIdHasBeenSet = true; m_answerId = value; }
-    inline void SetAnswerId(Aws::String&& value) { m_answerIdHasBeenSet = true; m_answerId = std::move(value); }
-    inline void SetAnswerId(const char* value) { m_answerIdHasBeenSet = true; m_answerId.assign(value); }
-    inline CreateTopicReviewedAnswer& WithAnswerId(const Aws::String& value) { SetAnswerId(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithAnswerId(Aws::String&& value) { SetAnswerId(std::move(value)); return *this;}
-    inline CreateTopicReviewedAnswer& WithAnswerId(const char* value) { SetAnswerId(value); return *this;}
+    template<typename AnswerIdT = Aws::String>
+    void SetAnswerId(AnswerIdT&& value) { m_answerIdHasBeenSet = true; m_answerId = std::forward<AnswerIdT>(value); }
+    template<typename AnswerIdT = Aws::String>
+    CreateTopicReviewedAnswer& WithAnswerId(AnswerIdT&& value) { SetAnswerId(std::forward<AnswerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Dataset arn for the <code>CreateTopicReviewedAnswer</code>.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline CreateTopicReviewedAnswer& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline CreateTopicReviewedAnswer& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    CreateTopicReviewedAnswer& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Question to be created.</p>
      */
-    inline const Aws::String& GetQuestion() const{ return m_question; }
+    inline const Aws::String& GetQuestion() const { return m_question; }
     inline bool QuestionHasBeenSet() const { return m_questionHasBeenSet; }
-    inline void SetQuestion(const Aws::String& value) { m_questionHasBeenSet = true; m_question = value; }
-    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = std::move(value); }
-    inline void SetQuestion(const char* value) { m_questionHasBeenSet = true; m_question.assign(value); }
-    inline CreateTopicReviewedAnswer& WithQuestion(const Aws::String& value) { SetQuestion(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithQuestion(Aws::String&& value) { SetQuestion(std::move(value)); return *this;}
-    inline CreateTopicReviewedAnswer& WithQuestion(const char* value) { SetQuestion(value); return *this;}
+    template<typename QuestionT = Aws::String>
+    void SetQuestion(QuestionT&& value) { m_questionHasBeenSet = true; m_question = std::forward<QuestionT>(value); }
+    template<typename QuestionT = Aws::String>
+    CreateTopicReviewedAnswer& WithQuestion(QuestionT&& value) { SetQuestion(std::forward<QuestionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Mir for the <code>CreateTopicReviewedAnswer</code>.</p>
      */
-    inline const TopicIR& GetMir() const{ return m_mir; }
+    inline const TopicIR& GetMir() const { return m_mir; }
     inline bool MirHasBeenSet() const { return m_mirHasBeenSet; }
-    inline void SetMir(const TopicIR& value) { m_mirHasBeenSet = true; m_mir = value; }
-    inline void SetMir(TopicIR&& value) { m_mirHasBeenSet = true; m_mir = std::move(value); }
-    inline CreateTopicReviewedAnswer& WithMir(const TopicIR& value) { SetMir(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithMir(TopicIR&& value) { SetMir(std::move(value)); return *this;}
+    template<typename MirT = TopicIR>
+    void SetMir(MirT&& value) { m_mirHasBeenSet = true; m_mir = std::forward<MirT>(value); }
+    template<typename MirT = TopicIR>
+    CreateTopicReviewedAnswer& WithMir(MirT&& value) { SetMir(std::forward<MirT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,24 +94,24 @@ namespace Model
      * <p>The <code>PrimaryVisual</code> for the
      * <code>CreateTopicReviewedAnswer</code>.</p>
      */
-    inline const TopicVisual& GetPrimaryVisual() const{ return m_primaryVisual; }
+    inline const TopicVisual& GetPrimaryVisual() const { return m_primaryVisual; }
     inline bool PrimaryVisualHasBeenSet() const { return m_primaryVisualHasBeenSet; }
-    inline void SetPrimaryVisual(const TopicVisual& value) { m_primaryVisualHasBeenSet = true; m_primaryVisual = value; }
-    inline void SetPrimaryVisual(TopicVisual&& value) { m_primaryVisualHasBeenSet = true; m_primaryVisual = std::move(value); }
-    inline CreateTopicReviewedAnswer& WithPrimaryVisual(const TopicVisual& value) { SetPrimaryVisual(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithPrimaryVisual(TopicVisual&& value) { SetPrimaryVisual(std::move(value)); return *this;}
+    template<typename PrimaryVisualT = TopicVisual>
+    void SetPrimaryVisual(PrimaryVisualT&& value) { m_primaryVisualHasBeenSet = true; m_primaryVisual = std::forward<PrimaryVisualT>(value); }
+    template<typename PrimaryVisualT = TopicVisual>
+    CreateTopicReviewedAnswer& WithPrimaryVisual(PrimaryVisualT&& value) { SetPrimaryVisual(std::forward<PrimaryVisualT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The template for the <code>CreateTopicReviewedAnswer</code>.</p>
      */
-    inline const TopicTemplate& GetTemplate() const{ return m_template; }
+    inline const TopicTemplate& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const TopicTemplate& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(TopicTemplate&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline CreateTopicReviewedAnswer& WithTemplate(const TopicTemplate& value) { SetTemplate(value); return *this;}
-    inline CreateTopicReviewedAnswer& WithTemplate(TopicTemplate&& value) { SetTemplate(std::move(value)); return *this;}
+    template<typename TemplateT = TopicTemplate>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = TopicTemplate>
+    CreateTopicReviewedAnswer& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
   private:
 

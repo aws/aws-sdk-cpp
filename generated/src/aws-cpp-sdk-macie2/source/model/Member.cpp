@@ -18,22 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Member::Member() : 
-    m_accountIdHasBeenSet(false),
-    m_administratorAccountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_masterAccountIdHasBeenSet(false),
-    m_relationshipStatus(RelationshipStatus::NOT_SET),
-    m_relationshipStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 Member::Member(JsonView jsonValue)
-  : Member()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Member& Member::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("administratorAccountId"))
   {
     m_administratorAccountId = jsonValue.GetString("administratorAccountId");
-
     m_administratorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitedAt"))
   {
     m_invitedAt = jsonValue.GetString("invitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("masterAccountId"))
   {
     m_masterAccountId = jsonValue.GetString("masterAccountId");
-
     m_masterAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = RelationshipStatusMapper::GetRelationshipStatusForName(jsonValue.GetString("relationshipStatus"));
-
     m_relationshipStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -98,14 +69,11 @@ Member& Member::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeJobLogItemsRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API DescribeJobLogItemsRequest();
+    AWS_MGN_API DescribeJobLogItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,35 +36,31 @@ namespace Model
     /**
      * <p>Request to describe Job log Account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline DescribeJobLogItemsRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline DescribeJobLogItemsRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline DescribeJobLogItemsRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    DescribeJobLogItemsRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request to describe Job log job ID.</p>
      */
-    inline const Aws::String& GetJobID() const{ return m_jobID; }
+    inline const Aws::String& GetJobID() const { return m_jobID; }
     inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-    inline void SetJobID(const Aws::String& value) { m_jobIDHasBeenSet = true; m_jobID = value; }
-    inline void SetJobID(Aws::String&& value) { m_jobIDHasBeenSet = true; m_jobID = std::move(value); }
-    inline void SetJobID(const char* value) { m_jobIDHasBeenSet = true; m_jobID.assign(value); }
-    inline DescribeJobLogItemsRequest& WithJobID(const Aws::String& value) { SetJobID(value); return *this;}
-    inline DescribeJobLogItemsRequest& WithJobID(Aws::String&& value) { SetJobID(std::move(value)); return *this;}
-    inline DescribeJobLogItemsRequest& WithJobID(const char* value) { SetJobID(value); return *this;}
+    template<typename JobIDT = Aws::String>
+    void SetJobID(JobIDT&& value) { m_jobIDHasBeenSet = true; m_jobID = std::forward<JobIDT>(value); }
+    template<typename JobIDT = Aws::String>
+    DescribeJobLogItemsRequest& WithJobID(JobIDT&& value) { SetJobID(std::forward<JobIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request to describe Job log item maximum results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeJobLogItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -74,14 +70,12 @@ namespace Model
     /**
      * <p>Request to describe Job log next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeJobLogItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeJobLogItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeJobLogItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeJobLogItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -91,7 +85,7 @@ namespace Model
     Aws::String m_jobID;
     bool m_jobIDHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

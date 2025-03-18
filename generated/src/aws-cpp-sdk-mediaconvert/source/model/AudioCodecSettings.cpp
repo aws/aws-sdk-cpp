@@ -18,25 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioCodecSettings::AudioCodecSettings() : 
-    m_aacSettingsHasBeenSet(false),
-    m_ac3SettingsHasBeenSet(false),
-    m_aiffSettingsHasBeenSet(false),
-    m_codec(AudioCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_eac3AtmosSettingsHasBeenSet(false),
-    m_eac3SettingsHasBeenSet(false),
-    m_flacSettingsHasBeenSet(false),
-    m_mp2SettingsHasBeenSet(false),
-    m_mp3SettingsHasBeenSet(false),
-    m_opusSettingsHasBeenSet(false),
-    m_vorbisSettingsHasBeenSet(false),
-    m_wavSettingsHasBeenSet(false)
-{
-}
-
 AudioCodecSettings::AudioCodecSettings(JsonView jsonValue)
-  : AudioCodecSettings()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aacSettings"))
   {
     m_aacSettings = jsonValue.GetObject("aacSettings");
-
     m_aacSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ac3Settings"))
   {
     m_ac3Settings = jsonValue.GetObject("ac3Settings");
-
     m_ac3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aiffSettings"))
   {
     m_aiffSettings = jsonValue.GetObject("aiffSettings");
-
     m_aiffSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = AudioCodecMapper::GetAudioCodecForName(jsonValue.GetString("codec"));
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eac3AtmosSettings"))
   {
     m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
-
     m_eac3AtmosSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eac3Settings"))
   {
     m_eac3Settings = jsonValue.GetObject("eac3Settings");
-
     m_eac3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flacSettings"))
   {
     m_flacSettings = jsonValue.GetObject("flacSettings");
-
     m_flacSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mp2Settings"))
   {
     m_mp2Settings = jsonValue.GetObject("mp2Settings");
-
     m_mp2SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mp3Settings"))
   {
     m_mp3Settings = jsonValue.GetObject("mp3Settings");
-
     m_mp3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("opusSettings"))
   {
     m_opusSettings = jsonValue.GetObject("opusSettings");
-
     m_opusSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vorbisSettings"))
   {
     m_vorbisSettings = jsonValue.GetObject("vorbisSettings");
-
     m_vorbisSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wavSettings"))
   {
     m_wavSettings = jsonValue.GetObject("wavSettings");
-
     m_wavSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class GetDeviceResult
   {
   public:
-    AWS_BRAKET_API GetDeviceResult();
+    AWS_BRAKET_API GetDeviceResult() = default;
     AWS_BRAKET_API GetDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BRAKET_API GetDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,116 +40,110 @@ namespace Model
     /**
      * <p>The ARN of the device.</p>
      */
-    inline const Aws::String& GetDeviceArn() const{ return m_deviceArn; }
-    inline void SetDeviceArn(const Aws::String& value) { m_deviceArn = value; }
-    inline void SetDeviceArn(Aws::String&& value) { m_deviceArn = std::move(value); }
-    inline void SetDeviceArn(const char* value) { m_deviceArn.assign(value); }
-    inline GetDeviceResult& WithDeviceArn(const Aws::String& value) { SetDeviceArn(value); return *this;}
-    inline GetDeviceResult& WithDeviceArn(Aws::String&& value) { SetDeviceArn(std::move(value)); return *this;}
-    inline GetDeviceResult& WithDeviceArn(const char* value) { SetDeviceArn(value); return *this;}
+    inline const Aws::String& GetDeviceArn() const { return m_deviceArn; }
+    template<typename DeviceArnT = Aws::String>
+    void SetDeviceArn(DeviceArnT&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::forward<DeviceArnT>(value); }
+    template<typename DeviceArnT = Aws::String>
+    GetDeviceResult& WithDeviceArn(DeviceArnT&& value) { SetDeviceArn(std::forward<DeviceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the capabilities of the device.</p>
      */
-    inline const Aws::String& GetDeviceCapabilities() const{ return m_deviceCapabilities; }
-    inline void SetDeviceCapabilities(const Aws::String& value) { m_deviceCapabilities = value; }
-    inline void SetDeviceCapabilities(Aws::String&& value) { m_deviceCapabilities = std::move(value); }
-    inline void SetDeviceCapabilities(const char* value) { m_deviceCapabilities.assign(value); }
-    inline GetDeviceResult& WithDeviceCapabilities(const Aws::String& value) { SetDeviceCapabilities(value); return *this;}
-    inline GetDeviceResult& WithDeviceCapabilities(Aws::String&& value) { SetDeviceCapabilities(std::move(value)); return *this;}
-    inline GetDeviceResult& WithDeviceCapabilities(const char* value) { SetDeviceCapabilities(value); return *this;}
+    inline const Aws::String& GetDeviceCapabilities() const { return m_deviceCapabilities; }
+    template<typename DeviceCapabilitiesT = Aws::String>
+    void SetDeviceCapabilities(DeviceCapabilitiesT&& value) { m_deviceCapabilitiesHasBeenSet = true; m_deviceCapabilities = std::forward<DeviceCapabilitiesT>(value); }
+    template<typename DeviceCapabilitiesT = Aws::String>
+    GetDeviceResult& WithDeviceCapabilities(DeviceCapabilitiesT&& value) { SetDeviceCapabilities(std::forward<DeviceCapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the device.</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceName.assign(value); }
-    inline GetDeviceResult& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline GetDeviceResult& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline GetDeviceResult& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    GetDeviceResult& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of information about tasks and jobs queued on a device.</p>
      */
-    inline const Aws::Vector<DeviceQueueInfo>& GetDeviceQueueInfo() const{ return m_deviceQueueInfo; }
-    inline void SetDeviceQueueInfo(const Aws::Vector<DeviceQueueInfo>& value) { m_deviceQueueInfo = value; }
-    inline void SetDeviceQueueInfo(Aws::Vector<DeviceQueueInfo>&& value) { m_deviceQueueInfo = std::move(value); }
-    inline GetDeviceResult& WithDeviceQueueInfo(const Aws::Vector<DeviceQueueInfo>& value) { SetDeviceQueueInfo(value); return *this;}
-    inline GetDeviceResult& WithDeviceQueueInfo(Aws::Vector<DeviceQueueInfo>&& value) { SetDeviceQueueInfo(std::move(value)); return *this;}
-    inline GetDeviceResult& AddDeviceQueueInfo(const DeviceQueueInfo& value) { m_deviceQueueInfo.push_back(value); return *this; }
-    inline GetDeviceResult& AddDeviceQueueInfo(DeviceQueueInfo&& value) { m_deviceQueueInfo.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeviceQueueInfo>& GetDeviceQueueInfo() const { return m_deviceQueueInfo; }
+    template<typename DeviceQueueInfoT = Aws::Vector<DeviceQueueInfo>>
+    void SetDeviceQueueInfo(DeviceQueueInfoT&& value) { m_deviceQueueInfoHasBeenSet = true; m_deviceQueueInfo = std::forward<DeviceQueueInfoT>(value); }
+    template<typename DeviceQueueInfoT = Aws::Vector<DeviceQueueInfo>>
+    GetDeviceResult& WithDeviceQueueInfo(DeviceQueueInfoT&& value) { SetDeviceQueueInfo(std::forward<DeviceQueueInfoT>(value)); return *this;}
+    template<typename DeviceQueueInfoT = DeviceQueueInfo>
+    GetDeviceResult& AddDeviceQueueInfo(DeviceQueueInfoT&& value) { m_deviceQueueInfoHasBeenSet = true; m_deviceQueueInfo.emplace_back(std::forward<DeviceQueueInfoT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the device.</p>
      */
-    inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
-    inline void SetDeviceStatus(const DeviceStatus& value) { m_deviceStatus = value; }
-    inline void SetDeviceStatus(DeviceStatus&& value) { m_deviceStatus = std::move(value); }
-    inline GetDeviceResult& WithDeviceStatus(const DeviceStatus& value) { SetDeviceStatus(value); return *this;}
-    inline GetDeviceResult& WithDeviceStatus(DeviceStatus&& value) { SetDeviceStatus(std::move(value)); return *this;}
+    inline DeviceStatus GetDeviceStatus() const { return m_deviceStatus; }
+    inline void SetDeviceStatus(DeviceStatus value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
+    inline GetDeviceResult& WithDeviceStatus(DeviceStatus value) { SetDeviceStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the device.</p>
      */
-    inline const DeviceType& GetDeviceType() const{ return m_deviceType; }
-    inline void SetDeviceType(const DeviceType& value) { m_deviceType = value; }
-    inline void SetDeviceType(DeviceType&& value) { m_deviceType = std::move(value); }
-    inline GetDeviceResult& WithDeviceType(const DeviceType& value) { SetDeviceType(value); return *this;}
-    inline GetDeviceResult& WithDeviceType(DeviceType&& value) { SetDeviceType(std::move(value)); return *this;}
+    inline DeviceType GetDeviceType() const { return m_deviceType; }
+    inline void SetDeviceType(DeviceType value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
+    inline GetDeviceResult& WithDeviceType(DeviceType value) { SetDeviceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the partner company for the device.</p>
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
-    inline void SetProviderName(const Aws::String& value) { m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerName.assign(value); }
-    inline GetDeviceResult& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline GetDeviceResult& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline GetDeviceResult& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    GetDeviceResult& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceArn;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceCapabilities;
+    bool m_deviceCapabilitiesHasBeenSet = false;
 
     Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::Vector<DeviceQueueInfo> m_deviceQueueInfo;
+    bool m_deviceQueueInfoHasBeenSet = false;
 
-    DeviceStatus m_deviceStatus;
+    DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
+    bool m_deviceStatusHasBeenSet = false;
 
-    DeviceType m_deviceType;
+    DeviceType m_deviceType{DeviceType::NOT_SET};
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_providerName;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

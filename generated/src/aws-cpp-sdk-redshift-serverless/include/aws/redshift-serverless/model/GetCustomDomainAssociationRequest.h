@@ -21,7 +21,7 @@ namespace Model
   class GetCustomDomainAssociationRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetCustomDomainAssociationRequest();
+    AWS_REDSHIFTSERVERLESS_API GetCustomDomainAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The custom domain name associated with the workgroup.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-    inline GetCustomDomainAssociationRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline GetCustomDomainAssociationRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline GetCustomDomainAssociationRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    GetCustomDomainAssociationRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workgroup associated with the database.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline GetCustomDomainAssociationRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline GetCustomDomainAssociationRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline GetCustomDomainAssociationRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    GetCustomDomainAssociationRequest& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
   private:
 

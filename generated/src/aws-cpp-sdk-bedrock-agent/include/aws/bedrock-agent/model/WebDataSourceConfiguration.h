@@ -33,7 +33,7 @@ namespace Model
   class WebDataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API WebDataSourceConfiguration();
+    AWS_BEDROCKAGENT_API WebDataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API WebDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API WebDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The Web Crawler configuration details for the web data source.</p>
      */
-    inline const WebCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
+    inline const WebCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    inline void SetCrawlerConfiguration(const WebCrawlerConfiguration& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = value; }
-    inline void SetCrawlerConfiguration(WebCrawlerConfiguration&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::move(value); }
-    inline WebDataSourceConfiguration& WithCrawlerConfiguration(const WebCrawlerConfiguration& value) { SetCrawlerConfiguration(value); return *this;}
-    inline WebDataSourceConfiguration& WithCrawlerConfiguration(WebCrawlerConfiguration&& value) { SetCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = WebCrawlerConfiguration>
+    WebDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source configuration details for the web data source.</p>
      */
-    inline const WebSourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
+    inline const WebSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    inline void SetSourceConfiguration(const WebSourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-    inline void SetSourceConfiguration(WebSourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-    inline WebDataSourceConfiguration& WithSourceConfiguration(const WebSourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-    inline WebDataSourceConfiguration& WithSourceConfiguration(WebSourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    template<typename SourceConfigurationT = WebSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = WebSourceConfiguration>
+    WebDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

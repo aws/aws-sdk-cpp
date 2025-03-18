@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-MissingParameter::MissingParameter() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 MissingParameter::MissingParameter(const XmlNode& xmlNode)
-  : MissingParameter()
 {
   *this = xmlNode;
 }

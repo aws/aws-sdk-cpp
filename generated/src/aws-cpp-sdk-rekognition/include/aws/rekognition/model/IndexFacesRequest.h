@@ -25,7 +25,7 @@ namespace Model
   class IndexFacesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API IndexFacesRequest();
+    AWS_REKOGNITION_API IndexFacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline IndexFacesRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline IndexFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline IndexFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    IndexFacesRequest& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline IndexFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline IndexFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    IndexFacesRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
-    inline const Aws::String& GetExternalImageId() const{ return m_externalImageId; }
+    inline const Aws::String& GetExternalImageId() const { return m_externalImageId; }
     inline bool ExternalImageIdHasBeenSet() const { return m_externalImageIdHasBeenSet; }
-    inline void SetExternalImageId(const Aws::String& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = value; }
-    inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = std::move(value); }
-    inline void SetExternalImageId(const char* value) { m_externalImageIdHasBeenSet = true; m_externalImageId.assign(value); }
-    inline IndexFacesRequest& WithExternalImageId(const Aws::String& value) { SetExternalImageId(value); return *this;}
-    inline IndexFacesRequest& WithExternalImageId(Aws::String&& value) { SetExternalImageId(std::move(value)); return *this;}
-    inline IndexFacesRequest& WithExternalImageId(const char* value) { SetExternalImageId(value); return *this;}
+    template<typename ExternalImageIdT = Aws::String>
+    void SetExternalImageId(ExternalImageIdT&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = std::forward<ExternalImageIdT>(value); }
+    template<typename ExternalImageIdT = Aws::String>
+    IndexFacesRequest& WithExternalImageId(ExternalImageIdT&& value) { SetExternalImageId(std::forward<ExternalImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +93,13 @@ namespace Model
      * uses a logical AND operator to determine which attributes to return (in this
      * case, all attributes). </p>
      */
-    inline const Aws::Vector<Attribute>& GetDetectionAttributes() const{ return m_detectionAttributes; }
+    inline const Aws::Vector<Attribute>& GetDetectionAttributes() const { return m_detectionAttributes; }
     inline bool DetectionAttributesHasBeenSet() const { return m_detectionAttributesHasBeenSet; }
-    inline void SetDetectionAttributes(const Aws::Vector<Attribute>& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = value; }
-    inline void SetDetectionAttributes(Aws::Vector<Attribute>&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = std::move(value); }
-    inline IndexFacesRequest& WithDetectionAttributes(const Aws::Vector<Attribute>& value) { SetDetectionAttributes(value); return *this;}
-    inline IndexFacesRequest& WithDetectionAttributes(Aws::Vector<Attribute>&& value) { SetDetectionAttributes(std::move(value)); return *this;}
-    inline IndexFacesRequest& AddDetectionAttributes(const Attribute& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(value); return *this; }
-    inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(std::move(value)); return *this; }
+    template<typename DetectionAttributesT = Aws::Vector<Attribute>>
+    void SetDetectionAttributes(DetectionAttributesT&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = std::forward<DetectionAttributesT>(value); }
+    template<typename DetectionAttributesT = Aws::Vector<Attribute>>
+    IndexFacesRequest& WithDetectionAttributes(DetectionAttributesT&& value) { SetDetectionAttributes(std::forward<DetectionAttributesT>(value)); return *this;}
+    inline IndexFacesRequest& AddDetectionAttributes(Attribute value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -123,7 +118,7 @@ namespace Model
      * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
      * with a collection associated with any version of the face model.</p>
      */
-    inline int GetMaxFaces() const{ return m_maxFaces; }
+    inline int GetMaxFaces() const { return m_maxFaces; }
     inline bool MaxFacesHasBeenSet() const { return m_maxFacesHasBeenSet; }
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
     inline IndexFacesRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
@@ -143,12 +138,10 @@ namespace Model
      * </p> <p>To use quality filtering, the collection you are using must be
      * associated with version 3 of the face model or higher.</p>
      */
-    inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
+    inline QualityFilter GetQualityFilter() const { return m_qualityFilter; }
     inline bool QualityFilterHasBeenSet() const { return m_qualityFilterHasBeenSet; }
-    inline void SetQualityFilter(const QualityFilter& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
-    inline void SetQualityFilter(QualityFilter&& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = std::move(value); }
-    inline IndexFacesRequest& WithQualityFilter(const QualityFilter& value) { SetQualityFilter(value); return *this;}
-    inline IndexFacesRequest& WithQualityFilter(QualityFilter&& value) { SetQualityFilter(std::move(value)); return *this;}
+    inline void SetQualityFilter(QualityFilter value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
+    inline IndexFacesRequest& WithQualityFilter(QualityFilter value) { SetQualityFilter(value); return *this;}
     ///@}
   private:
 
@@ -164,10 +157,10 @@ namespace Model
     Aws::Vector<Attribute> m_detectionAttributes;
     bool m_detectionAttributesHasBeenSet = false;
 
-    int m_maxFaces;
+    int m_maxFaces{0};
     bool m_maxFacesHasBeenSet = false;
 
-    QualityFilter m_qualityFilter;
+    QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
     bool m_qualityFilterHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGlossaryResult::GetGlossaryResult() : 
-    m_status(GlossaryStatus::NOT_SET)
-{
-}
-
 GetGlossaryResult::GetGlossaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetGlossaryResult()
 {
   *this = result;
 }
@@ -34,69 +28,60 @@ GetGlossaryResult& GetGlossaryResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
+    m_owningProjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = GlossaryStatusMapper::GetGlossaryStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
+    m_updatedByHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

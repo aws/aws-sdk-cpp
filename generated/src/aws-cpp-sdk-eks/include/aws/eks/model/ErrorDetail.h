@@ -34,7 +34,7 @@ namespace Model
   class ErrorDetail
   {
   public:
-    AWS_EKS_API ErrorDetail();
+    AWS_EKS_API ErrorDetail() = default;
     AWS_EKS_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,26 +55,22 @@ namespace Model
      * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
      * </li> </ul>
      */
-    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline ErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline ErrorDetail& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-    inline ErrorDetail& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline ErrorDetail& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A more complete description of the error.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ErrorDetail& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ErrorDetail& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ErrorDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ErrorDetail& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,19 +78,18 @@ namespace Model
      * <p>An optional field that contains the resource IDs associated with the
      * error.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline ErrorDetail& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline ErrorDetail& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline ErrorDetail& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline ErrorDetail& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline ErrorDetail& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    ErrorDetail& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    ErrorDetail& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
-    ErrorCode m_errorCode;
+    ErrorCode m_errorCode{ErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

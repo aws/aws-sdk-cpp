@@ -18,24 +18,7 @@ namespace FMS
 namespace Model
 {
 
-PolicySummary::PolicySummary() : 
-    m_policyArnHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_securityServiceType(SecurityServiceType::NOT_SET),
-    m_securityServiceTypeHasBeenSet(false),
-    m_remediationEnabled(false),
-    m_remediationEnabledHasBeenSet(false),
-    m_deleteUnusedFMManagedResources(false),
-    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
-    m_policyStatus(CustomerPolicyStatus::NOT_SET),
-    m_policyStatusHasBeenSet(false)
-{
-}
-
 PolicySummary::PolicySummary(JsonView jsonValue)
-  : PolicySummary()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ PolicySummary& PolicySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityServiceType"))
   {
     m_securityServiceType = SecurityServiceTypeMapper::GetSecurityServiceTypeForName(jsonValue.GetString("SecurityServiceType"));
-
     m_securityServiceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemediationEnabled"))
   {
     m_remediationEnabled = jsonValue.GetBool("RemediationEnabled");
-
     m_remediationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteUnusedFMManagedResources"))
   {
     m_deleteUnusedFMManagedResources = jsonValue.GetBool("DeleteUnusedFMManagedResources");
-
     m_deleteUnusedFMManagedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyStatus"))
   {
     m_policyStatus = CustomerPolicyStatusMapper::GetCustomerPolicyStatusForName(jsonValue.GetString("PolicyStatus"));
-
     m_policyStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

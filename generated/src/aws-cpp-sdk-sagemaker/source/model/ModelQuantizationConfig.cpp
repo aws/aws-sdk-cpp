@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelQuantizationConfig::ModelQuantizationConfig() : 
-    m_imageHasBeenSet(false),
-    m_overrideEnvironmentHasBeenSet(false)
-{
-}
-
 ModelQuantizationConfig::ModelQuantizationConfig(JsonView jsonValue)
-  : ModelQuantizationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ModelQuantizationConfig& ModelQuantizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideEnvironment"))
   {
     Aws::Map<Aws::String, JsonView> overrideEnvironmentJsonMap = jsonValue.GetObject("OverrideEnvironment").GetAllObjects();
@@ -48,7 +39,6 @@ ModelQuantizationConfig& ModelQuantizationConfig::operator =(JsonView jsonValue)
     }
     m_overrideEnvironmentHasBeenSet = true;
   }
-
   return *this;
 }
 

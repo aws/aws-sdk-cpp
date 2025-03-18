@@ -21,7 +21,7 @@ namespace Model
   class DescribeDomainRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeDomainRequest();
+    AWS_SAGEMAKER_API DescribeDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The domain ID.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline DescribeDomainRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DescribeDomainRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DescribeDomainRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DescribeDomainRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
   private:
 

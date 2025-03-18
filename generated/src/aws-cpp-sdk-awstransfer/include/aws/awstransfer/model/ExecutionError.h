@@ -33,7 +33,7 @@ namespace Model
   class ExecutionError
   {
   public:
-    AWS_TRANSFER_API ExecutionError();
+    AWS_TRANSFER_API ExecutionError() = default;
     AWS_TRANSFER_API ExecutionError(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ExecutionError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * </li> <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution
      * refill rate of one workflow per second.</p> </li> </ul>
      */
-    inline const ExecutionErrorType& GetType() const{ return m_type; }
+    inline ExecutionErrorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ExecutionErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ExecutionErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ExecutionError& WithType(const ExecutionErrorType& value) { SetType(value); return *this;}
-    inline ExecutionError& WithType(ExecutionErrorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ExecutionErrorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ExecutionError& WithType(ExecutionErrorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +70,16 @@ namespace Model
      * <p>Specifies the descriptive message that corresponds to the
      * <code>ErrorType</code>.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ExecutionError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ExecutionError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ExecutionError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ExecutionError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ExecutionErrorType m_type;
+    ExecutionErrorType m_type{ExecutionErrorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_message;

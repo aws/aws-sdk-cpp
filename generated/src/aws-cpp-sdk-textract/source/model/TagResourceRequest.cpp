@@ -12,12 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagResourceRequest::TagResourceRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

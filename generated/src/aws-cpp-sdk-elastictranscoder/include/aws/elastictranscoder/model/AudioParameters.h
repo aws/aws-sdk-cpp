@@ -32,7 +32,7 @@ namespace Model
   class AudioParameters
   {
   public:
-    AWS_ELASTICTRANSCODER_API AudioParameters();
+    AWS_ELASTICTRANSCODER_API AudioParameters() = default;
     AWS_ELASTICTRANSCODER_API AudioParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and
      * <code>vorbis</code>.</p>
      */
-    inline const Aws::String& GetCodec() const{ return m_codec; }
+    inline const Aws::String& GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const Aws::String& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline void SetCodec(const char* value) { m_codecHasBeenSet = true; m_codec.assign(value); }
-    inline AudioParameters& WithCodec(const Aws::String& value) { SetCodec(value); return *this;}
-    inline AudioParameters& WithCodec(Aws::String&& value) { SetCodec(std::move(value)); return *this;}
-    inline AudioParameters& WithCodec(const char* value) { SetCodec(value); return *this;}
+    template<typename CodecT = Aws::String>
+    void SetCodec(CodecT&& value) { m_codecHasBeenSet = true; m_codec = std::forward<CodecT>(value); }
+    template<typename CodecT = Aws::String>
+    AudioParameters& WithCodec(CodecT&& value) { SetCodec(std::forward<CodecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * </p> <p>If you specify <code>auto</code>, Elastic Transcoder automatically
      * detects the sample rate.</p>
      */
-    inline const Aws::String& GetSampleRate() const{ return m_sampleRate; }
+    inline const Aws::String& GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
-    inline void SetSampleRate(const Aws::String& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
-    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
-    inline void SetSampleRate(const char* value) { m_sampleRateHasBeenSet = true; m_sampleRate.assign(value); }
-    inline AudioParameters& WithSampleRate(const Aws::String& value) { SetSampleRate(value); return *this;}
-    inline AudioParameters& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
-    inline AudioParameters& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
+    template<typename SampleRateT = Aws::String>
+    void SetSampleRate(SampleRateT&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::forward<SampleRateT>(value); }
+    template<typename SampleRateT = Aws::String>
+    AudioParameters& WithSampleRate(SampleRateT&& value) { SetSampleRate(std::forward<SampleRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
      * Enter an integer between 64 and 320, inclusive.</p>
      */
-    inline const Aws::String& GetBitRate() const{ return m_bitRate; }
+    inline const Aws::String& GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
-    inline void SetBitRate(const Aws::String& value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
-    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::move(value); }
-    inline void SetBitRate(const char* value) { m_bitRateHasBeenSet = true; m_bitRate.assign(value); }
-    inline AudioParameters& WithBitRate(const Aws::String& value) { SetBitRate(value); return *this;}
-    inline AudioParameters& WithBitRate(Aws::String&& value) { SetBitRate(std::move(value)); return *this;}
-    inline AudioParameters& WithBitRate(const char* value) { SetBitRate(value); return *this;}
+    template<typename BitRateT = Aws::String>
+    void SetBitRate(BitRateT&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::forward<BitRateT>(value); }
+    template<typename BitRateT = Aws::String>
+    AudioParameters& WithBitRate(BitRateT&& value) { SetBitRate(std::forward<BitRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +102,12 @@ namespace Model
      * about how Elastic Transcoder organizes channels and tracks, see
      * <code>Audio:AudioPackingMode</code>.</p>
      */
-    inline const Aws::String& GetChannels() const{ return m_channels; }
+    inline const Aws::String& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::String& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::String&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline void SetChannels(const char* value) { m_channelsHasBeenSet = true; m_channels.assign(value); }
-    inline AudioParameters& WithChannels(const Aws::String& value) { SetChannels(value); return *this;}
-    inline AudioParameters& WithChannels(Aws::String&& value) { SetChannels(std::move(value)); return *this;}
-    inline AudioParameters& WithChannels(const char* value) { SetChannels(value); return *this;}
+    template<typename ChannelsT = Aws::String>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::String>
+    AudioParameters& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +180,12 @@ namespace Model
      * one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetAudioPackingMode() const{ return m_audioPackingMode; }
+    inline const Aws::String& GetAudioPackingMode() const { return m_audioPackingMode; }
     inline bool AudioPackingModeHasBeenSet() const { return m_audioPackingModeHasBeenSet; }
-    inline void SetAudioPackingMode(const Aws::String& value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode = value; }
-    inline void SetAudioPackingMode(Aws::String&& value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode = std::move(value); }
-    inline void SetAudioPackingMode(const char* value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode.assign(value); }
-    inline AudioParameters& WithAudioPackingMode(const Aws::String& value) { SetAudioPackingMode(value); return *this;}
-    inline AudioParameters& WithAudioPackingMode(Aws::String&& value) { SetAudioPackingMode(std::move(value)); return *this;}
-    inline AudioParameters& WithAudioPackingMode(const char* value) { SetAudioPackingMode(value); return *this;}
+    template<typename AudioPackingModeT = Aws::String>
+    void SetAudioPackingMode(AudioPackingModeT&& value) { m_audioPackingModeHasBeenSet = true; m_audioPackingMode = std::forward<AudioPackingModeT>(value); }
+    template<typename AudioPackingModeT = Aws::String>
+    AudioParameters& WithAudioPackingMode(AudioPackingModeT&& value) { SetAudioPackingMode(std::forward<AudioPackingModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +196,12 @@ namespace Model
      * <code>HE-AACv2</code> </p> <p>If you specify <code>auto</code>, Elastic
      * Transcoder chooses a profile based on the bit rate of the output file.</p>
      */
-    inline const AudioCodecOptions& GetCodecOptions() const{ return m_codecOptions; }
+    inline const AudioCodecOptions& GetCodecOptions() const { return m_codecOptions; }
     inline bool CodecOptionsHasBeenSet() const { return m_codecOptionsHasBeenSet; }
-    inline void SetCodecOptions(const AudioCodecOptions& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = value; }
-    inline void SetCodecOptions(AudioCodecOptions&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::move(value); }
-    inline AudioParameters& WithCodecOptions(const AudioCodecOptions& value) { SetCodecOptions(value); return *this;}
-    inline AudioParameters& WithCodecOptions(AudioCodecOptions&& value) { SetCodecOptions(std::move(value)); return *this;}
+    template<typename CodecOptionsT = AudioCodecOptions>
+    void SetCodecOptions(CodecOptionsT&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::forward<CodecOptionsT>(value); }
+    template<typename CodecOptionsT = AudioCodecOptions>
+    AudioParameters& WithCodecOptions(CodecOptionsT&& value) { SetCodecOptions(std::forward<CodecOptionsT>(value)); return *this;}
     ///@}
   private:
 

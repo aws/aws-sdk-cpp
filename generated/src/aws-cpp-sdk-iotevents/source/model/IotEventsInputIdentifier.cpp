@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-IotEventsInputIdentifier::IotEventsInputIdentifier() : 
-    m_inputNameHasBeenSet(false)
-{
-}
-
 IotEventsInputIdentifier::IotEventsInputIdentifier(JsonView jsonValue)
-  : IotEventsInputIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IotEventsInputIdentifier& IotEventsInputIdentifier::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("inputName"))
   {
     m_inputName = jsonValue.GetString("inputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   return *this;
 }
 

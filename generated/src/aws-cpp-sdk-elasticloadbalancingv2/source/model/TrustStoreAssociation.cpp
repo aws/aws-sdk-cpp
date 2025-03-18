@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TrustStoreAssociation::TrustStoreAssociation() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 TrustStoreAssociation::TrustStoreAssociation(const XmlNode& xmlNode)
-  : TrustStoreAssociation()
 {
   *this = xmlNode;
 }

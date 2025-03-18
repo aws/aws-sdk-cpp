@@ -23,7 +23,7 @@ namespace Model
   class ListAssessmentTemplatesRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API ListAssessmentTemplatesRequest();
+    AWS_INSPECTOR_API ListAssessmentTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * <p>A list of ARNs that specifies the assessment targets whose assessment
      * templates you want to list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssessmentTargetArns() const{ return m_assessmentTargetArns; }
+    inline const Aws::Vector<Aws::String>& GetAssessmentTargetArns() const { return m_assessmentTargetArns; }
     inline bool AssessmentTargetArnsHasBeenSet() const { return m_assessmentTargetArnsHasBeenSet; }
-    inline void SetAssessmentTargetArns(const Aws::Vector<Aws::String>& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = value; }
-    inline void SetAssessmentTargetArns(Aws::Vector<Aws::String>&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = std::move(value); }
-    inline ListAssessmentTemplatesRequest& WithAssessmentTargetArns(const Aws::Vector<Aws::String>& value) { SetAssessmentTargetArns(value); return *this;}
-    inline ListAssessmentTemplatesRequest& WithAssessmentTargetArns(Aws::Vector<Aws::String>&& value) { SetAssessmentTargetArns(std::move(value)); return *this;}
-    inline ListAssessmentTemplatesRequest& AddAssessmentTargetArns(const Aws::String& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
-    inline ListAssessmentTemplatesRequest& AddAssessmentTargetArns(Aws::String&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(std::move(value)); return *this; }
-    inline ListAssessmentTemplatesRequest& AddAssessmentTargetArns(const char* value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
+    template<typename AssessmentTargetArnsT = Aws::Vector<Aws::String>>
+    void SetAssessmentTargetArns(AssessmentTargetArnsT&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = std::forward<AssessmentTargetArnsT>(value); }
+    template<typename AssessmentTargetArnsT = Aws::Vector<Aws::String>>
+    ListAssessmentTemplatesRequest& WithAssessmentTargetArns(AssessmentTargetArnsT&& value) { SetAssessmentTargetArns(std::forward<AssessmentTargetArnsT>(value)); return *this;}
+    template<typename AssessmentTargetArnsT = Aws::String>
+    ListAssessmentTemplatesRequest& AddAssessmentTargetArns(AssessmentTargetArnsT&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.emplace_back(std::forward<AssessmentTargetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +58,12 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline const AssessmentTemplateFilter& GetFilter() const{ return m_filter; }
+    inline const AssessmentTemplateFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const AssessmentTemplateFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(AssessmentTemplateFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListAssessmentTemplatesRequest& WithFilter(const AssessmentTemplateFilter& value) { SetFilter(value); return *this;}
-    inline ListAssessmentTemplatesRequest& WithFilter(AssessmentTemplateFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = AssessmentTemplateFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = AssessmentTemplateFilter>
+    ListAssessmentTemplatesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +74,12 @@ namespace Model
      * the value of <b>NextToken</b> from the previous response to continue listing
      * data.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssessmentTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssessmentTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssessmentTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssessmentTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +87,7 @@ namespace Model
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssessmentTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -106,7 +103,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

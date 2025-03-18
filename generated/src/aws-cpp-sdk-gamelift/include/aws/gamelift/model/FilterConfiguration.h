@@ -36,7 +36,7 @@ namespace Model
   class FilterConfiguration
   {
   public:
-    AWS_GAMELIFT_API FilterConfiguration();
+    AWS_GAMELIFT_API FilterConfiguration() = default;
     AWS_GAMELIFT_API FilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API FilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p> A list of locations to allow game session placement in, in the form of
      * Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedLocations() const{ return m_allowedLocations; }
+    inline const Aws::Vector<Aws::String>& GetAllowedLocations() const { return m_allowedLocations; }
     inline bool AllowedLocationsHasBeenSet() const { return m_allowedLocationsHasBeenSet; }
-    inline void SetAllowedLocations(const Aws::Vector<Aws::String>& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations = value; }
-    inline void SetAllowedLocations(Aws::Vector<Aws::String>&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations = std::move(value); }
-    inline FilterConfiguration& WithAllowedLocations(const Aws::Vector<Aws::String>& value) { SetAllowedLocations(value); return *this;}
-    inline FilterConfiguration& WithAllowedLocations(Aws::Vector<Aws::String>&& value) { SetAllowedLocations(std::move(value)); return *this;}
-    inline FilterConfiguration& AddAllowedLocations(const Aws::String& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(value); return *this; }
-    inline FilterConfiguration& AddAllowedLocations(Aws::String&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(std::move(value)); return *this; }
-    inline FilterConfiguration& AddAllowedLocations(const char* value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.push_back(value); return *this; }
+    template<typename AllowedLocationsT = Aws::Vector<Aws::String>>
+    void SetAllowedLocations(AllowedLocationsT&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations = std::forward<AllowedLocationsT>(value); }
+    template<typename AllowedLocationsT = Aws::Vector<Aws::String>>
+    FilterConfiguration& WithAllowedLocations(AllowedLocationsT&& value) { SetAllowedLocations(std::forward<AllowedLocationsT>(value)); return *this;}
+    template<typename AllowedLocationsT = Aws::String>
+    FilterConfiguration& AddAllowedLocations(AllowedLocationsT&& value) { m_allowedLocationsHasBeenSet = true; m_allowedLocations.emplace_back(std::forward<AllowedLocationsT>(value)); return *this; }
     ///@}
   private:
 

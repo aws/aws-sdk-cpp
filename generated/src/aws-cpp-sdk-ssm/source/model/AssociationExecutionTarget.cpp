@@ -18,21 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AssociationExecutionTarget::AssociationExecutionTarget() : 
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_outputSourceHasBeenSet(false)
-{
-}
-
 AssociationExecutionTarget::AssociationExecutionTarget(JsonView jsonValue)
-  : AssociationExecutionTarget()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ AssociationExecutionTarget& AssociationExecutionTarget::operator =(JsonView json
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationVersion"))
   {
     m_associationVersion = jsonValue.GetString("AssociationVersion");
-
     m_associationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionId"))
   {
     m_executionId = jsonValue.GetString("ExecutionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailedStatus"))
   {
     m_detailedStatus = jsonValue.GetString("DetailedStatus");
-
     m_detailedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionDate"))
   {
     m_lastExecutionDate = jsonValue.GetDouble("LastExecutionDate");
-
     m_lastExecutionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSource"))
   {
     m_outputSource = jsonValue.GetObject("OutputSource");
-
     m_outputSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

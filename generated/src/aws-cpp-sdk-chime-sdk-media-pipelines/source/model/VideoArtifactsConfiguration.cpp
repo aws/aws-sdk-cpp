@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VideoArtifactsConfiguration::VideoArtifactsConfiguration() : 
-    m_state(ArtifactsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_muxType(VideoMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false)
-{
-}
-
 VideoArtifactsConfiguration::VideoArtifactsConfiguration(JsonView jsonValue)
-  : VideoArtifactsConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VideoArtifactsConfiguration& VideoArtifactsConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArtifactsStateMapper::GetArtifactsStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MuxType"))
   {
     m_muxType = VideoMuxTypeMapper::GetVideoMuxTypeForName(jsonValue.GetString("MuxType"));
-
     m_muxTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

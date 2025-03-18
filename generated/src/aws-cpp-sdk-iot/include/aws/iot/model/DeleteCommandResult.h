@@ -27,7 +27,7 @@ namespace Model
   class DeleteCommandResult
   {
   public:
-    AWS_IOT_API DeleteCommandResult();
+    AWS_IOT_API DeleteCommandResult() = default;
     AWS_IOT_API DeleteCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DeleteCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,26 +47,26 @@ namespace Model
      * <code>DeleteCommand</code> request, the command will be deleted immediately and
      * a 204 status code will be returned.</p> </li> </ul>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline DeleteCommandResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteCommandResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteCommandResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteCommandResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteCommandResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

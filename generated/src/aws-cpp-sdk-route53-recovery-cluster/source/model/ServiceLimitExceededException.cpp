@@ -18,17 +18,7 @@ namespace Route53RecoveryCluster
 namespace Model
 {
 
-ServiceLimitExceededException::ServiceLimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_limitCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue)
-  : ServiceLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ServiceLimitExceededException& ServiceLimitExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("limitCode"))
   {
     m_limitCode = jsonValue.GetString("limitCode");
-
     m_limitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

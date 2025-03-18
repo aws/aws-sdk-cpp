@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionExecutionFilter::ActionExecutionFilter() : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_latestInPipelineExecutionHasBeenSet(false)
-{
-}
-
 ActionExecutionFilter::ActionExecutionFilter(JsonView jsonValue)
-  : ActionExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionExecutionFilter& ActionExecutionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestInPipelineExecution"))
   {
     m_latestInPipelineExecution = jsonValue.GetObject("latestInPipelineExecution");
-
     m_latestInPipelineExecutionHasBeenSet = true;
   }
-
   return *this;
 }
 

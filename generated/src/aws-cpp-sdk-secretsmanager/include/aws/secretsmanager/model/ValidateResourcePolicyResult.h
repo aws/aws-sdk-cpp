@@ -29,7 +29,7 @@ namespace Model
   class ValidateResourcePolicyResult
   {
   public:
-    AWS_SECRETSMANAGER_API ValidateResourcePolicyResult();
+    AWS_SECRETSMANAGER_API ValidateResourcePolicyResult() = default;
     AWS_SECRETSMANAGER_API ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API ValidateResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>True if your policy passes validation, otherwise false.</p>
      */
-    inline bool GetPolicyValidationPassed() const{ return m_policyValidationPassed; }
-    inline void SetPolicyValidationPassed(bool value) { m_policyValidationPassed = value; }
+    inline bool GetPolicyValidationPassed() const { return m_policyValidationPassed; }
+    inline void SetPolicyValidationPassed(bool value) { m_policyValidationPassedHasBeenSet = true; m_policyValidationPassed = value; }
     inline ValidateResourcePolicyResult& WithPolicyValidationPassed(bool value) { SetPolicyValidationPassed(value); return *this;}
     ///@}
 
@@ -47,32 +47,33 @@ namespace Model
     /**
      * <p>Validation errors if your policy didn't pass validation.</p>
      */
-    inline const Aws::Vector<ValidationErrorsEntry>& GetValidationErrors() const{ return m_validationErrors; }
-    inline void SetValidationErrors(const Aws::Vector<ValidationErrorsEntry>& value) { m_validationErrors = value; }
-    inline void SetValidationErrors(Aws::Vector<ValidationErrorsEntry>&& value) { m_validationErrors = std::move(value); }
-    inline ValidateResourcePolicyResult& WithValidationErrors(const Aws::Vector<ValidationErrorsEntry>& value) { SetValidationErrors(value); return *this;}
-    inline ValidateResourcePolicyResult& WithValidationErrors(Aws::Vector<ValidationErrorsEntry>&& value) { SetValidationErrors(std::move(value)); return *this;}
-    inline ValidateResourcePolicyResult& AddValidationErrors(const ValidationErrorsEntry& value) { m_validationErrors.push_back(value); return *this; }
-    inline ValidateResourcePolicyResult& AddValidationErrors(ValidationErrorsEntry&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidationErrorsEntry>& GetValidationErrors() const { return m_validationErrors; }
+    template<typename ValidationErrorsT = Aws::Vector<ValidationErrorsEntry>>
+    void SetValidationErrors(ValidationErrorsT&& value) { m_validationErrorsHasBeenSet = true; m_validationErrors = std::forward<ValidationErrorsT>(value); }
+    template<typename ValidationErrorsT = Aws::Vector<ValidationErrorsEntry>>
+    ValidateResourcePolicyResult& WithValidationErrors(ValidationErrorsT&& value) { SetValidationErrors(std::forward<ValidationErrorsT>(value)); return *this;}
+    template<typename ValidationErrorsT = ValidationErrorsEntry>
+    ValidateResourcePolicyResult& AddValidationErrors(ValidationErrorsT&& value) { m_validationErrorsHasBeenSet = true; m_validationErrors.emplace_back(std::forward<ValidationErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidateResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidateResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidateResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidateResourcePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_policyValidationPassed;
+    bool m_policyValidationPassed{false};
+    bool m_policyValidationPassedHasBeenSet = false;
 
     Aws::Vector<ValidationErrorsEntry> m_validationErrors;
+    bool m_validationErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

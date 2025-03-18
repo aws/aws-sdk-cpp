@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeprecateThingTypeRequest::DeprecateThingTypeRequest() : 
-    m_thingTypeNameHasBeenSet(false),
-    m_undoDeprecate(false),
-    m_undoDeprecateHasBeenSet(false)
-{
-}
-
 Aws::String DeprecateThingTypeRequest::SerializePayload() const
 {
   JsonValue payload;

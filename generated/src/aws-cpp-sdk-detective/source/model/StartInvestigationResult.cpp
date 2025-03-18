@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartInvestigationResult::StartInvestigationResult()
-{
-}
-
 StartInvestigationResult::StartInvestigationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartInvestigationResult& StartInvestigationResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("InvestigationId"))
   {
     m_investigationId = jsonValue.GetString("InvestigationId");
-
+    m_investigationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class GeospatialPolygonSymbolStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle();
+    AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle() = default;
     AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialPolygonSymbolStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,36 +42,36 @@ namespace Model
     /**
      * <p>The color and opacity values for the fill color.</p>
      */
-    inline const GeospatialColor& GetFillColor() const{ return m_fillColor; }
+    inline const GeospatialColor& GetFillColor() const { return m_fillColor; }
     inline bool FillColorHasBeenSet() const { return m_fillColorHasBeenSet; }
-    inline void SetFillColor(const GeospatialColor& value) { m_fillColorHasBeenSet = true; m_fillColor = value; }
-    inline void SetFillColor(GeospatialColor&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::move(value); }
-    inline GeospatialPolygonSymbolStyle& WithFillColor(const GeospatialColor& value) { SetFillColor(value); return *this;}
-    inline GeospatialPolygonSymbolStyle& WithFillColor(GeospatialColor&& value) { SetFillColor(std::move(value)); return *this;}
+    template<typename FillColorT = GeospatialColor>
+    void SetFillColor(FillColorT&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::forward<FillColorT>(value); }
+    template<typename FillColorT = GeospatialColor>
+    GeospatialPolygonSymbolStyle& WithFillColor(FillColorT&& value) { SetFillColor(std::forward<FillColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color and opacity values for the stroke color.</p>
      */
-    inline const GeospatialColor& GetStrokeColor() const{ return m_strokeColor; }
+    inline const GeospatialColor& GetStrokeColor() const { return m_strokeColor; }
     inline bool StrokeColorHasBeenSet() const { return m_strokeColorHasBeenSet; }
-    inline void SetStrokeColor(const GeospatialColor& value) { m_strokeColorHasBeenSet = true; m_strokeColor = value; }
-    inline void SetStrokeColor(GeospatialColor&& value) { m_strokeColorHasBeenSet = true; m_strokeColor = std::move(value); }
-    inline GeospatialPolygonSymbolStyle& WithStrokeColor(const GeospatialColor& value) { SetStrokeColor(value); return *this;}
-    inline GeospatialPolygonSymbolStyle& WithStrokeColor(GeospatialColor&& value) { SetStrokeColor(std::move(value)); return *this;}
+    template<typename StrokeColorT = GeospatialColor>
+    void SetStrokeColor(StrokeColorT&& value) { m_strokeColorHasBeenSet = true; m_strokeColor = std::forward<StrokeColorT>(value); }
+    template<typename StrokeColorT = GeospatialColor>
+    GeospatialPolygonSymbolStyle& WithStrokeColor(StrokeColorT&& value) { SetStrokeColor(std::forward<StrokeColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The width of the border stroke.</p>
      */
-    inline const GeospatialLineWidth& GetStrokeWidth() const{ return m_strokeWidth; }
+    inline const GeospatialLineWidth& GetStrokeWidth() const { return m_strokeWidth; }
     inline bool StrokeWidthHasBeenSet() const { return m_strokeWidthHasBeenSet; }
-    inline void SetStrokeWidth(const GeospatialLineWidth& value) { m_strokeWidthHasBeenSet = true; m_strokeWidth = value; }
-    inline void SetStrokeWidth(GeospatialLineWidth&& value) { m_strokeWidthHasBeenSet = true; m_strokeWidth = std::move(value); }
-    inline GeospatialPolygonSymbolStyle& WithStrokeWidth(const GeospatialLineWidth& value) { SetStrokeWidth(value); return *this;}
-    inline GeospatialPolygonSymbolStyle& WithStrokeWidth(GeospatialLineWidth&& value) { SetStrokeWidth(std::move(value)); return *this;}
+    template<typename StrokeWidthT = GeospatialLineWidth>
+    void SetStrokeWidth(StrokeWidthT&& value) { m_strokeWidthHasBeenSet = true; m_strokeWidth = std::forward<StrokeWidthT>(value); }
+    template<typename StrokeWidthT = GeospatialLineWidth>
+    GeospatialPolygonSymbolStyle& WithStrokeWidth(StrokeWidthT&& value) { SetStrokeWidth(std::forward<StrokeWidthT>(value)); return *this;}
     ///@}
   private:
 

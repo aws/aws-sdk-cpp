@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHostnameSuggestionResult::GetHostnameSuggestionResult()
-{
-}
-
 GetHostnameSuggestionResult::GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetHostnameSuggestionResult& GetHostnameSuggestionResult::operator =(const Aws::
   if(jsonValue.ValueExists("LayerId"))
   {
     m_layerId = jsonValue.GetString("LayerId");
-
+    m_layerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
+    m_hostnameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

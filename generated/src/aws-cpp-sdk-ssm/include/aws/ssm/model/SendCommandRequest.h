@@ -28,7 +28,7 @@ namespace Model
   class SendCommandRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API SendCommandRequest();
+    AWS_SSM_API SendCommandRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,15 +55,14 @@ namespace Model
      * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+    inline const Aws::Vector<Aws::String>& GetInstanceIds() const { return m_instanceIds; }
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-    inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-    inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-    inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-    inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    void SetInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::forward<InstanceIdsT>(value); }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    SendCommandRequest& WithInstanceIds(InstanceIdsT&& value) { SetInstanceIds(std::forward<InstanceIdsT>(value)); return *this;}
+    template<typename InstanceIdsT = Aws::String>
+    SendCommandRequest& AddInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.emplace_back(std::forward<InstanceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,14 +79,14 @@ namespace Model
      * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline SendCommandRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-    inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-    inline SendCommandRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    template<typename TargetsT = Aws::Vector<Target>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Target>>
+    SendCommandRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Target>
+    SendCommandRequest& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,14 +101,12 @@ namespace Model
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
      */
-    inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+    inline const Aws::String& GetDocumentName() const { return m_documentName; }
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
-    inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
-    inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
-    inline SendCommandRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-    inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-    inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    template<typename DocumentNameT = Aws::String>
+    void SetDocumentName(DocumentNameT&& value) { m_documentNameHasBeenSet = true; m_documentName = std::forward<DocumentNameT>(value); }
+    template<typename DocumentNameT = Aws::String>
+    SendCommandRequest& WithDocumentName(DocumentNameT&& value) { SetDocumentName(std::forward<DocumentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +119,12 @@ namespace Model
      * "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p> <p>--document-version
      * "3"</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline SendCommandRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline SendCommandRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline SendCommandRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    SendCommandRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,26 +132,22 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
-    inline const Aws::String& GetDocumentHash() const{ return m_documentHash; }
+    inline const Aws::String& GetDocumentHash() const { return m_documentHash; }
     inline bool DocumentHashHasBeenSet() const { return m_documentHashHasBeenSet; }
-    inline void SetDocumentHash(const Aws::String& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
-    inline void SetDocumentHash(Aws::String&& value) { m_documentHashHasBeenSet = true; m_documentHash = std::move(value); }
-    inline void SetDocumentHash(const char* value) { m_documentHashHasBeenSet = true; m_documentHash.assign(value); }
-    inline SendCommandRequest& WithDocumentHash(const Aws::String& value) { SetDocumentHash(value); return *this;}
-    inline SendCommandRequest& WithDocumentHash(Aws::String&& value) { SetDocumentHash(std::move(value)); return *this;}
-    inline SendCommandRequest& WithDocumentHash(const char* value) { SetDocumentHash(value); return *this;}
+    template<typename DocumentHashT = Aws::String>
+    void SetDocumentHash(DocumentHashT&& value) { m_documentHashHasBeenSet = true; m_documentHash = std::forward<DocumentHashT>(value); }
+    template<typename DocumentHashT = Aws::String>
+    SendCommandRequest& WithDocumentHash(DocumentHashT&& value) { SetDocumentHash(std::forward<DocumentHashT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sha256 or Sha1.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
-    inline const DocumentHashType& GetDocumentHashType() const{ return m_documentHashType; }
+    inline DocumentHashType GetDocumentHashType() const { return m_documentHashType; }
     inline bool DocumentHashTypeHasBeenSet() const { return m_documentHashTypeHasBeenSet; }
-    inline void SetDocumentHashType(const DocumentHashType& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
-    inline void SetDocumentHashType(DocumentHashType&& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = std::move(value); }
-    inline SendCommandRequest& WithDocumentHashType(const DocumentHashType& value) { SetDocumentHashType(value); return *this;}
-    inline SendCommandRequest& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
+    inline void SetDocumentHashType(DocumentHashType value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
+    inline SendCommandRequest& WithDocumentHashType(DocumentHashType value) { SetDocumentHashType(value); return *this;}
     ///@}
 
     ///@{
@@ -164,7 +155,7 @@ namespace Model
      * <p>If this time is reached and the command hasn't already started running, it
      * won't run.</p>
      */
-    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+    inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
     inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
@@ -175,32 +166,28 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline SendCommandRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline SendCommandRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline SendCommandRequest& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    SendCommandRequest& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required and optional parameters specified in the document being run.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline SendCommandRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
-    inline SendCommandRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
-    inline SendCommandRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline SendCommandRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SendCommandRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SendCommandRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendCommandRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    SendCommandRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::Vector<Aws::String>>
+    SendCommandRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -209,14 +196,12 @@ namespace Model
      * Instead, Systems Manager automatically determines the Amazon Web Services Region
      * of the S3 bucket.</p>
      */
-    inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
+    inline const Aws::String& GetOutputS3Region() const { return m_outputS3Region; }
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
-    inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
-    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
-    inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
-    inline SendCommandRequest& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
-    inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
-    inline SendCommandRequest& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
+    template<typename OutputS3RegionT = Aws::String>
+    void SetOutputS3Region(OutputS3RegionT&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::forward<OutputS3RegionT>(value); }
+    template<typename OutputS3RegionT = Aws::String>
+    SendCommandRequest& WithOutputS3Region(OutputS3RegionT&& value) { SetOutputS3Region(std::forward<OutputS3RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,14 +209,12 @@ namespace Model
      * <p>The name of the S3 bucket where command execution responses should be
      * stored.</p>
      */
-    inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
+    inline const Aws::String& GetOutputS3BucketName() const { return m_outputS3BucketName; }
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
-    inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
-    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
-    inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
-    inline SendCommandRequest& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
-    inline SendCommandRequest& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
-    inline SendCommandRequest& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
+    template<typename OutputS3BucketNameT = Aws::String>
+    void SetOutputS3BucketName(OutputS3BucketNameT&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::forward<OutputS3BucketNameT>(value); }
+    template<typename OutputS3BucketNameT = Aws::String>
+    SendCommandRequest& WithOutputS3BucketName(OutputS3BucketNameT&& value) { SetOutputS3BucketName(std::forward<OutputS3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,14 +222,12 @@ namespace Model
      * <p>The directory structure within the S3 bucket where the responses should be
      * stored.</p>
      */
-    inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
+    inline const Aws::String& GetOutputS3KeyPrefix() const { return m_outputS3KeyPrefix; }
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
-    inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
-    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
-    inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
-    inline SendCommandRequest& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
-    inline SendCommandRequest& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
-    inline SendCommandRequest& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
+    template<typename OutputS3KeyPrefixT = Aws::String>
+    void SetOutputS3KeyPrefix(OutputS3KeyPrefixT&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::forward<OutputS3KeyPrefixT>(value); }
+    template<typename OutputS3KeyPrefixT = Aws::String>
+    SendCommandRequest& WithOutputS3KeyPrefix(OutputS3KeyPrefixT&& value) { SetOutputS3KeyPrefix(std::forward<OutputS3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,14 +240,12 @@ namespace Model
      * concurrency controls</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+    inline const Aws::String& GetMaxConcurrency() const { return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
-    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
-    inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
-    inline SendCommandRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
-    inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
-    inline SendCommandRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+    template<typename MaxConcurrencyT = Aws::String>
+    void SetMaxConcurrency(MaxConcurrencyT&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::forward<MaxConcurrencyT>(value); }
+    template<typename MaxConcurrencyT = Aws::String>
+    SendCommandRequest& WithMaxConcurrency(MaxConcurrencyT&& value) { SetMaxConcurrency(std::forward<MaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -280,14 +259,12 @@ namespace Model
      * error controls</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+    inline const Aws::String& GetMaxErrors() const { return m_maxErrors; }
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
-    inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
-    inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
-    inline SendCommandRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
-    inline SendCommandRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
-    inline SendCommandRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+    template<typename MaxErrorsT = Aws::String>
+    void SetMaxErrors(MaxErrorsT&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::forward<MaxErrorsT>(value); }
+    template<typename MaxErrorsT = Aws::String>
+    SendCommandRequest& WithMaxErrors(MaxErrorsT&& value) { SetMaxErrors(std::forward<MaxErrorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,26 +278,24 @@ namespace Model
      * Systems Manager status changes using Amazon SNS notifications</a> in the
      * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
-    inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    SendCommandRequest& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configurations for sending notifications.</p>
      */
-    inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+    inline const NotificationConfig& GetNotificationConfig() const { return m_notificationConfig; }
     inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
-    inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
-    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
-    inline SendCommandRequest& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
-    inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
+    template<typename NotificationConfigT = NotificationConfig>
+    void SetNotificationConfig(NotificationConfigT&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::forward<NotificationConfigT>(value); }
+    template<typename NotificationConfigT = NotificationConfig>
+    SendCommandRequest& WithNotificationConfig(NotificationConfigT&& value) { SetNotificationConfig(std::forward<NotificationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -329,24 +304,24 @@ namespace Model
      * Amazon CloudWatch Logs. Run Command is a tool in Amazon Web Services Systems
      * Manager.</p>
      */
-    inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
+    inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const { return m_cloudWatchOutputConfig; }
     inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
-    inline void SetCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = value; }
-    inline void SetCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::move(value); }
-    inline SendCommandRequest& WithCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { SetCloudWatchOutputConfig(value); return *this;}
-    inline SendCommandRequest& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
+    template<typename CloudWatchOutputConfigT = CloudWatchOutputConfig>
+    void SetCloudWatchOutputConfig(CloudWatchOutputConfigT&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::forward<CloudWatchOutputConfigT>(value); }
+    template<typename CloudWatchOutputConfigT = CloudWatchOutputConfig>
+    SendCommandRequest& WithCloudWatchOutputConfig(CloudWatchOutputConfigT&& value) { SetCloudWatchOutputConfig(std::forward<CloudWatchOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch alarm you want to apply to your command.</p>
      */
-    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+    inline const AlarmConfiguration& GetAlarmConfiguration() const { return m_alarmConfiguration; }
     inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
-    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
-    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
-    inline SendCommandRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
-    inline SendCommandRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    void SetAlarmConfiguration(AlarmConfigurationT&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::forward<AlarmConfigurationT>(value); }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    SendCommandRequest& WithAlarmConfiguration(AlarmConfigurationT&& value) { SetAlarmConfiguration(std::forward<AlarmConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -365,10 +340,10 @@ namespace Model
     Aws::String m_documentHash;
     bool m_documentHashHasBeenSet = false;
 
-    DocumentHashType m_documentHashType;
+    DocumentHashType m_documentHashType{DocumentHashType::NOT_SET};
     bool m_documentHashTypeHasBeenSet = false;
 
-    int m_timeoutSeconds;
+    int m_timeoutSeconds{0};
     bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_comment;

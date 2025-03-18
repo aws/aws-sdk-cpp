@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyAccountRequest::ModifyAccountRequest() : 
-    m_dedicatedTenancySupport(DedicatedTenancySupportEnum::NOT_SET),
-    m_dedicatedTenancySupportHasBeenSet(false),
-    m_dedicatedTenancyManagementCidrRangeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyAccountRequest::SerializePayload() const
 {
   JsonValue payload;

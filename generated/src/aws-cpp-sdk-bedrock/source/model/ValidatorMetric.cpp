@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ValidatorMetric::ValidatorMetric() : 
-    m_validationLoss(0.0),
-    m_validationLossHasBeenSet(false)
-{
-}
-
 ValidatorMetric::ValidatorMetric(JsonView jsonValue)
-  : ValidatorMetric()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValidatorMetric& ValidatorMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("validationLoss"))
   {
     m_validationLoss = jsonValue.GetDouble("validationLoss");
-
     m_validationLossHasBeenSet = true;
   }
-
   return *this;
 }
 

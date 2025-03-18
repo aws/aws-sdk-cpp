@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointConfigRequest::CreateEndpointConfigRequest() : 
-    m_endpointConfigNameHasBeenSet(false),
-    m_productionVariantsHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_asyncInferenceConfigHasBeenSet(false),
-    m_explainerConfigHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointConfigRequest::SerializePayload() const
 {
   JsonValue payload;

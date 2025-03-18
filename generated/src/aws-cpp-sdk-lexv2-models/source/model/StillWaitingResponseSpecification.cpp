@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-StillWaitingResponseSpecification::StillWaitingResponseSpecification() : 
-    m_messageGroupsHasBeenSet(false),
-    m_frequencyInSeconds(0),
-    m_frequencyInSecondsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
-{
-}
-
 StillWaitingResponseSpecification::StillWaitingResponseSpecification(JsonView jsonValue)
-  : StillWaitingResponseSpecification()
 {
   *this = jsonValue;
 }
@@ -46,28 +34,21 @@ StillWaitingResponseSpecification& StillWaitingResponseSpecification::operator =
     }
     m_messageGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequencyInSeconds"))
   {
     m_frequencyInSeconds = jsonValue.GetInteger("frequencyInSeconds");
-
     m_frequencyInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowInterrupt"))
   {
     m_allowInterrupt = jsonValue.GetBool("allowInterrupt");
-
     m_allowInterruptHasBeenSet = true;
   }
-
   return *this;
 }
 

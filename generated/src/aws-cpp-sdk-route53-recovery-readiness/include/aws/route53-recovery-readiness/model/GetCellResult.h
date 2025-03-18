@@ -29,7 +29,7 @@ namespace Model
   class GetCellResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API GetCellResult();
+    AWS_ROUTE53RECOVERYREADINESS_API GetCellResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API GetCellResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API GetCellResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,40 +38,35 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the cell.</p>
      */
-    inline const Aws::String& GetCellArn() const{ return m_cellArn; }
-    inline void SetCellArn(const Aws::String& value) { m_cellArn = value; }
-    inline void SetCellArn(Aws::String&& value) { m_cellArn = std::move(value); }
-    inline void SetCellArn(const char* value) { m_cellArn.assign(value); }
-    inline GetCellResult& WithCellArn(const Aws::String& value) { SetCellArn(value); return *this;}
-    inline GetCellResult& WithCellArn(Aws::String&& value) { SetCellArn(std::move(value)); return *this;}
-    inline GetCellResult& WithCellArn(const char* value) { SetCellArn(value); return *this;}
+    inline const Aws::String& GetCellArn() const { return m_cellArn; }
+    template<typename CellArnT = Aws::String>
+    void SetCellArn(CellArnT&& value) { m_cellArnHasBeenSet = true; m_cellArn = std::forward<CellArnT>(value); }
+    template<typename CellArnT = Aws::String>
+    GetCellResult& WithCellArn(CellArnT&& value) { SetCellArn(std::forward<CellArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the cell.</p>
      */
-    inline const Aws::String& GetCellName() const{ return m_cellName; }
-    inline void SetCellName(const Aws::String& value) { m_cellName = value; }
-    inline void SetCellName(Aws::String&& value) { m_cellName = std::move(value); }
-    inline void SetCellName(const char* value) { m_cellName.assign(value); }
-    inline GetCellResult& WithCellName(const Aws::String& value) { SetCellName(value); return *this;}
-    inline GetCellResult& WithCellName(Aws::String&& value) { SetCellName(std::move(value)); return *this;}
-    inline GetCellResult& WithCellName(const char* value) { SetCellName(value); return *this;}
+    inline const Aws::String& GetCellName() const { return m_cellName; }
+    template<typename CellNameT = Aws::String>
+    void SetCellName(CellNameT&& value) { m_cellNameHasBeenSet = true; m_cellName = std::forward<CellNameT>(value); }
+    template<typename CellNameT = Aws::String>
+    GetCellResult& WithCellName(CellNameT&& value) { SetCellName(std::forward<CellNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of cell ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
-    inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cells = value; }
-    inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cells = std::move(value); }
-    inline GetCellResult& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
-    inline GetCellResult& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
-    inline GetCellResult& AddCells(const Aws::String& value) { m_cells.push_back(value); return *this; }
-    inline GetCellResult& AddCells(Aws::String&& value) { m_cells.push_back(std::move(value)); return *this; }
-    inline GetCellResult& AddCells(const char* value) { m_cells.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCells() const { return m_cells; }
+    template<typename CellsT = Aws::Vector<Aws::String>>
+    void SetCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells = std::forward<CellsT>(value); }
+    template<typename CellsT = Aws::Vector<Aws::String>>
+    GetCellResult& WithCells(CellsT&& value) { SetCells(std::forward<CellsT>(value)); return *this;}
+    template<typename CellsT = Aws::String>
+    GetCellResult& AddCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells.emplace_back(std::forward<CellsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,57 +75,57 @@ namespace Model
      * (ARN) or a recovery group ARN. This is a list but currently can have only one
      * element.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetParentReadinessScopes() const{ return m_parentReadinessScopes; }
-    inline void SetParentReadinessScopes(const Aws::Vector<Aws::String>& value) { m_parentReadinessScopes = value; }
-    inline void SetParentReadinessScopes(Aws::Vector<Aws::String>&& value) { m_parentReadinessScopes = std::move(value); }
-    inline GetCellResult& WithParentReadinessScopes(const Aws::Vector<Aws::String>& value) { SetParentReadinessScopes(value); return *this;}
-    inline GetCellResult& WithParentReadinessScopes(Aws::Vector<Aws::String>&& value) { SetParentReadinessScopes(std::move(value)); return *this;}
-    inline GetCellResult& AddParentReadinessScopes(const Aws::String& value) { m_parentReadinessScopes.push_back(value); return *this; }
-    inline GetCellResult& AddParentReadinessScopes(Aws::String&& value) { m_parentReadinessScopes.push_back(std::move(value)); return *this; }
-    inline GetCellResult& AddParentReadinessScopes(const char* value) { m_parentReadinessScopes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetParentReadinessScopes() const { return m_parentReadinessScopes; }
+    template<typename ParentReadinessScopesT = Aws::Vector<Aws::String>>
+    void SetParentReadinessScopes(ParentReadinessScopesT&& value) { m_parentReadinessScopesHasBeenSet = true; m_parentReadinessScopes = std::forward<ParentReadinessScopesT>(value); }
+    template<typename ParentReadinessScopesT = Aws::Vector<Aws::String>>
+    GetCellResult& WithParentReadinessScopes(ParentReadinessScopesT&& value) { SetParentReadinessScopes(std::forward<ParentReadinessScopesT>(value)); return *this;}
+    template<typename ParentReadinessScopesT = Aws::String>
+    GetCellResult& AddParentReadinessScopes(ParentReadinessScopesT&& value) { m_parentReadinessScopesHasBeenSet = true; m_parentReadinessScopes.emplace_back(std::forward<ParentReadinessScopesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Tags on the resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetCellResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetCellResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetCellResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetCellResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCellResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCellResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetCellResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCellResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCellResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetCellResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetCellResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCellResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCellResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCellResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCellResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_cellArn;
+    bool m_cellArnHasBeenSet = false;
 
     Aws::String m_cellName;
+    bool m_cellNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cells;
+    bool m_cellsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parentReadinessScopes;
+    bool m_parentReadinessScopesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

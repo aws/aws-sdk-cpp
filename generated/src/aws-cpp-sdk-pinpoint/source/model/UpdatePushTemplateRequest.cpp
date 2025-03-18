@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdatePushTemplateRequest::UpdatePushTemplateRequest() : 
-    m_createNewVersion(false),
-    m_createNewVersionHasBeenSet(false),
-    m_pushNotificationTemplateRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePushTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

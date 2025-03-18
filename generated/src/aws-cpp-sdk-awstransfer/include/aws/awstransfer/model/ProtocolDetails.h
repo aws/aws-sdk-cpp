@@ -36,7 +36,7 @@ namespace Model
   class ProtocolDetails
   {
   public:
-    AWS_TRANSFER_API ProtocolDetails();
+    AWS_TRANSFER_API ProtocolDetails() = default;
     AWS_TRANSFER_API ProtocolDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ProtocolDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,14 +70,12 @@ namespace Model
      * you are using other clients, check to see if your client supports the
      * <code>PassiveIp=0.0.0.0</code> response.</p>
      */
-    inline const Aws::String& GetPassiveIp() const{ return m_passiveIp; }
+    inline const Aws::String& GetPassiveIp() const { return m_passiveIp; }
     inline bool PassiveIpHasBeenSet() const { return m_passiveIpHasBeenSet; }
-    inline void SetPassiveIp(const Aws::String& value) { m_passiveIpHasBeenSet = true; m_passiveIp = value; }
-    inline void SetPassiveIp(Aws::String&& value) { m_passiveIpHasBeenSet = true; m_passiveIp = std::move(value); }
-    inline void SetPassiveIp(const char* value) { m_passiveIpHasBeenSet = true; m_passiveIp.assign(value); }
-    inline ProtocolDetails& WithPassiveIp(const Aws::String& value) { SetPassiveIp(value); return *this;}
-    inline ProtocolDetails& WithPassiveIp(Aws::String&& value) { SetPassiveIp(std::move(value)); return *this;}
-    inline ProtocolDetails& WithPassiveIp(const char* value) { SetPassiveIp(value); return *this;}
+    template<typename PassiveIpT = Aws::String>
+    void SetPassiveIp(PassiveIpT&& value) { m_passiveIpHasBeenSet = true; m_passiveIp = std::forward<PassiveIpT>(value); }
+    template<typename PassiveIpT = Aws::String>
+    ProtocolDetails& WithPassiveIp(PassiveIpT&& value) { SetPassiveIp(std::forward<PassiveIpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +103,10 @@ namespace Model
      * whether or not you can use the <code>ENFORCED</code> value, you need to test
      * your clients.</p>  </li> </ul>
      */
-    inline const TlsSessionResumptionMode& GetTlsSessionResumptionMode() const{ return m_tlsSessionResumptionMode; }
+    inline TlsSessionResumptionMode GetTlsSessionResumptionMode() const { return m_tlsSessionResumptionMode; }
     inline bool TlsSessionResumptionModeHasBeenSet() const { return m_tlsSessionResumptionModeHasBeenSet; }
-    inline void SetTlsSessionResumptionMode(const TlsSessionResumptionMode& value) { m_tlsSessionResumptionModeHasBeenSet = true; m_tlsSessionResumptionMode = value; }
-    inline void SetTlsSessionResumptionMode(TlsSessionResumptionMode&& value) { m_tlsSessionResumptionModeHasBeenSet = true; m_tlsSessionResumptionMode = std::move(value); }
-    inline ProtocolDetails& WithTlsSessionResumptionMode(const TlsSessionResumptionMode& value) { SetTlsSessionResumptionMode(value); return *this;}
-    inline ProtocolDetails& WithTlsSessionResumptionMode(TlsSessionResumptionMode&& value) { SetTlsSessionResumptionMode(std::move(value)); return *this;}
+    inline void SetTlsSessionResumptionMode(TlsSessionResumptionMode value) { m_tlsSessionResumptionModeHasBeenSet = true; m_tlsSessionResumptionMode = value; }
+    inline ProtocolDetails& WithTlsSessionResumptionMode(TlsSessionResumptionMode value) { SetTlsSessionResumptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +129,10 @@ namespace Model
      * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer
      * Family.</p> 
      */
-    inline const SetStatOption& GetSetStatOption() const{ return m_setStatOption; }
+    inline SetStatOption GetSetStatOption() const { return m_setStatOption; }
     inline bool SetStatOptionHasBeenSet() const { return m_setStatOptionHasBeenSet; }
-    inline void SetSetStatOption(const SetStatOption& value) { m_setStatOptionHasBeenSet = true; m_setStatOption = value; }
-    inline void SetSetStatOption(SetStatOption&& value) { m_setStatOptionHasBeenSet = true; m_setStatOption = std::move(value); }
-    inline ProtocolDetails& WithSetStatOption(const SetStatOption& value) { SetSetStatOption(value); return *this;}
-    inline ProtocolDetails& WithSetStatOption(SetStatOption&& value) { SetSetStatOption(std::move(value)); return *this;}
+    inline void SetSetStatOption(SetStatOption value) { m_setStatOptionHasBeenSet = true; m_setStatOption = value; }
+    inline ProtocolDetails& WithSetStatOption(SetStatOption value) { SetSetStatOption(value); return *this;}
     ///@}
 
     ///@{
@@ -146,24 +140,23 @@ namespace Model
      * <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is
      * supported.</p>
      */
-    inline const Aws::Vector<As2Transport>& GetAs2Transports() const{ return m_as2Transports; }
+    inline const Aws::Vector<As2Transport>& GetAs2Transports() const { return m_as2Transports; }
     inline bool As2TransportsHasBeenSet() const { return m_as2TransportsHasBeenSet; }
-    inline void SetAs2Transports(const Aws::Vector<As2Transport>& value) { m_as2TransportsHasBeenSet = true; m_as2Transports = value; }
-    inline void SetAs2Transports(Aws::Vector<As2Transport>&& value) { m_as2TransportsHasBeenSet = true; m_as2Transports = std::move(value); }
-    inline ProtocolDetails& WithAs2Transports(const Aws::Vector<As2Transport>& value) { SetAs2Transports(value); return *this;}
-    inline ProtocolDetails& WithAs2Transports(Aws::Vector<As2Transport>&& value) { SetAs2Transports(std::move(value)); return *this;}
-    inline ProtocolDetails& AddAs2Transports(const As2Transport& value) { m_as2TransportsHasBeenSet = true; m_as2Transports.push_back(value); return *this; }
-    inline ProtocolDetails& AddAs2Transports(As2Transport&& value) { m_as2TransportsHasBeenSet = true; m_as2Transports.push_back(std::move(value)); return *this; }
+    template<typename As2TransportsT = Aws::Vector<As2Transport>>
+    void SetAs2Transports(As2TransportsT&& value) { m_as2TransportsHasBeenSet = true; m_as2Transports = std::forward<As2TransportsT>(value); }
+    template<typename As2TransportsT = Aws::Vector<As2Transport>>
+    ProtocolDetails& WithAs2Transports(As2TransportsT&& value) { SetAs2Transports(std::forward<As2TransportsT>(value)); return *this;}
+    inline ProtocolDetails& AddAs2Transports(As2Transport value) { m_as2TransportsHasBeenSet = true; m_as2Transports.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_passiveIp;
     bool m_passiveIpHasBeenSet = false;
 
-    TlsSessionResumptionMode m_tlsSessionResumptionMode;
+    TlsSessionResumptionMode m_tlsSessionResumptionMode{TlsSessionResumptionMode::NOT_SET};
     bool m_tlsSessionResumptionModeHasBeenSet = false;
 
-    SetStatOption m_setStatOption;
+    SetStatOption m_setStatOption{SetStatOption::NOT_SET};
     bool m_setStatOptionHasBeenSet = false;
 
     Aws::Vector<As2Transport> m_as2Transports;

@@ -12,19 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFileSystemRequest::AssociateFileSystemRequest() : 
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_endpointNetworkConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String AssociateFileSystemRequest::SerializePayload() const
 {
   JsonValue payload;

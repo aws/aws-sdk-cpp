@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AutocompleteHighlights::AutocompleteHighlights() : 
-    m_titleHasBeenSet(false),
-    m_addressHasBeenSet(false)
-{
-}
-
 AutocompleteHighlights::AutocompleteHighlights(JsonView jsonValue)
-  : AutocompleteHighlights()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AutocompleteHighlights& AutocompleteHighlights::operator =(JsonView jsonValue)
     }
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   return *this;
 }
 

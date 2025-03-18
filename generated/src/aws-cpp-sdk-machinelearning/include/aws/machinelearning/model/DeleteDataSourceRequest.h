@@ -21,7 +21,7 @@ namespace Model
   class DeleteDataSourceRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API DeleteDataSourceRequest();
+    AWS_MACHINELEARNING_API DeleteDataSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline DeleteDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline DeleteDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline DeleteDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    DeleteDataSourceRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
   private:
 

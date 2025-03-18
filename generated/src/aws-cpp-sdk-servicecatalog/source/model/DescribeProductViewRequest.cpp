@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProductViewRequest::DescribeProductViewRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProductViewRequest::SerializePayload() const
 {
   JsonValue payload;

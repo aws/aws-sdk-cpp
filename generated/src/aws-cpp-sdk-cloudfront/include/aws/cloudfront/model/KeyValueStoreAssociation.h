@@ -30,7 +30,7 @@ namespace Model
   class KeyValueStoreAssociation
   {
   public:
-    AWS_CLOUDFRONT_API KeyValueStoreAssociation();
+    AWS_CLOUDFRONT_API KeyValueStoreAssociation() = default;
     AWS_CLOUDFRONT_API KeyValueStoreAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API KeyValueStoreAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
-    inline const Aws::String& GetKeyValueStoreARN() const{ return m_keyValueStoreARN; }
+    inline const Aws::String& GetKeyValueStoreARN() const { return m_keyValueStoreARN; }
     inline bool KeyValueStoreARNHasBeenSet() const { return m_keyValueStoreARNHasBeenSet; }
-    inline void SetKeyValueStoreARN(const Aws::String& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = value; }
-    inline void SetKeyValueStoreARN(Aws::String&& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = std::move(value); }
-    inline void SetKeyValueStoreARN(const char* value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN.assign(value); }
-    inline KeyValueStoreAssociation& WithKeyValueStoreARN(const Aws::String& value) { SetKeyValueStoreARN(value); return *this;}
-    inline KeyValueStoreAssociation& WithKeyValueStoreARN(Aws::String&& value) { SetKeyValueStoreARN(std::move(value)); return *this;}
-    inline KeyValueStoreAssociation& WithKeyValueStoreARN(const char* value) { SetKeyValueStoreARN(value); return *this;}
+    template<typename KeyValueStoreARNT = Aws::String>
+    void SetKeyValueStoreARN(KeyValueStoreARNT&& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = std::forward<KeyValueStoreARNT>(value); }
+    template<typename KeyValueStoreARNT = Aws::String>
+    KeyValueStoreAssociation& WithKeyValueStoreARN(KeyValueStoreARNT&& value) { SetKeyValueStoreARN(std::forward<KeyValueStoreARNT>(value)); return *this;}
     ///@}
   private:
 

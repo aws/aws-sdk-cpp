@@ -18,15 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_keyIdHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

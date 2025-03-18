@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAnalysisPermissionsRequest::UpdateAnalysisPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_analysisIdHasBeenSet(false),
-    m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAnalysisPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

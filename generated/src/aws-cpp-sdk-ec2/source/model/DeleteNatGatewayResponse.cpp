@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteNatGatewayResponse::DeleteNatGatewayResponse()
-{
-}
-
 DeleteNatGatewayResponse::DeleteNatGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteNatGatewayResponse& DeleteNatGatewayResponse::operator =(const Aws::Amazon
     if(!natGatewayIdNode.IsNull())
     {
       m_natGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(natGatewayIdNode.GetText());
+      m_natGatewayIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteNatGatewayResponse& DeleteNatGatewayResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteNatGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -32,7 +32,7 @@ namespace Model
   class ResourceServerScopeDetails
   {
   public:
-    AWS_SSOADMIN_API ResourceServerScopeDetails();
+    AWS_SSOADMIN_API ResourceServerScopeDetails() = default;
     AWS_SSOADMIN_API ResourceServerScopeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API ResourceServerScopeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The title of an access scope for a resource server.</p>
      */
-    inline const Aws::String& GetDetailedTitle() const{ return m_detailedTitle; }
+    inline const Aws::String& GetDetailedTitle() const { return m_detailedTitle; }
     inline bool DetailedTitleHasBeenSet() const { return m_detailedTitleHasBeenSet; }
-    inline void SetDetailedTitle(const Aws::String& value) { m_detailedTitleHasBeenSet = true; m_detailedTitle = value; }
-    inline void SetDetailedTitle(Aws::String&& value) { m_detailedTitleHasBeenSet = true; m_detailedTitle = std::move(value); }
-    inline void SetDetailedTitle(const char* value) { m_detailedTitleHasBeenSet = true; m_detailedTitle.assign(value); }
-    inline ResourceServerScopeDetails& WithDetailedTitle(const Aws::String& value) { SetDetailedTitle(value); return *this;}
-    inline ResourceServerScopeDetails& WithDetailedTitle(Aws::String&& value) { SetDetailedTitle(std::move(value)); return *this;}
-    inline ResourceServerScopeDetails& WithDetailedTitle(const char* value) { SetDetailedTitle(value); return *this;}
+    template<typename DetailedTitleT = Aws::String>
+    void SetDetailedTitle(DetailedTitleT&& value) { m_detailedTitleHasBeenSet = true; m_detailedTitle = std::forward<DetailedTitleT>(value); }
+    template<typename DetailedTitleT = Aws::String>
+    ResourceServerScopeDetails& WithDetailedTitle(DetailedTitleT&& value) { SetDetailedTitle(std::forward<DetailedTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of an access scope for a resource server.</p>
      */
-    inline const Aws::String& GetLongDescription() const{ return m_longDescription; }
+    inline const Aws::String& GetLongDescription() const { return m_longDescription; }
     inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
-    inline void SetLongDescription(const Aws::String& value) { m_longDescriptionHasBeenSet = true; m_longDescription = value; }
-    inline void SetLongDescription(Aws::String&& value) { m_longDescriptionHasBeenSet = true; m_longDescription = std::move(value); }
-    inline void SetLongDescription(const char* value) { m_longDescriptionHasBeenSet = true; m_longDescription.assign(value); }
-    inline ResourceServerScopeDetails& WithLongDescription(const Aws::String& value) { SetLongDescription(value); return *this;}
-    inline ResourceServerScopeDetails& WithLongDescription(Aws::String&& value) { SetLongDescription(std::move(value)); return *this;}
-    inline ResourceServerScopeDetails& WithLongDescription(const char* value) { SetLongDescription(value); return *this;}
+    template<typename LongDescriptionT = Aws::String>
+    void SetLongDescription(LongDescriptionT&& value) { m_longDescriptionHasBeenSet = true; m_longDescription = std::forward<LongDescriptionT>(value); }
+    template<typename LongDescriptionT = Aws::String>
+    ResourceServerScopeDetails& WithLongDescription(LongDescriptionT&& value) { SetLongDescription(std::forward<LongDescriptionT>(value)); return *this;}
     ///@}
   private:
 

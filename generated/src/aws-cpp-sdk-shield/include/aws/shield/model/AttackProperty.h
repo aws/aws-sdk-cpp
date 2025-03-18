@@ -36,7 +36,7 @@ namespace Model
   class AttackProperty
   {
   public:
-    AWS_SHIELD_API AttackProperty();
+    AWS_SHIELD_API AttackProperty() = default;
     AWS_SHIELD_API AttackProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API AttackProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const AttackLayer& GetAttackLayer() const{ return m_attackLayer; }
+    inline AttackLayer GetAttackLayer() const { return m_attackLayer; }
     inline bool AttackLayerHasBeenSet() const { return m_attackLayerHasBeenSet; }
-    inline void SetAttackLayer(const AttackLayer& value) { m_attackLayerHasBeenSet = true; m_attackLayer = value; }
-    inline void SetAttackLayer(AttackLayer&& value) { m_attackLayerHasBeenSet = true; m_attackLayer = std::move(value); }
-    inline AttackProperty& WithAttackLayer(const AttackLayer& value) { SetAttackLayer(value); return *this;}
-    inline AttackProperty& WithAttackLayer(AttackLayer&& value) { SetAttackLayer(std::move(value)); return *this;}
+    inline void SetAttackLayer(AttackLayer value) { m_attackLayerHasBeenSet = true; m_attackLayer = value; }
+    inline AttackProperty& WithAttackLayer(AttackLayer value) { SetAttackLayer(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress
      * reflective pingback events.</p>
      */
-    inline const AttackPropertyIdentifier& GetAttackPropertyIdentifier() const{ return m_attackPropertyIdentifier; }
+    inline AttackPropertyIdentifier GetAttackPropertyIdentifier() const { return m_attackPropertyIdentifier; }
     inline bool AttackPropertyIdentifierHasBeenSet() const { return m_attackPropertyIdentifierHasBeenSet; }
-    inline void SetAttackPropertyIdentifier(const AttackPropertyIdentifier& value) { m_attackPropertyIdentifierHasBeenSet = true; m_attackPropertyIdentifier = value; }
-    inline void SetAttackPropertyIdentifier(AttackPropertyIdentifier&& value) { m_attackPropertyIdentifierHasBeenSet = true; m_attackPropertyIdentifier = std::move(value); }
-    inline AttackProperty& WithAttackPropertyIdentifier(const AttackPropertyIdentifier& value) { SetAttackPropertyIdentifier(value); return *this;}
-    inline AttackProperty& WithAttackPropertyIdentifier(AttackPropertyIdentifier&& value) { SetAttackPropertyIdentifier(std::move(value)); return *this;}
+    inline void SetAttackPropertyIdentifier(AttackPropertyIdentifier value) { m_attackPropertyIdentifierHasBeenSet = true; m_attackPropertyIdentifier = value; }
+    inline AttackProperty& WithAttackPropertyIdentifier(AttackPropertyIdentifier value) { SetAttackPropertyIdentifier(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,14 @@ namespace Model
      * contributor is a source of traffic that Shield Advanced identifies as
      * responsible for some or all of an event.</p>
      */
-    inline const Aws::Vector<Contributor>& GetTopContributors() const{ return m_topContributors; }
+    inline const Aws::Vector<Contributor>& GetTopContributors() const { return m_topContributors; }
     inline bool TopContributorsHasBeenSet() const { return m_topContributorsHasBeenSet; }
-    inline void SetTopContributors(const Aws::Vector<Contributor>& value) { m_topContributorsHasBeenSet = true; m_topContributors = value; }
-    inline void SetTopContributors(Aws::Vector<Contributor>&& value) { m_topContributorsHasBeenSet = true; m_topContributors = std::move(value); }
-    inline AttackProperty& WithTopContributors(const Aws::Vector<Contributor>& value) { SetTopContributors(value); return *this;}
-    inline AttackProperty& WithTopContributors(Aws::Vector<Contributor>&& value) { SetTopContributors(std::move(value)); return *this;}
-    inline AttackProperty& AddTopContributors(const Contributor& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(value); return *this; }
-    inline AttackProperty& AddTopContributors(Contributor&& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(std::move(value)); return *this; }
+    template<typename TopContributorsT = Aws::Vector<Contributor>>
+    void SetTopContributors(TopContributorsT&& value) { m_topContributorsHasBeenSet = true; m_topContributors = std::forward<TopContributorsT>(value); }
+    template<typename TopContributorsT = Aws::Vector<Contributor>>
+    AttackProperty& WithTopContributors(TopContributorsT&& value) { SetTopContributors(std::forward<TopContributorsT>(value)); return *this;}
+    template<typename TopContributorsT = Contributor>
+    AttackProperty& AddTopContributors(TopContributorsT&& value) { m_topContributorsHasBeenSet = true; m_topContributors.emplace_back(std::forward<TopContributorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,38 +92,36 @@ namespace Model
      * <p>The unit used for the <code>Contributor</code> <code>Value</code> property.
      * </p>
      */
-    inline const Unit& GetUnit() const{ return m_unit; }
+    inline Unit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline AttackProperty& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-    inline AttackProperty& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(Unit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline AttackProperty& WithUnit(Unit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total contributions made to this Shield event by all contributors.</p>
      */
-    inline long long GetTotal() const{ return m_total; }
+    inline long long GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
     inline AttackProperty& WithTotal(long long value) { SetTotal(value); return *this;}
     ///@}
   private:
 
-    AttackLayer m_attackLayer;
+    AttackLayer m_attackLayer{AttackLayer::NOT_SET};
     bool m_attackLayerHasBeenSet = false;
 
-    AttackPropertyIdentifier m_attackPropertyIdentifier;
+    AttackPropertyIdentifier m_attackPropertyIdentifier{AttackPropertyIdentifier::NOT_SET};
     bool m_attackPropertyIdentifierHasBeenSet = false;
 
     Aws::Vector<Contributor> m_topContributors;
     bool m_topContributorsHasBeenSet = false;
 
-    Unit m_unit;
+    Unit m_unit{Unit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    long long m_total;
+    long long m_total{0};
     bool m_totalHasBeenSet = false;
   };
 

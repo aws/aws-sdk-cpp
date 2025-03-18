@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LineageRunDetails::LineageRunDetails() : 
-    m_sqlQueryRunDetailsHasBeenSet(false)
-{
-}
-
 LineageRunDetails::LineageRunDetails(JsonView jsonValue)
-  : LineageRunDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LineageRunDetails& LineageRunDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sqlQueryRunDetails"))
   {
     m_sqlQueryRunDetails = jsonValue.GetObject("sqlQueryRunDetails");
-
     m_sqlQueryRunDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

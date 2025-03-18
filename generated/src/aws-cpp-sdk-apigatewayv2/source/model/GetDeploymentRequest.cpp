@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentRequest::GetDeploymentRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentRequest::SerializePayload() const
 {
   return {};

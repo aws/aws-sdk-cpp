@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateLibraryItemReviewRequest::AssociateLibraryItemReviewRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_libraryItemIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateLibraryItemReviewRequest::SerializePayload() const
 {
   JsonValue payload;

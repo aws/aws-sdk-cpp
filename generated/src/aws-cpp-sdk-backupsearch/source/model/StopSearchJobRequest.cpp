@@ -12,11 +12,6 @@ using namespace Aws::BackupSearch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopSearchJobRequest::StopSearchJobRequest() : 
-    m_searchJobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopSearchJobRequest::SerializePayload() const
 {
   return {};

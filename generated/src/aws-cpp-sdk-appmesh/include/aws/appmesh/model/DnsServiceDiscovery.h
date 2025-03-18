@@ -34,7 +34,7 @@ namespace Model
   class DnsServiceDiscovery
   {
   public:
-    AWS_APPMESH_API DnsServiceDiscovery();
+    AWS_APPMESH_API DnsServiceDiscovery() = default;
     AWS_APPMESH_API DnsServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API DnsServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline DnsServiceDiscovery& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline DnsServiceDiscovery& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline DnsServiceDiscovery& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    DnsServiceDiscovery& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,34 +58,30 @@ namespace Model
      * preference on the virtual node only overrides the IP preference set for the mesh
      * on this specific node.</p>
      */
-    inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
+    inline IpPreference GetIpPreference() const { return m_ipPreference; }
     inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
-    inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
-    inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
-    inline DnsServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
-    inline DnsServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
+    inline void SetIpPreference(IpPreference value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
+    inline DnsServiceDiscovery& WithIpPreference(IpPreference value) { SetIpPreference(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the DNS response type for the virtual node.</p>
      */
-    inline const DnsResponseType& GetResponseType() const{ return m_responseType; }
+    inline DnsResponseType GetResponseType() const { return m_responseType; }
     inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
-    inline void SetResponseType(const DnsResponseType& value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
-    inline void SetResponseType(DnsResponseType&& value) { m_responseTypeHasBeenSet = true; m_responseType = std::move(value); }
-    inline DnsServiceDiscovery& WithResponseType(const DnsResponseType& value) { SetResponseType(value); return *this;}
-    inline DnsServiceDiscovery& WithResponseType(DnsResponseType&& value) { SetResponseType(std::move(value)); return *this;}
+    inline void SetResponseType(DnsResponseType value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
+    inline DnsServiceDiscovery& WithResponseType(DnsResponseType value) { SetResponseType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet = false;
 
-    IpPreference m_ipPreference;
+    IpPreference m_ipPreference{IpPreference::NOT_SET};
     bool m_ipPreferenceHasBeenSet = false;
 
-    DnsResponseType m_responseType;
+    DnsResponseType m_responseType{DnsResponseType::NOT_SET};
     bool m_responseTypeHasBeenSet = false;
   };
 

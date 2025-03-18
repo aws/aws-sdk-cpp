@@ -18,15 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceSizeConfig::AudienceSizeConfig() : 
-    m_audienceSizeType(AudienceSizeType::NOT_SET),
-    m_audienceSizeTypeHasBeenSet(false),
-    m_audienceSizeBinsHasBeenSet(false)
-{
-}
-
 AudienceSizeConfig::AudienceSizeConfig(JsonView jsonValue)
-  : AudienceSizeConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AudienceSizeConfig& AudienceSizeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audienceSizeType"))
   {
     m_audienceSizeType = AudienceSizeTypeMapper::GetAudienceSizeTypeForName(jsonValue.GetString("audienceSizeType"));
-
     m_audienceSizeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceSizeBins"))
   {
     Aws::Utils::Array<JsonView> audienceSizeBinsJsonList = jsonValue.GetArray("audienceSizeBins");
@@ -49,7 +39,6 @@ AudienceSizeConfig& AudienceSizeConfig::operator =(JsonView jsonValue)
     }
     m_audienceSizeBinsHasBeenSet = true;
   }
-
   return *this;
 }
 

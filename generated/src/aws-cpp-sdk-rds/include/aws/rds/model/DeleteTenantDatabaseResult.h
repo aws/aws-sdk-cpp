@@ -28,33 +28,35 @@ namespace Model
   class DeleteTenantDatabaseResult
   {
   public:
-    AWS_RDS_API DeleteTenantDatabaseResult();
+    AWS_RDS_API DeleteTenantDatabaseResult() = default;
     AWS_RDS_API DeleteTenantDatabaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteTenantDatabaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const TenantDatabase& GetTenantDatabase() const{ return m_tenantDatabase; }
-    inline void SetTenantDatabase(const TenantDatabase& value) { m_tenantDatabase = value; }
-    inline void SetTenantDatabase(TenantDatabase&& value) { m_tenantDatabase = std::move(value); }
-    inline DeleteTenantDatabaseResult& WithTenantDatabase(const TenantDatabase& value) { SetTenantDatabase(value); return *this;}
-    inline DeleteTenantDatabaseResult& WithTenantDatabase(TenantDatabase&& value) { SetTenantDatabase(std::move(value)); return *this;}
+    inline const TenantDatabase& GetTenantDatabase() const { return m_tenantDatabase; }
+    template<typename TenantDatabaseT = TenantDatabase>
+    void SetTenantDatabase(TenantDatabaseT&& value) { m_tenantDatabaseHasBeenSet = true; m_tenantDatabase = std::forward<TenantDatabaseT>(value); }
+    template<typename TenantDatabaseT = TenantDatabase>
+    DeleteTenantDatabaseResult& WithTenantDatabase(TenantDatabaseT&& value) { SetTenantDatabase(std::forward<TenantDatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteTenantDatabaseResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteTenantDatabaseResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteTenantDatabaseResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TenantDatabase m_tenantDatabase;
+    bool m_tenantDatabaseHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

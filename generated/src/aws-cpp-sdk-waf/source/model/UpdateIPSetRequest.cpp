@@ -12,13 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIPSetRequest::UpdateIPSetRequest() : 
-    m_iPSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIPSetRequest::SerializePayload() const
 {
   JsonValue payload;

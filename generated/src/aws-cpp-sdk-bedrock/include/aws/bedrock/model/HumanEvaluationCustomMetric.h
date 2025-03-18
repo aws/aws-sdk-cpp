@@ -33,7 +33,7 @@ namespace Model
   class HumanEvaluationCustomMetric
   {
   public:
-    AWS_BEDROCK_API HumanEvaluationCustomMetric();
+    AWS_BEDROCK_API HumanEvaluationCustomMetric() = default;
     AWS_BEDROCK_API HumanEvaluationCustomMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API HumanEvaluationCustomMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the metric. Your human evaluators will see this name in the
      * evaluation UI.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HumanEvaluationCustomMetric& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HumanEvaluationCustomMetric& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HumanEvaluationCustomMetric& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HumanEvaluationCustomMetric& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>An optional description of the metric. Use this parameter to provide more
      * details about the metric.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline HumanEvaluationCustomMetric& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline HumanEvaluationCustomMetric& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline HumanEvaluationCustomMetric& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    HumanEvaluationCustomMetric& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <code>IndividualLikertScale</code>,<code>ComparisonLikertScale</code>,
      * <code>ComparisonChoice</code>, and <code>ComparisonRank</code> </p>
      */
-    inline const Aws::String& GetRatingMethod() const{ return m_ratingMethod; }
+    inline const Aws::String& GetRatingMethod() const { return m_ratingMethod; }
     inline bool RatingMethodHasBeenSet() const { return m_ratingMethodHasBeenSet; }
-    inline void SetRatingMethod(const Aws::String& value) { m_ratingMethodHasBeenSet = true; m_ratingMethod = value; }
-    inline void SetRatingMethod(Aws::String&& value) { m_ratingMethodHasBeenSet = true; m_ratingMethod = std::move(value); }
-    inline void SetRatingMethod(const char* value) { m_ratingMethodHasBeenSet = true; m_ratingMethod.assign(value); }
-    inline HumanEvaluationCustomMetric& WithRatingMethod(const Aws::String& value) { SetRatingMethod(value); return *this;}
-    inline HumanEvaluationCustomMetric& WithRatingMethod(Aws::String&& value) { SetRatingMethod(std::move(value)); return *this;}
-    inline HumanEvaluationCustomMetric& WithRatingMethod(const char* value) { SetRatingMethod(value); return *this;}
+    template<typename RatingMethodT = Aws::String>
+    void SetRatingMethod(RatingMethodT&& value) { m_ratingMethodHasBeenSet = true; m_ratingMethod = std::forward<RatingMethodT>(value); }
+    template<typename RatingMethodT = Aws::String>
+    HumanEvaluationCustomMetric& WithRatingMethod(RatingMethodT&& value) { SetRatingMethod(std::forward<RatingMethodT>(value)); return *this;}
     ///@}
   private:
 

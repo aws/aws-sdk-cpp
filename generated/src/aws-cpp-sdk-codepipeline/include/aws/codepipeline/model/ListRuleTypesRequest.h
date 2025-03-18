@@ -22,7 +22,7 @@ namespace Model
   class ListRuleTypesRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API ListRuleTypesRequest();
+    AWS_CODEPIPELINE_API ListRuleTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,30 +39,26 @@ namespace Model
     /**
      * <p>The rule owner to filter on.</p>
      */
-    inline const RuleOwner& GetRuleOwnerFilter() const{ return m_ruleOwnerFilter; }
+    inline RuleOwner GetRuleOwnerFilter() const { return m_ruleOwnerFilter; }
     inline bool RuleOwnerFilterHasBeenSet() const { return m_ruleOwnerFilterHasBeenSet; }
-    inline void SetRuleOwnerFilter(const RuleOwner& value) { m_ruleOwnerFilterHasBeenSet = true; m_ruleOwnerFilter = value; }
-    inline void SetRuleOwnerFilter(RuleOwner&& value) { m_ruleOwnerFilterHasBeenSet = true; m_ruleOwnerFilter = std::move(value); }
-    inline ListRuleTypesRequest& WithRuleOwnerFilter(const RuleOwner& value) { SetRuleOwnerFilter(value); return *this;}
-    inline ListRuleTypesRequest& WithRuleOwnerFilter(RuleOwner&& value) { SetRuleOwnerFilter(std::move(value)); return *this;}
+    inline void SetRuleOwnerFilter(RuleOwner value) { m_ruleOwnerFilterHasBeenSet = true; m_ruleOwnerFilter = value; }
+    inline ListRuleTypesRequest& WithRuleOwnerFilter(RuleOwner value) { SetRuleOwnerFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule Region to filter on.</p>
      */
-    inline const Aws::String& GetRegionFilter() const{ return m_regionFilter; }
+    inline const Aws::String& GetRegionFilter() const { return m_regionFilter; }
     inline bool RegionFilterHasBeenSet() const { return m_regionFilterHasBeenSet; }
-    inline void SetRegionFilter(const Aws::String& value) { m_regionFilterHasBeenSet = true; m_regionFilter = value; }
-    inline void SetRegionFilter(Aws::String&& value) { m_regionFilterHasBeenSet = true; m_regionFilter = std::move(value); }
-    inline void SetRegionFilter(const char* value) { m_regionFilterHasBeenSet = true; m_regionFilter.assign(value); }
-    inline ListRuleTypesRequest& WithRegionFilter(const Aws::String& value) { SetRegionFilter(value); return *this;}
-    inline ListRuleTypesRequest& WithRegionFilter(Aws::String&& value) { SetRegionFilter(std::move(value)); return *this;}
-    inline ListRuleTypesRequest& WithRegionFilter(const char* value) { SetRegionFilter(value); return *this;}
+    template<typename RegionFilterT = Aws::String>
+    void SetRegionFilter(RegionFilterT&& value) { m_regionFilterHasBeenSet = true; m_regionFilter = std::forward<RegionFilterT>(value); }
+    template<typename RegionFilterT = Aws::String>
+    ListRuleTypesRequest& WithRegionFilter(RegionFilterT&& value) { SetRegionFilter(std::forward<RegionFilterT>(value)); return *this;}
     ///@}
   private:
 
-    RuleOwner m_ruleOwnerFilter;
+    RuleOwner m_ruleOwnerFilter{RuleOwner::NOT_SET};
     bool m_ruleOwnerFilterHasBeenSet = false;
 
     Aws::String m_regionFilter;

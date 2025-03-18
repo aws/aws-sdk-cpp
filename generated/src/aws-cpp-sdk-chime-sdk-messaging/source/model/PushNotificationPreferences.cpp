@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-PushNotificationPreferences::PushNotificationPreferences() : 
-    m_allowNotifications(AllowNotifications::NOT_SET),
-    m_allowNotificationsHasBeenSet(false),
-    m_filterRuleHasBeenSet(false)
-{
-}
-
 PushNotificationPreferences::PushNotificationPreferences(JsonView jsonValue)
-  : PushNotificationPreferences()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PushNotificationPreferences& PushNotificationPreferences::operator =(JsonView js
   if(jsonValue.ValueExists("AllowNotifications"))
   {
     m_allowNotifications = AllowNotificationsMapper::GetAllowNotificationsForName(jsonValue.GetString("AllowNotifications"));
-
     m_allowNotificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterRule"))
   {
     m_filterRule = jsonValue.GetString("FilterRule");
-
     m_filterRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

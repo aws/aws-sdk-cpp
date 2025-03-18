@@ -18,30 +18,7 @@ namespace ServiceQuotas
 namespace Model
 {
 
-ServiceQuota::ServiceQuota() : 
-    m_serviceCodeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_quotaArnHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_adjustable(false),
-    m_adjustableHasBeenSet(false),
-    m_globalQuota(false),
-    m_globalQuotaHasBeenSet(false),
-    m_usageMetricHasBeenSet(false),
-    m_periodHasBeenSet(false),
-    m_errorReasonHasBeenSet(false),
-    m_quotaAppliedAtLevel(AppliedLevelEnum::NOT_SET),
-    m_quotaAppliedAtLevelHasBeenSet(false),
-    m_quotaContextHasBeenSet(false)
-{
-}
-
 ServiceQuota::ServiceQuota(JsonView jsonValue)
-  : ServiceQuota()
 {
   *this = jsonValue;
 }
@@ -51,101 +28,73 @@ ServiceQuota& ServiceQuota::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaArn"))
   {
     m_quotaArn = jsonValue.GetString("QuotaArn");
-
     m_quotaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaCode"))
   {
     m_quotaCode = jsonValue.GetString("QuotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaName"))
   {
     m_quotaName = jsonValue.GetString("QuotaName");
-
     m_quotaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Adjustable"))
   {
     m_adjustable = jsonValue.GetBool("Adjustable");
-
     m_adjustableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalQuota"))
   {
     m_globalQuota = jsonValue.GetBool("GlobalQuota");
-
     m_globalQuotaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageMetric"))
   {
     m_usageMetric = jsonValue.GetObject("UsageMetric");
-
     m_usageMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Period"))
   {
     m_period = jsonValue.GetObject("Period");
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorReason"))
   {
     m_errorReason = jsonValue.GetObject("ErrorReason");
-
     m_errorReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaAppliedAtLevel"))
   {
     m_quotaAppliedAtLevel = AppliedLevelEnumMapper::GetAppliedLevelEnumForName(jsonValue.GetString("QuotaAppliedAtLevel"));
-
     m_quotaAppliedAtLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaContext"))
   {
     m_quotaContext = jsonValue.GetObject("QuotaContext");
-
     m_quotaContextHasBeenSet = true;
   }
-
   return *this;
 }
 

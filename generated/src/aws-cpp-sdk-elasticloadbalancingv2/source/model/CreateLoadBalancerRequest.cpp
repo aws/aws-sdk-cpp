@@ -10,25 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-CreateLoadBalancerRequest::CreateLoadBalancerRequest() : 
-    m_nameHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
-    m_schemeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(LoadBalancerTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
-    m_enablePrefixForIpv6SourceNatHasBeenSet(false),
-    m_ipamPoolsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -33,7 +33,7 @@ namespace Model
   class ReputationOptions
   {
   public:
-    AWS_SESV2_API ReputationOptions();
+    AWS_SESV2_API ReputationOptions() = default;
     AWS_SESV2_API ReputationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ReputationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * configuration set. If <code>false</code>, tracking of reputation metrics is
      * disabled for the configuration set.</p>
      */
-    inline bool GetReputationMetricsEnabled() const{ return m_reputationMetricsEnabled; }
+    inline bool GetReputationMetricsEnabled() const { return m_reputationMetricsEnabled; }
     inline bool ReputationMetricsEnabledHasBeenSet() const { return m_reputationMetricsEnabledHasBeenSet; }
     inline void SetReputationMetricsEnabled(bool value) { m_reputationMetricsEnabledHasBeenSet = true; m_reputationMetricsEnabled = value; }
     inline ReputationOptions& WithReputationMetricsEnabled(bool value) { SetReputationMetricsEnabled(value); return *this;}
@@ -57,19 +57,19 @@ namespace Model
      * a fresh start. When your account is given a fresh start, your reputation metrics
      * are calculated starting from the date of the fresh start.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastFreshStart() const{ return m_lastFreshStart; }
+    inline const Aws::Utils::DateTime& GetLastFreshStart() const { return m_lastFreshStart; }
     inline bool LastFreshStartHasBeenSet() const { return m_lastFreshStartHasBeenSet; }
-    inline void SetLastFreshStart(const Aws::Utils::DateTime& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = value; }
-    inline void SetLastFreshStart(Aws::Utils::DateTime&& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = std::move(value); }
-    inline ReputationOptions& WithLastFreshStart(const Aws::Utils::DateTime& value) { SetLastFreshStart(value); return *this;}
-    inline ReputationOptions& WithLastFreshStart(Aws::Utils::DateTime&& value) { SetLastFreshStart(std::move(value)); return *this;}
+    template<typename LastFreshStartT = Aws::Utils::DateTime>
+    void SetLastFreshStart(LastFreshStartT&& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = std::forward<LastFreshStartT>(value); }
+    template<typename LastFreshStartT = Aws::Utils::DateTime>
+    ReputationOptions& WithLastFreshStart(LastFreshStartT&& value) { SetLastFreshStart(std::forward<LastFreshStartT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_reputationMetricsEnabled;
+    bool m_reputationMetricsEnabled{false};
     bool m_reputationMetricsEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastFreshStart;
+    Aws::Utils::DateTime m_lastFreshStart{};
     bool m_lastFreshStartHasBeenSet = false;
   };
 

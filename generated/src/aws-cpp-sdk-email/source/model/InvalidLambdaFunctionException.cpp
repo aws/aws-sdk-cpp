@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidLambdaFunctionException::InvalidLambdaFunctionException() : 
-    m_functionArnHasBeenSet(false)
-{
-}
-
 InvalidLambdaFunctionException::InvalidLambdaFunctionException(const XmlNode& xmlNode)
-  : InvalidLambdaFunctionException()
 {
   *this = xmlNode;
 }

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetStyleDescriptorRequest::GetStyleDescriptorRequest() : 
-    m_style(MapStyle::NOT_SET),
-    m_styleHasBeenSet(false),
-    m_colorScheme(ColorScheme::NOT_SET),
-    m_colorSchemeHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetStyleDescriptorRequest::SerializePayload() const
 {
   return {};

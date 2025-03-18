@@ -20,18 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ObjectIdentifier::ObjectIdentifier() : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 ObjectIdentifier::ObjectIdentifier(const XmlNode& xmlNode)
-  : ObjectIdentifier()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OfflineStoreStatus::OfflineStoreStatus() : 
-    m_status(OfflineStoreStatusValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_blockedReasonHasBeenSet(false)
-{
-}
-
 OfflineStoreStatus::OfflineStoreStatus(JsonView jsonValue)
-  : OfflineStoreStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OfflineStoreStatus& OfflineStoreStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OfflineStoreStatusValueMapper::GetOfflineStoreStatusValueForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockedReason"))
   {
     m_blockedReason = jsonValue.GetString("BlockedReason");
-
     m_blockedReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

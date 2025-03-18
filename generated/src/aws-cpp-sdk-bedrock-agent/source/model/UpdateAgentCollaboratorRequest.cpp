@@ -12,18 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAgentCollaboratorRequest::UpdateAgentCollaboratorRequest() : 
-    m_agentDescriptorHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_collaborationInstructionHasBeenSet(false),
-    m_collaboratorIdHasBeenSet(false),
-    m_collaboratorNameHasBeenSet(false),
-    m_relayConversationHistory(RelayConversationHistory::NOT_SET),
-    m_relayConversationHistoryHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAgentCollaboratorRequest::SerializePayload() const
 {
   JsonValue payload;

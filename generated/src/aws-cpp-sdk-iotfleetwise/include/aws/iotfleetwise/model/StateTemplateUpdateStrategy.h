@@ -39,7 +39,7 @@ namespace Model
   class StateTemplateUpdateStrategy
   {
   public:
-    AWS_IOTFLEETWISE_API StateTemplateUpdateStrategy();
+    AWS_IOTFLEETWISE_API StateTemplateUpdateStrategy() = default;
     AWS_IOTFLEETWISE_API StateTemplateUpdateStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API StateTemplateUpdateStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,22 +47,22 @@ namespace Model
 
     ///@{
     
-    inline const PeriodicStateTemplateUpdateStrategy& GetPeriodic() const{ return m_periodic; }
+    inline const PeriodicStateTemplateUpdateStrategy& GetPeriodic() const { return m_periodic; }
     inline bool PeriodicHasBeenSet() const { return m_periodicHasBeenSet; }
-    inline void SetPeriodic(const PeriodicStateTemplateUpdateStrategy& value) { m_periodicHasBeenSet = true; m_periodic = value; }
-    inline void SetPeriodic(PeriodicStateTemplateUpdateStrategy&& value) { m_periodicHasBeenSet = true; m_periodic = std::move(value); }
-    inline StateTemplateUpdateStrategy& WithPeriodic(const PeriodicStateTemplateUpdateStrategy& value) { SetPeriodic(value); return *this;}
-    inline StateTemplateUpdateStrategy& WithPeriodic(PeriodicStateTemplateUpdateStrategy&& value) { SetPeriodic(std::move(value)); return *this;}
+    template<typename PeriodicT = PeriodicStateTemplateUpdateStrategy>
+    void SetPeriodic(PeriodicT&& value) { m_periodicHasBeenSet = true; m_periodic = std::forward<PeriodicT>(value); }
+    template<typename PeriodicT = PeriodicStateTemplateUpdateStrategy>
+    StateTemplateUpdateStrategy& WithPeriodic(PeriodicT&& value) { SetPeriodic(std::forward<PeriodicT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OnChangeStateTemplateUpdateStrategy& GetOnChange() const{ return m_onChange; }
+    inline const OnChangeStateTemplateUpdateStrategy& GetOnChange() const { return m_onChange; }
     inline bool OnChangeHasBeenSet() const { return m_onChangeHasBeenSet; }
-    inline void SetOnChange(const OnChangeStateTemplateUpdateStrategy& value) { m_onChangeHasBeenSet = true; m_onChange = value; }
-    inline void SetOnChange(OnChangeStateTemplateUpdateStrategy&& value) { m_onChangeHasBeenSet = true; m_onChange = std::move(value); }
-    inline StateTemplateUpdateStrategy& WithOnChange(const OnChangeStateTemplateUpdateStrategy& value) { SetOnChange(value); return *this;}
-    inline StateTemplateUpdateStrategy& WithOnChange(OnChangeStateTemplateUpdateStrategy&& value) { SetOnChange(std::move(value)); return *this;}
+    template<typename OnChangeT = OnChangeStateTemplateUpdateStrategy>
+    void SetOnChange(OnChangeT&& value) { m_onChangeHasBeenSet = true; m_onChange = std::forward<OnChangeT>(value); }
+    template<typename OnChangeT = OnChangeStateTemplateUpdateStrategy>
+    StateTemplateUpdateStrategy& WithOnChange(OnChangeT&& value) { SetOnChange(std::forward<OnChangeT>(value)); return *this;}
     ///@}
   private:
 

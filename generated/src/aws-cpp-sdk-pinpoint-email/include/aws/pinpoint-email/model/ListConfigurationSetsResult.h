@@ -34,7 +34,7 @@ namespace Model
   class ListConfigurationSetsResult
   {
   public:
-    AWS_PINPOINTEMAIL_API ListConfigurationSetsResult();
+    AWS_PINPOINTEMAIL_API ListConfigurationSetsResult() = default;
     AWS_PINPOINTEMAIL_API ListConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API ListConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,14 +44,13 @@ namespace Model
      * <p>An array that contains all of the configuration sets in your Amazon Pinpoint
      * account in the current AWS Region.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigurationSets() const{ return m_configurationSets; }
-    inline void SetConfigurationSets(const Aws::Vector<Aws::String>& value) { m_configurationSets = value; }
-    inline void SetConfigurationSets(Aws::Vector<Aws::String>&& value) { m_configurationSets = std::move(value); }
-    inline ListConfigurationSetsResult& WithConfigurationSets(const Aws::Vector<Aws::String>& value) { SetConfigurationSets(value); return *this;}
-    inline ListConfigurationSetsResult& WithConfigurationSets(Aws::Vector<Aws::String>&& value) { SetConfigurationSets(std::move(value)); return *this;}
-    inline ListConfigurationSetsResult& AddConfigurationSets(const Aws::String& value) { m_configurationSets.push_back(value); return *this; }
-    inline ListConfigurationSetsResult& AddConfigurationSets(Aws::String&& value) { m_configurationSets.push_back(std::move(value)); return *this; }
-    inline ListConfigurationSetsResult& AddConfigurationSets(const char* value) { m_configurationSets.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetConfigurationSets() const { return m_configurationSets; }
+    template<typename ConfigurationSetsT = Aws::Vector<Aws::String>>
+    void SetConfigurationSets(ConfigurationSetsT&& value) { m_configurationSetsHasBeenSet = true; m_configurationSets = std::forward<ConfigurationSetsT>(value); }
+    template<typename ConfigurationSetsT = Aws::Vector<Aws::String>>
+    ListConfigurationSetsResult& WithConfigurationSets(ConfigurationSetsT&& value) { SetConfigurationSets(std::forward<ConfigurationSetsT>(value)); return *this;}
+    template<typename ConfigurationSetsT = Aws::String>
+    ListConfigurationSetsResult& AddConfigurationSets(ConfigurationSetsT&& value) { m_configurationSetsHasBeenSet = true; m_configurationSets.emplace_back(std::forward<ConfigurationSetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,32 +60,31 @@ namespace Model
      * <code>ListConfigurationSets</code>, and pass this token in the
      * <code>NextToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfigurationSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfigurationSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfigurationSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfigurationSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfigurationSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfigurationSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfigurationSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfigurationSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_configurationSets;
+    bool m_configurationSetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

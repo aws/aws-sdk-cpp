@@ -21,7 +21,7 @@ namespace Model
   class DeleteGlobalClusterRequest : public NeptuneRequest
   {
   public:
-    AWS_NEPTUNE_API DeleteGlobalClusterRequest();
+    AWS_NEPTUNE_API DeleteGlobalClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The cluster identifier of the global database cluster being deleted.</p>
      */
-    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-    inline DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-    inline DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-    inline DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    DeleteGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ConsumedUsages
   {
   public:
-    AWS_DEADLINE_API ConsumedUsages();
+    AWS_DEADLINE_API ConsumedUsages() = default;
     AWS_DEADLINE_API ConsumedUsages(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API ConsumedUsages& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The amount of the budget consumed.</p>
      */
-    inline double GetApproximateDollarUsage() const{ return m_approximateDollarUsage; }
+    inline double GetApproximateDollarUsage() const { return m_approximateDollarUsage; }
     inline bool ApproximateDollarUsageHasBeenSet() const { return m_approximateDollarUsageHasBeenSet; }
     inline void SetApproximateDollarUsage(double value) { m_approximateDollarUsageHasBeenSet = true; m_approximateDollarUsage = value; }
     inline ConsumedUsages& WithApproximateDollarUsage(double value) { SetApproximateDollarUsage(value); return *this;}
     ///@}
   private:
 
-    double m_approximateDollarUsage;
+    double m_approximateDollarUsage{0.0};
     bool m_approximateDollarUsageHasBeenSet = false;
   };
 

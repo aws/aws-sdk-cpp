@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRuleRequest::DeleteRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleRequest::SerializePayload() const
 {
   JsonValue payload;

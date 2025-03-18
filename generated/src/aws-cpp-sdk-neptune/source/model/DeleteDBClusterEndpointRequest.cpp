@@ -10,11 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DeleteDBClusterEndpointRequest::DeleteDBClusterEndpointRequest() : 
-    m_dBClusterEndpointIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBClusterEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

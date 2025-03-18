@@ -34,7 +34,7 @@ namespace Model
   class LanguageCodeItem
   {
   public:
-    AWS_TRANSCRIBESERVICE_API LanguageCodeItem();
+    AWS_TRANSCRIBESERVICE_API LanguageCodeItem() = default;
     AWS_TRANSCRIBESERVICE_API LanguageCodeItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API LanguageCodeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Provides the language code for each language identified in your media.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline LanguageCodeItem& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline LanguageCodeItem& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline LanguageCodeItem& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,17 +55,17 @@ namespace Model
      * <p>Provides the total time, in seconds, each identified language is spoken in
      * your media.</p>
      */
-    inline double GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline double GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(double value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline LanguageCodeItem& WithDurationInSeconds(double value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    double m_durationInSeconds;
+    double m_durationInSeconds{0.0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

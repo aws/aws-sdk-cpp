@@ -18,17 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-SelectParameters::SelectParameters() : 
-    m_inputSerializationHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_outputSerializationHasBeenSet(false)
-{
-}
-
 SelectParameters::SelectParameters(JsonView jsonValue)
-  : SelectParameters()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SelectParameters& SelectParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputSerialization"))
   {
     m_inputSerialization = jsonValue.GetObject("InputSerialization");
-
     m_inputSerializationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionType"))
   {
     m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(jsonValue.GetString("ExpressionType"));
-
     m_expressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSerialization"))
   {
     m_outputSerialization = jsonValue.GetObject("OutputSerialization");
-
     m_outputSerializationHasBeenSet = true;
   }
-
   return *this;
 }
 

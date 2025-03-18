@@ -34,7 +34,7 @@ namespace Model
   class QueryDefinition
   {
   public:
-    AWS_CLOUDWATCHLOGS_API QueryDefinition();
+    AWS_CLOUDWATCHLOGS_API QueryDefinition() = default;
     AWS_CLOUDWATCHLOGS_API QueryDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,40 +47,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
      * query languages</a>.</p>
      */
-    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
     inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
-    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
-    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
-    inline QueryDefinition& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
-    inline QueryDefinition& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    inline void SetQueryLanguage(QueryLanguage value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline QueryDefinition& WithQueryLanguage(QueryLanguage value) { SetQueryLanguage(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the query definition.</p>
      */
-    inline const Aws::String& GetQueryDefinitionId() const{ return m_queryDefinitionId; }
+    inline const Aws::String& GetQueryDefinitionId() const { return m_queryDefinitionId; }
     inline bool QueryDefinitionIdHasBeenSet() const { return m_queryDefinitionIdHasBeenSet; }
-    inline void SetQueryDefinitionId(const Aws::String& value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId = value; }
-    inline void SetQueryDefinitionId(Aws::String&& value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId = std::move(value); }
-    inline void SetQueryDefinitionId(const char* value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId.assign(value); }
-    inline QueryDefinition& WithQueryDefinitionId(const Aws::String& value) { SetQueryDefinitionId(value); return *this;}
-    inline QueryDefinition& WithQueryDefinitionId(Aws::String&& value) { SetQueryDefinitionId(std::move(value)); return *this;}
-    inline QueryDefinition& WithQueryDefinitionId(const char* value) { SetQueryDefinitionId(value); return *this;}
+    template<typename QueryDefinitionIdT = Aws::String>
+    void SetQueryDefinitionId(QueryDefinitionIdT&& value) { m_queryDefinitionIdHasBeenSet = true; m_queryDefinitionId = std::forward<QueryDefinitionIdT>(value); }
+    template<typename QueryDefinitionIdT = Aws::String>
+    QueryDefinition& WithQueryDefinitionId(QueryDefinitionIdT&& value) { SetQueryDefinitionId(std::forward<QueryDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the query definition.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline QueryDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline QueryDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline QueryDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QueryDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,21 +83,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline QueryDefinition& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline QueryDefinition& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline QueryDefinition& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    QueryDefinition& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the query definition was most recently modified.</p>
      */
-    inline long long GetLastModified() const{ return m_lastModified; }
+    inline long long GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
     inline void SetLastModified(long long value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
     inline QueryDefinition& WithLastModified(long long value) { SetLastModified(value); return *this;}
@@ -114,19 +106,18 @@ namespace Model
      * <p>If this query definition contains a list of log groups that it is limited to,
      * that list appears here.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogGroupNames() const{ return m_logGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetLogGroupNames() const { return m_logGroupNames; }
     inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }
-    inline void SetLogGroupNames(const Aws::Vector<Aws::String>& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = value; }
-    inline void SetLogGroupNames(Aws::Vector<Aws::String>&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = std::move(value); }
-    inline QueryDefinition& WithLogGroupNames(const Aws::Vector<Aws::String>& value) { SetLogGroupNames(value); return *this;}
-    inline QueryDefinition& WithLogGroupNames(Aws::Vector<Aws::String>&& value) { SetLogGroupNames(std::move(value)); return *this;}
-    inline QueryDefinition& AddLogGroupNames(const Aws::String& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
-    inline QueryDefinition& AddLogGroupNames(Aws::String&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(std::move(value)); return *this; }
-    inline QueryDefinition& AddLogGroupNames(const char* value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
+    template<typename LogGroupNamesT = Aws::Vector<Aws::String>>
+    void SetLogGroupNames(LogGroupNamesT&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = std::forward<LogGroupNamesT>(value); }
+    template<typename LogGroupNamesT = Aws::Vector<Aws::String>>
+    QueryDefinition& WithLogGroupNames(LogGroupNamesT&& value) { SetLogGroupNames(std::forward<LogGroupNamesT>(value)); return *this;}
+    template<typename LogGroupNamesT = Aws::String>
+    QueryDefinition& AddLogGroupNames(LogGroupNamesT&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.emplace_back(std::forward<LogGroupNamesT>(value)); return *this; }
     ///@}
   private:
 
-    QueryLanguage m_queryLanguage;
+    QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
     bool m_queryLanguageHasBeenSet = false;
 
     Aws::String m_queryDefinitionId;
@@ -138,7 +129,7 @@ namespace Model
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet = false;
 
-    long long m_lastModified;
+    long long m_lastModified{0};
     bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logGroupNames;

@@ -18,19 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-CustomerAction::CustomerAction() : 
-    m_actionName(CustomerActionName::NOT_SET),
-    m_actionNameHasBeenSet(false),
-    m_snoozeActionConfigurationHasBeenSet(false),
-    m_enableActionConfigurationHasBeenSet(false),
-    m_disableActionConfigurationHasBeenSet(false),
-    m_acknowledgeActionConfigurationHasBeenSet(false),
-    m_resetActionConfigurationHasBeenSet(false)
-{
-}
-
 CustomerAction::CustomerAction(JsonView jsonValue)
-  : CustomerAction()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ CustomerAction& CustomerAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = CustomerActionNameMapper::GetCustomerActionNameForName(jsonValue.GetString("actionName"));
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snoozeActionConfiguration"))
   {
     m_snoozeActionConfiguration = jsonValue.GetObject("snoozeActionConfiguration");
-
     m_snoozeActionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableActionConfiguration"))
   {
     m_enableActionConfiguration = jsonValue.GetObject("enableActionConfiguration");
-
     m_enableActionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableActionConfiguration"))
   {
     m_disableActionConfiguration = jsonValue.GetObject("disableActionConfiguration");
-
     m_disableActionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acknowledgeActionConfiguration"))
   {
     m_acknowledgeActionConfiguration = jsonValue.GetObject("acknowledgeActionConfiguration");
-
     m_acknowledgeActionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resetActionConfiguration"))
   {
     m_resetActionConfiguration = jsonValue.GetObject("resetActionConfiguration");
-
     m_resetActionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

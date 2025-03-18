@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-SubModule::SubModule() : 
-    m_commitIdHasBeenSet(false),
-    m_absolutePathHasBeenSet(false),
-    m_relativePathHasBeenSet(false)
-{
-}
-
 SubModule::SubModule(JsonView jsonValue)
-  : SubModule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SubModule& SubModule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("absolutePath"))
   {
     m_absolutePath = jsonValue.GetString("absolutePath");
-
     m_absolutePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relativePath"))
   {
     m_relativePath = jsonValue.GetString("relativePath");
-
     m_relativePathHasBeenSet = true;
   }
-
   return *this;
 }
 

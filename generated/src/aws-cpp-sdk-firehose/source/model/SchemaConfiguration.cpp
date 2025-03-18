@@ -18,18 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SchemaConfiguration::SchemaConfiguration() : 
-    m_roleARNHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 SchemaConfiguration::SchemaConfiguration(JsonView jsonValue)
-  : SchemaConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SchemaConfiguration& SchemaConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

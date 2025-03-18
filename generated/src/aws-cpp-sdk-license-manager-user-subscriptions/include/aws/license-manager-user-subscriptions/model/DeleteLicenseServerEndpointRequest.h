@@ -22,7 +22,7 @@ namespace Model
   class DeleteLicenseServerEndpointRequest : public LicenseManagerUserSubscriptionsRequest
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointRequest();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,33 +38,29 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the
      * <code>LicenseServerEndpoint</code> resource to delete.</p>
      */
-    inline const Aws::String& GetLicenseServerEndpointArn() const{ return m_licenseServerEndpointArn; }
+    inline const Aws::String& GetLicenseServerEndpointArn() const { return m_licenseServerEndpointArn; }
     inline bool LicenseServerEndpointArnHasBeenSet() const { return m_licenseServerEndpointArnHasBeenSet; }
-    inline void SetLicenseServerEndpointArn(const Aws::String& value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn = value; }
-    inline void SetLicenseServerEndpointArn(Aws::String&& value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn = std::move(value); }
-    inline void SetLicenseServerEndpointArn(const char* value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn.assign(value); }
-    inline DeleteLicenseServerEndpointRequest& WithLicenseServerEndpointArn(const Aws::String& value) { SetLicenseServerEndpointArn(value); return *this;}
-    inline DeleteLicenseServerEndpointRequest& WithLicenseServerEndpointArn(Aws::String&& value) { SetLicenseServerEndpointArn(std::move(value)); return *this;}
-    inline DeleteLicenseServerEndpointRequest& WithLicenseServerEndpointArn(const char* value) { SetLicenseServerEndpointArn(value); return *this;}
+    template<typename LicenseServerEndpointArnT = Aws::String>
+    void SetLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { m_licenseServerEndpointArnHasBeenSet = true; m_licenseServerEndpointArn = std::forward<LicenseServerEndpointArnT>(value); }
+    template<typename LicenseServerEndpointArnT = Aws::String>
+    DeleteLicenseServerEndpointRequest& WithLicenseServerEndpointArn(LicenseServerEndpointArnT&& value) { SetLicenseServerEndpointArn(std::forward<LicenseServerEndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of License Server that the delete request refers to.</p>
      */
-    inline const ServerType& GetServerType() const{ return m_serverType; }
+    inline ServerType GetServerType() const { return m_serverType; }
     inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline void SetServerType(ServerType&& value) { m_serverTypeHasBeenSet = true; m_serverType = std::move(value); }
-    inline DeleteLicenseServerEndpointRequest& WithServerType(const ServerType& value) { SetServerType(value); return *this;}
-    inline DeleteLicenseServerEndpointRequest& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline DeleteLicenseServerEndpointRequest& WithServerType(ServerType value) { SetServerType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_licenseServerEndpointArn;
     bool m_licenseServerEndpointArnHasBeenSet = false;
 
-    ServerType m_serverType;
+    ServerType m_serverType{ServerType::NOT_SET};
     bool m_serverTypeHasBeenSet = false;
   };
 

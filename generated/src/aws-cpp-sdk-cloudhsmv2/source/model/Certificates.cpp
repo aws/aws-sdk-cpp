@@ -18,17 +18,7 @@ namespace CloudHSMV2
 namespace Model
 {
 
-Certificates::Certificates() : 
-    m_clusterCsrHasBeenSet(false),
-    m_hsmCertificateHasBeenSet(false),
-    m_awsHardwareCertificateHasBeenSet(false),
-    m_manufacturerHardwareCertificateHasBeenSet(false),
-    m_clusterCertificateHasBeenSet(false)
-{
-}
-
 Certificates::Certificates(JsonView jsonValue)
-  : Certificates()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Certificates& Certificates::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterCsr"))
   {
     m_clusterCsr = jsonValue.GetString("ClusterCsr");
-
     m_clusterCsrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsmCertificate"))
   {
     m_hsmCertificate = jsonValue.GetString("HsmCertificate");
-
     m_hsmCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsHardwareCertificate"))
   {
     m_awsHardwareCertificate = jsonValue.GetString("AwsHardwareCertificate");
-
     m_awsHardwareCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManufacturerHardwareCertificate"))
   {
     m_manufacturerHardwareCertificate = jsonValue.GetString("ManufacturerHardwareCertificate");
-
     m_manufacturerHardwareCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterCertificate"))
   {
     m_clusterCertificate = jsonValue.GetString("ClusterCertificate");
-
     m_clusterCertificateHasBeenSet = true;
   }
-
   return *this;
 }
 

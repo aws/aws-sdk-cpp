@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserProfilesRequest::DescribeUserProfilesRequest() : 
-    m_iamUserArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

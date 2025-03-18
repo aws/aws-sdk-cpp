@@ -12,16 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAssessmentControlRequest::UpdateAssessmentControlRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_controlIdHasBeenSet(false),
-    m_controlStatus(ControlStatus::NOT_SET),
-    m_controlStatusHasBeenSet(false),
-    m_commentBodyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssessmentControlRequest::SerializePayload() const
 {
   JsonValue payload;

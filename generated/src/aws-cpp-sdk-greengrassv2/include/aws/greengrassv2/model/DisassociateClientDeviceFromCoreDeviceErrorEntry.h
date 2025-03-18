@@ -34,7 +34,7 @@ namespace Model
   class DisassociateClientDeviceFromCoreDeviceErrorEntry
   {
   public:
-    AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry();
+    AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry() = default;
     AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API DisassociateClientDeviceFromCoreDeviceErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The name of the IoT thing whose disassociate request failed.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    DisassociateClientDeviceFromCoreDeviceErrorEntry& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code for the request.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    DisassociateClientDeviceFromCoreDeviceErrorEntry& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that provides additional information about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DisassociateClientDeviceFromCoreDeviceErrorEntry& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DisassociateClientDeviceFromCoreDeviceErrorEntry& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

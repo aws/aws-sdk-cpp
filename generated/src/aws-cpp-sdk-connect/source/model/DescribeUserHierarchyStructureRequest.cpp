@@ -12,11 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserHierarchyStructureRequest::DescribeUserHierarchyStructureRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserHierarchyStructureRequest::SerializePayload() const
 {
   return {};

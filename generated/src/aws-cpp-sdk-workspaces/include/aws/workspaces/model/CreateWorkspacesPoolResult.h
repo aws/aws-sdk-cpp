@@ -28,7 +28,7 @@ namespace Model
   class CreateWorkspacesPoolResult
   {
   public:
-    AWS_WORKSPACES_API CreateWorkspacesPoolResult();
+    AWS_WORKSPACES_API CreateWorkspacesPoolResult() = default;
     AWS_WORKSPACES_API CreateWorkspacesPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API CreateWorkspacesPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Indicates the pool to create.</p>
      */
-    inline const WorkspacesPool& GetWorkspacesPool() const{ return m_workspacesPool; }
-    inline void SetWorkspacesPool(const WorkspacesPool& value) { m_workspacesPool = value; }
-    inline void SetWorkspacesPool(WorkspacesPool&& value) { m_workspacesPool = std::move(value); }
-    inline CreateWorkspacesPoolResult& WithWorkspacesPool(const WorkspacesPool& value) { SetWorkspacesPool(value); return *this;}
-    inline CreateWorkspacesPoolResult& WithWorkspacesPool(WorkspacesPool&& value) { SetWorkspacesPool(std::move(value)); return *this;}
+    inline const WorkspacesPool& GetWorkspacesPool() const { return m_workspacesPool; }
+    template<typename WorkspacesPoolT = WorkspacesPool>
+    void SetWorkspacesPool(WorkspacesPoolT&& value) { m_workspacesPoolHasBeenSet = true; m_workspacesPool = std::forward<WorkspacesPoolT>(value); }
+    template<typename WorkspacesPoolT = WorkspacesPool>
+    CreateWorkspacesPoolResult& WithWorkspacesPool(WorkspacesPoolT&& value) { SetWorkspacesPool(std::forward<WorkspacesPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkspacesPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkspacesPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkspacesPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkspacesPoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WorkspacesPool m_workspacesPool;
+    bool m_workspacesPoolHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

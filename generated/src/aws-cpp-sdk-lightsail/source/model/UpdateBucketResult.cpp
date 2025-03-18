@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateBucketResult::UpdateBucketResult()
-{
-}
-
 UpdateBucketResult::UpdateBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdateBucketResult& UpdateBucketResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetObject("bucket");
-
+    m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operations"))
   {
     Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
@@ -42,14 +37,15 @@ UpdateBucketResult& UpdateBucketResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_operations.push_back(operationsJsonList[operationsIndex].AsObject());
     }
+    m_operationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

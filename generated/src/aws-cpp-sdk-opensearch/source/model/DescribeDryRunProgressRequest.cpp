@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeDryRunProgressRequest::DescribeDryRunProgressRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_dryRunIdHasBeenSet(false),
-    m_loadDryRunConfig(false),
-    m_loadDryRunConfigHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDryRunProgressRequest::SerializePayload() const
 {
   return {};

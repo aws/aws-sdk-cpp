@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartResourceGroupingRecommendationTaskResult::StartResourceGroupingRecommendationTaskResult() : 
-    m_status(ResourcesGroupingRecGenStatusType::NOT_SET)
-{
-}
-
 StartResourceGroupingRecommendationTaskResult::StartResourceGroupingRecommendationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartResourceGroupingRecommendationTaskResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ StartResourceGroupingRecommendationTaskResult& StartResourceGroupingRecommendati
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupingId"))
   {
     m_groupingId = jsonValue.GetString("groupingId");
-
+    m_groupingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourcesGroupingRecGenStatusTypeMapper::GetResourcesGroupingRecGenStatusTypeForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

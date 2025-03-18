@@ -32,7 +32,7 @@ namespace Model
   class Subscription
   {
   public:
-    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Subscription();
+    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Subscription() = default;
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Subscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The total amount of running instances using this subscription.</p>
      */
-    inline long long GetInstanceCount() const{ return m_instanceCount; }
+    inline long long GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(long long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline Subscription& WithInstanceCount(long long value) { SetInstanceCount(value); return *this;}
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The name of the subscription.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Subscription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Subscription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Subscription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Subscription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,18 +67,16 @@ namespace Model
      * Marketplace. Certain subscriptions may use licensing from the Amazon Web
      * Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Subscription& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Subscription& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Subscription& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Subscription& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_instanceCount;
+    long long m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_name;

@@ -18,19 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-RtmpOutputSettings::RtmpOutputSettings() : 
-    m_certificateMode(RtmpOutputCertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false),
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false)
-{
-}
-
 RtmpOutputSettings::RtmpOutputSettings(JsonView jsonValue)
-  : RtmpOutputSettings()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ RtmpOutputSettings& RtmpOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateMode"))
   {
     m_certificateMode = RtmpOutputCertificateModeMapper::GetRtmpOutputCertificateModeForName(jsonValue.GetString("certificateMode"));
-
     m_certificateModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {
     m_connectionRetryInterval = jsonValue.GetInteger("connectionRetryInterval");
-
     m_connectionRetryIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numRetries"))
   {
     m_numRetries = jsonValue.GetInteger("numRetries");
-
     m_numRetriesHasBeenSet = true;
   }
-
   return *this;
 }
 

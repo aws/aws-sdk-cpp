@@ -35,7 +35,7 @@ namespace Model
   class ActiveDirectorySettings
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectorySettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectorySettings() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectorySettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectorySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,41 +46,38 @@ namespace Model
      * <p>Points to the <code>CredentialsProvider</code> resource that contains
      * information about the credential provider for user administration.</p>
      */
-    inline const CredentialsProvider& GetDomainCredentialsProvider() const{ return m_domainCredentialsProvider; }
+    inline const CredentialsProvider& GetDomainCredentialsProvider() const { return m_domainCredentialsProvider; }
     inline bool DomainCredentialsProviderHasBeenSet() const { return m_domainCredentialsProviderHasBeenSet; }
-    inline void SetDomainCredentialsProvider(const CredentialsProvider& value) { m_domainCredentialsProviderHasBeenSet = true; m_domainCredentialsProvider = value; }
-    inline void SetDomainCredentialsProvider(CredentialsProvider&& value) { m_domainCredentialsProviderHasBeenSet = true; m_domainCredentialsProvider = std::move(value); }
-    inline ActiveDirectorySettings& WithDomainCredentialsProvider(const CredentialsProvider& value) { SetDomainCredentialsProvider(value); return *this;}
-    inline ActiveDirectorySettings& WithDomainCredentialsProvider(CredentialsProvider&& value) { SetDomainCredentialsProvider(std::move(value)); return *this;}
+    template<typename DomainCredentialsProviderT = CredentialsProvider>
+    void SetDomainCredentialsProvider(DomainCredentialsProviderT&& value) { m_domainCredentialsProviderHasBeenSet = true; m_domainCredentialsProvider = std::forward<DomainCredentialsProviderT>(value); }
+    template<typename DomainCredentialsProviderT = CredentialsProvider>
+    ActiveDirectorySettings& WithDomainCredentialsProvider(DomainCredentialsProviderT&& value) { SetDomainCredentialsProvider(std::forward<DomainCredentialsProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of domain IPv4 addresses that are used for the Active Directory.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainIpv4List() const{ return m_domainIpv4List; }
+    inline const Aws::Vector<Aws::String>& GetDomainIpv4List() const { return m_domainIpv4List; }
     inline bool DomainIpv4ListHasBeenSet() const { return m_domainIpv4ListHasBeenSet; }
-    inline void SetDomainIpv4List(const Aws::Vector<Aws::String>& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List = value; }
-    inline void SetDomainIpv4List(Aws::Vector<Aws::String>&& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List = std::move(value); }
-    inline ActiveDirectorySettings& WithDomainIpv4List(const Aws::Vector<Aws::String>& value) { SetDomainIpv4List(value); return *this;}
-    inline ActiveDirectorySettings& WithDomainIpv4List(Aws::Vector<Aws::String>&& value) { SetDomainIpv4List(std::move(value)); return *this;}
-    inline ActiveDirectorySettings& AddDomainIpv4List(const Aws::String& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List.push_back(value); return *this; }
-    inline ActiveDirectorySettings& AddDomainIpv4List(Aws::String&& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List.push_back(std::move(value)); return *this; }
-    inline ActiveDirectorySettings& AddDomainIpv4List(const char* value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List.push_back(value); return *this; }
+    template<typename DomainIpv4ListT = Aws::Vector<Aws::String>>
+    void SetDomainIpv4List(DomainIpv4ListT&& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List = std::forward<DomainIpv4ListT>(value); }
+    template<typename DomainIpv4ListT = Aws::Vector<Aws::String>>
+    ActiveDirectorySettings& WithDomainIpv4List(DomainIpv4ListT&& value) { SetDomainIpv4List(std::forward<DomainIpv4ListT>(value)); return *this;}
+    template<typename DomainIpv4ListT = Aws::String>
+    ActiveDirectorySettings& AddDomainIpv4List(DomainIpv4ListT&& value) { m_domainIpv4ListHasBeenSet = true; m_domainIpv4List.emplace_back(std::forward<DomainIpv4ListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The domain name for the Active Directory.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline ActiveDirectorySettings& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ActiveDirectorySettings& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ActiveDirectorySettings& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ActiveDirectorySettings& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +85,12 @@ namespace Model
      * <p>The <code>DomainNetworkSettings</code> resource contains an array of subnets
      * that apply for the Active Directory.</p>
      */
-    inline const DomainNetworkSettings& GetDomainNetworkSettings() const{ return m_domainNetworkSettings; }
+    inline const DomainNetworkSettings& GetDomainNetworkSettings() const { return m_domainNetworkSettings; }
     inline bool DomainNetworkSettingsHasBeenSet() const { return m_domainNetworkSettingsHasBeenSet; }
-    inline void SetDomainNetworkSettings(const DomainNetworkSettings& value) { m_domainNetworkSettingsHasBeenSet = true; m_domainNetworkSettings = value; }
-    inline void SetDomainNetworkSettings(DomainNetworkSettings&& value) { m_domainNetworkSettingsHasBeenSet = true; m_domainNetworkSettings = std::move(value); }
-    inline ActiveDirectorySettings& WithDomainNetworkSettings(const DomainNetworkSettings& value) { SetDomainNetworkSettings(value); return *this;}
-    inline ActiveDirectorySettings& WithDomainNetworkSettings(DomainNetworkSettings&& value) { SetDomainNetworkSettings(std::move(value)); return *this;}
+    template<typename DomainNetworkSettingsT = DomainNetworkSettings>
+    void SetDomainNetworkSettings(DomainNetworkSettingsT&& value) { m_domainNetworkSettingsHasBeenSet = true; m_domainNetworkSettings = std::forward<DomainNetworkSettingsT>(value); }
+    template<typename DomainNetworkSettingsT = DomainNetworkSettings>
+    ActiveDirectorySettings& WithDomainNetworkSettings(DomainNetworkSettingsT&& value) { SetDomainNetworkSettings(std::forward<DomainNetworkSettingsT>(value)); return *this;}
     ///@}
   private:
 

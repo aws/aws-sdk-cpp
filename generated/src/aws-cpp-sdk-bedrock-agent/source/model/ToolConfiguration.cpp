@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ToolConfiguration::ToolConfiguration() : 
-    m_toolChoiceHasBeenSet(false),
-    m_toolsHasBeenSet(false)
-{
-}
-
 ToolConfiguration::ToolConfiguration(JsonView jsonValue)
-  : ToolConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ToolConfiguration& ToolConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("toolChoice"))
   {
     m_toolChoice = jsonValue.GetObject("toolChoice");
-
     m_toolChoiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -48,7 +39,6 @@ ToolConfiguration& ToolConfiguration::operator =(JsonView jsonValue)
     }
     m_toolsHasBeenSet = true;
   }
-
   return *this;
 }
 

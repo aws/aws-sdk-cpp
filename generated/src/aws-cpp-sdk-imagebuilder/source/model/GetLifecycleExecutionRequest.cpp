@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLifecycleExecutionRequest::GetLifecycleExecutionRequest() : 
-    m_lifecycleExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLifecycleExecutionRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class GetVpnConnectionDeviceSampleConfigurationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationRequest();
+    AWS_EC2_API GetVpnConnectionDeviceSampleConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection
      * used for the sample configuration.</p>
      */
-    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+    inline const Aws::String& GetVpnConnectionId() const { return m_vpnConnectionId; }
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
-    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
+    template<typename VpnConnectionIdT = Aws::String>
+    void SetVpnConnectionId(VpnConnectionIdT&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::forward<VpnConnectionIdT>(value); }
+    template<typename VpnConnectionIdT = Aws::String>
+    GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionId(VpnConnectionIdT&& value) { SetVpnConnectionId(std::forward<VpnConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code>
      * API.</p>
      */
-    inline const Aws::String& GetVpnConnectionDeviceTypeId() const{ return m_vpnConnectionDeviceTypeId; }
+    inline const Aws::String& GetVpnConnectionDeviceTypeId() const { return m_vpnConnectionDeviceTypeId; }
     inline bool VpnConnectionDeviceTypeIdHasBeenSet() const { return m_vpnConnectionDeviceTypeIdHasBeenSet; }
-    inline void SetVpnConnectionDeviceTypeId(const Aws::String& value) { m_vpnConnectionDeviceTypeIdHasBeenSet = true; m_vpnConnectionDeviceTypeId = value; }
-    inline void SetVpnConnectionDeviceTypeId(Aws::String&& value) { m_vpnConnectionDeviceTypeIdHasBeenSet = true; m_vpnConnectionDeviceTypeId = std::move(value); }
-    inline void SetVpnConnectionDeviceTypeId(const char* value) { m_vpnConnectionDeviceTypeIdHasBeenSet = true; m_vpnConnectionDeviceTypeId.assign(value); }
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionDeviceTypeId(const Aws::String& value) { SetVpnConnectionDeviceTypeId(value); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionDeviceTypeId(Aws::String&& value) { SetVpnConnectionDeviceTypeId(std::move(value)); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionDeviceTypeId(const char* value) { SetVpnConnectionDeviceTypeId(value); return *this;}
+    template<typename VpnConnectionDeviceTypeIdT = Aws::String>
+    void SetVpnConnectionDeviceTypeId(VpnConnectionDeviceTypeIdT&& value) { m_vpnConnectionDeviceTypeIdHasBeenSet = true; m_vpnConnectionDeviceTypeId = std::forward<VpnConnectionDeviceTypeIdT>(value); }
+    template<typename VpnConnectionDeviceTypeIdT = Aws::String>
+    GetVpnConnectionDeviceSampleConfigurationRequest& WithVpnConnectionDeviceTypeId(VpnConnectionDeviceTypeIdT&& value) { SetVpnConnectionDeviceTypeId(std::forward<VpnConnectionDeviceTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * gateway device. You can specify one of the following versions:
      * <code>ikev1</code> or <code>ikev2</code>.</p>
      */
-    inline const Aws::String& GetInternetKeyExchangeVersion() const{ return m_internetKeyExchangeVersion; }
+    inline const Aws::String& GetInternetKeyExchangeVersion() const { return m_internetKeyExchangeVersion; }
     inline bool InternetKeyExchangeVersionHasBeenSet() const { return m_internetKeyExchangeVersionHasBeenSet; }
-    inline void SetInternetKeyExchangeVersion(const Aws::String& value) { m_internetKeyExchangeVersionHasBeenSet = true; m_internetKeyExchangeVersion = value; }
-    inline void SetInternetKeyExchangeVersion(Aws::String&& value) { m_internetKeyExchangeVersionHasBeenSet = true; m_internetKeyExchangeVersion = std::move(value); }
-    inline void SetInternetKeyExchangeVersion(const char* value) { m_internetKeyExchangeVersionHasBeenSet = true; m_internetKeyExchangeVersion.assign(value); }
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithInternetKeyExchangeVersion(const Aws::String& value) { SetInternetKeyExchangeVersion(value); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithInternetKeyExchangeVersion(Aws::String&& value) { SetInternetKeyExchangeVersion(std::move(value)); return *this;}
-    inline GetVpnConnectionDeviceSampleConfigurationRequest& WithInternetKeyExchangeVersion(const char* value) { SetInternetKeyExchangeVersion(value); return *this;}
+    template<typename InternetKeyExchangeVersionT = Aws::String>
+    void SetInternetKeyExchangeVersion(InternetKeyExchangeVersionT&& value) { m_internetKeyExchangeVersionHasBeenSet = true; m_internetKeyExchangeVersion = std::forward<InternetKeyExchangeVersionT>(value); }
+    template<typename InternetKeyExchangeVersionT = Aws::String>
+    GetVpnConnectionDeviceSampleConfigurationRequest& WithInternetKeyExchangeVersion(InternetKeyExchangeVersionT&& value) { SetInternetKeyExchangeVersion(std::forward<InternetKeyExchangeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetVpnConnectionDeviceSampleConfigurationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_internetKeyExchangeVersion;
     bool m_internetKeyExchangeVersionHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

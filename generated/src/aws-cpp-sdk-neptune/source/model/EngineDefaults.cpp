@@ -20,15 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-EngineDefaults::EngineDefaults() : 
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
-  : EngineDefaults()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);

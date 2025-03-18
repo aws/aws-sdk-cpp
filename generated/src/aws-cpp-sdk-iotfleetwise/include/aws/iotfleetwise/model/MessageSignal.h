@@ -33,7 +33,7 @@ namespace Model
   class MessageSignal
   {
   public:
-    AWS_IOTFLEETWISE_API MessageSignal();
+    AWS_IOTFLEETWISE_API MessageSignal() = default;
     AWS_IOTFLEETWISE_API MessageSignal(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API MessageSignal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The topic name for the message signal. It corresponds to topics in ROS 2.
      * </p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline MessageSignal& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline MessageSignal& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline MessageSignal& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    MessageSignal& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <code>structuredMessageListDefinition</code>, or
      * <code>structuredMessageDefinition</code> recursively.</p>
      */
-    inline const StructuredMessage& GetStructuredMessage() const{ return m_structuredMessage; }
+    inline const StructuredMessage& GetStructuredMessage() const { return m_structuredMessage; }
     inline bool StructuredMessageHasBeenSet() const { return m_structuredMessageHasBeenSet; }
-    inline void SetStructuredMessage(const StructuredMessage& value) { m_structuredMessageHasBeenSet = true; m_structuredMessage = value; }
-    inline void SetStructuredMessage(StructuredMessage&& value) { m_structuredMessageHasBeenSet = true; m_structuredMessage = std::move(value); }
-    inline MessageSignal& WithStructuredMessage(const StructuredMessage& value) { SetStructuredMessage(value); return *this;}
-    inline MessageSignal& WithStructuredMessage(StructuredMessage&& value) { SetStructuredMessage(std::move(value)); return *this;}
+    template<typename StructuredMessageT = StructuredMessage>
+    void SetStructuredMessage(StructuredMessageT&& value) { m_structuredMessageHasBeenSet = true; m_structuredMessage = std::forward<StructuredMessageT>(value); }
+    template<typename StructuredMessageT = StructuredMessage>
+    MessageSignal& WithStructuredMessage(StructuredMessageT&& value) { SetStructuredMessage(std::forward<StructuredMessageT>(value)); return *this;}
     ///@}
   private:
 

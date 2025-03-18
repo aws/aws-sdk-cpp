@@ -22,7 +22,7 @@ namespace Model
   class ListAttributesRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListAttributesRequest();
+    AWS_ECS_API ListAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,34 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
      * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline ListAttributesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline ListAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline ListAttributesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    ListAttributesRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the target to list attributes with.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
+    inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline ListAttributesRequest& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline ListAttributesRequest& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline ListAttributesRequest& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attribute to filter the results with. </p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline ListAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline ListAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline ListAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    ListAttributesRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +75,12 @@ namespace Model
      * <p>The value of the attribute to filter results with. You must also specify an
      * attribute name to use this parameter.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline ListAttributesRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline ListAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline ListAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    ListAttributesRequest& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +93,12 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAttributesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAttributesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,7 +113,7 @@ namespace Model
      * <code>ListAttributes</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -133,7 +123,7 @@ namespace Model
     Aws::String m_cluster;
     bool m_clusterHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_attributeName;
@@ -145,7 +135,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

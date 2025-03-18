@@ -26,7 +26,7 @@ namespace Model
   class ListProtectedJobsRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API ListProtectedJobsRequest();
+    AWS_CLEANROOMS_API ListProtectedJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The identifier for the membership in the collaboration.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline ListProtectedJobsRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline ListProtectedJobsRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline ListProtectedJobsRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    ListProtectedJobsRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter on the status of the protected job.</p>
      */
-    inline const ProtectedJobStatus& GetStatus() const{ return m_status; }
+    inline ProtectedJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProtectedJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProtectedJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListProtectedJobsRequest& WithStatus(const ProtectedJobStatus& value) { SetStatus(value); return *this;}
-    inline ListProtectedJobsRequest& WithStatus(ProtectedJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProtectedJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListProtectedJobsRequest& WithStatus(ProtectedJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListProtectedJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProtectedJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProtectedJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProtectedJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +79,7 @@ namespace Model
      * service chooses a default number if you don't set one. The service might return
      * a `nextToken` even if the `maxResults` value has not been met. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListProtectedJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -95,13 +89,13 @@ namespace Model
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
 
-    ProtectedJobStatus m_status;
+    ProtectedJobStatus m_status{ProtectedJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

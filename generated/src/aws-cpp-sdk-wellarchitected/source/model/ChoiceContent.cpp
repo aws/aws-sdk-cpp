@@ -18,14 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ChoiceContent::ChoiceContent() : 
-    m_displayTextHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 ChoiceContent::ChoiceContent(JsonView jsonValue)
-  : ChoiceContent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChoiceContent& ChoiceContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DisplayText"))
   {
     m_displayText = jsonValue.GetString("DisplayText");
-
     m_displayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

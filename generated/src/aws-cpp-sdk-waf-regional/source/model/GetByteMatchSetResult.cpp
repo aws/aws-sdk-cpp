@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetByteMatchSetResult::GetByteMatchSetResult()
-{
-}
-
 GetByteMatchSetResult::GetByteMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetByteMatchSetResult& GetByteMatchSetResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ByteMatchSet"))
   {
     m_byteMatchSet = jsonValue.GetObject("ByteMatchSet");
-
+    m_byteMatchSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

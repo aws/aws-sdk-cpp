@@ -32,7 +32,7 @@ namespace Model
   class Capacity
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API Capacity();
+    AWS_SNOWDEVICEMANAGEMENT_API Capacity() = default;
     AWS_SNOWDEVICEMANAGEMENT_API Capacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The amount of capacity available for use on the device.</p>
      */
-    inline long long GetAvailable() const{ return m_available; }
+    inline long long GetAvailable() const { return m_available; }
     inline bool AvailableHasBeenSet() const { return m_availableHasBeenSet; }
     inline void SetAvailable(long long value) { m_availableHasBeenSet = true; m_available = value; }
     inline Capacity& WithAvailable(long long value) { SetAvailable(value); return *this;}
@@ -52,21 +52,19 @@ namespace Model
     /**
      * <p>The name of the type of capacity, such as memory.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Capacity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Capacity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Capacity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Capacity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total capacity on the device.</p>
      */
-    inline long long GetTotal() const{ return m_total; }
+    inline long long GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
     inline Capacity& WithTotal(long long value) { SetTotal(value); return *this;}
@@ -76,40 +74,38 @@ namespace Model
     /**
      * <p>The unit of measure for the type of capacity.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline Capacity& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline Capacity& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline Capacity& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    Capacity& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of capacity used on the device.</p>
      */
-    inline long long GetUsed() const{ return m_used; }
+    inline long long GetUsed() const { return m_used; }
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
     inline Capacity& WithUsed(long long value) { SetUsed(value); return *this;}
     ///@}
   private:
 
-    long long m_available;
+    long long m_available{0};
     bool m_availableHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_total;
+    long long m_total{0};
     bool m_totalHasBeenSet = false;
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
 
-    long long m_used;
+    long long m_used{0};
     bool m_usedHasBeenSet = false;
   };
 

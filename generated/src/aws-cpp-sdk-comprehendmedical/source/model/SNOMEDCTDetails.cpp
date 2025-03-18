@@ -18,15 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-SNOMEDCTDetails::SNOMEDCTDetails() : 
-    m_editionHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_versionDateHasBeenSet(false)
-{
-}
-
 SNOMEDCTDetails::SNOMEDCTDetails(JsonView jsonValue)
-  : SNOMEDCTDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SNOMEDCTDetails& SNOMEDCTDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Edition"))
   {
     m_edition = jsonValue.GetString("Edition");
-
     m_editionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionDate"))
   {
     m_versionDate = jsonValue.GetString("VersionDate");
-
     m_versionDateHasBeenSet = true;
   }
-
   return *this;
 }
 

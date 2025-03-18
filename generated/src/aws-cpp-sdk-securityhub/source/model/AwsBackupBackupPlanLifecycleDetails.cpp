@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanLifecycleDetails::AwsBackupBackupPlanLifecycleDetails() : 
-    m_deleteAfterDays(0),
-    m_deleteAfterDaysHasBeenSet(false),
-    m_moveToColdStorageAfterDays(0),
-    m_moveToColdStorageAfterDaysHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanLifecycleDetails::AwsBackupBackupPlanLifecycleDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanLifecycleDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsBackupBackupPlanLifecycleDetails& AwsBackupBackupPlanLifecycleDetails::operat
   if(jsonValue.ValueExists("DeleteAfterDays"))
   {
     m_deleteAfterDays = jsonValue.GetInt64("DeleteAfterDays");
-
     m_deleteAfterDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MoveToColdStorageAfterDays"))
   {
     m_moveToColdStorageAfterDays = jsonValue.GetInt64("MoveToColdStorageAfterDays");
-
     m_moveToColdStorageAfterDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

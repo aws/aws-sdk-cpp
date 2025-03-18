@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-InitialResponseSetting::InitialResponseSetting() : 
-    m_initialResponseHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_conditionalHasBeenSet(false),
-    m_codeHookHasBeenSet(false)
-{
-}
-
 InitialResponseSetting::InitialResponseSetting(JsonView jsonValue)
-  : InitialResponseSetting()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InitialResponseSetting& InitialResponseSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("initialResponse"))
   {
     m_initialResponse = jsonValue.GetObject("initialResponse");
-
     m_initialResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextStep"))
   {
     m_nextStep = jsonValue.GetObject("nextStep");
-
     m_nextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditional"))
   {
     m_conditional = jsonValue.GetObject("conditional");
-
     m_conditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeHook"))
   {
     m_codeHook = jsonValue.GetObject("codeHook");
-
     m_codeHookHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ValidateSolNetworkPackageContentMetadata
   {
   public:
-    AWS_TNB_API ValidateSolNetworkPackageContentMetadata();
+    AWS_TNB_API ValidateSolNetworkPackageContentMetadata() = default;
     AWS_TNB_API ValidateSolNetworkPackageContentMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ValidateSolNetworkPackageContentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const NetworkArtifactMeta& GetNsd() const{ return m_nsd; }
+    inline const NetworkArtifactMeta& GetNsd() const { return m_nsd; }
     inline bool NsdHasBeenSet() const { return m_nsdHasBeenSet; }
-    inline void SetNsd(const NetworkArtifactMeta& value) { m_nsdHasBeenSet = true; m_nsd = value; }
-    inline void SetNsd(NetworkArtifactMeta&& value) { m_nsdHasBeenSet = true; m_nsd = std::move(value); }
-    inline ValidateSolNetworkPackageContentMetadata& WithNsd(const NetworkArtifactMeta& value) { SetNsd(value); return *this;}
-    inline ValidateSolNetworkPackageContentMetadata& WithNsd(NetworkArtifactMeta&& value) { SetNsd(std::move(value)); return *this;}
+    template<typename NsdT = NetworkArtifactMeta>
+    void SetNsd(NsdT&& value) { m_nsdHasBeenSet = true; m_nsd = std::forward<NsdT>(value); }
+    template<typename NsdT = NetworkArtifactMeta>
+    ValidateSolNetworkPackageContentMetadata& WithNsd(NsdT&& value) { SetNsd(std::forward<NsdT>(value)); return *this;}
     ///@}
   private:
 

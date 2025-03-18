@@ -29,7 +29,7 @@ namespace Model
   class ListEngagementFromOpportunityTasksResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListEngagementFromOpportunityTasksResult();
+    AWS_PARTNERCENTRALSELLING_API ListEngagementFromOpportunityTasksResult() = default;
     AWS_PARTNERCENTRALSELLING_API ListEngagementFromOpportunityTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API ListEngagementFromOpportunityTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * a subsequent API call to retrieve the next page. If there are no more results,
      * this field will be null or an empty string. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEngagementFromOpportunityTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementFromOpportunityTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * <p> TaskSummaries An array of TaskSummary objects containing details about each
      * task. </p>
      */
-    inline const Aws::Vector<ListEngagementFromOpportunityTaskSummary>& GetTaskSummaries() const{ return m_taskSummaries; }
-    inline void SetTaskSummaries(const Aws::Vector<ListEngagementFromOpportunityTaskSummary>& value) { m_taskSummaries = value; }
-    inline void SetTaskSummaries(Aws::Vector<ListEngagementFromOpportunityTaskSummary>&& value) { m_taskSummaries = std::move(value); }
-    inline ListEngagementFromOpportunityTasksResult& WithTaskSummaries(const Aws::Vector<ListEngagementFromOpportunityTaskSummary>& value) { SetTaskSummaries(value); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& WithTaskSummaries(Aws::Vector<ListEngagementFromOpportunityTaskSummary>&& value) { SetTaskSummaries(std::move(value)); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& AddTaskSummaries(const ListEngagementFromOpportunityTaskSummary& value) { m_taskSummaries.push_back(value); return *this; }
-    inline ListEngagementFromOpportunityTasksResult& AddTaskSummaries(ListEngagementFromOpportunityTaskSummary&& value) { m_taskSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListEngagementFromOpportunityTaskSummary>& GetTaskSummaries() const { return m_taskSummaries; }
+    template<typename TaskSummariesT = Aws::Vector<ListEngagementFromOpportunityTaskSummary>>
+    void SetTaskSummaries(TaskSummariesT&& value) { m_taskSummariesHasBeenSet = true; m_taskSummaries = std::forward<TaskSummariesT>(value); }
+    template<typename TaskSummariesT = Aws::Vector<ListEngagementFromOpportunityTaskSummary>>
+    ListEngagementFromOpportunityTasksResult& WithTaskSummaries(TaskSummariesT&& value) { SetTaskSummaries(std::forward<TaskSummariesT>(value)); return *this;}
+    template<typename TaskSummariesT = ListEngagementFromOpportunityTaskSummary>
+    ListEngagementFromOpportunityTasksResult& AddTaskSummaries(TaskSummariesT&& value) { m_taskSummariesHasBeenSet = true; m_taskSummaries.emplace_back(std::forward<TaskSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEngagementFromOpportunityTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEngagementFromOpportunityTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEngagementFromOpportunityTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListEngagementFromOpportunityTaskSummary> m_taskSummaries;
+    bool m_taskSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

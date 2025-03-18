@@ -12,12 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTaxRegistrationRequest::PutTaxRegistrationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_taxRegistrationEntryHasBeenSet(false)
-{
-}
-
 Aws::String PutTaxRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultNewSheetConfiguration::DefaultNewSheetConfiguration() : 
-    m_interactiveLayoutConfigurationHasBeenSet(false),
-    m_paginatedLayoutConfigurationHasBeenSet(false),
-    m_sheetContentType(SheetContentType::NOT_SET),
-    m_sheetContentTypeHasBeenSet(false)
-{
-}
-
 DefaultNewSheetConfiguration::DefaultNewSheetConfiguration(JsonView jsonValue)
-  : DefaultNewSheetConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DefaultNewSheetConfiguration& DefaultNewSheetConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("InteractiveLayoutConfiguration"))
   {
     m_interactiveLayoutConfiguration = jsonValue.GetObject("InteractiveLayoutConfiguration");
-
     m_interactiveLayoutConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginatedLayoutConfiguration"))
   {
     m_paginatedLayoutConfiguration = jsonValue.GetObject("PaginatedLayoutConfiguration");
-
     m_paginatedLayoutConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetContentType"))
   {
     m_sheetContentType = SheetContentTypeMapper::GetSheetContentTypeForName(jsonValue.GetString("SheetContentType"));
-
     m_sheetContentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

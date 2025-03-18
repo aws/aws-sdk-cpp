@@ -28,7 +28,7 @@ namespace Model
   class SendBounceRequest : public SESRequest
   {
   public:
-    AWS_SES_API SendBounceRequest();
+    AWS_SES_API SendBounceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The message ID of the message to be bounced.</p>
      */
-    inline const Aws::String& GetOriginalMessageId() const{ return m_originalMessageId; }
+    inline const Aws::String& GetOriginalMessageId() const { return m_originalMessageId; }
     inline bool OriginalMessageIdHasBeenSet() const { return m_originalMessageIdHasBeenSet; }
-    inline void SetOriginalMessageId(const Aws::String& value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId = value; }
-    inline void SetOriginalMessageId(Aws::String&& value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId = std::move(value); }
-    inline void SetOriginalMessageId(const char* value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId.assign(value); }
-    inline SendBounceRequest& WithOriginalMessageId(const Aws::String& value) { SetOriginalMessageId(value); return *this;}
-    inline SendBounceRequest& WithOriginalMessageId(Aws::String&& value) { SetOriginalMessageId(std::move(value)); return *this;}
-    inline SendBounceRequest& WithOriginalMessageId(const char* value) { SetOriginalMessageId(value); return *this;}
+    template<typename OriginalMessageIdT = Aws::String>
+    void SetOriginalMessageId(OriginalMessageIdT&& value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId = std::forward<OriginalMessageIdT>(value); }
+    template<typename OriginalMessageIdT = Aws::String>
+    SendBounceRequest& WithOriginalMessageId(OriginalMessageIdT&& value) { SetOriginalMessageId(std::forward<OriginalMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The address to use in the "From" header of the bounce message. This must be
      * an identity that you have verified with Amazon SES.</p>
      */
-    inline const Aws::String& GetBounceSender() const{ return m_bounceSender; }
+    inline const Aws::String& GetBounceSender() const { return m_bounceSender; }
     inline bool BounceSenderHasBeenSet() const { return m_bounceSenderHasBeenSet; }
-    inline void SetBounceSender(const Aws::String& value) { m_bounceSenderHasBeenSet = true; m_bounceSender = value; }
-    inline void SetBounceSender(Aws::String&& value) { m_bounceSenderHasBeenSet = true; m_bounceSender = std::move(value); }
-    inline void SetBounceSender(const char* value) { m_bounceSenderHasBeenSet = true; m_bounceSender.assign(value); }
-    inline SendBounceRequest& WithBounceSender(const Aws::String& value) { SetBounceSender(value); return *this;}
-    inline SendBounceRequest& WithBounceSender(Aws::String&& value) { SetBounceSender(std::move(value)); return *this;}
-    inline SendBounceRequest& WithBounceSender(const char* value) { SetBounceSender(value); return *this;}
+    template<typename BounceSenderT = Aws::String>
+    void SetBounceSender(BounceSenderT&& value) { m_bounceSenderHasBeenSet = true; m_bounceSender = std::forward<BounceSenderT>(value); }
+    template<typename BounceSenderT = Aws::String>
+    SendBounceRequest& WithBounceSender(BounceSenderT&& value) { SetBounceSender(std::forward<BounceSenderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
-    inline const Aws::String& GetExplanation() const{ return m_explanation; }
+    inline const Aws::String& GetExplanation() const { return m_explanation; }
     inline bool ExplanationHasBeenSet() const { return m_explanationHasBeenSet; }
-    inline void SetExplanation(const Aws::String& value) { m_explanationHasBeenSet = true; m_explanation = value; }
-    inline void SetExplanation(Aws::String&& value) { m_explanationHasBeenSet = true; m_explanation = std::move(value); }
-    inline void SetExplanation(const char* value) { m_explanationHasBeenSet = true; m_explanation.assign(value); }
-    inline SendBounceRequest& WithExplanation(const Aws::String& value) { SetExplanation(value); return *this;}
-    inline SendBounceRequest& WithExplanation(Aws::String&& value) { SetExplanation(std::move(value)); return *this;}
-    inline SendBounceRequest& WithExplanation(const char* value) { SetExplanation(value); return *this;}
+    template<typename ExplanationT = Aws::String>
+    void SetExplanation(ExplanationT&& value) { m_explanationHasBeenSet = true; m_explanation = std::forward<ExplanationT>(value); }
+    template<typename ExplanationT = Aws::String>
+    SendBounceRequest& WithExplanation(ExplanationT&& value) { SetExplanation(std::forward<ExplanationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,12 @@ namespace Model
      * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
-    inline const MessageDsn& GetMessageDsn() const{ return m_messageDsn; }
+    inline const MessageDsn& GetMessageDsn() const { return m_messageDsn; }
     inline bool MessageDsnHasBeenSet() const { return m_messageDsnHasBeenSet; }
-    inline void SetMessageDsn(const MessageDsn& value) { m_messageDsnHasBeenSet = true; m_messageDsn = value; }
-    inline void SetMessageDsn(MessageDsn&& value) { m_messageDsnHasBeenSet = true; m_messageDsn = std::move(value); }
-    inline SendBounceRequest& WithMessageDsn(const MessageDsn& value) { SetMessageDsn(value); return *this;}
-    inline SendBounceRequest& WithMessageDsn(MessageDsn&& value) { SetMessageDsn(std::move(value)); return *this;}
+    template<typename MessageDsnT = MessageDsn>
+    void SetMessageDsn(MessageDsnT&& value) { m_messageDsnHasBeenSet = true; m_messageDsn = std::forward<MessageDsnT>(value); }
+    template<typename MessageDsnT = MessageDsn>
+    SendBounceRequest& WithMessageDsn(MessageDsnT&& value) { SetMessageDsn(std::forward<MessageDsnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,14 @@ namespace Model
      * required to create the Delivery Status Notifications (DSNs) for the recipients.
      * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
-    inline const Aws::Vector<BouncedRecipientInfo>& GetBouncedRecipientInfoList() const{ return m_bouncedRecipientInfoList; }
+    inline const Aws::Vector<BouncedRecipientInfo>& GetBouncedRecipientInfoList() const { return m_bouncedRecipientInfoList; }
     inline bool BouncedRecipientInfoListHasBeenSet() const { return m_bouncedRecipientInfoListHasBeenSet; }
-    inline void SetBouncedRecipientInfoList(const Aws::Vector<BouncedRecipientInfo>& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList = value; }
-    inline void SetBouncedRecipientInfoList(Aws::Vector<BouncedRecipientInfo>&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList = std::move(value); }
-    inline SendBounceRequest& WithBouncedRecipientInfoList(const Aws::Vector<BouncedRecipientInfo>& value) { SetBouncedRecipientInfoList(value); return *this;}
-    inline SendBounceRequest& WithBouncedRecipientInfoList(Aws::Vector<BouncedRecipientInfo>&& value) { SetBouncedRecipientInfoList(std::move(value)); return *this;}
-    inline SendBounceRequest& AddBouncedRecipientInfoList(const BouncedRecipientInfo& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.push_back(value); return *this; }
-    inline SendBounceRequest& AddBouncedRecipientInfoList(BouncedRecipientInfo&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.push_back(std::move(value)); return *this; }
+    template<typename BouncedRecipientInfoListT = Aws::Vector<BouncedRecipientInfo>>
+    void SetBouncedRecipientInfoList(BouncedRecipientInfoListT&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList = std::forward<BouncedRecipientInfoListT>(value); }
+    template<typename BouncedRecipientInfoListT = Aws::Vector<BouncedRecipientInfo>>
+    SendBounceRequest& WithBouncedRecipientInfoList(BouncedRecipientInfoListT&& value) { SetBouncedRecipientInfoList(std::forward<BouncedRecipientInfoListT>(value)); return *this;}
+    template<typename BouncedRecipientInfoListT = BouncedRecipientInfo>
+    SendBounceRequest& AddBouncedRecipientInfoList(BouncedRecipientInfoListT&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.emplace_back(std::forward<BouncedRecipientInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +120,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetBounceSenderArn() const{ return m_bounceSenderArn; }
+    inline const Aws::String& GetBounceSenderArn() const { return m_bounceSenderArn; }
     inline bool BounceSenderArnHasBeenSet() const { return m_bounceSenderArnHasBeenSet; }
-    inline void SetBounceSenderArn(const Aws::String& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = value; }
-    inline void SetBounceSenderArn(Aws::String&& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = std::move(value); }
-    inline void SetBounceSenderArn(const char* value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn.assign(value); }
-    inline SendBounceRequest& WithBounceSenderArn(const Aws::String& value) { SetBounceSenderArn(value); return *this;}
-    inline SendBounceRequest& WithBounceSenderArn(Aws::String&& value) { SetBounceSenderArn(std::move(value)); return *this;}
-    inline SendBounceRequest& WithBounceSenderArn(const char* value) { SetBounceSenderArn(value); return *this;}
+    template<typename BounceSenderArnT = Aws::String>
+    void SetBounceSenderArn(BounceSenderArnT&& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = std::forward<BounceSenderArnT>(value); }
+    template<typename BounceSenderArnT = Aws::String>
+    SendBounceRequest& WithBounceSenderArn(BounceSenderArnT&& value) { SetBounceSenderArn(std::forward<BounceSenderArnT>(value)); return *this;}
     ///@}
   private:
 

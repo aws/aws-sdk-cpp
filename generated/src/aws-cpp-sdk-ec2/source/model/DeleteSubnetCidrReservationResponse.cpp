@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSubnetCidrReservationResponse::DeleteSubnetCidrReservationResponse()
-{
-}
-
 DeleteSubnetCidrReservationResponse::DeleteSubnetCidrReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteSubnetCidrReservationResponse& DeleteSubnetCidrReservationResponse::operat
     if(!deletedSubnetCidrReservationNode.IsNull())
     {
       m_deletedSubnetCidrReservation = deletedSubnetCidrReservationNode;
+      m_deletedSubnetCidrReservationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteSubnetCidrReservationResponse& DeleteSubnetCidrReservationResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteSubnetCidrReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -31,7 +31,7 @@ namespace Model
   class PostgreSqlParameters
   {
   public:
-    AWS_QUICKSIGHT_API PostgreSqlParameters();
+    AWS_QUICKSIGHT_API PostgreSqlParameters() = default;
     AWS_QUICKSIGHT_API PostgreSqlParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PostgreSqlParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Host.</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline PostgreSqlParameters& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline PostgreSqlParameters& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline PostgreSqlParameters& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    PostgreSqlParameters& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Port.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline PostgreSqlParameters& WithPort(int value) { SetPort(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
     /**
      * <p>Database.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline PostgreSqlParameters& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline PostgreSqlParameters& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline PostgreSqlParameters& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    PostgreSqlParameters& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_host;
     bool m_hostHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_database;

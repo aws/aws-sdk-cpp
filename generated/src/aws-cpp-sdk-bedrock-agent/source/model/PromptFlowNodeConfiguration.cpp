@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptFlowNodeConfiguration::PromptFlowNodeConfiguration() : 
-    m_guardrailConfigurationHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false)
-{
-}
-
 PromptFlowNodeConfiguration::PromptFlowNodeConfiguration(JsonView jsonValue)
-  : PromptFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PromptFlowNodeConfiguration& PromptFlowNodeConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

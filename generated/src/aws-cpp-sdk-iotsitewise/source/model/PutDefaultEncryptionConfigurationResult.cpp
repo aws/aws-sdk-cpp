@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDefaultEncryptionConfigurationResult::PutDefaultEncryptionConfigurationResult() : 
-    m_encryptionType(EncryptionType::NOT_SET)
-{
-}
-
 PutDefaultEncryptionConfigurationResult::PutDefaultEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutDefaultEncryptionConfigurationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ PutDefaultEncryptionConfigurationResult& PutDefaultEncryptionConfigurationResult
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
+    m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
+    m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationStatus"))
   {
     m_configurationStatus = jsonValue.GetObject("configurationStatus");
-
+    m_configurationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

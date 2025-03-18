@@ -37,7 +37,7 @@ namespace Model
   class TenantDatabase
   {
   public:
-    AWS_RDS_API TenantDatabase();
+    AWS_RDS_API TenantDatabase() = default;
     AWS_RDS_API TenantDatabase(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API TenantDatabase& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,68 +49,60 @@ namespace Model
     /**
      * <p>The creation time of the tenant database.</p>
      */
-    inline const Aws::Utils::DateTime& GetTenantDatabaseCreateTime() const{ return m_tenantDatabaseCreateTime; }
+    inline const Aws::Utils::DateTime& GetTenantDatabaseCreateTime() const { return m_tenantDatabaseCreateTime; }
     inline bool TenantDatabaseCreateTimeHasBeenSet() const { return m_tenantDatabaseCreateTimeHasBeenSet; }
-    inline void SetTenantDatabaseCreateTime(const Aws::Utils::DateTime& value) { m_tenantDatabaseCreateTimeHasBeenSet = true; m_tenantDatabaseCreateTime = value; }
-    inline void SetTenantDatabaseCreateTime(Aws::Utils::DateTime&& value) { m_tenantDatabaseCreateTimeHasBeenSet = true; m_tenantDatabaseCreateTime = std::move(value); }
-    inline TenantDatabase& WithTenantDatabaseCreateTime(const Aws::Utils::DateTime& value) { SetTenantDatabaseCreateTime(value); return *this;}
-    inline TenantDatabase& WithTenantDatabaseCreateTime(Aws::Utils::DateTime&& value) { SetTenantDatabaseCreateTime(std::move(value)); return *this;}
+    template<typename TenantDatabaseCreateTimeT = Aws::Utils::DateTime>
+    void SetTenantDatabaseCreateTime(TenantDatabaseCreateTimeT&& value) { m_tenantDatabaseCreateTimeHasBeenSet = true; m_tenantDatabaseCreateTime = std::forward<TenantDatabaseCreateTimeT>(value); }
+    template<typename TenantDatabaseCreateTimeT = Aws::Utils::DateTime>
+    TenantDatabase& WithTenantDatabaseCreateTime(TenantDatabaseCreateTimeT&& value) { SetTenantDatabaseCreateTime(std::forward<TenantDatabaseCreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the DB instance that contains the tenant database.</p>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline TenantDatabase& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline TenantDatabase& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline TenantDatabase& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    TenantDatabase& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database name of the tenant database.</p>
      */
-    inline const Aws::String& GetTenantDBName() const{ return m_tenantDBName; }
+    inline const Aws::String& GetTenantDBName() const { return m_tenantDBName; }
     inline bool TenantDBNameHasBeenSet() const { return m_tenantDBNameHasBeenSet; }
-    inline void SetTenantDBName(const Aws::String& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = value; }
-    inline void SetTenantDBName(Aws::String&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::move(value); }
-    inline void SetTenantDBName(const char* value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName.assign(value); }
-    inline TenantDatabase& WithTenantDBName(const Aws::String& value) { SetTenantDBName(value); return *this;}
-    inline TenantDatabase& WithTenantDBName(Aws::String&& value) { SetTenantDBName(std::move(value)); return *this;}
-    inline TenantDatabase& WithTenantDBName(const char* value) { SetTenantDBName(value); return *this;}
+    template<typename TenantDBNameT = Aws::String>
+    void SetTenantDBName(TenantDBNameT&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::forward<TenantDBNameT>(value); }
+    template<typename TenantDBNameT = Aws::String>
+    TenantDatabase& WithTenantDBName(TenantDBNameT&& value) { SetTenantDBName(std::forward<TenantDBNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the tenant database.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TenantDatabase& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TenantDatabase& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TenantDatabase& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TenantDatabase& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The master username of the tenant database.</p>
      */
-    inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+    inline const Aws::String& GetMasterUsername() const { return m_masterUsername; }
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
-    inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
-    inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
-    inline TenantDatabase& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
-    inline TenantDatabase& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
-    inline TenantDatabase& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+    template<typename MasterUsernameT = Aws::String>
+    void SetMasterUsername(MasterUsernameT&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::forward<MasterUsernameT>(value); }
+    template<typename MasterUsernameT = Aws::String>
+    TenantDatabase& WithMasterUsername(MasterUsernameT&& value) { SetMasterUsername(std::forward<MasterUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance.</p>
      */
-    inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+    inline const Aws::String& GetDbiResourceId() const { return m_dbiResourceId; }
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
-    inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
-    inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
-    inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
-    inline TenantDatabase& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
-    inline TenantDatabase& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
-    inline TenantDatabase& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
+    template<typename DbiResourceIdT = Aws::String>
+    void SetDbiResourceId(DbiResourceIdT&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::forward<DbiResourceIdT>(value); }
+    template<typename DbiResourceIdT = Aws::String>
+    TenantDatabase& WithDbiResourceId(DbiResourceIdT&& value) { SetDbiResourceId(std::forward<DbiResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,63 +123,55 @@ namespace Model
      * <p>The Amazon Web Services Region-unique, immutable identifier for the tenant
      * database.</p>
      */
-    inline const Aws::String& GetTenantDatabaseResourceId() const{ return m_tenantDatabaseResourceId; }
+    inline const Aws::String& GetTenantDatabaseResourceId() const { return m_tenantDatabaseResourceId; }
     inline bool TenantDatabaseResourceIdHasBeenSet() const { return m_tenantDatabaseResourceIdHasBeenSet; }
-    inline void SetTenantDatabaseResourceId(const Aws::String& value) { m_tenantDatabaseResourceIdHasBeenSet = true; m_tenantDatabaseResourceId = value; }
-    inline void SetTenantDatabaseResourceId(Aws::String&& value) { m_tenantDatabaseResourceIdHasBeenSet = true; m_tenantDatabaseResourceId = std::move(value); }
-    inline void SetTenantDatabaseResourceId(const char* value) { m_tenantDatabaseResourceIdHasBeenSet = true; m_tenantDatabaseResourceId.assign(value); }
-    inline TenantDatabase& WithTenantDatabaseResourceId(const Aws::String& value) { SetTenantDatabaseResourceId(value); return *this;}
-    inline TenantDatabase& WithTenantDatabaseResourceId(Aws::String&& value) { SetTenantDatabaseResourceId(std::move(value)); return *this;}
-    inline TenantDatabase& WithTenantDatabaseResourceId(const char* value) { SetTenantDatabaseResourceId(value); return *this;}
+    template<typename TenantDatabaseResourceIdT = Aws::String>
+    void SetTenantDatabaseResourceId(TenantDatabaseResourceIdT&& value) { m_tenantDatabaseResourceIdHasBeenSet = true; m_tenantDatabaseResourceId = std::forward<TenantDatabaseResourceIdT>(value); }
+    template<typename TenantDatabaseResourceIdT = Aws::String>
+    TenantDatabase& WithTenantDatabaseResourceId(TenantDatabaseResourceIdT&& value) { SetTenantDatabaseResourceId(std::forward<TenantDatabaseResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the tenant database.</p>
      */
-    inline const Aws::String& GetTenantDatabaseARN() const{ return m_tenantDatabaseARN; }
+    inline const Aws::String& GetTenantDatabaseARN() const { return m_tenantDatabaseARN; }
     inline bool TenantDatabaseARNHasBeenSet() const { return m_tenantDatabaseARNHasBeenSet; }
-    inline void SetTenantDatabaseARN(const Aws::String& value) { m_tenantDatabaseARNHasBeenSet = true; m_tenantDatabaseARN = value; }
-    inline void SetTenantDatabaseARN(Aws::String&& value) { m_tenantDatabaseARNHasBeenSet = true; m_tenantDatabaseARN = std::move(value); }
-    inline void SetTenantDatabaseARN(const char* value) { m_tenantDatabaseARNHasBeenSet = true; m_tenantDatabaseARN.assign(value); }
-    inline TenantDatabase& WithTenantDatabaseARN(const Aws::String& value) { SetTenantDatabaseARN(value); return *this;}
-    inline TenantDatabase& WithTenantDatabaseARN(Aws::String&& value) { SetTenantDatabaseARN(std::move(value)); return *this;}
-    inline TenantDatabase& WithTenantDatabaseARN(const char* value) { SetTenantDatabaseARN(value); return *this;}
+    template<typename TenantDatabaseARNT = Aws::String>
+    void SetTenantDatabaseARN(TenantDatabaseARNT&& value) { m_tenantDatabaseARNHasBeenSet = true; m_tenantDatabaseARN = std::forward<TenantDatabaseARNT>(value); }
+    template<typename TenantDatabaseARNT = Aws::String>
+    TenantDatabase& WithTenantDatabaseARN(TenantDatabaseARNT&& value) { SetTenantDatabaseARN(std::forward<TenantDatabaseARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The character set of the tenant database.</p>
      */
-    inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+    inline const Aws::String& GetCharacterSetName() const { return m_characterSetName; }
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
-    inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
-    inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
-    inline TenantDatabase& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
-    inline TenantDatabase& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
-    inline TenantDatabase& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+    template<typename CharacterSetNameT = Aws::String>
+    void SetCharacterSetName(CharacterSetNameT&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::forward<CharacterSetNameT>(value); }
+    template<typename CharacterSetNameT = Aws::String>
+    TenantDatabase& WithCharacterSetName(CharacterSetNameT&& value) { SetCharacterSetName(std::forward<CharacterSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>NCHAR</code> character set name of the tenant database.</p>
      */
-    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+    inline const Aws::String& GetNcharCharacterSetName() const { return m_ncharCharacterSetName; }
     inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
-    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
-    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
-    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
-    inline TenantDatabase& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
-    inline TenantDatabase& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
-    inline TenantDatabase& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+    template<typename NcharCharacterSetNameT = Aws::String>
+    void SetNcharCharacterSetName(NcharCharacterSetNameT&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::forward<NcharCharacterSetNameT>(value); }
+    template<typename NcharCharacterSetNameT = Aws::String>
+    TenantDatabase& WithNcharCharacterSetName(NcharCharacterSetNameT&& value) { SetNcharCharacterSetName(std::forward<NcharCharacterSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether deletion protection is enabled for the DB instance.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline TenantDatabase& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -199,28 +181,28 @@ namespace Model
     /**
      * <p>Information about pending changes for a tenant database.</p>
      */
-    inline const TenantDatabasePendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+    inline const TenantDatabasePendingModifiedValues& GetPendingModifiedValues() const { return m_pendingModifiedValues; }
     inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
-    inline void SetPendingModifiedValues(const TenantDatabasePendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
-    inline void SetPendingModifiedValues(TenantDatabasePendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
-    inline TenantDatabase& WithPendingModifiedValues(const TenantDatabasePendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
-    inline TenantDatabase& WithPendingModifiedValues(TenantDatabasePendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
+    template<typename PendingModifiedValuesT = TenantDatabasePendingModifiedValues>
+    void SetPendingModifiedValues(PendingModifiedValuesT&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::forward<PendingModifiedValuesT>(value); }
+    template<typename PendingModifiedValuesT = TenantDatabasePendingModifiedValues>
+    TenantDatabase& WithPendingModifiedValues(PendingModifiedValuesT&& value) { SetPendingModifiedValues(std::forward<PendingModifiedValuesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline TenantDatabase& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline TenantDatabase& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline TenantDatabase& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline TenantDatabase& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    TenantDatabase& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    TenantDatabase& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_tenantDatabaseCreateTime;
+    Aws::Utils::DateTime m_tenantDatabaseCreateTime{};
     bool m_tenantDatabaseCreateTimeHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
@@ -250,7 +232,7 @@ namespace Model
     Aws::String m_ncharCharacterSetName;
     bool m_ncharCharacterSetNameHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
     TenantDatabasePendingModifiedValues m_pendingModifiedValues;

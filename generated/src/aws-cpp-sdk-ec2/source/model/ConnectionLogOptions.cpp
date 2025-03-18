@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionLogOptions::ConnectionLogOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cloudwatchLogGroupHasBeenSet(false),
-    m_cloudwatchLogStreamHasBeenSet(false)
-{
-}
-
 ConnectionLogOptions::ConnectionLogOptions(const XmlNode& xmlNode)
-  : ConnectionLogOptions()
 {
   *this = xmlNode;
 }

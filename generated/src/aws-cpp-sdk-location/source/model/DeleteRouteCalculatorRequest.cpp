@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRouteCalculatorRequest::DeleteRouteCalculatorRequest() : 
-    m_calculatorNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRouteCalculatorRequest::SerializePayload() const
 {
   return {};

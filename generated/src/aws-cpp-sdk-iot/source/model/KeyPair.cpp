@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-KeyPair::KeyPair() : 
-    m_publicKeyHasBeenSet(false),
-    m_privateKeyHasBeenSet(false)
-{
-}
-
 KeyPair::KeyPair(JsonView jsonValue)
-  : KeyPair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KeyPair& KeyPair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = jsonValue.GetString("PublicKey");
-
     m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKey"))
   {
     m_privateKey = jsonValue.GetString("PrivateKey");
-
     m_privateKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

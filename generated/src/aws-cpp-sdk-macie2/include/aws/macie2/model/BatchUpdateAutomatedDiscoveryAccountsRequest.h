@@ -22,7 +22,7 @@ namespace Model
   class BatchUpdateAutomatedDiscoveryAccountsRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsRequest();
+    AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
      * sensitive data discovery for. Each object specifies the Amazon Web Services
      * account ID for an account and a new status for that account.</p>
      */
-    inline const Aws::Vector<AutomatedDiscoveryAccountUpdate>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<AutomatedDiscoveryAccountUpdate>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<AutomatedDiscoveryAccountUpdate>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<AutomatedDiscoveryAccountUpdate>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline BatchUpdateAutomatedDiscoveryAccountsRequest& WithAccounts(const Aws::Vector<AutomatedDiscoveryAccountUpdate>& value) { SetAccounts(value); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsRequest& WithAccounts(Aws::Vector<AutomatedDiscoveryAccountUpdate>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsRequest& AddAccounts(const AutomatedDiscoveryAccountUpdate& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline BatchUpdateAutomatedDiscoveryAccountsRequest& AddAccounts(AutomatedDiscoveryAccountUpdate&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
+    template<typename AccountsT = Aws::Vector<AutomatedDiscoveryAccountUpdate>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<AutomatedDiscoveryAccountUpdate>>
+    BatchUpdateAutomatedDiscoveryAccountsRequest& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = AutomatedDiscoveryAccountUpdate>
+    BatchUpdateAutomatedDiscoveryAccountsRequest& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
   private:
 

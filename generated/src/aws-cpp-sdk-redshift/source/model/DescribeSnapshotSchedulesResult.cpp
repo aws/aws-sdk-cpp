@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSnapshotSchedulesResult::DescribeSnapshotSchedulesResult()
-{
-}
-
 DescribeSnapshotSchedulesResult::DescribeSnapshotSchedulesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeSnapshotSchedulesResult& DescribeSnapshotSchedulesResult::operator =(con
     if(!snapshotSchedulesNode.IsNull())
     {
       XmlNode snapshotSchedulesMember = snapshotSchedulesNode.FirstChild("SnapshotSchedule");
+      m_snapshotSchedulesHasBeenSet = !snapshotSchedulesMember.IsNull();
       while(!snapshotSchedulesMember.IsNull())
       {
         m_snapshotSchedules.push_back(snapshotSchedulesMember);
         snapshotSchedulesMember = snapshotSchedulesMember.NextNode("SnapshotSchedule");
       }
 
+      m_snapshotSchedulesHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeSnapshotSchedulesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

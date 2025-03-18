@@ -36,7 +36,7 @@ namespace Model
   class ListStackResourcesResult
   {
   public:
-    AWS_CLOUDFORMATION_API ListStackResourcesResult();
+    AWS_CLOUDFORMATION_API ListStackResourcesResult() = default;
     AWS_CLOUDFORMATION_API ListStackResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API ListStackResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,13 @@ namespace Model
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
      */
-    inline const Aws::Vector<StackResourceSummary>& GetStackResourceSummaries() const{ return m_stackResourceSummaries; }
-    inline void SetStackResourceSummaries(const Aws::Vector<StackResourceSummary>& value) { m_stackResourceSummaries = value; }
-    inline void SetStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { m_stackResourceSummaries = std::move(value); }
-    inline ListStackResourcesResult& WithStackResourceSummaries(const Aws::Vector<StackResourceSummary>& value) { SetStackResourceSummaries(value); return *this;}
-    inline ListStackResourcesResult& WithStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { SetStackResourceSummaries(std::move(value)); return *this;}
-    inline ListStackResourcesResult& AddStackResourceSummaries(const StackResourceSummary& value) { m_stackResourceSummaries.push_back(value); return *this; }
-    inline ListStackResourcesResult& AddStackResourceSummaries(StackResourceSummary&& value) { m_stackResourceSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StackResourceSummary>& GetStackResourceSummaries() const { return m_stackResourceSummaries; }
+    template<typename StackResourceSummariesT = Aws::Vector<StackResourceSummary>>
+    void SetStackResourceSummaries(StackResourceSummariesT&& value) { m_stackResourceSummariesHasBeenSet = true; m_stackResourceSummaries = std::forward<StackResourceSummariesT>(value); }
+    template<typename StackResourceSummariesT = Aws::Vector<StackResourceSummary>>
+    ListStackResourcesResult& WithStackResourceSummaries(StackResourceSummariesT&& value) { SetStackResourceSummaries(std::forward<StackResourceSummariesT>(value)); return *this;}
+    template<typename StackResourceSummariesT = StackResourceSummary>
+    ListStackResourcesResult& AddStackResourceSummaries(StackResourceSummariesT&& value) { m_stackResourceSummariesHasBeenSet = true; m_stackResourceSummaries.emplace_back(std::forward<StackResourceSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,30 +59,31 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
      * resources. If no additional page exists, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStackResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStackResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStackResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStackResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListStackResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListStackResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListStackResourcesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StackResourceSummary> m_stackResourceSummaries;
+    bool m_stackResourceSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

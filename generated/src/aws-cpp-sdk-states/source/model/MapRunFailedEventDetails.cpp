@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-MapRunFailedEventDetails::MapRunFailedEventDetails() : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 MapRunFailedEventDetails::MapRunFailedEventDetails(JsonView jsonValue)
-  : MapRunFailedEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MapRunFailedEventDetails& MapRunFailedEventDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   return *this;
 }
 

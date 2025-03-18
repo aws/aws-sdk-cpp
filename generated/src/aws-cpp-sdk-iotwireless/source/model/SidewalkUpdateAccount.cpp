@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkUpdateAccount::SidewalkUpdateAccount() : 
-    m_appServerPrivateKeyHasBeenSet(false)
-{
-}
-
 SidewalkUpdateAccount::SidewalkUpdateAccount(JsonView jsonValue)
-  : SidewalkUpdateAccount()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SidewalkUpdateAccount& SidewalkUpdateAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppServerPrivateKey"))
   {
     m_appServerPrivateKey = jsonValue.GetString("AppServerPrivateKey");
-
     m_appServerPrivateKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

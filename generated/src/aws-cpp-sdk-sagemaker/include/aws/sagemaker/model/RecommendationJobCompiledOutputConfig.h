@@ -32,7 +32,7 @@ namespace Model
   class RecommendationJobCompiledOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobCompiledOutputConfig();
+    AWS_SAGEMAKER_API RecommendationJobCompiledOutputConfig() = default;
     AWS_SAGEMAKER_API RecommendationJobCompiledOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobCompiledOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Identifies the Amazon S3 bucket where you want SageMaker to store the
      * compiled model artifacts.</p>
      */
-    inline const Aws::String& GetS3OutputUri() const{ return m_s3OutputUri; }
+    inline const Aws::String& GetS3OutputUri() const { return m_s3OutputUri; }
     inline bool S3OutputUriHasBeenSet() const { return m_s3OutputUriHasBeenSet; }
-    inline void SetS3OutputUri(const Aws::String& value) { m_s3OutputUriHasBeenSet = true; m_s3OutputUri = value; }
-    inline void SetS3OutputUri(Aws::String&& value) { m_s3OutputUriHasBeenSet = true; m_s3OutputUri = std::move(value); }
-    inline void SetS3OutputUri(const char* value) { m_s3OutputUriHasBeenSet = true; m_s3OutputUri.assign(value); }
-    inline RecommendationJobCompiledOutputConfig& WithS3OutputUri(const Aws::String& value) { SetS3OutputUri(value); return *this;}
-    inline RecommendationJobCompiledOutputConfig& WithS3OutputUri(Aws::String&& value) { SetS3OutputUri(std::move(value)); return *this;}
-    inline RecommendationJobCompiledOutputConfig& WithS3OutputUri(const char* value) { SetS3OutputUri(value); return *this;}
+    template<typename S3OutputUriT = Aws::String>
+    void SetS3OutputUri(S3OutputUriT&& value) { m_s3OutputUriHasBeenSet = true; m_s3OutputUri = std::forward<S3OutputUriT>(value); }
+    template<typename S3OutputUriT = Aws::String>
+    RecommendationJobCompiledOutputConfig& WithS3OutputUri(S3OutputUriT&& value) { SetS3OutputUri(std::forward<S3OutputUriT>(value)); return *this;}
     ///@}
   private:
 

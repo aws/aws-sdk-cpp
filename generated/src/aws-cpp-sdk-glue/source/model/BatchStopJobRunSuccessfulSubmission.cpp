@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission() : 
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false)
-{
-}
-
 BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission(JsonView jsonValue)
-  : BatchStopJobRunSuccessfulSubmission()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchStopJobRunSuccessfulSubmission& BatchStopJobRunSuccessfulSubmission::operat
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunId"))
   {
     m_jobRunId = jsonValue.GetString("JobRunId");
-
     m_jobRunIdHasBeenSet = true;
   }
-
   return *this;
 }
 

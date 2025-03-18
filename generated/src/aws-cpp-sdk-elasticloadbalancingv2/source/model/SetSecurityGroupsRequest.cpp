@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-SetSecurityGroupsRequest::SetSecurityGroupsRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET),
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
-{
-}
-
 Aws::String SetSecurityGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

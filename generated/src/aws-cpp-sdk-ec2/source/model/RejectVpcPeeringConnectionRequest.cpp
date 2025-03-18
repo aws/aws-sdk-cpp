@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RejectVpcPeeringConnectionRequest::RejectVpcPeeringConnectionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectVpcPeeringConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

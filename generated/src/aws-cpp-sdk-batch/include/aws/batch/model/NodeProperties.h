@@ -34,7 +34,7 @@ namespace Model
   class NodeProperties
   {
   public:
-    AWS_BATCH_API NodeProperties();
+    AWS_BATCH_API NodeProperties() = default;
     AWS_BATCH_API NodeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API NodeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
-    inline int GetNumNodes() const{ return m_numNodes; }
+    inline int GetNumNodes() const { return m_numNodes; }
     inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
     inline NodeProperties& WithNumNodes(int value) { SetNumNodes(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * <p>Specifies the node index for the main node of a multi-node parallel job. This
      * node index value must be fewer than the number of nodes.</p>
      */
-    inline int GetMainNode() const{ return m_mainNode; }
+    inline int GetMainNode() const { return m_mainNode; }
     inline bool MainNodeHasBeenSet() const { return m_mainNodeHasBeenSet; }
     inline void SetMainNode(int value) { m_mainNodeHasBeenSet = true; m_mainNode = value; }
     inline NodeProperties& WithMainNode(int value) { SetMainNode(value); return *this;}
@@ -66,21 +66,21 @@ namespace Model
      * <p>A list of node ranges and their properties that are associated with a
      * multi-node parallel job.</p>
      */
-    inline const Aws::Vector<NodeRangeProperty>& GetNodeRangeProperties() const{ return m_nodeRangeProperties; }
+    inline const Aws::Vector<NodeRangeProperty>& GetNodeRangeProperties() const { return m_nodeRangeProperties; }
     inline bool NodeRangePropertiesHasBeenSet() const { return m_nodeRangePropertiesHasBeenSet; }
-    inline void SetNodeRangeProperties(const Aws::Vector<NodeRangeProperty>& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties = value; }
-    inline void SetNodeRangeProperties(Aws::Vector<NodeRangeProperty>&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties = std::move(value); }
-    inline NodeProperties& WithNodeRangeProperties(const Aws::Vector<NodeRangeProperty>& value) { SetNodeRangeProperties(value); return *this;}
-    inline NodeProperties& WithNodeRangeProperties(Aws::Vector<NodeRangeProperty>&& value) { SetNodeRangeProperties(std::move(value)); return *this;}
-    inline NodeProperties& AddNodeRangeProperties(const NodeRangeProperty& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties.push_back(value); return *this; }
-    inline NodeProperties& AddNodeRangeProperties(NodeRangeProperty&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties.push_back(std::move(value)); return *this; }
+    template<typename NodeRangePropertiesT = Aws::Vector<NodeRangeProperty>>
+    void SetNodeRangeProperties(NodeRangePropertiesT&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties = std::forward<NodeRangePropertiesT>(value); }
+    template<typename NodeRangePropertiesT = Aws::Vector<NodeRangeProperty>>
+    NodeProperties& WithNodeRangeProperties(NodeRangePropertiesT&& value) { SetNodeRangeProperties(std::forward<NodeRangePropertiesT>(value)); return *this;}
+    template<typename NodeRangePropertiesT = NodeRangeProperty>
+    NodeProperties& AddNodeRangeProperties(NodeRangePropertiesT&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties.emplace_back(std::forward<NodeRangePropertiesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_numNodes;
+    int m_numNodes{0};
     bool m_numNodesHasBeenSet = false;
 
-    int m_mainNode;
+    int m_mainNode{0};
     bool m_mainNodeHasBeenSet = false;
 
     Aws::Vector<NodeRangeProperty> m_nodeRangeProperties;

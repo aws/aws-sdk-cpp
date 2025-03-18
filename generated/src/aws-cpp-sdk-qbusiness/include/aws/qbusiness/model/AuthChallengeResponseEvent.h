@@ -33,7 +33,7 @@ namespace Model
   class AuthChallengeResponseEvent
   {
   public:
-    AWS_QBUSINESS_API AuthChallengeResponseEvent();
+    AWS_QBUSINESS_API AuthChallengeResponseEvent() = default;
     AWS_QBUSINESS_API AuthChallengeResponseEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AuthChallengeResponseEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,16 @@ namespace Model
     /**
      * <p>The mapping of key-value pairs in an authentication challenge response.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResponseMap() const{ return m_responseMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResponseMap() const { return m_responseMap; }
     inline bool ResponseMapHasBeenSet() const { return m_responseMapHasBeenSet; }
-    inline void SetResponseMap(const Aws::Map<Aws::String, Aws::String>& value) { m_responseMapHasBeenSet = true; m_responseMap = value; }
-    inline void SetResponseMap(Aws::Map<Aws::String, Aws::String>&& value) { m_responseMapHasBeenSet = true; m_responseMap = std::move(value); }
-    inline AuthChallengeResponseEvent& WithResponseMap(const Aws::Map<Aws::String, Aws::String>& value) { SetResponseMap(value); return *this;}
-    inline AuthChallengeResponseEvent& WithResponseMap(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseMap(std::move(value)); return *this;}
-    inline AuthChallengeResponseEvent& AddResponseMap(const Aws::String& key, const Aws::String& value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(key, value); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(Aws::String&& key, const Aws::String& value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(std::move(key), value); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(const Aws::String& key, Aws::String&& value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(key, std::move(value)); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(Aws::String&& key, Aws::String&& value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(const char* key, Aws::String&& value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(key, std::move(value)); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(Aws::String&& key, const char* value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(std::move(key), value); return *this; }
-    inline AuthChallengeResponseEvent& AddResponseMap(const char* key, const char* value) { m_responseMapHasBeenSet = true; m_responseMap.emplace(key, value); return *this; }
+    template<typename ResponseMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetResponseMap(ResponseMapT&& value) { m_responseMapHasBeenSet = true; m_responseMap = std::forward<ResponseMapT>(value); }
+    template<typename ResponseMapT = Aws::Map<Aws::String, Aws::String>>
+    AuthChallengeResponseEvent& WithResponseMap(ResponseMapT&& value) { SetResponseMap(std::forward<ResponseMapT>(value)); return *this;}
+    template<typename ResponseMapKeyT = Aws::String, typename ResponseMapValueT = Aws::String>
+    AuthChallengeResponseEvent& AddResponseMap(ResponseMapKeyT&& key, ResponseMapValueT&& value) {
+      m_responseMapHasBeenSet = true; m_responseMap.emplace(std::forward<ResponseMapKeyT>(key), std::forward<ResponseMapValueT>(value)); return *this;
+    }
     ///@}
   private:
 

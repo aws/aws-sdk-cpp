@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSessionsForWorkerRequest::ListSessionsForWorkerRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSessionsForWorkerRequest::SerializePayload() const
 {
   return {};

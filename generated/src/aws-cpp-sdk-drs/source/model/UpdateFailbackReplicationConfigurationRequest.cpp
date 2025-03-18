@@ -12,16 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFailbackReplicationConfigurationRequest::UpdateFailbackReplicationConfigurationRequest() : 
-    m_bandwidthThrottling(0),
-    m_bandwidthThrottlingHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recoveryInstanceIDHasBeenSet(false),
-    m_usePrivateIP(false),
-    m_usePrivateIPHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFailbackReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

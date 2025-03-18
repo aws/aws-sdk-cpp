@@ -10,18 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateRoleRequest::CreateRoleRequest() : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

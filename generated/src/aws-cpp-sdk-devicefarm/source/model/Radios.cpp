@@ -18,20 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Radios::Radios() : 
-    m_wifi(false),
-    m_wifiHasBeenSet(false),
-    m_bluetooth(false),
-    m_bluetoothHasBeenSet(false),
-    m_nfc(false),
-    m_nfcHasBeenSet(false),
-    m_gps(false),
-    m_gpsHasBeenSet(false)
-{
-}
-
 Radios::Radios(JsonView jsonValue)
-  : Radios()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Radios& Radios::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("wifi"))
   {
     m_wifi = jsonValue.GetBool("wifi");
-
     m_wifiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bluetooth"))
   {
     m_bluetooth = jsonValue.GetBool("bluetooth");
-
     m_bluetoothHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nfc"))
   {
     m_nfc = jsonValue.GetBool("nfc");
-
     m_nfcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gps"))
   {
     m_gps = jsonValue.GetBool("gps");
-
     m_gpsHasBeenSet = true;
   }
-
   return *this;
 }
 

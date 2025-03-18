@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceGroupStateChangeReason::InstanceGroupStateChangeReason() : 
-    m_code(InstanceGroupStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(JsonView jsonValue)
-  : InstanceGroupStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InstanceGroupStateChangeReason& InstanceGroupStateChangeReason::operator =(JsonV
   if(jsonValue.ValueExists("Code"))
   {
     m_code = InstanceGroupStateChangeReasonCodeMapper::GetInstanceGroupStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-TargetId::TargetId() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 TargetId::TargetId(JsonView jsonValue)
-  : TargetId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetId& TargetId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

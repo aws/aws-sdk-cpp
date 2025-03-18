@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGlobalNetworkResult::UpdateGlobalNetworkResult()
-{
-}
-
 UpdateGlobalNetworkResult::UpdateGlobalNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateGlobalNetworkResult& UpdateGlobalNetworkResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("GlobalNetwork"))
   {
     m_globalNetwork = jsonValue.GetObject("GlobalNetwork");
-
+    m_globalNetworkHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

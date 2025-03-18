@@ -18,21 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkPolicyVersion::CoreNetworkPolicyVersion() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false),
-    m_alias(CoreNetworkPolicyAlias::NOT_SET),
-    m_aliasHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_changeSetState(ChangeSetState::NOT_SET),
-    m_changeSetStateHasBeenSet(false)
-{
-}
-
 CoreNetworkPolicyVersion::CoreNetworkPolicyVersion(JsonView jsonValue)
-  : CoreNetworkPolicyVersion()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ CoreNetworkPolicyVersion& CoreNetworkPolicyVersion::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyVersionId"))
   {
     m_policyVersionId = jsonValue.GetInteger("PolicyVersionId");
-
     m_policyVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = CoreNetworkPolicyAliasMapper::GetCoreNetworkPolicyAliasForName(jsonValue.GetString("Alias"));
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetState"))
   {
     m_changeSetState = ChangeSetStateMapper::GetChangeSetStateForName(jsonValue.GetString("ChangeSetState"));
-
     m_changeSetStateHasBeenSet = true;
   }
-
   return *this;
 }
 

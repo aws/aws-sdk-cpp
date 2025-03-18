@@ -12,16 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceFromRDSRequest::CreateDataSourceFromRDSRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false),
-    m_rDSDataHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceFromRDSRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceScanSummary::ResourceScanSummary() : 
-    m_resourceScanIdHasBeenSet(false),
-    m_status(ResourceScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_percentageCompleted(0.0),
-    m_percentageCompletedHasBeenSet(false)
-{
-}
-
 ResourceScanSummary::ResourceScanSummary(const XmlNode& xmlNode)
-  : ResourceScanSummary()
 {
   *this = xmlNode;
 }
@@ -53,7 +40,7 @@ ResourceScanSummary& ResourceScanSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ResourceScanStatusMapper::GetResourceScanStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ResourceScanStatusMapper::GetResourceScanStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");

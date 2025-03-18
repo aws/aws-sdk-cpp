@@ -32,7 +32,7 @@ namespace Model
   class PackageGroupReference
   {
   public:
-    AWS_CODEARTIFACT_API PackageGroupReference();
+    AWS_CODEARTIFACT_API PackageGroupReference() = default;
     AWS_CODEARTIFACT_API PackageGroupReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The ARN of the package group. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PackageGroupReference& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PackageGroupReference& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PackageGroupReference& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PackageGroupReference& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * associated with the package group, and is also the identifier of the package
      * group. </p>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline PackageGroupReference& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline PackageGroupReference& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline PackageGroupReference& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    PackageGroupReference& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
   private:
 

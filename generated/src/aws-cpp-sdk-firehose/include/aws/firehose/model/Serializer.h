@@ -34,7 +34,7 @@ namespace Model
   class Serializer
   {
   public:
-    AWS_FIREHOSE_API Serializer();
+    AWS_FIREHOSE_API Serializer() = default;
     AWS_FIREHOSE_API Serializer(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Serializer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * href="https://parquet.apache.org/docs/contribution-guidelines/">Apache
      * Parquet</a>.</p>
      */
-    inline const ParquetSerDe& GetParquetSerDe() const{ return m_parquetSerDe; }
+    inline const ParquetSerDe& GetParquetSerDe() const { return m_parquetSerDe; }
     inline bool ParquetSerDeHasBeenSet() const { return m_parquetSerDeHasBeenSet; }
-    inline void SetParquetSerDe(const ParquetSerDe& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = value; }
-    inline void SetParquetSerDe(ParquetSerDe&& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = std::move(value); }
-    inline Serializer& WithParquetSerDe(const ParquetSerDe& value) { SetParquetSerDe(value); return *this;}
-    inline Serializer& WithParquetSerDe(ParquetSerDe&& value) { SetParquetSerDe(std::move(value)); return *this;}
+    template<typename ParquetSerDeT = ParquetSerDe>
+    void SetParquetSerDe(ParquetSerDeT&& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = std::forward<ParquetSerDeT>(value); }
+    template<typename ParquetSerDeT = ParquetSerDe>
+    Serializer& WithParquetSerDe(ParquetSerDeT&& value) { SetParquetSerDe(std::forward<ParquetSerDeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * in Amazon S3. For more information, see <a
      * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
      */
-    inline const OrcSerDe& GetOrcSerDe() const{ return m_orcSerDe; }
+    inline const OrcSerDe& GetOrcSerDe() const { return m_orcSerDe; }
     inline bool OrcSerDeHasBeenSet() const { return m_orcSerDeHasBeenSet; }
-    inline void SetOrcSerDe(const OrcSerDe& value) { m_orcSerDeHasBeenSet = true; m_orcSerDe = value; }
-    inline void SetOrcSerDe(OrcSerDe&& value) { m_orcSerDeHasBeenSet = true; m_orcSerDe = std::move(value); }
-    inline Serializer& WithOrcSerDe(const OrcSerDe& value) { SetOrcSerDe(value); return *this;}
-    inline Serializer& WithOrcSerDe(OrcSerDe&& value) { SetOrcSerDe(std::move(value)); return *this;}
+    template<typename OrcSerDeT = OrcSerDe>
+    void SetOrcSerDe(OrcSerDeT&& value) { m_orcSerDeHasBeenSet = true; m_orcSerDe = std::forward<OrcSerDeT>(value); }
+    template<typename OrcSerDeT = OrcSerDe>
+    Serializer& WithOrcSerDe(OrcSerDeT&& value) { SetOrcSerDe(std::forward<OrcSerDeT>(value)); return *this;}
     ///@}
   private:
 

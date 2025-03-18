@@ -35,7 +35,7 @@ namespace Model
   class BucketStatisticsBySensitivity
   {
   public:
-    AWS_MACIE2_API BucketStatisticsBySensitivity();
+    AWS_MACIE2_API BucketStatisticsBySensitivity() = default;
     AWS_MACIE2_API BucketStatisticsBySensitivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketStatisticsBySensitivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of -1.</p>
      */
-    inline const SensitivityAggregations& GetClassificationError() const{ return m_classificationError; }
+    inline const SensitivityAggregations& GetClassificationError() const { return m_classificationError; }
     inline bool ClassificationErrorHasBeenSet() const { return m_classificationErrorHasBeenSet; }
-    inline void SetClassificationError(const SensitivityAggregations& value) { m_classificationErrorHasBeenSet = true; m_classificationError = value; }
-    inline void SetClassificationError(SensitivityAggregations&& value) { m_classificationErrorHasBeenSet = true; m_classificationError = std::move(value); }
-    inline BucketStatisticsBySensitivity& WithClassificationError(const SensitivityAggregations& value) { SetClassificationError(value); return *this;}
-    inline BucketStatisticsBySensitivity& WithClassificationError(SensitivityAggregations&& value) { SetClassificationError(std::move(value)); return *this;}
+    template<typename ClassificationErrorT = SensitivityAggregations>
+    void SetClassificationError(ClassificationErrorT&& value) { m_classificationErrorHasBeenSet = true; m_classificationError = std::forward<ClassificationErrorT>(value); }
+    template<typename ClassificationErrorT = SensitivityAggregations>
+    BucketStatisticsBySensitivity& WithClassificationError(ClassificationErrorT&& value) { SetClassificationError(std::forward<ClassificationErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 50.</p>
      */
-    inline const SensitivityAggregations& GetNotClassified() const{ return m_notClassified; }
+    inline const SensitivityAggregations& GetNotClassified() const { return m_notClassified; }
     inline bool NotClassifiedHasBeenSet() const { return m_notClassifiedHasBeenSet; }
-    inline void SetNotClassified(const SensitivityAggregations& value) { m_notClassifiedHasBeenSet = true; m_notClassified = value; }
-    inline void SetNotClassified(SensitivityAggregations&& value) { m_notClassifiedHasBeenSet = true; m_notClassified = std::move(value); }
-    inline BucketStatisticsBySensitivity& WithNotClassified(const SensitivityAggregations& value) { SetNotClassified(value); return *this;}
-    inline BucketStatisticsBySensitivity& WithNotClassified(SensitivityAggregations&& value) { SetNotClassified(std::move(value)); return *this;}
+    template<typename NotClassifiedT = SensitivityAggregations>
+    void SetNotClassified(NotClassifiedT&& value) { m_notClassifiedHasBeenSet = true; m_notClassified = std::forward<NotClassifiedT>(value); }
+    template<typename NotClassifiedT = SensitivityAggregations>
+    BucketStatisticsBySensitivity& WithNotClassified(NotClassifiedT&& value) { SetNotClassified(std::forward<NotClassifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 1-49.</p>
      */
-    inline const SensitivityAggregations& GetNotSensitive() const{ return m_notSensitive; }
+    inline const SensitivityAggregations& GetNotSensitive() const { return m_notSensitive; }
     inline bool NotSensitiveHasBeenSet() const { return m_notSensitiveHasBeenSet; }
-    inline void SetNotSensitive(const SensitivityAggregations& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = value; }
-    inline void SetNotSensitive(SensitivityAggregations&& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = std::move(value); }
-    inline BucketStatisticsBySensitivity& WithNotSensitive(const SensitivityAggregations& value) { SetNotSensitive(value); return *this;}
-    inline BucketStatisticsBySensitivity& WithNotSensitive(SensitivityAggregations&& value) { SetNotSensitive(std::move(value)); return *this;}
+    template<typename NotSensitiveT = SensitivityAggregations>
+    void SetNotSensitive(NotSensitiveT&& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = std::forward<NotSensitiveT>(value); }
+    template<typename NotSensitiveT = SensitivityAggregations>
+    BucketStatisticsBySensitivity& WithNotSensitive(NotSensitiveT&& value) { SetNotSensitive(std::forward<NotSensitiveT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 51-100.</p>
      */
-    inline const SensitivityAggregations& GetSensitive() const{ return m_sensitive; }
+    inline const SensitivityAggregations& GetSensitive() const { return m_sensitive; }
     inline bool SensitiveHasBeenSet() const { return m_sensitiveHasBeenSet; }
-    inline void SetSensitive(const SensitivityAggregations& value) { m_sensitiveHasBeenSet = true; m_sensitive = value; }
-    inline void SetSensitive(SensitivityAggregations&& value) { m_sensitiveHasBeenSet = true; m_sensitive = std::move(value); }
-    inline BucketStatisticsBySensitivity& WithSensitive(const SensitivityAggregations& value) { SetSensitive(value); return *this;}
-    inline BucketStatisticsBySensitivity& WithSensitive(SensitivityAggregations&& value) { SetSensitive(std::move(value)); return *this;}
+    template<typename SensitiveT = SensitivityAggregations>
+    void SetSensitive(SensitiveT&& value) { m_sensitiveHasBeenSet = true; m_sensitive = std::forward<SensitiveT>(value); }
+    template<typename SensitiveT = SensitivityAggregations>
+    BucketStatisticsBySensitivity& WithSensitive(SensitiveT&& value) { SetSensitive(std::forward<SensitiveT>(value)); return *this;}
     ///@}
   private:
 

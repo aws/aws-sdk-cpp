@@ -12,16 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInterconnectRequest::CreateInterconnectRequest() : 
-    m_interconnectNameHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateInterconnectRequest::SerializePayload() const
 {
   JsonValue payload;

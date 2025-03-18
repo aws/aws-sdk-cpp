@@ -18,13 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportDukptInitialKey::ExportDukptInitialKey() : 
-    m_keySerialNumberHasBeenSet(false)
-{
-}
-
 ExportDukptInitialKey::ExportDukptInitialKey(JsonView jsonValue)
-  : ExportDukptInitialKey()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportDukptInitialKey& ExportDukptInitialKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeySerialNumber"))
   {
     m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
-
     m_keySerialNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateTaskSetRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API CreateTaskSetRequest();
+    AWS_ECS_API CreateTaskSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the service to create
      * the task set in.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline CreateTaskSetRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline CreateTaskSetRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    CreateTaskSetRequest& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the service to create the task set in.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline CreateTaskSetRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline CreateTaskSetRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    CreateTaskSetRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline CreateTaskSetRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline CreateTaskSetRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    CreateTaskSetRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,26 +88,24 @@ namespace Model
      * <p>The task definition for the tasks in the task set to use. If a revision isn't
      * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
-    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+    inline const Aws::String& GetTaskDefinition() const { return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
-    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
-    inline CreateTaskSetRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
-    inline CreateTaskSetRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    template<typename TaskDefinitionT = Aws::String>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = Aws::String>
+    CreateTaskSetRequest& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object representing the network configuration for a task set.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline CreateTaskSetRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline CreateTaskSetRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    CreateTaskSetRequest& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +114,14 @@ namespace Model
      * set. The supported load balancer types are either an Application Load Balancer
      * or a Network Load Balancer.</p>
      */
-    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const { return m_loadBalancers; }
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
-    inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
-    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
-    inline CreateTaskSetRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
-    inline CreateTaskSetRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
-    inline CreateTaskSetRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    void SetLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::forward<LoadBalancersT>(value); }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    CreateTaskSetRequest& WithLoadBalancers(LoadBalancersT&& value) { SetLoadBalancers(std::forward<LoadBalancersT>(value)); return *this;}
+    template<typename LoadBalancersT = LoadBalancer>
+    CreateTaskSetRequest& AddLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.emplace_back(std::forward<LoadBalancersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,14 +131,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
      */
-    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const { return m_serviceRegistries; }
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
-    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
-    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
-    inline CreateTaskSetRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
-    inline CreateTaskSetRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
-    inline CreateTaskSetRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
+    template<typename ServiceRegistriesT = Aws::Vector<ServiceRegistry>>
+    void SetServiceRegistries(ServiceRegistriesT&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::forward<ServiceRegistriesT>(value); }
+    template<typename ServiceRegistriesT = Aws::Vector<ServiceRegistry>>
+    CreateTaskSetRequest& WithServiceRegistries(ServiceRegistriesT&& value) { SetServiceRegistries(std::forward<ServiceRegistriesT>(value)); return *this;}
+    template<typename ServiceRegistriesT = ServiceRegistry>
+    CreateTaskSetRequest& AddServiceRegistries(ServiceRegistriesT&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.emplace_back(std::forward<ServiceRegistriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -158,12 +150,10 @@ namespace Model
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline CreateTaskSetRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline CreateTaskSetRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline CreateTaskSetRequest& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
@@ -192,14 +182,14 @@ namespace Model
      * API operation is used to update the list of available capacity providers for a
      * cluster after the cluster is created.</p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
-    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
-    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
-    inline CreateTaskSetRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
-    inline CreateTaskSetRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
-    inline CreateTaskSetRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::forward<CapacityProviderStrategyT>(value); }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    CreateTaskSetRequest& WithCapacityProviderStrategy(CapacityProviderStrategyT&& value) { SetCapacityProviderStrategy(std::forward<CapacityProviderStrategyT>(value)); return *this;}
+    template<typename CapacityProviderStrategyT = CapacityProviderStrategyItem>
+    CreateTaskSetRequest& AddCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.emplace_back(std::forward<CapacityProviderStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -208,14 +198,12 @@ namespace Model
      * is specified only for tasks using the Fargate launch type. If one isn't
      * specified, the <code>LATEST</code> platform version is used.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline CreateTaskSetRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline CreateTaskSetRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    CreateTaskSetRequest& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,12 +211,12 @@ namespace Model
      * <p>A floating-point percentage of the desired number of tasks to place and keep
      * running in the task set.</p>
      */
-    inline const Scale& GetScale() const{ return m_scale; }
+    inline const Scale& GetScale() const { return m_scale; }
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
-    inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
-    inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
-    inline CreateTaskSetRequest& WithScale(const Scale& value) { SetScale(value); return *this;}
-    inline CreateTaskSetRequest& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
+    template<typename ScaleT = Scale>
+    void SetScale(ScaleT&& value) { m_scaleHasBeenSet = true; m_scale = std::forward<ScaleT>(value); }
+    template<typename ScaleT = Scale>
+    CreateTaskSetRequest& WithScale(ScaleT&& value) { SetScale(std::forward<ScaleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -237,14 +225,12 @@ namespace Model
      * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
      * 33-126 (inclusive) are allowed.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateTaskSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTaskSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTaskSetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,14 +253,14 @@ namespace Model
      * values with this prefix. Tags with this prefix do not count against your tags
      * per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTaskSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTaskSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTaskSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTaskSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTaskSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTaskSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -299,7 +285,7 @@ namespace Model
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
     bool m_serviceRegistriesHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;

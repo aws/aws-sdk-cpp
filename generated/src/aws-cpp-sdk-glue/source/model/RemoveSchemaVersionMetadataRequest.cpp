@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveSchemaVersionMetadataRequest::RemoveSchemaVersionMetadataRequest() : 
-    m_schemaIdHasBeenSet(false),
-    m_schemaVersionNumberHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_metadataKeyValueHasBeenSet(false)
-{
-}
-
 Aws::String RemoveSchemaVersionMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

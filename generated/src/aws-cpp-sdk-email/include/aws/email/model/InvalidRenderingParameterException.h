@@ -33,7 +33,7 @@ namespace Model
   class InvalidRenderingParameterException
   {
   public:
-    AWS_SES_API InvalidRenderingParameterException();
+    AWS_SES_API InvalidRenderingParameterException() = default;
     AWS_SES_API InvalidRenderingParameterException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API InvalidRenderingParameterException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline InvalidRenderingParameterException& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline InvalidRenderingParameterException& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline InvalidRenderingParameterException& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    InvalidRenderingParameterException& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 

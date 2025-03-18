@@ -32,7 +32,7 @@ namespace Model
   class ConnectivityResourceConfigurationArn
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectivityResourceConfigurationArn();
+    AWS_EVENTBRIDGE_API ConnectivityResourceConfigurationArn() = default;
     AWS_EVENTBRIDGE_API ConnectivityResourceConfigurationArn(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectivityResourceConfigurationArn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource configuration for the resource
      * endpoint.</p>
      */
-    inline const Aws::String& GetResourceConfigurationArn() const{ return m_resourceConfigurationArn; }
+    inline const Aws::String& GetResourceConfigurationArn() const { return m_resourceConfigurationArn; }
     inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
-    inline void SetResourceConfigurationArn(const Aws::String& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = value; }
-    inline void SetResourceConfigurationArn(Aws::String&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::move(value); }
-    inline void SetResourceConfigurationArn(const char* value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn.assign(value); }
-    inline ConnectivityResourceConfigurationArn& WithResourceConfigurationArn(const Aws::String& value) { SetResourceConfigurationArn(value); return *this;}
-    inline ConnectivityResourceConfigurationArn& WithResourceConfigurationArn(Aws::String&& value) { SetResourceConfigurationArn(std::move(value)); return *this;}
-    inline ConnectivityResourceConfigurationArn& WithResourceConfigurationArn(const char* value) { SetResourceConfigurationArn(value); return *this;}
+    template<typename ResourceConfigurationArnT = Aws::String>
+    void SetResourceConfigurationArn(ResourceConfigurationArnT&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::forward<ResourceConfigurationArnT>(value); }
+    template<typename ResourceConfigurationArnT = Aws::String>
+    ConnectivityResourceConfigurationArn& WithResourceConfigurationArn(ResourceConfigurationArnT&& value) { SetResourceConfigurationArn(std::forward<ResourceConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

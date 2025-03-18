@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteIpamResourceDiscoveryRequest::DeleteIpamResourceDiscoveryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIpamResourceDiscoveryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

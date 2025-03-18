@@ -12,11 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterClusterRequest::DeregisterClusterRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterClusterRequest::SerializePayload() const
 {
   return {};

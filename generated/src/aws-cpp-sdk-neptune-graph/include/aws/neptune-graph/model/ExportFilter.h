@@ -36,7 +36,7 @@ namespace Model
   class ExportFilter
   {
   public:
-    AWS_NEPTUNEGRAPH_API ExportFilter();
+    AWS_NEPTUNEGRAPH_API ExportFilter() = default;
     AWS_NEPTUNEGRAPH_API ExportFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,18 +47,16 @@ namespace Model
      * <p>Used to specify filters on a per-label basis for vertices. This allows you to
      * control which vertex labels and properties are included in the export.</p>
      */
-    inline const Aws::Map<Aws::String, ExportFilterElement>& GetVertexFilter() const{ return m_vertexFilter; }
+    inline const Aws::Map<Aws::String, ExportFilterElement>& GetVertexFilter() const { return m_vertexFilter; }
     inline bool VertexFilterHasBeenSet() const { return m_vertexFilterHasBeenSet; }
-    inline void SetVertexFilter(const Aws::Map<Aws::String, ExportFilterElement>& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter = value; }
-    inline void SetVertexFilter(Aws::Map<Aws::String, ExportFilterElement>&& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter = std::move(value); }
-    inline ExportFilter& WithVertexFilter(const Aws::Map<Aws::String, ExportFilterElement>& value) { SetVertexFilter(value); return *this;}
-    inline ExportFilter& WithVertexFilter(Aws::Map<Aws::String, ExportFilterElement>&& value) { SetVertexFilter(std::move(value)); return *this;}
-    inline ExportFilter& AddVertexFilter(const Aws::String& key, const ExportFilterElement& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(key, value); return *this; }
-    inline ExportFilter& AddVertexFilter(Aws::String&& key, const ExportFilterElement& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(std::move(key), value); return *this; }
-    inline ExportFilter& AddVertexFilter(const Aws::String& key, ExportFilterElement&& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(key, std::move(value)); return *this; }
-    inline ExportFilter& AddVertexFilter(Aws::String&& key, ExportFilterElement&& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExportFilter& AddVertexFilter(const char* key, ExportFilterElement&& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(key, std::move(value)); return *this; }
-    inline ExportFilter& AddVertexFilter(const char* key, const ExportFilterElement& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(key, value); return *this; }
+    template<typename VertexFilterT = Aws::Map<Aws::String, ExportFilterElement>>
+    void SetVertexFilter(VertexFilterT&& value) { m_vertexFilterHasBeenSet = true; m_vertexFilter = std::forward<VertexFilterT>(value); }
+    template<typename VertexFilterT = Aws::Map<Aws::String, ExportFilterElement>>
+    ExportFilter& WithVertexFilter(VertexFilterT&& value) { SetVertexFilter(std::forward<VertexFilterT>(value)); return *this;}
+    template<typename VertexFilterKeyT = Aws::String, typename VertexFilterValueT = ExportFilterElement>
+    ExportFilter& AddVertexFilter(VertexFilterKeyT&& key, VertexFilterValueT&& value) {
+      m_vertexFilterHasBeenSet = true; m_vertexFilter.emplace(std::forward<VertexFilterKeyT>(key), std::forward<VertexFilterValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -66,18 +64,16 @@ namespace Model
      * <p>Used to specify filters on a per-label basis for edges. This allows you to
      * control which edge labels and properties are included in the export.</p>
      */
-    inline const Aws::Map<Aws::String, ExportFilterElement>& GetEdgeFilter() const{ return m_edgeFilter; }
+    inline const Aws::Map<Aws::String, ExportFilterElement>& GetEdgeFilter() const { return m_edgeFilter; }
     inline bool EdgeFilterHasBeenSet() const { return m_edgeFilterHasBeenSet; }
-    inline void SetEdgeFilter(const Aws::Map<Aws::String, ExportFilterElement>& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter = value; }
-    inline void SetEdgeFilter(Aws::Map<Aws::String, ExportFilterElement>&& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter = std::move(value); }
-    inline ExportFilter& WithEdgeFilter(const Aws::Map<Aws::String, ExportFilterElement>& value) { SetEdgeFilter(value); return *this;}
-    inline ExportFilter& WithEdgeFilter(Aws::Map<Aws::String, ExportFilterElement>&& value) { SetEdgeFilter(std::move(value)); return *this;}
-    inline ExportFilter& AddEdgeFilter(const Aws::String& key, const ExportFilterElement& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(key, value); return *this; }
-    inline ExportFilter& AddEdgeFilter(Aws::String&& key, const ExportFilterElement& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(std::move(key), value); return *this; }
-    inline ExportFilter& AddEdgeFilter(const Aws::String& key, ExportFilterElement&& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(key, std::move(value)); return *this; }
-    inline ExportFilter& AddEdgeFilter(Aws::String&& key, ExportFilterElement&& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExportFilter& AddEdgeFilter(const char* key, ExportFilterElement&& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(key, std::move(value)); return *this; }
-    inline ExportFilter& AddEdgeFilter(const char* key, const ExportFilterElement& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(key, value); return *this; }
+    template<typename EdgeFilterT = Aws::Map<Aws::String, ExportFilterElement>>
+    void SetEdgeFilter(EdgeFilterT&& value) { m_edgeFilterHasBeenSet = true; m_edgeFilter = std::forward<EdgeFilterT>(value); }
+    template<typename EdgeFilterT = Aws::Map<Aws::String, ExportFilterElement>>
+    ExportFilter& WithEdgeFilter(EdgeFilterT&& value) { SetEdgeFilter(std::forward<EdgeFilterT>(value)); return *this;}
+    template<typename EdgeFilterKeyT = Aws::String, typename EdgeFilterValueT = ExportFilterElement>
+    ExportFilter& AddEdgeFilter(EdgeFilterKeyT&& key, EdgeFilterValueT&& value) {
+      m_edgeFilterHasBeenSet = true; m_edgeFilter.emplace(std::forward<EdgeFilterKeyT>(key), std::forward<EdgeFilterValueT>(value)); return *this;
+    }
     ///@}
   private:
 

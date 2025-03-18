@@ -35,7 +35,7 @@ namespace Model
   class ListHarvestJobsResult
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ListHarvestJobsResult();
+    AWS_MEDIAPACKAGEV2_API ListHarvestJobsResult() = default;
     AWS_MEDIAPACKAGEV2_API ListHarvestJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGEV2_API ListHarvestJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>An array of harvest job objects that match the specified criteria.</p>
      */
-    inline const Aws::Vector<HarvestJob>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<HarvestJob>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<HarvestJob>&& value) { m_items = std::move(value); }
-    inline ListHarvestJobsResult& WithItems(const Aws::Vector<HarvestJob>& value) { SetItems(value); return *this;}
-    inline ListHarvestJobsResult& WithItems(Aws::Vector<HarvestJob>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListHarvestJobsResult& AddItems(const HarvestJob& value) { m_items.push_back(value); return *this; }
-    inline ListHarvestJobsResult& AddItems(HarvestJob&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HarvestJob>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<HarvestJob>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<HarvestJob>>
+    ListHarvestJobsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = HarvestJob>
+    ListHarvestJobsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * retrieve the next set of results. If null, there are no more results to
      * retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHarvestJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHarvestJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHarvestJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHarvestJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHarvestJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHarvestJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHarvestJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHarvestJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HarvestJob> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

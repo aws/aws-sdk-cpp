@@ -21,7 +21,7 @@ namespace Model
   class GetApplicationRequest : public AppRegistryRequest
   {
   public:
-    AWS_APPREGISTRY_API GetApplicationRequest();
+    AWS_APPREGISTRY_API GetApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The name, ID, or ARN of the application. </p>
      */
-    inline const Aws::String& GetApplication() const{ return m_application; }
+    inline const Aws::String& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-    inline GetApplicationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-    inline GetApplicationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-    inline GetApplicationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    template<typename ApplicationT = Aws::String>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = Aws::String>
+    GetApplicationRequest& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
   private:
 

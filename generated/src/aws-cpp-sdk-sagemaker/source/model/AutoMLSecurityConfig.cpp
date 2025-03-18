@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLSecurityConfig::AutoMLSecurityConfig() : 
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 AutoMLSecurityConfig::AutoMLSecurityConfig(JsonView jsonValue)
-  : AutoMLSecurityConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AutoMLSecurityConfig& AutoMLSecurityConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
   {
     m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
-
     m_enableInterContainerTrafficEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

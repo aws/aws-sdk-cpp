@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ExperienceEndpoint::ExperienceEndpoint() : 
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 ExperienceEndpoint::ExperienceEndpoint(JsonView jsonValue)
-  : ExperienceEndpoint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExperienceEndpoint& ExperienceEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   return *this;
 }
 

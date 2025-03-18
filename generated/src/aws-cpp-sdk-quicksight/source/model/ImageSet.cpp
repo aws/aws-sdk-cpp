@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ImageSet::ImageSet() : 
-    m_originalHasBeenSet(false),
-    m_height64HasBeenSet(false),
-    m_height32HasBeenSet(false)
-{
-}
-
 ImageSet::ImageSet(JsonView jsonValue)
-  : ImageSet()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ImageSet& ImageSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Original"))
   {
     m_original = jsonValue.GetObject("Original");
-
     m_originalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height64"))
   {
     m_height64 = jsonValue.GetObject("Height64");
-
     m_height64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height32"))
   {
     m_height32 = jsonValue.GetObject("Height32");
-
     m_height32HasBeenSet = true;
   }
-
   return *this;
 }
 

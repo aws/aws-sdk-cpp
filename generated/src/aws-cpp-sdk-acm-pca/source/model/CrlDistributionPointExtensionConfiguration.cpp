@@ -18,14 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration() : 
-    m_omitExtension(false),
-    m_omitExtensionHasBeenSet(false)
-{
-}
-
 CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration(JsonView jsonValue)
-  : CrlDistributionPointExtensionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CrlDistributionPointExtensionConfiguration& CrlDistributionPointExtensionConfigu
   if(jsonValue.ValueExists("OmitExtension"))
   {
     m_omitExtension = jsonValue.GetBool("OmitExtension");
-
     m_omitExtensionHasBeenSet = true;
   }
-
   return *this;
 }
 

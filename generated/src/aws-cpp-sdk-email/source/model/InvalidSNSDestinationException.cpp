@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidSNSDestinationException::InvalidSNSDestinationException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 InvalidSNSDestinationException::InvalidSNSDestinationException(const XmlNode& xmlNode)
-  : InvalidSNSDestinationException()
 {
   *this = xmlNode;
 }

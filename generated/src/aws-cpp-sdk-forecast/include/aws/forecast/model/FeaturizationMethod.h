@@ -40,7 +40,7 @@ namespace Model
   class FeaturizationMethod
   {
   public:
-    AWS_FORECASTSERVICE_API FeaturizationMethod();
+    AWS_FORECASTSERVICE_API FeaturizationMethod() = default;
     AWS_FORECASTSERVICE_API FeaturizationMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API FeaturizationMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
-    inline const FeaturizationMethodName& GetFeaturizationMethodName() const{ return m_featurizationMethodName; }
+    inline FeaturizationMethodName GetFeaturizationMethodName() const { return m_featurizationMethodName; }
     inline bool FeaturizationMethodNameHasBeenSet() const { return m_featurizationMethodNameHasBeenSet; }
-    inline void SetFeaturizationMethodName(const FeaturizationMethodName& value) { m_featurizationMethodNameHasBeenSet = true; m_featurizationMethodName = value; }
-    inline void SetFeaturizationMethodName(FeaturizationMethodName&& value) { m_featurizationMethodNameHasBeenSet = true; m_featurizationMethodName = std::move(value); }
-    inline FeaturizationMethod& WithFeaturizationMethodName(const FeaturizationMethodName& value) { SetFeaturizationMethodName(value); return *this;}
-    inline FeaturizationMethod& WithFeaturizationMethodName(FeaturizationMethodName&& value) { SetFeaturizationMethodName(std::move(value)); return *this;}
+    inline void SetFeaturizationMethodName(FeaturizationMethodName value) { m_featurizationMethodNameHasBeenSet = true; m_featurizationMethodName = value; }
+    inline FeaturizationMethod& WithFeaturizationMethodName(FeaturizationMethodName value) { SetFeaturizationMethodName(value); return *this;}
     ///@}
 
     ///@{
@@ -88,23 +86,20 @@ namespace Model
      * include the following: <code>"backfill": "value"</code> and
      * <code>"backfill_value":"2"</code>. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFeaturizationMethodParameters() const{ return m_featurizationMethodParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFeaturizationMethodParameters() const { return m_featurizationMethodParameters; }
     inline bool FeaturizationMethodParametersHasBeenSet() const { return m_featurizationMethodParametersHasBeenSet; }
-    inline void SetFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = value; }
-    inline void SetFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = std::move(value); }
-    inline FeaturizationMethod& WithFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetFeaturizationMethodParameters(value); return *this;}
-    inline FeaturizationMethod& WithFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetFeaturizationMethodParameters(std::move(value)); return *this;}
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
-    inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
+    template<typename FeaturizationMethodParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetFeaturizationMethodParameters(FeaturizationMethodParametersT&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = std::forward<FeaturizationMethodParametersT>(value); }
+    template<typename FeaturizationMethodParametersT = Aws::Map<Aws::String, Aws::String>>
+    FeaturizationMethod& WithFeaturizationMethodParameters(FeaturizationMethodParametersT&& value) { SetFeaturizationMethodParameters(std::forward<FeaturizationMethodParametersT>(value)); return *this;}
+    template<typename FeaturizationMethodParametersKeyT = Aws::String, typename FeaturizationMethodParametersValueT = Aws::String>
+    FeaturizationMethod& AddFeaturizationMethodParameters(FeaturizationMethodParametersKeyT&& key, FeaturizationMethodParametersValueT&& value) {
+      m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::forward<FeaturizationMethodParametersKeyT>(key), std::forward<FeaturizationMethodParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    FeaturizationMethodName m_featurizationMethodName;
+    FeaturizationMethodName m_featurizationMethodName{FeaturizationMethodName::NOT_SET};
     bool m_featurizationMethodNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_featurizationMethodParameters;

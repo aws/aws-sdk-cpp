@@ -33,7 +33,7 @@ namespace Model
   class FilledMapFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API FilledMapFieldWells();
+    AWS_QUICKSIGHT_API FilledMapFieldWells() = default;
     AWS_QUICKSIGHT_API FilledMapFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilledMapFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The aggregated field well of the filled map.</p>
      */
-    inline const FilledMapAggregatedFieldWells& GetFilledMapAggregatedFieldWells() const{ return m_filledMapAggregatedFieldWells; }
+    inline const FilledMapAggregatedFieldWells& GetFilledMapAggregatedFieldWells() const { return m_filledMapAggregatedFieldWells; }
     inline bool FilledMapAggregatedFieldWellsHasBeenSet() const { return m_filledMapAggregatedFieldWellsHasBeenSet; }
-    inline void SetFilledMapAggregatedFieldWells(const FilledMapAggregatedFieldWells& value) { m_filledMapAggregatedFieldWellsHasBeenSet = true; m_filledMapAggregatedFieldWells = value; }
-    inline void SetFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWells&& value) { m_filledMapAggregatedFieldWellsHasBeenSet = true; m_filledMapAggregatedFieldWells = std::move(value); }
-    inline FilledMapFieldWells& WithFilledMapAggregatedFieldWells(const FilledMapAggregatedFieldWells& value) { SetFilledMapAggregatedFieldWells(value); return *this;}
-    inline FilledMapFieldWells& WithFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWells&& value) { SetFilledMapAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename FilledMapAggregatedFieldWellsT = FilledMapAggregatedFieldWells>
+    void SetFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWellsT&& value) { m_filledMapAggregatedFieldWellsHasBeenSet = true; m_filledMapAggregatedFieldWells = std::forward<FilledMapAggregatedFieldWellsT>(value); }
+    template<typename FilledMapAggregatedFieldWellsT = FilledMapAggregatedFieldWells>
+    FilledMapFieldWells& WithFilledMapAggregatedFieldWells(FilledMapAggregatedFieldWellsT&& value) { SetFilledMapAggregatedFieldWells(std::forward<FilledMapAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

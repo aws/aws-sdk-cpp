@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectCustomLabelsResult::DetectCustomLabelsResult()
-{
-}
-
 DetectCustomLabelsResult::DetectCustomLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DetectCustomLabelsResult& DetectCustomLabelsResult::operator =(const Aws::Amazon
     {
       m_customLabels.push_back(customLabelsJsonList[customLabelsIndex].AsObject());
     }
+    m_customLabelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

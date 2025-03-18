@@ -35,7 +35,7 @@ namespace Model
   class OperationSummary
   {
   public:
-    AWS_SERVICEDISCOVERY_API OperationSummary();
+    AWS_SERVICEDISCOVERY_API OperationSummary() = default;
     AWS_SERVICEDISCOVERY_API OperationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID for an operation.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline OperationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline OperationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline OperationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    OperationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
      */
-    inline const OperationStatus& GetStatus() const{ return m_status; }
+    inline OperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OperationSummary& WithStatus(const OperationStatus& value) { SetStatus(value); return *this;}
-    inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OperationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OperationSummary& WithStatus(OperationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    OperationStatus m_status;
+    OperationStatus m_status{OperationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

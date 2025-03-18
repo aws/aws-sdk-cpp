@@ -33,7 +33,7 @@ namespace Model
   class AssociatedAccessPolicy
   {
   public:
-    AWS_EKS_API AssociatedAccessPolicy();
+    AWS_EKS_API AssociatedAccessPolicy() = default;
     AWS_EKS_API AssociatedAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API AssociatedAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The ARN of the <code>AccessPolicy</code>.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline AssociatedAccessPolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline AssociatedAccessPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline AssociatedAccessPolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    AssociatedAccessPolicy& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scope of the access policy.</p>
      */
-    inline const AccessScope& GetAccessScope() const{ return m_accessScope; }
+    inline const AccessScope& GetAccessScope() const { return m_accessScope; }
     inline bool AccessScopeHasBeenSet() const { return m_accessScopeHasBeenSet; }
-    inline void SetAccessScope(const AccessScope& value) { m_accessScopeHasBeenSet = true; m_accessScope = value; }
-    inline void SetAccessScope(AccessScope&& value) { m_accessScopeHasBeenSet = true; m_accessScope = std::move(value); }
-    inline AssociatedAccessPolicy& WithAccessScope(const AccessScope& value) { SetAccessScope(value); return *this;}
-    inline AssociatedAccessPolicy& WithAccessScope(AccessScope&& value) { SetAccessScope(std::move(value)); return *this;}
+    template<typename AccessScopeT = AccessScope>
+    void SetAccessScope(AccessScopeT&& value) { m_accessScopeHasBeenSet = true; m_accessScope = std::forward<AccessScopeT>(value); }
+    template<typename AccessScopeT = AccessScope>
+    AssociatedAccessPolicy& WithAccessScope(AccessScopeT&& value) { SetAccessScope(std::forward<AccessScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,24 +68,24 @@ namespace Model
      * <p>The date and time the <code>AccessPolicy</code> was associated with an
      * <code>AccessEntry</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetAssociatedAt() const{ return m_associatedAt; }
+    inline const Aws::Utils::DateTime& GetAssociatedAt() const { return m_associatedAt; }
     inline bool AssociatedAtHasBeenSet() const { return m_associatedAtHasBeenSet; }
-    inline void SetAssociatedAt(const Aws::Utils::DateTime& value) { m_associatedAtHasBeenSet = true; m_associatedAt = value; }
-    inline void SetAssociatedAt(Aws::Utils::DateTime&& value) { m_associatedAtHasBeenSet = true; m_associatedAt = std::move(value); }
-    inline AssociatedAccessPolicy& WithAssociatedAt(const Aws::Utils::DateTime& value) { SetAssociatedAt(value); return *this;}
-    inline AssociatedAccessPolicy& WithAssociatedAt(Aws::Utils::DateTime&& value) { SetAssociatedAt(std::move(value)); return *this;}
+    template<typename AssociatedAtT = Aws::Utils::DateTime>
+    void SetAssociatedAt(AssociatedAtT&& value) { m_associatedAtHasBeenSet = true; m_associatedAt = std::forward<AssociatedAtT>(value); }
+    template<typename AssociatedAtT = Aws::Utils::DateTime>
+    AssociatedAccessPolicy& WithAssociatedAt(AssociatedAtT&& value) { SetAssociatedAt(std::forward<AssociatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-    inline AssociatedAccessPolicy& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline AssociatedAccessPolicy& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    AssociatedAccessPolicy& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,10 +95,10 @@ namespace Model
     AccessScope m_accessScope;
     bool m_accessScopeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_associatedAt;
+    Aws::Utils::DateTime m_associatedAt{};
     bool m_associatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
     bool m_modifiedAtHasBeenSet = false;
   };
 

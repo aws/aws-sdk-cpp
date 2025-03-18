@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTimeSeriesRequest::ListTimeSeriesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_aliasPrefixHasBeenSet(false),
-    m_timeSeriesType(ListTimeSeriesType::NOT_SET),
-    m_timeSeriesTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListTimeSeriesRequest::SerializePayload() const
 {
   return {};

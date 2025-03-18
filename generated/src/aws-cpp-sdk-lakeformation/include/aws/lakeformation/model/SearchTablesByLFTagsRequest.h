@@ -23,7 +23,7 @@ namespace Model
   class SearchTablesByLFTagsRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API SearchTablesByLFTagsRequest();
+    AWS_LAKEFORMATION_API SearchTablesByLFTagsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
      * <p>A continuation token, if this is not the first call to retrieve this
      * list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchTablesByLFTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchTablesByLFTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchTablesByLFTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchTablesByLFTagsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchTablesByLFTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,14 +64,12 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline SearchTablesByLFTagsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline SearchTablesByLFTagsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline SearchTablesByLFTagsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    SearchTablesByLFTagsRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,21 +77,21 @@ namespace Model
      * <p>A list of conditions (<code>LFTag</code> structures) to search for in table
      * resources.</p>
      */
-    inline const Aws::Vector<LFTag>& GetExpression() const{ return m_expression; }
+    inline const Aws::Vector<LFTag>& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::Vector<LFTag>& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::Vector<LFTag>&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline SearchTablesByLFTagsRequest& WithExpression(const Aws::Vector<LFTag>& value) { SetExpression(value); return *this;}
-    inline SearchTablesByLFTagsRequest& WithExpression(Aws::Vector<LFTag>&& value) { SetExpression(std::move(value)); return *this;}
-    inline SearchTablesByLFTagsRequest& AddExpression(const LFTag& value) { m_expressionHasBeenSet = true; m_expression.push_back(value); return *this; }
-    inline SearchTablesByLFTagsRequest& AddExpression(LFTag&& value) { m_expressionHasBeenSet = true; m_expression.push_back(std::move(value)); return *this; }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    SearchTablesByLFTagsRequest& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
+    template<typename ExpressionT = LFTag>
+    SearchTablesByLFTagsRequest& AddExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression.emplace_back(std::forward<ExpressionT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_catalogId;

@@ -29,7 +29,7 @@ namespace Model
   class ProvisionDeviceResult
   {
   public:
-    AWS_PANORAMA_API ProvisionDeviceResult();
+    AWS_PANORAMA_API ProvisionDeviceResult() = default;
     AWS_PANORAMA_API ProvisionDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API ProvisionDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,86 +38,82 @@ namespace Model
     /**
      * <p>The device's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline ProvisionDeviceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ProvisionDeviceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ProvisionDeviceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ProvisionDeviceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's configuration bundle.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCertificates() const{ return m_certificates; }
-    inline void SetCertificates(const Aws::Utils::ByteBuffer& value) { m_certificates = value; }
-    inline void SetCertificates(Aws::Utils::ByteBuffer&& value) { m_certificates = std::move(value); }
-    inline ProvisionDeviceResult& WithCertificates(const Aws::Utils::ByteBuffer& value) { SetCertificates(value); return *this;}
-    inline ProvisionDeviceResult& WithCertificates(Aws::Utils::ByteBuffer&& value) { SetCertificates(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetCertificates() const { return m_certificates; }
+    template<typename CertificatesT = Aws::Utils::ByteBuffer>
+    void SetCertificates(CertificatesT&& value) { m_certificatesHasBeenSet = true; m_certificates = std::forward<CertificatesT>(value); }
+    template<typename CertificatesT = Aws::Utils::ByteBuffer>
+    ProvisionDeviceResult& WithCertificates(CertificatesT&& value) { SetCertificates(std::forward<CertificatesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's ID.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
-    inline ProvisionDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline ProvisionDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline ProvisionDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    ProvisionDeviceResult& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's IoT thing name.</p>
      */
-    inline const Aws::String& GetIotThingName() const{ return m_iotThingName; }
-    inline void SetIotThingName(const Aws::String& value) { m_iotThingName = value; }
-    inline void SetIotThingName(Aws::String&& value) { m_iotThingName = std::move(value); }
-    inline void SetIotThingName(const char* value) { m_iotThingName.assign(value); }
-    inline ProvisionDeviceResult& WithIotThingName(const Aws::String& value) { SetIotThingName(value); return *this;}
-    inline ProvisionDeviceResult& WithIotThingName(Aws::String&& value) { SetIotThingName(std::move(value)); return *this;}
-    inline ProvisionDeviceResult& WithIotThingName(const char* value) { SetIotThingName(value); return *this;}
+    inline const Aws::String& GetIotThingName() const { return m_iotThingName; }
+    template<typename IotThingNameT = Aws::String>
+    void SetIotThingName(IotThingNameT&& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = std::forward<IotThingNameT>(value); }
+    template<typename IotThingNameT = Aws::String>
+    ProvisionDeviceResult& WithIotThingName(IotThingNameT&& value) { SetIotThingName(std::forward<IotThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's status.</p>
      */
-    inline const DeviceStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DeviceStatus& value) { m_status = value; }
-    inline void SetStatus(DeviceStatus&& value) { m_status = std::move(value); }
-    inline ProvisionDeviceResult& WithStatus(const DeviceStatus& value) { SetStatus(value); return *this;}
-    inline ProvisionDeviceResult& WithStatus(DeviceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DeviceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DeviceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProvisionDeviceResult& WithStatus(DeviceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ProvisionDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ProvisionDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ProvisionDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ProvisionDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_certificates;
+    Aws::Utils::ByteBuffer m_certificates{};
+    bool m_certificatesHasBeenSet = false;
 
     Aws::String m_deviceId;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_iotThingName;
+    bool m_iotThingNameHasBeenSet = false;
 
-    DeviceStatus m_status;
+    DeviceStatus m_status{DeviceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

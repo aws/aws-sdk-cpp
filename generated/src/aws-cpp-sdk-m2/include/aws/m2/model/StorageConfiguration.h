@@ -33,7 +33,7 @@ namespace Model
   class StorageConfiguration
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration();
+    AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration() = default;
     AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Defines the storage configuration for an Amazon EFS file system.</p>
      */
-    inline const EfsStorageConfiguration& GetEfs() const{ return m_efs; }
+    inline const EfsStorageConfiguration& GetEfs() const { return m_efs; }
     inline bool EfsHasBeenSet() const { return m_efsHasBeenSet; }
-    inline void SetEfs(const EfsStorageConfiguration& value) { m_efsHasBeenSet = true; m_efs = value; }
-    inline void SetEfs(EfsStorageConfiguration&& value) { m_efsHasBeenSet = true; m_efs = std::move(value); }
-    inline StorageConfiguration& WithEfs(const EfsStorageConfiguration& value) { SetEfs(value); return *this;}
-    inline StorageConfiguration& WithEfs(EfsStorageConfiguration&& value) { SetEfs(std::move(value)); return *this;}
+    template<typename EfsT = EfsStorageConfiguration>
+    void SetEfs(EfsT&& value) { m_efsHasBeenSet = true; m_efs = std::forward<EfsT>(value); }
+    template<typename EfsT = EfsStorageConfiguration>
+    StorageConfiguration& WithEfs(EfsT&& value) { SetEfs(std::forward<EfsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the storage configuration for an Amazon FSx file system.</p>
      */
-    inline const FsxStorageConfiguration& GetFsx() const{ return m_fsx; }
+    inline const FsxStorageConfiguration& GetFsx() const { return m_fsx; }
     inline bool FsxHasBeenSet() const { return m_fsxHasBeenSet; }
-    inline void SetFsx(const FsxStorageConfiguration& value) { m_fsxHasBeenSet = true; m_fsx = value; }
-    inline void SetFsx(FsxStorageConfiguration&& value) { m_fsxHasBeenSet = true; m_fsx = std::move(value); }
-    inline StorageConfiguration& WithFsx(const FsxStorageConfiguration& value) { SetFsx(value); return *this;}
-    inline StorageConfiguration& WithFsx(FsxStorageConfiguration&& value) { SetFsx(std::move(value)); return *this;}
+    template<typename FsxT = FsxStorageConfiguration>
+    void SetFsx(FsxT&& value) { m_fsxHasBeenSet = true; m_fsx = std::forward<FsxT>(value); }
+    template<typename FsxT = FsxStorageConfiguration>
+    StorageConfiguration& WithFsx(FsxT&& value) { SetFsx(std::forward<FsxT>(value)); return *this;}
     ///@}
   private:
 

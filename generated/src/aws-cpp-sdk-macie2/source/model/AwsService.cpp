@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-AwsService::AwsService() : 
-    m_invokedByHasBeenSet(false)
-{
-}
-
 AwsService::AwsService(JsonView jsonValue)
-  : AwsService()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsService& AwsService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invokedBy"))
   {
     m_invokedBy = jsonValue.GetString("invokedBy");
-
     m_invokedByHasBeenSet = true;
   }
-
   return *this;
 }
 

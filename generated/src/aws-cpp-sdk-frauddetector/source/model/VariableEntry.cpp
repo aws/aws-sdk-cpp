@@ -18,18 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-VariableEntry::VariableEntry() : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false)
-{
-}
-
 VariableEntry::VariableEntry(JsonView jsonValue)
-  : VariableEntry()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ VariableEntry& VariableEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = jsonValue.GetString("dataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetString("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variableType"))
   {
     m_variableType = jsonValue.GetString("variableType");
-
     m_variableTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class WorkforceVpcConfigResponse
   {
   public:
-    AWS_SAGEMAKER_API WorkforceVpcConfigResponse();
+    AWS_SAGEMAKER_API WorkforceVpcConfigResponse() = default;
     AWS_SAGEMAKER_API WorkforceVpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API WorkforceVpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the VPC that the workforce uses for communication.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline WorkforceVpcConfigResponse& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline WorkforceVpcConfigResponse& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline WorkforceVpcConfigResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    WorkforceVpcConfigResponse& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,30 +56,28 @@ namespace Model
      * <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must
      * be for the same VPC as specified in the subnet.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline WorkforceVpcConfigResponse& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline WorkforceVpcConfigResponse& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline WorkforceVpcConfigResponse& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline WorkforceVpcConfigResponse& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline WorkforceVpcConfigResponse& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    WorkforceVpcConfigResponse& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    WorkforceVpcConfigResponse& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnets in the VPC that you want to connect.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-    inline WorkforceVpcConfigResponse& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-    inline WorkforceVpcConfigResponse& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline WorkforceVpcConfigResponse& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-    inline WorkforceVpcConfigResponse& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-    inline WorkforceVpcConfigResponse& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    WorkforceVpcConfigResponse& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = Aws::String>
+    WorkforceVpcConfigResponse& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>The IDs for the VPC service endpoints of your VPC workforce when it is
      * created and updated.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-    inline WorkforceVpcConfigResponse& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline WorkforceVpcConfigResponse& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline WorkforceVpcConfigResponse& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    WorkforceVpcConfigResponse& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

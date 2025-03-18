@@ -12,18 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServicesRequest::ListServicesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false)
-{
-}
-
 Aws::String ListServicesRequest::SerializePayload() const
 {
   JsonValue payload;

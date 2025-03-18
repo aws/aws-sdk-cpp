@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketNotificationConfigurationDetail::AwsS3BucketNotificationConfigurationDetail() : 
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsS3BucketNotificationConfigurationDetail::AwsS3BucketNotificationConfigurationDetail(JsonView jsonValue)
-  : AwsS3BucketNotificationConfigurationDetail()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ AwsS3BucketNotificationConfigurationDetail& AwsS3BucketNotificationConfiguration
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetObject("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

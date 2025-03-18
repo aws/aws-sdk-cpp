@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobObjective::AutoMLJobObjective() : 
-    m_metricName(AutoMLMetricEnum::NOT_SET),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 AutoMLJobObjective::AutoMLJobObjective(JsonView jsonValue)
-  : AutoMLJobObjective()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoMLJobObjective& AutoMLJobObjective::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

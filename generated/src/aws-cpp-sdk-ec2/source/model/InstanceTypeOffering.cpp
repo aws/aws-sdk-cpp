@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTypeOffering::InstanceTypeOffering() : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_locationType(LocationType::NOT_SET),
-    m_locationTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 InstanceTypeOffering::InstanceTypeOffering(const XmlNode& xmlNode)
-  : InstanceTypeOffering()
 {
   *this = xmlNode;
 }
@@ -44,13 +34,13 @@ InstanceTypeOffering& InstanceTypeOffering::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode locationTypeNode = resultNode.FirstChild("locationType");
     if(!locationTypeNode.IsNull())
     {
-      m_locationType = LocationTypeMapper::GetLocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(locationTypeNode.GetText()).c_str()).c_str());
+      m_locationType = LocationTypeMapper::GetLocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(locationTypeNode.GetText()).c_str()));
       m_locationTypeHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("location");

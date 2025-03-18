@@ -29,7 +29,7 @@ namespace Model
   class ListPackageVersionsRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API ListPackageVersionsRequest();
+    AWS_CODEARTIFACT_API ListPackageVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p> The name of the domain that contains the repository that contains the
      * requested package versions. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ListPackageVersionsRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ListPackageVersionsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ListPackageVersionsRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline ListPackageVersionsRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline ListPackageVersionsRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    ListPackageVersionsRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,26 +73,22 @@ namespace Model
      * <p> The name of the repository that contains the requested package versions.
      * </p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline ListPackageVersionsRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline ListPackageVersionsRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    ListPackageVersionsRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The format of the package versions you want to list. </p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
+    inline PackageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ListPackageVersionsRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline ListPackageVersionsRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ListPackageVersionsRequest& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -113,59 +105,51 @@ namespace Model
      * package versions do not contain a corresponding component, package versions of
      * those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline ListPackageVersionsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ListPackageVersionsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ListPackageVersionsRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the package for which you want to request package versions. </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
+    inline const Aws::String& GetPackage() const { return m_package; }
     inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
-    inline void SetPackage(const Aws::String& value) { m_packageHasBeenSet = true; m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_packageHasBeenSet = true; m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_packageHasBeenSet = true; m_package.assign(value); }
-    inline ListPackageVersionsRequest& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline ListPackageVersionsRequest& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithPackage(const char* value) { SetPackage(value); return *this;}
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    ListPackageVersionsRequest& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A string that filters the requested package versions by status. </p>
      */
-    inline const PackageVersionStatus& GetStatus() const{ return m_status; }
+    inline PackageVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListPackageVersionsRequest& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
-    inline ListPackageVersionsRequest& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PackageVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListPackageVersionsRequest& WithStatus(PackageVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> How to sort the requested list of package versions. </p>
      */
-    inline const PackageVersionSortType& GetSortBy() const{ return m_sortBy; }
+    inline PackageVersionSortType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const PackageVersionSortType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(PackageVersionSortType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListPackageVersionsRequest& WithSortBy(const PackageVersionSortType& value) { SetSortBy(value); return *this;}
-    inline ListPackageVersionsRequest& WithSortBy(PackageVersionSortType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(PackageVersionSortType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListPackageVersionsRequest& WithSortBy(PackageVersionSortType value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of results to return per page. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPackageVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -176,14 +160,12 @@ namespace Model
      * <p> The token for the next set of results. Use the value returned in the
      * previous response in the next request to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPackageVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPackageVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPackageVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPackageVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +173,10 @@ namespace Model
      * <p>The <code>originType</code> used to filter package versions. Only package
      * versions with the provided <code>originType</code> will be returned.</p>
      */
-    inline const PackageVersionOriginType& GetOriginType() const{ return m_originType; }
+    inline PackageVersionOriginType GetOriginType() const { return m_originType; }
     inline bool OriginTypeHasBeenSet() const { return m_originTypeHasBeenSet; }
-    inline void SetOriginType(const PackageVersionOriginType& value) { m_originTypeHasBeenSet = true; m_originType = value; }
-    inline void SetOriginType(PackageVersionOriginType&& value) { m_originTypeHasBeenSet = true; m_originType = std::move(value); }
-    inline ListPackageVersionsRequest& WithOriginType(const PackageVersionOriginType& value) { SetOriginType(value); return *this;}
-    inline ListPackageVersionsRequest& WithOriginType(PackageVersionOriginType&& value) { SetOriginType(std::move(value)); return *this;}
+    inline void SetOriginType(PackageVersionOriginType value) { m_originTypeHasBeenSet = true; m_originType = value; }
+    inline ListPackageVersionsRequest& WithOriginType(PackageVersionOriginType value) { SetOriginType(value); return *this;}
     ///@}
   private:
 
@@ -209,7 +189,7 @@ namespace Model
     Aws::String m_repository;
     bool m_repositoryHasBeenSet = false;
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
@@ -218,19 +198,19 @@ namespace Model
     Aws::String m_package;
     bool m_packageHasBeenSet = false;
 
-    PackageVersionStatus m_status;
+    PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    PackageVersionSortType m_sortBy;
+    PackageVersionSortType m_sortBy{PackageVersionSortType::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    PackageVersionOriginType m_originType;
+    PackageVersionOriginType m_originType{PackageVersionOriginType::NOT_SET};
     bool m_originTypeHasBeenSet = false;
   };
 

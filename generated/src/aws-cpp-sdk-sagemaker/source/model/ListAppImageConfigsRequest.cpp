@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppImageConfigsRequest::ListAppImageConfigsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_modifiedTimeBeforeHasBeenSet(false),
-    m_modifiedTimeAfterHasBeenSet(false),
-    m_sortBy(AppImageConfigSortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListAppImageConfigsRequest::SerializePayload() const
 {
   JsonValue payload;

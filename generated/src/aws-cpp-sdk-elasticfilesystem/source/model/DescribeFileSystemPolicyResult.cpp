@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFileSystemPolicyResult::DescribeFileSystemPolicyResult()
-{
-}
-
 DescribeFileSystemPolicyResult::DescribeFileSystemPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeFileSystemPolicyResult& DescribeFileSystemPolicyResult::operator =(const
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
+    m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
+    m_policyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

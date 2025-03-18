@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SeedUrlConfiguration::SeedUrlConfiguration() : 
-    m_seedUrlsHasBeenSet(false),
-    m_webCrawlerMode(WebCrawlerMode::NOT_SET),
-    m_webCrawlerModeHasBeenSet(false)
-{
-}
-
 SeedUrlConfiguration::SeedUrlConfiguration(JsonView jsonValue)
-  : SeedUrlConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SeedUrlConfiguration& SeedUrlConfiguration::operator =(JsonView jsonValue)
     }
     m_seedUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebCrawlerMode"))
   {
     m_webCrawlerMode = WebCrawlerModeMapper::GetWebCrawlerModeForName(jsonValue.GetString("WebCrawlerMode"));
-
     m_webCrawlerModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetScalingConfigurationRecommendationRequest::GetScalingConfigurationRecommendationRequest() : 
-    m_inferenceRecommendationsJobNameHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_targetCpuUtilizationPerCore(0),
-    m_targetCpuUtilizationPerCoreHasBeenSet(false),
-    m_scalingPolicyObjectiveHasBeenSet(false)
-{
-}
-
 Aws::String GetScalingConfigurationRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

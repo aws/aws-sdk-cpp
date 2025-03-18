@@ -32,7 +32,7 @@ namespace Model
   class ContentType
   {
   public:
-    AWS_REKOGNITION_API ContentType();
+    AWS_REKOGNITION_API ContentType() = default;
     AWS_REKOGNITION_API ContentType(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API ContentType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The confidence level of the label given</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline ContentType& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The name of the label</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ContentType& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ContentType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ContentType& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ContentType& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_name;

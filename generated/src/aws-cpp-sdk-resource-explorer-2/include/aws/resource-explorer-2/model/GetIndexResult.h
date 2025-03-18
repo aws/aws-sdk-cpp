@@ -32,7 +32,7 @@ namespace Model
   class GetIndexResult
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetIndexResult();
+    AWS_RESOURCEEXPLORER2_API GetIndexResult() = default;
     AWS_RESOURCEEXPLORER2_API GetIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEEXPLORER2_API GetIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,35 +43,33 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the index.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetIndexResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetIndexResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetIndexResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetIndexResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the index was originally created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetIndexResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetIndexResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the index was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetIndexResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetIndexResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetIndexResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,13 @@ namespace Model
      * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
      * that replicate their content to the index in this Region.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplicatingFrom() const{ return m_replicatingFrom; }
-    inline void SetReplicatingFrom(const Aws::Vector<Aws::String>& value) { m_replicatingFrom = value; }
-    inline void SetReplicatingFrom(Aws::Vector<Aws::String>&& value) { m_replicatingFrom = std::move(value); }
-    inline GetIndexResult& WithReplicatingFrom(const Aws::Vector<Aws::String>& value) { SetReplicatingFrom(value); return *this;}
-    inline GetIndexResult& WithReplicatingFrom(Aws::Vector<Aws::String>&& value) { SetReplicatingFrom(std::move(value)); return *this;}
-    inline GetIndexResult& AddReplicatingFrom(const Aws::String& value) { m_replicatingFrom.push_back(value); return *this; }
-    inline GetIndexResult& AddReplicatingFrom(Aws::String&& value) { m_replicatingFrom.push_back(std::move(value)); return *this; }
-    inline GetIndexResult& AddReplicatingFrom(const char* value) { m_replicatingFrom.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetReplicatingFrom() const { return m_replicatingFrom; }
+    template<typename ReplicatingFromT = Aws::Vector<Aws::String>>
+    void SetReplicatingFrom(ReplicatingFromT&& value) { m_replicatingFromHasBeenSet = true; m_replicatingFrom = std::forward<ReplicatingFromT>(value); }
+    template<typename ReplicatingFromT = Aws::Vector<Aws::String>>
+    GetIndexResult& WithReplicatingFrom(ReplicatingFromT&& value) { SetReplicatingFrom(std::forward<ReplicatingFromT>(value)); return *this;}
+    template<typename ReplicatingFromT = Aws::String>
+    GetIndexResult& AddReplicatingFrom(ReplicatingFromT&& value) { m_replicatingFromHasBeenSet = true; m_replicatingFrom.emplace_back(std::forward<ReplicatingFromT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,43 +95,37 @@ namespace Model
      * Region in which you called this operation replicates its index information to
      * the Region specified in this response value. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplicatingTo() const{ return m_replicatingTo; }
-    inline void SetReplicatingTo(const Aws::Vector<Aws::String>& value) { m_replicatingTo = value; }
-    inline void SetReplicatingTo(Aws::Vector<Aws::String>&& value) { m_replicatingTo = std::move(value); }
-    inline GetIndexResult& WithReplicatingTo(const Aws::Vector<Aws::String>& value) { SetReplicatingTo(value); return *this;}
-    inline GetIndexResult& WithReplicatingTo(Aws::Vector<Aws::String>&& value) { SetReplicatingTo(std::move(value)); return *this;}
-    inline GetIndexResult& AddReplicatingTo(const Aws::String& value) { m_replicatingTo.push_back(value); return *this; }
-    inline GetIndexResult& AddReplicatingTo(Aws::String&& value) { m_replicatingTo.push_back(std::move(value)); return *this; }
-    inline GetIndexResult& AddReplicatingTo(const char* value) { m_replicatingTo.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetReplicatingTo() const { return m_replicatingTo; }
+    template<typename ReplicatingToT = Aws::Vector<Aws::String>>
+    void SetReplicatingTo(ReplicatingToT&& value) { m_replicatingToHasBeenSet = true; m_replicatingTo = std::forward<ReplicatingToT>(value); }
+    template<typename ReplicatingToT = Aws::Vector<Aws::String>>
+    GetIndexResult& WithReplicatingTo(ReplicatingToT&& value) { SetReplicatingTo(std::forward<ReplicatingToT>(value)); return *this;}
+    template<typename ReplicatingToT = Aws::String>
+    GetIndexResult& AddReplicatingTo(ReplicatingToT&& value) { m_replicatingToHasBeenSet = true; m_replicatingTo.emplace_back(std::forward<ReplicatingToT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
-    inline const IndexState& GetState() const{ return m_state; }
-    inline void SetState(const IndexState& value) { m_state = value; }
-    inline void SetState(IndexState&& value) { m_state = std::move(value); }
-    inline GetIndexResult& WithState(const IndexState& value) { SetState(value); return *this;}
-    inline GetIndexResult& WithState(IndexState&& value) { SetState(std::move(value)); return *this;}
+    inline IndexState GetState() const { return m_state; }
+    inline void SetState(IndexState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GetIndexResult& WithState(IndexState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tag key and value pairs that are attached to the index.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetIndexResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetIndexResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetIndexResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetIndexResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetIndexResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetIndexResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetIndexResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetIndexResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetIndexResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetIndexResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetIndexResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -144,42 +135,47 @@ namespace Model
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */
-    inline const IndexType& GetType() const{ return m_type; }
-    inline void SetType(const IndexType& value) { m_type = value; }
-    inline void SetType(IndexType&& value) { m_type = std::move(value); }
-    inline GetIndexResult& WithType(const IndexType& value) { SetType(value); return *this;}
-    inline GetIndexResult& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
+    inline IndexType GetType() const { return m_type; }
+    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetIndexResult& WithType(IndexType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicatingFrom;
+    bool m_replicatingFromHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicatingTo;
+    bool m_replicatingToHasBeenSet = false;
 
-    IndexState m_state;
+    IndexState m_state{IndexState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    IndexType m_type;
+    IndexType m_type{IndexType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailAddressRequest::CreateEmailAddressRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailAddressRequest::SerializePayload() const
 {
   JsonValue payload;

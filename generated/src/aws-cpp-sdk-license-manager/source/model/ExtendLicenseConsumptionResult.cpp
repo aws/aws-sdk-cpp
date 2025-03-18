@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExtendLicenseConsumptionResult::ExtendLicenseConsumptionResult()
-{
-}
-
 ExtendLicenseConsumptionResult::ExtendLicenseConsumptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ExtendLicenseConsumptionResult& ExtendLicenseConsumptionResult::operator =(const
   if(jsonValue.ValueExists("LicenseConsumptionToken"))
   {
     m_licenseConsumptionToken = jsonValue.GetString("LicenseConsumptionToken");
-
+    m_licenseConsumptionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expiration"))
   {
     m_expiration = jsonValue.GetString("Expiration");
-
+    m_expirationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ConnectionBasicAuthResponseParameters::ConnectionBasicAuthResponseParameters() : 
-    m_usernameHasBeenSet(false)
-{
-}
-
 ConnectionBasicAuthResponseParameters::ConnectionBasicAuthResponseParameters(JsonView jsonValue)
-  : ConnectionBasicAuthResponseParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectionBasicAuthResponseParameters& ConnectionBasicAuthResponseParameters::op
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

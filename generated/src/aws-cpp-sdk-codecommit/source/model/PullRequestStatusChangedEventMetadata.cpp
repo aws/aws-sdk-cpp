@@ -18,14 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata() : 
-    m_pullRequestStatus(PullRequestStatusEnum::NOT_SET),
-    m_pullRequestStatusHasBeenSet(false)
-{
-}
-
 PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata(JsonView jsonValue)
-  : PullRequestStatusChangedEventMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PullRequestStatusChangedEventMetadata& PullRequestStatusChangedEventMetadata::op
   if(jsonValue.ValueExists("pullRequestStatus"))
   {
     m_pullRequestStatus = PullRequestStatusEnumMapper::GetPullRequestStatusEnumForName(jsonValue.GetString("pullRequestStatus"));
-
     m_pullRequestStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

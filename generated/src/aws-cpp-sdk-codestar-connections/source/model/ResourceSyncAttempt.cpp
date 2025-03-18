@@ -18,19 +18,7 @@ namespace CodeStarconnections
 namespace Model
 {
 
-ResourceSyncAttempt::ResourceSyncAttempt() : 
-    m_eventsHasBeenSet(false),
-    m_initialRevisionHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(ResourceSyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 ResourceSyncAttempt::ResourceSyncAttempt(JsonView jsonValue)
-  : ResourceSyncAttempt()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ ResourceSyncAttempt& ResourceSyncAttempt::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialRevision"))
   {
     m_initialRevision = jsonValue.GetObject("InitialRevision");
-
     m_initialRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceSyncStatusMapper::GetResourceSyncStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetRevision"))
   {
     m_targetRevision = jsonValue.GetObject("TargetRevision");
-
     m_targetRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

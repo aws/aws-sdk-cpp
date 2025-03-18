@@ -28,7 +28,7 @@ namespace Model
   class UpdateComponentTypeResult
   {
   public:
-    AWS_IOTTWINMAKER_API UpdateComponentTypeResult();
+    AWS_IOTTWINMAKER_API UpdateComponentTypeResult() = default;
     AWS_IOTTWINMAKER_API UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API UpdateComponentTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,68 @@ namespace Model
     /**
      * <p>The ID of the workspace that contains the component type.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline UpdateComponentTypeResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline UpdateComponentTypeResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline UpdateComponentTypeResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    UpdateComponentTypeResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the component type.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateComponentTypeResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateComponentTypeResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateComponentTypeResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateComponentTypeResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the component type.</p>
      */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeId = value; }
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeId = std::move(value); }
-    inline void SetComponentTypeId(const char* value) { m_componentTypeId.assign(value); }
-    inline UpdateComponentTypeResult& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-    inline UpdateComponentTypeResult& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-    inline UpdateComponentTypeResult& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    inline const Aws::String& GetComponentTypeId() const { return m_componentTypeId; }
+    template<typename ComponentTypeIdT = Aws::String>
+    void SetComponentTypeId(ComponentTypeIdT&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::forward<ComponentTypeIdT>(value); }
+    template<typename ComponentTypeIdT = Aws::String>
+    UpdateComponentTypeResult& WithComponentTypeId(ComponentTypeIdT&& value) { SetComponentTypeId(std::forward<ComponentTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the component type.</p>
      */
-    inline const State& GetState() const{ return m_state; }
-    inline void SetState(const State& value) { m_state = value; }
-    inline void SetState(State&& value) { m_state = std::move(value); }
-    inline UpdateComponentTypeResult& WithState(const State& value) { SetState(value); return *this;}
-    inline UpdateComponentTypeResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline State GetState() const { return m_state; }
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateComponentTypeResult& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateComponentTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateComponentTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateComponentTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateComponentTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentTypeId;
+    bool m_componentTypeIdHasBeenSet = false;
 
-    State m_state;
+    State m_state{State::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

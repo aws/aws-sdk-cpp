@@ -42,7 +42,7 @@ namespace Model
   class VpcBlockPublicAccessOptions
   {
   public:
-    AWS_EC2_API VpcBlockPublicAccessOptions();
+    AWS_EC2_API VpcBlockPublicAccessOptions() = default;
     AWS_EC2_API VpcBlockPublicAccessOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcBlockPublicAccessOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,40 +54,34 @@ namespace Model
     /**
      * <p>An Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline VpcBlockPublicAccessOptions& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline VpcBlockPublicAccessOptions& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    VpcBlockPublicAccessOptions& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline VpcBlockPublicAccessOptions& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline VpcBlockPublicAccessOptions& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    VpcBlockPublicAccessOptions& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of VPC BPA.</p>
      */
-    inline const VpcBlockPublicAccessState& GetState() const{ return m_state; }
+    inline VpcBlockPublicAccessState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpcBlockPublicAccessState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpcBlockPublicAccessState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcBlockPublicAccessOptions& WithState(const VpcBlockPublicAccessState& value) { SetState(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithState(VpcBlockPublicAccessState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VpcBlockPublicAccessState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpcBlockPublicAccessOptions& WithState(VpcBlockPublicAccessState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -103,38 +97,34 @@ namespace Model
      * gateways is allowed because these gateways only allow outbound connections to be
      * established.</p> </li> </ul>
      */
-    inline const InternetGatewayBlockMode& GetInternetGatewayBlockMode() const{ return m_internetGatewayBlockMode; }
+    inline InternetGatewayBlockMode GetInternetGatewayBlockMode() const { return m_internetGatewayBlockMode; }
     inline bool InternetGatewayBlockModeHasBeenSet() const { return m_internetGatewayBlockModeHasBeenSet; }
-    inline void SetInternetGatewayBlockMode(const InternetGatewayBlockMode& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
-    inline void SetInternetGatewayBlockMode(InternetGatewayBlockMode&& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = std::move(value); }
-    inline VpcBlockPublicAccessOptions& WithInternetGatewayBlockMode(const InternetGatewayBlockMode& value) { SetInternetGatewayBlockMode(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithInternetGatewayBlockMode(InternetGatewayBlockMode&& value) { SetInternetGatewayBlockMode(std::move(value)); return *this;}
+    inline void SetInternetGatewayBlockMode(InternetGatewayBlockMode value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
+    inline VpcBlockPublicAccessOptions& WithInternetGatewayBlockMode(InternetGatewayBlockMode value) { SetInternetGatewayBlockMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the current state.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline VpcBlockPublicAccessOptions& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline VpcBlockPublicAccessOptions& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    VpcBlockPublicAccessOptions& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the VPC BPA mode was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const { return m_lastUpdateTimestamp; }
     inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
-    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
-    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::move(value); }
-    inline VpcBlockPublicAccessOptions& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateTimestamp(LastUpdateTimestampT&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::forward<LastUpdateTimestampT>(value); }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    VpcBlockPublicAccessOptions& WithLastUpdateTimestamp(LastUpdateTimestampT&& value) { SetLastUpdateTimestamp(std::forward<LastUpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +134,10 @@ namespace Model
      * </li> <li> <p> <code>declarative-policy</code> - The state is managed by a
      * declarative policy and can't be modified by the account.</p> </li> </ul>
      */
-    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
+    inline ManagedBy GetManagedBy() const { return m_managedBy; }
     inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
-    inline void SetManagedBy(const ManagedBy& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
-    inline void SetManagedBy(ManagedBy&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
-    inline VpcBlockPublicAccessOptions& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    inline void SetManagedBy(ManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline VpcBlockPublicAccessOptions& WithManagedBy(ManagedBy value) { SetManagedBy(value); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +147,10 @@ namespace Model
      * VPC BPA at the Organization level</a>, exclusions may be
      * <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
      */
-    inline const VpcBlockPublicAccessExclusionsAllowed& GetExclusionsAllowed() const{ return m_exclusionsAllowed; }
+    inline VpcBlockPublicAccessExclusionsAllowed GetExclusionsAllowed() const { return m_exclusionsAllowed; }
     inline bool ExclusionsAllowedHasBeenSet() const { return m_exclusionsAllowedHasBeenSet; }
-    inline void SetExclusionsAllowed(const VpcBlockPublicAccessExclusionsAllowed& value) { m_exclusionsAllowedHasBeenSet = true; m_exclusionsAllowed = value; }
-    inline void SetExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed&& value) { m_exclusionsAllowedHasBeenSet = true; m_exclusionsAllowed = std::move(value); }
-    inline VpcBlockPublicAccessOptions& WithExclusionsAllowed(const VpcBlockPublicAccessExclusionsAllowed& value) { SetExclusionsAllowed(value); return *this;}
-    inline VpcBlockPublicAccessOptions& WithExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed&& value) { SetExclusionsAllowed(std::move(value)); return *this;}
+    inline void SetExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed value) { m_exclusionsAllowedHasBeenSet = true; m_exclusionsAllowed = value; }
+    inline VpcBlockPublicAccessOptions& WithExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed value) { SetExclusionsAllowed(value); return *this;}
     ///@}
   private:
 
@@ -174,22 +160,22 @@ namespace Model
     Aws::String m_awsRegion;
     bool m_awsRegionHasBeenSet = false;
 
-    VpcBlockPublicAccessState m_state;
+    VpcBlockPublicAccessState m_state{VpcBlockPublicAccessState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    InternetGatewayBlockMode m_internetGatewayBlockMode;
+    InternetGatewayBlockMode m_internetGatewayBlockMode{InternetGatewayBlockMode::NOT_SET};
     bool m_internetGatewayBlockModeHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp{};
     bool m_lastUpdateTimestampHasBeenSet = false;
 
-    ManagedBy m_managedBy;
+    ManagedBy m_managedBy{ManagedBy::NOT_SET};
     bool m_managedByHasBeenSet = false;
 
-    VpcBlockPublicAccessExclusionsAllowed m_exclusionsAllowed;
+    VpcBlockPublicAccessExclusionsAllowed m_exclusionsAllowed{VpcBlockPublicAccessExclusionsAllowed::NOT_SET};
     bool m_exclusionsAllowedHasBeenSet = false;
   };
 

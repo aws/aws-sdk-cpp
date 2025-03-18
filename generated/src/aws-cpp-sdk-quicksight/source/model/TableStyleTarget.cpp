@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableStyleTarget::TableStyleTarget() : 
-    m_cellType(StyledCellType::NOT_SET),
-    m_cellTypeHasBeenSet(false)
-{
-}
-
 TableStyleTarget::TableStyleTarget(JsonView jsonValue)
-  : TableStyleTarget()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TableStyleTarget& TableStyleTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CellType"))
   {
     m_cellType = StyledCellTypeMapper::GetStyledCellTypeForName(jsonValue.GetString("CellType"));
-
     m_cellTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-OperatingSystem::OperatingSystem() : 
-    m_type(OperatingSystemType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 OperatingSystem::OperatingSystem(JsonView jsonValue)
-  : OperatingSystem()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OperatingSystemTypeMapper::GetOperatingSystemTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

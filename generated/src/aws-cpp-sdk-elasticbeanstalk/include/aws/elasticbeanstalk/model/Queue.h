@@ -31,7 +31,7 @@ namespace Model
   class Queue
   {
   public:
-    AWS_ELASTICBEANSTALK_API Queue();
+    AWS_ELASTICBEANSTALK_API Queue() = default;
     AWS_ELASTICBEANSTALK_API Queue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API Queue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the queue.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Queue& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Queue& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Queue& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Queue& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of the queue.</p>
      */
-    inline const Aws::String& GetURL() const{ return m_uRL; }
+    inline const Aws::String& GetURL() const { return m_uRL; }
     inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
-    inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
-    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
-    inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
-    inline Queue& WithURL(const Aws::String& value) { SetURL(value); return *this;}
-    inline Queue& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
-    inline Queue& WithURL(const char* value) { SetURL(value); return *this;}
+    template<typename URLT = Aws::String>
+    void SetURL(URLT&& value) { m_uRLHasBeenSet = true; m_uRL = std::forward<URLT>(value); }
+    template<typename URLT = Aws::String>
+    Queue& WithURL(URLT&& value) { SetURL(std::forward<URLT>(value)); return *this;}
     ///@}
   private:
 

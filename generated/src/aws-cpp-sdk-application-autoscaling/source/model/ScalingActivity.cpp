@@ -18,27 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-ScalingActivity::ScalingActivity() : 
-    m_activityIdHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_causeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusCode(ScalingActivityStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_notScaledReasonsHasBeenSet(false)
-{
-}
-
 ScalingActivity::ScalingActivity(JsonView jsonValue)
-  : ScalingActivity()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ ScalingActivity& ScalingActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActivityId"))
   {
     m_activityId = jsonValue.GetString("ActivityId");
-
     m_activityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cause"))
   {
     m_cause = jsonValue.GetString("Cause");
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotScaledReasons"))
   {
     Aws::Utils::Array<JsonView> notScaledReasonsJsonList = jsonValue.GetArray("NotScaledReasons");
@@ -131,7 +89,6 @@ ScalingActivity& ScalingActivity::operator =(JsonView jsonValue)
     }
     m_notScaledReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

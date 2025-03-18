@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotImportSpecification::BotImportSpecification() : 
-    m_botNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataPrivacyHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_botTagsHasBeenSet(false),
-    m_testBotAliasTagsHasBeenSet(false)
-{
-}
-
 BotImportSpecification::BotImportSpecification(JsonView jsonValue)
-  : BotImportSpecification()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ BotImportSpecification& BotImportSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
-
     m_botNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataPrivacy"))
   {
     m_dataPrivacy = jsonValue.GetObject("dataPrivacy");
-
     m_dataPrivacyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
   {
     m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
-
     m_idleSessionTTLInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botTags"))
   {
     Aws::Map<Aws::String, JsonView> botTagsJsonMap = jsonValue.GetObject("botTags").GetAllObjects();
@@ -74,7 +54,6 @@ BotImportSpecification& BotImportSpecification::operator =(JsonView jsonValue)
     }
     m_botTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testBotAliasTags"))
   {
     Aws::Map<Aws::String, JsonView> testBotAliasTagsJsonMap = jsonValue.GetObject("testBotAliasTags").GetAllObjects();
@@ -84,7 +63,6 @@ BotImportSpecification& BotImportSpecification::operator =(JsonView jsonValue)
     }
     m_testBotAliasTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

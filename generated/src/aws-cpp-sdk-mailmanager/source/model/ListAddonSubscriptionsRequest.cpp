@@ -12,13 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAddonSubscriptionsRequest::ListAddonSubscriptionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListAddonSubscriptionsRequest::SerializePayload() const
 {
   JsonValue payload;

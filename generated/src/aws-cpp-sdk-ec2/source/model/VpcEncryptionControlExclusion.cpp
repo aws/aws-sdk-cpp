@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEncryptionControlExclusion::VpcEncryptionControlExclusion() : 
-    m_state(VpcEncryptionControlExclusionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false)
-{
-}
-
 VpcEncryptionControlExclusion::VpcEncryptionControlExclusion(const XmlNode& xmlNode)
-  : VpcEncryptionControlExclusion()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ VpcEncryptionControlExclusion& VpcEncryptionControlExclusion::operator =(const X
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcEncryptionControlExclusionStateMapper::GetVpcEncryptionControlExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcEncryptionControlExclusionStateMapper::GetVpcEncryptionControlExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");

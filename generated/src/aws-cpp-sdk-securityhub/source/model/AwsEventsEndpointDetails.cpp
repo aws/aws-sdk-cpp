@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventsEndpointDetails::AwsEventsEndpointDetails() : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_eventBusesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_replicationConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 AwsEventsEndpointDetails::AwsEventsEndpointDetails(JsonView jsonValue)
-  : AwsEventsEndpointDetails()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ AwsEventsEndpointDetails& AwsEventsEndpointDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointUrl"))
   {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
-
     m_endpointUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBuses"))
   {
     Aws::Utils::Array<JsonView> eventBusesJsonList = jsonValue.GetArray("EventBuses");
@@ -78,49 +54,36 @@ AwsEventsEndpointDetails& AwsEventsEndpointDetails::operator =(JsonView jsonValu
     }
     m_eventBusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationConfig"))
   {
     m_replicationConfig = jsonValue.GetObject("ReplicationConfig");
-
     m_replicationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingConfig"))
   {
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
-
     m_routingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

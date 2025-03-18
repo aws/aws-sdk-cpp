@@ -18,19 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-RecordPatch::RecordPatch() : 
-    m_op(Operation::NOT_SET),
-    m_opHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_syncCount(0),
-    m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false)
-{
-}
-
 RecordPatch::RecordPatch(JsonView jsonValue)
-  : RecordPatch()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ RecordPatch& RecordPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Op"))
   {
     m_op = OperationMapper::GetOperationForName(jsonValue.GetString("Op"));
-
     m_opHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncCount"))
   {
     m_syncCount = jsonValue.GetInt64("SyncCount");
-
     m_syncCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceLastModifiedDate"))
   {
     m_deviceLastModifiedDate = jsonValue.GetDouble("DeviceLastModifiedDate");
-
     m_deviceLastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

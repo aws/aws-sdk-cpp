@@ -33,7 +33,7 @@ namespace Model
   class CachePointBlock
   {
   public:
-    AWS_BEDROCKAGENT_API CachePointBlock();
+    AWS_BEDROCKAGENT_API CachePointBlock() = default;
     AWS_BEDROCKAGENT_API CachePointBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CachePointBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>Indicates that the CachePointBlock is of the default type</p>
      */
-    inline const CachePointType& GetType() const{ return m_type; }
+    inline CachePointType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CachePointType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CachePointType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CachePointBlock& WithType(const CachePointType& value) { SetType(value); return *this;}
-    inline CachePointBlock& WithType(CachePointType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CachePointType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CachePointBlock& WithType(CachePointType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    CachePointType m_type;
+    CachePointType m_type{CachePointType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

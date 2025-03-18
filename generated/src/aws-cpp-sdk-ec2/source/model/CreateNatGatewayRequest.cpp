@@ -10,24 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNatGatewayRequest::CreateNatGatewayRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_connectivityType(ConnectivityType::NOT_SET),
-    m_connectivityTypeHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_secondaryAllocationIdsHasBeenSet(false),
-    m_secondaryPrivateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false)
-{
-}
-
 Aws::String CreateNatGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

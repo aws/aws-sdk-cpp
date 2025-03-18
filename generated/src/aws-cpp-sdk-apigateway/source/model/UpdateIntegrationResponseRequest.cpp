@@ -12,15 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIntegrationResponseRequest::UpdateIntegrationResponseRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIntegrationResponseRequest::SerializePayload() const
 {
   JsonValue payload;

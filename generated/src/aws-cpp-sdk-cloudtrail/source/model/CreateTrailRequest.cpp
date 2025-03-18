@@ -12,26 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrailRequest::CreateTrailRequest() : 
-    m_nameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_snsTopicNameHasBeenSet(false),
-    m_includeGlobalServiceEvents(false),
-    m_includeGlobalServiceEventsHasBeenSet(false),
-    m_isMultiRegionTrail(false),
-    m_isMultiRegionTrailHasBeenSet(false),
-    m_enableLogFileValidation(false),
-    m_enableLogFileValidationHasBeenSet(false),
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_isOrganizationTrail(false),
-    m_isOrganizationTrailHasBeenSet(false),
-    m_tagsListHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrailRequest::SerializePayload() const
 {
   JsonValue payload;

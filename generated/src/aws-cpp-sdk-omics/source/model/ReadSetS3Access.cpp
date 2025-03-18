@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadSetS3Access::ReadSetS3Access() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 ReadSetS3Access::ReadSetS3Access(JsonView jsonValue)
-  : ReadSetS3Access()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReadSetS3Access& ReadSetS3Access::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

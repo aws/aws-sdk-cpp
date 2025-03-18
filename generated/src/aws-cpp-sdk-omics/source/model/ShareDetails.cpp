@@ -18,23 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ShareDetails::ShareDetails() : 
-    m_shareIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_principalSubscriberHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_shareNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ShareDetails::ShareDetails(JsonView jsonValue)
-  : ShareDetails()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("shareId"))
   {
     m_shareId = jsonValue.GetString("shareId");
-
     m_shareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalSubscriber"))
   {
     m_principalSubscriber = jsonValue.GetString("principalSubscriber");
-
     m_principalSubscriberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerId"))
   {
     m_ownerId = jsonValue.GetString("ownerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shareName"))
   {
     m_shareName = jsonValue.GetString("shareName");
-
     m_shareNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

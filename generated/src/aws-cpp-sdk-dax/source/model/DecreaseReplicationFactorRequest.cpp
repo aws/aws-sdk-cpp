@@ -12,15 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DecreaseReplicationFactorRequest::DecreaseReplicationFactorRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_newReplicationFactor(0),
-    m_newReplicationFactorHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_nodeIdsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String DecreaseReplicationFactorRequest::SerializePayload() const
 {
   JsonValue payload;

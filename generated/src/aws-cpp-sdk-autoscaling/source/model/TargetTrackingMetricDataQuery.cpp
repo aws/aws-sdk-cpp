@@ -20,20 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery() : 
-    m_idHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
-{
-}
-
 TargetTrackingMetricDataQuery::TargetTrackingMetricDataQuery(const XmlNode& xmlNode)
-  : TargetTrackingMetricDataQuery()
 {
   *this = xmlNode;
 }

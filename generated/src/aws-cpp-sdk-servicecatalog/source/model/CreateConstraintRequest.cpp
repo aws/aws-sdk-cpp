@@ -12,18 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConstraintRequest::CreateConstraintRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateConstraintRequest::SerializePayload() const
 {
   JsonValue payload;

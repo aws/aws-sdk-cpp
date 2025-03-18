@@ -34,7 +34,7 @@ namespace Model
   class HumanLoopConfig
   {
   public:
-    AWS_REKOGNITION_API HumanLoopConfig();
+    AWS_REKOGNITION_API HumanLoopConfig() = default;
     AWS_REKOGNITION_API HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the human review used for this image. This should be kept unique
      * within a region.</p>
      */
-    inline const Aws::String& GetHumanLoopName() const{ return m_humanLoopName; }
+    inline const Aws::String& GetHumanLoopName() const { return m_humanLoopName; }
     inline bool HumanLoopNameHasBeenSet() const { return m_humanLoopNameHasBeenSet; }
-    inline void SetHumanLoopName(const Aws::String& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = value; }
-    inline void SetHumanLoopName(Aws::String&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::move(value); }
-    inline void SetHumanLoopName(const char* value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName.assign(value); }
-    inline HumanLoopConfig& WithHumanLoopName(const Aws::String& value) { SetHumanLoopName(value); return *this;}
-    inline HumanLoopConfig& WithHumanLoopName(Aws::String&& value) { SetHumanLoopName(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithHumanLoopName(const char* value) { SetHumanLoopName(value); return *this;}
+    template<typename HumanLoopNameT = Aws::String>
+    void SetHumanLoopName(HumanLoopNameT&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::forward<HumanLoopNameT>(value); }
+    template<typename HumanLoopNameT = Aws::String>
+    HumanLoopConfig& WithHumanLoopName(HumanLoopNameT&& value) { SetHumanLoopName(std::forward<HumanLoopNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
      * Operation. </p>
      */
-    inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
+    inline const Aws::String& GetFlowDefinitionArn() const { return m_flowDefinitionArn; }
     inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
-    inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
-    inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
-    inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
-    inline HumanLoopConfig& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
-    inline HumanLoopConfig& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
+    template<typename FlowDefinitionArnT = Aws::String>
+    void SetFlowDefinitionArn(FlowDefinitionArnT&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::forward<FlowDefinitionArnT>(value); }
+    template<typename FlowDefinitionArnT = Aws::String>
+    HumanLoopConfig& WithFlowDefinitionArn(FlowDefinitionArnT&& value) { SetFlowDefinitionArn(std::forward<FlowDefinitionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sets attributes of the input data.</p>
      */
-    inline const HumanLoopDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
+    inline const HumanLoopDataAttributes& GetDataAttributes() const { return m_dataAttributes; }
     inline bool DataAttributesHasBeenSet() const { return m_dataAttributesHasBeenSet; }
-    inline void SetDataAttributes(const HumanLoopDataAttributes& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = value; }
-    inline void SetDataAttributes(HumanLoopDataAttributes&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::move(value); }
-    inline HumanLoopConfig& WithDataAttributes(const HumanLoopDataAttributes& value) { SetDataAttributes(value); return *this;}
-    inline HumanLoopConfig& WithDataAttributes(HumanLoopDataAttributes&& value) { SetDataAttributes(std::move(value)); return *this;}
+    template<typename DataAttributesT = HumanLoopDataAttributes>
+    void SetDataAttributes(DataAttributesT&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::forward<DataAttributesT>(value); }
+    template<typename DataAttributesT = HumanLoopDataAttributes>
+    HumanLoopConfig& WithDataAttributes(DataAttributesT&& value) { SetDataAttributes(std::forward<DataAttributesT>(value)); return *this;}
     ///@}
   private:
 

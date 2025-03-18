@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-FilterCircle::FilterCircle() : 
-    m_centerHasBeenSet(false),
-    m_radius(0),
-    m_radiusHasBeenSet(false)
-{
-}
-
 FilterCircle::FilterCircle(JsonView jsonValue)
-  : FilterCircle()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ FilterCircle& FilterCircle::operator =(JsonView jsonValue)
     }
     m_centerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetInt64("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   return *this;
 }
 

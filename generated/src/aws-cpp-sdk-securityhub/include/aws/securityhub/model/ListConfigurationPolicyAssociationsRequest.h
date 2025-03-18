@@ -22,7 +22,7 @@ namespace Model
   class ListConfigurationPolicyAssociationsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API ListConfigurationPolicyAssociationsRequest();
+    AWS_SECURITYHUB_API ListConfigurationPolicyAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * returned the <code>NextToken</code> value. This value is <code>null</code> when
      * there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListConfigurationPolicyAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfigurationPolicyAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfigurationPolicyAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfigurationPolicyAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * the returned <code>NextToken</code> value. A valid range for
      * <code>MaxResults</code> is between 1 and 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListConfigurationPolicyAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -76,19 +74,19 @@ namespace Model
      * identifier (UUID) of a configuration, <code>AssociationType</code>, or
      * <code>AssociationStatus</code>. </p>
      */
-    inline const AssociationFilters& GetFilters() const{ return m_filters; }
+    inline const AssociationFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const AssociationFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(AssociationFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListConfigurationPolicyAssociationsRequest& WithFilters(const AssociationFilters& value) { SetFilters(value); return *this;}
-    inline ListConfigurationPolicyAssociationsRequest& WithFilters(AssociationFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = AssociationFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = AssociationFilters>
+    ListConfigurationPolicyAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     AssociationFilters m_filters;

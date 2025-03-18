@@ -18,15 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-ErrorCause::ErrorCause() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCategory(ErrorCategory::NOT_SET),
-    m_errorCategoryHasBeenSet(false)
-{
-}
-
 ErrorCause::ErrorCause(JsonView jsonValue)
-  : ErrorCause()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ErrorCause& ErrorCause::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCategory"))
   {
     m_errorCategory = ErrorCategoryMapper::GetErrorCategoryForName(jsonValue.GetString("ErrorCategory"));
-
     m_errorCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

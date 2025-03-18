@@ -36,7 +36,7 @@ namespace Model
   class ChatModeConfiguration
   {
   public:
-    AWS_QBUSINESS_API ChatModeConfiguration();
+    AWS_QBUSINESS_API ChatModeConfiguration() = default;
     AWS_QBUSINESS_API ChatModeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ChatModeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Configuration information required to invoke chat in
      * <code>PLUGIN_MODE</code>.</p>
      */
-    inline const PluginConfiguration& GetPluginConfiguration() const{ return m_pluginConfiguration; }
+    inline const PluginConfiguration& GetPluginConfiguration() const { return m_pluginConfiguration; }
     inline bool PluginConfigurationHasBeenSet() const { return m_pluginConfigurationHasBeenSet; }
-    inline void SetPluginConfiguration(const PluginConfiguration& value) { m_pluginConfigurationHasBeenSet = true; m_pluginConfiguration = value; }
-    inline void SetPluginConfiguration(PluginConfiguration&& value) { m_pluginConfigurationHasBeenSet = true; m_pluginConfiguration = std::move(value); }
-    inline ChatModeConfiguration& WithPluginConfiguration(const PluginConfiguration& value) { SetPluginConfiguration(value); return *this;}
-    inline ChatModeConfiguration& WithPluginConfiguration(PluginConfiguration&& value) { SetPluginConfiguration(std::move(value)); return *this;}
+    template<typename PluginConfigurationT = PluginConfiguration>
+    void SetPluginConfiguration(PluginConfigurationT&& value) { m_pluginConfigurationHasBeenSet = true; m_pluginConfiguration = std::forward<PluginConfigurationT>(value); }
+    template<typename PluginConfigurationT = PluginConfiguration>
+    ChatModeConfiguration& WithPluginConfiguration(PluginConfigurationT&& value) { SetPluginConfiguration(std::forward<PluginConfigurationT>(value)); return *this;}
     ///@}
   private:
 

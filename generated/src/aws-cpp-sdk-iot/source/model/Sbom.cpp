@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Sbom::Sbom() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 Sbom::Sbom(JsonView jsonValue)
-  : Sbom()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Sbom& Sbom::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class PutRuntimeLogConfigurationRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API PutRuntimeLogConfigurationRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API PutRuntimeLogConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The id for a managed thing.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
     inline bool ManagedThingIdHasBeenSet() const { return m_managedThingIdHasBeenSet; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingIdHasBeenSet = true; m_managedThingId.assign(value); }
-    inline PutRuntimeLogConfigurationRequest& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline PutRuntimeLogConfigurationRequest& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline PutRuntimeLogConfigurationRequest& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    PutRuntimeLogConfigurationRequest& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime log configuration for a managed thing.</p>
      */
-    inline const RuntimeLogConfigurations& GetRuntimeLogConfigurations() const{ return m_runtimeLogConfigurations; }
+    inline const RuntimeLogConfigurations& GetRuntimeLogConfigurations() const { return m_runtimeLogConfigurations; }
     inline bool RuntimeLogConfigurationsHasBeenSet() const { return m_runtimeLogConfigurationsHasBeenSet; }
-    inline void SetRuntimeLogConfigurations(const RuntimeLogConfigurations& value) { m_runtimeLogConfigurationsHasBeenSet = true; m_runtimeLogConfigurations = value; }
-    inline void SetRuntimeLogConfigurations(RuntimeLogConfigurations&& value) { m_runtimeLogConfigurationsHasBeenSet = true; m_runtimeLogConfigurations = std::move(value); }
-    inline PutRuntimeLogConfigurationRequest& WithRuntimeLogConfigurations(const RuntimeLogConfigurations& value) { SetRuntimeLogConfigurations(value); return *this;}
-    inline PutRuntimeLogConfigurationRequest& WithRuntimeLogConfigurations(RuntimeLogConfigurations&& value) { SetRuntimeLogConfigurations(std::move(value)); return *this;}
+    template<typename RuntimeLogConfigurationsT = RuntimeLogConfigurations>
+    void SetRuntimeLogConfigurations(RuntimeLogConfigurationsT&& value) { m_runtimeLogConfigurationsHasBeenSet = true; m_runtimeLogConfigurations = std::forward<RuntimeLogConfigurationsT>(value); }
+    template<typename RuntimeLogConfigurationsT = RuntimeLogConfigurations>
+    PutRuntimeLogConfigurationRequest& WithRuntimeLogConfigurations(RuntimeLogConfigurationsT&& value) { SetRuntimeLogConfigurations(std::forward<RuntimeLogConfigurationsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccessControlRulesRequest::ListAccessControlRulesRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String ListAccessControlRulesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectDominantLanguageResult::DetectDominantLanguageResult()
-{
-}
-
 DetectDominantLanguageResult::DetectDominantLanguageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DetectDominantLanguageResult& DetectDominantLanguageResult::operator =(const Aws
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());
     }
+    m_languagesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

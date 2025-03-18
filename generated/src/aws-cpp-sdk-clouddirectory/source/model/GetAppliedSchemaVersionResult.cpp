@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppliedSchemaVersionResult::GetAppliedSchemaVersionResult()
-{
-}
-
 GetAppliedSchemaVersionResult::GetAppliedSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAppliedSchemaVersionResult& GetAppliedSchemaVersionResult::operator =(const A
   if(jsonValue.ValueExists("AppliedSchemaArn"))
   {
     m_appliedSchemaArn = jsonValue.GetString("AppliedSchemaArn");
-
+    m_appliedSchemaArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

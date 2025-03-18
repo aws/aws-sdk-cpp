@@ -29,7 +29,7 @@ namespace Model
   class GetDeploymentsResult
   {
   public:
-    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult();
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult() = default;
     AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Returns a list of the configurations of the active deployments on the
      * device.</p>
      */
-    inline const Aws::Vector<EdgeDeployment>& GetDeployments() const{ return m_deployments; }
-    inline void SetDeployments(const Aws::Vector<EdgeDeployment>& value) { m_deployments = value; }
-    inline void SetDeployments(Aws::Vector<EdgeDeployment>&& value) { m_deployments = std::move(value); }
-    inline GetDeploymentsResult& WithDeployments(const Aws::Vector<EdgeDeployment>& value) { SetDeployments(value); return *this;}
-    inline GetDeploymentsResult& WithDeployments(Aws::Vector<EdgeDeployment>&& value) { SetDeployments(std::move(value)); return *this;}
-    inline GetDeploymentsResult& AddDeployments(const EdgeDeployment& value) { m_deployments.push_back(value); return *this; }
-    inline GetDeploymentsResult& AddDeployments(EdgeDeployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EdgeDeployment>& GetDeployments() const { return m_deployments; }
+    template<typename DeploymentsT = Aws::Vector<EdgeDeployment>>
+    void SetDeployments(DeploymentsT&& value) { m_deploymentsHasBeenSet = true; m_deployments = std::forward<DeploymentsT>(value); }
+    template<typename DeploymentsT = Aws::Vector<EdgeDeployment>>
+    GetDeploymentsResult& WithDeployments(DeploymentsT&& value) { SetDeployments(std::forward<DeploymentsT>(value)); return *this;}
+    template<typename DeploymentsT = EdgeDeployment>
+    GetDeploymentsResult& AddDeployments(DeploymentsT&& value) { m_deploymentsHasBeenSet = true; m_deployments.emplace_back(std::forward<DeploymentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EdgeDeployment> m_deployments;
+    bool m_deploymentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

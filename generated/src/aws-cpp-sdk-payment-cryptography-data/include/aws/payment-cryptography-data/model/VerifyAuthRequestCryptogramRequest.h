@@ -24,7 +24,7 @@ namespace Model
   class VerifyAuthRequestCryptogramRequest : public PaymentCryptographyDataRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyAuthRequestCryptogramRequest();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyAuthRequestCryptogramRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services
      * Payment Cryptography uses for ARQC verification.</p>
      */
-    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
+    inline const Aws::String& GetKeyIdentifier() const { return m_keyIdentifier; }
     inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    template<typename KeyIdentifierT = Aws::String>
+    void SetKeyIdentifier(KeyIdentifierT&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::forward<KeyIdentifierT>(value); }
+    template<typename KeyIdentifierT = Aws::String>
+    VerifyAuthRequestCryptogramRequest& WithKeyIdentifier(KeyIdentifierT&& value) { SetKeyIdentifier(std::forward<KeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * ARQC verification. The same transaction is used for ARQC generation outside of
      * Amazon Web Services Payment Cryptography.</p>
      */
-    inline const Aws::String& GetTransactionData() const{ return m_transactionData; }
+    inline const Aws::String& GetTransactionData() const { return m_transactionData; }
     inline bool TransactionDataHasBeenSet() const { return m_transactionDataHasBeenSet; }
-    inline void SetTransactionData(const Aws::String& value) { m_transactionDataHasBeenSet = true; m_transactionData = value; }
-    inline void SetTransactionData(Aws::String&& value) { m_transactionDataHasBeenSet = true; m_transactionData = std::move(value); }
-    inline void SetTransactionData(const char* value) { m_transactionDataHasBeenSet = true; m_transactionData.assign(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const Aws::String& value) { SetTransactionData(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(Aws::String&& value) { SetTransactionData(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithTransactionData(const char* value) { SetTransactionData(value); return *this;}
+    template<typename TransactionDataT = Aws::String>
+    void SetTransactionData(TransactionDataT&& value) { m_transactionDataHasBeenSet = true; m_transactionData = std::forward<TransactionDataT>(value); }
+    template<typename TransactionDataT = Aws::String>
+    VerifyAuthRequestCryptogramRequest& WithTransactionData(TransactionDataT&& value) { SetTransactionData(std::forward<TransactionDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * Cryptography for ARQC verification using a major encryption key and transaction
      * data.</p>
      */
-    inline const Aws::String& GetAuthRequestCryptogram() const{ return m_authRequestCryptogram; }
+    inline const Aws::String& GetAuthRequestCryptogram() const { return m_authRequestCryptogram; }
     inline bool AuthRequestCryptogramHasBeenSet() const { return m_authRequestCryptogramHasBeenSet; }
-    inline void SetAuthRequestCryptogram(const Aws::String& value) { m_authRequestCryptogramHasBeenSet = true; m_authRequestCryptogram = value; }
-    inline void SetAuthRequestCryptogram(Aws::String&& value) { m_authRequestCryptogramHasBeenSet = true; m_authRequestCryptogram = std::move(value); }
-    inline void SetAuthRequestCryptogram(const char* value) { m_authRequestCryptogramHasBeenSet = true; m_authRequestCryptogram.assign(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(const Aws::String& value) { SetAuthRequestCryptogram(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(Aws::String&& value) { SetAuthRequestCryptogram(std::move(value)); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(const char* value) { SetAuthRequestCryptogram(value); return *this;}
+    template<typename AuthRequestCryptogramT = Aws::String>
+    void SetAuthRequestCryptogram(AuthRequestCryptogramT&& value) { m_authRequestCryptogramHasBeenSet = true; m_authRequestCryptogram = std::forward<AuthRequestCryptogramT>(value); }
+    template<typename AuthRequestCryptogramT = Aws::String>
+    VerifyAuthRequestCryptogramRequest& WithAuthRequestCryptogram(AuthRequestCryptogramT&& value) { SetAuthRequestCryptogram(std::forward<AuthRequestCryptogramT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * derivation mode was used for ARQC generation outside of Amazon Web Services
      * Payment Cryptography.</p>
      */
-    inline const MajorKeyDerivationMode& GetMajorKeyDerivationMode() const{ return m_majorKeyDerivationMode; }
+    inline MajorKeyDerivationMode GetMajorKeyDerivationMode() const { return m_majorKeyDerivationMode; }
     inline bool MajorKeyDerivationModeHasBeenSet() const { return m_majorKeyDerivationModeHasBeenSet; }
-    inline void SetMajorKeyDerivationMode(const MajorKeyDerivationMode& value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = value; }
-    inline void SetMajorKeyDerivationMode(MajorKeyDerivationMode&& value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = std::move(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithMajorKeyDerivationMode(const MajorKeyDerivationMode& value) { SetMajorKeyDerivationMode(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithMajorKeyDerivationMode(MajorKeyDerivationMode&& value) { SetMajorKeyDerivationMode(std::move(value)); return *this;}
+    inline void SetMajorKeyDerivationMode(MajorKeyDerivationMode value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = value; }
+    inline VerifyAuthRequestCryptogramRequest& WithMajorKeyDerivationMode(MajorKeyDerivationMode value) { SetMajorKeyDerivationMode(value); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +96,12 @@ namespace Model
      * attributes were used for ARQC generation outside of Amazon Web Services Payment
      * Cryptography.</p>
      */
-    inline const SessionKeyDerivation& GetSessionKeyDerivationAttributes() const{ return m_sessionKeyDerivationAttributes; }
+    inline const SessionKeyDerivation& GetSessionKeyDerivationAttributes() const { return m_sessionKeyDerivationAttributes; }
     inline bool SessionKeyDerivationAttributesHasBeenSet() const { return m_sessionKeyDerivationAttributesHasBeenSet; }
-    inline void SetSessionKeyDerivationAttributes(const SessionKeyDerivation& value) { m_sessionKeyDerivationAttributesHasBeenSet = true; m_sessionKeyDerivationAttributes = value; }
-    inline void SetSessionKeyDerivationAttributes(SessionKeyDerivation&& value) { m_sessionKeyDerivationAttributesHasBeenSet = true; m_sessionKeyDerivationAttributes = std::move(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithSessionKeyDerivationAttributes(const SessionKeyDerivation& value) { SetSessionKeyDerivationAttributes(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithSessionKeyDerivationAttributes(SessionKeyDerivation&& value) { SetSessionKeyDerivationAttributes(std::move(value)); return *this;}
+    template<typename SessionKeyDerivationAttributesT = SessionKeyDerivation>
+    void SetSessionKeyDerivationAttributes(SessionKeyDerivationAttributesT&& value) { m_sessionKeyDerivationAttributesHasBeenSet = true; m_sessionKeyDerivationAttributes = std::forward<SessionKeyDerivationAttributesT>(value); }
+    template<typename SessionKeyDerivationAttributesT = SessionKeyDerivation>
+    VerifyAuthRequestCryptogramRequest& WithSessionKeyDerivationAttributes(SessionKeyDerivationAttributesT&& value) { SetSessionKeyDerivationAttributes(std::forward<SessionKeyDerivationAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +110,12 @@ namespace Model
      * parameters are required in case using ARPC Method 1 or Method 2 for ARQC
      * verification.</p>
      */
-    inline const CryptogramAuthResponse& GetAuthResponseAttributes() const{ return m_authResponseAttributes; }
+    inline const CryptogramAuthResponse& GetAuthResponseAttributes() const { return m_authResponseAttributes; }
     inline bool AuthResponseAttributesHasBeenSet() const { return m_authResponseAttributesHasBeenSet; }
-    inline void SetAuthResponseAttributes(const CryptogramAuthResponse& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = value; }
-    inline void SetAuthResponseAttributes(CryptogramAuthResponse&& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = std::move(value); }
-    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(const CryptogramAuthResponse& value) { SetAuthResponseAttributes(value); return *this;}
-    inline VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(CryptogramAuthResponse&& value) { SetAuthResponseAttributes(std::move(value)); return *this;}
+    template<typename AuthResponseAttributesT = CryptogramAuthResponse>
+    void SetAuthResponseAttributes(AuthResponseAttributesT&& value) { m_authResponseAttributesHasBeenSet = true; m_authResponseAttributes = std::forward<AuthResponseAttributesT>(value); }
+    template<typename AuthResponseAttributesT = CryptogramAuthResponse>
+    VerifyAuthRequestCryptogramRequest& WithAuthResponseAttributes(AuthResponseAttributesT&& value) { SetAuthResponseAttributes(std::forward<AuthResponseAttributesT>(value)); return *this;}
     ///@}
   private:
 
@@ -136,7 +128,7 @@ namespace Model
     Aws::String m_authRequestCryptogram;
     bool m_authRequestCryptogramHasBeenSet = false;
 
-    MajorKeyDerivationMode m_majorKeyDerivationMode;
+    MajorKeyDerivationMode m_majorKeyDerivationMode{MajorKeyDerivationMode::NOT_SET};
     bool m_majorKeyDerivationModeHasBeenSet = false;
 
     SessionKeyDerivation m_sessionKeyDerivationAttributes;

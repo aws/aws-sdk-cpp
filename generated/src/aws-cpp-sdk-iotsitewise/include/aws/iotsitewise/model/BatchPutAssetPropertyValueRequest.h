@@ -22,7 +22,7 @@ namespace Model
   class BatchPutAssetPropertyValueRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API BatchPutAssetPropertyValueRequest();
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyValueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
      * <code>false</code>, an invalid TQV fails ingestion of the entire entry that
      * contains it.</p>
      */
-    inline bool GetEnablePartialEntryProcessing() const{ return m_enablePartialEntryProcessing; }
+    inline bool GetEnablePartialEntryProcessing() const { return m_enablePartialEntryProcessing; }
     inline bool EnablePartialEntryProcessingHasBeenSet() const { return m_enablePartialEntryProcessingHasBeenSet; }
     inline void SetEnablePartialEntryProcessing(bool value) { m_enablePartialEntryProcessingHasBeenSet = true; m_enablePartialEntryProcessing = value; }
     inline BatchPutAssetPropertyValueRequest& WithEnablePartialEntryProcessing(bool value) { SetEnablePartialEntryProcessing(value); return *this;}
@@ -51,18 +51,18 @@ namespace Model
      * <p>The list of asset property value entries for the batch put request. You can
      * specify up to 10 entries per request.</p>
      */
-    inline const Aws::Vector<PutAssetPropertyValueEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<PutAssetPropertyValueEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline BatchPutAssetPropertyValueRequest& WithEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { SetEntries(value); return *this;}
-    inline BatchPutAssetPropertyValueRequest& WithEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline BatchPutAssetPropertyValueRequest& AddEntries(const PutAssetPropertyValueEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline BatchPutAssetPropertyValueRequest& AddEntries(PutAssetPropertyValueEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<PutAssetPropertyValueEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<PutAssetPropertyValueEntry>>
+    BatchPutAssetPropertyValueRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = PutAssetPropertyValueEntry>
+    BatchPutAssetPropertyValueRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_enablePartialEntryProcessing;
+    bool m_enablePartialEntryProcessing{false};
     bool m_enablePartialEntryProcessingHasBeenSet = false;
 
     Aws::Vector<PutAssetPropertyValueEntry> m_entries;

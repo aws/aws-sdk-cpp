@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTestGridProjectRequest::GetTestGridProjectRequest() : 
-    m_projectArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTestGridProjectRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class Ec2Instance
   {
   public:
-    AWS_GUARDDUTY_API Ec2Instance();
+    AWS_GUARDDUTY_API Ec2Instance() = default;
     AWS_GUARDDUTY_API Ec2Instance(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Ec2Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
      * zones</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline Ec2Instance& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline Ec2Instance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline Ec2Instance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    Ec2Instance& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image description of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetImageDescription() const{ return m_imageDescription; }
+    inline const Aws::String& GetImageDescription() const { return m_imageDescription; }
     inline bool ImageDescriptionHasBeenSet() const { return m_imageDescriptionHasBeenSet; }
-    inline void SetImageDescription(const Aws::String& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = value; }
-    inline void SetImageDescription(Aws::String&& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = std::move(value); }
-    inline void SetImageDescription(const char* value) { m_imageDescriptionHasBeenSet = true; m_imageDescription.assign(value); }
-    inline Ec2Instance& WithImageDescription(const Aws::String& value) { SetImageDescription(value); return *this;}
-    inline Ec2Instance& WithImageDescription(Aws::String&& value) { SetImageDescription(std::move(value)); return *this;}
-    inline Ec2Instance& WithImageDescription(const char* value) { SetImageDescription(value); return *this;}
+    template<typename ImageDescriptionT = Aws::String>
+    void SetImageDescription(ImageDescriptionT&& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = std::forward<ImageDescriptionT>(value); }
+    template<typename ImageDescriptionT = Aws::String>
+    Ec2Instance& WithImageDescription(ImageDescriptionT&& value) { SetImageDescription(std::forward<ImageDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,38 +74,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Amazon
      * EC2 instance state changes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetInstanceState() const{ return m_instanceState; }
+    inline const Aws::String& GetInstanceState() const { return m_instanceState; }
     inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
-    inline void SetInstanceState(const Aws::String& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
-    inline void SetInstanceState(Aws::String&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::move(value); }
-    inline void SetInstanceState(const char* value) { m_instanceStateHasBeenSet = true; m_instanceState.assign(value); }
-    inline Ec2Instance& WithInstanceState(const Aws::String& value) { SetInstanceState(value); return *this;}
-    inline Ec2Instance& WithInstanceState(Aws::String&& value) { SetInstanceState(std::move(value)); return *this;}
-    inline Ec2Instance& WithInstanceState(const char* value) { SetInstanceState(value); return *this;}
+    template<typename InstanceStateT = Aws::String>
+    void SetInstanceState(InstanceStateT&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::forward<InstanceStateT>(value); }
+    template<typename InstanceStateT = Aws::String>
+    Ec2Instance& WithInstanceState(InstanceStateT&& value) { SetInstanceState(std::forward<InstanceStateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    inline const IamInstanceProfile& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
-    inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-    inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-    inline Ec2Instance& WithIamInstanceProfile(const IamInstanceProfile& value) { SetIamInstanceProfile(value); return *this;}
-    inline Ec2Instance& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+    template<typename IamInstanceProfileT = IamInstanceProfile>
+    void SetIamInstanceProfile(IamInstanceProfileT&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value); }
+    template<typename IamInstanceProfileT = IamInstanceProfile>
+    Ec2Instance& WithIamInstanceProfile(IamInstanceProfileT&& value) { SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline Ec2Instance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline Ec2Instance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline Ec2Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    Ec2Instance& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,57 +109,52 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. This shows
      * applicable Amazon Web Services Outposts instances.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-    inline Ec2Instance& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline Ec2Instance& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline Ec2Instance& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    Ec2Instance& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline Ec2Instance& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline Ec2Instance& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline Ec2Instance& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    Ec2Instance& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product code of the Amazon EC2 instance.</p>
      */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const { return m_productCodes; }
     inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
-    inline Ec2Instance& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-    inline Ec2Instance& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-    inline Ec2Instance& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
-    inline Ec2Instance& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    void SetProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::forward<ProductCodesT>(value); }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    Ec2Instance& WithProductCodes(ProductCodesT&& value) { SetProductCodes(std::forward<ProductCodesT>(value)); return *this;}
+    template<typename ProductCodesT = ProductCode>
+    Ec2Instance& AddProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes.emplace_back(std::forward<ProductCodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEc2NetworkInterfaceUids() const{ return m_ec2NetworkInterfaceUids; }
+    inline const Aws::Vector<Aws::String>& GetEc2NetworkInterfaceUids() const { return m_ec2NetworkInterfaceUids; }
     inline bool Ec2NetworkInterfaceUidsHasBeenSet() const { return m_ec2NetworkInterfaceUidsHasBeenSet; }
-    inline void SetEc2NetworkInterfaceUids(const Aws::Vector<Aws::String>& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids = value; }
-    inline void SetEc2NetworkInterfaceUids(Aws::Vector<Aws::String>&& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids = std::move(value); }
-    inline Ec2Instance& WithEc2NetworkInterfaceUids(const Aws::Vector<Aws::String>& value) { SetEc2NetworkInterfaceUids(value); return *this;}
-    inline Ec2Instance& WithEc2NetworkInterfaceUids(Aws::Vector<Aws::String>&& value) { SetEc2NetworkInterfaceUids(std::move(value)); return *this;}
-    inline Ec2Instance& AddEc2NetworkInterfaceUids(const Aws::String& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids.push_back(value); return *this; }
-    inline Ec2Instance& AddEc2NetworkInterfaceUids(Aws::String&& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids.push_back(std::move(value)); return *this; }
-    inline Ec2Instance& AddEc2NetworkInterfaceUids(const char* value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids.push_back(value); return *this; }
+    template<typename Ec2NetworkInterfaceUidsT = Aws::Vector<Aws::String>>
+    void SetEc2NetworkInterfaceUids(Ec2NetworkInterfaceUidsT&& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids = std::forward<Ec2NetworkInterfaceUidsT>(value); }
+    template<typename Ec2NetworkInterfaceUidsT = Aws::Vector<Aws::String>>
+    Ec2Instance& WithEc2NetworkInterfaceUids(Ec2NetworkInterfaceUidsT&& value) { SetEc2NetworkInterfaceUids(std::forward<Ec2NetworkInterfaceUidsT>(value)); return *this;}
+    template<typename Ec2NetworkInterfaceUidsT = Aws::String>
+    Ec2Instance& AddEc2NetworkInterfaceUids(Ec2NetworkInterfaceUidsT&& value) { m_ec2NetworkInterfaceUidsHasBeenSet = true; m_ec2NetworkInterfaceUids.emplace_back(std::forward<Ec2NetworkInterfaceUidsT>(value)); return *this; }
     ///@}
   private:
 

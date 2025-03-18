@@ -37,7 +37,7 @@ namespace Model
   class AddOnRequest
   {
   public:
-    AWS_LIGHTSAIL_API AddOnRequest();
+    AWS_LIGHTSAIL_API AddOnRequest() = default;
     AWS_LIGHTSAIL_API AddOnRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AddOnRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The add-on type.</p>
      */
-    inline const AddOnType& GetAddOnType() const{ return m_addOnType; }
+    inline AddOnType GetAddOnType() const { return m_addOnType; }
     inline bool AddOnTypeHasBeenSet() const { return m_addOnTypeHasBeenSet; }
-    inline void SetAddOnType(const AddOnType& value) { m_addOnTypeHasBeenSet = true; m_addOnType = value; }
-    inline void SetAddOnType(AddOnType&& value) { m_addOnTypeHasBeenSet = true; m_addOnType = std::move(value); }
-    inline AddOnRequest& WithAddOnType(const AddOnType& value) { SetAddOnType(value); return *this;}
-    inline AddOnRequest& WithAddOnType(AddOnType&& value) { SetAddOnType(std::move(value)); return *this;}
+    inline void SetAddOnType(AddOnType value) { m_addOnTypeHasBeenSet = true; m_addOnType = value; }
+    inline AddOnRequest& WithAddOnType(AddOnType value) { SetAddOnType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>An object that represents additional parameters when enabling or modifying
      * the automatic snapshot add-on.</p>
      */
-    inline const AutoSnapshotAddOnRequest& GetAutoSnapshotAddOnRequest() const{ return m_autoSnapshotAddOnRequest; }
+    inline const AutoSnapshotAddOnRequest& GetAutoSnapshotAddOnRequest() const { return m_autoSnapshotAddOnRequest; }
     inline bool AutoSnapshotAddOnRequestHasBeenSet() const { return m_autoSnapshotAddOnRequestHasBeenSet; }
-    inline void SetAutoSnapshotAddOnRequest(const AutoSnapshotAddOnRequest& value) { m_autoSnapshotAddOnRequestHasBeenSet = true; m_autoSnapshotAddOnRequest = value; }
-    inline void SetAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequest&& value) { m_autoSnapshotAddOnRequestHasBeenSet = true; m_autoSnapshotAddOnRequest = std::move(value); }
-    inline AddOnRequest& WithAutoSnapshotAddOnRequest(const AutoSnapshotAddOnRequest& value) { SetAutoSnapshotAddOnRequest(value); return *this;}
-    inline AddOnRequest& WithAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequest&& value) { SetAutoSnapshotAddOnRequest(std::move(value)); return *this;}
+    template<typename AutoSnapshotAddOnRequestT = AutoSnapshotAddOnRequest>
+    void SetAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequestT&& value) { m_autoSnapshotAddOnRequestHasBeenSet = true; m_autoSnapshotAddOnRequest = std::forward<AutoSnapshotAddOnRequestT>(value); }
+    template<typename AutoSnapshotAddOnRequestT = AutoSnapshotAddOnRequest>
+    AddOnRequest& WithAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequestT&& value) { SetAutoSnapshotAddOnRequest(std::forward<AutoSnapshotAddOnRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,16 +72,16 @@ namespace Model
      * the <code>StopInstanceOnIdle</code> add-on.</p>  <p>This object only
      * applies to Lightsail for Research resources.</p> 
      */
-    inline const StopInstanceOnIdleRequest& GetStopInstanceOnIdleRequest() const{ return m_stopInstanceOnIdleRequest; }
+    inline const StopInstanceOnIdleRequest& GetStopInstanceOnIdleRequest() const { return m_stopInstanceOnIdleRequest; }
     inline bool StopInstanceOnIdleRequestHasBeenSet() const { return m_stopInstanceOnIdleRequestHasBeenSet; }
-    inline void SetStopInstanceOnIdleRequest(const StopInstanceOnIdleRequest& value) { m_stopInstanceOnIdleRequestHasBeenSet = true; m_stopInstanceOnIdleRequest = value; }
-    inline void SetStopInstanceOnIdleRequest(StopInstanceOnIdleRequest&& value) { m_stopInstanceOnIdleRequestHasBeenSet = true; m_stopInstanceOnIdleRequest = std::move(value); }
-    inline AddOnRequest& WithStopInstanceOnIdleRequest(const StopInstanceOnIdleRequest& value) { SetStopInstanceOnIdleRequest(value); return *this;}
-    inline AddOnRequest& WithStopInstanceOnIdleRequest(StopInstanceOnIdleRequest&& value) { SetStopInstanceOnIdleRequest(std::move(value)); return *this;}
+    template<typename StopInstanceOnIdleRequestT = StopInstanceOnIdleRequest>
+    void SetStopInstanceOnIdleRequest(StopInstanceOnIdleRequestT&& value) { m_stopInstanceOnIdleRequestHasBeenSet = true; m_stopInstanceOnIdleRequest = std::forward<StopInstanceOnIdleRequestT>(value); }
+    template<typename StopInstanceOnIdleRequestT = StopInstanceOnIdleRequest>
+    AddOnRequest& WithStopInstanceOnIdleRequest(StopInstanceOnIdleRequestT&& value) { SetStopInstanceOnIdleRequest(std::forward<StopInstanceOnIdleRequestT>(value)); return *this;}
     ///@}
   private:
 
-    AddOnType m_addOnType;
+    AddOnType m_addOnType{AddOnType::NOT_SET};
     bool m_addOnTypeHasBeenSet = false;
 
     AutoSnapshotAddOnRequest m_autoSnapshotAddOnRequest;

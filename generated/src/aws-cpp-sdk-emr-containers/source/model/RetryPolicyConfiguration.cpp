@@ -18,14 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-RetryPolicyConfiguration::RetryPolicyConfiguration() : 
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false)
-{
-}
-
 RetryPolicyConfiguration::RetryPolicyConfiguration(JsonView jsonValue)
-  : RetryPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RetryPolicyConfiguration& RetryPolicyConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("maxAttempts"))
   {
     m_maxAttempts = jsonValue.GetInteger("maxAttempts");
-
     m_maxAttemptsHasBeenSet = true;
   }
-
   return *this;
 }
 

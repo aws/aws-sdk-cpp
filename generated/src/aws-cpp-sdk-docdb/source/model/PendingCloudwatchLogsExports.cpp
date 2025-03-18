@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-PendingCloudwatchLogsExports::PendingCloudwatchLogsExports() : 
-    m_logTypesToEnableHasBeenSet(false),
-    m_logTypesToDisableHasBeenSet(false)
-{
-}
-
 PendingCloudwatchLogsExports::PendingCloudwatchLogsExports(const XmlNode& xmlNode)
-  : PendingCloudwatchLogsExports()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ PendingCloudwatchLogsExports& PendingCloudwatchLogsExports::operator =(const Xml
     if(!logTypesToEnableNode.IsNull())
     {
       XmlNode logTypesToEnableMember = logTypesToEnableNode.FirstChild("member");
+      m_logTypesToEnableHasBeenSet = !logTypesToEnableMember.IsNull();
       while(!logTypesToEnableMember.IsNull())
       {
         m_logTypesToEnable.push_back(logTypesToEnableMember.GetText());
@@ -54,6 +48,7 @@ PendingCloudwatchLogsExports& PendingCloudwatchLogsExports::operator =(const Xml
     if(!logTypesToDisableNode.IsNull())
     {
       XmlNode logTypesToDisableMember = logTypesToDisableNode.FirstChild("member");
+      m_logTypesToDisableHasBeenSet = !logTypesToDisableMember.IsNull();
       while(!logTypesToDisableMember.IsNull())
       {
         m_logTypesToDisable.push_back(logTypesToDisableMember.GetText());

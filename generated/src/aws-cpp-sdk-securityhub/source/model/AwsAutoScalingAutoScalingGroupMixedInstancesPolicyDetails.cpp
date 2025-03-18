@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails() : 
-    m_instancesDistributionHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
-{
-}
-
 AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails(JsonView jsonValue)
-  : AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& AwsAutoScalingAutoSca
   if(jsonValue.ValueExists("InstancesDistribution"))
   {
     m_instancesDistribution = jsonValue.GetObject("InstancesDistribution");
-
     m_instancesDistributionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTemplate"))
   {
     m_launchTemplate = jsonValue.GetObject("LaunchTemplate");
-
     m_launchTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

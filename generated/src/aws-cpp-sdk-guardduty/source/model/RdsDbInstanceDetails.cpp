@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RdsDbInstanceDetails::RdsDbInstanceDetails() : 
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbInstanceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RdsDbInstanceDetails::RdsDbInstanceDetails(JsonView jsonValue)
-  : RdsDbInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RdsDbInstanceDetails& RdsDbInstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dbInstanceIdentifier"))
   {
     m_dbInstanceIdentifier = jsonValue.GetString("dbInstanceIdentifier");
-
     m_dbInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = jsonValue.GetString("engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("dbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbInstanceArn"))
   {
     m_dbInstanceArn = jsonValue.GetString("dbInstanceArn");
-
     m_dbInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -80,7 +59,6 @@ RdsDbInstanceDetails& RdsDbInstanceDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

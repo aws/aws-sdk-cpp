@@ -32,7 +32,7 @@ namespace Model
   class FunctionMetadata
   {
   public:
-    AWS_CLOUDFRONT_API FunctionMetadata();
+    AWS_CLOUDFRONT_API FunctionMetadata() = default;
     AWS_CLOUDFRONT_API FunctionMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FunctionMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies
      * the function.</p>
      */
-    inline const Aws::String& GetFunctionARN() const{ return m_functionARN; }
+    inline const Aws::String& GetFunctionARN() const { return m_functionARN; }
     inline bool FunctionARNHasBeenSet() const { return m_functionARNHasBeenSet; }
-    inline void SetFunctionARN(const Aws::String& value) { m_functionARNHasBeenSet = true; m_functionARN = value; }
-    inline void SetFunctionARN(Aws::String&& value) { m_functionARNHasBeenSet = true; m_functionARN = std::move(value); }
-    inline void SetFunctionARN(const char* value) { m_functionARNHasBeenSet = true; m_functionARN.assign(value); }
-    inline FunctionMetadata& WithFunctionARN(const Aws::String& value) { SetFunctionARN(value); return *this;}
-    inline FunctionMetadata& WithFunctionARN(Aws::String&& value) { SetFunctionARN(std::move(value)); return *this;}
-    inline FunctionMetadata& WithFunctionARN(const char* value) { SetFunctionARN(value); return *this;}
+    template<typename FunctionARNT = Aws::String>
+    void SetFunctionARN(FunctionARNT&& value) { m_functionARNHasBeenSet = true; m_functionARN = std::forward<FunctionARNT>(value); }
+    template<typename FunctionARNT = Aws::String>
+    FunctionMetadata& WithFunctionARN(FunctionARNT&& value) { SetFunctionARN(std::forward<FunctionARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,49 +61,47 @@ namespace Model
      * <code>LIVE</code> stage, you can attach the function to a distribution's cache
      * behavior, using the function's ARN.</p>
      */
-    inline const FunctionStage& GetStage() const{ return m_stage; }
+    inline FunctionStage GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline FunctionMetadata& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
-    inline FunctionMetadata& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
+    inline void SetStage(FunctionStage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline FunctionMetadata& WithStage(FunctionStage value) { SetStage(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the function was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline FunctionMetadata& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline FunctionMetadata& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    FunctionMetadata& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the function was most recently updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline FunctionMetadata& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline FunctionMetadata& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    FunctionMetadata& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_functionARN;
     bool m_functionARNHasBeenSet = false;
 
-    FunctionStage m_stage;
+    FunctionStage m_stage{FunctionStage::NOT_SET};
     bool m_stageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

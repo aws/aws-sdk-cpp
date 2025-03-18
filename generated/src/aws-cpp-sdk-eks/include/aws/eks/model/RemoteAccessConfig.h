@@ -33,7 +33,7 @@ namespace Model
   class RemoteAccessConfig
   {
   public:
-    AWS_EKS_API RemoteAccessConfig();
+    AWS_EKS_API RemoteAccessConfig() = default;
     AWS_EKS_API RemoteAccessConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API RemoteAccessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * EC2 key pairs and Windows instances</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide for Windows Instances</i>.</p>
      */
-    inline const Aws::String& GetEc2SshKey() const{ return m_ec2SshKey; }
+    inline const Aws::String& GetEc2SshKey() const { return m_ec2SshKey; }
     inline bool Ec2SshKeyHasBeenSet() const { return m_ec2SshKeyHasBeenSet; }
-    inline void SetEc2SshKey(const Aws::String& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = value; }
-    inline void SetEc2SshKey(Aws::String&& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = std::move(value); }
-    inline void SetEc2SshKey(const char* value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey.assign(value); }
-    inline RemoteAccessConfig& WithEc2SshKey(const Aws::String& value) { SetEc2SshKey(value); return *this;}
-    inline RemoteAccessConfig& WithEc2SshKey(Aws::String&& value) { SetEc2SshKey(std::move(value)); return *this;}
-    inline RemoteAccessConfig& WithEc2SshKey(const char* value) { SetEc2SshKey(value); return *this;}
+    template<typename Ec2SshKeyT = Aws::String>
+    void SetEc2SshKey(Ec2SshKeyT&& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = std::forward<Ec2SshKeyT>(value); }
+    template<typename Ec2SshKeyT = Aws::String>
+    RemoteAccessConfig& WithEc2SshKey(Ec2SshKeyT&& value) { SetEc2SshKey(std::forward<Ec2SshKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,15 +70,14 @@ namespace Model
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceSecurityGroups() const{ return m_sourceSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSourceSecurityGroups() const { return m_sourceSecurityGroups; }
     inline bool SourceSecurityGroupsHasBeenSet() const { return m_sourceSecurityGroupsHasBeenSet; }
-    inline void SetSourceSecurityGroups(const Aws::Vector<Aws::String>& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups = value; }
-    inline void SetSourceSecurityGroups(Aws::Vector<Aws::String>&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups = std::move(value); }
-    inline RemoteAccessConfig& WithSourceSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSourceSecurityGroups(value); return *this;}
-    inline RemoteAccessConfig& WithSourceSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSourceSecurityGroups(std::move(value)); return *this;}
-    inline RemoteAccessConfig& AddSourceSecurityGroups(const Aws::String& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.push_back(value); return *this; }
-    inline RemoteAccessConfig& AddSourceSecurityGroups(Aws::String&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.push_back(std::move(value)); return *this; }
-    inline RemoteAccessConfig& AddSourceSecurityGroups(const char* value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.push_back(value); return *this; }
+    template<typename SourceSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSourceSecurityGroups(SourceSecurityGroupsT&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups = std::forward<SourceSecurityGroupsT>(value); }
+    template<typename SourceSecurityGroupsT = Aws::Vector<Aws::String>>
+    RemoteAccessConfig& WithSourceSecurityGroups(SourceSecurityGroupsT&& value) { SetSourceSecurityGroups(std::forward<SourceSecurityGroupsT>(value)); return *this;}
+    template<typename SourceSecurityGroupsT = Aws::String>
+    RemoteAccessConfig& AddSourceSecurityGroups(SourceSecurityGroupsT&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.emplace_back(std::forward<SourceSecurityGroupsT>(value)); return *this; }
     ///@}
   private:
 

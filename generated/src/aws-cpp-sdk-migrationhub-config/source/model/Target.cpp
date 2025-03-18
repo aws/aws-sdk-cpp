@@ -18,15 +18,7 @@ namespace MigrationHubConfig
 namespace Model
 {
 
-Target::Target() : 
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class DescribeFleetHistoryRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeFleetHistoryRequest();
+    AWS_EC2_API DescribeFleetHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeFleetHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
     /**
      * <p>The type of events to describe. By default, all events are described.</p>
      */
-    inline const FleetEventType& GetEventType() const{ return m_eventType; }
+    inline FleetEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const FleetEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(FleetEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline DescribeFleetHistoryRequest& WithEventType(const FleetEventType& value) { SetEventType(value); return *this;}
-    inline DescribeFleetHistoryRequest& WithEventType(FleetEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(FleetEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline DescribeFleetHistoryRequest& WithEventType(FleetEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +68,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeFleetHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,28 +79,24 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFleetHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFleetHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFleetHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFleetHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline DescribeFleetHistoryRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline DescribeFleetHistoryRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline DescribeFleetHistoryRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    DescribeFleetHistoryRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,22 +104,22 @@ namespace Model
      * <p>The start date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline DescribeFleetHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeFleetHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    DescribeFleetHistoryRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    FleetEventType m_eventType;
+    FleetEventType m_eventType{FleetEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -134,7 +128,7 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class DescribeCommandsResult
   {
   public:
-    AWS_OPSWORKS_API DescribeCommandsResult();
+    AWS_OPSWORKS_API DescribeCommandsResult() = default;
     AWS_OPSWORKS_API DescribeCommandsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An array of <code>Command</code> objects that describe each of the specified
      * commands.</p>
      */
-    inline const Aws::Vector<Command>& GetCommands() const{ return m_commands; }
-    inline void SetCommands(const Aws::Vector<Command>& value) { m_commands = value; }
-    inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = std::move(value); }
-    inline DescribeCommandsResult& WithCommands(const Aws::Vector<Command>& value) { SetCommands(value); return *this;}
-    inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(std::move(value)); return *this;}
-    inline DescribeCommandsResult& AddCommands(const Command& value) { m_commands.push_back(value); return *this; }
-    inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Command>& GetCommands() const { return m_commands; }
+    template<typename CommandsT = Aws::Vector<Command>>
+    void SetCommands(CommandsT&& value) { m_commandsHasBeenSet = true; m_commands = std::forward<CommandsT>(value); }
+    template<typename CommandsT = Aws::Vector<Command>>
+    DescribeCommandsResult& WithCommands(CommandsT&& value) { SetCommands(std::forward<CommandsT>(value)); return *this;}
+    template<typename CommandsT = Command>
+    DescribeCommandsResult& AddCommands(CommandsT&& value) { m_commandsHasBeenSet = true; m_commands.emplace_back(std::forward<CommandsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCommandsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCommandsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCommandsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCommandsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Command> m_commands;
+    bool m_commandsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

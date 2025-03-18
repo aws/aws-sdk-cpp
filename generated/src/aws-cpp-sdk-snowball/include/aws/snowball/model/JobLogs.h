@@ -46,7 +46,7 @@ namespace Model
   class JobLogs
   {
   public:
-    AWS_SNOWBALL_API JobLogs();
+    AWS_SNOWBALL_API JobLogs() = default;
     AWS_SNOWBALL_API JobLogs(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API JobLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job completion report is
      * located.</p>
      */
-    inline const Aws::String& GetJobCompletionReportURI() const{ return m_jobCompletionReportURI; }
+    inline const Aws::String& GetJobCompletionReportURI() const { return m_jobCompletionReportURI; }
     inline bool JobCompletionReportURIHasBeenSet() const { return m_jobCompletionReportURIHasBeenSet; }
-    inline void SetJobCompletionReportURI(const Aws::String& value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI = value; }
-    inline void SetJobCompletionReportURI(Aws::String&& value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI = std::move(value); }
-    inline void SetJobCompletionReportURI(const char* value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI.assign(value); }
-    inline JobLogs& WithJobCompletionReportURI(const Aws::String& value) { SetJobCompletionReportURI(value); return *this;}
-    inline JobLogs& WithJobCompletionReportURI(Aws::String&& value) { SetJobCompletionReportURI(std::move(value)); return *this;}
-    inline JobLogs& WithJobCompletionReportURI(const char* value) { SetJobCompletionReportURI(value); return *this;}
+    template<typename JobCompletionReportURIT = Aws::String>
+    void SetJobCompletionReportURI(JobCompletionReportURIT&& value) { m_jobCompletionReportURIHasBeenSet = true; m_jobCompletionReportURI = std::forward<JobCompletionReportURIT>(value); }
+    template<typename JobCompletionReportURIT = Aws::String>
+    JobLogs& WithJobCompletionReportURI(JobCompletionReportURIT&& value) { SetJobCompletionReportURI(std::forward<JobCompletionReportURIT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job success log is
      * located.</p>
      */
-    inline const Aws::String& GetJobSuccessLogURI() const{ return m_jobSuccessLogURI; }
+    inline const Aws::String& GetJobSuccessLogURI() const { return m_jobSuccessLogURI; }
     inline bool JobSuccessLogURIHasBeenSet() const { return m_jobSuccessLogURIHasBeenSet; }
-    inline void SetJobSuccessLogURI(const Aws::String& value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI = value; }
-    inline void SetJobSuccessLogURI(Aws::String&& value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI = std::move(value); }
-    inline void SetJobSuccessLogURI(const char* value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI.assign(value); }
-    inline JobLogs& WithJobSuccessLogURI(const Aws::String& value) { SetJobSuccessLogURI(value); return *this;}
-    inline JobLogs& WithJobSuccessLogURI(Aws::String&& value) { SetJobSuccessLogURI(std::move(value)); return *this;}
-    inline JobLogs& WithJobSuccessLogURI(const char* value) { SetJobSuccessLogURI(value); return *this;}
+    template<typename JobSuccessLogURIT = Aws::String>
+    void SetJobSuccessLogURI(JobSuccessLogURIT&& value) { m_jobSuccessLogURIHasBeenSet = true; m_jobSuccessLogURI = std::forward<JobSuccessLogURIT>(value); }
+    template<typename JobSuccessLogURIT = Aws::String>
+    JobLogs& WithJobSuccessLogURI(JobSuccessLogURIT&& value) { SetJobSuccessLogURI(std::forward<JobSuccessLogURIT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>A link to an Amazon S3 presigned URL where the job failure log is
      * located.</p>
      */
-    inline const Aws::String& GetJobFailureLogURI() const{ return m_jobFailureLogURI; }
+    inline const Aws::String& GetJobFailureLogURI() const { return m_jobFailureLogURI; }
     inline bool JobFailureLogURIHasBeenSet() const { return m_jobFailureLogURIHasBeenSet; }
-    inline void SetJobFailureLogURI(const Aws::String& value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI = value; }
-    inline void SetJobFailureLogURI(Aws::String&& value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI = std::move(value); }
-    inline void SetJobFailureLogURI(const char* value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI.assign(value); }
-    inline JobLogs& WithJobFailureLogURI(const Aws::String& value) { SetJobFailureLogURI(value); return *this;}
-    inline JobLogs& WithJobFailureLogURI(Aws::String&& value) { SetJobFailureLogURI(std::move(value)); return *this;}
-    inline JobLogs& WithJobFailureLogURI(const char* value) { SetJobFailureLogURI(value); return *this;}
+    template<typename JobFailureLogURIT = Aws::String>
+    void SetJobFailureLogURI(JobFailureLogURIT&& value) { m_jobFailureLogURIHasBeenSet = true; m_jobFailureLogURI = std::forward<JobFailureLogURIT>(value); }
+    template<typename JobFailureLogURIT = Aws::String>
+    JobLogs& WithJobFailureLogURI(JobFailureLogURIT&& value) { SetJobFailureLogURI(std::forward<JobFailureLogURIT>(value)); return *this;}
     ///@}
   private:
 

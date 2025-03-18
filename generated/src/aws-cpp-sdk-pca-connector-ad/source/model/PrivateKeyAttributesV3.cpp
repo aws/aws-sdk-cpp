@@ -18,20 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-PrivateKeyAttributesV3::PrivateKeyAttributesV3() : 
-    m_algorithm(PrivateKeyAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_cryptoProvidersHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_keyUsagePropertyHasBeenSet(false),
-    m_minimalKeyLength(0),
-    m_minimalKeyLengthHasBeenSet(false)
-{
-}
-
 PrivateKeyAttributesV3::PrivateKeyAttributesV3(JsonView jsonValue)
-  : PrivateKeyAttributesV3()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ PrivateKeyAttributesV3& PrivateKeyAttributesV3::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = PrivateKeyAlgorithmMapper::GetPrivateKeyAlgorithmForName(jsonValue.GetString("Algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CryptoProviders"))
   {
     Aws::Utils::Array<JsonView> cryptoProvidersJsonList = jsonValue.GetArray("CryptoProviders");
@@ -54,28 +39,21 @@ PrivateKeyAttributesV3& PrivateKeyAttributesV3::operator =(JsonView jsonValue)
     }
     m_cryptoProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySpec"))
   {
     m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
-
     m_keySpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsageProperty"))
   {
     m_keyUsageProperty = jsonValue.GetObject("KeyUsageProperty");
-
     m_keyUsagePropertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimalKeyLength"))
   {
     m_minimalKeyLength = jsonValue.GetInteger("MinimalKeyLength");
-
     m_minimalKeyLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

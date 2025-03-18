@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ValueWithServiceIds::ValueWithServiceIds() : 
-    m_annotationValueHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false)
-{
-}
-
 ValueWithServiceIds::ValueWithServiceIds(JsonView jsonValue)
-  : ValueWithServiceIds()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValueWithServiceIds& ValueWithServiceIds::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnnotationValue"))
   {
     m_annotationValue = jsonValue.GetObject("AnnotationValue");
-
     m_annotationValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceIds"))
   {
     Aws::Utils::Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
@@ -48,7 +39,6 @@ ValueWithServiceIds& ValueWithServiceIds::operator =(JsonView jsonValue)
     }
     m_serviceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

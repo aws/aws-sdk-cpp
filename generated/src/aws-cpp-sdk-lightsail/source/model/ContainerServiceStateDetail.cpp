@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServiceStateDetail::ContainerServiceStateDetail() : 
-    m_code(ContainerServiceStateDetailCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ContainerServiceStateDetail::ContainerServiceStateDetail(JsonView jsonValue)
-  : ContainerServiceStateDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContainerServiceStateDetail& ContainerServiceStateDetail::operator =(JsonView js
   if(jsonValue.ValueExists("code"))
   {
     m_code = ContainerServiceStateDetailCodeMapper::GetContainerServiceStateDetailCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-DataSetEntry::DataSetEntry() : 
-    m_arnHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_origin(Origin::NOT_SET),
-    m_originHasBeenSet(false),
-    m_originDetailsHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DataSetEntry::DataSetEntry(JsonView jsonValue)
-  : DataSetEntry()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ DataSetEntry& DataSetEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetType"))
   {
     m_assetType = AssetTypeMapper::GetAssetTypeForName(jsonValue.GetString("AssetType"));
-
     m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Origin"))
   {
     m_origin = OriginMapper::GetOriginForName(jsonValue.GetString("Origin"));
-
     m_originHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginDetails"))
   {
     m_originDetails = jsonValue.GetObject("OriginDetails");
-
     m_originDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

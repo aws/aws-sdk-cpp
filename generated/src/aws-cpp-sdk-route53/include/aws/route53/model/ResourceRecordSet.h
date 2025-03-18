@@ -40,7 +40,7 @@ namespace Model
   class ResourceRecordSet
   {
   public:
-    AWS_ROUTE53_API ResourceRecordSet();
+    AWS_ROUTE53_API ResourceRecordSet() = default;
     AWS_ROUTE53_API ResourceRecordSet(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API ResourceRecordSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -74,14 +74,12 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResourceRecordSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResourceRecordSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResourceRecordSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResourceRecordSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +133,10 @@ namespace Model
      * traffic to, and creating a CNAME record for the zone apex isn't supported even
      * for an alias record.</p>  </li> </ul>
      */
-    inline const RRType& GetType() const{ return m_type; }
+    inline RRType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ResourceRecordSet& WithType(const RRType& value) { SetType(value); return *this;}
-    inline ResourceRecordSet& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RRType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ResourceRecordSet& WithType(RRType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +151,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetSetIdentifier() const{ return m_setIdentifier; }
+    inline const Aws::String& GetSetIdentifier() const { return m_setIdentifier; }
     inline bool SetIdentifierHasBeenSet() const { return m_setIdentifierHasBeenSet; }
-    inline void SetSetIdentifier(const Aws::String& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = value; }
-    inline void SetSetIdentifier(Aws::String&& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = std::move(value); }
-    inline void SetSetIdentifier(const char* value) { m_setIdentifierHasBeenSet = true; m_setIdentifier.assign(value); }
-    inline ResourceRecordSet& WithSetIdentifier(const Aws::String& value) { SetSetIdentifier(value); return *this;}
-    inline ResourceRecordSet& WithSetIdentifier(Aws::String&& value) { SetSetIdentifier(std::move(value)); return *this;}
-    inline ResourceRecordSet& WithSetIdentifier(const char* value) { SetSetIdentifier(value); return *this;}
+    template<typename SetIdentifierT = Aws::String>
+    void SetSetIdentifier(SetIdentifierT&& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = std::forward<SetIdentifierT>(value); }
+    template<typename SetIdentifierT = Aws::String>
+    ResourceRecordSet& WithSetIdentifier(SetIdentifierT&& value) { SetSetIdentifier(std::forward<SetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,7 +188,7 @@ namespace Model
      * for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.</p> </li> </ul>
      */
-    inline long long GetWeight() const{ return m_weight; }
+    inline long long GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(long long value) { m_weightHasBeenSet = true; m_weight = value; }
     inline ResourceRecordSet& WithWeight(long long value) { SetWeight(value); return *this;}
@@ -221,12 +215,10 @@ namespace Model
      * have the same values for the <code>Name</code> and <code>Type</code> elements as
      * latency resource record sets.</p> </li> </ul>
      */
-    inline const ResourceRecordSetRegion& GetRegion() const{ return m_region; }
+    inline ResourceRecordSetRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const ResourceRecordSetRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline ResourceRecordSet& WithRegion(const ResourceRecordSetRegion& value) { SetRegion(value); return *this;}
-    inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(ResourceRecordSetRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline ResourceRecordSet& WithRegion(ResourceRecordSetRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -261,12 +253,12 @@ namespace Model
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
      */
-    inline const GeoLocation& GetGeoLocation() const{ return m_geoLocation; }
+    inline const GeoLocation& GetGeoLocation() const { return m_geoLocation; }
     inline bool GeoLocationHasBeenSet() const { return m_geoLocationHasBeenSet; }
-    inline void SetGeoLocation(const GeoLocation& value) { m_geoLocationHasBeenSet = true; m_geoLocation = value; }
-    inline void SetGeoLocation(GeoLocation&& value) { m_geoLocationHasBeenSet = true; m_geoLocation = std::move(value); }
-    inline ResourceRecordSet& WithGeoLocation(const GeoLocation& value) { SetGeoLocation(value); return *this;}
-    inline ResourceRecordSet& WithGeoLocation(GeoLocation&& value) { SetGeoLocation(std::move(value)); return *this;}
+    template<typename GeoLocationT = GeoLocation>
+    void SetGeoLocation(GeoLocationT&& value) { m_geoLocationHasBeenSet = true; m_geoLocation = std::forward<GeoLocationT>(value); }
+    template<typename GeoLocationT = GeoLocation>
+    ResourceRecordSet& WithGeoLocation(GeoLocationT&& value) { SetGeoLocation(std::forward<GeoLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -304,12 +296,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> </p> </li> </ul>
      */
-    inline const ResourceRecordSetFailover& GetFailover() const{ return m_failover; }
+    inline ResourceRecordSetFailover GetFailover() const { return m_failover; }
     inline bool FailoverHasBeenSet() const { return m_failoverHasBeenSet; }
-    inline void SetFailover(const ResourceRecordSetFailover& value) { m_failoverHasBeenSet = true; m_failover = value; }
-    inline void SetFailover(ResourceRecordSetFailover&& value) { m_failoverHasBeenSet = true; m_failover = std::move(value); }
-    inline ResourceRecordSet& WithFailover(const ResourceRecordSetFailover& value) { SetFailover(value); return *this;}
-    inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover&& value) { SetFailover(std::move(value)); return *this;}
+    inline void SetFailover(ResourceRecordSetFailover value) { m_failoverHasBeenSet = true; m_failover = value; }
+    inline ResourceRecordSet& WithFailover(ResourceRecordSetFailover value) { SetFailover(value); return *this;}
     ///@}
 
     ///@{
@@ -333,7 +323,7 @@ namespace Model
      * addresses in the response.</p> </li> </ul> <p>You can't create multivalue answer
      * alias records.</p>
      */
-    inline bool GetMultiValueAnswer() const{ return m_multiValueAnswer; }
+    inline bool GetMultiValueAnswer() const { return m_multiValueAnswer; }
     inline bool MultiValueAnswerHasBeenSet() const { return m_multiValueAnswerHasBeenSet; }
     inline void SetMultiValueAnswer(bool value) { m_multiValueAnswerHasBeenSet = true; m_multiValueAnswer = value; }
     inline ResourceRecordSet& WithMultiValueAnswer(bool value) { SetMultiValueAnswer(value); return *this;}
@@ -357,7 +347,7 @@ namespace Model
      * Values other than 60 seconds (the TTL for load balancers) will change the effect
      * of the values that you specify for <code>Weight</code>.</p> </li> </ul>
      */
-    inline long long GetTTL() const{ return m_tTL; }
+    inline long long GetTTL() const { return m_tTL; }
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
@@ -369,14 +359,14 @@ namespace Model
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * 
      */
-    inline const Aws::Vector<ResourceRecord>& GetResourceRecords() const{ return m_resourceRecords; }
+    inline const Aws::Vector<ResourceRecord>& GetResourceRecords() const { return m_resourceRecords; }
     inline bool ResourceRecordsHasBeenSet() const { return m_resourceRecordsHasBeenSet; }
-    inline void SetResourceRecords(const Aws::Vector<ResourceRecord>& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = value; }
-    inline void SetResourceRecords(Aws::Vector<ResourceRecord>&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = std::move(value); }
-    inline ResourceRecordSet& WithResourceRecords(const Aws::Vector<ResourceRecord>& value) { SetResourceRecords(value); return *this;}
-    inline ResourceRecordSet& WithResourceRecords(Aws::Vector<ResourceRecord>&& value) { SetResourceRecords(std::move(value)); return *this;}
-    inline ResourceRecordSet& AddResourceRecords(const ResourceRecord& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(value); return *this; }
-    inline ResourceRecordSet& AddResourceRecords(ResourceRecord&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(std::move(value)); return *this; }
+    template<typename ResourceRecordsT = Aws::Vector<ResourceRecord>>
+    void SetResourceRecords(ResourceRecordsT&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = std::forward<ResourceRecordsT>(value); }
+    template<typename ResourceRecordsT = Aws::Vector<ResourceRecord>>
+    ResourceRecordSet& WithResourceRecords(ResourceRecordsT&& value) { SetResourceRecords(std::forward<ResourceRecordsT>(value)); return *this;}
+    template<typename ResourceRecordsT = ResourceRecord>
+    ResourceRecordSet& AddResourceRecords(ResourceRecordsT&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.emplace_back(std::forward<ResourceRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -392,12 +382,12 @@ namespace Model
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
      */
-    inline const AliasTarget& GetAliasTarget() const{ return m_aliasTarget; }
+    inline const AliasTarget& GetAliasTarget() const { return m_aliasTarget; }
     inline bool AliasTargetHasBeenSet() const { return m_aliasTargetHasBeenSet; }
-    inline void SetAliasTarget(const AliasTarget& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = value; }
-    inline void SetAliasTarget(AliasTarget&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = std::move(value); }
-    inline ResourceRecordSet& WithAliasTarget(const AliasTarget& value) { SetAliasTarget(value); return *this;}
-    inline ResourceRecordSet& WithAliasTarget(AliasTarget&& value) { SetAliasTarget(std::move(value)); return *this;}
+    template<typename AliasTargetT = AliasTarget>
+    void SetAliasTarget(AliasTargetT&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = std::forward<AliasTargetT>(value); }
+    template<typename AliasTargetT = AliasTarget>
+    ResourceRecordSet& WithAliasTarget(AliasTargetT&& value) { SetAliasTarget(std::forward<AliasTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -479,14 +469,12 @@ namespace Model
      * as the name of a resource record set.</p> </li> <li> <p>Associate that health
      * check with the resource record set.</p> </li> </ul> 
      */
-    inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
+    inline const Aws::String& GetHealthCheckId() const { return m_healthCheckId; }
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-    inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-    inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-    inline ResourceRecordSet& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-    inline ResourceRecordSet& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-    inline ResourceRecordSet& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
+    template<typename HealthCheckIdT = Aws::String>
+    void SetHealthCheckId(HealthCheckIdT&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::forward<HealthCheckIdT>(value); }
+    template<typename HealthCheckIdT = Aws::String>
+    ResourceRecordSet& WithHealthCheckId(HealthCheckIdT&& value) { SetHealthCheckId(std::forward<HealthCheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -501,24 +489,22 @@ namespace Model
      * doesn't automatically delete the traffic policy instance, and you'll continue to
      * be charged for it even though it's no longer in use. </p> 
      */
-    inline const Aws::String& GetTrafficPolicyInstanceId() const{ return m_trafficPolicyInstanceId; }
+    inline const Aws::String& GetTrafficPolicyInstanceId() const { return m_trafficPolicyInstanceId; }
     inline bool TrafficPolicyInstanceIdHasBeenSet() const { return m_trafficPolicyInstanceIdHasBeenSet; }
-    inline void SetTrafficPolicyInstanceId(const Aws::String& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = value; }
-    inline void SetTrafficPolicyInstanceId(Aws::String&& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = std::move(value); }
-    inline void SetTrafficPolicyInstanceId(const char* value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId.assign(value); }
-    inline ResourceRecordSet& WithTrafficPolicyInstanceId(const Aws::String& value) { SetTrafficPolicyInstanceId(value); return *this;}
-    inline ResourceRecordSet& WithTrafficPolicyInstanceId(Aws::String&& value) { SetTrafficPolicyInstanceId(std::move(value)); return *this;}
-    inline ResourceRecordSet& WithTrafficPolicyInstanceId(const char* value) { SetTrafficPolicyInstanceId(value); return *this;}
+    template<typename TrafficPolicyInstanceIdT = Aws::String>
+    void SetTrafficPolicyInstanceId(TrafficPolicyInstanceIdT&& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = std::forward<TrafficPolicyInstanceIdT>(value); }
+    template<typename TrafficPolicyInstanceIdT = Aws::String>
+    ResourceRecordSet& WithTrafficPolicyInstanceId(TrafficPolicyInstanceIdT&& value) { SetTrafficPolicyInstanceId(std::forward<TrafficPolicyInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CidrRoutingConfig& GetCidrRoutingConfig() const{ return m_cidrRoutingConfig; }
+    inline const CidrRoutingConfig& GetCidrRoutingConfig() const { return m_cidrRoutingConfig; }
     inline bool CidrRoutingConfigHasBeenSet() const { return m_cidrRoutingConfigHasBeenSet; }
-    inline void SetCidrRoutingConfig(const CidrRoutingConfig& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = value; }
-    inline void SetCidrRoutingConfig(CidrRoutingConfig&& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = std::move(value); }
-    inline ResourceRecordSet& WithCidrRoutingConfig(const CidrRoutingConfig& value) { SetCidrRoutingConfig(value); return *this;}
-    inline ResourceRecordSet& WithCidrRoutingConfig(CidrRoutingConfig&& value) { SetCidrRoutingConfig(std::move(value)); return *this;}
+    template<typename CidrRoutingConfigT = CidrRoutingConfig>
+    void SetCidrRoutingConfig(CidrRoutingConfigT&& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = std::forward<CidrRoutingConfigT>(value); }
+    template<typename CidrRoutingConfigT = CidrRoutingConfig>
+    ResourceRecordSet& WithCidrRoutingConfig(CidrRoutingConfigT&& value) { SetCidrRoutingConfig(std::forward<CidrRoutingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -527,40 +513,40 @@ namespace Model
      * lets you control how Route 53 responds to DNS queries based on the geographic
      * origin of the query and your resources. </p>
      */
-    inline const GeoProximityLocation& GetGeoProximityLocation() const{ return m_geoProximityLocation; }
+    inline const GeoProximityLocation& GetGeoProximityLocation() const { return m_geoProximityLocation; }
     inline bool GeoProximityLocationHasBeenSet() const { return m_geoProximityLocationHasBeenSet; }
-    inline void SetGeoProximityLocation(const GeoProximityLocation& value) { m_geoProximityLocationHasBeenSet = true; m_geoProximityLocation = value; }
-    inline void SetGeoProximityLocation(GeoProximityLocation&& value) { m_geoProximityLocationHasBeenSet = true; m_geoProximityLocation = std::move(value); }
-    inline ResourceRecordSet& WithGeoProximityLocation(const GeoProximityLocation& value) { SetGeoProximityLocation(value); return *this;}
-    inline ResourceRecordSet& WithGeoProximityLocation(GeoProximityLocation&& value) { SetGeoProximityLocation(std::move(value)); return *this;}
+    template<typename GeoProximityLocationT = GeoProximityLocation>
+    void SetGeoProximityLocation(GeoProximityLocationT&& value) { m_geoProximityLocationHasBeenSet = true; m_geoProximityLocation = std::forward<GeoProximityLocationT>(value); }
+    template<typename GeoProximityLocationT = GeoProximityLocation>
+    ResourceRecordSet& WithGeoProximityLocation(GeoProximityLocationT&& value) { SetGeoProximityLocation(std::forward<GeoProximityLocationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RRType m_type;
+    RRType m_type{RRType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_setIdentifier;
     bool m_setIdentifierHasBeenSet = false;
 
-    long long m_weight;
+    long long m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    ResourceRecordSetRegion m_region;
+    ResourceRecordSetRegion m_region{ResourceRecordSetRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
     GeoLocation m_geoLocation;
     bool m_geoLocationHasBeenSet = false;
 
-    ResourceRecordSetFailover m_failover;
+    ResourceRecordSetFailover m_failover{ResourceRecordSetFailover::NOT_SET};
     bool m_failoverHasBeenSet = false;
 
-    bool m_multiValueAnswer;
+    bool m_multiValueAnswer{false};
     bool m_multiValueAnswerHasBeenSet = false;
 
-    long long m_tTL;
+    long long m_tTL{0};
     bool m_tTLHasBeenSet = false;
 
     Aws::Vector<ResourceRecord> m_resourceRecords;

@@ -25,7 +25,7 @@ namespace Model
   class AssociateEnvironmentOperationsRoleRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API AssociateEnvironmentOperationsRoleRequest();
+    AWS_ELASTICBEANSTALK_API AssociateEnvironmentOperationsRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the environment to which to set the operations role.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline AssociateEnvironmentOperationsRoleRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline AssociateEnvironmentOperationsRoleRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline AssociateEnvironmentOperationsRoleRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    AssociateEnvironmentOperationsRoleRequest& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
      * environment's operations role.</p>
      */
-    inline const Aws::String& GetOperationsRole() const{ return m_operationsRole; }
+    inline const Aws::String& GetOperationsRole() const { return m_operationsRole; }
     inline bool OperationsRoleHasBeenSet() const { return m_operationsRoleHasBeenSet; }
-    inline void SetOperationsRole(const Aws::String& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = value; }
-    inline void SetOperationsRole(Aws::String&& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = std::move(value); }
-    inline void SetOperationsRole(const char* value) { m_operationsRoleHasBeenSet = true; m_operationsRole.assign(value); }
-    inline AssociateEnvironmentOperationsRoleRequest& WithOperationsRole(const Aws::String& value) { SetOperationsRole(value); return *this;}
-    inline AssociateEnvironmentOperationsRoleRequest& WithOperationsRole(Aws::String&& value) { SetOperationsRole(std::move(value)); return *this;}
-    inline AssociateEnvironmentOperationsRoleRequest& WithOperationsRole(const char* value) { SetOperationsRole(value); return *this;}
+    template<typename OperationsRoleT = Aws::String>
+    void SetOperationsRole(OperationsRoleT&& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = std::forward<OperationsRoleT>(value); }
+    template<typename OperationsRoleT = Aws::String>
+    AssociateEnvironmentOperationsRoleRequest& WithOperationsRole(OperationsRoleT&& value) { SetOperationsRole(std::forward<OperationsRoleT>(value)); return *this;}
     ///@}
   private:
 

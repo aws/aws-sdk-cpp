@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeploymentRecommendation::DeploymentRecommendation() : 
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_realTimeInferenceRecommendationsHasBeenSet(false)
-{
-}
-
 DeploymentRecommendation::DeploymentRecommendation(JsonView jsonValue)
-  : DeploymentRecommendation()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DeploymentRecommendation& DeploymentRecommendation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RecommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("RecommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RealTimeInferenceRecommendations"))
   {
     Aws::Utils::Array<JsonView> realTimeInferenceRecommendationsJsonList = jsonValue.GetArray("RealTimeInferenceRecommendations");
@@ -49,7 +39,6 @@ DeploymentRecommendation& DeploymentRecommendation::operator =(JsonView jsonValu
     }
     m_realTimeInferenceRecommendationsHasBeenSet = true;
   }
-
   return *this;
 }
 

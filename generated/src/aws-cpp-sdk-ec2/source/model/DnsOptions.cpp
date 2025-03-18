@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DnsOptions::DnsOptions() : 
-    m_dnsRecordIpType(DnsRecordIpType::NOT_SET),
-    m_dnsRecordIpTypeHasBeenSet(false),
-    m_privateDnsOnlyForInboundResolverEndpoint(false),
-    m_privateDnsOnlyForInboundResolverEndpointHasBeenSet(false)
-{
-}
-
 DnsOptions::DnsOptions(const XmlNode& xmlNode)
-  : DnsOptions()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ DnsOptions& DnsOptions::operator =(const XmlNode& xmlNode)
     XmlNode dnsRecordIpTypeNode = resultNode.FirstChild("dnsRecordIpType");
     if(!dnsRecordIpTypeNode.IsNull())
     {
-      m_dnsRecordIpType = DnsRecordIpTypeMapper::GetDnsRecordIpTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsRecordIpTypeNode.GetText()).c_str()).c_str());
+      m_dnsRecordIpType = DnsRecordIpTypeMapper::GetDnsRecordIpTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsRecordIpTypeNode.GetText()).c_str()));
       m_dnsRecordIpTypeHasBeenSet = true;
     }
     XmlNode privateDnsOnlyForInboundResolverEndpointNode = resultNode.FirstChild("privateDnsOnlyForInboundResolverEndpoint");

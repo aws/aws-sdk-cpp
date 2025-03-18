@@ -12,18 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSnapshotsRequest::GetSnapshotsRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_interval(Interval::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_metricType(MetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

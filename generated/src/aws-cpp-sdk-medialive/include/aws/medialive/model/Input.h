@@ -44,7 +44,7 @@ namespace Model
   class Input
   {
   public:
-    AWS_MEDIALIVE_API Input();
+    AWS_MEDIALIVE_API Input() = default;
     AWS_MEDIALIVE_API Input(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
     /**
      * The Unique ARN of the input (generated, immutable).
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Input& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Input& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Input& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Input& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,43 +67,40 @@ namespace Model
      * A list of channel IDs that that input is attached to (currently an input can
      * only be attached to one channel).
      */
-    inline const Aws::Vector<Aws::String>& GetAttachedChannels() const{ return m_attachedChannels; }
+    inline const Aws::Vector<Aws::String>& GetAttachedChannels() const { return m_attachedChannels; }
     inline bool AttachedChannelsHasBeenSet() const { return m_attachedChannelsHasBeenSet; }
-    inline void SetAttachedChannels(const Aws::Vector<Aws::String>& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels = value; }
-    inline void SetAttachedChannels(Aws::Vector<Aws::String>&& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels = std::move(value); }
-    inline Input& WithAttachedChannels(const Aws::Vector<Aws::String>& value) { SetAttachedChannels(value); return *this;}
-    inline Input& WithAttachedChannels(Aws::Vector<Aws::String>&& value) { SetAttachedChannels(std::move(value)); return *this;}
-    inline Input& AddAttachedChannels(const Aws::String& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels.push_back(value); return *this; }
-    inline Input& AddAttachedChannels(Aws::String&& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels.push_back(std::move(value)); return *this; }
-    inline Input& AddAttachedChannels(const char* value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels.push_back(value); return *this; }
+    template<typename AttachedChannelsT = Aws::Vector<Aws::String>>
+    void SetAttachedChannels(AttachedChannelsT&& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels = std::forward<AttachedChannelsT>(value); }
+    template<typename AttachedChannelsT = Aws::Vector<Aws::String>>
+    Input& WithAttachedChannels(AttachedChannelsT&& value) { SetAttachedChannels(std::forward<AttachedChannelsT>(value)); return *this;}
+    template<typename AttachedChannelsT = Aws::String>
+    Input& AddAttachedChannels(AttachedChannelsT&& value) { m_attachedChannelsHasBeenSet = true; m_attachedChannels.emplace_back(std::forward<AttachedChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A list of the destinations of the input (PUSH-type).
      */
-    inline const Aws::Vector<InputDestination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<InputDestination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<InputDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<InputDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline Input& WithDestinations(const Aws::Vector<InputDestination>& value) { SetDestinations(value); return *this;}
-    inline Input& WithDestinations(Aws::Vector<InputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline Input& AddDestinations(const InputDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline Input& AddDestinations(InputDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<InputDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<InputDestination>>
+    Input& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = InputDestination>
+    Input& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The generated ID of the input (unique for user account, immutable).
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Input& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Input& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Input& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Input& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,41 +114,38 @@ SINGLE_PIPELINE - You can
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
      */
-    inline const InputClass& GetInputClass() const{ return m_inputClass; }
+    inline InputClass GetInputClass() const { return m_inputClass; }
     inline bool InputClassHasBeenSet() const { return m_inputClassHasBeenSet; }
-    inline void SetInputClass(const InputClass& value) { m_inputClassHasBeenSet = true; m_inputClass = value; }
-    inline void SetInputClass(InputClass&& value) { m_inputClassHasBeenSet = true; m_inputClass = std::move(value); }
-    inline Input& WithInputClass(const InputClass& value) { SetInputClass(value); return *this;}
-    inline Input& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
+    inline void SetInputClass(InputClass value) { m_inputClassHasBeenSet = true; m_inputClass = value; }
+    inline Input& WithInputClass(InputClass value) { SetInputClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for the input devices.
      */
-    inline const Aws::Vector<InputDeviceSettings>& GetInputDevices() const{ return m_inputDevices; }
+    inline const Aws::Vector<InputDeviceSettings>& GetInputDevices() const { return m_inputDevices; }
     inline bool InputDevicesHasBeenSet() const { return m_inputDevicesHasBeenSet; }
-    inline void SetInputDevices(const Aws::Vector<InputDeviceSettings>& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = value; }
-    inline void SetInputDevices(Aws::Vector<InputDeviceSettings>&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = std::move(value); }
-    inline Input& WithInputDevices(const Aws::Vector<InputDeviceSettings>& value) { SetInputDevices(value); return *this;}
-    inline Input& WithInputDevices(Aws::Vector<InputDeviceSettings>&& value) { SetInputDevices(std::move(value)); return *this;}
-    inline Input& AddInputDevices(const InputDeviceSettings& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(value); return *this; }
-    inline Input& AddInputDevices(InputDeviceSettings&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(std::move(value)); return *this; }
+    template<typename InputDevicesT = Aws::Vector<InputDeviceSettings>>
+    void SetInputDevices(InputDevicesT&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = std::forward<InputDevicesT>(value); }
+    template<typename InputDevicesT = Aws::Vector<InputDeviceSettings>>
+    Input& WithInputDevices(InputDevicesT&& value) { SetInputDevices(std::forward<InputDevicesT>(value)); return *this;}
+    template<typename InputDevicesT = InputDeviceSettings>
+    Input& AddInputDevices(InputDevicesT&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.emplace_back(std::forward<InputDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A list of IDs for all Inputs which are partners of this one.
      */
-    inline const Aws::Vector<Aws::String>& GetInputPartnerIds() const{ return m_inputPartnerIds; }
+    inline const Aws::Vector<Aws::String>& GetInputPartnerIds() const { return m_inputPartnerIds; }
     inline bool InputPartnerIdsHasBeenSet() const { return m_inputPartnerIdsHasBeenSet; }
-    inline void SetInputPartnerIds(const Aws::Vector<Aws::String>& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = value; }
-    inline void SetInputPartnerIds(Aws::Vector<Aws::String>&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = std::move(value); }
-    inline Input& WithInputPartnerIds(const Aws::Vector<Aws::String>& value) { SetInputPartnerIds(value); return *this;}
-    inline Input& WithInputPartnerIds(Aws::Vector<Aws::String>&& value) { SetInputPartnerIds(std::move(value)); return *this;}
-    inline Input& AddInputPartnerIds(const Aws::String& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
-    inline Input& AddInputPartnerIds(Aws::String&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(std::move(value)); return *this; }
-    inline Input& AddInputPartnerIds(const char* value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
+    template<typename InputPartnerIdsT = Aws::Vector<Aws::String>>
+    void SetInputPartnerIds(InputPartnerIdsT&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = std::forward<InputPartnerIdsT>(value); }
+    template<typename InputPartnerIdsT = Aws::Vector<Aws::String>>
+    Input& WithInputPartnerIds(InputPartnerIdsT&& value) { SetInputPartnerIds(std::forward<InputPartnerIdsT>(value)); return *this;}
+    template<typename InputPartnerIdsT = Aws::String>
+    Input& AddInputPartnerIds(InputPartnerIdsT&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.emplace_back(std::forward<InputPartnerIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -163,40 +155,36 @@ SINGLE_PIPELINE - You can
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
      */
-    inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
+    inline InputSourceType GetInputSourceType() const { return m_inputSourceType; }
     inline bool InputSourceTypeHasBeenSet() const { return m_inputSourceTypeHasBeenSet; }
-    inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
-    inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = std::move(value); }
-    inline Input& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
-    inline Input& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
+    inline void SetInputSourceType(InputSourceType value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
+    inline Input& WithInputSourceType(InputSourceType value) { SetInputSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of MediaConnect Flows for this input.
      */
-    inline const Aws::Vector<MediaConnectFlow>& GetMediaConnectFlows() const{ return m_mediaConnectFlows; }
+    inline const Aws::Vector<MediaConnectFlow>& GetMediaConnectFlows() const { return m_mediaConnectFlows; }
     inline bool MediaConnectFlowsHasBeenSet() const { return m_mediaConnectFlowsHasBeenSet; }
-    inline void SetMediaConnectFlows(const Aws::Vector<MediaConnectFlow>& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = value; }
-    inline void SetMediaConnectFlows(Aws::Vector<MediaConnectFlow>&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = std::move(value); }
-    inline Input& WithMediaConnectFlows(const Aws::Vector<MediaConnectFlow>& value) { SetMediaConnectFlows(value); return *this;}
-    inline Input& WithMediaConnectFlows(Aws::Vector<MediaConnectFlow>&& value) { SetMediaConnectFlows(std::move(value)); return *this;}
-    inline Input& AddMediaConnectFlows(const MediaConnectFlow& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows.push_back(value); return *this; }
-    inline Input& AddMediaConnectFlows(MediaConnectFlow&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows.push_back(std::move(value)); return *this; }
+    template<typename MediaConnectFlowsT = Aws::Vector<MediaConnectFlow>>
+    void SetMediaConnectFlows(MediaConnectFlowsT&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = std::forward<MediaConnectFlowsT>(value); }
+    template<typename MediaConnectFlowsT = Aws::Vector<MediaConnectFlow>>
+    Input& WithMediaConnectFlows(MediaConnectFlowsT&& value) { SetMediaConnectFlows(std::forward<MediaConnectFlowsT>(value)); return *this;}
+    template<typename MediaConnectFlowsT = MediaConnectFlow>
+    Input& AddMediaConnectFlows(MediaConnectFlowsT&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows.emplace_back(std::forward<MediaConnectFlowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The user-assigned name (This is a mutable value).
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Input& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Input& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Input& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Input& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,94 +192,84 @@ during input switch actions. Presently, this
      * The Amazon Resource Name (ARN) of the role this input assumes during and after
      * creation.
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline Input& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline Input& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline Input& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    Input& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of IDs for all the Input Security Groups attached to the input.
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline Input& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline Input& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline Input& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline Input& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline Input& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    Input& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    Input& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A list of the sources of the input (PULL-type).
      */
-    inline const Aws::Vector<InputSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<InputSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<InputSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<InputSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline Input& WithSources(const Aws::Vector<InputSource>& value) { SetSources(value); return *this;}
-    inline Input& WithSources(Aws::Vector<InputSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline Input& AddSources(const InputSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline Input& AddSources(InputSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<InputSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<InputSource>>
+    Input& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = InputSource>
+    Input& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const InputState& GetState() const{ return m_state; }
+    inline InputState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const InputState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(InputState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Input& WithState(const InputState& value) { SetState(value); return *this;}
-    inline Input& WithState(InputState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(InputState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Input& WithState(InputState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * A collection of key-value pairs.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Input& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Input& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Input& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Input& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Input& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Input& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Input& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Input& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Input& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Input& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Input& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const InputType& GetType() const{ return m_type; }
+    inline InputType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InputType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InputType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Input& WithType(const InputType& value) { SetType(value); return *this;}
-    inline Input& WithType(InputType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InputType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Input& WithType(InputType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The settings associated with an SRT input.
      */
-    inline const SrtSettings& GetSrtSettings() const{ return m_srtSettings; }
+    inline const SrtSettings& GetSrtSettings() const { return m_srtSettings; }
     inline bool SrtSettingsHasBeenSet() const { return m_srtSettingsHasBeenSet; }
-    inline void SetSrtSettings(const SrtSettings& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = value; }
-    inline void SetSrtSettings(SrtSettings&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::move(value); }
-    inline Input& WithSrtSettings(const SrtSettings& value) { SetSrtSettings(value); return *this;}
-    inline Input& WithSrtSettings(SrtSettings&& value) { SetSrtSettings(std::move(value)); return *this;}
+    template<typename SrtSettingsT = SrtSettings>
+    void SetSrtSettings(SrtSettingsT&& value) { m_srtSettingsHasBeenSet = true; m_srtSettings = std::forward<SrtSettingsT>(value); }
+    template<typename SrtSettingsT = SrtSettings>
+    Input& WithSrtSettings(SrtSettingsT&& value) { SetSrtSettings(std::forward<SrtSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -300,24 +278,22 @@ during input switch actions. Presently, this
      * for
 an input in a customer network.
      */
-    inline const InputNetworkLocation& GetInputNetworkLocation() const{ return m_inputNetworkLocation; }
+    inline InputNetworkLocation GetInputNetworkLocation() const { return m_inputNetworkLocation; }
     inline bool InputNetworkLocationHasBeenSet() const { return m_inputNetworkLocationHasBeenSet; }
-    inline void SetInputNetworkLocation(const InputNetworkLocation& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = value; }
-    inline void SetInputNetworkLocation(InputNetworkLocation&& value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = std::move(value); }
-    inline Input& WithInputNetworkLocation(const InputNetworkLocation& value) { SetInputNetworkLocation(value); return *this;}
-    inline Input& WithInputNetworkLocation(InputNetworkLocation&& value) { SetInputNetworkLocation(std::move(value)); return *this;}
+    inline void SetInputNetworkLocation(InputNetworkLocation value) { m_inputNetworkLocationHasBeenSet = true; m_inputNetworkLocation = value; }
+    inline Input& WithInputNetworkLocation(InputNetworkLocation value) { SetInputNetworkLocation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Multicast Input settings.
      */
-    inline const MulticastSettings& GetMulticastSettings() const{ return m_multicastSettings; }
+    inline const MulticastSettings& GetMulticastSettings() const { return m_multicastSettings; }
     inline bool MulticastSettingsHasBeenSet() const { return m_multicastSettingsHasBeenSet; }
-    inline void SetMulticastSettings(const MulticastSettings& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = value; }
-    inline void SetMulticastSettings(MulticastSettings&& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = std::move(value); }
-    inline Input& WithMulticastSettings(const MulticastSettings& value) { SetMulticastSettings(value); return *this;}
-    inline Input& WithMulticastSettings(MulticastSettings&& value) { SetMulticastSettings(std::move(value)); return *this;}
+    template<typename MulticastSettingsT = MulticastSettings>
+    void SetMulticastSettings(MulticastSettingsT&& value) { m_multicastSettingsHasBeenSet = true; m_multicastSettings = std::forward<MulticastSettingsT>(value); }
+    template<typename MulticastSettingsT = MulticastSettings>
+    Input& WithMulticastSettings(MulticastSettingsT&& value) { SetMulticastSettings(std::forward<MulticastSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -333,7 +309,7 @@ an input in a customer network.
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    InputClass m_inputClass;
+    InputClass m_inputClass{InputClass::NOT_SET};
     bool m_inputClassHasBeenSet = false;
 
     Aws::Vector<InputDeviceSettings> m_inputDevices;
@@ -342,7 +318,7 @@ an input in a customer network.
     Aws::Vector<Aws::String> m_inputPartnerIds;
     bool m_inputPartnerIdsHasBeenSet = false;
 
-    InputSourceType m_inputSourceType;
+    InputSourceType m_inputSourceType{InputSourceType::NOT_SET};
     bool m_inputSourceTypeHasBeenSet = false;
 
     Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
@@ -360,19 +336,19 @@ an input in a customer network.
     Aws::Vector<InputSource> m_sources;
     bool m_sourcesHasBeenSet = false;
 
-    InputState m_state;
+    InputState m_state{InputState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    InputType m_type;
+    InputType m_type{InputType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     SrtSettings m_srtSettings;
     bool m_srtSettingsHasBeenSet = false;
 
-    InputNetworkLocation m_inputNetworkLocation;
+    InputNetworkLocation m_inputNetworkLocation{InputNetworkLocation::NOT_SET};
     bool m_inputNetworkLocationHasBeenSet = false;
 
     MulticastSettings m_multicastSettings;

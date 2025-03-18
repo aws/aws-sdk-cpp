@@ -32,7 +32,7 @@ namespace Model
   class AutoScalingSpecification
   {
   public:
-    AWS_KEYSPACES_API AutoScalingSpecification();
+    AWS_KEYSPACES_API AutoScalingSpecification() = default;
     AWS_KEYSPACES_API AutoScalingSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API AutoScalingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The auto scaling settings for the table's write capacity.</p>
      */
-    inline const AutoScalingSettings& GetWriteCapacityAutoScaling() const{ return m_writeCapacityAutoScaling; }
+    inline const AutoScalingSettings& GetWriteCapacityAutoScaling() const { return m_writeCapacityAutoScaling; }
     inline bool WriteCapacityAutoScalingHasBeenSet() const { return m_writeCapacityAutoScalingHasBeenSet; }
-    inline void SetWriteCapacityAutoScaling(const AutoScalingSettings& value) { m_writeCapacityAutoScalingHasBeenSet = true; m_writeCapacityAutoScaling = value; }
-    inline void SetWriteCapacityAutoScaling(AutoScalingSettings&& value) { m_writeCapacityAutoScalingHasBeenSet = true; m_writeCapacityAutoScaling = std::move(value); }
-    inline AutoScalingSpecification& WithWriteCapacityAutoScaling(const AutoScalingSettings& value) { SetWriteCapacityAutoScaling(value); return *this;}
-    inline AutoScalingSpecification& WithWriteCapacityAutoScaling(AutoScalingSettings&& value) { SetWriteCapacityAutoScaling(std::move(value)); return *this;}
+    template<typename WriteCapacityAutoScalingT = AutoScalingSettings>
+    void SetWriteCapacityAutoScaling(WriteCapacityAutoScalingT&& value) { m_writeCapacityAutoScalingHasBeenSet = true; m_writeCapacityAutoScaling = std::forward<WriteCapacityAutoScalingT>(value); }
+    template<typename WriteCapacityAutoScalingT = AutoScalingSettings>
+    AutoScalingSpecification& WithWriteCapacityAutoScaling(WriteCapacityAutoScalingT&& value) { SetWriteCapacityAutoScaling(std::forward<WriteCapacityAutoScalingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The auto scaling settings for the table's read capacity.</p>
      */
-    inline const AutoScalingSettings& GetReadCapacityAutoScaling() const{ return m_readCapacityAutoScaling; }
+    inline const AutoScalingSettings& GetReadCapacityAutoScaling() const { return m_readCapacityAutoScaling; }
     inline bool ReadCapacityAutoScalingHasBeenSet() const { return m_readCapacityAutoScalingHasBeenSet; }
-    inline void SetReadCapacityAutoScaling(const AutoScalingSettings& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = value; }
-    inline void SetReadCapacityAutoScaling(AutoScalingSettings&& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = std::move(value); }
-    inline AutoScalingSpecification& WithReadCapacityAutoScaling(const AutoScalingSettings& value) { SetReadCapacityAutoScaling(value); return *this;}
-    inline AutoScalingSpecification& WithReadCapacityAutoScaling(AutoScalingSettings&& value) { SetReadCapacityAutoScaling(std::move(value)); return *this;}
+    template<typename ReadCapacityAutoScalingT = AutoScalingSettings>
+    void SetReadCapacityAutoScaling(ReadCapacityAutoScalingT&& value) { m_readCapacityAutoScalingHasBeenSet = true; m_readCapacityAutoScaling = std::forward<ReadCapacityAutoScalingT>(value); }
+    template<typename ReadCapacityAutoScalingT = AutoScalingSettings>
+    AutoScalingSpecification& WithReadCapacityAutoScaling(ReadCapacityAutoScalingT&& value) { SetReadCapacityAutoScaling(std::forward<ReadCapacityAutoScalingT>(value)); return *this;}
     ///@}
   private:
 

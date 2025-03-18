@@ -28,35 +28,35 @@ namespace Model
   class PredictResult
   {
   public:
-    AWS_MACHINELEARNING_API PredictResult();
+    AWS_MACHINELEARNING_API PredictResult() = default;
     AWS_MACHINELEARNING_API PredictResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACHINELEARNING_API PredictResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Prediction& GetPrediction() const{ return m_prediction; }
-    inline void SetPrediction(const Prediction& value) { m_prediction = value; }
-    inline void SetPrediction(Prediction&& value) { m_prediction = std::move(value); }
-    inline PredictResult& WithPrediction(const Prediction& value) { SetPrediction(value); return *this;}
-    inline PredictResult& WithPrediction(Prediction&& value) { SetPrediction(std::move(value)); return *this;}
+    inline const Prediction& GetPrediction() const { return m_prediction; }
+    template<typename PredictionT = Prediction>
+    void SetPrediction(PredictionT&& value) { m_predictionHasBeenSet = true; m_prediction = std::forward<PredictionT>(value); }
+    template<typename PredictionT = Prediction>
+    PredictResult& WithPrediction(PredictionT&& value) { SetPrediction(std::forward<PredictionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PredictResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PredictResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PredictResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PredictResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Prediction m_prediction;
+    bool m_predictionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

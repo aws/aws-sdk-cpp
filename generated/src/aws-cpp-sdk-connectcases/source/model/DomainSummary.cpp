@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-DomainSummary::DomainSummary() : 
-    m_domainArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 DomainSummary::DomainSummary(JsonView jsonValue)
-  : DomainSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainArn"))
   {
     m_domainArn = jsonValue.GetString("domainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

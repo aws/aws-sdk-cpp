@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-WebACLHasIncompatibleConfigurationViolation::WebACLHasIncompatibleConfigurationViolation() : 
-    m_webACLArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 WebACLHasIncompatibleConfigurationViolation::WebACLHasIncompatibleConfigurationViolation(JsonView jsonValue)
-  : WebACLHasIncompatibleConfigurationViolation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WebACLHasIncompatibleConfigurationViolation& WebACLHasIncompatibleConfigurationV
   if(jsonValue.ValueExists("WebACLArn"))
   {
     m_webACLArn = jsonValue.GetString("WebACLArn");
-
     m_webACLArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

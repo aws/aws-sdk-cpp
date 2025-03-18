@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFailbackReplicationConfigurationRequest::GetFailbackReplicationConfigurationRequest() : 
-    m_recoveryInstanceIDHasBeenSet(false)
-{
-}
-
 Aws::String GetFailbackReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

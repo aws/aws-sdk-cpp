@@ -31,7 +31,7 @@ namespace Model
   class GetIngressPointResult
   {
   public:
-    AWS_MAILMANAGER_API GetIngressPointResult();
+    AWS_MAILMANAGER_API GetIngressPointResult() = default;
     AWS_MAILMANAGER_API GetIngressPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetIngressPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,85 +41,77 @@ namespace Model
      * <p> The DNS A Record that identifies your ingress endpoint. Configure your DNS
      * Mail Exchange (MX) record with this value to route emails to Mail Manager. </p>
      */
-    inline const Aws::String& GetARecord() const{ return m_aRecord; }
-    inline void SetARecord(const Aws::String& value) { m_aRecord = value; }
-    inline void SetARecord(Aws::String&& value) { m_aRecord = std::move(value); }
-    inline void SetARecord(const char* value) { m_aRecord.assign(value); }
-    inline GetIngressPointResult& WithARecord(const Aws::String& value) { SetARecord(value); return *this;}
-    inline GetIngressPointResult& WithARecord(Aws::String&& value) { SetARecord(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithARecord(const char* value) { SetARecord(value); return *this;}
+    inline const Aws::String& GetARecord() const { return m_aRecord; }
+    template<typename ARecordT = Aws::String>
+    void SetARecord(ARecordT&& value) { m_aRecordHasBeenSet = true; m_aRecord = std::forward<ARecordT>(value); }
+    template<typename ARecordT = Aws::String>
+    GetIngressPointResult& WithARecord(ARecordT&& value) { SetARecord(std::forward<ARecordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the ingress endpoint was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetIngressPointResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetIngressPointResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetIngressPointResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetIngressPointArn() const{ return m_ingressPointArn; }
-    inline void SetIngressPointArn(const Aws::String& value) { m_ingressPointArn = value; }
-    inline void SetIngressPointArn(Aws::String&& value) { m_ingressPointArn = std::move(value); }
-    inline void SetIngressPointArn(const char* value) { m_ingressPointArn.assign(value); }
-    inline GetIngressPointResult& WithIngressPointArn(const Aws::String& value) { SetIngressPointArn(value); return *this;}
-    inline GetIngressPointResult& WithIngressPointArn(Aws::String&& value) { SetIngressPointArn(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithIngressPointArn(const char* value) { SetIngressPointArn(value); return *this;}
+    inline const Aws::String& GetIngressPointArn() const { return m_ingressPointArn; }
+    template<typename IngressPointArnT = Aws::String>
+    void SetIngressPointArn(IngressPointArnT&& value) { m_ingressPointArnHasBeenSet = true; m_ingressPointArn = std::forward<IngressPointArnT>(value); }
+    template<typename IngressPointArnT = Aws::String>
+    GetIngressPointResult& WithIngressPointArn(IngressPointArnT&& value) { SetIngressPointArn(std::forward<IngressPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication configuration of the ingress endpoint resource.</p>
      */
-    inline const IngressPointAuthConfiguration& GetIngressPointAuthConfiguration() const{ return m_ingressPointAuthConfiguration; }
-    inline void SetIngressPointAuthConfiguration(const IngressPointAuthConfiguration& value) { m_ingressPointAuthConfiguration = value; }
-    inline void SetIngressPointAuthConfiguration(IngressPointAuthConfiguration&& value) { m_ingressPointAuthConfiguration = std::move(value); }
-    inline GetIngressPointResult& WithIngressPointAuthConfiguration(const IngressPointAuthConfiguration& value) { SetIngressPointAuthConfiguration(value); return *this;}
-    inline GetIngressPointResult& WithIngressPointAuthConfiguration(IngressPointAuthConfiguration&& value) { SetIngressPointAuthConfiguration(std::move(value)); return *this;}
+    inline const IngressPointAuthConfiguration& GetIngressPointAuthConfiguration() const { return m_ingressPointAuthConfiguration; }
+    template<typename IngressPointAuthConfigurationT = IngressPointAuthConfiguration>
+    void SetIngressPointAuthConfiguration(IngressPointAuthConfigurationT&& value) { m_ingressPointAuthConfigurationHasBeenSet = true; m_ingressPointAuthConfiguration = std::forward<IngressPointAuthConfigurationT>(value); }
+    template<typename IngressPointAuthConfigurationT = IngressPointAuthConfiguration>
+    GetIngressPointResult& WithIngressPointAuthConfiguration(IngressPointAuthConfigurationT&& value) { SetIngressPointAuthConfiguration(std::forward<IngressPointAuthConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of an ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
-    inline void SetIngressPointId(const Aws::String& value) { m_ingressPointId = value; }
-    inline void SetIngressPointId(Aws::String&& value) { m_ingressPointId = std::move(value); }
-    inline void SetIngressPointId(const char* value) { m_ingressPointId.assign(value); }
-    inline GetIngressPointResult& WithIngressPointId(const Aws::String& value) { SetIngressPointId(value); return *this;}
-    inline GetIngressPointResult& WithIngressPointId(Aws::String&& value) { SetIngressPointId(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithIngressPointId(const char* value) { SetIngressPointId(value); return *this;}
+    inline const Aws::String& GetIngressPointId() const { return m_ingressPointId; }
+    template<typename IngressPointIdT = Aws::String>
+    void SetIngressPointId(IngressPointIdT&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::forward<IngressPointIdT>(value); }
+    template<typename IngressPointIdT = Aws::String>
+    GetIngressPointResult& WithIngressPointId(IngressPointIdT&& value) { SetIngressPointId(std::forward<IngressPointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user friendly name for the ingress endpoint.</p>
      */
-    inline const Aws::String& GetIngressPointName() const{ return m_ingressPointName; }
-    inline void SetIngressPointName(const Aws::String& value) { m_ingressPointName = value; }
-    inline void SetIngressPointName(Aws::String&& value) { m_ingressPointName = std::move(value); }
-    inline void SetIngressPointName(const char* value) { m_ingressPointName.assign(value); }
-    inline GetIngressPointResult& WithIngressPointName(const Aws::String& value) { SetIngressPointName(value); return *this;}
-    inline GetIngressPointResult& WithIngressPointName(Aws::String&& value) { SetIngressPointName(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithIngressPointName(const char* value) { SetIngressPointName(value); return *this;}
+    inline const Aws::String& GetIngressPointName() const { return m_ingressPointName; }
+    template<typename IngressPointNameT = Aws::String>
+    void SetIngressPointName(IngressPointNameT&& value) { m_ingressPointNameHasBeenSet = true; m_ingressPointName = std::forward<IngressPointNameT>(value); }
+    template<typename IngressPointNameT = Aws::String>
+    GetIngressPointResult& WithIngressPointName(IngressPointNameT&& value) { SetIngressPointName(std::forward<IngressPointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the ingress endpoint was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestamp = std::move(value); }
-    inline GetIngressPointResult& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline GetIngressPointResult& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    GetIngressPointResult& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,24 +119,20 @@ namespace Model
      * <p>The identifier of a rule set resource associated with the ingress
      * endpoint.</p>
      */
-    inline const Aws::String& GetRuleSetId() const{ return m_ruleSetId; }
-    inline void SetRuleSetId(const Aws::String& value) { m_ruleSetId = value; }
-    inline void SetRuleSetId(Aws::String&& value) { m_ruleSetId = std::move(value); }
-    inline void SetRuleSetId(const char* value) { m_ruleSetId.assign(value); }
-    inline GetIngressPointResult& WithRuleSetId(const Aws::String& value) { SetRuleSetId(value); return *this;}
-    inline GetIngressPointResult& WithRuleSetId(Aws::String&& value) { SetRuleSetId(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithRuleSetId(const char* value) { SetRuleSetId(value); return *this;}
+    inline const Aws::String& GetRuleSetId() const { return m_ruleSetId; }
+    template<typename RuleSetIdT = Aws::String>
+    void SetRuleSetId(RuleSetIdT&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::forward<RuleSetIdT>(value); }
+    template<typename RuleSetIdT = Aws::String>
+    GetIngressPointResult& WithRuleSetId(RuleSetIdT&& value) { SetRuleSetId(std::forward<RuleSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the ingress endpoint resource.</p>
      */
-    inline const IngressPointStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const IngressPointStatus& value) { m_status = value; }
-    inline void SetStatus(IngressPointStatus&& value) { m_status = std::move(value); }
-    inline GetIngressPointResult& WithStatus(const IngressPointStatus& value) { SetStatus(value); return *this;}
-    inline GetIngressPointResult& WithStatus(IngressPointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline IngressPointStatus GetStatus() const { return m_status; }
+    inline void SetStatus(IngressPointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetIngressPointResult& WithStatus(IngressPointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -152,61 +140,67 @@ namespace Model
      * <p>The identifier of the traffic policy resource associated with the ingress
      * endpoint.</p>
      */
-    inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
-    inline void SetTrafficPolicyId(const Aws::String& value) { m_trafficPolicyId = value; }
-    inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyId = std::move(value); }
-    inline void SetTrafficPolicyId(const char* value) { m_trafficPolicyId.assign(value); }
-    inline GetIngressPointResult& WithTrafficPolicyId(const Aws::String& value) { SetTrafficPolicyId(value); return *this;}
-    inline GetIngressPointResult& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
+    inline const Aws::String& GetTrafficPolicyId() const { return m_trafficPolicyId; }
+    template<typename TrafficPolicyIdT = Aws::String>
+    void SetTrafficPolicyId(TrafficPolicyIdT&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::forward<TrafficPolicyIdT>(value); }
+    template<typename TrafficPolicyIdT = Aws::String>
+    GetIngressPointResult& WithTrafficPolicyId(TrafficPolicyIdT&& value) { SetTrafficPolicyId(std::forward<TrafficPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of ingress endpoint.</p>
      */
-    inline const IngressPointType& GetType() const{ return m_type; }
-    inline void SetType(const IngressPointType& value) { m_type = value; }
-    inline void SetType(IngressPointType&& value) { m_type = std::move(value); }
-    inline GetIngressPointResult& WithType(const IngressPointType& value) { SetType(value); return *this;}
-    inline GetIngressPointResult& WithType(IngressPointType&& value) { SetType(std::move(value)); return *this;}
+    inline IngressPointType GetType() const { return m_type; }
+    inline void SetType(IngressPointType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetIngressPointResult& WithType(IngressPointType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIngressPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIngressPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIngressPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIngressPointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aRecord;
+    bool m_aRecordHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_ingressPointArn;
+    bool m_ingressPointArnHasBeenSet = false;
 
     IngressPointAuthConfiguration m_ingressPointAuthConfiguration;
+    bool m_ingressPointAuthConfigurationHasBeenSet = false;
 
     Aws::String m_ingressPointId;
+    bool m_ingressPointIdHasBeenSet = false;
 
     Aws::String m_ingressPointName;
+    bool m_ingressPointNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_ruleSetId;
+    bool m_ruleSetIdHasBeenSet = false;
 
-    IngressPointStatus m_status;
+    IngressPointStatus m_status{IngressPointStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_trafficPolicyId;
+    bool m_trafficPolicyIdHasBeenSet = false;
 
-    IngressPointType m_type;
+    IngressPointType m_type{IngressPointType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

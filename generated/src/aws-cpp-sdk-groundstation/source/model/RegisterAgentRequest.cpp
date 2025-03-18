@@ -12,12 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterAgentRequest::RegisterAgentRequest() : 
-    m_agentDetailsHasBeenSet(false),
-    m_discoveryDataHasBeenSet(false)
-{
-}
-
 Aws::String RegisterAgentRequest::SerializePayload() const
 {
   JsonValue payload;

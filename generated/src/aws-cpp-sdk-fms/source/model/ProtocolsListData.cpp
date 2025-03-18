@@ -18,19 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ProtocolsListData::ProtocolsListData() : 
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_listUpdateTokenHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_protocolsListHasBeenSet(false),
-    m_previousProtocolsListHasBeenSet(false)
-{
-}
-
 ProtocolsListData::ProtocolsListData(JsonView jsonValue)
-  : ProtocolsListData()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ProtocolsListData& ProtocolsListData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListId"))
   {
     m_listId = jsonValue.GetString("ListId");
-
     m_listIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListName"))
   {
     m_listName = jsonValue.GetString("ListName");
-
     m_listNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListUpdateToken"))
   {
     m_listUpdateToken = jsonValue.GetString("ListUpdateToken");
-
     m_listUpdateTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtocolsList"))
   {
     Aws::Utils::Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
@@ -81,7 +59,6 @@ ProtocolsListData& ProtocolsListData::operator =(JsonView jsonValue)
     }
     m_protocolsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousProtocolsList"))
   {
     Aws::Map<Aws::String, JsonView> previousProtocolsListJsonMap = jsonValue.GetObject("PreviousProtocolsList").GetAllObjects();
@@ -98,7 +75,6 @@ ProtocolsListData& ProtocolsListData::operator =(JsonView jsonValue)
     }
     m_previousProtocolsListHasBeenSet = true;
   }
-
   return *this;
 }
 

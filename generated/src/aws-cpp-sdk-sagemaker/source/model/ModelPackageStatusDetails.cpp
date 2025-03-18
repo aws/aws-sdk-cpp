@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelPackageStatusDetails::ModelPackageStatusDetails() : 
-    m_validationStatusesHasBeenSet(false),
-    m_imageScanStatusesHasBeenSet(false)
-{
-}
-
 ModelPackageStatusDetails::ModelPackageStatusDetails(JsonView jsonValue)
-  : ModelPackageStatusDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ModelPackageStatusDetails& ModelPackageStatusDetails::operator =(JsonView jsonVa
     }
     m_validationStatusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageScanStatuses"))
   {
     Aws::Utils::Array<JsonView> imageScanStatusesJsonList = jsonValue.GetArray("ImageScanStatuses");
@@ -51,7 +43,6 @@ ModelPackageStatusDetails& ModelPackageStatusDetails::operator =(JsonView jsonVa
     }
     m_imageScanStatusesHasBeenSet = true;
   }
-
   return *this;
 }
 

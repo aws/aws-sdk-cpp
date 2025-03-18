@@ -21,7 +21,7 @@ namespace Model
   class DeprovisionPublicIpv4PoolCidrRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeprovisionPublicIpv4PoolCidrRequest();
+    AWS_EC2_API DeprovisionPublicIpv4PoolCidrRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeprovisionPublicIpv4PoolCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The ID of the pool that you want to deprovision the CIDR from.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    DeprovisionPublicIpv4PoolCidrRequest& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * have to run this command to deprovision each of the 256 IP addresses in the
      * <code>/24</code> CIDR.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline DeprovisionPublicIpv4PoolCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    DeprovisionPublicIpv4PoolCidrRequest& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_poolId;

@@ -21,7 +21,7 @@ namespace Model
   class DescribeAllManagedProductsRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API DescribeAllManagedProductsRequest();
+    AWS_WAFV2_API DescribeAllManagedProductsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,16 +43,14 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline DescribeAllManagedProductsRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline DescribeAllManagedProductsRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline DescribeAllManagedProductsRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
   private:
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
   };
 

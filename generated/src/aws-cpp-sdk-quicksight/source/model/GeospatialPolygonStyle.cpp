@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialPolygonStyle::GeospatialPolygonStyle() : 
-    m_polygonSymbolStyleHasBeenSet(false)
-{
-}
-
 GeospatialPolygonStyle::GeospatialPolygonStyle(JsonView jsonValue)
-  : GeospatialPolygonStyle()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialPolygonStyle& GeospatialPolygonStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolygonSymbolStyle"))
   {
     m_polygonSymbolStyle = jsonValue.GetObject("PolygonSymbolStyle");
-
     m_polygonSymbolStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

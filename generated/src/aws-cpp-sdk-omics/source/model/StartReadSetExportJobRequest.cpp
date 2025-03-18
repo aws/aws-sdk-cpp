@@ -12,15 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReadSetExportJobRequest::StartReadSetExportJobRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String StartReadSetExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

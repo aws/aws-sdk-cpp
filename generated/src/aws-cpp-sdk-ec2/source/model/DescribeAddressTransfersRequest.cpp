@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAddressTransfersRequest::DescribeAddressTransfersRequest() : 
-    m_allocationIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddressTransfersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

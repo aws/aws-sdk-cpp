@@ -20,10 +20,6 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OptimizePromptInitialResponse::OptimizePromptInitialResponse()
-{
-}
-
 OptimizePromptInitialResponse::OptimizePromptInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

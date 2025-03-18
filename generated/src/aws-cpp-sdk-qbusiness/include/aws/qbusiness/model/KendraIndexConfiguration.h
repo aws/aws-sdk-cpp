@@ -31,7 +31,7 @@ namespace Model
   class KendraIndexConfiguration
   {
   public:
-    AWS_QBUSINESS_API KendraIndexConfiguration();
+    AWS_QBUSINESS_API KendraIndexConfiguration() = default;
     AWS_QBUSINESS_API KendraIndexConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API KendraIndexConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Kendra index.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline KendraIndexConfiguration& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline KendraIndexConfiguration& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline KendraIndexConfiguration& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    KendraIndexConfiguration& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
   private:
 

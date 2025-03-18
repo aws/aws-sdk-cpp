@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MemoryConfiguration::MemoryConfiguration() : 
-    m_enabledMemoryTypesHasBeenSet(false),
-    m_sessionSummaryConfigurationHasBeenSet(false),
-    m_storageDays(0),
-    m_storageDaysHasBeenSet(false)
-{
-}
-
 MemoryConfiguration::MemoryConfiguration(JsonView jsonValue)
-  : MemoryConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ MemoryConfiguration& MemoryConfiguration::operator =(JsonView jsonValue)
     }
     m_enabledMemoryTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionSummaryConfiguration"))
   {
     m_sessionSummaryConfiguration = jsonValue.GetObject("sessionSummaryConfiguration");
-
     m_sessionSummaryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageDays"))
   {
     m_storageDays = jsonValue.GetInteger("storageDays");
-
     m_storageDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

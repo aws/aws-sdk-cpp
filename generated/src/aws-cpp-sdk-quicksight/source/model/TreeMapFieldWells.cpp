@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TreeMapFieldWells::TreeMapFieldWells() : 
-    m_treeMapAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 TreeMapFieldWells::TreeMapFieldWells(JsonView jsonValue)
-  : TreeMapFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TreeMapFieldWells& TreeMapFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TreeMapAggregatedFieldWells"))
   {
     m_treeMapAggregatedFieldWells = jsonValue.GetObject("TreeMapAggregatedFieldWells");
-
     m_treeMapAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

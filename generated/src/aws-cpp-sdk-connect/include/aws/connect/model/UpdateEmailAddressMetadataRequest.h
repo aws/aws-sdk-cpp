@@ -21,7 +21,7 @@ namespace Model
   class UpdateEmailAddressMetadataRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateEmailAddressMetadataRequest();
+    AWS_CONNECT_API UpdateEmailAddressMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,56 +38,48 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateEmailAddressMetadataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateEmailAddressMetadataRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the email address.</p>
      */
-    inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
+    inline const Aws::String& GetEmailAddressId() const { return m_emailAddressId; }
     inline bool EmailAddressIdHasBeenSet() const { return m_emailAddressIdHasBeenSet; }
-    inline void SetEmailAddressId(const Aws::String& value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId = value; }
-    inline void SetEmailAddressId(Aws::String&& value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId = std::move(value); }
-    inline void SetEmailAddressId(const char* value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId.assign(value); }
-    inline UpdateEmailAddressMetadataRequest& WithEmailAddressId(const Aws::String& value) { SetEmailAddressId(value); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithEmailAddressId(Aws::String&& value) { SetEmailAddressId(std::move(value)); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithEmailAddressId(const char* value) { SetEmailAddressId(value); return *this;}
+    template<typename EmailAddressIdT = Aws::String>
+    void SetEmailAddressId(EmailAddressIdT&& value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId = std::forward<EmailAddressIdT>(value); }
+    template<typename EmailAddressIdT = Aws::String>
+    UpdateEmailAddressMetadataRequest& WithEmailAddressId(EmailAddressIdT&& value) { SetEmailAddressId(std::forward<EmailAddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the email address.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateEmailAddressMetadataRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateEmailAddressMetadataRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of email address.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateEmailAddressMetadataRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateEmailAddressMetadataRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +90,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateEmailAddressMetadataRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateEmailAddressMetadataRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateEmailAddressMetadataRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

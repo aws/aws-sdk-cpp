@@ -33,7 +33,7 @@ namespace Model
   class ClientCertAuthSettings
   {
   public:
-    AWS_DIRECTORYSERVICE_API ClientCertAuthSettings();
+    AWS_DIRECTORYSERVICE_API ClientCertAuthSettings() = default;
     AWS_DIRECTORYSERVICE_API ClientCertAuthSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API ClientCertAuthSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * status. A secondary value to any OCSP address found in the AIA extension of the
      * user certificate.</p>
      */
-    inline const Aws::String& GetOCSPUrl() const{ return m_oCSPUrl; }
+    inline const Aws::String& GetOCSPUrl() const { return m_oCSPUrl; }
     inline bool OCSPUrlHasBeenSet() const { return m_oCSPUrlHasBeenSet; }
-    inline void SetOCSPUrl(const Aws::String& value) { m_oCSPUrlHasBeenSet = true; m_oCSPUrl = value; }
-    inline void SetOCSPUrl(Aws::String&& value) { m_oCSPUrlHasBeenSet = true; m_oCSPUrl = std::move(value); }
-    inline void SetOCSPUrl(const char* value) { m_oCSPUrlHasBeenSet = true; m_oCSPUrl.assign(value); }
-    inline ClientCertAuthSettings& WithOCSPUrl(const Aws::String& value) { SetOCSPUrl(value); return *this;}
-    inline ClientCertAuthSettings& WithOCSPUrl(Aws::String&& value) { SetOCSPUrl(std::move(value)); return *this;}
-    inline ClientCertAuthSettings& WithOCSPUrl(const char* value) { SetOCSPUrl(value); return *this;}
+    template<typename OCSPUrlT = Aws::String>
+    void SetOCSPUrl(OCSPUrlT&& value) { m_oCSPUrlHasBeenSet = true; m_oCSPUrl = std::forward<OCSPUrlT>(value); }
+    template<typename OCSPUrlT = Aws::String>
+    ClientCertAuthSettings& WithOCSPUrl(OCSPUrlT&& value) { SetOCSPUrl(std::forward<OCSPUrlT>(value)); return *this;}
     ///@}
   private:
 

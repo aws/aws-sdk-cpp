@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupRequest::CreateGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_precedence(0),
-    m_precedenceHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ResourceIdentifier
   {
   public:
-    AWS_RESILIENCEHUB_API ResourceIdentifier();
+    AWS_RESILIENCEHUB_API ResourceIdentifier() = default;
     AWS_RESILIENCEHUB_API ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>Logical identifier of the drifted resource.</p>
      */
-    inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const LogicalResourceId& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline ResourceIdentifier& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
-    inline ResourceIdentifier& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
+    template<typename LogicalResourceIdT = LogicalResourceId>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = LogicalResourceId>
+    ResourceIdentifier& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the drifted resource.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ResourceIdentifier& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ResourceIdentifier& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResourceIdentifier& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ResourceIdentifier& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
   private:
 

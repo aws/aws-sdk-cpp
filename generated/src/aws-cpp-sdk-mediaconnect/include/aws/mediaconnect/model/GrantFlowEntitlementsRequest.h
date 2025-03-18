@@ -26,7 +26,7 @@ namespace Model
   class GrantFlowEntitlementsRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API GrantFlowEntitlementsRequest();
+    AWS_MEDIACONNECT_API GrantFlowEntitlementsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
     /**
      * The list of entitlements that you want to grant.
      */
-    inline const Aws::Vector<GrantEntitlementRequest>& GetEntitlements() const{ return m_entitlements; }
+    inline const Aws::Vector<GrantEntitlementRequest>& GetEntitlements() const { return m_entitlements; }
     inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
-    inline void SetEntitlements(const Aws::Vector<GrantEntitlementRequest>& value) { m_entitlementsHasBeenSet = true; m_entitlements = value; }
-    inline void SetEntitlements(Aws::Vector<GrantEntitlementRequest>&& value) { m_entitlementsHasBeenSet = true; m_entitlements = std::move(value); }
-    inline GrantFlowEntitlementsRequest& WithEntitlements(const Aws::Vector<GrantEntitlementRequest>& value) { SetEntitlements(value); return *this;}
-    inline GrantFlowEntitlementsRequest& WithEntitlements(Aws::Vector<GrantEntitlementRequest>&& value) { SetEntitlements(std::move(value)); return *this;}
-    inline GrantFlowEntitlementsRequest& AddEntitlements(const GrantEntitlementRequest& value) { m_entitlementsHasBeenSet = true; m_entitlements.push_back(value); return *this; }
-    inline GrantFlowEntitlementsRequest& AddEntitlements(GrantEntitlementRequest&& value) { m_entitlementsHasBeenSet = true; m_entitlements.push_back(std::move(value)); return *this; }
+    template<typename EntitlementsT = Aws::Vector<GrantEntitlementRequest>>
+    void SetEntitlements(EntitlementsT&& value) { m_entitlementsHasBeenSet = true; m_entitlements = std::forward<EntitlementsT>(value); }
+    template<typename EntitlementsT = Aws::Vector<GrantEntitlementRequest>>
+    GrantFlowEntitlementsRequest& WithEntitlements(EntitlementsT&& value) { SetEntitlements(std::forward<EntitlementsT>(value)); return *this;}
+    template<typename EntitlementsT = GrantEntitlementRequest>
+    GrantFlowEntitlementsRequest& AddEntitlements(EntitlementsT&& value) { m_entitlementsHasBeenSet = true; m_entitlements.emplace_back(std::forward<EntitlementsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The flow that you want to grant entitlements on.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline GrantFlowEntitlementsRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline GrantFlowEntitlementsRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline GrantFlowEntitlementsRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    GrantFlowEntitlementsRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
   private:
 

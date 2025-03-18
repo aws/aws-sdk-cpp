@@ -12,13 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRouteSettingsRequest::DeleteRouteSettingsRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_routeKeyHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRouteSettingsRequest::SerializePayload() const
 {
   return {};

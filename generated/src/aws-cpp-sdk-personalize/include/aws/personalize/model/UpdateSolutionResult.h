@@ -27,7 +27,7 @@ namespace Model
   class UpdateSolutionResult
   {
   public:
-    AWS_PERSONALIZE_API UpdateSolutionResult();
+    AWS_PERSONALIZE_API UpdateSolutionResult() = default;
     AWS_PERSONALIZE_API UpdateSolutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API UpdateSolutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The same solution Amazon Resource Name (ARN) as given in the request.</p>
      */
-    inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
-    inline void SetSolutionArn(const Aws::String& value) { m_solutionArn = value; }
-    inline void SetSolutionArn(Aws::String&& value) { m_solutionArn = std::move(value); }
-    inline void SetSolutionArn(const char* value) { m_solutionArn.assign(value); }
-    inline UpdateSolutionResult& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-    inline UpdateSolutionResult& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-    inline UpdateSolutionResult& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
+    inline const Aws::String& GetSolutionArn() const { return m_solutionArn; }
+    template<typename SolutionArnT = Aws::String>
+    void SetSolutionArn(SolutionArnT&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::forward<SolutionArnT>(value); }
+    template<typename SolutionArnT = Aws::String>
+    UpdateSolutionResult& WithSolutionArn(SolutionArnT&& value) { SetSolutionArn(std::forward<SolutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSolutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSolutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSolutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSolutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_solutionArn;
+    bool m_solutionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

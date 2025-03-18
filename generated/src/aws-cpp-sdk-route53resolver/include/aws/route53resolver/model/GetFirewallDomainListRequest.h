@@ -21,7 +21,7 @@ namespace Model
   class GetFirewallDomainListRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetFirewallDomainListRequest();
+    AWS_ROUTE53RESOLVER_API GetFirewallDomainListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the domain list. </p>
      */
-    inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
+    inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-    inline void SetFirewallDomainListId(const Aws::String& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = value; }
-    inline void SetFirewallDomainListId(Aws::String&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::move(value); }
-    inline void SetFirewallDomainListId(const char* value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId.assign(value); }
-    inline GetFirewallDomainListRequest& WithFirewallDomainListId(const Aws::String& value) { SetFirewallDomainListId(value); return *this;}
-    inline GetFirewallDomainListRequest& WithFirewallDomainListId(Aws::String&& value) { SetFirewallDomainListId(std::move(value)); return *this;}
-    inline GetFirewallDomainListRequest& WithFirewallDomainListId(const char* value) { SetFirewallDomainListId(value); return *this;}
+    template<typename FirewallDomainListIdT = Aws::String>
+    void SetFirewallDomainListId(FirewallDomainListIdT&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value); }
+    template<typename FirewallDomainListIdT = Aws::String>
+    GetFirewallDomainListRequest& WithFirewallDomainListId(FirewallDomainListIdT&& value) { SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value)); return *this;}
     ///@}
   private:
 

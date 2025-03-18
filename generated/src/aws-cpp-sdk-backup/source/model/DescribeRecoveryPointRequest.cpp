@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeRecoveryPointRequest::DescribeRecoveryPointRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_backupVaultAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecoveryPointRequest::SerializePayload() const
 {
   return {};

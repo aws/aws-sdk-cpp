@@ -33,7 +33,7 @@ namespace Model
   class EventsRequest
   {
   public:
-    AWS_PINPOINT_API EventsRequest();
+    AWS_PINPOINT_API EventsRequest() = default;
     AWS_PINPOINT_API EventsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EventsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,18 +44,16 @@ namespace Model
      * <p>The batch of events to process. For each item in a batch, the endpoint ID
      * acts as a key that has an EventsBatch object as its value.</p>
      */
-    inline const Aws::Map<Aws::String, EventsBatch>& GetBatchItem() const{ return m_batchItem; }
+    inline const Aws::Map<Aws::String, EventsBatch>& GetBatchItem() const { return m_batchItem; }
     inline bool BatchItemHasBeenSet() const { return m_batchItemHasBeenSet; }
-    inline void SetBatchItem(const Aws::Map<Aws::String, EventsBatch>& value) { m_batchItemHasBeenSet = true; m_batchItem = value; }
-    inline void SetBatchItem(Aws::Map<Aws::String, EventsBatch>&& value) { m_batchItemHasBeenSet = true; m_batchItem = std::move(value); }
-    inline EventsRequest& WithBatchItem(const Aws::Map<Aws::String, EventsBatch>& value) { SetBatchItem(value); return *this;}
-    inline EventsRequest& WithBatchItem(Aws::Map<Aws::String, EventsBatch>&& value) { SetBatchItem(std::move(value)); return *this;}
-    inline EventsRequest& AddBatchItem(const Aws::String& key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, value); return *this; }
-    inline EventsRequest& AddBatchItem(Aws::String&& key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(std::move(key), value); return *this; }
-    inline EventsRequest& AddBatchItem(const Aws::String& key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, std::move(value)); return *this; }
-    inline EventsRequest& AddBatchItem(Aws::String&& key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(std::move(key), std::move(value)); return *this; }
-    inline EventsRequest& AddBatchItem(const char* key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, std::move(value)); return *this; }
-    inline EventsRequest& AddBatchItem(const char* key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, value); return *this; }
+    template<typename BatchItemT = Aws::Map<Aws::String, EventsBatch>>
+    void SetBatchItem(BatchItemT&& value) { m_batchItemHasBeenSet = true; m_batchItem = std::forward<BatchItemT>(value); }
+    template<typename BatchItemT = Aws::Map<Aws::String, EventsBatch>>
+    EventsRequest& WithBatchItem(BatchItemT&& value) { SetBatchItem(std::forward<BatchItemT>(value)); return *this;}
+    template<typename BatchItemKeyT = Aws::String, typename BatchItemValueT = EventsBatch>
+    EventsRequest& AddBatchItem(BatchItemKeyT&& key, BatchItemValueT&& value) {
+      m_batchItemHasBeenSet = true; m_batchItem.emplace(std::forward<BatchItemKeyT>(key), std::forward<BatchItemValueT>(value)); return *this;
+    }
     ///@}
   private:
 

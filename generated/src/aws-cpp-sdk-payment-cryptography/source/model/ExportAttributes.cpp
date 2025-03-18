@@ -18,15 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportAttributes::ExportAttributes() : 
-    m_exportDukptInitialKeyHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false)
-{
-}
-
 ExportAttributes::ExportAttributes(JsonView jsonValue)
-  : ExportAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExportAttributes& ExportAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportDukptInitialKey"))
   {
     m_exportDukptInitialKey = jsonValue.GetObject("ExportDukptInitialKey");
-
     m_exportDukptInitialKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValueAlgorithm"))
   {
     m_keyCheckValueAlgorithm = KeyCheckValueAlgorithmMapper::GetKeyCheckValueAlgorithmForName(jsonValue.GetString("KeyCheckValueAlgorithm"));
-
     m_keyCheckValueAlgorithmHasBeenSet = true;
   }
-
   return *this;
 }
 

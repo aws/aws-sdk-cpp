@@ -31,7 +31,7 @@ namespace Model
   class IntegerDatasetParameterDefaultValues
   {
   public:
-    AWS_QUICKSIGHT_API IntegerDatasetParameterDefaultValues();
+    AWS_QUICKSIGHT_API IntegerDatasetParameterDefaultValues() = default;
     AWS_QUICKSIGHT_API IntegerDatasetParameterDefaultValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IntegerDatasetParameterDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A list of static default values for a given integer parameter.</p>
      */
-    inline const Aws::Vector<long long>& GetStaticValues() const{ return m_staticValues; }
+    inline const Aws::Vector<long long>& GetStaticValues() const { return m_staticValues; }
     inline bool StaticValuesHasBeenSet() const { return m_staticValuesHasBeenSet; }
-    inline void SetStaticValues(const Aws::Vector<long long>& value) { m_staticValuesHasBeenSet = true; m_staticValues = value; }
-    inline void SetStaticValues(Aws::Vector<long long>&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::move(value); }
-    inline IntegerDatasetParameterDefaultValues& WithStaticValues(const Aws::Vector<long long>& value) { SetStaticValues(value); return *this;}
-    inline IntegerDatasetParameterDefaultValues& WithStaticValues(Aws::Vector<long long>&& value) { SetStaticValues(std::move(value)); return *this;}
+    template<typename StaticValuesT = Aws::Vector<long long>>
+    void SetStaticValues(StaticValuesT&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::forward<StaticValuesT>(value); }
+    template<typename StaticValuesT = Aws::Vector<long long>>
+    IntegerDatasetParameterDefaultValues& WithStaticValues(StaticValuesT&& value) { SetStaticValues(std::forward<StaticValuesT>(value)); return *this;}
     inline IntegerDatasetParameterDefaultValues& AddStaticValues(long long value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
     ///@}
   private:

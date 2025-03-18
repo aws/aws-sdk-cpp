@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCostCategoriesResult::GetCostCategoriesResult() : 
-    m_returnSize(0),
-    m_totalSize(0)
-{
-}
-
 GetCostCategoriesResult::GetCostCategoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCostCategoriesResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ GetCostCategoriesResult& GetCostCategoriesResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostCategoryNames"))
   {
     Aws::Utils::Array<JsonView> costCategoryNamesJsonList = jsonValue.GetArray("CostCategoryNames");
@@ -45,8 +37,8 @@ GetCostCategoriesResult& GetCostCategoriesResult::operator =(const Aws::AmazonWe
     {
       m_costCategoryNames.push_back(costCategoryNamesJsonList[costCategoryNamesIndex].AsString());
     }
+    m_costCategoryNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostCategoryValues"))
   {
     Aws::Utils::Array<JsonView> costCategoryValuesJsonList = jsonValue.GetArray("CostCategoryValues");
@@ -54,26 +46,25 @@ GetCostCategoriesResult& GetCostCategoriesResult::operator =(const Aws::AmazonWe
     {
       m_costCategoryValues.push_back(costCategoryValuesJsonList[costCategoryValuesIndex].AsString());
     }
+    m_costCategoryValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReturnSize"))
   {
     m_returnSize = jsonValue.GetInteger("ReturnSize");
-
+    m_returnSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSize"))
   {
     m_totalSize = jsonValue.GetInteger("TotalSize");
-
+    m_totalSizeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

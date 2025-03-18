@@ -18,19 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SupportedEndpointType::SupportedEndpointType() : 
-    m_engineNameHasBeenSet(false),
-    m_supportsCDC(false),
-    m_supportsCDCHasBeenSet(false),
-    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
-    m_engineDisplayNameHasBeenSet(false)
-{
-}
-
 SupportedEndpointType::SupportedEndpointType(JsonView jsonValue)
-  : SupportedEndpointType()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ SupportedEndpointType& SupportedEndpointType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EngineName"))
   {
     m_engineName = jsonValue.GetString("EngineName");
-
     m_engineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportsCDC"))
   {
     m_supportsCDC = jsonValue.GetBool("SupportsCDC");
-
     m_supportsCDCHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = ReplicationEndpointTypeValueMapper::GetReplicationEndpointTypeValueForName(jsonValue.GetString("EndpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceEngineMinimumVersion"))
   {
     m_replicationInstanceEngineMinimumVersion = jsonValue.GetString("ReplicationInstanceEngineMinimumVersion");
-
     m_replicationInstanceEngineMinimumVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineDisplayName"))
   {
     m_engineDisplayName = jsonValue.GetString("EngineDisplayName");
-
     m_engineDisplayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

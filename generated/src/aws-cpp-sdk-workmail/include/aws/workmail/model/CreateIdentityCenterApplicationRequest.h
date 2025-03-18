@@ -22,7 +22,7 @@ namespace Model
   class CreateIdentityCenterApplicationRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API CreateIdentityCenterApplicationRequest();
+    AWS_WORKMAIL_API CreateIdentityCenterApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
     /**
      * <p> The name of the IAM Identity Center application. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateIdentityCenterApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateIdentityCenterApplicationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the instance. </p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline CreateIdentityCenterApplicationRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    CreateIdentityCenterApplicationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The idempotency token associated with the request. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateIdentityCenterApplicationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateIdentityCenterApplicationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateIdentityCenterApplicationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

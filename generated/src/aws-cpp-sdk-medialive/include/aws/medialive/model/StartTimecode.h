@@ -31,7 +31,7 @@ namespace Model
   class StartTimecode
   {
   public:
-    AWS_MEDIALIVE_API StartTimecode();
+    AWS_MEDIALIVE_API StartTimecode() = default;
     AWS_MEDIALIVE_API StartTimecode(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API StartTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * specified, the clip starts at first frame in the file. Enter the timecode as
      * HH:MM:SS:FF or HH:MM:SS;FF.
      */
-    inline const Aws::String& GetTimecode() const{ return m_timecode; }
+    inline const Aws::String& GetTimecode() const { return m_timecode; }
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
-    inline void SetTimecode(const Aws::String& value) { m_timecodeHasBeenSet = true; m_timecode = value; }
-    inline void SetTimecode(Aws::String&& value) { m_timecodeHasBeenSet = true; m_timecode = std::move(value); }
-    inline void SetTimecode(const char* value) { m_timecodeHasBeenSet = true; m_timecode.assign(value); }
-    inline StartTimecode& WithTimecode(const Aws::String& value) { SetTimecode(value); return *this;}
-    inline StartTimecode& WithTimecode(Aws::String&& value) { SetTimecode(std::move(value)); return *this;}
-    inline StartTimecode& WithTimecode(const char* value) { SetTimecode(value); return *this;}
+    template<typename TimecodeT = Aws::String>
+    void SetTimecode(TimecodeT&& value) { m_timecodeHasBeenSet = true; m_timecode = std::forward<TimecodeT>(value); }
+    template<typename TimecodeT = Aws::String>
+    StartTimecode& WithTimecode(TimecodeT&& value) { SetTimecode(std::forward<TimecodeT>(value)); return *this;}
     ///@}
   private:
 

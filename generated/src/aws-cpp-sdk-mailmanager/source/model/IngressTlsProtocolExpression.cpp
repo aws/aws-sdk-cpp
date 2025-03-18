@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressTlsProtocolExpression::IngressTlsProtocolExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressTlsProtocolOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_value(IngressTlsProtocolAttribute::NOT_SET),
-    m_valueHasBeenSet(false)
-{
-}
-
 IngressTlsProtocolExpression::IngressTlsProtocolExpression(JsonView jsonValue)
-  : IngressTlsProtocolExpression()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IngressTlsProtocolExpression& IngressTlsProtocolExpression::operator =(JsonView 
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = IngressTlsProtocolOperatorMapper::GetIngressTlsProtocolOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = IngressTlsProtocolAttributeMapper::GetIngressTlsProtocolAttributeForName(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-LastUpdate::LastUpdate() : 
-    m_targetQueryTCU(0),
-    m_targetQueryTCUHasBeenSet(false),
-    m_status(LastUpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 LastUpdate::LastUpdate(JsonView jsonValue)
-  : LastUpdate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LastUpdate& LastUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetQueryTCU"))
   {
     m_targetQueryTCU = jsonValue.GetInteger("TargetQueryTCU");
-
     m_targetQueryTCUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LastUpdateStatusMapper::GetLastUpdateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

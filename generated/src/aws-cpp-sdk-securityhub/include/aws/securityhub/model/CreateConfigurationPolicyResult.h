@@ -29,7 +29,7 @@ namespace Model
   class CreateConfigurationPolicyResult
   {
   public:
-    AWS_SECURITYHUB_API CreateConfigurationPolicyResult();
+    AWS_SECURITYHUB_API CreateConfigurationPolicyResult() = default;
     AWS_SECURITYHUB_API CreateConfigurationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API CreateConfigurationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,52 +38,44 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the configuration policy. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateConfigurationPolicyResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateConfigurationPolicyResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateConfigurationPolicyResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The universally unique identifier (UUID) of the configuration policy. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateConfigurationPolicyResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateConfigurationPolicyResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateConfigurationPolicyResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the configuration policy. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateConfigurationPolicyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConfigurationPolicyResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConfigurationPolicyResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the configuration policy. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateConfigurationPolicyResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateConfigurationPolicyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateConfigurationPolicyResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,11 +83,11 @@ namespace Model
      * <p> The date and time, in UTC and ISO 8601 format, that the configuration policy
      * was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline CreateConfigurationPolicyResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    CreateConfigurationPolicyResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,11 +95,11 @@ namespace Model
      * <p> The date and time, in UTC and ISO 8601 format, that the configuration policy
      * was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateConfigurationPolicyResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateConfigurationPolicyResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,40 +114,46 @@ namespace Model
      * Security Hub enables all other controls (including newly released controls).
      * </p>
      */
-    inline const Policy& GetConfigurationPolicy() const{ return m_configurationPolicy; }
-    inline void SetConfigurationPolicy(const Policy& value) { m_configurationPolicy = value; }
-    inline void SetConfigurationPolicy(Policy&& value) { m_configurationPolicy = std::move(value); }
-    inline CreateConfigurationPolicyResult& WithConfigurationPolicy(const Policy& value) { SetConfigurationPolicy(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithConfigurationPolicy(Policy&& value) { SetConfigurationPolicy(std::move(value)); return *this;}
+    inline const Policy& GetConfigurationPolicy() const { return m_configurationPolicy; }
+    template<typename ConfigurationPolicyT = Policy>
+    void SetConfigurationPolicy(ConfigurationPolicyT&& value) { m_configurationPolicyHasBeenSet = true; m_configurationPolicy = std::forward<ConfigurationPolicyT>(value); }
+    template<typename ConfigurationPolicyT = Policy>
+    CreateConfigurationPolicyResult& WithConfigurationPolicy(ConfigurationPolicyT&& value) { SetConfigurationPolicy(std::forward<ConfigurationPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConfigurationPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConfigurationPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConfigurationPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConfigurationPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Policy m_configurationPolicy;
+    bool m_configurationPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

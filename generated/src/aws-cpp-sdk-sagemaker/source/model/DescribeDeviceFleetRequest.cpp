@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDeviceFleetRequest::DescribeDeviceFleetRequest() : 
-    m_deviceFleetNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDeviceFleetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBulkImportJobsRequest::ListBulkImportJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filter(ListBulkImportJobsFilter::NOT_SET),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListBulkImportJobsRequest::SerializePayload() const
 {
   return {};

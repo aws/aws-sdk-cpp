@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHyperParameterTuningJobRequest::CreateHyperParameterTuningJobRequest() : 
-    m_hyperParameterTuningJobNameHasBeenSet(false),
-    m_hyperParameterTuningJobConfigHasBeenSet(false),
-    m_trainingJobDefinitionHasBeenSet(false),
-    m_trainingJobDefinitionsHasBeenSet(false),
-    m_warmStartConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autotuneHasBeenSet(false)
-{
-}
-
 Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
 {
   JsonValue payload;

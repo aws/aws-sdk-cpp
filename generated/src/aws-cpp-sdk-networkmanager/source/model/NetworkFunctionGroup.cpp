@@ -18,13 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkFunctionGroup::NetworkFunctionGroup() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 NetworkFunctionGroup::NetworkFunctionGroup(JsonView jsonValue)
-  : NetworkFunctionGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkFunctionGroup& NetworkFunctionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class Mqtt5Configuration
   {
   public:
-    AWS_IOT_API Mqtt5Configuration();
+    AWS_IOT_API Mqtt5Configuration() = default;
     AWS_IOT_API Mqtt5Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Mqtt5Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>An object that represents the propagating thing attributes and the connection
      * attributes.</p>
      */
-    inline const Aws::Vector<PropagatingAttribute>& GetPropagatingAttributes() const{ return m_propagatingAttributes; }
+    inline const Aws::Vector<PropagatingAttribute>& GetPropagatingAttributes() const { return m_propagatingAttributes; }
     inline bool PropagatingAttributesHasBeenSet() const { return m_propagatingAttributesHasBeenSet; }
-    inline void SetPropagatingAttributes(const Aws::Vector<PropagatingAttribute>& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes = value; }
-    inline void SetPropagatingAttributes(Aws::Vector<PropagatingAttribute>&& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes = std::move(value); }
-    inline Mqtt5Configuration& WithPropagatingAttributes(const Aws::Vector<PropagatingAttribute>& value) { SetPropagatingAttributes(value); return *this;}
-    inline Mqtt5Configuration& WithPropagatingAttributes(Aws::Vector<PropagatingAttribute>&& value) { SetPropagatingAttributes(std::move(value)); return *this;}
-    inline Mqtt5Configuration& AddPropagatingAttributes(const PropagatingAttribute& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes.push_back(value); return *this; }
-    inline Mqtt5Configuration& AddPropagatingAttributes(PropagatingAttribute&& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes.push_back(std::move(value)); return *this; }
+    template<typename PropagatingAttributesT = Aws::Vector<PropagatingAttribute>>
+    void SetPropagatingAttributes(PropagatingAttributesT&& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes = std::forward<PropagatingAttributesT>(value); }
+    template<typename PropagatingAttributesT = Aws::Vector<PropagatingAttribute>>
+    Mqtt5Configuration& WithPropagatingAttributes(PropagatingAttributesT&& value) { SetPropagatingAttributes(std::forward<PropagatingAttributesT>(value)); return *this;}
+    template<typename PropagatingAttributesT = PropagatingAttribute>
+    Mqtt5Configuration& AddPropagatingAttributes(PropagatingAttributesT&& value) { m_propagatingAttributesHasBeenSet = true; m_propagatingAttributes.emplace_back(std::forward<PropagatingAttributesT>(value)); return *this; }
     ///@}
   private:
 

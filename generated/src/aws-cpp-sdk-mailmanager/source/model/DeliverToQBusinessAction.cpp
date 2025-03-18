@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-DeliverToQBusinessAction::DeliverToQBusinessAction() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 DeliverToQBusinessAction::DeliverToQBusinessAction(JsonView jsonValue)
-  : DeliverToQBusinessAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DeliverToQBusinessAction& DeliverToQBusinessAction::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexId"))
   {
     m_indexId = jsonValue.GetString("IndexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class ImportCertificateAuthorityCertificateRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API ImportCertificateAuthorityCertificateRequest();
+    AWS_ACMPCA_API ImportCertificateAuthorityCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    ImportCertificateAuthorityCertificateRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * certificate in the case of a root CA, or it may be signed by another CA that you
      * control.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCertificate() const{ return m_certificate; }
+    inline const Aws::Utils::ByteBuffer& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Aws::Utils::ByteBuffer& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Aws::Utils::ByteBuffer&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificate(const Aws::Utils::ByteBuffer& value) { SetCertificate(value); return *this;}
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificate(Aws::Utils::ByteBuffer&& value) { SetCertificate(std::move(value)); return *this;}
+    template<typename CertificateT = Aws::Utils::ByteBuffer>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Aws::Utils::ByteBuffer>
+    ImportCertificateAuthorityCertificateRequest& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +74,22 @@ namespace Model
      * parameter must be supplied when you import a subordinate CA. When you import a
      * root CA, there is no chain.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCertificateChain() const{ return m_certificateChain; }
+    inline const Aws::Utils::ByteBuffer& GetCertificateChain() const { return m_certificateChain; }
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
-    inline void SetCertificateChain(const Aws::Utils::ByteBuffer& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
-    inline void SetCertificateChain(Aws::Utils::ByteBuffer&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(const Aws::Utils::ByteBuffer& value) { SetCertificateChain(value); return *this;}
-    inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(Aws::Utils::ByteBuffer&& value) { SetCertificateChain(std::move(value)); return *this;}
+    template<typename CertificateChainT = Aws::Utils::ByteBuffer>
+    void SetCertificateChain(CertificateChainT&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::forward<CertificateChainT>(value); }
+    template<typename CertificateChainT = Aws::Utils::ByteBuffer>
+    ImportCertificateAuthorityCertificateRequest& WithCertificateChain(CertificateChainT&& value) { SetCertificateChain(std::forward<CertificateChainT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateAuthorityArn;
     bool m_certificateAuthorityArnHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_certificate;
+    Aws::Utils::ByteBuffer m_certificate{};
     bool m_certificateHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_certificateChain;
+    Aws::Utils::ByteBuffer m_certificateChain{};
     bool m_certificateChainHasBeenSet = false;
   };
 

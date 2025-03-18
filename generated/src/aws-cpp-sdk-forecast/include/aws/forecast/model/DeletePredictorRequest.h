@@ -21,7 +21,7 @@ namespace Model
   class DeletePredictorRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DeletePredictorRequest();
+    AWS_FORECASTSERVICE_API DeletePredictorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
     inline bool PredictorArnHasBeenSet() const { return m_predictorArnHasBeenSet; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArnHasBeenSet = true; m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArnHasBeenSet = true; m_predictorArn.assign(value); }
-    inline DeletePredictorRequest& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline DeletePredictorRequest& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline DeletePredictorRequest& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    DeletePredictorRequest& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
   private:
 

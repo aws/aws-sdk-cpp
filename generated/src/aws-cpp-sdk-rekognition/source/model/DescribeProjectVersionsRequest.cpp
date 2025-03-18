@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProjectVersionsRequest::DescribeProjectVersionsRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_versionNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProjectVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

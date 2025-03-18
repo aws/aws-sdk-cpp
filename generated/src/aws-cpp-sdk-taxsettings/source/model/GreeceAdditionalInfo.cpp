@@ -18,13 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-GreeceAdditionalInfo::GreeceAdditionalInfo() : 
-    m_contractingAuthorityCodeHasBeenSet(false)
-{
-}
-
 GreeceAdditionalInfo::GreeceAdditionalInfo(JsonView jsonValue)
-  : GreeceAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GreeceAdditionalInfo& GreeceAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contractingAuthorityCode"))
   {
     m_contractingAuthorityCode = jsonValue.GetString("contractingAuthorityCode");
-
     m_contractingAuthorityCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

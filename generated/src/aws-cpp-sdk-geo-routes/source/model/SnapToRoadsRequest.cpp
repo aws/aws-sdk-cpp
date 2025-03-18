@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SnapToRoadsRequest::SnapToRoadsRequest() : 
-    m_keyHasBeenSet(false),
-    m_snappedGeometryFormat(GeometryFormat::NOT_SET),
-    m_snappedGeometryFormatHasBeenSet(false),
-    m_snapRadius(0),
-    m_snapRadiusHasBeenSet(false),
-    m_tracePointsHasBeenSet(false),
-    m_travelMode(RoadSnapTravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_travelModeOptionsHasBeenSet(false)
-{
-}
-
 Aws::String SnapToRoadsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-DomainName::DomainName() : 
-    m_apiMappingSelectionExpressionHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainNameConfigurationsHasBeenSet(false),
-    m_mutualTlsAuthenticationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DomainName::DomainName(JsonView jsonValue)
-  : DomainName()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DomainName& DomainName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiMappingSelectionExpression"))
   {
     m_apiMappingSelectionExpression = jsonValue.GetString("apiMappingSelectionExpression");
-
     m_apiMappingSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNameConfigurations"))
   {
     Aws::Utils::Array<JsonView> domainNameConfigurationsJsonList = jsonValue.GetArray("domainNameConfigurations");
@@ -58,14 +44,11 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     }
     m_domainNameConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mutualTlsAuthentication"))
   {
     m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
-
     m_mutualTlsAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -75,7 +58,6 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

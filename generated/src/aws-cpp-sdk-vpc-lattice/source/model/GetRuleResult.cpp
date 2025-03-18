@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRuleResult::GetRuleResult() : 
-    m_isDefault(false),
-    m_priority(0)
-{
-}
-
 GetRuleResult::GetRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRuleResult()
 {
   *this = result;
 }
@@ -35,63 +28,55 @@ GetRuleResult& GetRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
+    m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefault"))
   {
     m_isDefault = jsonValue.GetBool("isDefault");
-
+    m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
+    m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
+    m_priorityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-MembershipJobComputePaymentConfig::MembershipJobComputePaymentConfig() : 
-    m_isResponsible(false),
-    m_isResponsibleHasBeenSet(false)
-{
-}
-
 MembershipJobComputePaymentConfig::MembershipJobComputePaymentConfig(JsonView jsonValue)
-  : MembershipJobComputePaymentConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MembershipJobComputePaymentConfig& MembershipJobComputePaymentConfig::operator =
   if(jsonValue.ValueExists("isResponsible"))
   {
     m_isResponsible = jsonValue.GetBool("isResponsible");
-
     m_isResponsibleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation() : 
-    m_configurationPolicyAssociationIdentifiersHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
-{
-}
-
 UnprocessedConfigurationPolicyAssociation::UnprocessedConfigurationPolicyAssociation(JsonView jsonValue)
-  : UnprocessedConfigurationPolicyAssociation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedConfigurationPolicyAssociation& UnprocessedConfigurationPolicyAssocia
   if(jsonValue.ValueExists("ConfigurationPolicyAssociationIdentifiers"))
   {
     m_configurationPolicyAssociationIdentifiers = jsonValue.GetObject("ConfigurationPolicyAssociationIdentifiers");
-
     m_configurationPolicyAssociationIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorReason"))
   {
     m_errorReason = jsonValue.GetString("ErrorReason");
-
     m_errorReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

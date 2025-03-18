@@ -25,7 +25,7 @@ namespace Model
   class DescribeCacheEngineVersionsRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DescribeCacheEngineVersionsRequest();
+    AWS_ELASTICACHE_API DescribeCacheEngineVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
      * <code>redis</code> </p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline DescribeCacheEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    DescribeCacheEngineVersionsRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    DescribeCacheEngineVersionsRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+    inline const Aws::String& GetCacheParameterGroupFamily() const { return m_cacheParameterGroupFamily; }
     inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }
-    inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
-    inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = std::move(value); }
-    inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
-    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(std::move(value)); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
+    template<typename CacheParameterGroupFamilyT = Aws::String>
+    void SetCacheParameterGroupFamily(CacheParameterGroupFamilyT&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = std::forward<CacheParameterGroupFamilyT>(value); }
+    template<typename CacheParameterGroupFamilyT = Aws::String>
+    DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(CacheParameterGroupFamilyT&& value) { SetCacheParameterGroupFamily(std::forward<CacheParameterGroupFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +92,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeCacheEngineVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -111,14 +105,12 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeCacheEngineVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeCacheEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeCacheEngineVersionsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,7 +118,7 @@ namespace Model
      * <p>If <code>true</code>, specifies that only the default version of the
      * specified engine or engine and major version combination is to be returned.</p>
      */
-    inline bool GetDefaultOnly() const{ return m_defaultOnly; }
+    inline bool GetDefaultOnly() const { return m_defaultOnly; }
     inline bool DefaultOnlyHasBeenSet() const { return m_defaultOnlyHasBeenSet; }
     inline void SetDefaultOnly(bool value) { m_defaultOnlyHasBeenSet = true; m_defaultOnly = value; }
     inline DescribeCacheEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
@@ -142,13 +134,13 @@ namespace Model
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    bool m_defaultOnly;
+    bool m_defaultOnly{false};
     bool m_defaultOnlyHasBeenSet = false;
   };
 

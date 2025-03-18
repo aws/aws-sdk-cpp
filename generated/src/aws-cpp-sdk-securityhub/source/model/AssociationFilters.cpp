@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AssociationFilters::AssociationFilters() : 
-    m_configurationPolicyIdHasBeenSet(false),
-    m_associationType(AssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_associationStatus(ConfigurationPolicyAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false)
-{
-}
-
 AssociationFilters::AssociationFilters(JsonView jsonValue)
-  : AssociationFilters()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AssociationFilters& AssociationFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationPolicyId"))
   {
     m_configurationPolicyId = jsonValue.GetString("ConfigurationPolicyId");
-
     m_configurationPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationType"))
   {
     m_associationType = AssociationTypeMapper::GetAssociationTypeForName(jsonValue.GetString("AssociationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationStatus"))
   {
     m_associationStatus = ConfigurationPolicyAssociationStatusMapper::GetConfigurationPolicyAssociationStatusForName(jsonValue.GetString("AssociationStatus"));
-
     m_associationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

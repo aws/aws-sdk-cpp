@@ -12,13 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRepositoryLinkRequest::UpdateRepositoryLinkRequest() : 
-    m_connectionArnHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRepositoryLinkRequest::SerializePayload() const
 {
   JsonValue payload;

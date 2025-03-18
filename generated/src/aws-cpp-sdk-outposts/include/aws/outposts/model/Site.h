@@ -33,7 +33,7 @@ namespace Model
   class Site
   {
   public:
-    AWS_OUTPOSTS_API Site();
+    AWS_OUTPOSTS_API Site() = default;
     AWS_OUTPOSTS_API Site(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Site& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,95 +41,80 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetSiteId() const{ return m_siteId; }
+    inline const Aws::String& GetSiteId() const { return m_siteId; }
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
-    inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
-    inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
-    inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
-    inline Site& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
-    inline Site& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
-    inline Site& WithSiteId(const char* value) { SetSiteId(value); return *this;}
+    template<typename SiteIdT = Aws::String>
+    void SetSiteId(SiteIdT&& value) { m_siteIdHasBeenSet = true; m_siteId = std::forward<SiteIdT>(value); }
+    template<typename SiteIdT = Aws::String>
+    Site& WithSiteId(SiteIdT&& value) { SetSiteId(std::forward<SiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Site& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Site& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Site& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Site& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Site& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Site& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Site& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Site& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Site& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Site& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Site& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Site& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The site tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Site& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Site& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Site& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Site& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Site& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Site& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Site& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Site& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Site& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Site& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Site& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSiteArn() const{ return m_siteArn; }
+    inline const Aws::String& GetSiteArn() const { return m_siteArn; }
     inline bool SiteArnHasBeenSet() const { return m_siteArnHasBeenSet; }
-    inline void SetSiteArn(const Aws::String& value) { m_siteArnHasBeenSet = true; m_siteArn = value; }
-    inline void SetSiteArn(Aws::String&& value) { m_siteArnHasBeenSet = true; m_siteArn = std::move(value); }
-    inline void SetSiteArn(const char* value) { m_siteArnHasBeenSet = true; m_siteArn.assign(value); }
-    inline Site& WithSiteArn(const Aws::String& value) { SetSiteArn(value); return *this;}
-    inline Site& WithSiteArn(Aws::String&& value) { SetSiteArn(std::move(value)); return *this;}
-    inline Site& WithSiteArn(const char* value) { SetSiteArn(value); return *this;}
+    template<typename SiteArnT = Aws::String>
+    void SetSiteArn(SiteArnT&& value) { m_siteArnHasBeenSet = true; m_siteArn = std::forward<SiteArnT>(value); }
+    template<typename SiteArnT = Aws::String>
+    Site& WithSiteArn(SiteArnT&& value) { SetSiteArn(std::forward<SiteArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Notes about a site. </p>
      */
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline Site& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline Site& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline Site& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    Site& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,42 +122,36 @@ namespace Model
      * <p> The ISO-3166 two-letter country code where the hardware is installed and
      * powered on. </p>
      */
-    inline const Aws::String& GetOperatingAddressCountryCode() const{ return m_operatingAddressCountryCode; }
+    inline const Aws::String& GetOperatingAddressCountryCode() const { return m_operatingAddressCountryCode; }
     inline bool OperatingAddressCountryCodeHasBeenSet() const { return m_operatingAddressCountryCodeHasBeenSet; }
-    inline void SetOperatingAddressCountryCode(const Aws::String& value) { m_operatingAddressCountryCodeHasBeenSet = true; m_operatingAddressCountryCode = value; }
-    inline void SetOperatingAddressCountryCode(Aws::String&& value) { m_operatingAddressCountryCodeHasBeenSet = true; m_operatingAddressCountryCode = std::move(value); }
-    inline void SetOperatingAddressCountryCode(const char* value) { m_operatingAddressCountryCodeHasBeenSet = true; m_operatingAddressCountryCode.assign(value); }
-    inline Site& WithOperatingAddressCountryCode(const Aws::String& value) { SetOperatingAddressCountryCode(value); return *this;}
-    inline Site& WithOperatingAddressCountryCode(Aws::String&& value) { SetOperatingAddressCountryCode(std::move(value)); return *this;}
-    inline Site& WithOperatingAddressCountryCode(const char* value) { SetOperatingAddressCountryCode(value); return *this;}
+    template<typename OperatingAddressCountryCodeT = Aws::String>
+    void SetOperatingAddressCountryCode(OperatingAddressCountryCodeT&& value) { m_operatingAddressCountryCodeHasBeenSet = true; m_operatingAddressCountryCode = std::forward<OperatingAddressCountryCodeT>(value); }
+    template<typename OperatingAddressCountryCodeT = Aws::String>
+    Site& WithOperatingAddressCountryCode(OperatingAddressCountryCodeT&& value) { SetOperatingAddressCountryCode(std::forward<OperatingAddressCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> State or region where the hardware is installed and powered on. </p>
      */
-    inline const Aws::String& GetOperatingAddressStateOrRegion() const{ return m_operatingAddressStateOrRegion; }
+    inline const Aws::String& GetOperatingAddressStateOrRegion() const { return m_operatingAddressStateOrRegion; }
     inline bool OperatingAddressStateOrRegionHasBeenSet() const { return m_operatingAddressStateOrRegionHasBeenSet; }
-    inline void SetOperatingAddressStateOrRegion(const Aws::String& value) { m_operatingAddressStateOrRegionHasBeenSet = true; m_operatingAddressStateOrRegion = value; }
-    inline void SetOperatingAddressStateOrRegion(Aws::String&& value) { m_operatingAddressStateOrRegionHasBeenSet = true; m_operatingAddressStateOrRegion = std::move(value); }
-    inline void SetOperatingAddressStateOrRegion(const char* value) { m_operatingAddressStateOrRegionHasBeenSet = true; m_operatingAddressStateOrRegion.assign(value); }
-    inline Site& WithOperatingAddressStateOrRegion(const Aws::String& value) { SetOperatingAddressStateOrRegion(value); return *this;}
-    inline Site& WithOperatingAddressStateOrRegion(Aws::String&& value) { SetOperatingAddressStateOrRegion(std::move(value)); return *this;}
-    inline Site& WithOperatingAddressStateOrRegion(const char* value) { SetOperatingAddressStateOrRegion(value); return *this;}
+    template<typename OperatingAddressStateOrRegionT = Aws::String>
+    void SetOperatingAddressStateOrRegion(OperatingAddressStateOrRegionT&& value) { m_operatingAddressStateOrRegionHasBeenSet = true; m_operatingAddressStateOrRegion = std::forward<OperatingAddressStateOrRegionT>(value); }
+    template<typename OperatingAddressStateOrRegionT = Aws::String>
+    Site& WithOperatingAddressStateOrRegion(OperatingAddressStateOrRegionT&& value) { SetOperatingAddressStateOrRegion(std::forward<OperatingAddressStateOrRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> City where the hardware is installed and powered on. </p>
      */
-    inline const Aws::String& GetOperatingAddressCity() const{ return m_operatingAddressCity; }
+    inline const Aws::String& GetOperatingAddressCity() const { return m_operatingAddressCity; }
     inline bool OperatingAddressCityHasBeenSet() const { return m_operatingAddressCityHasBeenSet; }
-    inline void SetOperatingAddressCity(const Aws::String& value) { m_operatingAddressCityHasBeenSet = true; m_operatingAddressCity = value; }
-    inline void SetOperatingAddressCity(Aws::String&& value) { m_operatingAddressCityHasBeenSet = true; m_operatingAddressCity = std::move(value); }
-    inline void SetOperatingAddressCity(const char* value) { m_operatingAddressCityHasBeenSet = true; m_operatingAddressCity.assign(value); }
-    inline Site& WithOperatingAddressCity(const Aws::String& value) { SetOperatingAddressCity(value); return *this;}
-    inline Site& WithOperatingAddressCity(Aws::String&& value) { SetOperatingAddressCity(std::move(value)); return *this;}
-    inline Site& WithOperatingAddressCity(const char* value) { SetOperatingAddressCity(value); return *this;}
+    template<typename OperatingAddressCityT = Aws::String>
+    void SetOperatingAddressCity(OperatingAddressCityT&& value) { m_operatingAddressCityHasBeenSet = true; m_operatingAddressCity = std::forward<OperatingAddressCityT>(value); }
+    template<typename OperatingAddressCityT = Aws::String>
+    Site& WithOperatingAddressCity(OperatingAddressCityT&& value) { SetOperatingAddressCity(std::forward<OperatingAddressCityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +159,12 @@ namespace Model
      * <p> Information about the physical and logistical details for a rack at the
      * site. </p>
      */
-    inline const RackPhysicalProperties& GetRackPhysicalProperties() const{ return m_rackPhysicalProperties; }
+    inline const RackPhysicalProperties& GetRackPhysicalProperties() const { return m_rackPhysicalProperties; }
     inline bool RackPhysicalPropertiesHasBeenSet() const { return m_rackPhysicalPropertiesHasBeenSet; }
-    inline void SetRackPhysicalProperties(const RackPhysicalProperties& value) { m_rackPhysicalPropertiesHasBeenSet = true; m_rackPhysicalProperties = value; }
-    inline void SetRackPhysicalProperties(RackPhysicalProperties&& value) { m_rackPhysicalPropertiesHasBeenSet = true; m_rackPhysicalProperties = std::move(value); }
-    inline Site& WithRackPhysicalProperties(const RackPhysicalProperties& value) { SetRackPhysicalProperties(value); return *this;}
-    inline Site& WithRackPhysicalProperties(RackPhysicalProperties&& value) { SetRackPhysicalProperties(std::move(value)); return *this;}
+    template<typename RackPhysicalPropertiesT = RackPhysicalProperties>
+    void SetRackPhysicalProperties(RackPhysicalPropertiesT&& value) { m_rackPhysicalPropertiesHasBeenSet = true; m_rackPhysicalProperties = std::forward<RackPhysicalPropertiesT>(value); }
+    template<typename RackPhysicalPropertiesT = RackPhysicalProperties>
+    Site& WithRackPhysicalProperties(RackPhysicalPropertiesT&& value) { SetRackPhysicalProperties(std::forward<RackPhysicalPropertiesT>(value)); return *this;}
     ///@}
   private:
 

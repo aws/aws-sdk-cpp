@@ -35,7 +35,7 @@ namespace Model
   class NetworkFirewallPolicy
   {
   public:
-    AWS_FMS_API NetworkFirewallPolicy();
+    AWS_FMS_API NetworkFirewallPolicy() = default;
     AWS_FMS_API NetworkFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API NetworkFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
      * to <code>NULL</code>.</p>
      */
-    inline const FirewallDeploymentModel& GetFirewallDeploymentModel() const{ return m_firewallDeploymentModel; }
+    inline FirewallDeploymentModel GetFirewallDeploymentModel() const { return m_firewallDeploymentModel; }
     inline bool FirewallDeploymentModelHasBeenSet() const { return m_firewallDeploymentModelHasBeenSet; }
-    inline void SetFirewallDeploymentModel(const FirewallDeploymentModel& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = value; }
-    inline void SetFirewallDeploymentModel(FirewallDeploymentModel&& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = std::move(value); }
-    inline NetworkFirewallPolicy& WithFirewallDeploymentModel(const FirewallDeploymentModel& value) { SetFirewallDeploymentModel(value); return *this;}
-    inline NetworkFirewallPolicy& WithFirewallDeploymentModel(FirewallDeploymentModel&& value) { SetFirewallDeploymentModel(std::move(value)); return *this;}
+    inline void SetFirewallDeploymentModel(FirewallDeploymentModel value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = value; }
+    inline NetworkFirewallPolicy& WithFirewallDeploymentModel(FirewallDeploymentModel value) { SetFirewallDeploymentModel(value); return *this;}
     ///@}
   private:
 
-    FirewallDeploymentModel m_firewallDeploymentModel;
+    FirewallDeploymentModel m_firewallDeploymentModel{FirewallDeploymentModel::NOT_SET};
     bool m_firewallDeploymentModelHasBeenSet = false;
   };
 

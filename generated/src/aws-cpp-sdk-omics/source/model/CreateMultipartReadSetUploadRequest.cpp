@@ -12,21 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMultipartReadSetUploadRequest::CreateMultipartReadSetUploadRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_sourceFileType(FileType::NOT_SET),
-    m_sourceFileTypeHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMultipartReadSetUploadRequest::SerializePayload() const
 {
   JsonValue payload;

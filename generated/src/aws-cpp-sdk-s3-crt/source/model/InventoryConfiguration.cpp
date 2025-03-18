@@ -20,21 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-InventoryConfiguration::InventoryConfiguration() : 
-    m_destinationHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includedObjectVersions(InventoryIncludedObjectVersions::NOT_SET),
-    m_includedObjectVersionsHasBeenSet(false),
-    m_optionalFieldsHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 InventoryConfiguration::InventoryConfiguration(const XmlNode& xmlNode)
-  : InventoryConfiguration()
 {
   *this = xmlNode;
 }
@@ -72,13 +58,14 @@ InventoryConfiguration& InventoryConfiguration::operator =(const XmlNode& xmlNod
     XmlNode includedObjectVersionsNode = resultNode.FirstChild("IncludedObjectVersions");
     if(!includedObjectVersionsNode.IsNull())
     {
-      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includedObjectVersionsNode.GetText()).c_str()).c_str());
+      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includedObjectVersionsNode.GetText()).c_str()));
       m_includedObjectVersionsHasBeenSet = true;
     }
     XmlNode optionalFieldsNode = resultNode.FirstChild("OptionalFields");
     if(!optionalFieldsNode.IsNull())
     {
       XmlNode optionalFieldsMember = optionalFieldsNode.FirstChild("Field");
+      m_optionalFieldsHasBeenSet = !optionalFieldsMember.IsNull();
       while(!optionalFieldsMember.IsNull())
       {
         m_optionalFields.push_back(InventoryOptionalFieldMapper::GetInventoryOptionalFieldForName(StringUtils::Trim(optionalFieldsMember.GetText().c_str())));

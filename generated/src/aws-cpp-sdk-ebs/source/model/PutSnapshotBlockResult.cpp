@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSnapshotBlockResult::PutSnapshotBlockResult() : 
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
-{
-}
-
 PutSnapshotBlockResult::PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutSnapshotBlockResult()
 {
   *this = result;
 }
@@ -37,18 +31,21 @@ PutSnapshotBlockResult& PutSnapshotBlockResult::operator =(const Aws::AmazonWebS
   if(checksumIter != headers.end())
   {
     m_checksum = checksumIter->second;
+    m_checksumHasBeenSet = true;
   }
 
   const auto& checksumAlgorithmIter = headers.find("x-amz-checksum-algorithm");
   if(checksumAlgorithmIter != headers.end())
   {
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
+    m_checksumAlgorithmHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

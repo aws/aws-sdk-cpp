@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCustomPermissionsResult::DescribeCustomPermissionsResult() : 
-    m_status(0)
-{
-}
-
 DescribeCustomPermissionsResult::DescribeCustomPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCustomPermissionsResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DescribeCustomPermissionsResult& DescribeCustomPermissionsResult::operator =(con
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomPermissions"))
   {
     m_customPermissions = jsonValue.GetObject("CustomPermissions");
-
+    m_customPermissionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

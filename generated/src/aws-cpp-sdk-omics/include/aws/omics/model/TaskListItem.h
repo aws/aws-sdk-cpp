@@ -33,7 +33,7 @@ namespace Model
   class TaskListItem
   {
   public:
-    AWS_OMICS_API TaskListItem();
+    AWS_OMICS_API TaskListItem() = default;
     AWS_OMICS_API TaskListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API TaskListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,41 @@ namespace Model
     /**
      * <p>The task's ID.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline TaskListItem& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline TaskListItem& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline TaskListItem& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    TaskListItem& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task's status.</p>
      */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
+    inline TaskStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TaskListItem& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-    inline TaskListItem& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TaskListItem& WithStatus(TaskStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TaskListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TaskListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TaskListItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TaskListItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task's CPU count.</p>
      */
-    inline int GetCpus() const{ return m_cpus; }
+    inline int GetCpus() const { return m_cpus; }
     inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
     inline void SetCpus(int value) { m_cpusHasBeenSet = true; m_cpus = value; }
     inline TaskListItem& WithCpus(int value) { SetCpus(value); return *this;}
@@ -94,7 +88,7 @@ namespace Model
      * <p>Set to true if AWS HealthOmics found a matching entry in the run cache for
      * this task.</p>
      */
-    inline bool GetCacheHit() const{ return m_cacheHit; }
+    inline bool GetCacheHit() const { return m_cacheHit; }
     inline bool CacheHitHasBeenSet() const { return m_cacheHitHasBeenSet; }
     inline void SetCacheHit(bool value) { m_cacheHitHasBeenSet = true; m_cacheHit = value; }
     inline TaskListItem& WithCacheHit(bool value) { SetCacheHit(value); return *this;}
@@ -104,21 +98,19 @@ namespace Model
     /**
      * <p>The S3 URI of the cache location.</p>
      */
-    inline const Aws::String& GetCacheS3Uri() const{ return m_cacheS3Uri; }
+    inline const Aws::String& GetCacheS3Uri() const { return m_cacheS3Uri; }
     inline bool CacheS3UriHasBeenSet() const { return m_cacheS3UriHasBeenSet; }
-    inline void SetCacheS3Uri(const Aws::String& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = value; }
-    inline void SetCacheS3Uri(Aws::String&& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = std::move(value); }
-    inline void SetCacheS3Uri(const char* value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri.assign(value); }
-    inline TaskListItem& WithCacheS3Uri(const Aws::String& value) { SetCacheS3Uri(value); return *this;}
-    inline TaskListItem& WithCacheS3Uri(Aws::String&& value) { SetCacheS3Uri(std::move(value)); return *this;}
-    inline TaskListItem& WithCacheS3Uri(const char* value) { SetCacheS3Uri(value); return *this;}
+    template<typename CacheS3UriT = Aws::String>
+    void SetCacheS3Uri(CacheS3UriT&& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = std::forward<CacheS3UriT>(value); }
+    template<typename CacheS3UriT = Aws::String>
+    TaskListItem& WithCacheS3Uri(CacheS3UriT&& value) { SetCacheS3Uri(std::forward<CacheS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task's memory use in gigabyes.</p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline int GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline TaskListItem& WithMemory(int value) { SetMemory(value); return *this;}
@@ -128,43 +120,43 @@ namespace Model
     /**
      * <p>When the task was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline TaskListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline TaskListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    TaskListItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the task started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline TaskListItem& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline TaskListItem& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    TaskListItem& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the task stopped.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
+    inline const Aws::Utils::DateTime& GetStopTime() const { return m_stopTime; }
     inline bool StopTimeHasBeenSet() const { return m_stopTimeHasBeenSet; }
-    inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTimeHasBeenSet = true; m_stopTime = value; }
-    inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::move(value); }
-    inline TaskListItem& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
-    inline TaskListItem& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    void SetStopTime(StopTimeT&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::forward<StopTimeT>(value); }
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    TaskListItem& WithStopTime(StopTimeT&& value) { SetStopTime(std::forward<StopTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
      */
-    inline int GetGpus() const{ return m_gpus; }
+    inline int GetGpus() const { return m_gpus; }
     inline bool GpusHasBeenSet() const { return m_gpusHasBeenSet; }
     inline void SetGpus(int value) { m_gpusHasBeenSet = true; m_gpus = value; }
     inline TaskListItem& WithGpus(int value) { SetGpus(value); return *this;}
@@ -174,48 +166,46 @@ namespace Model
     /**
      * <p> The instance type for a task.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline TaskListItem& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline TaskListItem& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline TaskListItem& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    TaskListItem& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    TaskStatus m_status;
+    TaskStatus m_status{TaskStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_cpus;
+    int m_cpus{0};
     bool m_cpusHasBeenSet = false;
 
-    bool m_cacheHit;
+    bool m_cacheHit{false};
     bool m_cacheHitHasBeenSet = false;
 
     Aws::String m_cacheS3Uri;
     bool m_cacheS3UriHasBeenSet = false;
 
-    int m_memory;
+    int m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stopTime;
+    Aws::Utils::DateTime m_stopTime{};
     bool m_stopTimeHasBeenSet = false;
 
-    int m_gpus;
+    int m_gpus{0};
     bool m_gpusHasBeenSet = false;
 
     Aws::String m_instanceType;

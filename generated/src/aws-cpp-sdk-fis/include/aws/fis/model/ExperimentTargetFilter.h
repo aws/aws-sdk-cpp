@@ -33,7 +33,7 @@ namespace Model
   class ExperimentTargetFilter
   {
   public:
-    AWS_FIS_API ExperimentTargetFilter();
+    AWS_FIS_API ExperimentTargetFilter() = default;
     AWS_FIS_API ExperimentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The attribute path for the filter.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline ExperimentTargetFilter& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline ExperimentTargetFilter& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline ExperimentTargetFilter& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    ExperimentTargetFilter& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attribute values for the filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ExperimentTargetFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ExperimentTargetFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ExperimentTargetFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ExperimentTargetFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ExperimentTargetFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ExperimentTargetFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ExperimentTargetFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

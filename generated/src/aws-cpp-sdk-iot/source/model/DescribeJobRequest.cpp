@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeJobRequest::DescribeJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_beforeSubstitution(false),
-    m_beforeSubstitutionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobRequest::SerializePayload() const
 {
   return {};

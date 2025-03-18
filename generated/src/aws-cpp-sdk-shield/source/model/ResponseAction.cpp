@@ -18,14 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ResponseAction::ResponseAction() : 
-    m_blockHasBeenSet(false),
-    m_countHasBeenSet(false)
-{
-}
-
 ResponseAction::ResponseAction(JsonView jsonValue)
-  : ResponseAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResponseAction& ResponseAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetObject("Block");
-
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetObject("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

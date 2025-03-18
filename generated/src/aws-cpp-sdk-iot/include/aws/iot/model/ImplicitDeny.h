@@ -34,7 +34,7 @@ namespace Model
   class ImplicitDeny
   {
   public:
-    AWS_IOT_API ImplicitDeny();
+    AWS_IOT_API ImplicitDeny() = default;
     AWS_IOT_API ImplicitDeny(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ImplicitDeny& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>Policies that don't contain a matching allow or deny statement for the
      * specified action on the specified resource. </p>
      */
-    inline const Aws::Vector<Policy>& GetPolicies() const{ return m_policies; }
+    inline const Aws::Vector<Policy>& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline ImplicitDeny& WithPolicies(const Aws::Vector<Policy>& value) { SetPolicies(value); return *this;}
-    inline ImplicitDeny& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline ImplicitDeny& AddPolicies(const Policy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-    inline ImplicitDeny& AddPolicies(Policy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+    template<typename PoliciesT = Aws::Vector<Policy>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Vector<Policy>>
+    ImplicitDeny& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesT = Policy>
+    ImplicitDeny& AddPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies.emplace_back(std::forward<PoliciesT>(value)); return *this; }
     ///@}
   private:
 

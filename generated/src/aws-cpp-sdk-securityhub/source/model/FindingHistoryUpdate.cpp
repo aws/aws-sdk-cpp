@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FindingHistoryUpdate::FindingHistoryUpdate() : 
-    m_updatedFieldHasBeenSet(false),
-    m_oldValueHasBeenSet(false),
-    m_newValueHasBeenSet(false)
-{
-}
-
 FindingHistoryUpdate::FindingHistoryUpdate(JsonView jsonValue)
-  : FindingHistoryUpdate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FindingHistoryUpdate& FindingHistoryUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpdatedField"))
   {
     m_updatedField = jsonValue.GetString("UpdatedField");
-
     m_updatedFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OldValue"))
   {
     m_oldValue = jsonValue.GetString("OldValue");
-
     m_oldValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewValue"))
   {
     m_newValue = jsonValue.GetString("NewValue");
-
     m_newValueHasBeenSet = true;
   }
-
   return *this;
 }
 

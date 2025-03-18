@@ -33,7 +33,7 @@ namespace Model
   class SMBLocalGroups
   {
   public:
-    AWS_STORAGEGATEWAY_API SMBLocalGroups();
+    AWS_STORAGEGATEWAY_API SMBLocalGroups() = default;
     AWS_STORAGEGATEWAY_API SMBLocalGroups(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API SMBLocalGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>Gateway Admins can use the Shared Folders Microsoft Management Console
      * snap-in to force-close files that are open and locked.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGatewayAdmins() const{ return m_gatewayAdmins; }
+    inline const Aws::Vector<Aws::String>& GetGatewayAdmins() const { return m_gatewayAdmins; }
     inline bool GatewayAdminsHasBeenSet() const { return m_gatewayAdminsHasBeenSet; }
-    inline void SetGatewayAdmins(const Aws::Vector<Aws::String>& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins = value; }
-    inline void SetGatewayAdmins(Aws::Vector<Aws::String>&& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins = std::move(value); }
-    inline SMBLocalGroups& WithGatewayAdmins(const Aws::Vector<Aws::String>& value) { SetGatewayAdmins(value); return *this;}
-    inline SMBLocalGroups& WithGatewayAdmins(Aws::Vector<Aws::String>&& value) { SetGatewayAdmins(std::move(value)); return *this;}
-    inline SMBLocalGroups& AddGatewayAdmins(const Aws::String& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins.push_back(value); return *this; }
-    inline SMBLocalGroups& AddGatewayAdmins(Aws::String&& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins.push_back(std::move(value)); return *this; }
-    inline SMBLocalGroups& AddGatewayAdmins(const char* value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins.push_back(value); return *this; }
+    template<typename GatewayAdminsT = Aws::Vector<Aws::String>>
+    void SetGatewayAdmins(GatewayAdminsT&& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins = std::forward<GatewayAdminsT>(value); }
+    template<typename GatewayAdminsT = Aws::Vector<Aws::String>>
+    SMBLocalGroups& WithGatewayAdmins(GatewayAdminsT&& value) { SetGatewayAdmins(std::forward<GatewayAdminsT>(value)); return *this;}
+    template<typename GatewayAdminsT = Aws::String>
+    SMBLocalGroups& AddGatewayAdmins(GatewayAdminsT&& value) { m_gatewayAdminsHasBeenSet = true; m_gatewayAdmins.emplace_back(std::forward<GatewayAdminsT>(value)); return *this; }
     ///@}
   private:
 

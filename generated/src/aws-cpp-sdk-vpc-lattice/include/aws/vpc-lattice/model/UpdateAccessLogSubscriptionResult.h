@@ -27,7 +27,7 @@ namespace Model
   class UpdateAccessLogSubscriptionResult
   {
   public:
-    AWS_VPCLATTICE_API UpdateAccessLogSubscriptionResult();
+    AWS_VPCLATTICE_API UpdateAccessLogSubscriptionResult() = default;
     AWS_VPCLATTICE_API UpdateAccessLogSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API UpdateAccessLogSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,90 +36,84 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the access log destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArn.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the access log subscription.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAccessLogSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAccessLogSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAccessLogSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_destinationArn;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

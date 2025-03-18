@@ -32,7 +32,7 @@ namespace Model
   class CompositeComponentTypeResponse
   {
   public:
-    AWS_IOTTWINMAKER_API CompositeComponentTypeResponse();
+    AWS_IOTTWINMAKER_API CompositeComponentTypeResponse() = default;
     AWS_IOTTWINMAKER_API CompositeComponentTypeResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API CompositeComponentTypeResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>This is the <code>componentTypeId</code> that this
      * <code>compositeComponentType</code> refers to.</p>
      */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
+    inline const Aws::String& GetComponentTypeId() const { return m_componentTypeId; }
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-    inline CompositeComponentTypeResponse& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-    inline CompositeComponentTypeResponse& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-    inline CompositeComponentTypeResponse& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    template<typename ComponentTypeIdT = Aws::String>
+    void SetComponentTypeId(ComponentTypeIdT&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::forward<ComponentTypeIdT>(value); }
+    template<typename ComponentTypeIdT = Aws::String>
+    CompositeComponentTypeResponse& WithComponentTypeId(ComponentTypeIdT&& value) { SetComponentTypeId(std::forward<ComponentTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>This boolean indicates whether this <code>compositeComponentType</code> is
      * inherited from its parent.</p>
      */
-    inline bool GetIsInherited() const{ return m_isInherited; }
+    inline bool GetIsInherited() const { return m_isInherited; }
     inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
     inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
     inline CompositeComponentTypeResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_componentTypeId;
     bool m_componentTypeIdHasBeenSet = false;
 
-    bool m_isInherited;
+    bool m_isInherited{false};
     bool m_isInheritedHasBeenSet = false;
   };
 

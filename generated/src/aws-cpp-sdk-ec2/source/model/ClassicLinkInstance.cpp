@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLinkInstance::ClassicLinkInstance() : 
-    m_groupsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ClassicLinkInstance::ClassicLinkInstance(const XmlNode& xmlNode)
-  : ClassicLinkInstance()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember);
@@ -62,6 +54,7 @@ ClassicLinkInstance& ClassicLinkInstance::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

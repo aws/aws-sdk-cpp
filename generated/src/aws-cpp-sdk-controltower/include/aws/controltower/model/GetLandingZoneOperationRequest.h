@@ -21,7 +21,7 @@ namespace Model
   class GetLandingZoneOperationRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API GetLandingZoneOperationRequest();
+    AWS_CONTROLTOWER_API GetLandingZoneOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>A unique identifier assigned to a landing zone operation.</p>
      */
-    inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
+    inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
     inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-    inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = value; }
-    inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::move(value); }
-    inline void SetOperationIdentifier(const char* value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier.assign(value); }
-    inline GetLandingZoneOperationRequest& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-    inline GetLandingZoneOperationRequest& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-    inline GetLandingZoneOperationRequest& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
+    template<typename OperationIdentifierT = Aws::String>
+    void SetOperationIdentifier(OperationIdentifierT&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::forward<OperationIdentifierT>(value); }
+    template<typename OperationIdentifierT = Aws::String>
+    GetLandingZoneOperationRequest& WithOperationIdentifier(OperationIdentifierT&& value) { SetOperationIdentifier(std::forward<OperationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

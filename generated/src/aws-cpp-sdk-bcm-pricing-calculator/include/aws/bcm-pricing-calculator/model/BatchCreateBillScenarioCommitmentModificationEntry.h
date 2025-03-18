@@ -33,7 +33,7 @@ namespace Model
   class BatchCreateBillScenarioCommitmentModificationEntry
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationEntry();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationEntry() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * valid string. This key is useful to identify errors associated with any
      * commitment entry as any error is returned with this key. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    BatchCreateBillScenarioCommitmentModificationEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An optional group identifier for the commitment modification. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    BatchCreateBillScenarioCommitmentModificationEntry& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p> The Amazon Web Services account ID to which this commitment will be applied
      * to. </p>
      */
-    inline const Aws::String& GetUsageAccountId() const{ return m_usageAccountId; }
+    inline const Aws::String& GetUsageAccountId() const { return m_usageAccountId; }
     inline bool UsageAccountIdHasBeenSet() const { return m_usageAccountIdHasBeenSet; }
-    inline void SetUsageAccountId(const Aws::String& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = value; }
-    inline void SetUsageAccountId(Aws::String&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::move(value); }
-    inline void SetUsageAccountId(const char* value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId.assign(value); }
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithUsageAccountId(const Aws::String& value) { SetUsageAccountId(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithUsageAccountId(Aws::String&& value) { SetUsageAccountId(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithUsageAccountId(const char* value) { SetUsageAccountId(value); return *this;}
+    template<typename UsageAccountIdT = Aws::String>
+    void SetUsageAccountId(UsageAccountIdT&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::forward<UsageAccountIdT>(value); }
+    template<typename UsageAccountIdT = Aws::String>
+    BatchCreateBillScenarioCommitmentModificationEntry& WithUsageAccountId(UsageAccountIdT&& value) { SetUsageAccountId(std::forward<UsageAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,12 @@ namespace Model
      * <p> The specific commitment action to be taken (e.g., adding a Reserved Instance
      * or Savings Plan). </p>
      */
-    inline const BillScenarioCommitmentModificationAction& GetCommitmentAction() const{ return m_commitmentAction; }
+    inline const BillScenarioCommitmentModificationAction& GetCommitmentAction() const { return m_commitmentAction; }
     inline bool CommitmentActionHasBeenSet() const { return m_commitmentActionHasBeenSet; }
-    inline void SetCommitmentAction(const BillScenarioCommitmentModificationAction& value) { m_commitmentActionHasBeenSet = true; m_commitmentAction = value; }
-    inline void SetCommitmentAction(BillScenarioCommitmentModificationAction&& value) { m_commitmentActionHasBeenSet = true; m_commitmentAction = std::move(value); }
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithCommitmentAction(const BillScenarioCommitmentModificationAction& value) { SetCommitmentAction(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationEntry& WithCommitmentAction(BillScenarioCommitmentModificationAction&& value) { SetCommitmentAction(std::move(value)); return *this;}
+    template<typename CommitmentActionT = BillScenarioCommitmentModificationAction>
+    void SetCommitmentAction(CommitmentActionT&& value) { m_commitmentActionHasBeenSet = true; m_commitmentAction = std::forward<CommitmentActionT>(value); }
+    template<typename CommitmentActionT = BillScenarioCommitmentModificationAction>
+    BatchCreateBillScenarioCommitmentModificationEntry& WithCommitmentAction(CommitmentActionT&& value) { SetCommitmentAction(std::forward<CommitmentActionT>(value)); return *this;}
     ///@}
   private:
 

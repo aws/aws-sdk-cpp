@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConnectivityInfoResult::UpdateConnectivityInfoResult()
-{
-}
-
 UpdateConnectivityInfoResult::UpdateConnectivityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateConnectivityInfoResult& UpdateConnectivityInfoResult::operator =(const Aws
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

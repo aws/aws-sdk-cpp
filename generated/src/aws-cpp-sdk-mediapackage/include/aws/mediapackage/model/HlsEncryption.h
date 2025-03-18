@@ -33,7 +33,7 @@ namespace Model
   class HlsEncryption
   {
   public:
-    AWS_MEDIAPACKAGE_API HlsEncryption();
+    AWS_MEDIAPACKAGE_API HlsEncryption() = default;
     AWS_MEDIAPACKAGE_API HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,29 @@ When not specified
      * the initialization vector will be periodically rotated.
 
      */
-    inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
+    inline const Aws::String& GetConstantInitializationVector() const { return m_constantInitializationVector; }
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
-    inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
-    inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
-    inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
-    inline HlsEncryption& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
-    inline HlsEncryption& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
-    inline HlsEncryption& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
+    template<typename ConstantInitializationVectorT = Aws::String>
+    void SetConstantInitializationVector(ConstantInitializationVectorT&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::forward<ConstantInitializationVectorT>(value); }
+    template<typename ConstantInitializationVectorT = Aws::String>
+    HlsEncryption& WithConstantInitializationVector(ConstantInitializationVectorT&& value) { SetConstantInitializationVector(std::forward<ConstantInitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The encryption method to use.
      */
-    inline const EncryptionMethod& GetEncryptionMethod() const{ return m_encryptionMethod; }
+    inline EncryptionMethod GetEncryptionMethod() const { return m_encryptionMethod; }
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
-    inline void SetEncryptionMethod(const EncryptionMethod& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
-    inline void SetEncryptionMethod(EncryptionMethod&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
-    inline HlsEncryption& WithEncryptionMethod(const EncryptionMethod& value) { SetEncryptionMethod(value); return *this;}
-    inline HlsEncryption& WithEncryptionMethod(EncryptionMethod&& value) { SetEncryptionMethod(std::move(value)); return *this;}
+    inline void SetEncryptionMethod(EncryptionMethod value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
+    inline HlsEncryption& WithEncryptionMethod(EncryptionMethod value) { SetEncryptionMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Interval (in seconds) between each encryption key rotation.
      */
-    inline int GetKeyRotationIntervalSeconds() const{ return m_keyRotationIntervalSeconds; }
+    inline int GetKeyRotationIntervalSeconds() const { return m_keyRotationIntervalSeconds; }
     inline bool KeyRotationIntervalSecondsHasBeenSet() const { return m_keyRotationIntervalSecondsHasBeenSet; }
     inline void SetKeyRotationIntervalSeconds(int value) { m_keyRotationIntervalSecondsHasBeenSet = true; m_keyRotationIntervalSeconds = value; }
     inline HlsEncryption& WithKeyRotationIntervalSeconds(int value) { SetKeyRotationIntervalSeconds(value); return *this;}
@@ -82,7 +78,7 @@ When not specified
     /**
      * When enabled, the EXT-X-KEY tag will be repeated in output manifests.
      */
-    inline bool GetRepeatExtXKey() const{ return m_repeatExtXKey; }
+    inline bool GetRepeatExtXKey() const { return m_repeatExtXKey; }
     inline bool RepeatExtXKeyHasBeenSet() const { return m_repeatExtXKeyHasBeenSet; }
     inline void SetRepeatExtXKey(bool value) { m_repeatExtXKeyHasBeenSet = true; m_repeatExtXKey = value; }
     inline HlsEncryption& WithRepeatExtXKey(bool value) { SetRepeatExtXKey(value); return *this;}
@@ -90,25 +86,25 @@ When not specified
 
     ///@{
     
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline HlsEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline HlsEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    HlsEncryption& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_constantInitializationVector;
     bool m_constantInitializationVectorHasBeenSet = false;
 
-    EncryptionMethod m_encryptionMethod;
+    EncryptionMethod m_encryptionMethod{EncryptionMethod::NOT_SET};
     bool m_encryptionMethodHasBeenSet = false;
 
-    int m_keyRotationIntervalSeconds;
+    int m_keyRotationIntervalSeconds{0};
     bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
-    bool m_repeatExtXKey;
+    bool m_repeatExtXKey{false};
     bool m_repeatExtXKeyHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;

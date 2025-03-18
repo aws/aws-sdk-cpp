@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServiceRegistryLogin::ContainerServiceRegistryLogin() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_registryHasBeenSet(false)
-{
-}
-
 ContainerServiceRegistryLogin::ContainerServiceRegistryLogin(JsonView jsonValue)
-  : ContainerServiceRegistryLogin()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ContainerServiceRegistryLogin& ContainerServiceRegistryLogin::operator =(JsonVie
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("password"))
   {
     m_password = jsonValue.GetString("password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registry"))
   {
     m_registry = jsonValue.GetString("registry");
-
     m_registryHasBeenSet = true;
   }
-
   return *this;
 }
 

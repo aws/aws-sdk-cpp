@@ -32,7 +32,7 @@ namespace Model
   class MediaAnalysisManifestSummary
   {
   public:
-    AWS_REKOGNITION_API MediaAnalysisManifestSummary();
+    AWS_REKOGNITION_API MediaAnalysisManifestSummary() = default;
     AWS_REKOGNITION_API MediaAnalysisManifestSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API MediaAnalysisManifestSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const S3Object& GetS3Object() const{ return m_s3Object; }
+    inline const S3Object& GetS3Object() const { return m_s3Object; }
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-    inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-    inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-    inline MediaAnalysisManifestSummary& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-    inline MediaAnalysisManifestSummary& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
+    template<typename S3ObjectT = S3Object>
+    void SetS3Object(S3ObjectT&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::forward<S3ObjectT>(value); }
+    template<typename S3ObjectT = S3Object>
+    MediaAnalysisManifestSummary& WithS3Object(S3ObjectT&& value) { SetS3Object(std::forward<S3ObjectT>(value)); return *this;}
     ///@}
   private:
 

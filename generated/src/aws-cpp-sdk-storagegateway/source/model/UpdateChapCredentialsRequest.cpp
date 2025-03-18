@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChapCredentialsRequest::UpdateChapCredentialsRequest() : 
-    m_targetARNHasBeenSet(false),
-    m_secretToAuthenticateInitiatorHasBeenSet(false),
-    m_initiatorNameHasBeenSet(false),
-    m_secretToAuthenticateTargetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChapCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

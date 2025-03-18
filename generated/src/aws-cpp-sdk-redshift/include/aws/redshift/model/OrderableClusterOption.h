@@ -33,7 +33,7 @@ namespace Model
   class OrderableClusterOption
   {
   public:
-    AWS_REDSHIFT_API OrderableClusterOption();
+    AWS_REDSHIFT_API OrderableClusterOption() = default;
     AWS_REDSHIFT_API OrderableClusterOption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API OrderableClusterOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,56 +45,50 @@ namespace Model
     /**
      * <p>The version of the orderable cluster.</p>
      */
-    inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
+    inline const Aws::String& GetClusterVersion() const { return m_clusterVersion; }
     inline bool ClusterVersionHasBeenSet() const { return m_clusterVersionHasBeenSet; }
-    inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
-    inline void SetClusterVersion(const char* value) { m_clusterVersionHasBeenSet = true; m_clusterVersion.assign(value); }
-    inline OrderableClusterOption& WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
-    inline OrderableClusterOption& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
-    inline OrderableClusterOption& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+    template<typename ClusterVersionT = Aws::String>
+    void SetClusterVersion(ClusterVersionT&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::forward<ClusterVersionT>(value); }
+    template<typename ClusterVersionT = Aws::String>
+    OrderableClusterOption& WithClusterVersion(ClusterVersionT&& value) { SetClusterVersion(std::forward<ClusterVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
      */
-    inline const Aws::String& GetClusterType() const{ return m_clusterType; }
+    inline const Aws::String& GetClusterType() const { return m_clusterType; }
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
-    inline void SetClusterType(const Aws::String& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
-    inline void SetClusterType(const char* value) { m_clusterTypeHasBeenSet = true; m_clusterType.assign(value); }
-    inline OrderableClusterOption& WithClusterType(const Aws::String& value) { SetClusterType(value); return *this;}
-    inline OrderableClusterOption& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
-    inline OrderableClusterOption& WithClusterType(const char* value) { SetClusterType(value); return *this;}
+    template<typename ClusterTypeT = Aws::String>
+    void SetClusterType(ClusterTypeT&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::forward<ClusterTypeT>(value); }
+    template<typename ClusterTypeT = Aws::String>
+    OrderableClusterOption& WithClusterType(ClusterTypeT&& value) { SetClusterType(std::forward<ClusterTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node type for the orderable cluster.</p>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline OrderableClusterOption& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline OrderableClusterOption& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline OrderableClusterOption& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    OrderableClusterOption& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
      */
-    inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline OrderableClusterOption& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
-    inline OrderableClusterOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline OrderableClusterOption& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline OrderableClusterOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZone>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZone>>
+    OrderableClusterOption& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = AvailabilityZone>
+    OrderableClusterOption& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-ValidationSettings::ValidationSettings() : 
-    m_mode(ValidationMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 ValidationSettings::ValidationSettings(JsonView jsonValue)
-  : ValidationSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValidationSettings& ValidationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

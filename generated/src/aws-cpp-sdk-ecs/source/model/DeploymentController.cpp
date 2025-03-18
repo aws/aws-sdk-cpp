@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-DeploymentController::DeploymentController() : 
-    m_type(DeploymentControllerType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DeploymentController::DeploymentController(JsonView jsonValue)
-  : DeploymentController()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DeploymentController& DeploymentController::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = DeploymentControllerTypeMapper::GetDeploymentControllerTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

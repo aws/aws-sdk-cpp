@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeImagesResponse::DescribeImagesResponse()
-{
-}
-
 DescribeImagesResponse::DescribeImagesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const Aws::AmazonWebS
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode imagesNode = resultNode.FirstChild("imagesSet");
     if(!imagesNode.IsNull())
     {
       XmlNode imagesMember = imagesNode.FirstChild("item");
+      m_imagesHasBeenSet = !imagesMember.IsNull();
       while(!imagesMember.IsNull())
       {
         m_images.push_back(imagesMember);
         imagesMember = imagesMember.NextNode("item");
       }
 
+      m_imagesHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeImagesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

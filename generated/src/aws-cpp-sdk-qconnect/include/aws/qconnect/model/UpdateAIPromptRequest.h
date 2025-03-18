@@ -24,7 +24,7 @@ namespace Model
   class UpdateAIPromptRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API UpdateAIPromptRequest();
+    AWS_QCONNECT_API UpdateAIPromptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q in Connect AI Prompt.</p>
      */
-    inline const Aws::String& GetAiPromptId() const{ return m_aiPromptId; }
+    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
     inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
-    inline void SetAiPromptId(const Aws::String& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = value; }
-    inline void SetAiPromptId(Aws::String&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::move(value); }
-    inline void SetAiPromptId(const char* value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId.assign(value); }
-    inline UpdateAIPromptRequest& WithAiPromptId(const Aws::String& value) { SetAiPromptId(value); return *this;}
-    inline UpdateAIPromptRequest& WithAiPromptId(Aws::String&& value) { SetAiPromptId(std::move(value)); return *this;}
-    inline UpdateAIPromptRequest& WithAiPromptId(const char* value) { SetAiPromptId(value); return *this;}
+    template<typename AiPromptIdT = Aws::String>
+    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
+    template<typename AiPromptIdT = Aws::String>
+    UpdateAIPromptRequest& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline UpdateAIPromptRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline UpdateAIPromptRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline UpdateAIPromptRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    UpdateAIPromptRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,52 +68,46 @@ namespace Model
      * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>..</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateAIPromptRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateAIPromptRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateAIPromptRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateAIPromptRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the Amazon Q in Connect AI Prompt.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAIPromptRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAIPromptRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAIPromptRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAIPromptRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the prompt template for this AI Prompt.</p>
      */
-    inline const AIPromptTemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const AIPromptTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const AIPromptTemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(AIPromptTemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline UpdateAIPromptRequest& WithTemplateConfiguration(const AIPromptTemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline UpdateAIPromptRequest& WithTemplateConfiguration(AIPromptTemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = AIPromptTemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = AIPromptTemplateConfiguration>
+    UpdateAIPromptRequest& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility status of the Amazon Q in Connect AI prompt.</p>
      */
-    inline const VisibilityStatus& GetVisibilityStatus() const{ return m_visibilityStatus; }
+    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
     inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
-    inline void SetVisibilityStatus(const VisibilityStatus& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
-    inline void SetVisibilityStatus(VisibilityStatus&& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = std::move(value); }
-    inline UpdateAIPromptRequest& WithVisibilityStatus(const VisibilityStatus& value) { SetVisibilityStatus(value); return *this;}
-    inline UpdateAIPromptRequest& WithVisibilityStatus(VisibilityStatus&& value) { SetVisibilityStatus(std::move(value)); return *this;}
+    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
+    inline UpdateAIPromptRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
     ///@}
   private:
 
@@ -136,7 +126,7 @@ namespace Model
     AIPromptTemplateConfiguration m_templateConfiguration;
     bool m_templateConfigurationHasBeenSet = false;
 
-    VisibilityStatus m_visibilityStatus;
+    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
     bool m_visibilityStatusHasBeenSet = false;
   };
 

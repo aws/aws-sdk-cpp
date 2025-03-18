@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ReservationPlanSettings::ReservationPlanSettings() : 
-    m_commitment(Commitment::NOT_SET),
-    m_commitmentHasBeenSet(false),
-    m_renewalType(RenewalType::NOT_SET),
-    m_renewalTypeHasBeenSet(false),
-    m_reservedSlots(0),
-    m_reservedSlotsHasBeenSet(false)
-{
-}
-
 ReservationPlanSettings::ReservationPlanSettings(JsonView jsonValue)
-  : ReservationPlanSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ReservationPlanSettings& ReservationPlanSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitment"))
   {
     m_commitment = CommitmentMapper::GetCommitmentForName(jsonValue.GetString("commitment"));
-
     m_commitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalType"))
   {
     m_renewalType = RenewalTypeMapper::GetRenewalTypeForName(jsonValue.GetString("renewalType"));
-
     m_renewalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedSlots"))
   {
     m_reservedSlots = jsonValue.GetInteger("reservedSlots");
-
     m_reservedSlotsHasBeenSet = true;
   }
-
   return *this;
 }
 

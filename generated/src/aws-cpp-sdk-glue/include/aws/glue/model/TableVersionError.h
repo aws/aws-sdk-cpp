@@ -32,7 +32,7 @@ namespace Model
   class TableVersionError
   {
   public:
-    AWS_GLUE_API TableVersionError();
+    AWS_GLUE_API TableVersionError() = default;
     AWS_GLUE_API TableVersionError(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TableVersionError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the table in question.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline TableVersionError& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline TableVersionError& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline TableVersionError& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    TableVersionError& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +55,24 @@ namespace Model
      * <p>The ID value of the version in question. A <code>VersionID</code> is a string
      * representation of an integer. Each version is incremented by 1.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline TableVersionError& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline TableVersionError& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline TableVersionError& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    TableVersionError& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about the error.</p>
      */
-    inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+    inline const ErrorDetail& GetErrorDetail() const { return m_errorDetail; }
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
-    inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
-    inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
-    inline TableVersionError& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
-    inline TableVersionError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
+    template<typename ErrorDetailT = ErrorDetail>
+    void SetErrorDetail(ErrorDetailT&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::forward<ErrorDetailT>(value); }
+    template<typename ErrorDetailT = ErrorDetail>
+    TableVersionError& WithErrorDetail(ErrorDetailT&& value) { SetErrorDetail(std::forward<ErrorDetailT>(value)); return *this;}
     ///@}
   private:
 

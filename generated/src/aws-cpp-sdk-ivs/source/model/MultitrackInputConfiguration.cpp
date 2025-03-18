@@ -18,18 +18,7 @@ namespace IVS
 namespace Model
 {
 
-MultitrackInputConfiguration::MultitrackInputConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_maximumResolution(MultitrackMaximumResolution::NOT_SET),
-    m_maximumResolutionHasBeenSet(false),
-    m_policy(MultitrackPolicy::NOT_SET),
-    m_policyHasBeenSet(false)
-{
-}
-
 MultitrackInputConfiguration::MultitrackInputConfiguration(JsonView jsonValue)
-  : MultitrackInputConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ MultitrackInputConfiguration& MultitrackInputConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumResolution"))
   {
     m_maximumResolution = MultitrackMaximumResolutionMapper::GetMultitrackMaximumResolutionForName(jsonValue.GetString("maximumResolution"));
-
     m_maximumResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = MultitrackPolicyMapper::GetMultitrackPolicyForName(jsonValue.GetString("policy"));
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

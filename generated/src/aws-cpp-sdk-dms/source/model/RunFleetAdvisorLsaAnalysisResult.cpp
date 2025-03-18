@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RunFleetAdvisorLsaAnalysisResult::RunFleetAdvisorLsaAnalysisResult()
-{
-}
-
 RunFleetAdvisorLsaAnalysisResult::RunFleetAdvisorLsaAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ RunFleetAdvisorLsaAnalysisResult& RunFleetAdvisorLsaAnalysisResult::operator =(c
   if(jsonValue.ValueExists("LsaAnalysisId"))
   {
     m_lsaAnalysisId = jsonValue.GetString("LsaAnalysisId");
-
+    m_lsaAnalysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

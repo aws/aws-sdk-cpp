@@ -20,13 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-LabelOptions::LabelOptions() : 
-    m_timezoneHasBeenSet(false)
-{
-}
-
 LabelOptions::LabelOptions(const XmlNode& xmlNode)
-  : LabelOptions()
 {
   *this = xmlNode;
 }

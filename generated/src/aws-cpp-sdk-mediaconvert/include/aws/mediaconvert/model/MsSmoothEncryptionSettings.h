@@ -32,7 +32,7 @@ namespace Model
   class MsSmoothEncryptionSettings
   {
   public:
-    AWS_MEDIACONVERT_API MsSmoothEncryptionSettings();
+    AWS_MEDIACONVERT_API MsSmoothEncryptionSettings() = default;
     AWS_MEDIACONVERT_API MsSmoothEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MsSmoothEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * when doing DRM encryption with a SPEKE-compliant key provider. If your output
      * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline MsSmoothEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline MsSmoothEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    MsSmoothEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 

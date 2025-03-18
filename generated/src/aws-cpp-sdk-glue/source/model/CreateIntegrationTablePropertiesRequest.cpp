@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntegrationTablePropertiesRequest::CreateIntegrationTablePropertiesRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_sourceTableConfigHasBeenSet(false),
-    m_targetTableConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationTablePropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

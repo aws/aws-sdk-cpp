@@ -24,7 +24,7 @@ namespace Model
   class CreateJobForDevicesRequest : public PanoramaRequest
   {
   public:
-    AWS_PANORAMA_API CreateJobForDevicesRequest();
+    AWS_PANORAMA_API CreateJobForDevicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,39 +39,36 @@ namespace Model
     /**
      * <p>ID of target device.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeviceIds() const{ return m_deviceIds; }
+    inline const Aws::Vector<Aws::String>& GetDeviceIds() const { return m_deviceIds; }
     inline bool DeviceIdsHasBeenSet() const { return m_deviceIdsHasBeenSet; }
-    inline void SetDeviceIds(const Aws::Vector<Aws::String>& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = value; }
-    inline void SetDeviceIds(Aws::Vector<Aws::String>&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = std::move(value); }
-    inline CreateJobForDevicesRequest& WithDeviceIds(const Aws::Vector<Aws::String>& value) { SetDeviceIds(value); return *this;}
-    inline CreateJobForDevicesRequest& WithDeviceIds(Aws::Vector<Aws::String>&& value) { SetDeviceIds(std::move(value)); return *this;}
-    inline CreateJobForDevicesRequest& AddDeviceIds(const Aws::String& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
-    inline CreateJobForDevicesRequest& AddDeviceIds(Aws::String&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(std::move(value)); return *this; }
-    inline CreateJobForDevicesRequest& AddDeviceIds(const char* value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
+    template<typename DeviceIdsT = Aws::Vector<Aws::String>>
+    void SetDeviceIds(DeviceIdsT&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = std::forward<DeviceIdsT>(value); }
+    template<typename DeviceIdsT = Aws::Vector<Aws::String>>
+    CreateJobForDevicesRequest& WithDeviceIds(DeviceIdsT&& value) { SetDeviceIds(std::forward<DeviceIdsT>(value)); return *this;}
+    template<typename DeviceIdsT = Aws::String>
+    CreateJobForDevicesRequest& AddDeviceIds(DeviceIdsT&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.emplace_back(std::forward<DeviceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Configuration settings for a software update job.</p>
      */
-    inline const DeviceJobConfig& GetDeviceJobConfig() const{ return m_deviceJobConfig; }
+    inline const DeviceJobConfig& GetDeviceJobConfig() const { return m_deviceJobConfig; }
     inline bool DeviceJobConfigHasBeenSet() const { return m_deviceJobConfigHasBeenSet; }
-    inline void SetDeviceJobConfig(const DeviceJobConfig& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = value; }
-    inline void SetDeviceJobConfig(DeviceJobConfig&& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = std::move(value); }
-    inline CreateJobForDevicesRequest& WithDeviceJobConfig(const DeviceJobConfig& value) { SetDeviceJobConfig(value); return *this;}
-    inline CreateJobForDevicesRequest& WithDeviceJobConfig(DeviceJobConfig&& value) { SetDeviceJobConfig(std::move(value)); return *this;}
+    template<typename DeviceJobConfigT = DeviceJobConfig>
+    void SetDeviceJobConfig(DeviceJobConfigT&& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = std::forward<DeviceJobConfigT>(value); }
+    template<typename DeviceJobConfigT = DeviceJobConfig>
+    CreateJobForDevicesRequest& WithDeviceJobConfig(DeviceJobConfigT&& value) { SetDeviceJobConfig(std::forward<DeviceJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of job to run.</p>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline CreateJobForDevicesRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline CreateJobForDevicesRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline CreateJobForDevicesRequest& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +78,7 @@ namespace Model
     DeviceJobConfig m_deviceJobConfig;
     bool m_deviceJobConfigHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class OpenZFSCreateRootVolumeConfiguration
   {
   public:
-    AWS_FSX_API OpenZFSCreateRootVolumeConfiguration();
+    AWS_FSX_API OpenZFSCreateRootVolumeConfiguration() = default;
     AWS_FSX_API OpenZFSCreateRootVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OpenZFSCreateRootVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User
      * Guide</i>.</p>
      */
-    inline int GetRecordSizeKiB() const{ return m_recordSizeKiB; }
+    inline int GetRecordSizeKiB() const { return m_recordSizeKiB; }
     inline bool RecordSizeKiBHasBeenSet() const { return m_recordSizeKiBHasBeenSet; }
     inline void SetRecordSizeKiB(int value) { m_recordSizeKiBHasBeenSet = true; m_recordSizeKiB = value; }
     inline OpenZFSCreateRootVolumeConfiguration& WithRecordSizeKiB(int value) { SetRecordSizeKiB(value); return *this;}
@@ -71,26 +71,24 @@ namespace Model
      * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
      * delivers higher write throughput speeds.</p> </li> </ul>
      */
-    inline const OpenZFSDataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
+    inline OpenZFSDataCompressionType GetDataCompressionType() const { return m_dataCompressionType; }
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
-    inline void SetDataCompressionType(const OpenZFSDataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
-    inline void SetDataCompressionType(OpenZFSDataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
-    inline OpenZFSCreateRootVolumeConfiguration& WithDataCompressionType(const OpenZFSDataCompressionType& value) { SetDataCompressionType(value); return *this;}
-    inline OpenZFSCreateRootVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
+    inline void SetDataCompressionType(OpenZFSDataCompressionType value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
+    inline OpenZFSCreateRootVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType value) { SetDataCompressionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration object for mounting a file system.</p>
      */
-    inline const Aws::Vector<OpenZFSNfsExport>& GetNfsExports() const{ return m_nfsExports; }
+    inline const Aws::Vector<OpenZFSNfsExport>& GetNfsExports() const { return m_nfsExports; }
     inline bool NfsExportsHasBeenSet() const { return m_nfsExportsHasBeenSet; }
-    inline void SetNfsExports(const Aws::Vector<OpenZFSNfsExport>& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = value; }
-    inline void SetNfsExports(Aws::Vector<OpenZFSNfsExport>&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = std::move(value); }
-    inline OpenZFSCreateRootVolumeConfiguration& WithNfsExports(const Aws::Vector<OpenZFSNfsExport>& value) { SetNfsExports(value); return *this;}
-    inline OpenZFSCreateRootVolumeConfiguration& WithNfsExports(Aws::Vector<OpenZFSNfsExport>&& value) { SetNfsExports(std::move(value)); return *this;}
-    inline OpenZFSCreateRootVolumeConfiguration& AddNfsExports(const OpenZFSNfsExport& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.push_back(value); return *this; }
-    inline OpenZFSCreateRootVolumeConfiguration& AddNfsExports(OpenZFSNfsExport&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.push_back(std::move(value)); return *this; }
+    template<typename NfsExportsT = Aws::Vector<OpenZFSNfsExport>>
+    void SetNfsExports(NfsExportsT&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = std::forward<NfsExportsT>(value); }
+    template<typename NfsExportsT = Aws::Vector<OpenZFSNfsExport>>
+    OpenZFSCreateRootVolumeConfiguration& WithNfsExports(NfsExportsT&& value) { SetNfsExports(std::forward<NfsExportsT>(value)); return *this;}
+    template<typename NfsExportsT = OpenZFSNfsExport>
+    OpenZFSCreateRootVolumeConfiguration& AddNfsExports(NfsExportsT&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.emplace_back(std::forward<NfsExportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,14 +96,14 @@ namespace Model
      * <p>An object specifying how much storage users or groups can use on the
      * volume.</p>
      */
-    inline const Aws::Vector<OpenZFSUserOrGroupQuota>& GetUserAndGroupQuotas() const{ return m_userAndGroupQuotas; }
+    inline const Aws::Vector<OpenZFSUserOrGroupQuota>& GetUserAndGroupQuotas() const { return m_userAndGroupQuotas; }
     inline bool UserAndGroupQuotasHasBeenSet() const { return m_userAndGroupQuotasHasBeenSet; }
-    inline void SetUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = value; }
-    inline void SetUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = std::move(value); }
-    inline OpenZFSCreateRootVolumeConfiguration& WithUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { SetUserAndGroupQuotas(value); return *this;}
-    inline OpenZFSCreateRootVolumeConfiguration& WithUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { SetUserAndGroupQuotas(std::move(value)); return *this;}
-    inline OpenZFSCreateRootVolumeConfiguration& AddUserAndGroupQuotas(const OpenZFSUserOrGroupQuota& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(value); return *this; }
-    inline OpenZFSCreateRootVolumeConfiguration& AddUserAndGroupQuotas(OpenZFSUserOrGroupQuota&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(std::move(value)); return *this; }
+    template<typename UserAndGroupQuotasT = Aws::Vector<OpenZFSUserOrGroupQuota>>
+    void SetUserAndGroupQuotas(UserAndGroupQuotasT&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = std::forward<UserAndGroupQuotasT>(value); }
+    template<typename UserAndGroupQuotasT = Aws::Vector<OpenZFSUserOrGroupQuota>>
+    OpenZFSCreateRootVolumeConfiguration& WithUserAndGroupQuotas(UserAndGroupQuotasT&& value) { SetUserAndGroupQuotas(std::forward<UserAndGroupQuotasT>(value)); return *this;}
+    template<typename UserAndGroupQuotasT = OpenZFSUserOrGroupQuota>
+    OpenZFSCreateRootVolumeConfiguration& AddUserAndGroupQuotas(UserAndGroupQuotasT&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.emplace_back(std::forward<UserAndGroupQuotasT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,7 +116,7 @@ namespace Model
      * specify one or more tags when creating the snapshot, no tags are copied from the
      * volume, regardless of this value. </p>
      */
-    inline bool GetCopyTagsToSnapshots() const{ return m_copyTagsToSnapshots; }
+    inline bool GetCopyTagsToSnapshots() const { return m_copyTagsToSnapshots; }
     inline bool CopyTagsToSnapshotsHasBeenSet() const { return m_copyTagsToSnapshotsHasBeenSet; }
     inline void SetCopyTagsToSnapshots(bool value) { m_copyTagsToSnapshotsHasBeenSet = true; m_copyTagsToSnapshots = value; }
     inline OpenZFSCreateRootVolumeConfiguration& WithCopyTagsToSnapshots(bool value) { SetCopyTagsToSnapshots(value); return *this;}
@@ -130,17 +128,17 @@ namespace Model
      * value to <code>true</code> can be useful after you have completed changes to a
      * volume and no longer want changes to occur. </p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline OpenZFSCreateRootVolumeConfiguration& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
     ///@}
   private:
 
-    int m_recordSizeKiB;
+    int m_recordSizeKiB{0};
     bool m_recordSizeKiBHasBeenSet = false;
 
-    OpenZFSDataCompressionType m_dataCompressionType;
+    OpenZFSDataCompressionType m_dataCompressionType{OpenZFSDataCompressionType::NOT_SET};
     bool m_dataCompressionTypeHasBeenSet = false;
 
     Aws::Vector<OpenZFSNfsExport> m_nfsExports;
@@ -149,10 +147,10 @@ namespace Model
     Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
     bool m_userAndGroupQuotasHasBeenSet = false;
 
-    bool m_copyTagsToSnapshots;
+    bool m_copyTagsToSnapshots{false};
     bool m_copyTagsToSnapshotsHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
   };
 

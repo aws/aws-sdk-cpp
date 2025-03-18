@@ -21,7 +21,7 @@ namespace Model
   class WithdrawByoipCidrRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrRequest();
+    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
      * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline WithdrawByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline WithdrawByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline WithdrawByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    WithdrawByoipCidrRequest& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 

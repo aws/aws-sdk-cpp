@@ -18,15 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-Datapoint::Datapoint() : 
-    m_timestampHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Datapoint::Datapoint(JsonView jsonValue)
-  : Datapoint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Datapoint& Datapoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

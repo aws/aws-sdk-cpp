@@ -12,13 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKeyRequest::DeleteKeyRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_deleteKeyInDays(0),
-    m_deleteKeyInDaysHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKeyRequest::SerializePayload() const
 {
   JsonValue payload;

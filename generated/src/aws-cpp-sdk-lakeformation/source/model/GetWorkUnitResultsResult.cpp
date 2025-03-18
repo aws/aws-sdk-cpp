@@ -16,29 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkUnitResultsResult::GetWorkUnitResultsResult()
-{
-}
-
-GetWorkUnitResultsResult::GetWorkUnitResultsResult(GetWorkUnitResultsResult&& toMove) : 
-    m_resultStream(std::move(toMove.m_resultStream)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetWorkUnitResultsResult& GetWorkUnitResultsResult::operator=(GetWorkUnitResultsResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_resultStream = std::move(toMove.m_resultStream);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetWorkUnitResultsResult::GetWorkUnitResultsResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -47,12 +24,14 @@ GetWorkUnitResultsResult::GetWorkUnitResultsResult(Aws::AmazonWebServiceResult<R
 GetWorkUnitResultsResult& GetWorkUnitResultsResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_resultStream = result.TakeOwnershipOfPayload();
+  m_resultStreamHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

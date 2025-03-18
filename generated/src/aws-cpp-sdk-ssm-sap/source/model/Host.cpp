@@ -18,19 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-Host::Host() : 
-    m_hostNameHasBeenSet(false),
-    m_hostIpHasBeenSet(false),
-    m_eC2InstanceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_hostRole(HostRole::NOT_SET),
-    m_hostRoleHasBeenSet(false),
-    m_osVersionHasBeenSet(false)
-{
-}
-
 Host::Host(JsonView jsonValue)
-  : Host()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Host& Host::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HostName"))
   {
     m_hostName = jsonValue.GetString("HostName");
-
     m_hostNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostIp"))
   {
     m_hostIp = jsonValue.GetString("HostIp");
-
     m_hostIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EC2InstanceId"))
   {
     m_eC2InstanceId = jsonValue.GetString("EC2InstanceId");
-
     m_eC2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostRole"))
   {
     m_hostRole = HostRoleMapper::GetHostRoleForName(jsonValue.GetString("HostRole"));
-
     m_hostRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OsVersion"))
   {
     m_osVersion = jsonValue.GetString("OsVersion");
-
     m_osVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeviceRequest::DeleteDeviceRequest() : 
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeviceRequest::SerializePayload() const
 {
   return {};

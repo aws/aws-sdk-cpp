@@ -30,7 +30,7 @@ namespace Model
   class ApplicationSnapshotConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
-    inline bool GetSnapshotsEnabledUpdate() const{ return m_snapshotsEnabledUpdate; }
+    inline bool GetSnapshotsEnabledUpdate() const { return m_snapshotsEnabledUpdate; }
     inline bool SnapshotsEnabledUpdateHasBeenSet() const { return m_snapshotsEnabledUpdateHasBeenSet; }
     inline void SetSnapshotsEnabledUpdate(bool value) { m_snapshotsEnabledUpdateHasBeenSet = true; m_snapshotsEnabledUpdate = value; }
     inline ApplicationSnapshotConfigurationUpdate& WithSnapshotsEnabledUpdate(bool value) { SetSnapshotsEnabledUpdate(value); return *this;}
     ///@}
   private:
 
-    bool m_snapshotsEnabledUpdate;
+    bool m_snapshotsEnabledUpdate{false};
     bool m_snapshotsEnabledUpdateHasBeenSet = false;
   };
 

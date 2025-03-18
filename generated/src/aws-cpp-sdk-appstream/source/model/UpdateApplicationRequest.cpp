@@ -12,19 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iconS3LocationHasBeenSet(false),
-    m_launchPathHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_launchParametersHasBeenSet(false),
-    m_appBlockArnHasBeenSet(false),
-    m_attributesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

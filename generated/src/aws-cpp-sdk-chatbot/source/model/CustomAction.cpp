@@ -18,17 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-CustomAction::CustomAction() : 
-    m_customActionArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_aliasNameHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_actionNameHasBeenSet(false)
-{
-}
-
 CustomAction::CustomAction(JsonView jsonValue)
-  : CustomAction()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CustomAction& CustomAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomActionArn"))
   {
     m_customActionArn = jsonValue.GetString("CustomActionArn");
-
     m_customActionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetObject("Definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AliasName"))
   {
     m_aliasName = jsonValue.GetString("AliasName");
-
     m_aliasNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attachments"))
   {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
@@ -65,14 +49,11 @@ CustomAction& CustomAction::operator =(JsonView jsonValue)
     }
     m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionName"))
   {
     m_actionName = jsonValue.GetString("ActionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

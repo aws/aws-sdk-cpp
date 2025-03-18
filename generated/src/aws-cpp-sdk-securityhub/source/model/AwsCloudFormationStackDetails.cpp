@@ -18,30 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFormationStackDetails::AwsCloudFormationStackDetails() : 
-    m_capabilitiesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
-{
-}
-
 AwsCloudFormationStackDetails::AwsCloudFormationStackDetails(JsonView jsonValue)
-  : AwsCloudFormationStackDetails()
 {
   *this = jsonValue;
 }
@@ -57,49 +34,36 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableRollback"))
   {
     m_disableRollback = jsonValue.GetBool("DisableRollback");
-
     m_disableRollbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DriftInformation"))
   {
     m_driftInformation = jsonValue.GetObject("DriftInformation");
-
     m_driftInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableTerminationProtection"))
   {
     m_enableTerminationProtection = jsonValue.GetBool("EnableTerminationProtection");
-
     m_enableTerminationProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationArns"))
   {
     Aws::Utils::Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
@@ -109,7 +73,6 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
     }
     m_notificationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -119,49 +82,36 @@ AwsCloudFormationStackDetails& AwsCloudFormationStackDetails::operator =(JsonVie
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackStatus"))
   {
     m_stackStatus = jsonValue.GetString("StackStatus");
-
     m_stackStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackStatusReason"))
   {
     m_stackStatusReason = jsonValue.GetString("StackStatusReason");
-
     m_stackStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutInMinutes"))
   {
     m_timeoutInMinutes = jsonValue.GetInteger("TimeoutInMinutes");
-
     m_timeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

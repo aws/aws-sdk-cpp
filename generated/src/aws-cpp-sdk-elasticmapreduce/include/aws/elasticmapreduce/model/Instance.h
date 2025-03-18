@@ -36,7 +36,7 @@ namespace Model
   class Instance
   {
   public:
-    AWS_EMR_API Instance();
+    AWS_EMR_API Instance() = default;
     AWS_EMR_API Instance(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,110 +46,96 @@ namespace Model
     /**
      * <p>The unique identifier for the instance in Amazon EMR.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Instance& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Instance& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Instance& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the instance in Amazon EC2.</p>
      */
-    inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+    inline const Aws::String& GetEc2InstanceId() const { return m_ec2InstanceId; }
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
-    inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
-    inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
-    inline Instance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
-    inline Instance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
-    inline Instance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
+    template<typename Ec2InstanceIdT = Aws::String>
+    void SetEc2InstanceId(Ec2InstanceIdT&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::forward<Ec2InstanceIdT>(value); }
+    template<typename Ec2InstanceIdT = Aws::String>
+    Instance& WithEc2InstanceId(Ec2InstanceIdT&& value) { SetEc2InstanceId(std::forward<Ec2InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public DNS name of the instance.</p>
      */
-    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+    inline const Aws::String& GetPublicDnsName() const { return m_publicDnsName; }
     inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
-    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
-    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
-    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
-    inline Instance& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
-    inline Instance& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
-    inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+    template<typename PublicDnsNameT = Aws::String>
+    void SetPublicDnsName(PublicDnsNameT&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::forward<PublicDnsNameT>(value); }
+    template<typename PublicDnsNameT = Aws::String>
+    Instance& WithPublicDnsName(PublicDnsNameT&& value) { SetPublicDnsName(std::forward<PublicDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public IP address of the instance.</p>
      */
-    inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
+    inline const Aws::String& GetPublicIpAddress() const { return m_publicIpAddress; }
     inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
-    inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
-    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
-    inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
-    inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
-    inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
-    inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
+    template<typename PublicIpAddressT = Aws::String>
+    void SetPublicIpAddress(PublicIpAddressT&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::forward<PublicIpAddressT>(value); }
+    template<typename PublicIpAddressT = Aws::String>
+    Instance& WithPublicIpAddress(PublicIpAddressT&& value) { SetPublicIpAddress(std::forward<PublicIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private DNS name of the instance.</p>
      */
-    inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+    inline const Aws::String& GetPrivateDnsName() const { return m_privateDnsName; }
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
-    inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
-    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
-    inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
-    inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
-    inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
-    inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+    template<typename PrivateDnsNameT = Aws::String>
+    void SetPrivateDnsName(PrivateDnsNameT&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::forward<PrivateDnsNameT>(value); }
+    template<typename PrivateDnsNameT = Aws::String>
+    Instance& WithPrivateDnsName(PrivateDnsNameT&& value) { SetPrivateDnsName(std::forward<PrivateDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private IP address of the instance.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline const Aws::String& GetPrivateIpAddress() const { return m_privateIpAddress; }
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline Instance& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    template<typename PrivateIpAddressT = Aws::String>
+    void SetPrivateIpAddress(PrivateIpAddressT&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::forward<PrivateIpAddressT>(value); }
+    template<typename PrivateIpAddressT = Aws::String>
+    Instance& WithPrivateIpAddress(PrivateIpAddressT&& value) { SetPrivateIpAddress(std::forward<PrivateIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the instance.</p>
      */
-    inline const InstanceStatus& GetStatus() const{ return m_status; }
+    inline const InstanceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Instance& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
-    inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = InstanceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = InstanceStatus>
+    Instance& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the instance group to which this instance belongs.</p>
      */
-    inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+    inline const Aws::String& GetInstanceGroupId() const { return m_instanceGroupId; }
     inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
-    inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
-    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
-    inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
-    inline Instance& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
-    inline Instance& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
-    inline Instance& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
+    template<typename InstanceGroupIdT = Aws::String>
+    void SetInstanceGroupId(InstanceGroupIdT&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::forward<InstanceGroupIdT>(value); }
+    template<typename InstanceGroupIdT = Aws::String>
+    Instance& WithInstanceGroupId(InstanceGroupIdT&& value) { SetInstanceGroupId(std::forward<InstanceGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,14 +143,12 @@ namespace Model
      * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
-    inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
+    inline const Aws::String& GetInstanceFleetId() const { return m_instanceFleetId; }
     inline bool InstanceFleetIdHasBeenSet() const { return m_instanceFleetIdHasBeenSet; }
-    inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
-    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::move(value); }
-    inline void SetInstanceFleetId(const char* value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId.assign(value); }
-    inline Instance& WithInstanceFleetId(const Aws::String& value) { SetInstanceFleetId(value); return *this;}
-    inline Instance& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
-    inline Instance& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
+    template<typename InstanceFleetIdT = Aws::String>
+    void SetInstanceFleetId(InstanceFleetIdT&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::forward<InstanceFleetIdT>(value); }
+    template<typename InstanceFleetIdT = Aws::String>
+    Instance& WithInstanceFleetId(InstanceFleetIdT&& value) { SetInstanceFleetId(std::forward<InstanceFleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,40 +156,36 @@ namespace Model
      * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
      * <code>SPOT</code>. </p>
      */
-    inline const MarketType& GetMarket() const{ return m_market; }
+    inline MarketType GetMarket() const { return m_market; }
     inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
-    inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
-    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = std::move(value); }
-    inline Instance& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
-    inline Instance& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
+    inline void SetMarket(MarketType value) { m_marketHasBeenSet = true; m_market = value; }
+    inline Instance& WithMarket(MarketType value) { SetMarket(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline Instance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline Instance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    Instance& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of Amazon EBS volumes that are attached to this instance.</p>
      */
-    inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const{ return m_ebsVolumes; }
+    inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const { return m_ebsVolumes; }
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-    inline void SetEbsVolumes(const Aws::Vector<EbsVolume>& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-    inline void SetEbsVolumes(Aws::Vector<EbsVolume>&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-    inline Instance& WithEbsVolumes(const Aws::Vector<EbsVolume>& value) { SetEbsVolumes(value); return *this;}
-    inline Instance& WithEbsVolumes(Aws::Vector<EbsVolume>&& value) { SetEbsVolumes(std::move(value)); return *this;}
-    inline Instance& AddEbsVolumes(const EbsVolume& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(value); return *this; }
-    inline Instance& AddEbsVolumes(EbsVolume&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(std::move(value)); return *this; }
+    template<typename EbsVolumesT = Aws::Vector<EbsVolume>>
+    void SetEbsVolumes(EbsVolumesT&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::forward<EbsVolumesT>(value); }
+    template<typename EbsVolumesT = Aws::Vector<EbsVolume>>
+    Instance& WithEbsVolumes(EbsVolumesT&& value) { SetEbsVolumes(std::forward<EbsVolumesT>(value)); return *this;}
+    template<typename EbsVolumesT = EbsVolume>
+    Instance& AddEbsVolumes(EbsVolumesT&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.emplace_back(std::forward<EbsVolumesT>(value)); return *this; }
     ///@}
   private:
 
@@ -236,7 +216,7 @@ namespace Model
     Aws::String m_instanceFleetId;
     bool m_instanceFleetIdHasBeenSet = false;
 
-    MarketType m_market;
+    MarketType m_market{MarketType::NOT_SET};
     bool m_marketHasBeenSet = false;
 
     Aws::String m_instanceType;

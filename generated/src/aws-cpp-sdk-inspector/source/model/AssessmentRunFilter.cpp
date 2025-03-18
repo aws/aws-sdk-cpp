@@ -18,19 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentRunFilter::AssessmentRunFilter() : 
-    m_namePatternHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_durationRangeHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_startTimeRangeHasBeenSet(false),
-    m_completionTimeRangeHasBeenSet(false),
-    m_stateChangeTimeRangeHasBeenSet(false)
-{
-}
-
 AssessmentRunFilter::AssessmentRunFilter(JsonView jsonValue)
-  : AssessmentRunFilter()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ AssessmentRunFilter& AssessmentRunFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namePattern"))
   {
     m_namePattern = jsonValue.GetString("namePattern");
-
     m_namePatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("states"))
   {
     Aws::Utils::Array<JsonView> statesJsonList = jsonValue.GetArray("states");
@@ -53,14 +39,11 @@ AssessmentRunFilter& AssessmentRunFilter::operator =(JsonView jsonValue)
     }
     m_statesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationRange"))
   {
     m_durationRange = jsonValue.GetObject("durationRange");
-
     m_durationRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
@@ -70,28 +53,21 @@ AssessmentRunFilter& AssessmentRunFilter::operator =(JsonView jsonValue)
     }
     m_rulesPackageArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeRange"))
   {
     m_startTimeRange = jsonValue.GetObject("startTimeRange");
-
     m_startTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTimeRange"))
   {
     m_completionTimeRange = jsonValue.GetObject("completionTimeRange");
-
     m_completionTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangeTimeRange"))
   {
     m_stateChangeTimeRange = jsonValue.GetObject("stateChangeTimeRange");
-
     m_stateChangeTimeRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

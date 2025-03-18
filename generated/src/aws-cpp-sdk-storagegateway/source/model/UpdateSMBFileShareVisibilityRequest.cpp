@@ -12,13 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSMBFileShareVisibilityRequest::UpdateSMBFileShareVisibilityRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_fileSharesVisible(false),
-    m_fileSharesVisibleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSMBFileShareVisibilityRequest::SerializePayload() const
 {
   JsonValue payload;

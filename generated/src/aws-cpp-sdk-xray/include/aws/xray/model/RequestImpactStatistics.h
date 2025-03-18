@@ -30,7 +30,7 @@ namespace Model
   class RequestImpactStatistics
   {
   public:
-    AWS_XRAY_API RequestImpactStatistics();
+    AWS_XRAY_API RequestImpactStatistics() = default;
     AWS_XRAY_API RequestImpactStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API RequestImpactStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of requests that have resulted in a fault,</p>
      */
-    inline long long GetFaultCount() const{ return m_faultCount; }
+    inline long long GetFaultCount() const { return m_faultCount; }
     inline bool FaultCountHasBeenSet() const { return m_faultCountHasBeenSet; }
     inline void SetFaultCount(long long value) { m_faultCountHasBeenSet = true; m_faultCount = value; }
     inline RequestImpactStatistics& WithFaultCount(long long value) { SetFaultCount(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The number of successful requests.</p>
      */
-    inline long long GetOkCount() const{ return m_okCount; }
+    inline long long GetOkCount() const { return m_okCount; }
     inline bool OkCountHasBeenSet() const { return m_okCountHasBeenSet; }
     inline void SetOkCount(long long value) { m_okCountHasBeenSet = true; m_okCount = value; }
     inline RequestImpactStatistics& WithOkCount(long long value) { SetOkCount(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>The total number of requests to the service.</p>
      */
-    inline long long GetTotalCount() const{ return m_totalCount; }
+    inline long long GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline RequestImpactStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
     ///@}
   private:
 
-    long long m_faultCount;
+    long long m_faultCount{0};
     bool m_faultCountHasBeenSet = false;
 
-    long long m_okCount;
+    long long m_okCount{0};
     bool m_okCountHasBeenSet = false;
 
-    long long m_totalCount;
+    long long m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
   };
 

@@ -12,25 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

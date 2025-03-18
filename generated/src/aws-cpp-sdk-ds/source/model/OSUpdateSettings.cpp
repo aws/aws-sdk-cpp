@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-OSUpdateSettings::OSUpdateSettings() : 
-    m_oSVersion(OSVersion::NOT_SET),
-    m_oSVersionHasBeenSet(false)
-{
-}
-
 OSUpdateSettings::OSUpdateSettings(JsonView jsonValue)
-  : OSUpdateSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OSUpdateSettings& OSUpdateSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OSVersion"))
   {
     m_oSVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OSVersion"));
-
     m_oSVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

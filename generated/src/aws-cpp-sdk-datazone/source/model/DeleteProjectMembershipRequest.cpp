@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectMembershipRequest::DeleteProjectMembershipRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RebootDBShardGroupRequest::RebootDBShardGroupRequest() : 
-    m_dBShardGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RebootDBShardGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

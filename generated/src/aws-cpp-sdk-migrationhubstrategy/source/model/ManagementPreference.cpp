@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ManagementPreference::ManagementPreference() : 
-    m_awsManagedResourcesHasBeenSet(false),
-    m_noPreferenceHasBeenSet(false),
-    m_selfManageResourcesHasBeenSet(false)
-{
-}
-
 ManagementPreference::ManagementPreference(JsonView jsonValue)
-  : ManagementPreference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ManagementPreference& ManagementPreference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsManagedResources"))
   {
     m_awsManagedResources = jsonValue.GetObject("awsManagedResources");
-
     m_awsManagedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noPreference"))
   {
     m_noPreference = jsonValue.GetObject("noPreference");
-
     m_noPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selfManageResources"))
   {
     m_selfManageResources = jsonValue.GetObject("selfManageResources");
-
     m_selfManageResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

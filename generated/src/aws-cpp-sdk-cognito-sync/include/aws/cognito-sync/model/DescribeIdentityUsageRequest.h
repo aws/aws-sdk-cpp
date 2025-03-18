@@ -25,7 +25,7 @@ namespace Model
   class DescribeIdentityUsageRequest : public CognitoSyncRequest
   {
   public:
-    AWS_COGNITOSYNC_API DescribeIdentityUsageRequest();
+    AWS_COGNITOSYNC_API DescribeIdentityUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline DescribeIdentityUsageRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline DescribeIdentityUsageRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline DescribeIdentityUsageRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    DescribeIdentityUsageRequest& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline DescribeIdentityUsageRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline DescribeIdentityUsageRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline DescribeIdentityUsageRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    DescribeIdentityUsageRequest& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-ShipmentInformation::ShipmentInformation() : 
-    m_shipmentTrackingNumberHasBeenSet(false),
-    m_shipmentCarrier(ShipmentCarrier::NOT_SET),
-    m_shipmentCarrierHasBeenSet(false)
-{
-}
-
 ShipmentInformation::ShipmentInformation(JsonView jsonValue)
-  : ShipmentInformation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ShipmentInformation& ShipmentInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShipmentTrackingNumber"))
   {
     m_shipmentTrackingNumber = jsonValue.GetString("ShipmentTrackingNumber");
-
     m_shipmentTrackingNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShipmentCarrier"))
   {
     m_shipmentCarrier = ShipmentCarrierMapper::GetShipmentCarrierForName(jsonValue.GetString("ShipmentCarrier"));
-
     m_shipmentCarrierHasBeenSet = true;
   }
-
   return *this;
 }
 

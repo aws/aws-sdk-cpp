@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AudienceMedia::AudienceMedia() : 
-    m_audienceHasBeenSet(false),
-    m_alternateMediaHasBeenSet(false)
-{
-}
-
 AudienceMedia::AudienceMedia(JsonView jsonValue)
-  : AudienceMedia()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudienceMedia& AudienceMedia::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Audience"))
   {
     m_audience = jsonValue.GetString("Audience");
-
     m_audienceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateMedia"))
   {
     Aws::Utils::Array<JsonView> alternateMediaJsonList = jsonValue.GetArray("AlternateMedia");
@@ -48,7 +39,6 @@ AudienceMedia& AudienceMedia::operator =(JsonView jsonValue)
     }
     m_alternateMediaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_identifierHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(JsonView jsonValue)
-  : Subnet()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Subnet& Subnet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetObject("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   return *this;
 }
 

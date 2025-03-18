@@ -18,32 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35SegmentationDescriptor::Scte35SegmentationDescriptor() : 
-    m_deliveryRestrictionsHasBeenSet(false),
-    m_segmentNum(0),
-    m_segmentNumHasBeenSet(false),
-    m_segmentationCancelIndicator(Scte35SegmentationCancelIndicator::NOT_SET),
-    m_segmentationCancelIndicatorHasBeenSet(false),
-    m_segmentationDuration(0),
-    m_segmentationDurationHasBeenSet(false),
-    m_segmentationEventId(0),
-    m_segmentationEventIdHasBeenSet(false),
-    m_segmentationTypeId(0),
-    m_segmentationTypeIdHasBeenSet(false),
-    m_segmentationUpidHasBeenSet(false),
-    m_segmentationUpidType(0),
-    m_segmentationUpidTypeHasBeenSet(false),
-    m_segmentsExpected(0),
-    m_segmentsExpectedHasBeenSet(false),
-    m_subSegmentNum(0),
-    m_subSegmentNumHasBeenSet(false),
-    m_subSegmentsExpected(0),
-    m_subSegmentsExpectedHasBeenSet(false)
-{
-}
-
 Scte35SegmentationDescriptor::Scte35SegmentationDescriptor(JsonView jsonValue)
-  : Scte35SegmentationDescriptor()
 {
   *this = jsonValue;
 }
@@ -53,80 +28,58 @@ Scte35SegmentationDescriptor& Scte35SegmentationDescriptor::operator =(JsonView 
   if(jsonValue.ValueExists("deliveryRestrictions"))
   {
     m_deliveryRestrictions = jsonValue.GetObject("deliveryRestrictions");
-
     m_deliveryRestrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentNum"))
   {
     m_segmentNum = jsonValue.GetInteger("segmentNum");
-
     m_segmentNumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationCancelIndicator"))
   {
     m_segmentationCancelIndicator = Scte35SegmentationCancelIndicatorMapper::GetScte35SegmentationCancelIndicatorForName(jsonValue.GetString("segmentationCancelIndicator"));
-
     m_segmentationCancelIndicatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationDuration"))
   {
     m_segmentationDuration = jsonValue.GetInt64("segmentationDuration");
-
     m_segmentationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationEventId"))
   {
     m_segmentationEventId = jsonValue.GetInt64("segmentationEventId");
-
     m_segmentationEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationTypeId"))
   {
     m_segmentationTypeId = jsonValue.GetInteger("segmentationTypeId");
-
     m_segmentationTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationUpid"))
   {
     m_segmentationUpid = jsonValue.GetString("segmentationUpid");
-
     m_segmentationUpidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentationUpidType"))
   {
     m_segmentationUpidType = jsonValue.GetInteger("segmentationUpidType");
-
     m_segmentationUpidTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentsExpected"))
   {
     m_segmentsExpected = jsonValue.GetInteger("segmentsExpected");
-
     m_segmentsExpectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subSegmentNum"))
   {
     m_subSegmentNum = jsonValue.GetInteger("subSegmentNum");
-
     m_subSegmentNumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subSegmentsExpected"))
   {
     m_subSegmentsExpected = jsonValue.GetInteger("subSegmentsExpected");
-
     m_subSegmentsExpectedHasBeenSet = true;
   }
-
   return *this;
 }
 

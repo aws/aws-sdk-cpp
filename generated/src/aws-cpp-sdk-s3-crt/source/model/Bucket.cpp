@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Bucket::Bucket() : 
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
-{
-}
-
 Bucket::Bucket(const XmlNode& xmlNode)
-  : Bucket()
 {
   *this = xmlNode;
 }

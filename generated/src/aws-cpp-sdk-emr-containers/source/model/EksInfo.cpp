@@ -18,13 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-EksInfo::EksInfo() : 
-    m_namespaceHasBeenSet(false)
-{
-}
-
 EksInfo::EksInfo(JsonView jsonValue)
-  : EksInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EksInfo& EksInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

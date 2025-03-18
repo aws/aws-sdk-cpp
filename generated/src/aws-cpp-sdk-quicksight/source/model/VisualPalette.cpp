@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisualPalette::VisualPalette() : 
-    m_chartColorHasBeenSet(false),
-    m_colorMapHasBeenSet(false)
-{
-}
-
 VisualPalette::VisualPalette(JsonView jsonValue)
-  : VisualPalette()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VisualPalette& VisualPalette::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChartColor"))
   {
     m_chartColor = jsonValue.GetString("ChartColor");
-
     m_chartColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorMap"))
   {
     Aws::Utils::Array<JsonView> colorMapJsonList = jsonValue.GetArray("ColorMap");
@@ -48,7 +39,6 @@ VisualPalette& VisualPalette::operator =(JsonView jsonValue)
     }
     m_colorMapHasBeenSet = true;
   }
-
   return *this;
 }
 

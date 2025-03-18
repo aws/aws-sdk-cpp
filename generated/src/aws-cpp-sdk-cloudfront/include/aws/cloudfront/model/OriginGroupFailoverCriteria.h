@@ -32,7 +32,7 @@ namespace Model
   class OriginGroupFailoverCriteria
   {
   public:
-    AWS_CLOUDFRONT_API OriginGroupFailoverCriteria();
+    AWS_CLOUDFRONT_API OriginGroupFailoverCriteria() = default;
     AWS_CLOUDFRONT_API OriginGroupFailoverCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginGroupFailoverCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * <p>The status codes that, when returned from the primary origin, will trigger
      * CloudFront to failover to the second origin.</p>
      */
-    inline const StatusCodes& GetStatusCodes() const{ return m_statusCodes; }
+    inline const StatusCodes& GetStatusCodes() const { return m_statusCodes; }
     inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
-    inline void SetStatusCodes(const StatusCodes& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
-    inline void SetStatusCodes(StatusCodes&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
-    inline OriginGroupFailoverCriteria& WithStatusCodes(const StatusCodes& value) { SetStatusCodes(value); return *this;}
-    inline OriginGroupFailoverCriteria& WithStatusCodes(StatusCodes&& value) { SetStatusCodes(std::move(value)); return *this;}
+    template<typename StatusCodesT = StatusCodes>
+    void SetStatusCodes(StatusCodesT&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::forward<StatusCodesT>(value); }
+    template<typename StatusCodesT = StatusCodes>
+    OriginGroupFailoverCriteria& WithStatusCodes(StatusCodesT&& value) { SetStatusCodes(std::forward<StatusCodesT>(value)); return *this;}
     ///@}
   private:
 

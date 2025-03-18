@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRefreshScheduleRequest::DescribeRefreshScheduleRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRefreshScheduleRequest::SerializePayload() const
 {
   return {};

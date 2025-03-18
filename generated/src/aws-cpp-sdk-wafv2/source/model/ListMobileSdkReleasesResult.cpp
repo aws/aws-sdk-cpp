@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMobileSdkReleasesResult::ListMobileSdkReleasesResult()
-{
-}
-
 ListMobileSdkReleasesResult::ListMobileSdkReleasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListMobileSdkReleasesResult& ListMobileSdkReleasesResult::operator =(const Aws::
     {
       m_releaseSummaries.push_back(releaseSummariesJsonList[releaseSummariesIndex].AsObject());
     }
+    m_releaseSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace Braket
 namespace Model
 {
 
-SearchQuantumTasksFilter::SearchQuantumTasksFilter() : 
-    m_nameHasBeenSet(false),
-    m_operator(SearchQuantumTasksFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchQuantumTasksFilter::SearchQuantumTasksFilter(JsonView jsonValue)
-  : SearchQuantumTasksFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SearchQuantumTasksFilter& SearchQuantumTasksFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = SearchQuantumTasksFilterOperatorMapper::GetSearchQuantumTasksFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -57,7 +44,6 @@ SearchQuantumTasksFilter& SearchQuantumTasksFilter::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

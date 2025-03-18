@@ -18,17 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-CaptionSource::CaptionSource() : 
-    m_keyHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_timeOffsetHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 CaptionSource::CaptionSource(JsonView jsonValue)
-  : CaptionSource()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CaptionSource& CaptionSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeOffset"))
   {
     m_timeOffset = jsonValue.GetString("TimeOffset");
-
     m_timeOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

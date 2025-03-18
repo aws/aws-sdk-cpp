@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAssetTypeRequest::GetAssetTypeRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String GetAssetTypeRequest::SerializePayload() const
 {
   return {};

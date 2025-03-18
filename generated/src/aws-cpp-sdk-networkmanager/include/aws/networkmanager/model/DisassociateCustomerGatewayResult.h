@@ -28,7 +28,7 @@ namespace Model
   class DisassociateCustomerGatewayResult
   {
   public:
-    AWS_NETWORKMANAGER_API DisassociateCustomerGatewayResult();
+    AWS_NETWORKMANAGER_API DisassociateCustomerGatewayResult() = default;
     AWS_NETWORKMANAGER_API DisassociateCustomerGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API DisassociateCustomerGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the customer gateway association.</p>
      */
-    inline const CustomerGatewayAssociation& GetCustomerGatewayAssociation() const{ return m_customerGatewayAssociation; }
-    inline void SetCustomerGatewayAssociation(const CustomerGatewayAssociation& value) { m_customerGatewayAssociation = value; }
-    inline void SetCustomerGatewayAssociation(CustomerGatewayAssociation&& value) { m_customerGatewayAssociation = std::move(value); }
-    inline DisassociateCustomerGatewayResult& WithCustomerGatewayAssociation(const CustomerGatewayAssociation& value) { SetCustomerGatewayAssociation(value); return *this;}
-    inline DisassociateCustomerGatewayResult& WithCustomerGatewayAssociation(CustomerGatewayAssociation&& value) { SetCustomerGatewayAssociation(std::move(value)); return *this;}
+    inline const CustomerGatewayAssociation& GetCustomerGatewayAssociation() const { return m_customerGatewayAssociation; }
+    template<typename CustomerGatewayAssociationT = CustomerGatewayAssociation>
+    void SetCustomerGatewayAssociation(CustomerGatewayAssociationT&& value) { m_customerGatewayAssociationHasBeenSet = true; m_customerGatewayAssociation = std::forward<CustomerGatewayAssociationT>(value); }
+    template<typename CustomerGatewayAssociationT = CustomerGatewayAssociation>
+    DisassociateCustomerGatewayResult& WithCustomerGatewayAssociation(CustomerGatewayAssociationT&& value) { SetCustomerGatewayAssociation(std::forward<CustomerGatewayAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateCustomerGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateCustomerGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateCustomerGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateCustomerGatewayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CustomerGatewayAssociation m_customerGatewayAssociation;
+    bool m_customerGatewayAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

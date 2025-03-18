@@ -18,17 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-TransactionDescription::TransactionDescription() : 
-    m_transactionIdHasBeenSet(false),
-    m_transactionStatus(TransactionStatus::NOT_SET),
-    m_transactionStatusHasBeenSet(false),
-    m_transactionStartTimeHasBeenSet(false),
-    m_transactionEndTimeHasBeenSet(false)
-{
-}
-
 TransactionDescription::TransactionDescription(JsonView jsonValue)
-  : TransactionDescription()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TransactionDescription& TransactionDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransactionStatus"))
   {
     m_transactionStatus = TransactionStatusMapper::GetTransactionStatusForName(jsonValue.GetString("TransactionStatus"));
-
     m_transactionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransactionStartTime"))
   {
     m_transactionStartTime = jsonValue.GetDouble("TransactionStartTime");
-
     m_transactionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransactionEndTime"))
   {
     m_transactionEndTime = jsonValue.GetDouble("TransactionEndTime");
-
     m_transactionEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

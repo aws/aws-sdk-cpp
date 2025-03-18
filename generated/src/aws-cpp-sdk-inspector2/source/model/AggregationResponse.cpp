@@ -18,23 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AggregationResponse::AggregationResponse() : 
-    m_accountAggregationHasBeenSet(false),
-    m_amiAggregationHasBeenSet(false),
-    m_awsEcrContainerAggregationHasBeenSet(false),
-    m_ec2InstanceAggregationHasBeenSet(false),
-    m_findingTypeAggregationHasBeenSet(false),
-    m_imageLayerAggregationHasBeenSet(false),
-    m_lambdaFunctionAggregationHasBeenSet(false),
-    m_lambdaLayerAggregationHasBeenSet(false),
-    m_packageAggregationHasBeenSet(false),
-    m_repositoryAggregationHasBeenSet(false),
-    m_titleAggregationHasBeenSet(false)
-{
-}
-
 AggregationResponse::AggregationResponse(JsonView jsonValue)
-  : AggregationResponse()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ AggregationResponse& AggregationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountAggregation"))
   {
     m_accountAggregation = jsonValue.GetObject("accountAggregation");
-
     m_accountAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiAggregation"))
   {
     m_amiAggregation = jsonValue.GetObject("amiAggregation");
-
     m_amiAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsEcrContainerAggregation"))
   {
     m_awsEcrContainerAggregation = jsonValue.GetObject("awsEcrContainerAggregation");
-
     m_awsEcrContainerAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceAggregation"))
   {
     m_ec2InstanceAggregation = jsonValue.GetObject("ec2InstanceAggregation");
-
     m_ec2InstanceAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingTypeAggregation"))
   {
     m_findingTypeAggregation = jsonValue.GetObject("findingTypeAggregation");
-
     m_findingTypeAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageLayerAggregation"))
   {
     m_imageLayerAggregation = jsonValue.GetObject("imageLayerAggregation");
-
     m_imageLayerAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionAggregation"))
   {
     m_lambdaFunctionAggregation = jsonValue.GetObject("lambdaFunctionAggregation");
-
     m_lambdaFunctionAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaLayerAggregation"))
   {
     m_lambdaLayerAggregation = jsonValue.GetObject("lambdaLayerAggregation");
-
     m_lambdaLayerAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageAggregation"))
   {
     m_packageAggregation = jsonValue.GetObject("packageAggregation");
-
     m_packageAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryAggregation"))
   {
     m_repositoryAggregation = jsonValue.GetObject("repositoryAggregation");
-
     m_repositoryAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("titleAggregation"))
   {
     m_titleAggregation = jsonValue.GetObject("titleAggregation");
-
     m_titleAggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

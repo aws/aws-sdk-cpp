@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CurrentMetric::CurrentMetric() : 
-    m_name(CurrentMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 CurrentMetric::CurrentMetric(JsonView jsonValue)
-  : CurrentMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CurrentMetric& CurrentMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = CurrentMetricNameMapper::GetCurrentMetricNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

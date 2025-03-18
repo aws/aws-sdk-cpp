@@ -13,20 +13,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFileRequest::PutFileRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_fileContentHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false),
-    m_parentCommitIdHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 Aws::String PutFileRequest::SerializePayload() const
 {
   JsonValue payload;

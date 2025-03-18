@@ -30,7 +30,7 @@ namespace Model
   class ActionTypeArtifactDetails
   {
   public:
-    AWS_CODEPIPELINE_API ActionTypeArtifactDetails();
+    AWS_CODEPIPELINE_API ActionTypeArtifactDetails() = default;
     AWS_CODEPIPELINE_API ActionTypeArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionTypeArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * example, you should specify a minimum and maximum of zero input artifacts for an
      * action type with a category of <code>source</code>.</p>
      */
-    inline int GetMinimumCount() const{ return m_minimumCount; }
+    inline int GetMinimumCount() const { return m_minimumCount; }
     inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
     inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
     inline ActionTypeArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * example, you should specify a minimum and maximum of zero input artifacts for an
      * action type with a category of <code>source</code>.</p>
      */
-    inline int GetMaximumCount() const{ return m_maximumCount; }
+    inline int GetMaximumCount() const { return m_maximumCount; }
     inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
     inline void SetMaximumCount(int value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
     inline ActionTypeArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
     ///@}
   private:
 
-    int m_minimumCount;
+    int m_minimumCount{0};
     bool m_minimumCountHasBeenSet = false;
 
-    int m_maximumCount;
+    int m_maximumCount{0};
     bool m_maximumCountHasBeenSet = false;
   };
 

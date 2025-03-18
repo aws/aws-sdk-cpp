@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcIngressConnectionRequest::DeleteVpcIngressConnectionRequest() : 
-    m_vpcIngressConnectionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcIngressConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

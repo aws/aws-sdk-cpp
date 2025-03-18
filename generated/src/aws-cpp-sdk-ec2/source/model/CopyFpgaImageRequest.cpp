@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CopyFpgaImageRequest::CopyFpgaImageRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sourceFpgaImageIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CopyFpgaImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

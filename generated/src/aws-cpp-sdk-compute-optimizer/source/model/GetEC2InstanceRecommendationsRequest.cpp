@@ -12,17 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEC2InstanceRecommendationsRequest::GetEC2InstanceRecommendationsRequest() : 
-    m_instanceArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_recommendationPreferencesHasBeenSet(false)
-{
-}
-
 Aws::String GetEC2InstanceRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

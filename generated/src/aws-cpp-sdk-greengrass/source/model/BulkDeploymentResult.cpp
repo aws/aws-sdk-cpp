@@ -18,21 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-BulkDeploymentResult::BulkDeploymentResult() : 
-    m_createdAtHasBeenSet(false),
-    m_deploymentArnHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
-{
-}
-
 BulkDeploymentResult::BulkDeploymentResult(JsonView jsonValue)
-  : BulkDeploymentResult()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ BulkDeploymentResult& BulkDeploymentResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentArn"))
   {
     m_deploymentArn = jsonValue.GetString("DeploymentArn");
-
     m_deploymentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentId"))
   {
     m_deploymentId = jsonValue.GetString("DeploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
@@ -83,21 +59,16 @@ BulkDeploymentResult& BulkDeploymentResult::operator =(JsonView jsonValue)
     }
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupArn"))
   {
     m_groupArn = jsonValue.GetString("GroupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

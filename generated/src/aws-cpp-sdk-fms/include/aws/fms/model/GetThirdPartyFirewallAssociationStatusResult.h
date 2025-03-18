@@ -29,7 +29,7 @@ namespace Model
   class GetThirdPartyFirewallAssociationStatusResult
   {
   public:
-    AWS_FMS_API GetThirdPartyFirewallAssociationStatusResult();
+    AWS_FMS_API GetThirdPartyFirewallAssociationStatusResult() = default;
     AWS_FMS_API GetThirdPartyFirewallAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetThirdPartyFirewallAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,11 +49,9 @@ namespace Model
      * <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist
      * as a tenant administrator.</p> </li> </ul>
      */
-    inline const ThirdPartyFirewallAssociationStatus& GetThirdPartyFirewallStatus() const{ return m_thirdPartyFirewallStatus; }
-    inline void SetThirdPartyFirewallStatus(const ThirdPartyFirewallAssociationStatus& value) { m_thirdPartyFirewallStatus = value; }
-    inline void SetThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus&& value) { m_thirdPartyFirewallStatus = std::move(value); }
-    inline GetThirdPartyFirewallAssociationStatusResult& WithThirdPartyFirewallStatus(const ThirdPartyFirewallAssociationStatus& value) { SetThirdPartyFirewallStatus(value); return *this;}
-    inline GetThirdPartyFirewallAssociationStatusResult& WithThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus&& value) { SetThirdPartyFirewallStatus(std::move(value)); return *this;}
+    inline ThirdPartyFirewallAssociationStatus GetThirdPartyFirewallStatus() const { return m_thirdPartyFirewallStatus; }
+    inline void SetThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus value) { m_thirdPartyFirewallStatusHasBeenSet = true; m_thirdPartyFirewallStatus = value; }
+    inline GetThirdPartyFirewallAssociationStatusResult& WithThirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus value) { SetThirdPartyFirewallStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -69,30 +67,29 @@ namespace Model
      * an active subscription to the third-party firewall service in the Amazon Web
      * Services Marketplace.</p> </li> </ul>
      */
-    inline const MarketplaceSubscriptionOnboardingStatus& GetMarketplaceOnboardingStatus() const{ return m_marketplaceOnboardingStatus; }
-    inline void SetMarketplaceOnboardingStatus(const MarketplaceSubscriptionOnboardingStatus& value) { m_marketplaceOnboardingStatus = value; }
-    inline void SetMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus&& value) { m_marketplaceOnboardingStatus = std::move(value); }
-    inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(const MarketplaceSubscriptionOnboardingStatus& value) { SetMarketplaceOnboardingStatus(value); return *this;}
-    inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus&& value) { SetMarketplaceOnboardingStatus(std::move(value)); return *this;}
+    inline MarketplaceSubscriptionOnboardingStatus GetMarketplaceOnboardingStatus() const { return m_marketplaceOnboardingStatus; }
+    inline void SetMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus value) { m_marketplaceOnboardingStatusHasBeenSet = true; m_marketplaceOnboardingStatus = value; }
+    inline GetThirdPartyFirewallAssociationStatusResult& WithMarketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus value) { SetMarketplaceOnboardingStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetThirdPartyFirewallAssociationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetThirdPartyFirewallAssociationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus;
+    ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus{ThirdPartyFirewallAssociationStatus::NOT_SET};
+    bool m_thirdPartyFirewallStatusHasBeenSet = false;
 
-    MarketplaceSubscriptionOnboardingStatus m_marketplaceOnboardingStatus;
+    MarketplaceSubscriptionOnboardingStatus m_marketplaceOnboardingStatus{MarketplaceSubscriptionOnboardingStatus::NOT_SET};
+    bool m_marketplaceOnboardingStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class PollForDecisionTaskRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API PollForDecisionTaskRequest();
+    AWS_SWF_API PollForDecisionTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the domain containing the task lists to poll.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline PollForDecisionTaskRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline PollForDecisionTaskRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline PollForDecisionTaskRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    PollForDecisionTaskRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
      * <i>not</i> be the literal string <code>arn</code>.</p>
      */
-    inline const TaskList& GetTaskList() const{ return m_taskList; }
+    inline const TaskList& GetTaskList() const { return m_taskList; }
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-    inline PollForDecisionTaskRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-    inline PollForDecisionTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    template<typename TaskListT = TaskList>
+    void SetTaskList(TaskListT&& value) { m_taskListHasBeenSet = true; m_taskList = std::forward<TaskListT>(value); }
+    template<typename TaskListT = TaskList>
+    PollForDecisionTaskRequest& WithTaskList(TaskListT&& value) { SetTaskList(std::forward<TaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * DecisionTaskStarted event in the workflow history. This enables diagnostic
      * tracing when problems arise. The form of this identity is user defined.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline PollForDecisionTaskRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline PollForDecisionTaskRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline PollForDecisionTaskRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    PollForDecisionTaskRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +93,12 @@ namespace Model
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
      * return a new decision task.</p> 
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline PollForDecisionTaskRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline PollForDecisionTaskRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline PollForDecisionTaskRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    PollForDecisionTaskRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +108,7 @@ namespace Model
      * an upper limit only; the actual number of results returned per call may be fewer
      * than the specified maximum.</p>
      */
-    inline int GetMaximumPageSize() const{ return m_maximumPageSize; }
+    inline int GetMaximumPageSize() const { return m_maximumPageSize; }
     inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
     inline PollForDecisionTaskRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
@@ -126,7 +120,7 @@ namespace Model
      * default the results are returned in ascending order of the
      * <code>eventTimestamp</code> of the events.</p>
      */
-    inline bool GetReverseOrder() const{ return m_reverseOrder; }
+    inline bool GetReverseOrder() const { return m_reverseOrder; }
     inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
     inline PollForDecisionTaskRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
@@ -139,7 +133,7 @@ namespace Model
      * of the most recent <code>DecisionTaskStarted</code> event. By default, this
      * parameter is set to <code>false</code>.</p>
      */
-    inline bool GetStartAtPreviousStartedEvent() const{ return m_startAtPreviousStartedEvent; }
+    inline bool GetStartAtPreviousStartedEvent() const { return m_startAtPreviousStartedEvent; }
     inline bool StartAtPreviousStartedEventHasBeenSet() const { return m_startAtPreviousStartedEventHasBeenSet; }
     inline void SetStartAtPreviousStartedEvent(bool value) { m_startAtPreviousStartedEventHasBeenSet = true; m_startAtPreviousStartedEvent = value; }
     inline PollForDecisionTaskRequest& WithStartAtPreviousStartedEvent(bool value) { SetStartAtPreviousStartedEvent(value); return *this;}
@@ -158,13 +152,13 @@ namespace Model
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_maximumPageSize;
+    int m_maximumPageSize{0};
     bool m_maximumPageSizeHasBeenSet = false;
 
-    bool m_reverseOrder;
+    bool m_reverseOrder{false};
     bool m_reverseOrderHasBeenSet = false;
 
-    bool m_startAtPreviousStartedEvent;
+    bool m_startAtPreviousStartedEvent{false};
     bool m_startAtPreviousStartedEventHasBeenSet = false;
   };
 

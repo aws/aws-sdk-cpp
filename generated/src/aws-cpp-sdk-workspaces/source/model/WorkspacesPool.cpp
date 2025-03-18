@@ -18,25 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspacesPool::WorkspacesPool() : 
-    m_poolIdHasBeenSet(false),
-    m_poolArnHasBeenSet(false),
-    m_capacityStatusHasBeenSet(false),
-    m_poolNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(WorkspacesPoolState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false),
-    m_timeoutSettingsHasBeenSet(false)
-{
-}
-
 WorkspacesPool::WorkspacesPool(JsonView jsonValue)
-  : WorkspacesPool()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ WorkspacesPool& WorkspacesPool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolArn"))
   {
     m_poolArn = jsonValue.GetString("PoolArn");
-
     m_poolArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityStatus"))
   {
     m_capacityStatus = jsonValue.GetObject("CapacityStatus");
-
     m_capacityStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolName"))
   {
     m_poolName = jsonValue.GetString("PoolName");
-
     m_poolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkspacesPoolStateMapper::GetWorkspacesPoolStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BundleId"))
   {
     m_bundleId = jsonValue.GetString("BundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -115,21 +79,16 @@ WorkspacesPool& WorkspacesPool::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationSettings"))
   {
     m_applicationSettings = jsonValue.GetObject("ApplicationSettings");
-
     m_applicationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutSettings"))
   {
     m_timeoutSettings = jsonValue.GetObject("TimeoutSettings");
-
     m_timeoutSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

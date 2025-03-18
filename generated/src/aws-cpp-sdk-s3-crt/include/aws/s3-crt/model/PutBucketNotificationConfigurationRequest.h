@@ -27,7 +27,7 @@ namespace Model
   class PutBucketNotificationConfigurationRequest : public S3CrtRequest
   {
   public:
-    AWS_S3CRT_API PutBucketNotificationConfigurationRequest();
+    AWS_S3CRT_API PutBucketNotificationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,24 +51,22 @@ namespace Model
     /**
      * <p>The name of the bucket.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline PutBucketNotificationConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    PutBucketNotificationConfigurationRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+    inline const NotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-    inline PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    void SetNotificationConfiguration(NotificationConfigurationT&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::forward<NotificationConfigurationT>(value); }
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(NotificationConfigurationT&& value) { SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * provide does not match the actual owner of the bucket, the request fails with
      * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
      * false value.</p>
      */
-    inline bool GetSkipDestinationValidation() const{ return m_skipDestinationValidation; }
+    inline bool GetSkipDestinationValidation() const { return m_skipDestinationValidation; }
     inline bool SkipDestinationValidationHasBeenSet() const { return m_skipDestinationValidationHasBeenSet; }
     inline void SetSkipDestinationValidation(bool value) { m_skipDestinationValidationHasBeenSet = true; m_skipDestinationValidation = value; }
     inline PutBucketNotificationConfigurationRequest& WithSkipDestinationValidation(bool value) { SetSkipDestinationValidation(value); return *this;}
@@ -100,19 +96,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline PutBucketNotificationConfigurationRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline PutBucketNotificationConfigurationRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    PutBucketNotificationConfigurationRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    PutBucketNotificationConfigurationRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -125,7 +118,7 @@ namespace Model
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
 
-    bool m_skipDestinationValidation;
+    bool m_skipDestinationValidation{false};
     bool m_skipDestinationValidationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;

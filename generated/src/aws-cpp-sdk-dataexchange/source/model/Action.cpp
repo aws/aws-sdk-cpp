@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-Action::Action() : 
-    m_exportRevisionToS3HasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportRevisionToS3"))
   {
     m_exportRevisionToS3 = jsonValue.GetObject("ExportRevisionToS3");
-
     m_exportRevisionToS3HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeScalingActivitiesResult
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API DescribeScalingActivitiesResult();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScalingActivitiesResult() = default;
     AWS_APPLICATIONAUTOSCALING_API DescribeScalingActivitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONAUTOSCALING_API DescribeScalingActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of scaling activity objects.</p>
      */
-    inline const Aws::Vector<ScalingActivity>& GetScalingActivities() const{ return m_scalingActivities; }
-    inline void SetScalingActivities(const Aws::Vector<ScalingActivity>& value) { m_scalingActivities = value; }
-    inline void SetScalingActivities(Aws::Vector<ScalingActivity>&& value) { m_scalingActivities = std::move(value); }
-    inline DescribeScalingActivitiesResult& WithScalingActivities(const Aws::Vector<ScalingActivity>& value) { SetScalingActivities(value); return *this;}
-    inline DescribeScalingActivitiesResult& WithScalingActivities(Aws::Vector<ScalingActivity>&& value) { SetScalingActivities(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesResult& AddScalingActivities(const ScalingActivity& value) { m_scalingActivities.push_back(value); return *this; }
-    inline DescribeScalingActivitiesResult& AddScalingActivities(ScalingActivity&& value) { m_scalingActivities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScalingActivity>& GetScalingActivities() const { return m_scalingActivities; }
+    template<typename ScalingActivitiesT = Aws::Vector<ScalingActivity>>
+    void SetScalingActivities(ScalingActivitiesT&& value) { m_scalingActivitiesHasBeenSet = true; m_scalingActivities = std::forward<ScalingActivitiesT>(value); }
+    template<typename ScalingActivitiesT = Aws::Vector<ScalingActivity>>
+    DescribeScalingActivitiesResult& WithScalingActivities(ScalingActivitiesT&& value) { SetScalingActivities(std::forward<ScalingActivitiesT>(value)); return *this;}
+    template<typename ScalingActivitiesT = ScalingActivity>
+    DescribeScalingActivitiesResult& AddScalingActivities(ScalingActivitiesT&& value) { m_scalingActivitiesHasBeenSet = true; m_scalingActivities.emplace_back(std::forward<ScalingActivitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeScalingActivitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScalingActivitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeScalingActivitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeScalingActivitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeScalingActivitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScalingActivity> m_scalingActivities;
+    bool m_scalingActivitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactScheduleRequest::UpdateContactScheduleRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

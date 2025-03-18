@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

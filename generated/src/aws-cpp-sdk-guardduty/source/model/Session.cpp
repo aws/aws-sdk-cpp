@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Session::Session() : 
-    m_uidHasBeenSet(false),
-    m_mfaStatus(MfaStatus::NOT_SET),
-    m_mfaStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_issuerHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mfaStatus"))
   {
     m_mfaStatus = MfaStatusMapper::GetMfaStatusForName(jsonValue.GetString("mfaStatus"));
-
     m_mfaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   return *this;
 }
 

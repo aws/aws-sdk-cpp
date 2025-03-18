@@ -18,16 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-FilterParameter::FilterParameter() : 
-    m_fieldHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FilterParameter::FilterParameter(JsonView jsonValue)
-  : FilterParameter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FilterParameter& FilterParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Field"))
   {
     m_field = jsonValue.GetString("Field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -57,7 +44,6 @@ FilterParameter& FilterParameter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

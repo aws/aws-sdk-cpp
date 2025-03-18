@@ -12,12 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   return {};

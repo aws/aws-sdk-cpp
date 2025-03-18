@@ -18,42 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoDescription::VideoDescription() : 
-    m_afdSignaling(AfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_antiAlias(AntiAlias::NOT_SET),
-    m_antiAliasHasBeenSet(false),
-    m_chromaPositionMode(ChromaPositionMode::NOT_SET),
-    m_chromaPositionModeHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_colorMetadata(ColorMetadata::NOT_SET),
-    m_colorMetadataHasBeenSet(false),
-    m_cropHasBeenSet(false),
-    m_dropFrameTimecode(DropFrameTimecode::NOT_SET),
-    m_dropFrameTimecodeHasBeenSet(false),
-    m_fixedAfd(0),
-    m_fixedAfdHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_respondToAfd(RespondToAfd::NOT_SET),
-    m_respondToAfdHasBeenSet(false),
-    m_scalingBehavior(ScalingBehavior::NOT_SET),
-    m_scalingBehaviorHasBeenSet(false),
-    m_sharpness(0),
-    m_sharpnessHasBeenSet(false),
-    m_timecodeInsertion(VideoTimecodeInsertion::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false),
-    m_timecodeTrack(TimecodeTrack::NOT_SET),
-    m_timecodeTrackHasBeenSet(false),
-    m_videoPreprocessorsHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 VideoDescription::VideoDescription(JsonView jsonValue)
-  : VideoDescription()
 {
   *this = jsonValue;
 }
@@ -63,122 +28,88 @@ VideoDescription& VideoDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("afdSignaling"))
   {
     m_afdSignaling = AfdSignalingMapper::GetAfdSignalingForName(jsonValue.GetString("afdSignaling"));
-
     m_afdSignalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antiAlias"))
   {
     m_antiAlias = AntiAliasMapper::GetAntiAliasForName(jsonValue.GetString("antiAlias"));
-
     m_antiAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("chromaPositionMode"))
   {
     m_chromaPositionMode = ChromaPositionModeMapper::GetChromaPositionModeForName(jsonValue.GetString("chromaPositionMode"));
-
     m_chromaPositionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codecSettings"))
   {
     m_codecSettings = jsonValue.GetObject("codecSettings");
-
     m_codecSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorMetadata"))
   {
     m_colorMetadata = ColorMetadataMapper::GetColorMetadataForName(jsonValue.GetString("colorMetadata"));
-
     m_colorMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("crop"))
   {
     m_crop = jsonValue.GetObject("crop");
-
     m_cropHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dropFrameTimecode"))
   {
     m_dropFrameTimecode = DropFrameTimecodeMapper::GetDropFrameTimecodeForName(jsonValue.GetString("dropFrameTimecode"));
-
     m_dropFrameTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixedAfd"))
   {
     m_fixedAfd = jsonValue.GetInteger("fixedAfd");
-
     m_fixedAfdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("height"))
   {
     m_height = jsonValue.GetInteger("height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetObject("position");
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("respondToAfd"))
   {
     m_respondToAfd = RespondToAfdMapper::GetRespondToAfdForName(jsonValue.GetString("respondToAfd"));
-
     m_respondToAfdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingBehavior"))
   {
     m_scalingBehavior = ScalingBehaviorMapper::GetScalingBehaviorForName(jsonValue.GetString("scalingBehavior"));
-
     m_scalingBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharpness"))
   {
     m_sharpness = jsonValue.GetInteger("sharpness");
-
     m_sharpnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeInsertion"))
   {
     m_timecodeInsertion = VideoTimecodeInsertionMapper::GetVideoTimecodeInsertionForName(jsonValue.GetString("timecodeInsertion"));
-
     m_timecodeInsertionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeTrack"))
   {
     m_timecodeTrack = TimecodeTrackMapper::GetTimecodeTrackForName(jsonValue.GetString("timecodeTrack"));
-
     m_timecodeTrackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoPreprocessors"))
   {
     m_videoPreprocessors = jsonValue.GetObject("videoPreprocessors");
-
     m_videoPreprocessorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("width"))
   {
     m_width = jsonValue.GetInteger("width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

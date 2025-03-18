@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSupportedInstanceTypesRequest::ListSupportedInstanceTypesRequest() : 
-    m_releaseLabelHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListSupportedInstanceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

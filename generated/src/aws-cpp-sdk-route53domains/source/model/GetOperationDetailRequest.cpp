@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOperationDetailRequest::GetOperationDetailRequest() : 
-    m_operationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOperationDetailRequest::SerializePayload() const
 {
   JsonValue payload;

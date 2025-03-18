@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBucketTaggingRequest::GetBucketTaggingRequest() : 
-    m_bucketHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool GetBucketTaggingRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

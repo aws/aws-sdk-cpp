@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes() : 
-    m_tabularResolvedAttributesHasBeenSet(false),
-    m_textGenerationResolvedAttributesHasBeenSet(false)
-{
-}
-
 AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes(JsonView jsonValue)
-  : AutoMLProblemTypeResolvedAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoMLProblemTypeResolvedAttributes& AutoMLProblemTypeResolvedAttributes::operat
   if(jsonValue.ValueExists("TabularResolvedAttributes"))
   {
     m_tabularResolvedAttributes = jsonValue.GetObject("TabularResolvedAttributes");
-
     m_tabularResolvedAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextGenerationResolvedAttributes"))
   {
     m_textGenerationResolvedAttributes = jsonValue.GetObject("TextGenerationResolvedAttributes");
-
     m_textGenerationResolvedAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

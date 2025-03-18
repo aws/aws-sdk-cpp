@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-PlainTextMessage::PlainTextMessage() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 PlainTextMessage::PlainTextMessage(JsonView jsonValue)
-  : PlainTextMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PlainTextMessage& PlainTextMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

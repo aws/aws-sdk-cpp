@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DevEndpointCustomLibraries::DevEndpointCustomLibraries() : 
-    m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false)
-{
-}
-
 DevEndpointCustomLibraries::DevEndpointCustomLibraries(JsonView jsonValue)
-  : DevEndpointCustomLibraries()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DevEndpointCustomLibraries& DevEndpointCustomLibraries::operator =(JsonView json
   if(jsonValue.ValueExists("ExtraPythonLibsS3Path"))
   {
     m_extraPythonLibsS3Path = jsonValue.GetString("ExtraPythonLibsS3Path");
-
     m_extraPythonLibsS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtraJarsS3Path"))
   {
     m_extraJarsS3Path = jsonValue.GetString("ExtraJarsS3Path");
-
     m_extraJarsS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EmailTemplateContent::EmailTemplateContent() : 
-    m_subjectHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
-{
-}
-
 EmailTemplateContent::EmailTemplateContent(JsonView jsonValue)
-  : EmailTemplateContent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EmailTemplateContent& EmailTemplateContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Html"))
   {
     m_html = jsonValue.GetString("Html");
-
     m_htmlHasBeenSet = true;
   }
-
   return *this;
 }
 

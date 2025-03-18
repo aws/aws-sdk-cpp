@@ -26,7 +26,7 @@ namespace Model
   class ListAccessorsRequest : public ManagedBlockchainRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API ListAccessorsRequest();
+    AWS_MANAGEDBLOCKCHAIN_API ListAccessorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> The maximum number of accessors to list.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccessorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
      * <p> The pagination token that indicates the next set of results to retrieve.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccessorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,22 +69,20 @@ namespace Model
      * all existing <code>Accessors</code> tokens that were created before the
      * <code>networkType</code> property was introduced.</p> 
      */
-    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+    inline AccessorNetworkType GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline ListAccessorsRequest& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
-    inline ListAccessorsRequest& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    inline void SetNetworkType(AccessorNetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline ListAccessorsRequest& WithNetworkType(AccessorNetworkType value) { SetNetworkType(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    AccessorNetworkType m_networkType;
+    AccessorNetworkType m_networkType{AccessorNetworkType::NOT_SET};
     bool m_networkTypeHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelReplayRequest::CancelReplayRequest() : 
-    m_replayNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelReplayRequest::SerializePayload() const
 {
   JsonValue payload;

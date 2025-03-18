@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-FrameCaptureSettings::FrameCaptureSettings() : 
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_maxCaptures(0),
-    m_maxCapturesHasBeenSet(false),
-    m_quality(0),
-    m_qualityHasBeenSet(false)
-{
-}
-
 FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue)
-  : FrameCaptureSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCaptures"))
   {
     m_maxCaptures = jsonValue.GetInteger("maxCaptures");
-
     m_maxCapturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quality"))
   {
     m_quality = jsonValue.GetInteger("quality");
-
     m_qualityHasBeenSet = true;
   }
-
   return *this;
 }
 

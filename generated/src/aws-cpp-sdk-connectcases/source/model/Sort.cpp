@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-Sort::Sort() : 
-    m_fieldIdHasBeenSet(false),
-    m_sortOrder(Order::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Sort::Sort(JsonView jsonValue)
-  : Sort()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Sort& Sort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldId"))
   {
     m_fieldId = jsonValue.GetString("fieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = OrderMapper::GetOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

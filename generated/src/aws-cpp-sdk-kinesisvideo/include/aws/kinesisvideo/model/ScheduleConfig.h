@@ -39,7 +39,7 @@ namespace Model
   class ScheduleConfig
   {
   public:
-    AWS_KINESISVIDEO_API ScheduleConfig();
+    AWS_KINESISVIDEO_API ScheduleConfig() = default;
     AWS_KINESISVIDEO_API ScheduleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API ScheduleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and
      * its use.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline ScheduleConfig& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline ScheduleConfig& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline ScheduleConfig& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    ScheduleConfig& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <code>ScheduleExpression</code> attribute is provided, then the
      * <code>DurationInSeconds</code> attribute should also be specified.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline ScheduleConfig& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet = false;
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

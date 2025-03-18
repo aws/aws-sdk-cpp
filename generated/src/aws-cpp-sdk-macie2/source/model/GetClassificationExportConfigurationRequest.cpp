@@ -12,10 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClassificationExportConfigurationRequest::GetClassificationExportConfigurationRequest()
-{
-}
-
 Aws::String GetClassificationExportConfigurationRequest::SerializePayload() const
 {
   return {};

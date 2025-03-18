@@ -18,15 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-FailureDetails::FailureDetails() : 
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 FailureDetails::FailureDetails(JsonView jsonValue)
-  : FailureDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

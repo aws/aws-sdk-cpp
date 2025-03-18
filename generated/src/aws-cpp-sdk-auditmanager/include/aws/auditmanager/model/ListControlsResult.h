@@ -29,7 +29,7 @@ namespace Model
   class ListControlsResult
   {
   public:
-    AWS_AUDITMANAGER_API ListControlsResult();
+    AWS_AUDITMANAGER_API ListControlsResult() = default;
     AWS_AUDITMANAGER_API ListControlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API ListControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p> A list of metadata that the <code>ListControls</code> API returns for each
      * control.</p>
      */
-    inline const Aws::Vector<ControlMetadata>& GetControlMetadataList() const{ return m_controlMetadataList; }
-    inline void SetControlMetadataList(const Aws::Vector<ControlMetadata>& value) { m_controlMetadataList = value; }
-    inline void SetControlMetadataList(Aws::Vector<ControlMetadata>&& value) { m_controlMetadataList = std::move(value); }
-    inline ListControlsResult& WithControlMetadataList(const Aws::Vector<ControlMetadata>& value) { SetControlMetadataList(value); return *this;}
-    inline ListControlsResult& WithControlMetadataList(Aws::Vector<ControlMetadata>&& value) { SetControlMetadataList(std::move(value)); return *this;}
-    inline ListControlsResult& AddControlMetadataList(const ControlMetadata& value) { m_controlMetadataList.push_back(value); return *this; }
-    inline ListControlsResult& AddControlMetadataList(ControlMetadata&& value) { m_controlMetadataList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ControlMetadata>& GetControlMetadataList() const { return m_controlMetadataList; }
+    template<typename ControlMetadataListT = Aws::Vector<ControlMetadata>>
+    void SetControlMetadataList(ControlMetadataListT&& value) { m_controlMetadataListHasBeenSet = true; m_controlMetadataList = std::forward<ControlMetadataListT>(value); }
+    template<typename ControlMetadataListT = Aws::Vector<ControlMetadata>>
+    ListControlsResult& WithControlMetadataList(ControlMetadataListT&& value) { SetControlMetadataList(std::forward<ControlMetadataListT>(value)); return *this;}
+    template<typename ControlMetadataListT = ControlMetadata>
+    ListControlsResult& AddControlMetadataList(ControlMetadataListT&& value) { m_controlMetadataListHasBeenSet = true; m_controlMetadataList.emplace_back(std::forward<ControlMetadataListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListControlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListControlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListControlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListControlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListControlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ControlMetadata> m_controlMetadataList;
+    bool m_controlMetadataListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

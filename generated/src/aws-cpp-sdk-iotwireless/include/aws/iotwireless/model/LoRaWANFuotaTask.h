@@ -31,7 +31,7 @@ namespace Model
   class LoRaWANFuotaTask
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANFuotaTask();
+    AWS_IOTWIRELESS_API LoRaWANFuotaTask() = default;
     AWS_IOTWIRELESS_API LoRaWANFuotaTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,16 +39,14 @@ namespace Model
 
     ///@{
     
-    inline const SupportedRfRegion& GetRfRegion() const{ return m_rfRegion; }
+    inline SupportedRfRegion GetRfRegion() const { return m_rfRegion; }
     inline bool RfRegionHasBeenSet() const { return m_rfRegionHasBeenSet; }
-    inline void SetRfRegion(const SupportedRfRegion& value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
-    inline void SetRfRegion(SupportedRfRegion&& value) { m_rfRegionHasBeenSet = true; m_rfRegion = std::move(value); }
-    inline LoRaWANFuotaTask& WithRfRegion(const SupportedRfRegion& value) { SetRfRegion(value); return *this;}
-    inline LoRaWANFuotaTask& WithRfRegion(SupportedRfRegion&& value) { SetRfRegion(std::move(value)); return *this;}
+    inline void SetRfRegion(SupportedRfRegion value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
+    inline LoRaWANFuotaTask& WithRfRegion(SupportedRfRegion value) { SetRfRegion(value); return *this;}
     ///@}
   private:
 
-    SupportedRfRegion m_rfRegion;
+    SupportedRfRegion m_rfRegion{SupportedRfRegion::NOT_SET};
     bool m_rfRegionHasBeenSet = false;
   };
 

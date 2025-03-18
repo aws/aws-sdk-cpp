@@ -21,7 +21,7 @@ namespace Model
   class DeleteViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API DeleteViewRequest();
+    AWS_RESOURCEEXPLORER2_API DeleteViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the view that you want to delete.</p>
      */
-    inline const Aws::String& GetViewArn() const{ return m_viewArn; }
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
     inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    inline void SetViewArn(const Aws::String& value) { m_viewArnHasBeenSet = true; m_viewArn = value; }
-    inline void SetViewArn(Aws::String&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::move(value); }
-    inline void SetViewArn(const char* value) { m_viewArnHasBeenSet = true; m_viewArn.assign(value); }
-    inline DeleteViewRequest& WithViewArn(const Aws::String& value) { SetViewArn(value); return *this;}
-    inline DeleteViewRequest& WithViewArn(Aws::String&& value) { SetViewArn(std::move(value)); return *this;}
-    inline DeleteViewRequest& WithViewArn(const char* value) { SetViewArn(value); return *this;}
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    DeleteViewRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
   private:
 

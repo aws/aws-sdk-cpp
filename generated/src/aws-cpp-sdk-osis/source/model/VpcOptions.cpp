@@ -18,17 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-VpcOptions::VpcOptions() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcAttachmentOptionsHasBeenSet(false),
-    m_vpcEndpointManagement(VpcEndpointManagement::NOT_SET),
-    m_vpcEndpointManagementHasBeenSet(false)
-{
-}
-
 VpcOptions::VpcOptions(JsonView jsonValue)
-  : VpcOptions()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ VpcOptions& VpcOptions::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -54,21 +43,16 @@ VpcOptions& VpcOptions::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcAttachmentOptions"))
   {
     m_vpcAttachmentOptions = jsonValue.GetObject("VpcAttachmentOptions");
-
     m_vpcAttachmentOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointManagement"))
   {
     m_vpcEndpointManagement = VpcEndpointManagementMapper::GetVpcEndpointManagementForName(jsonValue.GetString("VpcEndpointManagement"));
-
     m_vpcEndpointManagementHasBeenSet = true;
   }
-
   return *this;
 }
 

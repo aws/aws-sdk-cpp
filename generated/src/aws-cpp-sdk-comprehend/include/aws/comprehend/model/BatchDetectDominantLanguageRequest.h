@@ -22,7 +22,7 @@ namespace Model
   class BatchDetectDominantLanguageRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API BatchDetectDominantLanguageRequest();
+    AWS_COMPREHEND_API BatchDetectDominantLanguageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * contain a maximum of 25 documents. Each document should contain at least 20
      * characters. The maximum size of each document is 5 KB.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTextList() const{ return m_textList; }
+    inline const Aws::Vector<Aws::String>& GetTextList() const { return m_textList; }
     inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
-    inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
-    inline void SetTextList(Aws::Vector<Aws::String>&& value) { m_textListHasBeenSet = true; m_textList = std::move(value); }
-    inline BatchDetectDominantLanguageRequest& WithTextList(const Aws::Vector<Aws::String>& value) { SetTextList(value); return *this;}
-    inline BatchDetectDominantLanguageRequest& WithTextList(Aws::Vector<Aws::String>&& value) { SetTextList(std::move(value)); return *this;}
-    inline BatchDetectDominantLanguageRequest& AddTextList(const Aws::String& value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
-    inline BatchDetectDominantLanguageRequest& AddTextList(Aws::String&& value) { m_textListHasBeenSet = true; m_textList.push_back(std::move(value)); return *this; }
-    inline BatchDetectDominantLanguageRequest& AddTextList(const char* value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
+    template<typename TextListT = Aws::Vector<Aws::String>>
+    void SetTextList(TextListT&& value) { m_textListHasBeenSet = true; m_textList = std::forward<TextListT>(value); }
+    template<typename TextListT = Aws::Vector<Aws::String>>
+    BatchDetectDominantLanguageRequest& WithTextList(TextListT&& value) { SetTextList(std::forward<TextListT>(value)); return *this;}
+    template<typename TextListT = Aws::String>
+    BatchDetectDominantLanguageRequest& AddTextList(TextListT&& value) { m_textListHasBeenSet = true; m_textList.emplace_back(std::forward<TextListT>(value)); return *this; }
     ///@}
   private:
 

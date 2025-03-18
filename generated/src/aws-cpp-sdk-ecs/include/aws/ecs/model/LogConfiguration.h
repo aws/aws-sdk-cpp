@@ -63,7 +63,7 @@ namespace Model
   class LogConfiguration
   {
   public:
-    AWS_ECS_API LogConfiguration();
+    AWS_ECS_API LogConfiguration() = default;
     AWS_ECS_API LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -91,12 +91,10 @@ namespace Model
      * for changes that you would like to have included. However, we don't currently
      * provide support for running modified copies of this software.</p> 
      */
-    inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
+    inline LogDriver GetLogDriver() const { return m_logDriver; }
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
-    inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
-    inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
-    inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
-    inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
+    inline void SetLogDriver(LogDriver value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
+    inline LogConfiguration& WithLogDriver(LogDriver value) { SetLogDriver(value); return *this;}
     ///@}
 
     ///@{
@@ -212,19 +210,16 @@ namespace Model
      * container instance, log in to your container instance and run the following
      * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline LogConfiguration& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
-    inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-    inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-    inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
-    inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    LogConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsKeyT = Aws::String, typename OptionsValueT = Aws::String>
+    LogConfiguration& AddOptions(OptionsKeyT&& key, OptionsValueT&& value) {
+      m_optionsHasBeenSet = true; m_options.emplace(std::forward<OptionsKeyT>(key), std::forward<OptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -234,18 +229,18 @@ namespace Model
      * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
+    inline const Aws::Vector<Secret>& GetSecretOptions() const { return m_secretOptions; }
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
-    inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
-    inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
-    inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
-    inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
-    inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
-    inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
+    template<typename SecretOptionsT = Aws::Vector<Secret>>
+    void SetSecretOptions(SecretOptionsT&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::forward<SecretOptionsT>(value); }
+    template<typename SecretOptionsT = Aws::Vector<Secret>>
+    LogConfiguration& WithSecretOptions(SecretOptionsT&& value) { SetSecretOptions(std::forward<SecretOptionsT>(value)); return *this;}
+    template<typename SecretOptionsT = Secret>
+    LogConfiguration& AddSecretOptions(SecretOptionsT&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.emplace_back(std::forward<SecretOptionsT>(value)); return *this; }
     ///@}
   private:
 
-    LogDriver m_logDriver;
+    LogDriver m_logDriver{LogDriver::NOT_SET};
     bool m_logDriverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_options;

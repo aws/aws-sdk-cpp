@@ -33,7 +33,7 @@ namespace Model
   class DataProductSort
   {
   public:
-    AWS_MARKETPLACECATALOG_API DataProductSort();
+    AWS_MARKETPLACECATALOG_API DataProductSort() = default;
     AWS_MARKETPLACECATALOG_API DataProductSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API DataProductSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Field to sort the data products by.</p>
      */
-    inline const DataProductSortBy& GetSortBy() const{ return m_sortBy; }
+    inline DataProductSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const DataProductSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(DataProductSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline DataProductSort& WithSortBy(const DataProductSortBy& value) { SetSortBy(value); return *this;}
-    inline DataProductSort& WithSortBy(DataProductSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(DataProductSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline DataProductSort& WithSortBy(DataProductSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>.
      * The default value is <code>DESCENDING</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline DataProductSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline DataProductSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline DataProductSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    DataProductSortBy m_sortBy;
+    DataProductSortBy m_sortBy{DataProductSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

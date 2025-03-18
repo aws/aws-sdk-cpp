@@ -30,7 +30,7 @@ namespace Model
   class QueryStatus
   {
   public:
-    AWS_TIMESTREAMQUERY_API QueryStatus();
+    AWS_TIMESTREAMQUERY_API QueryStatus() = default;
     AWS_TIMESTREAMQUERY_API QueryStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QueryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The progress of the query, expressed as a percentage.</p>
      */
-    inline double GetProgressPercentage() const{ return m_progressPercentage; }
+    inline double GetProgressPercentage() const { return m_progressPercentage; }
     inline bool ProgressPercentageHasBeenSet() const { return m_progressPercentageHasBeenSet; }
     inline void SetProgressPercentage(double value) { m_progressPercentageHasBeenSet = true; m_progressPercentage = value; }
     inline QueryStatus& WithProgressPercentage(double value) { SetProgressPercentage(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * and represents the total amount of bytes scanned since the query was started.
      * </p>
      */
-    inline long long GetCumulativeBytesScanned() const{ return m_cumulativeBytesScanned; }
+    inline long long GetCumulativeBytesScanned() const { return m_cumulativeBytesScanned; }
     inline bool CumulativeBytesScannedHasBeenSet() const { return m_cumulativeBytesScannedHasBeenSet; }
     inline void SetCumulativeBytesScanned(long long value) { m_cumulativeBytesScannedHasBeenSet = true; m_cumulativeBytesScanned = value; }
     inline QueryStatus& WithCumulativeBytesScanned(long long value) { SetCumulativeBytesScanned(value); return *this;}
@@ -66,20 +66,20 @@ namespace Model
      * and is either applied when the query completes running or when the query is
      * cancelled. </p>
      */
-    inline long long GetCumulativeBytesMetered() const{ return m_cumulativeBytesMetered; }
+    inline long long GetCumulativeBytesMetered() const { return m_cumulativeBytesMetered; }
     inline bool CumulativeBytesMeteredHasBeenSet() const { return m_cumulativeBytesMeteredHasBeenSet; }
     inline void SetCumulativeBytesMetered(long long value) { m_cumulativeBytesMeteredHasBeenSet = true; m_cumulativeBytesMetered = value; }
     inline QueryStatus& WithCumulativeBytesMetered(long long value) { SetCumulativeBytesMetered(value); return *this;}
     ///@}
   private:
 
-    double m_progressPercentage;
+    double m_progressPercentage{0.0};
     bool m_progressPercentageHasBeenSet = false;
 
-    long long m_cumulativeBytesScanned;
+    long long m_cumulativeBytesScanned{0};
     bool m_cumulativeBytesScannedHasBeenSet = false;
 
-    long long m_cumulativeBytesMetered;
+    long long m_cumulativeBytesMetered{0};
     bool m_cumulativeBytesMeteredHasBeenSet = false;
   };
 

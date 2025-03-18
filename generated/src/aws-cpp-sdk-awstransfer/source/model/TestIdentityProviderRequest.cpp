@@ -12,16 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestIdentityProviderRequest::TestIdentityProviderRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_serverProtocol(Protocol::NOT_SET),
-    m_serverProtocolHasBeenSet(false),
-    m_sourceIpHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userPasswordHasBeenSet(false)
-{
-}
-
 Aws::String TestIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOpsMetadataRequest::UpdateOpsMetadataRequest() : 
-    m_opsMetadataArnHasBeenSet(false),
-    m_metadataToUpdateHasBeenSet(false),
-    m_keysToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOpsMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

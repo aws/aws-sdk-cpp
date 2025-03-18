@@ -32,7 +32,7 @@ namespace Model
   class SubnetConfiguration
   {
   public:
-    AWS_EC2_API SubnetConfiguration();
+    AWS_EC2_API SubnetConfiguration() = default;
     AWS_EC2_API SubnetConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SubnetConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline SubnetConfiguration& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline SubnetConfiguration& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline SubnetConfiguration& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    SubnetConfiguration& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * this IP address. This process temporarily disconnects the subnet and the VPC
      * endpoint.</p>
      */
-    inline const Aws::String& GetIpv4() const{ return m_ipv4; }
+    inline const Aws::String& GetIpv4() const { return m_ipv4; }
     inline bool Ipv4HasBeenSet() const { return m_ipv4HasBeenSet; }
-    inline void SetIpv4(const Aws::String& value) { m_ipv4HasBeenSet = true; m_ipv4 = value; }
-    inline void SetIpv4(Aws::String&& value) { m_ipv4HasBeenSet = true; m_ipv4 = std::move(value); }
-    inline void SetIpv4(const char* value) { m_ipv4HasBeenSet = true; m_ipv4.assign(value); }
-    inline SubnetConfiguration& WithIpv4(const Aws::String& value) { SetIpv4(value); return *this;}
-    inline SubnetConfiguration& WithIpv4(Aws::String&& value) { SetIpv4(std::move(value)); return *this;}
-    inline SubnetConfiguration& WithIpv4(const char* value) { SetIpv4(value); return *this;}
+    template<typename Ipv4T = Aws::String>
+    void SetIpv4(Ipv4T&& value) { m_ipv4HasBeenSet = true; m_ipv4 = std::forward<Ipv4T>(value); }
+    template<typename Ipv4T = Aws::String>
+    SubnetConfiguration& WithIpv4(Ipv4T&& value) { SetIpv4(std::forward<Ipv4T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * this IP address. This process temporarily disconnects the subnet and the VPC
      * endpoint.</p>
      */
-    inline const Aws::String& GetIpv6() const{ return m_ipv6; }
+    inline const Aws::String& GetIpv6() const { return m_ipv6; }
     inline bool Ipv6HasBeenSet() const { return m_ipv6HasBeenSet; }
-    inline void SetIpv6(const Aws::String& value) { m_ipv6HasBeenSet = true; m_ipv6 = value; }
-    inline void SetIpv6(Aws::String&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::move(value); }
-    inline void SetIpv6(const char* value) { m_ipv6HasBeenSet = true; m_ipv6.assign(value); }
-    inline SubnetConfiguration& WithIpv6(const Aws::String& value) { SetIpv6(value); return *this;}
-    inline SubnetConfiguration& WithIpv6(Aws::String&& value) { SetIpv6(std::move(value)); return *this;}
-    inline SubnetConfiguration& WithIpv6(const char* value) { SetIpv6(value); return *this;}
+    template<typename Ipv6T = Aws::String>
+    void SetIpv6(Ipv6T&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::forward<Ipv6T>(value); }
+    template<typename Ipv6T = Aws::String>
+    SubnetConfiguration& WithIpv6(Ipv6T&& value) { SetIpv6(std::forward<Ipv6T>(value)); return *this;}
     ///@}
   private:
 

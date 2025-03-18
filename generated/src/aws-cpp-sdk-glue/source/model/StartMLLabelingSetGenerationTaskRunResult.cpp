@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMLLabelingSetGenerationTaskRunResult::StartMLLabelingSetGenerationTaskRunResult()
-{
-}
-
 StartMLLabelingSetGenerationTaskRunResult::StartMLLabelingSetGenerationTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartMLLabelingSetGenerationTaskRunResult& StartMLLabelingSetGenerationTaskRunRe
   if(jsonValue.ValueExists("TaskRunId"))
   {
     m_taskRunId = jsonValue.GetString("TaskRunId");
-
+    m_taskRunIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

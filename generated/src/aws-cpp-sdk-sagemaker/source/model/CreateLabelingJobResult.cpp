@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLabelingJobResult::CreateLabelingJobResult()
-{
-}
-
 CreateLabelingJobResult::CreateLabelingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLabelingJobResult& CreateLabelingJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("LabelingJobArn"))
   {
     m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
-
+    m_labelingJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,15 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVariantStoreRequest::CreateVariantStoreRequest() : 
-    m_referenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateVariantStoreRequest::SerializePayload() const
 {
   JsonValue payload;

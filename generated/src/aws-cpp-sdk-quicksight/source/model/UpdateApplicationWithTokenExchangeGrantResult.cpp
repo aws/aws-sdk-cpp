@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateApplicationWithTokenExchangeGrantResult::UpdateApplicationWithTokenExchangeGrantResult() : 
-    m_status(0)
-{
-}
-
 UpdateApplicationWithTokenExchangeGrantResult::UpdateApplicationWithTokenExchangeGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateApplicationWithTokenExchangeGrantResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ UpdateApplicationWithTokenExchangeGrantResult& UpdateApplicationWithTokenExchang
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

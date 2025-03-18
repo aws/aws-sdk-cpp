@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListAccessKeysRequest::ListAccessKeysRequest() : 
-    m_userNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListAccessKeysRequest::SerializePayload() const
 {
   Aws::StringStream ss;

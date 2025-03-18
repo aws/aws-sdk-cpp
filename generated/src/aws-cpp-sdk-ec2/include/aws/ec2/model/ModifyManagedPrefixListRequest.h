@@ -24,7 +24,7 @@ namespace Model
   class ModifyManagedPrefixListRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyManagedPrefixListRequest();
+    AWS_EC2_API ModifyManagedPrefixListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyManagedPrefixListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,21 +56,19 @@ namespace Model
     /**
      * <p>The ID of the prefix list.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline ModifyManagedPrefixListRequest& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline ModifyManagedPrefixListRequest& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline ModifyManagedPrefixListRequest& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    ModifyManagedPrefixListRequest& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the prefix list.</p>
      */
-    inline long long GetCurrentVersion() const{ return m_currentVersion; }
+    inline long long GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
     inline void SetCurrentVersion(long long value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
     inline ModifyManagedPrefixListRequest& WithCurrentVersion(long long value) { SetCurrentVersion(value); return *this;}
@@ -80,42 +78,40 @@ namespace Model
     /**
      * <p>A name for the prefix list.</p>
      */
-    inline const Aws::String& GetPrefixListName() const{ return m_prefixListName; }
+    inline const Aws::String& GetPrefixListName() const { return m_prefixListName; }
     inline bool PrefixListNameHasBeenSet() const { return m_prefixListNameHasBeenSet; }
-    inline void SetPrefixListName(const Aws::String& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = value; }
-    inline void SetPrefixListName(Aws::String&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::move(value); }
-    inline void SetPrefixListName(const char* value) { m_prefixListNameHasBeenSet = true; m_prefixListName.assign(value); }
-    inline ModifyManagedPrefixListRequest& WithPrefixListName(const Aws::String& value) { SetPrefixListName(value); return *this;}
-    inline ModifyManagedPrefixListRequest& WithPrefixListName(Aws::String&& value) { SetPrefixListName(std::move(value)); return *this;}
-    inline ModifyManagedPrefixListRequest& WithPrefixListName(const char* value) { SetPrefixListName(value); return *this;}
+    template<typename PrefixListNameT = Aws::String>
+    void SetPrefixListName(PrefixListNameT&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::forward<PrefixListNameT>(value); }
+    template<typename PrefixListNameT = Aws::String>
+    ModifyManagedPrefixListRequest& WithPrefixListName(PrefixListNameT&& value) { SetPrefixListName(std::forward<PrefixListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more entries to add to the prefix list.</p>
      */
-    inline const Aws::Vector<AddPrefixListEntry>& GetAddEntries() const{ return m_addEntries; }
+    inline const Aws::Vector<AddPrefixListEntry>& GetAddEntries() const { return m_addEntries; }
     inline bool AddEntriesHasBeenSet() const { return m_addEntriesHasBeenSet; }
-    inline void SetAddEntries(const Aws::Vector<AddPrefixListEntry>& value) { m_addEntriesHasBeenSet = true; m_addEntries = value; }
-    inline void SetAddEntries(Aws::Vector<AddPrefixListEntry>&& value) { m_addEntriesHasBeenSet = true; m_addEntries = std::move(value); }
-    inline ModifyManagedPrefixListRequest& WithAddEntries(const Aws::Vector<AddPrefixListEntry>& value) { SetAddEntries(value); return *this;}
-    inline ModifyManagedPrefixListRequest& WithAddEntries(Aws::Vector<AddPrefixListEntry>&& value) { SetAddEntries(std::move(value)); return *this;}
-    inline ModifyManagedPrefixListRequest& AddAddEntries(const AddPrefixListEntry& value) { m_addEntriesHasBeenSet = true; m_addEntries.push_back(value); return *this; }
-    inline ModifyManagedPrefixListRequest& AddAddEntries(AddPrefixListEntry&& value) { m_addEntriesHasBeenSet = true; m_addEntries.push_back(std::move(value)); return *this; }
+    template<typename AddEntriesT = Aws::Vector<AddPrefixListEntry>>
+    void SetAddEntries(AddEntriesT&& value) { m_addEntriesHasBeenSet = true; m_addEntries = std::forward<AddEntriesT>(value); }
+    template<typename AddEntriesT = Aws::Vector<AddPrefixListEntry>>
+    ModifyManagedPrefixListRequest& WithAddEntries(AddEntriesT&& value) { SetAddEntries(std::forward<AddEntriesT>(value)); return *this;}
+    template<typename AddEntriesT = AddPrefixListEntry>
+    ModifyManagedPrefixListRequest& AddAddEntries(AddEntriesT&& value) { m_addEntriesHasBeenSet = true; m_addEntries.emplace_back(std::forward<AddEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more entries to remove from the prefix list.</p>
      */
-    inline const Aws::Vector<RemovePrefixListEntry>& GetRemoveEntries() const{ return m_removeEntries; }
+    inline const Aws::Vector<RemovePrefixListEntry>& GetRemoveEntries() const { return m_removeEntries; }
     inline bool RemoveEntriesHasBeenSet() const { return m_removeEntriesHasBeenSet; }
-    inline void SetRemoveEntries(const Aws::Vector<RemovePrefixListEntry>& value) { m_removeEntriesHasBeenSet = true; m_removeEntries = value; }
-    inline void SetRemoveEntries(Aws::Vector<RemovePrefixListEntry>&& value) { m_removeEntriesHasBeenSet = true; m_removeEntries = std::move(value); }
-    inline ModifyManagedPrefixListRequest& WithRemoveEntries(const Aws::Vector<RemovePrefixListEntry>& value) { SetRemoveEntries(value); return *this;}
-    inline ModifyManagedPrefixListRequest& WithRemoveEntries(Aws::Vector<RemovePrefixListEntry>&& value) { SetRemoveEntries(std::move(value)); return *this;}
-    inline ModifyManagedPrefixListRequest& AddRemoveEntries(const RemovePrefixListEntry& value) { m_removeEntriesHasBeenSet = true; m_removeEntries.push_back(value); return *this; }
-    inline ModifyManagedPrefixListRequest& AddRemoveEntries(RemovePrefixListEntry&& value) { m_removeEntriesHasBeenSet = true; m_removeEntries.push_back(std::move(value)); return *this; }
+    template<typename RemoveEntriesT = Aws::Vector<RemovePrefixListEntry>>
+    void SetRemoveEntries(RemoveEntriesT&& value) { m_removeEntriesHasBeenSet = true; m_removeEntries = std::forward<RemoveEntriesT>(value); }
+    template<typename RemoveEntriesT = Aws::Vector<RemovePrefixListEntry>>
+    ModifyManagedPrefixListRequest& WithRemoveEntries(RemoveEntriesT&& value) { SetRemoveEntries(std::forward<RemoveEntriesT>(value)); return *this;}
+    template<typename RemoveEntriesT = RemovePrefixListEntry>
+    ModifyManagedPrefixListRequest& AddRemoveEntries(RemoveEntriesT&& value) { m_removeEntriesHasBeenSet = true; m_removeEntries.emplace_back(std::forward<RemoveEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,20 +123,20 @@ namespace Model
      * message for the IDs of the first ten resources that do not support the new
      * maximum size.</p>
      */
-    inline int GetMaxEntries() const{ return m_maxEntries; }
+    inline int GetMaxEntries() const { return m_maxEntries; }
     inline bool MaxEntriesHasBeenSet() const { return m_maxEntriesHasBeenSet; }
     inline void SetMaxEntries(int value) { m_maxEntriesHasBeenSet = true; m_maxEntries = value; }
     inline ModifyManagedPrefixListRequest& WithMaxEntries(int value) { SetMaxEntries(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet = false;
 
-    long long m_currentVersion;
+    long long m_currentVersion{0};
     bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_prefixListName;
@@ -152,7 +148,7 @@ namespace Model
     Aws::Vector<RemovePrefixListEntry> m_removeEntries;
     bool m_removeEntriesHasBeenSet = false;
 
-    int m_maxEntries;
+    int m_maxEntries{0};
     bool m_maxEntriesHasBeenSet = false;
   };
 

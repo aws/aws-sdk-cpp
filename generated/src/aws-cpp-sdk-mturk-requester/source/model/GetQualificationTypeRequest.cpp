@@ -12,11 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQualificationTypeRequest::GetQualificationTypeRequest() : 
-    m_qualificationTypeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQualificationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

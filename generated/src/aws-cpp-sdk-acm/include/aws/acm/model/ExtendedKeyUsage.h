@@ -35,7 +35,7 @@ namespace Model
   class ExtendedKeyUsage
   {
   public:
-    AWS_ACM_API ExtendedKeyUsage();
+    AWS_ACM_API ExtendedKeyUsage() = default;
     AWS_ACM_API ExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API ExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The name of an Extended Key Usage value.</p>
      */
-    inline const ExtendedKeyUsageName& GetName() const{ return m_name; }
+    inline ExtendedKeyUsageName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ExtendedKeyUsageName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ExtendedKeyUsageName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ExtendedKeyUsage& WithName(const ExtendedKeyUsageName& value) { SetName(value); return *this;}
-    inline ExtendedKeyUsage& WithName(ExtendedKeyUsageName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ExtendedKeyUsageName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ExtendedKeyUsage& WithName(ExtendedKeyUsageName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,16 @@ namespace Model
      * <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li> <li> <p>
      * <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetOID() const{ return m_oID; }
+    inline const Aws::String& GetOID() const { return m_oID; }
     inline bool OIDHasBeenSet() const { return m_oIDHasBeenSet; }
-    inline void SetOID(const Aws::String& value) { m_oIDHasBeenSet = true; m_oID = value; }
-    inline void SetOID(Aws::String&& value) { m_oIDHasBeenSet = true; m_oID = std::move(value); }
-    inline void SetOID(const char* value) { m_oIDHasBeenSet = true; m_oID.assign(value); }
-    inline ExtendedKeyUsage& WithOID(const Aws::String& value) { SetOID(value); return *this;}
-    inline ExtendedKeyUsage& WithOID(Aws::String&& value) { SetOID(std::move(value)); return *this;}
-    inline ExtendedKeyUsage& WithOID(const char* value) { SetOID(value); return *this;}
+    template<typename OIDT = Aws::String>
+    void SetOID(OIDT&& value) { m_oIDHasBeenSet = true; m_oID = std::forward<OIDT>(value); }
+    template<typename OIDT = Aws::String>
+    ExtendedKeyUsage& WithOID(OIDT&& value) { SetOID(std::forward<OIDT>(value)); return *this;}
     ///@}
   private:
 
-    ExtendedKeyUsageName m_name;
+    ExtendedKeyUsageName m_name{ExtendedKeyUsageName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_oID;

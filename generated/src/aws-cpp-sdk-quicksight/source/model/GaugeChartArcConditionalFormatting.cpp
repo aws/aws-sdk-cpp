@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartArcConditionalFormatting::GaugeChartArcConditionalFormatting() : 
-    m_foregroundColorHasBeenSet(false)
-{
-}
-
 GaugeChartArcConditionalFormatting::GaugeChartArcConditionalFormatting(JsonView jsonValue)
-  : GaugeChartArcConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GaugeChartArcConditionalFormatting& GaugeChartArcConditionalFormatting::operator
   if(jsonValue.ValueExists("ForegroundColor"))
   {
     m_foregroundColor = jsonValue.GetObject("ForegroundColor");
-
     m_foregroundColorHasBeenSet = true;
   }
-
   return *this;
 }
 

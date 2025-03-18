@@ -29,7 +29,7 @@ namespace Model
   class ListRecommendedIntentsResult
   {
   public:
-    AWS_LEXMODELSV2_API ListRecommendedIntentsResult();
+    AWS_LEXMODELSV2_API ListRecommendedIntentsResult() = default;
     AWS_LEXMODELSV2_API ListRecommendedIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListRecommendedIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The unique identifier of the bot associated with the recommended intent.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListRecommendedIntentsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListRecommendedIntentsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListRecommendedIntentsResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot that contains the intent.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline ListRecommendedIntentsResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline ListRecommendedIntentsResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    ListRecommendedIntentsResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,13 +63,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a>.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline ListRecommendedIntentsResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline ListRecommendedIntentsResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    ListRecommendedIntentsResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,13 +75,11 @@ namespace Model
      * <p>The identifier of the bot recommendation that contains the recommended
      * intent.</p>
      */
-    inline const Aws::String& GetBotRecommendationId() const{ return m_botRecommendationId; }
-    inline void SetBotRecommendationId(const Aws::String& value) { m_botRecommendationId = value; }
-    inline void SetBotRecommendationId(Aws::String&& value) { m_botRecommendationId = std::move(value); }
-    inline void SetBotRecommendationId(const char* value) { m_botRecommendationId.assign(value); }
-    inline ListRecommendedIntentsResult& WithBotRecommendationId(const Aws::String& value) { SetBotRecommendationId(value); return *this;}
-    inline ListRecommendedIntentsResult& WithBotRecommendationId(Aws::String&& value) { SetBotRecommendationId(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithBotRecommendationId(const char* value) { SetBotRecommendationId(value); return *this;}
+    inline const Aws::String& GetBotRecommendationId() const { return m_botRecommendationId; }
+    template<typename BotRecommendationIdT = Aws::String>
+    void SetBotRecommendationId(BotRecommendationIdT&& value) { m_botRecommendationIdHasBeenSet = true; m_botRecommendationId = std::forward<BotRecommendationIdT>(value); }
+    template<typename BotRecommendationIdT = Aws::String>
+    ListRecommendedIntentsResult& WithBotRecommendationId(BotRecommendationIdT&& value) { SetBotRecommendationId(std::forward<BotRecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,13 +89,13 @@ namespace Model
      * of the request. If there are more intents available, the nextToken field
      * contains a token to get the next page of results.</p>
      */
-    inline const Aws::Vector<RecommendedIntentSummary>& GetSummaryList() const{ return m_summaryList; }
-    inline void SetSummaryList(const Aws::Vector<RecommendedIntentSummary>& value) { m_summaryList = value; }
-    inline void SetSummaryList(Aws::Vector<RecommendedIntentSummary>&& value) { m_summaryList = std::move(value); }
-    inline ListRecommendedIntentsResult& WithSummaryList(const Aws::Vector<RecommendedIntentSummary>& value) { SetSummaryList(value); return *this;}
-    inline ListRecommendedIntentsResult& WithSummaryList(Aws::Vector<RecommendedIntentSummary>&& value) { SetSummaryList(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& AddSummaryList(const RecommendedIntentSummary& value) { m_summaryList.push_back(value); return *this; }
-    inline ListRecommendedIntentsResult& AddSummaryList(RecommendedIntentSummary&& value) { m_summaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecommendedIntentSummary>& GetSummaryList() const { return m_summaryList; }
+    template<typename SummaryListT = Aws::Vector<RecommendedIntentSummary>>
+    void SetSummaryList(SummaryListT&& value) { m_summaryListHasBeenSet = true; m_summaryList = std::forward<SummaryListT>(value); }
+    template<typename SummaryListT = Aws::Vector<RecommendedIntentSummary>>
+    ListRecommendedIntentsResult& WithSummaryList(SummaryListT&& value) { SetSummaryList(std::forward<SummaryListT>(value)); return *this;}
+    template<typename SummaryListT = RecommendedIntentSummary>
+    ListRecommendedIntentsResult& AddSummaryList(SummaryListT&& value) { m_summaryListHasBeenSet = true; m_summaryList.emplace_back(std::forward<SummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,40 +105,43 @@ namespace Model
      * send the contents as the nextToken parameter of a ListRecommendedIntents
      * operation request to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRecommendedIntentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecommendedIntentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecommendedIntentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRecommendedIntentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRecommendedIntentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRecommendedIntentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRecommendedIntentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_botRecommendationId;
+    bool m_botRecommendationIdHasBeenSet = false;
 
     Aws::Vector<RecommendedIntentSummary> m_summaryList;
+    bool m_summaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

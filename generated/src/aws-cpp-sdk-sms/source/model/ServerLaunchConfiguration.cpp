@@ -18,26 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerLaunchConfiguration::ServerLaunchConfiguration() : 
-    m_serverHasBeenSet(false),
-    m_logicalIdHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_ec2KeyNameHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_iamInstanceProfileNameHasBeenSet(false),
-    m_configureScriptHasBeenSet(false),
-    m_configureScriptType(ScriptType::NOT_SET),
-    m_configureScriptTypeHasBeenSet(false)
-{
-}
-
 ServerLaunchConfiguration::ServerLaunchConfiguration(JsonView jsonValue)
-  : ServerLaunchConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,87 +28,63 @@ ServerLaunchConfiguration& ServerLaunchConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("server"))
   {
     m_server = jsonValue.GetObject("server");
-
     m_serverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logicalId"))
   {
     m_logicalId = jsonValue.GetString("logicalId");
-
     m_logicalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpc"))
   {
     m_vpc = jsonValue.GetString("vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnet"))
   {
     m_subnet = jsonValue.GetString("subnet");
-
     m_subnetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroup"))
   {
     m_securityGroup = jsonValue.GetString("securityGroup");
-
     m_securityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2KeyName"))
   {
     m_ec2KeyName = jsonValue.GetString("ec2KeyName");
-
     m_ec2KeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userData"))
   {
     m_userData = jsonValue.GetObject("userData");
-
     m_userDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatePublicIpAddress"))
   {
     m_associatePublicIpAddress = jsonValue.GetBool("associatePublicIpAddress");
-
     m_associatePublicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamInstanceProfileName"))
   {
     m_iamInstanceProfileName = jsonValue.GetString("iamInstanceProfileName");
-
     m_iamInstanceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configureScript"))
   {
     m_configureScript = jsonValue.GetObject("configureScript");
-
     m_configureScriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configureScriptType"))
   {
     m_configureScriptType = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("configureScriptType"));
-
     m_configureScriptTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

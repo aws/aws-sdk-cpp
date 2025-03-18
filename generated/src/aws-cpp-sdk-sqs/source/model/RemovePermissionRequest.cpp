@@ -12,12 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

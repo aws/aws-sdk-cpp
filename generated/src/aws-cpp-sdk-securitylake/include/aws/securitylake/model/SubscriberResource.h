@@ -39,7 +39,7 @@ namespace Model
   class SubscriberResource
   {
   public:
-    AWS_SECURITYLAKE_API SubscriberResource();
+    AWS_SECURITYLAKE_API SubscriberResource() = default;
     AWS_SECURITYLAKE_API SubscriberResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API SubscriberResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,26 +54,25 @@ namespace Model
      * Amazon Athena. This subscription type is defined as
      * <code>LAKEFORMATION</code>.</p>
      */
-    inline const Aws::Vector<AccessType>& GetAccessTypes() const{ return m_accessTypes; }
+    inline const Aws::Vector<AccessType>& GetAccessTypes() const { return m_accessTypes; }
     inline bool AccessTypesHasBeenSet() const { return m_accessTypesHasBeenSet; }
-    inline void SetAccessTypes(const Aws::Vector<AccessType>& value) { m_accessTypesHasBeenSet = true; m_accessTypes = value; }
-    inline void SetAccessTypes(Aws::Vector<AccessType>&& value) { m_accessTypesHasBeenSet = true; m_accessTypes = std::move(value); }
-    inline SubscriberResource& WithAccessTypes(const Aws::Vector<AccessType>& value) { SetAccessTypes(value); return *this;}
-    inline SubscriberResource& WithAccessTypes(Aws::Vector<AccessType>&& value) { SetAccessTypes(std::move(value)); return *this;}
-    inline SubscriberResource& AddAccessTypes(const AccessType& value) { m_accessTypesHasBeenSet = true; m_accessTypes.push_back(value); return *this; }
-    inline SubscriberResource& AddAccessTypes(AccessType&& value) { m_accessTypesHasBeenSet = true; m_accessTypes.push_back(std::move(value)); return *this; }
+    template<typename AccessTypesT = Aws::Vector<AccessType>>
+    void SetAccessTypes(AccessTypesT&& value) { m_accessTypesHasBeenSet = true; m_accessTypes = std::forward<AccessTypesT>(value); }
+    template<typename AccessTypesT = Aws::Vector<AccessType>>
+    SubscriberResource& WithAccessTypes(AccessTypesT&& value) { SetAccessTypes(std::forward<AccessTypesT>(value)); return *this;}
+    inline SubscriberResource& AddAccessTypes(AccessType value) { m_accessTypesHasBeenSet = true; m_accessTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the subscriber was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline SubscriberResource& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline SubscriberResource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    SubscriberResource& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,56 +82,48 @@ namespace Model
      * view details related to the RAM resource share.</p> <p>This field is available
      * only for Lake Formation subscribers created after March 8, 2023.</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline SubscriberResource& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline SubscriberResource& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline SubscriberResource& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    SubscriberResource& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource share.</p>
      */
-    inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+    inline const Aws::String& GetResourceShareName() const { return m_resourceShareName; }
     inline bool ResourceShareNameHasBeenSet() const { return m_resourceShareNameHasBeenSet; }
-    inline void SetResourceShareName(const Aws::String& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = value; }
-    inline void SetResourceShareName(Aws::String&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::move(value); }
-    inline void SetResourceShareName(const char* value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName.assign(value); }
-    inline SubscriberResource& WithResourceShareName(const Aws::String& value) { SetResourceShareName(value); return *this;}
-    inline SubscriberResource& WithResourceShareName(Aws::String&& value) { SetResourceShareName(std::move(value)); return *this;}
-    inline SubscriberResource& WithResourceShareName(const char* value) { SetResourceShareName(value); return *this;}
+    template<typename ResourceShareNameT = Aws::String>
+    void SetResourceShareName(ResourceShareNameT&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::forward<ResourceShareNameT>(value); }
+    template<typename ResourceShareNameT = Aws::String>
+    SubscriberResource& WithResourceShareName(ResourceShareNameT&& value) { SetResourceShareName(std::forward<ResourceShareNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SubscriberResource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SubscriberResource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SubscriberResource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SubscriberResource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
+    inline const Aws::String& GetS3BucketArn() const { return m_s3BucketArn; }
     inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
-    inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
-    inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
-    inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
-    inline SubscriberResource& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
-    inline SubscriberResource& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
-    inline SubscriberResource& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
+    template<typename S3BucketArnT = Aws::String>
+    void SetS3BucketArn(S3BucketArnT&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::forward<S3BucketArnT>(value); }
+    template<typename S3BucketArnT = Aws::String>
+    SubscriberResource& WithS3BucketArn(S3BucketArnT&& value) { SetS3BucketArn(std::forward<S3BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,28 +133,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
      * Security Lake User Guide</a>.</p>
      */
-    inline const Aws::Vector<LogSourceResource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<LogSourceResource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<LogSourceResource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<LogSourceResource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline SubscriberResource& WithSources(const Aws::Vector<LogSourceResource>& value) { SetSources(value); return *this;}
-    inline SubscriberResource& WithSources(Aws::Vector<LogSourceResource>&& value) { SetSources(std::move(value)); return *this;}
-    inline SubscriberResource& AddSources(const LogSourceResource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline SubscriberResource& AddSources(LogSourceResource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<LogSourceResource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<LogSourceResource>>
+    SubscriberResource& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = LogSourceResource>
+    SubscriberResource& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
      */
-    inline const Aws::String& GetSubscriberArn() const{ return m_subscriberArn; }
+    inline const Aws::String& GetSubscriberArn() const { return m_subscriberArn; }
     inline bool SubscriberArnHasBeenSet() const { return m_subscriberArnHasBeenSet; }
-    inline void SetSubscriberArn(const Aws::String& value) { m_subscriberArnHasBeenSet = true; m_subscriberArn = value; }
-    inline void SetSubscriberArn(Aws::String&& value) { m_subscriberArnHasBeenSet = true; m_subscriberArn = std::move(value); }
-    inline void SetSubscriberArn(const char* value) { m_subscriberArnHasBeenSet = true; m_subscriberArn.assign(value); }
-    inline SubscriberResource& WithSubscriberArn(const Aws::String& value) { SetSubscriberArn(value); return *this;}
-    inline SubscriberResource& WithSubscriberArn(Aws::String&& value) { SetSubscriberArn(std::move(value)); return *this;}
-    inline SubscriberResource& WithSubscriberArn(const char* value) { SetSubscriberArn(value); return *this;}
+    template<typename SubscriberArnT = Aws::String>
+    void SetSubscriberArn(SubscriberArnT&& value) { m_subscriberArnHasBeenSet = true; m_subscriberArn = std::forward<SubscriberArnT>(value); }
+    template<typename SubscriberArnT = Aws::String>
+    SubscriberResource& WithSubscriberArn(SubscriberArnT&& value) { SetSubscriberArn(std::forward<SubscriberArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,99 +161,89 @@ namespace Model
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
      * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
-    inline const Aws::String& GetSubscriberDescription() const{ return m_subscriberDescription; }
+    inline const Aws::String& GetSubscriberDescription() const { return m_subscriberDescription; }
     inline bool SubscriberDescriptionHasBeenSet() const { return m_subscriberDescriptionHasBeenSet; }
-    inline void SetSubscriberDescription(const Aws::String& value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription = value; }
-    inline void SetSubscriberDescription(Aws::String&& value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription = std::move(value); }
-    inline void SetSubscriberDescription(const char* value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription.assign(value); }
-    inline SubscriberResource& WithSubscriberDescription(const Aws::String& value) { SetSubscriberDescription(value); return *this;}
-    inline SubscriberResource& WithSubscriberDescription(Aws::String&& value) { SetSubscriberDescription(std::move(value)); return *this;}
-    inline SubscriberResource& WithSubscriberDescription(const char* value) { SetSubscriberDescription(value); return *this;}
+    template<typename SubscriberDescriptionT = Aws::String>
+    void SetSubscriberDescription(SubscriberDescriptionT&& value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription = std::forward<SubscriberDescriptionT>(value); }
+    template<typename SubscriberDescriptionT = Aws::String>
+    SubscriberResource& WithSubscriberDescription(SubscriberDescriptionT&& value) { SetSubscriberDescription(std::forward<SubscriberDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscriber endpoint to which exception messages are posted.</p>
      */
-    inline const Aws::String& GetSubscriberEndpoint() const{ return m_subscriberEndpoint; }
+    inline const Aws::String& GetSubscriberEndpoint() const { return m_subscriberEndpoint; }
     inline bool SubscriberEndpointHasBeenSet() const { return m_subscriberEndpointHasBeenSet; }
-    inline void SetSubscriberEndpoint(const Aws::String& value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint = value; }
-    inline void SetSubscriberEndpoint(Aws::String&& value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint = std::move(value); }
-    inline void SetSubscriberEndpoint(const char* value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint.assign(value); }
-    inline SubscriberResource& WithSubscriberEndpoint(const Aws::String& value) { SetSubscriberEndpoint(value); return *this;}
-    inline SubscriberResource& WithSubscriberEndpoint(Aws::String&& value) { SetSubscriberEndpoint(std::move(value)); return *this;}
-    inline SubscriberResource& WithSubscriberEndpoint(const char* value) { SetSubscriberEndpoint(value); return *this;}
+    template<typename SubscriberEndpointT = Aws::String>
+    void SetSubscriberEndpoint(SubscriberEndpointT&& value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint = std::forward<SubscriberEndpointT>(value); }
+    template<typename SubscriberEndpointT = Aws::String>
+    SubscriberResource& WithSubscriberEndpoint(SubscriberEndpointT&& value) { SetSubscriberEndpoint(std::forward<SubscriberEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
      */
-    inline const Aws::String& GetSubscriberId() const{ return m_subscriberId; }
+    inline const Aws::String& GetSubscriberId() const { return m_subscriberId; }
     inline bool SubscriberIdHasBeenSet() const { return m_subscriberIdHasBeenSet; }
-    inline void SetSubscriberId(const Aws::String& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = value; }
-    inline void SetSubscriberId(Aws::String&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::move(value); }
-    inline void SetSubscriberId(const char* value) { m_subscriberIdHasBeenSet = true; m_subscriberId.assign(value); }
-    inline SubscriberResource& WithSubscriberId(const Aws::String& value) { SetSubscriberId(value); return *this;}
-    inline SubscriberResource& WithSubscriberId(Aws::String&& value) { SetSubscriberId(std::move(value)); return *this;}
-    inline SubscriberResource& WithSubscriberId(const char* value) { SetSubscriberId(value); return *this;}
+    template<typename SubscriberIdT = Aws::String>
+    void SetSubscriberId(SubscriberIdT&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::forward<SubscriberIdT>(value); }
+    template<typename SubscriberIdT = Aws::String>
+    SubscriberResource& WithSubscriberId(SubscriberIdT&& value) { SetSubscriberId(std::forward<SubscriberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services identity used to access your data.</p>
      */
-    inline const AwsIdentity& GetSubscriberIdentity() const{ return m_subscriberIdentity; }
+    inline const AwsIdentity& GetSubscriberIdentity() const { return m_subscriberIdentity; }
     inline bool SubscriberIdentityHasBeenSet() const { return m_subscriberIdentityHasBeenSet; }
-    inline void SetSubscriberIdentity(const AwsIdentity& value) { m_subscriberIdentityHasBeenSet = true; m_subscriberIdentity = value; }
-    inline void SetSubscriberIdentity(AwsIdentity&& value) { m_subscriberIdentityHasBeenSet = true; m_subscriberIdentity = std::move(value); }
-    inline SubscriberResource& WithSubscriberIdentity(const AwsIdentity& value) { SetSubscriberIdentity(value); return *this;}
-    inline SubscriberResource& WithSubscriberIdentity(AwsIdentity&& value) { SetSubscriberIdentity(std::move(value)); return *this;}
+    template<typename SubscriberIdentityT = AwsIdentity>
+    void SetSubscriberIdentity(SubscriberIdentityT&& value) { m_subscriberIdentityHasBeenSet = true; m_subscriberIdentity = std::forward<SubscriberIdentityT>(value); }
+    template<typename SubscriberIdentityT = AwsIdentity>
+    SubscriberResource& WithSubscriberIdentity(SubscriberIdentityT&& value) { SetSubscriberIdentity(std::forward<SubscriberIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your Amazon Security Lake subscriber account.</p>
      */
-    inline const Aws::String& GetSubscriberName() const{ return m_subscriberName; }
+    inline const Aws::String& GetSubscriberName() const { return m_subscriberName; }
     inline bool SubscriberNameHasBeenSet() const { return m_subscriberNameHasBeenSet; }
-    inline void SetSubscriberName(const Aws::String& value) { m_subscriberNameHasBeenSet = true; m_subscriberName = value; }
-    inline void SetSubscriberName(Aws::String&& value) { m_subscriberNameHasBeenSet = true; m_subscriberName = std::move(value); }
-    inline void SetSubscriberName(const char* value) { m_subscriberNameHasBeenSet = true; m_subscriberName.assign(value); }
-    inline SubscriberResource& WithSubscriberName(const Aws::String& value) { SetSubscriberName(value); return *this;}
-    inline SubscriberResource& WithSubscriberName(Aws::String&& value) { SetSubscriberName(std::move(value)); return *this;}
-    inline SubscriberResource& WithSubscriberName(const char* value) { SetSubscriberName(value); return *this;}
+    template<typename SubscriberNameT = Aws::String>
+    void SetSubscriberName(SubscriberNameT&& value) { m_subscriberNameHasBeenSet = true; m_subscriberName = std::forward<SubscriberNameT>(value); }
+    template<typename SubscriberNameT = Aws::String>
+    SubscriberResource& WithSubscriberName(SubscriberNameT&& value) { SetSubscriberName(std::forward<SubscriberNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline const SubscriberStatus& GetSubscriberStatus() const{ return m_subscriberStatus; }
+    inline SubscriberStatus GetSubscriberStatus() const { return m_subscriberStatus; }
     inline bool SubscriberStatusHasBeenSet() const { return m_subscriberStatusHasBeenSet; }
-    inline void SetSubscriberStatus(const SubscriberStatus& value) { m_subscriberStatusHasBeenSet = true; m_subscriberStatus = value; }
-    inline void SetSubscriberStatus(SubscriberStatus&& value) { m_subscriberStatusHasBeenSet = true; m_subscriberStatus = std::move(value); }
-    inline SubscriberResource& WithSubscriberStatus(const SubscriberStatus& value) { SetSubscriberStatus(value); return *this;}
-    inline SubscriberResource& WithSubscriberStatus(SubscriberStatus&& value) { SetSubscriberStatus(std::move(value)); return *this;}
+    inline void SetSubscriberStatus(SubscriberStatus value) { m_subscriberStatusHasBeenSet = true; m_subscriberStatus = value; }
+    inline SubscriberResource& WithSubscriberStatus(SubscriberStatus value) { SetSubscriberStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the subscriber was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline SubscriberResource& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline SubscriberResource& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    SubscriberResource& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccessType> m_accessTypes;
     bool m_accessTypesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_resourceShareArn;
@@ -300,10 +279,10 @@ namespace Model
     Aws::String m_subscriberName;
     bool m_subscriberNameHasBeenSet = false;
 
-    SubscriberStatus m_subscriberStatus;
+    SubscriberStatus m_subscriberStatus{SubscriberStatus::NOT_SET};
     bool m_subscriberStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

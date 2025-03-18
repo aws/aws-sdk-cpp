@@ -23,7 +23,7 @@ namespace Model
   class UpdateStreamGroupRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API UpdateStreamGroupRequest();
+    AWS_GAMELIFTSTREAMS_API UpdateStreamGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A descriptive label for the stream group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateStreamGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateStreamGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateStreamGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateStreamGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateStreamGroupRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateStreamGroupRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateStreamGroupRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateStreamGroupRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * <p> A set of one or more locations and the streaming capacity for each location.
      * </p>
      */
-    inline const Aws::Vector<LocationConfiguration>& GetLocationConfigurations() const{ return m_locationConfigurations; }
+    inline const Aws::Vector<LocationConfiguration>& GetLocationConfigurations() const { return m_locationConfigurations; }
     inline bool LocationConfigurationsHasBeenSet() const { return m_locationConfigurationsHasBeenSet; }
-    inline void SetLocationConfigurations(const Aws::Vector<LocationConfiguration>& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations = value; }
-    inline void SetLocationConfigurations(Aws::Vector<LocationConfiguration>&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations = std::move(value); }
-    inline UpdateStreamGroupRequest& WithLocationConfigurations(const Aws::Vector<LocationConfiguration>& value) { SetLocationConfigurations(value); return *this;}
-    inline UpdateStreamGroupRequest& WithLocationConfigurations(Aws::Vector<LocationConfiguration>&& value) { SetLocationConfigurations(std::move(value)); return *this;}
-    inline UpdateStreamGroupRequest& AddLocationConfigurations(const LocationConfiguration& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.push_back(value); return *this; }
-    inline UpdateStreamGroupRequest& AddLocationConfigurations(LocationConfiguration&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
+    void SetLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations = std::forward<LocationConfigurationsT>(value); }
+    template<typename LocationConfigurationsT = Aws::Vector<LocationConfiguration>>
+    UpdateStreamGroupRequest& WithLocationConfigurations(LocationConfigurationsT&& value) { SetLocationConfigurations(std::forward<LocationConfigurationsT>(value)); return *this;}
+    template<typename LocationConfigurationsT = LocationConfiguration>
+    UpdateStreamGroupRequest& AddLocationConfigurations(LocationConfigurationsT&& value) { m_locationConfigurationsHasBeenSet = true; m_locationConfigurations.emplace_back(std::forward<LocationConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

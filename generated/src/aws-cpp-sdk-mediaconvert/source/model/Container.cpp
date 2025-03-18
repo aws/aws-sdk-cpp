@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Container::Container() : 
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_tracksHasBeenSet(false)
-{
-}
-
 Container::Container(JsonView jsonValue)
-  : Container()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ Container& Container::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetDouble("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tracks"))
   {
     Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
@@ -58,7 +44,6 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_tracksHasBeenSet = true;
   }
-
   return *this;
 }
 

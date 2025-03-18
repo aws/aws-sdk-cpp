@@ -20,25 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CloudWatchAlarmConfiguration::CloudWatchAlarmConfiguration() : 
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 CloudWatchAlarmConfiguration::CloudWatchAlarmConfiguration(const XmlNode& xmlNode)
-  : CloudWatchAlarmConfiguration()
 {
   *this = xmlNode;
 }
@@ -64,7 +46,7 @@ CloudWatchAlarmConfiguration& CloudWatchAlarmConfiguration::operator =(const Xml
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
     if(!comparisonOperatorNode.IsNull())
     {
-      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()).c_str());
+      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
       m_comparisonOperatorHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
@@ -88,13 +70,14 @@ CloudWatchAlarmConfiguration& CloudWatchAlarmConfiguration::operator =(const Xml
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("Dimension");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);

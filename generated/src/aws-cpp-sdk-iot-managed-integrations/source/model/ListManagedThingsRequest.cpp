@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListManagedThingsRequest::ListManagedThingsRequest() : 
-    m_ownerFilterHasBeenSet(false),
-    m_credentialLockerFilterHasBeenSet(false),
-    m_roleFilter(Role::NOT_SET),
-    m_roleFilterHasBeenSet(false),
-    m_parentControllerIdentifierFilterHasBeenSet(false),
-    m_connectorPolicyIdFilterHasBeenSet(false),
-    m_serialNumberFilterHasBeenSet(false),
-    m_provisioningStatusFilter(ProvisioningStatus::NOT_SET),
-    m_provisioningStatusFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedThingsRequest::SerializePayload() const
 {
   return {};

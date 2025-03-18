@@ -29,7 +29,7 @@ namespace Model
   class ListManagedJobTemplatesResult
   {
   public:
-    AWS_IOT_API ListManagedJobTemplatesResult();
+    AWS_IOT_API ListManagedJobTemplatesResult() = default;
     AWS_IOT_API ListManagedJobTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListManagedJobTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of managed job templates that are returned.</p>
      */
-    inline const Aws::Vector<ManagedJobTemplateSummary>& GetManagedJobTemplates() const{ return m_managedJobTemplates; }
-    inline void SetManagedJobTemplates(const Aws::Vector<ManagedJobTemplateSummary>& value) { m_managedJobTemplates = value; }
-    inline void SetManagedJobTemplates(Aws::Vector<ManagedJobTemplateSummary>&& value) { m_managedJobTemplates = std::move(value); }
-    inline ListManagedJobTemplatesResult& WithManagedJobTemplates(const Aws::Vector<ManagedJobTemplateSummary>& value) { SetManagedJobTemplates(value); return *this;}
-    inline ListManagedJobTemplatesResult& WithManagedJobTemplates(Aws::Vector<ManagedJobTemplateSummary>&& value) { SetManagedJobTemplates(std::move(value)); return *this;}
-    inline ListManagedJobTemplatesResult& AddManagedJobTemplates(const ManagedJobTemplateSummary& value) { m_managedJobTemplates.push_back(value); return *this; }
-    inline ListManagedJobTemplatesResult& AddManagedJobTemplates(ManagedJobTemplateSummary&& value) { m_managedJobTemplates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ManagedJobTemplateSummary>& GetManagedJobTemplates() const { return m_managedJobTemplates; }
+    template<typename ManagedJobTemplatesT = Aws::Vector<ManagedJobTemplateSummary>>
+    void SetManagedJobTemplates(ManagedJobTemplatesT&& value) { m_managedJobTemplatesHasBeenSet = true; m_managedJobTemplates = std::forward<ManagedJobTemplatesT>(value); }
+    template<typename ManagedJobTemplatesT = Aws::Vector<ManagedJobTemplateSummary>>
+    ListManagedJobTemplatesResult& WithManagedJobTemplates(ManagedJobTemplatesT&& value) { SetManagedJobTemplates(std::forward<ManagedJobTemplatesT>(value)); return *this;}
+    template<typename ManagedJobTemplatesT = ManagedJobTemplateSummary>
+    ListManagedJobTemplatesResult& AddManagedJobTemplates(ManagedJobTemplatesT&& value) { m_managedJobTemplatesHasBeenSet = true; m_managedJobTemplates.emplace_back(std::forward<ManagedJobTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListManagedJobTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListManagedJobTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListManagedJobTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListManagedJobTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListManagedJobTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListManagedJobTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListManagedJobTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListManagedJobTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ManagedJobTemplateSummary> m_managedJobTemplates;
+    bool m_managedJobTemplatesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

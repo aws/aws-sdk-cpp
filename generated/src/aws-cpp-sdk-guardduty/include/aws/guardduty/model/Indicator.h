@@ -34,7 +34,7 @@ namespace Model
   class Indicator
   {
   public:
-    AWS_GUARDDUTY_API Indicator();
+    AWS_GUARDDUTY_API Indicator() = default;
     AWS_GUARDDUTY_API Indicator(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Indicator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack
      * sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
      */
-    inline const IndicatorType& GetKey() const{ return m_key; }
+    inline IndicatorType GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const IndicatorType& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(IndicatorType&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline Indicator& WithKey(const IndicatorType& value) { SetKey(value); return *this;}
-    inline Indicator& WithKey(IndicatorType&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(IndicatorType value) { m_keyHasBeenSet = true; m_key = value; }
+    inline Indicator& WithKey(IndicatorType value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -62,33 +60,30 @@ namespace Model
      * network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will
      * be one of the MITRE tactics. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline Indicator& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline Indicator& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline Indicator& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline Indicator& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline Indicator& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    Indicator& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    Indicator& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Title describing the indicator.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Indicator& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Indicator& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Indicator& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Indicator& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 
-    IndicatorType m_key;
+    IndicatorType m_key{IndicatorType::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

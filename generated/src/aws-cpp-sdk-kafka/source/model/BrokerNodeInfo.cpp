@@ -18,19 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-BrokerNodeInfo::BrokerNodeInfo() : 
-    m_attachedENIIdHasBeenSet(false),
-    m_brokerId(0.0),
-    m_brokerIdHasBeenSet(false),
-    m_clientSubnetHasBeenSet(false),
-    m_clientVpcIpAddressHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
-{
-}
-
 BrokerNodeInfo::BrokerNodeInfo(JsonView jsonValue)
-  : BrokerNodeInfo()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ BrokerNodeInfo& BrokerNodeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachedENIId"))
   {
     m_attachedENIId = jsonValue.GetString("attachedENIId");
-
     m_attachedENIIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetDouble("brokerId");
-
     m_brokerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSubnet"))
   {
     m_clientSubnet = jsonValue.GetString("clientSubnet");
-
     m_clientSubnetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientVpcIpAddress"))
   {
     m_clientVpcIpAddress = jsonValue.GetString("clientVpcIpAddress");
-
     m_clientVpcIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentBrokerSoftwareInfo"))
   {
     m_currentBrokerSoftwareInfo = jsonValue.GetObject("currentBrokerSoftwareInfo");
-
     m_currentBrokerSoftwareInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -81,7 +59,6 @@ BrokerNodeInfo& BrokerNodeInfo::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAssetModelRequest::DescribeAssetModelRequest() : 
-    m_assetModelIdHasBeenSet(false),
-    m_excludeProperties(false),
-    m_excludePropertiesHasBeenSet(false),
-    m_assetModelVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssetModelRequest::SerializePayload() const
 {
   return {};

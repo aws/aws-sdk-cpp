@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RedactConversationMessageRequest::RedactConversationMessageRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
-{
-}
-
 Aws::String RedactConversationMessageRequest::SerializePayload() const
 {
   return {};

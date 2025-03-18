@@ -12,20 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProvisioningTemplateRequest::CreateProvisioningTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false),
-    m_preProvisioningHookHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(TemplateType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateProvisioningTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

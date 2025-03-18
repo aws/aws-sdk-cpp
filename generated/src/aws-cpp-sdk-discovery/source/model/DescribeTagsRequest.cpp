@@ -12,14 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTagsRequest::DescribeTagsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTagsRequest::SerializePayload() const
 {
   JsonValue payload;

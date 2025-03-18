@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialPointStyleOptions::GeospatialPointStyleOptions() : 
-    m_selectedPointStyle(GeospatialSelectedPointStyle::NOT_SET),
-    m_selectedPointStyleHasBeenSet(false),
-    m_clusterMarkerConfigurationHasBeenSet(false),
-    m_heatmapConfigurationHasBeenSet(false)
-{
-}
-
 GeospatialPointStyleOptions::GeospatialPointStyleOptions(JsonView jsonValue)
-  : GeospatialPointStyleOptions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GeospatialPointStyleOptions& GeospatialPointStyleOptions::operator =(JsonView js
   if(jsonValue.ValueExists("SelectedPointStyle"))
   {
     m_selectedPointStyle = GeospatialSelectedPointStyleMapper::GetGeospatialSelectedPointStyleForName(jsonValue.GetString("SelectedPointStyle"));
-
     m_selectedPointStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterMarkerConfiguration"))
   {
     m_clusterMarkerConfiguration = jsonValue.GetObject("ClusterMarkerConfiguration");
-
     m_clusterMarkerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeatmapConfiguration"))
   {
     m_heatmapConfiguration = jsonValue.GetObject("HeatmapConfiguration");
-
     m_heatmapConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

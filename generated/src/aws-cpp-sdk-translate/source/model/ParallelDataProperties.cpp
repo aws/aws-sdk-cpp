@@ -18,35 +18,7 @@ namespace Translate
 namespace Model
 {
 
-ParallelDataProperties::ParallelDataProperties() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ParallelDataStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_parallelDataConfigHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_importedDataSize(0),
-    m_importedDataSizeHasBeenSet(false),
-    m_importedRecordCount(0),
-    m_importedRecordCountHasBeenSet(false),
-    m_failedRecordCount(0),
-    m_failedRecordCountHasBeenSet(false),
-    m_skippedRecordCount(0),
-    m_skippedRecordCountHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_latestUpdateAttemptStatus(ParallelDataStatus::NOT_SET),
-    m_latestUpdateAttemptStatusHasBeenSet(false),
-    m_latestUpdateAttemptAtHasBeenSet(false)
-{
-}
-
 ParallelDataProperties::ParallelDataProperties(JsonView jsonValue)
-  : ParallelDataProperties()
 {
   *this = jsonValue;
 }
@@ -56,38 +28,28 @@ ParallelDataProperties& ParallelDataProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLanguageCode"))
   {
     m_sourceLanguageCode = jsonValue.GetString("SourceLanguageCode");
-
     m_sourceLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLanguageCodes"))
   {
     Aws::Utils::Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
@@ -97,84 +59,61 @@ ParallelDataProperties& ParallelDataProperties::operator =(JsonView jsonValue)
     }
     m_targetLanguageCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelDataConfig"))
   {
     m_parallelDataConfig = jsonValue.GetObject("ParallelDataConfig");
-
     m_parallelDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedDataSize"))
   {
     m_importedDataSize = jsonValue.GetInt64("ImportedDataSize");
-
     m_importedDataSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedRecordCount"))
   {
     m_importedRecordCount = jsonValue.GetInt64("ImportedRecordCount");
-
     m_importedRecordCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedRecordCount"))
   {
     m_failedRecordCount = jsonValue.GetInt64("FailedRecordCount");
-
     m_failedRecordCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SkippedRecordCount"))
   {
     m_skippedRecordCount = jsonValue.GetInt64("SkippedRecordCount");
-
     m_skippedRecordCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionKey"))
   {
     m_encryptionKey = jsonValue.GetObject("EncryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUpdateAttemptStatus"))
   {
     m_latestUpdateAttemptStatus = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("LatestUpdateAttemptStatus"));
-
     m_latestUpdateAttemptStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUpdateAttemptAt"))
   {
     m_latestUpdateAttemptAt = jsonValue.GetDouble("LatestUpdateAttemptAt");
-
     m_latestUpdateAttemptAtHasBeenSet = true;
   }
-
   return *this;
 }
 

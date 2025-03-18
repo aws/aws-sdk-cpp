@@ -28,7 +28,7 @@ namespace Model
   class GetAppBundleResult
   {
   public:
-    AWS_APPFABRIC_API GetAppBundleResult();
+    AWS_APPFABRIC_API GetAppBundleResult() = default;
     AWS_APPFABRIC_API GetAppBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFABRIC_API GetAppBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains information about an app bundle.</p>
      */
-    inline const AppBundle& GetAppBundle() const{ return m_appBundle; }
-    inline void SetAppBundle(const AppBundle& value) { m_appBundle = value; }
-    inline void SetAppBundle(AppBundle&& value) { m_appBundle = std::move(value); }
-    inline GetAppBundleResult& WithAppBundle(const AppBundle& value) { SetAppBundle(value); return *this;}
-    inline GetAppBundleResult& WithAppBundle(AppBundle&& value) { SetAppBundle(std::move(value)); return *this;}
+    inline const AppBundle& GetAppBundle() const { return m_appBundle; }
+    template<typename AppBundleT = AppBundle>
+    void SetAppBundle(AppBundleT&& value) { m_appBundleHasBeenSet = true; m_appBundle = std::forward<AppBundleT>(value); }
+    template<typename AppBundleT = AppBundle>
+    GetAppBundleResult& WithAppBundle(AppBundleT&& value) { SetAppBundle(std::forward<AppBundleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppBundleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppBundleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppBundleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppBundleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppBundle m_appBundle;
+    bool m_appBundleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

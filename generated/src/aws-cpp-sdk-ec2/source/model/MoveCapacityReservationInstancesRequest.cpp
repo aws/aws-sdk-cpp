@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-MoveCapacityReservationInstancesRequest::MoveCapacityReservationInstancesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_sourceCapacityReservationIdHasBeenSet(false),
-    m_destinationCapacityReservationIdHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
-{
-}
-
 Aws::String MoveCapacityReservationInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

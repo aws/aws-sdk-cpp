@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFieldLevelEncryptionProfile2020_05_31Result::CreateFieldLevelEncryptionProfile2020_05_31Result()
-{
-}
-
 CreateFieldLevelEncryptionProfile2020_05_31Result::CreateFieldLevelEncryptionProfile2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ CreateFieldLevelEncryptionProfile2020_05_31Result& CreateFieldLevelEncryptionPro
   if(!resultNode.IsNull())
   {
     m_fieldLevelEncryptionProfile = resultNode;
+    m_fieldLevelEncryptionProfileHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,18 +37,21 @@ CreateFieldLevelEncryptionProfile2020_05_31Result& CreateFieldLevelEncryptionPro
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

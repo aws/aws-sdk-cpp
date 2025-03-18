@@ -21,7 +21,7 @@ namespace Model
   class UpdateResourceShareRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API UpdateResourceShareRequest();
+    AWS_RAM_API UpdateResourceShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline UpdateResourceShareRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline UpdateResourceShareRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline UpdateResourceShareRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    UpdateResourceShareRequest& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If specified, the new name that you want to attach to the resource share.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateResourceShareRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateResourceShareRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateResourceShareRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateResourceShareRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * <p>Specifies whether principals outside your organization in Organizations can
      * be associated with a resource share.</p>
      */
-    inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
+    inline bool GetAllowExternalPrincipals() const { return m_allowExternalPrincipals; }
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
     inline UpdateResourceShareRequest& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateResourceShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateResourceShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateResourceShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateResourceShareRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_allowExternalPrincipals;
+    bool m_allowExternalPrincipals{false};
     bool m_allowExternalPrincipalsHasBeenSet = false;
 
     Aws::String m_clientToken;

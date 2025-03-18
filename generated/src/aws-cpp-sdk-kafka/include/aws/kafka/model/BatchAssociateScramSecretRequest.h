@@ -28,7 +28,7 @@ namespace Model
   class BatchAssociateScramSecretRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API BatchAssociateScramSecretRequest();
+    AWS_KAFKA_API BatchAssociateScramSecretRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * updated.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline BatchAssociateScramSecretRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline BatchAssociateScramSecretRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline BatchAssociateScramSecretRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    BatchAssociateScramSecretRequest& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
             <p>List of AWS Secrets Manager secret ARNs.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetSecretArnList() const{ return m_secretArnList; }
+    inline const Aws::Vector<Aws::String>& GetSecretArnList() const { return m_secretArnList; }
     inline bool SecretArnListHasBeenSet() const { return m_secretArnListHasBeenSet; }
-    inline void SetSecretArnList(const Aws::Vector<Aws::String>& value) { m_secretArnListHasBeenSet = true; m_secretArnList = value; }
-    inline void SetSecretArnList(Aws::Vector<Aws::String>&& value) { m_secretArnListHasBeenSet = true; m_secretArnList = std::move(value); }
-    inline BatchAssociateScramSecretRequest& WithSecretArnList(const Aws::Vector<Aws::String>& value) { SetSecretArnList(value); return *this;}
-    inline BatchAssociateScramSecretRequest& WithSecretArnList(Aws::Vector<Aws::String>&& value) { SetSecretArnList(std::move(value)); return *this;}
-    inline BatchAssociateScramSecretRequest& AddSecretArnList(const Aws::String& value) { m_secretArnListHasBeenSet = true; m_secretArnList.push_back(value); return *this; }
-    inline BatchAssociateScramSecretRequest& AddSecretArnList(Aws::String&& value) { m_secretArnListHasBeenSet = true; m_secretArnList.push_back(std::move(value)); return *this; }
-    inline BatchAssociateScramSecretRequest& AddSecretArnList(const char* value) { m_secretArnListHasBeenSet = true; m_secretArnList.push_back(value); return *this; }
+    template<typename SecretArnListT = Aws::Vector<Aws::String>>
+    void SetSecretArnList(SecretArnListT&& value) { m_secretArnListHasBeenSet = true; m_secretArnList = std::forward<SecretArnListT>(value); }
+    template<typename SecretArnListT = Aws::Vector<Aws::String>>
+    BatchAssociateScramSecretRequest& WithSecretArnList(SecretArnListT&& value) { SetSecretArnList(std::forward<SecretArnListT>(value)); return *this;}
+    template<typename SecretArnListT = Aws::String>
+    BatchAssociateScramSecretRequest& AddSecretArnList(SecretArnListT&& value) { m_secretArnListHasBeenSet = true; m_secretArnList.emplace_back(std::forward<SecretArnListT>(value)); return *this; }
     ///@}
   private:
 

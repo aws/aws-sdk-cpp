@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-WithdrawByoipCidrRequest::WithdrawByoipCidrRequest() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 Aws::String WithdrawByoipCidrRequest::SerializePayload() const
 {
   JsonValue payload;

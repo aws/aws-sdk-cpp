@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-InvalidTopicReviewedAnswer::InvalidTopicReviewedAnswer() : 
-    m_answerIdHasBeenSet(false),
-    m_error(ReviewedAnswerErrorCode::NOT_SET),
-    m_errorHasBeenSet(false)
-{
-}
-
 InvalidTopicReviewedAnswer::InvalidTopicReviewedAnswer(JsonView jsonValue)
-  : InvalidTopicReviewedAnswer()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InvalidTopicReviewedAnswer& InvalidTopicReviewedAnswer::operator =(JsonView json
   if(jsonValue.ValueExists("AnswerId"))
   {
     m_answerId = jsonValue.GetString("AnswerId");
-
     m_answerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = ReviewedAnswerErrorCodeMapper::GetReviewedAnswerErrorCodeForName(jsonValue.GetString("Error"));
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

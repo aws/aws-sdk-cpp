@@ -21,7 +21,7 @@ namespace Model
   class UpdatePhoneNumberRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API UpdatePhoneNumberRequest();
+    AWS_PINPOINTSMSVOICEV2_API UpdatePhoneNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * a shared AWS End User Messaging SMS and Voice resource then you must use the
      * full Amazon Resource Name(ARN).</p> 
      */
-    inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
+    inline const Aws::String& GetPhoneNumberId() const { return m_phoneNumberId; }
     inline bool PhoneNumberIdHasBeenSet() const { return m_phoneNumberIdHasBeenSet; }
-    inline void SetPhoneNumberId(const Aws::String& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = value; }
-    inline void SetPhoneNumberId(Aws::String&& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = std::move(value); }
-    inline void SetPhoneNumberId(const char* value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId.assign(value); }
-    inline UpdatePhoneNumberRequest& WithPhoneNumberId(const Aws::String& value) { SetPhoneNumberId(value); return *this;}
-    inline UpdatePhoneNumberRequest& WithPhoneNumberId(Aws::String&& value) { SetPhoneNumberId(std::move(value)); return *this;}
-    inline UpdatePhoneNumberRequest& WithPhoneNumberId(const char* value) { SetPhoneNumberId(value); return *this;}
+    template<typename PhoneNumberIdT = Aws::String>
+    void SetPhoneNumberId(PhoneNumberIdT&& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = std::forward<PhoneNumberIdT>(value); }
+    template<typename PhoneNumberIdT = Aws::String>
+    UpdatePhoneNumberRequest& WithPhoneNumberId(PhoneNumberIdT&& value) { SetPhoneNumberId(std::forward<PhoneNumberIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>By default this is set to false. When set to true you can receive incoming
      * text messages from your end recipients.</p>
      */
-    inline bool GetTwoWayEnabled() const{ return m_twoWayEnabled; }
+    inline bool GetTwoWayEnabled() const { return m_twoWayEnabled; }
     inline bool TwoWayEnabledHasBeenSet() const { return m_twoWayEnabledHasBeenSet; }
     inline void SetTwoWayEnabled(bool value) { m_twoWayEnabledHasBeenSet = true; m_twoWayEnabled = value; }
     inline UpdatePhoneNumberRequest& WithTwoWayEnabled(bool value) { SetTwoWayEnabled(value); return *this;}
@@ -66,14 +64,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the two way channel.</p>
      */
-    inline const Aws::String& GetTwoWayChannelArn() const{ return m_twoWayChannelArn; }
+    inline const Aws::String& GetTwoWayChannelArn() const { return m_twoWayChannelArn; }
     inline bool TwoWayChannelArnHasBeenSet() const { return m_twoWayChannelArnHasBeenSet; }
-    inline void SetTwoWayChannelArn(const Aws::String& value) { m_twoWayChannelArnHasBeenSet = true; m_twoWayChannelArn = value; }
-    inline void SetTwoWayChannelArn(Aws::String&& value) { m_twoWayChannelArnHasBeenSet = true; m_twoWayChannelArn = std::move(value); }
-    inline void SetTwoWayChannelArn(const char* value) { m_twoWayChannelArnHasBeenSet = true; m_twoWayChannelArn.assign(value); }
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelArn(const Aws::String& value) { SetTwoWayChannelArn(value); return *this;}
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelArn(Aws::String&& value) { SetTwoWayChannelArn(std::move(value)); return *this;}
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelArn(const char* value) { SetTwoWayChannelArn(value); return *this;}
+    template<typename TwoWayChannelArnT = Aws::String>
+    void SetTwoWayChannelArn(TwoWayChannelArnT&& value) { m_twoWayChannelArnHasBeenSet = true; m_twoWayChannelArn = std::forward<TwoWayChannelArnT>(value); }
+    template<typename TwoWayChannelArnT = Aws::String>
+    UpdatePhoneNumberRequest& WithTwoWayChannelArn(TwoWayChannelArnT&& value) { SetTwoWayChannelArn(std::forward<TwoWayChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
      * SMS messages.</p>
      */
-    inline const Aws::String& GetTwoWayChannelRole() const{ return m_twoWayChannelRole; }
+    inline const Aws::String& GetTwoWayChannelRole() const { return m_twoWayChannelRole; }
     inline bool TwoWayChannelRoleHasBeenSet() const { return m_twoWayChannelRoleHasBeenSet; }
-    inline void SetTwoWayChannelRole(const Aws::String& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = value; }
-    inline void SetTwoWayChannelRole(Aws::String&& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = std::move(value); }
-    inline void SetTwoWayChannelRole(const char* value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole.assign(value); }
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelRole(const Aws::String& value) { SetTwoWayChannelRole(value); return *this;}
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelRole(Aws::String&& value) { SetTwoWayChannelRole(std::move(value)); return *this;}
-    inline UpdatePhoneNumberRequest& WithTwoWayChannelRole(const char* value) { SetTwoWayChannelRole(value); return *this;}
+    template<typename TwoWayChannelRoleT = Aws::String>
+    void SetTwoWayChannelRole(TwoWayChannelRoleT&& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = std::forward<TwoWayChannelRoleT>(value); }
+    template<typename TwoWayChannelRoleT = Aws::String>
+    UpdatePhoneNumberRequest& WithTwoWayChannelRole(TwoWayChannelRoleT&& value) { SetTwoWayChannelRole(std::forward<TwoWayChannelRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +94,7 @@ namespace Model
      * for responding to HELP and STOP requests. You're also responsible for tracking
      * and honoring opt-out requests.</p>
      */
-    inline bool GetSelfManagedOptOutsEnabled() const{ return m_selfManagedOptOutsEnabled; }
+    inline bool GetSelfManagedOptOutsEnabled() const { return m_selfManagedOptOutsEnabled; }
     inline bool SelfManagedOptOutsEnabledHasBeenSet() const { return m_selfManagedOptOutsEnabledHasBeenSet; }
     inline void SetSelfManagedOptOutsEnabled(bool value) { m_selfManagedOptOutsEnabledHasBeenSet = true; m_selfManagedOptOutsEnabled = value; }
     inline UpdatePhoneNumberRequest& WithSelfManagedOptOutsEnabled(bool value) { SetSelfManagedOptOutsEnabled(value); return *this;}
@@ -111,14 +105,12 @@ namespace Model
      * <p>The OptOutList to add the phone number to. Valid values for this field can be
      * either the OutOutListName or OutOutListArn.</p>
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListNameHasBeenSet = true; m_optOutListName.assign(value); }
-    inline UpdatePhoneNumberRequest& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline UpdatePhoneNumberRequest& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline UpdatePhoneNumberRequest& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    UpdatePhoneNumberRequest& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,7 +118,7 @@ namespace Model
      * <p>By default this is set to false. When set to true the phone number can't be
      * deleted. </p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline UpdatePhoneNumberRequest& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
@@ -136,7 +128,7 @@ namespace Model
     Aws::String m_phoneNumberId;
     bool m_phoneNumberIdHasBeenSet = false;
 
-    bool m_twoWayEnabled;
+    bool m_twoWayEnabled{false};
     bool m_twoWayEnabledHasBeenSet = false;
 
     Aws::String m_twoWayChannelArn;
@@ -145,13 +137,13 @@ namespace Model
     Aws::String m_twoWayChannelRole;
     bool m_twoWayChannelRoleHasBeenSet = false;
 
-    bool m_selfManagedOptOutsEnabled;
+    bool m_selfManagedOptOutsEnabled{false};
     bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
     Aws::String m_optOutListName;
     bool m_optOutListNameHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
   };
 

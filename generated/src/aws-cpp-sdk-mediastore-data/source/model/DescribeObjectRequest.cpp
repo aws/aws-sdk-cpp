@@ -12,11 +12,6 @@ using namespace Aws::MediaStoreData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeObjectRequest::DescribeObjectRequest() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 Aws::String DescribeObjectRequest::SerializePayload() const
 {
   return {};

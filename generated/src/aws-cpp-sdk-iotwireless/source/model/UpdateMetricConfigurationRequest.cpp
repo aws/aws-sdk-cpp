@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMetricConfigurationRequest::UpdateMetricConfigurationRequest() : 
-    m_summaryMetricHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMetricConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

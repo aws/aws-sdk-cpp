@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialGradientColor::GeospatialGradientColor() : 
-    m_stepColorsHasBeenSet(false),
-    m_nullDataVisibility(Visibility::NOT_SET),
-    m_nullDataVisibilityHasBeenSet(false),
-    m_nullDataSettingsHasBeenSet(false),
-    m_defaultOpacity(0.0),
-    m_defaultOpacityHasBeenSet(false)
-{
-}
-
 GeospatialGradientColor::GeospatialGradientColor(JsonView jsonValue)
-  : GeospatialGradientColor()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ GeospatialGradientColor& GeospatialGradientColor::operator =(JsonView jsonValue)
     }
     m_stepColorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullDataVisibility"))
   {
     m_nullDataVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("NullDataVisibility"));
-
     m_nullDataVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullDataSettings"))
   {
     m_nullDataSettings = jsonValue.GetObject("NullDataSettings");
-
     m_nullDataSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultOpacity"))
   {
     m_defaultOpacity = jsonValue.GetDouble("DefaultOpacity");
-
     m_defaultOpacityHasBeenSet = true;
   }
-
   return *this;
 }
 

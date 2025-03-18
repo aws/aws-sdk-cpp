@@ -21,7 +21,7 @@ namespace Model
   class DeleteSamplingRuleRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API DeleteSamplingRuleRequest();
+    AWS_XRAY_API DeleteSamplingRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name of the sampling rule. Specify a rule by either name or ARN, but not
      * both.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline DeleteSamplingRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline DeleteSamplingRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline DeleteSamplingRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    DeleteSamplingRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not
      * both.</p>
      */
-    inline const Aws::String& GetRuleARN() const{ return m_ruleARN; }
+    inline const Aws::String& GetRuleARN() const { return m_ruleARN; }
     inline bool RuleARNHasBeenSet() const { return m_ruleARNHasBeenSet; }
-    inline void SetRuleARN(const Aws::String& value) { m_ruleARNHasBeenSet = true; m_ruleARN = value; }
-    inline void SetRuleARN(Aws::String&& value) { m_ruleARNHasBeenSet = true; m_ruleARN = std::move(value); }
-    inline void SetRuleARN(const char* value) { m_ruleARNHasBeenSet = true; m_ruleARN.assign(value); }
-    inline DeleteSamplingRuleRequest& WithRuleARN(const Aws::String& value) { SetRuleARN(value); return *this;}
-    inline DeleteSamplingRuleRequest& WithRuleARN(Aws::String&& value) { SetRuleARN(std::move(value)); return *this;}
-    inline DeleteSamplingRuleRequest& WithRuleARN(const char* value) { SetRuleARN(value); return *this;}
+    template<typename RuleARNT = Aws::String>
+    void SetRuleARN(RuleARNT&& value) { m_ruleARNHasBeenSet = true; m_ruleARN = std::forward<RuleARNT>(value); }
+    template<typename RuleARNT = Aws::String>
+    DeleteSamplingRuleRequest& WithRuleARN(RuleARNT&& value) { SetRuleARN(std::forward<RuleARNT>(value)); return *this;}
     ///@}
   private:
 

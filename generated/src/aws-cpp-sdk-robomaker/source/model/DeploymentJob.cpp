@@ -18,22 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-DeploymentJob::DeploymentJob() : 
-    m_arnHasBeenSet(false),
-    m_fleetHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_deploymentApplicationConfigsHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCode(DeploymentJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 DeploymentJob::DeploymentJob(JsonView jsonValue)
-  : DeploymentJob()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ DeploymentJob& DeploymentJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleet"))
   {
     m_fleet = jsonValue.GetString("fleet");
-
     m_fleetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentApplicationConfigs"))
   {
     Aws::Utils::Array<JsonView> deploymentApplicationConfigsJsonList = jsonValue.GetArray("deploymentApplicationConfigs");
@@ -70,35 +49,26 @@ DeploymentJob& DeploymentJob::operator =(JsonView jsonValue)
     }
     m_deploymentApplicationConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentConfig"))
   {
     m_deploymentConfig = jsonValue.GetObject("deploymentConfig");
-
     m_deploymentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = DeploymentJobErrorCodeMapper::GetDeploymentJobErrorCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

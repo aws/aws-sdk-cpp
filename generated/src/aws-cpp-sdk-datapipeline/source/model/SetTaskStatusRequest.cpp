@@ -12,16 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetTaskStatusRequest::SetTaskStatusRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(TaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_errorIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorStackTraceHasBeenSet(false)
-{
-}
-
 Aws::String SetTaskStatusRequest::SerializePayload() const
 {
   JsonValue payload;

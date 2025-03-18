@@ -12,11 +12,6 @@ using namespace Aws::ControlCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetControlRequest::GetControlRequest() : 
-    m_controlArnHasBeenSet(false)
-{
-}
-
 Aws::String GetControlRequest::SerializePayload() const
 {
   JsonValue payload;

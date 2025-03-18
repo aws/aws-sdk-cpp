@@ -18,22 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JobBookmarkEntry::JobBookmarkEntry() : 
-    m_jobNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_run(0),
-    m_runHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_jobBookmarkHasBeenSet(false)
-{
-}
-
 JobBookmarkEntry::JobBookmarkEntry(JsonView jsonValue)
-  : JobBookmarkEntry()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ JobBookmarkEntry& JobBookmarkEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Run"))
   {
     m_run = jsonValue.GetInteger("Run");
-
     m_runHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attempt"))
   {
     m_attempt = jsonValue.GetInteger("Attempt");
-
     m_attemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousRunId"))
   {
     m_previousRunId = jsonValue.GetString("PreviousRunId");
-
     m_previousRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobBookmark"))
   {
     m_jobBookmark = jsonValue.GetString("JobBookmark");
-
     m_jobBookmarkHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetJourneyDateRangeKpiRequest::GetJourneyDateRangeKpiRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetJourneyDateRangeKpiRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPredictiveScalingForecastResult::GetPredictiveScalingForecastResult()
-{
-}
-
 GetPredictiveScalingForecastResult::GetPredictiveScalingForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetPredictiveScalingForecastResult& GetPredictiveScalingForecastResult::operator
     {
       m_loadForecast.push_back(loadForecastJsonList[loadForecastIndex].AsObject());
     }
+    m_loadForecastHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityForecast"))
   {
     m_capacityForecast = jsonValue.GetObject("CapacityForecast");
-
+    m_capacityForecastHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

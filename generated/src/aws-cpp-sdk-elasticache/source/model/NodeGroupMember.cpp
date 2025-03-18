@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroupMember::NodeGroupMember() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_cacheNodeIdHasBeenSet(false),
-    m_readEndpointHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_currentRoleHasBeenSet(false)
-{
-}
-
 NodeGroupMember::NodeGroupMember(const XmlNode& xmlNode)
-  : NodeGroupMember()
 {
   *this = xmlNode;
 }

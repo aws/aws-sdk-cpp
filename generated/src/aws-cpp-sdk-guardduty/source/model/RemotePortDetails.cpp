@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RemotePortDetails::RemotePortDetails() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portNameHasBeenSet(false)
-{
-}
-
 RemotePortDetails::RemotePortDetails(JsonView jsonValue)
-  : RemotePortDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RemotePortDetails& RemotePortDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portName"))
   {
     m_portName = jsonValue.GetString("portName");
-
     m_portNameHasBeenSet = true;
   }
-
   return *this;
 }
 

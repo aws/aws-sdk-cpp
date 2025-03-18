@@ -21,7 +21,7 @@ namespace Model
   class GetAttributeValuesRequest : public PricingRequest
   {
   public:
-    AWS_PRICING_API GetAttributeValuesRequest();
+    AWS_PRICING_API GetAttributeValuesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * example, if you want the retrieve an EC2 attribute, use
      * <code>AmazonEC2</code>.</p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline GetAttributeValuesRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline GetAttributeValuesRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline GetAttributeValuesRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    GetAttributeValuesRequest& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The name of the attribute that you want to retrieve the values for, such as
      * <code>volumeType</code>.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline GetAttributeValuesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline GetAttributeValuesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline GetAttributeValuesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    GetAttributeValuesRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +66,19 @@ namespace Model
      * <p>The pagination token that indicates the next set of results that you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAttributeValuesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAttributeValuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAttributeValuesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAttributeValuesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAttributeValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,7 +94,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

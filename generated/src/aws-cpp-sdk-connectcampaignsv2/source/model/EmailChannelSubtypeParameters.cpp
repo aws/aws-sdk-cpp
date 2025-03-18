@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-EmailChannelSubtypeParameters::EmailChannelSubtypeParameters() : 
-    m_destinationEmailAddressHasBeenSet(false),
-    m_connectSourceEmailAddressHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateParametersHasBeenSet(false)
-{
-}
-
 EmailChannelSubtypeParameters::EmailChannelSubtypeParameters(JsonView jsonValue)
-  : EmailChannelSubtypeParameters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EmailChannelSubtypeParameters& EmailChannelSubtypeParameters::operator =(JsonVie
   if(jsonValue.ValueExists("destinationEmailAddress"))
   {
     m_destinationEmailAddress = jsonValue.GetString("destinationEmailAddress");
-
     m_destinationEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectSourceEmailAddress"))
   {
     m_connectSourceEmailAddress = jsonValue.GetString("connectSourceEmailAddress");
-
     m_connectSourceEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateParameters"))
   {
     Aws::Map<Aws::String, JsonView> templateParametersJsonMap = jsonValue.GetObject("templateParameters").GetAllObjects();
@@ -64,7 +49,6 @@ EmailChannelSubtypeParameters& EmailChannelSubtypeParameters::operator =(JsonVie
     }
     m_templateParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

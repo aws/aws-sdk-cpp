@@ -25,7 +25,7 @@ namespace Model
   class ListCollaborationTrainedModelExportJobsRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API ListCollaborationTrainedModelExportJobsRequest();
+    AWS_CLEANROOMSML_API ListCollaborationTrainedModelExportJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCollaborationTrainedModelExportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCollaborationTrainedModelExportJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum size of the results that is returned per call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCollaborationTrainedModelExportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,14 +66,12 @@ namespace Model
      * <p>The collaboration ID of the collaboration that contains the trained model
      * export jobs that you are interested in.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline ListCollaborationTrainedModelExportJobsRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    ListCollaborationTrainedModelExportJobsRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the trained model that was used to create
      * the export jobs that you are interested in.</p>
      */
-    inline const Aws::String& GetTrainedModelArn() const{ return m_trainedModelArn; }
+    inline const Aws::String& GetTrainedModelArn() const { return m_trainedModelArn; }
     inline bool TrainedModelArnHasBeenSet() const { return m_trainedModelArnHasBeenSet; }
-    inline void SetTrainedModelArn(const Aws::String& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = value; }
-    inline void SetTrainedModelArn(Aws::String&& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = std::move(value); }
-    inline void SetTrainedModelArn(const char* value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn.assign(value); }
-    inline ListCollaborationTrainedModelExportJobsRequest& WithTrainedModelArn(const Aws::String& value) { SetTrainedModelArn(value); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithTrainedModelArn(Aws::String&& value) { SetTrainedModelArn(std::move(value)); return *this;}
-    inline ListCollaborationTrainedModelExportJobsRequest& WithTrainedModelArn(const char* value) { SetTrainedModelArn(value); return *this;}
+    template<typename TrainedModelArnT = Aws::String>
+    void SetTrainedModelArn(TrainedModelArnT&& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = std::forward<TrainedModelArnT>(value); }
+    template<typename TrainedModelArnT = Aws::String>
+    ListCollaborationTrainedModelExportJobsRequest& WithTrainedModelArn(TrainedModelArnT&& value) { SetTrainedModelArn(std::forward<TrainedModelArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_collaborationIdentifier;

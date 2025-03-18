@@ -25,7 +25,7 @@ namespace Model
   class ListServiceNetworkServiceAssociationsRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API ListServiceNetworkServiceAssociationsRequest();
+    AWS_VPCLATTICE_API ListServiceNetworkServiceAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListServiceNetworkServiceAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -52,46 +52,40 @@ namespace Model
     /**
      * <p>A pagination token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServiceNetworkServiceAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceNetworkServiceAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the service.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-    inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-    inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    ListServiceNetworkServiceAssociationsRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the service network.</p>
      */
-    inline const Aws::String& GetServiceNetworkIdentifier() const{ return m_serviceNetworkIdentifier; }
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
     inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    inline void SetServiceNetworkIdentifier(const Aws::String& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = value; }
-    inline void SetServiceNetworkIdentifier(Aws::String&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::move(value); }
-    inline void SetServiceNetworkIdentifier(const char* value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier.assign(value); }
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceNetworkIdentifier(const Aws::String& value) { SetServiceNetworkIdentifier(value); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceNetworkIdentifier(Aws::String&& value) { SetServiceNetworkIdentifier(std::move(value)); return *this;}
-    inline ListServiceNetworkServiceAssociationsRequest& WithServiceNetworkIdentifier(const char* value) { SetServiceNetworkIdentifier(value); return *this;}
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    ListServiceNetworkServiceAssociationsRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

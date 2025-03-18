@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHoursOfOperationOverridesResult::ListHoursOfOperationOverridesResult()
-{
-}
-
 ListHoursOfOperationOverridesResult::ListHoursOfOperationOverridesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListHoursOfOperationOverridesResult& ListHoursOfOperationOverridesResult::operat
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoursOfOperationOverrideList"))
   {
     Aws::Utils::Array<JsonView> hoursOfOperationOverrideListJsonList = jsonValue.GetArray("HoursOfOperationOverrideList");
@@ -42,26 +37,25 @@ ListHoursOfOperationOverridesResult& ListHoursOfOperationOverridesResult::operat
     {
       m_hoursOfOperationOverrideList.push_back(hoursOfOperationOverrideListJsonList[hoursOfOperationOverrideListIndex].AsObject());
     }
+    m_hoursOfOperationOverrideListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
+    m_lastModifiedRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

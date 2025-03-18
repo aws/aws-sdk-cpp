@@ -10,14 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-CopyDBParameterGroupRequest::CopyDBParameterGroupRequest() : 
-    m_sourceDBParameterGroupIdentifierHasBeenSet(false),
-    m_targetDBParameterGroupIdentifierHasBeenSet(false),
-    m_targetDBParameterGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopyDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

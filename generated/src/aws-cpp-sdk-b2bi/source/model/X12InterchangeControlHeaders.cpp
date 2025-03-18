@@ -18,19 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12InterchangeControlHeaders::X12InterchangeControlHeaders() : 
-    m_senderIdQualifierHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_receiverIdQualifierHasBeenSet(false),
-    m_receiverIdHasBeenSet(false),
-    m_repetitionSeparatorHasBeenSet(false),
-    m_acknowledgmentRequestedCodeHasBeenSet(false),
-    m_usageIndicatorCodeHasBeenSet(false)
-{
-}
-
 X12InterchangeControlHeaders::X12InterchangeControlHeaders(JsonView jsonValue)
-  : X12InterchangeControlHeaders()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ X12InterchangeControlHeaders& X12InterchangeControlHeaders::operator =(JsonView 
   if(jsonValue.ValueExists("senderIdQualifier"))
   {
     m_senderIdQualifier = jsonValue.GetString("senderIdQualifier");
-
     m_senderIdQualifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderId"))
   {
     m_senderId = jsonValue.GetString("senderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("receiverIdQualifier"))
   {
     m_receiverIdQualifier = jsonValue.GetString("receiverIdQualifier");
-
     m_receiverIdQualifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("receiverId"))
   {
     m_receiverId = jsonValue.GetString("receiverId");
-
     m_receiverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repetitionSeparator"))
   {
     m_repetitionSeparator = jsonValue.GetString("repetitionSeparator");
-
     m_repetitionSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acknowledgmentRequestedCode"))
   {
     m_acknowledgmentRequestedCode = jsonValue.GetString("acknowledgmentRequestedCode");
-
     m_acknowledgmentRequestedCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageIndicatorCode"))
   {
     m_usageIndicatorCode = jsonValue.GetString("usageIndicatorCode");
-
     m_usageIndicatorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

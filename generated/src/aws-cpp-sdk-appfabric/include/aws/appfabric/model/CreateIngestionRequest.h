@@ -25,7 +25,7 @@ namespace Model
   class CreateIngestionRequest : public AppFabricRequest
   {
   public:
-    AWS_APPFABRIC_API CreateIngestionRequest();
+    AWS_APPFABRIC_API CreateIngestionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app bundle to use for the request.</p>
      */
-    inline const Aws::String& GetAppBundleIdentifier() const{ return m_appBundleIdentifier; }
+    inline const Aws::String& GetAppBundleIdentifier() const { return m_appBundleIdentifier; }
     inline bool AppBundleIdentifierHasBeenSet() const { return m_appBundleIdentifierHasBeenSet; }
-    inline void SetAppBundleIdentifier(const Aws::String& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = value; }
-    inline void SetAppBundleIdentifier(Aws::String&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::move(value); }
-    inline void SetAppBundleIdentifier(const char* value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier.assign(value); }
-    inline CreateIngestionRequest& WithAppBundleIdentifier(const Aws::String& value) { SetAppBundleIdentifier(value); return *this;}
-    inline CreateIngestionRequest& WithAppBundleIdentifier(Aws::String&& value) { SetAppBundleIdentifier(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithAppBundleIdentifier(const char* value) { SetAppBundleIdentifier(value); return *this;}
+    template<typename AppBundleIdentifierT = Aws::String>
+    void SetAppBundleIdentifier(AppBundleIdentifierT&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::forward<AppBundleIdentifierT>(value); }
+    template<typename AppBundleIdentifierT = Aws::String>
+    CreateIngestionRequest& WithAppBundleIdentifier(AppBundleIdentifierT&& value) { SetAppBundleIdentifier(std::forward<AppBundleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,40 +60,34 @@ namespace Model
      * <p> <code>SMARTSHEET</code> </p> </li> <li> <p> <code>CISCO</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetApp() const{ return m_app; }
+    inline const Aws::String& GetApp() const { return m_app; }
     inline bool AppHasBeenSet() const { return m_appHasBeenSet; }
-    inline void SetApp(const Aws::String& value) { m_appHasBeenSet = true; m_app = value; }
-    inline void SetApp(Aws::String&& value) { m_appHasBeenSet = true; m_app = std::move(value); }
-    inline void SetApp(const char* value) { m_appHasBeenSet = true; m_app.assign(value); }
-    inline CreateIngestionRequest& WithApp(const Aws::String& value) { SetApp(value); return *this;}
-    inline CreateIngestionRequest& WithApp(Aws::String&& value) { SetApp(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithApp(const char* value) { SetApp(value); return *this;}
+    template<typename AppT = Aws::String>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = Aws::String>
+    CreateIngestionRequest& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the application tenant.</p>
      */
-    inline const Aws::String& GetTenantId() const{ return m_tenantId; }
+    inline const Aws::String& GetTenantId() const { return m_tenantId; }
     inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
-    inline void SetTenantId(const Aws::String& value) { m_tenantIdHasBeenSet = true; m_tenantId = value; }
-    inline void SetTenantId(Aws::String&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::move(value); }
-    inline void SetTenantId(const char* value) { m_tenantIdHasBeenSet = true; m_tenantId.assign(value); }
-    inline CreateIngestionRequest& WithTenantId(const Aws::String& value) { SetTenantId(value); return *this;}
-    inline CreateIngestionRequest& WithTenantId(Aws::String&& value) { SetTenantId(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithTenantId(const char* value) { SetTenantId(value); return *this;}
+    template<typename TenantIdT = Aws::String>
+    void SetTenantId(TenantIdT&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::forward<TenantIdT>(value); }
+    template<typename TenantIdT = Aws::String>
+    CreateIngestionRequest& WithTenantId(TenantIdT&& value) { SetTenantId(std::forward<TenantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ingestion type.</p>
      */
-    inline const IngestionType& GetIngestionType() const{ return m_ingestionType; }
+    inline IngestionType GetIngestionType() const { return m_ingestionType; }
     inline bool IngestionTypeHasBeenSet() const { return m_ingestionTypeHasBeenSet; }
-    inline void SetIngestionType(const IngestionType& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = value; }
-    inline void SetIngestionType(IngestionType&& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = std::move(value); }
-    inline CreateIngestionRequest& WithIngestionType(const IngestionType& value) { SetIngestionType(value); return *this;}
-    inline CreateIngestionRequest& WithIngestionType(IngestionType&& value) { SetIngestionType(std::move(value)); return *this;}
+    inline void SetIngestionType(IngestionType value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = value; }
+    inline CreateIngestionRequest& WithIngestionType(IngestionType value) { SetIngestionType(value); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateIngestionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateIngestionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateIngestionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +116,14 @@ namespace Model
      * <p>A map of the key-value pairs of the tag or tags to assign to the
      * resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateIngestionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateIngestionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateIngestionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateIngestionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateIngestionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateIngestionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -146,7 +136,7 @@ namespace Model
     Aws::String m_tenantId;
     bool m_tenantIdHasBeenSet = false;
 
-    IngestionType m_ingestionType;
+    IngestionType m_ingestionType{IngestionType::NOT_SET};
     bool m_ingestionTypeHasBeenSet = false;
 
     Aws::String m_clientToken;

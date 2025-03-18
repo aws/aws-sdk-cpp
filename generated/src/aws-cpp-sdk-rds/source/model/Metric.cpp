@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Metric::Metric() : 
-    m_nameHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_statisticsDetailsHasBeenSet(false),
-    m_metricQueryHasBeenSet(false)
-{
-}
-
 Metric::Metric(const XmlNode& xmlNode)
-  : Metric()
 {
   *this = xmlNode;
 }
@@ -50,6 +41,7 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
     if(!referencesNode.IsNull())
     {
       XmlNode referencesMember = referencesNode.FirstChild("member");
+      m_referencesHasBeenSet = !referencesMember.IsNull();
       while(!referencesMember.IsNull())
       {
         m_references.push_back(referencesMember);

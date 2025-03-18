@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-AssistantAssociationInputData::AssistantAssociationInputData() : 
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 AssistantAssociationInputData::AssistantAssociationInputData(JsonView jsonValue)
-  : AssistantAssociationInputData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssistantAssociationInputData& AssistantAssociationInputData::operator =(JsonVie
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   return *this;
 }
 

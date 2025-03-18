@@ -12,23 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCloudFormationChangeSetRequest::CreateCloudFormationChangeSetRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_parameterOverridesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 {
   JsonValue payload;

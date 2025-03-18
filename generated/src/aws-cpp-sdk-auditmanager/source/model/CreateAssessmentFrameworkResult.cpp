@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAssessmentFrameworkResult::CreateAssessmentFrameworkResult()
-{
-}
-
 CreateAssessmentFrameworkResult::CreateAssessmentFrameworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAssessmentFrameworkResult& CreateAssessmentFrameworkResult::operator =(con
   if(jsonValue.ValueExists("framework"))
   {
     m_framework = jsonValue.GetObject("framework");
-
+    m_frameworkHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

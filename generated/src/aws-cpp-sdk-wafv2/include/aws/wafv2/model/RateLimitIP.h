@@ -37,7 +37,7 @@ namespace Model
   class RateLimitIP
   {
   public:
-    AWS_WAFV2_API RateLimitIP();
+    AWS_WAFV2_API RateLimitIP() = default;
     AWS_WAFV2_API RateLimitIP(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateLimitIP& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

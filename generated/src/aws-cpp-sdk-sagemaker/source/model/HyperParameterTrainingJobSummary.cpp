@@ -18,26 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary() : 
-    m_trainingJobDefinitionNameHasBeenSet(false),
-    m_trainingJobNameHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tuningJobNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_trainingJobStatusHasBeenSet(false),
-    m_tunedHyperParametersHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet(false),
-    m_objectiveStatus(ObjectiveStatus::NOT_SET),
-    m_objectiveStatusHasBeenSet(false)
-{
-}
-
 HyperParameterTrainingJobSummary::HyperParameterTrainingJobSummary(JsonView jsonValue)
-  : HyperParameterTrainingJobSummary()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ HyperParameterTrainingJobSummary& HyperParameterTrainingJobSummary::operator =(J
   if(jsonValue.ValueExists("TrainingJobDefinitionName"))
   {
     m_trainingJobDefinitionName = jsonValue.GetString("TrainingJobDefinitionName");
-
     m_trainingJobDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobName"))
   {
     m_trainingJobName = jsonValue.GetString("TrainingJobName");
-
     m_trainingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobArn"))
   {
     m_trainingJobArn = jsonValue.GetString("TrainingJobArn");
-
     m_trainingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TuningJobName"))
   {
     m_tuningJobName = jsonValue.GetString("TuningJobName");
-
     m_tuningJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingStartTime"))
   {
     m_trainingStartTime = jsonValue.GetDouble("TrainingStartTime");
-
     m_trainingStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingEndTime"))
   {
     m_trainingEndTime = jsonValue.GetDouble("TrainingEndTime");
-
     m_trainingEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobStatus"))
   {
     m_trainingJobStatus = TrainingJobStatusMapper::GetTrainingJobStatusForName(jsonValue.GetString("TrainingJobStatus"));
-
     m_trainingJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TunedHyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> tunedHyperParametersJsonMap = jsonValue.GetObject("TunedHyperParameters").GetAllObjects();
@@ -109,28 +74,21 @@ HyperParameterTrainingJobSummary& HyperParameterTrainingJobSummary::operator =(J
     }
     m_tunedHyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalHyperParameterTuningJobObjectiveMetric"))
   {
     m_finalHyperParameterTuningJobObjectiveMetric = jsonValue.GetObject("FinalHyperParameterTuningJobObjectiveMetric");
-
     m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectiveStatus"))
   {
     m_objectiveStatus = ObjectiveStatusMapper::GetObjectiveStatusForName(jsonValue.GetString("ObjectiveStatus"));
-
     m_objectiveStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

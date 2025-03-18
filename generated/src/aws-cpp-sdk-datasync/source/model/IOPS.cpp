@@ -18,20 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-IOPS::IOPS() : 
-    m_read(0.0),
-    m_readHasBeenSet(false),
-    m_write(0.0),
-    m_writeHasBeenSet(false),
-    m_other(0.0),
-    m_otherHasBeenSet(false),
-    m_total(0.0),
-    m_totalHasBeenSet(false)
-{
-}
-
 IOPS::IOPS(JsonView jsonValue)
-  : IOPS()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ IOPS& IOPS::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Read"))
   {
     m_read = jsonValue.GetDouble("Read");
-
     m_readHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Write"))
   {
     m_write = jsonValue.GetDouble("Write");
-
     m_writeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Other"))
   {
     m_other = jsonValue.GetDouble("Other");
-
     m_otherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetDouble("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

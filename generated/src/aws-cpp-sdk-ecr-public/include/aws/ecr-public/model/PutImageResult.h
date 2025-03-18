@@ -28,7 +28,7 @@ namespace Model
   class PutImageResult
   {
   public:
-    AWS_ECRPUBLIC_API PutImageResult();
+    AWS_ECRPUBLIC_API PutImageResult() = default;
     AWS_ECRPUBLIC_API PutImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECRPUBLIC_API PutImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details of the image uploaded.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
-    inline void SetImage(const Image& value) { m_image = value; }
-    inline void SetImage(Image&& value) { m_image = std::move(value); }
-    inline PutImageResult& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline PutImageResult& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    inline const Image& GetImage() const { return m_image; }
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    PutImageResult& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutImageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Image m_image;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

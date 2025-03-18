@@ -33,7 +33,7 @@ namespace Model
   class FpgaImageState
   {
   public:
-    AWS_EC2_API FpgaImageState();
+    AWS_EC2_API FpgaImageState() = default;
     AWS_EC2_API FpgaImageState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FpgaImageState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,30 +50,26 @@ namespace Model
      * <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
      * </ul>
      */
-    inline const FpgaImageStateCode& GetCode() const{ return m_code; }
+    inline FpgaImageStateCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const FpgaImageStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(FpgaImageStateCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline FpgaImageState& WithCode(const FpgaImageStateCode& value) { SetCode(value); return *this;}
-    inline FpgaImageState& WithCode(FpgaImageStateCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(FpgaImageStateCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline FpgaImageState& WithCode(FpgaImageStateCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the state is <code>failed</code>, this is the error message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FpgaImageState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FpgaImageState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FpgaImageState& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FpgaImageState& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    FpgaImageStateCode m_code;
+    FpgaImageStateCode m_code{FpgaImageStateCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

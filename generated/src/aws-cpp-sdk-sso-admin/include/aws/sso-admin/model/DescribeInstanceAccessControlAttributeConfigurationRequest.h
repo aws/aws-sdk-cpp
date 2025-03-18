@@ -21,7 +21,7 @@ namespace Model
   class DescribeInstanceAccessControlAttributeConfigurationRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationRequest();
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline DescribeInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline DescribeInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline DescribeInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    DescribeInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class PutPrincipalMappingRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API PutPrincipalMappingRequest();
+    AWS_KENDRA_API PutPrincipalMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier of the index you want to map users to their groups.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline PutPrincipalMappingRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline PutPrincipalMappingRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline PutPrincipalMappingRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    PutPrincipalMappingRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * However, "Sales and Marketing" team only needs access to customer-related
      * documents stored in Salesforce.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline PutPrincipalMappingRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline PutPrincipalMappingRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline PutPrincipalMappingRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    PutPrincipalMappingRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the group you want to map its users to.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline PutPrincipalMappingRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline PutPrincipalMappingRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline PutPrincipalMappingRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    PutPrincipalMappingRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,12 @@ namespace Model
      * contain more than 1000 users, but the list of sub groups that belong to a group
      * (and/or users) must be no more than 1000.</p>
      */
-    inline const GroupMembers& GetGroupMembers() const{ return m_groupMembers; }
+    inline const GroupMembers& GetGroupMembers() const { return m_groupMembers; }
     inline bool GroupMembersHasBeenSet() const { return m_groupMembersHasBeenSet; }
-    inline void SetGroupMembers(const GroupMembers& value) { m_groupMembersHasBeenSet = true; m_groupMembers = value; }
-    inline void SetGroupMembers(GroupMembers&& value) { m_groupMembersHasBeenSet = true; m_groupMembers = std::move(value); }
-    inline PutPrincipalMappingRequest& WithGroupMembers(const GroupMembers& value) { SetGroupMembers(value); return *this;}
-    inline PutPrincipalMappingRequest& WithGroupMembers(GroupMembers&& value) { SetGroupMembers(std::move(value)); return *this;}
+    template<typename GroupMembersT = GroupMembers>
+    void SetGroupMembers(GroupMembersT&& value) { m_groupMembersHasBeenSet = true; m_groupMembers = std::forward<GroupMembersT>(value); }
+    template<typename GroupMembersT = GroupMembers>
+    PutPrincipalMappingRequest& WithGroupMembers(GroupMembersT&& value) { SetGroupMembers(std::forward<GroupMembersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +111,7 @@ namespace Model
      * current Unix time in milliseconds that the action was received by Amazon
      * Kendra.</p>
      */
-    inline long long GetOrderingId() const{ return m_orderingId; }
+    inline long long GetOrderingId() const { return m_orderingId; }
     inline bool OrderingIdHasBeenSet() const { return m_orderingIdHasBeenSet; }
     inline void SetOrderingId(long long value) { m_orderingIdHasBeenSet = true; m_orderingId = value; }
     inline PutPrincipalMappingRequest& WithOrderingId(long long value) { SetOrderingId(value); return *this;}
@@ -131,14 +125,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM
      * roles for Amazon Kendra</a>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline PutPrincipalMappingRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline PutPrincipalMappingRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline PutPrincipalMappingRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    PutPrincipalMappingRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -154,7 +146,7 @@ namespace Model
     GroupMembers m_groupMembers;
     bool m_groupMembersHasBeenSet = false;
 
-    long long m_orderingId;
+    long long m_orderingId{0};
     bool m_orderingIdHasBeenSet = false;
 
     Aws::String m_roleArn;

@@ -18,15 +18,7 @@ namespace Backup
 namespace Model
 {
 
-FrameworkControl::FrameworkControl() : 
-    m_controlNameHasBeenSet(false),
-    m_controlInputParametersHasBeenSet(false),
-    m_controlScopeHasBeenSet(false)
-{
-}
-
 FrameworkControl::FrameworkControl(JsonView jsonValue)
-  : FrameworkControl()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FrameworkControl& FrameworkControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ControlName"))
   {
     m_controlName = jsonValue.GetString("ControlName");
-
     m_controlNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlInputParameters"))
   {
     Aws::Utils::Array<JsonView> controlInputParametersJsonList = jsonValue.GetArray("ControlInputParameters");
@@ -49,14 +39,11 @@ FrameworkControl& FrameworkControl::operator =(JsonView jsonValue)
     }
     m_controlInputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlScope"))
   {
     m_controlScope = jsonValue.GetObject("ControlScope");
-
     m_controlScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

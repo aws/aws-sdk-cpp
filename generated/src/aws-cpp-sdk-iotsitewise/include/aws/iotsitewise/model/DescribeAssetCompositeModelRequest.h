@@ -21,7 +21,7 @@ namespace Model
   class DescribeAssetCompositeModelRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeAssetCompositeModelRequest();
+    AWS_IOTSITEWISE_API DescribeAssetCompositeModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline DescribeAssetCompositeModelRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline DescribeAssetCompositeModelRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline DescribeAssetCompositeModelRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    DescribeAssetCompositeModelRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetCompositeModelId() const{ return m_assetCompositeModelId; }
+    inline const Aws::String& GetAssetCompositeModelId() const { return m_assetCompositeModelId; }
     inline bool AssetCompositeModelIdHasBeenSet() const { return m_assetCompositeModelIdHasBeenSet; }
-    inline void SetAssetCompositeModelId(const Aws::String& value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId = value; }
-    inline void SetAssetCompositeModelId(Aws::String&& value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId = std::move(value); }
-    inline void SetAssetCompositeModelId(const char* value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId.assign(value); }
-    inline DescribeAssetCompositeModelRequest& WithAssetCompositeModelId(const Aws::String& value) { SetAssetCompositeModelId(value); return *this;}
-    inline DescribeAssetCompositeModelRequest& WithAssetCompositeModelId(Aws::String&& value) { SetAssetCompositeModelId(std::move(value)); return *this;}
-    inline DescribeAssetCompositeModelRequest& WithAssetCompositeModelId(const char* value) { SetAssetCompositeModelId(value); return *this;}
+    template<typename AssetCompositeModelIdT = Aws::String>
+    void SetAssetCompositeModelId(AssetCompositeModelIdT&& value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId = std::forward<AssetCompositeModelIdT>(value); }
+    template<typename AssetCompositeModelIdT = Aws::String>
+    DescribeAssetCompositeModelRequest& WithAssetCompositeModelId(AssetCompositeModelIdT&& value) { SetAssetCompositeModelId(std::forward<AssetCompositeModelIdT>(value)); return *this;}
     ///@}
   private:
 

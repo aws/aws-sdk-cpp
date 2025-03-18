@@ -18,17 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-VpcEndpointSummary::VpcEndpointSummary() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_domainArnHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 VpcEndpointSummary::VpcEndpointSummary(JsonView jsonValue)
-  : VpcEndpointSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ VpcEndpointSummary& VpcEndpointSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointOwner"))
   {
     m_vpcEndpointOwner = jsonValue.GetString("VpcEndpointOwner");
-
     m_vpcEndpointOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainArn"))
   {
     m_domainArn = jsonValue.GetString("DomainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VpcEndpointStatusMapper::GetVpcEndpointStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

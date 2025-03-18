@@ -34,7 +34,7 @@ namespace Model
   class IdMappingTechniques
   {
   public:
-    AWS_ENTITYRESOLUTION_API IdMappingTechniques();
+    AWS_ENTITYRESOLUTION_API IdMappingTechniques() = default;
     AWS_ENTITYRESOLUTION_API IdMappingTechniques(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IdMappingTechniques& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of ID mapping.</p>
      */
-    inline const IdMappingType& GetIdMappingType() const{ return m_idMappingType; }
+    inline IdMappingType GetIdMappingType() const { return m_idMappingType; }
     inline bool IdMappingTypeHasBeenSet() const { return m_idMappingTypeHasBeenSet; }
-    inline void SetIdMappingType(const IdMappingType& value) { m_idMappingTypeHasBeenSet = true; m_idMappingType = value; }
-    inline void SetIdMappingType(IdMappingType&& value) { m_idMappingTypeHasBeenSet = true; m_idMappingType = std::move(value); }
-    inline IdMappingTechniques& WithIdMappingType(const IdMappingType& value) { SetIdMappingType(value); return *this;}
-    inline IdMappingTechniques& WithIdMappingType(IdMappingType&& value) { SetIdMappingType(std::move(value)); return *this;}
+    inline void SetIdMappingType(IdMappingType value) { m_idMappingTypeHasBeenSet = true; m_idMappingType = value; }
+    inline IdMappingTechniques& WithIdMappingType(IdMappingType value) { SetIdMappingType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>An object which defines any additional configurations required by the
      * provider service.</p>
      */
-    inline const ProviderProperties& GetProviderProperties() const{ return m_providerProperties; }
+    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
     inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-    inline void SetProviderProperties(const ProviderProperties& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = value; }
-    inline void SetProviderProperties(ProviderProperties&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::move(value); }
-    inline IdMappingTechniques& WithProviderProperties(const ProviderProperties& value) { SetProviderProperties(value); return *this;}
-    inline IdMappingTechniques& WithProviderProperties(ProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
+    template<typename ProviderPropertiesT = ProviderProperties>
+    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    IdMappingTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,16 +68,16 @@ namespace Model
      * <p> An object which defines any additional configurations required by rule-based
      * matching.</p>
      */
-    inline const IdMappingRuleBasedProperties& GetRuleBasedProperties() const{ return m_ruleBasedProperties; }
+    inline const IdMappingRuleBasedProperties& GetRuleBasedProperties() const { return m_ruleBasedProperties; }
     inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
-    inline void SetRuleBasedProperties(const IdMappingRuleBasedProperties& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = value; }
-    inline void SetRuleBasedProperties(IdMappingRuleBasedProperties&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::move(value); }
-    inline IdMappingTechniques& WithRuleBasedProperties(const IdMappingRuleBasedProperties& value) { SetRuleBasedProperties(value); return *this;}
-    inline IdMappingTechniques& WithRuleBasedProperties(IdMappingRuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
+    template<typename RuleBasedPropertiesT = IdMappingRuleBasedProperties>
+    void SetRuleBasedProperties(RuleBasedPropertiesT&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::forward<RuleBasedPropertiesT>(value); }
+    template<typename RuleBasedPropertiesT = IdMappingRuleBasedProperties>
+    IdMappingTechniques& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
     ///@}
   private:
 
-    IdMappingType m_idMappingType;
+    IdMappingType m_idMappingType{IdMappingType::NOT_SET};
     bool m_idMappingTypeHasBeenSet = false;
 
     ProviderProperties m_providerProperties;

@@ -29,7 +29,7 @@ namespace Model
   class ListStepsResult
   {
   public:
-    AWS_DEADLINE_API ListStepsResult();
+    AWS_DEADLINE_API ListStepsResult() = default;
     AWS_DEADLINE_API ListStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The steps on the list.</p>
      */
-    inline const Aws::Vector<StepSummary>& GetSteps() const{ return m_steps; }
-    inline void SetSteps(const Aws::Vector<StepSummary>& value) { m_steps = value; }
-    inline void SetSteps(Aws::Vector<StepSummary>&& value) { m_steps = std::move(value); }
-    inline ListStepsResult& WithSteps(const Aws::Vector<StepSummary>& value) { SetSteps(value); return *this;}
-    inline ListStepsResult& WithSteps(Aws::Vector<StepSummary>&& value) { SetSteps(std::move(value)); return *this;}
-    inline ListStepsResult& AddSteps(const StepSummary& value) { m_steps.push_back(value); return *this; }
-    inline ListStepsResult& AddSteps(StepSummary&& value) { m_steps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StepSummary>& GetSteps() const { return m_steps; }
+    template<typename StepsT = Aws::Vector<StepSummary>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<StepSummary>>
+    ListStepsResult& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = StepSummary>
+    ListStepsResult& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStepsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStepsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStepsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStepsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStepsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStepsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStepsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStepsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StepSummary> m_steps;
+    bool m_stepsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

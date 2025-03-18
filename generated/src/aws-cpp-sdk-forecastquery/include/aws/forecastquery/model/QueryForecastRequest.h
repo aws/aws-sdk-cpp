@@ -22,7 +22,7 @@ namespace Model
   class QueryForecastRequest : public ForecastQueryServiceRequest
   {
   public:
-    AWS_FORECASTQUERYSERVICE_API QueryForecastRequest();
+    AWS_FORECASTQUERYSERVICE_API QueryForecastRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
      */
-    inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
+    inline const Aws::String& GetForecastArn() const { return m_forecastArn; }
     inline bool ForecastArnHasBeenSet() const { return m_forecastArnHasBeenSet; }
-    inline void SetForecastArn(const Aws::String& value) { m_forecastArnHasBeenSet = true; m_forecastArn = value; }
-    inline void SetForecastArn(Aws::String&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::move(value); }
-    inline void SetForecastArn(const char* value) { m_forecastArnHasBeenSet = true; m_forecastArn.assign(value); }
-    inline QueryForecastRequest& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
-    inline QueryForecastRequest& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
-    inline QueryForecastRequest& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
+    template<typename ForecastArnT = Aws::String>
+    void SetForecastArn(ForecastArnT&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::forward<ForecastArnT>(value); }
+    template<typename ForecastArnT = Aws::String>
+    QueryForecastRequest& WithForecastArn(ForecastArnT&& value) { SetForecastArn(std::forward<ForecastArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The start date for the forecast. Specify the date using this format:
      * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
-    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+    inline const Aws::String& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
-    inline QueryForecastRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
-    inline QueryForecastRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
-    inline QueryForecastRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+    template<typename StartDateT = Aws::String>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::String>
+    QueryForecastRequest& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>The end date for the forecast. Specify the date using this format:
      * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
-    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+    inline const Aws::String& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
-    inline QueryForecastRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
-    inline QueryForecastRequest& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
-    inline QueryForecastRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+    template<typename EndDateT = Aws::String>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::String>
+    QueryForecastRequest& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +82,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
      * operation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilters() const{ return m_filters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Map<Aws::String, Aws::String>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Map<Aws::String, Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline QueryForecastRequest& WithFilters(const Aws::Map<Aws::String, Aws::String>& value) { SetFilters(value); return *this;}
-    inline QueryForecastRequest& WithFilters(Aws::Map<Aws::String, Aws::String>&& value) { SetFilters(std::move(value)); return *this;}
-    inline QueryForecastRequest& AddFilters(const Aws::String& key, const Aws::String& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
-    inline QueryForecastRequest& AddFilters(Aws::String&& key, const Aws::String& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
-    inline QueryForecastRequest& AddFilters(const Aws::String& key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
-    inline QueryForecastRequest& AddFilters(Aws::String&& key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryForecastRequest& AddFilters(const char* key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
-    inline QueryForecastRequest& AddFilters(Aws::String&& key, const char* value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
-    inline QueryForecastRequest& AddFilters(const char* key, const char* value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
+    template<typename FiltersT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Map<Aws::String, Aws::String>>
+    QueryForecastRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersKeyT = Aws::String, typename FiltersValueT = Aws::String>
+    QueryForecastRequest& AddFilters(FiltersKeyT&& key, FiltersValueT&& value) {
+      m_filtersHasBeenSet = true; m_filters.emplace(std::forward<FiltersKeyT>(key), std::forward<FiltersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -109,14 +100,12 @@ namespace Model
      * <code>NextToken</code>. To retrieve the next set of results, use the token in
      * the next request. Tokens expire after 24 hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline QueryForecastRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline QueryForecastRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline QueryForecastRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    QueryForecastRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

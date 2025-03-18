@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-SwapEnvironmentCNAMEsRequest::SwapEnvironmentCNAMEsRequest() : 
-    m_sourceEnvironmentIdHasBeenSet(false),
-    m_sourceEnvironmentNameHasBeenSet(false),
-    m_destinationEnvironmentIdHasBeenSet(false),
-    m_destinationEnvironmentNameHasBeenSet(false)
-{
-}
-
 Aws::String SwapEnvironmentCNAMEsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

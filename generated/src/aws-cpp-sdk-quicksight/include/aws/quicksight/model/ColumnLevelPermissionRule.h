@@ -36,7 +36,7 @@ namespace Model
   class ColumnLevelPermissionRule
   {
   public:
-    AWS_QUICKSIGHT_API ColumnLevelPermissionRule();
+    AWS_QUICKSIGHT_API ColumnLevelPermissionRule() = default;
     AWS_QUICKSIGHT_API ColumnLevelPermissionRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnLevelPermissionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,28 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
      * groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<Aws::String>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline ColumnLevelPermissionRule& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
-    inline ColumnLevelPermissionRule& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline ColumnLevelPermissionRule& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline ColumnLevelPermissionRule& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
-    inline ColumnLevelPermissionRule& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    ColumnLevelPermissionRule& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Aws::String>
+    ColumnLevelPermissionRule& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of column names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumnNames() const{ return m_columnNames; }
+    inline const Aws::Vector<Aws::String>& GetColumnNames() const { return m_columnNames; }
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
-    inline void SetColumnNames(const Aws::Vector<Aws::String>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
-    inline void SetColumnNames(Aws::Vector<Aws::String>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
-    inline ColumnLevelPermissionRule& WithColumnNames(const Aws::Vector<Aws::String>& value) { SetColumnNames(value); return *this;}
-    inline ColumnLevelPermissionRule& WithColumnNames(Aws::Vector<Aws::String>&& value) { SetColumnNames(std::move(value)); return *this;}
-    inline ColumnLevelPermissionRule& AddColumnNames(const Aws::String& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
-    inline ColumnLevelPermissionRule& AddColumnNames(Aws::String&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
-    inline ColumnLevelPermissionRule& AddColumnNames(const char* value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    void SetColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::forward<ColumnNamesT>(value); }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    ColumnLevelPermissionRule& WithColumnNames(ColumnNamesT&& value) { SetColumnNames(std::forward<ColumnNamesT>(value)); return *this;}
+    template<typename ColumnNamesT = Aws::String>
+    ColumnLevelPermissionRule& AddColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames.emplace_back(std::forward<ColumnNamesT>(value)); return *this; }
     ///@}
   private:
 

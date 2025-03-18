@@ -18,14 +18,7 @@ namespace signer
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

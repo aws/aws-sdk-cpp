@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListAttachedIndicesResponse::BatchListAttachedIndicesResponse() : 
-    m_indexAttachmentsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 BatchListAttachedIndicesResponse::BatchListAttachedIndicesResponse(JsonView jsonValue)
-  : BatchListAttachedIndicesResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BatchListAttachedIndicesResponse& BatchListAttachedIndicesResponse::operator =(J
     }
     m_indexAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

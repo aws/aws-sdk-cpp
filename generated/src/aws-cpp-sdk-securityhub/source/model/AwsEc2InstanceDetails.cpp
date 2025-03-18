@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2InstanceDetails::AwsEc2InstanceDetails() : 
-    m_typeHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_ipV4AddressesHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_iamInstanceProfileArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
-{
-}
-
 AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue)
-  : AwsEc2InstanceDetails()
 {
   *this = jsonValue;
 }
@@ -46,17 +28,13 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageId"))
   {
     m_imageId = jsonValue.GetString("ImageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpV4Addresses"))
   {
     Aws::Utils::Array<JsonView> ipV4AddressesJsonList = jsonValue.GetArray("IpV4Addresses");
@@ -66,7 +44,6 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     }
     m_ipV4AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpV6Addresses"))
   {
     Aws::Utils::Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
@@ -76,42 +53,31 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     }
     m_ipV6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamInstanceProfileArn"))
   {
     m_iamInstanceProfileArn = jsonValue.GetString("IamInstanceProfileArn");
-
     m_iamInstanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchedAt"))
   {
     m_launchedAt = jsonValue.GetString("LaunchedAt");
-
     m_launchedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("NetworkInterfaces");
@@ -121,28 +87,21 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VirtualizationType"))
   {
     m_virtualizationType = jsonValue.GetString("VirtualizationType");
-
     m_virtualizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataOptions"))
   {
     m_metadataOptions = jsonValue.GetObject("MetadataOptions");
-
     m_metadataOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Monitoring"))
   {
     m_monitoring = jsonValue.GetObject("Monitoring");
-
     m_monitoringHasBeenSet = true;
   }
-
   return *this;
 }
 

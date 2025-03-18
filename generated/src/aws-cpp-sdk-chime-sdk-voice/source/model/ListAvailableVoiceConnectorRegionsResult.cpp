@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAvailableVoiceConnectorRegionsResult::ListAvailableVoiceConnectorRegionsResult()
-{
-}
-
 ListAvailableVoiceConnectorRegionsResult::ListAvailableVoiceConnectorRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListAvailableVoiceConnectorRegionsResult& ListAvailableVoiceConnectorRegionsResu
     {
       m_voiceConnectorRegions.push_back(VoiceConnectorAwsRegionMapper::GetVoiceConnectorAwsRegionForName(voiceConnectorRegionsJsonList[voiceConnectorRegionsIndex].AsString()));
     }
+    m_voiceConnectorRegionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

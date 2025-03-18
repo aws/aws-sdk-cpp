@@ -18,15 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-ExecuteStatementResult::ExecuteStatementResult() : 
-    m_firstPageHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
-{
-}
-
 ExecuteStatementResult::ExecuteStatementResult(JsonView jsonValue)
-  : ExecuteStatementResult()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FirstPage"))
   {
     m_firstPage = jsonValue.GetObject("FirstPage");
-
     m_firstPageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedIOs"))
   {
     m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
-
     m_consumedIOsHasBeenSet = true;
   }
-
   return *this;
 }
 

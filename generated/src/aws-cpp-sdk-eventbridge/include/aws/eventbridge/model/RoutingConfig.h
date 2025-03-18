@@ -31,7 +31,7 @@ namespace Model
   class RoutingConfig
   {
   public:
-    AWS_EVENTBRIDGE_API RoutingConfig();
+    AWS_EVENTBRIDGE_API RoutingConfig() = default;
     AWS_EVENTBRIDGE_API RoutingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API RoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>The failover configuration for an endpoint. This includes what triggers
      * failover and what happens when it's triggered.</p>
      */
-    inline const FailoverConfig& GetFailoverConfig() const{ return m_failoverConfig; }
+    inline const FailoverConfig& GetFailoverConfig() const { return m_failoverConfig; }
     inline bool FailoverConfigHasBeenSet() const { return m_failoverConfigHasBeenSet; }
-    inline void SetFailoverConfig(const FailoverConfig& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = value; }
-    inline void SetFailoverConfig(FailoverConfig&& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = std::move(value); }
-    inline RoutingConfig& WithFailoverConfig(const FailoverConfig& value) { SetFailoverConfig(value); return *this;}
-    inline RoutingConfig& WithFailoverConfig(FailoverConfig&& value) { SetFailoverConfig(std::move(value)); return *this;}
+    template<typename FailoverConfigT = FailoverConfig>
+    void SetFailoverConfig(FailoverConfigT&& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = std::forward<FailoverConfigT>(value); }
+    template<typename FailoverConfigT = FailoverConfig>
+    RoutingConfig& WithFailoverConfig(FailoverConfigT&& value) { SetFailoverConfig(std::forward<FailoverConfigT>(value)); return *this;}
     ///@}
   private:
 

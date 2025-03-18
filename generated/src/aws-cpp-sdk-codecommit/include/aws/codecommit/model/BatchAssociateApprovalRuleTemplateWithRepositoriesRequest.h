@@ -22,7 +22,7 @@ namespace Model
   class BatchAssociateApprovalRuleTemplateWithRepositoriesRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesRequest();
+    AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the template you want to associate with one or more
      * repositories.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateName() const{ return m_approvalRuleTemplateName; }
+    inline const Aws::String& GetApprovalRuleTemplateName() const { return m_approvalRuleTemplateName; }
     inline bool ApprovalRuleTemplateNameHasBeenSet() const { return m_approvalRuleTemplateNameHasBeenSet; }
-    inline void SetApprovalRuleTemplateName(const Aws::String& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = value; }
-    inline void SetApprovalRuleTemplateName(Aws::String&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::move(value); }
-    inline void SetApprovalRuleTemplateName(const char* value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName.assign(value); }
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithApprovalRuleTemplateName(const Aws::String& value) { SetApprovalRuleTemplateName(value); return *this;}
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithApprovalRuleTemplateName(Aws::String&& value) { SetApprovalRuleTemplateName(std::move(value)); return *this;}
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithApprovalRuleTemplateName(const char* value) { SetApprovalRuleTemplateName(value); return *this;}
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    void SetApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::forward<ApprovalRuleTemplateNameT>(value); }
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { SetApprovalRuleTemplateName(std::forward<ApprovalRuleTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      *  <p>The length constraint limit is for each string in the array. The array
      * itself can be empty.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
+    inline const Aws::Vector<Aws::String>& GetRepositoryNames() const { return m_repositoryNames; }
     inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
-    inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
-    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& AddRepositoryNames(const Aws::String& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
-    inline BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
+    template<typename RepositoryNamesT = Aws::Vector<Aws::String>>
+    void SetRepositoryNames(RepositoryNamesT&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::forward<RepositoryNamesT>(value); }
+    template<typename RepositoryNamesT = Aws::Vector<Aws::String>>
+    BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& WithRepositoryNames(RepositoryNamesT&& value) { SetRepositoryNames(std::forward<RepositoryNamesT>(value)); return *this;}
+    template<typename RepositoryNamesT = Aws::String>
+    BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& AddRepositoryNames(RepositoryNamesT&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.emplace_back(std::forward<RepositoryNamesT>(value)); return *this; }
     ///@}
   private:
 

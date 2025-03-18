@@ -33,7 +33,7 @@ namespace Model
   class ImageExtractionCategory
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API ImageExtractionCategory();
+    AWS_BEDROCKDATAAUTOMATION_API ImageExtractionCategory() = default;
     AWS_BEDROCKDATAAUTOMATION_API ImageExtractionCategory(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API ImageExtractionCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,25 @@ namespace Model
 
     ///@{
     
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ImageExtractionCategory& WithState(const State& value) { SetState(value); return *this;}
-    inline ImageExtractionCategory& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ImageExtractionCategory& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<ImageExtractionCategoryType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<ImageExtractionCategoryType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<ImageExtractionCategoryType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<ImageExtractionCategoryType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline ImageExtractionCategory& WithTypes(const Aws::Vector<ImageExtractionCategoryType>& value) { SetTypes(value); return *this;}
-    inline ImageExtractionCategory& WithTypes(Aws::Vector<ImageExtractionCategoryType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline ImageExtractionCategory& AddTypes(const ImageExtractionCategoryType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline ImageExtractionCategory& AddTypes(ImageExtractionCategoryType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<ImageExtractionCategoryType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<ImageExtractionCategoryType>>
+    ImageExtractionCategory& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline ImageExtractionCategory& AddTypes(ImageExtractionCategoryType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<ImageExtractionCategoryType> m_types;

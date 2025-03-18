@@ -18,18 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-EndpointConfiguration::EndpointConfiguration() : 
-    m_endpointIdHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
-{
-}
-
 EndpointConfiguration::EndpointConfiguration(JsonView jsonValue)
-  : EndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInteger("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientIPPreservationEnabled"))
   {
     m_clientIPPreservationEnabled = jsonValue.GetBool("ClientIPPreservationEnabled");
-
     m_clientIPPreservationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentArn"))
   {
     m_attachmentArn = jsonValue.GetString("AttachmentArn");
-
     m_attachmentArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class AssociatePrincipalWithPortfolioRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API AssociatePrincipalWithPortfolioRequest();
+    AWS_SERVICECATALOG_API AssociatePrincipalWithPortfolioRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline const Aws::String& GetPortfolioId() const{ return m_portfolioId; }
+    inline const Aws::String& GetPortfolioId() const { return m_portfolioId; }
     inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
-    inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
-    inline void SetPortfolioId(const char* value) { m_portfolioIdHasBeenSet = true; m_portfolioId.assign(value); }
-    inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(const Aws::String& value) { SetPortfolioId(value); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+    template<typename PortfolioIdT = Aws::String>
+    void SetPortfolioId(PortfolioIdT&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::forward<PortfolioIdT>(value); }
+    template<typename PortfolioIdT = Aws::String>
+    AssociatePrincipalWithPortfolioRequest& WithPortfolioId(PortfolioIdT&& value) { SetPortfolioId(std::forward<PortfolioIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,12 @@ namespace Model
      * <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and
      * <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
      */
-    inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
+    inline const Aws::String& GetPrincipalARN() const { return m_principalARN; }
     inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
-    inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
-    inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
-    inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
+    template<typename PrincipalARNT = Aws::String>
+    void SetPrincipalARN(PrincipalARNT&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::forward<PrincipalARNT>(value); }
+    template<typename PrincipalARNT = Aws::String>
+    AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(PrincipalARNT&& value) { SetPrincipalARN(std::forward<PrincipalARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,10 @@ namespace Model
      * fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use
      * an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
      */
-    inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
     ///@}
   private:
 
@@ -137,7 +129,7 @@ namespace Model
     Aws::String m_principalARN;
     bool m_principalARNHasBeenSet = false;
 
-    PrincipalType m_principalType;
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
   };
 

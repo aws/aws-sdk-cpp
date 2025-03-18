@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEngagementResult::GetEngagementResult() : 
-    m_memberCount(0)
-{
-}
-
 GetEngagementResult::GetEngagementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEngagementResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetEngagementResult& GetEngagementResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contexts"))
   {
     Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
@@ -44,50 +37,45 @@ GetEngagementResult& GetEngagementResult::operator =(const Aws::AmazonWebService
     {
       m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());
     }
+    m_contextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberCount"))
   {
     m_memberCount = jsonValue.GetInteger("MemberCount");
-
+    m_memberCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
+    m_titleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

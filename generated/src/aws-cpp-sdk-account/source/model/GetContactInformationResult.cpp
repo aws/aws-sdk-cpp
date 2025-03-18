@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContactInformationResult::GetContactInformationResult()
-{
-}
-
 GetContactInformationResult::GetContactInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetContactInformationResult& GetContactInformationResult::operator =(const Aws::
   if(jsonValue.ValueExists("ContactInformation"))
   {
     m_contactInformation = jsonValue.GetObject("ContactInformation");
-
+    m_contactInformationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class StartOnDemandAppReplicationRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API StartOnDemandAppReplicationRequest();
+    AWS_SMS_API StartOnDemandAppReplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline StartOnDemandAppReplicationRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline StartOnDemandAppReplicationRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline StartOnDemandAppReplicationRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    StartOnDemandAppReplicationRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the replication run.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartOnDemandAppReplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartOnDemandAppReplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartOnDemandAppReplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartOnDemandAppReplicationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

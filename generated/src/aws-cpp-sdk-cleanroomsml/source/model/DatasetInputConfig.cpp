@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-DatasetInputConfig::DatasetInputConfig() : 
-    m_schemaHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
-{
-}
-
 DatasetInputConfig::DatasetInputConfig(JsonView jsonValue)
-  : DatasetInputConfig()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ DatasetInputConfig& DatasetInputConfig::operator =(JsonView jsonValue)
     }
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetObject("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

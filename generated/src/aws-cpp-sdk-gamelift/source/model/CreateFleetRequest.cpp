@@ -12,38 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFleetRequest::CreateFleetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_buildIdHasBeenSet(false),
-    m_scriptIdHasBeenSet(false),
-    m_serverLaunchPathHasBeenSet(false),
-    m_serverLaunchParametersHasBeenSet(false),
-    m_logPathsHasBeenSet(false),
-    m_eC2InstanceType(EC2InstanceType::NOT_SET),
-    m_eC2InstanceTypeHasBeenSet(false),
-    m_eC2InboundPermissionsHasBeenSet(false),
-    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
-    m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false),
-    m_peerVpcAwsAccountIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false),
-    m_fleetType(FleetType::NOT_SET),
-    m_fleetTypeHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false),
-    m_locationsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_anywhereConfigurationHasBeenSet(false),
-    m_instanceRoleCredentialsProvider(InstanceRoleCredentialsProvider::NOT_SET),
-    m_instanceRoleCredentialsProviderHasBeenSet(false)
-{
-}
-
 Aws::String CreateFleetRequest::SerializePayload() const
 {
   JsonValue payload;

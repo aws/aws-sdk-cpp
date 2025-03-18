@@ -12,20 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartWebRTCContactRequest::StartWebRTCContactRequest() : 
-    m_attributesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_contactFlowIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_allowedCapabilitiesHasBeenSet(false),
-    m_participantDetailsHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String StartWebRTCContactRequest::SerializePayload() const
 {
   JsonValue payload;

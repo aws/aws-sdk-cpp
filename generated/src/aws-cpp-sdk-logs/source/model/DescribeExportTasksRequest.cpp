@@ -12,16 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExportTasksRequest::DescribeExportTasksRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_statusCode(ExportTaskStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExportTasksRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,18 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyUserRequest::ModifyUserRequest() : 
-    m_userIdHasBeenSet(false),
-    m_accessStringHasBeenSet(false),
-    m_appendAccessStringHasBeenSet(false),
-    m_passwordsHasBeenSet(false),
-    m_noPasswordRequired(false),
-    m_noPasswordRequiredHasBeenSet(false),
-    m_authenticationModeHasBeenSet(false),
-    m_engineHasBeenSet(false)
-{
-}
-
 Aws::String ModifyUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

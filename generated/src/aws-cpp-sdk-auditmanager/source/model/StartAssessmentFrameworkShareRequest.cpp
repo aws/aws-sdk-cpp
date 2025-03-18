@@ -12,14 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAssessmentFrameworkShareRequest::StartAssessmentFrameworkShareRequest() : 
-    m_frameworkIdHasBeenSet(false),
-    m_destinationAccountHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 Aws::String StartAssessmentFrameworkShareRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class OutpostConfigRequest
   {
   public:
-    AWS_EKS_API OutpostConfigRequest();
+    AWS_EKS_API OutpostConfigRequest() = default;
     AWS_EKS_API OutpostConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API OutpostConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,15 +49,14 @@ namespace Model
      * <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster
      * on Outposts. Only a single Outpost ARN is supported.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOutpostArns() const{ return m_outpostArns; }
+    inline const Aws::Vector<Aws::String>& GetOutpostArns() const { return m_outpostArns; }
     inline bool OutpostArnsHasBeenSet() const { return m_outpostArnsHasBeenSet; }
-    inline void SetOutpostArns(const Aws::Vector<Aws::String>& value) { m_outpostArnsHasBeenSet = true; m_outpostArns = value; }
-    inline void SetOutpostArns(Aws::Vector<Aws::String>&& value) { m_outpostArnsHasBeenSet = true; m_outpostArns = std::move(value); }
-    inline OutpostConfigRequest& WithOutpostArns(const Aws::Vector<Aws::String>& value) { SetOutpostArns(value); return *this;}
-    inline OutpostConfigRequest& WithOutpostArns(Aws::Vector<Aws::String>&& value) { SetOutpostArns(std::move(value)); return *this;}
-    inline OutpostConfigRequest& AddOutpostArns(const Aws::String& value) { m_outpostArnsHasBeenSet = true; m_outpostArns.push_back(value); return *this; }
-    inline OutpostConfigRequest& AddOutpostArns(Aws::String&& value) { m_outpostArnsHasBeenSet = true; m_outpostArns.push_back(std::move(value)); return *this; }
-    inline OutpostConfigRequest& AddOutpostArns(const char* value) { m_outpostArnsHasBeenSet = true; m_outpostArns.push_back(value); return *this; }
+    template<typename OutpostArnsT = Aws::Vector<Aws::String>>
+    void SetOutpostArns(OutpostArnsT&& value) { m_outpostArnsHasBeenSet = true; m_outpostArns = std::forward<OutpostArnsT>(value); }
+    template<typename OutpostArnsT = Aws::Vector<Aws::String>>
+    OutpostConfigRequest& WithOutpostArns(OutpostArnsT&& value) { SetOutpostArns(std::forward<OutpostArnsT>(value)); return *this;}
+    template<typename OutpostArnsT = Aws::String>
+    OutpostConfigRequest& AddOutpostArns(OutpostArnsT&& value) { m_outpostArnsHasBeenSet = true; m_outpostArns.emplace_back(std::forward<OutpostArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,14 +70,12 @@ namespace Model
      * instance type can't be changed after cluster creation. The control plane is not
      * automatically scaled by Amazon EKS.</p> <p> </p>
      */
-    inline const Aws::String& GetControlPlaneInstanceType() const{ return m_controlPlaneInstanceType; }
+    inline const Aws::String& GetControlPlaneInstanceType() const { return m_controlPlaneInstanceType; }
     inline bool ControlPlaneInstanceTypeHasBeenSet() const { return m_controlPlaneInstanceTypeHasBeenSet; }
-    inline void SetControlPlaneInstanceType(const Aws::String& value) { m_controlPlaneInstanceTypeHasBeenSet = true; m_controlPlaneInstanceType = value; }
-    inline void SetControlPlaneInstanceType(Aws::String&& value) { m_controlPlaneInstanceTypeHasBeenSet = true; m_controlPlaneInstanceType = std::move(value); }
-    inline void SetControlPlaneInstanceType(const char* value) { m_controlPlaneInstanceTypeHasBeenSet = true; m_controlPlaneInstanceType.assign(value); }
-    inline OutpostConfigRequest& WithControlPlaneInstanceType(const Aws::String& value) { SetControlPlaneInstanceType(value); return *this;}
-    inline OutpostConfigRequest& WithControlPlaneInstanceType(Aws::String&& value) { SetControlPlaneInstanceType(std::move(value)); return *this;}
-    inline OutpostConfigRequest& WithControlPlaneInstanceType(const char* value) { SetControlPlaneInstanceType(value); return *this;}
+    template<typename ControlPlaneInstanceTypeT = Aws::String>
+    void SetControlPlaneInstanceType(ControlPlaneInstanceTypeT&& value) { m_controlPlaneInstanceTypeHasBeenSet = true; m_controlPlaneInstanceType = std::forward<ControlPlaneInstanceTypeT>(value); }
+    template<typename ControlPlaneInstanceTypeT = Aws::String>
+    OutpostConfigRequest& WithControlPlaneInstanceType(ControlPlaneInstanceTypeT&& value) { SetControlPlaneInstanceType(std::forward<ControlPlaneInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +86,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
      * considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const ControlPlanePlacementRequest& GetControlPlanePlacement() const{ return m_controlPlanePlacement; }
+    inline const ControlPlanePlacementRequest& GetControlPlanePlacement() const { return m_controlPlanePlacement; }
     inline bool ControlPlanePlacementHasBeenSet() const { return m_controlPlanePlacementHasBeenSet; }
-    inline void SetControlPlanePlacement(const ControlPlanePlacementRequest& value) { m_controlPlanePlacementHasBeenSet = true; m_controlPlanePlacement = value; }
-    inline void SetControlPlanePlacement(ControlPlanePlacementRequest&& value) { m_controlPlanePlacementHasBeenSet = true; m_controlPlanePlacement = std::move(value); }
-    inline OutpostConfigRequest& WithControlPlanePlacement(const ControlPlanePlacementRequest& value) { SetControlPlanePlacement(value); return *this;}
-    inline OutpostConfigRequest& WithControlPlanePlacement(ControlPlanePlacementRequest&& value) { SetControlPlanePlacement(std::move(value)); return *this;}
+    template<typename ControlPlanePlacementT = ControlPlanePlacementRequest>
+    void SetControlPlanePlacement(ControlPlanePlacementT&& value) { m_controlPlanePlacementHasBeenSet = true; m_controlPlanePlacement = std::forward<ControlPlanePlacementT>(value); }
+    template<typename ControlPlanePlacementT = ControlPlanePlacementRequest>
+    OutpostConfigRequest& WithControlPlanePlacement(ControlPlanePlacementT&& value) { SetControlPlanePlacement(std::forward<ControlPlanePlacementT>(value)); return *this;}
     ///@}
   private:
 

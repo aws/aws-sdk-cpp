@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateEnaSrdUdpSpecification::LaunchTemplateEnaSrdUdpSpecification() : 
-    m_enaSrdUdpEnabled(false),
-    m_enaSrdUdpEnabledHasBeenSet(false)
-{
-}
-
 LaunchTemplateEnaSrdUdpSpecification::LaunchTemplateEnaSrdUdpSpecification(const XmlNode& xmlNode)
-  : LaunchTemplateEnaSrdUdpSpecification()
 {
   *this = xmlNode;
 }

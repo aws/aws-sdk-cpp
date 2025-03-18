@@ -32,7 +32,7 @@ namespace Model
   class DashIsoEncryptionSettings
   {
   public:
-    AWS_MEDIACONVERT_API DashIsoEncryptionSettings();
+    AWS_MEDIACONVERT_API DashIsoEncryptionSettings() = default;
     AWS_MEDIACONVERT_API DashIsoEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DashIsoEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * that output, the service will exclude the access unit delimiter and will leave
      * the SEI NAL units unencrypted.
      */
-    inline const DashIsoPlaybackDeviceCompatibility& GetPlaybackDeviceCompatibility() const{ return m_playbackDeviceCompatibility; }
+    inline DashIsoPlaybackDeviceCompatibility GetPlaybackDeviceCompatibility() const { return m_playbackDeviceCompatibility; }
     inline bool PlaybackDeviceCompatibilityHasBeenSet() const { return m_playbackDeviceCompatibilityHasBeenSet; }
-    inline void SetPlaybackDeviceCompatibility(const DashIsoPlaybackDeviceCompatibility& value) { m_playbackDeviceCompatibilityHasBeenSet = true; m_playbackDeviceCompatibility = value; }
-    inline void SetPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility&& value) { m_playbackDeviceCompatibilityHasBeenSet = true; m_playbackDeviceCompatibility = std::move(value); }
-    inline DashIsoEncryptionSettings& WithPlaybackDeviceCompatibility(const DashIsoPlaybackDeviceCompatibility& value) { SetPlaybackDeviceCompatibility(value); return *this;}
-    inline DashIsoEncryptionSettings& WithPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility&& value) { SetPlaybackDeviceCompatibility(std::move(value)); return *this;}
+    inline void SetPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility value) { m_playbackDeviceCompatibilityHasBeenSet = true; m_playbackDeviceCompatibility = value; }
+    inline DashIsoEncryptionSettings& WithPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility value) { SetPlaybackDeviceCompatibility(value); return *this;}
     ///@}
 
     ///@{
@@ -61,16 +59,16 @@ namespace Model
      * when doing DRM encryption with a SPEKE-compliant key provider. If your output
      * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline DashIsoEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline DashIsoEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    DashIsoEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 
-    DashIsoPlaybackDeviceCompatibility m_playbackDeviceCompatibility;
+    DashIsoPlaybackDeviceCompatibility m_playbackDeviceCompatibility{DashIsoPlaybackDeviceCompatibility::NOT_SET};
     bool m_playbackDeviceCompatibilityHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;

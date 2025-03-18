@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBatchPredictionRequest::DeleteBatchPredictionRequest() : 
-    m_batchPredictionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBatchPredictionRequest::SerializePayload() const
 {
   JsonValue payload;

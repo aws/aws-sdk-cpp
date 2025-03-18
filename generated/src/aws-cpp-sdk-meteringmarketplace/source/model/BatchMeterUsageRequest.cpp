@@ -12,12 +12,6 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchMeterUsageRequest::BatchMeterUsageRequest() : 
-    m_usageRecordsHasBeenSet(false),
-    m_productCodeHasBeenSet(false)
-{
-}
-
 Aws::String BatchMeterUsageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class ListTransactionsRequest : public ManagedBlockchainQueryRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ListTransactionsRequest();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ListTransactionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,72 +41,66 @@ namespace Model
      * <p>The address (either a contract or wallet), whose transactions are being
      * requested.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline ListTransactionsRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline ListTransactionsRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline ListTransactionsRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    ListTransactionsRequest& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The blockchain network where the transactions occurred.</p>
      */
-    inline const QueryNetwork& GetNetwork() const{ return m_network; }
+    inline QueryNetwork GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline ListTransactionsRequest& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-    inline ListTransactionsRequest& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    inline void SetNetwork(QueryNetwork value) { m_networkHasBeenSet = true; m_network = value; }
+    inline ListTransactionsRequest& WithNetwork(QueryNetwork value) { SetNetwork(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlockchainInstant& GetFromBlockchainInstant() const{ return m_fromBlockchainInstant; }
+    inline const BlockchainInstant& GetFromBlockchainInstant() const { return m_fromBlockchainInstant; }
     inline bool FromBlockchainInstantHasBeenSet() const { return m_fromBlockchainInstantHasBeenSet; }
-    inline void SetFromBlockchainInstant(const BlockchainInstant& value) { m_fromBlockchainInstantHasBeenSet = true; m_fromBlockchainInstant = value; }
-    inline void SetFromBlockchainInstant(BlockchainInstant&& value) { m_fromBlockchainInstantHasBeenSet = true; m_fromBlockchainInstant = std::move(value); }
-    inline ListTransactionsRequest& WithFromBlockchainInstant(const BlockchainInstant& value) { SetFromBlockchainInstant(value); return *this;}
-    inline ListTransactionsRequest& WithFromBlockchainInstant(BlockchainInstant&& value) { SetFromBlockchainInstant(std::move(value)); return *this;}
+    template<typename FromBlockchainInstantT = BlockchainInstant>
+    void SetFromBlockchainInstant(FromBlockchainInstantT&& value) { m_fromBlockchainInstantHasBeenSet = true; m_fromBlockchainInstant = std::forward<FromBlockchainInstantT>(value); }
+    template<typename FromBlockchainInstantT = BlockchainInstant>
+    ListTransactionsRequest& WithFromBlockchainInstant(FromBlockchainInstantT&& value) { SetFromBlockchainInstant(std::forward<FromBlockchainInstantT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlockchainInstant& GetToBlockchainInstant() const{ return m_toBlockchainInstant; }
+    inline const BlockchainInstant& GetToBlockchainInstant() const { return m_toBlockchainInstant; }
     inline bool ToBlockchainInstantHasBeenSet() const { return m_toBlockchainInstantHasBeenSet; }
-    inline void SetToBlockchainInstant(const BlockchainInstant& value) { m_toBlockchainInstantHasBeenSet = true; m_toBlockchainInstant = value; }
-    inline void SetToBlockchainInstant(BlockchainInstant&& value) { m_toBlockchainInstantHasBeenSet = true; m_toBlockchainInstant = std::move(value); }
-    inline ListTransactionsRequest& WithToBlockchainInstant(const BlockchainInstant& value) { SetToBlockchainInstant(value); return *this;}
-    inline ListTransactionsRequest& WithToBlockchainInstant(BlockchainInstant&& value) { SetToBlockchainInstant(std::move(value)); return *this;}
+    template<typename ToBlockchainInstantT = BlockchainInstant>
+    void SetToBlockchainInstant(ToBlockchainInstantT&& value) { m_toBlockchainInstantHasBeenSet = true; m_toBlockchainInstant = std::forward<ToBlockchainInstantT>(value); }
+    template<typename ToBlockchainInstantT = BlockchainInstant>
+    ListTransactionsRequest& WithToBlockchainInstant(ToBlockchainInstantT&& value) { SetToBlockchainInstant(std::forward<ToBlockchainInstantT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order by which the results will be sorted. </p>
      */
-    inline const ListTransactionsSort& GetSort() const{ return m_sort; }
+    inline const ListTransactionsSort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const ListTransactionsSort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(ListTransactionsSort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListTransactionsRequest& WithSort(const ListTransactionsSort& value) { SetSort(value); return *this;}
-    inline ListTransactionsRequest& WithSort(ListTransactionsSort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = ListTransactionsSort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = ListTransactionsSort>
+    ListTransactionsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTransactionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTransactionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTransactionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTransactionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +112,7 @@ namespace Model
      * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
      * is <code>null</code> when there are no more results to return</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTransactionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -132,19 +126,19 @@ namespace Model
      * <i>finality</i> </a>. Transactions that have reached finality are always part of
      * the response.</p>
      */
-    inline const ConfirmationStatusFilter& GetConfirmationStatusFilter() const{ return m_confirmationStatusFilter; }
+    inline const ConfirmationStatusFilter& GetConfirmationStatusFilter() const { return m_confirmationStatusFilter; }
     inline bool ConfirmationStatusFilterHasBeenSet() const { return m_confirmationStatusFilterHasBeenSet; }
-    inline void SetConfirmationStatusFilter(const ConfirmationStatusFilter& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = value; }
-    inline void SetConfirmationStatusFilter(ConfirmationStatusFilter&& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = std::move(value); }
-    inline ListTransactionsRequest& WithConfirmationStatusFilter(const ConfirmationStatusFilter& value) { SetConfirmationStatusFilter(value); return *this;}
-    inline ListTransactionsRequest& WithConfirmationStatusFilter(ConfirmationStatusFilter&& value) { SetConfirmationStatusFilter(std::move(value)); return *this;}
+    template<typename ConfirmationStatusFilterT = ConfirmationStatusFilter>
+    void SetConfirmationStatusFilter(ConfirmationStatusFilterT&& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = std::forward<ConfirmationStatusFilterT>(value); }
+    template<typename ConfirmationStatusFilterT = ConfirmationStatusFilter>
+    ListTransactionsRequest& WithConfirmationStatusFilter(ConfirmationStatusFilterT&& value) { SetConfirmationStatusFilter(std::forward<ConfirmationStatusFilterT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_address;
     bool m_addressHasBeenSet = false;
 
-    QueryNetwork m_network;
+    QueryNetwork m_network{QueryNetwork::NOT_SET};
     bool m_networkHasBeenSet = false;
 
     BlockchainInstant m_fromBlockchainInstant;
@@ -159,7 +153,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     ConfirmationStatusFilter m_confirmationStatusFilter;

@@ -12,18 +12,6 @@ using namespace Aws::MarketplaceCommerceAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateDataSetRequest::GenerateDataSetRequest() : 
-    m_dataSetType(DataSetType::NOT_SET),
-    m_dataSetTypeHasBeenSet(false),
-    m_dataSetPublicationDateHasBeenSet(false),
-    m_roleNameArnHasBeenSet(false),
-    m_destinationS3BucketNameHasBeenSet(false),
-    m_destinationS3PrefixHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_customerDefinedValuesHasBeenSet(false)
-{
-}
-
 Aws::String GenerateDataSetRequest::SerializePayload() const
 {
   JsonValue payload;

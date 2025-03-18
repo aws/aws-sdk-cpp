@@ -31,7 +31,7 @@ namespace Model
   class DescribeGroupResult
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API DescribeGroupResult();
+    AWS_DIRECTORYSERVICEDATA_API DescribeGroupResult() = default;
     AWS_DIRECTORYSERVICEDATA_API DescribeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICEDATA_API DescribeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p> The identifier (ID) of the directory that's associated with the group. </p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
-    inline DescribeGroupResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeGroupResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeGroupResult& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,11 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/windows/win32/ad/object-names-and-identities#distinguished-name">distinguished
      * name</a> of the object. </p>
      */
-    inline const Aws::String& GetDistinguishedName() const{ return m_distinguishedName; }
-    inline void SetDistinguishedName(const Aws::String& value) { m_distinguishedName = value; }
-    inline void SetDistinguishedName(Aws::String&& value) { m_distinguishedName = std::move(value); }
-    inline void SetDistinguishedName(const char* value) { m_distinguishedName.assign(value); }
-    inline DescribeGroupResult& WithDistinguishedName(const Aws::String& value) { SetDistinguishedName(value); return *this;}
-    inline DescribeGroupResult& WithDistinguishedName(Aws::String&& value) { SetDistinguishedName(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithDistinguishedName(const char* value) { SetDistinguishedName(value); return *this;}
+    inline const Aws::String& GetDistinguishedName() const { return m_distinguishedName; }
+    template<typename DistinguishedNameT = Aws::String>
+    void SetDistinguishedName(DistinguishedNameT&& value) { m_distinguishedNameHasBeenSet = true; m_distinguishedName = std::forward<DistinguishedNameT>(value); }
+    template<typename DistinguishedNameT = Aws::String>
+    DescribeGroupResult& WithDistinguishedName(DistinguishedNameT&& value) { SetDistinguishedName(std::forward<DistinguishedNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,11 +66,9 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope">Active
      * Directory security groups</a>. </p>
      */
-    inline const GroupScope& GetGroupScope() const{ return m_groupScope; }
-    inline void SetGroupScope(const GroupScope& value) { m_groupScope = value; }
-    inline void SetGroupScope(GroupScope&& value) { m_groupScope = std::move(value); }
-    inline DescribeGroupResult& WithGroupScope(const GroupScope& value) { SetGroupScope(value); return *this;}
-    inline DescribeGroupResult& WithGroupScope(GroupScope&& value) { SetGroupScope(std::move(value)); return *this;}
+    inline GroupScope GetGroupScope() const { return m_groupScope; }
+    inline void SetGroupScope(GroupScope value) { m_groupScopeHasBeenSet = true; m_groupScope = value; }
+    inline DescribeGroupResult& WithGroupScope(GroupScope value) { SetGroupScope(value); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +77,9 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#how-active-directory-security-groups-work">Active
      * Directory security group type</a>. </p>
      */
-    inline const GroupType& GetGroupType() const{ return m_groupType; }
-    inline void SetGroupType(const GroupType& value) { m_groupType = value; }
-    inline void SetGroupType(GroupType&& value) { m_groupType = std::move(value); }
-    inline DescribeGroupResult& WithGroupType(const GroupType& value) { SetGroupType(value); return *this;}
-    inline DescribeGroupResult& WithGroupType(GroupType&& value) { SetGroupType(std::move(value)); return *this;}
+    inline GroupType GetGroupType() const { return m_groupType; }
+    inline void SetGroupType(GroupType value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
+    inline DescribeGroupResult& WithGroupType(GroupType value) { SetGroupType(value); return *this;}
     ///@}
 
     ///@{
@@ -95,87 +87,86 @@ namespace Model
      * <p> The attribute values that are returned for the attribute names that are
      * included in the request. </p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetOtherAttributes() const{ return m_otherAttributes; }
-    inline void SetOtherAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_otherAttributes = value; }
-    inline void SetOtherAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_otherAttributes = std::move(value); }
-    inline DescribeGroupResult& WithOtherAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetOtherAttributes(value); return *this;}
-    inline DescribeGroupResult& WithOtherAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetOtherAttributes(std::move(value)); return *this;}
-    inline DescribeGroupResult& AddOtherAttributes(const Aws::String& key, const AttributeValue& value) { m_otherAttributes.emplace(key, value); return *this; }
-    inline DescribeGroupResult& AddOtherAttributes(Aws::String&& key, const AttributeValue& value) { m_otherAttributes.emplace(std::move(key), value); return *this; }
-    inline DescribeGroupResult& AddOtherAttributes(const Aws::String& key, AttributeValue&& value) { m_otherAttributes.emplace(key, std::move(value)); return *this; }
-    inline DescribeGroupResult& AddOtherAttributes(Aws::String&& key, AttributeValue&& value) { m_otherAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeGroupResult& AddOtherAttributes(const char* key, AttributeValue&& value) { m_otherAttributes.emplace(key, std::move(value)); return *this; }
-    inline DescribeGroupResult& AddOtherAttributes(const char* key, const AttributeValue& value) { m_otherAttributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetOtherAttributes() const { return m_otherAttributes; }
+    template<typename OtherAttributesT = Aws::Map<Aws::String, AttributeValue>>
+    void SetOtherAttributes(OtherAttributesT&& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes = std::forward<OtherAttributesT>(value); }
+    template<typename OtherAttributesT = Aws::Map<Aws::String, AttributeValue>>
+    DescribeGroupResult& WithOtherAttributes(OtherAttributesT&& value) { SetOtherAttributes(std::forward<OtherAttributesT>(value)); return *this;}
+    template<typename OtherAttributesKeyT = Aws::String, typename OtherAttributesValueT = AttributeValue>
+    DescribeGroupResult& AddOtherAttributes(OtherAttributesKeyT&& key, OtherAttributesValueT&& value) {
+      m_otherAttributesHasBeenSet = true; m_otherAttributes.emplace(std::forward<OtherAttributesKeyT>(key), std::forward<OtherAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p> The domain name that's associated with the group. </p>
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
-    inline void SetRealm(const Aws::String& value) { m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realm.assign(value); }
-    inline DescribeGroupResult& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline DescribeGroupResult& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithRealm(const char* value) { SetRealm(value); return *this;}
+    inline const Aws::String& GetRealm() const { return m_realm; }
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    DescribeGroupResult& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the group. </p>
      */
-    inline const Aws::String& GetSAMAccountName() const{ return m_sAMAccountName; }
-    inline void SetSAMAccountName(const Aws::String& value) { m_sAMAccountName = value; }
-    inline void SetSAMAccountName(Aws::String&& value) { m_sAMAccountName = std::move(value); }
-    inline void SetSAMAccountName(const char* value) { m_sAMAccountName.assign(value); }
-    inline DescribeGroupResult& WithSAMAccountName(const Aws::String& value) { SetSAMAccountName(value); return *this;}
-    inline DescribeGroupResult& WithSAMAccountName(Aws::String&& value) { SetSAMAccountName(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithSAMAccountName(const char* value) { SetSAMAccountName(value); return *this;}
+    inline const Aws::String& GetSAMAccountName() const { return m_sAMAccountName; }
+    template<typename SAMAccountNameT = Aws::String>
+    void SetSAMAccountName(SAMAccountNameT&& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = std::forward<SAMAccountNameT>(value); }
+    template<typename SAMAccountNameT = Aws::String>
+    DescribeGroupResult& WithSAMAccountName(SAMAccountNameT&& value) { SetSAMAccountName(std::forward<SAMAccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique security identifier (SID) of the group. </p>
      */
-    inline const Aws::String& GetSID() const{ return m_sID; }
-    inline void SetSID(const Aws::String& value) { m_sID = value; }
-    inline void SetSID(Aws::String&& value) { m_sID = std::move(value); }
-    inline void SetSID(const char* value) { m_sID.assign(value); }
-    inline DescribeGroupResult& WithSID(const Aws::String& value) { SetSID(value); return *this;}
-    inline DescribeGroupResult& WithSID(Aws::String&& value) { SetSID(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithSID(const char* value) { SetSID(value); return *this;}
+    inline const Aws::String& GetSID() const { return m_sID; }
+    template<typename SIDT = Aws::String>
+    void SetSID(SIDT&& value) { m_sIDHasBeenSet = true; m_sID = std::forward<SIDT>(value); }
+    template<typename SIDT = Aws::String>
+    DescribeGroupResult& WithSID(SIDT&& value) { SetSID(std::forward<SIDT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_distinguishedName;
+    bool m_distinguishedNameHasBeenSet = false;
 
-    GroupScope m_groupScope;
+    GroupScope m_groupScope{GroupScope::NOT_SET};
+    bool m_groupScopeHasBeenSet = false;
 
-    GroupType m_groupType;
+    GroupType m_groupType{GroupType::NOT_SET};
+    bool m_groupTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_otherAttributes;
+    bool m_otherAttributesHasBeenSet = false;
 
     Aws::String m_realm;
+    bool m_realmHasBeenSet = false;
 
     Aws::String m_sAMAccountName;
+    bool m_sAMAccountNameHasBeenSet = false;
 
     Aws::String m_sID;
+    bool m_sIDHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

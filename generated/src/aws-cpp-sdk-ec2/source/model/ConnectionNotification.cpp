@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionNotification::ConnectionNotification() : 
-    m_connectionNotificationIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_connectionNotificationType(ConnectionNotificationType::NOT_SET),
-    m_connectionNotificationTypeHasBeenSet(false),
-    m_connectionNotificationArnHasBeenSet(false),
-    m_connectionEventsHasBeenSet(false),
-    m_connectionNotificationState(ConnectionNotificationState::NOT_SET),
-    m_connectionNotificationStateHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false)
-{
-}
-
 ConnectionNotification::ConnectionNotification(const XmlNode& xmlNode)
-  : ConnectionNotification()
 {
   *this = xmlNode;
 }
@@ -67,7 +52,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationTypeNode = resultNode.FirstChild("connectionNotificationType");
     if(!connectionNotificationTypeNode.IsNull())
     {
-      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationTypeNode.GetText()).c_str()).c_str());
+      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationTypeNode.GetText()).c_str()));
       m_connectionNotificationTypeHasBeenSet = true;
     }
     XmlNode connectionNotificationArnNode = resultNode.FirstChild("connectionNotificationArn");
@@ -80,6 +65,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     if(!connectionEventsNode.IsNull())
     {
       XmlNode connectionEventsMember = connectionEventsNode.FirstChild("item");
+      m_connectionEventsHasBeenSet = !connectionEventsMember.IsNull();
       while(!connectionEventsMember.IsNull())
       {
         m_connectionEvents.push_back(connectionEventsMember.GetText());
@@ -91,7 +77,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationStateNode = resultNode.FirstChild("connectionNotificationState");
     if(!connectionNotificationStateNode.IsNull())
     {
-      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()).c_str());
+      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()));
       m_connectionNotificationStateHasBeenSet = true;
     }
     XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");

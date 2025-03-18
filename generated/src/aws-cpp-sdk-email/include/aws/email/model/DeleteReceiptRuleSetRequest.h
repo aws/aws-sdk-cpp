@@ -28,7 +28,7 @@ namespace Model
   class DeleteReceiptRuleSetRequest : public SESRequest
   {
   public:
-    AWS_SES_API DeleteReceiptRuleSetRequest();
+    AWS_SES_API DeleteReceiptRuleSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to delete.</p>
      */
-    inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+    inline const Aws::String& GetRuleSetName() const { return m_ruleSetName; }
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-    inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-    inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-    inline DeleteReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-    inline DeleteReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-    inline DeleteReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+    template<typename RuleSetNameT = Aws::String>
+    void SetRuleSetName(RuleSetNameT&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::forward<RuleSetNameT>(value); }
+    template<typename RuleSetNameT = Aws::String>
+    DeleteReceiptRuleSetRequest& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
     ///@}
   private:
 

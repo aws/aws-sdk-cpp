@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ServerlessIdentifier::ServerlessIdentifier() : 
-    m_namespaceIdentifierHasBeenSet(false),
-    m_workgroupIdentifierHasBeenSet(false)
-{
-}
-
 ServerlessIdentifier::ServerlessIdentifier(const XmlNode& xmlNode)
-  : ServerlessIdentifier()
 {
   *this = xmlNode;
 }

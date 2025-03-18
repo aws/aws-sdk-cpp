@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePartnerAppResult::DescribePartnerAppResult() : 
-    m_type(PartnerAppType::NOT_SET),
-    m_status(PartnerAppStatus::NOT_SET),
-    m_authType(PartnerAppAuthType::NOT_SET),
-    m_enableIamSessionBasedIdentity(false)
-{
-}
-
 DescribePartnerAppResult::DescribePartnerAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribePartnerAppResult()
 {
   *this = result;
 }
@@ -37,93 +28,80 @@ DescribePartnerAppResult& DescribePartnerAppResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PartnerAppTypeMapper::GetPartnerAppTypeForName(jsonValue.GetString("Type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PartnerAppStatusMapper::GetPartnerAppStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
+    m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseUrl"))
   {
     m_baseUrl = jsonValue.GetString("BaseUrl");
-
+    m_baseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceConfig"))
   {
     m_maintenanceConfig = jsonValue.GetObject("MaintenanceConfig");
-
+    m_maintenanceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = jsonValue.GetString("Tier");
-
+    m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationConfig"))
   {
     m_applicationConfig = jsonValue.GetObject("ApplicationConfig");
-
+    m_applicationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthType"))
   {
     m_authType = PartnerAppAuthTypeMapper::GetPartnerAppAuthTypeForName(jsonValue.GetString("AuthType"));
-
+    m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableIamSessionBasedIdentity"))
   {
     m_enableIamSessionBasedIdentity = jsonValue.GetBool("EnableIamSessionBasedIdentity");
-
+    m_enableIamSessionBasedIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
+    m_errorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

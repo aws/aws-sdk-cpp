@@ -12,15 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TranslateTextRequest::TranslateTextRequest() : 
-    m_textHasBeenSet(false),
-    m_terminologyNamesHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodeHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String TranslateTextRequest::SerializePayload() const
 {
   JsonValue payload;

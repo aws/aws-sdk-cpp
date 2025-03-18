@@ -28,7 +28,7 @@ namespace Model
   class CreateWorkspaceResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API CreateWorkspaceResult();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceResult() = default;
     AWS_MANAGEDGRAFANA_API CreateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API CreateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure containing data about the workspace that was created.</p>
      */
-    inline const WorkspaceDescription& GetWorkspace() const{ return m_workspace; }
-    inline void SetWorkspace(const WorkspaceDescription& value) { m_workspace = value; }
-    inline void SetWorkspace(WorkspaceDescription&& value) { m_workspace = std::move(value); }
-    inline CreateWorkspaceResult& WithWorkspace(const WorkspaceDescription& value) { SetWorkspace(value); return *this;}
-    inline CreateWorkspaceResult& WithWorkspace(WorkspaceDescription&& value) { SetWorkspace(std::move(value)); return *this;}
+    inline const WorkspaceDescription& GetWorkspace() const { return m_workspace; }
+    template<typename WorkspaceT = WorkspaceDescription>
+    void SetWorkspace(WorkspaceT&& value) { m_workspaceHasBeenSet = true; m_workspace = std::forward<WorkspaceT>(value); }
+    template<typename WorkspaceT = WorkspaceDescription>
+    CreateWorkspaceResult& WithWorkspace(WorkspaceT&& value) { SetWorkspace(std::forward<WorkspaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkspaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkspaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkspaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkspaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WorkspaceDescription m_workspace;
+    bool m_workspaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayRouteTable::LocalGatewayRouteTable() : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_mode(LocalGatewayRouteTableMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 LocalGatewayRouteTable::LocalGatewayRouteTable(const XmlNode& xmlNode)
-  : LocalGatewayRouteTable()
 {
   *this = xmlNode;
 }
@@ -86,6 +71,7 @@ LocalGatewayRouteTable& LocalGatewayRouteTable::operator =(const XmlNode& xmlNod
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -97,7 +83,7 @@ LocalGatewayRouteTable& LocalGatewayRouteTable::operator =(const XmlNode& xmlNod
     XmlNode modeNode = resultNode.FirstChild("mode");
     if(!modeNode.IsNull())
     {
-      m_mode = LocalGatewayRouteTableModeMapper::GetLocalGatewayRouteTableModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = LocalGatewayRouteTableModeMapper::GetLocalGatewayRouteTableModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");

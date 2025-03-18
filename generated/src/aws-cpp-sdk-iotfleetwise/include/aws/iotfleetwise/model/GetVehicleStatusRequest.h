@@ -21,7 +21,7 @@ namespace Model
   class GetVehicleStatusRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API GetVehicleStatusRequest();
+    AWS_IOTFLEETWISE_API GetVehicleStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * pagination token value. This parameter is only supported for resources of type
      * <code>CAMPAIGN</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetVehicleStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetVehicleStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetVehicleStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetVehicleStatusRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The maximum number of items to return, between 1 and 100, inclusive. This
      * parameter is only supported for resources of type <code>CAMPAIGN</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetVehicleStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,21 +67,19 @@ namespace Model
     /**
      * <p> The ID of the vehicle to retrieve information about. </p>
      */
-    inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
+    inline const Aws::String& GetVehicleName() const { return m_vehicleName; }
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-    inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-    inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-    inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-    inline GetVehicleStatusRequest& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-    inline GetVehicleStatusRequest& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-    inline GetVehicleStatusRequest& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    template<typename VehicleNameT = Aws::String>
+    void SetVehicleName(VehicleNameT&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::forward<VehicleNameT>(value); }
+    template<typename VehicleNameT = Aws::String>
+    GetVehicleStatusRequest& WithVehicleName(VehicleNameT&& value) { SetVehicleName(std::forward<VehicleNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_vehicleName;

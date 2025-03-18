@@ -34,7 +34,7 @@ namespace Model
   class IdleRecommendationFilter
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API IdleRecommendationFilter();
+    AWS_COMPUTEOPTIMIZER_API IdleRecommendationFilter() = default;
     AWS_COMPUTEOPTIMIZER_API IdleRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API IdleRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,31 +57,28 @@ namespace Model
      * tag value. For example, you can find your idle resource service recommendations
      * with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
      */
-    inline const IdleRecommendationFilterName& GetName() const{ return m_name; }
+    inline IdleRecommendationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const IdleRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(IdleRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline IdleRecommendationFilter& WithName(const IdleRecommendationFilterName& value) { SetName(value); return *this;}
-    inline IdleRecommendationFilter& WithName(IdleRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(IdleRecommendationFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline IdleRecommendationFilter& WithName(IdleRecommendationFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline IdleRecommendationFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline IdleRecommendationFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline IdleRecommendationFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline IdleRecommendationFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline IdleRecommendationFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    IdleRecommendationFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    IdleRecommendationFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    IdleRecommendationFilterName m_name;
+    IdleRecommendationFilterName m_name{IdleRecommendationFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

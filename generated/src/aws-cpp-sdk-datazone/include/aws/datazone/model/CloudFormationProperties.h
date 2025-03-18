@@ -32,7 +32,7 @@ namespace Model
   class CloudFormationProperties
   {
   public:
-    AWS_DATAZONE_API CloudFormationProperties();
+    AWS_DATAZONE_API CloudFormationProperties() = default;
     AWS_DATAZONE_API CloudFormationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API CloudFormationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The template URL of the cloud formation provisioning properties of the
      * environment blueprint.</p>
      */
-    inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
+    inline const Aws::String& GetTemplateUrl() const { return m_templateUrl; }
     inline bool TemplateUrlHasBeenSet() const { return m_templateUrlHasBeenSet; }
-    inline void SetTemplateUrl(const Aws::String& value) { m_templateUrlHasBeenSet = true; m_templateUrl = value; }
-    inline void SetTemplateUrl(Aws::String&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::move(value); }
-    inline void SetTemplateUrl(const char* value) { m_templateUrlHasBeenSet = true; m_templateUrl.assign(value); }
-    inline CloudFormationProperties& WithTemplateUrl(const Aws::String& value) { SetTemplateUrl(value); return *this;}
-    inline CloudFormationProperties& WithTemplateUrl(Aws::String&& value) { SetTemplateUrl(std::move(value)); return *this;}
-    inline CloudFormationProperties& WithTemplateUrl(const char* value) { SetTemplateUrl(value); return *this;}
+    template<typename TemplateUrlT = Aws::String>
+    void SetTemplateUrl(TemplateUrlT&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::forward<TemplateUrlT>(value); }
+    template<typename TemplateUrlT = Aws::String>
+    CloudFormationProperties& WithTemplateUrl(TemplateUrlT&& value) { SetTemplateUrl(std::forward<TemplateUrlT>(value)); return *this;}
     ///@}
   private:
 

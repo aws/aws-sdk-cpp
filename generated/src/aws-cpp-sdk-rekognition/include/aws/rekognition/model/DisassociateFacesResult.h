@@ -31,7 +31,7 @@ namespace Model
   class DisassociateFacesResult
   {
   public:
-    AWS_REKOGNITION_API DisassociateFacesResult();
+    AWS_REKOGNITION_API DisassociateFacesResult() = default;
     AWS_REKOGNITION_API DisassociateFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DisassociateFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * disassociated with the UserID is returned. Returned if the DisassociatedFaces
      * action is successful.</p>
      */
-    inline const Aws::Vector<DisassociatedFace>& GetDisassociatedFaces() const{ return m_disassociatedFaces; }
-    inline void SetDisassociatedFaces(const Aws::Vector<DisassociatedFace>& value) { m_disassociatedFaces = value; }
-    inline void SetDisassociatedFaces(Aws::Vector<DisassociatedFace>&& value) { m_disassociatedFaces = std::move(value); }
-    inline DisassociateFacesResult& WithDisassociatedFaces(const Aws::Vector<DisassociatedFace>& value) { SetDisassociatedFaces(value); return *this;}
-    inline DisassociateFacesResult& WithDisassociatedFaces(Aws::Vector<DisassociatedFace>&& value) { SetDisassociatedFaces(std::move(value)); return *this;}
-    inline DisassociateFacesResult& AddDisassociatedFaces(const DisassociatedFace& value) { m_disassociatedFaces.push_back(value); return *this; }
-    inline DisassociateFacesResult& AddDisassociatedFaces(DisassociatedFace&& value) { m_disassociatedFaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DisassociatedFace>& GetDisassociatedFaces() const { return m_disassociatedFaces; }
+    template<typename DisassociatedFacesT = Aws::Vector<DisassociatedFace>>
+    void SetDisassociatedFaces(DisassociatedFacesT&& value) { m_disassociatedFacesHasBeenSet = true; m_disassociatedFaces = std::forward<DisassociatedFacesT>(value); }
+    template<typename DisassociatedFacesT = Aws::Vector<DisassociatedFace>>
+    DisassociateFacesResult& WithDisassociatedFaces(DisassociatedFacesT&& value) { SetDisassociatedFaces(std::forward<DisassociatedFacesT>(value)); return *this;}
+    template<typename DisassociatedFacesT = DisassociatedFace>
+    DisassociateFacesResult& AddDisassociatedFaces(DisassociatedFacesT&& value) { m_disassociatedFacesHasBeenSet = true; m_disassociatedFaces.emplace_back(std::forward<DisassociatedFacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,13 +57,13 @@ namespace Model
      * not successfully associated, along with the reasons for the failure to
      * associate. Returned if the DisassociateFaces action is successful.</p>
      */
-    inline const Aws::Vector<UnsuccessfulFaceDisassociation>& GetUnsuccessfulFaceDisassociations() const{ return m_unsuccessfulFaceDisassociations; }
-    inline void SetUnsuccessfulFaceDisassociations(const Aws::Vector<UnsuccessfulFaceDisassociation>& value) { m_unsuccessfulFaceDisassociations = value; }
-    inline void SetUnsuccessfulFaceDisassociations(Aws::Vector<UnsuccessfulFaceDisassociation>&& value) { m_unsuccessfulFaceDisassociations = std::move(value); }
-    inline DisassociateFacesResult& WithUnsuccessfulFaceDisassociations(const Aws::Vector<UnsuccessfulFaceDisassociation>& value) { SetUnsuccessfulFaceDisassociations(value); return *this;}
-    inline DisassociateFacesResult& WithUnsuccessfulFaceDisassociations(Aws::Vector<UnsuccessfulFaceDisassociation>&& value) { SetUnsuccessfulFaceDisassociations(std::move(value)); return *this;}
-    inline DisassociateFacesResult& AddUnsuccessfulFaceDisassociations(const UnsuccessfulFaceDisassociation& value) { m_unsuccessfulFaceDisassociations.push_back(value); return *this; }
-    inline DisassociateFacesResult& AddUnsuccessfulFaceDisassociations(UnsuccessfulFaceDisassociation&& value) { m_unsuccessfulFaceDisassociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnsuccessfulFaceDisassociation>& GetUnsuccessfulFaceDisassociations() const { return m_unsuccessfulFaceDisassociations; }
+    template<typename UnsuccessfulFaceDisassociationsT = Aws::Vector<UnsuccessfulFaceDisassociation>>
+    void SetUnsuccessfulFaceDisassociations(UnsuccessfulFaceDisassociationsT&& value) { m_unsuccessfulFaceDisassociationsHasBeenSet = true; m_unsuccessfulFaceDisassociations = std::forward<UnsuccessfulFaceDisassociationsT>(value); }
+    template<typename UnsuccessfulFaceDisassociationsT = Aws::Vector<UnsuccessfulFaceDisassociation>>
+    DisassociateFacesResult& WithUnsuccessfulFaceDisassociations(UnsuccessfulFaceDisassociationsT&& value) { SetUnsuccessfulFaceDisassociations(std::forward<UnsuccessfulFaceDisassociationsT>(value)); return *this;}
+    template<typename UnsuccessfulFaceDisassociationsT = UnsuccessfulFaceDisassociation>
+    DisassociateFacesResult& AddUnsuccessfulFaceDisassociations(UnsuccessfulFaceDisassociationsT&& value) { m_unsuccessfulFaceDisassociationsHasBeenSet = true; m_unsuccessfulFaceDisassociations.emplace_back(std::forward<UnsuccessfulFaceDisassociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,32 +71,32 @@ namespace Model
      * <p>The status of an update made to a User. Reflects if the User has been updated
      * for every requested change.</p>
      */
-    inline const UserStatus& GetUserStatus() const{ return m_userStatus; }
-    inline void SetUserStatus(const UserStatus& value) { m_userStatus = value; }
-    inline void SetUserStatus(UserStatus&& value) { m_userStatus = std::move(value); }
-    inline DisassociateFacesResult& WithUserStatus(const UserStatus& value) { SetUserStatus(value); return *this;}
-    inline DisassociateFacesResult& WithUserStatus(UserStatus&& value) { SetUserStatus(std::move(value)); return *this;}
+    inline UserStatus GetUserStatus() const { return m_userStatus; }
+    inline void SetUserStatus(UserStatus value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline DisassociateFacesResult& WithUserStatus(UserStatus value) { SetUserStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateFacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DisassociatedFace> m_disassociatedFaces;
+    bool m_disassociatedFacesHasBeenSet = false;
 
     Aws::Vector<UnsuccessfulFaceDisassociation> m_unsuccessfulFaceDisassociations;
+    bool m_unsuccessfulFaceDisassociationsHasBeenSet = false;
 
-    UserStatus m_userStatus;
+    UserStatus m_userStatus{UserStatus::NOT_SET};
+    bool m_userStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

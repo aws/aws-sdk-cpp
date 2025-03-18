@@ -21,7 +21,7 @@ namespace Model
   class DeleteLFTagExpressionRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API DeleteLFTagExpressionRequest();
+    AWS_LAKEFORMATION_API DeleteLFTagExpressionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name for the LF-Tag expression.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteLFTagExpressionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteLFTagExpressionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteLFTagExpressionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteLFTagExpressionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The identifier for the Data Catalog. By default, the account ID in which the
      * LF-Tag expression is saved. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline DeleteLFTagExpressionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline DeleteLFTagExpressionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline DeleteLFTagExpressionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    DeleteLFTagExpressionRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
   private:
 

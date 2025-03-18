@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioHlsRenditionSelection::AudioHlsRenditionSelection() : 
-    m_groupIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AudioHlsRenditionSelection::AudioHlsRenditionSelection(JsonView jsonValue)
-  : AudioHlsRenditionSelection()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AudioHlsRenditionSelection& AudioHlsRenditionSelection::operator =(JsonView json
   if(jsonValue.ValueExists("groupId"))
   {
     m_groupId = jsonValue.GetString("groupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStudioSessionMappingsRequest::ListStudioSessionMappingsRequest() : 
-    m_studioIdHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListStudioSessionMappingsRequest::SerializePayload() const
 {
   JsonValue payload;

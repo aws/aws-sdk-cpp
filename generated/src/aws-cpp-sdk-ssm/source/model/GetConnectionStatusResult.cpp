@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConnectionStatusResult::GetConnectionStatusResult() : 
-    m_status(ConnectionStatus::NOT_SET)
-{
-}
-
 GetConnectionStatusResult::GetConnectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetConnectionStatusResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetConnectionStatusResult& GetConnectionStatusResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
+    m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

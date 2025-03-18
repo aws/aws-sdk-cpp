@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-GitConfig::GitConfig() : 
-    m_repositoryUrlHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 GitConfig::GitConfig(JsonView jsonValue)
-  : GitConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GitConfig& GitConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryUrl"))
   {
     m_repositoryUrl = jsonValue.GetString("RepositoryUrl");
-
     m_repositoryUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Branch"))
   {
     m_branch = jsonValue.GetString("Branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class SnapshotFile
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotFile();
+    AWS_QUICKSIGHT_API SnapshotFile() = default;
     AWS_QUICKSIGHT_API SnapshotFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
      * 1 configuration for PDF.</p>
      */
-    inline const Aws::Vector<SnapshotFileSheetSelection>& GetSheetSelections() const{ return m_sheetSelections; }
+    inline const Aws::Vector<SnapshotFileSheetSelection>& GetSheetSelections() const { return m_sheetSelections; }
     inline bool SheetSelectionsHasBeenSet() const { return m_sheetSelectionsHasBeenSet; }
-    inline void SetSheetSelections(const Aws::Vector<SnapshotFileSheetSelection>& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections = value; }
-    inline void SetSheetSelections(Aws::Vector<SnapshotFileSheetSelection>&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections = std::move(value); }
-    inline SnapshotFile& WithSheetSelections(const Aws::Vector<SnapshotFileSheetSelection>& value) { SetSheetSelections(value); return *this;}
-    inline SnapshotFile& WithSheetSelections(Aws::Vector<SnapshotFileSheetSelection>&& value) { SetSheetSelections(std::move(value)); return *this;}
-    inline SnapshotFile& AddSheetSelections(const SnapshotFileSheetSelection& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections.push_back(value); return *this; }
-    inline SnapshotFile& AddSheetSelections(SnapshotFileSheetSelection&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections.push_back(std::move(value)); return *this; }
+    template<typename SheetSelectionsT = Aws::Vector<SnapshotFileSheetSelection>>
+    void SetSheetSelections(SheetSelectionsT&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections = std::forward<SheetSelectionsT>(value); }
+    template<typename SheetSelectionsT = Aws::Vector<SnapshotFileSheetSelection>>
+    SnapshotFile& WithSheetSelections(SheetSelectionsT&& value) { SetSheetSelections(std::forward<SheetSelectionsT>(value)); return *this;}
+    template<typename SheetSelectionsT = SnapshotFileSheetSelection>
+    SnapshotFile& AddSheetSelections(SheetSelectionsT&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections.emplace_back(std::forward<SheetSelectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,19 +64,17 @@ namespace Model
      * <p>The format of the snapshot file to be generated. You can choose between
      * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
-    inline const SnapshotFileFormatType& GetFormatType() const{ return m_formatType; }
+    inline SnapshotFileFormatType GetFormatType() const { return m_formatType; }
     inline bool FormatTypeHasBeenSet() const { return m_formatTypeHasBeenSet; }
-    inline void SetFormatType(const SnapshotFileFormatType& value) { m_formatTypeHasBeenSet = true; m_formatType = value; }
-    inline void SetFormatType(SnapshotFileFormatType&& value) { m_formatTypeHasBeenSet = true; m_formatType = std::move(value); }
-    inline SnapshotFile& WithFormatType(const SnapshotFileFormatType& value) { SetFormatType(value); return *this;}
-    inline SnapshotFile& WithFormatType(SnapshotFileFormatType&& value) { SetFormatType(std::move(value)); return *this;}
+    inline void SetFormatType(SnapshotFileFormatType value) { m_formatTypeHasBeenSet = true; m_formatType = value; }
+    inline SnapshotFile& WithFormatType(SnapshotFileFormatType value) { SetFormatType(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<SnapshotFileSheetSelection> m_sheetSelections;
     bool m_sheetSelectionsHasBeenSet = false;
 
-    SnapshotFileFormatType m_formatType;
+    SnapshotFileFormatType m_formatType{SnapshotFileFormatType::NOT_SET};
     bool m_formatTypeHasBeenSet = false;
   };
 

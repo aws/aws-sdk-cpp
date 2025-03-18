@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteGeofenceRequest::BatchDeleteGeofenceRequest() : 
-    m_collectionNameHasBeenSet(false),
-    m_geofenceIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteGeofenceRequest::SerializePayload() const
 {
   JsonValue payload;

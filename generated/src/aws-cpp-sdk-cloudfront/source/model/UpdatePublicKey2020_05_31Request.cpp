@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdatePublicKey2020_05_31Request::UpdatePublicKey2020_05_31Request() : 
-    m_publicKeyConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdatePublicKey2020_05_31Request::SerializePayload() const
 {

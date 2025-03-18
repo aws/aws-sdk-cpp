@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

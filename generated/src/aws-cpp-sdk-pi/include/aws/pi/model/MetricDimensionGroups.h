@@ -34,7 +34,7 @@ namespace Model
   class MetricDimensionGroups
   {
   public:
-    AWS_PI_API MetricDimensionGroups();
+    AWS_PI_API MetricDimensionGroups() = default;
     AWS_PI_API MetricDimensionGroups(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API MetricDimensionGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The metric type to which the dimension information belongs.</p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline MetricDimensionGroups& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline MetricDimensionGroups& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline MetricDimensionGroups& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    MetricDimensionGroups& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The available dimension groups for a metric type.</p>
      */
-    inline const Aws::Vector<DimensionGroupDetail>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<DimensionGroupDetail>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<DimensionGroupDetail>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<DimensionGroupDetail>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline MetricDimensionGroups& WithGroups(const Aws::Vector<DimensionGroupDetail>& value) { SetGroups(value); return *this;}
-    inline MetricDimensionGroups& WithGroups(Aws::Vector<DimensionGroupDetail>&& value) { SetGroups(std::move(value)); return *this;}
-    inline MetricDimensionGroups& AddGroups(const DimensionGroupDetail& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline MetricDimensionGroups& AddGroups(DimensionGroupDetail&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    template<typename GroupsT = Aws::Vector<DimensionGroupDetail>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<DimensionGroupDetail>>
+    MetricDimensionGroups& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = DimensionGroupDetail>
+    MetricDimensionGroups& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
   private:
 

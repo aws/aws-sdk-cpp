@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-TestWindowSummary::TestWindowSummary() : 
-    m_testWindowStartHasBeenSet(false),
-    m_testWindowEndHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TestWindowSummary::TestWindowSummary(JsonView jsonValue)
-  : TestWindowSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TestWindowSummary& TestWindowSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TestWindowStart"))
   {
     m_testWindowStart = jsonValue.GetDouble("TestWindowStart");
-
     m_testWindowStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestWindowEnd"))
   {
     m_testWindowEnd = jsonValue.GetDouble("TestWindowEnd");
-
     m_testWindowEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

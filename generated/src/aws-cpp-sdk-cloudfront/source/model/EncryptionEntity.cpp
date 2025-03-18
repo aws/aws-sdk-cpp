@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-EncryptionEntity::EncryptionEntity() : 
-    m_publicKeyIdHasBeenSet(false),
-    m_providerIdHasBeenSet(false),
-    m_fieldPatternsHasBeenSet(false)
-{
-}
-
 EncryptionEntity::EncryptionEntity(const XmlNode& xmlNode)
-  : EncryptionEntity()
 {
   *this = xmlNode;
 }

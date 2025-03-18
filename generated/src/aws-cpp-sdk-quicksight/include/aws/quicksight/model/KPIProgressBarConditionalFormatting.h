@@ -32,7 +32,7 @@ namespace Model
   class KPIProgressBarConditionalFormatting
   {
   public:
-    AWS_QUICKSIGHT_API KPIProgressBarConditionalFormatting();
+    AWS_QUICKSIGHT_API KPIProgressBarConditionalFormatting() = default;
     AWS_QUICKSIGHT_API KPIProgressBarConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API KPIProgressBarConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The conditional formatting of the progress bar's foreground color.</p>
      */
-    inline const ConditionalFormattingColor& GetForegroundColor() const{ return m_foregroundColor; }
+    inline const ConditionalFormattingColor& GetForegroundColor() const { return m_foregroundColor; }
     inline bool ForegroundColorHasBeenSet() const { return m_foregroundColorHasBeenSet; }
-    inline void SetForegroundColor(const ConditionalFormattingColor& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = value; }
-    inline void SetForegroundColor(ConditionalFormattingColor&& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = std::move(value); }
-    inline KPIProgressBarConditionalFormatting& WithForegroundColor(const ConditionalFormattingColor& value) { SetForegroundColor(value); return *this;}
-    inline KPIProgressBarConditionalFormatting& WithForegroundColor(ConditionalFormattingColor&& value) { SetForegroundColor(std::move(value)); return *this;}
+    template<typename ForegroundColorT = ConditionalFormattingColor>
+    void SetForegroundColor(ForegroundColorT&& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = std::forward<ForegroundColorT>(value); }
+    template<typename ForegroundColorT = ConditionalFormattingColor>
+    KPIProgressBarConditionalFormatting& WithForegroundColor(ForegroundColorT&& value) { SetForegroundColor(std::forward<ForegroundColorT>(value)); return *this;}
     ///@}
   private:
 

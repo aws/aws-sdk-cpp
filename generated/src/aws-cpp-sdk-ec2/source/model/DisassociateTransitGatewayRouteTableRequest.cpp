@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisassociateTransitGatewayRouteTableRequest::DisassociateTransitGatewayRouteTableRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateTransitGatewayRouteTableRequest::SerializePayload() const
 {
   Aws::StringStream ss;

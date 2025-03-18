@@ -30,7 +30,7 @@ namespace Model
   class DetectedSignature
   {
   public:
-    AWS_TEXTRACT_API DetectedSignature();
+    AWS_TEXTRACT_API DetectedSignature() = default;
     AWS_TEXTRACT_API DetectedSignature(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API DetectedSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The page a detected signature was found on.</p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline DetectedSignature& WithPage(int value) { SetPage(value); return *this;}
     ///@}
   private:
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
   };
 

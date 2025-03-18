@@ -31,7 +31,7 @@ namespace Model
   class CdiInputSpecification
   {
   public:
-    AWS_MEDIALIVE_API CdiInputSpecification();
+    AWS_MEDIALIVE_API CdiInputSpecification() = default;
     AWS_MEDIALIVE_API CdiInputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API CdiInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * Maximum CDI input resolution
      */
-    inline const CdiInputResolution& GetResolution() const{ return m_resolution; }
+    inline CdiInputResolution GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const CdiInputResolution& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(CdiInputResolution&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline CdiInputSpecification& WithResolution(const CdiInputResolution& value) { SetResolution(value); return *this;}
-    inline CdiInputSpecification& WithResolution(CdiInputResolution&& value) { SetResolution(std::move(value)); return *this;}
+    inline void SetResolution(CdiInputResolution value) { m_resolutionHasBeenSet = true; m_resolution = value; }
+    inline CdiInputSpecification& WithResolution(CdiInputResolution value) { SetResolution(value); return *this;}
     ///@}
   private:
 
-    CdiInputResolution m_resolution;
+    CdiInputResolution m_resolution{CdiInputResolution::NOT_SET};
     bool m_resolutionHasBeenSet = false;
   };
 

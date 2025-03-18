@@ -21,7 +21,7 @@ namespace Model
   class CreateImageBuilderStreamingURLRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateImageBuilderStreamingURLRequest();
+    AWS_APPSTREAM_API CreateImageBuilderStreamingURLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the image builder.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateImageBuilderStreamingURLRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateImageBuilderStreamingURLRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateImageBuilderStreamingURLRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateImageBuilderStreamingURLRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value
      * between 1 and 604800 seconds. The default is 3600 seconds.</p>
      */
-    inline long long GetValidity() const{ return m_validity; }
+    inline long long GetValidity() const { return m_validity; }
     inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
     inline void SetValidity(long long value) { m_validityHasBeenSet = true; m_validity = value; }
     inline CreateImageBuilderStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_validity;
+    long long m_validity{0};
     bool m_validityHasBeenSet = false;
   };
 

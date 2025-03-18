@@ -34,7 +34,7 @@ namespace Model
   class PurchaseOfferingResult
   {
   public:
-    AWS_DEVICEFARM_API PurchaseOfferingResult();
+    AWS_DEVICEFARM_API PurchaseOfferingResult() = default;
     AWS_DEVICEFARM_API PurchaseOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API PurchaseOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Represents the offering transaction for the purchase result.</p>
      */
-    inline const OfferingTransaction& GetOfferingTransaction() const{ return m_offeringTransaction; }
-    inline void SetOfferingTransaction(const OfferingTransaction& value) { m_offeringTransaction = value; }
-    inline void SetOfferingTransaction(OfferingTransaction&& value) { m_offeringTransaction = std::move(value); }
-    inline PurchaseOfferingResult& WithOfferingTransaction(const OfferingTransaction& value) { SetOfferingTransaction(value); return *this;}
-    inline PurchaseOfferingResult& WithOfferingTransaction(OfferingTransaction&& value) { SetOfferingTransaction(std::move(value)); return *this;}
+    inline const OfferingTransaction& GetOfferingTransaction() const { return m_offeringTransaction; }
+    template<typename OfferingTransactionT = OfferingTransaction>
+    void SetOfferingTransaction(OfferingTransactionT&& value) { m_offeringTransactionHasBeenSet = true; m_offeringTransaction = std::forward<OfferingTransactionT>(value); }
+    template<typename OfferingTransactionT = OfferingTransaction>
+    PurchaseOfferingResult& WithOfferingTransaction(OfferingTransactionT&& value) { SetOfferingTransaction(std::forward<OfferingTransactionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PurchaseOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PurchaseOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PurchaseOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PurchaseOfferingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OfferingTransaction m_offeringTransaction;
+    bool m_offeringTransactionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

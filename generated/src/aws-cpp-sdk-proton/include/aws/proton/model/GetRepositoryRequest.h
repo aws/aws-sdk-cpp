@@ -22,7 +22,7 @@ namespace Model
   class GetRepositoryRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API GetRepositoryRequest();
+    AWS_PROTON_API GetRepositoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetRepositoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetRepositoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetRepositoryRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetRepositoryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository provider.</p>
      */
-    inline const RepositoryProvider& GetProvider() const{ return m_provider; }
+    inline RepositoryProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const RepositoryProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(RepositoryProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline GetRepositoryRequest& WithProvider(const RepositoryProvider& value) { SetProvider(value); return *this;}
-    inline GetRepositoryRequest& WithProvider(RepositoryProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(RepositoryProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline GetRepositoryRequest& WithProvider(RepositoryProvider value) { SetProvider(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RepositoryProvider m_provider;
+    RepositoryProvider m_provider{RepositoryProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
   };
 

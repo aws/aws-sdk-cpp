@@ -18,16 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-LocalSizeConfig::LocalSizeConfig() : 
-    m_maxLocalMediaSizeInMB(0),
-    m_maxLocalMediaSizeInMBHasBeenSet(false),
-    m_strategyOnFullSize(StrategyOnFullSize::NOT_SET),
-    m_strategyOnFullSizeHasBeenSet(false)
-{
-}
-
 LocalSizeConfig::LocalSizeConfig(JsonView jsonValue)
-  : LocalSizeConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LocalSizeConfig& LocalSizeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxLocalMediaSizeInMB"))
   {
     m_maxLocalMediaSizeInMB = jsonValue.GetInteger("MaxLocalMediaSizeInMB");
-
     m_maxLocalMediaSizeInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrategyOnFullSize"))
   {
     m_strategyOnFullSize = StrategyOnFullSizeMapper::GetStrategyOnFullSizeForName(jsonValue.GetString("StrategyOnFullSize"));
-
     m_strategyOnFullSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

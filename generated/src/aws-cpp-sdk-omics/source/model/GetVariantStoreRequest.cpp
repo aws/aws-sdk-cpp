@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVariantStoreRequest::GetVariantStoreRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetVariantStoreRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace Support
 namespace Model
 {
 
-CommunicationTypeOptions::CommunicationTypeOptions() : 
-    m_typeHasBeenSet(false),
-    m_supportedHoursHasBeenSet(false),
-    m_datesWithoutSupportHasBeenSet(false)
-{
-}
-
 CommunicationTypeOptions::CommunicationTypeOptions(JsonView jsonValue)
-  : CommunicationTypeOptions()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CommunicationTypeOptions& CommunicationTypeOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedHours"))
   {
     Aws::Utils::Array<JsonView> supportedHoursJsonList = jsonValue.GetArray("supportedHours");
@@ -49,7 +39,6 @@ CommunicationTypeOptions& CommunicationTypeOptions::operator =(JsonView jsonValu
     }
     m_supportedHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datesWithoutSupport"))
   {
     Aws::Utils::Array<JsonView> datesWithoutSupportJsonList = jsonValue.GetArray("datesWithoutSupport");
@@ -59,7 +48,6 @@ CommunicationTypeOptions& CommunicationTypeOptions::operator =(JsonView jsonValu
     }
     m_datesWithoutSupportHasBeenSet = true;
   }
-
   return *this;
 }
 

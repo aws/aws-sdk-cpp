@@ -28,7 +28,7 @@ namespace Model
   class ListFacetNamesResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API ListFacetNamesResult();
+    AWS_CLOUDDIRECTORY_API ListFacetNamesResult() = default;
     AWS_CLOUDDIRECTORY_API ListFacetNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API ListFacetNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,46 +37,44 @@ namespace Model
     /**
      * <p>The names of facets that exist within the schema.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFacetNames() const{ return m_facetNames; }
-    inline void SetFacetNames(const Aws::Vector<Aws::String>& value) { m_facetNames = value; }
-    inline void SetFacetNames(Aws::Vector<Aws::String>&& value) { m_facetNames = std::move(value); }
-    inline ListFacetNamesResult& WithFacetNames(const Aws::Vector<Aws::String>& value) { SetFacetNames(value); return *this;}
-    inline ListFacetNamesResult& WithFacetNames(Aws::Vector<Aws::String>&& value) { SetFacetNames(std::move(value)); return *this;}
-    inline ListFacetNamesResult& AddFacetNames(const Aws::String& value) { m_facetNames.push_back(value); return *this; }
-    inline ListFacetNamesResult& AddFacetNames(Aws::String&& value) { m_facetNames.push_back(std::move(value)); return *this; }
-    inline ListFacetNamesResult& AddFacetNames(const char* value) { m_facetNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFacetNames() const { return m_facetNames; }
+    template<typename FacetNamesT = Aws::Vector<Aws::String>>
+    void SetFacetNames(FacetNamesT&& value) { m_facetNamesHasBeenSet = true; m_facetNames = std::forward<FacetNamesT>(value); }
+    template<typename FacetNamesT = Aws::Vector<Aws::String>>
+    ListFacetNamesResult& WithFacetNames(FacetNamesT&& value) { SetFacetNames(std::forward<FacetNamesT>(value)); return *this;}
+    template<typename FacetNamesT = Aws::String>
+    ListFacetNamesResult& AddFacetNames(FacetNamesT&& value) { m_facetNamesHasBeenSet = true; m_facetNames.emplace_back(std::forward<FacetNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFacetNamesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFacetNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFacetNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFacetNamesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFacetNamesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFacetNamesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFacetNamesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFacetNamesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_facetNames;
+    bool m_facetNamesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

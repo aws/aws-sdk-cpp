@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ResourceCostCalculation::ResourceCostCalculation() : 
-    m_usagesHasBeenSet(false),
-    m_pricingHasBeenSet(false)
-{
-}
-
 ResourceCostCalculation::ResourceCostCalculation(JsonView jsonValue)
-  : ResourceCostCalculation()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ResourceCostCalculation& ResourceCostCalculation::operator =(JsonView jsonValue)
     }
     m_usagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pricing"))
   {
     m_pricing = jsonValue.GetObject("pricing");
-
     m_pricingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class BatchGetViewResult
   {
   public:
-    AWS_RESOURCEEXPLORER2_API BatchGetViewResult();
+    AWS_RESOURCEEXPLORER2_API BatchGetViewResult() = default;
     AWS_RESOURCEEXPLORER2_API BatchGetViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEEXPLORER2_API BatchGetViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>If any of the specified ARNs result in an error, then this structure
      * describes the error.</p>
      */
-    inline const Aws::Vector<BatchGetViewError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetViewError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetViewError>&& value) { m_errors = std::move(value); }
-    inline BatchGetViewResult& WithErrors(const Aws::Vector<BatchGetViewError>& value) { SetErrors(value); return *this;}
-    inline BatchGetViewResult& WithErrors(Aws::Vector<BatchGetViewError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetViewResult& AddErrors(const BatchGetViewError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetViewResult& AddErrors(BatchGetViewError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetViewError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetViewError>>
+    BatchGetViewResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetViewError>
+    BatchGetViewResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>A structure with a list of objects with details for each of the specified
      * views.</p>
      */
-    inline const Aws::Vector<View>& GetViews() const{ return m_views; }
-    inline void SetViews(const Aws::Vector<View>& value) { m_views = value; }
-    inline void SetViews(Aws::Vector<View>&& value) { m_views = std::move(value); }
-    inline BatchGetViewResult& WithViews(const Aws::Vector<View>& value) { SetViews(value); return *this;}
-    inline BatchGetViewResult& WithViews(Aws::Vector<View>&& value) { SetViews(std::move(value)); return *this;}
-    inline BatchGetViewResult& AddViews(const View& value) { m_views.push_back(value); return *this; }
-    inline BatchGetViewResult& AddViews(View&& value) { m_views.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<View>& GetViews() const { return m_views; }
+    template<typename ViewsT = Aws::Vector<View>>
+    void SetViews(ViewsT&& value) { m_viewsHasBeenSet = true; m_views = std::forward<ViewsT>(value); }
+    template<typename ViewsT = Aws::Vector<View>>
+    BatchGetViewResult& WithViews(ViewsT&& value) { SetViews(std::forward<ViewsT>(value)); return *this;}
+    template<typename ViewsT = View>
+    BatchGetViewResult& AddViews(ViewsT&& value) { m_viewsHasBeenSet = true; m_views.emplace_back(std::forward<ViewsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetViewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetViewError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<View> m_views;
+    bool m_viewsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

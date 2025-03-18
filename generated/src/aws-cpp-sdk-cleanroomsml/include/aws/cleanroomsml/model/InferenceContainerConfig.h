@@ -32,7 +32,7 @@ namespace Model
   class InferenceContainerConfig
   {
   public:
-    AWS_CLEANROOMSML_API InferenceContainerConfig();
+    AWS_CLEANROOMSML_API InferenceContainerConfig() = default;
     AWS_CLEANROOMSML_API InferenceContainerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InferenceContainerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html#sagemaker-Type-AlgorithmSpecification-TrainingImage">Sagemaker
      * API reference</a>.</p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline InferenceContainerConfig& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline InferenceContainerConfig& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline InferenceContainerConfig& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    InferenceContainerConfig& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
   private:
 

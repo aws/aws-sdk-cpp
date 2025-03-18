@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailOutputContent::GuardrailOutputContent() : 
-    m_textHasBeenSet(false)
-{
-}
-
 GuardrailOutputContent::GuardrailOutputContent(JsonView jsonValue)
-  : GuardrailOutputContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GuardrailOutputContent& GuardrailOutputContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

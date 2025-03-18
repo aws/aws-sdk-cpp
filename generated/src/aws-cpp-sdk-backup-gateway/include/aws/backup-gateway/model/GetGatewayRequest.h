@@ -21,7 +21,7 @@ namespace Model
   class GetGatewayRequest : public BackupGatewayRequest
   {
   public:
-    AWS_BACKUPGATEWAY_API GetGatewayRequest();
+    AWS_BACKUPGATEWAY_API GetGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway.</p>
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline GetGatewayRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline GetGatewayRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline GetGatewayRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    GetGatewayRequest& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
   private:
 

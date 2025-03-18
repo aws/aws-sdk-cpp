@@ -29,7 +29,7 @@ namespace Model
   class CreateParticipantConnectionResult
   {
   public:
-    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult();
+    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult() = default;
     AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Creates the participant's websocket connection.</p>
      */
-    inline const Websocket& GetWebsocket() const{ return m_websocket; }
-    inline void SetWebsocket(const Websocket& value) { m_websocket = value; }
-    inline void SetWebsocket(Websocket&& value) { m_websocket = std::move(value); }
-    inline CreateParticipantConnectionResult& WithWebsocket(const Websocket& value) { SetWebsocket(value); return *this;}
-    inline CreateParticipantConnectionResult& WithWebsocket(Websocket&& value) { SetWebsocket(std::move(value)); return *this;}
+    inline const Websocket& GetWebsocket() const { return m_websocket; }
+    template<typename WebsocketT = Websocket>
+    void SetWebsocket(WebsocketT&& value) { m_websocketHasBeenSet = true; m_websocket = std::forward<WebsocketT>(value); }
+    template<typename WebsocketT = Websocket>
+    CreateParticipantConnectionResult& WithWebsocket(WebsocketT&& value) { SetWebsocket(std::forward<WebsocketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,30 +50,31 @@ namespace Model
      * <p>Creates the participant's connection credentials. The authentication token
      * associated with the participant's connection.</p>
      */
-    inline const ConnectionCredentials& GetConnectionCredentials() const{ return m_connectionCredentials; }
-    inline void SetConnectionCredentials(const ConnectionCredentials& value) { m_connectionCredentials = value; }
-    inline void SetConnectionCredentials(ConnectionCredentials&& value) { m_connectionCredentials = std::move(value); }
-    inline CreateParticipantConnectionResult& WithConnectionCredentials(const ConnectionCredentials& value) { SetConnectionCredentials(value); return *this;}
-    inline CreateParticipantConnectionResult& WithConnectionCredentials(ConnectionCredentials&& value) { SetConnectionCredentials(std::move(value)); return *this;}
+    inline const ConnectionCredentials& GetConnectionCredentials() const { return m_connectionCredentials; }
+    template<typename ConnectionCredentialsT = ConnectionCredentials>
+    void SetConnectionCredentials(ConnectionCredentialsT&& value) { m_connectionCredentialsHasBeenSet = true; m_connectionCredentials = std::forward<ConnectionCredentialsT>(value); }
+    template<typename ConnectionCredentialsT = ConnectionCredentials>
+    CreateParticipantConnectionResult& WithConnectionCredentials(ConnectionCredentialsT&& value) { SetConnectionCredentials(std::forward<ConnectionCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateParticipantConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateParticipantConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateParticipantConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateParticipantConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Websocket m_websocket;
+    bool m_websocketHasBeenSet = false;
 
     ConnectionCredentials m_connectionCredentials;
+    bool m_connectionCredentialsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

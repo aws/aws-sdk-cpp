@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Anchor::Anchor() : 
-    m_anchorType(AnchorType::NOT_SET),
-    m_anchorTypeHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
-{
-}
-
 Anchor::Anchor(JsonView jsonValue)
-  : Anchor()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Anchor& Anchor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnchorType"))
   {
     m_anchorType = AnchorTypeMapper::GetAnchorTypeForName(jsonValue.GetString("AnchorType"));
-
     m_anchorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Offset"))
   {
     m_offset = jsonValue.GetInteger("Offset");
-
     m_offsetHasBeenSet = true;
   }
-
   return *this;
 }
 

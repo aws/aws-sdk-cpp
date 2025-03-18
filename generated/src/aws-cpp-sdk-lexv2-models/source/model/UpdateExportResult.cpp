@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateExportResult::UpdateExportResult() : 
-    m_fileFormat(ImportExportFileFormat::NOT_SET),
-    m_exportStatus(ExportStatus::NOT_SET)
-{
-}
-
 UpdateExportResult::UpdateExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateExportResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ UpdateExportResult& UpdateExportResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("exportId"))
   {
     m_exportId = jsonValue.GetString("exportId");
-
+    m_exportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceSpecification"))
   {
     m_resourceSpecification = jsonValue.GetObject("resourceSpecification");
-
+    m_resourceSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileFormat"))
   {
     m_fileFormat = ImportExportFileFormatMapper::GetImportExportFileFormatForName(jsonValue.GetString("fileFormat"));
-
+    m_fileFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportStatus"))
   {
     m_exportStatus = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("exportStatus"));
-
+    m_exportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
+    m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

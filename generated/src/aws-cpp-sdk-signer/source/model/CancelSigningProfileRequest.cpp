@@ -12,11 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelSigningProfileRequest::CancelSigningProfileRequest() : 
-    m_profileNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelSigningProfileRequest::SerializePayload() const
 {
   return {};

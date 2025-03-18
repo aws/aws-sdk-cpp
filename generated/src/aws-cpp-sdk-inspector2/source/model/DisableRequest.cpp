@@ -12,12 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableRequest::DisableRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String DisableRequest::SerializePayload() const
 {
   JsonValue payload;

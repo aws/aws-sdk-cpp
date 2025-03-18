@@ -12,20 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataQualityRulesetEvaluationRunRequest::StartDataQualityRulesetEvaluationRunRequest() : 
-    m_dataSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_additionalRunOptionsHasBeenSet(false),
-    m_rulesetNamesHasBeenSet(false),
-    m_additionalDataSourcesHasBeenSet(false)
-{
-}
-
 Aws::String StartDataQualityRulesetEvaluationRunRequest::SerializePayload() const
 {
   JsonValue payload;

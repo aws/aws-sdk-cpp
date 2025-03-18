@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-TemplateRule::TemplateRule() : 
-    m_caseRuleIdHasBeenSet(false),
-    m_fieldIdHasBeenSet(false)
-{
-}
-
 TemplateRule::TemplateRule(JsonView jsonValue)
-  : TemplateRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TemplateRule& TemplateRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseRuleId"))
   {
     m_caseRuleId = jsonValue.GetString("caseRuleId");
-
     m_caseRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldId"))
   {
     m_fieldId = jsonValue.GetString("fieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateProfileJobRequest : public GlueDataBrewRequest
   {
   public:
-    AWS_GLUEDATABREW_API CreateProfileJobRequest();
+    AWS_GLUEDATABREW_API CreateProfileJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the dataset that this job is to act upon.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline CreateProfileJobRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline CreateProfileJobRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    CreateProfileJobRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
      * the job.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline CreateProfileJobRequest& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline CreateProfileJobRequest& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    CreateProfileJobRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * with KMS-managed keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side
      * encryption with keys managed by Amazon S3.</p> </li> </ul>
      */
-    inline const EncryptionMode& GetEncryptionMode() const{ return m_encryptionMode; }
+    inline EncryptionMode GetEncryptionMode() const { return m_encryptionMode; }
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
-    inline void SetEncryptionMode(const EncryptionMode& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
-    inline void SetEncryptionMode(EncryptionMode&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
-    inline CreateProfileJobRequest& WithEncryptionMode(const EncryptionMode& value) { SetEncryptionMode(value); return *this;}
-    inline CreateProfileJobRequest& WithEncryptionMode(EncryptionMode&& value) { SetEncryptionMode(std::move(value)); return *this;}
+    inline void SetEncryptionMode(EncryptionMode value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+    inline CreateProfileJobRequest& WithEncryptionMode(EncryptionMode value) { SetEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * <p>The name of the job to be created. Valid characters are alphanumeric (A-Z,
      * a-z, 0-9), hyphen (-), period (.), and space.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateProfileJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateProfileJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateProfileJobRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +96,10 @@ namespace Model
      * <p>Enables or disables Amazon CloudWatch logging for the job. If logging is
      * enabled, CloudWatch writes one log stream for each job run.</p>
      */
-    inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
+    inline LogSubscription GetLogSubscription() const { return m_logSubscription; }
     inline bool LogSubscriptionHasBeenSet() const { return m_logSubscriptionHasBeenSet; }
-    inline void SetLogSubscription(const LogSubscription& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
-    inline void SetLogSubscription(LogSubscription&& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = std::move(value); }
-    inline CreateProfileJobRequest& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
-    inline CreateProfileJobRequest& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
+    inline void SetLogSubscription(LogSubscription value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
+    inline CreateProfileJobRequest& WithLogSubscription(LogSubscription value) { SetLogSubscription(value); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +107,7 @@ namespace Model
      * <p>The maximum number of nodes that DataBrew can use when the job processes
      * data.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline CreateProfileJobRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -127,7 +117,7 @@ namespace Model
     /**
      * <p>The maximum number of times to retry the job after a job run fails.</p>
      */
-    inline int GetMaxRetries() const{ return m_maxRetries; }
+    inline int GetMaxRetries() const { return m_maxRetries; }
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
     inline CreateProfileJobRequest& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
@@ -135,12 +125,12 @@ namespace Model
 
     ///@{
     
-    inline const S3Location& GetOutputLocation() const{ return m_outputLocation; }
+    inline const S3Location& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const S3Location& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(S3Location&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline CreateProfileJobRequest& WithOutputLocation(const S3Location& value) { SetOutputLocation(value); return *this;}
-    inline CreateProfileJobRequest& WithOutputLocation(S3Location&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = S3Location>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = S3Location>
+    CreateProfileJobRequest& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,26 +139,26 @@ namespace Model
      * override default parameters of evaluations. When configuration is null, the
      * profile job will run with default settings.</p>
      */
-    inline const ProfileConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ProfileConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ProfileConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ProfileConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateProfileJobRequest& WithConfiguration(const ProfileConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateProfileJobRequest& WithConfiguration(ProfileConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ProfileConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ProfileConfiguration>
+    CreateProfileJobRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of validation configurations that are applied to the profile job.</p>
      */
-    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const { return m_validationConfigurations; }
     inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
-    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
-    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
-    inline CreateProfileJobRequest& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
-    inline CreateProfileJobRequest& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
-    inline CreateProfileJobRequest& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ValidationConfigurationsT = Aws::Vector<ValidationConfiguration>>
+    void SetValidationConfigurations(ValidationConfigurationsT&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::forward<ValidationConfigurationsT>(value); }
+    template<typename ValidationConfigurationsT = Aws::Vector<ValidationConfiguration>>
+    CreateProfileJobRequest& WithValidationConfigurations(ValidationConfigurationsT&& value) { SetValidationConfigurations(std::forward<ValidationConfigurationsT>(value)); return *this;}
+    template<typename ValidationConfigurationsT = ValidationConfiguration>
+    CreateProfileJobRequest& AddValidationConfigurations(ValidationConfigurationsT&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.emplace_back(std::forward<ValidationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,33 +166,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
      * role to be assumed when DataBrew runs the job.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateProfileJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateProfileJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateProfileJobRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata tags to apply to this job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProfileJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateProfileJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProfileJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateProfileJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProfileJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProfileJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateProfileJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProfileJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProfileJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateProfileJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateProfileJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -210,7 +195,7 @@ namespace Model
      * <p>The job's timeout in minutes. A job that attempts to run longer than this
      * timeout period ends with a status of <code>TIMEOUT</code>.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline CreateProfileJobRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -223,12 +208,12 @@ namespace Model
      * the default value will be used. The default value is CUSTOM_ROWS for the mode
      * parameter and 20000 for the size parameter.</p>
      */
-    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+    inline const JobSample& GetJobSample() const { return m_jobSample; }
     inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
-    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
-    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
-    inline CreateProfileJobRequest& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
-    inline CreateProfileJobRequest& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+    template<typename JobSampleT = JobSample>
+    void SetJobSample(JobSampleT&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::forward<JobSampleT>(value); }
+    template<typename JobSampleT = JobSample>
+    CreateProfileJobRequest& WithJobSample(JobSampleT&& value) { SetJobSample(std::forward<JobSampleT>(value)); return *this;}
     ///@}
   private:
 
@@ -238,19 +223,19 @@ namespace Model
     Aws::String m_encryptionKeyArn;
     bool m_encryptionKeyArnHasBeenSet = false;
 
-    EncryptionMode m_encryptionMode;
+    EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
     bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    LogSubscription m_logSubscription;
+    LogSubscription m_logSubscription{LogSubscription::NOT_SET};
     bool m_logSubscriptionHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
-    int m_maxRetries;
+    int m_maxRetries{0};
     bool m_maxRetriesHasBeenSet = false;
 
     S3Location m_outputLocation;
@@ -268,7 +253,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
     JobSample m_jobSample;

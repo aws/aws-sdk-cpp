@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppInstanceRetentionSettingsRequest::GetAppInstanceRetentionSettingsRequest() : 
-    m_appInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAppInstanceRetentionSettingsRequest::SerializePayload() const
 {
   return {};

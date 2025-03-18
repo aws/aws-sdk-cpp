@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamAddressHistoryRecord::IpamAddressHistoryRecord() : 
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceType(IpamAddressHistoryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceComplianceStatus(IpamComplianceStatus::NOT_SET),
-    m_resourceComplianceStatusHasBeenSet(false),
-    m_resourceOverlapStatus(IpamOverlapStatus::NOT_SET),
-    m_resourceOverlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_sampledStartTimeHasBeenSet(false),
-    m_sampledEndTimeHasBeenSet(false)
-{
-}
-
 IpamAddressHistoryRecord::IpamAddressHistoryRecord(const XmlNode& xmlNode)
-  : IpamAddressHistoryRecord()
 {
   *this = xmlNode;
 }
@@ -65,7 +46,7 @@ IpamAddressHistoryRecord& IpamAddressHistoryRecord::operator =(const XmlNode& xm
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamAddressHistoryResourceTypeMapper::GetIpamAddressHistoryResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamAddressHistoryResourceTypeMapper::GetIpamAddressHistoryResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
@@ -89,13 +70,13 @@ IpamAddressHistoryRecord& IpamAddressHistoryRecord::operator =(const XmlNode& xm
     XmlNode resourceComplianceStatusNode = resultNode.FirstChild("resourceComplianceStatus");
     if(!resourceComplianceStatusNode.IsNull())
     {
-      m_resourceComplianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceComplianceStatusNode.GetText()).c_str()).c_str());
+      m_resourceComplianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceComplianceStatusNode.GetText()).c_str()));
       m_resourceComplianceStatusHasBeenSet = true;
     }
     XmlNode resourceOverlapStatusNode = resultNode.FirstChild("resourceOverlapStatus");
     if(!resourceOverlapStatusNode.IsNull())
     {
-      m_resourceOverlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceOverlapStatusNode.GetText()).c_str()).c_str());
+      m_resourceOverlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceOverlapStatusNode.GetText()).c_str()));
       m_resourceOverlapStatusHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");

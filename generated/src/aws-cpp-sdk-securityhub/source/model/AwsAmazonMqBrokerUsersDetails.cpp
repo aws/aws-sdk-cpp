@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerUsersDetails::AwsAmazonMqBrokerUsersDetails() : 
-    m_pendingChangeHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerUsersDetails::AwsAmazonMqBrokerUsersDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerUsersDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsAmazonMqBrokerUsersDetails& AwsAmazonMqBrokerUsersDetails::operator =(JsonVie
   if(jsonValue.ValueExists("PendingChange"))
   {
     m_pendingChange = jsonValue.GetString("PendingChange");
-
     m_pendingChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

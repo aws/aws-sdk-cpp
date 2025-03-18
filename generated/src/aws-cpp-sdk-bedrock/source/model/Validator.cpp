@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-Validator::Validator() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 Validator::Validator(JsonView jsonValue)
-  : Validator()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Validator& Validator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Page::Page() : 
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_lineRangeHasBeenSet(false),
-    m_offsetRangeHasBeenSet(false)
-{
-}
-
 Page::Page(JsonView jsonValue)
-  : Page()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Page& Page::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PageNumber"))
   {
     m_pageNumber = jsonValue.GetInt64("PageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineRange"))
   {
     m_lineRange = jsonValue.GetObject("LineRange");
-
     m_lineRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OffsetRange"))
   {
     m_offsetRange = jsonValue.GetObject("OffsetRange");
-
     m_offsetRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

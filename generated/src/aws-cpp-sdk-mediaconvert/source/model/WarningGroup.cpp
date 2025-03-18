@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-WarningGroup::WarningGroup() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 WarningGroup::WarningGroup(JsonView jsonValue)
-  : WarningGroup()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WarningGroup& WarningGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetInteger("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

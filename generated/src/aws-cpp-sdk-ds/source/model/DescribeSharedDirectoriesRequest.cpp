@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSharedDirectoriesRequest::DescribeSharedDirectoriesRequest() : 
-    m_ownerDirectoryIdHasBeenSet(false),
-    m_sharedDirectoryIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSharedDirectoriesRequest::SerializePayload() const
 {
   JsonValue payload;

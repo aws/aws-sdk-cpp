@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ActiveInstance::ActiveInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_instanceHealth(InstanceHealthStatus::NOT_SET),
-    m_instanceHealthHasBeenSet(false)
-{
-}
-
 ActiveInstance::ActiveInstance(const XmlNode& xmlNode)
-  : ActiveInstance()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ ActiveInstance& ActiveInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceHealthNode = resultNode.FirstChild("instanceHealth");
     if(!instanceHealthNode.IsNull())
     {
-      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceHealthNode.GetText()).c_str()).c_str());
+      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceHealthNode.GetText()).c_str()));
       m_instanceHealthHasBeenSet = true;
     }
   }

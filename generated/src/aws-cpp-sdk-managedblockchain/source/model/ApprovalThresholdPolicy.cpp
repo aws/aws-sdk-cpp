@@ -18,18 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-ApprovalThresholdPolicy::ApprovalThresholdPolicy() : 
-    m_thresholdPercentage(0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_proposalDurationInHours(0),
-    m_proposalDurationInHoursHasBeenSet(false),
-    m_thresholdComparator(ThresholdComparator::NOT_SET),
-    m_thresholdComparatorHasBeenSet(false)
-{
-}
-
 ApprovalThresholdPolicy::ApprovalThresholdPolicy(JsonView jsonValue)
-  : ApprovalThresholdPolicy()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ApprovalThresholdPolicy& ApprovalThresholdPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ThresholdPercentage"))
   {
     m_thresholdPercentage = jsonValue.GetInteger("ThresholdPercentage");
-
     m_thresholdPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProposalDurationInHours"))
   {
     m_proposalDurationInHours = jsonValue.GetInteger("ProposalDurationInHours");
-
     m_proposalDurationInHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdComparator"))
   {
     m_thresholdComparator = ThresholdComparatorMapper::GetThresholdComparatorForName(jsonValue.GetString("ThresholdComparator"));
-
     m_thresholdComparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

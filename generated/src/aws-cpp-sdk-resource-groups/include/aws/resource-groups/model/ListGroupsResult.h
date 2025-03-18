@@ -29,7 +29,7 @@ namespace Model
   class ListGroupsResult
   {
   public:
-    AWS_RESOURCEGROUPS_API ListGroupsResult();
+    AWS_RESOURCEGROUPS_API ListGroupsResult() = default;
     AWS_RESOURCEGROUPS_API ListGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
      * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
-    inline const Aws::Vector<GroupIdentifier>& GetGroupIdentifiers() const{ return m_groupIdentifiers; }
-    inline void SetGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { m_groupIdentifiers = value; }
-    inline void SetGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { m_groupIdentifiers = std::move(value); }
-    inline ListGroupsResult& WithGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { SetGroupIdentifiers(value); return *this;}
-    inline ListGroupsResult& WithGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { SetGroupIdentifiers(std::move(value)); return *this;}
-    inline ListGroupsResult& AddGroupIdentifiers(const GroupIdentifier& value) { m_groupIdentifiers.push_back(value); return *this; }
-    inline ListGroupsResult& AddGroupIdentifiers(GroupIdentifier&& value) { m_groupIdentifiers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupIdentifier>& GetGroupIdentifiers() const { return m_groupIdentifiers; }
+    template<typename GroupIdentifiersT = Aws::Vector<GroupIdentifier>>
+    void SetGroupIdentifiers(GroupIdentifiersT&& value) { m_groupIdentifiersHasBeenSet = true; m_groupIdentifiers = std::forward<GroupIdentifiersT>(value); }
+    template<typename GroupIdentifiersT = Aws::Vector<GroupIdentifier>>
+    ListGroupsResult& WithGroupIdentifiers(GroupIdentifiersT&& value) { SetGroupIdentifiers(std::forward<GroupIdentifiersT>(value)); return *this;}
+    template<typename GroupIdentifiersT = GroupIdentifier>
+    ListGroupsResult& AddGroupIdentifiers(GroupIdentifiersT&& value) { m_groupIdentifiersHasBeenSet = true; m_groupIdentifiers.emplace_back(std::forward<GroupIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GroupIdentifier> m_groupIdentifiers;
+    bool m_groupIdentifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

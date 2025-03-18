@@ -12,20 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamProcessorRequest::CreateStreamProcessorRequest() : 
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_regionsOfInterestHasBeenSet(false),
-    m_dataSharingPreferenceHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamProcessorRequest::SerializePayload() const
 {
   JsonValue payload;

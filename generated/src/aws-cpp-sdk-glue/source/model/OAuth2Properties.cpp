@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OAuth2Properties::OAuth2Properties() : 
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_oAuth2ClientApplicationHasBeenSet(false),
-    m_tokenUrlHasBeenSet(false),
-    m_tokenUrlParametersMapHasBeenSet(false)
-{
-}
-
 OAuth2Properties::OAuth2Properties(JsonView jsonValue)
-  : OAuth2Properties()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OAuth2GrantType"))
   {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("OAuth2GrantType"));
-
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2ClientApplication"))
   {
     m_oAuth2ClientApplication = jsonValue.GetObject("OAuth2ClientApplication");
-
     m_oAuth2ClientApplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("TokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenUrlParametersMap"))
   {
     Aws::Map<Aws::String, JsonView> tokenUrlParametersMapJsonMap = jsonValue.GetObject("TokenUrlParametersMap").GetAllObjects();
@@ -65,7 +49,6 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
     }
     m_tokenUrlParametersMapHasBeenSet = true;
   }
-
   return *this;
 }
 

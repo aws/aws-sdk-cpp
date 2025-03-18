@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyRuleRequest::ModifyRuleRequest() : 
-    m_ruleArnHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyRuleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

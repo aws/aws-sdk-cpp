@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ComponentUpdateRequest::ComponentUpdateRequest() : 
-    m_updateType(ComponentUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_propertyUpdatesHasBeenSet(false),
-    m_propertyGroupUpdatesHasBeenSet(false)
-{
-}
-
 ComponentUpdateRequest::ComponentUpdateRequest(JsonView jsonValue)
-  : ComponentUpdateRequest()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("updateType"))
   {
     m_updateType = ComponentUpdateTypeMapper::GetComponentUpdateTypeForName(jsonValue.GetString("updateType"));
-
     m_updateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
-
     m_componentTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyUpdates"))
   {
     Aws::Map<Aws::String, JsonView> propertyUpdatesJsonMap = jsonValue.GetObject("propertyUpdates").GetAllObjects();
@@ -66,7 +49,6 @@ ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
     }
     m_propertyUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyGroupUpdates"))
   {
     Aws::Map<Aws::String, JsonView> propertyGroupUpdatesJsonMap = jsonValue.GetObject("propertyGroupUpdates").GetAllObjects();
@@ -76,7 +58,6 @@ ComponentUpdateRequest& ComponentUpdateRequest::operator =(JsonView jsonValue)
     }
     m_propertyGroupUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

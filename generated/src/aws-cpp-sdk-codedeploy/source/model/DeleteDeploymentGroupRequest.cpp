@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeploymentGroupRequest::DeleteDeploymentGroupRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;

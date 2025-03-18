@@ -18,15 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-AppMonitorDetails::AppMonitorDetails() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 AppMonitorDetails::AppMonitorDetails(JsonView jsonValue)
-  : AppMonitorDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AppMonitorDetails& AppMonitorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

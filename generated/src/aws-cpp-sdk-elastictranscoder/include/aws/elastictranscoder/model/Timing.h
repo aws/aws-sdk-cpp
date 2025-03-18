@@ -29,7 +29,7 @@ namespace Model
   class Timing
   {
   public:
-    AWS_ELASTICTRANSCODER_API Timing();
+    AWS_ELASTICTRANSCODER_API Timing() = default;
     AWS_ELASTICTRANSCODER_API Timing(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Timing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The time the job was submitted to Elastic Transcoder, in epoch
      * milliseconds.</p>
      */
-    inline long long GetSubmitTimeMillis() const{ return m_submitTimeMillis; }
+    inline long long GetSubmitTimeMillis() const { return m_submitTimeMillis; }
     inline bool SubmitTimeMillisHasBeenSet() const { return m_submitTimeMillisHasBeenSet; }
     inline void SetSubmitTimeMillis(long long value) { m_submitTimeMillisHasBeenSet = true; m_submitTimeMillis = value; }
     inline Timing& WithSubmitTimeMillis(long long value) { SetSubmitTimeMillis(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The time the job began transcoding, in epoch milliseconds.</p>
      */
-    inline long long GetStartTimeMillis() const{ return m_startTimeMillis; }
+    inline long long GetStartTimeMillis() const { return m_startTimeMillis; }
     inline bool StartTimeMillisHasBeenSet() const { return m_startTimeMillisHasBeenSet; }
     inline void SetStartTimeMillis(long long value) { m_startTimeMillisHasBeenSet = true; m_startTimeMillis = value; }
     inline Timing& WithStartTimeMillis(long long value) { SetStartTimeMillis(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>The time the job finished transcoding, in epoch milliseconds.</p>
      */
-    inline long long GetFinishTimeMillis() const{ return m_finishTimeMillis; }
+    inline long long GetFinishTimeMillis() const { return m_finishTimeMillis; }
     inline bool FinishTimeMillisHasBeenSet() const { return m_finishTimeMillisHasBeenSet; }
     inline void SetFinishTimeMillis(long long value) { m_finishTimeMillisHasBeenSet = true; m_finishTimeMillis = value; }
     inline Timing& WithFinishTimeMillis(long long value) { SetFinishTimeMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_submitTimeMillis;
+    long long m_submitTimeMillis{0};
     bool m_submitTimeMillisHasBeenSet = false;
 
-    long long m_startTimeMillis;
+    long long m_startTimeMillis{0};
     bool m_startTimeMillisHasBeenSet = false;
 
-    long long m_finishTimeMillis;
+    long long m_finishTimeMillis{0};
     bool m_finishTimeMillisHasBeenSet = false;
   };
 

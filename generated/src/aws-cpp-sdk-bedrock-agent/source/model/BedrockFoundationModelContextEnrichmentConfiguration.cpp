@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-BedrockFoundationModelContextEnrichmentConfiguration::BedrockFoundationModelContextEnrichmentConfiguration() : 
-    m_enrichmentStrategyConfigurationHasBeenSet(false),
-    m_modelArnHasBeenSet(false)
-{
-}
-
 BedrockFoundationModelContextEnrichmentConfiguration::BedrockFoundationModelContextEnrichmentConfiguration(JsonView jsonValue)
-  : BedrockFoundationModelContextEnrichmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BedrockFoundationModelContextEnrichmentConfiguration& BedrockFoundationModelCont
   if(jsonValue.ValueExists("enrichmentStrategyConfiguration"))
   {
     m_enrichmentStrategyConfiguration = jsonValue.GetObject("enrichmentStrategyConfiguration");
-
     m_enrichmentStrategyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

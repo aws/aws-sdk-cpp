@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLineageNodeHistoryResult::ListLineageNodeHistoryResult()
-{
-}
-
 ListLineageNodeHistoryResult::ListLineageNodeHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListLineageNodeHistoryResult& ListLineageNodeHistoryResult::operator =(const Aws
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
@@ -42,14 +37,15 @@ ListLineageNodeHistoryResult& ListLineageNodeHistoryResult::operator =(const Aws
     {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
     }
+    m_nodesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

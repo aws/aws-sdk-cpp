@@ -42,7 +42,7 @@ namespace Model
   class RegexMatchSetUpdate
   {
   public:
-    AWS_WAF_API RegexMatchSetUpdate();
+    AWS_WAF_API RegexMatchSetUpdate() = default;
     AWS_WAF_API RegexMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API RegexMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
     /**
      * <p>Specifies whether to insert or delete a <a>RegexMatchTuple</a>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RegexMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline RegexMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline RegexMatchSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -69,16 +67,16 @@ namespace Model
      * the values in the <code>RegexMatchTuple</code> that you want to delete from the
      * <code>RegexMatchSet</code>.</p>
      */
-    inline const RegexMatchTuple& GetRegexMatchTuple() const{ return m_regexMatchTuple; }
+    inline const RegexMatchTuple& GetRegexMatchTuple() const { return m_regexMatchTuple; }
     inline bool RegexMatchTupleHasBeenSet() const { return m_regexMatchTupleHasBeenSet; }
-    inline void SetRegexMatchTuple(const RegexMatchTuple& value) { m_regexMatchTupleHasBeenSet = true; m_regexMatchTuple = value; }
-    inline void SetRegexMatchTuple(RegexMatchTuple&& value) { m_regexMatchTupleHasBeenSet = true; m_regexMatchTuple = std::move(value); }
-    inline RegexMatchSetUpdate& WithRegexMatchTuple(const RegexMatchTuple& value) { SetRegexMatchTuple(value); return *this;}
-    inline RegexMatchSetUpdate& WithRegexMatchTuple(RegexMatchTuple&& value) { SetRegexMatchTuple(std::move(value)); return *this;}
+    template<typename RegexMatchTupleT = RegexMatchTuple>
+    void SetRegexMatchTuple(RegexMatchTupleT&& value) { m_regexMatchTupleHasBeenSet = true; m_regexMatchTuple = std::forward<RegexMatchTupleT>(value); }
+    template<typename RegexMatchTupleT = RegexMatchTuple>
+    RegexMatchSetUpdate& WithRegexMatchTuple(RegexMatchTupleT&& value) { SetRegexMatchTuple(std::forward<RegexMatchTupleT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     RegexMatchTuple m_regexMatchTuple;

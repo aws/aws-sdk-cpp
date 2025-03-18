@@ -25,7 +25,7 @@ namespace Model
   class GetPipelineExecutionRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API GetPipelineExecutionRequest();
+    AWS_CODEPIPELINE_API GetPipelineExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline GetPipelineExecutionRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline GetPipelineExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline GetPipelineExecutionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    GetPipelineExecutionRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The ID of the pipeline execution about which you want to get execution
      * details.</p>
      */
-    inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+    inline const Aws::String& GetPipelineExecutionId() const { return m_pipelineExecutionId; }
     inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
-    inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
-    inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId.assign(value); }
-    inline GetPipelineExecutionRequest& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
-    inline GetPipelineExecutionRequest& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
-    inline GetPipelineExecutionRequest& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    template<typename PipelineExecutionIdT = Aws::String>
+    void SetPipelineExecutionId(PipelineExecutionIdT&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::forward<PipelineExecutionIdT>(value); }
+    template<typename PipelineExecutionIdT = Aws::String>
+    GetPipelineExecutionRequest& WithPipelineExecutionId(PipelineExecutionIdT&& value) { SetPipelineExecutionId(std::forward<PipelineExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

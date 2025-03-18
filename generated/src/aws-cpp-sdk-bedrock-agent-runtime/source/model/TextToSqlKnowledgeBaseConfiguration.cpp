@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-TextToSqlKnowledgeBaseConfiguration::TextToSqlKnowledgeBaseConfiguration() : 
-    m_knowledgeBaseArnHasBeenSet(false)
-{
-}
-
 TextToSqlKnowledgeBaseConfiguration::TextToSqlKnowledgeBaseConfiguration(JsonView jsonValue)
-  : TextToSqlKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextToSqlKnowledgeBaseConfiguration& TextToSqlKnowledgeBaseConfiguration::operat
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   return *this;
 }
 

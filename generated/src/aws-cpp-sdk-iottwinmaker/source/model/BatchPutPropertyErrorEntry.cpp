@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-BatchPutPropertyErrorEntry::BatchPutPropertyErrorEntry() : 
-    m_errorsHasBeenSet(false)
-{
-}
-
 BatchPutPropertyErrorEntry::BatchPutPropertyErrorEntry(JsonView jsonValue)
-  : BatchPutPropertyErrorEntry()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BatchPutPropertyErrorEntry& BatchPutPropertyErrorEntry::operator =(JsonView json
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

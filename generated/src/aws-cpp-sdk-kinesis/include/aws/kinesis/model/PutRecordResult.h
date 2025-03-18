@@ -34,7 +34,7 @@ namespace Model
   class PutRecordResult
   {
   public:
-    AWS_KINESIS_API PutRecordResult();
+    AWS_KINESIS_API PutRecordResult() = default;
     AWS_KINESIS_API PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
-    inline void SetShardId(const Aws::String& value) { m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardId.assign(value); }
-    inline PutRecordResult& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline PutRecordResult& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline PutRecordResult& WithShardId(const char* value) { SetShardId(value); return *this;}
+    inline const Aws::String& GetShardId() const { return m_shardId; }
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    PutRecordResult& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,13 +57,11 @@ namespace Model
      * sequence number is the identifier associated with every record put into the
      * stream.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumber.assign(value); }
-    inline PutRecordResult& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline PutRecordResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline PutRecordResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    PutRecordResult& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,32 +72,32 @@ namespace Model
      * encryption on the records in the stream using a customer-managed Amazon Web
      * Services KMS key.</p> </li> </ul>
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
-    inline PutRecordResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline PutRecordResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline PutRecordResult& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRecordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRecordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRecordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRecordResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_shardId;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
+    bool m_sequenceNumberHasBeenSet = false;
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

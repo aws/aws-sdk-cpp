@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-PublishMetricAction::PublishMetricAction() : 
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 PublishMetricAction::PublishMetricAction(JsonView jsonValue)
-  : PublishMetricAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PublishMetricAction& PublishMetricAction::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

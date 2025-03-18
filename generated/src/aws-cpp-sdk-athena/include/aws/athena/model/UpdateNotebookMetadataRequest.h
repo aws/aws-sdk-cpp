@@ -21,7 +21,7 @@ namespace Model
   class UpdateNotebookMetadataRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API UpdateNotebookMetadataRequest();
+    AWS_ATHENA_API UpdateNotebookMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the notebook to update the metadata for.</p>
      */
-    inline const Aws::String& GetNotebookId() const{ return m_notebookId; }
+    inline const Aws::String& GetNotebookId() const { return m_notebookId; }
     inline bool NotebookIdHasBeenSet() const { return m_notebookIdHasBeenSet; }
-    inline void SetNotebookId(const Aws::String& value) { m_notebookIdHasBeenSet = true; m_notebookId = value; }
-    inline void SetNotebookId(Aws::String&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::move(value); }
-    inline void SetNotebookId(const char* value) { m_notebookIdHasBeenSet = true; m_notebookId.assign(value); }
-    inline UpdateNotebookMetadataRequest& WithNotebookId(const Aws::String& value) { SetNotebookId(value); return *this;}
-    inline UpdateNotebookMetadataRequest& WithNotebookId(Aws::String&& value) { SetNotebookId(std::move(value)); return *this;}
-    inline UpdateNotebookMetadataRequest& WithNotebookId(const char* value) { SetNotebookId(value); return *this;}
+    template<typename NotebookIdT = Aws::String>
+    void SetNotebookId(NotebookIdT&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::forward<NotebookIdT>(value); }
+    template<typename NotebookIdT = Aws::String>
+    UpdateNotebookMetadataRequest& WithNotebookId(NotebookIdT&& value) { SetNotebookId(std::forward<NotebookIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
      * this token or the action will fail.</p> 
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateNotebookMetadataRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateNotebookMetadataRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateNotebookMetadataRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateNotebookMetadataRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name to update the notebook to.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateNotebookMetadataRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateNotebookMetadataRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateNotebookMetadataRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateNotebookMetadataRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

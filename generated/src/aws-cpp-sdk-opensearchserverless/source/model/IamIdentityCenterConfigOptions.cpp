@@ -18,20 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-IamIdentityCenterConfigOptions::IamIdentityCenterConfigOptions() : 
-    m_instanceArnHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_userAttribute(IamIdentityCenterUserAttribute::NOT_SET),
-    m_userAttributeHasBeenSet(false),
-    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
-    m_groupAttributeHasBeenSet(false)
-{
-}
-
 IamIdentityCenterConfigOptions::IamIdentityCenterConfigOptions(JsonView jsonValue)
-  : IamIdentityCenterConfigOptions()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ IamIdentityCenterConfigOptions& IamIdentityCenterConfigOptions::operator =(JsonV
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationDescription"))
   {
     m_applicationDescription = jsonValue.GetString("applicationDescription");
-
     m_applicationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttribute"))
   {
     m_userAttribute = IamIdentityCenterUserAttributeMapper::GetIamIdentityCenterUserAttributeForName(jsonValue.GetString("userAttribute"));
-
     m_userAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupAttribute"))
   {
     m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
-
     m_groupAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

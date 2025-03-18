@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EndpointConfig::EndpointConfig() : 
-    m_sageMakerHasBeenSet(false)
-{
-}
-
 EndpointConfig::EndpointConfig(JsonView jsonValue)
-  : EndpointConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EndpointConfig& EndpointConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sageMaker"))
   {
     m_sageMaker = jsonValue.GetObject("sageMaker");
-
     m_sageMakerHasBeenSet = true;
   }
-
   return *this;
 }
 

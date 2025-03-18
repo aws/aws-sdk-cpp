@@ -12,16 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfiguredTableAssociationRequest::CreateConfiguredTableAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_configuredTableIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfiguredTableAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

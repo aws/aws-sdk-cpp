@@ -32,7 +32,7 @@ namespace Model
   class QuestionDifference
   {
   public:
-    AWS_WELLARCHITECTED_API QuestionDifference();
+    AWS_WELLARCHITECTED_API QuestionDifference() = default;
     AWS_WELLARCHITECTED_API QuestionDifference(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API QuestionDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,38 +40,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline QuestionDifference& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline QuestionDifference& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline QuestionDifference& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    QuestionDifference& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionTitle() const{ return m_questionTitle; }
+    inline const Aws::String& GetQuestionTitle() const { return m_questionTitle; }
     inline bool QuestionTitleHasBeenSet() const { return m_questionTitleHasBeenSet; }
-    inline void SetQuestionTitle(const Aws::String& value) { m_questionTitleHasBeenSet = true; m_questionTitle = value; }
-    inline void SetQuestionTitle(Aws::String&& value) { m_questionTitleHasBeenSet = true; m_questionTitle = std::move(value); }
-    inline void SetQuestionTitle(const char* value) { m_questionTitleHasBeenSet = true; m_questionTitle.assign(value); }
-    inline QuestionDifference& WithQuestionTitle(const Aws::String& value) { SetQuestionTitle(value); return *this;}
-    inline QuestionDifference& WithQuestionTitle(Aws::String&& value) { SetQuestionTitle(std::move(value)); return *this;}
-    inline QuestionDifference& WithQuestionTitle(const char* value) { SetQuestionTitle(value); return *this;}
+    template<typename QuestionTitleT = Aws::String>
+    void SetQuestionTitle(QuestionTitleT&& value) { m_questionTitleHasBeenSet = true; m_questionTitle = std::forward<QuestionTitleT>(value); }
+    template<typename QuestionTitleT = Aws::String>
+    QuestionDifference& WithQuestionTitle(QuestionTitleT&& value) { SetQuestionTitle(std::forward<QuestionTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the type of change to the question.</p>
      */
-    inline const DifferenceStatus& GetDifferenceStatus() const{ return m_differenceStatus; }
+    inline DifferenceStatus GetDifferenceStatus() const { return m_differenceStatus; }
     inline bool DifferenceStatusHasBeenSet() const { return m_differenceStatusHasBeenSet; }
-    inline void SetDifferenceStatus(const DifferenceStatus& value) { m_differenceStatusHasBeenSet = true; m_differenceStatus = value; }
-    inline void SetDifferenceStatus(DifferenceStatus&& value) { m_differenceStatusHasBeenSet = true; m_differenceStatus = std::move(value); }
-    inline QuestionDifference& WithDifferenceStatus(const DifferenceStatus& value) { SetDifferenceStatus(value); return *this;}
-    inline QuestionDifference& WithDifferenceStatus(DifferenceStatus&& value) { SetDifferenceStatus(std::move(value)); return *this;}
+    inline void SetDifferenceStatus(DifferenceStatus value) { m_differenceStatusHasBeenSet = true; m_differenceStatus = value; }
+    inline QuestionDifference& WithDifferenceStatus(DifferenceStatus value) { SetDifferenceStatus(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +75,7 @@ namespace Model
     Aws::String m_questionTitle;
     bool m_questionTitleHasBeenSet = false;
 
-    DifferenceStatus m_differenceStatus;
+    DifferenceStatus m_differenceStatus{DifferenceStatus::NOT_SET};
     bool m_differenceStatusHasBeenSet = false;
   };
 

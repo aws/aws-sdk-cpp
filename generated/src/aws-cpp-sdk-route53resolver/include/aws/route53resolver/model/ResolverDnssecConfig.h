@@ -33,7 +33,7 @@ namespace Model
   class ResolverDnssecConfig
   {
   public:
-    AWS_ROUTE53RESOLVER_API ResolverDnssecConfig();
+    AWS_ROUTE53RESOLVER_API ResolverDnssecConfig() = default;
     AWS_ROUTE53RESOLVER_API ResolverDnssecConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API ResolverDnssecConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID for a configuration for DNSSEC validation.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResolverDnssecConfig& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResolverDnssecConfig& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResolverDnssecConfig& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResolverDnssecConfig& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The owner account ID of the virtual private cloud (VPC) for a configuration
      * for DNSSEC validation.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline ResolverDnssecConfig& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline ResolverDnssecConfig& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline ResolverDnssecConfig& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    ResolverDnssecConfig& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The ID of the virtual private cloud (VPC) that you're configuring the DNSSEC
      * validation status for.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResolverDnssecConfig& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResolverDnssecConfig& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResolverDnssecConfig& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResolverDnssecConfig& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,10 @@ namespace Model
      * being disabled but is not complete.</p> </li> <li> <p> <b>DISABLED</b> DNSSEC
      * validation is disabled.</p> </li> </ul>
      */
-    inline const ResolverDNSSECValidationStatus& GetValidationStatus() const{ return m_validationStatus; }
+    inline ResolverDNSSECValidationStatus GetValidationStatus() const { return m_validationStatus; }
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
-    inline void SetValidationStatus(const ResolverDNSSECValidationStatus& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
-    inline void SetValidationStatus(ResolverDNSSECValidationStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = std::move(value); }
-    inline ResolverDnssecConfig& WithValidationStatus(const ResolverDNSSECValidationStatus& value) { SetValidationStatus(value); return *this;}
-    inline ResolverDnssecConfig& WithValidationStatus(ResolverDNSSECValidationStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
+    inline void SetValidationStatus(ResolverDNSSECValidationStatus value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
+    inline ResolverDnssecConfig& WithValidationStatus(ResolverDNSSECValidationStatus value) { SetValidationStatus(value); return *this;}
     ///@}
   private:
 
@@ -110,7 +102,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResolverDNSSECValidationStatus m_validationStatus;
+    ResolverDNSSECValidationStatus m_validationStatus{ResolverDNSSECValidationStatus::NOT_SET};
     bool m_validationStatusHasBeenSet = false;
   };
 

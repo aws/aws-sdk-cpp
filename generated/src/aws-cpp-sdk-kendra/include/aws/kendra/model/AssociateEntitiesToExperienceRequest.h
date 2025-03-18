@@ -23,7 +23,7 @@ namespace Model
   class AssociateEntitiesToExperienceRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API AssociateEntitiesToExperienceRequest();
+    AWS_KENDRA_API AssociateEntitiesToExperienceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,38 @@ namespace Model
     /**
      * <p>The identifier of your Amazon Kendra experience.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssociateEntitiesToExperienceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssociateEntitiesToExperienceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssociateEntitiesToExperienceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssociateEntitiesToExperienceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline AssociateEntitiesToExperienceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline AssociateEntitiesToExperienceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline AssociateEntitiesToExperienceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    AssociateEntitiesToExperienceRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
-    inline const Aws::Vector<EntityConfiguration>& GetEntityList() const{ return m_entityList; }
+    inline const Aws::Vector<EntityConfiguration>& GetEntityList() const { return m_entityList; }
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-    inline void SetEntityList(const Aws::Vector<EntityConfiguration>& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-    inline void SetEntityList(Aws::Vector<EntityConfiguration>&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-    inline AssociateEntitiesToExperienceRequest& WithEntityList(const Aws::Vector<EntityConfiguration>& value) { SetEntityList(value); return *this;}
-    inline AssociateEntitiesToExperienceRequest& WithEntityList(Aws::Vector<EntityConfiguration>&& value) { SetEntityList(std::move(value)); return *this;}
-    inline AssociateEntitiesToExperienceRequest& AddEntityList(const EntityConfiguration& value) { m_entityListHasBeenSet = true; m_entityList.push_back(value); return *this; }
-    inline AssociateEntitiesToExperienceRequest& AddEntityList(EntityConfiguration&& value) { m_entityListHasBeenSet = true; m_entityList.push_back(std::move(value)); return *this; }
+    template<typename EntityListT = Aws::Vector<EntityConfiguration>>
+    void SetEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList = std::forward<EntityListT>(value); }
+    template<typename EntityListT = Aws::Vector<EntityConfiguration>>
+    AssociateEntitiesToExperienceRequest& WithEntityList(EntityListT&& value) { SetEntityList(std::forward<EntityListT>(value)); return *this;}
+    template<typename EntityListT = EntityConfiguration>
+    AssociateEntitiesToExperienceRequest& AddEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList.emplace_back(std::forward<EntityListT>(value)); return *this; }
     ///@}
   private:
 

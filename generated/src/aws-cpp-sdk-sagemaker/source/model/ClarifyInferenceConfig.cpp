@@ -18,27 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClarifyInferenceConfig::ClarifyInferenceConfig() : 
-    m_featuresAttributeHasBeenSet(false),
-    m_contentTemplateHasBeenSet(false),
-    m_maxRecordCount(0),
-    m_maxRecordCountHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_probabilityIndex(0),
-    m_probabilityIndexHasBeenSet(false),
-    m_labelIndex(0),
-    m_labelIndexHasBeenSet(false),
-    m_probabilityAttributeHasBeenSet(false),
-    m_labelAttributeHasBeenSet(false),
-    m_labelHeadersHasBeenSet(false),
-    m_featureHeadersHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
-{
-}
-
 ClarifyInferenceConfig::ClarifyInferenceConfig(JsonView jsonValue)
-  : ClarifyInferenceConfig()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeaturesAttribute"))
   {
     m_featuresAttribute = jsonValue.GetString("FeaturesAttribute");
-
     m_featuresAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentTemplate"))
   {
     m_contentTemplate = jsonValue.GetString("ContentTemplate");
-
     m_contentTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRecordCount"))
   {
     m_maxRecordCount = jsonValue.GetInteger("MaxRecordCount");
-
     m_maxRecordCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPayloadInMB"))
   {
     m_maxPayloadInMB = jsonValue.GetInteger("MaxPayloadInMB");
-
     m_maxPayloadInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProbabilityIndex"))
   {
     m_probabilityIndex = jsonValue.GetInteger("ProbabilityIndex");
-
     m_probabilityIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelIndex"))
   {
     m_labelIndex = jsonValue.GetInteger("LabelIndex");
-
     m_labelIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProbabilityAttribute"))
   {
     m_probabilityAttribute = jsonValue.GetString("ProbabilityAttribute");
-
     m_probabilityAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelAttribute"))
   {
     m_labelAttribute = jsonValue.GetString("LabelAttribute");
-
     m_labelAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelHeaders"))
   {
     Aws::Utils::Array<JsonView> labelHeadersJsonList = jsonValue.GetArray("LabelHeaders");
@@ -110,7 +74,6 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
     }
     m_labelHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureHeaders"))
   {
     Aws::Utils::Array<JsonView> featureHeadersJsonList = jsonValue.GetArray("FeatureHeaders");
@@ -120,7 +83,6 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
     }
     m_featureHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureTypes"))
   {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
@@ -130,7 +92,6 @@ ClarifyInferenceConfig& ClarifyInferenceConfig::operator =(JsonView jsonValue)
     }
     m_featureTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

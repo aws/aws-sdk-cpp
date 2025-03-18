@@ -18,22 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetFromApiGatewayApiRequestDetails::ImportAssetFromApiGatewayApiRequestDetails() : 
-    m_apiDescriptionHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeyHasBeenSet(false),
-    m_apiNameHasBeenSet(false),
-    m_apiSpecificationMd5HashHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
-{
-}
-
 ImportAssetFromApiGatewayApiRequestDetails::ImportAssetFromApiGatewayApiRequestDetails(JsonView jsonValue)
-  : ImportAssetFromApiGatewayApiRequestDetails()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ImportAssetFromApiGatewayApiRequestDetails& ImportAssetFromApiGatewayApiRequestD
   if(jsonValue.ValueExists("ApiDescription"))
   {
     m_apiDescription = jsonValue.GetString("ApiDescription");
-
     m_apiDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiId"))
   {
     m_apiId = jsonValue.GetString("ApiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiKey"))
   {
     m_apiKey = jsonValue.GetString("ApiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiName"))
   {
     m_apiName = jsonValue.GetString("ApiName");
-
     m_apiNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiSpecificationMd5Hash"))
   {
     m_apiSpecificationMd5Hash = jsonValue.GetString("ApiSpecificationMd5Hash");
-
     m_apiSpecificationMd5HashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtocolType"))
   {
     m_protocolType = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("ProtocolType"));
-
     m_protocolTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = jsonValue.GetString("Stage");
-
     m_stageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class DescribeEdgePackagingJobResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeEdgePackagingJobResult();
+    AWS_SAGEMAKER_API DescribeEdgePackagingJobResult() = default;
     AWS_SAGEMAKER_API DescribeEdgePackagingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeEdgePackagingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
      */
-    inline const Aws::String& GetEdgePackagingJobArn() const{ return m_edgePackagingJobArn; }
-    inline void SetEdgePackagingJobArn(const Aws::String& value) { m_edgePackagingJobArn = value; }
-    inline void SetEdgePackagingJobArn(Aws::String&& value) { m_edgePackagingJobArn = std::move(value); }
-    inline void SetEdgePackagingJobArn(const char* value) { m_edgePackagingJobArn.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobArn(const Aws::String& value) { SetEdgePackagingJobArn(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobArn(Aws::String&& value) { SetEdgePackagingJobArn(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobArn(const char* value) { SetEdgePackagingJobArn(value); return *this;}
+    inline const Aws::String& GetEdgePackagingJobArn() const { return m_edgePackagingJobArn; }
+    template<typename EdgePackagingJobArnT = Aws::String>
+    void SetEdgePackagingJobArn(EdgePackagingJobArnT&& value) { m_edgePackagingJobArnHasBeenSet = true; m_edgePackagingJobArn = std::forward<EdgePackagingJobArnT>(value); }
+    template<typename EdgePackagingJobArnT = Aws::String>
+    DescribeEdgePackagingJobResult& WithEdgePackagingJobArn(EdgePackagingJobArnT&& value) { SetEdgePackagingJobArn(std::forward<EdgePackagingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the edge packaging job.</p>
      */
-    inline const Aws::String& GetEdgePackagingJobName() const{ return m_edgePackagingJobName; }
-    inline void SetEdgePackagingJobName(const Aws::String& value) { m_edgePackagingJobName = value; }
-    inline void SetEdgePackagingJobName(Aws::String&& value) { m_edgePackagingJobName = std::move(value); }
-    inline void SetEdgePackagingJobName(const char* value) { m_edgePackagingJobName.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobName(const Aws::String& value) { SetEdgePackagingJobName(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobName(Aws::String&& value) { SetEdgePackagingJobName(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobName(const char* value) { SetEdgePackagingJobName(value); return *this;}
+    inline const Aws::String& GetEdgePackagingJobName() const { return m_edgePackagingJobName; }
+    template<typename EdgePackagingJobNameT = Aws::String>
+    void SetEdgePackagingJobName(EdgePackagingJobNameT&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::forward<EdgePackagingJobNameT>(value); }
+    template<typename EdgePackagingJobNameT = Aws::String>
+    DescribeEdgePackagingJobResult& WithEdgePackagingJobName(EdgePackagingJobNameT&& value) { SetEdgePackagingJobName(std::forward<EdgePackagingJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,39 +63,33 @@ namespace Model
      * <p>The name of the SageMaker Neo compilation job that is used to locate model
      * artifacts that are being packaged.</p>
      */
-    inline const Aws::String& GetCompilationJobName() const{ return m_compilationJobName; }
-    inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobName = value; }
-    inline void SetCompilationJobName(Aws::String&& value) { m_compilationJobName = std::move(value); }
-    inline void SetCompilationJobName(const char* value) { m_compilationJobName.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithCompilationJobName(const Aws::String& value) { SetCompilationJobName(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithCompilationJobName(Aws::String&& value) { SetCompilationJobName(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithCompilationJobName(const char* value) { SetCompilationJobName(value); return *this;}
+    inline const Aws::String& GetCompilationJobName() const { return m_compilationJobName; }
+    template<typename CompilationJobNameT = Aws::String>
+    void SetCompilationJobName(CompilationJobNameT&& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = std::forward<CompilationJobNameT>(value); }
+    template<typename CompilationJobNameT = Aws::String>
+    DescribeEdgePackagingJobResult& WithCompilationJobName(CompilationJobNameT&& value) { SetCompilationJobName(std::forward<CompilationJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the model.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
-    inline void SetModelName(const Aws::String& value) { m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelName.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelName(const char* value) { SetModelName(value); return *this;}
+    inline const Aws::String& GetModelName() const { return m_modelName; }
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    DescribeEdgePackagingJobResult& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the model.</p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersion.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    DescribeEdgePackagingJobResult& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,24 +97,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
      * to download and upload the model, and to contact Neo.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeEdgePackagingJobResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output configuration for the edge packaging job.</p>
      */
-    inline const EdgeOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-    inline void SetOutputConfig(const EdgeOutputConfig& value) { m_outputConfig = value; }
-    inline void SetOutputConfig(EdgeOutputConfig&& value) { m_outputConfig = std::move(value); }
-    inline DescribeEdgePackagingJobResult& WithOutputConfig(const EdgeOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithOutputConfig(EdgeOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    inline const EdgeOutputConfig& GetOutputConfig() const { return m_outputConfig; }
+    template<typename OutputConfigT = EdgeOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = EdgeOutputConfig>
+    DescribeEdgePackagingJobResult& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,141 +120,145 @@ namespace Model
      * <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job
      * run on.</p>
      */
-    inline const Aws::String& GetResourceKey() const{ return m_resourceKey; }
-    inline void SetResourceKey(const Aws::String& value) { m_resourceKey = value; }
-    inline void SetResourceKey(Aws::String&& value) { m_resourceKey = std::move(value); }
-    inline void SetResourceKey(const char* value) { m_resourceKey.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithResourceKey(const Aws::String& value) { SetResourceKey(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithResourceKey(Aws::String&& value) { SetResourceKey(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithResourceKey(const char* value) { SetResourceKey(value); return *this;}
+    inline const Aws::String& GetResourceKey() const { return m_resourceKey; }
+    template<typename ResourceKeyT = Aws::String>
+    void SetResourceKey(ResourceKeyT&& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = std::forward<ResourceKeyT>(value); }
+    template<typename ResourceKeyT = Aws::String>
+    DescribeEdgePackagingJobResult& WithResourceKey(ResourceKeyT&& value) { SetResourceKey(std::forward<ResourceKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the packaging job.</p>
      */
-    inline const EdgePackagingJobStatus& GetEdgePackagingJobStatus() const{ return m_edgePackagingJobStatus; }
-    inline void SetEdgePackagingJobStatus(const EdgePackagingJobStatus& value) { m_edgePackagingJobStatus = value; }
-    inline void SetEdgePackagingJobStatus(EdgePackagingJobStatus&& value) { m_edgePackagingJobStatus = std::move(value); }
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatus(const EdgePackagingJobStatus& value) { SetEdgePackagingJobStatus(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatus(EdgePackagingJobStatus&& value) { SetEdgePackagingJobStatus(std::move(value)); return *this;}
+    inline EdgePackagingJobStatus GetEdgePackagingJobStatus() const { return m_edgePackagingJobStatus; }
+    inline void SetEdgePackagingJobStatus(EdgePackagingJobStatus value) { m_edgePackagingJobStatusHasBeenSet = true; m_edgePackagingJobStatus = value; }
+    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatus(EdgePackagingJobStatus value) { SetEdgePackagingJobStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a message describing the job status and error messages.</p>
      */
-    inline const Aws::String& GetEdgePackagingJobStatusMessage() const{ return m_edgePackagingJobStatusMessage; }
-    inline void SetEdgePackagingJobStatusMessage(const Aws::String& value) { m_edgePackagingJobStatusMessage = value; }
-    inline void SetEdgePackagingJobStatusMessage(Aws::String&& value) { m_edgePackagingJobStatusMessage = std::move(value); }
-    inline void SetEdgePackagingJobStatusMessage(const char* value) { m_edgePackagingJobStatusMessage.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatusMessage(const Aws::String& value) { SetEdgePackagingJobStatusMessage(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatusMessage(Aws::String&& value) { SetEdgePackagingJobStatusMessage(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithEdgePackagingJobStatusMessage(const char* value) { SetEdgePackagingJobStatusMessage(value); return *this;}
+    inline const Aws::String& GetEdgePackagingJobStatusMessage() const { return m_edgePackagingJobStatusMessage; }
+    template<typename EdgePackagingJobStatusMessageT = Aws::String>
+    void SetEdgePackagingJobStatusMessage(EdgePackagingJobStatusMessageT&& value) { m_edgePackagingJobStatusMessageHasBeenSet = true; m_edgePackagingJobStatusMessage = std::forward<EdgePackagingJobStatusMessageT>(value); }
+    template<typename EdgePackagingJobStatusMessageT = Aws::String>
+    DescribeEdgePackagingJobResult& WithEdgePackagingJobStatusMessage(EdgePackagingJobStatusMessageT&& value) { SetEdgePackagingJobStatusMessage(std::forward<EdgePackagingJobStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the packaging job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeEdgePackagingJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeEdgePackagingJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the job was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeEdgePackagingJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeEdgePackagingJobResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
      */
-    inline const Aws::String& GetModelArtifact() const{ return m_modelArtifact; }
-    inline void SetModelArtifact(const Aws::String& value) { m_modelArtifact = value; }
-    inline void SetModelArtifact(Aws::String&& value) { m_modelArtifact = std::move(value); }
-    inline void SetModelArtifact(const char* value) { m_modelArtifact.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithModelArtifact(const Aws::String& value) { SetModelArtifact(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelArtifact(Aws::String&& value) { SetModelArtifact(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelArtifact(const char* value) { SetModelArtifact(value); return *this;}
+    inline const Aws::String& GetModelArtifact() const { return m_modelArtifact; }
+    template<typename ModelArtifactT = Aws::String>
+    void SetModelArtifact(ModelArtifactT&& value) { m_modelArtifactHasBeenSet = true; m_modelArtifact = std::forward<ModelArtifactT>(value); }
+    template<typename ModelArtifactT = Aws::String>
+    DescribeEdgePackagingJobResult& WithModelArtifact(ModelArtifactT&& value) { SetModelArtifact(std::forward<ModelArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signature document of files in the model artifact.</p>
      */
-    inline const Aws::String& GetModelSignature() const{ return m_modelSignature; }
-    inline void SetModelSignature(const Aws::String& value) { m_modelSignature = value; }
-    inline void SetModelSignature(Aws::String&& value) { m_modelSignature = std::move(value); }
-    inline void SetModelSignature(const char* value) { m_modelSignature.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithModelSignature(const Aws::String& value) { SetModelSignature(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelSignature(Aws::String&& value) { SetModelSignature(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithModelSignature(const char* value) { SetModelSignature(value); return *this;}
+    inline const Aws::String& GetModelSignature() const { return m_modelSignature; }
+    template<typename ModelSignatureT = Aws::String>
+    void SetModelSignature(ModelSignatureT&& value) { m_modelSignatureHasBeenSet = true; m_modelSignature = std::forward<ModelSignatureT>(value); }
+    template<typename ModelSignatureT = Aws::String>
+    DescribeEdgePackagingJobResult& WithModelSignature(ModelSignatureT&& value) { SetModelSignature(std::forward<ModelSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output of a SageMaker Edge Manager deployable resource.</p>
      */
-    inline const EdgePresetDeploymentOutput& GetPresetDeploymentOutput() const{ return m_presetDeploymentOutput; }
-    inline void SetPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { m_presetDeploymentOutput = value; }
-    inline void SetPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { m_presetDeploymentOutput = std::move(value); }
-    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { SetPresetDeploymentOutput(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { SetPresetDeploymentOutput(std::move(value)); return *this;}
+    inline const EdgePresetDeploymentOutput& GetPresetDeploymentOutput() const { return m_presetDeploymentOutput; }
+    template<typename PresetDeploymentOutputT = EdgePresetDeploymentOutput>
+    void SetPresetDeploymentOutput(PresetDeploymentOutputT&& value) { m_presetDeploymentOutputHasBeenSet = true; m_presetDeploymentOutput = std::forward<PresetDeploymentOutputT>(value); }
+    template<typename PresetDeploymentOutputT = EdgePresetDeploymentOutput>
+    DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(PresetDeploymentOutputT&& value) { SetPresetDeploymentOutput(std::forward<PresetDeploymentOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEdgePackagingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEdgePackagingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEdgePackagingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEdgePackagingJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_edgePackagingJobArn;
+    bool m_edgePackagingJobArnHasBeenSet = false;
 
     Aws::String m_edgePackagingJobName;
+    bool m_edgePackagingJobNameHasBeenSet = false;
 
     Aws::String m_compilationJobName;
+    bool m_compilationJobNameHasBeenSet = false;
 
     Aws::String m_modelName;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     EdgeOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_resourceKey;
+    bool m_resourceKeyHasBeenSet = false;
 
-    EdgePackagingJobStatus m_edgePackagingJobStatus;
+    EdgePackagingJobStatus m_edgePackagingJobStatus{EdgePackagingJobStatus::NOT_SET};
+    bool m_edgePackagingJobStatusHasBeenSet = false;
 
     Aws::String m_edgePackagingJobStatusMessage;
+    bool m_edgePackagingJobStatusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_modelArtifact;
+    bool m_modelArtifactHasBeenSet = false;
 
     Aws::String m_modelSignature;
+    bool m_modelSignatureHasBeenSet = false;
 
     EdgePresetDeploymentOutput m_presetDeploymentOutput;
+    bool m_presetDeploymentOutputHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

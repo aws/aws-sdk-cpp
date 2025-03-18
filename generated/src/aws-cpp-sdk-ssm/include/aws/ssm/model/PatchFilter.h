@@ -46,7 +46,7 @@ namespace Model
   class PatchFilter
   {
   public:
-    AWS_SSM_API PatchFilter();
+    AWS_SSM_API PatchFilter() = default;
     AWS_SSM_API PatchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
      * to view lists of valid keys for each operating system type.</p>
      */
-    inline const PatchFilterKey& GetKey() const{ return m_key; }
+    inline PatchFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const PatchFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(PatchFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline PatchFilter& WithKey(const PatchFilterKey& value) { SetKey(value); return *this;}
-    inline PatchFilter& WithKey(PatchFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(PatchFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline PatchFilter& WithKey(PatchFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,18 @@ namespace Model
      * command to view lists of valid values for each key based on operating system
      * type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PatchFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline PatchFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline PatchFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PatchFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline PatchFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    PatchFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    PatchFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    PatchFilterKey m_key;
+    PatchFilterKey m_key{PatchFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

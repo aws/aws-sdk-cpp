@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-SingleMasterChannelEndpointConfiguration::SingleMasterChannelEndpointConfiguration() : 
-    m_protocolsHasBeenSet(false),
-    m_role(ChannelRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 SingleMasterChannelEndpointConfiguration::SingleMasterChannelEndpointConfiguration(JsonView jsonValue)
-  : SingleMasterChannelEndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SingleMasterChannelEndpointConfiguration& SingleMasterChannelEndpointConfigurati
     }
     m_protocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = ChannelRoleMapper::GetChannelRoleForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

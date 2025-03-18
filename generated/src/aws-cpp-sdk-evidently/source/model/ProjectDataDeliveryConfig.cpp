@@ -18,14 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ProjectDataDeliveryConfig::ProjectDataDeliveryConfig() : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 ProjectDataDeliveryConfig::ProjectDataDeliveryConfig(JsonView jsonValue)
-  : ProjectDataDeliveryConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProjectDataDeliveryConfig& ProjectDataDeliveryConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
-
     m_cloudWatchLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("s3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class ListBotAliasesRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListBotAliasesRequest();
+    AWS_LEXMODELSV2_API ListBotAliasesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The identifier of the bot to list aliases for.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListBotAliasesRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListBotAliasesRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListBotAliasesRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListBotAliasesRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +50,7 @@ namespace Model
      * fewer results than the max page size, only the actual number of results are
      * returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBotAliasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
      * returned in the response. Use that token in the <code>nextToken</code> parameter
      * to return the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBotAliasesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBotAliasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBotAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBotAliasesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
     bool m_botIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

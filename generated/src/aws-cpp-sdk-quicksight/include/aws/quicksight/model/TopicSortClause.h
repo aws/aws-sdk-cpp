@@ -33,7 +33,7 @@ namespace Model
   class TopicSortClause
   {
   public:
-    AWS_QUICKSIGHT_API TopicSortClause();
+    AWS_QUICKSIGHT_API TopicSortClause() = default;
     AWS_QUICKSIGHT_API TopicSortClause(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicSortClause& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The operand for a <code>TopicSortClause</code>.</p>
      */
-    inline const Identifier& GetOperand() const{ return m_operand; }
+    inline const Identifier& GetOperand() const { return m_operand; }
     inline bool OperandHasBeenSet() const { return m_operandHasBeenSet; }
-    inline void SetOperand(const Identifier& value) { m_operandHasBeenSet = true; m_operand = value; }
-    inline void SetOperand(Identifier&& value) { m_operandHasBeenSet = true; m_operand = std::move(value); }
-    inline TopicSortClause& WithOperand(const Identifier& value) { SetOperand(value); return *this;}
-    inline TopicSortClause& WithOperand(Identifier&& value) { SetOperand(std::move(value)); return *this;}
+    template<typename OperandT = Identifier>
+    void SetOperand(OperandT&& value) { m_operandHasBeenSet = true; m_operand = std::forward<OperandT>(value); }
+    template<typename OperandT = Identifier>
+    TopicSortClause& WithOperand(OperandT&& value) { SetOperand(std::forward<OperandT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort direction for the <code>TopicSortClause</code>.</p>
      */
-    inline const TopicSortDirection& GetSortDirection() const{ return m_sortDirection; }
+    inline TopicSortDirection GetSortDirection() const { return m_sortDirection; }
     inline bool SortDirectionHasBeenSet() const { return m_sortDirectionHasBeenSet; }
-    inline void SetSortDirection(const TopicSortDirection& value) { m_sortDirectionHasBeenSet = true; m_sortDirection = value; }
-    inline void SetSortDirection(TopicSortDirection&& value) { m_sortDirectionHasBeenSet = true; m_sortDirection = std::move(value); }
-    inline TopicSortClause& WithSortDirection(const TopicSortDirection& value) { SetSortDirection(value); return *this;}
-    inline TopicSortClause& WithSortDirection(TopicSortDirection&& value) { SetSortDirection(std::move(value)); return *this;}
+    inline void SetSortDirection(TopicSortDirection value) { m_sortDirectionHasBeenSet = true; m_sortDirection = value; }
+    inline TopicSortClause& WithSortDirection(TopicSortDirection value) { SetSortDirection(value); return *this;}
     ///@}
   private:
 
     Identifier m_operand;
     bool m_operandHasBeenSet = false;
 
-    TopicSortDirection m_sortDirection;
+    TopicSortDirection m_sortDirection{TopicSortDirection::NOT_SET};
     bool m_sortDirectionHasBeenSet = false;
   };
 

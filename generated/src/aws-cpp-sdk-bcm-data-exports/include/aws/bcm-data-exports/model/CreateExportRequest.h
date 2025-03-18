@@ -23,7 +23,7 @@ namespace Model
   class CreateExportRequest : public BCMDataExportsRequest
   {
   public:
-    AWS_BCMDATAEXPORTS_API CreateExportRequest();
+    AWS_BCMDATAEXPORTS_API CreateExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,12 @@ namespace Model
      * <p>The details of the export, including data query, name, description, and
      * destination configuration.</p>
      */
-    inline const Export& GetExport() const{ return m_export; }
+    inline const Export& GetExport() const { return m_export; }
     inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
-    inline void SetExport(const Export& value) { m_exportHasBeenSet = true; m_export = value; }
-    inline void SetExport(Export&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
-    inline CreateExportRequest& WithExport(const Export& value) { SetExport(value); return *this;}
-    inline CreateExportRequest& WithExport(Export&& value) { SetExport(std::move(value)); return *this;}
+    template<typename ExportT = Export>
+    void SetExport(ExportT&& value) { m_exportHasBeenSet = true; m_export = std::forward<ExportT>(value); }
+    template<typename ExportT = Export>
+    CreateExportRequest& WithExport(ExportT&& value) { SetExport(std::forward<ExportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +54,14 @@ namespace Model
      * <p>An optional list of tags to associate with the specified export. Each tag
      * consists of a key and a value, and each key must be unique for the resource.</p>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateExportRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateExportRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateExportRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateExportRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateExportRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateExportRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 

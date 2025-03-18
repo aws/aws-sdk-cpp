@@ -18,13 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-S3Detail::S3Detail() : 
-    m_recordingPrefixHasBeenSet(false)
-{
-}
-
 S3Detail::S3Detail(JsonView jsonValue)
-  : S3Detail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3Detail& S3Detail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recordingPrefix"))
   {
     m_recordingPrefix = jsonValue.GetString("recordingPrefix");
-
     m_recordingPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

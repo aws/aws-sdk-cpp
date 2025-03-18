@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MediaPackageGroupSettings::MediaPackageGroupSettings() : 
-    m_destinationHasBeenSet(false)
-{
-}
-
 MediaPackageGroupSettings::MediaPackageGroupSettings(JsonView jsonValue)
-  : MediaPackageGroupSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MediaPackageGroupSettings& MediaPackageGroupSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-CloudWatchLogsDestinationConfig::CloudWatchLogsDestinationConfig() : 
-    m_logGroupHasBeenSet(false)
-{
-}
-
 CloudWatchLogsDestinationConfig::CloudWatchLogsDestinationConfig(JsonView jsonValue)
-  : CloudWatchLogsDestinationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchLogsDestinationConfig& CloudWatchLogsDestinationConfig::operator =(Jso
   if(jsonValue.ValueExists("logGroup"))
   {
     m_logGroup = jsonValue.GetString("logGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

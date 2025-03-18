@@ -21,7 +21,7 @@ namespace Model
   class DisassociateDelegationSignerFromDomainRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API DisassociateDelegationSignerFromDomainRequest();
+    AWS_ROUTE53DOMAINS_API DisassociateDelegationSignerFromDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DisassociateDelegationSignerFromDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DisassociateDelegationSignerFromDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DisassociateDelegationSignerFromDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DisassociateDelegationSignerFromDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * created. You can retrieve it as part of DNSSEC information returned by <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DisassociateDelegationSignerFromDomainRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DisassociateDelegationSignerFromDomainRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DisassociateDelegationSignerFromDomainRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DisassociateDelegationSignerFromDomainRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

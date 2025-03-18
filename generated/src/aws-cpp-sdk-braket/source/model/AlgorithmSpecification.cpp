@@ -18,14 +18,7 @@ namespace Braket
 namespace Model
 {
 
-AlgorithmSpecification::AlgorithmSpecification() : 
-    m_containerImageHasBeenSet(false),
-    m_scriptModeConfigHasBeenSet(false)
-{
-}
-
 AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue)
-  : AlgorithmSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerImage"))
   {
     m_containerImage = jsonValue.GetObject("containerImage");
-
     m_containerImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptModeConfig"))
   {
     m_scriptModeConfig = jsonValue.GetObject("scriptModeConfig");
-
     m_scriptModeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeDeviceMethodResult::InvokeDeviceMethodResult()
-{
-}
-
 InvokeDeviceMethodResult::InvokeDeviceMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ InvokeDeviceMethodResult& InvokeDeviceMethodResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("deviceMethodResponse"))
   {
     m_deviceMethodResponse = jsonValue.GetString("deviceMethodResponse");
-
+    m_deviceMethodResponseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

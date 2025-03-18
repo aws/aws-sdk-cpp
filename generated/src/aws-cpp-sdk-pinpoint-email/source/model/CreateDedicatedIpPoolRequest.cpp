@@ -12,12 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDedicatedIpPoolRequest::CreateDedicatedIpPoolRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDedicatedIpPoolRequest::SerializePayload() const
 {
   JsonValue payload;

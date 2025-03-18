@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-EdiType::EdiType() : 
-    m_x12DetailsHasBeenSet(false)
-{
-}
-
 EdiType::EdiType(JsonView jsonValue)
-  : EdiType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EdiType& EdiType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("x12Details"))
   {
     m_x12Details = jsonValue.GetObject("x12Details");
-
     m_x12DetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

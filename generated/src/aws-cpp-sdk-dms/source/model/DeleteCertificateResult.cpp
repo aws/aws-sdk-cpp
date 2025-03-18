@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteCertificateResult::DeleteCertificateResult()
-{
-}
-
 DeleteCertificateResult::DeleteCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteCertificateResult& DeleteCertificateResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetObject("Certificate");
-
+    m_certificateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

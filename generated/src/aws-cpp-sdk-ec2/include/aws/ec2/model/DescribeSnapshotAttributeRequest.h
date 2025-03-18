@@ -22,7 +22,7 @@ namespace Model
   class DescribeSnapshotAttributeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeSnapshotAttributeRequest();
+    AWS_EC2_API DescribeSnapshotAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The snapshot attribute you would like to view.</p>
      */
-    inline const SnapshotAttributeName& GetAttribute() const{ return m_attribute; }
+    inline SnapshotAttributeName GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline DescribeSnapshotAttributeRequest& WithAttribute(const SnapshotAttributeName& value) { SetAttribute(value); return *this;}
-    inline DescribeSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(SnapshotAttributeName value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline DescribeSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EBS snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline DescribeSnapshotAttributeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline DescribeSnapshotAttributeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline DescribeSnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    DescribeSnapshotAttributeRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,20 +66,20 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    SnapshotAttributeName m_attribute;
+    SnapshotAttributeName m_attribute{SnapshotAttributeName::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

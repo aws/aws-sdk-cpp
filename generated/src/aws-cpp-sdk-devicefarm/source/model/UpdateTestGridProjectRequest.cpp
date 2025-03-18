@@ -12,14 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTestGridProjectRequest::UpdateTestGridProjectRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTestGridProjectRequest::SerializePayload() const
 {
   JsonValue payload;

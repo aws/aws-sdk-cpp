@@ -18,22 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationEventOverview::ManagedNotificationEventOverview() : 
-    m_arnHasBeenSet(false),
-    m_managedNotificationConfigurationArnHasBeenSet(false),
-    m_relatedAccountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_notificationEventHasBeenSet(false),
-    m_aggregationEventType(AggregationEventType::NOT_SET),
-    m_aggregationEventTypeHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_aggregationSummaryHasBeenSet(false),
-    m_aggregatedNotificationRegionsHasBeenSet(false)
-{
-}
-
 ManagedNotificationEventOverview::ManagedNotificationEventOverview(JsonView jsonValue)
-  : ManagedNotificationEventOverview()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ManagedNotificationEventOverview& ManagedNotificationEventOverview::operator =(J
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedNotificationConfigurationArn"))
   {
     m_managedNotificationConfigurationArn = jsonValue.GetString("managedNotificationConfigurationArn");
-
     m_managedNotificationConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedAccount"))
   {
     m_relatedAccount = jsonValue.GetString("relatedAccount");
-
     m_relatedAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationEvent"))
   {
     m_notificationEvent = jsonValue.GetObject("notificationEvent");
-
     m_notificationEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationEventType"))
   {
     m_aggregationEventType = AggregationEventTypeMapper::GetAggregationEventTypeForName(jsonValue.GetString("aggregationEventType"));
-
     m_aggregationEventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationSummary"))
   {
     m_aggregationSummary = jsonValue.GetObject("aggregationSummary");
-
     m_aggregationSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedNotificationRegions"))
   {
     Aws::Utils::Array<JsonView> aggregatedNotificationRegionsJsonList = jsonValue.GetArray("aggregatedNotificationRegions");
@@ -105,7 +74,6 @@ ManagedNotificationEventOverview& ManagedNotificationEventOverview::operator =(J
     }
     m_aggregatedNotificationRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

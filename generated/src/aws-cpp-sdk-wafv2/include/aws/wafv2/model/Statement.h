@@ -15,8 +15,8 @@
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
 #include <aws/wafv2/model/LabelMatchStatement.h>
 #include <aws/wafv2/model/RegexMatchStatement.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -48,7 +48,7 @@ namespace Model
   class Statement
   {
   public:
-    AWS_WAFV2_API Statement();
+    AWS_WAFV2_API Statement() = default;
     AWS_WAFV2_API Statement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,12 @@ namespace Model
      * the WAF console and the developer guide, this is called a string match
      * statement.</p>
      */
-    inline const ByteMatchStatement& GetByteMatchStatement() const{ return m_byteMatchStatement; }
+    inline const ByteMatchStatement& GetByteMatchStatement() const { return m_byteMatchStatement; }
     inline bool ByteMatchStatementHasBeenSet() const { return m_byteMatchStatementHasBeenSet; }
-    inline void SetByteMatchStatement(const ByteMatchStatement& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = value; }
-    inline void SetByteMatchStatement(ByteMatchStatement&& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = std::move(value); }
-    inline Statement& WithByteMatchStatement(const ByteMatchStatement& value) { SetByteMatchStatement(value); return *this;}
-    inline Statement& WithByteMatchStatement(ByteMatchStatement&& value) { SetByteMatchStatement(std::move(value)); return *this;}
+    template<typename ByteMatchStatementT = ByteMatchStatement>
+    void SetByteMatchStatement(ByteMatchStatementT&& value) { m_byteMatchStatementHasBeenSet = true; m_byteMatchStatement = std::forward<ByteMatchStatementT>(value); }
+    template<typename ByteMatchStatementT = ByteMatchStatement>
+    Statement& WithByteMatchStatement(ByteMatchStatementT&& value) { SetByteMatchStatement(std::forward<ByteMatchStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +77,12 @@ namespace Model
      * malicious SQL code into web requests to do things like modify your database or
      * extract data from it. </p>
      */
-    inline const SqliMatchStatement& GetSqliMatchStatement() const{ return m_sqliMatchStatement; }
+    inline const SqliMatchStatement& GetSqliMatchStatement() const { return m_sqliMatchStatement; }
     inline bool SqliMatchStatementHasBeenSet() const { return m_sqliMatchStatementHasBeenSet; }
-    inline void SetSqliMatchStatement(const SqliMatchStatement& value) { m_sqliMatchStatementHasBeenSet = true; m_sqliMatchStatement = value; }
-    inline void SetSqliMatchStatement(SqliMatchStatement&& value) { m_sqliMatchStatementHasBeenSet = true; m_sqliMatchStatement = std::move(value); }
-    inline Statement& WithSqliMatchStatement(const SqliMatchStatement& value) { SetSqliMatchStatement(value); return *this;}
-    inline Statement& WithSqliMatchStatement(SqliMatchStatement&& value) { SetSqliMatchStatement(std::move(value)); return *this;}
+    template<typename SqliMatchStatementT = SqliMatchStatement>
+    void SetSqliMatchStatement(SqliMatchStatementT&& value) { m_sqliMatchStatementHasBeenSet = true; m_sqliMatchStatement = std::forward<SqliMatchStatementT>(value); }
+    template<typename SqliMatchStatementT = SqliMatchStatement>
+    Statement& WithSqliMatchStatement(SqliMatchStatementT&& value) { SetSqliMatchStatement(std::forward<SqliMatchStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +91,12 @@ namespace Model
      * attacks, the attacker uses vulnerabilities in a benign website as a vehicle to
      * inject malicious client-site scripts into other legitimate web browsers. </p>
      */
-    inline const XssMatchStatement& GetXssMatchStatement() const{ return m_xssMatchStatement; }
+    inline const XssMatchStatement& GetXssMatchStatement() const { return m_xssMatchStatement; }
     inline bool XssMatchStatementHasBeenSet() const { return m_xssMatchStatementHasBeenSet; }
-    inline void SetXssMatchStatement(const XssMatchStatement& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = value; }
-    inline void SetXssMatchStatement(XssMatchStatement&& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = std::move(value); }
-    inline Statement& WithXssMatchStatement(const XssMatchStatement& value) { SetXssMatchStatement(value); return *this;}
-    inline Statement& WithXssMatchStatement(XssMatchStatement&& value) { SetXssMatchStatement(std::move(value)); return *this;}
+    template<typename XssMatchStatementT = XssMatchStatement>
+    void SetXssMatchStatement(XssMatchStatementT&& value) { m_xssMatchStatementHasBeenSet = true; m_xssMatchStatement = std::forward<XssMatchStatementT>(value); }
+    template<typename XssMatchStatementT = XssMatchStatement>
+    Statement& WithXssMatchStatement(XssMatchStatementT&& value) { SetXssMatchStatement(std::forward<XssMatchStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +116,12 @@ namespace Model
      * character. For example, the URI <code>/logo.jpg</code> is nine characters
      * long.</p>
      */
-    inline const SizeConstraintStatement& GetSizeConstraintStatement() const{ return m_sizeConstraintStatement; }
+    inline const SizeConstraintStatement& GetSizeConstraintStatement() const { return m_sizeConstraintStatement; }
     inline bool SizeConstraintStatementHasBeenSet() const { return m_sizeConstraintStatementHasBeenSet; }
-    inline void SetSizeConstraintStatement(const SizeConstraintStatement& value) { m_sizeConstraintStatementHasBeenSet = true; m_sizeConstraintStatement = value; }
-    inline void SetSizeConstraintStatement(SizeConstraintStatement&& value) { m_sizeConstraintStatementHasBeenSet = true; m_sizeConstraintStatement = std::move(value); }
-    inline Statement& WithSizeConstraintStatement(const SizeConstraintStatement& value) { SetSizeConstraintStatement(value); return *this;}
-    inline Statement& WithSizeConstraintStatement(SizeConstraintStatement&& value) { SetSizeConstraintStatement(std::move(value)); return *this;}
+    template<typename SizeConstraintStatementT = SizeConstraintStatement>
+    void SetSizeConstraintStatement(SizeConstraintStatementT&& value) { m_sizeConstraintStatementHasBeenSet = true; m_sizeConstraintStatement = std::forward<SizeConstraintStatementT>(value); }
+    template<typename SizeConstraintStatementT = SizeConstraintStatement>
+    Statement& WithSizeConstraintStatement(SizeConstraintStatementT&& value) { SetSizeConstraintStatement(std::forward<SizeConstraintStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +151,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
      * Developer Guide</a>. </p>
      */
-    inline const GeoMatchStatement& GetGeoMatchStatement() const{ return m_geoMatchStatement; }
+    inline const GeoMatchStatement& GetGeoMatchStatement() const { return m_geoMatchStatement; }
     inline bool GeoMatchStatementHasBeenSet() const { return m_geoMatchStatementHasBeenSet; }
-    inline void SetGeoMatchStatement(const GeoMatchStatement& value) { m_geoMatchStatementHasBeenSet = true; m_geoMatchStatement = value; }
-    inline void SetGeoMatchStatement(GeoMatchStatement&& value) { m_geoMatchStatementHasBeenSet = true; m_geoMatchStatement = std::move(value); }
-    inline Statement& WithGeoMatchStatement(const GeoMatchStatement& value) { SetGeoMatchStatement(value); return *this;}
-    inline Statement& WithGeoMatchStatement(GeoMatchStatement&& value) { SetGeoMatchStatement(std::move(value)); return *this;}
+    template<typename GeoMatchStatementT = GeoMatchStatement>
+    void SetGeoMatchStatement(GeoMatchStatementT&& value) { m_geoMatchStatementHasBeenSet = true; m_geoMatchStatement = std::forward<GeoMatchStatementT>(value); }
+    template<typename GeoMatchStatementT = GeoMatchStatement>
+    Statement& WithGeoMatchStatement(GeoMatchStatementT&& value) { SetGeoMatchStatement(std::forward<GeoMatchStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +170,12 @@ namespace Model
      * rule group as a top-level statement within a rule that you define in a web
      * ACL.</p>
      */
-    inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
+    inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const { return m_ruleGroupReferenceStatement; }
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
-    inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
-    inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
-    inline Statement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
-    inline Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
+    template<typename RuleGroupReferenceStatementT = RuleGroupReferenceStatement>
+    void SetRuleGroupReferenceStatement(RuleGroupReferenceStatementT&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::forward<RuleGroupReferenceStatementT>(value); }
+    template<typename RuleGroupReferenceStatementT = RuleGroupReferenceStatement>
+    Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatementT&& value) { SetRuleGroupReferenceStatement(std::forward<RuleGroupReferenceStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +189,12 @@ namespace Model
      * update the referenced set, WAF automatically updates all rules that reference
      * it.</p>
      */
-    inline const IPSetReferenceStatement& GetIPSetReferenceStatement() const{ return m_iPSetReferenceStatement; }
+    inline const IPSetReferenceStatement& GetIPSetReferenceStatement() const { return m_iPSetReferenceStatement; }
     inline bool IPSetReferenceStatementHasBeenSet() const { return m_iPSetReferenceStatementHasBeenSet; }
-    inline void SetIPSetReferenceStatement(const IPSetReferenceStatement& value) { m_iPSetReferenceStatementHasBeenSet = true; m_iPSetReferenceStatement = value; }
-    inline void SetIPSetReferenceStatement(IPSetReferenceStatement&& value) { m_iPSetReferenceStatementHasBeenSet = true; m_iPSetReferenceStatement = std::move(value); }
-    inline Statement& WithIPSetReferenceStatement(const IPSetReferenceStatement& value) { SetIPSetReferenceStatement(value); return *this;}
-    inline Statement& WithIPSetReferenceStatement(IPSetReferenceStatement&& value) { SetIPSetReferenceStatement(std::move(value)); return *this;}
+    template<typename IPSetReferenceStatementT = IPSetReferenceStatement>
+    void SetIPSetReferenceStatement(IPSetReferenceStatementT&& value) { m_iPSetReferenceStatementHasBeenSet = true; m_iPSetReferenceStatement = std::forward<IPSetReferenceStatementT>(value); }
+    template<typename IPSetReferenceStatementT = IPSetReferenceStatement>
+    Statement& WithIPSetReferenceStatement(IPSetReferenceStatementT&& value) { SetIPSetReferenceStatement(std::forward<IPSetReferenceStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,12 +210,12 @@ namespace Model
      * update the referenced set, WAF automatically updates all rules that reference
      * it.</p>
      */
-    inline const RegexPatternSetReferenceStatement& GetRegexPatternSetReferenceStatement() const{ return m_regexPatternSetReferenceStatement; }
+    inline const RegexPatternSetReferenceStatement& GetRegexPatternSetReferenceStatement() const { return m_regexPatternSetReferenceStatement; }
     inline bool RegexPatternSetReferenceStatementHasBeenSet() const { return m_regexPatternSetReferenceStatementHasBeenSet; }
-    inline void SetRegexPatternSetReferenceStatement(const RegexPatternSetReferenceStatement& value) { m_regexPatternSetReferenceStatementHasBeenSet = true; m_regexPatternSetReferenceStatement = value; }
-    inline void SetRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatement&& value) { m_regexPatternSetReferenceStatementHasBeenSet = true; m_regexPatternSetReferenceStatement = std::move(value); }
-    inline Statement& WithRegexPatternSetReferenceStatement(const RegexPatternSetReferenceStatement& value) { SetRegexPatternSetReferenceStatement(value); return *this;}
-    inline Statement& WithRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatement&& value) { SetRegexPatternSetReferenceStatement(std::move(value)); return *this;}
+    template<typename RegexPatternSetReferenceStatementT = RegexPatternSetReferenceStatement>
+    void SetRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatementT&& value) { m_regexPatternSetReferenceStatementHasBeenSet = true; m_regexPatternSetReferenceStatement = std::forward<RegexPatternSetReferenceStatementT>(value); }
+    template<typename RegexPatternSetReferenceStatementT = RegexPatternSetReferenceStatement>
+    Statement& WithRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatementT&& value) { SetRegexPatternSetReferenceStatement(std::forward<RegexPatternSetReferenceStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,12 +281,17 @@ namespace Model
      * separate instance of the rate-based rule that gets its own tracking and
      * management by WAF. </p>
      */
-    AWS_WAFV2_API const RateBasedStatement& GetRateBasedStatement() const;
-    AWS_WAFV2_API bool RateBasedStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetRateBasedStatement(const RateBasedStatement& value);
-    AWS_WAFV2_API void SetRateBasedStatement(RateBasedStatement&& value);
-    AWS_WAFV2_API Statement& WithRateBasedStatement(const RateBasedStatement& value);
-    AWS_WAFV2_API Statement& WithRateBasedStatement(RateBasedStatement&& value);
+    inline const RateBasedStatement& GetRateBasedStatement() const{
+      return *m_rateBasedStatement;
+    }
+    inline bool RateBasedStatementHasBeenSet() const { return m_rateBasedStatementHasBeenSet; }
+    template<typename RateBasedStatementT = RateBasedStatement>
+    void SetRateBasedStatement(RateBasedStatementT&& value) {
+      m_rateBasedStatementHasBeenSet = true; 
+      m_rateBasedStatement = Aws::MakeShared<RateBasedStatement>("Statement", std::forward<RateBasedStatementT>(value));
+    }
+    template<typename RateBasedStatementT = RateBasedStatement>
+    Statement& WithRateBasedStatement(RateBasedStatementT&& value) { SetRateBasedStatement(std::forward<RateBasedStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,12 +300,17 @@ namespace Model
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    AWS_WAFV2_API const AndStatement& GetAndStatement() const;
-    AWS_WAFV2_API bool AndStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetAndStatement(const AndStatement& value);
-    AWS_WAFV2_API void SetAndStatement(AndStatement&& value);
-    AWS_WAFV2_API Statement& WithAndStatement(const AndStatement& value);
-    AWS_WAFV2_API Statement& WithAndStatement(AndStatement&& value);
+    inline const AndStatement& GetAndStatement() const{
+      return *m_andStatement;
+    }
+    inline bool AndStatementHasBeenSet() const { return m_andStatementHasBeenSet; }
+    template<typename AndStatementT = AndStatement>
+    void SetAndStatement(AndStatementT&& value) {
+      m_andStatementHasBeenSet = true; 
+      m_andStatement = Aws::MakeShared<AndStatement>("Statement", std::forward<AndStatementT>(value));
+    }
+    template<typename AndStatementT = AndStatement>
+    Statement& WithAndStatement(AndStatementT&& value) { SetAndStatement(std::forward<AndStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -309,12 +319,17 @@ namespace Model
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    AWS_WAFV2_API const OrStatement& GetOrStatement() const;
-    AWS_WAFV2_API bool OrStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetOrStatement(const OrStatement& value);
-    AWS_WAFV2_API void SetOrStatement(OrStatement&& value);
-    AWS_WAFV2_API Statement& WithOrStatement(const OrStatement& value);
-    AWS_WAFV2_API Statement& WithOrStatement(OrStatement&& value);
+    inline const OrStatement& GetOrStatement() const{
+      return *m_orStatement;
+    }
+    inline bool OrStatementHasBeenSet() const { return m_orStatementHasBeenSet; }
+    template<typename OrStatementT = OrStatement>
+    void SetOrStatement(OrStatementT&& value) {
+      m_orStatementHasBeenSet = true; 
+      m_orStatement = Aws::MakeShared<OrStatement>("Statement", std::forward<OrStatementT>(value));
+    }
+    template<typename OrStatementT = OrStatement>
+    Statement& WithOrStatement(OrStatementT&& value) { SetOrStatement(std::forward<OrStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -323,12 +338,17 @@ namespace Model
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    AWS_WAFV2_API const NotStatement& GetNotStatement() const;
-    AWS_WAFV2_API bool NotStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetNotStatement(const NotStatement& value);
-    AWS_WAFV2_API void SetNotStatement(NotStatement&& value);
-    AWS_WAFV2_API Statement& WithNotStatement(const NotStatement& value);
-    AWS_WAFV2_API Statement& WithNotStatement(NotStatement&& value);
+    inline const NotStatement& GetNotStatement() const{
+      return *m_notStatement;
+    }
+    inline bool NotStatementHasBeenSet() const { return m_notStatementHasBeenSet; }
+    template<typename NotStatementT = NotStatement>
+    void SetNotStatement(NotStatementT&& value) {
+      m_notStatementHasBeenSet = true; 
+      m_notStatement = Aws::MakeShared<NotStatement>("Statement", std::forward<NotStatementT>(value));
+    }
+    template<typename NotStatementT = NotStatement>
+    Statement& WithNotStatement(NotStatementT&& value) { SetNotStatement(std::forward<NotStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -349,12 +369,17 @@ namespace Model
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    AWS_WAFV2_API const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
-    AWS_WAFV2_API bool ManagedRuleGroupStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
-    AWS_WAFV2_API void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
-    AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
-    AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
+    inline const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const{
+      return *m_managedRuleGroupStatement;
+    }
+    inline bool ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
+    template<typename ManagedRuleGroupStatementT = ManagedRuleGroupStatement>
+    void SetManagedRuleGroupStatement(ManagedRuleGroupStatementT&& value) {
+      m_managedRuleGroupStatementHasBeenSet = true; 
+      m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", std::forward<ManagedRuleGroupStatementT>(value));
+    }
+    template<typename ManagedRuleGroupStatementT = ManagedRuleGroupStatement>
+    Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatementT&& value) { SetManagedRuleGroupStatement(std::forward<ManagedRuleGroupStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -369,12 +394,12 @@ namespace Model
      * qualified name in your label match string, WAF performs the search for labels
      * that were added in the same context as the label match statement. </p>
      */
-    inline const LabelMatchStatement& GetLabelMatchStatement() const{ return m_labelMatchStatement; }
+    inline const LabelMatchStatement& GetLabelMatchStatement() const { return m_labelMatchStatement; }
     inline bool LabelMatchStatementHasBeenSet() const { return m_labelMatchStatementHasBeenSet; }
-    inline void SetLabelMatchStatement(const LabelMatchStatement& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = value; }
-    inline void SetLabelMatchStatement(LabelMatchStatement&& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = std::move(value); }
-    inline Statement& WithLabelMatchStatement(const LabelMatchStatement& value) { SetLabelMatchStatement(value); return *this;}
-    inline Statement& WithLabelMatchStatement(LabelMatchStatement&& value) { SetLabelMatchStatement(std::move(value)); return *this;}
+    template<typename LabelMatchStatementT = LabelMatchStatement>
+    void SetLabelMatchStatement(LabelMatchStatementT&& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = std::forward<LabelMatchStatementT>(value); }
+    template<typename LabelMatchStatementT = LabelMatchStatement>
+    Statement& WithLabelMatchStatement(LabelMatchStatementT&& value) { SetLabelMatchStatement(std::forward<LabelMatchStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -382,12 +407,12 @@ namespace Model
      * <p>A rule statement used to search web request components for a match against a
      * single regular expression. </p>
      */
-    inline const RegexMatchStatement& GetRegexMatchStatement() const{ return m_regexMatchStatement; }
+    inline const RegexMatchStatement& GetRegexMatchStatement() const { return m_regexMatchStatement; }
     inline bool RegexMatchStatementHasBeenSet() const { return m_regexMatchStatementHasBeenSet; }
-    inline void SetRegexMatchStatement(const RegexMatchStatement& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = value; }
-    inline void SetRegexMatchStatement(RegexMatchStatement&& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = std::move(value); }
-    inline Statement& WithRegexMatchStatement(const RegexMatchStatement& value) { SetRegexMatchStatement(value); return *this;}
-    inline Statement& WithRegexMatchStatement(RegexMatchStatement&& value) { SetRegexMatchStatement(std::move(value)); return *this;}
+    template<typename RegexMatchStatementT = RegexMatchStatement>
+    void SetRegexMatchStatement(RegexMatchStatementT&& value) { m_regexMatchStatementHasBeenSet = true; m_regexMatchStatement = std::forward<RegexMatchStatementT>(value); }
+    template<typename RegexMatchStatementT = RegexMatchStatement>
+    Statement& WithRegexMatchStatement(RegexMatchStatementT&& value) { SetRegexMatchStatement(std::forward<RegexMatchStatementT>(value)); return *this;}
     ///@}
   private:
 

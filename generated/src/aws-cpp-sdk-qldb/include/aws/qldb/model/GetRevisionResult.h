@@ -28,7 +28,7 @@ namespace Model
   class GetRevisionResult
   {
   public:
-    AWS_QLDB_API GetRevisionResult();
+    AWS_QLDB_API GetRevisionResult() = default;
     AWS_QLDB_API GetRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API GetRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,41 +40,42 @@ namespace Model
      * recalculate the specified digest using a Merkle tree, starting with the
      * specified document revision.</p>
      */
-    inline const ValueHolder& GetProof() const{ return m_proof; }
-    inline void SetProof(const ValueHolder& value) { m_proof = value; }
-    inline void SetProof(ValueHolder&& value) { m_proof = std::move(value); }
-    inline GetRevisionResult& WithProof(const ValueHolder& value) { SetProof(value); return *this;}
-    inline GetRevisionResult& WithProof(ValueHolder&& value) { SetProof(std::move(value)); return *this;}
+    inline const ValueHolder& GetProof() const { return m_proof; }
+    template<typename ProofT = ValueHolder>
+    void SetProof(ProofT&& value) { m_proofHasBeenSet = true; m_proof = std::forward<ProofT>(value); }
+    template<typename ProofT = ValueHolder>
+    GetRevisionResult& WithProof(ProofT&& value) { SetProof(std::forward<ProofT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The document revision data object in Amazon Ion format.</p>
      */
-    inline const ValueHolder& GetRevision() const{ return m_revision; }
-    inline void SetRevision(const ValueHolder& value) { m_revision = value; }
-    inline void SetRevision(ValueHolder&& value) { m_revision = std::move(value); }
-    inline GetRevisionResult& WithRevision(const ValueHolder& value) { SetRevision(value); return *this;}
-    inline GetRevisionResult& WithRevision(ValueHolder&& value) { SetRevision(std::move(value)); return *this;}
+    inline const ValueHolder& GetRevision() const { return m_revision; }
+    template<typename RevisionT = ValueHolder>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = ValueHolder>
+    GetRevisionResult& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRevisionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRevisionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRevisionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRevisionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ValueHolder m_proof;
+    bool m_proofHasBeenSet = false;
 
     ValueHolder m_revision;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-FailedCampaignStateResponse::FailedCampaignStateResponse() : 
-    m_campaignIdHasBeenSet(false),
-    m_failureCode(GetCampaignStateBatchFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 FailedCampaignStateResponse::FailedCampaignStateResponse(JsonView jsonValue)
-  : FailedCampaignStateResponse()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FailedCampaignStateResponse& FailedCampaignStateResponse::operator =(JsonView js
   if(jsonValue.ValueExists("campaignId"))
   {
     m_campaignId = jsonValue.GetString("campaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = GetCampaignStateBatchFailureCodeMapper::GetGetCampaignStateBatchFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

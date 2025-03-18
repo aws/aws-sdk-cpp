@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry() : 
-    m_partitionValueListHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
-{
-}
-
 BatchUpdatePartitionFailureEntry::BatchUpdatePartitionFailureEntry(JsonView jsonValue)
-  : BatchUpdatePartitionFailureEntry()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BatchUpdatePartitionFailureEntry& BatchUpdatePartitionFailureEntry::operator =(J
     }
     m_partitionValueListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetail"))
   {
     m_errorDetail = jsonValue.GetObject("ErrorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

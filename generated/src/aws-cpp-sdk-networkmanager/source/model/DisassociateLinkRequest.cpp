@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateLinkRequest::DisassociateLinkRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateLinkRequest::SerializePayload() const
 {
   return {};

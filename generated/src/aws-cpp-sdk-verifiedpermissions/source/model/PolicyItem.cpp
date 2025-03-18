@@ -18,24 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-PolicyItem::PolicyItem() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_effect(PolicyEffect::NOT_SET),
-    m_effectHasBeenSet(false)
-{
-}
-
 PolicyItem::PolicyItem(JsonView jsonValue)
-  : PolicyItem()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ PolicyItem& PolicyItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("policyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -86,35 +59,26 @@ PolicyItem& PolicyItem::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effect"))
   {
     m_effect = PolicyEffectMapper::GetPolicyEffectForName(jsonValue.GetString("effect"));
-
     m_effectHasBeenSet = true;
   }
-
   return *this;
 }
 

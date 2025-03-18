@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardVersion::DashboardVersion() : 
-    m_createdTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false),
-    m_dataSetArnsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_sheetsHasBeenSet(false)
-{
-}
-
 DashboardVersion::DashboardVersion(JsonView jsonValue)
-  : DashboardVersion()
 {
   *this = jsonValue;
 }
@@ -45,10 +28,8 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -58,35 +39,26 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceEntityArn"))
   {
     m_sourceEntityArn = jsonValue.GetString("SourceEntityArn");
-
     m_sourceEntityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetArns"))
   {
     Aws::Utils::Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
@@ -96,21 +68,16 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     }
     m_dataSetArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeArn"))
   {
     m_themeArn = jsonValue.GetString("ThemeArn");
-
     m_themeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sheets"))
   {
     Aws::Utils::Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
@@ -120,7 +87,6 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     }
     m_sheetsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class ModelInferencePaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API ModelInferencePaymentConfig();
+    AWS_CLEANROOMS_API ModelInferencePaymentConfig() = default;
     AWS_CLEANROOMS_API ModelInferencePaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ModelInferencePaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * error is returned if the collaboration creator sets a <code>FALSE</code> value
      * for the member who can query.</p>
      */
-    inline bool GetIsResponsible() const{ return m_isResponsible; }
+    inline bool GetIsResponsible() const { return m_isResponsible; }
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
     inline ModelInferencePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
     ///@}
   private:
 
-    bool m_isResponsible;
+    bool m_isResponsible{false};
     bool m_isResponsibleHasBeenSet = false;
   };
 

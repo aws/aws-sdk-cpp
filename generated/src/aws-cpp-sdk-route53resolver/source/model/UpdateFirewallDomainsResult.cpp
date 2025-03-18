@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFirewallDomainsResult::UpdateFirewallDomainsResult() : 
-    m_status(FirewallDomainListStatus::NOT_SET)
-{
-}
-
 UpdateFirewallDomainsResult::UpdateFirewallDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateFirewallDomainsResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateFirewallDomainsResult& UpdateFirewallDomainsResult::operator =(const Aws::
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FirewallDomainListStatusMapper::GetFirewallDomainListStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

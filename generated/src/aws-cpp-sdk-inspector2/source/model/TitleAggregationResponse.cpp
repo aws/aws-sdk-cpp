@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-TitleAggregationResponse::TitleAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_vulnerabilityIdHasBeenSet(false)
-{
-}
-
 TitleAggregationResponse::TitleAggregationResponse(JsonView jsonValue)
-  : TitleAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TitleAggregationResponse& TitleAggregationResponse::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilityId"))
   {
     m_vulnerabilityId = jsonValue.GetString("vulnerabilityId");
-
     m_vulnerabilityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

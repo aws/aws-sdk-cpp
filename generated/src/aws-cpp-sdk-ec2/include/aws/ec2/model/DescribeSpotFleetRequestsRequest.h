@@ -26,7 +26,7 @@ namespace Model
   class DescribeSpotFleetRequestsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeSpotFleetRequestsRequest();
+    AWS_EC2_API DescribeSpotFleetRequestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,7 +48,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeSpotFleetRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,15 +58,14 @@ namespace Model
     /**
      * <p>The IDs of the Spot Fleet requests.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSpotFleetRequestIds() const{ return m_spotFleetRequestIds; }
+    inline const Aws::Vector<Aws::String>& GetSpotFleetRequestIds() const { return m_spotFleetRequestIds; }
     inline bool SpotFleetRequestIdsHasBeenSet() const { return m_spotFleetRequestIdsHasBeenSet; }
-    inline void SetSpotFleetRequestIds(const Aws::Vector<Aws::String>& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = value; }
-    inline void SetSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = std::move(value); }
-    inline DescribeSpotFleetRequestsRequest& WithSpotFleetRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotFleetRequestIds(value); return *this;}
-    inline DescribeSpotFleetRequestsRequest& WithSpotFleetRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotFleetRequestIds(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const Aws::String& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
-    inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(Aws::String&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(std::move(value)); return *this; }
-    inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const char* value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
+    template<typename SpotFleetRequestIdsT = Aws::Vector<Aws::String>>
+    void SetSpotFleetRequestIds(SpotFleetRequestIdsT&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds = std::forward<SpotFleetRequestIdsT>(value); }
+    template<typename SpotFleetRequestIdsT = Aws::Vector<Aws::String>>
+    DescribeSpotFleetRequestsRequest& WithSpotFleetRequestIds(SpotFleetRequestIdsT&& value) { SetSpotFleetRequestIds(std::forward<SpotFleetRequestIdsT>(value)); return *this;}
+    template<typename SpotFleetRequestIdsT = Aws::String>
+    DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(SpotFleetRequestIdsT&& value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.emplace_back(std::forward<SpotFleetRequestIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,14 +73,12 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSpotFleetRequestsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +88,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSpotFleetRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_spotFleetRequestIds;
@@ -107,7 +104,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

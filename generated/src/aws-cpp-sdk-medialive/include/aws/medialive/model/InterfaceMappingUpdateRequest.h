@@ -32,7 +32,7 @@ namespace Model
   class InterfaceMappingUpdateRequest
   {
   public:
-    AWS_MEDIALIVE_API InterfaceMappingUpdateRequest();
+    AWS_MEDIALIVE_API InterfaceMappingUpdateRequest() = default;
     AWS_MEDIALIVE_API InterfaceMappingUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InterfaceMappingUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * applies to. For example, it could refer to the traffic that the physical
      * interface handles. For example, my-Inputs-Interface.
      */
-    inline const Aws::String& GetLogicalInterfaceName() const{ return m_logicalInterfaceName; }
+    inline const Aws::String& GetLogicalInterfaceName() const { return m_logicalInterfaceName; }
     inline bool LogicalInterfaceNameHasBeenSet() const { return m_logicalInterfaceNameHasBeenSet; }
-    inline void SetLogicalInterfaceName(const Aws::String& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = value; }
-    inline void SetLogicalInterfaceName(Aws::String&& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = std::move(value); }
-    inline void SetLogicalInterfaceName(const char* value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName.assign(value); }
-    inline InterfaceMappingUpdateRequest& WithLogicalInterfaceName(const Aws::String& value) { SetLogicalInterfaceName(value); return *this;}
-    inline InterfaceMappingUpdateRequest& WithLogicalInterfaceName(Aws::String&& value) { SetLogicalInterfaceName(std::move(value)); return *this;}
-    inline InterfaceMappingUpdateRequest& WithLogicalInterfaceName(const char* value) { SetLogicalInterfaceName(value); return *this;}
+    template<typename LogicalInterfaceNameT = Aws::String>
+    void SetLogicalInterfaceName(LogicalInterfaceNameT&& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = std::forward<LogicalInterfaceNameT>(value); }
+    template<typename LogicalInterfaceNameT = Aws::String>
+    InterfaceMappingUpdateRequest& WithLogicalInterfaceName(LogicalInterfaceNameT&& value) { SetLogicalInterfaceName(std::forward<LogicalInterfaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * logicalInterfaceName. You can use the ListNetworks operation to discover all the
      * IDs.
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
-    inline InterfaceMappingUpdateRequest& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline InterfaceMappingUpdateRequest& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline InterfaceMappingUpdateRequest& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    InterfaceMappingUpdateRequest& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
   private:
 

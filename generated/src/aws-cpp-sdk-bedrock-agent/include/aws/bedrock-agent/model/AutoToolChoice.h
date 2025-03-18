@@ -33,7 +33,7 @@ namespace Model
   class AutoToolChoice
   {
   public:
-    AWS_BEDROCKAGENT_API AutoToolChoice();
+    AWS_BEDROCKAGENT_API AutoToolChoice() = default;
     AWS_BEDROCKAGENT_API AutoToolChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AutoToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

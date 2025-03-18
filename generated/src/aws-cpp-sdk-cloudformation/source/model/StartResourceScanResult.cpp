@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartResourceScanResult::StartResourceScanResult()
-{
-}
-
 StartResourceScanResult::StartResourceScanResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ StartResourceScanResult& StartResourceScanResult::operator =(const Aws::AmazonWe
     if(!resourceScanIdNode.IsNull())
     {
       m_resourceScanId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceScanIdNode.GetText());
+      m_resourceScanIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::StartResourceScanResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

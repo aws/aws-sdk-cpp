@@ -18,16 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-EthernetStatus::EthernetStatus() : 
-    m_connectionStatus(NetworkConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_hwAddressHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 EthernetStatus::EthernetStatus(JsonView jsonValue)
-  : EthernetStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EthernetStatus& EthernetStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = NetworkConnectionStatusMapper::GetNetworkConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
-
     m_connectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HwAddress"))
   {
     m_hwAddress = jsonValue.GetString("HwAddress");
-
     m_hwAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

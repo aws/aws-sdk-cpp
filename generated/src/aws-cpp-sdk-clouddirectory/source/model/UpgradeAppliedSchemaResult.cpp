@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpgradeAppliedSchemaResult::UpgradeAppliedSchemaResult()
-{
-}
-
 UpgradeAppliedSchemaResult::UpgradeAppliedSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpgradeAppliedSchemaResult& UpgradeAppliedSchemaResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("UpgradedSchemaArn"))
   {
     m_upgradedSchemaArn = jsonValue.GetString("UpgradedSchemaArn");
-
+    m_upgradedSchemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryArn"))
   {
     m_directoryArn = jsonValue.GetString("DirectoryArn");
-
+    m_directoryArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

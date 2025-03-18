@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-MessageTag::MessageTag() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MessageTag::MessageTag(const XmlNode& xmlNode)
-  : MessageTag()
 {
   *this = xmlNode;
 }

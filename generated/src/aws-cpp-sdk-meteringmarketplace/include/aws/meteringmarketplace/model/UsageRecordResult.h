@@ -35,7 +35,7 @@ namespace Model
   class UsageRecordResult
   {
   public:
-    AWS_MARKETPLACEMETERING_API UsageRecordResult();
+    AWS_MARKETPLACEMETERING_API UsageRecordResult() = default;
     AWS_MARKETPLACEMETERING_API UsageRecordResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEMETERING_API UsageRecordResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The <code>UsageRecord</code> that was part of the
      * <code>BatchMeterUsage</code> request.</p>
      */
-    inline const UsageRecord& GetUsageRecord() const{ return m_usageRecord; }
+    inline const UsageRecord& GetUsageRecord() const { return m_usageRecord; }
     inline bool UsageRecordHasBeenSet() const { return m_usageRecordHasBeenSet; }
-    inline void SetUsageRecord(const UsageRecord& value) { m_usageRecordHasBeenSet = true; m_usageRecord = value; }
-    inline void SetUsageRecord(UsageRecord&& value) { m_usageRecordHasBeenSet = true; m_usageRecord = std::move(value); }
-    inline UsageRecordResult& WithUsageRecord(const UsageRecord& value) { SetUsageRecord(value); return *this;}
-    inline UsageRecordResult& WithUsageRecord(UsageRecord&& value) { SetUsageRecord(std::move(value)); return *this;}
+    template<typename UsageRecordT = UsageRecord>
+    void SetUsageRecord(UsageRecordT&& value) { m_usageRecordHasBeenSet = true; m_usageRecord = std::forward<UsageRecordT>(value); }
+    template<typename UsageRecordT = UsageRecord>
+    UsageRecordResult& WithUsageRecord(UsageRecordT&& value) { SetUsageRecord(std::forward<UsageRecordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
      * event.</p>
      */
-    inline const Aws::String& GetMeteringRecordId() const{ return m_meteringRecordId; }
+    inline const Aws::String& GetMeteringRecordId() const { return m_meteringRecordId; }
     inline bool MeteringRecordIdHasBeenSet() const { return m_meteringRecordIdHasBeenSet; }
-    inline void SetMeteringRecordId(const Aws::String& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = value; }
-    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = std::move(value); }
-    inline void SetMeteringRecordId(const char* value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId.assign(value); }
-    inline UsageRecordResult& WithMeteringRecordId(const Aws::String& value) { SetMeteringRecordId(value); return *this;}
-    inline UsageRecordResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(std::move(value)); return *this;}
-    inline UsageRecordResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}
+    template<typename MeteringRecordIdT = Aws::String>
+    void SetMeteringRecordId(MeteringRecordIdT&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = std::forward<MeteringRecordIdT>(value); }
+    template<typename MeteringRecordIdT = Aws::String>
+    UsageRecordResult& WithMeteringRecordId(MeteringRecordIdT&& value) { SetMeteringRecordId(std::forward<MeteringRecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * <code>UsageRecord</code> had the same customer, dimension, and time, but a
      * different quantity.</p> </li> </ul>
      */
-    inline const UsageRecordResultStatus& GetStatus() const{ return m_status; }
+    inline UsageRecordResultStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const UsageRecordResultStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(UsageRecordResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UsageRecordResult& WithStatus(const UsageRecordResultStatus& value) { SetStatus(value); return *this;}
-    inline UsageRecordResult& WithStatus(UsageRecordResultStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(UsageRecordResultStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UsageRecordResult& WithStatus(UsageRecordResultStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -103,7 +99,7 @@ namespace Model
     Aws::String m_meteringRecordId;
     bool m_meteringRecordIdHasBeenSet = false;
 
-    UsageRecordResultStatus m_status;
+    UsageRecordResultStatus m_status{UsageRecordResultStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class ComponentRunWith
   {
   public:
-    AWS_GREENGRASSV2_API ComponentRunWith();
+    AWS_GREENGRASSV2_API ComponentRunWith() = default;
     AWS_GREENGRASSV2_API ComponentRunWith(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API ComponentRunWith& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
-    inline const Aws::String& GetPosixUser() const{ return m_posixUser; }
+    inline const Aws::String& GetPosixUser() const { return m_posixUser; }
     inline bool PosixUserHasBeenSet() const { return m_posixUserHasBeenSet; }
-    inline void SetPosixUser(const Aws::String& value) { m_posixUserHasBeenSet = true; m_posixUser = value; }
-    inline void SetPosixUser(Aws::String&& value) { m_posixUserHasBeenSet = true; m_posixUser = std::move(value); }
-    inline void SetPosixUser(const char* value) { m_posixUserHasBeenSet = true; m_posixUser.assign(value); }
-    inline ComponentRunWith& WithPosixUser(const Aws::String& value) { SetPosixUser(value); return *this;}
-    inline ComponentRunWith& WithPosixUser(Aws::String&& value) { SetPosixUser(std::move(value)); return *this;}
-    inline ComponentRunWith& WithPosixUser(const char* value) { SetPosixUser(value); return *this;}
+    template<typename PosixUserT = Aws::String>
+    void SetPosixUser(PosixUserT&& value) { m_posixUserHasBeenSet = true; m_posixUser = std::forward<PosixUserT>(value); }
+    template<typename PosixUserT = Aws::String>
+    ComponentRunWith& WithPosixUser(PosixUserT&& value) { SetPosixUser(std::forward<PosixUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
-    inline const SystemResourceLimits& GetSystemResourceLimits() const{ return m_systemResourceLimits; }
+    inline const SystemResourceLimits& GetSystemResourceLimits() const { return m_systemResourceLimits; }
     inline bool SystemResourceLimitsHasBeenSet() const { return m_systemResourceLimitsHasBeenSet; }
-    inline void SetSystemResourceLimits(const SystemResourceLimits& value) { m_systemResourceLimitsHasBeenSet = true; m_systemResourceLimits = value; }
-    inline void SetSystemResourceLimits(SystemResourceLimits&& value) { m_systemResourceLimitsHasBeenSet = true; m_systemResourceLimits = std::move(value); }
-    inline ComponentRunWith& WithSystemResourceLimits(const SystemResourceLimits& value) { SetSystemResourceLimits(value); return *this;}
-    inline ComponentRunWith& WithSystemResourceLimits(SystemResourceLimits&& value) { SetSystemResourceLimits(std::move(value)); return *this;}
+    template<typename SystemResourceLimitsT = SystemResourceLimits>
+    void SetSystemResourceLimits(SystemResourceLimitsT&& value) { m_systemResourceLimitsHasBeenSet = true; m_systemResourceLimits = std::forward<SystemResourceLimitsT>(value); }
+    template<typename SystemResourceLimitsT = SystemResourceLimits>
+    ComponentRunWith& WithSystemResourceLimits(SystemResourceLimitsT&& value) { SetSystemResourceLimits(std::forward<SystemResourceLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +93,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
-    inline const Aws::String& GetWindowsUser() const{ return m_windowsUser; }
+    inline const Aws::String& GetWindowsUser() const { return m_windowsUser; }
     inline bool WindowsUserHasBeenSet() const { return m_windowsUserHasBeenSet; }
-    inline void SetWindowsUser(const Aws::String& value) { m_windowsUserHasBeenSet = true; m_windowsUser = value; }
-    inline void SetWindowsUser(Aws::String&& value) { m_windowsUserHasBeenSet = true; m_windowsUser = std::move(value); }
-    inline void SetWindowsUser(const char* value) { m_windowsUserHasBeenSet = true; m_windowsUser.assign(value); }
-    inline ComponentRunWith& WithWindowsUser(const Aws::String& value) { SetWindowsUser(value); return *this;}
-    inline ComponentRunWith& WithWindowsUser(Aws::String&& value) { SetWindowsUser(std::move(value)); return *this;}
-    inline ComponentRunWith& WithWindowsUser(const char* value) { SetWindowsUser(value); return *this;}
+    template<typename WindowsUserT = Aws::String>
+    void SetWindowsUser(WindowsUserT&& value) { m_windowsUserHasBeenSet = true; m_windowsUser = std::forward<WindowsUserT>(value); }
+    template<typename WindowsUserT = Aws::String>
+    ComponentRunWith& WithWindowsUser(WindowsUserT&& value) { SetWindowsUser(std::forward<WindowsUserT>(value)); return *this;}
     ///@}
   private:
 

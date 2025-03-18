@@ -28,7 +28,7 @@ namespace Model
   class UpdateEventBridgeRuleTemplateRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateRequest();
+    AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,36 +43,32 @@ namespace Model
     /**
      * A resource's optional description.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateEventBridgeRuleTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<EventBridgeRuleTemplateTarget>& GetEventTargets() const{ return m_eventTargets; }
+    inline const Aws::Vector<EventBridgeRuleTemplateTarget>& GetEventTargets() const { return m_eventTargets; }
     inline bool EventTargetsHasBeenSet() const { return m_eventTargetsHasBeenSet; }
-    inline void SetEventTargets(const Aws::Vector<EventBridgeRuleTemplateTarget>& value) { m_eventTargetsHasBeenSet = true; m_eventTargets = value; }
-    inline void SetEventTargets(Aws::Vector<EventBridgeRuleTemplateTarget>&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithEventTargets(const Aws::Vector<EventBridgeRuleTemplateTarget>& value) { SetEventTargets(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithEventTargets(Aws::Vector<EventBridgeRuleTemplateTarget>&& value) { SetEventTargets(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& AddEventTargets(const EventBridgeRuleTemplateTarget& value) { m_eventTargetsHasBeenSet = true; m_eventTargets.push_back(value); return *this; }
-    inline UpdateEventBridgeRuleTemplateRequest& AddEventTargets(EventBridgeRuleTemplateTarget&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets.push_back(std::move(value)); return *this; }
+    template<typename EventTargetsT = Aws::Vector<EventBridgeRuleTemplateTarget>>
+    void SetEventTargets(EventTargetsT&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets = std::forward<EventTargetsT>(value); }
+    template<typename EventTargetsT = Aws::Vector<EventBridgeRuleTemplateTarget>>
+    UpdateEventBridgeRuleTemplateRequest& WithEventTargets(EventTargetsT&& value) { SetEventTargets(std::forward<EventTargetsT>(value)); return *this;}
+    template<typename EventTargetsT = EventBridgeRuleTemplateTarget>
+    UpdateEventBridgeRuleTemplateRequest& AddEventTargets(EventTargetsT&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets.emplace_back(std::forward<EventTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const EventBridgeRuleTemplateEventType& GetEventType() const{ return m_eventType; }
+    inline EventBridgeRuleTemplateEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventBridgeRuleTemplateEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventBridgeRuleTemplateEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithEventType(const EventBridgeRuleTemplateEventType& value) { SetEventType(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithEventType(EventBridgeRuleTemplateEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventBridgeRuleTemplateEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline UpdateEventBridgeRuleTemplateRequest& WithEventType(EventBridgeRuleTemplateEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * An eventbridge rule template group's identifier. Can be either be its id or
      * current name.
      */
-    inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
+    inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-    inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
-    inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
-    inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
+    template<typename GroupIdentifierT = Aws::String>
+    void SetGroupIdentifier(GroupIdentifierT&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::forward<GroupIdentifierT>(value); }
+    template<typename GroupIdentifierT = Aws::String>
+    UpdateEventBridgeRuleTemplateRequest& WithGroupIdentifier(GroupIdentifierT&& value) { SetGroupIdentifier(std::forward<GroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * An eventbridge rule template's identifier. Can be either be its id or current
      * name.
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateEventBridgeRuleTemplateRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +102,12 @@ namespace Model
      * A resource's name. Names must be unique within the scope of a resource type in a
      * specific region.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateEventBridgeRuleTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEventBridgeRuleTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
@@ -127,7 +117,7 @@ namespace Model
     Aws::Vector<EventBridgeRuleTemplateTarget> m_eventTargets;
     bool m_eventTargetsHasBeenSet = false;
 
-    EventBridgeRuleTemplateEventType m_eventType;
+    EventBridgeRuleTemplateEventType m_eventType{EventBridgeRuleTemplateEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_groupIdentifier;

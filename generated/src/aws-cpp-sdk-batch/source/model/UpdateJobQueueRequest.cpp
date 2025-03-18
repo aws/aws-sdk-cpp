@@ -12,18 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobQueueRequest::UpdateJobQueueRequest() : 
-    m_jobQueueHasBeenSet(false),
-    m_state(JQState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_schedulingPolicyArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false),
-    m_jobStateTimeLimitActionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobQueueRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class ModifyTrafficMirrorFilterNetworkServicesResponse
   {
   public:
-    AWS_EC2_API ModifyTrafficMirrorFilterNetworkServicesResponse();
+    AWS_EC2_API ModifyTrafficMirrorFilterNetworkServicesResponse() = default;
     AWS_EC2_API ModifyTrafficMirrorFilterNetworkServicesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyTrafficMirrorFilterNetworkServicesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The Traffic Mirror filter that the network service is associated with.</p>
      */
-    inline const TrafficMirrorFilter& GetTrafficMirrorFilter() const{ return m_trafficMirrorFilter; }
-    inline void SetTrafficMirrorFilter(const TrafficMirrorFilter& value) { m_trafficMirrorFilter = value; }
-    inline void SetTrafficMirrorFilter(TrafficMirrorFilter&& value) { m_trafficMirrorFilter = std::move(value); }
-    inline ModifyTrafficMirrorFilterNetworkServicesResponse& WithTrafficMirrorFilter(const TrafficMirrorFilter& value) { SetTrafficMirrorFilter(value); return *this;}
-    inline ModifyTrafficMirrorFilterNetworkServicesResponse& WithTrafficMirrorFilter(TrafficMirrorFilter&& value) { SetTrafficMirrorFilter(std::move(value)); return *this;}
+    inline const TrafficMirrorFilter& GetTrafficMirrorFilter() const { return m_trafficMirrorFilter; }
+    template<typename TrafficMirrorFilterT = TrafficMirrorFilter>
+    void SetTrafficMirrorFilter(TrafficMirrorFilterT&& value) { m_trafficMirrorFilterHasBeenSet = true; m_trafficMirrorFilter = std::forward<TrafficMirrorFilterT>(value); }
+    template<typename TrafficMirrorFilterT = TrafficMirrorFilter>
+    ModifyTrafficMirrorFilterNetworkServicesResponse& WithTrafficMirrorFilter(TrafficMirrorFilterT&& value) { SetTrafficMirrorFilter(std::forward<TrafficMirrorFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyTrafficMirrorFilterNetworkServicesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyTrafficMirrorFilterNetworkServicesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyTrafficMirrorFilterNetworkServicesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TrafficMirrorFilter m_trafficMirrorFilter;
+    bool m_trafficMirrorFilterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

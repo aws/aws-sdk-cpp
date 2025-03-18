@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ManagedScalingPolicy::ManagedScalingPolicy() : 
-    m_computeLimitsHasBeenSet(false),
-    m_utilizationPerformanceIndex(0),
-    m_utilizationPerformanceIndexHasBeenSet(false),
-    m_scalingStrategy(ScalingStrategy::NOT_SET),
-    m_scalingStrategyHasBeenSet(false)
-{
-}
-
 ManagedScalingPolicy::ManagedScalingPolicy(JsonView jsonValue)
-  : ManagedScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ManagedScalingPolicy& ManagedScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComputeLimits"))
   {
     m_computeLimits = jsonValue.GetObject("ComputeLimits");
-
     m_computeLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtilizationPerformanceIndex"))
   {
     m_utilizationPerformanceIndex = jsonValue.GetInteger("UtilizationPerformanceIndex");
-
     m_utilizationPerformanceIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingStrategy"))
   {
     m_scalingStrategy = ScalingStrategyMapper::GetScalingStrategyForName(jsonValue.GetString("ScalingStrategy"));
-
     m_scalingStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

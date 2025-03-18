@@ -12,10 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPreferencesRequest::GetPreferencesRequest()
-{
-}
-
 Aws::String GetPreferencesRequest::SerializePayload() const
 {
   return "{}";

@@ -33,7 +33,7 @@ namespace Model
   class ExportAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ExportAttributes();
+    AWS_PAYMENTCRYPTOGRAPHY_API ExportAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ExportAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Parameter information for IPEK export.</p>
      */
-    inline const ExportDukptInitialKey& GetExportDukptInitialKey() const{ return m_exportDukptInitialKey; }
+    inline const ExportDukptInitialKey& GetExportDukptInitialKey() const { return m_exportDukptInitialKey; }
     inline bool ExportDukptInitialKeyHasBeenSet() const { return m_exportDukptInitialKeyHasBeenSet; }
-    inline void SetExportDukptInitialKey(const ExportDukptInitialKey& value) { m_exportDukptInitialKeyHasBeenSet = true; m_exportDukptInitialKey = value; }
-    inline void SetExportDukptInitialKey(ExportDukptInitialKey&& value) { m_exportDukptInitialKeyHasBeenSet = true; m_exportDukptInitialKey = std::move(value); }
-    inline ExportAttributes& WithExportDukptInitialKey(const ExportDukptInitialKey& value) { SetExportDukptInitialKey(value); return *this;}
-    inline ExportAttributes& WithExportDukptInitialKey(ExportDukptInitialKey&& value) { SetExportDukptInitialKey(std::move(value)); return *this;}
+    template<typename ExportDukptInitialKeyT = ExportDukptInitialKey>
+    void SetExportDukptInitialKey(ExportDukptInitialKeyT&& value) { m_exportDukptInitialKeyHasBeenSet = true; m_exportDukptInitialKey = std::forward<ExportDukptInitialKeyT>(value); }
+    template<typename ExportDukptInitialKeyT = ExportDukptInitialKey>
+    ExportAttributes& WithExportDukptInitialKey(ExportDukptInitialKeyT&& value) { SetExportDukptInitialKey(std::forward<ExportDukptInitialKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * using a CMAC algorithm where the input data is 16 bytes of zero and retaining
      * the 3 highest order bytes of the encrypted result.</p>
      */
-    inline const KeyCheckValueAlgorithm& GetKeyCheckValueAlgorithm() const{ return m_keyCheckValueAlgorithm; }
+    inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
     inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
-    inline void SetKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
-    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = std::move(value); }
-    inline ExportAttributes& WithKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { SetKeyCheckValueAlgorithm(value); return *this;}
-    inline ExportAttributes& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { SetKeyCheckValueAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
+    inline ExportAttributes& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { SetKeyCheckValueAlgorithm(value); return *this;}
     ///@}
   private:
 
     ExportDukptInitialKey m_exportDukptInitialKey;
     bool m_exportDukptInitialKeyHasBeenSet = false;
 
-    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm;
+    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
     bool m_keyCheckValueAlgorithmHasBeenSet = false;
   };
 

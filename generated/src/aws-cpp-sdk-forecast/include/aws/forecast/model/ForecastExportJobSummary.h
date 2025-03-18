@@ -36,7 +36,7 @@ namespace Model
   class ForecastExportJobSummary
   {
   public:
-    AWS_FORECASTSERVICE_API ForecastExportJobSummary();
+    AWS_FORECASTSERVICE_API ForecastExportJobSummary() = default;
     AWS_FORECASTSERVICE_API ForecastExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API ForecastExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
      */
-    inline const Aws::String& GetForecastExportJobArn() const{ return m_forecastExportJobArn; }
+    inline const Aws::String& GetForecastExportJobArn() const { return m_forecastExportJobArn; }
     inline bool ForecastExportJobArnHasBeenSet() const { return m_forecastExportJobArnHasBeenSet; }
-    inline void SetForecastExportJobArn(const Aws::String& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = value; }
-    inline void SetForecastExportJobArn(Aws::String&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::move(value); }
-    inline void SetForecastExportJobArn(const char* value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn.assign(value); }
-    inline ForecastExportJobSummary& WithForecastExportJobArn(const Aws::String& value) { SetForecastExportJobArn(value); return *this;}
-    inline ForecastExportJobSummary& WithForecastExportJobArn(Aws::String&& value) { SetForecastExportJobArn(std::move(value)); return *this;}
-    inline ForecastExportJobSummary& WithForecastExportJobArn(const char* value) { SetForecastExportJobArn(value); return *this;}
+    template<typename ForecastExportJobArnT = Aws::String>
+    void SetForecastExportJobArn(ForecastExportJobArnT&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::forward<ForecastExportJobArnT>(value); }
+    template<typename ForecastExportJobArnT = Aws::String>
+    ForecastExportJobSummary& WithForecastExportJobArn(ForecastExportJobArnT&& value) { SetForecastExportJobArn(std::forward<ForecastExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the forecast export job.</p>
      */
-    inline const Aws::String& GetForecastExportJobName() const{ return m_forecastExportJobName; }
+    inline const Aws::String& GetForecastExportJobName() const { return m_forecastExportJobName; }
     inline bool ForecastExportJobNameHasBeenSet() const { return m_forecastExportJobNameHasBeenSet; }
-    inline void SetForecastExportJobName(const Aws::String& value) { m_forecastExportJobNameHasBeenSet = true; m_forecastExportJobName = value; }
-    inline void SetForecastExportJobName(Aws::String&& value) { m_forecastExportJobNameHasBeenSet = true; m_forecastExportJobName = std::move(value); }
-    inline void SetForecastExportJobName(const char* value) { m_forecastExportJobNameHasBeenSet = true; m_forecastExportJobName.assign(value); }
-    inline ForecastExportJobSummary& WithForecastExportJobName(const Aws::String& value) { SetForecastExportJobName(value); return *this;}
-    inline ForecastExportJobSummary& WithForecastExportJobName(Aws::String&& value) { SetForecastExportJobName(std::move(value)); return *this;}
-    inline ForecastExportJobSummary& WithForecastExportJobName(const char* value) { SetForecastExportJobName(value); return *this;}
+    template<typename ForecastExportJobNameT = Aws::String>
+    void SetForecastExportJobName(ForecastExportJobNameT&& value) { m_forecastExportJobNameHasBeenSet = true; m_forecastExportJobName = std::forward<ForecastExportJobNameT>(value); }
+    template<typename ForecastExportJobNameT = Aws::String>
+    ForecastExportJobSummary& WithForecastExportJobName(ForecastExportJobNameT&& value) { SetForecastExportJobName(std::forward<ForecastExportJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,12 @@ namespace Model
      * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
      * forecast is exported.</p>
      */
-    inline const DataDestination& GetDestination() const{ return m_destination; }
+    inline const DataDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const DataDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(DataDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline ForecastExportJobSummary& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
-    inline ForecastExportJobSummary& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = DataDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = DataDestination>
+    ForecastExportJobSummary& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,40 +90,36 @@ namespace Model
      * the forecast export job must be <code>ACTIVE</code> before you can access the
      * forecast in your S3 bucket.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ForecastExportJobSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ForecastExportJobSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ForecastExportJobSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ForecastExportJobSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, an informational message about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ForecastExportJobSummary& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ForecastExportJobSummary& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ForecastExportJobSummary& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ForecastExportJobSummary& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the forecast export job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ForecastExportJobSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ForecastExportJobSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ForecastExportJobSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +132,12 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
-    inline ForecastExportJobSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline ForecastExportJobSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    ForecastExportJobSummary& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,10 +156,10 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
     bool m_lastModificationTimeHasBeenSet = false;
   };
 

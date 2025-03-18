@@ -32,7 +32,7 @@ namespace Model
   class LayoutSummary
   {
   public:
-    AWS_CONNECTCASES_API LayoutSummary();
+    AWS_CONNECTCASES_API LayoutSummary() = default;
     AWS_CONNECTCASES_API LayoutSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API LayoutSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the layout.</p>
      */
-    inline const Aws::String& GetLayoutArn() const{ return m_layoutArn; }
+    inline const Aws::String& GetLayoutArn() const { return m_layoutArn; }
     inline bool LayoutArnHasBeenSet() const { return m_layoutArnHasBeenSet; }
-    inline void SetLayoutArn(const Aws::String& value) { m_layoutArnHasBeenSet = true; m_layoutArn = value; }
-    inline void SetLayoutArn(Aws::String&& value) { m_layoutArnHasBeenSet = true; m_layoutArn = std::move(value); }
-    inline void SetLayoutArn(const char* value) { m_layoutArnHasBeenSet = true; m_layoutArn.assign(value); }
-    inline LayoutSummary& WithLayoutArn(const Aws::String& value) { SetLayoutArn(value); return *this;}
-    inline LayoutSummary& WithLayoutArn(Aws::String&& value) { SetLayoutArn(std::move(value)); return *this;}
-    inline LayoutSummary& WithLayoutArn(const char* value) { SetLayoutArn(value); return *this;}
+    template<typename LayoutArnT = Aws::String>
+    void SetLayoutArn(LayoutArnT&& value) { m_layoutArnHasBeenSet = true; m_layoutArn = std::forward<LayoutArnT>(value); }
+    template<typename LayoutArnT = Aws::String>
+    LayoutSummary& WithLayoutArn(LayoutArnT&& value) { SetLayoutArn(std::forward<LayoutArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for of the layout.</p>
      */
-    inline const Aws::String& GetLayoutId() const{ return m_layoutId; }
+    inline const Aws::String& GetLayoutId() const { return m_layoutId; }
     inline bool LayoutIdHasBeenSet() const { return m_layoutIdHasBeenSet; }
-    inline void SetLayoutId(const Aws::String& value) { m_layoutIdHasBeenSet = true; m_layoutId = value; }
-    inline void SetLayoutId(Aws::String&& value) { m_layoutIdHasBeenSet = true; m_layoutId = std::move(value); }
-    inline void SetLayoutId(const char* value) { m_layoutIdHasBeenSet = true; m_layoutId.assign(value); }
-    inline LayoutSummary& WithLayoutId(const Aws::String& value) { SetLayoutId(value); return *this;}
-    inline LayoutSummary& WithLayoutId(Aws::String&& value) { SetLayoutId(std::move(value)); return *this;}
-    inline LayoutSummary& WithLayoutId(const char* value) { SetLayoutId(value); return *this;}
+    template<typename LayoutIdT = Aws::String>
+    void SetLayoutId(LayoutIdT&& value) { m_layoutIdHasBeenSet = true; m_layoutId = std::forward<LayoutIdT>(value); }
+    template<typename LayoutIdT = Aws::String>
+    LayoutSummary& WithLayoutId(LayoutIdT&& value) { SetLayoutId(std::forward<LayoutIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the layout.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LayoutSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LayoutSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LayoutSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LayoutSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

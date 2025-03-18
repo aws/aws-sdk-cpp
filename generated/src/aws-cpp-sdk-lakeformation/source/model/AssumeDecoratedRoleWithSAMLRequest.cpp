@@ -12,15 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssumeDecoratedRoleWithSAMLRequest::AssumeDecoratedRoleWithSAMLRequest() : 
-    m_sAMLAssertionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String AssumeDecoratedRoleWithSAMLRequest::SerializePayload() const
 {
   JsonValue payload;

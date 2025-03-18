@@ -22,7 +22,7 @@ namespace Model
   class UpdateSourceServerRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API UpdateSourceServerRequest();
+    AWS_MGN_API UpdateSourceServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,40 +37,36 @@ namespace Model
     /**
      * <p>Update Source Server request account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline UpdateSourceServerRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline UpdateSourceServerRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline UpdateSourceServerRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    UpdateSourceServerRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update Source Server request connector action.</p>
      */
-    inline const SourceServerConnectorAction& GetConnectorAction() const{ return m_connectorAction; }
+    inline const SourceServerConnectorAction& GetConnectorAction() const { return m_connectorAction; }
     inline bool ConnectorActionHasBeenSet() const { return m_connectorActionHasBeenSet; }
-    inline void SetConnectorAction(const SourceServerConnectorAction& value) { m_connectorActionHasBeenSet = true; m_connectorAction = value; }
-    inline void SetConnectorAction(SourceServerConnectorAction&& value) { m_connectorActionHasBeenSet = true; m_connectorAction = std::move(value); }
-    inline UpdateSourceServerRequest& WithConnectorAction(const SourceServerConnectorAction& value) { SetConnectorAction(value); return *this;}
-    inline UpdateSourceServerRequest& WithConnectorAction(SourceServerConnectorAction&& value) { SetConnectorAction(std::move(value)); return *this;}
+    template<typename ConnectorActionT = SourceServerConnectorAction>
+    void SetConnectorAction(ConnectorActionT&& value) { m_connectorActionHasBeenSet = true; m_connectorAction = std::forward<ConnectorActionT>(value); }
+    template<typename ConnectorActionT = SourceServerConnectorAction>
+    UpdateSourceServerRequest& WithConnectorAction(ConnectorActionT&& value) { SetConnectorAction(std::forward<ConnectorActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update Source Server request source server ID.</p>
      */
-    inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
+    inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-    inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-    inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-    inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-    inline UpdateSourceServerRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-    inline UpdateSourceServerRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-    inline UpdateSourceServerRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    template<typename SourceServerIDT = Aws::String>
+    void SetSourceServerID(SourceServerIDT&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::forward<SourceServerIDT>(value); }
+    template<typename SourceServerIDT = Aws::String>
+    UpdateSourceServerRequest& WithSourceServerID(SourceServerIDT&& value) { SetSourceServerID(std::forward<SourceServerIDT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-ByteMatchSet::ByteMatchSet() : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_byteMatchTuplesHasBeenSet(false)
-{
-}
-
 ByteMatchSet::ByteMatchSet(JsonView jsonValue)
-  : ByteMatchSet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ByteMatchSetId"))
   {
     m_byteMatchSetId = jsonValue.GetString("ByteMatchSetId");
-
     m_byteMatchSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ByteMatchTuples"))
   {
     Aws::Utils::Array<JsonView> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
@@ -56,7 +44,6 @@ ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
     }
     m_byteMatchTuplesHasBeenSet = true;
   }
-
   return *this;
 }
 

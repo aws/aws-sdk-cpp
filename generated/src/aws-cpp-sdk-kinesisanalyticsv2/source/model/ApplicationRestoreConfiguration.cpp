@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationRestoreConfiguration::ApplicationRestoreConfiguration() : 
-    m_applicationRestoreType(ApplicationRestoreType::NOT_SET),
-    m_applicationRestoreTypeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
-{
-}
-
 ApplicationRestoreConfiguration::ApplicationRestoreConfiguration(JsonView jsonValue)
-  : ApplicationRestoreConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApplicationRestoreConfiguration& ApplicationRestoreConfiguration::operator =(Jso
   if(jsonValue.ValueExists("ApplicationRestoreType"))
   {
     m_applicationRestoreType = ApplicationRestoreTypeMapper::GetApplicationRestoreTypeForName(jsonValue.GetString("ApplicationRestoreType"));
-
     m_applicationRestoreTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotName"))
   {
     m_snapshotName = jsonValue.GetString("SnapshotName");
-
     m_snapshotNameHasBeenSet = true;
   }
-
   return *this;
 }
 

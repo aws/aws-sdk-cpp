@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListInternetEventsRequest::ListInternetEventsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_eventStatusHasBeenSet(false),
-    m_eventTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListInternetEventsRequest::SerializePayload() const
 {
   return {};

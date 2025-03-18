@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpcPeeringConnectionVpcInfoDetails::AwsEc2VpcPeeringConnectionVpcInfoDetails() : 
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockSetHasBeenSet(false),
-    m_ipv6CidrBlockSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_peeringOptionsHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsEc2VpcPeeringConnectionVpcInfoDetails::AwsEc2VpcPeeringConnectionVpcInfoDetails(JsonView jsonValue)
-  : AwsEc2VpcPeeringConnectionVpcInfoDetails()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails& AwsEc2VpcPeeringConnectionVpcInfoDetai
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlockSet"))
   {
     Aws::Utils::Array<JsonView> cidrBlockSetJsonList = jsonValue.GetArray("CidrBlockSet");
@@ -53,7 +39,6 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails& AwsEc2VpcPeeringConnectionVpcInfoDetai
     }
     m_cidrBlockSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlockSet"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrBlockSetJsonList = jsonValue.GetArray("Ipv6CidrBlockSet");
@@ -63,35 +48,26 @@ AwsEc2VpcPeeringConnectionVpcInfoDetails& AwsEc2VpcPeeringConnectionVpcInfoDetai
     }
     m_ipv6CidrBlockSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeeringOptions"))
   {
     m_peeringOptions = jsonValue.GetObject("PeeringOptions");
-
     m_peeringOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

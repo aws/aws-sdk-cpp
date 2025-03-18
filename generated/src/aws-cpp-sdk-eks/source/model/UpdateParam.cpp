@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UpdateParam::UpdateParam() : 
-    m_type(UpdateParamType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 UpdateParam::UpdateParam(JsonView jsonValue)
-  : UpdateParam()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateParam& UpdateParam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = UpdateParamTypeMapper::GetUpdateParamTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

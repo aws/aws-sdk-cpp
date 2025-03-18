@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Gender::Gender() : 
-    m_value(GenderType::NOT_SET),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 Gender::Gender(JsonView jsonValue)
-  : Gender()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Gender& Gender::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = GenderTypeMapper::GetGenderTypeForName(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

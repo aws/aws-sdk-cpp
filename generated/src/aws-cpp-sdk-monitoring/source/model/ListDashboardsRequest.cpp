@@ -10,12 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-ListDashboardsRequest::ListDashboardsRequest() : 
-    m_dashboardNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDashboardsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

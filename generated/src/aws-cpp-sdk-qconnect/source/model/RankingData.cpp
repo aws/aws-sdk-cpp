@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-RankingData::RankingData() : 
-    m_relevanceLevel(RelevanceLevel::NOT_SET),
-    m_relevanceLevelHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false)
-{
-}
-
 RankingData::RankingData(JsonView jsonValue)
-  : RankingData()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RankingData& RankingData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("relevanceLevel"))
   {
     m_relevanceLevel = RelevanceLevelMapper::GetRelevanceLevelForName(jsonValue.GetString("relevanceLevel"));
-
     m_relevanceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relevanceScore"))
   {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
-
     m_relevanceScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

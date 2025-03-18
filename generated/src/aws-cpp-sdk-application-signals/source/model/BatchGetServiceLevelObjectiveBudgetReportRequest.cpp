@@ -12,12 +12,6 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetServiceLevelObjectiveBudgetReportRequest::BatchGetServiceLevelObjectiveBudgetReportRequest() : 
-    m_timestampHasBeenSet(false),
-    m_sloIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetServiceLevelObjectiveBudgetReportRequest::SerializePayload() const
 {
   JsonValue payload;

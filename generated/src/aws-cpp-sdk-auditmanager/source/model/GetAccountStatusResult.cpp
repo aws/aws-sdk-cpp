@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountStatusResult::GetAccountStatusResult() : 
-    m_status(AccountStatus::NOT_SET)
-{
-}
-
 GetAccountStatusResult::GetAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAccountStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetAccountStatusResult& GetAccountStatusResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("status"))
   {
     m_status = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

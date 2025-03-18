@@ -27,7 +27,7 @@ namespace Model
   class CreateForecastExportJobResult
   {
   public:
-    AWS_FORECASTSERVICE_API CreateForecastExportJobResult();
+    AWS_FORECASTSERVICE_API CreateForecastExportJobResult() = default;
     AWS_FORECASTSERVICE_API CreateForecastExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API CreateForecastExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the export job.</p>
      */
-    inline const Aws::String& GetForecastExportJobArn() const{ return m_forecastExportJobArn; }
-    inline void SetForecastExportJobArn(const Aws::String& value) { m_forecastExportJobArn = value; }
-    inline void SetForecastExportJobArn(Aws::String&& value) { m_forecastExportJobArn = std::move(value); }
-    inline void SetForecastExportJobArn(const char* value) { m_forecastExportJobArn.assign(value); }
-    inline CreateForecastExportJobResult& WithForecastExportJobArn(const Aws::String& value) { SetForecastExportJobArn(value); return *this;}
-    inline CreateForecastExportJobResult& WithForecastExportJobArn(Aws::String&& value) { SetForecastExportJobArn(std::move(value)); return *this;}
-    inline CreateForecastExportJobResult& WithForecastExportJobArn(const char* value) { SetForecastExportJobArn(value); return *this;}
+    inline const Aws::String& GetForecastExportJobArn() const { return m_forecastExportJobArn; }
+    template<typename ForecastExportJobArnT = Aws::String>
+    void SetForecastExportJobArn(ForecastExportJobArnT&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::forward<ForecastExportJobArnT>(value); }
+    template<typename ForecastExportJobArnT = Aws::String>
+    CreateForecastExportJobResult& WithForecastExportJobArn(ForecastExportJobArnT&& value) { SetForecastExportJobArn(std::forward<ForecastExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateForecastExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateForecastExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateForecastExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateForecastExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_forecastExportJobArn;
+    bool m_forecastExportJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

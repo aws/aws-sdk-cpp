@@ -12,12 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateLensesRequest::AssociateLensesRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateLensesRequest::SerializePayload() const
 {
   JsonValue payload;

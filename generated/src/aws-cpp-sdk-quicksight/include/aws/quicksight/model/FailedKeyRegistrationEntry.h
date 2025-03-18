@@ -32,7 +32,7 @@ namespace Model
   class FailedKeyRegistrationEntry
   {
   public:
-    AWS_QUICKSIGHT_API FailedKeyRegistrationEntry();
+    AWS_QUICKSIGHT_API FailedKeyRegistrationEntry() = default;
     AWS_QUICKSIGHT_API FailedKeyRegistrationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FailedKeyRegistrationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of the KMS key that failed to update.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline FailedKeyRegistrationEntry& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline FailedKeyRegistrationEntry& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline FailedKeyRegistrationEntry& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    FailedKeyRegistrationEntry& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,21 +55,19 @@ namespace Model
      * <p>A message that provides information about why a
      * <code>FailedKeyRegistrationEntry</code> error occurred.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FailedKeyRegistrationEntry& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FailedKeyRegistrationEntry& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FailedKeyRegistrationEntry& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FailedKeyRegistrationEntry& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of a <code>FailedKeyRegistrationEntry</code> error.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline FailedKeyRegistrationEntry& WithStatusCode(int value) { SetStatusCode(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
      * fail and with a <code>False</code> <code>SenderFault</code> value, contact
      * Amazon Web Services Support.</p>
      */
-    inline bool GetSenderFault() const{ return m_senderFault; }
+    inline bool GetSenderFault() const { return m_senderFault; }
     inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
     inline FailedKeyRegistrationEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
@@ -99,10 +95,10 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_statusCode;
+    int m_statusCode{0};
     bool m_statusCodeHasBeenSet = false;
 
-    bool m_senderFault;
+    bool m_senderFault{false};
     bool m_senderFaultHasBeenSet = false;
   };
 

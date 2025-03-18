@@ -18,19 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VerticalLayoutConfiguration::VerticalLayoutConfiguration() : 
-    m_tileOrder(TileOrder::NOT_SET),
-    m_tileOrderHasBeenSet(false),
-    m_tilePosition(VerticalTilePosition::NOT_SET),
-    m_tilePositionHasBeenSet(false),
-    m_tileCount(0),
-    m_tileCountHasBeenSet(false),
-    m_tileAspectRatioHasBeenSet(false)
-{
-}
-
 VerticalLayoutConfiguration::VerticalLayoutConfiguration(JsonView jsonValue)
-  : VerticalLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ VerticalLayoutConfiguration& VerticalLayoutConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("TileOrder"))
   {
     m_tileOrder = TileOrderMapper::GetTileOrderForName(jsonValue.GetString("TileOrder"));
-
     m_tileOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TilePosition"))
   {
     m_tilePosition = VerticalTilePositionMapper::GetVerticalTilePositionForName(jsonValue.GetString("TilePosition"));
-
     m_tilePositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TileCount"))
   {
     m_tileCount = jsonValue.GetInteger("TileCount");
-
     m_tileCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TileAspectRatio"))
   {
     m_tileAspectRatio = jsonValue.GetString("TileAspectRatio");
-
     m_tileAspectRatioHasBeenSet = true;
   }
-
   return *this;
 }
 

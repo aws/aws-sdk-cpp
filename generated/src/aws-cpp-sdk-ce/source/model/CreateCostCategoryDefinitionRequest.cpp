@@ -12,18 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCostCategoryDefinitionRequest::CreateCostCategoryDefinitionRequest() : 
-    m_nameHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
-    m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_splitChargeRulesHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

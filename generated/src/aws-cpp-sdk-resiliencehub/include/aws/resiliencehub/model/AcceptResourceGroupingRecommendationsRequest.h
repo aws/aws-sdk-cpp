@@ -23,7 +23,7 @@ namespace Model
   class AcceptResourceGroupingRecommendationsRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API AcceptResourceGroupingRecommendationsRequest();
+    AWS_RESILIENCEHUB_API AcceptResourceGroupingRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline AcceptResourceGroupingRecommendationsRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline AcceptResourceGroupingRecommendationsRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline AcceptResourceGroupingRecommendationsRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    AcceptResourceGroupingRecommendationsRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>List of resource grouping recommendations you want to include in your
      * application.</p>
      */
-    inline const Aws::Vector<AcceptGroupingRecommendationEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<AcceptGroupingRecommendationEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<AcceptGroupingRecommendationEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<AcceptGroupingRecommendationEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline AcceptResourceGroupingRecommendationsRequest& WithEntries(const Aws::Vector<AcceptGroupingRecommendationEntry>& value) { SetEntries(value); return *this;}
-    inline AcceptResourceGroupingRecommendationsRequest& WithEntries(Aws::Vector<AcceptGroupingRecommendationEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline AcceptResourceGroupingRecommendationsRequest& AddEntries(const AcceptGroupingRecommendationEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline AcceptResourceGroupingRecommendationsRequest& AddEntries(AcceptGroupingRecommendationEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<AcceptGroupingRecommendationEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<AcceptGroupingRecommendationEntry>>
+    AcceptResourceGroupingRecommendationsRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = AcceptGroupingRecommendationEntry>
+    AcceptResourceGroupingRecommendationsRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

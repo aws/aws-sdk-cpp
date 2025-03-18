@@ -42,7 +42,7 @@ namespace Model
   class ManagedNotificationEvent
   {
   public:
-    AWS_NOTIFICATIONS_API ManagedNotificationEvent();
+    AWS_NOTIFICATIONS_API ManagedNotificationEvent() = default;
     AWS_NOTIFICATIONS_API ManagedNotificationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API ManagedNotificationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,36 +52,32 @@ namespace Model
     /**
      * <p>Version of the <code>ManagedNotificationEvent</code> schema.</p>
      */
-    inline const SchemaVersion& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline SchemaVersion GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const SchemaVersion& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(SchemaVersion&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline ManagedNotificationEvent& WithSchemaVersion(const SchemaVersion& value) { SetSchemaVersion(value); return *this;}
-    inline ManagedNotificationEvent& WithSchemaVersion(SchemaVersion&& value) { SetSchemaVersion(std::move(value)); return *this;}
+    inline void SetSchemaVersion(SchemaVersion value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+    inline ManagedNotificationEvent& WithSchemaVersion(SchemaVersion value) { SetSchemaVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier for a <code>ManagedNotificationEvent</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ManagedNotificationEvent& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ManagedNotificationEvent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ManagedNotificationEvent& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ManagedNotificationEvent& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MessageComponents& GetMessageComponents() const{ return m_messageComponents; }
+    inline const MessageComponents& GetMessageComponents() const { return m_messageComponents; }
     inline bool MessageComponentsHasBeenSet() const { return m_messageComponentsHasBeenSet; }
-    inline void SetMessageComponents(const MessageComponents& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = value; }
-    inline void SetMessageComponents(MessageComponents&& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = std::move(value); }
-    inline ManagedNotificationEvent& WithMessageComponents(const MessageComponents& value) { SetMessageComponents(value); return *this;}
-    inline ManagedNotificationEvent& WithMessageComponents(MessageComponents&& value) { SetMessageComponents(std::move(value)); return *this;}
+    template<typename MessageComponentsT = MessageComponents>
+    void SetMessageComponents(MessageComponentsT&& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = std::forward<MessageComponentsT>(value); }
+    template<typename MessageComponentsT = MessageComponents>
+    ManagedNotificationEvent& WithMessageComponents(MessageComponentsT&& value) { SetMessageComponents(std::forward<MessageComponentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>URL defined by Source Service to be used by notification consumers to get
      * additional information about event.</p>
      */
-    inline const Aws::String& GetSourceEventDetailUrl() const{ return m_sourceEventDetailUrl; }
+    inline const Aws::String& GetSourceEventDetailUrl() const { return m_sourceEventDetailUrl; }
     inline bool SourceEventDetailUrlHasBeenSet() const { return m_sourceEventDetailUrlHasBeenSet; }
-    inline void SetSourceEventDetailUrl(const Aws::String& value) { m_sourceEventDetailUrlHasBeenSet = true; m_sourceEventDetailUrl = value; }
-    inline void SetSourceEventDetailUrl(Aws::String&& value) { m_sourceEventDetailUrlHasBeenSet = true; m_sourceEventDetailUrl = std::move(value); }
-    inline void SetSourceEventDetailUrl(const char* value) { m_sourceEventDetailUrlHasBeenSet = true; m_sourceEventDetailUrl.assign(value); }
-    inline ManagedNotificationEvent& WithSourceEventDetailUrl(const Aws::String& value) { SetSourceEventDetailUrl(value); return *this;}
-    inline ManagedNotificationEvent& WithSourceEventDetailUrl(Aws::String&& value) { SetSourceEventDetailUrl(std::move(value)); return *this;}
-    inline ManagedNotificationEvent& WithSourceEventDetailUrl(const char* value) { SetSourceEventDetailUrl(value); return *this;}
+    template<typename SourceEventDetailUrlT = Aws::String>
+    void SetSourceEventDetailUrl(SourceEventDetailUrlT&& value) { m_sourceEventDetailUrlHasBeenSet = true; m_sourceEventDetailUrl = std::forward<SourceEventDetailUrlT>(value); }
+    template<typename SourceEventDetailUrlT = Aws::String>
+    ManagedNotificationEvent& WithSourceEventDetailUrl(SourceEventDetailUrlT&& value) { SetSourceEventDetailUrl(std::forward<SourceEventDetailUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * <p>Text that needs to be hyperlinked with the sourceEventDetailUrl. For example,
      * the description of the sourceEventDetailUrl.</p>
      */
-    inline const Aws::String& GetSourceEventDetailUrlDisplayText() const{ return m_sourceEventDetailUrlDisplayText; }
+    inline const Aws::String& GetSourceEventDetailUrlDisplayText() const { return m_sourceEventDetailUrlDisplayText; }
     inline bool SourceEventDetailUrlDisplayTextHasBeenSet() const { return m_sourceEventDetailUrlDisplayTextHasBeenSet; }
-    inline void SetSourceEventDetailUrlDisplayText(const Aws::String& value) { m_sourceEventDetailUrlDisplayTextHasBeenSet = true; m_sourceEventDetailUrlDisplayText = value; }
-    inline void SetSourceEventDetailUrlDisplayText(Aws::String&& value) { m_sourceEventDetailUrlDisplayTextHasBeenSet = true; m_sourceEventDetailUrlDisplayText = std::move(value); }
-    inline void SetSourceEventDetailUrlDisplayText(const char* value) { m_sourceEventDetailUrlDisplayTextHasBeenSet = true; m_sourceEventDetailUrlDisplayText.assign(value); }
-    inline ManagedNotificationEvent& WithSourceEventDetailUrlDisplayText(const Aws::String& value) { SetSourceEventDetailUrlDisplayText(value); return *this;}
-    inline ManagedNotificationEvent& WithSourceEventDetailUrlDisplayText(Aws::String&& value) { SetSourceEventDetailUrlDisplayText(std::move(value)); return *this;}
-    inline ManagedNotificationEvent& WithSourceEventDetailUrlDisplayText(const char* value) { SetSourceEventDetailUrlDisplayText(value); return *this;}
+    template<typename SourceEventDetailUrlDisplayTextT = Aws::String>
+    void SetSourceEventDetailUrlDisplayText(SourceEventDetailUrlDisplayTextT&& value) { m_sourceEventDetailUrlDisplayTextHasBeenSet = true; m_sourceEventDetailUrlDisplayText = std::forward<SourceEventDetailUrlDisplayTextT>(value); }
+    template<typename SourceEventDetailUrlDisplayTextT = Aws::String>
+    ManagedNotificationEvent& WithSourceEventDetailUrlDisplayText(SourceEventDetailUrlDisplayTextT&& value) { SetSourceEventDetailUrlDisplayText(std::forward<SourceEventDetailUrlDisplayTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +121,10 @@ namespace Model
      * recommendations, service announcements, or reminders.</p> </li> </ul> </li>
      * </ul> </li> </ul>
      */
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline ManagedNotificationEvent& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline ManagedNotificationEvent& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline ManagedNotificationEvent& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -146,76 +136,70 @@ namespace Model
      * <code>INACTIVE</code>. Any call can be run.</p> </li> </ul> </li> </ul> </li>
      * </ul>
      */
-    inline const EventStatus& GetEventStatus() const{ return m_eventStatus; }
+    inline EventStatus GetEventStatus() const { return m_eventStatus; }
     inline bool EventStatusHasBeenSet() const { return m_eventStatusHasBeenSet; }
-    inline void SetEventStatus(const EventStatus& value) { m_eventStatusHasBeenSet = true; m_eventStatus = value; }
-    inline void SetEventStatus(EventStatus&& value) { m_eventStatusHasBeenSet = true; m_eventStatus = std::move(value); }
-    inline ManagedNotificationEvent& WithEventStatus(const EventStatus& value) { SetEventStatus(value); return *this;}
-    inline ManagedNotificationEvent& WithEventStatus(EventStatus&& value) { SetEventStatus(std::move(value)); return *this;}
+    inline void SetEventStatus(EventStatus value) { m_eventStatusHasBeenSet = true; m_eventStatus = value; }
+    inline ManagedNotificationEvent& WithEventStatus(EventStatus value) { SetEventStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The notifications aggregation type.</p>
      */
-    inline const AggregationEventType& GetAggregationEventType() const{ return m_aggregationEventType; }
+    inline AggregationEventType GetAggregationEventType() const { return m_aggregationEventType; }
     inline bool AggregationEventTypeHasBeenSet() const { return m_aggregationEventTypeHasBeenSet; }
-    inline void SetAggregationEventType(const AggregationEventType& value) { m_aggregationEventTypeHasBeenSet = true; m_aggregationEventType = value; }
-    inline void SetAggregationEventType(AggregationEventType&& value) { m_aggregationEventTypeHasBeenSet = true; m_aggregationEventType = std::move(value); }
-    inline ManagedNotificationEvent& WithAggregationEventType(const AggregationEventType& value) { SetAggregationEventType(value); return *this;}
-    inline ManagedNotificationEvent& WithAggregationEventType(AggregationEventType&& value) { SetAggregationEventType(std::move(value)); return *this;}
+    inline void SetAggregationEventType(AggregationEventType value) { m_aggregationEventTypeHasBeenSet = true; m_aggregationEventType = value; }
+    inline ManagedNotificationEvent& WithAggregationEventType(AggregationEventType value) { SetAggregationEventType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const AggregationSummary& GetAggregationSummary() const{ return m_aggregationSummary; }
+    inline const AggregationSummary& GetAggregationSummary() const { return m_aggregationSummary; }
     inline bool AggregationSummaryHasBeenSet() const { return m_aggregationSummaryHasBeenSet; }
-    inline void SetAggregationSummary(const AggregationSummary& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = value; }
-    inline void SetAggregationSummary(AggregationSummary&& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = std::move(value); }
-    inline ManagedNotificationEvent& WithAggregationSummary(const AggregationSummary& value) { SetAggregationSummary(value); return *this;}
-    inline ManagedNotificationEvent& WithAggregationSummary(AggregationSummary&& value) { SetAggregationSummary(std::move(value)); return *this;}
+    template<typename AggregationSummaryT = AggregationSummary>
+    void SetAggregationSummary(AggregationSummaryT&& value) { m_aggregationSummaryHasBeenSet = true; m_aggregationSummary = std::forward<AggregationSummaryT>(value); }
+    template<typename AggregationSummaryT = AggregationSummary>
+    ManagedNotificationEvent& WithAggregationSummary(AggregationSummaryT&& value) { SetAggregationSummary(std::forward<AggregationSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The earliest time of events to return from this call.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ManagedNotificationEvent& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ManagedNotificationEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ManagedNotificationEvent& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time of the notification event.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ManagedNotificationEvent& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ManagedNotificationEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ManagedNotificationEvent& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of text values.</p>
      */
-    inline const Aws::Map<Aws::String, TextPartValue>& GetTextParts() const{ return m_textParts; }
+    inline const Aws::Map<Aws::String, TextPartValue>& GetTextParts() const { return m_textParts; }
     inline bool TextPartsHasBeenSet() const { return m_textPartsHasBeenSet; }
-    inline void SetTextParts(const Aws::Map<Aws::String, TextPartValue>& value) { m_textPartsHasBeenSet = true; m_textParts = value; }
-    inline void SetTextParts(Aws::Map<Aws::String, TextPartValue>&& value) { m_textPartsHasBeenSet = true; m_textParts = std::move(value); }
-    inline ManagedNotificationEvent& WithTextParts(const Aws::Map<Aws::String, TextPartValue>& value) { SetTextParts(value); return *this;}
-    inline ManagedNotificationEvent& WithTextParts(Aws::Map<Aws::String, TextPartValue>&& value) { SetTextParts(std::move(value)); return *this;}
-    inline ManagedNotificationEvent& AddTextParts(const Aws::String& key, const TextPartValue& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(key, value); return *this; }
-    inline ManagedNotificationEvent& AddTextParts(Aws::String&& key, const TextPartValue& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(std::move(key), value); return *this; }
-    inline ManagedNotificationEvent& AddTextParts(const Aws::String& key, TextPartValue&& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(key, std::move(value)); return *this; }
-    inline ManagedNotificationEvent& AddTextParts(Aws::String&& key, TextPartValue&& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(std::move(key), std::move(value)); return *this; }
-    inline ManagedNotificationEvent& AddTextParts(const char* key, TextPartValue&& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(key, std::move(value)); return *this; }
-    inline ManagedNotificationEvent& AddTextParts(const char* key, const TextPartValue& value) { m_textPartsHasBeenSet = true; m_textParts.emplace(key, value); return *this; }
+    template<typename TextPartsT = Aws::Map<Aws::String, TextPartValue>>
+    void SetTextParts(TextPartsT&& value) { m_textPartsHasBeenSet = true; m_textParts = std::forward<TextPartsT>(value); }
+    template<typename TextPartsT = Aws::Map<Aws::String, TextPartValue>>
+    ManagedNotificationEvent& WithTextParts(TextPartsT&& value) { SetTextParts(std::forward<TextPartsT>(value)); return *this;}
+    template<typename TextPartsKeyT = Aws::String, typename TextPartsValueT = TextPartValue>
+    ManagedNotificationEvent& AddTextParts(TextPartsKeyT&& key, TextPartsValueT&& value) {
+      m_textPartsHasBeenSet = true; m_textParts.emplace(std::forward<TextPartsKeyT>(key), std::forward<TextPartsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -223,18 +207,16 @@ namespace Model
      * <p>The Organizational Unit Id that an Amazon Web Services account belongs
      * to.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-    inline ManagedNotificationEvent& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-    inline ManagedNotificationEvent& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-    inline ManagedNotificationEvent& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    ManagedNotificationEvent& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
     ///@}
   private:
 
-    SchemaVersion m_schemaVersion;
+    SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
     bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_id;
@@ -249,22 +231,22 @@ namespace Model
     Aws::String m_sourceEventDetailUrlDisplayText;
     bool m_sourceEventDetailUrlDisplayTextHasBeenSet = false;
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
 
-    EventStatus m_eventStatus;
+    EventStatus m_eventStatus{EventStatus::NOT_SET};
     bool m_eventStatusHasBeenSet = false;
 
-    AggregationEventType m_aggregationEventType;
+    AggregationEventType m_aggregationEventType{AggregationEventType::NOT_SET};
     bool m_aggregationEventTypeHasBeenSet = false;
 
     AggregationSummary m_aggregationSummary;
     bool m_aggregationSummaryHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, TextPartValue> m_textParts;

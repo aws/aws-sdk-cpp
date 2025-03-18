@@ -25,7 +25,7 @@ namespace Model
   class CreateInvalidation2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateInvalidation2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateInvalidation2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
     /**
      * <p>The distribution's id.</p>
      */
-    inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+    inline const Aws::String& GetDistributionId() const { return m_distributionId; }
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-    inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-    inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-    inline CreateInvalidation2020_05_31Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-    inline CreateInvalidation2020_05_31Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-    inline CreateInvalidation2020_05_31Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    template<typename DistributionIdT = Aws::String>
+    void SetDistributionId(DistributionIdT&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::forward<DistributionIdT>(value); }
+    template<typename DistributionIdT = Aws::String>
+    CreateInvalidation2020_05_31Request& WithDistributionId(DistributionIdT&& value) { SetDistributionId(std::forward<DistributionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The batch information for the invalidation.</p>
      */
-    inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
+    inline const InvalidationBatch& GetInvalidationBatch() const { return m_invalidationBatch; }
     inline bool InvalidationBatchHasBeenSet() const { return m_invalidationBatchHasBeenSet; }
-    inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
-    inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = std::move(value); }
-    inline CreateInvalidation2020_05_31Request& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
-    inline CreateInvalidation2020_05_31Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
+    template<typename InvalidationBatchT = InvalidationBatch>
+    void SetInvalidationBatch(InvalidationBatchT&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = std::forward<InvalidationBatchT>(value); }
+    template<typename InvalidationBatchT = InvalidationBatch>
+    CreateInvalidation2020_05_31Request& WithInvalidationBatch(InvalidationBatchT&& value) { SetInvalidationBatch(std::forward<InvalidationBatchT>(value)); return *this;}
     ///@}
   private:
 

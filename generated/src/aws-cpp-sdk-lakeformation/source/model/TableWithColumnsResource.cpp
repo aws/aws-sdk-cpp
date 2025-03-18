@@ -18,17 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-TableWithColumnsResource::TableWithColumnsResource() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false)
-{
-}
-
 TableWithColumnsResource::TableWithColumnsResource(JsonView jsonValue)
-  : TableWithColumnsResource()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TableWithColumnsResource& TableWithColumnsResource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnNames"))
   {
     Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
@@ -65,14 +49,11 @@ TableWithColumnsResource& TableWithColumnsResource::operator =(JsonView jsonValu
     }
     m_columnNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnWildcard"))
   {
     m_columnWildcard = jsonValue.GetObject("ColumnWildcard");
-
     m_columnWildcardHasBeenSet = true;
   }
-
   return *this;
 }
 

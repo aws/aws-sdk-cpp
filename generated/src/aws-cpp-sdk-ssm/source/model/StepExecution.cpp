@@ -18,41 +18,7 @@ namespace SSM
 namespace Model
 {
 
-StepExecution::StepExecution() : 
-    m_stepNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_onFailureHasBeenSet(false),
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false),
-    m_executionEndTimeHasBeenSet(false),
-    m_stepStatus(AutomationExecutionStatus::NOT_SET),
-    m_stepStatusHasBeenSet(false),
-    m_responseCodeHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_responseHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_stepExecutionIdHasBeenSet(false),
-    m_overriddenParametersHasBeenSet(false),
-    m_isEnd(false),
-    m_isEndHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_isCritical(false),
-    m_isCriticalHasBeenSet(false),
-    m_validNextStepsHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false),
-    m_parentStepDetailsHasBeenSet(false)
-{
-}
-
 StepExecution::StepExecution(JsonView jsonValue)
-  : StepExecution()
 {
   *this = jsonValue;
 }
@@ -62,66 +28,48 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepName"))
   {
     m_stepName = jsonValue.GetString("StepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInt64("TimeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnFailure"))
   {
     m_onFailure = jsonValue.GetString("OnFailure");
-
     m_onFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAttempts"))
   {
     m_maxAttempts = jsonValue.GetInteger("MaxAttempts");
-
     m_maxAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionStartTime"))
   {
     m_executionStartTime = jsonValue.GetDouble("ExecutionStartTime");
-
     m_executionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionEndTime"))
   {
     m_executionEndTime = jsonValue.GetDouble("ExecutionEndTime");
-
     m_executionEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepStatus"))
   {
     m_stepStatus = AutomationExecutionStatusMapper::GetAutomationExecutionStatusForName(jsonValue.GetString("StepStatus"));
-
     m_stepStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseCode"))
   {
     m_responseCode = jsonValue.GetString("ResponseCode");
-
     m_responseCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Map<Aws::String, JsonView> inputsJsonMap = jsonValue.GetObject("Inputs").GetAllObjects();
@@ -131,7 +79,6 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
@@ -148,35 +95,26 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Response"))
   {
     m_response = jsonValue.GetString("Response");
-
     m_responseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepExecutionId"))
   {
     m_stepExecutionId = jsonValue.GetString("StepExecutionId");
-
     m_stepExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverriddenParameters"))
   {
     Aws::Map<Aws::String, JsonView> overriddenParametersJsonMap = jsonValue.GetObject("OverriddenParameters").GetAllObjects();
@@ -193,28 +131,21 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_overriddenParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsEnd"))
   {
     m_isEnd = jsonValue.GetBool("IsEnd");
-
     m_isEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextStep"))
   {
     m_nextStep = jsonValue.GetString("NextStep");
-
     m_nextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsCritical"))
   {
     m_isCritical = jsonValue.GetBool("IsCritical");
-
     m_isCriticalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidNextSteps"))
   {
     Aws::Utils::Array<JsonView> validNextStepsJsonList = jsonValue.GetArray("ValidNextSteps");
@@ -224,7 +155,6 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_validNextStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -234,14 +164,11 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocation"))
   {
     m_targetLocation = jsonValue.GetObject("TargetLocation");
-
     m_targetLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -251,14 +178,11 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentStepDetails"))
   {
     m_parentStepDetails = jsonValue.GetObject("ParentStepDetails");
-
     m_parentStepDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

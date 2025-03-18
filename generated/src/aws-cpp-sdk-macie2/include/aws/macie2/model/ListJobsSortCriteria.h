@@ -33,7 +33,7 @@ namespace Model
   class ListJobsSortCriteria
   {
   public:
-    AWS_MACIE2_API ListJobsSortCriteria();
+    AWS_MACIE2_API ListJobsSortCriteria() = default;
     AWS_MACIE2_API ListJobsSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ListJobsSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The property to sort the results by.</p>
      */
-    inline const ListJobsSortAttributeName& GetAttributeName() const{ return m_attributeName; }
+    inline ListJobsSortAttributeName GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const ListJobsSortAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(ListJobsSortAttributeName&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline ListJobsSortCriteria& WithAttributeName(const ListJobsSortAttributeName& value) { SetAttributeName(value); return *this;}
-    inline ListJobsSortCriteria& WithAttributeName(ListJobsSortAttributeName&& value) { SetAttributeName(std::move(value)); return *this;}
+    inline void SetAttributeName(ListJobsSortAttributeName value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline ListJobsSortCriteria& WithAttributeName(ListJobsSortAttributeName value) { SetAttributeName(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * specified by the attributeName property. Valid values are: ASC, sort the results
      * in ascending order; and, DESC, sort the results in descending order.</p>
      */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline OrderBy GetOrderBy() const { return m_orderBy; }
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline ListJobsSortCriteria& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline ListJobsSortCriteria& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    inline void SetOrderBy(OrderBy value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline ListJobsSortCriteria& WithOrderBy(OrderBy value) { SetOrderBy(value); return *this;}
     ///@}
   private:
 
-    ListJobsSortAttributeName m_attributeName;
+    ListJobsSortAttributeName m_attributeName{ListJobsSortAttributeName::NOT_SET};
     bool m_attributeNameHasBeenSet = false;
 
-    OrderBy m_orderBy;
+    OrderBy m_orderBy{OrderBy::NOT_SET};
     bool m_orderByHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Status::Status() : 
-    m_documentIdHasBeenSet(false),
-    m_documentStatus(DocumentStatus::NOT_SET),
-    m_documentStatusHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 Status::Status(JsonView jsonValue)
-  : Status()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Status& Status::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentId"))
   {
     m_documentId = jsonValue.GetString("DocumentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentStatus"))
   {
     m_documentStatus = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("DocumentStatus"));
-
     m_documentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = jsonValue.GetString("FailureCode");
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

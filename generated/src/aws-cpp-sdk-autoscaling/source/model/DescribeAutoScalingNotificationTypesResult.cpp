@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAutoScalingNotificationTypesResult::DescribeAutoScalingNotificationTypesResult()
-{
-}
-
 DescribeAutoScalingNotificationTypesResult::DescribeAutoScalingNotificationTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypes
     if(!autoScalingNotificationTypesNode.IsNull())
     {
       XmlNode autoScalingNotificationTypesMember = autoScalingNotificationTypesNode.FirstChild("member");
+      m_autoScalingNotificationTypesHasBeenSet = !autoScalingNotificationTypesMember.IsNull();
       while(!autoScalingNotificationTypesMember.IsNull())
       {
         m_autoScalingNotificationTypes.push_back(autoScalingNotificationTypesMember.GetText());
         autoScalingNotificationTypesMember = autoScalingNotificationTypesMember.NextNode("member");
       }
 
+      m_autoScalingNotificationTypesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeAutoScalingNotificationTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

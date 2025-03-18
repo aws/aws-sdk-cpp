@@ -12,13 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDetectSyntaxRequest::BatchDetectSyntaxRequest() : 
-    m_textListHasBeenSet(false),
-    m_languageCode(SyntaxLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String BatchDetectSyntaxRequest::SerializePayload() const
 {
   JsonValue payload;

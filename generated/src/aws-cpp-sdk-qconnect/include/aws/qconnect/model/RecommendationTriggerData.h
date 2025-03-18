@@ -32,7 +32,7 @@ namespace Model
   class RecommendationTriggerData
   {
   public:
-    AWS_QCONNECT_API RecommendationTriggerData();
+    AWS_QCONNECT_API RecommendationTriggerData() = default;
     AWS_QCONNECT_API RecommendationTriggerData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API RecommendationTriggerData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Data associated with the QUERY RecommendationTriggerType.</p>
      */
-    inline const QueryRecommendationTriggerData& GetQuery() const{ return m_query; }
+    inline const QueryRecommendationTriggerData& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const QueryRecommendationTriggerData& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(QueryRecommendationTriggerData&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline RecommendationTriggerData& WithQuery(const QueryRecommendationTriggerData& value) { SetQuery(value); return *this;}
-    inline RecommendationTriggerData& WithQuery(QueryRecommendationTriggerData&& value) { SetQuery(std::move(value)); return *this;}
+    template<typename QueryT = QueryRecommendationTriggerData>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = QueryRecommendationTriggerData>
+    RecommendationTriggerData& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopModelCustomizationJobRequest::StopModelCustomizationJobRequest() : 
-    m_jobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopModelCustomizationJobRequest::SerializePayload() const
 {
   return {};

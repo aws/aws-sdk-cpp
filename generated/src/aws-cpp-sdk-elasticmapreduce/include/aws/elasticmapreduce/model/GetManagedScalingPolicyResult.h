@@ -28,7 +28,7 @@ namespace Model
   class GetManagedScalingPolicyResult
   {
   public:
-    AWS_EMR_API GetManagedScalingPolicyResult();
+    AWS_EMR_API GetManagedScalingPolicyResult() = default;
     AWS_EMR_API GetManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API GetManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
-    inline const ManagedScalingPolicy& GetManagedScalingPolicy() const{ return m_managedScalingPolicy; }
-    inline void SetManagedScalingPolicy(const ManagedScalingPolicy& value) { m_managedScalingPolicy = value; }
-    inline void SetManagedScalingPolicy(ManagedScalingPolicy&& value) { m_managedScalingPolicy = std::move(value); }
-    inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(const ManagedScalingPolicy& value) { SetManagedScalingPolicy(value); return *this;}
-    inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}
+    inline const ManagedScalingPolicy& GetManagedScalingPolicy() const { return m_managedScalingPolicy; }
+    template<typename ManagedScalingPolicyT = ManagedScalingPolicy>
+    void SetManagedScalingPolicy(ManagedScalingPolicyT&& value) { m_managedScalingPolicyHasBeenSet = true; m_managedScalingPolicy = std::forward<ManagedScalingPolicyT>(value); }
+    template<typename ManagedScalingPolicyT = ManagedScalingPolicy>
+    GetManagedScalingPolicyResult& WithManagedScalingPolicy(ManagedScalingPolicyT&& value) { SetManagedScalingPolicy(std::forward<ManagedScalingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedScalingPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedScalingPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedScalingPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedScalingPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ManagedScalingPolicy m_managedScalingPolicy;
+    bool m_managedScalingPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

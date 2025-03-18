@@ -30,7 +30,7 @@ namespace Model
   class BatchDetectSentimentResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectSentimentResult();
+    AWS_COMPREHEND_API BatchDetectSentimentResult() = default;
     AWS_COMPREHEND_API BatchDetectSentimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API BatchDetectSentimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * the documents in the input list. If all of the documents contain an error, the
      * <code>ResultList</code> is empty.</p>
      */
-    inline const Aws::Vector<BatchDetectSentimentItemResult>& GetResultList() const{ return m_resultList; }
-    inline void SetResultList(const Aws::Vector<BatchDetectSentimentItemResult>& value) { m_resultList = value; }
-    inline void SetResultList(Aws::Vector<BatchDetectSentimentItemResult>&& value) { m_resultList = std::move(value); }
-    inline BatchDetectSentimentResult& WithResultList(const Aws::Vector<BatchDetectSentimentItemResult>& value) { SetResultList(value); return *this;}
-    inline BatchDetectSentimentResult& WithResultList(Aws::Vector<BatchDetectSentimentItemResult>&& value) { SetResultList(std::move(value)); return *this;}
-    inline BatchDetectSentimentResult& AddResultList(const BatchDetectSentimentItemResult& value) { m_resultList.push_back(value); return *this; }
-    inline BatchDetectSentimentResult& AddResultList(BatchDetectSentimentItemResult&& value) { m_resultList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDetectSentimentItemResult>& GetResultList() const { return m_resultList; }
+    template<typename ResultListT = Aws::Vector<BatchDetectSentimentItemResult>>
+    void SetResultList(ResultListT&& value) { m_resultListHasBeenSet = true; m_resultList = std::forward<ResultListT>(value); }
+    template<typename ResultListT = Aws::Vector<BatchDetectSentimentItemResult>>
+    BatchDetectSentimentResult& WithResultList(ResultListT&& value) { SetResultList(std::forward<ResultListT>(value)); return *this;}
+    template<typename ResultListT = BatchDetectSentimentItemResult>
+    BatchDetectSentimentResult& AddResultList(ResultListT&& value) { m_resultListHasBeenSet = true; m_resultList.emplace_back(std::forward<ResultListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,33 @@ namespace Model
      * the order of the documents in the input list. If there are no errors in the
      * batch, the <code>ErrorList</code> is empty.</p>
      */
-    inline const Aws::Vector<BatchItemError>& GetErrorList() const{ return m_errorList; }
-    inline void SetErrorList(const Aws::Vector<BatchItemError>& value) { m_errorList = value; }
-    inline void SetErrorList(Aws::Vector<BatchItemError>&& value) { m_errorList = std::move(value); }
-    inline BatchDetectSentimentResult& WithErrorList(const Aws::Vector<BatchItemError>& value) { SetErrorList(value); return *this;}
-    inline BatchDetectSentimentResult& WithErrorList(Aws::Vector<BatchItemError>&& value) { SetErrorList(std::move(value)); return *this;}
-    inline BatchDetectSentimentResult& AddErrorList(const BatchItemError& value) { m_errorList.push_back(value); return *this; }
-    inline BatchDetectSentimentResult& AddErrorList(BatchItemError&& value) { m_errorList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchItemError>& GetErrorList() const { return m_errorList; }
+    template<typename ErrorListT = Aws::Vector<BatchItemError>>
+    void SetErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList = std::forward<ErrorListT>(value); }
+    template<typename ErrorListT = Aws::Vector<BatchItemError>>
+    BatchDetectSentimentResult& WithErrorList(ErrorListT&& value) { SetErrorList(std::forward<ErrorListT>(value)); return *this;}
+    template<typename ErrorListT = BatchItemError>
+    BatchDetectSentimentResult& AddErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList.emplace_back(std::forward<ErrorListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDetectSentimentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDetectSentimentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDetectSentimentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDetectSentimentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDetectSentimentItemResult> m_resultList;
+    bool m_resultListHasBeenSet = false;
 
     Aws::Vector<BatchItemError> m_errorList;
+    bool m_errorListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

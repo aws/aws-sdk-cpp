@@ -31,7 +31,7 @@ namespace Model
   class TargetGroup
   {
   public:
-    AWS_EC2_API TargetGroup();
+    AWS_EC2_API TargetGroup() = default;
     AWS_EC2_API TargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline TargetGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline TargetGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline TargetGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    TargetGroup& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

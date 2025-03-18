@@ -28,35 +28,35 @@ namespace Model
   class GetSiteResult
   {
   public:
-    AWS_OUTPOSTS_API GetSiteResult();
+    AWS_OUTPOSTS_API GetSiteResult() = default;
     AWS_OUTPOSTS_API GetSiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API GetSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Site& GetSite() const{ return m_site; }
-    inline void SetSite(const Site& value) { m_site = value; }
-    inline void SetSite(Site&& value) { m_site = std::move(value); }
-    inline GetSiteResult& WithSite(const Site& value) { SetSite(value); return *this;}
-    inline GetSiteResult& WithSite(Site&& value) { SetSite(std::move(value)); return *this;}
+    inline const Site& GetSite() const { return m_site; }
+    template<typename SiteT = Site>
+    void SetSite(SiteT&& value) { m_siteHasBeenSet = true; m_site = std::forward<SiteT>(value); }
+    template<typename SiteT = Site>
+    GetSiteResult& WithSite(SiteT&& value) { SetSite(std::forward<SiteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Site m_site;
+    bool m_siteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

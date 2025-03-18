@@ -33,7 +33,7 @@ namespace Model
   class AlarmIdentifier
   {
   public:
-    AWS_ROUTE53_API AlarmIdentifier();
+    AWS_ROUTE53_API AlarmIdentifier() = default;
     AWS_ROUTE53_API AlarmIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API AlarmIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,10 @@ namespace Model
      * CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const CloudWatchRegion& GetRegion() const{ return m_region; }
+    inline CloudWatchRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const CloudWatchRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(CloudWatchRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline AlarmIdentifier& WithRegion(const CloudWatchRegion& value) { SetRegion(value); return *this;}
-    inline AlarmIdentifier& WithRegion(CloudWatchRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(CloudWatchRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline AlarmIdentifier& WithRegion(CloudWatchRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -69,18 +67,16 @@ namespace Model
      * <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended
      * statistics aren't supported.</p> </li> </ul> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AlarmIdentifier& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AlarmIdentifier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AlarmIdentifier& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AlarmIdentifier& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    CloudWatchRegion m_region;
+    CloudWatchRegion m_region{CloudWatchRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
     Aws::String m_name;

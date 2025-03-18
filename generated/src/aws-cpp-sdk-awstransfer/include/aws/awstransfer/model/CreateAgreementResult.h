@@ -27,7 +27,7 @@ namespace Model
   class CreateAgreementResult
   {
   public:
-    AWS_TRANSFER_API CreateAgreementResult();
+    AWS_TRANSFER_API CreateAgreementResult() = default;
     AWS_TRANSFER_API CreateAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API CreateAgreementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * updating an agreement, as well as in any other API calls that require that you
      * specify the agreement ID.</p>
      */
-    inline const Aws::String& GetAgreementId() const{ return m_agreementId; }
-    inline void SetAgreementId(const Aws::String& value) { m_agreementId = value; }
-    inline void SetAgreementId(Aws::String&& value) { m_agreementId = std::move(value); }
-    inline void SetAgreementId(const char* value) { m_agreementId.assign(value); }
-    inline CreateAgreementResult& WithAgreementId(const Aws::String& value) { SetAgreementId(value); return *this;}
-    inline CreateAgreementResult& WithAgreementId(Aws::String&& value) { SetAgreementId(std::move(value)); return *this;}
-    inline CreateAgreementResult& WithAgreementId(const char* value) { SetAgreementId(value); return *this;}
+    inline const Aws::String& GetAgreementId() const { return m_agreementId; }
+    template<typename AgreementIdT = Aws::String>
+    void SetAgreementId(AgreementIdT&& value) { m_agreementIdHasBeenSet = true; m_agreementId = std::forward<AgreementIdT>(value); }
+    template<typename AgreementIdT = Aws::String>
+    CreateAgreementResult& WithAgreementId(AgreementIdT&& value) { SetAgreementId(std::forward<AgreementIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAgreementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAgreementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAgreementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAgreementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agreementId;
+    bool m_agreementIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class CreateWorkflowStepRequest : public MigrationHubOrchestratorRequest
   {
   public:
-    AWS_MIGRATIONHUBORCHESTRATOR_API CreateWorkflowStepRequest();
+    AWS_MIGRATIONHUBORCHESTRATOR_API CreateWorkflowStepRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateWorkflowStepRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateWorkflowStepRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateWorkflowStepRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the step group.</p>
      */
-    inline const Aws::String& GetStepGroupId() const{ return m_stepGroupId; }
+    inline const Aws::String& GetStepGroupId() const { return m_stepGroupId; }
     inline bool StepGroupIdHasBeenSet() const { return m_stepGroupIdHasBeenSet; }
-    inline void SetStepGroupId(const Aws::String& value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId = value; }
-    inline void SetStepGroupId(Aws::String&& value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId = std::move(value); }
-    inline void SetStepGroupId(const char* value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId.assign(value); }
-    inline CreateWorkflowStepRequest& WithStepGroupId(const Aws::String& value) { SetStepGroupId(value); return *this;}
-    inline CreateWorkflowStepRequest& WithStepGroupId(Aws::String&& value) { SetStepGroupId(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& WithStepGroupId(const char* value) { SetStepGroupId(value); return *this;}
+    template<typename StepGroupIdT = Aws::String>
+    void SetStepGroupId(StepGroupIdT&& value) { m_stepGroupIdHasBeenSet = true; m_stepGroupId = std::forward<StepGroupIdT>(value); }
+    template<typename StepGroupIdT = Aws::String>
+    CreateWorkflowStepRequest& WithStepGroupId(StepGroupIdT&& value) { SetStepGroupId(std::forward<StepGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the migration workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline CreateWorkflowStepRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline CreateWorkflowStepRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    CreateWorkflowStepRequest& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,97 +77,90 @@ namespace Model
      * <p>The action type of the step. You must run and update the status of a manual
      * step for the workflow to continue after the completion of the step.</p>
      */
-    inline const StepActionType& GetStepActionType() const{ return m_stepActionType; }
+    inline StepActionType GetStepActionType() const { return m_stepActionType; }
     inline bool StepActionTypeHasBeenSet() const { return m_stepActionTypeHasBeenSet; }
-    inline void SetStepActionType(const StepActionType& value) { m_stepActionTypeHasBeenSet = true; m_stepActionType = value; }
-    inline void SetStepActionType(StepActionType&& value) { m_stepActionTypeHasBeenSet = true; m_stepActionType = std::move(value); }
-    inline CreateWorkflowStepRequest& WithStepActionType(const StepActionType& value) { SetStepActionType(value); return *this;}
-    inline CreateWorkflowStepRequest& WithStepActionType(StepActionType&& value) { SetStepActionType(std::move(value)); return *this;}
+    inline void SetStepActionType(StepActionType value) { m_stepActionTypeHasBeenSet = true; m_stepActionType = value; }
+    inline CreateWorkflowStepRequest& WithStepActionType(StepActionType value) { SetStepActionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the step.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateWorkflowStepRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateWorkflowStepRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateWorkflowStepRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom script to run tests on source or target environments.</p>
      */
-    inline const WorkflowStepAutomationConfiguration& GetWorkflowStepAutomationConfiguration() const{ return m_workflowStepAutomationConfiguration; }
+    inline const WorkflowStepAutomationConfiguration& GetWorkflowStepAutomationConfiguration() const { return m_workflowStepAutomationConfiguration; }
     inline bool WorkflowStepAutomationConfigurationHasBeenSet() const { return m_workflowStepAutomationConfigurationHasBeenSet; }
-    inline void SetWorkflowStepAutomationConfiguration(const WorkflowStepAutomationConfiguration& value) { m_workflowStepAutomationConfigurationHasBeenSet = true; m_workflowStepAutomationConfiguration = value; }
-    inline void SetWorkflowStepAutomationConfiguration(WorkflowStepAutomationConfiguration&& value) { m_workflowStepAutomationConfigurationHasBeenSet = true; m_workflowStepAutomationConfiguration = std::move(value); }
-    inline CreateWorkflowStepRequest& WithWorkflowStepAutomationConfiguration(const WorkflowStepAutomationConfiguration& value) { SetWorkflowStepAutomationConfiguration(value); return *this;}
-    inline CreateWorkflowStepRequest& WithWorkflowStepAutomationConfiguration(WorkflowStepAutomationConfiguration&& value) { SetWorkflowStepAutomationConfiguration(std::move(value)); return *this;}
+    template<typename WorkflowStepAutomationConfigurationT = WorkflowStepAutomationConfiguration>
+    void SetWorkflowStepAutomationConfiguration(WorkflowStepAutomationConfigurationT&& value) { m_workflowStepAutomationConfigurationHasBeenSet = true; m_workflowStepAutomationConfiguration = std::forward<WorkflowStepAutomationConfigurationT>(value); }
+    template<typename WorkflowStepAutomationConfigurationT = WorkflowStepAutomationConfiguration>
+    CreateWorkflowStepRequest& WithWorkflowStepAutomationConfiguration(WorkflowStepAutomationConfigurationT&& value) { SetWorkflowStepAutomationConfiguration(std::forward<WorkflowStepAutomationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The servers on which a step will be run.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStepTarget() const{ return m_stepTarget; }
+    inline const Aws::Vector<Aws::String>& GetStepTarget() const { return m_stepTarget; }
     inline bool StepTargetHasBeenSet() const { return m_stepTargetHasBeenSet; }
-    inline void SetStepTarget(const Aws::Vector<Aws::String>& value) { m_stepTargetHasBeenSet = true; m_stepTarget = value; }
-    inline void SetStepTarget(Aws::Vector<Aws::String>&& value) { m_stepTargetHasBeenSet = true; m_stepTarget = std::move(value); }
-    inline CreateWorkflowStepRequest& WithStepTarget(const Aws::Vector<Aws::String>& value) { SetStepTarget(value); return *this;}
-    inline CreateWorkflowStepRequest& WithStepTarget(Aws::Vector<Aws::String>&& value) { SetStepTarget(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& AddStepTarget(const Aws::String& value) { m_stepTargetHasBeenSet = true; m_stepTarget.push_back(value); return *this; }
-    inline CreateWorkflowStepRequest& AddStepTarget(Aws::String&& value) { m_stepTargetHasBeenSet = true; m_stepTarget.push_back(std::move(value)); return *this; }
-    inline CreateWorkflowStepRequest& AddStepTarget(const char* value) { m_stepTargetHasBeenSet = true; m_stepTarget.push_back(value); return *this; }
+    template<typename StepTargetT = Aws::Vector<Aws::String>>
+    void SetStepTarget(StepTargetT&& value) { m_stepTargetHasBeenSet = true; m_stepTarget = std::forward<StepTargetT>(value); }
+    template<typename StepTargetT = Aws::Vector<Aws::String>>
+    CreateWorkflowStepRequest& WithStepTarget(StepTargetT&& value) { SetStepTarget(std::forward<StepTargetT>(value)); return *this;}
+    template<typename StepTargetT = Aws::String>
+    CreateWorkflowStepRequest& AddStepTarget(StepTargetT&& value) { m_stepTargetHasBeenSet = true; m_stepTarget.emplace_back(std::forward<StepTargetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The key value pairs added for the expected output.</p>
      */
-    inline const Aws::Vector<WorkflowStepOutput>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<WorkflowStepOutput>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<WorkflowStepOutput>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<WorkflowStepOutput>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline CreateWorkflowStepRequest& WithOutputs(const Aws::Vector<WorkflowStepOutput>& value) { SetOutputs(value); return *this;}
-    inline CreateWorkflowStepRequest& WithOutputs(Aws::Vector<WorkflowStepOutput>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& AddOutputs(const WorkflowStepOutput& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline CreateWorkflowStepRequest& AddOutputs(WorkflowStepOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<WorkflowStepOutput>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<WorkflowStepOutput>>
+    CreateWorkflowStepRequest& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = WorkflowStepOutput>
+    CreateWorkflowStepRequest& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The previous step.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrevious() const{ return m_previous; }
+    inline const Aws::Vector<Aws::String>& GetPrevious() const { return m_previous; }
     inline bool PreviousHasBeenSet() const { return m_previousHasBeenSet; }
-    inline void SetPrevious(const Aws::Vector<Aws::String>& value) { m_previousHasBeenSet = true; m_previous = value; }
-    inline void SetPrevious(Aws::Vector<Aws::String>&& value) { m_previousHasBeenSet = true; m_previous = std::move(value); }
-    inline CreateWorkflowStepRequest& WithPrevious(const Aws::Vector<Aws::String>& value) { SetPrevious(value); return *this;}
-    inline CreateWorkflowStepRequest& WithPrevious(Aws::Vector<Aws::String>&& value) { SetPrevious(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& AddPrevious(const Aws::String& value) { m_previousHasBeenSet = true; m_previous.push_back(value); return *this; }
-    inline CreateWorkflowStepRequest& AddPrevious(Aws::String&& value) { m_previousHasBeenSet = true; m_previous.push_back(std::move(value)); return *this; }
-    inline CreateWorkflowStepRequest& AddPrevious(const char* value) { m_previousHasBeenSet = true; m_previous.push_back(value); return *this; }
+    template<typename PreviousT = Aws::Vector<Aws::String>>
+    void SetPrevious(PreviousT&& value) { m_previousHasBeenSet = true; m_previous = std::forward<PreviousT>(value); }
+    template<typename PreviousT = Aws::Vector<Aws::String>>
+    CreateWorkflowStepRequest& WithPrevious(PreviousT&& value) { SetPrevious(std::forward<PreviousT>(value)); return *this;}
+    template<typename PreviousT = Aws::String>
+    CreateWorkflowStepRequest& AddPrevious(PreviousT&& value) { m_previousHasBeenSet = true; m_previous.emplace_back(std::forward<PreviousT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next step.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNext() const{ return m_next; }
+    inline const Aws::Vector<Aws::String>& GetNext() const { return m_next; }
     inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
-    inline void SetNext(const Aws::Vector<Aws::String>& value) { m_nextHasBeenSet = true; m_next = value; }
-    inline void SetNext(Aws::Vector<Aws::String>&& value) { m_nextHasBeenSet = true; m_next = std::move(value); }
-    inline CreateWorkflowStepRequest& WithNext(const Aws::Vector<Aws::String>& value) { SetNext(value); return *this;}
-    inline CreateWorkflowStepRequest& WithNext(Aws::Vector<Aws::String>&& value) { SetNext(std::move(value)); return *this;}
-    inline CreateWorkflowStepRequest& AddNext(const Aws::String& value) { m_nextHasBeenSet = true; m_next.push_back(value); return *this; }
-    inline CreateWorkflowStepRequest& AddNext(Aws::String&& value) { m_nextHasBeenSet = true; m_next.push_back(std::move(value)); return *this; }
-    inline CreateWorkflowStepRequest& AddNext(const char* value) { m_nextHasBeenSet = true; m_next.push_back(value); return *this; }
+    template<typename NextT = Aws::Vector<Aws::String>>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::Vector<Aws::String>>
+    CreateWorkflowStepRequest& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
+    template<typename NextT = Aws::String>
+    CreateWorkflowStepRequest& AddNext(NextT&& value) { m_nextHasBeenSet = true; m_next.emplace_back(std::forward<NextT>(value)); return *this; }
     ///@}
   private:
 
@@ -186,7 +173,7 @@ namespace Model
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet = false;
 
-    StepActionType m_stepActionType;
+    StepActionType m_stepActionType{StepActionType::NOT_SET};
     bool m_stepActionTypeHasBeenSet = false;
 
     Aws::String m_description;

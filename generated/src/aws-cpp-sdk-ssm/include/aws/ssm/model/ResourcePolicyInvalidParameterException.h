@@ -33,7 +33,7 @@ namespace Model
   class ResourcePolicyInvalidParameterException
   {
   public:
-    AWS_SSM_API ResourcePolicyInvalidParameterException();
+    AWS_SSM_API ResourcePolicyInvalidParameterException() = default;
     AWS_SSM_API ResourcePolicyInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResourcePolicyInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,27 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetParameterNames() const{ return m_parameterNames; }
+    inline const Aws::Vector<Aws::String>& GetParameterNames() const { return m_parameterNames; }
     inline bool ParameterNamesHasBeenSet() const { return m_parameterNamesHasBeenSet; }
-    inline void SetParameterNames(const Aws::Vector<Aws::String>& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = value; }
-    inline void SetParameterNames(Aws::Vector<Aws::String>&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = std::move(value); }
-    inline ResourcePolicyInvalidParameterException& WithParameterNames(const Aws::Vector<Aws::String>& value) { SetParameterNames(value); return *this;}
-    inline ResourcePolicyInvalidParameterException& WithParameterNames(Aws::Vector<Aws::String>&& value) { SetParameterNames(std::move(value)); return *this;}
-    inline ResourcePolicyInvalidParameterException& AddParameterNames(const Aws::String& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
-    inline ResourcePolicyInvalidParameterException& AddParameterNames(Aws::String&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(std::move(value)); return *this; }
-    inline ResourcePolicyInvalidParameterException& AddParameterNames(const char* value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
+    template<typename ParameterNamesT = Aws::Vector<Aws::String>>
+    void SetParameterNames(ParameterNamesT&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = std::forward<ParameterNamesT>(value); }
+    template<typename ParameterNamesT = Aws::Vector<Aws::String>>
+    ResourcePolicyInvalidParameterException& WithParameterNames(ParameterNamesT&& value) { SetParameterNames(std::forward<ParameterNamesT>(value)); return *this;}
+    template<typename ParameterNamesT = Aws::String>
+    ResourcePolicyInvalidParameterException& AddParameterNames(ParameterNamesT&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.emplace_back(std::forward<ParameterNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ResourcePolicyInvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ResourcePolicyInvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ResourcePolicyInvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ResourcePolicyInvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

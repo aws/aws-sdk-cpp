@@ -18,17 +18,7 @@ namespace OAM
 namespace Model
 {
 
-ListLinksItem::ListLinksItem() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_sinkArnHasBeenSet(false)
-{
-}
-
 ListLinksItem::ListLinksItem(JsonView jsonValue)
-  : ListLinksItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ListLinksItem& ListLinksItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
@@ -65,14 +49,11 @@ ListLinksItem& ListLinksItem::operator =(JsonView jsonValue)
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinkArn"))
   {
     m_sinkArn = jsonValue.GetString("SinkArn");
-
     m_sinkArnHasBeenSet = true;
   }
-
   return *this;
 }
 

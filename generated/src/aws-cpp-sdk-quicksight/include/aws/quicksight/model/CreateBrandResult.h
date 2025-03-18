@@ -29,50 +29,51 @@ namespace Model
   class CreateBrandResult
   {
   public:
-    AWS_QUICKSIGHT_API CreateBrandResult();
+    AWS_QUICKSIGHT_API CreateBrandResult() = default;
     AWS_QUICKSIGHT_API CreateBrandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API CreateBrandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBrandResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBrandResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBrandResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBrandResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the brand.</p>
      */
-    inline const BrandDetail& GetBrandDetail() const{ return m_brandDetail; }
-    inline void SetBrandDetail(const BrandDetail& value) { m_brandDetail = value; }
-    inline void SetBrandDetail(BrandDetail&& value) { m_brandDetail = std::move(value); }
-    inline CreateBrandResult& WithBrandDetail(const BrandDetail& value) { SetBrandDetail(value); return *this;}
-    inline CreateBrandResult& WithBrandDetail(BrandDetail&& value) { SetBrandDetail(std::move(value)); return *this;}
+    inline const BrandDetail& GetBrandDetail() const { return m_brandDetail; }
+    template<typename BrandDetailT = BrandDetail>
+    void SetBrandDetail(BrandDetailT&& value) { m_brandDetailHasBeenSet = true; m_brandDetail = std::forward<BrandDetailT>(value); }
+    template<typename BrandDetailT = BrandDetail>
+    CreateBrandResult& WithBrandDetail(BrandDetailT&& value) { SetBrandDetail(std::forward<BrandDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of the brand.</p>
      */
-    inline const BrandDefinition& GetBrandDefinition() const{ return m_brandDefinition; }
-    inline void SetBrandDefinition(const BrandDefinition& value) { m_brandDefinition = value; }
-    inline void SetBrandDefinition(BrandDefinition&& value) { m_brandDefinition = std::move(value); }
-    inline CreateBrandResult& WithBrandDefinition(const BrandDefinition& value) { SetBrandDefinition(value); return *this;}
-    inline CreateBrandResult& WithBrandDefinition(BrandDefinition&& value) { SetBrandDefinition(std::move(value)); return *this;}
+    inline const BrandDefinition& GetBrandDefinition() const { return m_brandDefinition; }
+    template<typename BrandDefinitionT = BrandDefinition>
+    void SetBrandDefinition(BrandDefinitionT&& value) { m_brandDefinitionHasBeenSet = true; m_brandDefinition = std::forward<BrandDefinitionT>(value); }
+    template<typename BrandDefinitionT = BrandDefinition>
+    CreateBrandResult& WithBrandDefinition(BrandDefinitionT&& value) { SetBrandDefinition(std::forward<BrandDefinitionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     BrandDetail m_brandDetail;
+    bool m_brandDetailHasBeenSet = false;
 
     BrandDefinition m_brandDefinition;
+    bool m_brandDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

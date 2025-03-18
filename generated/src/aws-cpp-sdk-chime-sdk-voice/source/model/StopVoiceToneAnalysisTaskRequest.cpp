@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopVoiceToneAnalysisTaskRequest::StopVoiceToneAnalysisTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_voiceToneAnalysisTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String StopVoiceToneAnalysisTaskRequest::SerializePayload() const
 {
   return {};

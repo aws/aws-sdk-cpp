@@ -20,34 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipam::Ipam() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_publicDefaultScopeIdHasBeenSet(false),
-    m_privateDefaultScopeIdHasBeenSet(false),
-    m_scopeCount(0),
-    m_scopeCountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_state(IpamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultResourceDiscoveryIdHasBeenSet(false),
-    m_defaultResourceDiscoveryAssociationIdHasBeenSet(false),
-    m_resourceDiscoveryAssociationCount(0),
-    m_resourceDiscoveryAssociationCountHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_enablePrivateGua(false),
-    m_enablePrivateGuaHasBeenSet(false)
-{
-}
-
 Ipam::Ipam(const XmlNode& xmlNode)
-  : Ipam()
 {
   *this = xmlNode;
 }
@@ -110,6 +83,7 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
     if(!operatingRegionsNode.IsNull())
     {
       XmlNode operatingRegionsMember = operatingRegionsNode.FirstChild("item");
+      m_operatingRegionsHasBeenSet = !operatingRegionsMember.IsNull();
       while(!operatingRegionsMember.IsNull())
       {
         m_operatingRegions.push_back(operatingRegionsMember);
@@ -121,13 +95,14 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamStateMapper::GetIpamStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamStateMapper::GetIpamStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -163,7 +138,7 @@ Ipam& Ipam::operator =(const XmlNode& xmlNode)
     XmlNode tierNode = resultNode.FirstChild("tier");
     if(!tierNode.IsNull())
     {
-      m_tier = IpamTierMapper::GetIpamTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
+      m_tier = IpamTierMapper::GetIpamTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()));
       m_tierHasBeenSet = true;
     }
     XmlNode enablePrivateGuaNode = resultNode.FirstChild("enablePrivateGua");

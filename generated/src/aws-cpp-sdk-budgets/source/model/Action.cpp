@@ -18,26 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-Action::Action() : 
-    m_actionIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionThresholdHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_approvalModel(ApprovalModel::NOT_SET),
-    m_approvalModelHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionId"))
   {
     m_actionId = jsonValue.GetString("ActionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
     m_budgetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationType"))
   {
     m_notificationType = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("NotificationType"));
-
     m_notificationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionType"))
   {
     m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("ActionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionThreshold"))
   {
     m_actionThreshold = jsonValue.GetObject("ActionThreshold");
-
     m_actionThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetObject("Definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovalModel"))
   {
     m_approvalModel = ApprovalModelMapper::GetApprovalModelForName(jsonValue.GetString("ApprovalModel"));
-
     m_approvalModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ActionStatusMapper::GetActionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subscribers"))
   {
     Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
@@ -116,7 +79,6 @@ Action& Action::operator =(JsonView jsonValue)
     }
     m_subscribersHasBeenSet = true;
   }
-
   return *this;
 }
 

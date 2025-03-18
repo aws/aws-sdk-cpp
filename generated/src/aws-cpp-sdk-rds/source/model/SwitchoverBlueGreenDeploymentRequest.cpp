@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-SwitchoverBlueGreenDeploymentRequest::SwitchoverBlueGreenDeploymentRequest() : 
-    m_blueGreenDeploymentIdentifierHasBeenSet(false),
-    m_switchoverTimeout(0),
-    m_switchoverTimeoutHasBeenSet(false)
-{
-}
-
 Aws::String SwitchoverBlueGreenDeploymentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteDistributionRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteDistributionRequest();
+    AWS_LIGHTSAIL_API DeleteDistributionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>GetDistributions</code> action to get a list of distribution names that
      * you can specify.</p>
      */
-    inline const Aws::String& GetDistributionName() const{ return m_distributionName; }
+    inline const Aws::String& GetDistributionName() const { return m_distributionName; }
     inline bool DistributionNameHasBeenSet() const { return m_distributionNameHasBeenSet; }
-    inline void SetDistributionName(const Aws::String& value) { m_distributionNameHasBeenSet = true; m_distributionName = value; }
-    inline void SetDistributionName(Aws::String&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::move(value); }
-    inline void SetDistributionName(const char* value) { m_distributionNameHasBeenSet = true; m_distributionName.assign(value); }
-    inline DeleteDistributionRequest& WithDistributionName(const Aws::String& value) { SetDistributionName(value); return *this;}
-    inline DeleteDistributionRequest& WithDistributionName(Aws::String&& value) { SetDistributionName(std::move(value)); return *this;}
-    inline DeleteDistributionRequest& WithDistributionName(const char* value) { SetDistributionName(value); return *this;}
+    template<typename DistributionNameT = Aws::String>
+    void SetDistributionName(DistributionNameT&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::forward<DistributionNameT>(value); }
+    template<typename DistributionNameT = Aws::String>
+    DeleteDistributionRequest& WithDistributionName(DistributionNameT&& value) { SetDistributionName(std::forward<DistributionNameT>(value)); return *this;}
     ///@}
   private:
 

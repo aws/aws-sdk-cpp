@@ -58,7 +58,7 @@ namespace Model
   class FlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API FlowValidationDetails();
+    AWS_BEDROCKAGENT_API FlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API FlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,324 +68,324 @@ namespace Model
     /**
      * <p>Details about a cyclic connection in the flow.</p>
      */
-    inline const CyclicConnectionFlowValidationDetails& GetCyclicConnection() const{ return m_cyclicConnection; }
+    inline const CyclicConnectionFlowValidationDetails& GetCyclicConnection() const { return m_cyclicConnection; }
     inline bool CyclicConnectionHasBeenSet() const { return m_cyclicConnectionHasBeenSet; }
-    inline void SetCyclicConnection(const CyclicConnectionFlowValidationDetails& value) { m_cyclicConnectionHasBeenSet = true; m_cyclicConnection = value; }
-    inline void SetCyclicConnection(CyclicConnectionFlowValidationDetails&& value) { m_cyclicConnectionHasBeenSet = true; m_cyclicConnection = std::move(value); }
-    inline FlowValidationDetails& WithCyclicConnection(const CyclicConnectionFlowValidationDetails& value) { SetCyclicConnection(value); return *this;}
-    inline FlowValidationDetails& WithCyclicConnection(CyclicConnectionFlowValidationDetails&& value) { SetCyclicConnection(std::move(value)); return *this;}
+    template<typename CyclicConnectionT = CyclicConnectionFlowValidationDetails>
+    void SetCyclicConnection(CyclicConnectionT&& value) { m_cyclicConnectionHasBeenSet = true; m_cyclicConnection = std::forward<CyclicConnectionT>(value); }
+    template<typename CyclicConnectionT = CyclicConnectionFlowValidationDetails>
+    FlowValidationDetails& WithCyclicConnection(CyclicConnectionT&& value) { SetCyclicConnection(std::forward<CyclicConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about duplicate condition expressions in a node.</p>
      */
-    inline const DuplicateConditionExpressionFlowValidationDetails& GetDuplicateConditionExpression() const{ return m_duplicateConditionExpression; }
+    inline const DuplicateConditionExpressionFlowValidationDetails& GetDuplicateConditionExpression() const { return m_duplicateConditionExpression; }
     inline bool DuplicateConditionExpressionHasBeenSet() const { return m_duplicateConditionExpressionHasBeenSet; }
-    inline void SetDuplicateConditionExpression(const DuplicateConditionExpressionFlowValidationDetails& value) { m_duplicateConditionExpressionHasBeenSet = true; m_duplicateConditionExpression = value; }
-    inline void SetDuplicateConditionExpression(DuplicateConditionExpressionFlowValidationDetails&& value) { m_duplicateConditionExpressionHasBeenSet = true; m_duplicateConditionExpression = std::move(value); }
-    inline FlowValidationDetails& WithDuplicateConditionExpression(const DuplicateConditionExpressionFlowValidationDetails& value) { SetDuplicateConditionExpression(value); return *this;}
-    inline FlowValidationDetails& WithDuplicateConditionExpression(DuplicateConditionExpressionFlowValidationDetails&& value) { SetDuplicateConditionExpression(std::move(value)); return *this;}
+    template<typename DuplicateConditionExpressionT = DuplicateConditionExpressionFlowValidationDetails>
+    void SetDuplicateConditionExpression(DuplicateConditionExpressionT&& value) { m_duplicateConditionExpressionHasBeenSet = true; m_duplicateConditionExpression = std::forward<DuplicateConditionExpressionT>(value); }
+    template<typename DuplicateConditionExpressionT = DuplicateConditionExpressionFlowValidationDetails>
+    FlowValidationDetails& WithDuplicateConditionExpression(DuplicateConditionExpressionT&& value) { SetDuplicateConditionExpression(std::forward<DuplicateConditionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about duplicate connections between nodes.</p>
      */
-    inline const DuplicateConnectionsFlowValidationDetails& GetDuplicateConnections() const{ return m_duplicateConnections; }
+    inline const DuplicateConnectionsFlowValidationDetails& GetDuplicateConnections() const { return m_duplicateConnections; }
     inline bool DuplicateConnectionsHasBeenSet() const { return m_duplicateConnectionsHasBeenSet; }
-    inline void SetDuplicateConnections(const DuplicateConnectionsFlowValidationDetails& value) { m_duplicateConnectionsHasBeenSet = true; m_duplicateConnections = value; }
-    inline void SetDuplicateConnections(DuplicateConnectionsFlowValidationDetails&& value) { m_duplicateConnectionsHasBeenSet = true; m_duplicateConnections = std::move(value); }
-    inline FlowValidationDetails& WithDuplicateConnections(const DuplicateConnectionsFlowValidationDetails& value) { SetDuplicateConnections(value); return *this;}
-    inline FlowValidationDetails& WithDuplicateConnections(DuplicateConnectionsFlowValidationDetails&& value) { SetDuplicateConnections(std::move(value)); return *this;}
+    template<typename DuplicateConnectionsT = DuplicateConnectionsFlowValidationDetails>
+    void SetDuplicateConnections(DuplicateConnectionsT&& value) { m_duplicateConnectionsHasBeenSet = true; m_duplicateConnections = std::forward<DuplicateConnectionsT>(value); }
+    template<typename DuplicateConnectionsT = DuplicateConnectionsFlowValidationDetails>
+    FlowValidationDetails& WithDuplicateConnections(DuplicateConnectionsT&& value) { SetDuplicateConnections(std::forward<DuplicateConnectionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about incompatible data types in a connection.</p>
      */
-    inline const IncompatibleConnectionDataTypeFlowValidationDetails& GetIncompatibleConnectionDataType() const{ return m_incompatibleConnectionDataType; }
+    inline const IncompatibleConnectionDataTypeFlowValidationDetails& GetIncompatibleConnectionDataType() const { return m_incompatibleConnectionDataType; }
     inline bool IncompatibleConnectionDataTypeHasBeenSet() const { return m_incompatibleConnectionDataTypeHasBeenSet; }
-    inline void SetIncompatibleConnectionDataType(const IncompatibleConnectionDataTypeFlowValidationDetails& value) { m_incompatibleConnectionDataTypeHasBeenSet = true; m_incompatibleConnectionDataType = value; }
-    inline void SetIncompatibleConnectionDataType(IncompatibleConnectionDataTypeFlowValidationDetails&& value) { m_incompatibleConnectionDataTypeHasBeenSet = true; m_incompatibleConnectionDataType = std::move(value); }
-    inline FlowValidationDetails& WithIncompatibleConnectionDataType(const IncompatibleConnectionDataTypeFlowValidationDetails& value) { SetIncompatibleConnectionDataType(value); return *this;}
-    inline FlowValidationDetails& WithIncompatibleConnectionDataType(IncompatibleConnectionDataTypeFlowValidationDetails&& value) { SetIncompatibleConnectionDataType(std::move(value)); return *this;}
+    template<typename IncompatibleConnectionDataTypeT = IncompatibleConnectionDataTypeFlowValidationDetails>
+    void SetIncompatibleConnectionDataType(IncompatibleConnectionDataTypeT&& value) { m_incompatibleConnectionDataTypeHasBeenSet = true; m_incompatibleConnectionDataType = std::forward<IncompatibleConnectionDataTypeT>(value); }
+    template<typename IncompatibleConnectionDataTypeT = IncompatibleConnectionDataTypeFlowValidationDetails>
+    FlowValidationDetails& WithIncompatibleConnectionDataType(IncompatibleConnectionDataTypeT&& value) { SetIncompatibleConnectionDataType(std::forward<IncompatibleConnectionDataTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a malformed condition expression in a node.</p>
      */
-    inline const MalformedConditionExpressionFlowValidationDetails& GetMalformedConditionExpression() const{ return m_malformedConditionExpression; }
+    inline const MalformedConditionExpressionFlowValidationDetails& GetMalformedConditionExpression() const { return m_malformedConditionExpression; }
     inline bool MalformedConditionExpressionHasBeenSet() const { return m_malformedConditionExpressionHasBeenSet; }
-    inline void SetMalformedConditionExpression(const MalformedConditionExpressionFlowValidationDetails& value) { m_malformedConditionExpressionHasBeenSet = true; m_malformedConditionExpression = value; }
-    inline void SetMalformedConditionExpression(MalformedConditionExpressionFlowValidationDetails&& value) { m_malformedConditionExpressionHasBeenSet = true; m_malformedConditionExpression = std::move(value); }
-    inline FlowValidationDetails& WithMalformedConditionExpression(const MalformedConditionExpressionFlowValidationDetails& value) { SetMalformedConditionExpression(value); return *this;}
-    inline FlowValidationDetails& WithMalformedConditionExpression(MalformedConditionExpressionFlowValidationDetails&& value) { SetMalformedConditionExpression(std::move(value)); return *this;}
+    template<typename MalformedConditionExpressionT = MalformedConditionExpressionFlowValidationDetails>
+    void SetMalformedConditionExpression(MalformedConditionExpressionT&& value) { m_malformedConditionExpressionHasBeenSet = true; m_malformedConditionExpression = std::forward<MalformedConditionExpressionT>(value); }
+    template<typename MalformedConditionExpressionT = MalformedConditionExpressionFlowValidationDetails>
+    FlowValidationDetails& WithMalformedConditionExpression(MalformedConditionExpressionT&& value) { SetMalformedConditionExpression(std::forward<MalformedConditionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a malformed input expression in a node.</p>
      */
-    inline const MalformedNodeInputExpressionFlowValidationDetails& GetMalformedNodeInputExpression() const{ return m_malformedNodeInputExpression; }
+    inline const MalformedNodeInputExpressionFlowValidationDetails& GetMalformedNodeInputExpression() const { return m_malformedNodeInputExpression; }
     inline bool MalformedNodeInputExpressionHasBeenSet() const { return m_malformedNodeInputExpressionHasBeenSet; }
-    inline void SetMalformedNodeInputExpression(const MalformedNodeInputExpressionFlowValidationDetails& value) { m_malformedNodeInputExpressionHasBeenSet = true; m_malformedNodeInputExpression = value; }
-    inline void SetMalformedNodeInputExpression(MalformedNodeInputExpressionFlowValidationDetails&& value) { m_malformedNodeInputExpressionHasBeenSet = true; m_malformedNodeInputExpression = std::move(value); }
-    inline FlowValidationDetails& WithMalformedNodeInputExpression(const MalformedNodeInputExpressionFlowValidationDetails& value) { SetMalformedNodeInputExpression(value); return *this;}
-    inline FlowValidationDetails& WithMalformedNodeInputExpression(MalformedNodeInputExpressionFlowValidationDetails&& value) { SetMalformedNodeInputExpression(std::move(value)); return *this;}
+    template<typename MalformedNodeInputExpressionT = MalformedNodeInputExpressionFlowValidationDetails>
+    void SetMalformedNodeInputExpression(MalformedNodeInputExpressionT&& value) { m_malformedNodeInputExpressionHasBeenSet = true; m_malformedNodeInputExpression = std::forward<MalformedNodeInputExpressionT>(value); }
+    template<typename MalformedNodeInputExpressionT = MalformedNodeInputExpressionFlowValidationDetails>
+    FlowValidationDetails& WithMalformedNodeInputExpression(MalformedNodeInputExpressionT&& value) { SetMalformedNodeInputExpression(std::forward<MalformedNodeInputExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about mismatched input data types in a node.</p>
      */
-    inline const MismatchedNodeInputTypeFlowValidationDetails& GetMismatchedNodeInputType() const{ return m_mismatchedNodeInputType; }
+    inline const MismatchedNodeInputTypeFlowValidationDetails& GetMismatchedNodeInputType() const { return m_mismatchedNodeInputType; }
     inline bool MismatchedNodeInputTypeHasBeenSet() const { return m_mismatchedNodeInputTypeHasBeenSet; }
-    inline void SetMismatchedNodeInputType(const MismatchedNodeInputTypeFlowValidationDetails& value) { m_mismatchedNodeInputTypeHasBeenSet = true; m_mismatchedNodeInputType = value; }
-    inline void SetMismatchedNodeInputType(MismatchedNodeInputTypeFlowValidationDetails&& value) { m_mismatchedNodeInputTypeHasBeenSet = true; m_mismatchedNodeInputType = std::move(value); }
-    inline FlowValidationDetails& WithMismatchedNodeInputType(const MismatchedNodeInputTypeFlowValidationDetails& value) { SetMismatchedNodeInputType(value); return *this;}
-    inline FlowValidationDetails& WithMismatchedNodeInputType(MismatchedNodeInputTypeFlowValidationDetails&& value) { SetMismatchedNodeInputType(std::move(value)); return *this;}
+    template<typename MismatchedNodeInputTypeT = MismatchedNodeInputTypeFlowValidationDetails>
+    void SetMismatchedNodeInputType(MismatchedNodeInputTypeT&& value) { m_mismatchedNodeInputTypeHasBeenSet = true; m_mismatchedNodeInputType = std::forward<MismatchedNodeInputTypeT>(value); }
+    template<typename MismatchedNodeInputTypeT = MismatchedNodeInputTypeFlowValidationDetails>
+    FlowValidationDetails& WithMismatchedNodeInputType(MismatchedNodeInputTypeT&& value) { SetMismatchedNodeInputType(std::forward<MismatchedNodeInputTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about mismatched output data types in a node.</p>
      */
-    inline const MismatchedNodeOutputTypeFlowValidationDetails& GetMismatchedNodeOutputType() const{ return m_mismatchedNodeOutputType; }
+    inline const MismatchedNodeOutputTypeFlowValidationDetails& GetMismatchedNodeOutputType() const { return m_mismatchedNodeOutputType; }
     inline bool MismatchedNodeOutputTypeHasBeenSet() const { return m_mismatchedNodeOutputTypeHasBeenSet; }
-    inline void SetMismatchedNodeOutputType(const MismatchedNodeOutputTypeFlowValidationDetails& value) { m_mismatchedNodeOutputTypeHasBeenSet = true; m_mismatchedNodeOutputType = value; }
-    inline void SetMismatchedNodeOutputType(MismatchedNodeOutputTypeFlowValidationDetails&& value) { m_mismatchedNodeOutputTypeHasBeenSet = true; m_mismatchedNodeOutputType = std::move(value); }
-    inline FlowValidationDetails& WithMismatchedNodeOutputType(const MismatchedNodeOutputTypeFlowValidationDetails& value) { SetMismatchedNodeOutputType(value); return *this;}
-    inline FlowValidationDetails& WithMismatchedNodeOutputType(MismatchedNodeOutputTypeFlowValidationDetails&& value) { SetMismatchedNodeOutputType(std::move(value)); return *this;}
+    template<typename MismatchedNodeOutputTypeT = MismatchedNodeOutputTypeFlowValidationDetails>
+    void SetMismatchedNodeOutputType(MismatchedNodeOutputTypeT&& value) { m_mismatchedNodeOutputTypeHasBeenSet = true; m_mismatchedNodeOutputType = std::forward<MismatchedNodeOutputTypeT>(value); }
+    template<typename MismatchedNodeOutputTypeT = MismatchedNodeOutputTypeFlowValidationDetails>
+    FlowValidationDetails& WithMismatchedNodeOutputType(MismatchedNodeOutputTypeT&& value) { SetMismatchedNodeOutputType(std::forward<MismatchedNodeOutputTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about missing configuration for a connection.</p>
      */
-    inline const MissingConnectionConfigurationFlowValidationDetails& GetMissingConnectionConfiguration() const{ return m_missingConnectionConfiguration; }
+    inline const MissingConnectionConfigurationFlowValidationDetails& GetMissingConnectionConfiguration() const { return m_missingConnectionConfiguration; }
     inline bool MissingConnectionConfigurationHasBeenSet() const { return m_missingConnectionConfigurationHasBeenSet; }
-    inline void SetMissingConnectionConfiguration(const MissingConnectionConfigurationFlowValidationDetails& value) { m_missingConnectionConfigurationHasBeenSet = true; m_missingConnectionConfiguration = value; }
-    inline void SetMissingConnectionConfiguration(MissingConnectionConfigurationFlowValidationDetails&& value) { m_missingConnectionConfigurationHasBeenSet = true; m_missingConnectionConfiguration = std::move(value); }
-    inline FlowValidationDetails& WithMissingConnectionConfiguration(const MissingConnectionConfigurationFlowValidationDetails& value) { SetMissingConnectionConfiguration(value); return *this;}
-    inline FlowValidationDetails& WithMissingConnectionConfiguration(MissingConnectionConfigurationFlowValidationDetails&& value) { SetMissingConnectionConfiguration(std::move(value)); return *this;}
+    template<typename MissingConnectionConfigurationT = MissingConnectionConfigurationFlowValidationDetails>
+    void SetMissingConnectionConfiguration(MissingConnectionConfigurationT&& value) { m_missingConnectionConfigurationHasBeenSet = true; m_missingConnectionConfiguration = std::forward<MissingConnectionConfigurationT>(value); }
+    template<typename MissingConnectionConfigurationT = MissingConnectionConfigurationFlowValidationDetails>
+    FlowValidationDetails& WithMissingConnectionConfiguration(MissingConnectionConfigurationT&& value) { SetMissingConnectionConfiguration(std::forward<MissingConnectionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a missing default condition in a conditional node.</p>
      */
-    inline const MissingDefaultConditionFlowValidationDetails& GetMissingDefaultCondition() const{ return m_missingDefaultCondition; }
+    inline const MissingDefaultConditionFlowValidationDetails& GetMissingDefaultCondition() const { return m_missingDefaultCondition; }
     inline bool MissingDefaultConditionHasBeenSet() const { return m_missingDefaultConditionHasBeenSet; }
-    inline void SetMissingDefaultCondition(const MissingDefaultConditionFlowValidationDetails& value) { m_missingDefaultConditionHasBeenSet = true; m_missingDefaultCondition = value; }
-    inline void SetMissingDefaultCondition(MissingDefaultConditionFlowValidationDetails&& value) { m_missingDefaultConditionHasBeenSet = true; m_missingDefaultCondition = std::move(value); }
-    inline FlowValidationDetails& WithMissingDefaultCondition(const MissingDefaultConditionFlowValidationDetails& value) { SetMissingDefaultCondition(value); return *this;}
-    inline FlowValidationDetails& WithMissingDefaultCondition(MissingDefaultConditionFlowValidationDetails&& value) { SetMissingDefaultCondition(std::move(value)); return *this;}
+    template<typename MissingDefaultConditionT = MissingDefaultConditionFlowValidationDetails>
+    void SetMissingDefaultCondition(MissingDefaultConditionT&& value) { m_missingDefaultConditionHasBeenSet = true; m_missingDefaultCondition = std::forward<MissingDefaultConditionT>(value); }
+    template<typename MissingDefaultConditionT = MissingDefaultConditionFlowValidationDetails>
+    FlowValidationDetails& WithMissingDefaultCondition(MissingDefaultConditionT&& value) { SetMissingDefaultCondition(std::forward<MissingDefaultConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about missing ending nodes in the flow.</p>
      */
-    inline const MissingEndingNodesFlowValidationDetails& GetMissingEndingNodes() const{ return m_missingEndingNodes; }
+    inline const MissingEndingNodesFlowValidationDetails& GetMissingEndingNodes() const { return m_missingEndingNodes; }
     inline bool MissingEndingNodesHasBeenSet() const { return m_missingEndingNodesHasBeenSet; }
-    inline void SetMissingEndingNodes(const MissingEndingNodesFlowValidationDetails& value) { m_missingEndingNodesHasBeenSet = true; m_missingEndingNodes = value; }
-    inline void SetMissingEndingNodes(MissingEndingNodesFlowValidationDetails&& value) { m_missingEndingNodesHasBeenSet = true; m_missingEndingNodes = std::move(value); }
-    inline FlowValidationDetails& WithMissingEndingNodes(const MissingEndingNodesFlowValidationDetails& value) { SetMissingEndingNodes(value); return *this;}
-    inline FlowValidationDetails& WithMissingEndingNodes(MissingEndingNodesFlowValidationDetails&& value) { SetMissingEndingNodes(std::move(value)); return *this;}
+    template<typename MissingEndingNodesT = MissingEndingNodesFlowValidationDetails>
+    void SetMissingEndingNodes(MissingEndingNodesT&& value) { m_missingEndingNodesHasBeenSet = true; m_missingEndingNodes = std::forward<MissingEndingNodesT>(value); }
+    template<typename MissingEndingNodesT = MissingEndingNodesFlowValidationDetails>
+    FlowValidationDetails& WithMissingEndingNodes(MissingEndingNodesT&& value) { SetMissingEndingNodes(std::forward<MissingEndingNodesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about missing configuration for a node.</p>
      */
-    inline const MissingNodeConfigurationFlowValidationDetails& GetMissingNodeConfiguration() const{ return m_missingNodeConfiguration; }
+    inline const MissingNodeConfigurationFlowValidationDetails& GetMissingNodeConfiguration() const { return m_missingNodeConfiguration; }
     inline bool MissingNodeConfigurationHasBeenSet() const { return m_missingNodeConfigurationHasBeenSet; }
-    inline void SetMissingNodeConfiguration(const MissingNodeConfigurationFlowValidationDetails& value) { m_missingNodeConfigurationHasBeenSet = true; m_missingNodeConfiguration = value; }
-    inline void SetMissingNodeConfiguration(MissingNodeConfigurationFlowValidationDetails&& value) { m_missingNodeConfigurationHasBeenSet = true; m_missingNodeConfiguration = std::move(value); }
-    inline FlowValidationDetails& WithMissingNodeConfiguration(const MissingNodeConfigurationFlowValidationDetails& value) { SetMissingNodeConfiguration(value); return *this;}
-    inline FlowValidationDetails& WithMissingNodeConfiguration(MissingNodeConfigurationFlowValidationDetails&& value) { SetMissingNodeConfiguration(std::move(value)); return *this;}
+    template<typename MissingNodeConfigurationT = MissingNodeConfigurationFlowValidationDetails>
+    void SetMissingNodeConfiguration(MissingNodeConfigurationT&& value) { m_missingNodeConfigurationHasBeenSet = true; m_missingNodeConfiguration = std::forward<MissingNodeConfigurationT>(value); }
+    template<typename MissingNodeConfigurationT = MissingNodeConfigurationFlowValidationDetails>
+    FlowValidationDetails& WithMissingNodeConfiguration(MissingNodeConfigurationT&& value) { SetMissingNodeConfiguration(std::forward<MissingNodeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a missing required input in a node.</p>
      */
-    inline const MissingNodeInputFlowValidationDetails& GetMissingNodeInput() const{ return m_missingNodeInput; }
+    inline const MissingNodeInputFlowValidationDetails& GetMissingNodeInput() const { return m_missingNodeInput; }
     inline bool MissingNodeInputHasBeenSet() const { return m_missingNodeInputHasBeenSet; }
-    inline void SetMissingNodeInput(const MissingNodeInputFlowValidationDetails& value) { m_missingNodeInputHasBeenSet = true; m_missingNodeInput = value; }
-    inline void SetMissingNodeInput(MissingNodeInputFlowValidationDetails&& value) { m_missingNodeInputHasBeenSet = true; m_missingNodeInput = std::move(value); }
-    inline FlowValidationDetails& WithMissingNodeInput(const MissingNodeInputFlowValidationDetails& value) { SetMissingNodeInput(value); return *this;}
-    inline FlowValidationDetails& WithMissingNodeInput(MissingNodeInputFlowValidationDetails&& value) { SetMissingNodeInput(std::move(value)); return *this;}
+    template<typename MissingNodeInputT = MissingNodeInputFlowValidationDetails>
+    void SetMissingNodeInput(MissingNodeInputT&& value) { m_missingNodeInputHasBeenSet = true; m_missingNodeInput = std::forward<MissingNodeInputT>(value); }
+    template<typename MissingNodeInputT = MissingNodeInputFlowValidationDetails>
+    FlowValidationDetails& WithMissingNodeInput(MissingNodeInputT&& value) { SetMissingNodeInput(std::forward<MissingNodeInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a missing required output in a node.</p>
      */
-    inline const MissingNodeOutputFlowValidationDetails& GetMissingNodeOutput() const{ return m_missingNodeOutput; }
+    inline const MissingNodeOutputFlowValidationDetails& GetMissingNodeOutput() const { return m_missingNodeOutput; }
     inline bool MissingNodeOutputHasBeenSet() const { return m_missingNodeOutputHasBeenSet; }
-    inline void SetMissingNodeOutput(const MissingNodeOutputFlowValidationDetails& value) { m_missingNodeOutputHasBeenSet = true; m_missingNodeOutput = value; }
-    inline void SetMissingNodeOutput(MissingNodeOutputFlowValidationDetails&& value) { m_missingNodeOutputHasBeenSet = true; m_missingNodeOutput = std::move(value); }
-    inline FlowValidationDetails& WithMissingNodeOutput(const MissingNodeOutputFlowValidationDetails& value) { SetMissingNodeOutput(value); return *this;}
-    inline FlowValidationDetails& WithMissingNodeOutput(MissingNodeOutputFlowValidationDetails&& value) { SetMissingNodeOutput(std::move(value)); return *this;}
+    template<typename MissingNodeOutputT = MissingNodeOutputFlowValidationDetails>
+    void SetMissingNodeOutput(MissingNodeOutputT&& value) { m_missingNodeOutputHasBeenSet = true; m_missingNodeOutput = std::forward<MissingNodeOutputT>(value); }
+    template<typename MissingNodeOutputT = MissingNodeOutputFlowValidationDetails>
+    FlowValidationDetails& WithMissingNodeOutput(MissingNodeOutputT&& value) { SetMissingNodeOutput(std::forward<MissingNodeOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about missing starting nodes in the flow.</p>
      */
-    inline const MissingStartingNodesFlowValidationDetails& GetMissingStartingNodes() const{ return m_missingStartingNodes; }
+    inline const MissingStartingNodesFlowValidationDetails& GetMissingStartingNodes() const { return m_missingStartingNodes; }
     inline bool MissingStartingNodesHasBeenSet() const { return m_missingStartingNodesHasBeenSet; }
-    inline void SetMissingStartingNodes(const MissingStartingNodesFlowValidationDetails& value) { m_missingStartingNodesHasBeenSet = true; m_missingStartingNodes = value; }
-    inline void SetMissingStartingNodes(MissingStartingNodesFlowValidationDetails&& value) { m_missingStartingNodesHasBeenSet = true; m_missingStartingNodes = std::move(value); }
-    inline FlowValidationDetails& WithMissingStartingNodes(const MissingStartingNodesFlowValidationDetails& value) { SetMissingStartingNodes(value); return *this;}
-    inline FlowValidationDetails& WithMissingStartingNodes(MissingStartingNodesFlowValidationDetails&& value) { SetMissingStartingNodes(std::move(value)); return *this;}
+    template<typename MissingStartingNodesT = MissingStartingNodesFlowValidationDetails>
+    void SetMissingStartingNodes(MissingStartingNodesT&& value) { m_missingStartingNodesHasBeenSet = true; m_missingStartingNodes = std::forward<MissingStartingNodesT>(value); }
+    template<typename MissingStartingNodesT = MissingStartingNodesFlowValidationDetails>
+    FlowValidationDetails& WithMissingStartingNodes(MissingStartingNodesT&& value) { SetMissingStartingNodes(std::forward<MissingStartingNodesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about multiple connections to a single node input.</p>
      */
-    inline const MultipleNodeInputConnectionsFlowValidationDetails& GetMultipleNodeInputConnections() const{ return m_multipleNodeInputConnections; }
+    inline const MultipleNodeInputConnectionsFlowValidationDetails& GetMultipleNodeInputConnections() const { return m_multipleNodeInputConnections; }
     inline bool MultipleNodeInputConnectionsHasBeenSet() const { return m_multipleNodeInputConnectionsHasBeenSet; }
-    inline void SetMultipleNodeInputConnections(const MultipleNodeInputConnectionsFlowValidationDetails& value) { m_multipleNodeInputConnectionsHasBeenSet = true; m_multipleNodeInputConnections = value; }
-    inline void SetMultipleNodeInputConnections(MultipleNodeInputConnectionsFlowValidationDetails&& value) { m_multipleNodeInputConnectionsHasBeenSet = true; m_multipleNodeInputConnections = std::move(value); }
-    inline FlowValidationDetails& WithMultipleNodeInputConnections(const MultipleNodeInputConnectionsFlowValidationDetails& value) { SetMultipleNodeInputConnections(value); return *this;}
-    inline FlowValidationDetails& WithMultipleNodeInputConnections(MultipleNodeInputConnectionsFlowValidationDetails&& value) { SetMultipleNodeInputConnections(std::move(value)); return *this;}
+    template<typename MultipleNodeInputConnectionsT = MultipleNodeInputConnectionsFlowValidationDetails>
+    void SetMultipleNodeInputConnections(MultipleNodeInputConnectionsT&& value) { m_multipleNodeInputConnectionsHasBeenSet = true; m_multipleNodeInputConnections = std::forward<MultipleNodeInputConnectionsT>(value); }
+    template<typename MultipleNodeInputConnectionsT = MultipleNodeInputConnectionsFlowValidationDetails>
+    FlowValidationDetails& WithMultipleNodeInputConnections(MultipleNodeInputConnectionsT&& value) { SetMultipleNodeInputConnections(std::forward<MultipleNodeInputConnectionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unfulfilled node input with no valid connections.</p>
      */
-    inline const UnfulfilledNodeInputFlowValidationDetails& GetUnfulfilledNodeInput() const{ return m_unfulfilledNodeInput; }
+    inline const UnfulfilledNodeInputFlowValidationDetails& GetUnfulfilledNodeInput() const { return m_unfulfilledNodeInput; }
     inline bool UnfulfilledNodeInputHasBeenSet() const { return m_unfulfilledNodeInputHasBeenSet; }
-    inline void SetUnfulfilledNodeInput(const UnfulfilledNodeInputFlowValidationDetails& value) { m_unfulfilledNodeInputHasBeenSet = true; m_unfulfilledNodeInput = value; }
-    inline void SetUnfulfilledNodeInput(UnfulfilledNodeInputFlowValidationDetails&& value) { m_unfulfilledNodeInputHasBeenSet = true; m_unfulfilledNodeInput = std::move(value); }
-    inline FlowValidationDetails& WithUnfulfilledNodeInput(const UnfulfilledNodeInputFlowValidationDetails& value) { SetUnfulfilledNodeInput(value); return *this;}
-    inline FlowValidationDetails& WithUnfulfilledNodeInput(UnfulfilledNodeInputFlowValidationDetails&& value) { SetUnfulfilledNodeInput(std::move(value)); return *this;}
+    template<typename UnfulfilledNodeInputT = UnfulfilledNodeInputFlowValidationDetails>
+    void SetUnfulfilledNodeInput(UnfulfilledNodeInputT&& value) { m_unfulfilledNodeInputHasBeenSet = true; m_unfulfilledNodeInput = std::forward<UnfulfilledNodeInputT>(value); }
+    template<typename UnfulfilledNodeInputT = UnfulfilledNodeInputFlowValidationDetails>
+    FlowValidationDetails& WithUnfulfilledNodeInput(UnfulfilledNodeInputT&& value) { SetUnfulfilledNodeInput(std::forward<UnfulfilledNodeInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown condition for a connection.</p>
      */
-    inline const UnknownConnectionConditionFlowValidationDetails& GetUnknownConnectionCondition() const{ return m_unknownConnectionCondition; }
+    inline const UnknownConnectionConditionFlowValidationDetails& GetUnknownConnectionCondition() const { return m_unknownConnectionCondition; }
     inline bool UnknownConnectionConditionHasBeenSet() const { return m_unknownConnectionConditionHasBeenSet; }
-    inline void SetUnknownConnectionCondition(const UnknownConnectionConditionFlowValidationDetails& value) { m_unknownConnectionConditionHasBeenSet = true; m_unknownConnectionCondition = value; }
-    inline void SetUnknownConnectionCondition(UnknownConnectionConditionFlowValidationDetails&& value) { m_unknownConnectionConditionHasBeenSet = true; m_unknownConnectionCondition = std::move(value); }
-    inline FlowValidationDetails& WithUnknownConnectionCondition(const UnknownConnectionConditionFlowValidationDetails& value) { SetUnknownConnectionCondition(value); return *this;}
-    inline FlowValidationDetails& WithUnknownConnectionCondition(UnknownConnectionConditionFlowValidationDetails&& value) { SetUnknownConnectionCondition(std::move(value)); return *this;}
+    template<typename UnknownConnectionConditionT = UnknownConnectionConditionFlowValidationDetails>
+    void SetUnknownConnectionCondition(UnknownConnectionConditionT&& value) { m_unknownConnectionConditionHasBeenSet = true; m_unknownConnectionCondition = std::forward<UnknownConnectionConditionT>(value); }
+    template<typename UnknownConnectionConditionT = UnknownConnectionConditionFlowValidationDetails>
+    FlowValidationDetails& WithUnknownConnectionCondition(UnknownConnectionConditionT&& value) { SetUnknownConnectionCondition(std::forward<UnknownConnectionConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown source node for a connection.</p>
      */
-    inline const UnknownConnectionSourceFlowValidationDetails& GetUnknownConnectionSource() const{ return m_unknownConnectionSource; }
+    inline const UnknownConnectionSourceFlowValidationDetails& GetUnknownConnectionSource() const { return m_unknownConnectionSource; }
     inline bool UnknownConnectionSourceHasBeenSet() const { return m_unknownConnectionSourceHasBeenSet; }
-    inline void SetUnknownConnectionSource(const UnknownConnectionSourceFlowValidationDetails& value) { m_unknownConnectionSourceHasBeenSet = true; m_unknownConnectionSource = value; }
-    inline void SetUnknownConnectionSource(UnknownConnectionSourceFlowValidationDetails&& value) { m_unknownConnectionSourceHasBeenSet = true; m_unknownConnectionSource = std::move(value); }
-    inline FlowValidationDetails& WithUnknownConnectionSource(const UnknownConnectionSourceFlowValidationDetails& value) { SetUnknownConnectionSource(value); return *this;}
-    inline FlowValidationDetails& WithUnknownConnectionSource(UnknownConnectionSourceFlowValidationDetails&& value) { SetUnknownConnectionSource(std::move(value)); return *this;}
+    template<typename UnknownConnectionSourceT = UnknownConnectionSourceFlowValidationDetails>
+    void SetUnknownConnectionSource(UnknownConnectionSourceT&& value) { m_unknownConnectionSourceHasBeenSet = true; m_unknownConnectionSource = std::forward<UnknownConnectionSourceT>(value); }
+    template<typename UnknownConnectionSourceT = UnknownConnectionSourceFlowValidationDetails>
+    FlowValidationDetails& WithUnknownConnectionSource(UnknownConnectionSourceT&& value) { SetUnknownConnectionSource(std::forward<UnknownConnectionSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown source output for a connection.</p>
      */
-    inline const UnknownConnectionSourceOutputFlowValidationDetails& GetUnknownConnectionSourceOutput() const{ return m_unknownConnectionSourceOutput; }
+    inline const UnknownConnectionSourceOutputFlowValidationDetails& GetUnknownConnectionSourceOutput() const { return m_unknownConnectionSourceOutput; }
     inline bool UnknownConnectionSourceOutputHasBeenSet() const { return m_unknownConnectionSourceOutputHasBeenSet; }
-    inline void SetUnknownConnectionSourceOutput(const UnknownConnectionSourceOutputFlowValidationDetails& value) { m_unknownConnectionSourceOutputHasBeenSet = true; m_unknownConnectionSourceOutput = value; }
-    inline void SetUnknownConnectionSourceOutput(UnknownConnectionSourceOutputFlowValidationDetails&& value) { m_unknownConnectionSourceOutputHasBeenSet = true; m_unknownConnectionSourceOutput = std::move(value); }
-    inline FlowValidationDetails& WithUnknownConnectionSourceOutput(const UnknownConnectionSourceOutputFlowValidationDetails& value) { SetUnknownConnectionSourceOutput(value); return *this;}
-    inline FlowValidationDetails& WithUnknownConnectionSourceOutput(UnknownConnectionSourceOutputFlowValidationDetails&& value) { SetUnknownConnectionSourceOutput(std::move(value)); return *this;}
+    template<typename UnknownConnectionSourceOutputT = UnknownConnectionSourceOutputFlowValidationDetails>
+    void SetUnknownConnectionSourceOutput(UnknownConnectionSourceOutputT&& value) { m_unknownConnectionSourceOutputHasBeenSet = true; m_unknownConnectionSourceOutput = std::forward<UnknownConnectionSourceOutputT>(value); }
+    template<typename UnknownConnectionSourceOutputT = UnknownConnectionSourceOutputFlowValidationDetails>
+    FlowValidationDetails& WithUnknownConnectionSourceOutput(UnknownConnectionSourceOutputT&& value) { SetUnknownConnectionSourceOutput(std::forward<UnknownConnectionSourceOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown target node for a connection.</p>
      */
-    inline const UnknownConnectionTargetFlowValidationDetails& GetUnknownConnectionTarget() const{ return m_unknownConnectionTarget; }
+    inline const UnknownConnectionTargetFlowValidationDetails& GetUnknownConnectionTarget() const { return m_unknownConnectionTarget; }
     inline bool UnknownConnectionTargetHasBeenSet() const { return m_unknownConnectionTargetHasBeenSet; }
-    inline void SetUnknownConnectionTarget(const UnknownConnectionTargetFlowValidationDetails& value) { m_unknownConnectionTargetHasBeenSet = true; m_unknownConnectionTarget = value; }
-    inline void SetUnknownConnectionTarget(UnknownConnectionTargetFlowValidationDetails&& value) { m_unknownConnectionTargetHasBeenSet = true; m_unknownConnectionTarget = std::move(value); }
-    inline FlowValidationDetails& WithUnknownConnectionTarget(const UnknownConnectionTargetFlowValidationDetails& value) { SetUnknownConnectionTarget(value); return *this;}
-    inline FlowValidationDetails& WithUnknownConnectionTarget(UnknownConnectionTargetFlowValidationDetails&& value) { SetUnknownConnectionTarget(std::move(value)); return *this;}
+    template<typename UnknownConnectionTargetT = UnknownConnectionTargetFlowValidationDetails>
+    void SetUnknownConnectionTarget(UnknownConnectionTargetT&& value) { m_unknownConnectionTargetHasBeenSet = true; m_unknownConnectionTarget = std::forward<UnknownConnectionTargetT>(value); }
+    template<typename UnknownConnectionTargetT = UnknownConnectionTargetFlowValidationDetails>
+    FlowValidationDetails& WithUnknownConnectionTarget(UnknownConnectionTargetT&& value) { SetUnknownConnectionTarget(std::forward<UnknownConnectionTargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown target input for a connection.</p>
      */
-    inline const UnknownConnectionTargetInputFlowValidationDetails& GetUnknownConnectionTargetInput() const{ return m_unknownConnectionTargetInput; }
+    inline const UnknownConnectionTargetInputFlowValidationDetails& GetUnknownConnectionTargetInput() const { return m_unknownConnectionTargetInput; }
     inline bool UnknownConnectionTargetInputHasBeenSet() const { return m_unknownConnectionTargetInputHasBeenSet; }
-    inline void SetUnknownConnectionTargetInput(const UnknownConnectionTargetInputFlowValidationDetails& value) { m_unknownConnectionTargetInputHasBeenSet = true; m_unknownConnectionTargetInput = value; }
-    inline void SetUnknownConnectionTargetInput(UnknownConnectionTargetInputFlowValidationDetails&& value) { m_unknownConnectionTargetInputHasBeenSet = true; m_unknownConnectionTargetInput = std::move(value); }
-    inline FlowValidationDetails& WithUnknownConnectionTargetInput(const UnknownConnectionTargetInputFlowValidationDetails& value) { SetUnknownConnectionTargetInput(value); return *this;}
-    inline FlowValidationDetails& WithUnknownConnectionTargetInput(UnknownConnectionTargetInputFlowValidationDetails&& value) { SetUnknownConnectionTargetInput(std::move(value)); return *this;}
+    template<typename UnknownConnectionTargetInputT = UnknownConnectionTargetInputFlowValidationDetails>
+    void SetUnknownConnectionTargetInput(UnknownConnectionTargetInputT&& value) { m_unknownConnectionTargetInputHasBeenSet = true; m_unknownConnectionTargetInput = std::forward<UnknownConnectionTargetInputT>(value); }
+    template<typename UnknownConnectionTargetInputT = UnknownConnectionTargetInputFlowValidationDetails>
+    FlowValidationDetails& WithUnknownConnectionTargetInput(UnknownConnectionTargetInputT&& value) { SetUnknownConnectionTargetInput(std::forward<UnknownConnectionTargetInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown input for a node.</p>
      */
-    inline const UnknownNodeInputFlowValidationDetails& GetUnknownNodeInput() const{ return m_unknownNodeInput; }
+    inline const UnknownNodeInputFlowValidationDetails& GetUnknownNodeInput() const { return m_unknownNodeInput; }
     inline bool UnknownNodeInputHasBeenSet() const { return m_unknownNodeInputHasBeenSet; }
-    inline void SetUnknownNodeInput(const UnknownNodeInputFlowValidationDetails& value) { m_unknownNodeInputHasBeenSet = true; m_unknownNodeInput = value; }
-    inline void SetUnknownNodeInput(UnknownNodeInputFlowValidationDetails&& value) { m_unknownNodeInputHasBeenSet = true; m_unknownNodeInput = std::move(value); }
-    inline FlowValidationDetails& WithUnknownNodeInput(const UnknownNodeInputFlowValidationDetails& value) { SetUnknownNodeInput(value); return *this;}
-    inline FlowValidationDetails& WithUnknownNodeInput(UnknownNodeInputFlowValidationDetails&& value) { SetUnknownNodeInput(std::move(value)); return *this;}
+    template<typename UnknownNodeInputT = UnknownNodeInputFlowValidationDetails>
+    void SetUnknownNodeInput(UnknownNodeInputT&& value) { m_unknownNodeInputHasBeenSet = true; m_unknownNodeInput = std::forward<UnknownNodeInputT>(value); }
+    template<typename UnknownNodeInputT = UnknownNodeInputFlowValidationDetails>
+    FlowValidationDetails& WithUnknownNodeInput(UnknownNodeInputT&& value) { SetUnknownNodeInput(std::forward<UnknownNodeInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unknown output for a node.</p>
      */
-    inline const UnknownNodeOutputFlowValidationDetails& GetUnknownNodeOutput() const{ return m_unknownNodeOutput; }
+    inline const UnknownNodeOutputFlowValidationDetails& GetUnknownNodeOutput() const { return m_unknownNodeOutput; }
     inline bool UnknownNodeOutputHasBeenSet() const { return m_unknownNodeOutputHasBeenSet; }
-    inline void SetUnknownNodeOutput(const UnknownNodeOutputFlowValidationDetails& value) { m_unknownNodeOutputHasBeenSet = true; m_unknownNodeOutput = value; }
-    inline void SetUnknownNodeOutput(UnknownNodeOutputFlowValidationDetails&& value) { m_unknownNodeOutputHasBeenSet = true; m_unknownNodeOutput = std::move(value); }
-    inline FlowValidationDetails& WithUnknownNodeOutput(const UnknownNodeOutputFlowValidationDetails& value) { SetUnknownNodeOutput(value); return *this;}
-    inline FlowValidationDetails& WithUnknownNodeOutput(UnknownNodeOutputFlowValidationDetails&& value) { SetUnknownNodeOutput(std::move(value)); return *this;}
+    template<typename UnknownNodeOutputT = UnknownNodeOutputFlowValidationDetails>
+    void SetUnknownNodeOutput(UnknownNodeOutputT&& value) { m_unknownNodeOutputHasBeenSet = true; m_unknownNodeOutput = std::forward<UnknownNodeOutputT>(value); }
+    template<typename UnknownNodeOutputT = UnknownNodeOutputFlowValidationDetails>
+    FlowValidationDetails& WithUnknownNodeOutput(UnknownNodeOutputT&& value) { SetUnknownNodeOutput(std::forward<UnknownNodeOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unreachable node in the flow.</p>
      */
-    inline const UnreachableNodeFlowValidationDetails& GetUnreachableNode() const{ return m_unreachableNode; }
+    inline const UnreachableNodeFlowValidationDetails& GetUnreachableNode() const { return m_unreachableNode; }
     inline bool UnreachableNodeHasBeenSet() const { return m_unreachableNodeHasBeenSet; }
-    inline void SetUnreachableNode(const UnreachableNodeFlowValidationDetails& value) { m_unreachableNodeHasBeenSet = true; m_unreachableNode = value; }
-    inline void SetUnreachableNode(UnreachableNodeFlowValidationDetails&& value) { m_unreachableNodeHasBeenSet = true; m_unreachableNode = std::move(value); }
-    inline FlowValidationDetails& WithUnreachableNode(const UnreachableNodeFlowValidationDetails& value) { SetUnreachableNode(value); return *this;}
-    inline FlowValidationDetails& WithUnreachableNode(UnreachableNodeFlowValidationDetails&& value) { SetUnreachableNode(std::move(value)); return *this;}
+    template<typename UnreachableNodeT = UnreachableNodeFlowValidationDetails>
+    void SetUnreachableNode(UnreachableNodeT&& value) { m_unreachableNodeHasBeenSet = true; m_unreachableNode = std::forward<UnreachableNodeT>(value); }
+    template<typename UnreachableNodeT = UnreachableNodeFlowValidationDetails>
+    FlowValidationDetails& WithUnreachableNode(UnreachableNodeT&& value) { SetUnreachableNode(std::forward<UnreachableNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about unsatisfied conditions for a connection.</p>
      */
-    inline const UnsatisfiedConnectionConditionsFlowValidationDetails& GetUnsatisfiedConnectionConditions() const{ return m_unsatisfiedConnectionConditions; }
+    inline const UnsatisfiedConnectionConditionsFlowValidationDetails& GetUnsatisfiedConnectionConditions() const { return m_unsatisfiedConnectionConditions; }
     inline bool UnsatisfiedConnectionConditionsHasBeenSet() const { return m_unsatisfiedConnectionConditionsHasBeenSet; }
-    inline void SetUnsatisfiedConnectionConditions(const UnsatisfiedConnectionConditionsFlowValidationDetails& value) { m_unsatisfiedConnectionConditionsHasBeenSet = true; m_unsatisfiedConnectionConditions = value; }
-    inline void SetUnsatisfiedConnectionConditions(UnsatisfiedConnectionConditionsFlowValidationDetails&& value) { m_unsatisfiedConnectionConditionsHasBeenSet = true; m_unsatisfiedConnectionConditions = std::move(value); }
-    inline FlowValidationDetails& WithUnsatisfiedConnectionConditions(const UnsatisfiedConnectionConditionsFlowValidationDetails& value) { SetUnsatisfiedConnectionConditions(value); return *this;}
-    inline FlowValidationDetails& WithUnsatisfiedConnectionConditions(UnsatisfiedConnectionConditionsFlowValidationDetails&& value) { SetUnsatisfiedConnectionConditions(std::move(value)); return *this;}
+    template<typename UnsatisfiedConnectionConditionsT = UnsatisfiedConnectionConditionsFlowValidationDetails>
+    void SetUnsatisfiedConnectionConditions(UnsatisfiedConnectionConditionsT&& value) { m_unsatisfiedConnectionConditionsHasBeenSet = true; m_unsatisfiedConnectionConditions = std::forward<UnsatisfiedConnectionConditionsT>(value); }
+    template<typename UnsatisfiedConnectionConditionsT = UnsatisfiedConnectionConditionsFlowValidationDetails>
+    FlowValidationDetails& WithUnsatisfiedConnectionConditions(UnsatisfiedConnectionConditionsT&& value) { SetUnsatisfiedConnectionConditions(std::forward<UnsatisfiedConnectionConditionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about an unspecified validation.</p>
      */
-    inline const UnspecifiedFlowValidationDetails& GetUnspecified() const{ return m_unspecified; }
+    inline const UnspecifiedFlowValidationDetails& GetUnspecified() const { return m_unspecified; }
     inline bool UnspecifiedHasBeenSet() const { return m_unspecifiedHasBeenSet; }
-    inline void SetUnspecified(const UnspecifiedFlowValidationDetails& value) { m_unspecifiedHasBeenSet = true; m_unspecified = value; }
-    inline void SetUnspecified(UnspecifiedFlowValidationDetails&& value) { m_unspecifiedHasBeenSet = true; m_unspecified = std::move(value); }
-    inline FlowValidationDetails& WithUnspecified(const UnspecifiedFlowValidationDetails& value) { SetUnspecified(value); return *this;}
-    inline FlowValidationDetails& WithUnspecified(UnspecifiedFlowValidationDetails&& value) { SetUnspecified(std::move(value)); return *this;}
+    template<typename UnspecifiedT = UnspecifiedFlowValidationDetails>
+    void SetUnspecified(UnspecifiedT&& value) { m_unspecifiedHasBeenSet = true; m_unspecified = std::forward<UnspecifiedT>(value); }
+    template<typename UnspecifiedT = UnspecifiedFlowValidationDetails>
+    FlowValidationDetails& WithUnspecified(UnspecifiedT&& value) { SetUnspecified(std::forward<UnspecifiedT>(value)); return *this;}
     ///@}
   private:
 

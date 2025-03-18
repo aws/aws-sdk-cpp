@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListContactFlowModulesRequest::ListContactFlowModulesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_contactFlowModuleState(ContactFlowModuleState::NOT_SET),
-    m_contactFlowModuleStateHasBeenSet(false)
-{
-}
-
 Aws::String ListContactFlowModulesRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelFlowExecutionsResult::CancelFlowExecutionsResult()
-{
-}
-
 CancelFlowExecutionsResult::CancelFlowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ CancelFlowExecutionsResult& CancelFlowExecutionsResult::operator =(const Aws::Am
     {
       m_invalidExecutions.push_back(invalidExecutionsJsonList[invalidExecutionsIndex].AsString());
     }
+    m_invalidExecutionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

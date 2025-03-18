@@ -36,7 +36,7 @@ namespace Model
   class ReceiptIpFilter
   {
   public:
-    AWS_SES_API ReceiptIpFilter();
+    AWS_SES_API ReceiptIpFilter() = default;
     AWS_SES_API ReceiptIpFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ReceiptIpFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,10 @@ namespace Model
      * <p>Indicates whether to block or allow incoming mail from the specified IP
      * addresses.</p>
      */
-    inline const ReceiptFilterPolicy& GetPolicy() const{ return m_policy; }
+    inline ReceiptFilterPolicy GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const ReceiptFilterPolicy& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(ReceiptFilterPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline ReceiptIpFilter& WithPolicy(const ReceiptFilterPolicy& value) { SetPolicy(value); return *this;}
-    inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    inline void SetPolicy(ReceiptFilterPolicy value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy value) { SetPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,16 @@ namespace Model
      * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline ReceiptIpFilter& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline ReceiptIpFilter& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline ReceiptIpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    ReceiptIpFilter& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 
-    ReceiptFilterPolicy m_policy;
+    ReceiptFilterPolicy m_policy{ReceiptFilterPolicy::NOT_SET};
     bool m_policyHasBeenSet = false;
 
     Aws::String m_cidr;

@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ArchiveApplicationRequest::ArchiveApplicationRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_applicationIDHasBeenSet(false)
-{
-}
-
 Aws::String ArchiveApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

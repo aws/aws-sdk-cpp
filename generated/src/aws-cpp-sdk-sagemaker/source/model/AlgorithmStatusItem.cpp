@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AlgorithmStatusItem::AlgorithmStatusItem() : 
-    m_nameHasBeenSet(false),
-    m_status(DetailedAlgorithmStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 AlgorithmStatusItem::AlgorithmStatusItem(JsonView jsonValue)
-  : AlgorithmStatusItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AlgorithmStatusItem& AlgorithmStatusItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DetailedAlgorithmStatusMapper::GetDetailedAlgorithmStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

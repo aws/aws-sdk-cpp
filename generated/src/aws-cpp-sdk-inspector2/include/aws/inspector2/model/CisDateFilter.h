@@ -31,7 +31,7 @@ namespace Model
   class CisDateFilter
   {
   public:
-    AWS_INSPECTOR2_API CisDateFilter();
+    AWS_INSPECTOR2_API CisDateFilter() = default;
     AWS_INSPECTOR2_API CisDateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisDateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,31 +41,31 @@ namespace Model
     /**
      * <p>The CIS date filter's earliest scan start time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEarliestScanStartTime() const{ return m_earliestScanStartTime; }
+    inline const Aws::Utils::DateTime& GetEarliestScanStartTime() const { return m_earliestScanStartTime; }
     inline bool EarliestScanStartTimeHasBeenSet() const { return m_earliestScanStartTimeHasBeenSet; }
-    inline void SetEarliestScanStartTime(const Aws::Utils::DateTime& value) { m_earliestScanStartTimeHasBeenSet = true; m_earliestScanStartTime = value; }
-    inline void SetEarliestScanStartTime(Aws::Utils::DateTime&& value) { m_earliestScanStartTimeHasBeenSet = true; m_earliestScanStartTime = std::move(value); }
-    inline CisDateFilter& WithEarliestScanStartTime(const Aws::Utils::DateTime& value) { SetEarliestScanStartTime(value); return *this;}
-    inline CisDateFilter& WithEarliestScanStartTime(Aws::Utils::DateTime&& value) { SetEarliestScanStartTime(std::move(value)); return *this;}
+    template<typename EarliestScanStartTimeT = Aws::Utils::DateTime>
+    void SetEarliestScanStartTime(EarliestScanStartTimeT&& value) { m_earliestScanStartTimeHasBeenSet = true; m_earliestScanStartTime = std::forward<EarliestScanStartTimeT>(value); }
+    template<typename EarliestScanStartTimeT = Aws::Utils::DateTime>
+    CisDateFilter& WithEarliestScanStartTime(EarliestScanStartTimeT&& value) { SetEarliestScanStartTime(std::forward<EarliestScanStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIS date filter's latest scan start time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestScanStartTime() const{ return m_latestScanStartTime; }
+    inline const Aws::Utils::DateTime& GetLatestScanStartTime() const { return m_latestScanStartTime; }
     inline bool LatestScanStartTimeHasBeenSet() const { return m_latestScanStartTimeHasBeenSet; }
-    inline void SetLatestScanStartTime(const Aws::Utils::DateTime& value) { m_latestScanStartTimeHasBeenSet = true; m_latestScanStartTime = value; }
-    inline void SetLatestScanStartTime(Aws::Utils::DateTime&& value) { m_latestScanStartTimeHasBeenSet = true; m_latestScanStartTime = std::move(value); }
-    inline CisDateFilter& WithLatestScanStartTime(const Aws::Utils::DateTime& value) { SetLatestScanStartTime(value); return *this;}
-    inline CisDateFilter& WithLatestScanStartTime(Aws::Utils::DateTime&& value) { SetLatestScanStartTime(std::move(value)); return *this;}
+    template<typename LatestScanStartTimeT = Aws::Utils::DateTime>
+    void SetLatestScanStartTime(LatestScanStartTimeT&& value) { m_latestScanStartTimeHasBeenSet = true; m_latestScanStartTime = std::forward<LatestScanStartTimeT>(value); }
+    template<typename LatestScanStartTimeT = Aws::Utils::DateTime>
+    CisDateFilter& WithLatestScanStartTime(LatestScanStartTimeT&& value) { SetLatestScanStartTime(std::forward<LatestScanStartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_earliestScanStartTime;
+    Aws::Utils::DateTime m_earliestScanStartTime{};
     bool m_earliestScanStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestScanStartTime;
+    Aws::Utils::DateTime m_latestScanStartTime{};
     bool m_latestScanStartTimeHasBeenSet = false;
   };
 

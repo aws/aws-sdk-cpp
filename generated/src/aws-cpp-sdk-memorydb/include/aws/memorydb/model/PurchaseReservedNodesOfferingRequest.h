@@ -23,7 +23,7 @@ namespace Model
   class PurchaseReservedNodesOfferingRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API PurchaseReservedNodesOfferingRequest();
+    AWS_MEMORYDB_API PurchaseReservedNodesOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,35 +40,31 @@ namespace Model
     /**
      * <p>The ID of the reserved node offering to purchase.</p>
      */
-    inline const Aws::String& GetReservedNodesOfferingId() const{ return m_reservedNodesOfferingId; }
+    inline const Aws::String& GetReservedNodesOfferingId() const { return m_reservedNodesOfferingId; }
     inline bool ReservedNodesOfferingIdHasBeenSet() const { return m_reservedNodesOfferingIdHasBeenSet; }
-    inline void SetReservedNodesOfferingId(const Aws::String& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = value; }
-    inline void SetReservedNodesOfferingId(Aws::String&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::move(value); }
-    inline void SetReservedNodesOfferingId(const char* value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId.assign(value); }
-    inline PurchaseReservedNodesOfferingRequest& WithReservedNodesOfferingId(const Aws::String& value) { SetReservedNodesOfferingId(value); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& WithReservedNodesOfferingId(Aws::String&& value) { SetReservedNodesOfferingId(std::move(value)); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& WithReservedNodesOfferingId(const char* value) { SetReservedNodesOfferingId(value); return *this;}
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    void SetReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::forward<ReservedNodesOfferingIdT>(value); }
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    PurchaseReservedNodesOfferingRequest& WithReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { SetReservedNodesOfferingId(std::forward<ReservedNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A customer-specified identifier to track this reservation.</p>
      */
-    inline const Aws::String& GetReservationId() const{ return m_reservationId; }
+    inline const Aws::String& GetReservationId() const { return m_reservationId; }
     inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
-    inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
-    inline void SetReservationId(Aws::String&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::move(value); }
-    inline void SetReservationId(const char* value) { m_reservationIdHasBeenSet = true; m_reservationId.assign(value); }
-    inline PurchaseReservedNodesOfferingRequest& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& WithReservationId(const char* value) { SetReservationId(value); return *this;}
+    template<typename ReservationIdT = Aws::String>
+    void SetReservationId(ReservationIdT&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::forward<ReservationIdT>(value); }
+    template<typename ReservationIdT = Aws::String>
+    PurchaseReservedNodesOfferingRequest& WithReservationId(ReservationIdT&& value) { SetReservationId(std::forward<ReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of node instances to reserve.</p>
      */
-    inline int GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const { return m_nodeCount; }
     inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
     inline PurchaseReservedNodesOfferingRequest& WithNodeCount(int value) { SetNodeCount(value); return *this;}
@@ -79,14 +75,14 @@ namespace Model
      * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
      * key must be accompanied by a tag value, although null is accepted.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PurchaseReservedNodesOfferingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PurchaseReservedNodesOfferingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PurchaseReservedNodesOfferingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PurchaseReservedNodesOfferingRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PurchaseReservedNodesOfferingRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -96,7 +92,7 @@ namespace Model
     Aws::String m_reservationId;
     bool m_reservationIdHasBeenSet = false;
 
-    int m_nodeCount;
+    int m_nodeCount{0};
     bool m_nodeCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

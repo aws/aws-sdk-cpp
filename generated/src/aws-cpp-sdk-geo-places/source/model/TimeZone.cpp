@@ -18,16 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-TimeZone::TimeZone() : 
-    m_nameHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_offsetSeconds(0),
-    m_offsetSecondsHasBeenSet(false)
-{
-}
-
 TimeZone::TimeZone(JsonView jsonValue)
-  : TimeZone()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TimeZone& TimeZone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Offset"))
   {
     m_offset = jsonValue.GetString("Offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OffsetSeconds"))
   {
     m_offsetSeconds = jsonValue.GetInt64("OffsetSeconds");
-
     m_offsetSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

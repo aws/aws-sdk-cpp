@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-StartReadSetActivationJobSourceItem::StartReadSetActivationJobSourceItem() : 
-    m_readSetIdHasBeenSet(false)
-{
-}
-
 StartReadSetActivationJobSourceItem::StartReadSetActivationJobSourceItem(JsonView jsonValue)
-  : StartReadSetActivationJobSourceItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StartReadSetActivationJobSourceItem& StartReadSetActivationJobSourceItem::operat
   if(jsonValue.ValueExists("readSetId"))
   {
     m_readSetId = jsonValue.GetString("readSetId");
-
     m_readSetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

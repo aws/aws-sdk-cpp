@@ -34,7 +34,7 @@ namespace Model
   class AwsRdsDbSubnetGroup
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup();
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup() = default;
     AWS_SECURITYHUB_API AwsRdsDbSubnetGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbSubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,84 +44,74 @@ namespace Model
     /**
      * <p>The name of the subnet group.</p>
      */
-    inline const Aws::String& GetDbSubnetGroupName() const{ return m_dbSubnetGroupName; }
+    inline const Aws::String& GetDbSubnetGroupName() const { return m_dbSubnetGroupName; }
     inline bool DbSubnetGroupNameHasBeenSet() const { return m_dbSubnetGroupNameHasBeenSet; }
-    inline void SetDbSubnetGroupName(const Aws::String& value) { m_dbSubnetGroupNameHasBeenSet = true; m_dbSubnetGroupName = value; }
-    inline void SetDbSubnetGroupName(Aws::String&& value) { m_dbSubnetGroupNameHasBeenSet = true; m_dbSubnetGroupName = std::move(value); }
-    inline void SetDbSubnetGroupName(const char* value) { m_dbSubnetGroupNameHasBeenSet = true; m_dbSubnetGroupName.assign(value); }
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupName(const Aws::String& value) { SetDbSubnetGroupName(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupName(Aws::String&& value) { SetDbSubnetGroupName(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupName(const char* value) { SetDbSubnetGroupName(value); return *this;}
+    template<typename DbSubnetGroupNameT = Aws::String>
+    void SetDbSubnetGroupName(DbSubnetGroupNameT&& value) { m_dbSubnetGroupNameHasBeenSet = true; m_dbSubnetGroupName = std::forward<DbSubnetGroupNameT>(value); }
+    template<typename DbSubnetGroupNameT = Aws::String>
+    AwsRdsDbSubnetGroup& WithDbSubnetGroupName(DbSubnetGroupNameT&& value) { SetDbSubnetGroupName(std::forward<DbSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the subnet group.</p>
      */
-    inline const Aws::String& GetDbSubnetGroupDescription() const{ return m_dbSubnetGroupDescription; }
+    inline const Aws::String& GetDbSubnetGroupDescription() const { return m_dbSubnetGroupDescription; }
     inline bool DbSubnetGroupDescriptionHasBeenSet() const { return m_dbSubnetGroupDescriptionHasBeenSet; }
-    inline void SetDbSubnetGroupDescription(const Aws::String& value) { m_dbSubnetGroupDescriptionHasBeenSet = true; m_dbSubnetGroupDescription = value; }
-    inline void SetDbSubnetGroupDescription(Aws::String&& value) { m_dbSubnetGroupDescriptionHasBeenSet = true; m_dbSubnetGroupDescription = std::move(value); }
-    inline void SetDbSubnetGroupDescription(const char* value) { m_dbSubnetGroupDescriptionHasBeenSet = true; m_dbSubnetGroupDescription.assign(value); }
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupDescription(const Aws::String& value) { SetDbSubnetGroupDescription(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupDescription(Aws::String&& value) { SetDbSubnetGroupDescription(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupDescription(const char* value) { SetDbSubnetGroupDescription(value); return *this;}
+    template<typename DbSubnetGroupDescriptionT = Aws::String>
+    void SetDbSubnetGroupDescription(DbSubnetGroupDescriptionT&& value) { m_dbSubnetGroupDescriptionHasBeenSet = true; m_dbSubnetGroupDescription = std::forward<DbSubnetGroupDescriptionT>(value); }
+    template<typename DbSubnetGroupDescriptionT = Aws::String>
+    AwsRdsDbSubnetGroup& WithDbSubnetGroupDescription(DbSubnetGroupDescriptionT&& value) { SetDbSubnetGroupDescription(std::forward<DbSubnetGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC ID of the subnet group.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsRdsDbSubnetGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsRdsDbSubnetGroup& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the subnet group.</p>
      */
-    inline const Aws::String& GetSubnetGroupStatus() const{ return m_subnetGroupStatus; }
+    inline const Aws::String& GetSubnetGroupStatus() const { return m_subnetGroupStatus; }
     inline bool SubnetGroupStatusHasBeenSet() const { return m_subnetGroupStatusHasBeenSet; }
-    inline void SetSubnetGroupStatus(const Aws::String& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
-    inline void SetSubnetGroupStatus(Aws::String&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = std::move(value); }
-    inline void SetSubnetGroupStatus(const char* value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus.assign(value); }
-    inline AwsRdsDbSubnetGroup& WithSubnetGroupStatus(const Aws::String& value) { SetSubnetGroupStatus(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithSubnetGroupStatus(Aws::String&& value) { SetSubnetGroupStatus(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& WithSubnetGroupStatus(const char* value) { SetSubnetGroupStatus(value); return *this;}
+    template<typename SubnetGroupStatusT = Aws::String>
+    void SetSubnetGroupStatus(SubnetGroupStatusT&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = std::forward<SubnetGroupStatusT>(value); }
+    template<typename SubnetGroupStatusT = Aws::String>
+    AwsRdsDbSubnetGroup& WithSubnetGroupStatus(SubnetGroupStatusT&& value) { SetSubnetGroupStatus(std::forward<SubnetGroupStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of subnets in the subnet group.</p>
      */
-    inline const Aws::Vector<AwsRdsDbSubnetGroupSubnet>& GetSubnets() const{ return m_subnets; }
+    inline const Aws::Vector<AwsRdsDbSubnetGroupSubnet>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-    inline void SetSubnets(const Aws::Vector<AwsRdsDbSubnetGroupSubnet>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<AwsRdsDbSubnetGroupSubnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-    inline AwsRdsDbSubnetGroup& WithSubnets(const Aws::Vector<AwsRdsDbSubnetGroupSubnet>& value) { SetSubnets(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithSubnets(Aws::Vector<AwsRdsDbSubnetGroupSubnet>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& AddSubnets(const AwsRdsDbSubnetGroupSubnet& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-    inline AwsRdsDbSubnetGroup& AddSubnets(AwsRdsDbSubnetGroupSubnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
+    template<typename SubnetsT = Aws::Vector<AwsRdsDbSubnetGroupSubnet>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<AwsRdsDbSubnetGroupSubnet>>
+    AwsRdsDbSubnetGroup& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = AwsRdsDbSubnetGroupSubnet>
+    AwsRdsDbSubnetGroup& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the subnet group.</p>
      */
-    inline const Aws::String& GetDbSubnetGroupArn() const{ return m_dbSubnetGroupArn; }
+    inline const Aws::String& GetDbSubnetGroupArn() const { return m_dbSubnetGroupArn; }
     inline bool DbSubnetGroupArnHasBeenSet() const { return m_dbSubnetGroupArnHasBeenSet; }
-    inline void SetDbSubnetGroupArn(const Aws::String& value) { m_dbSubnetGroupArnHasBeenSet = true; m_dbSubnetGroupArn = value; }
-    inline void SetDbSubnetGroupArn(Aws::String&& value) { m_dbSubnetGroupArnHasBeenSet = true; m_dbSubnetGroupArn = std::move(value); }
-    inline void SetDbSubnetGroupArn(const char* value) { m_dbSubnetGroupArnHasBeenSet = true; m_dbSubnetGroupArn.assign(value); }
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupArn(const Aws::String& value) { SetDbSubnetGroupArn(value); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupArn(Aws::String&& value) { SetDbSubnetGroupArn(std::move(value)); return *this;}
-    inline AwsRdsDbSubnetGroup& WithDbSubnetGroupArn(const char* value) { SetDbSubnetGroupArn(value); return *this;}
+    template<typename DbSubnetGroupArnT = Aws::String>
+    void SetDbSubnetGroupArn(DbSubnetGroupArnT&& value) { m_dbSubnetGroupArnHasBeenSet = true; m_dbSubnetGroupArn = std::forward<DbSubnetGroupArnT>(value); }
+    template<typename DbSubnetGroupArnT = Aws::String>
+    AwsRdsDbSubnetGroup& WithDbSubnetGroupArn(DbSubnetGroupArnT&& value) { SetDbSubnetGroupArn(std::forward<DbSubnetGroupArnT>(value)); return *this;}
     ///@}
   private:
 

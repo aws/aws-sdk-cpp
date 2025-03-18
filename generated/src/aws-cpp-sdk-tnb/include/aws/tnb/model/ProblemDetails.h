@@ -32,7 +32,7 @@ namespace Model
   class ProblemDetails
   {
   public:
-    AWS_TNB_API ProblemDetails();
+    AWS_TNB_API ProblemDetails() = default;
     AWS_TNB_API ProblemDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ProblemDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A human-readable explanation specific to this occurrence of the problem.</p>
      */
-    inline const Aws::String& GetDetail() const{ return m_detail; }
+    inline const Aws::String& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
-    inline ProblemDetails& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
-    inline ProblemDetails& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
-    inline ProblemDetails& WithDetail(const char* value) { SetDetail(value); return *this;}
+    template<typename DetailT = Aws::String>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = Aws::String>
+    ProblemDetails& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable title of the problem type.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ProblemDetails& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ProblemDetails& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ProblemDetails& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ProblemDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 

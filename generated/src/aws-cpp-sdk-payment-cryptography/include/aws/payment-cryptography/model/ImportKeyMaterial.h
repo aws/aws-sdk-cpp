@@ -37,7 +37,7 @@ namespace Model
   class ImportKeyMaterial
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial();
+    AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,24 @@ namespace Model
     /**
      * <p>Parameter information for root public key certificate import.</p>
      */
-    inline const RootCertificatePublicKey& GetRootCertificatePublicKey() const{ return m_rootCertificatePublicKey; }
+    inline const RootCertificatePublicKey& GetRootCertificatePublicKey() const { return m_rootCertificatePublicKey; }
     inline bool RootCertificatePublicKeyHasBeenSet() const { return m_rootCertificatePublicKeyHasBeenSet; }
-    inline void SetRootCertificatePublicKey(const RootCertificatePublicKey& value) { m_rootCertificatePublicKeyHasBeenSet = true; m_rootCertificatePublicKey = value; }
-    inline void SetRootCertificatePublicKey(RootCertificatePublicKey&& value) { m_rootCertificatePublicKeyHasBeenSet = true; m_rootCertificatePublicKey = std::move(value); }
-    inline ImportKeyMaterial& WithRootCertificatePublicKey(const RootCertificatePublicKey& value) { SetRootCertificatePublicKey(value); return *this;}
-    inline ImportKeyMaterial& WithRootCertificatePublicKey(RootCertificatePublicKey&& value) { SetRootCertificatePublicKey(std::move(value)); return *this;}
+    template<typename RootCertificatePublicKeyT = RootCertificatePublicKey>
+    void SetRootCertificatePublicKey(RootCertificatePublicKeyT&& value) { m_rootCertificatePublicKeyHasBeenSet = true; m_rootCertificatePublicKey = std::forward<RootCertificatePublicKeyT>(value); }
+    template<typename RootCertificatePublicKeyT = RootCertificatePublicKey>
+    ImportKeyMaterial& WithRootCertificatePublicKey(RootCertificatePublicKeyT&& value) { SetRootCertificatePublicKey(std::forward<RootCertificatePublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameter information for trusted public key certificate import.</p>
      */
-    inline const TrustedCertificatePublicKey& GetTrustedCertificatePublicKey() const{ return m_trustedCertificatePublicKey; }
+    inline const TrustedCertificatePublicKey& GetTrustedCertificatePublicKey() const { return m_trustedCertificatePublicKey; }
     inline bool TrustedCertificatePublicKeyHasBeenSet() const { return m_trustedCertificatePublicKeyHasBeenSet; }
-    inline void SetTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = value; }
-    inline void SetTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = std::move(value); }
-    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { SetTrustedCertificatePublicKey(value); return *this;}
-    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { SetTrustedCertificatePublicKey(std::move(value)); return *this;}
+    template<typename TrustedCertificatePublicKeyT = TrustedCertificatePublicKey>
+    void SetTrustedCertificatePublicKey(TrustedCertificatePublicKeyT&& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = std::forward<TrustedCertificatePublicKeyT>(value); }
+    template<typename TrustedCertificatePublicKeyT = TrustedCertificatePublicKey>
+    ImportKeyMaterial& WithTrustedCertificatePublicKey(TrustedCertificatePublicKeyT&& value) { SetTrustedCertificatePublicKey(std::forward<TrustedCertificatePublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>Parameter information for key material import using symmetric TR-31 key
      * exchange method.</p>
      */
-    inline const ImportTr31KeyBlock& GetTr31KeyBlock() const{ return m_tr31KeyBlock; }
+    inline const ImportTr31KeyBlock& GetTr31KeyBlock() const { return m_tr31KeyBlock; }
     inline bool Tr31KeyBlockHasBeenSet() const { return m_tr31KeyBlockHasBeenSet; }
-    inline void SetTr31KeyBlock(const ImportTr31KeyBlock& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = value; }
-    inline void SetTr31KeyBlock(ImportTr31KeyBlock&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::move(value); }
-    inline ImportKeyMaterial& WithTr31KeyBlock(const ImportTr31KeyBlock& value) { SetTr31KeyBlock(value); return *this;}
-    inline ImportKeyMaterial& WithTr31KeyBlock(ImportTr31KeyBlock&& value) { SetTr31KeyBlock(std::move(value)); return *this;}
+    template<typename Tr31KeyBlockT = ImportTr31KeyBlock>
+    void SetTr31KeyBlock(Tr31KeyBlockT&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::forward<Tr31KeyBlockT>(value); }
+    template<typename Tr31KeyBlockT = ImportTr31KeyBlock>
+    ImportKeyMaterial& WithTr31KeyBlock(Tr31KeyBlockT&& value) { SetTr31KeyBlock(std::forward<Tr31KeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * <p>Parameter information for key material import using the asymmetric TR-34 key
      * exchange method.</p>
      */
-    inline const ImportTr34KeyBlock& GetTr34KeyBlock() const{ return m_tr34KeyBlock; }
+    inline const ImportTr34KeyBlock& GetTr34KeyBlock() const { return m_tr34KeyBlock; }
     inline bool Tr34KeyBlockHasBeenSet() const { return m_tr34KeyBlockHasBeenSet; }
-    inline void SetTr34KeyBlock(const ImportTr34KeyBlock& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = value; }
-    inline void SetTr34KeyBlock(ImportTr34KeyBlock&& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = std::move(value); }
-    inline ImportKeyMaterial& WithTr34KeyBlock(const ImportTr34KeyBlock& value) { SetTr34KeyBlock(value); return *this;}
-    inline ImportKeyMaterial& WithTr34KeyBlock(ImportTr34KeyBlock&& value) { SetTr34KeyBlock(std::move(value)); return *this;}
+    template<typename Tr34KeyBlockT = ImportTr34KeyBlock>
+    void SetTr34KeyBlock(Tr34KeyBlockT&& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = std::forward<Tr34KeyBlockT>(value); }
+    template<typename Tr34KeyBlockT = ImportTr34KeyBlock>
+    ImportKeyMaterial& WithTr34KeyBlock(Tr34KeyBlockT&& value) { SetTr34KeyBlock(std::forward<Tr34KeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +98,12 @@ namespace Model
      * <p>Parameter information for key material import using asymmetric RSA wrap and
      * unwrap key exchange method.</p>
      */
-    inline const ImportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
+    inline const ImportKeyCryptogram& GetKeyCryptogram() const { return m_keyCryptogram; }
     inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
-    inline void SetKeyCryptogram(const ImportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
-    inline void SetKeyCryptogram(ImportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
-    inline ImportKeyMaterial& WithKeyCryptogram(const ImportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
-    inline ImportKeyMaterial& WithKeyCryptogram(ImportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
+    template<typename KeyCryptogramT = ImportKeyCryptogram>
+    void SetKeyCryptogram(KeyCryptogramT&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::forward<KeyCryptogramT>(value); }
+    template<typename KeyCryptogramT = ImportKeyCryptogram>
+    ImportKeyMaterial& WithKeyCryptogram(KeyCryptogramT&& value) { SetKeyCryptogram(std::forward<KeyCryptogramT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class GetQueueUrlRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API GetQueueUrlRequest();
+    AWS_SQS_API GetQueueUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * name can be up to 80 characters long and can include alphanumeric characters,
      * hyphens (-), and underscores (_). Queue URLs and names are case-sensitive.</p>
      */
-    inline const Aws::String& GetQueueName() const{ return m_queueName; }
+    inline const Aws::String& GetQueueName() const { return m_queueName; }
     inline bool QueueNameHasBeenSet() const { return m_queueNameHasBeenSet; }
-    inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
-    inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
-    inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
-    inline GetQueueUrlRequest& WithQueueName(const Aws::String& value) { SetQueueName(value); return *this;}
-    inline GetQueueUrlRequest& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
-    inline GetQueueUrlRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
+    template<typename QueueNameT = Aws::String>
+    void SetQueueName(QueueNameT&& value) { m_queueNameHasBeenSet = true; m_queueName = std::forward<QueueNameT>(value); }
+    template<typename QueueNameT = Aws::String>
+    GetQueueUrlRequest& WithQueueName(QueueNameT&& value) { SetQueueName(std::forward<QueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * queue. This is only required when you are attempting to access a queue owned by
      * another Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetQueueOwnerAWSAccountId() const{ return m_queueOwnerAWSAccountId; }
+    inline const Aws::String& GetQueueOwnerAWSAccountId() const { return m_queueOwnerAWSAccountId; }
     inline bool QueueOwnerAWSAccountIdHasBeenSet() const { return m_queueOwnerAWSAccountIdHasBeenSet; }
-    inline void SetQueueOwnerAWSAccountId(const Aws::String& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = value; }
-    inline void SetQueueOwnerAWSAccountId(Aws::String&& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = std::move(value); }
-    inline void SetQueueOwnerAWSAccountId(const char* value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId.assign(value); }
-    inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(const Aws::String& value) { SetQueueOwnerAWSAccountId(value); return *this;}
-    inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(Aws::String&& value) { SetQueueOwnerAWSAccountId(std::move(value)); return *this;}
-    inline GetQueueUrlRequest& WithQueueOwnerAWSAccountId(const char* value) { SetQueueOwnerAWSAccountId(value); return *this;}
+    template<typename QueueOwnerAWSAccountIdT = Aws::String>
+    void SetQueueOwnerAWSAccountId(QueueOwnerAWSAccountIdT&& value) { m_queueOwnerAWSAccountIdHasBeenSet = true; m_queueOwnerAWSAccountId = std::forward<QueueOwnerAWSAccountIdT>(value); }
+    template<typename QueueOwnerAWSAccountIdT = Aws::String>
+    GetQueueUrlRequest& WithQueueOwnerAWSAccountId(QueueOwnerAWSAccountIdT&& value) { SetQueueOwnerAWSAccountId(std::forward<QueueOwnerAWSAccountIdT>(value)); return *this;}
     ///@}
   private:
 

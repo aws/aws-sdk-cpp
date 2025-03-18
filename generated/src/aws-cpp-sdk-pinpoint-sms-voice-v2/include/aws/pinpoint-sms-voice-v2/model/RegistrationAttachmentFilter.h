@@ -34,7 +34,7 @@ namespace Model
   class RegistrationAttachmentFilter
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentFilter();
+    AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentFilter() = default;
     AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The name of the attribute to filter on.</p>
      */
-    inline const RegistrationAttachmentFilterName& GetName() const{ return m_name; }
+    inline RegistrationAttachmentFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RegistrationAttachmentFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RegistrationAttachmentFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RegistrationAttachmentFilter& WithName(const RegistrationAttachmentFilterName& value) { SetName(value); return *this;}
-    inline RegistrationAttachmentFilter& WithName(RegistrationAttachmentFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RegistrationAttachmentFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RegistrationAttachmentFilter& WithName(RegistrationAttachmentFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of values to filter on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline RegistrationAttachmentFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline RegistrationAttachmentFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline RegistrationAttachmentFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline RegistrationAttachmentFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline RegistrationAttachmentFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    RegistrationAttachmentFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    RegistrationAttachmentFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    RegistrationAttachmentFilterName m_name;
+    RegistrationAttachmentFilterName m_name{RegistrationAttachmentFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdNamespaceRequest::DeleteIdNamespaceRequest() : 
-    m_idNamespaceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdNamespaceRequest::SerializePayload() const
 {
   return {};

@@ -18,30 +18,7 @@ namespace FIS
 namespace Model
 {
 
-Experiment::Experiment() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_experimentTemplateIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_stopConditionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_experimentOptionsHasBeenSet(false),
-    m_targetAccountConfigurationsCount(0),
-    m_targetAccountConfigurationsCountHasBeenSet(false),
-    m_experimentReportConfigurationHasBeenSet(false),
-    m_experimentReportHasBeenSet(false)
-{
-}
-
 Experiment::Experiment(JsonView jsonValue)
-  : Experiment()
 {
   *this = jsonValue;
 }
@@ -51,38 +28,28 @@ Experiment& Experiment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentTemplateId"))
   {
     m_experimentTemplateId = jsonValue.GetString("experimentTemplateId");
-
     m_experimentTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("targets").GetAllObjects();
@@ -92,7 +59,6 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Map<Aws::String, JsonView> actionsJsonMap = jsonValue.GetObject("actions").GetAllObjects();
@@ -102,7 +68,6 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopConditions"))
   {
     Aws::Utils::Array<JsonView> stopConditionsJsonList = jsonValue.GetArray("stopConditions");
@@ -112,28 +77,21 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     }
     m_stopConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -143,42 +101,31 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentOptions"))
   {
     m_experimentOptions = jsonValue.GetObject("experimentOptions");
-
     m_experimentOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountConfigurationsCount"))
   {
     m_targetAccountConfigurationsCount = jsonValue.GetInt64("targetAccountConfigurationsCount");
-
     m_targetAccountConfigurationsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentReportConfiguration"))
   {
     m_experimentReportConfiguration = jsonValue.GetObject("experimentReportConfiguration");
-
     m_experimentReportConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentReport"))
   {
     m_experimentReport = jsonValue.GetObject("experimentReport");
-
     m_experimentReportHasBeenSet = true;
   }
-
   return *this;
 }
 

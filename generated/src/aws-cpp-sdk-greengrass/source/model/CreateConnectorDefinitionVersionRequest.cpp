@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectorDefinitionVersionRequest::CreateConnectorDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_connectorDefinitionIdHasBeenSet(false),
-    m_connectorsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectorDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

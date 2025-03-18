@@ -18,33 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineAvoidanceOptions::IsolineAvoidanceOptions() : 
-    m_areasHasBeenSet(false),
-    m_carShuttleTrains(false),
-    m_carShuttleTrainsHasBeenSet(false),
-    m_controlledAccessHighways(false),
-    m_controlledAccessHighwaysHasBeenSet(false),
-    m_dirtRoads(false),
-    m_dirtRoadsHasBeenSet(false),
-    m_ferries(false),
-    m_ferriesHasBeenSet(false),
-    m_seasonalClosure(false),
-    m_seasonalClosureHasBeenSet(false),
-    m_tollRoads(false),
-    m_tollRoadsHasBeenSet(false),
-    m_tollTransponders(false),
-    m_tollTranspondersHasBeenSet(false),
-    m_truckRoadTypesHasBeenSet(false),
-    m_tunnels(false),
-    m_tunnelsHasBeenSet(false),
-    m_uTurns(false),
-    m_uTurnsHasBeenSet(false),
-    m_zoneCategoriesHasBeenSet(false)
-{
-}
-
 IsolineAvoidanceOptions::IsolineAvoidanceOptions(JsonView jsonValue)
-  : IsolineAvoidanceOptions()
 {
   *this = jsonValue;
 }
@@ -60,56 +34,41 @@ IsolineAvoidanceOptions& IsolineAvoidanceOptions::operator =(JsonView jsonValue)
     }
     m_areasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CarShuttleTrains"))
   {
     m_carShuttleTrains = jsonValue.GetBool("CarShuttleTrains");
-
     m_carShuttleTrainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlledAccessHighways"))
   {
     m_controlledAccessHighways = jsonValue.GetBool("ControlledAccessHighways");
-
     m_controlledAccessHighwaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirtRoads"))
   {
     m_dirtRoads = jsonValue.GetBool("DirtRoads");
-
     m_dirtRoadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ferries"))
   {
     m_ferries = jsonValue.GetBool("Ferries");
-
     m_ferriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeasonalClosure"))
   {
     m_seasonalClosure = jsonValue.GetBool("SeasonalClosure");
-
     m_seasonalClosureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TollRoads"))
   {
     m_tollRoads = jsonValue.GetBool("TollRoads");
-
     m_tollRoadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TollTransponders"))
   {
     m_tollTransponders = jsonValue.GetBool("TollTransponders");
-
     m_tollTranspondersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckRoadTypes"))
   {
     Aws::Utils::Array<JsonView> truckRoadTypesJsonList = jsonValue.GetArray("TruckRoadTypes");
@@ -119,21 +78,16 @@ IsolineAvoidanceOptions& IsolineAvoidanceOptions::operator =(JsonView jsonValue)
     }
     m_truckRoadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tunnels"))
   {
     m_tunnels = jsonValue.GetBool("Tunnels");
-
     m_tunnelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UTurns"))
   {
     m_uTurns = jsonValue.GetBool("UTurns");
-
     m_uTurnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZoneCategories"))
   {
     Aws::Utils::Array<JsonView> zoneCategoriesJsonList = jsonValue.GetArray("ZoneCategories");
@@ -143,7 +97,6 @@ IsolineAvoidanceOptions& IsolineAvoidanceOptions::operator =(JsonView jsonValue)
     }
     m_zoneCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

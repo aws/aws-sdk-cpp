@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-LaunchTemplateSpecification::LaunchTemplateSpecification() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue)
-  : LaunchTemplateSpecification()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView js
   if(jsonValue.ValueExists("launchTemplateId"))
   {
     m_launchTemplateId = jsonValue.GetString("launchTemplateId");
-
     m_launchTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplateName"))
   {
     m_launchTemplateName = jsonValue.GetString("launchTemplateName");
-
     m_launchTemplateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
@@ -64,7 +49,6 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView js
     }
     m_overridesHasBeenSet = true;
   }
-
   return *this;
 }
 

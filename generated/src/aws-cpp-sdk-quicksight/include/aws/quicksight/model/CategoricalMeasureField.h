@@ -35,7 +35,7 @@ namespace Model
   class CategoricalMeasureField
   {
   public:
-    AWS_QUICKSIGHT_API CategoricalMeasureField();
+    AWS_QUICKSIGHT_API CategoricalMeasureField() = default;
     AWS_QUICKSIGHT_API CategoricalMeasureField(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CategoricalMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,50 +45,46 @@ namespace Model
     /**
      * <p>The custom field ID.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline CategoricalMeasureField& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline CategoricalMeasureField& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline CategoricalMeasureField& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    CategoricalMeasureField& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column that is used in the <code>CategoricalMeasureField</code>.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline CategoricalMeasureField& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline CategoricalMeasureField& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    CategoricalMeasureField& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregation function of the measure field.</p>
      */
-    inline const CategoricalAggregationFunction& GetAggregationFunction() const{ return m_aggregationFunction; }
+    inline CategoricalAggregationFunction GetAggregationFunction() const { return m_aggregationFunction; }
     inline bool AggregationFunctionHasBeenSet() const { return m_aggregationFunctionHasBeenSet; }
-    inline void SetAggregationFunction(const CategoricalAggregationFunction& value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = value; }
-    inline void SetAggregationFunction(CategoricalAggregationFunction&& value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = std::move(value); }
-    inline CategoricalMeasureField& WithAggregationFunction(const CategoricalAggregationFunction& value) { SetAggregationFunction(value); return *this;}
-    inline CategoricalMeasureField& WithAggregationFunction(CategoricalAggregationFunction&& value) { SetAggregationFunction(std::move(value)); return *this;}
+    inline void SetAggregationFunction(CategoricalAggregationFunction value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = value; }
+    inline CategoricalMeasureField& WithAggregationFunction(CategoricalAggregationFunction value) { SetAggregationFunction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format configuration of the field.</p>
      */
-    inline const StringFormatConfiguration& GetFormatConfiguration() const{ return m_formatConfiguration; }
+    inline const StringFormatConfiguration& GetFormatConfiguration() const { return m_formatConfiguration; }
     inline bool FormatConfigurationHasBeenSet() const { return m_formatConfigurationHasBeenSet; }
-    inline void SetFormatConfiguration(const StringFormatConfiguration& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = value; }
-    inline void SetFormatConfiguration(StringFormatConfiguration&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::move(value); }
-    inline CategoricalMeasureField& WithFormatConfiguration(const StringFormatConfiguration& value) { SetFormatConfiguration(value); return *this;}
-    inline CategoricalMeasureField& WithFormatConfiguration(StringFormatConfiguration&& value) { SetFormatConfiguration(std::move(value)); return *this;}
+    template<typename FormatConfigurationT = StringFormatConfiguration>
+    void SetFormatConfiguration(FormatConfigurationT&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::forward<FormatConfigurationT>(value); }
+    template<typename FormatConfigurationT = StringFormatConfiguration>
+    CategoricalMeasureField& WithFormatConfiguration(FormatConfigurationT&& value) { SetFormatConfiguration(std::forward<FormatConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    CategoricalAggregationFunction m_aggregationFunction;
+    CategoricalAggregationFunction m_aggregationFunction{CategoricalAggregationFunction::NOT_SET};
     bool m_aggregationFunctionHasBeenSet = false;
 
     StringFormatConfiguration m_formatConfiguration;

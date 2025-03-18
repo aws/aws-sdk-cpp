@@ -18,19 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedHostKey::DescribedHostKey() : 
-    m_arnHasBeenSet(false),
-    m_hostKeyIdHasBeenSet(false),
-    m_hostKeyFingerprintHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_dateImportedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DescribedHostKey::DescribedHostKey(JsonView jsonValue)
-  : DescribedHostKey()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DescribedHostKey& DescribedHostKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostKeyId"))
   {
     m_hostKeyId = jsonValue.GetString("HostKeyId");
-
     m_hostKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostKeyFingerprint"))
   {
     m_hostKeyFingerprint = jsonValue.GetString("HostKeyFingerprint");
-
     m_hostKeyFingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateImported"))
   {
     m_dateImported = jsonValue.GetDouble("DateImported");
-
     m_dateImportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -88,7 +64,6 @@ DescribedHostKey& DescribedHostKey::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

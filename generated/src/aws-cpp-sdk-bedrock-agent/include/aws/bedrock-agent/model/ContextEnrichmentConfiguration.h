@@ -33,7 +33,7 @@ namespace Model
   class ContextEnrichmentConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ContextEnrichmentConfiguration();
+    AWS_BEDROCKAGENT_API ContextEnrichmentConfiguration() = default;
     AWS_BEDROCKAGENT_API ContextEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ContextEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The configuration of the Amazon Bedrock foundation model used for context
      * enrichment.</p>
      */
-    inline const BedrockFoundationModelContextEnrichmentConfiguration& GetBedrockFoundationModelConfiguration() const{ return m_bedrockFoundationModelConfiguration; }
+    inline const BedrockFoundationModelContextEnrichmentConfiguration& GetBedrockFoundationModelConfiguration() const { return m_bedrockFoundationModelConfiguration; }
     inline bool BedrockFoundationModelConfigurationHasBeenSet() const { return m_bedrockFoundationModelConfigurationHasBeenSet; }
-    inline void SetBedrockFoundationModelConfiguration(const BedrockFoundationModelContextEnrichmentConfiguration& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = value; }
-    inline void SetBedrockFoundationModelConfiguration(BedrockFoundationModelContextEnrichmentConfiguration&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::move(value); }
-    inline ContextEnrichmentConfiguration& WithBedrockFoundationModelConfiguration(const BedrockFoundationModelContextEnrichmentConfiguration& value) { SetBedrockFoundationModelConfiguration(value); return *this;}
-    inline ContextEnrichmentConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelContextEnrichmentConfiguration&& value) { SetBedrockFoundationModelConfiguration(std::move(value)); return *this;}
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelContextEnrichmentConfiguration>
+    void SetBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::forward<BedrockFoundationModelConfigurationT>(value); }
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelContextEnrichmentConfiguration>
+    ContextEnrichmentConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { SetBedrockFoundationModelConfiguration(std::forward<BedrockFoundationModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +57,17 @@ namespace Model
      * <p>The method used for context enrichment. It must be Amazon Bedrock foundation
      * models.</p>
      */
-    inline const ContextEnrichmentType& GetType() const{ return m_type; }
+    inline ContextEnrichmentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ContextEnrichmentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ContextEnrichmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ContextEnrichmentConfiguration& WithType(const ContextEnrichmentType& value) { SetType(value); return *this;}
-    inline ContextEnrichmentConfiguration& WithType(ContextEnrichmentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ContextEnrichmentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ContextEnrichmentConfiguration& WithType(ContextEnrichmentType value) { SetType(value); return *this;}
     ///@}
   private:
 
     BedrockFoundationModelContextEnrichmentConfiguration m_bedrockFoundationModelConfiguration;
     bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
-    ContextEnrichmentType m_type;
+    ContextEnrichmentType m_type{ContextEnrichmentType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

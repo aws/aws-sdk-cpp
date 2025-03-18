@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Correction::Correction() : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_correctedTermHasBeenSet(false)
-{
-}
-
 Correction::Correction(JsonView jsonValue)
-  : Correction()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Correction& Correction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Term"))
   {
     m_term = jsonValue.GetString("Term");
-
     m_termHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CorrectedTerm"))
   {
     m_correctedTerm = jsonValue.GetString("CorrectedTerm");
-
     m_correctedTermHasBeenSet = true;
   }
-
   return *this;
 }
 

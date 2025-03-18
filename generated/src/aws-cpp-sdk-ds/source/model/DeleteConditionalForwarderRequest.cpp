@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConditionalForwarderRequest::DeleteConditionalForwarderRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_remoteDomainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConditionalForwarderRequest::SerializePayload() const
 {
   JsonValue payload;

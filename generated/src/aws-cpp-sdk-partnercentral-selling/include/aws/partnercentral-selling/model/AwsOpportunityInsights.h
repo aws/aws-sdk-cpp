@@ -34,7 +34,7 @@ namespace Model
   class AwsOpportunityInsights
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsOpportunityInsights();
+    AWS_PARTNERCENTRALSELLING_API AwsOpportunityInsights() = default;
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * potential success for the opportunity. This score helps partners prioritize
      * their efforts.</p>
      */
-    inline const EngagementScore& GetEngagementScore() const{ return m_engagementScore; }
+    inline EngagementScore GetEngagementScore() const { return m_engagementScore; }
     inline bool EngagementScoreHasBeenSet() const { return m_engagementScoreHasBeenSet; }
-    inline void SetEngagementScore(const EngagementScore& value) { m_engagementScoreHasBeenSet = true; m_engagementScore = value; }
-    inline void SetEngagementScore(EngagementScore&& value) { m_engagementScoreHasBeenSet = true; m_engagementScore = std::move(value); }
-    inline AwsOpportunityInsights& WithEngagementScore(const EngagementScore& value) { SetEngagementScore(value); return *this;}
-    inline AwsOpportunityInsights& WithEngagementScore(EngagementScore&& value) { SetEngagementScore(std::move(value)); return *this;}
+    inline void SetEngagementScore(EngagementScore value) { m_engagementScoreHasBeenSet = true; m_engagementScore = value; }
+    inline AwsOpportunityInsights& WithEngagementScore(EngagementScore value) { SetEngagementScore(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>Provides recommendations from AWS on the next best actions to take in order
      * to move the opportunity forward and increase the likelihood of success.</p>
      */
-    inline const Aws::String& GetNextBestActions() const{ return m_nextBestActions; }
+    inline const Aws::String& GetNextBestActions() const { return m_nextBestActions; }
     inline bool NextBestActionsHasBeenSet() const { return m_nextBestActionsHasBeenSet; }
-    inline void SetNextBestActions(const Aws::String& value) { m_nextBestActionsHasBeenSet = true; m_nextBestActions = value; }
-    inline void SetNextBestActions(Aws::String&& value) { m_nextBestActionsHasBeenSet = true; m_nextBestActions = std::move(value); }
-    inline void SetNextBestActions(const char* value) { m_nextBestActionsHasBeenSet = true; m_nextBestActions.assign(value); }
-    inline AwsOpportunityInsights& WithNextBestActions(const Aws::String& value) { SetNextBestActions(value); return *this;}
-    inline AwsOpportunityInsights& WithNextBestActions(Aws::String&& value) { SetNextBestActions(std::move(value)); return *this;}
-    inline AwsOpportunityInsights& WithNextBestActions(const char* value) { SetNextBestActions(value); return *this;}
+    template<typename NextBestActionsT = Aws::String>
+    void SetNextBestActions(NextBestActionsT&& value) { m_nextBestActionsHasBeenSet = true; m_nextBestActions = std::forward<NextBestActionsT>(value); }
+    template<typename NextBestActionsT = Aws::String>
+    AwsOpportunityInsights& WithNextBestActions(NextBestActionsT&& value) { SetNextBestActions(std::forward<NextBestActionsT>(value)); return *this;}
     ///@}
   private:
 
-    EngagementScore m_engagementScore;
+    EngagementScore m_engagementScore{EngagementScore::NOT_SET};
     bool m_engagementScoreHasBeenSet = false;
 
     Aws::String m_nextBestActions;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAnomalyMonitorResult::DeleteAnomalyMonitorResult()
-{
-}
-
 DeleteAnomalyMonitorResult::DeleteAnomalyMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ DeleteAnomalyMonitorResult& DeleteAnomalyMonitorResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

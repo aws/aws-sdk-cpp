@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListHostedZonesRequest::ListHostedZonesRequest() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_delegationSetIdHasBeenSet(false),
-    m_hostedZoneType(HostedZoneType::NOT_SET),
-    m_hostedZoneTypeHasBeenSet(false)
-{
-}
 
 Aws::String ListHostedZonesRequest::SerializePayload() const
 {

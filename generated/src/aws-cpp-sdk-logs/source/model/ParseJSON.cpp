@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParseJSON::ParseJSON() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 ParseJSON::ParseJSON(JsonView jsonValue)
-  : ParseJSON()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParseJSON& ParseJSON::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPlatformVersionsResult::ListPlatformVersionsResult()
-{
-}
-
 ListPlatformVersionsResult::ListPlatformVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListPlatformVersionsResult& ListPlatformVersionsResult::operator =(const Aws::Am
     if(!platformSummaryListNode.IsNull())
     {
       XmlNode platformSummaryListMember = platformSummaryListNode.FirstChild("member");
+      m_platformSummaryListHasBeenSet = !platformSummaryListMember.IsNull();
       while(!platformSummaryListMember.IsNull())
       {
         m_platformSummaryList.push_back(platformSummaryListMember);
         platformSummaryListMember = platformSummaryListMember.NextNode("member");
       }
 
+      m_platformSummaryListHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ListPlatformVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -33,7 +33,7 @@ namespace Model
   class DatabaseMigrationPreference
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * another. For example, from SQL Server to Amazon Aurora MySQL-Compatible Edition.
      * </p>
      */
-    inline const Heterogeneous& GetHeterogeneous() const{ return m_heterogeneous; }
+    inline const Heterogeneous& GetHeterogeneous() const { return m_heterogeneous; }
     inline bool HeterogeneousHasBeenSet() const { return m_heterogeneousHasBeenSet; }
-    inline void SetHeterogeneous(const Heterogeneous& value) { m_heterogeneousHasBeenSet = true; m_heterogeneous = value; }
-    inline void SetHeterogeneous(Heterogeneous&& value) { m_heterogeneousHasBeenSet = true; m_heterogeneous = std::move(value); }
-    inline DatabaseMigrationPreference& WithHeterogeneous(const Heterogeneous& value) { SetHeterogeneous(value); return *this;}
-    inline DatabaseMigrationPreference& WithHeterogeneous(Heterogeneous&& value) { SetHeterogeneous(std::move(value)); return *this;}
+    template<typename HeterogeneousT = Heterogeneous>
+    void SetHeterogeneous(HeterogeneousT&& value) { m_heterogeneousHasBeenSet = true; m_heterogeneous = std::forward<HeterogeneousT>(value); }
+    template<typename HeterogeneousT = Heterogeneous>
+    DatabaseMigrationPreference& WithHeterogeneous(HeterogeneousT&& value) { SetHeterogeneous(std::forward<HeterogeneousT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * into AWS. For example, from SQL Server in your environment to SQL Server on AWS.
      * </p>
      */
-    inline const Homogeneous& GetHomogeneous() const{ return m_homogeneous; }
+    inline const Homogeneous& GetHomogeneous() const { return m_homogeneous; }
     inline bool HomogeneousHasBeenSet() const { return m_homogeneousHasBeenSet; }
-    inline void SetHomogeneous(const Homogeneous& value) { m_homogeneousHasBeenSet = true; m_homogeneous = value; }
-    inline void SetHomogeneous(Homogeneous&& value) { m_homogeneousHasBeenSet = true; m_homogeneous = std::move(value); }
-    inline DatabaseMigrationPreference& WithHomogeneous(const Homogeneous& value) { SetHomogeneous(value); return *this;}
-    inline DatabaseMigrationPreference& WithHomogeneous(Homogeneous&& value) { SetHomogeneous(std::move(value)); return *this;}
+    template<typename HomogeneousT = Homogeneous>
+    void SetHomogeneous(HomogeneousT&& value) { m_homogeneousHasBeenSet = true; m_homogeneous = std::forward<HomogeneousT>(value); }
+    template<typename HomogeneousT = Homogeneous>
+    DatabaseMigrationPreference& WithHomogeneous(HomogeneousT&& value) { SetHomogeneous(std::forward<HomogeneousT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicated that you do not prefer heterogeneous or homogeneous. </p>
      */
-    inline const NoDatabaseMigrationPreference& GetNoPreference() const{ return m_noPreference; }
+    inline const NoDatabaseMigrationPreference& GetNoPreference() const { return m_noPreference; }
     inline bool NoPreferenceHasBeenSet() const { return m_noPreferenceHasBeenSet; }
-    inline void SetNoPreference(const NoDatabaseMigrationPreference& value) { m_noPreferenceHasBeenSet = true; m_noPreference = value; }
-    inline void SetNoPreference(NoDatabaseMigrationPreference&& value) { m_noPreferenceHasBeenSet = true; m_noPreference = std::move(value); }
-    inline DatabaseMigrationPreference& WithNoPreference(const NoDatabaseMigrationPreference& value) { SetNoPreference(value); return *this;}
-    inline DatabaseMigrationPreference& WithNoPreference(NoDatabaseMigrationPreference&& value) { SetNoPreference(std::move(value)); return *this;}
+    template<typename NoPreferenceT = NoDatabaseMigrationPreference>
+    void SetNoPreference(NoPreferenceT&& value) { m_noPreferenceHasBeenSet = true; m_noPreference = std::forward<NoPreferenceT>(value); }
+    template<typename NoPreferenceT = NoDatabaseMigrationPreference>
+    DatabaseMigrationPreference& WithNoPreference(NoPreferenceT&& value) { SetNoPreference(std::forward<NoPreferenceT>(value)); return *this;}
     ///@}
   private:
 

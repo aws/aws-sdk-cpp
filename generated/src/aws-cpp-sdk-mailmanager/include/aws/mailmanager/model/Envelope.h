@@ -32,7 +32,7 @@ namespace Model
   class Envelope
   {
   public:
-    AWS_MAILMANAGER_API Envelope();
+    AWS_MAILMANAGER_API Envelope() = default;
     AWS_MAILMANAGER_API Envelope(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Envelope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,43 +42,38 @@ namespace Model
     /**
      * <p>The RCPT FROM given by the host from which the email was received.</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline Envelope& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline Envelope& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline Envelope& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    Envelope& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HELO used by the host from which the email was received.</p>
      */
-    inline const Aws::String& GetHelo() const{ return m_helo; }
+    inline const Aws::String& GetHelo() const { return m_helo; }
     inline bool HeloHasBeenSet() const { return m_heloHasBeenSet; }
-    inline void SetHelo(const Aws::String& value) { m_heloHasBeenSet = true; m_helo = value; }
-    inline void SetHelo(Aws::String&& value) { m_heloHasBeenSet = true; m_helo = std::move(value); }
-    inline void SetHelo(const char* value) { m_heloHasBeenSet = true; m_helo.assign(value); }
-    inline Envelope& WithHelo(const Aws::String& value) { SetHelo(value); return *this;}
-    inline Envelope& WithHelo(Aws::String&& value) { SetHelo(std::move(value)); return *this;}
-    inline Envelope& WithHelo(const char* value) { SetHelo(value); return *this;}
+    template<typename HeloT = Aws::String>
+    void SetHelo(HeloT&& value) { m_heloHasBeenSet = true; m_helo = std::forward<HeloT>(value); }
+    template<typename HeloT = Aws::String>
+    Envelope& WithHelo(HeloT&& value) { SetHelo(std::forward<HeloT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>All SMTP TO entries given by the host from which the email was received.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTo() const{ return m_to; }
+    inline const Aws::Vector<Aws::String>& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const Aws::Vector<Aws::String>& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(Aws::Vector<Aws::String>&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline Envelope& WithTo(const Aws::Vector<Aws::String>& value) { SetTo(value); return *this;}
-    inline Envelope& WithTo(Aws::Vector<Aws::String>&& value) { SetTo(std::move(value)); return *this;}
-    inline Envelope& AddTo(const Aws::String& value) { m_toHasBeenSet = true; m_to.push_back(value); return *this; }
-    inline Envelope& AddTo(Aws::String&& value) { m_toHasBeenSet = true; m_to.push_back(std::move(value)); return *this; }
-    inline Envelope& AddTo(const char* value) { m_toHasBeenSet = true; m_to.push_back(value); return *this; }
+    template<typename ToT = Aws::Vector<Aws::String>>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = Aws::Vector<Aws::String>>
+    Envelope& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
+    template<typename ToT = Aws::String>
+    Envelope& AddTo(ToT&& value) { m_toHasBeenSet = true; m_to.emplace_back(std::forward<ToT>(value)); return *this; }
     ///@}
   private:
 

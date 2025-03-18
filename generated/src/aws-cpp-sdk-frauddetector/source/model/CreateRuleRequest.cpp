@@ -12,18 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleRequest::CreateRuleRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_outcomesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

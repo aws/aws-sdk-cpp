@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeInstanceEventNotificationAttributesRequest::DescribeInstanceEventNotificationAttributesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceEventNotificationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

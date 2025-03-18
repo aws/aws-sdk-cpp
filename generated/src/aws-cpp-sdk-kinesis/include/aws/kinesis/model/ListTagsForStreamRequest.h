@@ -25,7 +25,7 @@ namespace Model
   class ListTagsForStreamRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API ListTagsForStreamRequest();
+    AWS_KINESIS_API ListTagsForStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline ListTagsForStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline ListTagsForStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline ListTagsForStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    ListTagsForStreamRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * is set, <code>ListTagsForStream</code> gets all tags that occur after
      * <code>ExclusiveStartTagKey</code>. </p>
      */
-    inline const Aws::String& GetExclusiveStartTagKey() const{ return m_exclusiveStartTagKey; }
+    inline const Aws::String& GetExclusiveStartTagKey() const { return m_exclusiveStartTagKey; }
     inline bool ExclusiveStartTagKeyHasBeenSet() const { return m_exclusiveStartTagKeyHasBeenSet; }
-    inline void SetExclusiveStartTagKey(const Aws::String& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = value; }
-    inline void SetExclusiveStartTagKey(Aws::String&& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = std::move(value); }
-    inline void SetExclusiveStartTagKey(const char* value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey.assign(value); }
-    inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const Aws::String& value) { SetExclusiveStartTagKey(value); return *this;}
-    inline ListTagsForStreamRequest& WithExclusiveStartTagKey(Aws::String&& value) { SetExclusiveStartTagKey(std::move(value)); return *this;}
-    inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const char* value) { SetExclusiveStartTagKey(value); return *this;}
+    template<typename ExclusiveStartTagKeyT = Aws::String>
+    void SetExclusiveStartTagKey(ExclusiveStartTagKeyT&& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = std::forward<ExclusiveStartTagKeyT>(value); }
+    template<typename ExclusiveStartTagKeyT = Aws::String>
+    ListTagsForStreamRequest& WithExclusiveStartTagKey(ExclusiveStartTagKeyT&& value) { SetExclusiveStartTagKey(std::forward<ExclusiveStartTagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * <code>true</code>. To list additional tags, set
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListTagsForStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -89,14 +85,12 @@ namespace Model
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline ListTagsForStreamRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline ListTagsForStreamRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline ListTagsForStreamRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    ListTagsForStreamRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +100,7 @@ namespace Model
     Aws::String m_exclusiveStartTagKey;
     bool m_exclusiveStartTagKeyHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_streamARN;

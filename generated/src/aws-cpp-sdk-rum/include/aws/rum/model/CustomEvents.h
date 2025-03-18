@@ -32,7 +32,7 @@ namespace Model
   class CustomEvents
   {
   public:
-    AWS_CLOUDWATCHRUM_API CustomEvents();
+    AWS_CLOUDWATCHRUM_API CustomEvents() = default;
     AWS_CLOUDWATCHRUM_API CustomEvents(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API CustomEvents& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Specifies whether this app monitor allows the web client to define and send
      * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
      */
-    inline const CustomEventsStatus& GetStatus() const{ return m_status; }
+    inline CustomEventsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CustomEventsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CustomEventsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CustomEvents& WithStatus(const CustomEventsStatus& value) { SetStatus(value); return *this;}
-    inline CustomEvents& WithStatus(CustomEventsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CustomEventsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CustomEvents& WithStatus(CustomEventsStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    CustomEventsStatus m_status;
+    CustomEventsStatus m_status{CustomEventsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

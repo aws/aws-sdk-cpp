@@ -12,14 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetParameterGroupRequest::ResetParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_allParameters(false),
-    m_allParametersHasBeenSet(false),
-    m_parameterNamesHasBeenSet(false)
-{
-}
-
 Aws::String ResetParameterGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ChannelTargetInfo::ChannelTargetInfo() : 
-    m_contactChannelIdHasBeenSet(false),
-    m_retryIntervalInMinutes(0),
-    m_retryIntervalInMinutesHasBeenSet(false)
-{
-}
-
 ChannelTargetInfo::ChannelTargetInfo(JsonView jsonValue)
-  : ChannelTargetInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ChannelTargetInfo& ChannelTargetInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactChannelId"))
   {
     m_contactChannelId = jsonValue.GetString("ContactChannelId");
-
     m_contactChannelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryIntervalInMinutes"))
   {
     m_retryIntervalInMinutes = jsonValue.GetInteger("RetryIntervalInMinutes");
-
     m_retryIntervalInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

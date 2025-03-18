@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ResponseInspectionJson::ResponseInspectionJson() : 
-    m_identifierHasBeenSet(false),
-    m_successValuesHasBeenSet(false),
-    m_failureValuesHasBeenSet(false)
-{
-}
-
 ResponseInspectionJson::ResponseInspectionJson(JsonView jsonValue)
-  : ResponseInspectionJson()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResponseInspectionJson& ResponseInspectionJson::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessValues"))
   {
     Aws::Utils::Array<JsonView> successValuesJsonList = jsonValue.GetArray("SuccessValues");
@@ -49,7 +39,6 @@ ResponseInspectionJson& ResponseInspectionJson::operator =(JsonView jsonValue)
     }
     m_successValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureValues"))
   {
     Aws::Utils::Array<JsonView> failureValuesJsonList = jsonValue.GetArray("FailureValues");
@@ -59,7 +48,6 @@ ResponseInspectionJson& ResponseInspectionJson::operator =(JsonView jsonValue)
     }
     m_failureValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

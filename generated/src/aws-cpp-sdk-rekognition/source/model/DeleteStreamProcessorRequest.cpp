@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamProcessorRequest::DeleteStreamProcessorRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStreamProcessorRequest::SerializePayload() const
 {
   JsonValue payload;

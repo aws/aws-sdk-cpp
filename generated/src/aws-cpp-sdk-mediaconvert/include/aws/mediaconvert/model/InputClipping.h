@@ -35,7 +35,7 @@ namespace Model
   class InputClipping
   {
   public:
-    AWS_MEDIACONVERT_API InputClipping();
+    AWS_MEDIACONVERT_API InputClipping() = default;
     AWS_MEDIACONVERT_API InputClipping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API InputClipping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * embedded timecodes that start at 01:00:00:00 and you want your clip to end six
      * minutes into the video, use 01:06:00:00.
      */
-    inline const Aws::String& GetEndTimecode() const{ return m_endTimecode; }
+    inline const Aws::String& GetEndTimecode() const { return m_endTimecode; }
     inline bool EndTimecodeHasBeenSet() const { return m_endTimecodeHasBeenSet; }
-    inline void SetEndTimecode(const Aws::String& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = value; }
-    inline void SetEndTimecode(Aws::String&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::move(value); }
-    inline void SetEndTimecode(const char* value) { m_endTimecodeHasBeenSet = true; m_endTimecode.assign(value); }
-    inline InputClipping& WithEndTimecode(const Aws::String& value) { SetEndTimecode(value); return *this;}
-    inline InputClipping& WithEndTimecode(Aws::String&& value) { SetEndTimecode(std::move(value)); return *this;}
-    inline InputClipping& WithEndTimecode(const char* value) { SetEndTimecode(value); return *this;}
+    template<typename EndTimecodeT = Aws::String>
+    void SetEndTimecode(EndTimecodeT&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::forward<EndTimecodeT>(value); }
+    template<typename EndTimecodeT = Aws::String>
+    InputClipping& WithEndTimecode(EndTimecodeT&& value) { SetEndTimecode(std::forward<EndTimecodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * embedded timecodes that start at 01:00:00:00 and you want your clip to begin
      * five minutes into the video, use 01:05:00:00.
      */
-    inline const Aws::String& GetStartTimecode() const{ return m_startTimecode; }
+    inline const Aws::String& GetStartTimecode() const { return m_startTimecode; }
     inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
-    inline void SetStartTimecode(const Aws::String& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
-    inline void SetStartTimecode(Aws::String&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
-    inline void SetStartTimecode(const char* value) { m_startTimecodeHasBeenSet = true; m_startTimecode.assign(value); }
-    inline InputClipping& WithStartTimecode(const Aws::String& value) { SetStartTimecode(value); return *this;}
-    inline InputClipping& WithStartTimecode(Aws::String&& value) { SetStartTimecode(std::move(value)); return *this;}
-    inline InputClipping& WithStartTimecode(const char* value) { SetStartTimecode(value); return *this;}
+    template<typename StartTimecodeT = Aws::String>
+    void SetStartTimecode(StartTimecodeT&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::forward<StartTimecodeT>(value); }
+    template<typename StartTimecodeT = Aws::String>
+    InputClipping& WithStartTimecode(StartTimecodeT&& value) { SetStartTimecode(std::forward<StartTimecodeT>(value)); return *this;}
     ///@}
   private:
 

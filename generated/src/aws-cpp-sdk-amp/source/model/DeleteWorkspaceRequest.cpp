@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteWorkspaceRequest::DeleteWorkspaceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkspaceRequest::SerializePayload() const
 {
   return {};

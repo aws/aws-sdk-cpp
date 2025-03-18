@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-AddAttributesActivity::AddAttributesActivity() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 AddAttributesActivity::AddAttributesActivity(JsonView jsonValue)
-  : AddAttributesActivity()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AddAttributesActivity& AddAttributesActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -49,14 +39,11 @@ AddAttributesActivity& AddAttributesActivity::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     m_next = jsonValue.GetString("next");
-
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

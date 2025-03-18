@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-CustomRequestHandling::CustomRequestHandling() : 
-    m_insertHeadersHasBeenSet(false)
-{
-}
-
 CustomRequestHandling::CustomRequestHandling(JsonView jsonValue)
-  : CustomRequestHandling()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CustomRequestHandling& CustomRequestHandling::operator =(JsonView jsonValue)
     }
     m_insertHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

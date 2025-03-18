@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SourceConnectorProperties::SourceConnectorProperties() : 
-    m_marketoHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_serviceNowHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
-{
-}
-
 SourceConnectorProperties::SourceConnectorProperties(JsonView jsonValue)
-  : SourceConnectorProperties()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SourceConnectorProperties& SourceConnectorProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Marketo"))
   {
     m_marketo = jsonValue.GetObject("Marketo");
-
     m_marketoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Salesforce"))
   {
     m_salesforce = jsonValue.GetObject("Salesforce");
-
     m_salesforceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNow"))
   {
     m_serviceNow = jsonValue.GetObject("ServiceNow");
-
     m_serviceNowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Zendesk"))
   {
     m_zendesk = jsonValue.GetObject("Zendesk");
-
     m_zendeskHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DomainInformationContainer
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DomainInformationContainer();
+    AWS_OPENSEARCHSERVICE_API DomainInformationContainer() = default;
     AWS_OPENSEARCHSERVICE_API DomainInformationContainer(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API DomainInformationContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Information about an Amazon OpenSearch Service domain.</p>
      */
-    inline const AWSDomainInformation& GetAWSDomainInformation() const{ return m_aWSDomainInformation; }
+    inline const AWSDomainInformation& GetAWSDomainInformation() const { return m_aWSDomainInformation; }
     inline bool AWSDomainInformationHasBeenSet() const { return m_aWSDomainInformationHasBeenSet; }
-    inline void SetAWSDomainInformation(const AWSDomainInformation& value) { m_aWSDomainInformationHasBeenSet = true; m_aWSDomainInformation = value; }
-    inline void SetAWSDomainInformation(AWSDomainInformation&& value) { m_aWSDomainInformationHasBeenSet = true; m_aWSDomainInformation = std::move(value); }
-    inline DomainInformationContainer& WithAWSDomainInformation(const AWSDomainInformation& value) { SetAWSDomainInformation(value); return *this;}
-    inline DomainInformationContainer& WithAWSDomainInformation(AWSDomainInformation&& value) { SetAWSDomainInformation(std::move(value)); return *this;}
+    template<typename AWSDomainInformationT = AWSDomainInformation>
+    void SetAWSDomainInformation(AWSDomainInformationT&& value) { m_aWSDomainInformationHasBeenSet = true; m_aWSDomainInformation = std::forward<AWSDomainInformationT>(value); }
+    template<typename AWSDomainInformationT = AWSDomainInformation>
+    DomainInformationContainer& WithAWSDomainInformation(AWSDomainInformationT&& value) { SetAWSDomainInformation(std::forward<AWSDomainInformationT>(value)); return *this;}
     ///@}
   private:
 

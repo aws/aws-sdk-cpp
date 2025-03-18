@@ -27,7 +27,7 @@ namespace Model
   class UpdateConsumableResourceResult
   {
   public:
-    AWS_BATCH_API UpdateConsumableResourceResult();
+    AWS_BATCH_API UpdateConsumableResourceResult() = default;
     AWS_BATCH_API UpdateConsumableResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API UpdateConsumableResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,56 +36,54 @@ namespace Model
     /**
      * <p>The name of the consumable resource to be updated.</p>
      */
-    inline const Aws::String& GetConsumableResourceName() const{ return m_consumableResourceName; }
-    inline void SetConsumableResourceName(const Aws::String& value) { m_consumableResourceName = value; }
-    inline void SetConsumableResourceName(Aws::String&& value) { m_consumableResourceName = std::move(value); }
-    inline void SetConsumableResourceName(const char* value) { m_consumableResourceName.assign(value); }
-    inline UpdateConsumableResourceResult& WithConsumableResourceName(const Aws::String& value) { SetConsumableResourceName(value); return *this;}
-    inline UpdateConsumableResourceResult& WithConsumableResourceName(Aws::String&& value) { SetConsumableResourceName(std::move(value)); return *this;}
-    inline UpdateConsumableResourceResult& WithConsumableResourceName(const char* value) { SetConsumableResourceName(value); return *this;}
+    inline const Aws::String& GetConsumableResourceName() const { return m_consumableResourceName; }
+    template<typename ConsumableResourceNameT = Aws::String>
+    void SetConsumableResourceName(ConsumableResourceNameT&& value) { m_consumableResourceNameHasBeenSet = true; m_consumableResourceName = std::forward<ConsumableResourceNameT>(value); }
+    template<typename ConsumableResourceNameT = Aws::String>
+    UpdateConsumableResourceResult& WithConsumableResourceName(ConsumableResourceNameT&& value) { SetConsumableResourceName(std::forward<ConsumableResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the consumable resource.</p>
      */
-    inline const Aws::String& GetConsumableResourceArn() const{ return m_consumableResourceArn; }
-    inline void SetConsumableResourceArn(const Aws::String& value) { m_consumableResourceArn = value; }
-    inline void SetConsumableResourceArn(Aws::String&& value) { m_consumableResourceArn = std::move(value); }
-    inline void SetConsumableResourceArn(const char* value) { m_consumableResourceArn.assign(value); }
-    inline UpdateConsumableResourceResult& WithConsumableResourceArn(const Aws::String& value) { SetConsumableResourceArn(value); return *this;}
-    inline UpdateConsumableResourceResult& WithConsumableResourceArn(Aws::String&& value) { SetConsumableResourceArn(std::move(value)); return *this;}
-    inline UpdateConsumableResourceResult& WithConsumableResourceArn(const char* value) { SetConsumableResourceArn(value); return *this;}
+    inline const Aws::String& GetConsumableResourceArn() const { return m_consumableResourceArn; }
+    template<typename ConsumableResourceArnT = Aws::String>
+    void SetConsumableResourceArn(ConsumableResourceArnT&& value) { m_consumableResourceArnHasBeenSet = true; m_consumableResourceArn = std::forward<ConsumableResourceArnT>(value); }
+    template<typename ConsumableResourceArnT = Aws::String>
+    UpdateConsumableResourceResult& WithConsumableResourceArn(ConsumableResourceArnT&& value) { SetConsumableResourceArn(std::forward<ConsumableResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total amount of the consumable resource that is available.</p>
      */
-    inline long long GetTotalQuantity() const{ return m_totalQuantity; }
-    inline void SetTotalQuantity(long long value) { m_totalQuantity = value; }
+    inline long long GetTotalQuantity() const { return m_totalQuantity; }
+    inline void SetTotalQuantity(long long value) { m_totalQuantityHasBeenSet = true; m_totalQuantity = value; }
     inline UpdateConsumableResourceResult& WithTotalQuantity(long long value) { SetTotalQuantity(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateConsumableResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateConsumableResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateConsumableResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateConsumableResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_consumableResourceName;
+    bool m_consumableResourceNameHasBeenSet = false;
 
     Aws::String m_consumableResourceArn;
+    bool m_consumableResourceArnHasBeenSet = false;
 
-    long long m_totalQuantity;
+    long long m_totalQuantity{0};
+    bool m_totalQuantityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

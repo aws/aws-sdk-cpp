@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_resourceArnHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_eventSubscriptionsHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(JsonView jsonValue)
-  : Subscription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Subscription& Subscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topicArn"))
   {
     m_topicArn = jsonValue.GetString("topicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventSubscriptions"))
   {
     Aws::Utils::Array<JsonView> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
@@ -56,7 +44,6 @@ Subscription& Subscription::operator =(JsonView jsonValue)
     }
     m_eventSubscriptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

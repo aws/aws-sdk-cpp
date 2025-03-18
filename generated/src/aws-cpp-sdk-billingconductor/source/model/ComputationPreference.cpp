@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ComputationPreference::ComputationPreference() : 
-    m_pricingPlanArnHasBeenSet(false)
-{
-}
-
 ComputationPreference::ComputationPreference(JsonView jsonValue)
-  : ComputationPreference()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ComputationPreference& ComputationPreference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PricingPlanArn"))
   {
     m_pricingPlanArn = jsonValue.GetString("PricingPlanArn");
-
     m_pricingPlanArnHasBeenSet = true;
   }
-
   return *this;
 }
 

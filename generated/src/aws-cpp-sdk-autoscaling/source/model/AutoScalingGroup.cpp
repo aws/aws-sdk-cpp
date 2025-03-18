@@ -20,61 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AutoScalingGroup::AutoScalingGroup() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_autoScalingGroupARNHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_predictedCapacity(0),
-    m_predictedCapacityHasBeenSet(false),
-    m_defaultCooldown(0),
-    m_defaultCooldownHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_loadBalancerNamesHasBeenSet(false),
-    m_targetGroupARNsHasBeenSet(false),
-    m_healthCheckTypeHasBeenSet(false),
-    m_healthCheckGracePeriod(0),
-    m_healthCheckGracePeriodHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_suspendedProcessesHasBeenSet(false),
-    m_placementGroupHasBeenSet(false),
-    m_vPCZoneIdentifierHasBeenSet(false),
-    m_enabledMetricsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false),
-    m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false),
-    m_serviceLinkedRoleARNHasBeenSet(false),
-    m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false),
-    m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false),
-    m_warmPoolConfigurationHasBeenSet(false),
-    m_warmPoolSize(0),
-    m_warmPoolSizeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_desiredCapacityTypeHasBeenSet(false),
-    m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false),
-    m_instanceMaintenancePolicyHasBeenSet(false),
-    m_availabilityZoneDistributionHasBeenSet(false),
-    m_availabilityZoneImpairmentPolicyHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false)
-{
-}
-
 AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode)
-  : AutoScalingGroup()
 {
   *this = xmlNode;
 }
@@ -149,6 +95,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
@@ -161,6 +108,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!loadBalancerNamesNode.IsNull())
     {
       XmlNode loadBalancerNamesMember = loadBalancerNamesNode.FirstChild("member");
+      m_loadBalancerNamesHasBeenSet = !loadBalancerNamesMember.IsNull();
       while(!loadBalancerNamesMember.IsNull())
       {
         m_loadBalancerNames.push_back(loadBalancerNamesMember.GetText());
@@ -173,6 +121,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!targetGroupARNsNode.IsNull())
     {
       XmlNode targetGroupARNsMember = targetGroupARNsNode.FirstChild("member");
+      m_targetGroupARNsHasBeenSet = !targetGroupARNsMember.IsNull();
       while(!targetGroupARNsMember.IsNull())
       {
         m_targetGroupARNs.push_back(targetGroupARNsMember.GetText());
@@ -197,6 +146,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
@@ -215,6 +165,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!suspendedProcessesNode.IsNull())
     {
       XmlNode suspendedProcessesMember = suspendedProcessesNode.FirstChild("member");
+      m_suspendedProcessesHasBeenSet = !suspendedProcessesMember.IsNull();
       while(!suspendedProcessesMember.IsNull())
       {
         m_suspendedProcesses.push_back(suspendedProcessesMember);
@@ -239,6 +190,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!enabledMetricsNode.IsNull())
     {
       XmlNode enabledMetricsMember = enabledMetricsNode.FirstChild("member");
+      m_enabledMetricsHasBeenSet = !enabledMetricsMember.IsNull();
       while(!enabledMetricsMember.IsNull())
       {
         m_enabledMetrics.push_back(enabledMetricsMember);
@@ -257,6 +209,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -269,6 +222,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!terminationPoliciesNode.IsNull())
     {
       XmlNode terminationPoliciesMember = terminationPoliciesNode.FirstChild("member");
+      m_terminationPoliciesHasBeenSet = !terminationPoliciesMember.IsNull();
       while(!terminationPoliciesMember.IsNull())
       {
         m_terminationPolicies.push_back(terminationPoliciesMember.GetText());
@@ -335,6 +289,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     if(!trafficSourcesNode.IsNull())
     {
       XmlNode trafficSourcesMember = trafficSourcesNode.FirstChild("member");
+      m_trafficSourcesHasBeenSet = !trafficSourcesMember.IsNull();
       while(!trafficSourcesMember.IsNull())
       {
         m_trafficSources.push_back(trafficSourcesMember);

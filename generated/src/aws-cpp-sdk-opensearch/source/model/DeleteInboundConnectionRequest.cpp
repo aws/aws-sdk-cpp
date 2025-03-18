@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInboundConnectionRequest::DeleteInboundConnectionRequest() : 
-    m_connectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInboundConnectionRequest::SerializePayload() const
 {
   return {};

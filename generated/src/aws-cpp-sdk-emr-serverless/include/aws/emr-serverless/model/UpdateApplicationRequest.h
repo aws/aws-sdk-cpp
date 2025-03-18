@@ -36,7 +36,7 @@ namespace Model
   class UpdateApplicationRequest : public EMRServerlessRequest
   {
   public:
-    AWS_EMRSERVERLESS_API UpdateApplicationRequest();
+    AWS_EMRSERVERLESS_API UpdateApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The ID of the application to update.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateApplicationRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,32 +64,28 @@ namespace Model
      * <p>The client idempotency token of the application to update. Its value must be
      * unique for each request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateApplicationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateApplicationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateApplicationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capacity to initialize when the application is updated.</p>
      */
-    inline const Aws::Map<Aws::String, InitialCapacityConfig>& GetInitialCapacity() const{ return m_initialCapacity; }
+    inline const Aws::Map<Aws::String, InitialCapacityConfig>& GetInitialCapacity() const { return m_initialCapacity; }
     inline bool InitialCapacityHasBeenSet() const { return m_initialCapacityHasBeenSet; }
-    inline void SetInitialCapacity(const Aws::Map<Aws::String, InitialCapacityConfig>& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity = value; }
-    inline void SetInitialCapacity(Aws::Map<Aws::String, InitialCapacityConfig>&& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity = std::move(value); }
-    inline UpdateApplicationRequest& WithInitialCapacity(const Aws::Map<Aws::String, InitialCapacityConfig>& value) { SetInitialCapacity(value); return *this;}
-    inline UpdateApplicationRequest& WithInitialCapacity(Aws::Map<Aws::String, InitialCapacityConfig>&& value) { SetInitialCapacity(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddInitialCapacity(const Aws::String& key, const InitialCapacityConfig& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(key, value); return *this; }
-    inline UpdateApplicationRequest& AddInitialCapacity(Aws::String&& key, const InitialCapacityConfig& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(std::move(key), value); return *this; }
-    inline UpdateApplicationRequest& AddInitialCapacity(const Aws::String& key, InitialCapacityConfig&& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(key, std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddInitialCapacity(Aws::String&& key, InitialCapacityConfig&& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddInitialCapacity(const char* key, InitialCapacityConfig&& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(key, std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddInitialCapacity(const char* key, const InitialCapacityConfig& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(key, value); return *this; }
+    template<typename InitialCapacityT = Aws::Map<Aws::String, InitialCapacityConfig>>
+    void SetInitialCapacity(InitialCapacityT&& value) { m_initialCapacityHasBeenSet = true; m_initialCapacity = std::forward<InitialCapacityT>(value); }
+    template<typename InitialCapacityT = Aws::Map<Aws::String, InitialCapacityConfig>>
+    UpdateApplicationRequest& WithInitialCapacity(InitialCapacityT&& value) { SetInitialCapacity(std::forward<InitialCapacityT>(value)); return *this;}
+    template<typename InitialCapacityKeyT = Aws::String, typename InitialCapacityValueT = InitialCapacityConfig>
+    UpdateApplicationRequest& AddInitialCapacity(InitialCapacityKeyT&& key, InitialCapacityValueT&& value) {
+      m_initialCapacityHasBeenSet = true; m_initialCapacity.emplace(std::forward<InitialCapacityKeyT>(key), std::forward<InitialCapacityValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -101,12 +95,12 @@ namespace Model
      * the application. No new resources will be created once any one of the defined
      * limits is hit.</p>
      */
-    inline const MaximumAllowedResources& GetMaximumCapacity() const{ return m_maximumCapacity; }
+    inline const MaximumAllowedResources& GetMaximumCapacity() const { return m_maximumCapacity; }
     inline bool MaximumCapacityHasBeenSet() const { return m_maximumCapacityHasBeenSet; }
-    inline void SetMaximumCapacity(const MaximumAllowedResources& value) { m_maximumCapacityHasBeenSet = true; m_maximumCapacity = value; }
-    inline void SetMaximumCapacity(MaximumAllowedResources&& value) { m_maximumCapacityHasBeenSet = true; m_maximumCapacity = std::move(value); }
-    inline UpdateApplicationRequest& WithMaximumCapacity(const MaximumAllowedResources& value) { SetMaximumCapacity(value); return *this;}
-    inline UpdateApplicationRequest& WithMaximumCapacity(MaximumAllowedResources&& value) { SetMaximumCapacity(std::move(value)); return *this;}
+    template<typename MaximumCapacityT = MaximumAllowedResources>
+    void SetMaximumCapacity(MaximumCapacityT&& value) { m_maximumCapacityHasBeenSet = true; m_maximumCapacity = std::forward<MaximumCapacityT>(value); }
+    template<typename MaximumCapacityT = MaximumAllowedResources>
+    UpdateApplicationRequest& WithMaximumCapacity(MaximumCapacityT&& value) { SetMaximumCapacity(std::forward<MaximumCapacityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * <p>The configuration for an application to automatically start on job
      * submission.</p>
      */
-    inline const AutoStartConfig& GetAutoStartConfiguration() const{ return m_autoStartConfiguration; }
+    inline const AutoStartConfig& GetAutoStartConfiguration() const { return m_autoStartConfiguration; }
     inline bool AutoStartConfigurationHasBeenSet() const { return m_autoStartConfigurationHasBeenSet; }
-    inline void SetAutoStartConfiguration(const AutoStartConfig& value) { m_autoStartConfigurationHasBeenSet = true; m_autoStartConfiguration = value; }
-    inline void SetAutoStartConfiguration(AutoStartConfig&& value) { m_autoStartConfigurationHasBeenSet = true; m_autoStartConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithAutoStartConfiguration(const AutoStartConfig& value) { SetAutoStartConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithAutoStartConfiguration(AutoStartConfig&& value) { SetAutoStartConfiguration(std::move(value)); return *this;}
+    template<typename AutoStartConfigurationT = AutoStartConfig>
+    void SetAutoStartConfiguration(AutoStartConfigurationT&& value) { m_autoStartConfigurationHasBeenSet = true; m_autoStartConfiguration = std::forward<AutoStartConfigurationT>(value); }
+    template<typename AutoStartConfigurationT = AutoStartConfig>
+    UpdateApplicationRequest& WithAutoStartConfiguration(AutoStartConfigurationT&& value) { SetAutoStartConfiguration(std::forward<AutoStartConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,34 +121,32 @@ namespace Model
      * <p>The configuration for an application to automatically stop after a certain
      * amount of time being idle.</p>
      */
-    inline const AutoStopConfig& GetAutoStopConfiguration() const{ return m_autoStopConfiguration; }
+    inline const AutoStopConfig& GetAutoStopConfiguration() const { return m_autoStopConfiguration; }
     inline bool AutoStopConfigurationHasBeenSet() const { return m_autoStopConfigurationHasBeenSet; }
-    inline void SetAutoStopConfiguration(const AutoStopConfig& value) { m_autoStopConfigurationHasBeenSet = true; m_autoStopConfiguration = value; }
-    inline void SetAutoStopConfiguration(AutoStopConfig&& value) { m_autoStopConfigurationHasBeenSet = true; m_autoStopConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithAutoStopConfiguration(const AutoStopConfig& value) { SetAutoStopConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithAutoStopConfiguration(AutoStopConfig&& value) { SetAutoStopConfiguration(std::move(value)); return *this;}
+    template<typename AutoStopConfigurationT = AutoStopConfig>
+    void SetAutoStopConfiguration(AutoStopConfigurationT&& value) { m_autoStopConfigurationHasBeenSet = true; m_autoStopConfiguration = std::forward<AutoStopConfigurationT>(value); }
+    template<typename AutoStopConfigurationT = AutoStopConfig>
+    UpdateApplicationRequest& WithAutoStopConfiguration(AutoStopConfigurationT&& value) { SetAutoStopConfiguration(std::forward<AutoStopConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    UpdateApplicationRequest& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CPU architecture of an application.</p>
      */
-    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+    inline Architecture GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline UpdateApplicationRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
-    inline UpdateApplicationRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(Architecture value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline UpdateApplicationRequest& WithArchitecture(Architecture value) { SetArchitecture(value); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +155,12 @@ namespace Model
      * this parameter or <code>imageConfiguration</code> for each worker type in
      * <code>WorkerTypeSpecificationInput</code>.</p>
      */
-    inline const ImageConfigurationInput& GetImageConfiguration() const{ return m_imageConfiguration; }
+    inline const ImageConfigurationInput& GetImageConfiguration() const { return m_imageConfiguration; }
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-    inline void SetImageConfiguration(const ImageConfigurationInput& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-    inline void SetImageConfiguration(ImageConfigurationInput&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithImageConfiguration(const ImageConfigurationInput& value) { SetImageConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithImageConfiguration(ImageConfigurationInput&& value) { SetImageConfiguration(std::move(value)); return *this;}
+    template<typename ImageConfigurationT = ImageConfigurationInput>
+    void SetImageConfiguration(ImageConfigurationT&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::forward<ImageConfigurationT>(value); }
+    template<typename ImageConfigurationT = ImageConfigurationInput>
+    UpdateApplicationRequest& WithImageConfiguration(ImageConfigurationT&& value) { SetImageConfiguration(std::forward<ImageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,18 +173,16 @@ namespace Model
      * either set image details in this parameter for each worker type, or in
      * <code>imageConfiguration</code> for all worker types.</p>
      */
-    inline const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& GetWorkerTypeSpecifications() const{ return m_workerTypeSpecifications; }
+    inline const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& GetWorkerTypeSpecifications() const { return m_workerTypeSpecifications; }
     inline bool WorkerTypeSpecificationsHasBeenSet() const { return m_workerTypeSpecificationsHasBeenSet; }
-    inline void SetWorkerTypeSpecifications(const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications = value; }
-    inline void SetWorkerTypeSpecifications(Aws::Map<Aws::String, WorkerTypeSpecificationInput>&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications = std::move(value); }
-    inline UpdateApplicationRequest& WithWorkerTypeSpecifications(const Aws::Map<Aws::String, WorkerTypeSpecificationInput>& value) { SetWorkerTypeSpecifications(value); return *this;}
-    inline UpdateApplicationRequest& WithWorkerTypeSpecifications(Aws::Map<Aws::String, WorkerTypeSpecificationInput>&& value) { SetWorkerTypeSpecifications(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const Aws::String& key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(Aws::String&& key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(std::move(key), value); return *this; }
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const Aws::String& key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(Aws::String&& key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, WorkerTypeSpecificationInput&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, std::move(value)); return *this; }
-    inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
+    template<typename WorkerTypeSpecificationsT = Aws::Map<Aws::String, WorkerTypeSpecificationInput>>
+    void SetWorkerTypeSpecifications(WorkerTypeSpecificationsT&& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications = std::forward<WorkerTypeSpecificationsT>(value); }
+    template<typename WorkerTypeSpecificationsT = Aws::Map<Aws::String, WorkerTypeSpecificationInput>>
+    UpdateApplicationRequest& WithWorkerTypeSpecifications(WorkerTypeSpecificationsT&& value) { SetWorkerTypeSpecifications(std::forward<WorkerTypeSpecificationsT>(value)); return *this;}
+    template<typename WorkerTypeSpecificationsKeyT = Aws::String, typename WorkerTypeSpecificationsValueT = WorkerTypeSpecificationInput>
+    UpdateApplicationRequest& AddWorkerTypeSpecifications(WorkerTypeSpecificationsKeyT&& key, WorkerTypeSpecificationsValueT&& value) {
+      m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(std::forward<WorkerTypeSpecificationsKeyT>(key), std::forward<WorkerTypeSpecificationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -200,12 +190,12 @@ namespace Model
      * <p>The interactive configuration object that contains new interactive use cases
      * when the application is updated.</p>
      */
-    inline const InteractiveConfiguration& GetInteractiveConfiguration() const{ return m_interactiveConfiguration; }
+    inline const InteractiveConfiguration& GetInteractiveConfiguration() const { return m_interactiveConfiguration; }
     inline bool InteractiveConfigurationHasBeenSet() const { return m_interactiveConfigurationHasBeenSet; }
-    inline void SetInteractiveConfiguration(const InteractiveConfiguration& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = value; }
-    inline void SetInteractiveConfiguration(InteractiveConfiguration&& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithInteractiveConfiguration(const InteractiveConfiguration& value) { SetInteractiveConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithInteractiveConfiguration(InteractiveConfiguration&& value) { SetInteractiveConfiguration(std::move(value)); return *this;}
+    template<typename InteractiveConfigurationT = InteractiveConfiguration>
+    void SetInteractiveConfiguration(InteractiveConfigurationT&& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = std::forward<InteractiveConfigurationT>(value); }
+    template<typename InteractiveConfigurationT = InteractiveConfiguration>
+    UpdateApplicationRequest& WithInteractiveConfiguration(InteractiveConfigurationT&& value) { SetInteractiveConfiguration(std::forward<InteractiveConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +203,12 @@ namespace Model
      * <p>The Amazon EMR release label for the application. You can change the release
      * label to use a different release of Amazon EMR.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
-    inline UpdateApplicationRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline UpdateApplicationRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    UpdateApplicationRequest& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -231,26 +219,26 @@ namespace Model
      * of a classification and properties. This configuration is applied across all the
      * job runs submitted under the application.</p>
      */
-    inline const Aws::Vector<Configuration>& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
+    inline const Aws::Vector<Configuration>& GetRuntimeConfiguration() const { return m_runtimeConfiguration; }
     inline bool RuntimeConfigurationHasBeenSet() const { return m_runtimeConfigurationHasBeenSet; }
-    inline void SetRuntimeConfiguration(const Aws::Vector<Configuration>& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
-    inline void SetRuntimeConfiguration(Aws::Vector<Configuration>&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithRuntimeConfiguration(const Aws::Vector<Configuration>& value) { SetRuntimeConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithRuntimeConfiguration(Aws::Vector<Configuration>&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddRuntimeConfiguration(const Configuration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(value); return *this; }
-    inline UpdateApplicationRequest& AddRuntimeConfiguration(Configuration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(std::move(value)); return *this; }
+    template<typename RuntimeConfigurationT = Aws::Vector<Configuration>>
+    void SetRuntimeConfiguration(RuntimeConfigurationT&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::forward<RuntimeConfigurationT>(value); }
+    template<typename RuntimeConfigurationT = Aws::Vector<Configuration>>
+    UpdateApplicationRequest& WithRuntimeConfiguration(RuntimeConfigurationT&& value) { SetRuntimeConfiguration(std::forward<RuntimeConfigurationT>(value)); return *this;}
+    template<typename RuntimeConfigurationT = Configuration>
+    UpdateApplicationRequest& AddRuntimeConfiguration(RuntimeConfigurationT&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.emplace_back(std::forward<RuntimeConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The configuration setting for monitoring.</p>
      */
-    inline const MonitoringConfiguration& GetMonitoringConfiguration() const{ return m_monitoringConfiguration; }
+    inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
     inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
-    inline void SetMonitoringConfiguration(const MonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
-    inline void SetMonitoringConfiguration(MonitoringConfiguration&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithMonitoringConfiguration(const MonitoringConfiguration& value) { SetMonitoringConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithMonitoringConfiguration(MonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
+    template<typename MonitoringConfigurationT = MonitoringConfiguration>
+    void SetMonitoringConfiguration(MonitoringConfigurationT&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value); }
+    template<typename MonitoringConfigurationT = MonitoringConfiguration>
+    UpdateApplicationRequest& WithMonitoringConfiguration(MonitoringConfigurationT&& value) { SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -258,12 +246,12 @@ namespace Model
      * <p>The scheduler configuration for batch and streaming jobs running on this
      * application. Supported with release labels emr-7.0.0 and above.</p>
      */
-    inline const SchedulerConfiguration& GetSchedulerConfiguration() const{ return m_schedulerConfiguration; }
+    inline const SchedulerConfiguration& GetSchedulerConfiguration() const { return m_schedulerConfiguration; }
     inline bool SchedulerConfigurationHasBeenSet() const { return m_schedulerConfigurationHasBeenSet; }
-    inline void SetSchedulerConfiguration(const SchedulerConfiguration& value) { m_schedulerConfigurationHasBeenSet = true; m_schedulerConfiguration = value; }
-    inline void SetSchedulerConfiguration(SchedulerConfiguration&& value) { m_schedulerConfigurationHasBeenSet = true; m_schedulerConfiguration = std::move(value); }
-    inline UpdateApplicationRequest& WithSchedulerConfiguration(const SchedulerConfiguration& value) { SetSchedulerConfiguration(value); return *this;}
-    inline UpdateApplicationRequest& WithSchedulerConfiguration(SchedulerConfiguration&& value) { SetSchedulerConfiguration(std::move(value)); return *this;}
+    template<typename SchedulerConfigurationT = SchedulerConfiguration>
+    void SetSchedulerConfiguration(SchedulerConfigurationT&& value) { m_schedulerConfigurationHasBeenSet = true; m_schedulerConfiguration = std::forward<SchedulerConfigurationT>(value); }
+    template<typename SchedulerConfigurationT = SchedulerConfiguration>
+    UpdateApplicationRequest& WithSchedulerConfiguration(SchedulerConfigurationT&& value) { SetSchedulerConfiguration(std::forward<SchedulerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -288,7 +276,7 @@ namespace Model
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
 
-    Architecture m_architecture;
+    Architecture m_architecture{Architecture::NOT_SET};
     bool m_architectureHasBeenSet = false;
 
     ImageConfigurationInput m_imageConfiguration;

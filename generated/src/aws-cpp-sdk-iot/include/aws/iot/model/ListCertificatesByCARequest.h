@@ -29,7 +29,7 @@ namespace Model
   class ListCertificatesByCARequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListCertificatesByCARequest();
+    AWS_IOT_API ListCertificatesByCARequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,21 +47,19 @@ namespace Model
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate.</p>
      */
-    inline const Aws::String& GetCaCertificateId() const{ return m_caCertificateId; }
+    inline const Aws::String& GetCaCertificateId() const { return m_caCertificateId; }
     inline bool CaCertificateIdHasBeenSet() const { return m_caCertificateIdHasBeenSet; }
-    inline void SetCaCertificateId(const Aws::String& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
-    inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = std::move(value); }
-    inline void SetCaCertificateId(const char* value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId.assign(value); }
-    inline ListCertificatesByCARequest& WithCaCertificateId(const Aws::String& value) { SetCaCertificateId(value); return *this;}
-    inline ListCertificatesByCARequest& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(std::move(value)); return *this;}
-    inline ListCertificatesByCARequest& WithCaCertificateId(const char* value) { SetCaCertificateId(value); return *this;}
+    template<typename CaCertificateIdT = Aws::String>
+    void SetCaCertificateId(CaCertificateIdT&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = std::forward<CaCertificateIdT>(value); }
+    template<typename CaCertificateIdT = Aws::String>
+    ListCertificatesByCARequest& WithCaCertificateId(CaCertificateIdT&& value) { SetCaCertificateId(std::forward<CaCertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result page size.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListCertificatesByCARequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -71,14 +69,12 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListCertificatesByCARequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListCertificatesByCARequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListCertificatesByCARequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListCertificatesByCARequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +82,7 @@ namespace Model
      * <p>Specifies the order for results. If True, the results are returned in
      * ascending order, based on the creation date.</p>
      */
-    inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
+    inline bool GetAscendingOrder() const { return m_ascendingOrder; }
     inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
     inline void SetAscendingOrder(bool value) { m_ascendingOrderHasBeenSet = true; m_ascendingOrder = value; }
     inline ListCertificatesByCARequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
@@ -96,13 +92,13 @@ namespace Model
     Aws::String m_caCertificateId;
     bool m_caCertificateIdHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    bool m_ascendingOrder;
+    bool m_ascendingOrder{false};
     bool m_ascendingOrderHasBeenSet = false;
   };
 

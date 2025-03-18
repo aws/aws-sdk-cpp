@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-DefaultSegmentDeliveryConfiguration::DefaultSegmentDeliveryConfiguration() : 
-    m_baseUrlHasBeenSet(false)
-{
-}
-
 DefaultSegmentDeliveryConfiguration::DefaultSegmentDeliveryConfiguration(JsonView jsonValue)
-  : DefaultSegmentDeliveryConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DefaultSegmentDeliveryConfiguration& DefaultSegmentDeliveryConfiguration::operat
   if(jsonValue.ValueExists("BaseUrl"))
   {
     m_baseUrl = jsonValue.GetString("BaseUrl");
-
     m_baseUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachPolicyRequest::DetachPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String DetachPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

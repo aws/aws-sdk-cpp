@@ -45,7 +45,7 @@ namespace Model
   class SimulationJob
   {
   public:
-    AWS_ROBOMAKER_API SimulationJob();
+    AWS_ROBOMAKER_API SimulationJob() = default;
     AWS_ROBOMAKER_API SimulationJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API SimulationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,40 +55,34 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the simulation job.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline SimulationJob& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline SimulationJob& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline SimulationJob& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    SimulationJob& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SimulationJob& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SimulationJob& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SimulationJob& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SimulationJob& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the simulation job.</p>
      */
-    inline const SimulationJobStatus& GetStatus() const{ return m_status; }
+    inline SimulationJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SimulationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SimulationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SimulationJob& WithStatus(const SimulationJobStatus& value) { SetStatus(value); return *this;}
-    inline SimulationJob& WithStatus(SimulationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SimulationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SimulationJob& WithStatus(SimulationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the simulation job was last
      * started.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastStartedAt() const{ return m_lastStartedAt; }
+    inline const Aws::Utils::DateTime& GetLastStartedAt() const { return m_lastStartedAt; }
     inline bool LastStartedAtHasBeenSet() const { return m_lastStartedAtHasBeenSet; }
-    inline void SetLastStartedAt(const Aws::Utils::DateTime& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = value; }
-    inline void SetLastStartedAt(Aws::Utils::DateTime&& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = std::move(value); }
-    inline SimulationJob& WithLastStartedAt(const Aws::Utils::DateTime& value) { SetLastStartedAt(value); return *this;}
-    inline SimulationJob& WithLastStartedAt(Aws::Utils::DateTime&& value) { SetLastStartedAt(std::move(value)); return *this;}
+    template<typename LastStartedAtT = Aws::Utils::DateTime>
+    void SetLastStartedAt(LastStartedAtT&& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = std::forward<LastStartedAtT>(value); }
+    template<typename LastStartedAtT = Aws::Utils::DateTime>
+    SimulationJob& WithLastStartedAt(LastStartedAtT&& value) { SetLastStartedAt(std::forward<LastStartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +103,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the simulation job was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline SimulationJob& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline SimulationJob& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    SimulationJob& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,76 +118,68 @@ namespace Model
      * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
      * job and terminate the instance.</p> </dd> </dl>
      */
-    inline const FailureBehavior& GetFailureBehavior() const{ return m_failureBehavior; }
+    inline FailureBehavior GetFailureBehavior() const { return m_failureBehavior; }
     inline bool FailureBehaviorHasBeenSet() const { return m_failureBehaviorHasBeenSet; }
-    inline void SetFailureBehavior(const FailureBehavior& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = value; }
-    inline void SetFailureBehavior(FailureBehavior&& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = std::move(value); }
-    inline SimulationJob& WithFailureBehavior(const FailureBehavior& value) { SetFailureBehavior(value); return *this;}
-    inline SimulationJob& WithFailureBehavior(FailureBehavior&& value) { SetFailureBehavior(std::move(value)); return *this;}
+    inline void SetFailureBehavior(FailureBehavior value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = value; }
+    inline SimulationJob& WithFailureBehavior(FailureBehavior value) { SetFailureBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure code of the simulation job if it failed.</p>
      */
-    inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
+    inline SimulationJobErrorCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline SimulationJob& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
-    inline SimulationJob& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(SimulationJobErrorCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline SimulationJob& WithFailureCode(SimulationJobErrorCode value) { SetFailureCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why the simulation job failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline SimulationJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline SimulationJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline SimulationJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    SimulationJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for this <code>SimulationJob</code> request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline SimulationJob& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline SimulationJob& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline SimulationJob& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    SimulationJob& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Location for output files generated by the simulation job.</p>
      */
-    inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+    inline const OutputLocation& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const OutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(OutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline SimulationJob& WithOutputLocation(const OutputLocation& value) { SetOutputLocation(value); return *this;}
-    inline SimulationJob& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = OutputLocation>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = OutputLocation>
+    SimulationJob& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logging configuration.</p>
      */
-    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+    inline const LoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
     inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
-    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
-    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
-    inline SimulationJob& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
-    inline SimulationJob& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+    template<typename LoggingConfigT = LoggingConfig>
+    void SetLoggingConfig(LoggingConfigT&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::forward<LoggingConfigT>(value); }
+    template<typename LoggingConfigT = LoggingConfig>
+    SimulationJob& WithLoggingConfig(LoggingConfigT&& value) { SetLoggingConfig(std::forward<LoggingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,7 +187,7 @@ namespace Model
      * <p>The maximum simulation job duration in seconds. The value must be 8 days
      * (691,200 seconds) or less.</p>
      */
-    inline long long GetMaxJobDurationInSeconds() const{ return m_maxJobDurationInSeconds; }
+    inline long long GetMaxJobDurationInSeconds() const { return m_maxJobDurationInSeconds; }
     inline bool MaxJobDurationInSecondsHasBeenSet() const { return m_maxJobDurationInSecondsHasBeenSet; }
     inline void SetMaxJobDurationInSeconds(long long value) { m_maxJobDurationInSecondsHasBeenSet = true; m_maxJobDurationInSeconds = value; }
     inline SimulationJob& WithMaxJobDurationInSeconds(long long value) { SetMaxJobDurationInSeconds(value); return *this;}
@@ -211,7 +197,7 @@ namespace Model
     /**
      * <p>The simulation job execution duration in milliseconds.</p>
      */
-    inline long long GetSimulationTimeMillis() const{ return m_simulationTimeMillis; }
+    inline long long GetSimulationTimeMillis() const { return m_simulationTimeMillis; }
     inline bool SimulationTimeMillisHasBeenSet() const { return m_simulationTimeMillisHasBeenSet; }
     inline void SetSimulationTimeMillis(long long value) { m_simulationTimeMillisHasBeenSet = true; m_simulationTimeMillis = value; }
     inline SimulationJob& WithSimulationTimeMillis(long long value) { SetSimulationTimeMillis(value); return *this;}
@@ -223,56 +209,54 @@ namespace Model
      * are specified in its associated policies on your behalf. This is how credentials
      * are passed in to your simulation job. </p>
      */
-    inline const Aws::String& GetIamRole() const{ return m_iamRole; }
+    inline const Aws::String& GetIamRole() const { return m_iamRole; }
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
-    inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
-    inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
-    inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
-    inline SimulationJob& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
-    inline SimulationJob& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
-    inline SimulationJob& WithIamRole(const char* value) { SetIamRole(value); return *this;}
+    template<typename IamRoleT = Aws::String>
+    void SetIamRole(IamRoleT&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::forward<IamRoleT>(value); }
+    template<typename IamRoleT = Aws::String>
+    SimulationJob& WithIamRole(IamRoleT&& value) { SetIamRole(std::forward<IamRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of robot applications.</p>
      */
-    inline const Aws::Vector<RobotApplicationConfig>& GetRobotApplications() const{ return m_robotApplications; }
+    inline const Aws::Vector<RobotApplicationConfig>& GetRobotApplications() const { return m_robotApplications; }
     inline bool RobotApplicationsHasBeenSet() const { return m_robotApplicationsHasBeenSet; }
-    inline void SetRobotApplications(const Aws::Vector<RobotApplicationConfig>& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications = value; }
-    inline void SetRobotApplications(Aws::Vector<RobotApplicationConfig>&& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications = std::move(value); }
-    inline SimulationJob& WithRobotApplications(const Aws::Vector<RobotApplicationConfig>& value) { SetRobotApplications(value); return *this;}
-    inline SimulationJob& WithRobotApplications(Aws::Vector<RobotApplicationConfig>&& value) { SetRobotApplications(std::move(value)); return *this;}
-    inline SimulationJob& AddRobotApplications(const RobotApplicationConfig& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications.push_back(value); return *this; }
-    inline SimulationJob& AddRobotApplications(RobotApplicationConfig&& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications.push_back(std::move(value)); return *this; }
+    template<typename RobotApplicationsT = Aws::Vector<RobotApplicationConfig>>
+    void SetRobotApplications(RobotApplicationsT&& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications = std::forward<RobotApplicationsT>(value); }
+    template<typename RobotApplicationsT = Aws::Vector<RobotApplicationConfig>>
+    SimulationJob& WithRobotApplications(RobotApplicationsT&& value) { SetRobotApplications(std::forward<RobotApplicationsT>(value)); return *this;}
+    template<typename RobotApplicationsT = RobotApplicationConfig>
+    SimulationJob& AddRobotApplications(RobotApplicationsT&& value) { m_robotApplicationsHasBeenSet = true; m_robotApplications.emplace_back(std::forward<RobotApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of simulation applications.</p>
      */
-    inline const Aws::Vector<SimulationApplicationConfig>& GetSimulationApplications() const{ return m_simulationApplications; }
+    inline const Aws::Vector<SimulationApplicationConfig>& GetSimulationApplications() const { return m_simulationApplications; }
     inline bool SimulationApplicationsHasBeenSet() const { return m_simulationApplicationsHasBeenSet; }
-    inline void SetSimulationApplications(const Aws::Vector<SimulationApplicationConfig>& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications = value; }
-    inline void SetSimulationApplications(Aws::Vector<SimulationApplicationConfig>&& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications = std::move(value); }
-    inline SimulationJob& WithSimulationApplications(const Aws::Vector<SimulationApplicationConfig>& value) { SetSimulationApplications(value); return *this;}
-    inline SimulationJob& WithSimulationApplications(Aws::Vector<SimulationApplicationConfig>&& value) { SetSimulationApplications(std::move(value)); return *this;}
-    inline SimulationJob& AddSimulationApplications(const SimulationApplicationConfig& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications.push_back(value); return *this; }
-    inline SimulationJob& AddSimulationApplications(SimulationApplicationConfig&& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications.push_back(std::move(value)); return *this; }
+    template<typename SimulationApplicationsT = Aws::Vector<SimulationApplicationConfig>>
+    void SetSimulationApplications(SimulationApplicationsT&& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications = std::forward<SimulationApplicationsT>(value); }
+    template<typename SimulationApplicationsT = Aws::Vector<SimulationApplicationConfig>>
+    SimulationJob& WithSimulationApplications(SimulationApplicationsT&& value) { SetSimulationApplications(std::forward<SimulationApplicationsT>(value)); return *this;}
+    template<typename SimulationApplicationsT = SimulationApplicationConfig>
+    SimulationJob& AddSimulationApplications(SimulationApplicationsT&& value) { m_simulationApplicationsHasBeenSet = true; m_simulationApplications.emplace_back(std::forward<SimulationApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The data sources for the simulation job.</p>
      */
-    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
-    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
-    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
-    inline SimulationJob& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
-    inline SimulationJob& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
-    inline SimulationJob& AddDataSources(const DataSource& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
-    inline SimulationJob& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    void SetDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::forward<DataSourcesT>(value); }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    SimulationJob& WithDataSources(DataSourcesT&& value) { SetDataSources(std::forward<DataSourcesT>(value)); return *this;}
+    template<typename DataSourcesT = DataSource>
+    SimulationJob& AddDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.emplace_back(std::forward<DataSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -280,55 +264,52 @@ namespace Model
      * <p>A map that contains tag keys and tag values that are attached to the
      * simulation job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SimulationJob& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline SimulationJob& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline SimulationJob& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline SimulationJob& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline SimulationJob& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline SimulationJob& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline SimulationJob& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline SimulationJob& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline SimulationJob& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    SimulationJob& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    SimulationJob& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>VPC configuration information.</p>
      */
-    inline const VPCConfigResponse& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VPCConfigResponse& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VPCConfigResponse& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VPCConfigResponse&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline SimulationJob& WithVpcConfig(const VPCConfigResponse& value) { SetVpcConfig(value); return *this;}
-    inline SimulationJob& WithVpcConfig(VPCConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VPCConfigResponse>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VPCConfigResponse>
+    SimulationJob& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a network interface.</p>
      */
-    inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
+    inline const NetworkInterface& GetNetworkInterface() const { return m_networkInterface; }
     inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
-    inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = value; }
-    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = std::move(value); }
-    inline SimulationJob& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
-    inline SimulationJob& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
+    template<typename NetworkInterfaceT = NetworkInterface>
+    void SetNetworkInterface(NetworkInterfaceT&& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = std::forward<NetworkInterfaceT>(value); }
+    template<typename NetworkInterfaceT = NetworkInterface>
+    SimulationJob& WithNetworkInterface(NetworkInterfaceT&& value) { SetNetworkInterface(std::forward<NetworkInterfaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Compute information for the simulation job</p>
      */
-    inline const ComputeResponse& GetCompute() const{ return m_compute; }
+    inline const ComputeResponse& GetCompute() const { return m_compute; }
     inline bool ComputeHasBeenSet() const { return m_computeHasBeenSet; }
-    inline void SetCompute(const ComputeResponse& value) { m_computeHasBeenSet = true; m_compute = value; }
-    inline void SetCompute(ComputeResponse&& value) { m_computeHasBeenSet = true; m_compute = std::move(value); }
-    inline SimulationJob& WithCompute(const ComputeResponse& value) { SetCompute(value); return *this;}
-    inline SimulationJob& WithCompute(ComputeResponse&& value) { SetCompute(std::move(value)); return *this;}
+    template<typename ComputeT = ComputeResponse>
+    void SetCompute(ComputeT&& value) { m_computeHasBeenSet = true; m_compute = std::forward<ComputeT>(value); }
+    template<typename ComputeT = ComputeResponse>
+    SimulationJob& WithCompute(ComputeT&& value) { SetCompute(std::forward<ComputeT>(value)); return *this;}
     ///@}
   private:
 
@@ -338,19 +319,19 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SimulationJobStatus m_status;
+    SimulationJobStatus m_status{SimulationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastStartedAt;
+    Aws::Utils::DateTime m_lastStartedAt{};
     bool m_lastStartedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    FailureBehavior m_failureBehavior;
+    FailureBehavior m_failureBehavior{FailureBehavior::NOT_SET};
     bool m_failureBehaviorHasBeenSet = false;
 
-    SimulationJobErrorCode m_failureCode;
+    SimulationJobErrorCode m_failureCode{SimulationJobErrorCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
@@ -365,10 +346,10 @@ namespace Model
     LoggingConfig m_loggingConfig;
     bool m_loggingConfigHasBeenSet = false;
 
-    long long m_maxJobDurationInSeconds;
+    long long m_maxJobDurationInSeconds{0};
     bool m_maxJobDurationInSecondsHasBeenSet = false;
 
-    long long m_simulationTimeMillis;
+    long long m_simulationTimeMillis{0};
     bool m_simulationTimeMillisHasBeenSet = false;
 
     Aws::String m_iamRole;

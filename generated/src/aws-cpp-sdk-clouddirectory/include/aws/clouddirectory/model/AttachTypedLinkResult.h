@@ -28,7 +28,7 @@ namespace Model
   class AttachTypedLinkResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API AttachTypedLinkResult();
+    AWS_CLOUDDIRECTORY_API AttachTypedLinkResult() = default;
     AWS_CLOUDDIRECTORY_API AttachTypedLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API AttachTypedLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
-    inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
-    inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifier = value; }
-    inline void SetTypedLinkSpecifier(TypedLinkSpecifier&& value) { m_typedLinkSpecifier = std::move(value); }
-    inline AttachTypedLinkResult& WithTypedLinkSpecifier(const TypedLinkSpecifier& value) { SetTypedLinkSpecifier(value); return *this;}
-    inline AttachTypedLinkResult& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
+    inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const { return m_typedLinkSpecifier; }
+    template<typename TypedLinkSpecifierT = TypedLinkSpecifier>
+    void SetTypedLinkSpecifier(TypedLinkSpecifierT&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::forward<TypedLinkSpecifierT>(value); }
+    template<typename TypedLinkSpecifierT = TypedLinkSpecifier>
+    AttachTypedLinkResult& WithTypedLinkSpecifier(TypedLinkSpecifierT&& value) { SetTypedLinkSpecifier(std::forward<TypedLinkSpecifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AttachTypedLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AttachTypedLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AttachTypedLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AttachTypedLinkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

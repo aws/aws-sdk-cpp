@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult() : 
-    m_status(Status::NOT_SET),
-    m_percentageComplete(0)
-{
-}
-
 CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateGUISessionAccessDetailsResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ CreateGUISessionAccessDetailsResult& CreateGUISessionAccessDetailsResult::operat
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
+    m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("percentageComplete"))
   {
     m_percentageComplete = jsonValue.GetInteger("percentageComplete");
-
+    m_percentageCompleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessions"))
   {
     Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("sessions");
@@ -63,14 +52,15 @@ CreateGUISessionAccessDetailsResult& CreateGUISessionAccessDetailsResult::operat
     {
       m_sessions.push_back(sessionsJsonList[sessionsIndex].AsObject());
     }
+    m_sessionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

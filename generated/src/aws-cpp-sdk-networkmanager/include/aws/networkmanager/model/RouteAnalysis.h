@@ -35,7 +35,7 @@ namespace Model
   class RouteAnalysis
   {
   public:
-    AWS_NETWORKMANAGER_API RouteAnalysis();
+    AWS_NETWORKMANAGER_API RouteAnalysis() = default;
     AWS_NETWORKMANAGER_API RouteAnalysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API RouteAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,90 +45,82 @@ namespace Model
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline RouteAnalysis& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline RouteAnalysis& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline RouteAnalysis& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    RouteAnalysis& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AWS account that created the route analysis.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
-    inline RouteAnalysis& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline RouteAnalysis& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline RouteAnalysis& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    RouteAnalysis& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the route analysis.</p>
      */
-    inline const Aws::String& GetRouteAnalysisId() const{ return m_routeAnalysisId; }
+    inline const Aws::String& GetRouteAnalysisId() const { return m_routeAnalysisId; }
     inline bool RouteAnalysisIdHasBeenSet() const { return m_routeAnalysisIdHasBeenSet; }
-    inline void SetRouteAnalysisId(const Aws::String& value) { m_routeAnalysisIdHasBeenSet = true; m_routeAnalysisId = value; }
-    inline void SetRouteAnalysisId(Aws::String&& value) { m_routeAnalysisIdHasBeenSet = true; m_routeAnalysisId = std::move(value); }
-    inline void SetRouteAnalysisId(const char* value) { m_routeAnalysisIdHasBeenSet = true; m_routeAnalysisId.assign(value); }
-    inline RouteAnalysis& WithRouteAnalysisId(const Aws::String& value) { SetRouteAnalysisId(value); return *this;}
-    inline RouteAnalysis& WithRouteAnalysisId(Aws::String&& value) { SetRouteAnalysisId(std::move(value)); return *this;}
-    inline RouteAnalysis& WithRouteAnalysisId(const char* value) { SetRouteAnalysisId(value); return *this;}
+    template<typename RouteAnalysisIdT = Aws::String>
+    void SetRouteAnalysisId(RouteAnalysisIdT&& value) { m_routeAnalysisIdHasBeenSet = true; m_routeAnalysisId = std::forward<RouteAnalysisIdT>(value); }
+    template<typename RouteAnalysisIdT = Aws::String>
+    RouteAnalysis& WithRouteAnalysisId(RouteAnalysisIdT&& value) { SetRouteAnalysisId(std::forward<RouteAnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the analysis started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
-    inline RouteAnalysis& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline RouteAnalysis& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    RouteAnalysis& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the route analysis.</p>
      */
-    inline const RouteAnalysisStatus& GetStatus() const{ return m_status; }
+    inline RouteAnalysisStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RouteAnalysisStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RouteAnalysisStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RouteAnalysis& WithStatus(const RouteAnalysisStatus& value) { SetStatus(value); return *this;}
-    inline RouteAnalysis& WithStatus(RouteAnalysisStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RouteAnalysisStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RouteAnalysis& WithStatus(RouteAnalysisStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source.</p>
      */
-    inline const RouteAnalysisEndpointOptions& GetSource() const{ return m_source; }
+    inline const RouteAnalysisEndpointOptions& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const RouteAnalysisEndpointOptions& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(RouteAnalysisEndpointOptions&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline RouteAnalysis& WithSource(const RouteAnalysisEndpointOptions& value) { SetSource(value); return *this;}
-    inline RouteAnalysis& WithSource(RouteAnalysisEndpointOptions&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = RouteAnalysisEndpointOptions>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = RouteAnalysisEndpointOptions>
+    RouteAnalysis& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination.</p>
      */
-    inline const RouteAnalysisEndpointOptions& GetDestination() const{ return m_destination; }
+    inline const RouteAnalysisEndpointOptions& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const RouteAnalysisEndpointOptions& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(RouteAnalysisEndpointOptions&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline RouteAnalysis& WithDestination(const RouteAnalysisEndpointOptions& value) { SetDestination(value); return *this;}
-    inline RouteAnalysis& WithDestination(RouteAnalysisEndpointOptions&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = RouteAnalysisEndpointOptions>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = RouteAnalysisEndpointOptions>
+    RouteAnalysis& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,7 +128,7 @@ namespace Model
      * <p>Indicates whether to analyze the return path. The return path is not analyzed
      * if the forward path analysis does not succeed.</p>
      */
-    inline bool GetIncludeReturnPath() const{ return m_includeReturnPath; }
+    inline bool GetIncludeReturnPath() const { return m_includeReturnPath; }
     inline bool IncludeReturnPathHasBeenSet() const { return m_includeReturnPathHasBeenSet; }
     inline void SetIncludeReturnPath(bool value) { m_includeReturnPathHasBeenSet = true; m_includeReturnPath = value; }
     inline RouteAnalysis& WithIncludeReturnPath(bool value) { SetIncludeReturnPath(value); return *this;}
@@ -147,7 +139,7 @@ namespace Model
      * <p>Indicates whether to include the location of middlebox appliances in the
      * route analysis.</p>
      */
-    inline bool GetUseMiddleboxes() const{ return m_useMiddleboxes; }
+    inline bool GetUseMiddleboxes() const { return m_useMiddleboxes; }
     inline bool UseMiddleboxesHasBeenSet() const { return m_useMiddleboxesHasBeenSet; }
     inline void SetUseMiddleboxes(bool value) { m_useMiddleboxesHasBeenSet = true; m_useMiddleboxes = value; }
     inline RouteAnalysis& WithUseMiddleboxes(bool value) { SetUseMiddleboxes(value); return *this;}
@@ -157,24 +149,24 @@ namespace Model
     /**
      * <p>The forward path.</p>
      */
-    inline const RouteAnalysisPath& GetForwardPath() const{ return m_forwardPath; }
+    inline const RouteAnalysisPath& GetForwardPath() const { return m_forwardPath; }
     inline bool ForwardPathHasBeenSet() const { return m_forwardPathHasBeenSet; }
-    inline void SetForwardPath(const RouteAnalysisPath& value) { m_forwardPathHasBeenSet = true; m_forwardPath = value; }
-    inline void SetForwardPath(RouteAnalysisPath&& value) { m_forwardPathHasBeenSet = true; m_forwardPath = std::move(value); }
-    inline RouteAnalysis& WithForwardPath(const RouteAnalysisPath& value) { SetForwardPath(value); return *this;}
-    inline RouteAnalysis& WithForwardPath(RouteAnalysisPath&& value) { SetForwardPath(std::move(value)); return *this;}
+    template<typename ForwardPathT = RouteAnalysisPath>
+    void SetForwardPath(ForwardPathT&& value) { m_forwardPathHasBeenSet = true; m_forwardPath = std::forward<ForwardPathT>(value); }
+    template<typename ForwardPathT = RouteAnalysisPath>
+    RouteAnalysis& WithForwardPath(ForwardPathT&& value) { SetForwardPath(std::forward<ForwardPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The return path.</p>
      */
-    inline const RouteAnalysisPath& GetReturnPath() const{ return m_returnPath; }
+    inline const RouteAnalysisPath& GetReturnPath() const { return m_returnPath; }
     inline bool ReturnPathHasBeenSet() const { return m_returnPathHasBeenSet; }
-    inline void SetReturnPath(const RouteAnalysisPath& value) { m_returnPathHasBeenSet = true; m_returnPath = value; }
-    inline void SetReturnPath(RouteAnalysisPath&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::move(value); }
-    inline RouteAnalysis& WithReturnPath(const RouteAnalysisPath& value) { SetReturnPath(value); return *this;}
-    inline RouteAnalysis& WithReturnPath(RouteAnalysisPath&& value) { SetReturnPath(std::move(value)); return *this;}
+    template<typename ReturnPathT = RouteAnalysisPath>
+    void SetReturnPath(ReturnPathT&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::forward<ReturnPathT>(value); }
+    template<typename ReturnPathT = RouteAnalysisPath>
+    RouteAnalysis& WithReturnPath(ReturnPathT&& value) { SetReturnPath(std::forward<ReturnPathT>(value)); return *this;}
     ///@}
   private:
 
@@ -187,10 +179,10 @@ namespace Model
     Aws::String m_routeAnalysisId;
     bool m_routeAnalysisIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
     bool m_startTimestampHasBeenSet = false;
 
-    RouteAnalysisStatus m_status;
+    RouteAnalysisStatus m_status{RouteAnalysisStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     RouteAnalysisEndpointOptions m_source;
@@ -199,10 +191,10 @@ namespace Model
     RouteAnalysisEndpointOptions m_destination;
     bool m_destinationHasBeenSet = false;
 
-    bool m_includeReturnPath;
+    bool m_includeReturnPath{false};
     bool m_includeReturnPathHasBeenSet = false;
 
-    bool m_useMiddleboxes;
+    bool m_useMiddleboxes{false};
     bool m_useMiddleboxesHasBeenSet = false;
 
     RouteAnalysisPath m_forwardPath;

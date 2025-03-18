@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventSelectorsRequest::GetEventSelectorsRequest() : 
-    m_trailNameHasBeenSet(false)
-{
-}
-
 Aws::String GetEventSelectorsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class CreateFirewallPolicyRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API CreateFirewallPolicyRequest();
+    AWS_NETWORKFIREWALL_API CreateFirewallPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,54 +43,50 @@ namespace Model
      * <p>The descriptive name of the firewall policy. You can't change the name of a
      * firewall policy after you create it.</p>
      */
-    inline const Aws::String& GetFirewallPolicyName() const{ return m_firewallPolicyName; }
+    inline const Aws::String& GetFirewallPolicyName() const { return m_firewallPolicyName; }
     inline bool FirewallPolicyNameHasBeenSet() const { return m_firewallPolicyNameHasBeenSet; }
-    inline void SetFirewallPolicyName(const Aws::String& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = value; }
-    inline void SetFirewallPolicyName(Aws::String&& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = std::move(value); }
-    inline void SetFirewallPolicyName(const char* value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName.assign(value); }
-    inline CreateFirewallPolicyRequest& WithFirewallPolicyName(const Aws::String& value) { SetFirewallPolicyName(value); return *this;}
-    inline CreateFirewallPolicyRequest& WithFirewallPolicyName(Aws::String&& value) { SetFirewallPolicyName(std::move(value)); return *this;}
-    inline CreateFirewallPolicyRequest& WithFirewallPolicyName(const char* value) { SetFirewallPolicyName(value); return *this;}
+    template<typename FirewallPolicyNameT = Aws::String>
+    void SetFirewallPolicyName(FirewallPolicyNameT&& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = std::forward<FirewallPolicyNameT>(value); }
+    template<typename FirewallPolicyNameT = Aws::String>
+    CreateFirewallPolicyRequest& WithFirewallPolicyName(FirewallPolicyNameT&& value) { SetFirewallPolicyName(std::forward<FirewallPolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule groups and policy actions to use in the firewall policy.</p>
      */
-    inline const FirewallPolicy& GetFirewallPolicy() const{ return m_firewallPolicy; }
+    inline const FirewallPolicy& GetFirewallPolicy() const { return m_firewallPolicy; }
     inline bool FirewallPolicyHasBeenSet() const { return m_firewallPolicyHasBeenSet; }
-    inline void SetFirewallPolicy(const FirewallPolicy& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = value; }
-    inline void SetFirewallPolicy(FirewallPolicy&& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = std::move(value); }
-    inline CreateFirewallPolicyRequest& WithFirewallPolicy(const FirewallPolicy& value) { SetFirewallPolicy(value); return *this;}
-    inline CreateFirewallPolicyRequest& WithFirewallPolicy(FirewallPolicy&& value) { SetFirewallPolicy(std::move(value)); return *this;}
+    template<typename FirewallPolicyT = FirewallPolicy>
+    void SetFirewallPolicy(FirewallPolicyT&& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = std::forward<FirewallPolicyT>(value); }
+    template<typename FirewallPolicyT = FirewallPolicy>
+    CreateFirewallPolicyRequest& WithFirewallPolicy(FirewallPolicyT&& value) { SetFirewallPolicy(std::forward<FirewallPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the firewall policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFirewallPolicyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFirewallPolicyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFirewallPolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFirewallPolicyRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key:value pairs to associate with the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFirewallPolicyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFirewallPolicyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFirewallPolicyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFirewallPolicyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFirewallPolicyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFirewallPolicyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,7 +101,7 @@ namespace Model
      * parameters are valid. </p> <p>If set to <code>FALSE</code>, Network Firewall
      * makes the requested changes to your resources. </p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateFirewallPolicyRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -116,12 +112,12 @@ namespace Model
      * <p>A complex type that contains settings for encryption of your firewall policy
      * resources.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline CreateFirewallPolicyRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline CreateFirewallPolicyRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    CreateFirewallPolicyRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +133,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;

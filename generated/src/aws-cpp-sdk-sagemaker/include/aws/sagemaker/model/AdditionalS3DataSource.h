@@ -34,7 +34,7 @@ namespace Model
   class AdditionalS3DataSource
   {
   public:
-    AWS_SAGEMAKER_API AdditionalS3DataSource();
+    AWS_SAGEMAKER_API AdditionalS3DataSource() = default;
     AWS_SAGEMAKER_API AdditionalS3DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AdditionalS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The data type of the additional data source that you specify for use in
      * inference or training. </p>
      */
-    inline const AdditionalS3DataSourceDataType& GetS3DataType() const{ return m_s3DataType; }
+    inline AdditionalS3DataSourceDataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
-    inline void SetS3DataType(const AdditionalS3DataSourceDataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
-    inline void SetS3DataType(AdditionalS3DataSourceDataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
-    inline AdditionalS3DataSource& WithS3DataType(const AdditionalS3DataSourceDataType& value) { SetS3DataType(value); return *this;}
-    inline AdditionalS3DataSource& WithS3DataType(AdditionalS3DataSourceDataType&& value) { SetS3DataType(std::move(value)); return *this;}
+    inline void SetS3DataType(AdditionalS3DataSourceDataType value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
+    inline AdditionalS3DataSource& WithS3DataType(AdditionalS3DataSourceDataType value) { SetS3DataType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The uniform resource identifier (URI) used to identify an additional data
      * source used in inference or training.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline AdditionalS3DataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline AdditionalS3DataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline AdditionalS3DataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    AdditionalS3DataSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,36 +70,32 @@ namespace Model
      * or training. Specify <code>None</code> if your additional data source is not
      * compressed.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline AdditionalS3DataSource& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline AdditionalS3DataSource& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline AdditionalS3DataSource& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag associated with S3 URI.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline AdditionalS3DataSource& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline AdditionalS3DataSource& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline AdditionalS3DataSource& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    AdditionalS3DataSource& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
   private:
 
-    AdditionalS3DataSourceDataType m_s3DataType;
+    AdditionalS3DataSourceDataType m_s3DataType{AdditionalS3DataSourceDataType::NOT_SET};
     bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
     Aws::String m_eTag;

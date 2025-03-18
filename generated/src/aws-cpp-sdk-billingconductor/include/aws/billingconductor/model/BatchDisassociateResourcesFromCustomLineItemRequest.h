@@ -23,7 +23,7 @@ namespace Model
   class BatchDisassociateResourcesFromCustomLineItemRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemRequest();
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,39 +38,36 @@ namespace Model
     /**
      * <p> A percentage custom line item ARN to disassociate the resources from. </p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    BatchDisassociateResourcesFromCustomLineItemRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list containing the ARNs of resources to be disassociated. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    BatchDisassociateResourcesFromCustomLineItemRequest& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    BatchDisassociateResourcesFromCustomLineItemRequest& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const CustomLineItemBillingPeriodRange& GetBillingPeriodRange() const{ return m_billingPeriodRange; }
+    inline const CustomLineItemBillingPeriodRange& GetBillingPeriodRange() const { return m_billingPeriodRange; }
     inline bool BillingPeriodRangeHasBeenSet() const { return m_billingPeriodRangeHasBeenSet; }
-    inline void SetBillingPeriodRange(const CustomLineItemBillingPeriodRange& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = value; }
-    inline void SetBillingPeriodRange(CustomLineItemBillingPeriodRange&& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = std::move(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithBillingPeriodRange(const CustomLineItemBillingPeriodRange& value) { SetBillingPeriodRange(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemRequest& WithBillingPeriodRange(CustomLineItemBillingPeriodRange&& value) { SetBillingPeriodRange(std::move(value)); return *this;}
+    template<typename BillingPeriodRangeT = CustomLineItemBillingPeriodRange>
+    void SetBillingPeriodRange(BillingPeriodRangeT&& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = std::forward<BillingPeriodRangeT>(value); }
+    template<typename BillingPeriodRangeT = CustomLineItemBillingPeriodRange>
+    BatchDisassociateResourcesFromCustomLineItemRequest& WithBillingPeriodRange(BillingPeriodRangeT&& value) { SetBillingPeriodRange(std::forward<BillingPeriodRangeT>(value)); return *this;}
     ///@}
   private:
 

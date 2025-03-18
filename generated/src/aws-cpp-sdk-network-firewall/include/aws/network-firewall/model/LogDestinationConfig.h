@@ -38,7 +38,7 @@ namespace Model
   class LogDestinationConfig
   {
   public:
-    AWS_NETWORKFIREWALL_API LogDestinationConfig();
+    AWS_NETWORKFIREWALL_API LogDestinationConfig() = default;
     AWS_NETWORKFIREWALL_API LogDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API LogDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,10 @@ namespace Model
      * SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network
      * Firewall Developer Guide</i>.</p> </li> </ul>
      */
-    inline const LogType& GetLogType() const{ return m_logType; }
+    inline LogType GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline LogDestinationConfig& WithLogType(const LogType& value) { SetLogType(value); return *this;}
-    inline LogDestinationConfig& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline LogDestinationConfig& WithLogType(LogType value) { SetLogType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * <p>The type of storage destination to send these logs to. You can send logs to
      * an Amazon S3 bucket, a CloudWatch log group, or a Firehose delivery stream.</p>
      */
-    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+    inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
-    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
-    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
-    inline LogDestinationConfig& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
-    inline LogDestinationConfig& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+    inline void SetLogDestinationType(LogDestinationType value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+    inline LogDestinationConfig& WithLogDestinationType(LogDestinationType value) { SetLogDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -99,26 +95,23 @@ namespace Model
      * <code>alert-delivery-stream</code>: </p> <p> <code>"LogDestination": {
      * "deliveryStream": "alert-delivery-stream" }</code> </p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLogDestination() const{ return m_logDestination; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLogDestination() const { return m_logDestination; }
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
-    inline void SetLogDestination(const Aws::Map<Aws::String, Aws::String>& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
-    inline void SetLogDestination(Aws::Map<Aws::String, Aws::String>&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
-    inline LogDestinationConfig& WithLogDestination(const Aws::Map<Aws::String, Aws::String>& value) { SetLogDestination(value); return *this;}
-    inline LogDestinationConfig& WithLogDestination(Aws::Map<Aws::String, Aws::String>&& value) { SetLogDestination(std::move(value)); return *this;}
-    inline LogDestinationConfig& AddLogDestination(const Aws::String& key, const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(key, value); return *this; }
-    inline LogDestinationConfig& AddLogDestination(Aws::String&& key, const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(std::move(key), value); return *this; }
-    inline LogDestinationConfig& AddLogDestination(const Aws::String& key, Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(key, std::move(value)); return *this; }
-    inline LogDestinationConfig& AddLogDestination(Aws::String&& key, Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(std::move(key), std::move(value)); return *this; }
-    inline LogDestinationConfig& AddLogDestination(const char* key, Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(key, std::move(value)); return *this; }
-    inline LogDestinationConfig& AddLogDestination(Aws::String&& key, const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(std::move(key), value); return *this; }
-    inline LogDestinationConfig& AddLogDestination(const char* key, const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.emplace(key, value); return *this; }
+    template<typename LogDestinationT = Aws::Map<Aws::String, Aws::String>>
+    void SetLogDestination(LogDestinationT&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::forward<LogDestinationT>(value); }
+    template<typename LogDestinationT = Aws::Map<Aws::String, Aws::String>>
+    LogDestinationConfig& WithLogDestination(LogDestinationT&& value) { SetLogDestination(std::forward<LogDestinationT>(value)); return *this;}
+    template<typename LogDestinationKeyT = Aws::String, typename LogDestinationValueT = Aws::String>
+    LogDestinationConfig& AddLogDestination(LogDestinationKeyT&& key, LogDestinationValueT&& value) {
+      m_logDestinationHasBeenSet = true; m_logDestination.emplace(std::forward<LogDestinationKeyT>(key), std::forward<LogDestinationValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    LogType m_logType;
+    LogType m_logType{LogType::NOT_SET};
     bool m_logTypeHasBeenSet = false;
 
-    LogDestinationType m_logDestinationType;
+    LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
     bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logDestination;

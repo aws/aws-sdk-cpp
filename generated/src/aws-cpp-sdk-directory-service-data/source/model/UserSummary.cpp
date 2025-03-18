@@ -18,18 +18,7 @@ namespace DirectoryServiceData
 namespace Model
 {
 
-UserSummary::UserSummary() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_sIDHasBeenSet(false),
-    m_surnameHasBeenSet(false)
-{
-}
-
 UserSummary::UserSummary(JsonView jsonValue)
-  : UserSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ UserSummary& UserSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GivenName"))
   {
     m_givenName = jsonValue.GetString("GivenName");
-
     m_givenNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAMAccountName"))
   {
     m_sAMAccountName = jsonValue.GetString("SAMAccountName");
-
     m_sAMAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SID"))
   {
     m_sID = jsonValue.GetString("SID");
-
     m_sIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Surname"))
   {
     m_surname = jsonValue.GetString("Surname");
-
     m_surnameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleIpExpression::RuleIpExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleIpOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RuleIpExpression::RuleIpExpression(JsonView jsonValue)
-  : RuleIpExpression()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RuleIpExpression& RuleIpExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = RuleIpOperatorMapper::GetRuleIpOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -57,7 +44,6 @@ RuleIpExpression& RuleIpExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

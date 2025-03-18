@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSafetyRuleResult::CreateSafetyRuleResult()
-{
-}
-
 CreateSafetyRuleResult::CreateSafetyRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateSafetyRuleResult& CreateSafetyRuleResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("AssertionRule"))
   {
     m_assertionRule = jsonValue.GetObject("AssertionRule");
-
+    m_assertionRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatingRule"))
   {
     m_gatingRule = jsonValue.GetObject("GatingRule");
-
+    m_gatingRuleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

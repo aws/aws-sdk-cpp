@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProjectRequest::GetProjectRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetProjectRequest::SerializePayload() const
 {
   return {};

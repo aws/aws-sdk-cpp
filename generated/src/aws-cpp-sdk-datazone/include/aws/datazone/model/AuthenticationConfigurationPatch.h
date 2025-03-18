@@ -33,7 +33,7 @@ namespace Model
   class AuthenticationConfigurationPatch
   {
   public:
-    AWS_DATAZONE_API AuthenticationConfigurationPatch();
+    AWS_DATAZONE_API AuthenticationConfigurationPatch() = default;
     AWS_DATAZONE_API AuthenticationConfigurationPatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AuthenticationConfigurationPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The basic authentication credentials of a connection.</p>
      */
-    inline const BasicAuthenticationCredentials& GetBasicAuthenticationCredentials() const{ return m_basicAuthenticationCredentials; }
+    inline const BasicAuthenticationCredentials& GetBasicAuthenticationCredentials() const { return m_basicAuthenticationCredentials; }
     inline bool BasicAuthenticationCredentialsHasBeenSet() const { return m_basicAuthenticationCredentialsHasBeenSet; }
-    inline void SetBasicAuthenticationCredentials(const BasicAuthenticationCredentials& value) { m_basicAuthenticationCredentialsHasBeenSet = true; m_basicAuthenticationCredentials = value; }
-    inline void SetBasicAuthenticationCredentials(BasicAuthenticationCredentials&& value) { m_basicAuthenticationCredentialsHasBeenSet = true; m_basicAuthenticationCredentials = std::move(value); }
-    inline AuthenticationConfigurationPatch& WithBasicAuthenticationCredentials(const BasicAuthenticationCredentials& value) { SetBasicAuthenticationCredentials(value); return *this;}
-    inline AuthenticationConfigurationPatch& WithBasicAuthenticationCredentials(BasicAuthenticationCredentials&& value) { SetBasicAuthenticationCredentials(std::move(value)); return *this;}
+    template<typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
+    void SetBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) { m_basicAuthenticationCredentialsHasBeenSet = true; m_basicAuthenticationCredentials = std::forward<BasicAuthenticationCredentialsT>(value); }
+    template<typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
+    AuthenticationConfigurationPatch& WithBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) { SetBasicAuthenticationCredentials(std::forward<BasicAuthenticationCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The secret ARN of a connection.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline AuthenticationConfigurationPatch& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline AuthenticationConfigurationPatch& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline AuthenticationConfigurationPatch& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    AuthenticationConfigurationPatch& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

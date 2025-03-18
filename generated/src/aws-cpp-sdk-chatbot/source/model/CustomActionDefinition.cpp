@@ -18,13 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-CustomActionDefinition::CustomActionDefinition() : 
-    m_commandTextHasBeenSet(false)
-{
-}
-
 CustomActionDefinition::CustomActionDefinition(JsonView jsonValue)
-  : CustomActionDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomActionDefinition& CustomActionDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommandText"))
   {
     m_commandText = jsonValue.GetString("CommandText");
-
     m_commandTextHasBeenSet = true;
   }
-
   return *this;
 }
 

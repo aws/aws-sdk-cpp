@@ -29,52 +29,51 @@ namespace Model
   class GetDomainNameAccessAssociationsResult
   {
   public:
-    AWS_APIGATEWAY_API GetDomainNameAccessAssociationsResult();
+    AWS_APIGATEWAY_API GetDomainNameAccessAssociationsResult() = default;
     AWS_APIGATEWAY_API GetDomainNameAccessAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetDomainNameAccessAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetDomainNameAccessAssociationsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetDomainNameAccessAssociationsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetDomainNameAccessAssociationsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetDomainNameAccessAssociationsResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current page of elements from this collection. </p>
      */
-    inline const Aws::Vector<DomainNameAccessAssociation>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<DomainNameAccessAssociation>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<DomainNameAccessAssociation>&& value) { m_items = std::move(value); }
-    inline GetDomainNameAccessAssociationsResult& WithItems(const Aws::Vector<DomainNameAccessAssociation>& value) { SetItems(value); return *this;}
-    inline GetDomainNameAccessAssociationsResult& WithItems(Aws::Vector<DomainNameAccessAssociation>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetDomainNameAccessAssociationsResult& AddItems(const DomainNameAccessAssociation& value) { m_items.push_back(value); return *this; }
-    inline GetDomainNameAccessAssociationsResult& AddItems(DomainNameAccessAssociation&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainNameAccessAssociation>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<DomainNameAccessAssociation>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<DomainNameAccessAssociation>>
+    GetDomainNameAccessAssociationsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = DomainNameAccessAssociation>
+    GetDomainNameAccessAssociationsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainNameAccessAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainNameAccessAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainNameAccessAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainNameAccessAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<DomainNameAccessAssociation> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

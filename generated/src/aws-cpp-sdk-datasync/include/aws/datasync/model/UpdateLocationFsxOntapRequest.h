@@ -22,7 +22,7 @@ namespace Model
   class UpdateLocationFsxOntapRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateLocationFsxOntapRequest();
+    AWS_DATASYNC_API UpdateLocationFsxOntapRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP transfer
      * location that you're updating.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline UpdateLocationFsxOntapRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline UpdateLocationFsxOntapRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline UpdateLocationFsxOntapRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    UpdateLocationFsxOntapRequest& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>Specifies the data transfer protocol that DataSync uses to access your Amazon
      * FSx file system.</p>
      */
-    inline const FsxUpdateProtocol& GetProtocol() const{ return m_protocol; }
+    inline const FsxUpdateProtocol& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const FsxUpdateProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(FsxUpdateProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline UpdateLocationFsxOntapRequest& WithProtocol(const FsxUpdateProtocol& value) { SetProtocol(value); return *this;}
-    inline UpdateLocationFsxOntapRequest& WithProtocol(FsxUpdateProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    template<typename ProtocolT = FsxUpdateProtocol>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = FsxUpdateProtocol>
+    UpdateLocationFsxOntapRequest& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline UpdateLocationFsxOntapRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline UpdateLocationFsxOntapRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline UpdateLocationFsxOntapRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    UpdateLocationFsxOntapRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
   private:
 

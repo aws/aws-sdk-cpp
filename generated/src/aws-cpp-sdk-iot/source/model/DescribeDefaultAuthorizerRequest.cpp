@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDefaultAuthorizerRequest::DescribeDefaultAuthorizerRequest()
-{
-}
-
 Aws::String DescribeDefaultAuthorizerRequest::SerializePayload() const
 {
   return {};

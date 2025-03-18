@@ -12,22 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFileSystemRequest::UpdateFileSystemRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFileSystemRequest::SerializePayload() const
 {
   JsonValue payload;

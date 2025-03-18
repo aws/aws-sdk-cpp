@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHostedZoneCountResult::GetHostedZoneCountResult() : 
-    m_hostedZoneCount(0)
-{
-}
-
 GetHostedZoneCountResult::GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetHostedZoneCountResult()
 {
   *this = result;
 }
@@ -38,6 +32,7 @@ GetHostedZoneCountResult& GetHostedZoneCountResult::operator =(const Aws::Amazon
     if(!hostedZoneCountNode.IsNull())
     {
       m_hostedZoneCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneCountNode.GetText()).c_str()).c_str());
+      m_hostedZoneCountHasBeenSet = true;
     }
   }
 
@@ -46,6 +41,7 @@ GetHostedZoneCountResult& GetHostedZoneCountResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

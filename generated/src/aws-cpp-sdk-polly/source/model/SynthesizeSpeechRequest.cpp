@@ -13,24 +13,6 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SynthesizeSpeechRequest::SynthesizeSpeechRequest() : 
-    m_engine(Engine::NOT_SET),
-    m_engineHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_lexiconNamesHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_sampleRateHasBeenSet(false),
-    m_speechMarkTypesHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_textType(TextType::NOT_SET),
-    m_textTypeHasBeenSet(false),
-    m_voiceId(VoiceId::NOT_SET),
-    m_voiceIdHasBeenSet(false)
-{
-}
-
 Aws::String SynthesizeSpeechRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-StatisticModelResult::StatisticModelResult() : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false),
-    m_predictedValue(0.0),
-    m_predictedValueHasBeenSet(false),
-    m_actualValue(0.0),
-    m_actualValueHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_inclusionAnnotation(InclusionAnnotationValue::NOT_SET),
-    m_inclusionAnnotationHasBeenSet(false)
-{
-}
-
 StatisticModelResult::StatisticModelResult(JsonView jsonValue)
-  : StatisticModelResult()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ StatisticModelResult& StatisticModelResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LowerBound"))
   {
     m_lowerBound = jsonValue.GetDouble("LowerBound");
-
     m_lowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBound"))
   {
     m_upperBound = jsonValue.GetDouble("UpperBound");
-
     m_upperBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictedValue"))
   {
     m_predictedValue = jsonValue.GetDouble("PredictedValue");
-
     m_predictedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualValue"))
   {
     m_actualValue = jsonValue.GetDouble("ActualValue");
-
     m_actualValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionAnnotation"))
   {
     m_inclusionAnnotation = InclusionAnnotationValueMapper::GetInclusionAnnotationValueForName(jsonValue.GetString("InclusionAnnotation"));
-
     m_inclusionAnnotationHasBeenSet = true;
   }
-
   return *this;
 }
 

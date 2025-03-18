@@ -34,7 +34,7 @@ namespace Model
   class ReplicationRule
   {
   public:
-    AWS_ECR_API ReplicationRule();
+    AWS_ECR_API ReplicationRule() = default;
     AWS_ECR_API ReplicationRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ReplicationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>An array of objects representing the destination for a replication rule.</p>
      */
-    inline const Aws::Vector<ReplicationDestination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<ReplicationDestination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<ReplicationDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<ReplicationDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline ReplicationRule& WithDestinations(const Aws::Vector<ReplicationDestination>& value) { SetDestinations(value); return *this;}
-    inline ReplicationRule& WithDestinations(Aws::Vector<ReplicationDestination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline ReplicationRule& AddDestinations(const ReplicationDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline ReplicationRule& AddDestinations(ReplicationDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<ReplicationDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<ReplicationDestination>>
+    ReplicationRule& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = ReplicationDestination>
+    ReplicationRule& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * Specifying a repository filter for a replication rule provides a method for
      * controlling which repositories in a private registry are replicated.</p>
      */
-    inline const Aws::Vector<RepositoryFilter>& GetRepositoryFilters() const{ return m_repositoryFilters; }
+    inline const Aws::Vector<RepositoryFilter>& GetRepositoryFilters() const { return m_repositoryFilters; }
     inline bool RepositoryFiltersHasBeenSet() const { return m_repositoryFiltersHasBeenSet; }
-    inline void SetRepositoryFilters(const Aws::Vector<RepositoryFilter>& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = value; }
-    inline void SetRepositoryFilters(Aws::Vector<RepositoryFilter>&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = std::move(value); }
-    inline ReplicationRule& WithRepositoryFilters(const Aws::Vector<RepositoryFilter>& value) { SetRepositoryFilters(value); return *this;}
-    inline ReplicationRule& WithRepositoryFilters(Aws::Vector<RepositoryFilter>&& value) { SetRepositoryFilters(std::move(value)); return *this;}
-    inline ReplicationRule& AddRepositoryFilters(const RepositoryFilter& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(value); return *this; }
-    inline ReplicationRule& AddRepositoryFilters(RepositoryFilter&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(std::move(value)); return *this; }
+    template<typename RepositoryFiltersT = Aws::Vector<RepositoryFilter>>
+    void SetRepositoryFilters(RepositoryFiltersT&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = std::forward<RepositoryFiltersT>(value); }
+    template<typename RepositoryFiltersT = Aws::Vector<RepositoryFilter>>
+    ReplicationRule& WithRepositoryFilters(RepositoryFiltersT&& value) { SetRepositoryFilters(std::forward<RepositoryFiltersT>(value)); return *this;}
+    template<typename RepositoryFiltersT = RepositoryFilter>
+    ReplicationRule& AddRepositoryFilters(RepositoryFiltersT&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.emplace_back(std::forward<RepositoryFiltersT>(value)); return *this; }
     ///@}
   private:
 

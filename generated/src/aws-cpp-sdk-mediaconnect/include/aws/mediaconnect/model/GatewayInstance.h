@@ -36,7 +36,7 @@ namespace Model
   class GatewayInstance
   {
   public:
-    AWS_MEDIACONNECT_API GatewayInstance();
+    AWS_MEDIACONNECT_API GatewayInstance() = default;
     AWS_MEDIACONNECT_API GatewayInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API GatewayInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,52 +49,44 @@ namespace Model
      * deployed to this instance. If it is AVAILABLE, new bridges can be added to this
      * instance.
      */
-    inline const BridgePlacement& GetBridgePlacement() const{ return m_bridgePlacement; }
+    inline BridgePlacement GetBridgePlacement() const { return m_bridgePlacement; }
     inline bool BridgePlacementHasBeenSet() const { return m_bridgePlacementHasBeenSet; }
-    inline void SetBridgePlacement(const BridgePlacement& value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = value; }
-    inline void SetBridgePlacement(BridgePlacement&& value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = std::move(value); }
-    inline GatewayInstance& WithBridgePlacement(const BridgePlacement& value) { SetBridgePlacement(value); return *this;}
-    inline GatewayInstance& WithBridgePlacement(BridgePlacement&& value) { SetBridgePlacement(std::move(value)); return *this;}
+    inline void SetBridgePlacement(BridgePlacement value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = value; }
+    inline GatewayInstance& WithBridgePlacement(BridgePlacement value) { SetBridgePlacement(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The connection state of the instance.
      */
-    inline const ConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+    inline ConnectionStatus GetConnectionStatus() const { return m_connectionStatus; }
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
-    inline void SetConnectionStatus(const ConnectionStatus& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
-    inline void SetConnectionStatus(ConnectionStatus&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
-    inline GatewayInstance& WithConnectionStatus(const ConnectionStatus& value) { SetConnectionStatus(value); return *this;}
-    inline GatewayInstance& WithConnectionStatus(ConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    inline void SetConnectionStatus(ConnectionStatus value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+    inline GatewayInstance& WithConnectionStatus(ConnectionStatus value) { SetConnectionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The Amazon Resource Name (ARN) of the instance.
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline GatewayInstance& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline GatewayInstance& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline GatewayInstance& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    GatewayInstance& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The Amazon Resource Name (ARN) of the gateway.
      */
-    inline const Aws::String& GetGatewayInstanceArn() const{ return m_gatewayInstanceArn; }
+    inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }
-    inline void SetGatewayInstanceArn(const Aws::String& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = value; }
-    inline void SetGatewayInstanceArn(Aws::String&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::move(value); }
-    inline void SetGatewayInstanceArn(const char* value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn.assign(value); }
-    inline GatewayInstance& WithGatewayInstanceArn(const Aws::String& value) { SetGatewayInstanceArn(value); return *this;}
-    inline GatewayInstance& WithGatewayInstanceArn(Aws::String&& value) { SetGatewayInstanceArn(std::move(value)); return *this;}
-    inline GatewayInstance& WithGatewayInstanceArn(const char* value) { SetGatewayInstanceArn(value); return *this;}
+    template<typename GatewayInstanceArnT = Aws::String>
+    void SetGatewayInstanceArn(GatewayInstanceArnT&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::forward<GatewayInstanceArnT>(value); }
+    template<typename GatewayInstanceArnT = Aws::String>
+    GatewayInstance& WithGatewayInstanceArn(GatewayInstanceArnT&& value) { SetGatewayInstanceArn(std::forward<GatewayInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,55 +94,51 @@ namespace Model
      * The managed instance ID generated by the SSM install. This will begin with
      * "mi-".
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GatewayInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GatewayInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GatewayInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GatewayInstance& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MessageDetail>& GetInstanceMessages() const{ return m_instanceMessages; }
+    inline const Aws::Vector<MessageDetail>& GetInstanceMessages() const { return m_instanceMessages; }
     inline bool InstanceMessagesHasBeenSet() const { return m_instanceMessagesHasBeenSet; }
-    inline void SetInstanceMessages(const Aws::Vector<MessageDetail>& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages = value; }
-    inline void SetInstanceMessages(Aws::Vector<MessageDetail>&& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages = std::move(value); }
-    inline GatewayInstance& WithInstanceMessages(const Aws::Vector<MessageDetail>& value) { SetInstanceMessages(value); return *this;}
-    inline GatewayInstance& WithInstanceMessages(Aws::Vector<MessageDetail>&& value) { SetInstanceMessages(std::move(value)); return *this;}
-    inline GatewayInstance& AddInstanceMessages(const MessageDetail& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages.push_back(value); return *this; }
-    inline GatewayInstance& AddInstanceMessages(MessageDetail&& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages.push_back(std::move(value)); return *this; }
+    template<typename InstanceMessagesT = Aws::Vector<MessageDetail>>
+    void SetInstanceMessages(InstanceMessagesT&& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages = std::forward<InstanceMessagesT>(value); }
+    template<typename InstanceMessagesT = Aws::Vector<MessageDetail>>
+    GatewayInstance& WithInstanceMessages(InstanceMessagesT&& value) { SetInstanceMessages(std::forward<InstanceMessagesT>(value)); return *this;}
+    template<typename InstanceMessagesT = MessageDetail>
+    GatewayInstance& AddInstanceMessages(InstanceMessagesT&& value) { m_instanceMessagesHasBeenSet = true; m_instanceMessages.emplace_back(std::forward<InstanceMessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The status of the instance.
      */
-    inline const InstanceState& GetInstanceState() const{ return m_instanceState; }
+    inline InstanceState GetInstanceState() const { return m_instanceState; }
     inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
-    inline void SetInstanceState(const InstanceState& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
-    inline void SetInstanceState(InstanceState&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::move(value); }
-    inline GatewayInstance& WithInstanceState(const InstanceState& value) { SetInstanceState(value); return *this;}
-    inline GatewayInstance& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
+    inline void SetInstanceState(InstanceState value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
+    inline GatewayInstance& WithInstanceState(InstanceState value) { SetInstanceState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The running bridge count.
      */
-    inline int GetRunningBridgeCount() const{ return m_runningBridgeCount; }
+    inline int GetRunningBridgeCount() const { return m_runningBridgeCount; }
     inline bool RunningBridgeCountHasBeenSet() const { return m_runningBridgeCountHasBeenSet; }
     inline void SetRunningBridgeCount(int value) { m_runningBridgeCountHasBeenSet = true; m_runningBridgeCount = value; }
     inline GatewayInstance& WithRunningBridgeCount(int value) { SetRunningBridgeCount(value); return *this;}
     ///@}
   private:
 
-    BridgePlacement m_bridgePlacement;
+    BridgePlacement m_bridgePlacement{BridgePlacement::NOT_SET};
     bool m_bridgePlacementHasBeenSet = false;
 
-    ConnectionStatus m_connectionStatus;
+    ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
     bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_gatewayArn;
@@ -165,10 +153,10 @@ namespace Model
     Aws::Vector<MessageDetail> m_instanceMessages;
     bool m_instanceMessagesHasBeenSet = false;
 
-    InstanceState m_instanceState;
+    InstanceState m_instanceState{InstanceState::NOT_SET};
     bool m_instanceStateHasBeenSet = false;
 
-    int m_runningBridgeCount;
+    int m_runningBridgeCount{0};
     bool m_runningBridgeCountHasBeenSet = false;
   };
 

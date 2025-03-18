@@ -35,7 +35,7 @@ namespace Model
   class InputVideoGenerator
   {
   public:
-    AWS_MEDIACONVERT_API InputVideoGenerator();
+    AWS_MEDIACONVERT_API InputVideoGenerator() = default;
     AWS_MEDIACONVERT_API InputVideoGenerator(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API InputVideoGenerator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * MediaConvert creates these audio channels as silent audio within a single audio
      * track. Enter an integer from 1 to 32.
      */
-    inline int GetChannels() const{ return m_channels; }
+    inline int GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
     inline InputVideoGenerator& WithChannels(int value) { SetChannels(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
 Enter an
      * integer from 50 to 86400000.
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline InputVideoGenerator& WithDuration(int value) { SetDuration(value); return *this;}
@@ -72,7 +72,7 @@ Enter an
      * numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame
      * rate numerator and Frame rate denominator blank.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline InputVideoGenerator& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -85,7 +85,7 @@ Enter an
      * denominator. MediaConvert uses a default frame rate of 29.97 when you leave
      * Frame rate numerator and Frame rate denominator blank.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline InputVideoGenerator& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -97,26 +97,26 @@ Enter an
      * generator input.
 Enter an integer from 32000 to 48000.
      */
-    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline InputVideoGenerator& WithSampleRate(int value) { SetSampleRate(value); return *this;}
     ///@}
   private:
 
-    int m_channels;
+    int m_channels{0};
     bool m_channelsHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    int m_sampleRate;
+    int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
   };
 

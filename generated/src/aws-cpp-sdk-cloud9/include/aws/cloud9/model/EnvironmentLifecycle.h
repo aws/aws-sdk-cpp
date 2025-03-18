@@ -33,7 +33,7 @@ namespace Model
   class EnvironmentLifecycle
   {
   public:
-    AWS_CLOUD9_API EnvironmentLifecycle();
+    AWS_CLOUD9_API EnvironmentLifecycle() = default;
     AWS_CLOUD9_API EnvironmentLifecycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUD9_API EnvironmentLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,22 @@ namespace Model
      * environment is in the process of being deleted.</p> </li> <li> <p>
      * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
-    inline const EnvironmentLifecycleStatus& GetStatus() const{ return m_status; }
+    inline EnvironmentLifecycleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EnvironmentLifecycleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EnvironmentLifecycleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EnvironmentLifecycle& WithStatus(const EnvironmentLifecycleStatus& value) { SetStatus(value); return *this;}
-    inline EnvironmentLifecycle& WithStatus(EnvironmentLifecycleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EnvironmentLifecycleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EnvironmentLifecycle& WithStatus(EnvironmentLifecycleStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any informational message about the lifecycle state of the environment.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline EnvironmentLifecycle& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline EnvironmentLifecycle& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline EnvironmentLifecycle& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    EnvironmentLifecycle& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,18 +72,16 @@ namespace Model
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
      * related Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetFailureResource() const{ return m_failureResource; }
+    inline const Aws::String& GetFailureResource() const { return m_failureResource; }
     inline bool FailureResourceHasBeenSet() const { return m_failureResourceHasBeenSet; }
-    inline void SetFailureResource(const Aws::String& value) { m_failureResourceHasBeenSet = true; m_failureResource = value; }
-    inline void SetFailureResource(Aws::String&& value) { m_failureResourceHasBeenSet = true; m_failureResource = std::move(value); }
-    inline void SetFailureResource(const char* value) { m_failureResourceHasBeenSet = true; m_failureResource.assign(value); }
-    inline EnvironmentLifecycle& WithFailureResource(const Aws::String& value) { SetFailureResource(value); return *this;}
-    inline EnvironmentLifecycle& WithFailureResource(Aws::String&& value) { SetFailureResource(std::move(value)); return *this;}
-    inline EnvironmentLifecycle& WithFailureResource(const char* value) { SetFailureResource(value); return *this;}
+    template<typename FailureResourceT = Aws::String>
+    void SetFailureResource(FailureResourceT&& value) { m_failureResourceHasBeenSet = true; m_failureResource = std::forward<FailureResourceT>(value); }
+    template<typename FailureResourceT = Aws::String>
+    EnvironmentLifecycle& WithFailureResource(FailureResourceT&& value) { SetFailureResource(std::forward<FailureResourceT>(value)); return *this;}
     ///@}
   private:
 
-    EnvironmentLifecycleStatus m_status;
+    EnvironmentLifecycleStatus m_status{EnvironmentLifecycleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

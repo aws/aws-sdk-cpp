@@ -18,31 +18,7 @@ namespace CostandUsageReportService
 namespace Model
 {
 
-ReportDefinition::ReportDefinition() : 
-    m_reportNameHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_format(ReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_compression(CompressionFormat::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_additionalSchemaElementsHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_s3Region(AWSRegion::NOT_SET),
-    m_s3RegionHasBeenSet(false),
-    m_additionalArtifactsHasBeenSet(false),
-    m_refreshClosedReports(false),
-    m_refreshClosedReportsHasBeenSet(false),
-    m_reportVersioning(ReportVersioning::NOT_SET),
-    m_reportVersioningHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_reportStatusHasBeenSet(false)
-{
-}
-
 ReportDefinition::ReportDefinition(JsonView jsonValue)
-  : ReportDefinition()
 {
   *this = jsonValue;
 }
@@ -52,31 +28,23 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportName"))
   {
     m_reportName = jsonValue.GetString("ReportName");
-
     m_reportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
-
     m_timeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = ReportFormatMapper::GetReportFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = CompressionFormatMapper::GetCompressionFormatForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalSchemaElements"))
   {
     Aws::Utils::Array<JsonView> additionalSchemaElementsJsonList = jsonValue.GetArray("AdditionalSchemaElements");
@@ -86,28 +54,21 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
     }
     m_additionalSchemaElementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Prefix"))
   {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
-
     m_s3PrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Region"))
   {
     m_s3Region = AWSRegionMapper::GetAWSRegionForName(jsonValue.GetString("S3Region"));
-
     m_s3RegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalArtifacts"))
   {
     Aws::Utils::Array<JsonView> additionalArtifactsJsonList = jsonValue.GetArray("AdditionalArtifacts");
@@ -117,35 +78,26 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
     }
     m_additionalArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshClosedReports"))
   {
     m_refreshClosedReports = jsonValue.GetBool("RefreshClosedReports");
-
     m_refreshClosedReportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportVersioning"))
   {
     m_reportVersioning = ReportVersioningMapper::GetReportVersioningForName(jsonValue.GetString("ReportVersioning"));
-
     m_reportVersioningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingViewArn"))
   {
     m_billingViewArn = jsonValue.GetString("BillingViewArn");
-
     m_billingViewArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportStatus"))
   {
     m_reportStatus = jsonValue.GetObject("ReportStatus");
-
     m_reportStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

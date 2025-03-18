@@ -21,7 +21,7 @@ namespace Model
   class DescribeStateMachineAliasRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DescribeStateMachineAliasRequest();
+    AWS_SFN_API DescribeStateMachineAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
      */
-    inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
+    inline const Aws::String& GetStateMachineAliasArn() const { return m_stateMachineAliasArn; }
     inline bool StateMachineAliasArnHasBeenSet() const { return m_stateMachineAliasArnHasBeenSet; }
-    inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = value; }
-    inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::move(value); }
-    inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn.assign(value); }
-    inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
-    inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
-    inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+    template<typename StateMachineAliasArnT = Aws::String>
+    void SetStateMachineAliasArn(StateMachineAliasArnT&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::forward<StateMachineAliasArnT>(value); }
+    template<typename StateMachineAliasArnT = Aws::String>
+    DescribeStateMachineAliasRequest& WithStateMachineAliasArn(StateMachineAliasArnT&& value) { SetStateMachineAliasArn(std::forward<StateMachineAliasArnT>(value)); return *this;}
     ///@}
   private:
 

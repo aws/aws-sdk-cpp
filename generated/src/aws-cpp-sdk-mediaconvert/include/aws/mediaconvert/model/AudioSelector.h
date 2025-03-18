@@ -40,7 +40,7 @@ namespace Model
   class AudioSelector
   {
   public:
-    AWS_MEDIACONVERT_API AudioSelector();
+    AWS_MEDIACONVERT_API AudioSelector() = default;
     AWS_MEDIACONVERT_API AudioSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,12 +66,10 @@ namespace Model
      * your input's STTS table. Your output audio and video may not be aligned or it
      * may contain audio artifacts.
      */
-    inline const AudioDurationCorrection& GetAudioDurationCorrection() const{ return m_audioDurationCorrection; }
+    inline AudioDurationCorrection GetAudioDurationCorrection() const { return m_audioDurationCorrection; }
     inline bool AudioDurationCorrectionHasBeenSet() const { return m_audioDurationCorrectionHasBeenSet; }
-    inline void SetAudioDurationCorrection(const AudioDurationCorrection& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = value; }
-    inline void SetAudioDurationCorrection(AudioDurationCorrection&& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = std::move(value); }
-    inline AudioSelector& WithAudioDurationCorrection(const AudioDurationCorrection& value) { SetAudioDurationCorrection(value); return *this;}
-    inline AudioSelector& WithAudioDurationCorrection(AudioDurationCorrection&& value) { SetAudioDurationCorrection(std::move(value)); return *this;}
+    inline void SetAudioDurationCorrection(AudioDurationCorrection value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = value; }
+    inline AudioSelector& WithAudioDurationCorrection(AudioDurationCorrection value) { SetAudioDurationCorrection(value); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * Selects a specific language code from within an audio source, using the ISO
      * 639-2 or ISO 639-3 three-letter language code
      */
-    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+    inline const Aws::String& GetCustomLanguageCode() const { return m_customLanguageCode; }
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
-    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
-    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
-    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
-    inline AudioSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
-    inline AudioSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
-    inline AudioSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+    template<typename CustomLanguageCodeT = Aws::String>
+    void SetCustomLanguageCode(CustomLanguageCodeT&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::forward<CustomLanguageCodeT>(value); }
+    template<typename CustomLanguageCodeT = Aws::String>
+    AudioSelector& WithCustomLanguageCode(CustomLanguageCodeT&& value) { SetCustomLanguageCode(std::forward<CustomLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,26 +91,22 @@ namespace Model
      * The service uses this default for outputs where it can't find the specified
      * input audio. If you don't set a default, those outputs have no audio.
      */
-    inline const AudioDefaultSelection& GetDefaultSelection() const{ return m_defaultSelection; }
+    inline AudioDefaultSelection GetDefaultSelection() const { return m_defaultSelection; }
     inline bool DefaultSelectionHasBeenSet() const { return m_defaultSelectionHasBeenSet; }
-    inline void SetDefaultSelection(const AudioDefaultSelection& value) { m_defaultSelectionHasBeenSet = true; m_defaultSelection = value; }
-    inline void SetDefaultSelection(AudioDefaultSelection&& value) { m_defaultSelectionHasBeenSet = true; m_defaultSelection = std::move(value); }
-    inline AudioSelector& WithDefaultSelection(const AudioDefaultSelection& value) { SetDefaultSelection(value); return *this;}
-    inline AudioSelector& WithDefaultSelection(AudioDefaultSelection&& value) { SetDefaultSelection(std::move(value)); return *this;}
+    inline void SetDefaultSelection(AudioDefaultSelection value) { m_defaultSelectionHasBeenSet = true; m_defaultSelection = value; }
+    inline AudioSelector& WithDefaultSelection(AudioDefaultSelection value) { SetDefaultSelection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Specify the S3, HTTP, or HTTPS URL for your external audio file input.
      */
-    inline const Aws::String& GetExternalAudioFileInput() const{ return m_externalAudioFileInput; }
+    inline const Aws::String& GetExternalAudioFileInput() const { return m_externalAudioFileInput; }
     inline bool ExternalAudioFileInputHasBeenSet() const { return m_externalAudioFileInputHasBeenSet; }
-    inline void SetExternalAudioFileInput(const Aws::String& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = value; }
-    inline void SetExternalAudioFileInput(Aws::String&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::move(value); }
-    inline void SetExternalAudioFileInput(const char* value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput.assign(value); }
-    inline AudioSelector& WithExternalAudioFileInput(const Aws::String& value) { SetExternalAudioFileInput(value); return *this;}
-    inline AudioSelector& WithExternalAudioFileInput(Aws::String&& value) { SetExternalAudioFileInput(std::move(value)); return *this;}
-    inline AudioSelector& WithExternalAudioFileInput(const char* value) { SetExternalAudioFileInput(value); return *this;}
+    template<typename ExternalAudioFileInputT = Aws::String>
+    void SetExternalAudioFileInput(ExternalAudioFileInputT&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::forward<ExternalAudioFileInputT>(value); }
+    template<typename ExternalAudioFileInputT = Aws::String>
+    AudioSelector& WithExternalAudioFileInput(ExternalAudioFileInputT&& value) { SetExternalAudioFileInput(std::forward<ExternalAudioFileInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +120,12 @@ namespace Model
      * video segment is chosen. If there is no audio within video segment, the
      * alternative audio with DEFAULT=YES is chosen instead.
      */
-    inline const HlsRenditionGroupSettings& GetHlsRenditionGroupSettings() const{ return m_hlsRenditionGroupSettings; }
+    inline const HlsRenditionGroupSettings& GetHlsRenditionGroupSettings() const { return m_hlsRenditionGroupSettings; }
     inline bool HlsRenditionGroupSettingsHasBeenSet() const { return m_hlsRenditionGroupSettingsHasBeenSet; }
-    inline void SetHlsRenditionGroupSettings(const HlsRenditionGroupSettings& value) { m_hlsRenditionGroupSettingsHasBeenSet = true; m_hlsRenditionGroupSettings = value; }
-    inline void SetHlsRenditionGroupSettings(HlsRenditionGroupSettings&& value) { m_hlsRenditionGroupSettingsHasBeenSet = true; m_hlsRenditionGroupSettings = std::move(value); }
-    inline AudioSelector& WithHlsRenditionGroupSettings(const HlsRenditionGroupSettings& value) { SetHlsRenditionGroupSettings(value); return *this;}
-    inline AudioSelector& WithHlsRenditionGroupSettings(HlsRenditionGroupSettings&& value) { SetHlsRenditionGroupSettings(std::move(value)); return *this;}
+    template<typename HlsRenditionGroupSettingsT = HlsRenditionGroupSettings>
+    void SetHlsRenditionGroupSettings(HlsRenditionGroupSettingsT&& value) { m_hlsRenditionGroupSettingsHasBeenSet = true; m_hlsRenditionGroupSettings = std::forward<HlsRenditionGroupSettingsT>(value); }
+    template<typename HlsRenditionGroupSettingsT = HlsRenditionGroupSettings>
+    AudioSelector& WithHlsRenditionGroupSettings(HlsRenditionGroupSettingsT&& value) { SetHlsRenditionGroupSettings(std::forward<HlsRenditionGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +135,10 @@ namespace Model
      * an ISO 639-2 three-letter code listed at
      * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline AudioSelector& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline AudioSelector& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline AudioSelector& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -159,7 +149,7 @@ To specify no offset: Keep the default value, 0.
 To specify an offset:
      * Enter an integer from -2147483648 to 2147483647
      */
-    inline int GetOffset() const{ return m_offset; }
+    inline int GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
     inline AudioSelector& WithOffset(int value) { SetOffset(value); return *this;}
@@ -169,12 +159,12 @@ To specify an offset:
     /**
      * Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
      */
-    inline const Aws::Vector<int>& GetPids() const{ return m_pids; }
+    inline const Aws::Vector<int>& GetPids() const { return m_pids; }
     inline bool PidsHasBeenSet() const { return m_pidsHasBeenSet; }
-    inline void SetPids(const Aws::Vector<int>& value) { m_pidsHasBeenSet = true; m_pids = value; }
-    inline void SetPids(Aws::Vector<int>&& value) { m_pidsHasBeenSet = true; m_pids = std::move(value); }
-    inline AudioSelector& WithPids(const Aws::Vector<int>& value) { SetPids(value); return *this;}
-    inline AudioSelector& WithPids(Aws::Vector<int>&& value) { SetPids(std::move(value)); return *this;}
+    template<typename PidsT = Aws::Vector<int>>
+    void SetPids(PidsT&& value) { m_pidsHasBeenSet = true; m_pids = std::forward<PidsT>(value); }
+    template<typename PidsT = Aws::Vector<int>>
+    AudioSelector& WithPids(PidsT&& value) { SetPids(std::forward<PidsT>(value)); return *this;}
     inline AudioSelector& AddPids(int value) { m_pidsHasBeenSet = true; m_pids.push_back(value); return *this; }
     ///@}
 
@@ -188,7 +178,7 @@ To specify an offset:
      * metadata, you can choose All channels instead of a program number to have the
      * service ignore the program IDs and include all the programs in the track.
      */
-    inline int GetProgramSelection() const{ return m_programSelection; }
+    inline int GetProgramSelection() const { return m_programSelection; }
     inline bool ProgramSelectionHasBeenSet() const { return m_programSelectionHasBeenSet; }
     inline void SetProgramSelection(int value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
     inline AudioSelector& WithProgramSelection(int value) { SetProgramSelection(value); return *this;}
@@ -200,24 +190,22 @@ To specify an offset:
      * another input. This allows you to combine the two files into a single output,
      * one after the other.
      */
-    inline const RemixSettings& GetRemixSettings() const{ return m_remixSettings; }
+    inline const RemixSettings& GetRemixSettings() const { return m_remixSettings; }
     inline bool RemixSettingsHasBeenSet() const { return m_remixSettingsHasBeenSet; }
-    inline void SetRemixSettings(const RemixSettings& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = value; }
-    inline void SetRemixSettings(RemixSettings&& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = std::move(value); }
-    inline AudioSelector& WithRemixSettings(const RemixSettings& value) { SetRemixSettings(value); return *this;}
-    inline AudioSelector& WithRemixSettings(RemixSettings&& value) { SetRemixSettings(std::move(value)); return *this;}
+    template<typename RemixSettingsT = RemixSettings>
+    void SetRemixSettings(RemixSettingsT&& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = std::forward<RemixSettingsT>(value); }
+    template<typename RemixSettingsT = RemixSettings>
+    AudioSelector& WithRemixSettings(RemixSettingsT&& value) { SetRemixSettings(std::forward<RemixSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Specifies the type of the audio selector.
      */
-    inline const AudioSelectorType& GetSelectorType() const{ return m_selectorType; }
+    inline AudioSelectorType GetSelectorType() const { return m_selectorType; }
     inline bool SelectorTypeHasBeenSet() const { return m_selectorTypeHasBeenSet; }
-    inline void SetSelectorType(const AudioSelectorType& value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
-    inline void SetSelectorType(AudioSelectorType&& value) { m_selectorTypeHasBeenSet = true; m_selectorType = std::move(value); }
-    inline AudioSelector& WithSelectorType(const AudioSelectorType& value) { SetSelectorType(value); return *this;}
-    inline AudioSelector& WithSelectorType(AudioSelectorType&& value) { SetSelectorType(std::move(value)); return *this;}
+    inline void SetSelectorType(AudioSelectorType value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
+    inline AudioSelector& WithSelectorType(AudioSelectorType value) { SetSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -227,23 +215,23 @@ To specify an offset:
      * specify multiple tracks as follows. Using the console, enter a comma-separated
      * list. For example, type "1,2,3" to include tracks 1 through 3.
      */
-    inline const Aws::Vector<int>& GetTracks() const{ return m_tracks; }
+    inline const Aws::Vector<int>& GetTracks() const { return m_tracks; }
     inline bool TracksHasBeenSet() const { return m_tracksHasBeenSet; }
-    inline void SetTracks(const Aws::Vector<int>& value) { m_tracksHasBeenSet = true; m_tracks = value; }
-    inline void SetTracks(Aws::Vector<int>&& value) { m_tracksHasBeenSet = true; m_tracks = std::move(value); }
-    inline AudioSelector& WithTracks(const Aws::Vector<int>& value) { SetTracks(value); return *this;}
-    inline AudioSelector& WithTracks(Aws::Vector<int>&& value) { SetTracks(std::move(value)); return *this;}
+    template<typename TracksT = Aws::Vector<int>>
+    void SetTracks(TracksT&& value) { m_tracksHasBeenSet = true; m_tracks = std::forward<TracksT>(value); }
+    template<typename TracksT = Aws::Vector<int>>
+    AudioSelector& WithTracks(TracksT&& value) { SetTracks(std::forward<TracksT>(value)); return *this;}
     inline AudioSelector& AddTracks(int value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
     ///@}
   private:
 
-    AudioDurationCorrection m_audioDurationCorrection;
+    AudioDurationCorrection m_audioDurationCorrection{AudioDurationCorrection::NOT_SET};
     bool m_audioDurationCorrectionHasBeenSet = false;
 
     Aws::String m_customLanguageCode;
     bool m_customLanguageCodeHasBeenSet = false;
 
-    AudioDefaultSelection m_defaultSelection;
+    AudioDefaultSelection m_defaultSelection{AudioDefaultSelection::NOT_SET};
     bool m_defaultSelectionHasBeenSet = false;
 
     Aws::String m_externalAudioFileInput;
@@ -252,22 +240,22 @@ To specify an offset:
     HlsRenditionGroupSettings m_hlsRenditionGroupSettings;
     bool m_hlsRenditionGroupSettingsHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_offset;
+    int m_offset{0};
     bool m_offsetHasBeenSet = false;
 
     Aws::Vector<int> m_pids;
     bool m_pidsHasBeenSet = false;
 
-    int m_programSelection;
+    int m_programSelection{0};
     bool m_programSelectionHasBeenSet = false;
 
     RemixSettings m_remixSettings;
     bool m_remixSettingsHasBeenSet = false;
 
-    AudioSelectorType m_selectorType;
+    AudioSelectorType m_selectorType{AudioSelectorType::NOT_SET};
     bool m_selectorTypeHasBeenSet = false;
 
     Aws::Vector<int> m_tracks;

@@ -32,7 +32,7 @@ namespace Model
   class RouteMatrixDestination
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixDestination();
+    AWS_GEOROUTES_API RouteMatrixDestination() = default;
     AWS_GEOROUTES_API RouteMatrixDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Destination related options.</p>
      */
-    inline const RouteMatrixDestinationOptions& GetOptions() const{ return m_options; }
+    inline const RouteMatrixDestinationOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const RouteMatrixDestinationOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(RouteMatrixDestinationOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline RouteMatrixDestination& WithOptions(const RouteMatrixDestinationOptions& value) { SetOptions(value); return *this;}
-    inline RouteMatrixDestination& WithOptions(RouteMatrixDestinationOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = RouteMatrixDestinationOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = RouteMatrixDestinationOptions>
+    RouteMatrixDestination& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Position defined as <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline RouteMatrixDestination& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline RouteMatrixDestination& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    RouteMatrixDestination& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline RouteMatrixDestination& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
   private:

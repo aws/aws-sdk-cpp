@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-CustomerProfilesMetadata::CustomerProfilesMetadata()
-{
-}
-
 CustomerProfilesMetadata::CustomerProfilesMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

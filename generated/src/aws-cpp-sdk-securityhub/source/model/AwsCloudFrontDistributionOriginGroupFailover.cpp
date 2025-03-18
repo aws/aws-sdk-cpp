@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginGroupFailover::AwsCloudFrontDistributionOriginGroupFailover() : 
-    m_statusCodesHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginGroupFailover::AwsCloudFrontDistributionOriginGroupFailover(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginGroupFailover()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCloudFrontDistributionOriginGroupFailover& AwsCloudFrontDistributionOriginGro
   if(jsonValue.ValueExists("StatusCodes"))
   {
     m_statusCodes = jsonValue.GetObject("StatusCodes");
-
     m_statusCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

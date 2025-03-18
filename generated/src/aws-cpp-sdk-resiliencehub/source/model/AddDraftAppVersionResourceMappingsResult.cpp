@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddDraftAppVersionResourceMappingsResult::AddDraftAppVersionResourceMappingsResult()
-{
-}
-
 AddDraftAppVersionResourceMappingsResult::AddDraftAppVersionResourceMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ AddDraftAppVersionResourceMappingsResult& AddDraftAppVersionResourceMappingsResu
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceMappings"))
   {
     Aws::Utils::Array<JsonView> resourceMappingsJsonList = jsonValue.GetArray("resourceMappings");
@@ -48,14 +42,15 @@ AddDraftAppVersionResourceMappingsResult& AddDraftAppVersionResourceMappingsResu
     {
       m_resourceMappings.push_back(resourceMappingsJsonList[resourceMappingsIndex].AsObject());
     }
+    m_resourceMappingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

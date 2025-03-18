@@ -18,21 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-EffectiveLifecyclePolicyDetail::EffectiveLifecyclePolicyDetail() : 
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_noMinRetentionPeriod(false),
-    m_noMinRetentionPeriodHasBeenSet(false)
-{
-}
-
 EffectiveLifecyclePolicyDetail::EffectiveLifecyclePolicyDetail(JsonView jsonValue)
-  : EffectiveLifecyclePolicyDetail()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ EffectiveLifecyclePolicyDetail& EffectiveLifecyclePolicyDetail::operator =(JsonV
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetString("retentionPeriod");
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noMinRetentionPeriod"))
   {
     m_noMinRetentionPeriod = jsonValue.GetBool("noMinRetentionPeriod");
-
     m_noMinRetentionPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

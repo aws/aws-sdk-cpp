@@ -18,17 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-UpdatePipeSourceManagedStreamingKafkaParameters::UpdatePipeSourceManagedStreamingKafkaParameters() : 
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
-{
-}
-
 UpdatePipeSourceManagedStreamingKafkaParameters::UpdatePipeSourceManagedStreamingKafkaParameters(JsonView jsonValue)
-  : UpdatePipeSourceManagedStreamingKafkaParameters()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ UpdatePipeSourceManagedStreamingKafkaParameters& UpdatePipeSourceManagedStreamin
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
-
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class BilledJobResourceUtilization
   {
   public:
-    AWS_CLEANROOMS_API BilledJobResourceUtilization();
+    AWS_CLEANROOMS_API BilledJobResourceUtilization() = default;
     AWS_CLEANROOMS_API BilledJobResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API BilledJobResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p> The number of Clean Rooms Processing Unit (CRPU) hours that have been
      * billed.</p>
      */
-    inline double GetUnits() const{ return m_units; }
+    inline double GetUnits() const { return m_units; }
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
     inline void SetUnits(double value) { m_unitsHasBeenSet = true; m_units = value; }
     inline BilledJobResourceUtilization& WithUnits(double value) { SetUnits(value); return *this;}
     ///@}
   private:
 
-    double m_units;
+    double m_units{0.0};
     bool m_unitsHasBeenSet = false;
   };
 

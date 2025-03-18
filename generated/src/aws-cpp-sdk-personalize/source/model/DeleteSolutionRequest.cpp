@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSolutionRequest::DeleteSolutionRequest() : 
-    m_solutionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSolutionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -39,7 +39,7 @@ namespace Model
   class GetSignalMapResult
   {
   public:
-    AWS_MEDIALIVE_API GetSignalMapResult();
+    AWS_MEDIALIVE_API GetSignalMapResult() = default;
     AWS_MEDIALIVE_API GetSignalMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API GetSignalMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,60 +48,53 @@ namespace Model
     /**
      * A signal map's ARN (Amazon Resource Name)
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetSignalMapResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetSignalMapResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetSignalMapResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetCloudWatchAlarmTemplateGroupIds() const{ return m_cloudWatchAlarmTemplateGroupIds; }
-    inline void SetCloudWatchAlarmTemplateGroupIds(const Aws::Vector<Aws::String>& value) { m_cloudWatchAlarmTemplateGroupIds = value; }
-    inline void SetCloudWatchAlarmTemplateGroupIds(Aws::Vector<Aws::String>&& value) { m_cloudWatchAlarmTemplateGroupIds = std::move(value); }
-    inline GetSignalMapResult& WithCloudWatchAlarmTemplateGroupIds(const Aws::Vector<Aws::String>& value) { SetCloudWatchAlarmTemplateGroupIds(value); return *this;}
-    inline GetSignalMapResult& WithCloudWatchAlarmTemplateGroupIds(Aws::Vector<Aws::String>&& value) { SetCloudWatchAlarmTemplateGroupIds(std::move(value)); return *this;}
-    inline GetSignalMapResult& AddCloudWatchAlarmTemplateGroupIds(const Aws::String& value) { m_cloudWatchAlarmTemplateGroupIds.push_back(value); return *this; }
-    inline GetSignalMapResult& AddCloudWatchAlarmTemplateGroupIds(Aws::String&& value) { m_cloudWatchAlarmTemplateGroupIds.push_back(std::move(value)); return *this; }
-    inline GetSignalMapResult& AddCloudWatchAlarmTemplateGroupIds(const char* value) { m_cloudWatchAlarmTemplateGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCloudWatchAlarmTemplateGroupIds() const { return m_cloudWatchAlarmTemplateGroupIds; }
+    template<typename CloudWatchAlarmTemplateGroupIdsT = Aws::Vector<Aws::String>>
+    void SetCloudWatchAlarmTemplateGroupIds(CloudWatchAlarmTemplateGroupIdsT&& value) { m_cloudWatchAlarmTemplateGroupIdsHasBeenSet = true; m_cloudWatchAlarmTemplateGroupIds = std::forward<CloudWatchAlarmTemplateGroupIdsT>(value); }
+    template<typename CloudWatchAlarmTemplateGroupIdsT = Aws::Vector<Aws::String>>
+    GetSignalMapResult& WithCloudWatchAlarmTemplateGroupIds(CloudWatchAlarmTemplateGroupIdsT&& value) { SetCloudWatchAlarmTemplateGroupIds(std::forward<CloudWatchAlarmTemplateGroupIdsT>(value)); return *this;}
+    template<typename CloudWatchAlarmTemplateGroupIdsT = Aws::String>
+    GetSignalMapResult& AddCloudWatchAlarmTemplateGroupIds(CloudWatchAlarmTemplateGroupIdsT&& value) { m_cloudWatchAlarmTemplateGroupIdsHasBeenSet = true; m_cloudWatchAlarmTemplateGroupIds.emplace_back(std::forward<CloudWatchAlarmTemplateGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetSignalMapResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetSignalMapResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetSignalMapResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A resource's optional description.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetSignalMapResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetSignalMapResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetSignalMapResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A top-level supported AWS resource ARN to discovery a signal map from.
      */
-    inline const Aws::String& GetDiscoveryEntryPointArn() const{ return m_discoveryEntryPointArn; }
-    inline void SetDiscoveryEntryPointArn(const Aws::String& value) { m_discoveryEntryPointArn = value; }
-    inline void SetDiscoveryEntryPointArn(Aws::String&& value) { m_discoveryEntryPointArn = std::move(value); }
-    inline void SetDiscoveryEntryPointArn(const char* value) { m_discoveryEntryPointArn.assign(value); }
-    inline GetSignalMapResult& WithDiscoveryEntryPointArn(const Aws::String& value) { SetDiscoveryEntryPointArn(value); return *this;}
-    inline GetSignalMapResult& WithDiscoveryEntryPointArn(Aws::String&& value) { SetDiscoveryEntryPointArn(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithDiscoveryEntryPointArn(const char* value) { SetDiscoveryEntryPointArn(value); return *this;}
+    inline const Aws::String& GetDiscoveryEntryPointArn() const { return m_discoveryEntryPointArn; }
+    template<typename DiscoveryEntryPointArnT = Aws::String>
+    void SetDiscoveryEntryPointArn(DiscoveryEntryPointArnT&& value) { m_discoveryEntryPointArnHasBeenSet = true; m_discoveryEntryPointArn = std::forward<DiscoveryEntryPointArnT>(value); }
+    template<typename DiscoveryEntryPointArnT = Aws::String>
+    GetSignalMapResult& WithDiscoveryEntryPointArn(DiscoveryEntryPointArnT&& value) { SetDiscoveryEntryPointArn(std::forward<DiscoveryEntryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,95 +102,86 @@ namespace Model
      * Error message associated with a failed creation or failed update attempt of a
      * signal map.
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetSignalMapResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetSignalMapResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetSignalMapResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetEventBridgeRuleTemplateGroupIds() const{ return m_eventBridgeRuleTemplateGroupIds; }
-    inline void SetEventBridgeRuleTemplateGroupIds(const Aws::Vector<Aws::String>& value) { m_eventBridgeRuleTemplateGroupIds = value; }
-    inline void SetEventBridgeRuleTemplateGroupIds(Aws::Vector<Aws::String>&& value) { m_eventBridgeRuleTemplateGroupIds = std::move(value); }
-    inline GetSignalMapResult& WithEventBridgeRuleTemplateGroupIds(const Aws::Vector<Aws::String>& value) { SetEventBridgeRuleTemplateGroupIds(value); return *this;}
-    inline GetSignalMapResult& WithEventBridgeRuleTemplateGroupIds(Aws::Vector<Aws::String>&& value) { SetEventBridgeRuleTemplateGroupIds(std::move(value)); return *this;}
-    inline GetSignalMapResult& AddEventBridgeRuleTemplateGroupIds(const Aws::String& value) { m_eventBridgeRuleTemplateGroupIds.push_back(value); return *this; }
-    inline GetSignalMapResult& AddEventBridgeRuleTemplateGroupIds(Aws::String&& value) { m_eventBridgeRuleTemplateGroupIds.push_back(std::move(value)); return *this; }
-    inline GetSignalMapResult& AddEventBridgeRuleTemplateGroupIds(const char* value) { m_eventBridgeRuleTemplateGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetEventBridgeRuleTemplateGroupIds() const { return m_eventBridgeRuleTemplateGroupIds; }
+    template<typename EventBridgeRuleTemplateGroupIdsT = Aws::Vector<Aws::String>>
+    void SetEventBridgeRuleTemplateGroupIds(EventBridgeRuleTemplateGroupIdsT&& value) { m_eventBridgeRuleTemplateGroupIdsHasBeenSet = true; m_eventBridgeRuleTemplateGroupIds = std::forward<EventBridgeRuleTemplateGroupIdsT>(value); }
+    template<typename EventBridgeRuleTemplateGroupIdsT = Aws::Vector<Aws::String>>
+    GetSignalMapResult& WithEventBridgeRuleTemplateGroupIds(EventBridgeRuleTemplateGroupIdsT&& value) { SetEventBridgeRuleTemplateGroupIds(std::forward<EventBridgeRuleTemplateGroupIdsT>(value)); return *this;}
+    template<typename EventBridgeRuleTemplateGroupIdsT = Aws::String>
+    GetSignalMapResult& AddEventBridgeRuleTemplateGroupIds(EventBridgeRuleTemplateGroupIdsT&& value) { m_eventBridgeRuleTemplateGroupIdsHasBeenSet = true; m_eventBridgeRuleTemplateGroupIds.emplace_back(std::forward<EventBridgeRuleTemplateGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, MediaResource>& GetFailedMediaResourceMap() const{ return m_failedMediaResourceMap; }
-    inline void SetFailedMediaResourceMap(const Aws::Map<Aws::String, MediaResource>& value) { m_failedMediaResourceMap = value; }
-    inline void SetFailedMediaResourceMap(Aws::Map<Aws::String, MediaResource>&& value) { m_failedMediaResourceMap = std::move(value); }
-    inline GetSignalMapResult& WithFailedMediaResourceMap(const Aws::Map<Aws::String, MediaResource>& value) { SetFailedMediaResourceMap(value); return *this;}
-    inline GetSignalMapResult& WithFailedMediaResourceMap(Aws::Map<Aws::String, MediaResource>&& value) { SetFailedMediaResourceMap(std::move(value)); return *this;}
-    inline GetSignalMapResult& AddFailedMediaResourceMap(const Aws::String& key, const MediaResource& value) { m_failedMediaResourceMap.emplace(key, value); return *this; }
-    inline GetSignalMapResult& AddFailedMediaResourceMap(Aws::String&& key, const MediaResource& value) { m_failedMediaResourceMap.emplace(std::move(key), value); return *this; }
-    inline GetSignalMapResult& AddFailedMediaResourceMap(const Aws::String& key, MediaResource&& value) { m_failedMediaResourceMap.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddFailedMediaResourceMap(Aws::String&& key, MediaResource&& value) { m_failedMediaResourceMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSignalMapResult& AddFailedMediaResourceMap(const char* key, MediaResource&& value) { m_failedMediaResourceMap.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddFailedMediaResourceMap(const char* key, const MediaResource& value) { m_failedMediaResourceMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, MediaResource>& GetFailedMediaResourceMap() const { return m_failedMediaResourceMap; }
+    template<typename FailedMediaResourceMapT = Aws::Map<Aws::String, MediaResource>>
+    void SetFailedMediaResourceMap(FailedMediaResourceMapT&& value) { m_failedMediaResourceMapHasBeenSet = true; m_failedMediaResourceMap = std::forward<FailedMediaResourceMapT>(value); }
+    template<typename FailedMediaResourceMapT = Aws::Map<Aws::String, MediaResource>>
+    GetSignalMapResult& WithFailedMediaResourceMap(FailedMediaResourceMapT&& value) { SetFailedMediaResourceMap(std::forward<FailedMediaResourceMapT>(value)); return *this;}
+    template<typename FailedMediaResourceMapKeyT = Aws::String, typename FailedMediaResourceMapValueT = MediaResource>
+    GetSignalMapResult& AddFailedMediaResourceMap(FailedMediaResourceMapKeyT&& key, FailedMediaResourceMapValueT&& value) {
+      m_failedMediaResourceMapHasBeenSet = true; m_failedMediaResourceMap.emplace(std::forward<FailedMediaResourceMapKeyT>(key), std::forward<FailedMediaResourceMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * A signal map's id.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetSignalMapResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetSignalMapResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetSignalMapResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetLastDiscoveredAt() const{ return m_lastDiscoveredAt; }
-    inline void SetLastDiscoveredAt(const Aws::Utils::DateTime& value) { m_lastDiscoveredAt = value; }
-    inline void SetLastDiscoveredAt(Aws::Utils::DateTime&& value) { m_lastDiscoveredAt = std::move(value); }
-    inline GetSignalMapResult& WithLastDiscoveredAt(const Aws::Utils::DateTime& value) { SetLastDiscoveredAt(value); return *this;}
-    inline GetSignalMapResult& WithLastDiscoveredAt(Aws::Utils::DateTime&& value) { SetLastDiscoveredAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastDiscoveredAt() const { return m_lastDiscoveredAt; }
+    template<typename LastDiscoveredAtT = Aws::Utils::DateTime>
+    void SetLastDiscoveredAt(LastDiscoveredAtT&& value) { m_lastDiscoveredAtHasBeenSet = true; m_lastDiscoveredAt = std::forward<LastDiscoveredAtT>(value); }
+    template<typename LastDiscoveredAtT = Aws::Utils::DateTime>
+    GetSignalMapResult& WithLastDiscoveredAt(LastDiscoveredAtT&& value) { SetLastDiscoveredAt(std::forward<LastDiscoveredAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SuccessfulMonitorDeployment& GetLastSuccessfulMonitorDeployment() const{ return m_lastSuccessfulMonitorDeployment; }
-    inline void SetLastSuccessfulMonitorDeployment(const SuccessfulMonitorDeployment& value) { m_lastSuccessfulMonitorDeployment = value; }
-    inline void SetLastSuccessfulMonitorDeployment(SuccessfulMonitorDeployment&& value) { m_lastSuccessfulMonitorDeployment = std::move(value); }
-    inline GetSignalMapResult& WithLastSuccessfulMonitorDeployment(const SuccessfulMonitorDeployment& value) { SetLastSuccessfulMonitorDeployment(value); return *this;}
-    inline GetSignalMapResult& WithLastSuccessfulMonitorDeployment(SuccessfulMonitorDeployment&& value) { SetLastSuccessfulMonitorDeployment(std::move(value)); return *this;}
+    inline const SuccessfulMonitorDeployment& GetLastSuccessfulMonitorDeployment() const { return m_lastSuccessfulMonitorDeployment; }
+    template<typename LastSuccessfulMonitorDeploymentT = SuccessfulMonitorDeployment>
+    void SetLastSuccessfulMonitorDeployment(LastSuccessfulMonitorDeploymentT&& value) { m_lastSuccessfulMonitorDeploymentHasBeenSet = true; m_lastSuccessfulMonitorDeployment = std::forward<LastSuccessfulMonitorDeploymentT>(value); }
+    template<typename LastSuccessfulMonitorDeploymentT = SuccessfulMonitorDeployment>
+    GetSignalMapResult& WithLastSuccessfulMonitorDeployment(LastSuccessfulMonitorDeploymentT&& value) { SetLastSuccessfulMonitorDeployment(std::forward<LastSuccessfulMonitorDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, MediaResource>& GetMediaResourceMap() const{ return m_mediaResourceMap; }
-    inline void SetMediaResourceMap(const Aws::Map<Aws::String, MediaResource>& value) { m_mediaResourceMap = value; }
-    inline void SetMediaResourceMap(Aws::Map<Aws::String, MediaResource>&& value) { m_mediaResourceMap = std::move(value); }
-    inline GetSignalMapResult& WithMediaResourceMap(const Aws::Map<Aws::String, MediaResource>& value) { SetMediaResourceMap(value); return *this;}
-    inline GetSignalMapResult& WithMediaResourceMap(Aws::Map<Aws::String, MediaResource>&& value) { SetMediaResourceMap(std::move(value)); return *this;}
-    inline GetSignalMapResult& AddMediaResourceMap(const Aws::String& key, const MediaResource& value) { m_mediaResourceMap.emplace(key, value); return *this; }
-    inline GetSignalMapResult& AddMediaResourceMap(Aws::String&& key, const MediaResource& value) { m_mediaResourceMap.emplace(std::move(key), value); return *this; }
-    inline GetSignalMapResult& AddMediaResourceMap(const Aws::String& key, MediaResource&& value) { m_mediaResourceMap.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddMediaResourceMap(Aws::String&& key, MediaResource&& value) { m_mediaResourceMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSignalMapResult& AddMediaResourceMap(const char* key, MediaResource&& value) { m_mediaResourceMap.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddMediaResourceMap(const char* key, const MediaResource& value) { m_mediaResourceMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, MediaResource>& GetMediaResourceMap() const { return m_mediaResourceMap; }
+    template<typename MediaResourceMapT = Aws::Map<Aws::String, MediaResource>>
+    void SetMediaResourceMap(MediaResourceMapT&& value) { m_mediaResourceMapHasBeenSet = true; m_mediaResourceMap = std::forward<MediaResourceMapT>(value); }
+    template<typename MediaResourceMapT = Aws::Map<Aws::String, MediaResource>>
+    GetSignalMapResult& WithMediaResourceMap(MediaResourceMapT&& value) { SetMediaResourceMap(std::forward<MediaResourceMapT>(value)); return *this;}
+    template<typename MediaResourceMapKeyT = Aws::String, typename MediaResourceMapValueT = MediaResource>
+    GetSignalMapResult& AddMediaResourceMap(MediaResourceMapKeyT&& key, MediaResourceMapValueT&& value) {
+      m_mediaResourceMapHasBeenSet = true; m_mediaResourceMap.emplace(std::forward<MediaResourceMapKeyT>(key), std::forward<MediaResourceMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline GetSignalMapResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline GetSignalMapResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    GetSignalMapResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,18 +189,18 @@ namespace Model
      * If true, there are pending monitor changes for this signal map that can be
      * deployed.
      */
-    inline bool GetMonitorChangesPendingDeployment() const{ return m_monitorChangesPendingDeployment; }
-    inline void SetMonitorChangesPendingDeployment(bool value) { m_monitorChangesPendingDeployment = value; }
+    inline bool GetMonitorChangesPendingDeployment() const { return m_monitorChangesPendingDeployment; }
+    inline void SetMonitorChangesPendingDeployment(bool value) { m_monitorChangesPendingDeploymentHasBeenSet = true; m_monitorChangesPendingDeployment = value; }
     inline GetSignalMapResult& WithMonitorChangesPendingDeployment(bool value) { SetMonitorChangesPendingDeployment(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitorDeployment& GetMonitorDeployment() const{ return m_monitorDeployment; }
-    inline void SetMonitorDeployment(const MonitorDeployment& value) { m_monitorDeployment = value; }
-    inline void SetMonitorDeployment(MonitorDeployment&& value) { m_monitorDeployment = std::move(value); }
-    inline GetSignalMapResult& WithMonitorDeployment(const MonitorDeployment& value) { SetMonitorDeployment(value); return *this;}
-    inline GetSignalMapResult& WithMonitorDeployment(MonitorDeployment&& value) { SetMonitorDeployment(std::move(value)); return *this;}
+    inline const MonitorDeployment& GetMonitorDeployment() const { return m_monitorDeployment; }
+    template<typename MonitorDeploymentT = MonitorDeployment>
+    void SetMonitorDeployment(MonitorDeploymentT&& value) { m_monitorDeploymentHasBeenSet = true; m_monitorDeployment = std::forward<MonitorDeploymentT>(value); }
+    template<typename MonitorDeploymentT = MonitorDeployment>
+    GetSignalMapResult& WithMonitorDeployment(MonitorDeploymentT&& value) { SetMonitorDeployment(std::forward<MonitorDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,89 +208,99 @@ namespace Model
      * A resource's name. Names must be unique within the scope of a resource type in a
      * specific region.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetSignalMapResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetSignalMapResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetSignalMapResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SignalMapStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SignalMapStatus& value) { m_status = value; }
-    inline void SetStatus(SignalMapStatus&& value) { m_status = std::move(value); }
-    inline GetSignalMapResult& WithStatus(const SignalMapStatus& value) { SetStatus(value); return *this;}
-    inline GetSignalMapResult& WithStatus(SignalMapStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SignalMapStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SignalMapStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSignalMapResult& WithStatus(SignalMapStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetSignalMapResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetSignalMapResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetSignalMapResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetSignalMapResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSignalMapResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSignalMapResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSignalMapResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSignalMapResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetSignalMapResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetSignalMapResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSignalMapResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSignalMapResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSignalMapResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSignalMapResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cloudWatchAlarmTemplateGroupIds;
+    bool m_cloudWatchAlarmTemplateGroupIdsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_discoveryEntryPointArn;
+    bool m_discoveryEntryPointArnHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventBridgeRuleTemplateGroupIds;
+    bool m_eventBridgeRuleTemplateGroupIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, MediaResource> m_failedMediaResourceMap;
+    bool m_failedMediaResourceMapHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDiscoveredAt;
+    Aws::Utils::DateTime m_lastDiscoveredAt{};
+    bool m_lastDiscoveredAtHasBeenSet = false;
 
     SuccessfulMonitorDeployment m_lastSuccessfulMonitorDeployment;
+    bool m_lastSuccessfulMonitorDeploymentHasBeenSet = false;
 
     Aws::Map<Aws::String, MediaResource> m_mediaResourceMap;
+    bool m_mediaResourceMapHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
-    bool m_monitorChangesPendingDeployment;
+    bool m_monitorChangesPendingDeployment{false};
+    bool m_monitorChangesPendingDeploymentHasBeenSet = false;
 
     MonitorDeployment m_monitorDeployment;
+    bool m_monitorDeploymentHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    SignalMapStatus m_status;
+    SignalMapStatus m_status{SignalMapStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

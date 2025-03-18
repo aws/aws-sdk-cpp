@@ -18,23 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkResource::NetworkResource() : 
-    m_registeredGatewayArnHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_definitionTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 NetworkResource::NetworkResource(JsonView jsonValue)
-  : NetworkResource()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegisteredGatewayArn"))
   {
     m_registeredGatewayArn = jsonValue.GetString("RegisteredGatewayArn");
-
     m_registeredGatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetString("Definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefinitionTimestamp"))
   {
     m_definitionTimestamp = jsonValue.GetDouble("DefinitionTimestamp");
-
     m_definitionTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -113,7 +79,6 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
@@ -123,7 +88,6 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartAssessmentRunRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API StartAssessmentRunRequest();
+    AWS_INSPECTOR_API StartAssessmentRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ARN of the assessment template of the assessment run that you want to
      * start.</p>
      */
-    inline const Aws::String& GetAssessmentTemplateArn() const{ return m_assessmentTemplateArn; }
+    inline const Aws::String& GetAssessmentTemplateArn() const { return m_assessmentTemplateArn; }
     inline bool AssessmentTemplateArnHasBeenSet() const { return m_assessmentTemplateArnHasBeenSet; }
-    inline void SetAssessmentTemplateArn(const Aws::String& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = value; }
-    inline void SetAssessmentTemplateArn(Aws::String&& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = std::move(value); }
-    inline void SetAssessmentTemplateArn(const char* value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn.assign(value); }
-    inline StartAssessmentRunRequest& WithAssessmentTemplateArn(const Aws::String& value) { SetAssessmentTemplateArn(value); return *this;}
-    inline StartAssessmentRunRequest& WithAssessmentTemplateArn(Aws::String&& value) { SetAssessmentTemplateArn(std::move(value)); return *this;}
-    inline StartAssessmentRunRequest& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
+    template<typename AssessmentTemplateArnT = Aws::String>
+    void SetAssessmentTemplateArn(AssessmentTemplateArnT&& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = std::forward<AssessmentTemplateArnT>(value); }
+    template<typename AssessmentTemplateArnT = Aws::String>
+    StartAssessmentRunRequest& WithAssessmentTemplateArn(AssessmentTemplateArnT&& value) { SetAssessmentTemplateArn(std::forward<AssessmentTemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>You can specify the name for the assessment run. The name must be unique for
      * the assessment template whose ARN is used to start the assessment run.</p>
      */
-    inline const Aws::String& GetAssessmentRunName() const{ return m_assessmentRunName; }
+    inline const Aws::String& GetAssessmentRunName() const { return m_assessmentRunName; }
     inline bool AssessmentRunNameHasBeenSet() const { return m_assessmentRunNameHasBeenSet; }
-    inline void SetAssessmentRunName(const Aws::String& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = value; }
-    inline void SetAssessmentRunName(Aws::String&& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = std::move(value); }
-    inline void SetAssessmentRunName(const char* value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName.assign(value); }
-    inline StartAssessmentRunRequest& WithAssessmentRunName(const Aws::String& value) { SetAssessmentRunName(value); return *this;}
-    inline StartAssessmentRunRequest& WithAssessmentRunName(Aws::String&& value) { SetAssessmentRunName(std::move(value)); return *this;}
-    inline StartAssessmentRunRequest& WithAssessmentRunName(const char* value) { SetAssessmentRunName(value); return *this;}
+    template<typename AssessmentRunNameT = Aws::String>
+    void SetAssessmentRunName(AssessmentRunNameT&& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = std::forward<AssessmentRunNameT>(value); }
+    template<typename AssessmentRunNameT = Aws::String>
+    StartAssessmentRunRequest& WithAssessmentRunName(AssessmentRunNameT&& value) { SetAssessmentRunName(std::forward<AssessmentRunNameT>(value)); return *this;}
     ///@}
   private:
 

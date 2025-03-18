@@ -18,19 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-RegistryAlias::RegistryAlias() : 
-    m_nameHasBeenSet(false),
-    m_status(RegistryAliasStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_primaryRegistryAlias(false),
-    m_primaryRegistryAliasHasBeenSet(false),
-    m_defaultRegistryAlias(false),
-    m_defaultRegistryAliasHasBeenSet(false)
-{
-}
-
 RegistryAlias::RegistryAlias(JsonView jsonValue)
-  : RegistryAlias()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ RegistryAlias& RegistryAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RegistryAliasStatusMapper::GetRegistryAliasStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("primaryRegistryAlias"))
   {
     m_primaryRegistryAlias = jsonValue.GetBool("primaryRegistryAlias");
-
     m_primaryRegistryAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultRegistryAlias"))
   {
     m_defaultRegistryAlias = jsonValue.GetBool("defaultRegistryAlias");
-
     m_defaultRegistryAliasHasBeenSet = true;
   }
-
   return *this;
 }
 

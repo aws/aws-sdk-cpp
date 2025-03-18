@@ -23,7 +23,7 @@ namespace Model
   class UpdateAssistantAIAgentRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API UpdateAssistantAIAgentRequest();
+    AWS_QCONNECT_API UpdateAssistantAIAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
      * <p>The type of the AI Agent being updated for use by default on the Amazon Q in
      * Connect Assistant.</p>
      */
-    inline const AIAgentType& GetAiAgentType() const{ return m_aiAgentType; }
+    inline AIAgentType GetAiAgentType() const { return m_aiAgentType; }
     inline bool AiAgentTypeHasBeenSet() const { return m_aiAgentTypeHasBeenSet; }
-    inline void SetAiAgentType(const AIAgentType& value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
-    inline void SetAiAgentType(AIAgentType&& value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = std::move(value); }
-    inline UpdateAssistantAIAgentRequest& WithAiAgentType(const AIAgentType& value) { SetAiAgentType(value); return *this;}
-    inline UpdateAssistantAIAgentRequest& WithAiAgentType(AIAgentType&& value) { SetAiAgentType(std::move(value)); return *this;}
+    inline void SetAiAgentType(AIAgentType value) { m_aiAgentTypeHasBeenSet = true; m_aiAgentType = value; }
+    inline UpdateAssistantAIAgentRequest& WithAiAgentType(AIAgentType value) { SetAiAgentType(value); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline UpdateAssistantAIAgentRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline UpdateAssistantAIAgentRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline UpdateAssistantAIAgentRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    UpdateAssistantAIAgentRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,16 +63,16 @@ namespace Model
      * <p>The configuration of the AI Agent being updated for use by default on the
      * Amazon Q in Connect Assistant.</p>
      */
-    inline const AIAgentConfigurationData& GetConfiguration() const{ return m_configuration; }
+    inline const AIAgentConfigurationData& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AIAgentConfigurationData& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AIAgentConfigurationData&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateAssistantAIAgentRequest& WithConfiguration(const AIAgentConfigurationData& value) { SetConfiguration(value); return *this;}
-    inline UpdateAssistantAIAgentRequest& WithConfiguration(AIAgentConfigurationData&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AIAgentConfigurationData>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AIAgentConfigurationData>
+    UpdateAssistantAIAgentRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    AIAgentType m_aiAgentType;
+    AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
     bool m_aiAgentTypeHasBeenSet = false;
 
     Aws::String m_assistantId;

@@ -18,16 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials() : 
-    m_basicAuthHasBeenSet(false),
-    m_saslScram512AuthHasBeenSet(false),
-    m_saslScram256AuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false)
-{
-}
-
 SelfManagedKafkaAccessConfigurationCredentials::SelfManagedKafkaAccessConfigurationCredentials(JsonView jsonValue)
-  : SelfManagedKafkaAccessConfigurationCredentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SelfManagedKafkaAccessConfigurationCredentials& SelfManagedKafkaAccessConfigurat
   if(jsonValue.ValueExists("BasicAuth"))
   {
     m_basicAuth = jsonValue.GetString("BasicAuth");
-
     m_basicAuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SaslScram512Auth"))
   {
     m_saslScram512Auth = jsonValue.GetString("SaslScram512Auth");
-
     m_saslScram512AuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SaslScram256Auth"))
   {
     m_saslScram256Auth = jsonValue.GetString("SaslScram256Auth");
-
     m_saslScram256AuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientCertificateTlsAuth"))
   {
     m_clientCertificateTlsAuth = jsonValue.GetString("ClientCertificateTlsAuth");
-
     m_clientCertificateTlsAuthHasBeenSet = true;
   }
-
   return *this;
 }
 

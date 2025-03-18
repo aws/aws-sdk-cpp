@@ -21,7 +21,7 @@ namespace Model
   class ListDashboardsRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API ListDashboardsRequest();
+    AWS_CLOUDWATCH_API ListDashboardsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * the specified string are listed. The maximum length is 255, and valid characters
      * are A-Z, a-z, 0-9, ".", "-", and "_". </p>
      */
-    inline const Aws::String& GetDashboardNamePrefix() const{ return m_dashboardNamePrefix; }
+    inline const Aws::String& GetDashboardNamePrefix() const { return m_dashboardNamePrefix; }
     inline bool DashboardNamePrefixHasBeenSet() const { return m_dashboardNamePrefixHasBeenSet; }
-    inline void SetDashboardNamePrefix(const Aws::String& value) { m_dashboardNamePrefixHasBeenSet = true; m_dashboardNamePrefix = value; }
-    inline void SetDashboardNamePrefix(Aws::String&& value) { m_dashboardNamePrefixHasBeenSet = true; m_dashboardNamePrefix = std::move(value); }
-    inline void SetDashboardNamePrefix(const char* value) { m_dashboardNamePrefixHasBeenSet = true; m_dashboardNamePrefix.assign(value); }
-    inline ListDashboardsRequest& WithDashboardNamePrefix(const Aws::String& value) { SetDashboardNamePrefix(value); return *this;}
-    inline ListDashboardsRequest& WithDashboardNamePrefix(Aws::String&& value) { SetDashboardNamePrefix(std::move(value)); return *this;}
-    inline ListDashboardsRequest& WithDashboardNamePrefix(const char* value) { SetDashboardNamePrefix(value); return *this;}
+    template<typename DashboardNamePrefixT = Aws::String>
+    void SetDashboardNamePrefix(DashboardNamePrefixT&& value) { m_dashboardNamePrefixHasBeenSet = true; m_dashboardNamePrefix = std::forward<DashboardNamePrefixT>(value); }
+    template<typename DashboardNamePrefixT = Aws::String>
+    ListDashboardsRequest& WithDashboardNamePrefix(DashboardNamePrefixT&& value) { SetDashboardNamePrefix(std::forward<DashboardNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDashboardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDashboardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDashboardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDashboardsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

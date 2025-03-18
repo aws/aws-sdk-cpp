@@ -24,7 +24,7 @@ namespace Model
   class PutMetricDataRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API PutMetricDataRequest();
+    AWS_CLOUDWATCH_API PutMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * avoid conflicts with Amazon Web Services service namespaces, you should not
      * specify a namespace that begins with <code>AWS/</code> </p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PutMetricDataRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PutMetricDataRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PutMetricDataRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,14 @@ namespace Model
      * call.</p> <p>The limit of metrics allowed, 1000, is the sum of both
      * <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
      */
-    inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
+    inline const Aws::Vector<MetricDatum>& GetMetricData() const { return m_metricData; }
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
-    inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
-    inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
-    inline PutMetricDataRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
-    inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
-    inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
-    inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
+    template<typename MetricDataT = Aws::Vector<MetricDatum>>
+    void SetMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData = std::forward<MetricDataT>(value); }
+    template<typename MetricDataT = Aws::Vector<MetricDatum>>
+    PutMetricDataRequest& WithMetricData(MetricDataT&& value) { SetMetricData(std::forward<MetricDataT>(value)); return *this;}
+    template<typename MetricDataT = MetricDatum>
+    PutMetricDataRequest& AddMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData.emplace_back(std::forward<MetricDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,14 +84,14 @@ namespace Model
      * allowed, 1000, is the sum of both <code>EntityMetricData</code> and
      * <code>MetricData</code> metrics.</p>
      */
-    inline const Aws::Vector<EntityMetricData>& GetEntityMetricData() const{ return m_entityMetricData; }
+    inline const Aws::Vector<EntityMetricData>& GetEntityMetricData() const { return m_entityMetricData; }
     inline bool EntityMetricDataHasBeenSet() const { return m_entityMetricDataHasBeenSet; }
-    inline void SetEntityMetricData(const Aws::Vector<EntityMetricData>& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData = value; }
-    inline void SetEntityMetricData(Aws::Vector<EntityMetricData>&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData = std::move(value); }
-    inline PutMetricDataRequest& WithEntityMetricData(const Aws::Vector<EntityMetricData>& value) { SetEntityMetricData(value); return *this;}
-    inline PutMetricDataRequest& WithEntityMetricData(Aws::Vector<EntityMetricData>&& value) { SetEntityMetricData(std::move(value)); return *this;}
-    inline PutMetricDataRequest& AddEntityMetricData(const EntityMetricData& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData.push_back(value); return *this; }
-    inline PutMetricDataRequest& AddEntityMetricData(EntityMetricData&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData.push_back(std::move(value)); return *this; }
+    template<typename EntityMetricDataT = Aws::Vector<EntityMetricData>>
+    void SetEntityMetricData(EntityMetricDataT&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData = std::forward<EntityMetricDataT>(value); }
+    template<typename EntityMetricDataT = Aws::Vector<EntityMetricData>>
+    PutMetricDataRequest& WithEntityMetricData(EntityMetricDataT&& value) { SetEntityMetricData(std::forward<EntityMetricDataT>(value)); return *this;}
+    template<typename EntityMetricDataT = EntityMetricData>
+    PutMetricDataRequest& AddEntityMetricData(EntityMetricDataT&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData.emplace_back(std::forward<EntityMetricDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,7 +123,7 @@ namespace Model
      * Guide</i>.</p> </li> </ul> <p>This parameter is <i>required</i> when
      * <code>EntityMetricData</code> is included.</p>
      */
-    inline bool GetStrictEntityValidation() const{ return m_strictEntityValidation; }
+    inline bool GetStrictEntityValidation() const { return m_strictEntityValidation; }
     inline bool StrictEntityValidationHasBeenSet() const { return m_strictEntityValidationHasBeenSet; }
     inline void SetStrictEntityValidation(bool value) { m_strictEntityValidationHasBeenSet = true; m_strictEntityValidation = value; }
     inline PutMetricDataRequest& WithStrictEntityValidation(bool value) { SetStrictEntityValidation(value); return *this;}
@@ -141,7 +139,7 @@ namespace Model
     Aws::Vector<EntityMetricData> m_entityMetricData;
     bool m_entityMetricDataHasBeenSet = false;
 
-    bool m_strictEntityValidation;
+    bool m_strictEntityValidation{false};
     bool m_strictEntityValidationHasBeenSet = false;
   };
 

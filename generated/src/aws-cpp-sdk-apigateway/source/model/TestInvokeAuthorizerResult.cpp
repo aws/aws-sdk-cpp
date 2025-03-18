@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestInvokeAuthorizerResult::TestInvokeAuthorizerResult() : 
-    m_clientStatus(0),
-    m_latency(0)
-{
-}
-
 TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : TestInvokeAuthorizerResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("clientStatus"))
   {
     m_clientStatus = jsonValue.GetInteger("clientStatus");
-
+    m_clientStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("log"))
   {
     m_log = jsonValue.GetString("log");
-
+    m_logHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latency"))
   {
     m_latency = jsonValue.GetInt64("latency");
-
+    m_latencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
+    m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetString("policy");
-
+    m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorization"))
   {
     Aws::Map<Aws::String, JsonView> authorizationJsonMap = jsonValue.GetObject("authorization").GetAllObjects();
@@ -76,8 +64,8 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::Am
       }
       m_authorization[authorizationItem.first] = std::move(listOfStringList);
     }
+    m_authorizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("claims"))
   {
     Aws::Map<Aws::String, JsonView> claimsJsonMap = jsonValue.GetObject("claims").GetAllObjects();
@@ -85,14 +73,15 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const Aws::Am
     {
       m_claims[claimsItem.first] = claimsItem.second.AsString();
     }
+    m_claimsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

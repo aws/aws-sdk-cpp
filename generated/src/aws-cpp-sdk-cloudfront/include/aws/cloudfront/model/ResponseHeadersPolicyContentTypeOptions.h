@@ -33,7 +33,7 @@ namespace Model
   class ResponseHeadersPolicyContentTypeOptions
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
      * <code>X-Content-Type-Options</code> HTTP response header received from the
      * origin with the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyContentTypeOptions& WithOverride(bool value) { SetOverride(value); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
   };
 

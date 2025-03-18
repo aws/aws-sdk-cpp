@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTransformerRequest::GetTransformerRequest() : 
-    m_transformerIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportModelVersionResult::ImportModelVersionResult() : 
-    m_modelVersion(0),
-    m_status(ModelVersionStatus::NOT_SET)
-{
-}
-
 ImportModelVersionResult::ImportModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ImportModelVersionResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ ImportModelVersionResult& ImportModelVersionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
+    m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
+    m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersionArn"))
   {
     m_modelVersionArn = jsonValue.GetString("ModelVersionArn");
-
+    m_modelVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetInt64("ModelVersion");
-
+    m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelVersionStatusMapper::GetModelVersionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

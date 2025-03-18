@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentOutputAdditionalFileFormat::DocumentOutputAdditionalFileFormat() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DocumentOutputAdditionalFileFormat::DocumentOutputAdditionalFileFormat(JsonView jsonValue)
-  : DocumentOutputAdditionalFileFormat()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DocumentOutputAdditionalFileFormat& DocumentOutputAdditionalFileFormat::operator
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

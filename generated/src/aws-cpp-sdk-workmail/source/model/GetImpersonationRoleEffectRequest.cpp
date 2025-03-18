@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetImpersonationRoleEffectRequest::GetImpersonationRoleEffectRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_impersonationRoleIdHasBeenSet(false),
-    m_targetUserHasBeenSet(false)
-{
-}
-
 Aws::String GetImpersonationRoleEffectRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class IamIdentity
   {
   public:
-    AWS_SAGEMAKER_API IamIdentity();
+    AWS_SAGEMAKER_API IamIdentity() = default;
     AWS_SAGEMAKER_API IamIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API IamIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline IamIdentity& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline IamIdentity& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline IamIdentity& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    IamIdentity& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the principal that assumes the IAM identity.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline IamIdentity& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline IamIdentity& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline IamIdentity& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    IamIdentity& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The person or application which assumes the IAM identity.</p>
      */
-    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
+    inline const Aws::String& GetSourceIdentity() const { return m_sourceIdentity; }
     inline bool SourceIdentityHasBeenSet() const { return m_sourceIdentityHasBeenSet; }
-    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = value; }
-    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::move(value); }
-    inline void SetSourceIdentity(const char* value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity.assign(value); }
-    inline IamIdentity& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
-    inline IamIdentity& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
-    inline IamIdentity& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
+    template<typename SourceIdentityT = Aws::String>
+    void SetSourceIdentity(SourceIdentityT&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::forward<SourceIdentityT>(value); }
+    template<typename SourceIdentityT = Aws::String>
+    IamIdentity& WithSourceIdentity(SourceIdentityT&& value) { SetSourceIdentity(std::forward<SourceIdentityT>(value)); return *this;}
     ///@}
   private:
 

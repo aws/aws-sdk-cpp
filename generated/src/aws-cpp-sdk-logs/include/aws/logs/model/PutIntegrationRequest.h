@@ -23,7 +23,7 @@ namespace Model
   class PutIntegrationRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutIntegrationRequest();
+    AWS_CLOUDWATCHLOGS_API PutIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>A name for the integration.</p>
      */
-    inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
+    inline const Aws::String& GetIntegrationName() const { return m_integrationName; }
     inline bool IntegrationNameHasBeenSet() const { return m_integrationNameHasBeenSet; }
-    inline void SetIntegrationName(const Aws::String& value) { m_integrationNameHasBeenSet = true; m_integrationName = value; }
-    inline void SetIntegrationName(Aws::String&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::move(value); }
-    inline void SetIntegrationName(const char* value) { m_integrationNameHasBeenSet = true; m_integrationName.assign(value); }
-    inline PutIntegrationRequest& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-    inline PutIntegrationRequest& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-    inline PutIntegrationRequest& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    template<typename IntegrationNameT = Aws::String>
+    void SetIntegrationName(IntegrationNameT&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::forward<IntegrationNameT>(value); }
+    template<typename IntegrationNameT = Aws::String>
+    PutIntegrationRequest& WithIntegrationName(IntegrationNameT&& value) { SetIntegrationName(std::forward<IntegrationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>A structure that contains configuration information for the integration that
      * you are creating.</p>
      */
-    inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
+    inline const ResourceConfig& GetResourceConfig() const { return m_resourceConfig; }
     inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
-    inline void SetResourceConfig(const ResourceConfig& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
-    inline void SetResourceConfig(ResourceConfig&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
-    inline PutIntegrationRequest& WithResourceConfig(const ResourceConfig& value) { SetResourceConfig(value); return *this;}
-    inline PutIntegrationRequest& WithResourceConfig(ResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
+    template<typename ResourceConfigT = ResourceConfig>
+    void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
+    template<typename ResourceConfigT = ResourceConfig>
+    PutIntegrationRequest& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <p>The type of integration. Currently, the only supported type is
      * <code>OPENSEARCH</code>.</p>
      */
-    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline IntegrationType GetIntegrationType() const { return m_integrationType; }
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
-    inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
-    inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
-    inline PutIntegrationRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline PutIntegrationRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline void SetIntegrationType(IntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline PutIntegrationRequest& WithIntegrationType(IntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +79,7 @@ namespace Model
     ResourceConfig m_resourceConfig;
     bool m_resourceConfigHasBeenSet = false;
 
-    IntegrationType m_integrationType;
+    IntegrationType m_integrationType{IntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
   };
 

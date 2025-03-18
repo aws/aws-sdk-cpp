@@ -33,7 +33,7 @@ namespace Model
   class ClassificationExportConfiguration
   {
   public:
-    AWS_MACIE2_API ClassificationExportConfiguration();
+    AWS_MACIE2_API ClassificationExportConfiguration() = default;
     AWS_MACIE2_API ClassificationExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ClassificationExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The S3 bucket to store data classification results in, and the encryption
      * settings to use when storing results in that bucket.</p>
      */
-    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline ClassificationExportConfiguration& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-    inline ClassificationExportConfiguration& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3Destination>
+    ClassificationExportConfiguration& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

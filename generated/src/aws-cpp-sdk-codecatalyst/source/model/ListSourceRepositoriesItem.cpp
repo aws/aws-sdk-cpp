@@ -18,17 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-ListSourceRepositoriesItem::ListSourceRepositoriesItem() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 ListSourceRepositoriesItem::ListSourceRepositoriesItem(JsonView jsonValue)
-  : ListSourceRepositoriesItem()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ListSourceRepositoriesItem& ListSourceRepositoriesItem::operator =(JsonView json
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

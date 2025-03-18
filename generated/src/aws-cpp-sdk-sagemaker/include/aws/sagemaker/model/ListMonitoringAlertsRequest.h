@@ -21,7 +21,7 @@ namespace Model
   class ListMonitoringAlertsRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListMonitoringAlertsRequest();
+    AWS_SAGEMAKER_API ListMonitoringAlertsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of a monitoring schedule.</p>
      */
-    inline const Aws::String& GetMonitoringScheduleName() const{ return m_monitoringScheduleName; }
+    inline const Aws::String& GetMonitoringScheduleName() const { return m_monitoringScheduleName; }
     inline bool MonitoringScheduleNameHasBeenSet() const { return m_monitoringScheduleNameHasBeenSet; }
-    inline void SetMonitoringScheduleName(const Aws::String& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = value; }
-    inline void SetMonitoringScheduleName(Aws::String&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::move(value); }
-    inline void SetMonitoringScheduleName(const char* value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName.assign(value); }
-    inline ListMonitoringAlertsRequest& WithMonitoringScheduleName(const Aws::String& value) { SetMonitoringScheduleName(value); return *this;}
-    inline ListMonitoringAlertsRequest& WithMonitoringScheduleName(Aws::String&& value) { SetMonitoringScheduleName(std::move(value)); return *this;}
-    inline ListMonitoringAlertsRequest& WithMonitoringScheduleName(const char* value) { SetMonitoringScheduleName(value); return *this;}
+    template<typename MonitoringScheduleNameT = Aws::String>
+    void SetMonitoringScheduleName(MonitoringScheduleNameT&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::forward<MonitoringScheduleNameT>(value); }
+    template<typename MonitoringScheduleNameT = Aws::String>
+    ListMonitoringAlertsRequest& WithMonitoringScheduleName(MonitoringScheduleNameT&& value) { SetMonitoringScheduleName(std::forward<MonitoringScheduleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,21 +52,19 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of alerts in the history, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMonitoringAlertsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMonitoringAlertsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMonitoringAlertsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMonitoringAlertsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to display. The default is 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMonitoringAlertsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

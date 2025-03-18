@@ -18,16 +18,7 @@ namespace MQ
 namespace Model
 {
 
-PendingLogs::PendingLogs() : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false)
-{
-}
-
 PendingLogs::PendingLogs(JsonView jsonValue)
-  : PendingLogs()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PendingLogs& PendingLogs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audit"))
   {
     m_audit = jsonValue.GetBool("audit");
-
     m_auditHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("general"))
   {
     m_general = jsonValue.GetBool("general");
-
     m_generalHasBeenSet = true;
   }
-
   return *this;
 }
 

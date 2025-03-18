@@ -12,18 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendProjectSessionActionRequest::SendProjectSessionActionRequest() : 
-    m_preview(false),
-    m_previewHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recipeStepHasBeenSet(false),
-    m_stepIndex(0),
-    m_stepIndexHasBeenSet(false),
-    m_clientSessionIdHasBeenSet(false),
-    m_viewFrameHasBeenSet(false)
-{
-}
-
 Aws::String SendProjectSessionActionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,35 +34,35 @@ namespace Model
   class CreateInputSecurityGroupResult
   {
   public:
-    AWS_MEDIALIVE_API CreateInputSecurityGroupResult();
+    AWS_MEDIALIVE_API CreateInputSecurityGroupResult() = default;
     AWS_MEDIALIVE_API CreateInputSecurityGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API CreateInputSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const InputSecurityGroup& GetSecurityGroup() const{ return m_securityGroup; }
-    inline void SetSecurityGroup(const InputSecurityGroup& value) { m_securityGroup = value; }
-    inline void SetSecurityGroup(InputSecurityGroup&& value) { m_securityGroup = std::move(value); }
-    inline CreateInputSecurityGroupResult& WithSecurityGroup(const InputSecurityGroup& value) { SetSecurityGroup(value); return *this;}
-    inline CreateInputSecurityGroupResult& WithSecurityGroup(InputSecurityGroup&& value) { SetSecurityGroup(std::move(value)); return *this;}
+    inline const InputSecurityGroup& GetSecurityGroup() const { return m_securityGroup; }
+    template<typename SecurityGroupT = InputSecurityGroup>
+    void SetSecurityGroup(SecurityGroupT&& value) { m_securityGroupHasBeenSet = true; m_securityGroup = std::forward<SecurityGroupT>(value); }
+    template<typename SecurityGroupT = InputSecurityGroup>
+    CreateInputSecurityGroupResult& WithSecurityGroup(SecurityGroupT&& value) { SetSecurityGroup(std::forward<SecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateInputSecurityGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateInputSecurityGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateInputSecurityGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateInputSecurityGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InputSecurityGroup m_securityGroup;
+    bool m_securityGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

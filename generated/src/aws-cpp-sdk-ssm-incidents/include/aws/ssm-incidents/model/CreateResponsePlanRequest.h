@@ -28,7 +28,7 @@ namespace Model
   class CreateResponsePlanRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API CreateResponsePlanRequest();
+    AWS_SSMINCIDENTS_API CreateResponsePlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,26 @@ namespace Model
      * <p>The actions that the response plan starts at the beginning of an
      * incident.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline CreateResponsePlanRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline CreateResponsePlanRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline CreateResponsePlanRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    CreateResponsePlanRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    CreateResponsePlanRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
-    inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
+    inline const ChatChannel& GetChatChannel() const { return m_chatChannel; }
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
-    inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
-    inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
-    inline CreateResponsePlanRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
-    inline CreateResponsePlanRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
+    template<typename ChatChannelT = ChatChannel>
+    void SetChatChannel(ChatChannelT&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::forward<ChatChannelT>(value); }
+    template<typename ChatChannelT = ChatChannel>
+    CreateResponsePlanRequest& WithChatChannel(ChatChannelT&& value) { SetChatChannel(std::forward<ChatChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +71,24 @@ namespace Model
      * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateResponsePlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateResponsePlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateResponsePlanRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The long format of the response plan name. This field can contain spaces.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateResponsePlanRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateResponsePlanRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateResponsePlanRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,74 +96,68 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
      * response plan engages during an incident.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
+    inline const Aws::Vector<Aws::String>& GetEngagements() const { return m_engagements; }
     inline bool EngagementsHasBeenSet() const { return m_engagementsHasBeenSet; }
-    inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagementsHasBeenSet = true; m_engagements = value; }
-    inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagementsHasBeenSet = true; m_engagements = std::move(value); }
-    inline CreateResponsePlanRequest& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
-    inline CreateResponsePlanRequest& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& AddEngagements(const Aws::String& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
-    inline CreateResponsePlanRequest& AddEngagements(Aws::String&& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(std::move(value)); return *this; }
-    inline CreateResponsePlanRequest& AddEngagements(const char* value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
+    template<typename EngagementsT = Aws::Vector<Aws::String>>
+    void SetEngagements(EngagementsT&& value) { m_engagementsHasBeenSet = true; m_engagements = std::forward<EngagementsT>(value); }
+    template<typename EngagementsT = Aws::Vector<Aws::String>>
+    CreateResponsePlanRequest& WithEngagements(EngagementsT&& value) { SetEngagements(std::forward<EngagementsT>(value)); return *this;}
+    template<typename EngagementsT = Aws::String>
+    CreateResponsePlanRequest& AddEngagements(EngagementsT&& value) { m_engagementsHasBeenSet = true; m_engagements.emplace_back(std::forward<EngagementsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Details used to create an incident when using this response plan.</p>
      */
-    inline const IncidentTemplate& GetIncidentTemplate() const{ return m_incidentTemplate; }
+    inline const IncidentTemplate& GetIncidentTemplate() const { return m_incidentTemplate; }
     inline bool IncidentTemplateHasBeenSet() const { return m_incidentTemplateHasBeenSet; }
-    inline void SetIncidentTemplate(const IncidentTemplate& value) { m_incidentTemplateHasBeenSet = true; m_incidentTemplate = value; }
-    inline void SetIncidentTemplate(IncidentTemplate&& value) { m_incidentTemplateHasBeenSet = true; m_incidentTemplate = std::move(value); }
-    inline CreateResponsePlanRequest& WithIncidentTemplate(const IncidentTemplate& value) { SetIncidentTemplate(value); return *this;}
-    inline CreateResponsePlanRequest& WithIncidentTemplate(IncidentTemplate&& value) { SetIncidentTemplate(std::move(value)); return *this;}
+    template<typename IncidentTemplateT = IncidentTemplate>
+    void SetIncidentTemplate(IncidentTemplateT&& value) { m_incidentTemplateHasBeenSet = true; m_incidentTemplate = std::forward<IncidentTemplateT>(value); }
+    template<typename IncidentTemplateT = IncidentTemplate>
+    CreateResponsePlanRequest& WithIncidentTemplate(IncidentTemplateT&& value) { SetIncidentTemplate(std::forward<IncidentTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about third-party services integrated into the response plan.</p>
      */
-    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+    inline const Aws::Vector<Integration>& GetIntegrations() const { return m_integrations; }
     inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
-    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrationsHasBeenSet = true; m_integrations = value; }
-    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrationsHasBeenSet = true; m_integrations = std::move(value); }
-    inline CreateResponsePlanRequest& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
-    inline CreateResponsePlanRequest& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& AddIntegrations(const Integration& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(value); return *this; }
-    inline CreateResponsePlanRequest& AddIntegrations(Integration&& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(std::move(value)); return *this; }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    void SetIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations = std::forward<IntegrationsT>(value); }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    CreateResponsePlanRequest& WithIntegrations(IntegrationsT&& value) { SetIntegrations(std::forward<IntegrationsT>(value)); return *this;}
+    template<typename IntegrationsT = Integration>
+    CreateResponsePlanRequest& AddIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations.emplace_back(std::forward<IntegrationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The short format name of the response plan. Can't include spaces.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateResponsePlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateResponsePlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateResponsePlanRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of tags that you are adding to the response plan.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateResponsePlanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateResponsePlanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateResponsePlanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateResponsePlanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateResponsePlanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateResponsePlanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateResponsePlanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateResponsePlanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateResponsePlanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateResponsePlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateResponsePlanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

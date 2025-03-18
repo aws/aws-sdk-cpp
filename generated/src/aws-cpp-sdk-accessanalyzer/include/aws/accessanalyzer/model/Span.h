@@ -32,7 +32,7 @@ namespace Model
   class Span
   {
   public:
-    AWS_ACCESSANALYZER_API Span();
+    AWS_ACCESSANALYZER_API Span() = default;
     AWS_ACCESSANALYZER_API Span(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Span& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The start position of the span (inclusive).</p>
      */
-    inline const Position& GetStart() const{ return m_start; }
+    inline const Position& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Position& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Position&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline Span& WithStart(const Position& value) { SetStart(value); return *this;}
-    inline Span& WithStart(Position&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = Position>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Position>
+    Span& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end position of the span (exclusive).</p>
      */
-    inline const Position& GetEnd() const{ return m_end; }
+    inline const Position& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
-    inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
+    template<typename EndT = Position>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Position>
+    Span& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
   private:
 

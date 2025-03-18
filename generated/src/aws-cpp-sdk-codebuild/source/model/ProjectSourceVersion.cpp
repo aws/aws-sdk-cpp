@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectSourceVersion::ProjectSourceVersion() : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 ProjectSourceVersion::ProjectSourceVersion(JsonView jsonValue)
-  : ProjectSourceVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProjectSourceVersion& ProjectSourceVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceIdentifier"))
   {
     m_sourceIdentifier = jsonValue.GetString("sourceIdentifier");
-
     m_sourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

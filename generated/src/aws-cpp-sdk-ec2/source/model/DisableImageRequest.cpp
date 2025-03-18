@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableImageRequest::DisableImageRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisableImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

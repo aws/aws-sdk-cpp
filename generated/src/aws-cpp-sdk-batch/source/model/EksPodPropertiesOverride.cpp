@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksPodPropertiesOverride::EksPodPropertiesOverride() : 
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 EksPodPropertiesOverride::EksPodPropertiesOverride(JsonView jsonValue)
-  : EksPodPropertiesOverride()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EksPodPropertiesOverride& EksPodPropertiesOverride::operator =(JsonView jsonValu
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initContainers"))
   {
     Aws::Utils::Array<JsonView> initContainersJsonList = jsonValue.GetArray("initContainers");
@@ -52,14 +43,11 @@ EksPodPropertiesOverride& EksPodPropertiesOverride::operator =(JsonView jsonValu
     }
     m_initContainersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

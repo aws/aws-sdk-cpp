@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitLabelNamespace::RateLimitLabelNamespace() : 
-    m_namespaceHasBeenSet(false)
-{
-}
-
 RateLimitLabelNamespace::RateLimitLabelNamespace(JsonView jsonValue)
-  : RateLimitLabelNamespace()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RateLimitLabelNamespace& RateLimitLabelNamespace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

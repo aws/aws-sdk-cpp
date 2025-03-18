@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceMetadataResult::GetResourceMetadataResult()
-{
-}
-
 GetResourceMetadataResult::GetResourceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetResourceMetadataResult& GetResourceMetadataResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
+    m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Features"))
   {
     Aws::Map<Aws::String, JsonView> featuresJsonMap = jsonValue.GetObject("Features").GetAllObjects();
@@ -42,14 +37,15 @@ GetResourceMetadataResult& GetResourceMetadataResult::operator =(const Aws::Amaz
     {
       m_features[featuresItem.first] = featuresItem.second.AsObject();
     }
+    m_featuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

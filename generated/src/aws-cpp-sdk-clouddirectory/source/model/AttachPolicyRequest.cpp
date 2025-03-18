@@ -13,13 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachPolicyRequest::AttachPolicyRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_policyReferenceHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 Aws::String AttachPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

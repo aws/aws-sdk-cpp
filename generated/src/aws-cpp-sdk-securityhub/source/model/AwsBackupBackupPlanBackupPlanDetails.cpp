@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanBackupPlanDetails::AwsBackupBackupPlanBackupPlanDetails() : 
-    m_backupPlanNameHasBeenSet(false),
-    m_advancedBackupSettingsHasBeenSet(false),
-    m_backupPlanRuleHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanBackupPlanDetails::AwsBackupBackupPlanBackupPlanDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanBackupPlanDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsBackupBackupPlanBackupPlanDetails& AwsBackupBackupPlanBackupPlanDetails::oper
   if(jsonValue.ValueExists("BackupPlanName"))
   {
     m_backupPlanName = jsonValue.GetString("BackupPlanName");
-
     m_backupPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedBackupSettings"))
   {
     Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
@@ -49,7 +39,6 @@ AwsBackupBackupPlanBackupPlanDetails& AwsBackupBackupPlanBackupPlanDetails::oper
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanRule"))
   {
     Aws::Utils::Array<JsonView> backupPlanRuleJsonList = jsonValue.GetArray("BackupPlanRule");
@@ -59,7 +48,6 @@ AwsBackupBackupPlanBackupPlanDetails& AwsBackupBackupPlanBackupPlanDetails::oper
     }
     m_backupPlanRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

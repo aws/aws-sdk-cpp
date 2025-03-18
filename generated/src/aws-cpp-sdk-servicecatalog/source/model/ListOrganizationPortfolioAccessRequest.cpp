@@ -12,17 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOrganizationPortfolioAccessRequest::ListOrganizationPortfolioAccessRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_organizationNodeType(OrganizationNodeType::NOT_SET),
-    m_organizationNodeTypeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListOrganizationPortfolioAccessRequest::SerializePayload() const
 {
   JsonValue payload;

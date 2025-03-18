@@ -18,43 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Workgroup::Workgroup() : 
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_configParametersHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_crossAccountVpcsHasBeenSet(false),
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryTimeHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_pendingTrackNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_pricePerformanceTargetHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_status(WorkgroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_trackNameHasBeenSet(false),
-    m_workgroupArnHasBeenSet(false),
-    m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false),
-    m_workgroupVersionHasBeenSet(false)
-{
-}
-
 Workgroup::Workgroup(JsonView jsonValue)
-  : Workgroup()
 {
   *this = jsonValue;
 }
@@ -64,10 +28,8 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("baseCapacity"))
   {
     m_baseCapacity = jsonValue.GetInteger("baseCapacity");
-
     m_baseCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configParameters"))
   {
     Aws::Utils::Array<JsonView> configParametersJsonList = jsonValue.GetArray("configParameters");
@@ -77,14 +39,11 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     }
     m_configParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetString("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("crossAccountVpcs"))
   {
     Aws::Utils::Array<JsonView> crossAccountVpcsJsonList = jsonValue.GetArray("crossAccountVpcs");
@@ -94,98 +53,71 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     }
     m_crossAccountVpcsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainCertificateArn"))
   {
     m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");
-
     m_customDomainCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainCertificateExpiryTime"))
   {
     m_customDomainCertificateExpiryTime = jsonValue.GetString("customDomainCertificateExpiryTime");
-
     m_customDomainCertificateExpiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
-
     m_customDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedVpcRouting"))
   {
     m_enhancedVpcRouting = jsonValue.GetBool("enhancedVpcRouting");
-
     m_enhancedVpcRoutingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = jsonValue.GetString("ipAddressType");
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("maxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patchVersion"))
   {
     m_patchVersion = jsonValue.GetString("patchVersion");
-
     m_patchVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingTrackName"))
   {
     m_pendingTrackName = jsonValue.GetString("pendingTrackName");
-
     m_pendingTrackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pricePerformanceTarget"))
   {
     m_pricePerformanceTarget = jsonValue.GetObject("pricePerformanceTarget");
-
     m_pricePerformanceTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -195,14 +127,11 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkgroupStatusMapper::GetWorkgroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -212,42 +141,31 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackName"))
   {
     m_trackName = jsonValue.GetString("trackName");
-
     m_trackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupArn"))
   {
     m_workgroupArn = jsonValue.GetString("workgroupArn");
-
     m_workgroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupId"))
   {
     m_workgroupId = jsonValue.GetString("workgroupId");
-
     m_workgroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupVersion"))
   {
     m_workgroupVersion = jsonValue.GetString("workgroupVersion");
-
     m_workgroupVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

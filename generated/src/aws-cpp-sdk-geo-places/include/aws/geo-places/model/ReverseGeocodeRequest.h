@@ -29,7 +29,7 @@ namespace Model
   class ReverseGeocodeRequest : public GeoPlacesRequest
   {
   public:
-    AWS_GEOPLACES_API ReverseGeocodeRequest();
+    AWS_GEOPLACES_API ReverseGeocodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,12 @@ namespace Model
      * resultsfor. Results closer to the position will be ranked higher then results
      * further away from the position</p>
      */
-    inline const Aws::Vector<double>& GetQueryPosition() const{ return m_queryPosition; }
+    inline const Aws::Vector<double>& GetQueryPosition() const { return m_queryPosition; }
     inline bool QueryPositionHasBeenSet() const { return m_queryPositionHasBeenSet; }
-    inline void SetQueryPosition(const Aws::Vector<double>& value) { m_queryPositionHasBeenSet = true; m_queryPosition = value; }
-    inline void SetQueryPosition(Aws::Vector<double>&& value) { m_queryPositionHasBeenSet = true; m_queryPosition = std::move(value); }
-    inline ReverseGeocodeRequest& WithQueryPosition(const Aws::Vector<double>& value) { SetQueryPosition(value); return *this;}
-    inline ReverseGeocodeRequest& WithQueryPosition(Aws::Vector<double>&& value) { SetQueryPosition(std::move(value)); return *this;}
+    template<typename QueryPositionT = Aws::Vector<double>>
+    void SetQueryPosition(QueryPositionT&& value) { m_queryPositionHasBeenSet = true; m_queryPosition = std::forward<QueryPositionT>(value); }
+    template<typename QueryPositionT = Aws::Vector<double>>
+    ReverseGeocodeRequest& WithQueryPosition(QueryPositionT&& value) { SetQueryPosition(std::forward<QueryPositionT>(value)); return *this;}
     inline ReverseGeocodeRequest& AddQueryPosition(double value) { m_queryPositionHasBeenSet = true; m_queryPosition.push_back(value); return *this; }
     ///@}
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>The maximum distance in meters from the QueryPosition from which a result
      * will be returned.</p>
      */
-    inline long long GetQueryRadius() const{ return m_queryRadius; }
+    inline long long GetQueryRadius() const { return m_queryRadius; }
     inline bool QueryRadiusHasBeenSet() const { return m_queryRadiusHasBeenSet; }
     inline void SetQueryRadius(long long value) { m_queryRadiusHasBeenSet = true; m_queryRadius = value; }
     inline ReverseGeocodeRequest& WithQueryRadius(long long value) { SetQueryRadius(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p>An optional limit for the number of results returned in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ReverseGeocodeRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,12 +83,12 @@ namespace Model
      * <p>A structure which contains a set of inclusion/exclusion properties that
      * results must posses in order to be returned as a result.</p>
      */
-    inline const ReverseGeocodeFilter& GetFilter() const{ return m_filter; }
+    inline const ReverseGeocodeFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ReverseGeocodeFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ReverseGeocodeFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ReverseGeocodeRequest& WithFilter(const ReverseGeocodeFilter& value) { SetFilter(value); return *this;}
-    inline ReverseGeocodeRequest& WithFilter(ReverseGeocodeFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = ReverseGeocodeFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ReverseGeocodeFilter>
+    ReverseGeocodeRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +96,13 @@ namespace Model
      * <p>A list of optional additional parameters, such as time zone that can be
      * requested for each result.</p>
      */
-    inline const Aws::Vector<ReverseGeocodeAdditionalFeature>& GetAdditionalFeatures() const{ return m_additionalFeatures; }
+    inline const Aws::Vector<ReverseGeocodeAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
     inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
-    inline void SetAdditionalFeatures(const Aws::Vector<ReverseGeocodeAdditionalFeature>& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = value; }
-    inline void SetAdditionalFeatures(Aws::Vector<ReverseGeocodeAdditionalFeature>&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::move(value); }
-    inline ReverseGeocodeRequest& WithAdditionalFeatures(const Aws::Vector<ReverseGeocodeAdditionalFeature>& value) { SetAdditionalFeatures(value); return *this;}
-    inline ReverseGeocodeRequest& WithAdditionalFeatures(Aws::Vector<ReverseGeocodeAdditionalFeature>&& value) { SetAdditionalFeatures(std::move(value)); return *this;}
-    inline ReverseGeocodeRequest& AddAdditionalFeatures(const ReverseGeocodeAdditionalFeature& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
-    inline ReverseGeocodeRequest& AddAdditionalFeatures(ReverseGeocodeAdditionalFeature&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(std::move(value)); return *this; }
+    template<typename AdditionalFeaturesT = Aws::Vector<ReverseGeocodeAdditionalFeature>>
+    void SetAdditionalFeatures(AdditionalFeaturesT&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::forward<AdditionalFeaturesT>(value); }
+    template<typename AdditionalFeaturesT = Aws::Vector<ReverseGeocodeAdditionalFeature>>
+    ReverseGeocodeRequest& WithAdditionalFeatures(AdditionalFeaturesT&& value) { SetAdditionalFeatures(std::forward<AdditionalFeaturesT>(value)); return *this;}
+    inline ReverseGeocodeRequest& AddAdditionalFeatures(ReverseGeocodeAdditionalFeature value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -113,14 +112,12 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline ReverseGeocodeRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline ReverseGeocodeRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline ReverseGeocodeRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    ReverseGeocodeRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +126,12 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline ReverseGeocodeRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline ReverseGeocodeRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline ReverseGeocodeRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    ReverseGeocodeRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +139,10 @@ namespace Model
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
      * if left empty.</p>
      */
-    inline const ReverseGeocodeIntendedUse& GetIntendedUse() const{ return m_intendedUse; }
+    inline ReverseGeocodeIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-    inline void SetIntendedUse(const ReverseGeocodeIntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-    inline void SetIntendedUse(ReverseGeocodeIntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-    inline ReverseGeocodeRequest& WithIntendedUse(const ReverseGeocodeIntendedUse& value) { SetIntendedUse(value); return *this;}
-    inline ReverseGeocodeRequest& WithIntendedUse(ReverseGeocodeIntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
+    inline void SetIntendedUse(ReverseGeocodeIntendedUse value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
+    inline ReverseGeocodeRequest& WithIntendedUse(ReverseGeocodeIntendedUse value) { SetIntendedUse(value); return *this;}
     ///@}
 
     ///@{
@@ -157,24 +150,22 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ReverseGeocodeRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ReverseGeocodeRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ReverseGeocodeRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ReverseGeocodeRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<double> m_queryPosition;
     bool m_queryPositionHasBeenSet = false;
 
-    long long m_queryRadius;
+    long long m_queryRadius{0};
     bool m_queryRadiusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     ReverseGeocodeFilter m_filter;
@@ -189,7 +180,7 @@ namespace Model
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
 
-    ReverseGeocodeIntendedUse m_intendedUse;
+    ReverseGeocodeIntendedUse m_intendedUse{ReverseGeocodeIntendedUse::NOT_SET};
     bool m_intendedUseHasBeenSet = false;
 
     Aws::String m_key;

@@ -24,7 +24,7 @@ namespace Model
   class ModifyMigrationProjectRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * and must contain only ASCII letters, digits, and hyphens. They can't end with a
      * hyphen, or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetMigrationProjectIdentifier() const{ return m_migrationProjectIdentifier; }
+    inline const Aws::String& GetMigrationProjectIdentifier() const { return m_migrationProjectIdentifier; }
     inline bool MigrationProjectIdentifierHasBeenSet() const { return m_migrationProjectIdentifierHasBeenSet; }
-    inline void SetMigrationProjectIdentifier(const Aws::String& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = value; }
-    inline void SetMigrationProjectIdentifier(Aws::String&& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = std::move(value); }
-    inline void SetMigrationProjectIdentifier(const char* value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier.assign(value); }
-    inline ModifyMigrationProjectRequest& WithMigrationProjectIdentifier(const Aws::String& value) { SetMigrationProjectIdentifier(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithMigrationProjectIdentifier(Aws::String&& value) { SetMigrationProjectIdentifier(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& WithMigrationProjectIdentifier(const char* value) { SetMigrationProjectIdentifier(value); return *this;}
+    template<typename MigrationProjectIdentifierT = Aws::String>
+    void SetMigrationProjectIdentifier(MigrationProjectIdentifierT&& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = std::forward<MigrationProjectIdentifierT>(value); }
+    template<typename MigrationProjectIdentifierT = Aws::String>
+    ModifyMigrationProjectRequest& WithMigrationProjectIdentifier(MigrationProjectIdentifierT&& value) { SetMigrationProjectIdentifier(std::forward<MigrationProjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly name for the migration project.</p>
      */
-    inline const Aws::String& GetMigrationProjectName() const{ return m_migrationProjectName; }
+    inline const Aws::String& GetMigrationProjectName() const { return m_migrationProjectName; }
     inline bool MigrationProjectNameHasBeenSet() const { return m_migrationProjectNameHasBeenSet; }
-    inline void SetMigrationProjectName(const Aws::String& value) { m_migrationProjectNameHasBeenSet = true; m_migrationProjectName = value; }
-    inline void SetMigrationProjectName(Aws::String&& value) { m_migrationProjectNameHasBeenSet = true; m_migrationProjectName = std::move(value); }
-    inline void SetMigrationProjectName(const char* value) { m_migrationProjectNameHasBeenSet = true; m_migrationProjectName.assign(value); }
-    inline ModifyMigrationProjectRequest& WithMigrationProjectName(const Aws::String& value) { SetMigrationProjectName(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithMigrationProjectName(Aws::String&& value) { SetMigrationProjectName(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& WithMigrationProjectName(const char* value) { SetMigrationProjectName(value); return *this;}
+    template<typename MigrationProjectNameT = Aws::String>
+    void SetMigrationProjectName(MigrationProjectNameT&& value) { m_migrationProjectNameHasBeenSet = true; m_migrationProjectName = std::forward<MigrationProjectNameT>(value); }
+    template<typename MigrationProjectNameT = Aws::String>
+    ModifyMigrationProjectRequest& WithMigrationProjectName(MigrationProjectNameT&& value) { SetMigrationProjectName(std::forward<MigrationProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * <p>Information about the source data provider, including the name, ARN, and
      * Amazon Web Services Secrets Manager parameters.</p>
      */
-    inline const Aws::Vector<DataProviderDescriptorDefinition>& GetSourceDataProviderDescriptors() const{ return m_sourceDataProviderDescriptors; }
+    inline const Aws::Vector<DataProviderDescriptorDefinition>& GetSourceDataProviderDescriptors() const { return m_sourceDataProviderDescriptors; }
     inline bool SourceDataProviderDescriptorsHasBeenSet() const { return m_sourceDataProviderDescriptorsHasBeenSet; }
-    inline void SetSourceDataProviderDescriptors(const Aws::Vector<DataProviderDescriptorDefinition>& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors = value; }
-    inline void SetSourceDataProviderDescriptors(Aws::Vector<DataProviderDescriptorDefinition>&& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors = std::move(value); }
-    inline ModifyMigrationProjectRequest& WithSourceDataProviderDescriptors(const Aws::Vector<DataProviderDescriptorDefinition>& value) { SetSourceDataProviderDescriptors(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithSourceDataProviderDescriptors(Aws::Vector<DataProviderDescriptorDefinition>&& value) { SetSourceDataProviderDescriptors(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& AddSourceDataProviderDescriptors(const DataProviderDescriptorDefinition& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors.push_back(value); return *this; }
-    inline ModifyMigrationProjectRequest& AddSourceDataProviderDescriptors(DataProviderDescriptorDefinition&& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors.push_back(std::move(value)); return *this; }
+    template<typename SourceDataProviderDescriptorsT = Aws::Vector<DataProviderDescriptorDefinition>>
+    void SetSourceDataProviderDescriptors(SourceDataProviderDescriptorsT&& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors = std::forward<SourceDataProviderDescriptorsT>(value); }
+    template<typename SourceDataProviderDescriptorsT = Aws::Vector<DataProviderDescriptorDefinition>>
+    ModifyMigrationProjectRequest& WithSourceDataProviderDescriptors(SourceDataProviderDescriptorsT&& value) { SetSourceDataProviderDescriptors(std::forward<SourceDataProviderDescriptorsT>(value)); return *this;}
+    template<typename SourceDataProviderDescriptorsT = DataProviderDescriptorDefinition>
+    ModifyMigrationProjectRequest& AddSourceDataProviderDescriptors(SourceDataProviderDescriptorsT&& value) { m_sourceDataProviderDescriptorsHasBeenSet = true; m_sourceDataProviderDescriptors.emplace_back(std::forward<SourceDataProviderDescriptorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,28 +83,26 @@ namespace Model
      * <p>Information about the target data provider, including the name, ARN, and
      * Amazon Web Services Secrets Manager parameters.</p>
      */
-    inline const Aws::Vector<DataProviderDescriptorDefinition>& GetTargetDataProviderDescriptors() const{ return m_targetDataProviderDescriptors; }
+    inline const Aws::Vector<DataProviderDescriptorDefinition>& GetTargetDataProviderDescriptors() const { return m_targetDataProviderDescriptors; }
     inline bool TargetDataProviderDescriptorsHasBeenSet() const { return m_targetDataProviderDescriptorsHasBeenSet; }
-    inline void SetTargetDataProviderDescriptors(const Aws::Vector<DataProviderDescriptorDefinition>& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors = value; }
-    inline void SetTargetDataProviderDescriptors(Aws::Vector<DataProviderDescriptorDefinition>&& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors = std::move(value); }
-    inline ModifyMigrationProjectRequest& WithTargetDataProviderDescriptors(const Aws::Vector<DataProviderDescriptorDefinition>& value) { SetTargetDataProviderDescriptors(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithTargetDataProviderDescriptors(Aws::Vector<DataProviderDescriptorDefinition>&& value) { SetTargetDataProviderDescriptors(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& AddTargetDataProviderDescriptors(const DataProviderDescriptorDefinition& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors.push_back(value); return *this; }
-    inline ModifyMigrationProjectRequest& AddTargetDataProviderDescriptors(DataProviderDescriptorDefinition&& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors.push_back(std::move(value)); return *this; }
+    template<typename TargetDataProviderDescriptorsT = Aws::Vector<DataProviderDescriptorDefinition>>
+    void SetTargetDataProviderDescriptors(TargetDataProviderDescriptorsT&& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors = std::forward<TargetDataProviderDescriptorsT>(value); }
+    template<typename TargetDataProviderDescriptorsT = Aws::Vector<DataProviderDescriptorDefinition>>
+    ModifyMigrationProjectRequest& WithTargetDataProviderDescriptors(TargetDataProviderDescriptorsT&& value) { SetTargetDataProviderDescriptors(std::forward<TargetDataProviderDescriptorsT>(value)); return *this;}
+    template<typename TargetDataProviderDescriptorsT = DataProviderDescriptorDefinition>
+    ModifyMigrationProjectRequest& AddTargetDataProviderDescriptors(TargetDataProviderDescriptorsT&& value) { m_targetDataProviderDescriptorsHasBeenSet = true; m_targetDataProviderDescriptors.emplace_back(std::forward<TargetDataProviderDescriptorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) for the instance profile.</p>
      */
-    inline const Aws::String& GetInstanceProfileIdentifier() const{ return m_instanceProfileIdentifier; }
+    inline const Aws::String& GetInstanceProfileIdentifier() const { return m_instanceProfileIdentifier; }
     inline bool InstanceProfileIdentifierHasBeenSet() const { return m_instanceProfileIdentifierHasBeenSet; }
-    inline void SetInstanceProfileIdentifier(const Aws::String& value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier = value; }
-    inline void SetInstanceProfileIdentifier(Aws::String&& value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier = std::move(value); }
-    inline void SetInstanceProfileIdentifier(const char* value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier.assign(value); }
-    inline ModifyMigrationProjectRequest& WithInstanceProfileIdentifier(const Aws::String& value) { SetInstanceProfileIdentifier(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithInstanceProfileIdentifier(Aws::String&& value) { SetInstanceProfileIdentifier(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& WithInstanceProfileIdentifier(const char* value) { SetInstanceProfileIdentifier(value); return *this;}
+    template<typename InstanceProfileIdentifierT = Aws::String>
+    void SetInstanceProfileIdentifier(InstanceProfileIdentifierT&& value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier = std::forward<InstanceProfileIdentifierT>(value); }
+    template<typename InstanceProfileIdentifierT = Aws::String>
+    ModifyMigrationProjectRequest& WithInstanceProfileIdentifier(InstanceProfileIdentifierT&& value) { SetInstanceProfileIdentifier(std::forward<InstanceProfileIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,28 +112,24 @@ namespace Model
      * specify. For example, you can change an object name to lowercase or uppercase,
      * add or remove a prefix or suffix, or rename objects.</p>
      */
-    inline const Aws::String& GetTransformationRules() const{ return m_transformationRules; }
+    inline const Aws::String& GetTransformationRules() const { return m_transformationRules; }
     inline bool TransformationRulesHasBeenSet() const { return m_transformationRulesHasBeenSet; }
-    inline void SetTransformationRules(const Aws::String& value) { m_transformationRulesHasBeenSet = true; m_transformationRules = value; }
-    inline void SetTransformationRules(Aws::String&& value) { m_transformationRulesHasBeenSet = true; m_transformationRules = std::move(value); }
-    inline void SetTransformationRules(const char* value) { m_transformationRulesHasBeenSet = true; m_transformationRules.assign(value); }
-    inline ModifyMigrationProjectRequest& WithTransformationRules(const Aws::String& value) { SetTransformationRules(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithTransformationRules(Aws::String&& value) { SetTransformationRules(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& WithTransformationRules(const char* value) { SetTransformationRules(value); return *this;}
+    template<typename TransformationRulesT = Aws::String>
+    void SetTransformationRules(TransformationRulesT&& value) { m_transformationRulesHasBeenSet = true; m_transformationRules = std::forward<TransformationRulesT>(value); }
+    template<typename TransformationRulesT = Aws::String>
+    ModifyMigrationProjectRequest& WithTransformationRules(TransformationRulesT&& value) { SetTransformationRules(std::forward<TransformationRulesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly description of the migration project.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyMigrationProjectRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyMigrationProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyMigrationProjectRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +137,12 @@ namespace Model
      * <p>The schema conversion application attributes, including the Amazon S3 bucket
      * name and Amazon S3 role ARN.</p>
      */
-    inline const SCApplicationAttributes& GetSchemaConversionApplicationAttributes() const{ return m_schemaConversionApplicationAttributes; }
+    inline const SCApplicationAttributes& GetSchemaConversionApplicationAttributes() const { return m_schemaConversionApplicationAttributes; }
     inline bool SchemaConversionApplicationAttributesHasBeenSet() const { return m_schemaConversionApplicationAttributesHasBeenSet; }
-    inline void SetSchemaConversionApplicationAttributes(const SCApplicationAttributes& value) { m_schemaConversionApplicationAttributesHasBeenSet = true; m_schemaConversionApplicationAttributes = value; }
-    inline void SetSchemaConversionApplicationAttributes(SCApplicationAttributes&& value) { m_schemaConversionApplicationAttributesHasBeenSet = true; m_schemaConversionApplicationAttributes = std::move(value); }
-    inline ModifyMigrationProjectRequest& WithSchemaConversionApplicationAttributes(const SCApplicationAttributes& value) { SetSchemaConversionApplicationAttributes(value); return *this;}
-    inline ModifyMigrationProjectRequest& WithSchemaConversionApplicationAttributes(SCApplicationAttributes&& value) { SetSchemaConversionApplicationAttributes(std::move(value)); return *this;}
+    template<typename SchemaConversionApplicationAttributesT = SCApplicationAttributes>
+    void SetSchemaConversionApplicationAttributes(SchemaConversionApplicationAttributesT&& value) { m_schemaConversionApplicationAttributesHasBeenSet = true; m_schemaConversionApplicationAttributes = std::forward<SchemaConversionApplicationAttributesT>(value); }
+    template<typename SchemaConversionApplicationAttributesT = SCApplicationAttributes>
+    ModifyMigrationProjectRequest& WithSchemaConversionApplicationAttributes(SchemaConversionApplicationAttributesT&& value) { SetSchemaConversionApplicationAttributes(std::forward<SchemaConversionApplicationAttributesT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class LoadPermission
   {
   public:
-    AWS_EC2_API LoadPermission();
+    AWS_EC2_API LoadPermission() = default;
     AWS_EC2_API LoadPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LoadPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline LoadPermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline LoadPermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline LoadPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    LoadPermission& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the group.</p>
      */
-    inline const PermissionGroup& GetGroup() const{ return m_group; }
+    inline PermissionGroup GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline LoadPermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-    inline LoadPermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+    inline void SetGroup(PermissionGroup value) { m_groupHasBeenSet = true; m_group = value; }
+    inline LoadPermission& WithGroup(PermissionGroup value) { SetGroup(value); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    PermissionGroup m_group;
+    PermissionGroup m_group{PermissionGroup::NOT_SET};
     bool m_groupHasBeenSet = false;
   };
 

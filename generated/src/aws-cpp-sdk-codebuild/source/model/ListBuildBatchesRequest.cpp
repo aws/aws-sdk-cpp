@@ -12,16 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBuildBatchesRequest::ListBuildBatchesRequest() : 
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBuildBatchesRequest::SerializePayload() const
 {
   JsonValue payload;

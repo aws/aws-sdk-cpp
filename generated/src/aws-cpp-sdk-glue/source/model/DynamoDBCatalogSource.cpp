@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DynamoDBCatalogSource::DynamoDBCatalogSource() : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
-{
-}
-
 DynamoDBCatalogSource::DynamoDBCatalogSource(JsonView jsonValue)
-  : DynamoDBCatalogSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DynamoDBCatalogSource& DynamoDBCatalogSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   return *this;
 }
 

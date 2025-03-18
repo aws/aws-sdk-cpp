@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteSimulationRequest::DeleteSimulationRequest() : 
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSimulationRequest::SerializePayload() const
 {
   return {};

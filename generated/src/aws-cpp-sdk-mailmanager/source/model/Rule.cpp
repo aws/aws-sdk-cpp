@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Rule::Rule() : 
-    m_actionsHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_unlessHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -53,14 +43,11 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unless"))
   {
     Aws::Utils::Array<JsonView> unlessJsonList = jsonValue.GetArray("Unless");
@@ -70,7 +57,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_unlessHasBeenSet = true;
   }
-
   return *this;
 }
 

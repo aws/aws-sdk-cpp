@@ -18,27 +18,7 @@ namespace SavingsPlans
 namespace Model
 {
 
-SavingsPlanOffering::SavingsPlanOffering() : 
-    m_offeringIdHasBeenSet(false),
-    m_productTypesHasBeenSet(false),
-    m_planType(SavingsPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_paymentOption(SavingsPlanPaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 SavingsPlanOffering::SavingsPlanOffering(JsonView jsonValue)
-  : SavingsPlanOffering()
 {
   *this = jsonValue;
 }
@@ -48,10 +28,8 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("offeringId"))
   {
     m_offeringId = jsonValue.GetString("offeringId");
-
     m_offeringIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productTypes"))
   {
     Aws::Utils::Array<JsonView> productTypesJsonList = jsonValue.GetArray("productTypes");
@@ -61,63 +39,46 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
     }
     m_productTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("planType"))
   {
     m_planType = SavingsPlanTypeMapper::GetSavingsPlanTypeForName(jsonValue.GetString("planType"));
-
     m_planTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentOption"))
   {
     m_paymentOption = SavingsPlanPaymentOptionMapper::GetSavingsPlanPaymentOptionForName(jsonValue.GetString("paymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationSeconds"))
   {
     m_durationSeconds = jsonValue.GetInt64("durationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -127,7 +88,6 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

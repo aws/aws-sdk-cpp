@@ -18,20 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-Qualification::Qualification() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_grantTimeHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_localeValueHasBeenSet(false),
-    m_status(QualificationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Qualification::Qualification(JsonView jsonValue)
-  : Qualification()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Qualification& Qualification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
     m_qualificationTypeId = jsonValue.GetString("QualificationTypeId");
-
     m_qualificationTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantTime"))
   {
     m_grantTime = jsonValue.GetDouble("GrantTime");
-
     m_grantTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerValue"))
   {
     m_integerValue = jsonValue.GetInteger("IntegerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocaleValue"))
   {
     m_localeValue = jsonValue.GetObject("LocaleValue");
-
     m_localeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = QualificationStatusMapper::GetQualificationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

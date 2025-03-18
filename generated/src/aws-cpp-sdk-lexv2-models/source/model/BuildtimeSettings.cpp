@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BuildtimeSettings::BuildtimeSettings() : 
-    m_descriptiveBotBuilderHasBeenSet(false),
-    m_sampleUtteranceGenerationHasBeenSet(false)
-{
-}
-
 BuildtimeSettings::BuildtimeSettings(JsonView jsonValue)
-  : BuildtimeSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BuildtimeSettings& BuildtimeSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("descriptiveBotBuilder"))
   {
     m_descriptiveBotBuilder = jsonValue.GetObject("descriptiveBotBuilder");
-
     m_descriptiveBotBuilderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleUtteranceGeneration"))
   {
     m_sampleUtteranceGeneration = jsonValue.GetObject("sampleUtteranceGeneration");
-
     m_sampleUtteranceGenerationHasBeenSet = true;
   }
-
   return *this;
 }
 

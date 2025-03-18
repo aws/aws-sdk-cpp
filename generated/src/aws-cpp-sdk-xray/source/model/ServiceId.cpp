@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ServiceId::ServiceId() : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ServiceId::ServiceId(JsonView jsonValue)
-  : ServiceId()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ServiceId& ServiceId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -50,21 +39,16 @@ ServiceId& ServiceId::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

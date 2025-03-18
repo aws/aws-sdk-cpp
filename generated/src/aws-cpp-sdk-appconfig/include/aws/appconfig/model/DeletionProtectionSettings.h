@@ -39,7 +39,7 @@ namespace Model
   class DeletionProtectionSettings
   {
   public:
-    AWS_APPCONFIG_API DeletionProtectionSettings();
+    AWS_APPCONFIG_API DeletionProtectionSettings() = default;
     AWS_APPCONFIG_API DeletionProtectionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API DeletionProtectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>A parameter that indicates if deletion protection is enabled or not.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DeletionProtectionSettings& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -65,17 +65,17 @@ namespace Model
      * environment, specify <code>BYPASS</code> for the
      * <code>DeletionProtectionCheck</code> parameter for either or .</p>
      */
-    inline int GetProtectionPeriodInMinutes() const{ return m_protectionPeriodInMinutes; }
+    inline int GetProtectionPeriodInMinutes() const { return m_protectionPeriodInMinutes; }
     inline bool ProtectionPeriodInMinutesHasBeenSet() const { return m_protectionPeriodInMinutesHasBeenSet; }
     inline void SetProtectionPeriodInMinutes(int value) { m_protectionPeriodInMinutesHasBeenSet = true; m_protectionPeriodInMinutes = value; }
     inline DeletionProtectionSettings& WithProtectionPeriodInMinutes(int value) { SetProtectionPeriodInMinutes(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_protectionPeriodInMinutes;
+    int m_protectionPeriodInMinutes{0};
     bool m_protectionPeriodInMinutesHasBeenSet = false;
   };
 

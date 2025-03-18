@@ -12,15 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExtensionPackAssociationsRequest::DescribeExtensionPackAssociationsRequest() : 
-    m_migrationProjectIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExtensionPackAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

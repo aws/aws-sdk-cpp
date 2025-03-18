@@ -35,7 +35,7 @@ namespace Model
   class ResourceTagMapping
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping() = default;
     AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ARN of the resource.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline ResourceTagMapping& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline ResourceTagMapping& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline ResourceTagMapping& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    ResourceTagMapping& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p>The tags that have been applied to one or more Amazon Web Services
      * resources.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResourceTagMapping& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ResourceTagMapping& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResourceTagMapping& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ResourceTagMapping& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ResourceTagMapping& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ResourceTagMapping& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,12 +73,12 @@ namespace Model
      * <p>Information that shows whether a resource is compliant with the effective tag
      * policy, including details on any noncompliant tag keys.</p>
      */
-    inline const ComplianceDetails& GetComplianceDetails() const{ return m_complianceDetails; }
+    inline const ComplianceDetails& GetComplianceDetails() const { return m_complianceDetails; }
     inline bool ComplianceDetailsHasBeenSet() const { return m_complianceDetailsHasBeenSet; }
-    inline void SetComplianceDetails(const ComplianceDetails& value) { m_complianceDetailsHasBeenSet = true; m_complianceDetails = value; }
-    inline void SetComplianceDetails(ComplianceDetails&& value) { m_complianceDetailsHasBeenSet = true; m_complianceDetails = std::move(value); }
-    inline ResourceTagMapping& WithComplianceDetails(const ComplianceDetails& value) { SetComplianceDetails(value); return *this;}
-    inline ResourceTagMapping& WithComplianceDetails(ComplianceDetails&& value) { SetComplianceDetails(std::move(value)); return *this;}
+    template<typename ComplianceDetailsT = ComplianceDetails>
+    void SetComplianceDetails(ComplianceDetailsT&& value) { m_complianceDetailsHasBeenSet = true; m_complianceDetails = std::forward<ComplianceDetailsT>(value); }
+    template<typename ComplianceDetailsT = ComplianceDetails>
+    ResourceTagMapping& WithComplianceDetails(ComplianceDetailsT&& value) { SetComplianceDetails(std::forward<ComplianceDetailsT>(value)); return *this;}
     ///@}
   private:
 

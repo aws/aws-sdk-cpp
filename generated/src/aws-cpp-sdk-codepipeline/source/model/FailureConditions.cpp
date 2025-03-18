@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-FailureConditions::FailureConditions() : 
-    m_result(Result::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_retryConfigurationHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 FailureConditions::FailureConditions(JsonView jsonValue)
-  : FailureConditions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FailureConditions& FailureConditions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("result"))
   {
     m_result = ResultMapper::GetResultForName(jsonValue.GetString("result"));
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryConfiguration"))
   {
     m_retryConfiguration = jsonValue.GetObject("retryConfiguration");
-
     m_retryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
@@ -57,7 +44,6 @@ FailureConditions& FailureConditions::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

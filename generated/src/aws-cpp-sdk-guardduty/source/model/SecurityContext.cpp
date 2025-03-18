@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-SecurityContext::SecurityContext() : 
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_allowPrivilegeEscalation(false),
-    m_allowPrivilegeEscalationHasBeenSet(false)
-{
-}
-
 SecurityContext::SecurityContext(JsonView jsonValue)
-  : SecurityContext()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SecurityContext& SecurityContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("privileged"))
   {
     m_privileged = jsonValue.GetBool("privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowPrivilegeEscalation"))
   {
     m_allowPrivilegeEscalation = jsonValue.GetBool("allowPrivilegeEscalation");
-
     m_allowPrivilegeEscalationHasBeenSet = true;
   }
-
   return *this;
 }
 

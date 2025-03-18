@@ -12,12 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelFlowExecutionsRequest::CancelFlowExecutionsRequest() : 
-    m_flowNameHasBeenSet(false),
-    m_executionIdsHasBeenSet(false)
-{
-}
-
 Aws::String CancelFlowExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

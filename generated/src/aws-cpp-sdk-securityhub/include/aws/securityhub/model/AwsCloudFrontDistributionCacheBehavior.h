@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionCacheBehavior
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * resubmit.</p> </li> <li> <p> <code>https-only</code> - CloudFront responds to
      * HTTP request with an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      */
-    inline const Aws::String& GetViewerProtocolPolicy() const{ return m_viewerProtocolPolicy; }
+    inline const Aws::String& GetViewerProtocolPolicy() const { return m_viewerProtocolPolicy; }
     inline bool ViewerProtocolPolicyHasBeenSet() const { return m_viewerProtocolPolicyHasBeenSet; }
-    inline void SetViewerProtocolPolicy(const Aws::String& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
-    inline void SetViewerProtocolPolicy(Aws::String&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
-    inline void SetViewerProtocolPolicy(const char* value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy.assign(value); }
-    inline AwsCloudFrontDistributionCacheBehavior& WithViewerProtocolPolicy(const Aws::String& value) { SetViewerProtocolPolicy(value); return *this;}
-    inline AwsCloudFrontDistributionCacheBehavior& WithViewerProtocolPolicy(Aws::String&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionCacheBehavior& WithViewerProtocolPolicy(const char* value) { SetViewerProtocolPolicy(value); return *this;}
+    template<typename ViewerProtocolPolicyT = Aws::String>
+    void SetViewerProtocolPolicy(ViewerProtocolPolicyT&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::forward<ViewerProtocolPolicyT>(value); }
+    template<typename ViewerProtocolPolicyT = Aws::String>
+    AwsCloudFrontDistributionCacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicyT&& value) { SetViewerProtocolPolicy(std::forward<ViewerProtocolPolicyT>(value)); return *this;}
     ///@}
   private:
 

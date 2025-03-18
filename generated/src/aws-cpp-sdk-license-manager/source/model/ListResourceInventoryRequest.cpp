@@ -12,14 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceInventoryRequest::ListResourceInventoryRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceInventoryRequest::SerializePayload() const
 {
   JsonValue payload;

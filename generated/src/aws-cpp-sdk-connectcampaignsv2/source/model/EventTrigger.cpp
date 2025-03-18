@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-EventTrigger::EventTrigger() : 
-    m_customerProfilesDomainArnHasBeenSet(false)
-{
-}
-
 EventTrigger::EventTrigger(JsonView jsonValue)
-  : EventTrigger()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventTrigger& EventTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerProfilesDomainArn"))
   {
     m_customerProfilesDomainArn = jsonValue.GetString("customerProfilesDomainArn");
-
     m_customerProfilesDomainArnHasBeenSet = true;
   }
-
   return *this;
 }
 

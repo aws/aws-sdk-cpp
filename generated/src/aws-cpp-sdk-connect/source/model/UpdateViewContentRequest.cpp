@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateViewContentRequest::UpdateViewContentRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_viewIdHasBeenSet(false),
-    m_status(ViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateViewContentRequest::SerializePayload() const
 {
   JsonValue payload;

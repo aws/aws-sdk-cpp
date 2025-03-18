@@ -18,41 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Layer::Layer() : 
-    m_arnHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_layerIdHasBeenSet(false),
-    m_type(LayerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_customInstanceProfileArnHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_customSecurityGroupIdsHasBeenSet(false),
-    m_defaultSecurityGroupNamesHasBeenSet(false),
-    m_packagesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false),
-    m_enableAutoHealing(false),
-    m_enableAutoHealingHasBeenSet(false),
-    m_autoAssignElasticIps(false),
-    m_autoAssignElasticIpsHasBeenSet(false),
-    m_autoAssignPublicIps(false),
-    m_autoAssignPublicIpsHasBeenSet(false),
-    m_defaultRecipesHasBeenSet(false),
-    m_customRecipesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_useEbsOptimizedInstances(false),
-    m_useEbsOptimizedInstancesHasBeenSet(false),
-    m_lifecycleEventConfigurationHasBeenSet(false)
-{
-}
-
 Layer::Layer(JsonView jsonValue)
-  : Layer()
 {
   *this = jsonValue;
 }
@@ -62,45 +28,33 @@ Layer& Layer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerId"))
   {
     m_layerId = jsonValue.GetString("LayerId");
-
     m_layerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = LayerTypeMapper::GetLayerTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shortname"))
   {
     m_shortname = jsonValue.GetString("Shortname");
-
     m_shortnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -110,28 +64,21 @@ Layer& Layer::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsConfiguration"))
   {
     m_cloudWatchLogsConfiguration = jsonValue.GetObject("CloudWatchLogsConfiguration");
-
     m_cloudWatchLogsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomInstanceProfileArn"))
   {
     m_customInstanceProfileArn = jsonValue.GetString("CustomInstanceProfileArn");
-
     m_customInstanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomJson"))
   {
     m_customJson = jsonValue.GetString("CustomJson");
-
     m_customJsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomSecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> customSecurityGroupIdsJsonList = jsonValue.GetArray("CustomSecurityGroupIds");
@@ -141,7 +88,6 @@ Layer& Layer::operator =(JsonView jsonValue)
     }
     m_customSecurityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSecurityGroupNames"))
   {
     Aws::Utils::Array<JsonView> defaultSecurityGroupNamesJsonList = jsonValue.GetArray("DefaultSecurityGroupNames");
@@ -151,7 +97,6 @@ Layer& Layer::operator =(JsonView jsonValue)
     }
     m_defaultSecurityGroupNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Packages"))
   {
     Aws::Utils::Array<JsonView> packagesJsonList = jsonValue.GetArray("Packages");
@@ -161,7 +106,6 @@ Layer& Layer::operator =(JsonView jsonValue)
     }
     m_packagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeConfigurations"))
   {
     Aws::Utils::Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("VolumeConfigurations");
@@ -171,70 +115,51 @@ Layer& Layer::operator =(JsonView jsonValue)
     }
     m_volumeConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableAutoHealing"))
   {
     m_enableAutoHealing = jsonValue.GetBool("EnableAutoHealing");
-
     m_enableAutoHealingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAssignElasticIps"))
   {
     m_autoAssignElasticIps = jsonValue.GetBool("AutoAssignElasticIps");
-
     m_autoAssignElasticIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAssignPublicIps"))
   {
     m_autoAssignPublicIps = jsonValue.GetBool("AutoAssignPublicIps");
-
     m_autoAssignPublicIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRecipes"))
   {
     m_defaultRecipes = jsonValue.GetObject("DefaultRecipes");
-
     m_defaultRecipesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomRecipes"))
   {
     m_customRecipes = jsonValue.GetObject("CustomRecipes");
-
     m_customRecipesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstallUpdatesOnBoot"))
   {
     m_installUpdatesOnBoot = jsonValue.GetBool("InstallUpdatesOnBoot");
-
     m_installUpdatesOnBootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseEbsOptimizedInstances"))
   {
     m_useEbsOptimizedInstances = jsonValue.GetBool("UseEbsOptimizedInstances");
-
     m_useEbsOptimizedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleEventConfiguration"))
   {
     m_lifecycleEventConfiguration = jsonValue.GetObject("LifecycleEventConfiguration");
-
     m_lifecycleEventConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-Circle::Circle() : 
-    m_centerHasBeenSet(false),
-    m_radius(0.0),
-    m_radiusHasBeenSet(false)
-{
-}
-
 Circle::Circle(JsonView jsonValue)
-  : Circle()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Circle& Circle::operator =(JsonView jsonValue)
     }
     m_centerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetDouble("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   return *this;
 }
 

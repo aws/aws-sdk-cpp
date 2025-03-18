@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultRelativeDateTimeControlOptions::DefaultRelativeDateTimeControlOptions() : 
-    m_displayOptionsHasBeenSet(false),
-    m_commitMode(CommitMode::NOT_SET),
-    m_commitModeHasBeenSet(false)
-{
-}
-
 DefaultRelativeDateTimeControlOptions::DefaultRelativeDateTimeControlOptions(JsonView jsonValue)
-  : DefaultRelativeDateTimeControlOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DefaultRelativeDateTimeControlOptions& DefaultRelativeDateTimeControlOptions::op
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitMode"))
   {
     m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
-
     m_commitModeHasBeenSet = true;
   }
-
   return *this;
 }
 

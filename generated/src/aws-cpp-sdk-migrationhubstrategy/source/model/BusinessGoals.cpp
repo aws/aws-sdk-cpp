@@ -18,20 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-BusinessGoals::BusinessGoals() : 
-    m_licenseCostReduction(0),
-    m_licenseCostReductionHasBeenSet(false),
-    m_modernizeInfrastructureWithCloudNativeTechnologies(0),
-    m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet(false),
-    m_reduceOperationalOverheadWithManagedServices(0),
-    m_reduceOperationalOverheadWithManagedServicesHasBeenSet(false),
-    m_speedOfMigration(0),
-    m_speedOfMigrationHasBeenSet(false)
-{
-}
-
 BusinessGoals::BusinessGoals(JsonView jsonValue)
-  : BusinessGoals()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ BusinessGoals& BusinessGoals::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("licenseCostReduction"))
   {
     m_licenseCostReduction = jsonValue.GetInteger("licenseCostReduction");
-
     m_licenseCostReductionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modernizeInfrastructureWithCloudNativeTechnologies"))
   {
     m_modernizeInfrastructureWithCloudNativeTechnologies = jsonValue.GetInteger("modernizeInfrastructureWithCloudNativeTechnologies");
-
     m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reduceOperationalOverheadWithManagedServices"))
   {
     m_reduceOperationalOverheadWithManagedServices = jsonValue.GetInteger("reduceOperationalOverheadWithManagedServices");
-
     m_reduceOperationalOverheadWithManagedServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speedOfMigration"))
   {
     m_speedOfMigration = jsonValue.GetInteger("speedOfMigration");
-
     m_speedOfMigrationHasBeenSet = true;
   }
-
   return *this;
 }
 

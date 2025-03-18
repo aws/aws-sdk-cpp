@@ -12,13 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTaxExemptionsRequest::ListTaxExemptionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTaxExemptionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class CreateScheduledAuditResult
   {
   public:
-    AWS_IOT_API CreateScheduledAuditResult();
+    AWS_IOT_API CreateScheduledAuditResult() = default;
     AWS_IOT_API CreateScheduledAuditResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreateScheduledAuditResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the scheduled audit.</p>
      */
-    inline const Aws::String& GetScheduledAuditArn() const{ return m_scheduledAuditArn; }
-    inline void SetScheduledAuditArn(const Aws::String& value) { m_scheduledAuditArn = value; }
-    inline void SetScheduledAuditArn(Aws::String&& value) { m_scheduledAuditArn = std::move(value); }
-    inline void SetScheduledAuditArn(const char* value) { m_scheduledAuditArn.assign(value); }
-    inline CreateScheduledAuditResult& WithScheduledAuditArn(const Aws::String& value) { SetScheduledAuditArn(value); return *this;}
-    inline CreateScheduledAuditResult& WithScheduledAuditArn(Aws::String&& value) { SetScheduledAuditArn(std::move(value)); return *this;}
-    inline CreateScheduledAuditResult& WithScheduledAuditArn(const char* value) { SetScheduledAuditArn(value); return *this;}
+    inline const Aws::String& GetScheduledAuditArn() const { return m_scheduledAuditArn; }
+    template<typename ScheduledAuditArnT = Aws::String>
+    void SetScheduledAuditArn(ScheduledAuditArnT&& value) { m_scheduledAuditArnHasBeenSet = true; m_scheduledAuditArn = std::forward<ScheduledAuditArnT>(value); }
+    template<typename ScheduledAuditArnT = Aws::String>
+    CreateScheduledAuditResult& WithScheduledAuditArn(ScheduledAuditArnT&& value) { SetScheduledAuditArn(std::forward<ScheduledAuditArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateScheduledAuditResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateScheduledAuditResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateScheduledAuditResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateScheduledAuditResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduledAuditArn;
+    bool m_scheduledAuditArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ExplainabilityInfo::ExplainabilityInfo() : 
-    m_explainabilityArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ExplainabilityInfo::ExplainabilityInfo(JsonView jsonValue)
-  : ExplainabilityInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExplainabilityInfo& ExplainabilityInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExplainabilityArn"))
   {
     m_explainabilityArn = jsonValue.GetString("ExplainabilityArn");
-
     m_explainabilityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

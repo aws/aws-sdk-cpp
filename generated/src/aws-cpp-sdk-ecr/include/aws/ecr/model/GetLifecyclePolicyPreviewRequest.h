@@ -24,7 +24,7 @@ namespace Model
   class GetLifecyclePolicyPreviewRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API GetLifecyclePolicyPreviewRequest();
+    AWS_ECR_API GetLifecyclePolicyPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,38 @@ namespace Model
      * the repository. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline GetLifecyclePolicyPreviewRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    GetLifecyclePolicyPreviewRequest& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    GetLifecyclePolicyPreviewRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of imageIDs to be included.</p>
      */
-    inline const Aws::Vector<ImageIdentifier>& GetImageIds() const{ return m_imageIds; }
+    inline const Aws::Vector<ImageIdentifier>& GetImageIds() const { return m_imageIds; }
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
-    inline void SetImageIds(const Aws::Vector<ImageIdentifier>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
-    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
-    inline GetLifecyclePolicyPreviewRequest& WithImageIds(const Aws::Vector<ImageIdentifier>& value) { SetImageIds(value); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(std::move(value)); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& AddImageIds(const ImageIdentifier& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-    inline GetLifecyclePolicyPreviewRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
+    template<typename ImageIdsT = Aws::Vector<ImageIdentifier>>
+    void SetImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::forward<ImageIdsT>(value); }
+    template<typename ImageIdsT = Aws::Vector<ImageIdentifier>>
+    GetLifecyclePolicyPreviewRequest& WithImageIds(ImageIdsT&& value) { SetImageIds(std::forward<ImageIdsT>(value)); return *this;}
+    template<typename ImageIdsT = ImageIdentifier>
+    GetLifecyclePolicyPreviewRequest& AddImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds.emplace_back(std::forward<ImageIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * <code>null</code> when there are no more results to return. This option cannot
      * be used when you specify images with <code>imageIds</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetLifecyclePolicyPreviewRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetLifecyclePolicyPreviewRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +110,7 @@ namespace Model
      * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
      * used when you specify images with <code>imageIds</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetLifecyclePolicyPreviewRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -127,12 +121,12 @@ namespace Model
      * <p>An optional parameter that filters results based on image tag status and all
      * tags, if tagged.</p>
      */
-    inline const LifecyclePolicyPreviewFilter& GetFilter() const{ return m_filter; }
+    inline const LifecyclePolicyPreviewFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const LifecyclePolicyPreviewFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(LifecyclePolicyPreviewFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetLifecyclePolicyPreviewRequest& WithFilter(const LifecyclePolicyPreviewFilter& value) { SetFilter(value); return *this;}
-    inline GetLifecyclePolicyPreviewRequest& WithFilter(LifecyclePolicyPreviewFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = LifecyclePolicyPreviewFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = LifecyclePolicyPreviewFilter>
+    GetLifecyclePolicyPreviewRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,7 +142,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     LifecyclePolicyPreviewFilter m_filter;

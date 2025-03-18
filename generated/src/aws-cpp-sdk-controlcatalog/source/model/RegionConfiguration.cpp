@@ -18,15 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-RegionConfiguration::RegionConfiguration() : 
-    m_scope(ControlScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_deployableRegionsHasBeenSet(false)
-{
-}
-
 RegionConfiguration::RegionConfiguration(JsonView jsonValue)
-  : RegionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RegionConfiguration& RegionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = ControlScopeMapper::GetControlScopeForName(jsonValue.GetString("Scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeployableRegions"))
   {
     Aws::Utils::Array<JsonView> deployableRegionsJsonList = jsonValue.GetArray("DeployableRegions");
@@ -49,7 +39,6 @@ RegionConfiguration& RegionConfiguration::operator =(JsonView jsonValue)
     }
     m_deployableRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApiKeyRequest::DeleteApiKeyRequest() : 
-    m_apiKeyHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApiKeyRequest::SerializePayload() const
 {
   return {};

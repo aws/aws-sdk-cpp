@@ -21,7 +21,7 @@ namespace Model
   class UpdateClusterSoftwareRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateClusterSoftwareRequest();
+    AWS_SAGEMAKER_API UpdateClusterSoftwareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
      * cluster you want to update for security patching.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline UpdateClusterSoftwareRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline UpdateClusterSoftwareRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline UpdateClusterSoftwareRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    UpdateClusterSoftwareRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
   private:
 

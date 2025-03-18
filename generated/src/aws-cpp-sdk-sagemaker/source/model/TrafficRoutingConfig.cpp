@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrafficRoutingConfig::TrafficRoutingConfig() : 
-    m_type(TrafficRoutingConfigType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_waitIntervalInSeconds(0),
-    m_waitIntervalInSecondsHasBeenSet(false),
-    m_canarySizeHasBeenSet(false),
-    m_linearStepSizeHasBeenSet(false)
-{
-}
-
 TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue)
-  : TrafficRoutingConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TrafficRoutingConfig& TrafficRoutingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TrafficRoutingConfigTypeMapper::GetTrafficRoutingConfigTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitIntervalInSeconds"))
   {
     m_waitIntervalInSeconds = jsonValue.GetInteger("WaitIntervalInSeconds");
-
     m_waitIntervalInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CanarySize"))
   {
     m_canarySize = jsonValue.GetObject("CanarySize");
-
     m_canarySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinearStepSize"))
   {
     m_linearStepSize = jsonValue.GetObject("LinearStepSize");
-
     m_linearStepSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

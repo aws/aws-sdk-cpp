@@ -18,15 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-HandshakeParty::HandshakeParty() : 
-    m_idHasBeenSet(false),
-    m_type(HandshakePartyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 HandshakeParty::HandshakeParty(JsonView jsonValue)
-  : HandshakeParty()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HandshakeParty& HandshakeParty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = HandshakePartyTypeMapper::GetHandshakePartyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

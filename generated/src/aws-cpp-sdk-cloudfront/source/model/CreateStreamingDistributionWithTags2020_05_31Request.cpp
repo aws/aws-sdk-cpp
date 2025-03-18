@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateStreamingDistributionWithTags2020_05_31Request::CreateStreamingDistributionWithTags2020_05_31Request() : 
-    m_streamingDistributionConfigWithTagsHasBeenSet(false)
-{
-}
 
 Aws::String CreateStreamingDistributionWithTags2020_05_31Request::SerializePayload() const
 {

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSdkTypesRequest::GetSdkTypesRequest() : 
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String GetSdkTypesRequest::SerializePayload() const
 {
   return {};

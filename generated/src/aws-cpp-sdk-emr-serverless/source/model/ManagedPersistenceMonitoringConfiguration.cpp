@@ -18,15 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
-{
-}
-
 ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration(JsonView jsonValue)
-  : ManagedPersistenceMonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ManagedPersistenceMonitoringConfiguration& ManagedPersistenceMonitoringConfigura
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

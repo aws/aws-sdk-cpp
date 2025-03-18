@@ -25,7 +25,7 @@ namespace Model
   class DescribeAccountCustomizationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DescribeAccountCustomizationRequest();
+    AWS_QUICKSIGHT_API DescribeAccountCustomizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID for the Amazon Web Services account that you want to describe Amazon
      * QuickSight customizations for.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DescribeAccountCustomizationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DescribeAccountCustomizationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DescribeAccountCustomizationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DescribeAccountCustomizationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight
      * customizations for.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline DescribeAccountCustomizationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline DescribeAccountCustomizationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline DescribeAccountCustomizationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    DescribeAccountCustomizationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * to <code>no-resolved</code>, to reveal customizations that are configured at
      * different levels. </p>
      */
-    inline bool GetResolved() const{ return m_resolved; }
+    inline bool GetResolved() const { return m_resolved; }
     inline bool ResolvedHasBeenSet() const { return m_resolvedHasBeenSet; }
     inline void SetResolved(bool value) { m_resolvedHasBeenSet = true; m_resolved = value; }
     inline DescribeAccountCustomizationRequest& WithResolved(bool value) { SetResolved(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
 
-    bool m_resolved;
+    bool m_resolved{false};
     bool m_resolvedHasBeenSet = false;
   };
 

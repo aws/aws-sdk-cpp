@@ -21,7 +21,7 @@ namespace Model
   class DeleteDataGrantRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API DeleteDataGrantRequest();
+    AWS_DATAEXCHANGE_API DeleteDataGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the data grant to delete.</p>
      */
-    inline const Aws::String& GetDataGrantId() const{ return m_dataGrantId; }
+    inline const Aws::String& GetDataGrantId() const { return m_dataGrantId; }
     inline bool DataGrantIdHasBeenSet() const { return m_dataGrantIdHasBeenSet; }
-    inline void SetDataGrantId(const Aws::String& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = value; }
-    inline void SetDataGrantId(Aws::String&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::move(value); }
-    inline void SetDataGrantId(const char* value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId.assign(value); }
-    inline DeleteDataGrantRequest& WithDataGrantId(const Aws::String& value) { SetDataGrantId(value); return *this;}
-    inline DeleteDataGrantRequest& WithDataGrantId(Aws::String&& value) { SetDataGrantId(std::move(value)); return *this;}
-    inline DeleteDataGrantRequest& WithDataGrantId(const char* value) { SetDataGrantId(value); return *this;}
+    template<typename DataGrantIdT = Aws::String>
+    void SetDataGrantId(DataGrantIdT&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::forward<DataGrantIdT>(value); }
+    template<typename DataGrantIdT = Aws::String>
+    DeleteDataGrantRequest& WithDataGrantId(DataGrantIdT&& value) { SetDataGrantId(std::forward<DataGrantIdT>(value)); return *this;}
     ///@}
   private:
 

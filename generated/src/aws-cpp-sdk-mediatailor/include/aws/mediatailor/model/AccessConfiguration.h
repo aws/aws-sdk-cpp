@@ -32,7 +32,7 @@ namespace Model
   class AccessConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API AccessConfiguration();
+    AWS_MEDIATAILOR_API AccessConfiguration() = default;
     AWS_MEDIATAILOR_API AccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -83,28 +83,26 @@ namespace Model
      * referenced by your MediaTailor <code>VodSource</code> packaging
      * configurations.</p>
      */
-    inline const AccessType& GetAccessType() const{ return m_accessType; }
+    inline AccessType GetAccessType() const { return m_accessType; }
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
-    inline void SetAccessType(const AccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
-    inline void SetAccessType(AccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
-    inline AccessConfiguration& WithAccessType(const AccessType& value) { SetAccessType(value); return *this;}
-    inline AccessConfiguration& WithAccessType(AccessType&& value) { SetAccessType(std::move(value)); return *this;}
+    inline void SetAccessType(AccessType value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline AccessConfiguration& WithAccessType(AccessType value) { SetAccessType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>AWS Secrets Manager access token configuration parameters.</p>
      */
-    inline const SecretsManagerAccessTokenConfiguration& GetSecretsManagerAccessTokenConfiguration() const{ return m_secretsManagerAccessTokenConfiguration; }
+    inline const SecretsManagerAccessTokenConfiguration& GetSecretsManagerAccessTokenConfiguration() const { return m_secretsManagerAccessTokenConfiguration; }
     inline bool SecretsManagerAccessTokenConfigurationHasBeenSet() const { return m_secretsManagerAccessTokenConfigurationHasBeenSet; }
-    inline void SetSecretsManagerAccessTokenConfiguration(const SecretsManagerAccessTokenConfiguration& value) { m_secretsManagerAccessTokenConfigurationHasBeenSet = true; m_secretsManagerAccessTokenConfiguration = value; }
-    inline void SetSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration&& value) { m_secretsManagerAccessTokenConfigurationHasBeenSet = true; m_secretsManagerAccessTokenConfiguration = std::move(value); }
-    inline AccessConfiguration& WithSecretsManagerAccessTokenConfiguration(const SecretsManagerAccessTokenConfiguration& value) { SetSecretsManagerAccessTokenConfiguration(value); return *this;}
-    inline AccessConfiguration& WithSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration&& value) { SetSecretsManagerAccessTokenConfiguration(std::move(value)); return *this;}
+    template<typename SecretsManagerAccessTokenConfigurationT = SecretsManagerAccessTokenConfiguration>
+    void SetSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfigurationT&& value) { m_secretsManagerAccessTokenConfigurationHasBeenSet = true; m_secretsManagerAccessTokenConfiguration = std::forward<SecretsManagerAccessTokenConfigurationT>(value); }
+    template<typename SecretsManagerAccessTokenConfigurationT = SecretsManagerAccessTokenConfiguration>
+    AccessConfiguration& WithSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfigurationT&& value) { SetSecretsManagerAccessTokenConfiguration(std::forward<SecretsManagerAccessTokenConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    AccessType m_accessType;
+    AccessType m_accessType{AccessType::NOT_SET};
     bool m_accessTypeHasBeenSet = false;
 
     SecretsManagerAccessTokenConfiguration m_secretsManagerAccessTokenConfiguration;

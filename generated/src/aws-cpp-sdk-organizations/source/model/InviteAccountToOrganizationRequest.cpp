@@ -12,13 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InviteAccountToOrganizationRequest::InviteAccountToOrganizationRequest() : 
-    m_targetHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String InviteAccountToOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

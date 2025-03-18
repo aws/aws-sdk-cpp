@@ -18,21 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisScanResultsAggregatedByTargetResourceFilterCriteria::CisScanResultsAggregatedByTargetResourceFilterCriteria() : 
-    m_accountIdFiltersHasBeenSet(false),
-    m_checkIdFiltersHasBeenSet(false),
-    m_failedChecksFiltersHasBeenSet(false),
-    m_platformFiltersHasBeenSet(false),
-    m_statusFiltersHasBeenSet(false),
-    m_targetResourceIdFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false),
-    m_targetStatusFiltersHasBeenSet(false),
-    m_targetStatusReasonFiltersHasBeenSet(false)
-{
-}
-
 CisScanResultsAggregatedByTargetResourceFilterCriteria::CisScanResultsAggregatedByTargetResourceFilterCriteria(JsonView jsonValue)
-  : CisScanResultsAggregatedByTargetResourceFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -48,7 +34,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_accountIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkIdFilters"))
   {
     Aws::Utils::Array<JsonView> checkIdFiltersJsonList = jsonValue.GetArray("checkIdFilters");
@@ -58,7 +43,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_checkIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedChecksFilters"))
   {
     Aws::Utils::Array<JsonView> failedChecksFiltersJsonList = jsonValue.GetArray("failedChecksFilters");
@@ -68,7 +52,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_failedChecksFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformFilters"))
   {
     Aws::Utils::Array<JsonView> platformFiltersJsonList = jsonValue.GetArray("platformFilters");
@@ -78,7 +61,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_platformFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusFilters"))
   {
     Aws::Utils::Array<JsonView> statusFiltersJsonList = jsonValue.GetArray("statusFilters");
@@ -88,7 +70,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_statusFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceIdFilters"))
   {
     Aws::Utils::Array<JsonView> targetResourceIdFiltersJsonList = jsonValue.GetArray("targetResourceIdFilters");
@@ -98,7 +79,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_targetResourceIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceTagFilters"))
   {
     Aws::Utils::Array<JsonView> targetResourceTagFiltersJsonList = jsonValue.GetArray("targetResourceTagFilters");
@@ -108,7 +88,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_targetResourceTagFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetStatusFilters"))
   {
     Aws::Utils::Array<JsonView> targetStatusFiltersJsonList = jsonValue.GetArray("targetStatusFilters");
@@ -118,7 +97,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_targetStatusFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetStatusReasonFilters"))
   {
     Aws::Utils::Array<JsonView> targetStatusReasonFiltersJsonList = jsonValue.GetArray("targetStatusReasonFilters");
@@ -128,7 +106,6 @@ CisScanResultsAggregatedByTargetResourceFilterCriteria& CisScanResultsAggregated
     }
     m_targetStatusReasonFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitiateJobRequest::InitiateJobRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_jobParametersHasBeenSet(false)
-{
-}
-
 Aws::String InitiateJobRequest::SerializePayload() const
 {
   JsonValue payload;

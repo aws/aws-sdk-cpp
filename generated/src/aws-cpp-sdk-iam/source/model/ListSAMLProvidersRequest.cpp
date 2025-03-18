@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListSAMLProvidersRequest::ListSAMLProvidersRequest()
-{
-}
-
 Aws::String ListSAMLProvidersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -21,7 +21,7 @@ namespace Model
   class EnableTrustAnchorRequest : public RolesAnywhereRequest
   {
   public:
-    AWS_ROLESANYWHERE_API EnableTrustAnchorRequest();
+    AWS_ROLESANYWHERE_API EnableTrustAnchorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the trust anchor.</p>
      */
-    inline const Aws::String& GetTrustAnchorId() const{ return m_trustAnchorId; }
+    inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
     inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }
-    inline void SetTrustAnchorId(const Aws::String& value) { m_trustAnchorIdHasBeenSet = true; m_trustAnchorId = value; }
-    inline void SetTrustAnchorId(Aws::String&& value) { m_trustAnchorIdHasBeenSet = true; m_trustAnchorId = std::move(value); }
-    inline void SetTrustAnchorId(const char* value) { m_trustAnchorIdHasBeenSet = true; m_trustAnchorId.assign(value); }
-    inline EnableTrustAnchorRequest& WithTrustAnchorId(const Aws::String& value) { SetTrustAnchorId(value); return *this;}
-    inline EnableTrustAnchorRequest& WithTrustAnchorId(Aws::String&& value) { SetTrustAnchorId(std::move(value)); return *this;}
-    inline EnableTrustAnchorRequest& WithTrustAnchorId(const char* value) { SetTrustAnchorId(value); return *this;}
+    template<typename TrustAnchorIdT = Aws::String>
+    void SetTrustAnchorId(TrustAnchorIdT&& value) { m_trustAnchorIdHasBeenSet = true; m_trustAnchorId = std::forward<TrustAnchorIdT>(value); }
+    template<typename TrustAnchorIdT = Aws::String>
+    EnableTrustAnchorRequest& WithTrustAnchorId(TrustAnchorIdT&& value) { SetTrustAnchorId(std::forward<TrustAnchorIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::Pricing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProductsRequest::GetProductsRequest() : 
-    m_serviceCodeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_formatVersionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetProductsRequest::SerializePayload() const
 {
   JsonValue payload;

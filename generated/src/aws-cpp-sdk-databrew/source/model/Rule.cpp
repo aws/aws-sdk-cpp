@@ -18,19 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Rule::Rule() : 
-    m_nameHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_checkExpressionHasBeenSet(false),
-    m_substitutionMapHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_columnSelectorsHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CheckExpression"))
   {
     m_checkExpression = jsonValue.GetString("CheckExpression");
-
     m_checkExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubstitutionMap"))
   {
     Aws::Map<Aws::String, JsonView> substitutionMapJsonMap = jsonValue.GetObject("SubstitutionMap").GetAllObjects();
@@ -67,14 +49,11 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_substitutionMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetObject("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnSelectors"))
   {
     Aws::Utils::Array<JsonView> columnSelectorsJsonList = jsonValue.GetArray("ColumnSelectors");
@@ -84,7 +63,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_columnSelectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

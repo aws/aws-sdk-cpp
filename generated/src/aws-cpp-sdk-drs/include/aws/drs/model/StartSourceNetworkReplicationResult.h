@@ -28,7 +28,7 @@ namespace Model
   class StartSourceNetworkReplicationResult
   {
   public:
-    AWS_DRS_API StartSourceNetworkReplicationResult();
+    AWS_DRS_API StartSourceNetworkReplicationResult() = default;
     AWS_DRS_API StartSourceNetworkReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API StartSourceNetworkReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Source Network which was requested for replication.</p>
      */
-    inline const SourceNetwork& GetSourceNetwork() const{ return m_sourceNetwork; }
-    inline void SetSourceNetwork(const SourceNetwork& value) { m_sourceNetwork = value; }
-    inline void SetSourceNetwork(SourceNetwork&& value) { m_sourceNetwork = std::move(value); }
-    inline StartSourceNetworkReplicationResult& WithSourceNetwork(const SourceNetwork& value) { SetSourceNetwork(value); return *this;}
-    inline StartSourceNetworkReplicationResult& WithSourceNetwork(SourceNetwork&& value) { SetSourceNetwork(std::move(value)); return *this;}
+    inline const SourceNetwork& GetSourceNetwork() const { return m_sourceNetwork; }
+    template<typename SourceNetworkT = SourceNetwork>
+    void SetSourceNetwork(SourceNetworkT&& value) { m_sourceNetworkHasBeenSet = true; m_sourceNetwork = std::forward<SourceNetworkT>(value); }
+    template<typename SourceNetworkT = SourceNetwork>
+    StartSourceNetworkReplicationResult& WithSourceNetwork(SourceNetworkT&& value) { SetSourceNetwork(std::forward<SourceNetworkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSourceNetworkReplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSourceNetworkReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSourceNetworkReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSourceNetworkReplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SourceNetwork m_sourceNetwork;
+    bool m_sourceNetworkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

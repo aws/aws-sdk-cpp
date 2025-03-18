@@ -30,7 +30,7 @@ namespace Model
   class TrendmicroMetadata
   {
   public:
-    AWS_APPFLOW_API TrendmicroMetadata();
+    AWS_APPFLOW_API TrendmicroMetadata() = default;
     AWS_APPFLOW_API TrendmicroMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API TrendmicroMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

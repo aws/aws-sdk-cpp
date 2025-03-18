@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-InternalServerException::InternalServerException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 InternalServerException::InternalServerException(JsonView jsonValue)
-  : InternalServerException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerException& InternalServerException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class RemoveStorageSystemRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API RemoveStorageSystemRequest();
+    AWS_DATASYNC_API RemoveStorageSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want
      * to permanently remove from DataSync Discovery.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-    inline RemoveStorageSystemRequest& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline RemoveStorageSystemRequest& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline RemoveStorageSystemRequest& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    RemoveStorageSystemRequest& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
   private:
 

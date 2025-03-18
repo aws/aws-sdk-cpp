@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIpGroupRequest::CreateIpGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_groupDescHasBeenSet(false),
-    m_userRulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIpGroupRequest::SerializePayload() const
 {
   JsonValue payload;

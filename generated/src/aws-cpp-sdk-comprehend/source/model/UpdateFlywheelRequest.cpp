@@ -12,14 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlywheelRequest::UpdateFlywheelRequest() : 
-    m_flywheelArnHasBeenSet(false),
-    m_activeModelArnHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_dataSecurityConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlywheelRequest::SerializePayload() const
 {
   JsonValue payload;

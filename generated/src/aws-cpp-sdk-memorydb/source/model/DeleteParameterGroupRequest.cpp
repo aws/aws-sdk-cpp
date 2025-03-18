@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteParameterGroupRequest::DeleteParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteParameterGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -36,7 +36,7 @@ namespace Model
   class LifecyclePolicySummary
   {
   public:
-    AWS_IMAGEBUILDER_API LifecyclePolicySummary();
+    AWS_IMAGEBUILDER_API LifecyclePolicySummary() = default;
     AWS_IMAGEBUILDER_API LifecyclePolicySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecyclePolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,54 +46,46 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LifecyclePolicySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LifecyclePolicySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LifecyclePolicySummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LifecyclePolicySummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the lifecycle policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LifecyclePolicySummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LifecyclePolicySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LifecyclePolicySummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LifecyclePolicySummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional description for the lifecycle policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline LifecyclePolicySummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline LifecyclePolicySummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline LifecyclePolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    LifecyclePolicySummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lifecycle policy resource status.</p>
      */
-    inline const LifecyclePolicyStatus& GetStatus() const{ return m_status; }
+    inline LifecyclePolicyStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LifecyclePolicyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LifecyclePolicyStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LifecyclePolicySummary& WithStatus(const LifecyclePolicyStatus& value) { SetStatus(value); return *this;}
-    inline LifecyclePolicySummary& WithStatus(LifecyclePolicyStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LifecyclePolicyStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LifecyclePolicySummary& WithStatus(LifecyclePolicyStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -101,62 +93,58 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
      * uses to run the lifecycle policy.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline LifecyclePolicySummary& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline LifecyclePolicySummary& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline LifecyclePolicySummary& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    LifecyclePolicySummary& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resources the lifecycle policy targets.</p>
      */
-    inline const LifecyclePolicyResourceType& GetResourceType() const{ return m_resourceType; }
+    inline LifecyclePolicyResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const LifecyclePolicyResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(LifecyclePolicyResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline LifecyclePolicySummary& WithResourceType(const LifecyclePolicyResourceType& value) { SetResourceType(value); return *this;}
-    inline LifecyclePolicySummary& WithResourceType(LifecyclePolicyResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(LifecyclePolicyResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline LifecyclePolicySummary& WithResourceType(LifecyclePolicyResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when Image Builder created the lifecycle policy resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline LifecyclePolicySummary& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
-    inline LifecyclePolicySummary& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    LifecyclePolicySummary& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when Image Builder updated the lifecycle policy resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const { return m_dateUpdated; }
     inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
-    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
-    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
-    inline LifecyclePolicySummary& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
-    inline LifecyclePolicySummary& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    void SetDateUpdated(DateUpdatedT&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::forward<DateUpdatedT>(value); }
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    LifecyclePolicySummary& WithDateUpdated(DateUpdatedT&& value) { SetDateUpdated(std::forward<DateUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for the last time Image Builder ran the lifecycle policy.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateLastRun() const{ return m_dateLastRun; }
+    inline const Aws::Utils::DateTime& GetDateLastRun() const { return m_dateLastRun; }
     inline bool DateLastRunHasBeenSet() const { return m_dateLastRunHasBeenSet; }
-    inline void SetDateLastRun(const Aws::Utils::DateTime& value) { m_dateLastRunHasBeenSet = true; m_dateLastRun = value; }
-    inline void SetDateLastRun(Aws::Utils::DateTime&& value) { m_dateLastRunHasBeenSet = true; m_dateLastRun = std::move(value); }
-    inline LifecyclePolicySummary& WithDateLastRun(const Aws::Utils::DateTime& value) { SetDateLastRun(value); return *this;}
-    inline LifecyclePolicySummary& WithDateLastRun(Aws::Utils::DateTime&& value) { SetDateLastRun(std::move(value)); return *this;}
+    template<typename DateLastRunT = Aws::Utils::DateTime>
+    void SetDateLastRun(DateLastRunT&& value) { m_dateLastRunHasBeenSet = true; m_dateLastRun = std::forward<DateLastRunT>(value); }
+    template<typename DateLastRunT = Aws::Utils::DateTime>
+    LifecyclePolicySummary& WithDateLastRun(DateLastRunT&& value) { SetDateLastRun(std::forward<DateLastRunT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,19 +153,16 @@ namespace Model
      * metadata to each resource in the form of tags. Each tag consists of a key and an
      * optional value, both of which you define.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline LifecyclePolicySummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline LifecyclePolicySummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline LifecyclePolicySummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline LifecyclePolicySummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline LifecyclePolicySummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline LifecyclePolicySummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline LifecyclePolicySummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline LifecyclePolicySummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline LifecyclePolicySummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    LifecyclePolicySummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    LifecyclePolicySummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -190,22 +175,22 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    LifecyclePolicyStatus m_status;
+    LifecyclePolicyStatus m_status{LifecyclePolicyStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;
 
-    LifecyclePolicyResourceType m_resourceType;
+    LifecyclePolicyResourceType m_resourceType{LifecyclePolicyResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateCreated{};
     bool m_dateCreatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateUpdated;
+    Aws::Utils::DateTime m_dateUpdated{};
     bool m_dateUpdatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateLastRun;
+    Aws::Utils::DateTime m_dateLastRun{};
     bool m_dateLastRunHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

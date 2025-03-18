@@ -32,7 +32,7 @@ namespace Model
   class EksPropertiesDetail
   {
   public:
-    AWS_BATCH_API EksPropertiesDetail();
+    AWS_BATCH_API EksPropertiesDetail() = default;
     AWS_BATCH_API EksPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The properties for the Kubernetes pod resources of a job.</p>
      */
-    inline const EksPodPropertiesDetail& GetPodProperties() const{ return m_podProperties; }
+    inline const EksPodPropertiesDetail& GetPodProperties() const { return m_podProperties; }
     inline bool PodPropertiesHasBeenSet() const { return m_podPropertiesHasBeenSet; }
-    inline void SetPodProperties(const EksPodPropertiesDetail& value) { m_podPropertiesHasBeenSet = true; m_podProperties = value; }
-    inline void SetPodProperties(EksPodPropertiesDetail&& value) { m_podPropertiesHasBeenSet = true; m_podProperties = std::move(value); }
-    inline EksPropertiesDetail& WithPodProperties(const EksPodPropertiesDetail& value) { SetPodProperties(value); return *this;}
-    inline EksPropertiesDetail& WithPodProperties(EksPodPropertiesDetail&& value) { SetPodProperties(std::move(value)); return *this;}
+    template<typename PodPropertiesT = EksPodPropertiesDetail>
+    void SetPodProperties(PodPropertiesT&& value) { m_podPropertiesHasBeenSet = true; m_podProperties = std::forward<PodPropertiesT>(value); }
+    template<typename PodPropertiesT = EksPodPropertiesDetail>
+    EksPropertiesDetail& WithPodProperties(PodPropertiesT&& value) { SetPodProperties(std::forward<PodPropertiesT>(value)); return *this;}
     ///@}
   private:
 

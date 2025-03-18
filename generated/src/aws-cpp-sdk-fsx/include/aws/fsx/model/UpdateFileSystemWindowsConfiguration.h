@@ -36,7 +36,7 @@ namespace Model
   class UpdateFileSystemWindowsConfiguration
   {
   public:
-    AWS_FSX_API UpdateFileSystemWindowsConfiguration();
+    AWS_FSX_API UpdateFileSystemWindowsConfiguration() = default;
     AWS_FSX_API UpdateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 =
      * Monday and 7 = Sunday.</p>
      */
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline UpdateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    UpdateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The preferred time to start the daily automatic backup, in the UTC time zone,
      * for example, <code>02:00</code> </p>
      */
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline UpdateFileSystemWindowsConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    UpdateFileSystemWindowsConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline UpdateFileSystemWindowsConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing
      * Throughput Capacity</a>.</p>
      */
-    inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
     inline UpdateFileSystemWindowsConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
@@ -111,12 +107,12 @@ namespace Model
      * Microsoft AD update request if there is an existing self-managed Microsoft AD
      * update request in progress.</p>
      */
-    inline const SelfManagedActiveDirectoryConfigurationUpdates& GetSelfManagedActiveDirectoryConfiguration() const{ return m_selfManagedActiveDirectoryConfiguration; }
+    inline const SelfManagedActiveDirectoryConfigurationUpdates& GetSelfManagedActiveDirectoryConfiguration() const { return m_selfManagedActiveDirectoryConfiguration; }
     inline bool SelfManagedActiveDirectoryConfigurationHasBeenSet() const { return m_selfManagedActiveDirectoryConfigurationHasBeenSet; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = value; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::move(value); }
-    inline UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { SetSelfManagedActiveDirectoryConfiguration(value); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryConfigurationUpdates>
+    void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::forward<SelfManagedActiveDirectoryConfigurationT>(value); }
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryConfigurationUpdates>
+    UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { SetSelfManagedActiveDirectoryConfiguration(std::forward<SelfManagedActiveDirectoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +121,12 @@ namespace Model
      * log user accesses of files, folders, and file shares on the Amazon FSx for
      * Windows File Server file system..</p>
      */
-    inline const WindowsAuditLogCreateConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+    inline const WindowsAuditLogCreateConfiguration& GetAuditLogConfiguration() const { return m_auditLogConfiguration; }
     inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
-    inline void SetAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
-    inline void SetAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
-    inline UpdateFileSystemWindowsConfiguration& WithAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
+    template<typename AuditLogConfigurationT = WindowsAuditLogCreateConfiguration>
+    void SetAuditLogConfiguration(AuditLogConfigurationT&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::forward<AuditLogConfigurationT>(value); }
+    template<typename AuditLogConfigurationT = WindowsAuditLogCreateConfiguration>
+    UpdateFileSystemWindowsConfiguration& WithAuditLogConfiguration(AuditLogConfigurationT&& value) { SetAuditLogConfiguration(std::forward<AuditLogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +137,12 @@ namespace Model
      * storage, up to the maximum limit associated with your chosen throughput
      * capacity.</p>
      */
-    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const { return m_diskIopsConfiguration; }
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
-    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
-    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
-    inline UpdateFileSystemWindowsConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
-    inline UpdateFileSystemWindowsConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    void SetDiskIopsConfiguration(DiskIopsConfigurationT&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::forward<DiskIopsConfigurationT>(value); }
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    UpdateFileSystemWindowsConfiguration& WithDiskIopsConfiguration(DiskIopsConfigurationT&& value) { SetDiskIopsConfiguration(std::forward<DiskIopsConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,10 +152,10 @@ namespace Model
     Aws::String m_dailyAutomaticBackupStartTime;
     bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
-    int m_throughputCapacity;
+    int m_throughputCapacity{0};
     bool m_throughputCapacityHasBeenSet = false;
 
     SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;

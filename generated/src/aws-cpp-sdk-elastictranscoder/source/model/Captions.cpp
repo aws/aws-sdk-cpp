@@ -18,13 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Captions::Captions() : 
-    m_captionFormatsHasBeenSet(false)
-{
-}
-
 Captions::Captions(JsonView jsonValue)
-  : Captions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Captions& Captions::operator =(JsonView jsonValue)
     }
     m_captionFormatsHasBeenSet = true;
   }
-
   return *this;
 }
 

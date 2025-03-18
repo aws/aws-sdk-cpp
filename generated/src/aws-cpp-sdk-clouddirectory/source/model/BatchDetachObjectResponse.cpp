@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDetachObjectResponse::BatchDetachObjectResponse() : 
-    m_detachedObjectIdentifierHasBeenSet(false)
-{
-}
-
 BatchDetachObjectResponse::BatchDetachObjectResponse(JsonView jsonValue)
-  : BatchDetachObjectResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchDetachObjectResponse& BatchDetachObjectResponse::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("detachedObjectIdentifier"))
   {
     m_detachedObjectIdentifier = jsonValue.GetString("detachedObjectIdentifier");
-
     m_detachedObjectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

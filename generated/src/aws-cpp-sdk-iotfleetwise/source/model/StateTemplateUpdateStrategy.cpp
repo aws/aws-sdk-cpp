@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StateTemplateUpdateStrategy::StateTemplateUpdateStrategy() : 
-    m_periodicHasBeenSet(false),
-    m_onChangeHasBeenSet(false)
-{
-}
-
 StateTemplateUpdateStrategy::StateTemplateUpdateStrategy(JsonView jsonValue)
-  : StateTemplateUpdateStrategy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StateTemplateUpdateStrategy& StateTemplateUpdateStrategy::operator =(JsonView js
   if(jsonValue.ValueExists("periodic"))
   {
     m_periodic = jsonValue.GetObject("periodic");
-
     m_periodicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onChange"))
   {
     m_onChange = jsonValue.GetObject("onChange");
-
     m_onChangeHasBeenSet = true;
   }
-
   return *this;
 }
 

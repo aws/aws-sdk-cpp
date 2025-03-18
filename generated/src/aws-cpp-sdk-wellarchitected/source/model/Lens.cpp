@@ -18,19 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-Lens::Lens() : 
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Lens::Lens(JsonView jsonValue)
-  : Lens()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Lens& Lens::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
     m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensVersion"))
   {
     m_lensVersion = jsonValue.GetString("LensVersion");
-
     m_lensVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareInvitationId"))
   {
     m_shareInvitationId = jsonValue.GetString("ShareInvitationId");
-
     m_shareInvitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -88,7 +64,6 @@ Lens& Lens::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

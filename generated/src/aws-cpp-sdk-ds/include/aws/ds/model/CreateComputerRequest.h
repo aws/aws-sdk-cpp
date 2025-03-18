@@ -27,7 +27,7 @@ namespace Model
   class CreateComputerRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API CreateComputerRequest();
+    AWS_DIRECTORYSERVICE_API CreateComputerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The identifier of the directory in which to create the computer account.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline CreateComputerRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline CreateComputerRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline CreateComputerRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    CreateComputerRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the computer account.</p>
      */
-    inline const Aws::String& GetComputerName() const{ return m_computerName; }
+    inline const Aws::String& GetComputerName() const { return m_computerName; }
     inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
-    inline void SetComputerName(const Aws::String& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
-    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
-    inline void SetComputerName(const char* value) { m_computerNameHasBeenSet = true; m_computerName.assign(value); }
-    inline CreateComputerRequest& WithComputerName(const Aws::String& value) { SetComputerName(value); return *this;}
-    inline CreateComputerRequest& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
-    inline CreateComputerRequest& WithComputerName(const char* value) { SetComputerName(value); return *this;}
+    template<typename ComputerNameT = Aws::String>
+    void SetComputerName(ComputerNameT&& value) { m_computerNameHasBeenSet = true; m_computerName = std::forward<ComputerNameT>(value); }
+    template<typename ComputerNameT = Aws::String>
+    CreateComputerRequest& WithComputerName(ComputerNameT&& value) { SetComputerName(std::forward<ComputerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>A one-time password that is used to join the computer to the directory. You
      * should generate a random, strong password to use for this parameter.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline CreateComputerRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline CreateComputerRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline CreateComputerRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    CreateComputerRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The fully-qualified distinguished name of the organizational unit to place
      * the computer account in.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
+    inline const Aws::String& GetOrganizationalUnitDistinguishedName() const { return m_organizationalUnitDistinguishedName; }
     inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
-    inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
-    inline void SetOrganizationalUnitDistinguishedName(Aws::String&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::move(value); }
-    inline void SetOrganizationalUnitDistinguishedName(const char* value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName.assign(value); }
-    inline CreateComputerRequest& WithOrganizationalUnitDistinguishedName(const Aws::String& value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
-    inline CreateComputerRequest& WithOrganizationalUnitDistinguishedName(Aws::String&& value) { SetOrganizationalUnitDistinguishedName(std::move(value)); return *this;}
-    inline CreateComputerRequest& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
+    template<typename OrganizationalUnitDistinguishedNameT = Aws::String>
+    void SetOrganizationalUnitDistinguishedName(OrganizationalUnitDistinguishedNameT&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::forward<OrganizationalUnitDistinguishedNameT>(value); }
+    template<typename OrganizationalUnitDistinguishedNameT = Aws::String>
+    CreateComputerRequest& WithOrganizationalUnitDistinguishedName(OrganizationalUnitDistinguishedNameT&& value) { SetOrganizationalUnitDistinguishedName(std::forward<OrganizationalUnitDistinguishedNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,14 @@ namespace Model
      * <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to
      * apply to the computer account.</p>
      */
-    inline const Aws::Vector<Attribute>& GetComputerAttributes() const{ return m_computerAttributes; }
+    inline const Aws::Vector<Attribute>& GetComputerAttributes() const { return m_computerAttributes; }
     inline bool ComputerAttributesHasBeenSet() const { return m_computerAttributesHasBeenSet; }
-    inline void SetComputerAttributes(const Aws::Vector<Attribute>& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = value; }
-    inline void SetComputerAttributes(Aws::Vector<Attribute>&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = std::move(value); }
-    inline CreateComputerRequest& WithComputerAttributes(const Aws::Vector<Attribute>& value) { SetComputerAttributes(value); return *this;}
-    inline CreateComputerRequest& WithComputerAttributes(Aws::Vector<Attribute>&& value) { SetComputerAttributes(std::move(value)); return *this;}
-    inline CreateComputerRequest& AddComputerAttributes(const Attribute& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(value); return *this; }
-    inline CreateComputerRequest& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(std::move(value)); return *this; }
+    template<typename ComputerAttributesT = Aws::Vector<Attribute>>
+    void SetComputerAttributes(ComputerAttributesT&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = std::forward<ComputerAttributesT>(value); }
+    template<typename ComputerAttributesT = Aws::Vector<Attribute>>
+    CreateComputerRequest& WithComputerAttributes(ComputerAttributesT&& value) { SetComputerAttributes(std::forward<ComputerAttributesT>(value)); return *this;}
+    template<typename ComputerAttributesT = Attribute>
+    CreateComputerRequest& AddComputerAttributes(ComputerAttributesT&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.emplace_back(std::forward<ComputerAttributesT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTopicRefreshScheduleRequest::CreateTopicRefreshScheduleRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_refreshScheduleHasBeenSet(false)
-{
-}
-
 Aws::String CreateTopicRefreshScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

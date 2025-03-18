@@ -32,7 +32,7 @@ namespace Model
   class SupportedResourceType
   {
   public:
-    AWS_RESOURCEEXPLORER2_API SupportedResourceType();
+    AWS_RESOURCEEXPLORER2_API SupportedResourceType() = default;
     AWS_RESOURCEEXPLORER2_API SupportedResourceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API SupportedResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline SupportedResourceType& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline SupportedResourceType& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline SupportedResourceType& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    SupportedResourceType& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * This is the primary service that lets you create and interact with resources of
      * this type.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline SupportedResourceType& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline SupportedResourceType& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline SupportedResourceType& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    SupportedResourceType& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
   private:
 

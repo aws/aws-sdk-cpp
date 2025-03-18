@@ -35,7 +35,7 @@ namespace Model
   class QQueryCardInput
   {
   public:
-    AWS_QAPPS_API QQueryCardInput();
+    AWS_QAPPS_API QQueryCardInput() = default;
     AWS_QAPPS_API QQueryCardInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API QQueryCardInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,66 +45,56 @@ namespace Model
     /**
      * <p>The title or label of the query card.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline QQueryCardInput& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline QQueryCardInput& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline QQueryCardInput& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    QQueryCardInput& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the query card.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline QQueryCardInput& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline QQueryCardInput& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline QQueryCardInput& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    QQueryCardInput& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the card.</p>
      */
-    inline const CardType& GetType() const{ return m_type; }
+    inline CardType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CardType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CardType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline QQueryCardInput& WithType(const CardType& value) { SetType(value); return *this;}
-    inline QQueryCardInput& WithType(CardType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CardType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline QQueryCardInput& WithType(CardType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prompt or instructions displayed for the query card.</p>
      */
-    inline const Aws::String& GetPrompt() const{ return m_prompt; }
+    inline const Aws::String& GetPrompt() const { return m_prompt; }
     inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
-    inline void SetPrompt(const Aws::String& value) { m_promptHasBeenSet = true; m_prompt = value; }
-    inline void SetPrompt(Aws::String&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
-    inline void SetPrompt(const char* value) { m_promptHasBeenSet = true; m_prompt.assign(value); }
-    inline QQueryCardInput& WithPrompt(const Aws::String& value) { SetPrompt(value); return *this;}
-    inline QQueryCardInput& WithPrompt(Aws::String&& value) { SetPrompt(std::move(value)); return *this;}
-    inline QQueryCardInput& WithPrompt(const char* value) { SetPrompt(value); return *this;}
+    template<typename PromptT = Aws::String>
+    void SetPrompt(PromptT&& value) { m_promptHasBeenSet = true; m_prompt = std::forward<PromptT>(value); }
+    template<typename PromptT = Aws::String>
+    QQueryCardInput& WithPrompt(PromptT&& value) { SetPrompt(std::forward<PromptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source or type of output to generate for the query card.</p>
      */
-    inline const CardOutputSource& GetOutputSource() const{ return m_outputSource; }
+    inline CardOutputSource GetOutputSource() const { return m_outputSource; }
     inline bool OutputSourceHasBeenSet() const { return m_outputSourceHasBeenSet; }
-    inline void SetOutputSource(const CardOutputSource& value) { m_outputSourceHasBeenSet = true; m_outputSource = value; }
-    inline void SetOutputSource(CardOutputSource&& value) { m_outputSourceHasBeenSet = true; m_outputSource = std::move(value); }
-    inline QQueryCardInput& WithOutputSource(const CardOutputSource& value) { SetOutputSource(value); return *this;}
-    inline QQueryCardInput& WithOutputSource(CardOutputSource&& value) { SetOutputSource(std::move(value)); return *this;}
+    inline void SetOutputSource(CardOutputSource value) { m_outputSourceHasBeenSet = true; m_outputSource = value; }
+    inline QQueryCardInput& WithOutputSource(CardOutputSource value) { SetOutputSource(value); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +102,12 @@ namespace Model
      * <p>Turns on filtering of responses based on document attributes or metadata
      * fields.</p>
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline QQueryCardInput& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline QQueryCardInput& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    QQueryCardInput& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -127,13 +117,13 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    CardType m_type;
+    CardType m_type{CardType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_prompt;
     bool m_promptHasBeenSet = false;
 
-    CardOutputSource m_outputSource;
+    CardOutputSource m_outputSource{CardOutputSource::NOT_SET};
     bool m_outputSourceHasBeenSet = false;
 
     AttributeFilter m_attributeFilter;

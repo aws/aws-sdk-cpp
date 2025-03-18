@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-MetadataEvent::MetadataEvent() : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_sourceAttributionsHasBeenSet(false),
-    m_finalTextMessageHasBeenSet(false)
-{
-}
-
 MetadataEvent::MetadataEvent(JsonView jsonValue)
-  : MetadataEvent()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MetadataEvent& MetadataEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userMessageId"))
   {
     m_userMessageId = jsonValue.GetString("userMessageId");
-
     m_userMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemMessageId"))
   {
     m_systemMessageId = jsonValue.GetString("systemMessageId");
-
     m_systemMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAttributions"))
   {
     Aws::Utils::Array<JsonView> sourceAttributionsJsonList = jsonValue.GetArray("sourceAttributions");
@@ -65,14 +49,11 @@ MetadataEvent& MetadataEvent::operator =(JsonView jsonValue)
     }
     m_sourceAttributionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finalTextMessage"))
   {
     m_finalTextMessage = jsonValue.GetString("finalTextMessage");
-
     m_finalTextMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

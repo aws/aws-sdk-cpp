@@ -18,19 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-VpcInterface::VpcInterface() : 
-    m_nameHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_networkInterfaceType(NetworkInterfaceType::NOT_SET),
-    m_networkInterfaceTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 VpcInterface::VpcInterface(JsonView jsonValue)
-  : VpcInterface()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ VpcInterface& VpcInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaceIds"))
   {
     Aws::Utils::Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("networkInterfaceIds");
@@ -53,21 +39,16 @@ VpcInterface& VpcInterface::operator =(JsonView jsonValue)
     }
     m_networkInterfaceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaceType"))
   {
     m_networkInterfaceType = NetworkInterfaceTypeMapper::GetNetworkInterfaceTypeForName(jsonValue.GetString("networkInterfaceType"));
-
     m_networkInterfaceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -77,14 +58,11 @@ VpcInterface& VpcInterface::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetId"))
   {
     m_subnetId = jsonValue.GetString("subnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

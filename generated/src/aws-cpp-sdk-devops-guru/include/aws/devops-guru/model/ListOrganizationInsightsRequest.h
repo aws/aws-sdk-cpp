@@ -23,7 +23,7 @@ namespace Model
   class ListOrganizationInsightsRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API ListOrganizationInsightsRequest();
+    AWS_DEVOPSGURU_API ListOrganizationInsightsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const ListInsightsStatusFilter& GetStatusFilter() const{ return m_statusFilter; }
+    inline const ListInsightsStatusFilter& GetStatusFilter() const { return m_statusFilter; }
     inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
-    inline void SetStatusFilter(const ListInsightsStatusFilter& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
-    inline void SetStatusFilter(ListInsightsStatusFilter&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
-    inline ListOrganizationInsightsRequest& WithStatusFilter(const ListInsightsStatusFilter& value) { SetStatusFilter(value); return *this;}
-    inline ListOrganizationInsightsRequest& WithStatusFilter(ListInsightsStatusFilter&& value) { SetStatusFilter(std::move(value)); return *this;}
+    template<typename StatusFilterT = ListInsightsStatusFilter>
+    void SetStatusFilter(StatusFilterT&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::forward<StatusFilterT>(value); }
+    template<typename StatusFilterT = ListInsightsStatusFilter>
+    ListOrganizationInsightsRequest& WithStatusFilter(StatusFilterT&& value) { SetStatusFilter(std::forward<StatusFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,7 +50,7 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOrganizationInsightsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -60,30 +60,28 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline ListOrganizationInsightsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline ListOrganizationInsightsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline ListOrganizationInsightsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline ListOrganizationInsightsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline ListOrganizationInsightsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    ListOrganizationInsightsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    ListOrganizationInsightsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the organizational unit.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
-    inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
-    inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
-    inline ListOrganizationInsightsRequest& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
-    inline ListOrganizationInsightsRequest& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
-    inline ListOrganizationInsightsRequest& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-    inline ListOrganizationInsightsRequest& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
-    inline ListOrganizationInsightsRequest& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value); }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    ListOrganizationInsightsRequest& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value)); return *this;}
+    template<typename OrganizationalUnitIdsT = Aws::String>
+    ListOrganizationInsightsRequest& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,21 +89,19 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOrganizationInsightsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrganizationInsightsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrganizationInsightsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrganizationInsightsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     ListInsightsStatusFilter m_statusFilter;
     bool m_statusFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;

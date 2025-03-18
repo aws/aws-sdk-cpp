@@ -10,12 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

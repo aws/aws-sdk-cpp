@@ -31,7 +31,7 @@ namespace Model
   class LoggingOptions
   {
   public:
-    AWS_IOTSITEWISE_API LoggingOptions();
+    AWS_IOTSITEWISE_API LoggingOptions() = default;
     AWS_IOTSITEWISE_API LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The IoT SiteWise logging verbosity level.</p>
      */
-    inline const LoggingLevel& GetLevel() const{ return m_level; }
+    inline LoggingLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const LoggingLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(LoggingLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline LoggingOptions& WithLevel(const LoggingLevel& value) { SetLevel(value); return *this;}
-    inline LoggingOptions& WithLevel(LoggingLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(LoggingLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline LoggingOptions& WithLevel(LoggingLevel value) { SetLevel(value); return *this;}
     ///@}
   private:
 
-    LoggingLevel m_level;
+    LoggingLevel m_level{LoggingLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
   };
 

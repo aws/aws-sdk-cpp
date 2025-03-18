@@ -12,10 +12,6 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountConfigurationRequest::GetAccountConfigurationRequest()
-{
-}
-
 Aws::String GetAccountConfigurationRequest::SerializePayload() const
 {
   return {};

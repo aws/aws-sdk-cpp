@@ -21,7 +21,7 @@ namespace Model
   class DeleteProjectPolicyRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DeleteProjectPolicyRequest();
+    AWS_REKOGNITION_API DeleteProjectPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project that the project policy you
      * want to delete is attached to.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline DeleteProjectPolicyRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline DeleteProjectPolicyRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline DeleteProjectPolicyRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    DeleteProjectPolicyRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy that you want to delete.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline DeleteProjectPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline DeleteProjectPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline DeleteProjectPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    DeleteProjectPolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the project policy revision that you want to delete.</p>
      */
-    inline const Aws::String& GetPolicyRevisionId() const{ return m_policyRevisionId; }
+    inline const Aws::String& GetPolicyRevisionId() const { return m_policyRevisionId; }
     inline bool PolicyRevisionIdHasBeenSet() const { return m_policyRevisionIdHasBeenSet; }
-    inline void SetPolicyRevisionId(const Aws::String& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = value; }
-    inline void SetPolicyRevisionId(Aws::String&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::move(value); }
-    inline void SetPolicyRevisionId(const char* value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId.assign(value); }
-    inline DeleteProjectPolicyRequest& WithPolicyRevisionId(const Aws::String& value) { SetPolicyRevisionId(value); return *this;}
-    inline DeleteProjectPolicyRequest& WithPolicyRevisionId(Aws::String&& value) { SetPolicyRevisionId(std::move(value)); return *this;}
-    inline DeleteProjectPolicyRequest& WithPolicyRevisionId(const char* value) { SetPolicyRevisionId(value); return *this;}
+    template<typename PolicyRevisionIdT = Aws::String>
+    void SetPolicyRevisionId(PolicyRevisionIdT&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::forward<PolicyRevisionIdT>(value); }
+    template<typename PolicyRevisionIdT = Aws::String>
+    DeleteProjectPolicyRequest& WithPolicyRevisionId(PolicyRevisionIdT&& value) { SetPolicyRevisionId(std::forward<PolicyRevisionIdT>(value)); return *this;}
     ///@}
   private:
 

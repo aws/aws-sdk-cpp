@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExperimentRequest::DescribeExperimentRequest() : 
-    m_experimentNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

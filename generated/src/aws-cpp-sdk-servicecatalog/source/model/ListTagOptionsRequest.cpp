@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagOptionsRequest::ListTagOptionsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTagOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

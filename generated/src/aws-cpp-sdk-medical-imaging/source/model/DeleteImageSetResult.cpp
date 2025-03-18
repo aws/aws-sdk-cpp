@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteImageSetResult::DeleteImageSetResult() : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
-{
-}
-
 DeleteImageSetResult::DeleteImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteImageSetResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ DeleteImageSetResult& DeleteImageSetResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("datastoreId"))
   {
     m_datastoreId = jsonValue.GetString("datastoreId");
-
+    m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetId"))
   {
     m_imageSetId = jsonValue.GetString("imageSetId");
-
+    m_imageSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetState"))
   {
     m_imageSetState = ImageSetStateMapper::GetImageSetStateForName(jsonValue.GetString("imageSetState"));
-
+    m_imageSetStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetWorkflowStatus"))
   {
     m_imageSetWorkflowStatus = ImageSetWorkflowStatusMapper::GetImageSetWorkflowStatusForName(jsonValue.GetString("imageSetWorkflowStatus"));
-
+    m_imageSetWorkflowStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

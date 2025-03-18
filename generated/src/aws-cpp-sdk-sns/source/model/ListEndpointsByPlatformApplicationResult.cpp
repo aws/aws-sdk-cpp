@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEndpointsByPlatformApplicationResult::ListEndpointsByPlatformApplicationResult()
-{
-}
-
 ListEndpointsByPlatformApplicationResult::ListEndpointsByPlatformApplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListEndpointsByPlatformApplicationResult& ListEndpointsByPlatformApplicationResu
     if(!endpointsNode.IsNull())
     {
       XmlNode endpointsMember = endpointsNode.FirstChild("member");
+      m_endpointsHasBeenSet = !endpointsMember.IsNull();
       while(!endpointsMember.IsNull())
       {
         m_endpoints.push_back(endpointsMember.GetText());
         endpointsMember = endpointsMember.NextNode("member");
       }
 
+      m_endpointsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListEndpointsByPlatformApplicationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

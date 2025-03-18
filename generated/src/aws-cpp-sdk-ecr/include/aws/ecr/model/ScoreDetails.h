@@ -32,7 +32,7 @@ namespace Model
   class ScoreDetails
   {
   public:
-    AWS_ECR_API ScoreDetails();
+    AWS_ECR_API ScoreDetails() = default;
     AWS_ECR_API ScoreDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An object that contains details about the CVSS score given to a finding.</p>
      */
-    inline const CvssScoreDetails& GetCvss() const{ return m_cvss; }
+    inline const CvssScoreDetails& GetCvss() const { return m_cvss; }
     inline bool CvssHasBeenSet() const { return m_cvssHasBeenSet; }
-    inline void SetCvss(const CvssScoreDetails& value) { m_cvssHasBeenSet = true; m_cvss = value; }
-    inline void SetCvss(CvssScoreDetails&& value) { m_cvssHasBeenSet = true; m_cvss = std::move(value); }
-    inline ScoreDetails& WithCvss(const CvssScoreDetails& value) { SetCvss(value); return *this;}
-    inline ScoreDetails& WithCvss(CvssScoreDetails&& value) { SetCvss(std::move(value)); return *this;}
+    template<typename CvssT = CvssScoreDetails>
+    void SetCvss(CvssT&& value) { m_cvssHasBeenSet = true; m_cvss = std::forward<CvssT>(value); }
+    template<typename CvssT = CvssScoreDetails>
+    ScoreDetails& WithCvss(CvssT&& value) { SetCvss(std::forward<CvssT>(value)); return *this;}
     ///@}
   private:
 

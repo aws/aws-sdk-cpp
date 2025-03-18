@@ -28,7 +28,7 @@ namespace Model
   class TestInvokeAuthorizerResult
   {
   public:
-    AWS_IOT_API TestInvokeAuthorizerResult();
+    AWS_IOT_API TestInvokeAuthorizerResult() = default;
     AWS_IOT_API TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API TestInvokeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>True if the token is authenticated, otherwise false.</p>
      */
-    inline bool GetIsAuthenticated() const{ return m_isAuthenticated; }
-    inline void SetIsAuthenticated(bool value) { m_isAuthenticated = value; }
+    inline bool GetIsAuthenticated() const { return m_isAuthenticated; }
+    inline void SetIsAuthenticated(bool value) { m_isAuthenticatedHasBeenSet = true; m_isAuthenticated = value; }
     inline TestInvokeAuthorizerResult& WithIsAuthenticated(bool value) { SetIsAuthenticated(value); return *this;}
     ///@}
 
@@ -46,27 +46,24 @@ namespace Model
     /**
      * <p>The principal ID.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalId.assign(value); }
-    inline TestInvokeAuthorizerResult& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline TestInvokeAuthorizerResult& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerResult& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    TestInvokeAuthorizerResult& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>IAM policy documents.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyDocuments() const{ return m_policyDocuments; }
-    inline void SetPolicyDocuments(const Aws::Vector<Aws::String>& value) { m_policyDocuments = value; }
-    inline void SetPolicyDocuments(Aws::Vector<Aws::String>&& value) { m_policyDocuments = std::move(value); }
-    inline TestInvokeAuthorizerResult& WithPolicyDocuments(const Aws::Vector<Aws::String>& value) { SetPolicyDocuments(value); return *this;}
-    inline TestInvokeAuthorizerResult& WithPolicyDocuments(Aws::Vector<Aws::String>&& value) { SetPolicyDocuments(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerResult& AddPolicyDocuments(const Aws::String& value) { m_policyDocuments.push_back(value); return *this; }
-    inline TestInvokeAuthorizerResult& AddPolicyDocuments(Aws::String&& value) { m_policyDocuments.push_back(std::move(value)); return *this; }
-    inline TestInvokeAuthorizerResult& AddPolicyDocuments(const char* value) { m_policyDocuments.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPolicyDocuments() const { return m_policyDocuments; }
+    template<typename PolicyDocumentsT = Aws::Vector<Aws::String>>
+    void SetPolicyDocuments(PolicyDocumentsT&& value) { m_policyDocumentsHasBeenSet = true; m_policyDocuments = std::forward<PolicyDocumentsT>(value); }
+    template<typename PolicyDocumentsT = Aws::Vector<Aws::String>>
+    TestInvokeAuthorizerResult& WithPolicyDocuments(PolicyDocumentsT&& value) { SetPolicyDocuments(std::forward<PolicyDocumentsT>(value)); return *this;}
+    template<typename PolicyDocumentsT = Aws::String>
+    TestInvokeAuthorizerResult& AddPolicyDocuments(PolicyDocumentsT&& value) { m_policyDocumentsHasBeenSet = true; m_policyDocuments.emplace_back(std::forward<PolicyDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,8 +71,8 @@ namespace Model
      * <p>The number of seconds after which the temporary credentials are
      * refreshed.</p>
      */
-    inline int GetRefreshAfterInSeconds() const{ return m_refreshAfterInSeconds; }
-    inline void SetRefreshAfterInSeconds(int value) { m_refreshAfterInSeconds = value; }
+    inline int GetRefreshAfterInSeconds() const { return m_refreshAfterInSeconds; }
+    inline void SetRefreshAfterInSeconds(int value) { m_refreshAfterInSecondsHasBeenSet = true; m_refreshAfterInSeconds = value; }
     inline TestInvokeAuthorizerResult& WithRefreshAfterInSeconds(int value) { SetRefreshAfterInSeconds(value); return *this;}
     ///@}
 
@@ -83,34 +80,38 @@ namespace Model
     /**
      * <p>The number of seconds after which the connection is terminated.</p>
      */
-    inline int GetDisconnectAfterInSeconds() const{ return m_disconnectAfterInSeconds; }
-    inline void SetDisconnectAfterInSeconds(int value) { m_disconnectAfterInSeconds = value; }
+    inline int GetDisconnectAfterInSeconds() const { return m_disconnectAfterInSeconds; }
+    inline void SetDisconnectAfterInSeconds(int value) { m_disconnectAfterInSecondsHasBeenSet = true; m_disconnectAfterInSeconds = value; }
     inline TestInvokeAuthorizerResult& WithDisconnectAfterInSeconds(int value) { SetDisconnectAfterInSeconds(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestInvokeAuthorizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestInvokeAuthorizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestInvokeAuthorizerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isAuthenticated;
+    bool m_isAuthenticated{false};
+    bool m_isAuthenticatedHasBeenSet = false;
 
     Aws::String m_principalId;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyDocuments;
+    bool m_policyDocumentsHasBeenSet = false;
 
-    int m_refreshAfterInSeconds;
+    int m_refreshAfterInSeconds{0};
+    bool m_refreshAfterInSecondsHasBeenSet = false;
 
-    int m_disconnectAfterInSeconds;
+    int m_disconnectAfterInSeconds{0};
+    bool m_disconnectAfterInSecondsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

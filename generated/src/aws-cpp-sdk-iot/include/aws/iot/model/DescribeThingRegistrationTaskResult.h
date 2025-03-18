@@ -29,7 +29,7 @@ namespace Model
   class DescribeThingRegistrationTaskResult
   {
   public:
-    AWS_IOT_API DescribeThingRegistrationTaskResult();
+    AWS_IOT_API DescribeThingRegistrationTaskResult() = default;
     AWS_IOT_API DescribeThingRegistrationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeThingRegistrationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,119 +38,105 @@ namespace Model
     /**
      * <p>The task ID.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task creation date.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline DescribeThingRegistrationTaskResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    DescribeThingRegistrationTaskResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the task was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline DescribeThingRegistrationTaskResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    DescribeThingRegistrationTaskResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task's template.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBody.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket that contains the input file.</p>
      */
-    inline const Aws::String& GetInputFileBucket() const{ return m_inputFileBucket; }
-    inline void SetInputFileBucket(const Aws::String& value) { m_inputFileBucket = value; }
-    inline void SetInputFileBucket(Aws::String&& value) { m_inputFileBucket = std::move(value); }
-    inline void SetInputFileBucket(const char* value) { m_inputFileBucket.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithInputFileBucket(const Aws::String& value) { SetInputFileBucket(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithInputFileBucket(Aws::String&& value) { SetInputFileBucket(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithInputFileBucket(const char* value) { SetInputFileBucket(value); return *this;}
+    inline const Aws::String& GetInputFileBucket() const { return m_inputFileBucket; }
+    template<typename InputFileBucketT = Aws::String>
+    void SetInputFileBucket(InputFileBucketT&& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = std::forward<InputFileBucketT>(value); }
+    template<typename InputFileBucketT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithInputFileBucket(InputFileBucketT&& value) { SetInputFileBucket(std::forward<InputFileBucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input file key.</p>
      */
-    inline const Aws::String& GetInputFileKey() const{ return m_inputFileKey; }
-    inline void SetInputFileKey(const Aws::String& value) { m_inputFileKey = value; }
-    inline void SetInputFileKey(Aws::String&& value) { m_inputFileKey = std::move(value); }
-    inline void SetInputFileKey(const char* value) { m_inputFileKey.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithInputFileKey(const Aws::String& value) { SetInputFileKey(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithInputFileKey(Aws::String&& value) { SetInputFileKey(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithInputFileKey(const char* value) { SetInputFileKey(value); return *this;}
+    inline const Aws::String& GetInputFileKey() const { return m_inputFileKey; }
+    template<typename InputFileKeyT = Aws::String>
+    void SetInputFileKey(InputFileKeyT&& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = std::forward<InputFileKeyT>(value); }
+    template<typename InputFileKeyT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithInputFileKey(InputFileKeyT&& value) { SetInputFileKey(std::forward<InputFileKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role ARN that grants access to the input file bucket.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the bulk thing provisioning task.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline DescribeThingRegistrationTaskResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeThingRegistrationTaskResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of things successfully provisioned.</p>
      */
-    inline int GetSuccessCount() const{ return m_successCount; }
-    inline void SetSuccessCount(int value) { m_successCount = value; }
+    inline int GetSuccessCount() const { return m_successCount; }
+    inline void SetSuccessCount(int value) { m_successCountHasBeenSet = true; m_successCount = value; }
     inline DescribeThingRegistrationTaskResult& WithSuccessCount(int value) { SetSuccessCount(value); return *this;}
     ///@}
 
@@ -158,8 +144,8 @@ namespace Model
     /**
      * <p>The number of things that failed to be provisioned.</p>
      */
-    inline int GetFailureCount() const{ return m_failureCount; }
-    inline void SetFailureCount(int value) { m_failureCount = value; }
+    inline int GetFailureCount() const { return m_failureCount; }
+    inline void SetFailureCount(int value) { m_failureCountHasBeenSet = true; m_failureCount = value; }
     inline DescribeThingRegistrationTaskResult& WithFailureCount(int value) { SetFailureCount(value); return *this;}
     ///@}
 
@@ -167,48 +153,59 @@ namespace Model
     /**
      * <p>The progress of the bulk provisioning task expressed as a percentage.</p>
      */
-    inline int GetPercentageProgress() const{ return m_percentageProgress; }
-    inline void SetPercentageProgress(int value) { m_percentageProgress = value; }
+    inline int GetPercentageProgress() const { return m_percentageProgress; }
+    inline void SetPercentageProgress(int value) { m_percentageProgressHasBeenSet = true; m_percentageProgress = value; }
     inline DescribeThingRegistrationTaskResult& WithPercentageProgress(int value) { SetPercentageProgress(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThingRegistrationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThingRegistrationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThingRegistrationTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_templateBody;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_inputFileBucket;
+    bool m_inputFileBucketHasBeenSet = false;
 
     Aws::String m_inputFileKey;
+    bool m_inputFileKeyHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    int m_successCount;
+    int m_successCount{0};
+    bool m_successCountHasBeenSet = false;
 
-    int m_failureCount;
+    int m_failureCount{0};
+    bool m_failureCountHasBeenSet = false;
 
-    int m_percentageProgress;
+    int m_percentageProgress{0};
+    bool m_percentageProgressHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

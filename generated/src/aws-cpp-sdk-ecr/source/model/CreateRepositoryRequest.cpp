@@ -12,17 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRepositoryRequest::CreateRepositoryRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

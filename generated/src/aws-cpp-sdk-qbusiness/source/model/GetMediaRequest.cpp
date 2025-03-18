@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMediaRequest::GetMediaRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_mediaIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMediaRequest::SerializePayload() const
 {
   return {};

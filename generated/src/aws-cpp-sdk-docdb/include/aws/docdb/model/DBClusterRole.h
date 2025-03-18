@@ -32,7 +32,7 @@ namespace Model
   class DBClusterRole
   {
   public:
-    AWS_DOCDB_API DBClusterRole();
+    AWS_DOCDB_API DBClusterRole() = default;
     AWS_DOCDB_API DBClusterRole(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_DOCDB_API DBClusterRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB
      * cluster.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DBClusterRole& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DBClusterRole& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DBClusterRole& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DBClusterRole& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * with the cluster, but the cluster cannot assume the IAMrole to access other
      * Amazon Web Services services on your behalf.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DBClusterRole& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DBClusterRole& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DBClusterRole& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DBClusterRole& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

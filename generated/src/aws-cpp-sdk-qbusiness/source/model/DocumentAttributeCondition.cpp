@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentAttributeCondition::DocumentAttributeCondition() : 
-    m_keyHasBeenSet(false),
-    m_operator(DocumentEnrichmentConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DocumentAttributeCondition::DocumentAttributeCondition(JsonView jsonValue)
-  : DocumentAttributeCondition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentAttributeCondition& DocumentAttributeCondition::operator =(JsonView json
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = DocumentEnrichmentConditionOperatorMapper::GetDocumentEnrichmentConditionOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

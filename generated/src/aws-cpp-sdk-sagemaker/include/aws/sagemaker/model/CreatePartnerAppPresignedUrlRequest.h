@@ -21,7 +21,7 @@ namespace Model
   class CreatePartnerAppPresignedUrlRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreatePartnerAppPresignedUrlRequest();
+    AWS_SAGEMAKER_API CreatePartnerAppPresignedUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The ARN of the SageMaker Partner AI App to create the presigned URL for.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CreatePartnerAppPresignedUrlRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreatePartnerAppPresignedUrlRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreatePartnerAppPresignedUrlRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreatePartnerAppPresignedUrlRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that will pass before the presigned URL expires.</p>
      */
-    inline int GetExpiresInSeconds() const{ return m_expiresInSeconds; }
+    inline int GetExpiresInSeconds() const { return m_expiresInSeconds; }
     inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
     inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
     inline CreatePartnerAppPresignedUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
      * <p>Indicates how long the Amazon SageMaker Partner AI App session can be
      * accessed for after logging in.</p>
      */
-    inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
+    inline int GetSessionExpirationDurationInSeconds() const { return m_sessionExpirationDurationInSeconds; }
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
     inline CreatePartnerAppPresignedUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
@@ -73,10 +71,10 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    int m_expiresInSeconds;
+    int m_expiresInSeconds{0};
     bool m_expiresInSecondsHasBeenSet = false;
 
-    int m_sessionExpirationDurationInSeconds;
+    int m_sessionExpirationDurationInSeconds{0};
     bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 

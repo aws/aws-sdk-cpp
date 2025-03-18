@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-DoubleConfigurationOptions::DoubleConfigurationOptions() : 
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 DoubleConfigurationOptions::DoubleConfigurationOptions(JsonView jsonValue)
-  : DoubleConfigurationOptions()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DoubleConfigurationOptions& DoubleConfigurationOptions::operator =(JsonView json
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetDouble("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetDouble("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

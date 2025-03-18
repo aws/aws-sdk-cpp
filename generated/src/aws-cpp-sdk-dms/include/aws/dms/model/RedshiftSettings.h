@@ -33,7 +33,7 @@ namespace Model
   class RedshiftSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field.
      * </p>
      */
-    inline bool GetAcceptAnyDate() const{ return m_acceptAnyDate; }
+    inline bool GetAcceptAnyDate() const { return m_acceptAnyDate; }
     inline bool AcceptAnyDateHasBeenSet() const { return m_acceptAnyDateHasBeenSet; }
     inline void SetAcceptAnyDate(bool value) { m_acceptAnyDateHasBeenSet = true; m_acceptAnyDate = value; }
     inline RedshiftSettings& WithAcceptAnyDate(bool value) { SetAcceptAnyDate(value); return *this;}
@@ -60,14 +60,12 @@ namespace Model
      * <p>Code to run after connecting. This parameter should contain the code itself,
      * not the name of a file containing the code.</p>
      */
-    inline const Aws::String& GetAfterConnectScript() const{ return m_afterConnectScript; }
+    inline const Aws::String& GetAfterConnectScript() const { return m_afterConnectScript; }
     inline bool AfterConnectScriptHasBeenSet() const { return m_afterConnectScriptHasBeenSet; }
-    inline void SetAfterConnectScript(const Aws::String& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = value; }
-    inline void SetAfterConnectScript(Aws::String&& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = std::move(value); }
-    inline void SetAfterConnectScript(const char* value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript.assign(value); }
-    inline RedshiftSettings& WithAfterConnectScript(const Aws::String& value) { SetAfterConnectScript(value); return *this;}
-    inline RedshiftSettings& WithAfterConnectScript(Aws::String&& value) { SetAfterConnectScript(std::move(value)); return *this;}
-    inline RedshiftSettings& WithAfterConnectScript(const char* value) { SetAfterConnectScript(value); return *this;}
+    template<typename AfterConnectScriptT = Aws::String>
+    void SetAfterConnectScript(AfterConnectScriptT&& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = std::forward<AfterConnectScriptT>(value); }
+    template<typename AfterConnectScriptT = Aws::String>
+    RedshiftSettings& WithAfterConnectScript(AfterConnectScriptT&& value) { SetAfterConnectScript(std::forward<AfterConnectScriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads
      * the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
      */
-    inline const Aws::String& GetBucketFolder() const{ return m_bucketFolder; }
+    inline const Aws::String& GetBucketFolder() const { return m_bucketFolder; }
     inline bool BucketFolderHasBeenSet() const { return m_bucketFolderHasBeenSet; }
-    inline void SetBucketFolder(const Aws::String& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = value; }
-    inline void SetBucketFolder(Aws::String&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::move(value); }
-    inline void SetBucketFolder(const char* value) { m_bucketFolderHasBeenSet = true; m_bucketFolder.assign(value); }
-    inline RedshiftSettings& WithBucketFolder(const Aws::String& value) { SetBucketFolder(value); return *this;}
-    inline RedshiftSettings& WithBucketFolder(Aws::String&& value) { SetBucketFolder(std::move(value)); return *this;}
-    inline RedshiftSettings& WithBucketFolder(const char* value) { SetBucketFolder(value); return *this;}
+    template<typename BucketFolderT = Aws::String>
+    void SetBucketFolder(BucketFolderT&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::forward<BucketFolderT>(value); }
+    template<typename BucketFolderT = Aws::String>
+    RedshiftSettings& WithBucketFolder(BucketFolderT&& value) { SetBucketFolder(std::forward<BucketFolderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * <p>The name of the intermediate S3 bucket used to store .csv files before
      * uploading data to Redshift.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline RedshiftSettings& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline RedshiftSettings& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline RedshiftSettings& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    RedshiftSettings& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +108,7 @@ namespace Model
      * <code>CaseSensitiveNames</code> to <code>true</code>. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetCaseSensitiveNames() const{ return m_caseSensitiveNames; }
+    inline bool GetCaseSensitiveNames() const { return m_caseSensitiveNames; }
     inline bool CaseSensitiveNamesHasBeenSet() const { return m_caseSensitiveNamesHasBeenSet; }
     inline void SetCaseSensitiveNames(bool value) { m_caseSensitiveNamesHasBeenSet = true; m_caseSensitiveNames = value; }
     inline RedshiftSettings& WithCaseSensitiveNames(bool value) { SetCaseSensitiveNames(value); return *this;}
@@ -129,7 +123,7 @@ namespace Model
      * and existing column encodings aren't changed. The default is
      * <code>true</code>.</p>
      */
-    inline bool GetCompUpdate() const{ return m_compUpdate; }
+    inline bool GetCompUpdate() const { return m_compUpdate; }
     inline bool CompUpdateHasBeenSet() const { return m_compUpdateHasBeenSet; }
     inline void SetCompUpdate(bool value) { m_compUpdateHasBeenSet = true; m_compUpdate = value; }
     inline RedshiftSettings& WithCompUpdate(bool value) { SetCompUpdate(value); return *this;}
@@ -140,7 +134,7 @@ namespace Model
      * <p>A value that sets the amount of time to wait (in milliseconds) before timing
      * out, beginning from when you initially establish a connection.</p>
      */
-    inline int GetConnectionTimeout() const{ return m_connectionTimeout; }
+    inline int GetConnectionTimeout() const { return m_connectionTimeout; }
     inline bool ConnectionTimeoutHasBeenSet() const { return m_connectionTimeoutHasBeenSet; }
     inline void SetConnectionTimeout(int value) { m_connectionTimeoutHasBeenSet = true; m_connectionTimeout = value; }
     inline RedshiftSettings& WithConnectionTimeout(int value) { SetConnectionTimeout(value); return *this;}
@@ -151,14 +145,12 @@ namespace Model
      * <p>The name of the Amazon Redshift data warehouse (service) that you are working
      * with.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline RedshiftSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline RedshiftSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline RedshiftSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    RedshiftSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +162,12 @@ namespace Model
      * you use a date format string. </p> <p>If your date and time values use formats
      * different from each other, set this to <code>auto</code>. </p>
      */
-    inline const Aws::String& GetDateFormat() const{ return m_dateFormat; }
+    inline const Aws::String& GetDateFormat() const { return m_dateFormat; }
     inline bool DateFormatHasBeenSet() const { return m_dateFormatHasBeenSet; }
-    inline void SetDateFormat(const Aws::String& value) { m_dateFormatHasBeenSet = true; m_dateFormat = value; }
-    inline void SetDateFormat(Aws::String&& value) { m_dateFormatHasBeenSet = true; m_dateFormat = std::move(value); }
-    inline void SetDateFormat(const char* value) { m_dateFormatHasBeenSet = true; m_dateFormat.assign(value); }
-    inline RedshiftSettings& WithDateFormat(const Aws::String& value) { SetDateFormat(value); return *this;}
-    inline RedshiftSettings& WithDateFormat(Aws::String&& value) { SetDateFormat(std::move(value)); return *this;}
-    inline RedshiftSettings& WithDateFormat(const char* value) { SetDateFormat(value); return *this;}
+    template<typename DateFormatT = Aws::String>
+    void SetDateFormat(DateFormatT&& value) { m_dateFormatHasBeenSet = true; m_dateFormat = std::forward<DateFormatT>(value); }
+    template<typename DateFormatT = Aws::String>
+    RedshiftSettings& WithDateFormat(DateFormatT&& value) { SetDateFormat(std::forward<DateFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,7 +176,7 @@ namespace Model
      * fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields
      * to null. The default is <code>false</code>.</p>
      */
-    inline bool GetEmptyAsNull() const{ return m_emptyAsNull; }
+    inline bool GetEmptyAsNull() const { return m_emptyAsNull; }
     inline bool EmptyAsNullHasBeenSet() const { return m_emptyAsNullHasBeenSet; }
     inline void SetEmptyAsNull(bool value) { m_emptyAsNullHasBeenSet = true; m_emptyAsNull = value; }
     inline RedshiftSettings& WithEmptyAsNull(bool value) { SetEmptyAsNull(value); return *this;}
@@ -206,12 +196,10 @@ namespace Model
      * policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
      * <code>"s3:PutObject", "s3:ListBucket"</code> </p>
      */
-    inline const EncryptionModeValue& GetEncryptionMode() const{ return m_encryptionMode; }
+    inline EncryptionModeValue GetEncryptionMode() const { return m_encryptionMode; }
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
-    inline void SetEncryptionMode(const EncryptionModeValue& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
-    inline void SetEncryptionMode(EncryptionModeValue&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
-    inline RedshiftSettings& WithEncryptionMode(const EncryptionModeValue& value) { SetEncryptionMode(value); return *this;}
-    inline RedshiftSettings& WithEncryptionMode(EncryptionModeValue&& value) { SetEncryptionMode(std::move(value)); return *this;}
+    inline void SetEncryptionMode(EncryptionModeValue value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+    inline RedshiftSettings& WithEncryptionMode(EncryptionModeValue value) { SetEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -222,7 +210,7 @@ namespace Model
      * values loaded from the source data files used to populate the tables. The
      * default is <code>false</code>.</p>
      */
-    inline bool GetExplicitIds() const{ return m_explicitIds; }
+    inline bool GetExplicitIds() const { return m_explicitIds; }
     inline bool ExplicitIdsHasBeenSet() const { return m_explicitIdsHasBeenSet; }
     inline void SetExplicitIds(bool value) { m_explicitIdsHasBeenSet = true; m_explicitIds = value; }
     inline RedshiftSettings& WithExplicitIds(bool value) { SetExplicitIds(value); return *this;}
@@ -238,7 +226,7 @@ namespace Model
      * upload overview</a>. </p> <p> <code>FileTransferUploadStreams</code> accepts a
      * value from 1 through 64. It defaults to 10.</p>
      */
-    inline int GetFileTransferUploadStreams() const{ return m_fileTransferUploadStreams; }
+    inline int GetFileTransferUploadStreams() const { return m_fileTransferUploadStreams; }
     inline bool FileTransferUploadStreamsHasBeenSet() const { return m_fileTransferUploadStreamsHasBeenSet; }
     inline void SetFileTransferUploadStreams(int value) { m_fileTransferUploadStreamsHasBeenSet = true; m_fileTransferUploadStreams = value; }
     inline RedshiftSettings& WithFileTransferUploadStreams(int value) { SetFileTransferUploadStreams(value); return *this;}
@@ -250,7 +238,7 @@ namespace Model
      * performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE,
      * and UPDATE.</p>
      */
-    inline int GetLoadTimeout() const{ return m_loadTimeout; }
+    inline int GetLoadTimeout() const { return m_loadTimeout; }
     inline bool LoadTimeoutHasBeenSet() const { return m_loadTimeoutHasBeenSet; }
     inline void SetLoadTimeout(int value) { m_loadTimeoutHasBeenSet = true; m_loadTimeout = value; }
     inline RedshiftSettings& WithLoadTimeout(int value) { SetLoadTimeout(value); return *this;}
@@ -261,7 +249,7 @@ namespace Model
      * <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket
      * and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
      */
-    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+    inline int GetMaxFileSize() const { return m_maxFileSize; }
     inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
     inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
     inline RedshiftSettings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
@@ -271,21 +259,19 @@ namespace Model
     /**
      * <p>The password for the user named in the <code>username</code> property.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline RedshiftSettings& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline RedshiftSettings& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline RedshiftSettings& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    RedshiftSettings& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number for Amazon Redshift. The default value is 5439.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline RedshiftSettings& WithPort(int value) { SetPort(value); return *this;}
@@ -298,7 +284,7 @@ namespace Model
      * delimiters, are retained. Choose <code>true</code> to remove quotation marks.
      * The default is <code>false</code>.</p>
      */
-    inline bool GetRemoveQuotes() const{ return m_removeQuotes; }
+    inline bool GetRemoveQuotes() const { return m_removeQuotes; }
     inline bool RemoveQuotesHasBeenSet() const { return m_removeQuotesHasBeenSet; }
     inline void SetRemoveQuotes(bool value) { m_removeQuotesHasBeenSet = true; m_removeQuotes = value; }
     inline RedshiftSettings& WithRemoveQuotes(bool value) { SetRemoveQuotes(value); return *this;}
@@ -309,14 +295,12 @@ namespace Model
      * <p>A list of characters that you want to replace. Use with
      * <code>ReplaceChars</code>.</p>
      */
-    inline const Aws::String& GetReplaceInvalidChars() const{ return m_replaceInvalidChars; }
+    inline const Aws::String& GetReplaceInvalidChars() const { return m_replaceInvalidChars; }
     inline bool ReplaceInvalidCharsHasBeenSet() const { return m_replaceInvalidCharsHasBeenSet; }
-    inline void SetReplaceInvalidChars(const Aws::String& value) { m_replaceInvalidCharsHasBeenSet = true; m_replaceInvalidChars = value; }
-    inline void SetReplaceInvalidChars(Aws::String&& value) { m_replaceInvalidCharsHasBeenSet = true; m_replaceInvalidChars = std::move(value); }
-    inline void SetReplaceInvalidChars(const char* value) { m_replaceInvalidCharsHasBeenSet = true; m_replaceInvalidChars.assign(value); }
-    inline RedshiftSettings& WithReplaceInvalidChars(const Aws::String& value) { SetReplaceInvalidChars(value); return *this;}
-    inline RedshiftSettings& WithReplaceInvalidChars(Aws::String&& value) { SetReplaceInvalidChars(std::move(value)); return *this;}
-    inline RedshiftSettings& WithReplaceInvalidChars(const char* value) { SetReplaceInvalidChars(value); return *this;}
+    template<typename ReplaceInvalidCharsT = Aws::String>
+    void SetReplaceInvalidChars(ReplaceInvalidCharsT&& value) { m_replaceInvalidCharsHasBeenSet = true; m_replaceInvalidChars = std::forward<ReplaceInvalidCharsT>(value); }
+    template<typename ReplaceInvalidCharsT = Aws::String>
+    RedshiftSettings& WithReplaceInvalidChars(ReplaceInvalidCharsT&& value) { SetReplaceInvalidChars(std::forward<ReplaceInvalidCharsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -325,28 +309,24 @@ namespace Model
      * <code>ReplaceInvalidChars</code>, substituting the specified characters instead.
      * The default is <code>"?"</code>.</p>
      */
-    inline const Aws::String& GetReplaceChars() const{ return m_replaceChars; }
+    inline const Aws::String& GetReplaceChars() const { return m_replaceChars; }
     inline bool ReplaceCharsHasBeenSet() const { return m_replaceCharsHasBeenSet; }
-    inline void SetReplaceChars(const Aws::String& value) { m_replaceCharsHasBeenSet = true; m_replaceChars = value; }
-    inline void SetReplaceChars(Aws::String&& value) { m_replaceCharsHasBeenSet = true; m_replaceChars = std::move(value); }
-    inline void SetReplaceChars(const char* value) { m_replaceCharsHasBeenSet = true; m_replaceChars.assign(value); }
-    inline RedshiftSettings& WithReplaceChars(const Aws::String& value) { SetReplaceChars(value); return *this;}
-    inline RedshiftSettings& WithReplaceChars(Aws::String&& value) { SetReplaceChars(std::move(value)); return *this;}
-    inline RedshiftSettings& WithReplaceChars(const char* value) { SetReplaceChars(value); return *this;}
+    template<typename ReplaceCharsT = Aws::String>
+    void SetReplaceChars(ReplaceCharsT&& value) { m_replaceCharsHasBeenSet = true; m_replaceChars = std::forward<ReplaceCharsT>(value); }
+    template<typename ReplaceCharsT = Aws::String>
+    RedshiftSettings& WithReplaceChars(ReplaceCharsT&& value) { SetReplaceChars(std::forward<ReplaceCharsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Redshift cluster you are using.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline RedshiftSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline RedshiftSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline RedshiftSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    RedshiftSettings& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -354,14 +334,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon
      * Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline RedshiftSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline RedshiftSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline RedshiftSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    RedshiftSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -370,14 +348,12 @@ namespace Model
      * <code>EncryptionMode</code>, provide this key ID. The key that you use needs an
      * attached policy that enables IAM user permissions and allows use of the key.</p>
      */
-    inline const Aws::String& GetServerSideEncryptionKmsKeyId() const{ return m_serverSideEncryptionKmsKeyId; }
+    inline const Aws::String& GetServerSideEncryptionKmsKeyId() const { return m_serverSideEncryptionKmsKeyId; }
     inline bool ServerSideEncryptionKmsKeyIdHasBeenSet() const { return m_serverSideEncryptionKmsKeyIdHasBeenSet; }
-    inline void SetServerSideEncryptionKmsKeyId(const Aws::String& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = value; }
-    inline void SetServerSideEncryptionKmsKeyId(Aws::String&& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = std::move(value); }
-    inline void SetServerSideEncryptionKmsKeyId(const char* value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId.assign(value); }
-    inline RedshiftSettings& WithServerSideEncryptionKmsKeyId(const Aws::String& value) { SetServerSideEncryptionKmsKeyId(value); return *this;}
-    inline RedshiftSettings& WithServerSideEncryptionKmsKeyId(Aws::String&& value) { SetServerSideEncryptionKmsKeyId(std::move(value)); return *this;}
-    inline RedshiftSettings& WithServerSideEncryptionKmsKeyId(const char* value) { SetServerSideEncryptionKmsKeyId(value); return *this;}
+    template<typename ServerSideEncryptionKmsKeyIdT = Aws::String>
+    void SetServerSideEncryptionKmsKeyId(ServerSideEncryptionKmsKeyIdT&& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = std::forward<ServerSideEncryptionKmsKeyIdT>(value); }
+    template<typename ServerSideEncryptionKmsKeyIdT = Aws::String>
+    RedshiftSettings& WithServerSideEncryptionKmsKeyId(ServerSideEncryptionKmsKeyIdT&& value) { SetServerSideEncryptionKmsKeyId(std::forward<ServerSideEncryptionKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -389,14 +365,12 @@ namespace Model
      * format string. </p> <p>If your date and time values use formats different from
      * each other, set this parameter to <code>auto</code>. </p>
      */
-    inline const Aws::String& GetTimeFormat() const{ return m_timeFormat; }
+    inline const Aws::String& GetTimeFormat() const { return m_timeFormat; }
     inline bool TimeFormatHasBeenSet() const { return m_timeFormatHasBeenSet; }
-    inline void SetTimeFormat(const Aws::String& value) { m_timeFormatHasBeenSet = true; m_timeFormat = value; }
-    inline void SetTimeFormat(Aws::String&& value) { m_timeFormatHasBeenSet = true; m_timeFormat = std::move(value); }
-    inline void SetTimeFormat(const char* value) { m_timeFormatHasBeenSet = true; m_timeFormat.assign(value); }
-    inline RedshiftSettings& WithTimeFormat(const Aws::String& value) { SetTimeFormat(value); return *this;}
-    inline RedshiftSettings& WithTimeFormat(Aws::String&& value) { SetTimeFormat(std::move(value)); return *this;}
-    inline RedshiftSettings& WithTimeFormat(const char* value) { SetTimeFormat(value); return *this;}
+    template<typename TimeFormatT = Aws::String>
+    void SetTimeFormat(TimeFormatT&& value) { m_timeFormatHasBeenSet = true; m_timeFormat = std::forward<TimeFormatT>(value); }
+    template<typename TimeFormatT = Aws::String>
+    RedshiftSettings& WithTimeFormat(TimeFormatT&& value) { SetTimeFormat(std::forward<TimeFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -406,7 +380,7 @@ namespace Model
      * Choose <code>true</code> to remove unneeded white space. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetTrimBlanks() const{ return m_trimBlanks; }
+    inline bool GetTrimBlanks() const { return m_trimBlanks; }
     inline bool TrimBlanksHasBeenSet() const { return m_trimBlanksHasBeenSet; }
     inline void SetTrimBlanks(bool value) { m_trimBlanksHasBeenSet = true; m_trimBlanks = value; }
     inline RedshiftSettings& WithTrimBlanks(bool value) { SetTrimBlanks(value); return *this;}
@@ -420,7 +394,7 @@ namespace Model
      * less. Choose <code>true</code> to truncate data. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetTruncateColumns() const{ return m_truncateColumns; }
+    inline bool GetTruncateColumns() const { return m_truncateColumns; }
     inline bool TruncateColumnsHasBeenSet() const { return m_truncateColumnsHasBeenSet; }
     inline void SetTruncateColumns(bool value) { m_truncateColumnsHasBeenSet = true; m_truncateColumns = value; }
     inline RedshiftSettings& WithTruncateColumns(bool value) { SetTruncateColumns(value); return *this;}
@@ -430,14 +404,12 @@ namespace Model
     /**
      * <p>An Amazon Redshift user name for a registered user.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline RedshiftSettings& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline RedshiftSettings& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline RedshiftSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    RedshiftSettings& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -446,7 +418,7 @@ namespace Model
      * files on the local disk at the DMS replication instance. The default value is
      * 1000 (buffer size is 1000KB).</p>
      */
-    inline int GetWriteBufferSize() const{ return m_writeBufferSize; }
+    inline int GetWriteBufferSize() const { return m_writeBufferSize; }
     inline bool WriteBufferSizeHasBeenSet() const { return m_writeBufferSizeHasBeenSet; }
     inline void SetWriteBufferSize(int value) { m_writeBufferSizeHasBeenSet = true; m_writeBufferSize = value; }
     inline RedshiftSettings& WithWriteBufferSize(int value) { SetWriteBufferSize(value); return *this;}
@@ -471,14 +443,12 @@ namespace Model
      * secrets to access Database Migration Service resources</a> in the <i>Database
      * Migration Service User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const { return m_secretsManagerAccessRoleArn; }
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
-    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
-    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
-    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
-    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
-    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
-    inline RedshiftSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    void SetSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::forward<SecretsManagerAccessRoleArnT>(value); }
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    RedshiftSettings& WithSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { SetSecretsManagerAccessRoleArn(std::forward<SecretsManagerAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -487,14 +457,12 @@ namespace Model
      * <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint
      * connection details.</p>
      */
-    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+    inline const Aws::String& GetSecretsManagerSecretId() const { return m_secretsManagerSecretId; }
     inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
-    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
-    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
-    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
-    inline RedshiftSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
-    inline RedshiftSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
-    inline RedshiftSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    void SetSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::forward<SecretsManagerSecretIdT>(value); }
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    RedshiftSettings& WithSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { SetSecretsManagerSecretId(std::forward<SecretsManagerSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -503,14 +471,14 @@ namespace Model
      * Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting
      * on both the source and target endpoints for it to take effect.</p>
      */
-    inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
+    inline bool GetMapBooleanAsBoolean() const { return m_mapBooleanAsBoolean; }
     inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
     inline void SetMapBooleanAsBoolean(bool value) { m_mapBooleanAsBooleanHasBeenSet = true; m_mapBooleanAsBoolean = value; }
     inline RedshiftSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
     ///@}
   private:
 
-    bool m_acceptAnyDate;
+    bool m_acceptAnyDate{false};
     bool m_acceptAnyDateHasBeenSet = false;
 
     Aws::String m_afterConnectScript;
@@ -522,13 +490,13 @@ namespace Model
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;
 
-    bool m_caseSensitiveNames;
+    bool m_caseSensitiveNames{false};
     bool m_caseSensitiveNamesHasBeenSet = false;
 
-    bool m_compUpdate;
+    bool m_compUpdate{false};
     bool m_compUpdateHasBeenSet = false;
 
-    int m_connectionTimeout;
+    int m_connectionTimeout{0};
     bool m_connectionTimeoutHasBeenSet = false;
 
     Aws::String m_databaseName;
@@ -537,31 +505,31 @@ namespace Model
     Aws::String m_dateFormat;
     bool m_dateFormatHasBeenSet = false;
 
-    bool m_emptyAsNull;
+    bool m_emptyAsNull{false};
     bool m_emptyAsNullHasBeenSet = false;
 
-    EncryptionModeValue m_encryptionMode;
+    EncryptionModeValue m_encryptionMode{EncryptionModeValue::NOT_SET};
     bool m_encryptionModeHasBeenSet = false;
 
-    bool m_explicitIds;
+    bool m_explicitIds{false};
     bool m_explicitIdsHasBeenSet = false;
 
-    int m_fileTransferUploadStreams;
+    int m_fileTransferUploadStreams{0};
     bool m_fileTransferUploadStreamsHasBeenSet = false;
 
-    int m_loadTimeout;
+    int m_loadTimeout{0};
     bool m_loadTimeoutHasBeenSet = false;
 
-    int m_maxFileSize;
+    int m_maxFileSize{0};
     bool m_maxFileSizeHasBeenSet = false;
 
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    bool m_removeQuotes;
+    bool m_removeQuotes{false};
     bool m_removeQuotesHasBeenSet = false;
 
     Aws::String m_replaceInvalidChars;
@@ -582,16 +550,16 @@ namespace Model
     Aws::String m_timeFormat;
     bool m_timeFormatHasBeenSet = false;
 
-    bool m_trimBlanks;
+    bool m_trimBlanks{false};
     bool m_trimBlanksHasBeenSet = false;
 
-    bool m_truncateColumns;
+    bool m_truncateColumns{false};
     bool m_truncateColumnsHasBeenSet = false;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
 
-    int m_writeBufferSize;
+    int m_writeBufferSize{0};
     bool m_writeBufferSizeHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
@@ -600,7 +568,7 @@ namespace Model
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
 
-    bool m_mapBooleanAsBoolean;
+    bool m_mapBooleanAsBoolean{false};
     bool m_mapBooleanAsBooleanHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OrchestrationConfiguration::OrchestrationConfiguration() : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false),
-    m_promptTemplateHasBeenSet(false),
-    m_queryTransformationConfigurationHasBeenSet(false)
-{
-}
-
 OrchestrationConfiguration::OrchestrationConfiguration(JsonView jsonValue)
-  : OrchestrationConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceConfig"))
   {
     m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
-
     m_inferenceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptTemplate"))
   {
     m_promptTemplate = jsonValue.GetObject("promptTemplate");
-
     m_promptTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryTransformationConfiguration"))
   {
     m_queryTransformationConfiguration = jsonValue.GetObject("queryTransformationConfiguration");
-
     m_queryTransformationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

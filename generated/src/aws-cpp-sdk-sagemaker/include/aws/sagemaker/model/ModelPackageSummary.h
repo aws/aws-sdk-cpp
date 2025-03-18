@@ -35,7 +35,7 @@ namespace Model
   class ModelPackageSummary
   {
   public:
-    AWS_SAGEMAKER_API ModelPackageSummary();
+    AWS_SAGEMAKER_API ModelPackageSummary() = default;
     AWS_SAGEMAKER_API ModelPackageSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelPackageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the model package.</p>
      */
-    inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+    inline const Aws::String& GetModelPackageName() const { return m_modelPackageName; }
     inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
-    inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
-    inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
-    inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
-    inline ModelPackageSummary& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
-    inline ModelPackageSummary& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
-    inline ModelPackageSummary& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+    template<typename ModelPackageNameT = Aws::String>
+    void SetModelPackageName(ModelPackageNameT&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::forward<ModelPackageNameT>(value); }
+    template<typename ModelPackageNameT = Aws::String>
+    ModelPackageSummary& WithModelPackageName(ModelPackageNameT&& value) { SetModelPackageName(std::forward<ModelPackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,21 +58,19 @@ namespace Model
      * <p>If the model package is a versioned model, the model group that the versioned
      * model belongs to.</p>
      */
-    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+    inline const Aws::String& GetModelPackageGroupName() const { return m_modelPackageGroupName; }
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
-    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
-    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
-    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
-    inline ModelPackageSummary& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
-    inline ModelPackageSummary& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
-    inline ModelPackageSummary& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+    template<typename ModelPackageGroupNameT = Aws::String>
+    void SetModelPackageGroupName(ModelPackageGroupNameT&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::forward<ModelPackageGroupNameT>(value); }
+    template<typename ModelPackageGroupNameT = Aws::String>
+    ModelPackageSummary& WithModelPackageGroupName(ModelPackageGroupNameT&& value) { SetModelPackageGroupName(std::forward<ModelPackageGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the model package is a versioned model, the version of the model.</p>
      */
-    inline int GetModelPackageVersion() const{ return m_modelPackageVersion; }
+    inline int GetModelPackageVersion() const { return m_modelPackageVersion; }
     inline bool ModelPackageVersionHasBeenSet() const { return m_modelPackageVersionHasBeenSet; }
     inline void SetModelPackageVersion(int value) { m_modelPackageVersionHasBeenSet = true; m_modelPackageVersion = value; }
     inline ModelPackageSummary& WithModelPackageVersion(int value) { SetModelPackageVersion(value); return *this;}
@@ -84,52 +80,46 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
-    inline const Aws::String& GetModelPackageArn() const{ return m_modelPackageArn; }
+    inline const Aws::String& GetModelPackageArn() const { return m_modelPackageArn; }
     inline bool ModelPackageArnHasBeenSet() const { return m_modelPackageArnHasBeenSet; }
-    inline void SetModelPackageArn(const Aws::String& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = value; }
-    inline void SetModelPackageArn(Aws::String&& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = std::move(value); }
-    inline void SetModelPackageArn(const char* value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn.assign(value); }
-    inline ModelPackageSummary& WithModelPackageArn(const Aws::String& value) { SetModelPackageArn(value); return *this;}
-    inline ModelPackageSummary& WithModelPackageArn(Aws::String&& value) { SetModelPackageArn(std::move(value)); return *this;}
-    inline ModelPackageSummary& WithModelPackageArn(const char* value) { SetModelPackageArn(value); return *this;}
+    template<typename ModelPackageArnT = Aws::String>
+    void SetModelPackageArn(ModelPackageArnT&& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = std::forward<ModelPackageArnT>(value); }
+    template<typename ModelPackageArnT = Aws::String>
+    ModelPackageSummary& WithModelPackageArn(ModelPackageArnT&& value) { SetModelPackageArn(std::forward<ModelPackageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the model package.</p>
      */
-    inline const Aws::String& GetModelPackageDescription() const{ return m_modelPackageDescription; }
+    inline const Aws::String& GetModelPackageDescription() const { return m_modelPackageDescription; }
     inline bool ModelPackageDescriptionHasBeenSet() const { return m_modelPackageDescriptionHasBeenSet; }
-    inline void SetModelPackageDescription(const Aws::String& value) { m_modelPackageDescriptionHasBeenSet = true; m_modelPackageDescription = value; }
-    inline void SetModelPackageDescription(Aws::String&& value) { m_modelPackageDescriptionHasBeenSet = true; m_modelPackageDescription = std::move(value); }
-    inline void SetModelPackageDescription(const char* value) { m_modelPackageDescriptionHasBeenSet = true; m_modelPackageDescription.assign(value); }
-    inline ModelPackageSummary& WithModelPackageDescription(const Aws::String& value) { SetModelPackageDescription(value); return *this;}
-    inline ModelPackageSummary& WithModelPackageDescription(Aws::String&& value) { SetModelPackageDescription(std::move(value)); return *this;}
-    inline ModelPackageSummary& WithModelPackageDescription(const char* value) { SetModelPackageDescription(value); return *this;}
+    template<typename ModelPackageDescriptionT = Aws::String>
+    void SetModelPackageDescription(ModelPackageDescriptionT&& value) { m_modelPackageDescriptionHasBeenSet = true; m_modelPackageDescription = std::forward<ModelPackageDescriptionT>(value); }
+    template<typename ModelPackageDescriptionT = Aws::String>
+    ModelPackageSummary& WithModelPackageDescription(ModelPackageDescriptionT&& value) { SetModelPackageDescription(std::forward<ModelPackageDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the model package was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ModelPackageSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ModelPackageSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ModelPackageSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overall status of the model package.</p>
      */
-    inline const ModelPackageStatus& GetModelPackageStatus() const{ return m_modelPackageStatus; }
+    inline ModelPackageStatus GetModelPackageStatus() const { return m_modelPackageStatus; }
     inline bool ModelPackageStatusHasBeenSet() const { return m_modelPackageStatusHasBeenSet; }
-    inline void SetModelPackageStatus(const ModelPackageStatus& value) { m_modelPackageStatusHasBeenSet = true; m_modelPackageStatus = value; }
-    inline void SetModelPackageStatus(ModelPackageStatus&& value) { m_modelPackageStatusHasBeenSet = true; m_modelPackageStatus = std::move(value); }
-    inline ModelPackageSummary& WithModelPackageStatus(const ModelPackageStatus& value) { SetModelPackageStatus(value); return *this;}
-    inline ModelPackageSummary& WithModelPackageStatus(ModelPackageStatus&& value) { SetModelPackageStatus(std::move(value)); return *this;}
+    inline void SetModelPackageStatus(ModelPackageStatus value) { m_modelPackageStatusHasBeenSet = true; m_modelPackageStatus = value; }
+    inline ModelPackageSummary& WithModelPackageStatus(ModelPackageStatus value) { SetModelPackageStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +130,10 @@ namespace Model
      * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
      * approval.</p> </li> </ul>
      */
-    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+    inline ModelApprovalStatus GetModelApprovalStatus() const { return m_modelApprovalStatus; }
     inline bool ModelApprovalStatusHasBeenSet() const { return m_modelApprovalStatusHasBeenSet; }
-    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
-    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = std::move(value); }
-    inline ModelPackageSummary& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
-    inline ModelPackageSummary& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+    inline void SetModelApprovalStatus(ModelApprovalStatus value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
+    inline ModelPackageSummary& WithModelApprovalStatus(ModelApprovalStatus value) { SetModelApprovalStatus(value); return *this;}
     ///@}
   private:
 
@@ -155,7 +143,7 @@ namespace Model
     Aws::String m_modelPackageGroupName;
     bool m_modelPackageGroupNameHasBeenSet = false;
 
-    int m_modelPackageVersion;
+    int m_modelPackageVersion{0};
     bool m_modelPackageVersionHasBeenSet = false;
 
     Aws::String m_modelPackageArn;
@@ -164,13 +152,13 @@ namespace Model
     Aws::String m_modelPackageDescription;
     bool m_modelPackageDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    ModelPackageStatus m_modelPackageStatus;
+    ModelPackageStatus m_modelPackageStatus{ModelPackageStatus::NOT_SET};
     bool m_modelPackageStatusHasBeenSet = false;
 
-    ModelApprovalStatus m_modelApprovalStatus;
+    ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
     bool m_modelApprovalStatusHasBeenSet = false;
   };
 

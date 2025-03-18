@@ -32,7 +32,7 @@ namespace Model
   class EgressEndpoint
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API EgressEndpoint();
+    AWS_MEDIAPACKAGEVOD_API EgressEndpoint() = default;
     AWS_MEDIAPACKAGEVOD_API EgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API EgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The ID of the PackagingConfiguration being applied to the Asset.
      */
-    inline const Aws::String& GetPackagingConfigurationId() const{ return m_packagingConfigurationId; }
+    inline const Aws::String& GetPackagingConfigurationId() const { return m_packagingConfigurationId; }
     inline bool PackagingConfigurationIdHasBeenSet() const { return m_packagingConfigurationIdHasBeenSet; }
-    inline void SetPackagingConfigurationId(const Aws::String& value) { m_packagingConfigurationIdHasBeenSet = true; m_packagingConfigurationId = value; }
-    inline void SetPackagingConfigurationId(Aws::String&& value) { m_packagingConfigurationIdHasBeenSet = true; m_packagingConfigurationId = std::move(value); }
-    inline void SetPackagingConfigurationId(const char* value) { m_packagingConfigurationIdHasBeenSet = true; m_packagingConfigurationId.assign(value); }
-    inline EgressEndpoint& WithPackagingConfigurationId(const Aws::String& value) { SetPackagingConfigurationId(value); return *this;}
-    inline EgressEndpoint& WithPackagingConfigurationId(Aws::String&& value) { SetPackagingConfigurationId(std::move(value)); return *this;}
-    inline EgressEndpoint& WithPackagingConfigurationId(const char* value) { SetPackagingConfigurationId(value); return *this;}
+    template<typename PackagingConfigurationIdT = Aws::String>
+    void SetPackagingConfigurationId(PackagingConfigurationIdT&& value) { m_packagingConfigurationIdHasBeenSet = true; m_packagingConfigurationId = std::forward<PackagingConfigurationIdT>(value); }
+    template<typename PackagingConfigurationIdT = Aws::String>
+    EgressEndpoint& WithPackagingConfigurationId(PackagingConfigurationIdT&& value) { SetPackagingConfigurationId(std::forward<PackagingConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
      * information won't be available for most assets ingested before 2021-09-30.
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline EgressEndpoint& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline EgressEndpoint& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline EgressEndpoint& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    EgressEndpoint& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The URL of the parent manifest for the repackaged Asset.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline EgressEndpoint& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline EgressEndpoint& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline EgressEndpoint& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    EgressEndpoint& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

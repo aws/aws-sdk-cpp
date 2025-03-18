@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessControlRuleRequest::DeleteAccessControlRuleRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessControlRuleRequest::SerializePayload() const
 {
   JsonValue payload;

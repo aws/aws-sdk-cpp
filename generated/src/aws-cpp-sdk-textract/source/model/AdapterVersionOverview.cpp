@@ -18,19 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AdapterVersionOverview::AdapterVersionOverview() : 
-    m_adapterIdHasBeenSet(false),
-    m_adapterVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false),
-    m_status(AdapterVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 AdapterVersionOverview::AdapterVersionOverview(JsonView jsonValue)
-  : AdapterVersionOverview()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ AdapterVersionOverview& AdapterVersionOverview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdapterId"))
   {
     m_adapterId = jsonValue.GetString("AdapterId");
-
     m_adapterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdapterVersion"))
   {
     m_adapterVersion = jsonValue.GetString("AdapterVersion");
-
     m_adapterVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureTypes"))
   {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
@@ -67,21 +49,16 @@ AdapterVersionOverview& AdapterVersionOverview::operator =(JsonView jsonValue)
     }
     m_featureTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AdapterVersionStatusMapper::GetAdapterVersionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

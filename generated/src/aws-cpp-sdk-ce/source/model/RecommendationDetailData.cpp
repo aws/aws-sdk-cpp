@@ -18,46 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RecommendationDetailData::RecommendationDetailData() : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_latestUsageTimestampHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
-    m_estimatedAverageUtilizationHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
-    m_estimatedROIHasBeenSet(false),
-    m_estimatedSPCostHasBeenSet(false),
-    m_estimatedSavingsAmountHasBeenSet(false),
-    m_estimatedSavingsPercentageHasBeenSet(false),
-    m_existingHourlyCommitmentHasBeenSet(false),
-    m_hourlyCommitmentToPurchaseHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_currentAverageCoverageHasBeenSet(false),
-    m_estimatedAverageCoverageHasBeenSet(false),
-    m_metricsOverLookbackPeriodHasBeenSet(false)
-{
-}
-
 RecommendationDetailData::RecommendationDetailData(JsonView jsonValue)
-  : RecommendationDetailData()
 {
   *this = jsonValue;
 }
@@ -67,199 +28,143 @@ RecommendationDetailData& RecommendationDetailData::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AccountScope"))
   {
     m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = LookbackPeriodInDaysMapper::GetLookbackPeriodInDaysForName(jsonValue.GetString("LookbackPeriodInDays"));
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansType"))
   {
     m_savingsPlansType = SupportedSavingsPlansTypeMapper::GetSupportedSavingsPlansTypeForName(jsonValue.GetString("SavingsPlansType"));
-
     m_savingsPlansTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TermInYears"))
   {
     m_termInYears = TermInYearsMapper::GetTermInYearsForName(jsonValue.GetString("TermInYears"));
-
     m_termInYearsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFamily"))
   {
     m_instanceFamily = jsonValue.GetString("InstanceFamily");
-
     m_instanceFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferingId"))
   {
     m_offeringId = jsonValue.GetString("OfferingId");
-
     m_offeringIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerationTimestamp"))
   {
     m_generationTimestamp = jsonValue.GetString("GenerationTimestamp");
-
     m_generationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUsageTimestamp"))
   {
     m_latestUsageTimestamp = jsonValue.GetString("LatestUsageTimestamp");
-
     m_latestUsageTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAverageHourlyOnDemandSpend"))
   {
     m_currentAverageHourlyOnDemandSpend = jsonValue.GetString("CurrentAverageHourlyOnDemandSpend");
-
     m_currentAverageHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentMaximumHourlyOnDemandSpend"))
   {
     m_currentMaximumHourlyOnDemandSpend = jsonValue.GetString("CurrentMaximumHourlyOnDemandSpend");
-
     m_currentMaximumHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentMinimumHourlyOnDemandSpend"))
   {
     m_currentMinimumHourlyOnDemandSpend = jsonValue.GetString("CurrentMinimumHourlyOnDemandSpend");
-
     m_currentMinimumHourlyOnDemandSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedAverageUtilization"))
   {
     m_estimatedAverageUtilization = jsonValue.GetString("EstimatedAverageUtilization");
-
     m_estimatedAverageUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlySavingsAmount"))
   {
     m_estimatedMonthlySavingsAmount = jsonValue.GetString("EstimatedMonthlySavingsAmount");
-
     m_estimatedMonthlySavingsAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedOnDemandCost"))
   {
     m_estimatedOnDemandCost = jsonValue.GetString("EstimatedOnDemandCost");
-
     m_estimatedOnDemandCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedOnDemandCostWithCurrentCommitment"))
   {
     m_estimatedOnDemandCostWithCurrentCommitment = jsonValue.GetString("EstimatedOnDemandCostWithCurrentCommitment");
-
     m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedROI"))
   {
     m_estimatedROI = jsonValue.GetString("EstimatedROI");
-
     m_estimatedROIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedSPCost"))
   {
     m_estimatedSPCost = jsonValue.GetString("EstimatedSPCost");
-
     m_estimatedSPCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedSavingsAmount"))
   {
     m_estimatedSavingsAmount = jsonValue.GetString("EstimatedSavingsAmount");
-
     m_estimatedSavingsAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedSavingsPercentage"))
   {
     m_estimatedSavingsPercentage = jsonValue.GetString("EstimatedSavingsPercentage");
-
     m_estimatedSavingsPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExistingHourlyCommitment"))
   {
     m_existingHourlyCommitment = jsonValue.GetString("ExistingHourlyCommitment");
-
     m_existingHourlyCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HourlyCommitmentToPurchase"))
   {
     m_hourlyCommitmentToPurchase = jsonValue.GetString("HourlyCommitmentToPurchase");
-
     m_hourlyCommitmentToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontCost"))
   {
     m_upfrontCost = jsonValue.GetString("UpfrontCost");
-
     m_upfrontCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAverageCoverage"))
   {
     m_currentAverageCoverage = jsonValue.GetString("CurrentAverageCoverage");
-
     m_currentAverageCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedAverageCoverage"))
   {
     m_estimatedAverageCoverage = jsonValue.GetString("EstimatedAverageCoverage");
-
     m_estimatedAverageCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricsOverLookbackPeriod"))
   {
     Aws::Utils::Array<JsonView> metricsOverLookbackPeriodJsonList = jsonValue.GetArray("MetricsOverLookbackPeriod");
@@ -269,7 +174,6 @@ RecommendationDetailData& RecommendationDetailData::operator =(JsonView jsonValu
     }
     m_metricsOverLookbackPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

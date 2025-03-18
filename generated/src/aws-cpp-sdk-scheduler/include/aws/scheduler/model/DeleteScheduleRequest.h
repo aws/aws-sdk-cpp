@@ -26,7 +26,7 @@ namespace Model
   class DeleteScheduleRequest : public SchedulerRequest
   {
   public:
-    AWS_SCHEDULER_API DeleteScheduleRequest();
+    AWS_SCHEDULER_API DeleteScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * the request. If you do not specify a client token, EventBridge Scheduler uses a
      * randomly generated token for the request to ensure idempotency. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteScheduleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteScheduleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteScheduleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteScheduleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * <p>The name of the schedule group associated with this schedule. If you omit
      * this, the default schedule group is used.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline DeleteScheduleRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline DeleteScheduleRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline DeleteScheduleRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    DeleteScheduleRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schedule to delete.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteScheduleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteScheduleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteScheduleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteScheduleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

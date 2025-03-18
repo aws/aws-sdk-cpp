@@ -18,18 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-QueryStatistics::QueryStatistics() : 
-    m_resultsCount(0),
-    m_resultsCountHasBeenSet(false),
-    m_totalResultsCount(0),
-    m_totalResultsCountHasBeenSet(false),
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false)
-{
-}
-
 QueryStatistics::QueryStatistics(JsonView jsonValue)
-  : QueryStatistics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ QueryStatistics& QueryStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultsCount"))
   {
     m_resultsCount = jsonValue.GetInteger("ResultsCount");
-
     m_resultsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalResultsCount"))
   {
     m_totalResultsCount = jsonValue.GetInteger("TotalResultsCount");
-
     m_totalResultsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BytesScanned"))
   {
     m_bytesScanned = jsonValue.GetInt64("BytesScanned");
-
     m_bytesScannedHasBeenSet = true;
   }
-
   return *this;
 }
 

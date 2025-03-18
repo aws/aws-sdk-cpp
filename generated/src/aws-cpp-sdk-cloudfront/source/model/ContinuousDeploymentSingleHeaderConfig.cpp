@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig() : 
-    m_headerHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentSingleHeaderConfig()
 {
   *this = xmlNode;
 }

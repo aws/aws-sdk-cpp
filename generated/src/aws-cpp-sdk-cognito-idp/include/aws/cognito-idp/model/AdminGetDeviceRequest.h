@@ -25,7 +25,7 @@ namespace Model
   class AdminGetDeviceRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The key of the device that you want to delete.</p>
      */
-    inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+    inline const Aws::String& GetDeviceKey() const { return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-    inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-    inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-    inline AdminGetDeviceRequest& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-    inline AdminGetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-    inline AdminGetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    template<typename DeviceKeyT = Aws::String>
+    void SetDeviceKey(DeviceKeyT&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::forward<DeviceKeyT>(value); }
+    template<typename DeviceKeyT = Aws::String>
+    AdminGetDeviceRequest& WithDeviceKey(DeviceKeyT&& value) { SetDeviceKey(std::forward<DeviceKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user pool where the device owner is a user.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminGetDeviceRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminGetDeviceRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminGetDeviceRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminGetDeviceRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * this value must be the <code>sub</code> of a local user or the username of a
      * user from a third-party IdP.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline AdminGetDeviceRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AdminGetDeviceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AdminGetDeviceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AdminGetDeviceRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

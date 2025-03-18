@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioTrack::AudioTrack() : 
-    m_track(0),
-    m_trackHasBeenSet(false)
-{
-}
-
 AudioTrack::AudioTrack(JsonView jsonValue)
-  : AudioTrack()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudioTrack& AudioTrack::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("track"))
   {
     m_track = jsonValue.GetInteger("track");
-
     m_trackHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketInventoryConfigurationsResult()
 {
   *this = result;
 }
@@ -38,27 +32,32 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
     if(!continuationTokenNode.IsNull())
     {
       m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
+      m_continuationTokenHasBeenSet = true;
     }
     XmlNode inventoryConfigurationListNode = resultNode.FirstChild("InventoryConfiguration");
     if(!inventoryConfigurationListNode.IsNull())
     {
       XmlNode inventoryConfigurationMember = inventoryConfigurationListNode;
+      m_inventoryConfigurationListHasBeenSet = !inventoryConfigurationMember.IsNull();
       while(!inventoryConfigurationMember.IsNull())
       {
         m_inventoryConfigurationList.push_back(inventoryConfigurationMember);
         inventoryConfigurationMember = inventoryConfigurationMember.NextNode("InventoryConfiguration");
       }
 
+      m_inventoryConfigurationListHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
       m_nextContinuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextContinuationTokenNode.GetText());
+      m_nextContinuationTokenHasBeenSet = true;
     }
   }
 
@@ -67,6 +66,7 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

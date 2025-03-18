@@ -34,7 +34,7 @@ namespace Model
   class NexGuardFileMarkerSettings
   {
   public:
-    AWS_MEDIACONVERT_API NexGuardFileMarkerSettings();
+    AWS_MEDIACONVERT_API NexGuardFileMarkerSettings() = default;
     AWS_MEDIACONVERT_API NexGuardFileMarkerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API NexGuardFileMarkerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * JSON job specification or in the console. Required when you include Nagra
      * NexGuard File Marker watermarking in your job.
      */
-    inline const Aws::String& GetLicense() const{ return m_license; }
+    inline const Aws::String& GetLicense() const { return m_license; }
     inline bool LicenseHasBeenSet() const { return m_licenseHasBeenSet; }
-    inline void SetLicense(const Aws::String& value) { m_licenseHasBeenSet = true; m_license = value; }
-    inline void SetLicense(Aws::String&& value) { m_licenseHasBeenSet = true; m_license = std::move(value); }
-    inline void SetLicense(const char* value) { m_licenseHasBeenSet = true; m_license.assign(value); }
-    inline NexGuardFileMarkerSettings& WithLicense(const Aws::String& value) { SetLicense(value); return *this;}
-    inline NexGuardFileMarkerSettings& WithLicense(Aws::String&& value) { SetLicense(std::move(value)); return *this;}
-    inline NexGuardFileMarkerSettings& WithLicense(const char* value) { SetLicense(value); return *this;}
+    template<typename LicenseT = Aws::String>
+    void SetLicense(LicenseT&& value) { m_licenseHasBeenSet = true; m_license = std::forward<LicenseT>(value); }
+    template<typename LicenseT = Aws::String>
+    NexGuardFileMarkerSettings& WithLicense(LicenseT&& value) { SetLicense(std::forward<LicenseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * two output groups. For one output group, set the value of Payload ID to 0 in
      * every output. For the other output group, set Payload ID to 1 in every output.
      */
-    inline int GetPayload() const{ return m_payload; }
+    inline int GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
     inline void SetPayload(int value) { m_payloadHasBeenSet = true; m_payload = value; }
     inline NexGuardFileMarkerSettings& WithPayload(int value) { SetPayload(value); return *this;}
@@ -80,14 +78,12 @@ namespace Model
      * Enter one of the watermarking preset strings that Nagra provides you. Required
      * when you include Nagra NexGuard File Marker watermarking in your job.
      */
-    inline const Aws::String& GetPreset() const{ return m_preset; }
+    inline const Aws::String& GetPreset() const { return m_preset; }
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
-    inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
-    inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
-    inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
-    inline NexGuardFileMarkerSettings& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
-    inline NexGuardFileMarkerSettings& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
-    inline NexGuardFileMarkerSettings& WithPreset(const char* value) { SetPreset(value); return *this;}
+    template<typename PresetT = Aws::String>
+    void SetPreset(PresetT&& value) { m_presetHasBeenSet = true; m_preset = std::forward<PresetT>(value); }
+    template<typename PresetT = Aws::String>
+    NexGuardFileMarkerSettings& WithPreset(PresetT&& value) { SetPreset(std::forward<PresetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,25 +92,23 @@ namespace Model
      * value. When you don't specify a value here, the Nagra NexGuard library uses its
      * default value.
      */
-    inline const WatermarkingStrength& GetStrength() const{ return m_strength; }
+    inline WatermarkingStrength GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-    inline void SetStrength(const WatermarkingStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
-    inline void SetStrength(WatermarkingStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
-    inline NexGuardFileMarkerSettings& WithStrength(const WatermarkingStrength& value) { SetStrength(value); return *this;}
-    inline NexGuardFileMarkerSettings& WithStrength(WatermarkingStrength&& value) { SetStrength(std::move(value)); return *this;}
+    inline void SetStrength(WatermarkingStrength value) { m_strengthHasBeenSet = true; m_strength = value; }
+    inline NexGuardFileMarkerSettings& WithStrength(WatermarkingStrength value) { SetStrength(value); return *this;}
     ///@}
   private:
 
     Aws::String m_license;
     bool m_licenseHasBeenSet = false;
 
-    int m_payload;
+    int m_payload{0};
     bool m_payloadHasBeenSet = false;
 
     Aws::String m_preset;
     bool m_presetHasBeenSet = false;
 
-    WatermarkingStrength m_strength;
+    WatermarkingStrength m_strength{WatermarkingStrength::NOT_SET};
     bool m_strengthHasBeenSet = false;
   };
 

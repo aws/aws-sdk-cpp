@@ -12,18 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentAccountConnectionRequest::CreateEnvironmentAccountConnectionRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_codebuildRoleArnHasBeenSet(false),
-    m_componentRoleArnHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_managementAccountIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentAccountConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

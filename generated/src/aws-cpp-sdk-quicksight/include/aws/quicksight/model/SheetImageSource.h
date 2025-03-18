@@ -31,7 +31,7 @@ namespace Model
   class SheetImageSource
   {
   public:
-    AWS_QUICKSIGHT_API SheetImageSource();
+    AWS_QUICKSIGHT_API SheetImageSource() = default;
     AWS_QUICKSIGHT_API SheetImageSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetImageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The source of the static file that contains the image.</p>
      */
-    inline const SheetImageStaticFileSource& GetSheetImageStaticFileSource() const{ return m_sheetImageStaticFileSource; }
+    inline const SheetImageStaticFileSource& GetSheetImageStaticFileSource() const { return m_sheetImageStaticFileSource; }
     inline bool SheetImageStaticFileSourceHasBeenSet() const { return m_sheetImageStaticFileSourceHasBeenSet; }
-    inline void SetSheetImageStaticFileSource(const SheetImageStaticFileSource& value) { m_sheetImageStaticFileSourceHasBeenSet = true; m_sheetImageStaticFileSource = value; }
-    inline void SetSheetImageStaticFileSource(SheetImageStaticFileSource&& value) { m_sheetImageStaticFileSourceHasBeenSet = true; m_sheetImageStaticFileSource = std::move(value); }
-    inline SheetImageSource& WithSheetImageStaticFileSource(const SheetImageStaticFileSource& value) { SetSheetImageStaticFileSource(value); return *this;}
-    inline SheetImageSource& WithSheetImageStaticFileSource(SheetImageStaticFileSource&& value) { SetSheetImageStaticFileSource(std::move(value)); return *this;}
+    template<typename SheetImageStaticFileSourceT = SheetImageStaticFileSource>
+    void SetSheetImageStaticFileSource(SheetImageStaticFileSourceT&& value) { m_sheetImageStaticFileSourceHasBeenSet = true; m_sheetImageStaticFileSource = std::forward<SheetImageStaticFileSourceT>(value); }
+    template<typename SheetImageStaticFileSourceT = SheetImageStaticFileSource>
+    SheetImageSource& WithSheetImageStaticFileSource(SheetImageStaticFileSourceT&& value) { SetSheetImageStaticFileSource(std::forward<SheetImageStaticFileSourceT>(value)); return *this;}
     ///@}
   private:
 

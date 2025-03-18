@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateClientVpnTargetNetworkResponse::DisassociateClientVpnTargetNetworkResponse()
-{
-}
-
 DisassociateClientVpnTargetNetworkResponse::DisassociateClientVpnTargetNetworkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DisassociateClientVpnTargetNetworkResponse& DisassociateClientVpnTargetNetworkRe
     if(!associationIdNode.IsNull())
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
+      m_associationIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
+      m_statusHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ DisassociateClientVpnTargetNetworkResponse& DisassociateClientVpnTargetNetworkRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisassociateClientVpnTargetNetworkResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

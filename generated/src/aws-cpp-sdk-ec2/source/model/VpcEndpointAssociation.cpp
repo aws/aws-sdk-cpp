@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpointAssociation::VpcEndpointAssociation() : 
-    m_idHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_serviceNetworkNameHasBeenSet(false),
-    m_associatedResourceAccessibilityHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_dnsEntryHasBeenSet(false),
-    m_privateDnsEntryHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false),
-    m_resourceConfigurationGroupArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VpcEndpointAssociation::VpcEndpointAssociation(const XmlNode& xmlNode)
-  : VpcEndpointAssociation()
 {
   *this = xmlNode;
 }
@@ -118,6 +101,7 @@ VpcEndpointAssociation& VpcEndpointAssociation::operator =(const XmlNode& xmlNod
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

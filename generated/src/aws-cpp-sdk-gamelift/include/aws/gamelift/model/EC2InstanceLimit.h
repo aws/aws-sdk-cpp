@@ -37,7 +37,7 @@ namespace Model
   class EC2InstanceLimit
   {
   public:
-    AWS_GAMELIFT_API EC2InstanceLimit();
+    AWS_GAMELIFT_API EC2InstanceLimit() = default;
     AWS_GAMELIFT_API EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions. </p>
      */
-    inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
+    inline EC2InstanceType GetEC2InstanceType() const { return m_eC2InstanceType; }
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
-    inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
-    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
-    inline EC2InstanceLimit& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
-    inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
+    inline void SetEC2InstanceType(EC2InstanceType value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
+    inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType value) { SetEC2InstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <p>The number of instances for the specified type and location that are
      * currently being used by the Amazon Web Services account. </p>
      */
-    inline int GetCurrentInstances() const{ return m_currentInstances; }
+    inline int GetCurrentInstances() const { return m_currentInstances; }
     inline bool CurrentInstancesHasBeenSet() const { return m_currentInstancesHasBeenSet; }
     inline void SetCurrentInstances(int value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
     inline EC2InstanceLimit& WithCurrentInstances(int value) { SetCurrentInstances(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
      * <p>The number of instances that is allowed for the specified instance type and
      * location.</p>
      */
-    inline int GetInstanceLimit() const{ return m_instanceLimit; }
+    inline int GetInstanceLimit() const { return m_instanceLimit; }
     inline bool InstanceLimitHasBeenSet() const { return m_instanceLimitHasBeenSet; }
     inline void SetInstanceLimit(int value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
     inline EC2InstanceLimit& WithInstanceLimit(int value) { SetInstanceLimit(value); return *this;}
@@ -83,24 +81,22 @@ namespace Model
     /**
      * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline EC2InstanceLimit& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline EC2InstanceLimit& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline EC2InstanceLimit& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    EC2InstanceLimit& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    EC2InstanceType m_eC2InstanceType;
+    EC2InstanceType m_eC2InstanceType{EC2InstanceType::NOT_SET};
     bool m_eC2InstanceTypeHasBeenSet = false;
 
-    int m_currentInstances;
+    int m_currentInstances{0};
     bool m_currentInstancesHasBeenSet = false;
 
-    int m_instanceLimit;
+    int m_instanceLimit{0};
     bool m_instanceLimitHasBeenSet = false;
 
     Aws::String m_location;

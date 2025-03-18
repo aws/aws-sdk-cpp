@@ -18,30 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentRun::AssessmentRun() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_assessmentTemplateArnHasBeenSet(false),
-    m_state(AssessmentRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_userAttributesForFindingsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_stateChangedAtHasBeenSet(false),
-    m_dataCollected(false),
-    m_dataCollectedHasBeenSet(false),
-    m_stateChangesHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_findingCountsHasBeenSet(false)
-{
-}
-
 AssessmentRun::AssessmentRun(JsonView jsonValue)
-  : AssessmentRun()
 {
   *this = jsonValue;
 }
@@ -51,38 +28,28 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentTemplateArn"))
   {
     m_assessmentTemplateArn = jsonValue.GetString("assessmentTemplateArn");
-
     m_assessmentTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = AssessmentRunStateMapper::GetAssessmentRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("durationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
@@ -92,7 +59,6 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
     }
     m_rulesPackageArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttributesForFindings"))
   {
     Aws::Utils::Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
@@ -102,42 +68,31 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
     }
     m_userAttributesForFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangedAt"))
   {
     m_stateChangedAt = jsonValue.GetDouble("stateChangedAt");
-
     m_stateChangedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataCollected"))
   {
     m_dataCollected = jsonValue.GetBool("dataCollected");
-
     m_dataCollectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChanges"))
   {
     Aws::Utils::Array<JsonView> stateChangesJsonList = jsonValue.GetArray("stateChanges");
@@ -147,7 +102,6 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
     }
     m_stateChangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notifications"))
   {
     Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
@@ -157,7 +111,6 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
     }
     m_notificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingCounts"))
   {
     Aws::Map<Aws::String, JsonView> findingCountsJsonMap = jsonValue.GetObject("findingCounts").GetAllObjects();
@@ -167,7 +120,6 @@ AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
     }
     m_findingCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

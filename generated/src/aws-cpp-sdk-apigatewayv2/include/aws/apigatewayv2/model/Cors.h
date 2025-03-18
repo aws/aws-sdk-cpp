@@ -34,7 +34,7 @@ namespace Model
   class Cors
   {
   public:
-    AWS_APIGATEWAYV2_API Cors();
+    AWS_APIGATEWAYV2_API Cors() = default;
     AWS_APIGATEWAYV2_API Cors(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Specifies whether credentials are included in the CORS request. Supported
      * only for HTTP APIs.</p>
      */
-    inline bool GetAllowCredentials() const{ return m_allowCredentials; }
+    inline bool GetAllowCredentials() const { return m_allowCredentials; }
     inline bool AllowCredentialsHasBeenSet() const { return m_allowCredentialsHasBeenSet; }
     inline void SetAllowCredentials(bool value) { m_allowCredentialsHasBeenSet = true; m_allowCredentials = value; }
     inline Cors& WithAllowCredentials(bool value) { SetAllowCredentials(value); return *this;}
@@ -55,15 +55,14 @@ namespace Model
     /**
      * <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowHeaders() const{ return m_allowHeaders; }
+    inline const Aws::Vector<Aws::String>& GetAllowHeaders() const { return m_allowHeaders; }
     inline bool AllowHeadersHasBeenSet() const { return m_allowHeadersHasBeenSet; }
-    inline void SetAllowHeaders(const Aws::Vector<Aws::String>& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders = value; }
-    inline void SetAllowHeaders(Aws::Vector<Aws::String>&& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders = std::move(value); }
-    inline Cors& WithAllowHeaders(const Aws::Vector<Aws::String>& value) { SetAllowHeaders(value); return *this;}
-    inline Cors& WithAllowHeaders(Aws::Vector<Aws::String>&& value) { SetAllowHeaders(std::move(value)); return *this;}
-    inline Cors& AddAllowHeaders(const Aws::String& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders.push_back(value); return *this; }
-    inline Cors& AddAllowHeaders(Aws::String&& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders.push_back(std::move(value)); return *this; }
-    inline Cors& AddAllowHeaders(const char* value) { m_allowHeadersHasBeenSet = true; m_allowHeaders.push_back(value); return *this; }
+    template<typename AllowHeadersT = Aws::Vector<Aws::String>>
+    void SetAllowHeaders(AllowHeadersT&& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders = std::forward<AllowHeadersT>(value); }
+    template<typename AllowHeadersT = Aws::Vector<Aws::String>>
+    Cors& WithAllowHeaders(AllowHeadersT&& value) { SetAllowHeaders(std::forward<AllowHeadersT>(value)); return *this;}
+    template<typename AllowHeadersT = Aws::String>
+    Cors& AddAllowHeaders(AllowHeadersT&& value) { m_allowHeadersHasBeenSet = true; m_allowHeaders.emplace_back(std::forward<AllowHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,45 +70,42 @@ namespace Model
      * <p>Represents a collection of allowed HTTP methods. Supported only for HTTP
      * APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowMethods() const{ return m_allowMethods; }
+    inline const Aws::Vector<Aws::String>& GetAllowMethods() const { return m_allowMethods; }
     inline bool AllowMethodsHasBeenSet() const { return m_allowMethodsHasBeenSet; }
-    inline void SetAllowMethods(const Aws::Vector<Aws::String>& value) { m_allowMethodsHasBeenSet = true; m_allowMethods = value; }
-    inline void SetAllowMethods(Aws::Vector<Aws::String>&& value) { m_allowMethodsHasBeenSet = true; m_allowMethods = std::move(value); }
-    inline Cors& WithAllowMethods(const Aws::Vector<Aws::String>& value) { SetAllowMethods(value); return *this;}
-    inline Cors& WithAllowMethods(Aws::Vector<Aws::String>&& value) { SetAllowMethods(std::move(value)); return *this;}
-    inline Cors& AddAllowMethods(const Aws::String& value) { m_allowMethodsHasBeenSet = true; m_allowMethods.push_back(value); return *this; }
-    inline Cors& AddAllowMethods(Aws::String&& value) { m_allowMethodsHasBeenSet = true; m_allowMethods.push_back(std::move(value)); return *this; }
-    inline Cors& AddAllowMethods(const char* value) { m_allowMethodsHasBeenSet = true; m_allowMethods.push_back(value); return *this; }
+    template<typename AllowMethodsT = Aws::Vector<Aws::String>>
+    void SetAllowMethods(AllowMethodsT&& value) { m_allowMethodsHasBeenSet = true; m_allowMethods = std::forward<AllowMethodsT>(value); }
+    template<typename AllowMethodsT = Aws::Vector<Aws::String>>
+    Cors& WithAllowMethods(AllowMethodsT&& value) { SetAllowMethods(std::forward<AllowMethodsT>(value)); return *this;}
+    template<typename AllowMethodsT = Aws::String>
+    Cors& AddAllowMethods(AllowMethodsT&& value) { m_allowMethodsHasBeenSet = true; m_allowMethods.emplace_back(std::forward<AllowMethodsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowOrigins() const{ return m_allowOrigins; }
+    inline const Aws::Vector<Aws::String>& GetAllowOrigins() const { return m_allowOrigins; }
     inline bool AllowOriginsHasBeenSet() const { return m_allowOriginsHasBeenSet; }
-    inline void SetAllowOrigins(const Aws::Vector<Aws::String>& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins = value; }
-    inline void SetAllowOrigins(Aws::Vector<Aws::String>&& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins = std::move(value); }
-    inline Cors& WithAllowOrigins(const Aws::Vector<Aws::String>& value) { SetAllowOrigins(value); return *this;}
-    inline Cors& WithAllowOrigins(Aws::Vector<Aws::String>&& value) { SetAllowOrigins(std::move(value)); return *this;}
-    inline Cors& AddAllowOrigins(const Aws::String& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins.push_back(value); return *this; }
-    inline Cors& AddAllowOrigins(Aws::String&& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins.push_back(std::move(value)); return *this; }
-    inline Cors& AddAllowOrigins(const char* value) { m_allowOriginsHasBeenSet = true; m_allowOrigins.push_back(value); return *this; }
+    template<typename AllowOriginsT = Aws::Vector<Aws::String>>
+    void SetAllowOrigins(AllowOriginsT&& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins = std::forward<AllowOriginsT>(value); }
+    template<typename AllowOriginsT = Aws::Vector<Aws::String>>
+    Cors& WithAllowOrigins(AllowOriginsT&& value) { SetAllowOrigins(std::forward<AllowOriginsT>(value)); return *this;}
+    template<typename AllowOriginsT = Aws::String>
+    Cors& AddAllowOrigins(AllowOriginsT&& value) { m_allowOriginsHasBeenSet = true; m_allowOrigins.emplace_back(std::forward<AllowOriginsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExposeHeaders() const{ return m_exposeHeaders; }
+    inline const Aws::Vector<Aws::String>& GetExposeHeaders() const { return m_exposeHeaders; }
     inline bool ExposeHeadersHasBeenSet() const { return m_exposeHeadersHasBeenSet; }
-    inline void SetExposeHeaders(const Aws::Vector<Aws::String>& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = value; }
-    inline void SetExposeHeaders(Aws::Vector<Aws::String>&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = std::move(value); }
-    inline Cors& WithExposeHeaders(const Aws::Vector<Aws::String>& value) { SetExposeHeaders(value); return *this;}
-    inline Cors& WithExposeHeaders(Aws::Vector<Aws::String>&& value) { SetExposeHeaders(std::move(value)); return *this;}
-    inline Cors& AddExposeHeaders(const Aws::String& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
-    inline Cors& AddExposeHeaders(Aws::String&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(std::move(value)); return *this; }
-    inline Cors& AddExposeHeaders(const char* value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
+    template<typename ExposeHeadersT = Aws::Vector<Aws::String>>
+    void SetExposeHeaders(ExposeHeadersT&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = std::forward<ExposeHeadersT>(value); }
+    template<typename ExposeHeadersT = Aws::Vector<Aws::String>>
+    Cors& WithExposeHeaders(ExposeHeadersT&& value) { SetExposeHeaders(std::forward<ExposeHeadersT>(value)); return *this;}
+    template<typename ExposeHeadersT = Aws::String>
+    Cors& AddExposeHeaders(ExposeHeadersT&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.emplace_back(std::forward<ExposeHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,14 +113,14 @@ namespace Model
      * <p>The number of seconds that the browser should cache preflight request
      * results. Supported only for HTTP APIs.</p>
      */
-    inline int GetMaxAge() const{ return m_maxAge; }
+    inline int GetMaxAge() const { return m_maxAge; }
     inline bool MaxAgeHasBeenSet() const { return m_maxAgeHasBeenSet; }
     inline void SetMaxAge(int value) { m_maxAgeHasBeenSet = true; m_maxAge = value; }
     inline Cors& WithMaxAge(int value) { SetMaxAge(value); return *this;}
     ///@}
   private:
 
-    bool m_allowCredentials;
+    bool m_allowCredentials{false};
     bool m_allowCredentialsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowHeaders;
@@ -139,7 +135,7 @@ namespace Model
     Aws::Vector<Aws::String> m_exposeHeaders;
     bool m_exposeHeadersHasBeenSet = false;
 
-    int m_maxAge;
+    int m_maxAge{0};
     bool m_maxAgeHasBeenSet = false;
   };
 

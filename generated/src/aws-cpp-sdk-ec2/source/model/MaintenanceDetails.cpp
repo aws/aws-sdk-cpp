@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MaintenanceDetails::MaintenanceDetails() : 
-    m_pendingMaintenanceHasBeenSet(false),
-    m_maintenanceAutoAppliedAfterHasBeenSet(false),
-    m_lastMaintenanceAppliedHasBeenSet(false)
-{
-}
-
 MaintenanceDetails::MaintenanceDetails(const XmlNode& xmlNode)
-  : MaintenanceDetails()
 {
   *this = xmlNode;
 }

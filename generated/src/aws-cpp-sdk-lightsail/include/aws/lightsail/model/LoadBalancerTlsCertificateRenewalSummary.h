@@ -49,7 +49,7 @@ namespace Model
   class LoadBalancerTlsCertificateRenewalSummary
   {
   public:
-    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary() = default;
     AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -73,12 +73,10 @@ namespace Model
      * request a new certificate using the <code>CreateCertificate</code> action.</p>
      * </li> </ul>
      */
-    inline const LoadBalancerTlsCertificateRenewalStatus& GetRenewalStatus() const{ return m_renewalStatus; }
+    inline LoadBalancerTlsCertificateRenewalStatus GetRenewalStatus() const { return m_renewalStatus; }
     inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
-    inline void SetRenewalStatus(const LoadBalancerTlsCertificateRenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
-    inline void SetRenewalStatus(LoadBalancerTlsCertificateRenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
-    inline LoadBalancerTlsCertificateRenewalSummary& WithRenewalStatus(const LoadBalancerTlsCertificateRenewalStatus& value) { SetRenewalStatus(value); return *this;}
-    inline LoadBalancerTlsCertificateRenewalSummary& WithRenewalStatus(LoadBalancerTlsCertificateRenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
+    inline void SetRenewalStatus(LoadBalancerTlsCertificateRenewalStatus value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
+    inline LoadBalancerTlsCertificateRenewalSummary& WithRenewalStatus(LoadBalancerTlsCertificateRenewalStatus value) { SetRenewalStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -88,18 +86,18 @@ namespace Model
      * from the initial validation that occurs as a result of the RequestCertificate
      * request.</p>
      */
-    inline const Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+    inline const Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>& GetDomainValidationOptions() const { return m_domainValidationOptions; }
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
-    inline void SetDomainValidationOptions(const Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
-    inline void SetDomainValidationOptions(Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
-    inline LoadBalancerTlsCertificateRenewalSummary& WithDomainValidationOptions(const Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
-    inline LoadBalancerTlsCertificateRenewalSummary& WithDomainValidationOptions(Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
-    inline LoadBalancerTlsCertificateRenewalSummary& AddDomainValidationOptions(const LoadBalancerTlsCertificateDomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
-    inline LoadBalancerTlsCertificateRenewalSummary& AddDomainValidationOptions(LoadBalancerTlsCertificateDomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
+    template<typename DomainValidationOptionsT = Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>>
+    void SetDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::forward<DomainValidationOptionsT>(value); }
+    template<typename DomainValidationOptionsT = Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>>
+    LoadBalancerTlsCertificateRenewalSummary& WithDomainValidationOptions(DomainValidationOptionsT&& value) { SetDomainValidationOptions(std::forward<DomainValidationOptionsT>(value)); return *this;}
+    template<typename DomainValidationOptionsT = LoadBalancerTlsCertificateDomainValidationOption>
+    LoadBalancerTlsCertificateRenewalSummary& AddDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.emplace_back(std::forward<DomainValidationOptionsT>(value)); return *this; }
     ///@}
   private:
 
-    LoadBalancerTlsCertificateRenewalStatus m_renewalStatus;
+    LoadBalancerTlsCertificateRenewalStatus m_renewalStatus{LoadBalancerTlsCertificateRenewalStatus::NOT_SET};
     bool m_renewalStatusHasBeenSet = false;
 
     Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption> m_domainValidationOptions;

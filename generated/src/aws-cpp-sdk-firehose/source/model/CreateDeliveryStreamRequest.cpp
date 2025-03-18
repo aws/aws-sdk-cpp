@@ -12,28 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
-    m_deliveryStreamTypeHasBeenSet(false),
-    m_directPutSourceConfigurationHasBeenSet(false),
-    m_kinesisStreamSourceConfigurationHasBeenSet(false),
-    m_deliveryStreamEncryptionConfigurationInputHasBeenSet(false),
-    m_extendedS3DestinationConfigurationHasBeenSet(false),
-    m_redshiftDestinationConfigurationHasBeenSet(false),
-    m_elasticsearchDestinationConfigurationHasBeenSet(false),
-    m_amazonopensearchserviceDestinationConfigurationHasBeenSet(false),
-    m_splunkDestinationConfigurationHasBeenSet(false),
-    m_httpEndpointDestinationConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet(false),
-    m_mSKSourceConfigurationHasBeenSet(false),
-    m_snowflakeDestinationConfigurationHasBeenSet(false),
-    m_icebergDestinationConfigurationHasBeenSet(false),
-    m_databaseSourceConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeliveryStreamRequest::SerializePayload() const
 {
   JsonValue payload;

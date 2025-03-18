@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate() : 
-    m_managedScalingHasBeenSet(false),
-    m_managedTerminationProtection(ManagedTerminationProtection::NOT_SET),
-    m_managedTerminationProtectionHasBeenSet(false),
-    m_managedDraining(ManagedDraining::NOT_SET),
-    m_managedDrainingHasBeenSet(false)
-{
-}
-
 AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate(JsonView jsonValue)
-  : AutoScalingGroupProviderUpdate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AutoScalingGroupProviderUpdate& AutoScalingGroupProviderUpdate::operator =(JsonV
   if(jsonValue.ValueExists("managedScaling"))
   {
     m_managedScaling = jsonValue.GetObject("managedScaling");
-
     m_managedScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedTerminationProtection"))
   {
     m_managedTerminationProtection = ManagedTerminationProtectionMapper::GetManagedTerminationProtectionForName(jsonValue.GetString("managedTerminationProtection"));
-
     m_managedTerminationProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDraining"))
   {
     m_managedDraining = ManagedDrainingMapper::GetManagedDrainingForName(jsonValue.GetString("managedDraining"));
-
     m_managedDrainingHasBeenSet = true;
   }
-
   return *this;
 }
 

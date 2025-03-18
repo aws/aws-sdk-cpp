@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration() : 
-    m_sourceType(LiveConnectorSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet(false)
-{
-}
-
 LiveConnectorSourceConfiguration::LiveConnectorSourceConfiguration(JsonView jsonValue)
-  : LiveConnectorSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LiveConnectorSourceConfiguration& LiveConnectorSourceConfiguration::operator =(J
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = LiveConnectorSourceTypeMapper::GetLiveConnectorSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChimeSdkMeetingLiveConnectorConfiguration"))
   {
     m_chimeSdkMeetingLiveConnectorConfiguration = jsonValue.GetObject("ChimeSdkMeetingLiveConnectorConfiguration");
-
     m_chimeSdkMeetingLiveConnectorConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

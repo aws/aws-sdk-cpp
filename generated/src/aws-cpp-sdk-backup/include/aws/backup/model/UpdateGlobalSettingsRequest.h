@@ -22,7 +22,7 @@ namespace Model
   class UpdateGlobalSettingsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API UpdateGlobalSettingsRequest();
+    AWS_BACKUP_API UpdateGlobalSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,19 +39,16 @@ namespace Model
      * <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
      * --region us-west-2</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const{ return m_globalSettings; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
     inline bool GlobalSettingsHasBeenSet() const { return m_globalSettingsHasBeenSet; }
-    inline void SetGlobalSettings(const Aws::Map<Aws::String, Aws::String>& value) { m_globalSettingsHasBeenSet = true; m_globalSettings = value; }
-    inline void SetGlobalSettings(Aws::Map<Aws::String, Aws::String>&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings = std::move(value); }
-    inline UpdateGlobalSettingsRequest& WithGlobalSettings(const Aws::Map<Aws::String, Aws::String>& value) { SetGlobalSettings(value); return *this;}
-    inline UpdateGlobalSettingsRequest& WithGlobalSettings(Aws::Map<Aws::String, Aws::String>&& value) { SetGlobalSettings(std::move(value)); return *this;}
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(const Aws::String& key, const Aws::String& value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(key, value); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(Aws::String&& key, const Aws::String& value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(std::move(key), value); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(const Aws::String& key, Aws::String&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(key, std::move(value)); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(Aws::String&& key, Aws::String&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(const char* key, Aws::String&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(key, std::move(value)); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(Aws::String&& key, const char* value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(std::move(key), value); return *this; }
-    inline UpdateGlobalSettingsRequest& AddGlobalSettings(const char* key, const char* value) { m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(key, value); return *this; }
+    template<typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>
+    void SetGlobalSettings(GlobalSettingsT&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings = std::forward<GlobalSettingsT>(value); }
+    template<typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateGlobalSettingsRequest& WithGlobalSettings(GlobalSettingsT&& value) { SetGlobalSettings(std::forward<GlobalSettingsT>(value)); return *this;}
+    template<typename GlobalSettingsKeyT = Aws::String, typename GlobalSettingsValueT = Aws::String>
+    UpdateGlobalSettingsRequest& AddGlobalSettings(GlobalSettingsKeyT&& key, GlobalSettingsValueT&& value) {
+      m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(std::forward<GlobalSettingsKeyT>(key), std::forward<GlobalSettingsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

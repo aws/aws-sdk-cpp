@@ -37,7 +37,7 @@ namespace Model
   class CacheReportFilter
   {
   public:
-    AWS_STORAGEGATEWAY_API CacheReportFilter();
+    AWS_STORAGEGATEWAY_API CacheReportFilter() = default;
     AWS_STORAGEGATEWAY_API CacheReportFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API CacheReportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * excluded from a cache report.</p> <p> <b>Valid Names:</b> </p>
      * <p>UploadFailureReason | UploadState</p>
      */
-    inline const CacheReportFilterName& GetName() const{ return m_name; }
+    inline CacheReportFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const CacheReportFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(CacheReportFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline CacheReportFilter& WithName(const CacheReportFilterName& value) { SetName(value); return *this;}
-    inline CacheReportFilter& WithName(CacheReportFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(CacheReportFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline CacheReportFilter& WithName(CacheReportFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +64,18 @@ namespace Model
      * <code>S3AccessDenied</code> </p> <p> <b>Valid <code>UploadState</code>
      * Values:</b> </p> <p> <code>FailingUpload</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline CacheReportFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline CacheReportFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline CacheReportFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline CacheReportFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline CacheReportFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    CacheReportFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    CacheReportFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    CacheReportFilterName m_name;
+    CacheReportFilterName m_name{CacheReportFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

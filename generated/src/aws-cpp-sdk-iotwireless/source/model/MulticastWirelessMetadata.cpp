@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-MulticastWirelessMetadata::MulticastWirelessMetadata() : 
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 MulticastWirelessMetadata::MulticastWirelessMetadata(JsonView jsonValue)
-  : MulticastWirelessMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MulticastWirelessMetadata& MulticastWirelessMetadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   return *this;
 }
 

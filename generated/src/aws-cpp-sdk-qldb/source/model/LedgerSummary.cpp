@@ -18,16 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-LedgerSummary::LedgerSummary() : 
-    m_nameHasBeenSet(false),
-    m_state(LedgerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
-{
-}
-
 LedgerSummary::LedgerSummary(JsonView jsonValue)
-  : LedgerSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LedgerSummary& LedgerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = LedgerStateMapper::GetLedgerStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class StorageConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API StorageConfiguration();
+    AWS_BEDROCKAGENT_API StorageConfiguration() = default;
     AWS_BEDROCKAGENT_API StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>Contains the storage configuration of the knowledge base in MongoDB
      * Atlas.</p>
      */
-    inline const MongoDbAtlasConfiguration& GetMongoDbAtlasConfiguration() const{ return m_mongoDbAtlasConfiguration; }
+    inline const MongoDbAtlasConfiguration& GetMongoDbAtlasConfiguration() const { return m_mongoDbAtlasConfiguration; }
     inline bool MongoDbAtlasConfigurationHasBeenSet() const { return m_mongoDbAtlasConfigurationHasBeenSet; }
-    inline void SetMongoDbAtlasConfiguration(const MongoDbAtlasConfiguration& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = value; }
-    inline void SetMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = std::move(value); }
-    inline StorageConfiguration& WithMongoDbAtlasConfiguration(const MongoDbAtlasConfiguration& value) { SetMongoDbAtlasConfiguration(value); return *this;}
-    inline StorageConfiguration& WithMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { SetMongoDbAtlasConfiguration(std::move(value)); return *this;}
+    template<typename MongoDbAtlasConfigurationT = MongoDbAtlasConfiguration>
+    void SetMongoDbAtlasConfiguration(MongoDbAtlasConfigurationT&& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = std::forward<MongoDbAtlasConfigurationT>(value); }
+    template<typename MongoDbAtlasConfigurationT = MongoDbAtlasConfiguration>
+    StorageConfiguration& WithMongoDbAtlasConfiguration(MongoDbAtlasConfigurationT&& value) { SetMongoDbAtlasConfiguration(std::forward<MongoDbAtlasConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create
      * a vector index in Amazon Neptune Analytics.</a>.</p>
      */
-    inline const NeptuneAnalyticsConfiguration& GetNeptuneAnalyticsConfiguration() const{ return m_neptuneAnalyticsConfiguration; }
+    inline const NeptuneAnalyticsConfiguration& GetNeptuneAnalyticsConfiguration() const { return m_neptuneAnalyticsConfiguration; }
     inline bool NeptuneAnalyticsConfigurationHasBeenSet() const { return m_neptuneAnalyticsConfigurationHasBeenSet; }
-    inline void SetNeptuneAnalyticsConfiguration(const NeptuneAnalyticsConfiguration& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = value; }
-    inline void SetNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfiguration&& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = std::move(value); }
-    inline StorageConfiguration& WithNeptuneAnalyticsConfiguration(const NeptuneAnalyticsConfiguration& value) { SetNeptuneAnalyticsConfiguration(value); return *this;}
-    inline StorageConfiguration& WithNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfiguration&& value) { SetNeptuneAnalyticsConfiguration(std::move(value)); return *this;}
+    template<typename NeptuneAnalyticsConfigurationT = NeptuneAnalyticsConfiguration>
+    void SetNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfigurationT&& value) { m_neptuneAnalyticsConfigurationHasBeenSet = true; m_neptuneAnalyticsConfiguration = std::forward<NeptuneAnalyticsConfigurationT>(value); }
+    template<typename NeptuneAnalyticsConfigurationT = NeptuneAnalyticsConfiguration>
+    StorageConfiguration& WithNeptuneAnalyticsConfiguration(NeptuneAnalyticsConfigurationT&& value) { SetNeptuneAnalyticsConfiguration(std::forward<NeptuneAnalyticsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +77,24 @@ namespace Model
      * <p>Contains the storage configuration of the knowledge base in Amazon OpenSearch
      * Service.</p>
      */
-    inline const OpenSearchServerlessConfiguration& GetOpensearchServerlessConfiguration() const{ return m_opensearchServerlessConfiguration; }
+    inline const OpenSearchServerlessConfiguration& GetOpensearchServerlessConfiguration() const { return m_opensearchServerlessConfiguration; }
     inline bool OpensearchServerlessConfigurationHasBeenSet() const { return m_opensearchServerlessConfigurationHasBeenSet; }
-    inline void SetOpensearchServerlessConfiguration(const OpenSearchServerlessConfiguration& value) { m_opensearchServerlessConfigurationHasBeenSet = true; m_opensearchServerlessConfiguration = value; }
-    inline void SetOpensearchServerlessConfiguration(OpenSearchServerlessConfiguration&& value) { m_opensearchServerlessConfigurationHasBeenSet = true; m_opensearchServerlessConfiguration = std::move(value); }
-    inline StorageConfiguration& WithOpensearchServerlessConfiguration(const OpenSearchServerlessConfiguration& value) { SetOpensearchServerlessConfiguration(value); return *this;}
-    inline StorageConfiguration& WithOpensearchServerlessConfiguration(OpenSearchServerlessConfiguration&& value) { SetOpensearchServerlessConfiguration(std::move(value)); return *this;}
+    template<typename OpensearchServerlessConfigurationT = OpenSearchServerlessConfiguration>
+    void SetOpensearchServerlessConfiguration(OpensearchServerlessConfigurationT&& value) { m_opensearchServerlessConfigurationHasBeenSet = true; m_opensearchServerlessConfiguration = std::forward<OpensearchServerlessConfigurationT>(value); }
+    template<typename OpensearchServerlessConfigurationT = OpenSearchServerlessConfiguration>
+    StorageConfiguration& WithOpensearchServerlessConfiguration(OpensearchServerlessConfigurationT&& value) { SetOpensearchServerlessConfiguration(std::forward<OpensearchServerlessConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the storage configuration of the knowledge base in Pinecone.</p>
      */
-    inline const PineconeConfiguration& GetPineconeConfiguration() const{ return m_pineconeConfiguration; }
+    inline const PineconeConfiguration& GetPineconeConfiguration() const { return m_pineconeConfiguration; }
     inline bool PineconeConfigurationHasBeenSet() const { return m_pineconeConfigurationHasBeenSet; }
-    inline void SetPineconeConfiguration(const PineconeConfiguration& value) { m_pineconeConfigurationHasBeenSet = true; m_pineconeConfiguration = value; }
-    inline void SetPineconeConfiguration(PineconeConfiguration&& value) { m_pineconeConfigurationHasBeenSet = true; m_pineconeConfiguration = std::move(value); }
-    inline StorageConfiguration& WithPineconeConfiguration(const PineconeConfiguration& value) { SetPineconeConfiguration(value); return *this;}
-    inline StorageConfiguration& WithPineconeConfiguration(PineconeConfiguration&& value) { SetPineconeConfiguration(std::move(value)); return *this;}
+    template<typename PineconeConfigurationT = PineconeConfiguration>
+    void SetPineconeConfiguration(PineconeConfigurationT&& value) { m_pineconeConfigurationHasBeenSet = true; m_pineconeConfiguration = std::forward<PineconeConfigurationT>(value); }
+    template<typename PineconeConfigurationT = PineconeConfiguration>
+    StorageConfiguration& WithPineconeConfiguration(PineconeConfigurationT&& value) { SetPineconeConfiguration(std::forward<PineconeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
      * a vector index in Amazon RDS</a>.</p>
      */
-    inline const RdsConfiguration& GetRdsConfiguration() const{ return m_rdsConfiguration; }
+    inline const RdsConfiguration& GetRdsConfiguration() const { return m_rdsConfiguration; }
     inline bool RdsConfigurationHasBeenSet() const { return m_rdsConfigurationHasBeenSet; }
-    inline void SetRdsConfiguration(const RdsConfiguration& value) { m_rdsConfigurationHasBeenSet = true; m_rdsConfiguration = value; }
-    inline void SetRdsConfiguration(RdsConfiguration&& value) { m_rdsConfigurationHasBeenSet = true; m_rdsConfiguration = std::move(value); }
-    inline StorageConfiguration& WithRdsConfiguration(const RdsConfiguration& value) { SetRdsConfiguration(value); return *this;}
-    inline StorageConfiguration& WithRdsConfiguration(RdsConfiguration&& value) { SetRdsConfiguration(std::move(value)); return *this;}
+    template<typename RdsConfigurationT = RdsConfiguration>
+    void SetRdsConfiguration(RdsConfigurationT&& value) { m_rdsConfigurationHasBeenSet = true; m_rdsConfiguration = std::forward<RdsConfigurationT>(value); }
+    template<typename RdsConfigurationT = RdsConfiguration>
+    StorageConfiguration& WithRdsConfiguration(RdsConfigurationT&& value) { SetRdsConfiguration(std::forward<RdsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,24 +117,22 @@ namespace Model
      * <p>Contains the storage configuration of the knowledge base in Redis Enterprise
      * Cloud.</p>
      */
-    inline const RedisEnterpriseCloudConfiguration& GetRedisEnterpriseCloudConfiguration() const{ return m_redisEnterpriseCloudConfiguration; }
+    inline const RedisEnterpriseCloudConfiguration& GetRedisEnterpriseCloudConfiguration() const { return m_redisEnterpriseCloudConfiguration; }
     inline bool RedisEnterpriseCloudConfigurationHasBeenSet() const { return m_redisEnterpriseCloudConfigurationHasBeenSet; }
-    inline void SetRedisEnterpriseCloudConfiguration(const RedisEnterpriseCloudConfiguration& value) { m_redisEnterpriseCloudConfigurationHasBeenSet = true; m_redisEnterpriseCloudConfiguration = value; }
-    inline void SetRedisEnterpriseCloudConfiguration(RedisEnterpriseCloudConfiguration&& value) { m_redisEnterpriseCloudConfigurationHasBeenSet = true; m_redisEnterpriseCloudConfiguration = std::move(value); }
-    inline StorageConfiguration& WithRedisEnterpriseCloudConfiguration(const RedisEnterpriseCloudConfiguration& value) { SetRedisEnterpriseCloudConfiguration(value); return *this;}
-    inline StorageConfiguration& WithRedisEnterpriseCloudConfiguration(RedisEnterpriseCloudConfiguration&& value) { SetRedisEnterpriseCloudConfiguration(std::move(value)); return *this;}
+    template<typename RedisEnterpriseCloudConfigurationT = RedisEnterpriseCloudConfiguration>
+    void SetRedisEnterpriseCloudConfiguration(RedisEnterpriseCloudConfigurationT&& value) { m_redisEnterpriseCloudConfigurationHasBeenSet = true; m_redisEnterpriseCloudConfiguration = std::forward<RedisEnterpriseCloudConfigurationT>(value); }
+    template<typename RedisEnterpriseCloudConfigurationT = RedisEnterpriseCloudConfiguration>
+    StorageConfiguration& WithRedisEnterpriseCloudConfiguration(RedisEnterpriseCloudConfigurationT&& value) { SetRedisEnterpriseCloudConfiguration(std::forward<RedisEnterpriseCloudConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The vector store service in which the knowledge base is stored.</p>
      */
-    inline const KnowledgeBaseStorageType& GetType() const{ return m_type; }
+    inline KnowledgeBaseStorageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const KnowledgeBaseStorageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(KnowledgeBaseStorageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StorageConfiguration& WithType(const KnowledgeBaseStorageType& value) { SetType(value); return *this;}
-    inline StorageConfiguration& WithType(KnowledgeBaseStorageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(KnowledgeBaseStorageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StorageConfiguration& WithType(KnowledgeBaseStorageType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -156,7 +154,7 @@ namespace Model
     RedisEnterpriseCloudConfiguration m_redisEnterpriseCloudConfiguration;
     bool m_redisEnterpriseCloudConfigurationHasBeenSet = false;
 
-    KnowledgeBaseStorageType m_type;
+    KnowledgeBaseStorageType m_type{KnowledgeBaseStorageType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

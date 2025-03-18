@@ -21,7 +21,7 @@ namespace Model
   class DescribeBridgeRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API DescribeBridgeRequest();
+    AWS_MEDIACONNECT_API DescribeBridgeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ARN of the bridge that you want to describe.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline DescribeBridgeRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline DescribeBridgeRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline DescribeBridgeRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    DescribeBridgeRequest& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
   private:
 

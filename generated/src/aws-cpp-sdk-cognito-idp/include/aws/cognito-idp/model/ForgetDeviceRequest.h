@@ -24,7 +24,7 @@ namespace Model
   class ForgetDeviceRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ForgetDeviceRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API ForgetDeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * user. Must include a scope claim for
      * <code>aws.cognito.signin.user.admin</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline ForgetDeviceRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline ForgetDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline ForgetDeviceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    ForgetDeviceRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The unique identifier, or device key, of the device that the user wants to
      * forget.</p>
      */
-    inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+    inline const Aws::String& GetDeviceKey() const { return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-    inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-    inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-    inline ForgetDeviceRequest& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-    inline ForgetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-    inline ForgetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    template<typename DeviceKeyT = Aws::String>
+    void SetDeviceKey(DeviceKeyT&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::forward<DeviceKeyT>(value); }
+    template<typename DeviceKeyT = Aws::String>
+    ForgetDeviceRequest& WithDeviceKey(DeviceKeyT&& value) { SetDeviceKey(std::forward<DeviceKeyT>(value)); return *this;}
     ///@}
   private:
 

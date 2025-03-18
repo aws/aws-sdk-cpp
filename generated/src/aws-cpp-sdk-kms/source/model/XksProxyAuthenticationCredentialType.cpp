@@ -18,14 +18,7 @@ namespace KMS
 namespace Model
 {
 
-XksProxyAuthenticationCredentialType::XksProxyAuthenticationCredentialType() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_rawSecretAccessKeyHasBeenSet(false)
-{
-}
-
 XksProxyAuthenticationCredentialType::XksProxyAuthenticationCredentialType(JsonView jsonValue)
-  : XksProxyAuthenticationCredentialType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ XksProxyAuthenticationCredentialType& XksProxyAuthenticationCredentialType::oper
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawSecretAccessKey"))
   {
     m_rawSecretAccessKey = jsonValue.GetString("RawSecretAccessKey");
-
     m_rawSecretAccessKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResendValidationEmailRequest::ResendValidationEmailRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_validationDomainHasBeenSet(false)
-{
-}
-
 Aws::String ResendValidationEmailRequest::SerializePayload() const
 {
   JsonValue payload;

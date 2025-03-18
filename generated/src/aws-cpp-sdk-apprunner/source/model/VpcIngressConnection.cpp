@@ -18,22 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-VpcIngressConnection::VpcIngressConnection() : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_vpcIngressConnectionNameHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_status(VpcIngressConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_ingressVpcConfigurationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
-{
-}
-
 VpcIngressConnection::VpcIngressConnection(JsonView jsonValue)
-  : VpcIngressConnection()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ VpcIngressConnection& VpcIngressConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcIngressConnectionArn"))
   {
     m_vpcIngressConnectionArn = jsonValue.GetString("VpcIngressConnectionArn");
-
     m_vpcIngressConnectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcIngressConnectionName"))
   {
     m_vpcIngressConnectionName = jsonValue.GetString("VpcIngressConnectionName");
-
     m_vpcIngressConnectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VpcIngressConnectionStatusMapper::GetVpcIngressConnectionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressVpcConfiguration"))
   {
     m_ingressVpcConfiguration = jsonValue.GetObject("IngressVpcConfiguration");
-
     m_ingressVpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletedAt"))
   {
     m_deletedAt = jsonValue.GetDouble("DeletedAt");
-
     m_deletedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

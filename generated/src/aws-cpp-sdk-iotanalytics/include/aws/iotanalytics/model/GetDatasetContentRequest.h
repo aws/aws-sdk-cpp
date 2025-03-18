@@ -25,7 +25,7 @@ namespace Model
   class GetDatasetContentRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API GetDatasetContentRequest();
+    AWS_IOTANALYTICS_API GetDatasetContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the dataset whose contents are retrieved.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline GetDatasetContentRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline GetDatasetContentRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline GetDatasetContentRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    GetDatasetContentRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED"
      * is the default.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline GetDatasetContentRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline GetDatasetContentRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline GetDatasetContentRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    GetDatasetContentRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
   private:
 

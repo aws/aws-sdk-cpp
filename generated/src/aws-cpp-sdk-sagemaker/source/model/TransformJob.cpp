@@ -18,38 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformJob::TransformJob() : 
-    m_transformJobNameHasBeenSet(false),
-    m_transformJobArnHasBeenSet(false),
-    m_transformJobStatus(TransformJobStatus::NOT_SET),
-    m_transformJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_maxConcurrentTransforms(0),
-    m_maxConcurrentTransformsHasBeenSet(false),
-    m_modelClientConfigHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_batchStrategy(BatchStrategy::NOT_SET),
-    m_batchStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_transformInputHasBeenSet(false),
-    m_transformOutputHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false),
-    m_transformResourcesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_transformStartTimeHasBeenSet(false),
-    m_transformEndTimeHasBeenSet(false),
-    m_labelingJobArnHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_dataProcessingHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransformJob::TransformJob(JsonView jsonValue)
-  : TransformJob()
 {
   *this = jsonValue;
 }
@@ -59,66 +28,48 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransformJobName"))
   {
     m_transformJobName = jsonValue.GetString("TransformJobName");
-
     m_transformJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformJobArn"))
   {
     m_transformJobArn = jsonValue.GetString("TransformJobArn");
-
     m_transformJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformJobStatus"))
   {
     m_transformJobStatus = TransformJobStatusMapper::GetTransformJobStatusForName(jsonValue.GetString("TransformJobStatus"));
-
     m_transformJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrentTransforms"))
   {
     m_maxConcurrentTransforms = jsonValue.GetInteger("MaxConcurrentTransforms");
-
     m_maxConcurrentTransformsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelClientConfig"))
   {
     m_modelClientConfig = jsonValue.GetObject("ModelClientConfig");
-
     m_modelClientConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPayloadInMB"))
   {
     m_maxPayloadInMB = jsonValue.GetInteger("MaxPayloadInMB");
-
     m_maxPayloadInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchStrategy"))
   {
     m_batchStrategy = BatchStrategyMapper::GetBatchStrategyForName(jsonValue.GetString("BatchStrategy"));
-
     m_batchStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -128,84 +79,61 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformInput"))
   {
     m_transformInput = jsonValue.GetObject("TransformInput");
-
     m_transformInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformOutput"))
   {
     m_transformOutput = jsonValue.GetObject("TransformOutput");
-
     m_transformOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCaptureConfig"))
   {
     m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
-
     m_dataCaptureConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformResources"))
   {
     m_transformResources = jsonValue.GetObject("TransformResources");
-
     m_transformResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformStartTime"))
   {
     m_transformStartTime = jsonValue.GetDouble("TransformStartTime");
-
     m_transformStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformEndTime"))
   {
     m_transformEndTime = jsonValue.GetDouble("TransformEndTime");
-
     m_transformEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelingJobArn"))
   {
     m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
-
     m_labelingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMLJobArn"))
   {
     m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
-
     m_autoMLJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataProcessing"))
   {
     m_dataProcessing = jsonValue.GetObject("DataProcessing");
-
     m_dataProcessingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentConfig"))
   {
     m_experimentConfig = jsonValue.GetObject("ExperimentConfig");
-
     m_experimentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -215,7 +143,6 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

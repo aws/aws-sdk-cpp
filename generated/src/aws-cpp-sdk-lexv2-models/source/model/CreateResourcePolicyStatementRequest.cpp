@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateResourcePolicyStatementRequest::CreateResourcePolicyStatementRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_effect(Effect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_expectedRevisionIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourcePolicyStatementRequest::SerializePayload() const
 {
   JsonValue payload;

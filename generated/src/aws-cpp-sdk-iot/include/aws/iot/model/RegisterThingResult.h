@@ -28,7 +28,7 @@ namespace Model
   class RegisterThingResult
   {
   public:
-    AWS_IOT_API RegisterThingResult();
+    AWS_IOT_API RegisterThingResult() = default;
     AWS_IOT_API RegisterThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API RegisterThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,50 +37,46 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
-    inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
-    inline void SetCertificatePem(const Aws::String& value) { m_certificatePem = value; }
-    inline void SetCertificatePem(Aws::String&& value) { m_certificatePem = std::move(value); }
-    inline void SetCertificatePem(const char* value) { m_certificatePem.assign(value); }
-    inline RegisterThingResult& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
-    inline RegisterThingResult& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
-    inline RegisterThingResult& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+    inline const Aws::String& GetCertificatePem() const { return m_certificatePem; }
+    template<typename CertificatePemT = Aws::String>
+    void SetCertificatePem(CertificatePemT&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::forward<CertificatePemT>(value); }
+    template<typename CertificatePemT = Aws::String>
+    RegisterThingResult& WithCertificatePem(CertificatePemT&& value) { SetCertificatePem(std::forward<CertificatePemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARNs for the generated resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResourceArns() const{ return m_resourceArns; }
-    inline void SetResourceArns(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceArns = std::move(value); }
-    inline RegisterThingResult& WithResourceArns(const Aws::Map<Aws::String, Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline RegisterThingResult& WithResourceArns(Aws::Map<Aws::String, Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline RegisterThingResult& AddResourceArns(const Aws::String& key, const Aws::String& value) { m_resourceArns.emplace(key, value); return *this; }
-    inline RegisterThingResult& AddResourceArns(Aws::String&& key, const Aws::String& value) { m_resourceArns.emplace(std::move(key), value); return *this; }
-    inline RegisterThingResult& AddResourceArns(const Aws::String& key, Aws::String&& value) { m_resourceArns.emplace(key, std::move(value)); return *this; }
-    inline RegisterThingResult& AddResourceArns(Aws::String&& key, Aws::String&& value) { m_resourceArns.emplace(std::move(key), std::move(value)); return *this; }
-    inline RegisterThingResult& AddResourceArns(const char* key, Aws::String&& value) { m_resourceArns.emplace(key, std::move(value)); return *this; }
-    inline RegisterThingResult& AddResourceArns(Aws::String&& key, const char* value) { m_resourceArns.emplace(std::move(key), value); return *this; }
-    inline RegisterThingResult& AddResourceArns(const char* key, const char* value) { m_resourceArns.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResourceArns() const { return m_resourceArns; }
+    template<typename ResourceArnsT = Aws::Map<Aws::String, Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Map<Aws::String, Aws::String>>
+    RegisterThingResult& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsKeyT = Aws::String, typename ResourceArnsValueT = Aws::String>
+    RegisterThingResult& AddResourceArns(ResourceArnsKeyT&& key, ResourceArnsValueT&& value) {
+      m_resourceArnsHasBeenSet = true; m_resourceArns.emplace(std::forward<ResourceArnsKeyT>(key), std::forward<ResourceArnsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterThingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterThingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterThingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterThingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificatePem;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_resourceArns;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,24 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DynamoDBAction::DynamoDBAction() : 
-    m_tableNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_hashKeyFieldHasBeenSet(false),
-    m_hashKeyValueHasBeenSet(false),
-    m_hashKeyType(DynamoKeyType::NOT_SET),
-    m_hashKeyTypeHasBeenSet(false),
-    m_rangeKeyFieldHasBeenSet(false),
-    m_rangeKeyValueHasBeenSet(false),
-    m_rangeKeyType(DynamoKeyType::NOT_SET),
-    m_rangeKeyTypeHasBeenSet(false),
-    m_payloadFieldHasBeenSet(false)
-{
-}
-
 DynamoDBAction::DynamoDBAction(JsonView jsonValue)
-  : DynamoDBAction()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ DynamoDBAction& DynamoDBAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashKeyField"))
   {
     m_hashKeyField = jsonValue.GetString("hashKeyField");
-
     m_hashKeyFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashKeyValue"))
   {
     m_hashKeyValue = jsonValue.GetString("hashKeyValue");
-
     m_hashKeyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashKeyType"))
   {
     m_hashKeyType = DynamoKeyTypeMapper::GetDynamoKeyTypeForName(jsonValue.GetString("hashKeyType"));
-
     m_hashKeyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rangeKeyField"))
   {
     m_rangeKeyField = jsonValue.GetString("rangeKeyField");
-
     m_rangeKeyFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rangeKeyValue"))
   {
     m_rangeKeyValue = jsonValue.GetString("rangeKeyValue");
-
     m_rangeKeyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rangeKeyType"))
   {
     m_rangeKeyType = DynamoKeyTypeMapper::GetDynamoKeyTypeForName(jsonValue.GetString("rangeKeyType"));
-
     m_rangeKeyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payloadField"))
   {
     m_payloadField = jsonValue.GetString("payloadField");
-
     m_payloadFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

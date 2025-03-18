@@ -12,15 +12,6 @@ using namespace Aws::ForecastQueryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-QueryWhatIfForecastRequest::QueryWhatIfForecastRequest() : 
-    m_whatIfForecastArnHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String QueryWhatIfForecastRequest::SerializePayload() const
 {
   JsonValue payload;

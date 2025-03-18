@@ -21,7 +21,7 @@ namespace Model
   class ListMailboxPermissionsRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API ListMailboxPermissionsRequest();
+    AWS_WORKMAIL_API ListMailboxPermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline ListMailboxPermissionsRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline ListMailboxPermissionsRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline ListMailboxPermissionsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    ListMailboxPermissionsRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * </li> <li> <p>Email address: entity@domain.tld</p> </li> <li> <p>Entity name:
      * entity</p> </li> </ul>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline ListMailboxPermissionsRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline ListMailboxPermissionsRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline ListMailboxPermissionsRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    ListMailboxPermissionsRequest& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. The first call does
      * not contain any tokens.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMailboxPermissionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMailboxPermissionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMailboxPermissionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMailboxPermissionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMailboxPermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

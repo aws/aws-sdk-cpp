@@ -30,7 +30,7 @@ namespace Model
   class DescribeThesaurusResult
   {
   public:
-    AWS_KENDRA_API DescribeThesaurusResult();
+    AWS_KENDRA_API DescribeThesaurusResult() = default;
     AWS_KENDRA_API DescribeThesaurusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API DescribeThesaurusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,52 +39,44 @@ namespace Model
     /**
      * <p>The identifier of the thesaurus.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline DescribeThesaurusResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DescribeThesaurusResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DescribeThesaurusResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the index for the thesaurus.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-    inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexId.assign(value); }
-    inline DescribeThesaurusResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline DescribeThesaurusResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    DescribeThesaurusResult& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thesaurus name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeThesaurusResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeThesaurusResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeThesaurusResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thesaurus description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeThesaurusResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeThesaurusResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeThesaurusResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,11 +88,9 @@ namespace Model
      * means that Amazon Kendra could not ingest the new thesaurus file. The old
      * thesaurus file is still active. </p>
      */
-    inline const ThesaurusStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ThesaurusStatus& value) { m_status = value; }
-    inline void SetStatus(ThesaurusStatus&& value) { m_status = std::move(value); }
-    inline DescribeThesaurusResult& WithStatus(const ThesaurusStatus& value) { SetStatus(value); return *this;}
-    inline DescribeThesaurusResult& WithStatus(ThesaurusStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ThesaurusStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ThesaurusStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeThesaurusResult& WithStatus(ThesaurusStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,35 +98,33 @@ namespace Model
      * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field provides more information. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeThesaurusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeThesaurusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeThesaurusResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the thesaurus was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeThesaurusResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeThesaurusResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeThesaurusResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline DescribeThesaurusResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline DescribeThesaurusResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    DescribeThesaurusResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,30 +132,28 @@ namespace Model
      * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
      * specified in <code>SourceS3Path</code>. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeThesaurusResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeThesaurusResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeThesaurusResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Path& GetSourceS3Path() const{ return m_sourceS3Path; }
-    inline void SetSourceS3Path(const S3Path& value) { m_sourceS3Path = value; }
-    inline void SetSourceS3Path(S3Path&& value) { m_sourceS3Path = std::move(value); }
-    inline DescribeThesaurusResult& WithSourceS3Path(const S3Path& value) { SetSourceS3Path(value); return *this;}
-    inline DescribeThesaurusResult& WithSourceS3Path(S3Path&& value) { SetSourceS3Path(std::move(value)); return *this;}
+    inline const S3Path& GetSourceS3Path() const { return m_sourceS3Path; }
+    template<typename SourceS3PathT = S3Path>
+    void SetSourceS3Path(SourceS3PathT&& value) { m_sourceS3PathHasBeenSet = true; m_sourceS3Path = std::forward<SourceS3PathT>(value); }
+    template<typename SourceS3PathT = S3Path>
+    DescribeThesaurusResult& WithSourceS3Path(SourceS3PathT&& value) { SetSourceS3Path(std::forward<SourceS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the thesaurus file in bytes.</p>
      */
-    inline long long GetFileSizeBytes() const{ return m_fileSizeBytes; }
-    inline void SetFileSizeBytes(long long value) { m_fileSizeBytes = value; }
+    inline long long GetFileSizeBytes() const { return m_fileSizeBytes; }
+    inline void SetFileSizeBytes(long long value) { m_fileSizeBytesHasBeenSet = true; m_fileSizeBytes = value; }
     inline DescribeThesaurusResult& WithFileSizeBytes(long long value) { SetFileSizeBytes(value); return *this;}
     ///@}
 
@@ -176,8 +162,8 @@ namespace Model
      * <p>The number of unique terms in the thesaurus file. For example, the synonyms
      * <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4. </p>
      */
-    inline long long GetTermCount() const{ return m_termCount; }
-    inline void SetTermCount(long long value) { m_termCount = value; }
+    inline long long GetTermCount() const { return m_termCount; }
+    inline void SetTermCount(long long value) { m_termCountHasBeenSet = true; m_termCount = value; }
     inline DescribeThesaurusResult& WithTermCount(long long value) { SetTermCount(value); return *this;}
     ///@}
 
@@ -185,50 +171,62 @@ namespace Model
     /**
      * <p>The number of synonym rules in the thesaurus file.</p>
      */
-    inline long long GetSynonymRuleCount() const{ return m_synonymRuleCount; }
-    inline void SetSynonymRuleCount(long long value) { m_synonymRuleCount = value; }
+    inline long long GetSynonymRuleCount() const { return m_synonymRuleCount; }
+    inline void SetSynonymRuleCount(long long value) { m_synonymRuleCountHasBeenSet = true; m_synonymRuleCount = value; }
     inline DescribeThesaurusResult& WithSynonymRuleCount(long long value) { SetSynonymRuleCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThesaurusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThesaurusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThesaurusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThesaurusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    ThesaurusStatus m_status;
+    ThesaurusStatus m_status{ThesaurusStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     S3Path m_sourceS3Path;
+    bool m_sourceS3PathHasBeenSet = false;
 
-    long long m_fileSizeBytes;
+    long long m_fileSizeBytes{0};
+    bool m_fileSizeBytesHasBeenSet = false;
 
-    long long m_termCount;
+    long long m_termCount{0};
+    bool m_termCountHasBeenSet = false;
 
-    long long m_synonymRuleCount;
+    long long m_synonymRuleCount{0};
+    bool m_synonymRuleCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

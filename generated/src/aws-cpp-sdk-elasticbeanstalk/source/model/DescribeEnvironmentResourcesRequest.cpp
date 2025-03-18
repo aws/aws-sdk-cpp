@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeEnvironmentResourcesRequest::DescribeEnvironmentResourcesRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEnvironmentResourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

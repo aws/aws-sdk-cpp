@@ -35,7 +35,7 @@ namespace Model
   class ListDomainNamesResult
   {
   public:
-    AWS_CLOUDSEARCH_API ListDomainNamesResult();
+    AWS_CLOUDSEARCH_API ListDomainNamesResult() = default;
     AWS_CLOUDSEARCH_API ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,33 +44,32 @@ namespace Model
     /**
      * <p>The names of the search domains owned by an account.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDomainNames() const{ return m_domainNames; }
-    inline void SetDomainNames(const Aws::Map<Aws::String, Aws::String>& value) { m_domainNames = value; }
-    inline void SetDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { m_domainNames = std::move(value); }
-    inline ListDomainNamesResult& WithDomainNames(const Aws::Map<Aws::String, Aws::String>& value) { SetDomainNames(value); return *this;}
-    inline ListDomainNamesResult& WithDomainNames(Aws::Map<Aws::String, Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, const Aws::String& value) { m_domainNames.emplace(key, value); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const Aws::String& value) { m_domainNames.emplace(std::move(key), value); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(const Aws::String& key, Aws::String&& value) { m_domainNames.emplace(key, std::move(value)); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, Aws::String&& value) { m_domainNames.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(const char* key, Aws::String&& value) { m_domainNames.emplace(key, std::move(value)); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(Aws::String&& key, const char* value) { m_domainNames.emplace(std::move(key), value); return *this; }
-    inline ListDomainNamesResult& AddDomainNames(const char* key, const char* value) { m_domainNames.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDomainNames() const { return m_domainNames; }
+    template<typename DomainNamesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::forward<DomainNamesT>(value); }
+    template<typename DomainNamesT = Aws::Map<Aws::String, Aws::String>>
+    ListDomainNamesResult& WithDomainNames(DomainNamesT&& value) { SetDomainNames(std::forward<DomainNamesT>(value)); return *this;}
+    template<typename DomainNamesKeyT = Aws::String, typename DomainNamesValueT = Aws::String>
+    ListDomainNamesResult& AddDomainNames(DomainNamesKeyT&& key, DomainNamesValueT&& value) {
+      m_domainNamesHasBeenSet = true; m_domainNames.emplace(std::forward<DomainNamesKeyT>(key), std::forward<DomainNamesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListDomainNamesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListDomainNamesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListDomainNamesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_domainNames;
+    bool m_domainNamesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

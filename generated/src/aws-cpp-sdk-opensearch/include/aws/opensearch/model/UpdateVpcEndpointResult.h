@@ -28,7 +28,7 @@ namespace Model
   class UpdateVpcEndpointResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult();
+    AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult() = default;
     AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The endpoint to be updated.</p>
      */
-    inline const VpcEndpoint& GetVpcEndpoint() const{ return m_vpcEndpoint; }
-    inline void SetVpcEndpoint(const VpcEndpoint& value) { m_vpcEndpoint = value; }
-    inline void SetVpcEndpoint(VpcEndpoint&& value) { m_vpcEndpoint = std::move(value); }
-    inline UpdateVpcEndpointResult& WithVpcEndpoint(const VpcEndpoint& value) { SetVpcEndpoint(value); return *this;}
-    inline UpdateVpcEndpointResult& WithVpcEndpoint(VpcEndpoint&& value) { SetVpcEndpoint(std::move(value)); return *this;}
+    inline const VpcEndpoint& GetVpcEndpoint() const { return m_vpcEndpoint; }
+    template<typename VpcEndpointT = VpcEndpoint>
+    void SetVpcEndpoint(VpcEndpointT&& value) { m_vpcEndpointHasBeenSet = true; m_vpcEndpoint = std::forward<VpcEndpointT>(value); }
+    template<typename VpcEndpointT = VpcEndpoint>
+    UpdateVpcEndpointResult& WithVpcEndpoint(VpcEndpointT&& value) { SetVpcEndpoint(std::forward<VpcEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateVpcEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcEndpoint m_vpcEndpoint;
+    bool m_vpcEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

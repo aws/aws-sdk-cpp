@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationAnswerInput::EvaluationAnswerInput() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 EvaluationAnswerInput::EvaluationAnswerInput(JsonView jsonValue)
-  : EvaluationAnswerInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationAnswerInput& EvaluationAnswerInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

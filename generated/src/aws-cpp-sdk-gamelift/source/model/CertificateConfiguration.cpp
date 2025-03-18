@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-CertificateConfiguration::CertificateConfiguration() : 
-    m_certificateType(CertificateType::NOT_SET),
-    m_certificateTypeHasBeenSet(false)
-{
-}
-
 CertificateConfiguration::CertificateConfiguration(JsonView jsonValue)
-  : CertificateConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CertificateConfiguration& CertificateConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CertificateType"))
   {
     m_certificateType = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("CertificateType"));
-
     m_certificateTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

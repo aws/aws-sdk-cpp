@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-PurchaseCapacityBlockExtensionRequest::PurchaseCapacityBlockExtensionRequest() : 
-    m_capacityBlockExtensionOfferingIdHasBeenSet(false),
-    m_capacityReservationIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseCapacityBlockExtensionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

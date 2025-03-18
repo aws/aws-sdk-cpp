@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSubscriberRequest::GetSubscriberRequest() : 
-    m_subscriberIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSubscriberRequest::SerializePayload() const
 {
   return {};

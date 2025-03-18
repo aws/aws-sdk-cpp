@@ -37,7 +37,7 @@ namespace Model
   class ConnectionPropertiesOutput
   {
   public:
-    AWS_DATAZONE_API ConnectionPropertiesOutput();
+    AWS_DATAZONE_API ConnectionPropertiesOutput() = default;
     AWS_DATAZONE_API ConnectionPropertiesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ConnectionPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,84 +47,84 @@ namespace Model
     /**
      * <p>The Amazon Athena properties of a connection.</p>
      */
-    inline const AthenaPropertiesOutput& GetAthenaProperties() const{ return m_athenaProperties; }
+    inline const AthenaPropertiesOutput& GetAthenaProperties() const { return m_athenaProperties; }
     inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
-    inline void SetAthenaProperties(const AthenaPropertiesOutput& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties = value; }
-    inline void SetAthenaProperties(AthenaPropertiesOutput&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithAthenaProperties(const AthenaPropertiesOutput& value) { SetAthenaProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithAthenaProperties(AthenaPropertiesOutput&& value) { SetAthenaProperties(std::move(value)); return *this;}
+    template<typename AthenaPropertiesT = AthenaPropertiesOutput>
+    void SetAthenaProperties(AthenaPropertiesT&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties = std::forward<AthenaPropertiesT>(value); }
+    template<typename AthenaPropertiesT = AthenaPropertiesOutput>
+    ConnectionPropertiesOutput& WithAthenaProperties(AthenaPropertiesT&& value) { SetAthenaProperties(std::forward<AthenaPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Glue properties of a connection.</p>
      */
-    inline const GluePropertiesOutput& GetGlueProperties() const{ return m_glueProperties; }
+    inline const GluePropertiesOutput& GetGlueProperties() const { return m_glueProperties; }
     inline bool GluePropertiesHasBeenSet() const { return m_gluePropertiesHasBeenSet; }
-    inline void SetGlueProperties(const GluePropertiesOutput& value) { m_gluePropertiesHasBeenSet = true; m_glueProperties = value; }
-    inline void SetGlueProperties(GluePropertiesOutput&& value) { m_gluePropertiesHasBeenSet = true; m_glueProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithGlueProperties(const GluePropertiesOutput& value) { SetGlueProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithGlueProperties(GluePropertiesOutput&& value) { SetGlueProperties(std::move(value)); return *this;}
+    template<typename GluePropertiesT = GluePropertiesOutput>
+    void SetGlueProperties(GluePropertiesT&& value) { m_gluePropertiesHasBeenSet = true; m_glueProperties = std::forward<GluePropertiesT>(value); }
+    template<typename GluePropertiesT = GluePropertiesOutput>
+    ConnectionPropertiesOutput& WithGlueProperties(GluePropertiesT&& value) { SetGlueProperties(std::forward<GluePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hyper pod properties of a connection.</p>
      */
-    inline const HyperPodPropertiesOutput& GetHyperPodProperties() const{ return m_hyperPodProperties; }
+    inline const HyperPodPropertiesOutput& GetHyperPodProperties() const { return m_hyperPodProperties; }
     inline bool HyperPodPropertiesHasBeenSet() const { return m_hyperPodPropertiesHasBeenSet; }
-    inline void SetHyperPodProperties(const HyperPodPropertiesOutput& value) { m_hyperPodPropertiesHasBeenSet = true; m_hyperPodProperties = value; }
-    inline void SetHyperPodProperties(HyperPodPropertiesOutput&& value) { m_hyperPodPropertiesHasBeenSet = true; m_hyperPodProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithHyperPodProperties(const HyperPodPropertiesOutput& value) { SetHyperPodProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithHyperPodProperties(HyperPodPropertiesOutput&& value) { SetHyperPodProperties(std::move(value)); return *this;}
+    template<typename HyperPodPropertiesT = HyperPodPropertiesOutput>
+    void SetHyperPodProperties(HyperPodPropertiesT&& value) { m_hyperPodPropertiesHasBeenSet = true; m_hyperPodProperties = std::forward<HyperPodPropertiesT>(value); }
+    template<typename HyperPodPropertiesT = HyperPodPropertiesOutput>
+    ConnectionPropertiesOutput& WithHyperPodProperties(HyperPodPropertiesT&& value) { SetHyperPodProperties(std::forward<HyperPodPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM properties of a connection.</p>
      */
-    inline const IamPropertiesOutput& GetIamProperties() const{ return m_iamProperties; }
+    inline const IamPropertiesOutput& GetIamProperties() const { return m_iamProperties; }
     inline bool IamPropertiesHasBeenSet() const { return m_iamPropertiesHasBeenSet; }
-    inline void SetIamProperties(const IamPropertiesOutput& value) { m_iamPropertiesHasBeenSet = true; m_iamProperties = value; }
-    inline void SetIamProperties(IamPropertiesOutput&& value) { m_iamPropertiesHasBeenSet = true; m_iamProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithIamProperties(const IamPropertiesOutput& value) { SetIamProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithIamProperties(IamPropertiesOutput&& value) { SetIamProperties(std::move(value)); return *this;}
+    template<typename IamPropertiesT = IamPropertiesOutput>
+    void SetIamProperties(IamPropertiesT&& value) { m_iamPropertiesHasBeenSet = true; m_iamProperties = std::forward<IamPropertiesT>(value); }
+    template<typename IamPropertiesT = IamPropertiesOutput>
+    ConnectionPropertiesOutput& WithIamProperties(IamPropertiesT&& value) { SetIamProperties(std::forward<IamPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Redshift properties of a connection.</p>
      */
-    inline const RedshiftPropertiesOutput& GetRedshiftProperties() const{ return m_redshiftProperties; }
+    inline const RedshiftPropertiesOutput& GetRedshiftProperties() const { return m_redshiftProperties; }
     inline bool RedshiftPropertiesHasBeenSet() const { return m_redshiftPropertiesHasBeenSet; }
-    inline void SetRedshiftProperties(const RedshiftPropertiesOutput& value) { m_redshiftPropertiesHasBeenSet = true; m_redshiftProperties = value; }
-    inline void SetRedshiftProperties(RedshiftPropertiesOutput&& value) { m_redshiftPropertiesHasBeenSet = true; m_redshiftProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithRedshiftProperties(const RedshiftPropertiesOutput& value) { SetRedshiftProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithRedshiftProperties(RedshiftPropertiesOutput&& value) { SetRedshiftProperties(std::move(value)); return *this;}
+    template<typename RedshiftPropertiesT = RedshiftPropertiesOutput>
+    void SetRedshiftProperties(RedshiftPropertiesT&& value) { m_redshiftPropertiesHasBeenSet = true; m_redshiftProperties = std::forward<RedshiftPropertiesT>(value); }
+    template<typename RedshiftPropertiesT = RedshiftPropertiesOutput>
+    ConnectionPropertiesOutput& WithRedshiftProperties(RedshiftPropertiesT&& value) { SetRedshiftProperties(std::forward<RedshiftPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Spark EMR properties of a connection.</p>
      */
-    inline const SparkEmrPropertiesOutput& GetSparkEmrProperties() const{ return m_sparkEmrProperties; }
+    inline const SparkEmrPropertiesOutput& GetSparkEmrProperties() const { return m_sparkEmrProperties; }
     inline bool SparkEmrPropertiesHasBeenSet() const { return m_sparkEmrPropertiesHasBeenSet; }
-    inline void SetSparkEmrProperties(const SparkEmrPropertiesOutput& value) { m_sparkEmrPropertiesHasBeenSet = true; m_sparkEmrProperties = value; }
-    inline void SetSparkEmrProperties(SparkEmrPropertiesOutput&& value) { m_sparkEmrPropertiesHasBeenSet = true; m_sparkEmrProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithSparkEmrProperties(const SparkEmrPropertiesOutput& value) { SetSparkEmrProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithSparkEmrProperties(SparkEmrPropertiesOutput&& value) { SetSparkEmrProperties(std::move(value)); return *this;}
+    template<typename SparkEmrPropertiesT = SparkEmrPropertiesOutput>
+    void SetSparkEmrProperties(SparkEmrPropertiesT&& value) { m_sparkEmrPropertiesHasBeenSet = true; m_sparkEmrProperties = std::forward<SparkEmrPropertiesT>(value); }
+    template<typename SparkEmrPropertiesT = SparkEmrPropertiesOutput>
+    ConnectionPropertiesOutput& WithSparkEmrProperties(SparkEmrPropertiesT&& value) { SetSparkEmrProperties(std::forward<SparkEmrPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Spark Amazon Web Services Glue properties of a connection.</p>
      */
-    inline const SparkGluePropertiesOutput& GetSparkGlueProperties() const{ return m_sparkGlueProperties; }
+    inline const SparkGluePropertiesOutput& GetSparkGlueProperties() const { return m_sparkGlueProperties; }
     inline bool SparkGluePropertiesHasBeenSet() const { return m_sparkGluePropertiesHasBeenSet; }
-    inline void SetSparkGlueProperties(const SparkGluePropertiesOutput& value) { m_sparkGluePropertiesHasBeenSet = true; m_sparkGlueProperties = value; }
-    inline void SetSparkGlueProperties(SparkGluePropertiesOutput&& value) { m_sparkGluePropertiesHasBeenSet = true; m_sparkGlueProperties = std::move(value); }
-    inline ConnectionPropertiesOutput& WithSparkGlueProperties(const SparkGluePropertiesOutput& value) { SetSparkGlueProperties(value); return *this;}
-    inline ConnectionPropertiesOutput& WithSparkGlueProperties(SparkGluePropertiesOutput&& value) { SetSparkGlueProperties(std::move(value)); return *this;}
+    template<typename SparkGluePropertiesT = SparkGluePropertiesOutput>
+    void SetSparkGlueProperties(SparkGluePropertiesT&& value) { m_sparkGluePropertiesHasBeenSet = true; m_sparkGlueProperties = std::forward<SparkGluePropertiesT>(value); }
+    template<typename SparkGluePropertiesT = SparkGluePropertiesOutput>
+    ConnectionPropertiesOutput& WithSparkGlueProperties(SparkGluePropertiesT&& value) { SetSparkGlueProperties(std::forward<SparkGluePropertiesT>(value)); return *this;}
     ///@}
   private:
 

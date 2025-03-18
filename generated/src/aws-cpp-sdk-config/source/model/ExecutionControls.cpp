@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ExecutionControls::ExecutionControls() : 
-    m_ssmControlsHasBeenSet(false)
-{
-}
-
 ExecutionControls::ExecutionControls(JsonView jsonValue)
-  : ExecutionControls()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExecutionControls& ExecutionControls::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SsmControls"))
   {
     m_ssmControls = jsonValue.GetObject("SsmControls");
-
     m_ssmControlsHasBeenSet = true;
   }
-
   return *this;
 }
 

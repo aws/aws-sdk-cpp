@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchPlaceIndexForPositionRequest::SearchPlaceIndexForPositionRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String SearchPlaceIndexForPositionRequest::SerializePayload() const
 {
   JsonValue payload;

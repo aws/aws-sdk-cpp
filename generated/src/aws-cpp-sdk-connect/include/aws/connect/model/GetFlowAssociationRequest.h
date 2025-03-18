@@ -22,7 +22,7 @@ namespace Model
   class GetFlowAssociationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API GetFlowAssociationRequest();
+    AWS_CONNECT_API GetFlowAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetFlowAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetFlowAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetFlowAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetFlowAssociationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,22 @@ namespace Model
      * </li> <li> <p>Amazon Web Services End User Messaging Social phone number ARN
      * when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline GetFlowAssociationRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline GetFlowAssociationRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline GetFlowAssociationRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    GetFlowAssociationRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A valid resource type.</p>
      */
-    inline const FlowAssociationResourceType& GetResourceType() const{ return m_resourceType; }
+    inline FlowAssociationResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const FlowAssociationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(FlowAssociationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetFlowAssociationRequest& WithResourceType(const FlowAssociationResourceType& value) { SetResourceType(value); return *this;}
-    inline GetFlowAssociationRequest& WithResourceType(FlowAssociationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(FlowAssociationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetFlowAssociationRequest& WithResourceType(FlowAssociationResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    FlowAssociationResourceType m_resourceType;
+    FlowAssociationResourceType m_resourceType{FlowAssociationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

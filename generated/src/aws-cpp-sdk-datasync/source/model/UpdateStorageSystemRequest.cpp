@@ -12,16 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStorageSystemRequest::UpdateStorageSystemRequest() : 
-    m_storageSystemArnHasBeenSet(false),
-    m_serverConfigurationHasBeenSet(false),
-    m_agentArnsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStorageSystemRequest::SerializePayload() const
 {
   JsonValue payload;

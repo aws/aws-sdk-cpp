@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ScannedResourceIdentifier::ScannedResourceIdentifier() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ScannedResourceIdentifier::ScannedResourceIdentifier(const XmlNode& xmlNode)
-  : ScannedResourceIdentifier()
 {
   *this = xmlNode;
 }
@@ -49,6 +42,7 @@ ScannedResourceIdentifier& ScannedResourceIdentifier::operator =(const XmlNode& 
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDocumentRequest::GetDocumentRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_includeCustomMetadata(false),
-    m_includeCustomMetadataHasBeenSet(false)
-{
-}
-
 Aws::String GetDocumentRequest::SerializePayload() const
 {
   return {};

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartBackupJobResult::StartBackupJobResult() : 
-    m_isParent(false)
-{
-}
-
 StartBackupJobResult::StartBackupJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartBackupJobResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ StartBackupJobResult& StartBackupJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("BackupJobId"))
   {
     m_backupJobId = jsonValue.GetString("BackupJobId");
-
+    m_backupJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
-
+    m_recoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsParent"))
   {
     m_isParent = jsonValue.GetBool("IsParent");
-
+    m_isParentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

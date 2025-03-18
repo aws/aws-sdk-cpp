@@ -22,7 +22,7 @@ namespace Model
   class TerminateGameSessionRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API TerminateGameSessionRequest();
+    AWS_GAMELIFT_API TerminateGameSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.</p>
      */
-    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+    inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
-    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
-    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
-    inline TerminateGameSessionRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
-    inline TerminateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
-    inline TerminateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+    template<typename GameSessionIdT = Aws::String>
+    void SetGameSessionId(GameSessionIdT&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::forward<GameSessionIdT>(value); }
+    template<typename GameSessionIdT = Aws::String>
+    TerminateGameSessionRequest& WithGameSessionId(GameSessionIdT&& value) { SetGameSessionId(std::forward<GameSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,17 @@ namespace Model
      * GameLift Agent. In this scenario, a force terminate request results in an
      * invalid or bad request exception.</p>  </li> </ul>
      */
-    inline const TerminationMode& GetTerminationMode() const{ return m_terminationMode; }
+    inline TerminationMode GetTerminationMode() const { return m_terminationMode; }
     inline bool TerminationModeHasBeenSet() const { return m_terminationModeHasBeenSet; }
-    inline void SetTerminationMode(const TerminationMode& value) { m_terminationModeHasBeenSet = true; m_terminationMode = value; }
-    inline void SetTerminationMode(TerminationMode&& value) { m_terminationModeHasBeenSet = true; m_terminationMode = std::move(value); }
-    inline TerminateGameSessionRequest& WithTerminationMode(const TerminationMode& value) { SetTerminationMode(value); return *this;}
-    inline TerminateGameSessionRequest& WithTerminationMode(TerminationMode&& value) { SetTerminationMode(std::move(value)); return *this;}
+    inline void SetTerminationMode(TerminationMode value) { m_terminationModeHasBeenSet = true; m_terminationMode = value; }
+    inline TerminateGameSessionRequest& WithTerminationMode(TerminationMode value) { SetTerminationMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet = false;
 
-    TerminationMode m_terminationMode;
+    TerminationMode m_terminationMode{TerminationMode::NOT_SET};
     bool m_terminationModeHasBeenSet = false;
   };
 

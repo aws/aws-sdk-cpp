@@ -18,22 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-Dataset::Dataset() : 
-    m_nameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestDatasetUpdateHasBeenSet(false),
-    m_trackingIdHasBeenSet(false)
-{
-}
-
 Dataset::Dataset(JsonView jsonValue)
-  : Dataset()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ Dataset& Dataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetArn"))
   {
     m_datasetArn = jsonValue.GetString("datasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetType"))
   {
     m_datasetType = jsonValue.GetString("datasetType");
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaArn"))
   {
     m_schemaArn = jsonValue.GetString("schemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestDatasetUpdate"))
   {
     m_latestDatasetUpdate = jsonValue.GetObject("latestDatasetUpdate");
-
     m_latestDatasetUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingId"))
   {
     m_trackingId = jsonValue.GetString("trackingId");
-
     m_trackingIdHasBeenSet = true;
   }
-
   return *this;
 }
 

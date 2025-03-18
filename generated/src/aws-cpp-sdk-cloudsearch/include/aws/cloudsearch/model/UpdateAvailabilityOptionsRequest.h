@@ -27,7 +27,7 @@ namespace Model
   class UpdateAvailabilityOptionsRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsRequest();
+    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpdateAvailabilityOptionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpdateAvailabilityOptionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpdateAvailabilityOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpdateAvailabilityOptionsRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * downgrade the domain to a single Availability Zone by setting the Multi-AZ
      * option to <code>false</code>. </p>
      */
-    inline bool GetMultiAZ() const{ return m_multiAZ; }
+    inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
     inline UpdateAvailabilityOptionsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_multiAZ;
+    bool m_multiAZ{false};
     bool m_multiAZHasBeenSet = false;
   };
 

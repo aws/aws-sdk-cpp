@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccountRolesRequest::ListAccountRolesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountRolesRequest::SerializePayload() const
 {
   return {};

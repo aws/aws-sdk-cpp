@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-BatchDeleteFeaturedResultsSetError::BatchDeleteFeaturedResultsSetError() : 
-    m_idHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchDeleteFeaturedResultsSetError::BatchDeleteFeaturedResultsSetError(JsonView jsonValue)
-  : BatchDeleteFeaturedResultsSetError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchDeleteFeaturedResultsSetError& BatchDeleteFeaturedResultsSetError::operator
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-IntegerDefaultValues::IntegerDefaultValues() : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false)
-{
-}
-
 IntegerDefaultValues::IntegerDefaultValues(JsonView jsonValue)
-  : IntegerDefaultValues()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IntegerDefaultValues& IntegerDefaultValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DynamicValue"))
   {
     m_dynamicValue = jsonValue.GetObject("DynamicValue");
-
     m_dynamicValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StaticValues"))
   {
     Aws::Utils::Array<JsonView> staticValuesJsonList = jsonValue.GetArray("StaticValues");
@@ -48,7 +39,6 @@ IntegerDefaultValues& IntegerDefaultValues::operator =(JsonView jsonValue)
     }
     m_staticValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

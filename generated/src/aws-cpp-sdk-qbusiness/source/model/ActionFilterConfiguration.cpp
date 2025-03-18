@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionFilterConfiguration::ActionFilterConfiguration() : 
-    m_documentAttributeFilterHasBeenSet(false)
-{
-}
-
 ActionFilterConfiguration::ActionFilterConfiguration(JsonView jsonValue)
-  : ActionFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionFilterConfiguration& ActionFilterConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("documentAttributeFilter"))
   {
     m_documentAttributeFilter = jsonValue.GetObject("documentAttributeFilter");
-
     m_documentAttributeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

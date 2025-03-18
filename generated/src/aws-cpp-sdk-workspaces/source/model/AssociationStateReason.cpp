@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-AssociationStateReason::AssociationStateReason() : 
-    m_errorCode(AssociationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 AssociationStateReason::AssociationStateReason(JsonView jsonValue)
-  : AssociationStateReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssociationStateReason& AssociationStateReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = AssociationErrorCodeMapper::GetAssociationErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

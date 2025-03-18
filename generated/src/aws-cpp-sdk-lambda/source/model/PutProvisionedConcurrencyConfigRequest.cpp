@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutProvisionedConcurrencyConfigRequest::PutProvisionedConcurrencyConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_provisionedConcurrentExecutions(0),
-    m_provisionedConcurrentExecutionsHasBeenSet(false)
-{
-}
-
 Aws::String PutProvisionedConcurrencyConfigRequest::SerializePayload() const
 {
   JsonValue payload;

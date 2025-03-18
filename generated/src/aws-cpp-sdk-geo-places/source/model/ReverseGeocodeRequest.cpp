@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ReverseGeocodeRequest::ReverseGeocodeRequest() : 
-    m_queryPositionHasBeenSet(false),
-    m_queryRadius(0),
-    m_queryRadiusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_additionalFeaturesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_intendedUse(ReverseGeocodeIntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String ReverseGeocodeRequest::SerializePayload() const
 {
   JsonValue payload;

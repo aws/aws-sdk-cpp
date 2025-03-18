@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-OrganizationFeatureConfiguration::OrganizationFeatureConfiguration() : 
-    m_name(OrgFeature::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_autoEnable(OrgFeatureStatus::NOT_SET),
-    m_autoEnableHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false)
-{
-}
-
 OrganizationFeatureConfiguration::OrganizationFeatureConfiguration(JsonView jsonValue)
-  : OrganizationFeatureConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ OrganizationFeatureConfiguration& OrganizationFeatureConfiguration::operator =(J
   if(jsonValue.ValueExists("name"))
   {
     m_name = OrgFeatureMapper::GetOrgFeatureForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoEnable"))
   {
     m_autoEnable = OrgFeatureStatusMapper::GetOrgFeatureStatusForName(jsonValue.GetString("autoEnable"));
-
     m_autoEnableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalConfiguration"))
   {
     Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
@@ -58,7 +44,6 @@ OrganizationFeatureConfiguration& OrganizationFeatureConfiguration::operator =(J
     }
     m_additionalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

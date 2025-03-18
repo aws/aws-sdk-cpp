@@ -12,11 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeprecateDomainRequest::DeprecateDomainRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeprecateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkflowTypeRequest::DeleteWorkflowTypeRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowTypeRequest::SerializePayload() const
 {
   JsonValue payload;

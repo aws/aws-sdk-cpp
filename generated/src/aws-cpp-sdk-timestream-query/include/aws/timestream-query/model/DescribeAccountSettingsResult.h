@@ -29,7 +29,7 @@ namespace Model
   class DescribeAccountSettingsResult
   {
   public:
-    AWS_TIMESTREAMQUERY_API DescribeAccountSettingsResult();
+    AWS_TIMESTREAMQUERY_API DescribeAccountSettingsResult() = default;
     AWS_TIMESTREAMQUERY_API DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMQUERY_API DescribeAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,8 +43,8 @@ namespace Model
      * the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so
      * on. This configuration is applicable only for on-demand usage of (TCUs). </p>
      */
-    inline int GetMaxQueryTCU() const{ return m_maxQueryTCU; }
-    inline void SetMaxQueryTCU(int value) { m_maxQueryTCU = value; }
+    inline int GetMaxQueryTCU() const { return m_maxQueryTCU; }
+    inline void SetMaxQueryTCU(int value) { m_maxQueryTCUHasBeenSet = true; m_maxQueryTCU = value; }
     inline DescribeAccountSettingsResult& WithMaxQueryTCU(int value) { SetMaxQueryTCU(value); return *this;}
     ///@}
 
@@ -55,11 +55,9 @@ namespace Model
      * operations; however, the <code>UpdateAccountSettings</code> API operation
      * doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p> 
      */
-    inline const QueryPricingModel& GetQueryPricingModel() const{ return m_queryPricingModel; }
-    inline void SetQueryPricingModel(const QueryPricingModel& value) { m_queryPricingModel = value; }
-    inline void SetQueryPricingModel(QueryPricingModel&& value) { m_queryPricingModel = std::move(value); }
-    inline DescribeAccountSettingsResult& WithQueryPricingModel(const QueryPricingModel& value) { SetQueryPricingModel(value); return *this;}
-    inline DescribeAccountSettingsResult& WithQueryPricingModel(QueryPricingModel&& value) { SetQueryPricingModel(std::move(value)); return *this;}
+    inline QueryPricingModel GetQueryPricingModel() const { return m_queryPricingModel; }
+    inline void SetQueryPricingModel(QueryPricingModel value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = value; }
+    inline DescribeAccountSettingsResult& WithQueryPricingModel(QueryPricingModel value) { SetQueryPricingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +65,34 @@ namespace Model
      * <p>An object that contains the usage settings for Timestream Compute Units
      * (TCUs) in your account for the query workload. </p>
      */
-    inline const QueryComputeResponse& GetQueryCompute() const{ return m_queryCompute; }
-    inline void SetQueryCompute(const QueryComputeResponse& value) { m_queryCompute = value; }
-    inline void SetQueryCompute(QueryComputeResponse&& value) { m_queryCompute = std::move(value); }
-    inline DescribeAccountSettingsResult& WithQueryCompute(const QueryComputeResponse& value) { SetQueryCompute(value); return *this;}
-    inline DescribeAccountSettingsResult& WithQueryCompute(QueryComputeResponse&& value) { SetQueryCompute(std::move(value)); return *this;}
+    inline const QueryComputeResponse& GetQueryCompute() const { return m_queryCompute; }
+    template<typename QueryComputeT = QueryComputeResponse>
+    void SetQueryCompute(QueryComputeT&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::forward<QueryComputeT>(value); }
+    template<typename QueryComputeT = QueryComputeResponse>
+    DescribeAccountSettingsResult& WithQueryCompute(QueryComputeT&& value) { SetQueryCompute(std::forward<QueryComputeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxQueryTCU;
+    int m_maxQueryTCU{0};
+    bool m_maxQueryTCUHasBeenSet = false;
 
-    QueryPricingModel m_queryPricingModel;
+    QueryPricingModel m_queryPricingModel{QueryPricingModel::NOT_SET};
+    bool m_queryPricingModelHasBeenSet = false;
 
     QueryComputeResponse m_queryCompute;
+    bool m_queryComputeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsEnvironmentVariable::EcsEnvironmentVariable() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EcsEnvironmentVariable::EcsEnvironmentVariable(JsonView jsonValue)
-  : EcsEnvironmentVariable()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EcsEnvironmentVariable& EcsEnvironmentVariable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

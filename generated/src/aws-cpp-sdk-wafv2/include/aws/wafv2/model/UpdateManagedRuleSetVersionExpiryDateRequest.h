@@ -23,7 +23,7 @@ namespace Model
   class UpdateManagedRuleSetVersionExpiryDateRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateRequest();
+    AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * to identify the rule set.</p> <p>This name is assigned to the corresponding
      * managed rule group, which your customers can access and use. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateManagedRuleSetVersionExpiryDateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * responses to commands like <code>list</code>. You provide it to operations like
      * <code>get</code> and <code>update</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateManagedRuleSetVersionExpiryDateRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
-    inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    UpdateManagedRuleSetVersionExpiryDateRequest& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,12 @@ namespace Model
      * <p>The version that you want to remove from your list of offerings for the named
      * managed rule group. </p>
      */
-    inline const Aws::String& GetVersionToExpire() const{ return m_versionToExpire; }
+    inline const Aws::String& GetVersionToExpire() const { return m_versionToExpire; }
     inline bool VersionToExpireHasBeenSet() const { return m_versionToExpireHasBeenSet; }
-    inline void SetVersionToExpire(const Aws::String& value) { m_versionToExpireHasBeenSet = true; m_versionToExpire = value; }
-    inline void SetVersionToExpire(Aws::String&& value) { m_versionToExpireHasBeenSet = true; m_versionToExpire = std::move(value); }
-    inline void SetVersionToExpire(const char* value) { m_versionToExpireHasBeenSet = true; m_versionToExpire.assign(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithVersionToExpire(const Aws::String& value) { SetVersionToExpire(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithVersionToExpire(Aws::String&& value) { SetVersionToExpire(std::move(value)); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithVersionToExpire(const char* value) { SetVersionToExpire(value); return *this;}
+    template<typename VersionToExpireT = Aws::String>
+    void SetVersionToExpire(VersionToExpireT&& value) { m_versionToExpireHasBeenSet = true; m_versionToExpire = std::forward<VersionToExpireT>(value); }
+    template<typename VersionToExpireT = Aws::String>
+    UpdateManagedRuleSetVersionExpiryDateRequest& WithVersionToExpire(VersionToExpireT&& value) { SetVersionToExpire(std::forward<VersionToExpireT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,19 +117,19 @@ namespace Model
      * Universal Time (UTC) format. UTC format includes the special designator, Z. For
      * example, "2016-09-27T14:50Z". </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const{ return m_expiryTimestamp; }
+    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const { return m_expiryTimestamp; }
     inline bool ExpiryTimestampHasBeenSet() const { return m_expiryTimestampHasBeenSet; }
-    inline void SetExpiryTimestamp(const Aws::Utils::DateTime& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = value; }
-    inline void SetExpiryTimestamp(Aws::Utils::DateTime&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::move(value); }
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithExpiryTimestamp(const Aws::Utils::DateTime& value) { SetExpiryTimestamp(value); return *this;}
-    inline UpdateManagedRuleSetVersionExpiryDateRequest& WithExpiryTimestamp(Aws::Utils::DateTime&& value) { SetExpiryTimestamp(std::move(value)); return *this;}
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    void SetExpiryTimestamp(ExpiryTimestampT&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::forward<ExpiryTimestampT>(value); }
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    UpdateManagedRuleSetVersionExpiryDateRequest& WithExpiryTimestamp(ExpiryTimestampT&& value) { SetExpiryTimestamp(std::forward<ExpiryTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;
@@ -151,7 +141,7 @@ namespace Model
     Aws::String m_versionToExpire;
     bool m_versionToExpireHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiryTimestamp;
+    Aws::Utils::DateTime m_expiryTimestamp{};
     bool m_expiryTimestampHasBeenSet = false;
   };
 

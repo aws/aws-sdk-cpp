@@ -28,7 +28,7 @@ namespace Model
   class DescribeAccountAssignmentCreationStatusResult
   {
   public:
-    AWS_SSOADMIN_API DescribeAccountAssignmentCreationStatusResult();
+    AWS_SSOADMIN_API DescribeAccountAssignmentCreationStatusResult() = default;
     AWS_SSOADMIN_API DescribeAccountAssignmentCreationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API DescribeAccountAssignmentCreationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The status object for the account assignment creation operation.</p>
      */
-    inline const AccountAssignmentOperationStatus& GetAccountAssignmentCreationStatus() const{ return m_accountAssignmentCreationStatus; }
-    inline void SetAccountAssignmentCreationStatus(const AccountAssignmentOperationStatus& value) { m_accountAssignmentCreationStatus = value; }
-    inline void SetAccountAssignmentCreationStatus(AccountAssignmentOperationStatus&& value) { m_accountAssignmentCreationStatus = std::move(value); }
-    inline DescribeAccountAssignmentCreationStatusResult& WithAccountAssignmentCreationStatus(const AccountAssignmentOperationStatus& value) { SetAccountAssignmentCreationStatus(value); return *this;}
-    inline DescribeAccountAssignmentCreationStatusResult& WithAccountAssignmentCreationStatus(AccountAssignmentOperationStatus&& value) { SetAccountAssignmentCreationStatus(std::move(value)); return *this;}
+    inline const AccountAssignmentOperationStatus& GetAccountAssignmentCreationStatus() const { return m_accountAssignmentCreationStatus; }
+    template<typename AccountAssignmentCreationStatusT = AccountAssignmentOperationStatus>
+    void SetAccountAssignmentCreationStatus(AccountAssignmentCreationStatusT&& value) { m_accountAssignmentCreationStatusHasBeenSet = true; m_accountAssignmentCreationStatus = std::forward<AccountAssignmentCreationStatusT>(value); }
+    template<typename AccountAssignmentCreationStatusT = AccountAssignmentOperationStatus>
+    DescribeAccountAssignmentCreationStatusResult& WithAccountAssignmentCreationStatus(AccountAssignmentCreationStatusT&& value) { SetAccountAssignmentCreationStatus(std::forward<AccountAssignmentCreationStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountAssignmentCreationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountAssignmentCreationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountAssignmentCreationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountAssignmentCreationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountAssignmentOperationStatus m_accountAssignmentCreationStatus;
+    bool m_accountAssignmentCreationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class CreateDataRepositoryTaskResult
   {
   public:
-    AWS_FSX_API CreateDataRepositoryTaskResult();
+    AWS_FSX_API CreateDataRepositoryTaskResult() = default;
     AWS_FSX_API CreateDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CreateDataRepositoryTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of the data repository task that you just created.</p>
      */
-    inline const DataRepositoryTask& GetDataRepositoryTask() const{ return m_dataRepositoryTask; }
-    inline void SetDataRepositoryTask(const DataRepositoryTask& value) { m_dataRepositoryTask = value; }
-    inline void SetDataRepositoryTask(DataRepositoryTask&& value) { m_dataRepositoryTask = std::move(value); }
-    inline CreateDataRepositoryTaskResult& WithDataRepositoryTask(const DataRepositoryTask& value) { SetDataRepositoryTask(value); return *this;}
-    inline CreateDataRepositoryTaskResult& WithDataRepositoryTask(DataRepositoryTask&& value) { SetDataRepositoryTask(std::move(value)); return *this;}
+    inline const DataRepositoryTask& GetDataRepositoryTask() const { return m_dataRepositoryTask; }
+    template<typename DataRepositoryTaskT = DataRepositoryTask>
+    void SetDataRepositoryTask(DataRepositoryTaskT&& value) { m_dataRepositoryTaskHasBeenSet = true; m_dataRepositoryTask = std::forward<DataRepositoryTaskT>(value); }
+    template<typename DataRepositoryTaskT = DataRepositoryTask>
+    CreateDataRepositoryTaskResult& WithDataRepositoryTask(DataRepositoryTaskT&& value) { SetDataRepositoryTask(std::forward<DataRepositoryTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataRepositoryTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataRepositoryTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataRepositoryTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataRepositoryTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataRepositoryTask m_dataRepositoryTask;
+    bool m_dataRepositoryTaskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

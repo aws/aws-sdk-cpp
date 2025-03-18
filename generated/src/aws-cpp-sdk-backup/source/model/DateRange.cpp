@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-DateRange::DateRange() : 
-    m_fromDateHasBeenSet(false),
-    m_toDateHasBeenSet(false)
-{
-}
-
 DateRange::DateRange(JsonView jsonValue)
-  : DateRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateRange& DateRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromDate"))
   {
     m_fromDate = jsonValue.GetDouble("FromDate");
-
     m_fromDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToDate"))
   {
     m_toDate = jsonValue.GetDouble("ToDate");
-
     m_toDateHasBeenSet = true;
   }
-
   return *this;
 }
 

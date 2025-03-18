@@ -28,7 +28,7 @@ namespace Model
   class DescribeDatasetResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API DescribeDatasetResult();
+    AWS_LOOKOUTFORVISION_API DescribeDatasetResult() = default;
     AWS_LOOKOUTFORVISION_API DescribeDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of the requested dataset. </p>
      */
-    inline const DatasetDescription& GetDatasetDescription() const{ return m_datasetDescription; }
-    inline void SetDatasetDescription(const DatasetDescription& value) { m_datasetDescription = value; }
-    inline void SetDatasetDescription(DatasetDescription&& value) { m_datasetDescription = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetDescription(const DatasetDescription& value) { SetDatasetDescription(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetDescription(DatasetDescription&& value) { SetDatasetDescription(std::move(value)); return *this;}
+    inline const DatasetDescription& GetDatasetDescription() const { return m_datasetDescription; }
+    template<typename DatasetDescriptionT = DatasetDescription>
+    void SetDatasetDescription(DatasetDescriptionT&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::forward<DatasetDescriptionT>(value); }
+    template<typename DatasetDescriptionT = DatasetDescription>
+    DescribeDatasetResult& WithDatasetDescription(DatasetDescriptionT&& value) { SetDatasetDescription(std::forward<DatasetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DatasetDescription m_datasetDescription;
+    bool m_datasetDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

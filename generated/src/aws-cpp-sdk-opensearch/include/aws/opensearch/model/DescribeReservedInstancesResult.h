@@ -35,7 +35,7 @@ namespace Model
   class DescribeReservedInstancesResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DescribeReservedInstancesResult();
+    AWS_OPENSEARCHSERVICE_API DescribeReservedInstancesResult() = default;
     AWS_OPENSEARCHSERVICE_API DescribeReservedInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API DescribeReservedInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,45 +46,44 @@ namespace Model
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Send the request again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReservedInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedInstancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of Reserved Instances in the current Region.</p>
      */
-    inline const Aws::Vector<ReservedInstance>& GetReservedInstances() const{ return m_reservedInstances; }
-    inline void SetReservedInstances(const Aws::Vector<ReservedInstance>& value) { m_reservedInstances = value; }
-    inline void SetReservedInstances(Aws::Vector<ReservedInstance>&& value) { m_reservedInstances = std::move(value); }
-    inline DescribeReservedInstancesResult& WithReservedInstances(const Aws::Vector<ReservedInstance>& value) { SetReservedInstances(value); return *this;}
-    inline DescribeReservedInstancesResult& WithReservedInstances(Aws::Vector<ReservedInstance>&& value) { SetReservedInstances(std::move(value)); return *this;}
-    inline DescribeReservedInstancesResult& AddReservedInstances(const ReservedInstance& value) { m_reservedInstances.push_back(value); return *this; }
-    inline DescribeReservedInstancesResult& AddReservedInstances(ReservedInstance&& value) { m_reservedInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedInstance>& GetReservedInstances() const { return m_reservedInstances; }
+    template<typename ReservedInstancesT = Aws::Vector<ReservedInstance>>
+    void SetReservedInstances(ReservedInstancesT&& value) { m_reservedInstancesHasBeenSet = true; m_reservedInstances = std::forward<ReservedInstancesT>(value); }
+    template<typename ReservedInstancesT = Aws::Vector<ReservedInstance>>
+    DescribeReservedInstancesResult& WithReservedInstances(ReservedInstancesT&& value) { SetReservedInstances(std::forward<ReservedInstancesT>(value)); return *this;}
+    template<typename ReservedInstancesT = ReservedInstance>
+    DescribeReservedInstancesResult& AddReservedInstances(ReservedInstancesT&& value) { m_reservedInstancesHasBeenSet = true; m_reservedInstances.emplace_back(std::forward<ReservedInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReservedInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReservedInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReservedInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReservedInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ReservedInstance> m_reservedInstances;
+    bool m_reservedInstancesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

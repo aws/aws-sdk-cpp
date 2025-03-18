@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHostedZoneLimitResult::GetHostedZoneLimitResult() : 
-    m_count(0)
-{
-}
-
 GetHostedZoneLimitResult::GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetHostedZoneLimitResult()
 {
   *this = result;
 }
@@ -38,11 +32,13 @@ GetHostedZoneLimitResult& GetHostedZoneLimitResult::operator =(const Aws::Amazon
     if(!limitNode.IsNull())
     {
       m_limit = limitNode;
+      m_limitHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("Count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
+      m_countHasBeenSet = true;
     }
   }
 
@@ -51,6 +47,7 @@ GetHostedZoneLimitResult& GetHostedZoneLimitResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

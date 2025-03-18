@@ -18,38 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceSpecification::UtteranceSpecification() : 
-    m_botAliasIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_mode(AnalyticsModality::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_conversationStartTimeHasBeenSet(false),
-    m_conversationEndTimeHasBeenSet(false),
-    m_utteranceHasBeenSet(false),
-    m_utteranceTimestampHasBeenSet(false),
-    m_audioVoiceDurationMillis(0),
-    m_audioVoiceDurationMillisHasBeenSet(false),
-    m_utteranceUnderstood(false),
-    m_utteranceUnderstoodHasBeenSet(false),
-    m_inputTypeHasBeenSet(false),
-    m_outputTypeHasBeenSet(false),
-    m_associatedIntentNameHasBeenSet(false),
-    m_associatedSlotNameHasBeenSet(false),
-    m_intentState(IntentState::NOT_SET),
-    m_intentStateHasBeenSet(false),
-    m_dialogActionTypeHasBeenSet(false),
-    m_botResponseAudioVoiceIdHasBeenSet(false),
-    m_slotsFilledInSessionHasBeenSet(false),
-    m_utteranceRequestIdHasBeenSet(false),
-    m_botResponsesHasBeenSet(false)
-{
-}
-
 UtteranceSpecification::UtteranceSpecification(JsonView jsonValue)
-  : UtteranceSpecification()
 {
   *this = jsonValue;
 }
@@ -59,150 +28,108 @@ UtteranceSpecification& UtteranceSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botAliasId"))
   {
     m_botAliasId = jsonValue.GetString("botAliasId");
-
     m_botAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
     m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetString("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = AnalyticsModalityMapper::GetAnalyticsModalityForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationStartTime"))
   {
     m_conversationStartTime = jsonValue.GetDouble("conversationStartTime");
-
     m_conversationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationEndTime"))
   {
     m_conversationEndTime = jsonValue.GetDouble("conversationEndTime");
-
     m_conversationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utterance"))
   {
     m_utterance = jsonValue.GetString("utterance");
-
     m_utteranceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceTimestamp"))
   {
     m_utteranceTimestamp = jsonValue.GetDouble("utteranceTimestamp");
-
     m_utteranceTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioVoiceDurationMillis"))
   {
     m_audioVoiceDurationMillis = jsonValue.GetInt64("audioVoiceDurationMillis");
-
     m_audioVoiceDurationMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceUnderstood"))
   {
     m_utteranceUnderstood = jsonValue.GetBool("utteranceUnderstood");
-
     m_utteranceUnderstoodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputType"))
   {
     m_inputType = jsonValue.GetString("inputType");
-
     m_inputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputType"))
   {
     m_outputType = jsonValue.GetString("outputType");
-
     m_outputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedIntentName"))
   {
     m_associatedIntentName = jsonValue.GetString("associatedIntentName");
-
     m_associatedIntentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedSlotName"))
   {
     m_associatedSlotName = jsonValue.GetString("associatedSlotName");
-
     m_associatedSlotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentState"))
   {
     m_intentState = IntentStateMapper::GetIntentStateForName(jsonValue.GetString("intentState"));
-
     m_intentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dialogActionType"))
   {
     m_dialogActionType = jsonValue.GetString("dialogActionType");
-
     m_dialogActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botResponseAudioVoiceId"))
   {
     m_botResponseAudioVoiceId = jsonValue.GetString("botResponseAudioVoiceId");
-
     m_botResponseAudioVoiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotsFilledInSession"))
   {
     m_slotsFilledInSession = jsonValue.GetString("slotsFilledInSession");
-
     m_slotsFilledInSessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceRequestId"))
   {
     m_utteranceRequestId = jsonValue.GetString("utteranceRequestId");
-
     m_utteranceRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botResponses"))
   {
     Aws::Utils::Array<JsonView> botResponsesJsonList = jsonValue.GetArray("botResponses");
@@ -212,7 +139,6 @@ UtteranceSpecification& UtteranceSpecification::operator =(JsonView jsonValue)
     }
     m_botResponsesHasBeenSet = true;
   }
-
   return *this;
 }
 

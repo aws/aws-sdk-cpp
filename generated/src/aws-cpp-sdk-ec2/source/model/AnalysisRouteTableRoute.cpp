@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisRouteTableRoute::AnalysisRouteTableRoute() : 
-    m_destinationCidrHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_carrierGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false)
-{
-}
-
 AnalysisRouteTableRoute::AnalysisRouteTableRoute(const XmlNode& xmlNode)
-  : AnalysisRouteTableRoute()
 {
   *this = xmlNode;
 }

@@ -25,7 +25,7 @@ namespace Model
   class GetGeneratedPolicyRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API GetGeneratedPolicyRequest();
+    AWS_ACCESSANALYZER_API GetGeneratedPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * with <code>CancelPolicyGeneration</code> to cancel the policy generation
      * request.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline GetGeneratedPolicyRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetGeneratedPolicyRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetGeneratedPolicyRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetGeneratedPolicyRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of
      * <code>"*"</code>.</p>
      */
-    inline bool GetIncludeResourcePlaceholders() const{ return m_includeResourcePlaceholders; }
+    inline bool GetIncludeResourcePlaceholders() const { return m_includeResourcePlaceholders; }
     inline bool IncludeResourcePlaceholdersHasBeenSet() const { return m_includeResourcePlaceholdersHasBeenSet; }
     inline void SetIncludeResourcePlaceholders(bool value) { m_includeResourcePlaceholdersHasBeenSet = true; m_includeResourcePlaceholders = value; }
     inline GetGeneratedPolicyRequest& WithIncludeResourcePlaceholders(bool value) { SetIncludeResourcePlaceholders(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
      * <code>iam:servicelastaccessed</code> to identify services that have been used
      * recently to create this service-level template.</p>
      */
-    inline bool GetIncludeServiceLevelTemplate() const{ return m_includeServiceLevelTemplate; }
+    inline bool GetIncludeServiceLevelTemplate() const { return m_includeServiceLevelTemplate; }
     inline bool IncludeServiceLevelTemplateHasBeenSet() const { return m_includeServiceLevelTemplateHasBeenSet; }
     inline void SetIncludeServiceLevelTemplate(bool value) { m_includeServiceLevelTemplateHasBeenSet = true; m_includeServiceLevelTemplate = value; }
     inline GetGeneratedPolicyRequest& WithIncludeServiceLevelTemplate(bool value) { SetIncludeServiceLevelTemplate(value); return *this;}
@@ -88,10 +86,10 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    bool m_includeResourcePlaceholders;
+    bool m_includeResourcePlaceholders{false};
     bool m_includeResourcePlaceholdersHasBeenSet = false;
 
-    bool m_includeServiceLevelTemplate;
+    bool m_includeServiceLevelTemplate{false};
     bool m_includeServiceLevelTemplateHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class GetShardIteratorResult
   {
   public:
-    AWS_KINESIS_API GetShardIteratorResult();
+    AWS_KINESIS_API GetShardIteratorResult() = default;
     AWS_KINESIS_API GetShardIteratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API GetShardIteratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,28 @@ namespace Model
      * sequentially. A shard iterator specifies this position using the sequence number
      * of a data record in a shard.</p>
      */
-    inline const Aws::String& GetShardIterator() const{ return m_shardIterator; }
-    inline void SetShardIterator(const Aws::String& value) { m_shardIterator = value; }
-    inline void SetShardIterator(Aws::String&& value) { m_shardIterator = std::move(value); }
-    inline void SetShardIterator(const char* value) { m_shardIterator.assign(value); }
-    inline GetShardIteratorResult& WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
-    inline GetShardIteratorResult& WithShardIterator(Aws::String&& value) { SetShardIterator(std::move(value)); return *this;}
-    inline GetShardIteratorResult& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
+    inline const Aws::String& GetShardIterator() const { return m_shardIterator; }
+    template<typename ShardIteratorT = Aws::String>
+    void SetShardIterator(ShardIteratorT&& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = std::forward<ShardIteratorT>(value); }
+    template<typename ShardIteratorT = Aws::String>
+    GetShardIteratorResult& WithShardIterator(ShardIteratorT&& value) { SetShardIterator(std::forward<ShardIteratorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetShardIteratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetShardIteratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetShardIteratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetShardIteratorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_shardIterator;
+    bool m_shardIteratorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportWorkspaceImageRequest::ImportWorkspaceImageRequest() : 
-    m_ec2ImageIdHasBeenSet(false),
-    m_ingestionProcess(WorkspaceImageIngestionProcess::NOT_SET),
-    m_ingestionProcessHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
-{
-}
-
 Aws::String ImportWorkspaceImageRequest::SerializePayload() const
 {
   JsonValue payload;

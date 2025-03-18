@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListContactEvaluationsRequest::ListContactEvaluationsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListContactEvaluationsRequest::SerializePayload() const
 {
   return {};

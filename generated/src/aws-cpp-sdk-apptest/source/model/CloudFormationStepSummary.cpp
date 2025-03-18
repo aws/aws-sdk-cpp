@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CloudFormationStepSummary::CloudFormationStepSummary() : 
-    m_createCloudformationHasBeenSet(false),
-    m_deleteCloudformationHasBeenSet(false)
-{
-}
-
 CloudFormationStepSummary::CloudFormationStepSummary(JsonView jsonValue)
-  : CloudFormationStepSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CloudFormationStepSummary& CloudFormationStepSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("createCloudformation"))
   {
     m_createCloudformation = jsonValue.GetObject("createCloudformation");
-
     m_createCloudformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleteCloudformation"))
   {
     m_deleteCloudformation = jsonValue.GetObject("deleteCloudformation");
-
     m_deleteCloudformationHasBeenSet = true;
   }
-
   return *this;
 }
 

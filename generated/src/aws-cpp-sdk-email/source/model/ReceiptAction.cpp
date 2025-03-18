@@ -20,20 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptAction::ReceiptAction() : 
-    m_s3ActionHasBeenSet(false),
-    m_bounceActionHasBeenSet(false),
-    m_workmailActionHasBeenSet(false),
-    m_lambdaActionHasBeenSet(false),
-    m_stopActionHasBeenSet(false),
-    m_addHeaderActionHasBeenSet(false),
-    m_sNSActionHasBeenSet(false),
-    m_connectActionHasBeenSet(false)
-{
-}
-
 ReceiptAction::ReceiptAction(const XmlNode& xmlNode)
-  : ReceiptAction()
 {
   *this = xmlNode;
 }

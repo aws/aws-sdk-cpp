@@ -34,7 +34,7 @@ namespace Model
   class CreateHealthCheckResult
   {
   public:
-    AWS_ROUTE53_API CreateHealthCheckResult();
+    AWS_ROUTE53_API CreateHealthCheckResult() = default;
     AWS_ROUTE53_API CreateHealthCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API CreateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,43 +44,42 @@ namespace Model
      * <p>A complex type that contains identifying information about the health
      * check.</p>
      */
-    inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
-    inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
-    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
-    inline CreateHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
-    inline CreateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    inline const HealthCheck& GetHealthCheck() const { return m_healthCheck; }
+    template<typename HealthCheckT = HealthCheck>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheck>
+    CreateHealthCheckResult& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique URL representing the new health check.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateHealthCheckResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateHealthCheckResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateHealthCheckResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateHealthCheckResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateHealthCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateHealthCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateHealthCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateHealthCheckResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HealthCheck m_healthCheck;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

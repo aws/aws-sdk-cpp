@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-UserGroupResolutionConfiguration::UserGroupResolutionConfiguration() : 
-    m_userGroupResolutionMode(UserGroupResolutionMode::NOT_SET),
-    m_userGroupResolutionModeHasBeenSet(false)
-{
-}
-
 UserGroupResolutionConfiguration::UserGroupResolutionConfiguration(JsonView jsonValue)
-  : UserGroupResolutionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UserGroupResolutionConfiguration& UserGroupResolutionConfiguration::operator =(J
   if(jsonValue.ValueExists("UserGroupResolutionMode"))
   {
     m_userGroupResolutionMode = UserGroupResolutionModeMapper::GetUserGroupResolutionModeForName(jsonValue.GetString("UserGroupResolutionMode"));
-
     m_userGroupResolutionModeHasBeenSet = true;
   }
-
   return *this;
 }
 

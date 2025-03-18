@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-EmailContent::EmailContent() : 
-    m_subjectHasBeenSet(false),
-    m_additionalMessageHasBeenSet(false)
-{
-}
-
 EmailContent::EmailContent(JsonView jsonValue)
-  : EmailContent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailContent& EmailContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalMessage"))
   {
     m_additionalMessage = jsonValue.GetString("additionalMessage");
-
     m_additionalMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

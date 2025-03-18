@@ -21,7 +21,7 @@ namespace Model
   class DisableKeyRotationRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API DisableKeyRotationRequest();
+    AWS_KMS_API DisableKeyRotationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline DisableKeyRotationRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline DisableKeyRotationRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline DisableKeyRotationRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    DisableKeyRotationRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
   private:
 

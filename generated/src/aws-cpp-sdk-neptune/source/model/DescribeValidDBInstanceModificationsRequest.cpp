@@ -10,11 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeValidDBInstanceModificationsRequest::DescribeValidDBInstanceModificationsRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DescribeValidDBInstanceModificationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

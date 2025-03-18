@@ -21,7 +21,7 @@ namespace Model
   class DeregisterJobDefinitionRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API DeregisterJobDefinitionRequest();
+    AWS_BATCH_API DeregisterJobDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
      * Name (ARN) of the job definition to deregister.</p>
      */
-    inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
+    inline const Aws::String& GetJobDefinition() const { return m_jobDefinition; }
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
-    inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
-    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
-    inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
-    inline DeregisterJobDefinitionRequest& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
-    inline DeregisterJobDefinitionRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
-    inline DeregisterJobDefinitionRequest& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+    template<typename JobDefinitionT = Aws::String>
+    void SetJobDefinition(JobDefinitionT&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::forward<JobDefinitionT>(value); }
+    template<typename JobDefinitionT = Aws::String>
+    DeregisterJobDefinitionRequest& WithJobDefinition(JobDefinitionT&& value) { SetJobDefinition(std::forward<JobDefinitionT>(value)); return *this;}
     ///@}
   private:
 

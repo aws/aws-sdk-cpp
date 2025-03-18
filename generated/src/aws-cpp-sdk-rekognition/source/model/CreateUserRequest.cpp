@@ -12,14 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

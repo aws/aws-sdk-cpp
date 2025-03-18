@@ -18,15 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-PackageObject::PackageObject() : 
-    m_nameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
-{
-}
-
 PackageObject::PackageObject(JsonView jsonValue)
-  : PackageObject()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PackageObject& PackageObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PatchVersion"))
   {
     m_patchVersion = jsonValue.GetString("PatchVersion");
-
     m_patchVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace MQ
 namespace Model
 {
 
-UserPendingChanges::UserPendingChanges() : 
-    m_consoleAccess(false),
-    m_consoleAccessHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_pendingChange(ChangeType::NOT_SET),
-    m_pendingChangeHasBeenSet(false)
-{
-}
-
 UserPendingChanges::UserPendingChanges(JsonView jsonValue)
-  : UserPendingChanges()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ UserPendingChanges& UserPendingChanges::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("consoleAccess"))
   {
     m_consoleAccess = jsonValue.GetBool("consoleAccess");
-
     m_consoleAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
@@ -51,14 +39,11 @@ UserPendingChanges& UserPendingChanges::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingChange"))
   {
     m_pendingChange = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("pendingChange"));
-
     m_pendingChangeHasBeenSet = true;
   }
-
   return *this;
 }
 

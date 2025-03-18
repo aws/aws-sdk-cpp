@@ -12,12 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCaseAttachmentDownloadUrlRequest::GetCaseAttachmentDownloadUrlRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCaseAttachmentDownloadUrlRequest::SerializePayload() const
 {
   return {};

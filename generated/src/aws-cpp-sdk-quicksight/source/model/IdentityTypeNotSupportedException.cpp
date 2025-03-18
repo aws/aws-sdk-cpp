@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-IdentityTypeNotSupportedException::IdentityTypeNotSupportedException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 IdentityTypeNotSupportedException::IdentityTypeNotSupportedException(JsonView jsonValue)
-  : IdentityTypeNotSupportedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityTypeNotSupportedException& IdentityTypeNotSupportedException::operator =
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

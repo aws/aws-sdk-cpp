@@ -34,7 +34,7 @@ namespace Model
   class MetricStat
   {
   public:
-    AWS_CLOUDWATCH_API MetricStat();
+    AWS_CLOUDWATCH_API MetricStat() = default;
     AWS_CLOUDWATCH_API MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,12 @@ namespace Model
      * <p>The metric to return, including the metric name, namespace, and
      * dimensions.</p>
      */
-    inline const Metric& GetMetric() const{ return m_metric; }
+    inline const Metric& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Metric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Metric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline MetricStat& WithMetric(const Metric& value) { SetMetric(value); return *this;}
-    inline MetricStat& WithMetric(Metric&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = Metric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Metric>
+    MetricStat& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +71,7 @@ namespace Model
      * seconds (5 minutes).</p> </li> <li> <p>Start time greater than 63 days ago - Use
      * a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline MetricStat& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -82,14 +82,12 @@ namespace Model
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
      * statistic.</p>
      */
-    inline const Aws::String& GetStat() const{ return m_stat; }
+    inline const Aws::String& GetStat() const { return m_stat; }
     inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
-    inline void SetStat(const Aws::String& value) { m_statHasBeenSet = true; m_stat = value; }
-    inline void SetStat(Aws::String&& value) { m_statHasBeenSet = true; m_stat = std::move(value); }
-    inline void SetStat(const char* value) { m_statHasBeenSet = true; m_stat.assign(value); }
-    inline MetricStat& WithStat(const Aws::String& value) { SetStat(value); return *this;}
-    inline MetricStat& WithStat(Aws::String&& value) { SetStat(std::move(value)); return *this;}
-    inline MetricStat& WithStat(const char* value) { SetStat(value); return *this;}
+    template<typename StatT = Aws::String>
+    void SetStat(StatT&& value) { m_statHasBeenSet = true; m_stat = std::forward<StatT>(value); }
+    template<typename StatT = Aws::String>
+    MetricStat& WithStat(StatT&& value) { SetStat(std::forward<StatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,25 +101,23 @@ namespace Model
      * does not match the data collected, the results of the operation are null.
      * CloudWatch does not perform unit conversions.</p>
      */
-    inline const StandardUnit& GetUnit() const{ return m_unit; }
+    inline StandardUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline MetricStat& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
-    inline MetricStat& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(StandardUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline MetricStat& WithUnit(StandardUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
     Metric m_metric;
     bool m_metricHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
     Aws::String m_stat;
     bool m_statHasBeenSet = false;
 
-    StandardUnit m_unit;
+    StandardUnit m_unit{StandardUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

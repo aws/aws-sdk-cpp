@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeMovingAddressesRequest::DescribeMovingAddressesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_publicIpsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMovingAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

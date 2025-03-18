@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-HarvesterScheduleConfiguration::HarvesterScheduleConfiguration() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 HarvesterScheduleConfiguration::HarvesterScheduleConfiguration(JsonView jsonValue)
-  : HarvesterScheduleConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HarvesterScheduleConfiguration& HarvesterScheduleConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

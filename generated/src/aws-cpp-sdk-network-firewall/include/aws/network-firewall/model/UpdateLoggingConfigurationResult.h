@@ -28,7 +28,7 @@ namespace Model
   class UpdateLoggingConfigurationResult
   {
   public:
-    AWS_NETWORKFIREWALL_API UpdateLoggingConfigurationResult();
+    AWS_NETWORKFIREWALL_API UpdateLoggingConfigurationResult() = default;
     AWS_NETWORKFIREWALL_API UpdateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API UpdateLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the firewall.</p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArn.assign(value); }
-    inline UpdateLoggingConfigurationResult& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline UpdateLoggingConfigurationResult& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline UpdateLoggingConfigurationResult& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    UpdateLoggingConfigurationResult& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,43 +49,43 @@ namespace Model
      * <p>The descriptive name of the firewall. You can't change the name of a firewall
      * after you create it.</p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallName.assign(value); }
-    inline UpdateLoggingConfigurationResult& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline UpdateLoggingConfigurationResult& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline UpdateLoggingConfigurationResult& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    UpdateLoggingConfigurationResult& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
-    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
-    inline UpdateLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-    inline UpdateLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    UpdateLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateLoggingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_firewallArn;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
+    bool m_firewallNameHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

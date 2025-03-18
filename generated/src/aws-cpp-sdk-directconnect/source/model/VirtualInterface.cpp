@@ -19,47 +19,7 @@ namespace DirectConnect
 namespace Model
 {
 
-VirtualInterface::VirtualInterface() : 
-    m_ownerAccountHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_virtualInterfaceTypeHasBeenSet(false),
-    m_virtualInterfaceNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
-    m_virtualInterfaceStateHasBeenSet(false),
-    m_customerRouterConfigHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false),
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_routeFilterPrefixesHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_siteLinkEnabled(false),
-    m_siteLinkEnabledHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 VirtualInterface::VirtualInterface(JsonView jsonValue)
-  : VirtualInterface()
 {
   *this = jsonValue;
 }
@@ -69,136 +29,98 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceId"))
   {
     m_virtualInterfaceId = jsonValue.GetString("virtualInterfaceId");
-
     m_virtualInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
     m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceType"))
   {
     m_virtualInterfaceType = jsonValue.GetString("virtualInterfaceType");
-
     m_virtualInterfaceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceName"))
   {
     m_virtualInterfaceName = jsonValue.GetString("virtualInterfaceName");
-
     m_virtualInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vlan"))
   {
     m_vlan = jsonValue.GetInteger("vlan");
-
     m_vlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetInteger("asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonSideAsn"))
   {
     m_amazonSideAsn = jsonValue.GetInt64("amazonSideAsn");
-
     m_amazonSideAsnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
-
     m_authKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonAddress"))
   {
     m_amazonAddress = jsonValue.GetString("amazonAddress");
-
     m_amazonAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerAddress"))
   {
     m_customerAddress = jsonValue.GetString("customerAddress");
-
     m_customerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressFamily"))
   {
     m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
-
     m_addressFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceState"))
   {
     m_virtualInterfaceState = VirtualInterfaceStateMapper::GetVirtualInterfaceStateForName(jsonValue.GetString("virtualInterfaceState"));
-
     m_virtualInterfaceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerRouterConfig"))
   {
     m_customerRouterConfig = jsonValue.GetString("customerRouterConfig");
-
     m_customerRouterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mtu"))
   {
     m_mtu = jsonValue.GetInteger("mtu");
-
     m_mtuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
-
     m_jumboFrameCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGatewayId"))
   {
     m_virtualGatewayId = jsonValue.GetString("virtualGatewayId");
-
     m_virtualGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
     Aws::Utils::Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
@@ -208,7 +130,6 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     }
     m_routeFilterPrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bgpPeers"))
   {
     Aws::Utils::Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
@@ -218,28 +139,21 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     }
     m_bgpPeersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
     m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -249,14 +163,11 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("siteLinkEnabled"))
   {
     m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
-
     m_siteLinkEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

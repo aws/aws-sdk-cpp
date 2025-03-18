@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkerBlocksResult::ListWorkerBlocksResult() : 
-    m_numResults(0)
-{
-}
-
 ListWorkerBlocksResult::ListWorkerBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListWorkerBlocksResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumResults"))
   {
     m_numResults = jsonValue.GetInteger("NumResults");
-
+    m_numResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerBlocks"))
   {
     Aws::Utils::Array<JsonView> workerBlocksJsonList = jsonValue.GetArray("WorkerBlocks");
@@ -50,14 +42,15 @@ ListWorkerBlocksResult& ListWorkerBlocksResult::operator =(const Aws::AmazonWebS
     {
       m_workerBlocks.push_back(workerBlocksJsonList[workerBlocksIndex].AsObject());
     }
+    m_workerBlocksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

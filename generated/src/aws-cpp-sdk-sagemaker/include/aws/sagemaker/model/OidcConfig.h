@@ -33,7 +33,7 @@ namespace Model
   class OidcConfig
   {
   public:
-    AWS_SAGEMAKER_API OidcConfig();
+    AWS_SAGEMAKER_API OidcConfig() = default;
     AWS_SAGEMAKER_API OidcConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OidcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The OIDC IdP client ID used to configure your private workforce.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline OidcConfig& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline OidcConfig& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline OidcConfig& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    OidcConfig& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OIDC IdP client secret used to configure your private workforce.</p>
      */
-    inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
+    inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-    inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-    inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-    inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-    inline OidcConfig& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-    inline OidcConfig& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-    inline OidcConfig& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
+    template<typename ClientSecretT = Aws::String>
+    void SetClientSecret(ClientSecretT&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::forward<ClientSecretT>(value); }
+    template<typename ClientSecretT = Aws::String>
+    OidcConfig& WithClientSecret(ClientSecretT&& value) { SetClientSecret(std::forward<ClientSecretT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OIDC IdP issuer used to configure your private workforce.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline OidcConfig& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline OidcConfig& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline OidcConfig& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    OidcConfig& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +80,24 @@ namespace Model
      * <p>The OIDC IdP authorization endpoint used to configure your private
      * workforce.</p>
      */
-    inline const Aws::String& GetAuthorizationEndpoint() const{ return m_authorizationEndpoint; }
+    inline const Aws::String& GetAuthorizationEndpoint() const { return m_authorizationEndpoint; }
     inline bool AuthorizationEndpointHasBeenSet() const { return m_authorizationEndpointHasBeenSet; }
-    inline void SetAuthorizationEndpoint(const Aws::String& value) { m_authorizationEndpointHasBeenSet = true; m_authorizationEndpoint = value; }
-    inline void SetAuthorizationEndpoint(Aws::String&& value) { m_authorizationEndpointHasBeenSet = true; m_authorizationEndpoint = std::move(value); }
-    inline void SetAuthorizationEndpoint(const char* value) { m_authorizationEndpointHasBeenSet = true; m_authorizationEndpoint.assign(value); }
-    inline OidcConfig& WithAuthorizationEndpoint(const Aws::String& value) { SetAuthorizationEndpoint(value); return *this;}
-    inline OidcConfig& WithAuthorizationEndpoint(Aws::String&& value) { SetAuthorizationEndpoint(std::move(value)); return *this;}
-    inline OidcConfig& WithAuthorizationEndpoint(const char* value) { SetAuthorizationEndpoint(value); return *this;}
+    template<typename AuthorizationEndpointT = Aws::String>
+    void SetAuthorizationEndpoint(AuthorizationEndpointT&& value) { m_authorizationEndpointHasBeenSet = true; m_authorizationEndpoint = std::forward<AuthorizationEndpointT>(value); }
+    template<typename AuthorizationEndpointT = Aws::String>
+    OidcConfig& WithAuthorizationEndpoint(AuthorizationEndpointT&& value) { SetAuthorizationEndpoint(std::forward<AuthorizationEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
      */
-    inline const Aws::String& GetTokenEndpoint() const{ return m_tokenEndpoint; }
+    inline const Aws::String& GetTokenEndpoint() const { return m_tokenEndpoint; }
     inline bool TokenEndpointHasBeenSet() const { return m_tokenEndpointHasBeenSet; }
-    inline void SetTokenEndpoint(const Aws::String& value) { m_tokenEndpointHasBeenSet = true; m_tokenEndpoint = value; }
-    inline void SetTokenEndpoint(Aws::String&& value) { m_tokenEndpointHasBeenSet = true; m_tokenEndpoint = std::move(value); }
-    inline void SetTokenEndpoint(const char* value) { m_tokenEndpointHasBeenSet = true; m_tokenEndpoint.assign(value); }
-    inline OidcConfig& WithTokenEndpoint(const Aws::String& value) { SetTokenEndpoint(value); return *this;}
-    inline OidcConfig& WithTokenEndpoint(Aws::String&& value) { SetTokenEndpoint(std::move(value)); return *this;}
-    inline OidcConfig& WithTokenEndpoint(const char* value) { SetTokenEndpoint(value); return *this;}
+    template<typename TokenEndpointT = Aws::String>
+    void SetTokenEndpoint(TokenEndpointT&& value) { m_tokenEndpointHasBeenSet = true; m_tokenEndpoint = std::forward<TokenEndpointT>(value); }
+    template<typename TokenEndpointT = Aws::String>
+    OidcConfig& WithTokenEndpoint(TokenEndpointT&& value) { SetTokenEndpoint(std::forward<TokenEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,28 +105,24 @@ namespace Model
      * <p>The OIDC IdP user information endpoint used to configure your private
      * workforce.</p>
      */
-    inline const Aws::String& GetUserInfoEndpoint() const{ return m_userInfoEndpoint; }
+    inline const Aws::String& GetUserInfoEndpoint() const { return m_userInfoEndpoint; }
     inline bool UserInfoEndpointHasBeenSet() const { return m_userInfoEndpointHasBeenSet; }
-    inline void SetUserInfoEndpoint(const Aws::String& value) { m_userInfoEndpointHasBeenSet = true; m_userInfoEndpoint = value; }
-    inline void SetUserInfoEndpoint(Aws::String&& value) { m_userInfoEndpointHasBeenSet = true; m_userInfoEndpoint = std::move(value); }
-    inline void SetUserInfoEndpoint(const char* value) { m_userInfoEndpointHasBeenSet = true; m_userInfoEndpoint.assign(value); }
-    inline OidcConfig& WithUserInfoEndpoint(const Aws::String& value) { SetUserInfoEndpoint(value); return *this;}
-    inline OidcConfig& WithUserInfoEndpoint(Aws::String&& value) { SetUserInfoEndpoint(std::move(value)); return *this;}
-    inline OidcConfig& WithUserInfoEndpoint(const char* value) { SetUserInfoEndpoint(value); return *this;}
+    template<typename UserInfoEndpointT = Aws::String>
+    void SetUserInfoEndpoint(UserInfoEndpointT&& value) { m_userInfoEndpointHasBeenSet = true; m_userInfoEndpoint = std::forward<UserInfoEndpointT>(value); }
+    template<typename UserInfoEndpointT = Aws::String>
+    OidcConfig& WithUserInfoEndpoint(UserInfoEndpointT&& value) { SetUserInfoEndpoint(std::forward<UserInfoEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
      */
-    inline const Aws::String& GetLogoutEndpoint() const{ return m_logoutEndpoint; }
+    inline const Aws::String& GetLogoutEndpoint() const { return m_logoutEndpoint; }
     inline bool LogoutEndpointHasBeenSet() const { return m_logoutEndpointHasBeenSet; }
-    inline void SetLogoutEndpoint(const Aws::String& value) { m_logoutEndpointHasBeenSet = true; m_logoutEndpoint = value; }
-    inline void SetLogoutEndpoint(Aws::String&& value) { m_logoutEndpointHasBeenSet = true; m_logoutEndpoint = std::move(value); }
-    inline void SetLogoutEndpoint(const char* value) { m_logoutEndpointHasBeenSet = true; m_logoutEndpoint.assign(value); }
-    inline OidcConfig& WithLogoutEndpoint(const Aws::String& value) { SetLogoutEndpoint(value); return *this;}
-    inline OidcConfig& WithLogoutEndpoint(Aws::String&& value) { SetLogoutEndpoint(std::move(value)); return *this;}
-    inline OidcConfig& WithLogoutEndpoint(const char* value) { SetLogoutEndpoint(value); return *this;}
+    template<typename LogoutEndpointT = Aws::String>
+    void SetLogoutEndpoint(LogoutEndpointT&& value) { m_logoutEndpointHasBeenSet = true; m_logoutEndpoint = std::forward<LogoutEndpointT>(value); }
+    template<typename LogoutEndpointT = Aws::String>
+    OidcConfig& WithLogoutEndpoint(LogoutEndpointT&& value) { SetLogoutEndpoint(std::forward<LogoutEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +130,12 @@ namespace Model
      * <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private
      * workforce.</p>
      */
-    inline const Aws::String& GetJwksUri() const{ return m_jwksUri; }
+    inline const Aws::String& GetJwksUri() const { return m_jwksUri; }
     inline bool JwksUriHasBeenSet() const { return m_jwksUriHasBeenSet; }
-    inline void SetJwksUri(const Aws::String& value) { m_jwksUriHasBeenSet = true; m_jwksUri = value; }
-    inline void SetJwksUri(Aws::String&& value) { m_jwksUriHasBeenSet = true; m_jwksUri = std::move(value); }
-    inline void SetJwksUri(const char* value) { m_jwksUriHasBeenSet = true; m_jwksUri.assign(value); }
-    inline OidcConfig& WithJwksUri(const Aws::String& value) { SetJwksUri(value); return *this;}
-    inline OidcConfig& WithJwksUri(Aws::String&& value) { SetJwksUri(std::move(value)); return *this;}
-    inline OidcConfig& WithJwksUri(const char* value) { SetJwksUri(value); return *this;}
+    template<typename JwksUriT = Aws::String>
+    void SetJwksUri(JwksUriT&& value) { m_jwksUriHasBeenSet = true; m_jwksUri = std::forward<JwksUriT>(value); }
+    template<typename JwksUriT = Aws::String>
+    OidcConfig& WithJwksUri(JwksUriT&& value) { SetJwksUri(std::forward<JwksUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +143,12 @@ namespace Model
      * <p>An array of string identifiers used to refer to the specific pieces of user
      * data or claims that the client application wants to access.</p>
      */
-    inline const Aws::String& GetScope() const{ return m_scope; }
+    inline const Aws::String& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-    inline OidcConfig& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-    inline OidcConfig& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-    inline OidcConfig& WithScope(const char* value) { SetScope(value); return *this;}
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    OidcConfig& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,19 +156,16 @@ namespace Model
      * <p>A string to string map of identifiers specific to the custom identity
      * provider (IdP) being used.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAuthenticationRequestExtraParams() const{ return m_authenticationRequestExtraParams; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAuthenticationRequestExtraParams() const { return m_authenticationRequestExtraParams; }
     inline bool AuthenticationRequestExtraParamsHasBeenSet() const { return m_authenticationRequestExtraParamsHasBeenSet; }
-    inline void SetAuthenticationRequestExtraParams(const Aws::Map<Aws::String, Aws::String>& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams = value; }
-    inline void SetAuthenticationRequestExtraParams(Aws::Map<Aws::String, Aws::String>&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams = std::move(value); }
-    inline OidcConfig& WithAuthenticationRequestExtraParams(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthenticationRequestExtraParams(value); return *this;}
-    inline OidcConfig& WithAuthenticationRequestExtraParams(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthenticationRequestExtraParams(std::move(value)); return *this;}
-    inline OidcConfig& AddAuthenticationRequestExtraParams(const Aws::String& key, const Aws::String& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, value); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(Aws::String&& key, const Aws::String& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), value); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(const Aws::String& key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, std::move(value)); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(Aws::String&& key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), std::move(value)); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(const char* key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, std::move(value)); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(Aws::String&& key, const char* value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), value); return *this; }
-    inline OidcConfig& AddAuthenticationRequestExtraParams(const char* key, const char* value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, value); return *this; }
+    template<typename AuthenticationRequestExtraParamsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAuthenticationRequestExtraParams(AuthenticationRequestExtraParamsT&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams = std::forward<AuthenticationRequestExtraParamsT>(value); }
+    template<typename AuthenticationRequestExtraParamsT = Aws::Map<Aws::String, Aws::String>>
+    OidcConfig& WithAuthenticationRequestExtraParams(AuthenticationRequestExtraParamsT&& value) { SetAuthenticationRequestExtraParams(std::forward<AuthenticationRequestExtraParamsT>(value)); return *this;}
+    template<typename AuthenticationRequestExtraParamsKeyT = Aws::String, typename AuthenticationRequestExtraParamsValueT = Aws::String>
+    OidcConfig& AddAuthenticationRequestExtraParams(AuthenticationRequestExtraParamsKeyT&& key, AuthenticationRequestExtraParamsValueT&& value) {
+      m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::forward<AuthenticationRequestExtraParamsKeyT>(key), std::forward<AuthenticationRequestExtraParamsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

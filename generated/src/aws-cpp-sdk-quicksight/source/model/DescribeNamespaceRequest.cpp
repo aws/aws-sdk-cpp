@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNamespaceRequest::DescribeNamespaceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNamespaceRequest::SerializePayload() const
 {
   return {};

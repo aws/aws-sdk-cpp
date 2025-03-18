@@ -35,7 +35,7 @@ namespace Model
   class SqlApplicationConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>The array of <a>InputDescription</a> objects describing the input streams
      * used by the application.</p>
      */
-    inline const Aws::Vector<InputDescription>& GetInputDescriptions() const{ return m_inputDescriptions; }
+    inline const Aws::Vector<InputDescription>& GetInputDescriptions() const { return m_inputDescriptions; }
     inline bool InputDescriptionsHasBeenSet() const { return m_inputDescriptionsHasBeenSet; }
-    inline void SetInputDescriptions(const Aws::Vector<InputDescription>& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = value; }
-    inline void SetInputDescriptions(Aws::Vector<InputDescription>&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = std::move(value); }
-    inline SqlApplicationConfigurationDescription& WithInputDescriptions(const Aws::Vector<InputDescription>& value) { SetInputDescriptions(value); return *this;}
-    inline SqlApplicationConfigurationDescription& WithInputDescriptions(Aws::Vector<InputDescription>&& value) { SetInputDescriptions(std::move(value)); return *this;}
-    inline SqlApplicationConfigurationDescription& AddInputDescriptions(const InputDescription& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(value); return *this; }
-    inline SqlApplicationConfigurationDescription& AddInputDescriptions(InputDescription&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(std::move(value)); return *this; }
+    template<typename InputDescriptionsT = Aws::Vector<InputDescription>>
+    void SetInputDescriptions(InputDescriptionsT&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = std::forward<InputDescriptionsT>(value); }
+    template<typename InputDescriptionsT = Aws::Vector<InputDescription>>
+    SqlApplicationConfigurationDescription& WithInputDescriptions(InputDescriptionsT&& value) { SetInputDescriptions(std::forward<InputDescriptionsT>(value)); return *this;}
+    template<typename InputDescriptionsT = InputDescription>
+    SqlApplicationConfigurationDescription& AddInputDescriptions(InputDescriptionsT&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.emplace_back(std::forward<InputDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,14 @@ namespace Model
      * <p>The array of <a>OutputDescription</a> objects describing the destination
      * streams used by the application.</p>
      */
-    inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const{ return m_outputDescriptions; }
+    inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const { return m_outputDescriptions; }
     inline bool OutputDescriptionsHasBeenSet() const { return m_outputDescriptionsHasBeenSet; }
-    inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = value; }
-    inline void SetOutputDescriptions(Aws::Vector<OutputDescription>&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = std::move(value); }
-    inline SqlApplicationConfigurationDescription& WithOutputDescriptions(const Aws::Vector<OutputDescription>& value) { SetOutputDescriptions(value); return *this;}
-    inline SqlApplicationConfigurationDescription& WithOutputDescriptions(Aws::Vector<OutputDescription>&& value) { SetOutputDescriptions(std::move(value)); return *this;}
-    inline SqlApplicationConfigurationDescription& AddOutputDescriptions(const OutputDescription& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(value); return *this; }
-    inline SqlApplicationConfigurationDescription& AddOutputDescriptions(OutputDescription&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(std::move(value)); return *this; }
+    template<typename OutputDescriptionsT = Aws::Vector<OutputDescription>>
+    void SetOutputDescriptions(OutputDescriptionsT&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = std::forward<OutputDescriptionsT>(value); }
+    template<typename OutputDescriptionsT = Aws::Vector<OutputDescription>>
+    SqlApplicationConfigurationDescription& WithOutputDescriptions(OutputDescriptionsT&& value) { SetOutputDescriptions(std::forward<OutputDescriptionsT>(value)); return *this;}
+    template<typename OutputDescriptionsT = OutputDescription>
+    SqlApplicationConfigurationDescription& AddOutputDescriptions(OutputDescriptionsT&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.emplace_back(std::forward<OutputDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +76,14 @@ namespace Model
      * <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the
      * reference data sources used by the application.</p>
      */
-    inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const{ return m_referenceDataSourceDescriptions; }
+    inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const { return m_referenceDataSourceDescriptions; }
     inline bool ReferenceDataSourceDescriptionsHasBeenSet() const { return m_referenceDataSourceDescriptionsHasBeenSet; }
-    inline void SetReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = value; }
-    inline void SetReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = std::move(value); }
-    inline SqlApplicationConfigurationDescription& WithReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { SetReferenceDataSourceDescriptions(value); return *this;}
-    inline SqlApplicationConfigurationDescription& WithReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { SetReferenceDataSourceDescriptions(std::move(value)); return *this;}
-    inline SqlApplicationConfigurationDescription& AddReferenceDataSourceDescriptions(const ReferenceDataSourceDescription& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(value); return *this; }
-    inline SqlApplicationConfigurationDescription& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescription&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(std::move(value)); return *this; }
+    template<typename ReferenceDataSourceDescriptionsT = Aws::Vector<ReferenceDataSourceDescription>>
+    void SetReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = std::forward<ReferenceDataSourceDescriptionsT>(value); }
+    template<typename ReferenceDataSourceDescriptionsT = Aws::Vector<ReferenceDataSourceDescription>>
+    SqlApplicationConfigurationDescription& WithReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { SetReferenceDataSourceDescriptions(std::forward<ReferenceDataSourceDescriptionsT>(value)); return *this;}
+    template<typename ReferenceDataSourceDescriptionsT = ReferenceDataSourceDescription>
+    SqlApplicationConfigurationDescription& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.emplace_back(std::forward<ReferenceDataSourceDescriptionsT>(value)); return *this; }
     ///@}
   private:
 

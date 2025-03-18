@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeInstancesHealthRequest::DescribeInstancesHealthRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstancesHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;

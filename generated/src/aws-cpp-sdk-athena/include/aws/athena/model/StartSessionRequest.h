@@ -22,7 +22,7 @@ namespace Model
   class StartSessionRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API StartSessionRequest();
+    AWS_ATHENA_API StartSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The session description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartSessionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartSessionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartSessionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartSessionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workgroup to which the session belongs.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline StartSessionRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline StartSessionRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline StartSessionRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    StartSessionRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>Contains engine data processing unit (DPU) configuration settings and
      * parameter mappings.</p>
      */
-    inline const EngineConfiguration& GetEngineConfiguration() const{ return m_engineConfiguration; }
+    inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
     inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }
-    inline void SetEngineConfiguration(const EngineConfiguration& value) { m_engineConfigurationHasBeenSet = true; m_engineConfiguration = value; }
-    inline void SetEngineConfiguration(EngineConfiguration&& value) { m_engineConfigurationHasBeenSet = true; m_engineConfiguration = std::move(value); }
-    inline StartSessionRequest& WithEngineConfiguration(const EngineConfiguration& value) { SetEngineConfiguration(value); return *this;}
-    inline StartSessionRequest& WithEngineConfiguration(EngineConfiguration&& value) { SetEngineConfiguration(std::move(value)); return *this;}
+    template<typename EngineConfigurationT = EngineConfiguration>
+    void SetEngineConfiguration(EngineConfigurationT&& value) { m_engineConfigurationHasBeenSet = true; m_engineConfiguration = std::forward<EngineConfigurationT>(value); }
+    template<typename EngineConfigurationT = EngineConfiguration>
+    StartSessionRequest& WithEngineConfiguration(EngineConfigurationT&& value) { SetEngineConfiguration(std::forward<EngineConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,21 +81,19 @@ namespace Model
      * specify a value for <code>NotebookId</code>. See
      * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
-    inline const Aws::String& GetNotebookVersion() const{ return m_notebookVersion; }
+    inline const Aws::String& GetNotebookVersion() const { return m_notebookVersion; }
     inline bool NotebookVersionHasBeenSet() const { return m_notebookVersionHasBeenSet; }
-    inline void SetNotebookVersion(const Aws::String& value) { m_notebookVersionHasBeenSet = true; m_notebookVersion = value; }
-    inline void SetNotebookVersion(Aws::String&& value) { m_notebookVersionHasBeenSet = true; m_notebookVersion = std::move(value); }
-    inline void SetNotebookVersion(const char* value) { m_notebookVersionHasBeenSet = true; m_notebookVersion.assign(value); }
-    inline StartSessionRequest& WithNotebookVersion(const Aws::String& value) { SetNotebookVersion(value); return *this;}
-    inline StartSessionRequest& WithNotebookVersion(Aws::String&& value) { SetNotebookVersion(std::move(value)); return *this;}
-    inline StartSessionRequest& WithNotebookVersion(const char* value) { SetNotebookVersion(value); return *this;}
+    template<typename NotebookVersionT = Aws::String>
+    void SetNotebookVersion(NotebookVersionT&& value) { m_notebookVersionHasBeenSet = true; m_notebookVersion = std::forward<NotebookVersionT>(value); }
+    template<typename NotebookVersionT = Aws::String>
+    StartSessionRequest& WithNotebookVersion(NotebookVersionT&& value) { SetNotebookVersion(std::forward<NotebookVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The idle timeout in minutes for the session.</p>
      */
-    inline int GetSessionIdleTimeoutInMinutes() const{ return m_sessionIdleTimeoutInMinutes; }
+    inline int GetSessionIdleTimeoutInMinutes() const { return m_sessionIdleTimeoutInMinutes; }
     inline bool SessionIdleTimeoutInMinutesHasBeenSet() const { return m_sessionIdleTimeoutInMinutesHasBeenSet; }
     inline void SetSessionIdleTimeoutInMinutes(int value) { m_sessionIdleTimeoutInMinutesHasBeenSet = true; m_sessionIdleTimeoutInMinutes = value; }
     inline StartSessionRequest& WithSessionIdleTimeoutInMinutes(int value) { SetSessionIdleTimeoutInMinutes(value); return *this;}
@@ -117,14 +111,12 @@ namespace Model
      * SDK or the Amazon Web Services CLI, you must provide this token or the action
      * will fail.</p> 
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartSessionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartSessionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartSessionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartSessionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -140,7 +132,7 @@ namespace Model
     Aws::String m_notebookVersion;
     bool m_notebookVersionHasBeenSet = false;
 
-    int m_sessionIdleTimeoutInMinutes;
+    int m_sessionIdleTimeoutInMinutes{0};
     bool m_sessionIdleTimeoutInMinutesHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

@@ -26,7 +26,7 @@ namespace Model
   class ListDataLakesRequest : public SecurityLakeRequest
   {
   public:
-    AWS_SECURITYLAKE_API ListDataLakesRequest();
+    AWS_SECURITYLAKE_API ListDataLakesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The list of Regions where Security Lake is enabled.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline ListDataLakesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline ListDataLakesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline ListDataLakesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline ListDataLakesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline ListDataLakesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    ListDataLakesRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    ListDataLakesRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
   private:
 

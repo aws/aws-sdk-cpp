@@ -41,7 +41,7 @@ namespace Model
   class SpotProvisioningSpecification
   {
   public:
-    AWS_EMR_API SpotProvisioningSpecification();
+    AWS_EMR_API SpotProvisioningSpecification() = default;
     AWS_EMR_API SpotProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API SpotProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * Minimum value is 5 and maximum value is 1440. The timeout applies only during
      * initial provisioning, when the cluster is first created.</p>
      */
-    inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
+    inline int GetTimeoutDurationMinutes() const { return m_timeoutDurationMinutes; }
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
     inline SpotProvisioningSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
@@ -70,12 +70,10 @@ namespace Model
      * Instances are available, On-Demand Instances should be provisioned to fulfill
      * any remaining Spot capacity.</p>
      */
-    inline const SpotProvisioningTimeoutAction& GetTimeoutAction() const{ return m_timeoutAction; }
+    inline SpotProvisioningTimeoutAction GetTimeoutAction() const { return m_timeoutAction; }
     inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
-    inline void SetTimeoutAction(const SpotProvisioningTimeoutAction& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
-    inline void SetTimeoutAction(SpotProvisioningTimeoutAction&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
-    inline SpotProvisioningSpecification& WithTimeoutAction(const SpotProvisioningTimeoutAction& value) { SetTimeoutAction(value); return *this;}
-    inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(std::move(value)); return *this;}
+    inline void SetTimeoutAction(SpotProvisioningTimeoutAction value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
+    inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction value) { SetTimeoutAction(value); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +90,7 @@ namespace Model
      * previously used the feature, we will continue to support Spot Instances with a
      * defined duration until December 31, 2022. </p> 
      */
-    inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
+    inline int GetBlockDurationMinutes() const { return m_blockDurationMinutes; }
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
     inline SpotProvisioningSpecification& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
@@ -112,25 +110,23 @@ namespace Model
      * strategy. You can't change the allocation strategy from the old console.</p>
      * 
      */
-    inline const SpotProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline SpotProvisioningAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline SpotProvisioningSpecification& WithAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline SpotProvisioningSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline SpotProvisioningSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutDurationMinutes;
+    int m_timeoutDurationMinutes{0};
     bool m_timeoutDurationMinutesHasBeenSet = false;
 
-    SpotProvisioningTimeoutAction m_timeoutAction;
+    SpotProvisioningTimeoutAction m_timeoutAction{SpotProvisioningTimeoutAction::NOT_SET};
     bool m_timeoutActionHasBeenSet = false;
 
-    int m_blockDurationMinutes;
+    int m_blockDurationMinutes{0};
     bool m_blockDurationMinutesHasBeenSet = false;
 
-    SpotProvisioningAllocationStrategy m_allocationStrategy;
+    SpotProvisioningAllocationStrategy m_allocationStrategy{SpotProvisioningAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
   };
 

@@ -12,14 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetAssetPropertyAggregatesRequest::BatchGetAssetPropertyAggregatesRequest() : 
-    m_entriesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetAssetPropertyAggregatesRequest::SerializePayload() const
 {
   JsonValue payload;

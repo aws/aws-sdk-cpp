@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetShippingLabelResult::GetShippingLabelResult()
-{
-}
-
 GetShippingLabelResult::GetShippingLabelResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetShippingLabelResult& GetShippingLabelResult::operator =(const Aws::AmazonWebS
     if(!shippingLabelURLNode.IsNull())
     {
       m_shippingLabelURL = Aws::Utils::Xml::DecodeEscapedXmlText(shippingLabelURLNode.GetText());
+      m_shippingLabelURLHasBeenSet = true;
     }
     XmlNode warningNode = resultNode.FirstChild("Warning");
     if(!warningNode.IsNull())
     {
       m_warning = Aws::Utils::Xml::DecodeEscapedXmlText(warningNode.GetText());
+      m_warningHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ImportExport::Model::GetShippingLabelResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

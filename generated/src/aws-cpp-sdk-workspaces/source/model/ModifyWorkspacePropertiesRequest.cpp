@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyWorkspacePropertiesRequest::ModifyWorkspacePropertiesRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false),
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyWorkspacePropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

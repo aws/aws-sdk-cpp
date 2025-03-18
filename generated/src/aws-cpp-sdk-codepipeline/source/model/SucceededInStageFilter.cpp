@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-SucceededInStageFilter::SucceededInStageFilter() : 
-    m_stageNameHasBeenSet(false)
-{
-}
-
 SucceededInStageFilter::SucceededInStageFilter(JsonView jsonValue)
-  : SucceededInStageFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SucceededInStageFilter& SucceededInStageFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stageName"))
   {
     m_stageName = jsonValue.GetString("stageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   return *this;
 }
 

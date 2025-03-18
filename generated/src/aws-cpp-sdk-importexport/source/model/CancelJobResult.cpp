@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelJobResult::CancelJobResult() : 
-    m_success(false)
-{
-}
-
 CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CancelJobResult()
 {
   *this = result;
 }
@@ -44,12 +38,14 @@ CancelJobResult& CancelJobResult::operator =(const Aws::AmazonWebServiceResult<X
     if(!successNode.IsNull())
     {
       m_success = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(successNode.GetText()).c_str()).c_str());
+      m_successHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ImportExport::Model::CancelJobResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

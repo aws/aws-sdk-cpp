@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DynamicScalingConfiguration::DynamicScalingConfiguration() : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false)
-{
-}
-
 DynamicScalingConfiguration::DynamicScalingConfiguration(JsonView jsonValue)
-  : DynamicScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ DynamicScalingConfiguration& DynamicScalingConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("MinCapacity"))
   {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
-
     m_minCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleInCooldown"))
   {
     m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
-
     m_scaleInCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleOutCooldown"))
   {
     m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
-
     m_scaleOutCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
     Aws::Utils::Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
@@ -76,7 +54,6 @@ DynamicScalingConfiguration& DynamicScalingConfiguration::operator =(JsonView js
     }
     m_scalingPoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

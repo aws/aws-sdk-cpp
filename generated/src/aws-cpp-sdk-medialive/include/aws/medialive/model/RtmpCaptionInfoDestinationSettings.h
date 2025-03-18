@@ -29,7 +29,7 @@ namespace Model
   class RtmpCaptionInfoDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings();
+    AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings() = default;
     AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

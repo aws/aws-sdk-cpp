@@ -18,22 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-AuthenticationResult::AuthenticationResult() : 
-    m_audioAggregationEndedAtHasBeenSet(false),
-    m_audioAggregationStartedAtHasBeenSet(false),
-    m_authenticationResultIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_customerSpeakerIdHasBeenSet(false),
-    m_decision(AuthenticationDecision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_generatedSpeakerIdHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 AuthenticationResult::AuthenticationResult(JsonView jsonValue)
-  : AuthenticationResult()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AuthenticationResult& AuthenticationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AudioAggregationEndedAt"))
   {
     m_audioAggregationEndedAt = jsonValue.GetDouble("AudioAggregationEndedAt");
-
     m_audioAggregationEndedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AudioAggregationStartedAt"))
   {
     m_audioAggregationStartedAt = jsonValue.GetDouble("AudioAggregationStartedAt");
-
     m_audioAggregationStartedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationResultId"))
   {
     m_authenticationResultId = jsonValue.GetString("AuthenticationResultId");
-
     m_authenticationResultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerSpeakerId"))
   {
     m_customerSpeakerId = jsonValue.GetString("CustomerSpeakerId");
-
     m_customerSpeakerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Decision"))
   {
     m_decision = AuthenticationDecisionMapper::GetAuthenticationDecisionForName(jsonValue.GetString("Decision"));
-
     m_decisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedSpeakerId"))
   {
     m_generatedSpeakerId = jsonValue.GetString("GeneratedSpeakerId");
-
     m_generatedSpeakerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetInteger("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

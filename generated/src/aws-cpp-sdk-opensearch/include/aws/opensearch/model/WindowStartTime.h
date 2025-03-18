@@ -31,7 +31,7 @@ namespace Model
   class WindowStartTime
   {
   public:
-    AWS_OPENSEARCHSERVICE_API WindowStartTime();
+    AWS_OPENSEARCHSERVICE_API WindowStartTime() = default;
     AWS_OPENSEARCHSERVICE_API WindowStartTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API WindowStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The start hour of the window in Coordinated Universal Time (UTC), using
      * 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
      */
-    inline long long GetHours() const{ return m_hours; }
+    inline long long GetHours() const { return m_hours; }
     inline bool HoursHasBeenSet() const { return m_hoursHasBeenSet; }
     inline void SetHours(long long value) { m_hoursHasBeenSet = true; m_hours = value; }
     inline WindowStartTime& WithHours(long long value) { SetHours(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
     /**
      * <p>The start minute of the window, in UTC.</p>
      */
-    inline long long GetMinutes() const{ return m_minutes; }
+    inline long long GetMinutes() const { return m_minutes; }
     inline bool MinutesHasBeenSet() const { return m_minutesHasBeenSet; }
     inline void SetMinutes(long long value) { m_minutesHasBeenSet = true; m_minutes = value; }
     inline WindowStartTime& WithMinutes(long long value) { SetMinutes(value); return *this;}
     ///@}
   private:
 
-    long long m_hours;
+    long long m_hours{0};
     bool m_hoursHasBeenSet = false;
 
-    long long m_minutes;
+    long long m_minutes{0};
     bool m_minutesHasBeenSet = false;
   };
 

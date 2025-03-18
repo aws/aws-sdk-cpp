@@ -20,44 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceRequirements::InstanceRequirements() : 
-    m_vCpuCountHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_cpuManufacturersHasBeenSet(false),
-    m_memoryGiBPerVCpuHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_instanceGenerationsHasBeenSet(false),
-    m_spotMaxPricePercentageOverLowestPrice(0),
-    m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_onDemandMaxPricePercentageOverLowestPrice(0),
-    m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_bareMetal(BareMetal::NOT_SET),
-    m_bareMetalHasBeenSet(false),
-    m_burstablePerformance(BurstablePerformance::NOT_SET),
-    m_burstablePerformanceHasBeenSet(false),
-    m_requireHibernateSupport(false),
-    m_requireHibernateSupportHasBeenSet(false),
-    m_networkInterfaceCountHasBeenSet(false),
-    m_localStorage(LocalStorage::NOT_SET),
-    m_localStorageHasBeenSet(false),
-    m_localStorageTypesHasBeenSet(false),
-    m_totalLocalStorageGBHasBeenSet(false),
-    m_baselineEbsBandwidthMbpsHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_acceleratorCountHasBeenSet(false),
-    m_acceleratorManufacturersHasBeenSet(false),
-    m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false),
-    m_baselinePerformanceFactorsHasBeenSet(false)
-{
-}
-
 InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode)
-  : InstanceRequirements()
 {
   *this = xmlNode;
 }
@@ -84,6 +47,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!cpuManufacturersNode.IsNull())
     {
       XmlNode cpuManufacturersMember = cpuManufacturersNode.FirstChild("item");
+      m_cpuManufacturersHasBeenSet = !cpuManufacturersMember.IsNull();
       while(!cpuManufacturersMember.IsNull())
       {
         m_cpuManufacturers.push_back(CpuManufacturerMapper::GetCpuManufacturerForName(StringUtils::Trim(cpuManufacturersMember.GetText().c_str())));
@@ -102,6 +66,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!excludedInstanceTypesNode.IsNull())
     {
       XmlNode excludedInstanceTypesMember = excludedInstanceTypesNode.FirstChild("item");
+      m_excludedInstanceTypesHasBeenSet = !excludedInstanceTypesMember.IsNull();
       while(!excludedInstanceTypesMember.IsNull())
       {
         m_excludedInstanceTypes.push_back(excludedInstanceTypesMember.GetText());
@@ -114,6 +79,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!instanceGenerationsNode.IsNull())
     {
       XmlNode instanceGenerationsMember = instanceGenerationsNode.FirstChild("item");
+      m_instanceGenerationsHasBeenSet = !instanceGenerationsMember.IsNull();
       while(!instanceGenerationsMember.IsNull())
       {
         m_instanceGenerations.push_back(InstanceGenerationMapper::GetInstanceGenerationForName(StringUtils::Trim(instanceGenerationsMember.GetText().c_str())));
@@ -137,13 +103,13 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     XmlNode bareMetalNode = resultNode.FirstChild("bareMetal");
     if(!bareMetalNode.IsNull())
     {
-      m_bareMetal = BareMetalMapper::GetBareMetalForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bareMetalNode.GetText()).c_str()).c_str());
+      m_bareMetal = BareMetalMapper::GetBareMetalForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bareMetalNode.GetText()).c_str()));
       m_bareMetalHasBeenSet = true;
     }
     XmlNode burstablePerformanceNode = resultNode.FirstChild("burstablePerformance");
     if(!burstablePerformanceNode.IsNull())
     {
-      m_burstablePerformance = BurstablePerformanceMapper::GetBurstablePerformanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(burstablePerformanceNode.GetText()).c_str()).c_str());
+      m_burstablePerformance = BurstablePerformanceMapper::GetBurstablePerformanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(burstablePerformanceNode.GetText()).c_str()));
       m_burstablePerformanceHasBeenSet = true;
     }
     XmlNode requireHibernateSupportNode = resultNode.FirstChild("requireHibernateSupport");
@@ -161,13 +127,14 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     XmlNode localStorageNode = resultNode.FirstChild("localStorage");
     if(!localStorageNode.IsNull())
     {
-      m_localStorage = LocalStorageMapper::GetLocalStorageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localStorageNode.GetText()).c_str()).c_str());
+      m_localStorage = LocalStorageMapper::GetLocalStorageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localStorageNode.GetText()).c_str()));
       m_localStorageHasBeenSet = true;
     }
     XmlNode localStorageTypesNode = resultNode.FirstChild("localStorageTypeSet");
     if(!localStorageTypesNode.IsNull())
     {
       XmlNode localStorageTypesMember = localStorageTypesNode.FirstChild("item");
+      m_localStorageTypesHasBeenSet = !localStorageTypesMember.IsNull();
       while(!localStorageTypesMember.IsNull())
       {
         m_localStorageTypes.push_back(LocalStorageTypeMapper::GetLocalStorageTypeForName(StringUtils::Trim(localStorageTypesMember.GetText().c_str())));
@@ -192,6 +159,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!acceleratorTypesNode.IsNull())
     {
       XmlNode acceleratorTypesMember = acceleratorTypesNode.FirstChild("item");
+      m_acceleratorTypesHasBeenSet = !acceleratorTypesMember.IsNull();
       while(!acceleratorTypesMember.IsNull())
       {
         m_acceleratorTypes.push_back(AcceleratorTypeMapper::GetAcceleratorTypeForName(StringUtils::Trim(acceleratorTypesMember.GetText().c_str())));
@@ -210,6 +178,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!acceleratorManufacturersNode.IsNull())
     {
       XmlNode acceleratorManufacturersMember = acceleratorManufacturersNode.FirstChild("item");
+      m_acceleratorManufacturersHasBeenSet = !acceleratorManufacturersMember.IsNull();
       while(!acceleratorManufacturersMember.IsNull())
       {
         m_acceleratorManufacturers.push_back(AcceleratorManufacturerMapper::GetAcceleratorManufacturerForName(StringUtils::Trim(acceleratorManufacturersMember.GetText().c_str())));
@@ -222,6 +191,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!acceleratorNamesNode.IsNull())
     {
       XmlNode acceleratorNamesMember = acceleratorNamesNode.FirstChild("item");
+      m_acceleratorNamesHasBeenSet = !acceleratorNamesMember.IsNull();
       while(!acceleratorNamesMember.IsNull())
       {
         m_acceleratorNames.push_back(AcceleratorNameMapper::GetAcceleratorNameForName(StringUtils::Trim(acceleratorNamesMember.GetText().c_str())));
@@ -246,6 +216,7 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     if(!allowedInstanceTypesNode.IsNull())
     {
       XmlNode allowedInstanceTypesMember = allowedInstanceTypesNode.FirstChild("item");
+      m_allowedInstanceTypesHasBeenSet = !allowedInstanceTypesMember.IsNull();
       while(!allowedInstanceTypesMember.IsNull())
       {
         m_allowedInstanceTypes.push_back(allowedInstanceTypesMember.GetText());

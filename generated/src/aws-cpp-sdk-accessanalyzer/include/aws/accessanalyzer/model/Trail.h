@@ -33,7 +33,7 @@ namespace Model
   class Trail
   {
   public:
-    AWS_ACCESSANALYZER_API Trail();
+    AWS_ACCESSANALYZER_API Trail() = default;
     AWS_ACCESSANALYZER_API Trail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Specifies the ARN of the trail. The format of a trail ARN is
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
      */
-    inline const Aws::String& GetCloudTrailArn() const{ return m_cloudTrailArn; }
+    inline const Aws::String& GetCloudTrailArn() const { return m_cloudTrailArn; }
     inline bool CloudTrailArnHasBeenSet() const { return m_cloudTrailArnHasBeenSet; }
-    inline void SetCloudTrailArn(const Aws::String& value) { m_cloudTrailArnHasBeenSet = true; m_cloudTrailArn = value; }
-    inline void SetCloudTrailArn(Aws::String&& value) { m_cloudTrailArnHasBeenSet = true; m_cloudTrailArn = std::move(value); }
-    inline void SetCloudTrailArn(const char* value) { m_cloudTrailArnHasBeenSet = true; m_cloudTrailArn.assign(value); }
-    inline Trail& WithCloudTrailArn(const Aws::String& value) { SetCloudTrailArn(value); return *this;}
-    inline Trail& WithCloudTrailArn(Aws::String&& value) { SetCloudTrailArn(std::move(value)); return *this;}
-    inline Trail& WithCloudTrailArn(const char* value) { SetCloudTrailArn(value); return *this;}
+    template<typename CloudTrailArnT = Aws::String>
+    void SetCloudTrailArn(CloudTrailArnT&& value) { m_cloudTrailArnHasBeenSet = true; m_cloudTrailArn = std::forward<CloudTrailArnT>(value); }
+    template<typename CloudTrailArnT = Aws::String>
+    Trail& WithCloudTrailArn(CloudTrailArnT&& value) { SetCloudTrailArn(std::forward<CloudTrailArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>A list of regions to get CloudTrail data from and analyze to generate a
      * policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline Trail& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline Trail& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline Trail& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline Trail& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline Trail& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    Trail& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    Trail& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,7 +73,7 @@ namespace Model
      * <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all
      * regions to analyze and generate a policy.</p>
      */
-    inline bool GetAllRegions() const{ return m_allRegions; }
+    inline bool GetAllRegions() const { return m_allRegions; }
     inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
     inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
     inline Trail& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
@@ -89,7 +86,7 @@ namespace Model
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet = false;
 
-    bool m_allRegions;
+    bool m_allRegions{false};
     bool m_allRegionsHasBeenSet = false;
   };
 

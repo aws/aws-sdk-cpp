@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MetricPoint::MetricPoint() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 MetricPoint::MetricPoint(const XmlNode& xmlNode)
-  : MetricPoint()
 {
   *this = xmlNode;
 }

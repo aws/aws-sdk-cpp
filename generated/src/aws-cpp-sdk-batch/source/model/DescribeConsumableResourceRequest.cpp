@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConsumableResourceRequest::DescribeConsumableResourceRequest() : 
-    m_consumableResourceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConsumableResourceRequest::SerializePayload() const
 {
   JsonValue payload;

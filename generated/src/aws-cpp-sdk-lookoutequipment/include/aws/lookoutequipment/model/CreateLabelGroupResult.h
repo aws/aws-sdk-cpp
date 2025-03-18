@@ -27,7 +27,7 @@ namespace Model
   class CreateLabelGroupResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API CreateLabelGroupResult();
+    AWS_LOOKOUTEQUIPMENT_API CreateLabelGroupResult() = default;
     AWS_LOOKOUTEQUIPMENT_API CreateLabelGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API CreateLabelGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * be retained for service usage. Follow best practices for the security of your
      * data. </p>
      */
-    inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
-    inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupName = value; }
-    inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupName = std::move(value); }
-    inline void SetLabelGroupName(const char* value) { m_labelGroupName.assign(value); }
-    inline CreateLabelGroupResult& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
-    inline CreateLabelGroupResult& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
-    inline CreateLabelGroupResult& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
+    inline const Aws::String& GetLabelGroupName() const { return m_labelGroupName; }
+    template<typename LabelGroupNameT = Aws::String>
+    void SetLabelGroupName(LabelGroupNameT&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::forward<LabelGroupNameT>(value); }
+    template<typename LabelGroupNameT = Aws::String>
+    CreateLabelGroupResult& WithLabelGroupName(LabelGroupNameT&& value) { SetLabelGroupName(std::forward<LabelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      */
-    inline const Aws::String& GetLabelGroupArn() const{ return m_labelGroupArn; }
-    inline void SetLabelGroupArn(const Aws::String& value) { m_labelGroupArn = value; }
-    inline void SetLabelGroupArn(Aws::String&& value) { m_labelGroupArn = std::move(value); }
-    inline void SetLabelGroupArn(const char* value) { m_labelGroupArn.assign(value); }
-    inline CreateLabelGroupResult& WithLabelGroupArn(const Aws::String& value) { SetLabelGroupArn(value); return *this;}
-    inline CreateLabelGroupResult& WithLabelGroupArn(Aws::String&& value) { SetLabelGroupArn(std::move(value)); return *this;}
-    inline CreateLabelGroupResult& WithLabelGroupArn(const char* value) { SetLabelGroupArn(value); return *this;}
+    inline const Aws::String& GetLabelGroupArn() const { return m_labelGroupArn; }
+    template<typename LabelGroupArnT = Aws::String>
+    void SetLabelGroupArn(LabelGroupArnT&& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = std::forward<LabelGroupArnT>(value); }
+    template<typename LabelGroupArnT = Aws::String>
+    CreateLabelGroupResult& WithLabelGroupArn(LabelGroupArnT&& value) { SetLabelGroupArn(std::forward<LabelGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLabelGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLabelGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLabelGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLabelGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_labelGroupName;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::String m_labelGroupArn;
+    bool m_labelGroupArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

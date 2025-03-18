@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueueEnvironmentRequest::GetQueueEnvironmentRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_queueEnvironmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueueEnvironmentRequest::SerializePayload() const
 {
   return {};

@@ -12,19 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationsRequest::DescribeApplicationsRequest() : 
-    m_applicationIdsHasBeenSet(false),
-    m_computeTypeNamesHasBeenSet(false),
-    m_licenseType(WorkSpaceApplicationLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_operatingSystemNamesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

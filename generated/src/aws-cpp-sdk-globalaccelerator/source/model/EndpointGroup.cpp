@@ -18,27 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-EndpointGroup::EndpointGroup() : 
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_endpointDescriptionsHasBeenSet(false),
-    m_trafficDialPercentage(0.0),
-    m_trafficDialPercentageHasBeenSet(false),
-    m_healthCheckPort(0),
-    m_healthCheckPortHasBeenSet(false),
-    m_healthCheckProtocol(HealthCheckProtocol::NOT_SET),
-    m_healthCheckProtocolHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_healthCheckIntervalSeconds(0),
-    m_healthCheckIntervalSecondsHasBeenSet(false),
-    m_thresholdCount(0),
-    m_thresholdCountHasBeenSet(false),
-    m_portOverridesHasBeenSet(false)
-{
-}
-
 EndpointGroup::EndpointGroup(JsonView jsonValue)
-  : EndpointGroup()
 {
   *this = jsonValue;
 }
@@ -48,17 +28,13 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointGroupArn"))
   {
     m_endpointGroupArn = jsonValue.GetString("EndpointGroupArn");
-
     m_endpointGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupRegion"))
   {
     m_endpointGroupRegion = jsonValue.GetString("EndpointGroupRegion");
-
     m_endpointGroupRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointDescriptions"))
   {
     Aws::Utils::Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
@@ -68,49 +44,36 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
     }
     m_endpointDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficDialPercentage"))
   {
     m_trafficDialPercentage = jsonValue.GetDouble("TrafficDialPercentage");
-
     m_trafficDialPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckPort"))
   {
     m_healthCheckPort = jsonValue.GetInteger("HealthCheckPort");
-
     m_healthCheckPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckProtocol"))
   {
     m_healthCheckProtocol = HealthCheckProtocolMapper::GetHealthCheckProtocolForName(jsonValue.GetString("HealthCheckProtocol"));
-
     m_healthCheckProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckPath"))
   {
     m_healthCheckPath = jsonValue.GetString("HealthCheckPath");
-
     m_healthCheckPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckIntervalSeconds"))
   {
     m_healthCheckIntervalSeconds = jsonValue.GetInteger("HealthCheckIntervalSeconds");
-
     m_healthCheckIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdCount"))
   {
     m_thresholdCount = jsonValue.GetInteger("ThresholdCount");
-
     m_thresholdCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortOverrides"))
   {
     Aws::Utils::Array<JsonView> portOverridesJsonList = jsonValue.GetArray("PortOverrides");
@@ -120,7 +83,6 @@ EndpointGroup& EndpointGroup::operator =(JsonView jsonValue)
     }
     m_portOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

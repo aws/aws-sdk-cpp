@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBrandPublishedVersionRequest::UpdateBrandPublishedVersionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_brandIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBrandPublishedVersionRequest::SerializePayload() const
 {
   JsonValue payload;

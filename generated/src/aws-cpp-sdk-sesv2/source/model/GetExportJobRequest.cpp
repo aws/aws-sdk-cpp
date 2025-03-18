@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExportJobRequest::GetExportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetExportJobRequest::SerializePayload() const
 {
   return {};

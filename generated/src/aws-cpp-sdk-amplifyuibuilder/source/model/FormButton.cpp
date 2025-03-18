@@ -18,16 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FormButton::FormButton() : 
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 FormButton::FormButton(JsonView jsonValue)
-  : FormButton()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FormButton& FormButton::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("excluded"))
   {
     m_excluded = jsonValue.GetBool("excluded");
-
     m_excludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("children"))
   {
     m_children = jsonValue.GetString("children");
-
     m_childrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetObject("position");
-
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

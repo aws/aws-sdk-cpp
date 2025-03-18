@@ -37,7 +37,7 @@ namespace Model
   class ScheduledSplit
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplit();
+    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplit() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplit(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,15 +55,15 @@ namespace Model
      * this segment is not assigned by this segment override, and instead moves on to
      * the next segment override or the default traffic split.</p>
      */
-    inline const Aws::Map<Aws::String, long long>& GetGroupWeights() const{ return m_groupWeights; }
+    inline const Aws::Map<Aws::String, long long>& GetGroupWeights() const { return m_groupWeights; }
     inline bool GroupWeightsHasBeenSet() const { return m_groupWeightsHasBeenSet; }
-    inline void SetGroupWeights(const Aws::Map<Aws::String, long long>& value) { m_groupWeightsHasBeenSet = true; m_groupWeights = value; }
-    inline void SetGroupWeights(Aws::Map<Aws::String, long long>&& value) { m_groupWeightsHasBeenSet = true; m_groupWeights = std::move(value); }
-    inline ScheduledSplit& WithGroupWeights(const Aws::Map<Aws::String, long long>& value) { SetGroupWeights(value); return *this;}
-    inline ScheduledSplit& WithGroupWeights(Aws::Map<Aws::String, long long>&& value) { SetGroupWeights(std::move(value)); return *this;}
-    inline ScheduledSplit& AddGroupWeights(const Aws::String& key, long long value) { m_groupWeightsHasBeenSet = true; m_groupWeights.emplace(key, value); return *this; }
-    inline ScheduledSplit& AddGroupWeights(Aws::String&& key, long long value) { m_groupWeightsHasBeenSet = true; m_groupWeights.emplace(std::move(key), value); return *this; }
-    inline ScheduledSplit& AddGroupWeights(const char* key, long long value) { m_groupWeightsHasBeenSet = true; m_groupWeights.emplace(key, value); return *this; }
+    template<typename GroupWeightsT = Aws::Map<Aws::String, long long>>
+    void SetGroupWeights(GroupWeightsT&& value) { m_groupWeightsHasBeenSet = true; m_groupWeights = std::forward<GroupWeightsT>(value); }
+    template<typename GroupWeightsT = Aws::Map<Aws::String, long long>>
+    ScheduledSplit& WithGroupWeights(GroupWeightsT&& value) { SetGroupWeights(std::forward<GroupWeightsT>(value)); return *this;}
+    inline ScheduledSplit& AddGroupWeights(Aws::String key, long long value) {
+      m_groupWeightsHasBeenSet = true; m_groupWeights.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -76,26 +76,26 @@ namespace Model
      * six segment override objects. Each of these objects specifies a segment that you
      * have already created, and defines the traffic split for that segment.</p>
      */
-    inline const Aws::Vector<SegmentOverride>& GetSegmentOverrides() const{ return m_segmentOverrides; }
+    inline const Aws::Vector<SegmentOverride>& GetSegmentOverrides() const { return m_segmentOverrides; }
     inline bool SegmentOverridesHasBeenSet() const { return m_segmentOverridesHasBeenSet; }
-    inline void SetSegmentOverrides(const Aws::Vector<SegmentOverride>& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides = value; }
-    inline void SetSegmentOverrides(Aws::Vector<SegmentOverride>&& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides = std::move(value); }
-    inline ScheduledSplit& WithSegmentOverrides(const Aws::Vector<SegmentOverride>& value) { SetSegmentOverrides(value); return *this;}
-    inline ScheduledSplit& WithSegmentOverrides(Aws::Vector<SegmentOverride>&& value) { SetSegmentOverrides(std::move(value)); return *this;}
-    inline ScheduledSplit& AddSegmentOverrides(const SegmentOverride& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides.push_back(value); return *this; }
-    inline ScheduledSplit& AddSegmentOverrides(SegmentOverride&& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides.push_back(std::move(value)); return *this; }
+    template<typename SegmentOverridesT = Aws::Vector<SegmentOverride>>
+    void SetSegmentOverrides(SegmentOverridesT&& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides = std::forward<SegmentOverridesT>(value); }
+    template<typename SegmentOverridesT = Aws::Vector<SegmentOverride>>
+    ScheduledSplit& WithSegmentOverrides(SegmentOverridesT&& value) { SetSegmentOverrides(std::forward<SegmentOverridesT>(value)); return *this;}
+    template<typename SegmentOverridesT = SegmentOverride>
+    ScheduledSplit& AddSegmentOverrides(SegmentOverridesT&& value) { m_segmentOverridesHasBeenSet = true; m_segmentOverrides.emplace_back(std::forward<SegmentOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time that this step of the launch starts.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ScheduledSplit& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ScheduledSplit& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ScheduledSplit& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +105,7 @@ namespace Model
     Aws::Vector<SegmentOverride> m_segmentOverrides;
     bool m_segmentOverridesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

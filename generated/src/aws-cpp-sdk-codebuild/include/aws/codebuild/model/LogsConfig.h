@@ -33,7 +33,7 @@ namespace Model
   class LogsConfig
   {
   public:
-    AWS_CODEBUILD_API LogsConfig();
+    AWS_CODEBUILD_API LogsConfig() = default;
     AWS_CODEBUILD_API LogsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API LogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are
      * enabled by default. </p>
      */
-    inline const CloudWatchLogsConfig& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const CloudWatchLogsConfig& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const CloudWatchLogsConfig& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(CloudWatchLogsConfig&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline LogsConfig& WithCloudWatchLogs(const CloudWatchLogsConfig& value) { SetCloudWatchLogs(value); return *this;}
-    inline LogsConfig& WithCloudWatchLogs(CloudWatchLogsConfig&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = CloudWatchLogsConfig>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = CloudWatchLogsConfig>
+    LogsConfig& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p> Information about logs built to an S3 bucket for a build project. S3 logs
      * are not enabled by default. </p>
      */
-    inline const S3LogsConfig& GetS3Logs() const{ return m_s3Logs; }
+    inline const S3LogsConfig& GetS3Logs() const { return m_s3Logs; }
     inline bool S3LogsHasBeenSet() const { return m_s3LogsHasBeenSet; }
-    inline void SetS3Logs(const S3LogsConfig& value) { m_s3LogsHasBeenSet = true; m_s3Logs = value; }
-    inline void SetS3Logs(S3LogsConfig&& value) { m_s3LogsHasBeenSet = true; m_s3Logs = std::move(value); }
-    inline LogsConfig& WithS3Logs(const S3LogsConfig& value) { SetS3Logs(value); return *this;}
-    inline LogsConfig& WithS3Logs(S3LogsConfig&& value) { SetS3Logs(std::move(value)); return *this;}
+    template<typename S3LogsT = S3LogsConfig>
+    void SetS3Logs(S3LogsT&& value) { m_s3LogsHasBeenSet = true; m_s3Logs = std::forward<S3LogsT>(value); }
+    template<typename S3LogsT = S3LogsConfig>
+    LogsConfig& WithS3Logs(S3LogsT&& value) { SetS3Logs(std::forward<S3LogsT>(value)); return *this;}
     ///@}
   private:
 

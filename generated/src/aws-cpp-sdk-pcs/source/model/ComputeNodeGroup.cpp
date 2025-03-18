@@ -18,31 +18,7 @@ namespace PCS
 namespace Model
 {
 
-ComputeNodeGroup::ComputeNodeGroup() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_status(ComputeNodeGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_purchaseOption(PurchaseOption::NOT_SET),
-    m_purchaseOptionHasBeenSet(false),
-    m_customLaunchTemplateHasBeenSet(false),
-    m_iamInstanceProfileArnHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_instanceConfigsHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false),
-    m_slurmConfigurationHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 ComputeNodeGroup::ComputeNodeGroup(JsonView jsonValue)
-  : ComputeNodeGroup()
 {
   *this = jsonValue;
 }
@@ -52,59 +28,43 @@ ComputeNodeGroup& ComputeNodeGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ComputeNodeGroupStatusMapper::GetComputeNodeGroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiId"))
   {
     m_amiId = jsonValue.GetString("amiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -114,35 +74,26 @@ ComputeNodeGroup& ComputeNodeGroup::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("purchaseOption"))
   {
     m_purchaseOption = PurchaseOptionMapper::GetPurchaseOptionForName(jsonValue.GetString("purchaseOption"));
-
     m_purchaseOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customLaunchTemplate"))
   {
     m_customLaunchTemplate = jsonValue.GetObject("customLaunchTemplate");
-
     m_customLaunchTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamInstanceProfileArn"))
   {
     m_iamInstanceProfileArn = jsonValue.GetString("iamInstanceProfileArn");
-
     m_iamInstanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingConfiguration"))
   {
     m_scalingConfiguration = jsonValue.GetObject("scalingConfiguration");
-
     m_scalingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceConfigs"))
   {
     Aws::Utils::Array<JsonView> instanceConfigsJsonList = jsonValue.GetArray("instanceConfigs");
@@ -152,21 +103,16 @@ ComputeNodeGroup& ComputeNodeGroup::operator =(JsonView jsonValue)
     }
     m_instanceConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spotOptions"))
   {
     m_spotOptions = jsonValue.GetObject("spotOptions");
-
     m_spotOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slurmConfiguration"))
   {
     m_slurmConfiguration = jsonValue.GetObject("slurmConfiguration");
-
     m_slurmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
@@ -176,7 +122,6 @@ ComputeNodeGroup& ComputeNodeGroup::operator =(JsonView jsonValue)
     }
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

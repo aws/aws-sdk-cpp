@@ -18,16 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-AuditLogProcessingConfiguration::AuditLogProcessingConfiguration() : 
-    m_schema(Schema::NOT_SET),
-    m_schemaHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 AuditLogProcessingConfiguration::AuditLogProcessingConfiguration(JsonView jsonValue)
-  : AuditLogProcessingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AuditLogProcessingConfiguration& AuditLogProcessingConfiguration::operator =(Jso
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = SchemaMapper::GetSchemaForName(jsonValue.GetString("schema"));
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

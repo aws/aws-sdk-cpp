@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeScalingProcessTypesRequest::DescribeScalingProcessTypesRequest()
-{
-}
-
 Aws::String DescribeScalingProcessTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

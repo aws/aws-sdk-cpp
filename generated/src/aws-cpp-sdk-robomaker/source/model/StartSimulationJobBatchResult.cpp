@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSimulationJobBatchResult::StartSimulationJobBatchResult() : 
-    m_status(SimulationJobBatchStatus::NOT_SET),
-    m_failureCode(SimulationJobBatchErrorCode::NOT_SET)
-{
-}
-
 StartSimulationJobBatchResult::StartSimulationJobBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartSimulationJobBatchResult()
 {
   *this = result;
 }
@@ -35,45 +28,38 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SimulationJobBatchStatusMapper::GetSimulationJobBatchStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
+    m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchPolicy"))
   {
     m_batchPolicy = jsonValue.GetObject("batchPolicy");
-
+    m_batchPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = SimulationJobBatchErrorCodeMapper::GetSimulationJobBatchErrorCodeForName(jsonValue.GetString("failureCode"));
-
+    m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedRequests"))
   {
     Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
@@ -81,8 +67,8 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
     }
+    m_failedRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingRequests"))
   {
     Aws::Utils::Array<JsonView> pendingRequestsJsonList = jsonValue.GetArray("pendingRequests");
@@ -90,8 +76,8 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
     {
       m_pendingRequests.push_back(pendingRequestsJsonList[pendingRequestsIndex].AsObject());
     }
+    m_pendingRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdRequests"))
   {
     Aws::Utils::Array<JsonView> createdRequestsJsonList = jsonValue.GetArray("createdRequests");
@@ -99,8 +85,8 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
     {
       m_createdRequests.push_back(createdRequestsJsonList[createdRequestsIndex].AsObject());
     }
+    m_createdRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -108,14 +94,15 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

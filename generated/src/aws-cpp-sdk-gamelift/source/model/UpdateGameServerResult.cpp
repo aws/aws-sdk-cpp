@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGameServerResult::UpdateGameServerResult()
-{
-}
-
 UpdateGameServerResult::UpdateGameServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateGameServerResult& UpdateGameServerResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("GameServer"))
   {
     m_gameServer = jsonValue.GetObject("GameServer");
-
+    m_gameServerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

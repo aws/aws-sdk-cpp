@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DisableAvailabilityZonesForLoadBalancerRequest::DisableAvailabilityZonesForLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 Aws::String DisableAvailabilityZonesForLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

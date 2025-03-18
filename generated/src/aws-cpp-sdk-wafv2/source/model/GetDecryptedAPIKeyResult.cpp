@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDecryptedAPIKeyResult::GetDecryptedAPIKeyResult()
-{
-}
-
 GetDecryptedAPIKeyResult::GetDecryptedAPIKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetDecryptedAPIKeyResult& GetDecryptedAPIKeyResult::operator =(const Aws::Amazon
     {
       m_tokenDomains.push_back(tokenDomainsJsonList[tokenDomainsIndex].AsString());
     }
+    m_tokenDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
+    m_creationTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

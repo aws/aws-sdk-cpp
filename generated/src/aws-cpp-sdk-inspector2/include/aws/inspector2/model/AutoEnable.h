@@ -30,7 +30,7 @@ namespace Model
   class AutoEnable
   {
   public:
-    AWS_INSPECTOR2_API AutoEnable();
+    AWS_INSPECTOR2_API AutoEnable() = default;
     AWS_INSPECTOR2_API AutoEnable(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API AutoEnable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Represents whether Amazon EC2 scans are automatically enabled for new members
      * of your Amazon Inspector organization.</p>
      */
-    inline bool GetEc2() const{ return m_ec2; }
+    inline bool GetEc2() const { return m_ec2; }
     inline bool Ec2HasBeenSet() const { return m_ec2HasBeenSet; }
     inline void SetEc2(bool value) { m_ec2HasBeenSet = true; m_ec2 = value; }
     inline AutoEnable& WithEc2(bool value) { SetEc2(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p>Represents whether Amazon ECR scans are automatically enabled for new members
      * of your Amazon Inspector organization.</p>
      */
-    inline bool GetEcr() const{ return m_ecr; }
+    inline bool GetEcr() const { return m_ecr; }
     inline bool EcrHasBeenSet() const { return m_ecrHasBeenSet; }
     inline void SetEcr(bool value) { m_ecrHasBeenSet = true; m_ecr = value; }
     inline AutoEnable& WithEcr(bool value) { SetEcr(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * automatically enabled for new members of your Amazon Inspector organization.
      * </p>
      */
-    inline bool GetLambda() const{ return m_lambda; }
+    inline bool GetLambda() const { return m_lambda; }
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
     inline void SetLambda(bool value) { m_lambdaHasBeenSet = true; m_lambda = value; }
     inline AutoEnable& WithLambda(bool value) { SetLambda(value); return *this;}
@@ -76,23 +76,23 @@ namespace Model
      * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
-    inline bool GetLambdaCode() const{ return m_lambdaCode; }
+    inline bool GetLambdaCode() const { return m_lambdaCode; }
     inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
     inline void SetLambdaCode(bool value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
     inline AutoEnable& WithLambdaCode(bool value) { SetLambdaCode(value); return *this;}
     ///@}
   private:
 
-    bool m_ec2;
+    bool m_ec2{false};
     bool m_ec2HasBeenSet = false;
 
-    bool m_ecr;
+    bool m_ecr{false};
     bool m_ecrHasBeenSet = false;
 
-    bool m_lambda;
+    bool m_lambda{false};
     bool m_lambdaHasBeenSet = false;
 
-    bool m_lambdaCode;
+    bool m_lambdaCode{false};
     bool m_lambdaCodeHasBeenSet = false;
   };
 

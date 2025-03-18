@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsInferenceAcceleratorOverride::EcsInferenceAcceleratorOverride() : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
-{
-}
-
 EcsInferenceAcceleratorOverride::EcsInferenceAcceleratorOverride(JsonView jsonValue)
-  : EcsInferenceAcceleratorOverride()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EcsInferenceAcceleratorOverride& EcsInferenceAcceleratorOverride::operator =(Jso
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = jsonValue.GetString("deviceType");
-
     m_deviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-AudioConcatenationConfiguration::AudioConcatenationConfiguration() : 
-    m_state(AudioArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AudioConcatenationConfiguration::AudioConcatenationConfiguration(JsonView jsonValue)
-  : AudioConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudioConcatenationConfiguration& AudioConcatenationConfiguration::operator =(Jso
   if(jsonValue.ValueExists("State"))
   {
     m_state = AudioArtifactsConcatenationStateMapper::GetAudioArtifactsConcatenationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,21 +13,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationObjectStorageRequest::UpdateLocationObjectStorageRequest() : 
-    m_locationArnHasBeenSet(false),
-    m_serverPort(0),
-    m_serverPortHasBeenSet(false),
-    m_serverProtocol(ObjectStorageServerProtocol::NOT_SET),
-    m_serverProtocolHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_serverHostnameHasBeenSet(false),
-    m_accessKeyHasBeenSet(false),
-    m_secretKeyHasBeenSet(false),
-    m_agentArnsHasBeenSet(false),
-    m_serverCertificateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationObjectStorageRequest::SerializePayload() const
 {
   JsonValue payload;

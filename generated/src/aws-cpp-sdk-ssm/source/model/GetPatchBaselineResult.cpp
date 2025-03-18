@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPatchBaselineResult::GetPatchBaselineResult() : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET)
-{
-}
-
 GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPatchBaselineResult()
 {
   *this = result;
 }
@@ -37,33 +28,28 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");
-
+    m_baselineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
+    m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalFilters"))
   {
     m_globalFilters = jsonValue.GetObject("GlobalFilters");
-
+    m_globalFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovalRules"))
   {
     m_approvalRules = jsonValue.GetObject("ApprovalRules");
-
+    m_approvalRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatches"))
   {
     Aws::Utils::Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
@@ -71,20 +57,18 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     {
       m_approvedPatches.push_back(approvedPatchesJsonList[approvedPatchesIndex].AsString());
     }
+    m_approvedPatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatchesComplianceLevel"))
   {
     m_approvedPatchesComplianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ApprovedPatchesComplianceLevel"));
-
+    m_approvedPatchesComplianceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatchesEnableNonSecurity"))
   {
     m_approvedPatchesEnableNonSecurity = jsonValue.GetBool("ApprovedPatchesEnableNonSecurity");
-
+    m_approvedPatchesEnableNonSecurityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectedPatches"))
   {
     Aws::Utils::Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
@@ -92,14 +76,13 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     {
       m_rejectedPatches.push_back(rejectedPatchesJsonList[rejectedPatchesIndex].AsString());
     }
+    m_rejectedPatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectedPatchesAction"))
   {
     m_rejectedPatchesAction = PatchActionMapper::GetPatchActionForName(jsonValue.GetString("RejectedPatchesAction"));
-
+    m_rejectedPatchesActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PatchGroups"))
   {
     Aws::Utils::Array<JsonView> patchGroupsJsonList = jsonValue.GetArray("PatchGroups");
@@ -107,26 +90,23 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     {
       m_patchGroups.push_back(patchGroupsJsonList[patchGroupsIndex].AsString());
     }
+    m_patchGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedDate"))
   {
     m_modifiedDate = jsonValue.GetDouble("ModifiedDate");
-
+    m_modifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
@@ -134,14 +114,15 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
+    m_sourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

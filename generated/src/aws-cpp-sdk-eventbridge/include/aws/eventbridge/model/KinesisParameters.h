@@ -35,7 +35,7 @@ namespace Model
   class KinesisParameters
   {
   public:
-    AWS_EVENTBRIDGE_API KinesisParameters();
+    AWS_EVENTBRIDGE_API KinesisParameters() = default;
     AWS_EVENTBRIDGE_API KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPartitionKeyPath() const{ return m_partitionKeyPath; }
+    inline const Aws::String& GetPartitionKeyPath() const { return m_partitionKeyPath; }
     inline bool PartitionKeyPathHasBeenSet() const { return m_partitionKeyPathHasBeenSet; }
-    inline void SetPartitionKeyPath(const Aws::String& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = value; }
-    inline void SetPartitionKeyPath(Aws::String&& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = std::move(value); }
-    inline void SetPartitionKeyPath(const char* value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath.assign(value); }
-    inline KinesisParameters& WithPartitionKeyPath(const Aws::String& value) { SetPartitionKeyPath(value); return *this;}
-    inline KinesisParameters& WithPartitionKeyPath(Aws::String&& value) { SetPartitionKeyPath(std::move(value)); return *this;}
-    inline KinesisParameters& WithPartitionKeyPath(const char* value) { SetPartitionKeyPath(value); return *this;}
+    template<typename PartitionKeyPathT = Aws::String>
+    void SetPartitionKeyPath(PartitionKeyPathT&& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = std::forward<PartitionKeyPathT>(value); }
+    template<typename PartitionKeyPathT = Aws::String>
+    KinesisParameters& WithPartitionKeyPath(PartitionKeyPathT&& value) { SetPartitionKeyPath(std::forward<PartitionKeyPathT>(value)); return *this;}
     ///@}
   private:
 

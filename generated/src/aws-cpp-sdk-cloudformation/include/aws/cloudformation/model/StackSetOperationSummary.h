@@ -37,7 +37,7 @@ namespace Model
   class StackSetOperationSummary
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetOperationSummary();
+    AWS_CLOUDFORMATION_API StackSetOperationSummary() = default;
     AWS_CLOUDFORMATION_API StackSetOperationSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetOperationSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The unique ID of the stack set operation.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-    inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-    inline StackSetOperationSummary& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline StackSetOperationSummary& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline StackSetOperationSummary& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    StackSetOperationSummary& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * operations affect both the stack set itself and <i>all</i> associated stack set
      * instances.</p>
      */
-    inline const StackSetOperationAction& GetAction() const{ return m_action; }
+    inline StackSetOperationAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const StackSetOperationAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(StackSetOperationAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline StackSetOperationSummary& WithAction(const StackSetOperationAction& value) { SetAction(value); return *this;}
-    inline StackSetOperationSummary& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(StackSetOperationAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline StackSetOperationSummary& WithAction(StackSetOperationAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,10 @@ namespace Model
      * The operation completed creating or updating all the specified stacks without
      * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
-    inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
+    inline StackSetOperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StackSetOperationSummary& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
-    inline StackSetOperationSummary& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StackSetOperationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StackSetOperationSummary& WithStatus(StackSetOperationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +106,12 @@ namespace Model
      * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-    inline StackSetOperationSummary& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline StackSetOperationSummary& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    StackSetOperationSummary& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,38 +120,36 @@ namespace Model
      * Regions specified. Note that this doesn't necessarily mean that the stack set
      * operation was successful, or even attempted, in each account or Region.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
+    inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
-    inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
-    inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
-    inline StackSetOperationSummary& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
-    inline StackSetOperationSummary& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    void SetEndTimestamp(EndTimestampT&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::forward<EndTimestampT>(value); }
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    StackSetOperationSummary& WithEndTimestamp(EndTimestampT&& value) { SetEndTimestamp(std::forward<EndTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the operation in details.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline StackSetOperationSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline StackSetOperationSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline StackSetOperationSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    StackSetOperationSummary& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the stack set operation.</p>
      */
-    inline const StackSetOperationStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+    inline const StackSetOperationStatusDetails& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const StackSetOperationStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(StackSetOperationStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline StackSetOperationSummary& WithStatusDetails(const StackSetOperationStatusDetails& value) { SetStatusDetails(value); return *this;}
-    inline StackSetOperationSummary& WithStatusDetails(StackSetOperationStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+    template<typename StatusDetailsT = StackSetOperationStatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StackSetOperationStatusDetails>
+    StackSetOperationSummary& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,28 +160,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
      * set operation options</a>.</p>
      */
-    inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
+    inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
-    inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
-    inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
-    inline StackSetOperationSummary& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
-    inline StackSetOperationSummary& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    void SetOperationPreferences(OperationPreferencesT&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::forward<OperationPreferencesT>(value); }
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    StackSetOperationSummary& WithOperationPreferences(OperationPreferencesT&& value) { SetOperationPreferences(std::forward<OperationPreferencesT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet = false;
 
-    StackSetOperationAction m_action;
+    StackSetOperationAction m_action{StackSetOperationAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    StackSetOperationStatus m_status;
+    StackSetOperationStatus m_status{StackSetOperationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
     bool m_creationTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimestamp;
+    Aws::Utils::DateTime m_endTimestamp{};
     bool m_endTimestampHasBeenSet = false;
 
     Aws::String m_statusReason;

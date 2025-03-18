@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-DeploymentCircuitBreaker::DeploymentCircuitBreaker() : 
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_rollback(false),
-    m_rollbackHasBeenSet(false)
-{
-}
-
 DeploymentCircuitBreaker::DeploymentCircuitBreaker(JsonView jsonValue)
-  : DeploymentCircuitBreaker()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DeploymentCircuitBreaker& DeploymentCircuitBreaker::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("enable"))
   {
     m_enable = jsonValue.GetBool("enable");
-
     m_enableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollback"))
   {
     m_rollback = jsonValue.GetBool("rollback");
-
     m_rollbackHasBeenSet = true;
   }
-
   return *this;
 }
 

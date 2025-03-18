@@ -25,7 +25,7 @@ namespace Model
   class UpdateResourcePolicyRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API UpdateResourcePolicyRequest();
+    AWS_LEXMODELSV2_API UpdateResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource
      * policy is attached to.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline UpdateResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UpdateResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UpdateResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UpdateResourcePolicyRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * IAM JSON policy reference </a>. </p> <p>If the policy isn't valid, Amazon Lex
      * returns a validation exception.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline UpdateResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline UpdateResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline UpdateResourcePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    UpdateResourcePolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * you don't specify a revision, Amazon Lex overwrites the contents of the policy
      * with the new values.</p>
      */
-    inline const Aws::String& GetExpectedRevisionId() const{ return m_expectedRevisionId; }
+    inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
     inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }
-    inline void SetExpectedRevisionId(const Aws::String& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = value; }
-    inline void SetExpectedRevisionId(Aws::String&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::move(value); }
-    inline void SetExpectedRevisionId(const char* value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId.assign(value); }
-    inline UpdateResourcePolicyRequest& WithExpectedRevisionId(const Aws::String& value) { SetExpectedRevisionId(value); return *this;}
-    inline UpdateResourcePolicyRequest& WithExpectedRevisionId(Aws::String&& value) { SetExpectedRevisionId(std::move(value)); return *this;}
-    inline UpdateResourcePolicyRequest& WithExpectedRevisionId(const char* value) { SetExpectedRevisionId(value); return *this;}
+    template<typename ExpectedRevisionIdT = Aws::String>
+    void SetExpectedRevisionId(ExpectedRevisionIdT&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::forward<ExpectedRevisionIdT>(value); }
+    template<typename ExpectedRevisionIdT = Aws::String>
+    UpdateResourcePolicyRequest& WithExpectedRevisionId(ExpectedRevisionIdT&& value) { SetExpectedRevisionId(std::forward<ExpectedRevisionIdT>(value)); return *this;}
     ///@}
   private:
 

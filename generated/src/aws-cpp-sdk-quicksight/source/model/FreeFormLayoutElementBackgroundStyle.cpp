@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FreeFormLayoutElementBackgroundStyle::FreeFormLayoutElementBackgroundStyle() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 FreeFormLayoutElementBackgroundStyle::FreeFormLayoutElementBackgroundStyle(JsonView jsonValue)
-  : FreeFormLayoutElementBackgroundStyle()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FreeFormLayoutElementBackgroundStyle& FreeFormLayoutElementBackgroundStyle::oper
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

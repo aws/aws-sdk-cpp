@@ -18,38 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceDetails::AwsEcsServiceDetails() : 
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_clusterHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_deploymentControllerHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_enableEcsManagedTags(false),
-    m_enableEcsManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false),
-    m_launchTypeHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategiesHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_propagateTagsHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_schedulingStrategyHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
-{
-}
-
 AwsEcsServiceDetails::AwsEcsServiceDetails(JsonView jsonValue)
-  : AwsEcsServiceDetails()
 {
   *this = jsonValue;
 }
@@ -65,63 +34,46 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cluster"))
   {
     m_cluster = jsonValue.GetString("Cluster");
-
     m_clusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentConfiguration"))
   {
     m_deploymentConfiguration = jsonValue.GetObject("DeploymentConfiguration");
-
     m_deploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentController"))
   {
     m_deploymentController = jsonValue.GetObject("DeploymentController");
-
     m_deploymentControllerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredCount"))
   {
     m_desiredCount = jsonValue.GetInteger("DesiredCount");
-
     m_desiredCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableEcsManagedTags"))
   {
     m_enableEcsManagedTags = jsonValue.GetBool("EnableEcsManagedTags");
-
     m_enableEcsManagedTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableExecuteCommand"))
   {
     m_enableExecuteCommand = jsonValue.GetBool("EnableExecuteCommand");
-
     m_enableExecuteCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckGracePeriodSeconds"))
   {
     m_healthCheckGracePeriodSeconds = jsonValue.GetInteger("HealthCheckGracePeriodSeconds");
-
     m_healthCheckGracePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchType"))
   {
     m_launchType = jsonValue.GetString("LaunchType");
-
     m_launchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadBalancers"))
   {
     Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("LoadBalancers");
@@ -131,21 +83,16 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
     }
     m_loadBalancersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
@@ -155,7 +102,6 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
     }
     m_placementConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementStrategies"))
   {
     Aws::Utils::Array<JsonView> placementStrategiesJsonList = jsonValue.GetArray("PlacementStrategies");
@@ -165,49 +111,36 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
     }
     m_placementStrategiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformVersion"))
   {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropagateTags"))
   {
     m_propagateTags = jsonValue.GetString("PropagateTags");
-
     m_propagateTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchedulingStrategy"))
   {
     m_schedulingStrategy = jsonValue.GetString("SchedulingStrategy");
-
     m_schedulingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRegistries"))
   {
     Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("ServiceRegistries");
@@ -217,14 +150,11 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
     }
     m_serviceRegistriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskDefinition"))
   {
     m_taskDefinition = jsonValue.GetString("TaskDefinition");
-
     m_taskDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

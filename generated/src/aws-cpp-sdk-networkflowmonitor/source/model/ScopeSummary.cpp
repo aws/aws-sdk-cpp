@@ -18,16 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-ScopeSummary::ScopeSummary() : 
-    m_scopeIdHasBeenSet(false),
-    m_status(ScopeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_scopeArnHasBeenSet(false)
-{
-}
-
 ScopeSummary::ScopeSummary(JsonView jsonValue)
-  : ScopeSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ScopeSummary& ScopeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scopeId"))
   {
     m_scopeId = jsonValue.GetString("scopeId");
-
     m_scopeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ScopeStatusMapper::GetScopeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scopeArn"))
   {
     m_scopeArn = jsonValue.GetString("scopeArn");
-
     m_scopeArnHasBeenSet = true;
   }
-
   return *this;
 }
 

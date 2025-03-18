@@ -33,7 +33,7 @@ namespace Model
   class PartnerIntegrationInfo
   {
   public:
-    AWS_REDSHIFT_API PartnerIntegrationInfo();
+    AWS_REDSHIFT_API PartnerIntegrationInfo() = default;
     AWS_REDSHIFT_API PartnerIntegrationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API PartnerIntegrationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,66 +45,58 @@ namespace Model
     /**
      * <p>The name of the database that receives data from a partner.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline PartnerIntegrationInfo& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline PartnerIntegrationInfo& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline PartnerIntegrationInfo& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    PartnerIntegrationInfo& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the partner.</p>
      */
-    inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
+    inline const Aws::String& GetPartnerName() const { return m_partnerName; }
     inline bool PartnerNameHasBeenSet() const { return m_partnerNameHasBeenSet; }
-    inline void SetPartnerName(const Aws::String& value) { m_partnerNameHasBeenSet = true; m_partnerName = value; }
-    inline void SetPartnerName(Aws::String&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::move(value); }
-    inline void SetPartnerName(const char* value) { m_partnerNameHasBeenSet = true; m_partnerName.assign(value); }
-    inline PartnerIntegrationInfo& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
-    inline PartnerIntegrationInfo& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
-    inline PartnerIntegrationInfo& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
+    template<typename PartnerNameT = Aws::String>
+    void SetPartnerName(PartnerNameT&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::forward<PartnerNameT>(value); }
+    template<typename PartnerNameT = Aws::String>
+    PartnerIntegrationInfo& WithPartnerName(PartnerNameT&& value) { SetPartnerName(std::forward<PartnerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The partner integration status.</p>
      */
-    inline const PartnerIntegrationStatus& GetStatus() const{ return m_status; }
+    inline PartnerIntegrationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PartnerIntegrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PartnerIntegrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PartnerIntegrationInfo& WithStatus(const PartnerIntegrationStatus& value) { SetStatus(value); return *this;}
-    inline PartnerIntegrationInfo& WithStatus(PartnerIntegrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PartnerIntegrationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PartnerIntegrationInfo& WithStatus(PartnerIntegrationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message provided by the partner.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline PartnerIntegrationInfo& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline PartnerIntegrationInfo& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline PartnerIntegrationInfo& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    PartnerIntegrationInfo& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date (UTC) that the partner integration was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline PartnerIntegrationInfo& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline PartnerIntegrationInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    PartnerIntegrationInfo& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +104,12 @@ namespace Model
      * <p>The date (UTC) that the partner integration status was last updated by the
      * partner.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline PartnerIntegrationInfo& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline PartnerIntegrationInfo& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    PartnerIntegrationInfo& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -127,16 +119,16 @@ namespace Model
     Aws::String m_partnerName;
     bool m_partnerNameHasBeenSet = false;
 
-    PartnerIntegrationStatus m_status;
+    PartnerIntegrationStatus m_status{PartnerIntegrationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

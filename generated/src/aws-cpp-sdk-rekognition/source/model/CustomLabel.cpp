@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CustomLabel::CustomLabel() : 
-    m_nameHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_geometryHasBeenSet(false)
-{
-}
-
 CustomLabel::CustomLabel(JsonView jsonValue)
-  : CustomLabel()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomLabel& CustomLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   return *this;
 }
 

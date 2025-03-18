@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVerifiedAccessEndpointTargetsResponse::GetVerifiedAccessEndpointTargetsResponse()
-{
-}
-
 GetVerifiedAccessEndpointTargetsResponse::GetVerifiedAccessEndpointTargetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetVerifiedAccessEndpointTargetsResponse& GetVerifiedAccessEndpointTargetsRespon
     if(!verifiedAccessEndpointTargetsNode.IsNull())
     {
       XmlNode verifiedAccessEndpointTargetsMember = verifiedAccessEndpointTargetsNode.FirstChild("item");
+      m_verifiedAccessEndpointTargetsHasBeenSet = !verifiedAccessEndpointTargetsMember.IsNull();
       while(!verifiedAccessEndpointTargetsMember.IsNull())
       {
         m_verifiedAccessEndpointTargets.push_back(verifiedAccessEndpointTargetsMember);
         verifiedAccessEndpointTargetsMember = verifiedAccessEndpointTargetsMember.NextNode("item");
       }
 
+      m_verifiedAccessEndpointTargetsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetVerifiedAccessEndpointTargetsResponse& GetVerifiedAccessEndpointTargetsRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetVerifiedAccessEndpointTargetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

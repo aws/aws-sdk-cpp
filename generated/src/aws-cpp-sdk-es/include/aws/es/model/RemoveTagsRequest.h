@@ -27,7 +27,7 @@ namespace Model
   class RemoveTagsRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API RemoveTagsRequest();
+    AWS_ELASTICSEARCHSERVICE_API RemoveTagsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
      * want to delete the specified tags.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline RemoveTagsRequest& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline RemoveTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline RemoveTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    RemoveTagsRequest& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * <p>Specifies the <code>TagKey</code> list which you want to remove from the
      * Elasticsearch domain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+    inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-    inline RemoveTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-    inline RemoveTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-    inline RemoveTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-    inline RemoveTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-    inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    template<typename TagKeysT = Aws::Vector<Aws::String>>
+    void SetTagKeys(TagKeysT&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::forward<TagKeysT>(value); }
+    template<typename TagKeysT = Aws::Vector<Aws::String>>
+    RemoveTagsRequest& WithTagKeys(TagKeysT&& value) { SetTagKeys(std::forward<TagKeysT>(value)); return *this;}
+    template<typename TagKeysT = Aws::String>
+    RemoveTagsRequest& AddTagKeys(TagKeysT&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.emplace_back(std::forward<TagKeysT>(value)); return *this; }
     ///@}
   private:
 

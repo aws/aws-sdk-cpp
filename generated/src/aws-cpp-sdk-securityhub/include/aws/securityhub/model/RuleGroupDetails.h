@@ -32,7 +32,7 @@ namespace Model
   class RuleGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupDetails();
+    AWS_SECURITYHUB_API RuleGroupDetails() = default;
     AWS_SECURITYHUB_API RuleGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Additional settings to use in the specified rules.</p>
      */
-    inline const RuleGroupVariables& GetRuleVariables() const{ return m_ruleVariables; }
+    inline const RuleGroupVariables& GetRuleVariables() const { return m_ruleVariables; }
     inline bool RuleVariablesHasBeenSet() const { return m_ruleVariablesHasBeenSet; }
-    inline void SetRuleVariables(const RuleGroupVariables& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = value; }
-    inline void SetRuleVariables(RuleGroupVariables&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::move(value); }
-    inline RuleGroupDetails& WithRuleVariables(const RuleGroupVariables& value) { SetRuleVariables(value); return *this;}
-    inline RuleGroupDetails& WithRuleVariables(RuleGroupVariables&& value) { SetRuleVariables(std::move(value)); return *this;}
+    template<typename RuleVariablesT = RuleGroupVariables>
+    void SetRuleVariables(RuleVariablesT&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::forward<RuleVariablesT>(value); }
+    template<typename RuleVariablesT = RuleGroupVariables>
+    RuleGroupDetails& WithRuleVariables(RuleVariablesT&& value) { SetRuleVariables(std::forward<RuleVariablesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
      * <code>StatelessRulesAndCustomActions</code>.</p>
      */
-    inline const RuleGroupSource& GetRulesSource() const{ return m_rulesSource; }
+    inline const RuleGroupSource& GetRulesSource() const { return m_rulesSource; }
     inline bool RulesSourceHasBeenSet() const { return m_rulesSourceHasBeenSet; }
-    inline void SetRulesSource(const RuleGroupSource& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = value; }
-    inline void SetRulesSource(RuleGroupSource&& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = std::move(value); }
-    inline RuleGroupDetails& WithRulesSource(const RuleGroupSource& value) { SetRulesSource(value); return *this;}
-    inline RuleGroupDetails& WithRulesSource(RuleGroupSource&& value) { SetRulesSource(std::move(value)); return *this;}
+    template<typename RulesSourceT = RuleGroupSource>
+    void SetRulesSource(RulesSourceT&& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = std::forward<RulesSourceT>(value); }
+    template<typename RulesSourceT = RuleGroupSource>
+    RuleGroupDetails& WithRulesSource(RulesSourceT&& value) { SetRulesSource(std::forward<RulesSourceT>(value)); return *this;}
     ///@}
   private:
 

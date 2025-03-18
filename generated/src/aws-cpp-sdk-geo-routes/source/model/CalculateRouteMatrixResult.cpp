@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CalculateRouteMatrixResult::CalculateRouteMatrixResult() : 
-    m_errorCount(0)
-{
-}
-
 CalculateRouteMatrixResult::CalculateRouteMatrixResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CalculateRouteMatrixResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ErrorCount"))
   {
     m_errorCount = jsonValue.GetInteger("ErrorCount");
-
+    m_errorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteMatrix"))
   {
     Aws::Utils::Array<JsonView> routeMatrixJsonList = jsonValue.GetArray("RouteMatrix");
@@ -51,26 +44,27 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
       }
       m_routeMatrix.push_back(std::move(routeMatrixRowList));
     }
+    m_routeMatrixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingBoundary"))
   {
     m_routingBoundary = jsonValue.GetObject("RoutingBoundary");
-
+    m_routingBoundaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");
   if(pricingBucketIter != headers.end())
   {
     m_pricingBucket = pricingBucketIter->second;
+    m_pricingBucketHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

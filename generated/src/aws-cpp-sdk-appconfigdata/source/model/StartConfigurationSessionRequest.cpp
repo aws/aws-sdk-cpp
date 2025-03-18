@@ -12,15 +12,6 @@ using namespace Aws::AppConfigData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartConfigurationSessionRequest::StartConfigurationSessionRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_configurationProfileIdentifierHasBeenSet(false),
-    m_requiredMinimumPollIntervalInSeconds(0),
-    m_requiredMinimumPollIntervalInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String StartConfigurationSessionRequest::SerializePayload() const
 {
   JsonValue payload;

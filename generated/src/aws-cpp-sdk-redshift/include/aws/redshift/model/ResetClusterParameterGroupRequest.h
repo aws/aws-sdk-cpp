@@ -26,7 +26,7 @@ namespace Model
   class ResetClusterParameterGroupRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ResetClusterParameterGroupRequest();
+    AWS_REDSHIFT_API ResetClusterParameterGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-    inline ResetClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline ResetClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline ResetClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    ResetClusterParameterGroupRequest& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>If <code>true</code>, all parameters in the specified parameter group will be
      * reset to their default values. </p> <p>Default: <code>true</code> </p>
      */
-    inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
+    inline bool GetResetAllParameters() const { return m_resetAllParameters; }
     inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
     inline ResetClusterParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
@@ -72,21 +70,21 @@ namespace Model
      * option is not used, then at least one parameter name must be supplied. </p>
      * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ResetClusterParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline ResetClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ResetClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    ResetClusterParameterGroupRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    ResetClusterParameterGroupRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet = false;
 
-    bool m_resetAllParameters;
+    bool m_resetAllParameters{false};
     bool m_resetAllParametersHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;

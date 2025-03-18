@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UpdateProtectedResource::UpdateProtectedResource() : 
-    m_s3BucketHasBeenSet(false)
-{
-}
-
 UpdateProtectedResource::UpdateProtectedResource(JsonView jsonValue)
-  : UpdateProtectedResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateProtectedResource& UpdateProtectedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   return *this;
 }
 

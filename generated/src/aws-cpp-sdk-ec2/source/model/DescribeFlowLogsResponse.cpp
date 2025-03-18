@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFlowLogsResponse::DescribeFlowLogsResponse()
-{
-}
-
 DescribeFlowLogsResponse::DescribeFlowLogsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeFlowLogsResponse& DescribeFlowLogsResponse::operator =(const Aws::Amazon
     if(!flowLogsNode.IsNull())
     {
       XmlNode flowLogsMember = flowLogsNode.FirstChild("item");
+      m_flowLogsHasBeenSet = !flowLogsMember.IsNull();
       while(!flowLogsMember.IsNull())
       {
         m_flowLogs.push_back(flowLogsMember);
         flowLogsMember = flowLogsMember.NextNode("item");
       }
 
+      m_flowLogsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeFlowLogsResponse& DescribeFlowLogsResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeFlowLogsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

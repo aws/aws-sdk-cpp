@@ -33,7 +33,7 @@ namespace Model
   class BulkEmailEntryResult
   {
   public:
-    AWS_SESV2_API BulkEmailEntryResult();
+    AWS_SESV2_API BulkEmailEntryResult() = default;
     AWS_SESV2_API BulkEmailEntryResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API BulkEmailEntryResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -69,12 +69,10 @@ namespace Model
      * <li> <p>FAILED: Amazon SES was unable to process your request. See the error
      * message for additional information.</p> </li> </ul>
      */
-    inline const BulkEmailStatus& GetStatus() const{ return m_status; }
+    inline BulkEmailStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BulkEmailStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BulkEmailStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline BulkEmailEntryResult& WithStatus(const BulkEmailStatus& value) { SetStatus(value); return *this;}
-    inline BulkEmailEntryResult& WithStatus(BulkEmailStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BulkEmailStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BulkEmailEntryResult& WithStatus(BulkEmailStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * <p>A description of an error that prevented a message being sent using the
      * <code>SendBulkTemplatedEmail</code> operation.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline BulkEmailEntryResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline BulkEmailEntryResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline BulkEmailEntryResult& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    BulkEmailEntryResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,18 +93,16 @@ namespace Model
      * <p>The unique message identifier returned from the
      * <code>SendBulkTemplatedEmail</code> operation.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline BulkEmailEntryResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline BulkEmailEntryResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline BulkEmailEntryResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    BulkEmailEntryResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
   private:
 
-    BulkEmailStatus m_status;
+    BulkEmailStatus m_status{BulkEmailStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_error;

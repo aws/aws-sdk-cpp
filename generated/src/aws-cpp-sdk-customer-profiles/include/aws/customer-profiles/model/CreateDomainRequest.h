@@ -24,7 +24,7 @@ namespace Model
   class CreateDomainRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateDomainRequest();
+    AWS_CUSTOMERPROFILES_API CreateDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default number of days until the data within the domain expires.</p>
      */
-    inline int GetDefaultExpirationDays() const{ return m_defaultExpirationDays; }
+    inline int GetDefaultExpirationDays() const { return m_defaultExpirationDays; }
     inline bool DefaultExpirationDaysHasBeenSet() const { return m_defaultExpirationDaysHasBeenSet; }
     inline void SetDefaultExpirationDays(int value) { m_defaultExpirationDaysHasBeenSet = true; m_defaultExpirationDays = value; }
     inline CreateDomainRequest& WithDefaultExpirationDays(int value) { SetDefaultExpirationDays(value); return *this;}
@@ -65,14 +63,12 @@ namespace Model
      * specific type of encryption key is specified. It is used to encrypt all data
      * before it is placed in permanent or semi-permanent storage.</p>
      */
-    inline const Aws::String& GetDefaultEncryptionKey() const{ return m_defaultEncryptionKey; }
+    inline const Aws::String& GetDefaultEncryptionKey() const { return m_defaultEncryptionKey; }
     inline bool DefaultEncryptionKeyHasBeenSet() const { return m_defaultEncryptionKeyHasBeenSet; }
-    inline void SetDefaultEncryptionKey(const Aws::String& value) { m_defaultEncryptionKeyHasBeenSet = true; m_defaultEncryptionKey = value; }
-    inline void SetDefaultEncryptionKey(Aws::String&& value) { m_defaultEncryptionKeyHasBeenSet = true; m_defaultEncryptionKey = std::move(value); }
-    inline void SetDefaultEncryptionKey(const char* value) { m_defaultEncryptionKeyHasBeenSet = true; m_defaultEncryptionKey.assign(value); }
-    inline CreateDomainRequest& WithDefaultEncryptionKey(const Aws::String& value) { SetDefaultEncryptionKey(value); return *this;}
-    inline CreateDomainRequest& WithDefaultEncryptionKey(Aws::String&& value) { SetDefaultEncryptionKey(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithDefaultEncryptionKey(const char* value) { SetDefaultEncryptionKey(value); return *this;}
+    template<typename DefaultEncryptionKeyT = Aws::String>
+    void SetDefaultEncryptionKey(DefaultEncryptionKeyT&& value) { m_defaultEncryptionKeyHasBeenSet = true; m_defaultEncryptionKey = std::forward<DefaultEncryptionKeyT>(value); }
+    template<typename DefaultEncryptionKeyT = Aws::String>
+    CreateDomainRequest& WithDefaultEncryptionKey(DefaultEncryptionKeyT&& value) { SetDefaultEncryptionKey(std::forward<DefaultEncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * policy on the DeadLetterQueue for the SendMessage operation to enable Amazon
      * Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
      */
-    inline const Aws::String& GetDeadLetterQueueUrl() const{ return m_deadLetterQueueUrl; }
+    inline const Aws::String& GetDeadLetterQueueUrl() const { return m_deadLetterQueueUrl; }
     inline bool DeadLetterQueueUrlHasBeenSet() const { return m_deadLetterQueueUrlHasBeenSet; }
-    inline void SetDeadLetterQueueUrl(const Aws::String& value) { m_deadLetterQueueUrlHasBeenSet = true; m_deadLetterQueueUrl = value; }
-    inline void SetDeadLetterQueueUrl(Aws::String&& value) { m_deadLetterQueueUrlHasBeenSet = true; m_deadLetterQueueUrl = std::move(value); }
-    inline void SetDeadLetterQueueUrl(const char* value) { m_deadLetterQueueUrlHasBeenSet = true; m_deadLetterQueueUrl.assign(value); }
-    inline CreateDomainRequest& WithDeadLetterQueueUrl(const Aws::String& value) { SetDeadLetterQueueUrl(value); return *this;}
-    inline CreateDomainRequest& WithDeadLetterQueueUrl(Aws::String&& value) { SetDeadLetterQueueUrl(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithDeadLetterQueueUrl(const char* value) { SetDeadLetterQueueUrl(value); return *this;}
+    template<typename DeadLetterQueueUrlT = Aws::String>
+    void SetDeadLetterQueueUrl(DeadLetterQueueUrlT&& value) { m_deadLetterQueueUrlHasBeenSet = true; m_deadLetterQueueUrl = std::forward<DeadLetterQueueUrlT>(value); }
+    template<typename DeadLetterQueueUrlT = Aws::String>
+    CreateDomainRequest& WithDeadLetterQueueUrl(DeadLetterQueueUrlT&& value) { SetDeadLetterQueueUrl(std::forward<DeadLetterQueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,12 @@ namespace Model
      * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
      * download the results from S3.</p>
      */
-    inline const MatchingRequest& GetMatching() const{ return m_matching; }
+    inline const MatchingRequest& GetMatching() const { return m_matching; }
     inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
-    inline void SetMatching(const MatchingRequest& value) { m_matchingHasBeenSet = true; m_matching = value; }
-    inline void SetMatching(MatchingRequest&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
-    inline CreateDomainRequest& WithMatching(const MatchingRequest& value) { SetMatching(value); return *this;}
-    inline CreateDomainRequest& WithMatching(MatchingRequest&& value) { SetMatching(std::move(value)); return *this;}
+    template<typename MatchingT = MatchingRequest>
+    void SetMatching(MatchingT&& value) { m_matchingHasBeenSet = true; m_matching = std::forward<MatchingT>(value); }
+    template<typename MatchingT = MatchingRequest>
+    CreateDomainRequest& WithMatching(MatchingT&& value) { SetMatching(std::forward<MatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,38 +118,35 @@ namespace Model
      * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
      * can download the results from S3.</p>
      */
-    inline const RuleBasedMatchingRequest& GetRuleBasedMatching() const{ return m_ruleBasedMatching; }
+    inline const RuleBasedMatchingRequest& GetRuleBasedMatching() const { return m_ruleBasedMatching; }
     inline bool RuleBasedMatchingHasBeenSet() const { return m_ruleBasedMatchingHasBeenSet; }
-    inline void SetRuleBasedMatching(const RuleBasedMatchingRequest& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = value; }
-    inline void SetRuleBasedMatching(RuleBasedMatchingRequest&& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = std::move(value); }
-    inline CreateDomainRequest& WithRuleBasedMatching(const RuleBasedMatchingRequest& value) { SetRuleBasedMatching(value); return *this;}
-    inline CreateDomainRequest& WithRuleBasedMatching(RuleBasedMatchingRequest&& value) { SetRuleBasedMatching(std::move(value)); return *this;}
+    template<typename RuleBasedMatchingT = RuleBasedMatchingRequest>
+    void SetRuleBasedMatching(RuleBasedMatchingT&& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = std::forward<RuleBasedMatchingT>(value); }
+    template<typename RuleBasedMatchingT = RuleBasedMatchingRequest>
+    CreateDomainRequest& WithRuleBasedMatching(RuleBasedMatchingT&& value) { SetRuleBasedMatching(std::forward<RuleBasedMatchingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDomainRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateDomainRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDomainRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateDomainRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDomainRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDomainRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDomainRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDomainRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDomainRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDomainRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateDomainRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    int m_defaultExpirationDays;
+    int m_defaultExpirationDays{0};
     bool m_defaultExpirationDaysHasBeenSet = false;
 
     Aws::String m_defaultEncryptionKey;

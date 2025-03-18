@@ -35,7 +35,7 @@ namespace Model
   class ResourceEndpointListItem
   {
   public:
-    AWS_KINESISVIDEO_API ResourceEndpointListItem();
+    AWS_KINESISVIDEO_API ResourceEndpointListItem() = default;
     AWS_KINESISVIDEO_API ResourceEndpointListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API ResourceEndpointListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The protocol of the signaling channel returned by the
      * <code>GetSignalingChannelEndpoint</code> API.</p>
      */
-    inline const ChannelProtocol& GetProtocol() const{ return m_protocol; }
+    inline ChannelProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const ChannelProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(ChannelProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline ResourceEndpointListItem& WithProtocol(const ChannelProtocol& value) { SetProtocol(value); return *this;}
-    inline ResourceEndpointListItem& WithProtocol(ChannelProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(ChannelProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline ResourceEndpointListItem& WithProtocol(ChannelProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>The endpoint of the signaling channel returned by the
      * <code>GetSignalingChannelEndpoint</code> API.</p>
      */
-    inline const Aws::String& GetResourceEndpoint() const{ return m_resourceEndpoint; }
+    inline const Aws::String& GetResourceEndpoint() const { return m_resourceEndpoint; }
     inline bool ResourceEndpointHasBeenSet() const { return m_resourceEndpointHasBeenSet; }
-    inline void SetResourceEndpoint(const Aws::String& value) { m_resourceEndpointHasBeenSet = true; m_resourceEndpoint = value; }
-    inline void SetResourceEndpoint(Aws::String&& value) { m_resourceEndpointHasBeenSet = true; m_resourceEndpoint = std::move(value); }
-    inline void SetResourceEndpoint(const char* value) { m_resourceEndpointHasBeenSet = true; m_resourceEndpoint.assign(value); }
-    inline ResourceEndpointListItem& WithResourceEndpoint(const Aws::String& value) { SetResourceEndpoint(value); return *this;}
-    inline ResourceEndpointListItem& WithResourceEndpoint(Aws::String&& value) { SetResourceEndpoint(std::move(value)); return *this;}
-    inline ResourceEndpointListItem& WithResourceEndpoint(const char* value) { SetResourceEndpoint(value); return *this;}
+    template<typename ResourceEndpointT = Aws::String>
+    void SetResourceEndpoint(ResourceEndpointT&& value) { m_resourceEndpointHasBeenSet = true; m_resourceEndpoint = std::forward<ResourceEndpointT>(value); }
+    template<typename ResourceEndpointT = Aws::String>
+    ResourceEndpointListItem& WithResourceEndpoint(ResourceEndpointT&& value) { SetResourceEndpoint(std::forward<ResourceEndpointT>(value)); return *this;}
     ///@}
   private:
 
-    ChannelProtocol m_protocol;
+    ChannelProtocol m_protocol{ChannelProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_resourceEndpoint;

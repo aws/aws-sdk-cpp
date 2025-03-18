@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBotReplicasRequest::ListBotReplicasRequest() : 
-    m_botIdHasBeenSet(false)
-{
-}
-
 Aws::String ListBotReplicasRequest::SerializePayload() const
 {
   return {};

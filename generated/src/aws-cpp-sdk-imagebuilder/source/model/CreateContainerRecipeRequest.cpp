@@ -12,29 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerRecipeRequest::CreateContainerRecipeRequest() : 
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_dockerfileTemplateDataHasBeenSet(false),
-    m_dockerfileTemplateUriHasBeenSet(false),
-    m_platformOverride(Platform::NOT_SET),
-    m_platformOverrideHasBeenSet(false),
-    m_imageOsVersionOverrideHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_targetRepositoryHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateContainerRecipeRequest::SerializePayload() const
 {
   JsonValue payload;

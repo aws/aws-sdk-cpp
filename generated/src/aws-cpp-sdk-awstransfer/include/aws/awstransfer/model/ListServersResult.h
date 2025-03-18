@@ -29,7 +29,7 @@ namespace Model
   class ListServersResult
   {
   public:
-    AWS_TRANSFER_API ListServersResult();
+    AWS_TRANSFER_API ListServersResult() = default;
     AWS_TRANSFER_API ListServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API ListServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * following command, you can pass in the <code>NextToken</code> parameter to
      * continue listing additional servers.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of servers that were listed.</p>
      */
-    inline const Aws::Vector<ListedServer>& GetServers() const{ return m_servers; }
-    inline void SetServers(const Aws::Vector<ListedServer>& value) { m_servers = value; }
-    inline void SetServers(Aws::Vector<ListedServer>&& value) { m_servers = std::move(value); }
-    inline ListServersResult& WithServers(const Aws::Vector<ListedServer>& value) { SetServers(value); return *this;}
-    inline ListServersResult& WithServers(Aws::Vector<ListedServer>&& value) { SetServers(std::move(value)); return *this;}
-    inline ListServersResult& AddServers(const ListedServer& value) { m_servers.push_back(value); return *this; }
-    inline ListServersResult& AddServers(ListedServer&& value) { m_servers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListedServer>& GetServers() const { return m_servers; }
+    template<typename ServersT = Aws::Vector<ListedServer>>
+    void SetServers(ServersT&& value) { m_serversHasBeenSet = true; m_servers = std::forward<ServersT>(value); }
+    template<typename ServersT = Aws::Vector<ListedServer>>
+    ListServersResult& WithServers(ServersT&& value) { SetServers(std::forward<ServersT>(value)); return *this;}
+    template<typename ServersT = ListedServer>
+    ListServersResult& AddServers(ServersT&& value) { m_serversHasBeenSet = true; m_servers.emplace_back(std::forward<ServersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListedServer> m_servers;
+    bool m_serversHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

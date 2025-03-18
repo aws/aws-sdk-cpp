@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-FlowTimeouts::FlowTimeouts() : 
-    m_tcpIdleTimeoutSeconds(0),
-    m_tcpIdleTimeoutSecondsHasBeenSet(false)
-{
-}
-
 FlowTimeouts::FlowTimeouts(JsonView jsonValue)
-  : FlowTimeouts()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FlowTimeouts& FlowTimeouts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TcpIdleTimeoutSeconds"))
   {
     m_tcpIdleTimeoutSeconds = jsonValue.GetInteger("TcpIdleTimeoutSeconds");
-
     m_tcpIdleTimeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

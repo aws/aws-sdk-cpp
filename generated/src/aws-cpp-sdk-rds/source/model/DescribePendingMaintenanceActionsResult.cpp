@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult()
-{
-}
-
 DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribePendingMaintenanceActionsResult& DescribePendingMaintenanceActionsResult
     if(!pendingMaintenanceActionsNode.IsNull())
     {
       XmlNode pendingMaintenanceActionsMember = pendingMaintenanceActionsNode.FirstChild("ResourcePendingMaintenanceActions");
+      m_pendingMaintenanceActionsHasBeenSet = !pendingMaintenanceActionsMember.IsNull();
       while(!pendingMaintenanceActionsMember.IsNull())
       {
         m_pendingMaintenanceActions.push_back(pendingMaintenanceActionsMember);
         pendingMaintenanceActionsMember = pendingMaintenanceActionsMember.NextNode("ResourcePendingMaintenanceActions");
       }
 
+      m_pendingMaintenanceActionsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribePendingMaintenanceActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

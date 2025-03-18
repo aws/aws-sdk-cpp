@@ -32,7 +32,7 @@ namespace Model
   class FilterClause
   {
   public:
-    AWS_DATAZONE_API FilterClause();
+    AWS_DATAZONE_API FilterClause() = default;
     AWS_DATAZONE_API FilterClause(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API FilterClause& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,40 @@ namespace Model
     /**
      * <p>The 'and' search filter clause in Amazon DataZone.</p>
      */
-    inline const Aws::Vector<FilterClause>& GetAnd() const{ return m_and; }
+    inline const Aws::Vector<FilterClause>& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const Aws::Vector<FilterClause>& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(Aws::Vector<FilterClause>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline FilterClause& WithAnd(const Aws::Vector<FilterClause>& value) { SetAnd(value); return *this;}
-    inline FilterClause& WithAnd(Aws::Vector<FilterClause>&& value) { SetAnd(std::move(value)); return *this;}
-    inline FilterClause& AddAnd(const FilterClause& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-    inline FilterClause& AddAnd(FilterClause&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
+    template<typename AndT = Aws::Vector<FilterClause>>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = Aws::Vector<FilterClause>>
+    FilterClause& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
+    template<typename AndT = FilterClause>
+    FilterClause& AddAnd(AndT&& value) { m_andHasBeenSet = true; m_and.emplace_back(std::forward<AndT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A search filter in Amazon DataZone.</p>
      */
-    inline const Filter& GetFilter() const{ return m_filter; }
+    inline const Filter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline FilterClause& WithFilter(const Filter& value) { SetFilter(value); return *this;}
-    inline FilterClause& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Filter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Filter>
+    FilterClause& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'or' search filter clause in Amazon DataZone.</p>
      */
-    inline const Aws::Vector<FilterClause>& GetOr() const{ return m_or; }
+    inline const Aws::Vector<FilterClause>& GetOr() const { return m_or; }
     inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-    inline void SetOr(const Aws::Vector<FilterClause>& value) { m_orHasBeenSet = true; m_or = value; }
-    inline void SetOr(Aws::Vector<FilterClause>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
-    inline FilterClause& WithOr(const Aws::Vector<FilterClause>& value) { SetOr(value); return *this;}
-    inline FilterClause& WithOr(Aws::Vector<FilterClause>&& value) { SetOr(std::move(value)); return *this;}
-    inline FilterClause& AddOr(const FilterClause& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
-    inline FilterClause& AddOr(FilterClause&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+    template<typename OrT = Aws::Vector<FilterClause>>
+    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
+    template<typename OrT = Aws::Vector<FilterClause>>
+    FilterClause& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
+    template<typename OrT = FilterClause>
+    FilterClause& AddOr(OrT&& value) { m_orHasBeenSet = true; m_or.emplace_back(std::forward<OrT>(value)); return *this; }
     ///@}
   private:
 

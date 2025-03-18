@@ -28,7 +28,7 @@ namespace Model
   class DescribeEntitiesDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeEntitiesDetectionJobResult();
+    AWS_COMPREHEND_API DescribeEntitiesDetectionJobResult() = default;
     AWS_COMPREHEND_API DescribeEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeEntitiesDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with an entities detection
      * job.</p>
      */
-    inline const EntitiesDetectionJobProperties& GetEntitiesDetectionJobProperties() const{ return m_entitiesDetectionJobProperties; }
-    inline void SetEntitiesDetectionJobProperties(const EntitiesDetectionJobProperties& value) { m_entitiesDetectionJobProperties = value; }
-    inline void SetEntitiesDetectionJobProperties(EntitiesDetectionJobProperties&& value) { m_entitiesDetectionJobProperties = std::move(value); }
-    inline DescribeEntitiesDetectionJobResult& WithEntitiesDetectionJobProperties(const EntitiesDetectionJobProperties& value) { SetEntitiesDetectionJobProperties(value); return *this;}
-    inline DescribeEntitiesDetectionJobResult& WithEntitiesDetectionJobProperties(EntitiesDetectionJobProperties&& value) { SetEntitiesDetectionJobProperties(std::move(value)); return *this;}
+    inline const EntitiesDetectionJobProperties& GetEntitiesDetectionJobProperties() const { return m_entitiesDetectionJobProperties; }
+    template<typename EntitiesDetectionJobPropertiesT = EntitiesDetectionJobProperties>
+    void SetEntitiesDetectionJobProperties(EntitiesDetectionJobPropertiesT&& value) { m_entitiesDetectionJobPropertiesHasBeenSet = true; m_entitiesDetectionJobProperties = std::forward<EntitiesDetectionJobPropertiesT>(value); }
+    template<typename EntitiesDetectionJobPropertiesT = EntitiesDetectionJobProperties>
+    DescribeEntitiesDetectionJobResult& WithEntitiesDetectionJobProperties(EntitiesDetectionJobPropertiesT&& value) { SetEntitiesDetectionJobProperties(std::forward<EntitiesDetectionJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEntitiesDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEntitiesDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEntitiesDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEntitiesDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EntitiesDetectionJobProperties m_entitiesDetectionJobProperties;
+    bool m_entitiesDetectionJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

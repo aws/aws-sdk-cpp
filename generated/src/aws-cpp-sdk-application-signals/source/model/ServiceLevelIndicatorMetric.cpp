@@ -18,17 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceLevelIndicatorMetric::ServiceLevelIndicatorMetric() : 
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_metricType(ServiceLevelIndicatorMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_metricDataQueriesHasBeenSet(false)
-{
-}
-
 ServiceLevelIndicatorMetric::ServiceLevelIndicatorMetric(JsonView jsonValue)
-  : ServiceLevelIndicatorMetric()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ ServiceLevelIndicatorMetric& ServiceLevelIndicatorMetric::operator =(JsonView js
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationName"))
   {
     m_operationName = jsonValue.GetString("OperationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = ServiceLevelIndicatorMetricTypeMapper::GetServiceLevelIndicatorMetricTypeForName(jsonValue.GetString("MetricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDataQueries"))
   {
     Aws::Utils::Array<JsonView> metricDataQueriesJsonList = jsonValue.GetArray("MetricDataQueries");
@@ -68,7 +53,6 @@ ServiceLevelIndicatorMetric& ServiceLevelIndicatorMetric::operator =(JsonView js
     }
     m_metricDataQueriesHasBeenSet = true;
   }
-
   return *this;
 }
 

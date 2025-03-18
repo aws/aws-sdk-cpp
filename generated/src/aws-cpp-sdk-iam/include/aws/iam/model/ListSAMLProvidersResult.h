@@ -35,7 +35,7 @@ namespace Model
   class ListSAMLProvidersResult
   {
   public:
-    AWS_IAM_API ListSAMLProvidersResult();
+    AWS_IAM_API ListSAMLProvidersResult() = default;
     AWS_IAM_API ListSAMLProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API ListSAMLProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
      * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
      * Services account.</p>
      */
-    inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const{ return m_sAMLProviderList; }
-    inline void SetSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { m_sAMLProviderList = value; }
-    inline void SetSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { m_sAMLProviderList = std::move(value); }
-    inline ListSAMLProvidersResult& WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
-    inline ListSAMLProvidersResult& WithSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { SetSAMLProviderList(std::move(value)); return *this;}
-    inline ListSAMLProvidersResult& AddSAMLProviderList(const SAMLProviderListEntry& value) { m_sAMLProviderList.push_back(value); return *this; }
-    inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const { return m_sAMLProviderList; }
+    template<typename SAMLProviderListT = Aws::Vector<SAMLProviderListEntry>>
+    void SetSAMLProviderList(SAMLProviderListT&& value) { m_sAMLProviderListHasBeenSet = true; m_sAMLProviderList = std::forward<SAMLProviderListT>(value); }
+    template<typename SAMLProviderListT = Aws::Vector<SAMLProviderListEntry>>
+    ListSAMLProvidersResult& WithSAMLProviderList(SAMLProviderListT&& value) { SetSAMLProviderList(std::forward<SAMLProviderListT>(value)); return *this;}
+    template<typename SAMLProviderListT = SAMLProviderListEntry>
+    ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListT&& value) { m_sAMLProviderListHasBeenSet = true; m_sAMLProviderList.emplace_back(std::forward<SAMLProviderListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListSAMLProvidersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListSAMLProvidersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListSAMLProvidersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SAMLProviderListEntry> m_sAMLProviderList;
+    bool m_sAMLProviderListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

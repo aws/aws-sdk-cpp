@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListContactListsRequest::ListContactListsRequest() : 
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListContactListsRequest::SerializePayload() const
 {
   return {};

@@ -23,7 +23,7 @@ namespace Model
   class GetAutoMergingPreviewRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewRequest();
+    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline GetAutoMergingPreviewRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline GetAutoMergingPreviewRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline GetAutoMergingPreviewRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    GetAutoMergingPreviewRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of matching attributes that represent matching criteria.</p>
      */
-    inline const Consolidation& GetConsolidation() const{ return m_consolidation; }
+    inline const Consolidation& GetConsolidation() const { return m_consolidation; }
     inline bool ConsolidationHasBeenSet() const { return m_consolidationHasBeenSet; }
-    inline void SetConsolidation(const Consolidation& value) { m_consolidationHasBeenSet = true; m_consolidation = value; }
-    inline void SetConsolidation(Consolidation&& value) { m_consolidationHasBeenSet = true; m_consolidation = std::move(value); }
-    inline GetAutoMergingPreviewRequest& WithConsolidation(const Consolidation& value) { SetConsolidation(value); return *this;}
-    inline GetAutoMergingPreviewRequest& WithConsolidation(Consolidation&& value) { SetConsolidation(std::move(value)); return *this;}
+    template<typename ConsolidationT = Consolidation>
+    void SetConsolidation(ConsolidationT&& value) { m_consolidationHasBeenSet = true; m_consolidation = std::forward<ConsolidationT>(value); }
+    template<typename ConsolidationT = Consolidation>
+    GetAutoMergingPreviewRequest& WithConsolidation(ConsolidationT&& value) { SetConsolidation(std::forward<ConsolidationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * <p>How the auto-merging process should resolve conflicts between different
      * profiles.</p>
      */
-    inline const ConflictResolution& GetConflictResolution() const{ return m_conflictResolution; }
+    inline const ConflictResolution& GetConflictResolution() const { return m_conflictResolution; }
     inline bool ConflictResolutionHasBeenSet() const { return m_conflictResolutionHasBeenSet; }
-    inline void SetConflictResolution(const ConflictResolution& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = value; }
-    inline void SetConflictResolution(ConflictResolution&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::move(value); }
-    inline GetAutoMergingPreviewRequest& WithConflictResolution(const ConflictResolution& value) { SetConflictResolution(value); return *this;}
-    inline GetAutoMergingPreviewRequest& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
+    template<typename ConflictResolutionT = ConflictResolution>
+    void SetConflictResolution(ConflictResolutionT&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::forward<ConflictResolutionT>(value); }
+    template<typename ConflictResolutionT = ConflictResolution>
+    GetAutoMergingPreviewRequest& WithConflictResolution(ConflictResolutionT&& value) { SetConflictResolution(std::forward<ConflictResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
      * <p>Minimum confidence score required for profiles within a matching group to be
      * merged during the auto-merge process.</p>
      */
-    inline double GetMinAllowedConfidenceScoreForMerging() const{ return m_minAllowedConfidenceScoreForMerging; }
+    inline double GetMinAllowedConfidenceScoreForMerging() const { return m_minAllowedConfidenceScoreForMerging; }
     inline bool MinAllowedConfidenceScoreForMergingHasBeenSet() const { return m_minAllowedConfidenceScoreForMergingHasBeenSet; }
     inline void SetMinAllowedConfidenceScoreForMerging(double value) { m_minAllowedConfidenceScoreForMergingHasBeenSet = true; m_minAllowedConfidenceScoreForMerging = value; }
     inline GetAutoMergingPreviewRequest& WithMinAllowedConfidenceScoreForMerging(double value) { SetMinAllowedConfidenceScoreForMerging(value); return *this;}
@@ -94,7 +92,7 @@ namespace Model
     ConflictResolution m_conflictResolution;
     bool m_conflictResolutionHasBeenSet = false;
 
-    double m_minAllowedConfidenceScoreForMerging;
+    double m_minAllowedConfidenceScoreForMerging{0.0};
     bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 

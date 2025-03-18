@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociatePhoneNumberContactFlowRequest::DisassociatePhoneNumberContactFlowRequest() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociatePhoneNumberContactFlowRequest::SerializePayload() const
 {
   return {};

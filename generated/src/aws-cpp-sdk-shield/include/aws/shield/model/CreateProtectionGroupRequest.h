@@ -26,7 +26,7 @@ namespace Model
   class CreateProtectionGroupRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API CreateProtectionGroupRequest();
+    AWS_SHIELD_API CreateProtectionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * group in lists and to manage the protection group, for example to update,
      * delete, or describe it. </p>
      */
-    inline const Aws::String& GetProtectionGroupId() const{ return m_protectionGroupId; }
+    inline const Aws::String& GetProtectionGroupId() const { return m_protectionGroupId; }
     inline bool ProtectionGroupIdHasBeenSet() const { return m_protectionGroupIdHasBeenSet; }
-    inline void SetProtectionGroupId(const Aws::String& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = value; }
-    inline void SetProtectionGroupId(Aws::String&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::move(value); }
-    inline void SetProtectionGroupId(const char* value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId.assign(value); }
-    inline CreateProtectionGroupRequest& WithProtectionGroupId(const Aws::String& value) { SetProtectionGroupId(value); return *this;}
-    inline CreateProtectionGroupRequest& WithProtectionGroupId(Aws::String&& value) { SetProtectionGroupId(std::move(value)); return *this;}
-    inline CreateProtectionGroupRequest& WithProtectionGroupId(const char* value) { SetProtectionGroupId(value); return *this;}
+    template<typename ProtectionGroupIdT = Aws::String>
+    void SetProtectionGroupId(ProtectionGroupIdT&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::forward<ProtectionGroupIdT>(value); }
+    template<typename ProtectionGroupIdT = Aws::String>
+    CreateProtectionGroupRequest& WithProtectionGroupId(ProtectionGroupIdT&& value) { SetProtectionGroupId(std::forward<ProtectionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * resources that share that traffic in a non-uniform way. Examples include Amazon
      * CloudFront and origin resources for CloudFront distributions.</p> </li> </ul>
      */
-    inline const ProtectionGroupAggregation& GetAggregation() const{ return m_aggregation; }
+    inline ProtectionGroupAggregation GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const ProtectionGroupAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(ProtectionGroupAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline CreateProtectionGroupRequest& WithAggregation(const ProtectionGroupAggregation& value) { SetAggregation(value); return *this;}
-    inline CreateProtectionGroupRequest& WithAggregation(ProtectionGroupAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    inline void SetAggregation(ProtectionGroupAggregation value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
+    inline CreateProtectionGroupRequest& WithAggregation(ProtectionGroupAggregation value) { SetAggregation(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * resource Amazon Resource Names (ARNs), or include all resources of a specified
      * resource type. </p>
      */
-    inline const ProtectionGroupPattern& GetPattern() const{ return m_pattern; }
+    inline ProtectionGroupPattern GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const ProtectionGroupPattern& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(ProtectionGroupPattern&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline CreateProtectionGroupRequest& WithPattern(const ProtectionGroupPattern& value) { SetPattern(value); return *this;}
-    inline CreateProtectionGroupRequest& WithPattern(ProtectionGroupPattern&& value) { SetPattern(std::move(value)); return *this;}
+    inline void SetPattern(ProtectionGroupPattern value) { m_patternHasBeenSet = true; m_pattern = value; }
+    inline CreateProtectionGroupRequest& WithPattern(ProtectionGroupPattern value) { SetPattern(value); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it
      * for any other <code>Pattern</code> setting. </p>
      */
-    inline const ProtectedResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ProtectedResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ProtectedResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ProtectedResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline CreateProtectionGroupRequest& WithResourceType(const ProtectedResourceType& value) { SetResourceType(value); return *this;}
-    inline CreateProtectionGroupRequest& WithResourceType(ProtectedResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ProtectedResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline CreateProtectionGroupRequest& WithResourceType(ProtectedResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -114,42 +106,41 @@ namespace Model
      * <code>ARBITRARY</code> and you must not set it for any other
      * <code>Pattern</code> setting. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMembers() const{ return m_members; }
+    inline const Aws::Vector<Aws::String>& GetMembers() const { return m_members; }
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
-    inline void SetMembers(const Aws::Vector<Aws::String>& value) { m_membersHasBeenSet = true; m_members = value; }
-    inline void SetMembers(Aws::Vector<Aws::String>&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
-    inline CreateProtectionGroupRequest& WithMembers(const Aws::Vector<Aws::String>& value) { SetMembers(value); return *this;}
-    inline CreateProtectionGroupRequest& WithMembers(Aws::Vector<Aws::String>&& value) { SetMembers(std::move(value)); return *this;}
-    inline CreateProtectionGroupRequest& AddMembers(const Aws::String& value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
-    inline CreateProtectionGroupRequest& AddMembers(Aws::String&& value) { m_membersHasBeenSet = true; m_members.push_back(std::move(value)); return *this; }
-    inline CreateProtectionGroupRequest& AddMembers(const char* value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
+    template<typename MembersT = Aws::Vector<Aws::String>>
+    void SetMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members = std::forward<MembersT>(value); }
+    template<typename MembersT = Aws::Vector<Aws::String>>
+    CreateProtectionGroupRequest& WithMembers(MembersT&& value) { SetMembers(std::forward<MembersT>(value)); return *this;}
+    template<typename MembersT = Aws::String>
+    CreateProtectionGroupRequest& AddMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members.emplace_back(std::forward<MembersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more tag key-value pairs for the protection group.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProtectionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateProtectionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProtectionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateProtectionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateProtectionGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateProtectionGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_protectionGroupId;
     bool m_protectionGroupIdHasBeenSet = false;
 
-    ProtectionGroupAggregation m_aggregation;
+    ProtectionGroupAggregation m_aggregation{ProtectionGroupAggregation::NOT_SET};
     bool m_aggregationHasBeenSet = false;
 
-    ProtectionGroupPattern m_pattern;
+    ProtectionGroupPattern m_pattern{ProtectionGroupPattern::NOT_SET};
     bool m_patternHasBeenSet = false;
 
-    ProtectedResourceType m_resourceType;
+    ProtectedResourceType m_resourceType{ProtectedResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_members;

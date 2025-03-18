@@ -12,15 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRobotApplicationsRequest::ListRobotApplicationsRequest() : 
-    m_versionQualifierHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListRobotApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

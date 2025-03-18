@@ -21,7 +21,7 @@ namespace Model
   class DisconnectParticipantRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API DisconnectParticipantRequest();
+    AWS_IVSREALTIME_API DisconnectParticipantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>ARN of the stage to which the participant is attached.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline const Aws::String& GetStageArn() const { return m_stageArn; }
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline DisconnectParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline DisconnectParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline DisconnectParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    template<typename StageArnT = Aws::String>
+    void SetStageArn(StageArnT&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::forward<StageArnT>(value); }
+    template<typename StageArnT = Aws::String>
+    DisconnectParticipantRequest& WithStageArn(StageArnT&& value) { SetStageArn(std::forward<StageArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,28 +50,24 @@ namespace Model
      * returned by <a>CreateParticipantToken</a> (for streams using WebRTC ingest) or
      * <a>CreateIngestConfiguration</a> (for streams using RTMP ingest).</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline DisconnectParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline DisconnectParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline DisconnectParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    DisconnectParticipantRequest& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of why this participant is being disconnected.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline DisconnectParticipantRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline DisconnectParticipantRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline DisconnectParticipantRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    DisconnectParticipantRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

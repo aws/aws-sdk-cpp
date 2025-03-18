@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics() : 
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_stepsCompleted(0),
-    m_stepsCompletedHasBeenSet(false),
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false)
-{
-}
-
 AppflowIntegrationWorkflowMetrics::AppflowIntegrationWorkflowMetrics(JsonView jsonValue)
-  : AppflowIntegrationWorkflowMetrics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AppflowIntegrationWorkflowMetrics& AppflowIntegrationWorkflowMetrics::operator =
   if(jsonValue.ValueExists("RecordsProcessed"))
   {
     m_recordsProcessed = jsonValue.GetInt64("RecordsProcessed");
-
     m_recordsProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepsCompleted"))
   {
     m_stepsCompleted = jsonValue.GetInt64("StepsCompleted");
-
     m_stepsCompletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSteps"))
   {
     m_totalSteps = jsonValue.GetInt64("TotalSteps");
-
     m_totalStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

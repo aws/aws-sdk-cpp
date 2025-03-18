@@ -29,7 +29,7 @@ namespace Model
   class GetFreeTierUsageResult
   {
   public:
-    AWS_FREETIER_API GetFreeTierUsageResult();
+    AWS_FREETIER_API GetFreeTierUsageResult() = default;
     AWS_FREETIER_API GetFreeTierUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FREETIER_API GetFreeTierUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of Free Tier usage objects that meet your filter expression.</p>
      */
-    inline const Aws::Vector<FreeTierUsage>& GetFreeTierUsages() const{ return m_freeTierUsages; }
-    inline void SetFreeTierUsages(const Aws::Vector<FreeTierUsage>& value) { m_freeTierUsages = value; }
-    inline void SetFreeTierUsages(Aws::Vector<FreeTierUsage>&& value) { m_freeTierUsages = std::move(value); }
-    inline GetFreeTierUsageResult& WithFreeTierUsages(const Aws::Vector<FreeTierUsage>& value) { SetFreeTierUsages(value); return *this;}
-    inline GetFreeTierUsageResult& WithFreeTierUsages(Aws::Vector<FreeTierUsage>&& value) { SetFreeTierUsages(std::move(value)); return *this;}
-    inline GetFreeTierUsageResult& AddFreeTierUsages(const FreeTierUsage& value) { m_freeTierUsages.push_back(value); return *this; }
-    inline GetFreeTierUsageResult& AddFreeTierUsages(FreeTierUsage&& value) { m_freeTierUsages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FreeTierUsage>& GetFreeTierUsages() const { return m_freeTierUsages; }
+    template<typename FreeTierUsagesT = Aws::Vector<FreeTierUsage>>
+    void SetFreeTierUsages(FreeTierUsagesT&& value) { m_freeTierUsagesHasBeenSet = true; m_freeTierUsages = std::forward<FreeTierUsagesT>(value); }
+    template<typename FreeTierUsagesT = Aws::Vector<FreeTierUsage>>
+    GetFreeTierUsageResult& WithFreeTierUsages(FreeTierUsagesT&& value) { SetFreeTierUsages(std::forward<FreeTierUsagesT>(value)); return *this;}
+    template<typename FreeTierUsagesT = FreeTierUsage>
+    GetFreeTierUsageResult& AddFreeTierUsages(FreeTierUsagesT&& value) { m_freeTierUsagesHasBeenSet = true; m_freeTierUsages.emplace_back(std::forward<FreeTierUsagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetFreeTierUsageResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetFreeTierUsageResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetFreeTierUsageResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetFreeTierUsageResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFreeTierUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFreeTierUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFreeTierUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFreeTierUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FreeTierUsage> m_freeTierUsages;
+    bool m_freeTierUsagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

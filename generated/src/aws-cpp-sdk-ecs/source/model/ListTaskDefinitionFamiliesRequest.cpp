@@ -12,16 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTaskDefinitionFamiliesRequest::ListTaskDefinitionFamiliesRequest() : 
-    m_familyPrefixHasBeenSet(false),
-    m_status(TaskDefinitionFamilyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTaskDefinitionFamiliesRequest::SerializePayload() const
 {
   JsonValue payload;

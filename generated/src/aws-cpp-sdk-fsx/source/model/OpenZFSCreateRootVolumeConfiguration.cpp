@@ -18,22 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration() : 
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false),
-    m_copyTagsToSnapshots(false),
-    m_copyTagsToSnapshotsHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
-{
-}
-
 OpenZFSCreateRootVolumeConfiguration::OpenZFSCreateRootVolumeConfiguration(JsonView jsonValue)
-  : OpenZFSCreateRootVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ OpenZFSCreateRootVolumeConfiguration& OpenZFSCreateRootVolumeConfiguration::oper
   if(jsonValue.ValueExists("RecordSizeKiB"))
   {
     m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
-
     m_recordSizeKiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
-
     m_dataCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NfsExports"))
   {
     Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
@@ -63,7 +44,6 @@ OpenZFSCreateRootVolumeConfiguration& OpenZFSCreateRootVolumeConfiguration::oper
     }
     m_nfsExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAndGroupQuotas"))
   {
     Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
@@ -73,21 +53,16 @@ OpenZFSCreateRootVolumeConfiguration& OpenZFSCreateRootVolumeConfiguration::oper
     }
     m_userAndGroupQuotasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToSnapshots"))
   {
     m_copyTagsToSnapshots = jsonValue.GetBool("CopyTagsToSnapshots");
-
     m_copyTagsToSnapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

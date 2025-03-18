@@ -25,7 +25,7 @@ namespace Model
   class DescribeApplicationsRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeApplicationsRequest();
+    AWS_ELASTICBEANSTALK_API DescribeApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * only include those with the specified names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationNames() const{ return m_applicationNames; }
+    inline const Aws::Vector<Aws::String>& GetApplicationNames() const { return m_applicationNames; }
     inline bool ApplicationNamesHasBeenSet() const { return m_applicationNamesHasBeenSet; }
-    inline void SetApplicationNames(const Aws::Vector<Aws::String>& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
-    inline void SetApplicationNames(Aws::Vector<Aws::String>&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = std::move(value); }
-    inline DescribeApplicationsRequest& WithApplicationNames(const Aws::Vector<Aws::String>& value) { SetApplicationNames(value); return *this;}
-    inline DescribeApplicationsRequest& WithApplicationNames(Aws::Vector<Aws::String>&& value) { SetApplicationNames(std::move(value)); return *this;}
-    inline DescribeApplicationsRequest& AddApplicationNames(const Aws::String& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
-    inline DescribeApplicationsRequest& AddApplicationNames(Aws::String&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(std::move(value)); return *this; }
-    inline DescribeApplicationsRequest& AddApplicationNames(const char* value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
+    template<typename ApplicationNamesT = Aws::Vector<Aws::String>>
+    void SetApplicationNames(ApplicationNamesT&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = std::forward<ApplicationNamesT>(value); }
+    template<typename ApplicationNamesT = Aws::Vector<Aws::String>>
+    DescribeApplicationsRequest& WithApplicationNames(ApplicationNamesT&& value) { SetApplicationNames(std::forward<ApplicationNamesT>(value)); return *this;}
+    template<typename ApplicationNamesT = Aws::String>
+    DescribeApplicationsRequest& AddApplicationNames(ApplicationNamesT&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.emplace_back(std::forward<ApplicationNamesT>(value)); return *this; }
     ///@}
   private:
 

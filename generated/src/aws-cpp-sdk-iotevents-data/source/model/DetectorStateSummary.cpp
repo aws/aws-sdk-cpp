@@ -18,13 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-DetectorStateSummary::DetectorStateSummary() : 
-    m_stateNameHasBeenSet(false)
-{
-}
-
 DetectorStateSummary::DetectorStateSummary(JsonView jsonValue)
-  : DetectorStateSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DetectorStateSummary& DetectorStateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stateName"))
   {
     m_stateName = jsonValue.GetString("stateName");
-
     m_stateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

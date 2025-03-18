@@ -12,20 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOpenWorkflowExecutionsRequest::ListOpenWorkflowExecutionsRequest() : 
-    m_domainHasBeenSet(false),
-    m_startTimeFilterHasBeenSet(false),
-    m_typeFilterHasBeenSet(false),
-    m_tagFilterHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_maximumPageSize(0),
-    m_maximumPageSizeHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false),
-    m_executionFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListOpenWorkflowExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

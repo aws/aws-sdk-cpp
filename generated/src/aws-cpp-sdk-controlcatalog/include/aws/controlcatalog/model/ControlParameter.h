@@ -48,7 +48,7 @@ namespace Model
   class ControlParameter
   {
   public:
-    AWS_CONTROLCATALOG_API ControlParameter();
+    AWS_CONTROLCATALOG_API ControlParameter() = default;
     AWS_CONTROLCATALOG_API ControlParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API ControlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html">
      * <code>UpdateEnabledControl</code> </a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ControlParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ControlParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ControlParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ControlParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListNotificationConfigurationsResult::ListNotificationConfigurationsResult()
-{
-}
-
 ListNotificationConfigurationsResult::ListNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListNotificationConfigurationsResult& ListNotificationConfigurationsResult::oper
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationConfigurations"))
   {
     Aws::Utils::Array<JsonView> notificationConfigurationsJsonList = jsonValue.GetArray("notificationConfigurations");
@@ -42,14 +37,15 @@ ListNotificationConfigurationsResult& ListNotificationConfigurationsResult::oper
     {
       m_notificationConfigurations.push_back(notificationConfigurationsJsonList[notificationConfigurationsIndex].AsObject());
     }
+    m_notificationConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

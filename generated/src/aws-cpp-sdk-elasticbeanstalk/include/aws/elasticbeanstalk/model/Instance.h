@@ -31,7 +31,7 @@ namespace Model
   class Instance
   {
   public:
-    AWS_ELASTICBEANSTALK_API Instance();
+    AWS_ELASTICBEANSTALK_API Instance() = default;
     AWS_ELASTICBEANSTALK_API Instance(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API Instance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Instance& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Instance& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Instance& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

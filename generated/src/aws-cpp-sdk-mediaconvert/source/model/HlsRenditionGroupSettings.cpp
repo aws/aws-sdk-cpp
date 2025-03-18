@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsRenditionGroupSettings::HlsRenditionGroupSettings() : 
-    m_renditionGroupIdHasBeenSet(false),
-    m_renditionLanguageCode(LanguageCode::NOT_SET),
-    m_renditionLanguageCodeHasBeenSet(false),
-    m_renditionNameHasBeenSet(false)
-{
-}
-
 HlsRenditionGroupSettings::HlsRenditionGroupSettings(JsonView jsonValue)
-  : HlsRenditionGroupSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HlsRenditionGroupSettings& HlsRenditionGroupSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("renditionGroupId"))
   {
     m_renditionGroupId = jsonValue.GetString("renditionGroupId");
-
     m_renditionGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renditionLanguageCode"))
   {
     m_renditionLanguageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("renditionLanguageCode"));
-
     m_renditionLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renditionName"))
   {
     m_renditionName = jsonValue.GetString("renditionName");
-
     m_renditionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

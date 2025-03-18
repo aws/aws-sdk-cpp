@@ -18,17 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-LocationConfiguration::LocationConfiguration() : 
-    m_alwaysOnCapacity(0),
-    m_alwaysOnCapacityHasBeenSet(false),
-    m_locationNameHasBeenSet(false),
-    m_onDemandCapacity(0),
-    m_onDemandCapacityHasBeenSet(false)
-{
-}
-
 LocationConfiguration::LocationConfiguration(JsonView jsonValue)
-  : LocationConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LocationConfiguration& LocationConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AlwaysOnCapacity"))
   {
     m_alwaysOnCapacity = jsonValue.GetInteger("AlwaysOnCapacity");
-
     m_alwaysOnCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationName"))
   {
     m_locationName = jsonValue.GetString("LocationName");
-
     m_locationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandCapacity"))
   {
     m_onDemandCapacity = jsonValue.GetInteger("OnDemandCapacity");
-
     m_onDemandCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

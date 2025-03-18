@@ -21,7 +21,7 @@ namespace Model
   class RejectInvitationRequest : public ManagedBlockchainRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API RejectInvitationRequest();
+    AWS_MANAGEDBLOCKCHAIN_API RejectInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the invitation to reject.</p>
      */
-    inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
+    inline const Aws::String& GetInvitationId() const { return m_invitationId; }
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
-    inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
-    inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
-    inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
-    inline RejectInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
-    inline RejectInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
-    inline RejectInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
+    template<typename InvitationIdT = Aws::String>
+    void SetInvitationId(InvitationIdT&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::forward<InvitationIdT>(value); }
+    template<typename InvitationIdT = Aws::String>
+    RejectInvitationRequest& WithInvitationId(InvitationIdT&& value) { SetInvitationId(std::forward<InvitationIdT>(value)); return *this;}
     ///@}
   private:
 

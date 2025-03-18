@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-LocalDeviceResourceData::LocalDeviceResourceData() : 
-    m_groupOwnerSettingHasBeenSet(false),
-    m_sourcePathHasBeenSet(false)
-{
-}
-
 LocalDeviceResourceData::LocalDeviceResourceData(JsonView jsonValue)
-  : LocalDeviceResourceData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LocalDeviceResourceData& LocalDeviceResourceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupOwnerSetting"))
   {
     m_groupOwnerSetting = jsonValue.GetObject("GroupOwnerSetting");
-
     m_groupOwnerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePath"))
   {
     m_sourcePath = jsonValue.GetString("SourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   return *this;
 }
 

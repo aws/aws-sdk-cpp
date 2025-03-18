@@ -29,7 +29,7 @@ namespace Model
   class VideoDetail
   {
   public:
-    AWS_MEDIACONVERT_API VideoDetail();
+    AWS_MEDIACONVERT_API VideoDetail() = default;
     AWS_MEDIACONVERT_API VideoDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * Height in pixels for the output
      */
-    inline int GetHeightInPx() const{ return m_heightInPx; }
+    inline int GetHeightInPx() const { return m_heightInPx; }
     inline bool HeightInPxHasBeenSet() const { return m_heightInPxHasBeenSet; }
     inline void SetHeightInPx(int value) { m_heightInPxHasBeenSet = true; m_heightInPx = value; }
     inline VideoDetail& WithHeightInPx(int value) { SetHeightInPx(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * Width in pixels for the output
      */
-    inline int GetWidthInPx() const{ return m_widthInPx; }
+    inline int GetWidthInPx() const { return m_widthInPx; }
     inline bool WidthInPxHasBeenSet() const { return m_widthInPxHasBeenSet; }
     inline void SetWidthInPx(int value) { m_widthInPxHasBeenSet = true; m_widthInPx = value; }
     inline VideoDetail& WithWidthInPx(int value) { SetWidthInPx(value); return *this;}
     ///@}
   private:
 
-    int m_heightInPx;
+    int m_heightInPx{0};
     bool m_heightInPxHasBeenSet = false;
 
-    int m_widthInPx;
+    int m_widthInPx{0};
     bool m_widthInPxHasBeenSet = false;
   };
 

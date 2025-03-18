@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateOriginRequestPolicy2020_05_31Request::CreateOriginRequestPolicy2020_05_31Request() : 
-    m_originRequestPolicyConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateOriginRequestPolicy2020_05_31Request::SerializePayload() const
 {

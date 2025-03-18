@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterGroup::ClusterParameterGroup() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ClusterParameterGroup::ClusterParameterGroup(const XmlNode& xmlNode)
-  : ClusterParameterGroup()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ ClusterParameterGroup& ClusterParameterGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

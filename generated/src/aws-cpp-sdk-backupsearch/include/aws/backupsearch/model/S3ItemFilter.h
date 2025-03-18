@@ -35,7 +35,7 @@ namespace Model
   class S3ItemFilter
   {
   public:
-    AWS_BACKUPSEARCH_API S3ItemFilter();
+    AWS_BACKUPSEARCH_API S3ItemFilter() = default;
     AWS_BACKUPSEARCH_API S3ItemFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API S3ItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * will return only items that match the value.</p> <p>If more than one value is
      * included, the results will return all items that match any of the values.</p>
      */
-    inline const Aws::Vector<StringCondition>& GetObjectKeys() const{ return m_objectKeys; }
+    inline const Aws::Vector<StringCondition>& GetObjectKeys() const { return m_objectKeys; }
     inline bool ObjectKeysHasBeenSet() const { return m_objectKeysHasBeenSet; }
-    inline void SetObjectKeys(const Aws::Vector<StringCondition>& value) { m_objectKeysHasBeenSet = true; m_objectKeys = value; }
-    inline void SetObjectKeys(Aws::Vector<StringCondition>&& value) { m_objectKeysHasBeenSet = true; m_objectKeys = std::move(value); }
-    inline S3ItemFilter& WithObjectKeys(const Aws::Vector<StringCondition>& value) { SetObjectKeys(value); return *this;}
-    inline S3ItemFilter& WithObjectKeys(Aws::Vector<StringCondition>&& value) { SetObjectKeys(std::move(value)); return *this;}
-    inline S3ItemFilter& AddObjectKeys(const StringCondition& value) { m_objectKeysHasBeenSet = true; m_objectKeys.push_back(value); return *this; }
-    inline S3ItemFilter& AddObjectKeys(StringCondition&& value) { m_objectKeysHasBeenSet = true; m_objectKeys.push_back(std::move(value)); return *this; }
+    template<typename ObjectKeysT = Aws::Vector<StringCondition>>
+    void SetObjectKeys(ObjectKeysT&& value) { m_objectKeysHasBeenSet = true; m_objectKeys = std::forward<ObjectKeysT>(value); }
+    template<typename ObjectKeysT = Aws::Vector<StringCondition>>
+    S3ItemFilter& WithObjectKeys(ObjectKeysT&& value) { SetObjectKeys(std::forward<ObjectKeysT>(value)); return *this;}
+    template<typename ObjectKeysT = StringCondition>
+    S3ItemFilter& AddObjectKeys(ObjectKeysT&& value) { m_objectKeysHasBeenSet = true; m_objectKeys.emplace_back(std::forward<ObjectKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * will return only items that match the value.</p> <p>If more than one value is
      * included, the results will return all items that match any of the values.</p>
      */
-    inline const Aws::Vector<LongCondition>& GetSizes() const{ return m_sizes; }
+    inline const Aws::Vector<LongCondition>& GetSizes() const { return m_sizes; }
     inline bool SizesHasBeenSet() const { return m_sizesHasBeenSet; }
-    inline void SetSizes(const Aws::Vector<LongCondition>& value) { m_sizesHasBeenSet = true; m_sizes = value; }
-    inline void SetSizes(Aws::Vector<LongCondition>&& value) { m_sizesHasBeenSet = true; m_sizes = std::move(value); }
-    inline S3ItemFilter& WithSizes(const Aws::Vector<LongCondition>& value) { SetSizes(value); return *this;}
-    inline S3ItemFilter& WithSizes(Aws::Vector<LongCondition>&& value) { SetSizes(std::move(value)); return *this;}
-    inline S3ItemFilter& AddSizes(const LongCondition& value) { m_sizesHasBeenSet = true; m_sizes.push_back(value); return *this; }
-    inline S3ItemFilter& AddSizes(LongCondition&& value) { m_sizesHasBeenSet = true; m_sizes.push_back(std::move(value)); return *this; }
+    template<typename SizesT = Aws::Vector<LongCondition>>
+    void SetSizes(SizesT&& value) { m_sizesHasBeenSet = true; m_sizes = std::forward<SizesT>(value); }
+    template<typename SizesT = Aws::Vector<LongCondition>>
+    S3ItemFilter& WithSizes(SizesT&& value) { SetSizes(std::forward<SizesT>(value)); return *this;}
+    template<typename SizesT = LongCondition>
+    S3ItemFilter& AddSizes(SizesT&& value) { m_sizesHasBeenSet = true; m_sizes.emplace_back(std::forward<SizesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +79,14 @@ namespace Model
      * will return only items that match the value.</p> <p>If more than one value is
      * included, the results will return all items that match any of the values.</p>
      */
-    inline const Aws::Vector<TimeCondition>& GetCreationTimes() const{ return m_creationTimes; }
+    inline const Aws::Vector<TimeCondition>& GetCreationTimes() const { return m_creationTimes; }
     inline bool CreationTimesHasBeenSet() const { return m_creationTimesHasBeenSet; }
-    inline void SetCreationTimes(const Aws::Vector<TimeCondition>& value) { m_creationTimesHasBeenSet = true; m_creationTimes = value; }
-    inline void SetCreationTimes(Aws::Vector<TimeCondition>&& value) { m_creationTimesHasBeenSet = true; m_creationTimes = std::move(value); }
-    inline S3ItemFilter& WithCreationTimes(const Aws::Vector<TimeCondition>& value) { SetCreationTimes(value); return *this;}
-    inline S3ItemFilter& WithCreationTimes(Aws::Vector<TimeCondition>&& value) { SetCreationTimes(std::move(value)); return *this;}
-    inline S3ItemFilter& AddCreationTimes(const TimeCondition& value) { m_creationTimesHasBeenSet = true; m_creationTimes.push_back(value); return *this; }
-    inline S3ItemFilter& AddCreationTimes(TimeCondition&& value) { m_creationTimesHasBeenSet = true; m_creationTimes.push_back(std::move(value)); return *this; }
+    template<typename CreationTimesT = Aws::Vector<TimeCondition>>
+    void SetCreationTimes(CreationTimesT&& value) { m_creationTimesHasBeenSet = true; m_creationTimes = std::forward<CreationTimesT>(value); }
+    template<typename CreationTimesT = Aws::Vector<TimeCondition>>
+    S3ItemFilter& WithCreationTimes(CreationTimesT&& value) { SetCreationTimes(std::forward<CreationTimesT>(value)); return *this;}
+    template<typename CreationTimesT = TimeCondition>
+    S3ItemFilter& AddCreationTimes(CreationTimesT&& value) { m_creationTimesHasBeenSet = true; m_creationTimes.emplace_back(std::forward<CreationTimesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +95,14 @@ namespace Model
      * will return only items that match the value.</p> <p>If more than one value is
      * included, the results will return all items that match any of the values.</p>
      */
-    inline const Aws::Vector<StringCondition>& GetVersionIds() const{ return m_versionIds; }
+    inline const Aws::Vector<StringCondition>& GetVersionIds() const { return m_versionIds; }
     inline bool VersionIdsHasBeenSet() const { return m_versionIdsHasBeenSet; }
-    inline void SetVersionIds(const Aws::Vector<StringCondition>& value) { m_versionIdsHasBeenSet = true; m_versionIds = value; }
-    inline void SetVersionIds(Aws::Vector<StringCondition>&& value) { m_versionIdsHasBeenSet = true; m_versionIds = std::move(value); }
-    inline S3ItemFilter& WithVersionIds(const Aws::Vector<StringCondition>& value) { SetVersionIds(value); return *this;}
-    inline S3ItemFilter& WithVersionIds(Aws::Vector<StringCondition>&& value) { SetVersionIds(std::move(value)); return *this;}
-    inline S3ItemFilter& AddVersionIds(const StringCondition& value) { m_versionIdsHasBeenSet = true; m_versionIds.push_back(value); return *this; }
-    inline S3ItemFilter& AddVersionIds(StringCondition&& value) { m_versionIdsHasBeenSet = true; m_versionIds.push_back(std::move(value)); return *this; }
+    template<typename VersionIdsT = Aws::Vector<StringCondition>>
+    void SetVersionIds(VersionIdsT&& value) { m_versionIdsHasBeenSet = true; m_versionIds = std::forward<VersionIdsT>(value); }
+    template<typename VersionIdsT = Aws::Vector<StringCondition>>
+    S3ItemFilter& WithVersionIds(VersionIdsT&& value) { SetVersionIds(std::forward<VersionIdsT>(value)); return *this;}
+    template<typename VersionIdsT = StringCondition>
+    S3ItemFilter& AddVersionIds(VersionIdsT&& value) { m_versionIdsHasBeenSet = true; m_versionIds.emplace_back(std::forward<VersionIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,14 +111,14 @@ namespace Model
      * will return only items that match the value.</p> <p>If more than one value is
      * included, the results will return all items that match any of the values.</p>
      */
-    inline const Aws::Vector<StringCondition>& GetETags() const{ return m_eTags; }
+    inline const Aws::Vector<StringCondition>& GetETags() const { return m_eTags; }
     inline bool ETagsHasBeenSet() const { return m_eTagsHasBeenSet; }
-    inline void SetETags(const Aws::Vector<StringCondition>& value) { m_eTagsHasBeenSet = true; m_eTags = value; }
-    inline void SetETags(Aws::Vector<StringCondition>&& value) { m_eTagsHasBeenSet = true; m_eTags = std::move(value); }
-    inline S3ItemFilter& WithETags(const Aws::Vector<StringCondition>& value) { SetETags(value); return *this;}
-    inline S3ItemFilter& WithETags(Aws::Vector<StringCondition>&& value) { SetETags(std::move(value)); return *this;}
-    inline S3ItemFilter& AddETags(const StringCondition& value) { m_eTagsHasBeenSet = true; m_eTags.push_back(value); return *this; }
-    inline S3ItemFilter& AddETags(StringCondition&& value) { m_eTagsHasBeenSet = true; m_eTags.push_back(std::move(value)); return *this; }
+    template<typename ETagsT = Aws::Vector<StringCondition>>
+    void SetETags(ETagsT&& value) { m_eTagsHasBeenSet = true; m_eTags = std::forward<ETagsT>(value); }
+    template<typename ETagsT = Aws::Vector<StringCondition>>
+    S3ItemFilter& WithETags(ETagsT&& value) { SetETags(std::forward<ETagsT>(value)); return *this;}
+    template<typename ETagsT = StringCondition>
+    S3ItemFilter& AddETags(ETagsT&& value) { m_eTagsHasBeenSet = true; m_eTags.emplace_back(std::forward<ETagsT>(value)); return *this; }
     ///@}
   private:
 

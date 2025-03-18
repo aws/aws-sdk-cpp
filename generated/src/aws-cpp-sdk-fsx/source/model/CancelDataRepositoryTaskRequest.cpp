@@ -12,11 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelDataRepositoryTaskRequest::CancelDataRepositoryTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelDataRepositoryTaskRequest::SerializePayload() const
 {
   JsonValue payload;

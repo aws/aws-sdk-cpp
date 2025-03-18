@@ -12,13 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFraudsterRequest::AssociateFraudsterRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_fraudsterIdHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateFraudsterRequest::SerializePayload() const
 {
   JsonValue payload;

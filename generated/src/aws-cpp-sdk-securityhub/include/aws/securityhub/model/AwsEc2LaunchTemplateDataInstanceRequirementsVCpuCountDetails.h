@@ -30,7 +30,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> The maximum number of vCPUs. </p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails& WithMax(int value) { SetMax(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p> The minimum number of vCPUs. </p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails& WithMin(int value) { SetMin(value); return *this;}
     ///@}
   private:
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
   };
 

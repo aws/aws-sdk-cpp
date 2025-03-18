@@ -34,7 +34,7 @@ namespace Model
   class HttpHeaderConditionConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
      * to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a
      * host header condition.</p>
      */
-    inline const Aws::String& GetHttpHeaderName() const{ return m_httpHeaderName; }
+    inline const Aws::String& GetHttpHeaderName() const { return m_httpHeaderName; }
     inline bool HttpHeaderNameHasBeenSet() const { return m_httpHeaderNameHasBeenSet; }
-    inline void SetHttpHeaderName(const Aws::String& value) { m_httpHeaderNameHasBeenSet = true; m_httpHeaderName = value; }
-    inline void SetHttpHeaderName(Aws::String&& value) { m_httpHeaderNameHasBeenSet = true; m_httpHeaderName = std::move(value); }
-    inline void SetHttpHeaderName(const char* value) { m_httpHeaderNameHasBeenSet = true; m_httpHeaderName.assign(value); }
-    inline HttpHeaderConditionConfig& WithHttpHeaderName(const Aws::String& value) { SetHttpHeaderName(value); return *this;}
-    inline HttpHeaderConditionConfig& WithHttpHeaderName(Aws::String&& value) { SetHttpHeaderName(std::move(value)); return *this;}
-    inline HttpHeaderConditionConfig& WithHttpHeaderName(const char* value) { SetHttpHeaderName(value); return *this;}
+    template<typename HttpHeaderNameT = Aws::String>
+    void SetHttpHeaderName(HttpHeaderNameT&& value) { m_httpHeaderNameHasBeenSet = true; m_httpHeaderName = std::forward<HttpHeaderNameT>(value); }
+    template<typename HttpHeaderNameT = Aws::String>
+    HttpHeaderConditionConfig& WithHttpHeaderName(HttpHeaderNameT&& value) { SetHttpHeaderName(std::forward<HttpHeaderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +69,14 @@ namespace Model
      * of the strings matches the value of the HTTP header. To require that all of the
      * strings are a match, create one condition per string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline HttpHeaderConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline HttpHeaderConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline HttpHeaderConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline HttpHeaderConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline HttpHeaderConditionConfig& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    HttpHeaderConditionConfig& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    HttpHeaderConditionConfig& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

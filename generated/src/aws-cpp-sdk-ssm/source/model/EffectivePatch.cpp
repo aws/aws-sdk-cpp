@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-EffectivePatch::EffectivePatch() : 
-    m_patchHasBeenSet(false),
-    m_patchStatusHasBeenSet(false)
-{
-}
-
 EffectivePatch::EffectivePatch(JsonView jsonValue)
-  : EffectivePatch()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EffectivePatch& EffectivePatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Patch"))
   {
     m_patch = jsonValue.GetObject("Patch");
-
     m_patchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PatchStatus"))
   {
     m_patchStatus = jsonValue.GetObject("PatchStatus");
-
     m_patchStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

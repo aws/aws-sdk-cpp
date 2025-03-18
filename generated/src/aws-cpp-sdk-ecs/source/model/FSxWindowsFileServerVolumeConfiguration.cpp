@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-FSxWindowsFileServerVolumeConfiguration::FSxWindowsFileServerVolumeConfiguration() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
-{
-}
-
 FSxWindowsFileServerVolumeConfiguration::FSxWindowsFileServerVolumeConfiguration(JsonView jsonValue)
-  : FSxWindowsFileServerVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FSxWindowsFileServerVolumeConfiguration& FSxWindowsFileServerVolumeConfiguration
   if(jsonValue.ValueExists("fileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("fileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootDirectory"))
   {
     m_rootDirectory = jsonValue.GetString("rootDirectory");
-
     m_rootDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationConfig"))
   {
     m_authorizationConfig = jsonValue.GetObject("authorizationConfig");
-
     m_authorizationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

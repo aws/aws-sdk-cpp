@@ -18,14 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-StreamingExperienceSettings::StreamingExperienceSettings() : 
-    m_preferredProtocol(PreferredProtocol::NOT_SET),
-    m_preferredProtocolHasBeenSet(false)
-{
-}
-
 StreamingExperienceSettings::StreamingExperienceSettings(JsonView jsonValue)
-  : StreamingExperienceSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StreamingExperienceSettings& StreamingExperienceSettings::operator =(JsonView js
   if(jsonValue.ValueExists("PreferredProtocol"))
   {
     m_preferredProtocol = PreferredProtocolMapper::GetPreferredProtocolForName(jsonValue.GetString("PreferredProtocol"));
-
     m_preferredProtocolHasBeenSet = true;
   }
-
   return *this;
 }
 

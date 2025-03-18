@@ -18,20 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansPurchaseAnalysisConfiguration::SavingsPlansPurchaseAnalysisConfiguration() : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_analysisType(AnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_savingsPlansToAddHasBeenSet(false),
-    m_savingsPlansToExcludeHasBeenSet(false),
-    m_lookBackTimePeriodHasBeenSet(false)
-{
-}
-
 SavingsPlansPurchaseAnalysisConfiguration::SavingsPlansPurchaseAnalysisConfiguration(JsonView jsonValue)
-  : SavingsPlansPurchaseAnalysisConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ SavingsPlansPurchaseAnalysisConfiguration& SavingsPlansPurchaseAnalysisConfigura
   if(jsonValue.ValueExists("AccountScope"))
   {
     m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisType"))
   {
     m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("AnalysisType"));
-
     m_analysisTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansToAdd"))
   {
     Aws::Utils::Array<JsonView> savingsPlansToAddJsonList = jsonValue.GetArray("SavingsPlansToAdd");
@@ -68,7 +49,6 @@ SavingsPlansPurchaseAnalysisConfiguration& SavingsPlansPurchaseAnalysisConfigura
     }
     m_savingsPlansToAddHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansToExclude"))
   {
     Aws::Utils::Array<JsonView> savingsPlansToExcludeJsonList = jsonValue.GetArray("SavingsPlansToExclude");
@@ -78,14 +58,11 @@ SavingsPlansPurchaseAnalysisConfiguration& SavingsPlansPurchaseAnalysisConfigura
     }
     m_savingsPlansToExcludeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookBackTimePeriod"))
   {
     m_lookBackTimePeriod = jsonValue.GetObject("LookBackTimePeriod");
-
     m_lookBackTimePeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

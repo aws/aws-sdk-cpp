@@ -18,15 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-Condition::Condition() : 
-    m_typeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

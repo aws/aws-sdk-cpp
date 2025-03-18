@@ -24,7 +24,7 @@ namespace Model
   class GetFindingsStatisticsRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API GetFindingsStatisticsRequest();
+    AWS_GUARDDUTY_API GetFindingsStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline GetFindingsStatisticsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline GetFindingsStatisticsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline GetFindingsStatisticsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    GetFindingsStatisticsRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the criteria that is used for querying findings.</p>
      */
-    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+    inline const FindingCriteria& GetFindingCriteria() const { return m_findingCriteria; }
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
-    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
-    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
-    inline GetFindingsStatisticsRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
-    inline GetFindingsStatisticsRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+    template<typename FindingCriteriaT = FindingCriteria>
+    void SetFindingCriteria(FindingCriteriaT&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::forward<FindingCriteriaT>(value); }
+    template<typename FindingCriteriaT = FindingCriteria>
+    GetFindingsStatisticsRequest& WithFindingCriteria(FindingCriteriaT&& value) { SetFindingCriteria(std::forward<FindingCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * <p>Displays the findings statistics grouped by one of the listed valid
      * values.</p>
      */
-    inline const GroupByType& GetGroupBy() const{ return m_groupBy; }
+    inline GroupByType GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const GroupByType& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(GroupByType&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetFindingsStatisticsRequest& WithGroupBy(const GroupByType& value) { SetGroupBy(value); return *this;}
-    inline GetFindingsStatisticsRequest& WithGroupBy(GroupByType&& value) { SetGroupBy(std::move(value)); return *this;}
+    inline void SetGroupBy(GroupByType value) { m_groupByHasBeenSet = true; m_groupBy = value; }
+    inline GetFindingsStatisticsRequest& WithGroupBy(GroupByType value) { SetGroupBy(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,10 @@ namespace Model
      * <code>orderBy</code> is <code>DESC</code>.</p> <p>You can use this parameter
      * only with the <code>groupBy</code> parameter.</p>
      */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline OrderBy GetOrderBy() const { return m_orderBy; }
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline GetFindingsStatisticsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline GetFindingsStatisticsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    inline void SetOrderBy(OrderBy value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline GetFindingsStatisticsRequest& WithOrderBy(OrderBy value) { SetOrderBy(value); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +92,7 @@ namespace Model
      * value is 25.</p> <p>You can use this parameter only with the
      * <code>groupBy</code> parameter.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetFindingsStatisticsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -111,13 +105,13 @@ namespace Model
     FindingCriteria m_findingCriteria;
     bool m_findingCriteriaHasBeenSet = false;
 
-    GroupByType m_groupBy;
+    GroupByType m_groupBy{GroupByType::NOT_SET};
     bool m_groupByHasBeenSet = false;
 
-    OrderBy m_orderBy;
+    OrderBy m_orderBy{OrderBy::NOT_SET};
     bool m_orderByHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

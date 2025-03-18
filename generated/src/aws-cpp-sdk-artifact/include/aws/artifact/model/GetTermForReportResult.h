@@ -27,7 +27,7 @@ namespace Model
   class GetTermForReportResult
   {
   public:
-    AWS_ARTIFACT_API GetTermForReportResult();
+    AWS_ARTIFACT_API GetTermForReportResult() = default;
     AWS_ARTIFACT_API GetTermForReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARTIFACT_API GetTermForReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>Presigned S3 url to access the term content.</p>
      */
-    inline const Aws::String& GetDocumentPresignedUrl() const{ return m_documentPresignedUrl; }
-    inline void SetDocumentPresignedUrl(const Aws::String& value) { m_documentPresignedUrl = value; }
-    inline void SetDocumentPresignedUrl(Aws::String&& value) { m_documentPresignedUrl = std::move(value); }
-    inline void SetDocumentPresignedUrl(const char* value) { m_documentPresignedUrl.assign(value); }
-    inline GetTermForReportResult& WithDocumentPresignedUrl(const Aws::String& value) { SetDocumentPresignedUrl(value); return *this;}
-    inline GetTermForReportResult& WithDocumentPresignedUrl(Aws::String&& value) { SetDocumentPresignedUrl(std::move(value)); return *this;}
-    inline GetTermForReportResult& WithDocumentPresignedUrl(const char* value) { SetDocumentPresignedUrl(value); return *this;}
+    inline const Aws::String& GetDocumentPresignedUrl() const { return m_documentPresignedUrl; }
+    template<typename DocumentPresignedUrlT = Aws::String>
+    void SetDocumentPresignedUrl(DocumentPresignedUrlT&& value) { m_documentPresignedUrlHasBeenSet = true; m_documentPresignedUrl = std::forward<DocumentPresignedUrlT>(value); }
+    template<typename DocumentPresignedUrlT = Aws::String>
+    GetTermForReportResult& WithDocumentPresignedUrl(DocumentPresignedUrlT&& value) { SetDocumentPresignedUrl(std::forward<DocumentPresignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique token representing this request event.</p>
      */
-    inline const Aws::String& GetTermToken() const{ return m_termToken; }
-    inline void SetTermToken(const Aws::String& value) { m_termToken = value; }
-    inline void SetTermToken(Aws::String&& value) { m_termToken = std::move(value); }
-    inline void SetTermToken(const char* value) { m_termToken.assign(value); }
-    inline GetTermForReportResult& WithTermToken(const Aws::String& value) { SetTermToken(value); return *this;}
-    inline GetTermForReportResult& WithTermToken(Aws::String&& value) { SetTermToken(std::move(value)); return *this;}
-    inline GetTermForReportResult& WithTermToken(const char* value) { SetTermToken(value); return *this;}
+    inline const Aws::String& GetTermToken() const { return m_termToken; }
+    template<typename TermTokenT = Aws::String>
+    void SetTermToken(TermTokenT&& value) { m_termTokenHasBeenSet = true; m_termToken = std::forward<TermTokenT>(value); }
+    template<typename TermTokenT = Aws::String>
+    GetTermForReportResult& WithTermToken(TermTokenT&& value) { SetTermToken(std::forward<TermTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTermForReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTermForReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTermForReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTermForReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_documentPresignedUrl;
+    bool m_documentPresignedUrlHasBeenSet = false;
 
     Aws::String m_termToken;
+    bool m_termTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

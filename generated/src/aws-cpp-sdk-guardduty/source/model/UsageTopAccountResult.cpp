@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UsageTopAccountResult::UsageTopAccountResult() : 
-    m_accountIdHasBeenSet(false),
-    m_totalHasBeenSet(false)
-{
-}
-
 UsageTopAccountResult::UsageTopAccountResult(JsonView jsonValue)
-  : UsageTopAccountResult()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UsageTopAccountResult& UsageTopAccountResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetObject("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

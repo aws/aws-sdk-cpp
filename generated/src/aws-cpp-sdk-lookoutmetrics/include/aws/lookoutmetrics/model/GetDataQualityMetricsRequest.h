@@ -21,7 +21,7 @@ namespace Model
   class GetDataQualityMetricsRequest : public LookoutMetricsRequest
   {
   public:
-    AWS_LOOKOUTMETRICS_API GetDataQualityMetricsRequest();
+    AWS_LOOKOUTMETRICS_API GetDataQualityMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to
      * investigate.</p>
      */
-    inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
+    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
     inline bool AnomalyDetectorArnHasBeenSet() const { return m_anomalyDetectorArnHasBeenSet; }
-    inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = value; }
-    inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::move(value); }
-    inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn.assign(value); }
-    inline GetDataQualityMetricsRequest& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-    inline GetDataQualityMetricsRequest& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-    inline GetDataQualityMetricsRequest& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    template<typename AnomalyDetectorArnT = Aws::String>
+    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    GetDataQualityMetricsRequest& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
      */
-    inline const Aws::String& GetMetricSetArn() const{ return m_metricSetArn; }
+    inline const Aws::String& GetMetricSetArn() const { return m_metricSetArn; }
     inline bool MetricSetArnHasBeenSet() const { return m_metricSetArnHasBeenSet; }
-    inline void SetMetricSetArn(const Aws::String& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = value; }
-    inline void SetMetricSetArn(Aws::String&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::move(value); }
-    inline void SetMetricSetArn(const char* value) { m_metricSetArnHasBeenSet = true; m_metricSetArn.assign(value); }
-    inline GetDataQualityMetricsRequest& WithMetricSetArn(const Aws::String& value) { SetMetricSetArn(value); return *this;}
-    inline GetDataQualityMetricsRequest& WithMetricSetArn(Aws::String&& value) { SetMetricSetArn(std::move(value)); return *this;}
-    inline GetDataQualityMetricsRequest& WithMetricSetArn(const char* value) { SetMetricSetArn(value); return *this;}
+    template<typename MetricSetArnT = Aws::String>
+    void SetMetricSetArn(MetricSetArnT&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::forward<MetricSetArnT>(value); }
+    template<typename MetricSetArnT = Aws::String>
+    GetDataQualityMetricsRequest& WithMetricSetArn(MetricSetArnT&& value) { SetMetricSetArn(std::forward<MetricSetArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ListOperationsResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListOperationsResult();
+    AWS_ROUTE53DOMAINS_API ListOperationsResult() = default;
     AWS_ROUTE53DOMAINS_API ListOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API ListOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>Lists summaries of the operations.</p>
      */
-    inline const Aws::Vector<OperationSummary>& GetOperations() const{ return m_operations; }
-    inline void SetOperations(const Aws::Vector<OperationSummary>& value) { m_operations = value; }
-    inline void SetOperations(Aws::Vector<OperationSummary>&& value) { m_operations = std::move(value); }
-    inline ListOperationsResult& WithOperations(const Aws::Vector<OperationSummary>& value) { SetOperations(value); return *this;}
-    inline ListOperationsResult& WithOperations(Aws::Vector<OperationSummary>&& value) { SetOperations(std::move(value)); return *this;}
-    inline ListOperationsResult& AddOperations(const OperationSummary& value) { m_operations.push_back(value); return *this; }
-    inline ListOperationsResult& AddOperations(OperationSummary&& value) { m_operations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OperationSummary>& GetOperations() const { return m_operations; }
+    template<typename OperationsT = Aws::Vector<OperationSummary>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<OperationSummary>>
+    ListOperationsResult& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    template<typename OperationsT = OperationSummary>
+    ListOperationsResult& AddOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations.emplace_back(std::forward<OperationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * the request, submit another request and include the value of
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
-    inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
-    inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
-    inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
-    inline ListOperationsResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
-    inline ListOperationsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
-    inline ListOperationsResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
+    inline const Aws::String& GetNextPageMarker() const { return m_nextPageMarker; }
+    template<typename NextPageMarkerT = Aws::String>
+    void SetNextPageMarker(NextPageMarkerT&& value) { m_nextPageMarkerHasBeenSet = true; m_nextPageMarker = std::forward<NextPageMarkerT>(value); }
+    template<typename NextPageMarkerT = Aws::String>
+    ListOperationsResult& WithNextPageMarker(NextPageMarkerT&& value) { SetNextPageMarker(std::forward<NextPageMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OperationSummary> m_operations;
+    bool m_operationsHasBeenSet = false;
 
     Aws::String m_nextPageMarker;
+    bool m_nextPageMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

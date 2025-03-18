@@ -33,7 +33,7 @@ namespace Model
   class OAuthProperties
   {
   public:
-    AWS_APPFLOW_API OAuthProperties();
+    AWS_APPFLOW_API OAuthProperties() = default;
     AWS_APPFLOW_API OAuthProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API OAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p> The token url required to fetch access/refresh tokens using authorization
      * code and also to refresh expired access token using refresh token.</p>
      */
-    inline const Aws::String& GetTokenUrl() const{ return m_tokenUrl; }
+    inline const Aws::String& GetTokenUrl() const { return m_tokenUrl; }
     inline bool TokenUrlHasBeenSet() const { return m_tokenUrlHasBeenSet; }
-    inline void SetTokenUrl(const Aws::String& value) { m_tokenUrlHasBeenSet = true; m_tokenUrl = value; }
-    inline void SetTokenUrl(Aws::String&& value) { m_tokenUrlHasBeenSet = true; m_tokenUrl = std::move(value); }
-    inline void SetTokenUrl(const char* value) { m_tokenUrlHasBeenSet = true; m_tokenUrl.assign(value); }
-    inline OAuthProperties& WithTokenUrl(const Aws::String& value) { SetTokenUrl(value); return *this;}
-    inline OAuthProperties& WithTokenUrl(Aws::String&& value) { SetTokenUrl(std::move(value)); return *this;}
-    inline OAuthProperties& WithTokenUrl(const char* value) { SetTokenUrl(value); return *this;}
+    template<typename TokenUrlT = Aws::String>
+    void SetTokenUrl(TokenUrlT&& value) { m_tokenUrlHasBeenSet = true; m_tokenUrl = std::forward<TokenUrlT>(value); }
+    template<typename TokenUrlT = Aws::String>
+    OAuthProperties& WithTokenUrl(TokenUrlT&& value) { SetTokenUrl(std::forward<TokenUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,29 +57,26 @@ namespace Model
      * <p> The authorization code url required to redirect to SAP Login Page to fetch
      * authorization code for OAuth type authentication. </p>
      */
-    inline const Aws::String& GetAuthCodeUrl() const{ return m_authCodeUrl; }
+    inline const Aws::String& GetAuthCodeUrl() const { return m_authCodeUrl; }
     inline bool AuthCodeUrlHasBeenSet() const { return m_authCodeUrlHasBeenSet; }
-    inline void SetAuthCodeUrl(const Aws::String& value) { m_authCodeUrlHasBeenSet = true; m_authCodeUrl = value; }
-    inline void SetAuthCodeUrl(Aws::String&& value) { m_authCodeUrlHasBeenSet = true; m_authCodeUrl = std::move(value); }
-    inline void SetAuthCodeUrl(const char* value) { m_authCodeUrlHasBeenSet = true; m_authCodeUrl.assign(value); }
-    inline OAuthProperties& WithAuthCodeUrl(const Aws::String& value) { SetAuthCodeUrl(value); return *this;}
-    inline OAuthProperties& WithAuthCodeUrl(Aws::String&& value) { SetAuthCodeUrl(std::move(value)); return *this;}
-    inline OAuthProperties& WithAuthCodeUrl(const char* value) { SetAuthCodeUrl(value); return *this;}
+    template<typename AuthCodeUrlT = Aws::String>
+    void SetAuthCodeUrl(AuthCodeUrlT&& value) { m_authCodeUrlHasBeenSet = true; m_authCodeUrl = std::forward<AuthCodeUrlT>(value); }
+    template<typename AuthCodeUrlT = Aws::String>
+    OAuthProperties& WithAuthCodeUrl(AuthCodeUrlT&& value) { SetAuthCodeUrl(std::forward<AuthCodeUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The OAuth scopes required for OAuth type authentication. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const{ return m_oAuthScopes; }
+    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const { return m_oAuthScopes; }
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
-    inline void SetOAuthScopes(const Aws::Vector<Aws::String>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
-    inline void SetOAuthScopes(Aws::Vector<Aws::String>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
-    inline OAuthProperties& WithOAuthScopes(const Aws::Vector<Aws::String>& value) { SetOAuthScopes(value); return *this;}
-    inline OAuthProperties& WithOAuthScopes(Aws::Vector<Aws::String>&& value) { SetOAuthScopes(std::move(value)); return *this;}
-    inline OAuthProperties& AddOAuthScopes(const Aws::String& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-    inline OAuthProperties& AddOAuthScopes(Aws::String&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
-    inline OAuthProperties& AddOAuthScopes(const char* value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    void SetOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::forward<OAuthScopesT>(value); }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    OAuthProperties& WithOAuthScopes(OAuthScopesT&& value) { SetOAuthScopes(std::forward<OAuthScopesT>(value)); return *this;}
+    template<typename OAuthScopesT = Aws::String>
+    OAuthProperties& AddOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.emplace_back(std::forward<OAuthScopesT>(value)); return *this; }
     ///@}
   private:
 

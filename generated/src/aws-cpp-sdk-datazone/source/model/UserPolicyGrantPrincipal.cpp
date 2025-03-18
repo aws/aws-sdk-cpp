@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-UserPolicyGrantPrincipal::UserPolicyGrantPrincipal() : 
-    m_allUsersGrantFilterHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false)
-{
-}
-
 UserPolicyGrantPrincipal::UserPolicyGrantPrincipal(JsonView jsonValue)
-  : UserPolicyGrantPrincipal()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserPolicyGrantPrincipal& UserPolicyGrantPrincipal::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("allUsersGrantFilter"))
   {
     m_allUsersGrantFilter = jsonValue.GetObject("allUsersGrantFilter");
-
     m_allUsersGrantFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIdentifier"))
   {
     m_userIdentifier = jsonValue.GetString("userIdentifier");
-
     m_userIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

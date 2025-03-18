@@ -28,7 +28,7 @@ namespace Model
   class DeregisterTaskDefinitionResult
   {
   public:
-    AWS_ECS_API DeregisterTaskDefinitionResult();
+    AWS_ECS_API DeregisterTaskDefinitionResult() = default;
     AWS_ECS_API DeregisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DeregisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The full description of the deregistered task.</p>
      */
-    inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
-    inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
-    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = std::move(value); }
-    inline DeregisterTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
-    inline DeregisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
+    inline const TaskDefinition& GetTaskDefinition() const { return m_taskDefinition; }
+    template<typename TaskDefinitionT = TaskDefinition>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = TaskDefinition>
+    DeregisterTaskDefinitionResult& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeregisterTaskDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeregisterTaskDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeregisterTaskDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeregisterTaskDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TaskDefinition m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

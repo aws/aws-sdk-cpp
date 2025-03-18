@@ -18,16 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryTimeline::CanaryTimeline() : 
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_lastStartedHasBeenSet(false),
-    m_lastStoppedHasBeenSet(false)
-{
-}
-
 CanaryTimeline::CanaryTimeline(JsonView jsonValue)
-  : CanaryTimeline()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CanaryTimeline& CanaryTimeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetDouble("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetDouble("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStarted"))
   {
     m_lastStarted = jsonValue.GetDouble("LastStarted");
-
     m_lastStartedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStopped"))
   {
     m_lastStopped = jsonValue.GetDouble("LastStopped");
-
     m_lastStoppedHasBeenSet = true;
   }
-
   return *this;
 }
 

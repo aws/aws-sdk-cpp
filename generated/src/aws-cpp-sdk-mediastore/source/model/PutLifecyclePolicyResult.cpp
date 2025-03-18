@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutLifecyclePolicyResult::PutLifecyclePolicyResult()
-{
-}
-
 PutLifecyclePolicyResult::PutLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ PutLifecyclePolicyResult& PutLifecyclePolicyResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

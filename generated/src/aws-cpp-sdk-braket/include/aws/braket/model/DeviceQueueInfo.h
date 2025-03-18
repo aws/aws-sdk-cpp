@@ -34,7 +34,7 @@ namespace Model
   class DeviceQueueInfo
   {
   public:
-    AWS_BRAKET_API DeviceQueueInfo();
+    AWS_BRAKET_API DeviceQueueInfo() = default;
     AWS_BRAKET_API DeviceQueueInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API DeviceQueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the queue. </p>
      */
-    inline const QueueName& GetQueue() const{ return m_queue; }
+    inline QueueName GetQueue() const { return m_queue; }
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-    inline void SetQueue(const QueueName& value) { m_queueHasBeenSet = true; m_queue = value; }
-    inline void SetQueue(QueueName&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-    inline DeviceQueueInfo& WithQueue(const QueueName& value) { SetQueue(value); return *this;}
-    inline DeviceQueueInfo& WithQueue(QueueName&& value) { SetQueue(std::move(value)); return *this;}
+    inline void SetQueue(QueueName value) { m_queueHasBeenSet = true; m_queue = value; }
+    inline DeviceQueueInfo& WithQueue(QueueName value) { SetQueue(value); return *this;}
     ///@}
 
     ///@{
@@ -57,33 +55,29 @@ namespace Model
      * <p>Optional. Specifies the priority of the queue. Tasks in a priority queue are
      * processed before the tasks in a normal queue.</p>
      */
-    inline const QueuePriority& GetQueuePriority() const{ return m_queuePriority; }
+    inline QueuePriority GetQueuePriority() const { return m_queuePriority; }
     inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
-    inline void SetQueuePriority(const QueuePriority& value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
-    inline void SetQueuePriority(QueuePriority&& value) { m_queuePriorityHasBeenSet = true; m_queuePriority = std::move(value); }
-    inline DeviceQueueInfo& WithQueuePriority(const QueuePriority& value) { SetQueuePriority(value); return *this;}
-    inline DeviceQueueInfo& WithQueuePriority(QueuePriority&& value) { SetQueuePriority(std::move(value)); return *this;}
+    inline void SetQueuePriority(QueuePriority value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
+    inline DeviceQueueInfo& WithQueuePriority(QueuePriority value) { SetQueuePriority(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of jobs or tasks in the queue for a given device. </p>
      */
-    inline const Aws::String& GetQueueSize() const{ return m_queueSize; }
+    inline const Aws::String& GetQueueSize() const { return m_queueSize; }
     inline bool QueueSizeHasBeenSet() const { return m_queueSizeHasBeenSet; }
-    inline void SetQueueSize(const Aws::String& value) { m_queueSizeHasBeenSet = true; m_queueSize = value; }
-    inline void SetQueueSize(Aws::String&& value) { m_queueSizeHasBeenSet = true; m_queueSize = std::move(value); }
-    inline void SetQueueSize(const char* value) { m_queueSizeHasBeenSet = true; m_queueSize.assign(value); }
-    inline DeviceQueueInfo& WithQueueSize(const Aws::String& value) { SetQueueSize(value); return *this;}
-    inline DeviceQueueInfo& WithQueueSize(Aws::String&& value) { SetQueueSize(std::move(value)); return *this;}
-    inline DeviceQueueInfo& WithQueueSize(const char* value) { SetQueueSize(value); return *this;}
+    template<typename QueueSizeT = Aws::String>
+    void SetQueueSize(QueueSizeT&& value) { m_queueSizeHasBeenSet = true; m_queueSize = std::forward<QueueSizeT>(value); }
+    template<typename QueueSizeT = Aws::String>
+    DeviceQueueInfo& WithQueueSize(QueueSizeT&& value) { SetQueueSize(std::forward<QueueSizeT>(value)); return *this;}
     ///@}
   private:
 
-    QueueName m_queue;
+    QueueName m_queue{QueueName::NOT_SET};
     bool m_queueHasBeenSet = false;
 
-    QueuePriority m_queuePriority;
+    QueuePriority m_queuePriority{QueuePriority::NOT_SET};
     bool m_queuePriorityHasBeenSet = false;
 
     Aws::String m_queueSize;

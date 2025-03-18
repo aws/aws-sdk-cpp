@@ -21,7 +21,7 @@ namespace Model
   class DeregisterStreamConsumerRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API DeregisterStreamConsumerRequest();
+    AWS_KINESIS_API DeregisterStreamConsumerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline DeregisterStreamConsumerRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline DeregisterStreamConsumerRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline DeregisterStreamConsumerRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    DeregisterStreamConsumerRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name that you gave to the consumer.</p>
      */
-    inline const Aws::String& GetConsumerName() const{ return m_consumerName; }
+    inline const Aws::String& GetConsumerName() const { return m_consumerName; }
     inline bool ConsumerNameHasBeenSet() const { return m_consumerNameHasBeenSet; }
-    inline void SetConsumerName(const Aws::String& value) { m_consumerNameHasBeenSet = true; m_consumerName = value; }
-    inline void SetConsumerName(Aws::String&& value) { m_consumerNameHasBeenSet = true; m_consumerName = std::move(value); }
-    inline void SetConsumerName(const char* value) { m_consumerNameHasBeenSet = true; m_consumerName.assign(value); }
-    inline DeregisterStreamConsumerRequest& WithConsumerName(const Aws::String& value) { SetConsumerName(value); return *this;}
-    inline DeregisterStreamConsumerRequest& WithConsumerName(Aws::String&& value) { SetConsumerName(std::move(value)); return *this;}
-    inline DeregisterStreamConsumerRequest& WithConsumerName(const char* value) { SetConsumerName(value); return *this;}
+    template<typename ConsumerNameT = Aws::String>
+    void SetConsumerName(ConsumerNameT&& value) { m_consumerNameHasBeenSet = true; m_consumerName = std::forward<ConsumerNameT>(value); }
+    template<typename ConsumerNameT = Aws::String>
+    DeregisterStreamConsumerRequest& WithConsumerName(ConsumerNameT&& value) { SetConsumerName(std::forward<ConsumerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * consumers that are currently registered with a given data stream. The
      * description of a consumer contains its ARN.</p>
      */
-    inline const Aws::String& GetConsumerARN() const{ return m_consumerARN; }
+    inline const Aws::String& GetConsumerARN() const { return m_consumerARN; }
     inline bool ConsumerARNHasBeenSet() const { return m_consumerARNHasBeenSet; }
-    inline void SetConsumerARN(const Aws::String& value) { m_consumerARNHasBeenSet = true; m_consumerARN = value; }
-    inline void SetConsumerARN(Aws::String&& value) { m_consumerARNHasBeenSet = true; m_consumerARN = std::move(value); }
-    inline void SetConsumerARN(const char* value) { m_consumerARNHasBeenSet = true; m_consumerARN.assign(value); }
-    inline DeregisterStreamConsumerRequest& WithConsumerARN(const Aws::String& value) { SetConsumerARN(value); return *this;}
-    inline DeregisterStreamConsumerRequest& WithConsumerARN(Aws::String&& value) { SetConsumerARN(std::move(value)); return *this;}
-    inline DeregisterStreamConsumerRequest& WithConsumerARN(const char* value) { SetConsumerARN(value); return *this;}
+    template<typename ConsumerARNT = Aws::String>
+    void SetConsumerARN(ConsumerARNT&& value) { m_consumerARNHasBeenSet = true; m_consumerARN = std::forward<ConsumerARNT>(value); }
+    template<typename ConsumerARNT = Aws::String>
+    DeregisterStreamConsumerRequest& WithConsumerARN(ConsumerARNT&& value) { SetConsumerARN(std::forward<ConsumerARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyBackupToRegionRequest::CopyBackupToRegionRequest() : 
-    m_destinationRegionHasBeenSet(false),
-    m_backupIdHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String CopyBackupToRegionRequest::SerializePayload() const
 {
   JsonValue payload;

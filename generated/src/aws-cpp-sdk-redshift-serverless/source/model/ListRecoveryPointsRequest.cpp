@@ -12,17 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRecoveryPointsRequest::ListRecoveryPointsRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListRecoveryPointsRequest::SerializePayload() const
 {
   JsonValue payload;

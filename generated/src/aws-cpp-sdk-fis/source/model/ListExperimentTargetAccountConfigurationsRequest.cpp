@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListExperimentTargetAccountConfigurationsRequest::ListExperimentTargetAccountConfigurationsRequest() : 
-    m_experimentIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListExperimentTargetAccountConfigurationsRequest::SerializePayload() const
 {
   return {};

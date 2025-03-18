@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDescribeSimulationJobRequest::BatchDescribeSimulationJobRequest() : 
-    m_jobsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDescribeSimulationJobRequest::SerializePayload() const
 {
   JsonValue payload;

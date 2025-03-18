@@ -21,7 +21,7 @@ namespace Model
   class PutDestinationPolicyRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutDestinationPolicyRequest();
+    AWS_CLOUDWATCHLOGS_API PutDestinationPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A name for an existing destination.</p>
      */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+    inline const Aws::String& GetDestinationName() const { return m_destinationName; }
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-    inline PutDestinationPolicyRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-    inline PutDestinationPolicyRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-    inline PutDestinationPolicyRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+    template<typename DestinationNameT = Aws::String>
+    void SetDestinationName(DestinationNameT&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::forward<DestinationNameT>(value); }
+    template<typename DestinationNameT = Aws::String>
+    PutDestinationPolicyRequest& WithDestinationName(DestinationNameT&& value) { SetDestinationName(std::forward<DestinationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>An IAM policy document that authorizes cross-account users to deliver their
      * log events to the associated destination. This can be up to 5120 bytes.</p>
      */
-    inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
+    inline const Aws::String& GetAccessPolicy() const { return m_accessPolicy; }
     inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
-    inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
-    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
-    inline void SetAccessPolicy(const char* value) { m_accessPolicyHasBeenSet = true; m_accessPolicy.assign(value); }
-    inline PutDestinationPolicyRequest& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
-    inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(std::move(value)); return *this;}
-    inline PutDestinationPolicyRequest& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
+    template<typename AccessPolicyT = Aws::String>
+    void SetAccessPolicy(AccessPolicyT&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::forward<AccessPolicyT>(value); }
+    template<typename AccessPolicyT = Aws::String>
+    PutDestinationPolicyRequest& WithAccessPolicy(AccessPolicyT&& value) { SetAccessPolicy(std::forward<AccessPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * Updating an existing cross-account subscription</a> </p> <p>If you omit this
      * parameter, the default of <code>false</code> is used.</p>
      */
-    inline bool GetForceUpdate() const{ return m_forceUpdate; }
+    inline bool GetForceUpdate() const { return m_forceUpdate; }
     inline bool ForceUpdateHasBeenSet() const { return m_forceUpdateHasBeenSet; }
     inline void SetForceUpdate(bool value) { m_forceUpdateHasBeenSet = true; m_forceUpdate = value; }
     inline PutDestinationPolicyRequest& WithForceUpdate(bool value) { SetForceUpdate(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_accessPolicy;
     bool m_accessPolicyHasBeenSet = false;
 
-    bool m_forceUpdate;
+    bool m_forceUpdate{false};
     bool m_forceUpdateHasBeenSet = false;
   };
 

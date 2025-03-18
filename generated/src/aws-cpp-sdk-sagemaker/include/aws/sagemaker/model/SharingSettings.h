@@ -37,7 +37,7 @@ namespace Model
   class SharingSettings
   {
   public:
-    AWS_SAGEMAKER_API SharingSettings();
+    AWS_SAGEMAKER_API SharingSettings() = default;
     AWS_SAGEMAKER_API SharingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SharingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * <p>Whether to include the notebook cell output when sharing the notebook. The
      * default is <code>Disabled</code>.</p>
      */
-    inline const NotebookOutputOption& GetNotebookOutputOption() const{ return m_notebookOutputOption; }
+    inline NotebookOutputOption GetNotebookOutputOption() const { return m_notebookOutputOption; }
     inline bool NotebookOutputOptionHasBeenSet() const { return m_notebookOutputOptionHasBeenSet; }
-    inline void SetNotebookOutputOption(const NotebookOutputOption& value) { m_notebookOutputOptionHasBeenSet = true; m_notebookOutputOption = value; }
-    inline void SetNotebookOutputOption(NotebookOutputOption&& value) { m_notebookOutputOptionHasBeenSet = true; m_notebookOutputOption = std::move(value); }
-    inline SharingSettings& WithNotebookOutputOption(const NotebookOutputOption& value) { SetNotebookOutputOption(value); return *this;}
-    inline SharingSettings& WithNotebookOutputOption(NotebookOutputOption&& value) { SetNotebookOutputOption(std::move(value)); return *this;}
+    inline void SetNotebookOutputOption(NotebookOutputOption value) { m_notebookOutputOptionHasBeenSet = true; m_notebookOutputOption = value; }
+    inline SharingSettings& WithNotebookOutputOption(NotebookOutputOption value) { SetNotebookOutputOption(value); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3
      * bucket used to store the shared notebook snapshots.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline SharingSettings& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline SharingSettings& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline SharingSettings& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    SharingSettings& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,18 +73,16 @@ namespace Model
      * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
      * notebook cell output in the Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetS3KmsKeyId() const{ return m_s3KmsKeyId; }
+    inline const Aws::String& GetS3KmsKeyId() const { return m_s3KmsKeyId; }
     inline bool S3KmsKeyIdHasBeenSet() const { return m_s3KmsKeyIdHasBeenSet; }
-    inline void SetS3KmsKeyId(const Aws::String& value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId = value; }
-    inline void SetS3KmsKeyId(Aws::String&& value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId = std::move(value); }
-    inline void SetS3KmsKeyId(const char* value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId.assign(value); }
-    inline SharingSettings& WithS3KmsKeyId(const Aws::String& value) { SetS3KmsKeyId(value); return *this;}
-    inline SharingSettings& WithS3KmsKeyId(Aws::String&& value) { SetS3KmsKeyId(std::move(value)); return *this;}
-    inline SharingSettings& WithS3KmsKeyId(const char* value) { SetS3KmsKeyId(value); return *this;}
+    template<typename S3KmsKeyIdT = Aws::String>
+    void SetS3KmsKeyId(S3KmsKeyIdT&& value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId = std::forward<S3KmsKeyIdT>(value); }
+    template<typename S3KmsKeyIdT = Aws::String>
+    SharingSettings& WithS3KmsKeyId(S3KmsKeyIdT&& value) { SetS3KmsKeyId(std::forward<S3KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    NotebookOutputOption m_notebookOutputOption;
+    NotebookOutputOption m_notebookOutputOption{NotebookOutputOption::NOT_SET};
     bool m_notebookOutputOptionHasBeenSet = false;
 
     Aws::String m_s3OutputPath;

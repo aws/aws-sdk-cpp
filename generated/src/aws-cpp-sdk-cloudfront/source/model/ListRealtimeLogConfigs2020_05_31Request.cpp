@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRealtimeLogConfigs2020_05_31Request::ListRealtimeLogConfigs2020_05_31Request() : 
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
 
 Aws::String ListRealtimeLogConfigs2020_05_31Request::SerializePayload() const
 {

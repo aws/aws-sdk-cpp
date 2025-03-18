@@ -28,7 +28,7 @@ namespace Model
   class DescribeThemeResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeThemeResult();
+    AWS_QUICKSIGHT_API DescribeThemeResult() = default;
     AWS_QUICKSIGHT_API DescribeThemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeThemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,40 @@ namespace Model
     /**
      * <p>The information about the theme that you are describing.</p>
      */
-    inline const Theme& GetTheme() const{ return m_theme; }
-    inline void SetTheme(const Theme& value) { m_theme = value; }
-    inline void SetTheme(Theme&& value) { m_theme = std::move(value); }
-    inline DescribeThemeResult& WithTheme(const Theme& value) { SetTheme(value); return *this;}
-    inline DescribeThemeResult& WithTheme(Theme&& value) { SetTheme(std::move(value)); return *this;}
+    inline const Theme& GetTheme() const { return m_theme; }
+    template<typename ThemeT = Theme>
+    void SetTheme(ThemeT&& value) { m_themeHasBeenSet = true; m_theme = std::forward<ThemeT>(value); }
+    template<typename ThemeT = Theme>
+    DescribeThemeResult& WithTheme(ThemeT&& value) { SetTheme(std::forward<ThemeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeThemeResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThemeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThemeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThemeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThemeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Theme m_theme;
+    bool m_themeHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

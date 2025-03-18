@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDeleteMonitorDeploymentRequest::StartDeleteMonitorDeploymentRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String StartDeleteMonitorDeploymentRequest::SerializePayload() const
 {
   return {};

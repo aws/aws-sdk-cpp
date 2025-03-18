@@ -35,7 +35,7 @@ namespace Model
   class InstanceCredentials
   {
   public:
-    AWS_GAMELIFT_API InstanceCredentials();
+    AWS_GAMELIFT_API InstanceCredentials() = default;
     AWS_GAMELIFT_API InstanceCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API InstanceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A user name for logging in.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline InstanceCredentials& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline InstanceCredentials& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline InstanceCredentials& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    InstanceCredentials& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * Windows Remote Desktop. For Linux instances, it's a private key for use with
      * SSH.</p>
      */
-    inline const Aws::String& GetSecret() const{ return m_secret; }
+    inline const Aws::String& GetSecret() const { return m_secret; }
     inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
-    inline void SetSecret(const Aws::String& value) { m_secretHasBeenSet = true; m_secret = value; }
-    inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
-    inline void SetSecret(const char* value) { m_secretHasBeenSet = true; m_secret.assign(value); }
-    inline InstanceCredentials& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
-    inline InstanceCredentials& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
-    inline InstanceCredentials& WithSecret(const char* value) { SetSecret(value); return *this;}
+    template<typename SecretT = Aws::String>
+    void SetSecret(SecretT&& value) { m_secretHasBeenSet = true; m_secret = std::forward<SecretT>(value); }
+    template<typename SecretT = Aws::String>
+    InstanceCredentials& WithSecret(SecretT&& value) { SetSecret(std::forward<SecretT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-UpgradeHistory::UpgradeHistory() : 
-    m_upgradeNameHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_upgradeStatus(UpgradeStatus::NOT_SET),
-    m_upgradeStatusHasBeenSet(false),
-    m_stepsListHasBeenSet(false)
-{
-}
-
 UpgradeHistory::UpgradeHistory(JsonView jsonValue)
-  : UpgradeHistory()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ UpgradeHistory& UpgradeHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpgradeName"))
   {
     m_upgradeName = jsonValue.GetString("UpgradeName");
-
     m_upgradeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpgradeStatus"))
   {
     m_upgradeStatus = UpgradeStatusMapper::GetUpgradeStatusForName(jsonValue.GetString("UpgradeStatus"));
-
     m_upgradeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepsList"))
   {
     Aws::Utils::Array<JsonView> stepsListJsonList = jsonValue.GetArray("StepsList");
@@ -65,7 +49,6 @@ UpgradeHistory& UpgradeHistory::operator =(JsonView jsonValue)
     }
     m_stepsListHasBeenSet = true;
   }
-
   return *this;
 }
 

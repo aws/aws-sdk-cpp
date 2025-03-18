@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsIntentMetric::AnalyticsIntentMetric() : 
-    m_name(AnalyticsIntentMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(AnalyticsMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 AnalyticsIntentMetric::AnalyticsIntentMetric(JsonView jsonValue)
-  : AnalyticsIntentMetric()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AnalyticsIntentMetric& AnalyticsIntentMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsIntentMetricNameMapper::GetAnalyticsIntentMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = AnalyticsMetricStatisticMapper::GetAnalyticsMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = AnalyticsSortOrderMapper::GetAnalyticsSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

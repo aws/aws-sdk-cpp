@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateKeyGroup2020_05_31Request::UpdateKeyGroup2020_05_31Request() : 
-    m_keyGroupConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateKeyGroup2020_05_31Request::SerializePayload() const
 {

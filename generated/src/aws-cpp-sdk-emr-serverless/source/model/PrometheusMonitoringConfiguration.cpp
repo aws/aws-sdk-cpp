@@ -18,13 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-PrometheusMonitoringConfiguration::PrometheusMonitoringConfiguration() : 
-    m_remoteWriteUrlHasBeenSet(false)
-{
-}
-
 PrometheusMonitoringConfiguration::PrometheusMonitoringConfiguration(JsonView jsonValue)
-  : PrometheusMonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrometheusMonitoringConfiguration& PrometheusMonitoringConfiguration::operator =
   if(jsonValue.ValueExists("remoteWriteUrl"))
   {
     m_remoteWriteUrl = jsonValue.GetString("remoteWriteUrl");
-
     m_remoteWriteUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

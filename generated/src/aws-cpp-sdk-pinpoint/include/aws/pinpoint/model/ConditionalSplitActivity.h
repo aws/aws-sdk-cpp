@@ -41,7 +41,7 @@ namespace Model
   class ConditionalSplitActivity
   {
   public:
-    AWS_PINPOINT_API ConditionalSplitActivity();
+    AWS_PINPOINT_API ConditionalSplitActivity() = default;
     AWS_PINPOINT_API ConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * <p>The conditions that define the paths for the activity, and the relationship
      * between the conditions.</p>
      */
-    inline const Condition& GetCondition() const{ return m_condition; }
+    inline const Condition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline ConditionalSplitActivity& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-    inline ConditionalSplitActivity& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = Condition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Condition>
+    ConditionalSplitActivity& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +66,12 @@ namespace Model
      * or the date and time when Amazon Pinpoint determines whether the conditions are
      * met.</p>
      */
-    inline const WaitTime& GetEvaluationWaitTime() const{ return m_evaluationWaitTime; }
+    inline const WaitTime& GetEvaluationWaitTime() const { return m_evaluationWaitTime; }
     inline bool EvaluationWaitTimeHasBeenSet() const { return m_evaluationWaitTimeHasBeenSet; }
-    inline void SetEvaluationWaitTime(const WaitTime& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = value; }
-    inline void SetEvaluationWaitTime(WaitTime&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::move(value); }
-    inline ConditionalSplitActivity& WithEvaluationWaitTime(const WaitTime& value) { SetEvaluationWaitTime(value); return *this;}
-    inline ConditionalSplitActivity& WithEvaluationWaitTime(WaitTime&& value) { SetEvaluationWaitTime(std::move(value)); return *this;}
+    template<typename EvaluationWaitTimeT = WaitTime>
+    void SetEvaluationWaitTime(EvaluationWaitTimeT&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::forward<EvaluationWaitTimeT>(value); }
+    template<typename EvaluationWaitTimeT = WaitTime>
+    ConditionalSplitActivity& WithEvaluationWaitTime(EvaluationWaitTimeT&& value) { SetEvaluationWaitTime(std::forward<EvaluationWaitTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +79,12 @@ namespace Model
      * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
-    inline const Aws::String& GetFalseActivity() const{ return m_falseActivity; }
+    inline const Aws::String& GetFalseActivity() const { return m_falseActivity; }
     inline bool FalseActivityHasBeenSet() const { return m_falseActivityHasBeenSet; }
-    inline void SetFalseActivity(const Aws::String& value) { m_falseActivityHasBeenSet = true; m_falseActivity = value; }
-    inline void SetFalseActivity(Aws::String&& value) { m_falseActivityHasBeenSet = true; m_falseActivity = std::move(value); }
-    inline void SetFalseActivity(const char* value) { m_falseActivityHasBeenSet = true; m_falseActivity.assign(value); }
-    inline ConditionalSplitActivity& WithFalseActivity(const Aws::String& value) { SetFalseActivity(value); return *this;}
-    inline ConditionalSplitActivity& WithFalseActivity(Aws::String&& value) { SetFalseActivity(std::move(value)); return *this;}
-    inline ConditionalSplitActivity& WithFalseActivity(const char* value) { SetFalseActivity(value); return *this;}
+    template<typename FalseActivityT = Aws::String>
+    void SetFalseActivity(FalseActivityT&& value) { m_falseActivityHasBeenSet = true; m_falseActivity = std::forward<FalseActivityT>(value); }
+    template<typename FalseActivityT = Aws::String>
+    ConditionalSplitActivity& WithFalseActivity(FalseActivityT&& value) { SetFalseActivity(std::forward<FalseActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +92,12 @@ namespace Model
      * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
-    inline const Aws::String& GetTrueActivity() const{ return m_trueActivity; }
+    inline const Aws::String& GetTrueActivity() const { return m_trueActivity; }
     inline bool TrueActivityHasBeenSet() const { return m_trueActivityHasBeenSet; }
-    inline void SetTrueActivity(const Aws::String& value) { m_trueActivityHasBeenSet = true; m_trueActivity = value; }
-    inline void SetTrueActivity(Aws::String&& value) { m_trueActivityHasBeenSet = true; m_trueActivity = std::move(value); }
-    inline void SetTrueActivity(const char* value) { m_trueActivityHasBeenSet = true; m_trueActivity.assign(value); }
-    inline ConditionalSplitActivity& WithTrueActivity(const Aws::String& value) { SetTrueActivity(value); return *this;}
-    inline ConditionalSplitActivity& WithTrueActivity(Aws::String&& value) { SetTrueActivity(std::move(value)); return *this;}
-    inline ConditionalSplitActivity& WithTrueActivity(const char* value) { SetTrueActivity(value); return *this;}
+    template<typename TrueActivityT = Aws::String>
+    void SetTrueActivity(TrueActivityT&& value) { m_trueActivityHasBeenSet = true; m_trueActivity = std::forward<TrueActivityT>(value); }
+    template<typename TrueActivityT = Aws::String>
+    ConditionalSplitActivity& WithTrueActivity(TrueActivityT&& value) { SetTrueActivity(std::forward<TrueActivityT>(value)); return *this;}
     ///@}
   private:
 

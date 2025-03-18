@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateConfig::LaunchTemplateConfig() : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 LaunchTemplateConfig::LaunchTemplateConfig(const XmlNode& xmlNode)
-  : LaunchTemplateConfig()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ LaunchTemplateConfig& LaunchTemplateConfig::operator =(const XmlNode& xmlNode)
     if(!overridesNode.IsNull())
     {
       XmlNode overridesMember = overridesNode.FirstChild("item");
+      m_overridesHasBeenSet = !overridesMember.IsNull();
       while(!overridesMember.IsNull())
       {
         m_overrides.push_back(overridesMember);

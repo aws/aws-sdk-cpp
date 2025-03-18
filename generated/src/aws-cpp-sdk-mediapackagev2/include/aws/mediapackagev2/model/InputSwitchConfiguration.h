@@ -31,7 +31,7 @@ namespace Model
   class InputSwitchConfiguration
   {
   public:
-    AWS_MEDIAPACKAGEV2_API InputSwitchConfiguration();
+    AWS_MEDIAPACKAGEV2_API InputSwitchConfiguration() = default;
     AWS_MEDIAPACKAGEV2_API InputSwitchConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API InputSwitchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * MQCS. Default is true. This setting is valid only when <code>InputType</code> is
      * <code>CMAF</code>.</p>
      */
-    inline bool GetMQCSInputSwitching() const{ return m_mQCSInputSwitching; }
+    inline bool GetMQCSInputSwitching() const { return m_mQCSInputSwitching; }
     inline bool MQCSInputSwitchingHasBeenSet() const { return m_mQCSInputSwitchingHasBeenSet; }
     inline void SetMQCSInputSwitching(bool value) { m_mQCSInputSwitchingHasBeenSet = true; m_mQCSInputSwitching = value; }
     inline InputSwitchConfiguration& WithMQCSInputSwitching(bool value) { SetMQCSInputSwitching(value); return *this;}
     ///@}
   private:
 
-    bool m_mQCSInputSwitching;
+    bool m_mQCSInputSwitching{false};
     bool m_mQCSInputSwitchingHasBeenSet = false;
   };
 

@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-QueryStringCacheKeys::QueryStringCacheKeys() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 QueryStringCacheKeys::QueryStringCacheKeys(const XmlNode& xmlNode)
-  : QueryStringCacheKeys()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ QueryStringCacheKeys& QueryStringCacheKeys::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Name");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

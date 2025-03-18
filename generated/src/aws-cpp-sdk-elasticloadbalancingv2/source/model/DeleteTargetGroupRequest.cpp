@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeleteTargetGroupRequest::DeleteTargetGroupRequest() : 
-    m_targetGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTargetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

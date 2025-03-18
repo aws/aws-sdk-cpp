@@ -33,7 +33,7 @@ namespace Model
   class RedshiftProvisionedConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftProvisionedConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftProvisionedConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftProvisionedConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftProvisionedConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>Specifies configurations for authentication to Amazon Redshift.</p>
      */
-    inline const RedshiftProvisionedAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
+    inline const RedshiftProvisionedAuthConfiguration& GetAuthConfiguration() const { return m_authConfiguration; }
     inline bool AuthConfigurationHasBeenSet() const { return m_authConfigurationHasBeenSet; }
-    inline void SetAuthConfiguration(const RedshiftProvisionedAuthConfiguration& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = value; }
-    inline void SetAuthConfiguration(RedshiftProvisionedAuthConfiguration&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::move(value); }
-    inline RedshiftProvisionedConfiguration& WithAuthConfiguration(const RedshiftProvisionedAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
-    inline RedshiftProvisionedConfiguration& WithAuthConfiguration(RedshiftProvisionedAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
+    template<typename AuthConfigurationT = RedshiftProvisionedAuthConfiguration>
+    void SetAuthConfiguration(AuthConfigurationT&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::forward<AuthConfigurationT>(value); }
+    template<typename AuthConfigurationT = RedshiftProvisionedAuthConfiguration>
+    RedshiftProvisionedConfiguration& WithAuthConfiguration(AuthConfigurationT&& value) { SetAuthConfiguration(std::forward<AuthConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Redshift cluster.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline RedshiftProvisionedConfiguration& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline RedshiftProvisionedConfiguration& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline RedshiftProvisionedConfiguration& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    RedshiftProvisionedConfiguration& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
   private:
 

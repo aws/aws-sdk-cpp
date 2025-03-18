@@ -34,7 +34,7 @@ namespace Model
   class RouteRoundaboutEnterStepDetails
   {
   public:
-    AWS_GEOROUTES_API RouteRoundaboutEnterStepDetails();
+    AWS_GEOROUTES_API RouteRoundaboutEnterStepDetails() = default;
     AWS_GEOROUTES_API RouteRoundaboutEnterStepDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteRoundaboutEnterStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,31 @@ namespace Model
     /**
      * <p>Name of the intersection, if applicable to the step.</p>
      */
-    inline const Aws::Vector<LocalizedString>& GetIntersection() const{ return m_intersection; }
+    inline const Aws::Vector<LocalizedString>& GetIntersection() const { return m_intersection; }
     inline bool IntersectionHasBeenSet() const { return m_intersectionHasBeenSet; }
-    inline void SetIntersection(const Aws::Vector<LocalizedString>& value) { m_intersectionHasBeenSet = true; m_intersection = value; }
-    inline void SetIntersection(Aws::Vector<LocalizedString>&& value) { m_intersectionHasBeenSet = true; m_intersection = std::move(value); }
-    inline RouteRoundaboutEnterStepDetails& WithIntersection(const Aws::Vector<LocalizedString>& value) { SetIntersection(value); return *this;}
-    inline RouteRoundaboutEnterStepDetails& WithIntersection(Aws::Vector<LocalizedString>&& value) { SetIntersection(std::move(value)); return *this;}
-    inline RouteRoundaboutEnterStepDetails& AddIntersection(const LocalizedString& value) { m_intersectionHasBeenSet = true; m_intersection.push_back(value); return *this; }
-    inline RouteRoundaboutEnterStepDetails& AddIntersection(LocalizedString&& value) { m_intersectionHasBeenSet = true; m_intersection.push_back(std::move(value)); return *this; }
+    template<typename IntersectionT = Aws::Vector<LocalizedString>>
+    void SetIntersection(IntersectionT&& value) { m_intersectionHasBeenSet = true; m_intersection = std::forward<IntersectionT>(value); }
+    template<typename IntersectionT = Aws::Vector<LocalizedString>>
+    RouteRoundaboutEnterStepDetails& WithIntersection(IntersectionT&& value) { SetIntersection(std::forward<IntersectionT>(value)); return *this;}
+    template<typename IntersectionT = LocalizedString>
+    RouteRoundaboutEnterStepDetails& AddIntersection(IntersectionT&& value) { m_intersectionHasBeenSet = true; m_intersection.emplace_back(std::forward<IntersectionT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Steering direction for the step.</p>
      */
-    inline const RouteSteeringDirection& GetSteeringDirection() const{ return m_steeringDirection; }
+    inline RouteSteeringDirection GetSteeringDirection() const { return m_steeringDirection; }
     inline bool SteeringDirectionHasBeenSet() const { return m_steeringDirectionHasBeenSet; }
-    inline void SetSteeringDirection(const RouteSteeringDirection& value) { m_steeringDirectionHasBeenSet = true; m_steeringDirection = value; }
-    inline void SetSteeringDirection(RouteSteeringDirection&& value) { m_steeringDirectionHasBeenSet = true; m_steeringDirection = std::move(value); }
-    inline RouteRoundaboutEnterStepDetails& WithSteeringDirection(const RouteSteeringDirection& value) { SetSteeringDirection(value); return *this;}
-    inline RouteRoundaboutEnterStepDetails& WithSteeringDirection(RouteSteeringDirection&& value) { SetSteeringDirection(std::move(value)); return *this;}
+    inline void SetSteeringDirection(RouteSteeringDirection value) { m_steeringDirectionHasBeenSet = true; m_steeringDirection = value; }
+    inline RouteRoundaboutEnterStepDetails& WithSteeringDirection(RouteSteeringDirection value) { SetSteeringDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Angle of the turn.</p>
      */
-    inline double GetTurnAngle() const{ return m_turnAngle; }
+    inline double GetTurnAngle() const { return m_turnAngle; }
     inline bool TurnAngleHasBeenSet() const { return m_turnAngleHasBeenSet; }
     inline void SetTurnAngle(double value) { m_turnAngleHasBeenSet = true; m_turnAngle = value; }
     inline RouteRoundaboutEnterStepDetails& WithTurnAngle(double value) { SetTurnAngle(value); return *this;}
@@ -80,25 +78,23 @@ namespace Model
     /**
      * <p>Intensity of the turn.</p>
      */
-    inline const RouteTurnIntensity& GetTurnIntensity() const{ return m_turnIntensity; }
+    inline RouteTurnIntensity GetTurnIntensity() const { return m_turnIntensity; }
     inline bool TurnIntensityHasBeenSet() const { return m_turnIntensityHasBeenSet; }
-    inline void SetTurnIntensity(const RouteTurnIntensity& value) { m_turnIntensityHasBeenSet = true; m_turnIntensity = value; }
-    inline void SetTurnIntensity(RouteTurnIntensity&& value) { m_turnIntensityHasBeenSet = true; m_turnIntensity = std::move(value); }
-    inline RouteRoundaboutEnterStepDetails& WithTurnIntensity(const RouteTurnIntensity& value) { SetTurnIntensity(value); return *this;}
-    inline RouteRoundaboutEnterStepDetails& WithTurnIntensity(RouteTurnIntensity&& value) { SetTurnIntensity(std::move(value)); return *this;}
+    inline void SetTurnIntensity(RouteTurnIntensity value) { m_turnIntensityHasBeenSet = true; m_turnIntensity = value; }
+    inline RouteRoundaboutEnterStepDetails& WithTurnIntensity(RouteTurnIntensity value) { SetTurnIntensity(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<LocalizedString> m_intersection;
     bool m_intersectionHasBeenSet = false;
 
-    RouteSteeringDirection m_steeringDirection;
+    RouteSteeringDirection m_steeringDirection{RouteSteeringDirection::NOT_SET};
     bool m_steeringDirectionHasBeenSet = false;
 
-    double m_turnAngle;
+    double m_turnAngle{0.0};
     bool m_turnAngleHasBeenSet = false;
 
-    RouteTurnIntensity m_turnIntensity;
+    RouteTurnIntensity m_turnIntensity{RouteTurnIntensity::NOT_SET};
     bool m_turnIntensityHasBeenSet = false;
   };
 

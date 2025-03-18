@@ -12,11 +12,6 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLexiconRequest::DeleteLexiconRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLexiconRequest::SerializePayload() const
 {
   return {};

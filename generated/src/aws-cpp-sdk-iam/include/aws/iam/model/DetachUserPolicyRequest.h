@@ -21,7 +21,7 @@ namespace Model
   class DetachUserPolicyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API DetachUserPolicyRequest();
+    AWS_IAM_API DetachUserPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline DetachUserPolicyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline DetachUserPolicyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline DetachUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    DetachUserPolicyRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline DetachUserPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline DetachUserPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline DetachUserPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    DetachUserPolicyRequest& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-AttachLoadBalancerTargetGroupsRequest::AttachLoadBalancerTargetGroupsRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_targetGroupARNsHasBeenSet(false)
-{
-}
-
 Aws::String AttachLoadBalancerTargetGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

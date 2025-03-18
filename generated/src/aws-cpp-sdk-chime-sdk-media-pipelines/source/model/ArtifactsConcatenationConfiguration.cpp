@@ -18,19 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-ArtifactsConcatenationConfiguration::ArtifactsConcatenationConfiguration() : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_dataChannelHasBeenSet(false),
-    m_transcriptionMessagesHasBeenSet(false),
-    m_meetingEventsHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false)
-{
-}
-
 ArtifactsConcatenationConfiguration::ArtifactsConcatenationConfiguration(JsonView jsonValue)
-  : ArtifactsConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ArtifactsConcatenationConfiguration& ArtifactsConcatenationConfiguration::operat
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
     m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataChannel"))
   {
     m_dataChannel = jsonValue.GetObject("DataChannel");
-
     m_dataChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TranscriptionMessages"))
   {
     m_transcriptionMessages = jsonValue.GetObject("TranscriptionMessages");
-
     m_transcriptionMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingEvents"))
   {
     m_meetingEvents = jsonValue.GetObject("MeetingEvents");
-
     m_meetingEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompositedVideo"))
   {
     m_compositedVideo = jsonValue.GetObject("CompositedVideo");
-
     m_compositedVideoHasBeenSet = true;
   }
-
   return *this;
 }
 

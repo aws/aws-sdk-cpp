@@ -33,7 +33,7 @@ namespace Model
   class LFTagPolicyDetails
   {
   public:
-    AWS_DATAEXCHANGE_API LFTagPolicyDetails();
+    AWS_DATAEXCHANGE_API LFTagPolicyDetails() = default;
     AWS_DATAEXCHANGE_API LFTagPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API LFTagPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,41 @@ namespace Model
     /**
      * <p>The identifier for the AWS Glue Data Catalog.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline LFTagPolicyDetails& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline LFTagPolicyDetails& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline LFTagPolicyDetails& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    LFTagPolicyDetails& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type for which the LF-tag policy applies.</p>
      */
-    inline const LFResourceType& GetResourceType() const{ return m_resourceType; }
+    inline LFResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const LFResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(LFResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline LFTagPolicyDetails& WithResourceType(const LFResourceType& value) { SetResourceType(value); return *this;}
-    inline LFTagPolicyDetails& WithResourceType(LFResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(LFResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline LFTagPolicyDetails& WithResourceType(LFResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
      */
-    inline const LFResourceDetails& GetResourceDetails() const{ return m_resourceDetails; }
+    inline const LFResourceDetails& GetResourceDetails() const { return m_resourceDetails; }
     inline bool ResourceDetailsHasBeenSet() const { return m_resourceDetailsHasBeenSet; }
-    inline void SetResourceDetails(const LFResourceDetails& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = value; }
-    inline void SetResourceDetails(LFResourceDetails&& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = std::move(value); }
-    inline LFTagPolicyDetails& WithResourceDetails(const LFResourceDetails& value) { SetResourceDetails(value); return *this;}
-    inline LFTagPolicyDetails& WithResourceDetails(LFResourceDetails&& value) { SetResourceDetails(std::move(value)); return *this;}
+    template<typename ResourceDetailsT = LFResourceDetails>
+    void SetResourceDetails(ResourceDetailsT&& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = std::forward<ResourceDetailsT>(value); }
+    template<typename ResourceDetailsT = LFResourceDetails>
+    LFTagPolicyDetails& WithResourceDetails(ResourceDetailsT&& value) { SetResourceDetails(std::forward<ResourceDetailsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet = false;
 
-    LFResourceType m_resourceType;
+    LFResourceType m_resourceType{LFResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     LFResourceDetails m_resourceDetails;

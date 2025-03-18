@@ -22,7 +22,7 @@ namespace Model
   class UpdateRecoveryPointIndexSettingsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API UpdateRecoveryPointIndexSettingsRequest();
+    AWS_BACKUP_API UpdateRecoveryPointIndexSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * Region where they are created.</p> <p>Accepted characters include lowercase
      * letters, numbers, and hyphens.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline UpdateRecoveryPointIndexSettingsRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    UpdateRecoveryPointIndexSettingsRequest& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
     inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn.assign(value); }
-    inline UpdateRecoveryPointIndexSettingsRequest& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    UpdateRecoveryPointIndexSettingsRequest& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>This specifies the IAM role ARN used for this operation.</p> <p>For example,
      * arn:aws:iam::123456789012:role/S3Access</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline UpdateRecoveryPointIndexSettingsRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    UpdateRecoveryPointIndexSettingsRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,10 @@ namespace Model
      * value to <code>ENABLED</code>.</p> <p>To delete a backup index, set value to
      * <code>DISABLED</code>.</p>
      */
-    inline const Index& GetIndex() const{ return m_index; }
+    inline Index GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-    inline void SetIndex(const Index& value) { m_indexHasBeenSet = true; m_index = value; }
-    inline void SetIndex(Index&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
-    inline UpdateRecoveryPointIndexSettingsRequest& WithIndex(const Index& value) { SetIndex(value); return *this;}
-    inline UpdateRecoveryPointIndexSettingsRequest& WithIndex(Index&& value) { SetIndex(std::move(value)); return *this;}
+    inline void SetIndex(Index value) { m_indexHasBeenSet = true; m_index = value; }
+    inline UpdateRecoveryPointIndexSettingsRequest& WithIndex(Index value) { SetIndex(value); return *this;}
     ///@}
   private:
 
@@ -106,7 +98,7 @@ namespace Model
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet = false;
 
-    Index m_index;
+    Index m_index{Index::NOT_SET};
     bool m_indexHasBeenSet = false;
   };
 

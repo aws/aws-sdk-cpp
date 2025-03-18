@@ -27,7 +27,7 @@ namespace Model
   class UpdateVpcLinkRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API UpdateVpcLinkRequest();
+    AWS_APIGATEWAY_API UpdateVpcLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The identifier of the VpcLink. It is used in an Integration to reference this
      * VpcLink.</p>
      */
-    inline const Aws::String& GetVpcLinkId() const{ return m_vpcLinkId; }
+    inline const Aws::String& GetVpcLinkId() const { return m_vpcLinkId; }
     inline bool VpcLinkIdHasBeenSet() const { return m_vpcLinkIdHasBeenSet; }
-    inline void SetVpcLinkId(const Aws::String& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = value; }
-    inline void SetVpcLinkId(Aws::String&& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = std::move(value); }
-    inline void SetVpcLinkId(const char* value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId.assign(value); }
-    inline UpdateVpcLinkRequest& WithVpcLinkId(const Aws::String& value) { SetVpcLinkId(value); return *this;}
-    inline UpdateVpcLinkRequest& WithVpcLinkId(Aws::String&& value) { SetVpcLinkId(std::move(value)); return *this;}
-    inline UpdateVpcLinkRequest& WithVpcLinkId(const char* value) { SetVpcLinkId(value); return *this;}
+    template<typename VpcLinkIdT = Aws::String>
+    void SetVpcLinkId(VpcLinkIdT&& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = std::forward<VpcLinkIdT>(value); }
+    template<typename VpcLinkIdT = Aws::String>
+    UpdateVpcLinkRequest& WithVpcLinkId(VpcLinkIdT&& value) { SetVpcLinkId(std::forward<VpcLinkIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
      * Operations</a>.</p>
      */
-    inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
+    inline const Aws::Vector<PatchOperation>& GetPatchOperations() const { return m_patchOperations; }
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
-    inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
-    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
-    inline UpdateVpcLinkRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
-    inline UpdateVpcLinkRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
-    inline UpdateVpcLinkRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
-    inline UpdateVpcLinkRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
+    template<typename PatchOperationsT = Aws::Vector<PatchOperation>>
+    void SetPatchOperations(PatchOperationsT&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::forward<PatchOperationsT>(value); }
+    template<typename PatchOperationsT = Aws::Vector<PatchOperation>>
+    UpdateVpcLinkRequest& WithPatchOperations(PatchOperationsT&& value) { SetPatchOperations(std::forward<PatchOperationsT>(value)); return *this;}
+    template<typename PatchOperationsT = PatchOperation>
+    UpdateVpcLinkRequest& AddPatchOperations(PatchOperationsT&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.emplace_back(std::forward<PatchOperationsT>(value)); return *this; }
     ///@}
   private:
 

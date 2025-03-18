@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-SingularConnectorProfileProperties::SingularConnectorProfileProperties()
-{
-}
-
 SingularConnectorProfileProperties::SingularConnectorProfileProperties(JsonView jsonValue)
 {
   *this = jsonValue;

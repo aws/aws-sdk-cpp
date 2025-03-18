@@ -31,7 +31,7 @@ namespace Model
   class WorkspaceStatus
   {
   public:
-    AWS_PROMETHEUSSERVICE_API WorkspaceStatus();
+    AWS_PROMETHEUSSERVICE_API WorkspaceStatus() = default;
     AWS_PROMETHEUSSERVICE_API WorkspaceStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API WorkspaceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The current status of the workspace.</p>
      */
-    inline const WorkspaceStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline WorkspaceStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const WorkspaceStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(WorkspaceStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline WorkspaceStatus& WithStatusCode(const WorkspaceStatusCode& value) { SetStatusCode(value); return *this;}
-    inline WorkspaceStatus& WithStatusCode(WorkspaceStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(WorkspaceStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline WorkspaceStatus& WithStatusCode(WorkspaceStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
   private:
 
-    WorkspaceStatusCode m_statusCode;
+    WorkspaceStatusCode m_statusCode{WorkspaceStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
   };
 

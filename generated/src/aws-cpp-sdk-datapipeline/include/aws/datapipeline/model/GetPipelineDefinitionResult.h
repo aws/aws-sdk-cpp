@@ -36,7 +36,7 @@ namespace Model
   class GetPipelineDefinitionResult
   {
   public:
-    AWS_DATAPIPELINE_API GetPipelineDefinitionResult();
+    AWS_DATAPIPELINE_API GetPipelineDefinitionResult() = default;
     AWS_DATAPIPELINE_API GetPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAPIPELINE_API GetPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,60 +45,62 @@ namespace Model
     /**
      * <p>The objects defined in the pipeline.</p>
      */
-    inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
-    inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjects = value; }
-    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = std::move(value); }
-    inline GetPipelineDefinitionResult& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
-    inline GetPipelineDefinitionResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(std::move(value)); return *this;}
-    inline GetPipelineDefinitionResult& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
-    inline GetPipelineDefinitionResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const { return m_pipelineObjects; }
+    template<typename PipelineObjectsT = Aws::Vector<PipelineObject>>
+    void SetPipelineObjects(PipelineObjectsT&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = std::forward<PipelineObjectsT>(value); }
+    template<typename PipelineObjectsT = Aws::Vector<PipelineObject>>
+    GetPipelineDefinitionResult& WithPipelineObjects(PipelineObjectsT&& value) { SetPipelineObjects(std::forward<PipelineObjectsT>(value)); return *this;}
+    template<typename PipelineObjectsT = PipelineObject>
+    GetPipelineDefinitionResult& AddPipelineObjects(PipelineObjectsT&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.emplace_back(std::forward<PipelineObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
      */
-    inline const Aws::Vector<ParameterObject>& GetParameterObjects() const{ return m_parameterObjects; }
-    inline void SetParameterObjects(const Aws::Vector<ParameterObject>& value) { m_parameterObjects = value; }
-    inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjects = std::move(value); }
-    inline GetPipelineDefinitionResult& WithParameterObjects(const Aws::Vector<ParameterObject>& value) { SetParameterObjects(value); return *this;}
-    inline GetPipelineDefinitionResult& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(std::move(value)); return *this;}
-    inline GetPipelineDefinitionResult& AddParameterObjects(const ParameterObject& value) { m_parameterObjects.push_back(value); return *this; }
-    inline GetPipelineDefinitionResult& AddParameterObjects(ParameterObject&& value) { m_parameterObjects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParameterObject>& GetParameterObjects() const { return m_parameterObjects; }
+    template<typename ParameterObjectsT = Aws::Vector<ParameterObject>>
+    void SetParameterObjects(ParameterObjectsT&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = std::forward<ParameterObjectsT>(value); }
+    template<typename ParameterObjectsT = Aws::Vector<ParameterObject>>
+    GetPipelineDefinitionResult& WithParameterObjects(ParameterObjectsT&& value) { SetParameterObjects(std::forward<ParameterObjectsT>(value)); return *this;}
+    template<typename ParameterObjectsT = ParameterObject>
+    GetPipelineDefinitionResult& AddParameterObjects(ParameterObjectsT&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.emplace_back(std::forward<ParameterObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The parameter values used in the pipeline definition.</p>
      */
-    inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
-    inline void SetParameterValues(const Aws::Vector<ParameterValue>& value) { m_parameterValues = value; }
-    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValues = std::move(value); }
-    inline GetPipelineDefinitionResult& WithParameterValues(const Aws::Vector<ParameterValue>& value) { SetParameterValues(value); return *this;}
-    inline GetPipelineDefinitionResult& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(std::move(value)); return *this;}
-    inline GetPipelineDefinitionResult& AddParameterValues(const ParameterValue& value) { m_parameterValues.push_back(value); return *this; }
-    inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParameterValue>& GetParameterValues() const { return m_parameterValues; }
+    template<typename ParameterValuesT = Aws::Vector<ParameterValue>>
+    void SetParameterValues(ParameterValuesT&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = std::forward<ParameterValuesT>(value); }
+    template<typename ParameterValuesT = Aws::Vector<ParameterValue>>
+    GetPipelineDefinitionResult& WithParameterValues(ParameterValuesT&& value) { SetParameterValues(std::forward<ParameterValuesT>(value)); return *this;}
+    template<typename ParameterValuesT = ParameterValue>
+    GetPipelineDefinitionResult& AddParameterValues(ParameterValuesT&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.emplace_back(std::forward<ParameterValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPipelineDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPipelineDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPipelineDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPipelineDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PipelineObject> m_pipelineObjects;
+    bool m_pipelineObjectsHasBeenSet = false;
 
     Aws::Vector<ParameterObject> m_parameterObjects;
+    bool m_parameterObjectsHasBeenSet = false;
 
     Aws::Vector<ParameterValue> m_parameterValues;
+    bool m_parameterValuesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

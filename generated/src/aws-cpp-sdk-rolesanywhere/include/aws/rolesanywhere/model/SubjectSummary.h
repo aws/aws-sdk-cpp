@@ -32,7 +32,7 @@ namespace Model
   class SubjectSummary
   {
   public:
-    AWS_ROLESANYWHERE_API SubjectSummary();
+    AWS_ROLESANYWHERE_API SubjectSummary() = default;
     AWS_ROLESANYWHERE_API SubjectSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API SubjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,19 @@ namespace Model
      * <p>The ISO-8601 time stamp of when the certificate was first used in a temporary
      * credential request.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline SubjectSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline SubjectSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    SubjectSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The enabled status of the subject. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SubjectSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -66,76 +66,70 @@ namespace Model
      * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
      * credential request.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastSeenAt() const{ return m_lastSeenAt; }
+    inline const Aws::Utils::DateTime& GetLastSeenAt() const { return m_lastSeenAt; }
     inline bool LastSeenAtHasBeenSet() const { return m_lastSeenAtHasBeenSet; }
-    inline void SetLastSeenAt(const Aws::Utils::DateTime& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = value; }
-    inline void SetLastSeenAt(Aws::Utils::DateTime&& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = std::move(value); }
-    inline SubjectSummary& WithLastSeenAt(const Aws::Utils::DateTime& value) { SetLastSeenAt(value); return *this;}
-    inline SubjectSummary& WithLastSeenAt(Aws::Utils::DateTime&& value) { SetLastSeenAt(std::move(value)); return *this;}
+    template<typename LastSeenAtT = Aws::Utils::DateTime>
+    void SetLastSeenAt(LastSeenAtT&& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = std::forward<LastSeenAtT>(value); }
+    template<typename LastSeenAtT = Aws::Utils::DateTime>
+    SubjectSummary& WithLastSeenAt(LastSeenAtT&& value) { SetLastSeenAt(std::forward<LastSeenAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the resource.</p>
      */
-    inline const Aws::String& GetSubjectArn() const{ return m_subjectArn; }
+    inline const Aws::String& GetSubjectArn() const { return m_subjectArn; }
     inline bool SubjectArnHasBeenSet() const { return m_subjectArnHasBeenSet; }
-    inline void SetSubjectArn(const Aws::String& value) { m_subjectArnHasBeenSet = true; m_subjectArn = value; }
-    inline void SetSubjectArn(Aws::String&& value) { m_subjectArnHasBeenSet = true; m_subjectArn = std::move(value); }
-    inline void SetSubjectArn(const char* value) { m_subjectArnHasBeenSet = true; m_subjectArn.assign(value); }
-    inline SubjectSummary& WithSubjectArn(const Aws::String& value) { SetSubjectArn(value); return *this;}
-    inline SubjectSummary& WithSubjectArn(Aws::String&& value) { SetSubjectArn(std::move(value)); return *this;}
-    inline SubjectSummary& WithSubjectArn(const char* value) { SetSubjectArn(value); return *this;}
+    template<typename SubjectArnT = Aws::String>
+    void SetSubjectArn(SubjectArnT&& value) { m_subjectArnHasBeenSet = true; m_subjectArn = std::forward<SubjectArnT>(value); }
+    template<typename SubjectArnT = Aws::String>
+    SubjectSummary& WithSubjectArn(SubjectArnT&& value) { SetSubjectArn(std::forward<SubjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of the resource.</p>
      */
-    inline const Aws::String& GetSubjectId() const{ return m_subjectId; }
+    inline const Aws::String& GetSubjectId() const { return m_subjectId; }
     inline bool SubjectIdHasBeenSet() const { return m_subjectIdHasBeenSet; }
-    inline void SetSubjectId(const Aws::String& value) { m_subjectIdHasBeenSet = true; m_subjectId = value; }
-    inline void SetSubjectId(Aws::String&& value) { m_subjectIdHasBeenSet = true; m_subjectId = std::move(value); }
-    inline void SetSubjectId(const char* value) { m_subjectIdHasBeenSet = true; m_subjectId.assign(value); }
-    inline SubjectSummary& WithSubjectId(const Aws::String& value) { SetSubjectId(value); return *this;}
-    inline SubjectSummary& WithSubjectId(Aws::String&& value) { SetSubjectId(std::move(value)); return *this;}
-    inline SubjectSummary& WithSubjectId(const char* value) { SetSubjectId(value); return *this;}
+    template<typename SubjectIdT = Aws::String>
+    void SetSubjectId(SubjectIdT&& value) { m_subjectIdHasBeenSet = true; m_subjectId = std::forward<SubjectIdT>(value); }
+    template<typename SubjectIdT = Aws::String>
+    SubjectSummary& WithSubjectId(SubjectIdT&& value) { SetSubjectId(std::forward<SubjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ISO-8601 timestamp when the subject was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline SubjectSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline SubjectSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    SubjectSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The x509 principal identifier of the authenticating certificate.</p>
      */
-    inline const Aws::String& GetX509Subject() const{ return m_x509Subject; }
+    inline const Aws::String& GetX509Subject() const { return m_x509Subject; }
     inline bool X509SubjectHasBeenSet() const { return m_x509SubjectHasBeenSet; }
-    inline void SetX509Subject(const Aws::String& value) { m_x509SubjectHasBeenSet = true; m_x509Subject = value; }
-    inline void SetX509Subject(Aws::String&& value) { m_x509SubjectHasBeenSet = true; m_x509Subject = std::move(value); }
-    inline void SetX509Subject(const char* value) { m_x509SubjectHasBeenSet = true; m_x509Subject.assign(value); }
-    inline SubjectSummary& WithX509Subject(const Aws::String& value) { SetX509Subject(value); return *this;}
-    inline SubjectSummary& WithX509Subject(Aws::String&& value) { SetX509Subject(std::move(value)); return *this;}
-    inline SubjectSummary& WithX509Subject(const char* value) { SetX509Subject(value); return *this;}
+    template<typename X509SubjectT = Aws::String>
+    void SetX509Subject(X509SubjectT&& value) { m_x509SubjectHasBeenSet = true; m_x509Subject = std::forward<X509SubjectT>(value); }
+    template<typename X509SubjectT = Aws::String>
+    SubjectSummary& WithX509Subject(X509SubjectT&& value) { SetX509Subject(std::forward<X509SubjectT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSeenAt;
+    Aws::Utils::DateTime m_lastSeenAt{};
     bool m_lastSeenAtHasBeenSet = false;
 
     Aws::String m_subjectArn;
@@ -144,7 +138,7 @@ namespace Model
     Aws::String m_subjectId;
     bool m_subjectIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_x509Subject;

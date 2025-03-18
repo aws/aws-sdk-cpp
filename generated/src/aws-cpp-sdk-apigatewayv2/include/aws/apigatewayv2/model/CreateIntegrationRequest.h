@@ -31,7 +31,7 @@ namespace Model
   class CreateIntegrationRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API CreateIntegrationRequest();
+    AWS_APIGATEWAYV2_API CreateIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline CreateIntegrationRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline CreateIntegrationRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    CreateIntegrationRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The ID of the VPC link for a private integration. Supported only for HTTP
      * APIs.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline CreateIntegrationRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline CreateIntegrationRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    CreateIntegrationRequest& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * private connections between API Gateway and resources in a VPC. The default
      * value is INTERNET.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline CreateIntegrationRequest& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline CreateIntegrationRequest& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline CreateIntegrationRequest& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * response payload will be passed through from the integration response to the
      * route response or method response without modification.</p>
      */
-    inline const ContentHandlingStrategy& GetContentHandlingStrategy() const{ return m_contentHandlingStrategy; }
+    inline ContentHandlingStrategy GetContentHandlingStrategy() const { return m_contentHandlingStrategy; }
     inline bool ContentHandlingStrategyHasBeenSet() const { return m_contentHandlingStrategyHasBeenSet; }
-    inline void SetContentHandlingStrategy(const ContentHandlingStrategy& value) { m_contentHandlingStrategyHasBeenSet = true; m_contentHandlingStrategy = value; }
-    inline void SetContentHandlingStrategy(ContentHandlingStrategy&& value) { m_contentHandlingStrategyHasBeenSet = true; m_contentHandlingStrategy = std::move(value); }
-    inline CreateIntegrationRequest& WithContentHandlingStrategy(const ContentHandlingStrategy& value) { SetContentHandlingStrategy(value); return *this;}
-    inline CreateIntegrationRequest& WithContentHandlingStrategy(ContentHandlingStrategy&& value) { SetContentHandlingStrategy(std::move(value)); return *this;}
+    inline void SetContentHandlingStrategy(ContentHandlingStrategy value) { m_contentHandlingStrategyHasBeenSet = true; m_contentHandlingStrategy = value; }
+    inline CreateIntegrationRequest& WithContentHandlingStrategy(ContentHandlingStrategy value) { SetContentHandlingStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -114,42 +106,36 @@ namespace Model
      * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
-    inline const Aws::String& GetCredentialsArn() const{ return m_credentialsArn; }
+    inline const Aws::String& GetCredentialsArn() const { return m_credentialsArn; }
     inline bool CredentialsArnHasBeenSet() const { return m_credentialsArnHasBeenSet; }
-    inline void SetCredentialsArn(const Aws::String& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = value; }
-    inline void SetCredentialsArn(Aws::String&& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = std::move(value); }
-    inline void SetCredentialsArn(const char* value) { m_credentialsArnHasBeenSet = true; m_credentialsArn.assign(value); }
-    inline CreateIntegrationRequest& WithCredentialsArn(const Aws::String& value) { SetCredentialsArn(value); return *this;}
-    inline CreateIntegrationRequest& WithCredentialsArn(Aws::String&& value) { SetCredentialsArn(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithCredentialsArn(const char* value) { SetCredentialsArn(value); return *this;}
+    template<typename CredentialsArnT = Aws::String>
+    void SetCredentialsArn(CredentialsArnT&& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = std::forward<CredentialsArnT>(value); }
+    template<typename CredentialsArnT = Aws::String>
+    CreateIntegrationRequest& WithCredentialsArn(CredentialsArnT&& value) { SetCredentialsArn(std::forward<CredentialsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the integration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateIntegrationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIntegrationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateIntegrationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the integration's HTTP method type.</p>
      */
-    inline const Aws::String& GetIntegrationMethod() const{ return m_integrationMethod; }
+    inline const Aws::String& GetIntegrationMethod() const { return m_integrationMethod; }
     inline bool IntegrationMethodHasBeenSet() const { return m_integrationMethodHasBeenSet; }
-    inline void SetIntegrationMethod(const Aws::String& value) { m_integrationMethodHasBeenSet = true; m_integrationMethod = value; }
-    inline void SetIntegrationMethod(Aws::String&& value) { m_integrationMethodHasBeenSet = true; m_integrationMethod = std::move(value); }
-    inline void SetIntegrationMethod(const char* value) { m_integrationMethodHasBeenSet = true; m_integrationMethod.assign(value); }
-    inline CreateIntegrationRequest& WithIntegrationMethod(const Aws::String& value) { SetIntegrationMethod(value); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationMethod(Aws::String&& value) { SetIntegrationMethod(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationMethod(const char* value) { SetIntegrationMethod(value); return *this;}
+    template<typename IntegrationMethodT = Aws::String>
+    void SetIntegrationMethod(IntegrationMethodT&& value) { m_integrationMethodHasBeenSet = true; m_integrationMethod = std::forward<IntegrationMethodT>(value); }
+    template<typename IntegrationMethodT = Aws::String>
+    CreateIntegrationRequest& WithIntegrationMethod(IntegrationMethodT&& value) { SetIntegrationMethod(std::forward<IntegrationMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +145,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration
      * subtype reference</a>.</p>
      */
-    inline const Aws::String& GetIntegrationSubtype() const{ return m_integrationSubtype; }
+    inline const Aws::String& GetIntegrationSubtype() const { return m_integrationSubtype; }
     inline bool IntegrationSubtypeHasBeenSet() const { return m_integrationSubtypeHasBeenSet; }
-    inline void SetIntegrationSubtype(const Aws::String& value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype = value; }
-    inline void SetIntegrationSubtype(Aws::String&& value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype = std::move(value); }
-    inline void SetIntegrationSubtype(const char* value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype.assign(value); }
-    inline CreateIntegrationRequest& WithIntegrationSubtype(const Aws::String& value) { SetIntegrationSubtype(value); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationSubtype(Aws::String&& value) { SetIntegrationSubtype(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationSubtype(const char* value) { SetIntegrationSubtype(value); return *this;}
+    template<typename IntegrationSubtypeT = Aws::String>
+    void SetIntegrationSubtype(IntegrationSubtypeT&& value) { m_integrationSubtypeHasBeenSet = true; m_integrationSubtype = std::forward<IntegrationSubtypeT>(value); }
+    template<typename IntegrationSubtypeT = Aws::String>
+    CreateIntegrationRequest& WithIntegrationSubtype(IntegrationSubtypeT&& value) { SetIntegrationSubtype(std::forward<IntegrationSubtypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +172,10 @@ namespace Model
      * Gateway as a "loopback" endpoint without invoking any backend. Supported only
      * for WebSocket APIs.</p>
      */
-    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline IntegrationType GetIntegrationType() const { return m_integrationType; }
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
-    inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
-    inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
-    inline CreateIntegrationRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline void SetIntegrationType(IntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline CreateIntegrationRequest& WithIntegrationType(IntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -208,14 +190,12 @@ namespace Model
      * For private integrations, all resources must be owned by the same AWS
      * account.</p>
      */
-    inline const Aws::String& GetIntegrationUri() const{ return m_integrationUri; }
+    inline const Aws::String& GetIntegrationUri() const { return m_integrationUri; }
     inline bool IntegrationUriHasBeenSet() const { return m_integrationUriHasBeenSet; }
-    inline void SetIntegrationUri(const Aws::String& value) { m_integrationUriHasBeenSet = true; m_integrationUri = value; }
-    inline void SetIntegrationUri(Aws::String&& value) { m_integrationUriHasBeenSet = true; m_integrationUri = std::move(value); }
-    inline void SetIntegrationUri(const char* value) { m_integrationUriHasBeenSet = true; m_integrationUri.assign(value); }
-    inline CreateIntegrationRequest& WithIntegrationUri(const Aws::String& value) { SetIntegrationUri(value); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationUri(Aws::String&& value) { SetIntegrationUri(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithIntegrationUri(const char* value) { SetIntegrationUri(value); return *this;}
+    template<typename IntegrationUriT = Aws::String>
+    void SetIntegrationUri(IntegrationUriT&& value) { m_integrationUriHasBeenSet = true; m_integrationUri = std::forward<IntegrationUriT>(value); }
+    template<typename IntegrationUriT = Aws::String>
+    CreateIntegrationRequest& WithIntegrationUri(IntegrationUriT&& value) { SetIntegrationUri(std::forward<IntegrationUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -232,12 +212,10 @@ namespace Model
      * is at least one content type defined, unmapped content types will be rejected
      * with the same HTTP 415 Unsupported Media Type response.</p>
      */
-    inline const PassthroughBehavior& GetPassthroughBehavior() const{ return m_passthroughBehavior; }
+    inline PassthroughBehavior GetPassthroughBehavior() const { return m_passthroughBehavior; }
     inline bool PassthroughBehaviorHasBeenSet() const { return m_passthroughBehaviorHasBeenSet; }
-    inline void SetPassthroughBehavior(const PassthroughBehavior& value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior = value; }
-    inline void SetPassthroughBehavior(PassthroughBehavior&& value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior = std::move(value); }
-    inline CreateIntegrationRequest& WithPassthroughBehavior(const PassthroughBehavior& value) { SetPassthroughBehavior(value); return *this;}
-    inline CreateIntegrationRequest& WithPassthroughBehavior(PassthroughBehavior&& value) { SetPassthroughBehavior(std::move(value)); return *this;}
+    inline void SetPassthroughBehavior(PassthroughBehavior value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior = value; }
+    inline CreateIntegrationRequest& WithPassthroughBehavior(PassthroughBehavior value) { SetPassthroughBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -248,14 +226,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working
      * with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
      */
-    inline const Aws::String& GetPayloadFormatVersion() const{ return m_payloadFormatVersion; }
+    inline const Aws::String& GetPayloadFormatVersion() const { return m_payloadFormatVersion; }
     inline bool PayloadFormatVersionHasBeenSet() const { return m_payloadFormatVersionHasBeenSet; }
-    inline void SetPayloadFormatVersion(const Aws::String& value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion = value; }
-    inline void SetPayloadFormatVersion(Aws::String&& value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion = std::move(value); }
-    inline void SetPayloadFormatVersion(const char* value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion.assign(value); }
-    inline CreateIntegrationRequest& WithPayloadFormatVersion(const Aws::String& value) { SetPayloadFormatVersion(value); return *this;}
-    inline CreateIntegrationRequest& WithPayloadFormatVersion(Aws::String&& value) { SetPayloadFormatVersion(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithPayloadFormatVersion(const char* value) { SetPayloadFormatVersion(value); return *this;}
+    template<typename PayloadFormatVersionT = Aws::String>
+    void SetPayloadFormatVersion(PayloadFormatVersionT&& value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion = std::forward<PayloadFormatVersionT>(value); }
+    template<typename PayloadFormatVersionT = Aws::String>
+    CreateIntegrationRequest& WithPayloadFormatVersion(PayloadFormatVersionT&& value) { SetPayloadFormatVersion(std::forward<PayloadFormatVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -292,19 +268,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const { return m_requestParameters; }
     inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
-    inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
-    inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
-    inline CreateIntegrationRequest& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
-    inline CreateIntegrationRequest& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
-    inline CreateIntegrationRequest& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
+    template<typename RequestParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestParameters(RequestParametersT&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::forward<RequestParametersT>(value); }
+    template<typename RequestParametersT = Aws::Map<Aws::String, Aws::String>>
+    CreateIntegrationRequest& WithRequestParameters(RequestParametersT&& value) { SetRequestParameters(std::forward<RequestParametersT>(value)); return *this;}
+    template<typename RequestParametersKeyT = Aws::String, typename RequestParametersValueT = Aws::String>
+    CreateIntegrationRequest& AddRequestParameters(RequestParametersKeyT&& key, RequestParametersValueT&& value) {
+      m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::forward<RequestParametersKeyT>(key), std::forward<RequestParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -314,19 +287,16 @@ namespace Model
      * content type value is the key in this map, and the template (as a String) is the
      * value. Supported only for WebSocket APIs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestTemplates() const{ return m_requestTemplates; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestTemplates() const { return m_requestTemplates; }
     inline bool RequestTemplatesHasBeenSet() const { return m_requestTemplatesHasBeenSet; }
-    inline void SetRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = value; }
-    inline void SetRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = std::move(value); }
-    inline CreateIntegrationRequest& WithRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestTemplates(value); return *this;}
-    inline CreateIntegrationRequest& WithRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestTemplates(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& AddRequestTemplates(const Aws::String& key, const Aws::String& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, value); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(Aws::String&& key, const Aws::String& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(std::move(key), value); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(const Aws::String& key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(Aws::String&& key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(const char* key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(Aws::String&& key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(std::move(key), value); return *this; }
-    inline CreateIntegrationRequest& AddRequestTemplates(const char* key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(key, value); return *this; }
+    template<typename RequestTemplatesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestTemplates(RequestTemplatesT&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = std::forward<RequestTemplatesT>(value); }
+    template<typename RequestTemplatesT = Aws::Map<Aws::String, Aws::String>>
+    CreateIntegrationRequest& WithRequestTemplates(RequestTemplatesT&& value) { SetRequestTemplates(std::forward<RequestTemplatesT>(value)); return *this;}
+    template<typename RequestTemplatesKeyT = Aws::String, typename RequestTemplatesValueT = Aws::String>
+    CreateIntegrationRequest& AddRequestTemplates(RequestTemplatesKeyT&& key, RequestTemplatesValueT&& value) {
+      m_requestTemplatesHasBeenSet = true; m_requestTemplates.emplace(std::forward<RequestTemplatesKeyT>(key), std::forward<RequestTemplatesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -343,32 +313,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
      * API requests and responses</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetResponseParameters() const{ return m_responseParameters; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetResponseParameters() const { return m_responseParameters; }
     inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
-    inline void SetResponseParameters(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
-    inline void SetResponseParameters(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::move(value); }
-    inline CreateIntegrationRequest& WithResponseParameters(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetResponseParameters(value); return *this;}
-    inline CreateIntegrationRequest& WithResponseParameters(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetResponseParameters(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& AddResponseParameters(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
-    inline CreateIntegrationRequest& AddResponseParameters(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), value); return *this; }
-    inline CreateIntegrationRequest& AddResponseParameters(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddResponseParameters(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddResponseParameters(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, std::move(value)); return *this; }
-    inline CreateIntegrationRequest& AddResponseParameters(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
+    template<typename ResponseParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    void SetResponseParameters(ResponseParametersT&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::forward<ResponseParametersT>(value); }
+    template<typename ResponseParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    CreateIntegrationRequest& WithResponseParameters(ResponseParametersT&& value) { SetResponseParameters(std::forward<ResponseParametersT>(value)); return *this;}
+    template<typename ResponseParametersKeyT = Aws::String, typename ResponseParametersValueT = Aws::Map<Aws::String, Aws::String>>
+    CreateIntegrationRequest& AddResponseParameters(ResponseParametersKeyT&& key, ResponseParametersValueT&& value) {
+      m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::forward<ResponseParametersKeyT>(key), std::forward<ResponseParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The template selection expression for the integration.</p>
      */
-    inline const Aws::String& GetTemplateSelectionExpression() const{ return m_templateSelectionExpression; }
+    inline const Aws::String& GetTemplateSelectionExpression() const { return m_templateSelectionExpression; }
     inline bool TemplateSelectionExpressionHasBeenSet() const { return m_templateSelectionExpressionHasBeenSet; }
-    inline void SetTemplateSelectionExpression(const Aws::String& value) { m_templateSelectionExpressionHasBeenSet = true; m_templateSelectionExpression = value; }
-    inline void SetTemplateSelectionExpression(Aws::String&& value) { m_templateSelectionExpressionHasBeenSet = true; m_templateSelectionExpression = std::move(value); }
-    inline void SetTemplateSelectionExpression(const char* value) { m_templateSelectionExpressionHasBeenSet = true; m_templateSelectionExpression.assign(value); }
-    inline CreateIntegrationRequest& WithTemplateSelectionExpression(const Aws::String& value) { SetTemplateSelectionExpression(value); return *this;}
-    inline CreateIntegrationRequest& WithTemplateSelectionExpression(Aws::String&& value) { SetTemplateSelectionExpression(std::move(value)); return *this;}
-    inline CreateIntegrationRequest& WithTemplateSelectionExpression(const char* value) { SetTemplateSelectionExpression(value); return *this;}
+    template<typename TemplateSelectionExpressionT = Aws::String>
+    void SetTemplateSelectionExpression(TemplateSelectionExpressionT&& value) { m_templateSelectionExpressionHasBeenSet = true; m_templateSelectionExpression = std::forward<TemplateSelectionExpressionT>(value); }
+    template<typename TemplateSelectionExpressionT = Aws::String>
+    CreateIntegrationRequest& WithTemplateSelectionExpression(TemplateSelectionExpressionT&& value) { SetTemplateSelectionExpression(std::forward<TemplateSelectionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -377,7 +343,7 @@ namespace Model
      * between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29
      * seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
      */
-    inline int GetTimeoutInMillis() const{ return m_timeoutInMillis; }
+    inline int GetTimeoutInMillis() const { return m_timeoutInMillis; }
     inline bool TimeoutInMillisHasBeenSet() const { return m_timeoutInMillisHasBeenSet; }
     inline void SetTimeoutInMillis(int value) { m_timeoutInMillisHasBeenSet = true; m_timeoutInMillis = value; }
     inline CreateIntegrationRequest& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
@@ -389,12 +355,12 @@ namespace Model
      * configuration, private integration traffic uses the HTTPS protocol. Supported
      * only for HTTP APIs.</p>
      */
-    inline const TlsConfigInput& GetTlsConfig() const{ return m_tlsConfig; }
+    inline const TlsConfigInput& GetTlsConfig() const { return m_tlsConfig; }
     inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
-    inline void SetTlsConfig(const TlsConfigInput& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
-    inline void SetTlsConfig(TlsConfigInput&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
-    inline CreateIntegrationRequest& WithTlsConfig(const TlsConfigInput& value) { SetTlsConfig(value); return *this;}
-    inline CreateIntegrationRequest& WithTlsConfig(TlsConfigInput&& value) { SetTlsConfig(std::move(value)); return *this;}
+    template<typename TlsConfigT = TlsConfigInput>
+    void SetTlsConfig(TlsConfigT&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::forward<TlsConfigT>(value); }
+    template<typename TlsConfigT = TlsConfigInput>
+    CreateIntegrationRequest& WithTlsConfig(TlsConfigT&& value) { SetTlsConfig(std::forward<TlsConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -404,10 +370,10 @@ namespace Model
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet = false;
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
-    ContentHandlingStrategy m_contentHandlingStrategy;
+    ContentHandlingStrategy m_contentHandlingStrategy{ContentHandlingStrategy::NOT_SET};
     bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_credentialsArn;
@@ -422,13 +388,13 @@ namespace Model
     Aws::String m_integrationSubtype;
     bool m_integrationSubtypeHasBeenSet = false;
 
-    IntegrationType m_integrationType;
+    IntegrationType m_integrationType{IntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_integrationUri;
     bool m_integrationUriHasBeenSet = false;
 
-    PassthroughBehavior m_passthroughBehavior;
+    PassthroughBehavior m_passthroughBehavior{PassthroughBehavior::NOT_SET};
     bool m_passthroughBehaviorHasBeenSet = false;
 
     Aws::String m_payloadFormatVersion;
@@ -446,7 +412,7 @@ namespace Model
     Aws::String m_templateSelectionExpression;
     bool m_templateSelectionExpressionHasBeenSet = false;
 
-    int m_timeoutInMillis;
+    int m_timeoutInMillis{0};
     bool m_timeoutInMillisHasBeenSet = false;
 
     TlsConfigInput m_tlsConfig;

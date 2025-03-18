@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDirectoryLimitsResult::GetDirectoryLimitsResult()
-{
-}
-
 GetDirectoryLimitsResult::GetDirectoryLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDirectoryLimitsResult& GetDirectoryLimitsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("DirectoryLimits"))
   {
     m_directoryLimits = jsonValue.GetObject("DirectoryLimits");
-
+    m_directoryLimitsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

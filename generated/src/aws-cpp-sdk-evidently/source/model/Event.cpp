@@ -18,16 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-Event::Event() : 
-    m_dataHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_type(EventType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

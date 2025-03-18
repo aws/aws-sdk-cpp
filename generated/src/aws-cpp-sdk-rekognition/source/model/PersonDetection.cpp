@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-PersonDetection::PersonDetection() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_personHasBeenSet(false)
-{
-}
-
 PersonDetection::PersonDetection(JsonView jsonValue)
-  : PersonDetection()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PersonDetection& PersonDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Person"))
   {
     m_person = jsonValue.GetObject("Person");
-
     m_personHasBeenSet = true;
   }
-
   return *this;
 }
 

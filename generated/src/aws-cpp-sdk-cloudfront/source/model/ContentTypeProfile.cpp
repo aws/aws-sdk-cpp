@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContentTypeProfile::ContentTypeProfile() : 
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 ContentTypeProfile::ContentTypeProfile(const XmlNode& xmlNode)
-  : ContentTypeProfile()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ ContentTypeProfile& ContentTypeProfile::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");

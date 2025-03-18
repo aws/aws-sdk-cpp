@@ -12,14 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVolumesRequest::DescribeVolumesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_raidArrayIdHasBeenSet(false),
-    m_volumeIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVolumesRequest::SerializePayload() const
 {
   JsonValue payload;

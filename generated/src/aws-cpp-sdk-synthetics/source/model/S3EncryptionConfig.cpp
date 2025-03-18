@@ -18,15 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-S3EncryptionConfig::S3EncryptionConfig() : 
-    m_encryptionMode(EncryptionMode::NOT_SET),
-    m_encryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3EncryptionConfig::S3EncryptionConfig(JsonView jsonValue)
-  : S3EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3EncryptionConfig& S3EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionMode"))
   {
     m_encryptionMode = EncryptionModeMapper::GetEncryptionModeForName(jsonValue.GetString("EncryptionMode"));
-
     m_encryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

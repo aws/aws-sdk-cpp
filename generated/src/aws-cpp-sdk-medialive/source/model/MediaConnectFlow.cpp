@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MediaConnectFlow::MediaConnectFlow() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 MediaConnectFlow::MediaConnectFlow(JsonView jsonValue)
-  : MediaConnectFlow()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MediaConnectFlow& MediaConnectFlow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
     m_flowArnHasBeenSet = true;
   }
-
   return *this;
 }
 

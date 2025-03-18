@@ -22,7 +22,7 @@ namespace Model
   class ListSecurityConfigsRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API ListSecurityConfigsRequest();
+    AWS_OPENSEARCHSERVERLESS_API ListSecurityConfigsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
     /**
      * <p>The type of security configuration.</p>
      */
-    inline const SecurityConfigType& GetType() const{ return m_type; }
+    inline SecurityConfigType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListSecurityConfigsRequest& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
-    inline ListSecurityConfigsRequest& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SecurityConfigType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListSecurityConfigsRequest& WithType(SecurityConfigType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * subsequent <code>ListSecurityConfigs</code> operations, which returns results in
      * the next page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSecurityConfigsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSecurityConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSecurityConfigsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSecurityConfigsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,20 +66,20 @@ namespace Model
      * You can use <code>nextToken</code> to get the next page of results. The default
      * is 20.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSecurityConfigsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    SecurityConfigType m_type;
+    SecurityConfigType m_type{SecurityConfigType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

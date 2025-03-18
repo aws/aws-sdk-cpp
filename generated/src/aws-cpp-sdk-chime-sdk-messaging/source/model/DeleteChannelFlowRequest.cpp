@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelFlowRequest::DeleteChannelFlowRequest() : 
-    m_channelFlowArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelFlowRequest::SerializePayload() const
 {
   return {};

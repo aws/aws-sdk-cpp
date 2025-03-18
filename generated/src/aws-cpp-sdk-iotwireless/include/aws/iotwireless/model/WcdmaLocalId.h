@@ -30,7 +30,7 @@ namespace Model
   class WcdmaLocalId
   {
   public:
-    AWS_IOTWIRELESS_API WcdmaLocalId();
+    AWS_IOTWIRELESS_API WcdmaLocalId() = default;
     AWS_IOTWIRELESS_API WcdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API WcdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
      */
-    inline int GetUarfcndl() const{ return m_uarfcndl; }
+    inline int GetUarfcndl() const { return m_uarfcndl; }
     inline bool UarfcndlHasBeenSet() const { return m_uarfcndlHasBeenSet; }
     inline void SetUarfcndl(int value) { m_uarfcndlHasBeenSet = true; m_uarfcndl = value; }
     inline WcdmaLocalId& WithUarfcndl(int value) { SetUarfcndl(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>Primary Scrambling Code.</p>
      */
-    inline int GetPsc() const{ return m_psc; }
+    inline int GetPsc() const { return m_psc; }
     inline bool PscHasBeenSet() const { return m_pscHasBeenSet; }
     inline void SetPsc(int value) { m_pscHasBeenSet = true; m_psc = value; }
     inline WcdmaLocalId& WithPsc(int value) { SetPsc(value); return *this;}
     ///@}
   private:
 
-    int m_uarfcndl;
+    int m_uarfcndl{0};
     bool m_uarfcndlHasBeenSet = false;
 
-    int m_psc;
+    int m_psc{0};
     bool m_pscHasBeenSet = false;
   };
 

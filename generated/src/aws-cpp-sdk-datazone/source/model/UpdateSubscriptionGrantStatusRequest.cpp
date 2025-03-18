@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionGrantStatusRequest::UpdateSubscriptionGrantStatusRequest() : 
-    m_assetIdentifierHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_status(SubscriptionGrantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionGrantStatusRequest::SerializePayload() const
 {
   JsonValue payload;

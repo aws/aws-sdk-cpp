@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DynatraceConnectorProfileCredentials::DynatraceConnectorProfileCredentials() : 
-    m_apiTokenHasBeenSet(false)
-{
-}
-
 DynatraceConnectorProfileCredentials::DynatraceConnectorProfileCredentials(JsonView jsonValue)
-  : DynatraceConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DynatraceConnectorProfileCredentials& DynatraceConnectorProfileCredentials::oper
   if(jsonValue.ValueExists("apiToken"))
   {
     m_apiToken = jsonValue.GetString("apiToken");
-
     m_apiTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

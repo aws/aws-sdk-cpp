@@ -21,7 +21,7 @@ namespace Model
   class ListGroupsOlderThanOrderingIdRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API ListGroupsOlderThanOrderingIdRequest();
+    AWS_KENDRA_API ListGroupsOlderThanOrderingIdRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier of the index for getting a list of groups mapped to users
      * before a given ordering or timestamp identifier.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline ListGroupsOlderThanOrderingIdRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    ListGroupsOlderThanOrderingIdRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The identifier of the data source for getting a list of groups mapped to
      * users before a given ordering timestamp identifier.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline ListGroupsOlderThanOrderingIdRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    ListGroupsOlderThanOrderingIdRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +65,7 @@ namespace Model
      * <p>The timestamp identifier used for the latest <code>PUT</code> or
      * <code>DELETE</code> action for mapping users to their groups.</p>
      */
-    inline long long GetOrderingId() const{ return m_orderingId; }
+    inline long long GetOrderingId() const { return m_orderingId; }
     inline bool OrderingIdHasBeenSet() const { return m_orderingIdHasBeenSet; }
     inline void SetOrderingId(long long value) { m_orderingIdHasBeenSet = true; m_orderingId = value; }
     inline ListGroupsOlderThanOrderingIdRequest& WithOrderingId(long long value) { SetOrderingId(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
      * this pagination token to retrieve the next set of groups that are mapped to
      * users before a given ordering or timestamp identifier. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListGroupsOlderThanOrderingIdRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGroupsOlderThanOrderingIdRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGroupsOlderThanOrderingIdRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +91,7 @@ namespace Model
      * <p> The maximum number of returned groups that are mapped to users before a
      * given ordering or timestamp identifier. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListGroupsOlderThanOrderingIdRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -110,13 +104,13 @@ namespace Model
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
 
-    long long m_orderingId;
+    long long m_orderingId{0};
     bool m_orderingIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

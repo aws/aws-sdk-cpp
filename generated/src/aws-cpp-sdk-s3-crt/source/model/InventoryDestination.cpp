@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-InventoryDestination::InventoryDestination() : 
-    m_s3BucketDestinationHasBeenSet(false)
-{
-}
-
 InventoryDestination::InventoryDestination(const XmlNode& xmlNode)
-  : InventoryDestination()
 {
   *this = xmlNode;
 }

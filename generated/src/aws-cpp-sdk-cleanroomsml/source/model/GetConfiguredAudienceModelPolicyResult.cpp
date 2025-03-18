@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConfiguredAudienceModelPolicyResult::GetConfiguredAudienceModelPolicyResult()
-{
-}
-
 GetConfiguredAudienceModelPolicyResult::GetConfiguredAudienceModelPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetConfiguredAudienceModelPolicyResult& GetConfiguredAudienceModelPolicyResult::
   if(jsonValue.ValueExists("configuredAudienceModelArn"))
   {
     m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
-
+    m_configuredAudienceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredAudienceModelPolicy"))
   {
     m_configuredAudienceModelPolicy = jsonValue.GetString("configuredAudienceModelPolicy");
-
+    m_configuredAudienceModelPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyHash"))
   {
     m_policyHash = jsonValue.GetString("policyHash");
-
+    m_policyHashHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideoSignalingChannels::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendAlexaOfferToMasterRequest::SendAlexaOfferToMasterRequest() : 
-    m_channelARNHasBeenSet(false),
-    m_senderClientIdHasBeenSet(false),
-    m_messagePayloadHasBeenSet(false)
-{
-}
-
 Aws::String SendAlexaOfferToMasterRequest::SerializePayload() const
 {
   JsonValue payload;

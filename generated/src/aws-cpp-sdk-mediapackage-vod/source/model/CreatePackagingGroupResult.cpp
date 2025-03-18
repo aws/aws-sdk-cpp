@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePackagingGroupResult::CreatePackagingGroupResult()
-{
-}
-
 CreatePackagingGroupResult::CreatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,33 @@ CreatePackagingGroupResult& CreatePackagingGroupResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorization"))
   {
     m_authorization = jsonValue.GetObject("authorization");
-
+    m_authorizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressAccessLogs"))
   {
     m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
-
+    m_egressAccessLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -72,14 +62,15 @@ CreatePackagingGroupResult& CreatePackagingGroupResult::operator =(const Aws::Am
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class ListSchemaExtensionsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API ListSchemaExtensionsRequest();
+    AWS_DIRECTORYSERVICE_API ListSchemaExtensionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline ListSchemaExtensionsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline ListSchemaExtensionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline ListSchemaExtensionsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    ListSchemaExtensionsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,21 +52,19 @@ namespace Model
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
      * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSchemaExtensionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSchemaExtensionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSchemaExtensionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSchemaExtensionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListSchemaExtensionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

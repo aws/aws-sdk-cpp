@@ -18,16 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-RolloutRateIncreaseCriteria::RolloutRateIncreaseCriteria() : 
-    m_numberOfNotifiedThings(0),
-    m_numberOfNotifiedThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false)
-{
-}
-
 RolloutRateIncreaseCriteria::RolloutRateIncreaseCriteria(JsonView jsonValue)
-  : RolloutRateIncreaseCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RolloutRateIncreaseCriteria& RolloutRateIncreaseCriteria::operator =(JsonView js
   if(jsonValue.ValueExists("numberOfNotifiedThings"))
   {
     m_numberOfNotifiedThings = jsonValue.GetInteger("numberOfNotifiedThings");
-
     m_numberOfNotifiedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfSucceededThings"))
   {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
-
     m_numberOfSucceededThingsHasBeenSet = true;
   }
-
   return *this;
 }
 

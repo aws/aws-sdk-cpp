@@ -19,7 +19,7 @@ namespace Model
   class StartTelemetryEvaluationForOrganizationRequest : public ObservabilityAdminRequest
   {
   public:
-    AWS_OBSERVABILITYADMIN_API StartTelemetryEvaluationForOrganizationRequest();
+    AWS_OBSERVABILITYADMIN_API StartTelemetryEvaluationForOrganizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartColorConfiguration::GaugeChartColorConfiguration() : 
-    m_foregroundColorHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
-{
-}
-
 GaugeChartColorConfiguration::GaugeChartColorConfiguration(JsonView jsonValue)
-  : GaugeChartColorConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GaugeChartColorConfiguration& GaugeChartColorConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ForegroundColor"))
   {
     m_foregroundColor = jsonValue.GetString("ForegroundColor");
-
     m_foregroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetString("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   return *this;
 }
 

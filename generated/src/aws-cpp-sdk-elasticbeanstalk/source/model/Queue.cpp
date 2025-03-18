@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Queue::Queue() : 
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 Queue::Queue(const XmlNode& xmlNode)
-  : Queue()
 {
   *this = xmlNode;
 }

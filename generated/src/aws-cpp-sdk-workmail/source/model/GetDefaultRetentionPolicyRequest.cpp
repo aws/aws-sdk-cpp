@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDefaultRetentionPolicyRequest::GetDefaultRetentionPolicyRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDefaultRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

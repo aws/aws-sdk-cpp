@@ -22,7 +22,7 @@ namespace Model
   class UpdateWorldTemplateRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API UpdateWorldTemplateRequest();
+    AWS_ROBOMAKER_API UpdateWorldTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,54 +37,48 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (arn) of the world template to update.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
+    inline const Aws::String& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-    inline UpdateWorldTemplateRequest& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline UpdateWorldTemplateRequest& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline UpdateWorldTemplateRequest& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    UpdateWorldTemplateRequest& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateWorldTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateWorldTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateWorldTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateWorldTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The world template body.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline UpdateWorldTemplateRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline UpdateWorldTemplateRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline UpdateWorldTemplateRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    UpdateWorldTemplateRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the world template.</p>
      */
-    inline const TemplateLocation& GetTemplateLocation() const{ return m_templateLocation; }
+    inline const TemplateLocation& GetTemplateLocation() const { return m_templateLocation; }
     inline bool TemplateLocationHasBeenSet() const { return m_templateLocationHasBeenSet; }
-    inline void SetTemplateLocation(const TemplateLocation& value) { m_templateLocationHasBeenSet = true; m_templateLocation = value; }
-    inline void SetTemplateLocation(TemplateLocation&& value) { m_templateLocationHasBeenSet = true; m_templateLocation = std::move(value); }
-    inline UpdateWorldTemplateRequest& WithTemplateLocation(const TemplateLocation& value) { SetTemplateLocation(value); return *this;}
-    inline UpdateWorldTemplateRequest& WithTemplateLocation(TemplateLocation&& value) { SetTemplateLocation(std::move(value)); return *this;}
+    template<typename TemplateLocationT = TemplateLocation>
+    void SetTemplateLocation(TemplateLocationT&& value) { m_templateLocationHasBeenSet = true; m_templateLocation = std::forward<TemplateLocationT>(value); }
+    template<typename TemplateLocationT = TemplateLocation>
+    UpdateWorldTemplateRequest& WithTemplateLocation(TemplateLocationT&& value) { SetTemplateLocation(std::forward<TemplateLocationT>(value)); return *this;}
     ///@}
   private:
 

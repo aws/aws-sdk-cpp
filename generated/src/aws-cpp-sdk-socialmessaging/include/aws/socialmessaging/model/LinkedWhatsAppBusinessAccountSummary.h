@@ -36,7 +36,7 @@ namespace Model
   class LinkedWhatsAppBusinessAccountSummary
   {
   public:
-    AWS_SOCIALMESSAGING_API LinkedWhatsAppBusinessAccountSummary();
+    AWS_SOCIALMESSAGING_API LinkedWhatsAppBusinessAccountSummary() = default;
     AWS_SOCIALMESSAGING_API LinkedWhatsAppBusinessAccountSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API LinkedWhatsAppBusinessAccountSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ARN of the linked WhatsApp Business Account.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LinkedWhatsAppBusinessAccountSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,80 +59,72 @@ namespace Model
      * <p>The ID of the linked WhatsApp Business Account, formatted as
      * <code>waba-01234567890123456789012345678901</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    LinkedWhatsAppBusinessAccountSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The WhatsApp Business Account ID provided by Meta.</p>
      */
-    inline const Aws::String& GetWabaId() const{ return m_wabaId; }
+    inline const Aws::String& GetWabaId() const { return m_wabaId; }
     inline bool WabaIdHasBeenSet() const { return m_wabaIdHasBeenSet; }
-    inline void SetWabaId(const Aws::String& value) { m_wabaIdHasBeenSet = true; m_wabaId = value; }
-    inline void SetWabaId(Aws::String&& value) { m_wabaIdHasBeenSet = true; m_wabaId = std::move(value); }
-    inline void SetWabaId(const char* value) { m_wabaIdHasBeenSet = true; m_wabaId.assign(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaId(const Aws::String& value) { SetWabaId(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaId(Aws::String&& value) { SetWabaId(std::move(value)); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaId(const char* value) { SetWabaId(value); return *this;}
+    template<typename WabaIdT = Aws::String>
+    void SetWabaId(WabaIdT&& value) { m_wabaIdHasBeenSet = true; m_wabaId = std::forward<WabaIdT>(value); }
+    template<typename WabaIdT = Aws::String>
+    LinkedWhatsAppBusinessAccountSummary& WithWabaId(WabaIdT&& value) { SetWabaId(std::forward<WabaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The registration status of the linked WhatsApp Business Account.</p>
      */
-    inline const RegistrationStatus& GetRegistrationStatus() const{ return m_registrationStatus; }
+    inline RegistrationStatus GetRegistrationStatus() const { return m_registrationStatus; }
     inline bool RegistrationStatusHasBeenSet() const { return m_registrationStatusHasBeenSet; }
-    inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
-    inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = std::move(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithRegistrationStatus(const RegistrationStatus& value) { SetRegistrationStatus(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+    inline void SetRegistrationStatus(RegistrationStatus value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
+    inline LinkedWhatsAppBusinessAccountSummary& WithRegistrationStatus(RegistrationStatus value) { SetRegistrationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the WhatsApp Business Account was linked.</p>
      */
-    inline const Aws::Utils::DateTime& GetLinkDate() const{ return m_linkDate; }
+    inline const Aws::Utils::DateTime& GetLinkDate() const { return m_linkDate; }
     inline bool LinkDateHasBeenSet() const { return m_linkDateHasBeenSet; }
-    inline void SetLinkDate(const Aws::Utils::DateTime& value) { m_linkDateHasBeenSet = true; m_linkDate = value; }
-    inline void SetLinkDate(Aws::Utils::DateTime&& value) { m_linkDateHasBeenSet = true; m_linkDate = std::move(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithLinkDate(const Aws::Utils::DateTime& value) { SetLinkDate(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithLinkDate(Aws::Utils::DateTime&& value) { SetLinkDate(std::move(value)); return *this;}
+    template<typename LinkDateT = Aws::Utils::DateTime>
+    void SetLinkDate(LinkDateT&& value) { m_linkDateHasBeenSet = true; m_linkDate = std::forward<LinkDateT>(value); }
+    template<typename LinkDateT = Aws::Utils::DateTime>
+    LinkedWhatsAppBusinessAccountSummary& WithLinkDate(LinkDateT&& value) { SetLinkDate(std::forward<LinkDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the linked WhatsApp Business Account.</p>
      */
-    inline const Aws::String& GetWabaName() const{ return m_wabaName; }
+    inline const Aws::String& GetWabaName() const { return m_wabaName; }
     inline bool WabaNameHasBeenSet() const { return m_wabaNameHasBeenSet; }
-    inline void SetWabaName(const Aws::String& value) { m_wabaNameHasBeenSet = true; m_wabaName = value; }
-    inline void SetWabaName(Aws::String&& value) { m_wabaNameHasBeenSet = true; m_wabaName = std::move(value); }
-    inline void SetWabaName(const char* value) { m_wabaNameHasBeenSet = true; m_wabaName.assign(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaName(const Aws::String& value) { SetWabaName(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaName(Aws::String&& value) { SetWabaName(std::move(value)); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithWabaName(const char* value) { SetWabaName(value); return *this;}
+    template<typename WabaNameT = Aws::String>
+    void SetWabaName(WabaNameT&& value) { m_wabaNameHasBeenSet = true; m_wabaName = std::forward<WabaNameT>(value); }
+    template<typename WabaNameT = Aws::String>
+    LinkedWhatsAppBusinessAccountSummary& WithWabaName(WabaNameT&& value) { SetWabaName(std::forward<WabaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event destinations for the linked WhatsApp Business Account.</p>
      */
-    inline const Aws::Vector<WhatsAppBusinessAccountEventDestination>& GetEventDestinations() const{ return m_eventDestinations; }
+    inline const Aws::Vector<WhatsAppBusinessAccountEventDestination>& GetEventDestinations() const { return m_eventDestinations; }
     inline bool EventDestinationsHasBeenSet() const { return m_eventDestinationsHasBeenSet; }
-    inline void SetEventDestinations(const Aws::Vector<WhatsAppBusinessAccountEventDestination>& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = value; }
-    inline void SetEventDestinations(Aws::Vector<WhatsAppBusinessAccountEventDestination>&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = std::move(value); }
-    inline LinkedWhatsAppBusinessAccountSummary& WithEventDestinations(const Aws::Vector<WhatsAppBusinessAccountEventDestination>& value) { SetEventDestinations(value); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& WithEventDestinations(Aws::Vector<WhatsAppBusinessAccountEventDestination>&& value) { SetEventDestinations(std::move(value)); return *this;}
-    inline LinkedWhatsAppBusinessAccountSummary& AddEventDestinations(const WhatsAppBusinessAccountEventDestination& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.push_back(value); return *this; }
-    inline LinkedWhatsAppBusinessAccountSummary& AddEventDestinations(WhatsAppBusinessAccountEventDestination&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.push_back(std::move(value)); return *this; }
+    template<typename EventDestinationsT = Aws::Vector<WhatsAppBusinessAccountEventDestination>>
+    void SetEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = std::forward<EventDestinationsT>(value); }
+    template<typename EventDestinationsT = Aws::Vector<WhatsAppBusinessAccountEventDestination>>
+    LinkedWhatsAppBusinessAccountSummary& WithEventDestinations(EventDestinationsT&& value) { SetEventDestinations(std::forward<EventDestinationsT>(value)); return *this;}
+    template<typename EventDestinationsT = WhatsAppBusinessAccountEventDestination>
+    LinkedWhatsAppBusinessAccountSummary& AddEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.emplace_back(std::forward<EventDestinationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -147,10 +137,10 @@ namespace Model
     Aws::String m_wabaId;
     bool m_wabaIdHasBeenSet = false;
 
-    RegistrationStatus m_registrationStatus;
+    RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
     bool m_registrationStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_linkDate;
+    Aws::Utils::DateTime m_linkDate{};
     bool m_linkDateHasBeenSet = false;
 
     Aws::String m_wabaName;

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult() : 
-    m_autoEnable(false),
-    m_memberAccountLimitReached(false),
-    m_autoEnableStandards(AutoEnableStandards::NOT_SET)
-{
-}
-
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeOrganizationConfigurationResult()
 {
   *this = result;
 }
@@ -36,33 +28,30 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
   if(jsonValue.ValueExists("AutoEnable"))
   {
     m_autoEnable = jsonValue.GetBool("AutoEnable");
-
+    m_autoEnableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberAccountLimitReached"))
   {
     m_memberAccountLimitReached = jsonValue.GetBool("MemberAccountLimitReached");
-
+    m_memberAccountLimitReachedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoEnableStandards"))
   {
     m_autoEnableStandards = AutoEnableStandardsMapper::GetAutoEnableStandardsForName(jsonValue.GetString("AutoEnableStandards"));
-
+    m_autoEnableStandardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationConfiguration"))
   {
     m_organizationConfiguration = jsonValue.GetObject("OrganizationConfiguration");
-
+    m_organizationConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

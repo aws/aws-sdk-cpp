@@ -18,16 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TaskTimedOutEventDetails::TaskTimedOutEventDetails() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 TaskTimedOutEventDetails::TaskTimedOutEventDetails(JsonView jsonValue)
-  : TaskTimedOutEventDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TaskTimedOutEventDetails& TaskTimedOutEventDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   return *this;
 }
 

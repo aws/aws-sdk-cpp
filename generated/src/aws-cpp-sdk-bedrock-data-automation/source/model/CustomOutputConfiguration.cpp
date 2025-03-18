@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-CustomOutputConfiguration::CustomOutputConfiguration() : 
-    m_blueprintsHasBeenSet(false)
-{
-}
-
 CustomOutputConfiguration::CustomOutputConfiguration(JsonView jsonValue)
-  : CustomOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CustomOutputConfiguration& CustomOutputConfiguration::operator =(JsonView jsonVa
     }
     m_blueprintsHasBeenSet = true;
   }
-
   return *this;
 }
 

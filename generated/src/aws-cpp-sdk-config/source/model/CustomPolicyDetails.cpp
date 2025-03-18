@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-CustomPolicyDetails::CustomPolicyDetails() : 
-    m_policyRuntimeHasBeenSet(false),
-    m_policyTextHasBeenSet(false),
-    m_enableDebugLogDelivery(false),
-    m_enableDebugLogDeliveryHasBeenSet(false)
-{
-}
-
 CustomPolicyDetails::CustomPolicyDetails(JsonView jsonValue)
-  : CustomPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomPolicyDetails& CustomPolicyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyRuntime"))
   {
     m_policyRuntime = jsonValue.GetString("PolicyRuntime");
-
     m_policyRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyText"))
   {
     m_policyText = jsonValue.GetString("PolicyText");
-
     m_policyTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableDebugLogDelivery"))
   {
     m_enableDebugLogDelivery = jsonValue.GetBool("EnableDebugLogDelivery");
-
     m_enableDebugLogDeliveryHasBeenSet = true;
   }
-
   return *this;
 }
 

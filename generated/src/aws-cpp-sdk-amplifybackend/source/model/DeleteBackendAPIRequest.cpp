@@ -12,14 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackendAPIRequest::DeleteBackendAPIRequest() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackendAPIRequest::SerializePayload() const
 {
   JsonValue payload;

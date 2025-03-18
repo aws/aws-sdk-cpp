@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-File::File() : 
-    m_fileTypeHasBeenSet(false)
-{
-}
-
 File::File(JsonView jsonValue)
-  : File()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ File& File::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = jsonValue.GetObject("fileType");
-
     m_fileTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

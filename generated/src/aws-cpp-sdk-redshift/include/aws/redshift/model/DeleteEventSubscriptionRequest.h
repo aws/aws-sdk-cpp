@@ -24,7 +24,7 @@ namespace Model
   class DeleteEventSubscriptionRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeleteEventSubscriptionRequest();
+    AWS_REDSHIFT_API DeleteEventSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the Amazon Redshift event notification subscription to be
      * deleted.</p>
      */
-    inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+    inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-    inline DeleteEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-    inline DeleteEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-    inline DeleteEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    template<typename SubscriptionNameT = Aws::String>
+    void SetSubscriptionName(SubscriptionNameT&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::forward<SubscriptionNameT>(value); }
+    template<typename SubscriptionNameT = Aws::String>
+    DeleteEventSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) { SetSubscriptionName(std::forward<SubscriptionNameT>(value)); return *this;}
     ///@}
   private:
 

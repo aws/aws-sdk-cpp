@@ -18,23 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-Comment::Comment() : 
-    m_commentIdHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_threadIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_contributorHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_status(CommentStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_visibility(CommentVisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
-{
-}
-
 Comment::Comment(JsonView jsonValue)
-  : Comment()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Comment& Comment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommentId"))
   {
     m_commentId = jsonValue.GetString("CommentId");
-
     m_commentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentId"))
   {
     m_parentId = jsonValue.GetString("ParentId");
-
     m_parentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadId"))
   {
     m_threadId = jsonValue.GetString("ThreadId");
-
     m_threadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contributor"))
   {
     m_contributor = jsonValue.GetObject("Contributor");
-
     m_contributorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CommentStatusTypeMapper::GetCommentStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = CommentVisibilityTypeMapper::GetCommentVisibilityTypeForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipientId"))
   {
     m_recipientId = jsonValue.GetString("RecipientId");
-
     m_recipientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

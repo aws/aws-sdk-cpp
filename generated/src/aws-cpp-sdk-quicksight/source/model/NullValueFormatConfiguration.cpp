@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NullValueFormatConfiguration::NullValueFormatConfiguration() : 
-    m_nullStringHasBeenSet(false)
-{
-}
-
 NullValueFormatConfiguration::NullValueFormatConfiguration(JsonView jsonValue)
-  : NullValueFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NullValueFormatConfiguration& NullValueFormatConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("NullString"))
   {
     m_nullString = jsonValue.GetString("NullString");
-
     m_nullStringHasBeenSet = true;
   }
-
   return *this;
 }
 

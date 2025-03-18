@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ResourceCountFilters::ResourceCountFilters() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 ResourceCountFilters::ResourceCountFilters(JsonView jsonValue)
-  : ResourceCountFilters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceCountFilters& ResourceCountFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

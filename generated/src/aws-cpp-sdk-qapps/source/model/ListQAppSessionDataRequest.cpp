@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQAppSessionDataRequest::ListQAppSessionDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String ListQAppSessionDataRequest::SerializePayload() const
 {
   return {};

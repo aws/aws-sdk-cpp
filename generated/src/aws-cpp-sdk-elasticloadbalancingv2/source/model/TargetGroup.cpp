@@ -20,40 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TargetGroup::TargetGroup() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_healthCheckProtocol(ProtocolEnum::NOT_SET),
-    m_healthCheckProtocolHasBeenSet(false),
-    m_healthCheckPortHasBeenSet(false),
-    m_healthCheckEnabled(false),
-    m_healthCheckEnabledHasBeenSet(false),
-    m_healthCheckIntervalSeconds(0),
-    m_healthCheckIntervalSecondsHasBeenSet(false),
-    m_healthCheckTimeoutSeconds(0),
-    m_healthCheckTimeoutSecondsHasBeenSet(false),
-    m_healthyThresholdCount(0),
-    m_healthyThresholdCountHasBeenSet(false),
-    m_unhealthyThresholdCount(0),
-    m_unhealthyThresholdCountHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_matcherHasBeenSet(false),
-    m_loadBalancerArnsHasBeenSet(false),
-    m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false),
-    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
-{
-}
-
 TargetGroup::TargetGroup(const XmlNode& xmlNode)
-  : TargetGroup()
 {
   *this = xmlNode;
 }
@@ -79,7 +46,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -97,7 +64,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckProtocolNode = resultNode.FirstChild("HealthCheckProtocol");
     if(!healthCheckProtocolNode.IsNull())
     {
-      m_healthCheckProtocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckProtocolNode.GetText()).c_str()).c_str());
+      m_healthCheckProtocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckProtocolNode.GetText()).c_str()));
       m_healthCheckProtocolHasBeenSet = true;
     }
     XmlNode healthCheckPortNode = resultNode.FirstChild("HealthCheckPort");
@@ -152,6 +119,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     if(!loadBalancerArnsNode.IsNull())
     {
       XmlNode loadBalancerArnsMember = loadBalancerArnsNode.FirstChild("member");
+      m_loadBalancerArnsHasBeenSet = !loadBalancerArnsMember.IsNull();
       while(!loadBalancerArnsMember.IsNull())
       {
         m_loadBalancerArns.push_back(loadBalancerArnsMember.GetText());
@@ -163,7 +131,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode targetTypeNode = resultNode.FirstChild("TargetType");
     if(!targetTypeNode.IsNull())
     {
-      m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()).c_str());
+      m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()));
       m_targetTypeHasBeenSet = true;
     }
     XmlNode protocolVersionNode = resultNode.FirstChild("ProtocolVersion");
@@ -175,7 +143,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = TargetGroupIpAddressTypeEnumMapper::GetTargetGroupIpAddressTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = TargetGroupIpAddressTypeEnumMapper::GetTargetGroupIpAddressTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
   }

@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBucketAccessKeyRequest::DeleteBucketAccessKeyRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBucketAccessKeyRequest::SerializePayload() const
 {
   JsonValue payload;

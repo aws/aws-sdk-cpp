@@ -22,7 +22,7 @@ namespace Model
   class ModifyDBProxyEndpointRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API ModifyDBProxyEndpointRequest();
+    AWS_RDS_API ModifyDBProxyEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to
      * modify.</p>
      */
-    inline const Aws::String& GetDBProxyEndpointName() const{ return m_dBProxyEndpointName; }
+    inline const Aws::String& GetDBProxyEndpointName() const { return m_dBProxyEndpointName; }
     inline bool DBProxyEndpointNameHasBeenSet() const { return m_dBProxyEndpointNameHasBeenSet; }
-    inline void SetDBProxyEndpointName(const Aws::String& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = value; }
-    inline void SetDBProxyEndpointName(Aws::String&& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = std::move(value); }
-    inline void SetDBProxyEndpointName(const char* value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName.assign(value); }
-    inline ModifyDBProxyEndpointRequest& WithDBProxyEndpointName(const Aws::String& value) { SetDBProxyEndpointName(value); return *this;}
-    inline ModifyDBProxyEndpointRequest& WithDBProxyEndpointName(Aws::String&& value) { SetDBProxyEndpointName(std::move(value)); return *this;}
-    inline ModifyDBProxyEndpointRequest& WithDBProxyEndpointName(const char* value) { SetDBProxyEndpointName(value); return *this;}
+    template<typename DBProxyEndpointNameT = Aws::String>
+    void SetDBProxyEndpointName(DBProxyEndpointNameT&& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = std::forward<DBProxyEndpointNameT>(value); }
+    template<typename DBProxyEndpointNameT = Aws::String>
+    ModifyDBProxyEndpointRequest& WithDBProxyEndpointName(DBProxyEndpointNameT&& value) { SetDBProxyEndpointName(std::forward<DBProxyEndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * begin with a letter and must contain only ASCII letters, digits, and hyphens; it
      * can't end with a hyphen or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetNewDBProxyEndpointName() const{ return m_newDBProxyEndpointName; }
+    inline const Aws::String& GetNewDBProxyEndpointName() const { return m_newDBProxyEndpointName; }
     inline bool NewDBProxyEndpointNameHasBeenSet() const { return m_newDBProxyEndpointNameHasBeenSet; }
-    inline void SetNewDBProxyEndpointName(const Aws::String& value) { m_newDBProxyEndpointNameHasBeenSet = true; m_newDBProxyEndpointName = value; }
-    inline void SetNewDBProxyEndpointName(Aws::String&& value) { m_newDBProxyEndpointNameHasBeenSet = true; m_newDBProxyEndpointName = std::move(value); }
-    inline void SetNewDBProxyEndpointName(const char* value) { m_newDBProxyEndpointNameHasBeenSet = true; m_newDBProxyEndpointName.assign(value); }
-    inline ModifyDBProxyEndpointRequest& WithNewDBProxyEndpointName(const Aws::String& value) { SetNewDBProxyEndpointName(value); return *this;}
-    inline ModifyDBProxyEndpointRequest& WithNewDBProxyEndpointName(Aws::String&& value) { SetNewDBProxyEndpointName(std::move(value)); return *this;}
-    inline ModifyDBProxyEndpointRequest& WithNewDBProxyEndpointName(const char* value) { SetNewDBProxyEndpointName(value); return *this;}
+    template<typename NewDBProxyEndpointNameT = Aws::String>
+    void SetNewDBProxyEndpointName(NewDBProxyEndpointNameT&& value) { m_newDBProxyEndpointNameHasBeenSet = true; m_newDBProxyEndpointName = std::forward<NewDBProxyEndpointNameT>(value); }
+    template<typename NewDBProxyEndpointNameT = Aws::String>
+    ModifyDBProxyEndpointRequest& WithNewDBProxyEndpointName(NewDBProxyEndpointNameT&& value) { SetNewDBProxyEndpointName(std::forward<NewDBProxyEndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +70,14 @@ namespace Model
      * endpoint uses a different VPC than the original proxy, you also specify a
      * different set of security group IDs than for the original proxy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline ModifyDBProxyEndpointRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline ModifyDBProxyEndpointRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline ModifyDBProxyEndpointRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline ModifyDBProxyEndpointRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline ModifyDBProxyEndpointRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ModifyDBProxyEndpointRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    ModifyDBProxyEndpointRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 

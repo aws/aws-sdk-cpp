@@ -31,7 +31,7 @@ namespace Model
   class ModelCardExportArtifacts
   {
   public:
-    AWS_SAGEMAKER_API ModelCardExportArtifacts();
+    AWS_SAGEMAKER_API ModelCardExportArtifacts() = default;
     AWS_SAGEMAKER_API ModelCardExportArtifacts(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelCardExportArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon S3 URI of the exported model artifacts.</p>
      */
-    inline const Aws::String& GetS3ExportArtifacts() const{ return m_s3ExportArtifacts; }
+    inline const Aws::String& GetS3ExportArtifacts() const { return m_s3ExportArtifacts; }
     inline bool S3ExportArtifactsHasBeenSet() const { return m_s3ExportArtifactsHasBeenSet; }
-    inline void SetS3ExportArtifacts(const Aws::String& value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts = value; }
-    inline void SetS3ExportArtifacts(Aws::String&& value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts = std::move(value); }
-    inline void SetS3ExportArtifacts(const char* value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts.assign(value); }
-    inline ModelCardExportArtifacts& WithS3ExportArtifacts(const Aws::String& value) { SetS3ExportArtifacts(value); return *this;}
-    inline ModelCardExportArtifacts& WithS3ExportArtifacts(Aws::String&& value) { SetS3ExportArtifacts(std::move(value)); return *this;}
-    inline ModelCardExportArtifacts& WithS3ExportArtifacts(const char* value) { SetS3ExportArtifacts(value); return *this;}
+    template<typename S3ExportArtifactsT = Aws::String>
+    void SetS3ExportArtifacts(S3ExportArtifactsT&& value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts = std::forward<S3ExportArtifactsT>(value); }
+    template<typename S3ExportArtifactsT = Aws::String>
+    ModelCardExportArtifacts& WithS3ExportArtifacts(S3ExportArtifactsT&& value) { SetS3ExportArtifacts(std::forward<S3ExportArtifactsT>(value)); return *this;}
     ///@}
   private:
 

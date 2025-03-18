@@ -24,7 +24,7 @@ namespace Model
   class UpdateKeysRequest : public CloudFrontKeyValueStoreRequest
   {
   public:
-    AWS_CLOUDFRONTKEYVALUESTORE_API UpdateKeysRequest();
+    AWS_CLOUDFRONTKEYVALUESTORE_API UpdateKeysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
      */
-    inline const Aws::String& GetKvsARN() const{ return m_kvsARN; }
+    inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
     inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
-    inline void SetKvsARN(const Aws::String& value) { m_kvsARNHasBeenSet = true; m_kvsARN = value; }
-    inline void SetKvsARN(Aws::String&& value) { m_kvsARNHasBeenSet = true; m_kvsARN = std::move(value); }
-    inline void SetKvsARN(const char* value) { m_kvsARNHasBeenSet = true; m_kvsARN.assign(value); }
-    inline UpdateKeysRequest& WithKvsARN(const Aws::String& value) { SetKvsARN(value); return *this;}
-    inline UpdateKeysRequest& WithKvsARN(Aws::String&& value) { SetKvsARN(std::move(value)); return *this;}
-    inline UpdateKeysRequest& WithKvsARN(const char* value) { SetKvsARN(value); return *this;}
+    template<typename KvsARNT = Aws::String>
+    void SetKvsARN(KvsARNT&& value) { m_kvsARNHasBeenSet = true; m_kvsARN = std::forward<KvsARNT>(value); }
+    template<typename KvsARNT = Aws::String>
+    UpdateKeysRequest& WithKvsARN(KvsARNT&& value) { SetKvsARN(std::forward<KvsARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,42 +58,40 @@ namespace Model
      * <p>The current version (ETag) of the Key Value Store that you are updating keys
      * of, which you can get using DescribeKeyValueStore.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline UpdateKeysRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline UpdateKeysRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline UpdateKeysRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    UpdateKeysRequest& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of key value pairs to put.</p>
      */
-    inline const Aws::Vector<PutKeyRequestListItem>& GetPuts() const{ return m_puts; }
+    inline const Aws::Vector<PutKeyRequestListItem>& GetPuts() const { return m_puts; }
     inline bool PutsHasBeenSet() const { return m_putsHasBeenSet; }
-    inline void SetPuts(const Aws::Vector<PutKeyRequestListItem>& value) { m_putsHasBeenSet = true; m_puts = value; }
-    inline void SetPuts(Aws::Vector<PutKeyRequestListItem>&& value) { m_putsHasBeenSet = true; m_puts = std::move(value); }
-    inline UpdateKeysRequest& WithPuts(const Aws::Vector<PutKeyRequestListItem>& value) { SetPuts(value); return *this;}
-    inline UpdateKeysRequest& WithPuts(Aws::Vector<PutKeyRequestListItem>&& value) { SetPuts(std::move(value)); return *this;}
-    inline UpdateKeysRequest& AddPuts(const PutKeyRequestListItem& value) { m_putsHasBeenSet = true; m_puts.push_back(value); return *this; }
-    inline UpdateKeysRequest& AddPuts(PutKeyRequestListItem&& value) { m_putsHasBeenSet = true; m_puts.push_back(std::move(value)); return *this; }
+    template<typename PutsT = Aws::Vector<PutKeyRequestListItem>>
+    void SetPuts(PutsT&& value) { m_putsHasBeenSet = true; m_puts = std::forward<PutsT>(value); }
+    template<typename PutsT = Aws::Vector<PutKeyRequestListItem>>
+    UpdateKeysRequest& WithPuts(PutsT&& value) { SetPuts(std::forward<PutsT>(value)); return *this;}
+    template<typename PutsT = PutKeyRequestListItem>
+    UpdateKeysRequest& AddPuts(PutsT&& value) { m_putsHasBeenSet = true; m_puts.emplace_back(std::forward<PutsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of keys to delete.</p>
      */
-    inline const Aws::Vector<DeleteKeyRequestListItem>& GetDeletes() const{ return m_deletes; }
+    inline const Aws::Vector<DeleteKeyRequestListItem>& GetDeletes() const { return m_deletes; }
     inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
-    inline void SetDeletes(const Aws::Vector<DeleteKeyRequestListItem>& value) { m_deletesHasBeenSet = true; m_deletes = value; }
-    inline void SetDeletes(Aws::Vector<DeleteKeyRequestListItem>&& value) { m_deletesHasBeenSet = true; m_deletes = std::move(value); }
-    inline UpdateKeysRequest& WithDeletes(const Aws::Vector<DeleteKeyRequestListItem>& value) { SetDeletes(value); return *this;}
-    inline UpdateKeysRequest& WithDeletes(Aws::Vector<DeleteKeyRequestListItem>&& value) { SetDeletes(std::move(value)); return *this;}
-    inline UpdateKeysRequest& AddDeletes(const DeleteKeyRequestListItem& value) { m_deletesHasBeenSet = true; m_deletes.push_back(value); return *this; }
-    inline UpdateKeysRequest& AddDeletes(DeleteKeyRequestListItem&& value) { m_deletesHasBeenSet = true; m_deletes.push_back(std::move(value)); return *this; }
+    template<typename DeletesT = Aws::Vector<DeleteKeyRequestListItem>>
+    void SetDeletes(DeletesT&& value) { m_deletesHasBeenSet = true; m_deletes = std::forward<DeletesT>(value); }
+    template<typename DeletesT = Aws::Vector<DeleteKeyRequestListItem>>
+    UpdateKeysRequest& WithDeletes(DeletesT&& value) { SetDeletes(std::forward<DeletesT>(value)); return *this;}
+    template<typename DeletesT = DeleteKeyRequestListItem>
+    UpdateKeysRequest& AddDeletes(DeletesT&& value) { m_deletesHasBeenSet = true; m_deletes.emplace_back(std::forward<DeletesT>(value)); return *this; }
     ///@}
   private:
 

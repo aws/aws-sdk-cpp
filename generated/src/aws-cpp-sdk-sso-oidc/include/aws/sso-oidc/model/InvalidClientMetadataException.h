@@ -32,7 +32,7 @@ namespace Model
   class InvalidClientMetadataException
   {
   public:
-    AWS_SSOOIDC_API InvalidClientMetadataException();
+    AWS_SSOOIDC_API InvalidClientMetadataException() = default;
     AWS_SSOOIDC_API InvalidClientMetadataException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOOIDC_API InvalidClientMetadataException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Single error code. For this exception the value will be
      * <code>invalid_client_metadata</code>.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline InvalidClientMetadataException& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline InvalidClientMetadataException& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline InvalidClientMetadataException& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    InvalidClientMetadataException& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Human-readable text providing additional information, used to assist the
      * client developer in understanding the error that occurred.</p>
      */
-    inline const Aws::String& GetError_description() const{ return m_error_description; }
+    inline const Aws::String& GetError_description() const { return m_error_description; }
     inline bool Error_descriptionHasBeenSet() const { return m_error_descriptionHasBeenSet; }
-    inline void SetError_description(const Aws::String& value) { m_error_descriptionHasBeenSet = true; m_error_description = value; }
-    inline void SetError_description(Aws::String&& value) { m_error_descriptionHasBeenSet = true; m_error_description = std::move(value); }
-    inline void SetError_description(const char* value) { m_error_descriptionHasBeenSet = true; m_error_description.assign(value); }
-    inline InvalidClientMetadataException& WithError_description(const Aws::String& value) { SetError_description(value); return *this;}
-    inline InvalidClientMetadataException& WithError_description(Aws::String&& value) { SetError_description(std::move(value)); return *this;}
-    inline InvalidClientMetadataException& WithError_description(const char* value) { SetError_description(value); return *this;}
+    template<typename Error_descriptionT = Aws::String>
+    void SetError_description(Error_descriptionT&& value) { m_error_descriptionHasBeenSet = true; m_error_description = std::forward<Error_descriptionT>(value); }
+    template<typename Error_descriptionT = Aws::String>
+    InvalidClientMetadataException& WithError_description(Error_descriptionT&& value) { SetError_description(std::forward<Error_descriptionT>(value)); return *this;}
     ///@}
   private:
 

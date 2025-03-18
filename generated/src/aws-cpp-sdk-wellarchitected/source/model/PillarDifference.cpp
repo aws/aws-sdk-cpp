@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-PillarDifference::PillarDifference() : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_differenceStatus(DifferenceStatus::NOT_SET),
-    m_differenceStatusHasBeenSet(false),
-    m_questionDifferencesHasBeenSet(false)
-{
-}
-
 PillarDifference::PillarDifference(JsonView jsonValue)
-  : PillarDifference()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PillarDifference& PillarDifference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarName"))
   {
     m_pillarName = jsonValue.GetString("PillarName");
-
     m_pillarNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DifferenceStatus"))
   {
     m_differenceStatus = DifferenceStatusMapper::GetDifferenceStatusForName(jsonValue.GetString("DifferenceStatus"));
-
     m_differenceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionDifferences"))
   {
     Aws::Utils::Array<JsonView> questionDifferencesJsonList = jsonValue.GetArray("QuestionDifferences");
@@ -65,7 +49,6 @@ PillarDifference& PillarDifference::operator =(JsonView jsonValue)
     }
     m_questionDifferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

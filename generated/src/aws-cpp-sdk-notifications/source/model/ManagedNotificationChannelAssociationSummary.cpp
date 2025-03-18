@@ -18,17 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationChannelAssociationSummary::ManagedNotificationChannelAssociationSummary() : 
-    m_channelIdentifierHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_overrideOption(ChannelAssociationOverrideOption::NOT_SET),
-    m_overrideOptionHasBeenSet(false)
-{
-}
-
 ManagedNotificationChannelAssociationSummary::ManagedNotificationChannelAssociationSummary(JsonView jsonValue)
-  : ManagedNotificationChannelAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ManagedNotificationChannelAssociationSummary& ManagedNotificationChannelAssociat
   if(jsonValue.ValueExists("channelIdentifier"))
   {
     m_channelIdentifier = jsonValue.GetString("channelIdentifier");
-
     m_channelIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelType"))
   {
     m_channelType = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("channelType"));
-
     m_channelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideOption"))
   {
     m_overrideOption = ChannelAssociationOverrideOptionMapper::GetChannelAssociationOverrideOptionForName(jsonValue.GetString("overrideOption"));
-
     m_overrideOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

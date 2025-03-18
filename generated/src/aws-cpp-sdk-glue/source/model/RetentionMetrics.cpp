@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RetentionMetrics::RetentionMetrics() : 
-    m_icebergMetricsHasBeenSet(false)
-{
-}
-
 RetentionMetrics::RetentionMetrics(JsonView jsonValue)
-  : RetentionMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetentionMetrics& RetentionMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IcebergMetrics"))
   {
     m_icebergMetrics = jsonValue.GetObject("IcebergMetrics");
-
     m_icebergMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

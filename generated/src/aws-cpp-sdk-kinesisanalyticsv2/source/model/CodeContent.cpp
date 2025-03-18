@@ -19,15 +19,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-CodeContent::CodeContent() : 
-    m_textContentHasBeenSet(false),
-    m_zipFileContentHasBeenSet(false),
-    m_s3ContentLocationHasBeenSet(false)
-{
-}
-
 CodeContent::CodeContent(JsonView jsonValue)
-  : CodeContent()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ CodeContent& CodeContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TextContent"))
   {
     m_textContent = jsonValue.GetString("TextContent");
-
     m_textContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZipFileContent"))
   {
     m_zipFileContent = HashingUtils::Base64Decode(jsonValue.GetString("ZipFileContent"));
     m_zipFileContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ContentLocation"))
   {
     m_s3ContentLocation = jsonValue.GetObject("S3ContentLocation");
-
     m_s3ContentLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

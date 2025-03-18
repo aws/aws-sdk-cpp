@@ -29,7 +29,7 @@ namespace Model
   class ListFeaturesResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ListFeaturesResult();
+    AWS_CLOUDWATCHEVIDENTLY_API ListFeaturesResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ListFeaturesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API ListFeaturesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of structures that contain the configuration details of the features
      * in the specified project.</p>
      */
-    inline const Aws::Vector<FeatureSummary>& GetFeatures() const{ return m_features; }
-    inline void SetFeatures(const Aws::Vector<FeatureSummary>& value) { m_features = value; }
-    inline void SetFeatures(Aws::Vector<FeatureSummary>&& value) { m_features = std::move(value); }
-    inline ListFeaturesResult& WithFeatures(const Aws::Vector<FeatureSummary>& value) { SetFeatures(value); return *this;}
-    inline ListFeaturesResult& WithFeatures(Aws::Vector<FeatureSummary>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline ListFeaturesResult& AddFeatures(const FeatureSummary& value) { m_features.push_back(value); return *this; }
-    inline ListFeaturesResult& AddFeatures(FeatureSummary&& value) { m_features.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeatureSummary>& GetFeatures() const { return m_features; }
+    template<typename FeaturesT = Aws::Vector<FeatureSummary>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<FeatureSummary>>
+    ListFeaturesResult& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    template<typename FeaturesT = FeatureSummary>
+    ListFeaturesResult& AddFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features.emplace_back(std::forward<FeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to use in a subsequent <code>ListFeatures</code> operation to
      * return the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFeaturesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFeaturesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFeaturesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFeaturesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFeaturesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFeaturesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFeaturesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFeaturesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FeatureSummary> m_features;
+    bool m_featuresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

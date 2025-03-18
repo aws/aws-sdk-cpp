@@ -21,7 +21,7 @@ namespace Model
   class DeleteForecastExportJobRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DeleteForecastExportJobRequest();
+    AWS_FORECASTSERVICE_API DeleteForecastExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
      */
-    inline const Aws::String& GetForecastExportJobArn() const{ return m_forecastExportJobArn; }
+    inline const Aws::String& GetForecastExportJobArn() const { return m_forecastExportJobArn; }
     inline bool ForecastExportJobArnHasBeenSet() const { return m_forecastExportJobArnHasBeenSet; }
-    inline void SetForecastExportJobArn(const Aws::String& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = value; }
-    inline void SetForecastExportJobArn(Aws::String&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::move(value); }
-    inline void SetForecastExportJobArn(const char* value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn.assign(value); }
-    inline DeleteForecastExportJobRequest& WithForecastExportJobArn(const Aws::String& value) { SetForecastExportJobArn(value); return *this;}
-    inline DeleteForecastExportJobRequest& WithForecastExportJobArn(Aws::String&& value) { SetForecastExportJobArn(std::move(value)); return *this;}
-    inline DeleteForecastExportJobRequest& WithForecastExportJobArn(const char* value) { SetForecastExportJobArn(value); return *this;}
+    template<typename ForecastExportJobArnT = Aws::String>
+    void SetForecastExportJobArn(ForecastExportJobArnT&& value) { m_forecastExportJobArnHasBeenSet = true; m_forecastExportJobArn = std::forward<ForecastExportJobArnT>(value); }
+    template<typename ForecastExportJobArnT = Aws::String>
+    DeleteForecastExportJobRequest& WithForecastExportJobArn(ForecastExportJobArnT&& value) { SetForecastExportJobArn(std::forward<ForecastExportJobArnT>(value)); return *this;}
     ///@}
   private:
 

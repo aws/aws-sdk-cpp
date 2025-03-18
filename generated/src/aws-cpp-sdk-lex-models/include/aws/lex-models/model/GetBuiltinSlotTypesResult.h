@@ -29,7 +29,7 @@ namespace Model
   class GetBuiltinSlotTypesResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
      * slot type returned.</p>
      */
-    inline const Aws::Vector<BuiltinSlotTypeMetadata>& GetSlotTypes() const{ return m_slotTypes; }
-    inline void SetSlotTypes(const Aws::Vector<BuiltinSlotTypeMetadata>& value) { m_slotTypes = value; }
-    inline void SetSlotTypes(Aws::Vector<BuiltinSlotTypeMetadata>&& value) { m_slotTypes = std::move(value); }
-    inline GetBuiltinSlotTypesResult& WithSlotTypes(const Aws::Vector<BuiltinSlotTypeMetadata>& value) { SetSlotTypes(value); return *this;}
-    inline GetBuiltinSlotTypesResult& WithSlotTypes(Aws::Vector<BuiltinSlotTypeMetadata>&& value) { SetSlotTypes(std::move(value)); return *this;}
-    inline GetBuiltinSlotTypesResult& AddSlotTypes(const BuiltinSlotTypeMetadata& value) { m_slotTypes.push_back(value); return *this; }
-    inline GetBuiltinSlotTypesResult& AddSlotTypes(BuiltinSlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BuiltinSlotTypeMetadata>& GetSlotTypes() const { return m_slotTypes; }
+    template<typename SlotTypesT = Aws::Vector<BuiltinSlotTypeMetadata>>
+    void SetSlotTypes(SlotTypesT&& value) { m_slotTypesHasBeenSet = true; m_slotTypes = std::forward<SlotTypesT>(value); }
+    template<typename SlotTypesT = Aws::Vector<BuiltinSlotTypeMetadata>>
+    GetBuiltinSlotTypesResult& WithSlotTypes(SlotTypesT&& value) { SetSlotTypes(std::forward<SlotTypesT>(value)); return *this;}
+    template<typename SlotTypesT = BuiltinSlotTypeMetadata>
+    GetBuiltinSlotTypesResult& AddSlotTypes(SlotTypesT&& value) { m_slotTypesHasBeenSet = true; m_slotTypes.emplace_back(std::forward<SlotTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, the response includes a pagination token that
      * you can use in your next request to fetch the next page of slot types.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetBuiltinSlotTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetBuiltinSlotTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetBuiltinSlotTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetBuiltinSlotTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBuiltinSlotTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBuiltinSlotTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBuiltinSlotTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBuiltinSlotTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BuiltinSlotTypeMetadata> m_slotTypes;
+    bool m_slotTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

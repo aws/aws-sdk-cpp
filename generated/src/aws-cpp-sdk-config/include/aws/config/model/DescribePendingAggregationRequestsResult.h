@@ -29,7 +29,7 @@ namespace Model
   class DescribePendingAggregationRequestsResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribePendingAggregationRequestsResult();
+    AWS_CONFIGSERVICE_API DescribePendingAggregationRequestsResult() = default;
     AWS_CONFIGSERVICE_API DescribePendingAggregationRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribePendingAggregationRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a PendingAggregationRequests object.</p>
      */
-    inline const Aws::Vector<PendingAggregationRequest>& GetPendingAggregationRequests() const{ return m_pendingAggregationRequests; }
-    inline void SetPendingAggregationRequests(const Aws::Vector<PendingAggregationRequest>& value) { m_pendingAggregationRequests = value; }
-    inline void SetPendingAggregationRequests(Aws::Vector<PendingAggregationRequest>&& value) { m_pendingAggregationRequests = std::move(value); }
-    inline DescribePendingAggregationRequestsResult& WithPendingAggregationRequests(const Aws::Vector<PendingAggregationRequest>& value) { SetPendingAggregationRequests(value); return *this;}
-    inline DescribePendingAggregationRequestsResult& WithPendingAggregationRequests(Aws::Vector<PendingAggregationRequest>&& value) { SetPendingAggregationRequests(std::move(value)); return *this;}
-    inline DescribePendingAggregationRequestsResult& AddPendingAggregationRequests(const PendingAggregationRequest& value) { m_pendingAggregationRequests.push_back(value); return *this; }
-    inline DescribePendingAggregationRequestsResult& AddPendingAggregationRequests(PendingAggregationRequest&& value) { m_pendingAggregationRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PendingAggregationRequest>& GetPendingAggregationRequests() const { return m_pendingAggregationRequests; }
+    template<typename PendingAggregationRequestsT = Aws::Vector<PendingAggregationRequest>>
+    void SetPendingAggregationRequests(PendingAggregationRequestsT&& value) { m_pendingAggregationRequestsHasBeenSet = true; m_pendingAggregationRequests = std::forward<PendingAggregationRequestsT>(value); }
+    template<typename PendingAggregationRequestsT = Aws::Vector<PendingAggregationRequest>>
+    DescribePendingAggregationRequestsResult& WithPendingAggregationRequests(PendingAggregationRequestsT&& value) { SetPendingAggregationRequests(std::forward<PendingAggregationRequestsT>(value)); return *this;}
+    template<typename PendingAggregationRequestsT = PendingAggregationRequest>
+    DescribePendingAggregationRequestsResult& AddPendingAggregationRequests(PendingAggregationRequestsT&& value) { m_pendingAggregationRequestsHasBeenSet = true; m_pendingAggregationRequests.emplace_back(std::forward<PendingAggregationRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribePendingAggregationRequestsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePendingAggregationRequestsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePendingAggregationRequestsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePendingAggregationRequestsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePendingAggregationRequestsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePendingAggregationRequestsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePendingAggregationRequestsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePendingAggregationRequestsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PendingAggregationRequest> m_pendingAggregationRequests;
+    bool m_pendingAggregationRequestsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

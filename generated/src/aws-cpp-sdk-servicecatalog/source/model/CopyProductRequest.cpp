@@ -12,18 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyProductRequest::CopyProductRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_sourceProductArnHasBeenSet(false),
-    m_targetProductIdHasBeenSet(false),
-    m_targetProductNameHasBeenSet(false),
-    m_sourceProvisioningArtifactIdentifiersHasBeenSet(false),
-    m_copyOptionsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String CopyProductRequest::SerializePayload() const
 {
   JsonValue payload;

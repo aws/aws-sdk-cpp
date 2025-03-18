@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchAssociateAnalyticsDataSetRequest::BatchAssociateAnalyticsDataSetRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_dataSetIdsHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchAssociateAnalyticsDataSetRequest::SerializePayload() const
 {
   JsonValue payload;

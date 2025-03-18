@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Consolidation::Consolidation() : 
-    m_matchingAttributesListHasBeenSet(false)
-{
-}
-
 Consolidation::Consolidation(JsonView jsonValue)
-  : Consolidation()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ Consolidation& Consolidation::operator =(JsonView jsonValue)
     }
     m_matchingAttributesListHasBeenSet = true;
   }
-
   return *this;
 }
 

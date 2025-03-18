@@ -32,7 +32,7 @@ namespace Model
   class DatapointInclusionAnnotation
   {
   public:
-    AWS_GLUE_API DatapointInclusionAnnotation();
+    AWS_GLUE_API DatapointInclusionAnnotation() = default;
     AWS_GLUE_API DatapointInclusionAnnotation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DatapointInclusionAnnotation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,34 @@ namespace Model
     /**
      * <p>The ID of the data quality profile the statistic belongs to.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline DatapointInclusionAnnotation& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline DatapointInclusionAnnotation& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline DatapointInclusionAnnotation& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    DatapointInclusionAnnotation& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Statistic ID.</p>
      */
-    inline const Aws::String& GetStatisticId() const{ return m_statisticId; }
+    inline const Aws::String& GetStatisticId() const { return m_statisticId; }
     inline bool StatisticIdHasBeenSet() const { return m_statisticIdHasBeenSet; }
-    inline void SetStatisticId(const Aws::String& value) { m_statisticIdHasBeenSet = true; m_statisticId = value; }
-    inline void SetStatisticId(Aws::String&& value) { m_statisticIdHasBeenSet = true; m_statisticId = std::move(value); }
-    inline void SetStatisticId(const char* value) { m_statisticIdHasBeenSet = true; m_statisticId.assign(value); }
-    inline DatapointInclusionAnnotation& WithStatisticId(const Aws::String& value) { SetStatisticId(value); return *this;}
-    inline DatapointInclusionAnnotation& WithStatisticId(Aws::String&& value) { SetStatisticId(std::move(value)); return *this;}
-    inline DatapointInclusionAnnotation& WithStatisticId(const char* value) { SetStatisticId(value); return *this;}
+    template<typename StatisticIdT = Aws::String>
+    void SetStatisticId(StatisticIdT&& value) { m_statisticIdHasBeenSet = true; m_statisticId = std::forward<StatisticIdT>(value); }
+    template<typename StatisticIdT = Aws::String>
+    DatapointInclusionAnnotation& WithStatisticId(StatisticIdT&& value) { SetStatisticId(std::forward<StatisticIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The inclusion annotation value to apply to the statistic.</p>
      */
-    inline const InclusionAnnotationValue& GetInclusionAnnotation() const{ return m_inclusionAnnotation; }
+    inline InclusionAnnotationValue GetInclusionAnnotation() const { return m_inclusionAnnotation; }
     inline bool InclusionAnnotationHasBeenSet() const { return m_inclusionAnnotationHasBeenSet; }
-    inline void SetInclusionAnnotation(const InclusionAnnotationValue& value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = value; }
-    inline void SetInclusionAnnotation(InclusionAnnotationValue&& value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = std::move(value); }
-    inline DatapointInclusionAnnotation& WithInclusionAnnotation(const InclusionAnnotationValue& value) { SetInclusionAnnotation(value); return *this;}
-    inline DatapointInclusionAnnotation& WithInclusionAnnotation(InclusionAnnotationValue&& value) { SetInclusionAnnotation(std::move(value)); return *this;}
+    inline void SetInclusionAnnotation(InclusionAnnotationValue value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = value; }
+    inline DatapointInclusionAnnotation& WithInclusionAnnotation(InclusionAnnotationValue value) { SetInclusionAnnotation(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_statisticId;
     bool m_statisticIdHasBeenSet = false;
 
-    InclusionAnnotationValue m_inclusionAnnotation;
+    InclusionAnnotationValue m_inclusionAnnotation{InclusionAnnotationValue::NOT_SET};
     bool m_inclusionAnnotationHasBeenSet = false;
   };
 

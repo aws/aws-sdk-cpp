@@ -18,14 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-AlternateIdentifier::AlternateIdentifier() : 
-    m_externalIdHasBeenSet(false),
-    m_uniqueAttributeHasBeenSet(false)
-{
-}
-
 AlternateIdentifier::AlternateIdentifier(JsonView jsonValue)
-  : AlternateIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AlternateIdentifier& AlternateIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetObject("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UniqueAttribute"))
   {
     m_uniqueAttribute = jsonValue.GetObject("UniqueAttribute");
-
     m_uniqueAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

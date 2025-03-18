@@ -30,7 +30,7 @@ namespace Model
   class GetEC2InstanceRecommendationsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,24 @@ namespace Model
      * <p>This value is null when there are no more pages of instance recommendations
      * to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetEC2InstanceRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetEC2InstanceRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of objects that describe instance recommendations.</p>
      */
-    inline const Aws::Vector<InstanceRecommendation>& GetInstanceRecommendations() const{ return m_instanceRecommendations; }
-    inline void SetInstanceRecommendations(const Aws::Vector<InstanceRecommendation>& value) { m_instanceRecommendations = value; }
-    inline void SetInstanceRecommendations(Aws::Vector<InstanceRecommendation>&& value) { m_instanceRecommendations = std::move(value); }
-    inline GetEC2InstanceRecommendationsResult& WithInstanceRecommendations(const Aws::Vector<InstanceRecommendation>& value) { SetInstanceRecommendations(value); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithInstanceRecommendations(Aws::Vector<InstanceRecommendation>&& value) { SetInstanceRecommendations(std::move(value)); return *this;}
-    inline GetEC2InstanceRecommendationsResult& AddInstanceRecommendations(const InstanceRecommendation& value) { m_instanceRecommendations.push_back(value); return *this; }
-    inline GetEC2InstanceRecommendationsResult& AddInstanceRecommendations(InstanceRecommendation&& value) { m_instanceRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceRecommendation>& GetInstanceRecommendations() const { return m_instanceRecommendations; }
+    template<typename InstanceRecommendationsT = Aws::Vector<InstanceRecommendation>>
+    void SetInstanceRecommendations(InstanceRecommendationsT&& value) { m_instanceRecommendationsHasBeenSet = true; m_instanceRecommendations = std::forward<InstanceRecommendationsT>(value); }
+    template<typename InstanceRecommendationsT = Aws::Vector<InstanceRecommendation>>
+    GetEC2InstanceRecommendationsResult& WithInstanceRecommendations(InstanceRecommendationsT&& value) { SetInstanceRecommendations(std::forward<InstanceRecommendationsT>(value)); return *this;}
+    template<typename InstanceRecommendationsT = InstanceRecommendation>
+    GetEC2InstanceRecommendationsResult& AddInstanceRecommendations(InstanceRecommendationsT&& value) { m_instanceRecommendationsHasBeenSet = true; m_instanceRecommendations.emplace_back(std::forward<InstanceRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,34 +67,36 @@ namespace Model
      * an error is returned if you request recommendations for an instance of an
      * unsupported instance family.</p>
      */
-    inline const Aws::Vector<GetRecommendationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<GetRecommendationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<GetRecommendationError>&& value) { m_errors = std::move(value); }
-    inline GetEC2InstanceRecommendationsResult& WithErrors(const Aws::Vector<GetRecommendationError>& value) { SetErrors(value); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithErrors(Aws::Vector<GetRecommendationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline GetEC2InstanceRecommendationsResult& AddErrors(const GetRecommendationError& value) { m_errors.push_back(value); return *this; }
-    inline GetEC2InstanceRecommendationsResult& AddErrors(GetRecommendationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetRecommendationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    GetEC2InstanceRecommendationsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = GetRecommendationError>
+    GetEC2InstanceRecommendationsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEC2InstanceRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEC2InstanceRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEC2InstanceRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<InstanceRecommendation> m_instanceRecommendations;
+    bool m_instanceRecommendationsHasBeenSet = false;
 
     Aws::Vector<GetRecommendationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

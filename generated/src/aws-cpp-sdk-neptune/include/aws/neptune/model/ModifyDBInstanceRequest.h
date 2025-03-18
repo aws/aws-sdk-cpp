@@ -23,7 +23,7 @@ namespace Model
   class ModifyDBInstanceRequest : public NeptuneRequest
   {
   public:
-    AWS_NEPTUNE_API ModifyDBInstanceRequest();
+    AWS_NEPTUNE_API ModifyDBInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
      * DBInstance.</p> </li> </ul>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    ModifyDBInstanceRequest& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not supported by Neptune.</p>
      */
-    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
@@ -73,14 +71,12 @@ namespace Model
      * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
-    inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+    inline const Aws::String& GetDBInstanceClass() const { return m_dBInstanceClass; }
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
-    inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
-    inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
-    inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+    template<typename DBInstanceClassT = Aws::String>
+    void SetDBInstanceClass(DBInstanceClassT&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::forward<DBInstanceClassT>(value); }
+    template<typename DBInstanceClassT = Aws::String>
+    ModifyDBInstanceRequest& WithDBInstanceClass(DBInstanceClassT&& value) { SetDBInstanceClass(std::forward<DBInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
-    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+    inline const Aws::String& GetDBSubnetGroupName() const { return m_dBSubnetGroupName; }
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
-    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
-    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
-    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+    template<typename DBSubnetGroupNameT = Aws::String>
+    void SetDBSubnetGroupName(DBSubnetGroupNameT&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::forward<DBSubnetGroupNameT>(value); }
+    template<typename DBSubnetGroupNameT = Aws::String>
+    ModifyDBInstanceRequest& WithDBSubnetGroupName(DBSubnetGroupNameT&& value) { SetDBSubnetGroupName(std::forward<DBSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,15 +104,14 @@ namespace Model
      * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DBSecurityGroups.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const { return m_dBSecurityGroups; }
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
-    inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
-    inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
-    inline ModifyDBInstanceRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
-    inline ModifyDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
-    inline ModifyDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+    template<typename DBSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetDBSecurityGroups(DBSecurityGroupsT&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::forward<DBSecurityGroupsT>(value); }
+    template<typename DBSecurityGroupsT = Aws::Vector<Aws::String>>
+    ModifyDBInstanceRequest& WithDBSecurityGroups(DBSecurityGroupsT&& value) { SetDBSecurityGroups(std::forward<DBSecurityGroupsT>(value)); return *this;}
+    template<typename DBSecurityGroupsT = Aws::String>
+    ModifyDBInstanceRequest& AddDBSecurityGroups(DBSecurityGroupsT&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.emplace_back(std::forward<DBSecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,15 +122,14 @@ namespace Model
      * more information, see <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>If supplied, must match existing VpcSecurityGroupIds.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline ModifyDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ModifyDBInstanceRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    ModifyDBInstanceRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -150,7 +142,7 @@ namespace Model
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
      * failure reboot.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
@@ -160,14 +152,12 @@ namespace Model
     /**
      * <p>Not supported by Neptune.</p>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    ModifyDBInstanceRequest& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,14 +171,12 @@ namespace Model
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
      */
-    inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+    inline const Aws::String& GetDBParameterGroupName() const { return m_dBParameterGroupName; }
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
-    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
-    inline ModifyDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+    template<typename DBParameterGroupNameT = Aws::String>
+    void SetDBParameterGroupName(DBParameterGroupNameT&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::forward<DBParameterGroupNameT>(value); }
+    template<typename DBParameterGroupNameT = Aws::String>
+    ModifyDBInstanceRequest& WithDBParameterGroupName(DBParameterGroupNameT&& value) { SetDBParameterGroupName(std::forward<DBParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,7 +185,7 @@ namespace Model
      * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
      * Uses existing setting</p>
      */
-    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
@@ -213,14 +201,12 @@ namespace Model
      * (UTC)</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window</p> </li> <li> <p>Must be at least 30 minutes</p> </li> </ul>
      */
-    inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+    inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
-    inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
-    inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
-    inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
-    inline ModifyDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+    template<typename PreferredBackupWindowT = Aws::String>
+    void SetPreferredBackupWindow(PreferredBackupWindowT&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value); }
+    template<typename PreferredBackupWindowT = Aws::String>
+    ModifyDBInstanceRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) { SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -237,14 +223,12 @@ namespace Model
      * Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Must be at least 30
      * minutes</p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline ModifyDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline ModifyDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    ModifyDBInstanceRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,7 +238,7 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request.</p>
      */
-    inline bool GetMultiAZ() const{ return m_multiAZ; }
+    inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -266,14 +250,12 @@ namespace Model
      * this parameter has no effect. To upgrade your database engine to the most recent
      * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    ModifyDBInstanceRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -282,7 +264,7 @@ namespace Model
      * doesn't result in an outage and the change is asynchronously applied as soon as
      * possible.</p>
      */
-    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+    inline bool GetAllowMajorVersionUpgrade() const { return m_allowMajorVersionUpgrade; }
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
     inline ModifyDBInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
@@ -297,7 +279,7 @@ namespace Model
      * <code>true</code> during the maintenance window, and a newer minor version is
      * available, and Neptune has enabled auto patching for that engine version.</p>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -307,14 +289,12 @@ namespace Model
     /**
      * <p>Not supported by Neptune.</p>
      */
-    inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+    inline const Aws::String& GetLicenseModel() const { return m_licenseModel; }
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
-    inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
-    inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
-    inline ModifyDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
-    inline ModifyDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+    template<typename LicenseModelT = Aws::String>
+    void SetLicenseModel(LicenseModelT&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::forward<LicenseModelT>(value); }
+    template<typename LicenseModelT = Aws::String>
+    ModifyDBInstanceRequest& WithLicenseModel(LicenseModelT&& value) { SetLicenseModel(std::forward<LicenseModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -325,7 +305,7 @@ namespace Model
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
@@ -335,14 +315,12 @@ namespace Model
     /**
      * <p> <i>(Not supported by Neptune)</i> </p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline ModifyDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline ModifyDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    ModifyDBInstanceRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -357,28 +335,24 @@ namespace Model
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
-    inline const Aws::String& GetNewDBInstanceIdentifier() const{ return m_newDBInstanceIdentifier; }
+    inline const Aws::String& GetNewDBInstanceIdentifier() const { return m_newDBInstanceIdentifier; }
     inline bool NewDBInstanceIdentifierHasBeenSet() const { return m_newDBInstanceIdentifierHasBeenSet; }
-    inline void SetNewDBInstanceIdentifier(const Aws::String& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = value; }
-    inline void SetNewDBInstanceIdentifier(Aws::String&& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = std::move(value); }
-    inline void SetNewDBInstanceIdentifier(const char* value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier.assign(value); }
-    inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const Aws::String& value) { SetNewDBInstanceIdentifier(value); return *this;}
-    inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(Aws::String&& value) { SetNewDBInstanceIdentifier(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const char* value) { SetNewDBInstanceIdentifier(value); return *this;}
+    template<typename NewDBInstanceIdentifierT = Aws::String>
+    void SetNewDBInstanceIdentifier(NewDBInstanceIdentifierT&& value) { m_newDBInstanceIdentifierHasBeenSet = true; m_newDBInstanceIdentifier = std::forward<NewDBInstanceIdentifierT>(value); }
+    template<typename NewDBInstanceIdentifierT = Aws::String>
+    ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(NewDBInstanceIdentifierT&& value) { SetNewDBInstanceIdentifier(std::forward<NewDBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not supported.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    ModifyDBInstanceRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -386,14 +360,12 @@ namespace Model
      * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
-    inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
+    inline const Aws::String& GetTdeCredentialArn() const { return m_tdeCredentialArn; }
     inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
-    inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
-    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
-    inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
-    inline ModifyDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
-    inline ModifyDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
+    template<typename TdeCredentialArnT = Aws::String>
+    void SetTdeCredentialArn(TdeCredentialArnT&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::forward<TdeCredentialArnT>(value); }
+    template<typename TdeCredentialArnT = Aws::String>
+    ModifyDBInstanceRequest& WithTdeCredentialArn(TdeCredentialArnT&& value) { SetTdeCredentialArn(std::forward<TdeCredentialArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -401,42 +373,36 @@ namespace Model
      * <p>The password for the given ARN from the key store in order to access the
      * device.</p>
      */
-    inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+    inline const Aws::String& GetTdeCredentialPassword() const { return m_tdeCredentialPassword; }
     inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
-    inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
-    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
-    inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
-    inline ModifyDBInstanceRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
-    inline ModifyDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
+    template<typename TdeCredentialPasswordT = Aws::String>
+    void SetTdeCredentialPassword(TdeCredentialPasswordT&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::forward<TdeCredentialPasswordT>(value); }
+    template<typename TdeCredentialPasswordT = Aws::String>
+    ModifyDBInstanceRequest& WithTdeCredentialPassword(TdeCredentialPasswordT&& value) { SetTdeCredentialPassword(std::forward<TdeCredentialPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the certificate that needs to be associated with the instance.</p>
      */
-    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+    inline const Aws::String& GetCACertificateIdentifier() const { return m_cACertificateIdentifier; }
     inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
-    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
-    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
-    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
-    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
-    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+    template<typename CACertificateIdentifierT = Aws::String>
+    void SetCACertificateIdentifier(CACertificateIdentifierT&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::forward<CACertificateIdentifierT>(value); }
+    template<typename CACertificateIdentifierT = Aws::String>
+    ModifyDBInstanceRequest& WithCACertificateIdentifier(CACertificateIdentifierT&& value) { SetCACertificateIdentifier(std::forward<CACertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not supported.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ModifyDBInstanceRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -444,7 +410,7 @@ namespace Model
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
      * and otherwise false. The default is false.</p>
      */
-    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
     inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
@@ -458,7 +424,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const { return m_monitoringInterval; }
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
     inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
     inline ModifyDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
@@ -473,7 +439,7 @@ namespace Model
      * regardless of the value of the <code>ApplyImmediately</code> parameter.</p> <p>
      * Default: <code>8182</code> </p>
      */
-    inline int GetDBPortNumber() const{ return m_dBPortNumber; }
+    inline int GetDBPortNumber() const { return m_dBPortNumber; }
     inline bool DBPortNumberHasBeenSet() const { return m_dBPortNumberHasBeenSet; }
     inline void SetDBPortNumber(int value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
     inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
@@ -487,28 +453,24 @@ namespace Model
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
-    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+    inline const Aws::String& GetMonitoringRoleArn() const { return m_monitoringRoleArn; }
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
-    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
-    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
-    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
-    inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
-    inline ModifyDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+    template<typename MonitoringRoleArnT = Aws::String>
+    void SetMonitoringRoleArn(MonitoringRoleArnT&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::forward<MonitoringRoleArnT>(value); }
+    template<typename MonitoringRoleArnT = Aws::String>
+    ModifyDBInstanceRequest& WithMonitoringRoleArn(MonitoringRoleArnT&& value) { SetMonitoringRoleArn(std::forward<MonitoringRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not supported</p>
      */
-    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+    inline const Aws::String& GetDomainIAMRoleName() const { return m_domainIAMRoleName; }
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
-    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
-    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
-    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
-    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+    template<typename DomainIAMRoleNameT = Aws::String>
+    void SetDomainIAMRoleName(DomainIAMRoleNameT&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::forward<DomainIAMRoleNameT>(value); }
+    template<typename DomainIAMRoleNameT = Aws::String>
+    ModifyDBInstanceRequest& WithDomainIAMRoleName(DomainIAMRoleNameT&& value) { SetDomainIAMRoleName(std::forward<DomainIAMRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -517,7 +479,7 @@ namespace Model
      * primary instance after a failure of the existing primary instance.</p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
-    inline int GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const { return m_promotionTier; }
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
@@ -532,7 +494,7 @@ namespace Model
      * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
      * <code>false</code> </p>
      */
-    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+    inline bool GetEnableIAMDatabaseAuthentication() const { return m_enableIAMDatabaseAuthentication; }
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -542,7 +504,7 @@ namespace Model
     /**
      * <p> <i>(Not supported by Neptune)</i> </p>
      */
-    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+    inline bool GetEnablePerformanceInsights() const { return m_enablePerformanceInsights; }
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
@@ -552,14 +514,12 @@ namespace Model
     /**
      * <p> <i>(Not supported by Neptune)</i> </p>
      */
-    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const { return m_performanceInsightsKMSKeyId; }
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
-    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
-    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
-    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
-    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
-    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
-    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    void SetPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::forward<PerformanceInsightsKMSKeyIdT>(value); }
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { SetPerformanceInsightsKMSKeyId(std::forward<PerformanceInsightsKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -567,12 +527,12 @@ namespace Model
      * <p>The configuration setting for the log types to be enabled for export to
      * CloudWatch Logs for a specific DB instance or DB cluster.</p>
      */
-    inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
+    inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const { return m_cloudwatchLogsExportConfiguration; }
     inline bool CloudwatchLogsExportConfigurationHasBeenSet() const { return m_cloudwatchLogsExportConfigurationHasBeenSet; }
-    inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
-    inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
-    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
-    inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
+    template<typename CloudwatchLogsExportConfigurationT = CloudwatchLogsExportConfiguration>
+    void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfigurationT&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::forward<CloudwatchLogsExportConfigurationT>(value); }
+    template<typename CloudwatchLogsExportConfigurationT = CloudwatchLogsExportConfiguration>
+    ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfigurationT&& value) { SetCloudwatchLogsExportConfiguration(std::forward<CloudwatchLogsExportConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -583,7 +543,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
      * a DB Instance</a>.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -593,7 +553,7 @@ namespace Model
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet = false;
 
-    int m_allocatedStorage;
+    int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
@@ -608,7 +568,7 @@ namespace Model
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
-    bool m_applyImmediately;
+    bool m_applyImmediately{false};
     bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
@@ -617,7 +577,7 @@ namespace Model
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet = false;
 
-    int m_backupRetentionPeriod;
+    int m_backupRetentionPeriod{0};
     bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
@@ -626,22 +586,22 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    bool m_multiAZ;
+    bool m_multiAZ{false};
     bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
-    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgrade{false};
     bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
@@ -665,13 +625,13 @@ namespace Model
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;
 
-    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshot{false};
     bool m_copyTagsToSnapshotHasBeenSet = false;
 
-    int m_monitoringInterval;
+    int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
 
-    int m_dBPortNumber;
+    int m_dBPortNumber{0};
     bool m_dBPortNumberHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
@@ -680,13 +640,13 @@ namespace Model
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
 
-    int m_promotionTier;
+    int m_promotionTier{0};
     bool m_promotionTierHasBeenSet = false;
 
-    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthentication{false};
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
-    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsights{false};
     bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
@@ -695,7 +655,7 @@ namespace Model
     CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
     bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
   };
 

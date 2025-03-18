@@ -34,7 +34,7 @@ namespace Model
   class Prometheus
   {
   public:
-    AWS_KAFKA_API Prometheus();
+    AWS_KAFKA_API Prometheus() = default;
     AWS_KAFKA_API Prometheus(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Prometheus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * Exporter.</p>
          
      */
-    inline const JmxExporter& GetJmxExporter() const{ return m_jmxExporter; }
+    inline const JmxExporter& GetJmxExporter() const { return m_jmxExporter; }
     inline bool JmxExporterHasBeenSet() const { return m_jmxExporterHasBeenSet; }
-    inline void SetJmxExporter(const JmxExporter& value) { m_jmxExporterHasBeenSet = true; m_jmxExporter = value; }
-    inline void SetJmxExporter(JmxExporter&& value) { m_jmxExporterHasBeenSet = true; m_jmxExporter = std::move(value); }
-    inline Prometheus& WithJmxExporter(const JmxExporter& value) { SetJmxExporter(value); return *this;}
-    inline Prometheus& WithJmxExporter(JmxExporter&& value) { SetJmxExporter(std::move(value)); return *this;}
+    template<typename JmxExporterT = JmxExporter>
+    void SetJmxExporter(JmxExporterT&& value) { m_jmxExporterHasBeenSet = true; m_jmxExporter = std::forward<JmxExporterT>(value); }
+    template<typename JmxExporterT = JmxExporter>
+    Prometheus& WithJmxExporter(JmxExporterT&& value) { SetJmxExporter(std::forward<JmxExporterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * Exporter.</p>
          
      */
-    inline const NodeExporter& GetNodeExporter() const{ return m_nodeExporter; }
+    inline const NodeExporter& GetNodeExporter() const { return m_nodeExporter; }
     inline bool NodeExporterHasBeenSet() const { return m_nodeExporterHasBeenSet; }
-    inline void SetNodeExporter(const NodeExporter& value) { m_nodeExporterHasBeenSet = true; m_nodeExporter = value; }
-    inline void SetNodeExporter(NodeExporter&& value) { m_nodeExporterHasBeenSet = true; m_nodeExporter = std::move(value); }
-    inline Prometheus& WithNodeExporter(const NodeExporter& value) { SetNodeExporter(value); return *this;}
-    inline Prometheus& WithNodeExporter(NodeExporter&& value) { SetNodeExporter(std::move(value)); return *this;}
+    template<typename NodeExporterT = NodeExporter>
+    void SetNodeExporter(NodeExporterT&& value) { m_nodeExporterHasBeenSet = true; m_nodeExporter = std::forward<NodeExporterT>(value); }
+    template<typename NodeExporterT = NodeExporter>
+    Prometheus& WithNodeExporter(NodeExporterT&& value) { SetNodeExporter(std::forward<NodeExporterT>(value)); return *this;}
     ///@}
   private:
 

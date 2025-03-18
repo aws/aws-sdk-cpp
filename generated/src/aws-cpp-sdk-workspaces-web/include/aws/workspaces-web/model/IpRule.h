@@ -31,7 +31,7 @@ namespace Model
   class IpRule
   {
   public:
-    AWS_WORKSPACESWEB_API IpRule();
+    AWS_WORKSPACESWEB_API IpRule() = default;
     AWS_WORKSPACESWEB_API IpRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API IpRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The description of the IP rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline IpRule& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline IpRule& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline IpRule& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpRule& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP range of the IP rule.</p>
      */
-    inline const Aws::String& GetIpRange() const{ return m_ipRange; }
+    inline const Aws::String& GetIpRange() const { return m_ipRange; }
     inline bool IpRangeHasBeenSet() const { return m_ipRangeHasBeenSet; }
-    inline void SetIpRange(const Aws::String& value) { m_ipRangeHasBeenSet = true; m_ipRange = value; }
-    inline void SetIpRange(Aws::String&& value) { m_ipRangeHasBeenSet = true; m_ipRange = std::move(value); }
-    inline void SetIpRange(const char* value) { m_ipRangeHasBeenSet = true; m_ipRange.assign(value); }
-    inline IpRule& WithIpRange(const Aws::String& value) { SetIpRange(value); return *this;}
-    inline IpRule& WithIpRange(Aws::String&& value) { SetIpRange(std::move(value)); return *this;}
-    inline IpRule& WithIpRange(const char* value) { SetIpRange(value); return *this;}
+    template<typename IpRangeT = Aws::String>
+    void SetIpRange(IpRangeT&& value) { m_ipRangeHasBeenSet = true; m_ipRange = std::forward<IpRangeT>(value); }
+    template<typename IpRangeT = Aws::String>
+    IpRule& WithIpRange(IpRangeT&& value) { SetIpRange(std::forward<IpRangeT>(value)); return *this;}
     ///@}
   private:
 

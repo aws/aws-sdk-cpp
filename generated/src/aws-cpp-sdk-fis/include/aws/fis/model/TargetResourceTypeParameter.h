@@ -33,7 +33,7 @@ namespace Model
   class TargetResourceTypeParameter
   {
   public:
-    AWS_FIS_API TargetResourceTypeParameter();
+    AWS_FIS_API TargetResourceTypeParameter() = default;
     AWS_FIS_API TargetResourceTypeParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API TargetResourceTypeParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>A description of the parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TargetResourceTypeParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TargetResourceTypeParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TargetResourceTypeParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TargetResourceTypeParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the parameter is required.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline TargetResourceTypeParameter& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
   };
 

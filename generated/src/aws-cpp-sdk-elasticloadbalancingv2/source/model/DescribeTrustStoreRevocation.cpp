@@ -20,19 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-DescribeTrustStoreRevocation::DescribeTrustStoreRevocation() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_revocationId(0),
-    m_revocationIdHasBeenSet(false),
-    m_revocationType(RevocationType::NOT_SET),
-    m_revocationTypeHasBeenSet(false),
-    m_numberOfRevokedEntries(0),
-    m_numberOfRevokedEntriesHasBeenSet(false)
-{
-}
-
 DescribeTrustStoreRevocation::DescribeTrustStoreRevocation(const XmlNode& xmlNode)
-  : DescribeTrustStoreRevocation()
 {
   *this = xmlNode;
 }
@@ -58,7 +46,7 @@ DescribeTrustStoreRevocation& DescribeTrustStoreRevocation::operator =(const Xml
     XmlNode revocationTypeNode = resultNode.FirstChild("RevocationType");
     if(!revocationTypeNode.IsNull())
     {
-      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()).c_str());
+      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()));
       m_revocationTypeHasBeenSet = true;
     }
     XmlNode numberOfRevokedEntriesNode = resultNode.FirstChild("NumberOfRevokedEntries");

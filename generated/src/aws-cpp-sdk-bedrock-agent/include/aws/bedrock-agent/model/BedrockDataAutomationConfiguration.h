@@ -32,7 +32,7 @@ namespace Model
   class BedrockDataAutomationConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API BedrockDataAutomationConfiguration();
+    AWS_BEDROCKAGENT_API BedrockDataAutomationConfiguration() = default;
     AWS_BEDROCKAGENT_API BedrockDataAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API BedrockDataAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Specifies whether to enable parsing of multimodal data, including both text
      * and/or images.</p>
      */
-    inline const ParsingModality& GetParsingModality() const{ return m_parsingModality; }
+    inline ParsingModality GetParsingModality() const { return m_parsingModality; }
     inline bool ParsingModalityHasBeenSet() const { return m_parsingModalityHasBeenSet; }
-    inline void SetParsingModality(const ParsingModality& value) { m_parsingModalityHasBeenSet = true; m_parsingModality = value; }
-    inline void SetParsingModality(ParsingModality&& value) { m_parsingModalityHasBeenSet = true; m_parsingModality = std::move(value); }
-    inline BedrockDataAutomationConfiguration& WithParsingModality(const ParsingModality& value) { SetParsingModality(value); return *this;}
-    inline BedrockDataAutomationConfiguration& WithParsingModality(ParsingModality&& value) { SetParsingModality(std::move(value)); return *this;}
+    inline void SetParsingModality(ParsingModality value) { m_parsingModalityHasBeenSet = true; m_parsingModality = value; }
+    inline BedrockDataAutomationConfiguration& WithParsingModality(ParsingModality value) { SetParsingModality(value); return *this;}
     ///@}
   private:
 
-    ParsingModality m_parsingModality;
+    ParsingModality m_parsingModality{ParsingModality::NOT_SET};
     bool m_parsingModalityHasBeenSet = false;
   };
 

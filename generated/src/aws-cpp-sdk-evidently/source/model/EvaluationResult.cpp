@@ -18,19 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-EvaluationResult::EvaluationResult() : 
-    m_detailsHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_featureHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_variationHasBeenSet(false)
-{
-}
-
 EvaluationResult::EvaluationResult(JsonView jsonValue)
-  : EvaluationResult()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("feature"))
   {
     m_feature = jsonValue.GetString("feature");
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetString("project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variation"))
   {
     m_variation = jsonValue.GetString("variation");
-
     m_variationHasBeenSet = true;
   }
-
   return *this;
 }
 

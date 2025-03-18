@@ -30,7 +30,7 @@ namespace Model
   class AwsEcrRepositoryImageScanningConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Whether to scan images after they are pushed to a repository.</p>
      */
-    inline bool GetScanOnPush() const{ return m_scanOnPush; }
+    inline bool GetScanOnPush() const { return m_scanOnPush; }
     inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
     inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
     inline AwsEcrRepositoryImageScanningConfigurationDetails& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
     ///@}
   private:
 
-    bool m_scanOnPush;
+    bool m_scanOnPush{false};
     bool m_scanOnPushHasBeenSet = false;
   };
 

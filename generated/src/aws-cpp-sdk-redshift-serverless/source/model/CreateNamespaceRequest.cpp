@@ -12,23 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNamespaceRequest::CreateNamespaceRequest() : 
-    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_adminUserPasswordHasBeenSet(false),
-    m_adminUsernameHasBeenSet(false),
-    m_dbNameHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false),
-    m_iamRolesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_logExportsHasBeenSet(false),
-    m_manageAdminPassword(false),
-    m_manageAdminPasswordHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

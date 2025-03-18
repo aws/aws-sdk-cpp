@@ -31,7 +31,7 @@ namespace Model
   class CreateWorkspaceRequest : public ManagedGrafanaRequest
   {
   public:
-    AWS_MANAGEDGRAFANA_API CreateWorkspaceRequest();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,12 +51,10 @@ namespace Model
      * workspace can access in the <code>workspaceOrganizationalUnits</code>
      * parameter.</p>
      */
-    inline const AccountAccessType& GetAccountAccessType() const{ return m_accountAccessType; }
+    inline AccountAccessType GetAccountAccessType() const { return m_accountAccessType; }
     inline bool AccountAccessTypeHasBeenSet() const { return m_accountAccessTypeHasBeenSet; }
-    inline void SetAccountAccessType(const AccountAccessType& value) { m_accountAccessTypeHasBeenSet = true; m_accountAccessType = value; }
-    inline void SetAccountAccessType(AccountAccessType&& value) { m_accountAccessTypeHasBeenSet = true; m_accountAccessType = std::move(value); }
-    inline CreateWorkspaceRequest& WithAccountAccessType(const AccountAccessType& value) { SetAccountAccessType(value); return *this;}
-    inline CreateWorkspaceRequest& WithAccountAccessType(AccountAccessType&& value) { SetAccountAccessType(std::move(value)); return *this;}
+    inline void SetAccountAccessType(AccountAccessType value) { m_accountAccessTypeHasBeenSet = true; m_accountAccessType = value; }
+    inline CreateWorkspaceRequest& WithAccountAccessType(AccountAccessType value) { SetAccountAccessType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
-    inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const{ return m_authenticationProviders; }
+    inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
     inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
-    inline void SetAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = value; }
-    inline void SetAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::move(value); }
-    inline CreateWorkspaceRequest& WithAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetAuthenticationProviders(value); return *this;}
-    inline CreateWorkspaceRequest& WithAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetAuthenticationProviders(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& AddAuthenticationProviders(const AuthenticationProviderTypes& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
-    inline CreateWorkspaceRequest& AddAuthenticationProviders(AuthenticationProviderTypes&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(std::move(value)); return *this; }
+    template<typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+    void SetAuthenticationProviders(AuthenticationProvidersT&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::forward<AuthenticationProvidersT>(value); }
+    template<typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+    CreateWorkspaceRequest& WithAuthenticationProviders(AuthenticationProvidersT&& value) { SetAuthenticationProviders(std::forward<AuthenticationProvidersT>(value)); return *this;}
+    inline CreateWorkspaceRequest& AddAuthenticationProviders(AuthenticationProviderTypes value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +79,12 @@ namespace Model
      * <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency
      * of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateWorkspaceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateWorkspaceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateWorkspaceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +94,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
      * in your Grafana workspace</a>.</p>
      */
-    inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
-    inline CreateWorkspaceRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
-    inline CreateWorkspaceRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+    template<typename ConfigurationT = Aws::String>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::String>
+    CreateWorkspaceRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +108,12 @@ namespace Model
      * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
-    inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
+    inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
     inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
-    inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
-    inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
-    inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
-    inline CreateWorkspaceRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
-    inline CreateWorkspaceRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
+    template<typename GrafanaVersionT = Aws::String>
+    void SetGrafanaVersion(GrafanaVersionT&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::forward<GrafanaVersionT>(value); }
+    template<typename GrafanaVersionT = Aws::String>
+    CreateWorkspaceRequest& WithGrafanaVersion(GrafanaVersionT&& value) { SetGrafanaVersion(std::forward<GrafanaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +125,12 @@ namespace Model
      * and VPC endpoints will be allowed. Standard Grafana authentication and
      * authorization will still be required.</p>
      */
-    inline const NetworkAccessConfiguration& GetNetworkAccessControl() const{ return m_networkAccessControl; }
+    inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
     inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
-    inline void SetNetworkAccessControl(const NetworkAccessConfiguration& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = value; }
-    inline void SetNetworkAccessControl(NetworkAccessConfiguration&& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = std::move(value); }
-    inline CreateWorkspaceRequest& WithNetworkAccessControl(const NetworkAccessConfiguration& value) { SetNetworkAccessControl(value); return *this;}
-    inline CreateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessConfiguration&& value) { SetNetworkAccessControl(std::move(value)); return *this;}
+    template<typename NetworkAccessControlT = NetworkAccessConfiguration>
+    void SetNetworkAccessControl(NetworkAccessControlT&& value) { m_networkAccessControlHasBeenSet = true; m_networkAccessControl = std::forward<NetworkAccessControlT>(value); }
+    template<typename NetworkAccessControlT = NetworkAccessConfiguration>
+    CreateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessControlT&& value) { SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +139,12 @@ namespace Model
      * access Amazon Web Services data sources and notification channels in other
      * accounts in an organization.</p>
      */
-    inline const Aws::String& GetOrganizationRoleName() const{ return m_organizationRoleName; }
+    inline const Aws::String& GetOrganizationRoleName() const { return m_organizationRoleName; }
     inline bool OrganizationRoleNameHasBeenSet() const { return m_organizationRoleNameHasBeenSet; }
-    inline void SetOrganizationRoleName(const Aws::String& value) { m_organizationRoleNameHasBeenSet = true; m_organizationRoleName = value; }
-    inline void SetOrganizationRoleName(Aws::String&& value) { m_organizationRoleNameHasBeenSet = true; m_organizationRoleName = std::move(value); }
-    inline void SetOrganizationRoleName(const char* value) { m_organizationRoleNameHasBeenSet = true; m_organizationRoleName.assign(value); }
-    inline CreateWorkspaceRequest& WithOrganizationRoleName(const Aws::String& value) { SetOrganizationRoleName(value); return *this;}
-    inline CreateWorkspaceRequest& WithOrganizationRoleName(Aws::String&& value) { SetOrganizationRoleName(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithOrganizationRoleName(const char* value) { SetOrganizationRoleName(value); return *this;}
+    template<typename OrganizationRoleNameT = Aws::String>
+    void SetOrganizationRoleName(OrganizationRoleNameT&& value) { m_organizationRoleNameHasBeenSet = true; m_organizationRoleName = std::forward<OrganizationRoleNameT>(value); }
+    template<typename OrganizationRoleNameT = Aws::String>
+    CreateWorkspaceRequest& WithOrganizationRoleName(OrganizationRoleNameT&& value) { SetOrganizationRoleName(std::forward<OrganizationRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,12 +165,10 @@ namespace Model
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
      */
-    inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
+    inline PermissionType GetPermissionType() const { return m_permissionType; }
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
-    inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
-    inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
-    inline CreateWorkspaceRequest& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
-    inline CreateWorkspaceRequest& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+    inline void SetPermissionType(PermissionType value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
+    inline CreateWorkspaceRequest& WithPermissionType(PermissionType value) { SetPermissionType(value); return *this;}
     ///@}
 
     ///@{
@@ -189,33 +176,28 @@ namespace Model
      * <p>The name of the CloudFormation stack set to use to generate IAM roles to be
      * used for this workspace.</p>
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline CreateWorkspaceRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline CreateWorkspaceRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    CreateWorkspaceRequest& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags associated with the workspace.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWorkspaceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateWorkspaceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkspaceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorkspaceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkspaceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkspaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWorkspaceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateWorkspaceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -225,26 +207,25 @@ namespace Model
      * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
      * 
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline CreateWorkspaceRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline CreateWorkspaceRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    CreateWorkspaceRequest& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This parameter is for internal use only, and should not be used.</p>
      */
-    inline const Aws::Vector<DataSourceType>& GetWorkspaceDataSources() const{ return m_workspaceDataSources; }
+    inline const Aws::Vector<DataSourceType>& GetWorkspaceDataSources() const { return m_workspaceDataSources; }
     inline bool WorkspaceDataSourcesHasBeenSet() const { return m_workspaceDataSourcesHasBeenSet; }
-    inline void SetWorkspaceDataSources(const Aws::Vector<DataSourceType>& value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources = value; }
-    inline void SetWorkspaceDataSources(Aws::Vector<DataSourceType>&& value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources = std::move(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceDataSources(const Aws::Vector<DataSourceType>& value) { SetWorkspaceDataSources(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceDataSources(Aws::Vector<DataSourceType>&& value) { SetWorkspaceDataSources(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& AddWorkspaceDataSources(const DataSourceType& value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources.push_back(value); return *this; }
-    inline CreateWorkspaceRequest& AddWorkspaceDataSources(DataSourceType&& value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources.push_back(std::move(value)); return *this; }
+    template<typename WorkspaceDataSourcesT = Aws::Vector<DataSourceType>>
+    void SetWorkspaceDataSources(WorkspaceDataSourcesT&& value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources = std::forward<WorkspaceDataSourcesT>(value); }
+    template<typename WorkspaceDataSourcesT = Aws::Vector<DataSourceType>>
+    CreateWorkspaceRequest& WithWorkspaceDataSources(WorkspaceDataSourcesT&& value) { SetWorkspaceDataSources(std::forward<WorkspaceDataSourcesT>(value)); return *this;}
+    inline CreateWorkspaceRequest& AddWorkspaceDataSources(DataSourceType value) { m_workspaceDataSourcesHasBeenSet = true; m_workspaceDataSources.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -253,28 +234,24 @@ namespace Model
      * workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code>
      * </p>
      */
-    inline const Aws::String& GetWorkspaceDescription() const{ return m_workspaceDescription; }
+    inline const Aws::String& GetWorkspaceDescription() const { return m_workspaceDescription; }
     inline bool WorkspaceDescriptionHasBeenSet() const { return m_workspaceDescriptionHasBeenSet; }
-    inline void SetWorkspaceDescription(const Aws::String& value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription = value; }
-    inline void SetWorkspaceDescription(Aws::String&& value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription = std::move(value); }
-    inline void SetWorkspaceDescription(const char* value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription.assign(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceDescription(const Aws::String& value) { SetWorkspaceDescription(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceDescription(Aws::String&& value) { SetWorkspaceDescription(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceDescription(const char* value) { SetWorkspaceDescription(value); return *this;}
+    template<typename WorkspaceDescriptionT = Aws::String>
+    void SetWorkspaceDescription(WorkspaceDescriptionT&& value) { m_workspaceDescriptionHasBeenSet = true; m_workspaceDescription = std::forward<WorkspaceDescriptionT>(value); }
+    template<typename WorkspaceDescriptionT = Aws::String>
+    CreateWorkspaceRequest& WithWorkspaceDescription(WorkspaceDescriptionT&& value) { SetWorkspaceDescription(std::forward<WorkspaceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the workspace. It does not have to be unique.</p>
      */
-    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+    inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
     inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
-    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
-    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
-    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+    template<typename WorkspaceNameT = Aws::String>
+    void SetWorkspaceName(WorkspaceNameT&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::forward<WorkspaceNameT>(value); }
+    template<typename WorkspaceNameT = Aws::String>
+    CreateWorkspaceRequest& WithWorkspaceName(WorkspaceNameT&& value) { SetWorkspaceName(std::forward<WorkspaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -284,14 +261,13 @@ namespace Model
      * Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to
      * use these channels.</p>
      */
-    inline const Aws::Vector<NotificationDestinationType>& GetWorkspaceNotificationDestinations() const{ return m_workspaceNotificationDestinations; }
+    inline const Aws::Vector<NotificationDestinationType>& GetWorkspaceNotificationDestinations() const { return m_workspaceNotificationDestinations; }
     inline bool WorkspaceNotificationDestinationsHasBeenSet() const { return m_workspaceNotificationDestinationsHasBeenSet; }
-    inline void SetWorkspaceNotificationDestinations(const Aws::Vector<NotificationDestinationType>& value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations = value; }
-    inline void SetWorkspaceNotificationDestinations(Aws::Vector<NotificationDestinationType>&& value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations = std::move(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceNotificationDestinations(const Aws::Vector<NotificationDestinationType>& value) { SetWorkspaceNotificationDestinations(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceNotificationDestinations(Aws::Vector<NotificationDestinationType>&& value) { SetWorkspaceNotificationDestinations(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& AddWorkspaceNotificationDestinations(const NotificationDestinationType& value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations.push_back(value); return *this; }
-    inline CreateWorkspaceRequest& AddWorkspaceNotificationDestinations(NotificationDestinationType&& value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations.push_back(std::move(value)); return *this; }
+    template<typename WorkspaceNotificationDestinationsT = Aws::Vector<NotificationDestinationType>>
+    void SetWorkspaceNotificationDestinations(WorkspaceNotificationDestinationsT&& value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations = std::forward<WorkspaceNotificationDestinationsT>(value); }
+    template<typename WorkspaceNotificationDestinationsT = Aws::Vector<NotificationDestinationType>>
+    CreateWorkspaceRequest& WithWorkspaceNotificationDestinations(WorkspaceNotificationDestinationsT&& value) { SetWorkspaceNotificationDestinations(std::forward<WorkspaceNotificationDestinationsT>(value)); return *this;}
+    inline CreateWorkspaceRequest& AddWorkspaceNotificationDestinations(NotificationDestinationType value) { m_workspaceNotificationDestinationsHasBeenSet = true; m_workspaceNotificationDestinations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -300,15 +276,14 @@ namespace Model
      * sources from, if this workspace is in an account that is part of an
      * organization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWorkspaceOrganizationalUnits() const{ return m_workspaceOrganizationalUnits; }
+    inline const Aws::Vector<Aws::String>& GetWorkspaceOrganizationalUnits() const { return m_workspaceOrganizationalUnits; }
     inline bool WorkspaceOrganizationalUnitsHasBeenSet() const { return m_workspaceOrganizationalUnitsHasBeenSet; }
-    inline void SetWorkspaceOrganizationalUnits(const Aws::Vector<Aws::String>& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits = value; }
-    inline void SetWorkspaceOrganizationalUnits(Aws::Vector<Aws::String>&& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits = std::move(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceOrganizationalUnits(const Aws::Vector<Aws::String>& value) { SetWorkspaceOrganizationalUnits(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceOrganizationalUnits(Aws::Vector<Aws::String>&& value) { SetWorkspaceOrganizationalUnits(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& AddWorkspaceOrganizationalUnits(const Aws::String& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits.push_back(value); return *this; }
-    inline CreateWorkspaceRequest& AddWorkspaceOrganizationalUnits(Aws::String&& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits.push_back(std::move(value)); return *this; }
-    inline CreateWorkspaceRequest& AddWorkspaceOrganizationalUnits(const char* value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits.push_back(value); return *this; }
+    template<typename WorkspaceOrganizationalUnitsT = Aws::Vector<Aws::String>>
+    void SetWorkspaceOrganizationalUnits(WorkspaceOrganizationalUnitsT&& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits = std::forward<WorkspaceOrganizationalUnitsT>(value); }
+    template<typename WorkspaceOrganizationalUnitsT = Aws::Vector<Aws::String>>
+    CreateWorkspaceRequest& WithWorkspaceOrganizationalUnits(WorkspaceOrganizationalUnitsT&& value) { SetWorkspaceOrganizationalUnits(std::forward<WorkspaceOrganizationalUnitsT>(value)); return *this;}
+    template<typename WorkspaceOrganizationalUnitsT = Aws::String>
+    CreateWorkspaceRequest& AddWorkspaceOrganizationalUnits(WorkspaceOrganizationalUnitsT&& value) { m_workspaceOrganizationalUnitsHasBeenSet = true; m_workspaceOrganizationalUnits.emplace_back(std::forward<WorkspaceOrganizationalUnitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -318,18 +293,16 @@ namespace Model
      * and notification channels. You are responsible for managing the permissions for
      * this role as new data sources or notification channels are added. </p>
      */
-    inline const Aws::String& GetWorkspaceRoleArn() const{ return m_workspaceRoleArn; }
+    inline const Aws::String& GetWorkspaceRoleArn() const { return m_workspaceRoleArn; }
     inline bool WorkspaceRoleArnHasBeenSet() const { return m_workspaceRoleArnHasBeenSet; }
-    inline void SetWorkspaceRoleArn(const Aws::String& value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn = value; }
-    inline void SetWorkspaceRoleArn(Aws::String&& value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn = std::move(value); }
-    inline void SetWorkspaceRoleArn(const char* value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn.assign(value); }
-    inline CreateWorkspaceRequest& WithWorkspaceRoleArn(const Aws::String& value) { SetWorkspaceRoleArn(value); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceRoleArn(Aws::String&& value) { SetWorkspaceRoleArn(std::move(value)); return *this;}
-    inline CreateWorkspaceRequest& WithWorkspaceRoleArn(const char* value) { SetWorkspaceRoleArn(value); return *this;}
+    template<typename WorkspaceRoleArnT = Aws::String>
+    void SetWorkspaceRoleArn(WorkspaceRoleArnT&& value) { m_workspaceRoleArnHasBeenSet = true; m_workspaceRoleArn = std::forward<WorkspaceRoleArnT>(value); }
+    template<typename WorkspaceRoleArnT = Aws::String>
+    CreateWorkspaceRequest& WithWorkspaceRoleArn(WorkspaceRoleArnT&& value) { SetWorkspaceRoleArn(std::forward<WorkspaceRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    AccountAccessType m_accountAccessType;
+    AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
     bool m_accountAccessTypeHasBeenSet = false;
 
     Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
@@ -350,7 +323,7 @@ namespace Model
     Aws::String m_organizationRoleName;
     bool m_organizationRoleNameHasBeenSet = false;
 
-    PermissionType m_permissionType;
+    PermissionType m_permissionType{PermissionType::NOT_SET};
     bool m_permissionTypeHasBeenSet = false;
 
     Aws::String m_stackSetName;

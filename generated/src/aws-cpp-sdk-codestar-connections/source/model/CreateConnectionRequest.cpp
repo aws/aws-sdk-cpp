@@ -12,15 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionRequest::CreateConnectionRequest() : 
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_hostArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

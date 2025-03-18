@@ -26,7 +26,7 @@ namespace Model
   class StartReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline StartReplicationTaskRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline StartReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline StartReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    StartReplicationTaskRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to
      * replicate the changes from the last stop position.</p>
      */
-    inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
+    inline StartReplicationTaskTypeValue GetStartReplicationTaskType() const { return m_startReplicationTaskType; }
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
-    inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
-    inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
-    inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
-    inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
+    inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
+    inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue value) { SetStartReplicationTaskType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,12 @@ namespace Model
      * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
      * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
-    inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
+    inline const Aws::Utils::DateTime& GetCdcStartTime() const { return m_cdcStartTime; }
     inline bool CdcStartTimeHasBeenSet() const { return m_cdcStartTimeHasBeenSet; }
-    inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
-    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::move(value); }
-    inline StartReplicationTaskRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
-    inline StartReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    void SetCdcStartTime(CdcStartTimeT&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::forward<CdcStartTimeT>(value); }
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    StartReplicationTaskRequest& WithCdcStartTime(CdcStartTimeT&& value) { SetCdcStartTime(std::forward<CdcStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
      * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
-    inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+    inline const Aws::String& GetCdcStartPosition() const { return m_cdcStartPosition; }
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
-    inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
-    inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
-    inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
-    inline StartReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
-    inline StartReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
-    inline StartReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
+    template<typename CdcStartPositionT = Aws::String>
+    void SetCdcStartPosition(CdcStartPositionT&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::forward<CdcStartPositionT>(value); }
+    template<typename CdcStartPositionT = Aws::String>
+    StartReplicationTaskRequest& WithCdcStartPosition(CdcStartPositionT&& value) { SetCdcStartPosition(std::forward<CdcStartPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,24 +120,22 @@ namespace Model
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
      * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
-    inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
+    inline const Aws::String& GetCdcStopPosition() const { return m_cdcStopPosition; }
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
-    inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
-    inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
-    inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
-    inline StartReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
-    inline StartReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
-    inline StartReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
+    template<typename CdcStopPositionT = Aws::String>
+    void SetCdcStopPosition(CdcStopPositionT&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::forward<CdcStopPositionT>(value); }
+    template<typename CdcStopPositionT = Aws::String>
+    StartReplicationTaskRequest& WithCdcStopPosition(CdcStopPositionT&& value) { SetCdcStopPosition(std::forward<CdcStopPositionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet = false;
 
-    StartReplicationTaskTypeValue m_startReplicationTaskType;
+    StartReplicationTaskTypeValue m_startReplicationTaskType{StartReplicationTaskTypeValue::NOT_SET};
     bool m_startReplicationTaskTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_cdcStartTime;
+    Aws::Utils::DateTime m_cdcStartTime{};
     bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;

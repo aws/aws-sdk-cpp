@@ -18,19 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DecryptStepDetails::DecryptStepDetails() : 
-    m_nameHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false),
-    m_overwriteExisting(OverwriteExisting::NOT_SET),
-    m_overwriteExistingHasBeenSet(false),
-    m_destinationFileLocationHasBeenSet(false)
-{
-}
-
 DecryptStepDetails::DecryptStepDetails(JsonView jsonValue)
-  : DecryptStepDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DecryptStepDetails& DecryptStepDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFileLocation"))
   {
     m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
-
     m_sourceFileLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverwriteExisting"))
   {
     m_overwriteExisting = OverwriteExistingMapper::GetOverwriteExistingForName(jsonValue.GetString("OverwriteExisting"));
-
     m_overwriteExistingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationFileLocation"))
   {
     m_destinationFileLocation = jsonValue.GetObject("DestinationFileLocation");
-
     m_destinationFileLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

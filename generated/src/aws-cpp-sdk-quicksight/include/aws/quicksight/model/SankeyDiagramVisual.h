@@ -39,7 +39,7 @@ namespace Model
   class SankeyDiagramVisual
   {
   public:
-    AWS_QUICKSIGHT_API SankeyDiagramVisual();
+    AWS_QUICKSIGHT_API SankeyDiagramVisual() = default;
     AWS_QUICKSIGHT_API SankeyDiagramVisual(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SankeyDiagramVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,78 +51,74 @@ namespace Model
      * context of a dashboard, template, or analysis. Two dashboards, analyses, or
      * templates can have visuals with the same identifiers.</p>
      */
-    inline const Aws::String& GetVisualId() const{ return m_visualId; }
+    inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }
-    inline void SetVisualId(const Aws::String& value) { m_visualIdHasBeenSet = true; m_visualId = value; }
-    inline void SetVisualId(Aws::String&& value) { m_visualIdHasBeenSet = true; m_visualId = std::move(value); }
-    inline void SetVisualId(const char* value) { m_visualIdHasBeenSet = true; m_visualId.assign(value); }
-    inline SankeyDiagramVisual& WithVisualId(const Aws::String& value) { SetVisualId(value); return *this;}
-    inline SankeyDiagramVisual& WithVisualId(Aws::String&& value) { SetVisualId(std::move(value)); return *this;}
-    inline SankeyDiagramVisual& WithVisualId(const char* value) { SetVisualId(value); return *this;}
+    template<typename VisualIdT = Aws::String>
+    void SetVisualId(VisualIdT&& value) { m_visualIdHasBeenSet = true; m_visualId = std::forward<VisualIdT>(value); }
+    template<typename VisualIdT = Aws::String>
+    SankeyDiagramVisual& WithVisualId(VisualIdT&& value) { SetVisualId(std::forward<VisualIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title that is displayed on the visual.</p>
      */
-    inline const VisualTitleLabelOptions& GetTitle() const{ return m_title; }
+    inline const VisualTitleLabelOptions& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const VisualTitleLabelOptions& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(VisualTitleLabelOptions&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline SankeyDiagramVisual& WithTitle(const VisualTitleLabelOptions& value) { SetTitle(value); return *this;}
-    inline SankeyDiagramVisual& WithTitle(VisualTitleLabelOptions&& value) { SetTitle(std::move(value)); return *this;}
+    template<typename TitleT = VisualTitleLabelOptions>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = VisualTitleLabelOptions>
+    SankeyDiagramVisual& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subtitle that is displayed on the visual.</p>
      */
-    inline const VisualSubtitleLabelOptions& GetSubtitle() const{ return m_subtitle; }
+    inline const VisualSubtitleLabelOptions& GetSubtitle() const { return m_subtitle; }
     inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
-    inline void SetSubtitle(const VisualSubtitleLabelOptions& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
-    inline void SetSubtitle(VisualSubtitleLabelOptions&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
-    inline SankeyDiagramVisual& WithSubtitle(const VisualSubtitleLabelOptions& value) { SetSubtitle(value); return *this;}
-    inline SankeyDiagramVisual& WithSubtitle(VisualSubtitleLabelOptions&& value) { SetSubtitle(std::move(value)); return *this;}
+    template<typename SubtitleT = VisualSubtitleLabelOptions>
+    void SetSubtitle(SubtitleT&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::forward<SubtitleT>(value); }
+    template<typename SubtitleT = VisualSubtitleLabelOptions>
+    SankeyDiagramVisual& WithSubtitle(SubtitleT&& value) { SetSubtitle(std::forward<SubtitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of a sankey diagram.</p>
      */
-    inline const SankeyDiagramChartConfiguration& GetChartConfiguration() const{ return m_chartConfiguration; }
+    inline const SankeyDiagramChartConfiguration& GetChartConfiguration() const { return m_chartConfiguration; }
     inline bool ChartConfigurationHasBeenSet() const { return m_chartConfigurationHasBeenSet; }
-    inline void SetChartConfiguration(const SankeyDiagramChartConfiguration& value) { m_chartConfigurationHasBeenSet = true; m_chartConfiguration = value; }
-    inline void SetChartConfiguration(SankeyDiagramChartConfiguration&& value) { m_chartConfigurationHasBeenSet = true; m_chartConfiguration = std::move(value); }
-    inline SankeyDiagramVisual& WithChartConfiguration(const SankeyDiagramChartConfiguration& value) { SetChartConfiguration(value); return *this;}
-    inline SankeyDiagramVisual& WithChartConfiguration(SankeyDiagramChartConfiguration&& value) { SetChartConfiguration(std::move(value)); return *this;}
+    template<typename ChartConfigurationT = SankeyDiagramChartConfiguration>
+    void SetChartConfiguration(ChartConfigurationT&& value) { m_chartConfigurationHasBeenSet = true; m_chartConfiguration = std::forward<ChartConfigurationT>(value); }
+    template<typename ChartConfigurationT = SankeyDiagramChartConfiguration>
+    SankeyDiagramVisual& WithChartConfiguration(ChartConfigurationT&& value) { SetChartConfiguration(std::forward<ChartConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of custom actions that are configured for a visual.</p>
      */
-    inline const Aws::Vector<VisualCustomAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<VisualCustomAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<VisualCustomAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<VisualCustomAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline SankeyDiagramVisual& WithActions(const Aws::Vector<VisualCustomAction>& value) { SetActions(value); return *this;}
-    inline SankeyDiagramVisual& WithActions(Aws::Vector<VisualCustomAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline SankeyDiagramVisual& AddActions(const VisualCustomAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline SankeyDiagramVisual& AddActions(VisualCustomAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    SankeyDiagramVisual& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = VisualCustomAction>
+    SankeyDiagramVisual& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The alt text for the visual.</p>
      */
-    inline const Aws::String& GetVisualContentAltText() const{ return m_visualContentAltText; }
+    inline const Aws::String& GetVisualContentAltText() const { return m_visualContentAltText; }
     inline bool VisualContentAltTextHasBeenSet() const { return m_visualContentAltTextHasBeenSet; }
-    inline void SetVisualContentAltText(const Aws::String& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = value; }
-    inline void SetVisualContentAltText(Aws::String&& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = std::move(value); }
-    inline void SetVisualContentAltText(const char* value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText.assign(value); }
-    inline SankeyDiagramVisual& WithVisualContentAltText(const Aws::String& value) { SetVisualContentAltText(value); return *this;}
-    inline SankeyDiagramVisual& WithVisualContentAltText(Aws::String&& value) { SetVisualContentAltText(std::move(value)); return *this;}
-    inline SankeyDiagramVisual& WithVisualContentAltText(const char* value) { SetVisualContentAltText(value); return *this;}
+    template<typename VisualContentAltTextT = Aws::String>
+    void SetVisualContentAltText(VisualContentAltTextT&& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = std::forward<VisualContentAltTextT>(value); }
+    template<typename VisualContentAltTextT = Aws::String>
+    SankeyDiagramVisual& WithVisualContentAltText(VisualContentAltTextT&& value) { SetVisualContentAltText(std::forward<VisualContentAltTextT>(value)); return *this;}
     ///@}
   private:
 

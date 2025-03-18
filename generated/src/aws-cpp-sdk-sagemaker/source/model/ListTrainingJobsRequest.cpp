@@ -12,27 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTrainingJobsRequest::ListTrainingJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_statusEquals(TrainingJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_sortBy(SortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_warmPoolStatusEquals(WarmPoolResourceStatus::NOT_SET),
-    m_warmPoolStatusEqualsHasBeenSet(false),
-    m_trainingPlanArnEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListTrainingJobsRequest::SerializePayload() const
 {
   JsonValue payload;

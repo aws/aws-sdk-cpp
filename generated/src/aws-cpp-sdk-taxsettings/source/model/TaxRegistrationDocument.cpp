@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxRegistrationDocument::TaxRegistrationDocument() : 
-    m_fileHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 TaxRegistrationDocument::TaxRegistrationDocument(JsonView jsonValue)
-  : TaxRegistrationDocument()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaxRegistrationDocument& TaxRegistrationDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

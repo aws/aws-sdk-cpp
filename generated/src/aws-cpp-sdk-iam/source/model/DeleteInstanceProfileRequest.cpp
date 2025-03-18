@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteInstanceProfileRequest::DeleteInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

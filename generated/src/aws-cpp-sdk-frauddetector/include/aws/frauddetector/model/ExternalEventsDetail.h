@@ -32,7 +32,7 @@ namespace Model
   class ExternalEventsDetail
   {
   public:
-    AWS_FRAUDDETECTOR_API ExternalEventsDetail();
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail() = default;
     AWS_FRAUDDETECTOR_API ExternalEventsDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ExternalEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location for the data.</p>
      */
-    inline const Aws::String& GetDataLocation() const{ return m_dataLocation; }
+    inline const Aws::String& GetDataLocation() const { return m_dataLocation; }
     inline bool DataLocationHasBeenSet() const { return m_dataLocationHasBeenSet; }
-    inline void SetDataLocation(const Aws::String& value) { m_dataLocationHasBeenSet = true; m_dataLocation = value; }
-    inline void SetDataLocation(Aws::String&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::move(value); }
-    inline void SetDataLocation(const char* value) { m_dataLocationHasBeenSet = true; m_dataLocation.assign(value); }
-    inline ExternalEventsDetail& WithDataLocation(const Aws::String& value) { SetDataLocation(value); return *this;}
-    inline ExternalEventsDetail& WithDataLocation(Aws::String&& value) { SetDataLocation(std::move(value)); return *this;}
-    inline ExternalEventsDetail& WithDataLocation(const char* value) { SetDataLocation(value); return *this;}
+    template<typename DataLocationT = Aws::String>
+    void SetDataLocation(DataLocationT&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::forward<DataLocationT>(value); }
+    template<typename DataLocationT = Aws::String>
+    ExternalEventsDetail& WithDataLocation(DataLocationT&& value) { SetDataLocation(std::forward<DataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
      * location.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline ExternalEventsDetail& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline ExternalEventsDetail& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline ExternalEventsDetail& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    ExternalEventsDetail& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class GetRegistrationCodeRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetRegistrationCodeRequest();
+    AWS_IOT_API GetRegistrationCodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

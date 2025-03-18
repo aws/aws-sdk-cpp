@@ -18,37 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClusterInfo::ClusterInfo() : 
-    m_activeOperationArnHasBeenSet(false),
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_customerActionStatus(CustomerActionStatus::NOT_SET),
-    m_customerActionStatusHasBeenSet(false)
-{
-}
-
 ClusterInfo::ClusterInfo(JsonView jsonValue)
-  : ClusterInfo()
 {
   *this = jsonValue;
 }
@@ -58,108 +28,78 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeOperationArn"))
   {
     m_activeOperationArn = jsonValue.GetString("activeOperationArn");
-
     m_activeOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerNodeGroupInfo"))
   {
     m_brokerNodeGroupInfo = jsonValue.GetObject("brokerNodeGroupInfo");
-
     m_brokerNodeGroupInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientAuthentication"))
   {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
-
     m_clientAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentBrokerSoftwareInfo"))
   {
     m_currentBrokerSoftwareInfo = jsonValue.GetObject("currentBrokerSoftwareInfo");
-
     m_currentBrokerSoftwareInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentVersion"))
   {
     m_currentVersion = jsonValue.GetString("currentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionInfo"))
   {
     m_encryptionInfo = jsonValue.GetObject("encryptionInfo");
-
     m_encryptionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedMonitoring"))
   {
     m_enhancedMonitoring = EnhancedMonitoringMapper::GetEnhancedMonitoringForName(jsonValue.GetString("enhancedMonitoring"));
-
     m_enhancedMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openMonitoring"))
   {
     m_openMonitoring = jsonValue.GetObject("openMonitoring");
-
     m_openMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingInfo"))
   {
     m_loggingInfo = jsonValue.GetObject("loggingInfo");
-
     m_loggingInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfBrokerNodes"))
   {
     m_numberOfBrokerNodes = jsonValue.GetInteger("numberOfBrokerNodes");
-
     m_numberOfBrokerNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateInfo"))
   {
     m_stateInfo = jsonValue.GetObject("stateInfo");
-
     m_stateInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -169,35 +109,26 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperConnectString"))
   {
     m_zookeeperConnectString = jsonValue.GetString("zookeeperConnectString");
-
     m_zookeeperConnectStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperConnectStringTls"))
   {
     m_zookeeperConnectStringTls = jsonValue.GetString("zookeeperConnectStringTls");
-
     m_zookeeperConnectStringTlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageMode"))
   {
     m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
-
     m_storageModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerActionStatus"))
   {
     m_customerActionStatus = CustomerActionStatusMapper::GetCustomerActionStatusForName(jsonValue.GetString("customerActionStatus"));
-
     m_customerActionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

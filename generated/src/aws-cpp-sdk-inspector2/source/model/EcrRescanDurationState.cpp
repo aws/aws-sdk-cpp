@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-EcrRescanDurationState::EcrRescanDurationState() : 
-    m_pullDateRescanDuration(EcrPullDateRescanDuration::NOT_SET),
-    m_pullDateRescanDurationHasBeenSet(false),
-    m_rescanDuration(EcrRescanDuration::NOT_SET),
-    m_rescanDurationHasBeenSet(false),
-    m_status(EcrRescanDurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 EcrRescanDurationState::EcrRescanDurationState(JsonView jsonValue)
-  : EcrRescanDurationState()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ EcrRescanDurationState& EcrRescanDurationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pullDateRescanDuration"))
   {
     m_pullDateRescanDuration = EcrPullDateRescanDurationMapper::GetEcrPullDateRescanDurationForName(jsonValue.GetString("pullDateRescanDuration"));
-
     m_pullDateRescanDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rescanDuration"))
   {
     m_rescanDuration = EcrRescanDurationMapper::GetEcrRescanDurationForName(jsonValue.GetString("rescanDuration"));
-
     m_rescanDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EcrRescanDurationStatusMapper::GetEcrRescanDurationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

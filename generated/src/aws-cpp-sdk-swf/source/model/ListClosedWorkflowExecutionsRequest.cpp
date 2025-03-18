@@ -12,22 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListClosedWorkflowExecutionsRequest::ListClosedWorkflowExecutionsRequest() : 
-    m_domainHasBeenSet(false),
-    m_startTimeFilterHasBeenSet(false),
-    m_closeTimeFilterHasBeenSet(false),
-    m_executionFilterHasBeenSet(false),
-    m_closeStatusFilterHasBeenSet(false),
-    m_typeFilterHasBeenSet(false),
-    m_tagFilterHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_maximumPageSize(0),
-    m_maximumPageSizeHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListClosedWorkflowExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

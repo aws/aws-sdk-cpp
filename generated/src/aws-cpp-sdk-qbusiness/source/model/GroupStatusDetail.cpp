@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-GroupStatusDetail::GroupStatusDetail() : 
-    m_status(GroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
-{
-}
-
 GroupStatusDetail::GroupStatusDetail(JsonView jsonValue)
-  : GroupStatusDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GroupStatusDetail& GroupStatusDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = GroupStatusMapper::GetGroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetail"))
   {
     m_errorDetail = jsonValue.GetObject("errorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

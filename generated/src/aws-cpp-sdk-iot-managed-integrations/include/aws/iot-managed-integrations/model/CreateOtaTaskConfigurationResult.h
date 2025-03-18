@@ -27,7 +27,7 @@ namespace Model
   class CreateOtaTaskConfigurationResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CreateOtaTaskConfigurationResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API CreateOtaTaskConfigurationResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API CreateOtaTaskConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API CreateOtaTaskConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of the over-the-air (OTA) task configuration.</p>
      */
-    inline const Aws::String& GetTaskConfigurationId() const{ return m_taskConfigurationId; }
-    inline void SetTaskConfigurationId(const Aws::String& value) { m_taskConfigurationId = value; }
-    inline void SetTaskConfigurationId(Aws::String&& value) { m_taskConfigurationId = std::move(value); }
-    inline void SetTaskConfigurationId(const char* value) { m_taskConfigurationId.assign(value); }
-    inline CreateOtaTaskConfigurationResult& WithTaskConfigurationId(const Aws::String& value) { SetTaskConfigurationId(value); return *this;}
-    inline CreateOtaTaskConfigurationResult& WithTaskConfigurationId(Aws::String&& value) { SetTaskConfigurationId(std::move(value)); return *this;}
-    inline CreateOtaTaskConfigurationResult& WithTaskConfigurationId(const char* value) { SetTaskConfigurationId(value); return *this;}
+    inline const Aws::String& GetTaskConfigurationId() const { return m_taskConfigurationId; }
+    template<typename TaskConfigurationIdT = Aws::String>
+    void SetTaskConfigurationId(TaskConfigurationIdT&& value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId = std::forward<TaskConfigurationIdT>(value); }
+    template<typename TaskConfigurationIdT = Aws::String>
+    CreateOtaTaskConfigurationResult& WithTaskConfigurationId(TaskConfigurationIdT&& value) { SetTaskConfigurationId(std::forward<TaskConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateOtaTaskConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateOtaTaskConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateOtaTaskConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateOtaTaskConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskConfigurationId;
+    bool m_taskConfigurationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

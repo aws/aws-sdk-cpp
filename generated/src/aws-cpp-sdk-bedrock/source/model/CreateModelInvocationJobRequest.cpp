@@ -12,21 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelInvocationJobRequest::CreateModelInvocationJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_modelIdHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_timeoutDurationInHours(0),
-    m_timeoutDurationInHoursHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelInvocationJobRequest::SerializePayload() const
 {
   JsonValue payload;

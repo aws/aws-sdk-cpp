@@ -36,7 +36,7 @@ namespace Model
   class DescribeAutoPredictorResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeAutoPredictorResult();
+    AWS_FORECASTSERVICE_API DescribeAutoPredictorResult() = default;
     AWS_FORECASTSERVICE_API DescribeAutoPredictorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeAutoPredictorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArn.assign(value); }
-    inline DescribeAutoPredictorResult& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline DescribeAutoPredictorResult& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    DescribeAutoPredictorResult& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the predictor.</p>
      */
-    inline const Aws::String& GetPredictorName() const{ return m_predictorName; }
-    inline void SetPredictorName(const Aws::String& value) { m_predictorName = value; }
-    inline void SetPredictorName(Aws::String&& value) { m_predictorName = std::move(value); }
-    inline void SetPredictorName(const char* value) { m_predictorName.assign(value); }
-    inline DescribeAutoPredictorResult& WithPredictorName(const Aws::String& value) { SetPredictorName(value); return *this;}
-    inline DescribeAutoPredictorResult& WithPredictorName(Aws::String&& value) { SetPredictorName(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithPredictorName(const char* value) { SetPredictorName(value); return *this;}
+    inline const Aws::String& GetPredictorName() const { return m_predictorName; }
+    template<typename PredictorNameT = Aws::String>
+    void SetPredictorName(PredictorNameT&& value) { m_predictorNameHasBeenSet = true; m_predictorName = std::forward<PredictorNameT>(value); }
+    template<typename PredictorNameT = Aws::String>
+    DescribeAutoPredictorResult& WithPredictorName(PredictorNameT&& value) { SetPredictorName(std::forward<PredictorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,8 +68,8 @@ namespace Model
      * <p>The number of time-steps that the model predicts. The forecast horizon is
      * also called the prediction length.</p>
      */
-    inline int GetForecastHorizon() const{ return m_forecastHorizon; }
-    inline void SetForecastHorizon(int value) { m_forecastHorizon = value; }
+    inline int GetForecastHorizon() const { return m_forecastHorizon; }
+    inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
     inline DescribeAutoPredictorResult& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
     ///@}
 
@@ -82,14 +78,13 @@ namespace Model
      * <p>The forecast types used during predictor training. Default value is
      * ["0.1","0.5","0.9"].</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
-    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
-    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
-    inline DescribeAutoPredictorResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
-    inline DescribeAutoPredictorResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
-    inline DescribeAutoPredictorResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
-    inline DescribeAutoPredictorResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const { return m_forecastTypes; }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    void SetForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::forward<ForecastTypesT>(value); }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    DescribeAutoPredictorResult& WithForecastTypes(ForecastTypesT&& value) { SetForecastTypes(std::forward<ForecastTypesT>(value)); return *this;}
+    template<typename ForecastTypesT = Aws::String>
+    DescribeAutoPredictorResult& AddForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.emplace_back(std::forward<ForecastTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,13 +94,11 @@ namespace Model
      * minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
      * example, "Y" indicates every year and "5min" indicates every five minutes.</p>
      */
-    inline const Aws::String& GetForecastFrequency() const{ return m_forecastFrequency; }
-    inline void SetForecastFrequency(const Aws::String& value) { m_forecastFrequency = value; }
-    inline void SetForecastFrequency(Aws::String&& value) { m_forecastFrequency = std::move(value); }
-    inline void SetForecastFrequency(const char* value) { m_forecastFrequency.assign(value); }
-    inline DescribeAutoPredictorResult& WithForecastFrequency(const Aws::String& value) { SetForecastFrequency(value); return *this;}
-    inline DescribeAutoPredictorResult& WithForecastFrequency(Aws::String&& value) { SetForecastFrequency(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithForecastFrequency(const char* value) { SetForecastFrequency(value); return *this;}
+    inline const Aws::String& GetForecastFrequency() const { return m_forecastFrequency; }
+    template<typename ForecastFrequencyT = Aws::String>
+    void SetForecastFrequency(ForecastFrequencyT&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::forward<ForecastFrequencyT>(value); }
+    template<typename ForecastFrequencyT = Aws::String>
+    DescribeAutoPredictorResult& WithForecastFrequency(ForecastFrequencyT&& value) { SetForecastFrequency(std::forward<ForecastFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +106,13 @@ namespace Model
      * <p>An array of dimension (field) names that specify the attributes used to group
      * your time series.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastDimensions() const{ return m_forecastDimensions; }
-    inline void SetForecastDimensions(const Aws::Vector<Aws::String>& value) { m_forecastDimensions = value; }
-    inline void SetForecastDimensions(Aws::Vector<Aws::String>&& value) { m_forecastDimensions = std::move(value); }
-    inline DescribeAutoPredictorResult& WithForecastDimensions(const Aws::Vector<Aws::String>& value) { SetForecastDimensions(value); return *this;}
-    inline DescribeAutoPredictorResult& WithForecastDimensions(Aws::Vector<Aws::String>&& value) { SetForecastDimensions(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& AddForecastDimensions(const Aws::String& value) { m_forecastDimensions.push_back(value); return *this; }
-    inline DescribeAutoPredictorResult& AddForecastDimensions(Aws::String&& value) { m_forecastDimensions.push_back(std::move(value)); return *this; }
-    inline DescribeAutoPredictorResult& AddForecastDimensions(const char* value) { m_forecastDimensions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetForecastDimensions() const { return m_forecastDimensions; }
+    template<typename ForecastDimensionsT = Aws::Vector<Aws::String>>
+    void SetForecastDimensions(ForecastDimensionsT&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions = std::forward<ForecastDimensionsT>(value); }
+    template<typename ForecastDimensionsT = Aws::Vector<Aws::String>>
+    DescribeAutoPredictorResult& WithForecastDimensions(ForecastDimensionsT&& value) { SetForecastDimensions(std::forward<ForecastDimensionsT>(value)); return *this;}
+    template<typename ForecastDimensionsT = Aws::String>
+    DescribeAutoPredictorResult& AddForecastDimensions(ForecastDimensionsT&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions.emplace_back(std::forward<ForecastDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -128,14 +120,13 @@ namespace Model
      * <p>An array of the ARNs of the dataset import jobs used to import training data
      * for the predictor.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatasetImportJobArns() const{ return m_datasetImportJobArns; }
-    inline void SetDatasetImportJobArns(const Aws::Vector<Aws::String>& value) { m_datasetImportJobArns = value; }
-    inline void SetDatasetImportJobArns(Aws::Vector<Aws::String>&& value) { m_datasetImportJobArns = std::move(value); }
-    inline DescribeAutoPredictorResult& WithDatasetImportJobArns(const Aws::Vector<Aws::String>& value) { SetDatasetImportJobArns(value); return *this;}
-    inline DescribeAutoPredictorResult& WithDatasetImportJobArns(Aws::Vector<Aws::String>&& value) { SetDatasetImportJobArns(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& AddDatasetImportJobArns(const Aws::String& value) { m_datasetImportJobArns.push_back(value); return *this; }
-    inline DescribeAutoPredictorResult& AddDatasetImportJobArns(Aws::String&& value) { m_datasetImportJobArns.push_back(std::move(value)); return *this; }
-    inline DescribeAutoPredictorResult& AddDatasetImportJobArns(const char* value) { m_datasetImportJobArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDatasetImportJobArns() const { return m_datasetImportJobArns; }
+    template<typename DatasetImportJobArnsT = Aws::Vector<Aws::String>>
+    void SetDatasetImportJobArns(DatasetImportJobArnsT&& value) { m_datasetImportJobArnsHasBeenSet = true; m_datasetImportJobArns = std::forward<DatasetImportJobArnsT>(value); }
+    template<typename DatasetImportJobArnsT = Aws::Vector<Aws::String>>
+    DescribeAutoPredictorResult& WithDatasetImportJobArns(DatasetImportJobArnsT&& value) { SetDatasetImportJobArns(std::forward<DatasetImportJobArnsT>(value)); return *this;}
+    template<typename DatasetImportJobArnsT = Aws::String>
+    DescribeAutoPredictorResult& AddDatasetImportJobArns(DatasetImportJobArnsT&& value) { m_datasetImportJobArnsHasBeenSet = true; m_datasetImportJobArns.emplace_back(std::forward<DatasetImportJobArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,20 +134,20 @@ namespace Model
      * <p>The data configuration for your dataset group and any additional
      * datasets.</p>
      */
-    inline const DataConfig& GetDataConfig() const{ return m_dataConfig; }
-    inline void SetDataConfig(const DataConfig& value) { m_dataConfig = value; }
-    inline void SetDataConfig(DataConfig&& value) { m_dataConfig = std::move(value); }
-    inline DescribeAutoPredictorResult& WithDataConfig(const DataConfig& value) { SetDataConfig(value); return *this;}
-    inline DescribeAutoPredictorResult& WithDataConfig(DataConfig&& value) { SetDataConfig(std::move(value)); return *this;}
+    inline const DataConfig& GetDataConfig() const { return m_dataConfig; }
+    template<typename DataConfigT = DataConfig>
+    void SetDataConfig(DataConfigT&& value) { m_dataConfigHasBeenSet = true; m_dataConfig = std::forward<DataConfigT>(value); }
+    template<typename DataConfigT = DataConfig>
+    DescribeAutoPredictorResult& WithDataConfig(DataConfigT&& value) { SetDataConfig(std::forward<DataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
-    inline DescribeAutoPredictorResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline DescribeAutoPredictorResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    DescribeAutoPredictorResult& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,11 +155,11 @@ namespace Model
      * <p>The ARN and state of the reference predictor. This parameter is only valid
      * for retrained or upgraded predictors.</p>
      */
-    inline const ReferencePredictorSummary& GetReferencePredictorSummary() const{ return m_referencePredictorSummary; }
-    inline void SetReferencePredictorSummary(const ReferencePredictorSummary& value) { m_referencePredictorSummary = value; }
-    inline void SetReferencePredictorSummary(ReferencePredictorSummary&& value) { m_referencePredictorSummary = std::move(value); }
-    inline DescribeAutoPredictorResult& WithReferencePredictorSummary(const ReferencePredictorSummary& value) { SetReferencePredictorSummary(value); return *this;}
-    inline DescribeAutoPredictorResult& WithReferencePredictorSummary(ReferencePredictorSummary&& value) { SetReferencePredictorSummary(std::move(value)); return *this;}
+    inline const ReferencePredictorSummary& GetReferencePredictorSummary() const { return m_referencePredictorSummary; }
+    template<typename ReferencePredictorSummaryT = ReferencePredictorSummary>
+    void SetReferencePredictorSummary(ReferencePredictorSummaryT&& value) { m_referencePredictorSummaryHasBeenSet = true; m_referencePredictorSummary = std::forward<ReferencePredictorSummaryT>(value); }
+    template<typename ReferencePredictorSummaryT = ReferencePredictorSummary>
+    DescribeAutoPredictorResult& WithReferencePredictorSummary(ReferencePredictorSummaryT&& value) { SetReferencePredictorSummary(std::forward<ReferencePredictorSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,8 +167,8 @@ namespace Model
      * <p>The estimated time remaining in minutes for the predictor training job to
      * complete.</p>
      */
-    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
-    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+    inline long long GetEstimatedTimeRemainingInMinutes() const { return m_estimatedTimeRemainingInMinutes; }
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutesHasBeenSet = true; m_estimatedTimeRemainingInMinutes = value; }
     inline DescribeAutoPredictorResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
     ///@}
 
@@ -190,37 +181,33 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeAutoPredictorResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeAutoPredictorResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeAutoPredictorResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>In the event of an error, a message detailing the cause of the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeAutoPredictorResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeAutoPredictorResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeAutoPredictorResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the CreateAutoPredictor request.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeAutoPredictorResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeAutoPredictorResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeAutoPredictorResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,33 +220,31 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeAutoPredictorResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeAutoPredictorResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeAutoPredictorResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The accuracy metric used to optimize the predictor.</p>
      */
-    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
-    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetric = value; }
-    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetric = std::move(value); }
-    inline DescribeAutoPredictorResult& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
-    inline DescribeAutoPredictorResult& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+    inline OptimizationMetric GetOptimizationMetric() const { return m_optimizationMetric; }
+    inline void SetOptimizationMetric(OptimizationMetric value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+    inline DescribeAutoPredictorResult& WithOptimizationMetric(OptimizationMetric value) { SetOptimizationMetric(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the status and ARN of the Predictor Explainability.</p>
      */
-    inline const ExplainabilityInfo& GetExplainabilityInfo() const{ return m_explainabilityInfo; }
-    inline void SetExplainabilityInfo(const ExplainabilityInfo& value) { m_explainabilityInfo = value; }
-    inline void SetExplainabilityInfo(ExplainabilityInfo&& value) { m_explainabilityInfo = std::move(value); }
-    inline DescribeAutoPredictorResult& WithExplainabilityInfo(const ExplainabilityInfo& value) { SetExplainabilityInfo(value); return *this;}
-    inline DescribeAutoPredictorResult& WithExplainabilityInfo(ExplainabilityInfo&& value) { SetExplainabilityInfo(std::move(value)); return *this;}
+    inline const ExplainabilityInfo& GetExplainabilityInfo() const { return m_explainabilityInfo; }
+    template<typename ExplainabilityInfoT = ExplainabilityInfo>
+    void SetExplainabilityInfo(ExplainabilityInfoT&& value) { m_explainabilityInfoHasBeenSet = true; m_explainabilityInfo = std::forward<ExplainabilityInfoT>(value); }
+    template<typename ExplainabilityInfoT = ExplainabilityInfo>
+    DescribeAutoPredictorResult& WithExplainabilityInfo(ExplainabilityInfoT&& value) { SetExplainabilityInfo(std::forward<ExplainabilityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,75 +252,93 @@ namespace Model
      * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
      * resource.</p>
      */
-    inline const MonitorInfo& GetMonitorInfo() const{ return m_monitorInfo; }
-    inline void SetMonitorInfo(const MonitorInfo& value) { m_monitorInfo = value; }
-    inline void SetMonitorInfo(MonitorInfo&& value) { m_monitorInfo = std::move(value); }
-    inline DescribeAutoPredictorResult& WithMonitorInfo(const MonitorInfo& value) { SetMonitorInfo(value); return *this;}
-    inline DescribeAutoPredictorResult& WithMonitorInfo(MonitorInfo&& value) { SetMonitorInfo(std::move(value)); return *this;}
+    inline const MonitorInfo& GetMonitorInfo() const { return m_monitorInfo; }
+    template<typename MonitorInfoT = MonitorInfo>
+    void SetMonitorInfo(MonitorInfoT&& value) { m_monitorInfoHasBeenSet = true; m_monitorInfo = std::forward<MonitorInfoT>(value); }
+    template<typename MonitorInfoT = MonitorInfo>
+    DescribeAutoPredictorResult& WithMonitorInfo(MonitorInfoT&& value) { SetMonitorInfo(std::forward<MonitorInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time boundary Forecast uses when aggregating data.</p>
      */
-    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const{ return m_timeAlignmentBoundary; }
-    inline void SetTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { m_timeAlignmentBoundary = value; }
-    inline void SetTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { m_timeAlignmentBoundary = std::move(value); }
-    inline DescribeAutoPredictorResult& WithTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { SetTimeAlignmentBoundary(value); return *this;}
-    inline DescribeAutoPredictorResult& WithTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { SetTimeAlignmentBoundary(std::move(value)); return *this;}
+    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const { return m_timeAlignmentBoundary; }
+    template<typename TimeAlignmentBoundaryT = TimeAlignmentBoundary>
+    void SetTimeAlignmentBoundary(TimeAlignmentBoundaryT&& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = std::forward<TimeAlignmentBoundaryT>(value); }
+    template<typename TimeAlignmentBoundaryT = TimeAlignmentBoundary>
+    DescribeAutoPredictorResult& WithTimeAlignmentBoundary(TimeAlignmentBoundaryT&& value) { SetTimeAlignmentBoundary(std::forward<TimeAlignmentBoundaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAutoPredictorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAutoPredictorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAutoPredictorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAutoPredictorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_predictorArn;
+    bool m_predictorArnHasBeenSet = false;
 
     Aws::String m_predictorName;
+    bool m_predictorNameHasBeenSet = false;
 
-    int m_forecastHorizon;
+    int m_forecastHorizon{0};
+    bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
+    bool m_forecastTypesHasBeenSet = false;
 
     Aws::String m_forecastFrequency;
+    bool m_forecastFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastDimensions;
+    bool m_forecastDimensionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_datasetImportJobArns;
+    bool m_datasetImportJobArnsHasBeenSet = false;
 
     DataConfig m_dataConfig;
+    bool m_dataConfigHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
+    bool m_encryptionConfigHasBeenSet = false;
 
     ReferencePredictorSummary m_referencePredictorSummary;
+    bool m_referencePredictorSummaryHasBeenSet = false;
 
-    long long m_estimatedTimeRemainingInMinutes;
+    long long m_estimatedTimeRemainingInMinutes{0};
+    bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
-    OptimizationMetric m_optimizationMetric;
+    OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
+    bool m_optimizationMetricHasBeenSet = false;
 
     ExplainabilityInfo m_explainabilityInfo;
+    bool m_explainabilityInfoHasBeenSet = false;
 
     MonitorInfo m_monitorInfo;
+    bool m_monitorInfoHasBeenSet = false;
 
     TimeAlignmentBoundary m_timeAlignmentBoundary;
+    bool m_timeAlignmentBoundaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

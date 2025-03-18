@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBlueprintRunsResult::GetBlueprintRunsResult()
-{
-}
-
 GetBlueprintRunsResult::GetBlueprintRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetBlueprintRunsResult& GetBlueprintRunsResult::operator =(const Aws::AmazonWebS
     {
       m_blueprintRuns.push_back(blueprintRunsJsonList[blueprintRunsIndex].AsObject());
     }
+    m_blueprintRunsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

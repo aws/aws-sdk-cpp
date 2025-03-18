@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailAttachment::EmailAttachment() : 
-    m_fileNameHasBeenSet(false),
-    m_s3UrlHasBeenSet(false)
-{
-}
-
 EmailAttachment::EmailAttachment(JsonView jsonValue)
-  : EmailAttachment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailAttachment& EmailAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileName"))
   {
     m_fileName = jsonValue.GetString("FileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   return *this;
 }
 

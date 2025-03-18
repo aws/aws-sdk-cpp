@@ -32,7 +32,7 @@ namespace Model
   class S3InputFormatConfig
   {
   public:
-    AWS_APPFLOW_API S3InputFormatConfig();
+    AWS_APPFLOW_API S3InputFormatConfig() = default;
     AWS_APPFLOW_API S3InputFormatConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API S3InputFormatConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
      */
-    inline const S3InputFileType& GetS3InputFileType() const{ return m_s3InputFileType; }
+    inline S3InputFileType GetS3InputFileType() const { return m_s3InputFileType; }
     inline bool S3InputFileTypeHasBeenSet() const { return m_s3InputFileTypeHasBeenSet; }
-    inline void SetS3InputFileType(const S3InputFileType& value) { m_s3InputFileTypeHasBeenSet = true; m_s3InputFileType = value; }
-    inline void SetS3InputFileType(S3InputFileType&& value) { m_s3InputFileTypeHasBeenSet = true; m_s3InputFileType = std::move(value); }
-    inline S3InputFormatConfig& WithS3InputFileType(const S3InputFileType& value) { SetS3InputFileType(value); return *this;}
-    inline S3InputFormatConfig& WithS3InputFileType(S3InputFileType&& value) { SetS3InputFileType(std::move(value)); return *this;}
+    inline void SetS3InputFileType(S3InputFileType value) { m_s3InputFileTypeHasBeenSet = true; m_s3InputFileType = value; }
+    inline S3InputFormatConfig& WithS3InputFileType(S3InputFileType value) { SetS3InputFileType(value); return *this;}
     ///@}
   private:
 
-    S3InputFileType m_s3InputFileType;
+    S3InputFileType m_s3InputFileType{S3InputFileType::NOT_SET};
     bool m_s3InputFileTypeHasBeenSet = false;
   };
 

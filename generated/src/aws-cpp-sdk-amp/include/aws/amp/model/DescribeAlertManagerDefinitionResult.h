@@ -34,7 +34,7 @@ namespace Model
   class DescribeAlertManagerDefinitionResult
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DescribeAlertManagerDefinitionResult();
+    AWS_PROMETHEUSSERVICE_API DescribeAlertManagerDefinitionResult() = default;
     AWS_PROMETHEUSSERVICE_API DescribeAlertManagerDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROMETHEUSSERVICE_API DescribeAlertManagerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The alert manager definition.</p>
      */
-    inline const AlertManagerDefinitionDescription& GetAlertManagerDefinition() const{ return m_alertManagerDefinition; }
-    inline void SetAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { m_alertManagerDefinition = value; }
-    inline void SetAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { m_alertManagerDefinition = std::move(value); }
-    inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { SetAlertManagerDefinition(value); return *this;}
-    inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { SetAlertManagerDefinition(std::move(value)); return *this;}
+    inline const AlertManagerDefinitionDescription& GetAlertManagerDefinition() const { return m_alertManagerDefinition; }
+    template<typename AlertManagerDefinitionT = AlertManagerDefinitionDescription>
+    void SetAlertManagerDefinition(AlertManagerDefinitionT&& value) { m_alertManagerDefinitionHasBeenSet = true; m_alertManagerDefinition = std::forward<AlertManagerDefinitionT>(value); }
+    template<typename AlertManagerDefinitionT = AlertManagerDefinitionDescription>
+    DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(AlertManagerDefinitionT&& value) { SetAlertManagerDefinition(std::forward<AlertManagerDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAlertManagerDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAlertManagerDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAlertManagerDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAlertManagerDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AlertManagerDefinitionDescription m_alertManagerDefinition;
+    bool m_alertManagerDefinitionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

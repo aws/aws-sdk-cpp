@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EmailConfigurationType::EmailConfigurationType() : 
-    m_sourceArnHasBeenSet(false),
-    m_replyToEmailAddressHasBeenSet(false),
-    m_emailSendingAccount(EmailSendingAccountType::NOT_SET),
-    m_emailSendingAccountHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_configurationSetHasBeenSet(false)
-{
-}
-
 EmailConfigurationType::EmailConfigurationType(JsonView jsonValue)
-  : EmailConfigurationType()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EmailConfigurationType& EmailConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplyToEmailAddress"))
   {
     m_replyToEmailAddress = jsonValue.GetString("ReplyToEmailAddress");
-
     m_replyToEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailSendingAccount"))
   {
     m_emailSendingAccount = EmailSendingAccountTypeMapper::GetEmailSendingAccountTypeForName(jsonValue.GetString("EmailSendingAccount"));
-
     m_emailSendingAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSet"))
   {
     m_configurationSet = jsonValue.GetString("ConfigurationSet");
-
     m_configurationSetHasBeenSet = true;
   }
-
   return *this;
 }
 

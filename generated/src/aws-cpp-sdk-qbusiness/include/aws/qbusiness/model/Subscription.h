@@ -39,7 +39,7 @@ namespace Model
   class Subscription
   {
   public:
-    AWS_QBUSINESS_API Subscription();
+    AWS_QBUSINESS_API Subscription() = default;
     AWS_QBUSINESS_API Subscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q Business subscription to be updated.</p>
      */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+    inline const Aws::String& GetSubscriptionId() const { return m_subscriptionId; }
     inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
-    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
-    inline Subscription& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-    inline Subscription& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-    inline Subscription& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+    template<typename SubscriptionIdT = Aws::String>
+    void SetSubscriptionId(SubscriptionIdT&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::forward<SubscriptionIdT>(value); }
+    template<typename SubscriptionIdT = Aws::String>
+    Subscription& WithSubscriptionId(SubscriptionIdT&& value) { SetSubscriptionId(std::forward<SubscriptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Q Business subscription that was
      * updated.</p>
      */
-    inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+    inline const Aws::String& GetSubscriptionArn() const { return m_subscriptionArn; }
     inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
-    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
-    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
-    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
-    inline Subscription& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-    inline Subscription& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+    template<typename SubscriptionArnT = Aws::String>
+    void SetSubscriptionArn(SubscriptionArnT&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::forward<SubscriptionArnT>(value); }
+    template<typename SubscriptionArnT = Aws::String>
+    Subscription& WithSubscriptionArn(SubscriptionArnT&& value) { SetSubscriptionArn(std::forward<SubscriptionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,36 +76,36 @@ namespace Model
      * or group in the IAM Identity Center instance connected to the Amazon Q Business
      * application.</p>
      */
-    inline const SubscriptionPrincipal& GetPrincipal() const{ return m_principal; }
+    inline const SubscriptionPrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const SubscriptionPrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(SubscriptionPrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline Subscription& WithPrincipal(const SubscriptionPrincipal& value) { SetPrincipal(value); return *this;}
-    inline Subscription& WithPrincipal(SubscriptionPrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = SubscriptionPrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = SubscriptionPrincipal>
+    Subscription& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of your current Amazon Q Business subscription.</p>
      */
-    inline const SubscriptionDetails& GetCurrentSubscription() const{ return m_currentSubscription; }
+    inline const SubscriptionDetails& GetCurrentSubscription() const { return m_currentSubscription; }
     inline bool CurrentSubscriptionHasBeenSet() const { return m_currentSubscriptionHasBeenSet; }
-    inline void SetCurrentSubscription(const SubscriptionDetails& value) { m_currentSubscriptionHasBeenSet = true; m_currentSubscription = value; }
-    inline void SetCurrentSubscription(SubscriptionDetails&& value) { m_currentSubscriptionHasBeenSet = true; m_currentSubscription = std::move(value); }
-    inline Subscription& WithCurrentSubscription(const SubscriptionDetails& value) { SetCurrentSubscription(value); return *this;}
-    inline Subscription& WithCurrentSubscription(SubscriptionDetails&& value) { SetCurrentSubscription(std::move(value)); return *this;}
+    template<typename CurrentSubscriptionT = SubscriptionDetails>
+    void SetCurrentSubscription(CurrentSubscriptionT&& value) { m_currentSubscriptionHasBeenSet = true; m_currentSubscription = std::forward<CurrentSubscriptionT>(value); }
+    template<typename CurrentSubscriptionT = SubscriptionDetails>
+    Subscription& WithCurrentSubscription(CurrentSubscriptionT&& value) { SetCurrentSubscription(std::forward<CurrentSubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the Amazon Q Business subscription for the next month.</p>
      */
-    inline const SubscriptionDetails& GetNextSubscription() const{ return m_nextSubscription; }
+    inline const SubscriptionDetails& GetNextSubscription() const { return m_nextSubscription; }
     inline bool NextSubscriptionHasBeenSet() const { return m_nextSubscriptionHasBeenSet; }
-    inline void SetNextSubscription(const SubscriptionDetails& value) { m_nextSubscriptionHasBeenSet = true; m_nextSubscription = value; }
-    inline void SetNextSubscription(SubscriptionDetails&& value) { m_nextSubscriptionHasBeenSet = true; m_nextSubscription = std::move(value); }
-    inline Subscription& WithNextSubscription(const SubscriptionDetails& value) { SetNextSubscription(value); return *this;}
-    inline Subscription& WithNextSubscription(SubscriptionDetails&& value) { SetNextSubscription(std::move(value)); return *this;}
+    template<typename NextSubscriptionT = SubscriptionDetails>
+    void SetNextSubscription(NextSubscriptionT&& value) { m_nextSubscriptionHasBeenSet = true; m_nextSubscription = std::forward<NextSubscriptionT>(value); }
+    template<typename NextSubscriptionT = SubscriptionDetails>
+    Subscription& WithNextSubscription(NextSubscriptionT&& value) { SetNextSubscription(std::forward<NextSubscriptionT>(value)); return *this;}
     ///@}
   private:
 

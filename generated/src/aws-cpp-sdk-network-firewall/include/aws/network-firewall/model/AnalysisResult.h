@@ -43,7 +43,7 @@ namespace Model
   class AnalysisResult
   {
   public:
-    AWS_NETWORKFIREWALL_API AnalysisResult();
+    AWS_NETWORKFIREWALL_API AnalysisResult() = default;
     AWS_NETWORKFIREWALL_API AnalysisResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API AnalysisResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
     /**
      * <p>The priority number of the stateless rules identified in the analysis.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentifiedRuleIds() const{ return m_identifiedRuleIds; }
+    inline const Aws::Vector<Aws::String>& GetIdentifiedRuleIds() const { return m_identifiedRuleIds; }
     inline bool IdentifiedRuleIdsHasBeenSet() const { return m_identifiedRuleIdsHasBeenSet; }
-    inline void SetIdentifiedRuleIds(const Aws::Vector<Aws::String>& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds = value; }
-    inline void SetIdentifiedRuleIds(Aws::Vector<Aws::String>&& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds = std::move(value); }
-    inline AnalysisResult& WithIdentifiedRuleIds(const Aws::Vector<Aws::String>& value) { SetIdentifiedRuleIds(value); return *this;}
-    inline AnalysisResult& WithIdentifiedRuleIds(Aws::Vector<Aws::String>&& value) { SetIdentifiedRuleIds(std::move(value)); return *this;}
-    inline AnalysisResult& AddIdentifiedRuleIds(const Aws::String& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds.push_back(value); return *this; }
-    inline AnalysisResult& AddIdentifiedRuleIds(Aws::String&& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds.push_back(std::move(value)); return *this; }
-    inline AnalysisResult& AddIdentifiedRuleIds(const char* value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds.push_back(value); return *this; }
+    template<typename IdentifiedRuleIdsT = Aws::Vector<Aws::String>>
+    void SetIdentifiedRuleIds(IdentifiedRuleIdsT&& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds = std::forward<IdentifiedRuleIdsT>(value); }
+    template<typename IdentifiedRuleIdsT = Aws::Vector<Aws::String>>
+    AnalysisResult& WithIdentifiedRuleIds(IdentifiedRuleIdsT&& value) { SetIdentifiedRuleIds(std::forward<IdentifiedRuleIdsT>(value)); return *this;}
+    template<typename IdentifiedRuleIdsT = Aws::String>
+    AnalysisResult& AddIdentifiedRuleIds(IdentifiedRuleIdsT&& value) { m_identifiedRuleIdsHasBeenSet = true; m_identifiedRuleIds.emplace_back(std::forward<IdentifiedRuleIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,33 +86,29 @@ namespace Model
      * for example <code>SYN</code> and <code>ACK</code> flags used in a 3-way TCP
      * handshake.</p> </li> </ul> </li> </ul>
      */
-    inline const IdentifiedType& GetIdentifiedType() const{ return m_identifiedType; }
+    inline IdentifiedType GetIdentifiedType() const { return m_identifiedType; }
     inline bool IdentifiedTypeHasBeenSet() const { return m_identifiedTypeHasBeenSet; }
-    inline void SetIdentifiedType(const IdentifiedType& value) { m_identifiedTypeHasBeenSet = true; m_identifiedType = value; }
-    inline void SetIdentifiedType(IdentifiedType&& value) { m_identifiedTypeHasBeenSet = true; m_identifiedType = std::move(value); }
-    inline AnalysisResult& WithIdentifiedType(const IdentifiedType& value) { SetIdentifiedType(value); return *this;}
-    inline AnalysisResult& WithIdentifiedType(IdentifiedType&& value) { SetIdentifiedType(std::move(value)); return *this;}
+    inline void SetIdentifiedType(IdentifiedType value) { m_identifiedTypeHasBeenSet = true; m_identifiedType = value; }
+    inline AnalysisResult& WithIdentifiedType(IdentifiedType value) { SetIdentifiedType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides analysis details for the identified rule.</p>
      */
-    inline const Aws::String& GetAnalysisDetail() const{ return m_analysisDetail; }
+    inline const Aws::String& GetAnalysisDetail() const { return m_analysisDetail; }
     inline bool AnalysisDetailHasBeenSet() const { return m_analysisDetailHasBeenSet; }
-    inline void SetAnalysisDetail(const Aws::String& value) { m_analysisDetailHasBeenSet = true; m_analysisDetail = value; }
-    inline void SetAnalysisDetail(Aws::String&& value) { m_analysisDetailHasBeenSet = true; m_analysisDetail = std::move(value); }
-    inline void SetAnalysisDetail(const char* value) { m_analysisDetailHasBeenSet = true; m_analysisDetail.assign(value); }
-    inline AnalysisResult& WithAnalysisDetail(const Aws::String& value) { SetAnalysisDetail(value); return *this;}
-    inline AnalysisResult& WithAnalysisDetail(Aws::String&& value) { SetAnalysisDetail(std::move(value)); return *this;}
-    inline AnalysisResult& WithAnalysisDetail(const char* value) { SetAnalysisDetail(value); return *this;}
+    template<typename AnalysisDetailT = Aws::String>
+    void SetAnalysisDetail(AnalysisDetailT&& value) { m_analysisDetailHasBeenSet = true; m_analysisDetail = std::forward<AnalysisDetailT>(value); }
+    template<typename AnalysisDetailT = Aws::String>
+    AnalysisResult& WithAnalysisDetail(AnalysisDetailT&& value) { SetAnalysisDetail(std::forward<AnalysisDetailT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_identifiedRuleIds;
     bool m_identifiedRuleIdsHasBeenSet = false;
 
-    IdentifiedType m_identifiedType;
+    IdentifiedType m_identifiedType{IdentifiedType::NOT_SET};
     bool m_identifiedTypeHasBeenSet = false;
 
     Aws::String m_analysisDetail;

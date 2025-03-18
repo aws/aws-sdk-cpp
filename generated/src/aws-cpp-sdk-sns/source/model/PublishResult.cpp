@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PublishResult::PublishResult()
-{
-}
-
 PublishResult::PublishResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ PublishResult& PublishResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
     if(!messageIdNode.IsNull())
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
+      m_messageIdHasBeenSet = true;
     }
     XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
     if(!sequenceNumberNode.IsNull())
     {
       m_sequenceNumber = Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText());
+      m_sequenceNumberHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::PublishResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

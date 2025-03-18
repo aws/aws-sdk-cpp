@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SubscribeToDatasetResult::SubscribeToDatasetResult()
-{
-}
-
 SubscribeToDatasetResult::SubscribeToDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ SubscribeToDatasetResult& SubscribeToDatasetResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

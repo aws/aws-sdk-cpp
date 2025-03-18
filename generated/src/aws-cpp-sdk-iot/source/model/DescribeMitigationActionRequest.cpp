@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMitigationActionRequest::DescribeMitigationActionRequest() : 
-    m_actionNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMitigationActionRequest::SerializePayload() const
 {
   return {};

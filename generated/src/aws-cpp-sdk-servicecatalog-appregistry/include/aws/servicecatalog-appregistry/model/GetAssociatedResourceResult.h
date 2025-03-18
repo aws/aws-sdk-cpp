@@ -31,7 +31,7 @@ namespace Model
   class GetAssociatedResourceResult
   {
   public:
-    AWS_APPREGISTRY_API GetAssociatedResourceResult();
+    AWS_APPREGISTRY_API GetAssociatedResourceResult() = default;
     AWS_APPREGISTRY_API GetAssociatedResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPREGISTRY_API GetAssociatedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,56 +40,57 @@ namespace Model
     /**
      * <p>The resource associated with the application.</p>
      */
-    inline const Resource& GetResource() const{ return m_resource; }
-    inline void SetResource(const Resource& value) { m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resource = std::move(value); }
-    inline GetAssociatedResourceResult& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline GetAssociatedResourceResult& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    inline const Resource& GetResource() const { return m_resource; }
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    GetAssociatedResourceResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Determines whether an application tag is applied or skipped. </p>
      */
-    inline const Aws::Vector<AssociationOption>& GetOptions() const{ return m_options; }
-    inline void SetOptions(const Aws::Vector<AssociationOption>& value) { m_options = value; }
-    inline void SetOptions(Aws::Vector<AssociationOption>&& value) { m_options = std::move(value); }
-    inline GetAssociatedResourceResult& WithOptions(const Aws::Vector<AssociationOption>& value) { SetOptions(value); return *this;}
-    inline GetAssociatedResourceResult& WithOptions(Aws::Vector<AssociationOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline GetAssociatedResourceResult& AddOptions(const AssociationOption& value) { m_options.push_back(value); return *this; }
-    inline GetAssociatedResourceResult& AddOptions(AssociationOption&& value) { m_options.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociationOption>& GetOptions() const { return m_options; }
+    template<typename OptionsT = Aws::Vector<AssociationOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<AssociationOption>>
+    GetAssociatedResourceResult& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    inline GetAssociatedResourceResult& AddOptions(AssociationOption value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The result of the application that's tag applied to a resource. </p>
      */
-    inline const ApplicationTagResult& GetApplicationTagResult() const{ return m_applicationTagResult; }
-    inline void SetApplicationTagResult(const ApplicationTagResult& value) { m_applicationTagResult = value; }
-    inline void SetApplicationTagResult(ApplicationTagResult&& value) { m_applicationTagResult = std::move(value); }
-    inline GetAssociatedResourceResult& WithApplicationTagResult(const ApplicationTagResult& value) { SetApplicationTagResult(value); return *this;}
-    inline GetAssociatedResourceResult& WithApplicationTagResult(ApplicationTagResult&& value) { SetApplicationTagResult(std::move(value)); return *this;}
+    inline const ApplicationTagResult& GetApplicationTagResult() const { return m_applicationTagResult; }
+    template<typename ApplicationTagResultT = ApplicationTagResult>
+    void SetApplicationTagResult(ApplicationTagResultT&& value) { m_applicationTagResultHasBeenSet = true; m_applicationTagResult = std::forward<ApplicationTagResultT>(value); }
+    template<typename ApplicationTagResultT = ApplicationTagResult>
+    GetAssociatedResourceResult& WithApplicationTagResult(ApplicationTagResultT&& value) { SetApplicationTagResult(std::forward<ApplicationTagResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssociatedResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssociatedResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssociatedResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssociatedResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Resource m_resource;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<AssociationOption> m_options;
+    bool m_optionsHasBeenSet = false;
 
     ApplicationTagResult m_applicationTagResult;
+    bool m_applicationTagResultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-SetupRequest::SetupRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_domainNamesHasBeenSet(false),
-    m_certificateProvider(CertificateProvider::NOT_SET),
-    m_certificateProviderHasBeenSet(false)
-{
-}
-
 SetupRequest::SetupRequest(JsonView jsonValue)
-  : SetupRequest()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ SetupRequest& SetupRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceName"))
   {
     m_instanceName = jsonValue.GetString("instanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNames"))
   {
     Aws::Utils::Array<JsonView> domainNamesJsonList = jsonValue.GetArray("domainNames");
@@ -50,14 +39,11 @@ SetupRequest& SetupRequest::operator =(JsonView jsonValue)
     }
     m_domainNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateProvider"))
   {
     m_certificateProvider = CertificateProviderMapper::GetCertificateProviderForName(jsonValue.GetString("certificateProvider"));
-
     m_certificateProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

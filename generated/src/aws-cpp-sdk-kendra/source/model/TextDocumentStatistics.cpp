@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-TextDocumentStatistics::TextDocumentStatistics() : 
-    m_indexedTextDocumentsCount(0),
-    m_indexedTextDocumentsCountHasBeenSet(false),
-    m_indexedTextBytes(0),
-    m_indexedTextBytesHasBeenSet(false)
-{
-}
-
 TextDocumentStatistics::TextDocumentStatistics(JsonView jsonValue)
-  : TextDocumentStatistics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TextDocumentStatistics& TextDocumentStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IndexedTextDocumentsCount"))
   {
     m_indexedTextDocumentsCount = jsonValue.GetInteger("IndexedTextDocumentsCount");
-
     m_indexedTextDocumentsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexedTextBytes"))
   {
     m_indexedTextBytes = jsonValue.GetInt64("IndexedTextBytes");
-
     m_indexedTextBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

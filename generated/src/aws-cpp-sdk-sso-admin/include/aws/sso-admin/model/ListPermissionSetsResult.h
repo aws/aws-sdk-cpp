@@ -28,7 +28,7 @@ namespace Model
   class ListPermissionSetsResult
   {
   public:
-    AWS_SSOADMIN_API ListPermissionSetsResult();
+    AWS_SSOADMIN_API ListPermissionSetsResult() = default;
     AWS_SSOADMIN_API ListPermissionSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListPermissionSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,44 @@ namespace Model
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPermissionSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPermissionSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPermissionSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPermissionSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the level of access on an Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPermissionSets() const{ return m_permissionSets; }
-    inline void SetPermissionSets(const Aws::Vector<Aws::String>& value) { m_permissionSets = value; }
-    inline void SetPermissionSets(Aws::Vector<Aws::String>&& value) { m_permissionSets = std::move(value); }
-    inline ListPermissionSetsResult& WithPermissionSets(const Aws::Vector<Aws::String>& value) { SetPermissionSets(value); return *this;}
-    inline ListPermissionSetsResult& WithPermissionSets(Aws::Vector<Aws::String>&& value) { SetPermissionSets(std::move(value)); return *this;}
-    inline ListPermissionSetsResult& AddPermissionSets(const Aws::String& value) { m_permissionSets.push_back(value); return *this; }
-    inline ListPermissionSetsResult& AddPermissionSets(Aws::String&& value) { m_permissionSets.push_back(std::move(value)); return *this; }
-    inline ListPermissionSetsResult& AddPermissionSets(const char* value) { m_permissionSets.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPermissionSets() const { return m_permissionSets; }
+    template<typename PermissionSetsT = Aws::Vector<Aws::String>>
+    void SetPermissionSets(PermissionSetsT&& value) { m_permissionSetsHasBeenSet = true; m_permissionSets = std::forward<PermissionSetsT>(value); }
+    template<typename PermissionSetsT = Aws::Vector<Aws::String>>
+    ListPermissionSetsResult& WithPermissionSets(PermissionSetsT&& value) { SetPermissionSets(std::forward<PermissionSetsT>(value)); return *this;}
+    template<typename PermissionSetsT = Aws::String>
+    ListPermissionSetsResult& AddPermissionSets(PermissionSetsT&& value) { m_permissionSetsHasBeenSet = true; m_permissionSets.emplace_back(std::forward<PermissionSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPermissionSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPermissionSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPermissionSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPermissionSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permissionSets;
+    bool m_permissionSetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

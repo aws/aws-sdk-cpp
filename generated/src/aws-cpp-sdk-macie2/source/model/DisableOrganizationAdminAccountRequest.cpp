@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisableOrganizationAdminAccountRequest::DisableOrganizationAdminAccountRequest() : 
-    m_adminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableOrganizationAdminAccountRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RemoteDebugConfigForUpdate::RemoteDebugConfigForUpdate() : 
-    m_enableRemoteDebug(false),
-    m_enableRemoteDebugHasBeenSet(false)
-{
-}
-
 RemoteDebugConfigForUpdate::RemoteDebugConfigForUpdate(JsonView jsonValue)
-  : RemoteDebugConfigForUpdate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RemoteDebugConfigForUpdate& RemoteDebugConfigForUpdate::operator =(JsonView json
   if(jsonValue.ValueExists("EnableRemoteDebug"))
   {
     m_enableRemoteDebug = jsonValue.GetBool("EnableRemoteDebug");
-
     m_enableRemoteDebugHasBeenSet = true;
   }
-
   return *this;
 }
 

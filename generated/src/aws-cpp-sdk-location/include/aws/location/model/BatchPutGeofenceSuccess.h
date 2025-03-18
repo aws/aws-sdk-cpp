@@ -33,7 +33,7 @@ namespace Model
   class BatchPutGeofenceSuccess
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess() = default;
     AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The geofence successfully stored in a geofence collection.</p>
      */
-    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
+    inline const Aws::String& GetGeofenceId() const { return m_geofenceId; }
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-    inline BatchPutGeofenceSuccess& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-    inline BatchPutGeofenceSuccess& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-    inline BatchPutGeofenceSuccess& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    template<typename GeofenceIdT = Aws::String>
+    void SetGeofenceId(GeofenceIdT&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::forward<GeofenceIdT>(value); }
+    template<typename GeofenceIdT = Aws::String>
+    BatchPutGeofenceSuccess& WithGeofenceId(GeofenceIdT&& value) { SetGeofenceId(std::forward<GeofenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline BatchPutGeofenceSuccess& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline BatchPutGeofenceSuccess& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    BatchPutGeofenceSuccess& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +71,22 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline BatchPutGeofenceSuccess& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline BatchPutGeofenceSuccess& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    BatchPutGeofenceSuccess& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_geofenceId;
     bool m_geofenceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ExportFormsResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ExportFormsResult();
+    AWS_AMPLIFYUIBUILDER_API ExportFormsResult() = default;
     AWS_AMPLIFYUIBUILDER_API ExportFormsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API ExportFormsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Represents the configuration of the exported forms.</p>
      */
-    inline const Aws::Vector<Form>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<Form>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<Form>&& value) { m_entities = std::move(value); }
-    inline ExportFormsResult& WithEntities(const Aws::Vector<Form>& value) { SetEntities(value); return *this;}
-    inline ExportFormsResult& WithEntities(Aws::Vector<Form>&& value) { SetEntities(std::move(value)); return *this;}
-    inline ExportFormsResult& AddEntities(const Form& value) { m_entities.push_back(value); return *this; }
-    inline ExportFormsResult& AddEntities(Form&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Form>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<Form>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<Form>>
+    ExportFormsResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = Form>
+    ExportFormsResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ExportFormsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ExportFormsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ExportFormsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ExportFormsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportFormsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportFormsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportFormsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportFormsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Form> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

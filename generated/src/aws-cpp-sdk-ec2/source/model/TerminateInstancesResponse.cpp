@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TerminateInstancesResponse::TerminateInstancesResponse()
-{
-}
-
 TerminateInstancesResponse::TerminateInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ TerminateInstancesResponse& TerminateInstancesResponse::operator =(const Aws::Am
     if(!terminatingInstancesNode.IsNull())
     {
       XmlNode terminatingInstancesMember = terminatingInstancesNode.FirstChild("item");
+      m_terminatingInstancesHasBeenSet = !terminatingInstancesMember.IsNull();
       while(!terminatingInstancesMember.IsNull())
       {
         m_terminatingInstances.push_back(terminatingInstancesMember);
         terminatingInstancesMember = terminatingInstancesMember.NextNode("item");
       }
 
+      m_terminatingInstancesHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ TerminateInstancesResponse& TerminateInstancesResponse::operator =(const Aws::Am
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::TerminateInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

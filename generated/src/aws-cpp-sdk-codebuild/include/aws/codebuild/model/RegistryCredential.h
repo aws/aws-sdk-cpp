@@ -39,7 +39,7 @@ namespace Model
   class RegistryCredential
   {
   public:
-    AWS_CODEBUILD_API RegistryCredential();
+    AWS_CODEBUILD_API RegistryCredential() = default;
     AWS_CODEBUILD_API RegistryCredential(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API RegistryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * credentials only if they exist in your current Amazon Web Services Region. </p>
      * 
      */
-    inline const Aws::String& GetCredential() const{ return m_credential; }
+    inline const Aws::String& GetCredential() const { return m_credential; }
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
-    inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
-    inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
-    inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
-    inline RegistryCredential& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
-    inline RegistryCredential& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
-    inline RegistryCredential& WithCredential(const char* value) { SetCredential(value); return *this;}
+    template<typename CredentialT = Aws::String>
+    void SetCredential(CredentialT&& value) { m_credentialHasBeenSet = true; m_credential = std::forward<CredentialT>(value); }
+    template<typename CredentialT = Aws::String>
+    RegistryCredential& WithCredential(CredentialT&& value) { SetCredential(std::forward<CredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,17 @@ namespace Model
      * <p> The service that created the credentials to access a private Docker
      * registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
      */
-    inline const CredentialProviderType& GetCredentialProvider() const{ return m_credentialProvider; }
+    inline CredentialProviderType GetCredentialProvider() const { return m_credentialProvider; }
     inline bool CredentialProviderHasBeenSet() const { return m_credentialProviderHasBeenSet; }
-    inline void SetCredentialProvider(const CredentialProviderType& value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = value; }
-    inline void SetCredentialProvider(CredentialProviderType&& value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = std::move(value); }
-    inline RegistryCredential& WithCredentialProvider(const CredentialProviderType& value) { SetCredentialProvider(value); return *this;}
-    inline RegistryCredential& WithCredentialProvider(CredentialProviderType&& value) { SetCredentialProvider(std::move(value)); return *this;}
+    inline void SetCredentialProvider(CredentialProviderType value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = value; }
+    inline RegistryCredential& WithCredentialProvider(CredentialProviderType value) { SetCredentialProvider(value); return *this;}
     ///@}
   private:
 
     Aws::String m_credential;
     bool m_credentialHasBeenSet = false;
 
-    CredentialProviderType m_credentialProvider;
+    CredentialProviderType m_credentialProvider{CredentialProviderType::NOT_SET};
     bool m_credentialProviderHasBeenSet = false;
   };
 

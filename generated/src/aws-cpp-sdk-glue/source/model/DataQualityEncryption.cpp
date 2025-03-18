@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityEncryption::DataQualityEncryption() : 
-    m_dataQualityEncryptionMode(DataQualityEncryptionMode::NOT_SET),
-    m_dataQualityEncryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 DataQualityEncryption::DataQualityEncryption(JsonView jsonValue)
-  : DataQualityEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataQualityEncryption& DataQualityEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataQualityEncryptionMode"))
   {
     m_dataQualityEncryptionMode = DataQualityEncryptionModeMapper::GetDataQualityEncryptionModeForName(jsonValue.GetString("DataQualityEncryptionMode"));
-
     m_dataQualityEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

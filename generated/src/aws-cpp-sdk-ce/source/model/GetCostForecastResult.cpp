@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCostForecastResult::GetCostForecastResult()
-{
-}
-
 GetCostForecastResult::GetCostForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetCostForecastResult& GetCostForecastResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
+    m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastResultsByTime"))
   {
     Aws::Utils::Array<JsonView> forecastResultsByTimeJsonList = jsonValue.GetArray("ForecastResultsByTime");
@@ -42,14 +37,15 @@ GetCostForecastResult& GetCostForecastResult::operator =(const Aws::AmazonWebSer
     {
       m_forecastResultsByTime.push_back(forecastResultsByTimeJsonList[forecastResultsByTimeIndex].AsObject());
     }
+    m_forecastResultsByTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

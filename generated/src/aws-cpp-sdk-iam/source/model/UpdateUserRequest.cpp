@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_newPathHasBeenSet(false),
-    m_newUserNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

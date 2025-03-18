@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SemtechGnssConfiguration::SemtechGnssConfiguration() : 
-    m_status(PositionConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fec(PositionConfigurationFec::NOT_SET),
-    m_fecHasBeenSet(false)
-{
-}
-
 SemtechGnssConfiguration::SemtechGnssConfiguration(JsonView jsonValue)
-  : SemtechGnssConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SemtechGnssConfiguration& SemtechGnssConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PositionConfigurationStatusMapper::GetPositionConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fec"))
   {
     m_fec = PositionConfigurationFecMapper::GetPositionConfigurationFecForName(jsonValue.GetString("Fec"));
-
     m_fecHasBeenSet = true;
   }
-
   return *this;
 }
 

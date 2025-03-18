@@ -32,7 +32,7 @@ namespace Model
   class CancelledChangeProperty
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API CancelledChangeProperty();
+    AWS_ELASTICSEARCHSERVICE_API CancelledChangeProperty() = default;
     AWS_ELASTICSEARCHSERVICE_API CancelledChangeProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API CancelledChangeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the property whose change was cancelled.</p>
      */
-    inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
+    inline const Aws::String& GetPropertyName() const { return m_propertyName; }
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-    inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-    inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-    inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-    inline CancelledChangeProperty& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-    inline CancelledChangeProperty& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-    inline CancelledChangeProperty& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
+    template<typename PropertyNameT = Aws::String>
+    void SetPropertyName(PropertyNameT&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::forward<PropertyNameT>(value); }
+    template<typename PropertyNameT = Aws::String>
+    CancelledChangeProperty& WithPropertyName(PropertyNameT&& value) { SetPropertyName(std::forward<PropertyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The pending value of the property that was cancelled. This would have been
      * the eventual value of the property if the chance had not been cancelled.</p>
      */
-    inline const Aws::String& GetCancelledValue() const{ return m_cancelledValue; }
+    inline const Aws::String& GetCancelledValue() const { return m_cancelledValue; }
     inline bool CancelledValueHasBeenSet() const { return m_cancelledValueHasBeenSet; }
-    inline void SetCancelledValue(const Aws::String& value) { m_cancelledValueHasBeenSet = true; m_cancelledValue = value; }
-    inline void SetCancelledValue(Aws::String&& value) { m_cancelledValueHasBeenSet = true; m_cancelledValue = std::move(value); }
-    inline void SetCancelledValue(const char* value) { m_cancelledValueHasBeenSet = true; m_cancelledValue.assign(value); }
-    inline CancelledChangeProperty& WithCancelledValue(const Aws::String& value) { SetCancelledValue(value); return *this;}
-    inline CancelledChangeProperty& WithCancelledValue(Aws::String&& value) { SetCancelledValue(std::move(value)); return *this;}
-    inline CancelledChangeProperty& WithCancelledValue(const char* value) { SetCancelledValue(value); return *this;}
+    template<typename CancelledValueT = Aws::String>
+    void SetCancelledValue(CancelledValueT&& value) { m_cancelledValueHasBeenSet = true; m_cancelledValue = std::forward<CancelledValueT>(value); }
+    template<typename CancelledValueT = Aws::String>
+    CancelledChangeProperty& WithCancelledValue(CancelledValueT&& value) { SetCancelledValue(std::forward<CancelledValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current value of the property, after the change was cancelled.</p>
      */
-    inline const Aws::String& GetActiveValue() const{ return m_activeValue; }
+    inline const Aws::String& GetActiveValue() const { return m_activeValue; }
     inline bool ActiveValueHasBeenSet() const { return m_activeValueHasBeenSet; }
-    inline void SetActiveValue(const Aws::String& value) { m_activeValueHasBeenSet = true; m_activeValue = value; }
-    inline void SetActiveValue(Aws::String&& value) { m_activeValueHasBeenSet = true; m_activeValue = std::move(value); }
-    inline void SetActiveValue(const char* value) { m_activeValueHasBeenSet = true; m_activeValue.assign(value); }
-    inline CancelledChangeProperty& WithActiveValue(const Aws::String& value) { SetActiveValue(value); return *this;}
-    inline CancelledChangeProperty& WithActiveValue(Aws::String&& value) { SetActiveValue(std::move(value)); return *this;}
-    inline CancelledChangeProperty& WithActiveValue(const char* value) { SetActiveValue(value); return *this;}
+    template<typename ActiveValueT = Aws::String>
+    void SetActiveValue(ActiveValueT&& value) { m_activeValueHasBeenSet = true; m_activeValue = std::forward<ActiveValueT>(value); }
+    template<typename ActiveValueT = Aws::String>
+    CancelledChangeProperty& WithActiveValue(ActiveValueT&& value) { SetActiveValue(std::forward<ActiveValueT>(value)); return *this;}
     ///@}
   private:
 

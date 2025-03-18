@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteBlueprintRequest::DeleteBlueprintRequest() : 
-    m_blueprintArnHasBeenSet(false),
-    m_blueprintVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBlueprintRequest::SerializePayload() const
 {
   return {};

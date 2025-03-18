@@ -26,7 +26,7 @@ namespace Model
   class StartJobRunRequest : public EMRContainersRequest
   {
   public:
-    AWS_EMRCONTAINERS_API StartJobRunRequest();
+    AWS_EMRCONTAINERS_API StartJobRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,158 +41,140 @@ namespace Model
     /**
      * <p>The name of the job run.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartJobRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartJobRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartJobRunRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The virtual cluster ID for which the job run request is submitted.</p>
      */
-    inline const Aws::String& GetVirtualClusterId() const{ return m_virtualClusterId; }
+    inline const Aws::String& GetVirtualClusterId() const { return m_virtualClusterId; }
     inline bool VirtualClusterIdHasBeenSet() const { return m_virtualClusterIdHasBeenSet; }
-    inline void SetVirtualClusterId(const Aws::String& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = value; }
-    inline void SetVirtualClusterId(Aws::String&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::move(value); }
-    inline void SetVirtualClusterId(const char* value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId.assign(value); }
-    inline StartJobRunRequest& WithVirtualClusterId(const Aws::String& value) { SetVirtualClusterId(value); return *this;}
-    inline StartJobRunRequest& WithVirtualClusterId(Aws::String&& value) { SetVirtualClusterId(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithVirtualClusterId(const char* value) { SetVirtualClusterId(value); return *this;}
+    template<typename VirtualClusterIdT = Aws::String>
+    void SetVirtualClusterId(VirtualClusterIdT&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::forward<VirtualClusterIdT>(value); }
+    template<typename VirtualClusterIdT = Aws::String>
+    StartJobRunRequest& WithVirtualClusterId(VirtualClusterIdT&& value) { SetVirtualClusterId(std::forward<VirtualClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client idempotency token of the job run request. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartJobRunRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartJobRunRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartJobRunRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution role ARN for the job run.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline StartJobRunRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline StartJobRunRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    StartJobRunRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EMR release version to use for the job run.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
-    inline StartJobRunRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline StartJobRunRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    StartJobRunRequest& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job driver for the job run.</p>
      */
-    inline const JobDriver& GetJobDriver() const{ return m_jobDriver; }
+    inline const JobDriver& GetJobDriver() const { return m_jobDriver; }
     inline bool JobDriverHasBeenSet() const { return m_jobDriverHasBeenSet; }
-    inline void SetJobDriver(const JobDriver& value) { m_jobDriverHasBeenSet = true; m_jobDriver = value; }
-    inline void SetJobDriver(JobDriver&& value) { m_jobDriverHasBeenSet = true; m_jobDriver = std::move(value); }
-    inline StartJobRunRequest& WithJobDriver(const JobDriver& value) { SetJobDriver(value); return *this;}
-    inline StartJobRunRequest& WithJobDriver(JobDriver&& value) { SetJobDriver(std::move(value)); return *this;}
+    template<typename JobDriverT = JobDriver>
+    void SetJobDriver(JobDriverT&& value) { m_jobDriverHasBeenSet = true; m_jobDriver = std::forward<JobDriverT>(value); }
+    template<typename JobDriverT = JobDriver>
+    StartJobRunRequest& WithJobDriver(JobDriverT&& value) { SetJobDriver(std::forward<JobDriverT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration overrides for the job run.</p>
      */
-    inline const ConfigurationOverrides& GetConfigurationOverrides() const{ return m_configurationOverrides; }
+    inline const ConfigurationOverrides& GetConfigurationOverrides() const { return m_configurationOverrides; }
     inline bool ConfigurationOverridesHasBeenSet() const { return m_configurationOverridesHasBeenSet; }
-    inline void SetConfigurationOverrides(const ConfigurationOverrides& value) { m_configurationOverridesHasBeenSet = true; m_configurationOverrides = value; }
-    inline void SetConfigurationOverrides(ConfigurationOverrides&& value) { m_configurationOverridesHasBeenSet = true; m_configurationOverrides = std::move(value); }
-    inline StartJobRunRequest& WithConfigurationOverrides(const ConfigurationOverrides& value) { SetConfigurationOverrides(value); return *this;}
-    inline StartJobRunRequest& WithConfigurationOverrides(ConfigurationOverrides&& value) { SetConfigurationOverrides(std::move(value)); return *this;}
+    template<typename ConfigurationOverridesT = ConfigurationOverrides>
+    void SetConfigurationOverrides(ConfigurationOverridesT&& value) { m_configurationOverridesHasBeenSet = true; m_configurationOverrides = std::forward<ConfigurationOverridesT>(value); }
+    template<typename ConfigurationOverridesT = ConfigurationOverrides>
+    StartJobRunRequest& WithConfigurationOverrides(ConfigurationOverridesT&& value) { SetConfigurationOverrides(std::forward<ConfigurationOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to job runs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartJobRunRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartJobRunRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartJobRunRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartJobRunRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartJobRunRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartJobRunRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartJobRunRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The job template ID to be used to start the job run.</p>
      */
-    inline const Aws::String& GetJobTemplateId() const{ return m_jobTemplateId; }
+    inline const Aws::String& GetJobTemplateId() const { return m_jobTemplateId; }
     inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
-    inline void SetJobTemplateId(const Aws::String& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = value; }
-    inline void SetJobTemplateId(Aws::String&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::move(value); }
-    inline void SetJobTemplateId(const char* value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId.assign(value); }
-    inline StartJobRunRequest& WithJobTemplateId(const Aws::String& value) { SetJobTemplateId(value); return *this;}
-    inline StartJobRunRequest& WithJobTemplateId(Aws::String&& value) { SetJobTemplateId(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithJobTemplateId(const char* value) { SetJobTemplateId(value); return *this;}
+    template<typename JobTemplateIdT = Aws::String>
+    void SetJobTemplateId(JobTemplateIdT&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::forward<JobTemplateIdT>(value); }
+    template<typename JobTemplateIdT = Aws::String>
+    StartJobRunRequest& WithJobTemplateId(JobTemplateIdT&& value) { SetJobTemplateId(std::forward<JobTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values of job template parameters to start a job run.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetJobTemplateParameters() const{ return m_jobTemplateParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetJobTemplateParameters() const { return m_jobTemplateParameters; }
     inline bool JobTemplateParametersHasBeenSet() const { return m_jobTemplateParametersHasBeenSet; }
-    inline void SetJobTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters = value; }
-    inline void SetJobTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters = std::move(value); }
-    inline StartJobRunRequest& WithJobTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetJobTemplateParameters(value); return *this;}
-    inline StartJobRunRequest& WithJobTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetJobTemplateParameters(std::move(value)); return *this;}
-    inline StartJobRunRequest& AddJobTemplateParameters(const Aws::String& key, const Aws::String& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, value); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, const Aws::String& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(const Aws::String& key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(const char* key, Aws::String&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(Aws::String&& key, const char* value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddJobTemplateParameters(const char* key, const char* value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(key, value); return *this; }
+    template<typename JobTemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetJobTemplateParameters(JobTemplateParametersT&& value) { m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters = std::forward<JobTemplateParametersT>(value); }
+    template<typename JobTemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    StartJobRunRequest& WithJobTemplateParameters(JobTemplateParametersT&& value) { SetJobTemplateParameters(std::forward<JobTemplateParametersT>(value)); return *this;}
+    template<typename JobTemplateParametersKeyT = Aws::String, typename JobTemplateParametersValueT = Aws::String>
+    StartJobRunRequest& AddJobTemplateParameters(JobTemplateParametersKeyT&& key, JobTemplateParametersValueT&& value) {
+      m_jobTemplateParametersHasBeenSet = true; m_jobTemplateParameters.emplace(std::forward<JobTemplateParametersKeyT>(key), std::forward<JobTemplateParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The retry policy configuration for the job run.</p>
      */
-    inline const RetryPolicyConfiguration& GetRetryPolicyConfiguration() const{ return m_retryPolicyConfiguration; }
+    inline const RetryPolicyConfiguration& GetRetryPolicyConfiguration() const { return m_retryPolicyConfiguration; }
     inline bool RetryPolicyConfigurationHasBeenSet() const { return m_retryPolicyConfigurationHasBeenSet; }
-    inline void SetRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = value; }
-    inline void SetRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = std::move(value); }
-    inline StartJobRunRequest& WithRetryPolicyConfiguration(const RetryPolicyConfiguration& value) { SetRetryPolicyConfiguration(value); return *this;}
-    inline StartJobRunRequest& WithRetryPolicyConfiguration(RetryPolicyConfiguration&& value) { SetRetryPolicyConfiguration(std::move(value)); return *this;}
+    template<typename RetryPolicyConfigurationT = RetryPolicyConfiguration>
+    void SetRetryPolicyConfiguration(RetryPolicyConfigurationT&& value) { m_retryPolicyConfigurationHasBeenSet = true; m_retryPolicyConfiguration = std::forward<RetryPolicyConfigurationT>(value); }
+    template<typename RetryPolicyConfigurationT = RetryPolicyConfiguration>
+    StartJobRunRequest& WithRetryPolicyConfiguration(RetryPolicyConfigurationT&& value) { SetRetryPolicyConfiguration(std::forward<RetryPolicyConfigurationT>(value)); return *this;}
     ///@}
   private:
 

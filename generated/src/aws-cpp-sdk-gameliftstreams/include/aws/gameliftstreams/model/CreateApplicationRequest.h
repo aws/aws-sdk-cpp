@@ -25,7 +25,7 @@ namespace Model
   class CreateApplicationRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API CreateApplicationRequest();
+    AWS_GAMELIFTSTREAMS_API CreateApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer
      * Guide. </p> 
      */
-    inline const Aws::String& GetApplicationLogOutputUri() const{ return m_applicationLogOutputUri; }
+    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
     inline bool ApplicationLogOutputUriHasBeenSet() const { return m_applicationLogOutputUriHasBeenSet; }
-    inline void SetApplicationLogOutputUri(const Aws::String& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = value; }
-    inline void SetApplicationLogOutputUri(Aws::String&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::move(value); }
-    inline void SetApplicationLogOutputUri(const char* value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri.assign(value); }
-    inline CreateApplicationRequest& WithApplicationLogOutputUri(const Aws::String& value) { SetApplicationLogOutputUri(value); return *this;}
-    inline CreateApplicationRequest& WithApplicationLogOutputUri(Aws::String&& value) { SetApplicationLogOutputUri(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithApplicationLogOutputUri(const char* value) { SetApplicationLogOutputUri(value); return *this;}
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    CreateApplicationRequest& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +64,14 @@ namespace Model
      * stored log files, call <a>GetStreamSession</a> and get the
      * <code>LogFileLocationUri</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const{ return m_applicationLogPaths; }
+    inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const { return m_applicationLogPaths; }
     inline bool ApplicationLogPathsHasBeenSet() const { return m_applicationLogPathsHasBeenSet; }
-    inline void SetApplicationLogPaths(const Aws::Vector<Aws::String>& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths = value; }
-    inline void SetApplicationLogPaths(Aws::Vector<Aws::String>&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths = std::move(value); }
-    inline CreateApplicationRequest& WithApplicationLogPaths(const Aws::Vector<Aws::String>& value) { SetApplicationLogPaths(value); return *this;}
-    inline CreateApplicationRequest& WithApplicationLogPaths(Aws::Vector<Aws::String>&& value) { SetApplicationLogPaths(std::move(value)); return *this;}
-    inline CreateApplicationRequest& AddApplicationLogPaths(const Aws::String& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths.push_back(value); return *this; }
-    inline CreateApplicationRequest& AddApplicationLogPaths(Aws::String&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths.push_back(std::move(value)); return *this; }
-    inline CreateApplicationRequest& AddApplicationLogPaths(const char* value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths.push_back(value); return *this; }
+    template<typename ApplicationLogPathsT = Aws::Vector<Aws::String>>
+    void SetApplicationLogPaths(ApplicationLogPathsT&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths = std::forward<ApplicationLogPathsT>(value); }
+    template<typename ApplicationLogPathsT = Aws::Vector<Aws::String>>
+    CreateApplicationRequest& WithApplicationLogPaths(ApplicationLogPathsT&& value) { SetApplicationLogPaths(std::forward<ApplicationLogPathsT>(value)); return *this;}
+    template<typename ApplicationLogPathsT = Aws::String>
+    CreateApplicationRequest& AddApplicationLogPaths(ApplicationLogPathsT&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths.emplace_back(std::forward<ApplicationLogPathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,14 +86,12 @@ namespace Model
      * Amazon GameLift Streams application must be in the same Amazon Web Services
      * Region.</p> 
      */
-    inline const Aws::String& GetApplicationSourceUri() const{ return m_applicationSourceUri; }
+    inline const Aws::String& GetApplicationSourceUri() const { return m_applicationSourceUri; }
     inline bool ApplicationSourceUriHasBeenSet() const { return m_applicationSourceUriHasBeenSet; }
-    inline void SetApplicationSourceUri(const Aws::String& value) { m_applicationSourceUriHasBeenSet = true; m_applicationSourceUri = value; }
-    inline void SetApplicationSourceUri(Aws::String&& value) { m_applicationSourceUriHasBeenSet = true; m_applicationSourceUri = std::move(value); }
-    inline void SetApplicationSourceUri(const char* value) { m_applicationSourceUriHasBeenSet = true; m_applicationSourceUri.assign(value); }
-    inline CreateApplicationRequest& WithApplicationSourceUri(const Aws::String& value) { SetApplicationSourceUri(value); return *this;}
-    inline CreateApplicationRequest& WithApplicationSourceUri(Aws::String&& value) { SetApplicationSourceUri(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithApplicationSourceUri(const char* value) { SetApplicationSourceUri(value); return *this;}
+    template<typename ApplicationSourceUriT = Aws::String>
+    void SetApplicationSourceUri(ApplicationSourceUriT&& value) { m_applicationSourceUriHasBeenSet = true; m_applicationSourceUri = std::forward<ApplicationSourceUriT>(value); }
+    template<typename ApplicationSourceUriT = Aws::String>
+    CreateApplicationRequest& WithApplicationSourceUri(ApplicationSourceUriT&& value) { SetApplicationSourceUri(std::forward<ApplicationSourceUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +100,12 @@ namespace Model
      * idempotent, which ensures that an API request completes only once. When users
      * send a request, Amazon GameLift Streams automatically populates this field. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateApplicationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateApplicationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateApplicationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +113,12 @@ namespace Model
      * <p>A human-readable label for the application. You can update this value
      * later.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateApplicationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +127,12 @@ namespace Model
      * streaming. Enter a path value that is relative to the location set in
      * <code>ApplicationSourceUri</code>.</p>
      */
-    inline const Aws::String& GetExecutablePath() const{ return m_executablePath; }
+    inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
     inline bool ExecutablePathHasBeenSet() const { return m_executablePathHasBeenSet; }
-    inline void SetExecutablePath(const Aws::String& value) { m_executablePathHasBeenSet = true; m_executablePath = value; }
-    inline void SetExecutablePath(Aws::String&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::move(value); }
-    inline void SetExecutablePath(const char* value) { m_executablePathHasBeenSet = true; m_executablePath.assign(value); }
-    inline CreateApplicationRequest& WithExecutablePath(const Aws::String& value) { SetExecutablePath(value); return *this;}
-    inline CreateApplicationRequest& WithExecutablePath(Aws::String&& value) { SetExecutablePath(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithExecutablePath(const char* value) { SetExecutablePath(value); return *this;}
+    template<typename ExecutablePathT = Aws::String>
+    void SetExecutablePath(ExecutablePathT&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::forward<ExecutablePathT>(value); }
+    template<typename ExecutablePathT = Aws::String>
+    CreateApplicationRequest& WithExecutablePath(ExecutablePathT&& value) { SetExecutablePath(std::forward<ExecutablePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +147,12 @@ namespace Model
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
      */
-    inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
+    inline const RuntimeEnvironment& GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
-    inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
-    inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
-    inline CreateApplicationRequest& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
-    inline CreateApplicationRequest& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    void SetRuntimeEnvironment(RuntimeEnvironmentT&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::forward<RuntimeEnvironmentT>(value); }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    CreateApplicationRequest& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,19 +167,16 @@ namespace Model
      * resources. The maximum tag limit might be lower than stated. See the <i>Amazon
      * Web Services General Reference</i> for actual tagging limits.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateApplicationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateApplicationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateApplicationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateApplicationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateApplicationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateApplicationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateApplicationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateApplicationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateApplicationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateApplicationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateApplicationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

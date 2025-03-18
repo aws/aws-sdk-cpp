@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-Intent::Intent() : 
-    m_intentNameHasBeenSet(false),
-    m_intentVersionHasBeenSet(false)
-{
-}
-
 Intent::Intent(JsonView jsonValue)
-  : Intent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Intent& Intent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentVersion"))
   {
     m_intentVersion = jsonValue.GetString("intentVersion");
-
     m_intentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

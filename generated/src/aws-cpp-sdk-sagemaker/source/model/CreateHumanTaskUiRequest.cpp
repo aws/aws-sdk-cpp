@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHumanTaskUiRequest::CreateHumanTaskUiRequest() : 
-    m_humanTaskUiNameHasBeenSet(false),
-    m_uiTemplateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateHumanTaskUiRequest::SerializePayload() const
 {
   JsonValue payload;

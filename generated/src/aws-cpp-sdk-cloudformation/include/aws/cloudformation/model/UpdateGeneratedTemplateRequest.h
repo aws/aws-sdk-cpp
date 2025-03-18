@@ -24,7 +24,7 @@ namespace Model
   class UpdateGeneratedTemplateRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API UpdateGeneratedTemplateRequest();
+    AWS_CLOUDFORMATION_API UpdateGeneratedTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
      */
-    inline const Aws::String& GetGeneratedTemplateName() const{ return m_generatedTemplateName; }
+    inline const Aws::String& GetGeneratedTemplateName() const { return m_generatedTemplateName; }
     inline bool GeneratedTemplateNameHasBeenSet() const { return m_generatedTemplateNameHasBeenSet; }
-    inline void SetGeneratedTemplateName(const Aws::String& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = value; }
-    inline void SetGeneratedTemplateName(Aws::String&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::move(value); }
-    inline void SetGeneratedTemplateName(const char* value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName.assign(value); }
-    inline UpdateGeneratedTemplateRequest& WithGeneratedTemplateName(const Aws::String& value) { SetGeneratedTemplateName(value); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithGeneratedTemplateName(Aws::String&& value) { SetGeneratedTemplateName(std::move(value)); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithGeneratedTemplateName(const char* value) { SetGeneratedTemplateName(value); return *this;}
+    template<typename GeneratedTemplateNameT = Aws::String>
+    void SetGeneratedTemplateName(GeneratedTemplateNameT&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::forward<GeneratedTemplateNameT>(value); }
+    template<typename GeneratedTemplateNameT = Aws::String>
+    UpdateGeneratedTemplateRequest& WithGeneratedTemplateName(GeneratedTemplateNameT&& value) { SetGeneratedTemplateName(std::forward<GeneratedTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional new name to assign to the generated template.</p>
      */
-    inline const Aws::String& GetNewGeneratedTemplateName() const{ return m_newGeneratedTemplateName; }
+    inline const Aws::String& GetNewGeneratedTemplateName() const { return m_newGeneratedTemplateName; }
     inline bool NewGeneratedTemplateNameHasBeenSet() const { return m_newGeneratedTemplateNameHasBeenSet; }
-    inline void SetNewGeneratedTemplateName(const Aws::String& value) { m_newGeneratedTemplateNameHasBeenSet = true; m_newGeneratedTemplateName = value; }
-    inline void SetNewGeneratedTemplateName(Aws::String&& value) { m_newGeneratedTemplateNameHasBeenSet = true; m_newGeneratedTemplateName = std::move(value); }
-    inline void SetNewGeneratedTemplateName(const char* value) { m_newGeneratedTemplateNameHasBeenSet = true; m_newGeneratedTemplateName.assign(value); }
-    inline UpdateGeneratedTemplateRequest& WithNewGeneratedTemplateName(const Aws::String& value) { SetNewGeneratedTemplateName(value); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithNewGeneratedTemplateName(Aws::String&& value) { SetNewGeneratedTemplateName(std::move(value)); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithNewGeneratedTemplateName(const char* value) { SetNewGeneratedTemplateName(value); return *this;}
+    template<typename NewGeneratedTemplateNameT = Aws::String>
+    void SetNewGeneratedTemplateName(NewGeneratedTemplateNameT&& value) { m_newGeneratedTemplateNameHasBeenSet = true; m_newGeneratedTemplateName = std::forward<NewGeneratedTemplateNameT>(value); }
+    template<typename NewGeneratedTemplateNameT = Aws::String>
+    UpdateGeneratedTemplateRequest& WithNewGeneratedTemplateName(NewGeneratedTemplateNameT&& value) { SetNewGeneratedTemplateName(std::forward<NewGeneratedTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional list of resources to be added to the generated template.</p>
      */
-    inline const Aws::Vector<ResourceDefinition>& GetAddResources() const{ return m_addResources; }
+    inline const Aws::Vector<ResourceDefinition>& GetAddResources() const { return m_addResources; }
     inline bool AddResourcesHasBeenSet() const { return m_addResourcesHasBeenSet; }
-    inline void SetAddResources(const Aws::Vector<ResourceDefinition>& value) { m_addResourcesHasBeenSet = true; m_addResources = value; }
-    inline void SetAddResources(Aws::Vector<ResourceDefinition>&& value) { m_addResourcesHasBeenSet = true; m_addResources = std::move(value); }
-    inline UpdateGeneratedTemplateRequest& WithAddResources(const Aws::Vector<ResourceDefinition>& value) { SetAddResources(value); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithAddResources(Aws::Vector<ResourceDefinition>&& value) { SetAddResources(std::move(value)); return *this;}
-    inline UpdateGeneratedTemplateRequest& AddAddResources(const ResourceDefinition& value) { m_addResourcesHasBeenSet = true; m_addResources.push_back(value); return *this; }
-    inline UpdateGeneratedTemplateRequest& AddAddResources(ResourceDefinition&& value) { m_addResourcesHasBeenSet = true; m_addResources.push_back(std::move(value)); return *this; }
+    template<typename AddResourcesT = Aws::Vector<ResourceDefinition>>
+    void SetAddResources(AddResourcesT&& value) { m_addResourcesHasBeenSet = true; m_addResources = std::forward<AddResourcesT>(value); }
+    template<typename AddResourcesT = Aws::Vector<ResourceDefinition>>
+    UpdateGeneratedTemplateRequest& WithAddResources(AddResourcesT&& value) { SetAddResources(std::forward<AddResourcesT>(value)); return *this;}
+    template<typename AddResourcesT = ResourceDefinition>
+    UpdateGeneratedTemplateRequest& AddAddResources(AddResourcesT&& value) { m_addResourcesHasBeenSet = true; m_addResources.emplace_back(std::forward<AddResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,15 +82,14 @@ namespace Model
      * <p>A list of logical ids for resources to remove from the generated
      * template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveResources() const{ return m_removeResources; }
+    inline const Aws::Vector<Aws::String>& GetRemoveResources() const { return m_removeResources; }
     inline bool RemoveResourcesHasBeenSet() const { return m_removeResourcesHasBeenSet; }
-    inline void SetRemoveResources(const Aws::Vector<Aws::String>& value) { m_removeResourcesHasBeenSet = true; m_removeResources = value; }
-    inline void SetRemoveResources(Aws::Vector<Aws::String>&& value) { m_removeResourcesHasBeenSet = true; m_removeResources = std::move(value); }
-    inline UpdateGeneratedTemplateRequest& WithRemoveResources(const Aws::Vector<Aws::String>& value) { SetRemoveResources(value); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithRemoveResources(Aws::Vector<Aws::String>&& value) { SetRemoveResources(std::move(value)); return *this;}
-    inline UpdateGeneratedTemplateRequest& AddRemoveResources(const Aws::String& value) { m_removeResourcesHasBeenSet = true; m_removeResources.push_back(value); return *this; }
-    inline UpdateGeneratedTemplateRequest& AddRemoveResources(Aws::String&& value) { m_removeResourcesHasBeenSet = true; m_removeResources.push_back(std::move(value)); return *this; }
-    inline UpdateGeneratedTemplateRequest& AddRemoveResources(const char* value) { m_removeResourcesHasBeenSet = true; m_removeResources.push_back(value); return *this; }
+    template<typename RemoveResourcesT = Aws::Vector<Aws::String>>
+    void SetRemoveResources(RemoveResourcesT&& value) { m_removeResourcesHasBeenSet = true; m_removeResources = std::forward<RemoveResourcesT>(value); }
+    template<typename RemoveResourcesT = Aws::Vector<Aws::String>>
+    UpdateGeneratedTemplateRequest& WithRemoveResources(RemoveResourcesT&& value) { SetRemoveResources(std::forward<RemoveResourcesT>(value)); return *this;}
+    template<typename RemoveResourcesT = Aws::String>
+    UpdateGeneratedTemplateRequest& AddRemoveResources(RemoveResourcesT&& value) { m_removeResourcesHasBeenSet = true; m_removeResources.emplace_back(std::forward<RemoveResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,7 +100,7 @@ namespace Model
      * resource properties. This happens when a user update the resource properties
      * after generating a template.</p>
      */
-    inline bool GetRefreshAllResources() const{ return m_refreshAllResources; }
+    inline bool GetRefreshAllResources() const { return m_refreshAllResources; }
     inline bool RefreshAllResourcesHasBeenSet() const { return m_refreshAllResourcesHasBeenSet; }
     inline void SetRefreshAllResources(bool value) { m_refreshAllResourcesHasBeenSet = true; m_refreshAllResources = value; }
     inline UpdateGeneratedTemplateRequest& WithRefreshAllResources(bool value) { SetRefreshAllResources(value); return *this;}
@@ -116,12 +111,12 @@ namespace Model
      * <p>The configuration details of the generated template, including the
      * <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
      */
-    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const TemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline UpdateGeneratedTemplateRequest& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline UpdateGeneratedTemplateRequest& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    UpdateGeneratedTemplateRequest& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +132,7 @@ namespace Model
     Aws::Vector<Aws::String> m_removeResources;
     bool m_removeResourcesHasBeenSet = false;
 
-    bool m_refreshAllResources;
+    bool m_refreshAllResources{false};
     bool m_refreshAllResourcesHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;

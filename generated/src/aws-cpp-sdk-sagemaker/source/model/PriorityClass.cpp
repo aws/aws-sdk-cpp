@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PriorityClass::PriorityClass() : 
-    m_nameHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 PriorityClass::PriorityClass(JsonView jsonValue)
-  : PriorityClass()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PriorityClass& PriorityClass::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInteger("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

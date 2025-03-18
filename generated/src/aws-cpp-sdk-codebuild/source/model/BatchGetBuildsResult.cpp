@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetBuildsResult::BatchGetBuildsResult()
-{
-}
-
 BatchGetBuildsResult::BatchGetBuildsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetBuildsResult& BatchGetBuildsResult::operator =(const Aws::AmazonWebServi
     {
       m_builds.push_back(buildsJsonList[buildsIndex].AsObject());
     }
+    m_buildsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildsNotFound"))
   {
     Aws::Utils::Array<JsonView> buildsNotFoundJsonList = jsonValue.GetArray("buildsNotFound");
@@ -45,14 +41,15 @@ BatchGetBuildsResult& BatchGetBuildsResult::operator =(const Aws::AmazonWebServi
     {
       m_buildsNotFound.push_back(buildsNotFoundJsonList[buildsNotFoundIndex].AsString());
     }
+    m_buildsNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

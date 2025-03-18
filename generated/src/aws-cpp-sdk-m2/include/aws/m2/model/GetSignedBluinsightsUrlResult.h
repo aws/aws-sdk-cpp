@@ -27,7 +27,7 @@ namespace Model
   class GetSignedBluinsightsUrlResult
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API GetSignedBluinsightsUrlResult();
+    AWS_MAINFRAMEMODERNIZATION_API GetSignedBluinsightsUrlResult() = default;
     AWS_MAINFRAMEMODERNIZATION_API GetSignedBluinsightsUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAINFRAMEMODERNIZATION_API GetSignedBluinsightsUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Single sign-on AWS Blu Insights URL.</p>
      */
-    inline const Aws::String& GetSignedBiUrl() const{ return m_signedBiUrl; }
-    inline void SetSignedBiUrl(const Aws::String& value) { m_signedBiUrl = value; }
-    inline void SetSignedBiUrl(Aws::String&& value) { m_signedBiUrl = std::move(value); }
-    inline void SetSignedBiUrl(const char* value) { m_signedBiUrl.assign(value); }
-    inline GetSignedBluinsightsUrlResult& WithSignedBiUrl(const Aws::String& value) { SetSignedBiUrl(value); return *this;}
-    inline GetSignedBluinsightsUrlResult& WithSignedBiUrl(Aws::String&& value) { SetSignedBiUrl(std::move(value)); return *this;}
-    inline GetSignedBluinsightsUrlResult& WithSignedBiUrl(const char* value) { SetSignedBiUrl(value); return *this;}
+    inline const Aws::String& GetSignedBiUrl() const { return m_signedBiUrl; }
+    template<typename SignedBiUrlT = Aws::String>
+    void SetSignedBiUrl(SignedBiUrlT&& value) { m_signedBiUrlHasBeenSet = true; m_signedBiUrl = std::forward<SignedBiUrlT>(value); }
+    template<typename SignedBiUrlT = Aws::String>
+    GetSignedBluinsightsUrlResult& WithSignedBiUrl(SignedBiUrlT&& value) { SetSignedBiUrl(std::forward<SignedBiUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSignedBluinsightsUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSignedBluinsightsUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSignedBluinsightsUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSignedBluinsightsUrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_signedBiUrl;
+    bool m_signedBiUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptResourceShareInvitationResult::AcceptResourceShareInvitationResult()
-{
-}
-
 AcceptResourceShareInvitationResult::AcceptResourceShareInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AcceptResourceShareInvitationResult& AcceptResourceShareInvitationResult::operat
   if(jsonValue.ValueExists("resourceShareInvitation"))
   {
     m_resourceShareInvitation = jsonValue.GetObject("resourceShareInvitation");
-
+    m_resourceShareInvitationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

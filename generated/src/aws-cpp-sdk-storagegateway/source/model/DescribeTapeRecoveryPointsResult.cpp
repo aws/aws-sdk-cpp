@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult()
-{
-}
-
 DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(c
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeRecoveryPointInfos"))
   {
     Aws::Utils::Array<JsonView> tapeRecoveryPointInfosJsonList = jsonValue.GetArray("TapeRecoveryPointInfos");
@@ -42,20 +37,20 @@ DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(c
     {
       m_tapeRecoveryPointInfos.push_back(tapeRecoveryPointInfosJsonList[tapeRecoveryPointInfosIndex].AsObject());
     }
+    m_tapeRecoveryPointInfosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

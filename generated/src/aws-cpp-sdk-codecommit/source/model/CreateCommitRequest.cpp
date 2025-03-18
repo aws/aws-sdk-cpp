@@ -12,21 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCommitRequest::CreateCommitRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_parentCommitIdHasBeenSet(false),
-    m_authorNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_keepEmptyFolders(false),
-    m_keepEmptyFoldersHasBeenSet(false),
-    m_putFilesHasBeenSet(false),
-    m_deleteFilesHasBeenSet(false),
-    m_setFileModesHasBeenSet(false)
-{
-}
-
 Aws::String CreateCommitRequest::SerializePayload() const
 {
   JsonValue payload;

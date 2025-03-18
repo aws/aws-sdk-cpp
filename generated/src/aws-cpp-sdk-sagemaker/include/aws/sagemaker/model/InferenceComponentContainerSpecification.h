@@ -33,7 +33,7 @@ namespace Model
   class InferenceComponentContainerSpecification
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentContainerSpecification();
+    AWS_SAGEMAKER_API InferenceComponentContainerSpecification() = default;
     AWS_SAGEMAKER_API InferenceComponentContainerSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentContainerSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker
      * image for the model is stored.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline InferenceComponentContainerSpecification& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline InferenceComponentContainerSpecification& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline InferenceComponentContainerSpecification& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    InferenceComponentContainerSpecification& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * training, are stored. This path must point to a single gzip compressed tar
      * archive (.tar.gz suffix).</p>
      */
-    inline const Aws::String& GetArtifactUrl() const{ return m_artifactUrl; }
+    inline const Aws::String& GetArtifactUrl() const { return m_artifactUrl; }
     inline bool ArtifactUrlHasBeenSet() const { return m_artifactUrlHasBeenSet; }
-    inline void SetArtifactUrl(const Aws::String& value) { m_artifactUrlHasBeenSet = true; m_artifactUrl = value; }
-    inline void SetArtifactUrl(Aws::String&& value) { m_artifactUrlHasBeenSet = true; m_artifactUrl = std::move(value); }
-    inline void SetArtifactUrl(const char* value) { m_artifactUrlHasBeenSet = true; m_artifactUrl.assign(value); }
-    inline InferenceComponentContainerSpecification& WithArtifactUrl(const Aws::String& value) { SetArtifactUrl(value); return *this;}
-    inline InferenceComponentContainerSpecification& WithArtifactUrl(Aws::String&& value) { SetArtifactUrl(std::move(value)); return *this;}
-    inline InferenceComponentContainerSpecification& WithArtifactUrl(const char* value) { SetArtifactUrl(value); return *this;}
+    template<typename ArtifactUrlT = Aws::String>
+    void SetArtifactUrl(ArtifactUrlT&& value) { m_artifactUrlHasBeenSet = true; m_artifactUrl = std::forward<ArtifactUrlT>(value); }
+    template<typename ArtifactUrlT = Aws::String>
+    InferenceComponentContainerSpecification& WithArtifactUrl(ArtifactUrlT&& value) { SetArtifactUrl(std::forward<ArtifactUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +72,16 @@ namespace Model
      * in the Environment string-to-string map can have length of up to 1024. We
      * support up to 16 entries in the map.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline InferenceComponentContainerSpecification& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline InferenceComponentContainerSpecification& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline InferenceComponentContainerSpecification& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline InferenceComponentContainerSpecification& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    InferenceComponentContainerSpecification& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    InferenceComponentContainerSpecification& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
   private:
 

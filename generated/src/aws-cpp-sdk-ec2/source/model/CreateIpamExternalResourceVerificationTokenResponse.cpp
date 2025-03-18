@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateIpamExternalResourceVerificationTokenResponse::CreateIpamExternalResourceVerificationTokenResponse()
-{
-}
-
 CreateIpamExternalResourceVerificationTokenResponse::CreateIpamExternalResourceVerificationTokenResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateIpamExternalResourceVerificationTokenResponse& CreateIpamExternalResourceV
     if(!ipamExternalResourceVerificationTokenNode.IsNull())
     {
       m_ipamExternalResourceVerificationToken = ipamExternalResourceVerificationTokenNode;
+      m_ipamExternalResourceVerificationTokenHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateIpamExternalResourceVerificationTokenResponse& CreateIpamExternalResourceV
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateIpamExternalResourceVerificationTokenResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

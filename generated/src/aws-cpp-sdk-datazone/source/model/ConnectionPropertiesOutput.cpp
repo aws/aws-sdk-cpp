@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ConnectionPropertiesOutput::ConnectionPropertiesOutput() : 
-    m_athenaPropertiesHasBeenSet(false),
-    m_gluePropertiesHasBeenSet(false),
-    m_hyperPodPropertiesHasBeenSet(false),
-    m_iamPropertiesHasBeenSet(false),
-    m_redshiftPropertiesHasBeenSet(false),
-    m_sparkEmrPropertiesHasBeenSet(false),
-    m_sparkGluePropertiesHasBeenSet(false)
-{
-}
-
 ConnectionPropertiesOutput::ConnectionPropertiesOutput(JsonView jsonValue)
-  : ConnectionPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ConnectionPropertiesOutput& ConnectionPropertiesOutput::operator =(JsonView json
   if(jsonValue.ValueExists("athenaProperties"))
   {
     m_athenaProperties = jsonValue.GetObject("athenaProperties");
-
     m_athenaPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueProperties"))
   {
     m_glueProperties = jsonValue.GetObject("glueProperties");
-
     m_gluePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hyperPodProperties"))
   {
     m_hyperPodProperties = jsonValue.GetObject("hyperPodProperties");
-
     m_hyperPodPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamProperties"))
   {
     m_iamProperties = jsonValue.GetObject("iamProperties");
-
     m_iamPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftProperties"))
   {
     m_redshiftProperties = jsonValue.GetObject("redshiftProperties");
-
     m_redshiftPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sparkEmrProperties"))
   {
     m_sparkEmrProperties = jsonValue.GetObject("sparkEmrProperties");
-
     m_sparkEmrPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sparkGlueProperties"))
   {
     m_sparkGlueProperties = jsonValue.GetObject("sparkGlueProperties");
-
     m_sparkGluePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

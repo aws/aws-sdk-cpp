@@ -30,7 +30,7 @@ namespace Model
   class DescribeClustersResult
   {
   public:
-    AWS_ECS_API DescribeClustersResult();
+    AWS_ECS_API DescribeClustersResult() = default;
     AWS_ECS_API DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The list of clusters.</p>
      */
-    inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
-    inline void SetClusters(const Aws::Vector<Cluster>& value) { m_clusters = value; }
-    inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = std::move(value); }
-    inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
-    inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(std::move(value)); return *this;}
-    inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
-    inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Cluster>& GetClusters() const { return m_clusters; }
+    template<typename ClustersT = Aws::Vector<Cluster>>
+    void SetClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters = std::forward<ClustersT>(value); }
+    template<typename ClustersT = Aws::Vector<Cluster>>
+    DescribeClustersResult& WithClusters(ClustersT&& value) { SetClusters(std::forward<ClustersT>(value)); return *this;}
+    template<typename ClustersT = Cluster>
+    DescribeClustersResult& AddClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters.emplace_back(std::forward<ClustersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline DescribeClustersResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline DescribeClustersResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    DescribeClustersResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    DescribeClustersResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeClustersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Cluster> m_clusters;
+    bool m_clustersHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

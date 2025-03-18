@@ -18,20 +18,7 @@ namespace kendra
 namespace Model
 {
 
-JwtTokenTypeConfiguration::JwtTokenTypeConfiguration() : 
-    m_keyLocation(KeyLocation::NOT_SET),
-    m_keyLocationHasBeenSet(false),
-    m_uRLHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_userNameAttributeFieldHasBeenSet(false),
-    m_groupAttributeFieldHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_claimRegexHasBeenSet(false)
-{
-}
-
 JwtTokenTypeConfiguration::JwtTokenTypeConfiguration(JsonView jsonValue)
-  : JwtTokenTypeConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ JwtTokenTypeConfiguration& JwtTokenTypeConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("KeyLocation"))
   {
     m_keyLocation = KeyLocationMapper::GetKeyLocationForName(jsonValue.GetString("KeyLocation"));
-
     m_keyLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URL"))
   {
     m_uRL = jsonValue.GetString("URL");
-
     m_uRLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretManagerArn"))
   {
     m_secretManagerArn = jsonValue.GetString("SecretManagerArn");
-
     m_secretManagerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserNameAttributeField"))
   {
     m_userNameAttributeField = jsonValue.GetString("UserNameAttributeField");
-
     m_userNameAttributeFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupAttributeField"))
   {
     m_groupAttributeField = jsonValue.GetString("GroupAttributeField");
-
     m_groupAttributeFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClaimRegex"))
   {
     m_claimRegex = jsonValue.GetString("ClaimRegex");
-
     m_claimRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

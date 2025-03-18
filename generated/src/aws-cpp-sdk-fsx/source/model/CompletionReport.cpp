@@ -18,19 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CompletionReport::CompletionReport() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_format(ReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_scope(ReportScope::NOT_SET),
-    m_scopeHasBeenSet(false)
-{
-}
-
 CompletionReport::CompletionReport(JsonView jsonValue)
-  : CompletionReport()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ CompletionReport& CompletionReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = ReportFormatMapper::GetReportFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = ReportScopeMapper::GetReportScopeForName(jsonValue.GetString("Scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   return *this;
 }
 

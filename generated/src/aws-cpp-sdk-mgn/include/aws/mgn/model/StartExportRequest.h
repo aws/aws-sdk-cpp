@@ -24,7 +24,7 @@ namespace Model
   class StartExportRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API StartExportRequest();
+    AWS_MGN_API StartExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
     /**
      * <p>Start export request s3 bucket.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline StartExportRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline StartExportRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline StartExportRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    StartExportRequest& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start export request s3 bucket owner.</p>
      */
-    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
-    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
-    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
-    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
-    inline StartExportRequest& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
-    inline StartExportRequest& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
-    inline StartExportRequest& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    template<typename S3BucketOwnerT = Aws::String>
+    void SetS3BucketOwner(S3BucketOwnerT&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::forward<S3BucketOwnerT>(value); }
+    template<typename S3BucketOwnerT = Aws::String>
+    StartExportRequest& WithS3BucketOwner(S3BucketOwnerT&& value) { SetS3BucketOwner(std::forward<S3BucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start export request s3key.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline StartExportRequest& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline StartExportRequest& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline StartExportRequest& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    StartExportRequest& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
   private:
 

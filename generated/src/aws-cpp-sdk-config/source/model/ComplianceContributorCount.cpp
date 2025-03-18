@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ComplianceContributorCount::ComplianceContributorCount() : 
-    m_cappedCount(0),
-    m_cappedCountHasBeenSet(false),
-    m_capExceeded(false),
-    m_capExceededHasBeenSet(false)
-{
-}
-
 ComplianceContributorCount::ComplianceContributorCount(JsonView jsonValue)
-  : ComplianceContributorCount()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ComplianceContributorCount& ComplianceContributorCount::operator =(JsonView json
   if(jsonValue.ValueExists("CappedCount"))
   {
     m_cappedCount = jsonValue.GetInteger("CappedCount");
-
     m_cappedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapExceeded"))
   {
     m_capExceeded = jsonValue.GetBool("CapExceeded");
-
     m_capExceededHasBeenSet = true;
   }
-
   return *this;
 }
 

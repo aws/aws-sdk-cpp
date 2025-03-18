@@ -36,7 +36,7 @@ namespace Model
   class TrainingPlanFilter
   {
   public:
-    AWS_SAGEMAKER_API TrainingPlanFilter();
+    AWS_SAGEMAKER_API TrainingPlanFilter() = default;
     AWS_SAGEMAKER_API TrainingPlanFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrainingPlanFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,30 +46,26 @@ namespace Model
     /**
      * <p>The name of the filter field (e.g., Status, InstanceType).</p>
      */
-    inline const TrainingPlanFilterName& GetName() const{ return m_name; }
+    inline TrainingPlanFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const TrainingPlanFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(TrainingPlanFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline TrainingPlanFilter& WithName(const TrainingPlanFilterName& value) { SetName(value); return *this;}
-    inline TrainingPlanFilter& WithName(TrainingPlanFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(TrainingPlanFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline TrainingPlanFilter& WithName(TrainingPlanFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to filter by for the specified field.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline TrainingPlanFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline TrainingPlanFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline TrainingPlanFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    TrainingPlanFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    TrainingPlanFilterName m_name;
+    TrainingPlanFilterName m_name{TrainingPlanFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

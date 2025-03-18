@@ -18,14 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-SummarizationDimensionDetail::SummarizationDimensionDetail() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SummarizationDimensionDetail::SummarizationDimensionDetail(JsonView jsonValue)
-  : SummarizationDimensionDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SummarizationDimensionDetail& SummarizationDimensionDetail::operator =(JsonView 
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class ModifyReplicationInstanceRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationInstanceRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
+    inline const Aws::String& GetReplicationInstanceArn() const { return m_replicationInstanceArn; }
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
-    inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
-    inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+    template<typename ReplicationInstanceArnT = Aws::String>
+    void SetReplicationInstanceArn(ReplicationInstanceArnT&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::forward<ReplicationInstanceArnT>(value); }
+    template<typename ReplicationInstanceArnT = Aws::String>
+    ModifyReplicationInstanceRequest& WithReplicationInstanceArn(ReplicationInstanceArnT&& value) { SetReplicationInstanceArn(std::forward<ReplicationInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>The amount of storage (in gigabytes) to be allocated for the replication
      * instance.</p>
      */
-    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
     inline ModifyReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * <p>Indicates whether the changes should be applied immediately or during the
      * next maintenance window.</p>
      */
-    inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
     inline ModifyReplicationInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
@@ -85,14 +83,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
      * Selecting the right DMS replication instance for your migration</a>. </p>
      */
-    inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
+    inline const Aws::String& GetReplicationInstanceClass() const { return m_replicationInstanceClass; }
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
-    inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
-    inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
-    inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
+    template<typename ReplicationInstanceClassT = Aws::String>
+    void SetReplicationInstanceClass(ReplicationInstanceClassT&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::forward<ReplicationInstanceClassT>(value); }
+    template<typename ReplicationInstanceClassT = Aws::String>
+    ModifyReplicationInstanceRequest& WithReplicationInstanceClass(ReplicationInstanceClassT&& value) { SetReplicationInstanceClass(std::forward<ReplicationInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,15 +97,14 @@ namespace Model
      * The VPC security group must work with the VPC containing the replication
      * instance. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,14 +118,12 @@ namespace Model
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +132,7 @@ namespace Model
      * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
-    inline bool GetMultiAZ() const{ return m_multiAZ; }
+    inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
     inline ModifyReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -151,14 +144,12 @@ namespace Model
      * a major engine version of an instance, also set
      * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    ModifyReplicationInstanceRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,7 +160,7 @@ namespace Model
      * specifying a value for the <code>EngineVersion</code> parameter that is a
      * different major version than the replication instance's current version.</p>
      */
-    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+    inline bool GetAllowMajorVersionUpgrade() const { return m_allowMajorVersionUpgrade; }
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
     inline ModifyReplicationInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
@@ -186,7 +177,7 @@ namespace Model
      * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
      * the given engine version. </p> </li> </ul>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -197,14 +188,12 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
+    inline const Aws::String& GetReplicationInstanceIdentifier() const { return m_replicationInstanceIdentifier; }
     inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
-    inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
-    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
-    inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
+    template<typename ReplicationInstanceIdentifierT = Aws::String>
+    void SetReplicationInstanceIdentifier(ReplicationInstanceIdentifierT&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::forward<ReplicationInstanceIdentifierT>(value); }
+    template<typename ReplicationInstanceIdentifierT = Aws::String>
+    ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(ReplicationInstanceIdentifierT&& value) { SetReplicationInstanceIdentifier(std::forward<ReplicationInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +202,12 @@ namespace Model
      * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
      * yet supported.</p>
      */
-    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
-    inline ModifyReplicationInstanceRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
-    inline ModifyReplicationInstanceRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    ModifyReplicationInstanceRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,22 +215,22 @@ namespace Model
      * <p>Specifies the settings required for kerberos authentication when modifying a
      * replication instance.</p>
      */
-    inline const KerberosAuthenticationSettings& GetKerberosAuthenticationSettings() const{ return m_kerberosAuthenticationSettings; }
+    inline const KerberosAuthenticationSettings& GetKerberosAuthenticationSettings() const { return m_kerberosAuthenticationSettings; }
     inline bool KerberosAuthenticationSettingsHasBeenSet() const { return m_kerberosAuthenticationSettingsHasBeenSet; }
-    inline void SetKerberosAuthenticationSettings(const KerberosAuthenticationSettings& value) { m_kerberosAuthenticationSettingsHasBeenSet = true; m_kerberosAuthenticationSettings = value; }
-    inline void SetKerberosAuthenticationSettings(KerberosAuthenticationSettings&& value) { m_kerberosAuthenticationSettingsHasBeenSet = true; m_kerberosAuthenticationSettings = std::move(value); }
-    inline ModifyReplicationInstanceRequest& WithKerberosAuthenticationSettings(const KerberosAuthenticationSettings& value) { SetKerberosAuthenticationSettings(value); return *this;}
-    inline ModifyReplicationInstanceRequest& WithKerberosAuthenticationSettings(KerberosAuthenticationSettings&& value) { SetKerberosAuthenticationSettings(std::move(value)); return *this;}
+    template<typename KerberosAuthenticationSettingsT = KerberosAuthenticationSettings>
+    void SetKerberosAuthenticationSettings(KerberosAuthenticationSettingsT&& value) { m_kerberosAuthenticationSettingsHasBeenSet = true; m_kerberosAuthenticationSettings = std::forward<KerberosAuthenticationSettingsT>(value); }
+    template<typename KerberosAuthenticationSettingsT = KerberosAuthenticationSettings>
+    ModifyReplicationInstanceRequest& WithKerberosAuthenticationSettings(KerberosAuthenticationSettingsT&& value) { SetKerberosAuthenticationSettings(std::forward<KerberosAuthenticationSettingsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet = false;
 
-    int m_allocatedStorage;
+    int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
 
-    bool m_applyImmediately;
+    bool m_applyImmediately{false};
     bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_replicationInstanceClass;
@@ -255,16 +242,16 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    bool m_multiAZ;
+    bool m_multiAZ{false};
     bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
-    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgrade{false};
     bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_replicationInstanceIdentifier;

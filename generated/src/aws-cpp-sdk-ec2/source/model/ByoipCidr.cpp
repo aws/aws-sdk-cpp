@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ByoipCidr::ByoipCidr() : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_asnAssociationsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 ByoipCidr::ByoipCidr(const XmlNode& xmlNode)
-  : ByoipCidr()
 {
   *this = xmlNode;
 }
@@ -59,6 +47,7 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
     if(!asnAssociationsNode.IsNull())
     {
       XmlNode asnAssociationsMember = asnAssociationsNode.FirstChild("item");
+      m_asnAssociationsHasBeenSet = !asnAssociationsMember.IsNull();
       while(!asnAssociationsMember.IsNull())
       {
         m_asnAssociations.push_back(asnAssociationsMember);
@@ -76,7 +65,7 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");

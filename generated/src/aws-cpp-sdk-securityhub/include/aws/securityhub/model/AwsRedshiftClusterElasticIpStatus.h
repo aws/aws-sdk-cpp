@@ -32,7 +32,7 @@ namespace Model
   class AwsRedshiftClusterElasticIpStatus
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterElasticIpStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterElasticIpStatus() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterElasticIpStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterElasticIpStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The elastic IP address for the cluster.</p>
      */
-    inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+    inline const Aws::String& GetElasticIp() const { return m_elasticIp; }
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
-    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
-    inline AwsRedshiftClusterElasticIpStatus& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
-    inline AwsRedshiftClusterElasticIpStatus& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
-    inline AwsRedshiftClusterElasticIpStatus& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+    template<typename ElasticIpT = Aws::String>
+    void SetElasticIp(ElasticIpT&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::forward<ElasticIpT>(value); }
+    template<typename ElasticIpT = Aws::String>
+    AwsRedshiftClusterElasticIpStatus& WithElasticIp(ElasticIpT&& value) { SetElasticIp(std::forward<ElasticIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the elastic IP address.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRedshiftClusterElasticIpStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRedshiftClusterElasticIpStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRedshiftClusterElasticIpStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRedshiftClusterElasticIpStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

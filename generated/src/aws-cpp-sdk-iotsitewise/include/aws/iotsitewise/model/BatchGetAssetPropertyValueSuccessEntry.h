@@ -34,7 +34,7 @@ namespace Model
   class BatchGetAssetPropertyValueSuccessEntry
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
     /**
      * <p>The ID of the entry.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchGetAssetPropertyValueSuccessEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchGetAssetPropertyValueSuccessEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueSuccessEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchGetAssetPropertyValueSuccessEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AssetPropertyValue& GetAssetPropertyValue() const{ return m_assetPropertyValue; }
+    inline const AssetPropertyValue& GetAssetPropertyValue() const { return m_assetPropertyValue; }
     inline bool AssetPropertyValueHasBeenSet() const { return m_assetPropertyValueHasBeenSet; }
-    inline void SetAssetPropertyValue(const AssetPropertyValue& value) { m_assetPropertyValueHasBeenSet = true; m_assetPropertyValue = value; }
-    inline void SetAssetPropertyValue(AssetPropertyValue&& value) { m_assetPropertyValueHasBeenSet = true; m_assetPropertyValue = std::move(value); }
-    inline BatchGetAssetPropertyValueSuccessEntry& WithAssetPropertyValue(const AssetPropertyValue& value) { SetAssetPropertyValue(value); return *this;}
-    inline BatchGetAssetPropertyValueSuccessEntry& WithAssetPropertyValue(AssetPropertyValue&& value) { SetAssetPropertyValue(std::move(value)); return *this;}
+    template<typename AssetPropertyValueT = AssetPropertyValue>
+    void SetAssetPropertyValue(AssetPropertyValueT&& value) { m_assetPropertyValueHasBeenSet = true; m_assetPropertyValue = std::forward<AssetPropertyValueT>(value); }
+    template<typename AssetPropertyValueT = AssetPropertyValue>
+    BatchGetAssetPropertyValueSuccessEntry& WithAssetPropertyValue(AssetPropertyValueT&& value) { SetAssetPropertyValue(std::forward<AssetPropertyValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,18 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEventPredictionsRequest::ListEventPredictionsRequest() : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorVersionIdHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEventPredictionsRequest::SerializePayload() const
 {
   JsonValue payload;

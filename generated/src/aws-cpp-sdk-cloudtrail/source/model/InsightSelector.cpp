@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-InsightSelector::InsightSelector() : 
-    m_insightType(InsightType::NOT_SET),
-    m_insightTypeHasBeenSet(false)
-{
-}
-
 InsightSelector::InsightSelector(JsonView jsonValue)
-  : InsightSelector()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InsightSelector& InsightSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightType"))
   {
     m_insightType = InsightTypeMapper::GetInsightTypeForName(jsonValue.GetString("InsightType"));
-
     m_insightTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

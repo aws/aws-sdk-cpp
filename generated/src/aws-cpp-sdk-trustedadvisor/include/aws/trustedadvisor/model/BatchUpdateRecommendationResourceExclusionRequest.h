@@ -22,7 +22,7 @@ namespace Model
   class BatchUpdateRecommendationResourceExclusionRequest : public TrustedAdvisorRequest
   {
   public:
-    AWS_TRUSTEDADVISOR_API BatchUpdateRecommendationResourceExclusionRequest();
+    AWS_TRUSTEDADVISOR_API BatchUpdateRecommendationResourceExclusionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>A list of recommendation resource ARNs and exclusion status to update</p>
      */
-    inline const Aws::Vector<RecommendationResourceExclusion>& GetRecommendationResourceExclusions() const{ return m_recommendationResourceExclusions; }
+    inline const Aws::Vector<RecommendationResourceExclusion>& GetRecommendationResourceExclusions() const { return m_recommendationResourceExclusions; }
     inline bool RecommendationResourceExclusionsHasBeenSet() const { return m_recommendationResourceExclusionsHasBeenSet; }
-    inline void SetRecommendationResourceExclusions(const Aws::Vector<RecommendationResourceExclusion>& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions = value; }
-    inline void SetRecommendationResourceExclusions(Aws::Vector<RecommendationResourceExclusion>&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions = std::move(value); }
-    inline BatchUpdateRecommendationResourceExclusionRequest& WithRecommendationResourceExclusions(const Aws::Vector<RecommendationResourceExclusion>& value) { SetRecommendationResourceExclusions(value); return *this;}
-    inline BatchUpdateRecommendationResourceExclusionRequest& WithRecommendationResourceExclusions(Aws::Vector<RecommendationResourceExclusion>&& value) { SetRecommendationResourceExclusions(std::move(value)); return *this;}
-    inline BatchUpdateRecommendationResourceExclusionRequest& AddRecommendationResourceExclusions(const RecommendationResourceExclusion& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions.push_back(value); return *this; }
-    inline BatchUpdateRecommendationResourceExclusionRequest& AddRecommendationResourceExclusions(RecommendationResourceExclusion&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions.push_back(std::move(value)); return *this; }
+    template<typename RecommendationResourceExclusionsT = Aws::Vector<RecommendationResourceExclusion>>
+    void SetRecommendationResourceExclusions(RecommendationResourceExclusionsT&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions = std::forward<RecommendationResourceExclusionsT>(value); }
+    template<typename RecommendationResourceExclusionsT = Aws::Vector<RecommendationResourceExclusion>>
+    BatchUpdateRecommendationResourceExclusionRequest& WithRecommendationResourceExclusions(RecommendationResourceExclusionsT&& value) { SetRecommendationResourceExclusions(std::forward<RecommendationResourceExclusionsT>(value)); return *this;}
+    template<typename RecommendationResourceExclusionsT = RecommendationResourceExclusion>
+    BatchUpdateRecommendationResourceExclusionRequest& AddRecommendationResourceExclusions(RecommendationResourceExclusionsT&& value) { m_recommendationResourceExclusionsHasBeenSet = true; m_recommendationResourceExclusions.emplace_back(std::forward<RecommendationResourceExclusionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWebACLRequest::GetWebACLRequest() : 
-    m_webACLIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-PardotSourceProperties::PardotSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 PardotSourceProperties::PardotSourceProperties(JsonView jsonValue)
-  : PardotSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PardotSourceProperties& PardotSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchCreateVariableResult
   {
   public:
-    AWS_FRAUDDETECTOR_API BatchCreateVariableResult();
+    AWS_FRAUDDETECTOR_API BatchCreateVariableResult() = default;
     AWS_FRAUDDETECTOR_API BatchCreateVariableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API BatchCreateVariableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
      */
-    inline const Aws::Vector<BatchCreateVariableError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchCreateVariableError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchCreateVariableError>&& value) { m_errors = std::move(value); }
-    inline BatchCreateVariableResult& WithErrors(const Aws::Vector<BatchCreateVariableError>& value) { SetErrors(value); return *this;}
-    inline BatchCreateVariableResult& WithErrors(Aws::Vector<BatchCreateVariableError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchCreateVariableResult& AddErrors(const BatchCreateVariableError& value) { m_errors.push_back(value); return *this; }
-    inline BatchCreateVariableResult& AddErrors(BatchCreateVariableError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchCreateVariableError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchCreateVariableError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchCreateVariableError>>
+    BatchCreateVariableResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchCreateVariableError>
+    BatchCreateVariableResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchCreateVariableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchCreateVariableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchCreateVariableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchCreateVariableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchCreateVariableError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

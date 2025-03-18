@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SplunkBufferingHints::SplunkBufferingHints() : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
-{
-}
-
 SplunkBufferingHints::SplunkBufferingHints(JsonView jsonValue)
-  : SplunkBufferingHints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SplunkBufferingHints& SplunkBufferingHints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IntervalInSeconds"))
   {
     m_intervalInSeconds = jsonValue.GetInteger("IntervalInSeconds");
-
     m_intervalInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeInMBs"))
   {
     m_sizeInMBs = jsonValue.GetInteger("SizeInMBs");
-
     m_sizeInMBsHasBeenSet = true;
   }
-
   return *this;
 }
 

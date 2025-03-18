@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProvisionedProductPlanRequest::DeleteProvisionedProductPlanRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_planIdHasBeenSet(false),
-    m_ignoreErrors(false),
-    m_ignoreErrorsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProvisionedProductPlanRequest::SerializePayload() const
 {
   JsonValue payload;

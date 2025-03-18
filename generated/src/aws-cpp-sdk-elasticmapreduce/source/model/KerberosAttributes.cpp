@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-KerberosAttributes::KerberosAttributes() : 
-    m_realmHasBeenSet(false),
-    m_kdcAdminPasswordHasBeenSet(false),
-    m_crossRealmTrustPrincipalPasswordHasBeenSet(false),
-    m_aDDomainJoinUserHasBeenSet(false),
-    m_aDDomainJoinPasswordHasBeenSet(false)
-{
-}
-
 KerberosAttributes::KerberosAttributes(JsonView jsonValue)
-  : KerberosAttributes()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ KerberosAttributes& KerberosAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Realm"))
   {
     m_realm = jsonValue.GetString("Realm");
-
     m_realmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KdcAdminPassword"))
   {
     m_kdcAdminPassword = jsonValue.GetString("KdcAdminPassword");
-
     m_kdcAdminPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossRealmTrustPrincipalPassword"))
   {
     m_crossRealmTrustPrincipalPassword = jsonValue.GetString("CrossRealmTrustPrincipalPassword");
-
     m_crossRealmTrustPrincipalPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ADDomainJoinUser"))
   {
     m_aDDomainJoinUser = jsonValue.GetString("ADDomainJoinUser");
-
     m_aDDomainJoinUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ADDomainJoinPassword"))
   {
     m_aDDomainJoinPassword = jsonValue.GetString("ADDomainJoinPassword");
-
     m_aDDomainJoinPasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

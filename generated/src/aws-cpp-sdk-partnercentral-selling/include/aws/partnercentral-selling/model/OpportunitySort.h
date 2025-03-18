@@ -32,7 +32,7 @@ namespace Model
   class OpportunitySort
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API OpportunitySort();
+    AWS_PARTNERCENTRALSELLING_API OpportunitySort() = default;
     AWS_PARTNERCENTRALSELLING_API OpportunitySort(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API OpportunitySort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Field name to sort by.</p>
      */
-    inline const OpportunitySortName& GetSortBy() const{ return m_sortBy; }
+    inline OpportunitySortName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const OpportunitySortName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(OpportunitySortName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline OpportunitySort& WithSortBy(const OpportunitySortName& value) { SetSortBy(value); return *this;}
-    inline OpportunitySort& WithSortBy(OpportunitySortName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(OpportunitySortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline OpportunitySort& WithSortBy(OpportunitySortName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sort order.</p> <p>Default: <code>Descending</code> </p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline OpportunitySort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline OpportunitySort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline OpportunitySort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    OpportunitySortName m_sortBy;
+    OpportunitySortName m_sortBy{OpportunitySortName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

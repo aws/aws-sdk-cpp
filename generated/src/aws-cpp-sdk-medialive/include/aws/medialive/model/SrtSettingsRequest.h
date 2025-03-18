@@ -34,7 +34,7 @@ namespace Model
   class SrtSettingsRequest
   {
   public:
-    AWS_MEDIALIVE_API SrtSettingsRequest();
+    AWS_MEDIALIVE_API SrtSettingsRequest() = default;
     AWS_MEDIALIVE_API SrtSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SrtSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<SrtCallerSourceRequest>& GetSrtCallerSources() const{ return m_srtCallerSources; }
+    inline const Aws::Vector<SrtCallerSourceRequest>& GetSrtCallerSources() const { return m_srtCallerSources; }
     inline bool SrtCallerSourcesHasBeenSet() const { return m_srtCallerSourcesHasBeenSet; }
-    inline void SetSrtCallerSources(const Aws::Vector<SrtCallerSourceRequest>& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources = value; }
-    inline void SetSrtCallerSources(Aws::Vector<SrtCallerSourceRequest>&& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources = std::move(value); }
-    inline SrtSettingsRequest& WithSrtCallerSources(const Aws::Vector<SrtCallerSourceRequest>& value) { SetSrtCallerSources(value); return *this;}
-    inline SrtSettingsRequest& WithSrtCallerSources(Aws::Vector<SrtCallerSourceRequest>&& value) { SetSrtCallerSources(std::move(value)); return *this;}
-    inline SrtSettingsRequest& AddSrtCallerSources(const SrtCallerSourceRequest& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources.push_back(value); return *this; }
-    inline SrtSettingsRequest& AddSrtCallerSources(SrtCallerSourceRequest&& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources.push_back(std::move(value)); return *this; }
+    template<typename SrtCallerSourcesT = Aws::Vector<SrtCallerSourceRequest>>
+    void SetSrtCallerSources(SrtCallerSourcesT&& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources = std::forward<SrtCallerSourcesT>(value); }
+    template<typename SrtCallerSourcesT = Aws::Vector<SrtCallerSourceRequest>>
+    SrtSettingsRequest& WithSrtCallerSources(SrtCallerSourcesT&& value) { SetSrtCallerSources(std::forward<SrtCallerSourcesT>(value)); return *this;}
+    template<typename SrtCallerSourcesT = SrtCallerSourceRequest>
+    SrtSettingsRequest& AddSrtCallerSources(SrtCallerSourcesT&& value) { m_srtCallerSourcesHasBeenSet = true; m_srtCallerSources.emplace_back(std::forward<SrtCallerSourcesT>(value)); return *this; }
     ///@}
   private:
 

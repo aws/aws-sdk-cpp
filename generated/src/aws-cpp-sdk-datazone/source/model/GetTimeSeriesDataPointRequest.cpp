@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTimeSeriesDataPointRequest::GetTimeSeriesDataPointRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(TimeSeriesEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetTimeSeriesDataPointRequest::SerializePayload() const
 {
   return {};

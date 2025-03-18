@@ -21,7 +21,7 @@ namespace Model
   class DescribePlayerSessionsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribePlayerSessionsRequest();
+    AWS_GAMELIFT_API DescribePlayerSessionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
-    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+    inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
-    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
-    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
-    inline DescribePlayerSessionsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
-    inline DescribePlayerSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
-    inline DescribePlayerSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+    template<typename GameSessionIdT = Aws::String>
+    void SetGameSessionId(GameSessionIdT&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::forward<GameSessionIdT>(value); }
+    template<typename GameSessionIdT = Aws::String>
+    DescribePlayerSessionsRequest& WithGameSessionId(GameSessionIdT&& value) { SetGameSessionId(std::forward<GameSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
-    inline const Aws::String& GetPlayerId() const{ return m_playerId; }
+    inline const Aws::String& GetPlayerId() const { return m_playerId; }
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
-    inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
-    inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
-    inline DescribePlayerSessionsRequest& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+    template<typename PlayerIdT = Aws::String>
+    void SetPlayerId(PlayerIdT&& value) { m_playerIdHasBeenSet = true; m_playerId = std::forward<PlayerIdT>(value); }
+    template<typename PlayerIdT = Aws::String>
+    DescribePlayerSessionsRequest& WithPlayerId(PlayerIdT&& value) { SetPlayerId(std::forward<PlayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a player session to retrieve.</p>
      */
-    inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
+    inline const Aws::String& GetPlayerSessionId() const { return m_playerSessionId; }
     inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
-    inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
-    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
-    inline void SetPlayerSessionId(const char* value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId.assign(value); }
-    inline DescribePlayerSessionsRequest& WithPlayerSessionId(const Aws::String& value) { SetPlayerSessionId(value); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
+    template<typename PlayerSessionIdT = Aws::String>
+    void SetPlayerSessionId(PlayerSessionIdT&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::forward<PlayerSessionIdT>(value); }
+    template<typename PlayerSessionIdT = Aws::String>
+    DescribePlayerSessionsRequest& WithPlayerSessionId(PlayerSessionIdT&& value) { SetPlayerSessionId(std::forward<PlayerSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * received, but the player did not connect and/or was not validated within the
      * timeout limit (60 seconds).</p> </li> </ul>
      */
-    inline const Aws::String& GetPlayerSessionStatusFilter() const{ return m_playerSessionStatusFilter; }
+    inline const Aws::String& GetPlayerSessionStatusFilter() const { return m_playerSessionStatusFilter; }
     inline bool PlayerSessionStatusFilterHasBeenSet() const { return m_playerSessionStatusFilterHasBeenSet; }
-    inline void SetPlayerSessionStatusFilter(const Aws::String& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = value; }
-    inline void SetPlayerSessionStatusFilter(Aws::String&& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = std::move(value); }
-    inline void SetPlayerSessionStatusFilter(const char* value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter.assign(value); }
-    inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(const Aws::String& value) { SetPlayerSessionStatusFilter(value); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(Aws::String&& value) { SetPlayerSessionStatusFilter(std::move(value)); return *this;}
-    inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(const char* value) { SetPlayerSessionStatusFilter(value); return *this;}
+    template<typename PlayerSessionStatusFilterT = Aws::String>
+    void SetPlayerSessionStatusFilter(PlayerSessionStatusFilterT&& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = std::forward<PlayerSessionStatusFilterT>(value); }
+    template<typename PlayerSessionStatusFilterT = Aws::String>
+    DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(PlayerSessionStatusFilterT&& value) { SetPlayerSessionStatusFilter(std::forward<PlayerSessionStatusFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +98,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages. If a player
      * session ID is specified, this parameter is ignored.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribePlayerSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -119,14 +111,12 @@ namespace Model
      * the beginning of the result set, do not specify a value. If a player session ID
      * is specified, this parameter is ignored.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePlayerSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePlayerSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePlayerSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePlayerSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -142,7 +132,7 @@ namespace Model
     Aws::String m_playerSessionStatusFilter;
     bool m_playerSessionStatusFilterHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

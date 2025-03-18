@@ -26,7 +26,7 @@ namespace Model
   class ListOutpostsRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API ListOutpostsRequest();
+    AWS_OUTPOSTS_API ListOutpostsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,19 +41,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOutpostsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOutpostsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOutpostsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOutpostsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOutpostsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -63,15 +61,14 @@ namespace Model
     /**
      * <p>Filters the results by the lifecycle status.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLifeCycleStatusFilter() const{ return m_lifeCycleStatusFilter; }
+    inline const Aws::Vector<Aws::String>& GetLifeCycleStatusFilter() const { return m_lifeCycleStatusFilter; }
     inline bool LifeCycleStatusFilterHasBeenSet() const { return m_lifeCycleStatusFilterHasBeenSet; }
-    inline void SetLifeCycleStatusFilter(const Aws::Vector<Aws::String>& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter = value; }
-    inline void SetLifeCycleStatusFilter(Aws::Vector<Aws::String>&& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter = std::move(value); }
-    inline ListOutpostsRequest& WithLifeCycleStatusFilter(const Aws::Vector<Aws::String>& value) { SetLifeCycleStatusFilter(value); return *this;}
-    inline ListOutpostsRequest& WithLifeCycleStatusFilter(Aws::Vector<Aws::String>&& value) { SetLifeCycleStatusFilter(std::move(value)); return *this;}
-    inline ListOutpostsRequest& AddLifeCycleStatusFilter(const Aws::String& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter.push_back(value); return *this; }
-    inline ListOutpostsRequest& AddLifeCycleStatusFilter(Aws::String&& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter.push_back(std::move(value)); return *this; }
-    inline ListOutpostsRequest& AddLifeCycleStatusFilter(const char* value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter.push_back(value); return *this; }
+    template<typename LifeCycleStatusFilterT = Aws::Vector<Aws::String>>
+    void SetLifeCycleStatusFilter(LifeCycleStatusFilterT&& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter = std::forward<LifeCycleStatusFilterT>(value); }
+    template<typename LifeCycleStatusFilterT = Aws::Vector<Aws::String>>
+    ListOutpostsRequest& WithLifeCycleStatusFilter(LifeCycleStatusFilterT&& value) { SetLifeCycleStatusFilter(std::forward<LifeCycleStatusFilterT>(value)); return *this;}
+    template<typename LifeCycleStatusFilterT = Aws::String>
+    ListOutpostsRequest& AddLifeCycleStatusFilter(LifeCycleStatusFilterT&& value) { m_lifeCycleStatusFilterHasBeenSet = true; m_lifeCycleStatusFilter.emplace_back(std::forward<LifeCycleStatusFilterT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,37 +76,35 @@ namespace Model
      * <p>Filters the results by Availability Zone (for example,
      * <code>us-east-1a</code>).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneFilter() const{ return m_availabilityZoneFilter; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneFilter() const { return m_availabilityZoneFilter; }
     inline bool AvailabilityZoneFilterHasBeenSet() const { return m_availabilityZoneFilterHasBeenSet; }
-    inline void SetAvailabilityZoneFilter(const Aws::Vector<Aws::String>& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter = value; }
-    inline void SetAvailabilityZoneFilter(Aws::Vector<Aws::String>&& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter = std::move(value); }
-    inline ListOutpostsRequest& WithAvailabilityZoneFilter(const Aws::Vector<Aws::String>& value) { SetAvailabilityZoneFilter(value); return *this;}
-    inline ListOutpostsRequest& WithAvailabilityZoneFilter(Aws::Vector<Aws::String>&& value) { SetAvailabilityZoneFilter(std::move(value)); return *this;}
-    inline ListOutpostsRequest& AddAvailabilityZoneFilter(const Aws::String& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter.push_back(value); return *this; }
-    inline ListOutpostsRequest& AddAvailabilityZoneFilter(Aws::String&& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter.push_back(std::move(value)); return *this; }
-    inline ListOutpostsRequest& AddAvailabilityZoneFilter(const char* value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter.push_back(value); return *this; }
+    template<typename AvailabilityZoneFilterT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZoneFilter(AvailabilityZoneFilterT&& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter = std::forward<AvailabilityZoneFilterT>(value); }
+    template<typename AvailabilityZoneFilterT = Aws::Vector<Aws::String>>
+    ListOutpostsRequest& WithAvailabilityZoneFilter(AvailabilityZoneFilterT&& value) { SetAvailabilityZoneFilter(std::forward<AvailabilityZoneFilterT>(value)); return *this;}
+    template<typename AvailabilityZoneFilterT = Aws::String>
+    ListOutpostsRequest& AddAvailabilityZoneFilter(AvailabilityZoneFilterT&& value) { m_availabilityZoneFilterHasBeenSet = true; m_availabilityZoneFilter.emplace_back(std::forward<AvailabilityZoneFilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIdFilter() const{ return m_availabilityZoneIdFilter; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIdFilter() const { return m_availabilityZoneIdFilter; }
     inline bool AvailabilityZoneIdFilterHasBeenSet() const { return m_availabilityZoneIdFilterHasBeenSet; }
-    inline void SetAvailabilityZoneIdFilter(const Aws::Vector<Aws::String>& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter = value; }
-    inline void SetAvailabilityZoneIdFilter(Aws::Vector<Aws::String>&& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter = std::move(value); }
-    inline ListOutpostsRequest& WithAvailabilityZoneIdFilter(const Aws::Vector<Aws::String>& value) { SetAvailabilityZoneIdFilter(value); return *this;}
-    inline ListOutpostsRequest& WithAvailabilityZoneIdFilter(Aws::Vector<Aws::String>&& value) { SetAvailabilityZoneIdFilter(std::move(value)); return *this;}
-    inline ListOutpostsRequest& AddAvailabilityZoneIdFilter(const Aws::String& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter.push_back(value); return *this; }
-    inline ListOutpostsRequest& AddAvailabilityZoneIdFilter(Aws::String&& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter.push_back(std::move(value)); return *this; }
-    inline ListOutpostsRequest& AddAvailabilityZoneIdFilter(const char* value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter.push_back(value); return *this; }
+    template<typename AvailabilityZoneIdFilterT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZoneIdFilter(AvailabilityZoneIdFilterT&& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter = std::forward<AvailabilityZoneIdFilterT>(value); }
+    template<typename AvailabilityZoneIdFilterT = Aws::Vector<Aws::String>>
+    ListOutpostsRequest& WithAvailabilityZoneIdFilter(AvailabilityZoneIdFilterT&& value) { SetAvailabilityZoneIdFilter(std::forward<AvailabilityZoneIdFilterT>(value)); return *this;}
+    template<typename AvailabilityZoneIdFilterT = Aws::String>
+    ListOutpostsRequest& AddAvailabilityZoneIdFilter(AvailabilityZoneIdFilterT&& value) { m_availabilityZoneIdFilterHasBeenSet = true; m_availabilityZoneIdFilter.emplace_back(std::forward<AvailabilityZoneIdFilterT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifeCycleStatusFilter;

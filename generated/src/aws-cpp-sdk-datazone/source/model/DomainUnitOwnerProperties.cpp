@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DomainUnitOwnerProperties::DomainUnitOwnerProperties() : 
-    m_groupHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 DomainUnitOwnerProperties::DomainUnitOwnerProperties(JsonView jsonValue)
-  : DomainUnitOwnerProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DomainUnitOwnerProperties& DomainUnitOwnerProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetObject("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

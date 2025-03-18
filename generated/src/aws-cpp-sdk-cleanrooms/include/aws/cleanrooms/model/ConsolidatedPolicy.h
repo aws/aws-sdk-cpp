@@ -32,7 +32,7 @@ namespace Model
   class ConsolidatedPolicy
   {
   public:
-    AWS_CLEANROOMS_API ConsolidatedPolicy();
+    AWS_CLEANROOMS_API ConsolidatedPolicy() = default;
     AWS_CLEANROOMS_API ConsolidatedPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConsolidatedPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p> The consolidated policy version 1.</p>
      */
-    inline const ConsolidatedPolicyV1& GetV1() const{ return m_v1; }
+    inline const ConsolidatedPolicyV1& GetV1() const { return m_v1; }
     inline bool V1HasBeenSet() const { return m_v1HasBeenSet; }
-    inline void SetV1(const ConsolidatedPolicyV1& value) { m_v1HasBeenSet = true; m_v1 = value; }
-    inline void SetV1(ConsolidatedPolicyV1&& value) { m_v1HasBeenSet = true; m_v1 = std::move(value); }
-    inline ConsolidatedPolicy& WithV1(const ConsolidatedPolicyV1& value) { SetV1(value); return *this;}
-    inline ConsolidatedPolicy& WithV1(ConsolidatedPolicyV1&& value) { SetV1(std::move(value)); return *this;}
+    template<typename V1T = ConsolidatedPolicyV1>
+    void SetV1(V1T&& value) { m_v1HasBeenSet = true; m_v1 = std::forward<V1T>(value); }
+    template<typename V1T = ConsolidatedPolicyV1>
+    ConsolidatedPolicy& WithV1(V1T&& value) { SetV1(std::forward<V1T>(value)); return *this;}
     ///@}
   private:
 

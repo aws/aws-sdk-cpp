@@ -22,7 +22,7 @@ namespace Model
   class CreateSchemaRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API CreateSchemaRequest();
+    AWS_PERSONALIZE_API CreateSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name for the schema.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSchemaRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSchemaRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A schema in Avro JSON format.</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
+    inline const Aws::String& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-    inline CreateSchemaRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline CreateSchemaRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline CreateSchemaRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    CreateSchemaRequest& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,10 @@ namespace Model
      * Domain dataset group, specify the domain you chose when you created the Domain
      * dataset group.</p>
      */
-    inline const Domain& GetDomain() const{ return m_domain; }
+    inline Domain GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline CreateSchemaRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-    inline CreateSchemaRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    inline void SetDomain(Domain value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline CreateSchemaRequest& WithDomain(Domain value) { SetDomain(value); return *this;}
     ///@}
   private:
 
@@ -84,7 +78,7 @@ namespace Model
     Aws::String m_schema;
     bool m_schemaHasBeenSet = false;
 
-    Domain m_domain;
+    Domain m_domain{Domain::NOT_SET};
     bool m_domainHasBeenSet = false;
   };
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTargetsForPolicyRequest::ListTargetsForPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListTargetsForPolicyRequest::SerializePayload() const
 {
   return {};

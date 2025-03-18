@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-EventTriggerLimits::EventTriggerLimits() : 
-    m_eventExpiration(0),
-    m_eventExpirationHasBeenSet(false),
-    m_periodsHasBeenSet(false)
-{
-}
-
 EventTriggerLimits::EventTriggerLimits(JsonView jsonValue)
-  : EventTriggerLimits()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EventTriggerLimits& EventTriggerLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventExpiration"))
   {
     m_eventExpiration = jsonValue.GetInt64("EventExpiration");
-
     m_eventExpirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Periods"))
   {
     Aws::Utils::Array<JsonView> periodsJsonList = jsonValue.GetArray("Periods");
@@ -49,7 +39,6 @@ EventTriggerLimits& EventTriggerLimits::operator =(JsonView jsonValue)
     }
     m_periodsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSnapshotLimitsRequest::GetSnapshotLimitsRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSnapshotLimitsRequest::SerializePayload() const
 {
   JsonValue payload;

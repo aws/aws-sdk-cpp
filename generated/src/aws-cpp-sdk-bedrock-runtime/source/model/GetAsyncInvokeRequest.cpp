@@ -12,11 +12,6 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAsyncInvokeRequest::GetAsyncInvokeRequest() : 
-    m_invocationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAsyncInvokeRequest::SerializePayload() const
 {
   return {};

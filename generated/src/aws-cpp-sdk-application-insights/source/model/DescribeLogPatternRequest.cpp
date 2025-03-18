@@ -12,14 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLogPatternRequest::DescribeLogPatternRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_patternSetNameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLogPatternRequest::SerializePayload() const
 {
   JsonValue payload;

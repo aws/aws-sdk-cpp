@@ -23,7 +23,7 @@ namespace Model
   class DescribeMaintenanceWindowExecutionTaskInvocationsRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DescribeMaintenanceWindowExecutionTaskInvocationsRequest();
+    AWS_SSM_API DescribeMaintenanceWindowExecutionTaskInvocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the maintenance window execution the task is part of.</p>
      */
-    inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
+    inline const Aws::String& GetWindowExecutionId() const { return m_windowExecutionId; }
     inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
-    inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
-    inline void SetWindowExecutionId(const char* value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId.assign(value); }
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+    template<typename WindowExecutionIdT = Aws::String>
+    void SetWindowExecutionId(WindowExecutionIdT&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::forward<WindowExecutionIdT>(value); }
+    template<typename WindowExecutionIdT = Aws::String>
+    DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(WindowExecutionIdT&& value) { SetWindowExecutionId(std::forward<WindowExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The ID of the specific task in the maintenance window task that should be
      * retrieved.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,14 @@ namespace Model
      * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
      * <code>CANCELLED</code>.</p>
      */
-    inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<MaintenanceWindowFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<MaintenanceWindowFilter>>
+    DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = MaintenanceWindowFilter>
+    DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,7 +85,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,14 +96,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,7 +114,7 @@ namespace Model
     Aws::Vector<MaintenanceWindowFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

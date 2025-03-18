@@ -18,16 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-ImageFailure::ImageFailure() : 
-    m_imageIdHasBeenSet(false),
-    m_failureCode(ImageFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 ImageFailure::ImageFailure(JsonView jsonValue)
-  : ImageFailure()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ImageFailure& ImageFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetObject("imageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = ImageFailureCodeMapper::GetImageFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-IncrementalPullConfig::IncrementalPullConfig() : 
-    m_datetimeTypeFieldNameHasBeenSet(false)
-{
-}
-
 IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue)
-  : IncrementalPullConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IncrementalPullConfig& IncrementalPullConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatetimeTypeFieldName"))
   {
     m_datetimeTypeFieldName = jsonValue.GetString("DatetimeTypeFieldName");
-
     m_datetimeTypeFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class Shard
   {
   public:
-    AWS_MEMORYDB_API Shard();
+    AWS_MEMORYDB_API Shard() = default;
     AWS_MEMORYDB_API Shard(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the shard</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Shard& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Shard& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Shard& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Shard& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,49 +58,45 @@ namespace Model
      * <p>The current state of this replication group - creating, available, modifying,
      * deleting.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Shard& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Shard& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Shard& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Shard& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keyspace for this shard.</p>
      */
-    inline const Aws::String& GetSlots() const{ return m_slots; }
+    inline const Aws::String& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::String& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline void SetSlots(const char* value) { m_slotsHasBeenSet = true; m_slots.assign(value); }
-    inline Shard& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
-    inline Shard& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
-    inline Shard& WithSlots(const char* value) { SetSlots(value); return *this;}
+    template<typename SlotsT = Aws::String>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::String>
+    Shard& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list containing information about individual nodes within the shard</p>
      */
-    inline const Aws::Vector<Node>& GetNodes() const{ return m_nodes; }
+    inline const Aws::Vector<Node>& GetNodes() const { return m_nodes; }
     inline bool NodesHasBeenSet() const { return m_nodesHasBeenSet; }
-    inline void SetNodes(const Aws::Vector<Node>& value) { m_nodesHasBeenSet = true; m_nodes = value; }
-    inline void SetNodes(Aws::Vector<Node>&& value) { m_nodesHasBeenSet = true; m_nodes = std::move(value); }
-    inline Shard& WithNodes(const Aws::Vector<Node>& value) { SetNodes(value); return *this;}
-    inline Shard& WithNodes(Aws::Vector<Node>&& value) { SetNodes(std::move(value)); return *this;}
-    inline Shard& AddNodes(const Node& value) { m_nodesHasBeenSet = true; m_nodes.push_back(value); return *this; }
-    inline Shard& AddNodes(Node&& value) { m_nodesHasBeenSet = true; m_nodes.push_back(std::move(value)); return *this; }
+    template<typename NodesT = Aws::Vector<Node>>
+    void SetNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes = std::forward<NodesT>(value); }
+    template<typename NodesT = Aws::Vector<Node>>
+    Shard& WithNodes(NodesT&& value) { SetNodes(std::forward<NodesT>(value)); return *this;}
+    template<typename NodesT = Node>
+    Shard& AddNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes.emplace_back(std::forward<NodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of nodes in the shard</p>
      */
-    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const { return m_numberOfNodes; }
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
     inline Shard& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
@@ -121,7 +115,7 @@ namespace Model
     Aws::Vector<Node> m_nodes;
     bool m_nodesHasBeenSet = false;
 
-    int m_numberOfNodes;
+    int m_numberOfNodes{0};
     bool m_numberOfNodesHasBeenSet = false;
   };
 

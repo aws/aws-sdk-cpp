@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteAccountAliasRequest::DeleteAccountAliasRequest() : 
-    m_accountAliasHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccountAliasRequest::SerializePayload() const
 {
   Aws::StringStream ss;

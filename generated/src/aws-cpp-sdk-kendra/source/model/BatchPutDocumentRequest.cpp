@@ -12,14 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutDocumentRequest::BatchPutDocumentRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

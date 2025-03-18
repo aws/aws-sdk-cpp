@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientCertificateRevocationListStatus::ClientCertificateRevocationListStatus() : 
-    m_code(ClientCertificateRevocationListStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ClientCertificateRevocationListStatus::ClientCertificateRevocationListStatus(const XmlNode& xmlNode)
-  : ClientCertificateRevocationListStatus()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ ClientCertificateRevocationListStatus& ClientCertificateRevocationListStatus::op
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = ClientCertificateRevocationListStatusCodeMapper::GetClientCertificateRevocationListStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = ClientCertificateRevocationListStatusCodeMapper::GetClientCertificateRevocationListStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

@@ -35,7 +35,7 @@ namespace Model
   class DesiredConfiguration
   {
   public:
-    AWS_AUTOSCALING_API DesiredConfiguration();
+    AWS_AUTOSCALING_API DesiredConfiguration() = default;
     AWS_AUTOSCALING_API DesiredConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API DesiredConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
      * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline DesiredConfiguration& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline DesiredConfiguration& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    DesiredConfiguration& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
+    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const { return m_mixedInstancesPolicy; }
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
-    inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
-    inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
-    inline DesiredConfiguration& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
-    inline DesiredConfiguration& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
+    template<typename MixedInstancesPolicyT = MixedInstancesPolicy>
+    void SetMixedInstancesPolicy(MixedInstancesPolicyT&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::forward<MixedInstancesPolicyT>(value); }
+    template<typename MixedInstancesPolicyT = MixedInstancesPolicy>
+    DesiredConfiguration& WithMixedInstancesPolicy(MixedInstancesPolicyT&& value) { SetMixedInstancesPolicy(std::forward<MixedInstancesPolicyT>(value)); return *this;}
     ///@}
   private:
 

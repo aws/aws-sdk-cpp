@@ -21,7 +21,7 @@ namespace Model
   class UpdatePolicyRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API UpdatePolicyRequest();
+    AWS_ORGANIZATIONS_API UpdatePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * string requires "p-" followed by from 8 to 128 lowercase or uppercase letters,
      * digits, or the underscore character (_).</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline UpdatePolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline UpdatePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline UpdatePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    UpdatePolicyRequest& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdatePolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdatePolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdatePolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdatePolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If provided, the new description for the policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdatePolicyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdatePolicyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdatePolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdatePolicyRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
      * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline UpdatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline UpdatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline UpdatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    UpdatePolicyRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

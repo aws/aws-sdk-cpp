@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-BufferingHints::BufferingHints() : 
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false)
-{
-}
-
 BufferingHints::BufferingHints(JsonView jsonValue)
-  : BufferingHints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BufferingHints& BufferingHints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SizeInMBs"))
   {
     m_sizeInMBs = jsonValue.GetInteger("SizeInMBs");
-
     m_sizeInMBsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntervalInSeconds"))
   {
     m_intervalInSeconds = jsonValue.GetInteger("IntervalInSeconds");
-
     m_intervalInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

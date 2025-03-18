@@ -27,7 +27,7 @@ namespace Model
   class GetDimensionValuesRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetDimensionValuesRequest();
+    AWS_COSTEXPLORER_API GetDimensionValuesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The value that you want to search the filter values for.</p>
      */
-    inline const Aws::String& GetSearchString() const{ return m_searchString; }
+    inline const Aws::String& GetSearchString() const { return m_searchString; }
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
-    inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
-    inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
-    inline GetDimensionValuesRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
-    inline GetDimensionValuesRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
-    inline GetDimensionValuesRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
+    template<typename SearchStringT = Aws::String>
+    void SetSearchString(SearchStringT&& value) { m_searchStringHasBeenSet = true; m_searchString = std::forward<SearchStringT>(value); }
+    template<typename SearchStringT = Aws::String>
+    GetDimensionValuesRequest& WithSearchString(SearchStringT&& value) { SetSearchString(std::forward<SearchStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
      * including <code>2017-05-01</code>.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetDimensionValuesRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetDimensionValuesRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetDimensionValuesRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
      * </p>
      */
-    inline const Dimension& GetDimension() const{ return m_dimension; }
+    inline Dimension GetDimension() const { return m_dimension; }
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
-    inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
-    inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
-    inline GetDimensionValuesRequest& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
-    inline GetDimensionValuesRequest& WithDimension(Dimension&& value) { SetDimension(std::move(value)); return *this;}
+    inline void SetDimension(Dimension value) { m_dimensionHasBeenSet = true; m_dimension = value; }
+    inline GetDimensionValuesRequest& WithDimension(Dimension value) { SetDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -174,22 +170,20 @@ namespace Model
      * of the member account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique
      * identifier for your Savings Plans.</p> </li> </ul>
      */
-    inline const Context& GetContext() const{ return m_context; }
+    inline Context GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Context& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Context&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline GetDimensionValuesRequest& WithContext(const Context& value) { SetContext(value); return *this;}
-    inline GetDimensionValuesRequest& WithContext(Context&& value) { SetContext(std::move(value)); return *this;}
+    inline void SetContext(Context value) { m_contextHasBeenSet = true; m_context = value; }
+    inline GetDimensionValuesRequest& WithContext(Context value) { SetContext(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetDimensionValuesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetDimensionValuesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetDimensionValuesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +201,14 @@ namespace Model
      * <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
      * aren't supported.</p>
      */
-    inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::Vector<SortDefinition>& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetDimensionValuesRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
-    inline GetDimensionValuesRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
-    inline GetDimensionValuesRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
-    inline GetDimensionValuesRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    GetDimensionValuesRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    GetDimensionValuesRequest& AddSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy.emplace_back(std::forward<SortByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -225,14 +219,12 @@ namespace Model
      * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
      * be retrieved by calling the ListBillingViews API.</p>
      */
-    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
-    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
-    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
-    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
-    inline GetDimensionValuesRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
-    inline GetDimensionValuesRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
-    inline GetDimensionValuesRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    GetDimensionValuesRequest& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,7 +235,7 @@ namespace Model
      * this parameter.</p> <p>For <code>GetDimensionValues</code>, MaxResults has an
      * upper limit of 1000.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetDimensionValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -255,14 +247,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetDimensionValuesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetDimensionValuesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetDimensionValuesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetDimensionValuesRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -272,10 +262,10 @@ namespace Model
     DateInterval m_timePeriod;
     bool m_timePeriodHasBeenSet = false;
 
-    Dimension m_dimension;
+    Dimension m_dimension{Dimension::NOT_SET};
     bool m_dimensionHasBeenSet = false;
 
-    Context m_context;
+    Context m_context{Context::NOT_SET};
     bool m_contextHasBeenSet = false;
 
     Expression m_filter;
@@ -287,7 +277,7 @@ namespace Model
     Aws::String m_billingViewArn;
     bool m_billingViewArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextPageToken;

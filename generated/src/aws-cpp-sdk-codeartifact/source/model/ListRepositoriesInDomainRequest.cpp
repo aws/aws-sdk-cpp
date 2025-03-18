@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRepositoriesInDomainRequest::ListRepositoriesInDomainRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_administratorAccountHasBeenSet(false),
-    m_repositoryPrefixHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRepositoriesInDomainRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDataviewConfiguration::KxDataviewConfiguration() : 
-    m_dataviewNameHasBeenSet(false),
-    m_dataviewVersionIdHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false)
-{
-}
-
 KxDataviewConfiguration::KxDataviewConfiguration(JsonView jsonValue)
-  : KxDataviewConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ KxDataviewConfiguration& KxDataviewConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataviewName"))
   {
     m_dataviewName = jsonValue.GetString("dataviewName");
-
     m_dataviewNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataviewVersionId"))
   {
     m_dataviewVersionId = jsonValue.GetString("dataviewVersionId");
-
     m_dataviewVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changesetId"))
   {
     m_changesetId = jsonValue.GetString("changesetId");
-
     m_changesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentConfigurations"))
   {
     Aws::Utils::Array<JsonView> segmentConfigurationsJsonList = jsonValue.GetArray("segmentConfigurations");
@@ -64,7 +49,6 @@ KxDataviewConfiguration& KxDataviewConfiguration::operator =(JsonView jsonValue)
     }
     m_segmentConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

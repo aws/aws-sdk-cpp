@@ -26,7 +26,7 @@ namespace Model
   class GetSavingsPlansUtilizationDetailsRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsRequest();
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,12 @@ namespace Model
      * <code>Start</code> date, and before the current date. Future dates can't be used
      * as an <code>End</code> date.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetSavingsPlansUtilizationDetailsRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +67,25 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetSavingsPlansUtilizationDetailsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type.</p>
      */
-    inline const Aws::Vector<SavingsPlansDataType>& GetDataType() const{ return m_dataType; }
+    inline const Aws::Vector<SavingsPlansDataType>& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::Vector<SavingsPlansDataType>& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::Vector<SavingsPlansDataType>&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsRequest& WithDataType(const Aws::Vector<SavingsPlansDataType>& value) { SetDataType(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithDataType(Aws::Vector<SavingsPlansDataType>&& value) { SetDataType(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& AddDataType(const SavingsPlansDataType& value) { m_dataTypeHasBeenSet = true; m_dataType.push_back(value); return *this; }
-    inline GetSavingsPlansUtilizationDetailsRequest& AddDataType(SavingsPlansDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType.push_back(std::move(value)); return *this; }
+    template<typename DataTypeT = Aws::Vector<SavingsPlansDataType>>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::Vector<SavingsPlansDataType>>
+    GetSavingsPlansUtilizationDetailsRequest& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
+    inline GetSavingsPlansUtilizationDetailsRequest& AddDataType(SavingsPlansDataType value) { m_dataTypeHasBeenSet = true; m_dataType.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +94,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSavingsPlansUtilizationDetailsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSavingsPlansUtilizationDetailsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +107,7 @@ namespace Model
      * <p>The number of items to be returned in a response. The default is
      * <code>20</code>, with a minimum value of <code>1</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSavingsPlansUtilizationDetailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -129,12 +126,12 @@ namespace Model
      * for <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
-    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+    inline const SortDefinition& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = SortDefinition>
+    GetSavingsPlansUtilizationDetailsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
   private:
 
@@ -150,7 +147,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     SortDefinition m_sortBy;

@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEndpointGroupRequest::DescribeEndpointGroupRequest() : 
-    m_endpointGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;

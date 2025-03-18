@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RecognizeTextResult::RecognizeTextResult()
-{
-}
-
 RecognizeTextResult::RecognizeTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,13 @@ RecognizeTextResult& RecognizeTextResult::operator =(const Aws::AmazonWebService
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
+    m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionState"))
   {
     m_sessionState = jsonValue.GetObject("sessionState");
-
+    m_sessionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interpretations"))
   {
     Aws::Utils::Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
@@ -51,8 +46,8 @@ RecognizeTextResult& RecognizeTextResult::operator =(const Aws::AmazonWebService
     {
       m_interpretations.push_back(interpretationsJsonList[interpretationsIndex].AsObject());
     }
+    m_interpretationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestAttributes"))
   {
     Aws::Map<Aws::String, JsonView> requestAttributesJsonMap = jsonValue.GetObject("requestAttributes").GetAllObjects();
@@ -60,26 +55,25 @@ RecognizeTextResult& RecognizeTextResult::operator =(const Aws::AmazonWebService
     {
       m_requestAttributes[requestAttributesItem.first] = requestAttributesItem.second.AsString();
     }
+    m_requestAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recognizedBotMember"))
   {
     m_recognizedBotMember = jsonValue.GetObject("recognizedBotMember");
-
+    m_recognizedBotMemberHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

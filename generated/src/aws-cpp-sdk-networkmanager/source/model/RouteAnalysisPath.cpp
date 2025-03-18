@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-RouteAnalysisPath::RouteAnalysisPath() : 
-    m_completionStatusHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 RouteAnalysisPath::RouteAnalysisPath(JsonView jsonValue)
-  : RouteAnalysisPath()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteAnalysisPath& RouteAnalysisPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompletionStatus"))
   {
     m_completionStatus = jsonValue.GetObject("CompletionStatus");
-
     m_completionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("Path");
@@ -48,7 +39,6 @@ RouteAnalysisPath& RouteAnalysisPath::operator =(JsonView jsonValue)
     }
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

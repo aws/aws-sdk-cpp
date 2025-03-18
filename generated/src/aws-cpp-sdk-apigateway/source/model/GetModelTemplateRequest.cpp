@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetModelTemplateRequest::GetModelTemplateRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_modelNameHasBeenSet(false)
-{
-}
-
 Aws::String GetModelTemplateRequest::SerializePayload() const
 {
   return {};

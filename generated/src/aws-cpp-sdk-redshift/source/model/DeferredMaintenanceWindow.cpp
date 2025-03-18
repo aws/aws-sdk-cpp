@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DeferredMaintenanceWindow::DeferredMaintenanceWindow() : 
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false),
-    m_deferMaintenanceEndTimeHasBeenSet(false)
-{
-}
-
 DeferredMaintenanceWindow::DeferredMaintenanceWindow(const XmlNode& xmlNode)
-  : DeferredMaintenanceWindow()
 {
   *this = xmlNode;
 }

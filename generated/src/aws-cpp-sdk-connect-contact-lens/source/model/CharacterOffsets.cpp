@@ -18,16 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-CharacterOffsets::CharacterOffsets() : 
-    m_beginOffsetChar(0),
-    m_beginOffsetCharHasBeenSet(false),
-    m_endOffsetChar(0),
-    m_endOffsetCharHasBeenSet(false)
-{
-}
-
 CharacterOffsets::CharacterOffsets(JsonView jsonValue)
-  : CharacterOffsets()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CharacterOffsets& CharacterOffsets::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginOffsetChar"))
   {
     m_beginOffsetChar = jsonValue.GetInteger("BeginOffsetChar");
-
     m_beginOffsetCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffsetChar"))
   {
     m_endOffsetChar = jsonValue.GetInteger("EndOffsetChar");
-
     m_endOffsetCharHasBeenSet = true;
   }
-
   return *this;
 }
 

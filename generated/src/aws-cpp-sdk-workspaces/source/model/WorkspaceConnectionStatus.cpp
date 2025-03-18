@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspaceConnectionStatus::WorkspaceConnectionStatus() : 
-    m_workspaceIdHasBeenSet(false),
-    m_connectionState(ConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_connectionStateCheckTimestampHasBeenSet(false),
-    m_lastKnownUserConnectionTimestampHasBeenSet(false)
-{
-}
-
 WorkspaceConnectionStatus::WorkspaceConnectionStatus(JsonView jsonValue)
-  : WorkspaceConnectionStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ WorkspaceConnectionStatus& WorkspaceConnectionStatus::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("ConnectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStateCheckTimestamp"))
   {
     m_connectionStateCheckTimestamp = jsonValue.GetDouble("ConnectionStateCheckTimestamp");
-
     m_connectionStateCheckTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastKnownUserConnectionTimestamp"))
   {
     m_lastKnownUserConnectionTimestamp = jsonValue.GetDouble("LastKnownUserConnectionTimestamp");
-
     m_lastKnownUserConnectionTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

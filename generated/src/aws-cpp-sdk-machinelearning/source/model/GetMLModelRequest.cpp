@@ -12,13 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMLModelRequest::GetMLModelRequest() : 
-    m_mLModelIdHasBeenSet(false),
-    m_verbose(false),
-    m_verboseHasBeenSet(false)
-{
-}
-
 Aws::String GetMLModelRequest::SerializePayload() const
 {
   JsonValue payload;

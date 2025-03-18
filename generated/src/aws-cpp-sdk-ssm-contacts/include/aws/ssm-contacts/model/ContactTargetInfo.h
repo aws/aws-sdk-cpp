@@ -32,7 +32,7 @@ namespace Model
   class ContactTargetInfo
   {
   public:
-    AWS_SSMCONTACTS_API ContactTargetInfo();
+    AWS_SSMCONTACTS_API ContactTargetInfo() = default;
     AWS_SSMCONTACTS_API ContactTargetInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API ContactTargetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline ContactTargetInfo& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline ContactTargetInfo& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline ContactTargetInfo& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    ContactTargetInfo& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>A Boolean value determining if the contact's acknowledgement stops the
      * progress of stages in the plan.</p>
      */
-    inline bool GetIsEssential() const{ return m_isEssential; }
+    inline bool GetIsEssential() const { return m_isEssential; }
     inline bool IsEssentialHasBeenSet() const { return m_isEssentialHasBeenSet; }
     inline void SetIsEssential(bool value) { m_isEssentialHasBeenSet = true; m_isEssential = value; }
     inline ContactTargetInfo& WithIsEssential(bool value) { SetIsEssential(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_contactId;
     bool m_contactIdHasBeenSet = false;
 
-    bool m_isEssential;
+    bool m_isEssential{false};
     bool m_isEssentialHasBeenSet = false;
   };
 

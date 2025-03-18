@@ -29,7 +29,7 @@ namespace Model
   class RoutePedestrianOverviewSummary
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianOverviewSummary();
+    AWS_GEOROUTES_API RoutePedestrianOverviewSummary() = default;
     AWS_GEOROUTES_API RoutePedestrianOverviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianOverviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Distance of the step.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RoutePedestrianOverviewSummary& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>Duration of the step.</p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RoutePedestrianOverviewSummary& WithDuration(long long value) { SetDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EventCategoriesMap::EventCategoriesMap() : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 EventCategoriesMap::EventCategoriesMap(const XmlNode& xmlNode)
-  : EventCategoriesMap()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("EventInfoMap");
+      m_eventsHasBeenSet = !eventsMember.IsNull();
       while(!eventsMember.IsNull())
       {
         m_events.push_back(eventsMember);

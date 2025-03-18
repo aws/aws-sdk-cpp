@@ -31,7 +31,7 @@ namespace Model
   class AwsIdentity
   {
   public:
-    AWS_SECURITYLAKE_API AwsIdentity();
+    AWS_SECURITYLAKE_API AwsIdentity() = default;
     AWS_SECURITYLAKE_API AwsIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API AwsIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>The external ID used to establish trust relationship with the Amazon Web
      * Services identity.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AwsIdentity& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AwsIdentity& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AwsIdentity& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    AwsIdentity& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services identity principal.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline AwsIdentity& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline AwsIdentity& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline AwsIdentity& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    AwsIdentity& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 

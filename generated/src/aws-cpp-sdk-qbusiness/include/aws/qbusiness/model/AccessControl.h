@@ -35,7 +35,7 @@ namespace Model
   class AccessControl
   {
   public:
-    AWS_QBUSINESS_API AccessControl();
+    AWS_QBUSINESS_API AccessControl() = default;
     AWS_QBUSINESS_API AccessControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,33 +47,31 @@ namespace Model
      * <code>USER</code> or a <code>GROUP</code>. Each principal can be have the
      * following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
      */
-    inline const Aws::Vector<Principal>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<Principal>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<Principal>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline AccessControl& WithPrincipals(const Aws::Vector<Principal>& value) { SetPrincipals(value); return *this;}
-    inline AccessControl& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline AccessControl& AddPrincipals(const Principal& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline AccessControl& AddPrincipals(Principal&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
+    template<typename PrincipalsT = Aws::Vector<Principal>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Principal>>
+    AccessControl& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Principal>
+    AccessControl& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Describes the member relation within a principal list.</p>
      */
-    inline const MemberRelation& GetMemberRelation() const{ return m_memberRelation; }
+    inline MemberRelation GetMemberRelation() const { return m_memberRelation; }
     inline bool MemberRelationHasBeenSet() const { return m_memberRelationHasBeenSet; }
-    inline void SetMemberRelation(const MemberRelation& value) { m_memberRelationHasBeenSet = true; m_memberRelation = value; }
-    inline void SetMemberRelation(MemberRelation&& value) { m_memberRelationHasBeenSet = true; m_memberRelation = std::move(value); }
-    inline AccessControl& WithMemberRelation(const MemberRelation& value) { SetMemberRelation(value); return *this;}
-    inline AccessControl& WithMemberRelation(MemberRelation&& value) { SetMemberRelation(std::move(value)); return *this;}
+    inline void SetMemberRelation(MemberRelation value) { m_memberRelationHasBeenSet = true; m_memberRelation = value; }
+    inline AccessControl& WithMemberRelation(MemberRelation value) { SetMemberRelation(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Principal> m_principals;
     bool m_principalsHasBeenSet = false;
 
-    MemberRelation m_memberRelation;
+    MemberRelation m_memberRelation{MemberRelation::NOT_SET};
     bool m_memberRelationHasBeenSet = false;
   };
 

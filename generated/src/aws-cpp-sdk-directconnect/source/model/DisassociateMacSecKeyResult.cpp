@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateMacSecKeyResult::DisassociateMacSecKeyResult()
-{
-}
-
 DisassociateMacSecKeyResult::DisassociateMacSecKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DisassociateMacSecKeyResult& DisassociateMacSecKeyResult::operator =(const Aws::
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
+    m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macSecKeys"))
   {
     Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
@@ -42,14 +37,15 @@ DisassociateMacSecKeyResult& DisassociateMacSecKeyResult::operator =(const Aws::
     {
       m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
     }
+    m_macSecKeysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

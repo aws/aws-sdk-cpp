@@ -12,15 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_currentApplicationVersion(0),
-    m_currentApplicationVersionHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,30 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ForecastComputation::ForecastComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_periodsForward(0),
-    m_periodsForwardHasBeenSet(false),
-    m_periodsBackward(0),
-    m_periodsBackwardHasBeenSet(false),
-    m_upperBoundary(0.0),
-    m_upperBoundaryHasBeenSet(false),
-    m_lowerBoundary(0.0),
-    m_lowerBoundaryHasBeenSet(false),
-    m_predictionInterval(0),
-    m_predictionIntervalHasBeenSet(false),
-    m_seasonality(ForecastComputationSeasonality::NOT_SET),
-    m_seasonalityHasBeenSet(false),
-    m_customSeasonalityValue(0),
-    m_customSeasonalityValueHasBeenSet(false)
-{
-}
-
 ForecastComputation::ForecastComputation(JsonView jsonValue)
-  : ForecastComputation()
 {
   *this = jsonValue;
 }
@@ -51,80 +28,58 @@ ForecastComputation& ForecastComputation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodsForward"))
   {
     m_periodsForward = jsonValue.GetInteger("PeriodsForward");
-
     m_periodsForwardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodsBackward"))
   {
     m_periodsBackward = jsonValue.GetInteger("PeriodsBackward");
-
     m_periodsBackwardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBoundary"))
   {
     m_upperBoundary = jsonValue.GetDouble("UpperBoundary");
-
     m_upperBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LowerBoundary"))
   {
     m_lowerBoundary = jsonValue.GetDouble("LowerBoundary");
-
     m_lowerBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionInterval"))
   {
     m_predictionInterval = jsonValue.GetInteger("PredictionInterval");
-
     m_predictionIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Seasonality"))
   {
     m_seasonality = ForecastComputationSeasonalityMapper::GetForecastComputationSeasonalityForName(jsonValue.GetString("Seasonality"));
-
     m_seasonalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomSeasonalityValue"))
   {
     m_customSeasonalityValue = jsonValue.GetInteger("CustomSeasonalityValue");
-
     m_customSeasonalityValueHasBeenSet = true;
   }
-
   return *this;
 }
 

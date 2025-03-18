@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveFilters::ArchiveFilters() : 
-    m_includeHasBeenSet(false),
-    m_unlessHasBeenSet(false)
-{
-}
-
 ArchiveFilters::ArchiveFilters(JsonView jsonValue)
-  : ArchiveFilters()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ArchiveFilters& ArchiveFilters::operator =(JsonView jsonValue)
     }
     m_includeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unless"))
   {
     Aws::Utils::Array<JsonView> unlessJsonList = jsonValue.GetArray("Unless");
@@ -51,7 +43,6 @@ ArchiveFilters& ArchiveFilters::operator =(JsonView jsonValue)
     }
     m_unlessHasBeenSet = true;
   }
-
   return *this;
 }
 

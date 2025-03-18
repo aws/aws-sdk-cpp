@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAnswersRequest::ListAnswersRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_questionPriority(QuestionPriority::NOT_SET),
-    m_questionPriorityHasBeenSet(false)
-{
-}
-
 Aws::String ListAnswersRequest::SerializePayload() const
 {
   return {};

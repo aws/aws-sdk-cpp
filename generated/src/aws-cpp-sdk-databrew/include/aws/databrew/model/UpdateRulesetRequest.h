@@ -23,7 +23,7 @@ namespace Model
   class UpdateRulesetRequest : public GlueDataBrewRequest
   {
   public:
-    AWS_GLUEDATABREW_API UpdateRulesetRequest();
+    AWS_GLUEDATABREW_API UpdateRulesetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the ruleset to be updated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRulesetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRulesetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRulesetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRulesetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the ruleset.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRulesetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRulesetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRulesetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRulesetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,14 @@ namespace Model
      * <p>A list of rules that are defined with the ruleset. A rule includes one or
      * more checks to be validated on a DataBrew dataset.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline UpdateRulesetRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline UpdateRulesetRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline UpdateRulesetRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline UpdateRulesetRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    UpdateRulesetRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    UpdateRulesetRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

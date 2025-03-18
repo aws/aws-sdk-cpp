@@ -33,7 +33,7 @@ namespace Model
   class FileVersion
   {
   public:
-    AWS_CODECOMMIT_API FileVersion();
+    AWS_CODECOMMIT_API FileVersion() = default;
     AWS_CODECOMMIT_API FileVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API FileVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const Commit& GetCommit() const{ return m_commit; }
+    inline const Commit& GetCommit() const { return m_commit; }
     inline bool CommitHasBeenSet() const { return m_commitHasBeenSet; }
-    inline void SetCommit(const Commit& value) { m_commitHasBeenSet = true; m_commit = value; }
-    inline void SetCommit(Commit&& value) { m_commitHasBeenSet = true; m_commit = std::move(value); }
-    inline FileVersion& WithCommit(const Commit& value) { SetCommit(value); return *this;}
-    inline FileVersion& WithCommit(Commit&& value) { SetCommit(std::move(value)); return *this;}
+    template<typename CommitT = Commit>
+    void SetCommit(CommitT&& value) { m_commitHasBeenSet = true; m_commit = std::forward<CommitT>(value); }
+    template<typename CommitT = Commit>
+    FileVersion& WithCommit(CommitT&& value) { SetCommit(std::forward<CommitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +54,12 @@ namespace Model
      * <p>The blob ID of the object that represents the content of the file in this
      * version.</p>
      */
-    inline const Aws::String& GetBlobId() const{ return m_blobId; }
+    inline const Aws::String& GetBlobId() const { return m_blobId; }
     inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
-    inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
-    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
-    inline void SetBlobId(const char* value) { m_blobIdHasBeenSet = true; m_blobId.assign(value); }
-    inline FileVersion& WithBlobId(const Aws::String& value) { SetBlobId(value); return *this;}
-    inline FileVersion& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
-    inline FileVersion& WithBlobId(const char* value) { SetBlobId(value); return *this;}
+    template<typename BlobIdT = Aws::String>
+    void SetBlobId(BlobIdT&& value) { m_blobIdHasBeenSet = true; m_blobId = std::forward<BlobIdT>(value); }
+    template<typename BlobIdT = Aws::String>
+    FileVersion& WithBlobId(BlobIdT&& value) { SetBlobId(std::forward<BlobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * the data for this version of the file. This value will vary between file
      * versions if a file is renamed or if its path changes.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline FileVersion& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline FileVersion& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline FileVersion& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    FileVersion& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,15 +81,14 @@ namespace Model
      * <p>An array of commit IDs that contain more recent versions of this file. If
      * there are no additional versions of the file, this array will be empty.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRevisionChildren() const{ return m_revisionChildren; }
+    inline const Aws::Vector<Aws::String>& GetRevisionChildren() const { return m_revisionChildren; }
     inline bool RevisionChildrenHasBeenSet() const { return m_revisionChildrenHasBeenSet; }
-    inline void SetRevisionChildren(const Aws::Vector<Aws::String>& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren = value; }
-    inline void SetRevisionChildren(Aws::Vector<Aws::String>&& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren = std::move(value); }
-    inline FileVersion& WithRevisionChildren(const Aws::Vector<Aws::String>& value) { SetRevisionChildren(value); return *this;}
-    inline FileVersion& WithRevisionChildren(Aws::Vector<Aws::String>&& value) { SetRevisionChildren(std::move(value)); return *this;}
-    inline FileVersion& AddRevisionChildren(const Aws::String& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren.push_back(value); return *this; }
-    inline FileVersion& AddRevisionChildren(Aws::String&& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren.push_back(std::move(value)); return *this; }
-    inline FileVersion& AddRevisionChildren(const char* value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren.push_back(value); return *this; }
+    template<typename RevisionChildrenT = Aws::Vector<Aws::String>>
+    void SetRevisionChildren(RevisionChildrenT&& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren = std::forward<RevisionChildrenT>(value); }
+    template<typename RevisionChildrenT = Aws::Vector<Aws::String>>
+    FileVersion& WithRevisionChildren(RevisionChildrenT&& value) { SetRevisionChildren(std::forward<RevisionChildrenT>(value)); return *this;}
+    template<typename RevisionChildrenT = Aws::String>
+    FileVersion& AddRevisionChildren(RevisionChildrenT&& value) { m_revisionChildrenHasBeenSet = true; m_revisionChildren.emplace_back(std::forward<RevisionChildrenT>(value)); return *this; }
     ///@}
   private:
 

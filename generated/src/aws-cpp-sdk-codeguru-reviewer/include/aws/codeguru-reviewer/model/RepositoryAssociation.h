@@ -39,7 +39,7 @@ namespace Model
   class RepositoryAssociation
   {
   public:
-    AWS_CODEGURUREVIEWER_API RepositoryAssociation();
+    AWS_CODEGURUREVIEWER_API RepositoryAssociation() = default;
     AWS_CODEGURUREVIEWER_API RepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API RepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The ID of the repository association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline RepositoryAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline RepositoryAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    RepositoryAssociation& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
      */
-    inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
+    inline const Aws::String& GetAssociationArn() const { return m_associationArn; }
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
-    inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
-    inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
-    inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
-    inline RepositoryAssociation& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
-    inline RepositoryAssociation& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
+    template<typename AssociationArnT = Aws::String>
+    void SetAssociationArn(AssociationArnT&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::forward<AssociationArnT>(value); }
+    template<typename AssociationArnT = Aws::String>
+    RepositoryAssociation& WithAssociationArn(AssociationArnT&& value) { SetAssociationArn(std::forward<AssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,28 +78,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
      * in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline RepositoryAssociation& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline RepositoryAssociation& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    RepositoryAssociation& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RepositoryAssociation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RepositoryAssociation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RepositoryAssociation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,26 +106,22 @@ namespace Model
      * this is the username for the account that owns the repository. For an S3
      * repository, it can be the username or Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline RepositoryAssociation& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline RepositoryAssociation& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    RepositoryAssociation& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provider type of the repository association.</p>
      */
-    inline const ProviderType& GetProviderType() const{ return m_providerType; }
+    inline ProviderType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline RepositoryAssociation& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
-    inline RepositoryAssociation& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(ProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline RepositoryAssociation& WithProviderType(ProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -161,26 +149,22 @@ namespace Model
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
      * Reviewer User Guide</i>.</p> </li> </ul>
      */
-    inline const RepositoryAssociationState& GetState() const{ return m_state; }
+    inline RepositoryAssociationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const RepositoryAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(RepositoryAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline RepositoryAssociation& WithState(const RepositoryAssociationState& value) { SetState(value); return *this;}
-    inline RepositoryAssociation& WithState(RepositoryAssociationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(RepositoryAssociationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline RepositoryAssociation& WithState(RepositoryAssociationState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of why the repository association is in the current state.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline RepositoryAssociation& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline RepositoryAssociation& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline RepositoryAssociation& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    RepositoryAssociation& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +172,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the repository association
      * was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimeStamp() const{ return m_lastUpdatedTimeStamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimeStamp() const { return m_lastUpdatedTimeStamp; }
     inline bool LastUpdatedTimeStampHasBeenSet() const { return m_lastUpdatedTimeStampHasBeenSet; }
-    inline void SetLastUpdatedTimeStamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = value; }
-    inline void SetLastUpdatedTimeStamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = std::move(value); }
-    inline RepositoryAssociation& WithLastUpdatedTimeStamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimeStamp(value); return *this;}
-    inline RepositoryAssociation& WithLastUpdatedTimeStamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimeStamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeStampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimeStamp(LastUpdatedTimeStampT&& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = std::forward<LastUpdatedTimeStampT>(value); }
+    template<typename LastUpdatedTimeStampT = Aws::Utils::DateTime>
+    RepositoryAssociation& WithLastUpdatedTimeStamp(LastUpdatedTimeStampT&& value) { SetLastUpdatedTimeStamp(std::forward<LastUpdatedTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,12 +185,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the repository association
      * was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimeStamp() const{ return m_createdTimeStamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimeStamp() const { return m_createdTimeStamp; }
     inline bool CreatedTimeStampHasBeenSet() const { return m_createdTimeStampHasBeenSet; }
-    inline void SetCreatedTimeStamp(const Aws::Utils::DateTime& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = value; }
-    inline void SetCreatedTimeStamp(Aws::Utils::DateTime&& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = std::move(value); }
-    inline RepositoryAssociation& WithCreatedTimeStamp(const Aws::Utils::DateTime& value) { SetCreatedTimeStamp(value); return *this;}
-    inline RepositoryAssociation& WithCreatedTimeStamp(Aws::Utils::DateTime&& value) { SetCreatedTimeStamp(std::move(value)); return *this;}
+    template<typename CreatedTimeStampT = Aws::Utils::DateTime>
+    void SetCreatedTimeStamp(CreatedTimeStampT&& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = std::forward<CreatedTimeStampT>(value); }
+    template<typename CreatedTimeStampT = Aws::Utils::DateTime>
+    RepositoryAssociation& WithCreatedTimeStamp(CreatedTimeStampT&& value) { SetCreatedTimeStamp(std::forward<CreatedTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,22 +202,22 @@ namespace Model
      * of the Amazon Web Services KMS key that is associated with this repository
      * association.</p> </li> </ul>
      */
-    inline const KMSKeyDetails& GetKMSKeyDetails() const{ return m_kMSKeyDetails; }
+    inline const KMSKeyDetails& GetKMSKeyDetails() const { return m_kMSKeyDetails; }
     inline bool KMSKeyDetailsHasBeenSet() const { return m_kMSKeyDetailsHasBeenSet; }
-    inline void SetKMSKeyDetails(const KMSKeyDetails& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = value; }
-    inline void SetKMSKeyDetails(KMSKeyDetails&& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = std::move(value); }
-    inline RepositoryAssociation& WithKMSKeyDetails(const KMSKeyDetails& value) { SetKMSKeyDetails(value); return *this;}
-    inline RepositoryAssociation& WithKMSKeyDetails(KMSKeyDetails&& value) { SetKMSKeyDetails(std::move(value)); return *this;}
+    template<typename KMSKeyDetailsT = KMSKeyDetails>
+    void SetKMSKeyDetails(KMSKeyDetailsT&& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = std::forward<KMSKeyDetailsT>(value); }
+    template<typename KMSKeyDetailsT = KMSKeyDetails>
+    RepositoryAssociation& WithKMSKeyDetails(KMSKeyDetailsT&& value) { SetKMSKeyDetails(std::forward<KMSKeyDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3RepositoryDetails& GetS3RepositoryDetails() const{ return m_s3RepositoryDetails; }
+    inline const S3RepositoryDetails& GetS3RepositoryDetails() const { return m_s3RepositoryDetails; }
     inline bool S3RepositoryDetailsHasBeenSet() const { return m_s3RepositoryDetailsHasBeenSet; }
-    inline void SetS3RepositoryDetails(const S3RepositoryDetails& value) { m_s3RepositoryDetailsHasBeenSet = true; m_s3RepositoryDetails = value; }
-    inline void SetS3RepositoryDetails(S3RepositoryDetails&& value) { m_s3RepositoryDetailsHasBeenSet = true; m_s3RepositoryDetails = std::move(value); }
-    inline RepositoryAssociation& WithS3RepositoryDetails(const S3RepositoryDetails& value) { SetS3RepositoryDetails(value); return *this;}
-    inline RepositoryAssociation& WithS3RepositoryDetails(S3RepositoryDetails&& value) { SetS3RepositoryDetails(std::move(value)); return *this;}
+    template<typename S3RepositoryDetailsT = S3RepositoryDetails>
+    void SetS3RepositoryDetails(S3RepositoryDetailsT&& value) { m_s3RepositoryDetailsHasBeenSet = true; m_s3RepositoryDetails = std::forward<S3RepositoryDetailsT>(value); }
+    template<typename S3RepositoryDetailsT = S3RepositoryDetails>
+    RepositoryAssociation& WithS3RepositoryDetails(S3RepositoryDetailsT&& value) { SetS3RepositoryDetails(std::forward<S3RepositoryDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -252,19 +236,19 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
-    ProviderType m_providerType;
+    ProviderType m_providerType{ProviderType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
-    RepositoryAssociationState m_state;
+    RepositoryAssociationState m_state{RepositoryAssociationState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimeStamp;
+    Aws::Utils::DateTime m_lastUpdatedTimeStamp{};
     bool m_lastUpdatedTimeStampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimeStamp;
+    Aws::Utils::DateTime m_createdTimeStamp{};
     bool m_createdTimeStampHasBeenSet = false;
 
     KMSKeyDetails m_kMSKeyDetails;

@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteCacheSubnetGroupRequest::DeleteCacheSubnetGroupRequest() : 
-    m_cacheSubnetGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

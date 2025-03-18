@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldTooltipItem::FieldTooltipItem() : 
-    m_fieldIdHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_tooltipTarget(TooltipTarget::NOT_SET),
-    m_tooltipTargetHasBeenSet(false)
-{
-}
-
 FieldTooltipItem::FieldTooltipItem(JsonView jsonValue)
-  : FieldTooltipItem()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FieldTooltipItem& FieldTooltipItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TooltipTarget"))
   {
     m_tooltipTarget = TooltipTargetMapper::GetTooltipTargetForName(jsonValue.GetString("TooltipTarget"));
-
     m_tooltipTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

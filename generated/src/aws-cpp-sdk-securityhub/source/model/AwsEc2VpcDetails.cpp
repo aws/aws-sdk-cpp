@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpcDetails::AwsEc2VpcDetails() : 
-    m_cidrBlockAssociationSetHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 AwsEc2VpcDetails::AwsEc2VpcDetails(JsonView jsonValue)
-  : AwsEc2VpcDetails()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ AwsEc2VpcDetails& AwsEc2VpcDetails::operator =(JsonView jsonValue)
     }
     m_cidrBlockAssociationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlockAssociationSet"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
@@ -53,21 +43,16 @@ AwsEc2VpcDetails& AwsEc2VpcDetails::operator =(JsonView jsonValue)
     }
     m_ipv6CidrBlockAssociationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DhcpOptionsId"))
   {
     m_dhcpOptionsId = jsonValue.GetString("DhcpOptionsId");
-
     m_dhcpOptionsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

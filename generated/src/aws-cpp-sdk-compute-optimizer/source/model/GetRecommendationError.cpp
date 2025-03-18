@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-GetRecommendationError::GetRecommendationError() : 
-    m_identifierHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 GetRecommendationError::GetRecommendationError(JsonView jsonValue)
-  : GetRecommendationError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GetRecommendationError& GetRecommendationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

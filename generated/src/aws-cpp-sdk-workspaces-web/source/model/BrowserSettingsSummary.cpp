@@ -18,13 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-BrowserSettingsSummary::BrowserSettingsSummary() : 
-    m_browserSettingsArnHasBeenSet(false)
-{
-}
-
 BrowserSettingsSummary::BrowserSettingsSummary(JsonView jsonValue)
-  : BrowserSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BrowserSettingsSummary& BrowserSettingsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("browserSettingsArn"))
   {
     m_browserSettingsArn = jsonValue.GetString("browserSettingsArn");
-
     m_browserSettingsArnHasBeenSet = true;
   }
-
   return *this;
 }
 

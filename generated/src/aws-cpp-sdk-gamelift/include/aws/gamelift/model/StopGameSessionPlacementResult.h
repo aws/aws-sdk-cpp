@@ -28,7 +28,7 @@ namespace Model
   class StopGameSessionPlacementResult
   {
   public:
-    AWS_GAMELIFT_API StopGameSessionPlacementResult();
+    AWS_GAMELIFT_API StopGameSessionPlacementResult() = default;
     AWS_GAMELIFT_API StopGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API StopGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Object that describes the canceled game session placement, with
      * <code>CANCELLED</code> status and an end time stamp. </p>
      */
-    inline const GameSessionPlacement& GetGameSessionPlacement() const{ return m_gameSessionPlacement; }
-    inline void SetGameSessionPlacement(const GameSessionPlacement& value) { m_gameSessionPlacement = value; }
-    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = std::move(value); }
-    inline StopGameSessionPlacementResult& WithGameSessionPlacement(const GameSessionPlacement& value) { SetGameSessionPlacement(value); return *this;}
-    inline StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
+    inline const GameSessionPlacement& GetGameSessionPlacement() const { return m_gameSessionPlacement; }
+    template<typename GameSessionPlacementT = GameSessionPlacement>
+    void SetGameSessionPlacement(GameSessionPlacementT&& value) { m_gameSessionPlacementHasBeenSet = true; m_gameSessionPlacement = std::forward<GameSessionPlacementT>(value); }
+    template<typename GameSessionPlacementT = GameSessionPlacement>
+    StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacementT&& value) { SetGameSessionPlacement(std::forward<GameSessionPlacementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopGameSessionPlacementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopGameSessionPlacementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopGameSessionPlacementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopGameSessionPlacementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GameSessionPlacement m_gameSessionPlacement;
+    bool m_gameSessionPlacementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

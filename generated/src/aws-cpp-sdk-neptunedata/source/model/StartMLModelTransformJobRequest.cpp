@@ -12,25 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMLModelTransformJobRequest::StartMLModelTransformJobRequest() : 
-    m_idHasBeenSet(false),
-    m_dataProcessingJobIdHasBeenSet(false),
-    m_mlModelTrainingJobIdHasBeenSet(false),
-    m_trainingJobNameHasBeenSet(false),
-    m_modelTransformOutputS3LocationHasBeenSet(false),
-    m_sagemakerIamRoleArnHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_customModelTransformParametersHasBeenSet(false),
-    m_baseProcessingInstanceTypeHasBeenSet(false),
-    m_baseProcessingInstanceVolumeSizeInGB(0),
-    m_baseProcessingInstanceVolumeSizeInGBHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_volumeEncryptionKMSKeyHasBeenSet(false),
-    m_s3OutputEncryptionKMSKeyHasBeenSet(false)
-{
-}
-
 Aws::String StartMLModelTransformJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class TaxDocuments
   {
   public:
-    AWS_SNOWBALL_API TaxDocuments();
+    AWS_SNOWBALL_API TaxDocuments() = default;
     AWS_SNOWBALL_API TaxDocuments(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API TaxDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const INDTaxDocuments& GetIND() const{ return m_iND; }
+    inline const INDTaxDocuments& GetIND() const { return m_iND; }
     inline bool INDHasBeenSet() const { return m_iNDHasBeenSet; }
-    inline void SetIND(const INDTaxDocuments& value) { m_iNDHasBeenSet = true; m_iND = value; }
-    inline void SetIND(INDTaxDocuments&& value) { m_iNDHasBeenSet = true; m_iND = std::move(value); }
-    inline TaxDocuments& WithIND(const INDTaxDocuments& value) { SetIND(value); return *this;}
-    inline TaxDocuments& WithIND(INDTaxDocuments&& value) { SetIND(std::move(value)); return *this;}
+    template<typename INDT = INDTaxDocuments>
+    void SetIND(INDT&& value) { m_iNDHasBeenSet = true; m_iND = std::forward<INDT>(value); }
+    template<typename INDT = INDTaxDocuments>
+    TaxDocuments& WithIND(INDT&& value) { SetIND(std::forward<INDT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Invitation::Invitation() : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_memberStatusHasBeenSet(false)
-{
-}
-
 Invitation::Invitation(JsonView jsonValue)
-  : Invitation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Invitation& Invitation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitationId"))
   {
     m_invitationId = jsonValue.GetString("InvitationId");
-
     m_invitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitedAt"))
   {
     m_invitedAt = jsonValue.GetString("InvitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberStatus"))
   {
     m_memberStatus = jsonValue.GetString("MemberStatus");
-
     m_memberStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

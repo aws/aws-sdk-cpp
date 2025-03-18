@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CommunicationTimeConfig::CommunicationTimeConfig() : 
-    m_localTimeZoneConfigHasBeenSet(false),
-    m_telephonyHasBeenSet(false),
-    m_smsHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 CommunicationTimeConfig::CommunicationTimeConfig(JsonView jsonValue)
-  : CommunicationTimeConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CommunicationTimeConfig& CommunicationTimeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("localTimeZoneConfig"))
   {
     m_localTimeZoneConfig = jsonValue.GetObject("localTimeZoneConfig");
-
     m_localTimeZoneConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("telephony"))
   {
     m_telephony = jsonValue.GetObject("telephony");
-
     m_telephonyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sms"))
   {
     m_sms = jsonValue.GetObject("sms");
-
     m_smsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetObject("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

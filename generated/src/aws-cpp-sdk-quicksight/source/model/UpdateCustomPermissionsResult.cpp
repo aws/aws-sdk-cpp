@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCustomPermissionsResult::UpdateCustomPermissionsResult() : 
-    m_status(0)
-{
-}
-
 UpdateCustomPermissionsResult::UpdateCustomPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateCustomPermissionsResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateCustomPermissionsResult& UpdateCustomPermissionsResult::operator =(const A
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

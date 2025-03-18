@@ -18,19 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-VpcPeeringConnection::VpcPeeringConnection() : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_ipV4CidrBlockHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false),
-    m_gameLiftVpcIdHasBeenSet(false)
-{
-}
-
 VpcPeeringConnection::VpcPeeringConnection(JsonView jsonValue)
-  : VpcPeeringConnection()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpV4CidrBlock"))
   {
     m_ipV4CidrBlock = jsonValue.GetString("IpV4CidrBlock");
-
     m_ipV4CidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcPeeringConnectionId"))
   {
     m_vpcPeeringConnectionId = jsonValue.GetString("VpcPeeringConnectionId");
-
     m_vpcPeeringConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerVpcId"))
   {
     m_peerVpcId = jsonValue.GetString("PeerVpcId");
-
     m_peerVpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameLiftVpcId"))
   {
     m_gameLiftVpcId = jsonValue.GetString("GameLiftVpcId");
-
     m_gameLiftVpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

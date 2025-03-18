@@ -18,17 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-ServiceAccountTokenSummary::ServiceAccountTokenSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUsedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ServiceAccountTokenSummary::ServiceAccountTokenSummary(JsonView jsonValue)
-  : ServiceAccountTokenSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ServiceAccountTokenSummary& ServiceAccountTokenSummary::operator =(JsonView json
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUsedAt"))
   {
     m_lastUsedAt = jsonValue.GetDouble("lastUsedAt");
-
     m_lastUsedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

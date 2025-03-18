@@ -32,7 +32,7 @@ namespace Model
   class BrazilAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API BrazilAdditionalInfo();
+    AWS_TAXSETTINGS_API BrazilAdditionalInfo() = default;
     AWS_TAXSETTINGS_API BrazilAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API BrazilAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
      * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
      */
-    inline const Aws::String& GetCcmCode() const{ return m_ccmCode; }
+    inline const Aws::String& GetCcmCode() const { return m_ccmCode; }
     inline bool CcmCodeHasBeenSet() const { return m_ccmCodeHasBeenSet; }
-    inline void SetCcmCode(const Aws::String& value) { m_ccmCodeHasBeenSet = true; m_ccmCode = value; }
-    inline void SetCcmCode(Aws::String&& value) { m_ccmCodeHasBeenSet = true; m_ccmCode = std::move(value); }
-    inline void SetCcmCode(const char* value) { m_ccmCodeHasBeenSet = true; m_ccmCode.assign(value); }
-    inline BrazilAdditionalInfo& WithCcmCode(const Aws::String& value) { SetCcmCode(value); return *this;}
-    inline BrazilAdditionalInfo& WithCcmCode(Aws::String&& value) { SetCcmCode(std::move(value)); return *this;}
-    inline BrazilAdditionalInfo& WithCcmCode(const char* value) { SetCcmCode(value); return *this;}
+    template<typename CcmCodeT = Aws::String>
+    void SetCcmCode(CcmCodeT&& value) { m_ccmCodeHasBeenSet = true; m_ccmCode = std::forward<CcmCodeT>(value); }
+    template<typename CcmCodeT = Aws::String>
+    BrazilAdditionalInfo& WithCcmCode(CcmCodeT&& value) { SetCcmCode(std::forward<CcmCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
      * a CNPJ tax type.</p>
      */
-    inline const Aws::String& GetLegalNatureCode() const{ return m_legalNatureCode; }
+    inline const Aws::String& GetLegalNatureCode() const { return m_legalNatureCode; }
     inline bool LegalNatureCodeHasBeenSet() const { return m_legalNatureCodeHasBeenSet; }
-    inline void SetLegalNatureCode(const Aws::String& value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode = value; }
-    inline void SetLegalNatureCode(Aws::String&& value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode = std::move(value); }
-    inline void SetLegalNatureCode(const char* value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode.assign(value); }
-    inline BrazilAdditionalInfo& WithLegalNatureCode(const Aws::String& value) { SetLegalNatureCode(value); return *this;}
-    inline BrazilAdditionalInfo& WithLegalNatureCode(Aws::String&& value) { SetLegalNatureCode(std::move(value)); return *this;}
-    inline BrazilAdditionalInfo& WithLegalNatureCode(const char* value) { SetLegalNatureCode(value); return *this;}
+    template<typename LegalNatureCodeT = Aws::String>
+    void SetLegalNatureCode(LegalNatureCodeT&& value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode = std::forward<LegalNatureCodeT>(value); }
+    template<typename LegalNatureCodeT = Aws::String>
+    BrazilAdditionalInfo& WithLegalNatureCode(LegalNatureCodeT&& value) { SetLegalNatureCode(std::forward<LegalNatureCodeT>(value)); return *this;}
     ///@}
   private:
 

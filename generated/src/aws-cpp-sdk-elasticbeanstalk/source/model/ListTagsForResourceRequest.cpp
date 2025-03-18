@@ -10,11 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,10 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIndexRequest::GetIndexRequest()
-{
-}
-
 Aws::String GetIndexRequest::SerializePayload() const
 {
   return {};

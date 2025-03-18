@@ -20,17 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-IntelligentTieringConfiguration::IntelligentTieringConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(IntelligentTieringStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tieringsHasBeenSet(false)
-{
-}
-
 IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode)
-  : IntelligentTieringConfiguration()
 {
   *this = xmlNode;
 }
@@ -56,13 +46,14 @@ IntelligentTieringConfiguration& IntelligentTieringConfiguration::operator =(con
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = IntelligentTieringStatusMapper::GetIntelligentTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = IntelligentTieringStatusMapper::GetIntelligentTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode tieringsNode = resultNode.FirstChild("Tiering");
     if(!tieringsNode.IsNull())
     {
       XmlNode tieringMember = tieringsNode;
+      m_tieringsHasBeenSet = !tieringMember.IsNull();
       while(!tieringMember.IsNull())
       {
         m_tierings.push_back(tieringMember);

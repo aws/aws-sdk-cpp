@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterElasticIpStatus::AwsRedshiftClusterElasticIpStatus() : 
-    m_elasticIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterElasticIpStatus::AwsRedshiftClusterElasticIpStatus(JsonView jsonValue)
-  : AwsRedshiftClusterElasticIpStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRedshiftClusterElasticIpStatus& AwsRedshiftClusterElasticIpStatus::operator =
   if(jsonValue.ValueExists("ElasticIp"))
   {
     m_elasticIp = jsonValue.GetString("ElasticIp");
-
     m_elasticIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

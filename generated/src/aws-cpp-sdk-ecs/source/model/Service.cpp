@@ -18,54 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Service::Service() : 
-    m_serviceArnHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_runningCount(0),
-    m_runningCountHasBeenSet(false),
-    m_pendingCount(0),
-    m_pendingCountHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformFamilyHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_taskSetsHasBeenSet(false),
-    m_deploymentsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false),
-    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
-    m_deploymentControllerHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_availabilityZoneRebalancing(AvailabilityZoneRebalancing::NOT_SET),
-    m_availabilityZoneRebalancingHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -75,24 +28,18 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceArn"))
   {
     m_serviceArn = jsonValue.GetString("serviceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loadBalancers"))
   {
     Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
@@ -102,7 +49,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_loadBalancersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRegistries"))
   {
     Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
@@ -112,42 +58,31 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_serviceRegistriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredCount"))
   {
     m_desiredCount = jsonValue.GetInteger("desiredCount");
-
     m_desiredCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningCount"))
   {
     m_runningCount = jsonValue.GetInteger("runningCount");
-
     m_runningCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingCount"))
   {
     m_pendingCount = jsonValue.GetInteger("pendingCount");
-
     m_pendingCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchType"))
   {
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
-
     m_launchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityProviderStrategy"))
   {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
@@ -157,35 +92,26 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformVersion"))
   {
     m_platformVersion = jsonValue.GetString("platformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformFamily"))
   {
     m_platformFamily = jsonValue.GetString("platformFamily");
-
     m_platformFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskDefinition"))
   {
     m_taskDefinition = jsonValue.GetString("taskDefinition");
-
     m_taskDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentConfiguration"))
   {
     m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
-
     m_deploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSets"))
   {
     Aws::Utils::Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
@@ -195,7 +121,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_taskSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deployments"))
   {
     Aws::Utils::Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
@@ -205,14 +130,11 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_deploymentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
@@ -222,14 +144,11 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
@@ -239,7 +158,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_placementConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementStrategy"))
   {
     Aws::Utils::Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
@@ -249,35 +167,26 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_placementStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthCheckGracePeriodSeconds"))
   {
     m_healthCheckGracePeriodSeconds = jsonValue.GetInteger("healthCheckGracePeriodSeconds");
-
     m_healthCheckGracePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedulingStrategy"))
   {
     m_schedulingStrategy = SchedulingStrategyMapper::GetSchedulingStrategyForName(jsonValue.GetString("schedulingStrategy"));
-
     m_schedulingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentController"))
   {
     m_deploymentController = jsonValue.GetObject("deploymentController");
-
     m_deploymentControllerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -287,42 +196,31 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableECSManagedTags"))
   {
     m_enableECSManagedTags = jsonValue.GetBool("enableECSManagedTags");
-
     m_enableECSManagedTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propagateTags"))
   {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("propagateTags"));
-
     m_propagateTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableExecuteCommand"))
   {
     m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
-
     m_enableExecuteCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneRebalancing"))
   {
     m_availabilityZoneRebalancing = AvailabilityZoneRebalancingMapper::GetAvailabilityZoneRebalancingForName(jsonValue.GetString("availabilityZoneRebalancing"));
-
     m_availabilityZoneRebalancingHasBeenSet = true;
   }
-
   return *this;
 }
 

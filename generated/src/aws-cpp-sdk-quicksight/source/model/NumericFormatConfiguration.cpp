@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericFormatConfiguration::NumericFormatConfiguration() : 
-    m_numberDisplayFormatConfigurationHasBeenSet(false),
-    m_currencyDisplayFormatConfigurationHasBeenSet(false),
-    m_percentageDisplayFormatConfigurationHasBeenSet(false)
-{
-}
-
 NumericFormatConfiguration::NumericFormatConfiguration(JsonView jsonValue)
-  : NumericFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NumericFormatConfiguration& NumericFormatConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("NumberDisplayFormatConfiguration"))
   {
     m_numberDisplayFormatConfiguration = jsonValue.GetObject("NumberDisplayFormatConfiguration");
-
     m_numberDisplayFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyDisplayFormatConfiguration"))
   {
     m_currencyDisplayFormatConfiguration = jsonValue.GetObject("CurrencyDisplayFormatConfiguration");
-
     m_currencyDisplayFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentageDisplayFormatConfiguration"))
   {
     m_percentageDisplayFormatConfiguration = jsonValue.GetObject("PercentageDisplayFormatConfiguration");
-
     m_percentageDisplayFormatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

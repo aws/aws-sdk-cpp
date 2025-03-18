@@ -18,21 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ListenerSummary::ListenerSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(ListenerProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 ListenerSummary::ListenerSummary(JsonView jsonValue)
-  : ListenerSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ListenerSummary& ListenerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ListenerProtocolMapper::GetListenerProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

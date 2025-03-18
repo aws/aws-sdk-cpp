@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-CompatibleKafkaVersion::CompatibleKafkaVersion() : 
-    m_sourceVersionHasBeenSet(false),
-    m_targetVersionsHasBeenSet(false)
-{
-}
-
 CompatibleKafkaVersion::CompatibleKafkaVersion(JsonView jsonValue)
-  : CompatibleKafkaVersion()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CompatibleKafkaVersion& CompatibleKafkaVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetVersions"))
   {
     Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("targetVersions");
@@ -48,7 +39,6 @@ CompatibleKafkaVersion& CompatibleKafkaVersion::operator =(JsonView jsonValue)
     }
     m_targetVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

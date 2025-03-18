@@ -18,14 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-CreateConnectionApiKeyAuthRequestParameters::CreateConnectionApiKeyAuthRequestParameters() : 
-    m_apiKeyNameHasBeenSet(false),
-    m_apiKeyValueHasBeenSet(false)
-{
-}
-
 CreateConnectionApiKeyAuthRequestParameters::CreateConnectionApiKeyAuthRequestParameters(JsonView jsonValue)
-  : CreateConnectionApiKeyAuthRequestParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreateConnectionApiKeyAuthRequestParameters& CreateConnectionApiKeyAuthRequestPa
   if(jsonValue.ValueExists("ApiKeyName"))
   {
     m_apiKeyName = jsonValue.GetString("ApiKeyName");
-
     m_apiKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiKeyValue"))
   {
     m_apiKeyValue = jsonValue.GetString("ApiKeyValue");
-
     m_apiKeyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

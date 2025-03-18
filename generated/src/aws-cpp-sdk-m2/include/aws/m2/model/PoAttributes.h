@@ -32,7 +32,7 @@ namespace Model
   class PoAttributes
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API PoAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API PoAttributes() = default;
     AWS_MAINFRAMEMODERNIZATION_API PoAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API PoAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The character set encoding of the data set.</p>
      */
-    inline const Aws::String& GetEncoding() const{ return m_encoding; }
+    inline const Aws::String& GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const Aws::String& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(Aws::String&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline void SetEncoding(const char* value) { m_encodingHasBeenSet = true; m_encoding.assign(value); }
-    inline PoAttributes& WithEncoding(const Aws::String& value) { SetEncoding(value); return *this;}
-    inline PoAttributes& WithEncoding(Aws::String&& value) { SetEncoding(std::move(value)); return *this;}
-    inline PoAttributes& WithEncoding(const char* value) { SetEncoding(value); return *this;}
+    template<typename EncodingT = Aws::String>
+    void SetEncoding(EncodingT&& value) { m_encodingHasBeenSet = true; m_encoding = std::forward<EncodingT>(value); }
+    template<typename EncodingT = Aws::String>
+    PoAttributes& WithEncoding(EncodingT&& value) { SetEncoding(std::forward<EncodingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the data set records.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline PoAttributes& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline PoAttributes& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline PoAttributes& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    PoAttributes& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +67,14 @@ namespace Model
      * <p>An array containing one or more filename extensions, allowing you to specify
      * which files to be included as PDS member.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMemberFileExtensions() const{ return m_memberFileExtensions; }
+    inline const Aws::Vector<Aws::String>& GetMemberFileExtensions() const { return m_memberFileExtensions; }
     inline bool MemberFileExtensionsHasBeenSet() const { return m_memberFileExtensionsHasBeenSet; }
-    inline void SetMemberFileExtensions(const Aws::Vector<Aws::String>& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions = value; }
-    inline void SetMemberFileExtensions(Aws::Vector<Aws::String>&& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions = std::move(value); }
-    inline PoAttributes& WithMemberFileExtensions(const Aws::Vector<Aws::String>& value) { SetMemberFileExtensions(value); return *this;}
-    inline PoAttributes& WithMemberFileExtensions(Aws::Vector<Aws::String>&& value) { SetMemberFileExtensions(std::move(value)); return *this;}
-    inline PoAttributes& AddMemberFileExtensions(const Aws::String& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions.push_back(value); return *this; }
-    inline PoAttributes& AddMemberFileExtensions(Aws::String&& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions.push_back(std::move(value)); return *this; }
-    inline PoAttributes& AddMemberFileExtensions(const char* value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions.push_back(value); return *this; }
+    template<typename MemberFileExtensionsT = Aws::Vector<Aws::String>>
+    void SetMemberFileExtensions(MemberFileExtensionsT&& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions = std::forward<MemberFileExtensionsT>(value); }
+    template<typename MemberFileExtensionsT = Aws::Vector<Aws::String>>
+    PoAttributes& WithMemberFileExtensions(MemberFileExtensionsT&& value) { SetMemberFileExtensions(std::forward<MemberFileExtensionsT>(value)); return *this;}
+    template<typename MemberFileExtensionsT = Aws::String>
+    PoAttributes& AddMemberFileExtensions(MemberFileExtensionsT&& value) { m_memberFileExtensionsHasBeenSet = true; m_memberFileExtensions.emplace_back(std::forward<MemberFileExtensionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RecommendationJobInputConfig::RecommendationJobInputConfig() : 
-    m_modelPackageVersionArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_jobDurationInSeconds(0),
-    m_jobDurationInSecondsHasBeenSet(false),
-    m_trafficPatternHasBeenSet(false),
-    m_resourceLimitHasBeenSet(false),
-    m_endpointConfigurationsHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_containerConfigHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue)
-  : RecommendationJobInputConfig()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
   if(jsonValue.ValueExists("ModelPackageVersionArn"))
   {
     m_modelPackageVersionArn = jsonValue.GetString("ModelPackageVersionArn");
-
     m_modelPackageVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDurationInSeconds"))
   {
     m_jobDurationInSeconds = jsonValue.GetInteger("JobDurationInSeconds");
-
     m_jobDurationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPattern"))
   {
     m_trafficPattern = jsonValue.GetObject("TrafficPattern");
-
     m_trafficPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLimit"))
   {
     m_resourceLimit = jsonValue.GetObject("ResourceLimit");
-
     m_resourceLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfigurations"))
   {
     Aws::Utils::Array<JsonView> endpointConfigurationsJsonList = jsonValue.GetArray("EndpointConfigurations");
@@ -85,21 +59,16 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     }
     m_endpointConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerConfig"))
   {
     m_containerConfig = jsonValue.GetObject("ContainerConfig");
-
     m_containerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
@@ -109,14 +78,11 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

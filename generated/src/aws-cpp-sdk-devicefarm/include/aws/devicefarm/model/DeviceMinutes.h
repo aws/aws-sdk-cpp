@@ -31,7 +31,7 @@ namespace Model
   class DeviceMinutes
   {
   public:
-    AWS_DEVICEFARM_API DeviceMinutes();
+    AWS_DEVICEFARM_API DeviceMinutes() = default;
     AWS_DEVICEFARM_API DeviceMinutes(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API DeviceMinutes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>When specified, represents the total minutes used by the resource to run
      * tests.</p>
      */
-    inline double GetTotal() const{ return m_total; }
+    inline double GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
     inline DeviceMinutes& WithTotal(double value) { SetTotal(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * <p>When specified, represents only the sum of metered minutes used by the
      * resource to run tests.</p>
      */
-    inline double GetMetered() const{ return m_metered; }
+    inline double GetMetered() const { return m_metered; }
     inline bool MeteredHasBeenSet() const { return m_meteredHasBeenSet; }
     inline void SetMetered(double value) { m_meteredHasBeenSet = true; m_metered = value; }
     inline DeviceMinutes& WithMetered(double value) { SetMetered(value); return *this;}
@@ -64,20 +64,20 @@ namespace Model
      * <p>When specified, represents only the sum of unmetered minutes used by the
      * resource to run tests.</p>
      */
-    inline double GetUnmetered() const{ return m_unmetered; }
+    inline double GetUnmetered() const { return m_unmetered; }
     inline bool UnmeteredHasBeenSet() const { return m_unmeteredHasBeenSet; }
     inline void SetUnmetered(double value) { m_unmeteredHasBeenSet = true; m_unmetered = value; }
     inline DeviceMinutes& WithUnmetered(double value) { SetUnmetered(value); return *this;}
     ///@}
   private:
 
-    double m_total;
+    double m_total{0.0};
     bool m_totalHasBeenSet = false;
 
-    double m_metered;
+    double m_metered{0.0};
     bool m_meteredHasBeenSet = false;
 
-    double m_unmetered;
+    double m_unmetered{0.0};
     bool m_unmeteredHasBeenSet = false;
   };
 

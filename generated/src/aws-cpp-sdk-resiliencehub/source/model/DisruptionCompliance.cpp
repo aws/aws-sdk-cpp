@@ -18,27 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-DisruptionCompliance::DisruptionCompliance() : 
-    m_achievableRpoInSecs(0),
-    m_achievableRpoInSecsHasBeenSet(false),
-    m_achievableRtoInSecs(0),
-    m_achievableRtoInSecsHasBeenSet(false),
-    m_complianceStatus(ComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_currentRpoInSecs(0),
-    m_currentRpoInSecsHasBeenSet(false),
-    m_currentRtoInSecs(0),
-    m_currentRtoInSecsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_rpoDescriptionHasBeenSet(false),
-    m_rpoReferenceIdHasBeenSet(false),
-    m_rtoDescriptionHasBeenSet(false),
-    m_rtoReferenceIdHasBeenSet(false)
-{
-}
-
 DisruptionCompliance::DisruptionCompliance(JsonView jsonValue)
-  : DisruptionCompliance()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ DisruptionCompliance& DisruptionCompliance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("achievableRpoInSecs"))
   {
     m_achievableRpoInSecs = jsonValue.GetInteger("achievableRpoInSecs");
-
     m_achievableRpoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("achievableRtoInSecs"))
   {
     m_achievableRtoInSecs = jsonValue.GetInteger("achievableRtoInSecs");
-
     m_achievableRtoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("complianceStatus"))
   {
     m_complianceStatus = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("complianceStatus"));
-
     m_complianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentRpoInSecs"))
   {
     m_currentRpoInSecs = jsonValue.GetInteger("currentRpoInSecs");
-
     m_currentRpoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentRtoInSecs"))
   {
     m_currentRtoInSecs = jsonValue.GetInteger("currentRtoInSecs");
-
     m_currentRtoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rpoDescription"))
   {
     m_rpoDescription = jsonValue.GetString("rpoDescription");
-
     m_rpoDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rpoReferenceId"))
   {
     m_rpoReferenceId = jsonValue.GetString("rpoReferenceId");
-
     m_rpoReferenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtoDescription"))
   {
     m_rtoDescription = jsonValue.GetString("rtoDescription");
-
     m_rtoDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtoReferenceId"))
   {
     m_rtoReferenceId = jsonValue.GetString("rtoReferenceId");
-
     m_rtoReferenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

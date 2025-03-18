@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeRouteTablesRequest::DescribeRouteTablesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRouteTablesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

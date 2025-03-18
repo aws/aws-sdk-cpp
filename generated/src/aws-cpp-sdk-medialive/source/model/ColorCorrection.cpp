@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ColorCorrection::ColorCorrection() : 
-    m_inputColorSpace(ColorSpace::NOT_SET),
-    m_inputColorSpaceHasBeenSet(false),
-    m_outputColorSpace(ColorSpace::NOT_SET),
-    m_outputColorSpaceHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 ColorCorrection::ColorCorrection(JsonView jsonValue)
-  : ColorCorrection()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ColorCorrection& ColorCorrection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputColorSpace"))
   {
     m_inputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("inputColorSpace"));
-
     m_inputColorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputColorSpace"))
   {
     m_outputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("outputColorSpace"));
-
     m_outputColorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

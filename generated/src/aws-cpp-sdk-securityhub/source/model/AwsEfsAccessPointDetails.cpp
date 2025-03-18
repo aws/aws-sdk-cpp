@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEfsAccessPointDetails::AwsEfsAccessPointDetails() : 
-    m_accessPointIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_posixUserHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false)
-{
-}
-
 AwsEfsAccessPointDetails::AwsEfsAccessPointDetails(JsonView jsonValue)
-  : AwsEfsAccessPointDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsEfsAccessPointDetails& AwsEfsAccessPointDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AccessPointId"))
   {
     m_accessPointId = jsonValue.GetString("AccessPointId");
-
     m_accessPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientToken"))
   {
     m_clientToken = jsonValue.GetString("ClientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PosixUser"))
   {
     m_posixUser = jsonValue.GetObject("PosixUser");
-
     m_posixUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootDirectory"))
   {
     m_rootDirectory = jsonValue.GetObject("RootDirectory");
-
     m_rootDirectoryHasBeenSet = true;
   }
-
   return *this;
 }
 

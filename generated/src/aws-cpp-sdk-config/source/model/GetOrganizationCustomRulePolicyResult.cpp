@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOrganizationCustomRulePolicyResult::GetOrganizationCustomRulePolicyResult()
-{
-}
-
 GetOrganizationCustomRulePolicyResult::GetOrganizationCustomRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetOrganizationCustomRulePolicyResult& GetOrganizationCustomRulePolicyResult::op
   if(jsonValue.ValueExists("PolicyText"))
   {
     m_policyText = jsonValue.GetString("PolicyText");
-
+    m_policyTextHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

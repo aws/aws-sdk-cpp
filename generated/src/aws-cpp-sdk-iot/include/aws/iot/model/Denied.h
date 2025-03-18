@@ -32,7 +32,7 @@ namespace Model
   class Denied
   {
   public:
-    AWS_IOT_API Denied();
+    AWS_IOT_API Denied() = default;
     AWS_IOT_API Denied(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Denied& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * explicitly deny or allow an action on a resource it is considered an implicit
      * deny.</p>
      */
-    inline const ImplicitDeny& GetImplicitDeny() const{ return m_implicitDeny; }
+    inline const ImplicitDeny& GetImplicitDeny() const { return m_implicitDeny; }
     inline bool ImplicitDenyHasBeenSet() const { return m_implicitDenyHasBeenSet; }
-    inline void SetImplicitDeny(const ImplicitDeny& value) { m_implicitDenyHasBeenSet = true; m_implicitDeny = value; }
-    inline void SetImplicitDeny(ImplicitDeny&& value) { m_implicitDenyHasBeenSet = true; m_implicitDeny = std::move(value); }
-    inline Denied& WithImplicitDeny(const ImplicitDeny& value) { SetImplicitDeny(value); return *this;}
-    inline Denied& WithImplicitDeny(ImplicitDeny&& value) { SetImplicitDeny(std::move(value)); return *this;}
+    template<typename ImplicitDenyT = ImplicitDeny>
+    void SetImplicitDeny(ImplicitDenyT&& value) { m_implicitDenyHasBeenSet = true; m_implicitDeny = std::forward<ImplicitDenyT>(value); }
+    template<typename ImplicitDenyT = ImplicitDeny>
+    Denied& WithImplicitDeny(ImplicitDenyT&& value) { SetImplicitDeny(std::forward<ImplicitDenyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information that explicitly denies the authorization. </p>
      */
-    inline const ExplicitDeny& GetExplicitDeny() const{ return m_explicitDeny; }
+    inline const ExplicitDeny& GetExplicitDeny() const { return m_explicitDeny; }
     inline bool ExplicitDenyHasBeenSet() const { return m_explicitDenyHasBeenSet; }
-    inline void SetExplicitDeny(const ExplicitDeny& value) { m_explicitDenyHasBeenSet = true; m_explicitDeny = value; }
-    inline void SetExplicitDeny(ExplicitDeny&& value) { m_explicitDenyHasBeenSet = true; m_explicitDeny = std::move(value); }
-    inline Denied& WithExplicitDeny(const ExplicitDeny& value) { SetExplicitDeny(value); return *this;}
-    inline Denied& WithExplicitDeny(ExplicitDeny&& value) { SetExplicitDeny(std::move(value)); return *this;}
+    template<typename ExplicitDenyT = ExplicitDeny>
+    void SetExplicitDeny(ExplicitDenyT&& value) { m_explicitDenyHasBeenSet = true; m_explicitDeny = std::forward<ExplicitDenyT>(value); }
+    template<typename ExplicitDenyT = ExplicitDeny>
+    Denied& WithExplicitDeny(ExplicitDenyT&& value) { SetExplicitDeny(std::forward<ExplicitDenyT>(value)); return *this;}
     ///@}
   private:
 

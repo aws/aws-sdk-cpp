@@ -18,16 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertyRequest::PropertyRequest() : 
-    m_definitionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_updateType(PropertyUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
-{
-}
-
 PropertyRequest::PropertyRequest(JsonView jsonValue)
-  : PropertyRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PropertyRequest& PropertyRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateType"))
   {
     m_updateType = PropertyUpdateTypeMapper::GetPropertyUpdateTypeForName(jsonValue.GetString("updateType"));
-
     m_updateTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-LastUpdate::LastUpdate() : 
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 LastUpdate::LastUpdate(JsonView jsonValue)
-  : LastUpdate()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LastUpdate& LastUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

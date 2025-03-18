@@ -28,7 +28,7 @@ namespace Model
   class CreateWorkspaceServiceAccountResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountResult();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountResult() = default;
     AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,68 @@ namespace Model
     /**
      * <p>The permission level given to the service account.</p>
      */
-    inline const Role& GetGrafanaRole() const{ return m_grafanaRole; }
-    inline void SetGrafanaRole(const Role& value) { m_grafanaRole = value; }
-    inline void SetGrafanaRole(Role&& value) { m_grafanaRole = std::move(value); }
-    inline CreateWorkspaceServiceAccountResult& WithGrafanaRole(const Role& value) { SetGrafanaRole(value); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithGrafanaRole(Role&& value) { SetGrafanaRole(std::move(value)); return *this;}
+    inline Role GetGrafanaRole() const { return m_grafanaRole; }
+    inline void SetGrafanaRole(Role value) { m_grafanaRoleHasBeenSet = true; m_grafanaRole = value; }
+    inline CreateWorkspaceServiceAccountResult& WithGrafanaRole(Role value) { SetGrafanaRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service account.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateWorkspaceServiceAccountResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateWorkspaceServiceAccountResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service account.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateWorkspaceServiceAccountResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateWorkspaceServiceAccountResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workspace with which the service account is associated.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline CreateWorkspaceServiceAccountResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    CreateWorkspaceServiceAccountResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkspaceServiceAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkspaceServiceAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Role m_grafanaRole;
+    Role m_grafanaRole{Role::NOT_SET};
+    bool m_grafanaRoleHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

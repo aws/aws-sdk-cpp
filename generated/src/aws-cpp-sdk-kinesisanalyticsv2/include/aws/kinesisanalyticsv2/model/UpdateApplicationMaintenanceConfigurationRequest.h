@@ -22,7 +22,7 @@ namespace Model
   class UpdateApplicationMaintenanceConfigurationRequest : public KinesisAnalyticsV2Request
   {
   public:
-    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationRequest();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The name of the application for which you want to update the maintenance
      * configuration.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the application maintenance configuration update.</p>
      */
-    inline const ApplicationMaintenanceConfigurationUpdate& GetApplicationMaintenanceConfigurationUpdate() const{ return m_applicationMaintenanceConfigurationUpdate; }
+    inline const ApplicationMaintenanceConfigurationUpdate& GetApplicationMaintenanceConfigurationUpdate() const { return m_applicationMaintenanceConfigurationUpdate; }
     inline bool ApplicationMaintenanceConfigurationUpdateHasBeenSet() const { return m_applicationMaintenanceConfigurationUpdateHasBeenSet; }
-    inline void SetApplicationMaintenanceConfigurationUpdate(const ApplicationMaintenanceConfigurationUpdate& value) { m_applicationMaintenanceConfigurationUpdateHasBeenSet = true; m_applicationMaintenanceConfigurationUpdate = value; }
-    inline void SetApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdate&& value) { m_applicationMaintenanceConfigurationUpdateHasBeenSet = true; m_applicationMaintenanceConfigurationUpdate = std::move(value); }
-    inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationMaintenanceConfigurationUpdate(const ApplicationMaintenanceConfigurationUpdate& value) { SetApplicationMaintenanceConfigurationUpdate(value); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdate&& value) { SetApplicationMaintenanceConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ApplicationMaintenanceConfigurationUpdateT = ApplicationMaintenanceConfigurationUpdate>
+    void SetApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdateT&& value) { m_applicationMaintenanceConfigurationUpdateHasBeenSet = true; m_applicationMaintenanceConfigurationUpdate = std::forward<ApplicationMaintenanceConfigurationUpdateT>(value); }
+    template<typename ApplicationMaintenanceConfigurationUpdateT = ApplicationMaintenanceConfigurationUpdate>
+    UpdateApplicationMaintenanceConfigurationRequest& WithApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdateT&& value) { SetApplicationMaintenanceConfigurationUpdate(std::forward<ApplicationMaintenanceConfigurationUpdateT>(value)); return *this;}
     ///@}
   private:
 

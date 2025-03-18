@@ -33,7 +33,7 @@ namespace Model
   class LiveConnectorSinkConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The sink configuration's sink type.</p>
      */
-    inline const LiveConnectorSinkType& GetSinkType() const{ return m_sinkType; }
+    inline LiveConnectorSinkType GetSinkType() const { return m_sinkType; }
     inline bool SinkTypeHasBeenSet() const { return m_sinkTypeHasBeenSet; }
-    inline void SetSinkType(const LiveConnectorSinkType& value) { m_sinkTypeHasBeenSet = true; m_sinkType = value; }
-    inline void SetSinkType(LiveConnectorSinkType&& value) { m_sinkTypeHasBeenSet = true; m_sinkType = std::move(value); }
-    inline LiveConnectorSinkConfiguration& WithSinkType(const LiveConnectorSinkType& value) { SetSinkType(value); return *this;}
-    inline LiveConnectorSinkConfiguration& WithSinkType(LiveConnectorSinkType&& value) { SetSinkType(std::move(value)); return *this;}
+    inline void SetSinkType(LiveConnectorSinkType value) { m_sinkTypeHasBeenSet = true; m_sinkType = value; }
+    inline LiveConnectorSinkConfiguration& WithSinkType(LiveConnectorSinkType value) { SetSinkType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sink configuration's RTMP configuration settings.</p>
      */
-    inline const LiveConnectorRTMPConfiguration& GetRTMPConfiguration() const{ return m_rTMPConfiguration; }
+    inline const LiveConnectorRTMPConfiguration& GetRTMPConfiguration() const { return m_rTMPConfiguration; }
     inline bool RTMPConfigurationHasBeenSet() const { return m_rTMPConfigurationHasBeenSet; }
-    inline void SetRTMPConfiguration(const LiveConnectorRTMPConfiguration& value) { m_rTMPConfigurationHasBeenSet = true; m_rTMPConfiguration = value; }
-    inline void SetRTMPConfiguration(LiveConnectorRTMPConfiguration&& value) { m_rTMPConfigurationHasBeenSet = true; m_rTMPConfiguration = std::move(value); }
-    inline LiveConnectorSinkConfiguration& WithRTMPConfiguration(const LiveConnectorRTMPConfiguration& value) { SetRTMPConfiguration(value); return *this;}
-    inline LiveConnectorSinkConfiguration& WithRTMPConfiguration(LiveConnectorRTMPConfiguration&& value) { SetRTMPConfiguration(std::move(value)); return *this;}
+    template<typename RTMPConfigurationT = LiveConnectorRTMPConfiguration>
+    void SetRTMPConfiguration(RTMPConfigurationT&& value) { m_rTMPConfigurationHasBeenSet = true; m_rTMPConfiguration = std::forward<RTMPConfigurationT>(value); }
+    template<typename RTMPConfigurationT = LiveConnectorRTMPConfiguration>
+    LiveConnectorSinkConfiguration& WithRTMPConfiguration(RTMPConfigurationT&& value) { SetRTMPConfiguration(std::forward<RTMPConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    LiveConnectorSinkType m_sinkType;
+    LiveConnectorSinkType m_sinkType{LiveConnectorSinkType::NOT_SET};
     bool m_sinkTypeHasBeenSet = false;
 
     LiveConnectorRTMPConfiguration m_rTMPConfiguration;

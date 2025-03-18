@@ -18,14 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-GroupingConfiguration::GroupingConfiguration() : 
-    m_criteriaHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 GroupingConfiguration::GroupingConfiguration(JsonView jsonValue)
-  : GroupingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GroupingConfiguration& GroupingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("criteria"))
   {
     m_criteria = jsonValue.GetString("criteria");
-
     m_criteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ GroupingConfiguration& GroupingConfiguration::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

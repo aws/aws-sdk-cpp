@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelExplainabilityJobDefinitionRequest::CreateModelExplainabilityJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_modelExplainabilityBaselineConfigHasBeenSet(false),
-    m_modelExplainabilityAppSpecificationHasBeenSet(false),
-    m_modelExplainabilityJobInputHasBeenSet(false),
-    m_modelExplainabilityJobOutputConfigHasBeenSet(false),
-    m_jobResourcesHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelExplainabilityJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

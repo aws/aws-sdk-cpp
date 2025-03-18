@@ -30,7 +30,7 @@ namespace Model
   class Characters
   {
   public:
-    AWS_COMPREHENDMEDICAL_API Characters();
+    AWS_COMPREHENDMEDICAL_API Characters() = default;
     AWS_COMPREHENDMEDICAL_API Characters(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Characters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p> The number of characters present in the input text document as processed by
      * Amazon Comprehend Medical. </p>
      */
-    inline int GetOriginalTextCharacters() const{ return m_originalTextCharacters; }
+    inline int GetOriginalTextCharacters() const { return m_originalTextCharacters; }
     inline bool OriginalTextCharactersHasBeenSet() const { return m_originalTextCharactersHasBeenSet; }
     inline void SetOriginalTextCharacters(int value) { m_originalTextCharactersHasBeenSet = true; m_originalTextCharacters = value; }
     inline Characters& WithOriginalTextCharacters(int value) { SetOriginalTextCharacters(value); return *this;}
     ///@}
   private:
 
-    int m_originalTextCharacters;
+    int m_originalTextCharacters{0};
     bool m_originalTextCharactersHasBeenSet = false;
   };
 

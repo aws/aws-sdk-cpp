@@ -35,7 +35,7 @@ namespace Model
   class EffectivePreferredResource
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EffectivePreferredResource();
+    AWS_COMPUTEOPTIMIZER_API EffectivePreferredResource() = default;
     AWS_COMPUTEOPTIMIZER_API EffectivePreferredResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EffectivePreferredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p> The name of the preferred resource list. </p>
      */
-    inline const PreferredResourceName& GetName() const{ return m_name; }
+    inline PreferredResourceName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const PreferredResourceName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(PreferredResourceName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EffectivePreferredResource& WithName(const PreferredResourceName& value) { SetName(value); return *this;}
-    inline EffectivePreferredResource& WithName(PreferredResourceName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(PreferredResourceName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EffectivePreferredResource& WithName(PreferredResourceName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -58,30 +56,28 @@ namespace Model
      * <p> The list of preferred resource values that you want considered as
      * rightsizing recommendation candidates. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeList() const{ return m_includeList; }
+    inline const Aws::Vector<Aws::String>& GetIncludeList() const { return m_includeList; }
     inline bool IncludeListHasBeenSet() const { return m_includeListHasBeenSet; }
-    inline void SetIncludeList(const Aws::Vector<Aws::String>& value) { m_includeListHasBeenSet = true; m_includeList = value; }
-    inline void SetIncludeList(Aws::Vector<Aws::String>&& value) { m_includeListHasBeenSet = true; m_includeList = std::move(value); }
-    inline EffectivePreferredResource& WithIncludeList(const Aws::Vector<Aws::String>& value) { SetIncludeList(value); return *this;}
-    inline EffectivePreferredResource& WithIncludeList(Aws::Vector<Aws::String>&& value) { SetIncludeList(std::move(value)); return *this;}
-    inline EffectivePreferredResource& AddIncludeList(const Aws::String& value) { m_includeListHasBeenSet = true; m_includeList.push_back(value); return *this; }
-    inline EffectivePreferredResource& AddIncludeList(Aws::String&& value) { m_includeListHasBeenSet = true; m_includeList.push_back(std::move(value)); return *this; }
-    inline EffectivePreferredResource& AddIncludeList(const char* value) { m_includeListHasBeenSet = true; m_includeList.push_back(value); return *this; }
+    template<typename IncludeListT = Aws::Vector<Aws::String>>
+    void SetIncludeList(IncludeListT&& value) { m_includeListHasBeenSet = true; m_includeList = std::forward<IncludeListT>(value); }
+    template<typename IncludeListT = Aws::Vector<Aws::String>>
+    EffectivePreferredResource& WithIncludeList(IncludeListT&& value) { SetIncludeList(std::forward<IncludeListT>(value)); return *this;}
+    template<typename IncludeListT = Aws::String>
+    EffectivePreferredResource& AddIncludeList(IncludeListT&& value) { m_includeListHasBeenSet = true; m_includeList.emplace_back(std::forward<IncludeListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The expanded version of your preferred resource's include list. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEffectiveIncludeList() const{ return m_effectiveIncludeList; }
+    inline const Aws::Vector<Aws::String>& GetEffectiveIncludeList() const { return m_effectiveIncludeList; }
     inline bool EffectiveIncludeListHasBeenSet() const { return m_effectiveIncludeListHasBeenSet; }
-    inline void SetEffectiveIncludeList(const Aws::Vector<Aws::String>& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList = value; }
-    inline void SetEffectiveIncludeList(Aws::Vector<Aws::String>&& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList = std::move(value); }
-    inline EffectivePreferredResource& WithEffectiveIncludeList(const Aws::Vector<Aws::String>& value) { SetEffectiveIncludeList(value); return *this;}
-    inline EffectivePreferredResource& WithEffectiveIncludeList(Aws::Vector<Aws::String>&& value) { SetEffectiveIncludeList(std::move(value)); return *this;}
-    inline EffectivePreferredResource& AddEffectiveIncludeList(const Aws::String& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList.push_back(value); return *this; }
-    inline EffectivePreferredResource& AddEffectiveIncludeList(Aws::String&& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList.push_back(std::move(value)); return *this; }
-    inline EffectivePreferredResource& AddEffectiveIncludeList(const char* value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList.push_back(value); return *this; }
+    template<typename EffectiveIncludeListT = Aws::Vector<Aws::String>>
+    void SetEffectiveIncludeList(EffectiveIncludeListT&& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList = std::forward<EffectiveIncludeListT>(value); }
+    template<typename EffectiveIncludeListT = Aws::Vector<Aws::String>>
+    EffectivePreferredResource& WithEffectiveIncludeList(EffectiveIncludeListT&& value) { SetEffectiveIncludeList(std::forward<EffectiveIncludeListT>(value)); return *this;}
+    template<typename EffectiveIncludeListT = Aws::String>
+    EffectivePreferredResource& AddEffectiveIncludeList(EffectiveIncludeListT&& value) { m_effectiveIncludeListHasBeenSet = true; m_effectiveIncludeList.emplace_back(std::forward<EffectiveIncludeListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,19 +85,18 @@ namespace Model
      * <p> The list of preferred resources values that you want excluded from
      * rightsizing recommendation candidates. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeList() const{ return m_excludeList; }
+    inline const Aws::Vector<Aws::String>& GetExcludeList() const { return m_excludeList; }
     inline bool ExcludeListHasBeenSet() const { return m_excludeListHasBeenSet; }
-    inline void SetExcludeList(const Aws::Vector<Aws::String>& value) { m_excludeListHasBeenSet = true; m_excludeList = value; }
-    inline void SetExcludeList(Aws::Vector<Aws::String>&& value) { m_excludeListHasBeenSet = true; m_excludeList = std::move(value); }
-    inline EffectivePreferredResource& WithExcludeList(const Aws::Vector<Aws::String>& value) { SetExcludeList(value); return *this;}
-    inline EffectivePreferredResource& WithExcludeList(Aws::Vector<Aws::String>&& value) { SetExcludeList(std::move(value)); return *this;}
-    inline EffectivePreferredResource& AddExcludeList(const Aws::String& value) { m_excludeListHasBeenSet = true; m_excludeList.push_back(value); return *this; }
-    inline EffectivePreferredResource& AddExcludeList(Aws::String&& value) { m_excludeListHasBeenSet = true; m_excludeList.push_back(std::move(value)); return *this; }
-    inline EffectivePreferredResource& AddExcludeList(const char* value) { m_excludeListHasBeenSet = true; m_excludeList.push_back(value); return *this; }
+    template<typename ExcludeListT = Aws::Vector<Aws::String>>
+    void SetExcludeList(ExcludeListT&& value) { m_excludeListHasBeenSet = true; m_excludeList = std::forward<ExcludeListT>(value); }
+    template<typename ExcludeListT = Aws::Vector<Aws::String>>
+    EffectivePreferredResource& WithExcludeList(ExcludeListT&& value) { SetExcludeList(std::forward<ExcludeListT>(value)); return *this;}
+    template<typename ExcludeListT = Aws::String>
+    EffectivePreferredResource& AddExcludeList(ExcludeListT&& value) { m_excludeListHasBeenSet = true; m_excludeList.emplace_back(std::forward<ExcludeListT>(value)); return *this; }
     ///@}
   private:
 
-    PreferredResourceName m_name;
+    PreferredResourceName m_name{PreferredResourceName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeList;

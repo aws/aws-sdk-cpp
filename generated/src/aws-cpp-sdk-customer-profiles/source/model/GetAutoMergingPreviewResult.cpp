@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAutoMergingPreviewResult::GetAutoMergingPreviewResult() : 
-    m_numberOfMatchesInSample(0),
-    m_numberOfProfilesInSample(0),
-    m_numberOfProfilesWillBeMerged(0)
-{
-}
-
 GetAutoMergingPreviewResult::GetAutoMergingPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAutoMergingPreviewResult()
 {
   *this = result;
 }
@@ -36,33 +28,30 @@ GetAutoMergingPreviewResult& GetAutoMergingPreviewResult::operator =(const Aws::
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfMatchesInSample"))
   {
     m_numberOfMatchesInSample = jsonValue.GetInt64("NumberOfMatchesInSample");
-
+    m_numberOfMatchesInSampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfProfilesInSample"))
   {
     m_numberOfProfilesInSample = jsonValue.GetInt64("NumberOfProfilesInSample");
-
+    m_numberOfProfilesInSampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfProfilesWillBeMerged"))
   {
     m_numberOfProfilesWillBeMerged = jsonValue.GetInt64("NumberOfProfilesWillBeMerged");
-
+    m_numberOfProfilesWillBeMergedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

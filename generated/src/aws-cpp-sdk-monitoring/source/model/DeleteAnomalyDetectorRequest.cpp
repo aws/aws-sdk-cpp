@@ -10,12 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DeleteAnomalyDetectorRequest::DeleteAnomalyDetectorRequest() : 
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAnomalyDetectorRequest::SerializePayload() const
 {
   Aws::StringStream ss;

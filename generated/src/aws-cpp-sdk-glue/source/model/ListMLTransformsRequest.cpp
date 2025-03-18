@@ -12,16 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMLTransformsRequest::ListMLTransformsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ListMLTransformsRequest::SerializePayload() const
 {
   JsonValue payload;

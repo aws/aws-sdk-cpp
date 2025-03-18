@@ -31,7 +31,7 @@ namespace Model
   class CaptureOption
   {
   public:
-    AWS_SAGEMAKER_API CaptureOption();
+    AWS_SAGEMAKER_API CaptureOption() = default;
     AWS_SAGEMAKER_API CaptureOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CaptureOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Specify the boundary of data to capture.</p>
      */
-    inline const CaptureMode& GetCaptureMode() const{ return m_captureMode; }
+    inline CaptureMode GetCaptureMode() const { return m_captureMode; }
     inline bool CaptureModeHasBeenSet() const { return m_captureModeHasBeenSet; }
-    inline void SetCaptureMode(const CaptureMode& value) { m_captureModeHasBeenSet = true; m_captureMode = value; }
-    inline void SetCaptureMode(CaptureMode&& value) { m_captureModeHasBeenSet = true; m_captureMode = std::move(value); }
-    inline CaptureOption& WithCaptureMode(const CaptureMode& value) { SetCaptureMode(value); return *this;}
-    inline CaptureOption& WithCaptureMode(CaptureMode&& value) { SetCaptureMode(std::move(value)); return *this;}
+    inline void SetCaptureMode(CaptureMode value) { m_captureModeHasBeenSet = true; m_captureMode = value; }
+    inline CaptureOption& WithCaptureMode(CaptureMode value) { SetCaptureMode(value); return *this;}
     ///@}
   private:
 
-    CaptureMode m_captureMode;
+    CaptureMode m_captureMode{CaptureMode::NOT_SET};
     bool m_captureModeHasBeenSet = false;
   };
 

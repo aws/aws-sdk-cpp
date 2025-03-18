@@ -32,7 +32,7 @@ namespace Model
   class PipelineVariable
   {
   public:
-    AWS_CODEPIPELINE_API PipelineVariable();
+    AWS_CODEPIPELINE_API PipelineVariable() = default;
     AWS_CODEPIPELINE_API PipelineVariable(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of a pipeline-level variable.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PipelineVariable& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PipelineVariable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PipelineVariable& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PipelineVariable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of a pipeline-level variable.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PipelineVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PipelineVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PipelineVariable& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PipelineVariable& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

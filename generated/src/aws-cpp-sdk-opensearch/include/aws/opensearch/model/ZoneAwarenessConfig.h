@@ -30,7 +30,7 @@ namespace Model
   class ZoneAwarenessConfig
   {
   public:
-    AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig();
+    AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig() = default;
     AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API ZoneAwarenessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <code>3</code>. If your domain is provisioned within a VPC, this value be equal
      * to number of subnets.</p>
      */
-    inline int GetAvailabilityZoneCount() const{ return m_availabilityZoneCount; }
+    inline int GetAvailabilityZoneCount() const { return m_availabilityZoneCount; }
     inline bool AvailabilityZoneCountHasBeenSet() const { return m_availabilityZoneCountHasBeenSet; }
     inline void SetAvailabilityZoneCount(int value) { m_availabilityZoneCountHasBeenSet = true; m_availabilityZoneCount = value; }
     inline ZoneAwarenessConfig& WithAvailabilityZoneCount(int value) { SetAvailabilityZoneCount(value); return *this;}
     ///@}
   private:
 
-    int m_availabilityZoneCount;
+    int m_availabilityZoneCount{0};
     bool m_availabilityZoneCountHasBeenSet = false;
   };
 

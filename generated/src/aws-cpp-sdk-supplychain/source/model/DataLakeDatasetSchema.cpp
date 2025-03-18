@@ -18,14 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataLakeDatasetSchema::DataLakeDatasetSchema() : 
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 DataLakeDatasetSchema::DataLakeDatasetSchema(JsonView jsonValue)
-  : DataLakeDatasetSchema()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataLakeDatasetSchema& DataLakeDatasetSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -48,7 +39,6 @@ DataLakeDatasetSchema& DataLakeDatasetSchema::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

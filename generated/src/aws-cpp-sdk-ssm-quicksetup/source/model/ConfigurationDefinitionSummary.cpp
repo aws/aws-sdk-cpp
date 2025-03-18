@@ -18,16 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-ConfigurationDefinitionSummary::ConfigurationDefinitionSummary() : 
-    m_firstClassParametersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_typeVersionHasBeenSet(false)
-{
-}
-
 ConfigurationDefinitionSummary::ConfigurationDefinitionSummary(JsonView jsonValue)
-  : ConfigurationDefinitionSummary()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ ConfigurationDefinitionSummary& ConfigurationDefinitionSummary::operator =(JsonV
     }
     m_firstClassParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeVersion"))
   {
     m_typeVersion = jsonValue.GetString("TypeVersion");
-
     m_typeVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

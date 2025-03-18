@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-SourceDetail::SourceDetail() : 
-    m_eventSource(EventSource::NOT_SET),
-    m_eventSourceHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false)
-{
-}
-
 SourceDetail::SourceDetail(JsonView jsonValue)
-  : SourceDetail()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SourceDetail& SourceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventSource"))
   {
     m_eventSource = EventSourceMapper::GetEventSourceForName(jsonValue.GetString("EventSource"));
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionFrequency"))
   {
     m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
-
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

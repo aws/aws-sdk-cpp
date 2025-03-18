@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StopDBInstanceAutomatedBackupsReplicationRequest::StopDBInstanceAutomatedBackupsReplicationRequest() : 
-    m_sourceDBInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String StopDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

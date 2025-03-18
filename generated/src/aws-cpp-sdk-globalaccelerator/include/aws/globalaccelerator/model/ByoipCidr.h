@@ -65,7 +65,7 @@ namespace Model
   class ByoipCidr
   {
   public:
-    AWS_GLOBALACCELERATOR_API ByoipCidr();
+    AWS_GLOBALACCELERATOR_API ByoipCidr() = default;
     AWS_GLOBALACCELERATOR_API ByoipCidr(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API ByoipCidr& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,26 +77,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
      * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline ByoipCidr& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline ByoipCidr& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline ByoipCidr& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    ByoipCidr& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the address pool.</p>
      */
-    inline const ByoipCidrState& GetState() const{ return m_state; }
+    inline ByoipCidrState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ByoipCidrState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ByoipCidrState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ByoipCidr& WithState(const ByoipCidrState& value) { SetState(value); return *this;}
-    inline ByoipCidr& WithState(ByoipCidrState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ByoipCidrState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ByoipCidr& WithState(ByoipCidrState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -104,21 +100,21 @@ namespace Model
      * <p>A history of status changes for an IP address range that you bring to Global
      * Accelerator through bring your own IP address (BYOIP).</p>
      */
-    inline const Aws::Vector<ByoipCidrEvent>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<ByoipCidrEvent>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<ByoipCidrEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<ByoipCidrEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline ByoipCidr& WithEvents(const Aws::Vector<ByoipCidrEvent>& value) { SetEvents(value); return *this;}
-    inline ByoipCidr& WithEvents(Aws::Vector<ByoipCidrEvent>&& value) { SetEvents(std::move(value)); return *this;}
-    inline ByoipCidr& AddEvents(const ByoipCidrEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline ByoipCidr& AddEvents(ByoipCidrEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<ByoipCidrEvent>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<ByoipCidrEvent>>
+    ByoipCidr& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = ByoipCidrEvent>
+    ByoipCidr& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_cidr;
     bool m_cidrHasBeenSet = false;
 
-    ByoipCidrState m_state;
+    ByoipCidrState m_state{ByoipCidrState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<ByoipCidrEvent> m_events;

@@ -32,7 +32,7 @@ namespace Model
   class Template
   {
   public:
-    AWS_SES_API Template();
+    AWS_SES_API Template() = default;
     AWS_SES_API Template(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API Template& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,24 @@ namespace Model
      * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline Template& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline Template& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline Template& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    Template& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subject line of the email.</p>
      */
-    inline const Aws::String& GetSubjectPart() const{ return m_subjectPart; }
+    inline const Aws::String& GetSubjectPart() const { return m_subjectPart; }
     inline bool SubjectPartHasBeenSet() const { return m_subjectPartHasBeenSet; }
-    inline void SetSubjectPart(const Aws::String& value) { m_subjectPartHasBeenSet = true; m_subjectPart = value; }
-    inline void SetSubjectPart(Aws::String&& value) { m_subjectPartHasBeenSet = true; m_subjectPart = std::move(value); }
-    inline void SetSubjectPart(const char* value) { m_subjectPartHasBeenSet = true; m_subjectPart.assign(value); }
-    inline Template& WithSubjectPart(const Aws::String& value) { SetSubjectPart(value); return *this;}
-    inline Template& WithSubjectPart(Aws::String&& value) { SetSubjectPart(std::move(value)); return *this;}
-    inline Template& WithSubjectPart(const char* value) { SetSubjectPart(value); return *this;}
+    template<typename SubjectPartT = Aws::String>
+    void SetSubjectPart(SubjectPartT&& value) { m_subjectPartHasBeenSet = true; m_subjectPart = std::forward<SubjectPartT>(value); }
+    template<typename SubjectPartT = Aws::String>
+    Template& WithSubjectPart(SubjectPartT&& value) { SetSubjectPart(std::forward<SubjectPartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +71,24 @@ namespace Model
      * <p>The email body that is visible to recipients whose email clients do not
      * display HTML content.</p>
      */
-    inline const Aws::String& GetTextPart() const{ return m_textPart; }
+    inline const Aws::String& GetTextPart() const { return m_textPart; }
     inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
-    inline void SetTextPart(const Aws::String& value) { m_textPartHasBeenSet = true; m_textPart = value; }
-    inline void SetTextPart(Aws::String&& value) { m_textPartHasBeenSet = true; m_textPart = std::move(value); }
-    inline void SetTextPart(const char* value) { m_textPartHasBeenSet = true; m_textPart.assign(value); }
-    inline Template& WithTextPart(const Aws::String& value) { SetTextPart(value); return *this;}
-    inline Template& WithTextPart(Aws::String&& value) { SetTextPart(std::move(value)); return *this;}
-    inline Template& WithTextPart(const char* value) { SetTextPart(value); return *this;}
+    template<typename TextPartT = Aws::String>
+    void SetTextPart(TextPartT&& value) { m_textPartHasBeenSet = true; m_textPart = std::forward<TextPartT>(value); }
+    template<typename TextPartT = Aws::String>
+    Template& WithTextPart(TextPartT&& value) { SetTextPart(std::forward<TextPartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTML body of the email.</p>
      */
-    inline const Aws::String& GetHtmlPart() const{ return m_htmlPart; }
+    inline const Aws::String& GetHtmlPart() const { return m_htmlPart; }
     inline bool HtmlPartHasBeenSet() const { return m_htmlPartHasBeenSet; }
-    inline void SetHtmlPart(const Aws::String& value) { m_htmlPartHasBeenSet = true; m_htmlPart = value; }
-    inline void SetHtmlPart(Aws::String&& value) { m_htmlPartHasBeenSet = true; m_htmlPart = std::move(value); }
-    inline void SetHtmlPart(const char* value) { m_htmlPartHasBeenSet = true; m_htmlPart.assign(value); }
-    inline Template& WithHtmlPart(const Aws::String& value) { SetHtmlPart(value); return *this;}
-    inline Template& WithHtmlPart(Aws::String&& value) { SetHtmlPart(std::move(value)); return *this;}
-    inline Template& WithHtmlPart(const char* value) { SetHtmlPart(value); return *this;}
+    template<typename HtmlPartT = Aws::String>
+    void SetHtmlPart(HtmlPartT&& value) { m_htmlPartHasBeenSet = true; m_htmlPart = std::forward<HtmlPartT>(value); }
+    template<typename HtmlPartT = Aws::String>
+    Template& WithHtmlPart(HtmlPartT&& value) { SetHtmlPart(std::forward<HtmlPartT>(value)); return *this;}
     ///@}
   private:
 

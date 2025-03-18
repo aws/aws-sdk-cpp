@@ -33,7 +33,7 @@ namespace Model
   class SystemTemplateFilter
   {
   public:
-    AWS_IOTTHINGSGRAPH_API SystemTemplateFilter();
+    AWS_IOTTHINGSGRAPH_API SystemTemplateFilter() = default;
     AWS_IOTTHINGSGRAPH_API SystemTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API SystemTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The name of the system search filter field.</p>
      */
-    inline const SystemTemplateFilterName& GetName() const{ return m_name; }
+    inline SystemTemplateFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SystemTemplateFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SystemTemplateFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SystemTemplateFilter& WithName(const SystemTemplateFilterName& value) { SetName(value); return *this;}
-    inline SystemTemplateFilter& WithName(SystemTemplateFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SystemTemplateFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SystemTemplateFilter& WithName(SystemTemplateFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,18 @@ namespace Model
      * <p>An array of string values for the search filter field. Multiple values
      * function as AND criteria in the search.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
+    inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline SystemTemplateFilter& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
-    inline SystemTemplateFilter& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
-    inline SystemTemplateFilter& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-    inline SystemTemplateFilter& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
-    inline SystemTemplateFilter& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    SystemTemplateFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    template<typename ValueT = Aws::String>
+    SystemTemplateFilter& AddValue(ValueT&& value) { m_valueHasBeenSet = true; m_value.emplace_back(std::forward<ValueT>(value)); return *this; }
     ///@}
   private:
 
-    SystemTemplateFilterName m_name;
+    SystemTemplateFilterName m_name{SystemTemplateFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_value;

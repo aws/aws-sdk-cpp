@@ -18,23 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FileUploaderFieldConfig::FileUploaderFieldConfig() : 
-    m_accessLevel(StorageAccessLevel::NOT_SET),
-    m_accessLevelHasBeenSet(false),
-    m_acceptedFileTypesHasBeenSet(false),
-    m_showThumbnails(false),
-    m_showThumbnailsHasBeenSet(false),
-    m_isResumable(false),
-    m_isResumableHasBeenSet(false),
-    m_maxFileCount(0),
-    m_maxFileCountHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false)
-{
-}
-
 FileUploaderFieldConfig::FileUploaderFieldConfig(JsonView jsonValue)
-  : FileUploaderFieldConfig()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ FileUploaderFieldConfig& FileUploaderFieldConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessLevel"))
   {
     m_accessLevel = StorageAccessLevelMapper::GetStorageAccessLevelForName(jsonValue.GetString("accessLevel"));
-
     m_accessLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptedFileTypes"))
   {
     Aws::Utils::Array<JsonView> acceptedFileTypesJsonList = jsonValue.GetArray("acceptedFileTypes");
@@ -57,35 +39,26 @@ FileUploaderFieldConfig& FileUploaderFieldConfig::operator =(JsonView jsonValue)
     }
     m_acceptedFileTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("showThumbnails"))
   {
     m_showThumbnails = jsonValue.GetBool("showThumbnails");
-
     m_showThumbnailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isResumable"))
   {
     m_isResumable = jsonValue.GetBool("isResumable");
-
     m_isResumableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFileCount"))
   {
     m_maxFileCount = jsonValue.GetInteger("maxFileCount");
-
     m_maxFileCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSize"))
   {
     m_maxSize = jsonValue.GetInteger("maxSize");
-
     m_maxSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
      * to <code>none</code>, the instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs in On-Demand capacity. </p>
      */
-    inline const Aws::String& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
+    inline const Aws::String& GetCapacityReservationPreference() const { return m_capacityReservationPreference; }
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
-    inline void SetCapacityReservationPreference(const Aws::String& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
-    inline void SetCapacityReservationPreference(Aws::String&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
-    inline void SetCapacityReservationPreference(const char* value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference.assign(value); }
-    inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(const Aws::String& value) { SetCapacityReservationPreference(value); return *this;}
-    inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(Aws::String&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(const char* value) { SetCapacityReservationPreference(value); return *this;}
+    template<typename CapacityReservationPreferenceT = Aws::String>
+    void SetCapacityReservationPreference(CapacityReservationPreferenceT&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::forward<CapacityReservationPreferenceT>(value); }
+    template<typename CapacityReservationPreferenceT = Aws::String>
+    AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(CapacityReservationPreferenceT&& value) { SetCapacityReservationPreference(std::forward<CapacityReservationPreferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies a target Capacity Reservation. </p>
      */
-    inline const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
+    inline const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& GetCapacityReservationTarget() const { return m_capacityReservationTarget; }
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
-    inline void SetCapacityReservationTarget(const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
-    inline void SetCapacityReservationTarget(AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
-    inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationTarget(const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& value) { SetCapacityReservationTarget(value); return *this;}
-    inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationTarget(AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
+    template<typename CapacityReservationTargetT = AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>
+    void SetCapacityReservationTarget(CapacityReservationTargetT&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::forward<CapacityReservationTargetT>(value); }
+    template<typename CapacityReservationTargetT = AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>
+    AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationTarget(CapacityReservationTargetT&& value) { SetCapacityReservationTarget(std::forward<CapacityReservationTargetT>(value)); return *this;}
     ///@}
   private:
 

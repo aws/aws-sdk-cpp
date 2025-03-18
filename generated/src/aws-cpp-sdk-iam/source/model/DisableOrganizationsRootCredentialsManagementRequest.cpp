@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DisableOrganizationsRootCredentialsManagementRequest::DisableOrganizationsRootCredentialsManagementRequest()
-{
-}
-
 Aws::String DisableOrganizationsRootCredentialsManagementRequest::SerializePayload() const
 {
   Aws::StringStream ss;

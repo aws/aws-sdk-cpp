@@ -28,7 +28,7 @@ namespace Model
   class DetectMetricSetConfigResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API DetectMetricSetConfigResult();
+    AWS_LOOKOUTMETRICS_API DetectMetricSetConfigResult() = default;
     AWS_LOOKOUTMETRICS_API DetectMetricSetConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API DetectMetricSetConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The inferred dataset configuration for the datasource.</p>
      */
-    inline const DetectedMetricSetConfig& GetDetectedMetricSetConfig() const{ return m_detectedMetricSetConfig; }
-    inline void SetDetectedMetricSetConfig(const DetectedMetricSetConfig& value) { m_detectedMetricSetConfig = value; }
-    inline void SetDetectedMetricSetConfig(DetectedMetricSetConfig&& value) { m_detectedMetricSetConfig = std::move(value); }
-    inline DetectMetricSetConfigResult& WithDetectedMetricSetConfig(const DetectedMetricSetConfig& value) { SetDetectedMetricSetConfig(value); return *this;}
-    inline DetectMetricSetConfigResult& WithDetectedMetricSetConfig(DetectedMetricSetConfig&& value) { SetDetectedMetricSetConfig(std::move(value)); return *this;}
+    inline const DetectedMetricSetConfig& GetDetectedMetricSetConfig() const { return m_detectedMetricSetConfig; }
+    template<typename DetectedMetricSetConfigT = DetectedMetricSetConfig>
+    void SetDetectedMetricSetConfig(DetectedMetricSetConfigT&& value) { m_detectedMetricSetConfigHasBeenSet = true; m_detectedMetricSetConfig = std::forward<DetectedMetricSetConfigT>(value); }
+    template<typename DetectedMetricSetConfigT = DetectedMetricSetConfig>
+    DetectMetricSetConfigResult& WithDetectedMetricSetConfig(DetectedMetricSetConfigT&& value) { SetDetectedMetricSetConfig(std::forward<DetectedMetricSetConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectMetricSetConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectMetricSetConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectMetricSetConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectMetricSetConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DetectedMetricSetConfig m_detectedMetricSetConfig;
+    bool m_detectedMetricSetConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

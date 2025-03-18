@@ -18,14 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-IcebergCompactionSettings::IcebergCompactionSettings() : 
-    m_targetFileSizeMB(0),
-    m_targetFileSizeMBHasBeenSet(false)
-{
-}
-
 IcebergCompactionSettings::IcebergCompactionSettings(JsonView jsonValue)
-  : IcebergCompactionSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IcebergCompactionSettings& IcebergCompactionSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("targetFileSizeMB"))
   {
     m_targetFileSizeMB = jsonValue.GetInteger("targetFileSizeMB");
-
     m_targetFileSizeMBHasBeenSet = true;
   }
-
   return *this;
 }
 

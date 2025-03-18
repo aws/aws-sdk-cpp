@@ -12,13 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLoggingConfigurationRequest::UpdateLoggingConfigurationRequest() : 
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

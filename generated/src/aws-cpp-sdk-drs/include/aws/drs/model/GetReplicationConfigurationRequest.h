@@ -21,7 +21,7 @@ namespace Model
   class GetReplicationConfigurationRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API GetReplicationConfigurationRequest();
+    AWS_DRS_API GetReplicationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the Source Serve for this Replication Configuration.r</p>
      */
-    inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
+    inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-    inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-    inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-    inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-    inline GetReplicationConfigurationRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-    inline GetReplicationConfigurationRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-    inline GetReplicationConfigurationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    template<typename SourceServerIDT = Aws::String>
+    void SetSourceServerID(SourceServerIDT&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::forward<SourceServerIDT>(value); }
+    template<typename SourceServerIDT = Aws::String>
+    GetReplicationConfigurationRequest& WithSourceServerID(SourceServerIDT&& value) { SetSourceServerID(std::forward<SourceServerIDT>(value)); return *this;}
     ///@}
   private:
 

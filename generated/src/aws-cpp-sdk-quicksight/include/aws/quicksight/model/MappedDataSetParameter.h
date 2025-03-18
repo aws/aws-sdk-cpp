@@ -32,7 +32,7 @@ namespace Model
   class MappedDataSetParameter
   {
   public:
-    AWS_QUICKSIGHT_API MappedDataSetParameter();
+    AWS_QUICKSIGHT_API MappedDataSetParameter() = default;
     AWS_QUICKSIGHT_API MappedDataSetParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API MappedDataSetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A unique name that identifies a dataset within the analysis or dashboard.</p>
      */
-    inline const Aws::String& GetDataSetIdentifier() const{ return m_dataSetIdentifier; }
+    inline const Aws::String& GetDataSetIdentifier() const { return m_dataSetIdentifier; }
     inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
-    inline void SetDataSetIdentifier(const Aws::String& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = value; }
-    inline void SetDataSetIdentifier(Aws::String&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::move(value); }
-    inline void SetDataSetIdentifier(const char* value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier.assign(value); }
-    inline MappedDataSetParameter& WithDataSetIdentifier(const Aws::String& value) { SetDataSetIdentifier(value); return *this;}
-    inline MappedDataSetParameter& WithDataSetIdentifier(Aws::String&& value) { SetDataSetIdentifier(std::move(value)); return *this;}
-    inline MappedDataSetParameter& WithDataSetIdentifier(const char* value) { SetDataSetIdentifier(value); return *this;}
+    template<typename DataSetIdentifierT = Aws::String>
+    void SetDataSetIdentifier(DataSetIdentifierT&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::forward<DataSetIdentifierT>(value); }
+    template<typename DataSetIdentifierT = Aws::String>
+    MappedDataSetParameter& WithDataSetIdentifier(DataSetIdentifierT&& value) { SetDataSetIdentifier(std::forward<DataSetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset parameter.</p>
      */
-    inline const Aws::String& GetDataSetParameterName() const{ return m_dataSetParameterName; }
+    inline const Aws::String& GetDataSetParameterName() const { return m_dataSetParameterName; }
     inline bool DataSetParameterNameHasBeenSet() const { return m_dataSetParameterNameHasBeenSet; }
-    inline void SetDataSetParameterName(const Aws::String& value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName = value; }
-    inline void SetDataSetParameterName(Aws::String&& value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName = std::move(value); }
-    inline void SetDataSetParameterName(const char* value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName.assign(value); }
-    inline MappedDataSetParameter& WithDataSetParameterName(const Aws::String& value) { SetDataSetParameterName(value); return *this;}
-    inline MappedDataSetParameter& WithDataSetParameterName(Aws::String&& value) { SetDataSetParameterName(std::move(value)); return *this;}
-    inline MappedDataSetParameter& WithDataSetParameterName(const char* value) { SetDataSetParameterName(value); return *this;}
+    template<typename DataSetParameterNameT = Aws::String>
+    void SetDataSetParameterName(DataSetParameterNameT&& value) { m_dataSetParameterNameHasBeenSet = true; m_dataSetParameterName = std::forward<DataSetParameterNameT>(value); }
+    template<typename DataSetParameterNameT = Aws::String>
+    MappedDataSetParameter& WithDataSetParameterName(DataSetParameterNameT&& value) { SetDataSetParameterName(std::forward<DataSetParameterNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFieldLevelEncryptionProfiles2020_05_31Result::ListFieldLevelEncryptionProfiles2020_05_31Result()
-{
-}
-
 ListFieldLevelEncryptionProfiles2020_05_31Result::ListFieldLevelEncryptionProfiles2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListFieldLevelEncryptionProfiles2020_05_31Result& ListFieldLevelEncryptionProfil
   if(!resultNode.IsNull())
   {
     m_fieldLevelEncryptionProfileList = resultNode;
+    m_fieldLevelEncryptionProfileListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListFieldLevelEncryptionProfiles2020_05_31Result& ListFieldLevelEncryptionProfil
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

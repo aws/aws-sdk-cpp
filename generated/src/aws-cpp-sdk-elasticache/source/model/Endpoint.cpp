@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(const XmlNode& xmlNode)
-  : Endpoint()
 {
   *this = xmlNode;
 }

@@ -18,20 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration() : 
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
-{
-}
-
 TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue)
-  : TargetTrackingScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfigurati
   if(jsonValue.ValueExists("disableScaleIn"))
   {
     m_disableScaleIn = jsonValue.GetBool("disableScaleIn");
-
     m_disableScaleInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleInCooldown"))
   {
     m_scaleInCooldown = jsonValue.GetInteger("scaleInCooldown");
-
     m_scaleInCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleOutCooldown"))
   {
     m_scaleOutCooldown = jsonValue.GetInteger("scaleOutCooldown");
-
     m_scaleOutCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetValue"))
   {
     m_targetValue = jsonValue.GetDouble("targetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

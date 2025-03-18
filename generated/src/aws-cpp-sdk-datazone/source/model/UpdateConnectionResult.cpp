@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConnectionResult::UpdateConnectionResult() : 
-    m_type(ConnectionType::NOT_SET)
-{
-}
-
 UpdateConnectionResult::UpdateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateConnectionResult()
 {
   *this = result;
 }
@@ -34,39 +28,33 @@ UpdateConnectionResult& UpdateConnectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
+    m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainUnitId"))
   {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
-
+    m_domainUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalEndpoints"))
   {
     Aws::Utils::Array<JsonView> physicalEndpointsJsonList = jsonValue.GetArray("physicalEndpoints");
@@ -74,32 +62,30 @@ UpdateConnectionResult& UpdateConnectionResult::operator =(const Aws::AmazonWebS
     {
       m_physicalEndpoints.push_back(physicalEndpointsJsonList[physicalEndpointsIndex].AsObject());
     }
+    m_physicalEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
+    m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("props"))
   {
     m_props = jsonValue.GetObject("props");
-
+    m_propsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

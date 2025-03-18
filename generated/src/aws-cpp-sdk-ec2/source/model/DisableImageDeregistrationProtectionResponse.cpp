@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableImageDeregistrationProtectionResponse::DisableImageDeregistrationProtectionResponse()
-{
-}
-
 DisableImageDeregistrationProtectionResponse::DisableImageDeregistrationProtectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DisableImageDeregistrationProtectionResponse& DisableImageDeregistrationProtecti
     if(!returnNode.IsNull())
     {
       m_return = Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText());
+      m_returnHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DisableImageDeregistrationProtectionResponse& DisableImageDeregistrationProtecti
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisableImageDeregistrationProtectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

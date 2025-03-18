@@ -40,7 +40,7 @@ namespace Model
   class ReplicaSpecificationSummary
   {
   public:
-    AWS_KEYSPACES_API ReplicaSpecificationSummary();
+    AWS_KEYSPACES_API ReplicaSpecificationSummary() = default;
     AWS_KEYSPACES_API ReplicaSpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API ReplicaSpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ReplicaSpecificationSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ReplicaSpecificationSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ReplicaSpecificationSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ReplicaSpecificationSummary& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,29 +63,27 @@ namespace Model
      * <p>The status of the multi-Region table in the specified Amazon Web Services
      * Region.</p>
      */
-    inline const TableStatus& GetStatus() const{ return m_status; }
+    inline TableStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TableStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TableStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReplicaSpecificationSummary& WithStatus(const TableStatus& value) { SetStatus(value); return *this;}
-    inline ReplicaSpecificationSummary& WithStatus(TableStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TableStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReplicaSpecificationSummary& WithStatus(TableStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CapacitySpecificationSummary& GetCapacitySpecification() const{ return m_capacitySpecification; }
+    inline const CapacitySpecificationSummary& GetCapacitySpecification() const { return m_capacitySpecification; }
     inline bool CapacitySpecificationHasBeenSet() const { return m_capacitySpecificationHasBeenSet; }
-    inline void SetCapacitySpecification(const CapacitySpecificationSummary& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = value; }
-    inline void SetCapacitySpecification(CapacitySpecificationSummary&& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = std::move(value); }
-    inline ReplicaSpecificationSummary& WithCapacitySpecification(const CapacitySpecificationSummary& value) { SetCapacitySpecification(value); return *this;}
-    inline ReplicaSpecificationSummary& WithCapacitySpecification(CapacitySpecificationSummary&& value) { SetCapacitySpecification(std::move(value)); return *this;}
+    template<typename CapacitySpecificationT = CapacitySpecificationSummary>
+    void SetCapacitySpecification(CapacitySpecificationT&& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = std::forward<CapacitySpecificationT>(value); }
+    template<typename CapacitySpecificationT = CapacitySpecificationSummary>
+    ReplicaSpecificationSummary& WithCapacitySpecification(CapacitySpecificationT&& value) { SetCapacitySpecification(std::forward<CapacitySpecificationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    TableStatus m_status;
+    TableStatus m_status{TableStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     CapacitySpecificationSummary m_capacitySpecification;

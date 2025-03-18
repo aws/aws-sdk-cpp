@@ -33,7 +33,7 @@ namespace Model
   class CrossChannelBehavior
   {
   public:
-    AWS_CONNECT_API CrossChannelBehavior();
+    AWS_CONNECT_API CrossChannelBehavior() = default;
     AWS_CONNECT_API CrossChannelBehavior(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CrossChannelBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * <p>Specifies the other channels that can be routed to an agent handling their
      * current channel.</p>
      */
-    inline const BehaviorType& GetBehaviorType() const{ return m_behaviorType; }
+    inline BehaviorType GetBehaviorType() const { return m_behaviorType; }
     inline bool BehaviorTypeHasBeenSet() const { return m_behaviorTypeHasBeenSet; }
-    inline void SetBehaviorType(const BehaviorType& value) { m_behaviorTypeHasBeenSet = true; m_behaviorType = value; }
-    inline void SetBehaviorType(BehaviorType&& value) { m_behaviorTypeHasBeenSet = true; m_behaviorType = std::move(value); }
-    inline CrossChannelBehavior& WithBehaviorType(const BehaviorType& value) { SetBehaviorType(value); return *this;}
-    inline CrossChannelBehavior& WithBehaviorType(BehaviorType&& value) { SetBehaviorType(std::move(value)); return *this;}
+    inline void SetBehaviorType(BehaviorType value) { m_behaviorTypeHasBeenSet = true; m_behaviorType = value; }
+    inline CrossChannelBehavior& WithBehaviorType(BehaviorType value) { SetBehaviorType(value); return *this;}
     ///@}
   private:
 
-    BehaviorType m_behaviorType;
+    BehaviorType m_behaviorType{BehaviorType::NOT_SET};
     bool m_behaviorTypeHasBeenSet = false;
   };
 

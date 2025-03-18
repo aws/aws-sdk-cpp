@@ -34,7 +34,7 @@ namespace Model
   class ResourcePolicyLimitExceededException
   {
   public:
-    AWS_SSM_API ResourcePolicyLimitExceededException();
+    AWS_SSM_API ResourcePolicyLimitExceededException() = default;
     AWS_SSM_API ResourcePolicyLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResourcePolicyLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ResourcePolicyLimitExceededException& WithLimit(int value) { SetLimit(value); return *this;}
@@ -50,30 +50,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetLimitType() const{ return m_limitType; }
+    inline const Aws::String& GetLimitType() const { return m_limitType; }
     inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }
-    inline void SetLimitType(const Aws::String& value) { m_limitTypeHasBeenSet = true; m_limitType = value; }
-    inline void SetLimitType(Aws::String&& value) { m_limitTypeHasBeenSet = true; m_limitType = std::move(value); }
-    inline void SetLimitType(const char* value) { m_limitTypeHasBeenSet = true; m_limitType.assign(value); }
-    inline ResourcePolicyLimitExceededException& WithLimitType(const Aws::String& value) { SetLimitType(value); return *this;}
-    inline ResourcePolicyLimitExceededException& WithLimitType(Aws::String&& value) { SetLimitType(std::move(value)); return *this;}
-    inline ResourcePolicyLimitExceededException& WithLimitType(const char* value) { SetLimitType(value); return *this;}
+    template<typename LimitTypeT = Aws::String>
+    void SetLimitType(LimitTypeT&& value) { m_limitTypeHasBeenSet = true; m_limitType = std::forward<LimitTypeT>(value); }
+    template<typename LimitTypeT = Aws::String>
+    ResourcePolicyLimitExceededException& WithLimitType(LimitTypeT&& value) { SetLimitType(std::forward<LimitTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ResourcePolicyLimitExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ResourcePolicyLimitExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ResourcePolicyLimitExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ResourcePolicyLimitExceededException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_limitType;

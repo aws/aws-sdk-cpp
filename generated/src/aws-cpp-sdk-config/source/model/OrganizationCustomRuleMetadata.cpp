@@ -18,22 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationCustomRuleMetadata::OrganizationCustomRuleMetadata() : 
-    m_descriptionHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_organizationConfigRuleTriggerTypesHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_resourceTypesScopeHasBeenSet(false),
-    m_resourceIdScopeHasBeenSet(false),
-    m_tagKeyScopeHasBeenSet(false),
-    m_tagValueScopeHasBeenSet(false)
-{
-}
-
 OrganizationCustomRuleMetadata::OrganizationCustomRuleMetadata(JsonView jsonValue)
-  : OrganizationCustomRuleMetadata()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonV
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaFunctionArn"))
   {
     m_lambdaFunctionArn = jsonValue.GetString("LambdaFunctionArn");
-
     m_lambdaFunctionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes"))
   {
     Aws::Utils::Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
@@ -63,21 +44,16 @@ OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonV
     }
     m_organizationConfigRuleTriggerTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParameters"))
   {
     m_inputParameters = jsonValue.GetString("InputParameters");
-
     m_inputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionFrequency"))
   {
     m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
-
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
     Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
@@ -87,28 +63,21 @@ OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonV
     }
     m_resourceTypesScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdScope"))
   {
     m_resourceIdScope = jsonValue.GetString("ResourceIdScope");
-
     m_resourceIdScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKeyScope"))
   {
     m_tagKeyScope = jsonValue.GetString("TagKeyScope");
-
     m_tagKeyScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValueScope"))
   {
     m_tagValueScope = jsonValue.GetString("TagValueScope");
-
     m_tagValueScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

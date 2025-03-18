@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProvisioningClaimResult::CreateProvisioningClaimResult()
-{
-}
-
 CreateProvisioningClaimResult::CreateProvisioningClaimResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CreateProvisioningClaimResult& CreateProvisioningClaimResult::operator =(const A
   if(jsonValue.ValueExists("certificateId"))
   {
     m_certificateId = jsonValue.GetString("certificateId");
-
+    m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificatePem"))
   {
     m_certificatePem = jsonValue.GetString("certificatePem");
-
+    m_certificatePemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPair"))
   {
     m_keyPair = jsonValue.GetObject("keyPair");
-
+    m_keyPairHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetDouble("expiration");
-
+    m_expirationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

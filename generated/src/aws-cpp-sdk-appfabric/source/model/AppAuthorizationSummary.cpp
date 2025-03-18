@@ -18,19 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-AppAuthorizationSummary::AppAuthorizationSummary() : 
-    m_appAuthorizationArnHasBeenSet(false),
-    m_appBundleArnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantHasBeenSet(false),
-    m_status(AppAuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AppAuthorizationSummary::AppAuthorizationSummary(JsonView jsonValue)
-  : AppAuthorizationSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AppAuthorizationSummary& AppAuthorizationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appAuthorizationArn"))
   {
     m_appAuthorizationArn = jsonValue.GetString("appAuthorizationArn");
-
     m_appAuthorizationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appBundleArn"))
   {
     m_appBundleArn = jsonValue.GetString("appBundleArn");
-
     m_appBundleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("app"))
   {
     m_app = jsonValue.GetString("app");
-
     m_appHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenant"))
   {
     m_tenant = jsonValue.GetObject("tenant");
-
     m_tenantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AppAuthorizationStatusMapper::GetAppAuthorizationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

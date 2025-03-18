@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-MonthlySchedule::MonthlySchedule() : 
-    m_day(Day::NOT_SET),
-    m_dayHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 MonthlySchedule::MonthlySchedule(JsonView jsonValue)
-  : MonthlySchedule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MonthlySchedule& MonthlySchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("day"))
   {
     m_day = DayMapper::GetDayForName(jsonValue.GetString("day"));
-
     m_dayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetObject("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

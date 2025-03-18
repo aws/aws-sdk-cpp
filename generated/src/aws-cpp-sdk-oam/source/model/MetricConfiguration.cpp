@@ -18,13 +18,7 @@ namespace OAM
 namespace Model
 {
 
-MetricConfiguration::MetricConfiguration() : 
-    m_filterHasBeenSet(false)
-{
-}
-
 MetricConfiguration::MetricConfiguration(JsonView jsonValue)
-  : MetricConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetricConfiguration& MetricConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetString("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountSettingsRequest::DescribeAccountSettingsRequest()
-{
-}
-
 Aws::String DescribeAccountSettingsRequest::SerializePayload() const
 {
   return "{}";

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TextGenerationResolvedAttributes::TextGenerationResolvedAttributes() : 
-    m_baseModelNameHasBeenSet(false)
-{
-}
-
 TextGenerationResolvedAttributes::TextGenerationResolvedAttributes(JsonView jsonValue)
-  : TextGenerationResolvedAttributes()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextGenerationResolvedAttributes& TextGenerationResolvedAttributes::operator =(J
   if(jsonValue.ValueExists("BaseModelName"))
   {
     m_baseModelName = jsonValue.GetString("BaseModelName");
-
     m_baseModelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendBulkTemplatedEmailResult::SendBulkTemplatedEmailResult()
-{
-}
-
 SendBulkTemplatedEmailResult::SendBulkTemplatedEmailResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ SendBulkTemplatedEmailResult& SendBulkTemplatedEmailResult::operator =(const Aws
     if(!statusNode.IsNull())
     {
       XmlNode statusMember = statusNode.FirstChild("member");
+      m_statusHasBeenSet = !statusMember.IsNull();
       while(!statusMember.IsNull())
       {
         m_status.push_back(statusMember);
         statusMember = statusMember.NextNode("member");
       }
 
+      m_statusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::SendBulkTemplatedEmailResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

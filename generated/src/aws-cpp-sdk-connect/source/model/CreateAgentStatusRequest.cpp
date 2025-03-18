@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAgentStatusRequest::CreateAgentStatusRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(AgentStatusState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_displayOrder(0),
-    m_displayOrderHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAgentStatusRequest::SerializePayload() const
 {
   JsonValue payload;

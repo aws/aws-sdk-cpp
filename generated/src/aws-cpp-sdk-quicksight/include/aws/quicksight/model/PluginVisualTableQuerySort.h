@@ -34,7 +34,7 @@ namespace Model
   class PluginVisualTableQuerySort
   {
   public:
-    AWS_QUICKSIGHT_API PluginVisualTableQuerySort();
+    AWS_QUICKSIGHT_API PluginVisualTableQuerySort() = default;
     AWS_QUICKSIGHT_API PluginVisualTableQuerySort(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PluginVisualTableQuerySort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>Determines how data is sorted in the response.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetRowSort() const{ return m_rowSort; }
+    inline const Aws::Vector<FieldSortOptions>& GetRowSort() const { return m_rowSort; }
     inline bool RowSortHasBeenSet() const { return m_rowSortHasBeenSet; }
-    inline void SetRowSort(const Aws::Vector<FieldSortOptions>& value) { m_rowSortHasBeenSet = true; m_rowSort = value; }
-    inline void SetRowSort(Aws::Vector<FieldSortOptions>&& value) { m_rowSortHasBeenSet = true; m_rowSort = std::move(value); }
-    inline PluginVisualTableQuerySort& WithRowSort(const Aws::Vector<FieldSortOptions>& value) { SetRowSort(value); return *this;}
-    inline PluginVisualTableQuerySort& WithRowSort(Aws::Vector<FieldSortOptions>&& value) { SetRowSort(std::move(value)); return *this;}
-    inline PluginVisualTableQuerySort& AddRowSort(const FieldSortOptions& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(value); return *this; }
-    inline PluginVisualTableQuerySort& AddRowSort(FieldSortOptions&& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(std::move(value)); return *this; }
+    template<typename RowSortT = Aws::Vector<FieldSortOptions>>
+    void SetRowSort(RowSortT&& value) { m_rowSortHasBeenSet = true; m_rowSort = std::forward<RowSortT>(value); }
+    template<typename RowSortT = Aws::Vector<FieldSortOptions>>
+    PluginVisualTableQuerySort& WithRowSort(RowSortT&& value) { SetRowSort(std::forward<RowSortT>(value)); return *this;}
+    template<typename RowSortT = FieldSortOptions>
+    PluginVisualTableQuerySort& AddRowSort(RowSortT&& value) { m_rowSortHasBeenSet = true; m_rowSort.emplace_back(std::forward<RowSortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum amount of data to be returned by a query.</p>
      */
-    inline const PluginVisualItemsLimitConfiguration& GetItemsLimitConfiguration() const{ return m_itemsLimitConfiguration; }
+    inline const PluginVisualItemsLimitConfiguration& GetItemsLimitConfiguration() const { return m_itemsLimitConfiguration; }
     inline bool ItemsLimitConfigurationHasBeenSet() const { return m_itemsLimitConfigurationHasBeenSet; }
-    inline void SetItemsLimitConfiguration(const PluginVisualItemsLimitConfiguration& value) { m_itemsLimitConfigurationHasBeenSet = true; m_itemsLimitConfiguration = value; }
-    inline void SetItemsLimitConfiguration(PluginVisualItemsLimitConfiguration&& value) { m_itemsLimitConfigurationHasBeenSet = true; m_itemsLimitConfiguration = std::move(value); }
-    inline PluginVisualTableQuerySort& WithItemsLimitConfiguration(const PluginVisualItemsLimitConfiguration& value) { SetItemsLimitConfiguration(value); return *this;}
-    inline PluginVisualTableQuerySort& WithItemsLimitConfiguration(PluginVisualItemsLimitConfiguration&& value) { SetItemsLimitConfiguration(std::move(value)); return *this;}
+    template<typename ItemsLimitConfigurationT = PluginVisualItemsLimitConfiguration>
+    void SetItemsLimitConfiguration(ItemsLimitConfigurationT&& value) { m_itemsLimitConfigurationHasBeenSet = true; m_itemsLimitConfiguration = std::forward<ItemsLimitConfigurationT>(value); }
+    template<typename ItemsLimitConfigurationT = PluginVisualItemsLimitConfiguration>
+    PluginVisualTableQuerySort& WithItemsLimitConfiguration(ItemsLimitConfigurationT&& value) { SetItemsLimitConfiguration(std::forward<ItemsLimitConfigurationT>(value)); return *this;}
     ///@}
   private:
 

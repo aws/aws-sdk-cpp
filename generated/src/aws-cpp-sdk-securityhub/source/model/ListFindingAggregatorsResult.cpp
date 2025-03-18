@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFindingAggregatorsResult::ListFindingAggregatorsResult()
-{
-}
-
 ListFindingAggregatorsResult::ListFindingAggregatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListFindingAggregatorsResult& ListFindingAggregatorsResult::operator =(const Aws
     {
       m_findingAggregators.push_back(findingAggregatorsJsonList[findingAggregatorsIndex].AsObject());
     }
+    m_findingAggregatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

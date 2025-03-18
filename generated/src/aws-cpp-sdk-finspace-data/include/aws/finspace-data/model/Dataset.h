@@ -34,7 +34,7 @@ namespace Model
   class Dataset
   {
   public:
-    AWS_FINSPACEDATA_API Dataset();
+    AWS_FINSPACEDATA_API Dataset() = default;
     AWS_FINSPACEDATA_API Dataset(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>An identifier for a Dataset.</p>
      */
-    inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
+    inline const Aws::String& GetDatasetId() const { return m_datasetId; }
     inline bool DatasetIdHasBeenSet() const { return m_datasetIdHasBeenSet; }
-    inline void SetDatasetId(const Aws::String& value) { m_datasetIdHasBeenSet = true; m_datasetId = value; }
-    inline void SetDatasetId(Aws::String&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::move(value); }
-    inline void SetDatasetId(const char* value) { m_datasetIdHasBeenSet = true; m_datasetId.assign(value); }
-    inline Dataset& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
-    inline Dataset& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
-    inline Dataset& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+    template<typename DatasetIdT = Aws::String>
+    void SetDatasetId(DatasetIdT&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::forward<DatasetIdT>(value); }
+    template<typename DatasetIdT = Aws::String>
+    Dataset& WithDatasetId(DatasetIdT&& value) { SetDatasetId(std::forward<DatasetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN identifier of the Dataset.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline Dataset& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline Dataset& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline Dataset& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    Dataset& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Display title for a Dataset.</p>
      */
-    inline const Aws::String& GetDatasetTitle() const{ return m_datasetTitle; }
+    inline const Aws::String& GetDatasetTitle() const { return m_datasetTitle; }
     inline bool DatasetTitleHasBeenSet() const { return m_datasetTitleHasBeenSet; }
-    inline void SetDatasetTitle(const Aws::String& value) { m_datasetTitleHasBeenSet = true; m_datasetTitle = value; }
-    inline void SetDatasetTitle(Aws::String&& value) { m_datasetTitleHasBeenSet = true; m_datasetTitle = std::move(value); }
-    inline void SetDatasetTitle(const char* value) { m_datasetTitleHasBeenSet = true; m_datasetTitle.assign(value); }
-    inline Dataset& WithDatasetTitle(const Aws::String& value) { SetDatasetTitle(value); return *this;}
-    inline Dataset& WithDatasetTitle(Aws::String&& value) { SetDatasetTitle(std::move(value)); return *this;}
-    inline Dataset& WithDatasetTitle(const char* value) { SetDatasetTitle(value); return *this;}
+    template<typename DatasetTitleT = Aws::String>
+    void SetDatasetTitle(DatasetTitleT&& value) { m_datasetTitleHasBeenSet = true; m_datasetTitle = std::forward<DatasetTitleT>(value); }
+    template<typename DatasetTitleT = Aws::String>
+    Dataset& WithDatasetTitle(DatasetTitleT&& value) { SetDatasetTitle(std::forward<DatasetTitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,38 +83,34 @@ namespace Model
      * <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p>
      * </li> </ul>
      */
-    inline const DatasetKind& GetKind() const{ return m_kind; }
+    inline DatasetKind GetKind() const { return m_kind; }
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
-    inline void SetKind(const DatasetKind& value) { m_kindHasBeenSet = true; m_kind = value; }
-    inline void SetKind(DatasetKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
-    inline Dataset& WithKind(const DatasetKind& value) { SetKind(value); return *this;}
-    inline Dataset& WithKind(DatasetKind&& value) { SetKind(std::move(value)); return *this;}
+    inline void SetKind(DatasetKind value) { m_kindHasBeenSet = true; m_kind = value; }
+    inline Dataset& WithKind(DatasetKind value) { SetKind(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description for a Dataset.</p>
      */
-    inline const Aws::String& GetDatasetDescription() const{ return m_datasetDescription; }
+    inline const Aws::String& GetDatasetDescription() const { return m_datasetDescription; }
     inline bool DatasetDescriptionHasBeenSet() const { return m_datasetDescriptionHasBeenSet; }
-    inline void SetDatasetDescription(const Aws::String& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = value; }
-    inline void SetDatasetDescription(Aws::String&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::move(value); }
-    inline void SetDatasetDescription(const char* value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription.assign(value); }
-    inline Dataset& WithDatasetDescription(const Aws::String& value) { SetDatasetDescription(value); return *this;}
-    inline Dataset& WithDatasetDescription(Aws::String&& value) { SetDatasetDescription(std::move(value)); return *this;}
-    inline Dataset& WithDatasetDescription(const char* value) { SetDatasetDescription(value); return *this;}
+    template<typename DatasetDescriptionT = Aws::String>
+    void SetDatasetDescription(DatasetDescriptionT&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::forward<DatasetDescriptionT>(value); }
+    template<typename DatasetDescriptionT = Aws::String>
+    Dataset& WithDatasetDescription(DatasetDescriptionT&& value) { SetDatasetDescription(std::forward<DatasetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contact information for a Dataset owner.</p>
      */
-    inline const DatasetOwnerInfo& GetOwnerInfo() const{ return m_ownerInfo; }
+    inline const DatasetOwnerInfo& GetOwnerInfo() const { return m_ownerInfo; }
     inline bool OwnerInfoHasBeenSet() const { return m_ownerInfoHasBeenSet; }
-    inline void SetOwnerInfo(const DatasetOwnerInfo& value) { m_ownerInfoHasBeenSet = true; m_ownerInfo = value; }
-    inline void SetOwnerInfo(DatasetOwnerInfo&& value) { m_ownerInfoHasBeenSet = true; m_ownerInfo = std::move(value); }
-    inline Dataset& WithOwnerInfo(const DatasetOwnerInfo& value) { SetOwnerInfo(value); return *this;}
-    inline Dataset& WithOwnerInfo(DatasetOwnerInfo&& value) { SetOwnerInfo(std::move(value)); return *this;}
+    template<typename OwnerInfoT = DatasetOwnerInfo>
+    void SetOwnerInfo(OwnerInfoT&& value) { m_ownerInfoHasBeenSet = true; m_ownerInfo = std::forward<OwnerInfoT>(value); }
+    template<typename OwnerInfoT = DatasetOwnerInfo>
+    Dataset& WithOwnerInfo(OwnerInfoT&& value) { SetOwnerInfo(std::forward<OwnerInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,7 +119,7 @@ namespace Model
      * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline long long GetCreateTime() const{ return m_createTime; }
+    inline long long GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
     inline void SetCreateTime(long long value) { m_createTimeHasBeenSet = true; m_createTime = value; }
     inline Dataset& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
@@ -141,7 +131,7 @@ namespace Model
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline long long GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
     inline Dataset& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
@@ -151,26 +141,24 @@ namespace Model
     /**
      * <p>Definition for a schema on a tabular Dataset.</p>
      */
-    inline const SchemaUnion& GetSchemaDefinition() const{ return m_schemaDefinition; }
+    inline const SchemaUnion& GetSchemaDefinition() const { return m_schemaDefinition; }
     inline bool SchemaDefinitionHasBeenSet() const { return m_schemaDefinitionHasBeenSet; }
-    inline void SetSchemaDefinition(const SchemaUnion& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = value; }
-    inline void SetSchemaDefinition(SchemaUnion&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::move(value); }
-    inline Dataset& WithSchemaDefinition(const SchemaUnion& value) { SetSchemaDefinition(value); return *this;}
-    inline Dataset& WithSchemaDefinition(SchemaUnion&& value) { SetSchemaDefinition(std::move(value)); return *this;}
+    template<typename SchemaDefinitionT = SchemaUnion>
+    void SetSchemaDefinition(SchemaDefinitionT&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::forward<SchemaDefinitionT>(value); }
+    template<typename SchemaDefinitionT = SchemaUnion>
+    Dataset& WithSchemaDefinition(SchemaDefinitionT&& value) { SetSchemaDefinition(std::forward<SchemaDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique resource identifier for a Dataset.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline Dataset& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline Dataset& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline Dataset& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    Dataset& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,7 +171,7 @@ namespace Model
     Aws::String m_datasetTitle;
     bool m_datasetTitleHasBeenSet = false;
 
-    DatasetKind m_kind;
+    DatasetKind m_kind{DatasetKind::NOT_SET};
     bool m_kindHasBeenSet = false;
 
     Aws::String m_datasetDescription;
@@ -192,10 +180,10 @@ namespace Model
     DatasetOwnerInfo m_ownerInfo;
     bool m_ownerInfoHasBeenSet = false;
 
-    long long m_createTime;
+    long long m_createTime{0};
     bool m_createTimeHasBeenSet = false;
 
-    long long m_lastModifiedTime;
+    long long m_lastModifiedTime{0};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     SchemaUnion m_schemaDefinition;

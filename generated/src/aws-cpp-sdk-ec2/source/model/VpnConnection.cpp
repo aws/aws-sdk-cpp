@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnection::VpnConnection() : 
-    m_categoryHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_coreNetworkAttachmentArnHasBeenSet(false),
-    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
-    m_gatewayAssociationStateHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vgwTelemetryHasBeenSet(false),
-    m_vpnConnectionIdHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_customerGatewayConfigurationHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false)
-{
-}
-
 VpnConnection::VpnConnection(const XmlNode& xmlNode)
-  : VpnConnection()
 {
   *this = xmlNode;
 }
@@ -81,7 +58,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode gatewayAssociationStateNode = resultNode.FirstChild("gatewayAssociationState");
     if(!gatewayAssociationStateNode.IsNull())
     {
-      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()).c_str());
+      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()));
       m_gatewayAssociationStateHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
@@ -94,6 +71,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
@@ -106,6 +84,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -118,6 +97,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     if(!vgwTelemetryNode.IsNull())
     {
       XmlNode vgwTelemetryMember = vgwTelemetryNode.FirstChild("item");
+      m_vgwTelemetryHasBeenSet = !vgwTelemetryMember.IsNull();
       while(!vgwTelemetryMember.IsNull())
       {
         m_vgwTelemetry.push_back(vgwTelemetryMember);
@@ -135,7 +115,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode customerGatewayConfigurationNode = resultNode.FirstChild("customerGatewayConfiguration");
@@ -147,7 +127,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");

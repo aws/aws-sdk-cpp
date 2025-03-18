@@ -32,7 +32,7 @@ namespace Model
   class LexiconDescription
   {
   public:
-    AWS_POLLY_API LexiconDescription();
+    AWS_POLLY_API LexiconDescription() = default;
     AWS_POLLY_API LexiconDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API LexiconDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LexiconDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LexiconDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LexiconDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LexiconDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides lexicon metadata.</p>
      */
-    inline const LexiconAttributes& GetAttributes() const{ return m_attributes; }
+    inline const LexiconAttributes& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const LexiconAttributes& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(LexiconAttributes&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline LexiconDescription& WithAttributes(const LexiconAttributes& value) { SetAttributes(value); return *this;}
-    inline LexiconDescription& WithAttributes(LexiconAttributes&& value) { SetAttributes(std::move(value)); return *this;}
+    template<typename AttributesT = LexiconAttributes>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = LexiconAttributes>
+    LexiconDescription& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
     ///@}
   private:
 

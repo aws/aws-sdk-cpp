@@ -12,16 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetECSServiceRecommendationsRequest::GetECSServiceRecommendationsRequest() : 
-    m_serviceArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String GetECSServiceRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

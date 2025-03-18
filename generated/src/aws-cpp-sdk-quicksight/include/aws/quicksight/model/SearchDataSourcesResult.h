@@ -29,7 +29,7 @@ namespace Model
   class SearchDataSourcesResult
   {
   public:
-    AWS_QUICKSIGHT_API SearchDataSourcesResult();
+    AWS_QUICKSIGHT_API SearchDataSourcesResult() = default;
     AWS_QUICKSIGHT_API SearchDataSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API SearchDataSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,56 +39,56 @@ namespace Model
      * <p>A <code>DataSourceSummaries</code> object that returns a summary of a data
      * source.</p>
      */
-    inline const Aws::Vector<DataSourceSummary>& GetDataSourceSummaries() const{ return m_dataSourceSummaries; }
-    inline void SetDataSourceSummaries(const Aws::Vector<DataSourceSummary>& value) { m_dataSourceSummaries = value; }
-    inline void SetDataSourceSummaries(Aws::Vector<DataSourceSummary>&& value) { m_dataSourceSummaries = std::move(value); }
-    inline SearchDataSourcesResult& WithDataSourceSummaries(const Aws::Vector<DataSourceSummary>& value) { SetDataSourceSummaries(value); return *this;}
-    inline SearchDataSourcesResult& WithDataSourceSummaries(Aws::Vector<DataSourceSummary>&& value) { SetDataSourceSummaries(std::move(value)); return *this;}
-    inline SearchDataSourcesResult& AddDataSourceSummaries(const DataSourceSummary& value) { m_dataSourceSummaries.push_back(value); return *this; }
-    inline SearchDataSourcesResult& AddDataSourceSummaries(DataSourceSummary&& value) { m_dataSourceSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataSourceSummary>& GetDataSourceSummaries() const { return m_dataSourceSummaries; }
+    template<typename DataSourceSummariesT = Aws::Vector<DataSourceSummary>>
+    void SetDataSourceSummaries(DataSourceSummariesT&& value) { m_dataSourceSummariesHasBeenSet = true; m_dataSourceSummaries = std::forward<DataSourceSummariesT>(value); }
+    template<typename DataSourceSummariesT = Aws::Vector<DataSourceSummary>>
+    SearchDataSourcesResult& WithDataSourceSummaries(DataSourceSummariesT&& value) { SetDataSourceSummaries(std::forward<DataSourceSummariesT>(value)); return *this;}
+    template<typename DataSourceSummariesT = DataSourceSummary>
+    SearchDataSourcesResult& AddDataSourceSummaries(DataSourceSummariesT&& value) { m_dataSourceSummariesHasBeenSet = true; m_dataSourceSummaries.emplace_back(std::forward<DataSourceSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token that can be used in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchDataSourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchDataSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchDataSourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchDataSourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline SearchDataSourcesResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchDataSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchDataSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchDataSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchDataSourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataSourceSummary> m_dataSourceSummaries;
+    bool m_dataSourceSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

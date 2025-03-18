@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteProjectRequest::DeleteProjectRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_skipDeletionCheck(false),
-    m_skipDeletionCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
   return {};

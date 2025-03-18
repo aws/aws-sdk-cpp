@@ -29,7 +29,7 @@ namespace Model
   class BatchAssociateResourceResult
   {
   public:
-    AWS_FMS_API BatchAssociateResourceResult();
+    AWS_FMS_API BatchAssociateResourceResult() = default;
     AWS_FMS_API BatchAssociateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API BatchAssociateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
-    inline const Aws::String& GetResourceSetIdentifier() const{ return m_resourceSetIdentifier; }
-    inline void SetResourceSetIdentifier(const Aws::String& value) { m_resourceSetIdentifier = value; }
-    inline void SetResourceSetIdentifier(Aws::String&& value) { m_resourceSetIdentifier = std::move(value); }
-    inline void SetResourceSetIdentifier(const char* value) { m_resourceSetIdentifier.assign(value); }
-    inline BatchAssociateResourceResult& WithResourceSetIdentifier(const Aws::String& value) { SetResourceSetIdentifier(value); return *this;}
-    inline BatchAssociateResourceResult& WithResourceSetIdentifier(Aws::String&& value) { SetResourceSetIdentifier(std::move(value)); return *this;}
-    inline BatchAssociateResourceResult& WithResourceSetIdentifier(const char* value) { SetResourceSetIdentifier(value); return *this;}
+    inline const Aws::String& GetResourceSetIdentifier() const { return m_resourceSetIdentifier; }
+    template<typename ResourceSetIdentifierT = Aws::String>
+    void SetResourceSetIdentifier(ResourceSetIdentifierT&& value) { m_resourceSetIdentifierHasBeenSet = true; m_resourceSetIdentifier = std::forward<ResourceSetIdentifierT>(value); }
+    template<typename ResourceSetIdentifierT = Aws::String>
+    BatchAssociateResourceResult& WithResourceSetIdentifier(ResourceSetIdentifierT&& value) { SetResourceSetIdentifier(std::forward<ResourceSetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resources that failed to associate to the resource set.</p>
      */
-    inline const Aws::Vector<FailedItem>& GetFailedItems() const{ return m_failedItems; }
-    inline void SetFailedItems(const Aws::Vector<FailedItem>& value) { m_failedItems = value; }
-    inline void SetFailedItems(Aws::Vector<FailedItem>&& value) { m_failedItems = std::move(value); }
-    inline BatchAssociateResourceResult& WithFailedItems(const Aws::Vector<FailedItem>& value) { SetFailedItems(value); return *this;}
-    inline BatchAssociateResourceResult& WithFailedItems(Aws::Vector<FailedItem>&& value) { SetFailedItems(std::move(value)); return *this;}
-    inline BatchAssociateResourceResult& AddFailedItems(const FailedItem& value) { m_failedItems.push_back(value); return *this; }
-    inline BatchAssociateResourceResult& AddFailedItems(FailedItem&& value) { m_failedItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedItem>& GetFailedItems() const { return m_failedItems; }
+    template<typename FailedItemsT = Aws::Vector<FailedItem>>
+    void SetFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::forward<FailedItemsT>(value); }
+    template<typename FailedItemsT = Aws::Vector<FailedItem>>
+    BatchAssociateResourceResult& WithFailedItems(FailedItemsT&& value) { SetFailedItems(std::forward<FailedItemsT>(value)); return *this;}
+    template<typename FailedItemsT = FailedItem>
+    BatchAssociateResourceResult& AddFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems.emplace_back(std::forward<FailedItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAssociateResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAssociateResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAssociateResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAssociateResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceSetIdentifier;
+    bool m_resourceSetIdentifierHasBeenSet = false;
 
     Aws::Vector<FailedItem> m_failedItems;
+    bool m_failedItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

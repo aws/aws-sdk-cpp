@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetImagePolicyRequest::GetImagePolicyRequest() : 
-    m_imageArnHasBeenSet(false)
-{
-}
-
 Aws::String GetImagePolicyRequest::SerializePayload() const
 {
   return {};

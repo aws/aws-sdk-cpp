@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagServerCertificateRequest::TagServerCertificateRequest() : 
-    m_serverCertificateNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

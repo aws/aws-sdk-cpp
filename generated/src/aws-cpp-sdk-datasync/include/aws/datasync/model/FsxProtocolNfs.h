@@ -33,7 +33,7 @@ namespace Model
   class FsxProtocolNfs
   {
   public:
-    AWS_DATASYNC_API FsxProtocolNfs();
+    AWS_DATASYNC_API FsxProtocolNfs() = default;
     AWS_DATASYNC_API FsxProtocolNfs(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API FsxProtocolNfs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
+    inline const NfsMountOptions& GetMountOptions() const { return m_mountOptions; }
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
-    inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
-    inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
-    inline FsxProtocolNfs& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
-    inline FsxProtocolNfs& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
+    template<typename MountOptionsT = NfsMountOptions>
+    void SetMountOptions(MountOptionsT&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::forward<MountOptionsT>(value); }
+    template<typename MountOptionsT = NfsMountOptions>
+    FsxProtocolNfs& WithMountOptions(MountOptionsT&& value) { SetMountOptions(std::forward<MountOptionsT>(value)); return *this;}
     ///@}
   private:
 

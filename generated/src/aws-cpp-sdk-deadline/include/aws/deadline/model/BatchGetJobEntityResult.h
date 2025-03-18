@@ -30,7 +30,7 @@ namespace Model
   class BatchGetJobEntityResult
   {
   public:
-    AWS_DEADLINE_API BatchGetJobEntityResult();
+    AWS_DEADLINE_API BatchGetJobEntityResult() = default;
     AWS_DEADLINE_API BatchGetJobEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API BatchGetJobEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>A list of the job entities, or details, in the batch.</p>
      */
-    inline const Aws::Vector<JobEntity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<JobEntity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<JobEntity>&& value) { m_entities = std::move(value); }
-    inline BatchGetJobEntityResult& WithEntities(const Aws::Vector<JobEntity>& value) { SetEntities(value); return *this;}
-    inline BatchGetJobEntityResult& WithEntities(Aws::Vector<JobEntity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline BatchGetJobEntityResult& AddEntities(const JobEntity& value) { m_entities.push_back(value); return *this; }
-    inline BatchGetJobEntityResult& AddEntities(JobEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobEntity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<JobEntity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<JobEntity>>
+    BatchGetJobEntityResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = JobEntity>
+    BatchGetJobEntityResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of errors from the job error logs for the batch.</p>
      */
-    inline const Aws::Vector<GetJobEntityError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<GetJobEntityError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<GetJobEntityError>&& value) { m_errors = std::move(value); }
-    inline BatchGetJobEntityResult& WithErrors(const Aws::Vector<GetJobEntityError>& value) { SetErrors(value); return *this;}
-    inline BatchGetJobEntityResult& WithErrors(Aws::Vector<GetJobEntityError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetJobEntityResult& AddErrors(const GetJobEntityError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetJobEntityResult& AddErrors(GetJobEntityError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetJobEntityError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<GetJobEntityError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<GetJobEntityError>>
+    BatchGetJobEntityResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = GetJobEntityError>
+    BatchGetJobEntityResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetJobEntityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetJobEntityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetJobEntityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetJobEntityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<JobEntity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::Vector<GetJobEntityError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

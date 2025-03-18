@@ -12,12 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetPreparedStatementRequest::BatchGetPreparedStatementRequest() : 
-    m_preparedStatementNamesHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetPreparedStatementRequest::SerializePayload() const
 {
   JsonValue payload;

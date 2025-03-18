@@ -12,19 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAssetBundleImportJobRequest::StartAssetBundleImportJobRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assetBundleImportJobIdHasBeenSet(false),
-    m_assetBundleImportSourceHasBeenSet(false),
-    m_overrideParametersHasBeenSet(false),
-    m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_failureActionHasBeenSet(false),
-    m_overridePermissionsHasBeenSet(false),
-    m_overrideTagsHasBeenSet(false),
-    m_overrideValidationStrategyHasBeenSet(false)
-{
-}
-
 Aws::String StartAssetBundleImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

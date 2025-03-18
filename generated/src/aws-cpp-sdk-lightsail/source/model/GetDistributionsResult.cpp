@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDistributionsResult::GetDistributionsResult()
-{
-}
-
 GetDistributionsResult::GetDistributionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetDistributionsResult& GetDistributionsResult::operator =(const Aws::AmazonWebS
     {
       m_distributions.push_back(distributionsJsonList[distributionsIndex].AsObject());
     }
+    m_distributionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

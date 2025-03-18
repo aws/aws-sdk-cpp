@@ -39,7 +39,7 @@ namespace Model
   class DataQualitySummary
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API DataQualitySummary();
+    AWS_LOOKOUTEQUIPMENT_API DataQualitySummary() = default;
     AWS_LOOKOUTEQUIPMENT_API DataQualitySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API DataQualitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,12 @@ namespace Model
      * dataset. This includes information about those sensors that have complete data
      * missing and those with a short date range. </p>
      */
-    inline const InsufficientSensorData& GetInsufficientSensorData() const{ return m_insufficientSensorData; }
+    inline const InsufficientSensorData& GetInsufficientSensorData() const { return m_insufficientSensorData; }
     inline bool InsufficientSensorDataHasBeenSet() const { return m_insufficientSensorDataHasBeenSet; }
-    inline void SetInsufficientSensorData(const InsufficientSensorData& value) { m_insufficientSensorDataHasBeenSet = true; m_insufficientSensorData = value; }
-    inline void SetInsufficientSensorData(InsufficientSensorData&& value) { m_insufficientSensorDataHasBeenSet = true; m_insufficientSensorData = std::move(value); }
-    inline DataQualitySummary& WithInsufficientSensorData(const InsufficientSensorData& value) { SetInsufficientSensorData(value); return *this;}
-    inline DataQualitySummary& WithInsufficientSensorData(InsufficientSensorData&& value) { SetInsufficientSensorData(std::move(value)); return *this;}
+    template<typename InsufficientSensorDataT = InsufficientSensorData>
+    void SetInsufficientSensorData(InsufficientSensorDataT&& value) { m_insufficientSensorDataHasBeenSet = true; m_insufficientSensorData = std::forward<InsufficientSensorDataT>(value); }
+    template<typename InsufficientSensorDataT = InsufficientSensorData>
+    DataQualitySummary& WithInsufficientSensorData(InsufficientSensorDataT&& value) { SetInsufficientSensorData(std::forward<InsufficientSensorDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * <p> Parameter that gives information about data that is missing over all the
      * sensors in the input data. </p>
      */
-    inline const MissingSensorData& GetMissingSensorData() const{ return m_missingSensorData; }
+    inline const MissingSensorData& GetMissingSensorData() const { return m_missingSensorData; }
     inline bool MissingSensorDataHasBeenSet() const { return m_missingSensorDataHasBeenSet; }
-    inline void SetMissingSensorData(const MissingSensorData& value) { m_missingSensorDataHasBeenSet = true; m_missingSensorData = value; }
-    inline void SetMissingSensorData(MissingSensorData&& value) { m_missingSensorDataHasBeenSet = true; m_missingSensorData = std::move(value); }
-    inline DataQualitySummary& WithMissingSensorData(const MissingSensorData& value) { SetMissingSensorData(value); return *this;}
-    inline DataQualitySummary& WithMissingSensorData(MissingSensorData&& value) { SetMissingSensorData(std::move(value)); return *this;}
+    template<typename MissingSensorDataT = MissingSensorData>
+    void SetMissingSensorData(MissingSensorDataT&& value) { m_missingSensorDataHasBeenSet = true; m_missingSensorData = std::forward<MissingSensorDataT>(value); }
+    template<typename MissingSensorDataT = MissingSensorData>
+    DataQualitySummary& WithMissingSensorData(MissingSensorDataT&& value) { SetMissingSensorData(std::forward<MissingSensorDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +77,12 @@ namespace Model
      * <p> Parameter that gives information about data that is invalid over all the
      * sensors in the input data. </p>
      */
-    inline const InvalidSensorData& GetInvalidSensorData() const{ return m_invalidSensorData; }
+    inline const InvalidSensorData& GetInvalidSensorData() const { return m_invalidSensorData; }
     inline bool InvalidSensorDataHasBeenSet() const { return m_invalidSensorDataHasBeenSet; }
-    inline void SetInvalidSensorData(const InvalidSensorData& value) { m_invalidSensorDataHasBeenSet = true; m_invalidSensorData = value; }
-    inline void SetInvalidSensorData(InvalidSensorData&& value) { m_invalidSensorDataHasBeenSet = true; m_invalidSensorData = std::move(value); }
-    inline DataQualitySummary& WithInvalidSensorData(const InvalidSensorData& value) { SetInvalidSensorData(value); return *this;}
-    inline DataQualitySummary& WithInvalidSensorData(InvalidSensorData&& value) { SetInvalidSensorData(std::move(value)); return *this;}
+    template<typename InvalidSensorDataT = InvalidSensorData>
+    void SetInvalidSensorData(InvalidSensorDataT&& value) { m_invalidSensorDataHasBeenSet = true; m_invalidSensorData = std::forward<InvalidSensorDataT>(value); }
+    template<typename InvalidSensorDataT = InvalidSensorData>
+    DataQualitySummary& WithInvalidSensorData(InvalidSensorDataT&& value) { SetInvalidSensorData(std::forward<InvalidSensorDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +90,12 @@ namespace Model
      * <p> Parameter that gives information about unsupported timestamps in the input
      * data. </p>
      */
-    inline const UnsupportedTimestamps& GetUnsupportedTimestamps() const{ return m_unsupportedTimestamps; }
+    inline const UnsupportedTimestamps& GetUnsupportedTimestamps() const { return m_unsupportedTimestamps; }
     inline bool UnsupportedTimestampsHasBeenSet() const { return m_unsupportedTimestampsHasBeenSet; }
-    inline void SetUnsupportedTimestamps(const UnsupportedTimestamps& value) { m_unsupportedTimestampsHasBeenSet = true; m_unsupportedTimestamps = value; }
-    inline void SetUnsupportedTimestamps(UnsupportedTimestamps&& value) { m_unsupportedTimestampsHasBeenSet = true; m_unsupportedTimestamps = std::move(value); }
-    inline DataQualitySummary& WithUnsupportedTimestamps(const UnsupportedTimestamps& value) { SetUnsupportedTimestamps(value); return *this;}
-    inline DataQualitySummary& WithUnsupportedTimestamps(UnsupportedTimestamps&& value) { SetUnsupportedTimestamps(std::move(value)); return *this;}
+    template<typename UnsupportedTimestampsT = UnsupportedTimestamps>
+    void SetUnsupportedTimestamps(UnsupportedTimestampsT&& value) { m_unsupportedTimestampsHasBeenSet = true; m_unsupportedTimestamps = std::forward<UnsupportedTimestampsT>(value); }
+    template<typename UnsupportedTimestampsT = UnsupportedTimestamps>
+    DataQualitySummary& WithUnsupportedTimestamps(UnsupportedTimestampsT&& value) { SetUnsupportedTimestamps(std::forward<UnsupportedTimestampsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +103,12 @@ namespace Model
      * <p> Parameter that gives information about duplicate timestamps in the input
      * data. </p>
      */
-    inline const DuplicateTimestamps& GetDuplicateTimestamps() const{ return m_duplicateTimestamps; }
+    inline const DuplicateTimestamps& GetDuplicateTimestamps() const { return m_duplicateTimestamps; }
     inline bool DuplicateTimestampsHasBeenSet() const { return m_duplicateTimestampsHasBeenSet; }
-    inline void SetDuplicateTimestamps(const DuplicateTimestamps& value) { m_duplicateTimestampsHasBeenSet = true; m_duplicateTimestamps = value; }
-    inline void SetDuplicateTimestamps(DuplicateTimestamps&& value) { m_duplicateTimestampsHasBeenSet = true; m_duplicateTimestamps = std::move(value); }
-    inline DataQualitySummary& WithDuplicateTimestamps(const DuplicateTimestamps& value) { SetDuplicateTimestamps(value); return *this;}
-    inline DataQualitySummary& WithDuplicateTimestamps(DuplicateTimestamps&& value) { SetDuplicateTimestamps(std::move(value)); return *this;}
+    template<typename DuplicateTimestampsT = DuplicateTimestamps>
+    void SetDuplicateTimestamps(DuplicateTimestampsT&& value) { m_duplicateTimestampsHasBeenSet = true; m_duplicateTimestamps = std::forward<DuplicateTimestampsT>(value); }
+    template<typename DuplicateTimestampsT = DuplicateTimestamps>
+    DataQualitySummary& WithDuplicateTimestamps(DuplicateTimestampsT&& value) { SetDuplicateTimestamps(std::forward<DuplicateTimestampsT>(value)); return *this;}
     ///@}
   private:
 

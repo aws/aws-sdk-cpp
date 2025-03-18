@@ -19,7 +19,7 @@ namespace Model
   class GetKMSEncryptionKeyRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API GetKMSEncryptionKeyRequest();
+    AWS_FRAUDDETECTOR_API GetKMSEncryptionKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

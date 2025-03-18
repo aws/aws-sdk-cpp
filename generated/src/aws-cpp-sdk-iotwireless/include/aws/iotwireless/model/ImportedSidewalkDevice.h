@@ -34,7 +34,7 @@ namespace Model
   class ImportedSidewalkDevice
   {
   public:
-    AWS_IOTWIRELESS_API ImportedSidewalkDevice();
+    AWS_IOTWIRELESS_API ImportedSidewalkDevice() = default;
     AWS_IOTWIRELESS_API ImportedSidewalkDevice(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API ImportedSidewalkDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,65 +44,59 @@ namespace Model
     /**
      * <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
      */
-    inline const Aws::String& GetSidewalkManufacturingSn() const{ return m_sidewalkManufacturingSn; }
+    inline const Aws::String& GetSidewalkManufacturingSn() const { return m_sidewalkManufacturingSn; }
     inline bool SidewalkManufacturingSnHasBeenSet() const { return m_sidewalkManufacturingSnHasBeenSet; }
-    inline void SetSidewalkManufacturingSn(const Aws::String& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = value; }
-    inline void SetSidewalkManufacturingSn(Aws::String&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::move(value); }
-    inline void SetSidewalkManufacturingSn(const char* value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn.assign(value); }
-    inline ImportedSidewalkDevice& WithSidewalkManufacturingSn(const Aws::String& value) { SetSidewalkManufacturingSn(value); return *this;}
-    inline ImportedSidewalkDevice& WithSidewalkManufacturingSn(Aws::String&& value) { SetSidewalkManufacturingSn(std::move(value)); return *this;}
-    inline ImportedSidewalkDevice& WithSidewalkManufacturingSn(const char* value) { SetSidewalkManufacturingSn(value); return *this;}
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    void SetSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::forward<SidewalkManufacturingSnT>(value); }
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    ImportedSidewalkDevice& WithSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { SetSidewalkManufacturingSn(std::forward<SidewalkManufacturingSnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The onboarding status of the Sidewalk device in the import task.</p>
      */
-    inline const OnboardStatus& GetOnboardingStatus() const{ return m_onboardingStatus; }
+    inline OnboardStatus GetOnboardingStatus() const { return m_onboardingStatus; }
     inline bool OnboardingStatusHasBeenSet() const { return m_onboardingStatusHasBeenSet; }
-    inline void SetOnboardingStatus(const OnboardStatus& value) { m_onboardingStatusHasBeenSet = true; m_onboardingStatus = value; }
-    inline void SetOnboardingStatus(OnboardStatus&& value) { m_onboardingStatusHasBeenSet = true; m_onboardingStatus = std::move(value); }
-    inline ImportedSidewalkDevice& WithOnboardingStatus(const OnboardStatus& value) { SetOnboardingStatus(value); return *this;}
-    inline ImportedSidewalkDevice& WithOnboardingStatus(OnboardStatus&& value) { SetOnboardingStatus(std::move(value)); return *this;}
+    inline void SetOnboardingStatus(OnboardStatus value) { m_onboardingStatusHasBeenSet = true; m_onboardingStatus = value; }
+    inline ImportedSidewalkDevice& WithOnboardingStatus(OnboardStatus value) { SetOnboardingStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the onboarding status information for the Sidewalk device.</p>
      */
-    inline const Aws::String& GetOnboardingStatusReason() const{ return m_onboardingStatusReason; }
+    inline const Aws::String& GetOnboardingStatusReason() const { return m_onboardingStatusReason; }
     inline bool OnboardingStatusReasonHasBeenSet() const { return m_onboardingStatusReasonHasBeenSet; }
-    inline void SetOnboardingStatusReason(const Aws::String& value) { m_onboardingStatusReasonHasBeenSet = true; m_onboardingStatusReason = value; }
-    inline void SetOnboardingStatusReason(Aws::String&& value) { m_onboardingStatusReasonHasBeenSet = true; m_onboardingStatusReason = std::move(value); }
-    inline void SetOnboardingStatusReason(const char* value) { m_onboardingStatusReasonHasBeenSet = true; m_onboardingStatusReason.assign(value); }
-    inline ImportedSidewalkDevice& WithOnboardingStatusReason(const Aws::String& value) { SetOnboardingStatusReason(value); return *this;}
-    inline ImportedSidewalkDevice& WithOnboardingStatusReason(Aws::String&& value) { SetOnboardingStatusReason(std::move(value)); return *this;}
-    inline ImportedSidewalkDevice& WithOnboardingStatusReason(const char* value) { SetOnboardingStatusReason(value); return *this;}
+    template<typename OnboardingStatusReasonT = Aws::String>
+    void SetOnboardingStatusReason(OnboardingStatusReasonT&& value) { m_onboardingStatusReasonHasBeenSet = true; m_onboardingStatusReason = std::forward<OnboardingStatusReasonT>(value); }
+    template<typename OnboardingStatusReasonT = Aws::String>
+    ImportedSidewalkDevice& WithOnboardingStatusReason(OnboardingStatusReasonT&& value) { SetOnboardingStatusReason(std::forward<OnboardingStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the status information was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline ImportedSidewalkDevice& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline ImportedSidewalkDevice& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    ImportedSidewalkDevice& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sidewalkManufacturingSn;
     bool m_sidewalkManufacturingSnHasBeenSet = false;
 
-    OnboardStatus m_onboardingStatus;
+    OnboardStatus m_onboardingStatus{OnboardStatus::NOT_SET};
     bool m_onboardingStatusHasBeenSet = false;
 
     Aws::String m_onboardingStatusReason;
     bool m_onboardingStatusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

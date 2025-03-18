@@ -23,7 +23,7 @@ namespace Model
   class BatchAddRoleRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API BatchAddRoleRequest();
+    AWS_REPOSTSPACE_API BatchAddRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,48 +38,43 @@ namespace Model
     /**
      * <p>The user or group accessor identifiers to add the role to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccessorIds() const{ return m_accessorIds; }
+    inline const Aws::Vector<Aws::String>& GetAccessorIds() const { return m_accessorIds; }
     inline bool AccessorIdsHasBeenSet() const { return m_accessorIdsHasBeenSet; }
-    inline void SetAccessorIds(const Aws::Vector<Aws::String>& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = value; }
-    inline void SetAccessorIds(Aws::Vector<Aws::String>&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = std::move(value); }
-    inline BatchAddRoleRequest& WithAccessorIds(const Aws::Vector<Aws::String>& value) { SetAccessorIds(value); return *this;}
-    inline BatchAddRoleRequest& WithAccessorIds(Aws::Vector<Aws::String>&& value) { SetAccessorIds(std::move(value)); return *this;}
-    inline BatchAddRoleRequest& AddAccessorIds(const Aws::String& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(value); return *this; }
-    inline BatchAddRoleRequest& AddAccessorIds(Aws::String&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(std::move(value)); return *this; }
-    inline BatchAddRoleRequest& AddAccessorIds(const char* value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(value); return *this; }
+    template<typename AccessorIdsT = Aws::Vector<Aws::String>>
+    void SetAccessorIds(AccessorIdsT&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = std::forward<AccessorIdsT>(value); }
+    template<typename AccessorIdsT = Aws::Vector<Aws::String>>
+    BatchAddRoleRequest& WithAccessorIds(AccessorIdsT&& value) { SetAccessorIds(std::forward<AccessorIdsT>(value)); return *this;}
+    template<typename AccessorIdsT = Aws::String>
+    BatchAddRoleRequest& AddAccessorIds(AccessorIdsT&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.emplace_back(std::forward<AccessorIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The role to add to the users or groups.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline Role GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline BatchAddRoleRequest& WithRole(const Role& value) { SetRole(value); return *this;}
-    inline BatchAddRoleRequest& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(Role value) { m_roleHasBeenSet = true; m_role = value; }
+    inline BatchAddRoleRequest& WithRole(Role value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the private re:Post.</p>
      */
-    inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-    inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-    inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-    inline BatchAddRoleRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-    inline BatchAddRoleRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-    inline BatchAddRoleRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    BatchAddRoleRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_accessorIds;
     bool m_accessorIdsHasBeenSet = false;
 
-    Role m_role;
+    Role m_role{Role::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     Aws::String m_spaceId;

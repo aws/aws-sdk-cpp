@@ -32,7 +32,7 @@ namespace Model
   class DynamoDBCapacityDetails
   {
   public:
-    AWS_COSTEXPLORER_API DynamoDBCapacityDetails();
+    AWS_COSTEXPLORER_API DynamoDBCapacityDetails() = default;
     AWS_COSTEXPLORER_API DynamoDBCapacityDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API DynamoDBCapacityDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The capacity unit of the recommended reservation.</p>
      */
-    inline const Aws::String& GetCapacityUnits() const{ return m_capacityUnits; }
+    inline const Aws::String& GetCapacityUnits() const { return m_capacityUnits; }
     inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
-    inline void SetCapacityUnits(const Aws::String& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
-    inline void SetCapacityUnits(Aws::String&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::move(value); }
-    inline void SetCapacityUnits(const char* value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits.assign(value); }
-    inline DynamoDBCapacityDetails& WithCapacityUnits(const Aws::String& value) { SetCapacityUnits(value); return *this;}
-    inline DynamoDBCapacityDetails& WithCapacityUnits(Aws::String&& value) { SetCapacityUnits(std::move(value)); return *this;}
-    inline DynamoDBCapacityDetails& WithCapacityUnits(const char* value) { SetCapacityUnits(value); return *this;}
+    template<typename CapacityUnitsT = Aws::String>
+    void SetCapacityUnits(CapacityUnitsT&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::forward<CapacityUnitsT>(value); }
+    template<typename CapacityUnitsT = Aws::String>
+    DynamoDBCapacityDetails& WithCapacityUnits(CapacityUnitsT&& value) { SetCapacityUnits(std::forward<CapacityUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region of the recommended reservation.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline DynamoDBCapacityDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline DynamoDBCapacityDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline DynamoDBCapacityDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    DynamoDBCapacityDetails& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

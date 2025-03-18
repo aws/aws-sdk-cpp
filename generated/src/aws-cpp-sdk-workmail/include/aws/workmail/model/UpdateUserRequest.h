@@ -22,7 +22,7 @@ namespace Model
   class UpdateUserRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API UpdateUserRequest();
+    AWS_WORKMAIL_API UpdateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the user exists.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline UpdateUserRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline UpdateUserRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    UpdateUserRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
      * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline UpdateUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline UpdateUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    UpdateUserRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,61 +68,53 @@ namespace Model
      * <p>Updates the user role.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
      * <i>RESOURCE</i>.</p>
      */
-    inline const UserRole& GetRole() const{ return m_role; }
+    inline UserRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const UserRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(UserRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline UpdateUserRequest& WithRole(const UserRole& value) { SetRole(value); return *this;}
-    inline UpdateUserRequest& WithRole(UserRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(UserRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline UpdateUserRequest& WithRole(UserRole value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the display name of the user.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateUserRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateUserRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateUserRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's first name.</p>
      */
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-    inline UpdateUserRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-    inline UpdateUserRequest& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    template<typename FirstNameT = Aws::String>
+    void SetFirstName(FirstNameT&& value) { m_firstNameHasBeenSet = true; m_firstName = std::forward<FirstNameT>(value); }
+    template<typename FirstNameT = Aws::String>
+    UpdateUserRequest& WithFirstName(FirstNameT&& value) { SetFirstName(std::forward<FirstNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's last name.</p>
      */
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
+    inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-    inline UpdateUserRequest& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-    inline UpdateUserRequest& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
+    template<typename LastNameT = Aws::String>
+    void SetLastName(LastNameT&& value) { m_lastNameHasBeenSet = true; m_lastName = std::forward<LastNameT>(value); }
+    template<typename LastNameT = Aws::String>
+    UpdateUserRequest& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If enabled, the user is hidden from the global address list.</p>
      */
-    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+    inline bool GetHiddenFromGlobalAddressList() const { return m_hiddenFromGlobalAddressList; }
     inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
     inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
     inline UpdateUserRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
@@ -136,140 +124,120 @@ namespace Model
     /**
      * <p>Updates the user's initials.</p>
      */
-    inline const Aws::String& GetInitials() const{ return m_initials; }
+    inline const Aws::String& GetInitials() const { return m_initials; }
     inline bool InitialsHasBeenSet() const { return m_initialsHasBeenSet; }
-    inline void SetInitials(const Aws::String& value) { m_initialsHasBeenSet = true; m_initials = value; }
-    inline void SetInitials(Aws::String&& value) { m_initialsHasBeenSet = true; m_initials = std::move(value); }
-    inline void SetInitials(const char* value) { m_initialsHasBeenSet = true; m_initials.assign(value); }
-    inline UpdateUserRequest& WithInitials(const Aws::String& value) { SetInitials(value); return *this;}
-    inline UpdateUserRequest& WithInitials(Aws::String&& value) { SetInitials(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithInitials(const char* value) { SetInitials(value); return *this;}
+    template<typename InitialsT = Aws::String>
+    void SetInitials(InitialsT&& value) { m_initialsHasBeenSet = true; m_initials = std::forward<InitialsT>(value); }
+    template<typename InitialsT = Aws::String>
+    UpdateUserRequest& WithInitials(InitialsT&& value) { SetInitials(std::forward<InitialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's contact details.</p>
      */
-    inline const Aws::String& GetTelephone() const{ return m_telephone; }
+    inline const Aws::String& GetTelephone() const { return m_telephone; }
     inline bool TelephoneHasBeenSet() const { return m_telephoneHasBeenSet; }
-    inline void SetTelephone(const Aws::String& value) { m_telephoneHasBeenSet = true; m_telephone = value; }
-    inline void SetTelephone(Aws::String&& value) { m_telephoneHasBeenSet = true; m_telephone = std::move(value); }
-    inline void SetTelephone(const char* value) { m_telephoneHasBeenSet = true; m_telephone.assign(value); }
-    inline UpdateUserRequest& WithTelephone(const Aws::String& value) { SetTelephone(value); return *this;}
-    inline UpdateUserRequest& WithTelephone(Aws::String&& value) { SetTelephone(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithTelephone(const char* value) { SetTelephone(value); return *this;}
+    template<typename TelephoneT = Aws::String>
+    void SetTelephone(TelephoneT&& value) { m_telephoneHasBeenSet = true; m_telephone = std::forward<TelephoneT>(value); }
+    template<typename TelephoneT = Aws::String>
+    UpdateUserRequest& WithTelephone(TelephoneT&& value) { SetTelephone(std::forward<TelephoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's street address.</p>
      */
-    inline const Aws::String& GetStreet() const{ return m_street; }
+    inline const Aws::String& GetStreet() const { return m_street; }
     inline bool StreetHasBeenSet() const { return m_streetHasBeenSet; }
-    inline void SetStreet(const Aws::String& value) { m_streetHasBeenSet = true; m_street = value; }
-    inline void SetStreet(Aws::String&& value) { m_streetHasBeenSet = true; m_street = std::move(value); }
-    inline void SetStreet(const char* value) { m_streetHasBeenSet = true; m_street.assign(value); }
-    inline UpdateUserRequest& WithStreet(const Aws::String& value) { SetStreet(value); return *this;}
-    inline UpdateUserRequest& WithStreet(Aws::String&& value) { SetStreet(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithStreet(const char* value) { SetStreet(value); return *this;}
+    template<typename StreetT = Aws::String>
+    void SetStreet(StreetT&& value) { m_streetHasBeenSet = true; m_street = std::forward<StreetT>(value); }
+    template<typename StreetT = Aws::String>
+    UpdateUserRequest& WithStreet(StreetT&& value) { SetStreet(std::forward<StreetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's job title.</p>
      */
-    inline const Aws::String& GetJobTitle() const{ return m_jobTitle; }
+    inline const Aws::String& GetJobTitle() const { return m_jobTitle; }
     inline bool JobTitleHasBeenSet() const { return m_jobTitleHasBeenSet; }
-    inline void SetJobTitle(const Aws::String& value) { m_jobTitleHasBeenSet = true; m_jobTitle = value; }
-    inline void SetJobTitle(Aws::String&& value) { m_jobTitleHasBeenSet = true; m_jobTitle = std::move(value); }
-    inline void SetJobTitle(const char* value) { m_jobTitleHasBeenSet = true; m_jobTitle.assign(value); }
-    inline UpdateUserRequest& WithJobTitle(const Aws::String& value) { SetJobTitle(value); return *this;}
-    inline UpdateUserRequest& WithJobTitle(Aws::String&& value) { SetJobTitle(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithJobTitle(const char* value) { SetJobTitle(value); return *this;}
+    template<typename JobTitleT = Aws::String>
+    void SetJobTitle(JobTitleT&& value) { m_jobTitleHasBeenSet = true; m_jobTitle = std::forward<JobTitleT>(value); }
+    template<typename JobTitleT = Aws::String>
+    UpdateUserRequest& WithJobTitle(JobTitleT&& value) { SetJobTitle(std::forward<JobTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's city.</p>
      */
-    inline const Aws::String& GetCity() const{ return m_city; }
+    inline const Aws::String& GetCity() const { return m_city; }
     inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
-    inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
-    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
-    inline void SetCity(const char* value) { m_cityHasBeenSet = true; m_city.assign(value); }
-    inline UpdateUserRequest& WithCity(const Aws::String& value) { SetCity(value); return *this;}
-    inline UpdateUserRequest& WithCity(Aws::String&& value) { SetCity(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithCity(const char* value) { SetCity(value); return *this;}
+    template<typename CityT = Aws::String>
+    void SetCity(CityT&& value) { m_cityHasBeenSet = true; m_city = std::forward<CityT>(value); }
+    template<typename CityT = Aws::String>
+    UpdateUserRequest& WithCity(CityT&& value) { SetCity(std::forward<CityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's company.</p>
      */
-    inline const Aws::String& GetCompany() const{ return m_company; }
+    inline const Aws::String& GetCompany() const { return m_company; }
     inline bool CompanyHasBeenSet() const { return m_companyHasBeenSet; }
-    inline void SetCompany(const Aws::String& value) { m_companyHasBeenSet = true; m_company = value; }
-    inline void SetCompany(Aws::String&& value) { m_companyHasBeenSet = true; m_company = std::move(value); }
-    inline void SetCompany(const char* value) { m_companyHasBeenSet = true; m_company.assign(value); }
-    inline UpdateUserRequest& WithCompany(const Aws::String& value) { SetCompany(value); return *this;}
-    inline UpdateUserRequest& WithCompany(Aws::String&& value) { SetCompany(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithCompany(const char* value) { SetCompany(value); return *this;}
+    template<typename CompanyT = Aws::String>
+    void SetCompany(CompanyT&& value) { m_companyHasBeenSet = true; m_company = std::forward<CompanyT>(value); }
+    template<typename CompanyT = Aws::String>
+    UpdateUserRequest& WithCompany(CompanyT&& value) { SetCompany(std::forward<CompanyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's zip code.</p>
      */
-    inline const Aws::String& GetZipCode() const{ return m_zipCode; }
+    inline const Aws::String& GetZipCode() const { return m_zipCode; }
     inline bool ZipCodeHasBeenSet() const { return m_zipCodeHasBeenSet; }
-    inline void SetZipCode(const Aws::String& value) { m_zipCodeHasBeenSet = true; m_zipCode = value; }
-    inline void SetZipCode(Aws::String&& value) { m_zipCodeHasBeenSet = true; m_zipCode = std::move(value); }
-    inline void SetZipCode(const char* value) { m_zipCodeHasBeenSet = true; m_zipCode.assign(value); }
-    inline UpdateUserRequest& WithZipCode(const Aws::String& value) { SetZipCode(value); return *this;}
-    inline UpdateUserRequest& WithZipCode(Aws::String&& value) { SetZipCode(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithZipCode(const char* value) { SetZipCode(value); return *this;}
+    template<typename ZipCodeT = Aws::String>
+    void SetZipCode(ZipCodeT&& value) { m_zipCodeHasBeenSet = true; m_zipCode = std::forward<ZipCodeT>(value); }
+    template<typename ZipCodeT = Aws::String>
+    UpdateUserRequest& WithZipCode(ZipCodeT&& value) { SetZipCode(std::forward<ZipCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's department.</p>
      */
-    inline const Aws::String& GetDepartment() const{ return m_department; }
+    inline const Aws::String& GetDepartment() const { return m_department; }
     inline bool DepartmentHasBeenSet() const { return m_departmentHasBeenSet; }
-    inline void SetDepartment(const Aws::String& value) { m_departmentHasBeenSet = true; m_department = value; }
-    inline void SetDepartment(Aws::String&& value) { m_departmentHasBeenSet = true; m_department = std::move(value); }
-    inline void SetDepartment(const char* value) { m_departmentHasBeenSet = true; m_department.assign(value); }
-    inline UpdateUserRequest& WithDepartment(const Aws::String& value) { SetDepartment(value); return *this;}
-    inline UpdateUserRequest& WithDepartment(Aws::String&& value) { SetDepartment(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithDepartment(const char* value) { SetDepartment(value); return *this;}
+    template<typename DepartmentT = Aws::String>
+    void SetDepartment(DepartmentT&& value) { m_departmentHasBeenSet = true; m_department = std::forward<DepartmentT>(value); }
+    template<typename DepartmentT = Aws::String>
+    UpdateUserRequest& WithDepartment(DepartmentT&& value) { SetDepartment(std::forward<DepartmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's country.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline UpdateUserRequest& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline UpdateUserRequest& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    UpdateUserRequest& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the user's office.</p>
      */
-    inline const Aws::String& GetOffice() const{ return m_office; }
+    inline const Aws::String& GetOffice() const { return m_office; }
     inline bool OfficeHasBeenSet() const { return m_officeHasBeenSet; }
-    inline void SetOffice(const Aws::String& value) { m_officeHasBeenSet = true; m_office = value; }
-    inline void SetOffice(Aws::String&& value) { m_officeHasBeenSet = true; m_office = std::move(value); }
-    inline void SetOffice(const char* value) { m_officeHasBeenSet = true; m_office.assign(value); }
-    inline UpdateUserRequest& WithOffice(const Aws::String& value) { SetOffice(value); return *this;}
-    inline UpdateUserRequest& WithOffice(Aws::String&& value) { SetOffice(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithOffice(const char* value) { SetOffice(value); return *this;}
+    template<typename OfficeT = Aws::String>
+    void SetOffice(OfficeT&& value) { m_officeHasBeenSet = true; m_office = std::forward<OfficeT>(value); }
+    template<typename OfficeT = Aws::String>
+    UpdateUserRequest& WithOffice(OfficeT&& value) { SetOffice(std::forward<OfficeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -278,14 +246,12 @@ namespace Model
      * updated automatically when the user logs in for the first time to the mailbox
      * associated with WorkMail.</p>
      */
-    inline const Aws::String& GetIdentityProviderUserId() const{ return m_identityProviderUserId; }
+    inline const Aws::String& GetIdentityProviderUserId() const { return m_identityProviderUserId; }
     inline bool IdentityProviderUserIdHasBeenSet() const { return m_identityProviderUserIdHasBeenSet; }
-    inline void SetIdentityProviderUserId(const Aws::String& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = value; }
-    inline void SetIdentityProviderUserId(Aws::String&& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = std::move(value); }
-    inline void SetIdentityProviderUserId(const char* value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId.assign(value); }
-    inline UpdateUserRequest& WithIdentityProviderUserId(const Aws::String& value) { SetIdentityProviderUserId(value); return *this;}
-    inline UpdateUserRequest& WithIdentityProviderUserId(Aws::String&& value) { SetIdentityProviderUserId(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithIdentityProviderUserId(const char* value) { SetIdentityProviderUserId(value); return *this;}
+    template<typename IdentityProviderUserIdT = Aws::String>
+    void SetIdentityProviderUserId(IdentityProviderUserIdT&& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = std::forward<IdentityProviderUserIdT>(value); }
+    template<typename IdentityProviderUserIdT = Aws::String>
+    UpdateUserRequest& WithIdentityProviderUserId(IdentityProviderUserIdT&& value) { SetIdentityProviderUserId(std::forward<IdentityProviderUserIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -295,7 +261,7 @@ namespace Model
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    UserRole m_role;
+    UserRole m_role{UserRole::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     Aws::String m_displayName;
@@ -307,7 +273,7 @@ namespace Model
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet = false;
 
-    bool m_hiddenFromGlobalAddressList;
+    bool m_hiddenFromGlobalAddressList{false};
     bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 
     Aws::String m_initials;

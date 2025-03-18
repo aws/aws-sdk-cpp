@@ -32,7 +32,7 @@ namespace Model
   class UnusedAccessTypeStatistics
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedAccessTypeStatistics();
+    AWS_ACCESSANALYZER_API UnusedAccessTypeStatistics() = default;
     AWS_ACCESSANALYZER_API UnusedAccessTypeStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedAccessTypeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The type of unused access.</p>
      */
-    inline const Aws::String& GetUnusedAccessType() const{ return m_unusedAccessType; }
+    inline const Aws::String& GetUnusedAccessType() const { return m_unusedAccessType; }
     inline bool UnusedAccessTypeHasBeenSet() const { return m_unusedAccessTypeHasBeenSet; }
-    inline void SetUnusedAccessType(const Aws::String& value) { m_unusedAccessTypeHasBeenSet = true; m_unusedAccessType = value; }
-    inline void SetUnusedAccessType(Aws::String&& value) { m_unusedAccessTypeHasBeenSet = true; m_unusedAccessType = std::move(value); }
-    inline void SetUnusedAccessType(const char* value) { m_unusedAccessTypeHasBeenSet = true; m_unusedAccessType.assign(value); }
-    inline UnusedAccessTypeStatistics& WithUnusedAccessType(const Aws::String& value) { SetUnusedAccessType(value); return *this;}
-    inline UnusedAccessTypeStatistics& WithUnusedAccessType(Aws::String&& value) { SetUnusedAccessType(std::move(value)); return *this;}
-    inline UnusedAccessTypeStatistics& WithUnusedAccessType(const char* value) { SetUnusedAccessType(value); return *this;}
+    template<typename UnusedAccessTypeT = Aws::String>
+    void SetUnusedAccessType(UnusedAccessTypeT&& value) { m_unusedAccessTypeHasBeenSet = true; m_unusedAccessType = std::forward<UnusedAccessTypeT>(value); }
+    template<typename UnusedAccessTypeT = Aws::String>
+    UnusedAccessTypeStatistics& WithUnusedAccessType(UnusedAccessTypeT&& value) { SetUnusedAccessType(std::forward<UnusedAccessTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of findings for the specified unused access type.</p>
      */
-    inline int GetTotal() const{ return m_total; }
+    inline int GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
     inline UnusedAccessTypeStatistics& WithTotal(int value) { SetTotal(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_unusedAccessType;
     bool m_unusedAccessTypeHasBeenSet = false;
 
-    int m_total;
+    int m_total{0};
     bool m_totalHasBeenSet = false;
   };
 

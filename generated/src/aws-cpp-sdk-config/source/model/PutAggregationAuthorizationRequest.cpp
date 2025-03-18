@@ -12,13 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAggregationAuthorizationRequest::PutAggregationAuthorizationRequest() : 
-    m_authorizedAccountIdHasBeenSet(false),
-    m_authorizedAwsRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutAggregationAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

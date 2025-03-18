@@ -34,7 +34,7 @@ namespace Model
   class MarketplaceModelEndpointSummary
   {
   public:
-    AWS_BEDROCK_API MarketplaceModelEndpointSummary();
+    AWS_BEDROCK_API MarketplaceModelEndpointSummary() = default;
     AWS_BEDROCK_API MarketplaceModelEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API MarketplaceModelEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline MarketplaceModelEndpointSummary& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline MarketplaceModelEndpointSummary& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    MarketplaceModelEndpointSummary& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,64 +57,58 @@ namespace Model
      * <p>The ARN of the model from Amazon Bedrock Marketplace that is deployed on this
      * endpoint.</p>
      */
-    inline const Aws::String& GetModelSourceIdentifier() const{ return m_modelSourceIdentifier; }
+    inline const Aws::String& GetModelSourceIdentifier() const { return m_modelSourceIdentifier; }
     inline bool ModelSourceIdentifierHasBeenSet() const { return m_modelSourceIdentifierHasBeenSet; }
-    inline void SetModelSourceIdentifier(const Aws::String& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = value; }
-    inline void SetModelSourceIdentifier(Aws::String&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::move(value); }
-    inline void SetModelSourceIdentifier(const char* value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier.assign(value); }
-    inline MarketplaceModelEndpointSummary& WithModelSourceIdentifier(const Aws::String& value) { SetModelSourceIdentifier(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithModelSourceIdentifier(Aws::String&& value) { SetModelSourceIdentifier(std::move(value)); return *this;}
-    inline MarketplaceModelEndpointSummary& WithModelSourceIdentifier(const char* value) { SetModelSourceIdentifier(value); return *this;}
+    template<typename ModelSourceIdentifierT = Aws::String>
+    void SetModelSourceIdentifier(ModelSourceIdentifierT&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::forward<ModelSourceIdentifierT>(value); }
+    template<typename ModelSourceIdentifierT = Aws::String>
+    MarketplaceModelEndpointSummary& WithModelSourceIdentifier(ModelSourceIdentifierT&& value) { SetModelSourceIdentifier(std::forward<ModelSourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overall status of the endpoint in Amazon Bedrock Marketplace.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MarketplaceModelEndpointSummary& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MarketplaceModelEndpointSummary& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the overall status, if available.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline MarketplaceModelEndpointSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline MarketplaceModelEndpointSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    MarketplaceModelEndpointSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the endpoint was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline MarketplaceModelEndpointSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    MarketplaceModelEndpointSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the endpoint was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline MarketplaceModelEndpointSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline MarketplaceModelEndpointSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    MarketplaceModelEndpointSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,16 +118,16 @@ namespace Model
     Aws::String m_modelSourceIdentifier;
     bool m_modelSourceIdentifierHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

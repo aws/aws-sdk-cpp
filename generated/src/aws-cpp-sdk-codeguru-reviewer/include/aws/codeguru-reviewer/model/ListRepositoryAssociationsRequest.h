@@ -28,7 +28,7 @@ namespace Model
   class ListRepositoryAssociationsRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API ListRepositoryAssociationsRequest();
+    AWS_CODEGURUREVIEWER_API ListRepositoryAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,13 @@ namespace Model
     /**
      * <p>List of provider types to use as a filter.</p>
      */
-    inline const Aws::Vector<ProviderType>& GetProviderTypes() const{ return m_providerTypes; }
+    inline const Aws::Vector<ProviderType>& GetProviderTypes() const { return m_providerTypes; }
     inline bool ProviderTypesHasBeenSet() const { return m_providerTypesHasBeenSet; }
-    inline void SetProviderTypes(const Aws::Vector<ProviderType>& value) { m_providerTypesHasBeenSet = true; m_providerTypes = value; }
-    inline void SetProviderTypes(Aws::Vector<ProviderType>&& value) { m_providerTypesHasBeenSet = true; m_providerTypes = std::move(value); }
-    inline ListRepositoryAssociationsRequest& WithProviderTypes(const Aws::Vector<ProviderType>& value) { SetProviderTypes(value); return *this;}
-    inline ListRepositoryAssociationsRequest& WithProviderTypes(Aws::Vector<ProviderType>&& value) { SetProviderTypes(std::move(value)); return *this;}
-    inline ListRepositoryAssociationsRequest& AddProviderTypes(const ProviderType& value) { m_providerTypesHasBeenSet = true; m_providerTypes.push_back(value); return *this; }
-    inline ListRepositoryAssociationsRequest& AddProviderTypes(ProviderType&& value) { m_providerTypesHasBeenSet = true; m_providerTypes.push_back(std::move(value)); return *this; }
+    template<typename ProviderTypesT = Aws::Vector<ProviderType>>
+    void SetProviderTypes(ProviderTypesT&& value) { m_providerTypesHasBeenSet = true; m_providerTypes = std::forward<ProviderTypesT>(value); }
+    template<typename ProviderTypesT = Aws::Vector<ProviderType>>
+    ListRepositoryAssociationsRequest& WithProviderTypes(ProviderTypesT&& value) { SetProviderTypes(std::forward<ProviderTypesT>(value)); return *this;}
+    inline ListRepositoryAssociationsRequest& AddProviderTypes(ProviderType value) { m_providerTypesHasBeenSet = true; m_providerTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -80,29 +79,27 @@ namespace Model
      * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru
      * Reviewer User Guide</i>.</p> </li> </ul>
      */
-    inline const Aws::Vector<RepositoryAssociationState>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<RepositoryAssociationState>& GetStates() const { return m_states; }
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-    inline void SetStates(const Aws::Vector<RepositoryAssociationState>& value) { m_statesHasBeenSet = true; m_states = value; }
-    inline void SetStates(Aws::Vector<RepositoryAssociationState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-    inline ListRepositoryAssociationsRequest& WithStates(const Aws::Vector<RepositoryAssociationState>& value) { SetStates(value); return *this;}
-    inline ListRepositoryAssociationsRequest& WithStates(Aws::Vector<RepositoryAssociationState>&& value) { SetStates(std::move(value)); return *this;}
-    inline ListRepositoryAssociationsRequest& AddStates(const RepositoryAssociationState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-    inline ListRepositoryAssociationsRequest& AddStates(RepositoryAssociationState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    template<typename StatesT = Aws::Vector<RepositoryAssociationState>>
+    void SetStates(StatesT&& value) { m_statesHasBeenSet = true; m_states = std::forward<StatesT>(value); }
+    template<typename StatesT = Aws::Vector<RepositoryAssociationState>>
+    ListRepositoryAssociationsRequest& WithStates(StatesT&& value) { SetStates(std::forward<StatesT>(value)); return *this;}
+    inline ListRepositoryAssociationsRequest& AddStates(RepositoryAssociationState value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of repository names to use as a filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline ListRepositoryAssociationsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline ListRepositoryAssociationsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline ListRepositoryAssociationsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline ListRepositoryAssociationsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline ListRepositoryAssociationsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    ListRepositoryAssociationsRequest& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    ListRepositoryAssociationsRequest& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,15 +110,14 @@ namespace Model
      * Server, this is name of the account that was used to associate the repository.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+    inline const Aws::Vector<Aws::String>& GetOwners() const { return m_owners; }
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
-    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
-    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
-    inline ListRepositoryAssociationsRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
-    inline ListRepositoryAssociationsRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
-    inline ListRepositoryAssociationsRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
-    inline ListRepositoryAssociationsRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
-    inline ListRepositoryAssociationsRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    void SetOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners = std::forward<OwnersT>(value); }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    ListRepositoryAssociationsRequest& WithOwners(OwnersT&& value) { SetOwners(std::forward<OwnersT>(value)); return *this;}
+    template<typename OwnersT = Aws::String>
+    ListRepositoryAssociationsRequest& AddOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners.emplace_back(std::forward<OwnersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,7 +132,7 @@ namespace Model
      * this parameter is not used, <code>ListRepositoryAssociations</code> returns up
      * to 100 results and a <code>nextToken</code> value if applicable. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRepositoryAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -152,14 +148,12 @@ namespace Model
      * identifier that is only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRepositoryAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRepositoryAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRepositoryAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRepositoryAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -175,7 +169,7 @@ namespace Model
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -33,7 +33,7 @@ namespace Model
   class ValueWithServiceIds
   {
   public:
-    AWS_XRAY_API ValueWithServiceIds();
+    AWS_XRAY_API ValueWithServiceIds() = default;
     AWS_XRAY_API ValueWithServiceIds(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API ValueWithServiceIds& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>Values of the annotation.</p>
      */
-    inline const AnnotationValue& GetAnnotationValue() const{ return m_annotationValue; }
+    inline const AnnotationValue& GetAnnotationValue() const { return m_annotationValue; }
     inline bool AnnotationValueHasBeenSet() const { return m_annotationValueHasBeenSet; }
-    inline void SetAnnotationValue(const AnnotationValue& value) { m_annotationValueHasBeenSet = true; m_annotationValue = value; }
-    inline void SetAnnotationValue(AnnotationValue&& value) { m_annotationValueHasBeenSet = true; m_annotationValue = std::move(value); }
-    inline ValueWithServiceIds& WithAnnotationValue(const AnnotationValue& value) { SetAnnotationValue(value); return *this;}
-    inline ValueWithServiceIds& WithAnnotationValue(AnnotationValue&& value) { SetAnnotationValue(std::move(value)); return *this;}
+    template<typename AnnotationValueT = AnnotationValue>
+    void SetAnnotationValue(AnnotationValueT&& value) { m_annotationValueHasBeenSet = true; m_annotationValue = std::forward<AnnotationValueT>(value); }
+    template<typename AnnotationValueT = AnnotationValue>
+    ValueWithServiceIds& WithAnnotationValue(AnnotationValueT&& value) { SetAnnotationValue(std::forward<AnnotationValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Services to which the annotation applies.</p>
      */
-    inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
+    inline const Aws::Vector<ServiceId>& GetServiceIds() const { return m_serviceIds; }
     inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
-    inline void SetServiceIds(const Aws::Vector<ServiceId>& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
-    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
-    inline ValueWithServiceIds& WithServiceIds(const Aws::Vector<ServiceId>& value) { SetServiceIds(value); return *this;}
-    inline ValueWithServiceIds& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
-    inline ValueWithServiceIds& AddServiceIds(const ServiceId& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
-    inline ValueWithServiceIds& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    void SetServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::forward<ServiceIdsT>(value); }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    ValueWithServiceIds& WithServiceIds(ServiceIdsT&& value) { SetServiceIds(std::forward<ServiceIdsT>(value)); return *this;}
+    template<typename ServiceIdsT = ServiceId>
+    ValueWithServiceIds& AddServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.emplace_back(std::forward<ServiceIdsT>(value)); return *this; }
     ///@}
   private:
 

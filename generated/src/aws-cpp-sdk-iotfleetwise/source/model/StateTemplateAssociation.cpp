@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StateTemplateAssociation::StateTemplateAssociation() : 
-    m_identifierHasBeenSet(false),
-    m_stateTemplateUpdateStrategyHasBeenSet(false)
-{
-}
-
 StateTemplateAssociation::StateTemplateAssociation(JsonView jsonValue)
-  : StateTemplateAssociation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StateTemplateAssociation& StateTemplateAssociation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateTemplateUpdateStrategy"))
   {
     m_stateTemplateUpdateStrategy = jsonValue.GetObject("stateTemplateUpdateStrategy");
-
     m_stateTemplateUpdateStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

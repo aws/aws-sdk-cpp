@@ -32,7 +32,7 @@ namespace Model
   class AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Enables fine-grained access control. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Enables the internal user database. </p>
      */
-    inline bool GetInternalUserDatabaseEnabled() const{ return m_internalUserDatabaseEnabled; }
+    inline bool GetInternalUserDatabaseEnabled() const { return m_internalUserDatabaseEnabled; }
     inline bool InternalUserDatabaseEnabledHasBeenSet() const { return m_internalUserDatabaseEnabledHasBeenSet; }
     inline void SetInternalUserDatabaseEnabled(bool value) { m_internalUserDatabaseEnabledHasBeenSet = true; m_internalUserDatabaseEnabled = value; }
     inline AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& WithInternalUserDatabaseEnabled(bool value) { SetInternalUserDatabaseEnabled(value); return *this;}
@@ -62,19 +62,19 @@ namespace Model
     /**
      * <p>Specifies information about the master user of the domain. </p>
      */
-    inline const AwsOpenSearchServiceDomainMasterUserOptionsDetails& GetMasterUserOptions() const{ return m_masterUserOptions; }
+    inline const AwsOpenSearchServiceDomainMasterUserOptionsDetails& GetMasterUserOptions() const { return m_masterUserOptions; }
     inline bool MasterUserOptionsHasBeenSet() const { return m_masterUserOptionsHasBeenSet; }
-    inline void SetMasterUserOptions(const AwsOpenSearchServiceDomainMasterUserOptionsDetails& value) { m_masterUserOptionsHasBeenSet = true; m_masterUserOptions = value; }
-    inline void SetMasterUserOptions(AwsOpenSearchServiceDomainMasterUserOptionsDetails&& value) { m_masterUserOptionsHasBeenSet = true; m_masterUserOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& WithMasterUserOptions(const AwsOpenSearchServiceDomainMasterUserOptionsDetails& value) { SetMasterUserOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& WithMasterUserOptions(AwsOpenSearchServiceDomainMasterUserOptionsDetails&& value) { SetMasterUserOptions(std::move(value)); return *this;}
+    template<typename MasterUserOptionsT = AwsOpenSearchServiceDomainMasterUserOptionsDetails>
+    void SetMasterUserOptions(MasterUserOptionsT&& value) { m_masterUserOptionsHasBeenSet = true; m_masterUserOptions = std::forward<MasterUserOptionsT>(value); }
+    template<typename MasterUserOptionsT = AwsOpenSearchServiceDomainMasterUserOptionsDetails>
+    AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& WithMasterUserOptions(MasterUserOptionsT&& value) { SetMasterUserOptions(std::forward<MasterUserOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_internalUserDatabaseEnabled;
+    bool m_internalUserDatabaseEnabled{false};
     bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
     AwsOpenSearchServiceDomainMasterUserOptionsDetails m_masterUserOptions;

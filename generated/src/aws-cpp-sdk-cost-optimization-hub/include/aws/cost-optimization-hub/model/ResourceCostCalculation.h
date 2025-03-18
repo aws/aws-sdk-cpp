@@ -33,7 +33,7 @@ namespace Model
   class ResourceCostCalculation
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ResourceCostCalculation();
+    AWS_COSTOPTIMIZATIONHUB_API ResourceCostCalculation() = default;
     AWS_COSTOPTIMIZATIONHUB_API ResourceCostCalculation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ResourceCostCalculation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>Usage details of the resource recommendation.</p>
      */
-    inline const Aws::Vector<Usage>& GetUsages() const{ return m_usages; }
+    inline const Aws::Vector<Usage>& GetUsages() const { return m_usages; }
     inline bool UsagesHasBeenSet() const { return m_usagesHasBeenSet; }
-    inline void SetUsages(const Aws::Vector<Usage>& value) { m_usagesHasBeenSet = true; m_usages = value; }
-    inline void SetUsages(Aws::Vector<Usage>&& value) { m_usagesHasBeenSet = true; m_usages = std::move(value); }
-    inline ResourceCostCalculation& WithUsages(const Aws::Vector<Usage>& value) { SetUsages(value); return *this;}
-    inline ResourceCostCalculation& WithUsages(Aws::Vector<Usage>&& value) { SetUsages(std::move(value)); return *this;}
-    inline ResourceCostCalculation& AddUsages(const Usage& value) { m_usagesHasBeenSet = true; m_usages.push_back(value); return *this; }
-    inline ResourceCostCalculation& AddUsages(Usage&& value) { m_usagesHasBeenSet = true; m_usages.push_back(std::move(value)); return *this; }
+    template<typename UsagesT = Aws::Vector<Usage>>
+    void SetUsages(UsagesT&& value) { m_usagesHasBeenSet = true; m_usages = std::forward<UsagesT>(value); }
+    template<typename UsagesT = Aws::Vector<Usage>>
+    ResourceCostCalculation& WithUsages(UsagesT&& value) { SetUsages(std::forward<UsagesT>(value)); return *this;}
+    template<typename UsagesT = Usage>
+    ResourceCostCalculation& AddUsages(UsagesT&& value) { m_usagesHasBeenSet = true; m_usages.emplace_back(std::forward<UsagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pricing details of the resource recommendation.</p>
      */
-    inline const ResourcePricing& GetPricing() const{ return m_pricing; }
+    inline const ResourcePricing& GetPricing() const { return m_pricing; }
     inline bool PricingHasBeenSet() const { return m_pricingHasBeenSet; }
-    inline void SetPricing(const ResourcePricing& value) { m_pricingHasBeenSet = true; m_pricing = value; }
-    inline void SetPricing(ResourcePricing&& value) { m_pricingHasBeenSet = true; m_pricing = std::move(value); }
-    inline ResourceCostCalculation& WithPricing(const ResourcePricing& value) { SetPricing(value); return *this;}
-    inline ResourceCostCalculation& WithPricing(ResourcePricing&& value) { SetPricing(std::move(value)); return *this;}
+    template<typename PricingT = ResourcePricing>
+    void SetPricing(PricingT&& value) { m_pricingHasBeenSet = true; m_pricing = std::forward<PricingT>(value); }
+    template<typename PricingT = ResourcePricing>
+    ResourceCostCalculation& WithPricing(PricingT&& value) { SetPricing(std::forward<PricingT>(value)); return *this;}
     ///@}
   private:
 

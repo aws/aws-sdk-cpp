@@ -12,38 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceRequest::UpdateServiceRequest() : 
-    m_clusterHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_availabilityZoneRebalancing(AvailabilityZoneRebalancing::NOT_SET),
-    m_availabilityZoneRebalancingHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_forceNewDeployment(false),
-    m_forceNewDeploymentHasBeenSet(false),
-    m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_serviceConnectConfigurationHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false),
-    m_vpcLatticeConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-CustomDataIdentifiersDetections::CustomDataIdentifiersDetections() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
-{
-}
-
 CustomDataIdentifiersDetections::CustomDataIdentifiersDetections(JsonView jsonValue)
-  : CustomDataIdentifiersDetections()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CustomDataIdentifiersDetections& CustomDataIdentifiersDetections::operator =(Jso
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInt64("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Occurrences"))
   {
     m_occurrences = jsonValue.GetObject("Occurrences");
-
     m_occurrencesHasBeenSet = true;
   }
-
   return *this;
 }
 

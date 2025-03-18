@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DetachTrafficSourcesRequest::DetachTrafficSourcesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false)
-{
-}
-
 Aws::String DetachTrafficSourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

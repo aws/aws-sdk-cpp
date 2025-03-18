@@ -18,23 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings() : 
-    m_languageCode(TranscribeMedicalLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_specialty(TranscribeMedicalSpecialty::NOT_SET),
-    m_specialtyHasBeenSet(false),
-    m_type(TranscribeMedicalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_region(TranscribeMedicalRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_contentIdentificationType(TranscribeMedicalContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false)
-{
-}
-
 EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonValue)
-  : EngineTranscribeMedicalSettings()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ EngineTranscribeMedicalSettings& EngineTranscribeMedicalSettings::operator =(Jso
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = TranscribeMedicalLanguageCodeMapper::GetTranscribeMedicalLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Specialty"))
   {
     m_specialty = TranscribeMedicalSpecialtyMapper::GetTranscribeMedicalSpecialtyForName(jsonValue.GetString("Specialty"));
-
     m_specialtyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TranscribeMedicalTypeMapper::GetTranscribeMedicalTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = TranscribeMedicalRegionMapper::GetTranscribeMedicalRegionForName(jsonValue.GetString("Region"));
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentIdentificationType"))
   {
     m_contentIdentificationType = TranscribeMedicalContentIdentificationTypeMapper::GetTranscribeMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
-
     m_contentIdentificationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

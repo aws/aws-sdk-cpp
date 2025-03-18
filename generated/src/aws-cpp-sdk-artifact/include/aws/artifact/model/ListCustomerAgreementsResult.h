@@ -29,7 +29,7 @@ namespace Model
   class ListCustomerAgreementsResult
   {
   public:
-    AWS_ARTIFACT_API ListCustomerAgreementsResult();
+    AWS_ARTIFACT_API ListCustomerAgreementsResult() = default;
     AWS_ARTIFACT_API ListCustomerAgreementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARTIFACT_API ListCustomerAgreementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>List of customer-agreement resources.</p>
      */
-    inline const Aws::Vector<CustomerAgreementSummary>& GetCustomerAgreements() const{ return m_customerAgreements; }
-    inline void SetCustomerAgreements(const Aws::Vector<CustomerAgreementSummary>& value) { m_customerAgreements = value; }
-    inline void SetCustomerAgreements(Aws::Vector<CustomerAgreementSummary>&& value) { m_customerAgreements = std::move(value); }
-    inline ListCustomerAgreementsResult& WithCustomerAgreements(const Aws::Vector<CustomerAgreementSummary>& value) { SetCustomerAgreements(value); return *this;}
-    inline ListCustomerAgreementsResult& WithCustomerAgreements(Aws::Vector<CustomerAgreementSummary>&& value) { SetCustomerAgreements(std::move(value)); return *this;}
-    inline ListCustomerAgreementsResult& AddCustomerAgreements(const CustomerAgreementSummary& value) { m_customerAgreements.push_back(value); return *this; }
-    inline ListCustomerAgreementsResult& AddCustomerAgreements(CustomerAgreementSummary&& value) { m_customerAgreements.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomerAgreementSummary>& GetCustomerAgreements() const { return m_customerAgreements; }
+    template<typename CustomerAgreementsT = Aws::Vector<CustomerAgreementSummary>>
+    void SetCustomerAgreements(CustomerAgreementsT&& value) { m_customerAgreementsHasBeenSet = true; m_customerAgreements = std::forward<CustomerAgreementsT>(value); }
+    template<typename CustomerAgreementsT = Aws::Vector<CustomerAgreementSummary>>
+    ListCustomerAgreementsResult& WithCustomerAgreements(CustomerAgreementsT&& value) { SetCustomerAgreements(std::forward<CustomerAgreementsT>(value)); return *this;}
+    template<typename CustomerAgreementsT = CustomerAgreementSummary>
+    ListCustomerAgreementsResult& AddCustomerAgreements(CustomerAgreementsT&& value) { m_customerAgreementsHasBeenSet = true; m_customerAgreements.emplace_back(std::forward<CustomerAgreementsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token to request the next page of resources.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCustomerAgreementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomerAgreementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomerAgreementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomerAgreementsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCustomerAgreementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCustomerAgreementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCustomerAgreementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCustomerAgreementsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CustomerAgreementSummary> m_customerAgreements;
+    bool m_customerAgreementsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

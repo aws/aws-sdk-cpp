@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartInstanceRequest::StartInstanceRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String StartInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

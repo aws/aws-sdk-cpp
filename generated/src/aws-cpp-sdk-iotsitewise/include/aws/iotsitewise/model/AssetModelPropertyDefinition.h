@@ -35,7 +35,7 @@ namespace Model
   class AssetModelPropertyDefinition
   {
   public:
-    AWS_IOTSITEWISE_API AssetModelPropertyDefinition();
+    AWS_IOTSITEWISE_API AssetModelPropertyDefinition() = default;
     AWS_IOTSITEWISE_API AssetModelPropertyDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API AssetModelPropertyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * it here in UUID format. If you specify your own ID, it must be globally
      * unique.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssetModelPropertyDefinition& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssetModelPropertyDefinition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssetModelPropertyDefinition& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssetModelPropertyDefinition& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,28 +65,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
      * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AssetModelPropertyDefinition& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AssetModelPropertyDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AssetModelPropertyDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    AssetModelPropertyDefinition& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the property definition.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetModelPropertyDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetModelPropertyDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetModelPropertyDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssetModelPropertyDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
      * the type of the structure for this property.</p>
      */
-    inline const PropertyDataType& GetDataType() const{ return m_dataType; }
+    inline PropertyDataType GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const PropertyDataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(PropertyDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline AssetModelPropertyDefinition& WithDataType(const PropertyDataType& value) { SetDataType(value); return *this;}
-    inline AssetModelPropertyDefinition& WithDataType(PropertyDataType&& value) { SetDataType(std::move(value)); return *this;}
+    inline void SetDataType(PropertyDataType value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline AssetModelPropertyDefinition& WithDataType(PropertyDataType value) { SetDataType(value); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,12 @@ namespace Model
      * this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
      * composite models.</p>
      */
-    inline const Aws::String& GetDataTypeSpec() const{ return m_dataTypeSpec; }
+    inline const Aws::String& GetDataTypeSpec() const { return m_dataTypeSpec; }
     inline bool DataTypeSpecHasBeenSet() const { return m_dataTypeSpecHasBeenSet; }
-    inline void SetDataTypeSpec(const Aws::String& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = value; }
-    inline void SetDataTypeSpec(Aws::String&& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = std::move(value); }
-    inline void SetDataTypeSpec(const char* value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec.assign(value); }
-    inline AssetModelPropertyDefinition& WithDataTypeSpec(const Aws::String& value) { SetDataTypeSpec(value); return *this;}
-    inline AssetModelPropertyDefinition& WithDataTypeSpec(Aws::String&& value) { SetDataTypeSpec(std::move(value)); return *this;}
-    inline AssetModelPropertyDefinition& WithDataTypeSpec(const char* value) { SetDataTypeSpec(value); return *this;}
+    template<typename DataTypeSpecT = Aws::String>
+    void SetDataTypeSpec(DataTypeSpecT&& value) { m_dataTypeSpecHasBeenSet = true; m_dataTypeSpec = std::forward<DataTypeSpecT>(value); }
+    template<typename DataTypeSpecT = Aws::String>
+    AssetModelPropertyDefinition& WithDataTypeSpec(DataTypeSpecT&& value) { SetDataTypeSpec(std::forward<DataTypeSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +118,12 @@ namespace Model
      * <p>The unit of the property definition, such as <code>Newtons</code> or
      * <code>RPM</code>.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline AssetModelPropertyDefinition& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline AssetModelPropertyDefinition& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline AssetModelPropertyDefinition& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    AssetModelPropertyDefinition& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +131,12 @@ namespace Model
      * <p>The property definition type (see <code>PropertyType</code>). You can only
      * specify one type in a property definition.</p>
      */
-    inline const PropertyType& GetType() const{ return m_type; }
+    inline const PropertyType& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PropertyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PropertyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AssetModelPropertyDefinition& WithType(const PropertyType& value) { SetType(value); return *this;}
-    inline AssetModelPropertyDefinition& WithType(PropertyType&& value) { SetType(std::move(value)); return *this;}
+    template<typename TypeT = PropertyType>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = PropertyType>
+    AssetModelPropertyDefinition& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,7 +149,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    PropertyDataType m_dataType;
+    PropertyDataType m_dataType{PropertyDataType::NOT_SET};
     bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_dataTypeSpec;

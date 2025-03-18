@@ -21,7 +21,7 @@ namespace Model
   class StopDataMigrationRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StopDataMigrationRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StopDataMigrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier (name or ARN) of the data migration to stop.</p>
      */
-    inline const Aws::String& GetDataMigrationIdentifier() const{ return m_dataMigrationIdentifier; }
+    inline const Aws::String& GetDataMigrationIdentifier() const { return m_dataMigrationIdentifier; }
     inline bool DataMigrationIdentifierHasBeenSet() const { return m_dataMigrationIdentifierHasBeenSet; }
-    inline void SetDataMigrationIdentifier(const Aws::String& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = value; }
-    inline void SetDataMigrationIdentifier(Aws::String&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::move(value); }
-    inline void SetDataMigrationIdentifier(const char* value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier.assign(value); }
-    inline StopDataMigrationRequest& WithDataMigrationIdentifier(const Aws::String& value) { SetDataMigrationIdentifier(value); return *this;}
-    inline StopDataMigrationRequest& WithDataMigrationIdentifier(Aws::String&& value) { SetDataMigrationIdentifier(std::move(value)); return *this;}
-    inline StopDataMigrationRequest& WithDataMigrationIdentifier(const char* value) { SetDataMigrationIdentifier(value); return *this;}
+    template<typename DataMigrationIdentifierT = Aws::String>
+    void SetDataMigrationIdentifier(DataMigrationIdentifierT&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::forward<DataMigrationIdentifierT>(value); }
+    template<typename DataMigrationIdentifierT = Aws::String>
+    StopDataMigrationRequest& WithDataMigrationIdentifier(DataMigrationIdentifierT&& value) { SetDataMigrationIdentifier(std::forward<DataMigrationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

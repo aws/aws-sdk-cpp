@@ -19,7 +19,7 @@ namespace Model
   class DescribeAccountRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DescribeAccountRequest();
+    AWS_WORKSPACES_API DescribeAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

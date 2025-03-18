@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRuleRequest::DeleteRuleRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleRequest::SerializePayload() const
 {
   return {};

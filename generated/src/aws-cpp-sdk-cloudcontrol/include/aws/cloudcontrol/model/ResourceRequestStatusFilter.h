@@ -34,7 +34,7 @@ namespace Model
   class ResourceRequestStatusFilter
   {
   public:
-    AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter();
+    AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter() = default;
     AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
     /**
      * <p>The operation types to include in the filter.</p>
      */
-    inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
+    inline const Aws::Vector<Operation>& GetOperations() const { return m_operations; }
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-    inline void SetOperations(const Aws::Vector<Operation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-    inline ResourceRequestStatusFilter& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
-    inline ResourceRequestStatusFilter& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline ResourceRequestStatusFilter& AddOperations(const Operation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-    inline ResourceRequestStatusFilter& AddOperations(Operation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    ResourceRequestStatusFilter& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    inline ResourceRequestStatusFilter& AddOperations(Operation value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +64,13 @@ namespace Model
      * canceled.</p> </li> <li> <p> <code>CANCEL_COMPLETE</code>: The operation has
      * been canceled.</p> </li> </ul>
      */
-    inline const Aws::Vector<OperationStatus>& GetOperationStatuses() const{ return m_operationStatuses; }
+    inline const Aws::Vector<OperationStatus>& GetOperationStatuses() const { return m_operationStatuses; }
     inline bool OperationStatusesHasBeenSet() const { return m_operationStatusesHasBeenSet; }
-    inline void SetOperationStatuses(const Aws::Vector<OperationStatus>& value) { m_operationStatusesHasBeenSet = true; m_operationStatuses = value; }
-    inline void SetOperationStatuses(Aws::Vector<OperationStatus>&& value) { m_operationStatusesHasBeenSet = true; m_operationStatuses = std::move(value); }
-    inline ResourceRequestStatusFilter& WithOperationStatuses(const Aws::Vector<OperationStatus>& value) { SetOperationStatuses(value); return *this;}
-    inline ResourceRequestStatusFilter& WithOperationStatuses(Aws::Vector<OperationStatus>&& value) { SetOperationStatuses(std::move(value)); return *this;}
-    inline ResourceRequestStatusFilter& AddOperationStatuses(const OperationStatus& value) { m_operationStatusesHasBeenSet = true; m_operationStatuses.push_back(value); return *this; }
-    inline ResourceRequestStatusFilter& AddOperationStatuses(OperationStatus&& value) { m_operationStatusesHasBeenSet = true; m_operationStatuses.push_back(std::move(value)); return *this; }
+    template<typename OperationStatusesT = Aws::Vector<OperationStatus>>
+    void SetOperationStatuses(OperationStatusesT&& value) { m_operationStatusesHasBeenSet = true; m_operationStatuses = std::forward<OperationStatusesT>(value); }
+    template<typename OperationStatusesT = Aws::Vector<OperationStatus>>
+    ResourceRequestStatusFilter& WithOperationStatuses(OperationStatusesT&& value) { SetOperationStatuses(std::forward<OperationStatusesT>(value)); return *this;}
+    inline ResourceRequestStatusFilter& AddOperationStatuses(OperationStatus value) { m_operationStatusesHasBeenSet = true; m_operationStatuses.push_back(value); return *this; }
     ///@}
   private:
 

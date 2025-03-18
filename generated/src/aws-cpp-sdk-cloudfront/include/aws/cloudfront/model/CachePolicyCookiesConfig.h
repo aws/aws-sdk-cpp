@@ -33,7 +33,7 @@ namespace Model
   class CachePolicyCookiesConfig
   {
   public:
-    AWS_CLOUDFRONT_API CachePolicyCookiesConfig();
+    AWS_CLOUDFRONT_API CachePolicyCookiesConfig() = default;
     AWS_CLOUDFRONT_API CachePolicyCookiesConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachePolicyCookiesConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,26 +58,24 @@ namespace Model
      * requests are included in the cache key and in requests that CloudFront sends to
      * the origin.</p> </li> </ul>
      */
-    inline const CachePolicyCookieBehavior& GetCookieBehavior() const{ return m_cookieBehavior; }
+    inline CachePolicyCookieBehavior GetCookieBehavior() const { return m_cookieBehavior; }
     inline bool CookieBehaviorHasBeenSet() const { return m_cookieBehaviorHasBeenSet; }
-    inline void SetCookieBehavior(const CachePolicyCookieBehavior& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = value; }
-    inline void SetCookieBehavior(CachePolicyCookieBehavior&& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = std::move(value); }
-    inline CachePolicyCookiesConfig& WithCookieBehavior(const CachePolicyCookieBehavior& value) { SetCookieBehavior(value); return *this;}
-    inline CachePolicyCookiesConfig& WithCookieBehavior(CachePolicyCookieBehavior&& value) { SetCookieBehavior(std::move(value)); return *this;}
+    inline void SetCookieBehavior(CachePolicyCookieBehavior value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = value; }
+    inline CachePolicyCookiesConfig& WithCookieBehavior(CachePolicyCookieBehavior value) { SetCookieBehavior(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CookieNames& GetCookies() const{ return m_cookies; }
+    inline const CookieNames& GetCookies() const { return m_cookies; }
     inline bool CookiesHasBeenSet() const { return m_cookiesHasBeenSet; }
-    inline void SetCookies(const CookieNames& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
-    inline void SetCookies(CookieNames&& value) { m_cookiesHasBeenSet = true; m_cookies = std::move(value); }
-    inline CachePolicyCookiesConfig& WithCookies(const CookieNames& value) { SetCookies(value); return *this;}
-    inline CachePolicyCookiesConfig& WithCookies(CookieNames&& value) { SetCookies(std::move(value)); return *this;}
+    template<typename CookiesT = CookieNames>
+    void SetCookies(CookiesT&& value) { m_cookiesHasBeenSet = true; m_cookies = std::forward<CookiesT>(value); }
+    template<typename CookiesT = CookieNames>
+    CachePolicyCookiesConfig& WithCookies(CookiesT&& value) { SetCookies(std::forward<CookiesT>(value)); return *this;}
     ///@}
   private:
 
-    CachePolicyCookieBehavior m_cookieBehavior;
+    CachePolicyCookieBehavior m_cookieBehavior{CachePolicyCookieBehavior::NOT_SET};
     bool m_cookieBehaviorHasBeenSet = false;
 
     CookieNames m_cookies;

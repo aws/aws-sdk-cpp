@@ -10,12 +10,6 @@
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-GetStatusRequest::GetStatusRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_aPIVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

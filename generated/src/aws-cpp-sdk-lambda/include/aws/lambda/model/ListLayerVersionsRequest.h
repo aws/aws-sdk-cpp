@@ -27,7 +27,7 @@ namespace Model
   class ListLayerVersionsRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API ListLayerVersionsRequest();
+    AWS_LAMBDA_API ListLayerVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,47 +50,41 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported
      * runtimes</a>.</p>
      */
-    inline const Runtime& GetCompatibleRuntime() const{ return m_compatibleRuntime; }
+    inline Runtime GetCompatibleRuntime() const { return m_compatibleRuntime; }
     inline bool CompatibleRuntimeHasBeenSet() const { return m_compatibleRuntimeHasBeenSet; }
-    inline void SetCompatibleRuntime(const Runtime& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = value; }
-    inline void SetCompatibleRuntime(Runtime&& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = std::move(value); }
-    inline ListLayerVersionsRequest& WithCompatibleRuntime(const Runtime& value) { SetCompatibleRuntime(value); return *this;}
-    inline ListLayerVersionsRequest& WithCompatibleRuntime(Runtime&& value) { SetCompatibleRuntime(std::move(value)); return *this;}
+    inline void SetCompatibleRuntime(Runtime value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = value; }
+    inline ListLayerVersionsRequest& WithCompatibleRuntime(Runtime value) { SetCompatibleRuntime(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
-    inline const Aws::String& GetLayerName() const{ return m_layerName; }
+    inline const Aws::String& GetLayerName() const { return m_layerName; }
     inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
-    inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
-    inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
-    inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
-    inline ListLayerVersionsRequest& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
-    inline ListLayerVersionsRequest& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
-    inline ListLayerVersionsRequest& WithLayerName(const char* value) { SetLayerName(value); return *this;}
+    template<typename LayerNameT = Aws::String>
+    void SetLayerName(LayerNameT&& value) { m_layerNameHasBeenSet = true; m_layerName = std::forward<LayerNameT>(value); }
+    template<typename LayerNameT = Aws::String>
+    ListLayerVersionsRequest& WithLayerName(LayerNameT&& value) { SetLayerName(std::forward<LayerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A pagination token returned by a previous call.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListLayerVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListLayerVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListLayerVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListLayerVersionsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of versions to return.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListLayerVersionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -102,16 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
      * set architecture</a>.</p>
      */
-    inline const Architecture& GetCompatibleArchitecture() const{ return m_compatibleArchitecture; }
+    inline Architecture GetCompatibleArchitecture() const { return m_compatibleArchitecture; }
     inline bool CompatibleArchitectureHasBeenSet() const { return m_compatibleArchitectureHasBeenSet; }
-    inline void SetCompatibleArchitecture(const Architecture& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = value; }
-    inline void SetCompatibleArchitecture(Architecture&& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = std::move(value); }
-    inline ListLayerVersionsRequest& WithCompatibleArchitecture(const Architecture& value) { SetCompatibleArchitecture(value); return *this;}
-    inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture&& value) { SetCompatibleArchitecture(std::move(value)); return *this;}
+    inline void SetCompatibleArchitecture(Architecture value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = value; }
+    inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture value) { SetCompatibleArchitecture(value); return *this;}
     ///@}
   private:
 
-    Runtime m_compatibleRuntime;
+    Runtime m_compatibleRuntime{Runtime::NOT_SET};
     bool m_compatibleRuntimeHasBeenSet = false;
 
     Aws::String m_layerName;
@@ -120,10 +112,10 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    Architecture m_compatibleArchitecture;
+    Architecture m_compatibleArchitecture{Architecture::NOT_SET};
     bool m_compatibleArchitectureHasBeenSet = false;
   };
 

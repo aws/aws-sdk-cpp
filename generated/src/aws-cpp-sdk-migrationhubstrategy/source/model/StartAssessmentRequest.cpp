@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAssessmentRequest::StartAssessmentRequest() : 
-    m_assessmentDataSourceType(AssessmentDataSourceType::NOT_SET),
-    m_assessmentDataSourceTypeHasBeenSet(false),
-    m_assessmentTargetsHasBeenSet(false),
-    m_s3bucketForAnalysisDataHasBeenSet(false),
-    m_s3bucketForReportDataHasBeenSet(false)
-{
-}
-
 Aws::String StartAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

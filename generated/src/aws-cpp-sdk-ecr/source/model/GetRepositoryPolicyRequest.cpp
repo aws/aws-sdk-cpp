@@ -12,12 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositoryPolicyRequest::GetRepositoryPolicyRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

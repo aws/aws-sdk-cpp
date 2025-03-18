@@ -22,7 +22,7 @@ namespace Model
   class DescribeWorkflowExecutionRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API DescribeWorkflowExecutionRequest();
+    AWS_SWF_API DescribeWorkflowExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DescribeWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DescribeWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DescribeWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DescribeWorkflowExecutionRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow execution to describe.</p>
      */
-    inline const WorkflowExecution& GetExecution() const{ return m_execution; }
+    inline const WorkflowExecution& GetExecution() const { return m_execution; }
     inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
-    inline void SetExecution(const WorkflowExecution& value) { m_executionHasBeenSet = true; m_execution = value; }
-    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
-    inline DescribeWorkflowExecutionRequest& WithExecution(const WorkflowExecution& value) { SetExecution(value); return *this;}
-    inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
+    template<typename ExecutionT = WorkflowExecution>
+    void SetExecution(ExecutionT&& value) { m_executionHasBeenSet = true; m_execution = std::forward<ExecutionT>(value); }
+    template<typename ExecutionT = WorkflowExecution>
+    DescribeWorkflowExecutionRequest& WithExecution(ExecutionT&& value) { SetExecution(std::forward<ExecutionT>(value)); return *this;}
     ///@}
   private:
 

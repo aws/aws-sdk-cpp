@@ -31,7 +31,7 @@ namespace Model
   class TtmlDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API TtmlDestinationSettings();
+    AWS_MEDIALIVE_API TtmlDestinationSettings() = default;
     AWS_MEDIALIVE_API TtmlDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API TtmlDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * This field is not currently supported and will not affect the output styling.
      * Leave the default value.
      */
-    inline const TtmlDestinationStyleControl& GetStyleControl() const{ return m_styleControl; }
+    inline TtmlDestinationStyleControl GetStyleControl() const { return m_styleControl; }
     inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
-    inline void SetStyleControl(const TtmlDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
-    inline void SetStyleControl(TtmlDestinationStyleControl&& value) { m_styleControlHasBeenSet = true; m_styleControl = std::move(value); }
-    inline TtmlDestinationSettings& WithStyleControl(const TtmlDestinationStyleControl& value) { SetStyleControl(value); return *this;}
-    inline TtmlDestinationSettings& WithStyleControl(TtmlDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
+    inline void SetStyleControl(TtmlDestinationStyleControl value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
+    inline TtmlDestinationSettings& WithStyleControl(TtmlDestinationStyleControl value) { SetStyleControl(value); return *this;}
     ///@}
   private:
 
-    TtmlDestinationStyleControl m_styleControl;
+    TtmlDestinationStyleControl m_styleControl{TtmlDestinationStyleControl::NOT_SET};
     bool m_styleControlHasBeenSet = false;
   };
 

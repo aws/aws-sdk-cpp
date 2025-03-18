@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteSecurityGroupRequest::DeleteSecurityGroupRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

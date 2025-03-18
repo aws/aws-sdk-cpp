@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePublicAccessBlockRequest::DeletePublicAccessBlockRequest() : 
-    m_bucketHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool DeletePublicAccessBlockRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

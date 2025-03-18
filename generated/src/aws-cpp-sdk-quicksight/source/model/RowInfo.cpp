@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RowInfo::RowInfo() : 
-    m_rowsIngested(0),
-    m_rowsIngestedHasBeenSet(false),
-    m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false),
-    m_totalRowsInDataset(0),
-    m_totalRowsInDatasetHasBeenSet(false)
-{
-}
-
 RowInfo::RowInfo(JsonView jsonValue)
-  : RowInfo()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RowInfo& RowInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RowsIngested"))
   {
     m_rowsIngested = jsonValue.GetInt64("RowsIngested");
-
     m_rowsIngestedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowsDropped"))
   {
     m_rowsDropped = jsonValue.GetInt64("RowsDropped");
-
     m_rowsDroppedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRowsInDataset"))
   {
     m_totalRowsInDataset = jsonValue.GetInt64("TotalRowsInDataset");
-
     m_totalRowsInDatasetHasBeenSet = true;
   }
-
   return *this;
 }
 

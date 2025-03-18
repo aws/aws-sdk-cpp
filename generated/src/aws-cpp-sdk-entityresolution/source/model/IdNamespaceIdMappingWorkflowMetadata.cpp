@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdNamespaceIdMappingWorkflowMetadata::IdNamespaceIdMappingWorkflowMetadata() : 
-    m_idMappingType(IdMappingType::NOT_SET),
-    m_idMappingTypeHasBeenSet(false)
-{
-}
-
 IdNamespaceIdMappingWorkflowMetadata::IdNamespaceIdMappingWorkflowMetadata(JsonView jsonValue)
-  : IdNamespaceIdMappingWorkflowMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IdNamespaceIdMappingWorkflowMetadata& IdNamespaceIdMappingWorkflowMetadata::oper
   if(jsonValue.ValueExists("idMappingType"))
   {
     m_idMappingType = IdMappingTypeMapper::GetIdMappingTypeForName(jsonValue.GetString("idMappingType"));
-
     m_idMappingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

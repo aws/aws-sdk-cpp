@@ -32,7 +32,7 @@ namespace Model
   class AwsSsoAuthentication
   {
   public:
-    AWS_MANAGEDGRAFANA_API AwsSsoAuthentication();
+    AWS_MANAGEDGRAFANA_API AwsSsoAuthentication() = default;
     AWS_MANAGEDGRAFANA_API AwsSsoAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API AwsSsoAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the IAM Identity Center-managed application that is created by
      * Amazon Managed Grafana.</p>
      */
-    inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
+    inline const Aws::String& GetSsoClientId() const { return m_ssoClientId; }
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
-    inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
-    inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
-    inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
-    inline AwsSsoAuthentication& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
-    inline AwsSsoAuthentication& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
-    inline AwsSsoAuthentication& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
+    template<typename SsoClientIdT = Aws::String>
+    void SetSsoClientId(SsoClientIdT&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::forward<SsoClientIdT>(value); }
+    template<typename SsoClientIdT = Aws::String>
+    AwsSsoAuthentication& WithSsoClientId(SsoClientIdT&& value) { SetSsoClientId(std::forward<SsoClientIdT>(value)); return *this;}
     ///@}
   private:
 

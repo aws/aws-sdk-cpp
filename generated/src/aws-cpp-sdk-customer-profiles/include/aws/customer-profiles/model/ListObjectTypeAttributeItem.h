@@ -33,7 +33,7 @@ namespace Model
   class ListObjectTypeAttributeItem
   {
   public:
-    AWS_CUSTOMERPROFILES_API ListObjectTypeAttributeItem();
+    AWS_CUSTOMERPROFILES_API ListObjectTypeAttributeItem() = default;
     AWS_CUSTOMERPROFILES_API ListObjectTypeAttributeItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ListObjectTypeAttributeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p>Name of the attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline ListObjectTypeAttributeItem& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline ListObjectTypeAttributeItem& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline ListObjectTypeAttributeItem& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    ListObjectTypeAttributeItem& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the attribute was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline ListObjectTypeAttributeItem& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline ListObjectTypeAttributeItem& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    ListObjectTypeAttributeItem& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
   };
 

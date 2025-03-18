@@ -31,7 +31,7 @@ namespace Model
   class Location
   {
   public:
-    AWS_DEVICEFARM_API Location();
+    AWS_DEVICEFARM_API Location() = default;
     AWS_DEVICEFARM_API Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The latitude.</p>
      */
-    inline double GetLatitude() const{ return m_latitude; }
+    inline double GetLatitude() const { return m_latitude; }
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
     inline Location& WithLatitude(double value) { SetLatitude(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The longitude.</p>
      */
-    inline double GetLongitude() const{ return m_longitude; }
+    inline double GetLongitude() const { return m_longitude; }
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
     inline Location& WithLongitude(double value) { SetLongitude(value); return *this;}
     ///@}
   private:
 
-    double m_latitude;
+    double m_latitude{0.0};
     bool m_latitudeHasBeenSet = false;
 
-    double m_longitude;
+    double m_longitude{0.0};
     bool m_longitudeHasBeenSet = false;
   };
 

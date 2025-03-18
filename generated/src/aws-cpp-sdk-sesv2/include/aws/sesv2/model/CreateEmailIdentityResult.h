@@ -36,7 +36,7 @@ namespace Model
   class CreateEmailIdentityResult
   {
   public:
-    AWS_SESV2_API CreateEmailIdentityResult();
+    AWS_SESV2_API CreateEmailIdentityResult() = default;
     AWS_SESV2_API CreateEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API CreateEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,11 +46,9 @@ namespace Model
      * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
      * is not supported.</p>
      */
-    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
-    inline void SetIdentityType(const IdentityType& value) { m_identityType = value; }
-    inline void SetIdentityType(IdentityType&& value) { m_identityType = std::move(value); }
-    inline CreateEmailIdentityResult& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-    inline CreateEmailIdentityResult& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    inline IdentityType GetIdentityType() const { return m_identityType; }
+    inline void SetIdentityType(IdentityType value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline CreateEmailIdentityResult& WithIdentityType(IdentityType value) { SetIdentityType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,8 +59,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      * Pinpoint User Guide</a>.</p>
      */
-    inline bool GetVerifiedForSendingStatus() const{ return m_verifiedForSendingStatus; }
-    inline void SetVerifiedForSendingStatus(bool value) { m_verifiedForSendingStatus = value; }
+    inline bool GetVerifiedForSendingStatus() const { return m_verifiedForSendingStatus; }
+    inline void SetVerifiedForSendingStatus(bool value) { m_verifiedForSendingStatusHasBeenSet = true; m_verifiedForSendingStatus = value; }
     inline CreateEmailIdentityResult& WithVerifiedForSendingStatus(bool value) { SetVerifiedForSendingStatus(value); return *this;}
     ///@}
 
@@ -71,32 +69,34 @@ namespace Model
      * <p>An object that contains information about the DKIM attributes for the
      * identity.</p>
      */
-    inline const DkimAttributes& GetDkimAttributes() const{ return m_dkimAttributes; }
-    inline void SetDkimAttributes(const DkimAttributes& value) { m_dkimAttributes = value; }
-    inline void SetDkimAttributes(DkimAttributes&& value) { m_dkimAttributes = std::move(value); }
-    inline CreateEmailIdentityResult& WithDkimAttributes(const DkimAttributes& value) { SetDkimAttributes(value); return *this;}
-    inline CreateEmailIdentityResult& WithDkimAttributes(DkimAttributes&& value) { SetDkimAttributes(std::move(value)); return *this;}
+    inline const DkimAttributes& GetDkimAttributes() const { return m_dkimAttributes; }
+    template<typename DkimAttributesT = DkimAttributes>
+    void SetDkimAttributes(DkimAttributesT&& value) { m_dkimAttributesHasBeenSet = true; m_dkimAttributes = std::forward<DkimAttributesT>(value); }
+    template<typename DkimAttributesT = DkimAttributes>
+    CreateEmailIdentityResult& WithDkimAttributes(DkimAttributesT&& value) { SetDkimAttributes(std::forward<DkimAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEmailIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEmailIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEmailIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEmailIdentityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    IdentityType m_identityType;
+    IdentityType m_identityType{IdentityType::NOT_SET};
+    bool m_identityTypeHasBeenSet = false;
 
-    bool m_verifiedForSendingStatus;
+    bool m_verifiedForSendingStatus{false};
+    bool m_verifiedForSendingStatusHasBeenSet = false;
 
     DkimAttributes m_dkimAttributes;
+    bool m_dkimAttributesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class AssociateRepositoryRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API AssociateRepositoryRequest();
+    AWS_CODEGURUREVIEWER_API AssociateRepositoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>The repository to associate.</p>
      */
-    inline const Repository& GetRepository() const{ return m_repository; }
+    inline const Repository& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Repository& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Repository&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline AssociateRepositoryRequest& WithRepository(const Repository& value) { SetRepository(value); return *this;}
-    inline AssociateRepositoryRequest& WithRepository(Repository&& value) { SetRepository(std::move(value)); return *this;}
+    template<typename RepositoryT = Repository>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Repository>
+    AssociateRepositoryRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +53,12 @@ namespace Model
      * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
      * of duplicate repository associations if there are failures and retries.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline AssociateRepositoryRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline AssociateRepositoryRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline AssociateRepositoryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    AssociateRepositoryRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +72,16 @@ namespace Model
      * the tag value is the same as using an empty string. Like tag keys, tag values
      * are case sensitive.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssociateRepositoryRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline AssociateRepositoryRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssociateRepositoryRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AssociateRepositoryRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline AssociateRepositoryRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AssociateRepositoryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    AssociateRepositoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    AssociateRepositoryRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -98,12 +93,12 @@ namespace Model
      * of the Amazon Web Services KMS key that is associated with this repository
      * association.</p> </li> </ul>
      */
-    inline const KMSKeyDetails& GetKMSKeyDetails() const{ return m_kMSKeyDetails; }
+    inline const KMSKeyDetails& GetKMSKeyDetails() const { return m_kMSKeyDetails; }
     inline bool KMSKeyDetailsHasBeenSet() const { return m_kMSKeyDetailsHasBeenSet; }
-    inline void SetKMSKeyDetails(const KMSKeyDetails& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = value; }
-    inline void SetKMSKeyDetails(KMSKeyDetails&& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = std::move(value); }
-    inline AssociateRepositoryRequest& WithKMSKeyDetails(const KMSKeyDetails& value) { SetKMSKeyDetails(value); return *this;}
-    inline AssociateRepositoryRequest& WithKMSKeyDetails(KMSKeyDetails&& value) { SetKMSKeyDetails(std::move(value)); return *this;}
+    template<typename KMSKeyDetailsT = KMSKeyDetails>
+    void SetKMSKeyDetails(KMSKeyDetailsT&& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = std::forward<KMSKeyDetailsT>(value); }
+    template<typename KMSKeyDetailsT = KMSKeyDetails>
+    AssociateRepositoryRequest& WithKMSKeyDetails(KMSKeyDetailsT&& value) { SetKMSKeyDetails(std::forward<KMSKeyDetailsT>(value)); return *this;}
     ///@}
   private:
 

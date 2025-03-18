@@ -34,7 +34,7 @@ namespace Model
   class AuditCheckConfiguration
   {
   public:
-    AWS_IOT_API AuditCheckConfiguration();
+    AWS_IOT_API AuditCheckConfiguration() = default;
     AWS_IOT_API AuditCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuditCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>True if this audit check is enabled for this account.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AuditCheckConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,22 +55,19 @@ namespace Model
      * <p>A structure containing the configName and corresponding configValue for
      * configuring audit checks.</p>
      */
-    inline const Aws::Map<ConfigName, Aws::String>& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::Map<ConfigName, Aws::String>& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::Map<ConfigName, Aws::String>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::Map<ConfigName, Aws::String>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AuditCheckConfiguration& WithConfiguration(const Aws::Map<ConfigName, Aws::String>& value) { SetConfiguration(value); return *this;}
-    inline AuditCheckConfiguration& WithConfiguration(Aws::Map<ConfigName, Aws::String>&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline AuditCheckConfiguration& AddConfiguration(const ConfigName& key, const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
-    inline AuditCheckConfiguration& AddConfiguration(ConfigName&& key, const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), value); return *this; }
-    inline AuditCheckConfiguration& AddConfiguration(const ConfigName& key, Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, std::move(value)); return *this; }
-    inline AuditCheckConfiguration& AddConfiguration(ConfigName&& key, Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuditCheckConfiguration& AddConfiguration(ConfigName&& key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), value); return *this; }
-    inline AuditCheckConfiguration& AddConfiguration(const ConfigName& key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
+    template<typename ConfigurationT = Aws::Map<ConfigName, Aws::String>>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Map<ConfigName, Aws::String>>
+    AuditCheckConfiguration& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    inline AuditCheckConfiguration& AddConfiguration(ConfigName key, Aws::String value) {
+      m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Map<ConfigName, Aws::String> m_configuration;

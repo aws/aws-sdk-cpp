@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAuthenticationProfilesResult::DescribeAuthenticationProfilesResult()
-{
-}
-
 DescribeAuthenticationProfilesResult::DescribeAuthenticationProfilesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeAuthenticationProfilesResult& DescribeAuthenticationProfilesResult::oper
     if(!authenticationProfilesNode.IsNull())
     {
       XmlNode authenticationProfilesMember = authenticationProfilesNode.FirstChild("member");
+      m_authenticationProfilesHasBeenSet = !authenticationProfilesMember.IsNull();
       while(!authenticationProfilesMember.IsNull())
       {
         m_authenticationProfiles.push_back(authenticationProfilesMember);
         authenticationProfilesMember = authenticationProfilesMember.NextNode("member");
       }
 
+      m_authenticationProfilesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeAuthenticationProfilesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

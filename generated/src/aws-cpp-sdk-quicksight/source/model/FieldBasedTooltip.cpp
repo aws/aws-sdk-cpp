@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldBasedTooltip::FieldBasedTooltip() : 
-    m_aggregationVisibility(Visibility::NOT_SET),
-    m_aggregationVisibilityHasBeenSet(false),
-    m_tooltipTitleType(TooltipTitleType::NOT_SET),
-    m_tooltipTitleTypeHasBeenSet(false),
-    m_tooltipFieldsHasBeenSet(false)
-{
-}
-
 FieldBasedTooltip::FieldBasedTooltip(JsonView jsonValue)
-  : FieldBasedTooltip()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FieldBasedTooltip& FieldBasedTooltip::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AggregationVisibility"))
   {
     m_aggregationVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("AggregationVisibility"));
-
     m_aggregationVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TooltipTitleType"))
   {
     m_tooltipTitleType = TooltipTitleTypeMapper::GetTooltipTitleTypeForName(jsonValue.GetString("TooltipTitleType"));
-
     m_tooltipTitleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TooltipFields"))
   {
     Aws::Utils::Array<JsonView> tooltipFieldsJsonList = jsonValue.GetArray("TooltipFields");
@@ -58,7 +44,6 @@ FieldBasedTooltip& FieldBasedTooltip::operator =(JsonView jsonValue)
     }
     m_tooltipFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

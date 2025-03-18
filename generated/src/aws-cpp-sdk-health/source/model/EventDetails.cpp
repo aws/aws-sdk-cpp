@@ -18,15 +18,7 @@ namespace Health
 namespace Model
 {
 
-EventDetails::EventDetails() : 
-    m_eventHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false),
-    m_eventMetadataHasBeenSet(false)
-{
-}
-
 EventDetails::EventDetails(JsonView jsonValue)
-  : EventDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EventDetails& EventDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetObject("event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDescription"))
   {
     m_eventDescription = jsonValue.GetString("eventDescription");
-
     m_eventDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventMetadata"))
   {
     Aws::Map<Aws::String, JsonView> eventMetadataJsonMap = jsonValue.GetObject("eventMetadata").GetAllObjects();
@@ -56,7 +44,6 @@ EventDetails& EventDetails::operator =(JsonView jsonValue)
     }
     m_eventMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

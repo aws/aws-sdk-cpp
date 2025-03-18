@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-MemberFeaturesConfigurationResult::MemberFeaturesConfigurationResult() : 
-    m_name(OrgFeature::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false)
-{
-}
-
 MemberFeaturesConfigurationResult::MemberFeaturesConfigurationResult(JsonView jsonValue)
-  : MemberFeaturesConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ MemberFeaturesConfigurationResult& MemberFeaturesConfigurationResult::operator =
   if(jsonValue.ValueExists("name"))
   {
     m_name = OrgFeatureMapper::GetOrgFeatureForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalConfiguration"))
   {
     Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
@@ -66,7 +49,6 @@ MemberFeaturesConfigurationResult& MemberFeaturesConfigurationResult::operator =
     }
     m_additionalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

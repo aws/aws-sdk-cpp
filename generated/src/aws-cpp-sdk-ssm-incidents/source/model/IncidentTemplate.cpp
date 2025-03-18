@@ -18,19 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-IncidentTemplate::IncidentTemplate() : 
-    m_dedupeStringHasBeenSet(false),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_incidentTagsHasBeenSet(false),
-    m_notificationTargetsHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 IncidentTemplate::IncidentTemplate(JsonView jsonValue)
-  : IncidentTemplate()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dedupeString"))
   {
     m_dedupeString = jsonValue.GetString("dedupeString");
-
     m_dedupeStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("impact"))
   {
     m_impact = jsonValue.GetInteger("impact");
-
     m_impactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incidentTags"))
   {
     Aws::Map<Aws::String, JsonView> incidentTagsJsonMap = jsonValue.GetObject("incidentTags").GetAllObjects();
@@ -60,7 +44,6 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
     }
     m_incidentTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationTargets"))
   {
     Aws::Utils::Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
@@ -70,21 +53,16 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
     }
     m_notificationTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

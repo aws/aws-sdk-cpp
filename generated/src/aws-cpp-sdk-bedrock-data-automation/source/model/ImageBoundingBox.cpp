@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-ImageBoundingBox::ImageBoundingBox() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ImageBoundingBox::ImageBoundingBox(JsonView jsonValue)
-  : ImageBoundingBox()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImageBoundingBox& ImageBoundingBox::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

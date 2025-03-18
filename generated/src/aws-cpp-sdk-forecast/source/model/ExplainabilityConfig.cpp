@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ExplainabilityConfig::ExplainabilityConfig() : 
-    m_timeSeriesGranularity(TimeSeriesGranularity::NOT_SET),
-    m_timeSeriesGranularityHasBeenSet(false),
-    m_timePointGranularity(TimePointGranularity::NOT_SET),
-    m_timePointGranularityHasBeenSet(false)
-{
-}
-
 ExplainabilityConfig::ExplainabilityConfig(JsonView jsonValue)
-  : ExplainabilityConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExplainabilityConfig& ExplainabilityConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeSeriesGranularity"))
   {
     m_timeSeriesGranularity = TimeSeriesGranularityMapper::GetTimeSeriesGranularityForName(jsonValue.GetString("TimeSeriesGranularity"));
-
     m_timeSeriesGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePointGranularity"))
   {
     m_timePointGranularity = TimePointGranularityMapper::GetTimePointGranularityForName(jsonValue.GetString("TimePointGranularity"));
-
     m_timePointGranularityHasBeenSet = true;
   }
-
   return *this;
 }
 

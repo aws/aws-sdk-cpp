@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-UpdateTieringInput::UpdateTieringInput() : 
-    m_freeTierHasBeenSet(false)
-{
-}
-
 UpdateTieringInput::UpdateTieringInput(JsonView jsonValue)
-  : UpdateTieringInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateTieringInput& UpdateTieringInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FreeTier"))
   {
     m_freeTier = jsonValue.GetObject("FreeTier");
-
     m_freeTierHasBeenSet = true;
   }
-
   return *this;
 }
 

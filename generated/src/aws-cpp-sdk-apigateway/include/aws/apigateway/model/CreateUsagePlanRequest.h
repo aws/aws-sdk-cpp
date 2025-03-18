@@ -31,7 +31,7 @@ namespace Model
   class CreateUsagePlanRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API CreateUsagePlanRequest();
+    AWS_APIGATEWAY_API CreateUsagePlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,66 +46,62 @@ namespace Model
     /**
      * <p>The name of the usage plan.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateUsagePlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateUsagePlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateUsagePlanRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateUsagePlanRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the usage plan.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateUsagePlanRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateUsagePlanRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateUsagePlanRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateUsagePlanRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated API stages of the usage plan.</p>
      */
-    inline const Aws::Vector<ApiStage>& GetApiStages() const{ return m_apiStages; }
+    inline const Aws::Vector<ApiStage>& GetApiStages() const { return m_apiStages; }
     inline bool ApiStagesHasBeenSet() const { return m_apiStagesHasBeenSet; }
-    inline void SetApiStages(const Aws::Vector<ApiStage>& value) { m_apiStagesHasBeenSet = true; m_apiStages = value; }
-    inline void SetApiStages(Aws::Vector<ApiStage>&& value) { m_apiStagesHasBeenSet = true; m_apiStages = std::move(value); }
-    inline CreateUsagePlanRequest& WithApiStages(const Aws::Vector<ApiStage>& value) { SetApiStages(value); return *this;}
-    inline CreateUsagePlanRequest& WithApiStages(Aws::Vector<ApiStage>&& value) { SetApiStages(std::move(value)); return *this;}
-    inline CreateUsagePlanRequest& AddApiStages(const ApiStage& value) { m_apiStagesHasBeenSet = true; m_apiStages.push_back(value); return *this; }
-    inline CreateUsagePlanRequest& AddApiStages(ApiStage&& value) { m_apiStagesHasBeenSet = true; m_apiStages.push_back(std::move(value)); return *this; }
+    template<typename ApiStagesT = Aws::Vector<ApiStage>>
+    void SetApiStages(ApiStagesT&& value) { m_apiStagesHasBeenSet = true; m_apiStages = std::forward<ApiStagesT>(value); }
+    template<typename ApiStagesT = Aws::Vector<ApiStage>>
+    CreateUsagePlanRequest& WithApiStages(ApiStagesT&& value) { SetApiStages(std::forward<ApiStagesT>(value)); return *this;}
+    template<typename ApiStagesT = ApiStage>
+    CreateUsagePlanRequest& AddApiStages(ApiStagesT&& value) { m_apiStagesHasBeenSet = true; m_apiStages.emplace_back(std::forward<ApiStagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The throttling limits of the usage plan.</p>
      */
-    inline const ThrottleSettings& GetThrottle() const{ return m_throttle; }
+    inline const ThrottleSettings& GetThrottle() const { return m_throttle; }
     inline bool ThrottleHasBeenSet() const { return m_throttleHasBeenSet; }
-    inline void SetThrottle(const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle = value; }
-    inline void SetThrottle(ThrottleSettings&& value) { m_throttleHasBeenSet = true; m_throttle = std::move(value); }
-    inline CreateUsagePlanRequest& WithThrottle(const ThrottleSettings& value) { SetThrottle(value); return *this;}
-    inline CreateUsagePlanRequest& WithThrottle(ThrottleSettings&& value) { SetThrottle(std::move(value)); return *this;}
+    template<typename ThrottleT = ThrottleSettings>
+    void SetThrottle(ThrottleT&& value) { m_throttleHasBeenSet = true; m_throttle = std::forward<ThrottleT>(value); }
+    template<typename ThrottleT = ThrottleSettings>
+    CreateUsagePlanRequest& WithThrottle(ThrottleT&& value) { SetThrottle(std::forward<ThrottleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quota of the usage plan.</p>
      */
-    inline const QuotaSettings& GetQuota() const{ return m_quota; }
+    inline const QuotaSettings& GetQuota() const { return m_quota; }
     inline bool QuotaHasBeenSet() const { return m_quotaHasBeenSet; }
-    inline void SetQuota(const QuotaSettings& value) { m_quotaHasBeenSet = true; m_quota = value; }
-    inline void SetQuota(QuotaSettings&& value) { m_quotaHasBeenSet = true; m_quota = std::move(value); }
-    inline CreateUsagePlanRequest& WithQuota(const QuotaSettings& value) { SetQuota(value); return *this;}
-    inline CreateUsagePlanRequest& WithQuota(QuotaSettings&& value) { SetQuota(std::move(value)); return *this;}
+    template<typename QuotaT = QuotaSettings>
+    void SetQuota(QuotaT&& value) { m_quotaHasBeenSet = true; m_quota = std::forward<QuotaT>(value); }
+    template<typename QuotaT = QuotaSettings>
+    CreateUsagePlanRequest& WithQuota(QuotaT&& value) { SetQuota(std::forward<QuotaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,19 +110,16 @@ namespace Model
      * tag key can be up to 128 characters and must not start with <code>aws:</code>.
      * The tag value can be up to 256 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateUsagePlanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateUsagePlanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateUsagePlanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateUsagePlanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateUsagePlanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateUsagePlanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateUsagePlanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateUsagePlanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateUsagePlanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateUsagePlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateUsagePlanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

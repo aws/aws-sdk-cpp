@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-RecommendationTriggerData::RecommendationTriggerData() : 
-    m_queryHasBeenSet(false)
-{
-}
-
 RecommendationTriggerData::RecommendationTriggerData(JsonView jsonValue)
-  : RecommendationTriggerData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecommendationTriggerData& RecommendationTriggerData::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("query"))
   {
     m_query = jsonValue.GetObject("query");
-
     m_queryHasBeenSet = true;
   }
-
   return *this;
 }
 

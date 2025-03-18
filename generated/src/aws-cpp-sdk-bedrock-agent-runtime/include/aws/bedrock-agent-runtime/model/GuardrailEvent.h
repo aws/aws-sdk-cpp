@@ -31,7 +31,7 @@ namespace Model
   class GuardrailEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GuardrailEvent();
+    AWS_BEDROCKAGENTRUNTIME_API GuardrailEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API GuardrailEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GuardrailEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The guardrail action.</p>
      */
-    inline const GuadrailAction& GetAction() const{ return m_action; }
+    inline GuadrailAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const GuadrailAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(GuadrailAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GuardrailEvent& WithAction(const GuadrailAction& value) { SetAction(value); return *this;}
-    inline GuardrailEvent& WithAction(GuadrailAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(GuadrailAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailEvent& WithAction(GuadrailAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    GuadrailAction m_action;
+    GuadrailAction m_action{GuadrailAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace SSO
 namespace Model
 {
 
-RoleInfo::RoleInfo() : 
-    m_roleNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 RoleInfo::RoleInfo(JsonView jsonValue)
-  : RoleInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RoleInfo& RoleInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleName"))
   {
     m_roleName = jsonValue.GetString("roleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

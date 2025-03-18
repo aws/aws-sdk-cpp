@@ -35,7 +35,7 @@ namespace Model
   class UpdateMaintenanceWindowTaskResult
   {
   public:
-    AWS_SSM_API UpdateMaintenanceWindowTaskResult();
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult() = default;
     AWS_SSM_API UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,52 +44,46 @@ namespace Model
     /**
      * <p>The ID of the maintenance window that was updated.</p>
      */
-    inline const Aws::String& GetWindowId() const{ return m_windowId; }
-    inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
-    inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
-    inline void SetWindowId(const char* value) { m_windowId.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+    inline const Aws::String& GetWindowId() const { return m_windowId; }
+    template<typename WindowIdT = Aws::String>
+    void SetWindowId(WindowIdT&& value) { m_windowIdHasBeenSet = true; m_windowId = std::forward<WindowIdT>(value); }
+    template<typename WindowIdT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithWindowId(WindowIdT&& value) { SetWindowId(std::forward<WindowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task ID of the maintenance window that was updated.</p>
      */
-    inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
-    inline void SetWindowTaskId(const Aws::String& value) { m_windowTaskId = value; }
-    inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
-    inline void SetWindowTaskId(const char* value) { m_windowTaskId.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const Aws::String& value) { SetWindowTaskId(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
+    inline const Aws::String& GetWindowTaskId() const { return m_windowTaskId; }
+    template<typename WindowTaskIdT = Aws::String>
+    void SetWindowTaskId(WindowTaskIdT&& value) { m_windowTaskIdHasBeenSet = true; m_windowTaskId = std::forward<WindowTaskIdT>(value); }
+    template<typename WindowTaskIdT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithWindowTaskId(WindowTaskIdT&& value) { SetWindowTaskId(std::forward<WindowTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated target values.</p>
      */
-    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
-    inline void SetTargets(const Aws::Vector<Target>& value) { m_targets = value; }
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targets = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& AddTargets(const Target& value) { m_targets.push_back(value); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
+    template<typename TargetsT = Aws::Vector<Target>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Target>>
+    UpdateMaintenanceWindowTaskResult& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Target>
+    UpdateMaintenanceWindowTaskResult& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The updated task ARN value.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,13 +102,11 @@ namespace Model
      * up Maintenance Windows</a> in the in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArn.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,36 +118,34 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
-    inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
-    inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters = value; }
-    inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(std::move(key), value); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
-    inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const { return m_taskParameters; }
+    template<typename TaskParametersT = Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>
+    void SetTaskParameters(TaskParametersT&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::forward<TaskParametersT>(value); }
+    template<typename TaskParametersT = Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>
+    UpdateMaintenanceWindowTaskResult& WithTaskParameters(TaskParametersT&& value) { SetTaskParameters(std::forward<TaskParametersT>(value)); return *this;}
+    template<typename TaskParametersKeyT = Aws::String, typename TaskParametersValueT = MaintenanceWindowTaskParameterValueExpression>
+    UpdateMaintenanceWindowTaskResult& AddTaskParameters(TaskParametersKeyT&& key, TaskParametersValueT&& value) {
+      m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::forward<TaskParametersKeyT>(key), std::forward<TaskParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The updated parameter values.</p>
      */
-    inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const{ return m_taskInvocationParameters; }
-    inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParameters = value; }
-    inline void SetTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { m_taskInvocationParameters = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { SetTaskInvocationParameters(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
+    inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const { return m_taskInvocationParameters; }
+    template<typename TaskInvocationParametersT = MaintenanceWindowTaskInvocationParameters>
+    void SetTaskInvocationParameters(TaskInvocationParametersT&& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = std::forward<TaskInvocationParametersT>(value); }
+    template<typename TaskInvocationParametersT = MaintenanceWindowTaskInvocationParameters>
+    UpdateMaintenanceWindowTaskResult& WithTaskInvocationParameters(TaskInvocationParametersT&& value) { SetTaskInvocationParameters(std::forward<TaskInvocationParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated priority value.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline void SetPriority(int value) { m_priority = value; }
+    inline int GetPriority() const { return m_priority; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline UpdateMaintenanceWindowTaskResult& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
 
@@ -163,26 +153,22 @@ namespace Model
     /**
      * <p>The updated <code>MaxConcurrency</code> value.</p>
      */
-    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
-    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrency = value; }
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = std::move(value); }
-    inline void SetMaxConcurrency(const char* value) { m_maxConcurrency.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+    inline const Aws::String& GetMaxConcurrency() const { return m_maxConcurrency; }
+    template<typename MaxConcurrencyT = Aws::String>
+    void SetMaxConcurrency(MaxConcurrencyT&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::forward<MaxConcurrencyT>(value); }
+    template<typename MaxConcurrencyT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithMaxConcurrency(MaxConcurrencyT&& value) { SetMaxConcurrency(std::forward<MaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated <code>MaxErrors</code> value.</p>
      */
-    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
-    inline void SetMaxErrors(const Aws::String& value) { m_maxErrors = value; }
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = std::move(value); }
-    inline void SetMaxErrors(const char* value) { m_maxErrors.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+    inline const Aws::String& GetMaxErrors() const { return m_maxErrors; }
+    template<typename MaxErrorsT = Aws::String>
+    void SetMaxErrors(MaxErrorsT&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::forward<MaxErrorsT>(value); }
+    template<typename MaxErrorsT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithMaxErrors(MaxErrorsT&& value) { SetMaxErrors(std::forward<MaxErrorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,37 +182,33 @@ namespace Model
      * maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
-    inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
-    inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfo = value; }
-    inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfo = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+    inline const LoggingInfo& GetLoggingInfo() const { return m_loggingInfo; }
+    template<typename LoggingInfoT = LoggingInfo>
+    void SetLoggingInfo(LoggingInfoT&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::forward<LoggingInfoT>(value); }
+    template<typename LoggingInfoT = LoggingInfo>
+    UpdateMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfoT&& value) { SetLoggingInfo(std::forward<LoggingInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated task name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated task description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,11 +216,9 @@ namespace Model
      * <p>The specification for whether tasks should continue to run after the cutoff
      * time specified in the maintenance windows is reached. </p>
      */
-    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
-    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehavior = value; }
-    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehavior = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+    inline MaintenanceWindowTaskCutoffBehavior GetCutoffBehavior() const { return m_cutoffBehavior; }
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = value; }
+    inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior value) { SetCutoffBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -246,56 +226,70 @@ namespace Model
      * <p>The details for the CloudWatch alarm you applied to your maintenance window
      * task.</p>
      */
-    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
-    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfiguration = value; }
-    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfiguration = std::move(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+    inline const AlarmConfiguration& GetAlarmConfiguration() const { return m_alarmConfiguration; }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    void SetAlarmConfiguration(AlarmConfigurationT&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::forward<AlarmConfigurationT>(value); }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    UpdateMaintenanceWindowTaskResult& WithAlarmConfiguration(AlarmConfigurationT&& value) { SetAlarmConfiguration(std::forward<AlarmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMaintenanceWindowTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMaintenanceWindowTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMaintenanceWindowTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_windowId;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_windowTaskId;
+    bool m_windowTaskIdHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
+    bool m_taskParametersHasBeenSet = false;
 
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
+    bool m_taskInvocationParametersHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
+    bool m_maxErrorsHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
+    bool m_loggingInfoHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior{MaintenanceWindowTaskCutoffBehavior::NOT_SET};
+    bool m_cutoffBehaviorHasBeenSet = false;
 
     AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

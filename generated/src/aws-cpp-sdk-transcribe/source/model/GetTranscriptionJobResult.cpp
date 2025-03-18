@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTranscriptionJobResult::GetTranscriptionJobResult()
-{
-}
-
 GetTranscriptionJobResult::GetTranscriptionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTranscriptionJobResult& GetTranscriptionJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("TranscriptionJob"))
   {
     m_transcriptionJob = jsonValue.GetObject("TranscriptionJob");
-
+    m_transcriptionJobHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

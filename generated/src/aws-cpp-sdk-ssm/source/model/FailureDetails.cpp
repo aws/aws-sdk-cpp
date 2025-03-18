@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-FailureDetails::FailureDetails() : 
-    m_failureStageHasBeenSet(false),
-    m_failureTypeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 FailureDetails::FailureDetails(JsonView jsonValue)
-  : FailureDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailureStage"))
   {
     m_failureStage = jsonValue.GetString("FailureStage");
-
     m_failureStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureType"))
   {
     m_failureType = jsonValue.GetString("FailureType");
-
     m_failureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
@@ -63,7 +51,6 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

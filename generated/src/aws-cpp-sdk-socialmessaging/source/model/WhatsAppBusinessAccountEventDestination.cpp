@@ -18,14 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WhatsAppBusinessAccountEventDestination::WhatsAppBusinessAccountEventDestination() : 
-    m_eventDestinationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 WhatsAppBusinessAccountEventDestination::WhatsAppBusinessAccountEventDestination(JsonView jsonValue)
-  : WhatsAppBusinessAccountEventDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WhatsAppBusinessAccountEventDestination& WhatsAppBusinessAccountEventDestination
   if(jsonValue.ValueExists("eventDestinationArn"))
   {
     m_eventDestinationArn = jsonValue.GetString("eventDestinationArn");
-
     m_eventDestinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ResourceScanSummary
   {
   public:
-    AWS_CLOUDFORMATION_API ResourceScanSummary();
+    AWS_CLOUDFORMATION_API ResourceScanSummary() = default;
     AWS_CLOUDFORMATION_API ResourceScanSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ResourceScanSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
      */
-    inline const Aws::String& GetResourceScanId() const{ return m_resourceScanId; }
+    inline const Aws::String& GetResourceScanId() const { return m_resourceScanId; }
     inline bool ResourceScanIdHasBeenSet() const { return m_resourceScanIdHasBeenSet; }
-    inline void SetResourceScanId(const Aws::String& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = value; }
-    inline void SetResourceScanId(Aws::String&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::move(value); }
-    inline void SetResourceScanId(const char* value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId.assign(value); }
-    inline ResourceScanSummary& WithResourceScanId(const Aws::String& value) { SetResourceScanId(value); return *this;}
-    inline ResourceScanSummary& WithResourceScanId(Aws::String&& value) { SetResourceScanId(std::move(value)); return *this;}
-    inline ResourceScanSummary& WithResourceScanId(const char* value) { SetResourceScanId(value); return *this;}
+    template<typename ResourceScanIdT = Aws::String>
+    void SetResourceScanId(ResourceScanIdT&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::forward<ResourceScanIdT>(value); }
+    template<typename ResourceScanIdT = Aws::String>
+    ResourceScanSummary& WithResourceScanId(ResourceScanIdT&& value) { SetResourceScanId(std::forward<ResourceScanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * scan has expired.</p> </dd> <dt> FAILED </dt> <dd> <p>The resource scan has
      * failed.</p> </dd> </dl>
      */
-    inline const ResourceScanStatus& GetStatus() const{ return m_status; }
+    inline ResourceScanStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceScanStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceScanStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResourceScanSummary& WithStatus(const ResourceScanStatus& value) { SetStatus(value); return *this;}
-    inline ResourceScanSummary& WithStatus(ResourceScanStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceScanStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResourceScanSummary& WithStatus(ResourceScanStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -77,45 +73,43 @@ namespace Model
      * <p>The reason for the resource scan status, providing more information if a
      * failure happened.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ResourceScanSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ResourceScanSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ResourceScanSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ResourceScanSummary& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the resource scan was started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ResourceScanSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ResourceScanSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ResourceScanSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the resource scan was finished.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ResourceScanSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ResourceScanSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ResourceScanSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of the resource scan that has been completed.</p>
      */
-    inline double GetPercentageCompleted() const{ return m_percentageCompleted; }
+    inline double GetPercentageCompleted() const { return m_percentageCompleted; }
     inline bool PercentageCompletedHasBeenSet() const { return m_percentageCompletedHasBeenSet; }
     inline void SetPercentageCompleted(double value) { m_percentageCompletedHasBeenSet = true; m_percentageCompleted = value; }
     inline ResourceScanSummary& WithPercentageCompleted(double value) { SetPercentageCompleted(value); return *this;}
@@ -125,19 +119,19 @@ namespace Model
     Aws::String m_resourceScanId;
     bool m_resourceScanIdHasBeenSet = false;
 
-    ResourceScanStatus m_status;
+    ResourceScanStatus m_status{ResourceScanStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    double m_percentageCompleted;
+    double m_percentageCompleted{0.0};
     bool m_percentageCompletedHasBeenSet = false;
   };
 

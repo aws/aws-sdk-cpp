@@ -41,7 +41,7 @@ namespace Model
   class MediaInsightsPipelineConfigurationElement
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API MediaInsightsPipelineConfigurationElement();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaInsightsPipelineConfigurationElement() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API MediaInsightsPipelineConfigurationElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API MediaInsightsPipelineConfigurationElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
     /**
      * <p>The element type.</p>
      */
-    inline const MediaInsightsPipelineConfigurationElementType& GetType() const{ return m_type; }
+    inline MediaInsightsPipelineConfigurationElementType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MediaInsightsPipelineConfigurationElementType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MediaInsightsPipelineConfigurationElementType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithType(const MediaInsightsPipelineConfigurationElementType& value) { SetType(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithType(MediaInsightsPipelineConfigurationElementType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MediaInsightsPipelineConfigurationElementType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MediaInsightsPipelineConfigurationElement& WithType(MediaInsightsPipelineConfigurationElementType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p>The analytics configuration settings for transcribing audio in a media
      * insights pipeline configuration element.</p>
      */
-    inline const AmazonTranscribeCallAnalyticsProcessorConfiguration& GetAmazonTranscribeCallAnalyticsProcessorConfiguration() const{ return m_amazonTranscribeCallAnalyticsProcessorConfiguration; }
+    inline const AmazonTranscribeCallAnalyticsProcessorConfiguration& GetAmazonTranscribeCallAnalyticsProcessorConfiguration() const { return m_amazonTranscribeCallAnalyticsProcessorConfiguration; }
     inline bool AmazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet() const { return m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet; }
-    inline void SetAmazonTranscribeCallAnalyticsProcessorConfiguration(const AmazonTranscribeCallAnalyticsProcessorConfiguration& value) { m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet = true; m_amazonTranscribeCallAnalyticsProcessorConfiguration = value; }
-    inline void SetAmazonTranscribeCallAnalyticsProcessorConfiguration(AmazonTranscribeCallAnalyticsProcessorConfiguration&& value) { m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet = true; m_amazonTranscribeCallAnalyticsProcessorConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeCallAnalyticsProcessorConfiguration(const AmazonTranscribeCallAnalyticsProcessorConfiguration& value) { SetAmazonTranscribeCallAnalyticsProcessorConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeCallAnalyticsProcessorConfiguration(AmazonTranscribeCallAnalyticsProcessorConfiguration&& value) { SetAmazonTranscribeCallAnalyticsProcessorConfiguration(std::move(value)); return *this;}
+    template<typename AmazonTranscribeCallAnalyticsProcessorConfigurationT = AmazonTranscribeCallAnalyticsProcessorConfiguration>
+    void SetAmazonTranscribeCallAnalyticsProcessorConfiguration(AmazonTranscribeCallAnalyticsProcessorConfigurationT&& value) { m_amazonTranscribeCallAnalyticsProcessorConfigurationHasBeenSet = true; m_amazonTranscribeCallAnalyticsProcessorConfiguration = std::forward<AmazonTranscribeCallAnalyticsProcessorConfigurationT>(value); }
+    template<typename AmazonTranscribeCallAnalyticsProcessorConfigurationT = AmazonTranscribeCallAnalyticsProcessorConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeCallAnalyticsProcessorConfiguration(AmazonTranscribeCallAnalyticsProcessorConfigurationT&& value) { SetAmazonTranscribeCallAnalyticsProcessorConfiguration(std::forward<AmazonTranscribeCallAnalyticsProcessorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <p>The transcription processor configuration settings in a media insights
      * pipeline configuration element.</p>
      */
-    inline const AmazonTranscribeProcessorConfiguration& GetAmazonTranscribeProcessorConfiguration() const{ return m_amazonTranscribeProcessorConfiguration; }
+    inline const AmazonTranscribeProcessorConfiguration& GetAmazonTranscribeProcessorConfiguration() const { return m_amazonTranscribeProcessorConfiguration; }
     inline bool AmazonTranscribeProcessorConfigurationHasBeenSet() const { return m_amazonTranscribeProcessorConfigurationHasBeenSet; }
-    inline void SetAmazonTranscribeProcessorConfiguration(const AmazonTranscribeProcessorConfiguration& value) { m_amazonTranscribeProcessorConfigurationHasBeenSet = true; m_amazonTranscribeProcessorConfiguration = value; }
-    inline void SetAmazonTranscribeProcessorConfiguration(AmazonTranscribeProcessorConfiguration&& value) { m_amazonTranscribeProcessorConfigurationHasBeenSet = true; m_amazonTranscribeProcessorConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeProcessorConfiguration(const AmazonTranscribeProcessorConfiguration& value) { SetAmazonTranscribeProcessorConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeProcessorConfiguration(AmazonTranscribeProcessorConfiguration&& value) { SetAmazonTranscribeProcessorConfiguration(std::move(value)); return *this;}
+    template<typename AmazonTranscribeProcessorConfigurationT = AmazonTranscribeProcessorConfiguration>
+    void SetAmazonTranscribeProcessorConfiguration(AmazonTranscribeProcessorConfigurationT&& value) { m_amazonTranscribeProcessorConfigurationHasBeenSet = true; m_amazonTranscribeProcessorConfiguration = std::forward<AmazonTranscribeProcessorConfigurationT>(value); }
+    template<typename AmazonTranscribeProcessorConfigurationT = AmazonTranscribeProcessorConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithAmazonTranscribeProcessorConfiguration(AmazonTranscribeProcessorConfigurationT&& value) { SetAmazonTranscribeProcessorConfiguration(std::forward<AmazonTranscribeProcessorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * <p>The configuration settings for the Kinesis Data Stream Sink in a media
      * insights pipeline configuration element.</p>
      */
-    inline const KinesisDataStreamSinkConfiguration& GetKinesisDataStreamSinkConfiguration() const{ return m_kinesisDataStreamSinkConfiguration; }
+    inline const KinesisDataStreamSinkConfiguration& GetKinesisDataStreamSinkConfiguration() const { return m_kinesisDataStreamSinkConfiguration; }
     inline bool KinesisDataStreamSinkConfigurationHasBeenSet() const { return m_kinesisDataStreamSinkConfigurationHasBeenSet; }
-    inline void SetKinesisDataStreamSinkConfiguration(const KinesisDataStreamSinkConfiguration& value) { m_kinesisDataStreamSinkConfigurationHasBeenSet = true; m_kinesisDataStreamSinkConfiguration = value; }
-    inline void SetKinesisDataStreamSinkConfiguration(KinesisDataStreamSinkConfiguration&& value) { m_kinesisDataStreamSinkConfigurationHasBeenSet = true; m_kinesisDataStreamSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithKinesisDataStreamSinkConfiguration(const KinesisDataStreamSinkConfiguration& value) { SetKinesisDataStreamSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithKinesisDataStreamSinkConfiguration(KinesisDataStreamSinkConfiguration&& value) { SetKinesisDataStreamSinkConfiguration(std::move(value)); return *this;}
+    template<typename KinesisDataStreamSinkConfigurationT = KinesisDataStreamSinkConfiguration>
+    void SetKinesisDataStreamSinkConfiguration(KinesisDataStreamSinkConfigurationT&& value) { m_kinesisDataStreamSinkConfigurationHasBeenSet = true; m_kinesisDataStreamSinkConfiguration = std::forward<KinesisDataStreamSinkConfigurationT>(value); }
+    template<typename KinesisDataStreamSinkConfigurationT = KinesisDataStreamSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithKinesisDataStreamSinkConfiguration(KinesisDataStreamSinkConfigurationT&& value) { SetKinesisDataStreamSinkConfiguration(std::forward<KinesisDataStreamSinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +101,12 @@ namespace Model
      * <p>The configuration settings for the Amazon S3 recording bucket in a media
      * insights pipeline configuration element.</p>
      */
-    inline const S3RecordingSinkConfiguration& GetS3RecordingSinkConfiguration() const{ return m_s3RecordingSinkConfiguration; }
+    inline const S3RecordingSinkConfiguration& GetS3RecordingSinkConfiguration() const { return m_s3RecordingSinkConfiguration; }
     inline bool S3RecordingSinkConfigurationHasBeenSet() const { return m_s3RecordingSinkConfigurationHasBeenSet; }
-    inline void SetS3RecordingSinkConfiguration(const S3RecordingSinkConfiguration& value) { m_s3RecordingSinkConfigurationHasBeenSet = true; m_s3RecordingSinkConfiguration = value; }
-    inline void SetS3RecordingSinkConfiguration(S3RecordingSinkConfiguration&& value) { m_s3RecordingSinkConfigurationHasBeenSet = true; m_s3RecordingSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithS3RecordingSinkConfiguration(const S3RecordingSinkConfiguration& value) { SetS3RecordingSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithS3RecordingSinkConfiguration(S3RecordingSinkConfiguration&& value) { SetS3RecordingSinkConfiguration(std::move(value)); return *this;}
+    template<typename S3RecordingSinkConfigurationT = S3RecordingSinkConfiguration>
+    void SetS3RecordingSinkConfiguration(S3RecordingSinkConfigurationT&& value) { m_s3RecordingSinkConfigurationHasBeenSet = true; m_s3RecordingSinkConfiguration = std::forward<S3RecordingSinkConfigurationT>(value); }
+    template<typename S3RecordingSinkConfigurationT = S3RecordingSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithS3RecordingSinkConfiguration(S3RecordingSinkConfigurationT&& value) { SetS3RecordingSinkConfiguration(std::forward<S3RecordingSinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +114,12 @@ namespace Model
      * <p>The voice analytics configuration settings in a media insights pipeline
      * configuration element.</p>
      */
-    inline const VoiceAnalyticsProcessorConfiguration& GetVoiceAnalyticsProcessorConfiguration() const{ return m_voiceAnalyticsProcessorConfiguration; }
+    inline const VoiceAnalyticsProcessorConfiguration& GetVoiceAnalyticsProcessorConfiguration() const { return m_voiceAnalyticsProcessorConfiguration; }
     inline bool VoiceAnalyticsProcessorConfigurationHasBeenSet() const { return m_voiceAnalyticsProcessorConfigurationHasBeenSet; }
-    inline void SetVoiceAnalyticsProcessorConfiguration(const VoiceAnalyticsProcessorConfiguration& value) { m_voiceAnalyticsProcessorConfigurationHasBeenSet = true; m_voiceAnalyticsProcessorConfiguration = value; }
-    inline void SetVoiceAnalyticsProcessorConfiguration(VoiceAnalyticsProcessorConfiguration&& value) { m_voiceAnalyticsProcessorConfigurationHasBeenSet = true; m_voiceAnalyticsProcessorConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithVoiceAnalyticsProcessorConfiguration(const VoiceAnalyticsProcessorConfiguration& value) { SetVoiceAnalyticsProcessorConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithVoiceAnalyticsProcessorConfiguration(VoiceAnalyticsProcessorConfiguration&& value) { SetVoiceAnalyticsProcessorConfiguration(std::move(value)); return *this;}
+    template<typename VoiceAnalyticsProcessorConfigurationT = VoiceAnalyticsProcessorConfiguration>
+    void SetVoiceAnalyticsProcessorConfiguration(VoiceAnalyticsProcessorConfigurationT&& value) { m_voiceAnalyticsProcessorConfigurationHasBeenSet = true; m_voiceAnalyticsProcessorConfiguration = std::forward<VoiceAnalyticsProcessorConfigurationT>(value); }
+    template<typename VoiceAnalyticsProcessorConfigurationT = VoiceAnalyticsProcessorConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithVoiceAnalyticsProcessorConfiguration(VoiceAnalyticsProcessorConfigurationT&& value) { SetVoiceAnalyticsProcessorConfiguration(std::forward<VoiceAnalyticsProcessorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +127,12 @@ namespace Model
      * <p>The configuration settings for the Amazon Web Services Lambda sink in a media
      * insights pipeline configuration element.</p>
      */
-    inline const LambdaFunctionSinkConfiguration& GetLambdaFunctionSinkConfiguration() const{ return m_lambdaFunctionSinkConfiguration; }
+    inline const LambdaFunctionSinkConfiguration& GetLambdaFunctionSinkConfiguration() const { return m_lambdaFunctionSinkConfiguration; }
     inline bool LambdaFunctionSinkConfigurationHasBeenSet() const { return m_lambdaFunctionSinkConfigurationHasBeenSet; }
-    inline void SetLambdaFunctionSinkConfiguration(const LambdaFunctionSinkConfiguration& value) { m_lambdaFunctionSinkConfigurationHasBeenSet = true; m_lambdaFunctionSinkConfiguration = value; }
-    inline void SetLambdaFunctionSinkConfiguration(LambdaFunctionSinkConfiguration&& value) { m_lambdaFunctionSinkConfigurationHasBeenSet = true; m_lambdaFunctionSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithLambdaFunctionSinkConfiguration(const LambdaFunctionSinkConfiguration& value) { SetLambdaFunctionSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithLambdaFunctionSinkConfiguration(LambdaFunctionSinkConfiguration&& value) { SetLambdaFunctionSinkConfiguration(std::move(value)); return *this;}
+    template<typename LambdaFunctionSinkConfigurationT = LambdaFunctionSinkConfiguration>
+    void SetLambdaFunctionSinkConfiguration(LambdaFunctionSinkConfigurationT&& value) { m_lambdaFunctionSinkConfigurationHasBeenSet = true; m_lambdaFunctionSinkConfiguration = std::forward<LambdaFunctionSinkConfigurationT>(value); }
+    template<typename LambdaFunctionSinkConfigurationT = LambdaFunctionSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithLambdaFunctionSinkConfiguration(LambdaFunctionSinkConfigurationT&& value) { SetLambdaFunctionSinkConfiguration(std::forward<LambdaFunctionSinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +140,12 @@ namespace Model
      * <p>The configuration settings for an SQS queue sink in a media insights pipeline
      * configuration element.</p>
      */
-    inline const SqsQueueSinkConfiguration& GetSqsQueueSinkConfiguration() const{ return m_sqsQueueSinkConfiguration; }
+    inline const SqsQueueSinkConfiguration& GetSqsQueueSinkConfiguration() const { return m_sqsQueueSinkConfiguration; }
     inline bool SqsQueueSinkConfigurationHasBeenSet() const { return m_sqsQueueSinkConfigurationHasBeenSet; }
-    inline void SetSqsQueueSinkConfiguration(const SqsQueueSinkConfiguration& value) { m_sqsQueueSinkConfigurationHasBeenSet = true; m_sqsQueueSinkConfiguration = value; }
-    inline void SetSqsQueueSinkConfiguration(SqsQueueSinkConfiguration&& value) { m_sqsQueueSinkConfigurationHasBeenSet = true; m_sqsQueueSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithSqsQueueSinkConfiguration(const SqsQueueSinkConfiguration& value) { SetSqsQueueSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithSqsQueueSinkConfiguration(SqsQueueSinkConfiguration&& value) { SetSqsQueueSinkConfiguration(std::move(value)); return *this;}
+    template<typename SqsQueueSinkConfigurationT = SqsQueueSinkConfiguration>
+    void SetSqsQueueSinkConfiguration(SqsQueueSinkConfigurationT&& value) { m_sqsQueueSinkConfigurationHasBeenSet = true; m_sqsQueueSinkConfiguration = std::forward<SqsQueueSinkConfigurationT>(value); }
+    template<typename SqsQueueSinkConfigurationT = SqsQueueSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithSqsQueueSinkConfiguration(SqsQueueSinkConfigurationT&& value) { SetSqsQueueSinkConfiguration(std::forward<SqsQueueSinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +153,12 @@ namespace Model
      * <p>The configuration settings for an SNS topic sink in a media insights pipeline
      * configuration element.</p>
      */
-    inline const SnsTopicSinkConfiguration& GetSnsTopicSinkConfiguration() const{ return m_snsTopicSinkConfiguration; }
+    inline const SnsTopicSinkConfiguration& GetSnsTopicSinkConfiguration() const { return m_snsTopicSinkConfiguration; }
     inline bool SnsTopicSinkConfigurationHasBeenSet() const { return m_snsTopicSinkConfigurationHasBeenSet; }
-    inline void SetSnsTopicSinkConfiguration(const SnsTopicSinkConfiguration& value) { m_snsTopicSinkConfigurationHasBeenSet = true; m_snsTopicSinkConfiguration = value; }
-    inline void SetSnsTopicSinkConfiguration(SnsTopicSinkConfiguration&& value) { m_snsTopicSinkConfigurationHasBeenSet = true; m_snsTopicSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithSnsTopicSinkConfiguration(const SnsTopicSinkConfiguration& value) { SetSnsTopicSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithSnsTopicSinkConfiguration(SnsTopicSinkConfiguration&& value) { SetSnsTopicSinkConfiguration(std::move(value)); return *this;}
+    template<typename SnsTopicSinkConfigurationT = SnsTopicSinkConfiguration>
+    void SetSnsTopicSinkConfiguration(SnsTopicSinkConfigurationT&& value) { m_snsTopicSinkConfigurationHasBeenSet = true; m_snsTopicSinkConfiguration = std::forward<SnsTopicSinkConfigurationT>(value); }
+    template<typename SnsTopicSinkConfigurationT = SnsTopicSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithSnsTopicSinkConfiguration(SnsTopicSinkConfigurationT&& value) { SetSnsTopicSinkConfiguration(std::forward<SnsTopicSinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,16 +166,16 @@ namespace Model
      * <p>The configuration settings for voice enhancement sink in a media insights
      * pipeline configuration element.</p>
      */
-    inline const VoiceEnhancementSinkConfiguration& GetVoiceEnhancementSinkConfiguration() const{ return m_voiceEnhancementSinkConfiguration; }
+    inline const VoiceEnhancementSinkConfiguration& GetVoiceEnhancementSinkConfiguration() const { return m_voiceEnhancementSinkConfiguration; }
     inline bool VoiceEnhancementSinkConfigurationHasBeenSet() const { return m_voiceEnhancementSinkConfigurationHasBeenSet; }
-    inline void SetVoiceEnhancementSinkConfiguration(const VoiceEnhancementSinkConfiguration& value) { m_voiceEnhancementSinkConfigurationHasBeenSet = true; m_voiceEnhancementSinkConfiguration = value; }
-    inline void SetVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration&& value) { m_voiceEnhancementSinkConfigurationHasBeenSet = true; m_voiceEnhancementSinkConfiguration = std::move(value); }
-    inline MediaInsightsPipelineConfigurationElement& WithVoiceEnhancementSinkConfiguration(const VoiceEnhancementSinkConfiguration& value) { SetVoiceEnhancementSinkConfiguration(value); return *this;}
-    inline MediaInsightsPipelineConfigurationElement& WithVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration&& value) { SetVoiceEnhancementSinkConfiguration(std::move(value)); return *this;}
+    template<typename VoiceEnhancementSinkConfigurationT = VoiceEnhancementSinkConfiguration>
+    void SetVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfigurationT&& value) { m_voiceEnhancementSinkConfigurationHasBeenSet = true; m_voiceEnhancementSinkConfiguration = std::forward<VoiceEnhancementSinkConfigurationT>(value); }
+    template<typename VoiceEnhancementSinkConfigurationT = VoiceEnhancementSinkConfiguration>
+    MediaInsightsPipelineConfigurationElement& WithVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfigurationT&& value) { SetVoiceEnhancementSinkConfiguration(std::forward<VoiceEnhancementSinkConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    MediaInsightsPipelineConfigurationElementType m_type;
+    MediaInsightsPipelineConfigurationElementType m_type{MediaInsightsPipelineConfigurationElementType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     AmazonTranscribeCallAnalyticsProcessorConfiguration m_amazonTranscribeCallAnalyticsProcessorConfiguration;

@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSReadCacheConfiguration::OpenZFSReadCacheConfiguration() : 
-    m_sizingMode(OpenZFSReadCacheSizingMode::NOT_SET),
-    m_sizingModeHasBeenSet(false),
-    m_sizeGiB(0),
-    m_sizeGiBHasBeenSet(false)
-{
-}
-
 OpenZFSReadCacheConfiguration::OpenZFSReadCacheConfiguration(JsonView jsonValue)
-  : OpenZFSReadCacheConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OpenZFSReadCacheConfiguration& OpenZFSReadCacheConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("SizingMode"))
   {
     m_sizingMode = OpenZFSReadCacheSizingModeMapper::GetOpenZFSReadCacheSizingModeForName(jsonValue.GetString("SizingMode"));
-
     m_sizingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeGiB"))
   {
     m_sizeGiB = jsonValue.GetInteger("SizeGiB");
-
     m_sizeGiBHasBeenSet = true;
   }
-
   return *this;
 }
 

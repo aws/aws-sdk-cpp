@@ -21,7 +21,7 @@ namespace Model
   class CreateCidrCollectionRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API CreateCidrCollectionRequest();
+    AWS_ROUTE53_API CreateCidrCollectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>A unique identifier for the account that can be used to reference the
      * collection from other API calls.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCidrCollectionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCidrCollectionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCidrCollectionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCidrCollectionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * the intended outcome will only occur once, retries receive a similar response,
      * and there are no additional edge cases to handle.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline CreateCidrCollectionRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline CreateCidrCollectionRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline CreateCidrCollectionRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    CreateCidrCollectionRequest& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
   private:
 

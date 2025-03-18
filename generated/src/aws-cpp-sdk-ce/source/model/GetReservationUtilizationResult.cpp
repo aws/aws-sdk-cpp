@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReservationUtilizationResult::GetReservationUtilizationResult()
-{
-}
-
 GetReservationUtilizationResult::GetReservationUtilizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetReservationUtilizationResult& GetReservationUtilizationResult::operator =(con
     {
       m_utilizationsByTime.push_back(utilizationsByTimeJsonList[utilizationsByTimeIndex].AsObject());
     }
+    m_utilizationsByTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
+    m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -36,7 +36,7 @@ namespace Model
   class DeleteNetworkAclEntriesAction
   {
   public:
-    AWS_FMS_API DeleteNetworkAclEntriesAction();
+    AWS_FMS_API DeleteNetworkAclEntriesAction() = default;
     AWS_FMS_API DeleteNetworkAclEntriesAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API DeleteNetworkAclEntriesAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,38 @@ namespace Model
     /**
      * <p>Brief description of this remediation action. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DeleteNetworkAclEntriesAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DeleteNetworkAclEntriesAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DeleteNetworkAclEntriesAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DeleteNetworkAclEntriesAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network ACL that's associated with the remediation action.</p>
      */
-    inline const ActionTarget& GetNetworkAclId() const{ return m_networkAclId; }
+    inline const ActionTarget& GetNetworkAclId() const { return m_networkAclId; }
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-    inline void SetNetworkAclId(const ActionTarget& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-    inline void SetNetworkAclId(ActionTarget&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-    inline DeleteNetworkAclEntriesAction& WithNetworkAclId(const ActionTarget& value) { SetNetworkAclId(value); return *this;}
-    inline DeleteNetworkAclEntriesAction& WithNetworkAclId(ActionTarget&& value) { SetNetworkAclId(std::move(value)); return *this;}
+    template<typename NetworkAclIdT = ActionTarget>
+    void SetNetworkAclId(NetworkAclIdT&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::forward<NetworkAclIdT>(value); }
+    template<typename NetworkAclIdT = ActionTarget>
+    DeleteNetworkAclEntriesAction& WithNetworkAclId(NetworkAclIdT&& value) { SetNetworkAclId(std::forward<NetworkAclIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the entries that the remediation action would delete.</p>
      */
-    inline const Aws::Vector<EntryDescription>& GetNetworkAclEntriesToBeDeleted() const{ return m_networkAclEntriesToBeDeleted; }
+    inline const Aws::Vector<EntryDescription>& GetNetworkAclEntriesToBeDeleted() const { return m_networkAclEntriesToBeDeleted; }
     inline bool NetworkAclEntriesToBeDeletedHasBeenSet() const { return m_networkAclEntriesToBeDeletedHasBeenSet; }
-    inline void SetNetworkAclEntriesToBeDeleted(const Aws::Vector<EntryDescription>& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted = value; }
-    inline void SetNetworkAclEntriesToBeDeleted(Aws::Vector<EntryDescription>&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted = std::move(value); }
-    inline DeleteNetworkAclEntriesAction& WithNetworkAclEntriesToBeDeleted(const Aws::Vector<EntryDescription>& value) { SetNetworkAclEntriesToBeDeleted(value); return *this;}
-    inline DeleteNetworkAclEntriesAction& WithNetworkAclEntriesToBeDeleted(Aws::Vector<EntryDescription>&& value) { SetNetworkAclEntriesToBeDeleted(std::move(value)); return *this;}
-    inline DeleteNetworkAclEntriesAction& AddNetworkAclEntriesToBeDeleted(const EntryDescription& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted.push_back(value); return *this; }
-    inline DeleteNetworkAclEntriesAction& AddNetworkAclEntriesToBeDeleted(EntryDescription&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted.push_back(std::move(value)); return *this; }
+    template<typename NetworkAclEntriesToBeDeletedT = Aws::Vector<EntryDescription>>
+    void SetNetworkAclEntriesToBeDeleted(NetworkAclEntriesToBeDeletedT&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted = std::forward<NetworkAclEntriesToBeDeletedT>(value); }
+    template<typename NetworkAclEntriesToBeDeletedT = Aws::Vector<EntryDescription>>
+    DeleteNetworkAclEntriesAction& WithNetworkAclEntriesToBeDeleted(NetworkAclEntriesToBeDeletedT&& value) { SetNetworkAclEntriesToBeDeleted(std::forward<NetworkAclEntriesToBeDeletedT>(value)); return *this;}
+    template<typename NetworkAclEntriesToBeDeletedT = EntryDescription>
+    DeleteNetworkAclEntriesAction& AddNetworkAclEntriesToBeDeleted(NetworkAclEntriesToBeDeletedT&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted.emplace_back(std::forward<NetworkAclEntriesToBeDeletedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,7 +87,7 @@ namespace Model
      * Firewall Manager is unable to perform the action due to a conflict of some
      * kind.</p>
      */
-    inline bool GetFMSCanRemediate() const{ return m_fMSCanRemediate; }
+    inline bool GetFMSCanRemediate() const { return m_fMSCanRemediate; }
     inline bool FMSCanRemediateHasBeenSet() const { return m_fMSCanRemediateHasBeenSet; }
     inline void SetFMSCanRemediate(bool value) { m_fMSCanRemediateHasBeenSet = true; m_fMSCanRemediate = value; }
     inline DeleteNetworkAclEntriesAction& WithFMSCanRemediate(bool value) { SetFMSCanRemediate(value); return *this;}
@@ -105,7 +103,7 @@ namespace Model
     Aws::Vector<EntryDescription> m_networkAclEntriesToBeDeleted;
     bool m_networkAclEntriesToBeDeletedHasBeenSet = false;
 
-    bool m_fMSCanRemediate;
+    bool m_fMSCanRemediate{false};
     bool m_fMSCanRemediateHasBeenSet = false;
   };
 

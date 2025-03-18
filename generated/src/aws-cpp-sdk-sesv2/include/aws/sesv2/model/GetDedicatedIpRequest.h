@@ -25,7 +25,7 @@ namespace Model
   class GetDedicatedIpRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API GetDedicatedIpRequest();
+    AWS_SESV2_API GetDedicatedIpRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * specify has to be a dedicated IP address that's assocaited with your Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetIp() const{ return m_ip; }
+    inline const Aws::String& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-    inline GetDedicatedIpRequest& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-    inline GetDedicatedIpRequest& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-    inline GetDedicatedIpRequest& WithIp(const char* value) { SetIp(value); return *this;}
+    template<typename IpT = Aws::String>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Aws::String>
+    GetDedicatedIpRequest& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
   private:
 

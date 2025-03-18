@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSegmentRequest::CreateSegmentRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSegmentRequest::SerializePayload() const
 {
   JsonValue payload;

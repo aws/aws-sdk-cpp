@@ -18,31 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-DiskSnapshot::DiskSnapshot() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_state(DiskSnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_fromDiskNameHasBeenSet(false),
-    m_fromDiskArnHasBeenSet(false),
-    m_fromInstanceNameHasBeenSet(false),
-    m_fromInstanceArnHasBeenSet(false),
-    m_isFromAutoSnapshot(false),
-    m_isFromAutoSnapshotHasBeenSet(false)
-{
-}
-
 DiskSnapshot::DiskSnapshot(JsonView jsonValue)
-  : DiskSnapshot()
 {
   *this = jsonValue;
 }
@@ -52,45 +28,33 @@ DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -100,63 +64,46 @@ DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
-
     m_sizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = DiskSnapshotStateMapper::GetDiskSnapshotStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progress"))
   {
     m_progress = jsonValue.GetString("progress");
-
     m_progressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromDiskName"))
   {
     m_fromDiskName = jsonValue.GetString("fromDiskName");
-
     m_fromDiskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromDiskArn"))
   {
     m_fromDiskArn = jsonValue.GetString("fromDiskArn");
-
     m_fromDiskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromInstanceName"))
   {
     m_fromInstanceName = jsonValue.GetString("fromInstanceName");
-
     m_fromInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromInstanceArn"))
   {
     m_fromInstanceArn = jsonValue.GetString("fromInstanceArn");
-
     m_fromInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isFromAutoSnapshot"))
   {
     m_isFromAutoSnapshot = jsonValue.GetBool("isFromAutoSnapshot");
-
     m_isFromAutoSnapshotHasBeenSet = true;
   }
-
   return *this;
 }
 

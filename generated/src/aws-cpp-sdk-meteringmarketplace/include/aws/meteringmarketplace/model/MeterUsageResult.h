@@ -27,7 +27,7 @@ namespace Model
   class MeterUsageResult
   {
   public:
-    AWS_MARKETPLACEMETERING_API MeterUsageResult();
+    AWS_MARKETPLACEMETERING_API MeterUsageResult() = default;
     AWS_MARKETPLACEMETERING_API MeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACEMETERING_API MeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Metering record id.</p>
      */
-    inline const Aws::String& GetMeteringRecordId() const{ return m_meteringRecordId; }
-    inline void SetMeteringRecordId(const Aws::String& value) { m_meteringRecordId = value; }
-    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordId = std::move(value); }
-    inline void SetMeteringRecordId(const char* value) { m_meteringRecordId.assign(value); }
-    inline MeterUsageResult& WithMeteringRecordId(const Aws::String& value) { SetMeteringRecordId(value); return *this;}
-    inline MeterUsageResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(std::move(value)); return *this;}
-    inline MeterUsageResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}
+    inline const Aws::String& GetMeteringRecordId() const { return m_meteringRecordId; }
+    template<typename MeteringRecordIdT = Aws::String>
+    void SetMeteringRecordId(MeteringRecordIdT&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = std::forward<MeteringRecordIdT>(value); }
+    template<typename MeteringRecordIdT = Aws::String>
+    MeterUsageResult& WithMeteringRecordId(MeteringRecordIdT&& value) { SetMeteringRecordId(std::forward<MeteringRecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline MeterUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline MeterUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline MeterUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    MeterUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_meteringRecordId;
+    bool m_meteringRecordIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

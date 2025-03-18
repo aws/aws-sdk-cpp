@@ -32,7 +32,7 @@ namespace Model
   class MainframeActionSummary
   {
   public:
-    AWS_APPTEST_API MainframeActionSummary();
+    AWS_APPTEST_API MainframeActionSummary() = default;
     AWS_APPTEST_API MainframeActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API MainframeActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The batch of the mainframe action summary.</p>
      */
-    inline const BatchSummary& GetBatch() const{ return m_batch; }
+    inline const BatchSummary& GetBatch() const { return m_batch; }
     inline bool BatchHasBeenSet() const { return m_batchHasBeenSet; }
-    inline void SetBatch(const BatchSummary& value) { m_batchHasBeenSet = true; m_batch = value; }
-    inline void SetBatch(BatchSummary&& value) { m_batchHasBeenSet = true; m_batch = std::move(value); }
-    inline MainframeActionSummary& WithBatch(const BatchSummary& value) { SetBatch(value); return *this;}
-    inline MainframeActionSummary& WithBatch(BatchSummary&& value) { SetBatch(std::move(value)); return *this;}
+    template<typename BatchT = BatchSummary>
+    void SetBatch(BatchT&& value) { m_batchHasBeenSet = true; m_batch = std::forward<BatchT>(value); }
+    template<typename BatchT = BatchSummary>
+    MainframeActionSummary& WithBatch(BatchT&& value) { SetBatch(std::forward<BatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tn3270 port of the mainframe action summary.</p>
      */
-    inline const TN3270Summary& GetTn3270() const{ return m_tn3270; }
+    inline const TN3270Summary& GetTn3270() const { return m_tn3270; }
     inline bool Tn3270HasBeenSet() const { return m_tn3270HasBeenSet; }
-    inline void SetTn3270(const TN3270Summary& value) { m_tn3270HasBeenSet = true; m_tn3270 = value; }
-    inline void SetTn3270(TN3270Summary&& value) { m_tn3270HasBeenSet = true; m_tn3270 = std::move(value); }
-    inline MainframeActionSummary& WithTn3270(const TN3270Summary& value) { SetTn3270(value); return *this;}
-    inline MainframeActionSummary& WithTn3270(TN3270Summary&& value) { SetTn3270(std::move(value)); return *this;}
+    template<typename Tn3270T = TN3270Summary>
+    void SetTn3270(Tn3270T&& value) { m_tn3270HasBeenSet = true; m_tn3270 = std::forward<Tn3270T>(value); }
+    template<typename Tn3270T = TN3270Summary>
+    MainframeActionSummary& WithTn3270(Tn3270T&& value) { SetTn3270(std::forward<Tn3270T>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSourceSummary::DataSourceSummary() : 
-    m_arnHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 DataSourceSummary::DataSourceSummary(JsonView jsonValue)
-  : DataSourceSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdateRoomRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API UpdateRoomRequest();
+    AWS_CHIME_API UpdateRoomRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline UpdateRoomRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UpdateRoomRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UpdateRoomRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UpdateRoomRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The room ID.</p>
      */
-    inline const Aws::String& GetRoomId() const{ return m_roomId; }
+    inline const Aws::String& GetRoomId() const { return m_roomId; }
     inline bool RoomIdHasBeenSet() const { return m_roomIdHasBeenSet; }
-    inline void SetRoomId(const Aws::String& value) { m_roomIdHasBeenSet = true; m_roomId = value; }
-    inline void SetRoomId(Aws::String&& value) { m_roomIdHasBeenSet = true; m_roomId = std::move(value); }
-    inline void SetRoomId(const char* value) { m_roomIdHasBeenSet = true; m_roomId.assign(value); }
-    inline UpdateRoomRequest& WithRoomId(const Aws::String& value) { SetRoomId(value); return *this;}
-    inline UpdateRoomRequest& WithRoomId(Aws::String&& value) { SetRoomId(std::move(value)); return *this;}
-    inline UpdateRoomRequest& WithRoomId(const char* value) { SetRoomId(value); return *this;}
+    template<typename RoomIdT = Aws::String>
+    void SetRoomId(RoomIdT&& value) { m_roomIdHasBeenSet = true; m_roomId = std::forward<RoomIdT>(value); }
+    template<typename RoomIdT = Aws::String>
+    UpdateRoomRequest& WithRoomId(RoomIdT&& value) { SetRoomId(std::forward<RoomIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The room name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRoomRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRoomRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRoomRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRoomRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

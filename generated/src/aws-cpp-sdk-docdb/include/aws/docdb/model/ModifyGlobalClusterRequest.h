@@ -25,7 +25,7 @@ namespace Model
   class ModifyGlobalClusterRequest : public DocDBRequest
   {
   public:
-    AWS_DOCDB_API ModifyGlobalClusterRequest();
+    AWS_DOCDB_API ModifyGlobalClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing global cluster.</p> </li> </ul>
      */
-    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-    inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-    inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-    inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p>
      * </li> </ul> <p>Example: <code>my-cluster2</code> </p>
      */
-    inline const Aws::String& GetNewGlobalClusterIdentifier() const{ return m_newGlobalClusterIdentifier; }
+    inline const Aws::String& GetNewGlobalClusterIdentifier() const { return m_newGlobalClusterIdentifier; }
     inline bool NewGlobalClusterIdentifierHasBeenSet() const { return m_newGlobalClusterIdentifierHasBeenSet; }
-    inline void SetNewGlobalClusterIdentifier(const Aws::String& value) { m_newGlobalClusterIdentifierHasBeenSet = true; m_newGlobalClusterIdentifier = value; }
-    inline void SetNewGlobalClusterIdentifier(Aws::String&& value) { m_newGlobalClusterIdentifierHasBeenSet = true; m_newGlobalClusterIdentifier = std::move(value); }
-    inline void SetNewGlobalClusterIdentifier(const char* value) { m_newGlobalClusterIdentifierHasBeenSet = true; m_newGlobalClusterIdentifier.assign(value); }
-    inline ModifyGlobalClusterRequest& WithNewGlobalClusterIdentifier(const Aws::String& value) { SetNewGlobalClusterIdentifier(value); return *this;}
-    inline ModifyGlobalClusterRequest& WithNewGlobalClusterIdentifier(Aws::String&& value) { SetNewGlobalClusterIdentifier(std::move(value)); return *this;}
-    inline ModifyGlobalClusterRequest& WithNewGlobalClusterIdentifier(const char* value) { SetNewGlobalClusterIdentifier(value); return *this;}
+    template<typename NewGlobalClusterIdentifierT = Aws::String>
+    void SetNewGlobalClusterIdentifier(NewGlobalClusterIdentifierT&& value) { m_newGlobalClusterIdentifierHasBeenSet = true; m_newGlobalClusterIdentifier = std::forward<NewGlobalClusterIdentifierT>(value); }
+    template<typename NewGlobalClusterIdentifierT = Aws::String>
+    ModifyGlobalClusterRequest& WithNewGlobalClusterIdentifier(NewGlobalClusterIdentifierT&& value) { SetNewGlobalClusterIdentifier(std::forward<NewGlobalClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * <p>Indicates if the global cluster has deletion protection enabled. The global
      * cluster can't be deleted when deletion protection is enabled. </p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline ModifyGlobalClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     Aws::String m_newGlobalClusterIdentifier;
     bool m_newGlobalClusterIdentifierHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
   };
 

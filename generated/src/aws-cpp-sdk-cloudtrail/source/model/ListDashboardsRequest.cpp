@@ -12,16 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDashboardsRequest::ListDashboardsRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_type(DashboardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDashboardsRequest::SerializePayload() const
 {
   JsonValue payload;

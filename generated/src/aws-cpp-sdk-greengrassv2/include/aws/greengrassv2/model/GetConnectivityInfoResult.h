@@ -29,7 +29,7 @@ namespace Model
   class GetConnectivityInfoResult
   {
   public:
-    AWS_GREENGRASSV2_API GetConnectivityInfoResult();
+    AWS_GREENGRASSV2_API GetConnectivityInfoResult() = default;
     AWS_GREENGRASSV2_API GetConnectivityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API GetConnectivityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The connectivity information for the core device.</p>
      */
-    inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const{ return m_connectivityInfo; }
-    inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfo = value; }
-    inline void SetConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { m_connectivityInfo = std::move(value); }
-    inline GetConnectivityInfoResult& WithConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { SetConnectivityInfo(value); return *this;}
-    inline GetConnectivityInfoResult& WithConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { SetConnectivityInfo(std::move(value)); return *this;}
-    inline GetConnectivityInfoResult& AddConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfo.push_back(value); return *this; }
-    inline GetConnectivityInfoResult& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfo.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const { return m_connectivityInfo; }
+    template<typename ConnectivityInfoT = Aws::Vector<ConnectivityInfo>>
+    void SetConnectivityInfo(ConnectivityInfoT&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::forward<ConnectivityInfoT>(value); }
+    template<typename ConnectivityInfoT = Aws::Vector<ConnectivityInfo>>
+    GetConnectivityInfoResult& WithConnectivityInfo(ConnectivityInfoT&& value) { SetConnectivityInfo(std::forward<ConnectivityInfoT>(value)); return *this;}
+    template<typename ConnectivityInfoT = ConnectivityInfo>
+    GetConnectivityInfoResult& AddConnectivityInfo(ConnectivityInfoT&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.emplace_back(std::forward<ConnectivityInfoT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A message about the connectivity information request.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline GetConnectivityInfoResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline GetConnectivityInfoResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline GetConnectivityInfoResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    GetConnectivityInfoResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConnectivityInfoResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConnectivityInfoResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConnectivityInfoResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConnectivityInfoResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;
+    bool m_connectivityInfoHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

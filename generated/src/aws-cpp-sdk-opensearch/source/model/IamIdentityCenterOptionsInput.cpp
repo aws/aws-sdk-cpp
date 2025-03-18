@@ -18,16 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-IamIdentityCenterOptionsInput::IamIdentityCenterOptionsInput() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_iamIdentityCenterInstanceArnHasBeenSet(false),
-    m_iamRoleForIdentityCenterApplicationArnHasBeenSet(false)
-{
-}
-
 IamIdentityCenterOptionsInput::IamIdentityCenterOptionsInput(JsonView jsonValue)
-  : IamIdentityCenterOptionsInput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ IamIdentityCenterOptionsInput& IamIdentityCenterOptionsInput::operator =(JsonVie
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamIdentityCenterInstanceArn"))
   {
     m_iamIdentityCenterInstanceArn = jsonValue.GetString("iamIdentityCenterInstanceArn");
-
     m_iamIdentityCenterInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRoleForIdentityCenterApplicationArn"))
   {
     m_iamRoleForIdentityCenterApplicationArn = jsonValue.GetString("iamRoleForIdentityCenterApplicationArn");
-
     m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

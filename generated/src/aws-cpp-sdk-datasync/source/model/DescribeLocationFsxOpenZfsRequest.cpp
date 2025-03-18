@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLocationFsxOpenZfsRequest::DescribeLocationFsxOpenZfsRequest() : 
-    m_locationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLocationFsxOpenZfsRequest::SerializePayload() const
 {
   JsonValue payload;

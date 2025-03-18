@@ -12,15 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetRiskConfigurationRequest::SetRiskConfigurationRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_compromisedCredentialsRiskConfigurationHasBeenSet(false),
-    m_accountTakeoverRiskConfigurationHasBeenSet(false),
-    m_riskExceptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String SetRiskConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

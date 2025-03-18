@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPluginRequest::GetPluginRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_pluginIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPluginRequest::SerializePayload() const
 {
   return {};

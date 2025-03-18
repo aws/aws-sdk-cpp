@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AmazonRedshiftAdvancedOption::AmazonRedshiftAdvancedOption() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AmazonRedshiftAdvancedOption::AmazonRedshiftAdvancedOption(JsonView jsonValue)
-  : AmazonRedshiftAdvancedOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AmazonRedshiftAdvancedOption& AmazonRedshiftAdvancedOption::operator =(JsonView 
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

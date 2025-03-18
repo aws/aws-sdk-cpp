@@ -18,29 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-BaiduMessage::BaiduMessage() : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_iconReferenceHasBeenSet(false),
-    m_imageIconUrlHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_smallImageIconUrlHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 BaiduMessage::BaiduMessage(JsonView jsonValue)
-  : BaiduMessage()
 {
   *this = jsonValue;
 }
@@ -50,17 +28,13 @@ BaiduMessage& BaiduMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionMapper::GetActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -70,56 +44,41 @@ BaiduMessage& BaiduMessage::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IconReference"))
   {
     m_iconReference = jsonValue.GetString("IconReference");
-
     m_iconReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageIconUrl"))
   {
     m_imageIconUrl = jsonValue.GetString("ImageIconUrl");
-
     m_imageIconUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUrl"))
   {
     m_imageUrl = jsonValue.GetString("ImageUrl");
-
     m_imageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawContent"))
   {
     m_rawContent = jsonValue.GetString("RawContent");
-
     m_rawContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SilentPush"))
   {
     m_silentPush = jsonValue.GetBool("SilentPush");
-
     m_silentPushHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallImageIconUrl"))
   {
     m_smallImageIconUrl = jsonValue.GetString("SmallImageIconUrl");
-
     m_smallImageIconUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sound"))
   {
     m_sound = jsonValue.GetString("Sound");
-
     m_soundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -136,28 +95,21 @@ BaiduMessage& BaiduMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeToLive"))
   {
     m_timeToLive = jsonValue.GetInteger("TimeToLive");
-
     m_timeToLiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

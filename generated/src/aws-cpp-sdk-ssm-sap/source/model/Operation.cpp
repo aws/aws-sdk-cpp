@@ -18,24 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-Operation::Operation() : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 Operation::Operation(JsonView jsonValue)
-  : Operation()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ Operation& Operation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
@@ -79,49 +54,36 @@ Operation& Operation::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

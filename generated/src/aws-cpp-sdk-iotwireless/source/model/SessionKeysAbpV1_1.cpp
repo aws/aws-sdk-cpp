@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SessionKeysAbpV1_1::SessionKeysAbpV1_1() : 
-    m_fNwkSIntKeyHasBeenSet(false),
-    m_sNwkSIntKeyHasBeenSet(false),
-    m_nwkSEncKeyHasBeenSet(false),
-    m_appSKeyHasBeenSet(false)
-{
-}
-
 SessionKeysAbpV1_1::SessionKeysAbpV1_1(JsonView jsonValue)
-  : SessionKeysAbpV1_1()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SessionKeysAbpV1_1& SessionKeysAbpV1_1::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FNwkSIntKey"))
   {
     m_fNwkSIntKey = jsonValue.GetString("FNwkSIntKey");
-
     m_fNwkSIntKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNwkSIntKey"))
   {
     m_sNwkSIntKey = jsonValue.GetString("SNwkSIntKey");
-
     m_sNwkSIntKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NwkSEncKey"))
   {
     m_nwkSEncKey = jsonValue.GetString("NwkSEncKey");
-
     m_nwkSEncKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppSKey"))
   {
     m_appSKey = jsonValue.GetString("AppSKey");
-
     m_appSKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

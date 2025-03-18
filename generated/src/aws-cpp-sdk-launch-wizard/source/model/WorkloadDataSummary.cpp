@@ -18,14 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-WorkloadDataSummary::WorkloadDataSummary() : 
-    m_displayNameHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
-{
-}
-
 WorkloadDataSummary::WorkloadDataSummary(JsonView jsonValue)
-  : WorkloadDataSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WorkloadDataSummary& WorkloadDataSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workloadName"))
   {
     m_workloadName = jsonValue.GetString("workloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   return *this;
 }
 

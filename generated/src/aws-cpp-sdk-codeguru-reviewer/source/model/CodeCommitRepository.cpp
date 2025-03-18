@@ -18,13 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-CodeCommitRepository::CodeCommitRepository() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 CodeCommitRepository::CodeCommitRepository(JsonView jsonValue)
-  : CodeCommitRepository()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CodeCommitRepository& CodeCommitRepository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

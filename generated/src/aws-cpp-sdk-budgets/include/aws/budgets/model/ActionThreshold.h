@@ -31,7 +31,7 @@ namespace Model
   class ActionThreshold
   {
   public:
-    AWS_BUDGETS_API ActionThreshold();
+    AWS_BUDGETS_API ActionThreshold() = default;
     AWS_BUDGETS_API ActionThreshold(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API ActionThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     
-    inline double GetActionThresholdValue() const{ return m_actionThresholdValue; }
+    inline double GetActionThresholdValue() const { return m_actionThresholdValue; }
     inline bool ActionThresholdValueHasBeenSet() const { return m_actionThresholdValueHasBeenSet; }
     inline void SetActionThresholdValue(double value) { m_actionThresholdValueHasBeenSet = true; m_actionThresholdValue = value; }
     inline ActionThreshold& WithActionThresholdValue(double value) { SetActionThresholdValue(value); return *this;}
@@ -47,19 +47,17 @@ namespace Model
 
     ///@{
     
-    inline const ThresholdType& GetActionThresholdType() const{ return m_actionThresholdType; }
+    inline ThresholdType GetActionThresholdType() const { return m_actionThresholdType; }
     inline bool ActionThresholdTypeHasBeenSet() const { return m_actionThresholdTypeHasBeenSet; }
-    inline void SetActionThresholdType(const ThresholdType& value) { m_actionThresholdTypeHasBeenSet = true; m_actionThresholdType = value; }
-    inline void SetActionThresholdType(ThresholdType&& value) { m_actionThresholdTypeHasBeenSet = true; m_actionThresholdType = std::move(value); }
-    inline ActionThreshold& WithActionThresholdType(const ThresholdType& value) { SetActionThresholdType(value); return *this;}
-    inline ActionThreshold& WithActionThresholdType(ThresholdType&& value) { SetActionThresholdType(std::move(value)); return *this;}
+    inline void SetActionThresholdType(ThresholdType value) { m_actionThresholdTypeHasBeenSet = true; m_actionThresholdType = value; }
+    inline ActionThreshold& WithActionThresholdType(ThresholdType value) { SetActionThresholdType(value); return *this;}
     ///@}
   private:
 
-    double m_actionThresholdValue;
+    double m_actionThresholdValue{0.0};
     bool m_actionThresholdValueHasBeenSet = false;
 
-    ThresholdType m_actionThresholdType;
+    ThresholdType m_actionThresholdType{ThresholdType::NOT_SET};
     bool m_actionThresholdTypeHasBeenSet = false;
   };
 

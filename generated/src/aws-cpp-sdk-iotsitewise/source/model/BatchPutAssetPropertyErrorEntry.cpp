@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchPutAssetPropertyErrorEntry::BatchPutAssetPropertyErrorEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 BatchPutAssetPropertyErrorEntry::BatchPutAssetPropertyErrorEntry(JsonView jsonValue)
-  : BatchPutAssetPropertyErrorEntry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BatchPutAssetPropertyErrorEntry& BatchPutAssetPropertyErrorEntry::operator =(Jso
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -48,7 +39,6 @@ BatchPutAssetPropertyErrorEntry& BatchPutAssetPropertyErrorEntry::operator =(Jso
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

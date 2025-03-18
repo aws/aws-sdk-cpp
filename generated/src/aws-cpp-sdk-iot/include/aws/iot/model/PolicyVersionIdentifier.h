@@ -32,7 +32,7 @@ namespace Model
   class PolicyVersionIdentifier
   {
   public:
-    AWS_IOT_API PolicyVersionIdentifier();
+    AWS_IOT_API PolicyVersionIdentifier() = default;
     AWS_IOT_API PolicyVersionIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API PolicyVersionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PolicyVersionIdentifier& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PolicyVersionIdentifier& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PolicyVersionIdentifier& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PolicyVersionIdentifier& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the version of the policy associated with the resource.</p>
      */
-    inline const Aws::String& GetPolicyVersionId() const{ return m_policyVersionId; }
+    inline const Aws::String& GetPolicyVersionId() const { return m_policyVersionId; }
     inline bool PolicyVersionIdHasBeenSet() const { return m_policyVersionIdHasBeenSet; }
-    inline void SetPolicyVersionId(const Aws::String& value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = value; }
-    inline void SetPolicyVersionId(Aws::String&& value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = std::move(value); }
-    inline void SetPolicyVersionId(const char* value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId.assign(value); }
-    inline PolicyVersionIdentifier& WithPolicyVersionId(const Aws::String& value) { SetPolicyVersionId(value); return *this;}
-    inline PolicyVersionIdentifier& WithPolicyVersionId(Aws::String&& value) { SetPolicyVersionId(std::move(value)); return *this;}
-    inline PolicyVersionIdentifier& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
+    template<typename PolicyVersionIdT = Aws::String>
+    void SetPolicyVersionId(PolicyVersionIdT&& value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = std::forward<PolicyVersionIdT>(value); }
+    template<typename PolicyVersionIdT = Aws::String>
+    PolicyVersionIdentifier& WithPolicyVersionId(PolicyVersionIdT&& value) { SetPolicyVersionId(std::forward<PolicyVersionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class UpdateAssetFilterResult
   {
   public:
-    AWS_DATAZONE_API UpdateAssetFilterResult();
+    AWS_DATAZONE_API UpdateAssetFilterResult() = default;
     AWS_DATAZONE_API UpdateAssetFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API UpdateAssetFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,88 +40,79 @@ namespace Model
     /**
      * <p>The ID of the data asset.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
-    inline void SetAssetId(const Aws::String& value) { m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetId.assign(value); }
-    inline UpdateAssetFilterResult& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline UpdateAssetFilterResult& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    UpdateAssetFilterResult& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the asset filter.</p>
      */
-    inline const AssetFilterConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const AssetFilterConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(AssetFilterConfiguration&& value) { m_configuration = std::move(value); }
-    inline UpdateAssetFilterResult& WithConfiguration(const AssetFilterConfiguration& value) { SetConfiguration(value); return *this;}
-    inline UpdateAssetFilterResult& WithConfiguration(AssetFilterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const AssetFilterConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = AssetFilterConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AssetFilterConfiguration>
+    UpdateAssetFilterResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the asset filter was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateAssetFilterResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateAssetFilterResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateAssetFilterResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the asset filter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateAssetFilterResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAssetFilterResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAssetFilterResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where the asset filter was created.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline UpdateAssetFilterResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline UpdateAssetFilterResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    UpdateAssetFilterResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column names of the asset filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEffectiveColumnNames() const{ return m_effectiveColumnNames; }
-    inline void SetEffectiveColumnNames(const Aws::Vector<Aws::String>& value) { m_effectiveColumnNames = value; }
-    inline void SetEffectiveColumnNames(Aws::Vector<Aws::String>&& value) { m_effectiveColumnNames = std::move(value); }
-    inline UpdateAssetFilterResult& WithEffectiveColumnNames(const Aws::Vector<Aws::String>& value) { SetEffectiveColumnNames(value); return *this;}
-    inline UpdateAssetFilterResult& WithEffectiveColumnNames(Aws::Vector<Aws::String>&& value) { SetEffectiveColumnNames(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& AddEffectiveColumnNames(const Aws::String& value) { m_effectiveColumnNames.push_back(value); return *this; }
-    inline UpdateAssetFilterResult& AddEffectiveColumnNames(Aws::String&& value) { m_effectiveColumnNames.push_back(std::move(value)); return *this; }
-    inline UpdateAssetFilterResult& AddEffectiveColumnNames(const char* value) { m_effectiveColumnNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetEffectiveColumnNames() const { return m_effectiveColumnNames; }
+    template<typename EffectiveColumnNamesT = Aws::Vector<Aws::String>>
+    void SetEffectiveColumnNames(EffectiveColumnNamesT&& value) { m_effectiveColumnNamesHasBeenSet = true; m_effectiveColumnNames = std::forward<EffectiveColumnNamesT>(value); }
+    template<typename EffectiveColumnNamesT = Aws::Vector<Aws::String>>
+    UpdateAssetFilterResult& WithEffectiveColumnNames(EffectiveColumnNamesT&& value) { SetEffectiveColumnNames(std::forward<EffectiveColumnNamesT>(value)); return *this;}
+    template<typename EffectiveColumnNamesT = Aws::String>
+    UpdateAssetFilterResult& AddEffectiveColumnNames(EffectiveColumnNamesT&& value) { m_effectiveColumnNamesHasBeenSet = true; m_effectiveColumnNames.emplace_back(std::forward<EffectiveColumnNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The row filter of the asset filter.</p>
      */
-    inline const Aws::String& GetEffectiveRowFilter() const{ return m_effectiveRowFilter; }
-    inline void SetEffectiveRowFilter(const Aws::String& value) { m_effectiveRowFilter = value; }
-    inline void SetEffectiveRowFilter(Aws::String&& value) { m_effectiveRowFilter = std::move(value); }
-    inline void SetEffectiveRowFilter(const char* value) { m_effectiveRowFilter.assign(value); }
-    inline UpdateAssetFilterResult& WithEffectiveRowFilter(const Aws::String& value) { SetEffectiveRowFilter(value); return *this;}
-    inline UpdateAssetFilterResult& WithEffectiveRowFilter(Aws::String&& value) { SetEffectiveRowFilter(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithEffectiveRowFilter(const char* value) { SetEffectiveRowFilter(value); return *this;}
+    inline const Aws::String& GetEffectiveRowFilter() const { return m_effectiveRowFilter; }
+    template<typename EffectiveRowFilterT = Aws::String>
+    void SetEffectiveRowFilter(EffectiveRowFilterT&& value) { m_effectiveRowFilterHasBeenSet = true; m_effectiveRowFilter = std::forward<EffectiveRowFilterT>(value); }
+    template<typename EffectiveRowFilterT = Aws::String>
+    UpdateAssetFilterResult& WithEffectiveRowFilter(EffectiveRowFilterT&& value) { SetEffectiveRowFilter(std::forward<EffectiveRowFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,87 +120,89 @@ namespace Model
      * <p>The error message that is displayed if the action is not completed
      * successfully.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline UpdateAssetFilterResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UpdateAssetFilterResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UpdateAssetFilterResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset filter.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateAssetFilterResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateAssetFilterResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateAssetFilterResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the asset filter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateAssetFilterResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAssetFilterResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAssetFilterResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the asset filter.</p>
      */
-    inline const FilterStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const FilterStatus& value) { m_status = value; }
-    inline void SetStatus(FilterStatus&& value) { m_status = std::move(value); }
-    inline UpdateAssetFilterResult& WithStatus(const FilterStatus& value) { SetStatus(value); return *this;}
-    inline UpdateAssetFilterResult& WithStatus(FilterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline FilterStatus GetStatus() const { return m_status; }
+    inline void SetStatus(FilterStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateAssetFilterResult& WithStatus(FilterStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAssetFilterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAssetFilterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAssetFilterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAssetFilterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
 
     AssetFilterConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_effectiveColumnNames;
+    bool m_effectiveColumnNamesHasBeenSet = false;
 
     Aws::String m_effectiveRowFilter;
+    bool m_effectiveRowFilterHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    FilterStatus m_status;
+    FilterStatus m_status{FilterStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

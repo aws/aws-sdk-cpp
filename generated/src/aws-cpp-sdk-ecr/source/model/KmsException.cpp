@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-KmsException::KmsException() : 
-    m_messageHasBeenSet(false),
-    m_kmsErrorHasBeenSet(false)
-{
-}
-
 KmsException::KmsException(JsonView jsonValue)
-  : KmsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KmsException& KmsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsError"))
   {
     m_kmsError = jsonValue.GetString("kmsError");
-
     m_kmsErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

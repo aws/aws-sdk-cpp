@@ -31,7 +31,7 @@ namespace Model
   class WorkflowExecution
   {
   public:
-    AWS_SWF_API WorkflowExecution();
+    AWS_SWF_API WorkflowExecution() = default;
     AWS_SWF_API WorkflowExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline WorkflowExecution& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline WorkflowExecution& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline WorkflowExecution& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    WorkflowExecution& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline WorkflowExecution& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline WorkflowExecution& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline WorkflowExecution& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    WorkflowExecution& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-InsightStatus::InsightStatus() : 
-    m_status(InsightStatusValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InsightStatus::InsightStatus(JsonView jsonValue)
-  : InsightStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InsightStatus& InsightStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = InsightStatusValueMapper::GetInsightStatusValueForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

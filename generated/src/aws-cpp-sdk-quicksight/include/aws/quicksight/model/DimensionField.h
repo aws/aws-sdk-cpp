@@ -33,7 +33,7 @@ namespace Model
   class DimensionField
   {
   public:
-    AWS_QUICKSIGHT_API DimensionField();
+    AWS_QUICKSIGHT_API DimensionField() = default;
     AWS_QUICKSIGHT_API DimensionField(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>The dimension type field with numerical type columns.</p>
      */
-    inline const NumericalDimensionField& GetNumericalDimensionField() const{ return m_numericalDimensionField; }
+    inline const NumericalDimensionField& GetNumericalDimensionField() const { return m_numericalDimensionField; }
     inline bool NumericalDimensionFieldHasBeenSet() const { return m_numericalDimensionFieldHasBeenSet; }
-    inline void SetNumericalDimensionField(const NumericalDimensionField& value) { m_numericalDimensionFieldHasBeenSet = true; m_numericalDimensionField = value; }
-    inline void SetNumericalDimensionField(NumericalDimensionField&& value) { m_numericalDimensionFieldHasBeenSet = true; m_numericalDimensionField = std::move(value); }
-    inline DimensionField& WithNumericalDimensionField(const NumericalDimensionField& value) { SetNumericalDimensionField(value); return *this;}
-    inline DimensionField& WithNumericalDimensionField(NumericalDimensionField&& value) { SetNumericalDimensionField(std::move(value)); return *this;}
+    template<typename NumericalDimensionFieldT = NumericalDimensionField>
+    void SetNumericalDimensionField(NumericalDimensionFieldT&& value) { m_numericalDimensionFieldHasBeenSet = true; m_numericalDimensionField = std::forward<NumericalDimensionFieldT>(value); }
+    template<typename NumericalDimensionFieldT = NumericalDimensionField>
+    DimensionField& WithNumericalDimensionField(NumericalDimensionFieldT&& value) { SetNumericalDimensionField(std::forward<NumericalDimensionFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimension type field with categorical type columns.</p>
      */
-    inline const CategoricalDimensionField& GetCategoricalDimensionField() const{ return m_categoricalDimensionField; }
+    inline const CategoricalDimensionField& GetCategoricalDimensionField() const { return m_categoricalDimensionField; }
     inline bool CategoricalDimensionFieldHasBeenSet() const { return m_categoricalDimensionFieldHasBeenSet; }
-    inline void SetCategoricalDimensionField(const CategoricalDimensionField& value) { m_categoricalDimensionFieldHasBeenSet = true; m_categoricalDimensionField = value; }
-    inline void SetCategoricalDimensionField(CategoricalDimensionField&& value) { m_categoricalDimensionFieldHasBeenSet = true; m_categoricalDimensionField = std::move(value); }
-    inline DimensionField& WithCategoricalDimensionField(const CategoricalDimensionField& value) { SetCategoricalDimensionField(value); return *this;}
-    inline DimensionField& WithCategoricalDimensionField(CategoricalDimensionField&& value) { SetCategoricalDimensionField(std::move(value)); return *this;}
+    template<typename CategoricalDimensionFieldT = CategoricalDimensionField>
+    void SetCategoricalDimensionField(CategoricalDimensionFieldT&& value) { m_categoricalDimensionFieldHasBeenSet = true; m_categoricalDimensionField = std::forward<CategoricalDimensionFieldT>(value); }
+    template<typename CategoricalDimensionFieldT = CategoricalDimensionField>
+    DimensionField& WithCategoricalDimensionField(CategoricalDimensionFieldT&& value) { SetCategoricalDimensionField(std::forward<CategoricalDimensionFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimension type field with date type columns.</p>
      */
-    inline const DateDimensionField& GetDateDimensionField() const{ return m_dateDimensionField; }
+    inline const DateDimensionField& GetDateDimensionField() const { return m_dateDimensionField; }
     inline bool DateDimensionFieldHasBeenSet() const { return m_dateDimensionFieldHasBeenSet; }
-    inline void SetDateDimensionField(const DateDimensionField& value) { m_dateDimensionFieldHasBeenSet = true; m_dateDimensionField = value; }
-    inline void SetDateDimensionField(DateDimensionField&& value) { m_dateDimensionFieldHasBeenSet = true; m_dateDimensionField = std::move(value); }
-    inline DimensionField& WithDateDimensionField(const DateDimensionField& value) { SetDateDimensionField(value); return *this;}
-    inline DimensionField& WithDateDimensionField(DateDimensionField&& value) { SetDateDimensionField(std::move(value)); return *this;}
+    template<typename DateDimensionFieldT = DateDimensionField>
+    void SetDateDimensionField(DateDimensionFieldT&& value) { m_dateDimensionFieldHasBeenSet = true; m_dateDimensionField = std::forward<DateDimensionFieldT>(value); }
+    template<typename DateDimensionFieldT = DateDimensionField>
+    DimensionField& WithDateDimensionField(DateDimensionFieldT&& value) { SetDateDimensionField(std::forward<DateDimensionFieldT>(value)); return *this;}
     ///@}
   private:
 

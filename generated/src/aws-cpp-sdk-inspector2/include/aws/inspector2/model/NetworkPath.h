@@ -33,7 +33,7 @@ namespace Model
   class NetworkPath
   {
   public:
-    AWS_INSPECTOR2_API NetworkPath();
+    AWS_INSPECTOR2_API NetworkPath() = default;
     AWS_INSPECTOR2_API NetworkPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API NetworkPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The details on the steps in the network path.</p>
      */
-    inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<Step>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline NetworkPath& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-    inline NetworkPath& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-    inline NetworkPath& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline NetworkPath& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<Step>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<Step>>
+    NetworkPath& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = Step>
+    NetworkPath& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
   private:
 

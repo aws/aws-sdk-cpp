@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptInboundConnectionRequest::AcceptInboundConnectionRequest() : 
-    m_connectionIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptInboundConnectionRequest::SerializePayload() const
 {
   return {};

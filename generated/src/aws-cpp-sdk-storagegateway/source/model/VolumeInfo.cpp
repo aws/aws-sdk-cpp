@@ -18,20 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-VolumeInfo::VolumeInfo() : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeAttachmentStatusHasBeenSet(false)
-{
-}
-
 VolumeInfo::VolumeInfo(JsonView jsonValue)
-  : VolumeInfo()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ VolumeInfo& VolumeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
     m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInBytes"))
   {
     m_volumeSizeInBytes = jsonValue.GetInt64("VolumeSizeInBytes");
-
     m_volumeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeAttachmentStatus"))
   {
     m_volumeAttachmentStatus = jsonValue.GetString("VolumeAttachmentStatus");
-
     m_volumeAttachmentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

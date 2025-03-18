@@ -12,11 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterApplicationRequest::DeregisterApplicationRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

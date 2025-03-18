@@ -18,34 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpnConnectionOptionsTunnelOptionsDetails::AwsEc2VpnConnectionOptionsTunnelOptionsDetails() : 
-    m_dpdTimeoutSeconds(0),
-    m_dpdTimeoutSecondsHasBeenSet(false),
-    m_ikeVersionsHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_phase1DhGroupNumbersHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2DhGroupNumbersHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_tunnelInsideCidrHasBeenSet(false)
-{
-}
-
 AwsEc2VpnConnectionOptionsTunnelOptionsDetails::AwsEc2VpnConnectionOptionsTunnelOptionsDetails(JsonView jsonValue)
-  : AwsEc2VpnConnectionOptionsTunnelOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -55,10 +28,8 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
   if(jsonValue.ValueExists("DpdTimeoutSeconds"))
   {
     m_dpdTimeoutSeconds = jsonValue.GetInteger("DpdTimeoutSeconds");
-
     m_dpdTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IkeVersions"))
   {
     Aws::Utils::Array<JsonView> ikeVersionsJsonList = jsonValue.GetArray("IkeVersions");
@@ -68,14 +39,11 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_ikeVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutsideIpAddress"))
   {
     m_outsideIpAddress = jsonValue.GetString("OutsideIpAddress");
-
     m_outsideIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase1DhGroupNumbers"))
   {
     Aws::Utils::Array<JsonView> phase1DhGroupNumbersJsonList = jsonValue.GetArray("Phase1DhGroupNumbers");
@@ -85,7 +53,6 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase1DhGroupNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase1EncryptionAlgorithms"))
   {
     Aws::Utils::Array<JsonView> phase1EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase1EncryptionAlgorithms");
@@ -95,7 +62,6 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase1EncryptionAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase1IntegrityAlgorithms"))
   {
     Aws::Utils::Array<JsonView> phase1IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase1IntegrityAlgorithms");
@@ -105,14 +71,11 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase1IntegrityAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase1LifetimeSeconds"))
   {
     m_phase1LifetimeSeconds = jsonValue.GetInteger("Phase1LifetimeSeconds");
-
     m_phase1LifetimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase2DhGroupNumbers"))
   {
     Aws::Utils::Array<JsonView> phase2DhGroupNumbersJsonList = jsonValue.GetArray("Phase2DhGroupNumbers");
@@ -122,7 +85,6 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase2DhGroupNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase2EncryptionAlgorithms"))
   {
     Aws::Utils::Array<JsonView> phase2EncryptionAlgorithmsJsonList = jsonValue.GetArray("Phase2EncryptionAlgorithms");
@@ -132,7 +94,6 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase2EncryptionAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase2IntegrityAlgorithms"))
   {
     Aws::Utils::Array<JsonView> phase2IntegrityAlgorithmsJsonList = jsonValue.GetArray("Phase2IntegrityAlgorithms");
@@ -142,49 +103,36 @@ AwsEc2VpnConnectionOptionsTunnelOptionsDetails& AwsEc2VpnConnectionOptionsTunnel
     }
     m_phase2IntegrityAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phase2LifetimeSeconds"))
   {
     m_phase2LifetimeSeconds = jsonValue.GetInteger("Phase2LifetimeSeconds");
-
     m_phase2LifetimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreSharedKey"))
   {
     m_preSharedKey = jsonValue.GetString("PreSharedKey");
-
     m_preSharedKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RekeyFuzzPercentage"))
   {
     m_rekeyFuzzPercentage = jsonValue.GetInteger("RekeyFuzzPercentage");
-
     m_rekeyFuzzPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RekeyMarginTimeSeconds"))
   {
     m_rekeyMarginTimeSeconds = jsonValue.GetInteger("RekeyMarginTimeSeconds");
-
     m_rekeyMarginTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplayWindowSize"))
   {
     m_replayWindowSize = jsonValue.GetInteger("ReplayWindowSize");
-
     m_replayWindowSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TunnelInsideCidr"))
   {
     m_tunnelInsideCidr = jsonValue.GetString("TunnelInsideCidr");
-
     m_tunnelInsideCidrHasBeenSet = true;
   }
-
   return *this;
 }
 

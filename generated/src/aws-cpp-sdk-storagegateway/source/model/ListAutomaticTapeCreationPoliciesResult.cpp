@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAutomaticTapeCreationPoliciesResult::ListAutomaticTapeCreationPoliciesResult()
-{
-}
-
 ListAutomaticTapeCreationPoliciesResult::ListAutomaticTapeCreationPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListAutomaticTapeCreationPoliciesResult& ListAutomaticTapeCreationPoliciesResult
     {
       m_automaticTapeCreationPolicyInfos.push_back(automaticTapeCreationPolicyInfosJsonList[automaticTapeCreationPolicyInfosIndex].AsObject());
     }
+    m_automaticTapeCreationPolicyInfosHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

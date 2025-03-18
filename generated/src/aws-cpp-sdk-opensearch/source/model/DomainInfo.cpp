@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainInfo::DomainInfo() : 
-    m_domainNameHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false)
-{
-}
-
 DomainInfo::DomainInfo(JsonView jsonValue)
-  : DomainInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DomainInfo& DomainInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("EngineType"));
-
     m_engineTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

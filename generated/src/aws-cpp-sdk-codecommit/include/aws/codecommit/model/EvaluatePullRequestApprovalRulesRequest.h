@@ -21,7 +21,7 @@ namespace Model
   class EvaluatePullRequestApprovalRulesRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesRequest();
+    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request you want to evaluate.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    EvaluatePullRequestApprovalRulesRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The system-generated ID for the pull request revision. To retrieve the most
      * recent revision ID for a pull request, use <a>GetPullRequest</a>.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline EvaluatePullRequestApprovalRulesRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    EvaluatePullRequestApprovalRulesRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
   private:
 

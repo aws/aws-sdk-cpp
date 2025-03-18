@@ -33,7 +33,7 @@ namespace Model
   class AccountTakeoverActionType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Determines whether Amazon Cognito sends a user a notification message when
      * your user pools assesses a user's session at the associated risk level.</p>
      */
-    inline bool GetNotify() const{ return m_notify; }
+    inline bool GetNotify() const { return m_notify; }
     inline bool NotifyHasBeenSet() const { return m_notifyHasBeenSet; }
     inline void SetNotify(bool value) { m_notifyHasBeenSet = true; m_notify = value; }
     inline AccountTakeoverActionType& WithNotify(bool value) { SetNotify(value); return *this;}
@@ -65,19 +65,17 @@ namespace Model
      * number attribute, or a registered TOTP factor.</p> </li> <li> <p>
      * <code>NO_ACTION</code>: Take no action. Permit sign-in.</p> </li> </ul>
      */
-    inline const AccountTakeoverEventActionType& GetEventAction() const{ return m_eventAction; }
+    inline AccountTakeoverEventActionType GetEventAction() const { return m_eventAction; }
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
-    inline void SetEventAction(const AccountTakeoverEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
-    inline void SetEventAction(AccountTakeoverEventActionType&& value) { m_eventActionHasBeenSet = true; m_eventAction = std::move(value); }
-    inline AccountTakeoverActionType& WithEventAction(const AccountTakeoverEventActionType& value) { SetEventAction(value); return *this;}
-    inline AccountTakeoverActionType& WithEventAction(AccountTakeoverEventActionType&& value) { SetEventAction(std::move(value)); return *this;}
+    inline void SetEventAction(AccountTakeoverEventActionType value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
+    inline AccountTakeoverActionType& WithEventAction(AccountTakeoverEventActionType value) { SetEventAction(value); return *this;}
     ///@}
   private:
 
-    bool m_notify;
+    bool m_notify{false};
     bool m_notifyHasBeenSet = false;
 
-    AccountTakeoverEventActionType m_eventAction;
+    AccountTakeoverEventActionType m_eventAction{AccountTakeoverEventActionType::NOT_SET};
     bool m_eventActionHasBeenSet = false;
   };
 

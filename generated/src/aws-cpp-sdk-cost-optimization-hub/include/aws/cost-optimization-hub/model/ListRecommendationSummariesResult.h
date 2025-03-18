@@ -30,7 +30,7 @@ namespace Model
   class ListRecommendationSummariesResult
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ListRecommendationSummariesResult();
+    AWS_COSTOPTIMIZATIONHUB_API ListRecommendationSummariesResult() = default;
     AWS_COSTOPTIMIZATIONHUB_API ListRecommendationSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTOPTIMIZATIONHUB_API ListRecommendationSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,8 +39,8 @@ namespace Model
     /**
      * <p>The total overall savings for the aggregated view.</p>
      */
-    inline double GetEstimatedTotalDedupedSavings() const{ return m_estimatedTotalDedupedSavings; }
-    inline void SetEstimatedTotalDedupedSavings(double value) { m_estimatedTotalDedupedSavings = value; }
+    inline double GetEstimatedTotalDedupedSavings() const { return m_estimatedTotalDedupedSavings; }
+    inline void SetEstimatedTotalDedupedSavings(double value) { m_estimatedTotalDedupedSavingsHasBeenSet = true; m_estimatedTotalDedupedSavings = value; }
     inline ListRecommendationSummariesResult& WithEstimatedTotalDedupedSavings(double value) { SetEstimatedTotalDedupedSavings(value); return *this;}
     ///@}
 
@@ -48,39 +48,35 @@ namespace Model
     /**
      * <p>A list of all savings recommendations.</p>
      */
-    inline const Aws::Vector<RecommendationSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<RecommendationSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<RecommendationSummary>&& value) { m_items = std::move(value); }
-    inline ListRecommendationSummariesResult& WithItems(const Aws::Vector<RecommendationSummary>& value) { SetItems(value); return *this;}
-    inline ListRecommendationSummariesResult& WithItems(Aws::Vector<RecommendationSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& AddItems(const RecommendationSummary& value) { m_items.push_back(value); return *this; }
-    inline ListRecommendationSummariesResult& AddItems(RecommendationSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecommendationSummary>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<RecommendationSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<RecommendationSummary>>
+    ListRecommendationSummariesResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = RecommendationSummary>
+    ListRecommendationSummariesResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The dimension used to group the recommendations by.</p>
      */
-    inline const Aws::String& GetGroupBy() const{ return m_groupBy; }
-    inline void SetGroupBy(const Aws::String& value) { m_groupBy = value; }
-    inline void SetGroupBy(Aws::String&& value) { m_groupBy = std::move(value); }
-    inline void SetGroupBy(const char* value) { m_groupBy.assign(value); }
-    inline ListRecommendationSummariesResult& WithGroupBy(const Aws::String& value) { SetGroupBy(value); return *this;}
-    inline ListRecommendationSummariesResult& WithGroupBy(Aws::String&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& WithGroupBy(const char* value) { SetGroupBy(value); return *this;}
+    inline const Aws::String& GetGroupBy() const { return m_groupBy; }
+    template<typename GroupByT = Aws::String>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::String>
+    ListRecommendationSummariesResult& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The currency code used for the recommendation.</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
-    inline ListRecommendationSummariesResult& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline ListRecommendationSummariesResult& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    ListRecommendationSummariesResult& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,51 +84,54 @@ namespace Model
      * <p>The results or descriptions for the additional metrics, based on whether the
      * metrics were or were not requested.</p>
      */
-    inline const SummaryMetricsResult& GetMetrics() const{ return m_metrics; }
-    inline void SetMetrics(const SummaryMetricsResult& value) { m_metrics = value; }
-    inline void SetMetrics(SummaryMetricsResult&& value) { m_metrics = std::move(value); }
-    inline ListRecommendationSummariesResult& WithMetrics(const SummaryMetricsResult& value) { SetMetrics(value); return *this;}
-    inline ListRecommendationSummariesResult& WithMetrics(SummaryMetricsResult&& value) { SetMetrics(std::move(value)); return *this;}
+    inline const SummaryMetricsResult& GetMetrics() const { return m_metrics; }
+    template<typename MetricsT = SummaryMetricsResult>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = SummaryMetricsResult>
+    ListRecommendationSummariesResult& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRecommendationSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecommendationSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecommendationSummariesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRecommendationSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRecommendationSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRecommendationSummariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    double m_estimatedTotalDedupedSavings;
+    double m_estimatedTotalDedupedSavings{0.0};
+    bool m_estimatedTotalDedupedSavingsHasBeenSet = false;
 
     Aws::Vector<RecommendationSummary> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_groupBy;
+    bool m_groupByHasBeenSet = false;
 
     Aws::String m_currencyCode;
+    bool m_currencyCodeHasBeenSet = false;
 
     SummaryMetricsResult m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

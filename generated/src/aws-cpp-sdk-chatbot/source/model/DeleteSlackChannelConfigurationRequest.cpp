@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlackChannelConfigurationRequest::DeleteSlackChannelConfigurationRequest() : 
-    m_chatConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlackChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

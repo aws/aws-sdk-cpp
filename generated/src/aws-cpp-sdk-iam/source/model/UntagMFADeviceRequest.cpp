@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagMFADeviceRequest::UntagMFADeviceRequest() : 
-    m_serialNumberHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

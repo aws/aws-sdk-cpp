@@ -12,15 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateDiscoveredResourceRequest::DisassociateDiscoveredResourceRequest() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_configurationIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDiscoveredResourceRequest::SerializePayload() const
 {
   JsonValue payload;

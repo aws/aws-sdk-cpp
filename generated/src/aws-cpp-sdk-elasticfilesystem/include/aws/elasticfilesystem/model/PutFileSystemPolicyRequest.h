@@ -21,7 +21,7 @@ namespace Model
   class PutFileSystemPolicyRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API PutFileSystemPolicyRequest();
+    AWS_EFS_API PutFileSystemPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The ID of the EFS file system that you want to create or update the
      * <code>FileSystemPolicy</code> for.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline PutFileSystemPolicyRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline PutFileSystemPolicyRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline PutFileSystemPolicyRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    PutFileSystemPolicyRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/security_iam_service-with-iam.html#security_iam_service-with-iam-resource-based-policies">Resource-based
      * policies within Amazon EFS</a>. </p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutFileSystemPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutFileSystemPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutFileSystemPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutFileSystemPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * subsequent <code>PutFileSystemPolicy</code> requests on this file system. The
      * default value is <code>False</code>. </p>
      */
-    inline bool GetBypassPolicyLockoutSafetyCheck() const{ return m_bypassPolicyLockoutSafetyCheck; }
+    inline bool GetBypassPolicyLockoutSafetyCheck() const { return m_bypassPolicyLockoutSafetyCheck; }
     inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }
     inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
     inline PutFileSystemPolicyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
@@ -91,7 +87,7 @@ namespace Model
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
 
-    bool m_bypassPolicyLockoutSafetyCheck;
+    bool m_bypassPolicyLockoutSafetyCheck{false};
     bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
   };
 

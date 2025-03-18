@@ -26,7 +26,7 @@ namespace Model
   class ListIntegrationAssociationsRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API ListIntegrationAssociationsRequest();
+    AWS_CONNECT_API ListIntegrationAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ListIntegrationAssociationsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ListIntegrationAssociationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ListIntegrationAssociationsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The integration type.</p>
      */
-    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline IntegrationType GetIntegrationType() const { return m_integrationType; }
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
-    inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
-    inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
-    inline ListIntegrationAssociationsRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline ListIntegrationAssociationsRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline void SetIntegrationType(IntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline ListIntegrationAssociationsRequest& WithIntegrationType(IntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,21 +68,19 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListIntegrationAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIntegrationAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIntegrationAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListIntegrationAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -96,27 +90,25 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the integration.</p>
      */
-    inline const Aws::String& GetIntegrationArn() const{ return m_integrationArn; }
+    inline const Aws::String& GetIntegrationArn() const { return m_integrationArn; }
     inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }
-    inline void SetIntegrationArn(const Aws::String& value) { m_integrationArnHasBeenSet = true; m_integrationArn = value; }
-    inline void SetIntegrationArn(Aws::String&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::move(value); }
-    inline void SetIntegrationArn(const char* value) { m_integrationArnHasBeenSet = true; m_integrationArn.assign(value); }
-    inline ListIntegrationAssociationsRequest& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
-    inline ListIntegrationAssociationsRequest& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsRequest& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
+    template<typename IntegrationArnT = Aws::String>
+    void SetIntegrationArn(IntegrationArnT&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::forward<IntegrationArnT>(value); }
+    template<typename IntegrationArnT = Aws::String>
+    ListIntegrationAssociationsRequest& WithIntegrationArn(IntegrationArnT&& value) { SetIntegrationArn(std::forward<IntegrationArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    IntegrationType m_integrationType;
+    IntegrationType m_integrationType{IntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_integrationArn;

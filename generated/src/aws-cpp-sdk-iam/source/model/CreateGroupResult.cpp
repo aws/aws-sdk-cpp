@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupResult::CreateGroupResult()
-{
-}
-
 CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
     if(!groupNode.IsNull())
     {
       m_group = groupNode;
+      m_groupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreateGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

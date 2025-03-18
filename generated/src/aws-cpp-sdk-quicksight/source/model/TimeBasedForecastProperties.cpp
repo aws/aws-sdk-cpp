@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TimeBasedForecastProperties::TimeBasedForecastProperties() : 
-    m_periodsForward(0),
-    m_periodsForwardHasBeenSet(false),
-    m_periodsBackward(0),
-    m_periodsBackwardHasBeenSet(false),
-    m_upperBoundary(0.0),
-    m_upperBoundaryHasBeenSet(false),
-    m_lowerBoundary(0.0),
-    m_lowerBoundaryHasBeenSet(false),
-    m_predictionInterval(0),
-    m_predictionIntervalHasBeenSet(false),
-    m_seasonality(0),
-    m_seasonalityHasBeenSet(false)
-{
-}
-
 TimeBasedForecastProperties::TimeBasedForecastProperties(JsonView jsonValue)
-  : TimeBasedForecastProperties()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ TimeBasedForecastProperties& TimeBasedForecastProperties::operator =(JsonView js
   if(jsonValue.ValueExists("PeriodsForward"))
   {
     m_periodsForward = jsonValue.GetInteger("PeriodsForward");
-
     m_periodsForwardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodsBackward"))
   {
     m_periodsBackward = jsonValue.GetInteger("PeriodsBackward");
-
     m_periodsBackwardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBoundary"))
   {
     m_upperBoundary = jsonValue.GetDouble("UpperBoundary");
-
     m_upperBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LowerBoundary"))
   {
     m_lowerBoundary = jsonValue.GetDouble("LowerBoundary");
-
     m_lowerBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionInterval"))
   {
     m_predictionInterval = jsonValue.GetInteger("PredictionInterval");
-
     m_predictionIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Seasonality"))
   {
     m_seasonality = jsonValue.GetInteger("Seasonality");
-
     m_seasonalityHasBeenSet = true;
   }
-
   return *this;
 }
 

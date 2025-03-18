@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-PortProbeAction::PortProbeAction() : 
-    m_blocked(false),
-    m_blockedHasBeenSet(false),
-    m_portProbeDetailsHasBeenSet(false)
-{
-}
-
 PortProbeAction::PortProbeAction(JsonView jsonValue)
-  : PortProbeAction()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PortProbeAction& PortProbeAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blocked"))
   {
     m_blocked = jsonValue.GetBool("blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portProbeDetails"))
   {
     Aws::Utils::Array<JsonView> portProbeDetailsJsonList = jsonValue.GetArray("portProbeDetails");
@@ -49,7 +39,6 @@ PortProbeAction& PortProbeAction::operator =(JsonView jsonValue)
     }
     m_portProbeDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

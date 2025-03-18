@@ -21,7 +21,7 @@ namespace Model
   class AssociateSecurityGroupVpcRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AssociateSecurityGroupVpcRequest();
+    AWS_EC2_API AssociateSecurityGroupVpcRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>A security group ID.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AssociateSecurityGroupVpcRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AssociateSecurityGroupVpcRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AssociateSecurityGroupVpcRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AssociateSecurityGroupVpcRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A VPC ID.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AssociateSecurityGroupVpcRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AssociateSecurityGroupVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AssociateSecurityGroupVpcRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AssociateSecurityGroupVpcRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateSecurityGroupVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

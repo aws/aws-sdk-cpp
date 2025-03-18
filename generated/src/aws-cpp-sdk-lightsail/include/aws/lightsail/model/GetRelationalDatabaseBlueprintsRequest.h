@@ -21,7 +21,7 @@ namespace Model
   class GetRelationalDatabaseBlueprintsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsRequest();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * paginated, the response will return a next page token that you can specify as
      * the page token in a subsequent request.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    GetRelationalDatabaseBlueprintsRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
   private:
 

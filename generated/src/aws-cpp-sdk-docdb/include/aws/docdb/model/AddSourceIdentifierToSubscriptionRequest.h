@@ -25,7 +25,7 @@ namespace Model
   class AddSourceIdentifierToSubscriptionRequest : public DocDBRequest
   {
   public:
-    AWS_DOCDB_API AddSourceIdentifierToSubscriptionRequest();
+    AWS_DOCDB_API AddSourceIdentifierToSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the Amazon DocumentDB event notification subscription that you
      * want to add a source identifier to.</p>
      */
-    inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+    inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-    inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-    inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-    inline AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    template<typename SubscriptionNameT = Aws::String>
+    void SetSubscriptionName(SubscriptionNameT&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::forward<SubscriptionNameT>(value); }
+    template<typename SubscriptionNameT = Aws::String>
+    AddSourceIdentifierToSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) { SetSubscriptionName(std::forward<SubscriptionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * provided.</p> </li> <li> <p>If the source type is a snapshot, a
      * <code>DBSnapshotIdentifier</code> must be provided.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
-    inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
-    inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
-    inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+    template<typename SourceIdentifierT = Aws::String>
+    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
+    template<typename SourceIdentifierT = Aws::String>
+    AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

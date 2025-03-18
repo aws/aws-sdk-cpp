@@ -32,7 +32,7 @@ namespace Model
   class HlsPlaylistSettings
   {
   public:
-    AWS_MEDIATAILOR_API HlsPlaylistSettings();
+    AWS_MEDIATAILOR_API HlsPlaylistSettings() = default;
     AWS_MEDIATAILOR_API HlsPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API HlsPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The total duration (in seconds) of each manifest. Minimum value:
      * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline int GetManifestWindowSeconds() const { return m_manifestWindowSeconds; }
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
     inline HlsPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
@@ -56,18 +56,17 @@ namespace Model
      * content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code>
      * and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>
      */
-    inline const Aws::Vector<AdMarkupType>& GetAdMarkupType() const{ return m_adMarkupType; }
+    inline const Aws::Vector<AdMarkupType>& GetAdMarkupType() const { return m_adMarkupType; }
     inline bool AdMarkupTypeHasBeenSet() const { return m_adMarkupTypeHasBeenSet; }
-    inline void SetAdMarkupType(const Aws::Vector<AdMarkupType>& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType = value; }
-    inline void SetAdMarkupType(Aws::Vector<AdMarkupType>&& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType = std::move(value); }
-    inline HlsPlaylistSettings& WithAdMarkupType(const Aws::Vector<AdMarkupType>& value) { SetAdMarkupType(value); return *this;}
-    inline HlsPlaylistSettings& WithAdMarkupType(Aws::Vector<AdMarkupType>&& value) { SetAdMarkupType(std::move(value)); return *this;}
-    inline HlsPlaylistSettings& AddAdMarkupType(const AdMarkupType& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType.push_back(value); return *this; }
-    inline HlsPlaylistSettings& AddAdMarkupType(AdMarkupType&& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType.push_back(std::move(value)); return *this; }
+    template<typename AdMarkupTypeT = Aws::Vector<AdMarkupType>>
+    void SetAdMarkupType(AdMarkupTypeT&& value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType = std::forward<AdMarkupTypeT>(value); }
+    template<typename AdMarkupTypeT = Aws::Vector<AdMarkupType>>
+    HlsPlaylistSettings& WithAdMarkupType(AdMarkupTypeT&& value) { SetAdMarkupType(std::forward<AdMarkupTypeT>(value)); return *this;}
+    inline HlsPlaylistSettings& AddAdMarkupType(AdMarkupType value) { m_adMarkupTypeHasBeenSet = true; m_adMarkupType.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_manifestWindowSeconds;
+    int m_manifestWindowSeconds{0};
     bool m_manifestWindowSecondsHasBeenSet = false;
 
     Aws::Vector<AdMarkupType> m_adMarkupType;

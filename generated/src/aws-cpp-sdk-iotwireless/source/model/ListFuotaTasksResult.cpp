@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFuotaTasksResult::ListFuotaTasksResult()
-{
-}
-
 ListFuotaTasksResult::ListFuotaTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListFuotaTasksResult& ListFuotaTasksResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FuotaTaskList"))
   {
     Aws::Utils::Array<JsonView> fuotaTaskListJsonList = jsonValue.GetArray("FuotaTaskList");
@@ -42,14 +37,15 @@ ListFuotaTasksResult& ListFuotaTasksResult::operator =(const Aws::AmazonWebServi
     {
       m_fuotaTaskList.push_back(fuotaTaskListJsonList[fuotaTaskListIndex].AsObject());
     }
+    m_fuotaTaskListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

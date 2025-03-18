@@ -27,7 +27,7 @@ namespace Model
   class DeleteEmailIdentityRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API DeleteEmailIdentityRequest();
+    AWS_SESV2_API DeleteEmailIdentityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identity (that is, the email address or domain) to delete.</p>
      */
-    inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
+    inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-    inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-    inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-    inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-    inline DeleteEmailIdentityRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-    inline DeleteEmailIdentityRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-    inline DeleteEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    template<typename EmailIdentityT = Aws::String>
+    void SetEmailIdentity(EmailIdentityT&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::forward<EmailIdentityT>(value); }
+    template<typename EmailIdentityT = Aws::String>
+    DeleteEmailIdentityRequest& WithEmailIdentity(EmailIdentityT&& value) { SetEmailIdentity(std::forward<EmailIdentityT>(value)); return *this;}
     ///@}
   private:
 

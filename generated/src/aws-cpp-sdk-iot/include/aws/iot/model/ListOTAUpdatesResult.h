@@ -29,7 +29,7 @@ namespace Model
   class ListOTAUpdatesResult
   {
   public:
-    AWS_IOT_API ListOTAUpdatesResult();
+    AWS_IOT_API ListOTAUpdatesResult() = default;
     AWS_IOT_API ListOTAUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListOTAUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of OTA update jobs.</p>
      */
-    inline const Aws::Vector<OTAUpdateSummary>& GetOtaUpdates() const{ return m_otaUpdates; }
-    inline void SetOtaUpdates(const Aws::Vector<OTAUpdateSummary>& value) { m_otaUpdates = value; }
-    inline void SetOtaUpdates(Aws::Vector<OTAUpdateSummary>&& value) { m_otaUpdates = std::move(value); }
-    inline ListOTAUpdatesResult& WithOtaUpdates(const Aws::Vector<OTAUpdateSummary>& value) { SetOtaUpdates(value); return *this;}
-    inline ListOTAUpdatesResult& WithOtaUpdates(Aws::Vector<OTAUpdateSummary>&& value) { SetOtaUpdates(std::move(value)); return *this;}
-    inline ListOTAUpdatesResult& AddOtaUpdates(const OTAUpdateSummary& value) { m_otaUpdates.push_back(value); return *this; }
-    inline ListOTAUpdatesResult& AddOtaUpdates(OTAUpdateSummary&& value) { m_otaUpdates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OTAUpdateSummary>& GetOtaUpdates() const { return m_otaUpdates; }
+    template<typename OtaUpdatesT = Aws::Vector<OTAUpdateSummary>>
+    void SetOtaUpdates(OtaUpdatesT&& value) { m_otaUpdatesHasBeenSet = true; m_otaUpdates = std::forward<OtaUpdatesT>(value); }
+    template<typename OtaUpdatesT = Aws::Vector<OTAUpdateSummary>>
+    ListOTAUpdatesResult& WithOtaUpdates(OtaUpdatesT&& value) { SetOtaUpdates(std::forward<OtaUpdatesT>(value)); return *this;}
+    template<typename OtaUpdatesT = OTAUpdateSummary>
+    ListOTAUpdatesResult& AddOtaUpdates(OtaUpdatesT&& value) { m_otaUpdatesHasBeenSet = true; m_otaUpdates.emplace_back(std::forward<OtaUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token to use to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOTAUpdatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOTAUpdatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOTAUpdatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOTAUpdatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOTAUpdatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOTAUpdatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOTAUpdatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOTAUpdatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OTAUpdateSummary> m_otaUpdates;
+    bool m_otaUpdatesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

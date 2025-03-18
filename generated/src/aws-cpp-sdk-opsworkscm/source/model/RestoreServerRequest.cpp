@@ -12,14 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreServerRequest::RestoreServerRequest() : 
-    m_backupIdHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_keyPairHasBeenSet(false)
-{
-}
-
 Aws::String RestoreServerRequest::SerializePayload() const
 {
   JsonValue payload;

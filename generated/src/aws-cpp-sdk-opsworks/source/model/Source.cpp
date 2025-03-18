@@ -18,19 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Source::Source() : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_sshKeyHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshKey"))
   {
     m_sshKey = jsonValue.GetString("SshKey");
-
     m_sshKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetString("Revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

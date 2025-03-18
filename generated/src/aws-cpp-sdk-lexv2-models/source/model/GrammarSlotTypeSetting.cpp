@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-GrammarSlotTypeSetting::GrammarSlotTypeSetting() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 GrammarSlotTypeSetting::GrammarSlotTypeSetting(JsonView jsonValue)
-  : GrammarSlotTypeSetting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GrammarSlotTypeSetting& GrammarSlotTypeSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

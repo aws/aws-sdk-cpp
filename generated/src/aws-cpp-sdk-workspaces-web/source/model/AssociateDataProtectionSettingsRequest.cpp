@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateDataProtectionSettingsRequest::AssociateDataProtectionSettingsRequest() : 
-    m_dataProtectionSettingsArnHasBeenSet(false),
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateDataProtectionSettingsRequest::SerializePayload() const
 {
   return {};

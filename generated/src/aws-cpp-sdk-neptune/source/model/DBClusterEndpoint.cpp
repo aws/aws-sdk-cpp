@@ -20,22 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterEndpoint::DBClusterEndpoint() : 
-    m_dBClusterEndpointIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterEndpointResourceIdentifierHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_endpointTypeHasBeenSet(false),
-    m_customEndpointTypeHasBeenSet(false),
-    m_staticMembersHasBeenSet(false),
-    m_excludedMembersHasBeenSet(false),
-    m_dBClusterEndpointArnHasBeenSet(false)
-{
-}
-
 DBClusterEndpoint::DBClusterEndpoint(const XmlNode& xmlNode)
-  : DBClusterEndpoint()
 {
   *this = xmlNode;
 }
@@ -92,6 +77,7 @@ DBClusterEndpoint& DBClusterEndpoint::operator =(const XmlNode& xmlNode)
     if(!staticMembersNode.IsNull())
     {
       XmlNode staticMembersMember = staticMembersNode.FirstChild("member");
+      m_staticMembersHasBeenSet = !staticMembersMember.IsNull();
       while(!staticMembersMember.IsNull())
       {
         m_staticMembers.push_back(staticMembersMember.GetText());
@@ -104,6 +90,7 @@ DBClusterEndpoint& DBClusterEndpoint::operator =(const XmlNode& xmlNode)
     if(!excludedMembersNode.IsNull())
     {
       XmlNode excludedMembersMember = excludedMembersNode.FirstChild("member");
+      m_excludedMembersHasBeenSet = !excludedMembersMember.IsNull();
       while(!excludedMembersMember.IsNull())
       {
         m_excludedMembers.push_back(excludedMembersMember.GetText());

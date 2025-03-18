@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStatus::InstanceStatus() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_systemStatusHasBeenSet(false),
-    m_attachedEbsStatusHasBeenSet(false)
-{
-}
-
 InstanceStatus::InstanceStatus(const XmlNode& xmlNode)
-  : InstanceStatus()
 {
   *this = xmlNode;
 }
@@ -67,6 +53,7 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
+      m_eventsHasBeenSet = !eventsMember.IsNull();
       while(!eventsMember.IsNull())
       {
         m_events.push_back(eventsMember);

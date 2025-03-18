@@ -33,7 +33,7 @@ namespace Model
   class TargetContainerRepository
   {
   public:
-    AWS_IMAGEBUILDER_API TargetContainerRepository();
+    AWS_IMAGEBUILDER_API TargetContainerRepository() = default;
     AWS_IMAGEBUILDER_API TargetContainerRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API TargetContainerRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Specifies the service in which this image was registered.</p>
      */
-    inline const ContainerRepositoryService& GetService() const{ return m_service; }
+    inline ContainerRepositoryService GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const ContainerRepositoryService& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(ContainerRepositoryService&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline TargetContainerRepository& WithService(const ContainerRepositoryService& value) { SetService(value); return *this;}
-    inline TargetContainerRepository& WithService(ContainerRepositoryService&& value) { SetService(std::move(value)); return *this;}
+    inline void SetService(ContainerRepositoryService value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline TargetContainerRepository& WithService(ContainerRepositoryService value) { SetService(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * stored. This name is prefixed by the repository location. For example,
      * <code>&lt;repository location url&gt;/repository_name</code>.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline TargetContainerRepository& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline TargetContainerRepository& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline TargetContainerRepository& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    TargetContainerRepository& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
   private:
 
-    ContainerRepositoryService m_service;
+    ContainerRepositoryService m_service{ContainerRepositoryService::NOT_SET};
     bool m_serviceHasBeenSet = false;
 
     Aws::String m_repositoryName;

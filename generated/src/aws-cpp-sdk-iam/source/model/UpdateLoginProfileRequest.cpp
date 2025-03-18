@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateLoginProfileRequest::UpdateLoginProfileRequest() : 
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_passwordResetRequired(false),
-    m_passwordResetRequiredHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLoginProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

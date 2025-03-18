@@ -27,7 +27,7 @@ namespace Model
   class CancelLifecycleExecutionResult
   {
   public:
-    AWS_IMAGEBUILDER_API CancelLifecycleExecutionResult();
+    AWS_IMAGEBUILDER_API CancelLifecycleExecutionResult() = default;
     AWS_IMAGEBUILDER_API CancelLifecycleExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API CancelLifecycleExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The unique identifier for the image lifecycle runtime instance that was
      * canceled.</p>
      */
-    inline const Aws::String& GetLifecycleExecutionId() const{ return m_lifecycleExecutionId; }
-    inline void SetLifecycleExecutionId(const Aws::String& value) { m_lifecycleExecutionId = value; }
-    inline void SetLifecycleExecutionId(Aws::String&& value) { m_lifecycleExecutionId = std::move(value); }
-    inline void SetLifecycleExecutionId(const char* value) { m_lifecycleExecutionId.assign(value); }
-    inline CancelLifecycleExecutionResult& WithLifecycleExecutionId(const Aws::String& value) { SetLifecycleExecutionId(value); return *this;}
-    inline CancelLifecycleExecutionResult& WithLifecycleExecutionId(Aws::String&& value) { SetLifecycleExecutionId(std::move(value)); return *this;}
-    inline CancelLifecycleExecutionResult& WithLifecycleExecutionId(const char* value) { SetLifecycleExecutionId(value); return *this;}
+    inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
+    template<typename LifecycleExecutionIdT = Aws::String>
+    void SetLifecycleExecutionId(LifecycleExecutionIdT&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::forward<LifecycleExecutionIdT>(value); }
+    template<typename LifecycleExecutionIdT = Aws::String>
+    CancelLifecycleExecutionResult& WithLifecycleExecutionId(LifecycleExecutionIdT&& value) { SetLifecycleExecutionId(std::forward<LifecycleExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelLifecycleExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelLifecycleExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelLifecycleExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelLifecycleExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_lifecycleExecutionId;
+    bool m_lifecycleExecutionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailConverseContentBlock::GuardrailConverseContentBlock() : 
-    m_textHasBeenSet(false),
-    m_imageHasBeenSet(false)
-{
-}
-
 GuardrailConverseContentBlock::GuardrailConverseContentBlock(JsonView jsonValue)
-  : GuardrailConverseContentBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GuardrailConverseContentBlock& GuardrailConverseContentBlock::operator =(JsonVie
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetObject("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
     m_imageHasBeenSet = true;
   }
-
   return *this;
 }
 

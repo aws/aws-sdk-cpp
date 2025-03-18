@@ -47,7 +47,7 @@ namespace Model
   class ProtectiveEquipmentSummary
   {
   public:
-    AWS_REKOGNITION_API ProtectiveEquipmentSummary();
+    AWS_REKOGNITION_API ProtectiveEquipmentSummary() = default;
     AWS_REKOGNITION_API ProtectiveEquipmentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API ProtectiveEquipmentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,12 @@ namespace Model
      * <p>An array of IDs for persons who are wearing detected personal protective
      * equipment. </p>
      */
-    inline const Aws::Vector<int>& GetPersonsWithRequiredEquipment() const{ return m_personsWithRequiredEquipment; }
+    inline const Aws::Vector<int>& GetPersonsWithRequiredEquipment() const { return m_personsWithRequiredEquipment; }
     inline bool PersonsWithRequiredEquipmentHasBeenSet() const { return m_personsWithRequiredEquipmentHasBeenSet; }
-    inline void SetPersonsWithRequiredEquipment(const Aws::Vector<int>& value) { m_personsWithRequiredEquipmentHasBeenSet = true; m_personsWithRequiredEquipment = value; }
-    inline void SetPersonsWithRequiredEquipment(Aws::Vector<int>&& value) { m_personsWithRequiredEquipmentHasBeenSet = true; m_personsWithRequiredEquipment = std::move(value); }
-    inline ProtectiveEquipmentSummary& WithPersonsWithRequiredEquipment(const Aws::Vector<int>& value) { SetPersonsWithRequiredEquipment(value); return *this;}
-    inline ProtectiveEquipmentSummary& WithPersonsWithRequiredEquipment(Aws::Vector<int>&& value) { SetPersonsWithRequiredEquipment(std::move(value)); return *this;}
+    template<typename PersonsWithRequiredEquipmentT = Aws::Vector<int>>
+    void SetPersonsWithRequiredEquipment(PersonsWithRequiredEquipmentT&& value) { m_personsWithRequiredEquipmentHasBeenSet = true; m_personsWithRequiredEquipment = std::forward<PersonsWithRequiredEquipmentT>(value); }
+    template<typename PersonsWithRequiredEquipmentT = Aws::Vector<int>>
+    ProtectiveEquipmentSummary& WithPersonsWithRequiredEquipment(PersonsWithRequiredEquipmentT&& value) { SetPersonsWithRequiredEquipment(std::forward<PersonsWithRequiredEquipmentT>(value)); return *this;}
     inline ProtectiveEquipmentSummary& AddPersonsWithRequiredEquipment(int value) { m_personsWithRequiredEquipmentHasBeenSet = true; m_personsWithRequiredEquipment.push_back(value); return *this; }
     ///@}
 
@@ -73,12 +73,12 @@ namespace Model
      * specified in the <code>RequiredEquipmentTypes</code> field of the detected
      * personal protective equipment. </p>
      */
-    inline const Aws::Vector<int>& GetPersonsWithoutRequiredEquipment() const{ return m_personsWithoutRequiredEquipment; }
+    inline const Aws::Vector<int>& GetPersonsWithoutRequiredEquipment() const { return m_personsWithoutRequiredEquipment; }
     inline bool PersonsWithoutRequiredEquipmentHasBeenSet() const { return m_personsWithoutRequiredEquipmentHasBeenSet; }
-    inline void SetPersonsWithoutRequiredEquipment(const Aws::Vector<int>& value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment = value; }
-    inline void SetPersonsWithoutRequiredEquipment(Aws::Vector<int>&& value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment = std::move(value); }
-    inline ProtectiveEquipmentSummary& WithPersonsWithoutRequiredEquipment(const Aws::Vector<int>& value) { SetPersonsWithoutRequiredEquipment(value); return *this;}
-    inline ProtectiveEquipmentSummary& WithPersonsWithoutRequiredEquipment(Aws::Vector<int>&& value) { SetPersonsWithoutRequiredEquipment(std::move(value)); return *this;}
+    template<typename PersonsWithoutRequiredEquipmentT = Aws::Vector<int>>
+    void SetPersonsWithoutRequiredEquipment(PersonsWithoutRequiredEquipmentT&& value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment = std::forward<PersonsWithoutRequiredEquipmentT>(value); }
+    template<typename PersonsWithoutRequiredEquipmentT = Aws::Vector<int>>
+    ProtectiveEquipmentSummary& WithPersonsWithoutRequiredEquipment(PersonsWithoutRequiredEquipmentT&& value) { SetPersonsWithoutRequiredEquipment(std::forward<PersonsWithoutRequiredEquipmentT>(value)); return *this;}
     inline ProtectiveEquipmentSummary& AddPersonsWithoutRequiredEquipment(int value) { m_personsWithoutRequiredEquipmentHasBeenSet = true; m_personsWithoutRequiredEquipment.push_back(value); return *this; }
     ///@}
 
@@ -87,12 +87,12 @@ namespace Model
      * <p>An array of IDs for persons where it was not possible to determine if they
      * are wearing personal protective equipment. </p>
      */
-    inline const Aws::Vector<int>& GetPersonsIndeterminate() const{ return m_personsIndeterminate; }
+    inline const Aws::Vector<int>& GetPersonsIndeterminate() const { return m_personsIndeterminate; }
     inline bool PersonsIndeterminateHasBeenSet() const { return m_personsIndeterminateHasBeenSet; }
-    inline void SetPersonsIndeterminate(const Aws::Vector<int>& value) { m_personsIndeterminateHasBeenSet = true; m_personsIndeterminate = value; }
-    inline void SetPersonsIndeterminate(Aws::Vector<int>&& value) { m_personsIndeterminateHasBeenSet = true; m_personsIndeterminate = std::move(value); }
-    inline ProtectiveEquipmentSummary& WithPersonsIndeterminate(const Aws::Vector<int>& value) { SetPersonsIndeterminate(value); return *this;}
-    inline ProtectiveEquipmentSummary& WithPersonsIndeterminate(Aws::Vector<int>&& value) { SetPersonsIndeterminate(std::move(value)); return *this;}
+    template<typename PersonsIndeterminateT = Aws::Vector<int>>
+    void SetPersonsIndeterminate(PersonsIndeterminateT&& value) { m_personsIndeterminateHasBeenSet = true; m_personsIndeterminate = std::forward<PersonsIndeterminateT>(value); }
+    template<typename PersonsIndeterminateT = Aws::Vector<int>>
+    ProtectiveEquipmentSummary& WithPersonsIndeterminate(PersonsIndeterminateT&& value) { SetPersonsIndeterminate(std::forward<PersonsIndeterminateT>(value)); return *this;}
     inline ProtectiveEquipmentSummary& AddPersonsIndeterminate(int value) { m_personsIndeterminateHasBeenSet = true; m_personsIndeterminate.push_back(value); return *this; }
     ///@}
   private:

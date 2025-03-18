@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeDataSharesForProducerRequest::DescribeDataSharesForProducerRequest() : 
-    m_producerArnHasBeenSet(false),
-    m_status(DataShareStatusForProducer::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDataSharesForProducerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

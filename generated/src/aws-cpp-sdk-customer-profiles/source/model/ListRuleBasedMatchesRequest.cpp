@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRuleBasedMatchesRequest::ListRuleBasedMatchesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String ListRuleBasedMatchesRequest::SerializePayload() const
 {
   return {};

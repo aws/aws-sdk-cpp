@@ -25,7 +25,7 @@ namespace Model
   class PutRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API PutRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API PutRecordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the feature group that you want to
      * insert the record into.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline PutRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline PutRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline PutRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    PutRecordRequest& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>Update the record returned from <code>GetRecord</code>. </p> </li> <li>
      * <p>Use <code>PutRecord</code> to update feature values.</p> </li> </ul>
      */
-    inline const Aws::Vector<FeatureValue>& GetRecord() const{ return m_record; }
+    inline const Aws::Vector<FeatureValue>& GetRecord() const { return m_record; }
     inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
-    inline void SetRecord(const Aws::Vector<FeatureValue>& value) { m_recordHasBeenSet = true; m_record = value; }
-    inline void SetRecord(Aws::Vector<FeatureValue>&& value) { m_recordHasBeenSet = true; m_record = std::move(value); }
-    inline PutRecordRequest& WithRecord(const Aws::Vector<FeatureValue>& value) { SetRecord(value); return *this;}
-    inline PutRecordRequest& WithRecord(Aws::Vector<FeatureValue>&& value) { SetRecord(std::move(value)); return *this;}
-    inline PutRecordRequest& AddRecord(const FeatureValue& value) { m_recordHasBeenSet = true; m_record.push_back(value); return *this; }
-    inline PutRecordRequest& AddRecord(FeatureValue&& value) { m_recordHasBeenSet = true; m_record.push_back(std::move(value)); return *this; }
+    template<typename RecordT = Aws::Vector<FeatureValue>>
+    void SetRecord(RecordT&& value) { m_recordHasBeenSet = true; m_record = std::forward<RecordT>(value); }
+    template<typename RecordT = Aws::Vector<FeatureValue>>
+    PutRecordRequest& WithRecord(RecordT&& value) { SetRecord(std::forward<RecordT>(value)); return *this;}
+    template<typename RecordT = FeatureValue>
+    PutRecordRequest& AddRecord(RecordT&& value) { m_recordHasBeenSet = true; m_record.emplace_back(std::forward<RecordT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,14 +73,13 @@ namespace Model
      * adds the record to all of the stores that you're using for the
      * <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::Vector<TargetStore>& GetTargetStores() const{ return m_targetStores; }
+    inline const Aws::Vector<TargetStore>& GetTargetStores() const { return m_targetStores; }
     inline bool TargetStoresHasBeenSet() const { return m_targetStoresHasBeenSet; }
-    inline void SetTargetStores(const Aws::Vector<TargetStore>& value) { m_targetStoresHasBeenSet = true; m_targetStores = value; }
-    inline void SetTargetStores(Aws::Vector<TargetStore>&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::move(value); }
-    inline PutRecordRequest& WithTargetStores(const Aws::Vector<TargetStore>& value) { SetTargetStores(value); return *this;}
-    inline PutRecordRequest& WithTargetStores(Aws::Vector<TargetStore>&& value) { SetTargetStores(std::move(value)); return *this;}
-    inline PutRecordRequest& AddTargetStores(const TargetStore& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
-    inline PutRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
+    template<typename TargetStoresT = Aws::Vector<TargetStore>>
+    void SetTargetStores(TargetStoresT&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::forward<TargetStoresT>(value); }
+    template<typename TargetStoresT = Aws::Vector<TargetStore>>
+    PutRecordRequest& WithTargetStores(TargetStoresT&& value) { SetTargetStores(std::forward<TargetStoresT>(value)); return *this;}
+    inline PutRecordRequest& AddTargetStores(TargetStore value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -93,12 +90,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
      * API in the Amazon SageMaker API Reference guide.</p>
      */
-    inline const TtlDuration& GetTtlDuration() const{ return m_ttlDuration; }
+    inline const TtlDuration& GetTtlDuration() const { return m_ttlDuration; }
     inline bool TtlDurationHasBeenSet() const { return m_ttlDurationHasBeenSet; }
-    inline void SetTtlDuration(const TtlDuration& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = value; }
-    inline void SetTtlDuration(TtlDuration&& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = std::move(value); }
-    inline PutRecordRequest& WithTtlDuration(const TtlDuration& value) { SetTtlDuration(value); return *this;}
-    inline PutRecordRequest& WithTtlDuration(TtlDuration&& value) { SetTtlDuration(std::move(value)); return *this;}
+    template<typename TtlDurationT = TtlDuration>
+    void SetTtlDuration(TtlDurationT&& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = std::forward<TtlDurationT>(value); }
+    template<typename TtlDurationT = TtlDuration>
+    PutRecordRequest& WithTtlDuration(TtlDurationT&& value) { SetTtlDuration(std::forward<TtlDurationT>(value)); return *this;}
     ///@}
   private:
 

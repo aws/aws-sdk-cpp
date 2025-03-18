@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateAccountSettingsRequest();
+    AWS_QUICKSIGHT_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The ID for the Amazon Web Services account that contains the Amazon
      * QuickSight settings that you want to list.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateAccountSettingsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateAccountSettingsRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * Amazon QuickSight provide an email address that becomes associated with the
      * default namespace. </p>
      */
-    inline const Aws::String& GetDefaultNamespace() const{ return m_defaultNamespace; }
+    inline const Aws::String& GetDefaultNamespace() const { return m_defaultNamespace; }
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
-    inline void SetDefaultNamespace(const Aws::String& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = value; }
-    inline void SetDefaultNamespace(Aws::String&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::move(value); }
-    inline void SetDefaultNamespace(const char* value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace.assign(value); }
-    inline UpdateAccountSettingsRequest& WithDefaultNamespace(const Aws::String& value) { SetDefaultNamespace(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithDefaultNamespace(Aws::String&& value) { SetDefaultNamespace(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithDefaultNamespace(const char* value) { SetDefaultNamespace(value); return *this;}
+    template<typename DefaultNamespaceT = Aws::String>
+    void SetDefaultNamespace(DefaultNamespaceT&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::forward<DefaultNamespaceT>(value); }
+    template<typename DefaultNamespaceT = Aws::String>
+    UpdateAccountSettingsRequest& WithDefaultNamespace(DefaultNamespaceT&& value) { SetDefaultNamespace(std::forward<DefaultNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * regarding your Amazon Web Services account or Amazon QuickSight
      * subscription.</p>
      */
-    inline const Aws::String& GetNotificationEmail() const{ return m_notificationEmail; }
+    inline const Aws::String& GetNotificationEmail() const { return m_notificationEmail; }
     inline bool NotificationEmailHasBeenSet() const { return m_notificationEmailHasBeenSet; }
-    inline void SetNotificationEmail(const Aws::String& value) { m_notificationEmailHasBeenSet = true; m_notificationEmail = value; }
-    inline void SetNotificationEmail(Aws::String&& value) { m_notificationEmailHasBeenSet = true; m_notificationEmail = std::move(value); }
-    inline void SetNotificationEmail(const char* value) { m_notificationEmailHasBeenSet = true; m_notificationEmail.assign(value); }
-    inline UpdateAccountSettingsRequest& WithNotificationEmail(const Aws::String& value) { SetNotificationEmail(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithNotificationEmail(Aws::String&& value) { SetNotificationEmail(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithNotificationEmail(const char* value) { SetNotificationEmail(value); return *this;}
+    template<typename NotificationEmailT = Aws::String>
+    void SetNotificationEmail(NotificationEmailT&& value) { m_notificationEmailHasBeenSet = true; m_notificationEmail = std::forward<NotificationEmailT>(value); }
+    template<typename NotificationEmailT = Aws::String>
+    UpdateAccountSettingsRequest& WithNotificationEmail(NotificationEmailT&& value) { SetNotificationEmail(std::forward<NotificationEmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
      * allow the account to be deleted.</p>
      */
-    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+    inline bool GetTerminationProtectionEnabled() const { return m_terminationProtectionEnabled; }
     inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
     inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
     inline UpdateAccountSettingsRequest& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_notificationEmail;
     bool m_notificationEmailHasBeenSet = false;
 
-    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabled{false};
     bool m_terminationProtectionEnabledHasBeenSet = false;
   };
 

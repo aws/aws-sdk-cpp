@@ -32,7 +32,7 @@ namespace Model
   class ConditionOverrides
   {
   public:
-    AWS_CUSTOMERPROFILES_API ConditionOverrides();
+    AWS_CUSTOMERPROFILES_API ConditionOverrides() = default;
     AWS_CUSTOMERPROFILES_API ConditionOverrides(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ConditionOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The relative time period over which data is included in the aggregation for
      * this override.</p>
      */
-    inline const RangeOverride& GetRange() const{ return m_range; }
+    inline const RangeOverride& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const RangeOverride& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(RangeOverride&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline ConditionOverrides& WithRange(const RangeOverride& value) { SetRange(value); return *this;}
-    inline ConditionOverrides& WithRange(RangeOverride&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = RangeOverride>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = RangeOverride>
+    ConditionOverrides& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
   private:
 

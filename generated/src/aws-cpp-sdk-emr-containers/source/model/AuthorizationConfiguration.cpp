@@ -18,14 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-AuthorizationConfiguration::AuthorizationConfiguration() : 
-    m_lakeFormationConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 AuthorizationConfiguration::AuthorizationConfiguration(JsonView jsonValue)
-  : AuthorizationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuthorizationConfiguration& AuthorizationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("lakeFormationConfiguration"))
   {
     m_lakeFormationConfiguration = jsonValue.GetObject("lakeFormationConfiguration");
-
     m_lakeFormationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

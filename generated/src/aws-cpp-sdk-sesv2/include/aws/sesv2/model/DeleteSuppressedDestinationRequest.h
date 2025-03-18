@@ -25,7 +25,7 @@ namespace Model
   class DeleteSuppressedDestinationRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API DeleteSuppressedDestinationRequest();
+    AWS_SESV2_API DeleteSuppressedDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The suppressed email destination to remove from the account suppression
      * list.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline DeleteSuppressedDestinationRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline DeleteSuppressedDestinationRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline DeleteSuppressedDestinationRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    DeleteSuppressedDestinationRequest& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
   private:
 

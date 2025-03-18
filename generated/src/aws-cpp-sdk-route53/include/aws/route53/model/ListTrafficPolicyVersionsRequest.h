@@ -29,7 +29,7 @@ namespace Model
   class ListTrafficPolicyVersionsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListTrafficPolicyVersionsRequest();
+    AWS_ROUTE53_API ListTrafficPolicyVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
      * to list all versions.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ListTrafficPolicyVersionsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ListTrafficPolicyVersionsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <code>TrafficPolicyVersionMarker</code>, specify the value of
      * <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
      */
-    inline const Aws::String& GetTrafficPolicyVersionMarker() const{ return m_trafficPolicyVersionMarker; }
+    inline const Aws::String& GetTrafficPolicyVersionMarker() const { return m_trafficPolicyVersionMarker; }
     inline bool TrafficPolicyVersionMarkerHasBeenSet() const { return m_trafficPolicyVersionMarkerHasBeenSet; }
-    inline void SetTrafficPolicyVersionMarker(const Aws::String& value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker = value; }
-    inline void SetTrafficPolicyVersionMarker(Aws::String&& value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker = std::move(value); }
-    inline void SetTrafficPolicyVersionMarker(const char* value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker.assign(value); }
-    inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(const Aws::String& value) { SetTrafficPolicyVersionMarker(value); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(Aws::String&& value) { SetTrafficPolicyVersionMarker(std::move(value)); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(const char* value) { SetTrafficPolicyVersionMarker(value); return *this;}
+    template<typename TrafficPolicyVersionMarkerT = Aws::String>
+    void SetTrafficPolicyVersionMarker(TrafficPolicyVersionMarkerT&& value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker = std::forward<TrafficPolicyVersionMarkerT>(value); }
+    template<typename TrafficPolicyVersionMarkerT = Aws::String>
+    ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(TrafficPolicyVersionMarkerT&& value) { SetTrafficPolicyVersionMarker(std::forward<TrafficPolicyVersionMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
      * version that Route 53 will return if you submit another request.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListTrafficPolicyVersionsRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListTrafficPolicyVersionsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListTrafficPolicyVersionsRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
   private:
 

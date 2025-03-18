@@ -25,7 +25,7 @@ namespace Model
   class GetAccessPreviewRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API GetAccessPreviewRequest();
+    AWS_ACCESSANALYZER_API GetAccessPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique ID for the access preview.</p>
      */
-    inline const Aws::String& GetAccessPreviewId() const{ return m_accessPreviewId; }
+    inline const Aws::String& GetAccessPreviewId() const { return m_accessPreviewId; }
     inline bool AccessPreviewIdHasBeenSet() const { return m_accessPreviewIdHasBeenSet; }
-    inline void SetAccessPreviewId(const Aws::String& value) { m_accessPreviewIdHasBeenSet = true; m_accessPreviewId = value; }
-    inline void SetAccessPreviewId(Aws::String&& value) { m_accessPreviewIdHasBeenSet = true; m_accessPreviewId = std::move(value); }
-    inline void SetAccessPreviewId(const char* value) { m_accessPreviewIdHasBeenSet = true; m_accessPreviewId.assign(value); }
-    inline GetAccessPreviewRequest& WithAccessPreviewId(const Aws::String& value) { SetAccessPreviewId(value); return *this;}
-    inline GetAccessPreviewRequest& WithAccessPreviewId(Aws::String&& value) { SetAccessPreviewId(std::move(value)); return *this;}
-    inline GetAccessPreviewRequest& WithAccessPreviewId(const char* value) { SetAccessPreviewId(value); return *this;}
+    template<typename AccessPreviewIdT = Aws::String>
+    void SetAccessPreviewId(AccessPreviewIdT&& value) { m_accessPreviewIdHasBeenSet = true; m_accessPreviewId = std::forward<AccessPreviewIdT>(value); }
+    template<typename AccessPreviewIdT = Aws::String>
+    GetAccessPreviewRequest& WithAccessPreviewId(AccessPreviewIdT&& value) { SetAccessPreviewId(std::forward<AccessPreviewIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
      * of the analyzer</a> used to generate the access preview.</p>
      */
-    inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
+    inline const Aws::String& GetAnalyzerArn() const { return m_analyzerArn; }
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-    inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-    inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-    inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-    inline GetAccessPreviewRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-    inline GetAccessPreviewRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-    inline GetAccessPreviewRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    template<typename AnalyzerArnT = Aws::String>
+    void SetAnalyzerArn(AnalyzerArnT&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::forward<AnalyzerArnT>(value); }
+    template<typename AnalyzerArnT = Aws::String>
+    GetAccessPreviewRequest& WithAnalyzerArn(AnalyzerArnT&& value) { SetAnalyzerArn(std::forward<AnalyzerArnT>(value)); return *this;}
     ///@}
   private:
 

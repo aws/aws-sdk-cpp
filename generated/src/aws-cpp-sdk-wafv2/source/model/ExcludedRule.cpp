@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ExcludedRule::ExcludedRule() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ExcludedRule::ExcludedRule(JsonView jsonValue)
-  : ExcludedRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExcludedRule& ExcludedRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

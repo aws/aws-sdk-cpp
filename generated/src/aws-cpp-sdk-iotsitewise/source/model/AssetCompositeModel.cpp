@@ -18,18 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetCompositeModel::AssetCompositeModel() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 AssetCompositeModel::AssetCompositeModel(JsonView jsonValue)
-  : AssetCompositeModel()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AssetCompositeModel& AssetCompositeModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -66,21 +49,16 @@ AssetCompositeModel& AssetCompositeModel::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneLimit::HostedZoneLimit() : 
-    m_type(HostedZoneLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 HostedZoneLimit::HostedZoneLimit(const XmlNode& xmlNode)
-  : HostedZoneLimit()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ HostedZoneLimit& HostedZoneLimit::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = HostedZoneLimitTypeMapper::GetHostedZoneLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = HostedZoneLimitTypeMapper::GetHostedZoneLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");

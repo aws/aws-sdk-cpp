@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration() : 
-    m_optInStatus(OptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false)
-{
-}
-
 LogsAnomalyDetectionIntegration::LogsAnomalyDetectionIntegration(JsonView jsonValue)
-  : LogsAnomalyDetectionIntegration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LogsAnomalyDetectionIntegration& LogsAnomalyDetectionIntegration::operator =(Jso
   if(jsonValue.ValueExists("OptInStatus"))
   {
     m_optInStatus = OptInStatusMapper::GetOptInStatusForName(jsonValue.GetString("OptInStatus"));
-
     m_optInStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

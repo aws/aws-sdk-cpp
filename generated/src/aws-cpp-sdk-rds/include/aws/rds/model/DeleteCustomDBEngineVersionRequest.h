@@ -21,7 +21,7 @@ namespace Model
   class DeleteCustomDBEngineVersionRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API DeleteCustomDBEngineVersionRequest();
+    AWS_RDS_API DeleteCustomDBEngineVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>custom-oracle-se2</code> </p> </li> <li> <p>
      * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline DeleteCustomDBEngineVersionRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline DeleteCustomDBEngineVersionRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    DeleteCustomDBEngineVersionRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline DeleteCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    DeleteCustomDBEngineVersionRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
   private:
 

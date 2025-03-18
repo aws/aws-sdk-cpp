@@ -31,7 +31,7 @@ namespace Model
   class Primary
   {
   public:
-    AWS_EVENTBRIDGE_API Primary();
+    AWS_EVENTBRIDGE_API Primary() = default;
     AWS_EVENTBRIDGE_API Primary(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Primary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The ARN of the health check used by the endpoint to determine whether
      * failover is triggered.</p>
      */
-    inline const Aws::String& GetHealthCheck() const{ return m_healthCheck; }
+    inline const Aws::String& GetHealthCheck() const { return m_healthCheck; }
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    inline void SetHealthCheck(const Aws::String& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-    inline void SetHealthCheck(Aws::String&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-    inline void SetHealthCheck(const char* value) { m_healthCheckHasBeenSet = true; m_healthCheck.assign(value); }
-    inline Primary& WithHealthCheck(const Aws::String& value) { SetHealthCheck(value); return *this;}
-    inline Primary& WithHealthCheck(Aws::String&& value) { SetHealthCheck(std::move(value)); return *this;}
-    inline Primary& WithHealthCheck(const char* value) { SetHealthCheck(value); return *this;}
+    template<typename HealthCheckT = Aws::String>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = Aws::String>
+    Primary& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
   private:
 

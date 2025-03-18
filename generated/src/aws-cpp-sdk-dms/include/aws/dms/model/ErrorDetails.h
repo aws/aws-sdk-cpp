@@ -31,7 +31,7 @@ namespace Model
   class ErrorDetails
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ErrorDetails();
+    AWS_DATABASEMIGRATIONSERVICE_API ErrorDetails() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Error information about a project.</p>
      */
-    inline const DefaultErrorDetails& GetDefaultErrorDetails() const{ return m_defaultErrorDetails; }
+    inline const DefaultErrorDetails& GetDefaultErrorDetails() const { return m_defaultErrorDetails; }
     inline bool DefaultErrorDetailsHasBeenSet() const { return m_defaultErrorDetailsHasBeenSet; }
-    inline void SetDefaultErrorDetails(const DefaultErrorDetails& value) { m_defaultErrorDetailsHasBeenSet = true; m_defaultErrorDetails = value; }
-    inline void SetDefaultErrorDetails(DefaultErrorDetails&& value) { m_defaultErrorDetailsHasBeenSet = true; m_defaultErrorDetails = std::move(value); }
-    inline ErrorDetails& WithDefaultErrorDetails(const DefaultErrorDetails& value) { SetDefaultErrorDetails(value); return *this;}
-    inline ErrorDetails& WithDefaultErrorDetails(DefaultErrorDetails&& value) { SetDefaultErrorDetails(std::move(value)); return *this;}
+    template<typename DefaultErrorDetailsT = DefaultErrorDetails>
+    void SetDefaultErrorDetails(DefaultErrorDetailsT&& value) { m_defaultErrorDetailsHasBeenSet = true; m_defaultErrorDetails = std::forward<DefaultErrorDetailsT>(value); }
+    template<typename DefaultErrorDetailsT = DefaultErrorDetails>
+    ErrorDetails& WithDefaultErrorDetails(DefaultErrorDetailsT&& value) { SetDefaultErrorDetails(std::forward<DefaultErrorDetailsT>(value)); return *this;}
     ///@}
   private:
 

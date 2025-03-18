@@ -34,7 +34,7 @@ namespace Model
   class OtaTaskSchedulingConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSchedulingConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSchedulingConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSchedulingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSchedulingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,58 +46,52 @@ namespace Model
      * selected <code>endTime</code>. If <code>endTime</code> is not selected when
      * creating the task, then <code>endBehavior</code> does not apply.</p>
      */
-    inline const SchedulingConfigEndBehavior& GetEndBehavior() const{ return m_endBehavior; }
+    inline SchedulingConfigEndBehavior GetEndBehavior() const { return m_endBehavior; }
     inline bool EndBehaviorHasBeenSet() const { return m_endBehaviorHasBeenSet; }
-    inline void SetEndBehavior(const SchedulingConfigEndBehavior& value) { m_endBehaviorHasBeenSet = true; m_endBehavior = value; }
-    inline void SetEndBehavior(SchedulingConfigEndBehavior&& value) { m_endBehaviorHasBeenSet = true; m_endBehavior = std::move(value); }
-    inline OtaTaskSchedulingConfig& WithEndBehavior(const SchedulingConfigEndBehavior& value) { SetEndBehavior(value); return *this;}
-    inline OtaTaskSchedulingConfig& WithEndBehavior(SchedulingConfigEndBehavior&& value) { SetEndBehavior(std::move(value)); return *this;}
+    inline void SetEndBehavior(SchedulingConfigEndBehavior value) { m_endBehaviorHasBeenSet = true; m_endBehavior = value; }
+    inline OtaTaskSchedulingConfig& WithEndBehavior(SchedulingConfigEndBehavior value) { SetEndBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time an over-the-air (OTA) task will stop.</p>
      */
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-    inline OtaTaskSchedulingConfig& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline OtaTaskSchedulingConfig& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline OtaTaskSchedulingConfig& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    OtaTaskSchedulingConfig& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maintenance window list for over-the-air (OTA) task scheduling config.</p>
      */
-    inline const Aws::Vector<ScheduleMaintenanceWindow>& GetMaintenanceWindows() const{ return m_maintenanceWindows; }
+    inline const Aws::Vector<ScheduleMaintenanceWindow>& GetMaintenanceWindows() const { return m_maintenanceWindows; }
     inline bool MaintenanceWindowsHasBeenSet() const { return m_maintenanceWindowsHasBeenSet; }
-    inline void SetMaintenanceWindows(const Aws::Vector<ScheduleMaintenanceWindow>& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows = value; }
-    inline void SetMaintenanceWindows(Aws::Vector<ScheduleMaintenanceWindow>&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows = std::move(value); }
-    inline OtaTaskSchedulingConfig& WithMaintenanceWindows(const Aws::Vector<ScheduleMaintenanceWindow>& value) { SetMaintenanceWindows(value); return *this;}
-    inline OtaTaskSchedulingConfig& WithMaintenanceWindows(Aws::Vector<ScheduleMaintenanceWindow>&& value) { SetMaintenanceWindows(std::move(value)); return *this;}
-    inline OtaTaskSchedulingConfig& AddMaintenanceWindows(const ScheduleMaintenanceWindow& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows.push_back(value); return *this; }
-    inline OtaTaskSchedulingConfig& AddMaintenanceWindows(ScheduleMaintenanceWindow&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows.push_back(std::move(value)); return *this; }
+    template<typename MaintenanceWindowsT = Aws::Vector<ScheduleMaintenanceWindow>>
+    void SetMaintenanceWindows(MaintenanceWindowsT&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows = std::forward<MaintenanceWindowsT>(value); }
+    template<typename MaintenanceWindowsT = Aws::Vector<ScheduleMaintenanceWindow>>
+    OtaTaskSchedulingConfig& WithMaintenanceWindows(MaintenanceWindowsT&& value) { SetMaintenanceWindows(std::forward<MaintenanceWindowsT>(value)); return *this;}
+    template<typename MaintenanceWindowsT = ScheduleMaintenanceWindow>
+    OtaTaskSchedulingConfig& AddMaintenanceWindows(MaintenanceWindowsT&& value) { m_maintenanceWindowsHasBeenSet = true; m_maintenanceWindows.emplace_back(std::forward<MaintenanceWindowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time an over-the-air (OTA) task will start.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline OtaTaskSchedulingConfig& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline OtaTaskSchedulingConfig& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline OtaTaskSchedulingConfig& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    OtaTaskSchedulingConfig& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    SchedulingConfigEndBehavior m_endBehavior;
+    SchedulingConfigEndBehavior m_endBehavior{SchedulingConfigEndBehavior::NOT_SET};
     bool m_endBehaviorHasBeenSet = false;
 
     Aws::String m_endTime;

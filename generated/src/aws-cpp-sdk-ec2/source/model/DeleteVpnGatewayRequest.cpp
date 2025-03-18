@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVpnGatewayRequest::DeleteVpnGatewayRequest() : 
-    m_vpnGatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpnGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

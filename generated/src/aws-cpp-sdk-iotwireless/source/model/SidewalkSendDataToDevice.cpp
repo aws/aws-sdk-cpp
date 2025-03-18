@@ -18,18 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkSendDataToDevice::SidewalkSendDataToDevice() : 
-    m_seq(0),
-    m_seqHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_ackModeRetryDurationSecs(0),
-    m_ackModeRetryDurationSecsHasBeenSet(false)
-{
-}
-
 SidewalkSendDataToDevice::SidewalkSendDataToDevice(JsonView jsonValue)
-  : SidewalkSendDataToDevice()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SidewalkSendDataToDevice& SidewalkSendDataToDevice::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Seq"))
   {
     m_seq = jsonValue.GetInteger("Seq");
-
     m_seqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AckModeRetryDurationSecs"))
   {
     m_ackModeRetryDurationSecs = jsonValue.GetInteger("AckModeRetryDurationSecs");
-
     m_ackModeRetryDurationSecsHasBeenSet = true;
   }
-
   return *this;
 }
 

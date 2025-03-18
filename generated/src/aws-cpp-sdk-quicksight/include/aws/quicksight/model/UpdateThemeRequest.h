@@ -22,7 +22,7 @@ namespace Model
   class UpdateThemeRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateThemeRequest();
+    AWS_QUICKSIGHT_API UpdateThemeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the theme that you're
      * updating.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateThemeRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateThemeRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateThemeRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateThemeRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the theme.</p>
      */
-    inline const Aws::String& GetThemeId() const{ return m_themeId; }
+    inline const Aws::String& GetThemeId() const { return m_themeId; }
     inline bool ThemeIdHasBeenSet() const { return m_themeIdHasBeenSet; }
-    inline void SetThemeId(const Aws::String& value) { m_themeIdHasBeenSet = true; m_themeId = value; }
-    inline void SetThemeId(Aws::String&& value) { m_themeIdHasBeenSet = true; m_themeId = std::move(value); }
-    inline void SetThemeId(const char* value) { m_themeIdHasBeenSet = true; m_themeId.assign(value); }
-    inline UpdateThemeRequest& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
-    inline UpdateThemeRequest& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
-    inline UpdateThemeRequest& WithThemeId(const char* value) { SetThemeId(value); return *this;}
+    template<typename ThemeIdT = Aws::String>
+    void SetThemeId(ThemeIdT&& value) { m_themeIdHasBeenSet = true; m_themeId = std::forward<ThemeIdT>(value); }
+    template<typename ThemeIdT = Aws::String>
+    UpdateThemeRequest& WithThemeId(ThemeIdT&& value) { SetThemeId(std::forward<ThemeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the theme.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateThemeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateThemeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateThemeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateThemeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +75,12 @@ namespace Model
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
      * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
-    inline const Aws::String& GetBaseThemeId() const{ return m_baseThemeId; }
+    inline const Aws::String& GetBaseThemeId() const { return m_baseThemeId; }
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }
-    inline void SetBaseThemeId(const Aws::String& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = value; }
-    inline void SetBaseThemeId(Aws::String&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::move(value); }
-    inline void SetBaseThemeId(const char* value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId.assign(value); }
-    inline UpdateThemeRequest& WithBaseThemeId(const Aws::String& value) { SetBaseThemeId(value); return *this;}
-    inline UpdateThemeRequest& WithBaseThemeId(Aws::String&& value) { SetBaseThemeId(std::move(value)); return *this;}
-    inline UpdateThemeRequest& WithBaseThemeId(const char* value) { SetBaseThemeId(value); return *this;}
+    template<typename BaseThemeIdT = Aws::String>
+    void SetBaseThemeId(BaseThemeIdT&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::forward<BaseThemeIdT>(value); }
+    template<typename BaseThemeIdT = Aws::String>
+    UpdateThemeRequest& WithBaseThemeId(BaseThemeIdT&& value) { SetBaseThemeId(std::forward<BaseThemeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,26 +90,24 @@ namespace Model
      * version of the theme maintains a description of the version in
      * <code>VersionDescription</code>.</p>
      */
-    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+    inline const Aws::String& GetVersionDescription() const { return m_versionDescription; }
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
-    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
-    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
-    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
-    inline UpdateThemeRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
-    inline UpdateThemeRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
-    inline UpdateThemeRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+    template<typename VersionDescriptionT = Aws::String>
+    void SetVersionDescription(VersionDescriptionT&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::forward<VersionDescriptionT>(value); }
+    template<typename VersionDescriptionT = Aws::String>
+    UpdateThemeRequest& WithVersionDescription(VersionDescriptionT&& value) { SetVersionDescription(std::forward<VersionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The theme configuration, which contains the theme display properties.</p>
      */
-    inline const ThemeConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ThemeConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ThemeConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ThemeConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateThemeRequest& WithConfiguration(const ThemeConfiguration& value) { SetConfiguration(value); return *this;}
-    inline UpdateThemeRequest& WithConfiguration(ThemeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ThemeConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ThemeConfiguration>
+    UpdateThemeRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

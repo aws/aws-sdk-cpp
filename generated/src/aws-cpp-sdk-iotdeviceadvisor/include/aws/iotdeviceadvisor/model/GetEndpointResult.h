@@ -27,7 +27,7 @@ namespace Model
   class GetEndpointResult
   {
   public:
-    AWS_IOTDEVICEADVISOR_API GetEndpointResult();
+    AWS_IOTDEVICEADVISOR_API GetEndpointResult() = default;
     AWS_IOTDEVICEADVISOR_API GetEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTDEVICEADVISOR_API GetEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The response of an Device Advisor endpoint.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
-    inline GetEndpointResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline GetEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline GetEndpointResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    GetEndpointResult& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

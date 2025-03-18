@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RejectCapacityReservationBillingOwnershipResponse::RejectCapacityReservationBillingOwnershipResponse() : 
-    m_return(false)
-{
-}
-
 RejectCapacityReservationBillingOwnershipResponse::RejectCapacityReservationBillingOwnershipResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RejectCapacityReservationBillingOwnershipResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ RejectCapacityReservationBillingOwnershipResponse& RejectCapacityReservationBill
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ RejectCapacityReservationBillingOwnershipResponse& RejectCapacityReservationBill
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RejectCapacityReservationBillingOwnershipResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

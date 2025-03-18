@@ -18,20 +18,7 @@ namespace Athena
 namespace Model
 {
 
-DataCatalogSummary::DataCatalogSummary() : 
-    m_catalogNameHasBeenSet(false),
-    m_type(DataCatalogType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(DataCatalogStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 DataCatalogSummary::DataCatalogSummary(JsonView jsonValue)
-  : DataCatalogSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DataCatalogSummary& DataCatalogSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogName"))
   {
     m_catalogName = jsonValue.GetString("CatalogName");
-
     m_catalogNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataCatalogTypeMapper::GetDataCatalogTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DataCatalogStatusMapper::GetDataCatalogStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

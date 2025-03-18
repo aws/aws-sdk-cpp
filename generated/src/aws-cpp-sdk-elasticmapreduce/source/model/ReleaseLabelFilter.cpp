@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ReleaseLabelFilter::ReleaseLabelFilter() : 
-    m_prefixHasBeenSet(false),
-    m_applicationHasBeenSet(false)
-{
-}
-
 ReleaseLabelFilter::ReleaseLabelFilter(JsonView jsonValue)
-  : ReleaseLabelFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReleaseLabelFilter& ReleaseLabelFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Application"))
   {
     m_application = jsonValue.GetString("Application");
-
     m_applicationHasBeenSet = true;
   }
-
   return *this;
 }
 

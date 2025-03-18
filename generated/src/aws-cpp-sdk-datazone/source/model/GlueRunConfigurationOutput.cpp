@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GlueRunConfigurationOutput::GlueRunConfigurationOutput() : 
-    m_accountIdHasBeenSet(false),
-    m_autoImportDataQualityResult(false),
-    m_autoImportDataQualityResultHasBeenSet(false),
-    m_catalogNameHasBeenSet(false),
-    m_dataAccessRoleHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
-{
-}
-
 GlueRunConfigurationOutput::GlueRunConfigurationOutput(JsonView jsonValue)
-  : GlueRunConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ GlueRunConfigurationOutput& GlueRunConfigurationOutput::operator =(JsonView json
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoImportDataQualityResult"))
   {
     m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
-
     m_autoImportDataQualityResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("catalogName"))
   {
     m_catalogName = jsonValue.GetString("catalogName");
-
     m_catalogNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessRole"))
   {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
-
     m_dataAccessRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalFilterConfigurations"))
   {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
@@ -81,7 +59,6 @@ GlueRunConfigurationOutput& GlueRunConfigurationOutput::operator =(JsonView json
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStandardsControlRequest::UpdateStandardsControlRequest() : 
-    m_standardsControlArnHasBeenSet(false),
-    m_controlStatus(ControlStatus::NOT_SET),
-    m_controlStatusHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStandardsControlRequest::SerializePayload() const
 {
   JsonValue payload;

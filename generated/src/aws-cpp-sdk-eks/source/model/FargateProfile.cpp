@@ -18,23 +18,7 @@ namespace EKS
 namespace Model
 {
 
-FargateProfile::FargateProfile() : 
-    m_fargateProfileNameHasBeenSet(false),
-    m_fargateProfileArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_podExecutionRoleArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_selectorsHasBeenSet(false),
-    m_status(FargateProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_healthHasBeenSet(false)
-{
-}
-
 FargateProfile::FargateProfile(JsonView jsonValue)
-  : FargateProfile()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fargateProfileName"))
   {
     m_fargateProfileName = jsonValue.GetString("fargateProfileName");
-
     m_fargateProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fargateProfileArn"))
   {
     m_fargateProfileArn = jsonValue.GetString("fargateProfileArn");
-
     m_fargateProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("podExecutionRoleArn"))
   {
     m_podExecutionRoleArn = jsonValue.GetString("podExecutionRoleArn");
-
     m_podExecutionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
@@ -85,7 +59,6 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectors"))
   {
     Aws::Utils::Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
@@ -95,14 +68,11 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
     }
     m_selectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FargateProfileStatusMapper::GetFargateProfileStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -112,14 +82,11 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = jsonValue.GetObject("health");
-
     m_healthHasBeenSet = true;
   }
-
   return *this;
 }
 

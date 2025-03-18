@@ -18,30 +18,7 @@ namespace ECR
 namespace Model
 {
 
-EnhancedImageScanFinding::EnhancedImageScanFinding() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_scoreDetailsHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_fixAvailableHasBeenSet(false),
-    m_exploitAvailableHasBeenSet(false)
-{
-}
-
 EnhancedImageScanFinding::EnhancedImageScanFinding(JsonView jsonValue)
-  : EnhancedImageScanFinding()
 {
   *this = jsonValue;
 }
@@ -51,52 +28,38 @@ EnhancedImageScanFinding& EnhancedImageScanFinding::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
-
     m_findingArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstObservedAt"))
   {
     m_firstObservedAt = jsonValue.GetDouble("firstObservedAt");
-
     m_firstObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastObservedAt"))
   {
     m_lastObservedAt = jsonValue.GetDouble("lastObservedAt");
-
     m_lastObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageVulnerabilityDetails"))
   {
     m_packageVulnerabilityDetails = jsonValue.GetObject("packageVulnerabilityDetails");
-
     m_packageVulnerabilityDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remediation"))
   {
     m_remediation = jsonValue.GetObject("remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -106,70 +69,51 @@ EnhancedImageScanFinding& EnhancedImageScanFinding::operator =(JsonView jsonValu
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoreDetails"))
   {
     m_scoreDetails = jsonValue.GetObject("scoreDetails");
-
     m_scoreDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetString("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixAvailable"))
   {
     m_fixAvailable = jsonValue.GetString("fixAvailable");
-
     m_fixAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exploitAvailable"))
   {
     m_exploitAvailable = jsonValue.GetString("exploitAvailable");
-
     m_exploitAvailableHasBeenSet = true;
   }
-
   return *this;
 }
 

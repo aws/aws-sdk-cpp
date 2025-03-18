@@ -12,12 +12,6 @@ using namespace Aws::InternetMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryStatusRequest::GetQueryStatusRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryStatusRequest::SerializePayload() const
 {
   return {};

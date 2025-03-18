@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrafficMirrorFilter::TrafficMirrorFilter() : 
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_ingressFilterRulesHasBeenSet(false),
-    m_egressFilterRulesHasBeenSet(false),
-    m_networkServicesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrafficMirrorFilter::TrafficMirrorFilter(const XmlNode& xmlNode)
-  : TrafficMirrorFilter()
 {
   *this = xmlNode;
 }
@@ -52,6 +41,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     if(!ingressFilterRulesNode.IsNull())
     {
       XmlNode ingressFilterRulesMember = ingressFilterRulesNode.FirstChild("item");
+      m_ingressFilterRulesHasBeenSet = !ingressFilterRulesMember.IsNull();
       while(!ingressFilterRulesMember.IsNull())
       {
         m_ingressFilterRules.push_back(ingressFilterRulesMember);
@@ -64,6 +54,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     if(!egressFilterRulesNode.IsNull())
     {
       XmlNode egressFilterRulesMember = egressFilterRulesNode.FirstChild("item");
+      m_egressFilterRulesHasBeenSet = !egressFilterRulesMember.IsNull();
       while(!egressFilterRulesMember.IsNull())
       {
         m_egressFilterRules.push_back(egressFilterRulesMember);
@@ -76,6 +67,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     if(!networkServicesNode.IsNull())
     {
       XmlNode networkServicesMember = networkServicesNode.FirstChild("item");
+      m_networkServicesHasBeenSet = !networkServicesMember.IsNull();
       while(!networkServicesMember.IsNull())
       {
         m_networkServices.push_back(TrafficMirrorNetworkServiceMapper::GetTrafficMirrorNetworkServiceForName(StringUtils::Trim(networkServicesMember.GetText().c_str())));
@@ -94,6 +86,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

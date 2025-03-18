@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsOpenSearchServiceDomainDomainEndpointOptionsDetails::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails() : 
-    m_customEndpointCertificateArnHasBeenSet(false),
-    m_customEndpointEnabled(false),
-    m_customEndpointEnabledHasBeenSet(false),
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_customEndpointHasBeenSet(false),
-    m_tLSSecurityPolicyHasBeenSet(false)
-{
-}
-
 AwsOpenSearchServiceDomainDomainEndpointOptionsDetails::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails(JsonView jsonValue)
-  : AwsOpenSearchServiceDomainDomainEndpointOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& AwsOpenSearchServiceDoma
   if(jsonValue.ValueExists("CustomEndpointCertificateArn"))
   {
     m_customEndpointCertificateArn = jsonValue.GetString("CustomEndpointCertificateArn");
-
     m_customEndpointCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpointEnabled"))
   {
     m_customEndpointEnabled = jsonValue.GetBool("CustomEndpointEnabled");
-
     m_customEndpointEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforceHTTPS"))
   {
     m_enforceHTTPS = jsonValue.GetBool("EnforceHTTPS");
-
     m_enforceHTTPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpoint"))
   {
     m_customEndpoint = jsonValue.GetString("CustomEndpoint");
-
     m_customEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSSecurityPolicy"))
   {
     m_tLSSecurityPolicy = jsonValue.GetString("TLSSecurityPolicy");
-
     m_tLSSecurityPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

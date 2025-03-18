@@ -12,13 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagResourceRequest::TagResourceRequest() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

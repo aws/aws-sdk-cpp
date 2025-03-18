@@ -30,7 +30,7 @@ namespace Model
   class UpdateWorkflowStepGroupResult
   {
   public:
-    AWS_MIGRATIONHUBORCHESTRATOR_API UpdateWorkflowStepGroupResult();
+    AWS_MIGRATIONHUBORCHESTRATOR_API UpdateWorkflowStepGroupResult() = default;
     AWS_MIGRATIONHUBORCHESTRATOR_API UpdateWorkflowStepGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBORCHESTRATOR_API UpdateWorkflowStepGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,135 +39,132 @@ namespace Model
     /**
      * <p>The ID of the migration workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-    inline UpdateWorkflowStepGroupResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    UpdateWorkflowStepGroupResult& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the step group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateWorkflowStepGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateWorkflowStepGroupResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the step group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateWorkflowStepGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateWorkflowStepGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the step group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateWorkflowStepGroupResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateWorkflowStepGroupResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of AWS services utilized in a migration workflow.</p>
      */
-    inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
-    inline void SetTools(const Aws::Vector<Tool>& value) { m_tools = value; }
-    inline void SetTools(Aws::Vector<Tool>&& value) { m_tools = std::move(value); }
-    inline UpdateWorkflowStepGroupResult& WithTools(const Aws::Vector<Tool>& value) { SetTools(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithTools(Aws::Vector<Tool>&& value) { SetTools(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& AddTools(const Tool& value) { m_tools.push_back(value); return *this; }
-    inline UpdateWorkflowStepGroupResult& AddTools(Tool&& value) { m_tools.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tool>& GetTools() const { return m_tools; }
+    template<typename ToolsT = Aws::Vector<Tool>>
+    void SetTools(ToolsT&& value) { m_toolsHasBeenSet = true; m_tools = std::forward<ToolsT>(value); }
+    template<typename ToolsT = Aws::Vector<Tool>>
+    UpdateWorkflowStepGroupResult& WithTools(ToolsT&& value) { SetTools(std::forward<ToolsT>(value)); return *this;}
+    template<typename ToolsT = Tool>
+    UpdateWorkflowStepGroupResult& AddTools(ToolsT&& value) { m_toolsHasBeenSet = true; m_tools.emplace_back(std::forward<ToolsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next step group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNext() const{ return m_next; }
-    inline void SetNext(const Aws::Vector<Aws::String>& value) { m_next = value; }
-    inline void SetNext(Aws::Vector<Aws::String>&& value) { m_next = std::move(value); }
-    inline UpdateWorkflowStepGroupResult& WithNext(const Aws::Vector<Aws::String>& value) { SetNext(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithNext(Aws::Vector<Aws::String>&& value) { SetNext(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& AddNext(const Aws::String& value) { m_next.push_back(value); return *this; }
-    inline UpdateWorkflowStepGroupResult& AddNext(Aws::String&& value) { m_next.push_back(std::move(value)); return *this; }
-    inline UpdateWorkflowStepGroupResult& AddNext(const char* value) { m_next.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNext() const { return m_next; }
+    template<typename NextT = Aws::Vector<Aws::String>>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::Vector<Aws::String>>
+    UpdateWorkflowStepGroupResult& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
+    template<typename NextT = Aws::String>
+    UpdateWorkflowStepGroupResult& AddNext(NextT&& value) { m_nextHasBeenSet = true; m_next.emplace_back(std::forward<NextT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The previous step group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrevious() const{ return m_previous; }
-    inline void SetPrevious(const Aws::Vector<Aws::String>& value) { m_previous = value; }
-    inline void SetPrevious(Aws::Vector<Aws::String>&& value) { m_previous = std::move(value); }
-    inline UpdateWorkflowStepGroupResult& WithPrevious(const Aws::Vector<Aws::String>& value) { SetPrevious(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithPrevious(Aws::Vector<Aws::String>&& value) { SetPrevious(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& AddPrevious(const Aws::String& value) { m_previous.push_back(value); return *this; }
-    inline UpdateWorkflowStepGroupResult& AddPrevious(Aws::String&& value) { m_previous.push_back(std::move(value)); return *this; }
-    inline UpdateWorkflowStepGroupResult& AddPrevious(const char* value) { m_previous.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPrevious() const { return m_previous; }
+    template<typename PreviousT = Aws::Vector<Aws::String>>
+    void SetPrevious(PreviousT&& value) { m_previousHasBeenSet = true; m_previous = std::forward<PreviousT>(value); }
+    template<typename PreviousT = Aws::Vector<Aws::String>>
+    UpdateWorkflowStepGroupResult& WithPrevious(PreviousT&& value) { SetPrevious(std::forward<PreviousT>(value)); return *this;}
+    template<typename PreviousT = Aws::String>
+    UpdateWorkflowStepGroupResult& AddPrevious(PreviousT&& value) { m_previousHasBeenSet = true; m_previous.emplace_back(std::forward<PreviousT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time at which the step group was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline UpdateWorkflowStepGroupResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    UpdateWorkflowStepGroupResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkflowStepGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkflowStepGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkflowStepGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workflowId;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tool> m_tools;
+    bool m_toolsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_next;
+    bool m_nextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_previous;
+    bool m_previousHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

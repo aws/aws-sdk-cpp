@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyInstanceGroupsRequest::ModifyInstanceGroupsRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

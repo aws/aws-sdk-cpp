@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ExternalSourceSetting::ExternalSourceSetting() : 
-    m_grammarSlotTypeSettingHasBeenSet(false)
-{
-}
-
 ExternalSourceSetting::ExternalSourceSetting(JsonView jsonValue)
-  : ExternalSourceSetting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExternalSourceSetting& ExternalSourceSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("grammarSlotTypeSetting"))
   {
     m_grammarSlotTypeSetting = jsonValue.GetObject("grammarSlotTypeSetting");
-
     m_grammarSlotTypeSettingHasBeenSet = true;
   }
-
   return *this;
 }
 

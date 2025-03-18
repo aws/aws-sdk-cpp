@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult()
-{
-}
-
 DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeEC2InstanceLimitsResult& DescribeEC2InstanceLimitsResult::operator =(con
     {
       m_eC2InstanceLimits.push_back(eC2InstanceLimitsJsonList[eC2InstanceLimitsIndex].AsObject());
     }
+    m_eC2InstanceLimitsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

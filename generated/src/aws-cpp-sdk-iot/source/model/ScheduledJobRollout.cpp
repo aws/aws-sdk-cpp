@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ScheduledJobRollout::ScheduledJobRollout() : 
-    m_startTimeHasBeenSet(false)
-{
-}
-
 ScheduledJobRollout::ScheduledJobRollout(JsonView jsonValue)
-  : ScheduledJobRollout()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScheduledJobRollout& ScheduledJobRollout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class SuggestAddressHighlights
   {
   public:
-    AWS_GEOPLACES_API SuggestAddressHighlights();
+    AWS_GEOPLACES_API SuggestAddressHighlights() = default;
     AWS_GEOPLACES_API SuggestAddressHighlights(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API SuggestAddressHighlights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * emphasis to results where the user query directly matched to make selecting the
      * correct result from a list easier for an end user.</p>
      */
-    inline const Aws::Vector<Highlight>& GetLabel() const{ return m_label; }
+    inline const Aws::Vector<Highlight>& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::Vector<Highlight>& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::Vector<Highlight>&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline SuggestAddressHighlights& WithLabel(const Aws::Vector<Highlight>& value) { SetLabel(value); return *this;}
-    inline SuggestAddressHighlights& WithLabel(Aws::Vector<Highlight>&& value) { SetLabel(std::move(value)); return *this;}
-    inline SuggestAddressHighlights& AddLabel(const Highlight& value) { m_labelHasBeenSet = true; m_label.push_back(value); return *this; }
-    inline SuggestAddressHighlights& AddLabel(Highlight&& value) { m_labelHasBeenSet = true; m_label.push_back(std::move(value)); return *this; }
+    template<typename LabelT = Aws::Vector<Highlight>>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::Vector<Highlight>>
+    SuggestAddressHighlights& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
+    template<typename LabelT = Highlight>
+    SuggestAddressHighlights& AddLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label.emplace_back(std::forward<LabelT>(value)); return *this; }
     ///@}
   private:
 

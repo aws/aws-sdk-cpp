@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSessionsStatisticsAggregationRequest::GetSessionsStatisticsAggregationRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_aggregationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionsStatisticsAggregationRequest::SerializePayload() const
 {
   return {};

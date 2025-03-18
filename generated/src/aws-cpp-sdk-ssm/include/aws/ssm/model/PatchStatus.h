@@ -33,7 +33,7 @@ namespace Model
   class PatchStatus
   {
   public:
-    AWS_SSM_API PatchStatus();
+    AWS_SSM_API PatchStatus() = default;
     AWS_SSM_API PatchStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,20 @@ namespace Model
     /**
      * <p>The approval status of a patch.</p>
      */
-    inline const PatchDeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
+    inline PatchDeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-    inline void SetDeploymentStatus(const PatchDeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(PatchDeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
-    inline PatchStatus& WithDeploymentStatus(const PatchDeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
-    inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
+    inline void SetDeploymentStatus(PatchDeploymentStatus value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+    inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus value) { SetDeploymentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compliance severity level for a patch.</p>
      */
-    inline const PatchComplianceLevel& GetComplianceLevel() const{ return m_complianceLevel; }
+    inline PatchComplianceLevel GetComplianceLevel() const { return m_complianceLevel; }
     inline bool ComplianceLevelHasBeenSet() const { return m_complianceLevelHasBeenSet; }
-    inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
-    inline void SetComplianceLevel(PatchComplianceLevel&& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = std::move(value); }
-    inline PatchStatus& WithComplianceLevel(const PatchComplianceLevel& value) { SetComplianceLevel(value); return *this;}
-    inline PatchStatus& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
+    inline void SetComplianceLevel(PatchComplianceLevel value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
+    inline PatchStatus& WithComplianceLevel(PatchComplianceLevel value) { SetComplianceLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -68,22 +64,22 @@ namespace Model
      * <p>The date the patch was approved (or will be approved if the status is
      * <code>PENDING_APPROVAL</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetApprovalDate() const{ return m_approvalDate; }
+    inline const Aws::Utils::DateTime& GetApprovalDate() const { return m_approvalDate; }
     inline bool ApprovalDateHasBeenSet() const { return m_approvalDateHasBeenSet; }
-    inline void SetApprovalDate(const Aws::Utils::DateTime& value) { m_approvalDateHasBeenSet = true; m_approvalDate = value; }
-    inline void SetApprovalDate(Aws::Utils::DateTime&& value) { m_approvalDateHasBeenSet = true; m_approvalDate = std::move(value); }
-    inline PatchStatus& WithApprovalDate(const Aws::Utils::DateTime& value) { SetApprovalDate(value); return *this;}
-    inline PatchStatus& WithApprovalDate(Aws::Utils::DateTime&& value) { SetApprovalDate(std::move(value)); return *this;}
+    template<typename ApprovalDateT = Aws::Utils::DateTime>
+    void SetApprovalDate(ApprovalDateT&& value) { m_approvalDateHasBeenSet = true; m_approvalDate = std::forward<ApprovalDateT>(value); }
+    template<typename ApprovalDateT = Aws::Utils::DateTime>
+    PatchStatus& WithApprovalDate(ApprovalDateT&& value) { SetApprovalDate(std::forward<ApprovalDateT>(value)); return *this;}
     ///@}
   private:
 
-    PatchDeploymentStatus m_deploymentStatus;
+    PatchDeploymentStatus m_deploymentStatus{PatchDeploymentStatus::NOT_SET};
     bool m_deploymentStatusHasBeenSet = false;
 
-    PatchComplianceLevel m_complianceLevel;
+    PatchComplianceLevel m_complianceLevel{PatchComplianceLevel::NOT_SET};
     bool m_complianceLevelHasBeenSet = false;
 
-    Aws::Utils::DateTime m_approvalDate;
+    Aws::Utils::DateTime m_approvalDate{};
     bool m_approvalDateHasBeenSet = false;
   };
 

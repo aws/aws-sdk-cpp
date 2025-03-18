@@ -12,13 +12,6 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubscribeRequest::SubscribeRequest() : 
-    m_arnHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String SubscribeRequest::SerializePayload() const
 {
   JsonValue payload;

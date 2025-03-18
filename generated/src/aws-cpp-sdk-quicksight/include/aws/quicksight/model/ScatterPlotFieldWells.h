@@ -34,7 +34,7 @@ namespace Model
   class ScatterPlotFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API ScatterPlotFieldWells();
+    AWS_QUICKSIGHT_API ScatterPlotFieldWells() = default;
     AWS_QUICKSIGHT_API ScatterPlotFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ScatterPlotFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * plots with aggregated field wells are aggregated by category, label, or
      * both.</p>
      */
-    inline const ScatterPlotCategoricallyAggregatedFieldWells& GetScatterPlotCategoricallyAggregatedFieldWells() const{ return m_scatterPlotCategoricallyAggregatedFieldWells; }
+    inline const ScatterPlotCategoricallyAggregatedFieldWells& GetScatterPlotCategoricallyAggregatedFieldWells() const { return m_scatterPlotCategoricallyAggregatedFieldWells; }
     inline bool ScatterPlotCategoricallyAggregatedFieldWellsHasBeenSet() const { return m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet; }
-    inline void SetScatterPlotCategoricallyAggregatedFieldWells(const ScatterPlotCategoricallyAggregatedFieldWells& value) { m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true; m_scatterPlotCategoricallyAggregatedFieldWells = value; }
-    inline void SetScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWells&& value) { m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true; m_scatterPlotCategoricallyAggregatedFieldWells = std::move(value); }
-    inline ScatterPlotFieldWells& WithScatterPlotCategoricallyAggregatedFieldWells(const ScatterPlotCategoricallyAggregatedFieldWells& value) { SetScatterPlotCategoricallyAggregatedFieldWells(value); return *this;}
-    inline ScatterPlotFieldWells& WithScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWells&& value) { SetScatterPlotCategoricallyAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename ScatterPlotCategoricallyAggregatedFieldWellsT = ScatterPlotCategoricallyAggregatedFieldWells>
+    void SetScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWellsT&& value) { m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true; m_scatterPlotCategoricallyAggregatedFieldWells = std::forward<ScatterPlotCategoricallyAggregatedFieldWellsT>(value); }
+    template<typename ScatterPlotCategoricallyAggregatedFieldWellsT = ScatterPlotCategoricallyAggregatedFieldWells>
+    ScatterPlotFieldWells& WithScatterPlotCategoricallyAggregatedFieldWells(ScatterPlotCategoricallyAggregatedFieldWellsT&& value) { SetScatterPlotCategoricallyAggregatedFieldWells(std::forward<ScatterPlotCategoricallyAggregatedFieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The unaggregated field wells of a scatter plot. The x and y-axes of these
      * scatter plots are unaggregated.</p>
      */
-    inline const ScatterPlotUnaggregatedFieldWells& GetScatterPlotUnaggregatedFieldWells() const{ return m_scatterPlotUnaggregatedFieldWells; }
+    inline const ScatterPlotUnaggregatedFieldWells& GetScatterPlotUnaggregatedFieldWells() const { return m_scatterPlotUnaggregatedFieldWells; }
     inline bool ScatterPlotUnaggregatedFieldWellsHasBeenSet() const { return m_scatterPlotUnaggregatedFieldWellsHasBeenSet; }
-    inline void SetScatterPlotUnaggregatedFieldWells(const ScatterPlotUnaggregatedFieldWells& value) { m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true; m_scatterPlotUnaggregatedFieldWells = value; }
-    inline void SetScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWells&& value) { m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true; m_scatterPlotUnaggregatedFieldWells = std::move(value); }
-    inline ScatterPlotFieldWells& WithScatterPlotUnaggregatedFieldWells(const ScatterPlotUnaggregatedFieldWells& value) { SetScatterPlotUnaggregatedFieldWells(value); return *this;}
-    inline ScatterPlotFieldWells& WithScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWells&& value) { SetScatterPlotUnaggregatedFieldWells(std::move(value)); return *this;}
+    template<typename ScatterPlotUnaggregatedFieldWellsT = ScatterPlotUnaggregatedFieldWells>
+    void SetScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWellsT&& value) { m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true; m_scatterPlotUnaggregatedFieldWells = std::forward<ScatterPlotUnaggregatedFieldWellsT>(value); }
+    template<typename ScatterPlotUnaggregatedFieldWellsT = ScatterPlotUnaggregatedFieldWells>
+    ScatterPlotFieldWells& WithScatterPlotUnaggregatedFieldWells(ScatterPlotUnaggregatedFieldWellsT&& value) { SetScatterPlotUnaggregatedFieldWells(std::forward<ScatterPlotUnaggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

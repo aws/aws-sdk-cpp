@@ -18,14 +18,7 @@ namespace Detective
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_messageHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -48,7 +39,6 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

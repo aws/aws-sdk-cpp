@@ -32,7 +32,7 @@ namespace Model
   class DmsTransferSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DmsTransferSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API DmsTransferSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DmsTransferSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API DmsTransferSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role
      * must allow the <code>iam:PassRole</code> action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline DmsTransferSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline DmsTransferSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline DmsTransferSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    DmsTransferSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the S3 bucket to use. </p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline DmsTransferSettings& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline DmsTransferSettings& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline DmsTransferSettings& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    DmsTransferSettings& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
   private:
 

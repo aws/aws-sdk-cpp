@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDashboardResult::GetDashboardResult()
-{
-}
-
 GetDashboardResult::GetDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ GetDashboardResult& GetDashboardResult::operator =(const Aws::AmazonWebServiceRe
     if(!dashboardArnNode.IsNull())
     {
       m_dashboardArn = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardArnNode.GetText());
+      m_dashboardArnHasBeenSet = true;
     }
     XmlNode dashboardBodyNode = resultNode.FirstChild("DashboardBody");
     if(!dashboardBodyNode.IsNull())
     {
       m_dashboardBody = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardBodyNode.GetText());
+      m_dashboardBodyHasBeenSet = true;
     }
     XmlNode dashboardNameNode = resultNode.FirstChild("DashboardName");
     if(!dashboardNameNode.IsNull())
     {
       m_dashboardName = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardNameNode.GetText());
+      m_dashboardNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetDashboardResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

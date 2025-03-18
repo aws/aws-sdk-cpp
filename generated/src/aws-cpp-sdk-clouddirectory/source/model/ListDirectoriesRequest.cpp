@@ -12,15 +12,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDirectoriesRequest::ListDirectoriesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_state(DirectoryState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Aws::String ListDirectoriesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteRateBasedRuleRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API DeleteRateBasedRuleRequest();
+    AWS_WAFREGIONAL_API DeleteRateBasedRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
      * <a>ListRateBasedRules</a>.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline DeleteRateBasedRuleRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline DeleteRateBasedRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline DeleteRateBasedRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    DeleteRateBasedRuleRequest& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline DeleteRateBasedRuleRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline DeleteRateBasedRuleRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline DeleteRateBasedRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    DeleteRateBasedRuleRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
   private:
 

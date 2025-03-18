@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvaluateMappingTemplateRequest::EvaluateMappingTemplateRequest() : 
-    m_templateHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 Aws::String EvaluateMappingTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

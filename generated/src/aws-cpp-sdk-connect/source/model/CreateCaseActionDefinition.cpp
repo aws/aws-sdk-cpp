@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CreateCaseActionDefinition::CreateCaseActionDefinition() : 
-    m_fieldsHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 CreateCaseActionDefinition::CreateCaseActionDefinition(JsonView jsonValue)
-  : CreateCaseActionDefinition()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ CreateCaseActionDefinition& CreateCaseActionDefinition::operator =(JsonView json
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DomainUnitPolicyGrantPrincipal::DomainUnitPolicyGrantPrincipal() : 
-    m_domainUnitDesignation(DomainUnitDesignation::NOT_SET),
-    m_domainUnitDesignationHasBeenSet(false),
-    m_domainUnitGrantFilterHasBeenSet(false),
-    m_domainUnitIdentifierHasBeenSet(false)
-{
-}
-
 DomainUnitPolicyGrantPrincipal::DomainUnitPolicyGrantPrincipal(JsonView jsonValue)
-  : DomainUnitPolicyGrantPrincipal()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DomainUnitPolicyGrantPrincipal& DomainUnitPolicyGrantPrincipal::operator =(JsonV
   if(jsonValue.ValueExists("domainUnitDesignation"))
   {
     m_domainUnitDesignation = DomainUnitDesignationMapper::GetDomainUnitDesignationForName(jsonValue.GetString("domainUnitDesignation"));
-
     m_domainUnitDesignationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainUnitGrantFilter"))
   {
     m_domainUnitGrantFilter = jsonValue.GetObject("domainUnitGrantFilter");
-
     m_domainUnitGrantFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainUnitIdentifier"))
   {
     m_domainUnitIdentifier = jsonValue.GetString("domainUnitIdentifier");
-
     m_domainUnitIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

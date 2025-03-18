@@ -27,7 +27,7 @@ namespace Model
   class ImportModelResult
   {
   public:
-    AWS_COMPREHEND_API ImportModelResult();
+    AWS_COMPREHEND_API ImportModelResult() = default;
     AWS_COMPREHEND_API ImportModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ImportModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
-    inline ImportModelResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline ImportModelResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline ImportModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    ImportModelResult& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelArn;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

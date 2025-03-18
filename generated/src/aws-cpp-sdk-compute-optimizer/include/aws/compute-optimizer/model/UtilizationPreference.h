@@ -35,7 +35,7 @@ namespace Model
   class UtilizationPreference
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API UtilizationPreference();
+    AWS_COMPUTEOPTIMIZER_API UtilizationPreference() = default;
     AWS_COMPUTEOPTIMIZER_API UtilizationPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API UtilizationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p> The name of the resource utilization metric name to customize. </p>
      */
-    inline const CustomizableMetricName& GetMetricName() const{ return m_metricName; }
+    inline CustomizableMetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const CustomizableMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(CustomizableMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline UtilizationPreference& WithMetricName(const CustomizableMetricName& value) { SetMetricName(value); return *this;}
-    inline UtilizationPreference& WithMetricName(CustomizableMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(CustomizableMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline UtilizationPreference& WithMetricName(CustomizableMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p> The parameters to set when customizing the resource utilization thresholds.
      * </p>
      */
-    inline const CustomizableMetricParameters& GetMetricParameters() const{ return m_metricParameters; }
+    inline const CustomizableMetricParameters& GetMetricParameters() const { return m_metricParameters; }
     inline bool MetricParametersHasBeenSet() const { return m_metricParametersHasBeenSet; }
-    inline void SetMetricParameters(const CustomizableMetricParameters& value) { m_metricParametersHasBeenSet = true; m_metricParameters = value; }
-    inline void SetMetricParameters(CustomizableMetricParameters&& value) { m_metricParametersHasBeenSet = true; m_metricParameters = std::move(value); }
-    inline UtilizationPreference& WithMetricParameters(const CustomizableMetricParameters& value) { SetMetricParameters(value); return *this;}
-    inline UtilizationPreference& WithMetricParameters(CustomizableMetricParameters&& value) { SetMetricParameters(std::move(value)); return *this;}
+    template<typename MetricParametersT = CustomizableMetricParameters>
+    void SetMetricParameters(MetricParametersT&& value) { m_metricParametersHasBeenSet = true; m_metricParameters = std::forward<MetricParametersT>(value); }
+    template<typename MetricParametersT = CustomizableMetricParameters>
+    UtilizationPreference& WithMetricParameters(MetricParametersT&& value) { SetMetricParameters(std::forward<MetricParametersT>(value)); return *this;}
     ///@}
   private:
 
-    CustomizableMetricName m_metricName;
+    CustomizableMetricName m_metricName{CustomizableMetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
     CustomizableMetricParameters m_metricParameters;

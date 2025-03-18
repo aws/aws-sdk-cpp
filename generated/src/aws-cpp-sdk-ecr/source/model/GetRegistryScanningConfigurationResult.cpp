@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRegistryScanningConfigurationResult::GetRegistryScanningConfigurationResult()
-{
-}
-
 GetRegistryScanningConfigurationResult::GetRegistryScanningConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRegistryScanningConfigurationResult& GetRegistryScanningConfigurationResult::
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanningConfiguration"))
   {
     m_scanningConfiguration = jsonValue.GetObject("scanningConfiguration");
-
+    m_scanningConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

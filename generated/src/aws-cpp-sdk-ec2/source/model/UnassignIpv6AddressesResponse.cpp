@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UnassignIpv6AddressesResponse::UnassignIpv6AddressesResponse()
-{
-}
-
 UnassignIpv6AddressesResponse::UnassignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
+      m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode unassignedIpv6AddressesNode = resultNode.FirstChild("unassignedIpv6Addresses");
     if(!unassignedIpv6AddressesNode.IsNull())
     {
       XmlNode unassignedIpv6AddressesMember = unassignedIpv6AddressesNode.FirstChild("item");
+      m_unassignedIpv6AddressesHasBeenSet = !unassignedIpv6AddressesMember.IsNull();
       while(!unassignedIpv6AddressesMember.IsNull())
       {
         m_unassignedIpv6Addresses.push_back(unassignedIpv6AddressesMember.GetText());
         unassignedIpv6AddressesMember = unassignedIpv6AddressesMember.NextNode("item");
       }
 
+      m_unassignedIpv6AddressesHasBeenSet = true;
     }
     XmlNode unassignedIpv6PrefixesNode = resultNode.FirstChild("unassignedIpv6PrefixSet");
     if(!unassignedIpv6PrefixesNode.IsNull())
     {
       XmlNode unassignedIpv6PrefixesMember = unassignedIpv6PrefixesNode.FirstChild("item");
+      m_unassignedIpv6PrefixesHasBeenSet = !unassignedIpv6PrefixesMember.IsNull();
       while(!unassignedIpv6PrefixesMember.IsNull())
       {
         m_unassignedIpv6Prefixes.push_back(unassignedIpv6PrefixesMember.GetText());
         unassignedIpv6PrefixesMember = unassignedIpv6PrefixesMember.NextNode("item");
       }
 
+      m_unassignedIpv6PrefixesHasBeenSet = true;
     }
   }
 
@@ -72,6 +73,7 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::UnassignIpv6AddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

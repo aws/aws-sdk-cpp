@@ -32,7 +32,7 @@ namespace Model
   class BudgetActionToAdd
   {
   public:
-    AWS_DEADLINE_API BudgetActionToAdd();
+    AWS_DEADLINE_API BudgetActionToAdd() = default;
     AWS_DEADLINE_API BudgetActionToAdd(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API BudgetActionToAdd& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,17 @@ namespace Model
     /**
      * <p>The type of budget action to add.</p>
      */
-    inline const BudgetActionType& GetType() const{ return m_type; }
+    inline BudgetActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const BudgetActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(BudgetActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BudgetActionToAdd& WithType(const BudgetActionType& value) { SetType(value); return *this;}
-    inline BudgetActionToAdd& WithType(BudgetActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(BudgetActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BudgetActionToAdd& WithType(BudgetActionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage threshold for the budget action to add.</p>
      */
-    inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
+    inline double GetThresholdPercentage() const { return m_thresholdPercentage; }
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
     inline BudgetActionToAdd& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
      * webpage or any other system that might interpret the content of this field.</p>
      * 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline BudgetActionToAdd& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline BudgetActionToAdd& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline BudgetActionToAdd& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    BudgetActionToAdd& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    BudgetActionType m_type;
+    BudgetActionType m_type{BudgetActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_thresholdPercentage;
+    double m_thresholdPercentage{0.0};
     bool m_thresholdPercentageHasBeenSet = false;
 
     Aws::String m_description;

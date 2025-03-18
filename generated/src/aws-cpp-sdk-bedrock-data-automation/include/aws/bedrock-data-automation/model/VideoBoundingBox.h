@@ -31,7 +31,7 @@ namespace Model
   class VideoBoundingBox
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API VideoBoundingBox();
+    AWS_BEDROCKDATAAUTOMATION_API VideoBoundingBox() = default;
     AWS_BEDROCKDATAAUTOMATION_API VideoBoundingBox(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API VideoBoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,16 +39,14 @@ namespace Model
 
     ///@{
     
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VideoBoundingBox& WithState(const State& value) { SetState(value); return *this;}
-    inline VideoBoundingBox& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VideoBoundingBox& WithState(State value) { SetState(value); return *this;}
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

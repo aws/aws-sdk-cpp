@@ -18,19 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WhatsAppPhoneNumberDetail::WhatsAppPhoneNumberDetail() : 
-    m_arnHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberIdHasBeenSet(false),
-    m_metaPhoneNumberIdHasBeenSet(false),
-    m_displayPhoneNumberNameHasBeenSet(false),
-    m_displayPhoneNumberHasBeenSet(false),
-    m_qualityRatingHasBeenSet(false)
-{
-}
-
 WhatsAppPhoneNumberDetail::WhatsAppPhoneNumberDetail(JsonView jsonValue)
-  : WhatsAppPhoneNumberDetail()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ WhatsAppPhoneNumberDetail& WhatsAppPhoneNumberDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("phoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("phoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metaPhoneNumberId"))
   {
     m_metaPhoneNumberId = jsonValue.GetString("metaPhoneNumberId");
-
     m_metaPhoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayPhoneNumberName"))
   {
     m_displayPhoneNumberName = jsonValue.GetString("displayPhoneNumberName");
-
     m_displayPhoneNumberNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayPhoneNumber"))
   {
     m_displayPhoneNumber = jsonValue.GetString("displayPhoneNumber");
-
     m_displayPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qualityRating"))
   {
     m_qualityRating = jsonValue.GetString("qualityRating");
-
     m_qualityRatingHasBeenSet = true;
   }
-
   return *this;
 }
 

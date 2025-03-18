@@ -31,7 +31,7 @@ namespace Model
   class AnalysisTemplateArtifact
   {
   public:
-    AWS_CLEANROOMS_API AnalysisTemplateArtifact();
+    AWS_CLEANROOMS_API AnalysisTemplateArtifact() = default;
     AWS_CLEANROOMS_API AnalysisTemplateArtifact(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisTemplateArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The artifact location.</p>
      */
-    inline const S3Location& GetLocation() const{ return m_location; }
+    inline const S3Location& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const S3Location& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(S3Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline AnalysisTemplateArtifact& WithLocation(const S3Location& value) { SetLocation(value); return *this;}
-    inline AnalysisTemplateArtifact& WithLocation(S3Location&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = S3Location>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = S3Location>
+    AnalysisTemplateArtifact& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

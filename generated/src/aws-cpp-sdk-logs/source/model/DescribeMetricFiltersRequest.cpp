@@ -12,17 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMetricFiltersRequest::DescribeMetricFiltersRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_filterNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricNamespaceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMetricFiltersRequest::SerializePayload() const
 {
   JsonValue payload;

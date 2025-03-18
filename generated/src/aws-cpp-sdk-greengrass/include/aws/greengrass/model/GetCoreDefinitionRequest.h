@@ -21,7 +21,7 @@ namespace Model
   class GetCoreDefinitionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetCoreDefinitionRequest();
+    AWS_GREENGRASS_API GetCoreDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the core definition.
      */
-    inline const Aws::String& GetCoreDefinitionId() const{ return m_coreDefinitionId; }
+    inline const Aws::String& GetCoreDefinitionId() const { return m_coreDefinitionId; }
     inline bool CoreDefinitionIdHasBeenSet() const { return m_coreDefinitionIdHasBeenSet; }
-    inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
-    inline void SetCoreDefinitionId(Aws::String&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::move(value); }
-    inline void SetCoreDefinitionId(const char* value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId.assign(value); }
-    inline GetCoreDefinitionRequest& WithCoreDefinitionId(const Aws::String& value) { SetCoreDefinitionId(value); return *this;}
-    inline GetCoreDefinitionRequest& WithCoreDefinitionId(Aws::String&& value) { SetCoreDefinitionId(std::move(value)); return *this;}
-    inline GetCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
+    template<typename CoreDefinitionIdT = Aws::String>
+    void SetCoreDefinitionId(CoreDefinitionIdT&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::forward<CoreDefinitionIdT>(value); }
+    template<typename CoreDefinitionIdT = Aws::String>
+    GetCoreDefinitionRequest& WithCoreDefinitionId(CoreDefinitionIdT&& value) { SetCoreDefinitionId(std::forward<CoreDefinitionIdT>(value)); return *this;}
     ///@}
   private:
 

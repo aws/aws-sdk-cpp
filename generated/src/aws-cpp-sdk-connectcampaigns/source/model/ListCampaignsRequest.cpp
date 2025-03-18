@@ -12,14 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCampaignsRequest::ListCampaignsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListCampaignsRequest::SerializePayload() const
 {
   JsonValue payload;

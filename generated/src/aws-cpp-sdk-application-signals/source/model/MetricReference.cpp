@@ -18,17 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-MetricReference::MetricReference() : 
-    m_namespaceHasBeenSet(false),
-    m_metricTypeHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 MetricReference::MetricReference(JsonView jsonValue)
-  : MetricReference()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ MetricReference& MetricReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = jsonValue.GetString("MetricType");
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -58,21 +44,16 @@ MetricReference& MetricReference::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

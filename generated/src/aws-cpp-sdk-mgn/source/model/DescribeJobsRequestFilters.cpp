@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-DescribeJobsRequestFilters::DescribeJobsRequestFilters() : 
-    m_fromDateHasBeenSet(false),
-    m_jobIDsHasBeenSet(false),
-    m_toDateHasBeenSet(false)
-{
-}
-
 DescribeJobsRequestFilters::DescribeJobsRequestFilters(JsonView jsonValue)
-  : DescribeJobsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DescribeJobsRequestFilters& DescribeJobsRequestFilters::operator =(JsonView json
   if(jsonValue.ValueExists("fromDate"))
   {
     m_fromDate = jsonValue.GetString("fromDate");
-
     m_fromDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobIDs"))
   {
     Aws::Utils::Array<JsonView> jobIDsJsonList = jsonValue.GetArray("jobIDs");
@@ -49,14 +39,11 @@ DescribeJobsRequestFilters& DescribeJobsRequestFilters::operator =(JsonView json
     }
     m_jobIDsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toDate"))
   {
     m_toDate = jsonValue.GetString("toDate");
-
     m_toDateHasBeenSet = true;
   }
-
   return *this;
 }
 

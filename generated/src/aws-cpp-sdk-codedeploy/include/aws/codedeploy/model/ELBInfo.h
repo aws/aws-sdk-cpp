@@ -33,7 +33,7 @@ namespace Model
   class ELBInfo
   {
   public:
-    AWS_CODEDEPLOY_API ELBInfo();
+    AWS_CODEDEPLOY_API ELBInfo() = default;
     AWS_CODEDEPLOY_API ELBInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API ELBInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * during a deployment, and then re-registered with after the deployment is
      * complete.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ELBInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ELBInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ELBInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ELBInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

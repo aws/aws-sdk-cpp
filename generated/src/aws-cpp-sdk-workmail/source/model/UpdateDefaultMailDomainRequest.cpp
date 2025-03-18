@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDefaultMailDomainRequest::UpdateDefaultMailDomainRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDefaultMailDomainRequest::SerializePayload() const
 {
   JsonValue payload;

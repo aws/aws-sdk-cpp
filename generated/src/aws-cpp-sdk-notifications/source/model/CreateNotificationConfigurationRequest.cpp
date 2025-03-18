@@ -12,15 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotificationConfigurationRequest::CreateNotificationConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_aggregationDuration(AggregationDuration::NOT_SET),
-    m_aggregationDurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotificationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -36,7 +36,7 @@ namespace Model
   class DescribeBotAliasResult
   {
   public:
-    AWS_LEXMODELSV2_API DescribeBotAliasResult();
+    AWS_LEXMODELSV2_API DescribeBotAliasResult() = default;
     AWS_LEXMODELSV2_API DescribeBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API DescribeBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,69 +45,59 @@ namespace Model
     /**
      * <p>The identifier of the bot alias.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasId.assign(value); }
-    inline DescribeBotAliasResult& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    DescribeBotAliasResult& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bot alias.</p>
      */
-    inline const Aws::String& GetBotAliasName() const{ return m_botAliasName; }
-    inline void SetBotAliasName(const Aws::String& value) { m_botAliasName = value; }
-    inline void SetBotAliasName(Aws::String&& value) { m_botAliasName = std::move(value); }
-    inline void SetBotAliasName(const char* value) { m_botAliasName.assign(value); }
-    inline DescribeBotAliasResult& WithBotAliasName(const Aws::String& value) { SetBotAliasName(value); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasName(Aws::String&& value) { SetBotAliasName(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasName(const char* value) { SetBotAliasName(value); return *this;}
+    inline const Aws::String& GetBotAliasName() const { return m_botAliasName; }
+    template<typename BotAliasNameT = Aws::String>
+    void SetBotAliasName(BotAliasNameT&& value) { m_botAliasNameHasBeenSet = true; m_botAliasName = std::forward<BotAliasNameT>(value); }
+    template<typename BotAliasNameT = Aws::String>
+    DescribeBotAliasResult& WithBotAliasName(BotAliasNameT&& value) { SetBotAliasName(std::forward<BotAliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the bot alias.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeBotAliasResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeBotAliasResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeBotAliasResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot associated with the bot alias.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline DescribeBotAliasResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline DescribeBotAliasResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    DescribeBotAliasResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locale settings that are unique to the alias.</p>
      */
-    inline const Aws::Map<Aws::String, BotAliasLocaleSettings>& GetBotAliasLocaleSettings() const{ return m_botAliasLocaleSettings; }
-    inline void SetBotAliasLocaleSettings(const Aws::Map<Aws::String, BotAliasLocaleSettings>& value) { m_botAliasLocaleSettings = value; }
-    inline void SetBotAliasLocaleSettings(Aws::Map<Aws::String, BotAliasLocaleSettings>&& value) { m_botAliasLocaleSettings = std::move(value); }
-    inline DescribeBotAliasResult& WithBotAliasLocaleSettings(const Aws::Map<Aws::String, BotAliasLocaleSettings>& value) { SetBotAliasLocaleSettings(value); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasLocaleSettings(Aws::Map<Aws::String, BotAliasLocaleSettings>&& value) { SetBotAliasLocaleSettings(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(const Aws::String& key, const BotAliasLocaleSettings& value) { m_botAliasLocaleSettings.emplace(key, value); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(Aws::String&& key, const BotAliasLocaleSettings& value) { m_botAliasLocaleSettings.emplace(std::move(key), value); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(const Aws::String& key, BotAliasLocaleSettings&& value) { m_botAliasLocaleSettings.emplace(key, std::move(value)); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(Aws::String&& key, BotAliasLocaleSettings&& value) { m_botAliasLocaleSettings.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(const char* key, BotAliasLocaleSettings&& value) { m_botAliasLocaleSettings.emplace(key, std::move(value)); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasLocaleSettings(const char* key, const BotAliasLocaleSettings& value) { m_botAliasLocaleSettings.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, BotAliasLocaleSettings>& GetBotAliasLocaleSettings() const { return m_botAliasLocaleSettings; }
+    template<typename BotAliasLocaleSettingsT = Aws::Map<Aws::String, BotAliasLocaleSettings>>
+    void SetBotAliasLocaleSettings(BotAliasLocaleSettingsT&& value) { m_botAliasLocaleSettingsHasBeenSet = true; m_botAliasLocaleSettings = std::forward<BotAliasLocaleSettingsT>(value); }
+    template<typename BotAliasLocaleSettingsT = Aws::Map<Aws::String, BotAliasLocaleSettings>>
+    DescribeBotAliasResult& WithBotAliasLocaleSettings(BotAliasLocaleSettingsT&& value) { SetBotAliasLocaleSettings(std::forward<BotAliasLocaleSettingsT>(value)); return *this;}
+    template<typename BotAliasLocaleSettingsKeyT = Aws::String, typename BotAliasLocaleSettingsValueT = BotAliasLocaleSettings>
+    DescribeBotAliasResult& AddBotAliasLocaleSettings(BotAliasLocaleSettingsKeyT&& key, BotAliasLocaleSettingsValueT&& value) {
+      m_botAliasLocaleSettingsHasBeenSet = true; m_botAliasLocaleSettings.emplace(std::forward<BotAliasLocaleSettingsKeyT>(key), std::forward<BotAliasLocaleSettingsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -115,20 +105,20 @@ namespace Model
      * <p>Specifics of how Amazon Lex logs text and audio conversations with the bot
      * associated with the alias.</p>
      */
-    inline const ConversationLogSettings& GetConversationLogSettings() const{ return m_conversationLogSettings; }
-    inline void SetConversationLogSettings(const ConversationLogSettings& value) { m_conversationLogSettings = value; }
-    inline void SetConversationLogSettings(ConversationLogSettings&& value) { m_conversationLogSettings = std::move(value); }
-    inline DescribeBotAliasResult& WithConversationLogSettings(const ConversationLogSettings& value) { SetConversationLogSettings(value); return *this;}
-    inline DescribeBotAliasResult& WithConversationLogSettings(ConversationLogSettings&& value) { SetConversationLogSettings(std::move(value)); return *this;}
+    inline const ConversationLogSettings& GetConversationLogSettings() const { return m_conversationLogSettings; }
+    template<typename ConversationLogSettingsT = ConversationLogSettings>
+    void SetConversationLogSettings(ConversationLogSettingsT&& value) { m_conversationLogSettingsHasBeenSet = true; m_conversationLogSettings = std::forward<ConversationLogSettingsT>(value); }
+    template<typename ConversationLogSettingsT = ConversationLogSettings>
+    DescribeBotAliasResult& WithConversationLogSettings(ConversationLogSettingsT&& value) { SetConversationLogSettings(std::forward<ConversationLogSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SentimentAnalysisSettings& GetSentimentAnalysisSettings() const{ return m_sentimentAnalysisSettings; }
-    inline void SetSentimentAnalysisSettings(const SentimentAnalysisSettings& value) { m_sentimentAnalysisSettings = value; }
-    inline void SetSentimentAnalysisSettings(SentimentAnalysisSettings&& value) { m_sentimentAnalysisSettings = std::move(value); }
-    inline DescribeBotAliasResult& WithSentimentAnalysisSettings(const SentimentAnalysisSettings& value) { SetSentimentAnalysisSettings(value); return *this;}
-    inline DescribeBotAliasResult& WithSentimentAnalysisSettings(SentimentAnalysisSettings&& value) { SetSentimentAnalysisSettings(std::move(value)); return *this;}
+    inline const SentimentAnalysisSettings& GetSentimentAnalysisSettings() const { return m_sentimentAnalysisSettings; }
+    template<typename SentimentAnalysisSettingsT = SentimentAnalysisSettings>
+    void SetSentimentAnalysisSettings(SentimentAnalysisSettingsT&& value) { m_sentimentAnalysisSettingsHasBeenSet = true; m_sentimentAnalysisSettings = std::forward<SentimentAnalysisSettingsT>(value); }
+    template<typename SentimentAnalysisSettingsT = SentimentAnalysisSettings>
+    DescribeBotAliasResult& WithSentimentAnalysisSettings(SentimentAnalysisSettingsT&& value) { SetSentimentAnalysisSettings(std::forward<SentimentAnalysisSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,13 +126,13 @@ namespace Model
      * <p>A list of events that affect a bot alias. For example, an event is recorded
      * when the version that the alias points to changes.</p>
      */
-    inline const Aws::Vector<BotAliasHistoryEvent>& GetBotAliasHistoryEvents() const{ return m_botAliasHistoryEvents; }
-    inline void SetBotAliasHistoryEvents(const Aws::Vector<BotAliasHistoryEvent>& value) { m_botAliasHistoryEvents = value; }
-    inline void SetBotAliasHistoryEvents(Aws::Vector<BotAliasHistoryEvent>&& value) { m_botAliasHistoryEvents = std::move(value); }
-    inline DescribeBotAliasResult& WithBotAliasHistoryEvents(const Aws::Vector<BotAliasHistoryEvent>& value) { SetBotAliasHistoryEvents(value); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasHistoryEvents(Aws::Vector<BotAliasHistoryEvent>&& value) { SetBotAliasHistoryEvents(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& AddBotAliasHistoryEvents(const BotAliasHistoryEvent& value) { m_botAliasHistoryEvents.push_back(value); return *this; }
-    inline DescribeBotAliasResult& AddBotAliasHistoryEvents(BotAliasHistoryEvent&& value) { m_botAliasHistoryEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BotAliasHistoryEvent>& GetBotAliasHistoryEvents() const { return m_botAliasHistoryEvents; }
+    template<typename BotAliasHistoryEventsT = Aws::Vector<BotAliasHistoryEvent>>
+    void SetBotAliasHistoryEvents(BotAliasHistoryEventsT&& value) { m_botAliasHistoryEventsHasBeenSet = true; m_botAliasHistoryEvents = std::forward<BotAliasHistoryEventsT>(value); }
+    template<typename BotAliasHistoryEventsT = Aws::Vector<BotAliasHistoryEvent>>
+    DescribeBotAliasResult& WithBotAliasHistoryEvents(BotAliasHistoryEventsT&& value) { SetBotAliasHistoryEvents(std::forward<BotAliasHistoryEventsT>(value)); return *this;}
+    template<typename BotAliasHistoryEventsT = BotAliasHistoryEvent>
+    DescribeBotAliasResult& AddBotAliasHistoryEvents(BotAliasHistoryEventsT&& value) { m_botAliasHistoryEventsHasBeenSet = true; m_botAliasHistoryEvents.emplace_back(std::forward<BotAliasHistoryEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -150,100 +140,108 @@ namespace Model
      * <p>The current status of the alias. When the alias is <code>Available</code>,
      * the alias is ready for use with your bot.</p>
      */
-    inline const BotAliasStatus& GetBotAliasStatus() const{ return m_botAliasStatus; }
-    inline void SetBotAliasStatus(const BotAliasStatus& value) { m_botAliasStatus = value; }
-    inline void SetBotAliasStatus(BotAliasStatus&& value) { m_botAliasStatus = std::move(value); }
-    inline DescribeBotAliasResult& WithBotAliasStatus(const BotAliasStatus& value) { SetBotAliasStatus(value); return *this;}
-    inline DescribeBotAliasResult& WithBotAliasStatus(BotAliasStatus&& value) { SetBotAliasStatus(std::move(value)); return *this;}
+    inline BotAliasStatus GetBotAliasStatus() const { return m_botAliasStatus; }
+    inline void SetBotAliasStatus(BotAliasStatus value) { m_botAliasStatusHasBeenSet = true; m_botAliasStatus = value; }
+    inline DescribeBotAliasResult& WithBotAliasStatus(BotAliasStatus value) { SetBotAliasStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the bot associated with the bot alias.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline DescribeBotAliasResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline DescribeBotAliasResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    DescribeBotAliasResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the alias was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline DescribeBotAliasResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DescribeBotAliasResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DescribeBotAliasResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the alias was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline DescribeBotAliasResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline DescribeBotAliasResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    DescribeBotAliasResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the networks to which the bot alias you described belongs.</p>
      */
-    inline const Aws::Vector<ParentBotNetwork>& GetParentBotNetworks() const{ return m_parentBotNetworks; }
-    inline void SetParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { m_parentBotNetworks = value; }
-    inline void SetParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { m_parentBotNetworks = std::move(value); }
-    inline DescribeBotAliasResult& WithParentBotNetworks(const Aws::Vector<ParentBotNetwork>& value) { SetParentBotNetworks(value); return *this;}
-    inline DescribeBotAliasResult& WithParentBotNetworks(Aws::Vector<ParentBotNetwork>&& value) { SetParentBotNetworks(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& AddParentBotNetworks(const ParentBotNetwork& value) { m_parentBotNetworks.push_back(value); return *this; }
-    inline DescribeBotAliasResult& AddParentBotNetworks(ParentBotNetwork&& value) { m_parentBotNetworks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParentBotNetwork>& GetParentBotNetworks() const { return m_parentBotNetworks; }
+    template<typename ParentBotNetworksT = Aws::Vector<ParentBotNetwork>>
+    void SetParentBotNetworks(ParentBotNetworksT&& value) { m_parentBotNetworksHasBeenSet = true; m_parentBotNetworks = std::forward<ParentBotNetworksT>(value); }
+    template<typename ParentBotNetworksT = Aws::Vector<ParentBotNetwork>>
+    DescribeBotAliasResult& WithParentBotNetworks(ParentBotNetworksT&& value) { SetParentBotNetworks(std::forward<ParentBotNetworksT>(value)); return *this;}
+    template<typename ParentBotNetworksT = ParentBotNetwork>
+    DescribeBotAliasResult& AddParentBotNetworks(ParentBotNetworksT&& value) { m_parentBotNetworksHasBeenSet = true; m_parentBotNetworks.emplace_back(std::forward<ParentBotNetworksT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBotAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBotAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBotAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBotAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botAliasId;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botAliasName;
+    bool m_botAliasNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, BotAliasLocaleSettings> m_botAliasLocaleSettings;
+    bool m_botAliasLocaleSettingsHasBeenSet = false;
 
     ConversationLogSettings m_conversationLogSettings;
+    bool m_conversationLogSettingsHasBeenSet = false;
 
     SentimentAnalysisSettings m_sentimentAnalysisSettings;
+    bool m_sentimentAnalysisSettingsHasBeenSet = false;
 
     Aws::Vector<BotAliasHistoryEvent> m_botAliasHistoryEvents;
+    bool m_botAliasHistoryEventsHasBeenSet = false;
 
-    BotAliasStatus m_botAliasStatus;
+    BotAliasStatus m_botAliasStatus{BotAliasStatus::NOT_SET};
+    bool m_botAliasStatusHasBeenSet = false;
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Vector<ParentBotNetwork> m_parentBotNetworks;
+    bool m_parentBotNetworksHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

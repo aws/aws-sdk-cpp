@@ -74,7 +74,7 @@ namespace Model
   class DataResource
   {
   public:
-    AWS_CLOUDTRAIL_API DataResource();
+    AWS_CLOUDTRAIL_API DataResource() = default;
     AWS_CLOUDTRAIL_API DataResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API DataResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -90,14 +90,12 @@ namespace Model
      * available through <i>advanced</i> event selectors. For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline DataResource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    DataResource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,15 +130,14 @@ namespace Model
      * Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DataResource& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DataResource& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DataResource& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DataResource& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DataResource& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DataResource& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DataResource& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPortfolioPreferencesResult::GetPortfolioPreferencesResult() : 
-    m_applicationMode(ApplicationMode::NOT_SET)
-{
-}
-
 GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPortfolioPreferencesResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetPortfolioPreferencesResult& GetPortfolioPreferencesResult::operator =(const A
   if(jsonValue.ValueExists("applicationMode"))
   {
     m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("applicationMode"));
-
+    m_applicationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationPreferences"))
   {
     m_applicationPreferences = jsonValue.GetObject("applicationPreferences");
-
+    m_applicationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databasePreferences"))
   {
     m_databasePreferences = jsonValue.GetObject("databasePreferences");
-
+    m_databasePreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prioritizeBusinessGoals"))
   {
     m_prioritizeBusinessGoals = jsonValue.GetObject("prioritizeBusinessGoals");
-
+    m_prioritizeBusinessGoalsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

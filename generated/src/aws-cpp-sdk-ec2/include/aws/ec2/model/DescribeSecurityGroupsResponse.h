@@ -30,7 +30,7 @@ namespace Model
   class DescribeSecurityGroupsResponse
   {
   public:
-    AWS_EC2_API DescribeSecurityGroupsResponse();
+    AWS_EC2_API DescribeSecurityGroupsResponse() = default;
     AWS_EC2_API DescribeSecurityGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeSecurityGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSecurityGroupsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSecurityGroupsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSecurityGroupsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSecurityGroupsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the security groups.</p>
      */
-    inline const Aws::Vector<SecurityGroup>& GetSecurityGroups() const{ return m_securityGroups; }
-    inline void SetSecurityGroups(const Aws::Vector<SecurityGroup>& value) { m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<SecurityGroup>&& value) { m_securityGroups = std::move(value); }
-    inline DescribeSecurityGroupsResponse& WithSecurityGroups(const Aws::Vector<SecurityGroup>& value) { SetSecurityGroups(value); return *this;}
-    inline DescribeSecurityGroupsResponse& WithSecurityGroups(Aws::Vector<SecurityGroup>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline DescribeSecurityGroupsResponse& AddSecurityGroups(const SecurityGroup& value) { m_securityGroups.push_back(value); return *this; }
-    inline DescribeSecurityGroupsResponse& AddSecurityGroups(SecurityGroup&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecurityGroup>& GetSecurityGroups() const { return m_securityGroups; }
+    template<typename SecurityGroupsT = Aws::Vector<SecurityGroup>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<SecurityGroup>>
+    DescribeSecurityGroupsResponse& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = SecurityGroup>
+    DescribeSecurityGroupsResponse& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSecurityGroupsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSecurityGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSecurityGroupsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<SecurityGroup> m_securityGroups;
+    bool m_securityGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

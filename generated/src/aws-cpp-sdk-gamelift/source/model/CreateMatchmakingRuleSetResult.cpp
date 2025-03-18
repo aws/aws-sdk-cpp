@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult()
-{
-}
-
 CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMatchmakingRuleSetResult& CreateMatchmakingRuleSetResult::operator =(const
   if(jsonValue.ValueExists("RuleSet"))
   {
     m_ruleSet = jsonValue.GetObject("RuleSet");
-
+    m_ruleSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

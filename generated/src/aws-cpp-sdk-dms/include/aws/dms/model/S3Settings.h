@@ -39,7 +39,7 @@ namespace Model
   class S3Settings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API S3Settings();
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API S3Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API S3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
      * The role must allow the <code>iam:PassRole</code> action. It is a required
      * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline S3Settings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline S3Settings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline S3Settings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    S3Settings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
-    inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
+    inline const Aws::String& GetExternalTableDefinition() const { return m_externalTableDefinition; }
     inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
-    inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
-    inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
-    inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
-    inline S3Settings& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
-    inline S3Settings& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
-    inline S3Settings& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+    template<typename ExternalTableDefinitionT = Aws::String>
+    void SetExternalTableDefinition(ExternalTableDefinitionT&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::forward<ExternalTableDefinitionT>(value); }
+    template<typename ExternalTableDefinitionT = Aws::String>
+    S3Settings& WithExternalTableDefinition(ExternalTableDefinitionT&& value) { SetExternalTableDefinition(std::forward<ExternalTableDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * <p> The delimiter used to separate rows in the .csv file for both source and
      * target. The default is a carriage return (<code>\n</code>). </p>
      */
-    inline const Aws::String& GetCsvRowDelimiter() const{ return m_csvRowDelimiter; }
+    inline const Aws::String& GetCsvRowDelimiter() const { return m_csvRowDelimiter; }
     inline bool CsvRowDelimiterHasBeenSet() const { return m_csvRowDelimiterHasBeenSet; }
-    inline void SetCsvRowDelimiter(const Aws::String& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = value; }
-    inline void SetCsvRowDelimiter(Aws::String&& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = std::move(value); }
-    inline void SetCsvRowDelimiter(const char* value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter.assign(value); }
-    inline S3Settings& WithCsvRowDelimiter(const Aws::String& value) { SetCsvRowDelimiter(value); return *this;}
-    inline S3Settings& WithCsvRowDelimiter(Aws::String&& value) { SetCsvRowDelimiter(std::move(value)); return *this;}
-    inline S3Settings& WithCsvRowDelimiter(const char* value) { SetCsvRowDelimiter(value); return *this;}
+    template<typename CsvRowDelimiterT = Aws::String>
+    void SetCsvRowDelimiter(CsvRowDelimiterT&& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = std::forward<CsvRowDelimiterT>(value); }
+    template<typename CsvRowDelimiterT = Aws::String>
+    S3Settings& WithCsvRowDelimiter(CsvRowDelimiterT&& value) { SetCsvRowDelimiter(std::forward<CsvRowDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p> The delimiter used to separate columns in the .csv file for both source and
      * target. The default is a comma. </p>
      */
-    inline const Aws::String& GetCsvDelimiter() const{ return m_csvDelimiter; }
+    inline const Aws::String& GetCsvDelimiter() const { return m_csvDelimiter; }
     inline bool CsvDelimiterHasBeenSet() const { return m_csvDelimiterHasBeenSet; }
-    inline void SetCsvDelimiter(const Aws::String& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = value; }
-    inline void SetCsvDelimiter(Aws::String&& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = std::move(value); }
-    inline void SetCsvDelimiter(const char* value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter.assign(value); }
-    inline S3Settings& WithCsvDelimiter(const Aws::String& value) { SetCsvDelimiter(value); return *this;}
-    inline S3Settings& WithCsvDelimiter(Aws::String&& value) { SetCsvDelimiter(std::move(value)); return *this;}
-    inline S3Settings& WithCsvDelimiter(const char* value) { SetCsvDelimiter(value); return *this;}
+    template<typename CsvDelimiterT = Aws::String>
+    void SetCsvDelimiter(CsvDelimiterT&& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = std::forward<CsvDelimiterT>(value); }
+    template<typename CsvDelimiterT = Aws::String>
+    S3Settings& WithCsvDelimiter(CsvDelimiterT&& value) { SetCsvDelimiter(std::forward<CsvDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +105,24 @@ namespace Model
      * parameter isn't specified, then the path used is <code>
      * <i>schema_name</i>/<i>table_name</i>/</code>. </p>
      */
-    inline const Aws::String& GetBucketFolder() const{ return m_bucketFolder; }
+    inline const Aws::String& GetBucketFolder() const { return m_bucketFolder; }
     inline bool BucketFolderHasBeenSet() const { return m_bucketFolderHasBeenSet; }
-    inline void SetBucketFolder(const Aws::String& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = value; }
-    inline void SetBucketFolder(Aws::String&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::move(value); }
-    inline void SetBucketFolder(const char* value) { m_bucketFolderHasBeenSet = true; m_bucketFolder.assign(value); }
-    inline S3Settings& WithBucketFolder(const Aws::String& value) { SetBucketFolder(value); return *this;}
-    inline S3Settings& WithBucketFolder(Aws::String&& value) { SetBucketFolder(std::move(value)); return *this;}
-    inline S3Settings& WithBucketFolder(const char* value) { SetBucketFolder(value); return *this;}
+    template<typename BucketFolderT = Aws::String>
+    void SetBucketFolder(BucketFolderT&& value) { m_bucketFolderHasBeenSet = true; m_bucketFolder = std::forward<BucketFolderT>(value); }
+    template<typename BucketFolderT = Aws::String>
+    S3Settings& WithBucketFolder(BucketFolderT&& value) { SetBucketFolder(std::forward<BucketFolderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the S3 bucket. </p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3Settings& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3Settings& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3Settings& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3Settings& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +132,10 @@ namespace Model
      * don't use it to leave the files uncompressed. This parameter applies to both
      * .csv and .parquet file formats. </p>
      */
-    inline const CompressionTypeValue& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionTypeValue GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionTypeValue& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionTypeValue&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline S3Settings& WithCompressionType(const CompressionTypeValue& value) { SetCompressionType(value); return *this;}
-    inline S3Settings& WithCompressionType(CompressionTypeValue&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionTypeValue value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline S3Settings& WithCompressionType(CompressionTypeValue value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +160,10 @@ namespace Model
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:DeleteBucketPolicy</code> </p> </li> </ul>
      */
-    inline const EncryptionModeValue& GetEncryptionMode() const{ return m_encryptionMode; }
+    inline EncryptionModeValue GetEncryptionMode() const { return m_encryptionMode; }
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
-    inline void SetEncryptionMode(const EncryptionModeValue& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
-    inline void SetEncryptionMode(EncryptionModeValue&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
-    inline S3Settings& WithEncryptionMode(const EncryptionModeValue& value) { SetEncryptionMode(value); return *this;}
-    inline S3Settings& WithEncryptionMode(EncryptionModeValue&& value) { SetEncryptionMode(std::move(value)); return *this;}
+    inline void SetEncryptionMode(EncryptionModeValue value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+    inline S3Settings& WithEncryptionMode(EncryptionModeValue value) { SetEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +177,12 @@ namespace Model
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
      * </code> </p>
      */
-    inline const Aws::String& GetServerSideEncryptionKmsKeyId() const{ return m_serverSideEncryptionKmsKeyId; }
+    inline const Aws::String& GetServerSideEncryptionKmsKeyId() const { return m_serverSideEncryptionKmsKeyId; }
     inline bool ServerSideEncryptionKmsKeyIdHasBeenSet() const { return m_serverSideEncryptionKmsKeyIdHasBeenSet; }
-    inline void SetServerSideEncryptionKmsKeyId(const Aws::String& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = value; }
-    inline void SetServerSideEncryptionKmsKeyId(Aws::String&& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = std::move(value); }
-    inline void SetServerSideEncryptionKmsKeyId(const char* value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId.assign(value); }
-    inline S3Settings& WithServerSideEncryptionKmsKeyId(const Aws::String& value) { SetServerSideEncryptionKmsKeyId(value); return *this;}
-    inline S3Settings& WithServerSideEncryptionKmsKeyId(Aws::String&& value) { SetServerSideEncryptionKmsKeyId(std::move(value)); return *this;}
-    inline S3Settings& WithServerSideEncryptionKmsKeyId(const char* value) { SetServerSideEncryptionKmsKeyId(value); return *this;}
+    template<typename ServerSideEncryptionKmsKeyIdT = Aws::String>
+    void SetServerSideEncryptionKmsKeyId(ServerSideEncryptionKmsKeyIdT&& value) { m_serverSideEncryptionKmsKeyIdHasBeenSet = true; m_serverSideEncryptionKmsKeyId = std::forward<ServerSideEncryptionKmsKeyIdT>(value); }
+    template<typename ServerSideEncryptionKmsKeyIdT = Aws::String>
+    S3Settings& WithServerSideEncryptionKmsKeyId(ServerSideEncryptionKmsKeyIdT&& value) { SetServerSideEncryptionKmsKeyId(std::forward<ServerSideEncryptionKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,12 +194,10 @@ namespace Model
      * format that features efficient compression and provides faster query response.
      * </p> </li> </ul>
      */
-    inline const DataFormatValue& GetDataFormat() const{ return m_dataFormat; }
+    inline DataFormatValue GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const DataFormatValue& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(DataFormatValue&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline S3Settings& WithDataFormat(const DataFormatValue& value) { SetDataFormat(value); return *this;}
-    inline S3Settings& WithDataFormat(DataFormatValue&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(DataFormatValue value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline S3Settings& WithDataFormat(DataFormatValue value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -230,12 +210,10 @@ namespace Model
      * dictionary of the values encountered in a given column. The dictionary is stored
      * in a dictionary page for each column chunk.</p> </li> </ul>
      */
-    inline const EncodingTypeValue& GetEncodingType() const{ return m_encodingType; }
+    inline EncodingTypeValue GetEncodingType() const { return m_encodingType; }
     inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }
-    inline void SetEncodingType(const EncodingTypeValue& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
-    inline void SetEncodingType(EncodingTypeValue&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
-    inline S3Settings& WithEncodingType(const EncodingTypeValue& value) { SetEncodingType(value); return *this;}
-    inline S3Settings& WithEncodingType(EncodingTypeValue&& value) { SetEncodingType(std::move(value)); return *this;}
+    inline void SetEncodingType(EncodingTypeValue value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline S3Settings& WithEncodingType(EncodingTypeValue value) { SetEncodingType(value); return *this;}
     ///@}
 
     ///@{
@@ -246,7 +224,7 @@ namespace Model
      * maximum size of a dictionary page before it reverts to <code>PLAIN</code>
      * encoding. This size is used for .parquet file format only. </p>
      */
-    inline int GetDictPageSizeLimit() const{ return m_dictPageSizeLimit; }
+    inline int GetDictPageSizeLimit() const { return m_dictPageSizeLimit; }
     inline bool DictPageSizeLimitHasBeenSet() const { return m_dictPageSizeLimitHasBeenSet; }
     inline void SetDictPageSizeLimit(int value) { m_dictPageSizeLimitHasBeenSet = true; m_dictPageSizeLimit = value; }
     inline S3Settings& WithDictPageSizeLimit(int value) { SetDictPageSizeLimit(value); return *this;}
@@ -261,7 +239,7 @@ namespace Model
      * <code>RowGroupLength</code> is set to the max row group length in bytes (64 *
      * 1024 * 1024). </p>
      */
-    inline int GetRowGroupLength() const{ return m_rowGroupLength; }
+    inline int GetRowGroupLength() const { return m_rowGroupLength; }
     inline bool RowGroupLengthHasBeenSet() const { return m_rowGroupLengthHasBeenSet; }
     inline void SetRowGroupLength(int value) { m_rowGroupLengthHasBeenSet = true; m_rowGroupLength = value; }
     inline S3Settings& WithRowGroupLength(int value) { SetRowGroupLength(value); return *this;}
@@ -272,7 +250,7 @@ namespace Model
      * <p>The size of one data page in bytes. This parameter defaults to 1024 * 1024
      * bytes (1 MiB). This number is used for .parquet file format only. </p>
      */
-    inline int GetDataPageSize() const{ return m_dataPageSize; }
+    inline int GetDataPageSize() const { return m_dataPageSize; }
     inline bool DataPageSizeHasBeenSet() const { return m_dataPageSizeHasBeenSet; }
     inline void SetDataPageSize(int value) { m_dataPageSizeHasBeenSet = true; m_dataPageSize = value; }
     inline S3Settings& WithDataPageSize(int value) { SetDataPageSize(value); return *this;}
@@ -283,12 +261,10 @@ namespace Model
      * <p>The version of the Apache Parquet format that you want to use:
      * <code>parquet_1_0</code> (the default) or <code>parquet_2_0</code>.</p>
      */
-    inline const ParquetVersionValue& GetParquetVersion() const{ return m_parquetVersion; }
+    inline ParquetVersionValue GetParquetVersion() const { return m_parquetVersion; }
     inline bool ParquetVersionHasBeenSet() const { return m_parquetVersionHasBeenSet; }
-    inline void SetParquetVersion(const ParquetVersionValue& value) { m_parquetVersionHasBeenSet = true; m_parquetVersion = value; }
-    inline void SetParquetVersion(ParquetVersionValue&& value) { m_parquetVersionHasBeenSet = true; m_parquetVersion = std::move(value); }
-    inline S3Settings& WithParquetVersion(const ParquetVersionValue& value) { SetParquetVersion(value); return *this;}
-    inline S3Settings& WithParquetVersion(ParquetVersionValue&& value) { SetParquetVersion(std::move(value)); return *this;}
+    inline void SetParquetVersion(ParquetVersionValue value) { m_parquetVersionHasBeenSet = true; m_parquetVersion = value; }
+    inline S3Settings& WithParquetVersion(ParquetVersionValue value) { SetParquetVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -299,7 +275,7 @@ namespace Model
      * and <code>MIN</code> values. This parameter defaults to <code>true</code>. This
      * value is used for .parquet file format only.</p>
      */
-    inline bool GetEnableStatistics() const{ return m_enableStatistics; }
+    inline bool GetEnableStatistics() const { return m_enableStatistics; }
     inline bool EnableStatisticsHasBeenSet() const { return m_enableStatisticsHasBeenSet; }
     inline void SetEnableStatistics(bool value) { m_enableStatisticsHasBeenSet = true; m_enableStatistics = value; }
     inline S3Settings& WithEnableStatistics(bool value) { SetEnableStatistics(value); return *this;}
@@ -327,7 +303,7 @@ namespace Model
      * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
      * Service User Guide.</i>.</p> 
      */
-    inline bool GetIncludeOpForFullLoad() const{ return m_includeOpForFullLoad; }
+    inline bool GetIncludeOpForFullLoad() const { return m_includeOpForFullLoad; }
     inline bool IncludeOpForFullLoadHasBeenSet() const { return m_includeOpForFullLoadHasBeenSet; }
     inline void SetIncludeOpForFullLoad(bool value) { m_includeOpForFullLoadHasBeenSet = true; m_includeOpForFullLoad = value; }
     inline S3Settings& WithIncludeOpForFullLoad(bool value) { SetIncludeOpForFullLoad(value); return *this;}
@@ -359,7 +335,7 @@ namespace Model
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
      * <code>true</code> for the same endpoint, but not both.</p> 
      */
-    inline bool GetCdcInsertsOnly() const{ return m_cdcInsertsOnly; }
+    inline bool GetCdcInsertsOnly() const { return m_cdcInsertsOnly; }
     inline bool CdcInsertsOnlyHasBeenSet() const { return m_cdcInsertsOnlyHasBeenSet; }
     inline void SetCdcInsertsOnly(bool value) { m_cdcInsertsOnlyHasBeenSet = true; m_cdcInsertsOnly = value; }
     inline S3Settings& WithCdcInsertsOnly(bool value) { SetCdcInsertsOnly(value); return *this;}
@@ -384,14 +360,12 @@ namespace Model
      * <code>true</code>, DMS also includes a name for the timestamp column that you
      * set with <code>TimestampColumnName</code>.</p>
      */
-    inline const Aws::String& GetTimestampColumnName() const{ return m_timestampColumnName; }
+    inline const Aws::String& GetTimestampColumnName() const { return m_timestampColumnName; }
     inline bool TimestampColumnNameHasBeenSet() const { return m_timestampColumnNameHasBeenSet; }
-    inline void SetTimestampColumnName(const Aws::String& value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName = value; }
-    inline void SetTimestampColumnName(Aws::String&& value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName = std::move(value); }
-    inline void SetTimestampColumnName(const char* value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName.assign(value); }
-    inline S3Settings& WithTimestampColumnName(const Aws::String& value) { SetTimestampColumnName(value); return *this;}
-    inline S3Settings& WithTimestampColumnName(Aws::String&& value) { SetTimestampColumnName(std::move(value)); return *this;}
-    inline S3Settings& WithTimestampColumnName(const char* value) { SetTimestampColumnName(value); return *this;}
+    template<typename TimestampColumnNameT = Aws::String>
+    void SetTimestampColumnName(TimestampColumnNameT&& value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName = std::forward<TimestampColumnNameT>(value); }
+    template<typename TimestampColumnNameT = Aws::String>
+    S3Settings& WithTimestampColumnName(TimestampColumnNameT&& value) { SetTimestampColumnName(std::forward<TimestampColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -413,7 +387,7 @@ namespace Model
      * the timestamp column value that is inserted by setting the
      * <code>TimestampColumnName</code> parameter.</p> 
      */
-    inline bool GetParquetTimestampInMillisecond() const{ return m_parquetTimestampInMillisecond; }
+    inline bool GetParquetTimestampInMillisecond() const { return m_parquetTimestampInMillisecond; }
     inline bool ParquetTimestampInMillisecondHasBeenSet() const { return m_parquetTimestampInMillisecondHasBeenSet; }
     inline void SetParquetTimestampInMillisecond(bool value) { m_parquetTimestampInMillisecondHasBeenSet = true; m_parquetTimestampInMillisecond = value; }
     inline S3Settings& WithParquetTimestampInMillisecond(bool value) { SetParquetTimestampInMillisecond(value); return *this;}
@@ -444,7 +418,7 @@ namespace Model
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
      * <code>true</code> for the same endpoint, but not both.</p> 
      */
-    inline bool GetCdcInsertsAndUpdates() const{ return m_cdcInsertsAndUpdates; }
+    inline bool GetCdcInsertsAndUpdates() const { return m_cdcInsertsAndUpdates; }
     inline bool CdcInsertsAndUpdatesHasBeenSet() const { return m_cdcInsertsAndUpdatesHasBeenSet; }
     inline void SetCdcInsertsAndUpdates(bool value) { m_cdcInsertsAndUpdatesHasBeenSet = true; m_cdcInsertsAndUpdates = value; }
     inline S3Settings& WithCdcInsertsAndUpdates(bool value) { SetCdcInsertsAndUpdates(value); return *this;}
@@ -458,7 +432,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.</p>
      */
-    inline bool GetDatePartitionEnabled() const{ return m_datePartitionEnabled; }
+    inline bool GetDatePartitionEnabled() const { return m_datePartitionEnabled; }
     inline bool DatePartitionEnabledHasBeenSet() const { return m_datePartitionEnabledHasBeenSet; }
     inline void SetDatePartitionEnabled(bool value) { m_datePartitionEnabledHasBeenSet = true; m_datePartitionEnabled = value; }
     inline S3Settings& WithDatePartitionEnabled(bool value) { SetDatePartitionEnabled(value); return *this;}
@@ -470,12 +444,10 @@ namespace Model
      * The default value is <code>YYYYMMDD</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
-    inline const DatePartitionSequenceValue& GetDatePartitionSequence() const{ return m_datePartitionSequence; }
+    inline DatePartitionSequenceValue GetDatePartitionSequence() const { return m_datePartitionSequence; }
     inline bool DatePartitionSequenceHasBeenSet() const { return m_datePartitionSequenceHasBeenSet; }
-    inline void SetDatePartitionSequence(const DatePartitionSequenceValue& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = value; }
-    inline void SetDatePartitionSequence(DatePartitionSequenceValue&& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = std::move(value); }
-    inline S3Settings& WithDatePartitionSequence(const DatePartitionSequenceValue& value) { SetDatePartitionSequence(value); return *this;}
-    inline S3Settings& WithDatePartitionSequence(DatePartitionSequenceValue&& value) { SetDatePartitionSequence(std::move(value)); return *this;}
+    inline void SetDatePartitionSequence(DatePartitionSequenceValue value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = value; }
+    inline S3Settings& WithDatePartitionSequence(DatePartitionSequenceValue value) { SetDatePartitionSequence(value); return *this;}
     ///@}
 
     ///@{
@@ -484,12 +456,10 @@ namespace Model
      * default value is <code>SLASH</code>. Use this parameter when
      * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
      */
-    inline const DatePartitionDelimiterValue& GetDatePartitionDelimiter() const{ return m_datePartitionDelimiter; }
+    inline DatePartitionDelimiterValue GetDatePartitionDelimiter() const { return m_datePartitionDelimiter; }
     inline bool DatePartitionDelimiterHasBeenSet() const { return m_datePartitionDelimiterHasBeenSet; }
-    inline void SetDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = value; }
-    inline void SetDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = std::move(value); }
-    inline S3Settings& WithDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { SetDatePartitionDelimiter(value); return *this;}
-    inline S3Settings& WithDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { SetDatePartitionDelimiter(std::move(value)); return *this;}
+    inline void SetDatePartitionDelimiter(DatePartitionDelimiterValue value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = value; }
+    inline S3Settings& WithDatePartitionDelimiter(DatePartitionDelimiterValue value) { SetDatePartitionDelimiter(value); return *this;}
     ///@}
 
     ///@{
@@ -502,7 +472,7 @@ namespace Model
      * uses the null value for these columns.</p>  <p>This setting is supported
      * in DMS versions 3.4.1 and later.</p> 
      */
-    inline bool GetUseCsvNoSupValue() const{ return m_useCsvNoSupValue; }
+    inline bool GetUseCsvNoSupValue() const { return m_useCsvNoSupValue; }
     inline bool UseCsvNoSupValueHasBeenSet() const { return m_useCsvNoSupValueHasBeenSet; }
     inline void SetUseCsvNoSupValue(bool value) { m_useCsvNoSupValueHasBeenSet = true; m_useCsvNoSupValue = value; }
     inline S3Settings& WithUseCsvNoSupValue(bool value) { SetUseCsvNoSupValue(value); return *this;}
@@ -519,14 +489,12 @@ namespace Model
      * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
      * setting is supported in DMS versions 3.4.1 and later.</p> 
      */
-    inline const Aws::String& GetCsvNoSupValue() const{ return m_csvNoSupValue; }
+    inline const Aws::String& GetCsvNoSupValue() const { return m_csvNoSupValue; }
     inline bool CsvNoSupValueHasBeenSet() const { return m_csvNoSupValueHasBeenSet; }
-    inline void SetCsvNoSupValue(const Aws::String& value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue = value; }
-    inline void SetCsvNoSupValue(Aws::String&& value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue = std::move(value); }
-    inline void SetCsvNoSupValue(const char* value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue.assign(value); }
-    inline S3Settings& WithCsvNoSupValue(const Aws::String& value) { SetCsvNoSupValue(value); return *this;}
-    inline S3Settings& WithCsvNoSupValue(Aws::String&& value) { SetCsvNoSupValue(std::move(value)); return *this;}
-    inline S3Settings& WithCsvNoSupValue(const char* value) { SetCsvNoSupValue(value); return *this;}
+    template<typename CsvNoSupValueT = Aws::String>
+    void SetCsvNoSupValue(CsvNoSupValueT&& value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue = std::forward<CsvNoSupValueT>(value); }
+    template<typename CsvNoSupValueT = Aws::String>
+    S3Settings& WithCsvNoSupValue(CsvNoSupValueT&& value) { SetCsvNoSupValue(std::forward<CsvNoSupValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -539,7 +507,7 @@ namespace Model
      * data changes (CDC) including transaction order on the S3 target</a>.</p> 
      * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
      */
-    inline bool GetPreserveTransactions() const{ return m_preserveTransactions; }
+    inline bool GetPreserveTransactions() const { return m_preserveTransactions; }
     inline bool PreserveTransactionsHasBeenSet() const { return m_preserveTransactionsHasBeenSet; }
     inline void SetPreserveTransactions(bool value) { m_preserveTransactionsHasBeenSet = true; m_preserveTransactions = value; }
     inline S3Settings& WithPreserveTransactions(bool value) { SetPreserveTransactions(value); return *this;}
@@ -574,14 +542,12 @@ namespace Model
      * data changes (CDC) including transaction order on the S3 target</a>.</p> 
      * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
      */
-    inline const Aws::String& GetCdcPath() const{ return m_cdcPath; }
+    inline const Aws::String& GetCdcPath() const { return m_cdcPath; }
     inline bool CdcPathHasBeenSet() const { return m_cdcPathHasBeenSet; }
-    inline void SetCdcPath(const Aws::String& value) { m_cdcPathHasBeenSet = true; m_cdcPath = value; }
-    inline void SetCdcPath(Aws::String&& value) { m_cdcPathHasBeenSet = true; m_cdcPath = std::move(value); }
-    inline void SetCdcPath(const char* value) { m_cdcPathHasBeenSet = true; m_cdcPath.assign(value); }
-    inline S3Settings& WithCdcPath(const Aws::String& value) { SetCdcPath(value); return *this;}
-    inline S3Settings& WithCdcPath(Aws::String&& value) { SetCdcPath(std::move(value)); return *this;}
-    inline S3Settings& WithCdcPath(const char* value) { SetCdcPath(value); return *this;}
+    template<typename CdcPathT = Aws::String>
+    void SetCdcPath(CdcPathT&& value) { m_cdcPathHasBeenSet = true; m_cdcPath = std::forward<CdcPathT>(value); }
+    template<typename CdcPathT = Aws::String>
+    S3Settings& WithCdcPath(CdcPathT&& value) { SetCdcPath(std::forward<CdcPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -595,7 +561,7 @@ namespace Model
      * <code>false</code>, the full load timestamp in the timestamp column increments
      * with the time data arrives at the target. </p>
      */
-    inline bool GetUseTaskStartTimeForFullLoadTimestamp() const{ return m_useTaskStartTimeForFullLoadTimestamp; }
+    inline bool GetUseTaskStartTimeForFullLoadTimestamp() const { return m_useTaskStartTimeForFullLoadTimestamp; }
     inline bool UseTaskStartTimeForFullLoadTimestampHasBeenSet() const { return m_useTaskStartTimeForFullLoadTimestampHasBeenSet; }
     inline void SetUseTaskStartTimeForFullLoadTimestamp(bool value) { m_useTaskStartTimeForFullLoadTimestampHasBeenSet = true; m_useTaskStartTimeForFullLoadTimestamp = value; }
     inline S3Settings& WithUseTaskStartTimeForFullLoadTimestamp(bool value) { SetUseTaskStartTimeForFullLoadTimestamp(value); return *this;}
@@ -612,12 +578,10 @@ namespace Model
      * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
      * BUCKET_OWNER_FULL_CONTROL.</p>
      */
-    inline const CannedAclForObjectsValue& GetCannedAclForObjects() const{ return m_cannedAclForObjects; }
+    inline CannedAclForObjectsValue GetCannedAclForObjects() const { return m_cannedAclForObjects; }
     inline bool CannedAclForObjectsHasBeenSet() const { return m_cannedAclForObjectsHasBeenSet; }
-    inline void SetCannedAclForObjects(const CannedAclForObjectsValue& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = value; }
-    inline void SetCannedAclForObjects(CannedAclForObjectsValue&& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = std::move(value); }
-    inline S3Settings& WithCannedAclForObjects(const CannedAclForObjectsValue& value) { SetCannedAclForObjects(value); return *this;}
-    inline S3Settings& WithCannedAclForObjects(CannedAclForObjectsValue&& value) { SetCannedAclForObjects(std::move(value)); return *this;}
+    inline void SetCannedAclForObjects(CannedAclForObjectsValue value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = value; }
+    inline S3Settings& WithCannedAclForObjects(CannedAclForObjectsValue value) { SetCannedAclForObjects(value); return *this;}
     ///@}
 
     ///@{
@@ -627,7 +591,7 @@ namespace Model
      * default value is <code>false</code>. Valid values are <code>true</code>,
      * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
      */
-    inline bool GetAddColumnName() const{ return m_addColumnName; }
+    inline bool GetAddColumnName() const { return m_addColumnName; }
     inline bool AddColumnNameHasBeenSet() const { return m_addColumnNameHasBeenSet; }
     inline void SetAddColumnName(bool value) { m_addColumnNameHasBeenSet = true; m_addColumnName = value; }
     inline S3Settings& WithAddColumnName(bool value) { SetAddColumnName(value); return *this;}
@@ -641,7 +605,7 @@ namespace Model
      * whichever parameter condition is met first within an DMS CloudFormation
      * template.</p> <p>The default value is 60 seconds.</p>
      */
-    inline int GetCdcMaxBatchInterval() const{ return m_cdcMaxBatchInterval; }
+    inline int GetCdcMaxBatchInterval() const { return m_cdcMaxBatchInterval; }
     inline bool CdcMaxBatchIntervalHasBeenSet() const { return m_cdcMaxBatchIntervalHasBeenSet; }
     inline void SetCdcMaxBatchInterval(int value) { m_cdcMaxBatchIntervalHasBeenSet = true; m_cdcMaxBatchInterval = value; }
     inline S3Settings& WithCdcMaxBatchInterval(int value) { SetCdcMaxBatchInterval(value); return *this;}
@@ -655,7 +619,7 @@ namespace Model
      * is met first within an DMS CloudFormation template.</p> <p>The default value is
      * 32 MB.</p>
      */
-    inline int GetCdcMinFileSize() const{ return m_cdcMinFileSize; }
+    inline int GetCdcMinFileSize() const { return m_cdcMinFileSize; }
     inline bool CdcMinFileSizeHasBeenSet() const { return m_cdcMinFileSizeHasBeenSet; }
     inline void SetCdcMinFileSize(int value) { m_cdcMinFileSizeHasBeenSet = true; m_cdcMinFileSize = value; }
     inline S3Settings& WithCdcMinFileSize(int value) { SetCdcMinFileSize(value); return *this;}
@@ -672,14 +636,12 @@ namespace Model
      * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
      * include any valid string.</p>
      */
-    inline const Aws::String& GetCsvNullValue() const{ return m_csvNullValue; }
+    inline const Aws::String& GetCsvNullValue() const { return m_csvNullValue; }
     inline bool CsvNullValueHasBeenSet() const { return m_csvNullValueHasBeenSet; }
-    inline void SetCsvNullValue(const Aws::String& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = value; }
-    inline void SetCsvNullValue(Aws::String&& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = std::move(value); }
-    inline void SetCsvNullValue(const char* value) { m_csvNullValueHasBeenSet = true; m_csvNullValue.assign(value); }
-    inline S3Settings& WithCsvNullValue(const Aws::String& value) { SetCsvNullValue(value); return *this;}
-    inline S3Settings& WithCsvNullValue(Aws::String&& value) { SetCsvNullValue(std::move(value)); return *this;}
-    inline S3Settings& WithCsvNullValue(const char* value) { SetCsvNullValue(value); return *this;}
+    template<typename CsvNullValueT = Aws::String>
+    void SetCsvNullValue(CsvNullValueT&& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = std::forward<CsvNullValueT>(value); }
+    template<typename CsvNullValueT = Aws::String>
+    S3Settings& WithCsvNullValue(CsvNullValueT&& value) { SetCsvNullValue(std::forward<CsvNullValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -688,7 +650,7 @@ namespace Model
      * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
      * <p>The default is 0.</p>
      */
-    inline int GetIgnoreHeaderRows() const{ return m_ignoreHeaderRows; }
+    inline int GetIgnoreHeaderRows() const { return m_ignoreHeaderRows; }
     inline bool IgnoreHeaderRowsHasBeenSet() const { return m_ignoreHeaderRowsHasBeenSet; }
     inline void SetIgnoreHeaderRows(int value) { m_ignoreHeaderRowsHasBeenSet = true; m_ignoreHeaderRows = value; }
     inline S3Settings& WithIgnoreHeaderRows(int value) { SetIgnoreHeaderRows(value); return *this;}
@@ -700,7 +662,7 @@ namespace Model
      * created while migrating to an S3 target during full load.</p> <p>The default
      * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
      */
-    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+    inline int GetMaxFileSize() const { return m_maxFileSize; }
     inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
     inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
     inline S3Settings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
@@ -723,7 +685,7 @@ namespace Model
      * twice.</p> <p>The default value is <code>true</code>. Valid values include
      * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
      */
-    inline bool GetRfc4180() const{ return m_rfc4180; }
+    inline bool GetRfc4180() const { return m_rfc4180; }
     inline bool Rfc4180HasBeenSet() const { return m_rfc4180HasBeenSet; }
     inline void SetRfc4180(bool value) { m_rfc4180HasBeenSet = true; m_rfc4180 = value; }
     inline S3Settings& WithRfc4180(bool value) { SetRfc4180(value); return *this;}
@@ -741,14 +703,12 @@ namespace Model
      * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
      * "dms-nattarat-test"}'</code> </p>
      */
-    inline const Aws::String& GetDatePartitionTimezone() const{ return m_datePartitionTimezone; }
+    inline const Aws::String& GetDatePartitionTimezone() const { return m_datePartitionTimezone; }
     inline bool DatePartitionTimezoneHasBeenSet() const { return m_datePartitionTimezoneHasBeenSet; }
-    inline void SetDatePartitionTimezone(const Aws::String& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = value; }
-    inline void SetDatePartitionTimezone(Aws::String&& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = std::move(value); }
-    inline void SetDatePartitionTimezone(const char* value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone.assign(value); }
-    inline S3Settings& WithDatePartitionTimezone(const Aws::String& value) { SetDatePartitionTimezone(value); return *this;}
-    inline S3Settings& WithDatePartitionTimezone(Aws::String&& value) { SetDatePartitionTimezone(std::move(value)); return *this;}
-    inline S3Settings& WithDatePartitionTimezone(const char* value) { SetDatePartitionTimezone(value); return *this;}
+    template<typename DatePartitionTimezoneT = Aws::String>
+    void SetDatePartitionTimezone(DatePartitionTimezoneT&& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = std::forward<DatePartitionTimezoneT>(value); }
+    template<typename DatePartitionTimezoneT = Aws::String>
+    S3Settings& WithDatePartitionTimezone(DatePartitionTimezoneT&& value) { SetDatePartitionTimezone(std::forward<DatePartitionTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -756,7 +716,7 @@ namespace Model
      * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
      * to add padding on string data. The default value is <code>false</code>.</p>
      */
-    inline bool GetAddTrailingPaddingCharacter() const{ return m_addTrailingPaddingCharacter; }
+    inline bool GetAddTrailingPaddingCharacter() const { return m_addTrailingPaddingCharacter; }
     inline bool AddTrailingPaddingCharacterHasBeenSet() const { return m_addTrailingPaddingCharacterHasBeenSet; }
     inline void SetAddTrailingPaddingCharacter(bool value) { m_addTrailingPaddingCharacterHasBeenSet = true; m_addTrailingPaddingCharacter = value; }
     inline S3Settings& WithAddTrailingPaddingCharacter(bool value) { SetAddTrailingPaddingCharacter(value); return *this;}
@@ -770,14 +730,12 @@ namespace Model
      * </p> <p>When you make a request to test a connection or perform a migration, S3
      * checks the account ID of the bucket owner against the specified parameter.</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline S3Settings& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline S3Settings& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline S3Settings& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    S3Settings& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -785,7 +743,7 @@ namespace Model
      * <p>When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog
      * lets you use Athena to query your data.</p>
      */
-    inline bool GetGlueCatalogGeneration() const{ return m_glueCatalogGeneration; }
+    inline bool GetGlueCatalogGeneration() const { return m_glueCatalogGeneration; }
     inline bool GlueCatalogGenerationHasBeenSet() const { return m_glueCatalogGenerationHasBeenSet; }
     inline void SetGlueCatalogGeneration(bool value) { m_glueCatalogGenerationHasBeenSet = true; m_glueCatalogGeneration = value; }
     inline S3Settings& WithGlueCatalogGeneration(bool value) { SetGlueCatalogGeneration(value); return *this;}
@@ -810,109 +768,109 @@ namespace Model
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;
 
-    CompressionTypeValue m_compressionType;
+    CompressionTypeValue m_compressionType{CompressionTypeValue::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
-    EncryptionModeValue m_encryptionMode;
+    EncryptionModeValue m_encryptionMode{EncryptionModeValue::NOT_SET};
     bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_serverSideEncryptionKmsKeyId;
     bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
 
-    DataFormatValue m_dataFormat;
+    DataFormatValue m_dataFormat{DataFormatValue::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
 
-    EncodingTypeValue m_encodingType;
+    EncodingTypeValue m_encodingType{EncodingTypeValue::NOT_SET};
     bool m_encodingTypeHasBeenSet = false;
 
-    int m_dictPageSizeLimit;
+    int m_dictPageSizeLimit{0};
     bool m_dictPageSizeLimitHasBeenSet = false;
 
-    int m_rowGroupLength;
+    int m_rowGroupLength{0};
     bool m_rowGroupLengthHasBeenSet = false;
 
-    int m_dataPageSize;
+    int m_dataPageSize{0};
     bool m_dataPageSizeHasBeenSet = false;
 
-    ParquetVersionValue m_parquetVersion;
+    ParquetVersionValue m_parquetVersion{ParquetVersionValue::NOT_SET};
     bool m_parquetVersionHasBeenSet = false;
 
-    bool m_enableStatistics;
+    bool m_enableStatistics{false};
     bool m_enableStatisticsHasBeenSet = false;
 
-    bool m_includeOpForFullLoad;
+    bool m_includeOpForFullLoad{false};
     bool m_includeOpForFullLoadHasBeenSet = false;
 
-    bool m_cdcInsertsOnly;
+    bool m_cdcInsertsOnly{false};
     bool m_cdcInsertsOnlyHasBeenSet = false;
 
     Aws::String m_timestampColumnName;
     bool m_timestampColumnNameHasBeenSet = false;
 
-    bool m_parquetTimestampInMillisecond;
+    bool m_parquetTimestampInMillisecond{false};
     bool m_parquetTimestampInMillisecondHasBeenSet = false;
 
-    bool m_cdcInsertsAndUpdates;
+    bool m_cdcInsertsAndUpdates{false};
     bool m_cdcInsertsAndUpdatesHasBeenSet = false;
 
-    bool m_datePartitionEnabled;
+    bool m_datePartitionEnabled{false};
     bool m_datePartitionEnabledHasBeenSet = false;
 
-    DatePartitionSequenceValue m_datePartitionSequence;
+    DatePartitionSequenceValue m_datePartitionSequence{DatePartitionSequenceValue::NOT_SET};
     bool m_datePartitionSequenceHasBeenSet = false;
 
-    DatePartitionDelimiterValue m_datePartitionDelimiter;
+    DatePartitionDelimiterValue m_datePartitionDelimiter{DatePartitionDelimiterValue::NOT_SET};
     bool m_datePartitionDelimiterHasBeenSet = false;
 
-    bool m_useCsvNoSupValue;
+    bool m_useCsvNoSupValue{false};
     bool m_useCsvNoSupValueHasBeenSet = false;
 
     Aws::String m_csvNoSupValue;
     bool m_csvNoSupValueHasBeenSet = false;
 
-    bool m_preserveTransactions;
+    bool m_preserveTransactions{false};
     bool m_preserveTransactionsHasBeenSet = false;
 
     Aws::String m_cdcPath;
     bool m_cdcPathHasBeenSet = false;
 
-    bool m_useTaskStartTimeForFullLoadTimestamp;
+    bool m_useTaskStartTimeForFullLoadTimestamp{false};
     bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet = false;
 
-    CannedAclForObjectsValue m_cannedAclForObjects;
+    CannedAclForObjectsValue m_cannedAclForObjects{CannedAclForObjectsValue::NOT_SET};
     bool m_cannedAclForObjectsHasBeenSet = false;
 
-    bool m_addColumnName;
+    bool m_addColumnName{false};
     bool m_addColumnNameHasBeenSet = false;
 
-    int m_cdcMaxBatchInterval;
+    int m_cdcMaxBatchInterval{0};
     bool m_cdcMaxBatchIntervalHasBeenSet = false;
 
-    int m_cdcMinFileSize;
+    int m_cdcMinFileSize{0};
     bool m_cdcMinFileSizeHasBeenSet = false;
 
     Aws::String m_csvNullValue;
     bool m_csvNullValueHasBeenSet = false;
 
-    int m_ignoreHeaderRows;
+    int m_ignoreHeaderRows{0};
     bool m_ignoreHeaderRowsHasBeenSet = false;
 
-    int m_maxFileSize;
+    int m_maxFileSize{0};
     bool m_maxFileSizeHasBeenSet = false;
 
-    bool m_rfc4180;
+    bool m_rfc4180{false};
     bool m_rfc4180HasBeenSet = false;
 
     Aws::String m_datePartitionTimezone;
     bool m_datePartitionTimezoneHasBeenSet = false;
 
-    bool m_addTrailingPaddingCharacter;
+    bool m_addTrailingPaddingCharacter{false};
     bool m_addTrailingPaddingCharacterHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
 
-    bool m_glueCatalogGeneration;
+    bool m_glueCatalogGeneration{false};
     bool m_glueCatalogGenerationHasBeenSet = false;
   };
 

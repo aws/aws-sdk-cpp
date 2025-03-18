@@ -34,7 +34,7 @@ namespace Model
   class ListDistributionsByWebACLId2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Result();
+    AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The <code>DistributionList</code> type.</p>
      */
-    inline const DistributionList& GetDistributionList() const{ return m_distributionList; }
-    inline void SetDistributionList(const DistributionList& value) { m_distributionList = value; }
-    inline void SetDistributionList(DistributionList&& value) { m_distributionList = std::move(value); }
-    inline ListDistributionsByWebACLId2020_05_31Result& WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
+    inline const DistributionList& GetDistributionList() const { return m_distributionList; }
+    template<typename DistributionListT = DistributionList>
+    void SetDistributionList(DistributionListT&& value) { m_distributionListHasBeenSet = true; m_distributionList = std::forward<DistributionListT>(value); }
+    template<typename DistributionListT = DistributionList>
+    ListDistributionsByWebACLId2020_05_31Result& WithDistributionList(DistributionListT&& value) { SetDistributionList(std::forward<DistributionListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDistributionsByWebACLId2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDistributionsByWebACLId2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DistributionList m_distributionList;
+    bool m_distributionListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

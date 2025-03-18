@@ -35,7 +35,7 @@ namespace Model
   class CapacityAllocation
   {
   public:
-    AWS_ATHENA_API CapacityAllocation();
+    AWS_ATHENA_API CapacityAllocation() = default;
     AWS_ATHENA_API CapacityAllocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API CapacityAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,63 +45,59 @@ namespace Model
     /**
      * <p>The status of the capacity allocation.</p>
      */
-    inline const CapacityAllocationStatus& GetStatus() const{ return m_status; }
+    inline CapacityAllocationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CapacityAllocationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CapacityAllocationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CapacityAllocation& WithStatus(const CapacityAllocationStatus& value) { SetStatus(value); return *this;}
-    inline CapacityAllocation& WithStatus(CapacityAllocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CapacityAllocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CapacityAllocation& WithStatus(CapacityAllocationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message of the capacity allocation.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline CapacityAllocation& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline CapacityAllocation& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline CapacityAllocation& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    CapacityAllocation& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the capacity allocation was requested.</p>
      */
-    inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
+    inline const Aws::Utils::DateTime& GetRequestTime() const { return m_requestTime; }
     inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
-    inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
-    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
-    inline CapacityAllocation& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
-    inline CapacityAllocation& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
+    template<typename RequestTimeT = Aws::Utils::DateTime>
+    void SetRequestTime(RequestTimeT&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::forward<RequestTimeT>(value); }
+    template<typename RequestTimeT = Aws::Utils::DateTime>
+    CapacityAllocation& WithRequestTime(RequestTimeT&& value) { SetRequestTime(std::forward<RequestTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the capacity allocation request was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetRequestCompletionTime() const{ return m_requestCompletionTime; }
+    inline const Aws::Utils::DateTime& GetRequestCompletionTime() const { return m_requestCompletionTime; }
     inline bool RequestCompletionTimeHasBeenSet() const { return m_requestCompletionTimeHasBeenSet; }
-    inline void SetRequestCompletionTime(const Aws::Utils::DateTime& value) { m_requestCompletionTimeHasBeenSet = true; m_requestCompletionTime = value; }
-    inline void SetRequestCompletionTime(Aws::Utils::DateTime&& value) { m_requestCompletionTimeHasBeenSet = true; m_requestCompletionTime = std::move(value); }
-    inline CapacityAllocation& WithRequestCompletionTime(const Aws::Utils::DateTime& value) { SetRequestCompletionTime(value); return *this;}
-    inline CapacityAllocation& WithRequestCompletionTime(Aws::Utils::DateTime&& value) { SetRequestCompletionTime(std::move(value)); return *this;}
+    template<typename RequestCompletionTimeT = Aws::Utils::DateTime>
+    void SetRequestCompletionTime(RequestCompletionTimeT&& value) { m_requestCompletionTimeHasBeenSet = true; m_requestCompletionTime = std::forward<RequestCompletionTimeT>(value); }
+    template<typename RequestCompletionTimeT = Aws::Utils::DateTime>
+    CapacityAllocation& WithRequestCompletionTime(RequestCompletionTimeT&& value) { SetRequestCompletionTime(std::forward<RequestCompletionTimeT>(value)); return *this;}
     ///@}
   private:
 
-    CapacityAllocationStatus m_status;
+    CapacityAllocationStatus m_status{CapacityAllocationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_requestTime;
+    Aws::Utils::DateTime m_requestTime{};
     bool m_requestTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_requestCompletionTime;
+    Aws::Utils::DateTime m_requestCompletionTime{};
     bool m_requestCompletionTimeHasBeenSet = false;
   };
 

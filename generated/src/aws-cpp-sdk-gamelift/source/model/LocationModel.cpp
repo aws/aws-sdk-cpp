@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LocationModel::LocationModel() : 
-    m_locationNameHasBeenSet(false),
-    m_locationArnHasBeenSet(false)
-{
-}
-
 LocationModel::LocationModel(JsonView jsonValue)
-  : LocationModel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LocationModel& LocationModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocationName"))
   {
     m_locationName = jsonValue.GetString("LocationName");
-
     m_locationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
     m_locationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

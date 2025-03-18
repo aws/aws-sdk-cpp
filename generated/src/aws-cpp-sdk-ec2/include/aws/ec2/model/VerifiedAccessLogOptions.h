@@ -34,7 +34,7 @@ namespace Model
   class VerifiedAccessLogOptions
   {
   public:
-    AWS_EC2_API VerifiedAccessLogOptions();
+    AWS_EC2_API VerifiedAccessLogOptions() = default;
     AWS_EC2_API VerifiedAccessLogOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessLogOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,36 +46,36 @@ namespace Model
     /**
      * <p>Sends Verified Access logs to Amazon S3.</p>
      */
-    inline const VerifiedAccessLogS3DestinationOptions& GetS3() const{ return m_s3; }
+    inline const VerifiedAccessLogS3DestinationOptions& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const VerifiedAccessLogS3DestinationOptions& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(VerifiedAccessLogS3DestinationOptions&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline VerifiedAccessLogOptions& WithS3(const VerifiedAccessLogS3DestinationOptions& value) { SetS3(value); return *this;}
-    inline VerifiedAccessLogOptions& WithS3(VerifiedAccessLogS3DestinationOptions&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = VerifiedAccessLogS3DestinationOptions>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = VerifiedAccessLogS3DestinationOptions>
+    VerifiedAccessLogOptions& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sends Verified Access logs to CloudWatch Logs.</p>
      */
-    inline const VerifiedAccessLogCloudWatchLogsDestinationOptions& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const VerifiedAccessLogCloudWatchLogsDestinationOptions& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const VerifiedAccessLogCloudWatchLogsDestinationOptions& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(VerifiedAccessLogCloudWatchLogsDestinationOptions&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline VerifiedAccessLogOptions& WithCloudWatchLogs(const VerifiedAccessLogCloudWatchLogsDestinationOptions& value) { SetCloudWatchLogs(value); return *this;}
-    inline VerifiedAccessLogOptions& WithCloudWatchLogs(VerifiedAccessLogCloudWatchLogsDestinationOptions&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = VerifiedAccessLogCloudWatchLogsDestinationOptions>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = VerifiedAccessLogCloudWatchLogsDestinationOptions>
+    VerifiedAccessLogOptions& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sends Verified Access logs to Kinesis.</p>
      */
-    inline const VerifiedAccessLogKinesisDataFirehoseDestinationOptions& GetKinesisDataFirehose() const{ return m_kinesisDataFirehose; }
+    inline const VerifiedAccessLogKinesisDataFirehoseDestinationOptions& GetKinesisDataFirehose() const { return m_kinesisDataFirehose; }
     inline bool KinesisDataFirehoseHasBeenSet() const { return m_kinesisDataFirehoseHasBeenSet; }
-    inline void SetKinesisDataFirehose(const VerifiedAccessLogKinesisDataFirehoseDestinationOptions& value) { m_kinesisDataFirehoseHasBeenSet = true; m_kinesisDataFirehose = value; }
-    inline void SetKinesisDataFirehose(VerifiedAccessLogKinesisDataFirehoseDestinationOptions&& value) { m_kinesisDataFirehoseHasBeenSet = true; m_kinesisDataFirehose = std::move(value); }
-    inline VerifiedAccessLogOptions& WithKinesisDataFirehose(const VerifiedAccessLogKinesisDataFirehoseDestinationOptions& value) { SetKinesisDataFirehose(value); return *this;}
-    inline VerifiedAccessLogOptions& WithKinesisDataFirehose(VerifiedAccessLogKinesisDataFirehoseDestinationOptions&& value) { SetKinesisDataFirehose(std::move(value)); return *this;}
+    template<typename KinesisDataFirehoseT = VerifiedAccessLogKinesisDataFirehoseDestinationOptions>
+    void SetKinesisDataFirehose(KinesisDataFirehoseT&& value) { m_kinesisDataFirehoseHasBeenSet = true; m_kinesisDataFirehose = std::forward<KinesisDataFirehoseT>(value); }
+    template<typename KinesisDataFirehoseT = VerifiedAccessLogKinesisDataFirehoseDestinationOptions>
+    VerifiedAccessLogOptions& WithKinesisDataFirehose(KinesisDataFirehoseT&& value) { SetKinesisDataFirehose(std::forward<KinesisDataFirehoseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +83,12 @@ namespace Model
      * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
-    inline const Aws::String& GetLogVersion() const{ return m_logVersion; }
+    inline const Aws::String& GetLogVersion() const { return m_logVersion; }
     inline bool LogVersionHasBeenSet() const { return m_logVersionHasBeenSet; }
-    inline void SetLogVersion(const Aws::String& value) { m_logVersionHasBeenSet = true; m_logVersion = value; }
-    inline void SetLogVersion(Aws::String&& value) { m_logVersionHasBeenSet = true; m_logVersion = std::move(value); }
-    inline void SetLogVersion(const char* value) { m_logVersionHasBeenSet = true; m_logVersion.assign(value); }
-    inline VerifiedAccessLogOptions& WithLogVersion(const Aws::String& value) { SetLogVersion(value); return *this;}
-    inline VerifiedAccessLogOptions& WithLogVersion(Aws::String&& value) { SetLogVersion(std::move(value)); return *this;}
-    inline VerifiedAccessLogOptions& WithLogVersion(const char* value) { SetLogVersion(value); return *this;}
+    template<typename LogVersionT = Aws::String>
+    void SetLogVersion(LogVersionT&& value) { m_logVersionHasBeenSet = true; m_logVersion = std::forward<LogVersionT>(value); }
+    template<typename LogVersionT = Aws::String>
+    VerifiedAccessLogOptions& WithLogVersion(LogVersionT&& value) { SetLogVersion(std::forward<LogVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +96,7 @@ namespace Model
      * <p>Indicates whether to include trust data sent by trust providers in the
      * logs.</p>
      */
-    inline bool GetIncludeTrustContext() const{ return m_includeTrustContext; }
+    inline bool GetIncludeTrustContext() const { return m_includeTrustContext; }
     inline bool IncludeTrustContextHasBeenSet() const { return m_includeTrustContextHasBeenSet; }
     inline void SetIncludeTrustContext(bool value) { m_includeTrustContextHasBeenSet = true; m_includeTrustContext = value; }
     inline VerifiedAccessLogOptions& WithIncludeTrustContext(bool value) { SetIncludeTrustContext(value); return *this;}
@@ -117,7 +115,7 @@ namespace Model
     Aws::String m_logVersion;
     bool m_logVersionHasBeenSet = false;
 
-    bool m_includeTrustContext;
+    bool m_includeTrustContext{false};
     bool m_includeTrustContextHasBeenSet = false;
   };
 

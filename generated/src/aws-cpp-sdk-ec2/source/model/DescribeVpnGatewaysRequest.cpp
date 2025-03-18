@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeVpnGatewaysRequest::DescribeVpnGatewaysRequest() : 
-    m_filtersHasBeenSet(false),
-    m_vpnGatewayIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpnGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;

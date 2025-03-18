@@ -28,7 +28,7 @@ namespace Model
   class DescribeStorageSystemResourcesResult
   {
   public:
-    AWS_DATASYNC_API DescribeStorageSystemResourcesResult();
+    AWS_DATASYNC_API DescribeStorageSystemResourcesResult() = default;
     AWS_DATASYNC_API DescribeStorageSystemResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeStorageSystemResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a>
      * provided by DataSync Discovery.</p>
      */
-    inline const ResourceDetails& GetResourceDetails() const{ return m_resourceDetails; }
-    inline void SetResourceDetails(const ResourceDetails& value) { m_resourceDetails = value; }
-    inline void SetResourceDetails(ResourceDetails&& value) { m_resourceDetails = std::move(value); }
-    inline DescribeStorageSystemResourcesResult& WithResourceDetails(const ResourceDetails& value) { SetResourceDetails(value); return *this;}
-    inline DescribeStorageSystemResourcesResult& WithResourceDetails(ResourceDetails&& value) { SetResourceDetails(std::move(value)); return *this;}
+    inline const ResourceDetails& GetResourceDetails() const { return m_resourceDetails; }
+    template<typename ResourceDetailsT = ResourceDetails>
+    void SetResourceDetails(ResourceDetailsT&& value) { m_resourceDetailsHasBeenSet = true; m_resourceDetails = std::forward<ResourceDetailsT>(value); }
+    template<typename ResourceDetailsT = ResourceDetails>
+    DescribeStorageSystemResourcesResult& WithResourceDetails(ResourceDetailsT&& value) { SetResourceDetails(std::forward<ResourceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * <p>The opaque string that indicates the position to begin the next list of
      * results in the response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeStorageSystemResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeStorageSystemResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeStorageSystemResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeStorageSystemResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStorageSystemResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStorageSystemResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStorageSystemResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStorageSystemResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceDetails m_resourceDetails;
+    bool m_resourceDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

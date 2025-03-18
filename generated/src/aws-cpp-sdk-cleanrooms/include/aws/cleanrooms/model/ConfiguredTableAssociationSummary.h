@@ -35,7 +35,7 @@ namespace Model
   class ConfiguredTableAssociationSummary
   {
   public:
-    AWS_CLEANROOMS_API ConfiguredTableAssociationSummary();
+    AWS_CLEANROOMS_API ConfiguredTableAssociationSummary() = default;
     AWS_CLEANROOMS_API ConfiguredTableAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConfiguredTableAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The unique configured table ID that this configured table association refers
      * to.</p>
      */
-    inline const Aws::String& GetConfiguredTableId() const{ return m_configuredTableId; }
+    inline const Aws::String& GetConfiguredTableId() const { return m_configuredTableId; }
     inline bool ConfiguredTableIdHasBeenSet() const { return m_configuredTableIdHasBeenSet; }
-    inline void SetConfiguredTableId(const Aws::String& value) { m_configuredTableIdHasBeenSet = true; m_configuredTableId = value; }
-    inline void SetConfiguredTableId(Aws::String&& value) { m_configuredTableIdHasBeenSet = true; m_configuredTableId = std::move(value); }
-    inline void SetConfiguredTableId(const char* value) { m_configuredTableIdHasBeenSet = true; m_configuredTableId.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithConfiguredTableId(const Aws::String& value) { SetConfiguredTableId(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithConfiguredTableId(Aws::String&& value) { SetConfiguredTableId(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithConfiguredTableId(const char* value) { SetConfiguredTableId(value); return *this;}
+    template<typename ConfiguredTableIdT = Aws::String>
+    void SetConfiguredTableId(ConfiguredTableIdT&& value) { m_configuredTableIdHasBeenSet = true; m_configuredTableId = std::forward<ConfiguredTableIdT>(value); }
+    template<typename ConfiguredTableIdT = Aws::String>
+    ConfiguredTableAssociationSummary& WithConfiguredTableId(ConfiguredTableIdT&& value) { SetConfiguredTableId(std::forward<ConfiguredTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The unique ID for the membership that the configured table association
      * belongs to.</p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    ConfiguredTableAssociationSummary& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>The unique ARN for the membership that the configured table association
      * belongs to.</p>
      */
-    inline const Aws::String& GetMembershipArn() const{ return m_membershipArn; }
+    inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
     inline bool MembershipArnHasBeenSet() const { return m_membershipArnHasBeenSet; }
-    inline void SetMembershipArn(const Aws::String& value) { m_membershipArnHasBeenSet = true; m_membershipArn = value; }
-    inline void SetMembershipArn(Aws::String&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::move(value); }
-    inline void SetMembershipArn(const char* value) { m_membershipArnHasBeenSet = true; m_membershipArn.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithMembershipArn(const Aws::String& value) { SetMembershipArn(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithMembershipArn(Aws::String&& value) { SetMembershipArn(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
+    template<typename MembershipArnT = Aws::String>
+    void SetMembershipArn(MembershipArnT&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::forward<MembershipArnT>(value); }
+    template<typename MembershipArnT = Aws::String>
+    ConfiguredTableAssociationSummary& WithMembershipArn(MembershipArnT&& value) { SetMembershipArn(std::forward<MembershipArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,66 +85,60 @@ namespace Model
      * <p>The name of the configured table association. The table is identified by this
      * name when running Protected Queries against the underlying data.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfiguredTableAssociationSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the configured table association was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline ConfiguredTableAssociationSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ConfiguredTableAssociationSummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the configured table association was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline ConfiguredTableAssociationSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    ConfiguredTableAssociationSummary& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID for the configured table association.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ConfiguredTableAssociationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ARN for the configured table association.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ConfiguredTableAssociationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ConfiguredTableAssociationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +146,13 @@ namespace Model
      * <p>The analysis rule types that are associated with the configured table
      * associations in this summary. </p>
      */
-    inline const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
+    inline const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& GetAnalysisRuleTypes() const { return m_analysisRuleTypes; }
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
-    inline void SetAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
-    inline void SetAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
-    inline ConfiguredTableAssociationSummary& WithAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
-    inline ConfiguredTableAssociationSummary& WithAnalysisRuleTypes(Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationSummary& AddAnalysisRuleTypes(const ConfiguredTableAssociationAnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
-    inline ConfiguredTableAssociationSummary& AddAnalysisRuleTypes(ConfiguredTableAssociationAnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
+    template<typename AnalysisRuleTypesT = Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>>
+    void SetAnalysisRuleTypes(AnalysisRuleTypesT&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::forward<AnalysisRuleTypesT>(value); }
+    template<typename AnalysisRuleTypesT = Aws::Vector<ConfiguredTableAssociationAnalysisRuleType>>
+    ConfiguredTableAssociationSummary& WithAnalysisRuleTypes(AnalysisRuleTypesT&& value) { SetAnalysisRuleTypes(std::forward<AnalysisRuleTypesT>(value)); return *this;}
+    inline ConfiguredTableAssociationSummary& AddAnalysisRuleTypes(ConfiguredTableAssociationAnalysisRuleType value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
     ///@}
   private:
 
@@ -181,10 +168,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_id;

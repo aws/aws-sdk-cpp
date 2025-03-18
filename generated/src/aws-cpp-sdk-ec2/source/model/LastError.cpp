@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LastError::LastError() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 LastError::LastError(const XmlNode& xmlNode)
-  : LastError()
 {
   *this = xmlNode;
 }

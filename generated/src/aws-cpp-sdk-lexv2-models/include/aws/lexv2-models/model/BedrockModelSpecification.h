@@ -34,7 +34,7 @@ namespace Model
   class BedrockModelSpecification
   {
   public:
-    AWS_LEXMODELSV2_API BedrockModelSpecification();
+    AWS_LEXMODELSV2_API BedrockModelSpecification() = default;
     AWS_LEXMODELSV2_API BedrockModelSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BedrockModelSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,52 +44,46 @@ namespace Model
     /**
      * <p>The ARN of the foundation model used in descriptive bot building.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline BedrockModelSpecification& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline BedrockModelSpecification& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline BedrockModelSpecification& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    BedrockModelSpecification& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The guardrail configuration in the Bedrock model specification details.</p>
      */
-    inline const BedrockGuardrailConfiguration& GetGuardrail() const{ return m_guardrail; }
+    inline const BedrockGuardrailConfiguration& GetGuardrail() const { return m_guardrail; }
     inline bool GuardrailHasBeenSet() const { return m_guardrailHasBeenSet; }
-    inline void SetGuardrail(const BedrockGuardrailConfiguration& value) { m_guardrailHasBeenSet = true; m_guardrail = value; }
-    inline void SetGuardrail(BedrockGuardrailConfiguration&& value) { m_guardrailHasBeenSet = true; m_guardrail = std::move(value); }
-    inline BedrockModelSpecification& WithGuardrail(const BedrockGuardrailConfiguration& value) { SetGuardrail(value); return *this;}
-    inline BedrockModelSpecification& WithGuardrail(BedrockGuardrailConfiguration&& value) { SetGuardrail(std::move(value)); return *this;}
+    template<typename GuardrailT = BedrockGuardrailConfiguration>
+    void SetGuardrail(GuardrailT&& value) { m_guardrailHasBeenSet = true; m_guardrail = std::forward<GuardrailT>(value); }
+    template<typename GuardrailT = BedrockGuardrailConfiguration>
+    BedrockModelSpecification& WithGuardrail(GuardrailT&& value) { SetGuardrail(std::forward<GuardrailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Bedrock trace status in the Bedrock model specification details.</p>
      */
-    inline const BedrockTraceStatus& GetTraceStatus() const{ return m_traceStatus; }
+    inline BedrockTraceStatus GetTraceStatus() const { return m_traceStatus; }
     inline bool TraceStatusHasBeenSet() const { return m_traceStatusHasBeenSet; }
-    inline void SetTraceStatus(const BedrockTraceStatus& value) { m_traceStatusHasBeenSet = true; m_traceStatus = value; }
-    inline void SetTraceStatus(BedrockTraceStatus&& value) { m_traceStatusHasBeenSet = true; m_traceStatus = std::move(value); }
-    inline BedrockModelSpecification& WithTraceStatus(const BedrockTraceStatus& value) { SetTraceStatus(value); return *this;}
-    inline BedrockModelSpecification& WithTraceStatus(BedrockTraceStatus&& value) { SetTraceStatus(std::move(value)); return *this;}
+    inline void SetTraceStatus(BedrockTraceStatus value) { m_traceStatusHasBeenSet = true; m_traceStatus = value; }
+    inline BedrockModelSpecification& WithTraceStatus(BedrockTraceStatus value) { SetTraceStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom prompt used in the Bedrock model specification details.</p>
      */
-    inline const Aws::String& GetCustomPrompt() const{ return m_customPrompt; }
+    inline const Aws::String& GetCustomPrompt() const { return m_customPrompt; }
     inline bool CustomPromptHasBeenSet() const { return m_customPromptHasBeenSet; }
-    inline void SetCustomPrompt(const Aws::String& value) { m_customPromptHasBeenSet = true; m_customPrompt = value; }
-    inline void SetCustomPrompt(Aws::String&& value) { m_customPromptHasBeenSet = true; m_customPrompt = std::move(value); }
-    inline void SetCustomPrompt(const char* value) { m_customPromptHasBeenSet = true; m_customPrompt.assign(value); }
-    inline BedrockModelSpecification& WithCustomPrompt(const Aws::String& value) { SetCustomPrompt(value); return *this;}
-    inline BedrockModelSpecification& WithCustomPrompt(Aws::String&& value) { SetCustomPrompt(std::move(value)); return *this;}
-    inline BedrockModelSpecification& WithCustomPrompt(const char* value) { SetCustomPrompt(value); return *this;}
+    template<typename CustomPromptT = Aws::String>
+    void SetCustomPrompt(CustomPromptT&& value) { m_customPromptHasBeenSet = true; m_customPrompt = std::forward<CustomPromptT>(value); }
+    template<typename CustomPromptT = Aws::String>
+    BedrockModelSpecification& WithCustomPrompt(CustomPromptT&& value) { SetCustomPrompt(std::forward<CustomPromptT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     BedrockGuardrailConfiguration m_guardrail;
     bool m_guardrailHasBeenSet = false;
 
-    BedrockTraceStatus m_traceStatus;
+    BedrockTraceStatus m_traceStatus{BedrockTraceStatus::NOT_SET};
     bool m_traceStatusHasBeenSet = false;
 
     Aws::String m_customPrompt;

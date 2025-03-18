@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin() : 
-    m_enableAcceptEncodingGzip(false),
-    m_enableAcceptEncodingGzipHasBeenSet(false),
-    m_enableAcceptEncodingBrotli(false),
-    m_enableAcceptEncodingBrotliHasBeenSet(false),
-    m_headersConfigHasBeenSet(false),
-    m_cookiesConfigHasBeenSet(false),
-    m_queryStringsConfigHasBeenSet(false)
-{
-}
-
 ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin(const XmlNode& xmlNode)
-  : ParametersInCacheKeyAndForwardedToOrigin()
 {
   *this = xmlNode;
 }

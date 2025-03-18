@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult()
-{
-}
-
 DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeStorediSCSIVolumesResult& DescribeStorediSCSIVolumesResult::operator =(c
     {
       m_storediSCSIVolumes.push_back(storediSCSIVolumesJsonList[storediSCSIVolumesIndex].AsObject());
     }
+    m_storediSCSIVolumesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

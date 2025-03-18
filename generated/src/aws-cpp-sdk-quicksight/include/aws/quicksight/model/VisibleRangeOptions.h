@@ -31,7 +31,7 @@ namespace Model
   class VisibleRangeOptions
   {
   public:
-    AWS_QUICKSIGHT_API VisibleRangeOptions();
+    AWS_QUICKSIGHT_API VisibleRangeOptions() = default;
     AWS_QUICKSIGHT_API VisibleRangeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API VisibleRangeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The percent range in the visible range.</p>
      */
-    inline const PercentVisibleRange& GetPercentRange() const{ return m_percentRange; }
+    inline const PercentVisibleRange& GetPercentRange() const { return m_percentRange; }
     inline bool PercentRangeHasBeenSet() const { return m_percentRangeHasBeenSet; }
-    inline void SetPercentRange(const PercentVisibleRange& value) { m_percentRangeHasBeenSet = true; m_percentRange = value; }
-    inline void SetPercentRange(PercentVisibleRange&& value) { m_percentRangeHasBeenSet = true; m_percentRange = std::move(value); }
-    inline VisibleRangeOptions& WithPercentRange(const PercentVisibleRange& value) { SetPercentRange(value); return *this;}
-    inline VisibleRangeOptions& WithPercentRange(PercentVisibleRange&& value) { SetPercentRange(std::move(value)); return *this;}
+    template<typename PercentRangeT = PercentVisibleRange>
+    void SetPercentRange(PercentRangeT&& value) { m_percentRangeHasBeenSet = true; m_percentRange = std::forward<PercentRangeT>(value); }
+    template<typename PercentRangeT = PercentVisibleRange>
+    VisibleRangeOptions& WithPercentRange(PercentRangeT&& value) { SetPercentRange(std::forward<PercentRangeT>(value)); return *this;}
     ///@}
   private:
 

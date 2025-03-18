@@ -21,7 +21,7 @@ namespace Model
   class AcceptReservedNodeExchangeRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API AcceptReservedNodeExchangeRequest();
+    AWS_REDSHIFT_API AcceptReservedNodeExchangeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>A string representing the node identifier of the DC1 Reserved Node to be
      * exchanged.</p>
      */
-    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+    inline const Aws::String& GetReservedNodeId() const { return m_reservedNodeId; }
     inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
-    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
-    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
-    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
-    inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
-    inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
-    inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+    template<typename ReservedNodeIdT = Aws::String>
+    void SetReservedNodeId(ReservedNodeIdT&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::forward<ReservedNodeIdT>(value); }
+    template<typename ReservedNodeIdT = Aws::String>
+    AcceptReservedNodeExchangeRequest& WithReservedNodeId(ReservedNodeIdT&& value) { SetReservedNodeId(std::forward<ReservedNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * exchange. You can obtain the value for the parameter by calling
      * <a>GetReservedNodeExchangeOfferings</a> </p>
      */
-    inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+    inline const Aws::String& GetTargetReservedNodeOfferingId() const { return m_targetReservedNodeOfferingId; }
     inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
-    inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
-    inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
-    inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
-    inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
-    inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
-    inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
+    template<typename TargetReservedNodeOfferingIdT = Aws::String>
+    void SetTargetReservedNodeOfferingId(TargetReservedNodeOfferingIdT&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::forward<TargetReservedNodeOfferingIdT>(value); }
+    template<typename TargetReservedNodeOfferingIdT = Aws::String>
+    AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(TargetReservedNodeOfferingIdT&& value) { SetTargetReservedNodeOfferingId(std::forward<TargetReservedNodeOfferingIdT>(value)); return *this;}
     ///@}
   private:
 

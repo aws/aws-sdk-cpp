@@ -30,7 +30,7 @@ namespace Model
   class GetIdleRecommendationsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetIdleRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetIdleRecommendationsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetIdleRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetIdleRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,60 +39,60 @@ namespace Model
     /**
      * <p>The token to advance to the next page of idle resource recommendations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetIdleRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetIdleRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetIdleRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetIdleRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of objects that describe the idle resource recommendations.</p>
      */
-    inline const Aws::Vector<IdleRecommendation>& GetIdleRecommendations() const{ return m_idleRecommendations; }
-    inline void SetIdleRecommendations(const Aws::Vector<IdleRecommendation>& value) { m_idleRecommendations = value; }
-    inline void SetIdleRecommendations(Aws::Vector<IdleRecommendation>&& value) { m_idleRecommendations = std::move(value); }
-    inline GetIdleRecommendationsResult& WithIdleRecommendations(const Aws::Vector<IdleRecommendation>& value) { SetIdleRecommendations(value); return *this;}
-    inline GetIdleRecommendationsResult& WithIdleRecommendations(Aws::Vector<IdleRecommendation>&& value) { SetIdleRecommendations(std::move(value)); return *this;}
-    inline GetIdleRecommendationsResult& AddIdleRecommendations(const IdleRecommendation& value) { m_idleRecommendations.push_back(value); return *this; }
-    inline GetIdleRecommendationsResult& AddIdleRecommendations(IdleRecommendation&& value) { m_idleRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdleRecommendation>& GetIdleRecommendations() const { return m_idleRecommendations; }
+    template<typename IdleRecommendationsT = Aws::Vector<IdleRecommendation>>
+    void SetIdleRecommendations(IdleRecommendationsT&& value) { m_idleRecommendationsHasBeenSet = true; m_idleRecommendations = std::forward<IdleRecommendationsT>(value); }
+    template<typename IdleRecommendationsT = Aws::Vector<IdleRecommendation>>
+    GetIdleRecommendationsResult& WithIdleRecommendations(IdleRecommendationsT&& value) { SetIdleRecommendations(std::forward<IdleRecommendationsT>(value)); return *this;}
+    template<typename IdleRecommendationsT = IdleRecommendation>
+    GetIdleRecommendationsResult& AddIdleRecommendations(IdleRecommendationsT&& value) { m_idleRecommendationsHasBeenSet = true; m_idleRecommendations.emplace_back(std::forward<IdleRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of objects that describe errors of the request.</p>
      */
-    inline const Aws::Vector<IdleRecommendationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<IdleRecommendationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<IdleRecommendationError>&& value) { m_errors = std::move(value); }
-    inline GetIdleRecommendationsResult& WithErrors(const Aws::Vector<IdleRecommendationError>& value) { SetErrors(value); return *this;}
-    inline GetIdleRecommendationsResult& WithErrors(Aws::Vector<IdleRecommendationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline GetIdleRecommendationsResult& AddErrors(const IdleRecommendationError& value) { m_errors.push_back(value); return *this; }
-    inline GetIdleRecommendationsResult& AddErrors(IdleRecommendationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdleRecommendationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<IdleRecommendationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<IdleRecommendationError>>
+    GetIdleRecommendationsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = IdleRecommendationError>
+    GetIdleRecommendationsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIdleRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIdleRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIdleRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIdleRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<IdleRecommendation> m_idleRecommendations;
+    bool m_idleRecommendationsHasBeenSet = false;
 
     Aws::Vector<IdleRecommendationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

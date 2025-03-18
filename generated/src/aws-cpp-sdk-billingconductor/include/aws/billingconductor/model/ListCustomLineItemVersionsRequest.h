@@ -22,7 +22,7 @@ namespace Model
   class ListCustomLineItemVersionsRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsRequest();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,21 +37,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the custom line item.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListCustomLineItemVersionsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListCustomLineItemVersionsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListCustomLineItemVersionsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListCustomLineItemVersionsRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of custom line item versions to retrieve.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCustomLineItemVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,14 +60,12 @@ namespace Model
      * <p>The pagination token that's used on subsequent calls to retrieve custom line
      * item versions.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCustomLineItemVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomLineItemVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomLineItemVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomLineItemVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +73,19 @@ namespace Model
      * <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing
      * period range in which the custom line item versions are applied.</p>
      */
-    inline const ListCustomLineItemVersionsFilter& GetFilters() const{ return m_filters; }
+    inline const ListCustomLineItemVersionsFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const ListCustomLineItemVersionsFilter& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(ListCustomLineItemVersionsFilter&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListCustomLineItemVersionsRequest& WithFilters(const ListCustomLineItemVersionsFilter& value) { SetFilters(value); return *this;}
-    inline ListCustomLineItemVersionsRequest& WithFilters(ListCustomLineItemVersionsFilter&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = ListCustomLineItemVersionsFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ListCustomLineItemVersionsFilter>
+    ListCustomLineItemVersionsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

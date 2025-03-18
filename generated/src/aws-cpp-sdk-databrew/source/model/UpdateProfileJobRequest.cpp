@@ -12,27 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProfileJobRequest::UpdateProfileJobRequest() : 
-    m_configurationHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_encryptionMode(EncryptionMode::NOT_SET),
-    m_encryptionModeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_logSubscriptionHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_validationConfigurationsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_jobSampleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProfileJobRequest::SerializePayload() const
 {
   JsonValue payload;

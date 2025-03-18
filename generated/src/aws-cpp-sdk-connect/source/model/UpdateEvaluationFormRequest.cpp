@@ -12,22 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEvaluationFormRequest::UpdateEvaluationFormRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false),
-    m_createNewVersion(false),
-    m_createNewVersionHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_scoringStrategyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateEvaluationFormRequest::SerializePayload() const
 {
   JsonValue payload;

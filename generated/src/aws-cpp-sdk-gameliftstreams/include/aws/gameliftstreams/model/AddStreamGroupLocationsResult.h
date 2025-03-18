@@ -29,7 +29,7 @@ namespace Model
   class AddStreamGroupLocationsResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API AddStreamGroupLocationsResult();
+    AWS_GAMELIFTSTREAMS_API AddStreamGroupLocationsResult() = default;
     AWS_GAMELIFTSTREAMS_API AddStreamGroupLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API AddStreamGroupLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>This value is the Amazon Resource Name (ARN) that uniquely identifies the
      * stream group resource. Format example: <code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
-    inline AddStreamGroupLocationsResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline AddStreamGroupLocationsResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline AddStreamGroupLocationsResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    AddStreamGroupLocationsResult& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,32 +60,33 @@ namespace Model
      * GameLift Streams is working to remove this location. It releases all provisioned
      * capacity for this location in this stream group. </p> </li> </ul>
      */
-    inline const Aws::Vector<LocationState>& GetLocations() const{ return m_locations; }
-    inline void SetLocations(const Aws::Vector<LocationState>& value) { m_locations = value; }
-    inline void SetLocations(Aws::Vector<LocationState>&& value) { m_locations = std::move(value); }
-    inline AddStreamGroupLocationsResult& WithLocations(const Aws::Vector<LocationState>& value) { SetLocations(value); return *this;}
-    inline AddStreamGroupLocationsResult& WithLocations(Aws::Vector<LocationState>&& value) { SetLocations(std::move(value)); return *this;}
-    inline AddStreamGroupLocationsResult& AddLocations(const LocationState& value) { m_locations.push_back(value); return *this; }
-    inline AddStreamGroupLocationsResult& AddLocations(LocationState&& value) { m_locations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LocationState>& GetLocations() const { return m_locations; }
+    template<typename LocationsT = Aws::Vector<LocationState>>
+    void SetLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations = std::forward<LocationsT>(value); }
+    template<typename LocationsT = Aws::Vector<LocationState>>
+    AddStreamGroupLocationsResult& WithLocations(LocationsT&& value) { SetLocations(std::forward<LocationsT>(value)); return *this;}
+    template<typename LocationsT = LocationState>
+    AddStreamGroupLocationsResult& AddLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations.emplace_back(std::forward<LocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddStreamGroupLocationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddStreamGroupLocationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddStreamGroupLocationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddStreamGroupLocationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<LocationState> m_locations;
+    bool m_locationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

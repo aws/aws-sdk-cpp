@@ -18,23 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_serviceNetworkIdHasBeenSet(false),
-    m_serviceNetworkNameHasBeenSet(false),
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ServiceNetworkVpcAssociationSummary::ServiceNetworkVpcAssociationSummary(JsonView jsonValue)
-  : ServiceNetworkVpcAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ ServiceNetworkVpcAssociationSummary& ServiceNetworkVpcAssociationSummary::operat
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceNetworkArn"))
   {
     m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
-
     m_serviceNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceNetworkId"))
   {
     m_serviceNetworkId = jsonValue.GetString("serviceNetworkId");
-
     m_serviceNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceNetworkName"))
   {
     m_serviceNetworkName = jsonValue.GetString("serviceNetworkName");
-
     m_serviceNetworkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

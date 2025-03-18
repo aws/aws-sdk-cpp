@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeAccountLimitsRequest::DescribeAccountLimitsRequest()
-{
-}
-
 Aws::String DescribeAccountLimitsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

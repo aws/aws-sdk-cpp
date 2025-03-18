@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DeleteExpressionRequest::DeleteExpressionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_expressionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExpressionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

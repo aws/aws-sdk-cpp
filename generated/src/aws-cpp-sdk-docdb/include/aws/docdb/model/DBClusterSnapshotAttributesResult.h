@@ -34,7 +34,7 @@ namespace Model
   class DBClusterSnapshotAttributesResult
   {
   public:
-    AWS_DOCDB_API DBClusterSnapshotAttributesResult();
+    AWS_DOCDB_API DBClusterSnapshotAttributesResult() = default;
     AWS_DOCDB_API DBClusterSnapshotAttributesResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_DOCDB_API DBClusterSnapshotAttributesResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The identifier of the cluster snapshot that the attributes apply to.</p>
      */
-    inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
+    inline const Aws::String& GetDBClusterSnapshotIdentifier() const { return m_dBClusterSnapshotIdentifier; }
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
-    inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
-    inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    template<typename DBClusterSnapshotIdentifierT = Aws::String>
+    void SetDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::forward<DBClusterSnapshotIdentifierT>(value); }
+    template<typename DBClusterSnapshotIdentifierT = Aws::String>
+    DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { SetDBClusterSnapshotIdentifier(std::forward<DBClusterSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of attributes and values for the cluster snapshot.</p>
      */
-    inline const Aws::Vector<DBClusterSnapshotAttribute>& GetDBClusterSnapshotAttributes() const{ return m_dBClusterSnapshotAttributes; }
+    inline const Aws::Vector<DBClusterSnapshotAttribute>& GetDBClusterSnapshotAttributes() const { return m_dBClusterSnapshotAttributes; }
     inline bool DBClusterSnapshotAttributesHasBeenSet() const { return m_dBClusterSnapshotAttributesHasBeenSet; }
-    inline void SetDBClusterSnapshotAttributes(const Aws::Vector<DBClusterSnapshotAttribute>& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = value; }
-    inline void SetDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = std::move(value); }
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(const Aws::Vector<DBClusterSnapshotAttribute>& value) { SetDBClusterSnapshotAttributes(value); return *this;}
-    inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(Aws::Vector<DBClusterSnapshotAttribute>&& value) { SetDBClusterSnapshotAttributes(std::move(value)); return *this;}
-    inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(const DBClusterSnapshotAttribute& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(value); return *this; }
-    inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttribute&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(std::move(value)); return *this; }
+    template<typename DBClusterSnapshotAttributesT = Aws::Vector<DBClusterSnapshotAttribute>>
+    void SetDBClusterSnapshotAttributes(DBClusterSnapshotAttributesT&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes = std::forward<DBClusterSnapshotAttributesT>(value); }
+    template<typename DBClusterSnapshotAttributesT = Aws::Vector<DBClusterSnapshotAttribute>>
+    DBClusterSnapshotAttributesResult& WithDBClusterSnapshotAttributes(DBClusterSnapshotAttributesT&& value) { SetDBClusterSnapshotAttributes(std::forward<DBClusterSnapshotAttributesT>(value)); return *this;}
+    template<typename DBClusterSnapshotAttributesT = DBClusterSnapshotAttribute>
+    DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttributesT&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.emplace_back(std::forward<DBClusterSnapshotAttributesT>(value)); return *this; }
     ///@}
   private:
 

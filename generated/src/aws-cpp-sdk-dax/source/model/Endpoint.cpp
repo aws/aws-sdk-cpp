@@ -18,16 +18,7 @@ namespace DAX
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URL"))
   {
     m_uRL = jsonValue.GetString("URL");
-
     m_uRLHasBeenSet = true;
   }
-
   return *this;
 }
 

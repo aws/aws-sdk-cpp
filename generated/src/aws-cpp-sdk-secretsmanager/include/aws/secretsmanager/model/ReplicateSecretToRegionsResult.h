@@ -29,7 +29,7 @@ namespace Model
   class ReplicateSecretToRegionsResult
   {
   public:
-    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult();
+    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult() = default;
     AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The ARN of the primary secret.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
-    inline void SetARN(const Aws::String& value) { m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRN.assign(value); }
-    inline ReplicateSecretToRegionsResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline ReplicateSecretToRegionsResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline ReplicateSecretToRegionsResult& WithARN(const char* value) { SetARN(value); return *this;}
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    ReplicateSecretToRegionsResult& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of replication.</p>
      */
-    inline const Aws::Vector<ReplicationStatusType>& GetReplicationStatus() const{ return m_replicationStatus; }
-    inline void SetReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { m_replicationStatus = value; }
-    inline void SetReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { m_replicationStatus = std::move(value); }
-    inline ReplicateSecretToRegionsResult& WithReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { SetReplicationStatus(value); return *this;}
-    inline ReplicateSecretToRegionsResult& WithReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { SetReplicationStatus(std::move(value)); return *this;}
-    inline ReplicateSecretToRegionsResult& AddReplicationStatus(const ReplicationStatusType& value) { m_replicationStatus.push_back(value); return *this; }
-    inline ReplicateSecretToRegionsResult& AddReplicationStatus(ReplicationStatusType&& value) { m_replicationStatus.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationStatusType>& GetReplicationStatus() const { return m_replicationStatus; }
+    template<typename ReplicationStatusT = Aws::Vector<ReplicationStatusType>>
+    void SetReplicationStatus(ReplicationStatusT&& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus = std::forward<ReplicationStatusT>(value); }
+    template<typename ReplicationStatusT = Aws::Vector<ReplicationStatusType>>
+    ReplicateSecretToRegionsResult& WithReplicationStatus(ReplicationStatusT&& value) { SetReplicationStatus(std::forward<ReplicationStatusT>(value)); return *this;}
+    template<typename ReplicationStatusT = ReplicationStatusType>
+    ReplicateSecretToRegionsResult& AddReplicationStatus(ReplicationStatusT&& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus.emplace_back(std::forward<ReplicationStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ReplicateSecretToRegionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ReplicateSecretToRegionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ReplicateSecretToRegionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ReplicateSecretToRegionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<ReplicationStatusType> m_replicationStatus;
+    bool m_replicationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

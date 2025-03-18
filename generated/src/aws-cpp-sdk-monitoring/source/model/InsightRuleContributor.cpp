@@ -20,16 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRuleContributor::InsightRuleContributor() : 
-    m_keysHasBeenSet(false),
-    m_approximateAggregateValue(0.0),
-    m_approximateAggregateValueHasBeenSet(false),
-    m_datapointsHasBeenSet(false)
-{
-}
-
 InsightRuleContributor::InsightRuleContributor(const XmlNode& xmlNode)
-  : InsightRuleContributor()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ InsightRuleContributor& InsightRuleContributor::operator =(const XmlNode& xmlNod
     if(!keysNode.IsNull())
     {
       XmlNode keysMember = keysNode.FirstChild("member");
+      m_keysHasBeenSet = !keysMember.IsNull();
       while(!keysMember.IsNull())
       {
         m_keys.push_back(keysMember.GetText());
@@ -62,6 +54,7 @@ InsightRuleContributor& InsightRuleContributor::operator =(const XmlNode& xmlNod
     if(!datapointsNode.IsNull())
     {
       XmlNode datapointsMember = datapointsNode.FirstChild("member");
+      m_datapointsHasBeenSet = !datapointsMember.IsNull();
       while(!datapointsMember.IsNull())
       {
         m_datapoints.push_back(datapointsMember);

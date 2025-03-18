@@ -21,7 +21,7 @@ namespace Model
   class DeleteStateMachineRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DeleteStateMachineRequest();
+    AWS_SFN_API DeleteStateMachineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
-    inline DeleteStateMachineRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline DeleteStateMachineRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline DeleteStateMachineRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    DeleteStateMachineRequest& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
   private:
 

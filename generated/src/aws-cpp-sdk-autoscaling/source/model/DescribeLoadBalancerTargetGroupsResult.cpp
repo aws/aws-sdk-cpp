@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLoadBalancerTargetGroupsResult::DescribeLoadBalancerTargetGroupsResult()
-{
-}
-
 DescribeLoadBalancerTargetGroupsResult::DescribeLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeLoadBalancerTargetGroupsResult& DescribeLoadBalancerTargetGroupsResult::
     if(!loadBalancerTargetGroupsNode.IsNull())
     {
       XmlNode loadBalancerTargetGroupsMember = loadBalancerTargetGroupsNode.FirstChild("member");
+      m_loadBalancerTargetGroupsHasBeenSet = !loadBalancerTargetGroupsMember.IsNull();
       while(!loadBalancerTargetGroupsMember.IsNull())
       {
         m_loadBalancerTargetGroups.push_back(loadBalancerTargetGroupsMember);
         loadBalancerTargetGroupsMember = loadBalancerTargetGroupsMember.NextNode("member");
       }
 
+      m_loadBalancerTargetGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeLoadBalancerTargetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

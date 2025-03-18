@@ -33,7 +33,7 @@ namespace Model
   class BlockingInstance
   {
   public:
-    AWS_OUTPOSTS_API BlockingInstance();
+    AWS_OUTPOSTS_API BlockingInstance() = default;
     AWS_OUTPOSTS_API BlockingInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API BlockingInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The ID of the blocking instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BlockingInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BlockingInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BlockingInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BlockingInstance& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline BlockingInstance& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline BlockingInstance& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline BlockingInstance& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    BlockingInstance& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,10 @@ namespace Model
      * <p>The Amazon Web Services service name that owns the specified blocking
      * instance.</p>
      */
-    inline const AWSServiceName& GetAwsServiceName() const{ return m_awsServiceName; }
+    inline AWSServiceName GetAwsServiceName() const { return m_awsServiceName; }
     inline bool AwsServiceNameHasBeenSet() const { return m_awsServiceNameHasBeenSet; }
-    inline void SetAwsServiceName(const AWSServiceName& value) { m_awsServiceNameHasBeenSet = true; m_awsServiceName = value; }
-    inline void SetAwsServiceName(AWSServiceName&& value) { m_awsServiceNameHasBeenSet = true; m_awsServiceName = std::move(value); }
-    inline BlockingInstance& WithAwsServiceName(const AWSServiceName& value) { SetAwsServiceName(value); return *this;}
-    inline BlockingInstance& WithAwsServiceName(AWSServiceName&& value) { SetAwsServiceName(std::move(value)); return *this;}
+    inline void SetAwsServiceName(AWSServiceName value) { m_awsServiceNameHasBeenSet = true; m_awsServiceName = value; }
+    inline BlockingInstance& WithAwsServiceName(AWSServiceName value) { SetAwsServiceName(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AWSServiceName m_awsServiceName;
+    AWSServiceName m_awsServiceName{AWSServiceName::NOT_SET};
     bool m_awsServiceNameHasBeenSet = false;
   };
 

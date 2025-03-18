@@ -12,11 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartApplicationRequest::StartApplicationRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String StartApplicationRequest::SerializePayload() const
 {
   return {};

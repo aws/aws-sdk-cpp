@@ -18,18 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-CalculateRouteTruckModeOptions::CalculateRouteTruckModeOptions() : 
-    m_avoidFerries(false),
-    m_avoidFerriesHasBeenSet(false),
-    m_avoidTolls(false),
-    m_avoidTollsHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_weightHasBeenSet(false)
-{
-}
-
 CalculateRouteTruckModeOptions::CalculateRouteTruckModeOptions(JsonView jsonValue)
-  : CalculateRouteTruckModeOptions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CalculateRouteTruckModeOptions& CalculateRouteTruckModeOptions::operator =(JsonV
   if(jsonValue.ValueExists("AvoidFerries"))
   {
     m_avoidFerries = jsonValue.GetBool("AvoidFerries");
-
     m_avoidFerriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvoidTolls"))
   {
     m_avoidTolls = jsonValue.GetBool("AvoidTolls");
-
     m_avoidTollsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     m_dimensions = jsonValue.GetObject("Dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetObject("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

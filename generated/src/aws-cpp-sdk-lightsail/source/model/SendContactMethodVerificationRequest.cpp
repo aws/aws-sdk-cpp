@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendContactMethodVerificationRequest::SendContactMethodVerificationRequest() : 
-    m_protocol(ContactMethodVerificationProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 Aws::String SendContactMethodVerificationRequest::SerializePayload() const
 {
   JsonValue payload;

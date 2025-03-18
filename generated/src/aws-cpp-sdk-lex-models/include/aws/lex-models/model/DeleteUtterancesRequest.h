@@ -21,7 +21,7 @@ namespace Model
   class DeleteUtterancesRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API DeleteUtterancesRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API DeleteUtterancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the bot that stored the utterances.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline DeleteUtterancesRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline DeleteUtterancesRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline DeleteUtterancesRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    DeleteUtterancesRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
      * operation request that contained the utterance.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline DeleteUtterancesRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline DeleteUtterancesRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline DeleteUtterancesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    DeleteUtterancesRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

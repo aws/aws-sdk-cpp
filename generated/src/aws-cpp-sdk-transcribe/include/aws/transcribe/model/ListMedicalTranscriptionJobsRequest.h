@@ -22,7 +22,7 @@ namespace Model
   class ListMedicalTranscriptionJobsRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsRequest();
+    AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,10 @@ namespace Model
      * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
-    inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
+    inline TranscriptionJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TranscriptionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TranscriptionJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListMedicalTranscriptionJobsRequest& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
-    inline ListMedicalTranscriptionJobsRequest& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TranscriptionJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListMedicalTranscriptionJobsRequest& WithStatus(TranscriptionJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>Returns only the medical transcription jobs that contain the specified
      * string. The search is not case sensitive.</p>
      */
-    inline const Aws::String& GetJobNameContains() const{ return m_jobNameContains; }
+    inline const Aws::String& GetJobNameContains() const { return m_jobNameContains; }
     inline bool JobNameContainsHasBeenSet() const { return m_jobNameContainsHasBeenSet; }
-    inline void SetJobNameContains(const Aws::String& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = value; }
-    inline void SetJobNameContains(Aws::String&& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = std::move(value); }
-    inline void SetJobNameContains(const char* value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains.assign(value); }
-    inline ListMedicalTranscriptionJobsRequest& WithJobNameContains(const Aws::String& value) { SetJobNameContains(value); return *this;}
-    inline ListMedicalTranscriptionJobsRequest& WithJobNameContains(Aws::String&& value) { SetJobNameContains(std::move(value)); return *this;}
-    inline ListMedicalTranscriptionJobsRequest& WithJobNameContains(const char* value) { SetJobNameContains(value); return *this;}
+    template<typename JobNameContainsT = Aws::String>
+    void SetJobNameContains(JobNameContainsT&& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = std::forward<JobNameContainsT>(value); }
+    template<typename JobNameContainsT = Aws::String>
+    ListMedicalTranscriptionJobsRequest& WithJobNameContains(JobNameContainsT&& value) { SetJobNameContains(std::forward<JobNameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * string and repeat your request, including <code>NextToken</code> with the value
      * of the copied string. Repeat as needed to view all your results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMedicalTranscriptionJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMedicalTranscriptionJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMedicalTranscriptionJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMedicalTranscriptionJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,14 @@ namespace Model
      * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMedicalTranscriptionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    TranscriptionJobStatus m_status;
+    TranscriptionJobStatus m_status{TranscriptionJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_jobNameContains;
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

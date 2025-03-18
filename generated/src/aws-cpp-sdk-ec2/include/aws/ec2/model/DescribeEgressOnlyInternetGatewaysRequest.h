@@ -23,7 +23,7 @@ namespace Model
   class DescribeEgressOnlyInternetGatewaysRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeEgressOnlyInternetGatewaysRequest();
+    AWS_EC2_API DescribeEgressOnlyInternetGatewaysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeEgressOnlyInternetGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,15 +55,14 @@ namespace Model
     /**
      * <p>The IDs of the egress-only internet gateways.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEgressOnlyInternetGatewayIds() const{ return m_egressOnlyInternetGatewayIds; }
+    inline const Aws::Vector<Aws::String>& GetEgressOnlyInternetGatewayIds() const { return m_egressOnlyInternetGatewayIds; }
     inline bool EgressOnlyInternetGatewayIdsHasBeenSet() const { return m_egressOnlyInternetGatewayIdsHasBeenSet; }
-    inline void SetEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = value; }
-    inline void SetEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = std::move(value); }
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetEgressOnlyInternetGatewayIds(value); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetEgressOnlyInternetGatewayIds(std::move(value)); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const Aws::String& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(Aws::String&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(std::move(value)); return *this; }
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const char* value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
+    template<typename EgressOnlyInternetGatewayIdsT = Aws::Vector<Aws::String>>
+    void SetEgressOnlyInternetGatewayIds(EgressOnlyInternetGatewayIdsT&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = std::forward<EgressOnlyInternetGatewayIdsT>(value); }
+    template<typename EgressOnlyInternetGatewayIdsT = Aws::Vector<Aws::String>>
+    DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(EgressOnlyInternetGatewayIdsT&& value) { SetEgressOnlyInternetGatewayIds(std::forward<EgressOnlyInternetGatewayIdsT>(value)); return *this;}
+    template<typename EgressOnlyInternetGatewayIdsT = Aws::String>
+    DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(EgressOnlyInternetGatewayIdsT&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.emplace_back(std::forward<EgressOnlyInternetGatewayIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,7 +72,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeEgressOnlyInternetGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,14 +83,12 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,24 +102,24 @@ namespace Model
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeEgressOnlyInternetGatewaysRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeEgressOnlyInternetGatewaysRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_egressOnlyInternetGatewayIds;
     bool m_egressOnlyInternetGatewayIdsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

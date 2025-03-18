@@ -18,16 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-ContentReference::ContentReference() : 
-    m_contentArnHasBeenSet(false),
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 ContentReference::ContentReference(JsonView jsonValue)
-  : ContentReference()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ContentReference& ContentReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentArn"))
   {
     m_contentArn = jsonValue.GetString("contentArn");
-
     m_contentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentId"))
   {
     m_contentId = jsonValue.GetString("contentId");
-
     m_contentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   return *this;
 }
 

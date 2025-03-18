@@ -32,7 +32,7 @@ namespace Model
   class ResponseHeadersPolicyCustomHeader
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The HTTP response header name.</p>
      */
-    inline const Aws::String& GetHeader() const{ return m_header; }
+    inline const Aws::String& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-    inline ResponseHeadersPolicyCustomHeader& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-    inline ResponseHeadersPolicyCustomHeader& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyCustomHeader& WithHeader(const char* value) { SetHeader(value); return *this;}
+    template<typename HeaderT = Aws::String>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Aws::String>
+    ResponseHeadersPolicyCustomHeader& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value for the HTTP response header.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ResponseHeadersPolicyCustomHeader& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ResponseHeadersPolicyCustomHeader& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyCustomHeader& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ResponseHeadersPolicyCustomHeader& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>A Boolean that determines whether CloudFront overrides a response header with
      * the same name received from the origin with the header specified here.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyCustomHeader& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
   };
 

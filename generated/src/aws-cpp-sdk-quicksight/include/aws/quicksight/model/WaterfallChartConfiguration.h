@@ -40,7 +40,7 @@ namespace Model
   class WaterfallChartConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API WaterfallChartConfiguration();
+    AWS_QUICKSIGHT_API WaterfallChartConfiguration() = default;
     AWS_QUICKSIGHT_API WaterfallChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WaterfallChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,144 +50,144 @@ namespace Model
     /**
      * <p>The field well configuration of a waterfall visual.</p>
      */
-    inline const WaterfallChartFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const WaterfallChartFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const WaterfallChartFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(WaterfallChartFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline WaterfallChartConfiguration& WithFieldWells(const WaterfallChartFieldWells& value) { SetFieldWells(value); return *this;}
-    inline WaterfallChartConfiguration& WithFieldWells(WaterfallChartFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = WaterfallChartFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = WaterfallChartFieldWells>
+    WaterfallChartConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a waterfall visual.</p>
      */
-    inline const WaterfallChartSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const WaterfallChartSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const WaterfallChartSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(WaterfallChartSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline WaterfallChartConfiguration& WithSortConfiguration(const WaterfallChartSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline WaterfallChartConfiguration& WithSortConfiguration(WaterfallChartSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = WaterfallChartSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = WaterfallChartSortConfiguration>
+    WaterfallChartConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of a waterfall visual.</p>
      */
-    inline const WaterfallChartOptions& GetWaterfallChartOptions() const{ return m_waterfallChartOptions; }
+    inline const WaterfallChartOptions& GetWaterfallChartOptions() const { return m_waterfallChartOptions; }
     inline bool WaterfallChartOptionsHasBeenSet() const { return m_waterfallChartOptionsHasBeenSet; }
-    inline void SetWaterfallChartOptions(const WaterfallChartOptions& value) { m_waterfallChartOptionsHasBeenSet = true; m_waterfallChartOptions = value; }
-    inline void SetWaterfallChartOptions(WaterfallChartOptions&& value) { m_waterfallChartOptionsHasBeenSet = true; m_waterfallChartOptions = std::move(value); }
-    inline WaterfallChartConfiguration& WithWaterfallChartOptions(const WaterfallChartOptions& value) { SetWaterfallChartOptions(value); return *this;}
-    inline WaterfallChartConfiguration& WithWaterfallChartOptions(WaterfallChartOptions&& value) { SetWaterfallChartOptions(std::move(value)); return *this;}
+    template<typename WaterfallChartOptionsT = WaterfallChartOptions>
+    void SetWaterfallChartOptions(WaterfallChartOptionsT&& value) { m_waterfallChartOptionsHasBeenSet = true; m_waterfallChartOptions = std::forward<WaterfallChartOptionsT>(value); }
+    template<typename WaterfallChartOptionsT = WaterfallChartOptions>
+    WaterfallChartConfiguration& WithWaterfallChartOptions(WaterfallChartOptionsT&& value) { SetWaterfallChartOptions(std::forward<WaterfallChartOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of the category axis label.</p>
      */
-    inline const ChartAxisLabelOptions& GetCategoryAxisLabelOptions() const{ return m_categoryAxisLabelOptions; }
+    inline const ChartAxisLabelOptions& GetCategoryAxisLabelOptions() const { return m_categoryAxisLabelOptions; }
     inline bool CategoryAxisLabelOptionsHasBeenSet() const { return m_categoryAxisLabelOptionsHasBeenSet; }
-    inline void SetCategoryAxisLabelOptions(const ChartAxisLabelOptions& value) { m_categoryAxisLabelOptionsHasBeenSet = true; m_categoryAxisLabelOptions = value; }
-    inline void SetCategoryAxisLabelOptions(ChartAxisLabelOptions&& value) { m_categoryAxisLabelOptionsHasBeenSet = true; m_categoryAxisLabelOptions = std::move(value); }
-    inline WaterfallChartConfiguration& WithCategoryAxisLabelOptions(const ChartAxisLabelOptions& value) { SetCategoryAxisLabelOptions(value); return *this;}
-    inline WaterfallChartConfiguration& WithCategoryAxisLabelOptions(ChartAxisLabelOptions&& value) { SetCategoryAxisLabelOptions(std::move(value)); return *this;}
+    template<typename CategoryAxisLabelOptionsT = ChartAxisLabelOptions>
+    void SetCategoryAxisLabelOptions(CategoryAxisLabelOptionsT&& value) { m_categoryAxisLabelOptionsHasBeenSet = true; m_categoryAxisLabelOptions = std::forward<CategoryAxisLabelOptionsT>(value); }
+    template<typename CategoryAxisLabelOptionsT = ChartAxisLabelOptions>
+    WaterfallChartConfiguration& WithCategoryAxisLabelOptions(CategoryAxisLabelOptionsT&& value) { SetCategoryAxisLabelOptions(std::forward<CategoryAxisLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of the category axis.</p>
      */
-    inline const AxisDisplayOptions& GetCategoryAxisDisplayOptions() const{ return m_categoryAxisDisplayOptions; }
+    inline const AxisDisplayOptions& GetCategoryAxisDisplayOptions() const { return m_categoryAxisDisplayOptions; }
     inline bool CategoryAxisDisplayOptionsHasBeenSet() const { return m_categoryAxisDisplayOptionsHasBeenSet; }
-    inline void SetCategoryAxisDisplayOptions(const AxisDisplayOptions& value) { m_categoryAxisDisplayOptionsHasBeenSet = true; m_categoryAxisDisplayOptions = value; }
-    inline void SetCategoryAxisDisplayOptions(AxisDisplayOptions&& value) { m_categoryAxisDisplayOptionsHasBeenSet = true; m_categoryAxisDisplayOptions = std::move(value); }
-    inline WaterfallChartConfiguration& WithCategoryAxisDisplayOptions(const AxisDisplayOptions& value) { SetCategoryAxisDisplayOptions(value); return *this;}
-    inline WaterfallChartConfiguration& WithCategoryAxisDisplayOptions(AxisDisplayOptions&& value) { SetCategoryAxisDisplayOptions(std::move(value)); return *this;}
+    template<typename CategoryAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetCategoryAxisDisplayOptions(CategoryAxisDisplayOptionsT&& value) { m_categoryAxisDisplayOptionsHasBeenSet = true; m_categoryAxisDisplayOptions = std::forward<CategoryAxisDisplayOptionsT>(value); }
+    template<typename CategoryAxisDisplayOptionsT = AxisDisplayOptions>
+    WaterfallChartConfiguration& WithCategoryAxisDisplayOptions(CategoryAxisDisplayOptionsT&& value) { SetCategoryAxisDisplayOptions(std::forward<CategoryAxisDisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of the y-axis label.</p>
      */
-    inline const ChartAxisLabelOptions& GetPrimaryYAxisLabelOptions() const{ return m_primaryYAxisLabelOptions; }
+    inline const ChartAxisLabelOptions& GetPrimaryYAxisLabelOptions() const { return m_primaryYAxisLabelOptions; }
     inline bool PrimaryYAxisLabelOptionsHasBeenSet() const { return m_primaryYAxisLabelOptionsHasBeenSet; }
-    inline void SetPrimaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = value; }
-    inline void SetPrimaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = std::move(value); }
-    inline WaterfallChartConfiguration& WithPrimaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { SetPrimaryYAxisLabelOptions(value); return *this;}
-    inline WaterfallChartConfiguration& WithPrimaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetPrimaryYAxisLabelOptions(std::move(value)); return *this;}
+    template<typename PrimaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    void SetPrimaryYAxisLabelOptions(PrimaryYAxisLabelOptionsT&& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = std::forward<PrimaryYAxisLabelOptionsT>(value); }
+    template<typename PrimaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    WaterfallChartConfiguration& WithPrimaryYAxisLabelOptions(PrimaryYAxisLabelOptionsT&& value) { SetPrimaryYAxisLabelOptions(std::forward<PrimaryYAxisLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of the y-axis.</p>
      */
-    inline const AxisDisplayOptions& GetPrimaryYAxisDisplayOptions() const{ return m_primaryYAxisDisplayOptions; }
+    inline const AxisDisplayOptions& GetPrimaryYAxisDisplayOptions() const { return m_primaryYAxisDisplayOptions; }
     inline bool PrimaryYAxisDisplayOptionsHasBeenSet() const { return m_primaryYAxisDisplayOptionsHasBeenSet; }
-    inline void SetPrimaryYAxisDisplayOptions(const AxisDisplayOptions& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = value; }
-    inline void SetPrimaryYAxisDisplayOptions(AxisDisplayOptions&& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = std::move(value); }
-    inline WaterfallChartConfiguration& WithPrimaryYAxisDisplayOptions(const AxisDisplayOptions& value) { SetPrimaryYAxisDisplayOptions(value); return *this;}
-    inline WaterfallChartConfiguration& WithPrimaryYAxisDisplayOptions(AxisDisplayOptions&& value) { SetPrimaryYAxisDisplayOptions(std::move(value)); return *this;}
+    template<typename PrimaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetPrimaryYAxisDisplayOptions(PrimaryYAxisDisplayOptionsT&& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = std::forward<PrimaryYAxisDisplayOptionsT>(value); }
+    template<typename PrimaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    WaterfallChartConfiguration& WithPrimaryYAxisDisplayOptions(PrimaryYAxisDisplayOptionsT&& value) { SetPrimaryYAxisDisplayOptions(std::forward<PrimaryYAxisDisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legend configuration of a waterfall visual.</p>
      */
-    inline const LegendOptions& GetLegend() const{ return m_legend; }
+    inline const LegendOptions& GetLegend() const { return m_legend; }
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-    inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-    inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-    inline WaterfallChartConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-    inline WaterfallChartConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    template<typename LegendT = LegendOptions>
+    void SetLegend(LegendT&& value) { m_legendHasBeenSet = true; m_legend = std::forward<LegendT>(value); }
+    template<typename LegendT = LegendOptions>
+    WaterfallChartConfiguration& WithLegend(LegendT&& value) { SetLegend(std::forward<LegendT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data label configuration of a waterfall visual.</p>
      */
-    inline const DataLabelOptions& GetDataLabels() const{ return m_dataLabels; }
+    inline const DataLabelOptions& GetDataLabels() const { return m_dataLabels; }
     inline bool DataLabelsHasBeenSet() const { return m_dataLabelsHasBeenSet; }
-    inline void SetDataLabels(const DataLabelOptions& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = value; }
-    inline void SetDataLabels(DataLabelOptions&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::move(value); }
-    inline WaterfallChartConfiguration& WithDataLabels(const DataLabelOptions& value) { SetDataLabels(value); return *this;}
-    inline WaterfallChartConfiguration& WithDataLabels(DataLabelOptions&& value) { SetDataLabels(std::move(value)); return *this;}
+    template<typename DataLabelsT = DataLabelOptions>
+    void SetDataLabels(DataLabelsT&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::forward<DataLabelsT>(value); }
+    template<typename DataLabelsT = DataLabelOptions>
+    WaterfallChartConfiguration& WithDataLabels(DataLabelsT&& value) { SetDataLabels(std::forward<DataLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visual palette configuration of a waterfall visual.</p>
      */
-    inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
+    inline const VisualPalette& GetVisualPalette() const { return m_visualPalette; }
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-    inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-    inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-    inline WaterfallChartConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-    inline WaterfallChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    template<typename VisualPaletteT = VisualPalette>
+    void SetVisualPalette(VisualPaletteT&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::forward<VisualPaletteT>(value); }
+    template<typename VisualPaletteT = VisualPalette>
+    WaterfallChartConfiguration& WithVisualPalette(VisualPaletteT&& value) { SetVisualPalette(std::forward<VisualPaletteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color configuration of a waterfall visual.</p>
      */
-    inline const WaterfallChartColorConfiguration& GetColorConfiguration() const{ return m_colorConfiguration; }
+    inline const WaterfallChartColorConfiguration& GetColorConfiguration() const { return m_colorConfiguration; }
     inline bool ColorConfigurationHasBeenSet() const { return m_colorConfigurationHasBeenSet; }
-    inline void SetColorConfiguration(const WaterfallChartColorConfiguration& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = value; }
-    inline void SetColorConfiguration(WaterfallChartColorConfiguration&& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = std::move(value); }
-    inline WaterfallChartConfiguration& WithColorConfiguration(const WaterfallChartColorConfiguration& value) { SetColorConfiguration(value); return *this;}
-    inline WaterfallChartConfiguration& WithColorConfiguration(WaterfallChartColorConfiguration&& value) { SetColorConfiguration(std::move(value)); return *this;}
+    template<typename ColorConfigurationT = WaterfallChartColorConfiguration>
+    void SetColorConfiguration(ColorConfigurationT&& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = std::forward<ColorConfigurationT>(value); }
+    template<typename ColorConfigurationT = WaterfallChartColorConfiguration>
+    WaterfallChartConfiguration& WithColorConfiguration(ColorConfigurationT&& value) { SetColorConfiguration(std::forward<ColorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline WaterfallChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline WaterfallChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    WaterfallChartConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 

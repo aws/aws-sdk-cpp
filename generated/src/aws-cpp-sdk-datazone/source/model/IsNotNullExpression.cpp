@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-IsNotNullExpression::IsNotNullExpression() : 
-    m_columnNameHasBeenSet(false)
-{
-}
-
 IsNotNullExpression::IsNotNullExpression(JsonView jsonValue)
-  : IsNotNullExpression()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IsNotNullExpression& IsNotNullExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   return *this;
 }
 

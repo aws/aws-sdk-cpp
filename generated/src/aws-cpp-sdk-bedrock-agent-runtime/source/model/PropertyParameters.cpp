@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PropertyParameters::PropertyParameters() : 
-    m_propertiesHasBeenSet(false)
-{
-}
-
 PropertyParameters::PropertyParameters(JsonView jsonValue)
-  : PropertyParameters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PropertyParameters& PropertyParameters::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

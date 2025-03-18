@@ -27,7 +27,7 @@ namespace Model
   class CreateMissionProfileRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API CreateMissionProfileRequest();
+    AWS_GROUNDSTATION_API CreateMissionProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * <p>Amount of time after a contact ends that you’d like to receive a Ground
      * Station Contact State Change event indicating the pass has finished.</p>
      */
-    inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
+    inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
     inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
     inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
     inline CreateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>Amount of time prior to contact start you’d like to receive a Ground Station
      * Contact State Change event indicating an upcoming pass.</p>
      */
-    inline int GetContactPrePassDurationSeconds() const{ return m_contactPrePassDurationSeconds; }
+    inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
     inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
     inline void SetContactPrePassDurationSeconds(int value) { m_contactPrePassDurationSecondsHasBeenSet = true; m_contactPrePassDurationSeconds = value; }
     inline CreateMissionProfileRequest& WithContactPrePassDurationSeconds(int value) { SetContactPrePassDurationSeconds(value); return *this;}
@@ -65,14 +65,14 @@ namespace Model
      * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
      * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetDataflowEdges() const{ return m_dataflowEdges; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetDataflowEdges() const { return m_dataflowEdges; }
     inline bool DataflowEdgesHasBeenSet() const { return m_dataflowEdgesHasBeenSet; }
-    inline void SetDataflowEdges(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges = value; }
-    inline void SetDataflowEdges(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges = std::move(value); }
-    inline CreateMissionProfileRequest& WithDataflowEdges(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetDataflowEdges(value); return *this;}
-    inline CreateMissionProfileRequest& WithDataflowEdges(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetDataflowEdges(std::move(value)); return *this;}
-    inline CreateMissionProfileRequest& AddDataflowEdges(const Aws::Vector<Aws::String>& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges.push_back(value); return *this; }
-    inline CreateMissionProfileRequest& AddDataflowEdges(Aws::Vector<Aws::String>&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges.push_back(std::move(value)); return *this; }
+    template<typename DataflowEdgesT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetDataflowEdges(DataflowEdgesT&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges = std::forward<DataflowEdgesT>(value); }
+    template<typename DataflowEdgesT = Aws::Vector<Aws::Vector<Aws::String>>>
+    CreateMissionProfileRequest& WithDataflowEdges(DataflowEdgesT&& value) { SetDataflowEdges(std::forward<DataflowEdgesT>(value)); return *this;}
+    template<typename DataflowEdgesT = Aws::Vector<Aws::String>>
+    CreateMissionProfileRequest& AddDataflowEdges(DataflowEdgesT&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges.emplace_back(std::forward<DataflowEdgesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,7 +81,7 @@ namespace Model
      * contact. AWS Ground Station will not present you with contacts shorter than this
      * duration.</p>
      */
-    inline int GetMinimumViableContactDurationSeconds() const{ return m_minimumViableContactDurationSeconds; }
+    inline int GetMinimumViableContactDurationSeconds() const { return m_minimumViableContactDurationSeconds; }
     inline bool MinimumViableContactDurationSecondsHasBeenSet() const { return m_minimumViableContactDurationSecondsHasBeenSet; }
     inline void SetMinimumViableContactDurationSeconds(int value) { m_minimumViableContactDurationSecondsHasBeenSet = true; m_minimumViableContactDurationSeconds = value; }
     inline CreateMissionProfileRequest& WithMinimumViableContactDurationSeconds(int value) { SetMinimumViableContactDurationSeconds(value); return *this;}
@@ -91,86 +91,77 @@ namespace Model
     /**
      * <p>Name of a mission profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateMissionProfileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateMissionProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateMissionProfileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateMissionProfileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>KMS key to use for encrypting streams.</p>
      */
-    inline const KmsKey& GetStreamsKmsKey() const{ return m_streamsKmsKey; }
+    inline const KmsKey& GetStreamsKmsKey() const { return m_streamsKmsKey; }
     inline bool StreamsKmsKeyHasBeenSet() const { return m_streamsKmsKeyHasBeenSet; }
-    inline void SetStreamsKmsKey(const KmsKey& value) { m_streamsKmsKeyHasBeenSet = true; m_streamsKmsKey = value; }
-    inline void SetStreamsKmsKey(KmsKey&& value) { m_streamsKmsKeyHasBeenSet = true; m_streamsKmsKey = std::move(value); }
-    inline CreateMissionProfileRequest& WithStreamsKmsKey(const KmsKey& value) { SetStreamsKmsKey(value); return *this;}
-    inline CreateMissionProfileRequest& WithStreamsKmsKey(KmsKey&& value) { SetStreamsKmsKey(std::move(value)); return *this;}
+    template<typename StreamsKmsKeyT = KmsKey>
+    void SetStreamsKmsKey(StreamsKmsKeyT&& value) { m_streamsKmsKeyHasBeenSet = true; m_streamsKmsKey = std::forward<StreamsKmsKeyT>(value); }
+    template<typename StreamsKmsKeyT = KmsKey>
+    CreateMissionProfileRequest& WithStreamsKmsKey(StreamsKmsKeyT&& value) { SetStreamsKmsKey(std::forward<StreamsKmsKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Role to use for encrypting streams with KMS key.</p>
      */
-    inline const Aws::String& GetStreamsKmsRole() const{ return m_streamsKmsRole; }
+    inline const Aws::String& GetStreamsKmsRole() const { return m_streamsKmsRole; }
     inline bool StreamsKmsRoleHasBeenSet() const { return m_streamsKmsRoleHasBeenSet; }
-    inline void SetStreamsKmsRole(const Aws::String& value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole = value; }
-    inline void SetStreamsKmsRole(Aws::String&& value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole = std::move(value); }
-    inline void SetStreamsKmsRole(const char* value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole.assign(value); }
-    inline CreateMissionProfileRequest& WithStreamsKmsRole(const Aws::String& value) { SetStreamsKmsRole(value); return *this;}
-    inline CreateMissionProfileRequest& WithStreamsKmsRole(Aws::String&& value) { SetStreamsKmsRole(std::move(value)); return *this;}
-    inline CreateMissionProfileRequest& WithStreamsKmsRole(const char* value) { SetStreamsKmsRole(value); return *this;}
+    template<typename StreamsKmsRoleT = Aws::String>
+    void SetStreamsKmsRole(StreamsKmsRoleT&& value) { m_streamsKmsRoleHasBeenSet = true; m_streamsKmsRole = std::forward<StreamsKmsRoleT>(value); }
+    template<typename StreamsKmsRoleT = Aws::String>
+    CreateMissionProfileRequest& WithStreamsKmsRole(StreamsKmsRoleT&& value) { SetStreamsKmsRole(std::forward<StreamsKmsRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags assigned to a mission profile.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMissionProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateMissionProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMissionProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateMissionProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMissionProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMissionProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMissionProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMissionProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMissionProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMissionProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateMissionProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>ARN of a tracking <code>Config</code>.</p>
      */
-    inline const Aws::String& GetTrackingConfigArn() const{ return m_trackingConfigArn; }
+    inline const Aws::String& GetTrackingConfigArn() const { return m_trackingConfigArn; }
     inline bool TrackingConfigArnHasBeenSet() const { return m_trackingConfigArnHasBeenSet; }
-    inline void SetTrackingConfigArn(const Aws::String& value) { m_trackingConfigArnHasBeenSet = true; m_trackingConfigArn = value; }
-    inline void SetTrackingConfigArn(Aws::String&& value) { m_trackingConfigArnHasBeenSet = true; m_trackingConfigArn = std::move(value); }
-    inline void SetTrackingConfigArn(const char* value) { m_trackingConfigArnHasBeenSet = true; m_trackingConfigArn.assign(value); }
-    inline CreateMissionProfileRequest& WithTrackingConfigArn(const Aws::String& value) { SetTrackingConfigArn(value); return *this;}
-    inline CreateMissionProfileRequest& WithTrackingConfigArn(Aws::String&& value) { SetTrackingConfigArn(std::move(value)); return *this;}
-    inline CreateMissionProfileRequest& WithTrackingConfigArn(const char* value) { SetTrackingConfigArn(value); return *this;}
+    template<typename TrackingConfigArnT = Aws::String>
+    void SetTrackingConfigArn(TrackingConfigArnT&& value) { m_trackingConfigArnHasBeenSet = true; m_trackingConfigArn = std::forward<TrackingConfigArnT>(value); }
+    template<typename TrackingConfigArnT = Aws::String>
+    CreateMissionProfileRequest& WithTrackingConfigArn(TrackingConfigArnT&& value) { SetTrackingConfigArn(std::forward<TrackingConfigArnT>(value)); return *this;}
     ///@}
   private:
 
-    int m_contactPostPassDurationSeconds;
+    int m_contactPostPassDurationSeconds{0};
     bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
-    int m_contactPrePassDurationSeconds;
+    int m_contactPrePassDurationSeconds{0};
     bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
     bool m_dataflowEdgesHasBeenSet = false;
 
-    int m_minimumViableContactDurationSeconds;
+    int m_minimumViableContactDurationSeconds{0};
     bool m_minimumViableContactDurationSecondsHasBeenSet = false;
 
     Aws::String m_name;

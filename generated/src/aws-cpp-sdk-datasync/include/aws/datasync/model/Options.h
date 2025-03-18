@@ -53,7 +53,7 @@ namespace Model
   class Options
   {
   public:
-    AWS_DATASYNC_API Options();
+    AWS_DATASYNC_API Options() = default;
     AWS_DATASYNC_API Options(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Options& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -89,12 +89,10 @@ namespace Model
      * transfer. Unlike other options, there's no additional verification at the end of
      * your transfer.</p> </li> </ul>
      */
-    inline const VerifyMode& GetVerifyMode() const{ return m_verifyMode; }
+    inline VerifyMode GetVerifyMode() const { return m_verifyMode; }
     inline bool VerifyModeHasBeenSet() const { return m_verifyModeHasBeenSet; }
-    inline void SetVerifyMode(const VerifyMode& value) { m_verifyModeHasBeenSet = true; m_verifyMode = value; }
-    inline void SetVerifyMode(VerifyMode&& value) { m_verifyModeHasBeenSet = true; m_verifyMode = std::move(value); }
-    inline Options& WithVerifyMode(const VerifyMode& value) { SetVerifyMode(value); return *this;}
-    inline Options& WithVerifyMode(VerifyMode&& value) { SetVerifyMode(std::move(value)); return *this;}
+    inline void SetVerifyMode(VerifyMode value) { m_verifyModeHasBeenSet = true; m_verifyMode = value; }
+    inline Options& WithVerifyMode(VerifyMode value) { SetVerifyMode(value); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +109,10 @@ namespace Model
      * even if the source data has changed. You can use this option to protect against
      * overwriting changes made to files or objects in the destination.</p> </li> </ul>
      */
-    inline const OverwriteMode& GetOverwriteMode() const{ return m_overwriteMode; }
+    inline OverwriteMode GetOverwriteMode() const { return m_overwriteMode; }
     inline bool OverwriteModeHasBeenSet() const { return m_overwriteModeHasBeenSet; }
-    inline void SetOverwriteMode(const OverwriteMode& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = value; }
-    inline void SetOverwriteMode(OverwriteMode&& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = std::move(value); }
-    inline Options& WithOverwriteMode(const OverwriteMode& value) { SetOverwriteMode(value); return *this;}
-    inline Options& WithOverwriteMode(OverwriteMode&& value) { SetOverwriteMode(std::move(value)); return *this;}
+    inline void SetOverwriteMode(OverwriteMode value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = value; }
+    inline Options& WithOverwriteMode(OverwriteMode value) { SetOverwriteMode(value); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +130,10 @@ namespace Model
      * <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>. </p>
      * 
      */
-    inline const Atime& GetAtime() const{ return m_atime; }
+    inline Atime GetAtime() const { return m_atime; }
     inline bool AtimeHasBeenSet() const { return m_atimeHasBeenSet; }
-    inline void SetAtime(const Atime& value) { m_atimeHasBeenSet = true; m_atime = value; }
-    inline void SetAtime(Atime&& value) { m_atimeHasBeenSet = true; m_atime = std::move(value); }
-    inline Options& WithAtime(const Atime& value) { SetAtime(value); return *this;}
-    inline Options& WithAtime(Atime&& value) { SetAtime(std::move(value)); return *this;}
+    inline void SetAtime(Atime value) { m_atimeHasBeenSet = true; m_atime = value; }
+    inline Options& WithAtime(Atime value) { SetAtime(value); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +149,10 @@ namespace Model
      * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
      * </p> 
      */
-    inline const Mtime& GetMtime() const{ return m_mtime; }
+    inline Mtime GetMtime() const { return m_mtime; }
     inline bool MtimeHasBeenSet() const { return m_mtimeHasBeenSet; }
-    inline void SetMtime(const Mtime& value) { m_mtimeHasBeenSet = true; m_mtime = value; }
-    inline void SetMtime(Mtime&& value) { m_mtimeHasBeenSet = true; m_mtime = std::move(value); }
-    inline Options& WithMtime(const Mtime& value) { SetMtime(value); return *this;}
-    inline Options& WithMtime(Mtime&& value) { SetMtime(std::move(value)); return *this;}
+    inline void SetMtime(Mtime value) { m_mtimeHasBeenSet = true; m_mtime = value; }
+    inline Options& WithMtime(Mtime value) { SetMtime(value); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +164,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * copied by DataSync</a>.</p>
      */
-    inline const Uid& GetUid() const{ return m_uid; }
+    inline Uid GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Uid& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Uid&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline Options& WithUid(const Uid& value) { SetUid(value); return *this;}
-    inline Options& WithUid(Uid&& value) { SetUid(std::move(value)); return *this;}
+    inline void SetUid(Uid value) { m_uidHasBeenSet = true; m_uid = value; }
+    inline Options& WithUid(Uid value) { SetUid(value); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +179,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
      * how DataSync handles file and object metadata</a>.</p>
      */
-    inline const Gid& GetGid() const{ return m_gid; }
+    inline Gid GetGid() const { return m_gid; }
     inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
-    inline void SetGid(const Gid& value) { m_gidHasBeenSet = true; m_gid = value; }
-    inline void SetGid(Gid&& value) { m_gidHasBeenSet = true; m_gid = std::move(value); }
-    inline Options& WithGid(const Gid& value) { SetGid(value); return *this;}
-    inline Options& WithGid(Gid&& value) { SetGid(std::move(value)); return *this;}
+    inline void SetGid(Gid value) { m_gidHasBeenSet = true; m_gid = value; }
+    inline Options& WithGid(Gid value) { SetGid(value); return *this;}
     ///@}
 
     ///@{
@@ -212,12 +200,10 @@ namespace Model
      * <code>ALL</code>. When you transfer all data, DataSync doesn't scan your
      * destination location and doesn't know what to delete.</p> 
      */
-    inline const PreserveDeletedFiles& GetPreserveDeletedFiles() const{ return m_preserveDeletedFiles; }
+    inline PreserveDeletedFiles GetPreserveDeletedFiles() const { return m_preserveDeletedFiles; }
     inline bool PreserveDeletedFilesHasBeenSet() const { return m_preserveDeletedFilesHasBeenSet; }
-    inline void SetPreserveDeletedFiles(const PreserveDeletedFiles& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = value; }
-    inline void SetPreserveDeletedFiles(PreserveDeletedFiles&& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = std::move(value); }
-    inline Options& WithPreserveDeletedFiles(const PreserveDeletedFiles& value) { SetPreserveDeletedFiles(value); return *this;}
-    inline Options& WithPreserveDeletedFiles(PreserveDeletedFiles&& value) { SetPreserveDeletedFiles(std::move(value)); return *this;}
+    inline void SetPreserveDeletedFiles(PreserveDeletedFiles value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = value; }
+    inline Options& WithPreserveDeletedFiles(PreserveDeletedFiles value) { SetPreserveDeletedFiles(value); return *this;}
     ///@}
 
     ///@{
@@ -232,12 +218,10 @@ namespace Model
      * character and block device metadata. This option currently isn't supported for
      * Amazon EFS.</p> </li> </ul>
      */
-    inline const PreserveDevices& GetPreserveDevices() const{ return m_preserveDevices; }
+    inline PreserveDevices GetPreserveDevices() const { return m_preserveDevices; }
     inline bool PreserveDevicesHasBeenSet() const { return m_preserveDevicesHasBeenSet; }
-    inline void SetPreserveDevices(const PreserveDevices& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = value; }
-    inline void SetPreserveDevices(PreserveDevices&& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = std::move(value); }
-    inline Options& WithPreserveDevices(const PreserveDevices& value) { SetPreserveDevices(value); return *this;}
-    inline Options& WithPreserveDevices(PreserveDevices&& value) { SetPreserveDevices(std::move(value)); return *this;}
+    inline void SetPreserveDevices(PreserveDevices value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = value; }
+    inline Options& WithPreserveDevices(PreserveDevices value) { SetPreserveDevices(value); return *this;}
     ///@}
 
     ///@{
@@ -252,12 +236,10 @@ namespace Model
      * permissions. </p> </li> </ul>  <p>DataSync can preserve extant permissions
      * of a source location.</p> 
      */
-    inline const PosixPermissions& GetPosixPermissions() const{ return m_posixPermissions; }
+    inline PosixPermissions GetPosixPermissions() const { return m_posixPermissions; }
     inline bool PosixPermissionsHasBeenSet() const { return m_posixPermissionsHasBeenSet; }
-    inline void SetPosixPermissions(const PosixPermissions& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = value; }
-    inline void SetPosixPermissions(PosixPermissions&& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = std::move(value); }
-    inline Options& WithPosixPermissions(const PosixPermissions& value) { SetPosixPermissions(value); return *this;}
-    inline Options& WithPosixPermissions(PosixPermissions&& value) { SetPosixPermissions(std::move(value)); return *this;}
+    inline void SetPosixPermissions(PosixPermissions value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = value; }
+    inline Options& WithPosixPermissions(PosixPermissions value) { SetPosixPermissions(value); return *this;}
     ///@}
 
     ///@{
@@ -268,7 +250,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
      * mode tasks</a>.</p> 
      */
-    inline long long GetBytesPerSecond() const{ return m_bytesPerSecond; }
+    inline long long GetBytesPerSecond() const { return m_bytesPerSecond; }
     inline bool BytesPerSecondHasBeenSet() const { return m_bytesPerSecondHasBeenSet; }
     inline void SetBytesPerSecond(long long value) { m_bytesPerSecondHasBeenSet = true; m_bytesPerSecond = value; }
     inline Options& WithBytesPerSecond(long long value) { SetBytesPerSecond(value); return *this;}
@@ -281,12 +263,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
      * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
-    inline const TaskQueueing& GetTaskQueueing() const{ return m_taskQueueing; }
+    inline TaskQueueing GetTaskQueueing() const { return m_taskQueueing; }
     inline bool TaskQueueingHasBeenSet() const { return m_taskQueueingHasBeenSet; }
-    inline void SetTaskQueueing(const TaskQueueing& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
-    inline void SetTaskQueueing(TaskQueueing&& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = std::move(value); }
-    inline Options& WithTaskQueueing(const TaskQueueing& value) { SetTaskQueueing(value); return *this;}
-    inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
+    inline void SetTaskQueueing(TaskQueueing value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
+    inline Options& WithTaskQueueing(TaskQueueing value) { SetTaskQueueing(value); return *this;}
     ///@}
 
     ///@{
@@ -300,12 +280,10 @@ namespace Model
      * data-integrity checks on.</p> </li> <li> <p> <code>OFF</code> - No logs are
      * published.</p> </li> </ul>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline Options& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline Options& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline Options& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -320,12 +298,10 @@ namespace Model
      * everything in the source to the destination without comparing differences
      * between the locations.</p> </li> </ul>
      */
-    inline const TransferMode& GetTransferMode() const{ return m_transferMode; }
+    inline TransferMode GetTransferMode() const { return m_transferMode; }
     inline bool TransferModeHasBeenSet() const { return m_transferModeHasBeenSet; }
-    inline void SetTransferMode(const TransferMode& value) { m_transferModeHasBeenSet = true; m_transferMode = value; }
-    inline void SetTransferMode(TransferMode&& value) { m_transferModeHasBeenSet = true; m_transferMode = std::move(value); }
-    inline Options& WithTransferMode(const TransferMode& value) { SetTransferMode(value); return *this;}
-    inline Options& WithTransferMode(TransferMode&& value) { SetTransferMode(std::move(value)); return *this;}
+    inline void SetTransferMode(TransferMode value) { m_transferModeHasBeenSet = true; m_transferMode = value; }
+    inline Options& WithTransferMode(TransferMode value) { SetTransferMode(value); return *this;}
     ///@}
 
     ///@{
@@ -360,12 +336,10 @@ namespace Model
      * provided for accessing the destination location. DACLs and SACLs are set based
      * on the destination server’s configuration. </p> </li> </ul>
      */
-    inline const SmbSecurityDescriptorCopyFlags& GetSecurityDescriptorCopyFlags() const{ return m_securityDescriptorCopyFlags; }
+    inline SmbSecurityDescriptorCopyFlags GetSecurityDescriptorCopyFlags() const { return m_securityDescriptorCopyFlags; }
     inline bool SecurityDescriptorCopyFlagsHasBeenSet() const { return m_securityDescriptorCopyFlagsHasBeenSet; }
-    inline void SetSecurityDescriptorCopyFlags(const SmbSecurityDescriptorCopyFlags& value) { m_securityDescriptorCopyFlagsHasBeenSet = true; m_securityDescriptorCopyFlags = value; }
-    inline void SetSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags&& value) { m_securityDescriptorCopyFlagsHasBeenSet = true; m_securityDescriptorCopyFlags = std::move(value); }
-    inline Options& WithSecurityDescriptorCopyFlags(const SmbSecurityDescriptorCopyFlags& value) { SetSecurityDescriptorCopyFlags(value); return *this;}
-    inline Options& WithSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags&& value) { SetSecurityDescriptorCopyFlags(std::move(value)); return *this;}
+    inline void SetSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags value) { m_securityDescriptorCopyFlagsHasBeenSet = true; m_securityDescriptorCopyFlags = value; }
+    inline Options& WithSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags value) { SetSecurityDescriptorCopyFlags(value); return *this;}
     ///@}
 
     ///@{
@@ -375,58 +349,56 @@ namespace Model
      * your DataSync task to ignore object tags, specify the <code>NONE</code>
      * value.</p>
      */
-    inline const ObjectTags& GetObjectTags() const{ return m_objectTags; }
+    inline ObjectTags GetObjectTags() const { return m_objectTags; }
     inline bool ObjectTagsHasBeenSet() const { return m_objectTagsHasBeenSet; }
-    inline void SetObjectTags(const ObjectTags& value) { m_objectTagsHasBeenSet = true; m_objectTags = value; }
-    inline void SetObjectTags(ObjectTags&& value) { m_objectTagsHasBeenSet = true; m_objectTags = std::move(value); }
-    inline Options& WithObjectTags(const ObjectTags& value) { SetObjectTags(value); return *this;}
-    inline Options& WithObjectTags(ObjectTags&& value) { SetObjectTags(std::move(value)); return *this;}
+    inline void SetObjectTags(ObjectTags value) { m_objectTagsHasBeenSet = true; m_objectTags = value; }
+    inline Options& WithObjectTags(ObjectTags value) { SetObjectTags(value); return *this;}
     ///@}
   private:
 
-    VerifyMode m_verifyMode;
+    VerifyMode m_verifyMode{VerifyMode::NOT_SET};
     bool m_verifyModeHasBeenSet = false;
 
-    OverwriteMode m_overwriteMode;
+    OverwriteMode m_overwriteMode{OverwriteMode::NOT_SET};
     bool m_overwriteModeHasBeenSet = false;
 
-    Atime m_atime;
+    Atime m_atime{Atime::NOT_SET};
     bool m_atimeHasBeenSet = false;
 
-    Mtime m_mtime;
+    Mtime m_mtime{Mtime::NOT_SET};
     bool m_mtimeHasBeenSet = false;
 
-    Uid m_uid;
+    Uid m_uid{Uid::NOT_SET};
     bool m_uidHasBeenSet = false;
 
-    Gid m_gid;
+    Gid m_gid{Gid::NOT_SET};
     bool m_gidHasBeenSet = false;
 
-    PreserveDeletedFiles m_preserveDeletedFiles;
+    PreserveDeletedFiles m_preserveDeletedFiles{PreserveDeletedFiles::NOT_SET};
     bool m_preserveDeletedFilesHasBeenSet = false;
 
-    PreserveDevices m_preserveDevices;
+    PreserveDevices m_preserveDevices{PreserveDevices::NOT_SET};
     bool m_preserveDevicesHasBeenSet = false;
 
-    PosixPermissions m_posixPermissions;
+    PosixPermissions m_posixPermissions{PosixPermissions::NOT_SET};
     bool m_posixPermissionsHasBeenSet = false;
 
-    long long m_bytesPerSecond;
+    long long m_bytesPerSecond{0};
     bool m_bytesPerSecondHasBeenSet = false;
 
-    TaskQueueing m_taskQueueing;
+    TaskQueueing m_taskQueueing{TaskQueueing::NOT_SET};
     bool m_taskQueueingHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
 
-    TransferMode m_transferMode;
+    TransferMode m_transferMode{TransferMode::NOT_SET};
     bool m_transferModeHasBeenSet = false;
 
-    SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags;
+    SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags{SmbSecurityDescriptorCopyFlags::NOT_SET};
     bool m_securityDescriptorCopyFlagsHasBeenSet = false;
 
-    ObjectTags m_objectTags;
+    ObjectTags m_objectTags{ObjectTags::NOT_SET};
     bool m_objectTagsHasBeenSet = false;
   };
 

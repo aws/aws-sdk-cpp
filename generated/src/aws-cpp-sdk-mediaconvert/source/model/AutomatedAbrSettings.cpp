@@ -18,19 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AutomatedAbrSettings::AutomatedAbrSettings() : 
-    m_maxAbrBitrate(0),
-    m_maxAbrBitrateHasBeenSet(false),
-    m_maxRenditions(0),
-    m_maxRenditionsHasBeenSet(false),
-    m_minAbrBitrate(0),
-    m_minAbrBitrateHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 AutomatedAbrSettings::AutomatedAbrSettings(JsonView jsonValue)
-  : AutomatedAbrSettings()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ AutomatedAbrSettings& AutomatedAbrSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxAbrBitrate"))
   {
     m_maxAbrBitrate = jsonValue.GetInteger("maxAbrBitrate");
-
     m_maxAbrBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxRenditions"))
   {
     m_maxRenditions = jsonValue.GetInteger("maxRenditions");
-
     m_maxRenditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minAbrBitrate"))
   {
     m_minAbrBitrate = jsonValue.GetInteger("minAbrBitrate");
-
     m_minAbrBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -67,7 +49,6 @@ AutomatedAbrSettings& AutomatedAbrSettings::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

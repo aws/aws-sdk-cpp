@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribePublisherRequest::DescribePublisherRequest() : 
-    m_publisherIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePublisherRequest::SerializePayload() const
 {
   Aws::StringStream ss;

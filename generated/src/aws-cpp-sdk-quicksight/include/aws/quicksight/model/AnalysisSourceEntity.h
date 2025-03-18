@@ -31,7 +31,7 @@ namespace Model
   class AnalysisSourceEntity
   {
   public:
-    AWS_QUICKSIGHT_API AnalysisSourceEntity();
+    AWS_QUICKSIGHT_API AnalysisSourceEntity() = default;
     AWS_QUICKSIGHT_API AnalysisSourceEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnalysisSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The source template for the source entity of the analysis.</p>
      */
-    inline const AnalysisSourceTemplate& GetSourceTemplate() const{ return m_sourceTemplate; }
+    inline const AnalysisSourceTemplate& GetSourceTemplate() const { return m_sourceTemplate; }
     inline bool SourceTemplateHasBeenSet() const { return m_sourceTemplateHasBeenSet; }
-    inline void SetSourceTemplate(const AnalysisSourceTemplate& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = value; }
-    inline void SetSourceTemplate(AnalysisSourceTemplate&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::move(value); }
-    inline AnalysisSourceEntity& WithSourceTemplate(const AnalysisSourceTemplate& value) { SetSourceTemplate(value); return *this;}
-    inline AnalysisSourceEntity& WithSourceTemplate(AnalysisSourceTemplate&& value) { SetSourceTemplate(std::move(value)); return *this;}
+    template<typename SourceTemplateT = AnalysisSourceTemplate>
+    void SetSourceTemplate(SourceTemplateT&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::forward<SourceTemplateT>(value); }
+    template<typename SourceTemplateT = AnalysisSourceTemplate>
+    AnalysisSourceEntity& WithSourceTemplate(SourceTemplateT&& value) { SetSourceTemplate(std::forward<SourceTemplateT>(value)); return *this;}
     ///@}
   private:
 

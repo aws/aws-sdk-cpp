@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-Experiment::Experiment() : 
-    m_experimentArnHasBeenSet(false),
-    m_experimentTemplateIdHasBeenSet(false)
-{
-}
-
 Experiment::Experiment(JsonView jsonValue)
-  : Experiment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Experiment& Experiment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("experimentArn"))
   {
     m_experimentArn = jsonValue.GetString("experimentArn");
-
     m_experimentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentTemplateId"))
   {
     m_experimentTemplateId = jsonValue.GetString("experimentTemplateId");
-
     m_experimentTemplateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

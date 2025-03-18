@@ -12,16 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDevicePoolCompatibilityRequest::GetDevicePoolCompatibilityRequest() : 
-    m_devicePoolArnHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_testType(TestType::NOT_SET),
-    m_testTypeHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String GetDevicePoolCompatibilityRequest::SerializePayload() const
 {
   JsonValue payload;

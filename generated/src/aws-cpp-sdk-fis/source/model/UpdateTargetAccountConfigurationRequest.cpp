@@ -12,14 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTargetAccountConfigurationRequest::UpdateTargetAccountConfigurationRequest() : 
-    m_experimentTemplateIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTargetAccountConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class ResourcePolicy
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ResourcePolicy();
+    AWS_CLOUDWATCHLOGS_API ResourcePolicy() = default;
     AWS_CLOUDWATCHLOGS_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the resource policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline ResourcePolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline ResourcePolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline ResourcePolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    ResourcePolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the policy.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline ResourcePolicy& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline ResourcePolicy& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline ResourcePolicy& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    ResourcePolicy& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
-    inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline long long GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
     inline void SetLastUpdatedTime(long long value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
     inline ResourcePolicy& WithLastUpdatedTime(long long value) { SetLastUpdatedTime(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet = false;
 
-    long long m_lastUpdatedTime;
+    long long m_lastUpdatedTime{0};
     bool m_lastUpdatedTimeHasBeenSet = false;
   };
 

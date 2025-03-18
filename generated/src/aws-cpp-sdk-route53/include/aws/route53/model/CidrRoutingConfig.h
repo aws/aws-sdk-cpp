@@ -34,7 +34,7 @@ namespace Model
   class CidrRoutingConfig
   {
   public:
-    AWS_ROUTE53_API CidrRoutingConfig();
+    AWS_ROUTE53_API CidrRoutingConfig() = default;
     AWS_ROUTE53_API CidrRoutingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API CidrRoutingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The CIDR collection ID.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline CidrRoutingConfig& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline CidrRoutingConfig& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline CidrRoutingConfig& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    CidrRoutingConfig& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIDR collection location name.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline CidrRoutingConfig& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline CidrRoutingConfig& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline CidrRoutingConfig& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    CidrRoutingConfig& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
   private:
 

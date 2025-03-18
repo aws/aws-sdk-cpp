@@ -25,7 +25,7 @@ namespace Model
   class DeleteDeploymentConfigRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API DeleteDeploymentConfigRequest();
+    AWS_CODEDEPLOY_API DeleteDeploymentConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of a deployment configuration associated with the user or Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+    inline const Aws::String& GetDeploymentConfigName() const { return m_deploymentConfigName; }
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
-    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
-    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
-    inline DeleteDeploymentConfigRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
-    inline DeleteDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
-    inline DeleteDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+    template<typename DeploymentConfigNameT = Aws::String>
+    void SetDeploymentConfigName(DeploymentConfigNameT&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::forward<DeploymentConfigNameT>(value); }
+    template<typename DeploymentConfigNameT = Aws::String>
+    DeleteDeploymentConfigRequest& WithDeploymentConfigName(DeploymentConfigNameT&& value) { SetDeploymentConfigName(std::forward<DeploymentConfigNameT>(value)); return *this;}
     ///@}
   private:
 

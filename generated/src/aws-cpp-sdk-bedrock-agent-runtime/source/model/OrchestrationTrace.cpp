@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OrchestrationTrace::OrchestrationTrace() : 
-    m_invocationInputHasBeenSet(false),
-    m_modelInvocationInputHasBeenSet(false),
-    m_modelInvocationOutputHasBeenSet(false),
-    m_observationHasBeenSet(false),
-    m_rationaleHasBeenSet(false)
-{
-}
-
 OrchestrationTrace::OrchestrationTrace(JsonView jsonValue)
-  : OrchestrationTrace()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OrchestrationTrace& OrchestrationTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationInput"))
   {
     m_invocationInput = jsonValue.GetObject("invocationInput");
-
     m_invocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelInvocationInput"))
   {
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
-
     m_modelInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelInvocationOutput"))
   {
     m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
-
     m_modelInvocationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("observation"))
   {
     m_observation = jsonValue.GetObject("observation");
-
     m_observationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rationale"))
   {
     m_rationale = jsonValue.GetObject("rationale");
-
     m_rationaleHasBeenSet = true;
   }
-
   return *this;
 }
 

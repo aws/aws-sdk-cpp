@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RadarChartSortConfiguration::RadarChartSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_colorSortHasBeenSet(false),
-    m_colorItemsLimitHasBeenSet(false)
-{
-}
-
 RadarChartSortConfiguration::RadarChartSortConfiguration(JsonView jsonValue)
-  : RadarChartSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ RadarChartSortConfiguration& RadarChartSortConfiguration::operator =(JsonView js
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryItemsLimit"))
   {
     m_categoryItemsLimit = jsonValue.GetObject("CategoryItemsLimit");
-
     m_categoryItemsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorSort"))
   {
     Aws::Utils::Array<JsonView> colorSortJsonList = jsonValue.GetArray("ColorSort");
@@ -60,14 +48,11 @@ RadarChartSortConfiguration& RadarChartSortConfiguration::operator =(JsonView js
     }
     m_colorSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorItemsLimit"))
   {
     m_colorItemsLimit = jsonValue.GetObject("ColorItemsLimit");
-
     m_colorItemsLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

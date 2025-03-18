@@ -18,21 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-EBSResultItem::EBSResultItem() : 
-    m_backupResourceArnHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_fileSystemIdentifierHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 EBSResultItem::EBSResultItem(JsonView jsonValue)
-  : EBSResultItem()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ EBSResultItem& EBSResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupResourceArn"))
   {
     m_backupResourceArn = jsonValue.GetString("BackupResourceArn");
-
     m_backupResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceArn"))
   {
     m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
-
     m_sourceResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
     m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemIdentifier"))
   {
     m_fileSystemIdentifier = jsonValue.GetString("FileSystemIdentifier");
-
     m_fileSystemIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSize"))
   {
     m_fileSize = jsonValue.GetInt64("FileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

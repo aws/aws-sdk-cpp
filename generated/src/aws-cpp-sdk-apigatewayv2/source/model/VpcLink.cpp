@@ -18,23 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-VpcLink::VpcLink() : 
-    m_createdDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false),
-    m_vpcLinkStatus(VpcLinkStatus::NOT_SET),
-    m_vpcLinkStatusHasBeenSet(false),
-    m_vpcLinkStatusMessageHasBeenSet(false),
-    m_vpcLinkVersion(VpcLinkVersion::NOT_SET),
-    m_vpcLinkVersionHasBeenSet(false)
-{
-}
-
 VpcLink::VpcLink(JsonView jsonValue)
-  : VpcLink()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -64,7 +44,6 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -74,7 +53,6 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -84,35 +62,26 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkId"))
   {
     m_vpcLinkId = jsonValue.GetString("vpcLinkId");
-
     m_vpcLinkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkStatus"))
   {
     m_vpcLinkStatus = VpcLinkStatusMapper::GetVpcLinkStatusForName(jsonValue.GetString("vpcLinkStatus"));
-
     m_vpcLinkStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkStatusMessage"))
   {
     m_vpcLinkStatusMessage = jsonValue.GetString("vpcLinkStatusMessage");
-
     m_vpcLinkStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkVersion"))
   {
     m_vpcLinkVersion = VpcLinkVersionMapper::GetVpcLinkVersionForName(jsonValue.GetString("vpcLinkVersion"));
-
     m_vpcLinkVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-P95Metrics::P95Metrics() : 
-    m_iOPSHasBeenSet(false),
-    m_throughputHasBeenSet(false),
-    m_latencyHasBeenSet(false)
-{
-}
-
 P95Metrics::P95Metrics(JsonView jsonValue)
-  : P95Metrics()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ P95Metrics& P95Metrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IOPS"))
   {
     m_iOPS = jsonValue.GetObject("IOPS");
-
     m_iOPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Throughput"))
   {
     m_throughput = jsonValue.GetObject("Throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Latency"))
   {
     m_latency = jsonValue.GetObject("Latency");
-
     m_latencyHasBeenSet = true;
   }
-
   return *this;
 }
 

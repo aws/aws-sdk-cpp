@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_blueprintVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_userParametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

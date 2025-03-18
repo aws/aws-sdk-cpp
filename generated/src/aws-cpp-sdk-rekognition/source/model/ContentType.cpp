@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ContentType::ContentType() : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ContentType::ContentType(JsonView jsonValue)
-  : ContentType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContentType& ContentType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

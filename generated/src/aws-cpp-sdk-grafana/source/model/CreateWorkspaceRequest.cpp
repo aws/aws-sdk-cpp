@@ -12,30 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspaceRequest::CreateWorkspaceRequest() : 
-    m_accountAccessType(AccountAccessType::NOT_SET),
-    m_accountAccessTypeHasBeenSet(false),
-    m_authenticationProvidersHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_configurationHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_networkAccessControlHasBeenSet(false),
-    m_organizationRoleNameHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_stackSetNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_workspaceDataSourcesHasBeenSet(false),
-    m_workspaceDescriptionHasBeenSet(false),
-    m_workspaceNameHasBeenSet(false),
-    m_workspaceNotificationDestinationsHasBeenSet(false),
-    m_workspaceOrganizationalUnitsHasBeenSet(false),
-    m_workspaceRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspaceRequest::SerializePayload() const
 {
   JsonValue payload;

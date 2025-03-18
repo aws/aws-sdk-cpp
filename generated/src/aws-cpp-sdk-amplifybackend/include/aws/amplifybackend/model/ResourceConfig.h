@@ -30,7 +30,7 @@ namespace Model
   class ResourceConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API ResourceConfig();
+    AWS_AMPLIFYBACKEND_API ResourceConfig() = default;
     AWS_AMPLIFYBACKEND_API ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;

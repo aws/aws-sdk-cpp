@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodeDetails::NodeDetails() : 
-    m_nodeIndex(0),
-    m_nodeIndexHasBeenSet(false),
-    m_isMainNode(false),
-    m_isMainNodeHasBeenSet(false)
-{
-}
-
 NodeDetails::NodeDetails(JsonView jsonValue)
-  : NodeDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NodeDetails& NodeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nodeIndex"))
   {
     m_nodeIndex = jsonValue.GetInteger("nodeIndex");
-
     m_nodeIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isMainNode"))
   {
     m_isMainNode = jsonValue.GetBool("isMainNode");
-
     m_isMainNodeHasBeenSet = true;
   }
-
   return *this;
 }
 

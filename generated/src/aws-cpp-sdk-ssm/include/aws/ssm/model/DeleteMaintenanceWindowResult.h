@@ -27,7 +27,7 @@ namespace Model
   class DeleteMaintenanceWindowResult
   {
   public:
-    AWS_SSM_API DeleteMaintenanceWindowResult();
+    AWS_SSM_API DeleteMaintenanceWindowResult() = default;
     AWS_SSM_API DeleteMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DeleteMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID of the deleted maintenance window.</p>
      */
-    inline const Aws::String& GetWindowId() const{ return m_windowId; }
-    inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
-    inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
-    inline void SetWindowId(const char* value) { m_windowId.assign(value); }
-    inline DeleteMaintenanceWindowResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
-    inline DeleteMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
-    inline DeleteMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+    inline const Aws::String& GetWindowId() const { return m_windowId; }
+    template<typename WindowIdT = Aws::String>
+    void SetWindowId(WindowIdT&& value) { m_windowIdHasBeenSet = true; m_windowId = std::forward<WindowIdT>(value); }
+    template<typename WindowIdT = Aws::String>
+    DeleteMaintenanceWindowResult& WithWindowId(WindowIdT&& value) { SetWindowId(std::forward<WindowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteMaintenanceWindowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteMaintenanceWindowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteMaintenanceWindowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteMaintenanceWindowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_windowId;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

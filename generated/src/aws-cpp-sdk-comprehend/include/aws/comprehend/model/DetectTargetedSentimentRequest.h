@@ -22,7 +22,7 @@ namespace Model
   class DetectTargetedSentimentRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API DetectTargetedSentimentRequest();
+    AWS_COMPREHEND_API DetectTargetedSentimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DetectTargetedSentimentRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DetectTargetedSentimentRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DetectTargetedSentimentRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DetectTargetedSentimentRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DetectTargetedSentimentRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DetectTargetedSentimentRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DetectTargetedSentimentRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

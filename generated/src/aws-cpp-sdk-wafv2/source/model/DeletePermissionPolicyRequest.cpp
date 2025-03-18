@@ -12,11 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePermissionPolicyRequest::DeletePermissionPolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePermissionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

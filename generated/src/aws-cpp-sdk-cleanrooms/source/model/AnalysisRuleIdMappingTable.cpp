@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisRuleIdMappingTable::AnalysisRuleIdMappingTable() : 
-    m_joinColumnsHasBeenSet(false),
-    m_queryConstraintsHasBeenSet(false),
-    m_dimensionColumnsHasBeenSet(false)
-{
-}
-
 AnalysisRuleIdMappingTable::AnalysisRuleIdMappingTable(JsonView jsonValue)
-  : AnalysisRuleIdMappingTable()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ AnalysisRuleIdMappingTable& AnalysisRuleIdMappingTable::operator =(JsonView json
     }
     m_joinColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryConstraints"))
   {
     Aws::Utils::Array<JsonView> queryConstraintsJsonList = jsonValue.GetArray("queryConstraints");
@@ -52,7 +43,6 @@ AnalysisRuleIdMappingTable& AnalysisRuleIdMappingTable::operator =(JsonView json
     }
     m_queryConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensionColumns"))
   {
     Aws::Utils::Array<JsonView> dimensionColumnsJsonList = jsonValue.GetArray("dimensionColumns");
@@ -62,7 +52,6 @@ AnalysisRuleIdMappingTable& AnalysisRuleIdMappingTable::operator =(JsonView json
     }
     m_dimensionColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

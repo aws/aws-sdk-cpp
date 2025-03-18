@@ -20,16 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-GlobalClusterMember::GlobalClusterMember() : 
-    m_dBClusterArnHasBeenSet(false),
-    m_readersHasBeenSet(false),
-    m_isWriter(false),
-    m_isWriterHasBeenSet(false)
-{
-}
-
 GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode)
-  : GlobalClusterMember()
 {
   *this = xmlNode;
 }
@@ -50,6 +41,7 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
     if(!readersNode.IsNull())
     {
       XmlNode readersMember = readersNode.FirstChild("member");
+      m_readersHasBeenSet = !readersMember.IsNull();
       while(!readersMember.IsNull())
       {
         m_readers.push_back(readersMember.GetText());

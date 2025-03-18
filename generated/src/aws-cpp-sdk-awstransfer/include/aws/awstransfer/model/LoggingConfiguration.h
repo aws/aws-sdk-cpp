@@ -32,7 +32,7 @@ namespace Model
   class LoggingConfiguration
   {
   public:
-    AWS_TRANSFER_API LoggingConfiguration();
+    AWS_TRANSFER_API LoggingConfiguration() = default;
     AWS_TRANSFER_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Amazon EFSevents. When set, you can view user activity in your CloudWatch
      * logs.</p>
      */
-    inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
+    inline const Aws::String& GetLoggingRole() const { return m_loggingRole; }
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
-    inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
-    inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
-    inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
-    inline LoggingConfiguration& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
-    inline LoggingConfiguration& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
-    inline LoggingConfiguration& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
+    template<typename LoggingRoleT = Aws::String>
+    void SetLoggingRole(LoggingRoleT&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::forward<LoggingRoleT>(value); }
+    template<typename LoggingRoleT = Aws::String>
+    LoggingConfiguration& WithLoggingRole(LoggingRoleT&& value) { SetLoggingRole(std::forward<LoggingRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The name of the CloudWatch logging group for the Transfer Family server to
      * which this workflow belongs.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline LoggingConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline LoggingConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline LoggingConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    LoggingConfiguration& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
   private:
 

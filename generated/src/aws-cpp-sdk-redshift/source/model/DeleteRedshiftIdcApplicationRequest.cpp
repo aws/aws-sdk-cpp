@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteRedshiftIdcApplicationRequest::DeleteRedshiftIdcApplicationRequest() : 
-    m_redshiftIdcApplicationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRedshiftIdcApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

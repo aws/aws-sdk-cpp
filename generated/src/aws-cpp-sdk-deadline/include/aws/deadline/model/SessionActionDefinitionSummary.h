@@ -34,7 +34,7 @@ namespace Model
   class SessionActionDefinitionSummary
   {
   public:
-    AWS_DEADLINE_API SessionActionDefinitionSummary();
+    AWS_DEADLINE_API SessionActionDefinitionSummary() = default;
     AWS_DEADLINE_API SessionActionDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SessionActionDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>The environment to enter into.</p>
      */
-    inline const EnvironmentEnterSessionActionDefinitionSummary& GetEnvEnter() const{ return m_envEnter; }
+    inline const EnvironmentEnterSessionActionDefinitionSummary& GetEnvEnter() const { return m_envEnter; }
     inline bool EnvEnterHasBeenSet() const { return m_envEnterHasBeenSet; }
-    inline void SetEnvEnter(const EnvironmentEnterSessionActionDefinitionSummary& value) { m_envEnterHasBeenSet = true; m_envEnter = value; }
-    inline void SetEnvEnter(EnvironmentEnterSessionActionDefinitionSummary&& value) { m_envEnterHasBeenSet = true; m_envEnter = std::move(value); }
-    inline SessionActionDefinitionSummary& WithEnvEnter(const EnvironmentEnterSessionActionDefinitionSummary& value) { SetEnvEnter(value); return *this;}
-    inline SessionActionDefinitionSummary& WithEnvEnter(EnvironmentEnterSessionActionDefinitionSummary&& value) { SetEnvEnter(std::move(value)); return *this;}
+    template<typename EnvEnterT = EnvironmentEnterSessionActionDefinitionSummary>
+    void SetEnvEnter(EnvEnterT&& value) { m_envEnterHasBeenSet = true; m_envEnter = std::forward<EnvEnterT>(value); }
+    template<typename EnvEnterT = EnvironmentEnterSessionActionDefinitionSummary>
+    SessionActionDefinitionSummary& WithEnvEnter(EnvEnterT&& value) { SetEnvEnter(std::forward<EnvEnterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment to exit from.</p>
      */
-    inline const EnvironmentExitSessionActionDefinitionSummary& GetEnvExit() const{ return m_envExit; }
+    inline const EnvironmentExitSessionActionDefinitionSummary& GetEnvExit() const { return m_envExit; }
     inline bool EnvExitHasBeenSet() const { return m_envExitHasBeenSet; }
-    inline void SetEnvExit(const EnvironmentExitSessionActionDefinitionSummary& value) { m_envExitHasBeenSet = true; m_envExit = value; }
-    inline void SetEnvExit(EnvironmentExitSessionActionDefinitionSummary&& value) { m_envExitHasBeenSet = true; m_envExit = std::move(value); }
-    inline SessionActionDefinitionSummary& WithEnvExit(const EnvironmentExitSessionActionDefinitionSummary& value) { SetEnvExit(value); return *this;}
-    inline SessionActionDefinitionSummary& WithEnvExit(EnvironmentExitSessionActionDefinitionSummary&& value) { SetEnvExit(std::move(value)); return *this;}
+    template<typename EnvExitT = EnvironmentExitSessionActionDefinitionSummary>
+    void SetEnvExit(EnvExitT&& value) { m_envExitHasBeenSet = true; m_envExit = std::forward<EnvExitT>(value); }
+    template<typename EnvExitT = EnvironmentExitSessionActionDefinitionSummary>
+    SessionActionDefinitionSummary& WithEnvExit(EnvExitT&& value) { SetEnvExit(std::forward<EnvExitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task run.</p>
      */
-    inline const TaskRunSessionActionDefinitionSummary& GetTaskRun() const{ return m_taskRun; }
+    inline const TaskRunSessionActionDefinitionSummary& GetTaskRun() const { return m_taskRun; }
     inline bool TaskRunHasBeenSet() const { return m_taskRunHasBeenSet; }
-    inline void SetTaskRun(const TaskRunSessionActionDefinitionSummary& value) { m_taskRunHasBeenSet = true; m_taskRun = value; }
-    inline void SetTaskRun(TaskRunSessionActionDefinitionSummary&& value) { m_taskRunHasBeenSet = true; m_taskRun = std::move(value); }
-    inline SessionActionDefinitionSummary& WithTaskRun(const TaskRunSessionActionDefinitionSummary& value) { SetTaskRun(value); return *this;}
-    inline SessionActionDefinitionSummary& WithTaskRun(TaskRunSessionActionDefinitionSummary&& value) { SetTaskRun(std::move(value)); return *this;}
+    template<typename TaskRunT = TaskRunSessionActionDefinitionSummary>
+    void SetTaskRun(TaskRunT&& value) { m_taskRunHasBeenSet = true; m_taskRun = std::forward<TaskRunT>(value); }
+    template<typename TaskRunT = TaskRunSessionActionDefinitionSummary>
+    SessionActionDefinitionSummary& WithTaskRun(TaskRunT&& value) { SetTaskRun(std::forward<TaskRunT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job attachments to sync with the session action definition.</p>
      */
-    inline const SyncInputJobAttachmentsSessionActionDefinitionSummary& GetSyncInputJobAttachments() const{ return m_syncInputJobAttachments; }
+    inline const SyncInputJobAttachmentsSessionActionDefinitionSummary& GetSyncInputJobAttachments() const { return m_syncInputJobAttachments; }
     inline bool SyncInputJobAttachmentsHasBeenSet() const { return m_syncInputJobAttachmentsHasBeenSet; }
-    inline void SetSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = value; }
-    inline void SetSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = std::move(value); }
-    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(const SyncInputJobAttachmentsSessionActionDefinitionSummary& value) { SetSyncInputJobAttachments(value); return *this;}
-    inline SessionActionDefinitionSummary& WithSyncInputJobAttachments(SyncInputJobAttachmentsSessionActionDefinitionSummary&& value) { SetSyncInputJobAttachments(std::move(value)); return *this;}
+    template<typename SyncInputJobAttachmentsT = SyncInputJobAttachmentsSessionActionDefinitionSummary>
+    void SetSyncInputJobAttachments(SyncInputJobAttachmentsT&& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = std::forward<SyncInputJobAttachmentsT>(value); }
+    template<typename SyncInputJobAttachmentsT = SyncInputJobAttachmentsSessionActionDefinitionSummary>
+    SessionActionDefinitionSummary& WithSyncInputJobAttachments(SyncInputJobAttachmentsT&& value) { SetSyncInputJobAttachments(std::forward<SyncInputJobAttachmentsT>(value)); return *this;}
     ///@}
   private:
 

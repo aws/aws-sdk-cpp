@@ -18,15 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-UpdateSettings::UpdateSettings() : 
-    m_addSubnetsHasBeenSet(false),
-    m_removeSubnetsHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false)
-{
-}
-
 UpdateSettings::UpdateSettings(JsonView jsonValue)
-  : UpdateSettings()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ UpdateSettings& UpdateSettings::operator =(JsonView jsonValue)
     }
     m_addSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveSubnets"))
   {
     Aws::Utils::Array<JsonView> removeSubnetsJsonList = jsonValue.GetArray("RemoveSubnets");
@@ -52,14 +43,11 @@ UpdateSettings& UpdateSettings::operator =(JsonView jsonValue)
     }
     m_removeSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupId"))
   {
     m_securityGroupId = jsonValue.GetString("SecurityGroupId");
-
     m_securityGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

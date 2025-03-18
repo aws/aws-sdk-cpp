@@ -18,17 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-SubnetGroup::SubnetGroup() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 SubnetGroup::SubnetGroup(JsonView jsonValue)
-  : SubnetGroup()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -65,14 +49,11 @@ SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

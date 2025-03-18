@@ -18,16 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendAuthAppleProviderConfig::BackendAuthAppleProviderConfig() : 
-    m_clientIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_teamIdHasBeenSet(false)
-{
-}
-
 BackendAuthAppleProviderConfig::BackendAuthAppleProviderConfig(JsonView jsonValue)
-  : BackendAuthAppleProviderConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BackendAuthAppleProviderConfig& BackendAuthAppleProviderConfig::operator =(JsonV
   if(jsonValue.ValueExists("client_id"))
   {
     m_clientId = jsonValue.GetString("client_id");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key_id"))
   {
     m_keyId = jsonValue.GetString("key_id");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("private_key"))
   {
     m_privateKey = jsonValue.GetString("private_key");
-
     m_privateKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("team_id"))
   {
     m_teamId = jsonValue.GetString("team_id");
-
     m_teamIdHasBeenSet = true;
   }
-
   return *this;
 }
 

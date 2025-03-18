@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFolderMembershipResult::CreateFolderMembershipResult() : 
-    m_status(0)
-{
-}
-
 CreateFolderMembershipResult::CreateFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateFolderMembershipResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateFolderMembershipResult& CreateFolderMembershipResult::operator =(const Aws
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderMember"))
   {
     m_folderMember = jsonValue.GetObject("FolderMember");
-
+    m_folderMemberHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

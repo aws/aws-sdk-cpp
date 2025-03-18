@@ -18,21 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptVariant::PromptVariant() : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_genAiResourceHasBeenSet(false),
-    m_inferenceConfigurationHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_templateType(PromptTemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 PromptVariant::PromptVariant(JsonView jsonValue)
-  : PromptVariant()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ PromptVariant& PromptVariant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
-
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("genAiResource"))
   {
     m_genAiResource = jsonValue.GetObject("genAiResource");
-
     m_genAiResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
-
     m_inferenceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
@@ -69,35 +49,26 @@ PromptVariant& PromptVariant::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateConfiguration"))
   {
     m_templateConfiguration = jsonValue.GetObject("templateConfiguration");
-
     m_templateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateType"))
   {
     m_templateType = PromptTemplateTypeMapper::GetPromptTemplateTypeForName(jsonValue.GetString("templateType"));
-
     m_templateTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

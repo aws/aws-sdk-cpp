@@ -12,12 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSafetyLeverStateRequest::UpdateSafetyLeverStateRequest() : 
-    m_idHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSafetyLeverStateRequest::SerializePayload() const
 {
   JsonValue payload;

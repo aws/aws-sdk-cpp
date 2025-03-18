@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueueEnvironmentResult::GetQueueEnvironmentResult() : 
-    m_priority(0),
-    m_templateType(EnvironmentTemplateType::NOT_SET)
-{
-}
-
 GetQueueEnvironmentResult::GetQueueEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueueEnvironmentResult()
 {
   *this = result;
 }
@@ -35,63 +28,55 @@ GetQueueEnvironmentResult& GetQueueEnvironmentResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("queueEnvironmentId"))
   {
     m_queueEnvironmentId = jsonValue.GetString("queueEnvironmentId");
-
+    m_queueEnvironmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
+    m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateType"))
   {
     m_templateType = EnvironmentTemplateTypeMapper::GetEnvironmentTemplateTypeForName(jsonValue.GetString("templateType"));
-
+    m_templateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetString("template");
-
+    m_templateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
+    m_updatedByHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

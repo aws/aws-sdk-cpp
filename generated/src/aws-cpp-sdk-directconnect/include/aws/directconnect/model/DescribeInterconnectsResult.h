@@ -29,7 +29,7 @@ namespace Model
   class DescribeInterconnectsResult
   {
   public:
-    AWS_DIRECTCONNECT_API DescribeInterconnectsResult();
+    AWS_DIRECTCONNECT_API DescribeInterconnectsResult() = default;
     AWS_DIRECTCONNECT_API DescribeInterconnectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DescribeInterconnectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The interconnects.</p>
      */
-    inline const Aws::Vector<Interconnect>& GetInterconnects() const{ return m_interconnects; }
-    inline void SetInterconnects(const Aws::Vector<Interconnect>& value) { m_interconnects = value; }
-    inline void SetInterconnects(Aws::Vector<Interconnect>&& value) { m_interconnects = std::move(value); }
-    inline DescribeInterconnectsResult& WithInterconnects(const Aws::Vector<Interconnect>& value) { SetInterconnects(value); return *this;}
-    inline DescribeInterconnectsResult& WithInterconnects(Aws::Vector<Interconnect>&& value) { SetInterconnects(std::move(value)); return *this;}
-    inline DescribeInterconnectsResult& AddInterconnects(const Interconnect& value) { m_interconnects.push_back(value); return *this; }
-    inline DescribeInterconnectsResult& AddInterconnects(Interconnect&& value) { m_interconnects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Interconnect>& GetInterconnects() const { return m_interconnects; }
+    template<typename InterconnectsT = Aws::Vector<Interconnect>>
+    void SetInterconnects(InterconnectsT&& value) { m_interconnectsHasBeenSet = true; m_interconnects = std::forward<InterconnectsT>(value); }
+    template<typename InterconnectsT = Aws::Vector<Interconnect>>
+    DescribeInterconnectsResult& WithInterconnects(InterconnectsT&& value) { SetInterconnects(std::forward<InterconnectsT>(value)); return *this;}
+    template<typename InterconnectsT = Interconnect>
+    DescribeInterconnectsResult& AddInterconnects(InterconnectsT&& value) { m_interconnectsHasBeenSet = true; m_interconnects.emplace_back(std::forward<InterconnectsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInterconnectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInterconnectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInterconnectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInterconnectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Interconnect> m_interconnects;
+    bool m_interconnectsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

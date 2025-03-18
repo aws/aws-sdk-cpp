@@ -12,13 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddWorkloadRequest::AddWorkloadRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_workloadConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String AddWorkloadRequest::SerializePayload() const
 {
   JsonValue payload;

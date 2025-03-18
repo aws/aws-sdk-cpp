@@ -31,7 +31,7 @@ namespace Model
   class OverrideConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API OverrideConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API OverrideConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API OverrideConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API OverrideConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const DocumentOverrideConfiguration& GetDocument() const{ return m_document; }
+    inline const DocumentOverrideConfiguration& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const DocumentOverrideConfiguration& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(DocumentOverrideConfiguration&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline OverrideConfiguration& WithDocument(const DocumentOverrideConfiguration& value) { SetDocument(value); return *this;}
-    inline OverrideConfiguration& WithDocument(DocumentOverrideConfiguration&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = DocumentOverrideConfiguration>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = DocumentOverrideConfiguration>
+    OverrideConfiguration& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
   private:
 

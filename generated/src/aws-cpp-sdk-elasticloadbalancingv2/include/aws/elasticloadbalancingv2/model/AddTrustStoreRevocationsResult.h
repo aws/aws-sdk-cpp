@@ -29,7 +29,7 @@ namespace Model
   class AddTrustStoreRevocationsResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsResult();
+    AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the revocation file added to the trust store.</p>
      */
-    inline const Aws::Vector<TrustStoreRevocation>& GetTrustStoreRevocations() const{ return m_trustStoreRevocations; }
-    inline void SetTrustStoreRevocations(const Aws::Vector<TrustStoreRevocation>& value) { m_trustStoreRevocations = value; }
-    inline void SetTrustStoreRevocations(Aws::Vector<TrustStoreRevocation>&& value) { m_trustStoreRevocations = std::move(value); }
-    inline AddTrustStoreRevocationsResult& WithTrustStoreRevocations(const Aws::Vector<TrustStoreRevocation>& value) { SetTrustStoreRevocations(value); return *this;}
-    inline AddTrustStoreRevocationsResult& WithTrustStoreRevocations(Aws::Vector<TrustStoreRevocation>&& value) { SetTrustStoreRevocations(std::move(value)); return *this;}
-    inline AddTrustStoreRevocationsResult& AddTrustStoreRevocations(const TrustStoreRevocation& value) { m_trustStoreRevocations.push_back(value); return *this; }
-    inline AddTrustStoreRevocationsResult& AddTrustStoreRevocations(TrustStoreRevocation&& value) { m_trustStoreRevocations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrustStoreRevocation>& GetTrustStoreRevocations() const { return m_trustStoreRevocations; }
+    template<typename TrustStoreRevocationsT = Aws::Vector<TrustStoreRevocation>>
+    void SetTrustStoreRevocations(TrustStoreRevocationsT&& value) { m_trustStoreRevocationsHasBeenSet = true; m_trustStoreRevocations = std::forward<TrustStoreRevocationsT>(value); }
+    template<typename TrustStoreRevocationsT = Aws::Vector<TrustStoreRevocation>>
+    AddTrustStoreRevocationsResult& WithTrustStoreRevocations(TrustStoreRevocationsT&& value) { SetTrustStoreRevocations(std::forward<TrustStoreRevocationsT>(value)); return *this;}
+    template<typename TrustStoreRevocationsT = TrustStoreRevocation>
+    AddTrustStoreRevocationsResult& AddTrustStoreRevocations(TrustStoreRevocationsT&& value) { m_trustStoreRevocationsHasBeenSet = true; m_trustStoreRevocations.emplace_back(std::forward<TrustStoreRevocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AddTrustStoreRevocationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AddTrustStoreRevocationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AddTrustStoreRevocationsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrustStoreRevocation> m_trustStoreRevocations;
+    bool m_trustStoreRevocationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

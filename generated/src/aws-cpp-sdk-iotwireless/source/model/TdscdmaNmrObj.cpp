@@ -18,22 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-TdscdmaNmrObj::TdscdmaNmrObj() : 
-    m_uarfcn(0),
-    m_uarfcnHasBeenSet(false),
-    m_cellParams(0),
-    m_cellParamsHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false)
-{
-}
-
 TdscdmaNmrObj::TdscdmaNmrObj(JsonView jsonValue)
-  : TdscdmaNmrObj()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ TdscdmaNmrObj& TdscdmaNmrObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uarfcn"))
   {
     m_uarfcn = jsonValue.GetInteger("Uarfcn");
-
     m_uarfcnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellParams"))
   {
     m_cellParams = jsonValue.GetInteger("CellParams");
-
     m_cellParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtranCid"))
   {
     m_utranCid = jsonValue.GetInteger("UtranCid");
-
     m_utranCidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rscp"))
   {
     m_rscp = jsonValue.GetInteger("Rscp");
-
     m_rscpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PathLoss"))
   {
     m_pathLoss = jsonValue.GetInteger("PathLoss");
-
     m_pathLossHasBeenSet = true;
   }
-
   return *this;
 }
 

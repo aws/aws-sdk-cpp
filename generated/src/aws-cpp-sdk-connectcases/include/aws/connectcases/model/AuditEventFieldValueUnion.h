@@ -32,7 +32,7 @@ namespace Model
   class AuditEventFieldValueUnion
   {
   public:
-    AWS_CONNECTCASES_API AuditEventFieldValueUnion();
+    AWS_CONNECTCASES_API AuditEventFieldValueUnion() = default;
     AWS_CONNECTCASES_API AuditEventFieldValueUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API AuditEventFieldValueUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Can be either null, or have a Boolean value type. Only one value can be
      * provided.</p>
      */
-    inline bool GetBooleanValue() const{ return m_booleanValue; }
+    inline bool GetBooleanValue() const { return m_booleanValue; }
     inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
     inline AuditEventFieldValueUnion& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>Can be either null, or have a Double value type. Only one value can be
      * provided.</p>
      */
-    inline double GetDoubleValue() const{ return m_doubleValue; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline AuditEventFieldValueUnion& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
@@ -62,12 +62,12 @@ namespace Model
 
     ///@{
     
-    inline const EmptyFieldValue& GetEmptyValue() const{ return m_emptyValue; }
+    inline const EmptyFieldValue& GetEmptyValue() const { return m_emptyValue; }
     inline bool EmptyValueHasBeenSet() const { return m_emptyValueHasBeenSet; }
-    inline void SetEmptyValue(const EmptyFieldValue& value) { m_emptyValueHasBeenSet = true; m_emptyValue = value; }
-    inline void SetEmptyValue(EmptyFieldValue&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::move(value); }
-    inline AuditEventFieldValueUnion& WithEmptyValue(const EmptyFieldValue& value) { SetEmptyValue(value); return *this;}
-    inline AuditEventFieldValueUnion& WithEmptyValue(EmptyFieldValue&& value) { SetEmptyValue(std::move(value)); return *this;}
+    template<typename EmptyValueT = EmptyFieldValue>
+    void SetEmptyValue(EmptyValueT&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::forward<EmptyValueT>(value); }
+    template<typename EmptyValueT = EmptyFieldValue>
+    AuditEventFieldValueUnion& WithEmptyValue(EmptyValueT&& value) { SetEmptyValue(std::forward<EmptyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +75,12 @@ namespace Model
      * <p>Can be either null, or have a String value type. Only one value can be
      * provided.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline AuditEventFieldValueUnion& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline AuditEventFieldValueUnion& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline AuditEventFieldValueUnion& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    AuditEventFieldValueUnion& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,21 +88,19 @@ namespace Model
      * <p>Can be either null, or have a String value type formatted as an ARN. Only one
      * value can be provided.</p>
      */
-    inline const Aws::String& GetUserArnValue() const{ return m_userArnValue; }
+    inline const Aws::String& GetUserArnValue() const { return m_userArnValue; }
     inline bool UserArnValueHasBeenSet() const { return m_userArnValueHasBeenSet; }
-    inline void SetUserArnValue(const Aws::String& value) { m_userArnValueHasBeenSet = true; m_userArnValue = value; }
-    inline void SetUserArnValue(Aws::String&& value) { m_userArnValueHasBeenSet = true; m_userArnValue = std::move(value); }
-    inline void SetUserArnValue(const char* value) { m_userArnValueHasBeenSet = true; m_userArnValue.assign(value); }
-    inline AuditEventFieldValueUnion& WithUserArnValue(const Aws::String& value) { SetUserArnValue(value); return *this;}
-    inline AuditEventFieldValueUnion& WithUserArnValue(Aws::String&& value) { SetUserArnValue(std::move(value)); return *this;}
-    inline AuditEventFieldValueUnion& WithUserArnValue(const char* value) { SetUserArnValue(value); return *this;}
+    template<typename UserArnValueT = Aws::String>
+    void SetUserArnValue(UserArnValueT&& value) { m_userArnValueHasBeenSet = true; m_userArnValue = std::forward<UserArnValueT>(value); }
+    template<typename UserArnValueT = Aws::String>
+    AuditEventFieldValueUnion& WithUserArnValue(UserArnValueT&& value) { SetUserArnValue(std::forward<UserArnValueT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_booleanValue;
+    bool m_booleanValue{false};
     bool m_booleanValueHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
     bool m_doubleValueHasBeenSet = false;
 
     EmptyFieldValue m_emptyValue;

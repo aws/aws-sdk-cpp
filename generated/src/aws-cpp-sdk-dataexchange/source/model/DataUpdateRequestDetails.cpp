@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-DataUpdateRequestDetails::DataUpdateRequestDetails() : 
-    m_dataUpdatedAtHasBeenSet(false)
-{
-}
-
 DataUpdateRequestDetails::DataUpdateRequestDetails(JsonView jsonValue)
-  : DataUpdateRequestDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataUpdateRequestDetails& DataUpdateRequestDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DataUpdatedAt"))
   {
     m_dataUpdatedAt = jsonValue.GetString("DataUpdatedAt");
-
     m_dataUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PredictQAResultsRequest::PredictQAResultsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_queryTextHasBeenSet(false),
-    m_includeQuickSightQIndex(IncludeQuickSightQIndex::NOT_SET),
-    m_includeQuickSightQIndexHasBeenSet(false),
-    m_includeGeneratedAnswer(IncludeGeneratedAnswer::NOT_SET),
-    m_includeGeneratedAnswerHasBeenSet(false),
-    m_maxTopicsToConsider(0),
-    m_maxTopicsToConsiderHasBeenSet(false)
-{
-}
-
 Aws::String PredictQAResultsRequest::SerializePayload() const
 {
   JsonValue payload;

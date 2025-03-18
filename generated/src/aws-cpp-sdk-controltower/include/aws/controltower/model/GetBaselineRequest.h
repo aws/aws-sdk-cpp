@@ -21,7 +21,7 @@ namespace Model
   class GetBaselineRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API GetBaselineRequest();
+    AWS_CONTROLTOWER_API GetBaselineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
      */
-    inline const Aws::String& GetBaselineIdentifier() const{ return m_baselineIdentifier; }
+    inline const Aws::String& GetBaselineIdentifier() const { return m_baselineIdentifier; }
     inline bool BaselineIdentifierHasBeenSet() const { return m_baselineIdentifierHasBeenSet; }
-    inline void SetBaselineIdentifier(const Aws::String& value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier = value; }
-    inline void SetBaselineIdentifier(Aws::String&& value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier = std::move(value); }
-    inline void SetBaselineIdentifier(const char* value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier.assign(value); }
-    inline GetBaselineRequest& WithBaselineIdentifier(const Aws::String& value) { SetBaselineIdentifier(value); return *this;}
-    inline GetBaselineRequest& WithBaselineIdentifier(Aws::String&& value) { SetBaselineIdentifier(std::move(value)); return *this;}
-    inline GetBaselineRequest& WithBaselineIdentifier(const char* value) { SetBaselineIdentifier(value); return *this;}
+    template<typename BaselineIdentifierT = Aws::String>
+    void SetBaselineIdentifier(BaselineIdentifierT&& value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier = std::forward<BaselineIdentifierT>(value); }
+    template<typename BaselineIdentifierT = Aws::String>
+    GetBaselineRequest& WithBaselineIdentifier(BaselineIdentifierT&& value) { SetBaselineIdentifier(std::forward<BaselineIdentifierT>(value)); return *this;}
     ///@}
   private:
 

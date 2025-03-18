@@ -18,15 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-DataRetrievalRule::DataRetrievalRule() : 
-    m_strategyHasBeenSet(false),
-    m_bytesPerHour(0),
-    m_bytesPerHourHasBeenSet(false)
-{
-}
-
 DataRetrievalRule::DataRetrievalRule(JsonView jsonValue)
-  : DataRetrievalRule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataRetrievalRule& DataRetrievalRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Strategy"))
   {
     m_strategy = jsonValue.GetString("Strategy");
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BytesPerHour"))
   {
     m_bytesPerHour = jsonValue.GetInt64("BytesPerHour");
-
     m_bytesPerHourHasBeenSet = true;
   }
-
   return *this;
 }
 

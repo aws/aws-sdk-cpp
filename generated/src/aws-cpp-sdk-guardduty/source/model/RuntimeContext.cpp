@@ -18,38 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RuntimeContext::RuntimeContext() : 
-    m_modifyingProcessHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_scriptPathHasBeenSet(false),
-    m_libraryPathHasBeenSet(false),
-    m_ldPreloadValueHasBeenSet(false),
-    m_socketPathHasBeenSet(false),
-    m_runcBinaryPathHasBeenSet(false),
-    m_releaseAgentPathHasBeenSet(false),
-    m_mountSourceHasBeenSet(false),
-    m_mountTargetHasBeenSet(false),
-    m_fileSystemTypeHasBeenSet(false),
-    m_flagsHasBeenSet(false),
-    m_moduleNameHasBeenSet(false),
-    m_moduleFilePathHasBeenSet(false),
-    m_moduleSha256HasBeenSet(false),
-    m_shellHistoryFilePathHasBeenSet(false),
-    m_targetProcessHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_ianaProtocolNumber(0),
-    m_ianaProtocolNumberHasBeenSet(false),
-    m_memoryRegionsHasBeenSet(false),
-    m_toolNameHasBeenSet(false),
-    m_toolCategoryHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_commandLineExampleHasBeenSet(false),
-    m_threatFilePathHasBeenSet(false)
-{
-}
-
 RuntimeContext::RuntimeContext(JsonView jsonValue)
-  : RuntimeContext()
 {
   *this = jsonValue;
 }
@@ -59,80 +28,58 @@ RuntimeContext& RuntimeContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modifyingProcess"))
   {
     m_modifyingProcess = jsonValue.GetObject("modifyingProcess");
-
     m_modifyingProcessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptPath"))
   {
     m_scriptPath = jsonValue.GetString("scriptPath");
-
     m_scriptPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("libraryPath"))
   {
     m_libraryPath = jsonValue.GetString("libraryPath");
-
     m_libraryPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ldPreloadValue"))
   {
     m_ldPreloadValue = jsonValue.GetString("ldPreloadValue");
-
     m_ldPreloadValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("socketPath"))
   {
     m_socketPath = jsonValue.GetString("socketPath");
-
     m_socketPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runcBinaryPath"))
   {
     m_runcBinaryPath = jsonValue.GetString("runcBinaryPath");
-
     m_runcBinaryPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseAgentPath"))
   {
     m_releaseAgentPath = jsonValue.GetString("releaseAgentPath");
-
     m_releaseAgentPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountSource"))
   {
     m_mountSource = jsonValue.GetString("mountSource");
-
     m_mountSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountTarget"))
   {
     m_mountTarget = jsonValue.GetString("mountTarget");
-
     m_mountTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSystemType"))
   {
     m_fileSystemType = jsonValue.GetString("fileSystemType");
-
     m_fileSystemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flags"))
   {
     Aws::Utils::Array<JsonView> flagsJsonList = jsonValue.GetArray("flags");
@@ -142,56 +89,41 @@ RuntimeContext& RuntimeContext::operator =(JsonView jsonValue)
     }
     m_flagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moduleName"))
   {
     m_moduleName = jsonValue.GetString("moduleName");
-
     m_moduleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moduleFilePath"))
   {
     m_moduleFilePath = jsonValue.GetString("moduleFilePath");
-
     m_moduleFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moduleSha256"))
   {
     m_moduleSha256 = jsonValue.GetString("moduleSha256");
-
     m_moduleSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shellHistoryFilePath"))
   {
     m_shellHistoryFilePath = jsonValue.GetString("shellHistoryFilePath");
-
     m_shellHistoryFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetProcess"))
   {
     m_targetProcess = jsonValue.GetObject("targetProcess");
-
     m_targetProcessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressFamily"))
   {
     m_addressFamily = jsonValue.GetString("addressFamily");
-
     m_addressFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ianaProtocolNumber"))
   {
     m_ianaProtocolNumber = jsonValue.GetInteger("ianaProtocolNumber");
-
     m_ianaProtocolNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryRegions"))
   {
     Aws::Utils::Array<JsonView> memoryRegionsJsonList = jsonValue.GetArray("memoryRegions");
@@ -201,42 +133,31 @@ RuntimeContext& RuntimeContext::operator =(JsonView jsonValue)
     }
     m_memoryRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolName"))
   {
     m_toolName = jsonValue.GetString("toolName");
-
     m_toolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolCategory"))
   {
     m_toolCategory = jsonValue.GetString("toolCategory");
-
     m_toolCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commandLineExample"))
   {
     m_commandLineExample = jsonValue.GetString("commandLineExample");
-
     m_commandLineExampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatFilePath"))
   {
     m_threatFilePath = jsonValue.GetString("threatFilePath");
-
     m_threatFilePathHasBeenSet = true;
   }
-
   return *this;
 }
 

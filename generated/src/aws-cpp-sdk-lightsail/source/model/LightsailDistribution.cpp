@@ -18,37 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LightsailDistribution::LightsailDistribution() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_alternativeDomainNamesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_originPublicDNSHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorSettingsHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_ableToUpdateBundle(false),
-    m_ableToUpdateBundleHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_viewerMinimumTlsProtocolVersionHasBeenSet(false)
-{
-}
-
 LightsailDistribution::LightsailDistribution(JsonView jsonValue)
-  : LightsailDistribution()
 {
   *this = jsonValue;
 }
@@ -58,45 +28,33 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alternativeDomainNames"))
   {
     Aws::Utils::Array<JsonView> alternativeDomainNamesJsonList = jsonValue.GetArray("alternativeDomainNames");
@@ -106,70 +64,51 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     }
     m_alternativeDomainNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isEnabled"))
   {
     m_isEnabled = jsonValue.GetBool("isEnabled");
-
     m_isEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
-
     m_certificateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("origin"))
   {
     m_origin = jsonValue.GetObject("origin");
-
     m_originHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originPublicDNS"))
   {
     m_originPublicDNS = jsonValue.GetString("originPublicDNS");
-
     m_originPublicDNSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultCacheBehavior"))
   {
     m_defaultCacheBehavior = jsonValue.GetObject("defaultCacheBehavior");
-
     m_defaultCacheBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheBehaviorSettings"))
   {
     m_cacheBehaviorSettings = jsonValue.GetObject("cacheBehaviorSettings");
-
     m_cacheBehaviorSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheBehaviors"))
   {
     Aws::Utils::Array<JsonView> cacheBehaviorsJsonList = jsonValue.GetArray("cacheBehaviors");
@@ -179,21 +118,16 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     }
     m_cacheBehaviorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ableToUpdateBundle"))
   {
     m_ableToUpdateBundle = jsonValue.GetBool("ableToUpdateBundle");
-
     m_ableToUpdateBundleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -203,14 +137,11 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("viewerMinimumTlsProtocolVersion"))
   {
     m_viewerMinimumTlsProtocolVersion = jsonValue.GetString("viewerMinimumTlsProtocolVersion");
-
     m_viewerMinimumTlsProtocolVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

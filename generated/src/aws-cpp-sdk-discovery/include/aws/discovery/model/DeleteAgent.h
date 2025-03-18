@@ -32,7 +32,7 @@ namespace Model
   class DeleteAgent
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The ID of the agent or data collector to delete. </p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline DeleteAgent& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline DeleteAgent& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline DeleteAgent& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    DeleteAgent& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * different agent ID after data collector re-connects with Amazon Web Services.
      * </p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteAgent& WithForce(bool value) { SetForce(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

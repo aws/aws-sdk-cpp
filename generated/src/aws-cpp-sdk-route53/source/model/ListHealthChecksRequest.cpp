@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListHealthChecksRequest::ListHealthChecksRequest() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListHealthChecksRequest::SerializePayload() const
 {

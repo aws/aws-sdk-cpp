@@ -34,7 +34,7 @@ namespace Model
   class LifecycleExpiration
   {
   public:
-    AWS_S3CRT_API LifecycleExpiration();
+    AWS_S3CRT_API LifecycleExpiration() = default;
     AWS_S3CRT_API LifecycleExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API LifecycleExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,12 +48,12 @@ namespace Model
      * <p>This parameter applies to general purpose buckets only. It is not supported
      * for directory bucket lifecycle configurations.</p> 
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline LifecycleExpiration& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    LifecycleExpiration& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
      * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline LifecycleExpiration& WithDays(int value) { SetDays(value); return *this;}
@@ -76,20 +76,20 @@ namespace Model
      * purpose buckets only. It is not supported for directory bucket lifecycle
      * configurations.</p> 
      */
-    inline bool GetExpiredObjectDeleteMarker() const{ return m_expiredObjectDeleteMarker; }
+    inline bool GetExpiredObjectDeleteMarker() const { return m_expiredObjectDeleteMarker; }
     inline bool ExpiredObjectDeleteMarkerHasBeenSet() const { return m_expiredObjectDeleteMarkerHasBeenSet; }
     inline void SetExpiredObjectDeleteMarker(bool value) { m_expiredObjectDeleteMarkerHasBeenSet = true; m_expiredObjectDeleteMarker = value; }
     inline LifecycleExpiration& WithExpiredObjectDeleteMarker(bool value) { SetExpiredObjectDeleteMarker(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
 
-    bool m_expiredObjectDeleteMarker;
+    bool m_expiredObjectDeleteMarker{false};
     bool m_expiredObjectDeleteMarkerHasBeenSet = false;
   };
 

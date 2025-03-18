@@ -29,7 +29,7 @@ namespace Model
   class ListControlDomainInsightsByAssessmentResult
   {
   public:
-    AWS_AUDITMANAGER_API ListControlDomainInsightsByAssessmentResult();
+    AWS_AUDITMANAGER_API ListControlDomainInsightsByAssessmentResult() = default;
     AWS_AUDITMANAGER_API ListControlDomainInsightsByAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API ListControlDomainInsightsByAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The control domain analytics data that the
      * <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
      */
-    inline const Aws::Vector<ControlDomainInsights>& GetControlDomainInsights() const{ return m_controlDomainInsights; }
-    inline void SetControlDomainInsights(const Aws::Vector<ControlDomainInsights>& value) { m_controlDomainInsights = value; }
-    inline void SetControlDomainInsights(Aws::Vector<ControlDomainInsights>&& value) { m_controlDomainInsights = std::move(value); }
-    inline ListControlDomainInsightsByAssessmentResult& WithControlDomainInsights(const Aws::Vector<ControlDomainInsights>& value) { SetControlDomainInsights(value); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& WithControlDomainInsights(Aws::Vector<ControlDomainInsights>&& value) { SetControlDomainInsights(std::move(value)); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& AddControlDomainInsights(const ControlDomainInsights& value) { m_controlDomainInsights.push_back(value); return *this; }
-    inline ListControlDomainInsightsByAssessmentResult& AddControlDomainInsights(ControlDomainInsights&& value) { m_controlDomainInsights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ControlDomainInsights>& GetControlDomainInsights() const { return m_controlDomainInsights; }
+    template<typename ControlDomainInsightsT = Aws::Vector<ControlDomainInsights>>
+    void SetControlDomainInsights(ControlDomainInsightsT&& value) { m_controlDomainInsightsHasBeenSet = true; m_controlDomainInsights = std::forward<ControlDomainInsightsT>(value); }
+    template<typename ControlDomainInsightsT = Aws::Vector<ControlDomainInsights>>
+    ListControlDomainInsightsByAssessmentResult& WithControlDomainInsights(ControlDomainInsightsT&& value) { SetControlDomainInsights(std::forward<ControlDomainInsightsT>(value)); return *this;}
+    template<typename ControlDomainInsightsT = ControlDomainInsights>
+    ListControlDomainInsightsByAssessmentResult& AddControlDomainInsights(ControlDomainInsightsT&& value) { m_controlDomainInsightsHasBeenSet = true; m_controlDomainInsights.emplace_back(std::forward<ControlDomainInsightsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListControlDomainInsightsByAssessmentResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlDomainInsightsByAssessmentResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListControlDomainInsightsByAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListControlDomainInsightsByAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListControlDomainInsightsByAssessmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ControlDomainInsights> m_controlDomainInsights;
+    bool m_controlDomainInsightsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

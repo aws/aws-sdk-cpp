@@ -18,16 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes() : 
-    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false)
-{
-}
-
 WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes(JsonView jsonValue)
-  : WorkflowExecutionTimedOutEventAttributes()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WorkflowExecutionTimedOutEventAttributes& WorkflowExecutionTimedOutEventAttribut
   if(jsonValue.ValueExists("timeoutType"))
   {
     m_timeoutType = WorkflowExecutionTimeoutTypeMapper::GetWorkflowExecutionTimeoutTypeForName(jsonValue.GetString("timeoutType"));
-
     m_timeoutTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childPolicy"))
   {
     m_childPolicy = ChildPolicyMapper::GetChildPolicyForName(jsonValue.GetString("childPolicy"));
-
     m_childPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

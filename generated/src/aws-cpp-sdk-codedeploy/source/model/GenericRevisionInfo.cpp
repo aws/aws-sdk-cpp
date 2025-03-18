@@ -18,17 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-GenericRevisionInfo::GenericRevisionInfo() : 
-    m_descriptionHasBeenSet(false),
-    m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTimeHasBeenSet(false),
-    m_registerTimeHasBeenSet(false)
-{
-}
-
 GenericRevisionInfo::GenericRevisionInfo(JsonView jsonValue)
-  : GenericRevisionInfo()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ GenericRevisionInfo& GenericRevisionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentGroups"))
   {
     Aws::Utils::Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
@@ -51,28 +39,21 @@ GenericRevisionInfo& GenericRevisionInfo::operator =(JsonView jsonValue)
     }
     m_deploymentGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstUsedTime"))
   {
     m_firstUsedTime = jsonValue.GetDouble("firstUsedTime");
-
     m_firstUsedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUsedTime"))
   {
     m_lastUsedTime = jsonValue.GetDouble("lastUsedTime");
-
     m_lastUsedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registerTime"))
   {
     m_registerTime = jsonValue.GetDouble("registerTime");
-
     m_registerTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

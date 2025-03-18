@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProxySessionRequest::UpdateProxySessionRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_proxySessionIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_expiryMinutes(0),
-    m_expiryMinutesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProxySessionRequest::SerializePayload() const
 {
   JsonValue payload;

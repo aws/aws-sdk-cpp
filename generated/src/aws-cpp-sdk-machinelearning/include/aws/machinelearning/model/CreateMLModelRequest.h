@@ -23,7 +23,7 @@ namespace Model
   class CreateMLModelRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API CreateMLModelRequest();
+    AWS_MACHINELEARNING_API CreateMLModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-    inline CreateMLModelRequest& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline CreateMLModelRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline CreateMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    CreateMLModelRequest& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetMLModelName() const{ return m_mLModelName; }
+    inline const Aws::String& GetMLModelName() const { return m_mLModelName; }
     inline bool MLModelNameHasBeenSet() const { return m_mLModelNameHasBeenSet; }
-    inline void SetMLModelName(const Aws::String& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = value; }
-    inline void SetMLModelName(Aws::String&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::move(value); }
-    inline void SetMLModelName(const char* value) { m_mLModelNameHasBeenSet = true; m_mLModelName.assign(value); }
-    inline CreateMLModelRequest& WithMLModelName(const Aws::String& value) { SetMLModelName(value); return *this;}
-    inline CreateMLModelRequest& WithMLModelName(Aws::String&& value) { SetMLModelName(std::move(value)); return *this;}
-    inline CreateMLModelRequest& WithMLModelName(const char* value) { SetMLModelName(value); return *this;}
+    template<typename MLModelNameT = Aws::String>
+    void SetMLModelName(MLModelNameT&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::forward<MLModelNameT>(value); }
+    template<typename MLModelNameT = Aws::String>
+    CreateMLModelRequest& WithMLModelName(MLModelNameT&& value) { SetMLModelName(std::forward<MLModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.</p>
      */
-    inline const MLModelType& GetMLModelType() const{ return m_mLModelType; }
+    inline MLModelType GetMLModelType() const { return m_mLModelType; }
     inline bool MLModelTypeHasBeenSet() const { return m_mLModelTypeHasBeenSet; }
-    inline void SetMLModelType(const MLModelType& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
-    inline void SetMLModelType(MLModelType&& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = std::move(value); }
-    inline CreateMLModelRequest& WithMLModelType(const MLModelType& value) { SetMLModelType(value); return *this;}
-    inline CreateMLModelRequest& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
+    inline void SetMLModelType(MLModelType value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
+    inline CreateMLModelRequest& WithMLModelType(MLModelType value) { SetMLModelType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,33 +111,28 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateMLModelRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline CreateMLModelRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CreateMLModelRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline CreateMLModelRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CreateMLModelRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateMLModelRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMLModelRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateMLModelRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CreateMLModelRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    CreateMLModelRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    CreateMLModelRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The <code>DataSource</code> that points to the training data.</p>
      */
-    inline const Aws::String& GetTrainingDataSourceId() const{ return m_trainingDataSourceId; }
+    inline const Aws::String& GetTrainingDataSourceId() const { return m_trainingDataSourceId; }
     inline bool TrainingDataSourceIdHasBeenSet() const { return m_trainingDataSourceIdHasBeenSet; }
-    inline void SetTrainingDataSourceId(const Aws::String& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = value; }
-    inline void SetTrainingDataSourceId(Aws::String&& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = std::move(value); }
-    inline void SetTrainingDataSourceId(const char* value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId.assign(value); }
-    inline CreateMLModelRequest& WithTrainingDataSourceId(const Aws::String& value) { SetTrainingDataSourceId(value); return *this;}
-    inline CreateMLModelRequest& WithTrainingDataSourceId(Aws::String&& value) { SetTrainingDataSourceId(std::move(value)); return *this;}
-    inline CreateMLModelRequest& WithTrainingDataSourceId(const char* value) { SetTrainingDataSourceId(value); return *this;}
+    template<typename TrainingDataSourceIdT = Aws::String>
+    void SetTrainingDataSourceId(TrainingDataSourceIdT&& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = std::forward<TrainingDataSourceIdT>(value); }
+    template<typename TrainingDataSourceIdT = Aws::String>
+    CreateMLModelRequest& WithTrainingDataSourceId(TrainingDataSourceIdT&& value) { SetTrainingDataSourceId(std::forward<TrainingDataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +141,12 @@ namespace Model
      * either the recipe or its URI. If you don't specify a recipe or its URI, Amazon
      * ML creates a default.</p>
      */
-    inline const Aws::String& GetRecipe() const{ return m_recipe; }
+    inline const Aws::String& GetRecipe() const { return m_recipe; }
     inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
-    inline void SetRecipe(const Aws::String& value) { m_recipeHasBeenSet = true; m_recipe = value; }
-    inline void SetRecipe(Aws::String&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
-    inline void SetRecipe(const char* value) { m_recipeHasBeenSet = true; m_recipe.assign(value); }
-    inline CreateMLModelRequest& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
-    inline CreateMLModelRequest& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
-    inline CreateMLModelRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
+    template<typename RecipeT = Aws::String>
+    void SetRecipe(RecipeT&& value) { m_recipeHasBeenSet = true; m_recipe = std::forward<RecipeT>(value); }
+    template<typename RecipeT = Aws::String>
+    CreateMLModelRequest& WithRecipe(RecipeT&& value) { SetRecipe(std::forward<RecipeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +156,12 @@ namespace Model
      * its URI. If you don't specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
-    inline const Aws::String& GetRecipeUri() const{ return m_recipeUri; }
+    inline const Aws::String& GetRecipeUri() const { return m_recipeUri; }
     inline bool RecipeUriHasBeenSet() const { return m_recipeUriHasBeenSet; }
-    inline void SetRecipeUri(const Aws::String& value) { m_recipeUriHasBeenSet = true; m_recipeUri = value; }
-    inline void SetRecipeUri(Aws::String&& value) { m_recipeUriHasBeenSet = true; m_recipeUri = std::move(value); }
-    inline void SetRecipeUri(const char* value) { m_recipeUriHasBeenSet = true; m_recipeUri.assign(value); }
-    inline CreateMLModelRequest& WithRecipeUri(const Aws::String& value) { SetRecipeUri(value); return *this;}
-    inline CreateMLModelRequest& WithRecipeUri(Aws::String&& value) { SetRecipeUri(std::move(value)); return *this;}
-    inline CreateMLModelRequest& WithRecipeUri(const char* value) { SetRecipeUri(value); return *this;}
+    template<typename RecipeUriT = Aws::String>
+    void SetRecipeUri(RecipeUriT&& value) { m_recipeUriHasBeenSet = true; m_recipeUri = std::forward<RecipeUriT>(value); }
+    template<typename RecipeUriT = Aws::String>
+    CreateMLModelRequest& WithRecipeUri(RecipeUriT&& value) { SetRecipeUri(std::forward<RecipeUriT>(value)); return *this;}
     ///@}
   private:
 
@@ -186,7 +171,7 @@ namespace Model
     Aws::String m_mLModelName;
     bool m_mLModelNameHasBeenSet = false;
 
-    MLModelType m_mLModelType;
+    MLModelType m_mLModelType{MLModelType::NOT_SET};
     bool m_mLModelTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;

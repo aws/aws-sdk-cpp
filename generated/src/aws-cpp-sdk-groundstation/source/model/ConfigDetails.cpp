@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-ConfigDetails::ConfigDetails() : 
-    m_antennaDemodDecodeDetailsHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false),
-    m_s3RecordingDetailsHasBeenSet(false)
-{
-}
-
 ConfigDetails::ConfigDetails(JsonView jsonValue)
-  : ConfigDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ConfigDetails& ConfigDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("antennaDemodDecodeDetails"))
   {
     m_antennaDemodDecodeDetails = jsonValue.GetObject("antennaDemodDecodeDetails");
-
     m_antennaDemodDecodeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointDetails"))
   {
     m_endpointDetails = jsonValue.GetObject("endpointDetails");
-
     m_endpointDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3RecordingDetails"))
   {
     m_s3RecordingDetails = jsonValue.GetObject("s3RecordingDetails");
-
     m_s3RecordingDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

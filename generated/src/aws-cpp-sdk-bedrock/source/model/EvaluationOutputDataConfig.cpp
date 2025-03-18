@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationOutputDataConfig::EvaluationOutputDataConfig() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 EvaluationOutputDataConfig::EvaluationOutputDataConfig(JsonView jsonValue)
-  : EvaluationOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationOutputDataConfig& EvaluationOutputDataConfig::operator =(JsonView json
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

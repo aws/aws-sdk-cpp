@@ -33,7 +33,7 @@ namespace Model
   class SelectColumn
   {
   public:
-    AWS_TIMESTREAMQUERY_API SelectColumn();
+    AWS_TIMESTREAMQUERY_API SelectColumn() = default;
     AWS_TIMESTREAMQUERY_API SelectColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API SelectColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,53 @@ namespace Model
     /**
      * <p>Name of the column.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SelectColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SelectColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SelectColumn& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SelectColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Type& GetType() const{ return m_type; }
+    inline const Type& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SelectColumn& WithType(const Type& value) { SetType(value); return *this;}
-    inline SelectColumn& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    template<typename TypeT = Type>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Type>
+    SelectColumn& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Database that has this column.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline SelectColumn& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline SelectColumn& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline SelectColumn& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    SelectColumn& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Table within the database that has this column. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline SelectColumn& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline SelectColumn& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline SelectColumn& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    SelectColumn& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>True, if the column name was aliased by the query. False otherwise.</p>
      */
-    inline bool GetAliased() const{ return m_aliased; }
+    inline bool GetAliased() const { return m_aliased; }
     inline bool AliasedHasBeenSet() const { return m_aliasedHasBeenSet; }
     inline void SetAliased(bool value) { m_aliasedHasBeenSet = true; m_aliased = value; }
     inline SelectColumn& WithAliased(bool value) { SetAliased(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
 
-    bool m_aliased;
+    bool m_aliased{false};
     bool m_aliasedHasBeenSet = false;
   };
 

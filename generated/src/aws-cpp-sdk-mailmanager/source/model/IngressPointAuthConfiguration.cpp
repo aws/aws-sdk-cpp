@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressPointAuthConfiguration::IngressPointAuthConfiguration() : 
-    m_ingressPointPasswordConfigurationHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 IngressPointAuthConfiguration::IngressPointAuthConfiguration(JsonView jsonValue)
-  : IngressPointAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IngressPointAuthConfiguration& IngressPointAuthConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("IngressPointPasswordConfiguration"))
   {
     m_ingressPointPasswordConfiguration = jsonValue.GetObject("IngressPointPasswordConfiguration");
-
     m_ingressPointPasswordConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

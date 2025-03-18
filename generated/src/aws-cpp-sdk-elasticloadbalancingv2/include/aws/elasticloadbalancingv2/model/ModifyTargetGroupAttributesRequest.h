@@ -23,7 +23,7 @@ namespace Model
   class ModifyTargetGroupAttributesRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesRequest();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline ModifyTargetGroupAttributesRequest& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline ModifyTargetGroupAttributesRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline ModifyTargetGroupAttributesRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    ModifyTargetGroupAttributesRequest& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target group attributes.</p>
      */
-    inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<TargetGroupAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<TargetGroupAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ModifyTargetGroupAttributesRequest& WithAttributes(const Aws::Vector<TargetGroupAttribute>& value) { SetAttributes(value); return *this;}
-    inline ModifyTargetGroupAttributesRequest& WithAttributes(Aws::Vector<TargetGroupAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ModifyTargetGroupAttributesRequest& AddAttributes(const TargetGroupAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline ModifyTargetGroupAttributesRequest& AddAttributes(TargetGroupAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<TargetGroupAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<TargetGroupAttribute>>
+    ModifyTargetGroupAttributesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = TargetGroupAttribute>
+    ModifyTargetGroupAttributesRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

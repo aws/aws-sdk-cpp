@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVoiceConnectorStreamingConfigurationRequest::DeleteVoiceConnectorStreamingConfigurationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVoiceConnectorStreamingConfigurationRequest::SerializePayload() const
 {
   return {};

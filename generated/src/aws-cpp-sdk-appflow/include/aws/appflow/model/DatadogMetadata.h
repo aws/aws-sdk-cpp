@@ -29,7 +29,7 @@ namespace Model
   class DatadogMetadata
   {
   public:
-    AWS_APPFLOW_API DatadogMetadata();
+    AWS_APPFLOW_API DatadogMetadata() = default;
     AWS_APPFLOW_API DatadogMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API DatadogMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

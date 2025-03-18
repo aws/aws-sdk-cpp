@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-RelatedFindingDetail::RelatedFindingDetail() : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 RelatedFindingDetail::RelatedFindingDetail(JsonView jsonValue)
-  : RelatedFindingDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RelatedFindingDetail& RelatedFindingDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

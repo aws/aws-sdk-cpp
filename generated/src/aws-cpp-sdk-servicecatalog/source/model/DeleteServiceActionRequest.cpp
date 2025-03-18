@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceActionRequest::DeleteServiceActionRequest() : 
-    m_idHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteServiceActionRequest::SerializePayload() const
 {
   JsonValue payload;

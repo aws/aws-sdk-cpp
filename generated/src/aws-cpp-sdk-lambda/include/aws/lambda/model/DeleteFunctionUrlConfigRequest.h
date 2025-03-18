@@ -25,7 +25,7 @@ namespace Model
   class DeleteFunctionUrlConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API DeleteFunctionUrlConfigRequest();
+    AWS_LAMBDA_API DeleteFunctionUrlConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,28 +49,24 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline DeleteFunctionUrlConfigRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline DeleteFunctionUrlConfigRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline DeleteFunctionUrlConfigRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    DeleteFunctionUrlConfigRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias name.</p>
      */
-    inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+    inline const Aws::String& GetQualifier() const { return m_qualifier; }
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
-    inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
-    inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
-    inline DeleteFunctionUrlConfigRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
-    inline DeleteFunctionUrlConfigRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
-    inline DeleteFunctionUrlConfigRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
+    template<typename QualifierT = Aws::String>
+    void SetQualifier(QualifierT&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::forward<QualifierT>(value); }
+    template<typename QualifierT = Aws::String>
+    DeleteFunctionUrlConfigRequest& WithQualifier(QualifierT&& value) { SetQualifier(std::forward<QualifierT>(value)); return *this;}
     ///@}
   private:
 

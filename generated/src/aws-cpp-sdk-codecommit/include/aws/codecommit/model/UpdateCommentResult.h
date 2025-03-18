@@ -28,7 +28,7 @@ namespace Model
   class UpdateCommentResult
   {
   public:
-    AWS_CODECOMMIT_API UpdateCommentResult();
+    AWS_CODECOMMIT_API UpdateCommentResult() = default;
     AWS_CODECOMMIT_API UpdateCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API UpdateCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the updated comment.</p>
      */
-    inline const Comment& GetComment() const{ return m_comment; }
-    inline void SetComment(const Comment& value) { m_comment = value; }
-    inline void SetComment(Comment&& value) { m_comment = std::move(value); }
-    inline UpdateCommentResult& WithComment(const Comment& value) { SetComment(value); return *this;}
-    inline UpdateCommentResult& WithComment(Comment&& value) { SetComment(std::move(value)); return *this;}
+    inline const Comment& GetComment() const { return m_comment; }
+    template<typename CommentT = Comment>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Comment>
+    UpdateCommentResult& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCommentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Comment m_comment;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

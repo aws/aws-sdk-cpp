@@ -18,27 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageVersionDescription::PackageVersionDescription() : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_homePageHasBeenSet(false),
-    m_sourceCodeRepositoryHasBeenSet(false),
-    m_publishedTimeHasBeenSet(false),
-    m_licensesHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_originHasBeenSet(false)
-{
-}
-
 PackageVersionDescription::PackageVersionDescription(JsonView jsonValue)
-  : PackageVersionDescription()
 {
   *this = jsonValue;
 }
@@ -48,66 +28,48 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("format"))
   {
     m_format = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("homePage"))
   {
     m_homePage = jsonValue.GetString("homePage");
-
     m_homePageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeRepository"))
   {
     m_sourceCodeRepository = jsonValue.GetString("sourceCodeRepository");
-
     m_sourceCodeRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publishedTime"))
   {
     m_publishedTime = jsonValue.GetDouble("publishedTime");
-
     m_publishedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenses"))
   {
     Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
@@ -117,28 +79,21 @@ PackageVersionDescription& PackageVersionDescription::operator =(JsonView jsonVa
     }
     m_licensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("origin"))
   {
     m_origin = jsonValue.GetObject("origin");
-
     m_originHasBeenSet = true;
   }
-
   return *this;
 }
 

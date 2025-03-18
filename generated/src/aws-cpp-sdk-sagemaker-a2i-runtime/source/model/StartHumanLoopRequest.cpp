@@ -12,14 +12,6 @@ using namespace Aws::AugmentedAIRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartHumanLoopRequest::StartHumanLoopRequest() : 
-    m_humanLoopNameHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false),
-    m_humanLoopInputHasBeenSet(false),
-    m_dataAttributesHasBeenSet(false)
-{
-}
-
 Aws::String StartHumanLoopRequest::SerializePayload() const
 {
   JsonValue payload;

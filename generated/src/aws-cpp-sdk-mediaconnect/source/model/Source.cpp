@@ -18,30 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-Source::Source() : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_decryptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_ingestIpHasBeenSet(false),
-    m_ingestPort(0),
-    m_ingestPortHasBeenSet(false),
-    m_mediaStreamSourceConfigurationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_transportHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false),
-    m_gatewayBridgeSourceHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -51,45 +28,33 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
   {
     m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
-
     m_dataTransferSubscriberFeePercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decryption"))
   {
     m_decryption = jsonValue.GetObject("decryption");
-
     m_decryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entitlementArn"))
   {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
-
     m_entitlementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestIp"))
   {
     m_ingestIp = jsonValue.GetString("ingestIp");
-
     m_ingestIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestPort"))
   {
     m_ingestPort = jsonValue.GetInteger("ingestPort");
-
     m_ingestPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaStreamSourceConfigurations"))
   {
     Aws::Utils::Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
@@ -99,63 +64,46 @@ Source& Source::operator =(JsonView jsonValue)
     }
     m_mediaStreamSourceConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderControlPort"))
   {
     m_senderControlPort = jsonValue.GetInteger("senderControlPort");
-
     m_senderControlPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderIpAddress"))
   {
     m_senderIpAddress = jsonValue.GetString("senderIpAddress");
-
     m_senderIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceArn"))
   {
     m_sourceArn = jsonValue.GetString("sourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transport"))
   {
     m_transport = jsonValue.GetObject("transport");
-
     m_transportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcInterfaceName"))
   {
     m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
-
     m_vpcInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("whitelistCidr"))
   {
     m_whitelistCidr = jsonValue.GetString("whitelistCidr");
-
     m_whitelistCidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayBridgeSource"))
   {
     m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
-
     m_gatewayBridgeSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

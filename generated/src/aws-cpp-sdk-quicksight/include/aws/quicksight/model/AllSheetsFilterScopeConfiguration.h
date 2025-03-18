@@ -34,7 +34,7 @@ namespace Model
   class AllSheetsFilterScopeConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AllSheetsFilterScopeConfiguration();
+    AWS_QUICKSIGHT_API AllSheetsFilterScopeConfiguration() = default;
     AWS_QUICKSIGHT_API AllSheetsFilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AllSheetsFilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;

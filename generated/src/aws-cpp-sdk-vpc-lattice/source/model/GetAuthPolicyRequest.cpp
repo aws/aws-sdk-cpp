@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAuthPolicyRequest::GetAuthPolicyRequest() : 
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAuthPolicyRequest::SerializePayload() const
 {
   return {};

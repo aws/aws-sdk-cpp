@@ -21,7 +21,7 @@ namespace Model
   class PublishStateMachineVersionRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API PublishStateMachineVersionRequest();
+    AWS_SFN_API PublishStateMachineVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine.</p>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
-    inline PublishStateMachineVersionRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline PublishStateMachineVersionRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline PublishStateMachineVersionRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    PublishStateMachineVersionRequest& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a
      * state machine using the <a>CreateStateMachine</a> API action.</p> 
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline PublishStateMachineVersionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline PublishStateMachineVersionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline PublishStateMachineVersionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    PublishStateMachineVersionRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the state machine version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PublishStateMachineVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PublishStateMachineVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PublishStateMachineVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PublishStateMachineVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

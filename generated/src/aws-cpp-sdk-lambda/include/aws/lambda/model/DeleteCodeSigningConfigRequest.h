@@ -21,7 +21,7 @@ namespace Model
   class DeleteCodeSigningConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API DeleteCodeSigningConfigRequest();
+    AWS_LAMBDA_API DeleteCodeSigningConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
      */
-    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
+    inline const Aws::String& GetCodeSigningConfigArn() const { return m_codeSigningConfigArn; }
     inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
-    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
-    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
-    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
-    inline DeleteCodeSigningConfigRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
-    inline DeleteCodeSigningConfigRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
-    inline DeleteCodeSigningConfigRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+    template<typename CodeSigningConfigArnT = Aws::String>
+    void SetCodeSigningConfigArn(CodeSigningConfigArnT&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::forward<CodeSigningConfigArnT>(value); }
+    template<typename CodeSigningConfigArnT = Aws::String>
+    DeleteCodeSigningConfigRequest& WithCodeSigningConfigArn(CodeSigningConfigArnT&& value) { SetCodeSigningConfigArn(std::forward<CodeSigningConfigArnT>(value)); return *this;}
     ///@}
   private:
 

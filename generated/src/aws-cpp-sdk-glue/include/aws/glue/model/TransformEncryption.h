@@ -35,7 +35,7 @@ namespace Model
   class TransformEncryption
   {
   public:
-    AWS_GLUE_API TransformEncryption();
+    AWS_GLUE_API TransformEncryption() = default;
     AWS_GLUE_API TransformEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TransformEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
      * <p>An <code>MLUserDataEncryption</code> object containing the encryption mode
      * and customer-provided KMS key ID.</p>
      */
-    inline const MLUserDataEncryption& GetMlUserDataEncryption() const{ return m_mlUserDataEncryption; }
+    inline const MLUserDataEncryption& GetMlUserDataEncryption() const { return m_mlUserDataEncryption; }
     inline bool MlUserDataEncryptionHasBeenSet() const { return m_mlUserDataEncryptionHasBeenSet; }
-    inline void SetMlUserDataEncryption(const MLUserDataEncryption& value) { m_mlUserDataEncryptionHasBeenSet = true; m_mlUserDataEncryption = value; }
-    inline void SetMlUserDataEncryption(MLUserDataEncryption&& value) { m_mlUserDataEncryptionHasBeenSet = true; m_mlUserDataEncryption = std::move(value); }
-    inline TransformEncryption& WithMlUserDataEncryption(const MLUserDataEncryption& value) { SetMlUserDataEncryption(value); return *this;}
-    inline TransformEncryption& WithMlUserDataEncryption(MLUserDataEncryption&& value) { SetMlUserDataEncryption(std::move(value)); return *this;}
+    template<typename MlUserDataEncryptionT = MLUserDataEncryption>
+    void SetMlUserDataEncryption(MlUserDataEncryptionT&& value) { m_mlUserDataEncryptionHasBeenSet = true; m_mlUserDataEncryption = std::forward<MlUserDataEncryptionT>(value); }
+    template<typename MlUserDataEncryptionT = MLUserDataEncryption>
+    TransformEncryption& WithMlUserDataEncryption(MlUserDataEncryptionT&& value) { SetMlUserDataEncryption(std::forward<MlUserDataEncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline const Aws::String& GetTaskRunSecurityConfigurationName() const{ return m_taskRunSecurityConfigurationName; }
+    inline const Aws::String& GetTaskRunSecurityConfigurationName() const { return m_taskRunSecurityConfigurationName; }
     inline bool TaskRunSecurityConfigurationNameHasBeenSet() const { return m_taskRunSecurityConfigurationNameHasBeenSet; }
-    inline void SetTaskRunSecurityConfigurationName(const Aws::String& value) { m_taskRunSecurityConfigurationNameHasBeenSet = true; m_taskRunSecurityConfigurationName = value; }
-    inline void SetTaskRunSecurityConfigurationName(Aws::String&& value) { m_taskRunSecurityConfigurationNameHasBeenSet = true; m_taskRunSecurityConfigurationName = std::move(value); }
-    inline void SetTaskRunSecurityConfigurationName(const char* value) { m_taskRunSecurityConfigurationNameHasBeenSet = true; m_taskRunSecurityConfigurationName.assign(value); }
-    inline TransformEncryption& WithTaskRunSecurityConfigurationName(const Aws::String& value) { SetTaskRunSecurityConfigurationName(value); return *this;}
-    inline TransformEncryption& WithTaskRunSecurityConfigurationName(Aws::String&& value) { SetTaskRunSecurityConfigurationName(std::move(value)); return *this;}
-    inline TransformEncryption& WithTaskRunSecurityConfigurationName(const char* value) { SetTaskRunSecurityConfigurationName(value); return *this;}
+    template<typename TaskRunSecurityConfigurationNameT = Aws::String>
+    void SetTaskRunSecurityConfigurationName(TaskRunSecurityConfigurationNameT&& value) { m_taskRunSecurityConfigurationNameHasBeenSet = true; m_taskRunSecurityConfigurationName = std::forward<TaskRunSecurityConfigurationNameT>(value); }
+    template<typename TaskRunSecurityConfigurationNameT = Aws::String>
+    TransformEncryption& WithTaskRunSecurityConfigurationName(TaskRunSecurityConfigurationNameT&& value) { SetTaskRunSecurityConfigurationName(std::forward<TaskRunSecurityConfigurationNameT>(value)); return *this;}
     ///@}
   private:
 

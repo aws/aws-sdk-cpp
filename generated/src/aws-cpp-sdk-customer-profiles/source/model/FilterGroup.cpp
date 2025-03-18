@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-FilterGroup::FilterGroup() : 
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 FilterGroup::FilterGroup(JsonView jsonValue)
-  : FilterGroup()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FilterGroup& FilterGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -49,7 +39,6 @@ FilterGroup& FilterGroup::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

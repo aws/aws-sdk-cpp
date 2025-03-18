@@ -35,33 +35,35 @@ namespace Model
   class DefineAnalysisSchemeResult
   {
   public:
-    AWS_CLOUDSEARCH_API DefineAnalysisSchemeResult();
+    AWS_CLOUDSEARCH_API DefineAnalysisSchemeResult() = default;
     AWS_CLOUDSEARCH_API DefineAnalysisSchemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DefineAnalysisSchemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const AnalysisSchemeStatus& GetAnalysisScheme() const{ return m_analysisScheme; }
-    inline void SetAnalysisScheme(const AnalysisSchemeStatus& value) { m_analysisScheme = value; }
-    inline void SetAnalysisScheme(AnalysisSchemeStatus&& value) { m_analysisScheme = std::move(value); }
-    inline DefineAnalysisSchemeResult& WithAnalysisScheme(const AnalysisSchemeStatus& value) { SetAnalysisScheme(value); return *this;}
-    inline DefineAnalysisSchemeResult& WithAnalysisScheme(AnalysisSchemeStatus&& value) { SetAnalysisScheme(std::move(value)); return *this;}
+    inline const AnalysisSchemeStatus& GetAnalysisScheme() const { return m_analysisScheme; }
+    template<typename AnalysisSchemeT = AnalysisSchemeStatus>
+    void SetAnalysisScheme(AnalysisSchemeT&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::forward<AnalysisSchemeT>(value); }
+    template<typename AnalysisSchemeT = AnalysisSchemeStatus>
+    DefineAnalysisSchemeResult& WithAnalysisScheme(AnalysisSchemeT&& value) { SetAnalysisScheme(std::forward<AnalysisSchemeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DefineAnalysisSchemeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DefineAnalysisSchemeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DefineAnalysisSchemeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AnalysisSchemeStatus m_analysisScheme;
+    bool m_analysisSchemeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

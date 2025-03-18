@@ -29,7 +29,7 @@ namespace Model
   class ListFailuresForLicenseConfigurationOperationsResult
   {
   public:
-    AWS_LICENSEMANAGER_API ListFailuresForLicenseConfigurationOperationsResult();
+    AWS_LICENSEMANAGER_API ListFailuresForLicenseConfigurationOperationsResult() = default;
     AWS_LICENSEMANAGER_API ListFailuresForLicenseConfigurationOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API ListFailuresForLicenseConfigurationOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>License configuration operations that failed.</p>
      */
-    inline const Aws::Vector<LicenseOperationFailure>& GetLicenseOperationFailureList() const{ return m_licenseOperationFailureList; }
-    inline void SetLicenseOperationFailureList(const Aws::Vector<LicenseOperationFailure>& value) { m_licenseOperationFailureList = value; }
-    inline void SetLicenseOperationFailureList(Aws::Vector<LicenseOperationFailure>&& value) { m_licenseOperationFailureList = std::move(value); }
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithLicenseOperationFailureList(const Aws::Vector<LicenseOperationFailure>& value) { SetLicenseOperationFailureList(value); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithLicenseOperationFailureList(Aws::Vector<LicenseOperationFailure>&& value) { SetLicenseOperationFailureList(std::move(value)); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& AddLicenseOperationFailureList(const LicenseOperationFailure& value) { m_licenseOperationFailureList.push_back(value); return *this; }
-    inline ListFailuresForLicenseConfigurationOperationsResult& AddLicenseOperationFailureList(LicenseOperationFailure&& value) { m_licenseOperationFailureList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LicenseOperationFailure>& GetLicenseOperationFailureList() const { return m_licenseOperationFailureList; }
+    template<typename LicenseOperationFailureListT = Aws::Vector<LicenseOperationFailure>>
+    void SetLicenseOperationFailureList(LicenseOperationFailureListT&& value) { m_licenseOperationFailureListHasBeenSet = true; m_licenseOperationFailureList = std::forward<LicenseOperationFailureListT>(value); }
+    template<typename LicenseOperationFailureListT = Aws::Vector<LicenseOperationFailure>>
+    ListFailuresForLicenseConfigurationOperationsResult& WithLicenseOperationFailureList(LicenseOperationFailureListT&& value) { SetLicenseOperationFailureList(std::forward<LicenseOperationFailureListT>(value)); return *this;}
+    template<typename LicenseOperationFailureListT = LicenseOperationFailure>
+    ListFailuresForLicenseConfigurationOperationsResult& AddLicenseOperationFailureList(LicenseOperationFailureListT&& value) { m_licenseOperationFailureListHasBeenSet = true; m_licenseOperationFailureList.emplace_back(std::forward<LicenseOperationFailureListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFailuresForLicenseConfigurationOperationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFailuresForLicenseConfigurationOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFailuresForLicenseConfigurationOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LicenseOperationFailure> m_licenseOperationFailureList;
+    bool m_licenseOperationFailureListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

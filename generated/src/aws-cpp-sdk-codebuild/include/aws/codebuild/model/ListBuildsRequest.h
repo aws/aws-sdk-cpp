@@ -22,7 +22,7 @@ namespace Model
   class ListBuildsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListBuildsRequest();
+    AWS_CODEBUILD_API ListBuildsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,10 @@ namespace Model
      * </li> <li> <p> <code>DESCENDING</code>: List the build IDs in descending order
      * by build ID.</p> </li> </ul>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListBuildsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline ListBuildsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListBuildsRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * the list, keep calling this operation with each subsequent next token that is
      * returned, until no more next tokens are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBuildsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBuildsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBuildsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;

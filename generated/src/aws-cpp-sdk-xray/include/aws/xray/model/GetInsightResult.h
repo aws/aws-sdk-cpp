@@ -28,7 +28,7 @@ namespace Model
   class GetInsightResult
   {
   public:
-    AWS_XRAY_API GetInsightResult();
+    AWS_XRAY_API GetInsightResult() = default;
     AWS_XRAY_API GetInsightResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The summary information of an insight.</p>
      */
-    inline const Insight& GetInsight() const{ return m_insight; }
-    inline void SetInsight(const Insight& value) { m_insight = value; }
-    inline void SetInsight(Insight&& value) { m_insight = std::move(value); }
-    inline GetInsightResult& WithInsight(const Insight& value) { SetInsight(value); return *this;}
-    inline GetInsightResult& WithInsight(Insight&& value) { SetInsight(std::move(value)); return *this;}
+    inline const Insight& GetInsight() const { return m_insight; }
+    template<typename InsightT = Insight>
+    void SetInsight(InsightT&& value) { m_insightHasBeenSet = true; m_insight = std::forward<InsightT>(value); }
+    template<typename InsightT = Insight>
+    GetInsightResult& WithInsight(InsightT&& value) { SetInsight(std::forward<InsightT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInsightResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInsightResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInsightResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInsightResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Insight m_insight;
+    bool m_insightHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

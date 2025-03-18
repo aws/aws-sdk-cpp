@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-TrainingDataConfig::TrainingDataConfig() : 
-    m_excludedDatasetColumnsHasBeenSet(false)
-{
-}
-
 TrainingDataConfig::TrainingDataConfig(JsonView jsonValue)
-  : TrainingDataConfig()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ TrainingDataConfig& TrainingDataConfig::operator =(JsonView jsonValue)
     }
     m_excludedDatasetColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

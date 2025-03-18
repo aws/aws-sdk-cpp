@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataCellsFilterRequest::CreateDataCellsFilterRequest() : 
-    m_tableDataHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataCellsFilterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,22 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_codebuildRoleArnHasBeenSet(false),
-    m_componentRoleArnHasBeenSet(false),
-    m_deploymentType(DeploymentUpdateType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentAccountConnectionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protonServiceRoleArnHasBeenSet(false),
-    m_provisioningRepositoryHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

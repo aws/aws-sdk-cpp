@@ -32,7 +32,7 @@ namespace Model
   class SearchExpression
   {
   public:
-    AWS_QCONNECT_API SearchExpression();
+    AWS_QCONNECT_API SearchExpression() = default;
     AWS_QCONNECT_API SearchExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The search expression filters.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchExpression& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline SearchExpression& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SearchExpression& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SearchExpression& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    SearchExpression& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    SearchExpression& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

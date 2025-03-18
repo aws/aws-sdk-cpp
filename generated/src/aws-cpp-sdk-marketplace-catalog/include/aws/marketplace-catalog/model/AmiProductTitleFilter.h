@@ -32,7 +32,7 @@ namespace Model
   class AmiProductTitleFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API AmiProductTitleFilter();
+    AWS_MARKETPLACECATALOG_API AmiProductTitleFilter() = default;
     AWS_MARKETPLACECATALOG_API AmiProductTitleFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API AmiProductTitleFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>A string array of unique product title values to be filtered on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<Aws::String>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<Aws::String>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<Aws::String>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline AmiProductTitleFilter& WithValueList(const Aws::Vector<Aws::String>& value) { SetValueList(value); return *this;}
-    inline AmiProductTitleFilter& WithValueList(Aws::Vector<Aws::String>&& value) { SetValueList(std::move(value)); return *this;}
-    inline AmiProductTitleFilter& AddValueList(const Aws::String& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline AmiProductTitleFilter& AddValueList(Aws::String&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
-    inline AmiProductTitleFilter& AddValueList(const char* value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
+    template<typename ValueListT = Aws::Vector<Aws::String>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<Aws::String>>
+    AmiProductTitleFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    template<typename ValueListT = Aws::String>
+    AmiProductTitleFilter& AddValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList.emplace_back(std::forward<ValueListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +57,12 @@ namespace Model
      * <p>A string that will be the <code>wildCard</code> input for product tile
      * filter. It matches the provided value as a substring in the actual value.</p>
      */
-    inline const Aws::String& GetWildCardValue() const{ return m_wildCardValue; }
+    inline const Aws::String& GetWildCardValue() const { return m_wildCardValue; }
     inline bool WildCardValueHasBeenSet() const { return m_wildCardValueHasBeenSet; }
-    inline void SetWildCardValue(const Aws::String& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = value; }
-    inline void SetWildCardValue(Aws::String&& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = std::move(value); }
-    inline void SetWildCardValue(const char* value) { m_wildCardValueHasBeenSet = true; m_wildCardValue.assign(value); }
-    inline AmiProductTitleFilter& WithWildCardValue(const Aws::String& value) { SetWildCardValue(value); return *this;}
-    inline AmiProductTitleFilter& WithWildCardValue(Aws::String&& value) { SetWildCardValue(std::move(value)); return *this;}
-    inline AmiProductTitleFilter& WithWildCardValue(const char* value) { SetWildCardValue(value); return *this;}
+    template<typename WildCardValueT = Aws::String>
+    void SetWildCardValue(WildCardValueT&& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = std::forward<WildCardValueT>(value); }
+    template<typename WildCardValueT = Aws::String>
+    AmiProductTitleFilter& WithWildCardValue(WildCardValueT&& value) { SetWildCardValue(std::forward<WildCardValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NoteUpdate::NoteUpdate() : 
-    m_textHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 NoteUpdate::NoteUpdate(JsonView jsonValue)
-  : NoteUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NoteUpdate& NoteUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedBy"))
   {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConstraintRequest::UpdateConstraintRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConstraintRequest::SerializePayload() const
 {
   JsonValue payload;

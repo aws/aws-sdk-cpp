@@ -21,7 +21,7 @@ namespace Model
   class GetTagKeysRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API GetTagKeysRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetTagKeysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * request to indicate that you want the next page of results. Leave this parameter
      * empty in your initial request.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-    inline GetTagKeysRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline GetTagKeysRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline GetTagKeysRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    GetTagKeysRequest& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
   private:
 

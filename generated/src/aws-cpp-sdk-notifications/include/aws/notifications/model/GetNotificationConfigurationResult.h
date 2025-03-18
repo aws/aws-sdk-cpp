@@ -30,7 +30,7 @@ namespace Model
   class GetNotificationConfigurationResult
   {
   public:
-    AWS_NOTIFICATIONS_API GetNotificationConfigurationResult();
+    AWS_NOTIFICATIONS_API GetNotificationConfigurationResult() = default;
     AWS_NOTIFICATIONS_API GetNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONS_API GetNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,61 +39,53 @@ namespace Model
     /**
      * <p>The ARN of the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetNotificationConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetNotificationConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetNotificationConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetNotificationConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetNotificationConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetNotificationConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetNotificationConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetNotificationConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetNotificationConfigurationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetNotificationConfigurationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetNotificationConfigurationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetNotificationConfigurationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this <code>NotificationConfiguration</code>.</p>
      */
-    inline const NotificationConfigurationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const NotificationConfigurationStatus& value) { m_status = value; }
-    inline void SetStatus(NotificationConfigurationStatus&& value) { m_status = std::move(value); }
-    inline GetNotificationConfigurationResult& WithStatus(const NotificationConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline GetNotificationConfigurationResult& WithStatus(NotificationConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline NotificationConfigurationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(NotificationConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetNotificationConfigurationResult& WithStatus(NotificationConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetNotificationConfigurationResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetNotificationConfigurationResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetNotificationConfigurationResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,38 +98,41 @@ namespace Model
      * <code>NONE</code> </p> <ul> <li> <p>Don't aggregate notifications.</p> </li>
      * </ul> </li> </ul> </li> </ul>
      */
-    inline const AggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
-    inline void SetAggregationDuration(const AggregationDuration& value) { m_aggregationDuration = value; }
-    inline void SetAggregationDuration(AggregationDuration&& value) { m_aggregationDuration = std::move(value); }
-    inline GetNotificationConfigurationResult& WithAggregationDuration(const AggregationDuration& value) { SetAggregationDuration(value); return *this;}
-    inline GetNotificationConfigurationResult& WithAggregationDuration(AggregationDuration&& value) { SetAggregationDuration(std::move(value)); return *this;}
+    inline AggregationDuration GetAggregationDuration() const { return m_aggregationDuration; }
+    inline void SetAggregationDuration(AggregationDuration value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = value; }
+    inline GetNotificationConfigurationResult& WithAggregationDuration(AggregationDuration value) { SetAggregationDuration(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNotificationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNotificationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNotificationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNotificationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    NotificationConfigurationStatus m_status;
+    NotificationConfigurationStatus m_status{NotificationConfigurationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    AggregationDuration m_aggregationDuration;
+    AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
+    bool m_aggregationDurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

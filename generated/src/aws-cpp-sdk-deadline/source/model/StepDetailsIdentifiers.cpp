@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepDetailsIdentifiers::StepDetailsIdentifiers() : 
-    m_jobIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
-{
-}
-
 StepDetailsIdentifiers::StepDetailsIdentifiers(JsonView jsonValue)
-  : StepDetailsIdentifiers()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StepDetailsIdentifiers& StepDetailsIdentifiers::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   return *this;
 }
 

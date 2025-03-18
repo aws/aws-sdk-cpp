@@ -25,7 +25,7 @@ namespace Model
   class ListResourceGroupingRecommendationsRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API ListResourceGroupingRecommendationsRequest();
+    AWS_RESILIENCEHUB_API ListResourceGroupingRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline ListResourceGroupingRecommendationsRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ListResourceGroupingRecommendationsRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ListResourceGroupingRecommendationsRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ListResourceGroupingRecommendationsRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <p>Maximum number of grouping recommendations to be displayed per Resilience Hub
      * application.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourceGroupingRecommendationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,21 +71,19 @@ namespace Model
     /**
      * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourceGroupingRecommendationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceGroupingRecommendationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceGroupingRecommendationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceGroupingRecommendationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -30,7 +30,7 @@ namespace Model
   class GetECSServiceRecommendationsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p> The token to advance to the next page of Amazon ECS service recommendations.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetECSServiceRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetECSServiceRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetECSServiceRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetECSServiceRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,47 +52,49 @@ namespace Model
      * <p> An array of objects that describe the Amazon ECS service recommendations.
      * </p>
      */
-    inline const Aws::Vector<ECSServiceRecommendation>& GetEcsServiceRecommendations() const{ return m_ecsServiceRecommendations; }
-    inline void SetEcsServiceRecommendations(const Aws::Vector<ECSServiceRecommendation>& value) { m_ecsServiceRecommendations = value; }
-    inline void SetEcsServiceRecommendations(Aws::Vector<ECSServiceRecommendation>&& value) { m_ecsServiceRecommendations = std::move(value); }
-    inline GetECSServiceRecommendationsResult& WithEcsServiceRecommendations(const Aws::Vector<ECSServiceRecommendation>& value) { SetEcsServiceRecommendations(value); return *this;}
-    inline GetECSServiceRecommendationsResult& WithEcsServiceRecommendations(Aws::Vector<ECSServiceRecommendation>&& value) { SetEcsServiceRecommendations(std::move(value)); return *this;}
-    inline GetECSServiceRecommendationsResult& AddEcsServiceRecommendations(const ECSServiceRecommendation& value) { m_ecsServiceRecommendations.push_back(value); return *this; }
-    inline GetECSServiceRecommendationsResult& AddEcsServiceRecommendations(ECSServiceRecommendation&& value) { m_ecsServiceRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ECSServiceRecommendation>& GetEcsServiceRecommendations() const { return m_ecsServiceRecommendations; }
+    template<typename EcsServiceRecommendationsT = Aws::Vector<ECSServiceRecommendation>>
+    void SetEcsServiceRecommendations(EcsServiceRecommendationsT&& value) { m_ecsServiceRecommendationsHasBeenSet = true; m_ecsServiceRecommendations = std::forward<EcsServiceRecommendationsT>(value); }
+    template<typename EcsServiceRecommendationsT = Aws::Vector<ECSServiceRecommendation>>
+    GetECSServiceRecommendationsResult& WithEcsServiceRecommendations(EcsServiceRecommendationsT&& value) { SetEcsServiceRecommendations(std::forward<EcsServiceRecommendationsT>(value)); return *this;}
+    template<typename EcsServiceRecommendationsT = ECSServiceRecommendation>
+    GetECSServiceRecommendationsResult& AddEcsServiceRecommendations(EcsServiceRecommendationsT&& value) { m_ecsServiceRecommendationsHasBeenSet = true; m_ecsServiceRecommendations.emplace_back(std::forward<EcsServiceRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> An array of objects that describe errors of the request. </p>
      */
-    inline const Aws::Vector<GetRecommendationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<GetRecommendationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<GetRecommendationError>&& value) { m_errors = std::move(value); }
-    inline GetECSServiceRecommendationsResult& WithErrors(const Aws::Vector<GetRecommendationError>& value) { SetErrors(value); return *this;}
-    inline GetECSServiceRecommendationsResult& WithErrors(Aws::Vector<GetRecommendationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline GetECSServiceRecommendationsResult& AddErrors(const GetRecommendationError& value) { m_errors.push_back(value); return *this; }
-    inline GetECSServiceRecommendationsResult& AddErrors(GetRecommendationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetRecommendationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    GetECSServiceRecommendationsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = GetRecommendationError>
+    GetECSServiceRecommendationsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetECSServiceRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetECSServiceRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetECSServiceRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetECSServiceRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ECSServiceRecommendation> m_ecsServiceRecommendations;
+    bool m_ecsServiceRecommendationsHasBeenSet = false;
 
     Aws::Vector<GetRecommendationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

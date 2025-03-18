@@ -29,7 +29,7 @@ namespace Model
   class RawSettings
   {
   public:
-    AWS_MEDIALIVE_API RawSettings();
+    AWS_MEDIALIVE_API RawSettings() = default;
     AWS_MEDIALIVE_API RawSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API RawSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

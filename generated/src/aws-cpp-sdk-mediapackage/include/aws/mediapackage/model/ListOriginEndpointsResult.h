@@ -29,7 +29,7 @@ namespace Model
   class ListOriginEndpointsResult
   {
   public:
-    AWS_MEDIAPACKAGE_API ListOriginEndpointsResult();
+    AWS_MEDIAPACKAGE_API ListOriginEndpointsResult() = default;
     AWS_MEDIAPACKAGE_API ListOriginEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGE_API ListOriginEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * A token that can be used to resume pagination from the end of the collection.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOriginEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOriginEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOriginEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOriginEndpointsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of OriginEndpoint records.
      */
-    inline const Aws::Vector<OriginEndpoint>& GetOriginEndpoints() const{ return m_originEndpoints; }
-    inline void SetOriginEndpoints(const Aws::Vector<OriginEndpoint>& value) { m_originEndpoints = value; }
-    inline void SetOriginEndpoints(Aws::Vector<OriginEndpoint>&& value) { m_originEndpoints = std::move(value); }
-    inline ListOriginEndpointsResult& WithOriginEndpoints(const Aws::Vector<OriginEndpoint>& value) { SetOriginEndpoints(value); return *this;}
-    inline ListOriginEndpointsResult& WithOriginEndpoints(Aws::Vector<OriginEndpoint>&& value) { SetOriginEndpoints(std::move(value)); return *this;}
-    inline ListOriginEndpointsResult& AddOriginEndpoints(const OriginEndpoint& value) { m_originEndpoints.push_back(value); return *this; }
-    inline ListOriginEndpointsResult& AddOriginEndpoints(OriginEndpoint&& value) { m_originEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OriginEndpoint>& GetOriginEndpoints() const { return m_originEndpoints; }
+    template<typename OriginEndpointsT = Aws::Vector<OriginEndpoint>>
+    void SetOriginEndpoints(OriginEndpointsT&& value) { m_originEndpointsHasBeenSet = true; m_originEndpoints = std::forward<OriginEndpointsT>(value); }
+    template<typename OriginEndpointsT = Aws::Vector<OriginEndpoint>>
+    ListOriginEndpointsResult& WithOriginEndpoints(OriginEndpointsT&& value) { SetOriginEndpoints(std::forward<OriginEndpointsT>(value)); return *this;}
+    template<typename OriginEndpointsT = OriginEndpoint>
+    ListOriginEndpointsResult& AddOriginEndpoints(OriginEndpointsT&& value) { m_originEndpointsHasBeenSet = true; m_originEndpoints.emplace_back(std::forward<OriginEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOriginEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOriginEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOriginEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOriginEndpointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OriginEndpoint> m_originEndpoints;
+    bool m_originEndpointsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

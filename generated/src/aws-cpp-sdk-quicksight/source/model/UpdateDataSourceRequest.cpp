@@ -12,17 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

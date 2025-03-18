@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleIncident::RouteVehicleIncident() : 
-    m_descriptionHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_severity(RouteVehicleIncidentSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_type(RouteVehicleIncidentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RouteVehicleIncident::RouteVehicleIncident(JsonView jsonValue)
-  : RouteVehicleIncident()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ RouteVehicleIncident& RouteVehicleIncident::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = RouteVehicleIncidentSeverityMapper::GetRouteVehicleIncidentSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteVehicleIncidentTypeMapper::GetRouteVehicleIncidentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

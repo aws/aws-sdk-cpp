@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveNotificationChannelRequest::RemoveNotificationChannelRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String RemoveNotificationChannelRequest::SerializePayload() const
 {
   return {};

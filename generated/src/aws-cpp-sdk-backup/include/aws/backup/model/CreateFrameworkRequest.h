@@ -25,7 +25,7 @@ namespace Model
   class CreateFrameworkRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API CreateFrameworkRequest();
+    AWS_BACKUP_API CreateFrameworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * characters, starting with a letter, and consisting of letters (a-z, A-Z),
      * numbers (0-9), and underscores (_).</p>
      */
-    inline const Aws::String& GetFrameworkName() const{ return m_frameworkName; }
+    inline const Aws::String& GetFrameworkName() const { return m_frameworkName; }
     inline bool FrameworkNameHasBeenSet() const { return m_frameworkNameHasBeenSet; }
-    inline void SetFrameworkName(const Aws::String& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = value; }
-    inline void SetFrameworkName(Aws::String&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::move(value); }
-    inline void SetFrameworkName(const char* value) { m_frameworkNameHasBeenSet = true; m_frameworkName.assign(value); }
-    inline CreateFrameworkRequest& WithFrameworkName(const Aws::String& value) { SetFrameworkName(value); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkName(Aws::String&& value) { SetFrameworkName(std::move(value)); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkName(const char* value) { SetFrameworkName(value); return *this;}
+    template<typename FrameworkNameT = Aws::String>
+    void SetFrameworkName(FrameworkNameT&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::forward<FrameworkNameT>(value); }
+    template<typename FrameworkNameT = Aws::String>
+    CreateFrameworkRequest& WithFrameworkName(FrameworkNameT&& value) { SetFrameworkName(std::forward<FrameworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>An optional description of the framework with a maximum of 1,024
      * characters.</p>
      */
-    inline const Aws::String& GetFrameworkDescription() const{ return m_frameworkDescription; }
+    inline const Aws::String& GetFrameworkDescription() const { return m_frameworkDescription; }
     inline bool FrameworkDescriptionHasBeenSet() const { return m_frameworkDescriptionHasBeenSet; }
-    inline void SetFrameworkDescription(const Aws::String& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = value; }
-    inline void SetFrameworkDescription(Aws::String&& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = std::move(value); }
-    inline void SetFrameworkDescription(const char* value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription.assign(value); }
-    inline CreateFrameworkRequest& WithFrameworkDescription(const Aws::String& value) { SetFrameworkDescription(value); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkDescription(Aws::String&& value) { SetFrameworkDescription(std::move(value)); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkDescription(const char* value) { SetFrameworkDescription(value); return *this;}
+    template<typename FrameworkDescriptionT = Aws::String>
+    void SetFrameworkDescription(FrameworkDescriptionT&& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = std::forward<FrameworkDescriptionT>(value); }
+    template<typename FrameworkDescriptionT = Aws::String>
+    CreateFrameworkRequest& WithFrameworkDescription(FrameworkDescriptionT&& value) { SetFrameworkDescription(std::forward<FrameworkDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * <p>The controls that make up the framework. Each control in the list has a name,
      * input parameters, and scope.</p>
      */
-    inline const Aws::Vector<FrameworkControl>& GetFrameworkControls() const{ return m_frameworkControls; }
+    inline const Aws::Vector<FrameworkControl>& GetFrameworkControls() const { return m_frameworkControls; }
     inline bool FrameworkControlsHasBeenSet() const { return m_frameworkControlsHasBeenSet; }
-    inline void SetFrameworkControls(const Aws::Vector<FrameworkControl>& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls = value; }
-    inline void SetFrameworkControls(Aws::Vector<FrameworkControl>&& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls = std::move(value); }
-    inline CreateFrameworkRequest& WithFrameworkControls(const Aws::Vector<FrameworkControl>& value) { SetFrameworkControls(value); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkControls(Aws::Vector<FrameworkControl>&& value) { SetFrameworkControls(std::move(value)); return *this;}
-    inline CreateFrameworkRequest& AddFrameworkControls(const FrameworkControl& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls.push_back(value); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkControls(FrameworkControl&& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls.push_back(std::move(value)); return *this; }
+    template<typename FrameworkControlsT = Aws::Vector<FrameworkControl>>
+    void SetFrameworkControls(FrameworkControlsT&& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls = std::forward<FrameworkControlsT>(value); }
+    template<typename FrameworkControlsT = Aws::Vector<FrameworkControl>>
+    CreateFrameworkRequest& WithFrameworkControls(FrameworkControlsT&& value) { SetFrameworkControls(std::forward<FrameworkControlsT>(value)); return *this;}
+    template<typename FrameworkControlsT = FrameworkControl>
+    CreateFrameworkRequest& AddFrameworkControls(FrameworkControlsT&& value) { m_frameworkControlsHasBeenSet = true; m_frameworkControls.emplace_back(std::forward<FrameworkControlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,33 +85,28 @@ namespace Model
      * request with the same idempotency token results in a success message with no
      * action taken.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateFrameworkRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateFrameworkRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateFrameworkRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateFrameworkRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the framework.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFrameworkTags() const{ return m_frameworkTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFrameworkTags() const { return m_frameworkTags; }
     inline bool FrameworkTagsHasBeenSet() const { return m_frameworkTagsHasBeenSet; }
-    inline void SetFrameworkTags(const Aws::Map<Aws::String, Aws::String>& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags = value; }
-    inline void SetFrameworkTags(Aws::Map<Aws::String, Aws::String>&& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags = std::move(value); }
-    inline CreateFrameworkRequest& WithFrameworkTags(const Aws::Map<Aws::String, Aws::String>& value) { SetFrameworkTags(value); return *this;}
-    inline CreateFrameworkRequest& WithFrameworkTags(Aws::Map<Aws::String, Aws::String>&& value) { SetFrameworkTags(std::move(value)); return *this;}
-    inline CreateFrameworkRequest& AddFrameworkTags(const Aws::String& key, const Aws::String& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(key, value); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(Aws::String&& key, const Aws::String& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(std::move(key), value); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(const Aws::String& key, Aws::String&& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(key, std::move(value)); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(Aws::String&& key, Aws::String&& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(const char* key, Aws::String&& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(key, std::move(value)); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(Aws::String&& key, const char* value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(std::move(key), value); return *this; }
-    inline CreateFrameworkRequest& AddFrameworkTags(const char* key, const char* value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(key, value); return *this; }
+    template<typename FrameworkTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetFrameworkTags(FrameworkTagsT&& value) { m_frameworkTagsHasBeenSet = true; m_frameworkTags = std::forward<FrameworkTagsT>(value); }
+    template<typename FrameworkTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateFrameworkRequest& WithFrameworkTags(FrameworkTagsT&& value) { SetFrameworkTags(std::forward<FrameworkTagsT>(value)); return *this;}
+    template<typename FrameworkTagsKeyT = Aws::String, typename FrameworkTagsValueT = Aws::String>
+    CreateFrameworkRequest& AddFrameworkTags(FrameworkTagsKeyT&& key, FrameworkTagsValueT&& value) {
+      m_frameworkTagsHasBeenSet = true; m_frameworkTags.emplace(std::forward<FrameworkTagsKeyT>(key), std::forward<FrameworkTagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

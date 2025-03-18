@@ -25,7 +25,7 @@ namespace Model
   class ListAccessEntriesRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API ListAccessEntriesRequest();
+    AWS_EKS_API ListAccessEntriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ListAccessEntriesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ListAccessEntriesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ListAccessEntriesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ListAccessEntriesRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * ARN, only the access entries associated to that access policy are returned. For
      * a list of available policy ARNs, use <code>ListAccessPolicies</code>.</p>
      */
-    inline const Aws::String& GetAssociatedPolicyArn() const{ return m_associatedPolicyArn; }
+    inline const Aws::String& GetAssociatedPolicyArn() const { return m_associatedPolicyArn; }
     inline bool AssociatedPolicyArnHasBeenSet() const { return m_associatedPolicyArnHasBeenSet; }
-    inline void SetAssociatedPolicyArn(const Aws::String& value) { m_associatedPolicyArnHasBeenSet = true; m_associatedPolicyArn = value; }
-    inline void SetAssociatedPolicyArn(Aws::String&& value) { m_associatedPolicyArnHasBeenSet = true; m_associatedPolicyArn = std::move(value); }
-    inline void SetAssociatedPolicyArn(const char* value) { m_associatedPolicyArnHasBeenSet = true; m_associatedPolicyArn.assign(value); }
-    inline ListAccessEntriesRequest& WithAssociatedPolicyArn(const Aws::String& value) { SetAssociatedPolicyArn(value); return *this;}
-    inline ListAccessEntriesRequest& WithAssociatedPolicyArn(Aws::String&& value) { SetAssociatedPolicyArn(std::move(value)); return *this;}
-    inline ListAccessEntriesRequest& WithAssociatedPolicyArn(const char* value) { SetAssociatedPolicyArn(value); return *this;}
+    template<typename AssociatedPolicyArnT = Aws::String>
+    void SetAssociatedPolicyArn(AssociatedPolicyArnT&& value) { m_associatedPolicyArnHasBeenSet = true; m_associatedPolicyArn = std::forward<AssociatedPolicyArnT>(value); }
+    template<typename AssociatedPolicyArnT = Aws::String>
+    ListAccessEntriesRequest& WithAssociatedPolicyArn(AssociatedPolicyArnT&& value) { SetAssociatedPolicyArn(std::forward<AssociatedPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * value can be between 1 and 100. If you don't use this parameter, 100 results and
      * a <code>nextToken</code> value, if applicable, are returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccessEntriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -93,14 +89,12 @@ namespace Model
      * identifier that is used only to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccessEntriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessEntriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessEntriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessEntriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,7 +104,7 @@ namespace Model
     Aws::String m_associatedPolicyArn;
     bool m_associatedPolicyArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

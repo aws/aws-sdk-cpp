@@ -42,7 +42,7 @@ namespace Model
   class QueryFilter
   {
   public:
-    AWS_CLOUDWATCHRUM_API QueryFilter();
+    AWS_CLOUDWATCHRUM_API QueryFilter() = default;
     AWS_CLOUDWATCHRUM_API QueryFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API QueryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code>
      * | <code>EventType</code> | <code>Invert</code> </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline QueryFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline QueryFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline QueryFilter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QueryFilter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +69,14 @@ namespace Model
      * <p>The values of the <code>Name</code> that are to be be included in the
      * returned results.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline QueryFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline QueryFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline QueryFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline QueryFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline QueryFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    QueryFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    QueryFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

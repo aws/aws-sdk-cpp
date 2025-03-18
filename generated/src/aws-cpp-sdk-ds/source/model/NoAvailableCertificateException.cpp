@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-NoAvailableCertificateException::NoAvailableCertificateException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 NoAvailableCertificateException::NoAvailableCertificateException(JsonView jsonValue)
-  : NoAvailableCertificateException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NoAvailableCertificateException& NoAvailableCertificateException::operator =(Jso
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

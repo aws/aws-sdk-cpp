@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSegmentEstimateResult::CreateSegmentEstimateResult() : 
-    m_statusCode(0)
-{
-}
-
 CreateSegmentEstimateResult::CreateSegmentEstimateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateSegmentEstimateResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ CreateSegmentEstimateResult& CreateSegmentEstimateResult::operator =(const Aws::
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimateId"))
   {
     m_estimateId = jsonValue.GetString("EstimateId");
-
+    m_estimateIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
   return *this;
 }

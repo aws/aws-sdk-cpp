@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 TaskTemplateFieldIdentifier::TaskTemplateFieldIdentifier(JsonView jsonValue)
-  : TaskTemplateFieldIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TaskTemplateFieldIdentifier& TaskTemplateFieldIdentifier::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

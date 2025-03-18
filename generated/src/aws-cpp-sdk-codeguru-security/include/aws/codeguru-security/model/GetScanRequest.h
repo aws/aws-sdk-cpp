@@ -25,7 +25,7 @@ namespace Model
   class GetScanRequest : public CodeGuruSecurityRequest
   {
   public:
-    AWS_CODEGURUSECURITY_API GetScanRequest();
+    AWS_CODEGURUSECURITY_API GetScanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
      * You retrieve this when you call the <code>CreateScan</code> operation. Defaults
      * to the latest scan run if missing.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline GetScanRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline GetScanRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline GetScanRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    GetScanRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scan you want to view details about.</p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline GetScanRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline GetScanRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline GetScanRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    GetScanRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
   private:
 

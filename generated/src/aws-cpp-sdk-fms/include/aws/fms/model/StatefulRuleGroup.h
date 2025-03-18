@@ -33,7 +33,7 @@ namespace Model
   class StatefulRuleGroup
   {
   public:
-    AWS_FMS_API StatefulRuleGroup();
+    AWS_FMS_API StatefulRuleGroup() = default;
     AWS_FMS_API StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupName() const{ return m_ruleGroupName; }
+    inline const Aws::String& GetRuleGroupName() const { return m_ruleGroupName; }
     inline bool RuleGroupNameHasBeenSet() const { return m_ruleGroupNameHasBeenSet; }
-    inline void SetRuleGroupName(const Aws::String& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = value; }
-    inline void SetRuleGroupName(Aws::String&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::move(value); }
-    inline void SetRuleGroupName(const char* value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName.assign(value); }
-    inline StatefulRuleGroup& WithRuleGroupName(const Aws::String& value) { SetRuleGroupName(value); return *this;}
-    inline StatefulRuleGroup& WithRuleGroupName(Aws::String&& value) { SetRuleGroupName(std::move(value)); return *this;}
-    inline StatefulRuleGroup& WithRuleGroupName(const char* value) { SetRuleGroupName(value); return *this;}
+    template<typename RuleGroupNameT = Aws::String>
+    void SetRuleGroupName(RuleGroupNameT&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::forward<RuleGroupNameT>(value); }
+    template<typename RuleGroupNameT = Aws::String>
+    StatefulRuleGroup& WithRuleGroupName(RuleGroupNameT&& value) { SetRuleGroupName(std::forward<RuleGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ID of the rule group.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline StatefulRuleGroup& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline StatefulRuleGroup& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline StatefulRuleGroup& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    StatefulRuleGroup& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * number them so there's a wide range in between, for example use 100, 200, and so
      * on. </p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline StatefulRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
@@ -91,12 +87,12 @@ namespace Model
      * <p>The action that allows the policy owner to override the behavior of the rule
      * group within a policy.</p>
      */
-    inline const NetworkFirewallStatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+    inline const NetworkFirewallStatefulRuleGroupOverride& GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
-    inline void SetOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
-    inline void SetOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
-    inline StatefulRuleGroup& WithOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
-    inline StatefulRuleGroup& WithOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+    template<typename OverrideT = NetworkFirewallStatefulRuleGroupOverride>
+    void SetOverride(OverrideT&& value) { m_overrideHasBeenSet = true; m_override = std::forward<OverrideT>(value); }
+    template<typename OverrideT = NetworkFirewallStatefulRuleGroupOverride>
+    StatefulRuleGroup& WithOverride(OverrideT&& value) { SetOverride(std::forward<OverrideT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +102,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     NetworkFirewallStatefulRuleGroupOverride m_override;

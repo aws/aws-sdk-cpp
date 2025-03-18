@@ -36,7 +36,7 @@ namespace Model
   class UnusedIamUserAccessKeyDetails
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedIamUserAccessKeyDetails();
+    AWS_ACCESSANALYZER_API UnusedIamUserAccessKeyDetails() = default;
     AWS_ACCESSANALYZER_API UnusedIamUserAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedIamUserAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,33 +47,31 @@ namespace Model
      * <p>The ID of the access key for which the unused access finding was
      * generated.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-    inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    UnusedIamUserAccessKeyDetails& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the access key was last accessed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
+    inline const Aws::Utils::DateTime& GetLastAccessed() const { return m_lastAccessed; }
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
-    inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
-    inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
-    inline UnusedIamUserAccessKeyDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
-    inline UnusedIamUserAccessKeyDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    void SetLastAccessed(LastAccessedT&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::forward<LastAccessedT>(value); }
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    UnusedIamUserAccessKeyDetails& WithLastAccessed(LastAccessedT&& value) { SetLastAccessed(std::forward<LastAccessedT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAccessed;
+    Aws::Utils::DateTime m_lastAccessed{};
     bool m_lastAccessedHasBeenSet = false;
   };
 

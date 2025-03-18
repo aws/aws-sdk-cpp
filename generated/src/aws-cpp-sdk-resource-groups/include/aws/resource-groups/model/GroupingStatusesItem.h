@@ -35,7 +35,7 @@ namespace Model
   class GroupingStatusesItem
   {
   public:
-    AWS_RESOURCEGROUPS_API GroupingStatusesItem();
+    AWS_RESOURCEGROUPS_API GroupingStatusesItem() = default;
     AWS_RESOURCEGROUPS_API GroupingStatusesItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API GroupingStatusesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of a resource. </p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline GroupingStatusesItem& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GroupingStatusesItem& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GroupingStatusesItem& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GroupingStatusesItem& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <p>Describes the resource grouping action with values of <code>GROUP</code> or
      * <code>UNGROUP</code>. </p>
      */
-    inline const GroupingType& GetAction() const{ return m_action; }
+    inline GroupingType GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const GroupingType& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(GroupingType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GroupingStatusesItem& WithAction(const GroupingType& value) { SetAction(value); return *this;}
-    inline GroupingStatusesItem& WithAction(GroupingType&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(GroupingType value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GroupingStatusesItem& WithAction(GroupingType value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -73,62 +69,56 @@ namespace Model
      * <p>Describes the resource grouping status with values of <code>SUCCESS</code>,
      * <code>FAILED</code>, <code>IN_PROGRESS</code>, or <code>SKIPPED</code>. </p>
      */
-    inline const GroupingStatus& GetStatus() const{ return m_status; }
+    inline GroupingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GroupingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GroupingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GroupingStatusesItem& WithStatus(const GroupingStatus& value) { SetStatus(value); return *this;}
-    inline GroupingStatusesItem& WithStatus(GroupingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GroupingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GroupingStatusesItem& WithStatus(GroupingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that explains the <code>ErrorCode</code>. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline GroupingStatusesItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GroupingStatusesItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GroupingStatusesItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GroupingStatusesItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the error code that was raised. </p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline GroupingStatusesItem& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline GroupingStatusesItem& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline GroupingStatusesItem& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    GroupingStatusesItem& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of when the status was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline GroupingStatusesItem& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GroupingStatusesItem& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GroupingStatusesItem& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    GroupingType m_action;
+    GroupingType m_action{GroupingType::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    GroupingStatus m_status;
+    GroupingStatus m_status{GroupingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
@@ -137,7 +127,7 @@ namespace Model
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

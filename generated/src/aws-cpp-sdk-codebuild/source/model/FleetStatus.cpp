@@ -18,17 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-FleetStatus::FleetStatus() : 
-    m_statusCode(FleetStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_context(FleetContextCode::NOT_SET),
-    m_contextHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FleetStatus::FleetStatus(JsonView jsonValue)
-  : FleetStatus()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FleetStatus& FleetStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = FleetStatusCodeMapper::GetFleetStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("context"))
   {
     m_context = FleetContextCodeMapper::GetFleetContextCodeForName(jsonValue.GetString("context"));
-
     m_contextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHealthServiceStatusForOrganizationRequest::DescribeHealthServiceStatusForOrganizationRequest()
-{
-}
-
 Aws::String DescribeHealthServiceStatusForOrganizationRequest::SerializePayload() const
 {
   return "{}";

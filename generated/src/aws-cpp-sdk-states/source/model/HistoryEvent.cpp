@@ -18,56 +18,7 @@ namespace SFN
 namespace Model
 {
 
-HistoryEvent::HistoryEvent() : 
-    m_timestampHasBeenSet(false),
-    m_type(HistoryEventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_previousEventId(0),
-    m_previousEventIdHasBeenSet(false),
-    m_activityFailedEventDetailsHasBeenSet(false),
-    m_activityScheduleFailedEventDetailsHasBeenSet(false),
-    m_activityScheduledEventDetailsHasBeenSet(false),
-    m_activityStartedEventDetailsHasBeenSet(false),
-    m_activitySucceededEventDetailsHasBeenSet(false),
-    m_activityTimedOutEventDetailsHasBeenSet(false),
-    m_taskFailedEventDetailsHasBeenSet(false),
-    m_taskScheduledEventDetailsHasBeenSet(false),
-    m_taskStartFailedEventDetailsHasBeenSet(false),
-    m_taskStartedEventDetailsHasBeenSet(false),
-    m_taskSubmitFailedEventDetailsHasBeenSet(false),
-    m_taskSubmittedEventDetailsHasBeenSet(false),
-    m_taskSucceededEventDetailsHasBeenSet(false),
-    m_taskTimedOutEventDetailsHasBeenSet(false),
-    m_executionFailedEventDetailsHasBeenSet(false),
-    m_executionStartedEventDetailsHasBeenSet(false),
-    m_executionSucceededEventDetailsHasBeenSet(false),
-    m_executionAbortedEventDetailsHasBeenSet(false),
-    m_executionTimedOutEventDetailsHasBeenSet(false),
-    m_executionRedrivenEventDetailsHasBeenSet(false),
-    m_mapStateStartedEventDetailsHasBeenSet(false),
-    m_mapIterationStartedEventDetailsHasBeenSet(false),
-    m_mapIterationSucceededEventDetailsHasBeenSet(false),
-    m_mapIterationFailedEventDetailsHasBeenSet(false),
-    m_mapIterationAbortedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionScheduledEventDetailsHasBeenSet(false),
-    m_lambdaFunctionStartFailedEventDetailsHasBeenSet(false),
-    m_lambdaFunctionSucceededEventDetailsHasBeenSet(false),
-    m_lambdaFunctionTimedOutEventDetailsHasBeenSet(false),
-    m_stateEnteredEventDetailsHasBeenSet(false),
-    m_stateExitedEventDetailsHasBeenSet(false),
-    m_mapRunStartedEventDetailsHasBeenSet(false),
-    m_mapRunFailedEventDetailsHasBeenSet(false),
-    m_mapRunRedrivenEventDetailsHasBeenSet(false),
-    m_evaluationFailedEventDetailsHasBeenSet(false)
-{
-}
-
 HistoryEvent::HistoryEvent(JsonView jsonValue)
-  : HistoryEvent()
 {
   *this = jsonValue;
 }
@@ -77,290 +28,208 @@ HistoryEvent& HistoryEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = HistoryEventTypeMapper::GetHistoryEventTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetInt64("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previousEventId"))
   {
     m_previousEventId = jsonValue.GetInt64("previousEventId");
-
     m_previousEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityFailedEventDetails"))
   {
     m_activityFailedEventDetails = jsonValue.GetObject("activityFailedEventDetails");
-
     m_activityFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityScheduleFailedEventDetails"))
   {
     m_activityScheduleFailedEventDetails = jsonValue.GetObject("activityScheduleFailedEventDetails");
-
     m_activityScheduleFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityScheduledEventDetails"))
   {
     m_activityScheduledEventDetails = jsonValue.GetObject("activityScheduledEventDetails");
-
     m_activityScheduledEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityStartedEventDetails"))
   {
     m_activityStartedEventDetails = jsonValue.GetObject("activityStartedEventDetails");
-
     m_activityStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activitySucceededEventDetails"))
   {
     m_activitySucceededEventDetails = jsonValue.GetObject("activitySucceededEventDetails");
-
     m_activitySucceededEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityTimedOutEventDetails"))
   {
     m_activityTimedOutEventDetails = jsonValue.GetObject("activityTimedOutEventDetails");
-
     m_activityTimedOutEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskFailedEventDetails"))
   {
     m_taskFailedEventDetails = jsonValue.GetObject("taskFailedEventDetails");
-
     m_taskFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskScheduledEventDetails"))
   {
     m_taskScheduledEventDetails = jsonValue.GetObject("taskScheduledEventDetails");
-
     m_taskScheduledEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartFailedEventDetails"))
   {
     m_taskStartFailedEventDetails = jsonValue.GetObject("taskStartFailedEventDetails");
-
     m_taskStartFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartedEventDetails"))
   {
     m_taskStartedEventDetails = jsonValue.GetObject("taskStartedEventDetails");
-
     m_taskStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSubmitFailedEventDetails"))
   {
     m_taskSubmitFailedEventDetails = jsonValue.GetObject("taskSubmitFailedEventDetails");
-
     m_taskSubmitFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSubmittedEventDetails"))
   {
     m_taskSubmittedEventDetails = jsonValue.GetObject("taskSubmittedEventDetails");
-
     m_taskSubmittedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSucceededEventDetails"))
   {
     m_taskSucceededEventDetails = jsonValue.GetObject("taskSucceededEventDetails");
-
     m_taskSucceededEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskTimedOutEventDetails"))
   {
     m_taskTimedOutEventDetails = jsonValue.GetObject("taskTimedOutEventDetails");
-
     m_taskTimedOutEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionFailedEventDetails"))
   {
     m_executionFailedEventDetails = jsonValue.GetObject("executionFailedEventDetails");
-
     m_executionFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStartedEventDetails"))
   {
     m_executionStartedEventDetails = jsonValue.GetObject("executionStartedEventDetails");
-
     m_executionStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionSucceededEventDetails"))
   {
     m_executionSucceededEventDetails = jsonValue.GetObject("executionSucceededEventDetails");
-
     m_executionSucceededEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionAbortedEventDetails"))
   {
     m_executionAbortedEventDetails = jsonValue.GetObject("executionAbortedEventDetails");
-
     m_executionAbortedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionTimedOutEventDetails"))
   {
     m_executionTimedOutEventDetails = jsonValue.GetObject("executionTimedOutEventDetails");
-
     m_executionTimedOutEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRedrivenEventDetails"))
   {
     m_executionRedrivenEventDetails = jsonValue.GetObject("executionRedrivenEventDetails");
-
     m_executionRedrivenEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapStateStartedEventDetails"))
   {
     m_mapStateStartedEventDetails = jsonValue.GetObject("mapStateStartedEventDetails");
-
     m_mapStateStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapIterationStartedEventDetails"))
   {
     m_mapIterationStartedEventDetails = jsonValue.GetObject("mapIterationStartedEventDetails");
-
     m_mapIterationStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapIterationSucceededEventDetails"))
   {
     m_mapIterationSucceededEventDetails = jsonValue.GetObject("mapIterationSucceededEventDetails");
-
     m_mapIterationSucceededEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapIterationFailedEventDetails"))
   {
     m_mapIterationFailedEventDetails = jsonValue.GetObject("mapIterationFailedEventDetails");
-
     m_mapIterationFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapIterationAbortedEventDetails"))
   {
     m_mapIterationAbortedEventDetails = jsonValue.GetObject("mapIterationAbortedEventDetails");
-
     m_mapIterationAbortedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionFailedEventDetails"))
   {
     m_lambdaFunctionFailedEventDetails = jsonValue.GetObject("lambdaFunctionFailedEventDetails");
-
     m_lambdaFunctionFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionScheduleFailedEventDetails"))
   {
     m_lambdaFunctionScheduleFailedEventDetails = jsonValue.GetObject("lambdaFunctionScheduleFailedEventDetails");
-
     m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionScheduledEventDetails"))
   {
     m_lambdaFunctionScheduledEventDetails = jsonValue.GetObject("lambdaFunctionScheduledEventDetails");
-
     m_lambdaFunctionScheduledEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionStartFailedEventDetails"))
   {
     m_lambdaFunctionStartFailedEventDetails = jsonValue.GetObject("lambdaFunctionStartFailedEventDetails");
-
     m_lambdaFunctionStartFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionSucceededEventDetails"))
   {
     m_lambdaFunctionSucceededEventDetails = jsonValue.GetObject("lambdaFunctionSucceededEventDetails");
-
     m_lambdaFunctionSucceededEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionTimedOutEventDetails"))
   {
     m_lambdaFunctionTimedOutEventDetails = jsonValue.GetObject("lambdaFunctionTimedOutEventDetails");
-
     m_lambdaFunctionTimedOutEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateEnteredEventDetails"))
   {
     m_stateEnteredEventDetails = jsonValue.GetObject("stateEnteredEventDetails");
-
     m_stateEnteredEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateExitedEventDetails"))
   {
     m_stateExitedEventDetails = jsonValue.GetObject("stateExitedEventDetails");
-
     m_stateExitedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapRunStartedEventDetails"))
   {
     m_mapRunStartedEventDetails = jsonValue.GetObject("mapRunStartedEventDetails");
-
     m_mapRunStartedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapRunFailedEventDetails"))
   {
     m_mapRunFailedEventDetails = jsonValue.GetObject("mapRunFailedEventDetails");
-
     m_mapRunFailedEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapRunRedrivenEventDetails"))
   {
     m_mapRunRedrivenEventDetails = jsonValue.GetObject("mapRunRedrivenEventDetails");
-
     m_mapRunRedrivenEventDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationFailedEventDetails"))
   {
     m_evaluationFailedEventDetails = jsonValue.GetObject("evaluationFailedEventDetails");
-
     m_evaluationFailedEventDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

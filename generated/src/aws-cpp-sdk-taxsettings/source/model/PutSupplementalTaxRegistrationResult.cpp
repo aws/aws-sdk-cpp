@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSupplementalTaxRegistrationResult::PutSupplementalTaxRegistrationResult() : 
-    m_status(TaxRegistrationStatus::NOT_SET)
-{
-}
-
 PutSupplementalTaxRegistrationResult::PutSupplementalTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutSupplementalTaxRegistrationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ PutSupplementalTaxRegistrationResult& PutSupplementalTaxRegistrationResult::oper
   if(jsonValue.ValueExists("authorityId"))
   {
     m_authorityId = jsonValue.GetString("authorityId");
-
+    m_authorityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaxRegistrationStatusMapper::GetTaxRegistrationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

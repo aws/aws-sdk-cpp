@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-EntityRequest::EntityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 EntityRequest::EntityRequest(JsonView jsonValue)
-  : EntityRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EntityRequest& EntityRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

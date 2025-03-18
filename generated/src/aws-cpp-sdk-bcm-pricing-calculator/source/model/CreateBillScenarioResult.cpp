@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBillScenarioResult::CreateBillScenarioResult() : 
-    m_status(BillScenarioStatus::NOT_SET)
-{
-}
-
 CreateBillScenarioResult::CreateBillScenarioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateBillScenarioResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ CreateBillScenarioResult& CreateBillScenarioResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billInterval"))
   {
     m_billInterval = jsonValue.GetObject("billInterval");
-
+    m_billIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BillScenarioStatusMapper::GetBillScenarioStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
+    m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
+    m_failureMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

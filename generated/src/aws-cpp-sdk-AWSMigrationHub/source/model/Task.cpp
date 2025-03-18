@@ -18,17 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-Task::Task() : 
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false)
-{
-}
-
 Task::Task(JsonView jsonValue)
-  : Task()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Task& Task::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
     m_statusDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressPercent"))
   {
     m_progressPercent = jsonValue.GetInteger("ProgressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

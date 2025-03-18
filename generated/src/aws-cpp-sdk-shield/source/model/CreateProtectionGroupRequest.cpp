@@ -12,19 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProtectionGroupRequest::CreateProtectionGroupRequest() : 
-    m_protectionGroupIdHasBeenSet(false),
-    m_aggregation(ProtectionGroupAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_pattern(ProtectionGroupPattern::NOT_SET),
-    m_patternHasBeenSet(false),
-    m_resourceType(ProtectedResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProtectionGroupRequest::SerializePayload() const
 {
   JsonValue payload;

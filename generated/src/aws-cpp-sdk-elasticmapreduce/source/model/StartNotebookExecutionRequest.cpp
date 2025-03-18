@@ -12,23 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartNotebookExecutionRequest::StartNotebookExecutionRequest() : 
-    m_editorIdHasBeenSet(false),
-    m_relativePathHasBeenSet(false),
-    m_notebookExecutionNameHasBeenSet(false),
-    m_notebookParamsHasBeenSet(false),
-    m_executionEngineHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_notebookS3LocationHasBeenSet(false),
-    m_outputNotebookS3LocationHasBeenSet(false),
-    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
-    m_outputNotebookFormatHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
-{
-}
-
 Aws::String StartNotebookExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

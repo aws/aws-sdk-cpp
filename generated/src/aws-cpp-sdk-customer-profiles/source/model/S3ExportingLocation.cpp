@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-S3ExportingLocation::S3ExportingLocation() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyNameHasBeenSet(false)
-{
-}
-
 S3ExportingLocation::S3ExportingLocation(JsonView jsonValue)
-  : S3ExportingLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ExportingLocation& S3ExportingLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyName"))
   {
     m_s3KeyName = jsonValue.GetString("S3KeyName");
-
     m_s3KeyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class SidewalkResourceTypeEventConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration() = default;
     AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
-    inline const EventNotificationTopicStatus& GetWirelessDeviceEventTopic() const{ return m_wirelessDeviceEventTopic; }
+    inline EventNotificationTopicStatus GetWirelessDeviceEventTopic() const { return m_wirelessDeviceEventTopic; }
     inline bool WirelessDeviceEventTopicHasBeenSet() const { return m_wirelessDeviceEventTopicHasBeenSet; }
-    inline void SetWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = value; }
-    inline void SetWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = std::move(value); }
-    inline SidewalkResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceEventTopic(value); return *this;}
-    inline SidewalkResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceEventTopic(std::move(value)); return *this;}
+    inline void SetWirelessDeviceEventTopic(EventNotificationTopicStatus value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = value; }
+    inline SidewalkResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(EventNotificationTopicStatus value) { SetWirelessDeviceEventTopic(value); return *this;}
     ///@}
   private:
 
-    EventNotificationTopicStatus m_wirelessDeviceEventTopic;
+    EventNotificationTopicStatus m_wirelessDeviceEventTopic{EventNotificationTopicStatus::NOT_SET};
     bool m_wirelessDeviceEventTopicHasBeenSet = false;
   };
 

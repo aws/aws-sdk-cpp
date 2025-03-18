@@ -31,7 +31,7 @@ namespace Model
   class SMSMessageTemplateContentBody
   {
   public:
-    AWS_QCONNECT_API SMSMessageTemplateContentBody();
+    AWS_QCONNECT_API SMSMessageTemplateContentBody() = default;
     AWS_QCONNECT_API SMSMessageTemplateContentBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SMSMessageTemplateContentBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The message body to use in SMS messages.</p>
      */
-    inline const MessageTemplateBodyContentProvider& GetPlainText() const{ return m_plainText; }
+    inline const MessageTemplateBodyContentProvider& GetPlainText() const { return m_plainText; }
     inline bool PlainTextHasBeenSet() const { return m_plainTextHasBeenSet; }
-    inline void SetPlainText(const MessageTemplateBodyContentProvider& value) { m_plainTextHasBeenSet = true; m_plainText = value; }
-    inline void SetPlainText(MessageTemplateBodyContentProvider&& value) { m_plainTextHasBeenSet = true; m_plainText = std::move(value); }
-    inline SMSMessageTemplateContentBody& WithPlainText(const MessageTemplateBodyContentProvider& value) { SetPlainText(value); return *this;}
-    inline SMSMessageTemplateContentBody& WithPlainText(MessageTemplateBodyContentProvider&& value) { SetPlainText(std::move(value)); return *this;}
+    template<typename PlainTextT = MessageTemplateBodyContentProvider>
+    void SetPlainText(PlainTextT&& value) { m_plainTextHasBeenSet = true; m_plainText = std::forward<PlainTextT>(value); }
+    template<typename PlainTextT = MessageTemplateBodyContentProvider>
+    SMSMessageTemplateContentBody& WithPlainText(PlainTextT&& value) { SetPlainText(std::forward<PlainTextT>(value)); return *this;}
     ///@}
   private:
 

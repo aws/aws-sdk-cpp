@@ -12,13 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEffectivePolicyRequest::DescribeEffectivePolicyRequest() : 
-    m_policyType(EffectivePolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEffectivePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

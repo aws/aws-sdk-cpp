@@ -18,18 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedAttributeValueRange::TypedAttributeValueRange() : 
-    m_startMode(RangeMode::NOT_SET),
-    m_startModeHasBeenSet(false),
-    m_startValueHasBeenSet(false),
-    m_endMode(RangeMode::NOT_SET),
-    m_endModeHasBeenSet(false),
-    m_endValueHasBeenSet(false)
-{
-}
-
 TypedAttributeValueRange::TypedAttributeValueRange(JsonView jsonValue)
-  : TypedAttributeValueRange()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TypedAttributeValueRange& TypedAttributeValueRange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("StartMode"))
   {
     m_startMode = RangeModeMapper::GetRangeModeForName(jsonValue.GetString("StartMode"));
-
     m_startModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartValue"))
   {
     m_startValue = jsonValue.GetObject("StartValue");
-
     m_startValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndMode"))
   {
     m_endMode = RangeModeMapper::GetRangeModeForName(jsonValue.GetString("EndMode"));
-
     m_endModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndValue"))
   {
     m_endValue = jsonValue.GetObject("EndValue");
-
     m_endValueHasBeenSet = true;
   }
-
   return *this;
 }
 

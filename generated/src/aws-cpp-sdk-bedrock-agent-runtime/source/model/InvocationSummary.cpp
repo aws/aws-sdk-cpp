@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvocationSummary::InvocationSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_invocationIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 InvocationSummary::InvocationSummary(JsonView jsonValue)
-  : InvocationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InvocationSummary& InvocationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

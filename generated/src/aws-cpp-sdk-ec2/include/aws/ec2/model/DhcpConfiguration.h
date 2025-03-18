@@ -33,7 +33,7 @@ namespace Model
   class DhcpConfiguration
   {
   public:
-    AWS_EC2_API DhcpConfiguration();
+    AWS_EC2_API DhcpConfiguration() = default;
     AWS_EC2_API DhcpConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DhcpConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The name of a DHCP option.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DhcpConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DhcpConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DhcpConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DhcpConfiguration& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for the DHCP option.</p>
      */
-    inline const Aws::Vector<AttributeValue>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<AttributeValue>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<AttributeValue>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<AttributeValue>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DhcpConfiguration& WithValues(const Aws::Vector<AttributeValue>& value) { SetValues(value); return *this;}
-    inline DhcpConfiguration& WithValues(Aws::Vector<AttributeValue>&& value) { SetValues(std::move(value)); return *this;}
-    inline DhcpConfiguration& AddValues(const AttributeValue& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<AttributeValue>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<AttributeValue>>
+    DhcpConfiguration& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = AttributeValue>
+    DhcpConfiguration& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

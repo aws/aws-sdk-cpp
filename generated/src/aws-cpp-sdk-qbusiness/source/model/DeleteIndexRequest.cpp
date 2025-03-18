@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIndexRequest::DeleteIndexRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIndexRequest::SerializePayload() const
 {
   return {};

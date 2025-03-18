@@ -12,14 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobForDevicesRequest::CreateJobForDevicesRequest() : 
-    m_deviceIdsHasBeenSet(false),
-    m_deviceJobConfigHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobForDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

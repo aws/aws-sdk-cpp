@@ -22,7 +22,7 @@ namespace Model
   class SetTypeConfigurationRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API SetTypeConfigurationRequest();
+    AWS_CLOUDFORMATION_API SetTypeConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * versions suffix at the end of the ARN. You can set the configuration for an
      * extension, but not for a specific extension version.</p>
      */
-    inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
+    inline const Aws::String& GetTypeArn() const { return m_typeArn; }
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
-    inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
-    inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
-    inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
-    inline SetTypeConfigurationRequest& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
-    inline SetTypeConfigurationRequest& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
-    inline SetTypeConfigurationRequest& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
+    template<typename TypeArnT = Aws::String>
+    void SetTypeArn(TypeArnT&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::forward<TypeArnT>(value); }
+    template<typename TypeArnT = Aws::String>
+    SetTypeConfigurationRequest& WithTypeArn(TypeArnT&& value) { SetTypeArn(std::forward<TypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * the account-level configuration of an extension</a> in the <i>CloudFormation
      * Command Line Interface (CLI) User Guide</i>.</p>
      */
-    inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
-    inline SetTypeConfigurationRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
-    inline SetTypeConfigurationRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline SetTypeConfigurationRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+    template<typename ConfigurationT = Aws::String>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::String>
+    SetTypeConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>Conditional: Specifying a configuration alias is required when setting a
      * configuration for a resource type extension.</p>
      */
-    inline const Aws::String& GetConfigurationAlias() const{ return m_configurationAlias; }
+    inline const Aws::String& GetConfigurationAlias() const { return m_configurationAlias; }
     inline bool ConfigurationAliasHasBeenSet() const { return m_configurationAliasHasBeenSet; }
-    inline void SetConfigurationAlias(const Aws::String& value) { m_configurationAliasHasBeenSet = true; m_configurationAlias = value; }
-    inline void SetConfigurationAlias(Aws::String&& value) { m_configurationAliasHasBeenSet = true; m_configurationAlias = std::move(value); }
-    inline void SetConfigurationAlias(const char* value) { m_configurationAliasHasBeenSet = true; m_configurationAlias.assign(value); }
-    inline SetTypeConfigurationRequest& WithConfigurationAlias(const Aws::String& value) { SetConfigurationAlias(value); return *this;}
-    inline SetTypeConfigurationRequest& WithConfigurationAlias(Aws::String&& value) { SetConfigurationAlias(std::move(value)); return *this;}
-    inline SetTypeConfigurationRequest& WithConfigurationAlias(const char* value) { SetConfigurationAlias(value); return *this;}
+    template<typename ConfigurationAliasT = Aws::String>
+    void SetConfigurationAlias(ConfigurationAliasT&& value) { m_configurationAliasHasBeenSet = true; m_configurationAlias = std::forward<ConfigurationAliasT>(value); }
+    template<typename ConfigurationAliasT = Aws::String>
+    SetTypeConfigurationRequest& WithConfigurationAlias(ConfigurationAliasT&& value) { SetConfigurationAlias(std::forward<ConfigurationAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * <code>ConfigurationArn</code>, or <code>Type</code> and
      * <code>TypeName</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline SetTypeConfigurationRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline SetTypeConfigurationRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline SetTypeConfigurationRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    SetTypeConfigurationRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +111,10 @@ namespace Model
      * <code>ConfigurationArn</code>, or <code>Type</code> and
      * <code>TypeName</code>.</p>
      */
-    inline const ThirdPartyType& GetType() const{ return m_type; }
+    inline ThirdPartyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ThirdPartyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ThirdPartyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SetTypeConfigurationRequest& WithType(const ThirdPartyType& value) { SetType(value); return *this;}
-    inline SetTypeConfigurationRequest& WithType(ThirdPartyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ThirdPartyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SetTypeConfigurationRequest& WithType(ThirdPartyType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -140,7 +130,7 @@ namespace Model
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet = false;
 
-    ThirdPartyType m_type;
+    ThirdPartyType m_type{ThirdPartyType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

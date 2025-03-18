@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRelationalDatabaseMasterUserPasswordRequest::GetRelationalDatabaseMasterUserPasswordRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false),
-    m_passwordVersion(RelationalDatabasePasswordVersion::NOT_SET),
-    m_passwordVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetRelationalDatabaseMasterUserPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

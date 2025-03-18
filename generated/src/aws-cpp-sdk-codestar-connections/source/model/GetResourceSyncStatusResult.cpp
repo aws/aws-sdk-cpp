@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceSyncStatusResult::GetResourceSyncStatusResult()
-{
-}
-
 GetResourceSyncStatusResult::GetResourceSyncStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetResourceSyncStatusResult& GetResourceSyncStatusResult::operator =(const Aws::
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = jsonValue.GetObject("DesiredState");
-
+    m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestSuccessfulSync"))
   {
     m_latestSuccessfulSync = jsonValue.GetObject("LatestSuccessfulSync");
-
+    m_latestSuccessfulSyncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestSync"))
   {
     m_latestSync = jsonValue.GetObject("LatestSync");
-
+    m_latestSyncHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

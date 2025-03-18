@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResolversRequest::ListResolversRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResolversRequest::SerializePayload() const
 {
   return {};

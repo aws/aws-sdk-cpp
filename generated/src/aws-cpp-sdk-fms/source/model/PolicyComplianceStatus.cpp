@@ -18,19 +18,7 @@ namespace FMS
 namespace Model
 {
 
-PolicyComplianceStatus::PolicyComplianceStatus() : 
-    m_policyOwnerHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_memberAccountHasBeenSet(false),
-    m_evaluationResultsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_issueInfoMapHasBeenSet(false)
-{
-}
-
 PolicyComplianceStatus::PolicyComplianceStatus(JsonView jsonValue)
-  : PolicyComplianceStatus()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ PolicyComplianceStatus& PolicyComplianceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyOwner"))
   {
     m_policyOwner = jsonValue.GetString("PolicyOwner");
-
     m_policyOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberAccount"))
   {
     m_memberAccount = jsonValue.GetString("MemberAccount");
-
     m_memberAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationResults"))
   {
     Aws::Utils::Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
@@ -74,14 +54,11 @@ PolicyComplianceStatus& PolicyComplianceStatus::operator =(JsonView jsonValue)
     }
     m_evaluationResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueInfoMap"))
   {
     Aws::Map<Aws::String, JsonView> issueInfoMapJsonMap = jsonValue.GetObject("IssueInfoMap").GetAllObjects();
@@ -91,7 +68,6 @@ PolicyComplianceStatus& PolicyComplianceStatus::operator =(JsonView jsonValue)
     }
     m_issueInfoMapHasBeenSet = true;
   }
-
   return *this;
 }
 

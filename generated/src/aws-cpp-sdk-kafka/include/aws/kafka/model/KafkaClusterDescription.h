@@ -34,7 +34,7 @@ namespace Model
   class KafkaClusterDescription
   {
   public:
-    AWS_KAFKA_API KafkaClusterDescription();
+    AWS_KAFKA_API KafkaClusterDescription() = default;
     AWS_KAFKA_API KafkaClusterDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API KafkaClusterDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Details of an Amazon MSK Cluster.</p>
      */
-    inline const AmazonMskCluster& GetAmazonMskCluster() const{ return m_amazonMskCluster; }
+    inline const AmazonMskCluster& GetAmazonMskCluster() const { return m_amazonMskCluster; }
     inline bool AmazonMskClusterHasBeenSet() const { return m_amazonMskClusterHasBeenSet; }
-    inline void SetAmazonMskCluster(const AmazonMskCluster& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = value; }
-    inline void SetAmazonMskCluster(AmazonMskCluster&& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = std::move(value); }
-    inline KafkaClusterDescription& WithAmazonMskCluster(const AmazonMskCluster& value) { SetAmazonMskCluster(value); return *this;}
-    inline KafkaClusterDescription& WithAmazonMskCluster(AmazonMskCluster&& value) { SetAmazonMskCluster(std::move(value)); return *this;}
+    template<typename AmazonMskClusterT = AmazonMskCluster>
+    void SetAmazonMskCluster(AmazonMskClusterT&& value) { m_amazonMskClusterHasBeenSet = true; m_amazonMskCluster = std::forward<AmazonMskClusterT>(value); }
+    template<typename AmazonMskClusterT = AmazonMskCluster>
+    KafkaClusterDescription& WithAmazonMskCluster(AmazonMskClusterT&& value) { SetAmazonMskCluster(std::forward<AmazonMskClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * <p>The alias of the Kafka cluster. Used to prefix names of replicated
      * topics.</p> 
      */
-    inline const Aws::String& GetKafkaClusterAlias() const{ return m_kafkaClusterAlias; }
+    inline const Aws::String& GetKafkaClusterAlias() const { return m_kafkaClusterAlias; }
     inline bool KafkaClusterAliasHasBeenSet() const { return m_kafkaClusterAliasHasBeenSet; }
-    inline void SetKafkaClusterAlias(const Aws::String& value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias = value; }
-    inline void SetKafkaClusterAlias(Aws::String&& value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias = std::move(value); }
-    inline void SetKafkaClusterAlias(const char* value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias.assign(value); }
-    inline KafkaClusterDescription& WithKafkaClusterAlias(const Aws::String& value) { SetKafkaClusterAlias(value); return *this;}
-    inline KafkaClusterDescription& WithKafkaClusterAlias(Aws::String&& value) { SetKafkaClusterAlias(std::move(value)); return *this;}
-    inline KafkaClusterDescription& WithKafkaClusterAlias(const char* value) { SetKafkaClusterAlias(value); return *this;}
+    template<typename KafkaClusterAliasT = Aws::String>
+    void SetKafkaClusterAlias(KafkaClusterAliasT&& value) { m_kafkaClusterAliasHasBeenSet = true; m_kafkaClusterAlias = std::forward<KafkaClusterAliasT>(value); }
+    template<typename KafkaClusterAliasT = Aws::String>
+    KafkaClusterDescription& WithKafkaClusterAlias(KafkaClusterAliasT&& value) { SetKafkaClusterAlias(std::forward<KafkaClusterAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka
      * cluster.</p>
      */
-    inline const KafkaClusterClientVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const KafkaClusterClientVpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const KafkaClusterClientVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(KafkaClusterClientVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline KafkaClusterDescription& WithVpcConfig(const KafkaClusterClientVpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline KafkaClusterDescription& WithVpcConfig(KafkaClusterClientVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = KafkaClusterClientVpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = KafkaClusterClientVpcConfig>
+    KafkaClusterDescription& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
   private:
 

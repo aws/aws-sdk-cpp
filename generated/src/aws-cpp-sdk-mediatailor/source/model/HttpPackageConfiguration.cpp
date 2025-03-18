@@ -18,16 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-HttpPackageConfiguration::HttpPackageConfiguration() : 
-    m_pathHasBeenSet(false),
-    m_sourceGroupHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 HttpPackageConfiguration::HttpPackageConfiguration(JsonView jsonValue)
-  : HttpPackageConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HttpPackageConfiguration& HttpPackageConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceGroup"))
   {
     m_sourceGroup = jsonValue.GetString("SourceGroup");
-
     m_sourceGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

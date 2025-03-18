@@ -28,7 +28,7 @@ namespace Model
   class CreateWatchlistResult
   {
   public:
-    AWS_VOICEID_API CreateWatchlistResult();
+    AWS_VOICEID_API CreateWatchlistResult() = default;
     AWS_VOICEID_API CreateWatchlistResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API CreateWatchlistResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the newly created watchlist.</p>
      */
-    inline const Watchlist& GetWatchlist() const{ return m_watchlist; }
-    inline void SetWatchlist(const Watchlist& value) { m_watchlist = value; }
-    inline void SetWatchlist(Watchlist&& value) { m_watchlist = std::move(value); }
-    inline CreateWatchlistResult& WithWatchlist(const Watchlist& value) { SetWatchlist(value); return *this;}
-    inline CreateWatchlistResult& WithWatchlist(Watchlist&& value) { SetWatchlist(std::move(value)); return *this;}
+    inline const Watchlist& GetWatchlist() const { return m_watchlist; }
+    template<typename WatchlistT = Watchlist>
+    void SetWatchlist(WatchlistT&& value) { m_watchlistHasBeenSet = true; m_watchlist = std::forward<WatchlistT>(value); }
+    template<typename WatchlistT = Watchlist>
+    CreateWatchlistResult& WithWatchlist(WatchlistT&& value) { SetWatchlist(std::forward<WatchlistT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWatchlistResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWatchlistResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWatchlistResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWatchlistResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Watchlist m_watchlist;
+    bool m_watchlistHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

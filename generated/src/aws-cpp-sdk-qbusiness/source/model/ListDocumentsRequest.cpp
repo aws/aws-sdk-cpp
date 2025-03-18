@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDocumentsRequest::ListDocumentsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDocumentsRequest::SerializePayload() const
 {
   return {};

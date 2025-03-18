@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFieldRequest::DeleteFieldRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_fieldIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFieldRequest::SerializePayload() const
 {
   return {};

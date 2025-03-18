@@ -21,7 +21,7 @@ namespace Model
   class DeleteStreamRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API DeleteStreamRequest();
+    AWS_KINESISVIDEO_API DeleteStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline DeleteStreamRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline DeleteStreamRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline DeleteStreamRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    DeleteStreamRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * not specified, only the <code>CreationTime</code> is checked before deleting the
      * stream.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline DeleteStreamRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline DeleteStreamRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline DeleteStreamRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    DeleteStreamRequest& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
   private:
 

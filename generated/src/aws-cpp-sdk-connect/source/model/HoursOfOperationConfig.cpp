@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperationConfig::HoursOfOperationConfig() : 
-    m_day(HoursOfOperationDays::NOT_SET),
-    m_dayHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 HoursOfOperationConfig::HoursOfOperationConfig(JsonView jsonValue)
-  : HoursOfOperationConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HoursOfOperationConfig& HoursOfOperationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Day"))
   {
     m_day = HoursOfOperationDaysMapper::GetHoursOfOperationDaysForName(jsonValue.GetString("Day"));
-
     m_dayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetObject("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetObject("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

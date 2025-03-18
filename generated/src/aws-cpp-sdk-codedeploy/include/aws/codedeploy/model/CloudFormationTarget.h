@@ -37,7 +37,7 @@ namespace Model
   class CloudFormationTarget
   {
   public:
-    AWS_CODEDEPLOY_API CloudFormationTarget();
+    AWS_CODEDEPLOY_API CloudFormationTarget() = default;
     AWS_CODEDEPLOY_API CloudFormationTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API CloudFormationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The unique ID of an CloudFormation blue/green deployment.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline CloudFormationTarget& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline CloudFormationTarget& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline CloudFormationTarget& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    CloudFormationTarget& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p> The unique ID of a deployment target that has a type
      * of <code>CloudFormationTarget</code>. </p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline CloudFormationTarget& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline CloudFormationTarget& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline CloudFormationTarget& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    CloudFormationTarget& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,12 @@ namespace Model
      * <p> The date and time when the target application was updated by an
      * CloudFormation blue/green deployment. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline CloudFormationTarget& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline CloudFormationTarget& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    CloudFormationTarget& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,14 @@ namespace Model
      * <p> The lifecycle events of the CloudFormation blue/green deployment to this
      * target application. </p>
      */
-    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const { return m_lifecycleEvents; }
     inline bool LifecycleEventsHasBeenSet() const { return m_lifecycleEventsHasBeenSet; }
-    inline void SetLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
-    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::move(value); }
-    inline CloudFormationTarget& WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
-    inline CloudFormationTarget& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(std::move(value)); return *this;}
-    inline CloudFormationTarget& AddLifecycleEvents(const LifecycleEvent& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
-    inline CloudFormationTarget& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    void SetLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::forward<LifecycleEventsT>(value); }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    CloudFormationTarget& WithLifecycleEvents(LifecycleEventsT&& value) { SetLifecycleEvents(std::forward<LifecycleEventsT>(value)); return *this;}
+    template<typename LifecycleEventsT = LifecycleEvent>
+    CloudFormationTarget& AddLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.emplace_back(std::forward<LifecycleEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,26 +101,22 @@ namespace Model
      * <p> The status of an CloudFormation blue/green deployment's target application.
      * </p>
      */
-    inline const TargetStatus& GetStatus() const{ return m_status; }
+    inline TargetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CloudFormationTarget& WithStatus(const TargetStatus& value) { SetStatus(value); return *this;}
-    inline CloudFormationTarget& WithStatus(TargetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CloudFormationTarget& WithStatus(TargetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type for the CloudFormation blue/green deployment.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline CloudFormationTarget& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline CloudFormationTarget& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline CloudFormationTarget& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    CloudFormationTarget& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +124,7 @@ namespace Model
      * <p>The percentage of production traffic that the target version of an
      * CloudFormation blue/green deployment receives.</p>
      */
-    inline double GetTargetVersionWeight() const{ return m_targetVersionWeight; }
+    inline double GetTargetVersionWeight() const { return m_targetVersionWeight; }
     inline bool TargetVersionWeightHasBeenSet() const { return m_targetVersionWeightHasBeenSet; }
     inline void SetTargetVersionWeight(double value) { m_targetVersionWeightHasBeenSet = true; m_targetVersionWeight = value; }
     inline CloudFormationTarget& WithTargetVersionWeight(double value) { SetTargetVersionWeight(value); return *this;}
@@ -145,19 +137,19 @@ namespace Model
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet = false;
 
-    TargetStatus m_status;
+    TargetStatus m_status{TargetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    double m_targetVersionWeight;
+    double m_targetVersionWeight{0.0};
     bool m_targetVersionWeightHasBeenSet = false;
   };
 

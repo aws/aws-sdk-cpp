@@ -21,7 +21,7 @@ namespace Model
   class ModifyIdentityIdFormatRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyIdentityIdFormatRequest();
+    AWS_EC2_API ModifyIdentityIdFormatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,21 +54,19 @@ namespace Model
      * use the <code>all-current</code> option to include all resource types that are
      * currently within their opt-in period for longer IDs.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline ModifyIdentityIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    ModifyIdentityIdFormatRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the resource should use longer IDs (17-character IDs)</p>
      */
-    inline bool GetUseLongIds() const{ return m_useLongIds; }
+    inline bool GetUseLongIds() const { return m_useLongIds; }
     inline bool UseLongIdsHasBeenSet() const { return m_useLongIdsHasBeenSet; }
     inline void SetUseLongIds(bool value) { m_useLongIdsHasBeenSet = true; m_useLongIds = value; }
     inline ModifyIdentityIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
@@ -80,21 +78,19 @@ namespace Model
      * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
      * roles, and the root user of the account.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    ModifyIdentityIdFormatRequest& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    bool m_useLongIds;
+    bool m_useLongIds{false};
     bool m_useLongIdsHasBeenSet = false;
 
     Aws::String m_principalArn;

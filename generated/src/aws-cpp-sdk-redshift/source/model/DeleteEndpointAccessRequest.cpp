@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteEndpointAccessRequest::DeleteEndpointAccessRequest() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

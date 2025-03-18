@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-TokenValidityUnitsType::TokenValidityUnitsType() : 
-    m_accessToken(TimeUnitsType::NOT_SET),
-    m_accessTokenHasBeenSet(false),
-    m_idToken(TimeUnitsType::NOT_SET),
-    m_idTokenHasBeenSet(false),
-    m_refreshToken(TimeUnitsType::NOT_SET),
-    m_refreshTokenHasBeenSet(false)
-{
-}
-
 TokenValidityUnitsType::TokenValidityUnitsType(JsonView jsonValue)
-  : TokenValidityUnitsType()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TokenValidityUnitsType& TokenValidityUnitsType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessToken"))
   {
     m_accessToken = TimeUnitsTypeMapper::GetTimeUnitsTypeForName(jsonValue.GetString("AccessToken"));
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdToken"))
   {
     m_idToken = TimeUnitsTypeMapper::GetTimeUnitsTypeForName(jsonValue.GetString("IdToken"));
-
     m_idTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshToken"))
   {
     m_refreshToken = TimeUnitsTypeMapper::GetTimeUnitsTypeForName(jsonValue.GetString("RefreshToken"));
-
     m_refreshTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

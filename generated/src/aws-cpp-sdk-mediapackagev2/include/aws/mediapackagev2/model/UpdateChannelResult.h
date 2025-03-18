@@ -34,7 +34,7 @@ namespace Model
   class UpdateChannelResult
   {
   public:
-    AWS_MEDIAPACKAGEV2_API UpdateChannelResult();
+    AWS_MEDIAPACKAGEV2_API UpdateChannelResult() = default;
     AWS_MEDIAPACKAGEV2_API UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGEV2_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateChannelResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,13 +56,11 @@ namespace Model
      * the channel, and must be unique for your account in the AWS Region and channel
      * group.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
-    inline void SetChannelName(const Aws::String& value) { m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelName.assign(value); }
-    inline UpdateChannelResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline UpdateChannelResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    UpdateChannelResult& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,59 +69,55 @@ namespace Model
      * for the channel group, and must be unique for your account in the AWS
      * Region.</p>
      */
-    inline const Aws::String& GetChannelGroupName() const{ return m_channelGroupName; }
-    inline void SetChannelGroupName(const Aws::String& value) { m_channelGroupName = value; }
-    inline void SetChannelGroupName(Aws::String&& value) { m_channelGroupName = std::move(value); }
-    inline void SetChannelGroupName(const char* value) { m_channelGroupName.assign(value); }
-    inline UpdateChannelResult& WithChannelGroupName(const Aws::String& value) { SetChannelGroupName(value); return *this;}
-    inline UpdateChannelResult& WithChannelGroupName(Aws::String&& value) { SetChannelGroupName(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithChannelGroupName(const char* value) { SetChannelGroupName(value); return *this;}
+    inline const Aws::String& GetChannelGroupName() const { return m_channelGroupName; }
+    template<typename ChannelGroupNameT = Aws::String>
+    void SetChannelGroupName(ChannelGroupNameT&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::forward<ChannelGroupNameT>(value); }
+    template<typename ChannelGroupNameT = Aws::String>
+    UpdateChannelResult& WithChannelGroupName(ChannelGroupNameT&& value) { SetChannelGroupName(std::forward<ChannelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the channel was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateChannelResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateChannelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateChannelResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the channel was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline UpdateChannelResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline UpdateChannelResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    UpdateChannelResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for your channel.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateChannelResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateChannelResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateChannelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<IngestEndpoint>& GetIngestEndpoints() const{ return m_ingestEndpoints; }
-    inline void SetIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { m_ingestEndpoints = value; }
-    inline void SetIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { m_ingestEndpoints = std::move(value); }
-    inline UpdateChannelResult& WithIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { SetIngestEndpoints(value); return *this;}
-    inline UpdateChannelResult& WithIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { SetIngestEndpoints(std::move(value)); return *this;}
-    inline UpdateChannelResult& AddIngestEndpoints(const IngestEndpoint& value) { m_ingestEndpoints.push_back(value); return *this; }
-    inline UpdateChannelResult& AddIngestEndpoints(IngestEndpoint&& value) { m_ingestEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IngestEndpoint>& GetIngestEndpoints() const { return m_ingestEndpoints; }
+    template<typename IngestEndpointsT = Aws::Vector<IngestEndpoint>>
+    void SetIngestEndpoints(IngestEndpointsT&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = std::forward<IngestEndpointsT>(value); }
+    template<typename IngestEndpointsT = Aws::Vector<IngestEndpoint>>
+    UpdateChannelResult& WithIngestEndpoints(IngestEndpointsT&& value) { SetIngestEndpoints(std::forward<IngestEndpointsT>(value)); return *this;}
+    template<typename IngestEndpointsT = IngestEndpoint>
+    UpdateChannelResult& AddIngestEndpoints(IngestEndpointsT&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.emplace_back(std::forward<IngestEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,11 +130,9 @@ namespace Model
      * DASH-IF CMAF Ingest specification (which defines CMAF segments with optional
      * DASH manifests).</p> </li> </ul>
      */
-    inline const InputType& GetInputType() const{ return m_inputType; }
-    inline void SetInputType(const InputType& value) { m_inputType = value; }
-    inline void SetInputType(InputType&& value) { m_inputType = std::move(value); }
-    inline UpdateChannelResult& WithInputType(const InputType& value) { SetInputType(value); return *this;}
-    inline UpdateChannelResult& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+    inline InputType GetInputType() const { return m_inputType; }
+    inline void SetInputType(InputType value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+    inline UpdateChannelResult& WithInputType(InputType value) { SetInputType(value); return *this;}
     ///@}
 
     ///@{
@@ -150,31 +140,26 @@ namespace Model
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline UpdateChannelResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline UpdateChannelResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    UpdateChannelResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline UpdateChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline UpdateChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateChannelResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    UpdateChannelResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -183,11 +168,11 @@ namespace Model
      * score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid
      * only when <code>InputType</code> is <code>CMAF</code>.</p>
      */
-    inline const InputSwitchConfiguration& GetInputSwitchConfiguration() const{ return m_inputSwitchConfiguration; }
-    inline void SetInputSwitchConfiguration(const InputSwitchConfiguration& value) { m_inputSwitchConfiguration = value; }
-    inline void SetInputSwitchConfiguration(InputSwitchConfiguration&& value) { m_inputSwitchConfiguration = std::move(value); }
-    inline UpdateChannelResult& WithInputSwitchConfiguration(const InputSwitchConfiguration& value) { SetInputSwitchConfiguration(value); return *this;}
-    inline UpdateChannelResult& WithInputSwitchConfiguration(InputSwitchConfiguration&& value) { SetInputSwitchConfiguration(std::move(value)); return *this;}
+    inline const InputSwitchConfiguration& GetInputSwitchConfiguration() const { return m_inputSwitchConfiguration; }
+    template<typename InputSwitchConfigurationT = InputSwitchConfiguration>
+    void SetInputSwitchConfiguration(InputSwitchConfigurationT&& value) { m_inputSwitchConfigurationHasBeenSet = true; m_inputSwitchConfiguration = std::forward<InputSwitchConfigurationT>(value); }
+    template<typename InputSwitchConfigurationT = InputSwitchConfiguration>
+    UpdateChannelResult& WithInputSwitchConfiguration(InputSwitchConfigurationT&& value) { SetInputSwitchConfiguration(std::forward<InputSwitchConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,50 +181,61 @@ namespace Model
      * MediaPackage includes in responses to the CDN. This setting is valid only when
      * <code>InputType</code> is <code>CMAF</code>.</p>
      */
-    inline const OutputHeaderConfiguration& GetOutputHeaderConfiguration() const{ return m_outputHeaderConfiguration; }
-    inline void SetOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { m_outputHeaderConfiguration = value; }
-    inline void SetOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { m_outputHeaderConfiguration = std::move(value); }
-    inline UpdateChannelResult& WithOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { SetOutputHeaderConfiguration(value); return *this;}
-    inline UpdateChannelResult& WithOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { SetOutputHeaderConfiguration(std::move(value)); return *this;}
+    inline const OutputHeaderConfiguration& GetOutputHeaderConfiguration() const { return m_outputHeaderConfiguration; }
+    template<typename OutputHeaderConfigurationT = OutputHeaderConfiguration>
+    void SetOutputHeaderConfiguration(OutputHeaderConfigurationT&& value) { m_outputHeaderConfigurationHasBeenSet = true; m_outputHeaderConfiguration = std::forward<OutputHeaderConfigurationT>(value); }
+    template<typename OutputHeaderConfigurationT = OutputHeaderConfiguration>
+    UpdateChannelResult& WithOutputHeaderConfiguration(OutputHeaderConfigurationT&& value) { SetOutputHeaderConfiguration(std::forward<OutputHeaderConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelName;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_channelGroupName;
+    bool m_channelGroupNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<IngestEndpoint> m_ingestEndpoints;
+    bool m_ingestEndpointsHasBeenSet = false;
 
-    InputType m_inputType;
+    InputType m_inputType{InputType::NOT_SET};
+    bool m_inputTypeHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     InputSwitchConfiguration m_inputSwitchConfiguration;
+    bool m_inputSwitchConfigurationHasBeenSet = false;
 
     OutputHeaderConfiguration m_outputHeaderConfiguration;
+    bool m_outputHeaderConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

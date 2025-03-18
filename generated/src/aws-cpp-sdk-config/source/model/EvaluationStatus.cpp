@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-EvaluationStatus::EvaluationStatus() : 
-    m_status(ResourceEvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 EvaluationStatus::EvaluationStatus(JsonView jsonValue)
-  : EvaluationStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EvaluationStatus& EvaluationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceEvaluationStatusMapper::GetResourceEvaluationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

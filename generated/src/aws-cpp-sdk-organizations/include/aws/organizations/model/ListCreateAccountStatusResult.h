@@ -29,7 +29,7 @@ namespace Model
   class ListCreateAccountStatusResult
   {
   public:
-    AWS_ORGANIZATIONS_API ListCreateAccountStatusResult();
+    AWS_ORGANIZATIONS_API ListCreateAccountStatusResult() = default;
     AWS_ORGANIZATIONS_API ListCreateAccountStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API ListCreateAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * the accountId number, are present in the output only after the account has been
      * successfully created.</p>
      */
-    inline const Aws::Vector<CreateAccountStatus>& GetCreateAccountStatuses() const{ return m_createAccountStatuses; }
-    inline void SetCreateAccountStatuses(const Aws::Vector<CreateAccountStatus>& value) { m_createAccountStatuses = value; }
-    inline void SetCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { m_createAccountStatuses = std::move(value); }
-    inline ListCreateAccountStatusResult& WithCreateAccountStatuses(const Aws::Vector<CreateAccountStatus>& value) { SetCreateAccountStatuses(value); return *this;}
-    inline ListCreateAccountStatusResult& WithCreateAccountStatuses(Aws::Vector<CreateAccountStatus>&& value) { SetCreateAccountStatuses(std::move(value)); return *this;}
-    inline ListCreateAccountStatusResult& AddCreateAccountStatuses(const CreateAccountStatus& value) { m_createAccountStatuses.push_back(value); return *this; }
-    inline ListCreateAccountStatusResult& AddCreateAccountStatuses(CreateAccountStatus&& value) { m_createAccountStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateAccountStatus>& GetCreateAccountStatuses() const { return m_createAccountStatuses; }
+    template<typename CreateAccountStatusesT = Aws::Vector<CreateAccountStatus>>
+    void SetCreateAccountStatuses(CreateAccountStatusesT&& value) { m_createAccountStatusesHasBeenSet = true; m_createAccountStatuses = std::forward<CreateAccountStatusesT>(value); }
+    template<typename CreateAccountStatusesT = Aws::Vector<CreateAccountStatus>>
+    ListCreateAccountStatusResult& WithCreateAccountStatuses(CreateAccountStatusesT&& value) { SetCreateAccountStatuses(std::forward<CreateAccountStatusesT>(value)); return *this;}
+    template<typename CreateAccountStatusesT = CreateAccountStatus>
+    ListCreateAccountStatusResult& AddCreateAccountStatuses(CreateAccountStatusesT&& value) { m_createAccountStatusesHasBeenSet = true; m_createAccountStatuses.emplace_back(std::forward<CreateAccountStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCreateAccountStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCreateAccountStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCreateAccountStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCreateAccountStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCreateAccountStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCreateAccountStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCreateAccountStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCreateAccountStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CreateAccountStatus> m_createAccountStatuses;
+    bool m_createAccountStatusesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

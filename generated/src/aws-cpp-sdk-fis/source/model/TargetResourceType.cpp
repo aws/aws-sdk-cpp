@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-TargetResourceType::TargetResourceType() : 
-    m_resourceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 TargetResourceType::TargetResourceType(JsonView jsonValue)
-  : TargetResourceType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TargetResourceType& TargetResourceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -56,7 +44,6 @@ TargetResourceType& TargetResourceType::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

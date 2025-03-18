@@ -20,15 +20,7 @@ namespace SNS
 namespace Model
 {
 
-SMSSandboxPhoneNumber::SMSSandboxPhoneNumber() : 
-    m_phoneNumberHasBeenSet(false),
-    m_status(SMSSandboxPhoneNumberVerificationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SMSSandboxPhoneNumber::SMSSandboxPhoneNumber(const XmlNode& xmlNode)
-  : SMSSandboxPhoneNumber()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ SMSSandboxPhoneNumber& SMSSandboxPhoneNumber::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = SMSSandboxPhoneNumberVerificationStatusMapper::GetSMSSandboxPhoneNumberVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = SMSSandboxPhoneNumberVerificationStatusMapper::GetSMSSandboxPhoneNumberVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

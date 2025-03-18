@@ -20,25 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformSummary::PlatformSummary() : 
-    m_platformArnHasBeenSet(false),
-    m_platformOwnerHasBeenSet(false),
-    m_platformStatus(PlatformStatus::NOT_SET),
-    m_platformStatusHasBeenSet(false),
-    m_platformCategoryHasBeenSet(false),
-    m_operatingSystemNameHasBeenSet(false),
-    m_operatingSystemVersionHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false),
-    m_platformLifecycleStateHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformBranchNameHasBeenSet(false),
-    m_platformBranchLifecycleStateHasBeenSet(false)
-{
-}
-
 PlatformSummary::PlatformSummary(const XmlNode& xmlNode)
-  : PlatformSummary()
 {
   *this = xmlNode;
 }
@@ -64,7 +46,7 @@ PlatformSummary& PlatformSummary::operator =(const XmlNode& xmlNode)
     XmlNode platformStatusNode = resultNode.FirstChild("PlatformStatus");
     if(!platformStatusNode.IsNull())
     {
-      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformStatusNode.GetText()).c_str()).c_str());
+      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformStatusNode.GetText()).c_str()));
       m_platformStatusHasBeenSet = true;
     }
     XmlNode platformCategoryNode = resultNode.FirstChild("PlatformCategory");
@@ -89,6 +71,7 @@ PlatformSummary& PlatformSummary::operator =(const XmlNode& xmlNode)
     if(!supportedTierListNode.IsNull())
     {
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
+      m_supportedTierListHasBeenSet = !supportedTierListMember.IsNull();
       while(!supportedTierListMember.IsNull())
       {
         m_supportedTierList.push_back(supportedTierListMember.GetText());
@@ -101,6 +84,7 @@ PlatformSummary& PlatformSummary::operator =(const XmlNode& xmlNode)
     if(!supportedAddonListNode.IsNull())
     {
       XmlNode supportedAddonListMember = supportedAddonListNode.FirstChild("member");
+      m_supportedAddonListHasBeenSet = !supportedAddonListMember.IsNull();
       while(!supportedAddonListMember.IsNull())
       {
         m_supportedAddonList.push_back(supportedAddonListMember.GetText());

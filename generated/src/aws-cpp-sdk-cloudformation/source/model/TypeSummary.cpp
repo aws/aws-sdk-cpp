@@ -20,28 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeSummary::TypeSummary() : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_typeArnHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_originalTypeNameHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false),
-    m_latestPublicVersionHasBeenSet(false),
-    m_publisherIdentity(IdentityProvider::NOT_SET),
-    m_publisherIdentityHasBeenSet(false),
-    m_publisherNameHasBeenSet(false),
-    m_isActivated(false),
-    m_isActivatedHasBeenSet(false)
-{
-}
-
 TypeSummary::TypeSummary(const XmlNode& xmlNode)
-  : TypeSummary()
 {
   *this = xmlNode;
 }
@@ -55,7 +34,7 @@ TypeSummary& TypeSummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");
@@ -115,7 +94,7 @@ TypeSummary& TypeSummary::operator =(const XmlNode& xmlNode)
     XmlNode publisherIdentityNode = resultNode.FirstChild("PublisherIdentity");
     if(!publisherIdentityNode.IsNull())
     {
-      m_publisherIdentity = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdentityNode.GetText()).c_str()).c_str());
+      m_publisherIdentity = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdentityNode.GetText()).c_str()));
       m_publisherIdentityHasBeenSet = true;
     }
     XmlNode publisherNameNode = resultNode.FirstChild("PublisherName");

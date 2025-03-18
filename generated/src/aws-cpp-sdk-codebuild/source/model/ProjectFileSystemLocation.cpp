@@ -18,18 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectFileSystemLocation::ProjectFileSystemLocation() : 
-    m_type(FileSystemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
-{
-}
-
 ProjectFileSystemLocation::ProjectFileSystemLocation(JsonView jsonValue)
-  : ProjectFileSystemLocation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ProjectFileSystemLocation& ProjectFileSystemLocation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("type"))
   {
     m_type = FileSystemTypeMapper::GetFileSystemTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountPoint"))
   {
     m_mountPoint = jsonValue.GetString("mountPoint");
-
     m_mountPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountOptions"))
   {
     m_mountOptions = jsonValue.GetString("mountOptions");
-
     m_mountOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

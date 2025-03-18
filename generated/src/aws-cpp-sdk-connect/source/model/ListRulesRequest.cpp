@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRulesRequest::ListRulesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false),
-    m_eventSourceName(EventSourceName::NOT_SET),
-    m_eventSourceNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRulesRequest::SerializePayload() const
 {
   return {};

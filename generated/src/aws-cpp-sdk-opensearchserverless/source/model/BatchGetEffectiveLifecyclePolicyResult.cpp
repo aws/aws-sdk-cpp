@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetEffectiveLifecyclePolicyResult::BatchGetEffectiveLifecyclePolicyResult()
-{
-}
-
 BatchGetEffectiveLifecyclePolicyResult::BatchGetEffectiveLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetEffectiveLifecyclePolicyResult& BatchGetEffectiveLifecyclePolicyResult::
     {
       m_effectiveLifecyclePolicyDetails.push_back(effectiveLifecyclePolicyDetailsJsonList[effectiveLifecyclePolicyDetailsIndex].AsObject());
     }
+    m_effectiveLifecyclePolicyDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveLifecyclePolicyErrorDetails"))
   {
     Aws::Utils::Array<JsonView> effectiveLifecyclePolicyErrorDetailsJsonList = jsonValue.GetArray("effectiveLifecyclePolicyErrorDetails");
@@ -45,14 +41,15 @@ BatchGetEffectiveLifecyclePolicyResult& BatchGetEffectiveLifecyclePolicyResult::
     {
       m_effectiveLifecyclePolicyErrorDetails.push_back(effectiveLifecyclePolicyErrorDetailsJsonList[effectiveLifecyclePolicyErrorDetailsIndex].AsObject());
     }
+    m_effectiveLifecyclePolicyErrorDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

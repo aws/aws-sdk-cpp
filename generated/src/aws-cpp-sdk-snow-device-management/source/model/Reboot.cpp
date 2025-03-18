@@ -18,10 +18,6 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-Reboot::Reboot()
-{
-}
-
 Reboot::Reboot(JsonView jsonValue)
 {
   *this = jsonValue;

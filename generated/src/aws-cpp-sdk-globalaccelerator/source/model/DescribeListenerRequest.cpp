@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeListenerRequest::DescribeListenerRequest() : 
-    m_listenerArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeListenerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class CreateExportJobRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreateExportJobRequest();
+    AWS_PINPOINT_API CreateExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateExportJobRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateExportJobRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateExportJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateExportJobRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExportJobRequest& GetExportJobRequest() const{ return m_exportJobRequest; }
+    inline const ExportJobRequest& GetExportJobRequest() const { return m_exportJobRequest; }
     inline bool ExportJobRequestHasBeenSet() const { return m_exportJobRequestHasBeenSet; }
-    inline void SetExportJobRequest(const ExportJobRequest& value) { m_exportJobRequestHasBeenSet = true; m_exportJobRequest = value; }
-    inline void SetExportJobRequest(ExportJobRequest&& value) { m_exportJobRequestHasBeenSet = true; m_exportJobRequest = std::move(value); }
-    inline CreateExportJobRequest& WithExportJobRequest(const ExportJobRequest& value) { SetExportJobRequest(value); return *this;}
-    inline CreateExportJobRequest& WithExportJobRequest(ExportJobRequest&& value) { SetExportJobRequest(std::move(value)); return *this;}
+    template<typename ExportJobRequestT = ExportJobRequest>
+    void SetExportJobRequest(ExportJobRequestT&& value) { m_exportJobRequestHasBeenSet = true; m_exportJobRequest = std::forward<ExportJobRequestT>(value); }
+    template<typename ExportJobRequestT = ExportJobRequest>
+    CreateExportJobRequest& WithExportJobRequest(ExportJobRequestT&& value) { SetExportJobRequest(std::forward<ExportJobRequestT>(value)); return *this;}
     ///@}
   private:
 

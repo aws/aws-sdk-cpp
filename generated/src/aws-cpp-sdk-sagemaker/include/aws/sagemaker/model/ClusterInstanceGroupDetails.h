@@ -39,7 +39,7 @@ namespace Model
   class ClusterInstanceGroupDetails
   {
   public:
-    AWS_SAGEMAKER_API ClusterInstanceGroupDetails();
+    AWS_SAGEMAKER_API ClusterInstanceGroupDetails() = default;
     AWS_SAGEMAKER_API ClusterInstanceGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterInstanceGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <p>The number of instances that are currently in the instance group of a
      * SageMaker HyperPod cluster.</p>
      */
-    inline int GetCurrentCount() const{ return m_currentCount; }
+    inline int GetCurrentCount() const { return m_currentCount; }
     inline bool CurrentCountHasBeenSet() const { return m_currentCountHasBeenSet; }
     inline void SetCurrentCount(int value) { m_currentCountHasBeenSet = true; m_currentCount = value; }
     inline ClusterInstanceGroupDetails& WithCurrentCount(int value) { SetCurrentCount(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
      * <p>The number of instances you specified to add to the instance group of a
      * SageMaker HyperPod cluster.</p>
      */
-    inline int GetTargetCount() const{ return m_targetCount; }
+    inline int GetTargetCount() const { return m_targetCount; }
     inline bool TargetCountHasBeenSet() const { return m_targetCountHasBeenSet; }
     inline void SetTargetCount(int value) { m_targetCountHasBeenSet = true; m_targetCount = value; }
     inline ClusterInstanceGroupDetails& WithTargetCount(int value) { SetTargetCount(value); return *this;}
@@ -71,52 +71,46 @@ namespace Model
     /**
      * <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
      */
-    inline const Aws::String& GetInstanceGroupName() const{ return m_instanceGroupName; }
+    inline const Aws::String& GetInstanceGroupName() const { return m_instanceGroupName; }
     inline bool InstanceGroupNameHasBeenSet() const { return m_instanceGroupNameHasBeenSet; }
-    inline void SetInstanceGroupName(const Aws::String& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = value; }
-    inline void SetInstanceGroupName(Aws::String&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::move(value); }
-    inline void SetInstanceGroupName(const char* value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName.assign(value); }
-    inline ClusterInstanceGroupDetails& WithInstanceGroupName(const Aws::String& value) { SetInstanceGroupName(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithInstanceGroupName(Aws::String&& value) { SetInstanceGroupName(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& WithInstanceGroupName(const char* value) { SetInstanceGroupName(value); return *this;}
+    template<typename InstanceGroupNameT = Aws::String>
+    void SetInstanceGroupName(InstanceGroupNameT&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::forward<InstanceGroupNameT>(value); }
+    template<typename InstanceGroupNameT = Aws::String>
+    ClusterInstanceGroupDetails& WithInstanceGroupName(InstanceGroupNameT&& value) { SetInstanceGroupName(std::forward<InstanceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
      */
-    inline const ClusterInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ClusterInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ClusterInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ClusterInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithInstanceType(const ClusterInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithInstanceType(ClusterInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ClusterInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ClusterInstanceGroupDetails& WithInstanceType(ClusterInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of LifeCycle configuration for the instance group.</p>
      */
-    inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const{ return m_lifeCycleConfig; }
+    inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const { return m_lifeCycleConfig; }
     inline bool LifeCycleConfigHasBeenSet() const { return m_lifeCycleConfigHasBeenSet; }
-    inline void SetLifeCycleConfig(const ClusterLifeCycleConfig& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = value; }
-    inline void SetLifeCycleConfig(ClusterLifeCycleConfig&& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithLifeCycleConfig(const ClusterLifeCycleConfig& value) { SetLifeCycleConfig(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithLifeCycleConfig(ClusterLifeCycleConfig&& value) { SetLifeCycleConfig(std::move(value)); return *this;}
+    template<typename LifeCycleConfigT = ClusterLifeCycleConfig>
+    void SetLifeCycleConfig(LifeCycleConfigT&& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = std::forward<LifeCycleConfigT>(value); }
+    template<typename LifeCycleConfigT = ClusterLifeCycleConfig>
+    ClusterInstanceGroupDetails& WithLifeCycleConfig(LifeCycleConfigT&& value) { SetLifeCycleConfig(std::forward<LifeCycleConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution role for the instance group to assume.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline ClusterInstanceGroupDetails& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    ClusterInstanceGroupDetails& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,7 +124,7 @@ namespace Model
      * cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
-    inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
+    inline int GetThreadsPerCore() const { return m_threadsPerCore; }
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
     inline ClusterInstanceGroupDetails& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
@@ -141,14 +135,14 @@ namespace Model
      * <p>The additional storage configurations for the instances in the SageMaker
      * HyperPod cluster instance group.</p>
      */
-    inline const Aws::Vector<ClusterInstanceStorageConfig>& GetInstanceStorageConfigs() const{ return m_instanceStorageConfigs; }
+    inline const Aws::Vector<ClusterInstanceStorageConfig>& GetInstanceStorageConfigs() const { return m_instanceStorageConfigs; }
     inline bool InstanceStorageConfigsHasBeenSet() const { return m_instanceStorageConfigsHasBeenSet; }
-    inline void SetInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = value; }
-    inline void SetInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { SetInstanceStorageConfigs(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { SetInstanceStorageConfigs(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& AddInstanceStorageConfigs(const ClusterInstanceStorageConfig& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(value); return *this; }
-    inline ClusterInstanceGroupDetails& AddInstanceStorageConfigs(ClusterInstanceStorageConfig&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(std::move(value)); return *this; }
+    template<typename InstanceStorageConfigsT = Aws::Vector<ClusterInstanceStorageConfig>>
+    void SetInstanceStorageConfigs(InstanceStorageConfigsT&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = std::forward<InstanceStorageConfigsT>(value); }
+    template<typename InstanceStorageConfigsT = Aws::Vector<ClusterInstanceStorageConfig>>
+    ClusterInstanceGroupDetails& WithInstanceStorageConfigs(InstanceStorageConfigsT&& value) { SetInstanceStorageConfigs(std::forward<InstanceStorageConfigsT>(value)); return *this;}
+    template<typename InstanceStorageConfigsT = ClusterInstanceStorageConfig>
+    ClusterInstanceGroupDetails& AddInstanceStorageConfigs(InstanceStorageConfigsT&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.emplace_back(std::forward<InstanceStorageConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,14 +150,13 @@ namespace Model
      * <p>A flag indicating whether deep health checks should be performed when the
      * cluster instance group is created or updated.</p>
      */
-    inline const Aws::Vector<DeepHealthCheckType>& GetOnStartDeepHealthChecks() const{ return m_onStartDeepHealthChecks; }
+    inline const Aws::Vector<DeepHealthCheckType>& GetOnStartDeepHealthChecks() const { return m_onStartDeepHealthChecks; }
     inline bool OnStartDeepHealthChecksHasBeenSet() const { return m_onStartDeepHealthChecksHasBeenSet; }
-    inline void SetOnStartDeepHealthChecks(const Aws::Vector<DeepHealthCheckType>& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks = value; }
-    inline void SetOnStartDeepHealthChecks(Aws::Vector<DeepHealthCheckType>&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithOnStartDeepHealthChecks(const Aws::Vector<DeepHealthCheckType>& value) { SetOnStartDeepHealthChecks(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithOnStartDeepHealthChecks(Aws::Vector<DeepHealthCheckType>&& value) { SetOnStartDeepHealthChecks(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& AddOnStartDeepHealthChecks(const DeepHealthCheckType& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(value); return *this; }
-    inline ClusterInstanceGroupDetails& AddOnStartDeepHealthChecks(DeepHealthCheckType&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(std::move(value)); return *this; }
+    template<typename OnStartDeepHealthChecksT = Aws::Vector<DeepHealthCheckType>>
+    void SetOnStartDeepHealthChecks(OnStartDeepHealthChecksT&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks = std::forward<OnStartDeepHealthChecksT>(value); }
+    template<typename OnStartDeepHealthChecksT = Aws::Vector<DeepHealthCheckType>>
+    ClusterInstanceGroupDetails& WithOnStartDeepHealthChecks(OnStartDeepHealthChecksT&& value) { SetOnStartDeepHealthChecks(std::forward<OnStartDeepHealthChecksT>(value)); return *this;}
+    inline ClusterInstanceGroupDetails& AddOnStartDeepHealthChecks(DeepHealthCheckType value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -178,12 +171,10 @@ namespace Model
      * longer healthy.</p> </li> <li> <p> <code>Deleting</code>: The instance group is
      * being deleted.</p> </li> </ul>
      */
-    inline const InstanceGroupStatus& GetStatus() const{ return m_status; }
+    inline InstanceGroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InstanceGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InstanceGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithStatus(const InstanceGroupStatus& value) { SetStatus(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithStatus(InstanceGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InstanceGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ClusterInstanceGroupDetails& WithStatus(InstanceGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -195,14 +186,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
      * </code>.</p>
      */
-    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
+    inline const Aws::String& GetTrainingPlanArn() const { return m_trainingPlanArn; }
     inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
-    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = value; }
-    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::move(value); }
-    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn.assign(value); }
-    inline ClusterInstanceGroupDetails& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    template<typename TrainingPlanArnT = Aws::String>
+    void SetTrainingPlanArn(TrainingPlanArnT&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::forward<TrainingPlanArnT>(value); }
+    template<typename TrainingPlanArnT = Aws::String>
+    ClusterInstanceGroupDetails& WithTrainingPlanArn(TrainingPlanArnT&& value) { SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,14 +199,12 @@ namespace Model
      * <p>The current status of the training plan associated with this cluster instance
      * group.</p>
      */
-    inline const Aws::String& GetTrainingPlanStatus() const{ return m_trainingPlanStatus; }
+    inline const Aws::String& GetTrainingPlanStatus() const { return m_trainingPlanStatus; }
     inline bool TrainingPlanStatusHasBeenSet() const { return m_trainingPlanStatusHasBeenSet; }
-    inline void SetTrainingPlanStatus(const Aws::String& value) { m_trainingPlanStatusHasBeenSet = true; m_trainingPlanStatus = value; }
-    inline void SetTrainingPlanStatus(Aws::String&& value) { m_trainingPlanStatusHasBeenSet = true; m_trainingPlanStatus = std::move(value); }
-    inline void SetTrainingPlanStatus(const char* value) { m_trainingPlanStatusHasBeenSet = true; m_trainingPlanStatus.assign(value); }
-    inline ClusterInstanceGroupDetails& WithTrainingPlanStatus(const Aws::String& value) { SetTrainingPlanStatus(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithTrainingPlanStatus(Aws::String&& value) { SetTrainingPlanStatus(std::move(value)); return *this;}
-    inline ClusterInstanceGroupDetails& WithTrainingPlanStatus(const char* value) { SetTrainingPlanStatus(value); return *this;}
+    template<typename TrainingPlanStatusT = Aws::String>
+    void SetTrainingPlanStatus(TrainingPlanStatusT&& value) { m_trainingPlanStatusHasBeenSet = true; m_trainingPlanStatus = std::forward<TrainingPlanStatusT>(value); }
+    template<typename TrainingPlanStatusT = Aws::String>
+    ClusterInstanceGroupDetails& WithTrainingPlanStatus(TrainingPlanStatusT&& value) { SetTrainingPlanStatus(std::forward<TrainingPlanStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -226,25 +213,25 @@ namespace Model
      * overrides the default Amazon VPC configuration of the SageMaker HyperPod
      * cluster.</p>
      */
-    inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
+    inline const VpcConfig& GetOverrideVpcConfig() const { return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
-    inline void SetOverrideVpcConfig(const VpcConfig& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = value; }
-    inline void SetOverrideVpcConfig(VpcConfig&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::move(value); }
-    inline ClusterInstanceGroupDetails& WithOverrideVpcConfig(const VpcConfig& value) { SetOverrideVpcConfig(value); return *this;}
-    inline ClusterInstanceGroupDetails& WithOverrideVpcConfig(VpcConfig&& value) { SetOverrideVpcConfig(std::move(value)); return *this;}
+    template<typename OverrideVpcConfigT = VpcConfig>
+    void SetOverrideVpcConfig(OverrideVpcConfigT&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::forward<OverrideVpcConfigT>(value); }
+    template<typename OverrideVpcConfigT = VpcConfig>
+    ClusterInstanceGroupDetails& WithOverrideVpcConfig(OverrideVpcConfigT&& value) { SetOverrideVpcConfig(std::forward<OverrideVpcConfigT>(value)); return *this;}
     ///@}
   private:
 
-    int m_currentCount;
+    int m_currentCount{0};
     bool m_currentCountHasBeenSet = false;
 
-    int m_targetCount;
+    int m_targetCount{0};
     bool m_targetCountHasBeenSet = false;
 
     Aws::String m_instanceGroupName;
     bool m_instanceGroupNameHasBeenSet = false;
 
-    ClusterInstanceType m_instanceType;
+    ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     ClusterLifeCycleConfig m_lifeCycleConfig;
@@ -253,7 +240,7 @@ namespace Model
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;
 
-    int m_threadsPerCore;
+    int m_threadsPerCore{0};
     bool m_threadsPerCoreHasBeenSet = false;
 
     Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
@@ -262,7 +249,7 @@ namespace Model
     Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
     bool m_onStartDeepHealthChecksHasBeenSet = false;
 
-    InstanceGroupStatus m_status;
+    InstanceGroupStatus m_status{InstanceGroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_trainingPlanArn;

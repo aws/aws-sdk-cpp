@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketServerSideEncryptionByDefault::AwsS3BucketServerSideEncryptionByDefault() : 
-    m_sSEAlgorithmHasBeenSet(false),
-    m_kMSMasterKeyIDHasBeenSet(false)
-{
-}
-
 AwsS3BucketServerSideEncryptionByDefault::AwsS3BucketServerSideEncryptionByDefault(JsonView jsonValue)
-  : AwsS3BucketServerSideEncryptionByDefault()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsS3BucketServerSideEncryptionByDefault& AwsS3BucketServerSideEncryptionByDefau
   if(jsonValue.ValueExists("SSEAlgorithm"))
   {
     m_sSEAlgorithm = jsonValue.GetString("SSEAlgorithm");
-
     m_sSEAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSMasterKeyID"))
   {
     m_kMSMasterKeyID = jsonValue.GetString("KMSMasterKeyID");
-
     m_kMSMasterKeyIDHasBeenSet = true;
   }
-
   return *this;
 }
 

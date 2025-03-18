@@ -31,7 +31,7 @@ namespace Model
   class BudgetActionToRemove
   {
   public:
-    AWS_DEADLINE_API BudgetActionToRemove();
+    AWS_DEADLINE_API BudgetActionToRemove() = default;
     AWS_DEADLINE_API BudgetActionToRemove(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API BudgetActionToRemove& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * <p>The type of budget action to remove.</p>
      */
-    inline const BudgetActionType& GetType() const{ return m_type; }
+    inline BudgetActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const BudgetActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(BudgetActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BudgetActionToRemove& WithType(const BudgetActionType& value) { SetType(value); return *this;}
-    inline BudgetActionToRemove& WithType(BudgetActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(BudgetActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BudgetActionToRemove& WithType(BudgetActionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage threshold for the budget action to remove.</p>
      */
-    inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
+    inline double GetThresholdPercentage() const { return m_thresholdPercentage; }
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
     inline BudgetActionToRemove& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
     ///@}
   private:
 
-    BudgetActionType m_type;
+    BudgetActionType m_type{BudgetActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_thresholdPercentage;
+    double m_thresholdPercentage{0.0};
     bool m_thresholdPercentageHasBeenSet = false;
   };
 

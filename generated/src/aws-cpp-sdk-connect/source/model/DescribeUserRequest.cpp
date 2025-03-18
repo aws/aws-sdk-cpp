@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserRequest::DescribeUserRequest() : 
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserRequest::SerializePayload() const
 {
   return {};

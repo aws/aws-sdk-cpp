@@ -18,14 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-InternetHealth::InternetHealth() : 
-    m_availabilityHasBeenSet(false),
-    m_performanceHasBeenSet(false)
-{
-}
-
 InternetHealth::InternetHealth(JsonView jsonValue)
-  : InternetHealth()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternetHealth& InternetHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Availability"))
   {
     m_availability = jsonValue.GetObject("Availability");
-
     m_availabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Performance"))
   {
     m_performance = jsonValue.GetObject("Performance");
-
     m_performanceHasBeenSet = true;
   }
-
   return *this;
 }
 

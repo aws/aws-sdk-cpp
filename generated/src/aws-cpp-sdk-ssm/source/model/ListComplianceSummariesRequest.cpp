@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListComplianceSummariesRequest::ListComplianceSummariesRequest() : 
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListComplianceSummariesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class DataIntegrationFlowDatasetOptions
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetOptions();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetOptions() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The dataset data load type in dataset options.</p>
      */
-    inline const DataIntegrationFlowLoadType& GetLoadType() const{ return m_loadType; }
+    inline DataIntegrationFlowLoadType GetLoadType() const { return m_loadType; }
     inline bool LoadTypeHasBeenSet() const { return m_loadTypeHasBeenSet; }
-    inline void SetLoadType(const DataIntegrationFlowLoadType& value) { m_loadTypeHasBeenSet = true; m_loadType = value; }
-    inline void SetLoadType(DataIntegrationFlowLoadType&& value) { m_loadTypeHasBeenSet = true; m_loadType = std::move(value); }
-    inline DataIntegrationFlowDatasetOptions& WithLoadType(const DataIntegrationFlowLoadType& value) { SetLoadType(value); return *this;}
-    inline DataIntegrationFlowDatasetOptions& WithLoadType(DataIntegrationFlowLoadType&& value) { SetLoadType(std::move(value)); return *this;}
+    inline void SetLoadType(DataIntegrationFlowLoadType value) { m_loadTypeHasBeenSet = true; m_loadType = value; }
+    inline DataIntegrationFlowDatasetOptions& WithLoadType(DataIntegrationFlowLoadType value) { SetLoadType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset load option to remove duplicates.</p>
      */
-    inline bool GetDedupeRecords() const{ return m_dedupeRecords; }
+    inline bool GetDedupeRecords() const { return m_dedupeRecords; }
     inline bool DedupeRecordsHasBeenSet() const { return m_dedupeRecordsHasBeenSet; }
     inline void SetDedupeRecords(bool value) { m_dedupeRecordsHasBeenSet = true; m_dedupeRecords = value; }
     inline DataIntegrationFlowDatasetOptions& WithDedupeRecords(bool value) { SetDedupeRecords(value); return *this;}
     ///@}
   private:
 
-    DataIntegrationFlowLoadType m_loadType;
+    DataIntegrationFlowLoadType m_loadType{DataIntegrationFlowLoadType::NOT_SET};
     bool m_loadTypeHasBeenSet = false;
 
-    bool m_dedupeRecords;
+    bool m_dedupeRecords{false};
     bool m_dedupeRecordsHasBeenSet = false;
   };
 

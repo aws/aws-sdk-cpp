@@ -31,7 +31,7 @@ namespace Model
   class StartMedicalTranscriptionJobRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API StartMedicalTranscriptionJobRequest();
+    AWS_TRANSCRIBESERVICE_API StartMedicalTranscriptionJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
      */
-    inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
+    inline const Aws::String& GetMedicalTranscriptionJobName() const { return m_medicalTranscriptionJobName; }
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
-    inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
-    inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
-    inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
-    inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
+    template<typename MedicalTranscriptionJobNameT = Aws::String>
+    void SetMedicalTranscriptionJobName(MedicalTranscriptionJobNameT&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::forward<MedicalTranscriptionJobNameT>(value); }
+    template<typename MedicalTranscriptionJobNameT = Aws::String>
+    StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(MedicalTranscriptionJobNameT&& value) { SetMedicalTranscriptionJobName(std::forward<MedicalTranscriptionJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * transcription jobs. Any other value you enter for language code results in a
      * <code>BadRequestException</code> error.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartMedicalTranscriptionJobRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +85,7 @@ namespace Model
      * cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon
      * Transcribe Medical determine the sample rate.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartMedicalTranscriptionJobRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -99,22 +95,20 @@ namespace Model
     /**
      * <p>Specify the format of your input media file.</p>
      */
-    inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+    inline MediaFormat GetMediaFormat() const { return m_mediaFormat; }
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
-    inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
-    inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
+    inline void SetMediaFormat(MediaFormat value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
+    inline StartMedicalTranscriptionJobRequest& WithMediaFormat(MediaFormat value) { SetMediaFormat(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Media& GetMedia() const{ return m_media; }
+    inline const Media& GetMedia() const { return m_media; }
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
-    inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
-    inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithMedia(const Media& value) { SetMedia(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
+    template<typename MediaT = Media>
+    void SetMedia(MediaT&& value) { m_mediaHasBeenSet = true; m_media = std::forward<MediaT>(value); }
+    template<typename MediaT = Media>
+    StartMedicalTranscriptionJobRequest& WithMedia(MediaT&& value) { SetMedia(std::forward<MediaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +131,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p>
      */
-    inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
+    inline const Aws::String& GetOutputBucketName() const { return m_outputBucketName; }
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
-    inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
-    inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
-    inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
-    inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
+    template<typename OutputBucketNameT = Aws::String>
+    void SetOutputBucketName(OutputBucketNameT&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::forward<OutputBucketNameT>(value); }
+    template<typename OutputBucketNameT = Aws::String>
+    StartMedicalTranscriptionJobRequest& WithOutputBucketName(OutputBucketNameT&& value) { SetOutputBucketName(std::forward<OutputBucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,14 +167,12 @@ namespace Model
      * </li> </ul> <p>If you specify the name of an Amazon S3 bucket sub-folder that
      * doesn't exist, one is created for you.</p>
      */
-    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+    inline const Aws::String& GetOutputKey() const { return m_outputKey; }
     inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
-    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
-    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
-    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
-    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+    template<typename OutputKeyT = Aws::String>
+    void SetOutputKey(OutputKeyT&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::forward<OutputKeyT>(value); }
+    template<typename OutputKeyT = Aws::String>
+    StartMedicalTranscriptionJobRequest& WithOutputKey(OutputKeyT&& value) { SetOutputKey(std::forward<OutputKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,14 +199,12 @@ namespace Model
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
-    inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
+    inline const Aws::String& GetOutputEncryptionKMSKeyId() const { return m_outputEncryptionKMSKeyId; }
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
-    inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
-    inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
-    inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
-    inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    void SetOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::forward<OutputEncryptionKMSKeyIdT>(value); }
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { SetOutputEncryptionKMSKeyId(std::forward<OutputEncryptionKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,19 +217,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
      * keys in KMS</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const{ return m_kMSEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const { return m_kMSEncryptionContext; }
     inline bool KMSEncryptionContextHasBeenSet() const { return m_kMSEncryptionContextHasBeenSet; }
-    inline void SetKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = value; }
-    inline void SetKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetKMSEncryptionContext(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetKMSEncryptionContext(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
+    template<typename KMSEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetKMSEncryptionContext(KMSEncryptionContextT&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::forward<KMSEncryptionContextT>(value); }
+    template<typename KMSEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    StartMedicalTranscriptionJobRequest& WithKMSEncryptionContext(KMSEncryptionContextT&& value) { SetKMSEncryptionContext(std::forward<KMSEncryptionContextT>(value)); return *this;}
+    template<typename KMSEncryptionContextKeyT = Aws::String, typename KMSEncryptionContextValueT = Aws::String>
+    StartMedicalTranscriptionJobRequest& AddKMSEncryptionContext(KMSEncryptionContextKeyT&& key, KMSEncryptionContextValueT&& value) {
+      m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::forward<KMSEncryptionContextKeyT>(key), std::forward<KMSEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -250,12 +235,12 @@ namespace Model
      * identification, alternative transcriptions, and speaker partitioning. You can
      * use that to apply custom vocabularies to your transcription job.</p>
      */
-    inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
+    inline const MedicalTranscriptionSetting& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const MedicalTranscriptionSetting& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(MedicalTranscriptionSetting&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithSettings(const MedicalTranscriptionSetting& value) { SetSettings(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithSettings(MedicalTranscriptionSetting&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = MedicalTranscriptionSetting>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = MedicalTranscriptionSetting>
+    StartMedicalTranscriptionJobRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,12 +250,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
      * personal health information (PHI) in a transcription</a>.</p>
      */
-    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline MedicalContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(MedicalContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline StartMedicalTranscriptionJobRequest& WithContentIdentificationType(MedicalContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -279,12 +262,10 @@ namespace Model
      * batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you
      * require additional specialties, refer to .</p>
      */
-    inline const Specialty& GetSpecialty() const{ return m_specialty; }
+    inline Specialty GetSpecialty() const { return m_specialty; }
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
-    inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
-    inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
+    inline void SetSpecialty(Specialty value) { m_specialtyHasBeenSet = true; m_specialty = value; }
+    inline StartMedicalTranscriptionJobRequest& WithSpecialty(Specialty value) { SetSpecialty(value); return *this;}
     ///@}
 
     ///@{
@@ -296,12 +277,10 @@ namespace Model
      * <code>CONVERSATION</code> could be used for transcribing the doctor-patient
      * dialogue during the patient's office visit.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithType(const Type& value) { SetType(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StartMedicalTranscriptionJobRequest& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -312,27 +291,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartMedicalTranscriptionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartMedicalTranscriptionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartMedicalTranscriptionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartMedicalTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartMedicalTranscriptionJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartMedicalTranscriptionJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_medicalTranscriptionJobName;
     bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaFormat m_mediaFormat;
+    MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
     bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
@@ -353,13 +332,13 @@ namespace Model
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet = false;
 
-    MedicalContentIdentificationType m_contentIdentificationType;
+    MedicalContentIdentificationType m_contentIdentificationType{MedicalContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    Specialty m_specialty;
+    Specialty m_specialty{Specialty::NOT_SET};
     bool m_specialtyHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

@@ -21,7 +21,7 @@ namespace Model
   class GetTrackRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetTrackRequest();
+    AWS_REDSHIFTSERVERLESS_API GetTrackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the track of which its version is fetched.</p>
      */
-    inline const Aws::String& GetTrackName() const{ return m_trackName; }
+    inline const Aws::String& GetTrackName() const { return m_trackName; }
     inline bool TrackNameHasBeenSet() const { return m_trackNameHasBeenSet; }
-    inline void SetTrackName(const Aws::String& value) { m_trackNameHasBeenSet = true; m_trackName = value; }
-    inline void SetTrackName(Aws::String&& value) { m_trackNameHasBeenSet = true; m_trackName = std::move(value); }
-    inline void SetTrackName(const char* value) { m_trackNameHasBeenSet = true; m_trackName.assign(value); }
-    inline GetTrackRequest& WithTrackName(const Aws::String& value) { SetTrackName(value); return *this;}
-    inline GetTrackRequest& WithTrackName(Aws::String&& value) { SetTrackName(std::move(value)); return *this;}
-    inline GetTrackRequest& WithTrackName(const char* value) { SetTrackName(value); return *this;}
+    template<typename TrackNameT = Aws::String>
+    void SetTrackName(TrackNameT&& value) { m_trackNameHasBeenSet = true; m_trackName = std::forward<TrackNameT>(value); }
+    template<typename TrackNameT = Aws::String>
+    GetTrackRequest& WithTrackName(TrackNameT&& value) { SetTrackName(std::forward<TrackNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class SearchGameSessionsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API SearchGameSessionsRequest();
+    AWS_GAMELIFT_API SearchGameSessionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline SearchGameSessionsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline SearchGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    SearchGameSessionsRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-    inline SearchGameSessionsRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline SearchGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    SearchGameSessionsRequest& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * Region or a remote location. Use the Amazon Web Services Region code format,
      * such as <code>us-west-2</code>. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline SearchGameSessionsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline SearchGameSessionsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    SearchGameSessionsRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,12 @@ namespace Model
      * an open player slot: <code>"maximumSessions&gt;=10 AND
      * hasAvailablePlayerSessions=true"</code>. </p>
      */
-    inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+    inline const Aws::String& GetFilterExpression() const { return m_filterExpression; }
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
-    inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
-    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
-    inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
-    inline SearchGameSessionsRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
-    inline SearchGameSessionsRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+    template<typename FilterExpressionT = Aws::String>
+    void SetFilterExpression(FilterExpressionT&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::forward<FilterExpressionT>(value); }
+    template<typename FilterExpressionT = Aws::String>
+    SearchGameSessionsRequest& WithFilterExpression(FilterExpressionT&& value) { SetFilterExpression(std::forward<FilterExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +131,12 @@ namespace Model
      * <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null
      * value for the sort operand are returned at the end of the list.</p>
      */
-    inline const Aws::String& GetSortExpression() const{ return m_sortExpression; }
+    inline const Aws::String& GetSortExpression() const { return m_sortExpression; }
     inline bool SortExpressionHasBeenSet() const { return m_sortExpressionHasBeenSet; }
-    inline void SetSortExpression(const Aws::String& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = value; }
-    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::move(value); }
-    inline void SetSortExpression(const char* value) { m_sortExpressionHasBeenSet = true; m_sortExpression.assign(value); }
-    inline SearchGameSessionsRequest& WithSortExpression(const Aws::String& value) { SetSortExpression(value); return *this;}
-    inline SearchGameSessionsRequest& WithSortExpression(Aws::String&& value) { SetSortExpression(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithSortExpression(const char* value) { SetSortExpression(value); return *this;}
+    template<typename SortExpressionT = Aws::String>
+    void SetSortExpression(SortExpressionT&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::forward<SortExpressionT>(value); }
+    template<typename SortExpressionT = Aws::String>
+    SearchGameSessionsRequest& WithSortExpression(SortExpressionT&& value) { SetSortExpression(std::forward<SortExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +146,7 @@ namespace Model
      * number of results returned is 20, even if this value is not set or is set higher
      * than 20. </p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline SearchGameSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -168,14 +158,12 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchGameSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchGameSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchGameSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -194,7 +182,7 @@ namespace Model
     Aws::String m_sortExpression;
     bool m_sortExpressionHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

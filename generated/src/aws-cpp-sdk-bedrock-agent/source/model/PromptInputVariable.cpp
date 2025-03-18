@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptInputVariable::PromptInputVariable() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 PromptInputVariable::PromptInputVariable(JsonView jsonValue)
-  : PromptInputVariable()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptInputVariable& PromptInputVariable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

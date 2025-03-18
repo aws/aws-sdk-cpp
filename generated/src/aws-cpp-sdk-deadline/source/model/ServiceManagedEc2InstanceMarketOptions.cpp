@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ServiceManagedEc2InstanceMarketOptions::ServiceManagedEc2InstanceMarketOptions() : 
-    m_type(Ec2MarketType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ServiceManagedEc2InstanceMarketOptions::ServiceManagedEc2InstanceMarketOptions(JsonView jsonValue)
-  : ServiceManagedEc2InstanceMarketOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServiceManagedEc2InstanceMarketOptions& ServiceManagedEc2InstanceMarketOptions::
   if(jsonValue.ValueExists("type"))
   {
     m_type = Ec2MarketTypeMapper::GetEc2MarketTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

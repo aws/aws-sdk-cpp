@@ -35,7 +35,7 @@ namespace Model
   class FieldToProtect
   {
   public:
-    AWS_WAFV2_API FieldToProtect();
+    AWS_WAFV2_API FieldToProtect() = default;
     AWS_WAFV2_API FieldToProtect(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API FieldToProtect& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>Specifies the web request component type to protect. </p>
      */
-    inline const FieldToProtectType& GetFieldType() const{ return m_fieldType; }
+    inline FieldToProtectType GetFieldType() const { return m_fieldType; }
     inline bool FieldTypeHasBeenSet() const { return m_fieldTypeHasBeenSet; }
-    inline void SetFieldType(const FieldToProtectType& value) { m_fieldTypeHasBeenSet = true; m_fieldType = value; }
-    inline void SetFieldType(FieldToProtectType&& value) { m_fieldTypeHasBeenSet = true; m_fieldType = std::move(value); }
-    inline FieldToProtect& WithFieldType(const FieldToProtectType& value) { SetFieldType(value); return *this;}
-    inline FieldToProtect& WithFieldType(FieldToProtectType&& value) { SetFieldType(std::move(value)); return *this;}
+    inline void SetFieldType(FieldToProtectType value) { m_fieldTypeHasBeenSet = true; m_fieldType = value; }
+    inline FieldToProtect& WithFieldType(FieldToProtectType value) { SetFieldType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,18 @@ namespace Model
      * <p>Specifies the keys to protect for the specified field type. If you don't
      * specify any key, then all keys for the field type are protected. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFieldKeys() const{ return m_fieldKeys; }
+    inline const Aws::Vector<Aws::String>& GetFieldKeys() const { return m_fieldKeys; }
     inline bool FieldKeysHasBeenSet() const { return m_fieldKeysHasBeenSet; }
-    inline void SetFieldKeys(const Aws::Vector<Aws::String>& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys = value; }
-    inline void SetFieldKeys(Aws::Vector<Aws::String>&& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys = std::move(value); }
-    inline FieldToProtect& WithFieldKeys(const Aws::Vector<Aws::String>& value) { SetFieldKeys(value); return *this;}
-    inline FieldToProtect& WithFieldKeys(Aws::Vector<Aws::String>&& value) { SetFieldKeys(std::move(value)); return *this;}
-    inline FieldToProtect& AddFieldKeys(const Aws::String& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys.push_back(value); return *this; }
-    inline FieldToProtect& AddFieldKeys(Aws::String&& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys.push_back(std::move(value)); return *this; }
-    inline FieldToProtect& AddFieldKeys(const char* value) { m_fieldKeysHasBeenSet = true; m_fieldKeys.push_back(value); return *this; }
+    template<typename FieldKeysT = Aws::Vector<Aws::String>>
+    void SetFieldKeys(FieldKeysT&& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys = std::forward<FieldKeysT>(value); }
+    template<typename FieldKeysT = Aws::Vector<Aws::String>>
+    FieldToProtect& WithFieldKeys(FieldKeysT&& value) { SetFieldKeys(std::forward<FieldKeysT>(value)); return *this;}
+    template<typename FieldKeysT = Aws::String>
+    FieldToProtect& AddFieldKeys(FieldKeysT&& value) { m_fieldKeysHasBeenSet = true; m_fieldKeys.emplace_back(std::forward<FieldKeysT>(value)); return *this; }
     ///@}
   private:
 
-    FieldToProtectType m_fieldType;
+    FieldToProtectType m_fieldType{FieldToProtectType::NOT_SET};
     bool m_fieldTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fieldKeys;

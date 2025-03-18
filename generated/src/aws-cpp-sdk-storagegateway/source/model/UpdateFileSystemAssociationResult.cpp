@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFileSystemAssociationResult::UpdateFileSystemAssociationResult()
-{
-}
-
 UpdateFileSystemAssociationResult::UpdateFileSystemAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateFileSystemAssociationResult& UpdateFileSystemAssociationResult::operator =
   if(jsonValue.ValueExists("FileSystemAssociationARN"))
   {
     m_fileSystemAssociationARN = jsonValue.GetString("FileSystemAssociationARN");
-
+    m_fileSystemAssociationARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

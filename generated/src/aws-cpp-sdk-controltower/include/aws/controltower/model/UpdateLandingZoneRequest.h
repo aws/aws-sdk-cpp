@@ -22,7 +22,7 @@ namespace Model
   class UpdateLandingZoneRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API UpdateLandingZoneRequest();
+    AWS_CONTROLTOWER_API UpdateLandingZoneRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The unique identifier of the landing zone.</p>
      */
-    inline const Aws::String& GetLandingZoneIdentifier() const{ return m_landingZoneIdentifier; }
+    inline const Aws::String& GetLandingZoneIdentifier() const { return m_landingZoneIdentifier; }
     inline bool LandingZoneIdentifierHasBeenSet() const { return m_landingZoneIdentifierHasBeenSet; }
-    inline void SetLandingZoneIdentifier(const Aws::String& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = value; }
-    inline void SetLandingZoneIdentifier(Aws::String&& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = std::move(value); }
-    inline void SetLandingZoneIdentifier(const char* value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier.assign(value); }
-    inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(const Aws::String& value) { SetLandingZoneIdentifier(value); return *this;}
-    inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(Aws::String&& value) { SetLandingZoneIdentifier(std::move(value)); return *this;}
-    inline UpdateLandingZoneRequest& WithLandingZoneIdentifier(const char* value) { SetLandingZoneIdentifier(value); return *this;}
+    template<typename LandingZoneIdentifierT = Aws::String>
+    void SetLandingZoneIdentifier(LandingZoneIdentifierT&& value) { m_landingZoneIdentifierHasBeenSet = true; m_landingZoneIdentifier = std::forward<LandingZoneIdentifierT>(value); }
+    template<typename LandingZoneIdentifierT = Aws::String>
+    UpdateLandingZoneRequest& WithLandingZoneIdentifier(LandingZoneIdentifierT&& value) { SetLandingZoneIdentifier(std::forward<LandingZoneIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,24 @@ namespace Model
      * parameters. The schema for the landing zone's JSON manifest file is not
      * published, by design.</p>
      */
-    inline Aws::Utils::DocumentView GetManifest() const{ return m_manifest; }
+    inline Aws::Utils::DocumentView GetManifest() const { return m_manifest; }
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-    inline void SetManifest(const Aws::Utils::Document& value) { m_manifestHasBeenSet = true; m_manifest = value; }
-    inline void SetManifest(Aws::Utils::Document&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
-    inline UpdateLandingZoneRequest& WithManifest(const Aws::Utils::Document& value) { SetManifest(value); return *this;}
-    inline UpdateLandingZoneRequest& WithManifest(Aws::Utils::Document&& value) { SetManifest(std::move(value)); return *this;}
+    template<typename ManifestT = Aws::Utils::Document>
+    void SetManifest(ManifestT&& value) { m_manifestHasBeenSet = true; m_manifest = std::forward<ManifestT>(value); }
+    template<typename ManifestT = Aws::Utils::Document>
+    UpdateLandingZoneRequest& WithManifest(ManifestT&& value) { SetManifest(std::forward<ManifestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The landing zone version, for example, 3.2.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline UpdateLandingZoneRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline UpdateLandingZoneRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline UpdateLandingZoneRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    UpdateLandingZoneRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

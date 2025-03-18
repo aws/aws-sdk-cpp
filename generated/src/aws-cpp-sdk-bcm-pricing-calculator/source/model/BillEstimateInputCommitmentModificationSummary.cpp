@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BillEstimateInputCommitmentModificationSummary::BillEstimateInputCommitmentModificationSummary() : 
-    m_idHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_commitmentActionHasBeenSet(false)
-{
-}
-
 BillEstimateInputCommitmentModificationSummary::BillEstimateInputCommitmentModificationSummary(JsonView jsonValue)
-  : BillEstimateInputCommitmentModificationSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BillEstimateInputCommitmentModificationSummary& BillEstimateInputCommitmentModif
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentAction"))
   {
     m_commitmentAction = jsonValue.GetObject("commitmentAction");
-
     m_commitmentActionHasBeenSet = true;
   }
-
   return *this;
 }
 

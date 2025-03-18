@@ -12,30 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() : 
-    m_medicalTranscriptionJobNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaFormat(MediaFormat::NOT_SET),
-    m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_outputBucketNameHasBeenSet(false),
-    m_outputKeyHasBeenSet(false),
-    m_outputEncryptionKMSKeyIdHasBeenSet(false),
-    m_kMSEncryptionContextHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_specialty(Specialty::NOT_SET),
-    m_specialtyHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
 {
   JsonValue payload;

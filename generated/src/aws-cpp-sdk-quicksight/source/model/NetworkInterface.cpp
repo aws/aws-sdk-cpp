@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_status(NetworkInterfaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NetworkInterfaceStatusMapper::GetNetworkInterfaceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

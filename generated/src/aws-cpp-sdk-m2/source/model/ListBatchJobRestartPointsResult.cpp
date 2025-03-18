@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBatchJobRestartPointsResult::ListBatchJobRestartPointsResult()
-{
-}
-
 ListBatchJobRestartPointsResult::ListBatchJobRestartPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListBatchJobRestartPointsResult& ListBatchJobRestartPointsResult::operator =(con
     {
       m_batchJobSteps.push_back(batchJobStepsJsonList[batchJobStepsIndex].AsObject());
     }
+    m_batchJobStepsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

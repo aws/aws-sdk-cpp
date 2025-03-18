@@ -39,7 +39,7 @@ namespace Model
   class FilterRule
   {
   public:
-    AWS_S3CRT_API FilterRule();
+    AWS_S3CRT_API FilterRule() = default;
     AWS_S3CRT_API FilterRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API FilterRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,30 +54,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const FilterRuleName& GetName() const{ return m_name; }
+    inline FilterRuleName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const FilterRuleName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(FilterRuleName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline FilterRule& WithName(const FilterRuleName& value) { SetName(value); return *this;}
-    inline FilterRule& WithName(FilterRuleName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(FilterRuleName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline FilterRule& WithName(FilterRuleName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that the filter searches for in object key names.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    FilterRule& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterRuleName m_name;
+    FilterRuleName m_name{FilterRuleName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

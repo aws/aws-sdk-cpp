@@ -34,7 +34,7 @@ namespace Model
   class DescribeStackSummaryResult
   {
   public:
-    AWS_OPSWORKS_API DescribeStackSummaryResult();
+    AWS_OPSWORKS_API DescribeStackSummaryResult() = default;
     AWS_OPSWORKS_API DescribeStackSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeStackSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
      */
-    inline const StackSummary& GetStackSummary() const{ return m_stackSummary; }
-    inline void SetStackSummary(const StackSummary& value) { m_stackSummary = value; }
-    inline void SetStackSummary(StackSummary&& value) { m_stackSummary = std::move(value); }
-    inline DescribeStackSummaryResult& WithStackSummary(const StackSummary& value) { SetStackSummary(value); return *this;}
-    inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(std::move(value)); return *this;}
+    inline const StackSummary& GetStackSummary() const { return m_stackSummary; }
+    template<typename StackSummaryT = StackSummary>
+    void SetStackSummary(StackSummaryT&& value) { m_stackSummaryHasBeenSet = true; m_stackSummary = std::forward<StackSummaryT>(value); }
+    template<typename StackSummaryT = StackSummary>
+    DescribeStackSummaryResult& WithStackSummary(StackSummaryT&& value) { SetStackSummary(std::forward<StackSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStackSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStackSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStackSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStackSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StackSummary m_stackSummary;
+    bool m_stackSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

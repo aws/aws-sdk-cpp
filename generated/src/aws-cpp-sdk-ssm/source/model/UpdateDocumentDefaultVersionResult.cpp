@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult()
-{
-}
-
 UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateDocumentDefaultVersionResult& UpdateDocumentDefaultVersionResult::operator
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetObject("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

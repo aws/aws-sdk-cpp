@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions() : 
-    m_publicSigningKeyUrlHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessTrustProviderDeviceOptions()
 {
   *this = xmlNode;
 }

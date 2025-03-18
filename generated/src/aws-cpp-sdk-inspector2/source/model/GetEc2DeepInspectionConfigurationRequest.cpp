@@ -12,10 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEc2DeepInspectionConfigurationRequest::GetEc2DeepInspectionConfigurationRequest()
-{
-}
-
 Aws::String GetEc2DeepInspectionConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class CustomEntityType
   {
   public:
-    AWS_GLUE_API CustomEntityType();
+    AWS_GLUE_API CustomEntityType() = default;
     AWS_GLUE_API CustomEntityType(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CustomEntityType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A name for the custom pattern that allows it to be retrieved or deleted
      * later. This name must be unique per Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CustomEntityType& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CustomEntityType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CustomEntityType& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CustomEntityType& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>A regular expression string that is used for detecting sensitive data in a
      * custom pattern.</p>
      */
-    inline const Aws::String& GetRegexString() const{ return m_regexString; }
+    inline const Aws::String& GetRegexString() const { return m_regexString; }
     inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }
-    inline void SetRegexString(const Aws::String& value) { m_regexStringHasBeenSet = true; m_regexString = value; }
-    inline void SetRegexString(Aws::String&& value) { m_regexStringHasBeenSet = true; m_regexString = std::move(value); }
-    inline void SetRegexString(const char* value) { m_regexStringHasBeenSet = true; m_regexString.assign(value); }
-    inline CustomEntityType& WithRegexString(const Aws::String& value) { SetRegexString(value); return *this;}
-    inline CustomEntityType& WithRegexString(Aws::String&& value) { SetRegexString(std::move(value)); return *this;}
-    inline CustomEntityType& WithRegexString(const char* value) { SetRegexString(value); return *this;}
+    template<typename RegexStringT = Aws::String>
+    void SetRegexString(RegexStringT&& value) { m_regexStringHasBeenSet = true; m_regexString = std::forward<RegexStringT>(value); }
+    template<typename RegexStringT = Aws::String>
+    CustomEntityType& WithRegexString(RegexStringT&& value) { SetRegexString(std::forward<RegexStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +72,14 @@ namespace Model
      * data.</p> <p>If no context words are passed only a regular expression is
      * checked.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContextWords() const{ return m_contextWords; }
+    inline const Aws::Vector<Aws::String>& GetContextWords() const { return m_contextWords; }
     inline bool ContextWordsHasBeenSet() const { return m_contextWordsHasBeenSet; }
-    inline void SetContextWords(const Aws::Vector<Aws::String>& value) { m_contextWordsHasBeenSet = true; m_contextWords = value; }
-    inline void SetContextWords(Aws::Vector<Aws::String>&& value) { m_contextWordsHasBeenSet = true; m_contextWords = std::move(value); }
-    inline CustomEntityType& WithContextWords(const Aws::Vector<Aws::String>& value) { SetContextWords(value); return *this;}
-    inline CustomEntityType& WithContextWords(Aws::Vector<Aws::String>&& value) { SetContextWords(std::move(value)); return *this;}
-    inline CustomEntityType& AddContextWords(const Aws::String& value) { m_contextWordsHasBeenSet = true; m_contextWords.push_back(value); return *this; }
-    inline CustomEntityType& AddContextWords(Aws::String&& value) { m_contextWordsHasBeenSet = true; m_contextWords.push_back(std::move(value)); return *this; }
-    inline CustomEntityType& AddContextWords(const char* value) { m_contextWordsHasBeenSet = true; m_contextWords.push_back(value); return *this; }
+    template<typename ContextWordsT = Aws::Vector<Aws::String>>
+    void SetContextWords(ContextWordsT&& value) { m_contextWordsHasBeenSet = true; m_contextWords = std::forward<ContextWordsT>(value); }
+    template<typename ContextWordsT = Aws::Vector<Aws::String>>
+    CustomEntityType& WithContextWords(ContextWordsT&& value) { SetContextWords(std::forward<ContextWordsT>(value)); return *this;}
+    template<typename ContextWordsT = Aws::String>
+    CustomEntityType& AddContextWords(ContextWordsT&& value) { m_contextWordsHasBeenSet = true; m_contextWords.emplace_back(std::forward<ContextWordsT>(value)); return *this; }
     ///@}
   private:
 

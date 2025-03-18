@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-TransformationTool::TransformationTool() : 
-    m_descriptionHasBeenSet(false),
-    m_name(TransformationToolName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_tranformationToolInstallationLinkHasBeenSet(false)
-{
-}
-
 TransformationTool::TransformationTool(JsonView jsonValue)
-  : TransformationTool()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TransformationTool& TransformationTool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = TransformationToolNameMapper::GetTransformationToolNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tranformationToolInstallationLink"))
   {
     m_tranformationToolInstallationLink = jsonValue.GetString("tranformationToolInstallationLink");
-
     m_tranformationToolInstallationLinkHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-CheckDetail::CheckDetail() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_provider(CheckProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_choiceIdHasBeenSet(false),
-    m_status(CheckStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_flaggedResources(0),
-    m_flaggedResourcesHasBeenSet(false),
-    m_reason(CheckFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 CheckDetail::CheckDetail(JsonView jsonValue)
-  : CheckDetail()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ CheckDetail& CheckDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Provider"))
   {
     m_provider = CheckProviderMapper::GetCheckProviderForName(jsonValue.GetString("Provider"));
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
     m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceId"))
   {
     m_choiceId = jsonValue.GetString("ChoiceId");
-
     m_choiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CheckStatusMapper::GetCheckStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlaggedResources"))
   {
     m_flaggedResources = jsonValue.GetInteger("FlaggedResources");
-
     m_flaggedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = CheckFailureReasonMapper::GetCheckFailureReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

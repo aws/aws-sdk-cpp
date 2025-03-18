@@ -27,7 +27,7 @@ namespace Model
   class CreateAssessmentTargetResult
   {
   public:
-    AWS_INSPECTOR_API CreateAssessmentTargetResult();
+    AWS_INSPECTOR_API CreateAssessmentTargetResult() = default;
     AWS_INSPECTOR_API CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API CreateAssessmentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN that specifies the assessment target that is created.</p>
      */
-    inline const Aws::String& GetAssessmentTargetArn() const{ return m_assessmentTargetArn; }
-    inline void SetAssessmentTargetArn(const Aws::String& value) { m_assessmentTargetArn = value; }
-    inline void SetAssessmentTargetArn(Aws::String&& value) { m_assessmentTargetArn = std::move(value); }
-    inline void SetAssessmentTargetArn(const char* value) { m_assessmentTargetArn.assign(value); }
-    inline CreateAssessmentTargetResult& WithAssessmentTargetArn(const Aws::String& value) { SetAssessmentTargetArn(value); return *this;}
-    inline CreateAssessmentTargetResult& WithAssessmentTargetArn(Aws::String&& value) { SetAssessmentTargetArn(std::move(value)); return *this;}
-    inline CreateAssessmentTargetResult& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
+    inline const Aws::String& GetAssessmentTargetArn() const { return m_assessmentTargetArn; }
+    template<typename AssessmentTargetArnT = Aws::String>
+    void SetAssessmentTargetArn(AssessmentTargetArnT&& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = std::forward<AssessmentTargetArnT>(value); }
+    template<typename AssessmentTargetArnT = Aws::String>
+    CreateAssessmentTargetResult& WithAssessmentTargetArn(AssessmentTargetArnT&& value) { SetAssessmentTargetArn(std::forward<AssessmentTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAssessmentTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAssessmentTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAssessmentTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAssessmentTargetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assessmentTargetArn;
+    bool m_assessmentTargetArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

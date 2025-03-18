@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IndexFacesResult::IndexFacesResult() : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
-{
-}
-
 IndexFacesResult::IndexFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : IndexFacesResult()
 {
   *this = result;
 }
@@ -38,20 +32,18 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_faceRecords.push_back(faceRecordsJsonList[faceRecordsIndex].AsObject());
     }
+    m_faceRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrientationCorrection"))
   {
     m_orientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("OrientationCorrection"));
-
+    m_orientationCorrectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnindexedFaces"))
   {
     Aws::Utils::Array<JsonView> unindexedFacesJsonList = jsonValue.GetArray("UnindexedFaces");
@@ -59,14 +51,15 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_unindexedFaces.push_back(unindexedFacesJsonList[unindexedFacesIndex].AsObject());
     }
+    m_unindexedFacesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

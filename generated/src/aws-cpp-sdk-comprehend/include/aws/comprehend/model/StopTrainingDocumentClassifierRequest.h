@@ -21,7 +21,7 @@ namespace Model
   class StopTrainingDocumentClassifierRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API StopTrainingDocumentClassifierRequest();
+    AWS_COMPREHEND_API StopTrainingDocumentClassifierRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier
      * currently being trained.</p>
      */
-    inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
+    inline const Aws::String& GetDocumentClassifierArn() const { return m_documentClassifierArn; }
     inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
-    inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
-    inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::move(value); }
-    inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn.assign(value); }
-    inline StopTrainingDocumentClassifierRequest& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-    inline StopTrainingDocumentClassifierRequest& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-    inline StopTrainingDocumentClassifierRequest& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
+    template<typename DocumentClassifierArnT = Aws::String>
+    void SetDocumentClassifierArn(DocumentClassifierArnT&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::forward<DocumentClassifierArnT>(value); }
+    template<typename DocumentClassifierArnT = Aws::String>
+    StopTrainingDocumentClassifierRequest& WithDocumentClassifierArn(DocumentClassifierArnT&& value) { SetDocumentClassifierArn(std::forward<DocumentClassifierArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateCoipPoolRequest::CreateCoipPoolRequest() : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateCoipPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

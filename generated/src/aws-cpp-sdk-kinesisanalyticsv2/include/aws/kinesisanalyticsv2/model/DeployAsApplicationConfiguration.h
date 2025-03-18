@@ -32,7 +32,7 @@ namespace Model
   class DeployAsApplicationConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfiguration() = default;
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * bucket, the name of the Amazon S3 object that contains the data, and the version
      * number of the Amazon S3 object that contains the data. </p>
      */
-    inline const S3ContentBaseLocation& GetS3ContentLocation() const{ return m_s3ContentLocation; }
+    inline const S3ContentBaseLocation& GetS3ContentLocation() const { return m_s3ContentLocation; }
     inline bool S3ContentLocationHasBeenSet() const { return m_s3ContentLocationHasBeenSet; }
-    inline void SetS3ContentLocation(const S3ContentBaseLocation& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = value; }
-    inline void SetS3ContentLocation(S3ContentBaseLocation&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::move(value); }
-    inline DeployAsApplicationConfiguration& WithS3ContentLocation(const S3ContentBaseLocation& value) { SetS3ContentLocation(value); return *this;}
-    inline DeployAsApplicationConfiguration& WithS3ContentLocation(S3ContentBaseLocation&& value) { SetS3ContentLocation(std::move(value)); return *this;}
+    template<typename S3ContentLocationT = S3ContentBaseLocation>
+    void SetS3ContentLocation(S3ContentLocationT&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::forward<S3ContentLocationT>(value); }
+    template<typename S3ContentLocationT = S3ContentBaseLocation>
+    DeployAsApplicationConfiguration& WithS3ContentLocation(S3ContentLocationT&& value) { SetS3ContentLocation(std::forward<S3ContentLocationT>(value)); return *this;}
     ///@}
   private:
 

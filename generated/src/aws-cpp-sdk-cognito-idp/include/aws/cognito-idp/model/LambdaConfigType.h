@@ -36,7 +36,7 @@ namespace Model
   class LambdaConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link
      * a federated user profile</a>, or block sign-up requests.</p>
      */
-    inline const Aws::String& GetPreSignUp() const{ return m_preSignUp; }
+    inline const Aws::String& GetPreSignUp() const { return m_preSignUp; }
     inline bool PreSignUpHasBeenSet() const { return m_preSignUpHasBeenSet; }
-    inline void SetPreSignUp(const Aws::String& value) { m_preSignUpHasBeenSet = true; m_preSignUp = value; }
-    inline void SetPreSignUp(Aws::String&& value) { m_preSignUpHasBeenSet = true; m_preSignUp = std::move(value); }
-    inline void SetPreSignUp(const char* value) { m_preSignUpHasBeenSet = true; m_preSignUp.assign(value); }
-    inline LambdaConfigType& WithPreSignUp(const Aws::String& value) { SetPreSignUp(value); return *this;}
-    inline LambdaConfigType& WithPreSignUp(Aws::String&& value) { SetPreSignUp(std::move(value)); return *this;}
-    inline LambdaConfigType& WithPreSignUp(const char* value) { SetPreSignUp(value); return *this;}
+    template<typename PreSignUpT = Aws::String>
+    void SetPreSignUp(PreSignUpT&& value) { m_preSignUpHasBeenSet = true; m_preSignUp = std::forward<PreSignUpT>(value); }
+    template<typename PreSignUpT = Aws::String>
+    LambdaConfigType& WithPreSignUp(PreSignUpT&& value) { SetPreSignUp(std::forward<PreSignUpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * runtime-customized message subject and body for your user pool to deliver to a
      * user.</p>
      */
-    inline const Aws::String& GetCustomMessage() const{ return m_customMessage; }
+    inline const Aws::String& GetCustomMessage() const { return m_customMessage; }
     inline bool CustomMessageHasBeenSet() const { return m_customMessageHasBeenSet; }
-    inline void SetCustomMessage(const Aws::String& value) { m_customMessageHasBeenSet = true; m_customMessage = value; }
-    inline void SetCustomMessage(Aws::String&& value) { m_customMessageHasBeenSet = true; m_customMessage = std::move(value); }
-    inline void SetCustomMessage(const char* value) { m_customMessageHasBeenSet = true; m_customMessage.assign(value); }
-    inline LambdaConfigType& WithCustomMessage(const Aws::String& value) { SetCustomMessage(value); return *this;}
-    inline LambdaConfigType& WithCustomMessage(Aws::String&& value) { SetCustomMessage(std::move(value)); return *this;}
-    inline LambdaConfigType& WithCustomMessage(const char* value) { SetCustomMessage(value); return *this;}
+    template<typename CustomMessageT = Aws::String>
+    void SetCustomMessage(CustomMessageT&& value) { m_customMessageHasBeenSet = true; m_customMessage = std::forward<CustomMessageT>(value); }
+    template<typename CustomMessageT = Aws::String>
+    LambdaConfigType& WithCustomMessage(CustomMessageT&& value) { SetCustomMessage(std::forward<CustomMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * actions after a user confirms their user account and their email address or
      * phone number.</p>
      */
-    inline const Aws::String& GetPostConfirmation() const{ return m_postConfirmation; }
+    inline const Aws::String& GetPostConfirmation() const { return m_postConfirmation; }
     inline bool PostConfirmationHasBeenSet() const { return m_postConfirmationHasBeenSet; }
-    inline void SetPostConfirmation(const Aws::String& value) { m_postConfirmationHasBeenSet = true; m_postConfirmation = value; }
-    inline void SetPostConfirmation(Aws::String&& value) { m_postConfirmationHasBeenSet = true; m_postConfirmation = std::move(value); }
-    inline void SetPostConfirmation(const char* value) { m_postConfirmationHasBeenSet = true; m_postConfirmation.assign(value); }
-    inline LambdaConfigType& WithPostConfirmation(const Aws::String& value) { SetPostConfirmation(value); return *this;}
-    inline LambdaConfigType& WithPostConfirmation(Aws::String&& value) { SetPostConfirmation(std::move(value)); return *this;}
-    inline LambdaConfigType& WithPostConfirmation(const char* value) { SetPostConfirmation(value); return *this;}
+    template<typename PostConfirmationT = Aws::String>
+    void SetPostConfirmation(PostConfirmationT&& value) { m_postConfirmationHasBeenSet = true; m_postConfirmation = std::forward<PostConfirmationT>(value); }
+    template<typename PostConfirmationT = Aws::String>
+    LambdaConfigType& WithPostConfirmation(PostConfirmationT&& value) { SetPostConfirmation(std::forward<PostConfirmationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * authentication trigger</a> in a user pool. This trigger can evaluate and modify
      * user sign-in events.</p>
      */
-    inline const Aws::String& GetPreAuthentication() const{ return m_preAuthentication; }
+    inline const Aws::String& GetPreAuthentication() const { return m_preAuthentication; }
     inline bool PreAuthenticationHasBeenSet() const { return m_preAuthenticationHasBeenSet; }
-    inline void SetPreAuthentication(const Aws::String& value) { m_preAuthenticationHasBeenSet = true; m_preAuthentication = value; }
-    inline void SetPreAuthentication(Aws::String&& value) { m_preAuthenticationHasBeenSet = true; m_preAuthentication = std::move(value); }
-    inline void SetPreAuthentication(const char* value) { m_preAuthenticationHasBeenSet = true; m_preAuthentication.assign(value); }
-    inline LambdaConfigType& WithPreAuthentication(const Aws::String& value) { SetPreAuthentication(value); return *this;}
-    inline LambdaConfigType& WithPreAuthentication(Aws::String&& value) { SetPreAuthentication(std::move(value)); return *this;}
-    inline LambdaConfigType& WithPreAuthentication(const char* value) { SetPreAuthentication(value); return *this;}
+    template<typename PreAuthenticationT = Aws::String>
+    void SetPreAuthentication(PreAuthenticationT&& value) { m_preAuthenticationHasBeenSet = true; m_preAuthentication = std::forward<PreAuthenticationT>(value); }
+    template<typename PreAuthenticationT = Aws::String>
+    LambdaConfigType& WithPreAuthentication(PreAuthenticationT&& value) { SetPreAuthentication(std::forward<PreAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +113,12 @@ namespace Model
      * authentication Lambda trigger</a> in a user pool. This trigger can take custom
      * actions after a user signs in.</p>
      */
-    inline const Aws::String& GetPostAuthentication() const{ return m_postAuthentication; }
+    inline const Aws::String& GetPostAuthentication() const { return m_postAuthentication; }
     inline bool PostAuthenticationHasBeenSet() const { return m_postAuthenticationHasBeenSet; }
-    inline void SetPostAuthentication(const Aws::String& value) { m_postAuthenticationHasBeenSet = true; m_postAuthentication = value; }
-    inline void SetPostAuthentication(Aws::String&& value) { m_postAuthenticationHasBeenSet = true; m_postAuthentication = std::move(value); }
-    inline void SetPostAuthentication(const char* value) { m_postAuthenticationHasBeenSet = true; m_postAuthentication.assign(value); }
-    inline LambdaConfigType& WithPostAuthentication(const Aws::String& value) { SetPostAuthentication(value); return *this;}
-    inline LambdaConfigType& WithPostAuthentication(Aws::String&& value) { SetPostAuthentication(std::move(value)); return *this;}
-    inline LambdaConfigType& WithPostAuthentication(const char* value) { SetPostAuthentication(value); return *this;}
+    template<typename PostAuthenticationT = Aws::String>
+    void SetPostAuthentication(PostAuthenticationT&& value) { m_postAuthenticationHasBeenSet = true; m_postAuthentication = std::forward<PostAuthenticationT>(value); }
+    template<typename PostAuthenticationT = Aws::String>
+    LambdaConfigType& WithPostAuthentication(PostAuthenticationT&& value) { SetPostAuthentication(std::forward<PostAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +128,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
      * authentication challenge triggers</a>.</p>
      */
-    inline const Aws::String& GetDefineAuthChallenge() const{ return m_defineAuthChallenge; }
+    inline const Aws::String& GetDefineAuthChallenge() const { return m_defineAuthChallenge; }
     inline bool DefineAuthChallengeHasBeenSet() const { return m_defineAuthChallengeHasBeenSet; }
-    inline void SetDefineAuthChallenge(const Aws::String& value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge = value; }
-    inline void SetDefineAuthChallenge(Aws::String&& value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge = std::move(value); }
-    inline void SetDefineAuthChallenge(const char* value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge.assign(value); }
-    inline LambdaConfigType& WithDefineAuthChallenge(const Aws::String& value) { SetDefineAuthChallenge(value); return *this;}
-    inline LambdaConfigType& WithDefineAuthChallenge(Aws::String&& value) { SetDefineAuthChallenge(std::move(value)); return *this;}
-    inline LambdaConfigType& WithDefineAuthChallenge(const char* value) { SetDefineAuthChallenge(value); return *this;}
+    template<typename DefineAuthChallengeT = Aws::String>
+    void SetDefineAuthChallenge(DefineAuthChallengeT&& value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge = std::forward<DefineAuthChallengeT>(value); }
+    template<typename DefineAuthChallengeT = Aws::String>
+    LambdaConfigType& WithDefineAuthChallenge(DefineAuthChallengeT&& value) { SetDefineAuthChallenge(std::forward<DefineAuthChallengeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +143,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
      * authentication challenge triggers</a>.</p>
      */
-    inline const Aws::String& GetCreateAuthChallenge() const{ return m_createAuthChallenge; }
+    inline const Aws::String& GetCreateAuthChallenge() const { return m_createAuthChallenge; }
     inline bool CreateAuthChallengeHasBeenSet() const { return m_createAuthChallengeHasBeenSet; }
-    inline void SetCreateAuthChallenge(const Aws::String& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = value; }
-    inline void SetCreateAuthChallenge(Aws::String&& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = std::move(value); }
-    inline void SetCreateAuthChallenge(const char* value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge.assign(value); }
-    inline LambdaConfigType& WithCreateAuthChallenge(const Aws::String& value) { SetCreateAuthChallenge(value); return *this;}
-    inline LambdaConfigType& WithCreateAuthChallenge(Aws::String&& value) { SetCreateAuthChallenge(std::move(value)); return *this;}
-    inline LambdaConfigType& WithCreateAuthChallenge(const char* value) { SetCreateAuthChallenge(value); return *this;}
+    template<typename CreateAuthChallengeT = Aws::String>
+    void SetCreateAuthChallenge(CreateAuthChallengeT&& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = std::forward<CreateAuthChallengeT>(value); }
+    template<typename CreateAuthChallengeT = Aws::String>
+    LambdaConfigType& WithCreateAuthChallenge(CreateAuthChallengeT&& value) { SetCreateAuthChallenge(std::forward<CreateAuthChallengeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +158,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
      * authentication challenge triggers</a>.</p>
      */
-    inline const Aws::String& GetVerifyAuthChallengeResponse() const{ return m_verifyAuthChallengeResponse; }
+    inline const Aws::String& GetVerifyAuthChallengeResponse() const { return m_verifyAuthChallengeResponse; }
     inline bool VerifyAuthChallengeResponseHasBeenSet() const { return m_verifyAuthChallengeResponseHasBeenSet; }
-    inline void SetVerifyAuthChallengeResponse(const Aws::String& value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse = value; }
-    inline void SetVerifyAuthChallengeResponse(Aws::String&& value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse = std::move(value); }
-    inline void SetVerifyAuthChallengeResponse(const char* value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse.assign(value); }
-    inline LambdaConfigType& WithVerifyAuthChallengeResponse(const Aws::String& value) { SetVerifyAuthChallengeResponse(value); return *this;}
-    inline LambdaConfigType& WithVerifyAuthChallengeResponse(Aws::String&& value) { SetVerifyAuthChallengeResponse(std::move(value)); return *this;}
-    inline LambdaConfigType& WithVerifyAuthChallengeResponse(const char* value) { SetVerifyAuthChallengeResponse(value); return *this;}
+    template<typename VerifyAuthChallengeResponseT = Aws::String>
+    void SetVerifyAuthChallengeResponse(VerifyAuthChallengeResponseT&& value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse = std::forward<VerifyAuthChallengeResponseT>(value); }
+    template<typename VerifyAuthChallengeResponseT = Aws::String>
+    LambdaConfigType& WithVerifyAuthChallengeResponse(VerifyAuthChallengeResponseT&& value) { SetVerifyAuthChallengeResponse(std::forward<VerifyAuthChallengeResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +177,12 @@ namespace Model
      * triggers, set the <code>LambdaArn</code> of
      * <code>PreTokenGenerationConfig</code>.</p>
      */
-    inline const Aws::String& GetPreTokenGeneration() const{ return m_preTokenGeneration; }
+    inline const Aws::String& GetPreTokenGeneration() const { return m_preTokenGeneration; }
     inline bool PreTokenGenerationHasBeenSet() const { return m_preTokenGenerationHasBeenSet; }
-    inline void SetPreTokenGeneration(const Aws::String& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = value; }
-    inline void SetPreTokenGeneration(Aws::String&& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = std::move(value); }
-    inline void SetPreTokenGeneration(const char* value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration.assign(value); }
-    inline LambdaConfigType& WithPreTokenGeneration(const Aws::String& value) { SetPreTokenGeneration(value); return *this;}
-    inline LambdaConfigType& WithPreTokenGeneration(Aws::String&& value) { SetPreTokenGeneration(std::move(value)); return *this;}
-    inline LambdaConfigType& WithPreTokenGeneration(const char* value) { SetPreTokenGeneration(value); return *this;}
+    template<typename PreTokenGenerationT = Aws::String>
+    void SetPreTokenGeneration(PreTokenGenerationT&& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = std::forward<PreTokenGenerationT>(value); }
+    template<typename PreTokenGenerationT = Aws::String>
+    LambdaConfigType& WithPreTokenGeneration(PreTokenGenerationT&& value) { SetPreTokenGeneration(std::forward<PreTokenGenerationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,14 +193,12 @@ namespace Model
      * when users sign in or attempt to reset their password with credentials that
      * don't exist yet.</p>
      */
-    inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
+    inline const Aws::String& GetUserMigration() const { return m_userMigration; }
     inline bool UserMigrationHasBeenSet() const { return m_userMigrationHasBeenSet; }
-    inline void SetUserMigration(const Aws::String& value) { m_userMigrationHasBeenSet = true; m_userMigration = value; }
-    inline void SetUserMigration(Aws::String&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::move(value); }
-    inline void SetUserMigration(const char* value) { m_userMigrationHasBeenSet = true; m_userMigration.assign(value); }
-    inline LambdaConfigType& WithUserMigration(const Aws::String& value) { SetUserMigration(value); return *this;}
-    inline LambdaConfigType& WithUserMigration(Aws::String&& value) { SetUserMigration(std::move(value)); return *this;}
-    inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
+    template<typename UserMigrationT = Aws::String>
+    void SetUserMigration(UserMigrationT&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::forward<UserMigrationT>(value); }
+    template<typename UserMigrationT = Aws::String>
+    LambdaConfigType& WithUserMigration(UserMigrationT&& value) { SetUserMigration(std::forward<UserMigrationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +209,12 @@ namespace Model
      * <code>PreTokenGeneration</code>, its value must be identical to
      * <code>PreTokenGenerationConfig</code>.</p>
      */
-    inline const PreTokenGenerationVersionConfigType& GetPreTokenGenerationConfig() const{ return m_preTokenGenerationConfig; }
+    inline const PreTokenGenerationVersionConfigType& GetPreTokenGenerationConfig() const { return m_preTokenGenerationConfig; }
     inline bool PreTokenGenerationConfigHasBeenSet() const { return m_preTokenGenerationConfigHasBeenSet; }
-    inline void SetPreTokenGenerationConfig(const PreTokenGenerationVersionConfigType& value) { m_preTokenGenerationConfigHasBeenSet = true; m_preTokenGenerationConfig = value; }
-    inline void SetPreTokenGenerationConfig(PreTokenGenerationVersionConfigType&& value) { m_preTokenGenerationConfigHasBeenSet = true; m_preTokenGenerationConfig = std::move(value); }
-    inline LambdaConfigType& WithPreTokenGenerationConfig(const PreTokenGenerationVersionConfigType& value) { SetPreTokenGenerationConfig(value); return *this;}
-    inline LambdaConfigType& WithPreTokenGenerationConfig(PreTokenGenerationVersionConfigType&& value) { SetPreTokenGenerationConfig(std::move(value)); return *this;}
+    template<typename PreTokenGenerationConfigT = PreTokenGenerationVersionConfigType>
+    void SetPreTokenGenerationConfig(PreTokenGenerationConfigT&& value) { m_preTokenGenerationConfigHasBeenSet = true; m_preTokenGenerationConfig = std::forward<PreTokenGenerationConfigT>(value); }
+    template<typename PreTokenGenerationConfigT = PreTokenGenerationVersionConfigType>
+    LambdaConfigType& WithPreTokenGenerationConfig(PreTokenGenerationConfigT&& value) { SetPreTokenGenerationConfig(std::forward<PreTokenGenerationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,12 +223,12 @@ namespace Model
      * all SMS notifications from a user pool to a Lambda function that delivers the
      * message using custom logic.</p>
      */
-    inline const CustomSMSLambdaVersionConfigType& GetCustomSMSSender() const{ return m_customSMSSender; }
+    inline const CustomSMSLambdaVersionConfigType& GetCustomSMSSender() const { return m_customSMSSender; }
     inline bool CustomSMSSenderHasBeenSet() const { return m_customSMSSenderHasBeenSet; }
-    inline void SetCustomSMSSender(const CustomSMSLambdaVersionConfigType& value) { m_customSMSSenderHasBeenSet = true; m_customSMSSender = value; }
-    inline void SetCustomSMSSender(CustomSMSLambdaVersionConfigType&& value) { m_customSMSSenderHasBeenSet = true; m_customSMSSender = std::move(value); }
-    inline LambdaConfigType& WithCustomSMSSender(const CustomSMSLambdaVersionConfigType& value) { SetCustomSMSSender(value); return *this;}
-    inline LambdaConfigType& WithCustomSMSSender(CustomSMSLambdaVersionConfigType&& value) { SetCustomSMSSender(std::move(value)); return *this;}
+    template<typename CustomSMSSenderT = CustomSMSLambdaVersionConfigType>
+    void SetCustomSMSSender(CustomSMSSenderT&& value) { m_customSMSSenderHasBeenSet = true; m_customSMSSender = std::forward<CustomSMSSenderT>(value); }
+    template<typename CustomSMSSenderT = CustomSMSLambdaVersionConfigType>
+    LambdaConfigType& WithCustomSMSSender(CustomSMSSenderT&& value) { SetCustomSMSSender(std::forward<CustomSMSSenderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,12 +237,12 @@ namespace Model
      * routes all email notifications from a user pool to a Lambda function that
      * delivers the message using custom logic.</p>
      */
-    inline const CustomEmailLambdaVersionConfigType& GetCustomEmailSender() const{ return m_customEmailSender; }
+    inline const CustomEmailLambdaVersionConfigType& GetCustomEmailSender() const { return m_customEmailSender; }
     inline bool CustomEmailSenderHasBeenSet() const { return m_customEmailSenderHasBeenSet; }
-    inline void SetCustomEmailSender(const CustomEmailLambdaVersionConfigType& value) { m_customEmailSenderHasBeenSet = true; m_customEmailSender = value; }
-    inline void SetCustomEmailSender(CustomEmailLambdaVersionConfigType&& value) { m_customEmailSenderHasBeenSet = true; m_customEmailSender = std::move(value); }
-    inline LambdaConfigType& WithCustomEmailSender(const CustomEmailLambdaVersionConfigType& value) { SetCustomEmailSender(value); return *this;}
-    inline LambdaConfigType& WithCustomEmailSender(CustomEmailLambdaVersionConfigType&& value) { SetCustomEmailSender(std::move(value)); return *this;}
+    template<typename CustomEmailSenderT = CustomEmailLambdaVersionConfigType>
+    void SetCustomEmailSender(CustomEmailSenderT&& value) { m_customEmailSenderHasBeenSet = true; m_customEmailSender = std::forward<CustomEmailSenderT>(value); }
+    template<typename CustomEmailSenderT = CustomEmailLambdaVersionConfigType>
+    LambdaConfigType& WithCustomEmailSender(CustomEmailSenderT&& value) { SetCustomEmailSender(std::forward<CustomEmailSenderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,14 +252,12 @@ namespace Model
      * key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords
      * sent to custom sender Lambda triggers.</p>
      */
-    inline const Aws::String& GetKMSKeyID() const{ return m_kMSKeyID; }
+    inline const Aws::String& GetKMSKeyID() const { return m_kMSKeyID; }
     inline bool KMSKeyIDHasBeenSet() const { return m_kMSKeyIDHasBeenSet; }
-    inline void SetKMSKeyID(const Aws::String& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = value; }
-    inline void SetKMSKeyID(Aws::String&& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = std::move(value); }
-    inline void SetKMSKeyID(const char* value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID.assign(value); }
-    inline LambdaConfigType& WithKMSKeyID(const Aws::String& value) { SetKMSKeyID(value); return *this;}
-    inline LambdaConfigType& WithKMSKeyID(Aws::String&& value) { SetKMSKeyID(std::move(value)); return *this;}
-    inline LambdaConfigType& WithKMSKeyID(const char* value) { SetKMSKeyID(value); return *this;}
+    template<typename KMSKeyIDT = Aws::String>
+    void SetKMSKeyID(KMSKeyIDT&& value) { m_kMSKeyIDHasBeenSet = true; m_kMSKeyID = std::forward<KMSKeyIDT>(value); }
+    template<typename KMSKeyIDT = Aws::String>
+    LambdaConfigType& WithKMSKeyID(KMSKeyIDT&& value) { SetKMSKeyID(std::forward<KMSKeyIDT>(value)); return *this;}
     ///@}
   private:
 

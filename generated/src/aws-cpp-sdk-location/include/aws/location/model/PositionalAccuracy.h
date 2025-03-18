@@ -29,7 +29,7 @@ namespace Model
   class PositionalAccuracy
   {
   public:
-    AWS_LOCATIONSERVICE_API PositionalAccuracy();
+    AWS_LOCATIONSERVICE_API PositionalAccuracy() = default;
     AWS_LOCATIONSERVICE_API PositionalAccuracy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API PositionalAccuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>Estimated maximum distance, in meters, between the measured position and the
      * true position of a device, along the Earth's surface.</p>
      */
-    inline double GetHorizontal() const{ return m_horizontal; }
+    inline double GetHorizontal() const { return m_horizontal; }
     inline bool HorizontalHasBeenSet() const { return m_horizontalHasBeenSet; }
     inline void SetHorizontal(double value) { m_horizontalHasBeenSet = true; m_horizontal = value; }
     inline PositionalAccuracy& WithHorizontal(double value) { SetHorizontal(value); return *this;}
     ///@}
   private:
 
-    double m_horizontal;
+    double m_horizontal{0.0};
     bool m_horizontalHasBeenSet = false;
   };
 

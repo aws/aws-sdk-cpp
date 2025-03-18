@@ -30,7 +30,7 @@ namespace Model
   class ActiveContextTimeToLive
   {
   public:
-    AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive();
+    AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive() = default;
     AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of seconds that the context is active. You can specify between 5
      * and 86400 seconds (24 hours).</p>
      */
-    inline int GetTimeToLiveInSeconds() const{ return m_timeToLiveInSeconds; }
+    inline int GetTimeToLiveInSeconds() const { return m_timeToLiveInSeconds; }
     inline bool TimeToLiveInSecondsHasBeenSet() const { return m_timeToLiveInSecondsHasBeenSet; }
     inline void SetTimeToLiveInSeconds(int value) { m_timeToLiveInSecondsHasBeenSet = true; m_timeToLiveInSeconds = value; }
     inline ActiveContextTimeToLive& WithTimeToLiveInSeconds(int value) { SetTimeToLiveInSeconds(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The number of turns that the context is active. You can specify up to 20
      * turns. Each request and response from the bot is a turn.</p>
      */
-    inline int GetTurnsToLive() const{ return m_turnsToLive; }
+    inline int GetTurnsToLive() const { return m_turnsToLive; }
     inline bool TurnsToLiveHasBeenSet() const { return m_turnsToLiveHasBeenSet; }
     inline void SetTurnsToLive(int value) { m_turnsToLiveHasBeenSet = true; m_turnsToLive = value; }
     inline ActiveContextTimeToLive& WithTurnsToLive(int value) { SetTurnsToLive(value); return *this;}
     ///@}
   private:
 
-    int m_timeToLiveInSeconds;
+    int m_timeToLiveInSeconds{0};
     bool m_timeToLiveInSecondsHasBeenSet = false;
 
-    int m_turnsToLive;
+    int m_turnsToLive{0};
     bool m_turnsToLiveHasBeenSet = false;
   };
 

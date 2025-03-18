@@ -10,22 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateUsageLimitRequest::CreateUsageLimitRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_featureType(UsageLimitFeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_limitType(UsageLimitLimitType::NOT_SET),
-    m_limitTypeHasBeenSet(false),
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_period(UsageLimitPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUsageLimitRequest::SerializePayload() const
 {
   Aws::StringStream ss;

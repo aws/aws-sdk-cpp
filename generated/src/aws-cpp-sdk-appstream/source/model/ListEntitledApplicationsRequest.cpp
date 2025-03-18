@@ -12,15 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEntitledApplicationsRequest::ListEntitledApplicationsRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_entitlementNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEntitledApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

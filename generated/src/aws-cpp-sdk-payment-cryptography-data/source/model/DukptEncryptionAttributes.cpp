@@ -18,20 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-DukptEncryptionAttributes::DukptEncryptionAttributes() : 
-    m_keySerialNumberHasBeenSet(false),
-    m_mode(DukptEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_dukptKeyDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptKeyDerivationTypeHasBeenSet(false),
-    m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
-    m_dukptKeyVariantHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false)
-{
-}
-
 DukptEncryptionAttributes::DukptEncryptionAttributes(JsonView jsonValue)
-  : DukptEncryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DukptEncryptionAttributes& DukptEncryptionAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("KeySerialNumber"))
   {
     m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
-
     m_keySerialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = DukptEncryptionModeMapper::GetDukptEncryptionModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptKeyDerivationType"))
   {
     m_dukptKeyDerivationType = DukptDerivationTypeMapper::GetDukptDerivationTypeForName(jsonValue.GetString("DukptKeyDerivationType"));
-
     m_dukptKeyDerivationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptKeyVariant"))
   {
     m_dukptKeyVariant = DukptKeyVariantMapper::GetDukptKeyVariantForName(jsonValue.GetString("DukptKeyVariant"));
-
     m_dukptKeyVariantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   return *this;
 }
 

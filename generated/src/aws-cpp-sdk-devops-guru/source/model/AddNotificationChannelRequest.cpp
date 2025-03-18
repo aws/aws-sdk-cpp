@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddNotificationChannelRequest::AddNotificationChannelRequest() : 
-    m_configHasBeenSet(false)
-{
-}
-
 Aws::String AddNotificationChannelRequest::SerializePayload() const
 {
   JsonValue payload;

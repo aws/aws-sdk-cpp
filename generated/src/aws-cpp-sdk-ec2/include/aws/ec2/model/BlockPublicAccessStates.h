@@ -31,7 +31,7 @@ namespace Model
   class BlockPublicAccessStates
   {
   public:
-    AWS_EC2_API BlockPublicAccessStates();
+    AWS_EC2_API BlockPublicAccessStates() = default;
     AWS_EC2_API BlockPublicAccessStates(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BlockPublicAccessStates& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,16 +52,14 @@ namespace Model
      * gateways is allowed because these gateways only allow outbound connections to be
      * established.</p> </li> </ul>
      */
-    inline const BlockPublicAccessMode& GetInternetGatewayBlockMode() const{ return m_internetGatewayBlockMode; }
+    inline BlockPublicAccessMode GetInternetGatewayBlockMode() const { return m_internetGatewayBlockMode; }
     inline bool InternetGatewayBlockModeHasBeenSet() const { return m_internetGatewayBlockModeHasBeenSet; }
-    inline void SetInternetGatewayBlockMode(const BlockPublicAccessMode& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
-    inline void SetInternetGatewayBlockMode(BlockPublicAccessMode&& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = std::move(value); }
-    inline BlockPublicAccessStates& WithInternetGatewayBlockMode(const BlockPublicAccessMode& value) { SetInternetGatewayBlockMode(value); return *this;}
-    inline BlockPublicAccessStates& WithInternetGatewayBlockMode(BlockPublicAccessMode&& value) { SetInternetGatewayBlockMode(std::move(value)); return *this;}
+    inline void SetInternetGatewayBlockMode(BlockPublicAccessMode value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
+    inline BlockPublicAccessStates& WithInternetGatewayBlockMode(BlockPublicAccessMode value) { SetInternetGatewayBlockMode(value); return *this;}
     ///@}
   private:
 
-    BlockPublicAccessMode m_internetGatewayBlockMode;
+    BlockPublicAccessMode m_internetGatewayBlockMode{BlockPublicAccessMode::NOT_SET};
     bool m_internetGatewayBlockModeHasBeenSet = false;
   };
 

@@ -12,28 +12,6 @@ using namespace Aws::DLM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLifecyclePolicyRequest::CreateLifecyclePolicyRequest() : 
-    m_executionRoleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(SettablePolicyStateValues::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultPolicy(DefaultPolicyTypeValues::NOT_SET),
-    m_defaultPolicyHasBeenSet(false),
-    m_createInterval(0),
-    m_createIntervalHasBeenSet(false),
-    m_retainInterval(0),
-    m_retainIntervalHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_extendDeletion(false),
-    m_extendDeletionHasBeenSet(false),
-    m_crossRegionCopyTargetsHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLifecyclePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

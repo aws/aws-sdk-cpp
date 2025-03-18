@@ -18,15 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AuthenticationMethodItem::AuthenticationMethodItem() : 
-    m_authenticationMethodHasBeenSet(false),
-    m_authenticationMethodType(AuthenticationMethodType::NOT_SET),
-    m_authenticationMethodTypeHasBeenSet(false)
-{
-}
-
 AuthenticationMethodItem::AuthenticationMethodItem(JsonView jsonValue)
-  : AuthenticationMethodItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AuthenticationMethodItem& AuthenticationMethodItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AuthenticationMethod"))
   {
     m_authenticationMethod = jsonValue.GetObject("AuthenticationMethod");
-
     m_authenticationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationMethodType"))
   {
     m_authenticationMethodType = AuthenticationMethodTypeMapper::GetAuthenticationMethodTypeForName(jsonValue.GetString("AuthenticationMethodType"));
-
     m_authenticationMethodTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

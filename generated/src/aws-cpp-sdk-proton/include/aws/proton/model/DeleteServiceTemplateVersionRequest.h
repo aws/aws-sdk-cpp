@@ -21,7 +21,7 @@ namespace Model
   class DeleteServiceTemplateVersionRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API DeleteServiceTemplateVersionRequest();
+    AWS_PROTON_API DeleteServiceTemplateVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The service template major version to delete.</p>
      */
-    inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
+    inline const Aws::String& GetMajorVersion() const { return m_majorVersion; }
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
-    inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
-    inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
-    inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
-    inline DeleteServiceTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
+    template<typename MajorVersionT = Aws::String>
+    void SetMajorVersion(MajorVersionT&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::forward<MajorVersionT>(value); }
+    template<typename MajorVersionT = Aws::String>
+    DeleteServiceTemplateVersionRequest& WithMajorVersion(MajorVersionT&& value) { SetMajorVersion(std::forward<MajorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service template minor version to delete.</p>
      */
-    inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
+    inline const Aws::String& GetMinorVersion() const { return m_minorVersion; }
     inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
-    inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
-    inline void SetMinorVersion(Aws::String&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::move(value); }
-    inline void SetMinorVersion(const char* value) { m_minorVersionHasBeenSet = true; m_minorVersion.assign(value); }
-    inline DeleteServiceTemplateVersionRequest& WithMinorVersion(const Aws::String& value) { SetMinorVersion(value); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithMinorVersion(Aws::String&& value) { SetMinorVersion(std::move(value)); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithMinorVersion(const char* value) { SetMinorVersion(value); return *this;}
+    template<typename MinorVersionT = Aws::String>
+    void SetMinorVersion(MinorVersionT&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::forward<MinorVersionT>(value); }
+    template<typename MinorVersionT = Aws::String>
+    DeleteServiceTemplateVersionRequest& WithMinorVersion(MinorVersionT&& value) { SetMinorVersion(std::forward<MinorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline DeleteServiceTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline DeleteServiceTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    DeleteServiceTemplateVersionRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 

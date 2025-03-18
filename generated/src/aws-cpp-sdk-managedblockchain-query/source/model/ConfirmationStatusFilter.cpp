@@ -18,13 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-ConfirmationStatusFilter::ConfirmationStatusFilter() : 
-    m_includeHasBeenSet(false)
-{
-}
-
 ConfirmationStatusFilter::ConfirmationStatusFilter(JsonView jsonValue)
-  : ConfirmationStatusFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConfirmationStatusFilter& ConfirmationStatusFilter::operator =(JsonView jsonValu
     }
     m_includeHasBeenSet = true;
   }
-
   return *this;
 }
 

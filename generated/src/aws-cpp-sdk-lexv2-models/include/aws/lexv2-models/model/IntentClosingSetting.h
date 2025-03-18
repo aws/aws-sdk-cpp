@@ -34,7 +34,7 @@ namespace Model
   class IntentClosingSetting
   {
   public:
-    AWS_LEXMODELSV2_API IntentClosingSetting();
+    AWS_LEXMODELSV2_API IntentClosingSetting() = default;
     AWS_LEXMODELSV2_API IntentClosingSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentClosingSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The response that Amazon Lex sends to the user when the intent is
      * complete.</p>
      */
-    inline const ResponseSpecification& GetClosingResponse() const{ return m_closingResponse; }
+    inline const ResponseSpecification& GetClosingResponse() const { return m_closingResponse; }
     inline bool ClosingResponseHasBeenSet() const { return m_closingResponseHasBeenSet; }
-    inline void SetClosingResponse(const ResponseSpecification& value) { m_closingResponseHasBeenSet = true; m_closingResponse = value; }
-    inline void SetClosingResponse(ResponseSpecification&& value) { m_closingResponseHasBeenSet = true; m_closingResponse = std::move(value); }
-    inline IntentClosingSetting& WithClosingResponse(const ResponseSpecification& value) { SetClosingResponse(value); return *this;}
-    inline IntentClosingSetting& WithClosingResponse(ResponseSpecification&& value) { SetClosingResponse(std::move(value)); return *this;}
+    template<typename ClosingResponseT = ResponseSpecification>
+    void SetClosingResponse(ClosingResponseT&& value) { m_closingResponseHasBeenSet = true; m_closingResponse = std::forward<ClosingResponseT>(value); }
+    template<typename ClosingResponseT = ResponseSpecification>
+    IntentClosingSetting& WithClosingResponse(ClosingResponseT&& value) { SetClosingResponse(std::forward<ClosingResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
      * false, the closing response isn't sent to the user. If the <code>active</code>
      * field isn't specified, the default is true.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline IntentClosingSetting& WithActive(bool value) { SetActive(value); return *this;}
@@ -70,12 +70,12 @@ namespace Model
      * <p>Specifies the next step that the bot executes after playing the intent's
      * closing response.</p>
      */
-    inline const DialogState& GetNextStep() const{ return m_nextStep; }
+    inline const DialogState& GetNextStep() const { return m_nextStep; }
     inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
-    inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
-    inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
-    inline IntentClosingSetting& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
-    inline IntentClosingSetting& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+    template<typename NextStepT = DialogState>
+    void SetNextStep(NextStepT&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::forward<NextStepT>(value); }
+    template<typename NextStepT = DialogState>
+    IntentClosingSetting& WithNextStep(NextStepT&& value) { SetNextStep(std::forward<NextStepT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +84,19 @@ namespace Model
      * These branches are executed when the <code>nextStep</code> attribute is set to
      * <code>EvalutateConditional</code>.</p>
      */
-    inline const ConditionalSpecification& GetConditional() const{ return m_conditional; }
+    inline const ConditionalSpecification& GetConditional() const { return m_conditional; }
     inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
-    inline void SetConditional(const ConditionalSpecification& value) { m_conditionalHasBeenSet = true; m_conditional = value; }
-    inline void SetConditional(ConditionalSpecification&& value) { m_conditionalHasBeenSet = true; m_conditional = std::move(value); }
-    inline IntentClosingSetting& WithConditional(const ConditionalSpecification& value) { SetConditional(value); return *this;}
-    inline IntentClosingSetting& WithConditional(ConditionalSpecification&& value) { SetConditional(std::move(value)); return *this;}
+    template<typename ConditionalT = ConditionalSpecification>
+    void SetConditional(ConditionalT&& value) { m_conditionalHasBeenSet = true; m_conditional = std::forward<ConditionalT>(value); }
+    template<typename ConditionalT = ConditionalSpecification>
+    IntentClosingSetting& WithConditional(ConditionalT&& value) { SetConditional(std::forward<ConditionalT>(value)); return *this;}
     ///@}
   private:
 
     ResponseSpecification m_closingResponse;
     bool m_closingResponseHasBeenSet = false;
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
 
     DialogState m_nextStep;

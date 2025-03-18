@@ -18,16 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-PhonemeTranscription::PhonemeTranscription() : 
-    m_valueHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_preferred(false),
-    m_preferredHasBeenSet(false)
-{
-}
-
 PhonemeTranscription::PhonemeTranscription(JsonView jsonValue)
-  : PhonemeTranscription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PhonemeTranscription& PhonemeTranscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Preferred"))
   {
     m_preferred = jsonValue.GetBool("Preferred");
-
     m_preferredHasBeenSet = true;
   }
-
   return *this;
 }
 

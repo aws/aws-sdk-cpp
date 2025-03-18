@@ -12,20 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFolderRequest::CreateFolderRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_folderType(FolderType::NOT_SET),
-    m_folderTypeHasBeenSet(false),
-    m_parentFolderArnHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sharingModel(SharingModel::NOT_SET),
-    m_sharingModelHasBeenSet(false)
-{
-}
-
 Aws::String CreateFolderRequest::SerializePayload() const
 {
   JsonValue payload;

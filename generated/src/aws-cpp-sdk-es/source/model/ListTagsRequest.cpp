@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTagsRequest::ListTagsRequest() : 
-    m_aRNHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsRequest::SerializePayload() const
 {
   return {};

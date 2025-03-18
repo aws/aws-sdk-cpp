@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentOutputTextFormat::DocumentOutputTextFormat() : 
-    m_typesHasBeenSet(false)
-{
-}
-
 DocumentOutputTextFormat::DocumentOutputTextFormat(JsonView jsonValue)
-  : DocumentOutputTextFormat()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DocumentOutputTextFormat& DocumentOutputTextFormat::operator =(JsonView jsonValu
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

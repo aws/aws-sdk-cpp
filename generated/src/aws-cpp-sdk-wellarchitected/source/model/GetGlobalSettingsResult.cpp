@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGlobalSettingsResult::GetGlobalSettingsResult() : 
-    m_organizationSharingStatus(OrganizationSharingStatus::NOT_SET),
-    m_discoveryIntegrationStatus(DiscoveryIntegrationStatus::NOT_SET)
-{
-}
-
 GetGlobalSettingsResult::GetGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetGlobalSettingsResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ GetGlobalSettingsResult& GetGlobalSettingsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("OrganizationSharingStatus"))
   {
     m_organizationSharingStatus = OrganizationSharingStatusMapper::GetOrganizationSharingStatusForName(jsonValue.GetString("OrganizationSharingStatus"));
-
+    m_organizationSharingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscoveryIntegrationStatus"))
   {
     m_discoveryIntegrationStatus = DiscoveryIntegrationStatusMapper::GetDiscoveryIntegrationStatusForName(jsonValue.GetString("DiscoveryIntegrationStatus"));
-
+    m_discoveryIntegrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraConfiguration"))
   {
     m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
-
+    m_jiraConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

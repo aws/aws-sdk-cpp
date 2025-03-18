@@ -18,21 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-InstanceUserSummary::InstanceUserSummary() : 
-    m_associationDateHasBeenSet(false),
-    m_disassociationDateHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceUserArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 InstanceUserSummary::InstanceUserSummary(JsonView jsonValue)
-  : InstanceUserSummary()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ InstanceUserSummary& InstanceUserSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationDate"))
   {
     m_associationDate = jsonValue.GetString("AssociationDate");
-
     m_associationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisassociationDate"))
   {
     m_disassociationDate = jsonValue.GetString("DisassociationDate");
-
     m_disassociationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProvider"))
   {
     m_identityProvider = jsonValue.GetObject("IdentityProvider");
-
     m_identityProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceUserArn"))
   {
     m_instanceUserArn = jsonValue.GetString("InstanceUserArn");
-
     m_instanceUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

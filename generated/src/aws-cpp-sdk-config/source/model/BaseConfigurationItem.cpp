@@ -18,31 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-BaseConfigurationItem::BaseConfigurationItem() : 
-    m_versionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_configurationItemCaptureTimeHasBeenSet(false),
-    m_configurationItemStatus(ConfigurationItemStatus::NOT_SET),
-    m_configurationItemStatusHasBeenSet(false),
-    m_configurationStateIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_resourceCreationTimeHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_supplementaryConfigurationHasBeenSet(false),
-    m_recordingFrequency(RecordingFrequency::NOT_SET),
-    m_recordingFrequencyHasBeenSet(false),
-    m_configurationItemDeliveryTimeHasBeenSet(false)
-{
-}
-
 BaseConfigurationItem::BaseConfigurationItem(JsonView jsonValue)
-  : BaseConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -52,94 +28,68 @@ BaseConfigurationItem& BaseConfigurationItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationItemCaptureTime"))
   {
     m_configurationItemCaptureTime = jsonValue.GetDouble("configurationItemCaptureTime");
-
     m_configurationItemCaptureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationItemStatus"))
   {
     m_configurationItemStatus = ConfigurationItemStatusMapper::GetConfigurationItemStatusForName(jsonValue.GetString("configurationItemStatus"));
-
     m_configurationItemStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationStateId"))
   {
     m_configurationStateId = jsonValue.GetString("configurationStateId");
-
     m_configurationStateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceCreationTime"))
   {
     m_resourceCreationTime = jsonValue.GetDouble("resourceCreationTime");
-
     m_resourceCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetString("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supplementaryConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
@@ -149,21 +99,16 @@ BaseConfigurationItem& BaseConfigurationItem::operator =(JsonView jsonValue)
     }
     m_supplementaryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingFrequency"))
   {
     m_recordingFrequency = RecordingFrequencyMapper::GetRecordingFrequencyForName(jsonValue.GetString("recordingFrequency"));
-
     m_recordingFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationItemDeliveryTime"))
   {
     m_configurationItemDeliveryTime = jsonValue.GetDouble("configurationItemDeliveryTime");
-
     m_configurationItemDeliveryTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

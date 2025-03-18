@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTriggersRequest::GetTriggersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_dependentJobNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetTriggersRequest::SerializePayload() const
 {
   JsonValue payload;

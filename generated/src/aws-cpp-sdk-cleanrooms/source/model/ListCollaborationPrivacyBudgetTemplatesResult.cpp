@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationPrivacyBudgetTemplatesResult::ListCollaborationPrivacyBudgetTemplatesResult()
-{
-}
-
 ListCollaborationPrivacyBudgetTemplatesResult::ListCollaborationPrivacyBudgetTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListCollaborationPrivacyBudgetTemplatesResult& ListCollaborationPrivacyBudgetTem
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationPrivacyBudgetTemplateSummaries"))
   {
     Aws::Utils::Array<JsonView> collaborationPrivacyBudgetTemplateSummariesJsonList = jsonValue.GetArray("collaborationPrivacyBudgetTemplateSummaries");
@@ -42,14 +37,15 @@ ListCollaborationPrivacyBudgetTemplatesResult& ListCollaborationPrivacyBudgetTem
     {
       m_collaborationPrivacyBudgetTemplateSummaries.push_back(collaborationPrivacyBudgetTemplateSummariesJsonList[collaborationPrivacyBudgetTemplateSummariesIndex].AsObject());
     }
+    m_collaborationPrivacyBudgetTemplateSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

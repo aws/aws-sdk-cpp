@@ -21,7 +21,7 @@ namespace Model
   class AssociateWebACLRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API AssociateWebACLRequest();
+    AWS_WAFV2_API AssociateWebACLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
-    inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
+    inline const Aws::String& GetWebACLArn() const { return m_webACLArn; }
     inline bool WebACLArnHasBeenSet() const { return m_webACLArnHasBeenSet; }
-    inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
-    inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
-    inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
-    inline AssociateWebACLRequest& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
-    inline AssociateWebACLRequest& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
-    inline AssociateWebACLRequest& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
+    template<typename WebACLArnT = Aws::String>
+    void SetWebACLArn(WebACLArnT&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::forward<WebACLArnT>(value); }
+    template<typename WebACLArnT = Aws::String>
+    AssociateWebACLRequest& WithWebACLArn(WebACLArnT&& value) { SetWebACLArn(std::forward<WebACLArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline AssociateWebACLRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline AssociateWebACLRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline AssociateWebACLRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    AssociateWebACLRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchLifecyclePolicy::OpenSearchLifecyclePolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchLifecyclePolicy::OpenSearchLifecyclePolicy(JsonView jsonValue)
-  : OpenSearchLifecyclePolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenSearchLifecyclePolicy& OpenSearchLifecyclePolicy::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

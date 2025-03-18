@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-OpenHoursRule::OpenHoursRule() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 OpenHoursRule::OpenHoursRule(JsonView jsonValue)
-  : OpenHoursRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenHoursRule& OpenHoursRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

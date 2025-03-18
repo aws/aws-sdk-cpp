@@ -25,7 +25,7 @@ namespace Model
   class ListEnvironmentBlueprintsRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListEnvironmentBlueprintsRequest();
+    AWS_DATAZONE_API ListEnvironmentBlueprintsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon DataZone domain.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListEnvironmentBlueprintsRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListEnvironmentBlueprintsRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Specifies whether the environment blueprint is managed by Amazon
      * DataZone.</p>
      */
-    inline bool GetManaged() const{ return m_managed; }
+    inline bool GetManaged() const { return m_managed; }
     inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
     inline void SetManaged(bool value) { m_managedHasBeenSet = true; m_managed = value; }
     inline ListEnvironmentBlueprintsRequest& WithManaged(bool value) { SetManaged(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * contains a <code>NextToken</code> value that you can use in a subsequent call to
      * <code>ListEnvironmentBlueprints</code> to list the next set of blueprints.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEnvironmentBlueprintsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
     /**
      * <p>The name of the Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListEnvironmentBlueprintsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListEnvironmentBlueprintsRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,24 +97,22 @@ namespace Model
      * subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of
      * blueprints.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEnvironmentBlueprintsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnvironmentBlueprintsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnvironmentBlueprintsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    bool m_managed;
+    bool m_managed{false};
     bool m_managedHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_name;

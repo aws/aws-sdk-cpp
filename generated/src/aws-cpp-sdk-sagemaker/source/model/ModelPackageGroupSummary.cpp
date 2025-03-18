@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelPackageGroupSummary::ModelPackageGroupSummary() : 
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageGroupArnHasBeenSet(false),
-    m_modelPackageGroupDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modelPackageGroupStatus(ModelPackageGroupStatus::NOT_SET),
-    m_modelPackageGroupStatusHasBeenSet(false)
-{
-}
-
 ModelPackageGroupSummary::ModelPackageGroupSummary(JsonView jsonValue)
-  : ModelPackageGroupSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ModelPackageGroupSummary& ModelPackageGroupSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ModelPackageGroupName"))
   {
     m_modelPackageGroupName = jsonValue.GetString("ModelPackageGroupName");
-
     m_modelPackageGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelPackageGroupArn"))
   {
     m_modelPackageGroupArn = jsonValue.GetString("ModelPackageGroupArn");
-
     m_modelPackageGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelPackageGroupDescription"))
   {
     m_modelPackageGroupDescription = jsonValue.GetString("ModelPackageGroupDescription");
-
     m_modelPackageGroupDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelPackageGroupStatus"))
   {
     m_modelPackageGroupStatus = ModelPackageGroupStatusMapper::GetModelPackageGroupStatusForName(jsonValue.GetString("ModelPackageGroupStatus"));
-
     m_modelPackageGroupStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class CaseRuleSummary
   {
   public:
-    AWS_CONNECTCASES_API CaseRuleSummary();
+    AWS_CONNECTCASES_API CaseRuleSummary() = default;
     AWS_CONNECTCASES_API CaseRuleSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API CaseRuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,68 +46,58 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the case rule. </p>
      */
-    inline const Aws::String& GetCaseRuleArn() const{ return m_caseRuleArn; }
+    inline const Aws::String& GetCaseRuleArn() const { return m_caseRuleArn; }
     inline bool CaseRuleArnHasBeenSet() const { return m_caseRuleArnHasBeenSet; }
-    inline void SetCaseRuleArn(const Aws::String& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = value; }
-    inline void SetCaseRuleArn(Aws::String&& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = std::move(value); }
-    inline void SetCaseRuleArn(const char* value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn.assign(value); }
-    inline CaseRuleSummary& WithCaseRuleArn(const Aws::String& value) { SetCaseRuleArn(value); return *this;}
-    inline CaseRuleSummary& WithCaseRuleArn(Aws::String&& value) { SetCaseRuleArn(std::move(value)); return *this;}
-    inline CaseRuleSummary& WithCaseRuleArn(const char* value) { SetCaseRuleArn(value); return *this;}
+    template<typename CaseRuleArnT = Aws::String>
+    void SetCaseRuleArn(CaseRuleArnT&& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = std::forward<CaseRuleArnT>(value); }
+    template<typename CaseRuleArnT = Aws::String>
+    CaseRuleSummary& WithCaseRuleArn(CaseRuleArnT&& value) { SetCaseRuleArn(std::forward<CaseRuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier of a case rule.</p>
      */
-    inline const Aws::String& GetCaseRuleId() const{ return m_caseRuleId; }
+    inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
     inline bool CaseRuleIdHasBeenSet() const { return m_caseRuleIdHasBeenSet; }
-    inline void SetCaseRuleId(const Aws::String& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = value; }
-    inline void SetCaseRuleId(Aws::String&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::move(value); }
-    inline void SetCaseRuleId(const char* value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId.assign(value); }
-    inline CaseRuleSummary& WithCaseRuleId(const Aws::String& value) { SetCaseRuleId(value); return *this;}
-    inline CaseRuleSummary& WithCaseRuleId(Aws::String&& value) { SetCaseRuleId(std::move(value)); return *this;}
-    inline CaseRuleSummary& WithCaseRuleId(const char* value) { SetCaseRuleId(value); return *this;}
+    template<typename CaseRuleIdT = Aws::String>
+    void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
+    template<typename CaseRuleIdT = Aws::String>
+    CaseRuleSummary& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of a case rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CaseRuleSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CaseRuleSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CaseRuleSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CaseRuleSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the case rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CaseRuleSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CaseRuleSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CaseRuleSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CaseRuleSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Possible types for a rule.</p>
      */
-    inline const RuleType& GetRuleType() const{ return m_ruleType; }
+    inline RuleType GetRuleType() const { return m_ruleType; }
     inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
-    inline void SetRuleType(const RuleType& value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
-    inline void SetRuleType(RuleType&& value) { m_ruleTypeHasBeenSet = true; m_ruleType = std::move(value); }
-    inline CaseRuleSummary& WithRuleType(const RuleType& value) { SetRuleType(value); return *this;}
-    inline CaseRuleSummary& WithRuleType(RuleType&& value) { SetRuleType(std::move(value)); return *this;}
+    inline void SetRuleType(RuleType value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
+    inline CaseRuleSummary& WithRuleType(RuleType value) { SetRuleType(value); return *this;}
     ///@}
   private:
 
@@ -123,7 +113,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RuleType m_ruleType;
+    RuleType m_ruleType{RuleType::NOT_SET};
     bool m_ruleTypeHasBeenSet = false;
   };
 

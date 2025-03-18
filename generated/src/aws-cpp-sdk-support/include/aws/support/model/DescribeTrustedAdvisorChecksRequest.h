@@ -21,7 +21,7 @@ namespace Model
   class DescribeTrustedAdvisorChecksRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorChecksRequest();
+    AWS_SUPPORT_API DescribeTrustedAdvisorChecksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
      * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline DescribeTrustedAdvisorChecksRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline DescribeTrustedAdvisorChecksRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorChecksRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    DescribeTrustedAdvisorChecksRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
   private:
 

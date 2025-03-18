@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-IntentInputData::IntentInputData() : 
-    m_intentIdHasBeenSet(false)
-{
-}
-
 IntentInputData::IntentInputData(JsonView jsonValue)
-  : IntentInputData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IntentInputData& IntentInputData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentId"))
   {
     m_intentId = jsonValue.GetString("intentId");
-
     m_intentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

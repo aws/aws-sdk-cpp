@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-RepositoryCredentials::RepositoryCredentials() : 
-    m_credentialsParameterHasBeenSet(false)
-{
-}
-
 RepositoryCredentials::RepositoryCredentials(JsonView jsonValue)
-  : RepositoryCredentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RepositoryCredentials& RepositoryCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("credentialsParameter"))
   {
     m_credentialsParameter = jsonValue.GetString("credentialsParameter");
-
     m_credentialsParameterHasBeenSet = true;
   }
-
   return *this;
 }
 

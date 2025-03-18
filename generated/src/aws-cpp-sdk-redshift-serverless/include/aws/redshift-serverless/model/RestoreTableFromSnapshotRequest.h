@@ -21,7 +21,7 @@ namespace Model
   class RestoreTableFromSnapshotRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API RestoreTableFromSnapshotRequest();
+    AWS_REDSHIFTSERVERLESS_API RestoreTableFromSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
      * sensitive. If true, the names are case sensitive. If false, the names are not
      * case sensitive. The default is false.</p>
      */
-    inline bool GetActivateCaseSensitiveIdentifier() const{ return m_activateCaseSensitiveIdentifier; }
+    inline bool GetActivateCaseSensitiveIdentifier() const { return m_activateCaseSensitiveIdentifier; }
     inline bool ActivateCaseSensitiveIdentifierHasBeenSet() const { return m_activateCaseSensitiveIdentifierHasBeenSet; }
     inline void SetActivateCaseSensitiveIdentifier(bool value) { m_activateCaseSensitiveIdentifierHasBeenSet = true; m_activateCaseSensitiveIdentifier = value; }
     inline RestoreTableFromSnapshotRequest& WithActivateCaseSensitiveIdentifier(bool value) { SetActivateCaseSensitiveIdentifier(value); return *this;}
@@ -50,130 +50,112 @@ namespace Model
     /**
      * <p>The namespace of the snapshot to restore from.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table to create from the restore operation.</p>
      */
-    inline const Aws::String& GetNewTableName() const{ return m_newTableName; }
+    inline const Aws::String& GetNewTableName() const { return m_newTableName; }
     inline bool NewTableNameHasBeenSet() const { return m_newTableNameHasBeenSet; }
-    inline void SetNewTableName(const Aws::String& value) { m_newTableNameHasBeenSet = true; m_newTableName = value; }
-    inline void SetNewTableName(Aws::String&& value) { m_newTableNameHasBeenSet = true; m_newTableName = std::move(value); }
-    inline void SetNewTableName(const char* value) { m_newTableNameHasBeenSet = true; m_newTableName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithNewTableName(const Aws::String& value) { SetNewTableName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithNewTableName(Aws::String&& value) { SetNewTableName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithNewTableName(const char* value) { SetNewTableName(value); return *this;}
+    template<typename NewTableNameT = Aws::String>
+    void SetNewTableName(NewTableNameT&& value) { m_newTableNameHasBeenSet = true; m_newTableName = std::forward<NewTableNameT>(value); }
+    template<typename NewTableNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithNewTableName(NewTableNameT&& value) { SetNewTableName(std::forward<NewTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the snapshot to restore the table from.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source database that contains the table being restored.</p>
      */
-    inline const Aws::String& GetSourceDatabaseName() const{ return m_sourceDatabaseName; }
+    inline const Aws::String& GetSourceDatabaseName() const { return m_sourceDatabaseName; }
     inline bool SourceDatabaseNameHasBeenSet() const { return m_sourceDatabaseNameHasBeenSet; }
-    inline void SetSourceDatabaseName(const Aws::String& value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName = value; }
-    inline void SetSourceDatabaseName(Aws::String&& value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName = std::move(value); }
-    inline void SetSourceDatabaseName(const char* value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithSourceDatabaseName(const Aws::String& value) { SetSourceDatabaseName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceDatabaseName(Aws::String&& value) { SetSourceDatabaseName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceDatabaseName(const char* value) { SetSourceDatabaseName(value); return *this;}
+    template<typename SourceDatabaseNameT = Aws::String>
+    void SetSourceDatabaseName(SourceDatabaseNameT&& value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName = std::forward<SourceDatabaseNameT>(value); }
+    template<typename SourceDatabaseNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithSourceDatabaseName(SourceDatabaseNameT&& value) { SetSourceDatabaseName(std::forward<SourceDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source schema that contains the table being restored.</p>
      */
-    inline const Aws::String& GetSourceSchemaName() const{ return m_sourceSchemaName; }
+    inline const Aws::String& GetSourceSchemaName() const { return m_sourceSchemaName; }
     inline bool SourceSchemaNameHasBeenSet() const { return m_sourceSchemaNameHasBeenSet; }
-    inline void SetSourceSchemaName(const Aws::String& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = value; }
-    inline void SetSourceSchemaName(Aws::String&& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = std::move(value); }
-    inline void SetSourceSchemaName(const char* value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithSourceSchemaName(const Aws::String& value) { SetSourceSchemaName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceSchemaName(Aws::String&& value) { SetSourceSchemaName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceSchemaName(const char* value) { SetSourceSchemaName(value); return *this;}
+    template<typename SourceSchemaNameT = Aws::String>
+    void SetSourceSchemaName(SourceSchemaNameT&& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = std::forward<SourceSchemaNameT>(value); }
+    template<typename SourceSchemaNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithSourceSchemaName(SourceSchemaNameT&& value) { SetSourceSchemaName(std::forward<SourceSchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source table being restored.</p>
      */
-    inline const Aws::String& GetSourceTableName() const{ return m_sourceTableName; }
+    inline const Aws::String& GetSourceTableName() const { return m_sourceTableName; }
     inline bool SourceTableNameHasBeenSet() const { return m_sourceTableNameHasBeenSet; }
-    inline void SetSourceTableName(const Aws::String& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = value; }
-    inline void SetSourceTableName(Aws::String&& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = std::move(value); }
-    inline void SetSourceTableName(const char* value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithSourceTableName(const Aws::String& value) { SetSourceTableName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceTableName(Aws::String&& value) { SetSourceTableName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithSourceTableName(const char* value) { SetSourceTableName(value); return *this;}
+    template<typename SourceTableNameT = Aws::String>
+    void SetSourceTableName(SourceTableNameT&& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = std::forward<SourceTableNameT>(value); }
+    template<typename SourceTableNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithSourceTableName(SourceTableNameT&& value) { SetSourceTableName(std::forward<SourceTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database to restore the table to.</p>
      */
-    inline const Aws::String& GetTargetDatabaseName() const{ return m_targetDatabaseName; }
+    inline const Aws::String& GetTargetDatabaseName() const { return m_targetDatabaseName; }
     inline bool TargetDatabaseNameHasBeenSet() const { return m_targetDatabaseNameHasBeenSet; }
-    inline void SetTargetDatabaseName(const Aws::String& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = value; }
-    inline void SetTargetDatabaseName(Aws::String&& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = std::move(value); }
-    inline void SetTargetDatabaseName(const char* value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithTargetDatabaseName(const Aws::String& value) { SetTargetDatabaseName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithTargetDatabaseName(Aws::String&& value) { SetTargetDatabaseName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithTargetDatabaseName(const char* value) { SetTargetDatabaseName(value); return *this;}
+    template<typename TargetDatabaseNameT = Aws::String>
+    void SetTargetDatabaseName(TargetDatabaseNameT&& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = std::forward<TargetDatabaseNameT>(value); }
+    template<typename TargetDatabaseNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithTargetDatabaseName(TargetDatabaseNameT&& value) { SetTargetDatabaseName(std::forward<TargetDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
-    inline const Aws::String& GetTargetSchemaName() const{ return m_targetSchemaName; }
+    inline const Aws::String& GetTargetSchemaName() const { return m_targetSchemaName; }
     inline bool TargetSchemaNameHasBeenSet() const { return m_targetSchemaNameHasBeenSet; }
-    inline void SetTargetSchemaName(const Aws::String& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = value; }
-    inline void SetTargetSchemaName(Aws::String&& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = std::move(value); }
-    inline void SetTargetSchemaName(const char* value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithTargetSchemaName(const Aws::String& value) { SetTargetSchemaName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithTargetSchemaName(Aws::String&& value) { SetTargetSchemaName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithTargetSchemaName(const char* value) { SetTargetSchemaName(value); return *this;}
+    template<typename TargetSchemaNameT = Aws::String>
+    void SetTargetSchemaName(TargetSchemaNameT&& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = std::forward<TargetSchemaNameT>(value); }
+    template<typename TargetSchemaNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithTargetSchemaName(TargetSchemaNameT&& value) { SetTargetSchemaName(std::forward<TargetSchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workgroup to restore the table to.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline RestoreTableFromSnapshotRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline RestoreTableFromSnapshotRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    RestoreTableFromSnapshotRequest& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_activateCaseSensitiveIdentifier;
+    bool m_activateCaseSensitiveIdentifier{false};
     bool m_activateCaseSensitiveIdentifierHasBeenSet = false;
 
     Aws::String m_namespaceName;

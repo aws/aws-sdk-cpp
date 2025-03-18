@@ -28,7 +28,7 @@ namespace Model
   class GetTopicRuleDestinationResult
   {
   public:
-    AWS_IOT_API GetTopicRuleDestinationResult();
+    AWS_IOT_API GetTopicRuleDestinationResult() = default;
     AWS_IOT_API GetTopicRuleDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetTopicRuleDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The topic rule destination.</p>
      */
-    inline const TopicRuleDestination& GetTopicRuleDestination() const{ return m_topicRuleDestination; }
-    inline void SetTopicRuleDestination(const TopicRuleDestination& value) { m_topicRuleDestination = value; }
-    inline void SetTopicRuleDestination(TopicRuleDestination&& value) { m_topicRuleDestination = std::move(value); }
-    inline GetTopicRuleDestinationResult& WithTopicRuleDestination(const TopicRuleDestination& value) { SetTopicRuleDestination(value); return *this;}
-    inline GetTopicRuleDestinationResult& WithTopicRuleDestination(TopicRuleDestination&& value) { SetTopicRuleDestination(std::move(value)); return *this;}
+    inline const TopicRuleDestination& GetTopicRuleDestination() const { return m_topicRuleDestination; }
+    template<typename TopicRuleDestinationT = TopicRuleDestination>
+    void SetTopicRuleDestination(TopicRuleDestinationT&& value) { m_topicRuleDestinationHasBeenSet = true; m_topicRuleDestination = std::forward<TopicRuleDestinationT>(value); }
+    template<typename TopicRuleDestinationT = TopicRuleDestination>
+    GetTopicRuleDestinationResult& WithTopicRuleDestination(TopicRuleDestinationT&& value) { SetTopicRuleDestination(std::forward<TopicRuleDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTopicRuleDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTopicRuleDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTopicRuleDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTopicRuleDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TopicRuleDestination m_topicRuleDestination;
+    bool m_topicRuleDestinationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

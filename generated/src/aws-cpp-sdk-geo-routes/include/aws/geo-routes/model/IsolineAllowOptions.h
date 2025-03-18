@@ -30,7 +30,7 @@ namespace Model
   class IsolineAllowOptions
   {
   public:
-    AWS_GEOROUTES_API IsolineAllowOptions();
+    AWS_GEOROUTES_API IsolineAllowOptions() = default;
     AWS_GEOROUTES_API IsolineAllowOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineAllowOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Allow Hot (High Occupancy Toll) lanes while calculating an isoline.</p>
      * <p>Default value: <code>false</code> </p>
      */
-    inline bool GetHot() const{ return m_hot; }
+    inline bool GetHot() const { return m_hot; }
     inline bool HotHasBeenSet() const { return m_hotHasBeenSet; }
     inline void SetHot(bool value) { m_hotHasBeenSet = true; m_hot = value; }
     inline IsolineAllowOptions& WithHot(bool value) { SetHot(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Allow Hov (High Occupancy vehicle) lanes while calculating an isoline.</p>
      * <p>Default value: <code>false</code> </p>
      */
-    inline bool GetHov() const{ return m_hov; }
+    inline bool GetHov() const { return m_hov; }
     inline bool HovHasBeenSet() const { return m_hovHasBeenSet; }
     inline void SetHov(bool value) { m_hovHasBeenSet = true; m_hov = value; }
     inline IsolineAllowOptions& WithHov(bool value) { SetHov(value); return *this;}
     ///@}
   private:
 
-    bool m_hot;
+    bool m_hot{false};
     bool m_hotHasBeenSet = false;
 
-    bool m_hov;
+    bool m_hov{false};
     bool m_hovHasBeenSet = false;
   };
 

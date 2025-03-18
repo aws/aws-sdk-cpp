@@ -34,7 +34,7 @@ namespace Model
   class TargetConfiguration
   {
   public:
-    AWS_GAMELIFT_API TargetConfiguration();
+    AWS_GAMELIFT_API TargetConfiguration() = default;
     AWS_GAMELIFT_API TargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API TargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * the preferred size of the fleet's buffer (the percent of capacity that should be
      * idle and ready for new game sessions).</p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
     ///@}
   private:
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
   };
 

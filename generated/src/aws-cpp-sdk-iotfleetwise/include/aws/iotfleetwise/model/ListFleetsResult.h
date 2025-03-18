@@ -29,7 +29,7 @@ namespace Model
   class ListFleetsResult
   {
   public:
-    AWS_IOTFLEETWISE_API ListFleetsResult();
+    AWS_IOTFLEETWISE_API ListFleetsResult() = default;
     AWS_IOTFLEETWISE_API ListFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API ListFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> A list of information for each fleet. </p>
      */
-    inline const Aws::Vector<FleetSummary>& GetFleetSummaries() const{ return m_fleetSummaries; }
-    inline void SetFleetSummaries(const Aws::Vector<FleetSummary>& value) { m_fleetSummaries = value; }
-    inline void SetFleetSummaries(Aws::Vector<FleetSummary>&& value) { m_fleetSummaries = std::move(value); }
-    inline ListFleetsResult& WithFleetSummaries(const Aws::Vector<FleetSummary>& value) { SetFleetSummaries(value); return *this;}
-    inline ListFleetsResult& WithFleetSummaries(Aws::Vector<FleetSummary>&& value) { SetFleetSummaries(std::move(value)); return *this;}
-    inline ListFleetsResult& AddFleetSummaries(const FleetSummary& value) { m_fleetSummaries.push_back(value); return *this; }
-    inline ListFleetsResult& AddFleetSummaries(FleetSummary&& value) { m_fleetSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FleetSummary>& GetFleetSummaries() const { return m_fleetSummaries; }
+    template<typename FleetSummariesT = Aws::Vector<FleetSummary>>
+    void SetFleetSummaries(FleetSummariesT&& value) { m_fleetSummariesHasBeenSet = true; m_fleetSummaries = std::forward<FleetSummariesT>(value); }
+    template<typename FleetSummariesT = Aws::Vector<FleetSummary>>
+    ListFleetsResult& WithFleetSummaries(FleetSummariesT&& value) { SetFleetSummaries(std::forward<FleetSummariesT>(value)); return *this;}
+    template<typename FleetSummariesT = FleetSummary>
+    ListFleetsResult& AddFleetSummaries(FleetSummariesT&& value) { m_fleetSummariesHasBeenSet = true; m_fleetSummaries.emplace_back(std::forward<FleetSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p> The token to retrieve the next set of results, or <code>null</code> if there
      * are no more results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFleetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFleetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFleetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFleetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFleetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFleetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFleetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FleetSummary> m_fleetSummaries;
+    bool m_fleetSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

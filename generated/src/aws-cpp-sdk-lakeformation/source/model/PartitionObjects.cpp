@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-PartitionObjects::PartitionObjects() : 
-    m_partitionValuesHasBeenSet(false),
-    m_objectsHasBeenSet(false)
-{
-}
-
 PartitionObjects::PartitionObjects(JsonView jsonValue)
-  : PartitionObjects()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ PartitionObjects& PartitionObjects::operator =(JsonView jsonValue)
     }
     m_partitionValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Objects"))
   {
     Aws::Utils::Array<JsonView> objectsJsonList = jsonValue.GetArray("Objects");
@@ -51,7 +43,6 @@ PartitionObjects& PartitionObjects::operator =(JsonView jsonValue)
     }
     m_objectsHasBeenSet = true;
   }
-
   return *this;
 }
 

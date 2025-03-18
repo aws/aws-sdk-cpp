@@ -32,7 +32,7 @@ namespace Model
   class S3ConfigMap
   {
   public:
-    AWS_CLEANROOMSML_API S3ConfigMap();
+    AWS_CLEANROOMSML_API S3ConfigMap() = default;
     AWS_CLEANROOMSML_API S3ConfigMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API S3ConfigMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location URI.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline S3ConfigMap& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline S3ConfigMap& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline S3ConfigMap& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    S3ConfigMap& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 

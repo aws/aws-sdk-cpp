@@ -25,7 +25,7 @@ namespace Model
   class ListCollaborationConfiguredAudienceModelAssociationsRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API ListCollaborationConfiguredAudienceModelAssociationsRequest();
+    AWS_CLEANROOMS_API ListCollaborationConfiguredAudienceModelAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>A unique identifier for the collaboration that the configured audience model
      * association belongs to. Accepts a collaboration ID.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    ListCollaborationConfiguredAudienceModelAssociationsRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCollaborationConfiguredAudienceModelAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * service chooses a default number if you don't set one. The service might return
      * a `nextToken` even if the `maxResults` value has not been met.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCollaborationConfiguredAudienceModelAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

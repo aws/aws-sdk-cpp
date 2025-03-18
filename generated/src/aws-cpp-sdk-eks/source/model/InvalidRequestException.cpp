@@ -18,17 +18,7 @@ namespace EKS
 namespace Model
 {
 
-InvalidRequestException::InvalidRequestException() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-  : InvalidRequestException()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodegroupName"))
   {
     m_nodegroupName = jsonValue.GetString("nodegroupName");
-
     m_nodegroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonName"))
   {
     m_addonName = jsonValue.GetString("addonName");
-
     m_addonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriptionId"))
   {
     m_subscriptionId = jsonValue.GetString("subscriptionId");
-
     m_subscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

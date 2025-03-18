@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAvailabilityMonitorTestRequest::StartAvailabilityMonitorTestRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String StartAvailabilityMonitorTestRequest::SerializePayload() const
 {
   JsonValue payload;

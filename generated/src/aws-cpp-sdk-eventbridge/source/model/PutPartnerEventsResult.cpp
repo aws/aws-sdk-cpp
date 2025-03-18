@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutPartnerEventsResult::PutPartnerEventsResult() : 
-    m_failedEntryCount(0)
-{
-}
-
 PutPartnerEventsResult::PutPartnerEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutPartnerEventsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ PutPartnerEventsResult& PutPartnerEventsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("FailedEntryCount"))
   {
     m_failedEntryCount = jsonValue.GetInteger("FailedEntryCount");
-
+    m_failedEntryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entries"))
   {
     Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
@@ -44,14 +37,15 @@ PutPartnerEventsResult& PutPartnerEventsResult::operator =(const Aws::AmazonWebS
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
     }
+    m_entriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

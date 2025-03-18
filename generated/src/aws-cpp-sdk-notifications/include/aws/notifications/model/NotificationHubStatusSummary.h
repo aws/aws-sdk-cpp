@@ -33,7 +33,7 @@ namespace Model
   class NotificationHubStatusSummary
   {
   public:
-    AWS_NOTIFICATIONS_API NotificationHubStatusSummary();
+    AWS_NOTIFICATIONS_API NotificationHubStatusSummary() = default;
     AWS_NOTIFICATIONS_API NotificationHubStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API NotificationHubStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,30 +54,26 @@ namespace Model
      * <code>NotificationConfiguration</code> with this status.</p> </li> </ul> </li>
      * </ul> </li> </ul>
      */
-    inline const NotificationHubStatus& GetStatus() const{ return m_status; }
+    inline NotificationHubStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const NotificationHubStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(NotificationHubStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline NotificationHubStatusSummary& WithStatus(const NotificationHubStatus& value) { SetStatus(value); return *this;}
-    inline NotificationHubStatusSummary& WithStatus(NotificationHubStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(NotificationHubStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline NotificationHubStatusSummary& WithStatus(NotificationHubStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An explanation for the current status.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline NotificationHubStatusSummary& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline NotificationHubStatusSummary& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline NotificationHubStatusSummary& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    NotificationHubStatusSummary& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    NotificationHubStatus m_status;
+    NotificationHubStatus m_status{NotificationHubStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

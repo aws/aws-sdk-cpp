@@ -18,13 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningMaterial::SigningMaterial() : 
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 SigningMaterial::SigningMaterial(JsonView jsonValue)
-  : SigningMaterial()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SigningMaterial& SigningMaterial::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

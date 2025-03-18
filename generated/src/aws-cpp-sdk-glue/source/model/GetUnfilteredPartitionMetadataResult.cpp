@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult() : 
-    m_isRegisteredWithLakeFormation(false)
-{
-}
-
 GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetUnfilteredPartitionMetadataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetUnfilteredPartitionMetadataResult& GetUnfilteredPartitionMetadataResult::oper
   if(jsonValue.ValueExists("Partition"))
   {
     m_partition = jsonValue.GetObject("Partition");
-
+    m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedColumns"))
   {
     Aws::Utils::Array<JsonView> authorizedColumnsJsonList = jsonValue.GetArray("AuthorizedColumns");
@@ -44,20 +37,20 @@ GetUnfilteredPartitionMetadataResult& GetUnfilteredPartitionMetadataResult::oper
     {
       m_authorizedColumns.push_back(authorizedColumnsJsonList[authorizedColumnsIndex].AsString());
     }
+    m_authorizedColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRegisteredWithLakeFormation"))
   {
     m_isRegisteredWithLakeFormation = jsonValue.GetBool("IsRegisteredWithLakeFormation");
-
+    m_isRegisteredWithLakeFormationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

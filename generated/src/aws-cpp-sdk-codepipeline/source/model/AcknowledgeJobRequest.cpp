@@ -12,12 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcknowledgeJobRequest::AcknowledgeJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_nonceHasBeenSet(false)
-{
-}
-
 Aws::String AcknowledgeJobRequest::SerializePayload() const
 {
   JsonValue payload;

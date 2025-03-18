@@ -15,25 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_identityType(EmbeddingIdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_sessionLifetimeInMinutes(0),
-    m_sessionLifetimeInMinutesHasBeenSet(false),
-    m_undoRedoDisabled(false),
-    m_undoRedoDisabledHasBeenSet(false),
-    m_resetDisabled(false),
-    m_resetDisabledHasBeenSet(false),
-    m_statePersistenceEnabled(false),
-    m_statePersistenceEnabledHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_additionalDashboardIdsHasBeenSet(false)
-{
-}
-
 Aws::String GetDashboardEmbedUrlRequest::SerializePayload() const
 {
   return {};

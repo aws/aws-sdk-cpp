@@ -28,7 +28,7 @@ namespace Model
   class UpdateComputeNodeGroupRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API UpdateComputeNodeGroupRequest();
+    AWS_PCS_API UpdateComputeNodeGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name or ID of the cluster of the compute node group.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline UpdateComputeNodeGroupRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    UpdateComputeNodeGroupRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ID of the compute node group.</p>
      */
-    inline const Aws::String& GetComputeNodeGroupIdentifier() const{ return m_computeNodeGroupIdentifier; }
+    inline const Aws::String& GetComputeNodeGroupIdentifier() const { return m_computeNodeGroupIdentifier; }
     inline bool ComputeNodeGroupIdentifierHasBeenSet() const { return m_computeNodeGroupIdentifierHasBeenSet; }
-    inline void SetComputeNodeGroupIdentifier(const Aws::String& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = value; }
-    inline void SetComputeNodeGroupIdentifier(Aws::String&& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = std::move(value); }
-    inline void SetComputeNodeGroupIdentifier(const char* value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier.assign(value); }
-    inline UpdateComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(const Aws::String& value) { SetComputeNodeGroupIdentifier(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(Aws::String&& value) { SetComputeNodeGroupIdentifier(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(const char* value) { SetComputeNodeGroupIdentifier(value); return *this;}
+    template<typename ComputeNodeGroupIdentifierT = Aws::String>
+    void SetComputeNodeGroupIdentifier(ComputeNodeGroupIdentifierT&& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = std::forward<ComputeNodeGroupIdentifierT>(value); }
+    template<typename ComputeNodeGroupIdentifierT = Aws::String>
+    UpdateComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(ComputeNodeGroupIdentifierT&& value) { SetComputeNodeGroupIdentifier(std::forward<ComputeNodeGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * launch instances. If not provided, Amazon Web Services PCS uses the AMI ID
      * specified in the custom launch template.</p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline UpdateComputeNodeGroupRequest& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    UpdateComputeNodeGroupRequest& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,25 +84,24 @@ namespace Model
      * <p>The list of subnet IDs where the compute node group provisions instances. The
      * subnets must be in the same VPC as the cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline UpdateComputeNodeGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline UpdateComputeNodeGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    UpdateComputeNodeGroupRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    UpdateComputeNodeGroupRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const CustomLaunchTemplate& GetCustomLaunchTemplate() const{ return m_customLaunchTemplate; }
+    inline const CustomLaunchTemplate& GetCustomLaunchTemplate() const { return m_customLaunchTemplate; }
     inline bool CustomLaunchTemplateHasBeenSet() const { return m_customLaunchTemplateHasBeenSet; }
-    inline void SetCustomLaunchTemplate(const CustomLaunchTemplate& value) { m_customLaunchTemplateHasBeenSet = true; m_customLaunchTemplate = value; }
-    inline void SetCustomLaunchTemplate(CustomLaunchTemplate&& value) { m_customLaunchTemplateHasBeenSet = true; m_customLaunchTemplate = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithCustomLaunchTemplate(const CustomLaunchTemplate& value) { SetCustomLaunchTemplate(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithCustomLaunchTemplate(CustomLaunchTemplate&& value) { SetCustomLaunchTemplate(std::move(value)); return *this;}
+    template<typename CustomLaunchTemplateT = CustomLaunchTemplate>
+    void SetCustomLaunchTemplate(CustomLaunchTemplateT&& value) { m_customLaunchTemplateHasBeenSet = true; m_customLaunchTemplate = std::forward<CustomLaunchTemplateT>(value); }
+    template<typename CustomLaunchTemplateT = CustomLaunchTemplate>
+    UpdateComputeNodeGroupRequest& WithCustomLaunchTemplate(CustomLaunchTemplateT&& value) { SetCustomLaunchTemplate(std::forward<CustomLaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,34 +112,32 @@ namespace Model
      * purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
      * you don't provide this option, it defaults to On-Demand.</p>
      */
-    inline const PurchaseOption& GetPurchaseOption() const{ return m_purchaseOption; }
+    inline PurchaseOption GetPurchaseOption() const { return m_purchaseOption; }
     inline bool PurchaseOptionHasBeenSet() const { return m_purchaseOptionHasBeenSet; }
-    inline void SetPurchaseOption(const PurchaseOption& value) { m_purchaseOptionHasBeenSet = true; m_purchaseOption = value; }
-    inline void SetPurchaseOption(PurchaseOption&& value) { m_purchaseOptionHasBeenSet = true; m_purchaseOption = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithPurchaseOption(const PurchaseOption& value) { SetPurchaseOption(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithPurchaseOption(PurchaseOption&& value) { SetPurchaseOption(std::move(value)); return *this;}
+    inline void SetPurchaseOption(PurchaseOption value) { m_purchaseOptionHasBeenSet = true; m_purchaseOption = value; }
+    inline UpdateComputeNodeGroupRequest& WithPurchaseOption(PurchaseOption value) { SetPurchaseOption(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const SpotOptions& GetSpotOptions() const{ return m_spotOptions; }
+    inline const SpotOptions& GetSpotOptions() const { return m_spotOptions; }
     inline bool SpotOptionsHasBeenSet() const { return m_spotOptionsHasBeenSet; }
-    inline void SetSpotOptions(const SpotOptions& value) { m_spotOptionsHasBeenSet = true; m_spotOptions = value; }
-    inline void SetSpotOptions(SpotOptions&& value) { m_spotOptionsHasBeenSet = true; m_spotOptions = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithSpotOptions(const SpotOptions& value) { SetSpotOptions(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithSpotOptions(SpotOptions&& value) { SetSpotOptions(std::move(value)); return *this;}
+    template<typename SpotOptionsT = SpotOptions>
+    void SetSpotOptions(SpotOptionsT&& value) { m_spotOptionsHasBeenSet = true; m_spotOptions = std::forward<SpotOptionsT>(value); }
+    template<typename SpotOptionsT = SpotOptions>
+    UpdateComputeNodeGroupRequest& WithSpotOptions(SpotOptionsT&& value) { SetSpotOptions(std::forward<SpotOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the boundaries of the compute node group auto scaling.</p>
      */
-    inline const ScalingConfigurationRequest& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+    inline const ScalingConfigurationRequest& GetScalingConfiguration() const { return m_scalingConfiguration; }
     inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
-    inline void SetScalingConfiguration(const ScalingConfigurationRequest& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
-    inline void SetScalingConfiguration(ScalingConfigurationRequest&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithScalingConfiguration(const ScalingConfigurationRequest& value) { SetScalingConfiguration(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithScalingConfiguration(ScalingConfigurationRequest&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+    template<typename ScalingConfigurationT = ScalingConfigurationRequest>
+    void SetScalingConfiguration(ScalingConfigurationT&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::forward<ScalingConfigurationT>(value); }
+    template<typename ScalingConfigurationT = ScalingConfigurationRequest>
+    UpdateComputeNodeGroupRequest& WithScalingConfiguration(ScalingConfigurationT&& value) { SetScalingConfiguration(std::forward<ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,26 +153,24 @@ namespace Model
      * <code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetIamInstanceProfileArn() const{ return m_iamInstanceProfileArn; }
+    inline const Aws::String& GetIamInstanceProfileArn() const { return m_iamInstanceProfileArn; }
     inline bool IamInstanceProfileArnHasBeenSet() const { return m_iamInstanceProfileArnHasBeenSet; }
-    inline void SetIamInstanceProfileArn(const Aws::String& value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn = value; }
-    inline void SetIamInstanceProfileArn(Aws::String&& value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn = std::move(value); }
-    inline void SetIamInstanceProfileArn(const char* value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn.assign(value); }
-    inline UpdateComputeNodeGroupRequest& WithIamInstanceProfileArn(const Aws::String& value) { SetIamInstanceProfileArn(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithIamInstanceProfileArn(Aws::String&& value) { SetIamInstanceProfileArn(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithIamInstanceProfileArn(const char* value) { SetIamInstanceProfileArn(value); return *this;}
+    template<typename IamInstanceProfileArnT = Aws::String>
+    void SetIamInstanceProfileArn(IamInstanceProfileArnT&& value) { m_iamInstanceProfileArnHasBeenSet = true; m_iamInstanceProfileArn = std::forward<IamInstanceProfileArnT>(value); }
+    template<typename IamInstanceProfileArnT = Aws::String>
+    UpdateComputeNodeGroupRequest& WithIamInstanceProfileArn(IamInstanceProfileArnT&& value) { SetIamInstanceProfileArn(std::forward<IamInstanceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional options related to the Slurm scheduler.</p>
      */
-    inline const UpdateComputeNodeGroupSlurmConfigurationRequest& GetSlurmConfiguration() const{ return m_slurmConfiguration; }
+    inline const UpdateComputeNodeGroupSlurmConfigurationRequest& GetSlurmConfiguration() const { return m_slurmConfiguration; }
     inline bool SlurmConfigurationHasBeenSet() const { return m_slurmConfigurationHasBeenSet; }
-    inline void SetSlurmConfiguration(const UpdateComputeNodeGroupSlurmConfigurationRequest& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = value; }
-    inline void SetSlurmConfiguration(UpdateComputeNodeGroupSlurmConfigurationRequest&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::move(value); }
-    inline UpdateComputeNodeGroupRequest& WithSlurmConfiguration(const UpdateComputeNodeGroupSlurmConfigurationRequest& value) { SetSlurmConfiguration(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithSlurmConfiguration(UpdateComputeNodeGroupSlurmConfigurationRequest&& value) { SetSlurmConfiguration(std::move(value)); return *this;}
+    template<typename SlurmConfigurationT = UpdateComputeNodeGroupSlurmConfigurationRequest>
+    void SetSlurmConfiguration(SlurmConfigurationT&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::forward<SlurmConfigurationT>(value); }
+    template<typename SlurmConfigurationT = UpdateComputeNodeGroupSlurmConfigurationRequest>
+    UpdateComputeNodeGroupRequest& WithSlurmConfiguration(SlurmConfigurationT&& value) { SetSlurmConfiguration(std::forward<SlurmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,14 +183,12 @@ namespace Model
      * If you don't specify a client token, the CLI and SDK automatically generate 1
      * for you.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateComputeNodeGroupRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateComputeNodeGroupRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,7 +207,7 @@ namespace Model
     CustomLaunchTemplate m_customLaunchTemplate;
     bool m_customLaunchTemplateHasBeenSet = false;
 
-    PurchaseOption m_purchaseOption;
+    PurchaseOption m_purchaseOption{PurchaseOption::NOT_SET};
     bool m_purchaseOptionHasBeenSet = false;
 
     SpotOptions m_spotOptions;

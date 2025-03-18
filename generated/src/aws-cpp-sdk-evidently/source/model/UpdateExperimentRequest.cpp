@@ -12,22 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExperimentRequest::UpdateExperimentRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_experimentHasBeenSet(false),
-    m_metricGoalsHasBeenSet(false),
-    m_onlineAbConfigHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_randomizationSaltHasBeenSet(false),
-    m_removeSegment(false),
-    m_removeSegmentHasBeenSet(false),
-    m_samplingRate(0),
-    m_samplingRateHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_treatmentsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

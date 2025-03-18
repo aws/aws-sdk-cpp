@@ -28,7 +28,7 @@ namespace Model
   class CreateAIAgentResult
   {
   public:
-    AWS_QCONNECT_API CreateAIAgentResult();
+    AWS_QCONNECT_API CreateAIAgentResult() = default;
     AWS_QCONNECT_API CreateAIAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API CreateAIAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The data of the created AI Agent.</p>
      */
-    inline const AIAgentData& GetAiAgent() const{ return m_aiAgent; }
-    inline void SetAiAgent(const AIAgentData& value) { m_aiAgent = value; }
-    inline void SetAiAgent(AIAgentData&& value) { m_aiAgent = std::move(value); }
-    inline CreateAIAgentResult& WithAiAgent(const AIAgentData& value) { SetAiAgent(value); return *this;}
-    inline CreateAIAgentResult& WithAiAgent(AIAgentData&& value) { SetAiAgent(std::move(value)); return *this;}
+    inline const AIAgentData& GetAiAgent() const { return m_aiAgent; }
+    template<typename AiAgentT = AIAgentData>
+    void SetAiAgent(AiAgentT&& value) { m_aiAgentHasBeenSet = true; m_aiAgent = std::forward<AiAgentT>(value); }
+    template<typename AiAgentT = AIAgentData>
+    CreateAIAgentResult& WithAiAgent(AiAgentT&& value) { SetAiAgent(std::forward<AiAgentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAIAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAIAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAIAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAIAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AIAgentData m_aiAgent;
+    bool m_aiAgentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

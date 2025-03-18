@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-TimeInNanos::TimeInNanos() : 
-    m_timeInSeconds(0),
-    m_timeInSecondsHasBeenSet(false),
-    m_offsetInNanos(0),
-    m_offsetInNanosHasBeenSet(false)
-{
-}
-
 TimeInNanos::TimeInNanos(JsonView jsonValue)
-  : TimeInNanos()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimeInNanos& TimeInNanos::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeInSeconds"))
   {
     m_timeInSeconds = jsonValue.GetInt64("timeInSeconds");
-
     m_timeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offsetInNanos"))
   {
     m_offsetInNanos = jsonValue.GetInteger("offsetInNanos");
-
     m_offsetInNanosHasBeenSet = true;
   }
-
   return *this;
 }
 

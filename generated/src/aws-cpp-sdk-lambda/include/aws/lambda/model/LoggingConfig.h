@@ -35,7 +35,7 @@ namespace Model
   class LoggingConfig
   {
   public:
-    AWS_LAMBDA_API LoggingConfig();
+    AWS_LAMBDA_API LoggingConfig() = default;
     AWS_LAMBDA_API LoggingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API LoggingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The format in which Lambda sends your function's application and system logs
      * to CloudWatch. Select between plain text and structured JSON.</p>
      */
-    inline const LogFormat& GetLogFormat() const{ return m_logFormat; }
+    inline LogFormat GetLogFormat() const { return m_logFormat; }
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
-    inline void SetLogFormat(const LogFormat& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
-    inline void SetLogFormat(LogFormat&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
-    inline LoggingConfig& WithLogFormat(const LogFormat& value) { SetLogFormat(value); return *this;}
-    inline LoggingConfig& WithLogFormat(LogFormat&& value) { SetLogFormat(std::move(value)); return *this;}
+    inline void SetLogFormat(LogFormat value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
+    inline LoggingConfig& WithLogFormat(LogFormat value) { SetLogFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * level of detail and lower, where <code>TRACE</code> is the highest level and
      * <code>FATAL</code> is the lowest.</p>
      */
-    inline const ApplicationLogLevel& GetApplicationLogLevel() const{ return m_applicationLogLevel; }
+    inline ApplicationLogLevel GetApplicationLogLevel() const { return m_applicationLogLevel; }
     inline bool ApplicationLogLevelHasBeenSet() const { return m_applicationLogLevelHasBeenSet; }
-    inline void SetApplicationLogLevel(const ApplicationLogLevel& value) { m_applicationLogLevelHasBeenSet = true; m_applicationLogLevel = value; }
-    inline void SetApplicationLogLevel(ApplicationLogLevel&& value) { m_applicationLogLevelHasBeenSet = true; m_applicationLogLevel = std::move(value); }
-    inline LoggingConfig& WithApplicationLogLevel(const ApplicationLogLevel& value) { SetApplicationLogLevel(value); return *this;}
-    inline LoggingConfig& WithApplicationLogLevel(ApplicationLogLevel&& value) { SetApplicationLogLevel(std::move(value)); return *this;}
+    inline void SetApplicationLogLevel(ApplicationLogLevel value) { m_applicationLogLevelHasBeenSet = true; m_applicationLogLevel = value; }
+    inline LoggingConfig& WithApplicationLogLevel(ApplicationLogLevel value) { SetApplicationLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * detail and lower, where <code>DEBUG</code> is the highest level and
      * <code>WARN</code> is the lowest.</p>
      */
-    inline const SystemLogLevel& GetSystemLogLevel() const{ return m_systemLogLevel; }
+    inline SystemLogLevel GetSystemLogLevel() const { return m_systemLogLevel; }
     inline bool SystemLogLevelHasBeenSet() const { return m_systemLogLevelHasBeenSet; }
-    inline void SetSystemLogLevel(const SystemLogLevel& value) { m_systemLogLevelHasBeenSet = true; m_systemLogLevel = value; }
-    inline void SetSystemLogLevel(SystemLogLevel&& value) { m_systemLogLevelHasBeenSet = true; m_systemLogLevel = std::move(value); }
-    inline LoggingConfig& WithSystemLogLevel(const SystemLogLevel& value) { SetSystemLogLevel(value); return *this;}
-    inline LoggingConfig& WithSystemLogLevel(SystemLogLevel&& value) { SetSystemLogLevel(std::move(value)); return *this;}
+    inline void SetSystemLogLevel(SystemLogLevel value) { m_systemLogLevelHasBeenSet = true; m_systemLogLevel = value; }
+    inline LoggingConfig& WithSystemLogLevel(SystemLogLevel value) { SetSystemLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -91,24 +85,22 @@ namespace Model
      * <code>/aws/lambda/&lt;function name&gt;</code>. To use a different log group,
      * enter an existing log group or enter a new log group name.</p>
      */
-    inline const Aws::String& GetLogGroup() const{ return m_logGroup; }
+    inline const Aws::String& GetLogGroup() const { return m_logGroup; }
     inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
-    inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
-    inline void SetLogGroup(Aws::String&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::move(value); }
-    inline void SetLogGroup(const char* value) { m_logGroupHasBeenSet = true; m_logGroup.assign(value); }
-    inline LoggingConfig& WithLogGroup(const Aws::String& value) { SetLogGroup(value); return *this;}
-    inline LoggingConfig& WithLogGroup(Aws::String&& value) { SetLogGroup(std::move(value)); return *this;}
-    inline LoggingConfig& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
+    template<typename LogGroupT = Aws::String>
+    void SetLogGroup(LogGroupT&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::forward<LogGroupT>(value); }
+    template<typename LogGroupT = Aws::String>
+    LoggingConfig& WithLogGroup(LogGroupT&& value) { SetLogGroup(std::forward<LogGroupT>(value)); return *this;}
     ///@}
   private:
 
-    LogFormat m_logFormat;
+    LogFormat m_logFormat{LogFormat::NOT_SET};
     bool m_logFormatHasBeenSet = false;
 
-    ApplicationLogLevel m_applicationLogLevel;
+    ApplicationLogLevel m_applicationLogLevel{ApplicationLogLevel::NOT_SET};
     bool m_applicationLogLevelHasBeenSet = false;
 
-    SystemLogLevel m_systemLogLevel;
+    SystemLogLevel m_systemLogLevel{SystemLogLevel::NOT_SET};
     bool m_systemLogLevelHasBeenSet = false;
 
     Aws::String m_logGroup;

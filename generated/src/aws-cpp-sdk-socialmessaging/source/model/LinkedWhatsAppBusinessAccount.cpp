@@ -18,21 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-LinkedWhatsAppBusinessAccount::LinkedWhatsAppBusinessAccount() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_wabaIdHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_linkDateHasBeenSet(false),
-    m_wabaNameHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false),
-    m_phoneNumbersHasBeenSet(false)
-{
-}
-
 LinkedWhatsAppBusinessAccount::LinkedWhatsAppBusinessAccount(JsonView jsonValue)
-  : LinkedWhatsAppBusinessAccount()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ LinkedWhatsAppBusinessAccount& LinkedWhatsAppBusinessAccount::operator =(JsonVie
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wabaId"))
   {
     m_wabaId = jsonValue.GetString("wabaId");
-
     m_wabaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linkDate"))
   {
     m_linkDate = jsonValue.GetDouble("linkDate");
-
     m_linkDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wabaName"))
   {
     m_wabaName = jsonValue.GetString("wabaName");
-
     m_wabaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDestinations"))
   {
     Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("eventDestinations");
@@ -90,7 +64,6 @@ LinkedWhatsAppBusinessAccount& LinkedWhatsAppBusinessAccount::operator =(JsonVie
     }
     m_eventDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumbers"))
   {
     Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("phoneNumbers");
@@ -100,7 +73,6 @@ LinkedWhatsAppBusinessAccount& LinkedWhatsAppBusinessAccount::operator =(JsonVie
     }
     m_phoneNumbersHasBeenSet = true;
   }
-
   return *this;
 }
 

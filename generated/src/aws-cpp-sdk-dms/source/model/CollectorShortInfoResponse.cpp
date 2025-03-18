@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-CollectorShortInfoResponse::CollectorShortInfoResponse() : 
-    m_collectorReferencedIdHasBeenSet(false),
-    m_collectorNameHasBeenSet(false)
-{
-}
-
 CollectorShortInfoResponse::CollectorShortInfoResponse(JsonView jsonValue)
-  : CollectorShortInfoResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CollectorShortInfoResponse& CollectorShortInfoResponse::operator =(JsonView json
   if(jsonValue.ValueExists("CollectorReferencedId"))
   {
     m_collectorReferencedId = jsonValue.GetString("CollectorReferencedId");
-
     m_collectorReferencedIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectorName"))
   {
     m_collectorName = jsonValue.GetString("CollectorName");
-
     m_collectorNameHasBeenSet = true;
   }
-
   return *this;
 }
 

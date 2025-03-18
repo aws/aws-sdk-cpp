@@ -32,7 +32,7 @@ namespace Model
   class JobAttachmentDetailsEntity
   {
   public:
-    AWS_DEADLINE_API JobAttachmentDetailsEntity();
+    AWS_DEADLINE_API JobAttachmentDetailsEntity() = default;
     AWS_DEADLINE_API JobAttachmentDetailsEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API JobAttachmentDetailsEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The job ID.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobAttachmentDetailsEntity& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobAttachmentDetailsEntity& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobAttachmentDetailsEntity& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobAttachmentDetailsEntity& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job attachments.</p>
      */
-    inline const Attachments& GetAttachments() const{ return m_attachments; }
+    inline const Attachments& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Attachments& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Attachments&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline JobAttachmentDetailsEntity& WithAttachments(const Attachments& value) { SetAttachments(value); return *this;}
-    inline JobAttachmentDetailsEntity& WithAttachments(Attachments&& value) { SetAttachments(std::move(value)); return *this;}
+    template<typename AttachmentsT = Attachments>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Attachments>
+    JobAttachmentDetailsEntity& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
     ///@}
   private:
 

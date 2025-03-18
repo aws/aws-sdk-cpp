@@ -26,7 +26,7 @@ namespace Model
   class ListServiceLevelObjectivesRequest : public ApplicationSignalsRequest
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ListServiceLevelObjectivesRequest();
+    AWS_APPLICATIONSIGNALS_API ListServiceLevelObjectivesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,33 +57,28 @@ namespace Model
      * specifies the location where this object is hosted, or what it belongs to.</p>
      * </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline ListServiceLevelObjectivesRequest& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    ListServiceLevelObjectivesRequest& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
+    template<typename KeyAttributesKeyT = Aws::String, typename KeyAttributesValueT = Aws::String>
+    ListServiceLevelObjectivesRequest& AddKeyAttributes(KeyAttributesKeyT&& key, KeyAttributesValueT&& value) {
+      m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::forward<KeyAttributesKeyT>(key), std::forward<KeyAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The name of the operation that this SLO is associated with.</p>
      */
-    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+    inline const Aws::String& GetOperationName() const { return m_operationName; }
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-    inline ListServiceLevelObjectivesRequest& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    template<typename OperationNameT = Aws::String>
+    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
+    template<typename OperationNameT = Aws::String>
+    ListServiceLevelObjectivesRequest& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +86,7 @@ namespace Model
      * <p>The maximum number of results to return in one operation. If you omit this
      * parameter, the default of 50 is used.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListServiceLevelObjectivesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -102,14 +97,12 @@ namespace Model
      * <p>Include this value, if it was returned by the previous operation, to get the
      * next set of service level objectives.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServiceLevelObjectivesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceLevelObjectivesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +115,7 @@ namespace Model
      * SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
      * the returned data to only a single source account. &lt;/p&gt; </code></pre>
      */
-    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+    inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
     inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
     inline ListServiceLevelObjectivesRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
@@ -132,14 +125,12 @@ namespace Model
     /**
      * <p>SLO's Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetSloOwnerAwsAccountId() const{ return m_sloOwnerAwsAccountId; }
+    inline const Aws::String& GetSloOwnerAwsAccountId() const { return m_sloOwnerAwsAccountId; }
     inline bool SloOwnerAwsAccountIdHasBeenSet() const { return m_sloOwnerAwsAccountIdHasBeenSet; }
-    inline void SetSloOwnerAwsAccountId(const Aws::String& value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId = value; }
-    inline void SetSloOwnerAwsAccountId(Aws::String&& value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId = std::move(value); }
-    inline void SetSloOwnerAwsAccountId(const char* value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId.assign(value); }
-    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(const Aws::String& value) { SetSloOwnerAwsAccountId(value); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(Aws::String&& value) { SetSloOwnerAwsAccountId(std::move(value)); return *this;}
-    inline ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(const char* value) { SetSloOwnerAwsAccountId(value); return *this;}
+    template<typename SloOwnerAwsAccountIdT = Aws::String>
+    void SetSloOwnerAwsAccountId(SloOwnerAwsAccountIdT&& value) { m_sloOwnerAwsAccountIdHasBeenSet = true; m_sloOwnerAwsAccountId = std::forward<SloOwnerAwsAccountIdT>(value); }
+    template<typename SloOwnerAwsAccountIdT = Aws::String>
+    ListServiceLevelObjectivesRequest& WithSloOwnerAwsAccountId(SloOwnerAwsAccountIdT&& value) { SetSloOwnerAwsAccountId(std::forward<SloOwnerAwsAccountIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,13 +140,13 @@ namespace Model
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccounts{false};
     bool m_includeLinkedAccountsHasBeenSet = false;
 
     Aws::String m_sloOwnerAwsAccountId;

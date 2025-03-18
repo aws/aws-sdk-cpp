@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeFpgaImageAttributeRequest::DescribeFpgaImageAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_fpgaImageIdHasBeenSet(false),
-    m_attribute(FpgaImageAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFpgaImageAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -34,7 +34,7 @@ namespace Model
   class DescribeSMBFileSharesResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeSMBFileSharesResult();
+    AWS_STORAGEGATEWAY_API DescribeSMBFileSharesResult() = default;
     AWS_STORAGEGATEWAY_API DescribeSMBFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeSMBFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,30 @@ namespace Model
     /**
      * <p>An array containing a description for each requested file share.</p>
      */
-    inline const Aws::Vector<SMBFileShareInfo>& GetSMBFileShareInfoList() const{ return m_sMBFileShareInfoList; }
-    inline void SetSMBFileShareInfoList(const Aws::Vector<SMBFileShareInfo>& value) { m_sMBFileShareInfoList = value; }
-    inline void SetSMBFileShareInfoList(Aws::Vector<SMBFileShareInfo>&& value) { m_sMBFileShareInfoList = std::move(value); }
-    inline DescribeSMBFileSharesResult& WithSMBFileShareInfoList(const Aws::Vector<SMBFileShareInfo>& value) { SetSMBFileShareInfoList(value); return *this;}
-    inline DescribeSMBFileSharesResult& WithSMBFileShareInfoList(Aws::Vector<SMBFileShareInfo>&& value) { SetSMBFileShareInfoList(std::move(value)); return *this;}
-    inline DescribeSMBFileSharesResult& AddSMBFileShareInfoList(const SMBFileShareInfo& value) { m_sMBFileShareInfoList.push_back(value); return *this; }
-    inline DescribeSMBFileSharesResult& AddSMBFileShareInfoList(SMBFileShareInfo&& value) { m_sMBFileShareInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SMBFileShareInfo>& GetSMBFileShareInfoList() const { return m_sMBFileShareInfoList; }
+    template<typename SMBFileShareInfoListT = Aws::Vector<SMBFileShareInfo>>
+    void SetSMBFileShareInfoList(SMBFileShareInfoListT&& value) { m_sMBFileShareInfoListHasBeenSet = true; m_sMBFileShareInfoList = std::forward<SMBFileShareInfoListT>(value); }
+    template<typename SMBFileShareInfoListT = Aws::Vector<SMBFileShareInfo>>
+    DescribeSMBFileSharesResult& WithSMBFileShareInfoList(SMBFileShareInfoListT&& value) { SetSMBFileShareInfoList(std::forward<SMBFileShareInfoListT>(value)); return *this;}
+    template<typename SMBFileShareInfoListT = SMBFileShareInfo>
+    DescribeSMBFileSharesResult& AddSMBFileShareInfoList(SMBFileShareInfoListT&& value) { m_sMBFileShareInfoListHasBeenSet = true; m_sMBFileShareInfoList.emplace_back(std::forward<SMBFileShareInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSMBFileSharesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSMBFileSharesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSMBFileSharesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSMBFileSharesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SMBFileShareInfo> m_sMBFileShareInfoList;
+    bool m_sMBFileShareInfoListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

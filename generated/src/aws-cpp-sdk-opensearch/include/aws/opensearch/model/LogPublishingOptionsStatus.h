@@ -35,7 +35,7 @@ namespace Model
   class LogPublishingOptionsStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API LogPublishingOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API LogPublishingOptionsStatus() = default;
     AWS_OPENSEARCHSERVICE_API LogPublishingOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API LogPublishingOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,27 @@ namespace Model
     /**
      * <p>The log publishing options configured for the domain.</p>
      */
-    inline const Aws::Map<LogType, LogPublishingOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Map<LogType, LogPublishingOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline LogPublishingOptionsStatus& WithOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetOptions(value); return *this;}
-    inline LogPublishingOptionsStatus& WithOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline LogPublishingOptionsStatus& AddOptions(const LogType& key, const LogPublishingOption& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-    inline LogPublishingOptionsStatus& AddOptions(LogType&& key, const LogPublishingOption& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline LogPublishingOptionsStatus& AddOptions(const LogType& key, LogPublishingOption&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline LogPublishingOptionsStatus& AddOptions(LogType&& key, LogPublishingOption&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Map<LogType, LogPublishingOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Map<LogType, LogPublishingOption>>
+    LogPublishingOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    inline LogPublishingOptionsStatus& AddOptions(LogType key, LogPublishingOption value) {
+      m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The status of the log publishing options for the domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LogPublishingOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline LogPublishingOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    LogPublishingOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

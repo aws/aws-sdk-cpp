@@ -25,7 +25,7 @@ namespace Model
   class GetOutpostSupportedInstanceTypesRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API GetOutpostSupportedInstanceTypesRequest();
+    AWS_OUTPOSTS_API GetOutpostSupportedInstanceTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The ID or ARN of the Outpost.</p>
      */
-    inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
+    inline const Aws::String& GetOutpostIdentifier() const { return m_outpostIdentifier; }
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-    inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-    inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-    inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-    inline GetOutpostSupportedInstanceTypesRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
+    template<typename OutpostIdentifierT = Aws::String>
+    void SetOutpostIdentifier(OutpostIdentifierT&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::forward<OutpostIdentifierT>(value); }
+    template<typename OutpostIdentifierT = Aws::String>
+    GetOutpostSupportedInstanceTypesRequest& WithOutpostIdentifier(OutpostIdentifierT&& value) { SetOutpostIdentifier(std::forward<OutpostIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the Amazon Web Services Outposts order.</p>
      */
-    inline const Aws::String& GetOrderId() const{ return m_orderId; }
+    inline const Aws::String& GetOrderId() const { return m_orderId; }
     inline bool OrderIdHasBeenSet() const { return m_orderIdHasBeenSet; }
-    inline void SetOrderId(const Aws::String& value) { m_orderIdHasBeenSet = true; m_orderId = value; }
-    inline void SetOrderId(Aws::String&& value) { m_orderIdHasBeenSet = true; m_orderId = std::move(value); }
-    inline void SetOrderId(const char* value) { m_orderIdHasBeenSet = true; m_orderId.assign(value); }
-    inline GetOutpostSupportedInstanceTypesRequest& WithOrderId(const Aws::String& value) { SetOrderId(value); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithOrderId(Aws::String&& value) { SetOrderId(std::move(value)); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithOrderId(const char* value) { SetOrderId(value); return *this;}
+    template<typename OrderIdT = Aws::String>
+    void SetOrderId(OrderIdT&& value) { m_orderIdHasBeenSet = true; m_orderId = std::forward<OrderIdT>(value); }
+    template<typename OrderIdT = Aws::String>
+    GetOutpostSupportedInstanceTypesRequest& WithOrderId(OrderIdT&& value) { SetOrderId(std::forward<OrderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetOutpostSupportedInstanceTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -76,14 +72,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetOutpostSupportedInstanceTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetOutpostSupportedInstanceTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetOutpostSupportedInstanceTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -93,7 +87,7 @@ namespace Model
     Aws::String m_orderId;
     bool m_orderIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

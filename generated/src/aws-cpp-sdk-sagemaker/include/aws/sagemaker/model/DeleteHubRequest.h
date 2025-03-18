@@ -21,7 +21,7 @@ namespace Model
   class DeleteHubRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteHubRequest();
+    AWS_SAGEMAKER_API DeleteHubRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the hub to delete.</p>
      */
-    inline const Aws::String& GetHubName() const{ return m_hubName; }
+    inline const Aws::String& GetHubName() const { return m_hubName; }
     inline bool HubNameHasBeenSet() const { return m_hubNameHasBeenSet; }
-    inline void SetHubName(const Aws::String& value) { m_hubNameHasBeenSet = true; m_hubName = value; }
-    inline void SetHubName(Aws::String&& value) { m_hubNameHasBeenSet = true; m_hubName = std::move(value); }
-    inline void SetHubName(const char* value) { m_hubNameHasBeenSet = true; m_hubName.assign(value); }
-    inline DeleteHubRequest& WithHubName(const Aws::String& value) { SetHubName(value); return *this;}
-    inline DeleteHubRequest& WithHubName(Aws::String&& value) { SetHubName(std::move(value)); return *this;}
-    inline DeleteHubRequest& WithHubName(const char* value) { SetHubName(value); return *this;}
+    template<typename HubNameT = Aws::String>
+    void SetHubName(HubNameT&& value) { m_hubNameHasBeenSet = true; m_hubName = std::forward<HubNameT>(value); }
+    template<typename HubNameT = Aws::String>
+    DeleteHubRequest& WithHubName(HubNameT&& value) { SetHubName(std::forward<HubNameT>(value)); return *this;}
     ///@}
   private:
 

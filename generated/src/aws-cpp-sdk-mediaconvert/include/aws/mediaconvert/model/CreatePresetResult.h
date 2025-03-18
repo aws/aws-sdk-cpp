@@ -28,7 +28,7 @@ namespace Model
   class CreatePresetResult
   {
   public:
-    AWS_MEDIACONVERT_API CreatePresetResult();
+    AWS_MEDIACONVERT_API CreatePresetResult() = default;
     AWS_MEDIACONVERT_API CreatePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONVERT_API CreatePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * A preset is a collection of preconfigured media conversion settings that you
      * want MediaConvert to apply to the output during the conversion process.
      */
-    inline const Preset& GetPreset() const{ return m_preset; }
-    inline void SetPreset(const Preset& value) { m_preset = value; }
-    inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
-    inline CreatePresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
-    inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
+    inline const Preset& GetPreset() const { return m_preset; }
+    template<typename PresetT = Preset>
+    void SetPreset(PresetT&& value) { m_presetHasBeenSet = true; m_preset = std::forward<PresetT>(value); }
+    template<typename PresetT = Preset>
+    CreatePresetResult& WithPreset(PresetT&& value) { SetPreset(std::forward<PresetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePresetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePresetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePresetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePresetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Preset m_preset;
+    bool m_presetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

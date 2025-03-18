@@ -32,7 +32,7 @@ namespace Model
   class TlsContext
   {
   public:
-    AWS_IOT_API TlsContext();
+    AWS_IOT_API TlsContext() = default;
     AWS_IOT_API TlsContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API TlsContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The value of the <code>serverName</code> key in a TLS authorization
      * request.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline TlsContext& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline TlsContext& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline TlsContext& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    TlsContext& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
   private:
 

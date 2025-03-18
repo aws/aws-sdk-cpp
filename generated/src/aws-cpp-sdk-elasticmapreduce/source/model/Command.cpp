@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Command::Command() : 
-    m_nameHasBeenSet(false),
-    m_scriptPathHasBeenSet(false),
-    m_argsHasBeenSet(false)
-{
-}
-
 Command::Command(JsonView jsonValue)
-  : Command()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Command& Command::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScriptPath"))
   {
     m_scriptPath = jsonValue.GetString("ScriptPath");
-
     m_scriptPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
@@ -56,7 +44,6 @@ Command& Command::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   return *this;
 }
 

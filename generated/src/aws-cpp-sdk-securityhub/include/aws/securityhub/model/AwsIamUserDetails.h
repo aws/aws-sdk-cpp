@@ -35,7 +35,7 @@ namespace Model
   class AwsIamUserDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsIamUserDetails();
+    AWS_SECURITYHUB_API AwsIamUserDetails() = default;
     AWS_SECURITYHUB_API AwsIamUserDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsIamUserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>A list of the managed policies that are attached to the user.</p>
      */
-    inline const Aws::Vector<AwsIamAttachedManagedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+    inline const Aws::Vector<AwsIamAttachedManagedPolicy>& GetAttachedManagedPolicies() const { return m_attachedManagedPolicies; }
     inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
-    inline void SetAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = value; }
-    inline void SetAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::move(value); }
-    inline AwsIamUserDetails& WithAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
-    inline AwsIamUserDetails& WithAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
-    inline AwsIamUserDetails& AddAttachedManagedPolicies(const AwsIamAttachedManagedPolicy& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
-    inline AwsIamUserDetails& AddAttachedManagedPolicies(AwsIamAttachedManagedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AwsIamAttachedManagedPolicy>>
+    void SetAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::forward<AttachedManagedPoliciesT>(value); }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AwsIamAttachedManagedPolicy>>
+    AwsIamUserDetails& WithAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { SetAttachedManagedPolicies(std::forward<AttachedManagedPoliciesT>(value)); return *this;}
+    template<typename AttachedManagedPoliciesT = AwsIamAttachedManagedPolicy>
+    AwsIamUserDetails& AddAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.emplace_back(std::forward<AttachedManagedPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,97 +61,88 @@ namespace Model
      * validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::String& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
-    inline AwsIamUserDetails& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
-    inline AwsIamUserDetails& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
-    inline AwsIamUserDetails& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
+    template<typename CreateDateT = Aws::String>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::String>
+    AwsIamUserDetails& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of IAM groups that the user belongs to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroupList() const{ return m_groupList; }
+    inline const Aws::Vector<Aws::String>& GetGroupList() const { return m_groupList; }
     inline bool GroupListHasBeenSet() const { return m_groupListHasBeenSet; }
-    inline void SetGroupList(const Aws::Vector<Aws::String>& value) { m_groupListHasBeenSet = true; m_groupList = value; }
-    inline void SetGroupList(Aws::Vector<Aws::String>&& value) { m_groupListHasBeenSet = true; m_groupList = std::move(value); }
-    inline AwsIamUserDetails& WithGroupList(const Aws::Vector<Aws::String>& value) { SetGroupList(value); return *this;}
-    inline AwsIamUserDetails& WithGroupList(Aws::Vector<Aws::String>&& value) { SetGroupList(std::move(value)); return *this;}
-    inline AwsIamUserDetails& AddGroupList(const Aws::String& value) { m_groupListHasBeenSet = true; m_groupList.push_back(value); return *this; }
-    inline AwsIamUserDetails& AddGroupList(Aws::String&& value) { m_groupListHasBeenSet = true; m_groupList.push_back(std::move(value)); return *this; }
-    inline AwsIamUserDetails& AddGroupList(const char* value) { m_groupListHasBeenSet = true; m_groupList.push_back(value); return *this; }
+    template<typename GroupListT = Aws::Vector<Aws::String>>
+    void SetGroupList(GroupListT&& value) { m_groupListHasBeenSet = true; m_groupList = std::forward<GroupListT>(value); }
+    template<typename GroupListT = Aws::Vector<Aws::String>>
+    AwsIamUserDetails& WithGroupList(GroupListT&& value) { SetGroupList(std::forward<GroupListT>(value)); return *this;}
+    template<typename GroupListT = Aws::String>
+    AwsIamUserDetails& AddGroupList(GroupListT&& value) { m_groupListHasBeenSet = true; m_groupList.emplace_back(std::forward<GroupListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The path to the user.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline AwsIamUserDetails& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline AwsIamUserDetails& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline AwsIamUserDetails& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    AwsIamUserDetails& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permissions boundary for the user.</p>
      */
-    inline const AwsIamPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+    inline const AwsIamPermissionsBoundary& GetPermissionsBoundary() const { return m_permissionsBoundary; }
     inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
-    inline void SetPermissionsBoundary(const AwsIamPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
-    inline void SetPermissionsBoundary(AwsIamPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
-    inline AwsIamUserDetails& WithPermissionsBoundary(const AwsIamPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
-    inline AwsIamUserDetails& WithPermissionsBoundary(AwsIamPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+    template<typename PermissionsBoundaryT = AwsIamPermissionsBoundary>
+    void SetPermissionsBoundary(PermissionsBoundaryT&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::forward<PermissionsBoundaryT>(value); }
+    template<typename PermissionsBoundaryT = AwsIamPermissionsBoundary>
+    AwsIamUserDetails& WithPermissionsBoundary(PermissionsBoundaryT&& value) { SetPermissionsBoundary(std::forward<PermissionsBoundaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline AwsIamUserDetails& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline AwsIamUserDetails& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline AwsIamUserDetails& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    AwsIamUserDetails& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline AwsIamUserDetails& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline AwsIamUserDetails& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline AwsIamUserDetails& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    AwsIamUserDetails& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of inline policies that are embedded in the user.</p>
      */
-    inline const Aws::Vector<AwsIamUserPolicy>& GetUserPolicyList() const{ return m_userPolicyList; }
+    inline const Aws::Vector<AwsIamUserPolicy>& GetUserPolicyList() const { return m_userPolicyList; }
     inline bool UserPolicyListHasBeenSet() const { return m_userPolicyListHasBeenSet; }
-    inline void SetUserPolicyList(const Aws::Vector<AwsIamUserPolicy>& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList = value; }
-    inline void SetUserPolicyList(Aws::Vector<AwsIamUserPolicy>&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList = std::move(value); }
-    inline AwsIamUserDetails& WithUserPolicyList(const Aws::Vector<AwsIamUserPolicy>& value) { SetUserPolicyList(value); return *this;}
-    inline AwsIamUserDetails& WithUserPolicyList(Aws::Vector<AwsIamUserPolicy>&& value) { SetUserPolicyList(std::move(value)); return *this;}
-    inline AwsIamUserDetails& AddUserPolicyList(const AwsIamUserPolicy& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.push_back(value); return *this; }
-    inline AwsIamUserDetails& AddUserPolicyList(AwsIamUserPolicy&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.push_back(std::move(value)); return *this; }
+    template<typename UserPolicyListT = Aws::Vector<AwsIamUserPolicy>>
+    void SetUserPolicyList(UserPolicyListT&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList = std::forward<UserPolicyListT>(value); }
+    template<typename UserPolicyListT = Aws::Vector<AwsIamUserPolicy>>
+    AwsIamUserDetails& WithUserPolicyList(UserPolicyListT&& value) { SetUserPolicyList(std::forward<UserPolicyListT>(value)); return *this;}
+    template<typename UserPolicyListT = AwsIamUserPolicy>
+    AwsIamUserDetails& AddUserPolicyList(UserPolicyListT&& value) { m_userPolicyListHasBeenSet = true; m_userPolicyList.emplace_back(std::forward<UserPolicyListT>(value)); return *this; }
     ///@}
   private:
 

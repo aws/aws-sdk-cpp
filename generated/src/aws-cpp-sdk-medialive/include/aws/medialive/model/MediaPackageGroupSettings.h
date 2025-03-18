@@ -31,7 +31,7 @@ namespace Model
   class MediaPackageGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API MediaPackageGroupSettings();
+    AWS_MEDIALIVE_API MediaPackageGroupSettings() = default;
     AWS_MEDIALIVE_API MediaPackageGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MediaPackageGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * MediaPackage channel destination.
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline MediaPackageGroupSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline MediaPackageGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    MediaPackageGroupSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

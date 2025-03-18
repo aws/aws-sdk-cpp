@@ -12,17 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnomalyGroupRelatedMetricsRequest::ListAnomalyGroupRelatedMetricsRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_relationshipTypeFilter(RelationshipType::NOT_SET),
-    m_relationshipTypeFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAnomalyGroupRelatedMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Signer::Signer() : 
-    m_awsAccountNumberHasBeenSet(false),
-    m_keyPairIdsHasBeenSet(false)
-{
-}
-
 Signer::Signer(const XmlNode& xmlNode)
-  : Signer()
 {
   *this = xmlNode;
 }

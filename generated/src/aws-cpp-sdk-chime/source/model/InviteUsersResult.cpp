@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InviteUsersResult::InviteUsersResult()
-{
-}
-
 InviteUsersResult::InviteUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ InviteUsersResult& InviteUsersResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_invites.push_back(invitesJsonList[invitesIndex].AsObject());
     }
+    m_invitesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

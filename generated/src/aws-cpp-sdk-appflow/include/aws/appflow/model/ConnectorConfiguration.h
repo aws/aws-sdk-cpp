@@ -46,7 +46,7 @@ namespace Model
   class ConnectorConfiguration
   {
   public:
-    AWS_APPFLOW_API ConnectorConfiguration();
+    AWS_APPFLOW_API ConnectorConfiguration() = default;
     AWS_APPFLOW_API ConnectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API ConnectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p> Specifies whether the connector can be used as a source. </p>
      */
-    inline bool GetCanUseAsSource() const{ return m_canUseAsSource; }
+    inline bool GetCanUseAsSource() const { return m_canUseAsSource; }
     inline bool CanUseAsSourceHasBeenSet() const { return m_canUseAsSourceHasBeenSet; }
     inline void SetCanUseAsSource(bool value) { m_canUseAsSourceHasBeenSet = true; m_canUseAsSource = value; }
     inline ConnectorConfiguration& WithCanUseAsSource(bool value) { SetCanUseAsSource(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p> Specifies whether the connector can be used as a destination. </p>
      */
-    inline bool GetCanUseAsDestination() const{ return m_canUseAsDestination; }
+    inline bool GetCanUseAsDestination() const { return m_canUseAsDestination; }
     inline bool CanUseAsDestinationHasBeenSet() const { return m_canUseAsDestinationHasBeenSet; }
     inline void SetCanUseAsDestination(bool value) { m_canUseAsDestinationHasBeenSet = true; m_canUseAsDestination = value; }
     inline ConnectorConfiguration& WithCanUseAsDestination(bool value) { SetCanUseAsDestination(value); return *this;}
@@ -76,35 +76,33 @@ namespace Model
     /**
      * <p> Lists the connectors that are available for use as destinations. </p>
      */
-    inline const Aws::Vector<ConnectorType>& GetSupportedDestinationConnectors() const{ return m_supportedDestinationConnectors; }
+    inline const Aws::Vector<ConnectorType>& GetSupportedDestinationConnectors() const { return m_supportedDestinationConnectors; }
     inline bool SupportedDestinationConnectorsHasBeenSet() const { return m_supportedDestinationConnectorsHasBeenSet; }
-    inline void SetSupportedDestinationConnectors(const Aws::Vector<ConnectorType>& value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors = value; }
-    inline void SetSupportedDestinationConnectors(Aws::Vector<ConnectorType>&& value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedDestinationConnectors(const Aws::Vector<ConnectorType>& value) { SetSupportedDestinationConnectors(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedDestinationConnectors(Aws::Vector<ConnectorType>&& value) { SetSupportedDestinationConnectors(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedDestinationConnectors(const ConnectorType& value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedDestinationConnectors(ConnectorType&& value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors.push_back(std::move(value)); return *this; }
+    template<typename SupportedDestinationConnectorsT = Aws::Vector<ConnectorType>>
+    void SetSupportedDestinationConnectors(SupportedDestinationConnectorsT&& value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors = std::forward<SupportedDestinationConnectorsT>(value); }
+    template<typename SupportedDestinationConnectorsT = Aws::Vector<ConnectorType>>
+    ConnectorConfiguration& WithSupportedDestinationConnectors(SupportedDestinationConnectorsT&& value) { SetSupportedDestinationConnectors(std::forward<SupportedDestinationConnectorsT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedDestinationConnectors(ConnectorType value) { m_supportedDestinationConnectorsHasBeenSet = true; m_supportedDestinationConnectors.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Specifies the supported flow frequency for that connector. </p>
      */
-    inline const Aws::Vector<ScheduleFrequencyType>& GetSupportedSchedulingFrequencies() const{ return m_supportedSchedulingFrequencies; }
+    inline const Aws::Vector<ScheduleFrequencyType>& GetSupportedSchedulingFrequencies() const { return m_supportedSchedulingFrequencies; }
     inline bool SupportedSchedulingFrequenciesHasBeenSet() const { return m_supportedSchedulingFrequenciesHasBeenSet; }
-    inline void SetSupportedSchedulingFrequencies(const Aws::Vector<ScheduleFrequencyType>& value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies = value; }
-    inline void SetSupportedSchedulingFrequencies(Aws::Vector<ScheduleFrequencyType>&& value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedSchedulingFrequencies(const Aws::Vector<ScheduleFrequencyType>& value) { SetSupportedSchedulingFrequencies(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedSchedulingFrequencies(Aws::Vector<ScheduleFrequencyType>&& value) { SetSupportedSchedulingFrequencies(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedSchedulingFrequencies(const ScheduleFrequencyType& value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedSchedulingFrequencies(ScheduleFrequencyType&& value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies.push_back(std::move(value)); return *this; }
+    template<typename SupportedSchedulingFrequenciesT = Aws::Vector<ScheduleFrequencyType>>
+    void SetSupportedSchedulingFrequencies(SupportedSchedulingFrequenciesT&& value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies = std::forward<SupportedSchedulingFrequenciesT>(value); }
+    template<typename SupportedSchedulingFrequenciesT = Aws::Vector<ScheduleFrequencyType>>
+    ConnectorConfiguration& WithSupportedSchedulingFrequencies(SupportedSchedulingFrequenciesT&& value) { SetSupportedSchedulingFrequencies(std::forward<SupportedSchedulingFrequenciesT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedSchedulingFrequencies(ScheduleFrequencyType value) { m_supportedSchedulingFrequenciesHasBeenSet = true; m_supportedSchedulingFrequencies.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Specifies if PrivateLink is enabled for that connector. </p>
      */
-    inline bool GetIsPrivateLinkEnabled() const{ return m_isPrivateLinkEnabled; }
+    inline bool GetIsPrivateLinkEnabled() const { return m_isPrivateLinkEnabled; }
     inline bool IsPrivateLinkEnabledHasBeenSet() const { return m_isPrivateLinkEnabledHasBeenSet; }
     inline void SetIsPrivateLinkEnabled(bool value) { m_isPrivateLinkEnabledHasBeenSet = true; m_isPrivateLinkEnabled = value; }
     inline ConnectorConfiguration& WithIsPrivateLinkEnabled(bool value) { SetIsPrivateLinkEnabled(value); return *this;}
@@ -114,7 +112,7 @@ namespace Model
     /**
      * <p> Specifies if a PrivateLink endpoint URL is required. </p>
      */
-    inline bool GetIsPrivateLinkEndpointUrlRequired() const{ return m_isPrivateLinkEndpointUrlRequired; }
+    inline bool GetIsPrivateLinkEndpointUrlRequired() const { return m_isPrivateLinkEndpointUrlRequired; }
     inline bool IsPrivateLinkEndpointUrlRequiredHasBeenSet() const { return m_isPrivateLinkEndpointUrlRequiredHasBeenSet; }
     inline void SetIsPrivateLinkEndpointUrlRequired(bool value) { m_isPrivateLinkEndpointUrlRequiredHasBeenSet = true; m_isPrivateLinkEndpointUrlRequired = value; }
     inline ConnectorConfiguration& WithIsPrivateLinkEndpointUrlRequired(bool value) { SetIsPrivateLinkEndpointUrlRequired(value); return *this;}
@@ -124,14 +122,13 @@ namespace Model
     /**
      * <p> Specifies the supported trigger types for the flow. </p>
      */
-    inline const Aws::Vector<TriggerType>& GetSupportedTriggerTypes() const{ return m_supportedTriggerTypes; }
+    inline const Aws::Vector<TriggerType>& GetSupportedTriggerTypes() const { return m_supportedTriggerTypes; }
     inline bool SupportedTriggerTypesHasBeenSet() const { return m_supportedTriggerTypesHasBeenSet; }
-    inline void SetSupportedTriggerTypes(const Aws::Vector<TriggerType>& value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes = value; }
-    inline void SetSupportedTriggerTypes(Aws::Vector<TriggerType>&& value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedTriggerTypes(const Aws::Vector<TriggerType>& value) { SetSupportedTriggerTypes(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedTriggerTypes(Aws::Vector<TriggerType>&& value) { SetSupportedTriggerTypes(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedTriggerTypes(const TriggerType& value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedTriggerTypes(TriggerType&& value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedTriggerTypesT = Aws::Vector<TriggerType>>
+    void SetSupportedTriggerTypes(SupportedTriggerTypesT&& value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes = std::forward<SupportedTriggerTypesT>(value); }
+    template<typename SupportedTriggerTypesT = Aws::Vector<TriggerType>>
+    ConnectorConfiguration& WithSupportedTriggerTypes(SupportedTriggerTypesT&& value) { SetSupportedTriggerTypes(std::forward<SupportedTriggerTypesT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedTriggerTypes(TriggerType value) { m_supportedTriggerTypesHasBeenSet = true; m_supportedTriggerTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -140,256 +137,232 @@ namespace Model
      * <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.
      * </p>
      */
-    inline const ConnectorMetadata& GetConnectorMetadata() const{ return m_connectorMetadata; }
+    inline const ConnectorMetadata& GetConnectorMetadata() const { return m_connectorMetadata; }
     inline bool ConnectorMetadataHasBeenSet() const { return m_connectorMetadataHasBeenSet; }
-    inline void SetConnectorMetadata(const ConnectorMetadata& value) { m_connectorMetadataHasBeenSet = true; m_connectorMetadata = value; }
-    inline void SetConnectorMetadata(ConnectorMetadata&& value) { m_connectorMetadataHasBeenSet = true; m_connectorMetadata = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorMetadata(const ConnectorMetadata& value) { SetConnectorMetadata(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorMetadata(ConnectorMetadata&& value) { SetConnectorMetadata(std::move(value)); return *this;}
+    template<typename ConnectorMetadataT = ConnectorMetadata>
+    void SetConnectorMetadata(ConnectorMetadataT&& value) { m_connectorMetadataHasBeenSet = true; m_connectorMetadata = std::forward<ConnectorMetadataT>(value); }
+    template<typename ConnectorMetadataT = ConnectorMetadata>
+    ConnectorConfiguration& WithConnectorMetadata(ConnectorMetadataT&& value) { SetConnectorMetadata(std::forward<ConnectorMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector type.</p>
      */
-    inline const ConnectorType& GetConnectorType() const{ return m_connectorType; }
+    inline ConnectorType GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const ConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(ConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorType(const ConnectorType& value) { SetConnectorType(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(ConnectorType value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline ConnectorConfiguration& WithConnectorType(ConnectorType value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label used for registering the connector.</p>
      */
-    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+    inline const Aws::String& GetConnectorLabel() const { return m_connectorLabel; }
     inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
-    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
-    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
-    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
-    inline ConnectorConfiguration& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+    template<typename ConnectorLabelT = Aws::String>
+    void SetConnectorLabel(ConnectorLabelT&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::forward<ConnectorLabelT>(value); }
+    template<typename ConnectorLabelT = Aws::String>
+    ConnectorConfiguration& WithConnectorLabel(ConnectorLabelT&& value) { SetConnectorLabel(std::forward<ConnectorLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description about the connector.</p>
      */
-    inline const Aws::String& GetConnectorDescription() const{ return m_connectorDescription; }
+    inline const Aws::String& GetConnectorDescription() const { return m_connectorDescription; }
     inline bool ConnectorDescriptionHasBeenSet() const { return m_connectorDescriptionHasBeenSet; }
-    inline void SetConnectorDescription(const Aws::String& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = value; }
-    inline void SetConnectorDescription(Aws::String&& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = std::move(value); }
-    inline void SetConnectorDescription(const char* value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription.assign(value); }
-    inline ConnectorConfiguration& WithConnectorDescription(const Aws::String& value) { SetConnectorDescription(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorDescription(Aws::String&& value) { SetConnectorDescription(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorDescription(const char* value) { SetConnectorDescription(value); return *this;}
+    template<typename ConnectorDescriptionT = Aws::String>
+    void SetConnectorDescription(ConnectorDescriptionT&& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = std::forward<ConnectorDescriptionT>(value); }
+    template<typename ConnectorDescriptionT = Aws::String>
+    ConnectorConfiguration& WithConnectorDescription(ConnectorDescriptionT&& value) { SetConnectorDescription(std::forward<ConnectorDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner who developed the connector.</p>
      */
-    inline const Aws::String& GetConnectorOwner() const{ return m_connectorOwner; }
+    inline const Aws::String& GetConnectorOwner() const { return m_connectorOwner; }
     inline bool ConnectorOwnerHasBeenSet() const { return m_connectorOwnerHasBeenSet; }
-    inline void SetConnectorOwner(const Aws::String& value) { m_connectorOwnerHasBeenSet = true; m_connectorOwner = value; }
-    inline void SetConnectorOwner(Aws::String&& value) { m_connectorOwnerHasBeenSet = true; m_connectorOwner = std::move(value); }
-    inline void SetConnectorOwner(const char* value) { m_connectorOwnerHasBeenSet = true; m_connectorOwner.assign(value); }
-    inline ConnectorConfiguration& WithConnectorOwner(const Aws::String& value) { SetConnectorOwner(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorOwner(Aws::String&& value) { SetConnectorOwner(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorOwner(const char* value) { SetConnectorOwner(value); return *this;}
+    template<typename ConnectorOwnerT = Aws::String>
+    void SetConnectorOwner(ConnectorOwnerT&& value) { m_connectorOwnerHasBeenSet = true; m_connectorOwner = std::forward<ConnectorOwnerT>(value); }
+    template<typename ConnectorOwnerT = Aws::String>
+    ConnectorConfiguration& WithConnectorOwner(ConnectorOwnerT&& value) { SetConnectorOwner(std::forward<ConnectorOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector name.</p>
      */
-    inline const Aws::String& GetConnectorName() const{ return m_connectorName; }
+    inline const Aws::String& GetConnectorName() const { return m_connectorName; }
     inline bool ConnectorNameHasBeenSet() const { return m_connectorNameHasBeenSet; }
-    inline void SetConnectorName(const Aws::String& value) { m_connectorNameHasBeenSet = true; m_connectorName = value; }
-    inline void SetConnectorName(Aws::String&& value) { m_connectorNameHasBeenSet = true; m_connectorName = std::move(value); }
-    inline void SetConnectorName(const char* value) { m_connectorNameHasBeenSet = true; m_connectorName.assign(value); }
-    inline ConnectorConfiguration& WithConnectorName(const Aws::String& value) { SetConnectorName(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorName(Aws::String&& value) { SetConnectorName(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorName(const char* value) { SetConnectorName(value); return *this;}
+    template<typename ConnectorNameT = Aws::String>
+    void SetConnectorName(ConnectorNameT&& value) { m_connectorNameHasBeenSet = true; m_connectorName = std::forward<ConnectorNameT>(value); }
+    template<typename ConnectorNameT = Aws::String>
+    ConnectorConfiguration& WithConnectorName(ConnectorNameT&& value) { SetConnectorName(std::forward<ConnectorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector version.</p>
      */
-    inline const Aws::String& GetConnectorVersion() const{ return m_connectorVersion; }
+    inline const Aws::String& GetConnectorVersion() const { return m_connectorVersion; }
     inline bool ConnectorVersionHasBeenSet() const { return m_connectorVersionHasBeenSet; }
-    inline void SetConnectorVersion(const Aws::String& value) { m_connectorVersionHasBeenSet = true; m_connectorVersion = value; }
-    inline void SetConnectorVersion(Aws::String&& value) { m_connectorVersionHasBeenSet = true; m_connectorVersion = std::move(value); }
-    inline void SetConnectorVersion(const char* value) { m_connectorVersionHasBeenSet = true; m_connectorVersion.assign(value); }
-    inline ConnectorConfiguration& WithConnectorVersion(const Aws::String& value) { SetConnectorVersion(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorVersion(Aws::String&& value) { SetConnectorVersion(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorVersion(const char* value) { SetConnectorVersion(value); return *this;}
+    template<typename ConnectorVersionT = Aws::String>
+    void SetConnectorVersion(ConnectorVersionT&& value) { m_connectorVersionHasBeenSet = true; m_connectorVersion = std::forward<ConnectorVersionT>(value); }
+    template<typename ConnectorVersionT = Aws::String>
+    ConnectorConfiguration& WithConnectorVersion(ConnectorVersionT&& value) { SetConnectorVersion(std::forward<ConnectorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the registered connector.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-    inline ConnectorConfiguration& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    ConnectorConfiguration& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection modes that the connector supports.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConnectorModes() const{ return m_connectorModes; }
+    inline const Aws::Vector<Aws::String>& GetConnectorModes() const { return m_connectorModes; }
     inline bool ConnectorModesHasBeenSet() const { return m_connectorModesHasBeenSet; }
-    inline void SetConnectorModes(const Aws::Vector<Aws::String>& value) { m_connectorModesHasBeenSet = true; m_connectorModes = value; }
-    inline void SetConnectorModes(Aws::Vector<Aws::String>&& value) { m_connectorModesHasBeenSet = true; m_connectorModes = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorModes(const Aws::Vector<Aws::String>& value) { SetConnectorModes(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorModes(Aws::Vector<Aws::String>&& value) { SetConnectorModes(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddConnectorModes(const Aws::String& value) { m_connectorModesHasBeenSet = true; m_connectorModes.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddConnectorModes(Aws::String&& value) { m_connectorModesHasBeenSet = true; m_connectorModes.push_back(std::move(value)); return *this; }
-    inline ConnectorConfiguration& AddConnectorModes(const char* value) { m_connectorModesHasBeenSet = true; m_connectorModes.push_back(value); return *this; }
+    template<typename ConnectorModesT = Aws::Vector<Aws::String>>
+    void SetConnectorModes(ConnectorModesT&& value) { m_connectorModesHasBeenSet = true; m_connectorModes = std::forward<ConnectorModesT>(value); }
+    template<typename ConnectorModesT = Aws::Vector<Aws::String>>
+    ConnectorConfiguration& WithConnectorModes(ConnectorModesT&& value) { SetConnectorModes(std::forward<ConnectorModesT>(value)); return *this;}
+    template<typename ConnectorModesT = Aws::String>
+    ConnectorConfiguration& AddConnectorModes(ConnectorModesT&& value) { m_connectorModesHasBeenSet = true; m_connectorModes.emplace_back(std::forward<ConnectorModesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The authentication config required for the connector.</p>
      */
-    inline const AuthenticationConfig& GetAuthenticationConfig() const{ return m_authenticationConfig; }
+    inline const AuthenticationConfig& GetAuthenticationConfig() const { return m_authenticationConfig; }
     inline bool AuthenticationConfigHasBeenSet() const { return m_authenticationConfigHasBeenSet; }
-    inline void SetAuthenticationConfig(const AuthenticationConfig& value) { m_authenticationConfigHasBeenSet = true; m_authenticationConfig = value; }
-    inline void SetAuthenticationConfig(AuthenticationConfig&& value) { m_authenticationConfigHasBeenSet = true; m_authenticationConfig = std::move(value); }
-    inline ConnectorConfiguration& WithAuthenticationConfig(const AuthenticationConfig& value) { SetAuthenticationConfig(value); return *this;}
-    inline ConnectorConfiguration& WithAuthenticationConfig(AuthenticationConfig&& value) { SetAuthenticationConfig(std::move(value)); return *this;}
+    template<typename AuthenticationConfigT = AuthenticationConfig>
+    void SetAuthenticationConfig(AuthenticationConfigT&& value) { m_authenticationConfigHasBeenSet = true; m_authenticationConfig = std::forward<AuthenticationConfigT>(value); }
+    template<typename AuthenticationConfigT = AuthenticationConfig>
+    ConnectorConfiguration& WithAuthenticationConfig(AuthenticationConfigT&& value) { SetAuthenticationConfig(std::forward<AuthenticationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required connector runtime settings.</p>
      */
-    inline const Aws::Vector<ConnectorRuntimeSetting>& GetConnectorRuntimeSettings() const{ return m_connectorRuntimeSettings; }
+    inline const Aws::Vector<ConnectorRuntimeSetting>& GetConnectorRuntimeSettings() const { return m_connectorRuntimeSettings; }
     inline bool ConnectorRuntimeSettingsHasBeenSet() const { return m_connectorRuntimeSettingsHasBeenSet; }
-    inline void SetConnectorRuntimeSettings(const Aws::Vector<ConnectorRuntimeSetting>& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings = value; }
-    inline void SetConnectorRuntimeSettings(Aws::Vector<ConnectorRuntimeSetting>&& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorRuntimeSettings(const Aws::Vector<ConnectorRuntimeSetting>& value) { SetConnectorRuntimeSettings(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorRuntimeSettings(Aws::Vector<ConnectorRuntimeSetting>&& value) { SetConnectorRuntimeSettings(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddConnectorRuntimeSettings(const ConnectorRuntimeSetting& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddConnectorRuntimeSettings(ConnectorRuntimeSetting&& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings.push_back(std::move(value)); return *this; }
+    template<typename ConnectorRuntimeSettingsT = Aws::Vector<ConnectorRuntimeSetting>>
+    void SetConnectorRuntimeSettings(ConnectorRuntimeSettingsT&& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings = std::forward<ConnectorRuntimeSettingsT>(value); }
+    template<typename ConnectorRuntimeSettingsT = Aws::Vector<ConnectorRuntimeSetting>>
+    ConnectorConfiguration& WithConnectorRuntimeSettings(ConnectorRuntimeSettingsT&& value) { SetConnectorRuntimeSettings(std::forward<ConnectorRuntimeSettingsT>(value)); return *this;}
+    template<typename ConnectorRuntimeSettingsT = ConnectorRuntimeSetting>
+    ConnectorConfiguration& AddConnectorRuntimeSettings(ConnectorRuntimeSettingsT&& value) { m_connectorRuntimeSettingsHasBeenSet = true; m_connectorRuntimeSettings.emplace_back(std::forward<ConnectorRuntimeSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of API versions that are supported by the connector.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedApiVersions() const{ return m_supportedApiVersions; }
+    inline const Aws::Vector<Aws::String>& GetSupportedApiVersions() const { return m_supportedApiVersions; }
     inline bool SupportedApiVersionsHasBeenSet() const { return m_supportedApiVersionsHasBeenSet; }
-    inline void SetSupportedApiVersions(const Aws::Vector<Aws::String>& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions = value; }
-    inline void SetSupportedApiVersions(Aws::Vector<Aws::String>&& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedApiVersions(const Aws::Vector<Aws::String>& value) { SetSupportedApiVersions(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedApiVersions(Aws::Vector<Aws::String>&& value) { SetSupportedApiVersions(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedApiVersions(const Aws::String& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedApiVersions(Aws::String&& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions.push_back(std::move(value)); return *this; }
-    inline ConnectorConfiguration& AddSupportedApiVersions(const char* value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions.push_back(value); return *this; }
+    template<typename SupportedApiVersionsT = Aws::Vector<Aws::String>>
+    void SetSupportedApiVersions(SupportedApiVersionsT&& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions = std::forward<SupportedApiVersionsT>(value); }
+    template<typename SupportedApiVersionsT = Aws::Vector<Aws::String>>
+    ConnectorConfiguration& WithSupportedApiVersions(SupportedApiVersionsT&& value) { SetSupportedApiVersions(std::forward<SupportedApiVersionsT>(value)); return *this;}
+    template<typename SupportedApiVersionsT = Aws::String>
+    ConnectorConfiguration& AddSupportedApiVersions(SupportedApiVersionsT&& value) { m_supportedApiVersionsHasBeenSet = true; m_supportedApiVersions.emplace_back(std::forward<SupportedApiVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of operators supported by the connector.</p>
      */
-    inline const Aws::Vector<Operators>& GetSupportedOperators() const{ return m_supportedOperators; }
+    inline const Aws::Vector<Operators>& GetSupportedOperators() const { return m_supportedOperators; }
     inline bool SupportedOperatorsHasBeenSet() const { return m_supportedOperatorsHasBeenSet; }
-    inline void SetSupportedOperators(const Aws::Vector<Operators>& value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators = value; }
-    inline void SetSupportedOperators(Aws::Vector<Operators>&& value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedOperators(const Aws::Vector<Operators>& value) { SetSupportedOperators(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedOperators(Aws::Vector<Operators>&& value) { SetSupportedOperators(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedOperators(const Operators& value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedOperators(Operators&& value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators.push_back(std::move(value)); return *this; }
+    template<typename SupportedOperatorsT = Aws::Vector<Operators>>
+    void SetSupportedOperators(SupportedOperatorsT&& value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators = std::forward<SupportedOperatorsT>(value); }
+    template<typename SupportedOperatorsT = Aws::Vector<Operators>>
+    ConnectorConfiguration& WithSupportedOperators(SupportedOperatorsT&& value) { SetSupportedOperators(std::forward<SupportedOperatorsT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedOperators(Operators value) { m_supportedOperatorsHasBeenSet = true; m_supportedOperators.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of write operations supported by the connector.</p>
      */
-    inline const Aws::Vector<WriteOperationType>& GetSupportedWriteOperations() const{ return m_supportedWriteOperations; }
+    inline const Aws::Vector<WriteOperationType>& GetSupportedWriteOperations() const { return m_supportedWriteOperations; }
     inline bool SupportedWriteOperationsHasBeenSet() const { return m_supportedWriteOperationsHasBeenSet; }
-    inline void SetSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = value; }
-    inline void SetSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { SetSupportedWriteOperations(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { SetSupportedWriteOperations(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedWriteOperations(const WriteOperationType& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedWriteOperations(WriteOperationType&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(std::move(value)); return *this; }
+    template<typename SupportedWriteOperationsT = Aws::Vector<WriteOperationType>>
+    void SetSupportedWriteOperations(SupportedWriteOperationsT&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = std::forward<SupportedWriteOperationsT>(value); }
+    template<typename SupportedWriteOperationsT = Aws::Vector<WriteOperationType>>
+    ConnectorConfiguration& WithSupportedWriteOperations(SupportedWriteOperationsT&& value) { SetSupportedWriteOperations(std::forward<SupportedWriteOperationsT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedWriteOperations(WriteOperationType value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The provisioning type used to register the connector.</p>
      */
-    inline const ConnectorProvisioningType& GetConnectorProvisioningType() const{ return m_connectorProvisioningType; }
+    inline ConnectorProvisioningType GetConnectorProvisioningType() const { return m_connectorProvisioningType; }
     inline bool ConnectorProvisioningTypeHasBeenSet() const { return m_connectorProvisioningTypeHasBeenSet; }
-    inline void SetConnectorProvisioningType(const ConnectorProvisioningType& value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = value; }
-    inline void SetConnectorProvisioningType(ConnectorProvisioningType&& value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorProvisioningType(const ConnectorProvisioningType& value) { SetConnectorProvisioningType(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorProvisioningType(ConnectorProvisioningType&& value) { SetConnectorProvisioningType(std::move(value)); return *this;}
+    inline void SetConnectorProvisioningType(ConnectorProvisioningType value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = value; }
+    inline ConnectorConfiguration& WithConnectorProvisioningType(ConnectorProvisioningType value) { SetConnectorProvisioningType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration required for registering the connector.</p>
      */
-    inline const ConnectorProvisioningConfig& GetConnectorProvisioningConfig() const{ return m_connectorProvisioningConfig; }
+    inline const ConnectorProvisioningConfig& GetConnectorProvisioningConfig() const { return m_connectorProvisioningConfig; }
     inline bool ConnectorProvisioningConfigHasBeenSet() const { return m_connectorProvisioningConfigHasBeenSet; }
-    inline void SetConnectorProvisioningConfig(const ConnectorProvisioningConfig& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = value; }
-    inline void SetConnectorProvisioningConfig(ConnectorProvisioningConfig&& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = std::move(value); }
-    inline ConnectorConfiguration& WithConnectorProvisioningConfig(const ConnectorProvisioningConfig& value) { SetConnectorProvisioningConfig(value); return *this;}
-    inline ConnectorConfiguration& WithConnectorProvisioningConfig(ConnectorProvisioningConfig&& value) { SetConnectorProvisioningConfig(std::move(value)); return *this;}
+    template<typename ConnectorProvisioningConfigT = ConnectorProvisioningConfig>
+    void SetConnectorProvisioningConfig(ConnectorProvisioningConfigT&& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = std::forward<ConnectorProvisioningConfigT>(value); }
+    template<typename ConnectorProvisioningConfigT = ConnectorProvisioningConfig>
+    ConnectorConfiguration& WithConnectorProvisioningConfig(ConnectorProvisioningConfigT&& value) { SetConnectorProvisioningConfig(std::forward<ConnectorProvisioningConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Logo URL of the connector.</p>
      */
-    inline const Aws::String& GetLogoURL() const{ return m_logoURL; }
+    inline const Aws::String& GetLogoURL() const { return m_logoURL; }
     inline bool LogoURLHasBeenSet() const { return m_logoURLHasBeenSet; }
-    inline void SetLogoURL(const Aws::String& value) { m_logoURLHasBeenSet = true; m_logoURL = value; }
-    inline void SetLogoURL(Aws::String&& value) { m_logoURLHasBeenSet = true; m_logoURL = std::move(value); }
-    inline void SetLogoURL(const char* value) { m_logoURLHasBeenSet = true; m_logoURL.assign(value); }
-    inline ConnectorConfiguration& WithLogoURL(const Aws::String& value) { SetLogoURL(value); return *this;}
-    inline ConnectorConfiguration& WithLogoURL(Aws::String&& value) { SetLogoURL(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithLogoURL(const char* value) { SetLogoURL(value); return *this;}
+    template<typename LogoURLT = Aws::String>
+    void SetLogoURL(LogoURLT&& value) { m_logoURLHasBeenSet = true; m_logoURL = std::forward<LogoURLT>(value); }
+    template<typename LogoURLT = Aws::String>
+    ConnectorConfiguration& WithLogoURL(LogoURLT&& value) { SetLogoURL(std::forward<LogoURLT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date on which the connector was registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
+    inline const Aws::Utils::DateTime& GetRegisteredAt() const { return m_registeredAt; }
     inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
-    inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
-    inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
-    inline ConnectorConfiguration& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
-    inline ConnectorConfiguration& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
+    template<typename RegisteredAtT = Aws::Utils::DateTime>
+    void SetRegisteredAt(RegisteredAtT&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::forward<RegisteredAtT>(value); }
+    template<typename RegisteredAtT = Aws::Utils::DateTime>
+    ConnectorConfiguration& WithRegisteredAt(RegisteredAtT&& value) { SetRegisteredAt(std::forward<RegisteredAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about who registered the connector.</p>
      */
-    inline const Aws::String& GetRegisteredBy() const{ return m_registeredBy; }
+    inline const Aws::String& GetRegisteredBy() const { return m_registeredBy; }
     inline bool RegisteredByHasBeenSet() const { return m_registeredByHasBeenSet; }
-    inline void SetRegisteredBy(const Aws::String& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
-    inline void SetRegisteredBy(Aws::String&& value) { m_registeredByHasBeenSet = true; m_registeredBy = std::move(value); }
-    inline void SetRegisteredBy(const char* value) { m_registeredByHasBeenSet = true; m_registeredBy.assign(value); }
-    inline ConnectorConfiguration& WithRegisteredBy(const Aws::String& value) { SetRegisteredBy(value); return *this;}
-    inline ConnectorConfiguration& WithRegisteredBy(Aws::String&& value) { SetRegisteredBy(std::move(value)); return *this;}
-    inline ConnectorConfiguration& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
+    template<typename RegisteredByT = Aws::String>
+    void SetRegisteredBy(RegisteredByT&& value) { m_registeredByHasBeenSet = true; m_registeredBy = std::forward<RegisteredByT>(value); }
+    template<typename RegisteredByT = Aws::String>
+    ConnectorConfiguration& WithRegisteredBy(RegisteredByT&& value) { SetRegisteredBy(std::forward<RegisteredByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -398,14 +371,13 @@ namespace Model
      * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
      * data.</p> </dd> </dl>
      */
-    inline const Aws::Vector<SupportedDataTransferType>& GetSupportedDataTransferTypes() const{ return m_supportedDataTransferTypes; }
+    inline const Aws::Vector<SupportedDataTransferType>& GetSupportedDataTransferTypes() const { return m_supportedDataTransferTypes; }
     inline bool SupportedDataTransferTypesHasBeenSet() const { return m_supportedDataTransferTypesHasBeenSet; }
-    inline void SetSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = value; }
-    inline void SetSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { SetSupportedDataTransferTypes(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { SetSupportedDataTransferTypes(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedDataTransferTypes(const SupportedDataTransferType& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedDataTransferTypes(SupportedDataTransferType&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedDataTransferTypesT = Aws::Vector<SupportedDataTransferType>>
+    void SetSupportedDataTransferTypes(SupportedDataTransferTypesT&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = std::forward<SupportedDataTransferTypesT>(value); }
+    template<typename SupportedDataTransferTypesT = Aws::Vector<SupportedDataTransferType>>
+    ConnectorConfiguration& WithSupportedDataTransferTypes(SupportedDataTransferTypesT&& value) { SetSupportedDataTransferTypes(std::forward<SupportedDataTransferTypesT>(value)); return *this;}
+    inline ConnectorConfiguration& AddSupportedDataTransferTypes(SupportedDataTransferType value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -413,21 +385,21 @@ namespace Model
      * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
      * your data.</p>
      */
-    inline const Aws::Vector<DataTransferApi>& GetSupportedDataTransferApis() const{ return m_supportedDataTransferApis; }
+    inline const Aws::Vector<DataTransferApi>& GetSupportedDataTransferApis() const { return m_supportedDataTransferApis; }
     inline bool SupportedDataTransferApisHasBeenSet() const { return m_supportedDataTransferApisHasBeenSet; }
-    inline void SetSupportedDataTransferApis(const Aws::Vector<DataTransferApi>& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis = value; }
-    inline void SetSupportedDataTransferApis(Aws::Vector<DataTransferApi>&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis = std::move(value); }
-    inline ConnectorConfiguration& WithSupportedDataTransferApis(const Aws::Vector<DataTransferApi>& value) { SetSupportedDataTransferApis(value); return *this;}
-    inline ConnectorConfiguration& WithSupportedDataTransferApis(Aws::Vector<DataTransferApi>&& value) { SetSupportedDataTransferApis(std::move(value)); return *this;}
-    inline ConnectorConfiguration& AddSupportedDataTransferApis(const DataTransferApi& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis.push_back(value); return *this; }
-    inline ConnectorConfiguration& AddSupportedDataTransferApis(DataTransferApi&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis.push_back(std::move(value)); return *this; }
+    template<typename SupportedDataTransferApisT = Aws::Vector<DataTransferApi>>
+    void SetSupportedDataTransferApis(SupportedDataTransferApisT&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis = std::forward<SupportedDataTransferApisT>(value); }
+    template<typename SupportedDataTransferApisT = Aws::Vector<DataTransferApi>>
+    ConnectorConfiguration& WithSupportedDataTransferApis(SupportedDataTransferApisT&& value) { SetSupportedDataTransferApis(std::forward<SupportedDataTransferApisT>(value)); return *this;}
+    template<typename SupportedDataTransferApisT = DataTransferApi>
+    ConnectorConfiguration& AddSupportedDataTransferApis(SupportedDataTransferApisT&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis.emplace_back(std::forward<SupportedDataTransferApisT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_canUseAsSource;
+    bool m_canUseAsSource{false};
     bool m_canUseAsSourceHasBeenSet = false;
 
-    bool m_canUseAsDestination;
+    bool m_canUseAsDestination{false};
     bool m_canUseAsDestinationHasBeenSet = false;
 
     Aws::Vector<ConnectorType> m_supportedDestinationConnectors;
@@ -436,10 +408,10 @@ namespace Model
     Aws::Vector<ScheduleFrequencyType> m_supportedSchedulingFrequencies;
     bool m_supportedSchedulingFrequenciesHasBeenSet = false;
 
-    bool m_isPrivateLinkEnabled;
+    bool m_isPrivateLinkEnabled{false};
     bool m_isPrivateLinkEnabledHasBeenSet = false;
 
-    bool m_isPrivateLinkEndpointUrlRequired;
+    bool m_isPrivateLinkEndpointUrlRequired{false};
     bool m_isPrivateLinkEndpointUrlRequiredHasBeenSet = false;
 
     Aws::Vector<TriggerType> m_supportedTriggerTypes;
@@ -448,7 +420,7 @@ namespace Model
     ConnectorMetadata m_connectorMetadata;
     bool m_connectorMetadataHasBeenSet = false;
 
-    ConnectorType m_connectorType;
+    ConnectorType m_connectorType{ConnectorType::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
@@ -487,7 +459,7 @@ namespace Model
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;
     bool m_supportedWriteOperationsHasBeenSet = false;
 
-    ConnectorProvisioningType m_connectorProvisioningType;
+    ConnectorProvisioningType m_connectorProvisioningType{ConnectorProvisioningType::NOT_SET};
     bool m_connectorProvisioningTypeHasBeenSet = false;
 
     ConnectorProvisioningConfig m_connectorProvisioningConfig;
@@ -496,7 +468,7 @@ namespace Model
     Aws::String m_logoURL;
     bool m_logoURLHasBeenSet = false;
 
-    Aws::Utils::DateTime m_registeredAt;
+    Aws::Utils::DateTime m_registeredAt{};
     bool m_registeredAtHasBeenSet = false;
 
     Aws::String m_registeredBy;

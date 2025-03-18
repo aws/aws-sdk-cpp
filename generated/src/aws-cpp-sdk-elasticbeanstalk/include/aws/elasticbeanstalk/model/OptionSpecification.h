@@ -32,7 +32,7 @@ namespace Model
   class OptionSpecification
   {
   public:
-    AWS_ELASTICBEANSTALK_API OptionSpecification();
+    AWS_ELASTICBEANSTALK_API OptionSpecification() = default;
     AWS_ELASTICBEANSTALK_API OptionSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API OptionSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>A unique resource name for a time-based scaling configuration option.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline OptionSpecification& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline OptionSpecification& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline OptionSpecification& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    OptionSpecification& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline OptionSpecification& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline OptionSpecification& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline OptionSpecification& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    OptionSpecification& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration option.</p>
      */
-    inline const Aws::String& GetOptionName() const{ return m_optionName; }
+    inline const Aws::String& GetOptionName() const { return m_optionName; }
     inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
-    inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
-    inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = std::move(value); }
-    inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
-    inline OptionSpecification& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
-    inline OptionSpecification& WithOptionName(Aws::String&& value) { SetOptionName(std::move(value)); return *this;}
-    inline OptionSpecification& WithOptionName(const char* value) { SetOptionName(value); return *this;}
+    template<typename OptionNameT = Aws::String>
+    void SetOptionName(OptionNameT&& value) { m_optionNameHasBeenSet = true; m_optionName = std::forward<OptionNameT>(value); }
+    template<typename OptionNameT = Aws::String>
+    OptionSpecification& WithOptionName(OptionNameT&& value) { SetOptionName(std::forward<OptionNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class EvaluationResult
   {
   public:
-    AWS_FMS_API EvaluationResult();
+    AWS_FMS_API EvaluationResult() = default;
     AWS_FMS_API EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Describes an Amazon Web Services account's compliance with the Firewall
      * Manager policy.</p>
      */
-    inline const PolicyComplianceStatusType& GetComplianceStatus() const{ return m_complianceStatus; }
+    inline PolicyComplianceStatusType GetComplianceStatus() const { return m_complianceStatus; }
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
-    inline void SetComplianceStatus(const PolicyComplianceStatusType& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
-    inline void SetComplianceStatus(PolicyComplianceStatusType&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
-    inline EvaluationResult& WithComplianceStatus(const PolicyComplianceStatusType& value) { SetComplianceStatus(value); return *this;}
-    inline EvaluationResult& WithComplianceStatus(PolicyComplianceStatusType&& value) { SetComplianceStatus(std::move(value)); return *this;}
+    inline void SetComplianceStatus(PolicyComplianceStatusType value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
+    inline EvaluationResult& WithComplianceStatus(PolicyComplianceStatusType value) { SetComplianceStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * considered noncompliant if it doesn't comply with the rules of the policy and
      * remediation is disabled or not possible.</p>
      */
-    inline long long GetViolatorCount() const{ return m_violatorCount; }
+    inline long long GetViolatorCount() const { return m_violatorCount; }
     inline bool ViolatorCountHasBeenSet() const { return m_violatorCountHasBeenSet; }
     inline void SetViolatorCount(long long value) { m_violatorCountHasBeenSet = true; m_violatorCount = value; }
     inline EvaluationResult& WithViolatorCount(long long value) { SetViolatorCount(value); return *this;}
@@ -71,20 +69,20 @@ namespace Model
      * <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
      * policy.</p>
      */
-    inline bool GetEvaluationLimitExceeded() const{ return m_evaluationLimitExceeded; }
+    inline bool GetEvaluationLimitExceeded() const { return m_evaluationLimitExceeded; }
     inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
     inline void SetEvaluationLimitExceeded(bool value) { m_evaluationLimitExceededHasBeenSet = true; m_evaluationLimitExceeded = value; }
     inline EvaluationResult& WithEvaluationLimitExceeded(bool value) { SetEvaluationLimitExceeded(value); return *this;}
     ///@}
   private:
 
-    PolicyComplianceStatusType m_complianceStatus;
+    PolicyComplianceStatusType m_complianceStatus{PolicyComplianceStatusType::NOT_SET};
     bool m_complianceStatusHasBeenSet = false;
 
-    long long m_violatorCount;
+    long long m_violatorCount{0};
     bool m_violatorCountHasBeenSet = false;
 
-    bool m_evaluationLimitExceeded;
+    bool m_evaluationLimitExceeded{false};
     bool m_evaluationLimitExceededHasBeenSet = false;
   };
 

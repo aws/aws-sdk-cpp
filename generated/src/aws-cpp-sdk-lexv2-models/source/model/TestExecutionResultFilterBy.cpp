@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestExecutionResultFilterBy::TestExecutionResultFilterBy() : 
-    m_resultTypeFilter(TestResultTypeFilter::NOT_SET),
-    m_resultTypeFilterHasBeenSet(false),
-    m_conversationLevelTestResultsFilterByHasBeenSet(false)
-{
-}
-
 TestExecutionResultFilterBy::TestExecutionResultFilterBy(JsonView jsonValue)
-  : TestExecutionResultFilterBy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TestExecutionResultFilterBy& TestExecutionResultFilterBy::operator =(JsonView js
   if(jsonValue.ValueExists("resultTypeFilter"))
   {
     m_resultTypeFilter = TestResultTypeFilterMapper::GetTestResultTypeFilterForName(jsonValue.GetString("resultTypeFilter"));
-
     m_resultTypeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationLevelTestResultsFilterBy"))
   {
     m_conversationLevelTestResultsFilterBy = jsonValue.GetObject("conversationLevelTestResultsFilterBy");
-
     m_conversationLevelTestResultsFilterByHasBeenSet = true;
   }
-
   return *this;
 }
 

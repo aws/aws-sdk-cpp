@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_type(0),
-    m_typeHasBeenSet(false)
-{
-}
-
 NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue)
-  : NetworkAclIcmpTypeCode()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NetworkAclIcmpTypeCode& NetworkAclIcmpTypeCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetInteger("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetInteger("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

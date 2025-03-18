@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IamInstanceProfile::IamInstanceProfile() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 IamInstanceProfile::IamInstanceProfile(const XmlNode& xmlNode)
-  : IamInstanceProfile()
 {
   *this = xmlNode;
 }

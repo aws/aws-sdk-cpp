@@ -21,7 +21,7 @@ namespace Model
   class GetServiceInstanceRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API GetServiceInstanceRequest();
+    AWS_PROTON_API GetServiceInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The name of a service instance that you want to get the detailed data
      * for.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetServiceInstanceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetServiceInstanceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetServiceInstanceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetServiceInstanceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service that you want the service instance input for.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline GetServiceInstanceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline GetServiceInstanceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline GetServiceInstanceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    GetServiceInstanceRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
   private:
 

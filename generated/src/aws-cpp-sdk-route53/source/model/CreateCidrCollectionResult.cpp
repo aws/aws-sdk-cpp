@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCidrCollectionResult::CreateCidrCollectionResult()
-{
-}
-
 CreateCidrCollectionResult::CreateCidrCollectionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ CreateCidrCollectionResult& CreateCidrCollectionResult::operator =(const Aws::Am
     if(!collectionNode.IsNull())
     {
       m_collection = collectionNode;
+      m_collectionHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ CreateCidrCollectionResult& CreateCidrCollectionResult::operator =(const Aws::Am
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

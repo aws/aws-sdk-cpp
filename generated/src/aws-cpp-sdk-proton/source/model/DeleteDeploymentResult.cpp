@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDeploymentResult::DeleteDeploymentResult()
-{
-}
-
 DeleteDeploymentResult::DeleteDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteDeploymentResult& DeleteDeploymentResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("deployment"))
   {
     m_deployment = jsonValue.GetObject("deployment");
-
+    m_deploymentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

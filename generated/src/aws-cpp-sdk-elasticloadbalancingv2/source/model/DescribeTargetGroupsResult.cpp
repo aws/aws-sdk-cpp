@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTargetGroupsResult::DescribeTargetGroupsResult()
-{
-}
-
 DescribeTargetGroupsResult::DescribeTargetGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeTargetGroupsResult& DescribeTargetGroupsResult::operator =(const Aws::Am
     if(!targetGroupsNode.IsNull())
     {
       XmlNode targetGroupsMember = targetGroupsNode.FirstChild("member");
+      m_targetGroupsHasBeenSet = !targetGroupsMember.IsNull();
       while(!targetGroupsMember.IsNull())
       {
         m_targetGroups.push_back(targetGroupsMember);
         targetGroupsMember = targetGroupsMember.NextNode("member");
       }
 
+      m_targetGroupsHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeTargetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

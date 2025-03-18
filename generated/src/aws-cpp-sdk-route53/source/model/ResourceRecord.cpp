@@ -20,13 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ResourceRecord::ResourceRecord() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 ResourceRecord::ResourceRecord(const XmlNode& xmlNode)
-  : ResourceRecord()
 {
   *this = xmlNode;
 }

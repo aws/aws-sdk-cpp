@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineTravelModeOptions::IsolineTravelModeOptions() : 
-    m_carHasBeenSet(false),
-    m_scooterHasBeenSet(false),
-    m_truckHasBeenSet(false)
-{
-}
-
 IsolineTravelModeOptions::IsolineTravelModeOptions(JsonView jsonValue)
-  : IsolineTravelModeOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IsolineTravelModeOptions& IsolineTravelModeOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Car"))
   {
     m_car = jsonValue.GetObject("Car");
-
     m_carHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scooter"))
   {
     m_scooter = jsonValue.GetObject("Scooter");
-
     m_scooterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Truck"))
   {
     m_truck = jsonValue.GetObject("Truck");
-
     m_truckHasBeenSet = true;
   }
-
   return *this;
 }
 

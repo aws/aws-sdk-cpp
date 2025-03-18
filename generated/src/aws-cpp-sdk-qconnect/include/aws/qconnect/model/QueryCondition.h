@@ -31,7 +31,7 @@ namespace Model
   class QueryCondition
   {
   public:
-    AWS_QCONNECT_API QueryCondition();
+    AWS_QCONNECT_API QueryCondition() = default;
     AWS_QCONNECT_API QueryCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API QueryCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The condition for the query.</p>
      */
-    inline const QueryConditionItem& GetSingle() const{ return m_single; }
+    inline const QueryConditionItem& GetSingle() const { return m_single; }
     inline bool SingleHasBeenSet() const { return m_singleHasBeenSet; }
-    inline void SetSingle(const QueryConditionItem& value) { m_singleHasBeenSet = true; m_single = value; }
-    inline void SetSingle(QueryConditionItem&& value) { m_singleHasBeenSet = true; m_single = std::move(value); }
-    inline QueryCondition& WithSingle(const QueryConditionItem& value) { SetSingle(value); return *this;}
-    inline QueryCondition& WithSingle(QueryConditionItem&& value) { SetSingle(std::move(value)); return *this;}
+    template<typename SingleT = QueryConditionItem>
+    void SetSingle(SingleT&& value) { m_singleHasBeenSet = true; m_single = std::forward<SingleT>(value); }
+    template<typename SingleT = QueryConditionItem>
+    QueryCondition& WithSingle(SingleT&& value) { SetSingle(std::forward<SingleT>(value)); return *this;}
     ///@}
   private:
 

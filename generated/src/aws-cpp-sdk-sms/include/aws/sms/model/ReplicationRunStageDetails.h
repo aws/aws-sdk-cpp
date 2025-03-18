@@ -32,7 +32,7 @@ namespace Model
   class ReplicationRunStageDetails
   {
   public:
-    AWS_SMS_API ReplicationRunStageDetails();
+    AWS_SMS_API ReplicationRunStageDetails() = default;
     AWS_SMS_API ReplicationRunStageDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API ReplicationRunStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The current stage of a replication run.</p>
      */
-    inline const Aws::String& GetStage() const{ return m_stage; }
+    inline const Aws::String& GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
-    inline ReplicationRunStageDetails& WithStage(const Aws::String& value) { SetStage(value); return *this;}
-    inline ReplicationRunStageDetails& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
-    inline ReplicationRunStageDetails& WithStage(const char* value) { SetStage(value); return *this;}
+    template<typename StageT = Aws::String>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = Aws::String>
+    ReplicationRunStageDetails& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The progress of the current stage of a replication run.</p>
      */
-    inline const Aws::String& GetStageProgress() const{ return m_stageProgress; }
+    inline const Aws::String& GetStageProgress() const { return m_stageProgress; }
     inline bool StageProgressHasBeenSet() const { return m_stageProgressHasBeenSet; }
-    inline void SetStageProgress(const Aws::String& value) { m_stageProgressHasBeenSet = true; m_stageProgress = value; }
-    inline void SetStageProgress(Aws::String&& value) { m_stageProgressHasBeenSet = true; m_stageProgress = std::move(value); }
-    inline void SetStageProgress(const char* value) { m_stageProgressHasBeenSet = true; m_stageProgress.assign(value); }
-    inline ReplicationRunStageDetails& WithStageProgress(const Aws::String& value) { SetStageProgress(value); return *this;}
-    inline ReplicationRunStageDetails& WithStageProgress(Aws::String&& value) { SetStageProgress(std::move(value)); return *this;}
-    inline ReplicationRunStageDetails& WithStageProgress(const char* value) { SetStageProgress(value); return *this;}
+    template<typename StageProgressT = Aws::String>
+    void SetStageProgress(StageProgressT&& value) { m_stageProgressHasBeenSet = true; m_stageProgress = std::forward<StageProgressT>(value); }
+    template<typename StageProgressT = Aws::String>
+    ReplicationRunStageDetails& WithStageProgress(StageProgressT&& value) { SetStageProgress(std::forward<StageProgressT>(value)); return *this;}
     ///@}
   private:
 

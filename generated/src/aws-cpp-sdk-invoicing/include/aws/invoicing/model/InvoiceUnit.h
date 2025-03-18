@@ -36,7 +36,7 @@ namespace Model
   class InvoiceUnit
   {
   public:
-    AWS_INVOICING_API InvoiceUnit();
+    AWS_INVOICING_API InvoiceUnit() = default;
     AWS_INVOICING_API InvoiceUnit(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API InvoiceUnit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,42 +47,36 @@ namespace Model
      * <p>ARN to identify an invoice unit. This information can't be modified or
      * deleted. </p>
      */
-    inline const Aws::String& GetInvoiceUnitArn() const{ return m_invoiceUnitArn; }
+    inline const Aws::String& GetInvoiceUnitArn() const { return m_invoiceUnitArn; }
     inline bool InvoiceUnitArnHasBeenSet() const { return m_invoiceUnitArnHasBeenSet; }
-    inline void SetInvoiceUnitArn(const Aws::String& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = value; }
-    inline void SetInvoiceUnitArn(Aws::String&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::move(value); }
-    inline void SetInvoiceUnitArn(const char* value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn.assign(value); }
-    inline InvoiceUnit& WithInvoiceUnitArn(const Aws::String& value) { SetInvoiceUnitArn(value); return *this;}
-    inline InvoiceUnit& WithInvoiceUnitArn(Aws::String&& value) { SetInvoiceUnitArn(std::move(value)); return *this;}
-    inline InvoiceUnit& WithInvoiceUnitArn(const char* value) { SetInvoiceUnitArn(value); return *this;}
+    template<typename InvoiceUnitArnT = Aws::String>
+    void SetInvoiceUnitArn(InvoiceUnitArnT&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::forward<InvoiceUnitArnT>(value); }
+    template<typename InvoiceUnitArnT = Aws::String>
+    InvoiceUnit& WithInvoiceUnitArn(InvoiceUnitArnT&& value) { SetInvoiceUnitArn(std::forward<InvoiceUnitArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account that receives invoices related to the invoice unit. </p>
      */
-    inline const Aws::String& GetInvoiceReceiver() const{ return m_invoiceReceiver; }
+    inline const Aws::String& GetInvoiceReceiver() const { return m_invoiceReceiver; }
     inline bool InvoiceReceiverHasBeenSet() const { return m_invoiceReceiverHasBeenSet; }
-    inline void SetInvoiceReceiver(const Aws::String& value) { m_invoiceReceiverHasBeenSet = true; m_invoiceReceiver = value; }
-    inline void SetInvoiceReceiver(Aws::String&& value) { m_invoiceReceiverHasBeenSet = true; m_invoiceReceiver = std::move(value); }
-    inline void SetInvoiceReceiver(const char* value) { m_invoiceReceiverHasBeenSet = true; m_invoiceReceiver.assign(value); }
-    inline InvoiceUnit& WithInvoiceReceiver(const Aws::String& value) { SetInvoiceReceiver(value); return *this;}
-    inline InvoiceUnit& WithInvoiceReceiver(Aws::String&& value) { SetInvoiceReceiver(std::move(value)); return *this;}
-    inline InvoiceUnit& WithInvoiceReceiver(const char* value) { SetInvoiceReceiver(value); return *this;}
+    template<typename InvoiceReceiverT = Aws::String>
+    void SetInvoiceReceiver(InvoiceReceiverT&& value) { m_invoiceReceiverHasBeenSet = true; m_invoiceReceiver = std::forward<InvoiceReceiverT>(value); }
+    template<typename InvoiceReceiverT = Aws::String>
+    InvoiceUnit& WithInvoiceReceiver(InvoiceReceiverT&& value) { SetInvoiceReceiver(std::forward<InvoiceReceiverT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A unique name that is distinctive within your Amazon Web Services. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InvoiceUnit& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InvoiceUnit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InvoiceUnit& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InvoiceUnit& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <p>The assigned description for an invoice unit. This information can't be
      * modified or deleted. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline InvoiceUnit& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline InvoiceUnit& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline InvoiceUnit& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    InvoiceUnit& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +97,7 @@ namespace Model
      * <p>Whether the invoice unit based tax inheritance is/ should be enabled or
      * disabled. </p>
      */
-    inline bool GetTaxInheritanceDisabled() const{ return m_taxInheritanceDisabled; }
+    inline bool GetTaxInheritanceDisabled() const { return m_taxInheritanceDisabled; }
     inline bool TaxInheritanceDisabledHasBeenSet() const { return m_taxInheritanceDisabledHasBeenSet; }
     inline void SetTaxInheritanceDisabled(bool value) { m_taxInheritanceDisabledHasBeenSet = true; m_taxInheritanceDisabled = value; }
     inline InvoiceUnit& WithTaxInheritanceDisabled(bool value) { SetTaxInheritanceDisabled(value); return *this;}
@@ -116,12 +108,12 @@ namespace Model
      * <p> An <code>InvoiceUnitRule</code> object used the categorize invoice units.
      * </p>
      */
-    inline const InvoiceUnitRule& GetRule() const{ return m_rule; }
+    inline const InvoiceUnitRule& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const InvoiceUnitRule& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(InvoiceUnitRule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline InvoiceUnit& WithRule(const InvoiceUnitRule& value) { SetRule(value); return *this;}
-    inline InvoiceUnit& WithRule(InvoiceUnitRule&& value) { SetRule(std::move(value)); return *this;}
+    template<typename RuleT = InvoiceUnitRule>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = InvoiceUnitRule>
+    InvoiceUnit& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,12 @@ namespace Model
      * invoice created after this modified time will use this invoice unit
      * configuration. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline InvoiceUnit& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline InvoiceUnit& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    InvoiceUnit& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,13 +144,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_taxInheritanceDisabled;
+    bool m_taxInheritanceDisabled{false};
     bool m_taxInheritanceDisabledHasBeenSet = false;
 
     InvoiceUnitRule m_rule;
     bool m_ruleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class PutFunctionCodeSigningConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API PutFunctionCodeSigningConfigRequest();
+    AWS_LAMBDA_API PutFunctionCodeSigningConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
      */
-    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
+    inline const Aws::String& GetCodeSigningConfigArn() const { return m_codeSigningConfigArn; }
     inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
-    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
-    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
-    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
-    inline PutFunctionCodeSigningConfigRequest& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
-    inline PutFunctionCodeSigningConfigRequest& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
-    inline PutFunctionCodeSigningConfigRequest& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+    template<typename CodeSigningConfigArnT = Aws::String>
+    void SetCodeSigningConfigArn(CodeSigningConfigArnT&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::forward<CodeSigningConfigArnT>(value); }
+    template<typename CodeSigningConfigArnT = Aws::String>
+    PutFunctionCodeSigningConfigRequest& WithCodeSigningConfigArn(CodeSigningConfigArnT&& value) { SetCodeSigningConfigArn(std::forward<CodeSigningConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline PutFunctionCodeSigningConfigRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline PutFunctionCodeSigningConfigRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline PutFunctionCodeSigningConfigRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    PutFunctionCodeSigningConfigRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
   private:
 

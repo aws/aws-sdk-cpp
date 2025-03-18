@@ -33,7 +33,7 @@ namespace Model
   class JourneyLimits
   {
   public:
-    AWS_PINPOINT_API JourneyLimits();
+    AWS_PINPOINT_API JourneyLimits() = default;
     AWS_PINPOINT_API JourneyLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The maximum number of messages that the journey can send to a single
      * participant during a 24-hour period. The maximum value is 100.</p>
      */
-    inline int GetDailyCap() const{ return m_dailyCap; }
+    inline int GetDailyCap() const { return m_dailyCap; }
     inline bool DailyCapHasBeenSet() const { return m_dailyCapHasBeenSet; }
     inline void SetDailyCap(int value) { m_dailyCapHasBeenSet = true; m_dailyCap = value; }
     inline JourneyLimits& WithDailyCap(int value) { SetDailyCap(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * maximum value is 100. To allow participants to enter the journey an unlimited
      * number of times, set this value to 0.</p>
      */
-    inline int GetEndpointReentryCap() const{ return m_endpointReentryCap; }
+    inline int GetEndpointReentryCap() const { return m_endpointReentryCap; }
     inline bool EndpointReentryCapHasBeenSet() const { return m_endpointReentryCapHasBeenSet; }
     inline void SetEndpointReentryCap(int value) { m_endpointReentryCapHasBeenSet = true; m_endpointReentryCap = value; }
     inline JourneyLimits& WithEndpointReentryCap(int value) { SetEndpointReentryCap(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The maximum number of messages that the journey can send each second.</p>
      */
-    inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
+    inline int GetMessagesPerSecond() const { return m_messagesPerSecond; }
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
     inline JourneyLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
@@ -77,14 +77,12 @@ namespace Model
      * <p>Minimum time that must pass before an endpoint can re-enter a given journey.
      * The duration should use an ISO 8601 format, such as PT1H. </p>
      */
-    inline const Aws::String& GetEndpointReentryInterval() const{ return m_endpointReentryInterval; }
+    inline const Aws::String& GetEndpointReentryInterval() const { return m_endpointReentryInterval; }
     inline bool EndpointReentryIntervalHasBeenSet() const { return m_endpointReentryIntervalHasBeenSet; }
-    inline void SetEndpointReentryInterval(const Aws::String& value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval = value; }
-    inline void SetEndpointReentryInterval(Aws::String&& value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval = std::move(value); }
-    inline void SetEndpointReentryInterval(const char* value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval.assign(value); }
-    inline JourneyLimits& WithEndpointReentryInterval(const Aws::String& value) { SetEndpointReentryInterval(value); return *this;}
-    inline JourneyLimits& WithEndpointReentryInterval(Aws::String&& value) { SetEndpointReentryInterval(std::move(value)); return *this;}
-    inline JourneyLimits& WithEndpointReentryInterval(const char* value) { SetEndpointReentryInterval(value); return *this;}
+    template<typename EndpointReentryIntervalT = Aws::String>
+    void SetEndpointReentryInterval(EndpointReentryIntervalT&& value) { m_endpointReentryIntervalHasBeenSet = true; m_endpointReentryInterval = std::forward<EndpointReentryIntervalT>(value); }
+    template<typename EndpointReentryIntervalT = Aws::String>
+    JourneyLimits& WithEndpointReentryInterval(EndpointReentryIntervalT&& value) { SetEndpointReentryInterval(std::forward<EndpointReentryIntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +90,12 @@ namespace Model
      * <p>The number of messages that an endpoint can receive during the specified
      * timeframe.</p>
      */
-    inline const JourneyTimeframeCap& GetTimeframeCap() const{ return m_timeframeCap; }
+    inline const JourneyTimeframeCap& GetTimeframeCap() const { return m_timeframeCap; }
     inline bool TimeframeCapHasBeenSet() const { return m_timeframeCapHasBeenSet; }
-    inline void SetTimeframeCap(const JourneyTimeframeCap& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = value; }
-    inline void SetTimeframeCap(JourneyTimeframeCap&& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = std::move(value); }
-    inline JourneyLimits& WithTimeframeCap(const JourneyTimeframeCap& value) { SetTimeframeCap(value); return *this;}
-    inline JourneyLimits& WithTimeframeCap(JourneyTimeframeCap&& value) { SetTimeframeCap(std::move(value)); return *this;}
+    template<typename TimeframeCapT = JourneyTimeframeCap>
+    void SetTimeframeCap(TimeframeCapT&& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = std::forward<TimeframeCapT>(value); }
+    template<typename TimeframeCapT = JourneyTimeframeCap>
+    JourneyLimits& WithTimeframeCap(TimeframeCapT&& value) { SetTimeframeCap(std::forward<TimeframeCapT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,20 +103,20 @@ namespace Model
      * <p>The maximum number of messages a journey can sent to a single endpoint. The
      * maximum value is 100. If set to 0, this limit will not apply.</p>
      */
-    inline int GetTotalCap() const{ return m_totalCap; }
+    inline int GetTotalCap() const { return m_totalCap; }
     inline bool TotalCapHasBeenSet() const { return m_totalCapHasBeenSet; }
     inline void SetTotalCap(int value) { m_totalCapHasBeenSet = true; m_totalCap = value; }
     inline JourneyLimits& WithTotalCap(int value) { SetTotalCap(value); return *this;}
     ///@}
   private:
 
-    int m_dailyCap;
+    int m_dailyCap{0};
     bool m_dailyCapHasBeenSet = false;
 
-    int m_endpointReentryCap;
+    int m_endpointReentryCap{0};
     bool m_endpointReentryCapHasBeenSet = false;
 
-    int m_messagesPerSecond;
+    int m_messagesPerSecond{0};
     bool m_messagesPerSecondHasBeenSet = false;
 
     Aws::String m_endpointReentryInterval;
@@ -127,7 +125,7 @@ namespace Model
     JourneyTimeframeCap m_timeframeCap;
     bool m_timeframeCapHasBeenSet = false;
 
-    int m_totalCap;
+    int m_totalCap{0};
     bool m_totalCapHasBeenSet = false;
   };
 

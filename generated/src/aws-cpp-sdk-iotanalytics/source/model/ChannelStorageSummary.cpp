@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ChannelStorageSummary::ChannelStorageSummary() : 
-    m_serviceManagedS3HasBeenSet(false),
-    m_customerManagedS3HasBeenSet(false)
-{
-}
-
 ChannelStorageSummary::ChannelStorageSummary(JsonView jsonValue)
-  : ChannelStorageSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChannelStorageSummary& ChannelStorageSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceManagedS3"))
   {
     m_serviceManagedS3 = jsonValue.GetObject("serviceManagedS3");
-
     m_serviceManagedS3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerManagedS3"))
   {
     m_customerManagedS3 = jsonValue.GetObject("customerManagedS3");
-
     m_customerManagedS3HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class BatchDetectEntitiesItemResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectEntitiesItemResult();
+    AWS_COMPREHEND_API BatchDetectEntitiesItemResult() = default;
     AWS_COMPREHEND_API BatchDetectEntitiesItemResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchDetectEntitiesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchDetectEntitiesItemResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
      * <p>One or more <a>Entity</a> objects, one for each entity detected in the
      * document.</p>
      */
-    inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
+    inline const Aws::Vector<Entity>& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-    inline void SetEntities(const Aws::Vector<Entity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-    inline void SetEntities(Aws::Vector<Entity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-    inline BatchDetectEntitiesItemResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
-    inline BatchDetectEntitiesItemResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline BatchDetectEntitiesItemResult& AddEntities(const Entity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
-    inline BatchDetectEntitiesItemResult& AddEntities(Entity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    BatchDetectEntitiesItemResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = Entity>
+    BatchDetectEntitiesItemResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
     Aws::Vector<Entity> m_entities;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteScheduledQueryRequest : public TimestreamQueryRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API DeleteScheduledQueryRequest();
+    AWS_TIMESTREAMQUERY_API DeleteScheduledQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the scheduled query. </p>
      */
-    inline const Aws::String& GetScheduledQueryArn() const{ return m_scheduledQueryArn; }
+    inline const Aws::String& GetScheduledQueryArn() const { return m_scheduledQueryArn; }
     inline bool ScheduledQueryArnHasBeenSet() const { return m_scheduledQueryArnHasBeenSet; }
-    inline void SetScheduledQueryArn(const Aws::String& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = value; }
-    inline void SetScheduledQueryArn(Aws::String&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::move(value); }
-    inline void SetScheduledQueryArn(const char* value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn.assign(value); }
-    inline DeleteScheduledQueryRequest& WithScheduledQueryArn(const Aws::String& value) { SetScheduledQueryArn(value); return *this;}
-    inline DeleteScheduledQueryRequest& WithScheduledQueryArn(Aws::String&& value) { SetScheduledQueryArn(std::move(value)); return *this;}
-    inline DeleteScheduledQueryRequest& WithScheduledQueryArn(const char* value) { SetScheduledQueryArn(value); return *this;}
+    template<typename ScheduledQueryArnT = Aws::String>
+    void SetScheduledQueryArn(ScheduledQueryArnT&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::forward<ScheduledQueryArnT>(value); }
+    template<typename ScheduledQueryArnT = Aws::String>
+    DeleteScheduledQueryRequest& WithScheduledQueryArn(ScheduledQueryArnT&& value) { SetScheduledQueryArn(std::forward<ScheduledQueryArnT>(value)); return *this;}
     ///@}
   private:
 

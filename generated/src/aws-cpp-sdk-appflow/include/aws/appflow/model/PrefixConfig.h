@@ -35,7 +35,7 @@ namespace Model
   class PrefixConfig
   {
   public:
-    AWS_APPFLOW_API PrefixConfig();
+    AWS_APPFLOW_API PrefixConfig() = default;
     AWS_APPFLOW_API PrefixConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API PrefixConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>Determines the format of the prefix, and whether it applies to the file name,
      * file path, or both. </p>
      */
-    inline const PrefixType& GetPrefixType() const{ return m_prefixType; }
+    inline PrefixType GetPrefixType() const { return m_prefixType; }
     inline bool PrefixTypeHasBeenSet() const { return m_prefixTypeHasBeenSet; }
-    inline void SetPrefixType(const PrefixType& value) { m_prefixTypeHasBeenSet = true; m_prefixType = value; }
-    inline void SetPrefixType(PrefixType&& value) { m_prefixTypeHasBeenSet = true; m_prefixType = std::move(value); }
-    inline PrefixConfig& WithPrefixType(const PrefixType& value) { SetPrefixType(value); return *this;}
-    inline PrefixConfig& WithPrefixType(PrefixType&& value) { SetPrefixType(std::move(value)); return *this;}
+    inline void SetPrefixType(PrefixType value) { m_prefixTypeHasBeenSet = true; m_prefixType = value; }
+    inline PrefixConfig& WithPrefixType(PrefixType value) { SetPrefixType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>Determines the level of granularity for the date and time that's included in
      * the prefix. </p>
      */
-    inline const PrefixFormat& GetPrefixFormat() const{ return m_prefixFormat; }
+    inline PrefixFormat GetPrefixFormat() const { return m_prefixFormat; }
     inline bool PrefixFormatHasBeenSet() const { return m_prefixFormatHasBeenSet; }
-    inline void SetPrefixFormat(const PrefixFormat& value) { m_prefixFormatHasBeenSet = true; m_prefixFormat = value; }
-    inline void SetPrefixFormat(PrefixFormat&& value) { m_prefixFormatHasBeenSet = true; m_prefixFormat = std::move(value); }
-    inline PrefixConfig& WithPrefixFormat(const PrefixFormat& value) { SetPrefixFormat(value); return *this;}
-    inline PrefixConfig& WithPrefixFormat(PrefixFormat&& value) { SetPrefixFormat(std::move(value)); return *this;}
+    inline void SetPrefixFormat(PrefixFormat value) { m_prefixFormatHasBeenSet = true; m_prefixFormat = value; }
+    inline PrefixConfig& WithPrefixFormat(PrefixFormat value) { SetPrefixFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -78,21 +74,20 @@ namespace Model
      * field mappings</p> </li> <li> <p>Field data types</p> </li> <li> <p>Partition
      * keys</p> </li> </ul> </dd> </dl>
      */
-    inline const Aws::Vector<PathPrefix>& GetPathPrefixHierarchy() const{ return m_pathPrefixHierarchy; }
+    inline const Aws::Vector<PathPrefix>& GetPathPrefixHierarchy() const { return m_pathPrefixHierarchy; }
     inline bool PathPrefixHierarchyHasBeenSet() const { return m_pathPrefixHierarchyHasBeenSet; }
-    inline void SetPathPrefixHierarchy(const Aws::Vector<PathPrefix>& value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy = value; }
-    inline void SetPathPrefixHierarchy(Aws::Vector<PathPrefix>&& value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy = std::move(value); }
-    inline PrefixConfig& WithPathPrefixHierarchy(const Aws::Vector<PathPrefix>& value) { SetPathPrefixHierarchy(value); return *this;}
-    inline PrefixConfig& WithPathPrefixHierarchy(Aws::Vector<PathPrefix>&& value) { SetPathPrefixHierarchy(std::move(value)); return *this;}
-    inline PrefixConfig& AddPathPrefixHierarchy(const PathPrefix& value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy.push_back(value); return *this; }
-    inline PrefixConfig& AddPathPrefixHierarchy(PathPrefix&& value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy.push_back(std::move(value)); return *this; }
+    template<typename PathPrefixHierarchyT = Aws::Vector<PathPrefix>>
+    void SetPathPrefixHierarchy(PathPrefixHierarchyT&& value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy = std::forward<PathPrefixHierarchyT>(value); }
+    template<typename PathPrefixHierarchyT = Aws::Vector<PathPrefix>>
+    PrefixConfig& WithPathPrefixHierarchy(PathPrefixHierarchyT&& value) { SetPathPrefixHierarchy(std::forward<PathPrefixHierarchyT>(value)); return *this;}
+    inline PrefixConfig& AddPathPrefixHierarchy(PathPrefix value) { m_pathPrefixHierarchyHasBeenSet = true; m_pathPrefixHierarchy.push_back(value); return *this; }
     ///@}
   private:
 
-    PrefixType m_prefixType;
+    PrefixType m_prefixType{PrefixType::NOT_SET};
     bool m_prefixTypeHasBeenSet = false;
 
-    PrefixFormat m_prefixFormat;
+    PrefixFormat m_prefixFormat{PrefixFormat::NOT_SET};
     bool m_prefixFormatHasBeenSet = false;
 
     Aws::Vector<PathPrefix> m_pathPrefixHierarchy;

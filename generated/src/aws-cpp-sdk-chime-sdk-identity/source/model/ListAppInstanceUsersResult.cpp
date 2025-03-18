@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAppInstanceUsersResult::ListAppInstanceUsersResult()
-{
-}
-
 ListAppInstanceUsersResult::ListAppInstanceUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAppInstanceUsersResult& ListAppInstanceUsersResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("AppInstanceArn"))
   {
     m_appInstanceArn = jsonValue.GetString("AppInstanceArn");
-
+    m_appInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppInstanceUsers"))
   {
     Aws::Utils::Array<JsonView> appInstanceUsersJsonList = jsonValue.GetArray("AppInstanceUsers");
@@ -42,20 +37,20 @@ ListAppInstanceUsersResult& ListAppInstanceUsersResult::operator =(const Aws::Am
     {
       m_appInstanceUsers.push_back(appInstanceUsersJsonList[appInstanceUsersIndex].AsObject());
     }
+    m_appInstanceUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

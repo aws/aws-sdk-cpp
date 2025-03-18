@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteArtifactRequest::DeleteArtifactRequest() : 
-    m_artifactArnHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTargetGroupRequest::DeleteTargetGroupRequest() : 
-    m_targetGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTargetGroupRequest::SerializePayload() const
 {
   return {};

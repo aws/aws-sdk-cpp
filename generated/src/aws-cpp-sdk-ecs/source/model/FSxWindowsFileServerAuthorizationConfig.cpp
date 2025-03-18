@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-FSxWindowsFileServerAuthorizationConfig::FSxWindowsFileServerAuthorizationConfig() : 
-    m_credentialsParameterHasBeenSet(false),
-    m_domainHasBeenSet(false)
-{
-}
-
 FSxWindowsFileServerAuthorizationConfig::FSxWindowsFileServerAuthorizationConfig(JsonView jsonValue)
-  : FSxWindowsFileServerAuthorizationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FSxWindowsFileServerAuthorizationConfig& FSxWindowsFileServerAuthorizationConfig
   if(jsonValue.ValueExists("credentialsParameter"))
   {
     m_credentialsParameter = jsonValue.GetString("credentialsParameter");
-
     m_credentialsParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetString("domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

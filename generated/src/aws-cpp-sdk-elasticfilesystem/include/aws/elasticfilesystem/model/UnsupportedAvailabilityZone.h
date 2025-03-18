@@ -32,7 +32,7 @@ namespace Model
   class UnsupportedAvailabilityZone
   {
   public:
-    AWS_EFS_API UnsupportedAvailabilityZone();
+    AWS_EFS_API UnsupportedAvailabilityZone() = default;
     AWS_EFS_API UnsupportedAvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API UnsupportedAvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline UnsupportedAvailabilityZone& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline UnsupportedAvailabilityZone& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline UnsupportedAvailabilityZone& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    UnsupportedAvailabilityZone& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline UnsupportedAvailabilityZone& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline UnsupportedAvailabilityZone& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline UnsupportedAvailabilityZone& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    UnsupportedAvailabilityZone& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

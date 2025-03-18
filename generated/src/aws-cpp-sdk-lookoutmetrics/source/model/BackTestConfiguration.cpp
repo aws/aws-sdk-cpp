@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-BackTestConfiguration::BackTestConfiguration() : 
-    m_runBackTestMode(false),
-    m_runBackTestModeHasBeenSet(false)
-{
-}
-
 BackTestConfiguration::BackTestConfiguration(JsonView jsonValue)
-  : BackTestConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BackTestConfiguration& BackTestConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RunBackTestMode"))
   {
     m_runBackTestMode = jsonValue.GetBool("RunBackTestMode");
-
     m_runBackTestModeHasBeenSet = true;
   }
-
   return *this;
 }
 

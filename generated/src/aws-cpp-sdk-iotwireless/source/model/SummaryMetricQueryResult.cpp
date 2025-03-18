@@ -18,26 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SummaryMetricQueryResult::SummaryMetricQueryResult() : 
-    m_queryIdHasBeenSet(false),
-    m_queryStatus(MetricQueryStatus::NOT_SET),
-    m_queryStatusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_aggregationPeriod(AggregationPeriod::NOT_SET),
-    m_aggregationPeriodHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 SummaryMetricQueryResult::SummaryMetricQueryResult(JsonView jsonValue)
-  : SummaryMetricQueryResult()
 {
   *this = jsonValue;
 }
@@ -47,31 +28,23 @@ SummaryMetricQueryResult& SummaryMetricQueryResult::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
     m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatus"))
   {
     m_queryStatus = MetricQueryStatusMapper::GetMetricQueryStatusForName(jsonValue.GetString("QueryStatus"));
-
     m_queryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -81,28 +54,21 @@ SummaryMetricQueryResult& SummaryMetricQueryResult::operator =(JsonView jsonValu
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationPeriod"))
   {
     m_aggregationPeriod = AggregationPeriodMapper::GetAggregationPeriodForName(jsonValue.GetString("AggregationPeriod"));
-
     m_aggregationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimestamp"))
   {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
-
     m_endTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("Timestamps");
@@ -112,7 +78,6 @@ SummaryMetricQueryResult& SummaryMetricQueryResult::operator =(JsonView jsonValu
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -122,14 +87,11 @@ SummaryMetricQueryResult& SummaryMetricQueryResult::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

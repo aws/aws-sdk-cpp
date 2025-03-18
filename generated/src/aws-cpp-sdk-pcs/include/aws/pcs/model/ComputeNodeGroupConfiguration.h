@@ -32,7 +32,7 @@ namespace Model
   class ComputeNodeGroupConfiguration
   {
   public:
-    AWS_PCS_API ComputeNodeGroupConfiguration();
+    AWS_PCS_API ComputeNodeGroupConfiguration() = default;
     AWS_PCS_API ComputeNodeGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API ComputeNodeGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The compute node group ID for the compute node group configuration.</p>
      */
-    inline const Aws::String& GetComputeNodeGroupId() const{ return m_computeNodeGroupId; }
+    inline const Aws::String& GetComputeNodeGroupId() const { return m_computeNodeGroupId; }
     inline bool ComputeNodeGroupIdHasBeenSet() const { return m_computeNodeGroupIdHasBeenSet; }
-    inline void SetComputeNodeGroupId(const Aws::String& value) { m_computeNodeGroupIdHasBeenSet = true; m_computeNodeGroupId = value; }
-    inline void SetComputeNodeGroupId(Aws::String&& value) { m_computeNodeGroupIdHasBeenSet = true; m_computeNodeGroupId = std::move(value); }
-    inline void SetComputeNodeGroupId(const char* value) { m_computeNodeGroupIdHasBeenSet = true; m_computeNodeGroupId.assign(value); }
-    inline ComputeNodeGroupConfiguration& WithComputeNodeGroupId(const Aws::String& value) { SetComputeNodeGroupId(value); return *this;}
-    inline ComputeNodeGroupConfiguration& WithComputeNodeGroupId(Aws::String&& value) { SetComputeNodeGroupId(std::move(value)); return *this;}
-    inline ComputeNodeGroupConfiguration& WithComputeNodeGroupId(const char* value) { SetComputeNodeGroupId(value); return *this;}
+    template<typename ComputeNodeGroupIdT = Aws::String>
+    void SetComputeNodeGroupId(ComputeNodeGroupIdT&& value) { m_computeNodeGroupIdHasBeenSet = true; m_computeNodeGroupId = std::forward<ComputeNodeGroupIdT>(value); }
+    template<typename ComputeNodeGroupIdT = Aws::String>
+    ComputeNodeGroupConfiguration& WithComputeNodeGroupId(ComputeNodeGroupIdT&& value) { SetComputeNodeGroupId(std::forward<ComputeNodeGroupIdT>(value)); return *this;}
     ///@}
   private:
 

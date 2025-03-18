@@ -21,7 +21,7 @@ namespace Model
   class AssociateTrackerConsumerRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API AssociateTrackerConsumerRequest();
+    AWS_LOCATIONSERVICE_API AssociateTrackerConsumerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name of the tracker resource to be associated with a geofence
      * collection.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::String& GetTrackerName() const { return m_trackerName; }
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-    inline AssociateTrackerConsumerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-    inline AssociateTrackerConsumerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-    inline AssociateTrackerConsumerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    template<typename TrackerNameT = Aws::String>
+    void SetTrackerName(TrackerNameT&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::forward<TrackerNameT>(value); }
+    template<typename TrackerNameT = Aws::String>
+    AssociateTrackerConsumerRequest& WithTrackerName(TrackerNameT&& value) { SetTrackerName(std::forward<TrackerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
+    inline const Aws::String& GetConsumerArn() const { return m_consumerArn; }
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
-    inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
-    inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
-    inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
-    inline AssociateTrackerConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
-    inline AssociateTrackerConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
-    inline AssociateTrackerConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
+    template<typename ConsumerArnT = Aws::String>
+    void SetConsumerArn(ConsumerArnT&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::forward<ConsumerArnT>(value); }
+    template<typename ConsumerArnT = Aws::String>
+    AssociateTrackerConsumerRequest& WithConsumerArn(ConsumerArnT&& value) { SetConsumerArn(std::forward<ConsumerArnT>(value)); return *this;}
     ///@}
   private:
 

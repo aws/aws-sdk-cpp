@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCopyProductStatusResult::DescribeCopyProductStatusResult() : 
-    m_copyProductStatus(CopyProductStatus::NOT_SET)
-{
-}
-
 DescribeCopyProductStatusResult::DescribeCopyProductStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCopyProductStatusResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DescribeCopyProductStatusResult& DescribeCopyProductStatusResult::operator =(con
   if(jsonValue.ValueExists("CopyProductStatus"))
   {
     m_copyProductStatus = CopyProductStatusMapper::GetCopyProductStatusForName(jsonValue.GetString("CopyProductStatus"));
-
+    m_copyProductStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetProductId"))
   {
     m_targetProductId = jsonValue.GetString("TargetProductId");
-
+    m_targetProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
+    m_statusDetailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

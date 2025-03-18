@@ -21,7 +21,7 @@ namespace Model
   class GetRecommendationRequest : public TrustedAdvisorRequest
   {
   public:
-    AWS_TRUSTEDADVISOR_API GetRecommendationRequest();
+    AWS_TRUSTEDADVISOR_API GetRecommendationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Recommendation identifier</p>
      */
-    inline const Aws::String& GetRecommendationIdentifier() const{ return m_recommendationIdentifier; }
+    inline const Aws::String& GetRecommendationIdentifier() const { return m_recommendationIdentifier; }
     inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
-    inline void SetRecommendationIdentifier(const Aws::String& value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier = value; }
-    inline void SetRecommendationIdentifier(Aws::String&& value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier = std::move(value); }
-    inline void SetRecommendationIdentifier(const char* value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier.assign(value); }
-    inline GetRecommendationRequest& WithRecommendationIdentifier(const Aws::String& value) { SetRecommendationIdentifier(value); return *this;}
-    inline GetRecommendationRequest& WithRecommendationIdentifier(Aws::String&& value) { SetRecommendationIdentifier(std::move(value)); return *this;}
-    inline GetRecommendationRequest& WithRecommendationIdentifier(const char* value) { SetRecommendationIdentifier(value); return *this;}
+    template<typename RecommendationIdentifierT = Aws::String>
+    void SetRecommendationIdentifier(RecommendationIdentifierT&& value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier = std::forward<RecommendationIdentifierT>(value); }
+    template<typename RecommendationIdentifierT = Aws::String>
+    GetRecommendationRequest& WithRecommendationIdentifier(RecommendationIdentifierT&& value) { SetRecommendationIdentifier(std::forward<RecommendationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

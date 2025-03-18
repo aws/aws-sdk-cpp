@@ -29,7 +29,7 @@ namespace Model
   class ListSourceRepositoriesResult
   {
   public:
-    AWS_CODECATALYST_API ListSourceRepositoriesResult();
+    AWS_CODECATALYST_API ListSourceRepositoriesResult() = default;
     AWS_CODECATALYST_API ListSourceRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API ListSourceRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the source repositories.</p>
      */
-    inline const Aws::Vector<ListSourceRepositoriesItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<ListSourceRepositoriesItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<ListSourceRepositoriesItem>&& value) { m_items = std::move(value); }
-    inline ListSourceRepositoriesResult& WithItems(const Aws::Vector<ListSourceRepositoriesItem>& value) { SetItems(value); return *this;}
-    inline ListSourceRepositoriesResult& WithItems(Aws::Vector<ListSourceRepositoriesItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListSourceRepositoriesResult& AddItems(const ListSourceRepositoriesItem& value) { m_items.push_back(value); return *this; }
-    inline ListSourceRepositoriesResult& AddItems(ListSourceRepositoriesItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListSourceRepositoriesItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<ListSourceRepositoriesItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ListSourceRepositoriesItem>>
+    ListSourceRepositoriesResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ListSourceRepositoriesItem>
+    ListSourceRepositoriesResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A token returned from a call to this API to indicate the next batch of
      * results to return, if any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSourceRepositoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSourceRepositoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSourceRepositoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSourceRepositoriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSourceRepositoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSourceRepositoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSourceRepositoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSourceRepositoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListSourceRepositoriesItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

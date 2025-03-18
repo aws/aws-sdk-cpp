@@ -18,25 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-RadiusSettings::RadiusSettings() : 
-    m_radiusServersHasBeenSet(false),
-    m_radiusPort(0),
-    m_radiusPortHasBeenSet(false),
-    m_radiusTimeout(0),
-    m_radiusTimeoutHasBeenSet(false),
-    m_radiusRetries(0),
-    m_radiusRetriesHasBeenSet(false),
-    m_sharedSecretHasBeenSet(false),
-    m_authenticationProtocol(RadiusAuthenticationProtocol::NOT_SET),
-    m_authenticationProtocolHasBeenSet(false),
-    m_displayLabelHasBeenSet(false),
-    m_useSameUsername(false),
-    m_useSameUsernameHasBeenSet(false)
-{
-}
-
 RadiusSettings::RadiusSettings(JsonView jsonValue)
-  : RadiusSettings()
 {
   *this = jsonValue;
 }
@@ -52,56 +34,41 @@ RadiusSettings& RadiusSettings::operator =(JsonView jsonValue)
     }
     m_radiusServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusPort"))
   {
     m_radiusPort = jsonValue.GetInteger("RadiusPort");
-
     m_radiusPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusTimeout"))
   {
     m_radiusTimeout = jsonValue.GetInteger("RadiusTimeout");
-
     m_radiusTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusRetries"))
   {
     m_radiusRetries = jsonValue.GetInteger("RadiusRetries");
-
     m_radiusRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedSecret"))
   {
     m_sharedSecret = jsonValue.GetString("SharedSecret");
-
     m_sharedSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationProtocol"))
   {
     m_authenticationProtocol = RadiusAuthenticationProtocolMapper::GetRadiusAuthenticationProtocolForName(jsonValue.GetString("AuthenticationProtocol"));
-
     m_authenticationProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayLabel"))
   {
     m_displayLabel = jsonValue.GetString("DisplayLabel");
-
     m_displayLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseSameUsername"))
   {
     m_useSameUsername = jsonValue.GetBool("UseSameUsername");
-
     m_useSameUsernameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-VirtualObject::VirtualObject() : 
-    m_uriHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 VirtualObject::VirtualObject(JsonView jsonValue)
-  : VirtualObject()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VirtualObject& VirtualObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");
-
     m_eTagHasBeenSet = true;
   }
-
   return *this;
 }
 

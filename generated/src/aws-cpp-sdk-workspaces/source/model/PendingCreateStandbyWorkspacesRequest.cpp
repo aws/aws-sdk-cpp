@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-PendingCreateStandbyWorkspacesRequest::PendingCreateStandbyWorkspacesRequest() : 
-    m_userNameHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_state(WorkspaceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 PendingCreateStandbyWorkspacesRequest::PendingCreateStandbyWorkspacesRequest(JsonView jsonValue)
-  : PendingCreateStandbyWorkspacesRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PendingCreateStandbyWorkspacesRequest& PendingCreateStandbyWorkspacesRequest::op
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkspaceStateMapper::GetWorkspaceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

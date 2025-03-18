@@ -30,7 +30,7 @@ namespace Model
   class RestoreDBClusterToPointInTimeRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API RestoreDBClusterToPointInTimeRequest();
+    AWS_RDS_API RestoreDBClusterToPointInTimeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * contain two consecutive hyphens</p> </li> </ul> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
-    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    inline const Aws::String& GetDBClusterIdentifier() const { return m_dBClusterIdentifier; }
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    template<typename DBClusterIdentifierT = Aws::String>
+    void SetDBClusterIdentifier(DBClusterIdentifierT&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::forward<DBClusterIdentifierT>(value); }
+    template<typename DBClusterIdentifierT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(DBClusterIdentifierT&& value) { SetDBClusterIdentifier(std::forward<DBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
-    inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
+    inline const Aws::String& GetRestoreType() const { return m_restoreType; }
     inline bool RestoreTypeHasBeenSet() const { return m_restoreTypeHasBeenSet; }
-    inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
-    inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
-    inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
+    template<typename RestoreTypeT = Aws::String>
+    void SetRestoreType(RestoreTypeT&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::forward<RestoreTypeT>(value); }
+    template<typename RestoreTypeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithRestoreType(RestoreTypeT&& value) { SetRestoreType(std::forward<RestoreTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * DBCluster.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
      * clusters</p>
      */
-    inline const Aws::String& GetSourceDBClusterIdentifier() const{ return m_sourceDBClusterIdentifier; }
+    inline const Aws::String& GetSourceDBClusterIdentifier() const { return m_sourceDBClusterIdentifier; }
     inline bool SourceDBClusterIdentifierHasBeenSet() const { return m_sourceDBClusterIdentifierHasBeenSet; }
-    inline void SetSourceDBClusterIdentifier(const Aws::String& value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier = value; }
-    inline void SetSourceDBClusterIdentifier(Aws::String&& value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier = std::move(value); }
-    inline void SetSourceDBClusterIdentifier(const char* value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDBClusterIdentifier(const Aws::String& value) { SetSourceDBClusterIdentifier(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDBClusterIdentifier(Aws::String&& value) { SetSourceDBClusterIdentifier(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDBClusterIdentifier(const char* value) { SetSourceDBClusterIdentifier(value); return *this;}
+    template<typename SourceDBClusterIdentifierT = Aws::String>
+    void SetSourceDBClusterIdentifier(SourceDBClusterIdentifierT&& value) { m_sourceDBClusterIdentifierHasBeenSet = true; m_sourceDBClusterIdentifier = std::forward<SourceDBClusterIdentifierT>(value); }
+    template<typename SourceDBClusterIdentifierT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithSourceDBClusterIdentifier(SourceDBClusterIdentifierT&& value) { SetSourceDBClusterIdentifier(std::forward<SourceDBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * <code>2015-03-07T23:45:00Z</code> </p> <p>Valid for: Aurora DB clusters and
      * Multi-AZ DB clusters</p>
      */
-    inline const Aws::Utils::DateTime& GetRestoreToTime() const{ return m_restoreToTime; }
+    inline const Aws::Utils::DateTime& GetRestoreToTime() const { return m_restoreToTime; }
     inline bool RestoreToTimeHasBeenSet() const { return m_restoreToTimeHasBeenSet; }
-    inline void SetRestoreToTime(const Aws::Utils::DateTime& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
-    inline void SetRestoreToTime(Aws::Utils::DateTime&& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(const Aws::Utils::DateTime& value) { SetRestoreToTime(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(Aws::Utils::DateTime&& value) { SetRestoreToTime(std::move(value)); return *this;}
+    template<typename RestoreToTimeT = Aws::Utils::DateTime>
+    void SetRestoreToTime(RestoreToTimeT&& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = std::forward<RestoreToTimeT>(value); }
+    template<typename RestoreToTimeT = Aws::Utils::DateTime>
+    RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(RestoreToTimeT&& value) { SetRestoreToTime(std::forward<RestoreToTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,7 +124,7 @@ namespace Model
      * parameter is provided.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
      * clusters</p>
      */
-    inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
+    inline bool GetUseLatestRestorableTime() const { return m_useLatestRestorableTime; }
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -143,7 +137,7 @@ namespace Model
      * default port for the engine.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -156,14 +150,12 @@ namespace Model
      * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
-    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+    inline const Aws::String& GetDBSubnetGroupName() const { return m_dBSubnetGroupName; }
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
-    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
-    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+    template<typename DBSubnetGroupNameT = Aws::String>
+    void SetDBSubnetGroupName(DBSubnetGroupNameT&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::forward<DBSubnetGroupNameT>(value); }
+    template<typename DBSubnetGroupNameT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDBSubnetGroupName(DBSubnetGroupNameT&& value) { SetDBSubnetGroupName(std::forward<DBSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +163,12 @@ namespace Model
      * <p>The name of the option group for the new DB cluster.</p> <p>DB clusters are
      * associated with a default option group that can't be modified.</p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,27 +176,26 @@ namespace Model
      * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    RestoreDBClusterToPointInTimeRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RestoreDBClusterToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RestoreDBClusterToPointInTimeRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RestoreDBClusterToPointInTimeRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -227,14 +216,12 @@ namespace Model
      * cluster that isn't encrypted, then the restore request is rejected.</p> <p>Valid
      * for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,7 +236,7 @@ namespace Model
      * <i>Amazon RDS User Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
      * DB clusters</p>
      */
-    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+    inline bool GetEnableIAMDatabaseAuthentication() const { return m_enableIAMDatabaseAuthentication; }
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -262,7 +249,7 @@ namespace Model
      * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
      * <p>Valid for: Aurora MySQL DB clusters only</p>
      */
-    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+    inline long long GetBacktrackWindow() const { return m_backtrackWindow; }
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
@@ -291,15 +278,14 @@ namespace Model
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
      * Guide</i>.</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const { return m_enableCloudwatchLogsExports; }
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
-    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
-    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
-    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
-    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+    template<typename EnableCloudwatchLogsExportsT = Aws::Vector<Aws::String>>
+    void SetEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::forward<EnableCloudwatchLogsExportsT>(value); }
+    template<typename EnableCloudwatchLogsExportsT = Aws::Vector<Aws::String>>
+    RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { SetEnableCloudwatchLogsExports(std::forward<EnableCloudwatchLogsExportsT>(value)); return *this;}
+    template<typename EnableCloudwatchLogsExportsT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.emplace_back(std::forward<EnableCloudwatchLogsExportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -314,14 +300,12 @@ namespace Model
      * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
      * clusters</p>
      */
-    inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
+    inline const Aws::String& GetDBClusterParameterGroupName() const { return m_dBClusterParameterGroupName; }
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
-    inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
-    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
-    inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+    template<typename DBClusterParameterGroupNameT = Aws::String>
+    void SetDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::forward<DBClusterParameterGroupNameT>(value); }
+    template<typename DBClusterParameterGroupNameT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) { SetDBClusterParameterGroupName(std::forward<DBClusterParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -331,7 +315,7 @@ namespace Model
      * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
      * Multi-AZ DB clusters</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -343,7 +327,7 @@ namespace Model
      * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
      * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
-    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
@@ -359,14 +343,12 @@ namespace Model
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for:
      * Aurora DB clusters only</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -374,14 +356,12 @@ namespace Model
      * <p>The name of the IAM role to be used when making API calls to the Directory
      * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
-    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+    inline const Aws::String& GetDomainIAMRoleName() const { return m_domainIAMRoleName; }
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
-    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
-    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+    template<typename DomainIAMRoleNameT = Aws::String>
+    void SetDomainIAMRoleName(DomainIAMRoleNameT&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::forward<DomainIAMRoleNameT>(value); }
+    template<typename DomainIAMRoleNameT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(DomainIAMRoleNameT&& value) { SetDomainIAMRoleName(std::forward<DomainIAMRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -389,12 +369,12 @@ namespace Model
      * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
      * properties of the DB cluster.</p> <p>Valid for: Aurora DB clusters only</p>
      */
-    inline const ScalingConfiguration& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+    inline const ScalingConfiguration& GetScalingConfiguration() const { return m_scalingConfiguration; }
     inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
-    inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
-    inline void SetScalingConfiguration(ScalingConfiguration&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(const ScalingConfiguration& value) { SetScalingConfiguration(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(ScalingConfiguration&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+    template<typename ScalingConfigurationT = ScalingConfiguration>
+    void SetScalingConfiguration(ScalingConfigurationT&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::forward<ScalingConfigurationT>(value); }
+    template<typename ScalingConfigurationT = ScalingConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(ScalingConfigurationT&& value) { SetScalingConfiguration(std::forward<ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -408,14 +388,12 @@ namespace Model
      * that is an Aurora Serverless v1 cluster, specify the engine mode
      * <code>serverless</code>.</p> <p>Valid for: Aurora DB clusters only</p>
      */
-    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+    inline const Aws::String& GetEngineMode() const { return m_engineMode; }
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
-    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
-    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
-    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+    template<typename EngineModeT = Aws::String>
+    void SetEngineMode(EngineModeT&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::forward<EngineModeT>(value); }
+    template<typename EngineModeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithEngineMode(EngineModeT&& value) { SetEngineMode(std::forward<EngineModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -428,14 +406,12 @@ namespace Model
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
-    inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
+    inline const Aws::String& GetDBClusterInstanceClass() const { return m_dBClusterInstanceClass; }
     inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
-    inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
-    inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
-    inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}
+    template<typename DBClusterInstanceClassT = Aws::String>
+    void SetDBClusterInstanceClass(DBClusterInstanceClassT&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::forward<DBClusterInstanceClassT>(value); }
+    template<typename DBClusterInstanceClassT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(DBClusterInstanceClassT&& value) { SetDBClusterInstanceClass(std::forward<DBClusterInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -447,14 +423,12 @@ namespace Model
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -481,7 +455,7 @@ namespace Model
      * part of a VPC that has an internet gateway attached to it, the DB cluster is
      * public.</p> </li> </ul> <p>Valid for: Multi-AZ DB clusters only</p>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -497,7 +471,7 @@ namespace Model
      * <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for
      * the DB instance.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithIops(int value) { SetIops(value); return *this;}
@@ -505,12 +479,12 @@ namespace Model
 
     ///@{
     
-    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+    inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const { return m_serverlessV2ScalingConfiguration; }
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
-    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
-    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::forward<ServerlessV2ScalingConfigurationT>(value); }
+    template<typename ServerlessV2ScalingConfigurationT = ServerlessV2ScalingConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationT&& value) { SetServerlessV2ScalingConfiguration(std::forward<ServerlessV2ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -525,40 +499,36 @@ namespace Model
      * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> <p>Valid for: Aurora DB clusters only</p>
      */
-    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ID of the source DB cluster from which to restore.</p>
      */
-    inline const Aws::String& GetSourceDbClusterResourceId() const{ return m_sourceDbClusterResourceId; }
+    inline const Aws::String& GetSourceDbClusterResourceId() const { return m_sourceDbClusterResourceId; }
     inline bool SourceDbClusterResourceIdHasBeenSet() const { return m_sourceDbClusterResourceIdHasBeenSet; }
-    inline void SetSourceDbClusterResourceId(const Aws::String& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = value; }
-    inline void SetSourceDbClusterResourceId(Aws::String&& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = std::move(value); }
-    inline void SetSourceDbClusterResourceId(const char* value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const Aws::String& value) { SetSourceDbClusterResourceId(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(Aws::String&& value) { SetSourceDbClusterResourceId(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const char* value) { SetSourceDbClusterResourceId(value); return *this;}
+    template<typename SourceDbClusterResourceIdT = Aws::String>
+    void SetSourceDbClusterResourceId(SourceDbClusterResourceIdT&& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = std::forward<SourceDbClusterResourceIdT>(value); }
+    template<typename SourceDbClusterResourceIdT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(SourceDbClusterResourceIdT&& value) { SetSourceDbClusterResourceId(std::forward<SourceDbClusterResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const { return m_rdsCustomClusterConfiguration; }
     inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
-    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
-    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
+    template<typename RdsCustomClusterConfigurationT = RdsCustomClusterConfiguration>
+    void SetRdsCustomClusterConfiguration(RdsCustomClusterConfigurationT&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::forward<RdsCustomClusterConfigurationT>(value); }
+    template<typename RdsCustomClusterConfigurationT = RdsCustomClusterConfiguration>
+    RestoreDBClusterToPointInTimeRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfigurationT&& value) { SetRdsCustomClusterConfiguration(std::forward<RdsCustomClusterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -570,7 +540,7 @@ namespace Model
      * <code>0</code>.</p> <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code>
      * </p> <p>Default: <code>0</code> </p>
      */
-    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const { return m_monitoringInterval; }
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
     inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
@@ -584,21 +554,19 @@ namespace Model
      * <code>MonitoringInterval</code> is set to a value other than <code>0</code>,
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
-    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+    inline const Aws::String& GetMonitoringRoleArn() const { return m_monitoringRoleArn; }
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
-    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
-    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
-    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+    template<typename MonitoringRoleArnT = Aws::String>
+    void SetMonitoringRoleArn(MonitoringRoleArnT&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::forward<MonitoringRoleArnT>(value); }
+    template<typename MonitoringRoleArnT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithMonitoringRoleArn(MonitoringRoleArnT&& value) { SetMonitoringRoleArn(std::forward<MonitoringRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
      */
-    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+    inline bool GetEnablePerformanceInsights() const { return m_enablePerformanceInsights; }
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
@@ -614,14 +582,12 @@ namespace Model
      * account. Your Amazon Web Services account has a different default KMS key for
      * each Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const { return m_performanceInsightsKMSKeyId; }
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
-    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
-    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
-    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    void SetPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::forward<PerformanceInsightsKMSKeyIdT>(value); }
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { SetPerformanceInsightsKMSKeyId(std::forward<PerformanceInsightsKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -634,7 +600,7 @@ namespace Model
      * <code>7</code> days</p> <p>If you specify a retention period that isn't valid,
      * such as <code>94</code>, Amazon RDS issues an error.</p>
      */
-    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+    inline int GetPerformanceInsightsRetentionPeriod() const { return m_performanceInsightsRetentionPeriod; }
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
     inline RestoreDBClusterToPointInTimeRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
@@ -664,14 +630,12 @@ namespace Model
      * open-source-rds-extended-support-disabled</code> </p> <p>Default:
      * <code>open-source-rds-extended-support</code> </p>
      */
-    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+    inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }
     inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
-    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
-    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
-    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
-    inline RestoreDBClusterToPointInTimeRequest& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+    template<typename EngineLifecycleSupportT = Aws::String>
+    void SetEngineLifecycleSupport(EngineLifecycleSupportT&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::forward<EngineLifecycleSupportT>(value); }
+    template<typename EngineLifecycleSupportT = Aws::String>
+    RestoreDBClusterToPointInTimeRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) { SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value)); return *this;}
     ///@}
   private:
 
@@ -684,13 +648,13 @@ namespace Model
     Aws::String m_sourceDBClusterIdentifier;
     bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_restoreToTime;
+    Aws::Utils::DateTime m_restoreToTime{};
     bool m_restoreToTimeHasBeenSet = false;
 
-    bool m_useLatestRestorableTime;
+    bool m_useLatestRestorableTime{false};
     bool m_useLatestRestorableTimeHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
@@ -708,10 +672,10 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthentication{false};
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
-    long long m_backtrackWindow;
+    long long m_backtrackWindow{0};
     bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
@@ -720,10 +684,10 @@ namespace Model
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
-    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshot{false};
     bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
@@ -744,10 +708,10 @@ namespace Model
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
@@ -762,19 +726,19 @@ namespace Model
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
-    int m_monitoringInterval;
+    int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet = false;
 
-    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsights{false};
     bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
-    int m_performanceInsightsRetentionPeriod;
+    int m_performanceInsightsRetentionPeriod{0};
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;

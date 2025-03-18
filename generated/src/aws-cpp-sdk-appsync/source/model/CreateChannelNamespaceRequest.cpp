@@ -12,16 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelNamespaceRequest::CreateChannelNamespaceRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subscribeAuthModesHasBeenSet(false),
-    m_publishAuthModesHasBeenSet(false),
-    m_codeHandlersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

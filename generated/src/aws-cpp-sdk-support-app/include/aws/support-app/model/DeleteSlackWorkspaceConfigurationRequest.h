@@ -21,7 +21,7 @@ namespace Model
   class DeleteSlackWorkspaceConfigurationRequest : public SupportAppRequest
   {
   public:
-    AWS_SUPPORTAPP_API DeleteSlackWorkspaceConfigurationRequest();
+    AWS_SUPPORTAPP_API DeleteSlackWorkspaceConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
      * <code>T012ABCDEFG</code>.</p>
      */
-    inline const Aws::String& GetTeamId() const{ return m_teamId; }
+    inline const Aws::String& GetTeamId() const { return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
-    inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
-    inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
-    inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
-    inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
-    inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
-    inline DeleteSlackWorkspaceConfigurationRequest& WithTeamId(const char* value) { SetTeamId(value); return *this;}
+    template<typename TeamIdT = Aws::String>
+    void SetTeamId(TeamIdT&& value) { m_teamIdHasBeenSet = true; m_teamId = std::forward<TeamIdT>(value); }
+    template<typename TeamIdT = Aws::String>
+    DeleteSlackWorkspaceConfigurationRequest& WithTeamId(TeamIdT&& value) { SetTeamId(std::forward<TeamIdT>(value)); return *this;}
     ///@}
   private:
 

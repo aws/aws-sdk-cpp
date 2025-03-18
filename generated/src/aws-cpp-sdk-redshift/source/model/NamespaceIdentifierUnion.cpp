@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-NamespaceIdentifierUnion::NamespaceIdentifierUnion() : 
-    m_serverlessIdentifierHasBeenSet(false),
-    m_provisionedIdentifierHasBeenSet(false)
-{
-}
-
 NamespaceIdentifierUnion::NamespaceIdentifierUnion(const XmlNode& xmlNode)
-  : NamespaceIdentifierUnion()
 {
   *this = xmlNode;
 }

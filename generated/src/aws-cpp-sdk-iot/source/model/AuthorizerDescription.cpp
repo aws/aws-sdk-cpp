@@ -18,25 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuthorizerDescription::AuthorizerDescription() : 
-    m_authorizerNameHasBeenSet(false),
-    m_authorizerArnHasBeenSet(false),
-    m_authorizerFunctionArnHasBeenSet(false),
-    m_tokenKeyNameHasBeenSet(false),
-    m_tokenSigningPublicKeysHasBeenSet(false),
-    m_status(AuthorizerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false),
-    m_enableCachingForHttp(false),
-    m_enableCachingForHttpHasBeenSet(false)
-{
-}
-
 AuthorizerDescription::AuthorizerDescription(JsonView jsonValue)
-  : AuthorizerDescription()
 {
   *this = jsonValue;
 }
@@ -46,31 +28,23 @@ AuthorizerDescription& AuthorizerDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizerName"))
   {
     m_authorizerName = jsonValue.GetString("authorizerName");
-
     m_authorizerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerArn"))
   {
     m_authorizerArn = jsonValue.GetString("authorizerArn");
-
     m_authorizerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerFunctionArn"))
   {
     m_authorizerFunctionArn = jsonValue.GetString("authorizerFunctionArn");
-
     m_authorizerFunctionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenKeyName"))
   {
     m_tokenKeyName = jsonValue.GetString("tokenKeyName");
-
     m_tokenKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenSigningPublicKeys"))
   {
     Aws::Map<Aws::String, JsonView> tokenSigningPublicKeysJsonMap = jsonValue.GetObject("tokenSigningPublicKeys").GetAllObjects();
@@ -80,42 +54,31 @@ AuthorizerDescription& AuthorizerDescription::operator =(JsonView jsonValue)
     }
     m_tokenSigningPublicKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AuthorizerStatusMapper::GetAuthorizerStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingDisabled"))
   {
     m_signingDisabled = jsonValue.GetBool("signingDisabled");
-
     m_signingDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableCachingForHttp"))
   {
     m_enableCachingForHttp = jsonValue.GetBool("enableCachingForHttp");
-
     m_enableCachingForHttpHasBeenSet = true;
   }
-
   return *this;
 }
 

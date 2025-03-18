@@ -23,7 +23,7 @@ namespace Model
   class UpdateScriptRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API UpdateScriptRequest();
+    AWS_GAMELIFT_API UpdateScriptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
-    inline const Aws::String& GetScriptId() const{ return m_scriptId; }
+    inline const Aws::String& GetScriptId() const { return m_scriptId; }
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
-    inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
-    inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
-    inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
-    inline UpdateScriptRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
-    inline UpdateScriptRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
-    inline UpdateScriptRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
+    template<typename ScriptIdT = Aws::String>
+    void SetScriptId(ScriptIdT&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::forward<ScriptIdT>(value); }
+    template<typename ScriptIdT = Aws::String>
+    UpdateScriptRequest& WithScriptId(ScriptIdT&& value) { SetScriptId(std::forward<ScriptIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>A descriptive label that is associated with a script. Script names do not
      * need to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateScriptRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateScriptRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateScriptRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateScriptRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>Version information that is associated with a build or script. Version
      * strings do not need to be unique.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline UpdateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline UpdateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline UpdateScriptRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    UpdateScriptRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,12 @@ namespace Model
      * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
      * earlier version. </p>
      */
-    inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
+    inline const S3Location& GetStorageLocation() const { return m_storageLocation; }
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
-    inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
-    inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
-    inline UpdateScriptRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
-    inline UpdateScriptRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
+    template<typename StorageLocationT = S3Location>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = S3Location>
+    UpdateScriptRequest& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +103,12 @@ namespace Model
      * "fileb://" to indicate that the file data is a binary object. For example:
      * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
+    inline const Aws::Utils::ByteBuffer& GetZipFile() const { return m_zipFile; }
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
-    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
-    inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
-    inline UpdateScriptRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
-    inline UpdateScriptRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
+    template<typename ZipFileT = Aws::Utils::ByteBuffer>
+    void SetZipFile(ZipFileT&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::forward<ZipFileT>(value); }
+    template<typename ZipFileT = Aws::Utils::ByteBuffer>
+    UpdateScriptRequest& WithZipFile(ZipFileT&& value) { SetZipFile(std::forward<ZipFileT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,7 +124,7 @@ namespace Model
     S3Location m_storageLocation;
     bool m_storageLocationHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_zipFile;
+    Aws::Utils::ByteBuffer m_zipFile{};
     bool m_zipFileHasBeenSet = false;
   };
 

@@ -18,23 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ReplicatorSummary::ReplicatorSummary() : 
-    m_creationTimeHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_isReplicatorReference(false),
-    m_isReplicatorReferenceHasBeenSet(false),
-    m_kafkaClustersSummaryHasBeenSet(false),
-    m_replicationInfoSummaryListHasBeenSet(false),
-    m_replicatorArnHasBeenSet(false),
-    m_replicatorNameHasBeenSet(false),
-    m_replicatorResourceArnHasBeenSet(false),
-    m_replicatorState(ReplicatorState::NOT_SET),
-    m_replicatorStateHasBeenSet(false)
-{
-}
-
 ReplicatorSummary::ReplicatorSummary(JsonView jsonValue)
-  : ReplicatorSummary()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ ReplicatorSummary& ReplicatorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentVersion"))
   {
     m_currentVersion = jsonValue.GetString("currentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isReplicatorReference"))
   {
     m_isReplicatorReference = jsonValue.GetBool("isReplicatorReference");
-
     m_isReplicatorReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaClustersSummary"))
   {
     Aws::Utils::Array<JsonView> kafkaClustersSummaryJsonList = jsonValue.GetArray("kafkaClustersSummary");
@@ -71,7 +49,6 @@ ReplicatorSummary& ReplicatorSummary::operator =(JsonView jsonValue)
     }
     m_kafkaClustersSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationInfoSummaryList"))
   {
     Aws::Utils::Array<JsonView> replicationInfoSummaryListJsonList = jsonValue.GetArray("replicationInfoSummaryList");
@@ -81,35 +58,26 @@ ReplicatorSummary& ReplicatorSummary::operator =(JsonView jsonValue)
     }
     m_replicationInfoSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorArn"))
   {
     m_replicatorArn = jsonValue.GetString("replicatorArn");
-
     m_replicatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorName"))
   {
     m_replicatorName = jsonValue.GetString("replicatorName");
-
     m_replicatorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorResourceArn"))
   {
     m_replicatorResourceArn = jsonValue.GetString("replicatorResourceArn");
-
     m_replicatorResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorState"))
   {
     m_replicatorState = ReplicatorStateMapper::GetReplicatorStateForName(jsonValue.GetString("replicatorState"));
-
     m_replicatorStateHasBeenSet = true;
   }
-
   return *this;
 }
 

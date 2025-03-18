@@ -12,12 +12,6 @@ using namespace Aws::NotificationsContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateEmailContactRequest::ActivateEmailContactRequest() : 
-    m_arnHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 Aws::String ActivateEmailContactRequest::SerializePayload() const
 {
   return {};

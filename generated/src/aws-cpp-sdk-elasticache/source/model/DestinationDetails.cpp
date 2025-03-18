@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-DestinationDetails::DestinationDetails() : 
-    m_cloudWatchLogsDetailsHasBeenSet(false),
-    m_kinesisFirehoseDetailsHasBeenSet(false)
-{
-}
-
 DestinationDetails::DestinationDetails(const XmlNode& xmlNode)
-  : DestinationDetails()
 {
   *this = xmlNode;
 }

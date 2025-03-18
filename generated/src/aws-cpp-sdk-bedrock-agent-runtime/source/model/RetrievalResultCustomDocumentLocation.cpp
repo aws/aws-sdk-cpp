@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultCustomDocumentLocation::RetrievalResultCustomDocumentLocation() : 
-    m_idHasBeenSet(false)
-{
-}
-
 RetrievalResultCustomDocumentLocation::RetrievalResultCustomDocumentLocation(JsonView jsonValue)
-  : RetrievalResultCustomDocumentLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalResultCustomDocumentLocation& RetrievalResultCustomDocumentLocation::op
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class StartJobRunResult
   {
   public:
-    AWS_GLUE_API StartJobRunResult();
+    AWS_GLUE_API StartJobRunResult() = default;
     AWS_GLUE_API StartJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID assigned to this job run.</p>
      */
-    inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-    inline void SetJobRunId(const Aws::String& value) { m_jobRunId = value; }
-    inline void SetJobRunId(Aws::String&& value) { m_jobRunId = std::move(value); }
-    inline void SetJobRunId(const char* value) { m_jobRunId.assign(value); }
-    inline StartJobRunResult& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-    inline StartJobRunResult& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-    inline StartJobRunResult& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    inline const Aws::String& GetJobRunId() const { return m_jobRunId; }
+    template<typename JobRunIdT = Aws::String>
+    void SetJobRunId(JobRunIdT&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::forward<JobRunIdT>(value); }
+    template<typename JobRunIdT = Aws::String>
+    StartJobRunResult& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartJobRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobRunId;
+    bool m_jobRunIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

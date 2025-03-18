@@ -31,7 +31,7 @@ namespace Model
   class AwsElbLoadBalancerListener
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerListener();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListener() = default;
     AWS_SECURITYHUB_API AwsElbLoadBalancerListener(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLoadBalancerListener& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The port on which the instance is listening.</p>
      */
-    inline int GetInstancePort() const{ return m_instancePort; }
+    inline int GetInstancePort() const { return m_instancePort; }
     inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
     inline AwsElbLoadBalancerListener& WithInstancePort(int value) { SetInstancePort(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code>
      * </p>
      */
-    inline const Aws::String& GetInstanceProtocol() const{ return m_instanceProtocol; }
+    inline const Aws::String& GetInstanceProtocol() const { return m_instanceProtocol; }
     inline bool InstanceProtocolHasBeenSet() const { return m_instanceProtocolHasBeenSet; }
-    inline void SetInstanceProtocol(const Aws::String& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
-    inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = std::move(value); }
-    inline void SetInstanceProtocol(const char* value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol.assign(value); }
-    inline AwsElbLoadBalancerListener& WithInstanceProtocol(const Aws::String& value) { SetInstanceProtocol(value); return *this;}
-    inline AwsElbLoadBalancerListener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerListener& WithInstanceProtocol(const char* value) { SetInstanceProtocol(value); return *this;}
+    template<typename InstanceProtocolT = Aws::String>
+    void SetInstanceProtocol(InstanceProtocolT&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = std::forward<InstanceProtocolT>(value); }
+    template<typename InstanceProtocolT = Aws::String>
+    AwsElbLoadBalancerListener& WithInstanceProtocol(InstanceProtocolT&& value) { SetInstanceProtocol(std::forward<InstanceProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * specify any port from the range 1-65535.</p> <p>On EC2-Classic, you can specify
      * any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
-    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const { return m_loadBalancerPort; }
     inline bool LoadBalancerPortHasBeenSet() const { return m_loadBalancerPortHasBeenSet; }
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
     inline AwsElbLoadBalancerListener& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
@@ -81,38 +79,34 @@ namespace Model
      * <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code>
      * </p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline AwsElbLoadBalancerListener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline AwsElbLoadBalancerListener& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerListener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    AwsElbLoadBalancerListener& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the server certificate.</p>
      */
-    inline const Aws::String& GetSslCertificateId() const{ return m_sslCertificateId; }
+    inline const Aws::String& GetSslCertificateId() const { return m_sslCertificateId; }
     inline bool SslCertificateIdHasBeenSet() const { return m_sslCertificateIdHasBeenSet; }
-    inline void SetSslCertificateId(const Aws::String& value) { m_sslCertificateIdHasBeenSet = true; m_sslCertificateId = value; }
-    inline void SetSslCertificateId(Aws::String&& value) { m_sslCertificateIdHasBeenSet = true; m_sslCertificateId = std::move(value); }
-    inline void SetSslCertificateId(const char* value) { m_sslCertificateIdHasBeenSet = true; m_sslCertificateId.assign(value); }
-    inline AwsElbLoadBalancerListener& WithSslCertificateId(const Aws::String& value) { SetSslCertificateId(value); return *this;}
-    inline AwsElbLoadBalancerListener& WithSslCertificateId(Aws::String&& value) { SetSslCertificateId(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerListener& WithSslCertificateId(const char* value) { SetSslCertificateId(value); return *this;}
+    template<typename SslCertificateIdT = Aws::String>
+    void SetSslCertificateId(SslCertificateIdT&& value) { m_sslCertificateIdHasBeenSet = true; m_sslCertificateId = std::forward<SslCertificateIdT>(value); }
+    template<typename SslCertificateIdT = Aws::String>
+    AwsElbLoadBalancerListener& WithSslCertificateId(SslCertificateIdT&& value) { SetSslCertificateId(std::forward<SslCertificateIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_instancePort;
+    int m_instancePort{0};
     bool m_instancePortHasBeenSet = false;
 
     Aws::String m_instanceProtocol;
     bool m_instanceProtocolHasBeenSet = false;
 
-    int m_loadBalancerPort;
+    int m_loadBalancerPort{0};
     bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_protocol;

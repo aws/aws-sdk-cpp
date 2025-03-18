@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-AnalyzePromptEvent::AnalyzePromptEvent() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 AnalyzePromptEvent::AnalyzePromptEvent(JsonView jsonValue)
-  : AnalyzePromptEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalyzePromptEvent& AnalyzePromptEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

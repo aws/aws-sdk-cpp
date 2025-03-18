@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FilePart::FilePart() : 
-    m_filesHasBeenSet(false)
-{
-}
-
 FilePart::FilePart(JsonView jsonValue)
-  : FilePart()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilePart& FilePart::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

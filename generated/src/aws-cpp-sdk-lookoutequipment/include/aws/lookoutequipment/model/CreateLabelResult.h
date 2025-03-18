@@ -27,7 +27,7 @@ namespace Model
   class CreateLabelResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API CreateLabelResult();
+    AWS_LOOKOUTEQUIPMENT_API CreateLabelResult() = default;
     AWS_LOOKOUTEQUIPMENT_API CreateLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API CreateLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p> The ID of the label that you have created. </p>
      */
-    inline const Aws::String& GetLabelId() const{ return m_labelId; }
-    inline void SetLabelId(const Aws::String& value) { m_labelId = value; }
-    inline void SetLabelId(Aws::String&& value) { m_labelId = std::move(value); }
-    inline void SetLabelId(const char* value) { m_labelId.assign(value); }
-    inline CreateLabelResult& WithLabelId(const Aws::String& value) { SetLabelId(value); return *this;}
-    inline CreateLabelResult& WithLabelId(Aws::String&& value) { SetLabelId(std::move(value)); return *this;}
-    inline CreateLabelResult& WithLabelId(const char* value) { SetLabelId(value); return *this;}
+    inline const Aws::String& GetLabelId() const { return m_labelId; }
+    template<typename LabelIdT = Aws::String>
+    void SetLabelId(LabelIdT&& value) { m_labelIdHasBeenSet = true; m_labelId = std::forward<LabelIdT>(value); }
+    template<typename LabelIdT = Aws::String>
+    CreateLabelResult& WithLabelId(LabelIdT&& value) { SetLabelId(std::forward<LabelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLabelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLabelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLabelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLabelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_labelId;
+    bool m_labelIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

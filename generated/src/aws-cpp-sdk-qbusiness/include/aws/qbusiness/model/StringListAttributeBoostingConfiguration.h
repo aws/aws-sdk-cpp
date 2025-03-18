@@ -43,7 +43,7 @@ namespace Model
   class StringListAttributeBoostingConfiguration
   {
   public:
-    AWS_QBUSINESS_API StringListAttributeBoostingConfiguration();
+    AWS_QBUSINESS_API StringListAttributeBoostingConfiguration() = default;
     AWS_QBUSINESS_API StringListAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API StringListAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,16 +53,14 @@ namespace Model
     /**
      * <p>Specifies how much a document attribute is boosted.</p>
      */
-    inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
+    inline DocumentAttributeBoostingLevel GetBoostingLevel() const { return m_boostingLevel; }
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
-    inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
-    inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
-    inline StringListAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
-    inline StringListAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
+    inline void SetBoostingLevel(DocumentAttributeBoostingLevel value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
+    inline StringListAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel value) { SetBoostingLevel(value); return *this;}
     ///@}
   private:
 
-    DocumentAttributeBoostingLevel m_boostingLevel;
+    DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
     bool m_boostingLevelHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SampleValue::SampleValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 SampleValue::SampleValue(JsonView jsonValue)
-  : SampleValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SampleValue& SampleValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

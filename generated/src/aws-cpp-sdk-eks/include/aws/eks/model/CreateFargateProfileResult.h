@@ -28,7 +28,7 @@ namespace Model
   class CreateFargateProfileResult
   {
   public:
-    AWS_EKS_API CreateFargateProfileResult();
+    AWS_EKS_API CreateFargateProfileResult() = default;
     AWS_EKS_API CreateFargateProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API CreateFargateProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The full description of your new Fargate profile.</p>
      */
-    inline const FargateProfile& GetFargateProfile() const{ return m_fargateProfile; }
-    inline void SetFargateProfile(const FargateProfile& value) { m_fargateProfile = value; }
-    inline void SetFargateProfile(FargateProfile&& value) { m_fargateProfile = std::move(value); }
-    inline CreateFargateProfileResult& WithFargateProfile(const FargateProfile& value) { SetFargateProfile(value); return *this;}
-    inline CreateFargateProfileResult& WithFargateProfile(FargateProfile&& value) { SetFargateProfile(std::move(value)); return *this;}
+    inline const FargateProfile& GetFargateProfile() const { return m_fargateProfile; }
+    template<typename FargateProfileT = FargateProfile>
+    void SetFargateProfile(FargateProfileT&& value) { m_fargateProfileHasBeenSet = true; m_fargateProfile = std::forward<FargateProfileT>(value); }
+    template<typename FargateProfileT = FargateProfile>
+    CreateFargateProfileResult& WithFargateProfile(FargateProfileT&& value) { SetFargateProfile(std::forward<FargateProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFargateProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFargateProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFargateProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFargateProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FargateProfile m_fargateProfile;
+    bool m_fargateProfileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

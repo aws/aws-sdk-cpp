@@ -33,7 +33,7 @@ namespace Model
   class MulticastSettingsUpdateRequest
   {
   public:
-    AWS_MEDIALIVE_API MulticastSettingsUpdateRequest();
+    AWS_MEDIALIVE_API MulticastSettingsUpdateRequest() = default;
     AWS_MEDIALIVE_API MulticastSettingsUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MulticastSettingsUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<MulticastSourceUpdateRequest>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<MulticastSourceUpdateRequest>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<MulticastSourceUpdateRequest>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<MulticastSourceUpdateRequest>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline MulticastSettingsUpdateRequest& WithSources(const Aws::Vector<MulticastSourceUpdateRequest>& value) { SetSources(value); return *this;}
-    inline MulticastSettingsUpdateRequest& WithSources(Aws::Vector<MulticastSourceUpdateRequest>&& value) { SetSources(std::move(value)); return *this;}
-    inline MulticastSettingsUpdateRequest& AddSources(const MulticastSourceUpdateRequest& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline MulticastSettingsUpdateRequest& AddSources(MulticastSourceUpdateRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<MulticastSourceUpdateRequest>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<MulticastSourceUpdateRequest>>
+    MulticastSettingsUpdateRequest& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = MulticastSourceUpdateRequest>
+    MulticastSettingsUpdateRequest& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 

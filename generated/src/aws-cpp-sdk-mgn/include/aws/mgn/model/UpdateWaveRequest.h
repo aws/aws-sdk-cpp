@@ -21,7 +21,7 @@ namespace Model
   class UpdateWaveRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API UpdateWaveRequest();
+    AWS_MGN_API UpdateWaveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,56 +36,48 @@ namespace Model
     /**
      * <p>Account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline UpdateWaveRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline UpdateWaveRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline UpdateWaveRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    UpdateWaveRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateWaveRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateWaveRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateWaveRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateWaveRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateWaveRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateWaveRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateWaveRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateWaveRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave ID.</p>
      */
-    inline const Aws::String& GetWaveID() const{ return m_waveID; }
+    inline const Aws::String& GetWaveID() const { return m_waveID; }
     inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-    inline void SetWaveID(const Aws::String& value) { m_waveIDHasBeenSet = true; m_waveID = value; }
-    inline void SetWaveID(Aws::String&& value) { m_waveIDHasBeenSet = true; m_waveID = std::move(value); }
-    inline void SetWaveID(const char* value) { m_waveIDHasBeenSet = true; m_waveID.assign(value); }
-    inline UpdateWaveRequest& WithWaveID(const Aws::String& value) { SetWaveID(value); return *this;}
-    inline UpdateWaveRequest& WithWaveID(Aws::String&& value) { SetWaveID(std::move(value)); return *this;}
-    inline UpdateWaveRequest& WithWaveID(const char* value) { SetWaveID(value); return *this;}
+    template<typename WaveIDT = Aws::String>
+    void SetWaveID(WaveIDT&& value) { m_waveIDHasBeenSet = true; m_waveID = std::forward<WaveIDT>(value); }
+    template<typename WaveIDT = Aws::String>
+    UpdateWaveRequest& WithWaveID(WaveIDT&& value) { SetWaveID(std::forward<WaveIDT>(value)); return *this;}
     ///@}
   private:
 

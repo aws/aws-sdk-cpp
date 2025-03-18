@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaStreamSource::MediaStreamSource() : 
-    m_sourceType(MediaPipelineSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceArnHasBeenSet(false)
-{
-}
-
 MediaStreamSource::MediaStreamSource(JsonView jsonValue)
-  : MediaStreamSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MediaStreamSource& MediaStreamSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = MediaPipelineSourceTypeMapper::GetMediaPipelineSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

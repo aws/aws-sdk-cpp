@@ -12,17 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfigurationRequest::CreateConfigurationRequest() : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_authenticationStrategyHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

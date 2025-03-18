@@ -28,7 +28,7 @@ namespace Model
   class UpdateRestoreTestingSelectionResult
   {
   public:
-    AWS_BACKUP_API UpdateRestoreTestingSelectionResult();
+    AWS_BACKUP_API UpdateRestoreTestingSelectionResult() = default;
     AWS_BACKUP_API UpdateRestoreTestingSelectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API UpdateRestoreTestingSelectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>The time the resource testing selection was updated successfully.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline UpdateRestoreTestingSelectionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    UpdateRestoreTestingSelectionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique string that is the name of the restore testing plan.</p>
      */
-    inline const Aws::String& GetRestoreTestingPlanArn() const{ return m_restoreTestingPlanArn; }
-    inline void SetRestoreTestingPlanArn(const Aws::String& value) { m_restoreTestingPlanArn = value; }
-    inline void SetRestoreTestingPlanArn(Aws::String&& value) { m_restoreTestingPlanArn = std::move(value); }
-    inline void SetRestoreTestingPlanArn(const char* value) { m_restoreTestingPlanArn.assign(value); }
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanArn(const Aws::String& value) { SetRestoreTestingPlanArn(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanArn(Aws::String&& value) { SetRestoreTestingPlanArn(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanArn(const char* value) { SetRestoreTestingPlanArn(value); return *this;}
+    inline const Aws::String& GetRestoreTestingPlanArn() const { return m_restoreTestingPlanArn; }
+    template<typename RestoreTestingPlanArnT = Aws::String>
+    void SetRestoreTestingPlanArn(RestoreTestingPlanArnT&& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = std::forward<RestoreTestingPlanArnT>(value); }
+    template<typename RestoreTestingPlanArnT = Aws::String>
+    UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanArn(RestoreTestingPlanArnT&& value) { SetRestoreTestingPlanArn(std::forward<RestoreTestingPlanArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,62 +60,62 @@ namespace Model
      * <p>The restore testing plan with which the updated restore testing selection is
      * associated.</p>
      */
-    inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
-    inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanName = value; }
-    inline void SetRestoreTestingPlanName(Aws::String&& value) { m_restoreTestingPlanName = std::move(value); }
-    inline void SetRestoreTestingPlanName(const char* value) { m_restoreTestingPlanName.assign(value); }
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanName(const Aws::String& value) { SetRestoreTestingPlanName(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanName(Aws::String&& value) { SetRestoreTestingPlanName(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanName(const char* value) { SetRestoreTestingPlanName(value); return *this;}
+    inline const Aws::String& GetRestoreTestingPlanName() const { return m_restoreTestingPlanName; }
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    void SetRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::forward<RestoreTestingPlanNameT>(value); }
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    UpdateRestoreTestingSelectionResult& WithRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { SetRestoreTestingPlanName(std::forward<RestoreTestingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The returned restore testing selection name.</p>
      */
-    inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
-    inline void SetRestoreTestingSelectionName(const Aws::String& value) { m_restoreTestingSelectionName = value; }
-    inline void SetRestoreTestingSelectionName(Aws::String&& value) { m_restoreTestingSelectionName = std::move(value); }
-    inline void SetRestoreTestingSelectionName(const char* value) { m_restoreTestingSelectionName.assign(value); }
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingSelectionName(const Aws::String& value) { SetRestoreTestingSelectionName(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingSelectionName(Aws::String&& value) { SetRestoreTestingSelectionName(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRestoreTestingSelectionName(const char* value) { SetRestoreTestingSelectionName(value); return *this;}
+    inline const Aws::String& GetRestoreTestingSelectionName() const { return m_restoreTestingSelectionName; }
+    template<typename RestoreTestingSelectionNameT = Aws::String>
+    void SetRestoreTestingSelectionName(RestoreTestingSelectionNameT&& value) { m_restoreTestingSelectionNameHasBeenSet = true; m_restoreTestingSelectionName = std::forward<RestoreTestingSelectionNameT>(value); }
+    template<typename RestoreTestingSelectionNameT = Aws::String>
+    UpdateRestoreTestingSelectionResult& WithRestoreTestingSelectionName(RestoreTestingSelectionNameT&& value) { SetRestoreTestingSelectionName(std::forward<RestoreTestingSelectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the update completed for the restore testing selection.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline UpdateRestoreTestingSelectionResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    UpdateRestoreTestingSelectionResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRestoreTestingSelectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRestoreTestingSelectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_restoreTestingPlanArn;
+    bool m_restoreTestingPlanArnHasBeenSet = false;
 
     Aws::String m_restoreTestingPlanName;
+    bool m_restoreTestingPlanNameHasBeenSet = false;
 
     Aws::String m_restoreTestingSelectionName;
+    bool m_restoreTestingSelectionNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

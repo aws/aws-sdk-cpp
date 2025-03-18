@@ -46,7 +46,7 @@ namespace Model
   class IndexingFilter
   {
   public:
-    AWS_IOT_API IndexingFilter();
+    AWS_IOT_API IndexingFilter() = default;
     AWS_IOT_API IndexingFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API IndexingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,15 +60,14 @@ namespace Model
      * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
      * General Reference</i>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamedShadowNames() const{ return m_namedShadowNames; }
+    inline const Aws::Vector<Aws::String>& GetNamedShadowNames() const { return m_namedShadowNames; }
     inline bool NamedShadowNamesHasBeenSet() const { return m_namedShadowNamesHasBeenSet; }
-    inline void SetNamedShadowNames(const Aws::Vector<Aws::String>& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames = value; }
-    inline void SetNamedShadowNames(Aws::Vector<Aws::String>&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames = std::move(value); }
-    inline IndexingFilter& WithNamedShadowNames(const Aws::Vector<Aws::String>& value) { SetNamedShadowNames(value); return *this;}
-    inline IndexingFilter& WithNamedShadowNames(Aws::Vector<Aws::String>&& value) { SetNamedShadowNames(std::move(value)); return *this;}
-    inline IndexingFilter& AddNamedShadowNames(const Aws::String& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(value); return *this; }
-    inline IndexingFilter& AddNamedShadowNames(Aws::String&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(std::move(value)); return *this; }
-    inline IndexingFilter& AddNamedShadowNames(const char* value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(value); return *this; }
+    template<typename NamedShadowNamesT = Aws::Vector<Aws::String>>
+    void SetNamedShadowNames(NamedShadowNamesT&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames = std::forward<NamedShadowNamesT>(value); }
+    template<typename NamedShadowNamesT = Aws::Vector<Aws::String>>
+    IndexingFilter& WithNamedShadowNames(NamedShadowNamesT&& value) { SetNamedShadowNames(std::forward<NamedShadowNamesT>(value)); return *this;}
+    template<typename NamedShadowNamesT = Aws::String>
+    IndexingFilter& AddNamedShadowNames(NamedShadowNamesT&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.emplace_back(std::forward<NamedShadowNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,14 +79,14 @@ namespace Model
      * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
      * General Reference</i>.</p>
      */
-    inline const Aws::Vector<GeoLocationTarget>& GetGeoLocations() const{ return m_geoLocations; }
+    inline const Aws::Vector<GeoLocationTarget>& GetGeoLocations() const { return m_geoLocations; }
     inline bool GeoLocationsHasBeenSet() const { return m_geoLocationsHasBeenSet; }
-    inline void SetGeoLocations(const Aws::Vector<GeoLocationTarget>& value) { m_geoLocationsHasBeenSet = true; m_geoLocations = value; }
-    inline void SetGeoLocations(Aws::Vector<GeoLocationTarget>&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations = std::move(value); }
-    inline IndexingFilter& WithGeoLocations(const Aws::Vector<GeoLocationTarget>& value) { SetGeoLocations(value); return *this;}
-    inline IndexingFilter& WithGeoLocations(Aws::Vector<GeoLocationTarget>&& value) { SetGeoLocations(std::move(value)); return *this;}
-    inline IndexingFilter& AddGeoLocations(const GeoLocationTarget& value) { m_geoLocationsHasBeenSet = true; m_geoLocations.push_back(value); return *this; }
-    inline IndexingFilter& AddGeoLocations(GeoLocationTarget&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations.push_back(std::move(value)); return *this; }
+    template<typename GeoLocationsT = Aws::Vector<GeoLocationTarget>>
+    void SetGeoLocations(GeoLocationsT&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations = std::forward<GeoLocationsT>(value); }
+    template<typename GeoLocationsT = Aws::Vector<GeoLocationTarget>>
+    IndexingFilter& WithGeoLocations(GeoLocationsT&& value) { SetGeoLocations(std::forward<GeoLocationsT>(value)); return *this;}
+    template<typename GeoLocationsT = GeoLocationTarget>
+    IndexingFilter& AddGeoLocations(GeoLocationsT&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations.emplace_back(std::forward<GeoLocationsT>(value)); return *this; }
     ///@}
   private:
 

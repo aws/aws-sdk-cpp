@@ -30,7 +30,7 @@ namespace Model
   class M2NonManagedApplicationStepOutput
   {
   public:
-    AWS_APPTEST_API M2NonManagedApplicationStepOutput();
+    AWS_APPTEST_API M2NonManagedApplicationStepOutput() = default;
     AWS_APPTEST_API M2NonManagedApplicationStepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2NonManagedApplicationStepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;

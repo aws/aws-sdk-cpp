@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCardVersionSummary::ModelCardVersionSummary() : 
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardArnHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 ModelCardVersionSummary::ModelCardVersionSummary(JsonView jsonValue)
-  : ModelCardVersionSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ModelCardVersionSummary& ModelCardVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelCardName"))
   {
     m_modelCardName = jsonValue.GetString("ModelCardName");
-
     m_modelCardNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardArn"))
   {
     m_modelCardArn = jsonValue.GetString("ModelCardArn");
-
     m_modelCardArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardStatus"))
   {
     m_modelCardStatus = ModelCardStatusMapper::GetModelCardStatusForName(jsonValue.GetString("ModelCardStatus"));
-
     m_modelCardStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardVersion"))
   {
     m_modelCardVersion = jsonValue.GetInteger("ModelCardVersion");
-
     m_modelCardVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

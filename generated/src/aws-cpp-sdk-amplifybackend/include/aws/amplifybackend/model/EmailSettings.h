@@ -32,7 +32,7 @@ namespace Model
   class EmailSettings
   {
   public:
-    AWS_AMPLIFYBACKEND_API EmailSettings();
+    AWS_AMPLIFYBACKEND_API EmailSettings() = default;
     AWS_AMPLIFYBACKEND_API EmailSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API EmailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The contents of the email message.</p>
      */
-    inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
+    inline const Aws::String& GetEmailMessage() const { return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
-    inline void SetEmailMessage(const Aws::String& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
-    inline void SetEmailMessage(Aws::String&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
-    inline void SetEmailMessage(const char* value) { m_emailMessageHasBeenSet = true; m_emailMessage.assign(value); }
-    inline EmailSettings& WithEmailMessage(const Aws::String& value) { SetEmailMessage(value); return *this;}
-    inline EmailSettings& WithEmailMessage(Aws::String&& value) { SetEmailMessage(std::move(value)); return *this;}
-    inline EmailSettings& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
+    template<typename EmailMessageT = Aws::String>
+    void SetEmailMessage(EmailMessageT&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::forward<EmailMessageT>(value); }
+    template<typename EmailMessageT = Aws::String>
+    EmailSettings& WithEmailMessage(EmailMessageT&& value) { SetEmailMessage(std::forward<EmailMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contents of the subject line of the email message.</p>
      */
-    inline const Aws::String& GetEmailSubject() const{ return m_emailSubject; }
+    inline const Aws::String& GetEmailSubject() const { return m_emailSubject; }
     inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
-    inline void SetEmailSubject(const Aws::String& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = value; }
-    inline void SetEmailSubject(Aws::String&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::move(value); }
-    inline void SetEmailSubject(const char* value) { m_emailSubjectHasBeenSet = true; m_emailSubject.assign(value); }
-    inline EmailSettings& WithEmailSubject(const Aws::String& value) { SetEmailSubject(value); return *this;}
-    inline EmailSettings& WithEmailSubject(Aws::String&& value) { SetEmailSubject(std::move(value)); return *this;}
-    inline EmailSettings& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
+    template<typename EmailSubjectT = Aws::String>
+    void SetEmailSubject(EmailSubjectT&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::forward<EmailSubjectT>(value); }
+    template<typename EmailSubjectT = Aws::String>
+    EmailSettings& WithEmailSubject(EmailSubjectT&& value) { SetEmailSubject(std::forward<EmailSubjectT>(value)); return *this;}
     ///@}
   private:
 

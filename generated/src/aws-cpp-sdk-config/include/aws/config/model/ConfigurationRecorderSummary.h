@@ -34,7 +34,7 @@ namespace Model
   class ConfigurationRecorderSummary
   {
   public:
-    AWS_CONFIGSERVICE_API ConfigurationRecorderSummary();
+    AWS_CONFIGSERVICE_API ConfigurationRecorderSummary() = default;
     AWS_CONFIGSERVICE_API ConfigurationRecorderSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConfigurationRecorderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configuration recorder.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ConfigurationRecorderSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ConfigurationRecorderSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ConfigurationRecorderSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ConfigurationRecorderSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration recorder.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfigurationRecorderSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfigurationRecorderSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfigurationRecorderSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfigurationRecorderSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>For service-linked configuration recorders, indicates which Amazon Web
      * Services service the configuration recorder is linked to.</p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline ConfigurationRecorderSummary& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline ConfigurationRecorderSummary& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline ConfigurationRecorderSummary& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    ConfigurationRecorderSummary& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,10 @@ namespace Model
      * (<code>INTERNAL</code>) or if you are charged a service fee for recording
      * (<code>PAID</code>).</p>
      */
-    inline const RecordingScope& GetRecordingScope() const{ return m_recordingScope; }
+    inline RecordingScope GetRecordingScope() const { return m_recordingScope; }
     inline bool RecordingScopeHasBeenSet() const { return m_recordingScopeHasBeenSet; }
-    inline void SetRecordingScope(const RecordingScope& value) { m_recordingScopeHasBeenSet = true; m_recordingScope = value; }
-    inline void SetRecordingScope(RecordingScope&& value) { m_recordingScopeHasBeenSet = true; m_recordingScope = std::move(value); }
-    inline ConfigurationRecorderSummary& WithRecordingScope(const RecordingScope& value) { SetRecordingScope(value); return *this;}
-    inline ConfigurationRecorderSummary& WithRecordingScope(RecordingScope&& value) { SetRecordingScope(std::move(value)); return *this;}
+    inline void SetRecordingScope(RecordingScope value) { m_recordingScopeHasBeenSet = true; m_recordingScope = value; }
+    inline ConfigurationRecorderSummary& WithRecordingScope(RecordingScope value) { SetRecordingScope(value); return *this;}
     ///@}
   private:
 
@@ -109,7 +101,7 @@ namespace Model
     Aws::String m_servicePrincipal;
     bool m_servicePrincipalHasBeenSet = false;
 
-    RecordingScope m_recordingScope;
+    RecordingScope m_recordingScope{RecordingScope::NOT_SET};
     bool m_recordingScopeHasBeenSet = false;
   };
 

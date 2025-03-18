@@ -36,7 +36,7 @@ namespace Model
   class ComponentRecommendation
   {
   public:
-    AWS_RESILIENCEHUB_API ComponentRecommendation();
+    AWS_RESILIENCEHUB_API ComponentRecommendation() = default;
     AWS_RESILIENCEHUB_API ComponentRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ComponentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,36 @@ namespace Model
     /**
      * <p>Name of the Application Component.</p>
      */
-    inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
+    inline const Aws::String& GetAppComponentName() const { return m_appComponentName; }
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
-    inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
-    inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
-    inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
-    inline ComponentRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
-    inline ComponentRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
-    inline ComponentRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
+    template<typename AppComponentNameT = Aws::String>
+    void SetAppComponentName(AppComponentNameT&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::forward<AppComponentNameT>(value); }
+    template<typename AppComponentNameT = Aws::String>
+    ComponentRecommendation& WithAppComponentName(AppComponentNameT&& value) { SetAppComponentName(std::forward<AppComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of recommendations.</p>
      */
-    inline const Aws::Vector<ConfigRecommendation>& GetConfigRecommendations() const{ return m_configRecommendations; }
+    inline const Aws::Vector<ConfigRecommendation>& GetConfigRecommendations() const { return m_configRecommendations; }
     inline bool ConfigRecommendationsHasBeenSet() const { return m_configRecommendationsHasBeenSet; }
-    inline void SetConfigRecommendations(const Aws::Vector<ConfigRecommendation>& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations = value; }
-    inline void SetConfigRecommendations(Aws::Vector<ConfigRecommendation>&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations = std::move(value); }
-    inline ComponentRecommendation& WithConfigRecommendations(const Aws::Vector<ConfigRecommendation>& value) { SetConfigRecommendations(value); return *this;}
-    inline ComponentRecommendation& WithConfigRecommendations(Aws::Vector<ConfigRecommendation>&& value) { SetConfigRecommendations(std::move(value)); return *this;}
-    inline ComponentRecommendation& AddConfigRecommendations(const ConfigRecommendation& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations.push_back(value); return *this; }
-    inline ComponentRecommendation& AddConfigRecommendations(ConfigRecommendation&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations.push_back(std::move(value)); return *this; }
+    template<typename ConfigRecommendationsT = Aws::Vector<ConfigRecommendation>>
+    void SetConfigRecommendations(ConfigRecommendationsT&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations = std::forward<ConfigRecommendationsT>(value); }
+    template<typename ConfigRecommendationsT = Aws::Vector<ConfigRecommendation>>
+    ComponentRecommendation& WithConfigRecommendations(ConfigRecommendationsT&& value) { SetConfigRecommendations(std::forward<ConfigRecommendationsT>(value)); return *this;}
+    template<typename ConfigRecommendationsT = ConfigRecommendation>
+    ComponentRecommendation& AddConfigRecommendations(ConfigRecommendationsT&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations.emplace_back(std::forward<ConfigRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Status of the recommendation.</p>
      */
-    inline const RecommendationComplianceStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+    inline RecommendationComplianceStatus GetRecommendationStatus() const { return m_recommendationStatus; }
     inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
-    inline void SetRecommendationStatus(const RecommendationComplianceStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
-    inline void SetRecommendationStatus(RecommendationComplianceStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
-    inline ComponentRecommendation& WithRecommendationStatus(const RecommendationComplianceStatus& value) { SetRecommendationStatus(value); return *this;}
-    inline ComponentRecommendation& WithRecommendationStatus(RecommendationComplianceStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+    inline void SetRecommendationStatus(RecommendationComplianceStatus value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+    inline ComponentRecommendation& WithRecommendationStatus(RecommendationComplianceStatus value) { SetRecommendationStatus(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +85,7 @@ namespace Model
     Aws::Vector<ConfigRecommendation> m_configRecommendations;
     bool m_configRecommendationsHasBeenSet = false;
 
-    RecommendationComplianceStatus m_recommendationStatus;
+    RecommendationComplianceStatus m_recommendationStatus{RecommendationComplianceStatus::NOT_SET};
     bool m_recommendationStatusHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-EventResourceData::EventResourceData() : 
-    m_sourceNetworkDataHasBeenSet(false)
-{
-}
-
 EventResourceData::EventResourceData(JsonView jsonValue)
-  : EventResourceData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventResourceData& EventResourceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceNetworkData"))
   {
     m_sourceNetworkData = jsonValue.GetObject("sourceNetworkData");
-
     m_sourceNetworkDataHasBeenSet = true;
   }
-
   return *this;
 }
 

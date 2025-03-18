@@ -33,7 +33,7 @@ namespace Model
   class AwsCloudFrontDistributionCacheBehaviors
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The cache behaviors for the distribution.</p>
      */
-    inline const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<AwsCloudFrontDistributionCacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline AwsCloudFrontDistributionCacheBehaviors& WithItems(const Aws::Vector<AwsCloudFrontDistributionCacheBehavior>& value) { SetItems(value); return *this;}
-    inline AwsCloudFrontDistributionCacheBehaviors& WithItems(Aws::Vector<AwsCloudFrontDistributionCacheBehavior>&& value) { SetItems(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionCacheBehaviors& AddItems(const AwsCloudFrontDistributionCacheBehavior& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline AwsCloudFrontDistributionCacheBehaviors& AddItems(AwsCloudFrontDistributionCacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<AwsCloudFrontDistributionCacheBehavior>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<AwsCloudFrontDistributionCacheBehavior>>
+    AwsCloudFrontDistributionCacheBehaviors& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = AwsCloudFrontDistributionCacheBehavior>
+    AwsCloudFrontDistributionCacheBehaviors& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

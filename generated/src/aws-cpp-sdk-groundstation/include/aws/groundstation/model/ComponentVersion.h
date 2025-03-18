@@ -32,7 +32,7 @@ namespace Model
   class ComponentVersion
   {
   public:
-    AWS_GROUNDSTATION_API ComponentVersion();
+    AWS_GROUNDSTATION_API ComponentVersion() = default;
     AWS_GROUNDSTATION_API ComponentVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API ComponentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,26 @@ namespace Model
     /**
      * <p>Component type.</p>
      */
-    inline const Aws::String& GetComponentType() const{ return m_componentType; }
+    inline const Aws::String& GetComponentType() const { return m_componentType; }
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
-    inline ComponentVersion& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
-    inline ComponentVersion& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
-    inline ComponentVersion& WithComponentType(const char* value) { SetComponentType(value); return *this;}
+    template<typename ComponentTypeT = Aws::String>
+    void SetComponentType(ComponentTypeT&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::forward<ComponentTypeT>(value); }
+    template<typename ComponentTypeT = Aws::String>
+    ComponentVersion& WithComponentType(ComponentTypeT&& value) { SetComponentType(std::forward<ComponentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of versions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+    inline const Aws::Vector<Aws::String>& GetVersions() const { return m_versions; }
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
-    inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
-    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
-    inline ComponentVersion& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
-    inline ComponentVersion& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ComponentVersion& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
-    inline ComponentVersion& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
-    inline ComponentVersion& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    ComponentVersion& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = Aws::String>
+    ComponentVersion& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
   private:
 

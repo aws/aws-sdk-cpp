@@ -18,18 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-SignalInformation::SignalInformation() : 
-    m_nameHasBeenSet(false),
-    m_maxSampleCount(0),
-    m_maxSampleCountHasBeenSet(false),
-    m_minimumSamplingIntervalMs(0),
-    m_minimumSamplingIntervalMsHasBeenSet(false),
-    m_dataPartitionIdHasBeenSet(false)
-{
-}
-
 SignalInformation::SignalInformation(JsonView jsonValue)
-  : SignalInformation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SignalInformation& SignalInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSampleCount"))
   {
     m_maxSampleCount = jsonValue.GetInt64("maxSampleCount");
-
     m_maxSampleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumSamplingIntervalMs"))
   {
     m_minimumSamplingIntervalMs = jsonValue.GetInt64("minimumSamplingIntervalMs");
-
     m_minimumSamplingIntervalMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataPartitionId"))
   {
     m_dataPartitionId = jsonValue.GetString("dataPartitionId");
-
     m_dataPartitionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

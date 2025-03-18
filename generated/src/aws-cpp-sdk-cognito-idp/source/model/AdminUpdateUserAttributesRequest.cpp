@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminUpdateUserAttributesRequest::AdminUpdateUserAttributesRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String AdminUpdateUserAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

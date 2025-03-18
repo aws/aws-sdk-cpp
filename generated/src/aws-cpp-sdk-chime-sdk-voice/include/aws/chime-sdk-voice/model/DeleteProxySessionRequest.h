@@ -21,7 +21,7 @@ namespace Model
   class DeleteProxySessionRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API DeleteProxySessionRequest();
+    AWS_CHIMESDKVOICE_API DeleteProxySessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The Voice Connector ID.</p>
      */
-    inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
+    inline const Aws::String& GetVoiceConnectorId() const { return m_voiceConnectorId; }
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-    inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-    inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-    inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-    inline DeleteProxySessionRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-    inline DeleteProxySessionRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-    inline DeleteProxySessionRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    template<typename VoiceConnectorIdT = Aws::String>
+    void SetVoiceConnectorId(VoiceConnectorIdT&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::forward<VoiceConnectorIdT>(value); }
+    template<typename VoiceConnectorIdT = Aws::String>
+    DeleteProxySessionRequest& WithVoiceConnectorId(VoiceConnectorIdT&& value) { SetVoiceConnectorId(std::forward<VoiceConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The proxy session ID.</p>
      */
-    inline const Aws::String& GetProxySessionId() const{ return m_proxySessionId; }
+    inline const Aws::String& GetProxySessionId() const { return m_proxySessionId; }
     inline bool ProxySessionIdHasBeenSet() const { return m_proxySessionIdHasBeenSet; }
-    inline void SetProxySessionId(const Aws::String& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = value; }
-    inline void SetProxySessionId(Aws::String&& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = std::move(value); }
-    inline void SetProxySessionId(const char* value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId.assign(value); }
-    inline DeleteProxySessionRequest& WithProxySessionId(const Aws::String& value) { SetProxySessionId(value); return *this;}
-    inline DeleteProxySessionRequest& WithProxySessionId(Aws::String&& value) { SetProxySessionId(std::move(value)); return *this;}
-    inline DeleteProxySessionRequest& WithProxySessionId(const char* value) { SetProxySessionId(value); return *this;}
+    template<typename ProxySessionIdT = Aws::String>
+    void SetProxySessionId(ProxySessionIdT&& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = std::forward<ProxySessionIdT>(value); }
+    template<typename ProxySessionIdT = Aws::String>
+    DeleteProxySessionRequest& WithProxySessionId(ProxySessionIdT&& value) { SetProxySessionId(std::forward<ProxySessionIdT>(value)); return *this;}
     ///@}
   private:
 

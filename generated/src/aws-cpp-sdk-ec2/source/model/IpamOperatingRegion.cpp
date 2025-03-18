@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamOperatingRegion::IpamOperatingRegion() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 IpamOperatingRegion::IpamOperatingRegion(const XmlNode& xmlNode)
-  : IpamOperatingRegion()
 {
   *this = xmlNode;
 }

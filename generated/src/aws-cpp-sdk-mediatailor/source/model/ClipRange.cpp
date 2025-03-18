@@ -18,16 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-ClipRange::ClipRange() : 
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_startOffsetMillis(0),
-    m_startOffsetMillisHasBeenSet(false)
-{
-}
-
 ClipRange::ClipRange(JsonView jsonValue)
-  : ClipRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ClipRange& ClipRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndOffsetMillis"))
   {
     m_endOffsetMillis = jsonValue.GetInt64("EndOffsetMillis");
-
     m_endOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartOffsetMillis"))
   {
     m_startOffsetMillis = jsonValue.GetInt64("StartOffsetMillis");
-
     m_startOffsetMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

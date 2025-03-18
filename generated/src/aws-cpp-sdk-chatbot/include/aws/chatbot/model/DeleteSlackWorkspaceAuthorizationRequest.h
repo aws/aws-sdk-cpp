@@ -21,7 +21,7 @@ namespace Model
   class DeleteSlackWorkspaceAuthorizationRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API DeleteSlackWorkspaceAuthorizationRequest();
+    AWS_CHATBOT_API DeleteSlackWorkspaceAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
-    inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
+    inline const Aws::String& GetSlackTeamId() const { return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
-    inline void SetSlackTeamId(const Aws::String& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = value; }
-    inline void SetSlackTeamId(Aws::String&& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = std::move(value); }
-    inline void SetSlackTeamId(const char* value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId.assign(value); }
-    inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(const Aws::String& value) { SetSlackTeamId(value); return *this;}
-    inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(Aws::String&& value) { SetSlackTeamId(std::move(value)); return *this;}
-    inline DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(const char* value) { SetSlackTeamId(value); return *this;}
+    template<typename SlackTeamIdT = Aws::String>
+    void SetSlackTeamId(SlackTeamIdT&& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = std::forward<SlackTeamIdT>(value); }
+    template<typename SlackTeamIdT = Aws::String>
+    DeleteSlackWorkspaceAuthorizationRequest& WithSlackTeamId(SlackTeamIdT&& value) { SetSlackTeamId(std::forward<SlackTeamIdT>(value)); return *this;}
     ///@}
   private:
 

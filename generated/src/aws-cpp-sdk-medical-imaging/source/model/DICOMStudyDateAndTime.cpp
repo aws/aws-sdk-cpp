@@ -18,14 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-DICOMStudyDateAndTime::DICOMStudyDateAndTime() : 
-    m_dICOMStudyDateHasBeenSet(false),
-    m_dICOMStudyTimeHasBeenSet(false)
-{
-}
-
 DICOMStudyDateAndTime::DICOMStudyDateAndTime(JsonView jsonValue)
-  : DICOMStudyDateAndTime()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DICOMStudyDateAndTime& DICOMStudyDateAndTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DICOMStudyDate"))
   {
     m_dICOMStudyDate = jsonValue.GetString("DICOMStudyDate");
-
     m_dICOMStudyDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DICOMStudyTime"))
   {
     m_dICOMStudyTime = jsonValue.GetString("DICOMStudyTime");
-
     m_dICOMStudyTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

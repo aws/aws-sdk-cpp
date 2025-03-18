@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListScheduleGroupsRequest::ListScheduleGroupsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListScheduleGroupsRequest::SerializePayload() const
 {
   return {};

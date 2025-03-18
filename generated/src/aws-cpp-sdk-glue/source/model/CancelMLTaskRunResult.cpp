@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelMLTaskRunResult::CancelMLTaskRunResult() : 
-    m_status(TaskStatusType::NOT_SET)
-{
-}
-
 CancelMLTaskRunResult::CancelMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelMLTaskRunResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CancelMLTaskRunResult& CancelMLTaskRunResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("TransformId"))
   {
     m_transformId = jsonValue.GetString("TransformId");
-
+    m_transformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskRunId"))
   {
     m_taskRunId = jsonValue.GetString("TaskRunId");
-
+    m_taskRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TaskStatusTypeMapper::GetTaskStatusTypeForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

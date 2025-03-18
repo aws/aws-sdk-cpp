@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSessionResult::GetSessionResult()
-{
-}
-
 GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -42,8 +37,8 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
+    m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interpretations"))
   {
     Aws::Utils::Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
@@ -51,20 +46,20 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_interpretations.push_back(interpretationsJsonList[interpretationsIndex].AsObject());
     }
+    m_interpretationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionState"))
   {
     m_sessionState = jsonValue.GetObject("sessionState");
-
+    m_sessionStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

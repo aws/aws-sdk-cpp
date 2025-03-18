@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLocalDisksResult::ListLocalDisksResult()
-{
-}
-
 ListLocalDisksResult::ListLocalDisksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disks"))
   {
     Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("Disks");
@@ -42,14 +37,15 @@ ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServi
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());
     }
+    m_disksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

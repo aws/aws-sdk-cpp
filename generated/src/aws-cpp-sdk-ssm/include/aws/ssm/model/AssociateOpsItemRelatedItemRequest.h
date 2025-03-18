@@ -21,7 +21,7 @@ namespace Model
   class AssociateOpsItemRelatedItemRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API AssociateOpsItemRelatedItemRequest();
+    AWS_SSM_API AssociateOpsItemRelatedItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the OpsItem to which you want to associate a resource as a related
      * item.</p>
      */
-    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+    inline const Aws::String& GetOpsItemId() const { return m_opsItemId; }
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-    inline AssociateOpsItemRelatedItemRequest& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    template<typename OpsItemIdT = Aws::String>
+    void SetOpsItemId(OpsItemIdT&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::forward<OpsItemIdT>(value); }
+    template<typename OpsItemIdT = Aws::String>
+    AssociateOpsItemRelatedItemRequest& WithOpsItemId(OpsItemIdT&& value) { SetOpsItemId(std::forward<OpsItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code>
      * association types.</p>
      */
-    inline const Aws::String& GetAssociationType() const{ return m_associationType; }
+    inline const Aws::String& GetAssociationType() const { return m_associationType; }
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(const Aws::String& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline void SetAssociationType(Aws::String&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-    inline void SetAssociationType(const char* value) { m_associationTypeHasBeenSet = true; m_associationType.assign(value); }
-    inline AssociateOpsItemRelatedItemRequest& WithAssociationType(const Aws::String& value) { SetAssociationType(value); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithAssociationType(Aws::String&& value) { SetAssociationType(std::move(value)); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithAssociationType(const char* value) { SetAssociationType(value); return *this;}
+    template<typename AssociationTypeT = Aws::String>
+    void SetAssociationType(AssociationTypeT&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::forward<AssociationTypeT>(value); }
+    template<typename AssociationTypeT = Aws::String>
+    AssociateOpsItemRelatedItemRequest& WithAssociationType(AssociationTypeT&& value) { SetAssociationType(std::forward<AssociationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
      * </p> <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline AssociateOpsItemRelatedItemRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    AssociateOpsItemRelatedItemRequest& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
      * want to associate with the OpsItem.</p>
      */
-    inline const Aws::String& GetResourceUri() const{ return m_resourceUri; }
+    inline const Aws::String& GetResourceUri() const { return m_resourceUri; }
     inline bool ResourceUriHasBeenSet() const { return m_resourceUriHasBeenSet; }
-    inline void SetResourceUri(const Aws::String& value) { m_resourceUriHasBeenSet = true; m_resourceUri = value; }
-    inline void SetResourceUri(Aws::String&& value) { m_resourceUriHasBeenSet = true; m_resourceUri = std::move(value); }
-    inline void SetResourceUri(const char* value) { m_resourceUriHasBeenSet = true; m_resourceUri.assign(value); }
-    inline AssociateOpsItemRelatedItemRequest& WithResourceUri(const Aws::String& value) { SetResourceUri(value); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithResourceUri(Aws::String&& value) { SetResourceUri(std::move(value)); return *this;}
-    inline AssociateOpsItemRelatedItemRequest& WithResourceUri(const char* value) { SetResourceUri(value); return *this;}
+    template<typename ResourceUriT = Aws::String>
+    void SetResourceUri(ResourceUriT&& value) { m_resourceUriHasBeenSet = true; m_resourceUri = std::forward<ResourceUriT>(value); }
+    template<typename ResourceUriT = Aws::String>
+    AssociateOpsItemRelatedItemRequest& WithResourceUri(ResourceUriT&& value) { SetResourceUri(std::forward<ResourceUriT>(value)); return *this;}
     ///@}
   private:
 

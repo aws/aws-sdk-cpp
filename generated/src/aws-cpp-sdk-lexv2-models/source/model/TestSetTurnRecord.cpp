@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetTurnRecord::TestSetTurnRecord() : 
-    m_recordNumber(0),
-    m_recordNumberHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_turnNumber(0),
-    m_turnNumberHasBeenSet(false),
-    m_turnSpecificationHasBeenSet(false)
-{
-}
-
 TestSetTurnRecord::TestSetTurnRecord(JsonView jsonValue)
-  : TestSetTurnRecord()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TestSetTurnRecord& TestSetTurnRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recordNumber"))
   {
     m_recordNumber = jsonValue.GetInt64("recordNumber");
-
     m_recordNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turnNumber"))
   {
     m_turnNumber = jsonValue.GetInteger("turnNumber");
-
     m_turnNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turnSpecification"))
   {
     m_turnSpecification = jsonValue.GetObject("turnSpecification");
-
     m_turnSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

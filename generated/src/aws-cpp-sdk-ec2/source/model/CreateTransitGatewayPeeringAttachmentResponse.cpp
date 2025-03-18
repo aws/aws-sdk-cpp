@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayPeeringAttachmentResponse::CreateTransitGatewayPeeringAttachmentResponse()
-{
-}
-
 CreateTransitGatewayPeeringAttachmentResponse::CreateTransitGatewayPeeringAttachmentResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateTransitGatewayPeeringAttachmentResponse& CreateTransitGatewayPeeringAttach
     if(!transitGatewayPeeringAttachmentNode.IsNull())
     {
       m_transitGatewayPeeringAttachment = transitGatewayPeeringAttachmentNode;
+      m_transitGatewayPeeringAttachmentHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateTransitGatewayPeeringAttachmentResponse& CreateTransitGatewayPeeringAttach
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTransitGatewayPeeringAttachmentResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

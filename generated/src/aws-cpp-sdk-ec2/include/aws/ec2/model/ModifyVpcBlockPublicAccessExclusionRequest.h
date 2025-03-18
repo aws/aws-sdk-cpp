@@ -22,7 +22,7 @@ namespace Model
   class ModifyVpcBlockPublicAccessExclusionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVpcBlockPublicAccessExclusionRequest();
+    AWS_EC2_API ModifyVpcBlockPublicAccessExclusionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVpcBlockPublicAccessExclusionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The ID of an exclusion.</p>
      */
-    inline const Aws::String& GetExclusionId() const{ return m_exclusionId; }
+    inline const Aws::String& GetExclusionId() const { return m_exclusionId; }
     inline bool ExclusionIdHasBeenSet() const { return m_exclusionIdHasBeenSet; }
-    inline void SetExclusionId(const Aws::String& value) { m_exclusionIdHasBeenSet = true; m_exclusionId = value; }
-    inline void SetExclusionId(Aws::String&& value) { m_exclusionIdHasBeenSet = true; m_exclusionId = std::move(value); }
-    inline void SetExclusionId(const char* value) { m_exclusionIdHasBeenSet = true; m_exclusionId.assign(value); }
-    inline ModifyVpcBlockPublicAccessExclusionRequest& WithExclusionId(const Aws::String& value) { SetExclusionId(value); return *this;}
-    inline ModifyVpcBlockPublicAccessExclusionRequest& WithExclusionId(Aws::String&& value) { SetExclusionId(std::move(value)); return *this;}
-    inline ModifyVpcBlockPublicAccessExclusionRequest& WithExclusionId(const char* value) { SetExclusionId(value); return *this;}
+    template<typename ExclusionIdT = Aws::String>
+    void SetExclusionId(ExclusionIdT&& value) { m_exclusionIdHasBeenSet = true; m_exclusionId = std::forward<ExclusionIdT>(value); }
+    template<typename ExclusionIdT = Aws::String>
+    ModifyVpcBlockPublicAccessExclusionRequest& WithExclusionId(ExclusionIdT&& value) { SetExclusionId(std::forward<ExclusionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +71,20 @@ namespace Model
      * internet traffic to the excluded VPCs and subnets. Only applies when VPC Block
      * Public Access is set to Bidirectional.</p> </li> </ul>
      */
-    inline const InternetGatewayExclusionMode& GetInternetGatewayExclusionMode() const{ return m_internetGatewayExclusionMode; }
+    inline InternetGatewayExclusionMode GetInternetGatewayExclusionMode() const { return m_internetGatewayExclusionMode; }
     inline bool InternetGatewayExclusionModeHasBeenSet() const { return m_internetGatewayExclusionModeHasBeenSet; }
-    inline void SetInternetGatewayExclusionMode(const InternetGatewayExclusionMode& value) { m_internetGatewayExclusionModeHasBeenSet = true; m_internetGatewayExclusionMode = value; }
-    inline void SetInternetGatewayExclusionMode(InternetGatewayExclusionMode&& value) { m_internetGatewayExclusionModeHasBeenSet = true; m_internetGatewayExclusionMode = std::move(value); }
-    inline ModifyVpcBlockPublicAccessExclusionRequest& WithInternetGatewayExclusionMode(const InternetGatewayExclusionMode& value) { SetInternetGatewayExclusionMode(value); return *this;}
-    inline ModifyVpcBlockPublicAccessExclusionRequest& WithInternetGatewayExclusionMode(InternetGatewayExclusionMode&& value) { SetInternetGatewayExclusionMode(std::move(value)); return *this;}
+    inline void SetInternetGatewayExclusionMode(InternetGatewayExclusionMode value) { m_internetGatewayExclusionModeHasBeenSet = true; m_internetGatewayExclusionMode = value; }
+    inline ModifyVpcBlockPublicAccessExclusionRequest& WithInternetGatewayExclusionMode(InternetGatewayExclusionMode value) { SetInternetGatewayExclusionMode(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_exclusionId;
     bool m_exclusionIdHasBeenSet = false;
 
-    InternetGatewayExclusionMode m_internetGatewayExclusionMode;
+    InternetGatewayExclusionMode m_internetGatewayExclusionMode{InternetGatewayExclusionMode::NOT_SET};
     bool m_internetGatewayExclusionModeHasBeenSet = false;
   };
 

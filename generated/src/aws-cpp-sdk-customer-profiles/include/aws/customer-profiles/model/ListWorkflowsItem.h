@@ -34,7 +34,7 @@ namespace Model
   class ListWorkflowsItem
   {
   public:
-    AWS_CUSTOMERPROFILES_API ListWorkflowsItem();
+    AWS_CUSTOMERPROFILES_API ListWorkflowsItem() = default;
     AWS_CUSTOMERPROFILES_API ListWorkflowsItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ListWorkflowsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,95 +44,87 @@ namespace Model
     /**
      * <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline WorkflowType GetWorkflowType() const { return m_workflowType; }
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-    inline ListWorkflowsItem& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-    inline ListWorkflowsItem& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    inline void SetWorkflowType(WorkflowType value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline ListWorkflowsItem& WithWorkflowType(WorkflowType value) { SetWorkflowType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline ListWorkflowsItem& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline ListWorkflowsItem& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline ListWorkflowsItem& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    ListWorkflowsItem& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of workflow execution.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListWorkflowsItem& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline ListWorkflowsItem& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListWorkflowsItem& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description for workflow execution status.</p>
      */
-    inline const Aws::String& GetStatusDescription() const{ return m_statusDescription; }
+    inline const Aws::String& GetStatusDescription() const { return m_statusDescription; }
     inline bool StatusDescriptionHasBeenSet() const { return m_statusDescriptionHasBeenSet; }
-    inline void SetStatusDescription(const Aws::String& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = value; }
-    inline void SetStatusDescription(Aws::String&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::move(value); }
-    inline void SetStatusDescription(const char* value) { m_statusDescriptionHasBeenSet = true; m_statusDescription.assign(value); }
-    inline ListWorkflowsItem& WithStatusDescription(const Aws::String& value) { SetStatusDescription(value); return *this;}
-    inline ListWorkflowsItem& WithStatusDescription(Aws::String&& value) { SetStatusDescription(std::move(value)); return *this;}
-    inline ListWorkflowsItem& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
+    template<typename StatusDescriptionT = Aws::String>
+    void SetStatusDescription(StatusDescriptionT&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::forward<StatusDescriptionT>(value); }
+    template<typename StatusDescriptionT = Aws::String>
+    ListWorkflowsItem& WithStatusDescription(StatusDescriptionT&& value) { SetStatusDescription(std::forward<StatusDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Creation timestamp for workflow.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ListWorkflowsItem& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ListWorkflowsItem& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ListWorkflowsItem& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Last updated timestamp for workflow.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline ListWorkflowsItem& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline ListWorkflowsItem& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    ListWorkflowsItem& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    WorkflowType m_workflowType;
+    WorkflowType m_workflowType{WorkflowType::NOT_SET};
     bool m_workflowTypeHasBeenSet = false;
 
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;
     bool m_statusDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
   };
 

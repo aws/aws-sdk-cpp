@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectAttachmentOptions::ConnectAttachmentOptions() : 
-    m_protocol(TunnelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 ConnectAttachmentOptions::ConnectAttachmentOptions(JsonView jsonValue)
-  : ConnectAttachmentOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConnectAttachmentOptions& ConnectAttachmentOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = TunnelProtocolMapper::GetTunnelProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

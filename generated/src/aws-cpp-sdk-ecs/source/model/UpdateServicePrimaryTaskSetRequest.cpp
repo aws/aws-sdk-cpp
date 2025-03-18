@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServicePrimaryTaskSetRequest::UpdateServicePrimaryTaskSetRequest() : 
-    m_clusterHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_primaryTaskSetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServicePrimaryTaskSetRequest::SerializePayload() const
 {
   JsonValue payload;

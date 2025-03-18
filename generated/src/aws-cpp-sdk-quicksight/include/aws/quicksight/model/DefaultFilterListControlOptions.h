@@ -34,7 +34,7 @@ namespace Model
   class DefaultFilterListControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultFilterListControlOptions();
+    AWS_QUICKSIGHT_API DefaultFilterListControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultFilterListControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultFilterListControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The display options of a control.</p>
      */
-    inline const ListControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const ListControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const ListControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(ListControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultFilterListControlOptions& WithDisplayOptions(const ListControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultFilterListControlOptions& WithDisplayOptions(ListControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = ListControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = ListControlDisplayOptions>
+    DefaultFilterListControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,31 +60,29 @@ namespace Model
      * <code>SINGLE_SELECT</code>: The user can select a single entry from the
      * list.</p> </li> </ul>
      */
-    inline const SheetControlListType& GetType() const{ return m_type; }
+    inline SheetControlListType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DefaultFilterListControlOptions& WithType(const SheetControlListType& value) { SetType(value); return *this;}
-    inline DefaultFilterListControlOptions& WithType(SheetControlListType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlListType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DefaultFilterListControlOptions& WithType(SheetControlListType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of selectable values that are used in a control.</p>
      */
-    inline const FilterSelectableValues& GetSelectableValues() const{ return m_selectableValues; }
+    inline const FilterSelectableValues& GetSelectableValues() const { return m_selectableValues; }
     inline bool SelectableValuesHasBeenSet() const { return m_selectableValuesHasBeenSet; }
-    inline void SetSelectableValues(const FilterSelectableValues& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = value; }
-    inline void SetSelectableValues(FilterSelectableValues&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::move(value); }
-    inline DefaultFilterListControlOptions& WithSelectableValues(const FilterSelectableValues& value) { SetSelectableValues(value); return *this;}
-    inline DefaultFilterListControlOptions& WithSelectableValues(FilterSelectableValues&& value) { SetSelectableValues(std::move(value)); return *this;}
+    template<typename SelectableValuesT = FilterSelectableValues>
+    void SetSelectableValues(SelectableValuesT&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::forward<SelectableValuesT>(value); }
+    template<typename SelectableValuesT = FilterSelectableValues>
+    DefaultFilterListControlOptions& WithSelectableValues(SelectableValuesT&& value) { SetSelectableValues(std::forward<SelectableValuesT>(value)); return *this;}
     ///@}
   private:
 
     ListControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    SheetControlListType m_type;
+    SheetControlListType m_type{SheetControlListType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     FilterSelectableValues m_selectableValues;

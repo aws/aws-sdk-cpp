@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDistributionsByCachePolicyId2020_05_31Request::ListDistributionsByCachePolicyId2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_cachePolicyIdHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByCachePolicyId2020_05_31Request::SerializePayload() const
 {

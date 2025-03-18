@@ -32,7 +32,7 @@ namespace Model
   class ExponentialRolloutRate
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API ExponentialRolloutRate();
+    AWS_IOTMANAGEDINTEGRATIONS_API ExponentialRolloutRate() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API ExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API ExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The base rate per minute for the rollout of an over-the-air (OTA) task.</p>
      */
-    inline int GetBaseRatePerMinute() const{ return m_baseRatePerMinute; }
+    inline int GetBaseRatePerMinute() const { return m_baseRatePerMinute; }
     inline bool BaseRatePerMinuteHasBeenSet() const { return m_baseRatePerMinuteHasBeenSet; }
     inline void SetBaseRatePerMinute(int value) { m_baseRatePerMinuteHasBeenSet = true; m_baseRatePerMinute = value; }
     inline ExponentialRolloutRate& WithBaseRatePerMinute(int value) { SetBaseRatePerMinute(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * <p>The incremental factor for increasing the rollout rate of an over-the-air
      * (OTA) task.</p>
      */
-    inline double GetIncrementFactor() const{ return m_incrementFactor; }
+    inline double GetIncrementFactor() const { return m_incrementFactor; }
     inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
     inline ExponentialRolloutRate& WithIncrementFactor(double value) { SetIncrementFactor(value); return *this;}
@@ -64,19 +64,19 @@ namespace Model
      * <p>The criteria for increasing the rollout rate of an over-the-air (OTA)
      * task.</p>
      */
-    inline const RolloutRateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
+    inline const RolloutRateIncreaseCriteria& GetRateIncreaseCriteria() const { return m_rateIncreaseCriteria; }
     inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
-    inline void SetRateIncreaseCriteria(const RolloutRateIncreaseCriteria& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = value; }
-    inline void SetRateIncreaseCriteria(RolloutRateIncreaseCriteria&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::move(value); }
-    inline ExponentialRolloutRate& WithRateIncreaseCriteria(const RolloutRateIncreaseCriteria& value) { SetRateIncreaseCriteria(value); return *this;}
-    inline ExponentialRolloutRate& WithRateIncreaseCriteria(RolloutRateIncreaseCriteria&& value) { SetRateIncreaseCriteria(std::move(value)); return *this;}
+    template<typename RateIncreaseCriteriaT = RolloutRateIncreaseCriteria>
+    void SetRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::forward<RateIncreaseCriteriaT>(value); }
+    template<typename RateIncreaseCriteriaT = RolloutRateIncreaseCriteria>
+    ExponentialRolloutRate& WithRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { SetRateIncreaseCriteria(std::forward<RateIncreaseCriteriaT>(value)); return *this;}
     ///@}
   private:
 
-    int m_baseRatePerMinute;
+    int m_baseRatePerMinute{0};
     bool m_baseRatePerMinuteHasBeenSet = false;
 
-    double m_incrementFactor;
+    double m_incrementFactor{0.0};
     bool m_incrementFactorHasBeenSet = false;
 
     RolloutRateIncreaseCriteria m_rateIncreaseCriteria;

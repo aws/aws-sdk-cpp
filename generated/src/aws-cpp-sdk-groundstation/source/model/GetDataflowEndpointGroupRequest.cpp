@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataflowEndpointGroupRequest::GetDataflowEndpointGroupRequest() : 
-    m_dataflowEndpointGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataflowEndpointGroupRequest::SerializePayload() const
 {
   return {};

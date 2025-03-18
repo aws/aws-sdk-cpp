@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLinkedWhatsAppBusinessAccountRequest::GetLinkedWhatsAppBusinessAccountRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetLinkedWhatsAppBusinessAccountRequest::SerializePayload() const
 {
   return {};

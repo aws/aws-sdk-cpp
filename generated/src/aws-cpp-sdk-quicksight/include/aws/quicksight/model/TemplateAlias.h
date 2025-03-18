@@ -31,7 +31,7 @@ namespace Model
   class TemplateAlias
   {
   public:
-    AWS_QUICKSIGHT_API TemplateAlias();
+    AWS_QUICKSIGHT_API TemplateAlias() = default;
     AWS_QUICKSIGHT_API TemplateAlias(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TemplateAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The display name of the template alias.</p>
      */
-    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+    inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-    inline TemplateAlias& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-    inline TemplateAlias& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-    inline TemplateAlias& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+    template<typename AliasNameT = Aws::String>
+    void SetAliasName(AliasNameT&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::forward<AliasNameT>(value); }
+    template<typename AliasNameT = Aws::String>
+    TemplateAlias& WithAliasName(AliasNameT&& value) { SetAliasName(std::forward<AliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the template alias.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline TemplateAlias& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline TemplateAlias& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline TemplateAlias& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    TemplateAlias& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the template alias.</p>
      */
-    inline long long GetTemplateVersionNumber() const{ return m_templateVersionNumber; }
+    inline long long GetTemplateVersionNumber() const { return m_templateVersionNumber; }
     inline bool TemplateVersionNumberHasBeenSet() const { return m_templateVersionNumberHasBeenSet; }
     inline void SetTemplateVersionNumber(long long value) { m_templateVersionNumberHasBeenSet = true; m_templateVersionNumber = value; }
     inline TemplateAlias& WithTemplateVersionNumber(long long value) { SetTemplateVersionNumber(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    long long m_templateVersionNumber;
+    long long m_templateVersionNumber{0};
     bool m_templateVersionNumberHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class GetDevicePositionRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API GetDevicePositionRequest();
+    AWS_LOCATIONSERVICE_API GetDevicePositionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The tracker resource receiving the position update.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::String& GetTrackerName() const { return m_trackerName; }
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-    inline GetDevicePositionRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-    inline GetDevicePositionRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-    inline GetDevicePositionRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    template<typename TrackerNameT = Aws::String>
+    void SetTrackerName(TrackerNameT&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::forward<TrackerNameT>(value); }
+    template<typename TrackerNameT = Aws::String>
+    GetDevicePositionRequest& WithTrackerName(TrackerNameT&& value) { SetTrackerName(std::forward<TrackerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device whose position you want to retrieve.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline GetDevicePositionRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline GetDevicePositionRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline GetDevicePositionRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    GetDevicePositionRequest& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
   private:
 

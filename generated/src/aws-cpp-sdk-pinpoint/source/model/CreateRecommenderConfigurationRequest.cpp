@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRecommenderConfigurationRequest::CreateRecommenderConfigurationRequest() : 
-    m_createRecommenderConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateRecommenderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

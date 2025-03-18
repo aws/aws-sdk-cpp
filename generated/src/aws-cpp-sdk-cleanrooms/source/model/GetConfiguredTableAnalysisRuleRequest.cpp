@@ -12,13 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfiguredTableAnalysisRuleRequest::GetConfiguredTableAnalysisRuleRequest() : 
-    m_configuredTableIdentifierHasBeenSet(false),
-    m_analysisRuleType(ConfiguredTableAnalysisRuleType::NOT_SET),
-    m_analysisRuleTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetConfiguredTableAnalysisRuleRequest::SerializePayload() const
 {
   return {};

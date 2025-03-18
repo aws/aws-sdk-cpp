@@ -33,7 +33,7 @@ namespace Model
   class LambdaFunctionSucceededEventDetails
   {
   public:
-    AWS_SFN_API LambdaFunctionSucceededEventDetails();
+    AWS_SFN_API LambdaFunctionSucceededEventDetails() = default;
     AWS_SFN_API LambdaFunctionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API LambdaFunctionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The JSON data output by the Lambda function. Length constraints apply to the
      * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline LambdaFunctionSucceededEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline LambdaFunctionSucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline LambdaFunctionSucceededEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    LambdaFunctionSucceededEventDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the output of an execution history event.</p>
      */
-    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
+    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const { return m_outputDetails; }
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-    inline void SetOutputDetails(const HistoryEventExecutionDataDetails& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-    inline void SetOutputDetails(HistoryEventExecutionDataDetails&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-    inline LambdaFunctionSucceededEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-    inline LambdaFunctionSucceededEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    void SetOutputDetails(OutputDetailsT&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::forward<OutputDetailsT>(value); }
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    LambdaFunctionSucceededEventDetails& WithOutputDetails(OutputDetailsT&& value) { SetOutputDetails(std::forward<OutputDetailsT>(value)); return *this;}
     ///@}
   private:
 

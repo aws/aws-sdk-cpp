@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MovSettings::MovSettings() : 
-    m_clapAtom(MovClapAtom::NOT_SET),
-    m_clapAtomHasBeenSet(false),
-    m_cslgAtom(MovCslgAtom::NOT_SET),
-    m_cslgAtomHasBeenSet(false),
-    m_mpeg2FourCCControl(MovMpeg2FourCCControl::NOT_SET),
-    m_mpeg2FourCCControlHasBeenSet(false),
-    m_paddingControl(MovPaddingControl::NOT_SET),
-    m_paddingControlHasBeenSet(false),
-    m_reference(MovReference::NOT_SET),
-    m_referenceHasBeenSet(false)
-{
-}
-
 MovSettings::MovSettings(JsonView jsonValue)
-  : MovSettings()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ MovSettings& MovSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clapAtom"))
   {
     m_clapAtom = MovClapAtomMapper::GetMovClapAtomForName(jsonValue.GetString("clapAtom"));
-
     m_clapAtomHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cslgAtom"))
   {
     m_cslgAtom = MovCslgAtomMapper::GetMovCslgAtomForName(jsonValue.GetString("cslgAtom"));
-
     m_cslgAtomHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpeg2FourCCControl"))
   {
     m_mpeg2FourCCControl = MovMpeg2FourCCControlMapper::GetMovMpeg2FourCCControlForName(jsonValue.GetString("mpeg2FourCCControl"));
-
     m_mpeg2FourCCControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paddingControl"))
   {
     m_paddingControl = MovPaddingControlMapper::GetMovPaddingControlForName(jsonValue.GetString("paddingControl"));
-
     m_paddingControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reference"))
   {
     m_reference = MovReferenceMapper::GetMovReferenceForName(jsonValue.GetString("reference"));
-
     m_referenceHasBeenSet = true;
   }
-
   return *this;
 }
 

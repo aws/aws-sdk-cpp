@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AttachedFileError::AttachedFileError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
-{
-}
-
 AttachedFileError::AttachedFileError(JsonView jsonValue)
-  : AttachedFileError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AttachedFileError& AttachedFileError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileId"))
   {
     m_fileId = jsonValue.GetString("FileId");
-
     m_fileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

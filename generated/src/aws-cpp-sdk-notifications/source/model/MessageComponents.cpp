@@ -18,16 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-MessageComponents::MessageComponents() : 
-    m_headlineHasBeenSet(false),
-    m_paragraphSummaryHasBeenSet(false),
-    m_completeDescriptionHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 MessageComponents::MessageComponents(JsonView jsonValue)
-  : MessageComponents()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MessageComponents& MessageComponents::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("headline"))
   {
     m_headline = jsonValue.GetString("headline");
-
     m_headlineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paragraphSummary"))
   {
     m_paragraphSummary = jsonValue.GetString("paragraphSummary");
-
     m_paragraphSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completeDescription"))
   {
     m_completeDescription = jsonValue.GetString("completeDescription");
-
     m_completeDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
@@ -64,7 +49,6 @@ MessageComponents& MessageComponents::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

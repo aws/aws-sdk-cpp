@@ -33,7 +33,7 @@ namespace Model
   class DeviceJob
   {
   public:
-    AWS_PANORAMA_API DeviceJob();
+    AWS_PANORAMA_API DeviceJob() = default;
     AWS_PANORAMA_API DeviceJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API DeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,70 +43,62 @@ namespace Model
     /**
      * <p>When the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline DeviceJob& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline DeviceJob& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    DeviceJob& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the target device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline DeviceJob& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline DeviceJob& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline DeviceJob& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    DeviceJob& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target device</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-    inline DeviceJob& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline DeviceJob& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline DeviceJob& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    DeviceJob& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's ID.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline DeviceJob& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DeviceJob& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DeviceJob& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DeviceJob& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's type.</p>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline DeviceJob& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline DeviceJob& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline DeviceJob& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_deviceId;
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
   };
 

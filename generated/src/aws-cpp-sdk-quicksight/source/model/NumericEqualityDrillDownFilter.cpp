@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter() : 
-    m_columnHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter(JsonView jsonValue)
-  : NumericEqualityDrillDownFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NumericEqualityDrillDownFilter& NumericEqualityDrillDownFilter::operator =(JsonV
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

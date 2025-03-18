@@ -18,21 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AddressComponentPhonemes::AddressComponentPhonemes() : 
-    m_countryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_districtHasBeenSet(false),
-    m_subDistrictHasBeenSet(false),
-    m_blockHasBeenSet(false),
-    m_subBlockHasBeenSet(false),
-    m_streetHasBeenSet(false)
-{
-}
-
 AddressComponentPhonemes::AddressComponentPhonemes(JsonView jsonValue)
-  : AddressComponentPhonemes()
 {
   *this = jsonValue;
 }
@@ -48,7 +34,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     Aws::Utils::Array<JsonView> regionJsonList = jsonValue.GetArray("Region");
@@ -58,7 +43,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     Aws::Utils::Array<JsonView> subRegionJsonList = jsonValue.GetArray("SubRegion");
@@ -68,7 +52,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     Aws::Utils::Array<JsonView> localityJsonList = jsonValue.GetArray("Locality");
@@ -78,7 +61,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("District"))
   {
     Aws::Utils::Array<JsonView> districtJsonList = jsonValue.GetArray("District");
@@ -88,7 +70,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_districtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubDistrict"))
   {
     Aws::Utils::Array<JsonView> subDistrictJsonList = jsonValue.GetArray("SubDistrict");
@@ -98,7 +79,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_subDistrictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Block"))
   {
     Aws::Utils::Array<JsonView> blockJsonList = jsonValue.GetArray("Block");
@@ -108,7 +88,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubBlock"))
   {
     Aws::Utils::Array<JsonView> subBlockJsonList = jsonValue.GetArray("SubBlock");
@@ -118,7 +97,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_subBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street"))
   {
     Aws::Utils::Array<JsonView> streetJsonList = jsonValue.GetArray("Street");
@@ -128,7 +106,6 @@ AddressComponentPhonemes& AddressComponentPhonemes::operator =(JsonView jsonValu
     }
     m_streetHasBeenSet = true;
   }
-
   return *this;
 }
 

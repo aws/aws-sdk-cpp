@@ -12,38 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrainingJobRequest::CreateTrainingJobRequest() : 
-    m_trainingJobNameHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_algorithmSpecificationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false),
-    m_debugHookConfigHasBeenSet(false),
-    m_debugRuleConfigurationsHasBeenSet(false),
-    m_tensorBoardOutputConfigHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_profilerConfigHasBeenSet(false),
-    m_profilerRuleConfigurationsHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_remoteDebugConfigHasBeenSet(false),
-    m_infraCheckConfigHasBeenSet(false),
-    m_sessionChainingConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrainingJobRequest::SerializePayload() const
 {
   JsonValue payload;

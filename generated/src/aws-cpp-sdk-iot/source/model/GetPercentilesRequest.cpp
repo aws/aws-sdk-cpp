@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPercentilesRequest::GetPercentilesRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_aggregationFieldHasBeenSet(false),
-    m_queryVersionHasBeenSet(false),
-    m_percentsHasBeenSet(false)
-{
-}
-
 Aws::String GetPercentilesRequest::SerializePayload() const
 {
   JsonValue payload;

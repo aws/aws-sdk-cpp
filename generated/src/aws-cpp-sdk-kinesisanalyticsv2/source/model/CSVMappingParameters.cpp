@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-CSVMappingParameters::CSVMappingParameters() : 
-    m_recordRowDelimiterHasBeenSet(false),
-    m_recordColumnDelimiterHasBeenSet(false)
-{
-}
-
 CSVMappingParameters::CSVMappingParameters(JsonView jsonValue)
-  : CSVMappingParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CSVMappingParameters& CSVMappingParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordRowDelimiter"))
   {
     m_recordRowDelimiter = jsonValue.GetString("RecordRowDelimiter");
-
     m_recordRowDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordColumnDelimiter"))
   {
     m_recordColumnDelimiter = jsonValue.GetString("RecordColumnDelimiter");
-
     m_recordColumnDelimiterHasBeenSet = true;
   }
-
   return *this;
 }
 

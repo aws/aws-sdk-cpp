@@ -29,7 +29,7 @@ namespace Model
   class ListAdaptersResult
   {
   public:
-    AWS_TEXTRACT_API ListAdaptersResult();
+    AWS_TEXTRACT_API ListAdaptersResult() = default;
     AWS_TEXTRACT_API ListAdaptersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TEXTRACT_API ListAdaptersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A list of adapters that matches the filtering criteria specified when calling
      * ListAdapters.</p>
      */
-    inline const Aws::Vector<AdapterOverview>& GetAdapters() const{ return m_adapters; }
-    inline void SetAdapters(const Aws::Vector<AdapterOverview>& value) { m_adapters = value; }
-    inline void SetAdapters(Aws::Vector<AdapterOverview>&& value) { m_adapters = std::move(value); }
-    inline ListAdaptersResult& WithAdapters(const Aws::Vector<AdapterOverview>& value) { SetAdapters(value); return *this;}
-    inline ListAdaptersResult& WithAdapters(Aws::Vector<AdapterOverview>&& value) { SetAdapters(std::move(value)); return *this;}
-    inline ListAdaptersResult& AddAdapters(const AdapterOverview& value) { m_adapters.push_back(value); return *this; }
-    inline ListAdaptersResult& AddAdapters(AdapterOverview&& value) { m_adapters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdapterOverview>& GetAdapters() const { return m_adapters; }
+    template<typename AdaptersT = Aws::Vector<AdapterOverview>>
+    void SetAdapters(AdaptersT&& value) { m_adaptersHasBeenSet = true; m_adapters = std::forward<AdaptersT>(value); }
+    template<typename AdaptersT = Aws::Vector<AdapterOverview>>
+    ListAdaptersResult& WithAdapters(AdaptersT&& value) { SetAdapters(std::forward<AdaptersT>(value)); return *this;}
+    template<typename AdaptersT = AdapterOverview>
+    ListAdaptersResult& AddAdapters(AdaptersT&& value) { m_adaptersHasBeenSet = true; m_adapters.emplace_back(std::forward<AdaptersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return when listing adapters.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAdaptersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAdaptersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAdaptersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAdaptersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAdaptersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAdaptersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAdaptersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAdaptersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AdapterOverview> m_adapters;
+    bool m_adaptersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

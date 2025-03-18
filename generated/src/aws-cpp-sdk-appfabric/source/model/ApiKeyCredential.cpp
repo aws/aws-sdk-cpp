@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-ApiKeyCredential::ApiKeyCredential() : 
-    m_apiKeyHasBeenSet(false)
-{
-}
-
 ApiKeyCredential::ApiKeyCredential(JsonView jsonValue)
-  : ApiKeyCredential()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ApiKeyCredential& ApiKeyCredential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiKey"))
   {
     m_apiKey = jsonValue.GetString("apiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchDataSetsRequest::SearchDataSetsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String SearchDataSetsRequest::SerializePayload() const
 {
   JsonValue payload;

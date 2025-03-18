@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPortalServiceProviderMetadataResult::GetPortalServiceProviderMetadataResult()
-{
-}
-
 GetPortalServiceProviderMetadataResult::GetPortalServiceProviderMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetPortalServiceProviderMetadataResult& GetPortalServiceProviderMetadataResult::
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
-
+    m_portalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceProviderSamlMetadata"))
   {
     m_serviceProviderSamlMetadata = jsonValue.GetString("serviceProviderSamlMetadata");
-
+    m_serviceProviderSamlMetadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

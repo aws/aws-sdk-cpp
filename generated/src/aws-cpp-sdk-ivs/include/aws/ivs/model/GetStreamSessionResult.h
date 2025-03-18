@@ -28,7 +28,7 @@ namespace Model
   class GetStreamSessionResult
   {
   public:
-    AWS_IVS_API GetStreamSessionResult();
+    AWS_IVS_API GetStreamSessionResult() = default;
     AWS_IVS_API GetStreamSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API GetStreamSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>List of stream details.</p>
      */
-    inline const StreamSession& GetStreamSession() const{ return m_streamSession; }
-    inline void SetStreamSession(const StreamSession& value) { m_streamSession = value; }
-    inline void SetStreamSession(StreamSession&& value) { m_streamSession = std::move(value); }
-    inline GetStreamSessionResult& WithStreamSession(const StreamSession& value) { SetStreamSession(value); return *this;}
-    inline GetStreamSessionResult& WithStreamSession(StreamSession&& value) { SetStreamSession(std::move(value)); return *this;}
+    inline const StreamSession& GetStreamSession() const { return m_streamSession; }
+    template<typename StreamSessionT = StreamSession>
+    void SetStreamSession(StreamSessionT&& value) { m_streamSessionHasBeenSet = true; m_streamSession = std::forward<StreamSessionT>(value); }
+    template<typename StreamSessionT = StreamSession>
+    GetStreamSessionResult& WithStreamSession(StreamSessionT&& value) { SetStreamSession(std::forward<StreamSessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStreamSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStreamSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStreamSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStreamSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamSession m_streamSession;
+    bool m_streamSessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

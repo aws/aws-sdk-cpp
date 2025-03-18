@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmHistoryResult::DescribeAlarmHistoryResult()
-{
-}
-
 DescribeAlarmHistoryResult::DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const Aws::Am
     if(!alarmHistoryItemsNode.IsNull())
     {
       XmlNode alarmHistoryItemsMember = alarmHistoryItemsNode.FirstChild("member");
+      m_alarmHistoryItemsHasBeenSet = !alarmHistoryItemsMember.IsNull();
       while(!alarmHistoryItemsMember.IsNull())
       {
         m_alarmHistoryItems.push_back(alarmHistoryItemsMember);
         alarmHistoryItemsMember = alarmHistoryItemsMember.NextNode("member");
       }
 
+      m_alarmHistoryItemsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmHistoryResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

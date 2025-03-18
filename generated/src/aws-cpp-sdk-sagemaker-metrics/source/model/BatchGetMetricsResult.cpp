@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetMetricsResult::BatchGetMetricsResult()
-{
-}
-
 BatchGetMetricsResult::BatchGetMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchGetMetricsResult& BatchGetMetricsResult::operator =(const Aws::AmazonWebSer
     {
       m_metricQueryResults.push_back(metricQueryResultsJsonList[metricQueryResultsIndex].AsObject());
     }
+    m_metricQueryResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

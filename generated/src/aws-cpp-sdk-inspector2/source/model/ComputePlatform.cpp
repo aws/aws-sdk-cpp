@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ComputePlatform::ComputePlatform() : 
-    m_productHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ComputePlatform::ComputePlatform(JsonView jsonValue)
-  : ComputePlatform()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComputePlatform& ComputePlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("product"))
   {
     m_product = jsonValue.GetString("product");
-
     m_productHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

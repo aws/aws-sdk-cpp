@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Phase::Phase() : 
-    m_initialNumberOfUsers(0),
-    m_initialNumberOfUsersHasBeenSet(false),
-    m_spawnRate(0),
-    m_spawnRateHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 Phase::Phase(JsonView jsonValue)
-  : Phase()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Phase& Phase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InitialNumberOfUsers"))
   {
     m_initialNumberOfUsers = jsonValue.GetInteger("InitialNumberOfUsers");
-
     m_initialNumberOfUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpawnRate"))
   {
     m_spawnRate = jsonValue.GetInteger("SpawnRate");
-
     m_spawnRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

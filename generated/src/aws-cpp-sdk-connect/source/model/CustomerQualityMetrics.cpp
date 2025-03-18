@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CustomerQualityMetrics::CustomerQualityMetrics() : 
-    m_audioHasBeenSet(false)
-{
-}
-
 CustomerQualityMetrics::CustomerQualityMetrics(JsonView jsonValue)
-  : CustomerQualityMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomerQualityMetrics& CustomerQualityMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   return *this;
 }
 

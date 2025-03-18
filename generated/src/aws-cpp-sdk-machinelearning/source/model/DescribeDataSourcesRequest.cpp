@@ -12,24 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDataSourcesRequest::DescribeDataSourcesRequest() : 
-    m_filterVariable(DataSourceFilterVariable::NOT_SET),
-    m_filterVariableHasBeenSet(false),
-    m_eQHasBeenSet(false),
-    m_gTHasBeenSet(false),
-    m_lTHasBeenSet(false),
-    m_gEHasBeenSet(false),
-    m_lEHasBeenSet(false),
-    m_nEHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDataSourcesRequest::SerializePayload() const
 {
   JsonValue payload;

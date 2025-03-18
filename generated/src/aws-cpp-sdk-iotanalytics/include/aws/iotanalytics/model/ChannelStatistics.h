@@ -31,7 +31,7 @@ namespace Model
   class ChannelStatistics
   {
   public:
-    AWS_IOTANALYTICS_API ChannelStatistics();
+    AWS_IOTANALYTICS_API ChannelStatistics() = default;
     AWS_IOTANALYTICS_API ChannelStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ChannelStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The estimated size of the channel.</p>
      */
-    inline const EstimatedResourceSize& GetSize() const{ return m_size; }
+    inline const EstimatedResourceSize& GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(const EstimatedResourceSize& value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline void SetSize(EstimatedResourceSize&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-    inline ChannelStatistics& WithSize(const EstimatedResourceSize& value) { SetSize(value); return *this;}
-    inline ChannelStatistics& WithSize(EstimatedResourceSize&& value) { SetSize(std::move(value)); return *this;}
+    template<typename SizeT = EstimatedResourceSize>
+    void SetSize(SizeT&& value) { m_sizeHasBeenSet = true; m_size = std::forward<SizeT>(value); }
+    template<typename SizeT = EstimatedResourceSize>
+    ChannelStatistics& WithSize(SizeT&& value) { SetSize(std::forward<SizeT>(value)); return *this;}
     ///@}
   private:
 

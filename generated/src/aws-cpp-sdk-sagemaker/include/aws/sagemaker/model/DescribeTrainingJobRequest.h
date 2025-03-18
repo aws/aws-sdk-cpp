@@ -21,7 +21,7 @@ namespace Model
   class DescribeTrainingJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeTrainingJobRequest();
+    AWS_SAGEMAKER_API DescribeTrainingJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the training job.</p>
      */
-    inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
+    inline const Aws::String& GetTrainingJobName() const { return m_trainingJobName; }
     inline bool TrainingJobNameHasBeenSet() const { return m_trainingJobNameHasBeenSet; }
-    inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
-    inline void SetTrainingJobName(Aws::String&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::move(value); }
-    inline void SetTrainingJobName(const char* value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName.assign(value); }
-    inline DescribeTrainingJobRequest& WithTrainingJobName(const Aws::String& value) { SetTrainingJobName(value); return *this;}
-    inline DescribeTrainingJobRequest& WithTrainingJobName(Aws::String&& value) { SetTrainingJobName(std::move(value)); return *this;}
-    inline DescribeTrainingJobRequest& WithTrainingJobName(const char* value) { SetTrainingJobName(value); return *this;}
+    template<typename TrainingJobNameT = Aws::String>
+    void SetTrainingJobName(TrainingJobNameT&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::forward<TrainingJobNameT>(value); }
+    template<typename TrainingJobNameT = Aws::String>
+    DescribeTrainingJobRequest& WithTrainingJobName(TrainingJobNameT&& value) { SetTrainingJobName(std::forward<TrainingJobNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class BatchGetCodeSnippetRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API BatchGetCodeSnippetRequest();
+    AWS_INSPECTOR2_API BatchGetCodeSnippetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>An array of finding ARNs for the findings you want to retrieve code snippets
      * from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
+    inline const Aws::Vector<Aws::String>& GetFindingArns() const { return m_findingArns; }
     inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
-    inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
-    inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::move(value); }
-    inline BatchGetCodeSnippetRequest& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
-    inline BatchGetCodeSnippetRequest& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
-    inline BatchGetCodeSnippetRequest& AddFindingArns(const Aws::String& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-    inline BatchGetCodeSnippetRequest& AddFindingArns(Aws::String&& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(std::move(value)); return *this; }
-    inline BatchGetCodeSnippetRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
+    template<typename FindingArnsT = Aws::Vector<Aws::String>>
+    void SetFindingArns(FindingArnsT&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::forward<FindingArnsT>(value); }
+    template<typename FindingArnsT = Aws::Vector<Aws::String>>
+    BatchGetCodeSnippetRequest& WithFindingArns(FindingArnsT&& value) { SetFindingArns(std::forward<FindingArnsT>(value)); return *this;}
+    template<typename FindingArnsT = Aws::String>
+    BatchGetCodeSnippetRequest& AddFindingArns(FindingArnsT&& value) { m_findingArnsHasBeenSet = true; m_findingArns.emplace_back(std::forward<FindingArnsT>(value)); return *this; }
     ///@}
   private:
 

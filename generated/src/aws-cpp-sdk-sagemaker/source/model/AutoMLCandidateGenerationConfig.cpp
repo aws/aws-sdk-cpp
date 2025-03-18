@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig() : 
-    m_featureSpecificationS3UriHasBeenSet(false),
-    m_algorithmsConfigHasBeenSet(false)
-{
-}
-
 AutoMLCandidateGenerationConfig::AutoMLCandidateGenerationConfig(JsonView jsonValue)
-  : AutoMLCandidateGenerationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoMLCandidateGenerationConfig& AutoMLCandidateGenerationConfig::operator =(Jso
   if(jsonValue.ValueExists("FeatureSpecificationS3Uri"))
   {
     m_featureSpecificationS3Uri = jsonValue.GetString("FeatureSpecificationS3Uri");
-
     m_featureSpecificationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlgorithmsConfig"))
   {
     Aws::Utils::Array<JsonView> algorithmsConfigJsonList = jsonValue.GetArray("AlgorithmsConfig");
@@ -48,7 +39,6 @@ AutoMLCandidateGenerationConfig& AutoMLCandidateGenerationConfig::operator =(Jso
     }
     m_algorithmsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

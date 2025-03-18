@@ -12,19 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRuleRequest::PutRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_state(RuleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
-{
-}
-
 Aws::String PutRuleRequest::SerializePayload() const
 {
   JsonValue payload;

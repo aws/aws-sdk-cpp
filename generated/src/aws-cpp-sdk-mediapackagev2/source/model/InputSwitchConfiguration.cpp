@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-InputSwitchConfiguration::InputSwitchConfiguration() : 
-    m_mQCSInputSwitching(false),
-    m_mQCSInputSwitchingHasBeenSet(false)
-{
-}
-
 InputSwitchConfiguration::InputSwitchConfiguration(JsonView jsonValue)
-  : InputSwitchConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InputSwitchConfiguration& InputSwitchConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MQCSInputSwitching"))
   {
     m_mQCSInputSwitching = jsonValue.GetBool("MQCSInputSwitching");
-
     m_mQCSInputSwitchingHasBeenSet = true;
   }
-
   return *this;
 }
 

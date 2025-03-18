@@ -28,7 +28,7 @@ namespace Model
   class UpdateApplicationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API UpdateApplicationResult();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationResult() = default;
     AWS_KINESISANALYTICSV2_API UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>Describes application updates.</p>
      */
-    inline const ApplicationDetail& GetApplicationDetail() const{ return m_applicationDetail; }
-    inline void SetApplicationDetail(const ApplicationDetail& value) { m_applicationDetail = value; }
-    inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
-    inline UpdateApplicationResult& WithApplicationDetail(const ApplicationDetail& value) { SetApplicationDetail(value); return *this;}
-    inline UpdateApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
+    inline const ApplicationDetail& GetApplicationDetail() const { return m_applicationDetail; }
+    template<typename ApplicationDetailT = ApplicationDetail>
+    void SetApplicationDetail(ApplicationDetailT&& value) { m_applicationDetailHasBeenSet = true; m_applicationDetail = std::forward<ApplicationDetailT>(value); }
+    template<typename ApplicationDetailT = ApplicationDetail>
+    UpdateApplicationResult& WithApplicationDetail(ApplicationDetailT&& value) { SetApplicationDetail(std::forward<ApplicationDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Operation ID for tracking UpdateApplication request
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline UpdateApplicationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline UpdateApplicationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline UpdateApplicationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    UpdateApplicationResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationDetail m_applicationDetail;
+    bool m_applicationDetailHasBeenSet = false;
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

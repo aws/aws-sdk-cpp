@@ -17,50 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateMultipartUploadRequest::CreateMultipartUploadRequest() : 
-    m_aCL(ObjectCannedACL::NOT_SET),
-    m_aCLHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_contentDispositionHasBeenSet(false),
-    m_contentEncodingHasBeenSet(false),
-    m_contentLanguageHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_expiresHasBeenSet(false),
-    m_grantFullControlHasBeenSet(false),
-    m_grantReadHasBeenSet(false),
-    m_grantReadACPHasBeenSet(false),
-    m_grantWriteACPHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_websiteRedirectLocationHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSECustomerKeyHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_sSEKMSKeyIdHasBeenSet(false),
-    m_sSEKMSEncryptionContextHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_taggingHasBeenSet(false),
-    m_objectLockMode(ObjectLockMode::NOT_SET),
-    m_objectLockModeHasBeenSet(false),
-    m_objectLockRetainUntilDateHasBeenSet(false),
-    m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET),
-    m_objectLockLegalHoldStatusHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool CreateMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

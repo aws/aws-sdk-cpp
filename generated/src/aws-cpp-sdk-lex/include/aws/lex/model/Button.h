@@ -32,7 +32,7 @@ namespace Model
   class Button
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API Button();
+    AWS_LEXRUNTIMESERVICE_API Button() = default;
     AWS_LEXRUNTIMESERVICE_API Button(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API Button& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Text that is visible to the user on the button.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline Button& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline Button& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline Button& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    Button& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * consider button text "NYC." When the user chooses the button, the value sent can
      * be "New York City."</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Button& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Button& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Button& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Button& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

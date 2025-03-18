@@ -21,7 +21,7 @@ namespace Model
   class CreateVpcPeeringConnectionRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateVpcPeeringConnectionRequest();
+    AWS_GAMELIFT_API CreateVpcPeeringConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique identifier for the fleet. You can use either the fleet ID or ARN
      * value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * want to peer your Amazon GameLift fleet with. You can find your Account ID in
      * the Amazon Web Services Management Console under account settings.</p>
      */
-    inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
+    inline const Aws::String& GetPeerVpcAwsAccountId() const { return m_peerVpcAwsAccountId; }
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
-    inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
-    inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
-    inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
+    template<typename PeerVpcAwsAccountIdT = Aws::String>
+    void SetPeerVpcAwsAccountId(PeerVpcAwsAccountIdT&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::forward<PeerVpcAwsAccountIdT>(value); }
+    template<typename PeerVpcAwsAccountIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithPeerVpcAwsAccountId(PeerVpcAwsAccountIdT&& value) { SetPeerVpcAwsAccountId(std::forward<PeerVpcAwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with Amazon GameLift Fleets</a>.</p>
      */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    template<typename PeerVpcIdT = Aws::String>
+    void SetPeerVpcId(PeerVpcIdT&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::forward<PeerVpcIdT>(value); }
+    template<typename PeerVpcIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithPeerVpcId(PeerVpcIdT&& value) { SetPeerVpcId(std::forward<PeerVpcIdT>(value)); return *this;}
     ///@}
   private:
 

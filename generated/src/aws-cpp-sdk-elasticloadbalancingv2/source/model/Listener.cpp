@@ -20,23 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Listener::Listener() : 
-    m_listenerArnHasBeenSet(false),
-    m_loadBalancerArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
-{
-}
-
 Listener::Listener(const XmlNode& xmlNode)
-  : Listener()
 {
   *this = xmlNode;
 }
@@ -68,13 +52,14 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
     if(!certificatesNode.IsNull())
     {
       XmlNode certificatesMember = certificatesNode.FirstChild("member");
+      m_certificatesHasBeenSet = !certificatesMember.IsNull();
       while(!certificatesMember.IsNull())
       {
         m_certificates.push_back(certificatesMember);
@@ -93,6 +78,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     if(!defaultActionsNode.IsNull())
     {
       XmlNode defaultActionsMember = defaultActionsNode.FirstChild("member");
+      m_defaultActionsHasBeenSet = !defaultActionsMember.IsNull();
       while(!defaultActionsMember.IsNull())
       {
         m_defaultActions.push_back(defaultActionsMember);
@@ -105,6 +91,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     if(!alpnPolicyNode.IsNull())
     {
       XmlNode alpnPolicyMember = alpnPolicyNode.FirstChild("member");
+      m_alpnPolicyHasBeenSet = !alpnPolicyMember.IsNull();
       while(!alpnPolicyMember.IsNull())
       {
         m_alpnPolicy.push_back(alpnPolicyMember.GetText());

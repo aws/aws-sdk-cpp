@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutResolverRulePolicyResult::PutResolverRulePolicyResult() : 
-    m_returnValue(false)
-{
-}
-
 PutResolverRulePolicyResult::PutResolverRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutResolverRulePolicyResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ PutResolverRulePolicyResult& PutResolverRulePolicyResult::operator =(const Aws::
   if(jsonValue.ValueExists("ReturnValue"))
   {
     m_returnValue = jsonValue.GetBool("ReturnValue");
-
+    m_returnValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

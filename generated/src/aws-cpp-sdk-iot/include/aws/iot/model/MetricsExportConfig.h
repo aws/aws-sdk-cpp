@@ -31,7 +31,7 @@ namespace Model
   class MetricsExportConfig
   {
   public:
-    AWS_IOT_API MetricsExportConfig();
+    AWS_IOT_API MetricsExportConfig() = default;
     AWS_IOT_API MetricsExportConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MetricsExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The MQTT topic that Device Defender Detect should publish messages to for
      * metrics export.</p>
      */
-    inline const Aws::String& GetMqttTopic() const{ return m_mqttTopic; }
+    inline const Aws::String& GetMqttTopic() const { return m_mqttTopic; }
     inline bool MqttTopicHasBeenSet() const { return m_mqttTopicHasBeenSet; }
-    inline void SetMqttTopic(const Aws::String& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = value; }
-    inline void SetMqttTopic(Aws::String&& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = std::move(value); }
-    inline void SetMqttTopic(const char* value) { m_mqttTopicHasBeenSet = true; m_mqttTopic.assign(value); }
-    inline MetricsExportConfig& WithMqttTopic(const Aws::String& value) { SetMqttTopic(value); return *this;}
-    inline MetricsExportConfig& WithMqttTopic(Aws::String&& value) { SetMqttTopic(std::move(value)); return *this;}
-    inline MetricsExportConfig& WithMqttTopic(const char* value) { SetMqttTopic(value); return *this;}
+    template<typename MqttTopicT = Aws::String>
+    void SetMqttTopic(MqttTopicT&& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = std::forward<MqttTopicT>(value); }
+    template<typename MqttTopicT = Aws::String>
+    MetricsExportConfig& WithMqttTopic(MqttTopicT&& value) { SetMqttTopic(std::forward<MqttTopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>This role ARN has permission to publish MQTT messages, after which Device
      * Defender Detect can assume the role and publish messages on your behalf.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline MetricsExportConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline MetricsExportConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline MetricsExportConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    MetricsExportConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTargetGroupResult::GetTargetGroupResult() : 
-    m_status(TargetGroupStatus::NOT_SET),
-    m_type(TargetGroupType::NOT_SET)
-{
-}
-
 GetTargetGroupResult::GetTargetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTargetGroupResult()
 {
   *this = result;
 }
@@ -35,51 +28,43 @@ GetTargetGroupResult& GetTargetGroupResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("config"))
   {
     m_config = jsonValue.GetObject("config");
-
+    m_configHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
-
+    m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
+    m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceArns"))
   {
     Aws::Utils::Array<JsonView> serviceArnsJsonList = jsonValue.GetArray("serviceArns");
@@ -87,26 +72,25 @@ GetTargetGroupResult& GetTargetGroupResult::operator =(const Aws::AmazonWebServi
     {
       m_serviceArns.push_back(serviceArnsJsonList[serviceArnsIndex].AsString());
     }
+    m_serviceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetGroupStatusMapper::GetTargetGroupStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TargetGroupTypeMapper::GetTargetGroupTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

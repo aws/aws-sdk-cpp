@@ -31,7 +31,7 @@ namespace Model
   class Integrations
   {
   public:
-    AWS_APPREGISTRY_API Integrations();
+    AWS_APPREGISTRY_API Integrations() = default;
     AWS_APPREGISTRY_API Integrations(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Integrations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,22 +41,22 @@ namespace Model
     /**
      * <p> The information about the resource group integration.</p>
      */
-    inline const ResourceGroup& GetResourceGroup() const{ return m_resourceGroup; }
+    inline const ResourceGroup& GetResourceGroup() const { return m_resourceGroup; }
     inline bool ResourceGroupHasBeenSet() const { return m_resourceGroupHasBeenSet; }
-    inline void SetResourceGroup(const ResourceGroup& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = value; }
-    inline void SetResourceGroup(ResourceGroup&& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = std::move(value); }
-    inline Integrations& WithResourceGroup(const ResourceGroup& value) { SetResourceGroup(value); return *this;}
-    inline Integrations& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(std::move(value)); return *this;}
+    template<typename ResourceGroupT = ResourceGroup>
+    void SetResourceGroup(ResourceGroupT&& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = std::forward<ResourceGroupT>(value); }
+    template<typename ResourceGroupT = ResourceGroup>
+    Integrations& WithResourceGroup(ResourceGroupT&& value) { SetResourceGroup(std::forward<ResourceGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceGroup& GetApplicationTagResourceGroup() const{ return m_applicationTagResourceGroup; }
+    inline const ResourceGroup& GetApplicationTagResourceGroup() const { return m_applicationTagResourceGroup; }
     inline bool ApplicationTagResourceGroupHasBeenSet() const { return m_applicationTagResourceGroupHasBeenSet; }
-    inline void SetApplicationTagResourceGroup(const ResourceGroup& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = value; }
-    inline void SetApplicationTagResourceGroup(ResourceGroup&& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = std::move(value); }
-    inline Integrations& WithApplicationTagResourceGroup(const ResourceGroup& value) { SetApplicationTagResourceGroup(value); return *this;}
-    inline Integrations& WithApplicationTagResourceGroup(ResourceGroup&& value) { SetApplicationTagResourceGroup(std::move(value)); return *this;}
+    template<typename ApplicationTagResourceGroupT = ResourceGroup>
+    void SetApplicationTagResourceGroup(ApplicationTagResourceGroupT&& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = std::forward<ApplicationTagResourceGroupT>(value); }
+    template<typename ApplicationTagResourceGroupT = ResourceGroup>
+    Integrations& WithApplicationTagResourceGroup(ApplicationTagResourceGroupT&& value) { SetApplicationTagResourceGroup(std::forward<ApplicationTagResourceGroupT>(value)); return *this;}
     ///@}
   private:
 

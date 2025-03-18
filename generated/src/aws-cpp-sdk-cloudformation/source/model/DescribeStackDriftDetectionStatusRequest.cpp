@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeStackDriftDetectionStatusRequest::DescribeStackDriftDetectionStatusRequest() : 
-    m_stackDriftDetectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStackDriftDetectionStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

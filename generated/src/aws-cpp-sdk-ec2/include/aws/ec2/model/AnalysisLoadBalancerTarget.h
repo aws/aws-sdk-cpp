@@ -32,7 +32,7 @@ namespace Model
   class AnalysisLoadBalancerTarget
   {
   public:
-    AWS_EC2_API AnalysisLoadBalancerTarget();
+    AWS_EC2_API AnalysisLoadBalancerTarget() = default;
     AWS_EC2_API AnalysisLoadBalancerTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AnalysisLoadBalancerTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,47 +44,43 @@ namespace Model
     /**
      * <p>The IP address.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline AnalysisLoadBalancerTarget& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline AnalysisLoadBalancerTarget& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline AnalysisLoadBalancerTarget& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    AnalysisLoadBalancerTarget& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline AnalysisLoadBalancerTarget& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline AnalysisLoadBalancerTarget& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline AnalysisLoadBalancerTarget& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    AnalysisLoadBalancerTarget& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the instance.</p>
      */
-    inline const AnalysisComponent& GetInstance() const{ return m_instance; }
+    inline const AnalysisComponent& GetInstance() const { return m_instance; }
     inline bool InstanceHasBeenSet() const { return m_instanceHasBeenSet; }
-    inline void SetInstance(const AnalysisComponent& value) { m_instanceHasBeenSet = true; m_instance = value; }
-    inline void SetInstance(AnalysisComponent&& value) { m_instanceHasBeenSet = true; m_instance = std::move(value); }
-    inline AnalysisLoadBalancerTarget& WithInstance(const AnalysisComponent& value) { SetInstance(value); return *this;}
-    inline AnalysisLoadBalancerTarget& WithInstance(AnalysisComponent&& value) { SetInstance(std::move(value)); return *this;}
+    template<typename InstanceT = AnalysisComponent>
+    void SetInstance(InstanceT&& value) { m_instanceHasBeenSet = true; m_instance = std::forward<InstanceT>(value); }
+    template<typename InstanceT = AnalysisComponent>
+    AnalysisLoadBalancerTarget& WithInstance(InstanceT&& value) { SetInstance(std::forward<InstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port on which the target is listening.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline AnalysisLoadBalancerTarget& WithPort(int value) { SetPort(value); return *this;}
@@ -100,7 +96,7 @@ namespace Model
     AnalysisComponent m_instance;
     bool m_instanceHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

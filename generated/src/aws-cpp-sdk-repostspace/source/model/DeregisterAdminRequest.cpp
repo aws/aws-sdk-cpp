@@ -12,12 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterAdminRequest::DeregisterAdminRequest() : 
-    m_adminIdHasBeenSet(false),
-    m_spaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterAdminRequest::SerializePayload() const
 {
   return {};

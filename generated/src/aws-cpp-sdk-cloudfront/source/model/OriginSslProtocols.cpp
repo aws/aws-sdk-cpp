@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginSslProtocols::OriginSslProtocols() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 OriginSslProtocols::OriginSslProtocols(const XmlNode& xmlNode)
-  : OriginSslProtocols()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ OriginSslProtocols& OriginSslProtocols::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("SslProtocol");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(SslProtocolMapper::GetSslProtocolForName(StringUtils::Trim(itemsMember.GetText().c_str())));

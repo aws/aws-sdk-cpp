@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteScheduledActionResult::BatchDeleteScheduledActionResult()
-{
-}
-
 BatchDeleteScheduledActionResult::BatchDeleteScheduledActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ BatchDeleteScheduledActionResult& BatchDeleteScheduledActionResult::operator =(c
     if(!failedScheduledActionsNode.IsNull())
     {
       XmlNode failedScheduledActionsMember = failedScheduledActionsNode.FirstChild("member");
+      m_failedScheduledActionsHasBeenSet = !failedScheduledActionsMember.IsNull();
       while(!failedScheduledActionsMember.IsNull())
       {
         m_failedScheduledActions.push_back(failedScheduledActionsMember);
         failedScheduledActionsMember = failedScheduledActionsMember.NextNode("member");
       }
 
+      m_failedScheduledActionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::BatchDeleteScheduledActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

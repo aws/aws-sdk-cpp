@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectTaggingResult::PutObjectTaggingResult()
-{
-}
-
 PutObjectTaggingResult::PutObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,12 +35,14 @@ PutObjectTaggingResult& PutObjectTaggingResult::operator =(const Aws::AmazonWebS
   if(versionIdIter != headers.end())
   {
     m_versionId = versionIdIter->second;
+    m_versionIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

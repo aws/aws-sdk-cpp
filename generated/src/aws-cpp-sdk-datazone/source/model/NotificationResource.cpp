@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-NotificationResource::NotificationResource() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(NotificationResourceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NotificationResource::NotificationResource(JsonView jsonValue)
-  : NotificationResource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NotificationResource& NotificationResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NotificationResourceTypeMapper::GetNotificationResourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

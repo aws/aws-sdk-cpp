@@ -30,7 +30,7 @@ namespace Model
   class DeleteRegistrationResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationResult();
+    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationArn() const{ return m_registrationArn; }
-    inline void SetRegistrationArn(const Aws::String& value) { m_registrationArn = value; }
-    inline void SetRegistrationArn(Aws::String&& value) { m_registrationArn = std::move(value); }
-    inline void SetRegistrationArn(const char* value) { m_registrationArn.assign(value); }
-    inline DeleteRegistrationResult& WithRegistrationArn(const Aws::String& value) { SetRegistrationArn(value); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationArn(Aws::String&& value) { SetRegistrationArn(std::move(value)); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationArn(const char* value) { SetRegistrationArn(value); return *this;}
+    inline const Aws::String& GetRegistrationArn() const { return m_registrationArn; }
+    template<typename RegistrationArnT = Aws::String>
+    void SetRegistrationArn(RegistrationArnT&& value) { m_registrationArnHasBeenSet = true; m_registrationArn = std::forward<RegistrationArnT>(value); }
+    template<typename RegistrationArnT = Aws::String>
+    DeleteRegistrationResult& WithRegistrationArn(RegistrationArnT&& value) { SetRegistrationArn(std::forward<RegistrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationId.assign(value); }
-    inline DeleteRegistrationResult& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    DeleteRegistrationResult& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,11 @@ namespace Model
      * <p>The type of registration form. The list of <b>RegistrationTypes</b> can be
      * found using the <a>DescribeRegistrationTypeDefinitions</a> action.</p>
      */
-    inline const Aws::String& GetRegistrationType() const{ return m_registrationType; }
-    inline void SetRegistrationType(const Aws::String& value) { m_registrationType = value; }
-    inline void SetRegistrationType(Aws::String&& value) { m_registrationType = std::move(value); }
-    inline void SetRegistrationType(const char* value) { m_registrationType.assign(value); }
-    inline DeleteRegistrationResult& WithRegistrationType(const Aws::String& value) { SetRegistrationType(value); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationType(Aws::String&& value) { SetRegistrationType(std::move(value)); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationType(const char* value) { SetRegistrationType(value); return *this;}
+    inline const Aws::String& GetRegistrationType() const { return m_registrationType; }
+    template<typename RegistrationTypeT = Aws::String>
+    void SetRegistrationType(RegistrationTypeT&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::forward<RegistrationTypeT>(value); }
+    template<typename RegistrationTypeT = Aws::String>
+    DeleteRegistrationResult& WithRegistrationType(RegistrationTypeT&& value) { SetRegistrationType(std::forward<RegistrationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,19 +86,17 @@ namespace Model
      * reviewed.</p> </li> <li> <p> <code>SUBMITTED</code>: Your registration has been
      * submitted and is awaiting review.</p> </li> </ul>
      */
-    inline const RegistrationStatus& GetRegistrationStatus() const{ return m_registrationStatus; }
-    inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatus = value; }
-    inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatus = std::move(value); }
-    inline DeleteRegistrationResult& WithRegistrationStatus(const RegistrationStatus& value) { SetRegistrationStatus(value); return *this;}
-    inline DeleteRegistrationResult& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+    inline RegistrationStatus GetRegistrationStatus() const { return m_registrationStatus; }
+    inline void SetRegistrationStatus(RegistrationStatus value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
+    inline DeleteRegistrationResult& WithRegistrationStatus(RegistrationStatus value) { SetRegistrationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version number of the registration.</p>
      */
-    inline long long GetCurrentVersionNumber() const{ return m_currentVersionNumber; }
-    inline void SetCurrentVersionNumber(long long value) { m_currentVersionNumber = value; }
+    inline long long GetCurrentVersionNumber() const { return m_currentVersionNumber; }
+    inline void SetCurrentVersionNumber(long long value) { m_currentVersionNumberHasBeenSet = true; m_currentVersionNumber = value; }
     inline DeleteRegistrationResult& WithCurrentVersionNumber(long long value) { SetCurrentVersionNumber(value); return *this;}
     ///@}
 
@@ -112,8 +104,8 @@ namespace Model
     /**
      * <p>The version number of the registration that was approved.</p>
      */
-    inline long long GetApprovedVersionNumber() const{ return m_approvedVersionNumber; }
-    inline void SetApprovedVersionNumber(long long value) { m_approvedVersionNumber = value; }
+    inline long long GetApprovedVersionNumber() const { return m_approvedVersionNumber; }
+    inline void SetApprovedVersionNumber(long long value) { m_approvedVersionNumberHasBeenSet = true; m_approvedVersionNumber = value; }
     inline DeleteRegistrationResult& WithApprovedVersionNumber(long long value) { SetApprovedVersionNumber(value); return *this;}
     ///@}
 
@@ -121,8 +113,8 @@ namespace Model
     /**
      * <p>The latest version number of the registration that was denied.</p>
      */
-    inline long long GetLatestDeniedVersionNumber() const{ return m_latestDeniedVersionNumber; }
-    inline void SetLatestDeniedVersionNumber(long long value) { m_latestDeniedVersionNumber = value; }
+    inline long long GetLatestDeniedVersionNumber() const { return m_latestDeniedVersionNumber; }
+    inline void SetLatestDeniedVersionNumber(long long value) { m_latestDeniedVersionNumberHasBeenSet = true; m_latestDeniedVersionNumber = value; }
     inline DeleteRegistrationResult& WithLatestDeniedVersionNumber(long long value) { SetLatestDeniedVersionNumber(value); return *this;}
     ///@}
 
@@ -131,18 +123,15 @@ namespace Model
      * <p>Metadata about a given registration which is specific to that registration
      * type.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
-    inline void SetAdditionalAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalAttributes = value; }
-    inline void SetAdditionalAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalAttributes = std::move(value); }
-    inline DeleteRegistrationResult& WithAdditionalAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalAttributes(value); return *this;}
-    inline DeleteRegistrationResult& WithAdditionalAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
-    inline DeleteRegistrationResult& AddAdditionalAttributes(const Aws::String& key, const Aws::String& value) { m_additionalAttributes.emplace(key, value); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(Aws::String&& key, const Aws::String& value) { m_additionalAttributes.emplace(std::move(key), value); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(const Aws::String& key, Aws::String&& value) { m_additionalAttributes.emplace(key, std::move(value)); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(Aws::String&& key, Aws::String&& value) { m_additionalAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(const char* key, Aws::String&& value) { m_additionalAttributes.emplace(key, std::move(value)); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(Aws::String&& key, const char* value) { m_additionalAttributes.emplace(std::move(key), value); return *this; }
-    inline DeleteRegistrationResult& AddAdditionalAttributes(const char* key, const char* value) { m_additionalAttributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalAttributes() const { return m_additionalAttributes; }
+    template<typename AdditionalAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalAttributes(AdditionalAttributesT&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::forward<AdditionalAttributesT>(value); }
+    template<typename AdditionalAttributesT = Aws::Map<Aws::String, Aws::String>>
+    DeleteRegistrationResult& WithAdditionalAttributes(AdditionalAttributesT&& value) { SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value)); return *this;}
+    template<typename AdditionalAttributesKeyT = Aws::String, typename AdditionalAttributesValueT = Aws::String>
+    DeleteRegistrationResult& AddAdditionalAttributes(AdditionalAttributesKeyT&& key, AdditionalAttributesValueT&& value) {
+      m_additionalAttributesHasBeenSet = true; m_additionalAttributes.emplace(std::forward<AdditionalAttributesKeyT>(key), std::forward<AdditionalAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -150,44 +139,52 @@ namespace Model
      * <p>The time when the registration was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline DeleteRegistrationResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline DeleteRegistrationResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    DeleteRegistrationResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationArn;
+    bool m_registrationArnHasBeenSet = false;
 
     Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
 
     Aws::String m_registrationType;
+    bool m_registrationTypeHasBeenSet = false;
 
-    RegistrationStatus m_registrationStatus;
+    RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
+    bool m_registrationStatusHasBeenSet = false;
 
-    long long m_currentVersionNumber;
+    long long m_currentVersionNumber{0};
+    bool m_currentVersionNumberHasBeenSet = false;
 
-    long long m_approvedVersionNumber;
+    long long m_approvedVersionNumber{0};
+    bool m_approvedVersionNumberHasBeenSet = false;
 
-    long long m_latestDeniedVersionNumber;
+    long long m_latestDeniedVersionNumber{0};
+    bool m_latestDeniedVersionNumberHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalAttributes;
+    bool m_additionalAttributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

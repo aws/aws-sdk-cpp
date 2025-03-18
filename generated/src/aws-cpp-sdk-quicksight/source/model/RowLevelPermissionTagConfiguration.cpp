@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration() : 
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagRulesHasBeenSet(false),
-    m_tagRuleConfigurationsHasBeenSet(false)
-{
-}
-
 RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration(JsonView jsonValue)
-  : RowLevelPermissionTagConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagRules"))
   {
     Aws::Utils::Array<JsonView> tagRulesJsonList = jsonValue.GetArray("TagRules");
@@ -50,7 +39,6 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
     }
     m_tagRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagRuleConfigurations"))
   {
     Aws::Utils::Array<JsonView> tagRuleConfigurationsJsonList = jsonValue.GetArray("TagRuleConfigurations");
@@ -67,7 +55,6 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
     }
     m_tagRuleConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

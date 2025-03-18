@@ -37,7 +37,7 @@ namespace Model
   class PrivateRegistryAccessRequest
   {
   public:
-    AWS_LIGHTSAIL_API PrivateRegistryAccessRequest();
+    AWS_LIGHTSAIL_API PrivateRegistryAccessRequest() = default;
     AWS_LIGHTSAIL_API PrivateRegistryAccessRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API PrivateRegistryAccessRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * can use to grant an Amazon Lightsail container service access to Amazon Elastic
      * Container Registry (Amazon ECR) private repositories.</p>
      */
-    inline const ContainerServiceECRImagePullerRoleRequest& GetEcrImagePullerRole() const{ return m_ecrImagePullerRole; }
+    inline const ContainerServiceECRImagePullerRoleRequest& GetEcrImagePullerRole() const { return m_ecrImagePullerRole; }
     inline bool EcrImagePullerRoleHasBeenSet() const { return m_ecrImagePullerRoleHasBeenSet; }
-    inline void SetEcrImagePullerRole(const ContainerServiceECRImagePullerRoleRequest& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = value; }
-    inline void SetEcrImagePullerRole(ContainerServiceECRImagePullerRoleRequest&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::move(value); }
-    inline PrivateRegistryAccessRequest& WithEcrImagePullerRole(const ContainerServiceECRImagePullerRoleRequest& value) { SetEcrImagePullerRole(value); return *this;}
-    inline PrivateRegistryAccessRequest& WithEcrImagePullerRole(ContainerServiceECRImagePullerRoleRequest&& value) { SetEcrImagePullerRole(std::move(value)); return *this;}
+    template<typename EcrImagePullerRoleT = ContainerServiceECRImagePullerRoleRequest>
+    void SetEcrImagePullerRole(EcrImagePullerRoleT&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::forward<EcrImagePullerRoleT>(value); }
+    template<typename EcrImagePullerRoleT = ContainerServiceECRImagePullerRoleRequest>
+    PrivateRegistryAccessRequest& WithEcrImagePullerRole(EcrImagePullerRoleT&& value) { SetEcrImagePullerRole(std::forward<EcrImagePullerRoleT>(value)); return *this;}
     ///@}
   private:
 

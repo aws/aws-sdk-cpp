@@ -22,7 +22,7 @@ namespace Model
   class StartInvestigationRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API StartInvestigationRequest();
+    AWS_DETECTIVE_API StartInvestigationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline StartInvestigationRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline StartInvestigationRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline StartInvestigationRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    StartInvestigationRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique Amazon Resource Name (ARN) of the IAM user and IAM role.</p>
      */
-    inline const Aws::String& GetEntityArn() const{ return m_entityArn; }
+    inline const Aws::String& GetEntityArn() const { return m_entityArn; }
     inline bool EntityArnHasBeenSet() const { return m_entityArnHasBeenSet; }
-    inline void SetEntityArn(const Aws::String& value) { m_entityArnHasBeenSet = true; m_entityArn = value; }
-    inline void SetEntityArn(Aws::String&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::move(value); }
-    inline void SetEntityArn(const char* value) { m_entityArnHasBeenSet = true; m_entityArn.assign(value); }
-    inline StartInvestigationRequest& WithEntityArn(const Aws::String& value) { SetEntityArn(value); return *this;}
-    inline StartInvestigationRequest& WithEntityArn(Aws::String&& value) { SetEntityArn(std::move(value)); return *this;}
-    inline StartInvestigationRequest& WithEntityArn(const char* value) { SetEntityArn(value); return *this;}
+    template<typename EntityArnT = Aws::String>
+    void SetEntityArn(EntityArnT&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::forward<EntityArnT>(value); }
+    template<typename EntityArnT = Aws::String>
+    StartInvestigationRequest& WithEntityArn(EntityArnT&& value) { SetEntityArn(std::forward<EntityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +62,12 @@ namespace Model
      * <p>The data and time when the investigation began. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetScopeStartTime() const{ return m_scopeStartTime; }
+    inline const Aws::Utils::DateTime& GetScopeStartTime() const { return m_scopeStartTime; }
     inline bool ScopeStartTimeHasBeenSet() const { return m_scopeStartTimeHasBeenSet; }
-    inline void SetScopeStartTime(const Aws::Utils::DateTime& value) { m_scopeStartTimeHasBeenSet = true; m_scopeStartTime = value; }
-    inline void SetScopeStartTime(Aws::Utils::DateTime&& value) { m_scopeStartTimeHasBeenSet = true; m_scopeStartTime = std::move(value); }
-    inline StartInvestigationRequest& WithScopeStartTime(const Aws::Utils::DateTime& value) { SetScopeStartTime(value); return *this;}
-    inline StartInvestigationRequest& WithScopeStartTime(Aws::Utils::DateTime&& value) { SetScopeStartTime(std::move(value)); return *this;}
+    template<typename ScopeStartTimeT = Aws::Utils::DateTime>
+    void SetScopeStartTime(ScopeStartTimeT&& value) { m_scopeStartTimeHasBeenSet = true; m_scopeStartTime = std::forward<ScopeStartTimeT>(value); }
+    template<typename ScopeStartTimeT = Aws::Utils::DateTime>
+    StartInvestigationRequest& WithScopeStartTime(ScopeStartTimeT&& value) { SetScopeStartTime(std::forward<ScopeStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <p>The data and time when the investigation ended. The value is an UTC ISO8601
      * formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetScopeEndTime() const{ return m_scopeEndTime; }
+    inline const Aws::Utils::DateTime& GetScopeEndTime() const { return m_scopeEndTime; }
     inline bool ScopeEndTimeHasBeenSet() const { return m_scopeEndTimeHasBeenSet; }
-    inline void SetScopeEndTime(const Aws::Utils::DateTime& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = value; }
-    inline void SetScopeEndTime(Aws::Utils::DateTime&& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = std::move(value); }
-    inline StartInvestigationRequest& WithScopeEndTime(const Aws::Utils::DateTime& value) { SetScopeEndTime(value); return *this;}
-    inline StartInvestigationRequest& WithScopeEndTime(Aws::Utils::DateTime&& value) { SetScopeEndTime(std::move(value)); return *this;}
+    template<typename ScopeEndTimeT = Aws::Utils::DateTime>
+    void SetScopeEndTime(ScopeEndTimeT&& value) { m_scopeEndTimeHasBeenSet = true; m_scopeEndTime = std::forward<ScopeEndTimeT>(value); }
+    template<typename ScopeEndTimeT = Aws::Utils::DateTime>
+    StartInvestigationRequest& WithScopeEndTime(ScopeEndTimeT&& value) { SetScopeEndTime(std::forward<ScopeEndTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -94,10 +90,10 @@ namespace Model
     Aws::String m_entityArn;
     bool m_entityArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scopeStartTime;
+    Aws::Utils::DateTime m_scopeStartTime{};
     bool m_scopeStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scopeEndTime;
+    Aws::Utils::DateTime m_scopeEndTime{};
     bool m_scopeEndTimeHasBeenSet = false;
   };
 

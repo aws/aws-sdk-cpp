@@ -12,14 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAnomalyDetectorRequest::UpdateAnomalyDetectorRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_anomalyDetectorDescriptionHasBeenSet(false),
-    m_anomalyDetectorConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAnomalyDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

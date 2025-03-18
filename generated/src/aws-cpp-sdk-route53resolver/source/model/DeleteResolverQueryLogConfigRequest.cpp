@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResolverQueryLogConfigRequest::DeleteResolverQueryLogConfigRequest() : 
-    m_resolverQueryLogConfigIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResolverQueryLogConfigRequest::SerializePayload() const
 {
   JsonValue payload;

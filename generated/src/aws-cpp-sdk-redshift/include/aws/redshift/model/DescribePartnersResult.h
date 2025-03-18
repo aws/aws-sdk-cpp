@@ -29,7 +29,7 @@ namespace Model
   class DescribePartnersResult
   {
   public:
-    AWS_REDSHIFT_API DescribePartnersResult();
+    AWS_REDSHIFT_API DescribePartnersResult() = default;
     AWS_REDSHIFT_API DescribePartnersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribePartnersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>A list of partner integrations.</p>
      */
-    inline const Aws::Vector<PartnerIntegrationInfo>& GetPartnerIntegrationInfoList() const{ return m_partnerIntegrationInfoList; }
-    inline void SetPartnerIntegrationInfoList(const Aws::Vector<PartnerIntegrationInfo>& value) { m_partnerIntegrationInfoList = value; }
-    inline void SetPartnerIntegrationInfoList(Aws::Vector<PartnerIntegrationInfo>&& value) { m_partnerIntegrationInfoList = std::move(value); }
-    inline DescribePartnersResult& WithPartnerIntegrationInfoList(const Aws::Vector<PartnerIntegrationInfo>& value) { SetPartnerIntegrationInfoList(value); return *this;}
-    inline DescribePartnersResult& WithPartnerIntegrationInfoList(Aws::Vector<PartnerIntegrationInfo>&& value) { SetPartnerIntegrationInfoList(std::move(value)); return *this;}
-    inline DescribePartnersResult& AddPartnerIntegrationInfoList(const PartnerIntegrationInfo& value) { m_partnerIntegrationInfoList.push_back(value); return *this; }
-    inline DescribePartnersResult& AddPartnerIntegrationInfoList(PartnerIntegrationInfo&& value) { m_partnerIntegrationInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PartnerIntegrationInfo>& GetPartnerIntegrationInfoList() const { return m_partnerIntegrationInfoList; }
+    template<typename PartnerIntegrationInfoListT = Aws::Vector<PartnerIntegrationInfo>>
+    void SetPartnerIntegrationInfoList(PartnerIntegrationInfoListT&& value) { m_partnerIntegrationInfoListHasBeenSet = true; m_partnerIntegrationInfoList = std::forward<PartnerIntegrationInfoListT>(value); }
+    template<typename PartnerIntegrationInfoListT = Aws::Vector<PartnerIntegrationInfo>>
+    DescribePartnersResult& WithPartnerIntegrationInfoList(PartnerIntegrationInfoListT&& value) { SetPartnerIntegrationInfoList(std::forward<PartnerIntegrationInfoListT>(value)); return *this;}
+    template<typename PartnerIntegrationInfoListT = PartnerIntegrationInfo>
+    DescribePartnersResult& AddPartnerIntegrationInfoList(PartnerIntegrationInfoListT&& value) { m_partnerIntegrationInfoListHasBeenSet = true; m_partnerIntegrationInfoList.emplace_back(std::forward<PartnerIntegrationInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribePartnersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribePartnersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribePartnersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PartnerIntegrationInfo> m_partnerIntegrationInfoList;
+    bool m_partnerIntegrationInfoListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

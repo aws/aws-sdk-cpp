@@ -12,12 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_tagsListHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-PutConfigurationSetDeliveryOptionsRequest::PutConfigurationSetDeliveryOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_deliveryOptionsHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

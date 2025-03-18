@@ -18,35 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImagePipeline::ImagePipeline() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_enhancedImageMetadataEnabled(false),
-    m_enhancedImageMetadataEnabledHasBeenSet(false),
-    m_imageRecipeArnHasBeenSet(false),
-    m_containerRecipeArnHasBeenSet(false),
-    m_infrastructureConfigurationArnHasBeenSet(false),
-    m_distributionConfigurationArnHasBeenSet(false),
-    m_imageTestsConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(PipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_dateLastRunHasBeenSet(false),
-    m_dateNextRunHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_workflowsHasBeenSet(false)
-{
-}
-
 ImagePipeline::ImagePipeline(JsonView jsonValue)
-  : ImagePipeline()
 {
   *this = jsonValue;
 }
@@ -56,115 +28,83 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedImageMetadataEnabled"))
   {
     m_enhancedImageMetadataEnabled = jsonValue.GetBool("enhancedImageMetadataEnabled");
-
     m_enhancedImageMetadataEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageRecipeArn"))
   {
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
-
     m_imageRecipeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerRecipeArn"))
   {
     m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
-
     m_containerRecipeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("infrastructureConfigurationArn"))
   {
     m_infrastructureConfigurationArn = jsonValue.GetString("infrastructureConfigurationArn");
-
     m_infrastructureConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distributionConfigurationArn"))
   {
     m_distributionConfigurationArn = jsonValue.GetString("distributionConfigurationArn");
-
     m_distributionConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTestsConfiguration"))
   {
     m_imageTestsConfiguration = jsonValue.GetObject("imageTestsConfiguration");
-
     m_imageTestsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PipelineStatusMapper::GetPipelineStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateUpdated"))
   {
     m_dateUpdated = jsonValue.GetString("dateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateLastRun"))
   {
     m_dateLastRun = jsonValue.GetString("dateLastRun");
-
     m_dateLastRunHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateNextRun"))
   {
     m_dateNextRun = jsonValue.GetString("dateNextRun");
-
     m_dateNextRunHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -174,21 +114,16 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageScanningConfiguration"))
   {
     m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
-
     m_imageScanningConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflows"))
   {
     Aws::Utils::Array<JsonView> workflowsJsonList = jsonValue.GetArray("workflows");
@@ -198,7 +133,6 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     }
     m_workflowsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SplitShardRequest::SplitShardRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_shardToSplitHasBeenSet(false),
-    m_newStartingHashKeyHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String SplitShardRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteRoad::RouteRoad() : 
-    m_roadNameHasBeenSet(false),
-    m_routeNumberHasBeenSet(false),
-    m_towardsHasBeenSet(false),
-    m_type(RouteRoadType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RouteRoad::RouteRoad(JsonView jsonValue)
-  : RouteRoad()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ RouteRoad& RouteRoad::operator =(JsonView jsonValue)
     }
     m_roadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteNumber"))
   {
     Aws::Utils::Array<JsonView> routeNumberJsonList = jsonValue.GetArray("RouteNumber");
@@ -54,7 +43,6 @@ RouteRoad& RouteRoad::operator =(JsonView jsonValue)
     }
     m_routeNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Towards"))
   {
     Aws::Utils::Array<JsonView> towardsJsonList = jsonValue.GetArray("Towards");
@@ -64,14 +52,11 @@ RouteRoad& RouteRoad::operator =(JsonView jsonValue)
     }
     m_towardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteRoadTypeMapper::GetRouteRoadTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

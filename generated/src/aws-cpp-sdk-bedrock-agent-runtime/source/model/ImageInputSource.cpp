@@ -19,13 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ImageInputSource::ImageInputSource() : 
-    m_bytesHasBeenSet(false)
-{
-}
-
 ImageInputSource::ImageInputSource(JsonView jsonValue)
-  : ImageInputSource()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ ImageInputSource& ImageInputSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   return *this;
 }
 

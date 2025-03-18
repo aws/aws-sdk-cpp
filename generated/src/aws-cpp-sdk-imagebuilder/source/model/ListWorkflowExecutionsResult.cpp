@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkflowExecutionsResult::ListWorkflowExecutionsResult()
-{
-}
-
 ListWorkflowExecutionsResult::ListWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListWorkflowExecutionsResult& ListWorkflowExecutionsResult::operator =(const Aws
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowExecutions"))
   {
     Aws::Utils::Array<JsonView> workflowExecutionsJsonList = jsonValue.GetArray("workflowExecutions");
@@ -41,26 +36,23 @@ ListWorkflowExecutionsResult& ListWorkflowExecutionsResult::operator =(const Aws
     {
       m_workflowExecutions.push_back(workflowExecutionsJsonList[workflowExecutionsIndex].AsObject());
     }
+    m_workflowExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBuildVersionArn"))
   {
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
-
+    m_imageBuildVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

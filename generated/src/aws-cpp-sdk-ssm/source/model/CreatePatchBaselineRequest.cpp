@@ -12,28 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePatchBaselineRequest::CreatePatchBaselineRequest() : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_globalFiltersHasBeenSet(false),
-    m_approvalRulesHasBeenSet(false),
-    m_approvedPatchesHasBeenSet(false),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesComplianceLevelHasBeenSet(false),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_approvedPatchesEnableNonSecurityHasBeenSet(false),
-    m_rejectedPatchesHasBeenSet(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET),
-    m_rejectedPatchesActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class GetManagedResourceResult
   {
   public:
-    AWS_ARCZONALSHIFT_API GetManagedResourceResult();
+    AWS_ARCZONALSHIFT_API GetManagedResourceResult() = default;
     AWS_ARCZONALSHIFT_API GetManagedResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARCZONALSHIFT_API GetManagedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,53 +44,49 @@ namespace Model
      * Availability Zones or not. The key name is the Availability Zone where the
      * resource is deployed. The value is 1 or 0.</p>
      */
-    inline const Aws::Map<Aws::String, double>& GetAppliedWeights() const{ return m_appliedWeights; }
-    inline void SetAppliedWeights(const Aws::Map<Aws::String, double>& value) { m_appliedWeights = value; }
-    inline void SetAppliedWeights(Aws::Map<Aws::String, double>&& value) { m_appliedWeights = std::move(value); }
-    inline GetManagedResourceResult& WithAppliedWeights(const Aws::Map<Aws::String, double>& value) { SetAppliedWeights(value); return *this;}
-    inline GetManagedResourceResult& WithAppliedWeights(Aws::Map<Aws::String, double>&& value) { SetAppliedWeights(std::move(value)); return *this;}
-    inline GetManagedResourceResult& AddAppliedWeights(const Aws::String& key, double value) { m_appliedWeights.emplace(key, value); return *this; }
-    inline GetManagedResourceResult& AddAppliedWeights(Aws::String&& key, double value) { m_appliedWeights.emplace(std::move(key), value); return *this; }
-    inline GetManagedResourceResult& AddAppliedWeights(const char* key, double value) { m_appliedWeights.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, double>& GetAppliedWeights() const { return m_appliedWeights; }
+    template<typename AppliedWeightsT = Aws::Map<Aws::String, double>>
+    void SetAppliedWeights(AppliedWeightsT&& value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights = std::forward<AppliedWeightsT>(value); }
+    template<typename AppliedWeightsT = Aws::Map<Aws::String, double>>
+    GetManagedResourceResult& WithAppliedWeights(AppliedWeightsT&& value) { SetAppliedWeights(std::forward<AppliedWeightsT>(value)); return *this;}
+    inline GetManagedResourceResult& AddAppliedWeights(Aws::String key, double value) {
+      m_appliedWeightsHasBeenSet = true; m_appliedWeights.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetManagedResourceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetManagedResourceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetManagedResourceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetManagedResourceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of the autoshifts that are active for the resource.</p>
      */
-    inline const Aws::Vector<AutoshiftInResource>& GetAutoshifts() const{ return m_autoshifts; }
-    inline void SetAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { m_autoshifts = value; }
-    inline void SetAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { m_autoshifts = std::move(value); }
-    inline GetManagedResourceResult& WithAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { SetAutoshifts(value); return *this;}
-    inline GetManagedResourceResult& WithAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { SetAutoshifts(std::move(value)); return *this;}
-    inline GetManagedResourceResult& AddAutoshifts(const AutoshiftInResource& value) { m_autoshifts.push_back(value); return *this; }
-    inline GetManagedResourceResult& AddAutoshifts(AutoshiftInResource&& value) { m_autoshifts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutoshiftInResource>& GetAutoshifts() const { return m_autoshifts; }
+    template<typename AutoshiftsT = Aws::Vector<AutoshiftInResource>>
+    void SetAutoshifts(AutoshiftsT&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts = std::forward<AutoshiftsT>(value); }
+    template<typename AutoshiftsT = Aws::Vector<AutoshiftInResource>>
+    GetManagedResourceResult& WithAutoshifts(AutoshiftsT&& value) { SetAutoshifts(std::forward<AutoshiftsT>(value)); return *this;}
+    template<typename AutoshiftsT = AutoshiftInResource>
+    GetManagedResourceResult& AddAutoshifts(AutoshiftsT&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts.emplace_back(std::forward<AutoshiftsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetManagedResourceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetManagedResourceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetManagedResourceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetManagedResourceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,11 +94,11 @@ namespace Model
      * <p>The practice run configuration for zonal autoshift that's associated with the
      * resource.</p>
      */
-    inline const PracticeRunConfiguration& GetPracticeRunConfiguration() const{ return m_practiceRunConfiguration; }
-    inline void SetPracticeRunConfiguration(const PracticeRunConfiguration& value) { m_practiceRunConfiguration = value; }
-    inline void SetPracticeRunConfiguration(PracticeRunConfiguration&& value) { m_practiceRunConfiguration = std::move(value); }
-    inline GetManagedResourceResult& WithPracticeRunConfiguration(const PracticeRunConfiguration& value) { SetPracticeRunConfiguration(value); return *this;}
-    inline GetManagedResourceResult& WithPracticeRunConfiguration(PracticeRunConfiguration&& value) { SetPracticeRunConfiguration(std::move(value)); return *this;}
+    inline const PracticeRunConfiguration& GetPracticeRunConfiguration() const { return m_practiceRunConfiguration; }
+    template<typename PracticeRunConfigurationT = PracticeRunConfiguration>
+    void SetPracticeRunConfiguration(PracticeRunConfigurationT&& value) { m_practiceRunConfigurationHasBeenSet = true; m_practiceRunConfiguration = std::forward<PracticeRunConfigurationT>(value); }
+    template<typename PracticeRunConfigurationT = PracticeRunConfiguration>
+    GetManagedResourceResult& WithPracticeRunConfiguration(PracticeRunConfigurationT&& value) { SetPracticeRunConfiguration(std::forward<PracticeRunConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,53 +109,57 @@ namespace Model
      * that there's an issue in the Availability Zone that could potentially affect
      * customers.</p>
      */
-    inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
-    inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }
-    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatus = std::move(value); }
-    inline GetManagedResourceResult& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
-    inline GetManagedResourceResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
+    inline ZonalAutoshiftStatus GetZonalAutoshiftStatus() const { return m_zonalAutoshiftStatus; }
+    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
+    inline GetManagedResourceResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus value) { SetZonalAutoshiftStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The zonal shifts that are currently active for a resource. </p>
      */
-    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const{ return m_zonalShifts; }
-    inline void SetZonalShifts(const Aws::Vector<ZonalShiftInResource>& value) { m_zonalShifts = value; }
-    inline void SetZonalShifts(Aws::Vector<ZonalShiftInResource>&& value) { m_zonalShifts = std::move(value); }
-    inline GetManagedResourceResult& WithZonalShifts(const Aws::Vector<ZonalShiftInResource>& value) { SetZonalShifts(value); return *this;}
-    inline GetManagedResourceResult& WithZonalShifts(Aws::Vector<ZonalShiftInResource>&& value) { SetZonalShifts(std::move(value)); return *this;}
-    inline GetManagedResourceResult& AddZonalShifts(const ZonalShiftInResource& value) { m_zonalShifts.push_back(value); return *this; }
-    inline GetManagedResourceResult& AddZonalShifts(ZonalShiftInResource&& value) { m_zonalShifts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const { return m_zonalShifts; }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    void SetZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = std::forward<ZonalShiftsT>(value); }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    GetManagedResourceResult& WithZonalShifts(ZonalShiftsT&& value) { SetZonalShifts(std::forward<ZonalShiftsT>(value)); return *this;}
+    template<typename ZonalShiftsT = ZonalShiftInResource>
+    GetManagedResourceResult& AddZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.emplace_back(std::forward<ZonalShiftsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, double> m_appliedWeights;
+    bool m_appliedWeightsHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<AutoshiftInResource> m_autoshifts;
+    bool m_autoshiftsHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     PracticeRunConfiguration m_practiceRunConfiguration;
+    bool m_practiceRunConfigurationHasBeenSet = false;
 
-    ZonalAutoshiftStatus m_zonalAutoshiftStatus;
+    ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
+    bool m_zonalAutoshiftStatusHasBeenSet = false;
 
     Aws::Vector<ZonalShiftInResource> m_zonalShifts;
+    bool m_zonalShiftsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

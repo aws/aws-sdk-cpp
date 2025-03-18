@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetPasswordDataRequest::GetPasswordDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetPasswordDataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

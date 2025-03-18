@@ -20,50 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservation::CapacityReservation() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_capacityReservationArnHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_availableInstanceCount(0),
-    m_availableInstanceCountHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ephemeralStorage(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_state(CapacityReservationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_endDateType(EndDateType::NOT_SET),
-    m_endDateTypeHasBeenSet(false),
-    m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false),
-    m_capacityAllocationsHasBeenSet(false),
-    m_reservationType(CapacityReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false),
-    m_unusedReservationBillingOwnerIdHasBeenSet(false),
-    m_commitmentInfoHasBeenSet(false),
-    m_deliveryPreference(CapacityReservationDeliveryPreference::NOT_SET),
-    m_deliveryPreferenceHasBeenSet(false)
-{
-}
-
 CapacityReservation::CapacityReservation(const XmlNode& xmlNode)
-  : CapacityReservation()
 {
   *this = xmlNode;
 }
@@ -107,7 +64,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode instancePlatformNode = resultNode.FirstChild("instancePlatform");
     if(!instancePlatformNode.IsNull())
     {
-      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()).c_str());
+      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()));
       m_instancePlatformHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
@@ -119,7 +76,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
     XmlNode totalInstanceCountNode = resultNode.FirstChild("totalInstanceCount");
@@ -149,7 +106,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
@@ -167,13 +124,13 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode endDateTypeNode = resultNode.FirstChild("endDateType");
     if(!endDateTypeNode.IsNull())
     {
-      m_endDateType = EndDateTypeMapper::GetEndDateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateTypeNode.GetText()).c_str()).c_str());
+      m_endDateType = EndDateTypeMapper::GetEndDateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateTypeNode.GetText()).c_str()));
       m_endDateTypeHasBeenSet = true;
     }
     XmlNode instanceMatchCriteriaNode = resultNode.FirstChild("instanceMatchCriteria");
     if(!instanceMatchCriteriaNode.IsNull())
     {
-      m_instanceMatchCriteria = InstanceMatchCriteriaMapper::GetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()).c_str());
+      m_instanceMatchCriteria = InstanceMatchCriteriaMapper::GetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()));
       m_instanceMatchCriteriaHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
@@ -186,6 +143,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -216,6 +174,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     if(!capacityAllocationsNode.IsNull())
     {
       XmlNode capacityAllocationsMember = capacityAllocationsNode.FirstChild("item");
+      m_capacityAllocationsHasBeenSet = !capacityAllocationsMember.IsNull();
       while(!capacityAllocationsMember.IsNull())
       {
         m_capacityAllocations.push_back(capacityAllocationsMember);
@@ -227,7 +186,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode reservationTypeNode = resultNode.FirstChild("reservationType");
     if(!reservationTypeNode.IsNull())
     {
-      m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()).c_str());
+      m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()));
       m_reservationTypeHasBeenSet = true;
     }
     XmlNode unusedReservationBillingOwnerIdNode = resultNode.FirstChild("unusedReservationBillingOwnerId");
@@ -245,7 +204,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode deliveryPreferenceNode = resultNode.FirstChild("deliveryPreference");
     if(!deliveryPreferenceNode.IsNull())
     {
-      m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()).c_str());
+      m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()));
       m_deliveryPreferenceHasBeenSet = true;
     }
   }

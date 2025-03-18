@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitJA3Fingerprint::RateLimitJA3Fingerprint() : 
-    m_fallbackBehavior(FallbackBehavior::NOT_SET),
-    m_fallbackBehaviorHasBeenSet(false)
-{
-}
-
 RateLimitJA3Fingerprint::RateLimitJA3Fingerprint(JsonView jsonValue)
-  : RateLimitJA3Fingerprint()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RateLimitJA3Fingerprint& RateLimitJA3Fingerprint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FallbackBehavior"))
   {
     m_fallbackBehavior = FallbackBehaviorMapper::GetFallbackBehaviorForName(jsonValue.GetString("FallbackBehavior"));
-
     m_fallbackBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

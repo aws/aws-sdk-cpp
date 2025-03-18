@@ -12,16 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEphemerisRequest::UpdateEphemerisRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ephemerisIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEphemerisRequest::SerializePayload() const
 {
   JsonValue payload;

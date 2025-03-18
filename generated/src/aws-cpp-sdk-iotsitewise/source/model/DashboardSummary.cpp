@@ -18,17 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-DashboardSummary::DashboardSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false)
-{
-}
-
 DashboardSummary::DashboardSummary(JsonView jsonValue)
-  : DashboardSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DashboardSummary& DashboardSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateDate"))
   {
     m_lastUpdateDate = jsonValue.GetDouble("lastUpdateDate");
-
     m_lastUpdateDateHasBeenSet = true;
   }
-
   return *this;
 }
 

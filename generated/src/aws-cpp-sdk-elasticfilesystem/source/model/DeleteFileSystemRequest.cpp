@@ -12,11 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFileSystemRequest::DeleteFileSystemRequest() : 
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFileSystemRequest::SerializePayload() const
 {
   return {};

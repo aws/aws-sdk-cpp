@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DescribeInstanceHealthRequest::DescribeInstanceHealthRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_instancesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class CpuOptionsRequest
   {
   public:
-    AWS_EC2_API CpuOptionsRequest();
+    AWS_EC2_API CpuOptionsRequest() = default;
     AWS_EC2_API CpuOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CpuOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The number of CPU cores for the instance.</p>
      */
-    inline int GetCoreCount() const{ return m_coreCount; }
+    inline int GetCoreCount() const { return m_coreCount; }
     inline bool CoreCountHasBeenSet() const { return m_coreCountHasBeenSet; }
     inline void SetCoreCount(int value) { m_coreCountHasBeenSet = true; m_coreCount = value; }
     inline CpuOptionsRequest& WithCoreCount(int value) { SetCoreCount(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * instance, specify a value of <code>1</code>. Otherwise, specify the default
      * value of <code>2</code>.</p>
      */
-    inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
+    inline int GetThreadsPerCore() const { return m_threadsPerCore; }
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
     inline CpuOptionsRequest& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
@@ -69,22 +69,20 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
      * SEV-SNP</a>.</p>
      */
-    inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
+    inline AmdSevSnpSpecification GetAmdSevSnp() const { return m_amdSevSnp; }
     inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }
-    inline void SetAmdSevSnp(const AmdSevSnpSpecification& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
-    inline void SetAmdSevSnp(AmdSevSnpSpecification&& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = std::move(value); }
-    inline CpuOptionsRequest& WithAmdSevSnp(const AmdSevSnpSpecification& value) { SetAmdSevSnp(value); return *this;}
-    inline CpuOptionsRequest& WithAmdSevSnp(AmdSevSnpSpecification&& value) { SetAmdSevSnp(std::move(value)); return *this;}
+    inline void SetAmdSevSnp(AmdSevSnpSpecification value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
+    inline CpuOptionsRequest& WithAmdSevSnp(AmdSevSnpSpecification value) { SetAmdSevSnp(value); return *this;}
     ///@}
   private:
 
-    int m_coreCount;
+    int m_coreCount{0};
     bool m_coreCountHasBeenSet = false;
 
-    int m_threadsPerCore;
+    int m_threadsPerCore{0};
     bool m_threadsPerCoreHasBeenSet = false;
 
-    AmdSevSnpSpecification m_amdSevSnp;
+    AmdSevSnpSpecification m_amdSevSnp{AmdSevSnpSpecification::NOT_SET};
     bool m_amdSevSnpHasBeenSet = false;
   };
 

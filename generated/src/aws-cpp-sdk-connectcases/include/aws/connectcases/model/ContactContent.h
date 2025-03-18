@@ -33,7 +33,7 @@ namespace Model
   class ContactContent
   {
   public:
-    AWS_CONNECTCASES_API ContactContent();
+    AWS_CONNECTCASES_API ContactContent() = default;
     AWS_CONNECTCASES_API ContactContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API ContactContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A list of channels to filter on for related items of type
      * <code>Contact</code>.</p>
      */
-    inline const Aws::String& GetChannel() const{ return m_channel; }
+    inline const Aws::String& GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Aws::String& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Aws::String&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline void SetChannel(const char* value) { m_channelHasBeenSet = true; m_channel.assign(value); }
-    inline ContactContent& WithChannel(const Aws::String& value) { SetChannel(value); return *this;}
-    inline ContactContent& WithChannel(Aws::String&& value) { SetChannel(std::move(value)); return *this;}
-    inline ContactContent& WithChannel(const char* value) { SetChannel(value); return *this;}
+    template<typename ChannelT = Aws::String>
+    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
+    template<typename ChannelT = Aws::String>
+    ContactContent& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +57,31 @@ namespace Model
      * <p>The difference between the <code>InitiationTimestamp</code> and the
      * <code>DisconnectTimestamp</code> of the contact.</p>
      */
-    inline const Aws::Utils::DateTime& GetConnectedToSystemTime() const{ return m_connectedToSystemTime; }
+    inline const Aws::Utils::DateTime& GetConnectedToSystemTime() const { return m_connectedToSystemTime; }
     inline bool ConnectedToSystemTimeHasBeenSet() const { return m_connectedToSystemTimeHasBeenSet; }
-    inline void SetConnectedToSystemTime(const Aws::Utils::DateTime& value) { m_connectedToSystemTimeHasBeenSet = true; m_connectedToSystemTime = value; }
-    inline void SetConnectedToSystemTime(Aws::Utils::DateTime&& value) { m_connectedToSystemTimeHasBeenSet = true; m_connectedToSystemTime = std::move(value); }
-    inline ContactContent& WithConnectedToSystemTime(const Aws::Utils::DateTime& value) { SetConnectedToSystemTime(value); return *this;}
-    inline ContactContent& WithConnectedToSystemTime(Aws::Utils::DateTime&& value) { SetConnectedToSystemTime(std::move(value)); return *this;}
+    template<typename ConnectedToSystemTimeT = Aws::Utils::DateTime>
+    void SetConnectedToSystemTime(ConnectedToSystemTimeT&& value) { m_connectedToSystemTimeHasBeenSet = true; m_connectedToSystemTime = std::forward<ConnectedToSystemTimeT>(value); }
+    template<typename ConnectedToSystemTimeT = Aws::Utils::DateTime>
+    ContactContent& WithConnectedToSystemTime(ConnectedToSystemTimeT&& value) { SetConnectedToSystemTime(std::forward<ConnectedToSystemTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier of a contact in Amazon Connect.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline ContactContent& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline ContactContent& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline ContactContent& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    ContactContent& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channel;
     bool m_channelHasBeenSet = false;
 
-    Aws::Utils::DateTime m_connectedToSystemTime;
+    Aws::Utils::DateTime m_connectedToSystemTime{};
     bool m_connectedToSystemTimeHasBeenSet = false;
 
     Aws::String m_contactArn;

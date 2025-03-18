@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark() : 
-    m_metricsHasBeenSet(false),
-    m_endpointMetricsHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_invocationEndTimeHasBeenSet(false),
-    m_invocationStartTimeHasBeenSet(false)
-{
-}
-
 RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark(JsonView jsonValue)
-  : RecommendationJobInferenceBenchmark()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ RecommendationJobInferenceBenchmark& RecommendationJobInferenceBenchmark::operat
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointMetrics"))
   {
     m_endpointMetrics = jsonValue.GetObject("EndpointMetrics");
-
     m_endpointMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfiguration"))
   {
     m_endpointConfiguration = jsonValue.GetObject("EndpointConfiguration");
-
     m_endpointConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelConfiguration"))
   {
     m_modelConfiguration = jsonValue.GetObject("ModelConfiguration");
-
     m_modelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationEndTime"))
   {
     m_invocationEndTime = jsonValue.GetDouble("InvocationEndTime");
-
     m_invocationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationStartTime"))
   {
     m_invocationStartTime = jsonValue.GetDouble("InvocationStartTime");
-
     m_invocationStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

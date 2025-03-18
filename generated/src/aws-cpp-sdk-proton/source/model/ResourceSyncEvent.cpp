@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ResourceSyncEvent::ResourceSyncEvent() : 
-    m_eventHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ResourceSyncEvent::ResourceSyncEvent(JsonView jsonValue)
-  : ResourceSyncEvent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourceSyncEvent& ResourceSyncEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetString("event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetDouble("time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

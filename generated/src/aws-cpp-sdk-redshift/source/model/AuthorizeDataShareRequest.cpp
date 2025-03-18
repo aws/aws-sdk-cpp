@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-AuthorizeDataShareRequest::AuthorizeDataShareRequest() : 
-    m_dataShareArnHasBeenSet(false),
-    m_consumerIdentifierHasBeenSet(false),
-    m_allowWrites(false),
-    m_allowWritesHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeDataShareRequest::SerializePayload() const
 {
   Aws::StringStream ss;

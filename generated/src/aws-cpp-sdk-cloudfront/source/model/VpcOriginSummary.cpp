@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-VpcOriginSummary::VpcOriginSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_originEndpointArnHasBeenSet(false)
-{
-}
-
 VpcOriginSummary::VpcOriginSummary(const XmlNode& xmlNode)
-  : VpcOriginSummary()
 {
   *this = xmlNode;
 }

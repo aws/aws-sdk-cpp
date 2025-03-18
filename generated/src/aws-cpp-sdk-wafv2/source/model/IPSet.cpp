@@ -18,19 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-IPSet::IPSet() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iPAddressVersion(IPAddressVersion::NOT_SET),
-    m_iPAddressVersionHasBeenSet(false),
-    m_addressesHasBeenSet(false)
-{
-}
-
 IPSet::IPSet(JsonView jsonValue)
-  : IPSet()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ IPSet& IPSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IPAddressVersion"))
   {
     m_iPAddressVersion = IPAddressVersionMapper::GetIPAddressVersionForName(jsonValue.GetString("IPAddressVersion"));
-
     m_iPAddressVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Addresses"))
   {
     Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
@@ -81,7 +59,6 @@ IPSet& IPSet::operator =(JsonView jsonValue)
     }
     m_addressesHasBeenSet = true;
   }
-
   return *this;
 }
 

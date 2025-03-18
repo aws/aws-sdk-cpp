@@ -36,7 +36,7 @@ namespace Model
   class InstanceGroupModifyConfig
   {
   public:
-    AWS_EMR_API InstanceGroupModifyConfig();
+    AWS_EMR_API InstanceGroupModifyConfig() = default;
     AWS_EMR_API InstanceGroupModifyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceGroupModifyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>Unique ID of the instance group to modify.</p>
      */
-    inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+    inline const Aws::String& GetInstanceGroupId() const { return m_instanceGroupId; }
     inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
-    inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
-    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
-    inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
-    inline InstanceGroupModifyConfig& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
-    inline InstanceGroupModifyConfig& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
-    inline InstanceGroupModifyConfig& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
+    template<typename InstanceGroupIdT = Aws::String>
+    void SetInstanceGroupId(InstanceGroupIdT&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::forward<InstanceGroupIdT>(value); }
+    template<typename InstanceGroupIdT = Aws::String>
+    InstanceGroupModifyConfig& WithInstanceGroupId(InstanceGroupIdT&& value) { SetInstanceGroupId(std::forward<InstanceGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Target size for the instance group.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline InstanceGroupModifyConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -71,60 +69,57 @@ namespace Model
      * <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances,
      * the instance group will not return to its original requested size.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const{ return m_eC2InstanceIdsToTerminate; }
+    inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const { return m_eC2InstanceIdsToTerminate; }
     inline bool EC2InstanceIdsToTerminateHasBeenSet() const { return m_eC2InstanceIdsToTerminateHasBeenSet; }
-    inline void SetEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
-    inline void SetEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = std::move(value); }
-    inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
-    inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { SetEC2InstanceIdsToTerminate(std::move(value)); return *this;}
-    inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const Aws::String& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
-    inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(Aws::String&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(std::move(value)); return *this; }
-    inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const char* value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
+    template<typename EC2InstanceIdsToTerminateT = Aws::Vector<Aws::String>>
+    void SetEC2InstanceIdsToTerminate(EC2InstanceIdsToTerminateT&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = std::forward<EC2InstanceIdsToTerminateT>(value); }
+    template<typename EC2InstanceIdsToTerminateT = Aws::Vector<Aws::String>>
+    InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(EC2InstanceIdsToTerminateT&& value) { SetEC2InstanceIdsToTerminate(std::forward<EC2InstanceIdsToTerminateT>(value)); return *this;}
+    template<typename EC2InstanceIdsToTerminateT = Aws::String>
+    InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(EC2InstanceIdsToTerminateT&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.emplace_back(std::forward<EC2InstanceIdsToTerminateT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Policy for customizing shrink operations.</p>
      */
-    inline const ShrinkPolicy& GetShrinkPolicy() const{ return m_shrinkPolicy; }
+    inline const ShrinkPolicy& GetShrinkPolicy() const { return m_shrinkPolicy; }
     inline bool ShrinkPolicyHasBeenSet() const { return m_shrinkPolicyHasBeenSet; }
-    inline void SetShrinkPolicy(const ShrinkPolicy& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
-    inline void SetShrinkPolicy(ShrinkPolicy&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = std::move(value); }
-    inline InstanceGroupModifyConfig& WithShrinkPolicy(const ShrinkPolicy& value) { SetShrinkPolicy(value); return *this;}
-    inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(std::move(value)); return *this;}
+    template<typename ShrinkPolicyT = ShrinkPolicy>
+    void SetShrinkPolicy(ShrinkPolicyT&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = std::forward<ShrinkPolicyT>(value); }
+    template<typename ShrinkPolicyT = ShrinkPolicy>
+    InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicyT&& value) { SetShrinkPolicy(std::forward<ShrinkPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
      */
-    inline const ReconfigurationType& GetReconfigurationType() const{ return m_reconfigurationType; }
+    inline ReconfigurationType GetReconfigurationType() const { return m_reconfigurationType; }
     inline bool ReconfigurationTypeHasBeenSet() const { return m_reconfigurationTypeHasBeenSet; }
-    inline void SetReconfigurationType(const ReconfigurationType& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = value; }
-    inline void SetReconfigurationType(ReconfigurationType&& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = std::move(value); }
-    inline InstanceGroupModifyConfig& WithReconfigurationType(const ReconfigurationType& value) { SetReconfigurationType(value); return *this;}
-    inline InstanceGroupModifyConfig& WithReconfigurationType(ReconfigurationType&& value) { SetReconfigurationType(std::move(value)); return *this;}
+    inline void SetReconfigurationType(ReconfigurationType value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = value; }
+    inline InstanceGroupModifyConfig& WithReconfigurationType(ReconfigurationType value) { SetReconfigurationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of new or modified configurations to apply for an instance group.</p>
      */
-    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline InstanceGroupModifyConfig& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
-    inline InstanceGroupModifyConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline InstanceGroupModifyConfig& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-    inline InstanceGroupModifyConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    InstanceGroupModifyConfig& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsT = Configuration>
+    InstanceGroupModifyConfig& AddConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace_back(std::forward<ConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
@@ -133,7 +128,7 @@ namespace Model
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet = false;
 
-    ReconfigurationType m_reconfigurationType;
+    ReconfigurationType m_reconfigurationType{ReconfigurationType::NOT_SET};
     bool m_reconfigurationTypeHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;

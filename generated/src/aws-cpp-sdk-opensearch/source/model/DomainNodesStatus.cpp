@@ -18,24 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainNodesStatus::DomainNodesStatus() : 
-    m_nodeIdHasBeenSet(false),
-    m_nodeType(NodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_nodeStatus(NodeStatus::NOT_SET),
-    m_nodeStatusHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_storageVolumeType(VolumeType::NOT_SET),
-    m_storageVolumeTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false)
-{
-}
-
 DomainNodesStatus::DomainNodesStatus(JsonView jsonValue)
-  : DomainNodesStatus()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ DomainNodesStatus& DomainNodesStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = NodeTypeMapper::GetNodeTypeForName(jsonValue.GetString("NodeType"));
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = OpenSearchPartitionInstanceTypeMapper::GetOpenSearchPartitionInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeStatus"))
   {
     m_nodeStatus = NodeStatusMapper::GetNodeStatusForName(jsonValue.GetString("NodeStatus"));
-
     m_nodeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = jsonValue.GetString("StorageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageVolumeType"))
   {
     m_storageVolumeType = VolumeTypeMapper::GetVolumeTypeForName(jsonValue.GetString("StorageVolumeType"));
-
     m_storageVolumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageSize"))
   {
     m_storageSize = jsonValue.GetString("StorageSize");
-
     m_storageSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

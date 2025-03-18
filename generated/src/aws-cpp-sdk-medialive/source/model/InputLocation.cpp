@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputLocation::InputLocation() : 
-    m_passwordParamHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 InputLocation::InputLocation(JsonView jsonValue)
-  : InputLocation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InputLocation& InputLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("passwordParam"))
   {
     m_passwordParam = jsonValue.GetString("passwordParam");
-
     m_passwordParamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

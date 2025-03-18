@@ -33,7 +33,7 @@ namespace Model
   class FindingTypeAggregationResponse
   {
   public:
-    AWS_INSPECTOR2_API FindingTypeAggregationResponse();
+    AWS_INSPECTOR2_API FindingTypeAggregationResponse() = default;
     AWS_INSPECTOR2_API FindingTypeAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FindingTypeAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account associated with the findings.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline FindingTypeAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline FindingTypeAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline FindingTypeAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    FindingTypeAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of findings that have an exploit available.</p>
      */
-    inline long long GetExploitAvailableCount() const{ return m_exploitAvailableCount; }
+    inline long long GetExploitAvailableCount() const { return m_exploitAvailableCount; }
     inline bool ExploitAvailableCountHasBeenSet() const { return m_exploitAvailableCountHasBeenSet; }
     inline void SetExploitAvailableCount(long long value) { m_exploitAvailableCountHasBeenSet = true; m_exploitAvailableCount = value; }
     inline FindingTypeAggregationResponse& WithExploitAvailableCount(long long value) { SetExploitAvailableCount(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p> Details about the number of fixes. </p>
      */
-    inline long long GetFixAvailableCount() const{ return m_fixAvailableCount; }
+    inline long long GetFixAvailableCount() const { return m_fixAvailableCount; }
     inline bool FixAvailableCountHasBeenSet() const { return m_fixAvailableCountHasBeenSet; }
     inline void SetFixAvailableCount(long long value) { m_fixAvailableCountHasBeenSet = true; m_fixAvailableCount = value; }
     inline FindingTypeAggregationResponse& WithFixAvailableCount(long long value) { SetFixAvailableCount(value); return *this;}
@@ -77,22 +75,22 @@ namespace Model
     /**
      * <p>The value to sort results by.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline FindingTypeAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline FindingTypeAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    FindingTypeAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    long long m_exploitAvailableCount;
+    long long m_exploitAvailableCount{0};
     bool m_exploitAvailableCountHasBeenSet = false;
 
-    long long m_fixAvailableCount;
+    long long m_fixAvailableCount{0};
     bool m_fixAvailableCountHasBeenSet = false;
 
     SeverityCounts m_severityCounts;

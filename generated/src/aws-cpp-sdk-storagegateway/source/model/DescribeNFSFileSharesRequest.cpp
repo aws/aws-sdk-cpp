@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNFSFileSharesRequest::DescribeNFSFileSharesRequest() : 
-    m_fileShareARNListHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNFSFileSharesRequest::SerializePayload() const
 {
   JsonValue payload;

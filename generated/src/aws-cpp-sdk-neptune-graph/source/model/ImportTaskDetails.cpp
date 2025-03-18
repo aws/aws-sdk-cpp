@@ -18,25 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ImportTaskDetails::ImportTaskDetails() : 
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timeElapsedSeconds(0),
-    m_timeElapsedSecondsHasBeenSet(false),
-    m_progressPercentage(0),
-    m_progressPercentageHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_statementCount(0),
-    m_statementCountHasBeenSet(false),
-    m_dictionaryEntryCount(0),
-    m_dictionaryEntryCountHasBeenSet(false)
-{
-}
-
 ImportTaskDetails::ImportTaskDetails(JsonView jsonValue)
-  : ImportTaskDetails()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ ImportTaskDetails& ImportTaskDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeElapsedSeconds"))
   {
     m_timeElapsedSeconds = jsonValue.GetInt64("timeElapsedSeconds");
-
     m_timeElapsedSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercentage"))
   {
     m_progressPercentage = jsonValue.GetInteger("progressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCount"))
   {
     m_errorCount = jsonValue.GetInteger("errorCount");
-
     m_errorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetString("errorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statementCount"))
   {
     m_statementCount = jsonValue.GetInt64("statementCount");
-
     m_statementCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dictionaryEntryCount"))
   {
     m_dictionaryEntryCount = jsonValue.GetInt64("dictionaryEntryCount");
-
     m_dictionaryEntryCountHasBeenSet = true;
   }
-
   return *this;
 }
 

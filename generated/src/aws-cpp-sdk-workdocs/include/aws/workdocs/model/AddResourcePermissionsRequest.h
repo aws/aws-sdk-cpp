@@ -24,7 +24,7 @@ namespace Model
   class AddResourcePermissionsRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API AddResourcePermissionsRequest();
+    AWS_WORKDOCS_API AddResourcePermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,54 +42,50 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline AddResourcePermissionsRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline AddResourcePermissionsRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline AddResourcePermissionsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    AddResourcePermissionsRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AddResourcePermissionsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AddResourcePermissionsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AddResourcePermissionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AddResourcePermissionsRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The users, groups, or organization being granted permission.</p>
      */
-    inline const Aws::Vector<SharePrincipal>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<SharePrincipal>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<SharePrincipal>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<SharePrincipal>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline AddResourcePermissionsRequest& WithPrincipals(const Aws::Vector<SharePrincipal>& value) { SetPrincipals(value); return *this;}
-    inline AddResourcePermissionsRequest& WithPrincipals(Aws::Vector<SharePrincipal>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline AddResourcePermissionsRequest& AddPrincipals(const SharePrincipal& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline AddResourcePermissionsRequest& AddPrincipals(SharePrincipal&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
+    template<typename PrincipalsT = Aws::Vector<SharePrincipal>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<SharePrincipal>>
+    AddResourcePermissionsRequest& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = SharePrincipal>
+    AddResourcePermissionsRequest& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The notification options.</p>
      */
-    inline const NotificationOptions& GetNotificationOptions() const{ return m_notificationOptions; }
+    inline const NotificationOptions& GetNotificationOptions() const { return m_notificationOptions; }
     inline bool NotificationOptionsHasBeenSet() const { return m_notificationOptionsHasBeenSet; }
-    inline void SetNotificationOptions(const NotificationOptions& value) { m_notificationOptionsHasBeenSet = true; m_notificationOptions = value; }
-    inline void SetNotificationOptions(NotificationOptions&& value) { m_notificationOptionsHasBeenSet = true; m_notificationOptions = std::move(value); }
-    inline AddResourcePermissionsRequest& WithNotificationOptions(const NotificationOptions& value) { SetNotificationOptions(value); return *this;}
-    inline AddResourcePermissionsRequest& WithNotificationOptions(NotificationOptions&& value) { SetNotificationOptions(std::move(value)); return *this;}
+    template<typename NotificationOptionsT = NotificationOptions>
+    void SetNotificationOptions(NotificationOptionsT&& value) { m_notificationOptionsHasBeenSet = true; m_notificationOptions = std::forward<NotificationOptionsT>(value); }
+    template<typename NotificationOptionsT = NotificationOptions>
+    AddResourcePermissionsRequest& WithNotificationOptions(NotificationOptionsT&& value) { SetNotificationOptions(std::forward<NotificationOptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SubnetIPAddressLimitReachedException::SubnetIPAddressLimitReachedException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 SubnetIPAddressLimitReachedException::SubnetIPAddressLimitReachedException(JsonView jsonValue)
-  : SubnetIPAddressLimitReachedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubnetIPAddressLimitReachedException& SubnetIPAddressLimitReachedException::oper
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

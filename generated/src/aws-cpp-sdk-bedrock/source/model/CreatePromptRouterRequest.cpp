@@ -12,18 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePromptRouterRequest::CreatePromptRouterRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_promptRouterNameHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingCriteriaHasBeenSet(false),
-    m_fallbackModelHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePromptRouterRequest::SerializePayload() const
 {
   JsonValue payload;

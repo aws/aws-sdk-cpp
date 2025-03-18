@@ -12,15 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebootReplicationInstanceRequest::RebootReplicationInstanceRequest() : 
-    m_replicationInstanceArnHasBeenSet(false),
-    m_forceFailover(false),
-    m_forceFailoverHasBeenSet(false),
-    m_forcePlannedFailover(false),
-    m_forcePlannedFailoverHasBeenSet(false)
-{
-}
-
 Aws::String RebootReplicationInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

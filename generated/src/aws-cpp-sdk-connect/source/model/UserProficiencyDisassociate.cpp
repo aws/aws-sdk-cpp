@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserProficiencyDisassociate::UserProficiencyDisassociate() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 UserProficiencyDisassociate::UserProficiencyDisassociate(JsonView jsonValue)
-  : UserProficiencyDisassociate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserProficiencyDisassociate& UserProficiencyDisassociate::operator =(JsonView js
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeValue"))
   {
     m_attributeValue = jsonValue.GetString("AttributeValue");
-
     m_attributeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

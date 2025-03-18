@@ -22,7 +22,7 @@ namespace Model
   class SendMessagesRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API SendMessagesRequest();
+    AWS_PINPOINT_API SendMessagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline SendMessagesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline SendMessagesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline SendMessagesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    SendMessagesRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MessageRequest& GetMessageRequest() const{ return m_messageRequest; }
+    inline const MessageRequest& GetMessageRequest() const { return m_messageRequest; }
     inline bool MessageRequestHasBeenSet() const { return m_messageRequestHasBeenSet; }
-    inline void SetMessageRequest(const MessageRequest& value) { m_messageRequestHasBeenSet = true; m_messageRequest = value; }
-    inline void SetMessageRequest(MessageRequest&& value) { m_messageRequestHasBeenSet = true; m_messageRequest = std::move(value); }
-    inline SendMessagesRequest& WithMessageRequest(const MessageRequest& value) { SetMessageRequest(value); return *this;}
-    inline SendMessagesRequest& WithMessageRequest(MessageRequest&& value) { SetMessageRequest(std::move(value)); return *this;}
+    template<typename MessageRequestT = MessageRequest>
+    void SetMessageRequest(MessageRequestT&& value) { m_messageRequestHasBeenSet = true; m_messageRequest = std::forward<MessageRequestT>(value); }
+    template<typename MessageRequestT = MessageRequest>
+    SendMessagesRequest& WithMessageRequest(MessageRequestT&& value) { SetMessageRequest(std::forward<MessageRequestT>(value)); return *this;}
     ///@}
   private:
 

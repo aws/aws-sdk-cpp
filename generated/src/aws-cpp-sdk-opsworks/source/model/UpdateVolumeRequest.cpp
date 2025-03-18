@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVolumeRequest::UpdateVolumeRequest() : 
-    m_volumeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mountPointHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ServerStrategy
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStrategy();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStrategy() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> Set to true if the recommendation is set as preferred. </p>
      */
-    inline bool GetIsPreferred() const{ return m_isPreferred; }
+    inline bool GetIsPreferred() const { return m_isPreferred; }
     inline bool IsPreferredHasBeenSet() const { return m_isPreferredHasBeenSet; }
     inline void SetIsPreferred(bool value) { m_isPreferredHasBeenSet = true; m_isPreferred = value; }
     inline ServerStrategy& WithIsPreferred(bool value) { SetIsPreferred(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p> The number of application components with this strategy recommendation
      * running on the server. </p>
      */
-    inline int GetNumberOfApplicationComponents() const{ return m_numberOfApplicationComponents; }
+    inline int GetNumberOfApplicationComponents() const { return m_numberOfApplicationComponents; }
     inline bool NumberOfApplicationComponentsHasBeenSet() const { return m_numberOfApplicationComponentsHasBeenSet; }
     inline void SetNumberOfApplicationComponents(int value) { m_numberOfApplicationComponentsHasBeenSet = true; m_numberOfApplicationComponents = value; }
     inline ServerStrategy& WithNumberOfApplicationComponents(int value) { SetNumberOfApplicationComponents(value); return *this;}
@@ -64,37 +64,35 @@ namespace Model
     /**
      * <p> Strategy recommendation for the server. </p>
      */
-    inline const RecommendationSet& GetRecommendation() const{ return m_recommendation; }
+    inline const RecommendationSet& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const RecommendationSet& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(RecommendationSet&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline ServerStrategy& WithRecommendation(const RecommendationSet& value) { SetRecommendation(value); return *this;}
-    inline ServerStrategy& WithRecommendation(RecommendationSet&& value) { SetRecommendation(std::move(value)); return *this;}
+    template<typename RecommendationT = RecommendationSet>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = RecommendationSet>
+    ServerStrategy& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The recommendation status of the strategy for the server. </p>
      */
-    inline const StrategyRecommendation& GetStatus() const{ return m_status; }
+    inline StrategyRecommendation GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StrategyRecommendation& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StrategyRecommendation&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ServerStrategy& WithStatus(const StrategyRecommendation& value) { SetStatus(value); return *this;}
-    inline ServerStrategy& WithStatus(StrategyRecommendation&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StrategyRecommendation value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServerStrategy& WithStatus(StrategyRecommendation value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    bool m_isPreferred;
+    bool m_isPreferred{false};
     bool m_isPreferredHasBeenSet = false;
 
-    int m_numberOfApplicationComponents;
+    int m_numberOfApplicationComponents{0};
     bool m_numberOfApplicationComponentsHasBeenSet = false;
 
     RecommendationSet m_recommendation;
     bool m_recommendationHasBeenSet = false;
 
-    StrategyRecommendation m_status;
+    StrategyRecommendation m_status{StrategyRecommendation::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,30 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Control::Control() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(ControlType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_testingInformationHasBeenSet(false),
-    m_actionPlanTitleHasBeenSet(false),
-    m_actionPlanInstructionsHasBeenSet(false),
-    m_controlSourcesHasBeenSet(false),
-    m_controlMappingSourcesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_state(ControlState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Control::Control(JsonView jsonValue)
-  : Control()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ Control& Control::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ControlTypeMapper::GetControlTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testingInformation"))
   {
     m_testingInformation = jsonValue.GetString("testingInformation");
-
     m_testingInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionPlanTitle"))
   {
     m_actionPlanTitle = jsonValue.GetString("actionPlanTitle");
-
     m_actionPlanTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionPlanInstructions"))
   {
     m_actionPlanInstructions = jsonValue.GetString("actionPlanInstructions");
-
     m_actionPlanInstructionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlSources"))
   {
     m_controlSources = jsonValue.GetString("controlSources");
-
     m_controlSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlMappingSources"))
   {
     Aws::Utils::Array<JsonView> controlMappingSourcesJsonList = jsonValue.GetArray("controlMappingSources");
@@ -120,35 +79,26 @@ Control& Control::operator =(JsonView jsonValue)
     }
     m_controlMappingSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -158,14 +108,11 @@ Control& Control::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ControlStateMapper::GetControlStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-NumberFilter::NumberFilter() : 
-    m_lowerInclusive(0.0),
-    m_lowerInclusiveHasBeenSet(false),
-    m_upperInclusive(0.0),
-    m_upperInclusiveHasBeenSet(false)
-{
-}
-
 NumberFilter::NumberFilter(JsonView jsonValue)
-  : NumberFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NumberFilter& NumberFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lowerInclusive"))
   {
     m_lowerInclusive = jsonValue.GetDouble("lowerInclusive");
-
     m_lowerInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperInclusive"))
   {
     m_upperInclusive = jsonValue.GetDouble("upperInclusive");
-
     m_upperInclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

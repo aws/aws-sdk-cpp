@@ -30,7 +30,7 @@ namespace Model
   class ListCallAnalyticsJobsResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ListCallAnalyticsJobsResult();
+    AWS_TRANSCRIBESERVICE_API ListCallAnalyticsJobsResult() = default;
     AWS_TRANSCRIBESERVICE_API ListCallAnalyticsJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API ListCallAnalyticsJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,9 @@ namespace Model
      * <p>Lists all Call Analytics jobs that have the status specified in your request.
      * Jobs are ordered by creation date, with the newest job first.</p>
      */
-    inline const CallAnalyticsJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const CallAnalyticsJobStatus& value) { m_status = value; }
-    inline void SetStatus(CallAnalyticsJobStatus&& value) { m_status = std::move(value); }
-    inline ListCallAnalyticsJobsResult& WithStatus(const CallAnalyticsJobStatus& value) { SetStatus(value); return *this;}
-    inline ListCallAnalyticsJobsResult& WithStatus(CallAnalyticsJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline CallAnalyticsJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(CallAnalyticsJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListCallAnalyticsJobsResult& WithStatus(CallAnalyticsJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -55,47 +53,47 @@ namespace Model
      * then run your request again including <code>NextToken</code> with the value of
      * the copied string. Repeat as needed to view all your results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCallAnalyticsJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCallAnalyticsJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCallAnalyticsJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCallAnalyticsJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides a summary of information about each result.</p>
      */
-    inline const Aws::Vector<CallAnalyticsJobSummary>& GetCallAnalyticsJobSummaries() const{ return m_callAnalyticsJobSummaries; }
-    inline void SetCallAnalyticsJobSummaries(const Aws::Vector<CallAnalyticsJobSummary>& value) { m_callAnalyticsJobSummaries = value; }
-    inline void SetCallAnalyticsJobSummaries(Aws::Vector<CallAnalyticsJobSummary>&& value) { m_callAnalyticsJobSummaries = std::move(value); }
-    inline ListCallAnalyticsJobsResult& WithCallAnalyticsJobSummaries(const Aws::Vector<CallAnalyticsJobSummary>& value) { SetCallAnalyticsJobSummaries(value); return *this;}
-    inline ListCallAnalyticsJobsResult& WithCallAnalyticsJobSummaries(Aws::Vector<CallAnalyticsJobSummary>&& value) { SetCallAnalyticsJobSummaries(std::move(value)); return *this;}
-    inline ListCallAnalyticsJobsResult& AddCallAnalyticsJobSummaries(const CallAnalyticsJobSummary& value) { m_callAnalyticsJobSummaries.push_back(value); return *this; }
-    inline ListCallAnalyticsJobsResult& AddCallAnalyticsJobSummaries(CallAnalyticsJobSummary&& value) { m_callAnalyticsJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CallAnalyticsJobSummary>& GetCallAnalyticsJobSummaries() const { return m_callAnalyticsJobSummaries; }
+    template<typename CallAnalyticsJobSummariesT = Aws::Vector<CallAnalyticsJobSummary>>
+    void SetCallAnalyticsJobSummaries(CallAnalyticsJobSummariesT&& value) { m_callAnalyticsJobSummariesHasBeenSet = true; m_callAnalyticsJobSummaries = std::forward<CallAnalyticsJobSummariesT>(value); }
+    template<typename CallAnalyticsJobSummariesT = Aws::Vector<CallAnalyticsJobSummary>>
+    ListCallAnalyticsJobsResult& WithCallAnalyticsJobSummaries(CallAnalyticsJobSummariesT&& value) { SetCallAnalyticsJobSummaries(std::forward<CallAnalyticsJobSummariesT>(value)); return *this;}
+    template<typename CallAnalyticsJobSummariesT = CallAnalyticsJobSummary>
+    ListCallAnalyticsJobsResult& AddCallAnalyticsJobSummaries(CallAnalyticsJobSummariesT&& value) { m_callAnalyticsJobSummariesHasBeenSet = true; m_callAnalyticsJobSummaries.emplace_back(std::forward<CallAnalyticsJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCallAnalyticsJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCallAnalyticsJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCallAnalyticsJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCallAnalyticsJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CallAnalyticsJobStatus m_status;
+    CallAnalyticsJobStatus m_status{CallAnalyticsJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CallAnalyticsJobSummary> m_callAnalyticsJobSummaries;
+    bool m_callAnalyticsJobSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-JobStepRestartMarker::JobStepRestartMarker() : 
-    m_fromProcStepHasBeenSet(false),
-    m_fromStepHasBeenSet(false),
-    m_toProcStepHasBeenSet(false),
-    m_toStepHasBeenSet(false)
-{
-}
-
 JobStepRestartMarker::JobStepRestartMarker(JsonView jsonValue)
-  : JobStepRestartMarker()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ JobStepRestartMarker& JobStepRestartMarker::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fromProcStep"))
   {
     m_fromProcStep = jsonValue.GetString("fromProcStep");
-
     m_fromProcStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromStep"))
   {
     m_fromStep = jsonValue.GetString("fromStep");
-
     m_fromStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toProcStep"))
   {
     m_toProcStep = jsonValue.GetString("toProcStep");
-
     m_toProcStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toStep"))
   {
     m_toStep = jsonValue.GetString("toStep");
-
     m_toStepHasBeenSet = true;
   }
-
   return *this;
 }
 

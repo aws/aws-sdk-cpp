@@ -21,7 +21,7 @@ namespace Model
   class DeleteTestSuiteRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API DeleteTestSuiteRequest();
+    AWS_APPTEST_API DeleteTestSuiteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The test ID of the test suite.</p>
      */
-    inline const Aws::String& GetTestSuiteId() const{ return m_testSuiteId; }
+    inline const Aws::String& GetTestSuiteId() const { return m_testSuiteId; }
     inline bool TestSuiteIdHasBeenSet() const { return m_testSuiteIdHasBeenSet; }
-    inline void SetTestSuiteId(const Aws::String& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = value; }
-    inline void SetTestSuiteId(Aws::String&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::move(value); }
-    inline void SetTestSuiteId(const char* value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId.assign(value); }
-    inline DeleteTestSuiteRequest& WithTestSuiteId(const Aws::String& value) { SetTestSuiteId(value); return *this;}
-    inline DeleteTestSuiteRequest& WithTestSuiteId(Aws::String&& value) { SetTestSuiteId(std::move(value)); return *this;}
-    inline DeleteTestSuiteRequest& WithTestSuiteId(const char* value) { SetTestSuiteId(value); return *this;}
+    template<typename TestSuiteIdT = Aws::String>
+    void SetTestSuiteId(TestSuiteIdT&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::forward<TestSuiteIdT>(value); }
+    template<typename TestSuiteIdT = Aws::String>
+    DeleteTestSuiteRequest& WithTestSuiteId(TestSuiteIdT&& value) { SetTestSuiteId(std::forward<TestSuiteIdT>(value)); return *this;}
     ///@}
   private:
 

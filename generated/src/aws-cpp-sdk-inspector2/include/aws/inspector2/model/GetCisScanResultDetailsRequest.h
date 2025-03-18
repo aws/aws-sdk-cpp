@@ -24,7 +24,7 @@ namespace Model
   class GetCisScanResultDetailsRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API GetCisScanResultDetailsRequest();
+    AWS_INSPECTOR2_API GetCisScanResultDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetCisScanResultDetailsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetCisScanResultDetailsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetCisScanResultDetailsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter criteria.</p>
      */
-    inline const CisScanResultDetailsFilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const CisScanResultDetailsFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const CisScanResultDetailsFilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(CisScanResultDetailsFilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline GetCisScanResultDetailsRequest& WithFilterCriteria(const CisScanResultDetailsFilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithFilterCriteria(CisScanResultDetailsFilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = CisScanResultDetailsFilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = CisScanResultDetailsFilterCriteria>
+    GetCisScanResultDetailsRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * <p>The maximum number of CIS scan result details to be returned in a single page
      * of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCisScanResultDetailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -77,66 +75,56 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetCisScanResultDetailsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCisScanResultDetailsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCisScanResultDetailsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan ARN.</p>
      */
-    inline const Aws::String& GetScanArn() const{ return m_scanArn; }
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
     inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    inline void SetScanArn(const Aws::String& value) { m_scanArnHasBeenSet = true; m_scanArn = value; }
-    inline void SetScanArn(Aws::String&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::move(value); }
-    inline void SetScanArn(const char* value) { m_scanArnHasBeenSet = true; m_scanArn.assign(value); }
-    inline GetCisScanResultDetailsRequest& WithScanArn(const Aws::String& value) { SetScanArn(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithScanArn(Aws::String&& value) { SetScanArn(std::move(value)); return *this;}
-    inline GetCisScanResultDetailsRequest& WithScanArn(const char* value) { SetScanArn(value); return *this;}
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    GetCisScanResultDetailsRequest& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort by order.</p>
      */
-    inline const CisScanResultDetailsSortBy& GetSortBy() const{ return m_sortBy; }
+    inline CisScanResultDetailsSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const CisScanResultDetailsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(CisScanResultDetailsSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetCisScanResultDetailsRequest& WithSortBy(const CisScanResultDetailsSortBy& value) { SetSortBy(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithSortBy(CisScanResultDetailsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(CisScanResultDetailsSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline GetCisScanResultDetailsRequest& WithSortBy(CisScanResultDetailsSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order.</p>
      */
-    inline const CisSortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline CisSortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const CisSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(CisSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline GetCisScanResultDetailsRequest& WithSortOrder(const CisSortOrder& value) { SetSortOrder(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithSortOrder(CisSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(CisSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline GetCisScanResultDetailsRequest& WithSortOrder(CisSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target resource ID.</p>
      */
-    inline const Aws::String& GetTargetResourceId() const{ return m_targetResourceId; }
+    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
     inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
-    inline void SetTargetResourceId(const Aws::String& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = value; }
-    inline void SetTargetResourceId(Aws::String&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::move(value); }
-    inline void SetTargetResourceId(const char* value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId.assign(value); }
-    inline GetCisScanResultDetailsRequest& WithTargetResourceId(const Aws::String& value) { SetTargetResourceId(value); return *this;}
-    inline GetCisScanResultDetailsRequest& WithTargetResourceId(Aws::String&& value) { SetTargetResourceId(std::move(value)); return *this;}
-    inline GetCisScanResultDetailsRequest& WithTargetResourceId(const char* value) { SetTargetResourceId(value); return *this;}
+    template<typename TargetResourceIdT = Aws::String>
+    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
+    template<typename TargetResourceIdT = Aws::String>
+    GetCisScanResultDetailsRequest& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -146,7 +134,7 @@ namespace Model
     CisScanResultDetailsFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -155,10 +143,10 @@ namespace Model
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;
 
-    CisScanResultDetailsSortBy m_sortBy;
+    CisScanResultDetailsSortBy m_sortBy{CisScanResultDetailsSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    CisSortOrder m_sortOrder;
+    CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_targetResourceId;

@@ -22,7 +22,7 @@ namespace Model
   class CreateIngestionRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API CreateIngestionRequest();
+    AWS_QUICKSIGHT_API CreateIngestionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,54 +37,46 @@ namespace Model
     /**
      * <p>The ID of the dataset used in the ingestion.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline CreateIngestionRequest& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline CreateIngestionRequest& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    CreateIngestionRequest& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ID for the ingestion.</p>
      */
-    inline const Aws::String& GetIngestionId() const{ return m_ingestionId; }
+    inline const Aws::String& GetIngestionId() const { return m_ingestionId; }
     inline bool IngestionIdHasBeenSet() const { return m_ingestionIdHasBeenSet; }
-    inline void SetIngestionId(const Aws::String& value) { m_ingestionIdHasBeenSet = true; m_ingestionId = value; }
-    inline void SetIngestionId(Aws::String&& value) { m_ingestionIdHasBeenSet = true; m_ingestionId = std::move(value); }
-    inline void SetIngestionId(const char* value) { m_ingestionIdHasBeenSet = true; m_ingestionId.assign(value); }
-    inline CreateIngestionRequest& WithIngestionId(const Aws::String& value) { SetIngestionId(value); return *this;}
-    inline CreateIngestionRequest& WithIngestionId(Aws::String&& value) { SetIngestionId(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithIngestionId(const char* value) { SetIngestionId(value); return *this;}
+    template<typename IngestionIdT = Aws::String>
+    void SetIngestionId(IngestionIdT&& value) { m_ingestionIdHasBeenSet = true; m_ingestionId = std::forward<IngestionIdT>(value); }
+    template<typename IngestionIdT = Aws::String>
+    CreateIngestionRequest& WithIngestionId(IngestionIdT&& value) { SetIngestionId(std::forward<IngestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline CreateIngestionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline CreateIngestionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline CreateIngestionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    CreateIngestionRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of ingestion that you want to create.</p>
      */
-    inline const IngestionType& GetIngestionType() const{ return m_ingestionType; }
+    inline IngestionType GetIngestionType() const { return m_ingestionType; }
     inline bool IngestionTypeHasBeenSet() const { return m_ingestionTypeHasBeenSet; }
-    inline void SetIngestionType(const IngestionType& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = value; }
-    inline void SetIngestionType(IngestionType&& value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = std::move(value); }
-    inline CreateIngestionRequest& WithIngestionType(const IngestionType& value) { SetIngestionType(value); return *this;}
-    inline CreateIngestionRequest& WithIngestionType(IngestionType&& value) { SetIngestionType(std::move(value)); return *this;}
+    inline void SetIngestionType(IngestionType value) { m_ingestionTypeHasBeenSet = true; m_ingestionType = value; }
+    inline CreateIngestionRequest& WithIngestionType(IngestionType value) { SetIngestionType(value); return *this;}
     ///@}
   private:
 
@@ -97,7 +89,7 @@ namespace Model
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    IngestionType m_ingestionType;
+    IngestionType m_ingestionType{IngestionType::NOT_SET};
     bool m_ingestionTypeHasBeenSet = false;
   };
 

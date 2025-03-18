@@ -22,7 +22,7 @@ namespace Model
   class ListAccountSettingsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListAccountSettingsRequest();
+    AWS_ECS_API ListAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
     /**
      * <p>The name of the account setting you want to list the settings for.</p>
      */
-    inline const SettingName& GetName() const{ return m_name; }
+    inline SettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ListAccountSettingsRequest& WithName(const SettingName& value) { SetName(value); return *this;}
-    inline ListAccountSettingsRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SettingName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ListAccountSettingsRequest& WithName(SettingName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ListAccountSettingsRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ListAccountSettingsRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ListAccountSettingsRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ListAccountSettingsRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * authenticated user.</p>  <p>Federated users assume the account setting of
      * the root user and can't have explicit account settings set for them.</p> 
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline ListAccountSettingsRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline ListAccountSettingsRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline ListAccountSettingsRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    ListAccountSettingsRequest& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * settings for the <code>principalArn</code> are returned if they're set.
      * Otherwise, no account settings are returned.</p>
      */
-    inline bool GetEffectiveSettings() const{ return m_effectiveSettings; }
+    inline bool GetEffectiveSettings() const { return m_effectiveSettings; }
     inline bool EffectiveSettingsHasBeenSet() const { return m_effectiveSettingsHasBeenSet; }
     inline void SetEffectiveSettings(bool value) { m_effectiveSettingsHasBeenSet = true; m_effectiveSettings = value; }
     inline ListAccountSettingsRequest& WithEffectiveSettings(bool value) { SetEffectiveSettings(value); return *this;}
@@ -103,14 +97,12 @@ namespace Model
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccountSettingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountSettingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountSettingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountSettingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +117,14 @@ namespace Model
      * parameter isn't used, then <code>ListAccountSettings</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccountSettingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    SettingName m_name;
+    SettingName m_name{SettingName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
@@ -141,13 +133,13 @@ namespace Model
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet = false;
 
-    bool m_effectiveSettings;
+    bool m_effectiveSettings{false};
     bool m_effectiveSettingsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

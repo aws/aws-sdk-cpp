@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMessageInsightsResult::GetMessageInsightsResult()
-{
-}
-
 GetMessageInsightsResult::GetMessageInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetMessageInsightsResult& GetMessageInsightsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
+    m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromEmailAddress"))
   {
     m_fromEmailAddress = jsonValue.GetString("FromEmailAddress");
-
+    m_fromEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
+    m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailTags"))
   {
     Aws::Utils::Array<JsonView> emailTagsJsonList = jsonValue.GetArray("EmailTags");
@@ -54,8 +47,8 @@ GetMessageInsightsResult& GetMessageInsightsResult::operator =(const Aws::Amazon
     {
       m_emailTags.push_back(emailTagsJsonList[emailTagsIndex].AsObject());
     }
+    m_emailTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insights"))
   {
     Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("Insights");
@@ -63,14 +56,15 @@ GetMessageInsightsResult& GetMessageInsightsResult::operator =(const Aws::Amazon
     {
       m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
     }
+    m_insightsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

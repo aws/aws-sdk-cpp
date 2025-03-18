@@ -25,7 +25,7 @@ namespace Model
   class ListNamespacesRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API ListNamespacesRequest();
+    AWS_S3TABLES_API ListNamespacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table bucket.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline ListNamespacesRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline ListNamespacesRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline ListNamespacesRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    ListNamespacesRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix of the namespaces.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ListNamespacesRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListNamespacesRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListNamespacesRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListNamespacesRequest& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * obfuscated and is not a real key. You can use this
      * <code>ContinuationToken</code> for pagination of the list results.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline ListNamespacesRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListNamespacesRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListNamespacesRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListNamespacesRequest& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of namespaces to return in the list.</p>
      */
-    inline int GetMaxNamespaces() const{ return m_maxNamespaces; }
+    inline int GetMaxNamespaces() const { return m_maxNamespaces; }
     inline bool MaxNamespacesHasBeenSet() const { return m_maxNamespacesHasBeenSet; }
     inline void SetMaxNamespaces(int value) { m_maxNamespacesHasBeenSet = true; m_maxNamespaces = value; }
     inline ListNamespacesRequest& WithMaxNamespaces(int value) { SetMaxNamespaces(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet = false;
 
-    int m_maxNamespaces;
+    int m_maxNamespaces{0};
     bool m_maxNamespacesHasBeenSet = false;
   };
 

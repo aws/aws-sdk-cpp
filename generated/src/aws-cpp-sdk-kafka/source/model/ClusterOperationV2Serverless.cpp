@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClusterOperationV2Serverless::ClusterOperationV2Serverless() : 
-    m_vpcConnectionInfoHasBeenSet(false)
-{
-}
-
 ClusterOperationV2Serverless::ClusterOperationV2Serverless(JsonView jsonValue)
-  : ClusterOperationV2Serverless()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClusterOperationV2Serverless& ClusterOperationV2Serverless::operator =(JsonView 
   if(jsonValue.ValueExists("vpcConnectionInfo"))
   {
     m_vpcConnectionInfo = jsonValue.GetObject("vpcConnectionInfo");
-
     m_vpcConnectionInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

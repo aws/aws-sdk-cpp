@@ -21,7 +21,7 @@ namespace Model
   class GetAddonSubscriptionRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API GetAddonSubscriptionRequest();
+    AWS_MAILMANAGER_API GetAddonSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Add On subscription ID to retrieve information for.</p>
      */
-    inline const Aws::String& GetAddonSubscriptionId() const{ return m_addonSubscriptionId; }
+    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
     inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
-    inline void SetAddonSubscriptionId(const Aws::String& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = value; }
-    inline void SetAddonSubscriptionId(Aws::String&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::move(value); }
-    inline void SetAddonSubscriptionId(const char* value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId.assign(value); }
-    inline GetAddonSubscriptionRequest& WithAddonSubscriptionId(const Aws::String& value) { SetAddonSubscriptionId(value); return *this;}
-    inline GetAddonSubscriptionRequest& WithAddonSubscriptionId(Aws::String&& value) { SetAddonSubscriptionId(std::move(value)); return *this;}
-    inline GetAddonSubscriptionRequest& WithAddonSubscriptionId(const char* value) { SetAddonSubscriptionId(value); return *this;}
+    template<typename AddonSubscriptionIdT = Aws::String>
+    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    GetAddonSubscriptionRequest& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
     ///@}
   private:
 

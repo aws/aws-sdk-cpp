@@ -18,17 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-Receipt::Receipt() : 
-    m_contactChannelArnHasBeenSet(false),
-    m_receiptType(ReceiptType::NOT_SET),
-    m_receiptTypeHasBeenSet(false),
-    m_receiptInfoHasBeenSet(false),
-    m_receiptTimeHasBeenSet(false)
-{
-}
-
 Receipt::Receipt(JsonView jsonValue)
-  : Receipt()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Receipt& Receipt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactChannelArn"))
   {
     m_contactChannelArn = jsonValue.GetString("ContactChannelArn");
-
     m_contactChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptType"))
   {
     m_receiptType = ReceiptTypeMapper::GetReceiptTypeForName(jsonValue.GetString("ReceiptType"));
-
     m_receiptTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptInfo"))
   {
     m_receiptInfo = jsonValue.GetString("ReceiptInfo");
-
     m_receiptInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptTime"))
   {
     m_receiptTime = jsonValue.GetDouble("ReceiptTime");
-
     m_receiptTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

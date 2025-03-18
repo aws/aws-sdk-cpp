@@ -27,7 +27,7 @@ namespace Model
   class SetIdentityPoolRolesRequest : public CognitoIdentityRequest
   {
   public:
-    AWS_COGNITOIDENTITY_API SetIdentityPoolRolesRequest();
+    AWS_COGNITOIDENTITY_API SetIdentityPoolRolesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline SetIdentityPoolRolesRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline SetIdentityPoolRolesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline SetIdentityPoolRolesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    SetIdentityPoolRolesRequest& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,16 @@ namespace Model
      * either "authenticated" or "unauthenticated" and the value will be the Role
      * ARN.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRoles() const{ return m_roles; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRoles() const { return m_roles; }
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
-    inline void SetRoles(const Aws::Map<Aws::String, Aws::String>& value) { m_rolesHasBeenSet = true; m_roles = value; }
-    inline void SetRoles(Aws::Map<Aws::String, Aws::String>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
-    inline SetIdentityPoolRolesRequest& WithRoles(const Aws::Map<Aws::String, Aws::String>& value) { SetRoles(value); return *this;}
-    inline SetIdentityPoolRolesRequest& WithRoles(Aws::Map<Aws::String, Aws::String>&& value) { SetRoles(std::move(value)); return *this;}
-    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, value); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const Aws::String& value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), value); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(const Aws::String& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, Aws::String&& value) { m_rolesHasBeenSet = true; m_roles.emplace(key, std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(Aws::String&& key, const char* value) { m_rolesHasBeenSet = true; m_roles.emplace(std::move(key), value); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoles(const char* key, const char* value) { m_rolesHasBeenSet = true; m_roles.emplace(key, value); return *this; }
+    template<typename RolesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles = std::forward<RolesT>(value); }
+    template<typename RolesT = Aws::Map<Aws::String, Aws::String>>
+    SetIdentityPoolRolesRequest& WithRoles(RolesT&& value) { SetRoles(std::forward<RolesT>(value)); return *this;}
+    template<typename RolesKeyT = Aws::String, typename RolesValueT = Aws::String>
+    SetIdentityPoolRolesRequest& AddRoles(RolesKeyT&& key, RolesValueT&& value) {
+      m_rolesHasBeenSet = true; m_roles.emplace(std::forward<RolesKeyT>(key), std::forward<RolesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -83,18 +78,16 @@ namespace Model
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id</code>.</p>
      * <p>Up to 25 rules can be specified per identity provider.</p>
      */
-    inline const Aws::Map<Aws::String, RoleMapping>& GetRoleMappings() const{ return m_roleMappings; }
+    inline const Aws::Map<Aws::String, RoleMapping>& GetRoleMappings() const { return m_roleMappings; }
     inline bool RoleMappingsHasBeenSet() const { return m_roleMappingsHasBeenSet; }
-    inline void SetRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = value; }
-    inline void SetRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = std::move(value); }
-    inline SetIdentityPoolRolesRequest& WithRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { SetRoleMappings(value); return *this;}
-    inline SetIdentityPoolRolesRequest& WithRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { SetRoleMappings(std::move(value)); return *this;}
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), value); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
-    inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
+    template<typename RoleMappingsT = Aws::Map<Aws::String, RoleMapping>>
+    void SetRoleMappings(RoleMappingsT&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = std::forward<RoleMappingsT>(value); }
+    template<typename RoleMappingsT = Aws::Map<Aws::String, RoleMapping>>
+    SetIdentityPoolRolesRequest& WithRoleMappings(RoleMappingsT&& value) { SetRoleMappings(std::forward<RoleMappingsT>(value)); return *this;}
+    template<typename RoleMappingsKeyT = Aws::String, typename RoleMappingsValueT = RoleMapping>
+    SetIdentityPoolRolesRequest& AddRoleMappings(RoleMappingsKeyT&& key, RoleMappingsValueT&& value) {
+      m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::forward<RoleMappingsKeyT>(key), std::forward<RoleMappingsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

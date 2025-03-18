@@ -12,16 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfigureAccessPointRequest::ConfigureAccessPointRequest() : 
-    m_accessPointArnHasBeenSet(false),
-    m_cpiSecretKeyHasBeenSet(false),
-    m_cpiUserIdHasBeenSet(false),
-    m_cpiUserPasswordHasBeenSet(false),
-    m_cpiUsernameHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureAccessPointRequest::SerializePayload() const
 {
   JsonValue payload;

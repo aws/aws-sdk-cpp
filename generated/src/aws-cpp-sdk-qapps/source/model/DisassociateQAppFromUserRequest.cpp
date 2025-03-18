@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateQAppFromUserRequest::DisassociateQAppFromUserRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateQAppFromUserRequest::SerializePayload() const
 {
   JsonValue payload;

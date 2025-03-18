@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EmailTemplateMetadata::EmailTemplateMetadata() : 
-    m_templateNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 EmailTemplateMetadata::EmailTemplateMetadata(JsonView jsonValue)
-  : EmailTemplateMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailTemplateMetadata& EmailTemplateMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

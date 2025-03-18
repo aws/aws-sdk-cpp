@@ -12,21 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreTableRequest::RestoreTableRequest() : 
-    m_sourceKeyspaceNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetKeyspaceNameHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false),
-    m_restoreTimestampHasBeenSet(false),
-    m_capacitySpecificationOverrideHasBeenSet(false),
-    m_encryptionSpecificationOverrideHasBeenSet(false),
-    m_pointInTimeRecoveryOverrideHasBeenSet(false),
-    m_tagsOverrideHasBeenSet(false),
-    m_autoScalingSpecificationHasBeenSet(false),
-    m_replicaSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String RestoreTableRequest::SerializePayload() const
 {
   JsonValue payload;

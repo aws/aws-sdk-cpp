@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOTAUpdateRequest::GetOTAUpdateRequest() : 
-    m_otaUpdateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOTAUpdateRequest::SerializePayload() const
 {
   return {};

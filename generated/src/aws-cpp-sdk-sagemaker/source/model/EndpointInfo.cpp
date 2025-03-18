@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointInfo::EndpointInfo() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 EndpointInfo::EndpointInfo(JsonView jsonValue)
-  : EndpointInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EndpointInfo& EndpointInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   return *this;
 }
 

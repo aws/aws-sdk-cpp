@@ -33,7 +33,7 @@ namespace Model
   class AwsApiGatewayCanarySettings
   {
   public:
-    AWS_SECURITYHUB_API AwsApiGatewayCanarySettings();
+    AWS_SECURITYHUB_API AwsApiGatewayCanarySettings() = default;
     AWS_SECURITYHUB_API AwsApiGatewayCanarySettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsApiGatewayCanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The percentage of traffic that is diverted to a canary deployment.</p>
      */
-    inline double GetPercentTraffic() const{ return m_percentTraffic; }
+    inline double GetPercentTraffic() const { return m_percentTraffic; }
     inline bool PercentTrafficHasBeenSet() const { return m_percentTrafficHasBeenSet; }
     inline void SetPercentTraffic(double value) { m_percentTrafficHasBeenSet = true; m_percentTraffic = value; }
     inline AwsApiGatewayCanarySettings& WithPercentTraffic(double value) { SetPercentTraffic(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The deployment identifier for the canary deployment.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline AwsApiGatewayCanarySettings& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline AwsApiGatewayCanarySettings& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline AwsApiGatewayCanarySettings& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    AwsApiGatewayCanarySettings& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,33 +68,30 @@ namespace Model
      * <p>Each variable is represented as a string-to-string map between the stage
      * variable name and the variable value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStageVariableOverrides() const{ return m_stageVariableOverrides; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStageVariableOverrides() const { return m_stageVariableOverrides; }
     inline bool StageVariableOverridesHasBeenSet() const { return m_stageVariableOverridesHasBeenSet; }
-    inline void SetStageVariableOverrides(const Aws::Map<Aws::String, Aws::String>& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides = value; }
-    inline void SetStageVariableOverrides(Aws::Map<Aws::String, Aws::String>&& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides = std::move(value); }
-    inline AwsApiGatewayCanarySettings& WithStageVariableOverrides(const Aws::Map<Aws::String, Aws::String>& value) { SetStageVariableOverrides(value); return *this;}
-    inline AwsApiGatewayCanarySettings& WithStageVariableOverrides(Aws::Map<Aws::String, Aws::String>&& value) { SetStageVariableOverrides(std::move(value)); return *this;}
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(const Aws::String& key, const Aws::String& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(key, value); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(Aws::String&& key, const Aws::String& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(std::move(key), value); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(const Aws::String& key, Aws::String&& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(key, std::move(value)); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(Aws::String&& key, Aws::String&& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(const char* key, Aws::String&& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(key, std::move(value)); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(Aws::String&& key, const char* value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(std::move(key), value); return *this; }
-    inline AwsApiGatewayCanarySettings& AddStageVariableOverrides(const char* key, const char* value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(key, value); return *this; }
+    template<typename StageVariableOverridesT = Aws::Map<Aws::String, Aws::String>>
+    void SetStageVariableOverrides(StageVariableOverridesT&& value) { m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides = std::forward<StageVariableOverridesT>(value); }
+    template<typename StageVariableOverridesT = Aws::Map<Aws::String, Aws::String>>
+    AwsApiGatewayCanarySettings& WithStageVariableOverrides(StageVariableOverridesT&& value) { SetStageVariableOverrides(std::forward<StageVariableOverridesT>(value)); return *this;}
+    template<typename StageVariableOverridesKeyT = Aws::String, typename StageVariableOverridesValueT = Aws::String>
+    AwsApiGatewayCanarySettings& AddStageVariableOverrides(StageVariableOverridesKeyT&& key, StageVariableOverridesValueT&& value) {
+      m_stageVariableOverridesHasBeenSet = true; m_stageVariableOverrides.emplace(std::forward<StageVariableOverridesKeyT>(key), std::forward<StageVariableOverridesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the canary deployment uses the stage cache.</p>
      */
-    inline bool GetUseStageCache() const{ return m_useStageCache; }
+    inline bool GetUseStageCache() const { return m_useStageCache; }
     inline bool UseStageCacheHasBeenSet() const { return m_useStageCacheHasBeenSet; }
     inline void SetUseStageCache(bool value) { m_useStageCacheHasBeenSet = true; m_useStageCache = value; }
     inline AwsApiGatewayCanarySettings& WithUseStageCache(bool value) { SetUseStageCache(value); return *this;}
     ///@}
   private:
 
-    double m_percentTraffic;
+    double m_percentTraffic{0.0};
     bool m_percentTrafficHasBeenSet = false;
 
     Aws::String m_deploymentId;
@@ -105,7 +100,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_stageVariableOverrides;
     bool m_stageVariableOverridesHasBeenSet = false;
 
-    bool m_useStageCache;
+    bool m_useStageCache{false};
     bool m_useStageCacheHasBeenSet = false;
   };
 

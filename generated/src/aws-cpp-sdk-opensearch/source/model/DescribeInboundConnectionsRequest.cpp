@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInboundConnectionsRequest::DescribeInboundConnectionsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInboundConnectionsRequest::SerializePayload() const
 {
   JsonValue payload;

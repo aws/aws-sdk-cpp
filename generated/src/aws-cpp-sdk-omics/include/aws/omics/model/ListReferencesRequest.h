@@ -26,7 +26,7 @@ namespace Model
   class ListReferencesRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API ListReferencesRequest();
+    AWS_OMICS_API ListReferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The references' reference store ID.</p>
      */
-    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
+    inline const Aws::String& GetReferenceStoreId() const { return m_referenceStoreId; }
     inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
-    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
-    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
-    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
-    inline ListReferencesRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
-    inline ListReferencesRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
-    inline ListReferencesRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
+    template<typename ReferenceStoreIdT = Aws::String>
+    void SetReferenceStoreId(ReferenceStoreIdT&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::forward<ReferenceStoreIdT>(value); }
+    template<typename ReferenceStoreIdT = Aws::String>
+    ListReferencesRequest& WithReferenceStoreId(ReferenceStoreIdT&& value) { SetReferenceStoreId(std::forward<ReferenceStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of references to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListReferencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,33 +66,31 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListReferencesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReferencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReferencesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter to apply to the list.</p>
      */
-    inline const ReferenceFilter& GetFilter() const{ return m_filter; }
+    inline const ReferenceFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ReferenceFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ReferenceFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListReferencesRequest& WithFilter(const ReferenceFilter& value) { SetFilter(value); return *this;}
-    inline ListReferencesRequest& WithFilter(ReferenceFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = ReferenceFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ReferenceFilter>
+    ListReferencesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_referenceStoreId;
     bool m_referenceStoreIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLicenseEndpointResult::GetLicenseEndpointResult() : 
-    m_status(LicenseEndpointStatus::NOT_SET)
-{
-}
-
 GetLicenseEndpointResult::GetLicenseEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLicenseEndpointResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("licenseEndpointId"))
   {
     m_licenseEndpointId = jsonValue.GetString("licenseEndpointId");
-
+    m_licenseEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LicenseEndpointStatusMapper::GetLicenseEndpointStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
+    m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsName"))
   {
     m_dnsName = jsonValue.GetString("dnsName");
-
+    m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -68,8 +57,8 @@ GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::Amazon
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
+    m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -77,14 +66,15 @@ GetLicenseEndpointResult& GetLicenseEndpointResult::operator =(const Aws::Amazon
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
+    m_securityGroupIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

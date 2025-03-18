@@ -27,7 +27,7 @@ namespace Model
   class StartDirectoryListingResult
   {
   public:
-    AWS_TRANSFER_API StartDirectoryListingResult();
+    AWS_TRANSFER_API StartDirectoryListingResult() = default;
     AWS_TRANSFER_API StartDirectoryListingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API StartDirectoryListingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>Returns a unique identifier for the directory listing call.</p>
      */
-    inline const Aws::String& GetListingId() const{ return m_listingId; }
-    inline void SetListingId(const Aws::String& value) { m_listingId = value; }
-    inline void SetListingId(Aws::String&& value) { m_listingId = std::move(value); }
-    inline void SetListingId(const char* value) { m_listingId.assign(value); }
-    inline StartDirectoryListingResult& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
-    inline StartDirectoryListingResult& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
-    inline StartDirectoryListingResult& WithListingId(const char* value) { SetListingId(value); return *this;}
+    inline const Aws::String& GetListingId() const { return m_listingId; }
+    template<typename ListingIdT = Aws::String>
+    void SetListingId(ListingIdT&& value) { m_listingIdHasBeenSet = true; m_listingId = std::forward<ListingIdT>(value); }
+    template<typename ListingIdT = Aws::String>
+    StartDirectoryListingResult& WithListingId(ListingIdT&& value) { SetListingId(std::forward<ListingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * the connector ID and the listing ID:
      * <code>&lt;connector-id&gt;-&lt;listing-id&gt;.json</code>.</p>
      */
-    inline const Aws::String& GetOutputFileName() const{ return m_outputFileName; }
-    inline void SetOutputFileName(const Aws::String& value) { m_outputFileName = value; }
-    inline void SetOutputFileName(Aws::String&& value) { m_outputFileName = std::move(value); }
-    inline void SetOutputFileName(const char* value) { m_outputFileName.assign(value); }
-    inline StartDirectoryListingResult& WithOutputFileName(const Aws::String& value) { SetOutputFileName(value); return *this;}
-    inline StartDirectoryListingResult& WithOutputFileName(Aws::String&& value) { SetOutputFileName(std::move(value)); return *this;}
-    inline StartDirectoryListingResult& WithOutputFileName(const char* value) { SetOutputFileName(value); return *this;}
+    inline const Aws::String& GetOutputFileName() const { return m_outputFileName; }
+    template<typename OutputFileNameT = Aws::String>
+    void SetOutputFileName(OutputFileNameT&& value) { m_outputFileNameHasBeenSet = true; m_outputFileName = std::forward<OutputFileNameT>(value); }
+    template<typename OutputFileNameT = Aws::String>
+    StartDirectoryListingResult& WithOutputFileName(OutputFileNameT&& value) { SetOutputFileName(std::forward<OutputFileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDirectoryListingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDirectoryListingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDirectoryListingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDirectoryListingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_listingId;
+    bool m_listingIdHasBeenSet = false;
 
     Aws::String m_outputFileName;
+    bool m_outputFileNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

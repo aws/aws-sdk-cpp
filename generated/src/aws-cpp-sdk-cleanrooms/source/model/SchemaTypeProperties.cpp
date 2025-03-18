@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SchemaTypeProperties::SchemaTypeProperties() : 
-    m_idMappingTableHasBeenSet(false)
-{
-}
-
 SchemaTypeProperties::SchemaTypeProperties(JsonView jsonValue)
-  : SchemaTypeProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SchemaTypeProperties& SchemaTypeProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("idMappingTable"))
   {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");
-
     m_idMappingTableHasBeenSet = true;
   }
-
   return *this;
 }
 

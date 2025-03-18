@@ -32,7 +32,7 @@ namespace Model
   class ProfileOutboundRequest
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API ProfileOutboundRequest();
+    AWS_CONNECTCAMPAIGNSV2_API ProfileOutboundRequest() = default;
     AWS_CONNECTCAMPAIGNSV2_API ProfileOutboundRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API ProfileOutboundRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,36 +40,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ProfileOutboundRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ProfileOutboundRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ProfileOutboundRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ProfileOutboundRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline ProfileOutboundRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline ProfileOutboundRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline ProfileOutboundRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    ProfileOutboundRequest& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+    inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-    inline ProfileOutboundRequest& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-    inline ProfileOutboundRequest& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    void SetExpirationTime(ExpirationTimeT&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::forward<ExpirationTimeT>(value); }
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    ProfileOutboundRequest& WithExpirationTime(ExpirationTimeT&& value) { SetExpirationTime(std::forward<ExpirationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -79,7 +75,7 @@ namespace Model
     Aws::String m_profileId;
     bool m_profileIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTime;
+    Aws::Utils::DateTime m_expirationTime{};
     bool m_expirationTimeHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DatabaseIdentifier::DatabaseIdentifier() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 DatabaseIdentifier::DatabaseIdentifier(JsonView jsonValue)
-  : DatabaseIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatabaseIdentifier& DatabaseIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

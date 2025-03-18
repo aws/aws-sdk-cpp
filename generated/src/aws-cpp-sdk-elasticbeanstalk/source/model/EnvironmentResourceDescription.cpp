@@ -20,20 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentResourceDescription::EnvironmentResourceDescription() : 
-    m_environmentNameHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_launchConfigurationsHasBeenSet(false),
-    m_launchTemplatesHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_queuesHasBeenSet(false)
-{
-}
-
 EnvironmentResourceDescription::EnvironmentResourceDescription(const XmlNode& xmlNode)
-  : EnvironmentResourceDescription()
 {
   *this = xmlNode;
 }
@@ -54,6 +41,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!autoScalingGroupsNode.IsNull())
     {
       XmlNode autoScalingGroupsMember = autoScalingGroupsNode.FirstChild("member");
+      m_autoScalingGroupsHasBeenSet = !autoScalingGroupsMember.IsNull();
       while(!autoScalingGroupsMember.IsNull())
       {
         m_autoScalingGroups.push_back(autoScalingGroupsMember);
@@ -66,6 +54,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
@@ -78,6 +67,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!launchConfigurationsNode.IsNull())
     {
       XmlNode launchConfigurationsMember = launchConfigurationsNode.FirstChild("member");
+      m_launchConfigurationsHasBeenSet = !launchConfigurationsMember.IsNull();
       while(!launchConfigurationsMember.IsNull())
       {
         m_launchConfigurations.push_back(launchConfigurationsMember);
@@ -90,6 +80,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!launchTemplatesNode.IsNull())
     {
       XmlNode launchTemplatesMember = launchTemplatesNode.FirstChild("member");
+      m_launchTemplatesHasBeenSet = !launchTemplatesMember.IsNull();
       while(!launchTemplatesMember.IsNull())
       {
         m_launchTemplates.push_back(launchTemplatesMember);
@@ -102,6 +93,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!loadBalancersNode.IsNull())
     {
       XmlNode loadBalancersMember = loadBalancersNode.FirstChild("member");
+      m_loadBalancersHasBeenSet = !loadBalancersMember.IsNull();
       while(!loadBalancersMember.IsNull())
       {
         m_loadBalancers.push_back(loadBalancersMember);
@@ -114,6 +106,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!triggersNode.IsNull())
     {
       XmlNode triggersMember = triggersNode.FirstChild("member");
+      m_triggersHasBeenSet = !triggersMember.IsNull();
       while(!triggersMember.IsNull())
       {
         m_triggers.push_back(triggersMember);
@@ -126,6 +119,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     if(!queuesNode.IsNull())
     {
       XmlNode queuesMember = queuesNode.FirstChild("member");
+      m_queuesHasBeenSet = !queuesMember.IsNull();
       while(!queuesMember.IsNull())
       {
         m_queues.push_back(queuesMember);

@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false)
-{
-}
-
 AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails(JsonView jsonValue)
-  : AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& AwsOpenSearchServiceDo
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InternalUserDatabaseEnabled"))
   {
     m_internalUserDatabaseEnabled = jsonValue.GetBool("InternalUserDatabaseEnabled");
-
     m_internalUserDatabaseEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserOptions"))
   {
     m_masterUserOptions = jsonValue.GetObject("MasterUserOptions");
-
     m_masterUserOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

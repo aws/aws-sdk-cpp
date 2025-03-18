@@ -31,7 +31,7 @@ namespace Model
   class AttackVectorDescription
   {
   public:
-    AWS_SHIELD_API AttackVectorDescription();
+    AWS_SHIELD_API AttackVectorDescription() = default;
     AWS_SHIELD_API AttackVectorDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API AttackVectorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>HTTP_REFLECTION</p> </li> <li> <p>UDS_REFLECTION</p> </li> <li>
      * <p>MEMCACHED_REFLECTION</p> </li> </ul>
      */
-    inline const Aws::String& GetVectorType() const{ return m_vectorType; }
+    inline const Aws::String& GetVectorType() const { return m_vectorType; }
     inline bool VectorTypeHasBeenSet() const { return m_vectorTypeHasBeenSet; }
-    inline void SetVectorType(const Aws::String& value) { m_vectorTypeHasBeenSet = true; m_vectorType = value; }
-    inline void SetVectorType(Aws::String&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::move(value); }
-    inline void SetVectorType(const char* value) { m_vectorTypeHasBeenSet = true; m_vectorType.assign(value); }
-    inline AttackVectorDescription& WithVectorType(const Aws::String& value) { SetVectorType(value); return *this;}
-    inline AttackVectorDescription& WithVectorType(Aws::String&& value) { SetVectorType(std::move(value)); return *this;}
-    inline AttackVectorDescription& WithVectorType(const char* value) { SetVectorType(value); return *this;}
+    template<typename VectorTypeT = Aws::String>
+    void SetVectorType(VectorTypeT&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::forward<VectorTypeT>(value); }
+    template<typename VectorTypeT = Aws::String>
+    AttackVectorDescription& WithVectorType(VectorTypeT&& value) { SetVectorType(std::forward<VectorTypeT>(value)); return *this;}
     ///@}
   private:
 

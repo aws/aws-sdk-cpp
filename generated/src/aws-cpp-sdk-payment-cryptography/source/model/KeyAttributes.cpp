@@ -18,19 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-KeyAttributes::KeyAttributes() : 
-    m_keyUsage(KeyUsage::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keyClass(KeyClass::NOT_SET),
-    m_keyClassHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_keyModesOfUseHasBeenSet(false)
-{
-}
-
 KeyAttributes::KeyAttributes(JsonView jsonValue)
-  : KeyAttributes()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ KeyAttributes& KeyAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = KeyUsageMapper::GetKeyUsageForName(jsonValue.GetString("KeyUsage"));
-
     m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyClass"))
   {
     m_keyClass = KeyClassMapper::GetKeyClassForName(jsonValue.GetString("KeyClass"));
-
     m_keyClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAlgorithm"))
   {
     m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
-
     m_keyAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyModesOfUse"))
   {
     m_keyModesOfUse = jsonValue.GetObject("KeyModesOfUse");
-
     m_keyModesOfUseHasBeenSet = true;
   }
-
   return *this;
 }
 

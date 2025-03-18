@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-DefaultClientBrandingAttributes::DefaultClientBrandingAttributes() : 
-    m_logoUrlHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportLinkHasBeenSet(false),
-    m_forgotPasswordLinkHasBeenSet(false),
-    m_loginMessageHasBeenSet(false)
-{
-}
-
 DefaultClientBrandingAttributes::DefaultClientBrandingAttributes(JsonView jsonValue)
-  : DefaultClientBrandingAttributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DefaultClientBrandingAttributes& DefaultClientBrandingAttributes::operator =(Jso
   if(jsonValue.ValueExists("LogoUrl"))
   {
     m_logoUrl = jsonValue.GetString("LogoUrl");
-
     m_logoUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportEmail"))
   {
     m_supportEmail = jsonValue.GetString("SupportEmail");
-
     m_supportEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportLink"))
   {
     m_supportLink = jsonValue.GetString("SupportLink");
-
     m_supportLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForgotPasswordLink"))
   {
     m_forgotPasswordLink = jsonValue.GetString("ForgotPasswordLink");
-
     m_forgotPasswordLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoginMessage"))
   {
     Aws::Map<Aws::String, JsonView> loginMessageJsonMap = jsonValue.GetObject("LoginMessage").GetAllObjects();
@@ -72,7 +54,6 @@ DefaultClientBrandingAttributes& DefaultClientBrandingAttributes::operator =(Jso
     }
     m_loginMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

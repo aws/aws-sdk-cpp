@@ -12,11 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopVectorEnrichmentJobRequest::StopVectorEnrichmentJobRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String StopVectorEnrichmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

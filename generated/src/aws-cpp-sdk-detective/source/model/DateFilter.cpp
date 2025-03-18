@@ -18,14 +18,7 @@ namespace Detective
 namespace Model
 {
 
-DateFilter::DateFilter() : 
-    m_startInclusiveHasBeenSet(false),
-    m_endInclusiveHasBeenSet(false)
-{
-}
-
 DateFilter::DateFilter(JsonView jsonValue)
-  : DateFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateFilter& DateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartInclusive"))
   {
     m_startInclusive = jsonValue.GetString("StartInclusive");
-
     m_startInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndInclusive"))
   {
     m_endInclusive = jsonValue.GetString("EndInclusive");
-
     m_endInclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

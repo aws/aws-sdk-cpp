@@ -31,7 +31,7 @@ namespace Model
   class DomainUnitGroupProperties
   {
   public:
-    AWS_DATAZONE_API DomainUnitGroupProperties();
+    AWS_DATAZONE_API DomainUnitGroupProperties() = default;
     AWS_DATAZONE_API DomainUnitGroupProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DomainUnitGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the domain unit group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline DomainUnitGroupProperties& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline DomainUnitGroupProperties& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline DomainUnitGroupProperties& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    DomainUnitGroupProperties& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
   private:
 

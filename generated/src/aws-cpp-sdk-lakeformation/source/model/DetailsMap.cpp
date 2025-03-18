@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DetailsMap::DetailsMap() : 
-    m_resourceShareHasBeenSet(false)
-{
-}
-
 DetailsMap::DetailsMap(JsonView jsonValue)
-  : DetailsMap()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DetailsMap& DetailsMap::operator =(JsonView jsonValue)
     }
     m_resourceShareHasBeenSet = true;
   }
-
   return *this;
 }
 

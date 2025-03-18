@@ -32,7 +32,7 @@ namespace Model
   class UnprocessedUpdateAction
   {
   public:
-    AWS_ELASTICACHE_API UnprocessedUpdateAction();
+    AWS_ELASTICACHE_API UnprocessedUpdateAction() = default;
     AWS_ELASTICACHE_API UnprocessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API UnprocessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,70 +44,60 @@ namespace Model
     /**
      * <p>The replication group ID</p>
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline UnprocessedUpdateAction& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline UnprocessedUpdateAction& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline UnprocessedUpdateAction& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    UnprocessedUpdateAction& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the cache cluster</p>
      */
-    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+    inline const Aws::String& GetCacheClusterId() const { return m_cacheClusterId; }
     inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
-    inline UnprocessedUpdateAction& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
-    inline UnprocessedUpdateAction& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
-    inline UnprocessedUpdateAction& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+    template<typename CacheClusterIdT = Aws::String>
+    void SetCacheClusterId(CacheClusterIdT&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::forward<CacheClusterIdT>(value); }
+    template<typename CacheClusterIdT = Aws::String>
+    UnprocessedUpdateAction& WithCacheClusterId(CacheClusterIdT&& value) { SetCacheClusterId(std::forward<CacheClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the service update</p>
      */
-    inline const Aws::String& GetServiceUpdateName() const{ return m_serviceUpdateName; }
+    inline const Aws::String& GetServiceUpdateName() const { return m_serviceUpdateName; }
     inline bool ServiceUpdateNameHasBeenSet() const { return m_serviceUpdateNameHasBeenSet; }
-    inline void SetServiceUpdateName(const Aws::String& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = value; }
-    inline void SetServiceUpdateName(Aws::String&& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = std::move(value); }
-    inline void SetServiceUpdateName(const char* value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName.assign(value); }
-    inline UnprocessedUpdateAction& WithServiceUpdateName(const Aws::String& value) { SetServiceUpdateName(value); return *this;}
-    inline UnprocessedUpdateAction& WithServiceUpdateName(Aws::String&& value) { SetServiceUpdateName(std::move(value)); return *this;}
-    inline UnprocessedUpdateAction& WithServiceUpdateName(const char* value) { SetServiceUpdateName(value); return *this;}
+    template<typename ServiceUpdateNameT = Aws::String>
+    void SetServiceUpdateName(ServiceUpdateNameT&& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = std::forward<ServiceUpdateNameT>(value); }
+    template<typename ServiceUpdateNameT = Aws::String>
+    UnprocessedUpdateAction& WithServiceUpdateName(ServiceUpdateNameT&& value) { SetServiceUpdateName(std::forward<ServiceUpdateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error type for requests that are not processed</p>
      */
-    inline const Aws::String& GetErrorType() const{ return m_errorType; }
+    inline const Aws::String& GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const Aws::String& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(Aws::String&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline void SetErrorType(const char* value) { m_errorTypeHasBeenSet = true; m_errorType.assign(value); }
-    inline UnprocessedUpdateAction& WithErrorType(const Aws::String& value) { SetErrorType(value); return *this;}
-    inline UnprocessedUpdateAction& WithErrorType(Aws::String&& value) { SetErrorType(std::move(value)); return *this;}
-    inline UnprocessedUpdateAction& WithErrorType(const char* value) { SetErrorType(value); return *this;}
+    template<typename ErrorTypeT = Aws::String>
+    void SetErrorType(ErrorTypeT&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::forward<ErrorTypeT>(value); }
+    template<typename ErrorTypeT = Aws::String>
+    UnprocessedUpdateAction& WithErrorType(ErrorTypeT&& value) { SetErrorType(std::forward<ErrorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message that describes the reason the request was not processed</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline UnprocessedUpdateAction& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UnprocessedUpdateAction& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UnprocessedUpdateAction& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UnprocessedUpdateAction& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

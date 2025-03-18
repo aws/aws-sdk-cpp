@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWebExperienceResult::CreateWebExperienceResult()
-{
-}
-
 CreateWebExperienceResult::CreateWebExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateWebExperienceResult& CreateWebExperienceResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("webExperienceId"))
   {
     m_webExperienceId = jsonValue.GetString("webExperienceId");
-
+    m_webExperienceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webExperienceArn"))
   {
     m_webExperienceArn = jsonValue.GetString("webExperienceArn");
-
+    m_webExperienceArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

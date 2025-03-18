@@ -29,7 +29,7 @@ namespace Model
   class ListTemplateAliasesResult
   {
   public:
-    AWS_QUICKSIGHT_API ListTemplateAliasesResult();
+    AWS_QUICKSIGHT_API ListTemplateAliasesResult() = default;
     AWS_QUICKSIGHT_API ListTemplateAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListTemplateAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,33 +38,31 @@ namespace Model
     /**
      * <p>A structure containing the list of the template's aliases.</p>
      */
-    inline const Aws::Vector<TemplateAlias>& GetTemplateAliasList() const{ return m_templateAliasList; }
-    inline void SetTemplateAliasList(const Aws::Vector<TemplateAlias>& value) { m_templateAliasList = value; }
-    inline void SetTemplateAliasList(Aws::Vector<TemplateAlias>&& value) { m_templateAliasList = std::move(value); }
-    inline ListTemplateAliasesResult& WithTemplateAliasList(const Aws::Vector<TemplateAlias>& value) { SetTemplateAliasList(value); return *this;}
-    inline ListTemplateAliasesResult& WithTemplateAliasList(Aws::Vector<TemplateAlias>&& value) { SetTemplateAliasList(std::move(value)); return *this;}
-    inline ListTemplateAliasesResult& AddTemplateAliasList(const TemplateAlias& value) { m_templateAliasList.push_back(value); return *this; }
-    inline ListTemplateAliasesResult& AddTemplateAliasList(TemplateAlias&& value) { m_templateAliasList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TemplateAlias>& GetTemplateAliasList() const { return m_templateAliasList; }
+    template<typename TemplateAliasListT = Aws::Vector<TemplateAlias>>
+    void SetTemplateAliasList(TemplateAliasListT&& value) { m_templateAliasListHasBeenSet = true; m_templateAliasList = std::forward<TemplateAliasListT>(value); }
+    template<typename TemplateAliasListT = Aws::Vector<TemplateAlias>>
+    ListTemplateAliasesResult& WithTemplateAliasList(TemplateAliasListT&& value) { SetTemplateAliasList(std::forward<TemplateAliasListT>(value)); return *this;}
+    template<typename TemplateAliasListT = TemplateAlias>
+    ListTemplateAliasesResult& AddTemplateAliasList(TemplateAliasListT&& value) { m_templateAliasListHasBeenSet = true; m_templateAliasList.emplace_back(std::forward<TemplateAliasListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListTemplateAliasesResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTemplateAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTemplateAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTemplateAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTemplateAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,23 +70,25 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no more
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTemplateAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTemplateAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTemplateAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTemplateAliasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TemplateAlias> m_templateAliasList;
+    bool m_templateAliasListHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

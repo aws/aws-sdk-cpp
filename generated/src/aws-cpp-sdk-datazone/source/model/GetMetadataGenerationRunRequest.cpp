@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMetadataGenerationRunRequest::GetMetadataGenerationRunRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetMetadataGenerationRunRequest::SerializePayload() const
 {
   return {};

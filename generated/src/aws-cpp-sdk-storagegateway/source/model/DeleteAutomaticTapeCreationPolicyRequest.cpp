@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAutomaticTapeCreationPolicyRequest::DeleteAutomaticTapeCreationPolicyRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAutomaticTapeCreationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

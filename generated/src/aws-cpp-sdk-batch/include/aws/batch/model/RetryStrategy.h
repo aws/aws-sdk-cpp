@@ -34,7 +34,7 @@ namespace Model
   class RetryStrategy
   {
   public:
-    AWS_BATCH_API RetryStrategy();
+    AWS_BATCH_API RetryStrategy() = default;
     AWS_BATCH_API RetryStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API RetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * greater than one, the job is retried on failure the same number of attempts as
      * the value.</p>
      */
-    inline int GetAttempts() const{ return m_attempts; }
+    inline int GetAttempts() const { return m_attempts; }
     inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
     inline RetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
@@ -60,18 +60,18 @@ namespace Model
      * parameter must also be specified. If none of the listed conditions match, then
      * the job is retried.</p>
      */
-    inline const Aws::Vector<EvaluateOnExit>& GetEvaluateOnExit() const{ return m_evaluateOnExit; }
+    inline const Aws::Vector<EvaluateOnExit>& GetEvaluateOnExit() const { return m_evaluateOnExit; }
     inline bool EvaluateOnExitHasBeenSet() const { return m_evaluateOnExitHasBeenSet; }
-    inline void SetEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = value; }
-    inline void SetEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = std::move(value); }
-    inline RetryStrategy& WithEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { SetEvaluateOnExit(value); return *this;}
-    inline RetryStrategy& WithEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { SetEvaluateOnExit(std::move(value)); return *this;}
-    inline RetryStrategy& AddEvaluateOnExit(const EvaluateOnExit& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(value); return *this; }
-    inline RetryStrategy& AddEvaluateOnExit(EvaluateOnExit&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(std::move(value)); return *this; }
+    template<typename EvaluateOnExitT = Aws::Vector<EvaluateOnExit>>
+    void SetEvaluateOnExit(EvaluateOnExitT&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = std::forward<EvaluateOnExitT>(value); }
+    template<typename EvaluateOnExitT = Aws::Vector<EvaluateOnExit>>
+    RetryStrategy& WithEvaluateOnExit(EvaluateOnExitT&& value) { SetEvaluateOnExit(std::forward<EvaluateOnExitT>(value)); return *this;}
+    template<typename EvaluateOnExitT = EvaluateOnExit>
+    RetryStrategy& AddEvaluateOnExit(EvaluateOnExitT&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.emplace_back(std::forward<EvaluateOnExitT>(value)); return *this; }
     ///@}
   private:
 
-    int m_attempts;
+    int m_attempts{0};
     bool m_attemptsHasBeenSet = false;
 
     Aws::Vector<EvaluateOnExit> m_evaluateOnExit;

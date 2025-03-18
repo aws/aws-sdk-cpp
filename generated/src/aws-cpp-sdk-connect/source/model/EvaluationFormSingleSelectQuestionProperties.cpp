@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormSingleSelectQuestionProperties::EvaluationFormSingleSelectQuestionProperties() : 
-    m_optionsHasBeenSet(false),
-    m_displayAs(EvaluationFormSingleSelectQuestionDisplayMode::NOT_SET),
-    m_displayAsHasBeenSet(false),
-    m_automationHasBeenSet(false)
-{
-}
-
 EvaluationFormSingleSelectQuestionProperties::EvaluationFormSingleSelectQuestionProperties(JsonView jsonValue)
-  : EvaluationFormSingleSelectQuestionProperties()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ EvaluationFormSingleSelectQuestionProperties& EvaluationFormSingleSelectQuestion
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayAs"))
   {
     m_displayAs = EvaluationFormSingleSelectQuestionDisplayModeMapper::GetEvaluationFormSingleSelectQuestionDisplayModeForName(jsonValue.GetString("DisplayAs"));
-
     m_displayAsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Automation"))
   {
     m_automation = jsonValue.GetObject("Automation");
-
     m_automationHasBeenSet = true;
   }
-
   return *this;
 }
 

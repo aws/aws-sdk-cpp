@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateSbomWithPackageVersionResult::AssociateSbomWithPackageVersionResult() : 
-    m_sbomValidationStatus(SbomValidationStatus::NOT_SET)
-{
-}
-
 AssociateSbomWithPackageVersionResult::AssociateSbomWithPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AssociateSbomWithPackageVersionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ AssociateSbomWithPackageVersionResult& AssociateSbomWithPackageVersionResult::op
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
+    m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
+    m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sbom"))
   {
     m_sbom = jsonValue.GetObject("sbom");
-
+    m_sbomHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sbomValidationStatus"))
   {
     m_sbomValidationStatus = SbomValidationStatusMapper::GetSbomValidationStatusForName(jsonValue.GetString("sbomValidationStatus"));
-
+    m_sbomValidationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAccessPreviewRequest::GetAccessPreviewRequest() : 
-    m_accessPreviewIdHasBeenSet(false),
-    m_analyzerArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessPreviewRequest::SerializePayload() const
 {
   return {};

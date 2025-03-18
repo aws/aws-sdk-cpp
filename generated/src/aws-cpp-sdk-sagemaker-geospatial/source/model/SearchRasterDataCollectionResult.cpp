@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchRasterDataCollectionResult::SearchRasterDataCollectionResult() : 
-    m_approximateResultCount(0)
-{
-}
-
 SearchRasterDataCollectionResult::SearchRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchRasterDataCollectionResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ SearchRasterDataCollectionResult& SearchRasterDataCollectionResult::operator =(c
   if(jsonValue.ValueExists("ApproximateResultCount"))
   {
     m_approximateResultCount = jsonValue.GetInteger("ApproximateResultCount");
-
+    m_approximateResultCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -44,20 +37,20 @@ SearchRasterDataCollectionResult& SearchRasterDataCollectionResult::operator =(c
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-SafetyLever::SafetyLever() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 SafetyLever::SafetyLever(JsonView jsonValue)
-  : SafetyLever()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SafetyLever& SafetyLever::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

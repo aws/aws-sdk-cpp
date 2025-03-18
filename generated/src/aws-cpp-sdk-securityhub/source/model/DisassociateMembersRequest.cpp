@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMembersRequest::DisassociateMembersRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMembersRequest::SerializePayload() const
 {
   JsonValue payload;

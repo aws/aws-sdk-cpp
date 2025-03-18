@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-MalformedQueryException::MalformedQueryException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 MalformedQueryException::MalformedQueryException(JsonView jsonValue)
-  : MalformedQueryException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MalformedQueryException& MalformedQueryException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

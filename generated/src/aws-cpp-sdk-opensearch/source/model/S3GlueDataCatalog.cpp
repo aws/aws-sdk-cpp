@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-S3GlueDataCatalog::S3GlueDataCatalog() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 S3GlueDataCatalog::S3GlueDataCatalog(JsonView jsonValue)
-  : S3GlueDataCatalog()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3GlueDataCatalog& S3GlueDataCatalog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TransferData::TransferData() : 
-    m_transferMessageHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false),
-    m_transferDateHasBeenSet(false),
-    m_acceptDateHasBeenSet(false),
-    m_rejectDateHasBeenSet(false)
-{
-}
-
 TransferData::TransferData(JsonView jsonValue)
-  : TransferData()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TransferData& TransferData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transferMessage"))
   {
     m_transferMessage = jsonValue.GetString("transferMessage");
-
     m_transferMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rejectReason"))
   {
     m_rejectReason = jsonValue.GetString("rejectReason");
-
     m_rejectReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferDate"))
   {
     m_transferDate = jsonValue.GetDouble("transferDate");
-
     m_transferDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptDate"))
   {
     m_acceptDate = jsonValue.GetDouble("acceptDate");
-
     m_acceptDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rejectDate"))
   {
     m_rejectDate = jsonValue.GetDouble("rejectDate");
-
     m_rejectDateHasBeenSet = true;
   }
-
   return *this;
 }
 

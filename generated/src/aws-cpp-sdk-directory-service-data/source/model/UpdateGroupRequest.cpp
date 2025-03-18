@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateGroupRequest::UpdateGroupRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_groupScope(GroupScope::NOT_SET),
-    m_groupScopeHasBeenSet(false),
-    m_groupType(GroupType::NOT_SET),
-    m_groupTypeHasBeenSet(false),
-    m_otherAttributesHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_updateType(UpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,16 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateThesaurusRequest::UpdateThesaurusRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_sourceS3PathHasBeenSet(false)
-{
-}
-
 Aws::String UpdateThesaurusRequest::SerializePayload() const
 {
   JsonValue payload;

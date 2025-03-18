@@ -12,22 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDistributionRequest::UpdateDistributionRequest() : 
-    m_distributionNameHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorSettingsHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_viewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum::NOT_SET),
-    m_viewerMinimumTlsProtocolVersionHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_useDefaultCertificate(false),
-    m_useDefaultCertificateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDistributionRequest::SerializePayload() const
 {
   JsonValue payload;

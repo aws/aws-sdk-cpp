@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReloadTablesResult::ReloadTablesResult()
-{
-}
-
 ReloadTablesResult::ReloadTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ReloadTablesResult& ReloadTablesResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
-
+    m_replicationTaskArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

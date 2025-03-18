@@ -18,17 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-TapeRecoveryPointInfo::TapeRecoveryPointInfo() : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeRecoveryPointTimeHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false)
-{
-}
-
 TapeRecoveryPointInfo::TapeRecoveryPointInfo(JsonView jsonValue)
-  : TapeRecoveryPointInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TapeRecoveryPointInfo& TapeRecoveryPointInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TapeARN"))
   {
     m_tapeARN = jsonValue.GetString("TapeARN");
-
     m_tapeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeRecoveryPointTime"))
   {
     m_tapeRecoveryPointTime = jsonValue.GetDouble("TapeRecoveryPointTime");
-
     m_tapeRecoveryPointTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeSizeInBytes"))
   {
     m_tapeSizeInBytes = jsonValue.GetInt64("TapeSizeInBytes");
-
     m_tapeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeStatus"))
   {
     m_tapeStatus = jsonValue.GetString("TapeStatus");
-
     m_tapeStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

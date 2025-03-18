@@ -34,7 +34,7 @@ namespace Model
   class MSKSourceDescription
   {
   public:
-    AWS_FIREHOSE_API MSKSourceDescription();
+    AWS_FIREHOSE_API MSKSourceDescription() = default;
     AWS_FIREHOSE_API MSKSourceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API MSKSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The ARN of the Amazon MSK cluster.</p>
      */
-    inline const Aws::String& GetMSKClusterARN() const{ return m_mSKClusterARN; }
+    inline const Aws::String& GetMSKClusterARN() const { return m_mSKClusterARN; }
     inline bool MSKClusterARNHasBeenSet() const { return m_mSKClusterARNHasBeenSet; }
-    inline void SetMSKClusterARN(const Aws::String& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = value; }
-    inline void SetMSKClusterARN(Aws::String&& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = std::move(value); }
-    inline void SetMSKClusterARN(const char* value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN.assign(value); }
-    inline MSKSourceDescription& WithMSKClusterARN(const Aws::String& value) { SetMSKClusterARN(value); return *this;}
-    inline MSKSourceDescription& WithMSKClusterARN(Aws::String&& value) { SetMSKClusterARN(std::move(value)); return *this;}
-    inline MSKSourceDescription& WithMSKClusterARN(const char* value) { SetMSKClusterARN(value); return *this;}
+    template<typename MSKClusterARNT = Aws::String>
+    void SetMSKClusterARN(MSKClusterARNT&& value) { m_mSKClusterARNHasBeenSet = true; m_mSKClusterARN = std::forward<MSKClusterARNT>(value); }
+    template<typename MSKClusterARNT = Aws::String>
+    MSKSourceDescription& WithMSKClusterARN(MSKClusterARNT&& value) { SetMSKClusterARN(std::forward<MSKClusterARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The topic name within the Amazon MSK cluster.</p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline MSKSourceDescription& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline MSKSourceDescription& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline MSKSourceDescription& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    MSKSourceDescription& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication configuration of the Amazon MSK cluster.</p>
      */
-    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-    inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
-    inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
-    inline MSKSourceDescription& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
-    inline MSKSourceDescription& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value); }
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    MSKSourceDescription& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) { SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,12 @@ namespace Model
      * <p>Firehose starts retrieving records from the topic within the Amazon MSK
      * cluster starting with this timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const{ return m_deliveryStartTimestamp; }
+    inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const { return m_deliveryStartTimestamp; }
     inline bool DeliveryStartTimestampHasBeenSet() const { return m_deliveryStartTimestampHasBeenSet; }
-    inline void SetDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = value; }
-    inline void SetDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::move(value); }
-    inline MSKSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
-    inline MSKSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
+    template<typename DeliveryStartTimestampT = Aws::Utils::DateTime>
+    void SetDeliveryStartTimestamp(DeliveryStartTimestampT&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::forward<DeliveryStartTimestampT>(value); }
+    template<typename DeliveryStartTimestampT = Aws::Utils::DateTime>
+    MSKSourceDescription& WithDeliveryStartTimestamp(DeliveryStartTimestampT&& value) { SetDeliveryStartTimestamp(std::forward<DeliveryStartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,12 @@ namespace Model
      * <code>ReadFromTimestampUTC</code> parameter to Epoch (1970-01-01T00:00:00Z).
      * </p>
      */
-    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const{ return m_readFromTimestamp; }
+    inline const Aws::Utils::DateTime& GetReadFromTimestamp() const { return m_readFromTimestamp; }
     inline bool ReadFromTimestampHasBeenSet() const { return m_readFromTimestampHasBeenSet; }
-    inline void SetReadFromTimestamp(const Aws::Utils::DateTime& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = value; }
-    inline void SetReadFromTimestamp(Aws::Utils::DateTime&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::move(value); }
-    inline MSKSourceDescription& WithReadFromTimestamp(const Aws::Utils::DateTime& value) { SetReadFromTimestamp(value); return *this;}
-    inline MSKSourceDescription& WithReadFromTimestamp(Aws::Utils::DateTime&& value) { SetReadFromTimestamp(std::move(value)); return *this;}
+    template<typename ReadFromTimestampT = Aws::Utils::DateTime>
+    void SetReadFromTimestamp(ReadFromTimestampT&& value) { m_readFromTimestampHasBeenSet = true; m_readFromTimestamp = std::forward<ReadFromTimestampT>(value); }
+    template<typename ReadFromTimestampT = Aws::Utils::DateTime>
+    MSKSourceDescription& WithReadFromTimestamp(ReadFromTimestampT&& value) { SetReadFromTimestamp(std::forward<ReadFromTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,10 +116,10 @@ namespace Model
     AuthenticationConfiguration m_authenticationConfiguration;
     bool m_authenticationConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deliveryStartTimestamp;
+    Aws::Utils::DateTime m_deliveryStartTimestamp{};
     bool m_deliveryStartTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_readFromTimestamp;
+    Aws::Utils::DateTime m_readFromTimestamp{};
     bool m_readFromTimestampHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateWorkspaceServiceAccountTokenResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountTokenResult();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountTokenResult() = default;
     AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API CreateWorkspaceServiceAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the service account where the token was created.</p>
      */
-    inline const Aws::String& GetServiceAccountId() const{ return m_serviceAccountId; }
-    inline void SetServiceAccountId(const Aws::String& value) { m_serviceAccountId = value; }
-    inline void SetServiceAccountId(Aws::String&& value) { m_serviceAccountId = std::move(value); }
-    inline void SetServiceAccountId(const char* value) { m_serviceAccountId.assign(value); }
-    inline CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(const Aws::String& value) { SetServiceAccountId(value); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(Aws::String&& value) { SetServiceAccountId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(const char* value) { SetServiceAccountId(value); return *this;}
+    inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+    template<typename ServiceAccountIdT = Aws::String>
+    void SetServiceAccountId(ServiceAccountIdT&& value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId = std::forward<ServiceAccountIdT>(value); }
+    template<typename ServiceAccountIdT = Aws::String>
+    CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) { SetServiceAccountId(std::forward<ServiceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,45 +49,45 @@ namespace Model
      * <p>Information about the created token, including the key. Be sure to store the
      * key securely.</p>
      */
-    inline const ServiceAccountTokenSummaryWithKey& GetServiceAccountToken() const{ return m_serviceAccountToken; }
-    inline void SetServiceAccountToken(const ServiceAccountTokenSummaryWithKey& value) { m_serviceAccountToken = value; }
-    inline void SetServiceAccountToken(ServiceAccountTokenSummaryWithKey&& value) { m_serviceAccountToken = std::move(value); }
-    inline CreateWorkspaceServiceAccountTokenResult& WithServiceAccountToken(const ServiceAccountTokenSummaryWithKey& value) { SetServiceAccountToken(value); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithServiceAccountToken(ServiceAccountTokenSummaryWithKey&& value) { SetServiceAccountToken(std::move(value)); return *this;}
+    inline const ServiceAccountTokenSummaryWithKey& GetServiceAccountToken() const { return m_serviceAccountToken; }
+    template<typename ServiceAccountTokenT = ServiceAccountTokenSummaryWithKey>
+    void SetServiceAccountToken(ServiceAccountTokenT&& value) { m_serviceAccountTokenHasBeenSet = true; m_serviceAccountToken = std::forward<ServiceAccountTokenT>(value); }
+    template<typename ServiceAccountTokenT = ServiceAccountTokenSummaryWithKey>
+    CreateWorkspaceServiceAccountTokenResult& WithServiceAccountToken(ServiceAccountTokenT&& value) { SetServiceAccountToken(std::forward<ServiceAccountTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workspace where the token was created.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline CreateWorkspaceServiceAccountTokenResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    CreateWorkspaceServiceAccountTokenResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkspaceServiceAccountTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkspaceServiceAccountTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkspaceServiceAccountTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceAccountId;
+    bool m_serviceAccountIdHasBeenSet = false;
 
     ServiceAccountTokenSummaryWithKey m_serviceAccountToken;
+    bool m_serviceAccountTokenHasBeenSet = false;
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

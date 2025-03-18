@@ -29,7 +29,7 @@ namespace Model
   class TimeShiftConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API TimeShiftConfiguration();
+    AWS_MEDIATAILOR_API TimeShiftConfiguration() = default;
     AWS_MEDIATAILOR_API TimeShiftConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API TimeShiftConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * time delay is 0 seconds, and the maximum allowed maximum time delay is 21600
      * seconds (6 hours). </p>
      */
-    inline int GetMaxTimeDelaySeconds() const{ return m_maxTimeDelaySeconds; }
+    inline int GetMaxTimeDelaySeconds() const { return m_maxTimeDelaySeconds; }
     inline bool MaxTimeDelaySecondsHasBeenSet() const { return m_maxTimeDelaySecondsHasBeenSet; }
     inline void SetMaxTimeDelaySeconds(int value) { m_maxTimeDelaySecondsHasBeenSet = true; m_maxTimeDelaySeconds = value; }
     inline TimeShiftConfiguration& WithMaxTimeDelaySeconds(int value) { SetMaxTimeDelaySeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxTimeDelaySeconds;
+    int m_maxTimeDelaySeconds{0};
     bool m_maxTimeDelaySecondsHasBeenSet = false;
   };
 

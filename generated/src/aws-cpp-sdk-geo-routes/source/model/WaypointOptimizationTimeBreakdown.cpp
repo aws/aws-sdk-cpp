@@ -18,20 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationTimeBreakdown::WaypointOptimizationTimeBreakdown() : 
-    m_restDuration(0),
-    m_restDurationHasBeenSet(false),
-    m_serviceDuration(0),
-    m_serviceDurationHasBeenSet(false),
-    m_travelDuration(0),
-    m_travelDurationHasBeenSet(false),
-    m_waitDuration(0),
-    m_waitDurationHasBeenSet(false)
-{
-}
-
 WaypointOptimizationTimeBreakdown::WaypointOptimizationTimeBreakdown(JsonView jsonValue)
-  : WaypointOptimizationTimeBreakdown()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ WaypointOptimizationTimeBreakdown& WaypointOptimizationTimeBreakdown::operator =
   if(jsonValue.ValueExists("RestDuration"))
   {
     m_restDuration = jsonValue.GetInt64("RestDuration");
-
     m_restDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceDuration"))
   {
     m_serviceDuration = jsonValue.GetInt64("ServiceDuration");
-
     m_serviceDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelDuration"))
   {
     m_travelDuration = jsonValue.GetInt64("TravelDuration");
-
     m_travelDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitDuration"))
   {
     m_waitDuration = jsonValue.GetInt64("WaitDuration");
-
     m_waitDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrafficDistributionResult::GetTrafficDistributionResult()
-{
-}
-
 GetTrafficDistributionResult::GetTrafficDistributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ GetTrafficDistributionResult& GetTrafficDistributionResult::operator =(const Aws
   if(jsonValue.ValueExists("TelephonyConfig"))
   {
     m_telephonyConfig = jsonValue.GetObject("TelephonyConfig");
-
+    m_telephonyConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignInConfig"))
   {
     m_signInConfig = jsonValue.GetObject("SignInConfig");
-
+    m_signInConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentConfig"))
   {
     m_agentConfig = jsonValue.GetObject("AgentConfig");
-
+    m_agentConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

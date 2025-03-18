@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HeatMapSortConfiguration::HeatMapSortConfiguration() : 
-    m_heatMapRowSortHasBeenSet(false),
-    m_heatMapColumnSortHasBeenSet(false),
-    m_heatMapRowItemsLimitConfigurationHasBeenSet(false),
-    m_heatMapColumnItemsLimitConfigurationHasBeenSet(false)
-{
-}
-
 HeatMapSortConfiguration::HeatMapSortConfiguration(JsonView jsonValue)
-  : HeatMapSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ HeatMapSortConfiguration& HeatMapSortConfiguration::operator =(JsonView jsonValu
     }
     m_heatMapRowSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeatMapColumnSort"))
   {
     Aws::Utils::Array<JsonView> heatMapColumnSortJsonList = jsonValue.GetArray("HeatMapColumnSort");
@@ -53,21 +43,16 @@ HeatMapSortConfiguration& HeatMapSortConfiguration::operator =(JsonView jsonValu
     }
     m_heatMapColumnSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeatMapRowItemsLimitConfiguration"))
   {
     m_heatMapRowItemsLimitConfiguration = jsonValue.GetObject("HeatMapRowItemsLimitConfiguration");
-
     m_heatMapRowItemsLimitConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeatMapColumnItemsLimitConfiguration"))
   {
     m_heatMapColumnItemsLimitConfiguration = jsonValue.GetObject("HeatMapColumnItemsLimitConfiguration");
-
     m_heatMapColumnItemsLimitConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

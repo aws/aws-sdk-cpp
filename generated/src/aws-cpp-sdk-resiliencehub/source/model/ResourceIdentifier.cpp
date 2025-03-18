@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResourceIdentifier::ResourceIdentifier() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceIdentifier::ResourceIdentifier(JsonView jsonValue)
-  : ResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalResourceId"))
   {
     m_logicalResourceId = jsonValue.GetObject("logicalResourceId");
-
     m_logicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

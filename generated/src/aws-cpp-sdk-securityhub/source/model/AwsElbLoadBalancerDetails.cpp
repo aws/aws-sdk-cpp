@@ -18,29 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerDetails::AwsElbLoadBalancerDetails() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_backendServerDescriptionsHasBeenSet(false),
-    m_canonicalHostedZoneNameHasBeenSet(false),
-    m_canonicalHostedZoneNameIDHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_listenerDescriptionsHasBeenSet(false),
-    m_loadBalancerAttributesHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_schemeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourceSecurityGroupHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerDetails::AwsElbLoadBalancerDetails(JsonView jsonValue)
-  : AwsElbLoadBalancerDetails()
 {
   *this = jsonValue;
 }
@@ -56,7 +34,6 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackendServerDescriptions"))
   {
     Aws::Utils::Array<JsonView> backendServerDescriptionsJsonList = jsonValue.GetArray("BackendServerDescriptions");
@@ -66,42 +43,31 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_backendServerDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CanonicalHostedZoneName"))
   {
     m_canonicalHostedZoneName = jsonValue.GetString("CanonicalHostedZoneName");
-
     m_canonicalHostedZoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CanonicalHostedZoneNameID"))
   {
     m_canonicalHostedZoneNameID = jsonValue.GetString("CanonicalHostedZoneNameID");
-
     m_canonicalHostedZoneNameIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("HealthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instances"))
   {
     Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
@@ -111,7 +77,6 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListenerDescriptions"))
   {
     Aws::Utils::Array<JsonView> listenerDescriptionsJsonList = jsonValue.GetArray("ListenerDescriptions");
@@ -121,35 +86,26 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_listenerDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadBalancerAttributes"))
   {
     m_loadBalancerAttributes = jsonValue.GetObject("LoadBalancerAttributes");
-
     m_loadBalancerAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadBalancerName"))
   {
     m_loadBalancerName = jsonValue.GetString("LoadBalancerName");
-
     m_loadBalancerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policies"))
   {
     m_policies = jsonValue.GetObject("Policies");
-
     m_policiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scheme"))
   {
     m_scheme = jsonValue.GetString("Scheme");
-
     m_schemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -159,14 +115,11 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceSecurityGroup"))
   {
     m_sourceSecurityGroup = jsonValue.GetObject("SourceSecurityGroup");
-
     m_sourceSecurityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -176,14 +129,11 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

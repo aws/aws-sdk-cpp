@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-BatchGetIncidentFindingsError::BatchGetIncidentFindingsError() : 
-    m_codeHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchGetIncidentFindingsError::BatchGetIncidentFindingsError(JsonView jsonValue)
-  : BatchGetIncidentFindingsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchGetIncidentFindingsError& BatchGetIncidentFindingsError::operator =(JsonVie
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingId"))
   {
     m_findingId = jsonValue.GetString("findingId");
-
     m_findingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

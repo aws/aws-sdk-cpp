@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResetServiceSettingResult::ResetServiceSettingResult()
-{
-}
-
 ResetServiceSettingResult::ResetServiceSettingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ResetServiceSettingResult& ResetServiceSettingResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("ServiceSetting"))
   {
     m_serviceSetting = jsonValue.GetObject("ServiceSetting");
-
+    m_serviceSettingHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

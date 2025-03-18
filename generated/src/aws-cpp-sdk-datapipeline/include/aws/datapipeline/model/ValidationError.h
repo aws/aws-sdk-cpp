@@ -34,7 +34,7 @@ namespace Model
   class ValidationError
   {
   public:
-    AWS_DATAPIPELINE_API ValidationError();
+    AWS_DATAPIPELINE_API ValidationError() = default;
     AWS_DATAPIPELINE_API ValidationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation error.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ValidationError& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ValidationError& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ValidationError& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ValidationError& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the validation error.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<Aws::String>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline ValidationError& WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
-    inline ValidationError& WithErrors(Aws::Vector<Aws::String>&& value) { SetErrors(std::move(value)); return *this;}
-    inline ValidationError& AddErrors(const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline ValidationError& AddErrors(Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-    inline ValidationError& AddErrors(const char* value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    ValidationError& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = Aws::String>
+    ValidationError& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

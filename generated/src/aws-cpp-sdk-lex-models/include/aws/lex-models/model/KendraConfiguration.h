@@ -36,7 +36,7 @@ namespace Model
   class KendraConfiguration
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API KendraConfiguration();
+    AWS_LEXMODELBUILDINGSERVICE_API KendraConfiguration() = default;
     AWS_LEXMODELBUILDINGSERVICE_API KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * exist, you get an exception when you call the <code>PutIntent</code>
      * operation.</p>
      */
-    inline const Aws::String& GetKendraIndex() const{ return m_kendraIndex; }
+    inline const Aws::String& GetKendraIndex() const { return m_kendraIndex; }
     inline bool KendraIndexHasBeenSet() const { return m_kendraIndexHasBeenSet; }
-    inline void SetKendraIndex(const Aws::String& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = value; }
-    inline void SetKendraIndex(Aws::String&& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = std::move(value); }
-    inline void SetKendraIndex(const char* value) { m_kendraIndexHasBeenSet = true; m_kendraIndex.assign(value); }
-    inline KendraConfiguration& WithKendraIndex(const Aws::String& value) { SetKendraIndex(value); return *this;}
-    inline KendraConfiguration& WithKendraIndex(Aws::String&& value) { SetKendraIndex(std::move(value)); return *this;}
-    inline KendraConfiguration& WithKendraIndex(const char* value) { SetKendraIndex(value); return *this;}
+    template<typename KendraIndexT = Aws::String>
+    void SetKendraIndex(KendraIndexT&& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = std::forward<KendraIndexT>(value); }
+    template<typename KendraIndexT = Aws::String>
+    KendraConfiguration& WithKendraIndex(KendraIndexT&& value) { SetKendraIndex(std::forward<KendraIndexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * queries</a>.</p> <p>You can override this filter string with a new filter string
      * at runtime.</p>
      */
-    inline const Aws::String& GetQueryFilterString() const{ return m_queryFilterString; }
+    inline const Aws::String& GetQueryFilterString() const { return m_queryFilterString; }
     inline bool QueryFilterStringHasBeenSet() const { return m_queryFilterStringHasBeenSet; }
-    inline void SetQueryFilterString(const Aws::String& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = value; }
-    inline void SetQueryFilterString(Aws::String&& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = std::move(value); }
-    inline void SetQueryFilterString(const char* value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString.assign(value); }
-    inline KendraConfiguration& WithQueryFilterString(const Aws::String& value) { SetQueryFilterString(value); return *this;}
-    inline KendraConfiguration& WithQueryFilterString(Aws::String&& value) { SetQueryFilterString(std::move(value)); return *this;}
-    inline KendraConfiguration& WithQueryFilterString(const char* value) { SetQueryFilterString(value); return *this;}
+    template<typename QueryFilterStringT = Aws::String>
+    void SetQueryFilterString(QueryFilterStringT&& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = std::forward<QueryFilterStringT>(value); }
+    template<typename QueryFilterStringT = Aws::String>
+    KendraConfiguration& WithQueryFilterString(QueryFilterStringT&& value) { SetQueryFilterString(std::forward<QueryFilterStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * Amazon Lex bot. If the role does not exist, you get an exception when you call
      * the <code>PutIntent</code> operation.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline KendraConfiguration& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline KendraConfiguration& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline KendraConfiguration& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    KendraConfiguration& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
   private:
 

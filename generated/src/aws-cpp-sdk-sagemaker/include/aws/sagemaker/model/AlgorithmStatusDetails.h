@@ -33,7 +33,7 @@ namespace Model
   class AlgorithmStatusDetails
   {
   public:
-    AWS_SAGEMAKER_API AlgorithmStatusDetails();
+    AWS_SAGEMAKER_API AlgorithmStatusDetails() = default;
     AWS_SAGEMAKER_API AlgorithmStatusDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AlgorithmStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The status of algorithm validation.</p>
      */
-    inline const Aws::Vector<AlgorithmStatusItem>& GetValidationStatuses() const{ return m_validationStatuses; }
+    inline const Aws::Vector<AlgorithmStatusItem>& GetValidationStatuses() const { return m_validationStatuses; }
     inline bool ValidationStatusesHasBeenSet() const { return m_validationStatusesHasBeenSet; }
-    inline void SetValidationStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = value; }
-    inline void SetValidationStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = std::move(value); }
-    inline AlgorithmStatusDetails& WithValidationStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { SetValidationStatuses(value); return *this;}
-    inline AlgorithmStatusDetails& WithValidationStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { SetValidationStatuses(std::move(value)); return *this;}
-    inline AlgorithmStatusDetails& AddValidationStatuses(const AlgorithmStatusItem& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(value); return *this; }
-    inline AlgorithmStatusDetails& AddValidationStatuses(AlgorithmStatusItem&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(std::move(value)); return *this; }
+    template<typename ValidationStatusesT = Aws::Vector<AlgorithmStatusItem>>
+    void SetValidationStatuses(ValidationStatusesT&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = std::forward<ValidationStatusesT>(value); }
+    template<typename ValidationStatusesT = Aws::Vector<AlgorithmStatusItem>>
+    AlgorithmStatusDetails& WithValidationStatuses(ValidationStatusesT&& value) { SetValidationStatuses(std::forward<ValidationStatusesT>(value)); return *this;}
+    template<typename ValidationStatusesT = AlgorithmStatusItem>
+    AlgorithmStatusDetails& AddValidationStatuses(ValidationStatusesT&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.emplace_back(std::forward<ValidationStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the scan of the algorithm's Docker image container.</p>
      */
-    inline const Aws::Vector<AlgorithmStatusItem>& GetImageScanStatuses() const{ return m_imageScanStatuses; }
+    inline const Aws::Vector<AlgorithmStatusItem>& GetImageScanStatuses() const { return m_imageScanStatuses; }
     inline bool ImageScanStatusesHasBeenSet() const { return m_imageScanStatusesHasBeenSet; }
-    inline void SetImageScanStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses = value; }
-    inline void SetImageScanStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses = std::move(value); }
-    inline AlgorithmStatusDetails& WithImageScanStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { SetImageScanStatuses(value); return *this;}
-    inline AlgorithmStatusDetails& WithImageScanStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { SetImageScanStatuses(std::move(value)); return *this;}
-    inline AlgorithmStatusDetails& AddImageScanStatuses(const AlgorithmStatusItem& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses.push_back(value); return *this; }
-    inline AlgorithmStatusDetails& AddImageScanStatuses(AlgorithmStatusItem&& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses.push_back(std::move(value)); return *this; }
+    template<typename ImageScanStatusesT = Aws::Vector<AlgorithmStatusItem>>
+    void SetImageScanStatuses(ImageScanStatusesT&& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses = std::forward<ImageScanStatusesT>(value); }
+    template<typename ImageScanStatusesT = Aws::Vector<AlgorithmStatusItem>>
+    AlgorithmStatusDetails& WithImageScanStatuses(ImageScanStatusesT&& value) { SetImageScanStatuses(std::forward<ImageScanStatusesT>(value)); return *this;}
+    template<typename ImageScanStatusesT = AlgorithmStatusItem>
+    AlgorithmStatusDetails& AddImageScanStatuses(ImageScanStatusesT&& value) { m_imageScanStatusesHasBeenSet = true; m_imageScanStatuses.emplace_back(std::forward<ImageScanStatusesT>(value)); return *this; }
     ///@}
   private:
 

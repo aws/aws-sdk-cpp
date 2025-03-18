@@ -18,16 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeUpdateStatus::DataLakeUpdateStatus() : 
-    m_exceptionHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(DataLakeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DataLakeUpdateStatus::DataLakeUpdateStatus(JsonView jsonValue)
-  : DataLakeUpdateStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataLakeUpdateStatus& DataLakeUpdateStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exception"))
   {
     m_exception = jsonValue.GetObject("exception");
-
     m_exceptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataLakeStatusMapper::GetDataLakeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

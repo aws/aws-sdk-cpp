@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataCatalogEncryptionSettingsResult::GetDataCatalogEncryptionSettingsResult()
-{
-}
-
 GetDataCatalogEncryptionSettingsResult::GetDataCatalogEncryptionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDataCatalogEncryptionSettingsResult& GetDataCatalogEncryptionSettingsResult::
   if(jsonValue.ValueExists("DataCatalogEncryptionSettings"))
   {
     m_dataCatalogEncryptionSettings = jsonValue.GetObject("DataCatalogEncryptionSettings");
-
+    m_dataCatalogEncryptionSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,21 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkAclEntry::NetworkAclEntry() : 
-    m_icmpTypeCodeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ruleAction(NetworkAclRuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false)
-{
-}
-
 NetworkAclEntry::NetworkAclEntry(JsonView jsonValue)
-  : NetworkAclEntry()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ NetworkAclEntry& NetworkAclEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IcmpTypeCode"))
   {
     m_icmpTypeCode = jsonValue.GetObject("IcmpTypeCode");
-
     m_icmpTypeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortRange"))
   {
     m_portRange = jsonValue.GetObject("PortRange");
-
     m_portRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlock"))
   {
     m_ipv6CidrBlock = jsonValue.GetString("Ipv6CidrBlock");
-
     m_ipv6CidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleAction"))
   {
     m_ruleAction = NetworkAclRuleActionMapper::GetNetworkAclRuleActionForName(jsonValue.GetString("RuleAction"));
-
     m_ruleActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Egress"))
   {
     m_egress = jsonValue.GetBool("Egress");
-
     m_egressHasBeenSet = true;
   }
-
   return *this;
 }
 

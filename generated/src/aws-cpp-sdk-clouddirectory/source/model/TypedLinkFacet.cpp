@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedLinkFacet::TypedLinkFacet() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_identityAttributeOrderHasBeenSet(false)
-{
-}
-
 TypedLinkFacet::TypedLinkFacet(JsonView jsonValue)
-  : TypedLinkFacet()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ TypedLinkFacet& TypedLinkFacet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -49,7 +39,6 @@ TypedLinkFacet& TypedLinkFacet::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityAttributeOrder"))
   {
     Aws::Utils::Array<JsonView> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
@@ -59,7 +48,6 @@ TypedLinkFacet& TypedLinkFacet::operator =(JsonView jsonValue)
     }
     m_identityAttributeOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

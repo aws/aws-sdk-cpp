@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayFirmwareInformationResult::GetWirelessGatewayFirmwareInformationResult()
-{
-}
-
 GetWirelessGatewayFirmwareInformationResult::GetWirelessGatewayFirmwareInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetWirelessGatewayFirmwareInformationResult& GetWirelessGatewayFirmwareInformati
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
+    m_loRaWANHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

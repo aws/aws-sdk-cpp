@@ -32,7 +32,7 @@ namespace Model
   class FaceMatch
   {
   public:
-    AWS_REKOGNITION_API FaceMatch();
+    AWS_REKOGNITION_API FaceMatch() = default;
     AWS_REKOGNITION_API FaceMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API FaceMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Confidence in the match of this face with the input face.</p>
      */
-    inline double GetSimilarity() const{ return m_similarity; }
+    inline double GetSimilarity() const { return m_similarity; }
     inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
     inline FaceMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
      * the source image, and external image ID that you assigned.</p>
      */
-    inline const Face& GetFace() const{ return m_face; }
+    inline const Face& GetFace() const { return m_face; }
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-    inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
-    inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-    inline FaceMatch& WithFace(const Face& value) { SetFace(value); return *this;}
-    inline FaceMatch& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
+    template<typename FaceT = Face>
+    void SetFace(FaceT&& value) { m_faceHasBeenSet = true; m_face = std::forward<FaceT>(value); }
+    template<typename FaceT = Face>
+    FaceMatch& WithFace(FaceT&& value) { SetFace(std::forward<FaceT>(value)); return *this;}
     ///@}
   private:
 
-    double m_similarity;
+    double m_similarity{0.0};
     bool m_similarityHasBeenSet = false;
 
     Face m_face;

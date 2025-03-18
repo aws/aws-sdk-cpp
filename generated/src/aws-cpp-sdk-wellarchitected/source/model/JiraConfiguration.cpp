@@ -18,14 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-JiraConfiguration::JiraConfiguration() : 
-    m_jiraIssueUrlHasBeenSet(false),
-    m_lastSyncedTimeHasBeenSet(false)
-{
-}
-
 JiraConfiguration::JiraConfiguration(JsonView jsonValue)
-  : JiraConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JiraConfiguration& JiraConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JiraIssueUrl"))
   {
     m_jiraIssueUrl = jsonValue.GetString("JiraIssueUrl");
-
     m_jiraIssueUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSyncedTime"))
   {
     m_lastSyncedTime = jsonValue.GetDouble("LastSyncedTime");
-
     m_lastSyncedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

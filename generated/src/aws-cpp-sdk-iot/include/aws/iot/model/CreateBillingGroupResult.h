@@ -27,7 +27,7 @@ namespace Model
   class CreateBillingGroupResult
   {
   public:
-    AWS_IOT_API CreateBillingGroupResult();
+    AWS_IOT_API CreateBillingGroupResult() = default;
     AWS_IOT_API CreateBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreateBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The name you gave to the billing group.</p>
      */
-    inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
-    inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupName = value; }
-    inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupName = std::move(value); }
-    inline void SetBillingGroupName(const char* value) { m_billingGroupName.assign(value); }
-    inline CreateBillingGroupResult& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+    inline const Aws::String& GetBillingGroupName() const { return m_billingGroupName; }
+    template<typename BillingGroupNameT = Aws::String>
+    void SetBillingGroupName(BillingGroupNameT&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::forward<BillingGroupNameT>(value); }
+    template<typename BillingGroupNameT = Aws::String>
+    CreateBillingGroupResult& WithBillingGroupName(BillingGroupNameT&& value) { SetBillingGroupName(std::forward<BillingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the billing group.</p>
      */
-    inline const Aws::String& GetBillingGroupArn() const{ return m_billingGroupArn; }
-    inline void SetBillingGroupArn(const Aws::String& value) { m_billingGroupArn = value; }
-    inline void SetBillingGroupArn(Aws::String&& value) { m_billingGroupArn = std::move(value); }
-    inline void SetBillingGroupArn(const char* value) { m_billingGroupArn.assign(value); }
-    inline CreateBillingGroupResult& WithBillingGroupArn(const Aws::String& value) { SetBillingGroupArn(value); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupArn(Aws::String&& value) { SetBillingGroupArn(std::move(value)); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupArn(const char* value) { SetBillingGroupArn(value); return *this;}
+    inline const Aws::String& GetBillingGroupArn() const { return m_billingGroupArn; }
+    template<typename BillingGroupArnT = Aws::String>
+    void SetBillingGroupArn(BillingGroupArnT&& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = std::forward<BillingGroupArnT>(value); }
+    template<typename BillingGroupArnT = Aws::String>
+    CreateBillingGroupResult& WithBillingGroupArn(BillingGroupArnT&& value) { SetBillingGroupArn(std::forward<BillingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the billing group.</p>
      */
-    inline const Aws::String& GetBillingGroupId() const{ return m_billingGroupId; }
-    inline void SetBillingGroupId(const Aws::String& value) { m_billingGroupId = value; }
-    inline void SetBillingGroupId(Aws::String&& value) { m_billingGroupId = std::move(value); }
-    inline void SetBillingGroupId(const char* value) { m_billingGroupId.assign(value); }
-    inline CreateBillingGroupResult& WithBillingGroupId(const Aws::String& value) { SetBillingGroupId(value); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupId(Aws::String&& value) { SetBillingGroupId(std::move(value)); return *this;}
-    inline CreateBillingGroupResult& WithBillingGroupId(const char* value) { SetBillingGroupId(value); return *this;}
+    inline const Aws::String& GetBillingGroupId() const { return m_billingGroupId; }
+    template<typename BillingGroupIdT = Aws::String>
+    void SetBillingGroupId(BillingGroupIdT&& value) { m_billingGroupIdHasBeenSet = true; m_billingGroupId = std::forward<BillingGroupIdT>(value); }
+    template<typename BillingGroupIdT = Aws::String>
+    CreateBillingGroupResult& WithBillingGroupId(BillingGroupIdT&& value) { SetBillingGroupId(std::forward<BillingGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBillingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBillingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBillingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBillingGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_billingGroupName;
+    bool m_billingGroupNameHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
+    bool m_billingGroupArnHasBeenSet = false;
 
     Aws::String m_billingGroupId;
+    bool m_billingGroupIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

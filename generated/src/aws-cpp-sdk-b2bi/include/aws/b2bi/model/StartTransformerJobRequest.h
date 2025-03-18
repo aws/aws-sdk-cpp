@@ -23,7 +23,7 @@ namespace Model
   class StartTransformerJobRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API StartTransformerJobRequest();
+    AWS_B2BI_API StartTransformerJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,12 @@ namespace Model
      * <p>Specifies the location of the input file for the transformation. The location
      * consists of an Amazon S3 bucket and prefix.</p>
      */
-    inline const S3Location& GetInputFile() const{ return m_inputFile; }
+    inline const S3Location& GetInputFile() const { return m_inputFile; }
     inline bool InputFileHasBeenSet() const { return m_inputFileHasBeenSet; }
-    inline void SetInputFile(const S3Location& value) { m_inputFileHasBeenSet = true; m_inputFile = value; }
-    inline void SetInputFile(S3Location&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::move(value); }
-    inline StartTransformerJobRequest& WithInputFile(const S3Location& value) { SetInputFile(value); return *this;}
-    inline StartTransformerJobRequest& WithInputFile(S3Location&& value) { SetInputFile(std::move(value)); return *this;}
+    template<typename InputFileT = S3Location>
+    void SetInputFile(InputFileT&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::forward<InputFileT>(value); }
+    template<typename InputFileT = S3Location>
+    StartTransformerJobRequest& WithInputFile(InputFileT&& value) { SetInputFile(std::forward<InputFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,40 +54,36 @@ namespace Model
      * <p>Specifies the location of the output file for the transformation. The
      * location consists of an Amazon S3 bucket and prefix.</p>
      */
-    inline const S3Location& GetOutputLocation() const{ return m_outputLocation; }
+    inline const S3Location& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const S3Location& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(S3Location&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline StartTransformerJobRequest& WithOutputLocation(const S3Location& value) { SetOutputLocation(value); return *this;}
-    inline StartTransformerJobRequest& WithOutputLocation(S3Location&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = S3Location>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = S3Location>
+    StartTransformerJobRequest& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the system-assigned unique identifier for the transformer.</p>
      */
-    inline const Aws::String& GetTransformerId() const{ return m_transformerId; }
+    inline const Aws::String& GetTransformerId() const { return m_transformerId; }
     inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
-    inline void SetTransformerId(const Aws::String& value) { m_transformerIdHasBeenSet = true; m_transformerId = value; }
-    inline void SetTransformerId(Aws::String&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::move(value); }
-    inline void SetTransformerId(const char* value) { m_transformerIdHasBeenSet = true; m_transformerId.assign(value); }
-    inline StartTransformerJobRequest& WithTransformerId(const Aws::String& value) { SetTransformerId(value); return *this;}
-    inline StartTransformerJobRequest& WithTransformerId(Aws::String&& value) { SetTransformerId(std::move(value)); return *this;}
-    inline StartTransformerJobRequest& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
+    template<typename TransformerIdT = Aws::String>
+    void SetTransformerId(TransformerIdT&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::forward<TransformerIdT>(value); }
+    template<typename TransformerIdT = Aws::String>
+    StartTransformerJobRequest& WithTransformerId(TransformerIdT&& value) { SetTransformerId(std::forward<TransformerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartTransformerJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartTransformerJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartTransformerJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartTransformerJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

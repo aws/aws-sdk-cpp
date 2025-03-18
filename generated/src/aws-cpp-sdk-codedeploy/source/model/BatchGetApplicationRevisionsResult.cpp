@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult()
-{
-}
-
 BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
+    m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisions"))
   {
     Aws::Utils::Array<JsonView> revisionsJsonList = jsonValue.GetArray("revisions");
@@ -48,14 +42,15 @@ BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator
     {
       m_revisions.push_back(revisionsJsonList[revisionsIndex].AsObject());
     }
+    m_revisionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

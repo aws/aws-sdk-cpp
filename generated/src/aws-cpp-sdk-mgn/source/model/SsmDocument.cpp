@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-SsmDocument::SsmDocument() : 
-    m_actionNameHasBeenSet(false),
-    m_externalParametersHasBeenSet(false),
-    m_mustSucceedForCutover(false),
-    m_mustSucceedForCutoverHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_ssmDocumentNameHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
-{
-}
-
 SsmDocument::SsmDocument(JsonView jsonValue)
-  : SsmDocument()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ SsmDocument& SsmDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalParameters"))
   {
     Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
@@ -54,14 +39,11 @@ SsmDocument& SsmDocument::operator =(JsonView jsonValue)
     }
     m_externalParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mustSucceedForCutover"))
   {
     m_mustSucceedForCutover = jsonValue.GetBool("mustSucceedForCutover");
-
     m_mustSucceedForCutoverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -78,21 +60,16 @@ SsmDocument& SsmDocument::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmDocumentName"))
   {
     m_ssmDocumentName = jsonValue.GetString("ssmDocumentName");
-
     m_ssmDocumentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

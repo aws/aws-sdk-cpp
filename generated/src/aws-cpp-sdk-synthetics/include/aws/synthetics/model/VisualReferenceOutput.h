@@ -38,7 +38,7 @@ namespace Model
   class VisualReferenceOutput
   {
   public:
-    AWS_SYNTHETICS_API VisualReferenceOutput();
+    AWS_SYNTHETICS_API VisualReferenceOutput() = default;
     AWS_SYNTHETICS_API VisualReferenceOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API VisualReferenceOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p>An array of screenshots that are used as the baseline for comparisons during
      * visual monitoring.</p>
      */
-    inline const Aws::Vector<BaseScreenshot>& GetBaseScreenshots() const{ return m_baseScreenshots; }
+    inline const Aws::Vector<BaseScreenshot>& GetBaseScreenshots() const { return m_baseScreenshots; }
     inline bool BaseScreenshotsHasBeenSet() const { return m_baseScreenshotsHasBeenSet; }
-    inline void SetBaseScreenshots(const Aws::Vector<BaseScreenshot>& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots = value; }
-    inline void SetBaseScreenshots(Aws::Vector<BaseScreenshot>&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots = std::move(value); }
-    inline VisualReferenceOutput& WithBaseScreenshots(const Aws::Vector<BaseScreenshot>& value) { SetBaseScreenshots(value); return *this;}
-    inline VisualReferenceOutput& WithBaseScreenshots(Aws::Vector<BaseScreenshot>&& value) { SetBaseScreenshots(std::move(value)); return *this;}
-    inline VisualReferenceOutput& AddBaseScreenshots(const BaseScreenshot& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots.push_back(value); return *this; }
-    inline VisualReferenceOutput& AddBaseScreenshots(BaseScreenshot&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots.push_back(std::move(value)); return *this; }
+    template<typename BaseScreenshotsT = Aws::Vector<BaseScreenshot>>
+    void SetBaseScreenshots(BaseScreenshotsT&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots = std::forward<BaseScreenshotsT>(value); }
+    template<typename BaseScreenshotsT = Aws::Vector<BaseScreenshot>>
+    VisualReferenceOutput& WithBaseScreenshots(BaseScreenshotsT&& value) { SetBaseScreenshots(std::forward<BaseScreenshotsT>(value)); return *this;}
+    template<typename BaseScreenshotsT = BaseScreenshot>
+    VisualReferenceOutput& AddBaseScreenshots(BaseScreenshotsT&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots.emplace_back(std::forward<BaseScreenshotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,12 @@ namespace Model
      * <p>The ID of the canary run that produced the baseline screenshots that are used
      * for visual monitoring comparisons by this canary.</p>
      */
-    inline const Aws::String& GetBaseCanaryRunId() const{ return m_baseCanaryRunId; }
+    inline const Aws::String& GetBaseCanaryRunId() const { return m_baseCanaryRunId; }
     inline bool BaseCanaryRunIdHasBeenSet() const { return m_baseCanaryRunIdHasBeenSet; }
-    inline void SetBaseCanaryRunId(const Aws::String& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = value; }
-    inline void SetBaseCanaryRunId(Aws::String&& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = std::move(value); }
-    inline void SetBaseCanaryRunId(const char* value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId.assign(value); }
-    inline VisualReferenceOutput& WithBaseCanaryRunId(const Aws::String& value) { SetBaseCanaryRunId(value); return *this;}
-    inline VisualReferenceOutput& WithBaseCanaryRunId(Aws::String&& value) { SetBaseCanaryRunId(std::move(value)); return *this;}
-    inline VisualReferenceOutput& WithBaseCanaryRunId(const char* value) { SetBaseCanaryRunId(value); return *this;}
+    template<typename BaseCanaryRunIdT = Aws::String>
+    void SetBaseCanaryRunId(BaseCanaryRunIdT&& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = std::forward<BaseCanaryRunIdT>(value); }
+    template<typename BaseCanaryRunIdT = Aws::String>
+    VisualReferenceOutput& WithBaseCanaryRunId(BaseCanaryRunIdT&& value) { SetBaseCanaryRunId(std::forward<BaseCanaryRunIdT>(value)); return *this;}
     ///@}
   private:
 

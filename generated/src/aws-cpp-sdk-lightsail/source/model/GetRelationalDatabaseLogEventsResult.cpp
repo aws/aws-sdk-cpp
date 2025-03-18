@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRelationalDatabaseLogEventsResult::GetRelationalDatabaseLogEventsResult()
-{
-}
-
 GetRelationalDatabaseLogEventsResult::GetRelationalDatabaseLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetRelationalDatabaseLogEventsResult& GetRelationalDatabaseLogEventsResult::oper
     {
       m_resourceLogEvents.push_back(resourceLogEventsJsonList[resourceLogEventsIndex].AsObject());
     }
+    m_resourceLogEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextBackwardToken"))
   {
     m_nextBackwardToken = jsonValue.GetString("nextBackwardToken");
-
+    m_nextBackwardTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextForwardToken"))
   {
     m_nextForwardToken = jsonValue.GetString("nextForwardToken");
-
+    m_nextForwardTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

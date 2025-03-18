@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkCreateWirelessDevice::SidewalkCreateWirelessDevice() : 
-    m_deviceProfileIdHasBeenSet(false)
-{
-}
-
 SidewalkCreateWirelessDevice::SidewalkCreateWirelessDevice(JsonView jsonValue)
-  : SidewalkCreateWirelessDevice()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SidewalkCreateWirelessDevice& SidewalkCreateWirelessDevice::operator =(JsonView 
   if(jsonValue.ValueExists("DeviceProfileId"))
   {
     m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
-
     m_deviceProfileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

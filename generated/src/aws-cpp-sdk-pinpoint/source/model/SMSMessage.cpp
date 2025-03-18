@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SMSMessage::SMSMessage() : 
-    m_bodyHasBeenSet(false),
-    m_keywordHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 SMSMessage::SMSMessage(JsonView jsonValue)
-  : SMSMessage()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ SMSMessage& SMSMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keyword"))
   {
     m_keyword = jsonValue.GetString("Keyword");
-
     m_keywordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaUrl"))
   {
     m_mediaUrl = jsonValue.GetString("MediaUrl");
-
     m_mediaUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginationNumber"))
   {
     m_originationNumber = jsonValue.GetString("OriginationNumber");
-
     m_originationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -98,21 +71,16 @@ SMSMessage& SMSMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

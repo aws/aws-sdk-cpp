@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-OS::OS() : 
-    m_fullStringHasBeenSet(false)
-{
-}
-
 OS::OS(JsonView jsonValue)
-  : OS()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OS& OS::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullString"))
   {
     m_fullString = jsonValue.GetString("fullString");
-
     m_fullStringHasBeenSet = true;
   }
-
   return *this;
 }
 

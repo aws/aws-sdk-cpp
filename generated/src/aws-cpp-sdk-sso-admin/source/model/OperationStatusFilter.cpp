@@ -18,14 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-OperationStatusFilter::OperationStatusFilter() : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OperationStatusFilter::OperationStatusFilter(JsonView jsonValue)
-  : OperationStatusFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OperationStatusFilter& OperationStatusFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

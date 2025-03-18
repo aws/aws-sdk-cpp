@@ -32,7 +32,7 @@ namespace Model
   class ExternalModelSummary
   {
   public:
-    AWS_FRAUDDETECTOR_API ExternalModelSummary();
+    AWS_FRAUDDETECTOR_API ExternalModelSummary() = default;
     AWS_FRAUDDETECTOR_API ExternalModelSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ExternalModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The endpoint of the Amazon SageMaker model.</p>
      */
-    inline const Aws::String& GetModelEndpoint() const{ return m_modelEndpoint; }
+    inline const Aws::String& GetModelEndpoint() const { return m_modelEndpoint; }
     inline bool ModelEndpointHasBeenSet() const { return m_modelEndpointHasBeenSet; }
-    inline void SetModelEndpoint(const Aws::String& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = value; }
-    inline void SetModelEndpoint(Aws::String&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::move(value); }
-    inline void SetModelEndpoint(const char* value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint.assign(value); }
-    inline ExternalModelSummary& WithModelEndpoint(const Aws::String& value) { SetModelEndpoint(value); return *this;}
-    inline ExternalModelSummary& WithModelEndpoint(Aws::String&& value) { SetModelEndpoint(std::move(value)); return *this;}
-    inline ExternalModelSummary& WithModelEndpoint(const char* value) { SetModelEndpoint(value); return *this;}
+    template<typename ModelEndpointT = Aws::String>
+    void SetModelEndpoint(ModelEndpointT&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::forward<ModelEndpointT>(value); }
+    template<typename ModelEndpointT = Aws::String>
+    ExternalModelSummary& WithModelEndpoint(ModelEndpointT&& value) { SetModelEndpoint(std::forward<ModelEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the model.</p>
      */
-    inline const ModelSource& GetModelSource() const{ return m_modelSource; }
+    inline ModelSource GetModelSource() const { return m_modelSource; }
     inline bool ModelSourceHasBeenSet() const { return m_modelSourceHasBeenSet; }
-    inline void SetModelSource(const ModelSource& value) { m_modelSourceHasBeenSet = true; m_modelSource = value; }
-    inline void SetModelSource(ModelSource&& value) { m_modelSourceHasBeenSet = true; m_modelSource = std::move(value); }
-    inline ExternalModelSummary& WithModelSource(const ModelSource& value) { SetModelSource(value); return *this;}
-    inline ExternalModelSummary& WithModelSource(ModelSource&& value) { SetModelSource(std::move(value)); return *this;}
+    inline void SetModelSource(ModelSource value) { m_modelSourceHasBeenSet = true; m_modelSource = value; }
+    inline ExternalModelSummary& WithModelSource(ModelSource value) { SetModelSource(value); return *this;}
     ///@}
   private:
 
     Aws::String m_modelEndpoint;
     bool m_modelEndpointHasBeenSet = false;
 
-    ModelSource m_modelSource;
+    ModelSource m_modelSource{ModelSource::NOT_SET};
     bool m_modelSourceHasBeenSet = false;
   };
 

@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AttachInternetGatewayRequest::AttachInternetGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Aws::String AttachInternetGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

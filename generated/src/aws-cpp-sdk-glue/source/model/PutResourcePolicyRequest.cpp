@@ -12,17 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourcePolicyRequest::PutResourcePolicyRequest() : 
-    m_policyInJsonHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_policyHashConditionHasBeenSet(false),
-    m_policyExistsCondition(ExistCondition::NOT_SET),
-    m_policyExistsConditionHasBeenSet(false),
-    m_enableHybrid(EnableHybridValues::NOT_SET),
-    m_enableHybridHasBeenSet(false)
-{
-}
-
 Aws::String PutResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

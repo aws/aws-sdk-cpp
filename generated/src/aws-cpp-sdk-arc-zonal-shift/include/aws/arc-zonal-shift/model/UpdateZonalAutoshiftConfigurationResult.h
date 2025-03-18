@@ -28,7 +28,7 @@ namespace Model
   class UpdateZonalAutoshiftConfigurationResult
   {
   public:
-    AWS_ARCZONALSHIFT_API UpdateZonalAutoshiftConfigurationResult();
+    AWS_ARCZONALSHIFT_API UpdateZonalAutoshiftConfigurationResult() = default;
     AWS_ARCZONALSHIFT_API UpdateZonalAutoshiftConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARCZONALSHIFT_API UpdateZonalAutoshiftConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,40 @@ namespace Model
      * configuration for. The identifier is the Amazon Resource Name (ARN) for the
      * resource.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifier.assign(value); }
-    inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    UpdateZonalAutoshiftConfigurationResult& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated zonal autoshift status for the resource.</p>
      */
-    inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
-    inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }
-    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatus = std::move(value); }
-    inline UpdateZonalAutoshiftConfigurationResult& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
-    inline UpdateZonalAutoshiftConfigurationResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
+    inline ZonalAutoshiftStatus GetZonalAutoshiftStatus() const { return m_zonalAutoshiftStatus; }
+    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
+    inline UpdateZonalAutoshiftConfigurationResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus value) { SetZonalAutoshiftStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateZonalAutoshiftConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateZonalAutoshiftConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
-    ZonalAutoshiftStatus m_zonalAutoshiftStatus;
+    ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
+    bool m_zonalAutoshiftStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

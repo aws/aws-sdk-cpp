@@ -12,15 +12,6 @@ using namespace Aws::IoTFleetHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

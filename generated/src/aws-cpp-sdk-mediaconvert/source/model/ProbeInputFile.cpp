@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ProbeInputFile::ProbeInputFile() : 
-    m_fileUrlHasBeenSet(false)
-{
-}
-
 ProbeInputFile::ProbeInputFile(JsonView jsonValue)
-  : ProbeInputFile()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProbeInputFile& ProbeInputFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileUrl"))
   {
     m_fileUrl = jsonValue.GetString("fileUrl");
-
     m_fileUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class GetEventRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API GetEventRequest();
+    AWS_FRAUDDETECTOR_API GetEventRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the event to retrieve.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline GetEventRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline GetEventRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline GetEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    GetEventRequest& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event type of the event to retrieve.</p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline GetEventRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline GetEventRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline GetEventRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    GetEventRequest& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
   private:
 

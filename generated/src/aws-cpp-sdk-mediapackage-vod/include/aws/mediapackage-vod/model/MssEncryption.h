@@ -32,7 +32,7 @@ namespace Model
   class MssEncryption
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API MssEncryption();
+    AWS_MEDIAPACKAGEVOD_API MssEncryption() = default;
     AWS_MEDIAPACKAGEVOD_API MssEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API MssEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline MssEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline MssEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    MssEncryption& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class AssociateAppBlockBuilderAppBlockResult
   {
   public:
-    AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockResult();
+    AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockResult() = default;
     AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The list of app block builders associated with app blocks.</p>
      */
-    inline const AppBlockBuilderAppBlockAssociation& GetAppBlockBuilderAppBlockAssociation() const{ return m_appBlockBuilderAppBlockAssociation; }
-    inline void SetAppBlockBuilderAppBlockAssociation(const AppBlockBuilderAppBlockAssociation& value) { m_appBlockBuilderAppBlockAssociation = value; }
-    inline void SetAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociation&& value) { m_appBlockBuilderAppBlockAssociation = std::move(value); }
-    inline AssociateAppBlockBuilderAppBlockResult& WithAppBlockBuilderAppBlockAssociation(const AppBlockBuilderAppBlockAssociation& value) { SetAppBlockBuilderAppBlockAssociation(value); return *this;}
-    inline AssociateAppBlockBuilderAppBlockResult& WithAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociation&& value) { SetAppBlockBuilderAppBlockAssociation(std::move(value)); return *this;}
+    inline const AppBlockBuilderAppBlockAssociation& GetAppBlockBuilderAppBlockAssociation() const { return m_appBlockBuilderAppBlockAssociation; }
+    template<typename AppBlockBuilderAppBlockAssociationT = AppBlockBuilderAppBlockAssociation>
+    void SetAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociationT&& value) { m_appBlockBuilderAppBlockAssociationHasBeenSet = true; m_appBlockBuilderAppBlockAssociation = std::forward<AppBlockBuilderAppBlockAssociationT>(value); }
+    template<typename AppBlockBuilderAppBlockAssociationT = AppBlockBuilderAppBlockAssociation>
+    AssociateAppBlockBuilderAppBlockResult& WithAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociationT&& value) { SetAppBlockBuilderAppBlockAssociation(std::forward<AppBlockBuilderAppBlockAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateAppBlockBuilderAppBlockResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppBlockBuilderAppBlockAssociation m_appBlockBuilderAppBlockAssociation;
+    bool m_appBlockBuilderAppBlockAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult() : 
-    m_trafficPolicyInstanceCount(0)
-{
-}
-
 GetTrafficPolicyInstanceCountResult::GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetTrafficPolicyInstanceCountResult()
 {
   *this = result;
 }
@@ -38,6 +32,7 @@ GetTrafficPolicyInstanceCountResult& GetTrafficPolicyInstanceCountResult::operat
     if(!trafficPolicyInstanceCountNode.IsNull())
     {
       m_trafficPolicyInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceCountNode.GetText()).c_str()).c_str());
+      m_trafficPolicyInstanceCountHasBeenSet = true;
     }
   }
 
@@ -46,6 +41,7 @@ GetTrafficPolicyInstanceCountResult& GetTrafficPolicyInstanceCountResult::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamDiscoveredAccount::IpamDiscoveredAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_discoveryRegionHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_lastAttemptedDiscoveryTimeHasBeenSet(false),
-    m_lastSuccessfulDiscoveryTimeHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 IpamDiscoveredAccount::IpamDiscoveredAccount(const XmlNode& xmlNode)
-  : IpamDiscoveredAccount()
 {
   *this = xmlNode;
 }

@@ -25,7 +25,7 @@ namespace Model
   class UpdateBackendConfigRequest : public AmplifyBackendRequest
   {
   public:
-    AWS_AMPLIFYBACKEND_API UpdateBackendConfigRequest();
+    AWS_AMPLIFYBACKEND_API UpdateBackendConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline UpdateBackendConfigRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline UpdateBackendConfigRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline UpdateBackendConfigRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    UpdateBackendConfigRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
      */
-    inline const LoginAuthConfigReqObj& GetLoginAuthConfig() const{ return m_loginAuthConfig; }
+    inline const LoginAuthConfigReqObj& GetLoginAuthConfig() const { return m_loginAuthConfig; }
     inline bool LoginAuthConfigHasBeenSet() const { return m_loginAuthConfigHasBeenSet; }
-    inline void SetLoginAuthConfig(const LoginAuthConfigReqObj& value) { m_loginAuthConfigHasBeenSet = true; m_loginAuthConfig = value; }
-    inline void SetLoginAuthConfig(LoginAuthConfigReqObj&& value) { m_loginAuthConfigHasBeenSet = true; m_loginAuthConfig = std::move(value); }
-    inline UpdateBackendConfigRequest& WithLoginAuthConfig(const LoginAuthConfigReqObj& value) { SetLoginAuthConfig(value); return *this;}
-    inline UpdateBackendConfigRequest& WithLoginAuthConfig(LoginAuthConfigReqObj&& value) { SetLoginAuthConfig(std::move(value)); return *this;}
+    template<typename LoginAuthConfigT = LoginAuthConfigReqObj>
+    void SetLoginAuthConfig(LoginAuthConfigT&& value) { m_loginAuthConfigHasBeenSet = true; m_loginAuthConfig = std::forward<LoginAuthConfigT>(value); }
+    template<typename LoginAuthConfigT = LoginAuthConfigReqObj>
+    UpdateBackendConfigRequest& WithLoginAuthConfig(LoginAuthConfigT&& value) { SetLoginAuthConfig(std::forward<LoginAuthConfigT>(value)); return *this;}
     ///@}
   private:
 

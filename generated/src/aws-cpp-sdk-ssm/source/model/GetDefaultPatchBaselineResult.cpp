@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDefaultPatchBaselineResult::GetDefaultPatchBaselineResult() : 
-    m_operatingSystem(OperatingSystem::NOT_SET)
-{
-}
-
 GetDefaultPatchBaselineResult::GetDefaultPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDefaultPatchBaselineResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetDefaultPatchBaselineResult& GetDefaultPatchBaselineResult::operator =(const A
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");
-
+    m_baselineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
+    m_operatingSystemHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

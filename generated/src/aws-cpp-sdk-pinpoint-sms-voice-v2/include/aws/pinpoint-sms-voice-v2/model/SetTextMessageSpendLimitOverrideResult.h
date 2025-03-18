@@ -27,7 +27,7 @@ namespace Model
   class SetTextMessageSpendLimitOverrideResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API SetTextMessageSpendLimitOverrideResult();
+    AWS_PINPOINTSMSVOICEV2_API SetTextMessageSpendLimitOverrideResult() = default;
     AWS_PINPOINTSMSVOICEV2_API SetTextMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API SetTextMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>The current monthly limit to enforce on sending text messages.</p>
      */
-    inline long long GetMonthlyLimit() const{ return m_monthlyLimit; }
-    inline void SetMonthlyLimit(long long value) { m_monthlyLimit = value; }
+    inline long long GetMonthlyLimit() const { return m_monthlyLimit; }
+    inline void SetMonthlyLimit(long long value) { m_monthlyLimitHasBeenSet = true; m_monthlyLimit = value; }
     inline SetTextMessageSpendLimitOverrideResult& WithMonthlyLimit(long long value) { SetMonthlyLimit(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SetTextMessageSpendLimitOverrideResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SetTextMessageSpendLimitOverrideResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SetTextMessageSpendLimitOverrideResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SetTextMessageSpendLimitOverrideResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_monthlyLimit;
+    long long m_monthlyLimit{0};
+    bool m_monthlyLimitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

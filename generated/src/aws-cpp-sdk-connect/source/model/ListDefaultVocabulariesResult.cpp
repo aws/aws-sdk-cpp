@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDefaultVocabulariesResult::ListDefaultVocabulariesResult()
-{
-}
-
 ListDefaultVocabulariesResult::ListDefaultVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListDefaultVocabulariesResult& ListDefaultVocabulariesResult::operator =(const A
     {
       m_defaultVocabularyList.push_back(defaultVocabularyListJsonList[defaultVocabularyListIndex].AsObject());
     }
+    m_defaultVocabularyListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

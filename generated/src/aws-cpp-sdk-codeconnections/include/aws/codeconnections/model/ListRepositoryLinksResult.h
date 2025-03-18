@@ -29,7 +29,7 @@ namespace Model
   class ListRepositoryLinksResult
   {
   public:
-    AWS_CODECONNECTIONS_API ListRepositoryLinksResult();
+    AWS_CODECONNECTIONS_API ListRepositoryLinksResult() = default;
     AWS_CODECONNECTIONS_API ListRepositoryLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECONNECTIONS_API ListRepositoryLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Lists the repository links called by the list repository links operation.</p>
      */
-    inline const Aws::Vector<RepositoryLinkInfo>& GetRepositoryLinks() const{ return m_repositoryLinks; }
-    inline void SetRepositoryLinks(const Aws::Vector<RepositoryLinkInfo>& value) { m_repositoryLinks = value; }
-    inline void SetRepositoryLinks(Aws::Vector<RepositoryLinkInfo>&& value) { m_repositoryLinks = std::move(value); }
-    inline ListRepositoryLinksResult& WithRepositoryLinks(const Aws::Vector<RepositoryLinkInfo>& value) { SetRepositoryLinks(value); return *this;}
-    inline ListRepositoryLinksResult& WithRepositoryLinks(Aws::Vector<RepositoryLinkInfo>&& value) { SetRepositoryLinks(std::move(value)); return *this;}
-    inline ListRepositoryLinksResult& AddRepositoryLinks(const RepositoryLinkInfo& value) { m_repositoryLinks.push_back(value); return *this; }
-    inline ListRepositoryLinksResult& AddRepositoryLinks(RepositoryLinkInfo&& value) { m_repositoryLinks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RepositoryLinkInfo>& GetRepositoryLinks() const { return m_repositoryLinks; }
+    template<typename RepositoryLinksT = Aws::Vector<RepositoryLinkInfo>>
+    void SetRepositoryLinks(RepositoryLinksT&& value) { m_repositoryLinksHasBeenSet = true; m_repositoryLinks = std::forward<RepositoryLinksT>(value); }
+    template<typename RepositoryLinksT = Aws::Vector<RepositoryLinkInfo>>
+    ListRepositoryLinksResult& WithRepositoryLinks(RepositoryLinksT&& value) { SetRepositoryLinks(std::forward<RepositoryLinksT>(value)); return *this;}
+    template<typename RepositoryLinksT = RepositoryLinkInfo>
+    ListRepositoryLinksResult& AddRepositoryLinks(RepositoryLinksT&& value) { m_repositoryLinksHasBeenSet = true; m_repositoryLinks.emplace_back(std::forward<RepositoryLinksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRepositoryLinksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRepositoryLinksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRepositoryLinksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRepositoryLinksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRepositoryLinksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRepositoryLinksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRepositoryLinksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRepositoryLinksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RepositoryLinkInfo> m_repositoryLinks;
+    bool m_repositoryLinksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

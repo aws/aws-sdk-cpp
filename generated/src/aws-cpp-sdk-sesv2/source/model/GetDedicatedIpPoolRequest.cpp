@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDedicatedIpPoolRequest::GetDedicatedIpPoolRequest() : 
-    m_poolNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDedicatedIpPoolRequest::SerializePayload() const
 {
   return {};

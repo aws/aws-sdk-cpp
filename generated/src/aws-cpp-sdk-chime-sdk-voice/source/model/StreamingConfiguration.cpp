@@ -18,18 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-StreamingConfiguration::StreamingConfiguration() : 
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_streamingNotificationTargetsHasBeenSet(false),
-    m_mediaInsightsConfigurationHasBeenSet(false)
-{
-}
-
 StreamingConfiguration::StreamingConfiguration(JsonView jsonValue)
-  : StreamingConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataRetentionInHours"))
   {
     m_dataRetentionInHours = jsonValue.GetInteger("DataRetentionInHours");
-
     m_dataRetentionInHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingNotificationTargets"))
   {
     Aws::Utils::Array<JsonView> streamingNotificationTargetsJsonList = jsonValue.GetArray("StreamingNotificationTargets");
@@ -59,14 +44,11 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
     }
     m_streamingNotificationTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsConfiguration"))
   {
     m_mediaInsightsConfiguration = jsonValue.GetObject("MediaInsightsConfiguration");
-
     m_mediaInsightsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

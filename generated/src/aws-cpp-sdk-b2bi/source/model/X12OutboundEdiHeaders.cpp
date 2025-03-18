@@ -18,17 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12OutboundEdiHeaders::X12OutboundEdiHeaders() : 
-    m_interchangeControlHeadersHasBeenSet(false),
-    m_functionalGroupHeadersHasBeenSet(false),
-    m_delimitersHasBeenSet(false),
-    m_validateEdi(false),
-    m_validateEdiHasBeenSet(false)
-{
-}
-
 X12OutboundEdiHeaders::X12OutboundEdiHeaders(JsonView jsonValue)
-  : X12OutboundEdiHeaders()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ X12OutboundEdiHeaders& X12OutboundEdiHeaders::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interchangeControlHeaders"))
   {
     m_interchangeControlHeaders = jsonValue.GetObject("interchangeControlHeaders");
-
     m_interchangeControlHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionalGroupHeaders"))
   {
     m_functionalGroupHeaders = jsonValue.GetObject("functionalGroupHeaders");
-
     m_functionalGroupHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("delimiters"))
   {
     m_delimiters = jsonValue.GetObject("delimiters");
-
     m_delimitersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validateEdi"))
   {
     m_validateEdi = jsonValue.GetBool("validateEdi");
-
     m_validateEdiHasBeenSet = true;
   }
-
   return *this;
 }
 

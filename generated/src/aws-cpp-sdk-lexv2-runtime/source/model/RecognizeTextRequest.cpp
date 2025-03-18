@@ -12,17 +12,6 @@ using namespace Aws::LexRuntimeV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RecognizeTextRequest::RecognizeTextRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false)
-{
-}
-
 Aws::String RecognizeTextRequest::SerializePayload() const
 {
   JsonValue payload;

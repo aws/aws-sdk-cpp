@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableImageDeregistrationProtectionRequest::EnableImageDeregistrationProtectionRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_withCooldown(false),
-    m_withCooldownHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableImageDeregistrationProtectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

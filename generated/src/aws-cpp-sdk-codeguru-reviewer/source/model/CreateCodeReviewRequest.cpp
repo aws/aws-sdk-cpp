@@ -12,15 +12,6 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCodeReviewRequest::CreateCodeReviewRequest() : 
-    m_nameHasBeenSet(false),
-    m_repositoryAssociationArnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateCodeReviewRequest::SerializePayload() const
 {
   JsonValue payload;

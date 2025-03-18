@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVerifiedAccessGroupsResponse::DescribeVerifiedAccessGroupsResponse()
-{
-}
-
 DescribeVerifiedAccessGroupsResponse::DescribeVerifiedAccessGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeVerifiedAccessGroupsResponse& DescribeVerifiedAccessGroupsResponse::oper
     if(!verifiedAccessGroupsNode.IsNull())
     {
       XmlNode verifiedAccessGroupsMember = verifiedAccessGroupsNode.FirstChild("item");
+      m_verifiedAccessGroupsHasBeenSet = !verifiedAccessGroupsMember.IsNull();
       while(!verifiedAccessGroupsMember.IsNull())
       {
         m_verifiedAccessGroups.push_back(verifiedAccessGroupsMember);
         verifiedAccessGroupsMember = verifiedAccessGroupsMember.NextNode("item");
       }
 
+      m_verifiedAccessGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeVerifiedAccessGroupsResponse& DescribeVerifiedAccessGroupsResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVerifiedAccessGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

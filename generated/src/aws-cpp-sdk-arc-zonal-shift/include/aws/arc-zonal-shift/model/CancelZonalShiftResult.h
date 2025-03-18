@@ -29,7 +29,7 @@ namespace Model
   class CancelZonalShiftResult
   {
   public:
-    AWS_ARCZONALSHIFT_API CancelZonalShiftResult();
+    AWS_ARCZONALSHIFT_API CancelZonalShiftResult() = default;
     AWS_ARCZONALSHIFT_API CancelZonalShiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARCZONALSHIFT_API CancelZonalShiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * shift expires or you cancel it, traffic for the resource is instead moved to
      * other Availability Zones in the Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
-    inline void SetAwayFrom(const Aws::String& value) { m_awayFrom = value; }
-    inline void SetAwayFrom(Aws::String&& value) { m_awayFrom = std::move(value); }
-    inline void SetAwayFrom(const char* value) { m_awayFrom.assign(value); }
-    inline CancelZonalShiftResult& WithAwayFrom(const Aws::String& value) { SetAwayFrom(value); return *this;}
-    inline CancelZonalShiftResult& WithAwayFrom(Aws::String&& value) { SetAwayFrom(std::move(value)); return *this;}
-    inline CancelZonalShiftResult& WithAwayFrom(const char* value) { SetAwayFrom(value); return *this;}
+    inline const Aws::String& GetAwayFrom() const { return m_awayFrom; }
+    template<typename AwayFromT = Aws::String>
+    void SetAwayFrom(AwayFromT&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::forward<AwayFromT>(value); }
+    template<typename AwayFromT = Aws::String>
+    CancelZonalShiftResult& WithAwayFrom(AwayFromT&& value) { SetAwayFrom(std::forward<AwayFromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * retained; no comment history is maintained. A new comment overwrites any
      * existing comment string.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
-    inline void SetComment(const Aws::String& value) { m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_comment.assign(value); }
-    inline CancelZonalShiftResult& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline CancelZonalShiftResult& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline CancelZonalShiftResult& WithComment(const char* value) { SetComment(value); return *this;}
+    inline const Aws::String& GetComment() const { return m_comment; }
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    CancelZonalShiftResult& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +73,11 @@ namespace Model
      * Availability Zone, or just wait for it to expire. Or you can update the zonal
      * shift to specify another length of time to expire in.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
-    inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTime = value; }
-    inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTime = std::move(value); }
-    inline CancelZonalShiftResult& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
-    inline CancelZonalShiftResult& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiryTime() const { return m_expiryTime; }
+    template<typename ExpiryTimeT = Aws::Utils::DateTime>
+    void SetExpiryTime(ExpiryTimeT&& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = std::forward<ExpiryTimeT>(value); }
+    template<typename ExpiryTimeT = Aws::Utils::DateTime>
+    CancelZonalShiftResult& WithExpiryTime(ExpiryTimeT&& value) { SetExpiryTime(std::forward<ExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,24 +87,22 @@ namespace Model
      * this time, supported resources are Network Load Balancers and Application Load
      * Balancers with cross-zone load balancing turned off.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifier.assign(value); }
-    inline CancelZonalShiftResult& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline CancelZonalShiftResult& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline CancelZonalShiftResult& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    CancelZonalShiftResult& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time (UTC) when the zonal shift starts.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline CancelZonalShiftResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CancelZonalShiftResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CancelZonalShiftResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,53 +113,55 @@ namespace Model
      * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
      * <b>CANCELED:</b> The zonal shift was canceled.</p> </li> </ul>
      */
-    inline const ZonalShiftStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ZonalShiftStatus& value) { m_status = value; }
-    inline void SetStatus(ZonalShiftStatus&& value) { m_status = std::move(value); }
-    inline CancelZonalShiftResult& WithStatus(const ZonalShiftStatus& value) { SetStatus(value); return *this;}
-    inline CancelZonalShiftResult& WithStatus(ZonalShiftStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ZonalShiftStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ZonalShiftStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CancelZonalShiftResult& WithStatus(ZonalShiftStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of a zonal shift.</p>
      */
-    inline const Aws::String& GetZonalShiftId() const{ return m_zonalShiftId; }
-    inline void SetZonalShiftId(const Aws::String& value) { m_zonalShiftId = value; }
-    inline void SetZonalShiftId(Aws::String&& value) { m_zonalShiftId = std::move(value); }
-    inline void SetZonalShiftId(const char* value) { m_zonalShiftId.assign(value); }
-    inline CancelZonalShiftResult& WithZonalShiftId(const Aws::String& value) { SetZonalShiftId(value); return *this;}
-    inline CancelZonalShiftResult& WithZonalShiftId(Aws::String&& value) { SetZonalShiftId(std::move(value)); return *this;}
-    inline CancelZonalShiftResult& WithZonalShiftId(const char* value) { SetZonalShiftId(value); return *this;}
+    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
+    template<typename ZonalShiftIdT = Aws::String>
+    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
+    template<typename ZonalShiftIdT = Aws::String>
+    CancelZonalShiftResult& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelZonalShiftResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelZonalShiftResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelZonalShiftResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelZonalShiftResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_awayFrom;
+    bool m_awayFromHasBeenSet = false;
 
     Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiryTime;
+    Aws::Utils::DateTime m_expiryTime{};
+    bool m_expiryTimeHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    ZonalShiftStatus m_status;
+    ZonalShiftStatus m_status{ZonalShiftStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_zonalShiftId;
+    bool m_zonalShiftIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateFunctionUrlConfigRequest::UpdateFunctionUrlConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_authType(FunctionUrlAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_corsHasBeenSet(false),
-    m_invokeMode(InvokeMode::NOT_SET),
-    m_invokeModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFunctionUrlConfigRequest::SerializePayload() const
 {
   JsonValue payload;

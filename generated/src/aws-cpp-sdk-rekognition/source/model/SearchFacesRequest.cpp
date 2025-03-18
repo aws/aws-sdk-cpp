@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchFacesRequest::SearchFacesRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_faceIdHasBeenSet(false),
-    m_maxFaces(0),
-    m_maxFacesHasBeenSet(false),
-    m_faceMatchThreshold(0.0),
-    m_faceMatchThresholdHasBeenSet(false)
-{
-}
-
 Aws::String SearchFacesRequest::SerializePayload() const
 {
   JsonValue payload;

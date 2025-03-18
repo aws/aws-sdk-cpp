@@ -18,24 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResiliencyPolicy::ResiliencyPolicy() : 
-    m_creationTimeHasBeenSet(false),
-    m_dataLocationConstraint(DataLocationConstraint::NOT_SET),
-    m_dataLocationConstraintHasBeenSet(false),
-    m_estimatedCostTier(EstimatedCostTier::NOT_SET),
-    m_estimatedCostTierHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tier(ResiliencyPolicyTier::NOT_SET),
-    m_tierHasBeenSet(false)
-{
-}
-
 ResiliencyPolicy::ResiliencyPolicy(JsonView jsonValue)
-  : ResiliencyPolicy()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ ResiliencyPolicy& ResiliencyPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataLocationConstraint"))
   {
     m_dataLocationConstraint = DataLocationConstraintMapper::GetDataLocationConstraintForName(jsonValue.GetString("dataLocationConstraint"));
-
     m_dataLocationConstraintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedCostTier"))
   {
     m_estimatedCostTier = EstimatedCostTierMapper::GetEstimatedCostTierForName(jsonValue.GetString("estimatedCostTier"));
-
     m_estimatedCostTierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     Aws::Map<Aws::String, JsonView> policyJsonMap = jsonValue.GetObject("policy").GetAllObjects();
@@ -72,28 +49,21 @@ ResiliencyPolicy& ResiliencyPolicy::operator =(JsonView jsonValue)
     }
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyArn"))
   {
     m_policyArn = jsonValue.GetString("policyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDescription"))
   {
     m_policyDescription = jsonValue.GetString("policyDescription");
-
     m_policyDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -103,14 +73,11 @@ ResiliencyPolicy& ResiliencyPolicy::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tier"))
   {
     m_tier = ResiliencyPolicyTierMapper::GetResiliencyPolicyTierForName(jsonValue.GetString("tier"));
-
     m_tierHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ExportLabelsTaskRunProperties
   {
   public:
-    AWS_GLUE_API ExportLabelsTaskRunProperties();
+    AWS_GLUE_API ExportLabelsTaskRunProperties() = default;
     AWS_GLUE_API ExportLabelsTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ExportLabelsTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
      * labels.</p>
      */
-    inline const Aws::String& GetOutputS3Path() const{ return m_outputS3Path; }
+    inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
     inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
-    inline void SetOutputS3Path(const Aws::String& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = value; }
-    inline void SetOutputS3Path(Aws::String&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::move(value); }
-    inline void SetOutputS3Path(const char* value) { m_outputS3PathHasBeenSet = true; m_outputS3Path.assign(value); }
-    inline ExportLabelsTaskRunProperties& WithOutputS3Path(const Aws::String& value) { SetOutputS3Path(value); return *this;}
-    inline ExportLabelsTaskRunProperties& WithOutputS3Path(Aws::String&& value) { SetOutputS3Path(std::move(value)); return *this;}
-    inline ExportLabelsTaskRunProperties& WithOutputS3Path(const char* value) { SetOutputS3Path(value); return *this;}
+    template<typename OutputS3PathT = Aws::String>
+    void SetOutputS3Path(OutputS3PathT&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::forward<OutputS3PathT>(value); }
+    template<typename OutputS3PathT = Aws::String>
+    ExportLabelsTaskRunProperties& WithOutputS3Path(OutputS3PathT&& value) { SetOutputS3Path(std::forward<OutputS3PathT>(value)); return *this;}
     ///@}
   private:
 

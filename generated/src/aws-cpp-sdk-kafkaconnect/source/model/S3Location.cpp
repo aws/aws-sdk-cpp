@@ -18,15 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketArnHasBeenSet(false),
-    m_fileKeyHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileKey"))
   {
     m_fileKey = jsonValue.GetString("fileKey");
-
     m_fileKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectVersion"))
   {
     m_objectVersion = jsonValue.GetString("objectVersion");
-
     m_objectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

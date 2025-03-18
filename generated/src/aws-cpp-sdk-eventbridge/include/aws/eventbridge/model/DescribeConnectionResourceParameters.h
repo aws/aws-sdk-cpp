@@ -32,7 +32,7 @@ namespace Model
   class DescribeConnectionResourceParameters
   {
   public:
-    AWS_EVENTBRIDGE_API DescribeConnectionResourceParameters();
+    AWS_EVENTBRIDGE_API DescribeConnectionResourceParameters() = default;
     AWS_EVENTBRIDGE_API DescribeConnectionResourceParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API DescribeConnectionResourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource configuration for the private
      * API.</p>
      */
-    inline const Aws::String& GetResourceConfigurationArn() const{ return m_resourceConfigurationArn; }
+    inline const Aws::String& GetResourceConfigurationArn() const { return m_resourceConfigurationArn; }
     inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
-    inline void SetResourceConfigurationArn(const Aws::String& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = value; }
-    inline void SetResourceConfigurationArn(Aws::String&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::move(value); }
-    inline void SetResourceConfigurationArn(const char* value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn.assign(value); }
-    inline DescribeConnectionResourceParameters& WithResourceConfigurationArn(const Aws::String& value) { SetResourceConfigurationArn(value); return *this;}
-    inline DescribeConnectionResourceParameters& WithResourceConfigurationArn(Aws::String&& value) { SetResourceConfigurationArn(std::move(value)); return *this;}
-    inline DescribeConnectionResourceParameters& WithResourceConfigurationArn(const char* value) { SetResourceConfigurationArn(value); return *this;}
+    template<typename ResourceConfigurationArnT = Aws::String>
+    void SetResourceConfigurationArn(ResourceConfigurationArnT&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::forward<ResourceConfigurationArnT>(value); }
+    template<typename ResourceConfigurationArnT = Aws::String>
+    DescribeConnectionResourceParameters& WithResourceConfigurationArn(ResourceConfigurationArnT&& value) { SetResourceConfigurationArn(std::forward<ResourceConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * resource association EventBridge created between the connection and the private
      * API's resource configuration.</p>
      */
-    inline const Aws::String& GetResourceAssociationArn() const{ return m_resourceAssociationArn; }
+    inline const Aws::String& GetResourceAssociationArn() const { return m_resourceAssociationArn; }
     inline bool ResourceAssociationArnHasBeenSet() const { return m_resourceAssociationArnHasBeenSet; }
-    inline void SetResourceAssociationArn(const Aws::String& value) { m_resourceAssociationArnHasBeenSet = true; m_resourceAssociationArn = value; }
-    inline void SetResourceAssociationArn(Aws::String&& value) { m_resourceAssociationArnHasBeenSet = true; m_resourceAssociationArn = std::move(value); }
-    inline void SetResourceAssociationArn(const char* value) { m_resourceAssociationArnHasBeenSet = true; m_resourceAssociationArn.assign(value); }
-    inline DescribeConnectionResourceParameters& WithResourceAssociationArn(const Aws::String& value) { SetResourceAssociationArn(value); return *this;}
-    inline DescribeConnectionResourceParameters& WithResourceAssociationArn(Aws::String&& value) { SetResourceAssociationArn(std::move(value)); return *this;}
-    inline DescribeConnectionResourceParameters& WithResourceAssociationArn(const char* value) { SetResourceAssociationArn(value); return *this;}
+    template<typename ResourceAssociationArnT = Aws::String>
+    void SetResourceAssociationArn(ResourceAssociationArnT&& value) { m_resourceAssociationArnHasBeenSet = true; m_resourceAssociationArn = std::forward<ResourceAssociationArnT>(value); }
+    template<typename ResourceAssociationArnT = Aws::String>
+    DescribeConnectionResourceParameters& WithResourceAssociationArn(ResourceAssociationArnT&& value) { SetResourceAssociationArn(std::forward<ResourceAssociationArnT>(value)); return *this;}
     ///@}
   private:
 

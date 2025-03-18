@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineConnectionGeometry::IsolineConnectionGeometry() : 
-    m_lineStringHasBeenSet(false),
-    m_polylineHasBeenSet(false)
-{
-}
-
 IsolineConnectionGeometry::IsolineConnectionGeometry(JsonView jsonValue)
-  : IsolineConnectionGeometry()
 {
   *this = jsonValue;
 }
@@ -48,14 +41,11 @@ IsolineConnectionGeometry& IsolineConnectionGeometry::operator =(JsonView jsonVa
     }
     m_lineStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polyline"))
   {
     m_polyline = jsonValue.GetString("Polyline");
-
     m_polylineHasBeenSet = true;
   }
-
   return *this;
 }
 

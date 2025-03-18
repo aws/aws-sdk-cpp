@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SearchResourcesTagCriterionPair::SearchResourcesTagCriterionPair() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SearchResourcesTagCriterionPair::SearchResourcesTagCriterionPair(JsonView jsonValue)
-  : SearchResourcesTagCriterionPair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SearchResourcesTagCriterionPair& SearchResourcesTagCriterionPair::operator =(Jso
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

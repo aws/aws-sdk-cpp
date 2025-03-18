@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBProxyRequest::DeleteDBProxyRequest() : 
-    m_dBProxyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBProxyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -13,15 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachTypedLinkRequest::AttachTypedLinkRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_sourceObjectReferenceHasBeenSet(false),
-    m_targetObjectReferenceHasBeenSet(false),
-    m_typedLinkFacetHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String AttachTypedLinkRequest::SerializePayload() const
 {
   JsonValue payload;

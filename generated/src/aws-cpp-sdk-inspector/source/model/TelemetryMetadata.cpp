@@ -18,17 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-TelemetryMetadata::TelemetryMetadata() : 
-    m_messageTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_dataSize(0),
-    m_dataSizeHasBeenSet(false)
-{
-}
-
 TelemetryMetadata::TelemetryMetadata(JsonView jsonValue)
-  : TelemetryMetadata()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TelemetryMetadata& TelemetryMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageType"))
   {
     m_messageType = jsonValue.GetString("messageType");
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSize"))
   {
     m_dataSize = jsonValue.GetInt64("dataSize");
-
     m_dataSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

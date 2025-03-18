@@ -45,7 +45,7 @@ namespace Model
   class S3DataSourceConfiguration
   {
   public:
-    AWS_KENDRA_API S3DataSourceConfiguration();
+    AWS_KENDRA_API S3DataSourceConfiguration() = default;
     AWS_KENDRA_API S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>The name of the bucket that contains the documents.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3DataSourceConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3DataSourceConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3DataSourceConfiguration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,15 +68,14 @@ namespace Model
      * <p>A list of S3 prefixes for the documents that should be included in the
      * index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPrefixes() const{ return m_inclusionPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPrefixes() const { return m_inclusionPrefixes; }
     inline bool InclusionPrefixesHasBeenSet() const { return m_inclusionPrefixesHasBeenSet; }
-    inline void SetInclusionPrefixes(const Aws::Vector<Aws::String>& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = value; }
-    inline void SetInclusionPrefixes(Aws::Vector<Aws::String>&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = std::move(value); }
-    inline S3DataSourceConfiguration& WithInclusionPrefixes(const Aws::Vector<Aws::String>& value) { SetInclusionPrefixes(value); return *this;}
-    inline S3DataSourceConfiguration& WithInclusionPrefixes(Aws::Vector<Aws::String>&& value) { SetInclusionPrefixes(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(const Aws::String& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(Aws::String&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(std::move(value)); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPrefixes(const char* value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.push_back(value); return *this; }
+    template<typename InclusionPrefixesT = Aws::Vector<Aws::String>>
+    void SetInclusionPrefixes(InclusionPrefixesT&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes = std::forward<InclusionPrefixesT>(value); }
+    template<typename InclusionPrefixesT = Aws::Vector<Aws::String>>
+    S3DataSourceConfiguration& WithInclusionPrefixes(InclusionPrefixesT&& value) { SetInclusionPrefixes(std::forward<InclusionPrefixesT>(value)); return *this;}
+    template<typename InclusionPrefixesT = Aws::String>
+    S3DataSourceConfiguration& AddInclusionPrefixes(InclusionPrefixesT&& value) { m_inclusionPrefixesHasBeenSet = true; m_inclusionPrefixes.emplace_back(std::forward<InclusionPrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,15 +101,14 @@ namespace Model
      * of Exclude and Include Filters</a> in the Amazon Web Services CLI Command
      * Reference.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const { return m_inclusionPatterns; }
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
-    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
-    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
-    inline S3DataSourceConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
-    inline S3DataSourceConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
-    inline S3DataSourceConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::forward<InclusionPatternsT>(value); }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    S3DataSourceConfiguration& WithInclusionPatterns(InclusionPatternsT&& value) { SetInclusionPatterns(std::forward<InclusionPatternsT>(value)); return *this;}
+    template<typename InclusionPatternsT = Aws::String>
+    S3DataSourceConfiguration& AddInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.emplace_back(std::forward<InclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,25 +134,24 @@ namespace Model
      * of Exclude and Include Filters</a> in the Amazon Web Services CLI Command
      * Reference.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const { return m_exclusionPatterns; }
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
-    inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
-    inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
-    inline S3DataSourceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
-    inline S3DataSourceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
-    inline S3DataSourceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
-    inline S3DataSourceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
-    inline S3DataSourceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::forward<ExclusionPatternsT>(value); }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    S3DataSourceConfiguration& WithExclusionPatterns(ExclusionPatternsT&& value) { SetExclusionPatterns(std::forward<ExclusionPatternsT>(value)); return *this;}
+    template<typename ExclusionPatternsT = Aws::String>
+    S3DataSourceConfiguration& AddExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.emplace_back(std::forward<ExclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const DocumentsMetadataConfiguration& GetDocumentsMetadataConfiguration() const{ return m_documentsMetadataConfiguration; }
+    inline const DocumentsMetadataConfiguration& GetDocumentsMetadataConfiguration() const { return m_documentsMetadataConfiguration; }
     inline bool DocumentsMetadataConfigurationHasBeenSet() const { return m_documentsMetadataConfigurationHasBeenSet; }
-    inline void SetDocumentsMetadataConfiguration(const DocumentsMetadataConfiguration& value) { m_documentsMetadataConfigurationHasBeenSet = true; m_documentsMetadataConfiguration = value; }
-    inline void SetDocumentsMetadataConfiguration(DocumentsMetadataConfiguration&& value) { m_documentsMetadataConfigurationHasBeenSet = true; m_documentsMetadataConfiguration = std::move(value); }
-    inline S3DataSourceConfiguration& WithDocumentsMetadataConfiguration(const DocumentsMetadataConfiguration& value) { SetDocumentsMetadataConfiguration(value); return *this;}
-    inline S3DataSourceConfiguration& WithDocumentsMetadataConfiguration(DocumentsMetadataConfiguration&& value) { SetDocumentsMetadataConfiguration(std::move(value)); return *this;}
+    template<typename DocumentsMetadataConfigurationT = DocumentsMetadataConfiguration>
+    void SetDocumentsMetadataConfiguration(DocumentsMetadataConfigurationT&& value) { m_documentsMetadataConfigurationHasBeenSet = true; m_documentsMetadataConfiguration = std::forward<DocumentsMetadataConfigurationT>(value); }
+    template<typename DocumentsMetadataConfigurationT = DocumentsMetadataConfiguration>
+    S3DataSourceConfiguration& WithDocumentsMetadataConfiguration(DocumentsMetadataConfigurationT&& value) { SetDocumentsMetadataConfiguration(std::forward<DocumentsMetadataConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +161,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
      * for S3 data sources</a>.</p>
      */
-    inline const AccessControlListConfiguration& GetAccessControlListConfiguration() const{ return m_accessControlListConfiguration; }
+    inline const AccessControlListConfiguration& GetAccessControlListConfiguration() const { return m_accessControlListConfiguration; }
     inline bool AccessControlListConfigurationHasBeenSet() const { return m_accessControlListConfigurationHasBeenSet; }
-    inline void SetAccessControlListConfiguration(const AccessControlListConfiguration& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = value; }
-    inline void SetAccessControlListConfiguration(AccessControlListConfiguration&& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = std::move(value); }
-    inline S3DataSourceConfiguration& WithAccessControlListConfiguration(const AccessControlListConfiguration& value) { SetAccessControlListConfiguration(value); return *this;}
-    inline S3DataSourceConfiguration& WithAccessControlListConfiguration(AccessControlListConfiguration&& value) { SetAccessControlListConfiguration(std::move(value)); return *this;}
+    template<typename AccessControlListConfigurationT = AccessControlListConfiguration>
+    void SetAccessControlListConfiguration(AccessControlListConfigurationT&& value) { m_accessControlListConfigurationHasBeenSet = true; m_accessControlListConfiguration = std::forward<AccessControlListConfigurationT>(value); }
+    template<typename AccessControlListConfigurationT = AccessControlListConfiguration>
+    S3DataSourceConfiguration& WithAccessControlListConfiguration(AccessControlListConfigurationT&& value) { SetAccessControlListConfiguration(std::forward<AccessControlListConfigurationT>(value)); return *this;}
     ///@}
   private:
 

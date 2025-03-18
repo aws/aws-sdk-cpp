@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompleteMultipartUploadResult::CompleteMultipartUploadResult()
-{
-}
-
 CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,24 +31,28 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& checksumIter = headers.find("x-amz-sha256-tree-hash");
   if(checksumIter != headers.end())
   {
     m_checksum = checksumIter->second;
+    m_checksumHasBeenSet = true;
   }
 
   const auto& archiveIdIter = headers.find("x-amz-archive-id");
   if(archiveIdIter != headers.end())
   {
     m_archiveId = archiveIdIter->second;
+    m_archiveIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

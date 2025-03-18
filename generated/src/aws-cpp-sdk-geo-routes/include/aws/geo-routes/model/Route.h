@@ -34,7 +34,7 @@ namespace Model
   class Route
   {
   public:
-    AWS_GEOROUTES_API Route();
+    AWS_GEOROUTES_API Route() = default;
     AWS_GEOROUTES_API Route(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Route& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * will contain Vehicle legs corresponding to journey on land, and Ferry legs
      * corresponding to the journey via Ferry.</p>
      */
-    inline const Aws::Vector<RouteLeg>& GetLegs() const{ return m_legs; }
+    inline const Aws::Vector<RouteLeg>& GetLegs() const { return m_legs; }
     inline bool LegsHasBeenSet() const { return m_legsHasBeenSet; }
-    inline void SetLegs(const Aws::Vector<RouteLeg>& value) { m_legsHasBeenSet = true; m_legs = value; }
-    inline void SetLegs(Aws::Vector<RouteLeg>&& value) { m_legsHasBeenSet = true; m_legs = std::move(value); }
-    inline Route& WithLegs(const Aws::Vector<RouteLeg>& value) { SetLegs(value); return *this;}
-    inline Route& WithLegs(Aws::Vector<RouteLeg>&& value) { SetLegs(std::move(value)); return *this;}
-    inline Route& AddLegs(const RouteLeg& value) { m_legsHasBeenSet = true; m_legs.push_back(value); return *this; }
-    inline Route& AddLegs(RouteLeg&& value) { m_legsHasBeenSet = true; m_legs.push_back(std::move(value)); return *this; }
+    template<typename LegsT = Aws::Vector<RouteLeg>>
+    void SetLegs(LegsT&& value) { m_legsHasBeenSet = true; m_legs = std::forward<LegsT>(value); }
+    template<typename LegsT = Aws::Vector<RouteLeg>>
+    Route& WithLegs(LegsT&& value) { SetLegs(std::forward<LegsT>(value)); return *this;}
+    template<typename LegsT = RouteLeg>
+    Route& AddLegs(LegsT&& value) { m_legsHasBeenSet = true; m_legs.emplace_back(std::forward<LegsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,26 +63,26 @@ namespace Model
      * <p>Important labels including names and route numbers that differentiate the
      * current route from the alternatives presented.</p>
      */
-    inline const Aws::Vector<RouteMajorRoadLabel>& GetMajorRoadLabels() const{ return m_majorRoadLabels; }
+    inline const Aws::Vector<RouteMajorRoadLabel>& GetMajorRoadLabels() const { return m_majorRoadLabels; }
     inline bool MajorRoadLabelsHasBeenSet() const { return m_majorRoadLabelsHasBeenSet; }
-    inline void SetMajorRoadLabels(const Aws::Vector<RouteMajorRoadLabel>& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels = value; }
-    inline void SetMajorRoadLabels(Aws::Vector<RouteMajorRoadLabel>&& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels = std::move(value); }
-    inline Route& WithMajorRoadLabels(const Aws::Vector<RouteMajorRoadLabel>& value) { SetMajorRoadLabels(value); return *this;}
-    inline Route& WithMajorRoadLabels(Aws::Vector<RouteMajorRoadLabel>&& value) { SetMajorRoadLabels(std::move(value)); return *this;}
-    inline Route& AddMajorRoadLabels(const RouteMajorRoadLabel& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels.push_back(value); return *this; }
-    inline Route& AddMajorRoadLabels(RouteMajorRoadLabel&& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels.push_back(std::move(value)); return *this; }
+    template<typename MajorRoadLabelsT = Aws::Vector<RouteMajorRoadLabel>>
+    void SetMajorRoadLabels(MajorRoadLabelsT&& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels = std::forward<MajorRoadLabelsT>(value); }
+    template<typename MajorRoadLabelsT = Aws::Vector<RouteMajorRoadLabel>>
+    Route& WithMajorRoadLabels(MajorRoadLabelsT&& value) { SetMajorRoadLabels(std::forward<MajorRoadLabelsT>(value)); return *this;}
+    template<typename MajorRoadLabelsT = RouteMajorRoadLabel>
+    Route& AddMajorRoadLabels(MajorRoadLabelsT&& value) { m_majorRoadLabelsHasBeenSet = true; m_majorRoadLabels.emplace_back(std::forward<MajorRoadLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Summarized details of the leg.</p>
      */
-    inline const RouteSummary& GetSummary() const{ return m_summary; }
+    inline const RouteSummary& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const RouteSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(RouteSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline Route& WithSummary(const RouteSummary& value) { SetSummary(value); return *this;}
-    inline Route& WithSummary(RouteSummary&& value) { SetSummary(std::move(value)); return *this;}
+    template<typename SummaryT = RouteSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = RouteSummary>
+    Route& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
   private:
 

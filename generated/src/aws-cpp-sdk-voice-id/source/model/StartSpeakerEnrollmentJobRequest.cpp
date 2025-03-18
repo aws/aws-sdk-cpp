@@ -12,18 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSpeakerEnrollmentJobRequest::StartSpeakerEnrollmentJobRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enrollmentConfigHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
-{
-}
-
 Aws::String StartSpeakerEnrollmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetInsightsByAssessmentRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API GetInsightsByAssessmentRequest();
+    AWS_AUDITMANAGER_API GetInsightsByAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier for the assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline GetInsightsByAssessmentRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline GetInsightsByAssessmentRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline GetInsightsByAssessmentRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    GetInsightsByAssessmentRequest& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceInstanceState::ServiceInstanceState() : 
-    m_lastSuccessfulComponentDeploymentIdsHasBeenSet(false),
-    m_lastSuccessfulEnvironmentDeploymentIdHasBeenSet(false),
-    m_lastSuccessfulServicePipelineDeploymentIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ServiceInstanceState::ServiceInstanceState(JsonView jsonValue)
-  : ServiceInstanceState()
 {
   *this = jsonValue;
 }
@@ -46,49 +34,36 @@ ServiceInstanceState& ServiceInstanceState::operator =(JsonView jsonValue)
     }
     m_lastSuccessfulComponentDeploymentIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSuccessfulEnvironmentDeploymentId"))
   {
     m_lastSuccessfulEnvironmentDeploymentId = jsonValue.GetString("lastSuccessfulEnvironmentDeploymentId");
-
     m_lastSuccessfulEnvironmentDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSuccessfulServicePipelineDeploymentId"))
   {
     m_lastSuccessfulServicePipelineDeploymentId = jsonValue.GetString("lastSuccessfulServicePipelineDeploymentId");
-
     m_lastSuccessfulServicePipelineDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spec"))
   {
     m_spec = jsonValue.GetString("spec");
-
     m_specHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMajorVersion"))
   {
     m_templateMajorVersion = jsonValue.GetString("templateMajorVersion");
-
     m_templateMajorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMinorVersion"))
   {
     m_templateMinorVersion = jsonValue.GetString("templateMinorVersion");
-
     m_templateMinorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

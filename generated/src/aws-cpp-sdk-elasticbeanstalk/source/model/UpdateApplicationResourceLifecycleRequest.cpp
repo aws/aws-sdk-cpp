@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-UpdateApplicationResourceLifecycleRequest::UpdateApplicationResourceLifecycleRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_resourceLifecycleConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationResourceLifecycleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

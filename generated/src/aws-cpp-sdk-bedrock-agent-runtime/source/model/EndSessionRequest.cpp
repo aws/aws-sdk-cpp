@@ -12,11 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EndSessionRequest::EndSessionRequest() : 
-    m_sessionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String EndSessionRequest::SerializePayload() const
 {
   return {};

@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-RebalanceSlotsInGlobalReplicationGroupRequest::RebalanceSlotsInGlobalReplicationGroupRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String RebalanceSlotsInGlobalReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,23 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentRequest::CreateEnvironmentRequest() : 
-    m_deploymentOrder(0),
-    m_deploymentOrderHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentAccountIdentifierHasBeenSet(false),
-    m_environmentAccountRegionHasBeenSet(false),
-    m_environmentBlueprintIdentifierHasBeenSet(false),
-    m_environmentConfigurationIdHasBeenSet(false),
-    m_environmentProfileIdentifierHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false),
-    m_userParametersHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

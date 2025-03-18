@@ -32,7 +32,7 @@ namespace Model
   class MembershipProtectedJobOutputConfiguration
   {
   public:
-    AWS_CLEANROOMS_API MembershipProtectedJobOutputConfiguration();
+    AWS_CLEANROOMS_API MembershipProtectedJobOutputConfiguration() = default;
     AWS_CLEANROOMS_API MembershipProtectedJobOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipProtectedJobOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains the configuration to write the job results to S3.</p>
      */
-    inline const ProtectedJobS3OutputConfigurationInput& GetS3() const{ return m_s3; }
+    inline const ProtectedJobS3OutputConfigurationInput& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const ProtectedJobS3OutputConfigurationInput& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(ProtectedJobS3OutputConfigurationInput&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline MembershipProtectedJobOutputConfiguration& WithS3(const ProtectedJobS3OutputConfigurationInput& value) { SetS3(value); return *this;}
-    inline MembershipProtectedJobOutputConfiguration& WithS3(ProtectedJobS3OutputConfigurationInput&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = ProtectedJobS3OutputConfigurationInput>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = ProtectedJobS3OutputConfigurationInput>
+    MembershipProtectedJobOutputConfiguration& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class NodeToNodeEncryptionOptionsStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptionsStatus() = default;
     AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The node-to-node encryption options for the specified domain.</p>
      */
-    inline const NodeToNodeEncryptionOptions& GetOptions() const{ return m_options; }
+    inline const NodeToNodeEncryptionOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const NodeToNodeEncryptionOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(NodeToNodeEncryptionOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline NodeToNodeEncryptionOptionsStatus& WithOptions(const NodeToNodeEncryptionOptions& value) { SetOptions(value); return *this;}
-    inline NodeToNodeEncryptionOptionsStatus& WithOptions(NodeToNodeEncryptionOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = NodeToNodeEncryptionOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = NodeToNodeEncryptionOptions>
+    NodeToNodeEncryptionOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The status of the node-to-node encryption options for the specified
      * domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline NodeToNodeEncryptionOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline NodeToNodeEncryptionOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    NodeToNodeEncryptionOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

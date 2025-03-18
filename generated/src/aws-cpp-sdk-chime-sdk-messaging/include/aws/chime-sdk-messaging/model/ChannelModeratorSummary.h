@@ -32,7 +32,7 @@ namespace Model
   class ChannelModeratorSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelModeratorSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelModeratorSummary() = default;
     AWS_CHIMESDKMESSAGING_API ChannelModeratorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ChannelModeratorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The data for a moderator.</p>
      */
-    inline const Identity& GetModerator() const{ return m_moderator; }
+    inline const Identity& GetModerator() const { return m_moderator; }
     inline bool ModeratorHasBeenSet() const { return m_moderatorHasBeenSet; }
-    inline void SetModerator(const Identity& value) { m_moderatorHasBeenSet = true; m_moderator = value; }
-    inline void SetModerator(Identity&& value) { m_moderatorHasBeenSet = true; m_moderator = std::move(value); }
-    inline ChannelModeratorSummary& WithModerator(const Identity& value) { SetModerator(value); return *this;}
-    inline ChannelModeratorSummary& WithModerator(Identity&& value) { SetModerator(std::move(value)); return *this;}
+    template<typename ModeratorT = Identity>
+    void SetModerator(ModeratorT&& value) { m_moderatorHasBeenSet = true; m_moderator = std::forward<ModeratorT>(value); }
+    template<typename ModeratorT = Identity>
+    ChannelModeratorSummary& WithModerator(ModeratorT&& value) { SetModerator(std::forward<ModeratorT>(value)); return *this;}
     ///@}
   private:
 

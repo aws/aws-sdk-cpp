@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDirectQueryDataSourceResult::GetDirectQueryDataSourceResult()
-{
-}
-
 GetDirectQueryDataSourceResult::GetDirectQueryDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetDirectQueryDataSourceResult& GetDirectQueryDataSourceResult::operator =(const
   if(jsonValue.ValueExists("DataSourceName"))
   {
     m_dataSourceName = jsonValue.GetString("DataSourceName");
-
+    m_dataSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceType"))
   {
     m_dataSourceType = jsonValue.GetObject("DataSourceType");
-
+    m_dataSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenSearchArns"))
   {
     Aws::Utils::Array<JsonView> openSearchArnsJsonList = jsonValue.GetArray("OpenSearchArns");
@@ -54,20 +47,20 @@ GetDirectQueryDataSourceResult& GetDirectQueryDataSourceResult::operator =(const
     {
       m_openSearchArns.push_back(openSearchArnsJsonList[openSearchArnsIndex].AsString());
     }
+    m_openSearchArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
+    m_dataSourceArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

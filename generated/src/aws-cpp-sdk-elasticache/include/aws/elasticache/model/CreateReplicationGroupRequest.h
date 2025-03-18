@@ -33,7 +33,7 @@ namespace Model
   class CreateReplicationGroupRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API CreateReplicationGroupRequest();
+    AWS_ELASTICACHE_API CreateReplicationGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,42 +56,36 @@ namespace Model
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline CreateReplicationGroupRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline CreateReplicationGroupRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    CreateReplicationGroupRequest& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-created description for the replication group.</p>
      */
-    inline const Aws::String& GetReplicationGroupDescription() const{ return m_replicationGroupDescription; }
+    inline const Aws::String& GetReplicationGroupDescription() const { return m_replicationGroupDescription; }
     inline bool ReplicationGroupDescriptionHasBeenSet() const { return m_replicationGroupDescriptionHasBeenSet; }
-    inline void SetReplicationGroupDescription(const Aws::String& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = value; }
-    inline void SetReplicationGroupDescription(Aws::String&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = std::move(value); }
-    inline void SetReplicationGroupDescription(const char* value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription.assign(value); }
-    inline CreateReplicationGroupRequest& WithReplicationGroupDescription(const Aws::String& value) { SetReplicationGroupDescription(value); return *this;}
-    inline CreateReplicationGroupRequest& WithReplicationGroupDescription(Aws::String&& value) { SetReplicationGroupDescription(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithReplicationGroupDescription(const char* value) { SetReplicationGroupDescription(value); return *this;}
+    template<typename ReplicationGroupDescriptionT = Aws::String>
+    void SetReplicationGroupDescription(ReplicationGroupDescriptionT&& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = std::forward<ReplicationGroupDescriptionT>(value); }
+    template<typename ReplicationGroupDescriptionT = Aws::String>
+    CreateReplicationGroupRequest& WithReplicationGroupDescription(ReplicationGroupDescriptionT&& value) { SetReplicationGroupDescription(std::forward<ReplicationGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Global datastore</p>
      */
-    inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
+    inline const Aws::String& GetGlobalReplicationGroupId() const { return m_globalReplicationGroupId; }
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
-    inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
-    inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
-    inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
-    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
-    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
+    template<typename GlobalReplicationGroupIdT = Aws::String>
+    void SetGlobalReplicationGroupId(GlobalReplicationGroupIdT&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::forward<GlobalReplicationGroupIdT>(value); }
+    template<typename GlobalReplicationGroupIdT = Aws::String>
+    CreateReplicationGroupRequest& WithGlobalReplicationGroupId(GlobalReplicationGroupIdT&& value) { SetGlobalReplicationGroupId(std::forward<GlobalReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
      * <code>ReplicasPerNodeGroup</code> is specified.</p>
      */
-    inline const Aws::String& GetPrimaryClusterId() const{ return m_primaryClusterId; }
+    inline const Aws::String& GetPrimaryClusterId() const { return m_primaryClusterId; }
     inline bool PrimaryClusterIdHasBeenSet() const { return m_primaryClusterIdHasBeenSet; }
-    inline void SetPrimaryClusterId(const Aws::String& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
-    inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = std::move(value); }
-    inline void SetPrimaryClusterId(const char* value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId.assign(value); }
-    inline CreateReplicationGroupRequest& WithPrimaryClusterId(const Aws::String& value) { SetPrimaryClusterId(value); return *this;}
-    inline CreateReplicationGroupRequest& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithPrimaryClusterId(const char* value) { SetPrimaryClusterId(value); return *this;}
+    template<typename PrimaryClusterIdT = Aws::String>
+    void SetPrimaryClusterId(PrimaryClusterIdT&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = std::forward<PrimaryClusterIdT>(value); }
+    template<typename PrimaryClusterIdT = Aws::String>
+    CreateReplicationGroupRequest& WithPrimaryClusterId(PrimaryClusterIdT&& value) { SetPrimaryClusterId(std::forward<PrimaryClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +111,7 @@ namespace Model
      * <code>AutomaticFailoverEnabled</code> must be enabled for Valkey or Redis OSS
      * (cluster mode enabled) replication groups.</p> <p>Default: false</p>
      */
-    inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
+    inline bool GetAutomaticFailoverEnabled() const { return m_automaticFailoverEnabled; }
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
     inline CreateReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
@@ -132,7 +124,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
      * Downtime: Multi-AZ</a>.</p>
      */
-    inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
+    inline bool GetMultiAZEnabled() const { return m_multiAZEnabled; }
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
     inline CreateReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
@@ -149,7 +141,7 @@ namespace Model
      * can explicitly set it to a value between 2 and 6.</p> <p>The maximum permitted
      * value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
      */
-    inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
+    inline int GetNumCacheClusters() const { return m_numCacheClusters; }
     inline bool NumCacheClustersHasBeenSet() const { return m_numCacheClustersHasBeenSet; }
     inline void SetNumCacheClusters(int value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
     inline CreateReplicationGroupRequest& WithNumCacheClusters(int value) { SetNumCacheClusters(value); return *this;}
@@ -168,15 +160,14 @@ namespace Model
      * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPreferredCacheClusterAZs() const{ return m_preferredCacheClusterAZs; }
+    inline const Aws::Vector<Aws::String>& GetPreferredCacheClusterAZs() const { return m_preferredCacheClusterAZs; }
     inline bool PreferredCacheClusterAZsHasBeenSet() const { return m_preferredCacheClusterAZsHasBeenSet; }
-    inline void SetPreferredCacheClusterAZs(const Aws::Vector<Aws::String>& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs = value; }
-    inline void SetPreferredCacheClusterAZs(Aws::Vector<Aws::String>&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs = std::move(value); }
-    inline CreateReplicationGroupRequest& WithPreferredCacheClusterAZs(const Aws::Vector<Aws::String>& value) { SetPreferredCacheClusterAZs(value); return *this;}
-    inline CreateReplicationGroupRequest& WithPreferredCacheClusterAZs(Aws::Vector<Aws::String>&& value) { SetPreferredCacheClusterAZs(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(const Aws::String& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(Aws::String&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(std::move(value)); return *this; }
-    inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(const char* value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(value); return *this; }
+    template<typename PreferredCacheClusterAZsT = Aws::Vector<Aws::String>>
+    void SetPreferredCacheClusterAZs(PreferredCacheClusterAZsT&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs = std::forward<PreferredCacheClusterAZsT>(value); }
+    template<typename PreferredCacheClusterAZsT = Aws::Vector<Aws::String>>
+    CreateReplicationGroupRequest& WithPreferredCacheClusterAZs(PreferredCacheClusterAZsT&& value) { SetPreferredCacheClusterAZs(std::forward<PreferredCacheClusterAZsT>(value)); return *this;}
+    template<typename PreferredCacheClusterAZsT = Aws::String>
+    CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(PreferredCacheClusterAZsT&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.emplace_back(std::forward<PreferredCacheClusterAZsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,7 +177,7 @@ namespace Model
      * Redis OSS (cluster mode disabled) either omit this parameter or set it to 1.</p>
      * <p>Default: 1</p>
      */
-    inline int GetNumNodeGroups() const{ return m_numNodeGroups; }
+    inline int GetNumNodeGroups() const { return m_numNodeGroups; }
     inline bool NumNodeGroupsHasBeenSet() const { return m_numNodeGroupsHasBeenSet; }
     inline void SetNumNodeGroups(int value) { m_numNodeGroupsHasBeenSet = true; m_numNodeGroups = value; }
     inline CreateReplicationGroupRequest& WithNumNodeGroups(int value) { SetNumNodeGroups(value); return *this;}
@@ -197,7 +188,7 @@ namespace Model
      * <p>An optional parameter that specifies the number of replica nodes in each node
      * group (shard). Valid values are 0 to 5.</p>
      */
-    inline int GetReplicasPerNodeGroup() const{ return m_replicasPerNodeGroup; }
+    inline int GetReplicasPerNodeGroup() const { return m_replicasPerNodeGroup; }
     inline bool ReplicasPerNodeGroupHasBeenSet() const { return m_replicasPerNodeGroupHasBeenSet; }
     inline void SetReplicasPerNodeGroup(int value) { m_replicasPerNodeGroupHasBeenSet = true; m_replicasPerNodeGroup = value; }
     inline CreateReplicationGroupRequest& WithReplicasPerNodeGroup(int value) { SetReplicasPerNodeGroup(value); return *this;}
@@ -216,14 +207,14 @@ namespace Model
      * configure each node group (shard) using this parameter because you must specify
      * the slots for each node group.</p>
      */
-    inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
+    inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const { return m_nodeGroupConfiguration; }
     inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
-    inline void SetNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
-    inline void SetNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = std::move(value); }
-    inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { SetNodeGroupConfiguration(value); return *this;}
-    inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { SetNodeGroupConfiguration(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(std::move(value)); return *this; }
+    template<typename NodeGroupConfigurationT = Aws::Vector<NodeGroupConfiguration>>
+    void SetNodeGroupConfiguration(NodeGroupConfigurationT&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = std::forward<NodeGroupConfigurationT>(value); }
+    template<typename NodeGroupConfigurationT = Aws::Vector<NodeGroupConfiguration>>
+    CreateReplicationGroupRequest& WithNodeGroupConfiguration(NodeGroupConfigurationT&& value) { SetNodeGroupConfiguration(std::forward<NodeGroupConfigurationT>(value)); return *this;}
+    template<typename NodeGroupConfigurationT = NodeGroupConfiguration>
+    CreateReplicationGroupRequest& AddNodeGroupConfiguration(NodeGroupConfigurationT&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.emplace_back(std::forward<NodeGroupConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -302,14 +293,12 @@ namespace Model
      * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
      * version 2.8.22 and later.</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+    inline const Aws::String& GetCacheNodeType() const { return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
-    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
-    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
-    inline CreateReplicationGroupRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+    template<typename CacheNodeTypeT = Aws::String>
+    void SetCacheNodeType(CacheNodeTypeT&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::forward<CacheNodeTypeT>(value); }
+    template<typename CacheNodeTypeT = Aws::String>
+    CreateReplicationGroupRequest& WithCacheNodeType(CacheNodeTypeT&& value) { SetCacheNodeType(std::forward<CacheNodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -317,14 +306,12 @@ namespace Model
      * <p>The name of the cache engine to be used for the clusters in this replication
      * group. The value must be set to <code>valkey</code> or <code>redis</code>.</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline CreateReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline CreateReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    CreateReplicationGroupRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -339,14 +326,12 @@ namespace Model
      * engine version, you must delete the existing cluster or replication group and
      * create it anew with the earlier engine version. </p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline CreateReplicationGroupRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline CreateReplicationGroupRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    CreateReplicationGroupRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -362,14 +347,12 @@ namespace Model
      * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+    inline const Aws::String& GetCacheParameterGroupName() const { return m_cacheParameterGroupName; }
     inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
-    inline CreateReplicationGroupRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+    template<typename CacheParameterGroupNameT = Aws::String>
+    void SetCacheParameterGroupName(CacheParameterGroupNameT&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::forward<CacheParameterGroupNameT>(value); }
+    template<typename CacheParameterGroupNameT = Aws::String>
+    CreateReplicationGroupRequest& WithCacheParameterGroupName(CacheParameterGroupNameT&& value) { SetCacheParameterGroupName(std::forward<CacheParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -381,14 +364,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> 
      */
-    inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
+    inline const Aws::String& GetCacheSubnetGroupName() const { return m_cacheSubnetGroupName; }
     inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
-    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
-    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
-    inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    void SetCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::forward<CacheSubnetGroupNameT>(value); }
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    CreateReplicationGroupRequest& WithCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { SetCacheSubnetGroupName(std::forward<CacheSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -396,15 +377,14 @@ namespace Model
      * <p>A list of cache security group names to associate with this replication
      * group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const { return m_cacheSecurityGroupNames; }
     inline bool CacheSecurityGroupNamesHasBeenSet() const { return m_cacheSecurityGroupNamesHasBeenSet; }
-    inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
-    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
-    inline CreateReplicationGroupRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
-    inline CreateReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
-    inline CreateReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+    template<typename CacheSecurityGroupNamesT = Aws::Vector<Aws::String>>
+    void SetCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::forward<CacheSecurityGroupNamesT>(value); }
+    template<typename CacheSecurityGroupNamesT = Aws::Vector<Aws::String>>
+    CreateReplicationGroupRequest& WithCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { SetCacheSecurityGroupNames(std::forward<CacheSecurityGroupNamesT>(value)); return *this;}
+    template<typename CacheSecurityGroupNamesT = Aws::String>
+    CreateReplicationGroupRequest& AddCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.emplace_back(std::forward<CacheSecurityGroupNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -413,15 +393,14 @@ namespace Model
      * group.</p> <p>Use this parameter only when you are creating a replication group
      * in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateReplicationGroupRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateReplicationGroupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateReplicationGroupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateReplicationGroupRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateReplicationGroupRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -433,14 +412,14 @@ namespace Model
      * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
      * replicated to all nodes.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateReplicationGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateReplicationGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateReplicationGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateReplicationGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -454,15 +433,14 @@ namespace Model
      * the number of ARNs specified here.</p> <p>Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotArns() const { return m_snapshotArns; }
     inline bool SnapshotArnsHasBeenSet() const { return m_snapshotArnsHasBeenSet; }
-    inline void SetSnapshotArns(const Aws::Vector<Aws::String>& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
-    inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::move(value); }
-    inline CreateReplicationGroupRequest& WithSnapshotArns(const Aws::Vector<Aws::String>& value) { SetSnapshotArns(value); return *this;}
-    inline CreateReplicationGroupRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddSnapshotArns(const Aws::String& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(std::move(value)); return *this; }
-    inline CreateReplicationGroupRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
+    template<typename SnapshotArnsT = Aws::Vector<Aws::String>>
+    void SetSnapshotArns(SnapshotArnsT&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::forward<SnapshotArnsT>(value); }
+    template<typename SnapshotArnsT = Aws::Vector<Aws::String>>
+    CreateReplicationGroupRequest& WithSnapshotArns(SnapshotArnsT&& value) { SetSnapshotArns(std::forward<SnapshotArnsT>(value)); return *this;}
+    template<typename SnapshotArnsT = Aws::String>
+    CreateReplicationGroupRequest& AddSnapshotArns(SnapshotArnsT&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.emplace_back(std::forward<SnapshotArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -471,14 +449,12 @@ namespace Model
      * group. The snapshot status changes to <code>restoring</code> while the new
      * replication group is being created.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline CreateReplicationGroupRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline CreateReplicationGroupRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    CreateReplicationGroupRequest& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -492,14 +468,12 @@ namespace Model
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline CreateReplicationGroupRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline CreateReplicationGroupRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    CreateReplicationGroupRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -507,7 +481,7 @@ namespace Model
      * <p>The port number on which each member of the replication group accepts
      * connections.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline CreateReplicationGroupRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -519,14 +493,12 @@ namespace Model
      * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
      * owner must be the same as the cluster owner.</p> 
      */
-    inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
+    inline const Aws::String& GetNotificationTopicArn() const { return m_notificationTopicArn; }
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
-    inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
-    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
-    inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
-    inline CreateReplicationGroupRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
-    inline CreateReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+    template<typename NotificationTopicArnT = Aws::String>
+    void SetNotificationTopicArn(NotificationTopicArnT&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::forward<NotificationTopicArnT>(value); }
+    template<typename NotificationTopicArnT = Aws::String>
+    CreateReplicationGroupRequest& WithNotificationTopicArn(NotificationTopicArnT&& value) { SetNotificationTopicArn(std::forward<NotificationTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -535,7 +507,7 @@ namespace Model
      * above, set this parameter to yes to opt-in to the next auto minor version
      * upgrade campaign. This parameter is disabled for previous versions.  </p>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline CreateReplicationGroupRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -548,7 +520,7 @@ namespace Model
      * a snapshot that was taken today is retained for 5 days before being deleted.</p>
      * <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
      */
-    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
     inline CreateReplicationGroupRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
@@ -561,14 +533,12 @@ namespace Model
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
      * an appropriate time range.</p>
      */
-    inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+    inline const Aws::String& GetSnapshotWindow() const { return m_snapshotWindow; }
     inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
-    inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
-    inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
-    inline CreateReplicationGroupRequest& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
-    inline CreateReplicationGroupRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
+    template<typename SnapshotWindowT = Aws::String>
+    void SetSnapshotWindow(SnapshotWindowT&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::forward<SnapshotWindowT>(value); }
+    template<typename SnapshotWindowT = Aws::String>
+    CreateReplicationGroupRequest& WithSnapshotWindow(SnapshotWindowT&& value) { SetSnapshotWindow(std::forward<SnapshotWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -587,14 +557,12 @@ namespace Model
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
-    inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+    inline const Aws::String& GetAuthToken() const { return m_authToken; }
     inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
-    inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
-    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
-    inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
-    inline CreateReplicationGroupRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
-    inline CreateReplicationGroupRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
+    template<typename AuthTokenT = Aws::String>
+    void SetAuthToken(AuthTokenT&& value) { m_authTokenHasBeenSet = true; m_authToken = std::forward<AuthTokenT>(value); }
+    template<typename AuthTokenT = Aws::String>
+    CreateReplicationGroupRequest& WithAuthToken(AuthTokenT&& value) { SetAuthToken(std::forward<AuthTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -611,7 +579,7 @@ namespace Model
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      */
-    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+    inline bool GetTransitEncryptionEnabled() const { return m_transitEncryptionEnabled; }
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
     inline CreateReplicationGroupRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
@@ -629,7 +597,7 @@ namespace Model
      * later.</p> <p>Default: <code>true</code> when using Valkey, <code>false</code>
      * when using Redis OSS</p>
      */
-    inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+    inline bool GetAtRestEncryptionEnabled() const { return m_atRestEncryptionEnabled; }
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
     inline CreateReplicationGroupRequest& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
@@ -639,43 +607,40 @@ namespace Model
     /**
      * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateReplicationGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateReplicationGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateReplicationGroupRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user group to associate with the replication group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const { return m_userGroupIds; }
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
-    inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
-    inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
-    inline CreateReplicationGroupRequest& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
-    inline CreateReplicationGroupRequest& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateReplicationGroupRequest& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+    template<typename UserGroupIdsT = Aws::Vector<Aws::String>>
+    void SetUserGroupIds(UserGroupIdsT&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::forward<UserGroupIdsT>(value); }
+    template<typename UserGroupIdsT = Aws::Vector<Aws::String>>
+    CreateReplicationGroupRequest& WithUserGroupIds(UserGroupIdsT&& value) { SetUserGroupIds(std::forward<UserGroupIdsT>(value)); return *this;}
+    template<typename UserGroupIdsT = Aws::String>
+    CreateReplicationGroupRequest& AddUserGroupIds(UserGroupIdsT&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.emplace_back(std::forward<UserGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the destination, format and type of the logs.</p>
      */
-    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const { return m_logDeliveryConfigurations; }
     inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
-    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
-    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
-    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
-    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
-    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+    template<typename LogDeliveryConfigurationsT = Aws::Vector<LogDeliveryConfigurationRequest>>
+    void SetLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::forward<LogDeliveryConfigurationsT>(value); }
+    template<typename LogDeliveryConfigurationsT = Aws::Vector<LogDeliveryConfigurationRequest>>
+    CreateReplicationGroupRequest& WithLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { SetLogDeliveryConfigurations(std::forward<LogDeliveryConfigurationsT>(value)); return *this;}
+    template<typename LogDeliveryConfigurationsT = LogDeliveryConfigurationRequest>
+    CreateReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.emplace_back(std::forward<LogDeliveryConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -686,7 +651,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
      * tiering</a>.</p>
      */
-    inline bool GetDataTieringEnabled() const{ return m_dataTieringEnabled; }
+    inline bool GetDataTieringEnabled() const { return m_dataTieringEnabled; }
     inline bool DataTieringEnabledHasBeenSet() const { return m_dataTieringEnabledHasBeenSet; }
     inline void SetDataTieringEnabled(bool value) { m_dataTieringEnabledHasBeenSet = true; m_dataTieringEnabled = value; }
     inline CreateReplicationGroupRequest& WithDataTieringEnabled(bool value) { SetDataTieringEnabled(value); return *this;}
@@ -700,12 +665,10 @@ namespace Model
      * and above on all instances built on the <a
      * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
-    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline NetworkType GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline CreateReplicationGroupRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
-    inline CreateReplicationGroupRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateReplicationGroupRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
     ///@}
 
     ///@{
@@ -716,12 +679,10 @@ namespace Model
      * version 1.6.6 and above on all instances built on the <a
      * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
-    inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
+    inline IpDiscovery GetIpDiscovery() const { return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
-    inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
-    inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
-    inline CreateReplicationGroupRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
-    inline CreateReplicationGroupRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
+    inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+    inline CreateReplicationGroupRequest& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
     ///@}
 
     ///@{
@@ -739,12 +700,10 @@ namespace Model
      * set <code>TransitEncryptionMode</code> to <code>required</code>.</p> <p>This
      * process will not trigger the replacement of the replication group.</p>
      */
-    inline const TransitEncryptionMode& GetTransitEncryptionMode() const{ return m_transitEncryptionMode; }
+    inline TransitEncryptionMode GetTransitEncryptionMode() const { return m_transitEncryptionMode; }
     inline bool TransitEncryptionModeHasBeenSet() const { return m_transitEncryptionModeHasBeenSet; }
-    inline void SetTransitEncryptionMode(const TransitEncryptionMode& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
-    inline void SetTransitEncryptionMode(TransitEncryptionMode&& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = std::move(value); }
-    inline CreateReplicationGroupRequest& WithTransitEncryptionMode(const TransitEncryptionMode& value) { SetTransitEncryptionMode(value); return *this;}
-    inline CreateReplicationGroupRequest& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+    inline void SetTransitEncryptionMode(TransitEncryptionMode value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
+    inline CreateReplicationGroupRequest& WithTransitEncryptionMode(TransitEncryptionMode value) { SetTransitEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -756,12 +715,10 @@ namespace Model
      * cluster mode enabled, you can then complete cluster mode configuration and set
      * the cluster mode to Enabled.</p>
      */
-    inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
+    inline ClusterMode GetClusterMode() const { return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
-    inline void SetClusterMode(const ClusterMode& value) { m_clusterModeHasBeenSet = true; m_clusterMode = value; }
-    inline void SetClusterMode(ClusterMode&& value) { m_clusterModeHasBeenSet = true; m_clusterMode = std::move(value); }
-    inline CreateReplicationGroupRequest& WithClusterMode(const ClusterMode& value) { SetClusterMode(value); return *this;}
-    inline CreateReplicationGroupRequest& WithClusterMode(ClusterMode&& value) { SetClusterMode(std::move(value)); return *this;}
+    inline void SetClusterMode(ClusterMode value) { m_clusterModeHasBeenSet = true; m_clusterMode = value; }
+    inline CreateReplicationGroupRequest& WithClusterMode(ClusterMode value) { SetClusterMode(value); return *this;}
     ///@}
 
     ///@{
@@ -769,14 +726,12 @@ namespace Model
      * <p>The name of the snapshot used to create a replication group. Available for
      * Valkey, Redis OSS only.</p>
      */
-    inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
+    inline const Aws::String& GetServerlessCacheSnapshotName() const { return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }
-    inline void SetServerlessCacheSnapshotName(const Aws::String& value) { m_serverlessCacheSnapshotNameHasBeenSet = true; m_serverlessCacheSnapshotName = value; }
-    inline void SetServerlessCacheSnapshotName(Aws::String&& value) { m_serverlessCacheSnapshotNameHasBeenSet = true; m_serverlessCacheSnapshotName = std::move(value); }
-    inline void SetServerlessCacheSnapshotName(const char* value) { m_serverlessCacheSnapshotNameHasBeenSet = true; m_serverlessCacheSnapshotName.assign(value); }
-    inline CreateReplicationGroupRequest& WithServerlessCacheSnapshotName(const Aws::String& value) { SetServerlessCacheSnapshotName(value); return *this;}
-    inline CreateReplicationGroupRequest& WithServerlessCacheSnapshotName(Aws::String&& value) { SetServerlessCacheSnapshotName(std::move(value)); return *this;}
-    inline CreateReplicationGroupRequest& WithServerlessCacheSnapshotName(const char* value) { SetServerlessCacheSnapshotName(value); return *this;}
+    template<typename ServerlessCacheSnapshotNameT = Aws::String>
+    void SetServerlessCacheSnapshotName(ServerlessCacheSnapshotNameT&& value) { m_serverlessCacheSnapshotNameHasBeenSet = true; m_serverlessCacheSnapshotName = std::forward<ServerlessCacheSnapshotNameT>(value); }
+    template<typename ServerlessCacheSnapshotNameT = Aws::String>
+    CreateReplicationGroupRequest& WithServerlessCacheSnapshotName(ServerlessCacheSnapshotNameT&& value) { SetServerlessCacheSnapshotName(std::forward<ServerlessCacheSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -792,22 +747,22 @@ namespace Model
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet = false;
 
-    bool m_automaticFailoverEnabled;
+    bool m_automaticFailoverEnabled{false};
     bool m_automaticFailoverEnabledHasBeenSet = false;
 
-    bool m_multiAZEnabled;
+    bool m_multiAZEnabled{false};
     bool m_multiAZEnabledHasBeenSet = false;
 
-    int m_numCacheClusters;
+    int m_numCacheClusters{0};
     bool m_numCacheClustersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredCacheClusterAZs;
     bool m_preferredCacheClusterAZsHasBeenSet = false;
 
-    int m_numNodeGroups;
+    int m_numNodeGroups{0};
     bool m_numNodeGroupsHasBeenSet = false;
 
-    int m_replicasPerNodeGroup;
+    int m_replicasPerNodeGroup{0};
     bool m_replicasPerNodeGroupHasBeenSet = false;
 
     Aws::Vector<NodeGroupConfiguration> m_nodeGroupConfiguration;
@@ -846,16 +801,16 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
-    int m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit{0};
     bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
@@ -864,10 +819,10 @@ namespace Model
     Aws::String m_authToken;
     bool m_authTokenHasBeenSet = false;
 
-    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabled{false};
     bool m_transitEncryptionEnabledHasBeenSet = false;
 
-    bool m_atRestEncryptionEnabled;
+    bool m_atRestEncryptionEnabled{false};
     bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
@@ -879,19 +834,19 @@ namespace Model
     Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
     bool m_logDeliveryConfigurationsHasBeenSet = false;
 
-    bool m_dataTieringEnabled;
+    bool m_dataTieringEnabled{false};
     bool m_dataTieringEnabledHasBeenSet = false;
 
-    NetworkType m_networkType;
+    NetworkType m_networkType{NetworkType::NOT_SET};
     bool m_networkTypeHasBeenSet = false;
 
-    IpDiscovery m_ipDiscovery;
+    IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
     bool m_ipDiscoveryHasBeenSet = false;
 
-    TransitEncryptionMode m_transitEncryptionMode;
+    TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
     bool m_transitEncryptionModeHasBeenSet = false;
 
-    ClusterMode m_clusterMode;
+    ClusterMode m_clusterMode{ClusterMode::NOT_SET};
     bool m_clusterModeHasBeenSet = false;
 
     Aws::String m_serverlessCacheSnapshotName;

@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBucketsRequest::GetBucketsRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_includeConnectedResources(false),
-    m_includeConnectedResourcesHasBeenSet(false)
-{
-}
-
 Aws::String GetBucketsRequest::SerializePayload() const
 {
   JsonValue payload;

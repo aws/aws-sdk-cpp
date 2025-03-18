@@ -36,7 +36,7 @@ namespace Model
   class MalformedQueryException
   {
   public:
-    AWS_CLOUDWATCHLOGS_API MalformedQueryException();
+    AWS_CLOUDWATCHLOGS_API MalformedQueryException() = default;
     AWS_CLOUDWATCHLOGS_API MalformedQueryException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API MalformedQueryException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const QueryCompileError& GetQueryCompileError() const{ return m_queryCompileError; }
+    inline const QueryCompileError& GetQueryCompileError() const { return m_queryCompileError; }
     inline bool QueryCompileErrorHasBeenSet() const { return m_queryCompileErrorHasBeenSet; }
-    inline void SetQueryCompileError(const QueryCompileError& value) { m_queryCompileErrorHasBeenSet = true; m_queryCompileError = value; }
-    inline void SetQueryCompileError(QueryCompileError&& value) { m_queryCompileErrorHasBeenSet = true; m_queryCompileError = std::move(value); }
-    inline MalformedQueryException& WithQueryCompileError(const QueryCompileError& value) { SetQueryCompileError(value); return *this;}
-    inline MalformedQueryException& WithQueryCompileError(QueryCompileError&& value) { SetQueryCompileError(std::move(value)); return *this;}
+    template<typename QueryCompileErrorT = QueryCompileError>
+    void SetQueryCompileError(QueryCompileErrorT&& value) { m_queryCompileErrorHasBeenSet = true; m_queryCompileError = std::forward<QueryCompileErrorT>(value); }
+    template<typename QueryCompileErrorT = QueryCompileError>
+    MalformedQueryException& WithQueryCompileError(QueryCompileErrorT&& value) { SetQueryCompileError(std::forward<QueryCompileErrorT>(value)); return *this;}
     ///@}
   private:
 

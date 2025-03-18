@@ -13,12 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeViewRequest::DescribeViewRequest() : 
-    m_viewTokenHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeViewRequest::SerializePayload() const
 {
   return {};

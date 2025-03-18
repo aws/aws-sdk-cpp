@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateTrackerConsumerRequest::AssociateTrackerConsumerRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_consumerArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTrackerConsumerRequest::SerializePayload() const
 {
   JsonValue payload;

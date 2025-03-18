@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ImageCustomAction::ImageCustomAction() : 
-    m_customActionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trigger(ImageCustomActionTrigger::NOT_SET),
-    m_triggerHasBeenSet(false),
-    m_actionOperationsHasBeenSet(false)
-{
-}
-
 ImageCustomAction::ImageCustomAction(JsonView jsonValue)
-  : ImageCustomAction()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ImageCustomAction& ImageCustomAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomActionId"))
   {
     m_customActionId = jsonValue.GetString("CustomActionId");
-
     m_customActionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Trigger"))
   {
     m_trigger = ImageCustomActionTriggerMapper::GetImageCustomActionTriggerForName(jsonValue.GetString("Trigger"));
-
     m_triggerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionOperations"))
   {
     Aws::Utils::Array<JsonView> actionOperationsJsonList = jsonValue.GetArray("ActionOperations");
@@ -74,7 +54,6 @@ ImageCustomAction& ImageCustomAction::operator =(JsonView jsonValue)
     }
     m_actionOperationsHasBeenSet = true;
   }
-
   return *this;
 }
 

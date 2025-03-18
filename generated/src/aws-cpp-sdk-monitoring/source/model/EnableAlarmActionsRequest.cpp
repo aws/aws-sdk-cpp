@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-EnableAlarmActionsRequest::EnableAlarmActionsRequest() : 
-    m_alarmNamesHasBeenSet(false)
-{
-}
-
 Aws::String EnableAlarmActionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

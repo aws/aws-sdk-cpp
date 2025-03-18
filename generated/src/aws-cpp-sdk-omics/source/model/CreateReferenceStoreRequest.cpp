@@ -12,15 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReferenceStoreRequest::CreateReferenceStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateReferenceStoreRequest::SerializePayload() const
 {
   JsonValue payload;

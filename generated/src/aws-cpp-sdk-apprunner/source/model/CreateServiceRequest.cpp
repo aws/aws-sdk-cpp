@@ -12,19 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceRequest::CreateServiceRequest() : 
-    m_serviceNameHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationArnHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_observabilityConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

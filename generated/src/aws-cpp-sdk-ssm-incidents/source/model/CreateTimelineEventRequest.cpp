@@ -12,17 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTimelineEventRequest::CreateTimelineEventRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_eventDataHasBeenSet(false),
-    m_eventReferencesHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateTimelineEventRequest::SerializePayload() const
 {
   JsonValue payload;

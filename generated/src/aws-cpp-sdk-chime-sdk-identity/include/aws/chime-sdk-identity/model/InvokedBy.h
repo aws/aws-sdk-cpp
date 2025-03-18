@@ -33,7 +33,7 @@ namespace Model
   class InvokedBy
   {
   public:
-    AWS_CHIMESDKIDENTITY_API InvokedBy();
+    AWS_CHIMESDKIDENTITY_API InvokedBy() = default;
     AWS_CHIMESDKIDENTITY_API InvokedBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API InvokedBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li> <li> <p>
      * <code>NONE</code>: The bot processes no standard messages.</p> </li> </ul>
      */
-    inline const StandardMessages& GetStandardMessages() const{ return m_standardMessages; }
+    inline StandardMessages GetStandardMessages() const { return m_standardMessages; }
     inline bool StandardMessagesHasBeenSet() const { return m_standardMessagesHasBeenSet; }
-    inline void SetStandardMessages(const StandardMessages& value) { m_standardMessagesHasBeenSet = true; m_standardMessages = value; }
-    inline void SetStandardMessages(StandardMessages&& value) { m_standardMessagesHasBeenSet = true; m_standardMessages = std::move(value); }
-    inline InvokedBy& WithStandardMessages(const StandardMessages& value) { SetStandardMessages(value); return *this;}
-    inline InvokedBy& WithStandardMessages(StandardMessages&& value) { SetStandardMessages(std::move(value)); return *this;}
+    inline void SetStandardMessages(StandardMessages value) { m_standardMessagesHasBeenSet = true; m_standardMessages = value; }
+    inline InvokedBy& WithStandardMessages(StandardMessages value) { SetStandardMessages(value); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +64,17 @@ namespace Model
      * </p> </li> <li> <p> <code>NONE</code>: The bot processes no targeted
      * messages.</p> </li> </ul>
      */
-    inline const TargetedMessages& GetTargetedMessages() const{ return m_targetedMessages; }
+    inline TargetedMessages GetTargetedMessages() const { return m_targetedMessages; }
     inline bool TargetedMessagesHasBeenSet() const { return m_targetedMessagesHasBeenSet; }
-    inline void SetTargetedMessages(const TargetedMessages& value) { m_targetedMessagesHasBeenSet = true; m_targetedMessages = value; }
-    inline void SetTargetedMessages(TargetedMessages&& value) { m_targetedMessagesHasBeenSet = true; m_targetedMessages = std::move(value); }
-    inline InvokedBy& WithTargetedMessages(const TargetedMessages& value) { SetTargetedMessages(value); return *this;}
-    inline InvokedBy& WithTargetedMessages(TargetedMessages&& value) { SetTargetedMessages(std::move(value)); return *this;}
+    inline void SetTargetedMessages(TargetedMessages value) { m_targetedMessagesHasBeenSet = true; m_targetedMessages = value; }
+    inline InvokedBy& WithTargetedMessages(TargetedMessages value) { SetTargetedMessages(value); return *this;}
     ///@}
   private:
 
-    StandardMessages m_standardMessages;
+    StandardMessages m_standardMessages{StandardMessages::NOT_SET};
     bool m_standardMessagesHasBeenSet = false;
 
-    TargetedMessages m_targetedMessages;
+    TargetedMessages m_targetedMessages{TargetedMessages::NOT_SET};
     bool m_targetedMessagesHasBeenSet = false;
   };
 

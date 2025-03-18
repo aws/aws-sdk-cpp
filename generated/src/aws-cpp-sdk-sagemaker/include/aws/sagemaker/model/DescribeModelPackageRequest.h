@@ -21,7 +21,7 @@ namespace Model
   class DescribeModelPackageRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeModelPackageRequest();
+    AWS_SAGEMAKER_API DescribeModelPackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>When you specify a name, the name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
-    inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+    inline const Aws::String& GetModelPackageName() const { return m_modelPackageName; }
     inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
-    inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
-    inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
-    inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
-    inline DescribeModelPackageRequest& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
-    inline DescribeModelPackageRequest& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
-    inline DescribeModelPackageRequest& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+    template<typename ModelPackageNameT = Aws::String>
+    void SetModelPackageName(ModelPackageNameT&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::forward<ModelPackageNameT>(value); }
+    template<typename ModelPackageNameT = Aws::String>
+    DescribeModelPackageRequest& WithModelPackageName(ModelPackageNameT&& value) { SetModelPackageName(std::forward<ModelPackageNameT>(value)); return *this;}
     ///@}
   private:
 

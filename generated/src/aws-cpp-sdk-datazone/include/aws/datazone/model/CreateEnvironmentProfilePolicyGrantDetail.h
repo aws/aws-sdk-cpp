@@ -31,7 +31,7 @@ namespace Model
   class CreateEnvironmentProfilePolicyGrantDetail
   {
   public:
-    AWS_DATAZONE_API CreateEnvironmentProfilePolicyGrantDetail();
+    AWS_DATAZONE_API CreateEnvironmentProfilePolicyGrantDetail() = default;
     AWS_DATAZONE_API CreateEnvironmentProfilePolicyGrantDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API CreateEnvironmentProfilePolicyGrantDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the domain unit.</p>
      */
-    inline const Aws::String& GetDomainUnitId() const{ return m_domainUnitId; }
+    inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
     inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
-    inline void SetDomainUnitId(const Aws::String& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = value; }
-    inline void SetDomainUnitId(Aws::String&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::move(value); }
-    inline void SetDomainUnitId(const char* value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId.assign(value); }
-    inline CreateEnvironmentProfilePolicyGrantDetail& WithDomainUnitId(const Aws::String& value) { SetDomainUnitId(value); return *this;}
-    inline CreateEnvironmentProfilePolicyGrantDetail& WithDomainUnitId(Aws::String&& value) { SetDomainUnitId(std::move(value)); return *this;}
-    inline CreateEnvironmentProfilePolicyGrantDetail& WithDomainUnitId(const char* value) { SetDomainUnitId(value); return *this;}
+    template<typename DomainUnitIdT = Aws::String>
+    void SetDomainUnitId(DomainUnitIdT&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::forward<DomainUnitIdT>(value); }
+    template<typename DomainUnitIdT = Aws::String>
+    CreateEnvironmentProfilePolicyGrantDetail& WithDomainUnitId(DomainUnitIdT&& value) { SetDomainUnitId(std::forward<DomainUnitIdT>(value)); return *this;}
     ///@}
   private:
 

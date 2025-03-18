@@ -24,7 +24,7 @@ namespace Model
   class UpdateProductRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API UpdateProductRequest();
+    AWS_SERVICECATALOG_API UpdateProductRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,155 +42,136 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline UpdateProductRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline UpdateProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    UpdateProductRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateProductRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateProductRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateProductRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated product name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateProductRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateProductRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateProductRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated owner of the product.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline UpdateProductRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline UpdateProductRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    UpdateProductRequest& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated description of the product.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateProductRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateProductRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateProductRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated distributor of the product.</p>
      */
-    inline const Aws::String& GetDistributor() const{ return m_distributor; }
+    inline const Aws::String& GetDistributor() const { return m_distributor; }
     inline bool DistributorHasBeenSet() const { return m_distributorHasBeenSet; }
-    inline void SetDistributor(const Aws::String& value) { m_distributorHasBeenSet = true; m_distributor = value; }
-    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = std::move(value); }
-    inline void SetDistributor(const char* value) { m_distributorHasBeenSet = true; m_distributor.assign(value); }
-    inline UpdateProductRequest& WithDistributor(const Aws::String& value) { SetDistributor(value); return *this;}
-    inline UpdateProductRequest& WithDistributor(Aws::String&& value) { SetDistributor(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithDistributor(const char* value) { SetDistributor(value); return *this;}
+    template<typename DistributorT = Aws::String>
+    void SetDistributor(DistributorT&& value) { m_distributorHasBeenSet = true; m_distributor = std::forward<DistributorT>(value); }
+    template<typename DistributorT = Aws::String>
+    UpdateProductRequest& WithDistributor(DistributorT&& value) { SetDistributor(std::forward<DistributorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated support description for the product.</p>
      */
-    inline const Aws::String& GetSupportDescription() const{ return m_supportDescription; }
+    inline const Aws::String& GetSupportDescription() const { return m_supportDescription; }
     inline bool SupportDescriptionHasBeenSet() const { return m_supportDescriptionHasBeenSet; }
-    inline void SetSupportDescription(const Aws::String& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
-    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::move(value); }
-    inline void SetSupportDescription(const char* value) { m_supportDescriptionHasBeenSet = true; m_supportDescription.assign(value); }
-    inline UpdateProductRequest& WithSupportDescription(const Aws::String& value) { SetSupportDescription(value); return *this;}
-    inline UpdateProductRequest& WithSupportDescription(Aws::String&& value) { SetSupportDescription(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
+    template<typename SupportDescriptionT = Aws::String>
+    void SetSupportDescription(SupportDescriptionT&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::forward<SupportDescriptionT>(value); }
+    template<typename SupportDescriptionT = Aws::String>
+    UpdateProductRequest& WithSupportDescription(SupportDescriptionT&& value) { SetSupportDescription(std::forward<SupportDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated support email for the product.</p>
      */
-    inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
+    inline const Aws::String& GetSupportEmail() const { return m_supportEmail; }
     inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
-    inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
-    inline void SetSupportEmail(const char* value) { m_supportEmailHasBeenSet = true; m_supportEmail.assign(value); }
-    inline UpdateProductRequest& WithSupportEmail(const Aws::String& value) { SetSupportEmail(value); return *this;}
-    inline UpdateProductRequest& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
+    template<typename SupportEmailT = Aws::String>
+    void SetSupportEmail(SupportEmailT&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::forward<SupportEmailT>(value); }
+    template<typename SupportEmailT = Aws::String>
+    UpdateProductRequest& WithSupportEmail(SupportEmailT&& value) { SetSupportEmail(std::forward<SupportEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated support URL for the product.</p>
      */
-    inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
+    inline const Aws::String& GetSupportUrl() const { return m_supportUrl; }
     inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
-    inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
-    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
-    inline void SetSupportUrl(const char* value) { m_supportUrlHasBeenSet = true; m_supportUrl.assign(value); }
-    inline UpdateProductRequest& WithSupportUrl(const Aws::String& value) { SetSupportUrl(value); return *this;}
-    inline UpdateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
-    inline UpdateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
+    template<typename SupportUrlT = Aws::String>
+    void SetSupportUrl(SupportUrlT&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::forward<SupportUrlT>(value); }
+    template<typename SupportUrlT = Aws::String>
+    UpdateProductRequest& WithSupportUrl(SupportUrlT&& value) { SetSupportUrl(std::forward<SupportUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to add to the product.</p>
      */
-    inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
+    inline const Aws::Vector<Tag>& GetAddTags() const { return m_addTags; }
     inline bool AddTagsHasBeenSet() const { return m_addTagsHasBeenSet; }
-    inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
-    inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
-    inline UpdateProductRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
-    inline UpdateProductRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
-    inline UpdateProductRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
-    inline UpdateProductRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
+    template<typename AddTagsT = Aws::Vector<Tag>>
+    void SetAddTags(AddTagsT&& value) { m_addTagsHasBeenSet = true; m_addTags = std::forward<AddTagsT>(value); }
+    template<typename AddTagsT = Aws::Vector<Tag>>
+    UpdateProductRequest& WithAddTags(AddTagsT&& value) { SetAddTags(std::forward<AddTagsT>(value)); return *this;}
+    template<typename AddTagsT = Tag>
+    UpdateProductRequest& AddAddTags(AddTagsT&& value) { m_addTagsHasBeenSet = true; m_addTags.emplace_back(std::forward<AddTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags to remove from the product.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveTags() const{ return m_removeTags; }
+    inline const Aws::Vector<Aws::String>& GetRemoveTags() const { return m_removeTags; }
     inline bool RemoveTagsHasBeenSet() const { return m_removeTagsHasBeenSet; }
-    inline void SetRemoveTags(const Aws::Vector<Aws::String>& value) { m_removeTagsHasBeenSet = true; m_removeTags = value; }
-    inline void SetRemoveTags(Aws::Vector<Aws::String>&& value) { m_removeTagsHasBeenSet = true; m_removeTags = std::move(value); }
-    inline UpdateProductRequest& WithRemoveTags(const Aws::Vector<Aws::String>& value) { SetRemoveTags(value); return *this;}
-    inline UpdateProductRequest& WithRemoveTags(Aws::Vector<Aws::String>&& value) { SetRemoveTags(std::move(value)); return *this;}
-    inline UpdateProductRequest& AddRemoveTags(const Aws::String& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
-    inline UpdateProductRequest& AddRemoveTags(Aws::String&& value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(std::move(value)); return *this; }
-    inline UpdateProductRequest& AddRemoveTags(const char* value) { m_removeTagsHasBeenSet = true; m_removeTags.push_back(value); return *this; }
+    template<typename RemoveTagsT = Aws::Vector<Aws::String>>
+    void SetRemoveTags(RemoveTagsT&& value) { m_removeTagsHasBeenSet = true; m_removeTags = std::forward<RemoveTagsT>(value); }
+    template<typename RemoveTagsT = Aws::Vector<Aws::String>>
+    UpdateProductRequest& WithRemoveTags(RemoveTagsT&& value) { SetRemoveTags(std::forward<RemoveTagsT>(value)); return *this;}
+    template<typename RemoveTagsT = Aws::String>
+    UpdateProductRequest& AddRemoveTags(RemoveTagsT&& value) { m_removeTagsHasBeenSet = true; m_removeTags.emplace_back(std::forward<RemoveTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -202,12 +183,12 @@ namespace Model
      * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
      * </li> </ul>
      */
-    inline const SourceConnection& GetSourceConnection() const{ return m_sourceConnection; }
+    inline const SourceConnection& GetSourceConnection() const { return m_sourceConnection; }
     inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
-    inline void SetSourceConnection(const SourceConnection& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
-    inline void SetSourceConnection(SourceConnection&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
-    inline UpdateProductRequest& WithSourceConnection(const SourceConnection& value) { SetSourceConnection(value); return *this;}
-    inline UpdateProductRequest& WithSourceConnection(SourceConnection&& value) { SetSourceConnection(std::move(value)); return *this;}
+    template<typename SourceConnectionT = SourceConnection>
+    void SetSourceConnection(SourceConnectionT&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::forward<SourceConnectionT>(value); }
+    template<typename SourceConnectionT = SourceConnection>
+    UpdateProductRequest& WithSourceConnection(SourceConnectionT&& value) { SetSourceConnection(std::forward<SourceConnectionT>(value)); return *this;}
     ///@}
   private:
 

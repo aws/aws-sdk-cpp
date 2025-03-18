@@ -12,15 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConvertRecoveryPointToSnapshotRequest::ConvertRecoveryPointToSnapshotRequest() : 
-    m_recoveryPointIdHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ConvertRecoveryPointToSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

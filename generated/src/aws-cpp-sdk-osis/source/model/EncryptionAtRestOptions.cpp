@@ -18,13 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-EncryptionAtRestOptions::EncryptionAtRestOptions() : 
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue)
-  : EncryptionAtRestOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EncryptionAtRestOptions& EncryptionAtRestOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

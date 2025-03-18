@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConnectClientAddInsRequest::DescribeConnectClientAddInsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConnectClientAddInsRequest::SerializePayload() const
 {
   JsonValue payload;

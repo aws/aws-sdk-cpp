@@ -20,81 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false),
-    m_clusterAvailabilityStatusHasBeenSet(false),
-    m_modifyStatusHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dBNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_automatedSnapshotRetentionPeriod(0),
-    m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_clusterParameterGroupsHasBeenSet(false),
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false),
-    m_allowVersionUpgrade(false),
-    m_allowVersionUpgradeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_restoreStatusHasBeenSet(false),
-    m_dataTransferProgressHasBeenSet(false),
-    m_hsmStatusHasBeenSet(false),
-    m_clusterSnapshotCopyStatusHasBeenSet(false),
-    m_clusterPublicKeyHasBeenSet(false),
-    m_clusterNodesHasBeenSet(false),
-    m_elasticIpStatusHasBeenSet(false),
-    m_clusterRevisionNumberHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_iamRolesHasBeenSet(false),
-    m_pendingActionsHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false),
-    m_deferredMaintenanceWindowsHasBeenSet(false),
-    m_snapshotScheduleIdentifierHasBeenSet(false),
-    m_snapshotScheduleState(ScheduleState::NOT_SET),
-    m_snapshotScheduleStateHasBeenSet(false),
-    m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
-    m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
-    m_nextMaintenanceWindowStartTimeHasBeenSet(false),
-    m_resizeInfoHasBeenSet(false),
-    m_availabilityZoneRelocationStatusHasBeenSet(false),
-    m_clusterNamespaceArnHasBeenSet(false),
-    m_totalStorageCapacityInMegaBytes(0),
-    m_totalStorageCapacityInMegaBytesHasBeenSet(false),
-    m_aquaConfigurationHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false),
-    m_reservedNodeExchangeStatusHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false),
-    m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_multiAZHasBeenSet(false),
-    m_multiAZSecondaryHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(const XmlNode& xmlNode)
-  : Cluster()
 {
   *this = xmlNode;
 }
@@ -175,6 +101,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!clusterSecurityGroupsNode.IsNull())
     {
       XmlNode clusterSecurityGroupsMember = clusterSecurityGroupsNode.FirstChild("ClusterSecurityGroup");
+      m_clusterSecurityGroupsHasBeenSet = !clusterSecurityGroupsMember.IsNull();
       while(!clusterSecurityGroupsMember.IsNull())
       {
         m_clusterSecurityGroups.push_back(clusterSecurityGroupsMember);
@@ -187,6 +114,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupsNode.IsNull())
     {
       XmlNode vpcSecurityGroupsMember = vpcSecurityGroupsNode.FirstChild("VpcSecurityGroup");
+      m_vpcSecurityGroupsHasBeenSet = !vpcSecurityGroupsMember.IsNull();
       while(!vpcSecurityGroupsMember.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupsMember);
@@ -199,6 +127,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!clusterParameterGroupsNode.IsNull())
     {
       XmlNode clusterParameterGroupsMember = clusterParameterGroupsNode.FirstChild("ClusterParameterGroup");
+      m_clusterParameterGroupsHasBeenSet = !clusterParameterGroupsMember.IsNull();
       while(!clusterParameterGroupsMember.IsNull())
       {
         m_clusterParameterGroups.push_back(clusterParameterGroupsMember);
@@ -301,6 +230,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!clusterNodesNode.IsNull())
     {
       XmlNode clusterNodesMember = clusterNodesNode.FirstChild("member");
+      m_clusterNodesHasBeenSet = !clusterNodesMember.IsNull();
       while(!clusterNodesMember.IsNull())
       {
         m_clusterNodes.push_back(clusterNodesMember);
@@ -325,6 +255,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -349,6 +280,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!iamRolesNode.IsNull())
     {
       XmlNode iamRolesMember = iamRolesNode.FirstChild("ClusterIamRole");
+      m_iamRolesHasBeenSet = !iamRolesMember.IsNull();
       while(!iamRolesMember.IsNull())
       {
         m_iamRoles.push_back(iamRolesMember);
@@ -361,6 +293,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!pendingActionsNode.IsNull())
     {
       XmlNode pendingActionsMember = pendingActionsNode.FirstChild("member");
+      m_pendingActionsHasBeenSet = !pendingActionsMember.IsNull();
       while(!pendingActionsMember.IsNull())
       {
         m_pendingActions.push_back(pendingActionsMember.GetText());
@@ -385,6 +318,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     if(!deferredMaintenanceWindowsNode.IsNull())
     {
       XmlNode deferredMaintenanceWindowsMember = deferredMaintenanceWindowsNode.FirstChild("DeferredMaintenanceWindow");
+      m_deferredMaintenanceWindowsHasBeenSet = !deferredMaintenanceWindowsMember.IsNull();
       while(!deferredMaintenanceWindowsMember.IsNull())
       {
         m_deferredMaintenanceWindows.push_back(deferredMaintenanceWindowsMember);
@@ -402,7 +336,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode snapshotScheduleStateNode = resultNode.FirstChild("SnapshotScheduleState");
     if(!snapshotScheduleStateNode.IsNull())
     {
-      m_snapshotScheduleState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotScheduleStateNode.GetText()).c_str()).c_str());
+      m_snapshotScheduleState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotScheduleStateNode.GetText()).c_str()));
       m_snapshotScheduleStateHasBeenSet = true;
     }
     XmlNode expectedNextSnapshotScheduleTimeNode = resultNode.FirstChild("ExpectedNextSnapshotScheduleTime");

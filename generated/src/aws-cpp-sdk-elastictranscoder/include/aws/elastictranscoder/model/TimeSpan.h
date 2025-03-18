@@ -32,7 +32,7 @@ namespace Model
   class TimeSpan
   {
   public:
-    AWS_ELASTICTRANSCODER_API TimeSpan();
+    AWS_ELASTICTRANSCODER_API TimeSpan() = default;
     AWS_ELASTICTRANSCODER_API TimeSpan(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API TimeSpan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * second) or sssss.SSS (maximum value: 86399.999). If you don't specify a value,
      * Elastic Transcoder starts at the beginning of the input file.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline TimeSpan& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline TimeSpan& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline TimeSpan& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    TimeSpan& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * longer than the duration of the input file, Elastic Transcoder transcodes the
      * file and returns a warning message.</p>
      */
-    inline const Aws::String& GetDuration() const{ return m_duration; }
+    inline const Aws::String& GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
-    inline TimeSpan& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
-    inline TimeSpan& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
-    inline TimeSpan& WithDuration(const char* value) { SetDuration(value); return *this;}
+    template<typename DurationT = Aws::String>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Aws::String>
+    TimeSpan& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
     ///@}
   private:
 

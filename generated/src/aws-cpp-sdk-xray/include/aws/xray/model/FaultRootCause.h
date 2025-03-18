@@ -33,7 +33,7 @@ namespace Model
   class FaultRootCause
   {
   public:
-    AWS_XRAY_API FaultRootCause();
+    AWS_XRAY_API FaultRootCause() = default;
     AWS_XRAY_API FaultRootCause(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API FaultRootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,21 @@ namespace Model
      * <p>A list of corresponding services. A service identifies a segment and it
      * contains a name, account ID, type, and inferred flag.</p>
      */
-    inline const Aws::Vector<FaultRootCauseService>& GetServices() const{ return m_services; }
+    inline const Aws::Vector<FaultRootCauseService>& GetServices() const { return m_services; }
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
-    inline void SetServices(const Aws::Vector<FaultRootCauseService>& value) { m_servicesHasBeenSet = true; m_services = value; }
-    inline void SetServices(Aws::Vector<FaultRootCauseService>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
-    inline FaultRootCause& WithServices(const Aws::Vector<FaultRootCauseService>& value) { SetServices(value); return *this;}
-    inline FaultRootCause& WithServices(Aws::Vector<FaultRootCauseService>&& value) { SetServices(std::move(value)); return *this;}
-    inline FaultRootCause& AddServices(const FaultRootCauseService& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
-    inline FaultRootCause& AddServices(FaultRootCauseService&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
+    template<typename ServicesT = Aws::Vector<FaultRootCauseService>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<FaultRootCauseService>>
+    FaultRootCause& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    template<typename ServicesT = FaultRootCauseService>
+    FaultRootCause& AddServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services.emplace_back(std::forward<ServicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A flag that denotes that the root cause impacts the trace client.</p>
      */
-    inline bool GetClientImpacting() const{ return m_clientImpacting; }
+    inline bool GetClientImpacting() const { return m_clientImpacting; }
     inline bool ClientImpactingHasBeenSet() const { return m_clientImpactingHasBeenSet; }
     inline void SetClientImpacting(bool value) { m_clientImpactingHasBeenSet = true; m_clientImpacting = value; }
     inline FaultRootCause& WithClientImpacting(bool value) { SetClientImpacting(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
     Aws::Vector<FaultRootCauseService> m_services;
     bool m_servicesHasBeenSet = false;
 
-    bool m_clientImpacting;
+    bool m_clientImpacting{false};
     bool m_clientImpactingHasBeenSet = false;
   };
 

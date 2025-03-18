@@ -18,21 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-VirtualCluster::VirtualCluster() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_state(VirtualClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_containerProviderHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityConfigurationIdHasBeenSet(false)
-{
-}
-
 VirtualCluster::VirtualCluster(JsonView jsonValue)
-  : VirtualCluster()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ VirtualCluster& VirtualCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = VirtualClusterStateMapper::GetVirtualClusterStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerProvider"))
   {
     m_containerProvider = jsonValue.GetObject("containerProvider");
-
     m_containerProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -90,14 +64,11 @@ VirtualCluster& VirtualCluster::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityConfigurationId"))
   {
     m_securityConfigurationId = jsonValue.GetString("securityConfigurationId");
-
     m_securityConfigurationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

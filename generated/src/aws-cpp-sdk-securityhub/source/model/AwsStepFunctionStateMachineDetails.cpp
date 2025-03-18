@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsStepFunctionStateMachineDetails::AwsStepFunctionStateMachineDetails() : 
-    m_labelHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tracingConfigurationHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsStepFunctionStateMachineDetails::AwsStepFunctionStateMachineDetails(JsonView jsonValue)
-  : AwsStepFunctionStateMachineDetails()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ AwsStepFunctionStateMachineDetails& AwsStepFunctionStateMachineDetails::operator
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingConfiguration"))
   {
     m_loggingConfiguration = jsonValue.GetObject("LoggingConfiguration");
-
     m_loggingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateMachineArn"))
   {
     m_stateMachineArn = jsonValue.GetString("StateMachineArn");
-
     m_stateMachineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TracingConfiguration"))
   {
     m_tracingConfiguration = jsonValue.GetObject("TracingConfiguration");
-
     m_tracingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

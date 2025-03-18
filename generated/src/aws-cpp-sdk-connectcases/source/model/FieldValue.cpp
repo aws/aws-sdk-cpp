@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldValue::FieldValue() : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FieldValue::FieldValue(JsonView jsonValue)
-  : FieldValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FieldValue& FieldValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

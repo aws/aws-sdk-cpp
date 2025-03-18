@@ -18,18 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-S3Action::S3Action() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_s3SseKmsKeyIdHasBeenSet(false)
-{
-}
-
 S3Action::S3Action(JsonView jsonValue)
-  : S3Action()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ S3Action& S3Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Prefix"))
   {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
-
     m_s3PrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3SseKmsKeyId"))
   {
     m_s3SseKmsKeyId = jsonValue.GetString("S3SseKmsKeyId");
-
     m_s3SseKmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

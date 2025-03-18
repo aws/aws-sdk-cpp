@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-AssociateEnvironmentOperationsRoleRequest::AssociateEnvironmentOperationsRoleRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_operationsRoleHasBeenSet(false)
-{
-}
-
 Aws::String AssociateEnvironmentOperationsRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

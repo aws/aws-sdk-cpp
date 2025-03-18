@@ -37,7 +37,7 @@ namespace Model
   class Key
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API Key();
+    AWS_PAYMENTCRYPTOGRAPHY_API Key() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API Key(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Key& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the key.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline Key& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline Key& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline Key& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    Key& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * operations allowed with the key. This data is immutable after the key is
      * created.</p>
      */
-    inline const KeyAttributes& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const KeyAttributes& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const KeyAttributes& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(KeyAttributes&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline Key& WithKeyAttributes(const KeyAttributes& value) { SetKeyAttributes(value); return *this;}
-    inline Key& WithKeyAttributes(KeyAttributes&& value) { SetKeyAttributes(std::move(value)); return *this;}
+    template<typename KeyAttributesT = KeyAttributes>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = KeyAttributes>
+    Key& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <p>The key check value (KCV) is used to check if all parties holding a given key
      * have the same key or to detect that a key has changed.</p>
      */
-    inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
+    inline const Aws::String& GetKeyCheckValue() const { return m_keyCheckValue; }
     inline bool KeyCheckValueHasBeenSet() const { return m_keyCheckValueHasBeenSet; }
-    inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = value; }
-    inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::move(value); }
-    inline void SetKeyCheckValue(const char* value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue.assign(value); }
-    inline Key& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
-    inline Key& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
-    inline Key& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
+    template<typename KeyCheckValueT = Aws::String>
+    void SetKeyCheckValue(KeyCheckValueT&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::forward<KeyCheckValueT>(value); }
+    template<typename KeyCheckValueT = Aws::String>
+    Key& WithKeyCheckValue(KeyCheckValueT&& value) { SetKeyCheckValue(std::forward<KeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,19 +92,17 @@ namespace Model
      * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
      * the encrypted result.</p>
      */
-    inline const KeyCheckValueAlgorithm& GetKeyCheckValueAlgorithm() const{ return m_keyCheckValueAlgorithm; }
+    inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
     inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
-    inline void SetKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
-    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = std::move(value); }
-    inline Key& WithKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { SetKeyCheckValueAlgorithm(value); return *this;}
-    inline Key& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { SetKeyCheckValueAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
+    inline Key& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { SetKeyCheckValueAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the key is enabled. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline Key& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -119,7 +113,7 @@ namespace Model
      * <p>Specifies whether the key is exportable. This data is immutable after the key
      * is created.</p>
      */
-    inline bool GetExportable() const{ return m_exportable; }
+    inline bool GetExportable() const { return m_exportable; }
     inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
     inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
     inline Key& WithExportable(bool value) { SetExportable(value); return *this;}
@@ -129,12 +123,10 @@ namespace Model
     /**
      * <p>The state of key that is being created or deleted.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    inline KeyState GetKeyState() const { return m_keyState; }
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
-    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
-    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
-    inline Key& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
-    inline Key& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline void SetKeyState(KeyState value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline Key& WithKeyState(KeyState value) { SetKeyState(value); return *this;}
     ///@}
 
     ///@{
@@ -144,24 +136,22 @@ namespace Model
      * keys imported into Amazon Web Services Payment Cryptography, the value is
      * <code>EXTERNAL</code>.</p>
      */
-    inline const KeyOrigin& GetKeyOrigin() const{ return m_keyOrigin; }
+    inline KeyOrigin GetKeyOrigin() const { return m_keyOrigin; }
     inline bool KeyOriginHasBeenSet() const { return m_keyOriginHasBeenSet; }
-    inline void SetKeyOrigin(const KeyOrigin& value) { m_keyOriginHasBeenSet = true; m_keyOrigin = value; }
-    inline void SetKeyOrigin(KeyOrigin&& value) { m_keyOriginHasBeenSet = true; m_keyOrigin = std::move(value); }
-    inline Key& WithKeyOrigin(const KeyOrigin& value) { SetKeyOrigin(value); return *this;}
-    inline Key& WithKeyOrigin(KeyOrigin&& value) { SetKeyOrigin(std::move(value)); return *this;}
+    inline void SetKeyOrigin(KeyOrigin value) { m_keyOriginHasBeenSet = true; m_keyOrigin = value; }
+    inline Key& WithKeyOrigin(KeyOrigin value) { SetKeyOrigin(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the key was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const { return m_createTimestamp; }
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-    inline Key& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-    inline Key& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    void SetCreateTimestamp(CreateTimestampT&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::forward<CreateTimestampT>(value); }
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    Key& WithCreateTimestamp(CreateTimestampT&& value) { SetCreateTimestamp(std::forward<CreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +159,12 @@ namespace Model
      * <p>The date and time after which Amazon Web Services Payment Cryptography will
      * start using the key material for cryptographic operations.</p>
      */
-    inline const Aws::Utils::DateTime& GetUsageStartTimestamp() const{ return m_usageStartTimestamp; }
+    inline const Aws::Utils::DateTime& GetUsageStartTimestamp() const { return m_usageStartTimestamp; }
     inline bool UsageStartTimestampHasBeenSet() const { return m_usageStartTimestampHasBeenSet; }
-    inline void SetUsageStartTimestamp(const Aws::Utils::DateTime& value) { m_usageStartTimestampHasBeenSet = true; m_usageStartTimestamp = value; }
-    inline void SetUsageStartTimestamp(Aws::Utils::DateTime&& value) { m_usageStartTimestampHasBeenSet = true; m_usageStartTimestamp = std::move(value); }
-    inline Key& WithUsageStartTimestamp(const Aws::Utils::DateTime& value) { SetUsageStartTimestamp(value); return *this;}
-    inline Key& WithUsageStartTimestamp(Aws::Utils::DateTime&& value) { SetUsageStartTimestamp(std::move(value)); return *this;}
+    template<typename UsageStartTimestampT = Aws::Utils::DateTime>
+    void SetUsageStartTimestamp(UsageStartTimestampT&& value) { m_usageStartTimestampHasBeenSet = true; m_usageStartTimestamp = std::forward<UsageStartTimestampT>(value); }
+    template<typename UsageStartTimestampT = Aws::Utils::DateTime>
+    Key& WithUsageStartTimestamp(UsageStartTimestampT&& value) { SetUsageStartTimestamp(std::forward<UsageStartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +172,12 @@ namespace Model
      * <p>The date and time after which Amazon Web Services Payment Cryptography will
      * stop using the key material for cryptographic operations.</p>
      */
-    inline const Aws::Utils::DateTime& GetUsageStopTimestamp() const{ return m_usageStopTimestamp; }
+    inline const Aws::Utils::DateTime& GetUsageStopTimestamp() const { return m_usageStopTimestamp; }
     inline bool UsageStopTimestampHasBeenSet() const { return m_usageStopTimestampHasBeenSet; }
-    inline void SetUsageStopTimestamp(const Aws::Utils::DateTime& value) { m_usageStopTimestampHasBeenSet = true; m_usageStopTimestamp = value; }
-    inline void SetUsageStopTimestamp(Aws::Utils::DateTime&& value) { m_usageStopTimestampHasBeenSet = true; m_usageStopTimestamp = std::move(value); }
-    inline Key& WithUsageStopTimestamp(const Aws::Utils::DateTime& value) { SetUsageStopTimestamp(value); return *this;}
-    inline Key& WithUsageStopTimestamp(Aws::Utils::DateTime&& value) { SetUsageStopTimestamp(std::move(value)); return *this;}
+    template<typename UsageStopTimestampT = Aws::Utils::DateTime>
+    void SetUsageStopTimestamp(UsageStopTimestampT&& value) { m_usageStopTimestampHasBeenSet = true; m_usageStopTimestamp = std::forward<UsageStopTimestampT>(value); }
+    template<typename UsageStopTimestampT = Aws::Utils::DateTime>
+    Key& WithUsageStopTimestamp(UsageStopTimestampT&& value) { SetUsageStopTimestamp(std::forward<UsageStopTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,12 +186,12 @@ namespace Model
      * delete the key. This value is present only when <code>KeyState</code> is
      * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletePendingTimestamp() const{ return m_deletePendingTimestamp; }
+    inline const Aws::Utils::DateTime& GetDeletePendingTimestamp() const { return m_deletePendingTimestamp; }
     inline bool DeletePendingTimestampHasBeenSet() const { return m_deletePendingTimestampHasBeenSet; }
-    inline void SetDeletePendingTimestamp(const Aws::Utils::DateTime& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = value; }
-    inline void SetDeletePendingTimestamp(Aws::Utils::DateTime&& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = std::move(value); }
-    inline Key& WithDeletePendingTimestamp(const Aws::Utils::DateTime& value) { SetDeletePendingTimestamp(value); return *this;}
-    inline Key& WithDeletePendingTimestamp(Aws::Utils::DateTime&& value) { SetDeletePendingTimestamp(std::move(value)); return *this;}
+    template<typename DeletePendingTimestampT = Aws::Utils::DateTime>
+    void SetDeletePendingTimestamp(DeletePendingTimestampT&& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = std::forward<DeletePendingTimestampT>(value); }
+    template<typename DeletePendingTimestampT = Aws::Utils::DateTime>
+    Key& WithDeletePendingTimestamp(DeletePendingTimestampT&& value) { SetDeletePendingTimestamp(std::forward<DeletePendingTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,12 +201,12 @@ namespace Model
      * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
      * key is deleted.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeleteTimestamp() const{ return m_deleteTimestamp; }
+    inline const Aws::Utils::DateTime& GetDeleteTimestamp() const { return m_deleteTimestamp; }
     inline bool DeleteTimestampHasBeenSet() const { return m_deleteTimestampHasBeenSet; }
-    inline void SetDeleteTimestamp(const Aws::Utils::DateTime& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = value; }
-    inline void SetDeleteTimestamp(Aws::Utils::DateTime&& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = std::move(value); }
-    inline Key& WithDeleteTimestamp(const Aws::Utils::DateTime& value) { SetDeleteTimestamp(value); return *this;}
-    inline Key& WithDeleteTimestamp(Aws::Utils::DateTime&& value) { SetDeleteTimestamp(std::move(value)); return *this;}
+    template<typename DeleteTimestampT = Aws::Utils::DateTime>
+    void SetDeleteTimestamp(DeleteTimestampT&& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = std::forward<DeleteTimestampT>(value); }
+    template<typename DeleteTimestampT = Aws::Utils::DateTime>
+    Key& WithDeleteTimestamp(DeleteTimestampT&& value) { SetDeleteTimestamp(std::forward<DeleteTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,34 +219,34 @@ namespace Model
     Aws::String m_keyCheckValue;
     bool m_keyCheckValueHasBeenSet = false;
 
-    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm;
+    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
     bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_exportable;
+    bool m_exportable{false};
     bool m_exportableHasBeenSet = false;
 
-    KeyState m_keyState;
+    KeyState m_keyState{KeyState::NOT_SET};
     bool m_keyStateHasBeenSet = false;
 
-    KeyOrigin m_keyOrigin;
+    KeyOrigin m_keyOrigin{KeyOrigin::NOT_SET};
     bool m_keyOriginHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTimestamp;
+    Aws::Utils::DateTime m_createTimestamp{};
     bool m_createTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_usageStartTimestamp;
+    Aws::Utils::DateTime m_usageStartTimestamp{};
     bool m_usageStartTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_usageStopTimestamp;
+    Aws::Utils::DateTime m_usageStopTimestamp{};
     bool m_usageStopTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletePendingTimestamp;
+    Aws::Utils::DateTime m_deletePendingTimestamp{};
     bool m_deletePendingTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deleteTimestamp;
+    Aws::Utils::DateTime m_deleteTimestamp{};
     bool m_deleteTimestampHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-InvocationLogSource::InvocationLogSource() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 InvocationLogSource::InvocationLogSource(JsonView jsonValue)
-  : InvocationLogSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InvocationLogSource& InvocationLogSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

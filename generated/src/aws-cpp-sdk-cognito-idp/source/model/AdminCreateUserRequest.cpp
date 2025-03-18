@@ -12,21 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminCreateUserRequest::AdminCreateUserRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_validationDataHasBeenSet(false),
-    m_temporaryPasswordHasBeenSet(false),
-    m_forceAliasCreation(false),
-    m_forceAliasCreationHasBeenSet(false),
-    m_messageAction(MessageActionType::NOT_SET),
-    m_messageActionHasBeenSet(false),
-    m_desiredDeliveryMediumsHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String AdminCreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

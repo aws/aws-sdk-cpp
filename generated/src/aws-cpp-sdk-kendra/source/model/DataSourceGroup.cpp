@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DataSourceGroup::DataSourceGroup() : 
-    m_groupIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 DataSourceGroup::DataSourceGroup(JsonView jsonValue)
-  : DataSourceGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSourceGroup& DataSourceGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

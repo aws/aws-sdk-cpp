@@ -29,7 +29,7 @@ namespace Model
   class GetLFTagExpressionResult
   {
   public:
-    AWS_LAKEFORMATION_API GetLFTagExpressionResult();
+    AWS_LAKEFORMATION_API GetLFTagExpressionResult() = default;
     AWS_LAKEFORMATION_API GetLFTagExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API GetLFTagExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The name for the LF-Tag expression. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetLFTagExpressionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetLFTagExpressionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetLFTagExpressionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetLFTagExpressionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description with information about the LF-Tag expression.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetLFTagExpressionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetLFTagExpressionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetLFTagExpressionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetLFTagExpressionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,13 +61,11 @@ namespace Model
      * <p>The identifier for the Data Catalog. By default, the account ID in which the
      * LF-Tag expression is saved.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogId.assign(value); }
-    inline GetLFTagExpressionResult& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GetLFTagExpressionResult& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GetLFTagExpressionResult& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    GetLFTagExpressionResult& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,36 +73,39 @@ namespace Model
      * <p>The body of the LF-Tag expression. It is composed of one or more LF-Tag
      * key-value pairs.</p>
      */
-    inline const Aws::Vector<LFTag>& GetExpression() const{ return m_expression; }
-    inline void SetExpression(const Aws::Vector<LFTag>& value) { m_expression = value; }
-    inline void SetExpression(Aws::Vector<LFTag>&& value) { m_expression = std::move(value); }
-    inline GetLFTagExpressionResult& WithExpression(const Aws::Vector<LFTag>& value) { SetExpression(value); return *this;}
-    inline GetLFTagExpressionResult& WithExpression(Aws::Vector<LFTag>&& value) { SetExpression(std::move(value)); return *this;}
-    inline GetLFTagExpressionResult& AddExpression(const LFTag& value) { m_expression.push_back(value); return *this; }
-    inline GetLFTagExpressionResult& AddExpression(LFTag&& value) { m_expression.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LFTag>& GetExpression() const { return m_expression; }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    GetLFTagExpressionResult& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
+    template<typename ExpressionT = LFTag>
+    GetLFTagExpressionResult& AddExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression.emplace_back(std::forward<ExpressionT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLFTagExpressionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLFTagExpressionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLFTagExpressionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLFTagExpressionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::Vector<LFTag> m_expression;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

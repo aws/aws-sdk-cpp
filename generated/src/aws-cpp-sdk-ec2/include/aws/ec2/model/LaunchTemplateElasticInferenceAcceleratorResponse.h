@@ -32,7 +32,7 @@ namespace Model
   class LaunchTemplateElasticInferenceAcceleratorResponse
   {
   public:
-    AWS_EC2_API LaunchTemplateElasticInferenceAcceleratorResponse();
+    AWS_EC2_API LaunchTemplateElasticInferenceAcceleratorResponse() = default;
     AWS_EC2_API LaunchTemplateElasticInferenceAcceleratorResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateElasticInferenceAcceleratorResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p> The type of elastic inference accelerator. The possible values are
      * eia1.medium, eia1.large, and eia1.xlarge. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline LaunchTemplateElasticInferenceAcceleratorResponse& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    LaunchTemplateElasticInferenceAcceleratorResponse& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p> The number of elastic inference accelerators to attach to the instance. </p>
      * <p>Default: 1</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline LaunchTemplateElasticInferenceAcceleratorResponse& WithCount(int value) { SetCount(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

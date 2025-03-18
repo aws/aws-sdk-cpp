@@ -32,7 +32,7 @@ namespace Model
   class TechnicalCueSegment
   {
   public:
-    AWS_REKOGNITION_API TechnicalCueSegment();
+    AWS_REKOGNITION_API TechnicalCueSegment() = default;
     AWS_REKOGNITION_API TechnicalCueSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API TechnicalCueSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>The type of the technical cue.</p>
      */
-    inline const TechnicalCueType& GetType() const{ return m_type; }
+    inline TechnicalCueType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TechnicalCueType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TechnicalCueType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TechnicalCueSegment& WithType(const TechnicalCueType& value) { SetType(value); return *this;}
-    inline TechnicalCueSegment& WithType(TechnicalCueType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TechnicalCueType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TechnicalCueSegment& WithType(TechnicalCueType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,17 +53,17 @@ namespace Model
      * <p>The confidence that Amazon Rekognition Video has in the accuracy of the
      * detected segment.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline TechnicalCueSegment& WithConfidence(double value) { SetConfidence(value); return *this;}
     ///@}
   private:
 
-    TechnicalCueType m_type;
+    TechnicalCueType m_type{TechnicalCueType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

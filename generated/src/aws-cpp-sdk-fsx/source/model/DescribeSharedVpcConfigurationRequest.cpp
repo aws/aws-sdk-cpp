@@ -12,10 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSharedVpcConfigurationRequest::DescribeSharedVpcConfigurationRequest()
-{
-}
-
 Aws::String DescribeSharedVpcConfigurationRequest::SerializePayload() const
 {
   return "{}";

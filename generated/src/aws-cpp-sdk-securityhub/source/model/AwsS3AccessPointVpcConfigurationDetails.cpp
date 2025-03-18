@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails() : 
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsS3AccessPointVpcConfigurationDetails::AwsS3AccessPointVpcConfigurationDetails(JsonView jsonValue)
-  : AwsS3AccessPointVpcConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsS3AccessPointVpcConfigurationDetails& AwsS3AccessPointVpcConfigurationDetails
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-MonitorLocalResource::MonitorLocalResource() : 
-    m_type(MonitorLocalResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 MonitorLocalResource::MonitorLocalResource(JsonView jsonValue)
-  : MonitorLocalResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MonitorLocalResource& MonitorLocalResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = MonitorLocalResourceTypeMapper::GetMonitorLocalResourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

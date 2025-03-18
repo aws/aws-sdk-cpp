@@ -12,18 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOrganizationRequest::CreateOrganizationRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainsHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_enableInteroperability(false),
-    m_enableInteroperabilityHasBeenSet(false)
-{
-}
-
 Aws::String CreateOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFindingsStatisticsResult::GetFindingsStatisticsResult()
-{
-}
-
 GetFindingsStatisticsResult::GetFindingsStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetFindingsStatisticsResult& GetFindingsStatisticsResult::operator =(const Aws::
     {
       m_findingsStatistics.push_back(findingsStatisticsJsonList[findingsStatisticsIndex].AsObject());
     }
+    m_findingsStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

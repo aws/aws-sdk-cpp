@@ -12,17 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSenderIdsRequest::DescribeSenderIdsRequest() : 
-    m_senderIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSenderIdsRequest::SerializePayload() const
 {
   JsonValue payload;

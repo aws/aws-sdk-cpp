@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-RuleGroupUpdate::RuleGroupUpdate() : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_activatedRuleHasBeenSet(false)
-{
-}
-
 RuleGroupUpdate::RuleGroupUpdate(JsonView jsonValue)
-  : RuleGroupUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuleGroupUpdate& RuleGroupUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivatedRule"))
   {
     m_activatedRule = jsonValue.GetObject("ActivatedRule");
-
     m_activatedRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

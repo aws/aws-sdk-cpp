@@ -39,7 +39,7 @@ namespace Model
   class RequestInspection
   {
   public:
-    AWS_WAFV2_API RequestInspection();
+    AWS_WAFV2_API RequestInspection() = default;
     AWS_WAFV2_API RequestInspection(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RequestInspection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
     /**
      * <p>The payload type for your login endpoint, either JSON or form encoded.</p>
      */
-    inline const PayloadType& GetPayloadType() const{ return m_payloadType; }
+    inline PayloadType GetPayloadType() const { return m_payloadType; }
     inline bool PayloadTypeHasBeenSet() const { return m_payloadTypeHasBeenSet; }
-    inline void SetPayloadType(const PayloadType& value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
-    inline void SetPayloadType(PayloadType&& value) { m_payloadTypeHasBeenSet = true; m_payloadType = std::move(value); }
-    inline RequestInspection& WithPayloadType(const PayloadType& value) { SetPayloadType(value); return *this;}
-    inline RequestInspection& WithPayloadType(PayloadType&& value) { SetPayloadType(std::move(value)); return *this;}
+    inline void SetPayloadType(PayloadType value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
+    inline RequestInspection& WithPayloadType(PayloadType value) { SetPayloadType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * element named <code>username1</code>, the username field specification is
      * <code>username1</code> </p> </li> </ul>
      */
-    inline const UsernameField& GetUsernameField() const{ return m_usernameField; }
+    inline const UsernameField& GetUsernameField() const { return m_usernameField; }
     inline bool UsernameFieldHasBeenSet() const { return m_usernameFieldHasBeenSet; }
-    inline void SetUsernameField(const UsernameField& value) { m_usernameFieldHasBeenSet = true; m_usernameField = value; }
-    inline void SetUsernameField(UsernameField&& value) { m_usernameFieldHasBeenSet = true; m_usernameField = std::move(value); }
-    inline RequestInspection& WithUsernameField(const UsernameField& value) { SetUsernameField(value); return *this;}
-    inline RequestInspection& WithUsernameField(UsernameField&& value) { SetUsernameField(std::move(value)); return *this;}
+    template<typename UsernameFieldT = UsernameField>
+    void SetUsernameField(UsernameFieldT&& value) { m_usernameFieldHasBeenSet = true; m_usernameField = std::forward<UsernameFieldT>(value); }
+    template<typename UsernameFieldT = UsernameField>
+    RequestInspection& WithUsernameField(UsernameFieldT&& value) { SetUsernameField(std::forward<UsernameFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,16 +93,16 @@ namespace Model
      * element named <code>password1</code>, the password field specification is
      * <code>password1</code>.</p> </li> </ul>
      */
-    inline const PasswordField& GetPasswordField() const{ return m_passwordField; }
+    inline const PasswordField& GetPasswordField() const { return m_passwordField; }
     inline bool PasswordFieldHasBeenSet() const { return m_passwordFieldHasBeenSet; }
-    inline void SetPasswordField(const PasswordField& value) { m_passwordFieldHasBeenSet = true; m_passwordField = value; }
-    inline void SetPasswordField(PasswordField&& value) { m_passwordFieldHasBeenSet = true; m_passwordField = std::move(value); }
-    inline RequestInspection& WithPasswordField(const PasswordField& value) { SetPasswordField(value); return *this;}
-    inline RequestInspection& WithPasswordField(PasswordField&& value) { SetPasswordField(std::move(value)); return *this;}
+    template<typename PasswordFieldT = PasswordField>
+    void SetPasswordField(PasswordFieldT&& value) { m_passwordFieldHasBeenSet = true; m_passwordField = std::forward<PasswordFieldT>(value); }
+    template<typename PasswordFieldT = PasswordField>
+    RequestInspection& WithPasswordField(PasswordFieldT&& value) { SetPasswordField(std::forward<PasswordFieldT>(value)); return *this;}
     ///@}
   private:
 
-    PayloadType m_payloadType;
+    PayloadType m_payloadType{PayloadType::NOT_SET};
     bool m_payloadTypeHasBeenSet = false;
 
     UsernameField m_usernameField;

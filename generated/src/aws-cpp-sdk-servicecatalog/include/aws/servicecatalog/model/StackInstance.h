@@ -38,7 +38,7 @@ namespace Model
   class StackInstance
   {
   public:
-    AWS_SERVICECATALOG_API StackInstance();
+    AWS_SERVICECATALOG_API StackInstance() = default;
     AWS_SERVICECATALOG_API StackInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API StackInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the Amazon Web Services account that the stack instance is
      * associated with.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline StackInstance& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline StackInstance& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline StackInstance& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    StackInstance& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The name of the Amazon Web Services Region that the stack instance is
      * associated with.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline StackInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline StackInstance& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline StackInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    StackInstance& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +87,10 @@ namespace Model
      * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
      * date with the stack set.</p> </li> </ul>
      */
-    inline const StackInstanceStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
+    inline StackInstanceStatus GetStackInstanceStatus() const { return m_stackInstanceStatus; }
     inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
-    inline void SetStackInstanceStatus(const StackInstanceStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
-    inline void SetStackInstanceStatus(StackInstanceStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
-    inline StackInstance& WithStackInstanceStatus(const StackInstanceStatus& value) { SetStackInstanceStatus(value); return *this;}
-    inline StackInstance& WithStackInstanceStatus(StackInstanceStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
+    inline void SetStackInstanceStatus(StackInstanceStatus value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
+    inline StackInstance& WithStackInstanceStatus(StackInstanceStatus value) { SetStackInstanceStatus(value); return *this;}
     ///@}
   private:
 
@@ -106,7 +100,7 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    StackInstanceStatus m_stackInstanceStatus;
+    StackInstanceStatus m_stackInstanceStatus{StackInstanceStatus::NOT_SET};
     bool m_stackInstanceStatusHasBeenSet = false;
   };
 

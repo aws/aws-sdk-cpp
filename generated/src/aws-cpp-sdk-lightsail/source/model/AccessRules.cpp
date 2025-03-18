@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AccessRules::AccessRules() : 
-    m_getObject(AccessType::NOT_SET),
-    m_getObjectHasBeenSet(false),
-    m_allowPublicOverrides(false),
-    m_allowPublicOverridesHasBeenSet(false)
-{
-}
-
 AccessRules::AccessRules(JsonView jsonValue)
-  : AccessRules()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccessRules& AccessRules::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("getObject"))
   {
     m_getObject = AccessTypeMapper::GetAccessTypeForName(jsonValue.GetString("getObject"));
-
     m_getObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowPublicOverrides"))
   {
     m_allowPublicOverrides = jsonValue.GetBool("allowPublicOverrides");
-
     m_allowPublicOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

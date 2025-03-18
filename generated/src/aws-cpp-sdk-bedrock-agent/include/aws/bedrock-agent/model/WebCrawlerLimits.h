@@ -30,7 +30,7 @@ namespace Model
   class WebCrawlerLimits
   {
   public:
-    AWS_BEDROCKAGENT_API WebCrawlerLimits();
+    AWS_BEDROCKAGENT_API WebCrawlerLimits() = default;
     AWS_BEDROCKAGENT_API WebCrawlerLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API WebCrawlerLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * pages. If the web pages exceed this limit, the data source sync will fail and no
      * web pages will be ingested. </p>
      */
-    inline int GetMaxPages() const{ return m_maxPages; }
+    inline int GetMaxPages() const { return m_maxPages; }
     inline bool MaxPagesHasBeenSet() const { return m_maxPagesHasBeenSet; }
     inline void SetMaxPages(int value) { m_maxPagesHasBeenSet = true; m_maxPages = value; }
     inline WebCrawlerLimits& WithMaxPages(int value) { SetMaxPages(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
     /**
      * <p>The max rate at which pages are crawled, up to 300 per minute per host.</p>
      */
-    inline int GetRateLimit() const{ return m_rateLimit; }
+    inline int GetRateLimit() const { return m_rateLimit; }
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
     inline void SetRateLimit(int value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
     inline WebCrawlerLimits& WithRateLimit(int value) { SetRateLimit(value); return *this;}
     ///@}
   private:
 
-    int m_maxPages;
+    int m_maxPages{0};
     bool m_maxPagesHasBeenSet = false;
 
-    int m_rateLimit;
+    int m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
   };
 

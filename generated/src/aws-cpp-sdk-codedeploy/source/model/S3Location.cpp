@@ -18,18 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_bundleType(BundleType::NOT_SET),
-    m_bundleTypeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleType"))
   {
     m_bundleType = BundleTypeMapper::GetBundleTypeForName(jsonValue.GetString("bundleType"));
-
     m_bundleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eTag"))
   {
     m_eTag = jsonValue.GetString("eTag");
-
     m_eTagHasBeenSet = true;
   }
-
   return *this;
 }
 

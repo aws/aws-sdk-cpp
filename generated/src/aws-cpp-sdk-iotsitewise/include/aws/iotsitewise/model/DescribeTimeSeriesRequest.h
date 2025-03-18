@@ -25,7 +25,7 @@ namespace Model
   class DescribeTimeSeriesRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeTimeSeriesRequest();
+    AWS_IOTSITEWISE_API DescribeTimeSeriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The alias that identifies the time series.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline DescribeTimeSeriesRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline DescribeTimeSeriesRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline DescribeTimeSeriesRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    DescribeTimeSeriesRequest& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline DescribeTimeSeriesRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline DescribeTimeSeriesRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline DescribeTimeSeriesRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    DescribeTimeSeriesRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
+    inline const Aws::String& GetPropertyId() const { return m_propertyId; }
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
-    inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
-    inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
-    inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
-    inline DescribeTimeSeriesRequest& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
-    inline DescribeTimeSeriesRequest& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
-    inline DescribeTimeSeriesRequest& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
+    template<typename PropertyIdT = Aws::String>
+    void SetPropertyId(PropertyIdT&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::forward<PropertyIdT>(value); }
+    template<typename PropertyIdT = Aws::String>
+    DescribeTimeSeriesRequest& WithPropertyId(PropertyIdT&& value) { SetPropertyId(std::forward<PropertyIdT>(value)); return *this;}
     ///@}
   private:
 

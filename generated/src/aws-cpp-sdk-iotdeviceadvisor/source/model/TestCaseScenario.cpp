@@ -18,19 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-TestCaseScenario::TestCaseScenario() : 
-    m_testCaseScenarioIdHasBeenSet(false),
-    m_testCaseScenarioType(TestCaseScenarioType::NOT_SET),
-    m_testCaseScenarioTypeHasBeenSet(false),
-    m_status(TestCaseScenarioStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureHasBeenSet(false),
-    m_systemMessageHasBeenSet(false)
-{
-}
-
 TestCaseScenario::TestCaseScenario(JsonView jsonValue)
-  : TestCaseScenario()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ TestCaseScenario& TestCaseScenario::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("testCaseScenarioId"))
   {
     m_testCaseScenarioId = jsonValue.GetString("testCaseScenarioId");
-
     m_testCaseScenarioIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseScenarioType"))
   {
     m_testCaseScenarioType = TestCaseScenarioTypeMapper::GetTestCaseScenarioTypeForName(jsonValue.GetString("testCaseScenarioType"));
-
     m_testCaseScenarioTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TestCaseScenarioStatusMapper::GetTestCaseScenarioStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failure"))
   {
     m_failure = jsonValue.GetString("failure");
-
     m_failureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemMessage"))
   {
     m_systemMessage = jsonValue.GetString("systemMessage");
-
     m_systemMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

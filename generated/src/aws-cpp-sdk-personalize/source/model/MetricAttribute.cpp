@@ -18,15 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-MetricAttribute::MetricAttribute() : 
-    m_eventTypeHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 MetricAttribute::MetricAttribute(JsonView jsonValue)
-  : MetricAttribute()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MetricAttribute& MetricAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

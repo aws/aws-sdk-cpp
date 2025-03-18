@@ -26,7 +26,7 @@ namespace Model
   class DeleteIndexFieldRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DeleteIndexFieldRequest();
+    AWS_CLOUDSEARCH_API DeleteIndexFieldRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteIndexFieldRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteIndexFieldRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of the index field your want to remove from the domain's indexing
      * options.</p>
      */
-    inline const Aws::String& GetIndexFieldName() const{ return m_indexFieldName; }
+    inline const Aws::String& GetIndexFieldName() const { return m_indexFieldName; }
     inline bool IndexFieldNameHasBeenSet() const { return m_indexFieldNameHasBeenSet; }
-    inline void SetIndexFieldName(const Aws::String& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = value; }
-    inline void SetIndexFieldName(Aws::String&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::move(value); }
-    inline void SetIndexFieldName(const char* value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName.assign(value); }
-    inline DeleteIndexFieldRequest& WithIndexFieldName(const Aws::String& value) { SetIndexFieldName(value); return *this;}
-    inline DeleteIndexFieldRequest& WithIndexFieldName(Aws::String&& value) { SetIndexFieldName(std::move(value)); return *this;}
-    inline DeleteIndexFieldRequest& WithIndexFieldName(const char* value) { SetIndexFieldName(value); return *this;}
+    template<typename IndexFieldNameT = Aws::String>
+    void SetIndexFieldName(IndexFieldNameT&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::forward<IndexFieldNameT>(value); }
+    template<typename IndexFieldNameT = Aws::String>
+    DeleteIndexFieldRequest& WithIndexFieldName(IndexFieldNameT&& value) { SetIndexFieldName(std::forward<IndexFieldNameT>(value)); return *this;}
     ///@}
   private:
 

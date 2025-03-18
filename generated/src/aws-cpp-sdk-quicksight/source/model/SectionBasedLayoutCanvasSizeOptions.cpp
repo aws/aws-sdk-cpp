@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions() : 
-    m_paperCanvasSizeOptionsHasBeenSet(false)
-{
-}
-
 SectionBasedLayoutCanvasSizeOptions::SectionBasedLayoutCanvasSizeOptions(JsonView jsonValue)
-  : SectionBasedLayoutCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SectionBasedLayoutCanvasSizeOptions& SectionBasedLayoutCanvasSizeOptions::operat
   if(jsonValue.ValueExists("PaperCanvasSizeOptions"))
   {
     m_paperCanvasSizeOptions = jsonValue.GetObject("PaperCanvasSizeOptions");
-
     m_paperCanvasSizeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

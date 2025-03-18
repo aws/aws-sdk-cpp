@@ -25,7 +25,7 @@ namespace Model
   class GetBranchRequest : public AmplifyRequest
   {
   public:
-    AWS_AMPLIFY_API GetBranchRequest();
+    AWS_AMPLIFY_API GetBranchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p> The unique ID for an Amplify app. </p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline GetBranchRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetBranchRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetBranchRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetBranchRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the branch. </p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline GetBranchRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline GetBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline GetBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    GetBranchRequest& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
   private:
 

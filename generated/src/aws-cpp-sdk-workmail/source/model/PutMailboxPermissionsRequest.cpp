@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMailboxPermissionsRequest::PutMailboxPermissionsRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_granteeIdHasBeenSet(false),
-    m_permissionValuesHasBeenSet(false)
-{
-}
-
 Aws::String PutMailboxPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

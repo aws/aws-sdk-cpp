@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateEnclaveCertificateIamRoleRequest::AssociateEnclaveCertificateIamRoleRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateEnclaveCertificateIamRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

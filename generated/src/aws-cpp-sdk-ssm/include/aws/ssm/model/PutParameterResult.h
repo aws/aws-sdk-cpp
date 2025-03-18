@@ -28,7 +28,7 @@ namespace Model
   class PutParameterResult
   {
   public:
-    AWS_SSM_API PutParameterResult();
+    AWS_SSM_API PutParameterResult() = default;
     AWS_SSM_API PutParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API PutParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,8 +42,8 @@ namespace Model
      * specific version, the system returns the latest parameter value when a parameter
      * is called.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
-    inline void SetVersion(long long value) { m_version = value; }
+    inline long long GetVersion() const { return m_version; }
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline PutParameterResult& WithVersion(long long value) { SetVersion(value); return *this;}
     ///@}
 
@@ -51,30 +51,29 @@ namespace Model
     /**
      * <p>The tier assigned to the parameter.</p>
      */
-    inline const ParameterTier& GetTier() const{ return m_tier; }
-    inline void SetTier(const ParameterTier& value) { m_tier = value; }
-    inline void SetTier(ParameterTier&& value) { m_tier = std::move(value); }
-    inline PutParameterResult& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
-    inline PutParameterResult& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+    inline ParameterTier GetTier() const { return m_tier; }
+    inline void SetTier(ParameterTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline PutParameterResult& WithTier(ParameterTier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutParameterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutParameterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutParameterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutParameterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_version;
+    long long m_version{0};
+    bool m_versionHasBeenSet = false;
 
-    ParameterTier m_tier;
+    ParameterTier m_tier{ParameterTier::NOT_SET};
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

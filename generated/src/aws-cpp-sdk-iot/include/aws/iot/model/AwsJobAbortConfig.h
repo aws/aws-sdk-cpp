@@ -33,7 +33,7 @@ namespace Model
   class AwsJobAbortConfig
   {
   public:
-    AWS_IOT_API AwsJobAbortConfig();
+    AWS_IOT_API AwsJobAbortConfig() = default;
     AWS_IOT_API AwsJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AwsJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The list of criteria that determine when and how to abort the job.</p>
      */
-    inline const Aws::Vector<AwsJobAbortCriteria>& GetAbortCriteriaList() const{ return m_abortCriteriaList; }
+    inline const Aws::Vector<AwsJobAbortCriteria>& GetAbortCriteriaList() const { return m_abortCriteriaList; }
     inline bool AbortCriteriaListHasBeenSet() const { return m_abortCriteriaListHasBeenSet; }
-    inline void SetAbortCriteriaList(const Aws::Vector<AwsJobAbortCriteria>& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList = value; }
-    inline void SetAbortCriteriaList(Aws::Vector<AwsJobAbortCriteria>&& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList = std::move(value); }
-    inline AwsJobAbortConfig& WithAbortCriteriaList(const Aws::Vector<AwsJobAbortCriteria>& value) { SetAbortCriteriaList(value); return *this;}
-    inline AwsJobAbortConfig& WithAbortCriteriaList(Aws::Vector<AwsJobAbortCriteria>&& value) { SetAbortCriteriaList(std::move(value)); return *this;}
-    inline AwsJobAbortConfig& AddAbortCriteriaList(const AwsJobAbortCriteria& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList.push_back(value); return *this; }
-    inline AwsJobAbortConfig& AddAbortCriteriaList(AwsJobAbortCriteria&& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList.push_back(std::move(value)); return *this; }
+    template<typename AbortCriteriaListT = Aws::Vector<AwsJobAbortCriteria>>
+    void SetAbortCriteriaList(AbortCriteriaListT&& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList = std::forward<AbortCriteriaListT>(value); }
+    template<typename AbortCriteriaListT = Aws::Vector<AwsJobAbortCriteria>>
+    AwsJobAbortConfig& WithAbortCriteriaList(AbortCriteriaListT&& value) { SetAbortCriteriaList(std::forward<AbortCriteriaListT>(value)); return *this;}
+    template<typename AbortCriteriaListT = AwsJobAbortCriteria>
+    AwsJobAbortConfig& AddAbortCriteriaList(AbortCriteriaListT&& value) { m_abortCriteriaListHasBeenSet = true; m_abortCriteriaList.emplace_back(std::forward<AbortCriteriaListT>(value)); return *this; }
     ///@}
   private:
 

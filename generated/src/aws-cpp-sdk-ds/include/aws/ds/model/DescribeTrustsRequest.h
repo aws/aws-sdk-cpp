@@ -28,7 +28,7 @@ namespace Model
   class DescribeTrustsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeTrustsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeTrustsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Directory ID of the Amazon Web Services directory that is a part of the
      * requested trust relationship.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeTrustsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeTrustsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeTrustsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeTrustsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * current account are returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTrustIds() const{ return m_trustIds; }
+    inline const Aws::Vector<Aws::String>& GetTrustIds() const { return m_trustIds; }
     inline bool TrustIdsHasBeenSet() const { return m_trustIdsHasBeenSet; }
-    inline void SetTrustIds(const Aws::Vector<Aws::String>& value) { m_trustIdsHasBeenSet = true; m_trustIds = value; }
-    inline void SetTrustIds(Aws::Vector<Aws::String>&& value) { m_trustIdsHasBeenSet = true; m_trustIds = std::move(value); }
-    inline DescribeTrustsRequest& WithTrustIds(const Aws::Vector<Aws::String>& value) { SetTrustIds(value); return *this;}
-    inline DescribeTrustsRequest& WithTrustIds(Aws::Vector<Aws::String>&& value) { SetTrustIds(std::move(value)); return *this;}
-    inline DescribeTrustsRequest& AddTrustIds(const Aws::String& value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(value); return *this; }
-    inline DescribeTrustsRequest& AddTrustIds(Aws::String&& value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(std::move(value)); return *this; }
-    inline DescribeTrustsRequest& AddTrustIds(const char* value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(value); return *this; }
+    template<typename TrustIdsT = Aws::Vector<Aws::String>>
+    void SetTrustIds(TrustIdsT&& value) { m_trustIdsHasBeenSet = true; m_trustIds = std::forward<TrustIdsT>(value); }
+    template<typename TrustIdsT = Aws::Vector<Aws::String>>
+    DescribeTrustsRequest& WithTrustIds(TrustIdsT&& value) { SetTrustIds(std::forward<TrustIdsT>(value)); return *this;}
+    template<typename TrustIdsT = Aws::String>
+    DescribeTrustsRequest& AddTrustIds(TrustIdsT&& value) { m_trustIdsHasBeenSet = true; m_trustIds.emplace_back(std::forward<TrustIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,21 +76,19 @@ namespace Model
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
      * <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeTrustsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTrustsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTrustsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTrustsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of objects to return.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeTrustsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -109,7 +104,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

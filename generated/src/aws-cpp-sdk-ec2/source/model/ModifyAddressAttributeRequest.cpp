@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyAddressAttributeRequest::ModifyAddressAttributeRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyAddressAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

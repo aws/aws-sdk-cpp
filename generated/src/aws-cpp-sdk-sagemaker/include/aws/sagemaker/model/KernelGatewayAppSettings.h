@@ -34,7 +34,7 @@ namespace Model
   class KernelGatewayAppSettings
   {
   public:
-    AWS_SAGEMAKER_API KernelGatewayAppSettings();
+    AWS_SAGEMAKER_API KernelGatewayAppSettings() = default;
     AWS_SAGEMAKER_API KernelGatewayAppSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API KernelGatewayAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * or CloudFormation and the instance type parameter value is not passed.</p>
      * 
      */
-    inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
+    inline const ResourceSpec& GetDefaultResourceSpec() const { return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-    inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-    inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-    inline KernelGatewayAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-    inline KernelGatewayAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    void SetDefaultResourceSpec(DefaultResourceSpecT&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::forward<DefaultResourceSpecT>(value); }
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    KernelGatewayAppSettings& WithDefaultResourceSpec(DefaultResourceSpecT&& value) { SetDefaultResourceSpec(std::forward<DefaultResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +64,14 @@ namespace Model
      * follows.</p> <ul> <li> <p>On a domain level: 200</p> </li> <li> <p>On a space
      * level: 5</p> </li> <li> <p>On a user profile level: 5</p> </li> </ul>
      */
-    inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
+    inline const Aws::Vector<CustomImage>& GetCustomImages() const { return m_customImages; }
     inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
-    inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
-    inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
-    inline KernelGatewayAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
-    inline KernelGatewayAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
-    inline KernelGatewayAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
-    inline KernelGatewayAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
+    template<typename CustomImagesT = Aws::Vector<CustomImage>>
+    void SetCustomImages(CustomImagesT&& value) { m_customImagesHasBeenSet = true; m_customImages = std::forward<CustomImagesT>(value); }
+    template<typename CustomImagesT = Aws::Vector<CustomImage>>
+    KernelGatewayAppSettings& WithCustomImages(CustomImagesT&& value) { SetCustomImages(std::forward<CustomImagesT>(value)); return *this;}
+    template<typename CustomImagesT = CustomImage>
+    KernelGatewayAppSettings& AddCustomImages(CustomImagesT&& value) { m_customImagesHasBeenSet = true; m_customImages.emplace_back(std::forward<CustomImagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,15 +80,14 @@ namespace Model
      * the the user profile or domain.</p>  <p>To remove a Lifecycle Config, you
      * must set <code>LifecycleConfigArns</code> to an empty list.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
+    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const { return m_lifecycleConfigArns; }
     inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
-    inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
-    inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
-    inline KernelGatewayAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
-    inline KernelGatewayAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
-    inline KernelGatewayAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
-    inline KernelGatewayAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
-    inline KernelGatewayAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+    template<typename LifecycleConfigArnsT = Aws::Vector<Aws::String>>
+    void SetLifecycleConfigArns(LifecycleConfigArnsT&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::forward<LifecycleConfigArnsT>(value); }
+    template<typename LifecycleConfigArnsT = Aws::Vector<Aws::String>>
+    KernelGatewayAppSettings& WithLifecycleConfigArns(LifecycleConfigArnsT&& value) { SetLifecycleConfigArns(std::forward<LifecycleConfigArnsT>(value)); return *this;}
+    template<typename LifecycleConfigArnsT = Aws::String>
+    KernelGatewayAppSettings& AddLifecycleConfigArns(LifecycleConfigArnsT&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.emplace_back(std::forward<LifecycleConfigArnsT>(value)); return *this; }
     ///@}
   private:
 

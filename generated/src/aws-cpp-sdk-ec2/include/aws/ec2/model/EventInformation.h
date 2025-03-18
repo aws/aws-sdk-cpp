@@ -31,7 +31,7 @@ namespace Model
   class EventInformation
   {
   public:
-    AWS_EC2_API EventInformation();
+    AWS_EC2_API EventInformation() = default;
     AWS_EC2_API EventInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EventInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The description of the event.</p>
      */
-    inline const Aws::String& GetEventDescription() const{ return m_eventDescription; }
+    inline const Aws::String& GetEventDescription() const { return m_eventDescription; }
     inline bool EventDescriptionHasBeenSet() const { return m_eventDescriptionHasBeenSet; }
-    inline void SetEventDescription(const Aws::String& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
-    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::move(value); }
-    inline void SetEventDescription(const char* value) { m_eventDescriptionHasBeenSet = true; m_eventDescription.assign(value); }
-    inline EventInformation& WithEventDescription(const Aws::String& value) { SetEventDescription(value); return *this;}
-    inline EventInformation& WithEventDescription(Aws::String&& value) { SetEventDescription(std::move(value)); return *this;}
-    inline EventInformation& WithEventDescription(const char* value) { SetEventDescription(value); return *this;}
+    template<typename EventDescriptionT = Aws::String>
+    void SetEventDescription(EventDescriptionT&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::forward<EventDescriptionT>(value); }
+    template<typename EventDescriptionT = Aws::String>
+    EventInformation& WithEventDescription(EventDescriptionT&& value) { SetEventDescription(std::forward<EventDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +113,12 @@ namespace Model
      * instances with load balancers failed. For more information, see the description
      * of the event.</p> </li> </ul>
      */
-    inline const Aws::String& GetEventSubType() const{ return m_eventSubType; }
+    inline const Aws::String& GetEventSubType() const { return m_eventSubType; }
     inline bool EventSubTypeHasBeenSet() const { return m_eventSubTypeHasBeenSet; }
-    inline void SetEventSubType(const Aws::String& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = value; }
-    inline void SetEventSubType(Aws::String&& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = std::move(value); }
-    inline void SetEventSubType(const char* value) { m_eventSubTypeHasBeenSet = true; m_eventSubType.assign(value); }
-    inline EventInformation& WithEventSubType(const Aws::String& value) { SetEventSubType(value); return *this;}
-    inline EventInformation& WithEventSubType(Aws::String&& value) { SetEventSubType(std::move(value)); return *this;}
-    inline EventInformation& WithEventSubType(const char* value) { SetEventSubType(value); return *this;}
+    template<typename EventSubTypeT = Aws::String>
+    void SetEventSubType(EventSubTypeT&& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = std::forward<EventSubTypeT>(value); }
+    template<typename EventSubTypeT = Aws::String>
+    EventInformation& WithEventSubType(EventSubTypeT&& value) { SetEventSubType(std::forward<EventSubTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +126,12 @@ namespace Model
      * <p>The ID of the instance. This information is available only for
      * <code>instanceChange</code> events.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline EventInformation& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline EventInformation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline EventInformation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    EventInformation& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

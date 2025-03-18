@@ -33,7 +33,7 @@ namespace Model
   class ServerGroupValidationConfiguration
   {
   public:
-    AWS_SMS_API ServerGroupValidationConfiguration();
+    AWS_SMS_API ServerGroupValidationConfiguration() = default;
     AWS_SMS_API ServerGroupValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API ServerGroupValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The ID of the server group.</p>
      */
-    inline const Aws::String& GetServerGroupId() const{ return m_serverGroupId; }
+    inline const Aws::String& GetServerGroupId() const { return m_serverGroupId; }
     inline bool ServerGroupIdHasBeenSet() const { return m_serverGroupIdHasBeenSet; }
-    inline void SetServerGroupId(const Aws::String& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = value; }
-    inline void SetServerGroupId(Aws::String&& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = std::move(value); }
-    inline void SetServerGroupId(const char* value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId.assign(value); }
-    inline ServerGroupValidationConfiguration& WithServerGroupId(const Aws::String& value) { SetServerGroupId(value); return *this;}
-    inline ServerGroupValidationConfiguration& WithServerGroupId(Aws::String&& value) { SetServerGroupId(std::move(value)); return *this;}
-    inline ServerGroupValidationConfiguration& WithServerGroupId(const char* value) { SetServerGroupId(value); return *this;}
+    template<typename ServerGroupIdT = Aws::String>
+    void SetServerGroupId(ServerGroupIdT&& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = std::forward<ServerGroupIdT>(value); }
+    template<typename ServerGroupIdT = Aws::String>
+    ServerGroupValidationConfiguration& WithServerGroupId(ServerGroupIdT&& value) { SetServerGroupId(std::forward<ServerGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The validation configuration.</p>
      */
-    inline const Aws::Vector<ServerValidationConfiguration>& GetServerValidationConfigurations() const{ return m_serverValidationConfigurations; }
+    inline const Aws::Vector<ServerValidationConfiguration>& GetServerValidationConfigurations() const { return m_serverValidationConfigurations; }
     inline bool ServerValidationConfigurationsHasBeenSet() const { return m_serverValidationConfigurationsHasBeenSet; }
-    inline void SetServerValidationConfigurations(const Aws::Vector<ServerValidationConfiguration>& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations = value; }
-    inline void SetServerValidationConfigurations(Aws::Vector<ServerValidationConfiguration>&& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations = std::move(value); }
-    inline ServerGroupValidationConfiguration& WithServerValidationConfigurations(const Aws::Vector<ServerValidationConfiguration>& value) { SetServerValidationConfigurations(value); return *this;}
-    inline ServerGroupValidationConfiguration& WithServerValidationConfigurations(Aws::Vector<ServerValidationConfiguration>&& value) { SetServerValidationConfigurations(std::move(value)); return *this;}
-    inline ServerGroupValidationConfiguration& AddServerValidationConfigurations(const ServerValidationConfiguration& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations.push_back(value); return *this; }
-    inline ServerGroupValidationConfiguration& AddServerValidationConfigurations(ServerValidationConfiguration&& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ServerValidationConfigurationsT = Aws::Vector<ServerValidationConfiguration>>
+    void SetServerValidationConfigurations(ServerValidationConfigurationsT&& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations = std::forward<ServerValidationConfigurationsT>(value); }
+    template<typename ServerValidationConfigurationsT = Aws::Vector<ServerValidationConfiguration>>
+    ServerGroupValidationConfiguration& WithServerValidationConfigurations(ServerValidationConfigurationsT&& value) { SetServerValidationConfigurations(std::forward<ServerValidationConfigurationsT>(value)); return *this;}
+    template<typename ServerValidationConfigurationsT = ServerValidationConfiguration>
+    ServerGroupValidationConfiguration& AddServerValidationConfigurations(ServerValidationConfigurationsT&& value) { m_serverValidationConfigurationsHasBeenSet = true; m_serverValidationConfigurations.emplace_back(std::forward<ServerValidationConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

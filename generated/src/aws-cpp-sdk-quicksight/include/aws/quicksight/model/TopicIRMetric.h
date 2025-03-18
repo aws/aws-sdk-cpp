@@ -39,7 +39,7 @@ namespace Model
   class TopicIRMetric
   {
   public:
-    AWS_QUICKSIGHT_API TopicIRMetric();
+    AWS_QUICKSIGHT_API TopicIRMetric() = default;
     AWS_QUICKSIGHT_API TopicIRMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicIRMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,112 +49,108 @@ namespace Model
     /**
      * <p>The metric ID for the <code>TopicIRMetric</code>.</p>
      */
-    inline const Identifier& GetMetricId() const{ return m_metricId; }
+    inline const Identifier& GetMetricId() const { return m_metricId; }
     inline bool MetricIdHasBeenSet() const { return m_metricIdHasBeenSet; }
-    inline void SetMetricId(const Identifier& value) { m_metricIdHasBeenSet = true; m_metricId = value; }
-    inline void SetMetricId(Identifier&& value) { m_metricIdHasBeenSet = true; m_metricId = std::move(value); }
-    inline TopicIRMetric& WithMetricId(const Identifier& value) { SetMetricId(value); return *this;}
-    inline TopicIRMetric& WithMetricId(Identifier&& value) { SetMetricId(std::move(value)); return *this;}
+    template<typename MetricIdT = Identifier>
+    void SetMetricId(MetricIdT&& value) { m_metricIdHasBeenSet = true; m_metricId = std::forward<MetricIdT>(value); }
+    template<typename MetricIdT = Identifier>
+    TopicIRMetric& WithMetricId(MetricIdT&& value) { SetMetricId(std::forward<MetricIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function for the <code>TopicIRMetric</code>.</p>
      */
-    inline const AggFunction& GetFunction() const{ return m_function; }
+    inline const AggFunction& GetFunction() const { return m_function; }
     inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-    inline void SetFunction(const AggFunction& value) { m_functionHasBeenSet = true; m_function = value; }
-    inline void SetFunction(AggFunction&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
-    inline TopicIRMetric& WithFunction(const AggFunction& value) { SetFunction(value); return *this;}
-    inline TopicIRMetric& WithFunction(AggFunction&& value) { SetFunction(std::move(value)); return *this;}
+    template<typename FunctionT = AggFunction>
+    void SetFunction(FunctionT&& value) { m_functionHasBeenSet = true; m_function = std::forward<FunctionT>(value); }
+    template<typename FunctionT = AggFunction>
+    TopicIRMetric& WithFunction(FunctionT&& value) { SetFunction(std::forward<FunctionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operands for the <code>TopicIRMetric</code>.</p>
      */
-    inline const Aws::Vector<Identifier>& GetOperands() const{ return m_operands; }
+    inline const Aws::Vector<Identifier>& GetOperands() const { return m_operands; }
     inline bool OperandsHasBeenSet() const { return m_operandsHasBeenSet; }
-    inline void SetOperands(const Aws::Vector<Identifier>& value) { m_operandsHasBeenSet = true; m_operands = value; }
-    inline void SetOperands(Aws::Vector<Identifier>&& value) { m_operandsHasBeenSet = true; m_operands = std::move(value); }
-    inline TopicIRMetric& WithOperands(const Aws::Vector<Identifier>& value) { SetOperands(value); return *this;}
-    inline TopicIRMetric& WithOperands(Aws::Vector<Identifier>&& value) { SetOperands(std::move(value)); return *this;}
-    inline TopicIRMetric& AddOperands(const Identifier& value) { m_operandsHasBeenSet = true; m_operands.push_back(value); return *this; }
-    inline TopicIRMetric& AddOperands(Identifier&& value) { m_operandsHasBeenSet = true; m_operands.push_back(std::move(value)); return *this; }
+    template<typename OperandsT = Aws::Vector<Identifier>>
+    void SetOperands(OperandsT&& value) { m_operandsHasBeenSet = true; m_operands = std::forward<OperandsT>(value); }
+    template<typename OperandsT = Aws::Vector<Identifier>>
+    TopicIRMetric& WithOperands(OperandsT&& value) { SetOperands(std::forward<OperandsT>(value)); return *this;}
+    template<typename OperandsT = Identifier>
+    TopicIRMetric& AddOperands(OperandsT&& value) { m_operandsHasBeenSet = true; m_operands.emplace_back(std::forward<OperandsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The comparison method for the <code>TopicIRMetric</code>.</p>
      */
-    inline const TopicIRComparisonMethod& GetComparisonMethod() const{ return m_comparisonMethod; }
+    inline const TopicIRComparisonMethod& GetComparisonMethod() const { return m_comparisonMethod; }
     inline bool ComparisonMethodHasBeenSet() const { return m_comparisonMethodHasBeenSet; }
-    inline void SetComparisonMethod(const TopicIRComparisonMethod& value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = value; }
-    inline void SetComparisonMethod(TopicIRComparisonMethod&& value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = std::move(value); }
-    inline TopicIRMetric& WithComparisonMethod(const TopicIRComparisonMethod& value) { SetComparisonMethod(value); return *this;}
-    inline TopicIRMetric& WithComparisonMethod(TopicIRComparisonMethod&& value) { SetComparisonMethod(std::move(value)); return *this;}
+    template<typename ComparisonMethodT = TopicIRComparisonMethod>
+    void SetComparisonMethod(ComparisonMethodT&& value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = std::forward<ComparisonMethodT>(value); }
+    template<typename ComparisonMethodT = TopicIRComparisonMethod>
+    TopicIRMetric& WithComparisonMethod(ComparisonMethodT&& value) { SetComparisonMethod(std::forward<ComparisonMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expression for the <code>TopicIRMetric</code>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline TopicIRMetric& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline TopicIRMetric& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline TopicIRMetric& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    TopicIRMetric& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The calculated field references for the <code>TopicIRMetric</code>.</p>
      */
-    inline const Aws::Vector<Identifier>& GetCalculatedFieldReferences() const{ return m_calculatedFieldReferences; }
+    inline const Aws::Vector<Identifier>& GetCalculatedFieldReferences() const { return m_calculatedFieldReferences; }
     inline bool CalculatedFieldReferencesHasBeenSet() const { return m_calculatedFieldReferencesHasBeenSet; }
-    inline void SetCalculatedFieldReferences(const Aws::Vector<Identifier>& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences = value; }
-    inline void SetCalculatedFieldReferences(Aws::Vector<Identifier>&& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences = std::move(value); }
-    inline TopicIRMetric& WithCalculatedFieldReferences(const Aws::Vector<Identifier>& value) { SetCalculatedFieldReferences(value); return *this;}
-    inline TopicIRMetric& WithCalculatedFieldReferences(Aws::Vector<Identifier>&& value) { SetCalculatedFieldReferences(std::move(value)); return *this;}
-    inline TopicIRMetric& AddCalculatedFieldReferences(const Identifier& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences.push_back(value); return *this; }
-    inline TopicIRMetric& AddCalculatedFieldReferences(Identifier&& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences.push_back(std::move(value)); return *this; }
+    template<typename CalculatedFieldReferencesT = Aws::Vector<Identifier>>
+    void SetCalculatedFieldReferences(CalculatedFieldReferencesT&& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences = std::forward<CalculatedFieldReferencesT>(value); }
+    template<typename CalculatedFieldReferencesT = Aws::Vector<Identifier>>
+    TopicIRMetric& WithCalculatedFieldReferences(CalculatedFieldReferencesT&& value) { SetCalculatedFieldReferences(std::forward<CalculatedFieldReferencesT>(value)); return *this;}
+    template<typename CalculatedFieldReferencesT = Identifier>
+    TopicIRMetric& AddCalculatedFieldReferences(CalculatedFieldReferencesT&& value) { m_calculatedFieldReferencesHasBeenSet = true; m_calculatedFieldReferences.emplace_back(std::forward<CalculatedFieldReferencesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The display format for the <code>TopicIRMetric</code>.</p>
      */
-    inline const DisplayFormat& GetDisplayFormat() const{ return m_displayFormat; }
+    inline DisplayFormat GetDisplayFormat() const { return m_displayFormat; }
     inline bool DisplayFormatHasBeenSet() const { return m_displayFormatHasBeenSet; }
-    inline void SetDisplayFormat(const DisplayFormat& value) { m_displayFormatHasBeenSet = true; m_displayFormat = value; }
-    inline void SetDisplayFormat(DisplayFormat&& value) { m_displayFormatHasBeenSet = true; m_displayFormat = std::move(value); }
-    inline TopicIRMetric& WithDisplayFormat(const DisplayFormat& value) { SetDisplayFormat(value); return *this;}
-    inline TopicIRMetric& WithDisplayFormat(DisplayFormat&& value) { SetDisplayFormat(std::move(value)); return *this;}
+    inline void SetDisplayFormat(DisplayFormat value) { m_displayFormatHasBeenSet = true; m_displayFormat = value; }
+    inline TopicIRMetric& WithDisplayFormat(DisplayFormat value) { SetDisplayFormat(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DisplayFormatOptions& GetDisplayFormatOptions() const{ return m_displayFormatOptions; }
+    inline const DisplayFormatOptions& GetDisplayFormatOptions() const { return m_displayFormatOptions; }
     inline bool DisplayFormatOptionsHasBeenSet() const { return m_displayFormatOptionsHasBeenSet; }
-    inline void SetDisplayFormatOptions(const DisplayFormatOptions& value) { m_displayFormatOptionsHasBeenSet = true; m_displayFormatOptions = value; }
-    inline void SetDisplayFormatOptions(DisplayFormatOptions&& value) { m_displayFormatOptionsHasBeenSet = true; m_displayFormatOptions = std::move(value); }
-    inline TopicIRMetric& WithDisplayFormatOptions(const DisplayFormatOptions& value) { SetDisplayFormatOptions(value); return *this;}
-    inline TopicIRMetric& WithDisplayFormatOptions(DisplayFormatOptions&& value) { SetDisplayFormatOptions(std::move(value)); return *this;}
+    template<typename DisplayFormatOptionsT = DisplayFormatOptions>
+    void SetDisplayFormatOptions(DisplayFormatOptionsT&& value) { m_displayFormatOptionsHasBeenSet = true; m_displayFormatOptions = std::forward<DisplayFormatOptionsT>(value); }
+    template<typename DisplayFormatOptionsT = DisplayFormatOptions>
+    TopicIRMetric& WithDisplayFormatOptions(DisplayFormatOptionsT&& value) { SetDisplayFormatOptions(std::forward<DisplayFormatOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The named entity for the <code>TopicIRMetric</code>.</p>
      */
-    inline const NamedEntityRef& GetNamedEntity() const{ return m_namedEntity; }
+    inline const NamedEntityRef& GetNamedEntity() const { return m_namedEntity; }
     inline bool NamedEntityHasBeenSet() const { return m_namedEntityHasBeenSet; }
-    inline void SetNamedEntity(const NamedEntityRef& value) { m_namedEntityHasBeenSet = true; m_namedEntity = value; }
-    inline void SetNamedEntity(NamedEntityRef&& value) { m_namedEntityHasBeenSet = true; m_namedEntity = std::move(value); }
-    inline TopicIRMetric& WithNamedEntity(const NamedEntityRef& value) { SetNamedEntity(value); return *this;}
-    inline TopicIRMetric& WithNamedEntity(NamedEntityRef&& value) { SetNamedEntity(std::move(value)); return *this;}
+    template<typename NamedEntityT = NamedEntityRef>
+    void SetNamedEntity(NamedEntityT&& value) { m_namedEntityHasBeenSet = true; m_namedEntity = std::forward<NamedEntityT>(value); }
+    template<typename NamedEntityT = NamedEntityRef>
+    TopicIRMetric& WithNamedEntity(NamedEntityT&& value) { SetNamedEntity(std::forward<NamedEntityT>(value)); return *this;}
     ///@}
   private:
 
@@ -176,7 +172,7 @@ namespace Model
     Aws::Vector<Identifier> m_calculatedFieldReferences;
     bool m_calculatedFieldReferencesHasBeenSet = false;
 
-    DisplayFormat m_displayFormat;
+    DisplayFormat m_displayFormat{DisplayFormat::NOT_SET};
     bool m_displayFormatHasBeenSet = false;
 
     DisplayFormatOptions m_displayFormatOptions;

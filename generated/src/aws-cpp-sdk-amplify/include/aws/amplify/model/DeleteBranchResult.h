@@ -34,7 +34,7 @@ namespace Model
   class DeleteBranchResult
   {
   public:
-    AWS_AMPLIFY_API DeleteBranchResult();
+    AWS_AMPLIFY_API DeleteBranchResult() = default;
     AWS_AMPLIFY_API DeleteBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API DeleteBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>The branch for an Amplify app, which maps to a third-party repository branch.
      * </p>
      */
-    inline const Branch& GetBranch() const{ return m_branch; }
-    inline void SetBranch(const Branch& value) { m_branch = value; }
-    inline void SetBranch(Branch&& value) { m_branch = std::move(value); }
-    inline DeleteBranchResult& WithBranch(const Branch& value) { SetBranch(value); return *this;}
-    inline DeleteBranchResult& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
+    inline const Branch& GetBranch() const { return m_branch; }
+    template<typename BranchT = Branch>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Branch>
+    DeleteBranchResult& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteBranchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Branch m_branch;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

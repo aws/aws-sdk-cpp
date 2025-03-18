@@ -18,19 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ApplicationAggregatedStatus::ApplicationAggregatedStatus() : 
-    m_healthStatus(ApplicationHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_lastUpdateDateTimeHasBeenSet(false),
-    m_progressStatus(ApplicationProgressStatus::NOT_SET),
-    m_progressStatusHasBeenSet(false),
-    m_totalSourceServers(0),
-    m_totalSourceServersHasBeenSet(false)
-{
-}
-
 ApplicationAggregatedStatus::ApplicationAggregatedStatus(JsonView jsonValue)
-  : ApplicationAggregatedStatus()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ApplicationAggregatedStatus& ApplicationAggregatedStatus::operator =(JsonView js
   if(jsonValue.ValueExists("healthStatus"))
   {
     m_healthStatus = ApplicationHealthStatusMapper::GetApplicationHealthStatusForName(jsonValue.GetString("healthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateDateTime"))
   {
     m_lastUpdateDateTime = jsonValue.GetString("lastUpdateDateTime");
-
     m_lastUpdateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressStatus"))
   {
     m_progressStatus = ApplicationProgressStatusMapper::GetApplicationProgressStatusForName(jsonValue.GetString("progressStatus"));
-
     m_progressStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalSourceServers"))
   {
     m_totalSourceServers = jsonValue.GetInt64("totalSourceServers");
-
     m_totalSourceServersHasBeenSet = true;
   }
-
   return *this;
 }
 

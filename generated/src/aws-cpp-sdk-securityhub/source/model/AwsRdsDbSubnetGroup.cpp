@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbSubnetGroup::AwsRdsDbSubnetGroup() : 
-    m_dbSubnetGroupNameHasBeenSet(false),
-    m_dbSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_dbSubnetGroupArnHasBeenSet(false)
-{
-}
-
 AwsRdsDbSubnetGroup::AwsRdsDbSubnetGroup(JsonView jsonValue)
-  : AwsRdsDbSubnetGroup()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsRdsDbSubnetGroup& AwsRdsDbSubnetGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DbSubnetGroupName"))
   {
     m_dbSubnetGroupName = jsonValue.GetString("DbSubnetGroupName");
-
     m_dbSubnetGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSubnetGroupDescription"))
   {
     m_dbSubnetGroupDescription = jsonValue.GetString("DbSubnetGroupDescription");
-
     m_dbSubnetGroupDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetGroupStatus"))
   {
     m_subnetGroupStatus = jsonValue.GetString("SubnetGroupStatus");
-
     m_subnetGroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -73,14 +54,11 @@ AwsRdsDbSubnetGroup& AwsRdsDbSubnetGroup::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSubnetGroupArn"))
   {
     m_dbSubnetGroupArn = jsonValue.GetString("DbSubnetGroupArn");
-
     m_dbSubnetGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PacketHeaderStatementRequest::PacketHeaderStatementRequest() : 
-    m_sourceAddressesHasBeenSet(false),
-    m_destinationAddressesHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_sourcePrefixListsHasBeenSet(false),
-    m_destinationPrefixListsHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 PacketHeaderStatementRequest::PacketHeaderStatementRequest(const XmlNode& xmlNode)
-  : PacketHeaderStatementRequest()
 {
   *this = xmlNode;
 }
@@ -47,6 +35,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!sourceAddressesNode.IsNull())
     {
       XmlNode sourceAddressesMember = sourceAddressesNode.FirstChild("item");
+      m_sourceAddressesHasBeenSet = !sourceAddressesMember.IsNull();
       while(!sourceAddressesMember.IsNull())
       {
         m_sourceAddresses.push_back(sourceAddressesMember.GetText());
@@ -59,6 +48,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!destinationAddressesNode.IsNull())
     {
       XmlNode destinationAddressesMember = destinationAddressesNode.FirstChild("item");
+      m_destinationAddressesHasBeenSet = !destinationAddressesMember.IsNull();
       while(!destinationAddressesMember.IsNull())
       {
         m_destinationAddresses.push_back(destinationAddressesMember.GetText());
@@ -71,6 +61,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!sourcePortsNode.IsNull())
     {
       XmlNode sourcePortsMember = sourcePortsNode.FirstChild("item");
+      m_sourcePortsHasBeenSet = !sourcePortsMember.IsNull();
       while(!sourcePortsMember.IsNull())
       {
         m_sourcePorts.push_back(sourcePortsMember.GetText());
@@ -83,6 +74,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!destinationPortsNode.IsNull())
     {
       XmlNode destinationPortsMember = destinationPortsNode.FirstChild("item");
+      m_destinationPortsHasBeenSet = !destinationPortsMember.IsNull();
       while(!destinationPortsMember.IsNull())
       {
         m_destinationPorts.push_back(destinationPortsMember.GetText());
@@ -95,6 +87,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!sourcePrefixListsNode.IsNull())
     {
       XmlNode sourcePrefixListsMember = sourcePrefixListsNode.FirstChild("item");
+      m_sourcePrefixListsHasBeenSet = !sourcePrefixListsMember.IsNull();
       while(!sourcePrefixListsMember.IsNull())
       {
         m_sourcePrefixLists.push_back(sourcePrefixListsMember.GetText());
@@ -107,6 +100,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!destinationPrefixListsNode.IsNull())
     {
       XmlNode destinationPrefixListsMember = destinationPrefixListsNode.FirstChild("item");
+      m_destinationPrefixListsHasBeenSet = !destinationPrefixListsMember.IsNull();
       while(!destinationPrefixListsMember.IsNull())
       {
         m_destinationPrefixLists.push_back(destinationPrefixListsMember.GetText());
@@ -119,6 +113,7 @@ PacketHeaderStatementRequest& PacketHeaderStatementRequest::operator =(const Xml
     if(!protocolsNode.IsNull())
     {
       XmlNode protocolsMember = protocolsNode.FirstChild("item");
+      m_protocolsHasBeenSet = !protocolsMember.IsNull();
       while(!protocolsMember.IsNull())
       {
         m_protocols.push_back(ProtocolMapper::GetProtocolForName(StringUtils::Trim(protocolsMember.GetText().c_str())));

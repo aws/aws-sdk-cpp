@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnnotationImportJobRequest::GetAnnotationImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAnnotationImportJobRequest::SerializePayload() const
 {
   return {};

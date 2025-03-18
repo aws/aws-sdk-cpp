@@ -12,11 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPublicKeyCertificateRequest::GetPublicKeyCertificateRequest() : 
-    m_keyIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetPublicKeyCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

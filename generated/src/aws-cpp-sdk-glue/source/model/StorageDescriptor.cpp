@@ -18,29 +18,7 @@ namespace Glue
 namespace Model
 {
 
-StorageDescriptor::StorageDescriptor() : 
-    m_columnsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_additionalLocationsHasBeenSet(false),
-    m_inputFormatHasBeenSet(false),
-    m_outputFormatHasBeenSet(false),
-    m_compressed(false),
-    m_compressedHasBeenSet(false),
-    m_numberOfBuckets(0),
-    m_numberOfBucketsHasBeenSet(false),
-    m_serdeInfoHasBeenSet(false),
-    m_bucketColumnsHasBeenSet(false),
-    m_sortColumnsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_skewedInfoHasBeenSet(false),
-    m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false),
-    m_schemaReferenceHasBeenSet(false)
-{
-}
-
 StorageDescriptor::StorageDescriptor(JsonView jsonValue)
-  : StorageDescriptor()
 {
   *this = jsonValue;
 }
@@ -56,14 +34,11 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalLocations"))
   {
     Aws::Utils::Array<JsonView> additionalLocationsJsonList = jsonValue.GetArray("AdditionalLocations");
@@ -73,42 +48,31 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     }
     m_additionalLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputFormat"))
   {
     m_inputFormat = jsonValue.GetString("InputFormat");
-
     m_inputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFormat"))
   {
     m_outputFormat = jsonValue.GetString("OutputFormat");
-
     m_outputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compressed"))
   {
     m_compressed = jsonValue.GetBool("Compressed");
-
     m_compressedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfBuckets"))
   {
     m_numberOfBuckets = jsonValue.GetInteger("NumberOfBuckets");
-
     m_numberOfBucketsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SerdeInfo"))
   {
     m_serdeInfo = jsonValue.GetObject("SerdeInfo");
-
     m_serdeInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketColumns"))
   {
     Aws::Utils::Array<JsonView> bucketColumnsJsonList = jsonValue.GetArray("BucketColumns");
@@ -118,7 +82,6 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     }
     m_bucketColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortColumns"))
   {
     Aws::Utils::Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("SortColumns");
@@ -128,7 +91,6 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     }
     m_sortColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -138,28 +100,21 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SkewedInfo"))
   {
     m_skewedInfo = jsonValue.GetObject("SkewedInfo");
-
     m_skewedInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoredAsSubDirectories"))
   {
     m_storedAsSubDirectories = jsonValue.GetBool("StoredAsSubDirectories");
-
     m_storedAsSubDirectoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaReference"))
   {
     m_schemaReference = jsonValue.GetObject("SchemaReference");
-
     m_schemaReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

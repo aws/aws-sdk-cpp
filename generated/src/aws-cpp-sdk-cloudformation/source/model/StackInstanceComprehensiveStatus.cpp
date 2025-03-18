@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackInstanceComprehensiveStatus::StackInstanceComprehensiveStatus() : 
-    m_detailedStatus(StackInstanceDetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
-{
-}
-
 StackInstanceComprehensiveStatus::StackInstanceComprehensiveStatus(const XmlNode& xmlNode)
-  : StackInstanceComprehensiveStatus()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ StackInstanceComprehensiveStatus& StackInstanceComprehensiveStatus::operator =(c
     XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
     if(!detailedStatusNode.IsNull())
     {
-      m_detailedStatus = StackInstanceDetailedStatusMapper::GetStackInstanceDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatus = StackInstanceDetailedStatusMapper::GetStackInstanceDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()));
       m_detailedStatusHasBeenSet = true;
     }
   }

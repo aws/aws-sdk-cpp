@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableLocalSecondaryIndex::AwsDynamoDbTableLocalSecondaryIndex() : 
-    m_indexArnHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableLocalSecondaryIndex::AwsDynamoDbTableLocalSecondaryIndex(JsonView jsonValue)
-  : AwsDynamoDbTableLocalSecondaryIndex()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsDynamoDbTableLocalSecondaryIndex& AwsDynamoDbTableLocalSecondaryIndex::operat
   if(jsonValue.ValueExists("IndexArn"))
   {
     m_indexArn = jsonValue.GetString("IndexArn");
-
     m_indexArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -57,14 +44,11 @@ AwsDynamoDbTableLocalSecondaryIndex& AwsDynamoDbTableLocalSecondaryIndex::operat
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class IotTwinMakerDestinationConfiguration
   {
   public:
-    AWS_IOTTWINMAKER_API IotTwinMakerDestinationConfiguration();
+    AWS_IOTTWINMAKER_API IotTwinMakerDestinationConfiguration() = default;
     AWS_IOTTWINMAKER_API IotTwinMakerDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API IotTwinMakerDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The IoT TwinMaker workspace.</p>
      */
-    inline const Aws::String& GetWorkspace() const{ return m_workspace; }
+    inline const Aws::String& GetWorkspace() const { return m_workspace; }
     inline bool WorkspaceHasBeenSet() const { return m_workspaceHasBeenSet; }
-    inline void SetWorkspace(const Aws::String& value) { m_workspaceHasBeenSet = true; m_workspace = value; }
-    inline void SetWorkspace(Aws::String&& value) { m_workspaceHasBeenSet = true; m_workspace = std::move(value); }
-    inline void SetWorkspace(const char* value) { m_workspaceHasBeenSet = true; m_workspace.assign(value); }
-    inline IotTwinMakerDestinationConfiguration& WithWorkspace(const Aws::String& value) { SetWorkspace(value); return *this;}
-    inline IotTwinMakerDestinationConfiguration& WithWorkspace(Aws::String&& value) { SetWorkspace(std::move(value)); return *this;}
-    inline IotTwinMakerDestinationConfiguration& WithWorkspace(const char* value) { SetWorkspace(value); return *this;}
+    template<typename WorkspaceT = Aws::String>
+    void SetWorkspace(WorkspaceT&& value) { m_workspaceHasBeenSet = true; m_workspace = std::forward<WorkspaceT>(value); }
+    template<typename WorkspaceT = Aws::String>
+    IotTwinMakerDestinationConfiguration& WithWorkspace(WorkspaceT&& value) { SetWorkspace(std::forward<WorkspaceT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,23 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReplicationJobRequest::UpdateReplicationJobRequest() : 
-    m_replicationJobIdHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_nextReplicationRunStartTimeHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_numberOfRecentAmisToKeep(0),
-    m_numberOfRecentAmisToKeepHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReplicationJobRequest::SerializePayload() const
 {
   JsonValue payload;

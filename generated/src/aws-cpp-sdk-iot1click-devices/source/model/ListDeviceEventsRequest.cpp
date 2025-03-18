@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDeviceEventsRequest::ListDeviceEventsRequest() : 
-    m_deviceIdHasBeenSet(false),
-    m_fromTimeStampHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_toTimeStampHasBeenSet(false)
-{
-}
-
 Aws::String ListDeviceEventsRequest::SerializePayload() const
 {
   return {};

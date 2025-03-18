@@ -18,13 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-SlotTypeRegexConfiguration::SlotTypeRegexConfiguration() : 
-    m_patternHasBeenSet(false)
-{
-}
-
 SlotTypeRegexConfiguration::SlotTypeRegexConfiguration(JsonView jsonValue)
-  : SlotTypeRegexConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlotTypeRegexConfiguration& SlotTypeRegexConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   return *this;
 }
 

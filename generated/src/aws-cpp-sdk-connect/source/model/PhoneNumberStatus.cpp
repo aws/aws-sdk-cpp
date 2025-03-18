@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PhoneNumberStatus::PhoneNumberStatus() : 
-    m_status(PhoneNumberWorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PhoneNumberStatus::PhoneNumberStatus(JsonView jsonValue)
-  : PhoneNumberStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PhoneNumberStatus& PhoneNumberStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PhoneNumberWorkflowStatusMapper::GetPhoneNumberWorkflowStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

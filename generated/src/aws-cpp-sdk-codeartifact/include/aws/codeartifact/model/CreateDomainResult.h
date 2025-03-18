@@ -28,7 +28,7 @@ namespace Model
   class CreateDomainResult
   {
   public:
-    AWS_CODEARTIFACT_API CreateDomainResult();
+    AWS_CODEARTIFACT_API CreateDomainResult() = default;
     AWS_CODEARTIFACT_API CreateDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API CreateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> Contains information about the created domain after processing the request.
      * </p>
      */
-    inline const DomainDescription& GetDomain() const{ return m_domain; }
-    inline void SetDomain(const DomainDescription& value) { m_domain = value; }
-    inline void SetDomain(DomainDescription&& value) { m_domain = std::move(value); }
-    inline CreateDomainResult& WithDomain(const DomainDescription& value) { SetDomain(value); return *this;}
-    inline CreateDomainResult& WithDomain(DomainDescription&& value) { SetDomain(std::move(value)); return *this;}
+    inline const DomainDescription& GetDomain() const { return m_domain; }
+    template<typename DomainT = DomainDescription>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = DomainDescription>
+    CreateDomainResult& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainDescription m_domain;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

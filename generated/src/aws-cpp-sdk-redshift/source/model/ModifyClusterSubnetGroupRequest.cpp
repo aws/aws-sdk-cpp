@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterSubnetGroupRequest::ModifyClusterSubnetGroupRequest() : 
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-BatchStepOutput::BatchStepOutput() : 
-    m_dataSetExportLocationHasBeenSet(false),
-    m_dmsOutputLocationHasBeenSet(false),
-    m_dataSetDetailsHasBeenSet(false)
-{
-}
-
 BatchStepOutput::BatchStepOutput(JsonView jsonValue)
-  : BatchStepOutput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchStepOutput& BatchStepOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSetExportLocation"))
   {
     m_dataSetExportLocation = jsonValue.GetString("dataSetExportLocation");
-
     m_dataSetExportLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dmsOutputLocation"))
   {
     m_dmsOutputLocation = jsonValue.GetString("dmsOutputLocation");
-
     m_dmsOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSetDetails"))
   {
     Aws::Utils::Array<JsonView> dataSetDetailsJsonList = jsonValue.GetArray("dataSetDetails");
@@ -56,7 +44,6 @@ BatchStepOutput& BatchStepOutput::operator =(JsonView jsonValue)
     }
     m_dataSetDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

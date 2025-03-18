@@ -18,13 +18,7 @@ namespace PI
 namespace Model
 {
 
-DimensionDetail::DimensionDetail() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 DimensionDetail::DimensionDetail(JsonView jsonValue)
-  : DimensionDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DimensionDetail& DimensionDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

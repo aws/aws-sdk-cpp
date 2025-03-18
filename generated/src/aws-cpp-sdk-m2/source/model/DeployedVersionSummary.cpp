@@ -18,17 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DeployedVersionSummary::DeployedVersionSummary() : 
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_status(DeploymentLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 DeployedVersionSummary::DeployedVersionSummary(JsonView jsonValue)
-  : DeployedVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DeployedVersionSummary& DeployedVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationVersion"))
   {
     m_applicationVersion = jsonValue.GetInteger("applicationVersion");
-
     m_applicationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentLifecycleMapper::GetDeploymentLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateSubnetsRequest::AssociateSubnetsRequest() : 
-    m_updateTokenHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSubnetsRequest::SerializePayload() const
 {
   JsonValue payload;

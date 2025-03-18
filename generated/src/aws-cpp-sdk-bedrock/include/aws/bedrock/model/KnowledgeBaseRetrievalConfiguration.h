@@ -32,7 +32,7 @@ namespace Model
   class KnowledgeBaseRetrievalConfiguration
   {
   public:
-    AWS_BEDROCK_API KnowledgeBaseRetrievalConfiguration();
+    AWS_BEDROCK_API KnowledgeBaseRetrievalConfiguration() = default;
     AWS_BEDROCK_API KnowledgeBaseRetrievalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API KnowledgeBaseRetrievalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains configuration details for returning the results from the vector
      * search.</p>
      */
-    inline const KnowledgeBaseVectorSearchConfiguration& GetVectorSearchConfiguration() const{ return m_vectorSearchConfiguration; }
+    inline const KnowledgeBaseVectorSearchConfiguration& GetVectorSearchConfiguration() const { return m_vectorSearchConfiguration; }
     inline bool VectorSearchConfigurationHasBeenSet() const { return m_vectorSearchConfigurationHasBeenSet; }
-    inline void SetVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = value; }
-    inline void SetVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::move(value); }
-    inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { SetVectorSearchConfiguration(value); return *this;}
-    inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { SetVectorSearchConfiguration(std::move(value)); return *this;}
+    template<typename VectorSearchConfigurationT = KnowledgeBaseVectorSearchConfiguration>
+    void SetVectorSearchConfiguration(VectorSearchConfigurationT&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::forward<VectorSearchConfigurationT>(value); }
+    template<typename VectorSearchConfigurationT = KnowledgeBaseVectorSearchConfiguration>
+    KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(VectorSearchConfigurationT&& value) { SetVectorSearchConfiguration(std::forward<VectorSearchConfigurationT>(value)); return *this;}
     ///@}
   private:
 

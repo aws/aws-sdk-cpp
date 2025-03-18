@@ -12,12 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataQualityMetricsRequest::GetDataQualityMetricsRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_metricSetArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDataQualityMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMapRunRequest::DescribeMapRunRequest() : 
-    m_mapRunArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMapRunRequest::SerializePayload() const
 {
   JsonValue payload;

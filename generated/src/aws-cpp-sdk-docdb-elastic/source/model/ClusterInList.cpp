@@ -18,16 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-ClusterInList::ClusterInList() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClusterInList::ClusterInList(JsonView jsonValue)
-  : ClusterInList()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ClusterInList& ClusterInList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

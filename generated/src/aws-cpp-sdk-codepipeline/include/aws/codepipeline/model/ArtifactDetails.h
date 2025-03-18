@@ -30,7 +30,7 @@ namespace Model
   class ArtifactDetails
   {
   public:
-    AWS_CODEPIPELINE_API ArtifactDetails();
+    AWS_CODEPIPELINE_API ArtifactDetails() = default;
     AWS_CODEPIPELINE_API ArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
-    inline int GetMinimumCount() const{ return m_minimumCount; }
+    inline int GetMinimumCount() const { return m_minimumCount; }
     inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
     inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
     inline ArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
-    inline int GetMaximumCount() const{ return m_maximumCount; }
+    inline int GetMaximumCount() const { return m_maximumCount; }
     inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
     inline void SetMaximumCount(int value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
     inline ArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
     ///@}
   private:
 
-    int m_minimumCount;
+    int m_minimumCount{0};
     bool m_minimumCountHasBeenSet = false;
 
-    int m_maximumCount;
+    int m_maximumCount{0};
     bool m_maximumCountHasBeenSet = false;
   };
 

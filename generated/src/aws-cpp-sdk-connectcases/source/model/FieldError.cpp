@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldError::FieldError() : 
-    m_errorCodeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FieldError::FieldError(JsonView jsonValue)
-  : FieldError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FieldError& FieldError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

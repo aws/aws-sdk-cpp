@@ -18,18 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecycleExecution::LifecycleExecution() : 
-    m_lifecycleExecutionIdHasBeenSet(false),
-    m_lifecyclePolicyArnHasBeenSet(false),
-    m_resourcesImpactedSummaryHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 LifecycleExecution::LifecycleExecution(JsonView jsonValue)
-  : LifecycleExecution()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ LifecycleExecution& LifecycleExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lifecycleExecutionId"))
   {
     m_lifecycleExecutionId = jsonValue.GetString("lifecycleExecutionId");
-
     m_lifecycleExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecyclePolicyArn"))
   {
     m_lifecyclePolicyArn = jsonValue.GetString("lifecyclePolicyArn");
-
     m_lifecyclePolicyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesImpactedSummary"))
   {
     m_resourcesImpactedSummary = jsonValue.GetObject("resourcesImpactedSummary");
-
     m_resourcesImpactedSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

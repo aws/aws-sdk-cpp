@@ -36,7 +36,7 @@ namespace Model
   class LoadBalancerAttributes
   {
   public:
-    AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes();
+    AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes() = default;
     AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline const CrossZoneLoadBalancing& GetCrossZoneLoadBalancing() const{ return m_crossZoneLoadBalancing; }
+    inline const CrossZoneLoadBalancing& GetCrossZoneLoadBalancing() const { return m_crossZoneLoadBalancing; }
     inline bool CrossZoneLoadBalancingHasBeenSet() const { return m_crossZoneLoadBalancingHasBeenSet; }
-    inline void SetCrossZoneLoadBalancing(const CrossZoneLoadBalancing& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = value; }
-    inline void SetCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = std::move(value); }
-    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(const CrossZoneLoadBalancing& value) { SetCrossZoneLoadBalancing(value); return *this;}
-    inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(std::move(value)); return *this;}
+    template<typename CrossZoneLoadBalancingT = CrossZoneLoadBalancing>
+    void SetCrossZoneLoadBalancing(CrossZoneLoadBalancingT&& value) { m_crossZoneLoadBalancingHasBeenSet = true; m_crossZoneLoadBalancing = std::forward<CrossZoneLoadBalancingT>(value); }
+    template<typename CrossZoneLoadBalancingT = CrossZoneLoadBalancing>
+    LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancingT&& value) { SetCrossZoneLoadBalancing(std::forward<CrossZoneLoadBalancingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      * Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline const AccessLog& GetAccessLog() const{ return m_accessLog; }
+    inline const AccessLog& GetAccessLog() const { return m_accessLog; }
     inline bool AccessLogHasBeenSet() const { return m_accessLogHasBeenSet; }
-    inline void SetAccessLog(const AccessLog& value) { m_accessLogHasBeenSet = true; m_accessLog = value; }
-    inline void SetAccessLog(AccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::move(value); }
-    inline LoadBalancerAttributes& WithAccessLog(const AccessLog& value) { SetAccessLog(value); return *this;}
-    inline LoadBalancerAttributes& WithAccessLog(AccessLog&& value) { SetAccessLog(std::move(value)); return *this;}
+    template<typename AccessLogT = AccessLog>
+    void SetAccessLog(AccessLogT&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::forward<AccessLogT>(value); }
+    template<typename AccessLogT = AccessLog>
+    LoadBalancerAttributes& WithAccessLog(AccessLogT&& value) { SetAccessLog(std::forward<AccessLogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +84,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline const ConnectionDraining& GetConnectionDraining() const{ return m_connectionDraining; }
+    inline const ConnectionDraining& GetConnectionDraining() const { return m_connectionDraining; }
     inline bool ConnectionDrainingHasBeenSet() const { return m_connectionDrainingHasBeenSet; }
-    inline void SetConnectionDraining(const ConnectionDraining& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = value; }
-    inline void SetConnectionDraining(ConnectionDraining&& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = std::move(value); }
-    inline LoadBalancerAttributes& WithConnectionDraining(const ConnectionDraining& value) { SetConnectionDraining(value); return *this;}
-    inline LoadBalancerAttributes& WithConnectionDraining(ConnectionDraining&& value) { SetConnectionDraining(std::move(value)); return *this;}
+    template<typename ConnectionDrainingT = ConnectionDraining>
+    void SetConnectionDraining(ConnectionDrainingT&& value) { m_connectionDrainingHasBeenSet = true; m_connectionDraining = std::forward<ConnectionDrainingT>(value); }
+    template<typename ConnectionDrainingT = ConnectionDraining>
+    LoadBalancerAttributes& WithConnectionDraining(ConnectionDrainingT&& value) { SetConnectionDraining(std::forward<ConnectionDrainingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,26 +102,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      * Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
-    inline const ConnectionSettings& GetConnectionSettings() const{ return m_connectionSettings; }
+    inline const ConnectionSettings& GetConnectionSettings() const { return m_connectionSettings; }
     inline bool ConnectionSettingsHasBeenSet() const { return m_connectionSettingsHasBeenSet; }
-    inline void SetConnectionSettings(const ConnectionSettings& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = value; }
-    inline void SetConnectionSettings(ConnectionSettings&& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = std::move(value); }
-    inline LoadBalancerAttributes& WithConnectionSettings(const ConnectionSettings& value) { SetConnectionSettings(value); return *this;}
-    inline LoadBalancerAttributes& WithConnectionSettings(ConnectionSettings&& value) { SetConnectionSettings(std::move(value)); return *this;}
+    template<typename ConnectionSettingsT = ConnectionSettings>
+    void SetConnectionSettings(ConnectionSettingsT&& value) { m_connectionSettingsHasBeenSet = true; m_connectionSettings = std::forward<ConnectionSettingsT>(value); }
+    template<typename ConnectionSettingsT = ConnectionSettings>
+    LoadBalancerAttributes& WithConnectionSettings(ConnectionSettingsT&& value) { SetConnectionSettings(std::forward<ConnectionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any additional attributes.</p>
      */
-    inline const Aws::Vector<AdditionalAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
+    inline const Aws::Vector<AdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
     inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-    inline void SetAdditionalAttributes(const Aws::Vector<AdditionalAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
-    inline void SetAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
-    inline LoadBalancerAttributes& WithAdditionalAttributes(const Aws::Vector<AdditionalAttribute>& value) { SetAdditionalAttributes(value); return *this;}
-    inline LoadBalancerAttributes& WithAdditionalAttributes(Aws::Vector<AdditionalAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
-    inline LoadBalancerAttributes& AddAdditionalAttributes(const AdditionalAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
-    inline LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
+    template<typename AdditionalAttributesT = Aws::Vector<AdditionalAttribute>>
+    void SetAdditionalAttributes(AdditionalAttributesT&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::forward<AdditionalAttributesT>(value); }
+    template<typename AdditionalAttributesT = Aws::Vector<AdditionalAttribute>>
+    LoadBalancerAttributes& WithAdditionalAttributes(AdditionalAttributesT&& value) { SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value)); return *this;}
+    template<typename AdditionalAttributesT = AdditionalAttribute>
+    LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttributesT&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.emplace_back(std::forward<AdditionalAttributesT>(value)); return *this; }
     ///@}
   private:
 

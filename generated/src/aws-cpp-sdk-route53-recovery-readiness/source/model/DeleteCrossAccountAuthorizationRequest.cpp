@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCrossAccountAuthorizationRequest::DeleteCrossAccountAuthorizationRequest() : 
-    m_crossAccountAuthorizationHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCrossAccountAuthorizationRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class HoursOfOperationSearchCriteria
   {
   public:
-    AWS_CONNECT_API HoursOfOperationSearchCriteria();
+    AWS_CONNECT_API HoursOfOperationSearchCriteria() = default;
     AWS_CONNECT_API HoursOfOperationSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HoursOfOperationSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline HoursOfOperationSearchCriteria& WithOrConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline HoursOfOperationSearchCriteria& WithOrConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline HoursOfOperationSearchCriteria& AddOrConditions(const HoursOfOperationSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline HoursOfOperationSearchCriteria& AddOrConditions(HoursOfOperationSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<HoursOfOperationSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<HoursOfOperationSearchCriteria>>
+    HoursOfOperationSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = HoursOfOperationSearchCriteria>
+    HoursOfOperationSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline HoursOfOperationSearchCriteria& WithAndConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline HoursOfOperationSearchCriteria& WithAndConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline HoursOfOperationSearchCriteria& AddAndConditions(const HoursOfOperationSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline HoursOfOperationSearchCriteria& AddAndConditions(HoursOfOperationSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<HoursOfOperationSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<HoursOfOperationSearchCriteria>>
+    HoursOfOperationSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = HoursOfOperationSearchCriteria>
+    HoursOfOperationSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <code>name</code>, <code>description</code>, <code>timezone</code>, and
      * <code>resourceID</code>.</p> 
      */
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline HoursOfOperationSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline HoursOfOperationSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    HoursOfOperationSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
   private:
 

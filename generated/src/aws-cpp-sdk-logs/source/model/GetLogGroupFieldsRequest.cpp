@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLogGroupFieldsRequest::GetLogGroupFieldsRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_time(0),
-    m_timeHasBeenSet(false),
-    m_logGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetLogGroupFieldsRequest::SerializePayload() const
 {
   JsonValue payload;

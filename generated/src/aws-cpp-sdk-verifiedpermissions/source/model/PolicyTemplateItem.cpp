@@ -18,17 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-PolicyTemplateItem::PolicyTemplateItem() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyTemplateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
-{
-}
-
 PolicyTemplateItem::PolicyTemplateItem(JsonView jsonValue)
-  : PolicyTemplateItem()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ PolicyTemplateItem& PolicyTemplateItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyTemplateId"))
   {
     m_policyTemplateId = jsonValue.GetString("policyTemplateId");
-
     m_policyTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

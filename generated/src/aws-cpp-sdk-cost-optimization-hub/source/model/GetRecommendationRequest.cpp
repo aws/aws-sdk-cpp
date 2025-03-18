@@ -12,11 +12,6 @@ using namespace Aws::CostOptimizationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecommendationRequest::GetRecommendationRequest() : 
-    m_recommendationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

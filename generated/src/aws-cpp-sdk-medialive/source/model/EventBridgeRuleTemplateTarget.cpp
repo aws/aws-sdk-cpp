@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-EventBridgeRuleTemplateTarget::EventBridgeRuleTemplateTarget() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 EventBridgeRuleTemplateTarget::EventBridgeRuleTemplateTarget(JsonView jsonValue)
-  : EventBridgeRuleTemplateTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventBridgeRuleTemplateTarget& EventBridgeRuleTemplateTarget::operator =(JsonVie
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

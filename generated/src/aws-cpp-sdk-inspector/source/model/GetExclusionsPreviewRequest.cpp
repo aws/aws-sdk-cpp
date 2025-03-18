@@ -12,17 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExclusionsPreviewRequest::GetExclusionsPreviewRequest() : 
-    m_assessmentTemplateArnHasBeenSet(false),
-    m_previewTokenHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String GetExclusionsPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

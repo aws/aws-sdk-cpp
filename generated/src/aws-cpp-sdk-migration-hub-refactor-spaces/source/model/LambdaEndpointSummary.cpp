@@ -18,13 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-LambdaEndpointSummary::LambdaEndpointSummary() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 LambdaEndpointSummary::LambdaEndpointSummary(JsonView jsonValue)
-  : LambdaEndpointSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaEndpointSummary& LambdaEndpointSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

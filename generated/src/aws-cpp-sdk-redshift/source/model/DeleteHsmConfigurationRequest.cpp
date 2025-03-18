@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteHsmConfigurationRequest::DeleteHsmConfigurationRequest() : 
-    m_hsmConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHsmConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

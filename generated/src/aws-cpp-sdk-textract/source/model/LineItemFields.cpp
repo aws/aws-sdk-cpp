@@ -18,13 +18,7 @@ namespace Textract
 namespace Model
 {
 
-LineItemFields::LineItemFields() : 
-    m_lineItemExpenseFieldsHasBeenSet(false)
-{
-}
-
 LineItemFields::LineItemFields(JsonView jsonValue)
-  : LineItemFields()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LineItemFields& LineItemFields::operator =(JsonView jsonValue)
     }
     m_lineItemExpenseFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingImageConfig::TrainingImageConfig() : 
-    m_trainingRepositoryAccessMode(TrainingRepositoryAccessMode::NOT_SET),
-    m_trainingRepositoryAccessModeHasBeenSet(false),
-    m_trainingRepositoryAuthConfigHasBeenSet(false)
-{
-}
-
 TrainingImageConfig::TrainingImageConfig(JsonView jsonValue)
-  : TrainingImageConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TrainingImageConfig& TrainingImageConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingRepositoryAccessMode"))
   {
     m_trainingRepositoryAccessMode = TrainingRepositoryAccessModeMapper::GetTrainingRepositoryAccessModeForName(jsonValue.GetString("TrainingRepositoryAccessMode"));
-
     m_trainingRepositoryAccessModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingRepositoryAuthConfig"))
   {
     m_trainingRepositoryAuthConfig = jsonValue.GetObject("TrainingRepositoryAuthConfig");
-
     m_trainingRepositoryAuthConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

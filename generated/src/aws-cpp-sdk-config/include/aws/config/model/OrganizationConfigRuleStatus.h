@@ -34,7 +34,7 @@ namespace Model
   class OrganizationConfigRuleStatus
   {
   public:
-    AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus();
+    AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus() = default;
     AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name that you assign to organization Config rule.</p>
      */
-    inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
+    inline const Aws::String& GetOrganizationConfigRuleName() const { return m_organizationConfigRuleName; }
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
-    inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
-    inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
-    inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
-    inline OrganizationConfigRuleStatus& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
-    inline OrganizationConfigRuleStatus& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
-    inline OrganizationConfigRuleStatus& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    void SetOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::forward<OrganizationConfigRuleNameT>(value); }
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    OrganizationConfigRuleStatus& WithOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { SetOrganizationConfigRuleName(std::forward<OrganizationConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +81,10 @@ namespace Model
      * Config rule update failed in one or more member accounts within that
      * organization.</p> </li> </ul>
      */
-    inline const OrganizationRuleStatus& GetOrganizationRuleStatus() const{ return m_organizationRuleStatus; }
+    inline OrganizationRuleStatus GetOrganizationRuleStatus() const { return m_organizationRuleStatus; }
     inline bool OrganizationRuleStatusHasBeenSet() const { return m_organizationRuleStatusHasBeenSet; }
-    inline void SetOrganizationRuleStatus(const OrganizationRuleStatus& value) { m_organizationRuleStatusHasBeenSet = true; m_organizationRuleStatus = value; }
-    inline void SetOrganizationRuleStatus(OrganizationRuleStatus&& value) { m_organizationRuleStatusHasBeenSet = true; m_organizationRuleStatus = std::move(value); }
-    inline OrganizationConfigRuleStatus& WithOrganizationRuleStatus(const OrganizationRuleStatus& value) { SetOrganizationRuleStatus(value); return *this;}
-    inline OrganizationConfigRuleStatus& WithOrganizationRuleStatus(OrganizationRuleStatus&& value) { SetOrganizationRuleStatus(std::move(value)); return *this;}
+    inline void SetOrganizationRuleStatus(OrganizationRuleStatus value) { m_organizationRuleStatusHasBeenSet = true; m_organizationRuleStatus = value; }
+    inline OrganizationConfigRuleStatus& WithOrganizationRuleStatus(OrganizationRuleStatus value) { SetOrganizationRuleStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * <p>An error code that is returned when organization Config rule creation or
      * deletion has failed.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline OrganizationConfigRuleStatus& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline OrganizationConfigRuleStatus& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline OrganizationConfigRuleStatus& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    OrganizationConfigRuleStatus& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,33 +105,31 @@ namespace Model
      * <p>An error message indicating that organization Config rule creation or
      * deletion failed due to an error.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline OrganizationConfigRuleStatus& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline OrganizationConfigRuleStatus& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline OrganizationConfigRuleStatus& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    OrganizationConfigRuleStatus& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the last update.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline OrganizationConfigRuleStatus& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline OrganizationConfigRuleStatus& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    OrganizationConfigRuleStatus& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_organizationConfigRuleName;
     bool m_organizationConfigRuleNameHasBeenSet = false;
 
-    OrganizationRuleStatus m_organizationRuleStatus;
+    OrganizationRuleStatus m_organizationRuleStatus{OrganizationRuleStatus::NOT_SET};
     bool m_organizationRuleStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
@@ -146,7 +138,7 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

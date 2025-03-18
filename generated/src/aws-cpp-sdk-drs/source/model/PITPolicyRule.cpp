@@ -18,22 +18,7 @@ namespace drs
 namespace Model
 {
 
-PITPolicyRule::PITPolicyRule() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_retentionDuration(0),
-    m_retentionDurationHasBeenSet(false),
-    m_ruleID(0),
-    m_ruleIDHasBeenSet(false),
-    m_units(PITPolicyRuleUnits::NOT_SET),
-    m_unitsHasBeenSet(false)
-{
-}
-
 PITPolicyRule::PITPolicyRule(JsonView jsonValue)
-  : PITPolicyRule()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ PITPolicyRule& PITPolicyRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interval"))
   {
     m_interval = jsonValue.GetInteger("interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionDuration"))
   {
     m_retentionDuration = jsonValue.GetInteger("retentionDuration");
-
     m_retentionDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleID"))
   {
     m_ruleID = jsonValue.GetInt64("ruleID");
-
     m_ruleIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("units"))
   {
     m_units = PITPolicyRuleUnitsMapper::GetPITPolicyRuleUnitsForName(jsonValue.GetString("units"));
-
     m_unitsHasBeenSet = true;
   }
-
   return *this;
 }
 

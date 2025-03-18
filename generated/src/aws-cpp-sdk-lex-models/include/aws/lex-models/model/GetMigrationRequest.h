@@ -21,7 +21,7 @@ namespace Model
   class GetMigrationRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetMigrationRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetMigrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The unique identifier of the migration to view. The <code>migrationID</code>
      * is returned by the operation.</p>
      */
-    inline const Aws::String& GetMigrationId() const{ return m_migrationId; }
+    inline const Aws::String& GetMigrationId() const { return m_migrationId; }
     inline bool MigrationIdHasBeenSet() const { return m_migrationIdHasBeenSet; }
-    inline void SetMigrationId(const Aws::String& value) { m_migrationIdHasBeenSet = true; m_migrationId = value; }
-    inline void SetMigrationId(Aws::String&& value) { m_migrationIdHasBeenSet = true; m_migrationId = std::move(value); }
-    inline void SetMigrationId(const char* value) { m_migrationIdHasBeenSet = true; m_migrationId.assign(value); }
-    inline GetMigrationRequest& WithMigrationId(const Aws::String& value) { SetMigrationId(value); return *this;}
-    inline GetMigrationRequest& WithMigrationId(Aws::String&& value) { SetMigrationId(std::move(value)); return *this;}
-    inline GetMigrationRequest& WithMigrationId(const char* value) { SetMigrationId(value); return *this;}
+    template<typename MigrationIdT = Aws::String>
+    void SetMigrationId(MigrationIdT&& value) { m_migrationIdHasBeenSet = true; m_migrationId = std::forward<MigrationIdT>(value); }
+    template<typename MigrationIdT = Aws::String>
+    GetMigrationRequest& WithMigrationId(MigrationIdT&& value) { SetMigrationId(std::forward<MigrationIdT>(value)); return *this;}
     ///@}
   private:
 

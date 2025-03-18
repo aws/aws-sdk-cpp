@@ -21,7 +21,7 @@ namespace Model
   class UpdateGatewayRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API UpdateGatewayRequest();
+    AWS_IOTSITEWISE_API UpdateGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the gateway to update.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline UpdateGatewayRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline UpdateGatewayRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline UpdateGatewayRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    UpdateGatewayRequest& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique name for the gateway.</p>
      */
-    inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+    inline const Aws::String& GetGatewayName() const { return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
-    inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
-    inline void SetGatewayName(const char* value) { m_gatewayNameHasBeenSet = true; m_gatewayName.assign(value); }
-    inline UpdateGatewayRequest& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
-    inline UpdateGatewayRequest& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
-    inline UpdateGatewayRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+    template<typename GatewayNameT = Aws::String>
+    void SetGatewayName(GatewayNameT&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::forward<GatewayNameT>(value); }
+    template<typename GatewayNameT = Aws::String>
+    UpdateGatewayRequest& WithGatewayName(GatewayNameT&& value) { SetGatewayName(std::forward<GatewayNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class ImportVmImageRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API ImportVmImageRequest();
+    AWS_IMAGEBUILDER_API ImportVmImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the base image that is created by the import process.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImportVmImageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImportVmImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImportVmImageRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,54 +62,46 @@ namespace Model
      * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
      * 
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline ImportVmImageRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline ImportVmImageRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    ImportVmImageRequest& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the base image that is created by the import process.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ImportVmImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ImportVmImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ImportVmImageRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system platform for the imported VM.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline ImportVmImageRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline ImportVmImageRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline ImportVmImageRequest& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system version for the imported VM.</p>
      */
-    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+    inline const Aws::String& GetOsVersion() const { return m_osVersion; }
     inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
-    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
-    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
-    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
-    inline ImportVmImageRequest& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
-    inline ImportVmImageRequest& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
+    template<typename OsVersionT = Aws::String>
+    void SetOsVersion(OsVersionT&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::forward<OsVersionT>(value); }
+    template<typename OsVersionT = Aws::String>
+    ImportVmImageRequest& WithOsVersion(OsVersionT&& value) { SetOsVersion(std::forward<OsVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,33 +111,28 @@ namespace Model
      * import process to pull in the AMI that is created from the VM source as the base
      * image for your recipe.</p>
      */
-    inline const Aws::String& GetVmImportTaskId() const{ return m_vmImportTaskId; }
+    inline const Aws::String& GetVmImportTaskId() const { return m_vmImportTaskId; }
     inline bool VmImportTaskIdHasBeenSet() const { return m_vmImportTaskIdHasBeenSet; }
-    inline void SetVmImportTaskId(const Aws::String& value) { m_vmImportTaskIdHasBeenSet = true; m_vmImportTaskId = value; }
-    inline void SetVmImportTaskId(Aws::String&& value) { m_vmImportTaskIdHasBeenSet = true; m_vmImportTaskId = std::move(value); }
-    inline void SetVmImportTaskId(const char* value) { m_vmImportTaskIdHasBeenSet = true; m_vmImportTaskId.assign(value); }
-    inline ImportVmImageRequest& WithVmImportTaskId(const Aws::String& value) { SetVmImportTaskId(value); return *this;}
-    inline ImportVmImageRequest& WithVmImportTaskId(Aws::String&& value) { SetVmImportTaskId(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithVmImportTaskId(const char* value) { SetVmImportTaskId(value); return *this;}
+    template<typename VmImportTaskIdT = Aws::String>
+    void SetVmImportTaskId(VmImportTaskIdT&& value) { m_vmImportTaskIdHasBeenSet = true; m_vmImportTaskId = std::forward<VmImportTaskIdT>(value); }
+    template<typename VmImportTaskIdT = Aws::String>
+    ImportVmImageRequest& WithVmImportTaskId(VmImportTaskIdT&& value) { SetVmImportTaskId(std::forward<VmImportTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags that are attached to the import resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImportVmImageRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ImportVmImageRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImportVmImageRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ImportVmImageRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImportVmImageRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImportVmImageRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImportVmImageRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImportVmImageRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImportVmImageRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ImportVmImageRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ImportVmImageRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -157,14 +142,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ImportVmImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ImportVmImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ImportVmImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ImportVmImageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -177,7 +160,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::String m_osVersion;

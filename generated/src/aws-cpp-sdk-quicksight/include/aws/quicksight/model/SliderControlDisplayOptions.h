@@ -32,7 +32,7 @@ namespace Model
   class SliderControlDisplayOptions
   {
   public:
-    AWS_QUICKSIGHT_API SliderControlDisplayOptions();
+    AWS_QUICKSIGHT_API SliderControlDisplayOptions() = default;
     AWS_QUICKSIGHT_API SliderControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SliderControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The options to configure the title visibility, name, and font size.</p>
      */
-    inline const LabelOptions& GetTitleOptions() const{ return m_titleOptions; }
+    inline const LabelOptions& GetTitleOptions() const { return m_titleOptions; }
     inline bool TitleOptionsHasBeenSet() const { return m_titleOptionsHasBeenSet; }
-    inline void SetTitleOptions(const LabelOptions& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = value; }
-    inline void SetTitleOptions(LabelOptions&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::move(value); }
-    inline SliderControlDisplayOptions& WithTitleOptions(const LabelOptions& value) { SetTitleOptions(value); return *this;}
-    inline SliderControlDisplayOptions& WithTitleOptions(LabelOptions&& value) { SetTitleOptions(std::move(value)); return *this;}
+    template<typename TitleOptionsT = LabelOptions>
+    void SetTitleOptions(TitleOptionsT&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::forward<TitleOptionsT>(value); }
+    template<typename TitleOptionsT = LabelOptions>
+    SliderControlDisplayOptions& WithTitleOptions(TitleOptionsT&& value) { SetTitleOptions(std::forward<TitleOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of info icon label options.</p>
      */
-    inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const{ return m_infoIconLabelOptions; }
+    inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const { return m_infoIconLabelOptions; }
     inline bool InfoIconLabelOptionsHasBeenSet() const { return m_infoIconLabelOptionsHasBeenSet; }
-    inline void SetInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = value; }
-    inline void SetInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::move(value); }
-    inline SliderControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
-    inline SliderControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
+    template<typename InfoIconLabelOptionsT = SheetControlInfoIconLabelOptions>
+    void SetInfoIconLabelOptions(InfoIconLabelOptionsT&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::forward<InfoIconLabelOptionsT>(value); }
+    template<typename InfoIconLabelOptionsT = SheetControlInfoIconLabelOptions>
+    SliderControlDisplayOptions& WithInfoIconLabelOptions(InfoIconLabelOptionsT&& value) { SetInfoIconLabelOptions(std::forward<InfoIconLabelOptionsT>(value)); return *this;}
     ///@}
   private:
 

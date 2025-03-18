@@ -23,7 +23,7 @@ namespace Model
   class ListComplianceItemsRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API ListComplianceItemsRequest();
+    AWS_SSM_API ListComplianceItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * <p>One or more compliance filters. Use a filter to return a more specific list
      * of results.</p>
      */
-    inline const Aws::Vector<ComplianceStringFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ComplianceStringFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ComplianceStringFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ComplianceStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListComplianceItemsRequest& WithFilters(const Aws::Vector<ComplianceStringFilter>& value) { SetFilters(value); return *this;}
-    inline ListComplianceItemsRequest& WithFilters(Aws::Vector<ComplianceStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListComplianceItemsRequest& AddFilters(const ComplianceStringFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListComplianceItemsRequest& AddFilters(ComplianceStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ComplianceStringFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ComplianceStringFilter>>
+    ListComplianceItemsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ComplianceStringFilter>
+    ListComplianceItemsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,15 +56,14 @@ namespace Model
      * <p>The ID for the resources from which to get compliance information. Currently,
      * you can only specify one resource ID.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline ListComplianceItemsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline ListComplianceItemsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline ListComplianceItemsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline ListComplianceItemsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline ListComplianceItemsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    ListComplianceItemsRequest& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    ListComplianceItemsRequest& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,15 +71,14 @@ namespace Model
      * <p>The type of resource from which to get compliance information. Currently, the
      * only supported resource type is <code>ManagedInstance</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline ListComplianceItemsRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline ListComplianceItemsRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline ListComplianceItemsRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline ListComplianceItemsRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline ListComplianceItemsRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    ListComplianceItemsRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    ListComplianceItemsRequest& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListComplianceItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListComplianceItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListComplianceItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListComplianceItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +100,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListComplianceItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -123,7 +119,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

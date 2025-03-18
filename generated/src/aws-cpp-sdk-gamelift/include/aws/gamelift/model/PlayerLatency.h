@@ -36,7 +36,7 @@ namespace Model
   class PlayerLatency
   {
   public:
-    AWS_GAMELIFT_API PlayerLatency();
+    AWS_GAMELIFT_API PlayerLatency() = default;
     AWS_GAMELIFT_API PlayerLatency(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API PlayerLatency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>A unique identifier for a player associated with the latency data.</p>
      */
-    inline const Aws::String& GetPlayerId() const{ return m_playerId; }
+    inline const Aws::String& GetPlayerId() const { return m_playerId; }
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
-    inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
-    inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
-    inline PlayerLatency& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
-    inline PlayerLatency& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
-    inline PlayerLatency& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+    template<typename PlayerIdT = Aws::String>
+    void SetPlayerId(PlayerIdT&& value) { m_playerIdHasBeenSet = true; m_playerId = std::forward<PlayerIdT>(value); }
+    template<typename PlayerIdT = Aws::String>
+    PlayerLatency& WithPlayerId(PlayerIdT&& value) { SetPlayerId(std::forward<PlayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the Region that is associated with the latency value.</p>
      */
-    inline const Aws::String& GetRegionIdentifier() const{ return m_regionIdentifier; }
+    inline const Aws::String& GetRegionIdentifier() const { return m_regionIdentifier; }
     inline bool RegionIdentifierHasBeenSet() const { return m_regionIdentifierHasBeenSet; }
-    inline void SetRegionIdentifier(const Aws::String& value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier = value; }
-    inline void SetRegionIdentifier(Aws::String&& value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier = std::move(value); }
-    inline void SetRegionIdentifier(const char* value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier.assign(value); }
-    inline PlayerLatency& WithRegionIdentifier(const Aws::String& value) { SetRegionIdentifier(value); return *this;}
-    inline PlayerLatency& WithRegionIdentifier(Aws::String&& value) { SetRegionIdentifier(std::move(value)); return *this;}
-    inline PlayerLatency& WithRegionIdentifier(const char* value) { SetRegionIdentifier(value); return *this;}
+    template<typename RegionIdentifierT = Aws::String>
+    void SetRegionIdentifier(RegionIdentifierT&& value) { m_regionIdentifierHasBeenSet = true; m_regionIdentifier = std::forward<RegionIdentifierT>(value); }
+    template<typename RegionIdentifierT = Aws::String>
+    PlayerLatency& WithRegionIdentifier(RegionIdentifierT&& value) { SetRegionIdentifier(std::forward<RegionIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <p>Amount of time that represents the time lag experienced by the player when
      * connected to the specified Region.</p>
      */
-    inline double GetLatencyInMilliseconds() const{ return m_latencyInMilliseconds; }
+    inline double GetLatencyInMilliseconds() const { return m_latencyInMilliseconds; }
     inline bool LatencyInMillisecondsHasBeenSet() const { return m_latencyInMillisecondsHasBeenSet; }
     inline void SetLatencyInMilliseconds(double value) { m_latencyInMillisecondsHasBeenSet = true; m_latencyInMilliseconds = value; }
     inline PlayerLatency& WithLatencyInMilliseconds(double value) { SetLatencyInMilliseconds(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_regionIdentifier;
     bool m_regionIdentifierHasBeenSet = false;
 
-    double m_latencyInMilliseconds;
+    double m_latencyInMilliseconds{0.0};
     bool m_latencyInMillisecondsHasBeenSet = false;
   };
 

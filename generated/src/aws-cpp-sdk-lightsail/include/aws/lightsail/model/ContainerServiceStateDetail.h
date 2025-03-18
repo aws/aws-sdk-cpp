@@ -33,7 +33,7 @@ namespace Model
   class ContainerServiceStateDetail
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceStateDetail();
+    AWS_LIGHTSAIL_API ContainerServiceStateDetail() = default;
     AWS_LIGHTSAIL_API ContainerServiceStateDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceStateDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,10 @@ namespace Model
      * <code>UNKNOWN_ERROR</code> - An error was experienced when your container
      * service was being created.</p> </li> </ul> </li> </ul>
      */
-    inline const ContainerServiceStateDetailCode& GetCode() const{ return m_code; }
+    inline ContainerServiceStateDetailCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ContainerServiceStateDetailCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ContainerServiceStateDetailCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ContainerServiceStateDetail& WithCode(const ContainerServiceStateDetailCode& value) { SetCode(value); return *this;}
-    inline ContainerServiceStateDetail& WithCode(ContainerServiceStateDetailCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ContainerServiceStateDetailCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ContainerServiceStateDetail& WithCode(ContainerServiceStateDetailCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code>
      * state.</p> 
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ContainerServiceStateDetail& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ContainerServiceStateDetail& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ContainerServiceStateDetail& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ContainerServiceStateDetail& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ContainerServiceStateDetailCode m_code;
+    ContainerServiceStateDetailCode m_code{ContainerServiceStateDetailCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

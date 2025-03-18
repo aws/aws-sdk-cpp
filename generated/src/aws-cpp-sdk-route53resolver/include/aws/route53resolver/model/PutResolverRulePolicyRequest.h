@@ -21,7 +21,7 @@ namespace Model
   class PutResolverRulePolicyRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API PutResolverRulePolicyRequest();
+    AWS_ROUTE53RESOLVER_API PutResolverRulePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule that you want to share with
      * another account.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PutResolverRulePolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PutResolverRulePolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PutResolverRulePolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PutResolverRulePolicyRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * that you want to share with another account. Specify the same ARN that you
      * specified in <code>Arn</code>.</p>
      */
-    inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
+    inline const Aws::String& GetResolverRulePolicy() const { return m_resolverRulePolicy; }
     inline bool ResolverRulePolicyHasBeenSet() const { return m_resolverRulePolicyHasBeenSet; }
-    inline void SetResolverRulePolicy(const Aws::String& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = value; }
-    inline void SetResolverRulePolicy(Aws::String&& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = std::move(value); }
-    inline void SetResolverRulePolicy(const char* value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy.assign(value); }
-    inline PutResolverRulePolicyRequest& WithResolverRulePolicy(const Aws::String& value) { SetResolverRulePolicy(value); return *this;}
-    inline PutResolverRulePolicyRequest& WithResolverRulePolicy(Aws::String&& value) { SetResolverRulePolicy(std::move(value)); return *this;}
-    inline PutResolverRulePolicyRequest& WithResolverRulePolicy(const char* value) { SetResolverRulePolicy(value); return *this;}
+    template<typename ResolverRulePolicyT = Aws::String>
+    void SetResolverRulePolicy(ResolverRulePolicyT&& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = std::forward<ResolverRulePolicyT>(value); }
+    template<typename ResolverRulePolicyT = Aws::String>
+    PutResolverRulePolicyRequest& WithResolverRulePolicy(ResolverRulePolicyT&& value) { SetResolverRulePolicy(std::forward<ResolverRulePolicyT>(value)); return *this;}
     ///@}
   private:
 

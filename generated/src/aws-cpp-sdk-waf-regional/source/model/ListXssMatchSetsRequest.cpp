@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListXssMatchSetsRequest::ListXssMatchSetsRequest() : 
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListXssMatchSetsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class LogoSet
   {
   public:
-    AWS_QUICKSIGHT_API LogoSet();
+    AWS_QUICKSIGHT_API LogoSet() = default;
     AWS_QUICKSIGHT_API LogoSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LogoSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>The primary logo.</p>
      */
-    inline const ImageSet& GetPrimary() const{ return m_primary; }
+    inline const ImageSet& GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
-    inline void SetPrimary(const ImageSet& value) { m_primaryHasBeenSet = true; m_primary = value; }
-    inline void SetPrimary(ImageSet&& value) { m_primaryHasBeenSet = true; m_primary = std::move(value); }
-    inline LogoSet& WithPrimary(const ImageSet& value) { SetPrimary(value); return *this;}
-    inline LogoSet& WithPrimary(ImageSet&& value) { SetPrimary(std::move(value)); return *this;}
+    template<typename PrimaryT = ImageSet>
+    void SetPrimary(PrimaryT&& value) { m_primaryHasBeenSet = true; m_primary = std::forward<PrimaryT>(value); }
+    template<typename PrimaryT = ImageSet>
+    LogoSet& WithPrimary(PrimaryT&& value) { SetPrimary(std::forward<PrimaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The favicon logo.</p>
      */
-    inline const ImageSet& GetFavicon() const{ return m_favicon; }
+    inline const ImageSet& GetFavicon() const { return m_favicon; }
     inline bool FaviconHasBeenSet() const { return m_faviconHasBeenSet; }
-    inline void SetFavicon(const ImageSet& value) { m_faviconHasBeenSet = true; m_favicon = value; }
-    inline void SetFavicon(ImageSet&& value) { m_faviconHasBeenSet = true; m_favicon = std::move(value); }
-    inline LogoSet& WithFavicon(const ImageSet& value) { SetFavicon(value); return *this;}
-    inline LogoSet& WithFavicon(ImageSet&& value) { SetFavicon(std::move(value)); return *this;}
+    template<typename FaviconT = ImageSet>
+    void SetFavicon(FaviconT&& value) { m_faviconHasBeenSet = true; m_favicon = std::forward<FaviconT>(value); }
+    template<typename FaviconT = ImageSet>
+    LogoSet& WithFavicon(FaviconT&& value) { SetFavicon(std::forward<FaviconT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class GetRateBasedStatementManagedKeysRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API GetRateBasedStatementManagedKeysRequest();
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline GetRateBasedStatementManagedKeysRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline GetRateBasedStatementManagedKeysRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The name of the web ACL. You cannot change the name of a web ACL after you
      * create it.</p>
      */
-    inline const Aws::String& GetWebACLName() const{ return m_webACLName; }
+    inline const Aws::String& GetWebACLName() const { return m_webACLName; }
     inline bool WebACLNameHasBeenSet() const { return m_webACLNameHasBeenSet; }
-    inline void SetWebACLName(const Aws::String& value) { m_webACLNameHasBeenSet = true; m_webACLName = value; }
-    inline void SetWebACLName(Aws::String&& value) { m_webACLNameHasBeenSet = true; m_webACLName = std::move(value); }
-    inline void SetWebACLName(const char* value) { m_webACLNameHasBeenSet = true; m_webACLName.assign(value); }
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(const Aws::String& value) { SetWebACLName(value); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(Aws::String&& value) { SetWebACLName(std::move(value)); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(const char* value) { SetWebACLName(value); return *this;}
+    template<typename WebACLNameT = Aws::String>
+    void SetWebACLName(WebACLNameT&& value) { m_webACLNameHasBeenSet = true; m_webACLName = std::forward<WebACLNameT>(value); }
+    template<typename WebACLNameT = Aws::String>
+    GetRateBasedStatementManagedKeysRequest& WithWebACLName(WebACLNameT&& value) { SetWebACLName(std::forward<WebACLNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * to create and list commands. You provide it to operations like update and
      * delete.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    GetRateBasedStatementManagedKeysRequest& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The name of the rule group reference statement in your web ACL. This is
      * required only when you have the rate-based rule nested inside a rule group. </p>
      */
-    inline const Aws::String& GetRuleGroupRuleName() const{ return m_ruleGroupRuleName; }
+    inline const Aws::String& GetRuleGroupRuleName() const { return m_ruleGroupRuleName; }
     inline bool RuleGroupRuleNameHasBeenSet() const { return m_ruleGroupRuleNameHasBeenSet; }
-    inline void SetRuleGroupRuleName(const Aws::String& value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName = value; }
-    inline void SetRuleGroupRuleName(Aws::String&& value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName = std::move(value); }
-    inline void SetRuleGroupRuleName(const char* value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName.assign(value); }
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(const Aws::String& value) { SetRuleGroupRuleName(value); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(Aws::String&& value) { SetRuleGroupRuleName(std::move(value)); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(const char* value) { SetRuleGroupRuleName(value); return *this;}
+    template<typename RuleGroupRuleNameT = Aws::String>
+    void SetRuleGroupRuleName(RuleGroupRuleNameT&& value) { m_ruleGroupRuleNameHasBeenSet = true; m_ruleGroupRuleName = std::forward<RuleGroupRuleNameT>(value); }
+    template<typename RuleGroupRuleNameT = Aws::String>
+    GetRateBasedStatementManagedKeysRequest& WithRuleGroupRuleName(RuleGroupRuleNameT&& value) { SetRuleGroupRuleName(std::forward<RuleGroupRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,18 +97,16 @@ namespace Model
      * name of the rule group reference statement in the request parameter
      * <code>RuleGroupRuleName</code>.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline GetRateBasedStatementManagedKeysRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    GetRateBasedStatementManagedKeysRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
   private:
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_webACLName;

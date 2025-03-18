@@ -33,7 +33,7 @@ namespace Model
   class IpamPoolSourceResource
   {
   public:
-    AWS_EC2_API IpamPoolSourceResource();
+    AWS_EC2_API IpamPoolSourceResource() = default;
     AWS_EC2_API IpamPoolSourceResource(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamPoolSourceResource& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,61 +45,53 @@ namespace Model
     /**
      * <p>The source resource ID.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline IpamPoolSourceResource& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline IpamPoolSourceResource& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline IpamPoolSourceResource& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    IpamPoolSourceResource& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source resource type.</p>
      */
-    inline const IpamPoolSourceResourceType& GetResourceType() const{ return m_resourceType; }
+    inline IpamPoolSourceResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const IpamPoolSourceResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(IpamPoolSourceResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline IpamPoolSourceResource& WithResourceType(const IpamPoolSourceResourceType& value) { SetResourceType(value); return *this;}
-    inline IpamPoolSourceResource& WithResourceType(IpamPoolSourceResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(IpamPoolSourceResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline IpamPoolSourceResource& WithResourceType(IpamPoolSourceResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source resource Region.</p>
      */
-    inline const Aws::String& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::String& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::String& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::String&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline void SetResourceRegion(const char* value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.assign(value); }
-    inline IpamPoolSourceResource& WithResourceRegion(const Aws::String& value) { SetResourceRegion(value); return *this;}
-    inline IpamPoolSourceResource& WithResourceRegion(Aws::String&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline IpamPoolSourceResource& WithResourceRegion(const char* value) { SetResourceRegion(value); return *this;}
+    template<typename ResourceRegionT = Aws::String>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::String>
+    IpamPoolSourceResource& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source resource owner.</p>
      */
-    inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
-    inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
-    inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
-    inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
-    inline IpamPoolSourceResource& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
-    inline IpamPoolSourceResource& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
-    inline IpamPoolSourceResource& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    IpamPoolSourceResource& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    IpamPoolSourceResourceType m_resourceType;
+    IpamPoolSourceResourceType m_resourceType{IpamPoolSourceResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceRegion;

@@ -36,7 +36,7 @@ namespace Model
   class InstancePortInfo
   {
   public:
-    AWS_LIGHTSAIL_API InstancePortInfo();
+    AWS_LIGHTSAIL_API InstancePortInfo() = default;
     AWS_LIGHTSAIL_API InstancePortInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstancePortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,7 +58,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
      * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline InstancePortInfo& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
      * Control Message Protocol for IPv6</a>.</p> </li> </ul>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline InstancePortInfo& WithToPort(int value) { SetToPort(value); return *this;}
@@ -115,12 +115,10 @@ namespace Model
      * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
      * parameter.</p> </li> </ul>
      */
-    inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
+    inline NetworkProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const NetworkProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline InstancePortInfo& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
-    inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(NetworkProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline InstancePortInfo& WithProtocol(NetworkProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -129,40 +127,34 @@ namespace Model
      * (0.0.0.0/0)</code>, or <code>Custom</code> if a specific IP address or range of
      * IP addresses is allowed.</p>
      */
-    inline const Aws::String& GetAccessFrom() const{ return m_accessFrom; }
+    inline const Aws::String& GetAccessFrom() const { return m_accessFrom; }
     inline bool AccessFromHasBeenSet() const { return m_accessFromHasBeenSet; }
-    inline void SetAccessFrom(const Aws::String& value) { m_accessFromHasBeenSet = true; m_accessFrom = value; }
-    inline void SetAccessFrom(Aws::String&& value) { m_accessFromHasBeenSet = true; m_accessFrom = std::move(value); }
-    inline void SetAccessFrom(const char* value) { m_accessFromHasBeenSet = true; m_accessFrom.assign(value); }
-    inline InstancePortInfo& WithAccessFrom(const Aws::String& value) { SetAccessFrom(value); return *this;}
-    inline InstancePortInfo& WithAccessFrom(Aws::String&& value) { SetAccessFrom(std::move(value)); return *this;}
-    inline InstancePortInfo& WithAccessFrom(const char* value) { SetAccessFrom(value); return *this;}
+    template<typename AccessFromT = Aws::String>
+    void SetAccessFrom(AccessFromT&& value) { m_accessFromHasBeenSet = true; m_accessFrom = std::forward<AccessFromT>(value); }
+    template<typename AccessFromT = Aws::String>
+    InstancePortInfo& WithAccessFrom(AccessFromT&& value) { SetAccessFrom(std::forward<AccessFromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
-    inline const PortAccessType& GetAccessType() const{ return m_accessType; }
+    inline PortAccessType GetAccessType() const { return m_accessType; }
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
-    inline void SetAccessType(const PortAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
-    inline void SetAccessType(PortAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
-    inline InstancePortInfo& WithAccessType(const PortAccessType& value) { SetAccessType(value); return *this;}
-    inline InstancePortInfo& WithAccessType(PortAccessType&& value) { SetAccessType(std::move(value)); return *this;}
+    inline void SetAccessType(PortAccessType value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline InstancePortInfo& WithAccessType(PortAccessType value) { SetAccessType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The common name of the port information.</p>
      */
-    inline const Aws::String& GetCommonName() const{ return m_commonName; }
+    inline const Aws::String& GetCommonName() const { return m_commonName; }
     inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
-    inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
-    inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
-    inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
-    inline InstancePortInfo& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
-    inline InstancePortInfo& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
-    inline InstancePortInfo& WithCommonName(const char* value) { SetCommonName(value); return *this;}
+    template<typename CommonNameT = Aws::String>
+    void SetCommonName(CommonNameT&& value) { m_commonNameHasBeenSet = true; m_commonName = std::forward<CommonNameT>(value); }
+    template<typename CommonNameT = Aws::String>
+    InstancePortInfo& WithCommonName(CommonNameT&& value) { SetCommonName(std::forward<CommonNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,12 +163,10 @@ namespace Model
      *  <p>Lightsail currently supports only <code>inbound</code> access
      * direction.</p> 
      */
-    inline const AccessDirection& GetAccessDirection() const{ return m_accessDirection; }
+    inline AccessDirection GetAccessDirection() const { return m_accessDirection; }
     inline bool AccessDirectionHasBeenSet() const { return m_accessDirectionHasBeenSet; }
-    inline void SetAccessDirection(const AccessDirection& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = value; }
-    inline void SetAccessDirection(AccessDirection&& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = std::move(value); }
-    inline InstancePortInfo& WithAccessDirection(const AccessDirection& value) { SetAccessDirection(value); return *this;}
-    inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(std::move(value)); return *this;}
+    inline void SetAccessDirection(AccessDirection value) { m_accessDirectionHasBeenSet = true; m_accessDirection = value; }
+    inline InstancePortInfo& WithAccessDirection(AccessDirection value) { SetAccessDirection(value); return *this;}
     ///@}
 
     ///@{
@@ -189,15 +179,14 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+    inline const Aws::Vector<Aws::String>& GetCidrs() const { return m_cidrs; }
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
-    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
-    inline InstancePortInfo& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
-    inline InstancePortInfo& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
-    inline InstancePortInfo& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-    inline InstancePortInfo& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
-    inline InstancePortInfo& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    void SetCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::forward<CidrsT>(value); }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    InstancePortInfo& WithCidrs(CidrsT&& value) { SetCidrs(std::forward<CidrsT>(value)); return *this;}
+    template<typename CidrsT = Aws::String>
+    InstancePortInfo& AddCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs.emplace_back(std::forward<CidrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,15 +200,14 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
      * Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpv6Cidrs() const{ return m_ipv6Cidrs; }
+    inline const Aws::Vector<Aws::String>& GetIpv6Cidrs() const { return m_ipv6Cidrs; }
     inline bool Ipv6CidrsHasBeenSet() const { return m_ipv6CidrsHasBeenSet; }
-    inline void SetIpv6Cidrs(const Aws::Vector<Aws::String>& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs = value; }
-    inline void SetIpv6Cidrs(Aws::Vector<Aws::String>&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs = std::move(value); }
-    inline InstancePortInfo& WithIpv6Cidrs(const Aws::Vector<Aws::String>& value) { SetIpv6Cidrs(value); return *this;}
-    inline InstancePortInfo& WithIpv6Cidrs(Aws::Vector<Aws::String>&& value) { SetIpv6Cidrs(std::move(value)); return *this;}
-    inline InstancePortInfo& AddIpv6Cidrs(const Aws::String& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(value); return *this; }
-    inline InstancePortInfo& AddIpv6Cidrs(Aws::String&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(std::move(value)); return *this; }
-    inline InstancePortInfo& AddIpv6Cidrs(const char* value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.push_back(value); return *this; }
+    template<typename Ipv6CidrsT = Aws::Vector<Aws::String>>
+    void SetIpv6Cidrs(Ipv6CidrsT&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs = std::forward<Ipv6CidrsT>(value); }
+    template<typename Ipv6CidrsT = Aws::Vector<Aws::String>>
+    InstancePortInfo& WithIpv6Cidrs(Ipv6CidrsT&& value) { SetIpv6Cidrs(std::forward<Ipv6CidrsT>(value)); return *this;}
+    template<typename Ipv6CidrsT = Aws::String>
+    InstancePortInfo& AddIpv6Cidrs(Ipv6CidrsT&& value) { m_ipv6CidrsHasBeenSet = true; m_ipv6Cidrs.emplace_back(std::forward<Ipv6CidrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -229,37 +217,36 @@ namespace Model
      * allows IP addresses of the browser-based RDP/SSH client in the Lightsail console
      * to connect to your instance.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrListAliases() const{ return m_cidrListAliases; }
+    inline const Aws::Vector<Aws::String>& GetCidrListAliases() const { return m_cidrListAliases; }
     inline bool CidrListAliasesHasBeenSet() const { return m_cidrListAliasesHasBeenSet; }
-    inline void SetCidrListAliases(const Aws::Vector<Aws::String>& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases = value; }
-    inline void SetCidrListAliases(Aws::Vector<Aws::String>&& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases = std::move(value); }
-    inline InstancePortInfo& WithCidrListAliases(const Aws::Vector<Aws::String>& value) { SetCidrListAliases(value); return *this;}
-    inline InstancePortInfo& WithCidrListAliases(Aws::Vector<Aws::String>&& value) { SetCidrListAliases(std::move(value)); return *this;}
-    inline InstancePortInfo& AddCidrListAliases(const Aws::String& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases.push_back(value); return *this; }
-    inline InstancePortInfo& AddCidrListAliases(Aws::String&& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases.push_back(std::move(value)); return *this; }
-    inline InstancePortInfo& AddCidrListAliases(const char* value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases.push_back(value); return *this; }
+    template<typename CidrListAliasesT = Aws::Vector<Aws::String>>
+    void SetCidrListAliases(CidrListAliasesT&& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases = std::forward<CidrListAliasesT>(value); }
+    template<typename CidrListAliasesT = Aws::Vector<Aws::String>>
+    InstancePortInfo& WithCidrListAliases(CidrListAliasesT&& value) { SetCidrListAliases(std::forward<CidrListAliasesT>(value)); return *this;}
+    template<typename CidrListAliasesT = Aws::String>
+    InstancePortInfo& AddCidrListAliases(CidrListAliasesT&& value) { m_cidrListAliasesHasBeenSet = true; m_cidrListAliases.emplace_back(std::forward<CidrListAliasesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
 
-    NetworkProtocol m_protocol;
+    NetworkProtocol m_protocol{NetworkProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_accessFrom;
     bool m_accessFromHasBeenSet = false;
 
-    PortAccessType m_accessType;
+    PortAccessType m_accessType{PortAccessType::NOT_SET};
     bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_commonName;
     bool m_commonNameHasBeenSet = false;
 
-    AccessDirection m_accessDirection;
+    AccessDirection m_accessDirection{AccessDirection::NOT_SET};
     bool m_accessDirectionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;

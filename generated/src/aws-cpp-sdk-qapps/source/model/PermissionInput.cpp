@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-PermissionInput::PermissionInput() : 
-    m_action(PermissionInputActionEnum::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 PermissionInput::PermissionInput(JsonView jsonValue)
-  : PermissionInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PermissionInput& PermissionInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = PermissionInputActionEnumMapper::GetPermissionInputActionEnumForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetString("principal");
-
     m_principalHasBeenSet = true;
   }
-
   return *this;
 }
 

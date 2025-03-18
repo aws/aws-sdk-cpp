@@ -28,7 +28,7 @@ namespace Model
   class GetObjectRetentionResult
   {
   public:
-    AWS_S3CRT_API GetObjectRetentionResult();
+    AWS_S3CRT_API GetObjectRetentionResult() = default;
     AWS_S3CRT_API GetObjectRetentionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetObjectRetentionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The container element for an object's retention settings.</p>
      */
-    inline const ObjectLockRetention& GetRetention() const{ return m_retention; }
-    inline void SetRetention(const ObjectLockRetention& value) { m_retention = value; }
-    inline void SetRetention(ObjectLockRetention&& value) { m_retention = std::move(value); }
-    inline GetObjectRetentionResult& WithRetention(const ObjectLockRetention& value) { SetRetention(value); return *this;}
-    inline GetObjectRetentionResult& WithRetention(ObjectLockRetention&& value) { SetRetention(std::move(value)); return *this;}
+    inline const ObjectLockRetention& GetRetention() const { return m_retention; }
+    template<typename RetentionT = ObjectLockRetention>
+    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
+    template<typename RetentionT = ObjectLockRetention>
+    GetObjectRetentionResult& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetObjectRetentionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetObjectRetentionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetObjectRetentionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetObjectRetentionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ObjectLockRetention m_retention;
+    bool m_retentionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

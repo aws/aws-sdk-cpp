@@ -29,7 +29,7 @@ namespace Model
   class ListPipesResult
   {
   public:
-    AWS_PIPES_API ListPipesResult();
+    AWS_PIPES_API ListPipesResult() = default;
     AWS_PIPES_API ListPipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PIPES_API ListPipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The pipes returned by the call.</p>
      */
-    inline const Aws::Vector<Pipe>& GetPipes() const{ return m_pipes; }
-    inline void SetPipes(const Aws::Vector<Pipe>& value) { m_pipes = value; }
-    inline void SetPipes(Aws::Vector<Pipe>&& value) { m_pipes = std::move(value); }
-    inline ListPipesResult& WithPipes(const Aws::Vector<Pipe>& value) { SetPipes(value); return *this;}
-    inline ListPipesResult& WithPipes(Aws::Vector<Pipe>&& value) { SetPipes(std::move(value)); return *this;}
-    inline ListPipesResult& AddPipes(const Pipe& value) { m_pipes.push_back(value); return *this; }
-    inline ListPipesResult& AddPipes(Pipe&& value) { m_pipes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Pipe>& GetPipes() const { return m_pipes; }
+    template<typename PipesT = Aws::Vector<Pipe>>
+    void SetPipes(PipesT&& value) { m_pipesHasBeenSet = true; m_pipes = std::forward<PipesT>(value); }
+    template<typename PipesT = Aws::Vector<Pipe>>
+    ListPipesResult& WithPipes(PipesT&& value) { SetPipes(std::forward<PipesT>(value)); return *this;}
+    template<typename PipesT = Pipe>
+    ListPipesResult& AddPipes(PipesT&& value) { m_pipesHasBeenSet = true; m_pipes.emplace_back(std::forward<PipesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * other arguments unchanged. Each pagination token expires after 24 hours. Using
      * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPipesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPipesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPipesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPipesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPipesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Pipe> m_pipes;
+    bool m_pipesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

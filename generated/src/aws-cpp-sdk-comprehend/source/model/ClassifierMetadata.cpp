@@ -18,19 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ClassifierMetadata::ClassifierMetadata() : 
-    m_numberOfLabels(0),
-    m_numberOfLabelsHasBeenSet(false),
-    m_numberOfTrainedDocuments(0),
-    m_numberOfTrainedDocumentsHasBeenSet(false),
-    m_numberOfTestDocuments(0),
-    m_numberOfTestDocumentsHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false)
-{
-}
-
 ClassifierMetadata::ClassifierMetadata(JsonView jsonValue)
-  : ClassifierMetadata()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ClassifierMetadata& ClassifierMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfLabels"))
   {
     m_numberOfLabels = jsonValue.GetInteger("NumberOfLabels");
-
     m_numberOfLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfTrainedDocuments"))
   {
     m_numberOfTrainedDocuments = jsonValue.GetInteger("NumberOfTrainedDocuments");
-
     m_numberOfTrainedDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfTestDocuments"))
   {
     m_numberOfTestDocuments = jsonValue.GetInteger("NumberOfTestDocuments");
-
     m_numberOfTestDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMetrics"))
   {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
-
     m_evaluationMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

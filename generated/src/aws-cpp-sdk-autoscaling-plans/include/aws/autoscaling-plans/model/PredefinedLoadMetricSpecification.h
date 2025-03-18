@@ -37,7 +37,7 @@ namespace Model
   class PredefinedLoadMetricSpecification
   {
   public:
-    AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification() = default;
     AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The metric type.</p>
      */
-    inline const LoadMetricType& GetPredefinedLoadMetricType() const{ return m_predefinedLoadMetricType; }
+    inline LoadMetricType GetPredefinedLoadMetricType() const { return m_predefinedLoadMetricType; }
     inline bool PredefinedLoadMetricTypeHasBeenSet() const { return m_predefinedLoadMetricTypeHasBeenSet; }
-    inline void SetPredefinedLoadMetricType(const LoadMetricType& value) { m_predefinedLoadMetricTypeHasBeenSet = true; m_predefinedLoadMetricType = value; }
-    inline void SetPredefinedLoadMetricType(LoadMetricType&& value) { m_predefinedLoadMetricTypeHasBeenSet = true; m_predefinedLoadMetricType = std::move(value); }
-    inline PredefinedLoadMetricSpecification& WithPredefinedLoadMetricType(const LoadMetricType& value) { SetPredefinedLoadMetricType(value); return *this;}
-    inline PredefinedLoadMetricSpecification& WithPredefinedLoadMetricType(LoadMetricType&& value) { SetPredefinedLoadMetricType(std::move(value)); return *this;}
+    inline void SetPredefinedLoadMetricType(LoadMetricType value) { m_predefinedLoadMetricTypeHasBeenSet = true; m_predefinedLoadMetricType = value; }
+    inline PredefinedLoadMetricSpecification& WithPredefinedLoadMetricType(LoadMetricType value) { SetPredefinedLoadMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,18 +73,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
      * API operation.</p>
      */
-    inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+    inline const Aws::String& GetResourceLabel() const { return m_resourceLabel; }
     inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
-    inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
-    inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
-    inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
-    inline PredefinedLoadMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
-    inline PredefinedLoadMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
-    inline PredefinedLoadMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
+    template<typename ResourceLabelT = Aws::String>
+    void SetResourceLabel(ResourceLabelT&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::forward<ResourceLabelT>(value); }
+    template<typename ResourceLabelT = Aws::String>
+    PredefinedLoadMetricSpecification& WithResourceLabel(ResourceLabelT&& value) { SetResourceLabel(std::forward<ResourceLabelT>(value)); return *this;}
     ///@}
   private:
 
-    LoadMetricType m_predefinedLoadMetricType;
+    LoadMetricType m_predefinedLoadMetricType{LoadMetricType::NOT_SET};
     bool m_predefinedLoadMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;

@@ -23,7 +23,7 @@ namespace Model
   class UpdateScopeRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API UpdateScopeRequest();
+    AWS_NETWORKFLOWMONITOR_API UpdateScopeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,40 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
     inline bool ScopeIdHasBeenSet() const { return m_scopeIdHasBeenSet; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeIdHasBeenSet = true; m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeIdHasBeenSet = true; m_scopeId.assign(value); }
-    inline UpdateScopeRequest& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline UpdateScopeRequest& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline UpdateScopeRequest& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    UpdateScopeRequest& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of resources to add to a scope.</p>
      */
-    inline const Aws::Vector<TargetResource>& GetResourcesToAdd() const{ return m_resourcesToAdd; }
+    inline const Aws::Vector<TargetResource>& GetResourcesToAdd() const { return m_resourcesToAdd; }
     inline bool ResourcesToAddHasBeenSet() const { return m_resourcesToAddHasBeenSet; }
-    inline void SetResourcesToAdd(const Aws::Vector<TargetResource>& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = value; }
-    inline void SetResourcesToAdd(Aws::Vector<TargetResource>&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = std::move(value); }
-    inline UpdateScopeRequest& WithResourcesToAdd(const Aws::Vector<TargetResource>& value) { SetResourcesToAdd(value); return *this;}
-    inline UpdateScopeRequest& WithResourcesToAdd(Aws::Vector<TargetResource>&& value) { SetResourcesToAdd(std::move(value)); return *this;}
-    inline UpdateScopeRequest& AddResourcesToAdd(const TargetResource& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(value); return *this; }
-    inline UpdateScopeRequest& AddResourcesToAdd(TargetResource&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(std::move(value)); return *this; }
+    template<typename ResourcesToAddT = Aws::Vector<TargetResource>>
+    void SetResourcesToAdd(ResourcesToAddT&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = std::forward<ResourcesToAddT>(value); }
+    template<typename ResourcesToAddT = Aws::Vector<TargetResource>>
+    UpdateScopeRequest& WithResourcesToAdd(ResourcesToAddT&& value) { SetResourcesToAdd(std::forward<ResourcesToAddT>(value)); return *this;}
+    template<typename ResourcesToAddT = TargetResource>
+    UpdateScopeRequest& AddResourcesToAdd(ResourcesToAddT&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.emplace_back(std::forward<ResourcesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of resources to delete from a scope.</p>
      */
-    inline const Aws::Vector<TargetResource>& GetResourcesToDelete() const{ return m_resourcesToDelete; }
+    inline const Aws::Vector<TargetResource>& GetResourcesToDelete() const { return m_resourcesToDelete; }
     inline bool ResourcesToDeleteHasBeenSet() const { return m_resourcesToDeleteHasBeenSet; }
-    inline void SetResourcesToDelete(const Aws::Vector<TargetResource>& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete = value; }
-    inline void SetResourcesToDelete(Aws::Vector<TargetResource>&& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete = std::move(value); }
-    inline UpdateScopeRequest& WithResourcesToDelete(const Aws::Vector<TargetResource>& value) { SetResourcesToDelete(value); return *this;}
-    inline UpdateScopeRequest& WithResourcesToDelete(Aws::Vector<TargetResource>&& value) { SetResourcesToDelete(std::move(value)); return *this;}
-    inline UpdateScopeRequest& AddResourcesToDelete(const TargetResource& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete.push_back(value); return *this; }
-    inline UpdateScopeRequest& AddResourcesToDelete(TargetResource&& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete.push_back(std::move(value)); return *this; }
+    template<typename ResourcesToDeleteT = Aws::Vector<TargetResource>>
+    void SetResourcesToDelete(ResourcesToDeleteT&& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete = std::forward<ResourcesToDeleteT>(value); }
+    template<typename ResourcesToDeleteT = Aws::Vector<TargetResource>>
+    UpdateScopeRequest& WithResourcesToDelete(ResourcesToDeleteT&& value) { SetResourcesToDelete(std::forward<ResourcesToDeleteT>(value)); return *this;}
+    template<typename ResourcesToDeleteT = TargetResource>
+    UpdateScopeRequest& AddResourcesToDelete(ResourcesToDeleteT&& value) { m_resourcesToDeleteHasBeenSet = true; m_resourcesToDelete.emplace_back(std::forward<ResourcesToDeleteT>(value)); return *this; }
     ///@}
   private:
 

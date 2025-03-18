@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_codeRepositoriesHasBeenSet(false),
-    m_appLifecycleManagementHasBeenSet(false)
-{
-}
-
 SpaceJupyterLabAppSettings::SpaceJupyterLabAppSettings(JsonView jsonValue)
-  : SpaceJupyterLabAppSettings()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SpaceJupyterLabAppSettings& SpaceJupyterLabAppSettings::operator =(JsonView json
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeRepositories"))
   {
     Aws::Utils::Array<JsonView> codeRepositoriesJsonList = jsonValue.GetArray("CodeRepositories");
@@ -49,14 +39,11 @@ SpaceJupyterLabAppSettings& SpaceJupyterLabAppSettings::operator =(JsonView json
     }
     m_codeRepositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppLifecycleManagement"))
   {
     m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
-
     m_appLifecycleManagementHasBeenSet = true;
   }
-
   return *this;
 }
 

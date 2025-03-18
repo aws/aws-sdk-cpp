@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ReplicationStatusSummary::ReplicationStatusSummary() : 
-    m_regionHasBeenSet(false),
-    m_replicationStatus(InstanceReplicationStatus::NOT_SET),
-    m_replicationStatusHasBeenSet(false),
-    m_replicationStatusReasonHasBeenSet(false)
-{
-}
-
 ReplicationStatusSummary::ReplicationStatusSummary(JsonView jsonValue)
-  : ReplicationStatusSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReplicationStatusSummary& ReplicationStatusSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationStatus"))
   {
     m_replicationStatus = InstanceReplicationStatusMapper::GetInstanceReplicationStatusForName(jsonValue.GetString("ReplicationStatus"));
-
     m_replicationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationStatusReason"))
   {
     m_replicationStatusReason = jsonValue.GetString("ReplicationStatusReason");
-
     m_replicationStatusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

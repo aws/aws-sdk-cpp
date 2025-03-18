@@ -18,23 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-BotChannelAssociation::BotChannelAssociation() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_botConfigurationHasBeenSet(false),
-    m_status(ChannelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 BotChannelAssociation::BotChannelAssociation(JsonView jsonValue)
-  : BotChannelAssociation()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ BotChannelAssociation& BotChannelAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botAlias"))
   {
     m_botAlias = jsonValue.GetString("botAlias");
-
     m_botAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
-
     m_botNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> botConfigurationJsonMap = jsonValue.GetObject("botConfiguration").GetAllObjects();
@@ -92,21 +64,16 @@ BotChannelAssociation& BotChannelAssociation::operator =(JsonView jsonValue)
     }
     m_botConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ChannelStatusMapper::GetChannelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

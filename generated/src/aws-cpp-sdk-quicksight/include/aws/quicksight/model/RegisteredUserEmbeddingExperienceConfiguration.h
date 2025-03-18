@@ -39,7 +39,7 @@ namespace Model
   class RegisteredUserEmbeddingExperienceConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration() = default;
     AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
     /**
      * <p>The configuration details for providing a dashboard embedding experience.</p>
      */
-    inline const RegisteredUserDashboardEmbeddingConfiguration& GetDashboard() const{ return m_dashboard; }
+    inline const RegisteredUserDashboardEmbeddingConfiguration& GetDashboard() const { return m_dashboard; }
     inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
-    inline void SetDashboard(const RegisteredUserDashboardEmbeddingConfiguration& value) { m_dashboardHasBeenSet = true; m_dashboard = value; }
-    inline void SetDashboard(RegisteredUserDashboardEmbeddingConfiguration&& value) { m_dashboardHasBeenSet = true; m_dashboard = std::move(value); }
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboard(const RegisteredUserDashboardEmbeddingConfiguration& value) { SetDashboard(value); return *this;}
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboard(RegisteredUserDashboardEmbeddingConfiguration&& value) { SetDashboard(std::move(value)); return *this;}
+    template<typename DashboardT = RegisteredUserDashboardEmbeddingConfiguration>
+    void SetDashboard(DashboardT&& value) { m_dashboardHasBeenSet = true; m_dashboard = std::forward<DashboardT>(value); }
+    template<typename DashboardT = RegisteredUserDashboardEmbeddingConfiguration>
+    RegisteredUserEmbeddingExperienceConfiguration& WithDashboard(DashboardT&& value) { SetDashboard(std::forward<DashboardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
      * QuickSight Developer Portal</a>.</p>
      */
-    inline const RegisteredUserQuickSightConsoleEmbeddingConfiguration& GetQuickSightConsole() const{ return m_quickSightConsole; }
+    inline const RegisteredUserQuickSightConsoleEmbeddingConfiguration& GetQuickSightConsole() const { return m_quickSightConsole; }
     inline bool QuickSightConsoleHasBeenSet() const { return m_quickSightConsoleHasBeenSet; }
-    inline void SetQuickSightConsole(const RegisteredUserQuickSightConsoleEmbeddingConfiguration& value) { m_quickSightConsoleHasBeenSet = true; m_quickSightConsole = value; }
-    inline void SetQuickSightConsole(RegisteredUserQuickSightConsoleEmbeddingConfiguration&& value) { m_quickSightConsoleHasBeenSet = true; m_quickSightConsole = std::move(value); }
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithQuickSightConsole(const RegisteredUserQuickSightConsoleEmbeddingConfiguration& value) { SetQuickSightConsole(value); return *this;}
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithQuickSightConsole(RegisteredUserQuickSightConsoleEmbeddingConfiguration&& value) { SetQuickSightConsole(std::move(value)); return *this;}
+    template<typename QuickSightConsoleT = RegisteredUserQuickSightConsoleEmbeddingConfiguration>
+    void SetQuickSightConsole(QuickSightConsoleT&& value) { m_quickSightConsoleHasBeenSet = true; m_quickSightConsole = std::forward<QuickSightConsoleT>(value); }
+    template<typename QuickSightConsoleT = RegisteredUserQuickSightConsoleEmbeddingConfiguration>
+    RegisteredUserEmbeddingExperienceConfiguration& WithQuickSightConsole(QuickSightConsoleT&& value) { SetQuickSightConsole(std::forward<QuickSightConsoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +102,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
      * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const RegisteredUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
+    inline const RegisteredUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const { return m_qSearchBar; }
     inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
-    inline void SetQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
-    inline void SetQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
+    template<typename QSearchBarT = RegisteredUserQSearchBarEmbeddingConfiguration>
+    void SetQSearchBar(QSearchBarT&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::forward<QSearchBarT>(value); }
+    template<typename QSearchBarT = RegisteredUserQSearchBarEmbeddingConfiguration>
+    RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(QSearchBarT&& value) { SetQSearchBar(std::forward<QSearchBarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +115,12 @@ namespace Model
      * <p>The type of embedding experience. In this case, Amazon QuickSight
      * visuals.</p>
      */
-    inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+    inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
-    inline void SetDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
-    inline void SetDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
+    template<typename DashboardVisualT = RegisteredUserDashboardVisualEmbeddingConfiguration>
+    void SetDashboardVisual(DashboardVisualT&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::forward<DashboardVisualT>(value); }
+    template<typename DashboardVisualT = RegisteredUserDashboardVisualEmbeddingConfiguration>
+    RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(DashboardVisualT&& value) { SetDashboardVisual(std::forward<DashboardVisualT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +131,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
      * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const RegisteredUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const{ return m_generativeQnA; }
+    inline const RegisteredUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const { return m_generativeQnA; }
     inline bool GenerativeQnAHasBeenSet() const { return m_generativeQnAHasBeenSet; }
-    inline void SetGenerativeQnA(const RegisteredUserGenerativeQnAEmbeddingConfiguration& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = value; }
-    inline void SetGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::move(value); }
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithGenerativeQnA(const RegisteredUserGenerativeQnAEmbeddingConfiguration& value) { SetGenerativeQnA(value); return *this;}
-    inline RegisteredUserEmbeddingExperienceConfiguration& WithGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration&& value) { SetGenerativeQnA(std::move(value)); return *this;}
+    template<typename GenerativeQnAT = RegisteredUserGenerativeQnAEmbeddingConfiguration>
+    void SetGenerativeQnA(GenerativeQnAT&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::forward<GenerativeQnAT>(value); }
+    template<typename GenerativeQnAT = RegisteredUserGenerativeQnAEmbeddingConfiguration>
+    RegisteredUserEmbeddingExperienceConfiguration& WithGenerativeQnA(GenerativeQnAT&& value) { SetGenerativeQnA(std::forward<GenerativeQnAT>(value)); return *this;}
     ///@}
   private:
 

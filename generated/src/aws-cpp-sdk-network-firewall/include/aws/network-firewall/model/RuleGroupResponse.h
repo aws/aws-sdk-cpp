@@ -41,7 +41,7 @@ namespace Model
   class RuleGroupResponse
   {
   public:
-    AWS_NETWORKFIREWALL_API RuleGroupResponse();
+    AWS_NETWORKFIREWALL_API RuleGroupResponse() = default;
     AWS_NETWORKFIREWALL_API RuleGroupResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API RuleGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid
      * resource.</p> 
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
     inline bool RuleGroupArnHasBeenSet() const { return m_ruleGroupArnHasBeenSet; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn.assign(value); }
-    inline RuleGroupResponse& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline RuleGroupResponse& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline RuleGroupResponse& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    RuleGroupResponse& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,42 +67,36 @@ namespace Model
      * <p>The descriptive name of the rule group. You can't change the name of a rule
      * group after you create it.</p>
      */
-    inline const Aws::String& GetRuleGroupName() const{ return m_ruleGroupName; }
+    inline const Aws::String& GetRuleGroupName() const { return m_ruleGroupName; }
     inline bool RuleGroupNameHasBeenSet() const { return m_ruleGroupNameHasBeenSet; }
-    inline void SetRuleGroupName(const Aws::String& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = value; }
-    inline void SetRuleGroupName(Aws::String&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::move(value); }
-    inline void SetRuleGroupName(const char* value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName.assign(value); }
-    inline RuleGroupResponse& WithRuleGroupName(const Aws::String& value) { SetRuleGroupName(value); return *this;}
-    inline RuleGroupResponse& WithRuleGroupName(Aws::String&& value) { SetRuleGroupName(std::move(value)); return *this;}
-    inline RuleGroupResponse& WithRuleGroupName(const char* value) { SetRuleGroupName(value); return *this;}
+    template<typename RuleGroupNameT = Aws::String>
+    void SetRuleGroupName(RuleGroupNameT&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::forward<RuleGroupNameT>(value); }
+    template<typename RuleGroupNameT = Aws::String>
+    RuleGroupResponse& WithRuleGroupName(RuleGroupNameT&& value) { SetRuleGroupName(std::forward<RuleGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the rule group. </p>
      */
-    inline const Aws::String& GetRuleGroupId() const{ return m_ruleGroupId; }
+    inline const Aws::String& GetRuleGroupId() const { return m_ruleGroupId; }
     inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
-    inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
-    inline void SetRuleGroupId(Aws::String&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::move(value); }
-    inline void SetRuleGroupId(const char* value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId.assign(value); }
-    inline RuleGroupResponse& WithRuleGroupId(const Aws::String& value) { SetRuleGroupId(value); return *this;}
-    inline RuleGroupResponse& WithRuleGroupId(Aws::String&& value) { SetRuleGroupId(std::move(value)); return *this;}
-    inline RuleGroupResponse& WithRuleGroupId(const char* value) { SetRuleGroupId(value); return *this;}
+    template<typename RuleGroupIdT = Aws::String>
+    void SetRuleGroupId(RuleGroupIdT&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::forward<RuleGroupIdT>(value); }
+    template<typename RuleGroupIdT = Aws::String>
+    RuleGroupResponse& WithRuleGroupId(RuleGroupIdT&& value) { SetRuleGroupId(std::forward<RuleGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the rule group. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RuleGroupResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RuleGroupResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RuleGroupResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RuleGroupResponse& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +105,10 @@ namespace Model
      * is stateless, it contains stateless rules. If it is stateful, it contains
      * stateful rules. </p>
      */
-    inline const RuleGroupType& GetType() const{ return m_type; }
+    inline RuleGroupType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RuleGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RuleGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RuleGroupResponse& WithType(const RuleGroupType& value) { SetType(value); return *this;}
-    inline RuleGroupResponse& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RuleGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RuleGroupResponse& WithType(RuleGroupType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +121,7 @@ namespace Model
      * group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to
      * <code>TRUE</code>. </p>
      */
-    inline int GetCapacity() const{ return m_capacity; }
+    inline int GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline RuleGroupResponse& WithCapacity(int value) { SetCapacity(value); return *this;}
@@ -141,33 +131,31 @@ namespace Model
     /**
      * <p>Detailed information about the current status of a rule group. </p>
      */
-    inline const ResourceStatus& GetRuleGroupStatus() const{ return m_ruleGroupStatus; }
+    inline ResourceStatus GetRuleGroupStatus() const { return m_ruleGroupStatus; }
     inline bool RuleGroupStatusHasBeenSet() const { return m_ruleGroupStatusHasBeenSet; }
-    inline void SetRuleGroupStatus(const ResourceStatus& value) { m_ruleGroupStatusHasBeenSet = true; m_ruleGroupStatus = value; }
-    inline void SetRuleGroupStatus(ResourceStatus&& value) { m_ruleGroupStatusHasBeenSet = true; m_ruleGroupStatus = std::move(value); }
-    inline RuleGroupResponse& WithRuleGroupStatus(const ResourceStatus& value) { SetRuleGroupStatus(value); return *this;}
-    inline RuleGroupResponse& WithRuleGroupStatus(ResourceStatus&& value) { SetRuleGroupStatus(std::move(value)); return *this;}
+    inline void SetRuleGroupStatus(ResourceStatus value) { m_ruleGroupStatusHasBeenSet = true; m_ruleGroupStatus = value; }
+    inline RuleGroupResponse& WithRuleGroupStatus(ResourceStatus value) { SetRuleGroupStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key:value pairs to associate with the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RuleGroupResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RuleGroupResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RuleGroupResponse& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RuleGroupResponse& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RuleGroupResponse& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RuleGroupResponse& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of capacity units currently consumed by the rule group rules. </p>
      */
-    inline int GetConsumedCapacity() const{ return m_consumedCapacity; }
+    inline int GetConsumedCapacity() const { return m_consumedCapacity; }
     inline bool ConsumedCapacityHasBeenSet() const { return m_consumedCapacityHasBeenSet; }
     inline void SetConsumedCapacity(int value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = value; }
     inline RuleGroupResponse& WithConsumedCapacity(int value) { SetConsumedCapacity(value); return *this;}
@@ -177,7 +165,7 @@ namespace Model
     /**
      * <p>The number of firewall policies that use this rule group.</p>
      */
-    inline int GetNumberOfAssociations() const{ return m_numberOfAssociations; }
+    inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
     inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
     inline void SetNumberOfAssociations(int value) { m_numberOfAssociationsHasBeenSet = true; m_numberOfAssociations = value; }
     inline RuleGroupResponse& WithNumberOfAssociations(int value) { SetNumberOfAssociations(value); return *this;}
@@ -188,12 +176,12 @@ namespace Model
      * <p>A complex type that contains the Amazon Web Services KMS encryption
      * configuration settings for your rule group.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline RuleGroupResponse& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline RuleGroupResponse& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    RuleGroupResponse& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +190,12 @@ namespace Model
      * group is copied from. You can use the metadata to track the version updates made
      * to the originating rule group.</p>
      */
-    inline const SourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+    inline const SourceMetadata& GetSourceMetadata() const { return m_sourceMetadata; }
     inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
-    inline void SetSourceMetadata(const SourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
-    inline void SetSourceMetadata(SourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
-    inline RuleGroupResponse& WithSourceMetadata(const SourceMetadata& value) { SetSourceMetadata(value); return *this;}
-    inline RuleGroupResponse& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+    template<typename SourceMetadataT = SourceMetadata>
+    void SetSourceMetadata(SourceMetadataT&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::forward<SourceMetadataT>(value); }
+    template<typename SourceMetadataT = SourceMetadata>
+    RuleGroupResponse& WithSourceMetadata(SourceMetadataT&& value) { SetSourceMetadata(std::forward<SourceMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,26 +208,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
      * Notification Service Developer Guide.</a>.</p>
      */
-    inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
+    inline const Aws::String& GetSnsTopic() const { return m_snsTopic; }
     inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
-    inline void SetSnsTopic(const Aws::String& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
-    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
-    inline void SetSnsTopic(const char* value) { m_snsTopicHasBeenSet = true; m_snsTopic.assign(value); }
-    inline RuleGroupResponse& WithSnsTopic(const Aws::String& value) { SetSnsTopic(value); return *this;}
-    inline RuleGroupResponse& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
-    inline RuleGroupResponse& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
+    template<typename SnsTopicT = Aws::String>
+    void SetSnsTopic(SnsTopicT&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::forward<SnsTopicT>(value); }
+    template<typename SnsTopicT = Aws::String>
+    RuleGroupResponse& WithSnsTopic(SnsTopicT&& value) { SetSnsTopic(std::forward<SnsTopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that the rule group was changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline RuleGroupResponse& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline RuleGroupResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    RuleGroupResponse& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,14 +239,14 @@ namespace Model
      * process traffic, the service includes the rule in the list of analysis
      * results.</p>
      */
-    inline const Aws::Vector<AnalysisResult>& GetAnalysisResults() const{ return m_analysisResults; }
+    inline const Aws::Vector<AnalysisResult>& GetAnalysisResults() const { return m_analysisResults; }
     inline bool AnalysisResultsHasBeenSet() const { return m_analysisResultsHasBeenSet; }
-    inline void SetAnalysisResults(const Aws::Vector<AnalysisResult>& value) { m_analysisResultsHasBeenSet = true; m_analysisResults = value; }
-    inline void SetAnalysisResults(Aws::Vector<AnalysisResult>&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults = std::move(value); }
-    inline RuleGroupResponse& WithAnalysisResults(const Aws::Vector<AnalysisResult>& value) { SetAnalysisResults(value); return *this;}
-    inline RuleGroupResponse& WithAnalysisResults(Aws::Vector<AnalysisResult>&& value) { SetAnalysisResults(std::move(value)); return *this;}
-    inline RuleGroupResponse& AddAnalysisResults(const AnalysisResult& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.push_back(value); return *this; }
-    inline RuleGroupResponse& AddAnalysisResults(AnalysisResult&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.push_back(std::move(value)); return *this; }
+    template<typename AnalysisResultsT = Aws::Vector<AnalysisResult>>
+    void SetAnalysisResults(AnalysisResultsT&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults = std::forward<AnalysisResultsT>(value); }
+    template<typename AnalysisResultsT = Aws::Vector<AnalysisResult>>
+    RuleGroupResponse& WithAnalysisResults(AnalysisResultsT&& value) { SetAnalysisResults(std::forward<AnalysisResultsT>(value)); return *this;}
+    template<typename AnalysisResultsT = AnalysisResult>
+    RuleGroupResponse& AddAnalysisResults(AnalysisResultsT&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.emplace_back(std::forward<AnalysisResultsT>(value)); return *this; }
     ///@}
   private:
 
@@ -276,22 +262,22 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    RuleGroupType m_type;
+    RuleGroupType m_type{RuleGroupType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_capacity;
+    int m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
-    ResourceStatus m_ruleGroupStatus;
+    ResourceStatus m_ruleGroupStatus{ResourceStatus::NOT_SET};
     bool m_ruleGroupStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_consumedCapacity;
+    int m_consumedCapacity{0};
     bool m_consumedCapacityHasBeenSet = false;
 
-    int m_numberOfAssociations;
+    int m_numberOfAssociations{0};
     bool m_numberOfAssociationsHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
@@ -303,7 +289,7 @@ namespace Model
     Aws::String m_snsTopic;
     bool m_snsTopicHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<AnalysisResult> m_analysisResults;

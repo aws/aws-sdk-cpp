@@ -29,7 +29,7 @@ namespace Model
   class SearchVocabulariesResult
   {
   public:
-    AWS_CONNECT_API SearchVocabulariesResult();
+    AWS_CONNECT_API SearchVocabulariesResult() = default;
     AWS_CONNECT_API SearchVocabulariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API SearchVocabulariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of the available custom vocabularies.</p>
      */
-    inline const Aws::Vector<VocabularySummary>& GetVocabularySummaryList() const{ return m_vocabularySummaryList; }
-    inline void SetVocabularySummaryList(const Aws::Vector<VocabularySummary>& value) { m_vocabularySummaryList = value; }
-    inline void SetVocabularySummaryList(Aws::Vector<VocabularySummary>&& value) { m_vocabularySummaryList = std::move(value); }
-    inline SearchVocabulariesResult& WithVocabularySummaryList(const Aws::Vector<VocabularySummary>& value) { SetVocabularySummaryList(value); return *this;}
-    inline SearchVocabulariesResult& WithVocabularySummaryList(Aws::Vector<VocabularySummary>&& value) { SetVocabularySummaryList(std::move(value)); return *this;}
-    inline SearchVocabulariesResult& AddVocabularySummaryList(const VocabularySummary& value) { m_vocabularySummaryList.push_back(value); return *this; }
-    inline SearchVocabulariesResult& AddVocabularySummaryList(VocabularySummary&& value) { m_vocabularySummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VocabularySummary>& GetVocabularySummaryList() const { return m_vocabularySummaryList; }
+    template<typename VocabularySummaryListT = Aws::Vector<VocabularySummary>>
+    void SetVocabularySummaryList(VocabularySummaryListT&& value) { m_vocabularySummaryListHasBeenSet = true; m_vocabularySummaryList = std::forward<VocabularySummaryListT>(value); }
+    template<typename VocabularySummaryListT = Aws::Vector<VocabularySummary>>
+    SearchVocabulariesResult& WithVocabularySummaryList(VocabularySummaryListT&& value) { SetVocabularySummaryList(std::forward<VocabularySummaryListT>(value)); return *this;}
+    template<typename VocabularySummaryListT = VocabularySummary>
+    SearchVocabulariesResult& AddVocabularySummaryList(VocabularySummaryListT&& value) { m_vocabularySummaryListHasBeenSet = true; m_vocabularySummaryList.emplace_back(std::forward<VocabularySummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchVocabulariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchVocabulariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchVocabulariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchVocabulariesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchVocabulariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchVocabulariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchVocabulariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchVocabulariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VocabularySummary> m_vocabularySummaryList;
+    bool m_vocabularySummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

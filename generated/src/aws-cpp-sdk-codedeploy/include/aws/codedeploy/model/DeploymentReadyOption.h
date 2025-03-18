@@ -32,7 +32,7 @@ namespace Model
   class DeploymentReadyOption
   {
   public:
-    AWS_CODEDEPLOY_API DeploymentReadyOption();
+    AWS_CODEDEPLOY_API DeploymentReadyOption() = default;
     AWS_CODEDEPLOY_API DeploymentReadyOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API DeploymentReadyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * the specified wait period, the deployment status is changed to Stopped.</p>
      * </li> </ul>
      */
-    inline const DeploymentReadyAction& GetActionOnTimeout() const{ return m_actionOnTimeout; }
+    inline DeploymentReadyAction GetActionOnTimeout() const { return m_actionOnTimeout; }
     inline bool ActionOnTimeoutHasBeenSet() const { return m_actionOnTimeoutHasBeenSet; }
-    inline void SetActionOnTimeout(const DeploymentReadyAction& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = value; }
-    inline void SetActionOnTimeout(DeploymentReadyAction&& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = std::move(value); }
-    inline DeploymentReadyOption& WithActionOnTimeout(const DeploymentReadyAction& value) { SetActionOnTimeout(value); return *this;}
-    inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction&& value) { SetActionOnTimeout(std::move(value)); return *this;}
+    inline void SetActionOnTimeout(DeploymentReadyAction value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = value; }
+    inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction value) { SetActionOnTimeout(value); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +62,17 @@ namespace Model
      * changed to Stopped if rerouting is not started manually. Applies only to the
      * <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
      */
-    inline int GetWaitTimeInMinutes() const{ return m_waitTimeInMinutes; }
+    inline int GetWaitTimeInMinutes() const { return m_waitTimeInMinutes; }
     inline bool WaitTimeInMinutesHasBeenSet() const { return m_waitTimeInMinutesHasBeenSet; }
     inline void SetWaitTimeInMinutes(int value) { m_waitTimeInMinutesHasBeenSet = true; m_waitTimeInMinutes = value; }
     inline DeploymentReadyOption& WithWaitTimeInMinutes(int value) { SetWaitTimeInMinutes(value); return *this;}
     ///@}
   private:
 
-    DeploymentReadyAction m_actionOnTimeout;
+    DeploymentReadyAction m_actionOnTimeout{DeploymentReadyAction::NOT_SET};
     bool m_actionOnTimeoutHasBeenSet = false;
 
-    int m_waitTimeInMinutes;
+    int m_waitTimeInMinutes{0};
     bool m_waitTimeInMinutesHasBeenSet = false;
   };
 

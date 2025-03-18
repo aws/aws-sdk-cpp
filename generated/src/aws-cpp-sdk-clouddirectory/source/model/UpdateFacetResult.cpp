@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFacetResult::UpdateFacetResult()
-{
-}
-
 UpdateFacetResult::UpdateFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ UpdateFacetResult& UpdateFacetResult::operator =(const Aws::AmazonWebServiceResu
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

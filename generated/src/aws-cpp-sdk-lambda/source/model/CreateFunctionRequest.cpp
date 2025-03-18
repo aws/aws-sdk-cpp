@@ -12,39 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFunctionRequest::CreateFunctionRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_handlerHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_publish(false),
-    m_publishHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false),
-    m_imageConfigHasBeenSet(false),
-    m_codeSigningConfigArnHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateFunctionRequest::SerializePayload() const
 {
   JsonValue payload;

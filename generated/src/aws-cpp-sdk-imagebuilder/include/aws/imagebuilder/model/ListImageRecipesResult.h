@@ -29,7 +29,7 @@ namespace Model
   class ListImageRecipesResult
   {
   public:
-    AWS_IMAGEBUILDER_API ListImageRecipesResult();
+    AWS_IMAGEBUILDER_API ListImageRecipesResult() = default;
     AWS_IMAGEBUILDER_API ListImageRecipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API ListImageRecipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListImageRecipesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListImageRecipesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListImageRecipesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListImageRecipesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of image pipelines.</p>
      */
-    inline const Aws::Vector<ImageRecipeSummary>& GetImageRecipeSummaryList() const{ return m_imageRecipeSummaryList; }
-    inline void SetImageRecipeSummaryList(const Aws::Vector<ImageRecipeSummary>& value) { m_imageRecipeSummaryList = value; }
-    inline void SetImageRecipeSummaryList(Aws::Vector<ImageRecipeSummary>&& value) { m_imageRecipeSummaryList = std::move(value); }
-    inline ListImageRecipesResult& WithImageRecipeSummaryList(const Aws::Vector<ImageRecipeSummary>& value) { SetImageRecipeSummaryList(value); return *this;}
-    inline ListImageRecipesResult& WithImageRecipeSummaryList(Aws::Vector<ImageRecipeSummary>&& value) { SetImageRecipeSummaryList(std::move(value)); return *this;}
-    inline ListImageRecipesResult& AddImageRecipeSummaryList(const ImageRecipeSummary& value) { m_imageRecipeSummaryList.push_back(value); return *this; }
-    inline ListImageRecipesResult& AddImageRecipeSummaryList(ImageRecipeSummary&& value) { m_imageRecipeSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImageRecipeSummary>& GetImageRecipeSummaryList() const { return m_imageRecipeSummaryList; }
+    template<typename ImageRecipeSummaryListT = Aws::Vector<ImageRecipeSummary>>
+    void SetImageRecipeSummaryList(ImageRecipeSummaryListT&& value) { m_imageRecipeSummaryListHasBeenSet = true; m_imageRecipeSummaryList = std::forward<ImageRecipeSummaryListT>(value); }
+    template<typename ImageRecipeSummaryListT = Aws::Vector<ImageRecipeSummary>>
+    ListImageRecipesResult& WithImageRecipeSummaryList(ImageRecipeSummaryListT&& value) { SetImageRecipeSummaryList(std::forward<ImageRecipeSummaryListT>(value)); return *this;}
+    template<typename ImageRecipeSummaryListT = ImageRecipeSummary>
+    ListImageRecipesResult& AddImageRecipeSummaryList(ImageRecipeSummaryListT&& value) { m_imageRecipeSummaryListHasBeenSet = true; m_imageRecipeSummaryList.emplace_back(std::forward<ImageRecipeSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,21 +64,22 @@ namespace Model
      * there are additional elements that the service hasn't included in this request.
      * Use this token with the next request to retrieve additional objects.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImageRecipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImageRecipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImageRecipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImageRecipesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Vector<ImageRecipeSummary> m_imageRecipeSummaryList;
+    bool m_imageRecipeSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

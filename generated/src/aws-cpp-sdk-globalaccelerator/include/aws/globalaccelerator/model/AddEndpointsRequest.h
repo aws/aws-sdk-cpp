@@ -23,7 +23,7 @@ namespace Model
   class AddEndpointsRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API AddEndpointsRequest();
+    AWS_GLOBALACCELERATOR_API AddEndpointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>The list of endpoint objects.</p>
      */
-    inline const Aws::Vector<EndpointConfiguration>& GetEndpointConfigurations() const{ return m_endpointConfigurations; }
+    inline const Aws::Vector<EndpointConfiguration>& GetEndpointConfigurations() const { return m_endpointConfigurations; }
     inline bool EndpointConfigurationsHasBeenSet() const { return m_endpointConfigurationsHasBeenSet; }
-    inline void SetEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = value; }
-    inline void SetEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::move(value); }
-    inline AddEndpointsRequest& WithEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { SetEndpointConfigurations(value); return *this;}
-    inline AddEndpointsRequest& WithEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { SetEndpointConfigurations(std::move(value)); return *this;}
-    inline AddEndpointsRequest& AddEndpointConfigurations(const EndpointConfiguration& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(value); return *this; }
-    inline AddEndpointsRequest& AddEndpointConfigurations(EndpointConfiguration&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(std::move(value)); return *this; }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointConfiguration>>
+    void SetEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::forward<EndpointConfigurationsT>(value); }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointConfiguration>>
+    AddEndpointsRequest& WithEndpointConfigurations(EndpointConfigurationsT&& value) { SetEndpointConfigurations(std::forward<EndpointConfigurationsT>(value)); return *this;}
+    template<typename EndpointConfigurationsT = EndpointConfiguration>
+    AddEndpointsRequest& AddEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.emplace_back(std::forward<EndpointConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
-    inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
+    inline const Aws::String& GetEndpointGroupArn() const { return m_endpointGroupArn; }
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-    inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-    inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-    inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-    inline AddEndpointsRequest& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-    inline AddEndpointsRequest& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-    inline AddEndpointsRequest& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    template<typename EndpointGroupArnT = Aws::String>
+    void SetEndpointGroupArn(EndpointGroupArnT&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::forward<EndpointGroupArnT>(value); }
+    template<typename EndpointGroupArnT = Aws::String>
+    AddEndpointsRequest& WithEndpointGroupArn(EndpointGroupArnT&& value) { SetEndpointGroupArn(std::forward<EndpointGroupArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,15 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest() : 
-    m_sourceSnapshotNameHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false),
-    m_targetBucketHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopySnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

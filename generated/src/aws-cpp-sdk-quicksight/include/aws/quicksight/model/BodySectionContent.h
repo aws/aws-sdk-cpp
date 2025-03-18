@@ -31,7 +31,7 @@ namespace Model
   class BodySectionContent
   {
   public:
-    AWS_QUICKSIGHT_API BodySectionContent();
+    AWS_QUICKSIGHT_API BodySectionContent() = default;
     AWS_QUICKSIGHT_API BodySectionContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BodySectionContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The layout configuration of a body section.</p>
      */
-    inline const SectionLayoutConfiguration& GetLayout() const{ return m_layout; }
+    inline const SectionLayoutConfiguration& GetLayout() const { return m_layout; }
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-    inline void SetLayout(const SectionLayoutConfiguration& value) { m_layoutHasBeenSet = true; m_layout = value; }
-    inline void SetLayout(SectionLayoutConfiguration&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-    inline BodySectionContent& WithLayout(const SectionLayoutConfiguration& value) { SetLayout(value); return *this;}
-    inline BodySectionContent& WithLayout(SectionLayoutConfiguration&& value) { SetLayout(std::move(value)); return *this;}
+    template<typename LayoutT = SectionLayoutConfiguration>
+    void SetLayout(LayoutT&& value) { m_layoutHasBeenSet = true; m_layout = std::forward<LayoutT>(value); }
+    template<typename LayoutT = SectionLayoutConfiguration>
+    BodySectionContent& WithLayout(LayoutT&& value) { SetLayout(std::forward<LayoutT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult()
-{
-}
-
 DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ DescribeWorkflowExecutionResult& DescribeWorkflowExecutionResult::operator =(con
   if(jsonValue.ValueExists("executionInfo"))
   {
     m_executionInfo = jsonValue.GetObject("executionInfo");
-
+    m_executionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionConfiguration"))
   {
     m_executionConfiguration = jsonValue.GetObject("executionConfiguration");
-
+    m_executionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openCounts"))
   {
     m_openCounts = jsonValue.GetObject("openCounts");
-
+    m_openCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestActivityTaskTimestamp"))
   {
     m_latestActivityTaskTimestamp = jsonValue.GetDouble("latestActivityTaskTimestamp");
-
+    m_latestActivityTaskTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestExecutionContext"))
   {
     m_latestExecutionContext = jsonValue.GetString("latestExecutionContext");
-
+    m_latestExecutionContextHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

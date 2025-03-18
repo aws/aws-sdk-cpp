@@ -22,7 +22,7 @@ namespace Model
   class ModifyDataProviderRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataProviderRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,42 +41,36 @@ namespace Model
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
      * hyphen, or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetDataProviderIdentifier() const{ return m_dataProviderIdentifier; }
+    inline const Aws::String& GetDataProviderIdentifier() const { return m_dataProviderIdentifier; }
     inline bool DataProviderIdentifierHasBeenSet() const { return m_dataProviderIdentifierHasBeenSet; }
-    inline void SetDataProviderIdentifier(const Aws::String& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = value; }
-    inline void SetDataProviderIdentifier(Aws::String&& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = std::move(value); }
-    inline void SetDataProviderIdentifier(const char* value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier.assign(value); }
-    inline ModifyDataProviderRequest& WithDataProviderIdentifier(const Aws::String& value) { SetDataProviderIdentifier(value); return *this;}
-    inline ModifyDataProviderRequest& WithDataProviderIdentifier(Aws::String&& value) { SetDataProviderIdentifier(std::move(value)); return *this;}
-    inline ModifyDataProviderRequest& WithDataProviderIdentifier(const char* value) { SetDataProviderIdentifier(value); return *this;}
+    template<typename DataProviderIdentifierT = Aws::String>
+    void SetDataProviderIdentifier(DataProviderIdentifierT&& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = std::forward<DataProviderIdentifierT>(value); }
+    template<typename DataProviderIdentifierT = Aws::String>
+    ModifyDataProviderRequest& WithDataProviderIdentifier(DataProviderIdentifierT&& value) { SetDataProviderIdentifier(std::forward<DataProviderIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data provider.</p>
      */
-    inline const Aws::String& GetDataProviderName() const{ return m_dataProviderName; }
+    inline const Aws::String& GetDataProviderName() const { return m_dataProviderName; }
     inline bool DataProviderNameHasBeenSet() const { return m_dataProviderNameHasBeenSet; }
-    inline void SetDataProviderName(const Aws::String& value) { m_dataProviderNameHasBeenSet = true; m_dataProviderName = value; }
-    inline void SetDataProviderName(Aws::String&& value) { m_dataProviderNameHasBeenSet = true; m_dataProviderName = std::move(value); }
-    inline void SetDataProviderName(const char* value) { m_dataProviderNameHasBeenSet = true; m_dataProviderName.assign(value); }
-    inline ModifyDataProviderRequest& WithDataProviderName(const Aws::String& value) { SetDataProviderName(value); return *this;}
-    inline ModifyDataProviderRequest& WithDataProviderName(Aws::String&& value) { SetDataProviderName(std::move(value)); return *this;}
-    inline ModifyDataProviderRequest& WithDataProviderName(const char* value) { SetDataProviderName(value); return *this;}
+    template<typename DataProviderNameT = Aws::String>
+    void SetDataProviderName(DataProviderNameT&& value) { m_dataProviderNameHasBeenSet = true; m_dataProviderName = std::forward<DataProviderNameT>(value); }
+    template<typename DataProviderNameT = Aws::String>
+    ModifyDataProviderRequest& WithDataProviderName(DataProviderNameT&& value) { SetDataProviderName(std::forward<DataProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly description of the data provider.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyDataProviderRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyDataProviderRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyDataProviderRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyDataProviderRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of
      * <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline ModifyDataProviderRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline ModifyDataProviderRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline ModifyDataProviderRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    ModifyDataProviderRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +100,7 @@ namespace Model
      * the same names.</p> </li> <li> <p>It creates new data provider settings that you
      * specify in the call, for settings with different names. </p> </li> </ul>
      */
-    inline bool GetExactSettings() const{ return m_exactSettings; }
+    inline bool GetExactSettings() const { return m_exactSettings; }
     inline bool ExactSettingsHasBeenSet() const { return m_exactSettingsHasBeenSet; }
     inline void SetExactSettings(bool value) { m_exactSettingsHasBeenSet = true; m_exactSettings = value; }
     inline ModifyDataProviderRequest& WithExactSettings(bool value) { SetExactSettings(value); return *this;}
@@ -118,12 +110,12 @@ namespace Model
     /**
      * <p>The settings in JSON format for a data provider.</p>
      */
-    inline const DataProviderSettings& GetSettings() const{ return m_settings; }
+    inline const DataProviderSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const DataProviderSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(DataProviderSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline ModifyDataProviderRequest& WithSettings(const DataProviderSettings& value) { SetSettings(value); return *this;}
-    inline ModifyDataProviderRequest& WithSettings(DataProviderSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = DataProviderSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = DataProviderSettings>
+    ModifyDataProviderRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -139,7 +131,7 @@ namespace Model
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
 
-    bool m_exactSettings;
+    bool m_exactSettings{false};
     bool m_exactSettingsHasBeenSet = false;
 
     DataProviderSettings m_settings;

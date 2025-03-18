@@ -28,7 +28,7 @@ namespace Model
   class UpdateAssessmentControlSetStatusResult
   {
   public:
-    AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusResult();
+    AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusResult() = default;
     AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> The name of the updated control set that the
      * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
      */
-    inline const AssessmentControlSet& GetControlSet() const{ return m_controlSet; }
-    inline void SetControlSet(const AssessmentControlSet& value) { m_controlSet = value; }
-    inline void SetControlSet(AssessmentControlSet&& value) { m_controlSet = std::move(value); }
-    inline UpdateAssessmentControlSetStatusResult& WithControlSet(const AssessmentControlSet& value) { SetControlSet(value); return *this;}
-    inline UpdateAssessmentControlSetStatusResult& WithControlSet(AssessmentControlSet&& value) { SetControlSet(std::move(value)); return *this;}
+    inline const AssessmentControlSet& GetControlSet() const { return m_controlSet; }
+    template<typename ControlSetT = AssessmentControlSet>
+    void SetControlSet(ControlSetT&& value) { m_controlSetHasBeenSet = true; m_controlSet = std::forward<ControlSetT>(value); }
+    template<typename ControlSetT = AssessmentControlSet>
+    UpdateAssessmentControlSetStatusResult& WithControlSet(ControlSetT&& value) { SetControlSet(std::forward<ControlSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAssessmentControlSetStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAssessmentControlSetStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAssessmentControlSetStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAssessmentControlSetStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssessmentControlSet m_controlSet;
+    bool m_controlSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

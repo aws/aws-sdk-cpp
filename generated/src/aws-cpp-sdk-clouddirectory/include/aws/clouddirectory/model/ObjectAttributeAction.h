@@ -32,7 +32,7 @@ namespace Model
   class ObjectAttributeAction
   {
   public:
-    AWS_CLOUDDIRECTORY_API ObjectAttributeAction();
+    AWS_CLOUDDIRECTORY_API ObjectAttributeAction() = default;
     AWS_CLOUDDIRECTORY_API ObjectAttributeAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API ObjectAttributeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
-    inline const UpdateActionType& GetObjectAttributeActionType() const{ return m_objectAttributeActionType; }
+    inline UpdateActionType GetObjectAttributeActionType() const { return m_objectAttributeActionType; }
     inline bool ObjectAttributeActionTypeHasBeenSet() const { return m_objectAttributeActionTypeHasBeenSet; }
-    inline void SetObjectAttributeActionType(const UpdateActionType& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = value; }
-    inline void SetObjectAttributeActionType(UpdateActionType&& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = std::move(value); }
-    inline ObjectAttributeAction& WithObjectAttributeActionType(const UpdateActionType& value) { SetObjectAttributeActionType(value); return *this;}
-    inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType&& value) { SetObjectAttributeActionType(std::move(value)); return *this;}
+    inline void SetObjectAttributeActionType(UpdateActionType value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = value; }
+    inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType value) { SetObjectAttributeActionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that you want to update to.</p>
      */
-    inline const TypedAttributeValue& GetObjectAttributeUpdateValue() const{ return m_objectAttributeUpdateValue; }
+    inline const TypedAttributeValue& GetObjectAttributeUpdateValue() const { return m_objectAttributeUpdateValue; }
     inline bool ObjectAttributeUpdateValueHasBeenSet() const { return m_objectAttributeUpdateValueHasBeenSet; }
-    inline void SetObjectAttributeUpdateValue(const TypedAttributeValue& value) { m_objectAttributeUpdateValueHasBeenSet = true; m_objectAttributeUpdateValue = value; }
-    inline void SetObjectAttributeUpdateValue(TypedAttributeValue&& value) { m_objectAttributeUpdateValueHasBeenSet = true; m_objectAttributeUpdateValue = std::move(value); }
-    inline ObjectAttributeAction& WithObjectAttributeUpdateValue(const TypedAttributeValue& value) { SetObjectAttributeUpdateValue(value); return *this;}
-    inline ObjectAttributeAction& WithObjectAttributeUpdateValue(TypedAttributeValue&& value) { SetObjectAttributeUpdateValue(std::move(value)); return *this;}
+    template<typename ObjectAttributeUpdateValueT = TypedAttributeValue>
+    void SetObjectAttributeUpdateValue(ObjectAttributeUpdateValueT&& value) { m_objectAttributeUpdateValueHasBeenSet = true; m_objectAttributeUpdateValue = std::forward<ObjectAttributeUpdateValueT>(value); }
+    template<typename ObjectAttributeUpdateValueT = TypedAttributeValue>
+    ObjectAttributeAction& WithObjectAttributeUpdateValue(ObjectAttributeUpdateValueT&& value) { SetObjectAttributeUpdateValue(std::forward<ObjectAttributeUpdateValueT>(value)); return *this;}
     ///@}
   private:
 
-    UpdateActionType m_objectAttributeActionType;
+    UpdateActionType m_objectAttributeActionType{UpdateActionType::NOT_SET};
     bool m_objectAttributeActionTypeHasBeenSet = false;
 
     TypedAttributeValue m_objectAttributeUpdateValue;

@@ -18,24 +18,7 @@ namespace Route53Profiles
 namespace Model
 {
 
-Profile::Profile() : 
-    m_arnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_status(ProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 Profile::Profile(JsonView jsonValue)
-  : Profile()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ Profile& Profile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientToken"))
   {
     m_clientToken = jsonValue.GetString("ClientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModificationTime"))
   {
     m_modificationTime = jsonValue.GetDouble("ModificationTime");
-
     m_modificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareStatus"))
   {
     m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
-
     m_shareStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProfileStatusMapper::GetProfileStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

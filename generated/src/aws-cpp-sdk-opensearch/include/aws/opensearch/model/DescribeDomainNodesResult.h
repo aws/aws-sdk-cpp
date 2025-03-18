@@ -36,7 +36,7 @@ namespace Model
   class DescribeDomainNodesResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DescribeDomainNodesResult();
+    AWS_OPENSEARCHSERVICE_API DescribeDomainNodesResult() = default;
     AWS_OPENSEARCHSERVICE_API DescribeDomainNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API DescribeDomainNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,30 +46,30 @@ namespace Model
      * <p>Contains nodes information list <code>DomainNodesStatusList</code> with
      * details about the all nodes on the requested domain.</p>
      */
-    inline const Aws::Vector<DomainNodesStatus>& GetDomainNodesStatusList() const{ return m_domainNodesStatusList; }
-    inline void SetDomainNodesStatusList(const Aws::Vector<DomainNodesStatus>& value) { m_domainNodesStatusList = value; }
-    inline void SetDomainNodesStatusList(Aws::Vector<DomainNodesStatus>&& value) { m_domainNodesStatusList = std::move(value); }
-    inline DescribeDomainNodesResult& WithDomainNodesStatusList(const Aws::Vector<DomainNodesStatus>& value) { SetDomainNodesStatusList(value); return *this;}
-    inline DescribeDomainNodesResult& WithDomainNodesStatusList(Aws::Vector<DomainNodesStatus>&& value) { SetDomainNodesStatusList(std::move(value)); return *this;}
-    inline DescribeDomainNodesResult& AddDomainNodesStatusList(const DomainNodesStatus& value) { m_domainNodesStatusList.push_back(value); return *this; }
-    inline DescribeDomainNodesResult& AddDomainNodesStatusList(DomainNodesStatus&& value) { m_domainNodesStatusList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainNodesStatus>& GetDomainNodesStatusList() const { return m_domainNodesStatusList; }
+    template<typename DomainNodesStatusListT = Aws::Vector<DomainNodesStatus>>
+    void SetDomainNodesStatusList(DomainNodesStatusListT&& value) { m_domainNodesStatusListHasBeenSet = true; m_domainNodesStatusList = std::forward<DomainNodesStatusListT>(value); }
+    template<typename DomainNodesStatusListT = Aws::Vector<DomainNodesStatus>>
+    DescribeDomainNodesResult& WithDomainNodesStatusList(DomainNodesStatusListT&& value) { SetDomainNodesStatusList(std::forward<DomainNodesStatusListT>(value)); return *this;}
+    template<typename DomainNodesStatusListT = DomainNodesStatus>
+    DescribeDomainNodesResult& AddDomainNodesStatusList(DomainNodesStatusListT&& value) { m_domainNodesStatusListHasBeenSet = true; m_domainNodesStatusList.emplace_back(std::forward<DomainNodesStatusListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDomainNodesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDomainNodesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDomainNodesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDomainNodesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainNodesStatus> m_domainNodesStatusList;
+    bool m_domainNodesStatusListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class ListCidrLocationsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListCidrLocationsRequest();
+    AWS_ROUTE53_API ListCidrLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The CIDR collection ID.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline ListCidrLocationsRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline ListCidrLocationsRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline ListCidrLocationsRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    ListCidrLocationsRequest& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * enumerating results.</p> <p>If no value is provided, the listing of results
      * starts from the beginning.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCidrLocationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCidrLocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCidrLocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCidrLocationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The maximum number of CIDR collection locations to return in the
      * response.</p>
      */
-    inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-    inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-    inline ListCidrLocationsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-    inline ListCidrLocationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-    inline ListCidrLocationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+    template<typename MaxResultsT = Aws::String>
+    void SetMaxResults(MaxResultsT&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::forward<MaxResultsT>(value); }
+    template<typename MaxResultsT = Aws::String>
+    ListCidrLocationsRequest& WithMaxResults(MaxResultsT&& value) { SetMaxResults(std::forward<MaxResultsT>(value)); return *this;}
     ///@}
   private:
 

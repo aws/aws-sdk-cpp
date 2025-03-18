@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGroupRequest::DeleteGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class AssociateResourceError
   {
   public:
-    AWS_BILLINGCONDUCTOR_API AssociateResourceError();
+    AWS_BILLINGCONDUCTOR_API AssociateResourceError() = default;
     AWS_BILLINGCONDUCTOR_API AssociateResourceError(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API AssociateResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The reason why the resource association failed.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AssociateResourceError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AssociateResourceError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AssociateResourceError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AssociateResourceError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A static error code that's used to classify the type of failure.</p>
      */
-    inline const AssociateResourceErrorReason& GetReason() const{ return m_reason; }
+    inline AssociateResourceErrorReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const AssociateResourceErrorReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(AssociateResourceErrorReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline AssociateResourceError& WithReason(const AssociateResourceErrorReason& value) { SetReason(value); return *this;}
-    inline AssociateResourceError& WithReason(AssociateResourceErrorReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(AssociateResourceErrorReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline AssociateResourceError& WithReason(AssociateResourceErrorReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    AssociateResourceErrorReason m_reason;
+    AssociateResourceErrorReason m_reason{AssociateResourceErrorReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

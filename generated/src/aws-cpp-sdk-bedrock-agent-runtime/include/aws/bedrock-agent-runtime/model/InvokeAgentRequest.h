@@ -26,7 +26,7 @@ namespace Model
   class InvokeAgentRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvokeAgentRequest();
+    AWS_BEDROCKAGENTRUNTIME_API InvokeAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -64,40 +64,36 @@ namespace Model
     /**
      * <p>The alias of the agent to use.</p>
      */
-    inline const Aws::String& GetAgentAliasId() const{ return m_agentAliasId; }
+    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
     inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-    inline void SetAgentAliasId(const Aws::String& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = value; }
-    inline void SetAgentAliasId(Aws::String&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::move(value); }
-    inline void SetAgentAliasId(const char* value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId.assign(value); }
-    inline InvokeAgentRequest& WithAgentAliasId(const Aws::String& value) { SetAgentAliasId(value); return *this;}
-    inline InvokeAgentRequest& WithAgentAliasId(Aws::String&& value) { SetAgentAliasId(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithAgentAliasId(const char* value) { SetAgentAliasId(value); return *this;}
+    template<typename AgentAliasIdT = Aws::String>
+    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
+    template<typename AgentAliasIdT = Aws::String>
+    InvokeAgentRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent to use.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline InvokeAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline InvokeAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    InvokeAgentRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Model performance settings for the request.</p>
      */
-    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
+    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
     inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
-    inline void SetBedrockModelConfigurations(const BedrockModelConfigurations& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = value; }
-    inline void SetBedrockModelConfigurations(BedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
-    inline InvokeAgentRequest& WithBedrockModelConfigurations(const BedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
-    inline InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
+    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
+    void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value); }
+    template<typename BedrockModelConfigurationsT = BedrockModelConfigurations>
+    InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +103,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
      * enablement</a>.</p>
      */
-    inline bool GetEnableTrace() const{ return m_enableTrace; }
+    inline bool GetEnableTrace() const { return m_enableTrace; }
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
     inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
     inline InvokeAgentRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
@@ -117,7 +113,7 @@ namespace Model
     /**
      * <p>Specifies whether to end the session with the agent or not.</p>
      */
-    inline bool GetEndSession() const{ return m_endSession; }
+    inline bool GetEndSession() const { return m_endSession; }
     inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
     inline void SetEndSession(bool value) { m_endSessionHasBeenSet = true; m_endSession = value; }
     inline InvokeAgentRequest& WithEndSession(bool value) { SetEndSession(value); return *this;}
@@ -129,28 +125,24 @@ namespace Model
      * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
      * field, the <code>inputText</code> field will be ignored.</p> 
      */
-    inline const Aws::String& GetInputText() const{ return m_inputText; }
+    inline const Aws::String& GetInputText() const { return m_inputText; }
     inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
-    inline void SetInputText(const Aws::String& value) { m_inputTextHasBeenSet = true; m_inputText = value; }
-    inline void SetInputText(Aws::String&& value) { m_inputTextHasBeenSet = true; m_inputText = std::move(value); }
-    inline void SetInputText(const char* value) { m_inputTextHasBeenSet = true; m_inputText.assign(value); }
-    inline InvokeAgentRequest& WithInputText(const Aws::String& value) { SetInputText(value); return *this;}
-    inline InvokeAgentRequest& WithInputText(Aws::String&& value) { SetInputText(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithInputText(const char* value) { SetInputText(value); return *this;}
+    template<typename InputTextT = Aws::String>
+    void SetInputText(InputTextT&& value) { m_inputTextHasBeenSet = true; m_inputText = std::forward<InputTextT>(value); }
+    template<typename InputTextT = Aws::String>
+    InvokeAgentRequest& WithInputText(InputTextT&& value) { SetInputText(std::forward<InputTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent memory.</p>
      */
-    inline const Aws::String& GetMemoryId() const{ return m_memoryId; }
+    inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
-    inline void SetMemoryId(const Aws::String& value) { m_memoryIdHasBeenSet = true; m_memoryId = value; }
-    inline void SetMemoryId(Aws::String&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::move(value); }
-    inline void SetMemoryId(const char* value) { m_memoryIdHasBeenSet = true; m_memoryId.assign(value); }
-    inline InvokeAgentRequest& WithMemoryId(const Aws::String& value) { SetMemoryId(value); return *this;}
-    inline InvokeAgentRequest& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
+    template<typename MemoryIdT = Aws::String>
+    void SetMemoryId(MemoryIdT&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::forward<MemoryIdT>(value); }
+    template<typename MemoryIdT = Aws::String>
+    InvokeAgentRequest& WithMemoryId(MemoryIdT&& value) { SetMemoryId(std::forward<MemoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +150,12 @@ namespace Model
      * <p>The unique identifier of the session. Use the same value across requests to
      * continue the same conversation.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InvokeAgentRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InvokeAgentRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvokeAgentRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,26 +167,24 @@ namespace Model
      * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
      * field, the <code>inputText</code> field will be ignored.</p> 
      */
-    inline const SessionState& GetSessionState() const{ return m_sessionState; }
+    inline const SessionState& GetSessionState() const { return m_sessionState; }
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-    inline void SetSessionState(const SessionState& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
-    inline void SetSessionState(SessionState&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
-    inline InvokeAgentRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
-    inline InvokeAgentRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
+    template<typename SessionStateT = SessionState>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = SessionState>
+    InvokeAgentRequest& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the resource making the request.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline InvokeAgentRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline InvokeAgentRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline InvokeAgentRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    InvokeAgentRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,12 +193,12 @@ namespace Model
      * streaming, you need permissions to perform the
      * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
      */
-    inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
+    inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
     inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
-    inline void SetStreamingConfigurations(const StreamingConfigurations& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = value; }
-    inline void SetStreamingConfigurations(StreamingConfigurations&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::move(value); }
-    inline InvokeAgentRequest& WithStreamingConfigurations(const StreamingConfigurations& value) { SetStreamingConfigurations(value); return *this;}
-    inline InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurations&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    void SetStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value); }
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) { SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value)); return *this;}
     ///@}
   private:
 
@@ -223,10 +211,10 @@ namespace Model
     BedrockModelConfigurations m_bedrockModelConfigurations;
     bool m_bedrockModelConfigurationsHasBeenSet = false;
 
-    bool m_enableTrace;
+    bool m_enableTrace{false};
     bool m_enableTraceHasBeenSet = false;
 
-    bool m_endSession;
+    bool m_endSession{false};
     bool m_endSessionHasBeenSet = false;
 
     Aws::String m_inputText;
@@ -247,7 +235,7 @@ namespace Model
     StreamingConfigurations m_streamingConfigurations;
     bool m_streamingConfigurationsHasBeenSet = false;
     InvokeAgentHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

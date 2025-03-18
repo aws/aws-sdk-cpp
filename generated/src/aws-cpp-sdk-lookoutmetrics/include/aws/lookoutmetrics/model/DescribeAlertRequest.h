@@ -21,7 +21,7 @@ namespace Model
   class DescribeAlertRequest : public LookoutMetricsRequest
   {
   public:
-    AWS_LOOKOUTMETRICS_API DescribeAlertRequest();
+    AWS_LOOKOUTMETRICS_API DescribeAlertRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the alert to describe.</p>
      */
-    inline const Aws::String& GetAlertArn() const{ return m_alertArn; }
+    inline const Aws::String& GetAlertArn() const { return m_alertArn; }
     inline bool AlertArnHasBeenSet() const { return m_alertArnHasBeenSet; }
-    inline void SetAlertArn(const Aws::String& value) { m_alertArnHasBeenSet = true; m_alertArn = value; }
-    inline void SetAlertArn(Aws::String&& value) { m_alertArnHasBeenSet = true; m_alertArn = std::move(value); }
-    inline void SetAlertArn(const char* value) { m_alertArnHasBeenSet = true; m_alertArn.assign(value); }
-    inline DescribeAlertRequest& WithAlertArn(const Aws::String& value) { SetAlertArn(value); return *this;}
-    inline DescribeAlertRequest& WithAlertArn(Aws::String&& value) { SetAlertArn(std::move(value)); return *this;}
-    inline DescribeAlertRequest& WithAlertArn(const char* value) { SetAlertArn(value); return *this;}
+    template<typename AlertArnT = Aws::String>
+    void SetAlertArn(AlertArnT&& value) { m_alertArnHasBeenSet = true; m_alertArn = std::forward<AlertArnT>(value); }
+    template<typename AlertArnT = Aws::String>
+    DescribeAlertRequest& WithAlertArn(AlertArnT&& value) { SetAlertArn(std::forward<AlertArnT>(value)); return *this;}
     ///@}
   private:
 

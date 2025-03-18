@@ -18,29 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SourceConnectorProperties::SourceConnectorProperties() : 
-    m_amplitudeHasBeenSet(false),
-    m_datadogHasBeenSet(false),
-    m_dynatraceHasBeenSet(false),
-    m_googleAnalyticsHasBeenSet(false),
-    m_inforNexusHasBeenSet(false),
-    m_marketoHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_salesforceHasBeenSet(false),
-    m_serviceNowHasBeenSet(false),
-    m_singularHasBeenSet(false),
-    m_slackHasBeenSet(false),
-    m_trendmicroHasBeenSet(false),
-    m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false),
-    m_sAPODataHasBeenSet(false),
-    m_customConnectorHasBeenSet(false),
-    m_pardotHasBeenSet(false)
-{
-}
-
 SourceConnectorProperties::SourceConnectorProperties(JsonView jsonValue)
-  : SourceConnectorProperties()
 {
   *this = jsonValue;
 }
@@ -50,122 +28,88 @@ SourceConnectorProperties& SourceConnectorProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Amplitude"))
   {
     m_amplitude = jsonValue.GetObject("Amplitude");
-
     m_amplitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Datadog"))
   {
     m_datadog = jsonValue.GetObject("Datadog");
-
     m_datadogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dynatrace"))
   {
     m_dynatrace = jsonValue.GetObject("Dynatrace");
-
     m_dynatraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GoogleAnalytics"))
   {
     m_googleAnalytics = jsonValue.GetObject("GoogleAnalytics");
-
     m_googleAnalyticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InforNexus"))
   {
     m_inforNexus = jsonValue.GetObject("InforNexus");
-
     m_inforNexusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marketo"))
   {
     m_marketo = jsonValue.GetObject("Marketo");
-
     m_marketoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Salesforce"))
   {
     m_salesforce = jsonValue.GetObject("Salesforce");
-
     m_salesforceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNow"))
   {
     m_serviceNow = jsonValue.GetObject("ServiceNow");
-
     m_serviceNowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Singular"))
   {
     m_singular = jsonValue.GetObject("Singular");
-
     m_singularHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Slack"))
   {
     m_slack = jsonValue.GetObject("Slack");
-
     m_slackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Trendmicro"))
   {
     m_trendmicro = jsonValue.GetObject("Trendmicro");
-
     m_trendmicroHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Veeva"))
   {
     m_veeva = jsonValue.GetObject("Veeva");
-
     m_veevaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Zendesk"))
   {
     m_zendesk = jsonValue.GetObject("Zendesk");
-
     m_zendeskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAPOData"))
   {
     m_sAPOData = jsonValue.GetObject("SAPOData");
-
     m_sAPODataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomConnector"))
   {
     m_customConnector = jsonValue.GetObject("CustomConnector");
-
     m_customConnectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pardot"))
   {
     m_pardot = jsonValue.GetObject("Pardot");
-
     m_pardotHasBeenSet = true;
   }
-
   return *this;
 }
 

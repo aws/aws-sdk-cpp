@@ -34,7 +34,7 @@ namespace Model
   class PanelTitleOptions
   {
   public:
-    AWS_QUICKSIGHT_API PanelTitleOptions();
+    AWS_QUICKSIGHT_API PanelTitleOptions() = default;
     AWS_QUICKSIGHT_API PanelTitleOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PanelTitleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,44 +44,40 @@ namespace Model
     /**
      * <p>Determines whether or not panel titles are displayed.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline PanelTitleOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline PanelTitleOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline PanelTitleOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const FontConfiguration& GetFontConfiguration() const{ return m_fontConfiguration; }
+    inline const FontConfiguration& GetFontConfiguration() const { return m_fontConfiguration; }
     inline bool FontConfigurationHasBeenSet() const { return m_fontConfigurationHasBeenSet; }
-    inline void SetFontConfiguration(const FontConfiguration& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = value; }
-    inline void SetFontConfiguration(FontConfiguration&& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = std::move(value); }
-    inline PanelTitleOptions& WithFontConfiguration(const FontConfiguration& value) { SetFontConfiguration(value); return *this;}
-    inline PanelTitleOptions& WithFontConfiguration(FontConfiguration&& value) { SetFontConfiguration(std::move(value)); return *this;}
+    template<typename FontConfigurationT = FontConfiguration>
+    void SetFontConfiguration(FontConfigurationT&& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = std::forward<FontConfigurationT>(value); }
+    template<typename FontConfigurationT = FontConfiguration>
+    PanelTitleOptions& WithFontConfiguration(FontConfigurationT&& value) { SetFontConfiguration(std::forward<FontConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sets the horizontal text alignment of the title within each panel.</p>
      */
-    inline const HorizontalTextAlignment& GetHorizontalTextAlignment() const{ return m_horizontalTextAlignment; }
+    inline HorizontalTextAlignment GetHorizontalTextAlignment() const { return m_horizontalTextAlignment; }
     inline bool HorizontalTextAlignmentHasBeenSet() const { return m_horizontalTextAlignmentHasBeenSet; }
-    inline void SetHorizontalTextAlignment(const HorizontalTextAlignment& value) { m_horizontalTextAlignmentHasBeenSet = true; m_horizontalTextAlignment = value; }
-    inline void SetHorizontalTextAlignment(HorizontalTextAlignment&& value) { m_horizontalTextAlignmentHasBeenSet = true; m_horizontalTextAlignment = std::move(value); }
-    inline PanelTitleOptions& WithHorizontalTextAlignment(const HorizontalTextAlignment& value) { SetHorizontalTextAlignment(value); return *this;}
-    inline PanelTitleOptions& WithHorizontalTextAlignment(HorizontalTextAlignment&& value) { SetHorizontalTextAlignment(std::move(value)); return *this;}
+    inline void SetHorizontalTextAlignment(HorizontalTextAlignment value) { m_horizontalTextAlignmentHasBeenSet = true; m_horizontalTextAlignment = value; }
+    inline PanelTitleOptions& WithHorizontalTextAlignment(HorizontalTextAlignment value) { SetHorizontalTextAlignment(value); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
     FontConfiguration m_fontConfiguration;
     bool m_fontConfigurationHasBeenSet = false;
 
-    HorizontalTextAlignment m_horizontalTextAlignment;
+    HorizontalTextAlignment m_horizontalTextAlignment{HorizontalTextAlignment::NOT_SET};
     bool m_horizontalTextAlignmentHasBeenSet = false;
   };
 

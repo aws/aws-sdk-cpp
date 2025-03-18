@@ -32,7 +32,7 @@ namespace Model
   class AppliedAttachmentsConfiguration
   {
   public:
-    AWS_QBUSINESS_API AppliedAttachmentsConfiguration();
+    AWS_QBUSINESS_API AppliedAttachmentsConfiguration() = default;
     AWS_QBUSINESS_API AppliedAttachmentsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AppliedAttachmentsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Information about whether file upload during chat functionality is activated
      * for your application.</p>
      */
-    inline const AttachmentsControlMode& GetAttachmentsControlMode() const{ return m_attachmentsControlMode; }
+    inline AttachmentsControlMode GetAttachmentsControlMode() const { return m_attachmentsControlMode; }
     inline bool AttachmentsControlModeHasBeenSet() const { return m_attachmentsControlModeHasBeenSet; }
-    inline void SetAttachmentsControlMode(const AttachmentsControlMode& value) { m_attachmentsControlModeHasBeenSet = true; m_attachmentsControlMode = value; }
-    inline void SetAttachmentsControlMode(AttachmentsControlMode&& value) { m_attachmentsControlModeHasBeenSet = true; m_attachmentsControlMode = std::move(value); }
-    inline AppliedAttachmentsConfiguration& WithAttachmentsControlMode(const AttachmentsControlMode& value) { SetAttachmentsControlMode(value); return *this;}
-    inline AppliedAttachmentsConfiguration& WithAttachmentsControlMode(AttachmentsControlMode&& value) { SetAttachmentsControlMode(std::move(value)); return *this;}
+    inline void SetAttachmentsControlMode(AttachmentsControlMode value) { m_attachmentsControlModeHasBeenSet = true; m_attachmentsControlMode = value; }
+    inline AppliedAttachmentsConfiguration& WithAttachmentsControlMode(AttachmentsControlMode value) { SetAttachmentsControlMode(value); return *this;}
     ///@}
   private:
 
-    AttachmentsControlMode m_attachmentsControlMode;
+    AttachmentsControlMode m_attachmentsControlMode{AttachmentsControlMode::NOT_SET};
     bool m_attachmentsControlModeHasBeenSet = false;
   };
 

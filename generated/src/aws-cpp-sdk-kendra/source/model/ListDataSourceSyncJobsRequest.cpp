@@ -12,18 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataSourceSyncJobsRequest::ListDataSourceSyncJobsRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startTimeFilterHasBeenSet(false),
-    m_statusFilter(DataSourceSyncJobStatus::NOT_SET),
-    m_statusFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListDataSourceSyncJobsRequest::SerializePayload() const
 {
   JsonValue payload;

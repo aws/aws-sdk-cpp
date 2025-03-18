@@ -18,24 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-Build::Build() : 
-    m_buildIdHasBeenSet(false),
-    m_buildArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(BuildStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sizeOnDisk(0),
-    m_sizeOnDiskHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_serverSdkVersionHasBeenSet(false)
-{
-}
-
 Build::Build(JsonView jsonValue)
-  : Build()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ Build& Build::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BuildId"))
   {
     m_buildId = jsonValue.GetString("BuildId");
-
     m_buildIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuildArn"))
   {
     m_buildArn = jsonValue.GetString("BuildArn");
-
     m_buildArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = BuildStatusMapper::GetBuildStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeOnDisk"))
   {
     m_sizeOnDisk = jsonValue.GetInt64("SizeOnDisk");
-
     m_sizeOnDiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerSdkVersion"))
   {
     m_serverSdkVersion = jsonValue.GetString("ServerSdkVersion");
-
     m_serverSdkVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

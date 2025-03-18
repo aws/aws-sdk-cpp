@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-PersistentStorageConfiguration::PersistentStorageConfiguration() : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false)
-{
-}
-
 PersistentStorageConfiguration::PersistentStorageConfiguration(JsonView jsonValue)
-  : PersistentStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PersistentStorageConfiguration& PersistentStorageConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("sizeInGiB"))
   {
     m_sizeInGiB = jsonValue.GetInteger("sizeInGiB");
-
     m_sizeInGiBHasBeenSet = true;
   }
-
   return *this;
 }
 

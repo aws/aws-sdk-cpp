@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppRequest::CreateAppRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_appNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceSpecHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;

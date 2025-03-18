@@ -12,18 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSecurityPolicyRequest::UpdateSecurityPolicyRequest() : 
-    m_type(SecurityPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateSecurityPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

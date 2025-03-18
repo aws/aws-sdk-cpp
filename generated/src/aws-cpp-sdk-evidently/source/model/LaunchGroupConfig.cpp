@@ -18,16 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-LaunchGroupConfig::LaunchGroupConfig() : 
-    m_descriptionHasBeenSet(false),
-    m_featureHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_variationHasBeenSet(false)
-{
-}
-
 LaunchGroupConfig::LaunchGroupConfig(JsonView jsonValue)
-  : LaunchGroupConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ LaunchGroupConfig& LaunchGroupConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("feature"))
   {
     m_feature = jsonValue.GetString("feature");
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variation"))
   {
     m_variation = jsonValue.GetString("variation");
-
     m_variationHasBeenSet = true;
   }
-
   return *this;
 }
 

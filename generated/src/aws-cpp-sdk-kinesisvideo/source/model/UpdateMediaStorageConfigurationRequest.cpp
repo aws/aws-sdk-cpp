@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMediaStorageConfigurationRequest::UpdateMediaStorageConfigurationRequest() : 
-    m_channelARNHasBeenSet(false),
-    m_mediaStorageConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMediaStorageConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

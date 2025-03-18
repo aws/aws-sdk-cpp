@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterThingRequest::RegisterThingRequest() : 
-    m_templateBodyHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String RegisterThingRequest::SerializePayload() const
 {
   JsonValue payload;

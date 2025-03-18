@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetDeploymentsResult::BatchGetDeploymentsResult()
-{
-}
-
 BatchGetDeploymentsResult::BatchGetDeploymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchGetDeploymentsResult& BatchGetDeploymentsResult::operator =(const Aws::Amaz
     {
       m_deploymentsInfo.push_back(deploymentsInfoJsonList[deploymentsInfoIndex].AsObject());
     }
+    m_deploymentsInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

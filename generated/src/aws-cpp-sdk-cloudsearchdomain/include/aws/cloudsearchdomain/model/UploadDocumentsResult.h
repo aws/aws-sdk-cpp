@@ -35,7 +35,7 @@ namespace Model
   class UploadDocumentsResult
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsResult();
+    AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsResult() = default;
     AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline UploadDocumentsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline UploadDocumentsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline UploadDocumentsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    UploadDocumentsResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of documents that were added to the search domain.</p>
      */
-    inline long long GetAdds() const{ return m_adds; }
-    inline void SetAdds(long long value) { m_adds = value; }
+    inline long long GetAdds() const { return m_adds; }
+    inline void SetAdds(long long value) { m_addsHasBeenSet = true; m_adds = value; }
     inline UploadDocumentsResult& WithAdds(long long value) { SetAdds(value); return *this;}
     ///@}
 
@@ -66,8 +64,8 @@ namespace Model
     /**
      * <p>The number of documents that were deleted from the search domain.</p>
      */
-    inline long long GetDeletes() const{ return m_deletes; }
-    inline void SetDeletes(long long value) { m_deletes = value; }
+    inline long long GetDeletes() const { return m_deletes; }
+    inline void SetDeletes(long long value) { m_deletesHasBeenSet = true; m_deletes = value; }
     inline UploadDocumentsResult& WithDeletes(long long value) { SetDeletes(value); return *this;}
     ///@}
 
@@ -76,36 +74,39 @@ namespace Model
      * <p>Any warnings returned by the document service about the documents being
      * uploaded.</p>
      */
-    inline const Aws::Vector<DocumentServiceWarning>& GetWarnings() const{ return m_warnings; }
-    inline void SetWarnings(const Aws::Vector<DocumentServiceWarning>& value) { m_warnings = value; }
-    inline void SetWarnings(Aws::Vector<DocumentServiceWarning>&& value) { m_warnings = std::move(value); }
-    inline UploadDocumentsResult& WithWarnings(const Aws::Vector<DocumentServiceWarning>& value) { SetWarnings(value); return *this;}
-    inline UploadDocumentsResult& WithWarnings(Aws::Vector<DocumentServiceWarning>&& value) { SetWarnings(std::move(value)); return *this;}
-    inline UploadDocumentsResult& AddWarnings(const DocumentServiceWarning& value) { m_warnings.push_back(value); return *this; }
-    inline UploadDocumentsResult& AddWarnings(DocumentServiceWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentServiceWarning>& GetWarnings() const { return m_warnings; }
+    template<typename WarningsT = Aws::Vector<DocumentServiceWarning>>
+    void SetWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings = std::forward<WarningsT>(value); }
+    template<typename WarningsT = Aws::Vector<DocumentServiceWarning>>
+    UploadDocumentsResult& WithWarnings(WarningsT&& value) { SetWarnings(std::forward<WarningsT>(value)); return *this;}
+    template<typename WarningsT = DocumentServiceWarning>
+    UploadDocumentsResult& AddWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings.emplace_back(std::forward<WarningsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UploadDocumentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UploadDocumentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UploadDocumentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UploadDocumentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    long long m_adds;
+    long long m_adds{0};
+    bool m_addsHasBeenSet = false;
 
-    long long m_deletes;
+    long long m_deletes{0};
+    bool m_deletesHasBeenSet = false;
 
     Aws::Vector<DocumentServiceWarning> m_warnings;
+    bool m_warningsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

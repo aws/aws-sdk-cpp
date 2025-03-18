@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceDataSyncRequest::ListResourceDataSyncRequest() : 
-    m_syncTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceDataSyncRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-InspectorServiceAttributes::InspectorServiceAttributes() : 
-    m_schemaVersion(0),
-    m_schemaVersionHasBeenSet(false),
-    m_assessmentRunArnHasBeenSet(false),
-    m_rulesPackageArnHasBeenSet(false)
-{
-}
-
 InspectorServiceAttributes::InspectorServiceAttributes(JsonView jsonValue)
-  : InspectorServiceAttributes()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InspectorServiceAttributes& InspectorServiceAttributes::operator =(JsonView json
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetInteger("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentRunArn"))
   {
     m_assessmentRunArn = jsonValue.GetString("assessmentRunArn");
-
     m_assessmentRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rulesPackageArn"))
   {
     m_rulesPackageArn = jsonValue.GetString("rulesPackageArn");
-
     m_rulesPackageArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FixedModeScheduleActionStartSettings::FixedModeScheduleActionStartSettings() : 
-    m_timeHasBeenSet(false)
-{
-}
-
 FixedModeScheduleActionStartSettings::FixedModeScheduleActionStartSettings(JsonView jsonValue)
-  : FixedModeScheduleActionStartSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FixedModeScheduleActionStartSettings& FixedModeScheduleActionStartSettings::oper
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetString("time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class CreateFargateProfileRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API CreateFargateProfileRequest();
+    AWS_EKS_API CreateFargateProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The name of the Fargate profile.</p>
      */
-    inline const Aws::String& GetFargateProfileName() const{ return m_fargateProfileName; }
+    inline const Aws::String& GetFargateProfileName() const { return m_fargateProfileName; }
     inline bool FargateProfileNameHasBeenSet() const { return m_fargateProfileNameHasBeenSet; }
-    inline void SetFargateProfileName(const Aws::String& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = value; }
-    inline void SetFargateProfileName(Aws::String&& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = std::move(value); }
-    inline void SetFargateProfileName(const char* value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName.assign(value); }
-    inline CreateFargateProfileRequest& WithFargateProfileName(const Aws::String& value) { SetFargateProfileName(value); return *this;}
-    inline CreateFargateProfileRequest& WithFargateProfileName(Aws::String&& value) { SetFargateProfileName(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& WithFargateProfileName(const char* value) { SetFargateProfileName(value); return *this;}
+    template<typename FargateProfileNameT = Aws::String>
+    void SetFargateProfileName(FargateProfileNameT&& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = std::forward<FargateProfileNameT>(value); }
+    template<typename FargateProfileNameT = Aws::String>
+    CreateFargateProfileRequest& WithFargateProfileName(FargateProfileNameT&& value) { SetFargateProfileName(std::forward<FargateProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CreateFargateProfileRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CreateFargateProfileRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CreateFargateProfileRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
      * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetPodExecutionRoleArn() const{ return m_podExecutionRoleArn; }
+    inline const Aws::String& GetPodExecutionRoleArn() const { return m_podExecutionRoleArn; }
     inline bool PodExecutionRoleArnHasBeenSet() const { return m_podExecutionRoleArnHasBeenSet; }
-    inline void SetPodExecutionRoleArn(const Aws::String& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = value; }
-    inline void SetPodExecutionRoleArn(Aws::String&& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = std::move(value); }
-    inline void SetPodExecutionRoleArn(const char* value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn.assign(value); }
-    inline CreateFargateProfileRequest& WithPodExecutionRoleArn(const Aws::String& value) { SetPodExecutionRoleArn(value); return *this;}
-    inline CreateFargateProfileRequest& WithPodExecutionRoleArn(Aws::String&& value) { SetPodExecutionRoleArn(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& WithPodExecutionRoleArn(const char* value) { SetPodExecutionRoleArn(value); return *this;}
+    template<typename PodExecutionRoleArnT = Aws::String>
+    void SetPodExecutionRoleArn(PodExecutionRoleArnT&& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = std::forward<PodExecutionRoleArnT>(value); }
+    template<typename PodExecutionRoleArnT = Aws::String>
+    CreateFargateProfileRequest& WithPodExecutionRoleArn(PodExecutionRoleArnT&& value) { SetPodExecutionRoleArn(std::forward<PodExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,15 +85,14 @@ namespace Model
      * (with no direct route to an Internet Gateway) are accepted for this
      * parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-    inline CreateFargateProfileRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-    inline CreateFargateProfileRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-    inline CreateFargateProfileRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-    inline CreateFargateProfileRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    CreateFargateProfileRequest& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = Aws::String>
+    CreateFargateProfileRequest& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,14 +103,14 @@ namespace Model
      * <code>namespace</code>. You may specify up to five selectors in a Fargate
      * profile.</p>
      */
-    inline const Aws::Vector<FargateProfileSelector>& GetSelectors() const{ return m_selectors; }
+    inline const Aws::Vector<FargateProfileSelector>& GetSelectors() const { return m_selectors; }
     inline bool SelectorsHasBeenSet() const { return m_selectorsHasBeenSet; }
-    inline void SetSelectors(const Aws::Vector<FargateProfileSelector>& value) { m_selectorsHasBeenSet = true; m_selectors = value; }
-    inline void SetSelectors(Aws::Vector<FargateProfileSelector>&& value) { m_selectorsHasBeenSet = true; m_selectors = std::move(value); }
-    inline CreateFargateProfileRequest& WithSelectors(const Aws::Vector<FargateProfileSelector>& value) { SetSelectors(value); return *this;}
-    inline CreateFargateProfileRequest& WithSelectors(Aws::Vector<FargateProfileSelector>&& value) { SetSelectors(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& AddSelectors(const FargateProfileSelector& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(value); return *this; }
-    inline CreateFargateProfileRequest& AddSelectors(FargateProfileSelector&& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(std::move(value)); return *this; }
+    template<typename SelectorsT = Aws::Vector<FargateProfileSelector>>
+    void SetSelectors(SelectorsT&& value) { m_selectorsHasBeenSet = true; m_selectors = std::forward<SelectorsT>(value); }
+    template<typename SelectorsT = Aws::Vector<FargateProfileSelector>>
+    CreateFargateProfileRequest& WithSelectors(SelectorsT&& value) { SetSelectors(std::forward<SelectorsT>(value)); return *this;}
+    template<typename SelectorsT = FargateProfileSelector>
+    CreateFargateProfileRequest& AddSelectors(SelectorsT&& value) { m_selectorsHasBeenSet = true; m_selectors.emplace_back(std::forward<SelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,14 +118,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateFargateProfileRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateFargateProfileRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateFargateProfileRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,19 +132,16 @@ namespace Model
      * of a key and an optional value. You define both. Tags don't propagate to any
      * other cluster or Amazon Web Services resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFargateProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateFargateProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFargateProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateFargateProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFargateProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFargateProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateFargateProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFargateProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFargateProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateFargateProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateFargateProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

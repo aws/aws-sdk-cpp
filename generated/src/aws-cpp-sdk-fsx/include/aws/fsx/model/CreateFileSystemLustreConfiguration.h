@@ -43,7 +43,7 @@ namespace Model
   class CreateFileSystemLustreConfiguration
   {
   public:
-    AWS_FSX_API CreateFileSystemLustreConfiguration();
+    AWS_FSX_API CreateFileSystemLustreConfiguration() = default;
     AWS_FSX_API CreateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API CreateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7,
      * beginning with Monday and ending with Sunday.</p>
      */
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    CreateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * file system.</p>  <p>This parameter is not supported for file systems with
      * a data repository association.</p> 
      */
-    inline const Aws::String& GetImportPath() const{ return m_importPath; }
+    inline const Aws::String& GetImportPath() const { return m_importPath; }
     inline bool ImportPathHasBeenSet() const { return m_importPathHasBeenSet; }
-    inline void SetImportPath(const Aws::String& value) { m_importPathHasBeenSet = true; m_importPath = value; }
-    inline void SetImportPath(Aws::String&& value) { m_importPathHasBeenSet = true; m_importPath = std::move(value); }
-    inline void SetImportPath(const char* value) { m_importPathHasBeenSet = true; m_importPath.assign(value); }
-    inline CreateFileSystemLustreConfiguration& WithImportPath(const Aws::String& value) { SetImportPath(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithImportPath(Aws::String&& value) { SetImportPath(std::move(value)); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithImportPath(const char* value) { SetImportPath(value); return *this;}
+    template<typename ImportPathT = Aws::String>
+    void SetImportPath(ImportPathT&& value) { m_importPathHasBeenSet = true; m_importPath = std::forward<ImportPathT>(value); }
+    template<typename ImportPathT = Aws::String>
+    CreateFileSystemLustreConfiguration& WithImportPath(ImportPathT&& value) { SetImportPath(std::forward<ImportPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +102,12 @@ namespace Model
      *  <p>This parameter is not supported for file systems with a data
      * repository association.</p> 
      */
-    inline const Aws::String& GetExportPath() const{ return m_exportPath; }
+    inline const Aws::String& GetExportPath() const { return m_exportPath; }
     inline bool ExportPathHasBeenSet() const { return m_exportPathHasBeenSet; }
-    inline void SetExportPath(const Aws::String& value) { m_exportPathHasBeenSet = true; m_exportPath = value; }
-    inline void SetExportPath(Aws::String&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::move(value); }
-    inline void SetExportPath(const char* value) { m_exportPathHasBeenSet = true; m_exportPath.assign(value); }
-    inline CreateFileSystemLustreConfiguration& WithExportPath(const Aws::String& value) { SetExportPath(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithExportPath(Aws::String&& value) { SetExportPath(std::move(value)); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithExportPath(const char* value) { SetExportPath(value); return *this;}
+    template<typename ExportPathT = Aws::String>
+    void SetExportPath(ExportPathT&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::forward<ExportPathT>(value); }
+    template<typename ExportPathT = Aws::String>
+    CreateFileSystemLustreConfiguration& WithExportPath(ExportPathT&& value) { SetExportPath(std::forward<ExportPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,7 +121,7 @@ namespace Model
      * parameter is not supported for file systems with a data repository
      * association.</p> 
      */
-    inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
+    inline int GetImportedFileChunkSize() const { return m_importedFileChunkSize; }
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
     inline CreateFileSystemLustreConfiguration& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
@@ -166,12 +160,10 @@ namespace Model
      * data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
      * <p>(Default = <code>SCRATCH_1</code>)</p>
      */
-    inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline LustreDeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithDeploymentType(LustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(LustreDeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline CreateFileSystemLustreConfiguration& WithDeploymentType(LustreDeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
@@ -199,12 +191,10 @@ namespace Model
      * parameter is not supported for file systems with a data repository
      * association.</p> 
      */
-    inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
+    inline AutoImportPolicyType GetAutoImportPolicy() const { return m_autoImportPolicy; }
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
-    inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
-    inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+    inline void SetAutoImportPolicy(AutoImportPolicyType value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
+    inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType value) { SetAutoImportPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -222,7 +212,7 @@ namespace Model
      * <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
      * </ul>
      */
-    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+    inline int GetPerUnitStorageThroughput() const { return m_perUnitStorageThroughput; }
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
     inline CreateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
@@ -230,14 +220,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,7 +234,7 @@ namespace Model
      * <code>0</code> disables automatic backups. You can retain automatic backups for
      * a maximum of 90 days. The default is <code>0</code>.</p>
      */
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline CreateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -267,7 +255,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">
      * Working with backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
      */
-    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+    inline bool GetCopyTagsToBackups() const { return m_copyTagsToBackups; }
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
     inline CreateFileSystemLustreConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
@@ -282,12 +270,10 @@ namespace Model
      * storage capacity of the file system.</p> <p>This parameter is required when
      * <code>StorageType</code> is set to <code>HDD</code>.</p>
      */
-    inline const DriveCacheType& GetDriveCacheType() const{ return m_driveCacheType; }
+    inline DriveCacheType GetDriveCacheType() const { return m_driveCacheType; }
     inline bool DriveCacheTypeHasBeenSet() const { return m_driveCacheTypeHasBeenSet; }
-    inline void SetDriveCacheType(const DriveCacheType& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = value; }
-    inline void SetDriveCacheType(DriveCacheType&& value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithDriveCacheType(const DriveCacheType& value) { SetDriveCacheType(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithDriveCacheType(DriveCacheType&& value) { SetDriveCacheType(std::move(value)); return *this;}
+    inline void SetDriveCacheType(DriveCacheType value) { m_driveCacheTypeHasBeenSet = true; m_driveCacheType = value; }
+    inline CreateFileSystemLustreConfiguration& WithDriveCacheType(DriveCacheType value) { SetDriveCacheType(value); return *this;}
     ///@}
 
     ///@{
@@ -301,12 +287,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
      * data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
      */
-    inline const DataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
+    inline DataCompressionType GetDataCompressionType() const { return m_dataCompressionType; }
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
-    inline void SetDataCompressionType(const DataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
-    inline void SetDataCompressionType(DataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithDataCompressionType(const DataCompressionType& value) { SetDataCompressionType(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
+    inline void SetDataCompressionType(DataCompressionType value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
+    inline CreateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType value) { SetDataCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -315,7 +299,7 @@ namespace Model
      * Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
      * <p>(Default = <code>false</code>)</p>
      */
-    inline bool GetEfaEnabled() const{ return m_efaEnabled; }
+    inline bool GetEfaEnabled() const { return m_efaEnabled; }
     inline bool EfaEnabledHasBeenSet() const { return m_efaEnabledHasBeenSet; }
     inline void SetEfaEnabled(bool value) { m_efaEnabledHasBeenSet = true; m_efaEnabled = value; }
     inline CreateFileSystemLustreConfiguration& WithEfaEnabled(bool value) { SetEfaEnabled(value); return *this;}
@@ -328,12 +312,12 @@ namespace Model
      * data repositories associated with your file system to Amazon CloudWatch
      * Logs.</p>
      */
-    inline const LustreLogCreateConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LustreLogCreateConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LustreLogCreateConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LustreLogCreateConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithLogConfiguration(const LustreLogCreateConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LustreLogCreateConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LustreLogCreateConfiguration>
+    CreateFileSystemLustreConfiguration& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -342,12 +326,12 @@ namespace Model
      * Lustre file system. When enabled, root squash restricts root-level access from
      * clients that try to access your file system as a root user.</p>
      */
-    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const { return m_rootSquashConfiguration; }
     inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
-    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
-    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+    template<typename RootSquashConfigurationT = LustreRootSquashConfiguration>
+    void SetRootSquashConfiguration(RootSquashConfigurationT&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::forward<RootSquashConfigurationT>(value); }
+    template<typename RootSquashConfigurationT = LustreRootSquashConfiguration>
+    CreateFileSystemLustreConfiguration& WithRootSquashConfiguration(RootSquashConfigurationT&& value) { SetRootSquashConfiguration(std::forward<RootSquashConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -355,12 +339,12 @@ namespace Model
      * <p>The Lustre metadata performance configuration for the creation of an FSx for
      * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
      */
-    inline const CreateFileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+    inline const CreateFileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
     inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    inline void SetMetadataConfiguration(const CreateFileSystemLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
-    inline void SetMetadataConfiguration(CreateFileSystemLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
-    inline CreateFileSystemLustreConfiguration& WithMetadataConfiguration(const CreateFileSystemLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
-    inline CreateFileSystemLustreConfiguration& WithMetadataConfiguration(CreateFileSystemLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+    template<typename MetadataConfigurationT = CreateFileSystemLustreMetadataConfiguration>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = CreateFileSystemLustreMetadataConfiguration>
+    CreateFileSystemLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -373,34 +357,34 @@ namespace Model
     Aws::String m_exportPath;
     bool m_exportPathHasBeenSet = false;
 
-    int m_importedFileChunkSize;
+    int m_importedFileChunkSize{0};
     bool m_importedFileChunkSizeHasBeenSet = false;
 
-    LustreDeploymentType m_deploymentType;
+    LustreDeploymentType m_deploymentType{LustreDeploymentType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
-    AutoImportPolicyType m_autoImportPolicy;
+    AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
     bool m_autoImportPolicyHasBeenSet = false;
 
-    int m_perUnitStorageThroughput;
+    int m_perUnitStorageThroughput{0};
     bool m_perUnitStorageThroughputHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
     bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
-    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackups{false};
     bool m_copyTagsToBackupsHasBeenSet = false;
 
-    DriveCacheType m_driveCacheType;
+    DriveCacheType m_driveCacheType{DriveCacheType::NOT_SET};
     bool m_driveCacheTypeHasBeenSet = false;
 
-    DataCompressionType m_dataCompressionType;
+    DataCompressionType m_dataCompressionType{DataCompressionType::NOT_SET};
     bool m_dataCompressionTypeHasBeenSet = false;
 
-    bool m_efaEnabled;
+    bool m_efaEnabled{false};
     bool m_efaEnabledHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;

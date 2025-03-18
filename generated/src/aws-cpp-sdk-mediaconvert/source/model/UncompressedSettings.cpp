@@ -18,30 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-UncompressedSettings::UncompressedSettings() : 
-    m_fourcc(UncompressedFourcc::NOT_SET),
-    m_fourccHasBeenSet(false),
-    m_framerateControl(UncompressedFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(UncompressedInterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_scanTypeConversionMode(UncompressedScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(UncompressedSlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(UncompressedTelecine::NOT_SET),
-    m_telecineHasBeenSet(false)
-{
-}
-
 UncompressedSettings::UncompressedSettings(JsonView jsonValue)
-  : UncompressedSettings()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ UncompressedSettings& UncompressedSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fourcc"))
   {
     m_fourcc = UncompressedFourccMapper::GetUncompressedFourccForName(jsonValue.GetString("fourcc"));
-
     m_fourccHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateControl"))
   {
     m_framerateControl = UncompressedFramerateControlMapper::GetUncompressedFramerateControlForName(jsonValue.GetString("framerateControl"));
-
     m_framerateControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateConversionAlgorithm"))
   {
     m_framerateConversionAlgorithm = UncompressedFramerateConversionAlgorithmMapper::GetUncompressedFramerateConversionAlgorithmForName(jsonValue.GetString("framerateConversionAlgorithm"));
-
     m_framerateConversionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interlaceMode"))
   {
     m_interlaceMode = UncompressedInterlaceModeMapper::GetUncompressedInterlaceModeForName(jsonValue.GetString("interlaceMode"));
-
     m_interlaceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanTypeConversionMode"))
   {
     m_scanTypeConversionMode = UncompressedScanTypeConversionModeMapper::GetUncompressedScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
-
     m_scanTypeConversionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slowPal"))
   {
     m_slowPal = UncompressedSlowPalMapper::GetUncompressedSlowPalForName(jsonValue.GetString("slowPal"));
-
     m_slowPalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("telecine"))
   {
     m_telecine = UncompressedTelecineMapper::GetUncompressedTelecineForName(jsonValue.GetString("telecine"));
-
     m_telecineHasBeenSet = true;
   }
-
   return *this;
 }
 

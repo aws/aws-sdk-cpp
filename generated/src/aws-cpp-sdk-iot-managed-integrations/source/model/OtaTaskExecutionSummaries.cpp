@@ -18,14 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskExecutionSummaries::OtaTaskExecutionSummaries() : 
-    m_taskExecutionSummaryHasBeenSet(false),
-    m_managedThingIdHasBeenSet(false)
-{
-}
-
 OtaTaskExecutionSummaries::OtaTaskExecutionSummaries(JsonView jsonValue)
-  : OtaTaskExecutionSummaries()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OtaTaskExecutionSummaries& OtaTaskExecutionSummaries::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TaskExecutionSummary"))
   {
     m_taskExecutionSummary = jsonValue.GetObject("TaskExecutionSummary");
-
     m_taskExecutionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedThingId"))
   {
     m_managedThingId = jsonValue.GetString("ManagedThingId");
-
     m_managedThingIdHasBeenSet = true;
   }
-
   return *this;
 }
 

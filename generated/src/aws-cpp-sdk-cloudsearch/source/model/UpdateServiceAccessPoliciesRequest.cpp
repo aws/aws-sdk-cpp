@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-UpdateServiceAccessPoliciesRequest::UpdateServiceAccessPoliciesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceAccessPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

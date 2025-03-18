@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-MoveAddressToVpcRequest::MoveAddressToVpcRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 Aws::String MoveAddressToVpcRequest::SerializePayload() const
 {
   Aws::StringStream ss;

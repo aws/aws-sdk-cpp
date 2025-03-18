@@ -21,7 +21,7 @@ namespace Model
   class GetNetworkSiteRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API GetNetworkSiteRequest();
+    AWS_PRIVATENETWORKS_API GetNetworkSiteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network site.</p>
      */
-    inline const Aws::String& GetNetworkSiteArn() const{ return m_networkSiteArn; }
+    inline const Aws::String& GetNetworkSiteArn() const { return m_networkSiteArn; }
     inline bool NetworkSiteArnHasBeenSet() const { return m_networkSiteArnHasBeenSet; }
-    inline void SetNetworkSiteArn(const Aws::String& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = value; }
-    inline void SetNetworkSiteArn(Aws::String&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::move(value); }
-    inline void SetNetworkSiteArn(const char* value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn.assign(value); }
-    inline GetNetworkSiteRequest& WithNetworkSiteArn(const Aws::String& value) { SetNetworkSiteArn(value); return *this;}
-    inline GetNetworkSiteRequest& WithNetworkSiteArn(Aws::String&& value) { SetNetworkSiteArn(std::move(value)); return *this;}
-    inline GetNetworkSiteRequest& WithNetworkSiteArn(const char* value) { SetNetworkSiteArn(value); return *this;}
+    template<typename NetworkSiteArnT = Aws::String>
+    void SetNetworkSiteArn(NetworkSiteArnT&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::forward<NetworkSiteArnT>(value); }
+    template<typename NetworkSiteArnT = Aws::String>
+    GetNetworkSiteRequest& WithNetworkSiteArn(NetworkSiteArnT&& value) { SetNetworkSiteArn(std::forward<NetworkSiteArnT>(value)); return *this;}
     ///@}
   private:
 

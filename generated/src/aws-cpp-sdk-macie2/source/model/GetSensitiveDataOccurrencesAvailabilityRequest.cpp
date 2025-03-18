@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSensitiveDataOccurrencesAvailabilityRequest::GetSensitiveDataOccurrencesAvailabilityRequest() : 
-    m_findingIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSensitiveDataOccurrencesAvailabilityRequest::SerializePayload() const
 {
   return {};

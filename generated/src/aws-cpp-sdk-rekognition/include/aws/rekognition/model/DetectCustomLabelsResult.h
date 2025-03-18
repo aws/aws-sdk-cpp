@@ -29,7 +29,7 @@ namespace Model
   class DetectCustomLabelsResult
   {
   public:
-    AWS_REKOGNITION_API DetectCustomLabelsResult();
+    AWS_REKOGNITION_API DetectCustomLabelsResult() = default;
     AWS_REKOGNITION_API DetectCustomLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DetectCustomLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of custom labels detected in the input image.</p>
      */
-    inline const Aws::Vector<CustomLabel>& GetCustomLabels() const{ return m_customLabels; }
-    inline void SetCustomLabels(const Aws::Vector<CustomLabel>& value) { m_customLabels = value; }
-    inline void SetCustomLabels(Aws::Vector<CustomLabel>&& value) { m_customLabels = std::move(value); }
-    inline DetectCustomLabelsResult& WithCustomLabels(const Aws::Vector<CustomLabel>& value) { SetCustomLabels(value); return *this;}
-    inline DetectCustomLabelsResult& WithCustomLabels(Aws::Vector<CustomLabel>&& value) { SetCustomLabels(std::move(value)); return *this;}
-    inline DetectCustomLabelsResult& AddCustomLabels(const CustomLabel& value) { m_customLabels.push_back(value); return *this; }
-    inline DetectCustomLabelsResult& AddCustomLabels(CustomLabel&& value) { m_customLabels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomLabel>& GetCustomLabels() const { return m_customLabels; }
+    template<typename CustomLabelsT = Aws::Vector<CustomLabel>>
+    void SetCustomLabels(CustomLabelsT&& value) { m_customLabelsHasBeenSet = true; m_customLabels = std::forward<CustomLabelsT>(value); }
+    template<typename CustomLabelsT = Aws::Vector<CustomLabel>>
+    DetectCustomLabelsResult& WithCustomLabels(CustomLabelsT&& value) { SetCustomLabels(std::forward<CustomLabelsT>(value)); return *this;}
+    template<typename CustomLabelsT = CustomLabel>
+    DetectCustomLabelsResult& AddCustomLabels(CustomLabelsT&& value) { m_customLabelsHasBeenSet = true; m_customLabels.emplace_back(std::forward<CustomLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectCustomLabelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectCustomLabelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectCustomLabelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectCustomLabelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CustomLabel> m_customLabels;
+    bool m_customLabelsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

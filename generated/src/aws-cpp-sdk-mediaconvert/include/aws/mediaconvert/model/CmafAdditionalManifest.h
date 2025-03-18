@@ -35,7 +35,7 @@ namespace Model
   class CmafAdditionalManifest
   {
   public:
-    AWS_MEDIACONVERT_API CmafAdditionalManifest();
+    AWS_MEDIACONVERT_API CmafAdditionalManifest() = default;
     AWS_MEDIACONVERT_API CmafAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CmafAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * nameModifier of the output. The service uses the output name modifier to create
      * unique names for the individual variant manifests.
      */
-    inline const Aws::String& GetManifestNameModifier() const{ return m_manifestNameModifier; }
+    inline const Aws::String& GetManifestNameModifier() const { return m_manifestNameModifier; }
     inline bool ManifestNameModifierHasBeenSet() const { return m_manifestNameModifierHasBeenSet; }
-    inline void SetManifestNameModifier(const Aws::String& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = value; }
-    inline void SetManifestNameModifier(Aws::String&& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = std::move(value); }
-    inline void SetManifestNameModifier(const char* value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier.assign(value); }
-    inline CmafAdditionalManifest& WithManifestNameModifier(const Aws::String& value) { SetManifestNameModifier(value); return *this;}
-    inline CmafAdditionalManifest& WithManifestNameModifier(Aws::String&& value) { SetManifestNameModifier(std::move(value)); return *this;}
-    inline CmafAdditionalManifest& WithManifestNameModifier(const char* value) { SetManifestNameModifier(value); return *this;}
+    template<typename ManifestNameModifierT = Aws::String>
+    void SetManifestNameModifier(ManifestNameModifierT&& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = std::forward<ManifestNameModifierT>(value); }
+    template<typename ManifestNameModifierT = Aws::String>
+    CmafAdditionalManifest& WithManifestNameModifier(ManifestNameModifierT&& value) { SetManifestNameModifier(std::forward<ManifestNameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * Specify the outputs that you want this additional top-level manifest to
      * reference.
      */
-    inline const Aws::Vector<Aws::String>& GetSelectedOutputs() const{ return m_selectedOutputs; }
+    inline const Aws::Vector<Aws::String>& GetSelectedOutputs() const { return m_selectedOutputs; }
     inline bool SelectedOutputsHasBeenSet() const { return m_selectedOutputsHasBeenSet; }
-    inline void SetSelectedOutputs(const Aws::Vector<Aws::String>& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = value; }
-    inline void SetSelectedOutputs(Aws::Vector<Aws::String>&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = std::move(value); }
-    inline CmafAdditionalManifest& WithSelectedOutputs(const Aws::Vector<Aws::String>& value) { SetSelectedOutputs(value); return *this;}
-    inline CmafAdditionalManifest& WithSelectedOutputs(Aws::Vector<Aws::String>&& value) { SetSelectedOutputs(std::move(value)); return *this;}
-    inline CmafAdditionalManifest& AddSelectedOutputs(const Aws::String& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(value); return *this; }
-    inline CmafAdditionalManifest& AddSelectedOutputs(Aws::String&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(std::move(value)); return *this; }
-    inline CmafAdditionalManifest& AddSelectedOutputs(const char* value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(value); return *this; }
+    template<typename SelectedOutputsT = Aws::Vector<Aws::String>>
+    void SetSelectedOutputs(SelectedOutputsT&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = std::forward<SelectedOutputsT>(value); }
+    template<typename SelectedOutputsT = Aws::Vector<Aws::String>>
+    CmafAdditionalManifest& WithSelectedOutputs(SelectedOutputsT&& value) { SetSelectedOutputs(std::forward<SelectedOutputsT>(value)); return *this;}
+    template<typename SelectedOutputsT = Aws::String>
+    CmafAdditionalManifest& AddSelectedOutputs(SelectedOutputsT&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.emplace_back(std::forward<SelectedOutputsT>(value)); return *this; }
     ///@}
   private:
 

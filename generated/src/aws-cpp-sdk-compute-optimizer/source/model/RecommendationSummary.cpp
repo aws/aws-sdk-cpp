@@ -18,22 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RecommendationSummary::RecommendationSummary() : 
-    m_summariesHasBeenSet(false),
-    m_idleSummariesHasBeenSet(false),
-    m_recommendationResourceType(RecommendationSourceType::NOT_SET),
-    m_recommendationResourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_idleSavingsOpportunityHasBeenSet(false),
-    m_aggregatedSavingsOpportunityHasBeenSet(false),
-    m_currentPerformanceRiskRatingsHasBeenSet(false),
-    m_inferredWorkloadSavingsHasBeenSet(false)
-{
-}
-
 RecommendationSummary::RecommendationSummary(JsonView jsonValue)
-  : RecommendationSummary()
 {
   *this = jsonValue;
 }
@@ -49,7 +34,6 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     }
     m_summariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleSummaries"))
   {
     Aws::Utils::Array<JsonView> idleSummariesJsonList = jsonValue.GetArray("idleSummaries");
@@ -59,49 +43,36 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     }
     m_idleSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationResourceType"))
   {
     m_recommendationResourceType = RecommendationSourceTypeMapper::GetRecommendationSourceTypeForName(jsonValue.GetString("recommendationResourceType"));
-
     m_recommendationResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleSavingsOpportunity"))
   {
     m_idleSavingsOpportunity = jsonValue.GetObject("idleSavingsOpportunity");
-
     m_idleSavingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedSavingsOpportunity"))
   {
     m_aggregatedSavingsOpportunity = jsonValue.GetObject("aggregatedSavingsOpportunity");
-
     m_aggregatedSavingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPerformanceRiskRatings"))
   {
     m_currentPerformanceRiskRatings = jsonValue.GetObject("currentPerformanceRiskRatings");
-
     m_currentPerformanceRiskRatingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferredWorkloadSavings"))
   {
     Aws::Utils::Array<JsonView> inferredWorkloadSavingsJsonList = jsonValue.GetArray("inferredWorkloadSavings");
@@ -111,7 +82,6 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     }
     m_inferredWorkloadSavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

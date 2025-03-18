@@ -33,7 +33,7 @@ namespace Model
   class ComponentDependencyRequirement
   {
   public:
-    AWS_GREENGRASSV2_API ComponentDependencyRequirement();
+    AWS_GREENGRASSV2_API ComponentDependencyRequirement() = default;
     AWS_GREENGRASSV2_API ComponentDependencyRequirement(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API ComponentDependencyRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
-    inline const Aws::String& GetVersionRequirement() const{ return m_versionRequirement; }
+    inline const Aws::String& GetVersionRequirement() const { return m_versionRequirement; }
     inline bool VersionRequirementHasBeenSet() const { return m_versionRequirementHasBeenSet; }
-    inline void SetVersionRequirement(const Aws::String& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = value; }
-    inline void SetVersionRequirement(Aws::String&& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = std::move(value); }
-    inline void SetVersionRequirement(const char* value) { m_versionRequirementHasBeenSet = true; m_versionRequirement.assign(value); }
-    inline ComponentDependencyRequirement& WithVersionRequirement(const Aws::String& value) { SetVersionRequirement(value); return *this;}
-    inline ComponentDependencyRequirement& WithVersionRequirement(Aws::String&& value) { SetVersionRequirement(std::move(value)); return *this;}
-    inline ComponentDependencyRequirement& WithVersionRequirement(const char* value) { SetVersionRequirement(value); return *this;}
+    template<typename VersionRequirementT = Aws::String>
+    void SetVersionRequirement(VersionRequirementT&& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = std::forward<VersionRequirementT>(value); }
+    template<typename VersionRequirementT = Aws::String>
+    ComponentDependencyRequirement& WithVersionRequirement(VersionRequirementT&& value) { SetVersionRequirement(std::forward<VersionRequirementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * state.</p> </li> <li> <p> <code>HARD</code> – The component restarts if the
      * dependency changes state.</p> </li> </ul> <p>Default: <code>HARD</code> </p>
      */
-    inline const ComponentDependencyType& GetDependencyType() const{ return m_dependencyType; }
+    inline ComponentDependencyType GetDependencyType() const { return m_dependencyType; }
     inline bool DependencyTypeHasBeenSet() const { return m_dependencyTypeHasBeenSet; }
-    inline void SetDependencyType(const ComponentDependencyType& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = value; }
-    inline void SetDependencyType(ComponentDependencyType&& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = std::move(value); }
-    inline ComponentDependencyRequirement& WithDependencyType(const ComponentDependencyType& value) { SetDependencyType(value); return *this;}
-    inline ComponentDependencyRequirement& WithDependencyType(ComponentDependencyType&& value) { SetDependencyType(std::move(value)); return *this;}
+    inline void SetDependencyType(ComponentDependencyType value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = value; }
+    inline ComponentDependencyRequirement& WithDependencyType(ComponentDependencyType value) { SetDependencyType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_versionRequirement;
     bool m_versionRequirementHasBeenSet = false;
 
-    ComponentDependencyType m_dependencyType;
+    ComponentDependencyType m_dependencyType{ComponentDependencyType::NOT_SET};
     bool m_dependencyTypeHasBeenSet = false;
   };
 

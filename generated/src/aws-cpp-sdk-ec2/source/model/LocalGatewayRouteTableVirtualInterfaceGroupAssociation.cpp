@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVirtualInterfaceGroupAssociation() : 
-    m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGatewayRouteTableVirtualInterfaceGroupAssociation::LocalGatewayRouteTableVirtualInterfaceGroupAssociation(const XmlNode& xmlNode)
-  : LocalGatewayRouteTableVirtualInterfaceGroupAssociation()
 {
   *this = xmlNode;
 }
@@ -90,6 +77,7 @@ LocalGatewayRouteTableVirtualInterfaceGroupAssociation& LocalGatewayRouteTableVi
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

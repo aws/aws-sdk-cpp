@@ -31,7 +31,7 @@ namespace Model
   class AwsKmsKeyDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsKmsKeyDetails();
+    AWS_SECURITYHUB_API AwsKmsKeyDetails() = default;
     AWS_SECURITYHUB_API AwsKmsKeyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsKmsKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
      * KMS key.</p>
      */
-    inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
+    inline const Aws::String& GetAWSAccountId() const { return m_aWSAccountId; }
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
-    inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
-    inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
-    inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
-    inline AwsKmsKeyDetails& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
-    inline AwsKmsKeyDetails& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
+    template<typename AWSAccountIdT = Aws::String>
+    void SetAWSAccountId(AWSAccountIdT&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::forward<AWSAccountIdT>(value); }
+    template<typename AWSAccountIdT = Aws::String>
+    AwsKmsKeyDetails& WithAWSAccountId(AWSAccountIdT&& value) { SetAWSAccountId(std::forward<AWSAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline double GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
     inline AwsKmsKeyDetails& WithCreationDate(double value) { SetCreationDate(value); return *this;}
@@ -68,14 +66,12 @@ namespace Model
     /**
      * <p>The globally unique identifier for the KMS key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline AwsKmsKeyDetails& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline AwsKmsKeyDetails& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    AwsKmsKeyDetails& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
      * either customer managed or Amazon Web Services managed.</p>
      */
-    inline const Aws::String& GetKeyManager() const{ return m_keyManager; }
+    inline const Aws::String& GetKeyManager() const { return m_keyManager; }
     inline bool KeyManagerHasBeenSet() const { return m_keyManagerHasBeenSet; }
-    inline void SetKeyManager(const Aws::String& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
-    inline void SetKeyManager(Aws::String&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
-    inline void SetKeyManager(const char* value) { m_keyManagerHasBeenSet = true; m_keyManager.assign(value); }
-    inline AwsKmsKeyDetails& WithKeyManager(const Aws::String& value) { SetKeyManager(value); return *this;}
-    inline AwsKmsKeyDetails& WithKeyManager(Aws::String&& value) { SetKeyManager(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithKeyManager(const char* value) { SetKeyManager(value); return *this;}
+    template<typename KeyManagerT = Aws::String>
+    void SetKeyManager(KeyManagerT&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::forward<KeyManagerT>(value); }
+    template<typename KeyManagerT = Aws::String>
+    AwsKmsKeyDetails& WithKeyManager(KeyManagerT&& value) { SetKeyManager(std::forward<KeyManagerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +94,12 @@ namespace Model
      * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
      * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetKeyState() const{ return m_keyState; }
+    inline const Aws::String& GetKeyState() const { return m_keyState; }
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
-    inline void SetKeyState(const Aws::String& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
-    inline void SetKeyState(Aws::String&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
-    inline void SetKeyState(const char* value) { m_keyStateHasBeenSet = true; m_keyState.assign(value); }
-    inline AwsKmsKeyDetails& WithKeyState(const Aws::String& value) { SetKeyState(value); return *this;}
-    inline AwsKmsKeyDetails& WithKeyState(Aws::String&& value) { SetKeyState(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithKeyState(const char* value) { SetKeyState(value); return *this;}
+    template<typename KeyStateT = Aws::String>
+    void SetKeyState(KeyStateT&& value) { m_keyStateHasBeenSet = true; m_keyState = std::forward<KeyStateT>(value); }
+    template<typename KeyStateT = Aws::String>
+    AwsKmsKeyDetails& WithKeyState(KeyStateT&& value) { SetKeyState(std::forward<KeyStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,35 +111,31 @@ namespace Model
      * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
-    inline const Aws::String& GetOrigin() const{ return m_origin; }
+    inline const Aws::String& GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
-    inline AwsKmsKeyDetails& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
-    inline AwsKmsKeyDetails& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithOrigin(const char* value) { SetOrigin(value); return *this;}
+    template<typename OriginT = Aws::String>
+    void SetOrigin(OriginT&& value) { m_originHasBeenSet = true; m_origin = std::forward<OriginT>(value); }
+    template<typename OriginT = Aws::String>
+    AwsKmsKeyDetails& WithOrigin(OriginT&& value) { SetOrigin(std::forward<OriginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the KMS key.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsKmsKeyDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsKmsKeyDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsKmsKeyDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsKmsKeyDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the key has key rotation enabled.</p>
      */
-    inline bool GetKeyRotationStatus() const{ return m_keyRotationStatus; }
+    inline bool GetKeyRotationStatus() const { return m_keyRotationStatus; }
     inline bool KeyRotationStatusHasBeenSet() const { return m_keyRotationStatusHasBeenSet; }
     inline void SetKeyRotationStatus(bool value) { m_keyRotationStatusHasBeenSet = true; m_keyRotationStatus = value; }
     inline AwsKmsKeyDetails& WithKeyRotationStatus(bool value) { SetKeyRotationStatus(value); return *this;}
@@ -157,7 +145,7 @@ namespace Model
     Aws::String m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet = false;
 
-    double m_creationDate;
+    double m_creationDate{0.0};
     bool m_creationDateHasBeenSet = false;
 
     Aws::String m_keyId;
@@ -175,7 +163,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_keyRotationStatus;
+    bool m_keyRotationStatus{false};
     bool m_keyRotationStatusHasBeenSet = false;
   };
 

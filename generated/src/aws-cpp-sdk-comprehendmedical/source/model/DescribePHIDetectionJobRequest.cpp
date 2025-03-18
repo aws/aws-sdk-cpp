@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePHIDetectionJobRequest::DescribePHIDetectionJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePHIDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

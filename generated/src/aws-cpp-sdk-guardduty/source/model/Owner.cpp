@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Owner::Owner() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Owner::Owner(JsonView jsonValue)
-  : Owner()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Owner& Owner::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

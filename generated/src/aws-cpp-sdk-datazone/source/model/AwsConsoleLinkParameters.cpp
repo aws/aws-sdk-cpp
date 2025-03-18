@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AwsConsoleLinkParameters::AwsConsoleLinkParameters() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 AwsConsoleLinkParameters::AwsConsoleLinkParameters(JsonView jsonValue)
-  : AwsConsoleLinkParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsConsoleLinkParameters& AwsConsoleLinkParameters::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

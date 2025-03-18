@@ -31,7 +31,7 @@ namespace Model
   class InstanceMaintenanceOptionsRequest
   {
   public:
-    AWS_EC2_API InstanceMaintenanceOptionsRequest();
+    AWS_EC2_API InstanceMaintenanceOptionsRequest() = default;
     AWS_EC2_API InstanceMaintenanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceMaintenanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,16 +46,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
      * automatic recovery</a>.</p>
      */
-    inline const InstanceAutoRecoveryState& GetAutoRecovery() const{ return m_autoRecovery; }
+    inline InstanceAutoRecoveryState GetAutoRecovery() const { return m_autoRecovery; }
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-    inline void SetAutoRecovery(const InstanceAutoRecoveryState& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-    inline void SetAutoRecovery(InstanceAutoRecoveryState&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-    inline InstanceMaintenanceOptionsRequest& WithAutoRecovery(const InstanceAutoRecoveryState& value) { SetAutoRecovery(value); return *this;}
-    inline InstanceMaintenanceOptionsRequest& WithAutoRecovery(InstanceAutoRecoveryState&& value) { SetAutoRecovery(std::move(value)); return *this;}
+    inline void SetAutoRecovery(InstanceAutoRecoveryState value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
+    inline InstanceMaintenanceOptionsRequest& WithAutoRecovery(InstanceAutoRecoveryState value) { SetAutoRecovery(value); return *this;}
     ///@}
   private:
 
-    InstanceAutoRecoveryState m_autoRecovery;
+    InstanceAutoRecoveryState m_autoRecovery{InstanceAutoRecoveryState::NOT_SET};
     bool m_autoRecoveryHasBeenSet = false;
   };
 

@@ -18,23 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-DashPackage::DashPackage() : 
-    m_dashManifestsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeEncoderConfigurationInSegments(false),
-    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false)
-{
-}
-
 DashPackage::DashPackage(JsonView jsonValue)
-  : DashPackage()
 {
   *this = jsonValue;
 }
@@ -50,28 +34,21 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     }
     m_dashManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeEncoderConfigurationInSegments"))
   {
     m_includeEncoderConfigurationInSegments = jsonValue.GetBool("includeEncoderConfigurationInSegments");
-
     m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeIframeOnlyStream"))
   {
     m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
-
     m_includeIframeOnlyStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("periodTriggers"))
   {
     Aws::Utils::Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
@@ -81,21 +58,16 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     }
     m_periodTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentTemplateFormat"))
   {
     m_segmentTemplateFormat = SegmentTemplateFormatMapper::GetSegmentTemplateFormatForName(jsonValue.GetString("segmentTemplateFormat"));
-
     m_segmentTemplateFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-Schema::Schema() : 
-    m_columnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false),
-    m_selectedAnalysisMethodsHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_schemaStatusDetailsHasBeenSet(false),
-    m_schemaTypePropertiesHasBeenSet(false)
-{
-}
-
 Schema::Schema(JsonView jsonValue)
-  : Schema()
 {
   *this = jsonValue;
 }
@@ -56,7 +34,6 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("partitionKeys");
@@ -66,7 +43,6 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_partitionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisRuleTypes"))
   {
     Aws::Utils::Array<JsonView> analysisRuleTypesJsonList = jsonValue.GetArray("analysisRuleTypes");
@@ -76,14 +52,11 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_analysisRuleTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisMethod"))
   {
     m_analysisMethod = AnalysisMethodMapper::GetAnalysisMethodForName(jsonValue.GetString("analysisMethod"));
-
     m_analysisMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectedAnalysisMethods"))
   {
     Aws::Utils::Array<JsonView> selectedAnalysisMethodsJsonList = jsonValue.GetArray("selectedAnalysisMethods");
@@ -93,63 +66,46 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_selectedAnalysisMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationArn"))
   {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
-
     m_collaborationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SchemaTypeMapper::GetSchemaTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaStatusDetails"))
   {
     Aws::Utils::Array<JsonView> schemaStatusDetailsJsonList = jsonValue.GetArray("schemaStatusDetails");
@@ -159,14 +115,11 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_schemaStatusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaTypeProperties"))
   {
     m_schemaTypeProperties = jsonValue.GetObject("schemaTypeProperties");
-
     m_schemaTypePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

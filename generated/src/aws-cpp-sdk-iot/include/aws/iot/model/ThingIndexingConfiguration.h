@@ -39,7 +39,7 @@ namespace Model
   class ThingIndexingConfiguration
   {
   public:
-    AWS_IOT_API ThingIndexingConfiguration();
+    AWS_IOT_API ThingIndexingConfiguration() = default;
     AWS_IOT_API ThingIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ThingIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * thing index contains registry and shadow data.</p> </li> <li> <p>OFF - Thing
      * indexing is disabled.</p> </li> </ul>
      */
-    inline const ThingIndexingMode& GetThingIndexingMode() const{ return m_thingIndexingMode; }
+    inline ThingIndexingMode GetThingIndexingMode() const { return m_thingIndexingMode; }
     inline bool ThingIndexingModeHasBeenSet() const { return m_thingIndexingModeHasBeenSet; }
-    inline void SetThingIndexingMode(const ThingIndexingMode& value) { m_thingIndexingModeHasBeenSet = true; m_thingIndexingMode = value; }
-    inline void SetThingIndexingMode(ThingIndexingMode&& value) { m_thingIndexingModeHasBeenSet = true; m_thingIndexingMode = std::move(value); }
-    inline ThingIndexingConfiguration& WithThingIndexingMode(const ThingIndexingMode& value) { SetThingIndexingMode(value); return *this;}
-    inline ThingIndexingConfiguration& WithThingIndexingMode(ThingIndexingMode&& value) { SetThingIndexingMode(std::move(value)); return *this;}
+    inline void SetThingIndexingMode(ThingIndexingMode value) { m_thingIndexingModeHasBeenSet = true; m_thingIndexingMode = value; }
+    inline ThingIndexingConfiguration& WithThingIndexingMode(ThingIndexingMode value) { SetThingIndexingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li> <li> <p>OFF -
      * Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
-    inline const ThingConnectivityIndexingMode& GetThingConnectivityIndexingMode() const{ return m_thingConnectivityIndexingMode; }
+    inline ThingConnectivityIndexingMode GetThingConnectivityIndexingMode() const { return m_thingConnectivityIndexingMode; }
     inline bool ThingConnectivityIndexingModeHasBeenSet() const { return m_thingConnectivityIndexingModeHasBeenSet; }
-    inline void SetThingConnectivityIndexingMode(const ThingConnectivityIndexingMode& value) { m_thingConnectivityIndexingModeHasBeenSet = true; m_thingConnectivityIndexingMode = value; }
-    inline void SetThingConnectivityIndexingMode(ThingConnectivityIndexingMode&& value) { m_thingConnectivityIndexingModeHasBeenSet = true; m_thingConnectivityIndexingMode = std::move(value); }
-    inline ThingIndexingConfiguration& WithThingConnectivityIndexingMode(const ThingConnectivityIndexingMode& value) { SetThingConnectivityIndexingMode(value); return *this;}
-    inline ThingIndexingConfiguration& WithThingConnectivityIndexingMode(ThingConnectivityIndexingMode&& value) { SetThingConnectivityIndexingMode(std::move(value)); return *this;}
+    inline void SetThingConnectivityIndexingMode(ThingConnectivityIndexingMode value) { m_thingConnectivityIndexingModeHasBeenSet = true; m_thingConnectivityIndexingMode = value; }
+    inline ThingIndexingConfiguration& WithThingConnectivityIndexingMode(ThingConnectivityIndexingMode value) { SetThingConnectivityIndexingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device
      * Defender Detect.</a> </p>
      */
-    inline const DeviceDefenderIndexingMode& GetDeviceDefenderIndexingMode() const{ return m_deviceDefenderIndexingMode; }
+    inline DeviceDefenderIndexingMode GetDeviceDefenderIndexingMode() const { return m_deviceDefenderIndexingMode; }
     inline bool DeviceDefenderIndexingModeHasBeenSet() const { return m_deviceDefenderIndexingModeHasBeenSet; }
-    inline void SetDeviceDefenderIndexingMode(const DeviceDefenderIndexingMode& value) { m_deviceDefenderIndexingModeHasBeenSet = true; m_deviceDefenderIndexingMode = value; }
-    inline void SetDeviceDefenderIndexingMode(DeviceDefenderIndexingMode&& value) { m_deviceDefenderIndexingModeHasBeenSet = true; m_deviceDefenderIndexingMode = std::move(value); }
-    inline ThingIndexingConfiguration& WithDeviceDefenderIndexingMode(const DeviceDefenderIndexingMode& value) { SetDeviceDefenderIndexingMode(value); return *this;}
-    inline ThingIndexingConfiguration& WithDeviceDefenderIndexingMode(DeviceDefenderIndexingMode&& value) { SetDeviceDefenderIndexingMode(std::move(value)); return *this;}
+    inline void SetDeviceDefenderIndexingMode(DeviceDefenderIndexingMode value) { m_deviceDefenderIndexingModeHasBeenSet = true; m_deviceDefenderIndexingMode = value; }
+    inline ThingIndexingConfiguration& WithDeviceDefenderIndexingMode(DeviceDefenderIndexingMode value) { SetDeviceDefenderIndexingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
      * Device Shadow service.</a> </p>
      */
-    inline const NamedShadowIndexingMode& GetNamedShadowIndexingMode() const{ return m_namedShadowIndexingMode; }
+    inline NamedShadowIndexingMode GetNamedShadowIndexingMode() const { return m_namedShadowIndexingMode; }
     inline bool NamedShadowIndexingModeHasBeenSet() const { return m_namedShadowIndexingModeHasBeenSet; }
-    inline void SetNamedShadowIndexingMode(const NamedShadowIndexingMode& value) { m_namedShadowIndexingModeHasBeenSet = true; m_namedShadowIndexingMode = value; }
-    inline void SetNamedShadowIndexingMode(NamedShadowIndexingMode&& value) { m_namedShadowIndexingModeHasBeenSet = true; m_namedShadowIndexingMode = std::move(value); }
-    inline ThingIndexingConfiguration& WithNamedShadowIndexingMode(const NamedShadowIndexingMode& value) { SetNamedShadowIndexingMode(value); return *this;}
-    inline ThingIndexingConfiguration& WithNamedShadowIndexingMode(NamedShadowIndexingMode&& value) { SetNamedShadowIndexingMode(std::move(value)); return *this;}
+    inline void SetNamedShadowIndexingMode(NamedShadowIndexingMode value) { m_namedShadowIndexingModeHasBeenSet = true; m_namedShadowIndexingMode = value; }
+    inline ThingIndexingConfiguration& WithNamedShadowIndexingMode(NamedShadowIndexingMode value) { SetNamedShadowIndexingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -120,28 +112,28 @@ namespace Model
      *  <p>You can't modify managed fields by updating fleet indexing
      * configuration.</p> 
      */
-    inline const Aws::Vector<Field>& GetManagedFields() const{ return m_managedFields; }
+    inline const Aws::Vector<Field>& GetManagedFields() const { return m_managedFields; }
     inline bool ManagedFieldsHasBeenSet() const { return m_managedFieldsHasBeenSet; }
-    inline void SetManagedFields(const Aws::Vector<Field>& value) { m_managedFieldsHasBeenSet = true; m_managedFields = value; }
-    inline void SetManagedFields(Aws::Vector<Field>&& value) { m_managedFieldsHasBeenSet = true; m_managedFields = std::move(value); }
-    inline ThingIndexingConfiguration& WithManagedFields(const Aws::Vector<Field>& value) { SetManagedFields(value); return *this;}
-    inline ThingIndexingConfiguration& WithManagedFields(Aws::Vector<Field>&& value) { SetManagedFields(std::move(value)); return *this;}
-    inline ThingIndexingConfiguration& AddManagedFields(const Field& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(value); return *this; }
-    inline ThingIndexingConfiguration& AddManagedFields(Field&& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(std::move(value)); return *this; }
+    template<typename ManagedFieldsT = Aws::Vector<Field>>
+    void SetManagedFields(ManagedFieldsT&& value) { m_managedFieldsHasBeenSet = true; m_managedFields = std::forward<ManagedFieldsT>(value); }
+    template<typename ManagedFieldsT = Aws::Vector<Field>>
+    ThingIndexingConfiguration& WithManagedFields(ManagedFieldsT&& value) { SetManagedFields(std::forward<ManagedFieldsT>(value)); return *this;}
+    template<typename ManagedFieldsT = Field>
+    ThingIndexingConfiguration& AddManagedFields(ManagedFieldsT&& value) { m_managedFieldsHasBeenSet = true; m_managedFields.emplace_back(std::forward<ManagedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains custom field names and their data type.</p>
      */
-    inline const Aws::Vector<Field>& GetCustomFields() const{ return m_customFields; }
+    inline const Aws::Vector<Field>& GetCustomFields() const { return m_customFields; }
     inline bool CustomFieldsHasBeenSet() const { return m_customFieldsHasBeenSet; }
-    inline void SetCustomFields(const Aws::Vector<Field>& value) { m_customFieldsHasBeenSet = true; m_customFields = value; }
-    inline void SetCustomFields(Aws::Vector<Field>&& value) { m_customFieldsHasBeenSet = true; m_customFields = std::move(value); }
-    inline ThingIndexingConfiguration& WithCustomFields(const Aws::Vector<Field>& value) { SetCustomFields(value); return *this;}
-    inline ThingIndexingConfiguration& WithCustomFields(Aws::Vector<Field>&& value) { SetCustomFields(std::move(value)); return *this;}
-    inline ThingIndexingConfiguration& AddCustomFields(const Field& value) { m_customFieldsHasBeenSet = true; m_customFields.push_back(value); return *this; }
-    inline ThingIndexingConfiguration& AddCustomFields(Field&& value) { m_customFieldsHasBeenSet = true; m_customFields.push_back(std::move(value)); return *this; }
+    template<typename CustomFieldsT = Aws::Vector<Field>>
+    void SetCustomFields(CustomFieldsT&& value) { m_customFieldsHasBeenSet = true; m_customFields = std::forward<CustomFieldsT>(value); }
+    template<typename CustomFieldsT = Aws::Vector<Field>>
+    ThingIndexingConfiguration& WithCustomFields(CustomFieldsT&& value) { SetCustomFields(std::forward<CustomFieldsT>(value)); return *this;}
+    template<typename CustomFieldsT = Field>
+    ThingIndexingConfiguration& AddCustomFields(CustomFieldsT&& value) { m_customFieldsHasBeenSet = true; m_customFields.emplace_back(std::forward<CustomFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -161,25 +153,25 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
      * fleet indexing</a>.</p> </li> </ul>
      */
-    inline const IndexingFilter& GetFilter() const{ return m_filter; }
+    inline const IndexingFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const IndexingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(IndexingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ThingIndexingConfiguration& WithFilter(const IndexingFilter& value) { SetFilter(value); return *this;}
-    inline ThingIndexingConfiguration& WithFilter(IndexingFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = IndexingFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = IndexingFilter>
+    ThingIndexingConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
-    ThingIndexingMode m_thingIndexingMode;
+    ThingIndexingMode m_thingIndexingMode{ThingIndexingMode::NOT_SET};
     bool m_thingIndexingModeHasBeenSet = false;
 
-    ThingConnectivityIndexingMode m_thingConnectivityIndexingMode;
+    ThingConnectivityIndexingMode m_thingConnectivityIndexingMode{ThingConnectivityIndexingMode::NOT_SET};
     bool m_thingConnectivityIndexingModeHasBeenSet = false;
 
-    DeviceDefenderIndexingMode m_deviceDefenderIndexingMode;
+    DeviceDefenderIndexingMode m_deviceDefenderIndexingMode{DeviceDefenderIndexingMode::NOT_SET};
     bool m_deviceDefenderIndexingModeHasBeenSet = false;
 
-    NamedShadowIndexingMode m_namedShadowIndexingMode;
+    NamedShadowIndexingMode m_namedShadowIndexingMode{NamedShadowIndexingMode::NOT_SET};
     bool m_namedShadowIndexingModeHasBeenSet = false;
 
     Aws::Vector<Field> m_managedFields;

@@ -18,15 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-CommitmentInformation::CommitmentInformation() : 
-    m_commitmentConfigurationHasBeenSet(false),
-    m_expiresOnHasBeenSet(false),
-    m_startAtHasBeenSet(false)
-{
-}
-
 CommitmentInformation::CommitmentInformation(JsonView jsonValue)
-  : CommitmentInformation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CommitmentInformation& CommitmentInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitmentConfiguration"))
   {
     m_commitmentConfiguration = jsonValue.GetObject("commitmentConfiguration");
-
     m_commitmentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresOn"))
   {
     m_expiresOn = jsonValue.GetString("expiresOn");
-
     m_expiresOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startAt"))
   {
     m_startAt = jsonValue.GetString("startAt");
-
     m_startAtHasBeenSet = true;
   }
-
   return *this;
 }
 

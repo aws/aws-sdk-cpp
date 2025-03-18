@@ -30,7 +30,7 @@ namespace Model
   class GetSampledRequestsResult
   {
   public:
-    AWS_WAF_API GetSampledRequestsResult();
+    AWS_WAF_API GetSampledRequestsResult() = default;
     AWS_WAF_API GetSampledRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API GetSampledRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>A complex type that contains detailed information about each of the requests
      * in the sample.</p>
      */
-    inline const Aws::Vector<SampledHTTPRequest>& GetSampledRequests() const{ return m_sampledRequests; }
-    inline void SetSampledRequests(const Aws::Vector<SampledHTTPRequest>& value) { m_sampledRequests = value; }
-    inline void SetSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { m_sampledRequests = std::move(value); }
-    inline GetSampledRequestsResult& WithSampledRequests(const Aws::Vector<SampledHTTPRequest>& value) { SetSampledRequests(value); return *this;}
-    inline GetSampledRequestsResult& WithSampledRequests(Aws::Vector<SampledHTTPRequest>&& value) { SetSampledRequests(std::move(value)); return *this;}
-    inline GetSampledRequestsResult& AddSampledRequests(const SampledHTTPRequest& value) { m_sampledRequests.push_back(value); return *this; }
-    inline GetSampledRequestsResult& AddSampledRequests(SampledHTTPRequest&& value) { m_sampledRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SampledHTTPRequest>& GetSampledRequests() const { return m_sampledRequests; }
+    template<typename SampledRequestsT = Aws::Vector<SampledHTTPRequest>>
+    void SetSampledRequests(SampledRequestsT&& value) { m_sampledRequestsHasBeenSet = true; m_sampledRequests = std::forward<SampledRequestsT>(value); }
+    template<typename SampledRequestsT = Aws::Vector<SampledHTTPRequest>>
+    GetSampledRequestsResult& WithSampledRequests(SampledRequestsT&& value) { SetSampledRequests(std::forward<SampledRequestsT>(value)); return *this;}
+    template<typename SampledRequestsT = SampledHTTPRequest>
+    GetSampledRequestsResult& AddSampledRequests(SampledRequestsT&& value) { m_sampledRequestsHasBeenSet = true; m_sampledRequests.emplace_back(std::forward<SampledRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,8 +56,8 @@ namespace Model
      * than <code>MaxItems</code>, the sample includes every request that your AWS
      * resource received during the specified time range.</p>
      */
-    inline long long GetPopulationSize() const{ return m_populationSize; }
-    inline void SetPopulationSize(long long value) { m_populationSize = value; }
+    inline long long GetPopulationSize() const { return m_populationSize; }
+    inline void SetPopulationSize(long long value) { m_populationSizeHasBeenSet = true; m_populationSize = value; }
     inline GetSampledRequestsResult& WithPopulationSize(long long value) { SetPopulationSize(value); return *this;}
     ///@}
 
@@ -69,32 +69,34 @@ namespace Model
      * request, <code>GetSampledRequests</code> returns the time range for the first
      * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
-    inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
-    inline void SetTimeWindow(const TimeWindow& value) { m_timeWindow = value; }
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindow = std::move(value); }
-    inline GetSampledRequestsResult& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
-    inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
+    inline const TimeWindow& GetTimeWindow() const { return m_timeWindow; }
+    template<typename TimeWindowT = TimeWindow>
+    void SetTimeWindow(TimeWindowT&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::forward<TimeWindowT>(value); }
+    template<typename TimeWindowT = TimeWindow>
+    GetSampledRequestsResult& WithTimeWindow(TimeWindowT&& value) { SetTimeWindow(std::forward<TimeWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSampledRequestsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSampledRequestsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSampledRequestsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSampledRequestsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SampledHTTPRequest> m_sampledRequests;
+    bool m_sampledRequestsHasBeenSet = false;
 
-    long long m_populationSize;
+    long long m_populationSize{0};
+    bool m_populationSizeHasBeenSet = false;
 
     TimeWindow m_timeWindow;
+    bool m_timeWindowHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

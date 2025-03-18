@@ -24,7 +24,7 @@ namespace Model
   class DescribeScheduledActionsRequest : public ApplicationAutoScalingRequest
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsRequest();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>The names of the scheduled actions to describe.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
+    inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const { return m_scheduledActionNames; }
     inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
-    inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
-    inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
-    inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
-    inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
-    inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
-    inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
-    inline DescribeScheduledActionsRequest& AddScheduledActionNames(const char* value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
+    template<typename ScheduledActionNamesT = Aws::Vector<Aws::String>>
+    void SetScheduledActionNames(ScheduledActionNamesT&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::forward<ScheduledActionNamesT>(value); }
+    template<typename ScheduledActionNamesT = Aws::Vector<Aws::String>>
+    DescribeScheduledActionsRequest& WithScheduledActionNames(ScheduledActionNamesT&& value) { SetScheduledActionNames(std::forward<ScheduledActionNamesT>(value)); return *this;}
+    template<typename ScheduledActionNamesT = Aws::String>
+    DescribeScheduledActionsRequest& AddScheduledActionNames(ScheduledActionNamesT&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.emplace_back(std::forward<ScheduledActionNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,12 +57,10 @@ namespace Model
      * For a resource provided by your own application or service, use
      * <code>custom-resource</code> instead.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline DescribeScheduledActionsRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline DescribeScheduledActionsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline DescribeScheduledActionsRequest& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +125,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline DescribeScheduledActionsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline DescribeScheduledActionsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline DescribeScheduledActionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    DescribeScheduledActionsRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,12 +185,10 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline DescribeScheduledActionsRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline DescribeScheduledActionsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline DescribeScheduledActionsRequest& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -208,7 +201,7 @@ namespace Model
      * used, the operation returns up to 50 results and a <code>NextToken</code> value,
      * if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeScheduledActionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -218,30 +211,28 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeScheduledActionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScheduledActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScheduledActionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScheduledActionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_scheduledActionNames;
     bool m_scheduledActionNamesHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

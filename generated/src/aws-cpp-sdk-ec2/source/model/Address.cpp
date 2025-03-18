@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Address::Address() : 
-    m_allocationIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_domain(DomainType::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceOwnerIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_carrierIpHasBeenSet(false),
-    m_serviceManaged(ServiceManaged::NOT_SET),
-    m_serviceManagedHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 Address::Address(const XmlNode& xmlNode)
-  : Address()
 {
   *this = xmlNode;
 }
@@ -68,7 +46,7 @@ Address& Address::operator =(const XmlNode& xmlNode)
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())
     {
-      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()).c_str());
+      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()));
       m_domainHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
@@ -93,6 +71,7 @@ Address& Address::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -134,7 +113,7 @@ Address& Address::operator =(const XmlNode& xmlNode)
     XmlNode serviceManagedNode = resultNode.FirstChild("serviceManaged");
     if(!serviceManagedNode.IsNull())
     {
-      m_serviceManaged = ServiceManagedMapper::GetServiceManagedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceManagedNode.GetText()).c_str()).c_str());
+      m_serviceManaged = ServiceManagedMapper::GetServiceManagedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceManagedNode.GetText()).c_str()));
       m_serviceManagedHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");

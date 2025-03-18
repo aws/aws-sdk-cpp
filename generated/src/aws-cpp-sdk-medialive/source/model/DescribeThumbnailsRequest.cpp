@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeThumbnailsRequest::DescribeThumbnailsRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false),
-    m_thumbnailTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThumbnailsRequest::SerializePayload() const
 {
   return {};

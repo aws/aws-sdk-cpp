@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-WarningDetail::WarningDetail() : 
-    m_type(WarningType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 WarningDetail::WarningDetail(const XmlNode& xmlNode)
-  : WarningDetail()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ WarningDetail& WarningDetail::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = WarningTypeMapper::GetWarningTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = WarningTypeMapper::GetWarningTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode propertiesNode = resultNode.FirstChild("Properties");
     if(!propertiesNode.IsNull())
     {
       XmlNode propertiesMember = propertiesNode.FirstChild("member");
+      m_propertiesHasBeenSet = !propertiesMember.IsNull();
       while(!propertiesMember.IsNull())
       {
         m_properties.push_back(propertiesMember);

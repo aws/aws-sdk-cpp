@@ -18,16 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-MonitorSummary::MonitorSummary() : 
-    m_monitorArnHasBeenSet(false),
-    m_monitorNameHasBeenSet(false),
-    m_monitorStatus(MonitorStatus::NOT_SET),
-    m_monitorStatusHasBeenSet(false)
-{
-}
-
 MonitorSummary::MonitorSummary(JsonView jsonValue)
-  : MonitorSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MonitorSummary& MonitorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("monitorArn"))
   {
     m_monitorArn = jsonValue.GetString("monitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorName"))
   {
     m_monitorName = jsonValue.GetString("monitorName");
-
     m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorStatus"))
   {
     m_monitorStatus = MonitorStatusMapper::GetMonitorStatusForName(jsonValue.GetString("monitorStatus"));
-
     m_monitorStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

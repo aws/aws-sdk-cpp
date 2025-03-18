@@ -18,23 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyAggregatesEntry::BatchGetAssetPropertyAggregatesEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_aggregateTypesHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_qualitiesHasBeenSet(false),
-    m_timeOrdering(TimeOrdering::NOT_SET),
-    m_timeOrderingHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyAggregatesEntry::BatchGetAssetPropertyAggregatesEntry(JsonView jsonValue)
-  : BatchGetAssetPropertyAggregatesEntry()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ BatchGetAssetPropertyAggregatesEntry& BatchGetAssetPropertyAggregatesEntry::oper
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyId"))
   {
     m_propertyId = jsonValue.GetString("propertyId");
-
     m_propertyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyAlias"))
   {
     m_propertyAlias = jsonValue.GetString("propertyAlias");
-
     m_propertyAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregateTypes"))
   {
     Aws::Utils::Array<JsonView> aggregateTypesJsonList = jsonValue.GetArray("aggregateTypes");
@@ -78,28 +54,21 @@ BatchGetAssetPropertyAggregatesEntry& BatchGetAssetPropertyAggregatesEntry::oper
     }
     m_aggregateTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolution"))
   {
     m_resolution = jsonValue.GetString("resolution");
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetDouble("startDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDate"))
   {
     m_endDate = jsonValue.GetDouble("endDate");
-
     m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qualities"))
   {
     Aws::Utils::Array<JsonView> qualitiesJsonList = jsonValue.GetArray("qualities");
@@ -109,14 +78,11 @@ BatchGetAssetPropertyAggregatesEntry& BatchGetAssetPropertyAggregatesEntry::oper
     }
     m_qualitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeOrdering"))
   {
     m_timeOrdering = TimeOrderingMapper::GetTimeOrderingForName(jsonValue.GetString("timeOrdering"));
-
     m_timeOrderingHasBeenSet = true;
   }
-
   return *this;
 }
 

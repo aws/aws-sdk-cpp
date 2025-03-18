@@ -27,7 +27,7 @@ namespace Model
   class UpdateEnabledBaselineResult
   {
   public:
-    AWS_CONTROLTOWER_API UpdateEnabledBaselineResult();
+    AWS_CONTROLTOWER_API UpdateEnabledBaselineResult() = default;
     AWS_CONTROLTOWER_API UpdateEnabledBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API UpdateEnabledBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,28 @@ namespace Model
      * <code>operationIdentifier</code> is used to track status through calls to the
      * <code>GetBaselineOperation</code> API.</p>
      */
-    inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
-    inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifier = value; }
-    inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifier = std::move(value); }
-    inline void SetOperationIdentifier(const char* value) { m_operationIdentifier.assign(value); }
-    inline UpdateEnabledBaselineResult& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-    inline UpdateEnabledBaselineResult& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-    inline UpdateEnabledBaselineResult& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
+    inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
+    template<typename OperationIdentifierT = Aws::String>
+    void SetOperationIdentifier(OperationIdentifierT&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::forward<OperationIdentifierT>(value); }
+    template<typename OperationIdentifierT = Aws::String>
+    UpdateEnabledBaselineResult& WithOperationIdentifier(OperationIdentifierT&& value) { SetOperationIdentifier(std::forward<OperationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEnabledBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEnabledBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEnabledBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEnabledBaselineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_operationIdentifier;
+    bool m_operationIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

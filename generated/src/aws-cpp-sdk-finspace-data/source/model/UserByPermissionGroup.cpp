@@ -18,25 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-UserByPermissionGroup::UserByPermissionGroup() : 
-    m_userIdHasBeenSet(false),
-    m_status(UserStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_apiAccess(ApiAccess::NOT_SET),
-    m_apiAccessHasBeenSet(false),
-    m_apiAccessPrincipalArnHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
-{
-}
-
 UserByPermissionGroup::UserByPermissionGroup(JsonView jsonValue)
-  : UserByPermissionGroup()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ UserByPermissionGroup& UserByPermissionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = UserStatusMapper::GetUserStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiAccess"))
   {
     m_apiAccess = ApiAccessMapper::GetApiAccessForName(jsonValue.GetString("apiAccess"));
-
     m_apiAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiAccessPrincipalArn"))
   {
     m_apiAccessPrincipalArn = jsonValue.GetString("apiAccessPrincipalArn");
-
     m_apiAccessPrincipalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipStatus"))
   {
     m_membershipStatus = PermissionGroupMembershipStatusMapper::GetPermissionGroupMembershipStatusForName(jsonValue.GetString("membershipStatus"));
-
     m_membershipStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

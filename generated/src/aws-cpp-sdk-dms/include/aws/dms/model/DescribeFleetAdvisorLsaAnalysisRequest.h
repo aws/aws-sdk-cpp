@@ -21,7 +21,7 @@ namespace Model
   class DescribeFleetAdvisorLsaAnalysisRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeFleetAdvisorLsaAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>Sets the maximum number of records returned in the response.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeFleetAdvisorLsaAnalysisRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
      * token for each page. Make the call again using the returned token to retrieve
      * the next page. Keep all other arguments unchanged. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFleetAdvisorLsaAnalysisRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SyncInputJobAttachmentsSessionActionDefinition::SyncInputJobAttachmentsSessionActionDefinition() : 
-    m_stepIdHasBeenSet(false)
-{
-}
-
 SyncInputJobAttachmentsSessionActionDefinition::SyncInputJobAttachmentsSessionActionDefinition(JsonView jsonValue)
-  : SyncInputJobAttachmentsSessionActionDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SyncInputJobAttachmentsSessionActionDefinition& SyncInputJobAttachmentsSessionAc
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   return *this;
 }
 

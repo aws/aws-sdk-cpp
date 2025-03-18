@@ -31,7 +31,7 @@ namespace Model
   class TimeFilter
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API TimeFilter();
+    AWS_MANAGEDBLOCKCHAINQUERY_API TimeFilter() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API TimeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API TimeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,22 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const BlockchainInstant& GetFrom() const{ return m_from; }
+    inline const BlockchainInstant& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const BlockchainInstant& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(BlockchainInstant&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline TimeFilter& WithFrom(const BlockchainInstant& value) { SetFrom(value); return *this;}
-    inline TimeFilter& WithFrom(BlockchainInstant&& value) { SetFrom(std::move(value)); return *this;}
+    template<typename FromT = BlockchainInstant>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = BlockchainInstant>
+    TimeFilter& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlockchainInstant& GetTo() const{ return m_to; }
+    inline const BlockchainInstant& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const BlockchainInstant& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(BlockchainInstant&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline TimeFilter& WithTo(const BlockchainInstant& value) { SetTo(value); return *this;}
-    inline TimeFilter& WithTo(BlockchainInstant&& value) { SetTo(std::move(value)); return *this;}
+    template<typename ToT = BlockchainInstant>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = BlockchainInstant>
+    TimeFilter& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
   private:
 

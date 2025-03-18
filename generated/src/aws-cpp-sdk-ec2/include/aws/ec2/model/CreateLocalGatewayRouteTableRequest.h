@@ -24,7 +24,7 @@ namespace Model
   class CreateLocalGatewayRouteTableRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateLocalGatewayRouteTableRequest();
+    AWS_EC2_API CreateLocalGatewayRouteTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p> The ID of the local gateway. </p>
      */
-    inline const Aws::String& GetLocalGatewayId() const{ return m_localGatewayId; }
+    inline const Aws::String& GetLocalGatewayId() const { return m_localGatewayId; }
     inline bool LocalGatewayIdHasBeenSet() const { return m_localGatewayIdHasBeenSet; }
-    inline void SetLocalGatewayId(const Aws::String& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = value; }
-    inline void SetLocalGatewayId(Aws::String&& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = std::move(value); }
-    inline void SetLocalGatewayId(const char* value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId.assign(value); }
-    inline CreateLocalGatewayRouteTableRequest& WithLocalGatewayId(const Aws::String& value) { SetLocalGatewayId(value); return *this;}
-    inline CreateLocalGatewayRouteTableRequest& WithLocalGatewayId(Aws::String&& value) { SetLocalGatewayId(std::move(value)); return *this;}
-    inline CreateLocalGatewayRouteTableRequest& WithLocalGatewayId(const char* value) { SetLocalGatewayId(value); return *this;}
+    template<typename LocalGatewayIdT = Aws::String>
+    void SetLocalGatewayId(LocalGatewayIdT&& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = std::forward<LocalGatewayIdT>(value); }
+    template<typename LocalGatewayIdT = Aws::String>
+    CreateLocalGatewayRouteTableRequest& WithLocalGatewayId(LocalGatewayIdT&& value) { SetLocalGatewayId(std::forward<LocalGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The mode of the local gateway route table. </p>
      */
-    inline const LocalGatewayRouteTableMode& GetMode() const{ return m_mode; }
+    inline LocalGatewayRouteTableMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const LocalGatewayRouteTableMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(LocalGatewayRouteTableMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline CreateLocalGatewayRouteTableRequest& WithMode(const LocalGatewayRouteTableMode& value) { SetMode(value); return *this;}
-    inline CreateLocalGatewayRouteTableRequest& WithMode(LocalGatewayRouteTableMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(LocalGatewayRouteTableMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline CreateLocalGatewayRouteTableRequest& WithMode(LocalGatewayRouteTableMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The tags assigned to the local gateway route table. </p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateLocalGatewayRouteTableRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateLocalGatewayRouteTableRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateLocalGatewayRouteTableRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateLocalGatewayRouteTableRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateLocalGatewayRouteTableRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateLocalGatewayRouteTableRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,7 +82,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateLocalGatewayRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -96,13 +92,13 @@ namespace Model
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet = false;
 
-    LocalGatewayRouteTableMode m_mode;
+    LocalGatewayRouteTableMode m_mode{LocalGatewayRouteTableMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

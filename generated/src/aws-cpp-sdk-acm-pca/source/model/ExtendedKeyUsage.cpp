@@ -18,15 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-ExtendedKeyUsage::ExtendedKeyUsage() : 
-    m_extendedKeyUsageType(ExtendedKeyUsageType::NOT_SET),
-    m_extendedKeyUsageTypeHasBeenSet(false),
-    m_extendedKeyUsageObjectIdentifierHasBeenSet(false)
-{
-}
-
 ExtendedKeyUsage::ExtendedKeyUsage(JsonView jsonValue)
-  : ExtendedKeyUsage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExtendedKeyUsage& ExtendedKeyUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExtendedKeyUsageType"))
   {
     m_extendedKeyUsageType = ExtendedKeyUsageTypeMapper::GetExtendedKeyUsageTypeForName(jsonValue.GetString("ExtendedKeyUsageType"));
-
     m_extendedKeyUsageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendedKeyUsageObjectIdentifier"))
   {
     m_extendedKeyUsageObjectIdentifier = jsonValue.GetString("ExtendedKeyUsageObjectIdentifier");
-
     m_extendedKeyUsageObjectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

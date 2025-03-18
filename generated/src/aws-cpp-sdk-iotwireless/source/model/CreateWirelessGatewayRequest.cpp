@@ -12,16 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWirelessGatewayRequest::CreateWirelessGatewayRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateWirelessGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

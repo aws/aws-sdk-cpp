@@ -30,7 +30,7 @@ namespace Model
   class JourneyTimeframeCap
   {
   public:
-    AWS_PINPOINT_API JourneyTimeframeCap();
+    AWS_PINPOINT_API JourneyTimeframeCap() = default;
     AWS_PINPOINT_API JourneyTimeframeCap(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyTimeframeCap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * during the specified timeframe. The maximum value is 100. If set to 0, this
      * limit will not apply.</p>
      */
-    inline int GetCap() const{ return m_cap; }
+    inline int GetCap() const { return m_cap; }
     inline bool CapHasBeenSet() const { return m_capHasBeenSet; }
     inline void SetCap(int value) { m_capHasBeenSet = true; m_cap = value; }
     inline JourneyTimeframeCap& WithCap(int value) { SetCap(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>The length of the timeframe in days. The maximum value is 30. If set to 0,
      * this limit will not apply.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline JourneyTimeframeCap& WithDays(int value) { SetDays(value); return *this;}
     ///@}
   private:
 
-    int m_cap;
+    int m_cap{0};
     bool m_capHasBeenSet = false;
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
   };
 

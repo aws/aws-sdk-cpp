@@ -33,7 +33,7 @@ namespace Model
   class AwsElasticsearchDomainElasticsearchClusterConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails() = default;
     AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * specified, then <code>DedicatedMasterEnabled</code> must be
      * <code>true</code>.</p>
      */
-    inline int GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
+    inline int GetDedicatedMasterCount() const { return m_dedicatedMasterCount; }
     inline bool DedicatedMasterCountHasBeenSet() const { return m_dedicatedMasterCountHasBeenSet; }
     inline void SetDedicatedMasterCount(int value) { m_dedicatedMasterCountHasBeenSet = true; m_dedicatedMasterCount = value; }
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
@@ -57,7 +57,7 @@ namespace Model
      * dedicated master node performs cluster management tasks, but doesn't hold data
      * or respond to data upload requests.</p>
      */
-    inline bool GetDedicatedMasterEnabled() const{ return m_dedicatedMasterEnabled; }
+    inline bool GetDedicatedMasterEnabled() const { return m_dedicatedMasterEnabled; }
     inline bool DedicatedMasterEnabledHasBeenSet() const { return m_dedicatedMasterEnabledHasBeenSet; }
     inline void SetDedicatedMasterEnabled(bool value) { m_dedicatedMasterEnabledHasBeenSet = true; m_dedicatedMasterEnabled = value; }
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterEnabled(bool value) { SetDedicatedMasterEnabled(value); return *this;}
@@ -73,21 +73,19 @@ namespace Model
      * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
      * Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDedicatedMasterType() const{ return m_dedicatedMasterType; }
+    inline const Aws::String& GetDedicatedMasterType() const { return m_dedicatedMasterType; }
     inline bool DedicatedMasterTypeHasBeenSet() const { return m_dedicatedMasterTypeHasBeenSet; }
-    inline void SetDedicatedMasterType(const Aws::String& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = value; }
-    inline void SetDedicatedMasterType(Aws::String&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::move(value); }
-    inline void SetDedicatedMasterType(const char* value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType.assign(value); }
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(const Aws::String& value) { SetDedicatedMasterType(value); return *this;}
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(Aws::String&& value) { SetDedicatedMasterType(std::move(value)); return *this;}
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(const char* value) { SetDedicatedMasterType(value); return *this;}
+    template<typename DedicatedMasterTypeT = Aws::String>
+    void SetDedicatedMasterType(DedicatedMasterTypeT&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::forward<DedicatedMasterTypeT>(value); }
+    template<typename DedicatedMasterTypeT = Aws::String>
+    AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(DedicatedMasterTypeT&& value) { SetDedicatedMasterType(std::forward<DedicatedMasterTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of data nodes to use in the Elasticsearch domain.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -101,14 +99,12 @@ namespace Model
      * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
      * Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +112,12 @@ namespace Model
      * <p>Configuration options for zone awareness. Provided if
      * <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
      */
-    inline const AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& GetZoneAwarenessConfig() const{ return m_zoneAwarenessConfig; }
+    inline const AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& GetZoneAwarenessConfig() const { return m_zoneAwarenessConfig; }
     inline bool ZoneAwarenessConfigHasBeenSet() const { return m_zoneAwarenessConfigHasBeenSet; }
-    inline void SetZoneAwarenessConfig(const AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = value; }
-    inline void SetZoneAwarenessConfig(AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails&& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = std::move(value); }
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithZoneAwarenessConfig(const AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& value) { SetZoneAwarenessConfig(value); return *this;}
-    inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithZoneAwarenessConfig(AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails&& value) { SetZoneAwarenessConfig(std::move(value)); return *this;}
+    template<typename ZoneAwarenessConfigT = AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>
+    void SetZoneAwarenessConfig(ZoneAwarenessConfigT&& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = std::forward<ZoneAwarenessConfigT>(value); }
+    template<typename ZoneAwarenessConfigT = AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>
+    AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithZoneAwarenessConfig(ZoneAwarenessConfigT&& value) { SetZoneAwarenessConfig(std::forward<ZoneAwarenessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,23 +127,23 @@ namespace Model
      * shards across Availability Zones in the same Region. This prevents data loss and
      * minimizes downtime if a node or data center fails.</p>
      */
-    inline bool GetZoneAwarenessEnabled() const{ return m_zoneAwarenessEnabled; }
+    inline bool GetZoneAwarenessEnabled() const { return m_zoneAwarenessEnabled; }
     inline bool ZoneAwarenessEnabledHasBeenSet() const { return m_zoneAwarenessEnabledHasBeenSet; }
     inline void SetZoneAwarenessEnabled(bool value) { m_zoneAwarenessEnabledHasBeenSet = true; m_zoneAwarenessEnabled = value; }
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithZoneAwarenessEnabled(bool value) { SetZoneAwarenessEnabled(value); return *this;}
     ///@}
   private:
 
-    int m_dedicatedMasterCount;
+    int m_dedicatedMasterCount{0};
     bool m_dedicatedMasterCountHasBeenSet = false;
 
-    bool m_dedicatedMasterEnabled;
+    bool m_dedicatedMasterEnabled{false};
     bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;
     bool m_dedicatedMasterTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_instanceType;
@@ -156,7 +152,7 @@ namespace Model
     AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
     bool m_zoneAwarenessConfigHasBeenSet = false;
 
-    bool m_zoneAwarenessEnabled;
+    bool m_zoneAwarenessEnabled{false};
     bool m_zoneAwarenessEnabledHasBeenSet = false;
   };
 

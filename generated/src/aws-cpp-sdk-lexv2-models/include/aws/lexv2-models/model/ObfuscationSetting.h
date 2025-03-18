@@ -32,7 +32,7 @@ namespace Model
   class ObfuscationSetting
   {
   public:
-    AWS_LEXMODELSV2_API ObfuscationSetting();
+    AWS_LEXMODELSV2_API ObfuscationSetting() = default;
     AWS_LEXMODELSV2_API ObfuscationSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ObfuscationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Value that determines whether Amazon Lex obscures slot values in conversation
      * logs. The default is to obscure the values.</p>
      */
-    inline const ObfuscationSettingType& GetObfuscationSettingType() const{ return m_obfuscationSettingType; }
+    inline ObfuscationSettingType GetObfuscationSettingType() const { return m_obfuscationSettingType; }
     inline bool ObfuscationSettingTypeHasBeenSet() const { return m_obfuscationSettingTypeHasBeenSet; }
-    inline void SetObfuscationSettingType(const ObfuscationSettingType& value) { m_obfuscationSettingTypeHasBeenSet = true; m_obfuscationSettingType = value; }
-    inline void SetObfuscationSettingType(ObfuscationSettingType&& value) { m_obfuscationSettingTypeHasBeenSet = true; m_obfuscationSettingType = std::move(value); }
-    inline ObfuscationSetting& WithObfuscationSettingType(const ObfuscationSettingType& value) { SetObfuscationSettingType(value); return *this;}
-    inline ObfuscationSetting& WithObfuscationSettingType(ObfuscationSettingType&& value) { SetObfuscationSettingType(std::move(value)); return *this;}
+    inline void SetObfuscationSettingType(ObfuscationSettingType value) { m_obfuscationSettingTypeHasBeenSet = true; m_obfuscationSettingType = value; }
+    inline ObfuscationSetting& WithObfuscationSettingType(ObfuscationSettingType value) { SetObfuscationSettingType(value); return *this;}
     ///@}
   private:
 
-    ObfuscationSettingType m_obfuscationSettingType;
+    ObfuscationSettingType m_obfuscationSettingType{ObfuscationSettingType::NOT_SET};
     bool m_obfuscationSettingTypeHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class OAuth2Defaults
   {
   public:
-    AWS_APPFLOW_API OAuth2Defaults();
+    AWS_APPFLOW_API OAuth2Defaults() = default;
     AWS_APPFLOW_API OAuth2Defaults(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API OAuth2Defaults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,73 +45,69 @@ namespace Model
     /**
      * <p>OAuth 2.0 scopes that the connector supports.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOauthScopes() const{ return m_oauthScopes; }
+    inline const Aws::Vector<Aws::String>& GetOauthScopes() const { return m_oauthScopes; }
     inline bool OauthScopesHasBeenSet() const { return m_oauthScopesHasBeenSet; }
-    inline void SetOauthScopes(const Aws::Vector<Aws::String>& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes = value; }
-    inline void SetOauthScopes(Aws::Vector<Aws::String>&& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes = std::move(value); }
-    inline OAuth2Defaults& WithOauthScopes(const Aws::Vector<Aws::String>& value) { SetOauthScopes(value); return *this;}
-    inline OAuth2Defaults& WithOauthScopes(Aws::Vector<Aws::String>&& value) { SetOauthScopes(std::move(value)); return *this;}
-    inline OAuth2Defaults& AddOauthScopes(const Aws::String& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes.push_back(value); return *this; }
-    inline OAuth2Defaults& AddOauthScopes(Aws::String&& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes.push_back(std::move(value)); return *this; }
-    inline OAuth2Defaults& AddOauthScopes(const char* value) { m_oauthScopesHasBeenSet = true; m_oauthScopes.push_back(value); return *this; }
+    template<typename OauthScopesT = Aws::Vector<Aws::String>>
+    void SetOauthScopes(OauthScopesT&& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes = std::forward<OauthScopesT>(value); }
+    template<typename OauthScopesT = Aws::Vector<Aws::String>>
+    OAuth2Defaults& WithOauthScopes(OauthScopesT&& value) { SetOauthScopes(std::forward<OauthScopesT>(value)); return *this;}
+    template<typename OauthScopesT = Aws::String>
+    OAuth2Defaults& AddOauthScopes(OauthScopesT&& value) { m_oauthScopesHasBeenSet = true; m_oauthScopes.emplace_back(std::forward<OauthScopesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token URLs that can be used for OAuth 2.0 authentication.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokenUrls() const{ return m_tokenUrls; }
+    inline const Aws::Vector<Aws::String>& GetTokenUrls() const { return m_tokenUrls; }
     inline bool TokenUrlsHasBeenSet() const { return m_tokenUrlsHasBeenSet; }
-    inline void SetTokenUrls(const Aws::Vector<Aws::String>& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls = value; }
-    inline void SetTokenUrls(Aws::Vector<Aws::String>&& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls = std::move(value); }
-    inline OAuth2Defaults& WithTokenUrls(const Aws::Vector<Aws::String>& value) { SetTokenUrls(value); return *this;}
-    inline OAuth2Defaults& WithTokenUrls(Aws::Vector<Aws::String>&& value) { SetTokenUrls(std::move(value)); return *this;}
-    inline OAuth2Defaults& AddTokenUrls(const Aws::String& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls.push_back(value); return *this; }
-    inline OAuth2Defaults& AddTokenUrls(Aws::String&& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls.push_back(std::move(value)); return *this; }
-    inline OAuth2Defaults& AddTokenUrls(const char* value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls.push_back(value); return *this; }
+    template<typename TokenUrlsT = Aws::Vector<Aws::String>>
+    void SetTokenUrls(TokenUrlsT&& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls = std::forward<TokenUrlsT>(value); }
+    template<typename TokenUrlsT = Aws::Vector<Aws::String>>
+    OAuth2Defaults& WithTokenUrls(TokenUrlsT&& value) { SetTokenUrls(std::forward<TokenUrlsT>(value)); return *this;}
+    template<typename TokenUrlsT = Aws::String>
+    OAuth2Defaults& AddTokenUrls(TokenUrlsT&& value) { m_tokenUrlsHasBeenSet = true; m_tokenUrls.emplace_back(std::forward<TokenUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Auth code URLs that can be used for OAuth 2.0 authentication.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthCodeUrls() const{ return m_authCodeUrls; }
+    inline const Aws::Vector<Aws::String>& GetAuthCodeUrls() const { return m_authCodeUrls; }
     inline bool AuthCodeUrlsHasBeenSet() const { return m_authCodeUrlsHasBeenSet; }
-    inline void SetAuthCodeUrls(const Aws::Vector<Aws::String>& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls = value; }
-    inline void SetAuthCodeUrls(Aws::Vector<Aws::String>&& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls = std::move(value); }
-    inline OAuth2Defaults& WithAuthCodeUrls(const Aws::Vector<Aws::String>& value) { SetAuthCodeUrls(value); return *this;}
-    inline OAuth2Defaults& WithAuthCodeUrls(Aws::Vector<Aws::String>&& value) { SetAuthCodeUrls(std::move(value)); return *this;}
-    inline OAuth2Defaults& AddAuthCodeUrls(const Aws::String& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls.push_back(value); return *this; }
-    inline OAuth2Defaults& AddAuthCodeUrls(Aws::String&& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls.push_back(std::move(value)); return *this; }
-    inline OAuth2Defaults& AddAuthCodeUrls(const char* value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls.push_back(value); return *this; }
+    template<typename AuthCodeUrlsT = Aws::Vector<Aws::String>>
+    void SetAuthCodeUrls(AuthCodeUrlsT&& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls = std::forward<AuthCodeUrlsT>(value); }
+    template<typename AuthCodeUrlsT = Aws::Vector<Aws::String>>
+    OAuth2Defaults& WithAuthCodeUrls(AuthCodeUrlsT&& value) { SetAuthCodeUrls(std::forward<AuthCodeUrlsT>(value)); return *this;}
+    template<typename AuthCodeUrlsT = Aws::String>
+    OAuth2Defaults& AddAuthCodeUrls(AuthCodeUrlsT&& value) { m_authCodeUrlsHasBeenSet = true; m_authCodeUrls.emplace_back(std::forward<AuthCodeUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>OAuth 2.0 grant types supported by the connector.</p>
      */
-    inline const Aws::Vector<OAuth2GrantType>& GetOauth2GrantTypesSupported() const{ return m_oauth2GrantTypesSupported; }
+    inline const Aws::Vector<OAuth2GrantType>& GetOauth2GrantTypesSupported() const { return m_oauth2GrantTypesSupported; }
     inline bool Oauth2GrantTypesSupportedHasBeenSet() const { return m_oauth2GrantTypesSupportedHasBeenSet; }
-    inline void SetOauth2GrantTypesSupported(const Aws::Vector<OAuth2GrantType>& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = value; }
-    inline void SetOauth2GrantTypesSupported(Aws::Vector<OAuth2GrantType>&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = std::move(value); }
-    inline OAuth2Defaults& WithOauth2GrantTypesSupported(const Aws::Vector<OAuth2GrantType>& value) { SetOauth2GrantTypesSupported(value); return *this;}
-    inline OAuth2Defaults& WithOauth2GrantTypesSupported(Aws::Vector<OAuth2GrantType>&& value) { SetOauth2GrantTypesSupported(std::move(value)); return *this;}
-    inline OAuth2Defaults& AddOauth2GrantTypesSupported(const OAuth2GrantType& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(value); return *this; }
-    inline OAuth2Defaults& AddOauth2GrantTypesSupported(OAuth2GrantType&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(std::move(value)); return *this; }
+    template<typename Oauth2GrantTypesSupportedT = Aws::Vector<OAuth2GrantType>>
+    void SetOauth2GrantTypesSupported(Oauth2GrantTypesSupportedT&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = std::forward<Oauth2GrantTypesSupportedT>(value); }
+    template<typename Oauth2GrantTypesSupportedT = Aws::Vector<OAuth2GrantType>>
+    OAuth2Defaults& WithOauth2GrantTypesSupported(Oauth2GrantTypesSupportedT&& value) { SetOauth2GrantTypesSupported(std::forward<Oauth2GrantTypesSupportedT>(value)); return *this;}
+    inline OAuth2Defaults& AddOauth2GrantTypesSupported(OAuth2GrantType value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of custom parameters required for OAuth 2.0 authentication.</p>
      */
-    inline const Aws::Vector<OAuth2CustomParameter>& GetOauth2CustomProperties() const{ return m_oauth2CustomProperties; }
+    inline const Aws::Vector<OAuth2CustomParameter>& GetOauth2CustomProperties() const { return m_oauth2CustomProperties; }
     inline bool Oauth2CustomPropertiesHasBeenSet() const { return m_oauth2CustomPropertiesHasBeenSet; }
-    inline void SetOauth2CustomProperties(const Aws::Vector<OAuth2CustomParameter>& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties = value; }
-    inline void SetOauth2CustomProperties(Aws::Vector<OAuth2CustomParameter>&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties = std::move(value); }
-    inline OAuth2Defaults& WithOauth2CustomProperties(const Aws::Vector<OAuth2CustomParameter>& value) { SetOauth2CustomProperties(value); return *this;}
-    inline OAuth2Defaults& WithOauth2CustomProperties(Aws::Vector<OAuth2CustomParameter>&& value) { SetOauth2CustomProperties(std::move(value)); return *this;}
-    inline OAuth2Defaults& AddOauth2CustomProperties(const OAuth2CustomParameter& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties.push_back(value); return *this; }
-    inline OAuth2Defaults& AddOauth2CustomProperties(OAuth2CustomParameter&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties.push_back(std::move(value)); return *this; }
+    template<typename Oauth2CustomPropertiesT = Aws::Vector<OAuth2CustomParameter>>
+    void SetOauth2CustomProperties(Oauth2CustomPropertiesT&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties = std::forward<Oauth2CustomPropertiesT>(value); }
+    template<typename Oauth2CustomPropertiesT = Aws::Vector<OAuth2CustomParameter>>
+    OAuth2Defaults& WithOauth2CustomProperties(Oauth2CustomPropertiesT&& value) { SetOauth2CustomProperties(std::forward<Oauth2CustomPropertiesT>(value)); return *this;}
+    template<typename Oauth2CustomPropertiesT = OAuth2CustomParameter>
+    OAuth2Defaults& AddOauth2CustomProperties(Oauth2CustomPropertiesT&& value) { m_oauth2CustomPropertiesHasBeenSet = true; m_oauth2CustomProperties.emplace_back(std::forward<Oauth2CustomPropertiesT>(value)); return *this; }
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class GeneratedPolicy
   {
   public:
-    AWS_ACCESSANALYZER_API GeneratedPolicy();
+    AWS_ACCESSANALYZER_API GeneratedPolicy() = default;
     AWS_ACCESSANALYZER_API GeneratedPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API GeneratedPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a>
      * action.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline GeneratedPolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline GeneratedPolicy& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline GeneratedPolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    GeneratedPolicy& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

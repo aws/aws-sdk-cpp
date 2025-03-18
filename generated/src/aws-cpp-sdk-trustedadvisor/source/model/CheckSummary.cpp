@@ -18,21 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-CheckSummary::CheckSummary() : 
-    m_arnHasBeenSet(false),
-    m_awsServicesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 CheckSummary::CheckSummary(JsonView jsonValue)
-  : CheckSummary()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ CheckSummary& CheckSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsServices"))
   {
     Aws::Utils::Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
@@ -55,21 +39,16 @@ CheckSummary& CheckSummary::operator =(JsonView jsonValue)
     }
     m_awsServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -79,14 +58,11 @@ CheckSummary& CheckSummary::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pillars"))
   {
     Aws::Utils::Array<JsonView> pillarsJsonList = jsonValue.GetArray("pillars");
@@ -96,14 +72,11 @@ CheckSummary& CheckSummary::operator =(JsonView jsonValue)
     }
     m_pillarsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = RecommendationSourceMapper::GetRecommendationSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

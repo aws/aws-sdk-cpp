@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-WarmPoolStatus::WarmPoolStatus() : 
-    m_status(WarmPoolResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceRetainedBillableTimeInSeconds(0),
-    m_resourceRetainedBillableTimeInSecondsHasBeenSet(false),
-    m_reusedByJobHasBeenSet(false)
-{
-}
-
 WarmPoolStatus::WarmPoolStatus(JsonView jsonValue)
-  : WarmPoolStatus()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WarmPoolStatus& WarmPoolStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WarmPoolResourceStatusMapper::GetWarmPoolResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRetainedBillableTimeInSeconds"))
   {
     m_resourceRetainedBillableTimeInSeconds = jsonValue.GetInteger("ResourceRetainedBillableTimeInSeconds");
-
     m_resourceRetainedBillableTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReusedByJob"))
   {
     m_reusedByJob = jsonValue.GetString("ReusedByJob");
-
     m_reusedByJobHasBeenSet = true;
   }
-
   return *this;
 }
 

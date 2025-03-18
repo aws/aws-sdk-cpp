@@ -29,7 +29,7 @@ namespace Model
   class DescribeWorldResult
   {
   public:
-    AWS_ROBOMAKER_API DescribeWorldResult();
+    AWS_ROBOMAKER_API DescribeWorldResult() = default;
     AWS_ROBOMAKER_API DescribeWorldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API DescribeWorldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (arn) of the world.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeWorldResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeWorldResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeWorldResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeWorldResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,37 +50,33 @@ namespace Model
      * <p>The Amazon Resource Name (arn) of the world generation job that generated the
      * world.</p>
      */
-    inline const Aws::String& GetGenerationJob() const{ return m_generationJob; }
-    inline void SetGenerationJob(const Aws::String& value) { m_generationJob = value; }
-    inline void SetGenerationJob(Aws::String&& value) { m_generationJob = std::move(value); }
-    inline void SetGenerationJob(const char* value) { m_generationJob.assign(value); }
-    inline DescribeWorldResult& WithGenerationJob(const Aws::String& value) { SetGenerationJob(value); return *this;}
-    inline DescribeWorldResult& WithGenerationJob(Aws::String&& value) { SetGenerationJob(std::move(value)); return *this;}
-    inline DescribeWorldResult& WithGenerationJob(const char* value) { SetGenerationJob(value); return *this;}
+    inline const Aws::String& GetGenerationJob() const { return m_generationJob; }
+    template<typename GenerationJobT = Aws::String>
+    void SetGenerationJob(GenerationJobT&& value) { m_generationJobHasBeenSet = true; m_generationJob = std::forward<GenerationJobT>(value); }
+    template<typename GenerationJobT = Aws::String>
+    DescribeWorldResult& WithGenerationJob(GenerationJobT&& value) { SetGenerationJob(std::forward<GenerationJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The world template.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
-    inline void SetTemplate(const Aws::String& value) { m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_template.assign(value); }
-    inline DescribeWorldResult& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline DescribeWorldResult& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline DescribeWorldResult& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    inline const Aws::String& GetTemplate() const { return m_template; }
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    DescribeWorldResult& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the world was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeWorldResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeWorldResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeWorldResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +84,15 @@ namespace Model
      * <p>A map that contains tag keys and tag values that are attached to the
      * world.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeWorldResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeWorldResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeWorldResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeWorldResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeWorldResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeWorldResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeWorldResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeWorldResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeWorldResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeWorldResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeWorldResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -109,40 +100,43 @@ namespace Model
      * <p>Returns the JSON formatted string that describes the contents of your
      * world.</p>
      */
-    inline const Aws::String& GetWorldDescriptionBody() const{ return m_worldDescriptionBody; }
-    inline void SetWorldDescriptionBody(const Aws::String& value) { m_worldDescriptionBody = value; }
-    inline void SetWorldDescriptionBody(Aws::String&& value) { m_worldDescriptionBody = std::move(value); }
-    inline void SetWorldDescriptionBody(const char* value) { m_worldDescriptionBody.assign(value); }
-    inline DescribeWorldResult& WithWorldDescriptionBody(const Aws::String& value) { SetWorldDescriptionBody(value); return *this;}
-    inline DescribeWorldResult& WithWorldDescriptionBody(Aws::String&& value) { SetWorldDescriptionBody(std::move(value)); return *this;}
-    inline DescribeWorldResult& WithWorldDescriptionBody(const char* value) { SetWorldDescriptionBody(value); return *this;}
+    inline const Aws::String& GetWorldDescriptionBody() const { return m_worldDescriptionBody; }
+    template<typename WorldDescriptionBodyT = Aws::String>
+    void SetWorldDescriptionBody(WorldDescriptionBodyT&& value) { m_worldDescriptionBodyHasBeenSet = true; m_worldDescriptionBody = std::forward<WorldDescriptionBodyT>(value); }
+    template<typename WorldDescriptionBodyT = Aws::String>
+    DescribeWorldResult& WithWorldDescriptionBody(WorldDescriptionBodyT&& value) { SetWorldDescriptionBody(std::forward<WorldDescriptionBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorldResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_generationJob;
+    bool m_generationJobHasBeenSet = false;
 
     Aws::String m_template;
+    bool m_templateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_worldDescriptionBody;
+    bool m_worldDescriptionBodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

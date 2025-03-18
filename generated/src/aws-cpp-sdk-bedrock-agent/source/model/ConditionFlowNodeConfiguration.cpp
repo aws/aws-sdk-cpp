@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ConditionFlowNodeConfiguration::ConditionFlowNodeConfiguration() : 
-    m_conditionsHasBeenSet(false)
-{
-}
-
 ConditionFlowNodeConfiguration::ConditionFlowNodeConfiguration(JsonView jsonValue)
-  : ConditionFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConditionFlowNodeConfiguration& ConditionFlowNodeConfiguration::operator =(JsonV
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

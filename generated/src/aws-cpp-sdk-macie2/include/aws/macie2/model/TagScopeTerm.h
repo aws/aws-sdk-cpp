@@ -36,7 +36,7 @@ namespace Model
   class TagScopeTerm
   {
   public:
-    AWS_MACIE2_API TagScopeTerm();
+    AWS_MACIE2_API TagScopeTerm() = default;
     AWS_MACIE2_API TagScopeTerm(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API TagScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
      * <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not
      * equals).</p>
      */
-    inline const JobComparator& GetComparator() const{ return m_comparator; }
+    inline JobComparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const JobComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(JobComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline TagScopeTerm& WithComparator(const JobComparator& value) { SetComparator(value); return *this;}
-    inline TagScopeTerm& WithComparator(JobComparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(JobComparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline TagScopeTerm& WithComparator(JobComparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object property to use in the condition. The only valid value is TAG.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline TagScopeTerm& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline TagScopeTerm& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline TagScopeTerm& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    TagScopeTerm& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,30 +71,28 @@ namespace Model
      * only tag keys in a condition, specify the keys in this array and set the value
      * for each associated tag value to an empty string.</p>
      */
-    inline const Aws::Vector<TagValuePair>& GetTagValues() const{ return m_tagValues; }
+    inline const Aws::Vector<TagValuePair>& GetTagValues() const { return m_tagValues; }
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-    inline void SetTagValues(const Aws::Vector<TagValuePair>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-    inline void SetTagValues(Aws::Vector<TagValuePair>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-    inline TagScopeTerm& WithTagValues(const Aws::Vector<TagValuePair>& value) { SetTagValues(value); return *this;}
-    inline TagScopeTerm& WithTagValues(Aws::Vector<TagValuePair>&& value) { SetTagValues(std::move(value)); return *this;}
-    inline TagScopeTerm& AddTagValues(const TagValuePair& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-    inline TagScopeTerm& AddTagValues(TagValuePair&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
+    template<typename TagValuesT = Aws::Vector<TagValuePair>>
+    void SetTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::forward<TagValuesT>(value); }
+    template<typename TagValuesT = Aws::Vector<TagValuePair>>
+    TagScopeTerm& WithTagValues(TagValuesT&& value) { SetTagValues(std::forward<TagValuesT>(value)); return *this;}
+    template<typename TagValuesT = TagValuePair>
+    TagScopeTerm& AddTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues.emplace_back(std::forward<TagValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of object to apply the condition to.</p>
      */
-    inline const TagTarget& GetTarget() const{ return m_target; }
+    inline TagTarget GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const TagTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(TagTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline TagScopeTerm& WithTarget(const TagTarget& value) { SetTarget(value); return *this;}
-    inline TagScopeTerm& WithTarget(TagTarget&& value) { SetTarget(std::move(value)); return *this;}
+    inline void SetTarget(TagTarget value) { m_targetHasBeenSet = true; m_target = value; }
+    inline TagScopeTerm& WithTarget(TagTarget value) { SetTarget(value); return *this;}
     ///@}
   private:
 
-    JobComparator m_comparator;
+    JobComparator m_comparator{JobComparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
     Aws::String m_key;
@@ -107,7 +101,7 @@ namespace Model
     Aws::Vector<TagValuePair> m_tagValues;
     bool m_tagValuesHasBeenSet = false;
 
-    TagTarget m_target;
+    TagTarget m_target{TagTarget::NOT_SET};
     bool m_targetHasBeenSet = false;
   };
 

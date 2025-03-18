@@ -21,7 +21,7 @@ namespace Model
   class UpdateElasticIpRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API UpdateElasticIpRequest();
+    AWS_OPSWORKS_API UpdateElasticIpRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The IP address for which you want to update the name.</p>
      */
-    inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+    inline const Aws::String& GetElasticIp() const { return m_elasticIp; }
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
-    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
-    inline UpdateElasticIpRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
-    inline UpdateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
-    inline UpdateElasticIpRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+    template<typename ElasticIpT = Aws::String>
+    void SetElasticIp(ElasticIpT&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::forward<ElasticIpT>(value); }
+    template<typename ElasticIpT = Aws::String>
+    UpdateElasticIpRequest& WithElasticIp(ElasticIpT&& value) { SetElasticIp(std::forward<ElasticIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name, which can be a maximum of 32 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateElasticIpRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateElasticIpRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateElasticIpRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateElasticIpRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

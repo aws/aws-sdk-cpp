@@ -18,20 +18,7 @@ namespace CloudControlApi
 namespace Model
 {
 
-HookProgressEvent::HookProgressEvent() : 
-    m_hookTypeNameHasBeenSet(false),
-    m_hookTypeVersionIdHasBeenSet(false),
-    m_hookTypeArnHasBeenSet(false),
-    m_invocationPointHasBeenSet(false),
-    m_hookStatusHasBeenSet(false),
-    m_hookEventTimeHasBeenSet(false),
-    m_hookStatusMessageHasBeenSet(false),
-    m_failureModeHasBeenSet(false)
-{
-}
-
 HookProgressEvent::HookProgressEvent(JsonView jsonValue)
-  : HookProgressEvent()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ HookProgressEvent& HookProgressEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HookTypeName"))
   {
     m_hookTypeName = jsonValue.GetString("HookTypeName");
-
     m_hookTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookTypeVersionId"))
   {
     m_hookTypeVersionId = jsonValue.GetString("HookTypeVersionId");
-
     m_hookTypeVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookTypeArn"))
   {
     m_hookTypeArn = jsonValue.GetString("HookTypeArn");
-
     m_hookTypeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationPoint"))
   {
     m_invocationPoint = jsonValue.GetString("InvocationPoint");
-
     m_invocationPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookStatus"))
   {
     m_hookStatus = jsonValue.GetString("HookStatus");
-
     m_hookStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookEventTime"))
   {
     m_hookEventTime = jsonValue.GetDouble("HookEventTime");
-
     m_hookEventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookStatusMessage"))
   {
     m_hookStatusMessage = jsonValue.GetString("HookStatusMessage");
-
     m_hookStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMode"))
   {
     m_failureMode = jsonValue.GetString("FailureMode");
-
     m_failureModeHasBeenSet = true;
   }
-
   return *this;
 }
 

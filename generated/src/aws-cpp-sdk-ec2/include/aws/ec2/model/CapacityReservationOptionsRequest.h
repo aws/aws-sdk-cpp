@@ -40,7 +40,7 @@ namespace Model
   class CapacityReservationOptionsRequest
   {
   public:
-    AWS_EC2_API CapacityReservationOptionsRequest();
+    AWS_EC2_API CapacityReservationOptionsRequest() = default;
     AWS_EC2_API CapacityReservationOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,16 +63,14 @@ namespace Model
      * fulfils the On-Demand capacity according to the chosen On-Demand allocation
      * strategy.</p>
      */
-    inline const FleetCapacityReservationUsageStrategy& GetUsageStrategy() const{ return m_usageStrategy; }
+    inline FleetCapacityReservationUsageStrategy GetUsageStrategy() const { return m_usageStrategy; }
     inline bool UsageStrategyHasBeenSet() const { return m_usageStrategyHasBeenSet; }
-    inline void SetUsageStrategy(const FleetCapacityReservationUsageStrategy& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
-    inline void SetUsageStrategy(FleetCapacityReservationUsageStrategy&& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = std::move(value); }
-    inline CapacityReservationOptionsRequest& WithUsageStrategy(const FleetCapacityReservationUsageStrategy& value) { SetUsageStrategy(value); return *this;}
-    inline CapacityReservationOptionsRequest& WithUsageStrategy(FleetCapacityReservationUsageStrategy&& value) { SetUsageStrategy(std::move(value)); return *this;}
+    inline void SetUsageStrategy(FleetCapacityReservationUsageStrategy value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
+    inline CapacityReservationOptionsRequest& WithUsageStrategy(FleetCapacityReservationUsageStrategy value) { SetUsageStrategy(value); return *this;}
     ///@}
   private:
 
-    FleetCapacityReservationUsageStrategy m_usageStrategy;
+    FleetCapacityReservationUsageStrategy m_usageStrategy{FleetCapacityReservationUsageStrategy::NOT_SET};
     bool m_usageStrategyHasBeenSet = false;
   };
 

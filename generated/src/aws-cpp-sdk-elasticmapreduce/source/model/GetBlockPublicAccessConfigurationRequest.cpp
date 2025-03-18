@@ -12,10 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBlockPublicAccessConfigurationRequest::GetBlockPublicAccessConfigurationRequest()
-{
-}
-
 Aws::String GetBlockPublicAccessConfigurationRequest::SerializePayload() const
 {
   return "{}";

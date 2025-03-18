@@ -28,7 +28,7 @@ namespace Model
   class DescribePackageResult
   {
   public:
-    AWS_CODEARTIFACT_API DescribePackageResult();
+    AWS_CODEARTIFACT_API DescribePackageResult() = default;
     AWS_CODEARTIFACT_API DescribePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API DescribePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
      * object that contains information about the requested package.</p>
      */
-    inline const PackageDescription& GetPackage() const{ return m_package; }
-    inline void SetPackage(const PackageDescription& value) { m_package = value; }
-    inline void SetPackage(PackageDescription&& value) { m_package = std::move(value); }
-    inline DescribePackageResult& WithPackage(const PackageDescription& value) { SetPackage(value); return *this;}
-    inline DescribePackageResult& WithPackage(PackageDescription&& value) { SetPackage(std::move(value)); return *this;}
+    inline const PackageDescription& GetPackage() const { return m_package; }
+    template<typename PackageT = PackageDescription>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = PackageDescription>
+    DescribePackageResult& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePackageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PackageDescription m_package;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

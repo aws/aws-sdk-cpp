@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutLifecycleConfigurationResult::PutLifecycleConfigurationResult()
-{
-}
-
 PutLifecycleConfigurationResult::PutLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ PutLifecycleConfigurationResult& PutLifecycleConfigurationResult::operator =(con
     {
       m_lifecyclePolicies.push_back(lifecyclePoliciesJsonList[lifecyclePoliciesIndex].AsObject());
     }
+    m_lifecyclePoliciesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

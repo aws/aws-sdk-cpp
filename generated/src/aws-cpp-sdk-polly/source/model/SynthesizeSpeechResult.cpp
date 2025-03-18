@@ -16,36 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SynthesizeSpeechResult::SynthesizeSpeechResult() : 
-    m_requestCharacters(0)
-{
-}
-
-SynthesizeSpeechResult::SynthesizeSpeechResult(SynthesizeSpeechResult&& toMove) : 
-    m_audioStream(std::move(toMove.m_audioStream)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_requestCharacters(toMove.m_requestCharacters),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-SynthesizeSpeechResult& SynthesizeSpeechResult::operator=(SynthesizeSpeechResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_audioStream = std::move(toMove.m_audioStream);
-   m_contentType = std::move(toMove.m_contentType);
-   m_requestCharacters = toMove.m_requestCharacters;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : SynthesizeSpeechResult()
 {
   *this = std::move(result);
 }
@@ -53,24 +24,28 @@ SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<Respo
 SynthesizeSpeechResult& SynthesizeSpeechResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_audioStream = result.TakeOwnershipOfPayload();
+  m_audioStreamHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& requestCharactersIter = headers.find("x-amzn-requestcharacters");
   if(requestCharactersIter != headers.end())
   {
-     m_requestCharacters = StringUtils::ConvertToInt32(requestCharactersIter->second.c_str());
+    m_requestCharacters = StringUtils::ConvertToInt32(requestCharactersIter->second.c_str());
+    m_requestCharactersHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

@@ -18,22 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServicePower::ContainerServicePower() : 
-    m_powerIdHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_cpuCount(0.0),
-    m_cpuCountHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
-{
-}
-
 ContainerServicePower::ContainerServicePower(JsonView jsonValue)
-  : ContainerServicePower()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ContainerServicePower& ContainerServicePower::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("powerId"))
   {
     m_powerId = jsonValue.GetString("powerId");
-
     m_powerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetDouble("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuCount"))
   {
     m_cpuCount = jsonValue.GetDouble("cpuCount");
-
     m_cpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramSizeInGb"))
   {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
-
     m_ramSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   return *this;
 }
 

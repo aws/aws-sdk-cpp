@@ -33,7 +33,7 @@ namespace Model
   class FailedCapacityReservationFleetCancellationResponse
   {
   public:
-    AWS_EC2_API FailedCapacityReservationFleetCancellationResponse();
+    AWS_EC2_API FailedCapacityReservationFleetCancellationResponse() = default;
     AWS_EC2_API FailedCapacityReservationFleetCancellationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FailedCapacityReservationFleetCancellationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
      */
-    inline const Aws::String& GetCapacityReservationFleetId() const{ return m_capacityReservationFleetId; }
+    inline const Aws::String& GetCapacityReservationFleetId() const { return m_capacityReservationFleetId; }
     inline bool CapacityReservationFleetIdHasBeenSet() const { return m_capacityReservationFleetIdHasBeenSet; }
-    inline void SetCapacityReservationFleetId(const Aws::String& value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId = value; }
-    inline void SetCapacityReservationFleetId(Aws::String&& value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId = std::move(value); }
-    inline void SetCapacityReservationFleetId(const char* value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId.assign(value); }
-    inline FailedCapacityReservationFleetCancellationResponse& WithCapacityReservationFleetId(const Aws::String& value) { SetCapacityReservationFleetId(value); return *this;}
-    inline FailedCapacityReservationFleetCancellationResponse& WithCapacityReservationFleetId(Aws::String&& value) { SetCapacityReservationFleetId(std::move(value)); return *this;}
-    inline FailedCapacityReservationFleetCancellationResponse& WithCapacityReservationFleetId(const char* value) { SetCapacityReservationFleetId(value); return *this;}
+    template<typename CapacityReservationFleetIdT = Aws::String>
+    void SetCapacityReservationFleetId(CapacityReservationFleetIdT&& value) { m_capacityReservationFleetIdHasBeenSet = true; m_capacityReservationFleetId = std::forward<CapacityReservationFleetIdT>(value); }
+    template<typename CapacityReservationFleetIdT = Aws::String>
+    FailedCapacityReservationFleetCancellationResponse& WithCapacityReservationFleetId(CapacityReservationFleetIdT&& value) { SetCapacityReservationFleetId(std::forward<CapacityReservationFleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Capacity Reservation Fleet cancellation error.</p>
      */
-    inline const CancelCapacityReservationFleetError& GetCancelCapacityReservationFleetError() const{ return m_cancelCapacityReservationFleetError; }
+    inline const CancelCapacityReservationFleetError& GetCancelCapacityReservationFleetError() const { return m_cancelCapacityReservationFleetError; }
     inline bool CancelCapacityReservationFleetErrorHasBeenSet() const { return m_cancelCapacityReservationFleetErrorHasBeenSet; }
-    inline void SetCancelCapacityReservationFleetError(const CancelCapacityReservationFleetError& value) { m_cancelCapacityReservationFleetErrorHasBeenSet = true; m_cancelCapacityReservationFleetError = value; }
-    inline void SetCancelCapacityReservationFleetError(CancelCapacityReservationFleetError&& value) { m_cancelCapacityReservationFleetErrorHasBeenSet = true; m_cancelCapacityReservationFleetError = std::move(value); }
-    inline FailedCapacityReservationFleetCancellationResponse& WithCancelCapacityReservationFleetError(const CancelCapacityReservationFleetError& value) { SetCancelCapacityReservationFleetError(value); return *this;}
-    inline FailedCapacityReservationFleetCancellationResponse& WithCancelCapacityReservationFleetError(CancelCapacityReservationFleetError&& value) { SetCancelCapacityReservationFleetError(std::move(value)); return *this;}
+    template<typename CancelCapacityReservationFleetErrorT = CancelCapacityReservationFleetError>
+    void SetCancelCapacityReservationFleetError(CancelCapacityReservationFleetErrorT&& value) { m_cancelCapacityReservationFleetErrorHasBeenSet = true; m_cancelCapacityReservationFleetError = std::forward<CancelCapacityReservationFleetErrorT>(value); }
+    template<typename CancelCapacityReservationFleetErrorT = CancelCapacityReservationFleetError>
+    FailedCapacityReservationFleetCancellationResponse& WithCancelCapacityReservationFleetError(CancelCapacityReservationFleetErrorT&& value) { SetCancelCapacityReservationFleetError(std::forward<CancelCapacityReservationFleetErrorT>(value)); return *this;}
     ///@}
   private:
 

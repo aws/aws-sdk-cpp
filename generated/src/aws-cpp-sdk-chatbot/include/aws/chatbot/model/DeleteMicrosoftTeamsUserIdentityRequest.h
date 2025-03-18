@@ -21,7 +21,7 @@ namespace Model
   class DeleteMicrosoftTeamsUserIdentityRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API DeleteMicrosoftTeamsUserIdentityRequest();
+    AWS_CHATBOT_API DeleteMicrosoftTeamsUserIdentityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The ARN of the MicrosoftTeamsChannelConfiguration associated with the user
      * identity to delete.</p>
      */
-    inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
+    inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-    inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-    inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-    inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
+    template<typename ChatConfigurationArnT = Aws::String>
+    void SetChatConfigurationArn(ChatConfigurationArnT&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value); }
+    template<typename ChatConfigurationArnT = Aws::String>
+    DeleteMicrosoftTeamsUserIdentityRequest& WithChatConfigurationArn(ChatConfigurationArnT&& value) { SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Microsoft Teams user ID.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    DeleteMicrosoftTeamsUserIdentityRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

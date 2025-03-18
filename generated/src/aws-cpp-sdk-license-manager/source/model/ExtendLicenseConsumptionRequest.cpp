@@ -12,13 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExtendLicenseConsumptionRequest::ExtendLicenseConsumptionRequest() : 
-    m_licenseConsumptionTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ExtendLicenseConsumptionRequest::SerializePayload() const
 {
   JsonValue payload;

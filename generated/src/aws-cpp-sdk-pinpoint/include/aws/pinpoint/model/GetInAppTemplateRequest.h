@@ -25,7 +25,7 @@ namespace Model
   class GetInAppTemplateRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API GetInAppTemplateRequest();
+    AWS_PINPOINT_API GetInAppTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * characters can be alphanumeric characters, underscores (_), or hyphens (-).
      * Template names are case sensitive.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline GetInAppTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline GetInAppTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline GetInAppTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    GetInAppTemplateRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * false.</p></li> <li><p>For a delete operation, deletes the template, including
      * all versions of the template.</p></li></ul>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline GetInAppTemplateRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetInAppTemplateRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetInAppTemplateRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetInAppTemplateRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

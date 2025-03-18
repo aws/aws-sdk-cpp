@@ -29,7 +29,7 @@ namespace Model
   class GetStaticIpsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetStaticIpsResult();
+    AWS_LIGHTSAIL_API GetStaticIpsResult() = default;
     AWS_LIGHTSAIL_API GetStaticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetStaticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get static IPs
      * request.</p>
      */
-    inline const Aws::Vector<StaticIp>& GetStaticIps() const{ return m_staticIps; }
-    inline void SetStaticIps(const Aws::Vector<StaticIp>& value) { m_staticIps = value; }
-    inline void SetStaticIps(Aws::Vector<StaticIp>&& value) { m_staticIps = std::move(value); }
-    inline GetStaticIpsResult& WithStaticIps(const Aws::Vector<StaticIp>& value) { SetStaticIps(value); return *this;}
-    inline GetStaticIpsResult& WithStaticIps(Aws::Vector<StaticIp>&& value) { SetStaticIps(std::move(value)); return *this;}
-    inline GetStaticIpsResult& AddStaticIps(const StaticIp& value) { m_staticIps.push_back(value); return *this; }
-    inline GetStaticIpsResult& AddStaticIps(StaticIp&& value) { m_staticIps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StaticIp>& GetStaticIps() const { return m_staticIps; }
+    template<typename StaticIpsT = Aws::Vector<StaticIp>>
+    void SetStaticIps(StaticIpsT&& value) { m_staticIpsHasBeenSet = true; m_staticIps = std::forward<StaticIpsT>(value); }
+    template<typename StaticIpsT = Aws::Vector<StaticIp>>
+    GetStaticIpsResult& WithStaticIps(StaticIpsT&& value) { SetStaticIps(std::forward<StaticIpsT>(value)); return *this;}
+    template<typename StaticIpsT = StaticIp>
+    GetStaticIpsResult& AddStaticIps(StaticIpsT&& value) { m_staticIpsHasBeenSet = true; m_staticIps.emplace_back(std::forward<StaticIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * request and specify the next page token using the <code>pageToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetStaticIpsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetStaticIpsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetStaticIpsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetStaticIpsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStaticIpsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStaticIpsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStaticIpsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStaticIpsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StaticIp> m_staticIps;
+    bool m_staticIpsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

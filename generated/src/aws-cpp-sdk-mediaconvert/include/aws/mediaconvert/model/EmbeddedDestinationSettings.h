@@ -33,7 +33,7 @@ namespace Model
   class EmbeddedDestinationSettings
   {
   public:
-    AWS_MEDIACONVERT_API EmbeddedDestinationSettings();
+    AWS_MEDIACONVERT_API EmbeddedDestinationSettings() = default;
     AWS_MEDIACONVERT_API EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * in the same field. For example, choose 1 and 3. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
-    inline int GetDestination608ChannelNumber() const{ return m_destination608ChannelNumber; }
+    inline int GetDestination608ChannelNumber() const { return m_destination608ChannelNumber; }
     inline bool Destination608ChannelNumberHasBeenSet() const { return m_destination608ChannelNumberHasBeenSet; }
     inline void SetDestination608ChannelNumber(int value) { m_destination608ChannelNumberHasBeenSet = true; m_destination608ChannelNumber = value; }
     inline EmbeddedDestinationSettings& WithDestination608ChannelNumber(int value) { SetDestination608ChannelNumber(value); return *this;}
@@ -64,17 +64,17 @@ namespace Model
      * specify for CC channel number for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
-    inline int GetDestination708ServiceNumber() const{ return m_destination708ServiceNumber; }
+    inline int GetDestination708ServiceNumber() const { return m_destination708ServiceNumber; }
     inline bool Destination708ServiceNumberHasBeenSet() const { return m_destination708ServiceNumberHasBeenSet; }
     inline void SetDestination708ServiceNumber(int value) { m_destination708ServiceNumberHasBeenSet = true; m_destination708ServiceNumber = value; }
     inline EmbeddedDestinationSettings& WithDestination708ServiceNumber(int value) { SetDestination708ServiceNumber(value); return *this;}
     ///@}
   private:
 
-    int m_destination608ChannelNumber;
+    int m_destination608ChannelNumber{0};
     bool m_destination608ChannelNumberHasBeenSet = false;
 
-    int m_destination708ServiceNumber;
+    int m_destination708ServiceNumber{0};
     bool m_destination708ServiceNumberHasBeenSet = false;
   };
 

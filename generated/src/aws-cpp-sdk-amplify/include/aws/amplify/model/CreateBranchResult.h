@@ -34,7 +34,7 @@ namespace Model
   class CreateBranchResult
   {
   public:
-    AWS_AMPLIFY_API CreateBranchResult();
+    AWS_AMPLIFY_API CreateBranchResult() = default;
     AWS_AMPLIFY_API CreateBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API CreateBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p> Describes the branch for an Amplify app, which maps to a third-party
      * repository branch. </p>
      */
-    inline const Branch& GetBranch() const{ return m_branch; }
-    inline void SetBranch(const Branch& value) { m_branch = value; }
-    inline void SetBranch(Branch&& value) { m_branch = std::move(value); }
-    inline CreateBranchResult& WithBranch(const Branch& value) { SetBranch(value); return *this;}
-    inline CreateBranchResult& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
+    inline const Branch& GetBranch() const { return m_branch; }
+    template<typename BranchT = Branch>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Branch>
+    CreateBranchResult& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBranchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Branch m_branch;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

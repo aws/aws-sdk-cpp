@@ -10,45 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-CreateDBClusterRequest::CreateDBClusterRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSourceIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

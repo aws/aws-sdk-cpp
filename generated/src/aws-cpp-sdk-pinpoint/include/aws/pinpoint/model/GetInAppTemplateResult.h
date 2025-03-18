@@ -28,35 +28,35 @@ namespace Model
   class GetInAppTemplateResult
   {
   public:
-    AWS_PINPOINT_API GetInAppTemplateResult();
+    AWS_PINPOINT_API GetInAppTemplateResult() = default;
     AWS_PINPOINT_API GetInAppTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetInAppTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const InAppTemplateResponse& GetInAppTemplateResponse() const{ return m_inAppTemplateResponse; }
-    inline void SetInAppTemplateResponse(const InAppTemplateResponse& value) { m_inAppTemplateResponse = value; }
-    inline void SetInAppTemplateResponse(InAppTemplateResponse&& value) { m_inAppTemplateResponse = std::move(value); }
-    inline GetInAppTemplateResult& WithInAppTemplateResponse(const InAppTemplateResponse& value) { SetInAppTemplateResponse(value); return *this;}
-    inline GetInAppTemplateResult& WithInAppTemplateResponse(InAppTemplateResponse&& value) { SetInAppTemplateResponse(std::move(value)); return *this;}
+    inline const InAppTemplateResponse& GetInAppTemplateResponse() const { return m_inAppTemplateResponse; }
+    template<typename InAppTemplateResponseT = InAppTemplateResponse>
+    void SetInAppTemplateResponse(InAppTemplateResponseT&& value) { m_inAppTemplateResponseHasBeenSet = true; m_inAppTemplateResponse = std::forward<InAppTemplateResponseT>(value); }
+    template<typename InAppTemplateResponseT = InAppTemplateResponse>
+    GetInAppTemplateResult& WithInAppTemplateResponse(InAppTemplateResponseT&& value) { SetInAppTemplateResponse(std::forward<InAppTemplateResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInAppTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInAppTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInAppTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInAppTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InAppTemplateResponse m_inAppTemplateResponse;
+    bool m_inAppTemplateResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

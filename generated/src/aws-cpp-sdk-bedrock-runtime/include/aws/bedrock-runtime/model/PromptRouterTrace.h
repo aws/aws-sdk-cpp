@@ -31,7 +31,7 @@ namespace Model
   class PromptRouterTrace
   {
   public:
-    AWS_BEDROCKRUNTIME_API PromptRouterTrace();
+    AWS_BEDROCKRUNTIME_API PromptRouterTrace() = default;
     AWS_BEDROCKRUNTIME_API PromptRouterTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API PromptRouterTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the invoked model.</p>
      */
-    inline const Aws::String& GetInvokedModelId() const{ return m_invokedModelId; }
+    inline const Aws::String& GetInvokedModelId() const { return m_invokedModelId; }
     inline bool InvokedModelIdHasBeenSet() const { return m_invokedModelIdHasBeenSet; }
-    inline void SetInvokedModelId(const Aws::String& value) { m_invokedModelIdHasBeenSet = true; m_invokedModelId = value; }
-    inline void SetInvokedModelId(Aws::String&& value) { m_invokedModelIdHasBeenSet = true; m_invokedModelId = std::move(value); }
-    inline void SetInvokedModelId(const char* value) { m_invokedModelIdHasBeenSet = true; m_invokedModelId.assign(value); }
-    inline PromptRouterTrace& WithInvokedModelId(const Aws::String& value) { SetInvokedModelId(value); return *this;}
-    inline PromptRouterTrace& WithInvokedModelId(Aws::String&& value) { SetInvokedModelId(std::move(value)); return *this;}
-    inline PromptRouterTrace& WithInvokedModelId(const char* value) { SetInvokedModelId(value); return *this;}
+    template<typename InvokedModelIdT = Aws::String>
+    void SetInvokedModelId(InvokedModelIdT&& value) { m_invokedModelIdHasBeenSet = true; m_invokedModelId = std::forward<InvokedModelIdT>(value); }
+    template<typename InvokedModelIdT = Aws::String>
+    PromptRouterTrace& WithInvokedModelId(InvokedModelIdT&& value) { SetInvokedModelId(std::forward<InvokedModelIdT>(value)); return *this;}
     ///@}
   private:
 

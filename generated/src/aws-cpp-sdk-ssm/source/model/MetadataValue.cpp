@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MetadataValue::MetadataValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 MetadataValue::MetadataValue(JsonView jsonValue)
-  : MetadataValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetadataValue& MetadataValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class RegionDescription
   {
   public:
-    AWS_DIRECTORYSERVICE_API RegionDescription();
+    AWS_DIRECTORYSERVICE_API RegionDescription() = default;
     AWS_DIRECTORYSERVICE_API RegionDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API RegionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline RegionDescription& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline RegionDescription& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline RegionDescription& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    RegionDescription& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Region. For example, <code>us-east-1</code>.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline RegionDescription& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline RegionDescription& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline RegionDescription& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    RegionDescription& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,34 +71,30 @@ namespace Model
      * <p>Specifies whether the Region is the primary Region or an additional
      * Region.</p>
      */
-    inline const RegionType& GetRegionType() const{ return m_regionType; }
+    inline RegionType GetRegionType() const { return m_regionType; }
     inline bool RegionTypeHasBeenSet() const { return m_regionTypeHasBeenSet; }
-    inline void SetRegionType(const RegionType& value) { m_regionTypeHasBeenSet = true; m_regionType = value; }
-    inline void SetRegionType(RegionType&& value) { m_regionTypeHasBeenSet = true; m_regionType = std::move(value); }
-    inline RegionDescription& WithRegionType(const RegionType& value) { SetRegionType(value); return *this;}
-    inline RegionDescription& WithRegionType(RegionType&& value) { SetRegionType(std::move(value)); return *this;}
+    inline void SetRegionType(RegionType value) { m_regionTypeHasBeenSet = true; m_regionType = value; }
+    inline RegionDescription& WithRegionType(RegionType value) { SetRegionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the replication process for the specified Region.</p>
      */
-    inline const DirectoryStage& GetStatus() const{ return m_status; }
+    inline DirectoryStage GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DirectoryStage& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DirectoryStage&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RegionDescription& WithStatus(const DirectoryStage& value) { SetStatus(value); return *this;}
-    inline RegionDescription& WithStatus(DirectoryStage&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DirectoryStage value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RegionDescription& WithStatus(DirectoryStage value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DirectoryVpcSettings& GetVpcSettings() const{ return m_vpcSettings; }
+    inline const DirectoryVpcSettings& GetVpcSettings() const { return m_vpcSettings; }
     inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
-    inline void SetVpcSettings(const DirectoryVpcSettings& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
-    inline void SetVpcSettings(DirectoryVpcSettings&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::move(value); }
-    inline RegionDescription& WithVpcSettings(const DirectoryVpcSettings& value) { SetVpcSettings(value); return *this;}
-    inline RegionDescription& WithVpcSettings(DirectoryVpcSettings&& value) { SetVpcSettings(std::move(value)); return *this;}
+    template<typename VpcSettingsT = DirectoryVpcSettings>
+    void SetVpcSettings(VpcSettingsT&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::forward<VpcSettingsT>(value); }
+    template<typename VpcSettingsT = DirectoryVpcSettings>
+    RegionDescription& WithVpcSettings(VpcSettingsT&& value) { SetVpcSettings(std::forward<VpcSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +102,7 @@ namespace Model
      * <p>The desired number of domain controllers in the specified Region for the
      * specified directory.</p>
      */
-    inline int GetDesiredNumberOfDomainControllers() const{ return m_desiredNumberOfDomainControllers; }
+    inline int GetDesiredNumberOfDomainControllers() const { return m_desiredNumberOfDomainControllers; }
     inline bool DesiredNumberOfDomainControllersHasBeenSet() const { return m_desiredNumberOfDomainControllersHasBeenSet; }
     inline void SetDesiredNumberOfDomainControllers(int value) { m_desiredNumberOfDomainControllersHasBeenSet = true; m_desiredNumberOfDomainControllers = value; }
     inline RegionDescription& WithDesiredNumberOfDomainControllers(int value) { SetDesiredNumberOfDomainControllers(value); return *this;}
@@ -120,36 +112,36 @@ namespace Model
     /**
      * <p>Specifies when the Region replication began.</p>
      */
-    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
+    inline const Aws::Utils::DateTime& GetLaunchTime() const { return m_launchTime; }
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
-    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
-    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
-    inline RegionDescription& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
-    inline RegionDescription& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    void SetLaunchTime(LaunchTimeT&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::forward<LaunchTimeT>(value); }
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    RegionDescription& WithLaunchTime(LaunchTimeT&& value) { SetLaunchTime(std::forward<LaunchTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the Region status was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetStatusLastUpdatedDateTime() const{ return m_statusLastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetStatusLastUpdatedDateTime() const { return m_statusLastUpdatedDateTime; }
     inline bool StatusLastUpdatedDateTimeHasBeenSet() const { return m_statusLastUpdatedDateTimeHasBeenSet; }
-    inline void SetStatusLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_statusLastUpdatedDateTimeHasBeenSet = true; m_statusLastUpdatedDateTime = value; }
-    inline void SetStatusLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_statusLastUpdatedDateTimeHasBeenSet = true; m_statusLastUpdatedDateTime = std::move(value); }
-    inline RegionDescription& WithStatusLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetStatusLastUpdatedDateTime(value); return *this;}
-    inline RegionDescription& WithStatusLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStatusLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename StatusLastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetStatusLastUpdatedDateTime(StatusLastUpdatedDateTimeT&& value) { m_statusLastUpdatedDateTimeHasBeenSet = true; m_statusLastUpdatedDateTime = std::forward<StatusLastUpdatedDateTimeT>(value); }
+    template<typename StatusLastUpdatedDateTimeT = Aws::Utils::DateTime>
+    RegionDescription& WithStatusLastUpdatedDateTime(StatusLastUpdatedDateTimeT&& value) { SetStatusLastUpdatedDateTime(std::forward<StatusLastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the Region description was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline RegionDescription& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline RegionDescription& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    RegionDescription& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -159,25 +151,25 @@ namespace Model
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet = false;
 
-    RegionType m_regionType;
+    RegionType m_regionType{RegionType::NOT_SET};
     bool m_regionTypeHasBeenSet = false;
 
-    DirectoryStage m_status;
+    DirectoryStage m_status{DirectoryStage::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     DirectoryVpcSettings m_vpcSettings;
     bool m_vpcSettingsHasBeenSet = false;
 
-    int m_desiredNumberOfDomainControllers;
+    int m_desiredNumberOfDomainControllers{0};
     bool m_desiredNumberOfDomainControllersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_launchTime;
+    Aws::Utils::DateTime m_launchTime{};
     bool m_launchTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_statusLastUpdatedDateTime;
+    Aws::Utils::DateTime m_statusLastUpdatedDateTime{};
     bool m_statusLastUpdatedDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 

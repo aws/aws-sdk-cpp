@@ -18,15 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-DestinationConfiguration::DestinationConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_s3HasBeenSet(false)
-{
-}
-
 DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetObject("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

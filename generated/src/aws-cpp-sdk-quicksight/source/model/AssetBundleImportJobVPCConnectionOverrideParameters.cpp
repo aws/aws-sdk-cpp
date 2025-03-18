@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobVPCConnectionOverrideParameters::AssetBundleImportJobVPCConnectionOverrideParameters() : 
-    m_vPCConnectionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dnsResolversHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobVPCConnectionOverrideParameters::AssetBundleImportJobVPCConnectionOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobVPCConnectionOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ AssetBundleImportJobVPCConnectionOverrideParameters& AssetBundleImportJobVPCConn
   if(jsonValue.ValueExists("VPCConnectionId"))
   {
     m_vPCConnectionId = jsonValue.GetString("VPCConnectionId");
-
     m_vPCConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -59,7 +44,6 @@ AssetBundleImportJobVPCConnectionOverrideParameters& AssetBundleImportJobVPCConn
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -69,7 +53,6 @@ AssetBundleImportJobVPCConnectionOverrideParameters& AssetBundleImportJobVPCConn
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsResolvers"))
   {
     Aws::Utils::Array<JsonView> dnsResolversJsonList = jsonValue.GetArray("DnsResolvers");
@@ -79,14 +62,11 @@ AssetBundleImportJobVPCConnectionOverrideParameters& AssetBundleImportJobVPCConn
     }
     m_dnsResolversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFlowRequest::DescribeFlowRequest() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFlowRequest::SerializePayload() const
 {
   return {};

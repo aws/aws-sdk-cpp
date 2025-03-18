@@ -27,7 +27,7 @@ namespace Model
   class ModifyInstanceAttributeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyInstanceAttributeRequest();
+    AWS_EC2_API ModifyInstanceAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,12 +51,12 @@ namespace Model
      * source/destination checks if the instance runs services such as network address
      * translation, routing, or firewalls.</p>
      */
-    inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+    inline const AttributeBooleanValue& GetSourceDestCheck() const { return m_sourceDestCheck; }
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
-    inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
+    template<typename SourceDestCheckT = AttributeBooleanValue>
+    void SetSourceDestCheck(SourceDestCheckT&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::forward<SourceDestCheckT>(value); }
+    template<typename SourceDestCheckT = AttributeBooleanValue>
+    ModifyInstanceAttributeRequest& WithSourceDestCheck(SourceDestCheckT&& value) { SetSourceDestCheck(std::forward<SourceDestCheckT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
      * stop protection for your instance</a>.</p> <p/>
      */
-    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
+    inline const AttributeBooleanValue& GetDisableApiStop() const { return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
-    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
-    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+    template<typename DisableApiStopT = AttributeBooleanValue>
+    void SetDisableApiStop(DisableApiStopT&& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = std::forward<DisableApiStopT>(value); }
+    template<typename DisableApiStopT = AttributeBooleanValue>
+    ModifyInstanceAttributeRequest& WithDisableApiStop(DisableApiStopT&& value) { SetDisableApiStop(std::forward<DisableApiStopT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +81,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyInstanceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -91,14 +91,12 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ModifyInstanceAttributeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ModifyInstanceAttributeRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +110,10 @@ namespace Model
      * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
      * | <code>enclaveOptions</code> </p> 
      */
-    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
+    inline InstanceAttributeName GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(InstanceAttributeName value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +122,12 @@ namespace Model
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
      * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ModifyInstanceAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ModifyInstanceAttributeRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +144,14 @@ namespace Model
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
      */
-    inline const Aws::Vector<InstanceBlockDeviceMappingSpecification>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<InstanceBlockDeviceMappingSpecification>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMappingSpecification>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMappingSpecification>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(const InstanceBlockDeviceMappingSpecification& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline ModifyInstanceAttributeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMappingSpecification&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMappingSpecification>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMappingSpecification>>
+    ModifyInstanceAttributeRequest& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = InstanceBlockDeviceMappingSpecification>
+    ModifyInstanceAttributeRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -167,12 +161,12 @@ namespace Model
      * console, command line interface, or API. You can't enable termination protection
      * for Spot Instances.</p>
      */
-    inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
+    inline const AttributeBooleanValue& GetDisableApiTermination() const { return m_disableApiTermination; }
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
-    inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
-    inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
+    template<typename DisableApiTerminationT = AttributeBooleanValue>
+    void SetDisableApiTermination(DisableApiTerminationT&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = std::forward<DisableApiTerminationT>(value); }
+    template<typename DisableApiTerminationT = AttributeBooleanValue>
+    ModifyInstanceAttributeRequest& WithDisableApiTermination(DisableApiTerminationT&& value) { SetDisableApiTermination(std::forward<DisableApiTerminationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,12 +177,12 @@ namespace Model
      * types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not
      * valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
      */
-    inline const AttributeValue& GetInstanceType() const{ return m_instanceType; }
+    inline const AttributeValue& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const AttributeValue& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(AttributeValue&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithInstanceType(const AttributeValue& value) { SetInstanceType(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceType(AttributeValue&& value) { SetInstanceType(std::move(value)); return *this;}
+    template<typename InstanceTypeT = AttributeValue>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = AttributeValue>
+    ModifyInstanceAttributeRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,12 +191,12 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline const AttributeValue& GetKernel() const{ return m_kernel; }
+    inline const AttributeValue& GetKernel() const { return m_kernel; }
     inline bool KernelHasBeenSet() const { return m_kernelHasBeenSet; }
-    inline void SetKernel(const AttributeValue& value) { m_kernelHasBeenSet = true; m_kernel = value; }
-    inline void SetKernel(AttributeValue&& value) { m_kernelHasBeenSet = true; m_kernel = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithKernel(const AttributeValue& value) { SetKernel(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithKernel(AttributeValue&& value) { SetKernel(std::move(value)); return *this;}
+    template<typename KernelT = AttributeValue>
+    void SetKernel(KernelT&& value) { m_kernelHasBeenSet = true; m_kernel = std::forward<KernelT>(value); }
+    template<typename KernelT = AttributeValue>
+    ModifyInstanceAttributeRequest& WithKernel(KernelT&& value) { SetKernel(std::forward<KernelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,12 +205,12 @@ namespace Model
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
-    inline const AttributeValue& GetRamdisk() const{ return m_ramdisk; }
+    inline const AttributeValue& GetRamdisk() const { return m_ramdisk; }
     inline bool RamdiskHasBeenSet() const { return m_ramdiskHasBeenSet; }
-    inline void SetRamdisk(const AttributeValue& value) { m_ramdiskHasBeenSet = true; m_ramdisk = value; }
-    inline void SetRamdisk(AttributeValue&& value) { m_ramdiskHasBeenSet = true; m_ramdisk = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithRamdisk(const AttributeValue& value) { SetRamdisk(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(std::move(value)); return *this;}
+    template<typename RamdiskT = AttributeValue>
+    void SetRamdisk(RamdiskT&& value) { m_ramdiskHasBeenSet = true; m_ramdisk = std::forward<RamdiskT>(value); }
+    template<typename RamdiskT = AttributeValue>
+    ModifyInstanceAttributeRequest& WithRamdisk(RamdiskT&& value) { SetRamdisk(std::forward<RamdiskT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,12 +221,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
      * with instance user data</a>.</p>
      */
-    inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
+    inline const BlobAttributeValue& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
+    template<typename UserDataT = BlobAttributeValue>
+    void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
+    template<typename UserDataT = BlobAttributeValue>
+    ModifyInstanceAttributeRequest& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,12 +234,12 @@ namespace Model
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const { return m_instanceInitiatedShutdownBehavior; }
     inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(const AttributeValue& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    template<typename InstanceInitiatedShutdownBehaviorT = AttributeValue>
+    void SetInstanceInitiatedShutdownBehavior(InstanceInitiatedShutdownBehaviorT&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::forward<InstanceInitiatedShutdownBehaviorT>(value); }
+    template<typename InstanceInitiatedShutdownBehaviorT = AttributeValue>
+    ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(InstanceInitiatedShutdownBehaviorT&& value) { SetInstanceInitiatedShutdownBehavior(std::forward<InstanceInitiatedShutdownBehaviorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,15 +248,14 @@ namespace Model
      * groups. You must specify the ID of at least one security group, even if it's
      * just the default security group for the VPC.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<Aws::String>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    ModifyInstanceAttributeRequest& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = Aws::String>
+    ModifyInstanceAttributeRequest& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -273,12 +266,12 @@ namespace Model
      * isn't available with all instance types. Additional usage charges apply when
      * using an EBS Optimized instance.</p>
      */
-    inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline const AttributeBooleanValue& GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
-    inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
+    template<typename EbsOptimizedT = AttributeBooleanValue>
+    void SetEbsOptimized(EbsOptimizedT&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::forward<EbsOptimizedT>(value); }
+    template<typename EbsOptimizedT = AttributeBooleanValue>
+    ModifyInstanceAttributeRequest& WithEbsOptimized(EbsOptimizedT&& value) { SetEbsOptimized(std::forward<EbsOptimizedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,12 +282,12 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
-    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+    inline const AttributeValue& GetSriovNetSupport() const { return m_sriovNetSupport; }
     inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
-    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
+    template<typename SriovNetSupportT = AttributeValue>
+    void SetSriovNetSupport(SriovNetSupportT&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::forward<SriovNetSupportT>(value); }
+    template<typename SriovNetSupportT = AttributeValue>
+    ModifyInstanceAttributeRequest& WithSriovNetSupport(SriovNetSupportT&& value) { SetSriovNetSupport(std::forward<SriovNetSupportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,12 +296,12 @@ namespace Model
      * instance.</p> <p>This option is supported only for HVM instances. Specifying
      * this option with a PV instance can make it unreachable.</p>
      */
-    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
+    inline const AttributeBooleanValue& GetEnaSupport() const { return m_enaSupport; }
     inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
-    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
-    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+    template<typename EnaSupportT = AttributeBooleanValue>
+    void SetEnaSupport(EnaSupportT&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = std::forward<EnaSupportT>(value); }
+    template<typename EnaSupportT = AttributeBooleanValue>
+    ModifyInstanceAttributeRequest& WithEnaSupport(EnaSupportT&& value) { SetEnaSupport(std::forward<EnaSupportT>(value)); return *this;}
     ///@}
   private:
 
@@ -318,13 +311,13 @@ namespace Model
     AttributeBooleanValue m_disableApiStop;
     bool m_disableApiStopHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    InstanceAttributeName m_attribute;
+    InstanceAttributeName m_attribute{InstanceAttributeName::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     Aws::String m_value;

@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHypervisorRequest::DeleteHypervisorRequest() : 
-    m_hypervisorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHypervisorRequest::SerializePayload() const
 {
   JsonValue payload;

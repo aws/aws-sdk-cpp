@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFHIRDatastoreResult::DescribeFHIRDatastoreResult()
-{
-}
-
 DescribeFHIRDatastoreResult::DescribeFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFHIRDatastoreResult& DescribeFHIRDatastoreResult::operator =(const Aws::
   if(jsonValue.ValueExists("DatastoreProperties"))
   {
     m_datastoreProperties = jsonValue.GetObject("DatastoreProperties");
-
+    m_datastorePropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

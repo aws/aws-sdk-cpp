@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteEvaluationJobResult::BatchDeleteEvaluationJobResult()
-{
-}
-
 BatchDeleteEvaluationJobResult::BatchDeleteEvaluationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDeleteEvaluationJobResult& BatchDeleteEvaluationJobResult::operator =(const
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationJobs"))
   {
     Aws::Utils::Array<JsonView> evaluationJobsJsonList = jsonValue.GetArray("evaluationJobs");
@@ -45,14 +41,15 @@ BatchDeleteEvaluationJobResult& BatchDeleteEvaluationJobResult::operator =(const
     {
       m_evaluationJobs.push_back(evaluationJobsJsonList[evaluationJobsIndex].AsObject());
     }
+    m_evaluationJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

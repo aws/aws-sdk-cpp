@@ -18,14 +18,7 @@ namespace Polly
 namespace Model
 {
 
-Lexicon::Lexicon() : 
-    m_contentHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Lexicon::Lexicon(JsonView jsonValue)
-  : Lexicon()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Lexicon& Lexicon::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

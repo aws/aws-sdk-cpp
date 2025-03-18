@@ -28,7 +28,7 @@ namespace Model
   class CreateCustomLogSourceResult
   {
   public:
-    AWS_SECURITYLAKE_API CreateCustomLogSourceResult();
+    AWS_SECURITYLAKE_API CreateCustomLogSourceResult() = default;
     AWS_SECURITYLAKE_API CreateCustomLogSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYLAKE_API CreateCustomLogSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The third-party custom source that was created.</p>
      */
-    inline const CustomLogSourceResource& GetSource() const{ return m_source; }
-    inline void SetSource(const CustomLogSourceResource& value) { m_source = value; }
-    inline void SetSource(CustomLogSourceResource&& value) { m_source = std::move(value); }
-    inline CreateCustomLogSourceResult& WithSource(const CustomLogSourceResource& value) { SetSource(value); return *this;}
-    inline CreateCustomLogSourceResult& WithSource(CustomLogSourceResource&& value) { SetSource(std::move(value)); return *this;}
+    inline const CustomLogSourceResource& GetSource() const { return m_source; }
+    template<typename SourceT = CustomLogSourceResource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = CustomLogSourceResource>
+    CreateCustomLogSourceResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCustomLogSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCustomLogSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCustomLogSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCustomLogSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CustomLogSourceResource m_source;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

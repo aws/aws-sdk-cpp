@@ -21,7 +21,7 @@ namespace Model
   class UpdateEventLabelRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateEventLabelRequest();
+    AWS_FRAUDDETECTOR_API UpdateEventLabelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The ID of the event associated with the label to update.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline UpdateEventLabelRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline UpdateEventLabelRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline UpdateEventLabelRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    UpdateEventLabelRequest& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event type of the event associated with the label to update.</p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline UpdateEventLabelRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline UpdateEventLabelRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline UpdateEventLabelRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    UpdateEventLabelRequest& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new label to assign to the event.</p>
      */
-    inline const Aws::String& GetAssignedLabel() const{ return m_assignedLabel; }
+    inline const Aws::String& GetAssignedLabel() const { return m_assignedLabel; }
     inline bool AssignedLabelHasBeenSet() const { return m_assignedLabelHasBeenSet; }
-    inline void SetAssignedLabel(const Aws::String& value) { m_assignedLabelHasBeenSet = true; m_assignedLabel = value; }
-    inline void SetAssignedLabel(Aws::String&& value) { m_assignedLabelHasBeenSet = true; m_assignedLabel = std::move(value); }
-    inline void SetAssignedLabel(const char* value) { m_assignedLabelHasBeenSet = true; m_assignedLabel.assign(value); }
-    inline UpdateEventLabelRequest& WithAssignedLabel(const Aws::String& value) { SetAssignedLabel(value); return *this;}
-    inline UpdateEventLabelRequest& WithAssignedLabel(Aws::String&& value) { SetAssignedLabel(std::move(value)); return *this;}
-    inline UpdateEventLabelRequest& WithAssignedLabel(const char* value) { SetAssignedLabel(value); return *this;}
+    template<typename AssignedLabelT = Aws::String>
+    void SetAssignedLabel(AssignedLabelT&& value) { m_assignedLabelHasBeenSet = true; m_assignedLabel = std::forward<AssignedLabelT>(value); }
+    template<typename AssignedLabelT = Aws::String>
+    UpdateEventLabelRequest& WithAssignedLabel(AssignedLabelT&& value) { SetAssignedLabel(std::forward<AssignedLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +75,12 @@ namespace Model
      * <p>The timestamp associated with the label. The timestamp must be specified
      * using ISO 8601 standard in UTC. </p>
      */
-    inline const Aws::String& GetLabelTimestamp() const{ return m_labelTimestamp; }
+    inline const Aws::String& GetLabelTimestamp() const { return m_labelTimestamp; }
     inline bool LabelTimestampHasBeenSet() const { return m_labelTimestampHasBeenSet; }
-    inline void SetLabelTimestamp(const Aws::String& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = value; }
-    inline void SetLabelTimestamp(Aws::String&& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = std::move(value); }
-    inline void SetLabelTimestamp(const char* value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp.assign(value); }
-    inline UpdateEventLabelRequest& WithLabelTimestamp(const Aws::String& value) { SetLabelTimestamp(value); return *this;}
-    inline UpdateEventLabelRequest& WithLabelTimestamp(Aws::String&& value) { SetLabelTimestamp(std::move(value)); return *this;}
-    inline UpdateEventLabelRequest& WithLabelTimestamp(const char* value) { SetLabelTimestamp(value); return *this;}
+    template<typename LabelTimestampT = Aws::String>
+    void SetLabelTimestamp(LabelTimestampT&& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = std::forward<LabelTimestampT>(value); }
+    template<typename LabelTimestampT = Aws::String>
+    UpdateEventLabelRequest& WithLabelTimestamp(LabelTimestampT&& value) { SetLabelTimestamp(std::forward<LabelTimestampT>(value)); return *this;}
     ///@}
   private:
 

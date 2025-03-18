@@ -35,7 +35,7 @@ namespace Model
   class EnvironmentConfiguration
   {
   public:
-    AWS_DATAZONE_API EnvironmentConfiguration();
+    AWS_DATAZONE_API EnvironmentConfiguration() = default;
     AWS_DATAZONE_API EnvironmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EnvironmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,55 +45,53 @@ namespace Model
     /**
      * <p>The Amazon Web Services account of the environment.</p>
      */
-    inline const AwsAccount& GetAwsAccount() const{ return m_awsAccount; }
+    inline const AwsAccount& GetAwsAccount() const { return m_awsAccount; }
     inline bool AwsAccountHasBeenSet() const { return m_awsAccountHasBeenSet; }
-    inline void SetAwsAccount(const AwsAccount& value) { m_awsAccountHasBeenSet = true; m_awsAccount = value; }
-    inline void SetAwsAccount(AwsAccount&& value) { m_awsAccountHasBeenSet = true; m_awsAccount = std::move(value); }
-    inline EnvironmentConfiguration& WithAwsAccount(const AwsAccount& value) { SetAwsAccount(value); return *this;}
-    inline EnvironmentConfiguration& WithAwsAccount(AwsAccount&& value) { SetAwsAccount(std::move(value)); return *this;}
+    template<typename AwsAccountT = AwsAccount>
+    void SetAwsAccount(AwsAccountT&& value) { m_awsAccountHasBeenSet = true; m_awsAccount = std::forward<AwsAccountT>(value); }
+    template<typename AwsAccountT = AwsAccount>
+    EnvironmentConfiguration& WithAwsAccount(AwsAccountT&& value) { SetAwsAccount(std::forward<AwsAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region of the environment.</p>
      */
-    inline const Region& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Region& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Region& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Region&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline EnvironmentConfiguration& WithAwsRegion(const Region& value) { SetAwsRegion(value); return *this;}
-    inline EnvironmentConfiguration& WithAwsRegion(Region&& value) { SetAwsRegion(std::move(value)); return *this;}
+    template<typename AwsRegionT = Region>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Region>
+    EnvironmentConfiguration& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration parameters of the environment.</p>
      */
-    inline const EnvironmentConfigurationParametersDetails& GetConfigurationParameters() const{ return m_configurationParameters; }
+    inline const EnvironmentConfigurationParametersDetails& GetConfigurationParameters() const { return m_configurationParameters; }
     inline bool ConfigurationParametersHasBeenSet() const { return m_configurationParametersHasBeenSet; }
-    inline void SetConfigurationParameters(const EnvironmentConfigurationParametersDetails& value) { m_configurationParametersHasBeenSet = true; m_configurationParameters = value; }
-    inline void SetConfigurationParameters(EnvironmentConfigurationParametersDetails&& value) { m_configurationParametersHasBeenSet = true; m_configurationParameters = std::move(value); }
-    inline EnvironmentConfiguration& WithConfigurationParameters(const EnvironmentConfigurationParametersDetails& value) { SetConfigurationParameters(value); return *this;}
-    inline EnvironmentConfiguration& WithConfigurationParameters(EnvironmentConfigurationParametersDetails&& value) { SetConfigurationParameters(std::move(value)); return *this;}
+    template<typename ConfigurationParametersT = EnvironmentConfigurationParametersDetails>
+    void SetConfigurationParameters(ConfigurationParametersT&& value) { m_configurationParametersHasBeenSet = true; m_configurationParameters = std::forward<ConfigurationParametersT>(value); }
+    template<typename ConfigurationParametersT = EnvironmentConfigurationParametersDetails>
+    EnvironmentConfiguration& WithConfigurationParameters(ConfigurationParametersT&& value) { SetConfigurationParameters(std::forward<ConfigurationParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deployment mode of the environment.</p>
      */
-    inline const DeploymentMode& GetDeploymentMode() const{ return m_deploymentMode; }
+    inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
     inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
-    inline void SetDeploymentMode(const DeploymentMode& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
-    inline void SetDeploymentMode(DeploymentMode&& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = std::move(value); }
-    inline EnvironmentConfiguration& WithDeploymentMode(const DeploymentMode& value) { SetDeploymentMode(value); return *this;}
-    inline EnvironmentConfiguration& WithDeploymentMode(DeploymentMode&& value) { SetDeploymentMode(std::move(value)); return *this;}
+    inline void SetDeploymentMode(DeploymentMode value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
+    inline EnvironmentConfiguration& WithDeploymentMode(DeploymentMode value) { SetDeploymentMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deployment order of the environment.</p>
      */
-    inline int GetDeploymentOrder() const{ return m_deploymentOrder; }
+    inline int GetDeploymentOrder() const { return m_deploymentOrder; }
     inline bool DeploymentOrderHasBeenSet() const { return m_deploymentOrderHasBeenSet; }
     inline void SetDeploymentOrder(int value) { m_deploymentOrderHasBeenSet = true; m_deploymentOrder = value; }
     inline EnvironmentConfiguration& WithDeploymentOrder(int value) { SetDeploymentOrder(value); return *this;}
@@ -103,56 +101,48 @@ namespace Model
     /**
      * <p>The environment description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EnvironmentConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EnvironmentConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EnvironmentConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EnvironmentConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment blueprint ID.</p>
      */
-    inline const Aws::String& GetEnvironmentBlueprintId() const{ return m_environmentBlueprintId; }
+    inline const Aws::String& GetEnvironmentBlueprintId() const { return m_environmentBlueprintId; }
     inline bool EnvironmentBlueprintIdHasBeenSet() const { return m_environmentBlueprintIdHasBeenSet; }
-    inline void SetEnvironmentBlueprintId(const Aws::String& value) { m_environmentBlueprintIdHasBeenSet = true; m_environmentBlueprintId = value; }
-    inline void SetEnvironmentBlueprintId(Aws::String&& value) { m_environmentBlueprintIdHasBeenSet = true; m_environmentBlueprintId = std::move(value); }
-    inline void SetEnvironmentBlueprintId(const char* value) { m_environmentBlueprintIdHasBeenSet = true; m_environmentBlueprintId.assign(value); }
-    inline EnvironmentConfiguration& WithEnvironmentBlueprintId(const Aws::String& value) { SetEnvironmentBlueprintId(value); return *this;}
-    inline EnvironmentConfiguration& WithEnvironmentBlueprintId(Aws::String&& value) { SetEnvironmentBlueprintId(std::move(value)); return *this;}
-    inline EnvironmentConfiguration& WithEnvironmentBlueprintId(const char* value) { SetEnvironmentBlueprintId(value); return *this;}
+    template<typename EnvironmentBlueprintIdT = Aws::String>
+    void SetEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) { m_environmentBlueprintIdHasBeenSet = true; m_environmentBlueprintId = std::forward<EnvironmentBlueprintIdT>(value); }
+    template<typename EnvironmentBlueprintIdT = Aws::String>
+    EnvironmentConfiguration& WithEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) { SetEnvironmentBlueprintId(std::forward<EnvironmentBlueprintIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline EnvironmentConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline EnvironmentConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline EnvironmentConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    EnvironmentConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EnvironmentConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EnvironmentConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EnvironmentConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EnvironmentConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,10 +155,10 @@ namespace Model
     EnvironmentConfigurationParametersDetails m_configurationParameters;
     bool m_configurationParametersHasBeenSet = false;
 
-    DeploymentMode m_deploymentMode;
+    DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
     bool m_deploymentModeHasBeenSet = false;
 
-    int m_deploymentOrder;
+    int m_deploymentOrder{0};
     bool m_deploymentOrderHasBeenSet = false;
 
     Aws::String m_description;

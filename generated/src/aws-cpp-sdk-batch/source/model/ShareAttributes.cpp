@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ShareAttributes::ShareAttributes() : 
-    m_shareIdentifierHasBeenSet(false),
-    m_weightFactor(0.0),
-    m_weightFactorHasBeenSet(false)
-{
-}
-
 ShareAttributes::ShareAttributes(JsonView jsonValue)
-  : ShareAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ShareAttributes& ShareAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("shareIdentifier"))
   {
     m_shareIdentifier = jsonValue.GetString("shareIdentifier");
-
     m_shareIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weightFactor"))
   {
     m_weightFactor = jsonValue.GetDouble("weightFactor");
-
     m_weightFactorHasBeenSet = true;
   }
-
   return *this;
 }
 

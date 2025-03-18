@@ -12,25 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMobileDeviceAccessRuleRequest::CreateMobileDeviceAccessRuleRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_deviceTypesHasBeenSet(false),
-    m_notDeviceTypesHasBeenSet(false),
-    m_deviceModelsHasBeenSet(false),
-    m_notDeviceModelsHasBeenSet(false),
-    m_deviceOperatingSystemsHasBeenSet(false),
-    m_notDeviceOperatingSystemsHasBeenSet(false),
-    m_deviceUserAgentsHasBeenSet(false),
-    m_notDeviceUserAgentsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMobileDeviceAccessRuleRequest::SerializePayload() const
 {
   JsonValue payload;

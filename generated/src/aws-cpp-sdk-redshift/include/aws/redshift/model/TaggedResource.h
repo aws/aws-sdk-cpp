@@ -32,7 +32,7 @@ namespace Model
   class TaggedResource
   {
   public:
-    AWS_REDSHIFT_API TaggedResource();
+    AWS_REDSHIFT_API TaggedResource() = default;
     AWS_REDSHIFT_API TaggedResource(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API TaggedResource& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The tag for the resource.</p>
      */
-    inline const Tag& GetTag() const{ return m_tag; }
+    inline const Tag& GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline TaggedResource& WithTag(const Tag& value) { SetTag(value); return *this;}
-    inline TaggedResource& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+    template<typename TagT = Tag>
+    void SetTag(TagT&& value) { m_tagHasBeenSet = true; m_tag = std::forward<TagT>(value); }
+    template<typename TagT = Tag>
+    TaggedResource& WithTag(TagT&& value) { SetTag(std::forward<TagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) with which the tag is associated, for example:
      * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline TaggedResource& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline TaggedResource& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline TaggedResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    TaggedResource& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline TaggedResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline TaggedResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline TaggedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    TaggedResource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-SampleDocumentKeys::SampleDocumentKeys() : 
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
-{
-}
-
 SampleDocumentKeys::SampleDocumentKeys(JsonView jsonValue)
-  : SampleDocumentKeys()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SampleDocumentKeys& SampleDocumentKeys::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetString("output");
-
     m_outputHasBeenSet = true;
   }
-
   return *this;
 }
 

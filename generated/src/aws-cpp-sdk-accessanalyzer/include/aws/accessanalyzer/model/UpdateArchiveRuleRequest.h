@@ -27,7 +27,7 @@ namespace Model
   class UpdateArchiveRuleRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API UpdateArchiveRuleRequest();
+    AWS_ACCESSANALYZER_API UpdateArchiveRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the analyzer to update the archive rules for.</p>
      */
-    inline const Aws::String& GetAnalyzerName() const{ return m_analyzerName; }
+    inline const Aws::String& GetAnalyzerName() const { return m_analyzerName; }
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
-    inline void SetAnalyzerName(const Aws::String& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
-    inline void SetAnalyzerName(Aws::String&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
-    inline void SetAnalyzerName(const char* value) { m_analyzerNameHasBeenSet = true; m_analyzerName.assign(value); }
-    inline UpdateArchiveRuleRequest& WithAnalyzerName(const Aws::String& value) { SetAnalyzerName(value); return *this;}
-    inline UpdateArchiveRuleRequest& WithAnalyzerName(Aws::String&& value) { SetAnalyzerName(std::move(value)); return *this;}
-    inline UpdateArchiveRuleRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
+    template<typename AnalyzerNameT = Aws::String>
+    void SetAnalyzerName(AnalyzerNameT&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::forward<AnalyzerNameT>(value); }
+    template<typename AnalyzerNameT = Aws::String>
+    UpdateArchiveRuleRequest& WithAnalyzerName(AnalyzerNameT&& value) { SetAnalyzerName(std::forward<AnalyzerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rule to update.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline UpdateArchiveRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline UpdateArchiveRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline UpdateArchiveRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    UpdateArchiveRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,32 +67,28 @@ namespace Model
      * <p>A filter to match for the rules to update. Only rules that match the filter
      * are updated.</p>
      */
-    inline const Aws::Map<Aws::String, Criterion>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<Aws::String, Criterion>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<Aws::String, Criterion>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<Aws::String, Criterion>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline UpdateArchiveRuleRequest& WithFilter(const Aws::Map<Aws::String, Criterion>& value) { SetFilter(value); return *this;}
-    inline UpdateArchiveRuleRequest& WithFilter(Aws::Map<Aws::String, Criterion>&& value) { SetFilter(std::move(value)); return *this;}
-    inline UpdateArchiveRuleRequest& AddFilter(const Aws::String& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline UpdateArchiveRuleRequest& AddFilter(Aws::String&& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline UpdateArchiveRuleRequest& AddFilter(const Aws::String& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline UpdateArchiveRuleRequest& AddFilter(Aws::String&& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateArchiveRuleRequest& AddFilter(const char* key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline UpdateArchiveRuleRequest& AddFilter(const char* key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<Aws::String, Criterion>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<Aws::String, Criterion>>
+    UpdateArchiveRuleRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterKeyT = Aws::String, typename FilterValueT = Criterion>
+    UpdateArchiveRuleRequest& AddFilter(FilterKeyT&& key, FilterValueT&& value) {
+      m_filterHasBeenSet = true; m_filter.emplace(std::forward<FilterKeyT>(key), std::forward<FilterValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A client token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateArchiveRuleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

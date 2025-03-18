@@ -35,7 +35,7 @@ namespace Model
   class SecretsManagerSecretResourceData
   {
   public:
-    AWS_GREENGRASS_API SecretsManagerSecretResourceData();
+    AWS_GREENGRASS_API SecretsManagerSecretResourceData() = default;
     AWS_GREENGRASS_API SecretsManagerSecretResourceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API SecretsManagerSecretResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
      * is included by default.
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline SecretsManagerSecretResourceData& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline SecretsManagerSecretResourceData& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline SecretsManagerSecretResourceData& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    SecretsManagerSecretResourceData& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * Optional. The staging labels whose values you want to make available on the
      * core, in addition to ''AWSCURRENT''.
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalStagingLabelsToDownload() const{ return m_additionalStagingLabelsToDownload; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalStagingLabelsToDownload() const { return m_additionalStagingLabelsToDownload; }
     inline bool AdditionalStagingLabelsToDownloadHasBeenSet() const { return m_additionalStagingLabelsToDownloadHasBeenSet; }
-    inline void SetAdditionalStagingLabelsToDownload(const Aws::Vector<Aws::String>& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload = value; }
-    inline void SetAdditionalStagingLabelsToDownload(Aws::Vector<Aws::String>&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload = std::move(value); }
-    inline SecretsManagerSecretResourceData& WithAdditionalStagingLabelsToDownload(const Aws::Vector<Aws::String>& value) { SetAdditionalStagingLabelsToDownload(value); return *this;}
-    inline SecretsManagerSecretResourceData& WithAdditionalStagingLabelsToDownload(Aws::Vector<Aws::String>&& value) { SetAdditionalStagingLabelsToDownload(std::move(value)); return *this;}
-    inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(const Aws::String& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(value); return *this; }
-    inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(Aws::String&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(std::move(value)); return *this; }
-    inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(const char* value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(value); return *this; }
+    template<typename AdditionalStagingLabelsToDownloadT = Aws::Vector<Aws::String>>
+    void SetAdditionalStagingLabelsToDownload(AdditionalStagingLabelsToDownloadT&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload = std::forward<AdditionalStagingLabelsToDownloadT>(value); }
+    template<typename AdditionalStagingLabelsToDownloadT = Aws::Vector<Aws::String>>
+    SecretsManagerSecretResourceData& WithAdditionalStagingLabelsToDownload(AdditionalStagingLabelsToDownloadT&& value) { SetAdditionalStagingLabelsToDownload(std::forward<AdditionalStagingLabelsToDownloadT>(value)); return *this;}
+    template<typename AdditionalStagingLabelsToDownloadT = Aws::String>
+    SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(AdditionalStagingLabelsToDownloadT&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.emplace_back(std::forward<AdditionalStagingLabelsToDownloadT>(value)); return *this; }
     ///@}
   private:
 

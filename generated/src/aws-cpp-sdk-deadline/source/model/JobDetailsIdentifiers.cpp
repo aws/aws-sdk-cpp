@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobDetailsIdentifiers::JobDetailsIdentifiers() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 JobDetailsIdentifiers::JobDetailsIdentifiers(JsonView jsonValue)
-  : JobDetailsIdentifiers()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JobDetailsIdentifiers& JobDetailsIdentifiers::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   return *this;
 }
 

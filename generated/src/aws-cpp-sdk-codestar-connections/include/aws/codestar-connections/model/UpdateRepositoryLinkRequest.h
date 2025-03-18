@@ -21,7 +21,7 @@ namespace Model
   class UpdateRepositoryLinkRequest : public CodeStarconnectionsRequest
   {
   public:
-    AWS_CODESTARCONNECTIONS_API UpdateRepositoryLinkRequest();
+    AWS_CODESTARCONNECTIONS_API UpdateRepositoryLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * be updated. The updated connection ARN must have the same providerType (such as
      * GitHub) as the original connection ARN for the repo link.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline UpdateRepositoryLinkRequest& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline UpdateRepositoryLinkRequest& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline UpdateRepositoryLinkRequest& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    UpdateRepositoryLinkRequest& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,28 +53,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the encryption key for the repository link
      * to be updated.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline UpdateRepositoryLinkRequest& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline UpdateRepositoryLinkRequest& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline UpdateRepositoryLinkRequest& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    UpdateRepositoryLinkRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the repository link to be updated.</p>
      */
-    inline const Aws::String& GetRepositoryLinkId() const{ return m_repositoryLinkId; }
+    inline const Aws::String& GetRepositoryLinkId() const { return m_repositoryLinkId; }
     inline bool RepositoryLinkIdHasBeenSet() const { return m_repositoryLinkIdHasBeenSet; }
-    inline void SetRepositoryLinkId(const Aws::String& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = value; }
-    inline void SetRepositoryLinkId(Aws::String&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::move(value); }
-    inline void SetRepositoryLinkId(const char* value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId.assign(value); }
-    inline UpdateRepositoryLinkRequest& WithRepositoryLinkId(const Aws::String& value) { SetRepositoryLinkId(value); return *this;}
-    inline UpdateRepositoryLinkRequest& WithRepositoryLinkId(Aws::String&& value) { SetRepositoryLinkId(std::move(value)); return *this;}
-    inline UpdateRepositoryLinkRequest& WithRepositoryLinkId(const char* value) { SetRepositoryLinkId(value); return *this;}
+    template<typename RepositoryLinkIdT = Aws::String>
+    void SetRepositoryLinkId(RepositoryLinkIdT&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::forward<RepositoryLinkIdT>(value); }
+    template<typename RepositoryLinkIdT = Aws::String>
+    UpdateRepositoryLinkRequest& WithRepositoryLinkId(RepositoryLinkIdT&& value) { SetRepositoryLinkId(std::forward<RepositoryLinkIdT>(value)); return *this;}
     ///@}
   private:
 

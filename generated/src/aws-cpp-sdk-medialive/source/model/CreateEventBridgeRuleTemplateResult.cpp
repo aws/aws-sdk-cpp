@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventBridgeRuleTemplateResult::CreateEventBridgeRuleTemplateResult() : 
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET)
-{
-}
-
 CreateEventBridgeRuleTemplateResult::CreateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateEventBridgeRuleTemplateResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ CreateEventBridgeRuleTemplateResult& CreateEventBridgeRuleTemplateResult::operat
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTargets"))
   {
     Aws::Utils::Array<JsonView> eventTargetsJsonList = jsonValue.GetArray("eventTargets");
@@ -56,38 +47,33 @@ CreateEventBridgeRuleTemplateResult& CreateEventBridgeRuleTemplateResult::operat
     {
       m_eventTargets.push_back(eventTargetsJsonList[eventTargetsIndex].AsObject());
     }
+    m_eventTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = EventBridgeRuleTemplateEventTypeMapper::GetEventBridgeRuleTemplateEventTypeForName(jsonValue.GetString("eventType"));
-
+    m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupId"))
   {
     m_groupId = jsonValue.GetString("groupId");
-
+    m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
+    m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -95,14 +81,15 @@ CreateEventBridgeRuleTemplateResult& CreateEventBridgeRuleTemplateResult::operat
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

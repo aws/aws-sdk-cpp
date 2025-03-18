@@ -10,11 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeIdFormatRequest::DescribeIdFormatRequest() : 
-    m_resourceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIdFormatRequest::SerializePayload() const
 {
   Aws::StringStream ss;

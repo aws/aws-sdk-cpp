@@ -29,7 +29,7 @@ namespace Model
   class DescribeReservedInstancesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeReservedInstancesRequest();
+    AWS_EC2_API DescribeReservedInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,10 @@ namespace Model
     /**
      * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
      */
-    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+    inline OfferingClassType GetOfferingClass() const { return m_offeringClass; }
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
-    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-    inline DescribeReservedInstancesRequest& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
-    inline DescribeReservedInstancesRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
+    inline void SetOfferingClass(OfferingClassType value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline DescribeReservedInstancesRequest& WithOfferingClass(OfferingClassType value) { SetOfferingClass(value); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
      * Reserved Instances, or only those otherwise specified.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReservedInstancesIds() const{ return m_reservedInstancesIds; }
+    inline const Aws::Vector<Aws::String>& GetReservedInstancesIds() const { return m_reservedInstancesIds; }
     inline bool ReservedInstancesIdsHasBeenSet() const { return m_reservedInstancesIdsHasBeenSet; }
-    inline void SetReservedInstancesIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
-    inline void SetReservedInstancesIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::move(value); }
-    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesIds(value); return *this;}
-    inline DescribeReservedInstancesRequest& WithReservedInstancesIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesIds(std::move(value)); return *this;}
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const Aws::String& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(Aws::String&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
-    inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const char* value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
+    template<typename ReservedInstancesIdsT = Aws::Vector<Aws::String>>
+    void SetReservedInstancesIds(ReservedInstancesIdsT&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = std::forward<ReservedInstancesIdsT>(value); }
+    template<typename ReservedInstancesIdsT = Aws::Vector<Aws::String>>
+    DescribeReservedInstancesRequest& WithReservedInstancesIds(ReservedInstancesIdsT&& value) { SetReservedInstancesIds(std::forward<ReservedInstancesIdsT>(value)); return *this;}
+    template<typename ReservedInstancesIdsT = Aws::String>
+    DescribeReservedInstancesRequest& AddReservedInstancesIds(ReservedInstancesIdsT&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.emplace_back(std::forward<ReservedInstancesIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,7 +76,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeReservedInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -121,14 +118,14 @@ namespace Model
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
      * (for example, 0.84).</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeReservedInstancesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeReservedInstancesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,28 +134,26 @@ namespace Model
      * 2011-11-01 API version, you only have access to the <code>Medium
      * Utilization</code> Reserved Instance offering type.</p>
      */
-    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+    inline OfferingTypeValues GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline DescribeReservedInstancesRequest& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
-    inline DescribeReservedInstancesRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+    inline void SetOfferingType(OfferingTypeValues value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline DescribeReservedInstancesRequest& WithOfferingType(OfferingTypeValues value) { SetOfferingType(value); return *this;}
     ///@}
   private:
 
-    OfferingClassType m_offeringClass;
+    OfferingClassType m_offeringClass{OfferingClassType::NOT_SET};
     bool m_offeringClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reservedInstancesIds;
     bool m_reservedInstancesIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    OfferingTypeValues m_offeringType;
+    OfferingTypeValues m_offeringType{OfferingTypeValues::NOT_SET};
     bool m_offeringTypeHasBeenSet = false;
   };
 

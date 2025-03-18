@@ -36,7 +36,7 @@ namespace Model
   class DescribeConfigRulesFilters
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeConfigRulesFilters();
+    AWS_CONFIGSERVICE_API DescribeConfigRulesFilters() = default;
     AWS_CONFIGSERVICE_API DescribeConfigRulesFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API DescribeConfigRulesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
     /**
      * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
      */
-    inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
+    inline EvaluationMode GetEvaluationMode() const { return m_evaluationMode; }
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
-    inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
-    inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
-    inline DescribeConfigRulesFilters& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
-    inline DescribeConfigRulesFilters& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
+    inline void SetEvaluationMode(EvaluationMode value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
+    inline DescribeConfigRulesFilters& WithEvaluationMode(EvaluationMode value) { SetEvaluationMode(value); return *this;}
     ///@}
   private:
 
-    EvaluationMode m_evaluationMode;
+    EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
     bool m_evaluationModeHasBeenSet = false;
   };
 

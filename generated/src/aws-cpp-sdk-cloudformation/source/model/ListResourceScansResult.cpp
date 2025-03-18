@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourceScansResult::ListResourceScansResult()
-{
-}
-
 ListResourceScansResult::ListResourceScansResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListResourceScansResult& ListResourceScansResult::operator =(const Aws::AmazonWe
     if(!resourceScanSummariesNode.IsNull())
     {
       XmlNode resourceScanSummariesMember = resourceScanSummariesNode.FirstChild("member");
+      m_resourceScanSummariesHasBeenSet = !resourceScanSummariesMember.IsNull();
       while(!resourceScanSummariesMember.IsNull())
       {
         m_resourceScanSummaries.push_back(resourceScanSummariesMember);
         resourceScanSummariesMember = resourceScanSummariesMember.NextNode("member");
       }
 
+      m_resourceScanSummariesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListResourceScansResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

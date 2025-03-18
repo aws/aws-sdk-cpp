@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNodegroupRequest::DeleteNodegroupRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNodegroupRequest::SerializePayload() const
 {
   return {};

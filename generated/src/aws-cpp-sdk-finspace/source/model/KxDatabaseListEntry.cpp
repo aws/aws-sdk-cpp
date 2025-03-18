@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDatabaseListEntry::KxDatabaseListEntry() : 
-    m_databaseNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false)
-{
-}
-
 KxDatabaseListEntry::KxDatabaseListEntry(JsonView jsonValue)
-  : KxDatabaseListEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KxDatabaseListEntry& KxDatabaseListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

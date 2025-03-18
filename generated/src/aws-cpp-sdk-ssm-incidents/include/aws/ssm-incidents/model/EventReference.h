@@ -34,7 +34,7 @@ namespace Model
   class EventReference
   {
   public:
-    AWS_SSMINCIDENTS_API EventReference();
+    AWS_SSMINCIDENTS_API EventReference() = default;
     AWS_SSMINCIDENTS_API EventReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API EventReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ID of a <code>RelatedItem</code> referenced in a
      * <code>TimelineEvent</code>.</p>
      */
-    inline const Aws::String& GetRelatedItemId() const{ return m_relatedItemId; }
+    inline const Aws::String& GetRelatedItemId() const { return m_relatedItemId; }
     inline bool RelatedItemIdHasBeenSet() const { return m_relatedItemIdHasBeenSet; }
-    inline void SetRelatedItemId(const Aws::String& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = value; }
-    inline void SetRelatedItemId(Aws::String&& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = std::move(value); }
-    inline void SetRelatedItemId(const char* value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId.assign(value); }
-    inline EventReference& WithRelatedItemId(const Aws::String& value) { SetRelatedItemId(value); return *this;}
-    inline EventReference& WithRelatedItemId(Aws::String&& value) { SetRelatedItemId(std::move(value)); return *this;}
-    inline EventReference& WithRelatedItemId(const char* value) { SetRelatedItemId(value); return *this;}
+    template<typename RelatedItemIdT = Aws::String>
+    void SetRelatedItemId(RelatedItemIdT&& value) { m_relatedItemIdHasBeenSet = true; m_relatedItemId = std::forward<RelatedItemIdT>(value); }
+    template<typename RelatedItemIdT = Aws::String>
+    EventReference& WithRelatedItemId(RelatedItemIdT&& value) { SetRelatedItemId(std::forward<RelatedItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced
      * in a <code>TimelineEvent</code>.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline EventReference& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline EventReference& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline EventReference& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    EventReference& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 

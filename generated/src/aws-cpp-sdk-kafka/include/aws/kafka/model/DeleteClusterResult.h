@@ -28,7 +28,7 @@ namespace Model
   class DeleteClusterResult
   {
   public:
-    AWS_KAFKA_API DeleteClusterResult();
+    AWS_KAFKA_API DeleteClusterResult() = default;
     AWS_KAFKA_API DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
             <p>The Amazon Resource Name (ARN) of the cluster.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline DeleteClusterResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline DeleteClusterResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline DeleteClusterResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    DeleteClusterResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,30 +54,29 @@ namespace Model
      * UPDATING.</p>
          
      */
-    inline const ClusterState& GetState() const{ return m_state; }
-    inline void SetState(const ClusterState& value) { m_state = value; }
-    inline void SetState(ClusterState&& value) { m_state = std::move(value); }
-    inline DeleteClusterResult& WithState(const ClusterState& value) { SetState(value); return *this;}
-    inline DeleteClusterResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline ClusterState GetState() const { return m_state; }
+    inline void SetState(ClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteClusterResult& WithState(ClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
-    ClusterState m_state;
+    ClusterState m_state{ClusterState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

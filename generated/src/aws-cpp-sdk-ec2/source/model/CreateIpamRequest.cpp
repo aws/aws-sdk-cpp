@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateIpamRequest::CreateIpamRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_enablePrivateGua(false),
-    m_enablePrivateGuaHasBeenSet(false)
-{
-}
-
 Aws::String CreateIpamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

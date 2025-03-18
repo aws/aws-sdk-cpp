@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetMembershipDatasourcesRequest::BatchGetMembershipDatasourcesRequest() : 
-    m_graphArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetMembershipDatasourcesRequest::SerializePayload() const
 {
   JsonValue payload;

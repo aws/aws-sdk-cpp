@@ -34,7 +34,7 @@ namespace Model
   class EdgeAgentStatus
   {
   public:
-    AWS_KINESISVIDEO_API EdgeAgentStatus();
+    AWS_KINESISVIDEO_API EdgeAgentStatus() = default;
     AWS_KINESISVIDEO_API EdgeAgentStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API EdgeAgentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The latest status of a stream’s edge recording job.</p>
      */
-    inline const LastRecorderStatus& GetLastRecorderStatus() const{ return m_lastRecorderStatus; }
+    inline const LastRecorderStatus& GetLastRecorderStatus() const { return m_lastRecorderStatus; }
     inline bool LastRecorderStatusHasBeenSet() const { return m_lastRecorderStatusHasBeenSet; }
-    inline void SetLastRecorderStatus(const LastRecorderStatus& value) { m_lastRecorderStatusHasBeenSet = true; m_lastRecorderStatus = value; }
-    inline void SetLastRecorderStatus(LastRecorderStatus&& value) { m_lastRecorderStatusHasBeenSet = true; m_lastRecorderStatus = std::move(value); }
-    inline EdgeAgentStatus& WithLastRecorderStatus(const LastRecorderStatus& value) { SetLastRecorderStatus(value); return *this;}
-    inline EdgeAgentStatus& WithLastRecorderStatus(LastRecorderStatus&& value) { SetLastRecorderStatus(std::move(value)); return *this;}
+    template<typename LastRecorderStatusT = LastRecorderStatus>
+    void SetLastRecorderStatus(LastRecorderStatusT&& value) { m_lastRecorderStatusHasBeenSet = true; m_lastRecorderStatus = std::forward<LastRecorderStatusT>(value); }
+    template<typename LastRecorderStatusT = LastRecorderStatus>
+    EdgeAgentStatus& WithLastRecorderStatus(LastRecorderStatusT&& value) { SetLastRecorderStatus(std::forward<LastRecorderStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest status of a stream’s edge to cloud uploader job.</p>
      */
-    inline const LastUploaderStatus& GetLastUploaderStatus() const{ return m_lastUploaderStatus; }
+    inline const LastUploaderStatus& GetLastUploaderStatus() const { return m_lastUploaderStatus; }
     inline bool LastUploaderStatusHasBeenSet() const { return m_lastUploaderStatusHasBeenSet; }
-    inline void SetLastUploaderStatus(const LastUploaderStatus& value) { m_lastUploaderStatusHasBeenSet = true; m_lastUploaderStatus = value; }
-    inline void SetLastUploaderStatus(LastUploaderStatus&& value) { m_lastUploaderStatusHasBeenSet = true; m_lastUploaderStatus = std::move(value); }
-    inline EdgeAgentStatus& WithLastUploaderStatus(const LastUploaderStatus& value) { SetLastUploaderStatus(value); return *this;}
-    inline EdgeAgentStatus& WithLastUploaderStatus(LastUploaderStatus&& value) { SetLastUploaderStatus(std::move(value)); return *this;}
+    template<typename LastUploaderStatusT = LastUploaderStatus>
+    void SetLastUploaderStatus(LastUploaderStatusT&& value) { m_lastUploaderStatusHasBeenSet = true; m_lastUploaderStatus = std::forward<LastUploaderStatusT>(value); }
+    template<typename LastUploaderStatusT = LastUploaderStatus>
+    EdgeAgentStatus& WithLastUploaderStatus(LastUploaderStatusT&& value) { SetLastUploaderStatus(std::forward<LastUploaderStatusT>(value)); return *this;}
     ///@}
   private:
 

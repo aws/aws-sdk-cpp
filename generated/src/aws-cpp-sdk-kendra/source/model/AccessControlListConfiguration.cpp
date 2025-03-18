@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AccessControlListConfiguration::AccessControlListConfiguration() : 
-    m_keyPathHasBeenSet(false)
-{
-}
-
 AccessControlListConfiguration::AccessControlListConfiguration(JsonView jsonValue)
-  : AccessControlListConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccessControlListConfiguration& AccessControlListConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("KeyPath"))
   {
     m_keyPath = jsonValue.GetString("KeyPath");
-
     m_keyPathHasBeenSet = true;
   }
-
   return *this;
 }
 

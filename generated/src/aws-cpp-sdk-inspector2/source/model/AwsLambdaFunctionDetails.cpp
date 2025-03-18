@@ -18,24 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AwsLambdaFunctionDetails::AwsLambdaFunctionDetails() : 
-    m_architecturesHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue)
-  : AwsLambdaFunctionDetails()
 {
   *this = jsonValue;
 }
@@ -51,35 +34,26 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
     }
     m_architecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeSha256"))
   {
     m_codeSha256 = jsonValue.GetString("codeSha256");
-
     m_codeSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionName"))
   {
     m_functionName = jsonValue.GetString("functionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layers"))
   {
     Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("layers");
@@ -89,35 +63,26 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
     }
     m_layersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageType"))
   {
     m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("packageType"));
-
     m_packageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtime"))
   {
     m_runtime = RuntimeMapper::GetRuntimeForName(jsonValue.GetString("runtime"));
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

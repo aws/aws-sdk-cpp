@@ -30,7 +30,7 @@ namespace Model
   class SearchResourcesResult
   {
   public:
-    AWS_RESOURCEGROUPS_API SearchResourcesResult();
+    AWS_RESOURCEGROUPS_API SearchResourcesResult() = default;
     AWS_RESOURCEGROUPS_API SearchResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API SearchResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The ARNs and resource types of resources that are members of the group that
      * you specified.</p>
      */
-    inline const Aws::Vector<ResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
-    inline void SetResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { m_resourceIdentifiers = value; }
-    inline void SetResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { m_resourceIdentifiers = std::move(value); }
-    inline SearchResourcesResult& WithResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { SetResourceIdentifiers(value); return *this;}
-    inline SearchResourcesResult& WithResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
-    inline SearchResourcesResult& AddResourceIdentifiers(const ResourceIdentifier& value) { m_resourceIdentifiers.push_back(value); return *this; }
-    inline SearchResourcesResult& AddResourceIdentifiers(ResourceIdentifier&& value) { m_resourceIdentifiers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceIdentifier>& GetResourceIdentifiers() const { return m_resourceIdentifiers; }
+    template<typename ResourceIdentifiersT = Aws::Vector<ResourceIdentifier>>
+    void SetResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::forward<ResourceIdentifiersT>(value); }
+    template<typename ResourceIdentifiersT = Aws::Vector<ResourceIdentifier>>
+    SearchResourcesResult& WithResourceIdentifiers(ResourceIdentifiersT&& value) { SetResourceIdentifiers(std::forward<ResourceIdentifiersT>(value)); return *this;}
+    template<typename ResourceIdentifiersT = ResourceIdentifier>
+    SearchResourcesResult& AddResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.emplace_back(std::forward<ResourceIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,13 +57,11 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,34 +73,36 @@ namespace Model
      * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li> <li> <p>
      * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code> </p> </li> </ul>
      */
-    inline const Aws::Vector<QueryError>& GetQueryErrors() const{ return m_queryErrors; }
-    inline void SetQueryErrors(const Aws::Vector<QueryError>& value) { m_queryErrors = value; }
-    inline void SetQueryErrors(Aws::Vector<QueryError>&& value) { m_queryErrors = std::move(value); }
-    inline SearchResourcesResult& WithQueryErrors(const Aws::Vector<QueryError>& value) { SetQueryErrors(value); return *this;}
-    inline SearchResourcesResult& WithQueryErrors(Aws::Vector<QueryError>&& value) { SetQueryErrors(std::move(value)); return *this;}
-    inline SearchResourcesResult& AddQueryErrors(const QueryError& value) { m_queryErrors.push_back(value); return *this; }
-    inline SearchResourcesResult& AddQueryErrors(QueryError&& value) { m_queryErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueryError>& GetQueryErrors() const { return m_queryErrors; }
+    template<typename QueryErrorsT = Aws::Vector<QueryError>>
+    void SetQueryErrors(QueryErrorsT&& value) { m_queryErrorsHasBeenSet = true; m_queryErrors = std::forward<QueryErrorsT>(value); }
+    template<typename QueryErrorsT = Aws::Vector<QueryError>>
+    SearchResourcesResult& WithQueryErrors(QueryErrorsT&& value) { SetQueryErrors(std::forward<QueryErrorsT>(value)); return *this;}
+    template<typename QueryErrorsT = QueryError>
+    SearchResourcesResult& AddQueryErrors(QueryErrorsT&& value) { m_queryErrorsHasBeenSet = true; m_queryErrors.emplace_back(std::forward<QueryErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
+    bool m_resourceIdentifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<QueryError> m_queryErrors;
+    bool m_queryErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

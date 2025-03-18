@@ -32,7 +32,7 @@ namespace Model
   class ContinuousDeploymentPolicyConfig
   {
   public:
-    AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig() = default;
     AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * <p>The CloudFront domain name of the staging distribution. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
-    inline const StagingDistributionDnsNames& GetStagingDistributionDnsNames() const{ return m_stagingDistributionDnsNames; }
+    inline const StagingDistributionDnsNames& GetStagingDistributionDnsNames() const { return m_stagingDistributionDnsNames; }
     inline bool StagingDistributionDnsNamesHasBeenSet() const { return m_stagingDistributionDnsNamesHasBeenSet; }
-    inline void SetStagingDistributionDnsNames(const StagingDistributionDnsNames& value) { m_stagingDistributionDnsNamesHasBeenSet = true; m_stagingDistributionDnsNames = value; }
-    inline void SetStagingDistributionDnsNames(StagingDistributionDnsNames&& value) { m_stagingDistributionDnsNamesHasBeenSet = true; m_stagingDistributionDnsNames = std::move(value); }
-    inline ContinuousDeploymentPolicyConfig& WithStagingDistributionDnsNames(const StagingDistributionDnsNames& value) { SetStagingDistributionDnsNames(value); return *this;}
-    inline ContinuousDeploymentPolicyConfig& WithStagingDistributionDnsNames(StagingDistributionDnsNames&& value) { SetStagingDistributionDnsNames(std::move(value)); return *this;}
+    template<typename StagingDistributionDnsNamesT = StagingDistributionDnsNames>
+    void SetStagingDistributionDnsNames(StagingDistributionDnsNamesT&& value) { m_stagingDistributionDnsNamesHasBeenSet = true; m_stagingDistributionDnsNames = std::forward<StagingDistributionDnsNamesT>(value); }
+    template<typename StagingDistributionDnsNamesT = StagingDistributionDnsNames>
+    ContinuousDeploymentPolicyConfig& WithStagingDistributionDnsNames(StagingDistributionDnsNamesT&& value) { SetStagingDistributionDnsNames(std::forward<StagingDistributionDnsNamesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
      * effect. When this value is <code>false</code>, this policy is not enabled and
      * has no effect.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ContinuousDeploymentPolicyConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -70,19 +70,19 @@ namespace Model
      * <p>Contains the parameters for routing production traffic from your primary to
      * staging distributions.</p>
      */
-    inline const TrafficConfig& GetTrafficConfig() const{ return m_trafficConfig; }
+    inline const TrafficConfig& GetTrafficConfig() const { return m_trafficConfig; }
     inline bool TrafficConfigHasBeenSet() const { return m_trafficConfigHasBeenSet; }
-    inline void SetTrafficConfig(const TrafficConfig& value) { m_trafficConfigHasBeenSet = true; m_trafficConfig = value; }
-    inline void SetTrafficConfig(TrafficConfig&& value) { m_trafficConfigHasBeenSet = true; m_trafficConfig = std::move(value); }
-    inline ContinuousDeploymentPolicyConfig& WithTrafficConfig(const TrafficConfig& value) { SetTrafficConfig(value); return *this;}
-    inline ContinuousDeploymentPolicyConfig& WithTrafficConfig(TrafficConfig&& value) { SetTrafficConfig(std::move(value)); return *this;}
+    template<typename TrafficConfigT = TrafficConfig>
+    void SetTrafficConfig(TrafficConfigT&& value) { m_trafficConfigHasBeenSet = true; m_trafficConfig = std::forward<TrafficConfigT>(value); }
+    template<typename TrafficConfigT = TrafficConfig>
+    ContinuousDeploymentPolicyConfig& WithTrafficConfig(TrafficConfigT&& value) { SetTrafficConfig(std::forward<TrafficConfigT>(value)); return *this;}
     ///@}
   private:
 
     StagingDistributionDnsNames m_stagingDistributionDnsNames;
     bool m_stagingDistributionDnsNamesHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     TrafficConfig m_trafficConfig;

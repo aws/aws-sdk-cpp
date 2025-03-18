@@ -34,7 +34,7 @@ namespace Model
   class AllowedStatistics
   {
   public:
-    AWS_GLUEDATABREW_API AllowedStatistics();
+    AWS_GLUEDATABREW_API AllowedStatistics() = default;
     AWS_GLUEDATABREW_API AllowedStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API AllowedStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>One or more column statistics to allow for columns that contain detected
      * entities.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<Aws::String>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<Aws::String>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<Aws::String>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline AllowedStatistics& WithStatistics(const Aws::Vector<Aws::String>& value) { SetStatistics(value); return *this;}
-    inline AllowedStatistics& WithStatistics(Aws::Vector<Aws::String>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline AllowedStatistics& AddStatistics(const Aws::String& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline AllowedStatistics& AddStatistics(Aws::String&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
-    inline AllowedStatistics& AddStatistics(const char* value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
+    template<typename StatisticsT = Aws::Vector<Aws::String>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<Aws::String>>
+    AllowedStatistics& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    template<typename StatisticsT = Aws::String>
+    AllowedStatistics& AddStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics.emplace_back(std::forward<StatisticsT>(value)); return *this; }
     ///@}
   private:
 

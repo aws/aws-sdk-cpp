@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGroupRequest::GetGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_groupARNHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

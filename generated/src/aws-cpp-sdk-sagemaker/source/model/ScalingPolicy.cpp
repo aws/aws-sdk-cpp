@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ScalingPolicy::ScalingPolicy() : 
-    m_targetTrackingHasBeenSet(false)
-{
-}
-
 ScalingPolicy::ScalingPolicy(JsonView jsonValue)
-  : ScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetTracking"))
   {
     m_targetTracking = jsonValue.GetObject("TargetTracking");
-
     m_targetTrackingHasBeenSet = true;
   }
-
   return *this;
 }
 

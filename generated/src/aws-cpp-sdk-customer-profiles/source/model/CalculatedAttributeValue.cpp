@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-CalculatedAttributeValue::CalculatedAttributeValue() : 
-    m_calculatedAttributeNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_isDataPartialHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CalculatedAttributeValue::CalculatedAttributeValue(JsonView jsonValue)
-  : CalculatedAttributeValue()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CalculatedAttributeValue& CalculatedAttributeValue::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CalculatedAttributeName"))
   {
     m_calculatedAttributeName = jsonValue.GetString("CalculatedAttributeName");
-
     m_calculatedAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDataPartial"))
   {
     m_isDataPartial = jsonValue.GetString("IsDataPartial");
-
     m_isDataPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

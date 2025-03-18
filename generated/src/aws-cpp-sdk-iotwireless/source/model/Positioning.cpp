@@ -18,18 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Positioning::Positioning() : 
-    m_clockSync(0),
-    m_clockSyncHasBeenSet(false),
-    m_stream(0),
-    m_streamHasBeenSet(false),
-    m_gnss(0),
-    m_gnssHasBeenSet(false)
-{
-}
-
 Positioning::Positioning(JsonView jsonValue)
-  : Positioning()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Positioning& Positioning::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClockSync"))
   {
     m_clockSync = jsonValue.GetInteger("ClockSync");
-
     m_clockSyncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stream"))
   {
     m_stream = jsonValue.GetInteger("Stream");
-
     m_streamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gnss"))
   {
     m_gnss = jsonValue.GetInteger("Gnss");
-
     m_gnssHasBeenSet = true;
   }
-
   return *this;
 }
 

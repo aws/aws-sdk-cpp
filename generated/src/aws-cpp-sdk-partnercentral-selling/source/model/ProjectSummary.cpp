@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ProjectSummary::ProjectSummary() : 
-    m_deliveryModelsHasBeenSet(false),
-    m_expectedCustomerSpendHasBeenSet(false)
-{
-}
-
 ProjectSummary::ProjectSummary(JsonView jsonValue)
-  : ProjectSummary()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     }
     m_deliveryModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedCustomerSpend"))
   {
     Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
@@ -51,7 +43,6 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-
   return *this;
 }
 

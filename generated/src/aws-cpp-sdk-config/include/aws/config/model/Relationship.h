@@ -33,7 +33,7 @@ namespace Model
   class Relationship
   {
   public:
-    AWS_CONFIGSERVICE_API Relationship();
+    AWS_CONFIGSERVICE_API Relationship() = default;
     AWS_CONFIGSERVICE_API Relationship(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,50 @@ namespace Model
     /**
      * <p>The resource type of the related resource.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline Relationship& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline Relationship& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline Relationship& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline Relationship& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline Relationship& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline Relationship& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    Relationship& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom name of the related resource, if available.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline Relationship& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline Relationship& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline Relationship& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    Relationship& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of relationship with the related resource.</p>
      */
-    inline const Aws::String& GetRelationshipName() const{ return m_relationshipName; }
+    inline const Aws::String& GetRelationshipName() const { return m_relationshipName; }
     inline bool RelationshipNameHasBeenSet() const { return m_relationshipNameHasBeenSet; }
-    inline void SetRelationshipName(const Aws::String& value) { m_relationshipNameHasBeenSet = true; m_relationshipName = value; }
-    inline void SetRelationshipName(Aws::String&& value) { m_relationshipNameHasBeenSet = true; m_relationshipName = std::move(value); }
-    inline void SetRelationshipName(const char* value) { m_relationshipNameHasBeenSet = true; m_relationshipName.assign(value); }
-    inline Relationship& WithRelationshipName(const Aws::String& value) { SetRelationshipName(value); return *this;}
-    inline Relationship& WithRelationshipName(Aws::String&& value) { SetRelationshipName(std::move(value)); return *this;}
-    inline Relationship& WithRelationshipName(const char* value) { SetRelationshipName(value); return *this;}
+    template<typename RelationshipNameT = Aws::String>
+    void SetRelationshipName(RelationshipNameT&& value) { m_relationshipNameHasBeenSet = true; m_relationshipName = std::forward<RelationshipNameT>(value); }
+    template<typename RelationshipNameT = Aws::String>
+    Relationship& WithRelationshipName(RelationshipNameT&& value) { SetRelationshipName(std::forward<RelationshipNameT>(value)); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;

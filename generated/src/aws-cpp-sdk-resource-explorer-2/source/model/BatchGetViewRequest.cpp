@@ -12,11 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetViewRequest::BatchGetViewRequest() : 
-    m_viewArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetViewRequest::SerializePayload() const
 {
   JsonValue payload;

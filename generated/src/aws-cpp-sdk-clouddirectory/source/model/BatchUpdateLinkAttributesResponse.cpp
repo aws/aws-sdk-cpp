@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchUpdateLinkAttributesResponse::BatchUpdateLinkAttributesResponse()
-{
-}
-
 BatchUpdateLinkAttributesResponse::BatchUpdateLinkAttributesResponse(JsonView jsonValue)
 {
   *this = jsonValue;

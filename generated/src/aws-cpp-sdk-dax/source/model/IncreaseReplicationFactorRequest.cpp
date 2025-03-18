@@ -12,14 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-IncreaseReplicationFactorRequest::IncreaseReplicationFactorRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_newReplicationFactor(0),
-    m_newReplicationFactorHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 Aws::String IncreaseReplicationFactorRequest::SerializePayload() const
 {
   JsonValue payload;

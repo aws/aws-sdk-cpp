@@ -35,7 +35,7 @@ namespace Model
   class CreateAliasResult
   {
   public:
-    AWS_LAMBDA_API CreateAliasResult();
+    AWS_LAMBDA_API CreateAliasResult() = default;
     AWS_LAMBDA_API CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,52 +44,44 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the alias.</p>
      */
-    inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
-    inline void SetAliasArn(const Aws::String& value) { m_aliasArn = value; }
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArn = std::move(value); }
-    inline void SetAliasArn(const char* value) { m_aliasArn.assign(value); }
-    inline CreateAliasResult& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
-    inline CreateAliasResult& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
-    inline CreateAliasResult& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+    inline const Aws::String& GetAliasArn() const { return m_aliasArn; }
+    template<typename AliasArnT = Aws::String>
+    void SetAliasArn(AliasArnT&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::forward<AliasArnT>(value); }
+    template<typename AliasArnT = Aws::String>
+    CreateAliasResult& WithAliasArn(AliasArnT&& value) { SetAliasArn(std::forward<AliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the alias.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateAliasResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAliasResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAliasResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAliasResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function version that the alias invokes.</p>
      */
-    inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
-    inline void SetFunctionVersion(const Aws::String& value) { m_functionVersion = value; }
-    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersion = std::move(value); }
-    inline void SetFunctionVersion(const char* value) { m_functionVersion.assign(value); }
-    inline CreateAliasResult& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
-    inline CreateAliasResult& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
-    inline CreateAliasResult& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+    inline const Aws::String& GetFunctionVersion() const { return m_functionVersion; }
+    template<typename FunctionVersionT = Aws::String>
+    void SetFunctionVersion(FunctionVersionT&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::forward<FunctionVersionT>(value); }
+    template<typename FunctionVersionT = Aws::String>
+    CreateAliasResult& WithFunctionVersion(FunctionVersionT&& value) { SetFunctionVersion(std::forward<FunctionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the alias.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateAliasResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAliasResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAliasResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,51 +90,54 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
-    inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
-    inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfig = value; }
-    inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfig = std::move(value); }
-    inline CreateAliasResult& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
-    inline CreateAliasResult& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
+    inline const AliasRoutingConfiguration& GetRoutingConfig() const { return m_routingConfig; }
+    template<typename RoutingConfigT = AliasRoutingConfiguration>
+    void SetRoutingConfig(RoutingConfigT&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::forward<RoutingConfigT>(value); }
+    template<typename RoutingConfigT = AliasRoutingConfiguration>
+    CreateAliasResult& WithRoutingConfig(RoutingConfigT&& value) { SetRoutingConfig(std::forward<RoutingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier that changes when you update the alias.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
-    inline CreateAliasResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline CreateAliasResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline CreateAliasResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    CreateAliasResult& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aliasArn;
+    bool m_aliasArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_functionVersion;
+    bool m_functionVersionHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     AliasRoutingConfiguration m_routingConfig;
+    bool m_routingConfigHasBeenSet = false;
 
     Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

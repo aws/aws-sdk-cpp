@@ -30,7 +30,7 @@ namespace Model
   class SnapshotLimits
   {
   public:
-    AWS_DIRECTORYSERVICE_API SnapshotLimits();
+    AWS_DIRECTORYSERVICE_API SnapshotLimits() = default;
     AWS_DIRECTORYSERVICE_API SnapshotLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API SnapshotLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
-    inline int GetManualSnapshotsLimit() const{ return m_manualSnapshotsLimit; }
+    inline int GetManualSnapshotsLimit() const { return m_manualSnapshotsLimit; }
     inline bool ManualSnapshotsLimitHasBeenSet() const { return m_manualSnapshotsLimitHasBeenSet; }
     inline void SetManualSnapshotsLimit(int value) { m_manualSnapshotsLimitHasBeenSet = true; m_manualSnapshotsLimit = value; }
     inline SnapshotLimits& WithManualSnapshotsLimit(int value) { SetManualSnapshotsLimit(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
-    inline int GetManualSnapshotsCurrentCount() const{ return m_manualSnapshotsCurrentCount; }
+    inline int GetManualSnapshotsCurrentCount() const { return m_manualSnapshotsCurrentCount; }
     inline bool ManualSnapshotsCurrentCountHasBeenSet() const { return m_manualSnapshotsCurrentCountHasBeenSet; }
     inline void SetManualSnapshotsCurrentCount(int value) { m_manualSnapshotsCurrentCountHasBeenSet = true; m_manualSnapshotsCurrentCount = value; }
     inline SnapshotLimits& WithManualSnapshotsCurrentCount(int value) { SetManualSnapshotsCurrentCount(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>Indicates if the manual snapshot limit has been reached.</p>
      */
-    inline bool GetManualSnapshotsLimitReached() const{ return m_manualSnapshotsLimitReached; }
+    inline bool GetManualSnapshotsLimitReached() const { return m_manualSnapshotsLimitReached; }
     inline bool ManualSnapshotsLimitReachedHasBeenSet() const { return m_manualSnapshotsLimitReachedHasBeenSet; }
     inline void SetManualSnapshotsLimitReached(bool value) { m_manualSnapshotsLimitReachedHasBeenSet = true; m_manualSnapshotsLimitReached = value; }
     inline SnapshotLimits& WithManualSnapshotsLimitReached(bool value) { SetManualSnapshotsLimitReached(value); return *this;}
     ///@}
   private:
 
-    int m_manualSnapshotsLimit;
+    int m_manualSnapshotsLimit{0};
     bool m_manualSnapshotsLimitHasBeenSet = false;
 
-    int m_manualSnapshotsCurrentCount;
+    int m_manualSnapshotsCurrentCount{0};
     bool m_manualSnapshotsCurrentCountHasBeenSet = false;
 
-    bool m_manualSnapshotsLimitReached;
+    bool m_manualSnapshotsLimitReached{false};
     bool m_manualSnapshotsLimitReachedHasBeenSet = false;
   };
 

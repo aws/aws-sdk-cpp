@@ -53,7 +53,7 @@ namespace Model
   class EnvironmentFile
   {
   public:
-    AWS_ECS_API EnvironmentFile();
+    AWS_ECS_API EnvironmentFile() = default;
     AWS_ECS_API EnvironmentFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API EnvironmentFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the
      * environment variable file.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline EnvironmentFile& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline EnvironmentFile& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline EnvironmentFile& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    EnvironmentFile& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,17 @@ namespace Model
      * <p>The file type to use. Environment files are objects in Amazon S3. The only
      * supported value is <code>s3</code>.</p>
      */
-    inline const EnvironmentFileType& GetType() const{ return m_type; }
+    inline EnvironmentFileType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EnvironmentFileType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EnvironmentFileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EnvironmentFile& WithType(const EnvironmentFileType& value) { SetType(value); return *this;}
-    inline EnvironmentFile& WithType(EnvironmentFileType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EnvironmentFileType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EnvironmentFile& WithType(EnvironmentFileType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    EnvironmentFileType m_type;
+    EnvironmentFileType m_type{EnvironmentFileType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

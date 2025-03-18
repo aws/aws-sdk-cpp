@@ -18,17 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-RegionInfo::RegionInfo() : 
-    m_sseKmsKeyIdHasBeenSet(false),
-    m_status(RegionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusUpdateDateTimeHasBeenSet(false)
-{
-}
-
 RegionInfo::RegionInfo(JsonView jsonValue)
-  : RegionInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RegionInfo& RegionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sseKmsKeyId"))
   {
     m_sseKmsKeyId = jsonValue.GetString("sseKmsKeyId");
-
     m_sseKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RegionStatusMapper::GetRegionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusUpdateDateTime"))
   {
     m_statusUpdateDateTime = jsonValue.GetDouble("statusUpdateDateTime");
-
     m_statusUpdateDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

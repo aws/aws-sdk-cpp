@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExportJobRequest::CreateExportJobRequest() : 
-    m_exportDataSourceHasBeenSet(false),
-    m_exportDestinationHasBeenSet(false)
-{
-}
-
 Aws::String CreateExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

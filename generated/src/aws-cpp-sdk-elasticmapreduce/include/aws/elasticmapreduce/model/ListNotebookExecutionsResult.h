@@ -29,7 +29,7 @@ namespace Model
   class ListNotebookExecutionsResult
   {
   public:
-    AWS_EMR_API ListNotebookExecutionsResult();
+    AWS_EMR_API ListNotebookExecutionsResult() = default;
     AWS_EMR_API ListNotebookExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API ListNotebookExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of notebook executions.</p>
      */
-    inline const Aws::Vector<NotebookExecutionSummary>& GetNotebookExecutions() const{ return m_notebookExecutions; }
-    inline void SetNotebookExecutions(const Aws::Vector<NotebookExecutionSummary>& value) { m_notebookExecutions = value; }
-    inline void SetNotebookExecutions(Aws::Vector<NotebookExecutionSummary>&& value) { m_notebookExecutions = std::move(value); }
-    inline ListNotebookExecutionsResult& WithNotebookExecutions(const Aws::Vector<NotebookExecutionSummary>& value) { SetNotebookExecutions(value); return *this;}
-    inline ListNotebookExecutionsResult& WithNotebookExecutions(Aws::Vector<NotebookExecutionSummary>&& value) { SetNotebookExecutions(std::move(value)); return *this;}
-    inline ListNotebookExecutionsResult& AddNotebookExecutions(const NotebookExecutionSummary& value) { m_notebookExecutions.push_back(value); return *this; }
-    inline ListNotebookExecutionsResult& AddNotebookExecutions(NotebookExecutionSummary&& value) { m_notebookExecutions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NotebookExecutionSummary>& GetNotebookExecutions() const { return m_notebookExecutions; }
+    template<typename NotebookExecutionsT = Aws::Vector<NotebookExecutionSummary>>
+    void SetNotebookExecutions(NotebookExecutionsT&& value) { m_notebookExecutionsHasBeenSet = true; m_notebookExecutions = std::forward<NotebookExecutionsT>(value); }
+    template<typename NotebookExecutionsT = Aws::Vector<NotebookExecutionSummary>>
+    ListNotebookExecutionsResult& WithNotebookExecutions(NotebookExecutionsT&& value) { SetNotebookExecutions(std::forward<NotebookExecutionsT>(value)); return *this;}
+    template<typename NotebookExecutionsT = NotebookExecutionSummary>
+    ListNotebookExecutionsResult& AddNotebookExecutions(NotebookExecutionsT&& value) { m_notebookExecutionsHasBeenSet = true; m_notebookExecutions.emplace_back(std::forward<NotebookExecutionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can
      * use to determine the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListNotebookExecutionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListNotebookExecutionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListNotebookExecutionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListNotebookExecutionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNotebookExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNotebookExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNotebookExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNotebookExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NotebookExecutionSummary> m_notebookExecutions;
+    bool m_notebookExecutionsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class DescribeInstanceProfilesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeInstanceProfilesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeInstanceProfilesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeInstanceProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeInstanceProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
      * call again using the returned token and keeping all other arguments
      * unchanged.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeInstanceProfilesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeInstanceProfilesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeInstanceProfilesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeInstanceProfilesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of instance profiles.</p>
      */
-    inline const Aws::Vector<InstanceProfile>& GetInstanceProfiles() const{ return m_instanceProfiles; }
-    inline void SetInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { m_instanceProfiles = value; }
-    inline void SetInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { m_instanceProfiles = std::move(value); }
-    inline DescribeInstanceProfilesResult& WithInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfiles(value); return *this;}
-    inline DescribeInstanceProfilesResult& WithInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { SetInstanceProfiles(std::move(value)); return *this;}
-    inline DescribeInstanceProfilesResult& AddInstanceProfiles(const InstanceProfile& value) { m_instanceProfiles.push_back(value); return *this; }
-    inline DescribeInstanceProfilesResult& AddInstanceProfiles(InstanceProfile&& value) { m_instanceProfiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceProfile>& GetInstanceProfiles() const { return m_instanceProfiles; }
+    template<typename InstanceProfilesT = Aws::Vector<InstanceProfile>>
+    void SetInstanceProfiles(InstanceProfilesT&& value) { m_instanceProfilesHasBeenSet = true; m_instanceProfiles = std::forward<InstanceProfilesT>(value); }
+    template<typename InstanceProfilesT = Aws::Vector<InstanceProfile>>
+    DescribeInstanceProfilesResult& WithInstanceProfiles(InstanceProfilesT&& value) { SetInstanceProfiles(std::forward<InstanceProfilesT>(value)); return *this;}
+    template<typename InstanceProfilesT = InstanceProfile>
+    DescribeInstanceProfilesResult& AddInstanceProfiles(InstanceProfilesT&& value) { m_instanceProfilesHasBeenSet = true; m_instanceProfiles.emplace_back(std::forward<InstanceProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInstanceProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInstanceProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInstanceProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInstanceProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<InstanceProfile> m_instanceProfiles;
+    bool m_instanceProfilesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

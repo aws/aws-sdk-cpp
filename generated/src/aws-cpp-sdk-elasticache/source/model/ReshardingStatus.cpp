@@ -20,13 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReshardingStatus::ReshardingStatus() : 
-    m_slotMigrationHasBeenSet(false)
-{
-}
-
 ReshardingStatus::ReshardingStatus(const XmlNode& xmlNode)
-  : ReshardingStatus()
 {
   *this = xmlNode;
 }

@@ -13,15 +13,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrustStoreRequest::UpdateTrustStoreRequest() : 
-    m_certificatesToAddHasBeenSet(false),
-    m_certificatesToDeleteHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrustStoreRequest::SerializePayload() const
 {
   JsonValue payload;

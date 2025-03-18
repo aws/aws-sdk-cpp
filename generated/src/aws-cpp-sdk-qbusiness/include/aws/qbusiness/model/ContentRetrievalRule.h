@@ -34,7 +34,7 @@ namespace Model
   class ContentRetrievalRule
   {
   public:
-    AWS_QBUSINESS_API ContentRetrievalRule();
+    AWS_QBUSINESS_API ContentRetrievalRule() = default;
     AWS_QBUSINESS_API ContentRetrievalRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ContentRetrievalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
-    inline const Aws::Vector<EligibleDataSource>& GetEligibleDataSources() const{ return m_eligibleDataSources; }
+    inline const Aws::Vector<EligibleDataSource>& GetEligibleDataSources() const { return m_eligibleDataSources; }
     inline bool EligibleDataSourcesHasBeenSet() const { return m_eligibleDataSourcesHasBeenSet; }
-    inline void SetEligibleDataSources(const Aws::Vector<EligibleDataSource>& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources = value; }
-    inline void SetEligibleDataSources(Aws::Vector<EligibleDataSource>&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources = std::move(value); }
-    inline ContentRetrievalRule& WithEligibleDataSources(const Aws::Vector<EligibleDataSource>& value) { SetEligibleDataSources(value); return *this;}
-    inline ContentRetrievalRule& WithEligibleDataSources(Aws::Vector<EligibleDataSource>&& value) { SetEligibleDataSources(std::move(value)); return *this;}
-    inline ContentRetrievalRule& AddEligibleDataSources(const EligibleDataSource& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources.push_back(value); return *this; }
-    inline ContentRetrievalRule& AddEligibleDataSources(EligibleDataSource&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources.push_back(std::move(value)); return *this; }
+    template<typename EligibleDataSourcesT = Aws::Vector<EligibleDataSource>>
+    void SetEligibleDataSources(EligibleDataSourcesT&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources = std::forward<EligibleDataSourcesT>(value); }
+    template<typename EligibleDataSourcesT = Aws::Vector<EligibleDataSource>>
+    ContentRetrievalRule& WithEligibleDataSources(EligibleDataSourcesT&& value) { SetEligibleDataSources(std::forward<EligibleDataSourcesT>(value)); return *this;}
+    template<typename EligibleDataSourcesT = EligibleDataSource>
+    ContentRetrievalRule& AddEligibleDataSources(EligibleDataSourcesT&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources.emplace_back(std::forward<EligibleDataSourcesT>(value)); return *this; }
     ///@}
   private:
 

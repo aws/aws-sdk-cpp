@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-GetTemplateRequest::GetTemplateRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_templateStage(TemplateStage::NOT_SET),
-    m_templateStageHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

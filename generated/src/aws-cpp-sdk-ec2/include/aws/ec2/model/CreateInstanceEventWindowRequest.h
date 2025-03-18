@@ -24,7 +24,7 @@ namespace Model
   class CreateInstanceEventWindowRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateInstanceEventWindowRequest();
+    AWS_EC2_API CreateInstanceEventWindowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateInstanceEventWindowRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The name of the event window.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateInstanceEventWindowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateInstanceEventWindowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateInstanceEventWindowRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateInstanceEventWindowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,14 @@ namespace Model
      * <p>The time range for the event window. If you specify a time range, you can't
      * specify a cron expression.</p>
      */
-    inline const Aws::Vector<InstanceEventWindowTimeRangeRequest>& GetTimeRanges() const{ return m_timeRanges; }
+    inline const Aws::Vector<InstanceEventWindowTimeRangeRequest>& GetTimeRanges() const { return m_timeRanges; }
     inline bool TimeRangesHasBeenSet() const { return m_timeRangesHasBeenSet; }
-    inline void SetTimeRanges(const Aws::Vector<InstanceEventWindowTimeRangeRequest>& value) { m_timeRangesHasBeenSet = true; m_timeRanges = value; }
-    inline void SetTimeRanges(Aws::Vector<InstanceEventWindowTimeRangeRequest>&& value) { m_timeRangesHasBeenSet = true; m_timeRanges = std::move(value); }
-    inline CreateInstanceEventWindowRequest& WithTimeRanges(const Aws::Vector<InstanceEventWindowTimeRangeRequest>& value) { SetTimeRanges(value); return *this;}
-    inline CreateInstanceEventWindowRequest& WithTimeRanges(Aws::Vector<InstanceEventWindowTimeRangeRequest>&& value) { SetTimeRanges(std::move(value)); return *this;}
-    inline CreateInstanceEventWindowRequest& AddTimeRanges(const InstanceEventWindowTimeRangeRequest& value) { m_timeRangesHasBeenSet = true; m_timeRanges.push_back(value); return *this; }
-    inline CreateInstanceEventWindowRequest& AddTimeRanges(InstanceEventWindowTimeRangeRequest&& value) { m_timeRangesHasBeenSet = true; m_timeRanges.push_back(std::move(value)); return *this; }
+    template<typename TimeRangesT = Aws::Vector<InstanceEventWindowTimeRangeRequest>>
+    void SetTimeRanges(TimeRangesT&& value) { m_timeRangesHasBeenSet = true; m_timeRanges = std::forward<TimeRangesT>(value); }
+    template<typename TimeRangesT = Aws::Vector<InstanceEventWindowTimeRangeRequest>>
+    CreateInstanceEventWindowRequest& WithTimeRanges(TimeRangesT&& value) { SetTimeRanges(std::forward<TimeRangesT>(value)); return *this;}
+    template<typename TimeRangesT = InstanceEventWindowTimeRangeRequest>
+    CreateInstanceEventWindowRequest& AddTimeRanges(TimeRangesT&& value) { m_timeRangesHasBeenSet = true; m_timeRanges.emplace_back(std::forward<TimeRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,32 +96,30 @@ namespace Model
      * expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the
      * <i>Wikipedia website</i>.</p>
      */
-    inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
+    inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }
-    inline void SetCronExpression(const Aws::String& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = value; }
-    inline void SetCronExpression(Aws::String&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::move(value); }
-    inline void SetCronExpression(const char* value) { m_cronExpressionHasBeenSet = true; m_cronExpression.assign(value); }
-    inline CreateInstanceEventWindowRequest& WithCronExpression(const Aws::String& value) { SetCronExpression(value); return *this;}
-    inline CreateInstanceEventWindowRequest& WithCronExpression(Aws::String&& value) { SetCronExpression(std::move(value)); return *this;}
-    inline CreateInstanceEventWindowRequest& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
+    template<typename CronExpressionT = Aws::String>
+    void SetCronExpression(CronExpressionT&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::forward<CronExpressionT>(value); }
+    template<typename CronExpressionT = Aws::String>
+    CreateInstanceEventWindowRequest& WithCronExpression(CronExpressionT&& value) { SetCronExpression(std::forward<CronExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the event window.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateInstanceEventWindowRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateInstanceEventWindowRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateInstanceEventWindowRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateInstanceEventWindowRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateInstanceEventWindowRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateInstanceEventWindowRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_name;

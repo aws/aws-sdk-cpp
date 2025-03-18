@@ -31,7 +31,7 @@ namespace Model
   class JobComputePaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API JobComputePaymentConfig();
+    AWS_CLEANROOMS_API JobComputePaymentConfig() = default;
     AWS_CLEANROOMS_API JobComputePaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API JobComputePaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * </p> <p>An error is returned if the collaboration creator sets a
      * <code>FALSE</code> value for the member who can run queries and jobs.</p>
      */
-    inline bool GetIsResponsible() const{ return m_isResponsible; }
+    inline bool GetIsResponsible() const { return m_isResponsible; }
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
     inline JobComputePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
     ///@}
   private:
 
-    bool m_isResponsible;
+    bool m_isResponsible{false};
     bool m_isResponsibleHasBeenSet = false;
   };
 

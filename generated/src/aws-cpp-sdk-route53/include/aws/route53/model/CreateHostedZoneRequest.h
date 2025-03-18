@@ -27,7 +27,7 @@ namespace Model
   class CreateHostedZoneRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API CreateHostedZoneRequest();
+    AWS_ROUTE53_API CreateHostedZoneRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateHostedZoneRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateHostedZoneRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateHostedZoneRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateHostedZoneRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
      * after you create a hosted zone.</p>
      */
-    inline const VPC& GetVPC() const{ return m_vPC; }
+    inline const VPC& GetVPC() const { return m_vPC; }
     inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
-    inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
-    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
-    inline CreateHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
-    inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
+    template<typename VPCT = VPC>
+    void SetVPC(VPCT&& value) { m_vPCHasBeenSet = true; m_vPC = std::forward<VPCT>(value); }
+    template<typename VPCT = VPC>
+    CreateHostedZoneRequest& WithVPC(VPCT&& value) { SetVPC(std::forward<VPCT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
      * unique string, for example, a date/time stamp.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline CreateHostedZoneRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline CreateHostedZoneRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline CreateHostedZoneRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    CreateHostedZoneRequest& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +103,12 @@ namespace Model
      * <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the
      * other elements.</p>
      */
-    inline const HostedZoneConfig& GetHostedZoneConfig() const{ return m_hostedZoneConfig; }
+    inline const HostedZoneConfig& GetHostedZoneConfig() const { return m_hostedZoneConfig; }
     inline bool HostedZoneConfigHasBeenSet() const { return m_hostedZoneConfigHasBeenSet; }
-    inline void SetHostedZoneConfig(const HostedZoneConfig& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = value; }
-    inline void SetHostedZoneConfig(HostedZoneConfig&& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = std::move(value); }
-    inline CreateHostedZoneRequest& WithHostedZoneConfig(const HostedZoneConfig& value) { SetHostedZoneConfig(value); return *this;}
-    inline CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfig&& value) { SetHostedZoneConfig(std::move(value)); return *this;}
+    template<typename HostedZoneConfigT = HostedZoneConfig>
+    void SetHostedZoneConfig(HostedZoneConfigT&& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = std::forward<HostedZoneConfigT>(value); }
+    template<typename HostedZoneConfigT = HostedZoneConfig>
+    CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfigT&& value) { SetHostedZoneConfig(std::forward<HostedZoneConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +122,12 @@ namespace Model
      * the same name servers. If you have overlapping nameservers, the operation will
      * cause a <code>ConflictingDomainsExist</code> error.</p>
      */
-    inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
+    inline const Aws::String& GetDelegationSetId() const { return m_delegationSetId; }
     inline bool DelegationSetIdHasBeenSet() const { return m_delegationSetIdHasBeenSet; }
-    inline void SetDelegationSetId(const Aws::String& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
-    inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = std::move(value); }
-    inline void SetDelegationSetId(const char* value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId.assign(value); }
-    inline CreateHostedZoneRequest& WithDelegationSetId(const Aws::String& value) { SetDelegationSetId(value); return *this;}
-    inline CreateHostedZoneRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(std::move(value)); return *this;}
-    inline CreateHostedZoneRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
+    template<typename DelegationSetIdT = Aws::String>
+    void SetDelegationSetId(DelegationSetIdT&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = std::forward<DelegationSetIdT>(value); }
+    template<typename DelegationSetIdT = Aws::String>
+    CreateHostedZoneRequest& WithDelegationSetId(DelegationSetIdT&& value) { SetDelegationSetId(std::forward<DelegationSetIdT>(value)); return *this;}
     ///@}
   private:
 

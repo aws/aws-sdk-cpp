@@ -18,17 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-SearchSampleQueriesSearchResult::SearchSampleQueriesSearchResult() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sQLHasBeenSet(false),
-    m_relevance(0.0),
-    m_relevanceHasBeenSet(false)
-{
-}
-
 SearchSampleQueriesSearchResult::SearchSampleQueriesSearchResult(JsonView jsonValue)
-  : SearchSampleQueriesSearchResult()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SearchSampleQueriesSearchResult& SearchSampleQueriesSearchResult::operator =(Jso
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SQL"))
   {
     m_sQL = jsonValue.GetString("SQL");
-
     m_sQLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Relevance"))
   {
     m_relevance = jsonValue.GetDouble("Relevance");
-
     m_relevanceHasBeenSet = true;
   }
-
   return *this;
 }
 

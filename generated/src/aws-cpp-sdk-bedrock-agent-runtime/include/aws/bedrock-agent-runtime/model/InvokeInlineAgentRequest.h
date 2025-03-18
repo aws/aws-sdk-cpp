@@ -34,7 +34,7 @@ namespace Model
   class InvokeInlineAgentRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvokeInlineAgentRequest();
+    AWS_BEDROCKAGENTRUNTIME_API InvokeInlineAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -71,14 +71,14 @@ namespace Model
      * <p> A list of action groups with each action group defining the action the
      * inline agent needs to carry out. </p>
      */
-    inline const Aws::Vector<AgentActionGroup>& GetActionGroups() const{ return m_actionGroups; }
+    inline const Aws::Vector<AgentActionGroup>& GetActionGroups() const { return m_actionGroups; }
     inline bool ActionGroupsHasBeenSet() const { return m_actionGroupsHasBeenSet; }
-    inline void SetActionGroups(const Aws::Vector<AgentActionGroup>& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = value; }
-    inline void SetActionGroups(Aws::Vector<AgentActionGroup>&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = std::move(value); }
-    inline InvokeInlineAgentRequest& WithActionGroups(const Aws::Vector<AgentActionGroup>& value) { SetActionGroups(value); return *this;}
-    inline InvokeInlineAgentRequest& WithActionGroups(Aws::Vector<AgentActionGroup>&& value) { SetActionGroups(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& AddActionGroups(const AgentActionGroup& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(value); return *this; }
-    inline InvokeInlineAgentRequest& AddActionGroups(AgentActionGroup&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(std::move(value)); return *this; }
+    template<typename ActionGroupsT = Aws::Vector<AgentActionGroup>>
+    void SetActionGroups(ActionGroupsT&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = std::forward<ActionGroupsT>(value); }
+    template<typename ActionGroupsT = Aws::Vector<AgentActionGroup>>
+    InvokeInlineAgentRequest& WithActionGroups(ActionGroupsT&& value) { SetActionGroups(std::forward<ActionGroupsT>(value)); return *this;}
+    template<typename ActionGroupsT = AgentActionGroup>
+    InvokeInlineAgentRequest& AddActionGroups(ActionGroupsT&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.emplace_back(std::forward<ActionGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,24 +87,22 @@ namespace Model
      * multiple collaborator agents to coordinate a final response. The inline
      * collaborator agent can also be the supervisor. </p>
      */
-    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
     inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
-    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
-    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
-    inline InvokeInlineAgentRequest& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
-    inline InvokeInlineAgentRequest& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline InvokeInlineAgentRequest& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Model settings for the request.</p>
      */
-    inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
+    inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const { return m_bedrockModelConfigurations; }
     inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
-    inline void SetBedrockModelConfigurations(const InlineBedrockModelConfigurations& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = value; }
-    inline void SetBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
-    inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(const InlineBedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
-    inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
+    template<typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
+    void SetBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::forward<BedrockModelConfigurationsT>(value); }
+    template<typename BedrockModelConfigurationsT = InlineBedrockModelConfigurations>
+    InvokeInlineAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurationsT&& value) { SetBedrockModelConfigurations(std::forward<BedrockModelConfigurationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +111,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.
      * </p>
      */
-    inline const Aws::Vector<CollaboratorConfiguration>& GetCollaboratorConfigurations() const{ return m_collaboratorConfigurations; }
+    inline const Aws::Vector<CollaboratorConfiguration>& GetCollaboratorConfigurations() const { return m_collaboratorConfigurations; }
     inline bool CollaboratorConfigurationsHasBeenSet() const { return m_collaboratorConfigurationsHasBeenSet; }
-    inline void SetCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = value; }
-    inline void SetCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = std::move(value); }
-    inline InvokeInlineAgentRequest& WithCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { SetCollaboratorConfigurations(value); return *this;}
-    inline InvokeInlineAgentRequest& WithCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { SetCollaboratorConfigurations(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& AddCollaboratorConfigurations(const CollaboratorConfiguration& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(value); return *this; }
-    inline InvokeInlineAgentRequest& AddCollaboratorConfigurations(CollaboratorConfiguration&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(std::move(value)); return *this; }
+    template<typename CollaboratorConfigurationsT = Aws::Vector<CollaboratorConfiguration>>
+    void SetCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = std::forward<CollaboratorConfigurationsT>(value); }
+    template<typename CollaboratorConfigurationsT = Aws::Vector<CollaboratorConfiguration>>
+    InvokeInlineAgentRequest& WithCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { SetCollaboratorConfigurations(std::forward<CollaboratorConfigurationsT>(value)); return *this;}
+    template<typename CollaboratorConfigurationsT = CollaboratorConfiguration>
+    InvokeInlineAgentRequest& AddCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.emplace_back(std::forward<CollaboratorConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of collaborator inline agents. </p>
      */
-    inline const Aws::Vector<Collaborator>& GetCollaborators() const{ return m_collaborators; }
+    inline const Aws::Vector<Collaborator>& GetCollaborators() const { return m_collaborators; }
     inline bool CollaboratorsHasBeenSet() const { return m_collaboratorsHasBeenSet; }
-    inline void SetCollaborators(const Aws::Vector<Collaborator>& value) { m_collaboratorsHasBeenSet = true; m_collaborators = value; }
-    inline void SetCollaborators(Aws::Vector<Collaborator>&& value) { m_collaboratorsHasBeenSet = true; m_collaborators = std::move(value); }
-    inline InvokeInlineAgentRequest& WithCollaborators(const Aws::Vector<Collaborator>& value) { SetCollaborators(value); return *this;}
-    inline InvokeInlineAgentRequest& WithCollaborators(Aws::Vector<Collaborator>&& value) { SetCollaborators(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& AddCollaborators(const Collaborator& value) { m_collaboratorsHasBeenSet = true; m_collaborators.push_back(value); return *this; }
-    inline InvokeInlineAgentRequest& AddCollaborators(Collaborator&& value) { m_collaboratorsHasBeenSet = true; m_collaborators.push_back(std::move(value)); return *this; }
+    template<typename CollaboratorsT = Aws::Vector<Collaborator>>
+    void SetCollaborators(CollaboratorsT&& value) { m_collaboratorsHasBeenSet = true; m_collaborators = std::forward<CollaboratorsT>(value); }
+    template<typename CollaboratorsT = Aws::Vector<Collaborator>>
+    InvokeInlineAgentRequest& WithCollaborators(CollaboratorsT&& value) { SetCollaborators(std::forward<CollaboratorsT>(value)); return *this;}
+    template<typename CollaboratorsT = Collaborator>
+    InvokeInlineAgentRequest& AddCollaborators(CollaboratorsT&& value) { m_collaboratorsHasBeenSet = true; m_collaborators.emplace_back(std::forward<CollaboratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,14 +140,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to
      * encrypt your inline agent. </p>
      */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
-    inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
-    inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
-    inline InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
-    inline InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    InvokeInlineAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,7 +155,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using
      * trace</a>. <pre><code> &lt;/p&gt; </code></pre>
      */
-    inline bool GetEnableTrace() const{ return m_enableTrace; }
+    inline bool GetEnableTrace() const { return m_enableTrace; }
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
     inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
     inline InvokeInlineAgentRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
@@ -169,7 +165,7 @@ namespace Model
     /**
      * <p> Specifies whether to end the session with the inline agent or not. </p>
      */
-    inline bool GetEndSession() const{ return m_endSession; }
+    inline bool GetEndSession() const { return m_endSession; }
     inline bool EndSessionHasBeenSet() const { return m_endSessionHasBeenSet; }
     inline void SetEndSession(bool value) { m_endSessionHasBeenSet = true; m_endSession = value; }
     inline InvokeInlineAgentRequest& WithEndSession(bool value) { SetEndSession(value); return *this;}
@@ -182,14 +178,12 @@ namespace Model
      * identifier (ID)</a> of the model to use for orchestration by the inline agent.
      * For example, <code>meta.llama3-1-70b-instruct-v1:0</code>. </p>
      */
-    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
     inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
-    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
-    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
-    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
-    inline InvokeInlineAgentRequest& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
-    inline InvokeInlineAgentRequest& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    template<typename FoundationModelT = Aws::String>
+    void SetFoundationModel(FoundationModelT&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::forward<FoundationModelT>(value); }
+    template<typename FoundationModelT = Aws::String>
+    InvokeInlineAgentRequest& WithFoundationModel(FoundationModelT&& value) { SetFoundationModel(std::forward<FoundationModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,12 +192,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">guardrails</a>
      * to assign to the inline agent. </p>
      */
-    inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    inline void SetGuardrailConfiguration(const GuardrailConfigurationWithArn& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
-    inline void SetGuardrailConfiguration(GuardrailConfigurationWithArn&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
-    inline InvokeInlineAgentRequest& WithGuardrailConfiguration(const GuardrailConfigurationWithArn& value) { SetGuardrailConfiguration(value); return *this;}
-    inline InvokeInlineAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationWithArn&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    template<typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+    InvokeInlineAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,7 +209,7 @@ namespace Model
      * occurs during this time, the session expires and the data provided before the
      * timeout is deleted.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
     inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline InvokeInlineAgentRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
@@ -232,12 +226,12 @@ namespace Model
      * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
      * field, the <code>inputText</code> field will be ignored.</p> 
      */
-    inline const InlineSessionState& GetInlineSessionState() const{ return m_inlineSessionState; }
+    inline const InlineSessionState& GetInlineSessionState() const { return m_inlineSessionState; }
     inline bool InlineSessionStateHasBeenSet() const { return m_inlineSessionStateHasBeenSet; }
-    inline void SetInlineSessionState(const InlineSessionState& value) { m_inlineSessionStateHasBeenSet = true; m_inlineSessionState = value; }
-    inline void SetInlineSessionState(InlineSessionState&& value) { m_inlineSessionStateHasBeenSet = true; m_inlineSessionState = std::move(value); }
-    inline InvokeInlineAgentRequest& WithInlineSessionState(const InlineSessionState& value) { SetInlineSessionState(value); return *this;}
-    inline InvokeInlineAgentRequest& WithInlineSessionState(InlineSessionState&& value) { SetInlineSessionState(std::move(value)); return *this;}
+    template<typename InlineSessionStateT = InlineSessionState>
+    void SetInlineSessionState(InlineSessionStateT&& value) { m_inlineSessionStateHasBeenSet = true; m_inlineSessionState = std::forward<InlineSessionStateT>(value); }
+    template<typename InlineSessionStateT = InlineSessionState>
+    InvokeInlineAgentRequest& WithInlineSessionState(InlineSessionStateT&& value) { SetInlineSessionState(std::forward<InlineSessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,14 +240,12 @@ namespace Model
      * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
      * field, the <code>inputText</code> field will be ignored.</p> 
      */
-    inline const Aws::String& GetInputText() const{ return m_inputText; }
+    inline const Aws::String& GetInputText() const { return m_inputText; }
     inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
-    inline void SetInputText(const Aws::String& value) { m_inputTextHasBeenSet = true; m_inputText = value; }
-    inline void SetInputText(Aws::String&& value) { m_inputTextHasBeenSet = true; m_inputText = std::move(value); }
-    inline void SetInputText(const char* value) { m_inputTextHasBeenSet = true; m_inputText.assign(value); }
-    inline InvokeInlineAgentRequest& WithInputText(const Aws::String& value) { SetInputText(value); return *this;}
-    inline InvokeInlineAgentRequest& WithInputText(Aws::String&& value) { SetInputText(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& WithInputText(const char* value) { SetInputText(value); return *this;}
+    template<typename InputTextT = Aws::String>
+    void SetInputText(InputTextT&& value) { m_inputTextHasBeenSet = true; m_inputText = std::forward<InputTextT>(value); }
+    template<typename InputTextT = Aws::String>
+    InvokeInlineAgentRequest& WithInputText(InputTextT&& value) { SetInputText(std::forward<InputTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,28 +253,26 @@ namespace Model
      * <p> The instructions that tell the inline agent what it should do and how it
      * should interact with users. </p>
      */
-    inline const Aws::String& GetInstruction() const{ return m_instruction; }
+    inline const Aws::String& GetInstruction() const { return m_instruction; }
     inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-    inline void SetInstruction(const Aws::String& value) { m_instructionHasBeenSet = true; m_instruction = value; }
-    inline void SetInstruction(Aws::String&& value) { m_instructionHasBeenSet = true; m_instruction = std::move(value); }
-    inline void SetInstruction(const char* value) { m_instructionHasBeenSet = true; m_instruction.assign(value); }
-    inline InvokeInlineAgentRequest& WithInstruction(const Aws::String& value) { SetInstruction(value); return *this;}
-    inline InvokeInlineAgentRequest& WithInstruction(Aws::String&& value) { SetInstruction(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& WithInstruction(const char* value) { SetInstruction(value); return *this;}
+    template<typename InstructionT = Aws::String>
+    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
+    template<typename InstructionT = Aws::String>
+    InvokeInlineAgentRequest& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains information of the knowledge bases to associate with. </p>
      */
-    inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const{ return m_knowledgeBases; }
+    inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const { return m_knowledgeBases; }
     inline bool KnowledgeBasesHasBeenSet() const { return m_knowledgeBasesHasBeenSet; }
-    inline void SetKnowledgeBases(const Aws::Vector<KnowledgeBase>& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = value; }
-    inline void SetKnowledgeBases(Aws::Vector<KnowledgeBase>&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = std::move(value); }
-    inline InvokeInlineAgentRequest& WithKnowledgeBases(const Aws::Vector<KnowledgeBase>& value) { SetKnowledgeBases(value); return *this;}
-    inline InvokeInlineAgentRequest& WithKnowledgeBases(Aws::Vector<KnowledgeBase>&& value) { SetKnowledgeBases(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& AddKnowledgeBases(const KnowledgeBase& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.push_back(value); return *this; }
-    inline InvokeInlineAgentRequest& AddKnowledgeBases(KnowledgeBase&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.push_back(std::move(value)); return *this; }
+    template<typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+    void SetKnowledgeBases(KnowledgeBasesT&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = std::forward<KnowledgeBasesT>(value); }
+    template<typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+    InvokeInlineAgentRequest& WithKnowledgeBases(KnowledgeBasesT&& value) { SetKnowledgeBases(std::forward<KnowledgeBasesT>(value)); return *this;}
+    template<typename KnowledgeBasesT = KnowledgeBase>
+    InvokeInlineAgentRequest& AddKnowledgeBases(KnowledgeBasesT&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.emplace_back(std::forward<KnowledgeBasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -290,12 +280,12 @@ namespace Model
      * <p> Configurations for advanced prompts used to override the default prompts to
      * enhance the accuracy of the inline agent. </p>
      */
-    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const{ return m_promptOverrideConfiguration; }
+    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
     inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
-    inline void SetPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = value; }
-    inline void SetPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::move(value); }
-    inline InvokeInlineAgentRequest& WithPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { SetPromptOverrideConfiguration(value); return *this;}
-    inline InvokeInlineAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { SetPromptOverrideConfiguration(std::move(value)); return *this;}
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value); }
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    InvokeInlineAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,14 +293,12 @@ namespace Model
      * <p> The unique identifier of the session. Use the same value across requests to
      * continue the same conversation. </p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InvokeInlineAgentRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InvokeInlineAgentRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InvokeInlineAgentRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvokeInlineAgentRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -319,19 +307,19 @@ namespace Model
      * streaming, you need permissions to perform the
      * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
      */
-    inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
+    inline const StreamingConfigurations& GetStreamingConfigurations() const { return m_streamingConfigurations; }
     inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
-    inline void SetStreamingConfigurations(const StreamingConfigurations& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = value; }
-    inline void SetStreamingConfigurations(StreamingConfigurations&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::move(value); }
-    inline InvokeInlineAgentRequest& WithStreamingConfigurations(const StreamingConfigurations& value) { SetStreamingConfigurations(value); return *this;}
-    inline InvokeInlineAgentRequest& WithStreamingConfigurations(StreamingConfigurations&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    void SetStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value); }
+    template<typename StreamingConfigurationsT = StreamingConfigurations>
+    InvokeInlineAgentRequest& WithStreamingConfigurations(StreamingConfigurationsT&& value) { SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentActionGroup> m_actionGroups;
     bool m_actionGroupsHasBeenSet = false;
 
-    AgentCollaboration m_agentCollaboration;
+    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
     bool m_agentCollaborationHasBeenSet = false;
 
     InlineBedrockModelConfigurations m_bedrockModelConfigurations;
@@ -346,10 +334,10 @@ namespace Model
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
 
-    bool m_enableTrace;
+    bool m_enableTrace{false};
     bool m_enableTraceHasBeenSet = false;
 
-    bool m_endSession;
+    bool m_endSession{false};
     bool m_endSessionHasBeenSet = false;
 
     Aws::String m_foundationModel;
@@ -358,7 +346,7 @@ namespace Model
     GuardrailConfigurationWithArn m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     InlineSessionState m_inlineSessionState;
@@ -382,7 +370,7 @@ namespace Model
     StreamingConfigurations m_streamingConfigurations;
     bool m_streamingConfigurationsHasBeenSet = false;
     InvokeInlineAgentHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

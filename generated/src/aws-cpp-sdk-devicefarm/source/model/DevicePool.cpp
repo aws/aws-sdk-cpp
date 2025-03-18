@@ -18,20 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-DevicePool::DevicePool() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DevicePoolType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_maxDevices(0),
-    m_maxDevicesHasBeenSet(false)
-{
-}
-
 DevicePool::DevicePool(JsonView jsonValue)
-  : DevicePool()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DevicePool& DevicePool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DevicePoolTypeMapper::GetDevicePoolTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -75,14 +54,11 @@ DevicePool& DevicePool::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxDevices"))
   {
     m_maxDevices = jsonValue.GetInteger("maxDevices");
-
     m_maxDevicesHasBeenSet = true;
   }
-
   return *this;
 }
 

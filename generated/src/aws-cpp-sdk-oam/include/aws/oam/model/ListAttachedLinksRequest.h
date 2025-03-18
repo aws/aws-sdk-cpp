@@ -21,7 +21,7 @@ namespace Model
   class ListAttachedLinksRequest : public OAMRequest
   {
   public:
-    AWS_OAM_API ListAttachedLinksRequest();
+    AWS_OAM_API ListAttachedLinksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>Limits the number of returned links to the specified number.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAttachedLinksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -47,32 +47,28 @@ namespace Model
      * <p>The token for the next set of items to return. You received this token from a
      * previous call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAttachedLinksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAttachedLinksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAttachedLinksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAttachedLinksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the sink that you want to retrieve links for.</p>
      */
-    inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
+    inline const Aws::String& GetSinkIdentifier() const { return m_sinkIdentifier; }
     inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
-    inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
-    inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
-    inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
-    inline ListAttachedLinksRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
-    inline ListAttachedLinksRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
-    inline ListAttachedLinksRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
+    template<typename SinkIdentifierT = Aws::String>
+    void SetSinkIdentifier(SinkIdentifierT&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::forward<SinkIdentifierT>(value); }
+    template<typename SinkIdentifierT = Aws::String>
+    ListAttachedLinksRequest& WithSinkIdentifier(SinkIdentifierT&& value) { SetSinkIdentifier(std::forward<SinkIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

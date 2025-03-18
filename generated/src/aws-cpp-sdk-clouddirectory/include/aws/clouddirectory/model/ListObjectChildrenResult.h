@@ -28,7 +28,7 @@ namespace Model
   class ListObjectChildrenResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API ListObjectChildrenResult();
+    AWS_CLOUDDIRECTORY_API ListObjectChildrenResult() = default;
     AWS_CLOUDDIRECTORY_API ListObjectChildrenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API ListObjectChildrenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,50 +38,46 @@ namespace Model
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetChildren() const{ return m_children; }
-    inline void SetChildren(const Aws::Map<Aws::String, Aws::String>& value) { m_children = value; }
-    inline void SetChildren(Aws::Map<Aws::String, Aws::String>&& value) { m_children = std::move(value); }
-    inline ListObjectChildrenResult& WithChildren(const Aws::Map<Aws::String, Aws::String>& value) { SetChildren(value); return *this;}
-    inline ListObjectChildrenResult& WithChildren(Aws::Map<Aws::String, Aws::String>&& value) { SetChildren(std::move(value)); return *this;}
-    inline ListObjectChildrenResult& AddChildren(const Aws::String& key, const Aws::String& value) { m_children.emplace(key, value); return *this; }
-    inline ListObjectChildrenResult& AddChildren(Aws::String&& key, const Aws::String& value) { m_children.emplace(std::move(key), value); return *this; }
-    inline ListObjectChildrenResult& AddChildren(const Aws::String& key, Aws::String&& value) { m_children.emplace(key, std::move(value)); return *this; }
-    inline ListObjectChildrenResult& AddChildren(Aws::String&& key, Aws::String&& value) { m_children.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListObjectChildrenResult& AddChildren(const char* key, Aws::String&& value) { m_children.emplace(key, std::move(value)); return *this; }
-    inline ListObjectChildrenResult& AddChildren(Aws::String&& key, const char* value) { m_children.emplace(std::move(key), value); return *this; }
-    inline ListObjectChildrenResult& AddChildren(const char* key, const char* value) { m_children.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetChildren() const { return m_children; }
+    template<typename ChildrenT = Aws::Map<Aws::String, Aws::String>>
+    void SetChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children = std::forward<ChildrenT>(value); }
+    template<typename ChildrenT = Aws::Map<Aws::String, Aws::String>>
+    ListObjectChildrenResult& WithChildren(ChildrenT&& value) { SetChildren(std::forward<ChildrenT>(value)); return *this;}
+    template<typename ChildrenKeyT = Aws::String, typename ChildrenValueT = Aws::String>
+    ListObjectChildrenResult& AddChildren(ChildrenKeyT&& key, ChildrenValueT&& value) {
+      m_childrenHasBeenSet = true; m_children.emplace(std::forward<ChildrenKeyT>(key), std::forward<ChildrenValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListObjectChildrenResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListObjectChildrenResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListObjectChildrenResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListObjectChildrenResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListObjectChildrenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListObjectChildrenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListObjectChildrenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListObjectChildrenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_children;
+    bool m_childrenHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

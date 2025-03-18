@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateRepositoryRequest::UpdateRepositoryRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_upstreamsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

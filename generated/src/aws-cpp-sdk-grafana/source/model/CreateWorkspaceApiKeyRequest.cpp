@@ -12,15 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspaceApiKeyRequest::CreateWorkspaceApiKeyRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_keyRoleHasBeenSet(false),
-    m_secondsToLive(0),
-    m_secondsToLiveHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspaceApiKeyRequest::SerializePayload() const
 {
   JsonValue payload;

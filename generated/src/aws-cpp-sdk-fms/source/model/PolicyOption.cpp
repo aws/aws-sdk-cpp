@@ -18,15 +18,7 @@ namespace FMS
 namespace Model
 {
 
-PolicyOption::PolicyOption() : 
-    m_networkFirewallPolicyHasBeenSet(false),
-    m_thirdPartyFirewallPolicyHasBeenSet(false),
-    m_networkAclCommonPolicyHasBeenSet(false)
-{
-}
-
 PolicyOption::PolicyOption(JsonView jsonValue)
-  : PolicyOption()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PolicyOption& PolicyOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NetworkFirewallPolicy"))
   {
     m_networkFirewallPolicy = jsonValue.GetObject("NetworkFirewallPolicy");
-
     m_networkFirewallPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThirdPartyFirewallPolicy"))
   {
     m_thirdPartyFirewallPolicy = jsonValue.GetObject("ThirdPartyFirewallPolicy");
-
     m_thirdPartyFirewallPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclCommonPolicy"))
   {
     m_networkAclCommonPolicy = jsonValue.GetObject("NetworkAclCommonPolicy");
-
     m_networkAclCommonPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

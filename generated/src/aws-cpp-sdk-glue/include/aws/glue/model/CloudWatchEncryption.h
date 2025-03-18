@@ -33,7 +33,7 @@ namespace Model
   class CloudWatchEncryption
   {
   public:
-    AWS_GLUE_API CloudWatchEncryption();
+    AWS_GLUE_API CloudWatchEncryption() = default;
     AWS_GLUE_API CloudWatchEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CloudWatchEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The encryption mode to use for CloudWatch data.</p>
      */
-    inline const CloudWatchEncryptionMode& GetCloudWatchEncryptionMode() const{ return m_cloudWatchEncryptionMode; }
+    inline CloudWatchEncryptionMode GetCloudWatchEncryptionMode() const { return m_cloudWatchEncryptionMode; }
     inline bool CloudWatchEncryptionModeHasBeenSet() const { return m_cloudWatchEncryptionModeHasBeenSet; }
-    inline void SetCloudWatchEncryptionMode(const CloudWatchEncryptionMode& value) { m_cloudWatchEncryptionModeHasBeenSet = true; m_cloudWatchEncryptionMode = value; }
-    inline void SetCloudWatchEncryptionMode(CloudWatchEncryptionMode&& value) { m_cloudWatchEncryptionModeHasBeenSet = true; m_cloudWatchEncryptionMode = std::move(value); }
-    inline CloudWatchEncryption& WithCloudWatchEncryptionMode(const CloudWatchEncryptionMode& value) { SetCloudWatchEncryptionMode(value); return *this;}
-    inline CloudWatchEncryption& WithCloudWatchEncryptionMode(CloudWatchEncryptionMode&& value) { SetCloudWatchEncryptionMode(std::move(value)); return *this;}
+    inline void SetCloudWatchEncryptionMode(CloudWatchEncryptionMode value) { m_cloudWatchEncryptionModeHasBeenSet = true; m_cloudWatchEncryptionMode = value; }
+    inline CloudWatchEncryption& WithCloudWatchEncryptionMode(CloudWatchEncryptionMode value) { SetCloudWatchEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
      * data.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline CloudWatchEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline CloudWatchEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline CloudWatchEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    CloudWatchEncryption& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    CloudWatchEncryptionMode m_cloudWatchEncryptionMode;
+    CloudWatchEncryptionMode m_cloudWatchEncryptionMode{CloudWatchEncryptionMode::NOT_SET};
     bool m_cloudWatchEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

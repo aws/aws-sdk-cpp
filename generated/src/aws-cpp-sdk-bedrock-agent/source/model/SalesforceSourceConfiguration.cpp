@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SalesforceSourceConfiguration::SalesforceSourceConfiguration() : 
-    m_authType(SalesforceAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_hostUrlHasBeenSet(false)
-{
-}
-
 SalesforceSourceConfiguration::SalesforceSourceConfiguration(JsonView jsonValue)
-  : SalesforceSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SalesforceSourceConfiguration& SalesforceSourceConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = SalesforceAuthTypeMapper::GetSalesforceAuthTypeForName(jsonValue.GetString("authType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-
     m_credentialsSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostUrl"))
   {
     m_hostUrl = jsonValue.GetString("hostUrl");
-
     m_hostUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

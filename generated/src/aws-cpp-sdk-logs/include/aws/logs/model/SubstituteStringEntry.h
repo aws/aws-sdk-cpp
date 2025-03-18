@@ -33,7 +33,7 @@ namespace Model
   class SubstituteStringEntry
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SubstituteStringEntry();
+    AWS_CLOUDWATCHLOGS_API SubstituteStringEntry() = default;
     AWS_CLOUDWATCHLOGS_API SubstituteStringEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SubstituteStringEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The key to modify</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline SubstituteStringEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline SubstituteStringEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline SubstituteStringEntry& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    SubstituteStringEntry& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html">
      * Class Pattern</a> on the Oracle web site.</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline SubstituteStringEntry& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline SubstituteStringEntry& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline SubstituteStringEntry& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    SubstituteStringEntry& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The string to be substituted for each match of <code>from</code> </p>
      */
-    inline const Aws::String& GetTo() const{ return m_to; }
+    inline const Aws::String& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const Aws::String& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(Aws::String&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline void SetTo(const char* value) { m_toHasBeenSet = true; m_to.assign(value); }
-    inline SubstituteStringEntry& WithTo(const Aws::String& value) { SetTo(value); return *this;}
-    inline SubstituteStringEntry& WithTo(Aws::String&& value) { SetTo(std::move(value)); return *this;}
-    inline SubstituteStringEntry& WithTo(const char* value) { SetTo(value); return *this;}
+    template<typename ToT = Aws::String>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = Aws::String>
+    SubstituteStringEntry& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
   private:
 

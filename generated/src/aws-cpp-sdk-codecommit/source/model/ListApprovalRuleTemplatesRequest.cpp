@@ -12,13 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApprovalRuleTemplatesRequest::ListApprovalRuleTemplatesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListApprovalRuleTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

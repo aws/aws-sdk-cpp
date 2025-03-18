@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-OutputDestination::OutputDestination() : 
-    m_idHasBeenSet(false),
-    m_mediaPackageSettingsHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_srtSettingsHasBeenSet(false)
-{
-}
-
 OutputDestination::OutputDestination(JsonView jsonValue)
-  : OutputDestination()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaPackageSettings"))
   {
     Aws::Utils::Array<JsonView> mediaPackageSettingsJsonList = jsonValue.GetArray("mediaPackageSettings");
@@ -51,14 +39,11 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
     }
     m_mediaPackageSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiplexSettings"))
   {
     m_multiplexSettings = jsonValue.GetObject("multiplexSettings");
-
     m_multiplexSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
@@ -68,7 +53,6 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
     }
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtSettings"))
   {
     Aws::Utils::Array<JsonView> srtSettingsJsonList = jsonValue.GetArray("srtSettings");
@@ -78,7 +62,6 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
     }
     m_srtSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

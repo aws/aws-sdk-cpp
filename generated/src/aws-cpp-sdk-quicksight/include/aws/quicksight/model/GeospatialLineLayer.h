@@ -31,7 +31,7 @@ namespace Model
   class GeospatialLineLayer
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLineLayer();
+    AWS_QUICKSIGHT_API GeospatialLineLayer() = default;
     AWS_QUICKSIGHT_API GeospatialLineLayer(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLineLayer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The visualization style for a line layer.</p>
      */
-    inline const GeospatialLineStyle& GetStyle() const{ return m_style; }
+    inline const GeospatialLineStyle& GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const GeospatialLineStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(GeospatialLineStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline GeospatialLineLayer& WithStyle(const GeospatialLineStyle& value) { SetStyle(value); return *this;}
-    inline GeospatialLineLayer& WithStyle(GeospatialLineStyle&& value) { SetStyle(std::move(value)); return *this;}
+    template<typename StyleT = GeospatialLineStyle>
+    void SetStyle(StyleT&& value) { m_styleHasBeenSet = true; m_style = std::forward<StyleT>(value); }
+    template<typename StyleT = GeospatialLineStyle>
+    GeospatialLineLayer& WithStyle(StyleT&& value) { SetStyle(std::forward<StyleT>(value)); return *this;}
     ///@}
   private:
 

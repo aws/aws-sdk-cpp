@@ -25,7 +25,7 @@ namespace Model
   class GetTrustStoreCertificateRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API GetTrustStoreCertificateRequest();
+    AWS_WORKSPACESWEB_API GetTrustStoreCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The thumbprint of the trust store certificate.</p>
      */
-    inline const Aws::String& GetThumbprint() const{ return m_thumbprint; }
+    inline const Aws::String& GetThumbprint() const { return m_thumbprint; }
     inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
-    inline void SetThumbprint(const Aws::String& value) { m_thumbprintHasBeenSet = true; m_thumbprint = value; }
-    inline void SetThumbprint(Aws::String&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::move(value); }
-    inline void SetThumbprint(const char* value) { m_thumbprintHasBeenSet = true; m_thumbprint.assign(value); }
-    inline GetTrustStoreCertificateRequest& WithThumbprint(const Aws::String& value) { SetThumbprint(value); return *this;}
-    inline GetTrustStoreCertificateRequest& WithThumbprint(Aws::String&& value) { SetThumbprint(std::move(value)); return *this;}
-    inline GetTrustStoreCertificateRequest& WithThumbprint(const char* value) { SetThumbprint(value); return *this;}
+    template<typename ThumbprintT = Aws::String>
+    void SetThumbprint(ThumbprintT&& value) { m_thumbprintHasBeenSet = true; m_thumbprint = std::forward<ThumbprintT>(value); }
+    template<typename ThumbprintT = Aws::String>
+    GetTrustStoreCertificateRequest& WithThumbprint(ThumbprintT&& value) { SetThumbprint(std::forward<ThumbprintT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the trust store certificate.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline GetTrustStoreCertificateRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline GetTrustStoreCertificateRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline GetTrustStoreCertificateRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    GetTrustStoreCertificateRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
   private:
 

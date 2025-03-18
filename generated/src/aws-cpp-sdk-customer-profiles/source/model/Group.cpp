@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Group::Group() : 
-    m_dimensionsHasBeenSet(false),
-    m_sourceSegmentsHasBeenSet(false),
-    m_sourceType(IncludeOptions::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_type(IncludeOptions::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Group::Group(JsonView jsonValue)
-  : Group()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ Group& Group::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceSegments"))
   {
     Aws::Utils::Array<JsonView> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
@@ -55,21 +43,16 @@ Group& Group::operator =(JsonView jsonValue)
     }
     m_sourceSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = IncludeOptionsMapper::GetIncludeOptionsForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = IncludeOptionsMapper::GetIncludeOptionsForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

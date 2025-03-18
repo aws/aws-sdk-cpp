@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails() : 
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_registryArnHasBeenSet(false)
-{
-}
-
 AwsEcsServiceServiceRegistriesDetails::AwsEcsServiceServiceRegistriesDetails(JsonView jsonValue)
-  : AwsEcsServiceServiceRegistriesDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsEcsServiceServiceRegistriesDetails& AwsEcsServiceServiceRegistriesDetails::op
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerPort"))
   {
     m_containerPort = jsonValue.GetInteger("ContainerPort");
-
     m_containerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryArn"))
   {
     m_registryArn = jsonValue.GetString("RegistryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   return *this;
 }
 

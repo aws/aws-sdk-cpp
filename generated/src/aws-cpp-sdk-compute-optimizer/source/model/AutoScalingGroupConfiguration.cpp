@@ -18,26 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-AutoScalingGroupConfiguration::AutoScalingGroupConfiguration() : 
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_allocationStrategy(AllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_estimatedInstanceHourReductionPercentage(0.0),
-    m_estimatedInstanceHourReductionPercentageHasBeenSet(false),
-    m_type(AsgType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mixedInstanceTypesHasBeenSet(false)
-{
-}
-
 AutoScalingGroupConfiguration::AutoScalingGroupConfiguration(JsonView jsonValue)
-  : AutoScalingGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ AutoScalingGroupConfiguration& AutoScalingGroupConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("desiredCapacity"))
   {
     m_desiredCapacity = jsonValue.GetInteger("desiredCapacity");
-
     m_desiredCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minSize"))
   {
     m_minSize = jsonValue.GetInteger("minSize");
-
     m_minSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSize"))
   {
     m_maxSize = jsonValue.GetInteger("maxSize");
-
     m_maxSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allocationStrategy"))
   {
     m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(jsonValue.GetString("allocationStrategy"));
-
     m_allocationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedInstanceHourReductionPercentage"))
   {
     m_estimatedInstanceHourReductionPercentage = jsonValue.GetDouble("estimatedInstanceHourReductionPercentage");
-
     m_estimatedInstanceHourReductionPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AsgTypeMapper::GetAsgTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mixedInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> mixedInstanceTypesJsonList = jsonValue.GetArray("mixedInstanceTypes");
@@ -102,7 +69,6 @@ AutoScalingGroupConfiguration& AutoScalingGroupConfiguration::operator =(JsonVie
     }
     m_mixedInstanceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

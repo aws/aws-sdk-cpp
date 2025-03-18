@@ -33,7 +33,7 @@ namespace Model
   class SlotResolutionTestResultItem
   {
   public:
-    AWS_LEXMODELSV2_API SlotResolutionTestResultItem();
+    AWS_LEXMODELSV2_API SlotResolutionTestResultItem() = default;
     AWS_LEXMODELSV2_API SlotResolutionTestResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotResolutionTestResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the slot.</p>
      */
-    inline const Aws::String& GetSlotName() const{ return m_slotName; }
+    inline const Aws::String& GetSlotName() const { return m_slotName; }
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
-    inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
-    inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
-    inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
-    inline SlotResolutionTestResultItem& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
-    inline SlotResolutionTestResultItem& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
-    inline SlotResolutionTestResultItem& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+    template<typename SlotNameT = Aws::String>
+    void SetSlotName(SlotNameT&& value) { m_slotNameHasBeenSet = true; m_slotName = std::forward<SlotNameT>(value); }
+    template<typename SlotNameT = Aws::String>
+    SlotResolutionTestResultItem& WithSlotName(SlotNameT&& value) { SetSlotName(std::forward<SlotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A result for slot resolution in the results of a test execution.</p>
      */
-    inline const SlotResolutionTestResultItemCounts& GetResultCounts() const{ return m_resultCounts; }
+    inline const SlotResolutionTestResultItemCounts& GetResultCounts() const { return m_resultCounts; }
     inline bool ResultCountsHasBeenSet() const { return m_resultCountsHasBeenSet; }
-    inline void SetResultCounts(const SlotResolutionTestResultItemCounts& value) { m_resultCountsHasBeenSet = true; m_resultCounts = value; }
-    inline void SetResultCounts(SlotResolutionTestResultItemCounts&& value) { m_resultCountsHasBeenSet = true; m_resultCounts = std::move(value); }
-    inline SlotResolutionTestResultItem& WithResultCounts(const SlotResolutionTestResultItemCounts& value) { SetResultCounts(value); return *this;}
-    inline SlotResolutionTestResultItem& WithResultCounts(SlotResolutionTestResultItemCounts&& value) { SetResultCounts(std::move(value)); return *this;}
+    template<typename ResultCountsT = SlotResolutionTestResultItemCounts>
+    void SetResultCounts(ResultCountsT&& value) { m_resultCountsHasBeenSet = true; m_resultCounts = std::forward<ResultCountsT>(value); }
+    template<typename ResultCountsT = SlotResolutionTestResultItemCounts>
+    SlotResolutionTestResultItem& WithResultCounts(ResultCountsT&& value) { SetResultCounts(std::forward<ResultCountsT>(value)); return *this;}
     ///@}
   private:
 

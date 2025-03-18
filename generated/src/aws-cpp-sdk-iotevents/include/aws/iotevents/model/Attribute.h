@@ -36,7 +36,7 @@ namespace Model
   class Attribute
   {
   public:
-    AWS_IOTEVENTS_API Attribute();
+    AWS_IOTEVENTS_API Attribute() = default;
     AWS_IOTEVENTS_API Attribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
-    inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+    inline const Aws::String& GetJsonPath() const { return m_jsonPath; }
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
-    inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
-    inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
-    inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
-    inline Attribute& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
-    inline Attribute& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
-    inline Attribute& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
+    template<typename JsonPathT = Aws::String>
+    void SetJsonPath(JsonPathT&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::forward<JsonPathT>(value); }
+    template<typename JsonPathT = Aws::String>
+    Attribute& WithJsonPath(JsonPathT&& value) { SetJsonPath(std::forward<JsonPathT>(value)); return *this;}
     ///@}
   private:
 

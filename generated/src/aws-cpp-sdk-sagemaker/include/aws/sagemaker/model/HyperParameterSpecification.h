@@ -34,7 +34,7 @@ namespace Model
   class HyperParameterSpecification
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterSpecification();
+    AWS_SAGEMAKER_API HyperParameterSpecification() = default;
     AWS_SAGEMAKER_API HyperParameterSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of this hyperparameter. The name must be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HyperParameterSpecification& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HyperParameterSpecification& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HyperParameterSpecification& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HyperParameterSpecification& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the hyperparameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline HyperParameterSpecification& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline HyperParameterSpecification& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline HyperParameterSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    HyperParameterSpecification& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,24 +70,22 @@ namespace Model
      * <code>Continuous</code>, <code>Categorical</code>, and
      * <code>FreeText</code>.</p>
      */
-    inline const ParameterType& GetType() const{ return m_type; }
+    inline ParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline HyperParameterSpecification& WithType(const ParameterType& value) { SetType(value); return *this;}
-    inline HyperParameterSpecification& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline HyperParameterSpecification& WithType(ParameterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The allowed range for this hyperparameter.</p>
      */
-    inline const ParameterRange& GetRange() const{ return m_range; }
+    inline const ParameterRange& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const ParameterRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(ParameterRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline HyperParameterSpecification& WithRange(const ParameterRange& value) { SetRange(value); return *this;}
-    inline HyperParameterSpecification& WithRange(ParameterRange&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = ParameterRange>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = ParameterRange>
+    HyperParameterSpecification& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +93,7 @@ namespace Model
      * <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning
      * job.</p>
      */
-    inline bool GetIsTunable() const{ return m_isTunable; }
+    inline bool GetIsTunable() const { return m_isTunable; }
     inline bool IsTunableHasBeenSet() const { return m_isTunableHasBeenSet; }
     inline void SetIsTunable(bool value) { m_isTunableHasBeenSet = true; m_isTunable = value; }
     inline HyperParameterSpecification& WithIsTunable(bool value) { SetIsTunable(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
     /**
      * <p>Indicates whether this hyperparameter is required.</p>
      */
-    inline bool GetIsRequired() const{ return m_isRequired; }
+    inline bool GetIsRequired() const { return m_isRequired; }
     inline bool IsRequiredHasBeenSet() const { return m_isRequiredHasBeenSet; }
     inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
     inline HyperParameterSpecification& WithIsRequired(bool value) { SetIsRequired(value); return *this;}
@@ -120,14 +114,12 @@ namespace Model
      * <p>The default value for this hyperparameter. If a default value is specified, a
      * hyperparameter cannot be required.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline HyperParameterSpecification& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline HyperParameterSpecification& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline HyperParameterSpecification& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    HyperParameterSpecification& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,16 +129,16 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ParameterType m_type;
+    ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ParameterRange m_range;
     bool m_rangeHasBeenSet = false;
 
-    bool m_isTunable;
+    bool m_isTunable{false};
     bool m_isTunableHasBeenSet = false;
 
-    bool m_isRequired;
+    bool m_isRequired{false};
     bool m_isRequiredHasBeenSet = false;
 
     Aws::String m_defaultValue;

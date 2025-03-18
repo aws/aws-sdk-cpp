@@ -30,7 +30,7 @@ namespace Model
   class ApplicationSnapshotConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfiguration();
+    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfiguration() = default;
     AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Describes whether snapshots are enabled for a Managed Service for Apache
      * Flink application.</p>
      */
-    inline bool GetSnapshotsEnabled() const{ return m_snapshotsEnabled; }
+    inline bool GetSnapshotsEnabled() const { return m_snapshotsEnabled; }
     inline bool SnapshotsEnabledHasBeenSet() const { return m_snapshotsEnabledHasBeenSet; }
     inline void SetSnapshotsEnabled(bool value) { m_snapshotsEnabledHasBeenSet = true; m_snapshotsEnabled = value; }
     inline ApplicationSnapshotConfiguration& WithSnapshotsEnabled(bool value) { SetSnapshotsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_snapshotsEnabled;
+    bool m_snapshotsEnabled{false};
     bool m_snapshotsEnabledHasBeenSet = false;
   };
 

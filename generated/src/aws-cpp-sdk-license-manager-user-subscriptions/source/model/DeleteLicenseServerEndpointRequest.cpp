@@ -12,13 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLicenseServerEndpointRequest::DeleteLicenseServerEndpointRequest() : 
-    m_licenseServerEndpointArnHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLicenseServerEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

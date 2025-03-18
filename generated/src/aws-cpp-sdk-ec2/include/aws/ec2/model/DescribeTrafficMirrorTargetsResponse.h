@@ -30,7 +30,7 @@ namespace Model
   class DescribeTrafficMirrorTargetsResponse
   {
   public:
-    AWS_EC2_API DescribeTrafficMirrorTargetsResponse();
+    AWS_EC2_API DescribeTrafficMirrorTargetsResponse() = default;
     AWS_EC2_API DescribeTrafficMirrorTargetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeTrafficMirrorTargetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about one or more Traffic Mirror targets.</p>
      */
-    inline const Aws::Vector<TrafficMirrorTarget>& GetTrafficMirrorTargets() const{ return m_trafficMirrorTargets; }
-    inline void SetTrafficMirrorTargets(const Aws::Vector<TrafficMirrorTarget>& value) { m_trafficMirrorTargets = value; }
-    inline void SetTrafficMirrorTargets(Aws::Vector<TrafficMirrorTarget>&& value) { m_trafficMirrorTargets = std::move(value); }
-    inline DescribeTrafficMirrorTargetsResponse& WithTrafficMirrorTargets(const Aws::Vector<TrafficMirrorTarget>& value) { SetTrafficMirrorTargets(value); return *this;}
-    inline DescribeTrafficMirrorTargetsResponse& WithTrafficMirrorTargets(Aws::Vector<TrafficMirrorTarget>&& value) { SetTrafficMirrorTargets(std::move(value)); return *this;}
-    inline DescribeTrafficMirrorTargetsResponse& AddTrafficMirrorTargets(const TrafficMirrorTarget& value) { m_trafficMirrorTargets.push_back(value); return *this; }
-    inline DescribeTrafficMirrorTargetsResponse& AddTrafficMirrorTargets(TrafficMirrorTarget&& value) { m_trafficMirrorTargets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrafficMirrorTarget>& GetTrafficMirrorTargets() const { return m_trafficMirrorTargets; }
+    template<typename TrafficMirrorTargetsT = Aws::Vector<TrafficMirrorTarget>>
+    void SetTrafficMirrorTargets(TrafficMirrorTargetsT&& value) { m_trafficMirrorTargetsHasBeenSet = true; m_trafficMirrorTargets = std::forward<TrafficMirrorTargetsT>(value); }
+    template<typename TrafficMirrorTargetsT = Aws::Vector<TrafficMirrorTarget>>
+    DescribeTrafficMirrorTargetsResponse& WithTrafficMirrorTargets(TrafficMirrorTargetsT&& value) { SetTrafficMirrorTargets(std::forward<TrafficMirrorTargetsT>(value)); return *this;}
+    template<typename TrafficMirrorTargetsT = TrafficMirrorTarget>
+    DescribeTrafficMirrorTargetsResponse& AddTrafficMirrorTargets(TrafficMirrorTargetsT&& value) { m_trafficMirrorTargetsHasBeenSet = true; m_trafficMirrorTargets.emplace_back(std::forward<TrafficMirrorTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. The value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeTrafficMirrorTargetsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTrafficMirrorTargetsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTrafficMirrorTargetsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTrafficMirrorTargetsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTrafficMirrorTargetsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTrafficMirrorTargetsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTrafficMirrorTargetsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrafficMirrorTarget> m_trafficMirrorTargets;
+    bool m_trafficMirrorTargetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

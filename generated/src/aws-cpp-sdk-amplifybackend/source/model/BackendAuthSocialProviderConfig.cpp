@@ -18,14 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
-{
-}
-
 BackendAuthSocialProviderConfig::BackendAuthSocialProviderConfig(JsonView jsonValue)
-  : BackendAuthSocialProviderConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BackendAuthSocialProviderConfig& BackendAuthSocialProviderConfig::operator =(Jso
   if(jsonValue.ValueExists("client_id"))
   {
     m_clientId = jsonValue.GetString("client_id");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("client_secret"))
   {
     m_clientSecret = jsonValue.GetString("client_secret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

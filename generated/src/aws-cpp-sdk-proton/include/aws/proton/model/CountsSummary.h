@@ -31,7 +31,7 @@ namespace Model
   class CountsSummary
   {
   public:
-    AWS_PROTON_API CountsSummary();
+    AWS_PROTON_API CountsSummary() = default;
     AWS_PROTON_API CountsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API CountsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * the concept of staleness. The <code>components</code> object will only contain
      * <code>total</code> and <code>failed</code> members.</p>
      */
-    inline const ResourceCountsSummary& GetComponents() const{ return m_components; }
+    inline const ResourceCountsSummary& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const ResourceCountsSummary& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(ResourceCountsSummary&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline CountsSummary& WithComponents(const ResourceCountsSummary& value) { SetComponents(value); return *this;}
-    inline CountsSummary& WithComponents(ResourceCountsSummary&& value) { SetComponents(std::move(value)); return *this;}
+    template<typename ComponentsT = ResourceCountsSummary>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = ResourceCountsSummary>
+    CountsSummary& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * The <code>environmentTemplates</code> object will only contain
      * <code>total</code> members.</p>
      */
-    inline const ResourceCountsSummary& GetEnvironmentTemplates() const{ return m_environmentTemplates; }
+    inline const ResourceCountsSummary& GetEnvironmentTemplates() const { return m_environmentTemplates; }
     inline bool EnvironmentTemplatesHasBeenSet() const { return m_environmentTemplatesHasBeenSet; }
-    inline void SetEnvironmentTemplates(const ResourceCountsSummary& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = value; }
-    inline void SetEnvironmentTemplates(ResourceCountsSummary&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = std::move(value); }
-    inline CountsSummary& WithEnvironmentTemplates(const ResourceCountsSummary& value) { SetEnvironmentTemplates(value); return *this;}
-    inline CountsSummary& WithEnvironmentTemplates(ResourceCountsSummary&& value) { SetEnvironmentTemplates(std::move(value)); return *this;}
+    template<typename EnvironmentTemplatesT = ResourceCountsSummary>
+    void SetEnvironmentTemplates(EnvironmentTemplatesT&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = std::forward<EnvironmentTemplatesT>(value); }
+    template<typename EnvironmentTemplatesT = ResourceCountsSummary>
+    CountsSummary& WithEnvironmentTemplates(EnvironmentTemplatesT&& value) { SetEnvironmentTemplates(std::forward<EnvironmentTemplatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * account. The <code>environments</code> object will only contain
      * <code>total</code> members.</p>
      */
-    inline const ResourceCountsSummary& GetEnvironments() const{ return m_environments; }
+    inline const ResourceCountsSummary& GetEnvironments() const { return m_environments; }
     inline bool EnvironmentsHasBeenSet() const { return m_environmentsHasBeenSet; }
-    inline void SetEnvironments(const ResourceCountsSummary& value) { m_environmentsHasBeenSet = true; m_environments = value; }
-    inline void SetEnvironments(ResourceCountsSummary&& value) { m_environmentsHasBeenSet = true; m_environments = std::move(value); }
-    inline CountsSummary& WithEnvironments(const ResourceCountsSummary& value) { SetEnvironments(value); return *this;}
-    inline CountsSummary& WithEnvironments(ResourceCountsSummary&& value) { SetEnvironments(std::move(value)); return *this;}
+    template<typename EnvironmentsT = ResourceCountsSummary>
+    void SetEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments = std::forward<EnvironmentsT>(value); }
+    template<typename EnvironmentsT = ResourceCountsSummary>
+    CountsSummary& WithEnvironments(EnvironmentsT&& value) { SetEnvironments(std::forward<EnvironmentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * <p>The staleness counts for Proton pipelines in the Amazon Web Services
      * account.</p>
      */
-    inline const ResourceCountsSummary& GetPipelines() const{ return m_pipelines; }
+    inline const ResourceCountsSummary& GetPipelines() const { return m_pipelines; }
     inline bool PipelinesHasBeenSet() const { return m_pipelinesHasBeenSet; }
-    inline void SetPipelines(const ResourceCountsSummary& value) { m_pipelinesHasBeenSet = true; m_pipelines = value; }
-    inline void SetPipelines(ResourceCountsSummary&& value) { m_pipelinesHasBeenSet = true; m_pipelines = std::move(value); }
-    inline CountsSummary& WithPipelines(const ResourceCountsSummary& value) { SetPipelines(value); return *this;}
-    inline CountsSummary& WithPipelines(ResourceCountsSummary&& value) { SetPipelines(std::move(value)); return *this;}
+    template<typename PipelinesT = ResourceCountsSummary>
+    void SetPipelines(PipelinesT&& value) { m_pipelinesHasBeenSet = true; m_pipelines = std::forward<PipelinesT>(value); }
+    template<typename PipelinesT = ResourceCountsSummary>
+    CountsSummary& WithPipelines(PipelinesT&& value) { SetPipelines(std::forward<PipelinesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,12 @@ namespace Model
      * <p>The staleness counts for Proton service instances in the Amazon Web Services
      * account.</p>
      */
-    inline const ResourceCountsSummary& GetServiceInstances() const{ return m_serviceInstances; }
+    inline const ResourceCountsSummary& GetServiceInstances() const { return m_serviceInstances; }
     inline bool ServiceInstancesHasBeenSet() const { return m_serviceInstancesHasBeenSet; }
-    inline void SetServiceInstances(const ResourceCountsSummary& value) { m_serviceInstancesHasBeenSet = true; m_serviceInstances = value; }
-    inline void SetServiceInstances(ResourceCountsSummary&& value) { m_serviceInstancesHasBeenSet = true; m_serviceInstances = std::move(value); }
-    inline CountsSummary& WithServiceInstances(const ResourceCountsSummary& value) { SetServiceInstances(value); return *this;}
-    inline CountsSummary& WithServiceInstances(ResourceCountsSummary&& value) { SetServiceInstances(std::move(value)); return *this;}
+    template<typename ServiceInstancesT = ResourceCountsSummary>
+    void SetServiceInstances(ServiceInstancesT&& value) { m_serviceInstancesHasBeenSet = true; m_serviceInstances = std::forward<ServiceInstancesT>(value); }
+    template<typename ServiceInstancesT = ResourceCountsSummary>
+    CountsSummary& WithServiceInstances(ServiceInstancesT&& value) { SetServiceInstances(std::forward<ServiceInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +114,12 @@ namespace Model
      * <code>serviceTemplates</code> object will only contain <code>total</code>
      * members.</p>
      */
-    inline const ResourceCountsSummary& GetServiceTemplates() const{ return m_serviceTemplates; }
+    inline const ResourceCountsSummary& GetServiceTemplates() const { return m_serviceTemplates; }
     inline bool ServiceTemplatesHasBeenSet() const { return m_serviceTemplatesHasBeenSet; }
-    inline void SetServiceTemplates(const ResourceCountsSummary& value) { m_serviceTemplatesHasBeenSet = true; m_serviceTemplates = value; }
-    inline void SetServiceTemplates(ResourceCountsSummary&& value) { m_serviceTemplatesHasBeenSet = true; m_serviceTemplates = std::move(value); }
-    inline CountsSummary& WithServiceTemplates(const ResourceCountsSummary& value) { SetServiceTemplates(value); return *this;}
-    inline CountsSummary& WithServiceTemplates(ResourceCountsSummary&& value) { SetServiceTemplates(std::move(value)); return *this;}
+    template<typename ServiceTemplatesT = ResourceCountsSummary>
+    void SetServiceTemplates(ServiceTemplatesT&& value) { m_serviceTemplatesHasBeenSet = true; m_serviceTemplates = std::forward<ServiceTemplatesT>(value); }
+    template<typename ServiceTemplatesT = ResourceCountsSummary>
+    CountsSummary& WithServiceTemplates(ServiceTemplatesT&& value) { SetServiceTemplates(std::forward<ServiceTemplatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +127,12 @@ namespace Model
      * <p>The staleness counts for Proton services in the Amazon Web Services
      * account.</p>
      */
-    inline const ResourceCountsSummary& GetServices() const{ return m_services; }
+    inline const ResourceCountsSummary& GetServices() const { return m_services; }
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
-    inline void SetServices(const ResourceCountsSummary& value) { m_servicesHasBeenSet = true; m_services = value; }
-    inline void SetServices(ResourceCountsSummary&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
-    inline CountsSummary& WithServices(const ResourceCountsSummary& value) { SetServices(value); return *this;}
-    inline CountsSummary& WithServices(ResourceCountsSummary&& value) { SetServices(std::move(value)); return *this;}
+    template<typename ServicesT = ResourceCountsSummary>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = ResourceCountsSummary>
+    CountsSummary& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-BatchUpdateRecommendationStatusSuccessfulEntry::BatchUpdateRecommendationStatusSuccessfulEntry() : 
-    m_appComponentIdHasBeenSet(false),
-    m_entryIdHasBeenSet(false),
-    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
-    m_excludeReasonHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_itemHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
-{
-}
-
 BatchUpdateRecommendationStatusSuccessfulEntry::BatchUpdateRecommendationStatusSuccessfulEntry(JsonView jsonValue)
-  : BatchUpdateRecommendationStatusSuccessfulEntry()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ BatchUpdateRecommendationStatusSuccessfulEntry& BatchUpdateRecommendationStatusS
   if(jsonValue.ValueExists("appComponentId"))
   {
     m_appComponentId = jsonValue.GetString("appComponentId");
-
     m_appComponentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludeReason"))
   {
     m_excludeReason = ExcludeRecommendationReasonMapper::GetExcludeRecommendationReasonForName(jsonValue.GetString("excludeReason"));
-
     m_excludeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excluded"))
   {
     m_excluded = jsonValue.GetBool("excluded");
-
     m_excludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("item"))
   {
     m_item = jsonValue.GetObject("item");
-
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

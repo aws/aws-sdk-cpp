@@ -39,7 +39,7 @@ namespace Model
   class LambdaFunctionRecommendationFilter
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter() = default;
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,12 +65,10 @@ namespace Model
      * your Lambda function recommendations with a tag key value of <code>Owner</code>
      * or without any tag keys assigned.</p>
      */
-    inline const LambdaFunctionRecommendationFilterName& GetName() const{ return m_name; }
+    inline LambdaFunctionRecommendationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const LambdaFunctionRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(LambdaFunctionRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline LambdaFunctionRecommendationFilter& WithName(const LambdaFunctionRecommendationFilterName& value) { SetName(value); return *this;}
-    inline LambdaFunctionRecommendationFilter& WithName(LambdaFunctionRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(LambdaFunctionRecommendationFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline LambdaFunctionRecommendationFilter& WithName(LambdaFunctionRecommendationFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +82,18 @@ namespace Model
      * <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the
      * <code>name</code> parameter as <code>FindingReasonCode</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline LambdaFunctionRecommendationFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline LambdaFunctionRecommendationFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendationFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline LambdaFunctionRecommendationFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline LambdaFunctionRecommendationFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    LambdaFunctionRecommendationFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    LambdaFunctionRecommendationFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    LambdaFunctionRecommendationFilterName m_name;
+    LambdaFunctionRecommendationFilterName m_name{LambdaFunctionRecommendationFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

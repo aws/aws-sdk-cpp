@@ -18,21 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-RemixSettings::RemixSettings() : 
-    m_audioDescriptionAudioChannel(0),
-    m_audioDescriptionAudioChannelHasBeenSet(false),
-    m_audioDescriptionDataChannel(0),
-    m_audioDescriptionDataChannelHasBeenSet(false),
-    m_channelMappingHasBeenSet(false),
-    m_channelsIn(0),
-    m_channelsInHasBeenSet(false),
-    m_channelsOut(0),
-    m_channelsOutHasBeenSet(false)
-{
-}
-
 RemixSettings::RemixSettings(JsonView jsonValue)
-  : RemixSettings()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ RemixSettings& RemixSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioDescriptionAudioChannel"))
   {
     m_audioDescriptionAudioChannel = jsonValue.GetInteger("audioDescriptionAudioChannel");
-
     m_audioDescriptionAudioChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioDescriptionDataChannel"))
   {
     m_audioDescriptionDataChannel = jsonValue.GetInteger("audioDescriptionDataChannel");
-
     m_audioDescriptionDataChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelMapping"))
   {
     m_channelMapping = jsonValue.GetObject("channelMapping");
-
     m_channelMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelsIn"))
   {
     m_channelsIn = jsonValue.GetInteger("channelsIn");
-
     m_channelsInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelsOut"))
   {
     m_channelsOut = jsonValue.GetInteger("channelsOut");
-
     m_channelsOutHasBeenSet = true;
   }
-
   return *this;
 }
 

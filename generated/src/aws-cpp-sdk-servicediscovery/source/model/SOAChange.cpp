@@ -18,14 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-SOAChange::SOAChange() : 
-    m_tTL(0),
-    m_tTLHasBeenSet(false)
-{
-}
-
 SOAChange::SOAChange(JsonView jsonValue)
-  : SOAChange()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SOAChange& SOAChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TTL"))
   {
     m_tTL = jsonValue.GetInt64("TTL");
-
     m_tTLHasBeenSet = true;
   }
-
   return *this;
 }
 

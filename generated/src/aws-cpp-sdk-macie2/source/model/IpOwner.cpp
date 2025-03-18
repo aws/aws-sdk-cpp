@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-IpOwner::IpOwner() : 
-    m_asnHasBeenSet(false),
-    m_asnOrgHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_orgHasBeenSet(false)
-{
-}
-
 IpOwner::IpOwner(JsonView jsonValue)
-  : IpOwner()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ IpOwner& IpOwner::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetString("asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asnOrg"))
   {
     m_asnOrg = jsonValue.GetString("asnOrg");
-
     m_asnOrgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isp"))
   {
     m_isp = jsonValue.GetString("isp");
-
     m_ispHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("org"))
   {
     m_org = jsonValue.GetString("org");
-
     m_orgHasBeenSet = true;
   }
-
   return *this;
 }
 

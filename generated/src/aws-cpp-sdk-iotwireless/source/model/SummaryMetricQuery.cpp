@@ -18,20 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SummaryMetricQuery::SummaryMetricQuery() : 
-    m_queryIdHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_aggregationPeriod(AggregationPeriod::NOT_SET),
-    m_aggregationPeriodHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
-{
-}
-
 SummaryMetricQuery::SummaryMetricQuery(JsonView jsonValue)
-  : SummaryMetricQuery()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ SummaryMetricQuery& SummaryMetricQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
     m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -61,28 +44,21 @@ SummaryMetricQuery& SummaryMetricQuery::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationPeriod"))
   {
     m_aggregationPeriod = AggregationPeriodMapper::GetAggregationPeriodForName(jsonValue.GetString("AggregationPeriod"));
-
     m_aggregationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimestamp"))
   {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
-
     m_endTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

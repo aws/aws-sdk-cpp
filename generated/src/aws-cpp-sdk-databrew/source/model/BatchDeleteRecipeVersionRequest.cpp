@@ -12,12 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteRecipeVersionRequest::BatchDeleteRecipeVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_recipeVersionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteRecipeVersionRequest::SerializePayload() const
 {
   JsonValue payload;

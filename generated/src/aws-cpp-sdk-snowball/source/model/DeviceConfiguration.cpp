@@ -18,13 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-DeviceConfiguration::DeviceConfiguration() : 
-    m_snowconeDeviceConfigurationHasBeenSet(false)
-{
-}
-
 DeviceConfiguration::DeviceConfiguration(JsonView jsonValue)
-  : DeviceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeviceConfiguration& DeviceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SnowconeDeviceConfiguration"))
   {
     m_snowconeDeviceConfiguration = jsonValue.GetObject("SnowconeDeviceConfiguration");
-
     m_snowconeDeviceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

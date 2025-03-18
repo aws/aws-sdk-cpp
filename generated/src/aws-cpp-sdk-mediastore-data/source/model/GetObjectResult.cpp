@@ -16,47 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectResult::GetObjectResult() : 
-    m_contentLength(0),
-    m_statusCode(0)
-{
-}
-
-GetObjectResult::GetObjectResult(GetObjectResult&& toMove) : 
-    m_body(std::move(toMove.m_body)),
-    m_cacheControl(std::move(toMove.m_cacheControl)),
-    m_contentRange(std::move(toMove.m_contentRange)),
-    m_contentLength(toMove.m_contentLength),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_eTag(std::move(toMove.m_eTag)),
-    m_lastModified(std::move(toMove.m_lastModified)),
-    m_statusCode(toMove.m_statusCode),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_body = std::move(toMove.m_body);
-   m_cacheControl = std::move(toMove.m_cacheControl);
-   m_contentRange = std::move(toMove.m_contentRange);
-   m_contentLength = toMove.m_contentLength;
-   m_contentType = std::move(toMove.m_contentType);
-   m_eTag = std::move(toMove.m_eTag);
-   m_lastModified = std::move(toMove.m_lastModified);
-   m_statusCode = toMove.m_statusCode;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : GetObjectResult()
 {
   *this = std::move(result);
 }
@@ -64,36 +24,42 @@ GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& r
 GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
+  m_bodyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& cacheControlIter = headers.find("cache-control");
   if(cacheControlIter != headers.end())
   {
     m_cacheControl = cacheControlIter->second;
+    m_cacheControlHasBeenSet = true;
   }
 
   const auto& contentRangeIter = headers.find("content-range");
   if(contentRangeIter != headers.end())
   {
     m_contentRange = contentRangeIter->second;
+    m_contentRangeHasBeenSet = true;
   }
 
   const auto& contentLengthIter = headers.find("content-length");
   if(contentLengthIter != headers.end())
   {
-     m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
+    m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
+    m_contentLengthHasBeenSet = true;
   }
 
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& lastModifiedIter = headers.find("last-modified");
@@ -104,15 +70,17 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
     {
       AWS_LOGSTREAM_WARN("MediaStoreData::GetObjectResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
     }
+    m_lastModifiedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
    return *this;
 }

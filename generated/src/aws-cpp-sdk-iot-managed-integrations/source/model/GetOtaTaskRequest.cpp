@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOtaTaskRequest::GetOtaTaskRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetOtaTaskRequest::SerializePayload() const
 {
   return {};

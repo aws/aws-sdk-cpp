@@ -21,7 +21,7 @@ namespace Model
   class DescribeCustomDomainsRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API DescribeCustomDomainsRequest();
+    AWS_APPRUNNER_API DescribeCustomDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the App Runner service that you want
      * associated custom domain names to be described for.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline DescribeCustomDomainsRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline DescribeCustomDomainsRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline DescribeCustomDomainsRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    DescribeCustomDomainsRequest& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeCustomDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCustomDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCustomDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCustomDomainsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * <code>MaxResults</code>, the request retrieves all available results in a single
      * response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeCustomDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

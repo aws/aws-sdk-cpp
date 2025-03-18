@@ -12,16 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConnectionRequest::UpdateConnectionRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_authorizationType(ConnectionAuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_authParametersHasBeenSet(false),
-    m_invocationConnectivityParametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

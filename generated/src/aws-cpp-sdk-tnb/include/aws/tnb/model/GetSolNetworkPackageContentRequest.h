@@ -22,7 +22,7 @@ namespace Model
   class GetSolNetworkPackageContentRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API GetSolNetworkPackageContentRequest();
+    AWS_TNB_API GetSolNetworkPackageContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,30 +39,26 @@ namespace Model
     /**
      * <p>The format of the package you want to download from the network package.</p>
      */
-    inline const PackageContentType& GetAccept() const{ return m_accept; }
+    inline PackageContentType GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const PackageContentType& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(PackageContentType&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline GetSolNetworkPackageContentRequest& WithAccept(const PackageContentType& value) { SetAccept(value); return *this;}
-    inline GetSolNetworkPackageContentRequest& WithAccept(PackageContentType&& value) { SetAccept(std::move(value)); return *this;}
+    inline void SetAccept(PackageContentType value) { m_acceptHasBeenSet = true; m_accept = value; }
+    inline GetSolNetworkPackageContentRequest& WithAccept(PackageContentType value) { SetAccept(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the network service descriptor in the network package.</p>
      */
-    inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
+    inline const Aws::String& GetNsdInfoId() const { return m_nsdInfoId; }
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-    inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-    inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-    inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-    inline GetSolNetworkPackageContentRequest& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-    inline GetSolNetworkPackageContentRequest& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-    inline GetSolNetworkPackageContentRequest& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    template<typename NsdInfoIdT = Aws::String>
+    void SetNsdInfoId(NsdInfoIdT&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::forward<NsdInfoIdT>(value); }
+    template<typename NsdInfoIdT = Aws::String>
+    GetSolNetworkPackageContentRequest& WithNsdInfoId(NsdInfoIdT&& value) { SetNsdInfoId(std::forward<NsdInfoIdT>(value)); return *this;}
     ///@}
   private:
 
-    PackageContentType m_accept;
+    PackageContentType m_accept{PackageContentType::NOT_SET};
     bool m_acceptHasBeenSet = false;
 
     Aws::String m_nsdInfoId;

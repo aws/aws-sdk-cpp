@@ -31,7 +31,7 @@ namespace Model
   class UserPoolClientDescription
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The app client ID.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline UserPoolClientDescription& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline UserPoolClientDescription& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline UserPoolClientDescription& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    UserPoolClientDescription& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user pool that's associated with the app client.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline UserPoolClientDescription& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline UserPoolClientDescription& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline UserPoolClientDescription& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    UserPoolClientDescription& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The app client name.</p>
      */
-    inline const Aws::String& GetClientName() const{ return m_clientName; }
+    inline const Aws::String& GetClientName() const { return m_clientName; }
     inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
-    inline void SetClientName(const Aws::String& value) { m_clientNameHasBeenSet = true; m_clientName = value; }
-    inline void SetClientName(Aws::String&& value) { m_clientNameHasBeenSet = true; m_clientName = std::move(value); }
-    inline void SetClientName(const char* value) { m_clientNameHasBeenSet = true; m_clientName.assign(value); }
-    inline UserPoolClientDescription& WithClientName(const Aws::String& value) { SetClientName(value); return *this;}
-    inline UserPoolClientDescription& WithClientName(Aws::String&& value) { SetClientName(std::move(value)); return *this;}
-    inline UserPoolClientDescription& WithClientName(const char* value) { SetClientName(value); return *this;}
+    template<typename ClientNameT = Aws::String>
+    void SetClientName(ClientNameT&& value) { m_clientNameHasBeenSet = true; m_clientName = std::forward<ClientNameT>(value); }
+    template<typename ClientNameT = Aws::String>
+    UserPoolClientDescription& WithClientName(ClientNameT&& value) { SetClientName(std::forward<ClientNameT>(value)); return *this;}
     ///@}
   private:
 

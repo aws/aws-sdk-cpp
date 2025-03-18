@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpportunitiesResult::ListOpportunitiesResult()
-{
-}
-
 ListOpportunitiesResult::ListOpportunitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListOpportunitiesResult& ListOpportunitiesResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpportunitySummaries"))
   {
     Aws::Utils::Array<JsonView> opportunitySummariesJsonList = jsonValue.GetArray("OpportunitySummaries");
@@ -42,14 +37,15 @@ ListOpportunitiesResult& ListOpportunitiesResult::operator =(const Aws::AmazonWe
     {
       m_opportunitySummaries.push_back(opportunitySummariesJsonList[opportunitySummariesIndex].AsObject());
     }
+    m_opportunitySummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

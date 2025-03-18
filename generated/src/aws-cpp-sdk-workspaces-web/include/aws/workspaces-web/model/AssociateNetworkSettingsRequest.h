@@ -25,7 +25,7 @@ namespace Model
   class AssociateNetworkSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API AssociateNetworkSettingsRequest();
+    AWS_WORKSPACESWEB_API AssociateNetworkSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN of the network settings.</p>
      */
-    inline const Aws::String& GetNetworkSettingsArn() const{ return m_networkSettingsArn; }
+    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
     inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-    inline void SetNetworkSettingsArn(const Aws::String& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = value; }
-    inline void SetNetworkSettingsArn(Aws::String&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::move(value); }
-    inline void SetNetworkSettingsArn(const char* value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn.assign(value); }
-    inline AssociateNetworkSettingsRequest& WithNetworkSettingsArn(const Aws::String& value) { SetNetworkSettingsArn(value); return *this;}
-    inline AssociateNetworkSettingsRequest& WithNetworkSettingsArn(Aws::String&& value) { SetNetworkSettingsArn(std::move(value)); return *this;}
-    inline AssociateNetworkSettingsRequest& WithNetworkSettingsArn(const char* value) { SetNetworkSettingsArn(value); return *this;}
+    template<typename NetworkSettingsArnT = Aws::String>
+    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
+    template<typename NetworkSettingsArnT = Aws::String>
+    AssociateNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
-    inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-    inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-    inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-    inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-    inline AssociateNetworkSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-    inline AssociateNetworkSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-    inline AssociateNetworkSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    AssociateNetworkSettingsRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
   private:
 

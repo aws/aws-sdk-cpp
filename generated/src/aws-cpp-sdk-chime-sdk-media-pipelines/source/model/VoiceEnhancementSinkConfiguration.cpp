@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration() : 
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
-{
-}
-
 VoiceEnhancementSinkConfiguration::VoiceEnhancementSinkConfiguration(JsonView jsonValue)
-  : VoiceEnhancementSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VoiceEnhancementSinkConfiguration& VoiceEnhancementSinkConfiguration::operator =
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListStorageProfilesForQueueRequest::ListStorageProfilesForQueueRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListStorageProfilesForQueueRequest::SerializePayload() const
 {
   return {};

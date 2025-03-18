@@ -35,7 +35,7 @@ namespace Model
   class LaunchConfigurationTemplate
   {
   public:
-    AWS_DRS_API LaunchConfigurationTemplate();
+    AWS_DRS_API LaunchConfigurationTemplate() = default;
     AWS_DRS_API LaunchConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API LaunchConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,19 @@ namespace Model
     /**
      * <p>ARN of the Launch Configuration Template.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LaunchConfigurationTemplate& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LaunchConfigurationTemplate& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LaunchConfigurationTemplate& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LaunchConfigurationTemplate& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Copy private IP.</p>
      */
-    inline bool GetCopyPrivateIp() const{ return m_copyPrivateIp; }
+    inline bool GetCopyPrivateIp() const { return m_copyPrivateIp; }
     inline bool CopyPrivateIpHasBeenSet() const { return m_copyPrivateIpHasBeenSet; }
     inline void SetCopyPrivateIp(bool value) { m_copyPrivateIpHasBeenSet = true; m_copyPrivateIp = value; }
     inline LaunchConfigurationTemplate& WithCopyPrivateIp(bool value) { SetCopyPrivateIp(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     /**
      * <p>Copy tags.</p>
      */
-    inline bool GetCopyTags() const{ return m_copyTags; }
+    inline bool GetCopyTags() const { return m_copyTags; }
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
     inline LaunchConfigurationTemplate& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
@@ -79,40 +77,34 @@ namespace Model
     /**
      * <p>S3 bucket ARN to export Source Network templates.</p>
      */
-    inline const Aws::String& GetExportBucketArn() const{ return m_exportBucketArn; }
+    inline const Aws::String& GetExportBucketArn() const { return m_exportBucketArn; }
     inline bool ExportBucketArnHasBeenSet() const { return m_exportBucketArnHasBeenSet; }
-    inline void SetExportBucketArn(const Aws::String& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = value; }
-    inline void SetExportBucketArn(Aws::String&& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = std::move(value); }
-    inline void SetExportBucketArn(const char* value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn.assign(value); }
-    inline LaunchConfigurationTemplate& WithExportBucketArn(const Aws::String& value) { SetExportBucketArn(value); return *this;}
-    inline LaunchConfigurationTemplate& WithExportBucketArn(Aws::String&& value) { SetExportBucketArn(std::move(value)); return *this;}
-    inline LaunchConfigurationTemplate& WithExportBucketArn(const char* value) { SetExportBucketArn(value); return *this;}
+    template<typename ExportBucketArnT = Aws::String>
+    void SetExportBucketArn(ExportBucketArnT&& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = std::forward<ExportBucketArnT>(value); }
+    template<typename ExportBucketArnT = Aws::String>
+    LaunchConfigurationTemplate& WithExportBucketArn(ExportBucketArnT&& value) { SetExportBucketArn(std::forward<ExportBucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the Launch Configuration Template.</p>
      */
-    inline const Aws::String& GetLaunchConfigurationTemplateID() const{ return m_launchConfigurationTemplateID; }
+    inline const Aws::String& GetLaunchConfigurationTemplateID() const { return m_launchConfigurationTemplateID; }
     inline bool LaunchConfigurationTemplateIDHasBeenSet() const { return m_launchConfigurationTemplateIDHasBeenSet; }
-    inline void SetLaunchConfigurationTemplateID(const Aws::String& value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID = value; }
-    inline void SetLaunchConfigurationTemplateID(Aws::String&& value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID = std::move(value); }
-    inline void SetLaunchConfigurationTemplateID(const char* value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID.assign(value); }
-    inline LaunchConfigurationTemplate& WithLaunchConfigurationTemplateID(const Aws::String& value) { SetLaunchConfigurationTemplateID(value); return *this;}
-    inline LaunchConfigurationTemplate& WithLaunchConfigurationTemplateID(Aws::String&& value) { SetLaunchConfigurationTemplateID(std::move(value)); return *this;}
-    inline LaunchConfigurationTemplate& WithLaunchConfigurationTemplateID(const char* value) { SetLaunchConfigurationTemplateID(value); return *this;}
+    template<typename LaunchConfigurationTemplateIDT = Aws::String>
+    void SetLaunchConfigurationTemplateID(LaunchConfigurationTemplateIDT&& value) { m_launchConfigurationTemplateIDHasBeenSet = true; m_launchConfigurationTemplateID = std::forward<LaunchConfigurationTemplateIDT>(value); }
+    template<typename LaunchConfigurationTemplateIDT = Aws::String>
+    LaunchConfigurationTemplate& WithLaunchConfigurationTemplateID(LaunchConfigurationTemplateIDT&& value) { SetLaunchConfigurationTemplateID(std::forward<LaunchConfigurationTemplateIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Launch disposition.</p>
      */
-    inline const LaunchDisposition& GetLaunchDisposition() const{ return m_launchDisposition; }
+    inline LaunchDisposition GetLaunchDisposition() const { return m_launchDisposition; }
     inline bool LaunchDispositionHasBeenSet() const { return m_launchDispositionHasBeenSet; }
-    inline void SetLaunchDisposition(const LaunchDisposition& value) { m_launchDispositionHasBeenSet = true; m_launchDisposition = value; }
-    inline void SetLaunchDisposition(LaunchDisposition&& value) { m_launchDispositionHasBeenSet = true; m_launchDisposition = std::move(value); }
-    inline LaunchConfigurationTemplate& WithLaunchDisposition(const LaunchDisposition& value) { SetLaunchDisposition(value); return *this;}
-    inline LaunchConfigurationTemplate& WithLaunchDisposition(LaunchDisposition&& value) { SetLaunchDisposition(std::move(value)); return *this;}
+    inline void SetLaunchDisposition(LaunchDisposition value) { m_launchDispositionHasBeenSet = true; m_launchDisposition = value; }
+    inline LaunchConfigurationTemplate& WithLaunchDisposition(LaunchDisposition value) { SetLaunchDisposition(value); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +113,7 @@ namespace Model
      * performing a drill, recovery or failback to the previous region or availability
      * zone, using the instance ID of the source instance.</p>
      */
-    inline bool GetLaunchIntoSourceInstance() const{ return m_launchIntoSourceInstance; }
+    inline bool GetLaunchIntoSourceInstance() const { return m_launchIntoSourceInstance; }
     inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
     inline void SetLaunchIntoSourceInstance(bool value) { m_launchIntoSourceInstanceHasBeenSet = true; m_launchIntoSourceInstance = value; }
     inline LaunchConfigurationTemplate& WithLaunchIntoSourceInstance(bool value) { SetLaunchIntoSourceInstance(value); return *this;}
@@ -131,19 +123,19 @@ namespace Model
     /**
      * <p>Licensing.</p>
      */
-    inline const Licensing& GetLicensing() const{ return m_licensing; }
+    inline const Licensing& GetLicensing() const { return m_licensing; }
     inline bool LicensingHasBeenSet() const { return m_licensingHasBeenSet; }
-    inline void SetLicensing(const Licensing& value) { m_licensingHasBeenSet = true; m_licensing = value; }
-    inline void SetLicensing(Licensing&& value) { m_licensingHasBeenSet = true; m_licensing = std::move(value); }
-    inline LaunchConfigurationTemplate& WithLicensing(const Licensing& value) { SetLicensing(value); return *this;}
-    inline LaunchConfigurationTemplate& WithLicensing(Licensing&& value) { SetLicensing(std::move(value)); return *this;}
+    template<typename LicensingT = Licensing>
+    void SetLicensing(LicensingT&& value) { m_licensingHasBeenSet = true; m_licensing = std::forward<LicensingT>(value); }
+    template<typename LicensingT = Licensing>
+    LaunchConfigurationTemplate& WithLicensing(LicensingT&& value) { SetLicensing(std::forward<LicensingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Post-launch actions activated.</p>
      */
-    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+    inline bool GetPostLaunchEnabled() const { return m_postLaunchEnabled; }
     inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
     inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
     inline LaunchConfigurationTemplate& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
@@ -153,41 +145,36 @@ namespace Model
     /**
      * <p>Tags of the Launch Configuration Template.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline LaunchConfigurationTemplate& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline LaunchConfigurationTemplate& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline LaunchConfigurationTemplate& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline LaunchConfigurationTemplate& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    LaunchConfigurationTemplate& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    LaunchConfigurationTemplate& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Target instance type right-sizing method.</p>
      */
-    inline const TargetInstanceTypeRightSizingMethod& GetTargetInstanceTypeRightSizingMethod() const{ return m_targetInstanceTypeRightSizingMethod; }
+    inline TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethod() const { return m_targetInstanceTypeRightSizingMethod; }
     inline bool TargetInstanceTypeRightSizingMethodHasBeenSet() const { return m_targetInstanceTypeRightSizingMethodHasBeenSet; }
-    inline void SetTargetInstanceTypeRightSizingMethod(const TargetInstanceTypeRightSizingMethod& value) { m_targetInstanceTypeRightSizingMethodHasBeenSet = true; m_targetInstanceTypeRightSizingMethod = value; }
-    inline void SetTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod&& value) { m_targetInstanceTypeRightSizingMethodHasBeenSet = true; m_targetInstanceTypeRightSizingMethod = std::move(value); }
-    inline LaunchConfigurationTemplate& WithTargetInstanceTypeRightSizingMethod(const TargetInstanceTypeRightSizingMethod& value) { SetTargetInstanceTypeRightSizingMethod(value); return *this;}
-    inline LaunchConfigurationTemplate& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod&& value) { SetTargetInstanceTypeRightSizingMethod(std::move(value)); return *this;}
+    inline void SetTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) { m_targetInstanceTypeRightSizingMethodHasBeenSet = true; m_targetInstanceTypeRightSizingMethod = value; }
+    inline LaunchConfigurationTemplate& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod value) { SetTargetInstanceTypeRightSizingMethod(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_copyPrivateIp;
+    bool m_copyPrivateIp{false};
     bool m_copyPrivateIpHasBeenSet = false;
 
-    bool m_copyTags;
+    bool m_copyTags{false};
     bool m_copyTagsHasBeenSet = false;
 
     Aws::String m_exportBucketArn;
@@ -196,22 +183,22 @@ namespace Model
     Aws::String m_launchConfigurationTemplateID;
     bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
-    LaunchDisposition m_launchDisposition;
+    LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
     bool m_launchDispositionHasBeenSet = false;
 
-    bool m_launchIntoSourceInstance;
+    bool m_launchIntoSourceInstance{false};
     bool m_launchIntoSourceInstanceHasBeenSet = false;
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
 
-    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabled{false};
     bool m_postLaunchEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
+    TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
     bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   };
 

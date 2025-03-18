@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserHierarchyGroupRequest::DeleteUserHierarchyGroupRequest() : 
-    m_hierarchyGroupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserHierarchyGroupRequest::SerializePayload() const
 {
   return {};

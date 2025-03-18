@@ -18,17 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-IngestionJobFilter::IngestionJobFilter() : 
-    m_attribute(IngestionJobFilterAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operator(IngestionJobFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 IngestionJobFilter::IngestionJobFilter(JsonView jsonValue)
-  : IngestionJobFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ IngestionJobFilter& IngestionJobFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = IngestionJobFilterAttributeMapper::GetIngestionJobFilterAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = IngestionJobFilterOperatorMapper::GetIngestionJobFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ IngestionJobFilter& IngestionJobFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

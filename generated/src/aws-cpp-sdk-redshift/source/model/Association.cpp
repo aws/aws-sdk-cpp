@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Association::Association() : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false),
-    m_certificateAssociationsHasBeenSet(false)
-{
-}
-
 Association::Association(const XmlNode& xmlNode)
-  : Association()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ Association& Association::operator =(const XmlNode& xmlNode)
     if(!certificateAssociationsNode.IsNull())
     {
       XmlNode certificateAssociationsMember = certificateAssociationsNode.FirstChild("CertificateAssociation");
+      m_certificateAssociationsHasBeenSet = !certificateAssociationsMember.IsNull();
       while(!certificateAssociationsMember.IsNull())
       {
         m_certificateAssociations.push_back(certificateAssociationsMember);

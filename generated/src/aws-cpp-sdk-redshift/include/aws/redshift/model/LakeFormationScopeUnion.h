@@ -32,7 +32,7 @@ namespace Model
   class LakeFormationScopeUnion
   {
   public:
-    AWS_REDSHIFT_API LakeFormationScopeUnion();
+    AWS_REDSHIFT_API LakeFormationScopeUnion() = default;
     AWS_REDSHIFT_API LakeFormationScopeUnion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API LakeFormationScopeUnion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The Lake Formation scope.</p>
      */
-    inline const LakeFormationQuery& GetLakeFormationQuery() const{ return m_lakeFormationQuery; }
+    inline const LakeFormationQuery& GetLakeFormationQuery() const { return m_lakeFormationQuery; }
     inline bool LakeFormationQueryHasBeenSet() const { return m_lakeFormationQueryHasBeenSet; }
-    inline void SetLakeFormationQuery(const LakeFormationQuery& value) { m_lakeFormationQueryHasBeenSet = true; m_lakeFormationQuery = value; }
-    inline void SetLakeFormationQuery(LakeFormationQuery&& value) { m_lakeFormationQueryHasBeenSet = true; m_lakeFormationQuery = std::move(value); }
-    inline LakeFormationScopeUnion& WithLakeFormationQuery(const LakeFormationQuery& value) { SetLakeFormationQuery(value); return *this;}
-    inline LakeFormationScopeUnion& WithLakeFormationQuery(LakeFormationQuery&& value) { SetLakeFormationQuery(std::move(value)); return *this;}
+    template<typename LakeFormationQueryT = LakeFormationQuery>
+    void SetLakeFormationQuery(LakeFormationQueryT&& value) { m_lakeFormationQueryHasBeenSet = true; m_lakeFormationQuery = std::forward<LakeFormationQueryT>(value); }
+    template<typename LakeFormationQueryT = LakeFormationQuery>
+    LakeFormationScopeUnion& WithLakeFormationQuery(LakeFormationQueryT&& value) { SetLakeFormationQuery(std::forward<LakeFormationQueryT>(value)); return *this;}
     ///@}
   private:
 

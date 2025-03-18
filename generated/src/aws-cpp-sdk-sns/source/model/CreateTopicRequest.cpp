@@ -10,14 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreateTopicRequest::CreateTopicRequest() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataProtectionPolicyHasBeenSet(false)
-{
-}
-
 Aws::String CreateTopicRequest::SerializePayload() const
 {
   Aws::StringStream ss;

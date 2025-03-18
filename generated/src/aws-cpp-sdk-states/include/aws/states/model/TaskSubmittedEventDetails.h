@@ -33,7 +33,7 @@ namespace Model
   class TaskSubmittedEventDetails
   {
   public:
-    AWS_SFN_API TaskSubmittedEventDetails();
+    AWS_SFN_API TaskSubmittedEventDetails() = default;
     AWS_SFN_API TaskSubmittedEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API TaskSubmittedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The service name of the resource in a task state.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline TaskSubmittedEventDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline TaskSubmittedEventDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline TaskSubmittedEventDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    TaskSubmittedEventDetails& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action of the resource called by a task state.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline TaskSubmittedEventDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline TaskSubmittedEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline TaskSubmittedEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    TaskSubmittedEventDetails& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,24 @@ namespace Model
      * <p>The response from a resource when a task has started. Length constraints
      * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline TaskSubmittedEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline TaskSubmittedEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline TaskSubmittedEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    TaskSubmittedEventDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the output of an execution history event.</p>
      */
-    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
+    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const { return m_outputDetails; }
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-    inline void SetOutputDetails(const HistoryEventExecutionDataDetails& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-    inline void SetOutputDetails(HistoryEventExecutionDataDetails&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-    inline TaskSubmittedEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-    inline TaskSubmittedEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    void SetOutputDetails(OutputDetailsT&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::forward<OutputDetailsT>(value); }
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    TaskSubmittedEventDetails& WithOutputDetails(OutputDetailsT&& value) { SetOutputDetails(std::forward<OutputDetailsT>(value)); return *this;}
     ///@}
   private:
 

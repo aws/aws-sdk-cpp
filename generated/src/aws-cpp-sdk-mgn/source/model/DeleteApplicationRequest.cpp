@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationRequest::DeleteApplicationRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_applicationIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

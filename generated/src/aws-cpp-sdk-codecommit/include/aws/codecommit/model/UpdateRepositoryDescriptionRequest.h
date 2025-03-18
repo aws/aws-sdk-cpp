@@ -25,7 +25,7 @@ namespace Model
   class UpdateRepositoryDescriptionRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API UpdateRepositoryDescriptionRequest();
+    AWS_CODECOMMIT_API UpdateRepositoryDescriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    UpdateRepositoryDescriptionRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The new comment or description for the specified repository. Repository
      * descriptions are limited to 1,000 characters.</p>
      */
-    inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
+    inline const Aws::String& GetRepositoryDescription() const { return m_repositoryDescription; }
     inline bool RepositoryDescriptionHasBeenSet() const { return m_repositoryDescriptionHasBeenSet; }
-    inline void SetRepositoryDescription(const Aws::String& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
-    inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::move(value); }
-    inline void SetRepositoryDescription(const char* value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription.assign(value); }
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const Aws::String& value) { SetRepositoryDescription(value); return *this;}
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(std::move(value)); return *this;}
-    inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
+    template<typename RepositoryDescriptionT = Aws::String>
+    void SetRepositoryDescription(RepositoryDescriptionT&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::forward<RepositoryDescriptionT>(value); }
+    template<typename RepositoryDescriptionT = Aws::String>
+    UpdateRepositoryDescriptionRequest& WithRepositoryDescription(RepositoryDescriptionT&& value) { SetRepositoryDescription(std::forward<RepositoryDescriptionT>(value)); return *this;}
     ///@}
   private:
 

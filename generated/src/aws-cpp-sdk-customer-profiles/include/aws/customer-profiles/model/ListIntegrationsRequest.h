@@ -25,7 +25,7 @@ namespace Model
   class ListIntegrationsRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API ListIntegrationsRequest();
+    AWS_CUSTOMERPROFILES_API ListIntegrationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline ListIntegrationsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ListIntegrationsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ListIntegrationsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ListIntegrationsRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token from the previous ListIntegrations API call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListIntegrationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIntegrationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIntegrationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIntegrationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of objects returned per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListIntegrationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
      * <p>Boolean to indicate if hidden integration should be returned. Defaults to
      * <code>False</code>.</p>
      */
-    inline bool GetIncludeHidden() const{ return m_includeHidden; }
+    inline bool GetIncludeHidden() const { return m_includeHidden; }
     inline bool IncludeHiddenHasBeenSet() const { return m_includeHiddenHasBeenSet; }
     inline void SetIncludeHidden(bool value) { m_includeHiddenHasBeenSet = true; m_includeHidden = value; }
     inline ListIntegrationsRequest& WithIncludeHidden(bool value) { SetIncludeHidden(value); return *this;}
@@ -94,10 +90,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_includeHidden;
+    bool m_includeHidden{false};
     bool m_includeHiddenHasBeenSet = false;
   };
 

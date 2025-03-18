@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserSnapshotJobResult::AnonymousUserSnapshotJobResult() : 
-    m_fileGroupsHasBeenSet(false)
-{
-}
-
 AnonymousUserSnapshotJobResult::AnonymousUserSnapshotJobResult(JsonView jsonValue)
-  : AnonymousUserSnapshotJobResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AnonymousUserSnapshotJobResult& AnonymousUserSnapshotJobResult::operator =(JsonV
     }
     m_fileGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ActivitySucceededEventDetails
   {
   public:
-    AWS_SFN_API ActivitySucceededEventDetails();
+    AWS_SFN_API ActivitySucceededEventDetails() = default;
     AWS_SFN_API ActivitySucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API ActivitySucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The JSON data output by the activity task. Length constraints apply to the
      * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline ActivitySucceededEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline ActivitySucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline ActivitySucceededEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    ActivitySucceededEventDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the output of an execution history event.</p>
      */
-    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
+    inline const HistoryEventExecutionDataDetails& GetOutputDetails() const { return m_outputDetails; }
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-    inline void SetOutputDetails(const HistoryEventExecutionDataDetails& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-    inline void SetOutputDetails(HistoryEventExecutionDataDetails&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-    inline ActivitySucceededEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-    inline ActivitySucceededEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    void SetOutputDetails(OutputDetailsT&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::forward<OutputDetailsT>(value); }
+    template<typename OutputDetailsT = HistoryEventExecutionDataDetails>
+    ActivitySucceededEventDetails& WithOutputDetails(OutputDetailsT&& value) { SetOutputDetails(std::forward<OutputDetailsT>(value)); return *this;}
     ///@}
   private:
 

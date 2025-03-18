@@ -18,21 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANMulticastSession::LoRaWANMulticastSession() : 
-    m_dlDr(0),
-    m_dlDrHasBeenSet(false),
-    m_dlFreq(0),
-    m_dlFreqHasBeenSet(false),
-    m_sessionStartTimeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_pingSlotPeriod(0),
-    m_pingSlotPeriodHasBeenSet(false)
-{
-}
-
 LoRaWANMulticastSession::LoRaWANMulticastSession(JsonView jsonValue)
-  : LoRaWANMulticastSession()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ LoRaWANMulticastSession& LoRaWANMulticastSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DlDr"))
   {
     m_dlDr = jsonValue.GetInteger("DlDr");
-
     m_dlDrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlFreq"))
   {
     m_dlFreq = jsonValue.GetInteger("DlFreq");
-
     m_dlFreqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionStartTime"))
   {
     m_sessionStartTime = jsonValue.GetString("SessionStartTime");
-
     m_sessionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionTimeout"))
   {
     m_sessionTimeout = jsonValue.GetInteger("SessionTimeout");
-
     m_sessionTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PingSlotPeriod"))
   {
     m_pingSlotPeriod = jsonValue.GetInteger("PingSlotPeriod");
-
     m_pingSlotPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

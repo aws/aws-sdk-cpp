@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetReportGroupsResult::BatchGetReportGroupsResult()
-{
-}
-
 BatchGetReportGroupsResult::BatchGetReportGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::Am
     {
       m_reportGroups.push_back(reportGroupsJsonList[reportGroupsIndex].AsObject());
     }
+    m_reportGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportGroupsNotFound"))
   {
     Aws::Utils::Array<JsonView> reportGroupsNotFoundJsonList = jsonValue.GetArray("reportGroupsNotFound");
@@ -45,14 +41,15 @@ BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::Am
     {
       m_reportGroupsNotFound.push_back(reportGroupsNotFoundJsonList[reportGroupsNotFoundIndex].AsString());
     }
+    m_reportGroupsNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

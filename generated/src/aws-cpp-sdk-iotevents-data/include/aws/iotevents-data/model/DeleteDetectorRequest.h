@@ -31,7 +31,7 @@ namespace Model
   class DeleteDetectorRequest
   {
   public:
-    AWS_IOTEVENTSDATA_API DeleteDetectorRequest();
+    AWS_IOTEVENTSDATA_API DeleteDetectorRequest() = default;
     AWS_IOTEVENTSDATA_API DeleteDetectorRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API DeleteDetectorRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each
      * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline DeleteDetectorRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline DeleteDetectorRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline DeleteDetectorRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    DeleteDetectorRequest& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The name of the detector model that was used to create the detector
      * instance.</p>
      */
-    inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
+    inline const Aws::String& GetDetectorModelName() const { return m_detectorModelName; }
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
-    inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
-    inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
-    inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
-    inline DeleteDetectorRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
-    inline DeleteDetectorRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
-    inline DeleteDetectorRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
+    template<typename DetectorModelNameT = Aws::String>
+    void SetDetectorModelName(DetectorModelNameT&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::forward<DetectorModelNameT>(value); }
+    template<typename DetectorModelNameT = Aws::String>
+    DeleteDetectorRequest& WithDetectorModelName(DetectorModelNameT&& value) { SetDetectorModelName(std::forward<DetectorModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a>
      * used to identify the detector. </p>
      */
-    inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
+    inline const Aws::String& GetKeyValue() const { return m_keyValue; }
     inline bool KeyValueHasBeenSet() const { return m_keyValueHasBeenSet; }
-    inline void SetKeyValue(const Aws::String& value) { m_keyValueHasBeenSet = true; m_keyValue = value; }
-    inline void SetKeyValue(Aws::String&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::move(value); }
-    inline void SetKeyValue(const char* value) { m_keyValueHasBeenSet = true; m_keyValue.assign(value); }
-    inline DeleteDetectorRequest& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-    inline DeleteDetectorRequest& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-    inline DeleteDetectorRequest& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
+    template<typename KeyValueT = Aws::String>
+    void SetKeyValue(KeyValueT&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::forward<KeyValueT>(value); }
+    template<typename KeyValueT = Aws::String>
+    DeleteDetectorRequest& WithKeyValue(KeyValueT&& value) { SetKeyValue(std::forward<KeyValueT>(value)); return *this;}
     ///@}
   private:
 

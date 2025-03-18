@@ -18,14 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-SequenceNumberRange::SequenceNumberRange() : 
-    m_startingSequenceNumberHasBeenSet(false),
-    m_endingSequenceNumberHasBeenSet(false)
-{
-}
-
 SequenceNumberRange::SequenceNumberRange(JsonView jsonValue)
-  : SequenceNumberRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SequenceNumberRange& SequenceNumberRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartingSequenceNumber"))
   {
     m_startingSequenceNumber = jsonValue.GetString("StartingSequenceNumber");
-
     m_startingSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndingSequenceNumber"))
   {
     m_endingSequenceNumber = jsonValue.GetString("EndingSequenceNumber");
-
     m_endingSequenceNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

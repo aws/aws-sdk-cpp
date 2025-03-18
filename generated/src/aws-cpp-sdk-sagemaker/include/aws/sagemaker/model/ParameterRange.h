@@ -34,7 +34,7 @@ namespace Model
   class ParameterRange
   {
   public:
-    AWS_SAGEMAKER_API ParameterRange();
+    AWS_SAGEMAKER_API ParameterRange() = default;
     AWS_SAGEMAKER_API ParameterRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>A <code>IntegerParameterRangeSpecification</code> object that defines the
      * possible values for an integer hyperparameter.</p>
      */
-    inline const IntegerParameterRangeSpecification& GetIntegerParameterRangeSpecification() const{ return m_integerParameterRangeSpecification; }
+    inline const IntegerParameterRangeSpecification& GetIntegerParameterRangeSpecification() const { return m_integerParameterRangeSpecification; }
     inline bool IntegerParameterRangeSpecificationHasBeenSet() const { return m_integerParameterRangeSpecificationHasBeenSet; }
-    inline void SetIntegerParameterRangeSpecification(const IntegerParameterRangeSpecification& value) { m_integerParameterRangeSpecificationHasBeenSet = true; m_integerParameterRangeSpecification = value; }
-    inline void SetIntegerParameterRangeSpecification(IntegerParameterRangeSpecification&& value) { m_integerParameterRangeSpecificationHasBeenSet = true; m_integerParameterRangeSpecification = std::move(value); }
-    inline ParameterRange& WithIntegerParameterRangeSpecification(const IntegerParameterRangeSpecification& value) { SetIntegerParameterRangeSpecification(value); return *this;}
-    inline ParameterRange& WithIntegerParameterRangeSpecification(IntegerParameterRangeSpecification&& value) { SetIntegerParameterRangeSpecification(std::move(value)); return *this;}
+    template<typename IntegerParameterRangeSpecificationT = IntegerParameterRangeSpecification>
+    void SetIntegerParameterRangeSpecification(IntegerParameterRangeSpecificationT&& value) { m_integerParameterRangeSpecificationHasBeenSet = true; m_integerParameterRangeSpecification = std::forward<IntegerParameterRangeSpecificationT>(value); }
+    template<typename IntegerParameterRangeSpecificationT = IntegerParameterRangeSpecification>
+    ParameterRange& WithIntegerParameterRangeSpecification(IntegerParameterRangeSpecificationT&& value) { SetIntegerParameterRangeSpecification(std::forward<IntegerParameterRangeSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the
      * possible values for a continuous hyperparameter.</p>
      */
-    inline const ContinuousParameterRangeSpecification& GetContinuousParameterRangeSpecification() const{ return m_continuousParameterRangeSpecification; }
+    inline const ContinuousParameterRangeSpecification& GetContinuousParameterRangeSpecification() const { return m_continuousParameterRangeSpecification; }
     inline bool ContinuousParameterRangeSpecificationHasBeenSet() const { return m_continuousParameterRangeSpecificationHasBeenSet; }
-    inline void SetContinuousParameterRangeSpecification(const ContinuousParameterRangeSpecification& value) { m_continuousParameterRangeSpecificationHasBeenSet = true; m_continuousParameterRangeSpecification = value; }
-    inline void SetContinuousParameterRangeSpecification(ContinuousParameterRangeSpecification&& value) { m_continuousParameterRangeSpecificationHasBeenSet = true; m_continuousParameterRangeSpecification = std::move(value); }
-    inline ParameterRange& WithContinuousParameterRangeSpecification(const ContinuousParameterRangeSpecification& value) { SetContinuousParameterRangeSpecification(value); return *this;}
-    inline ParameterRange& WithContinuousParameterRangeSpecification(ContinuousParameterRangeSpecification&& value) { SetContinuousParameterRangeSpecification(std::move(value)); return *this;}
+    template<typename ContinuousParameterRangeSpecificationT = ContinuousParameterRangeSpecification>
+    void SetContinuousParameterRangeSpecification(ContinuousParameterRangeSpecificationT&& value) { m_continuousParameterRangeSpecificationHasBeenSet = true; m_continuousParameterRangeSpecification = std::forward<ContinuousParameterRangeSpecificationT>(value); }
+    template<typename ContinuousParameterRangeSpecificationT = ContinuousParameterRangeSpecification>
+    ParameterRange& WithContinuousParameterRangeSpecification(ContinuousParameterRangeSpecificationT&& value) { SetContinuousParameterRangeSpecification(std::forward<ContinuousParameterRangeSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the
      * possible values for a categorical hyperparameter.</p>
      */
-    inline const CategoricalParameterRangeSpecification& GetCategoricalParameterRangeSpecification() const{ return m_categoricalParameterRangeSpecification; }
+    inline const CategoricalParameterRangeSpecification& GetCategoricalParameterRangeSpecification() const { return m_categoricalParameterRangeSpecification; }
     inline bool CategoricalParameterRangeSpecificationHasBeenSet() const { return m_categoricalParameterRangeSpecificationHasBeenSet; }
-    inline void SetCategoricalParameterRangeSpecification(const CategoricalParameterRangeSpecification& value) { m_categoricalParameterRangeSpecificationHasBeenSet = true; m_categoricalParameterRangeSpecification = value; }
-    inline void SetCategoricalParameterRangeSpecification(CategoricalParameterRangeSpecification&& value) { m_categoricalParameterRangeSpecificationHasBeenSet = true; m_categoricalParameterRangeSpecification = std::move(value); }
-    inline ParameterRange& WithCategoricalParameterRangeSpecification(const CategoricalParameterRangeSpecification& value) { SetCategoricalParameterRangeSpecification(value); return *this;}
-    inline ParameterRange& WithCategoricalParameterRangeSpecification(CategoricalParameterRangeSpecification&& value) { SetCategoricalParameterRangeSpecification(std::move(value)); return *this;}
+    template<typename CategoricalParameterRangeSpecificationT = CategoricalParameterRangeSpecification>
+    void SetCategoricalParameterRangeSpecification(CategoricalParameterRangeSpecificationT&& value) { m_categoricalParameterRangeSpecificationHasBeenSet = true; m_categoricalParameterRangeSpecification = std::forward<CategoricalParameterRangeSpecificationT>(value); }
+    template<typename CategoricalParameterRangeSpecificationT = CategoricalParameterRangeSpecification>
+    ParameterRange& WithCategoricalParameterRangeSpecification(CategoricalParameterRangeSpecificationT&& value) { SetCategoricalParameterRangeSpecification(std::forward<CategoricalParameterRangeSpecificationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWatchlistRequest::UpdateWatchlistRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWatchlistRequest::SerializePayload() const
 {
   JsonValue payload;

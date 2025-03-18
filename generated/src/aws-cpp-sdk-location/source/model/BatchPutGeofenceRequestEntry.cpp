@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry() : 
-    m_geofenceIdHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
-{
-}
-
 BatchPutGeofenceRequestEntry::BatchPutGeofenceRequestEntry(JsonView jsonValue)
-  : BatchPutGeofenceRequestEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchPutGeofenceRequestEntry& BatchPutGeofenceRequestEntry::operator =(JsonView 
   if(jsonValue.ValueExists("GeofenceId"))
   {
     m_geofenceId = jsonValue.GetString("GeofenceId");
-
     m_geofenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeofenceProperties"))
   {
     Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
@@ -56,7 +44,6 @@ BatchPutGeofenceRequestEntry& BatchPutGeofenceRequestEntry::operator =(JsonView 
     }
     m_geofencePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

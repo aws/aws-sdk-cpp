@@ -18,14 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-VisualReferenceOutput::VisualReferenceOutput() : 
-    m_baseScreenshotsHasBeenSet(false),
-    m_baseCanaryRunIdHasBeenSet(false)
-{
-}
-
 VisualReferenceOutput::VisualReferenceOutput(JsonView jsonValue)
-  : VisualReferenceOutput()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ VisualReferenceOutput& VisualReferenceOutput::operator =(JsonView jsonValue)
     }
     m_baseScreenshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseCanaryRunId"))
   {
     m_baseCanaryRunId = jsonValue.GetString("BaseCanaryRunId");
-
     m_baseCanaryRunIdHasBeenSet = true;
   }
-
   return *this;
 }
 

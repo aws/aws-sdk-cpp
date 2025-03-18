@@ -32,7 +32,7 @@ namespace Model
   class Listener
   {
   public:
-    AWS_ELASTICBEANSTALK_API Listener();
+    AWS_ELASTICBEANSTALK_API Listener() = default;
     AWS_ELASTICBEANSTALK_API Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The protocol that is used by the Listener.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline Listener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    Listener& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port that is used by the Listener.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Listener& WithPort(int value) { SetPort(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

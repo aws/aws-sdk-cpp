@@ -35,7 +35,7 @@ namespace Model
   class S3DestinationConfiguration
   {
   public:
-    AWS_IVSREALTIME_API S3DestinationConfiguration();
+    AWS_IVSREALTIME_API S3DestinationConfiguration() = default;
     AWS_IVSREALTIME_API S3DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API S3DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>ARN of the <a>StorageConfiguration</a> where recorded videos will be
      * stored.</p>
      */
-    inline const Aws::String& GetStorageConfigurationArn() const{ return m_storageConfigurationArn; }
+    inline const Aws::String& GetStorageConfigurationArn() const { return m_storageConfigurationArn; }
     inline bool StorageConfigurationArnHasBeenSet() const { return m_storageConfigurationArnHasBeenSet; }
-    inline void SetStorageConfigurationArn(const Aws::String& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = value; }
-    inline void SetStorageConfigurationArn(Aws::String&& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = std::move(value); }
-    inline void SetStorageConfigurationArn(const char* value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn.assign(value); }
-    inline S3DestinationConfiguration& WithStorageConfigurationArn(const Aws::String& value) { SetStorageConfigurationArn(value); return *this;}
-    inline S3DestinationConfiguration& WithStorageConfigurationArn(Aws::String&& value) { SetStorageConfigurationArn(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& WithStorageConfigurationArn(const char* value) { SetStorageConfigurationArn(value); return *this;}
+    template<typename StorageConfigurationArnT = Aws::String>
+    void SetStorageConfigurationArn(StorageConfigurationArnT&& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = std::forward<StorageConfigurationArnT>(value); }
+    template<typename StorageConfigurationArnT = Aws::String>
+    S3DestinationConfiguration& WithStorageConfigurationArn(StorageConfigurationArnT&& value) { SetStorageConfigurationArn(std::forward<StorageConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p>ARNs of the <a>EncoderConfiguration</a> resource. The encoder configuration
      * and stage resources must be in the same AWS account and region. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEncoderConfigurationArns() const{ return m_encoderConfigurationArns; }
+    inline const Aws::Vector<Aws::String>& GetEncoderConfigurationArns() const { return m_encoderConfigurationArns; }
     inline bool EncoderConfigurationArnsHasBeenSet() const { return m_encoderConfigurationArnsHasBeenSet; }
-    inline void SetEncoderConfigurationArns(const Aws::Vector<Aws::String>& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns = value; }
-    inline void SetEncoderConfigurationArns(Aws::Vector<Aws::String>&& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns = std::move(value); }
-    inline S3DestinationConfiguration& WithEncoderConfigurationArns(const Aws::Vector<Aws::String>& value) { SetEncoderConfigurationArns(value); return *this;}
-    inline S3DestinationConfiguration& WithEncoderConfigurationArns(Aws::Vector<Aws::String>&& value) { SetEncoderConfigurationArns(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& AddEncoderConfigurationArns(const Aws::String& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns.push_back(value); return *this; }
-    inline S3DestinationConfiguration& AddEncoderConfigurationArns(Aws::String&& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns.push_back(std::move(value)); return *this; }
-    inline S3DestinationConfiguration& AddEncoderConfigurationArns(const char* value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns.push_back(value); return *this; }
+    template<typename EncoderConfigurationArnsT = Aws::Vector<Aws::String>>
+    void SetEncoderConfigurationArns(EncoderConfigurationArnsT&& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns = std::forward<EncoderConfigurationArnsT>(value); }
+    template<typename EncoderConfigurationArnsT = Aws::Vector<Aws::String>>
+    S3DestinationConfiguration& WithEncoderConfigurationArns(EncoderConfigurationArnsT&& value) { SetEncoderConfigurationArns(std::forward<EncoderConfigurationArnsT>(value)); return *this;}
+    template<typename EncoderConfigurationArnsT = Aws::String>
+    S3DestinationConfiguration& AddEncoderConfigurationArns(EncoderConfigurationArnsT&& value) { m_encoderConfigurationArnsHasBeenSet = true; m_encoderConfigurationArns.emplace_back(std::forward<EncoderConfigurationArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,12 +75,12 @@ namespace Model
      * is an optional customer specification, currently used only to specify the
      * recording format for storing a recording in Amazon S3.</p>
      */
-    inline const RecordingConfiguration& GetRecordingConfiguration() const{ return m_recordingConfiguration; }
+    inline const RecordingConfiguration& GetRecordingConfiguration() const { return m_recordingConfiguration; }
     inline bool RecordingConfigurationHasBeenSet() const { return m_recordingConfigurationHasBeenSet; }
-    inline void SetRecordingConfiguration(const RecordingConfiguration& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = value; }
-    inline void SetRecordingConfiguration(RecordingConfiguration&& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = std::move(value); }
-    inline S3DestinationConfiguration& WithRecordingConfiguration(const RecordingConfiguration& value) { SetRecordingConfiguration(value); return *this;}
-    inline S3DestinationConfiguration& WithRecordingConfiguration(RecordingConfiguration&& value) { SetRecordingConfiguration(std::move(value)); return *this;}
+    template<typename RecordingConfigurationT = RecordingConfiguration>
+    void SetRecordingConfiguration(RecordingConfigurationT&& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = std::forward<RecordingConfigurationT>(value); }
+    template<typename RecordingConfigurationT = RecordingConfiguration>
+    S3DestinationConfiguration& WithRecordingConfiguration(RecordingConfigurationT&& value) { SetRecordingConfiguration(std::forward<RecordingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +89,14 @@ namespace Model
      * for a <a>Composition</a> and modify the interval at which thumbnails are
      * generated for the live session.</p>
      */
-    inline const Aws::Vector<CompositionThumbnailConfiguration>& GetThumbnailConfigurations() const{ return m_thumbnailConfigurations; }
+    inline const Aws::Vector<CompositionThumbnailConfiguration>& GetThumbnailConfigurations() const { return m_thumbnailConfigurations; }
     inline bool ThumbnailConfigurationsHasBeenSet() const { return m_thumbnailConfigurationsHasBeenSet; }
-    inline void SetThumbnailConfigurations(const Aws::Vector<CompositionThumbnailConfiguration>& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations = value; }
-    inline void SetThumbnailConfigurations(Aws::Vector<CompositionThumbnailConfiguration>&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations = std::move(value); }
-    inline S3DestinationConfiguration& WithThumbnailConfigurations(const Aws::Vector<CompositionThumbnailConfiguration>& value) { SetThumbnailConfigurations(value); return *this;}
-    inline S3DestinationConfiguration& WithThumbnailConfigurations(Aws::Vector<CompositionThumbnailConfiguration>&& value) { SetThumbnailConfigurations(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& AddThumbnailConfigurations(const CompositionThumbnailConfiguration& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations.push_back(value); return *this; }
-    inline S3DestinationConfiguration& AddThumbnailConfigurations(CompositionThumbnailConfiguration&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ThumbnailConfigurationsT = Aws::Vector<CompositionThumbnailConfiguration>>
+    void SetThumbnailConfigurations(ThumbnailConfigurationsT&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations = std::forward<ThumbnailConfigurationsT>(value); }
+    template<typename ThumbnailConfigurationsT = Aws::Vector<CompositionThumbnailConfiguration>>
+    S3DestinationConfiguration& WithThumbnailConfigurations(ThumbnailConfigurationsT&& value) { SetThumbnailConfigurations(std::forward<ThumbnailConfigurationsT>(value)); return *this;}
+    template<typename ThumbnailConfigurationsT = CompositionThumbnailConfiguration>
+    S3DestinationConfiguration& AddThumbnailConfigurations(ThumbnailConfigurationsT&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations.emplace_back(std::forward<ThumbnailConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

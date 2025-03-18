@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomDataIdentifierResult::CreateCustomDataIdentifierResult()
-{
-}
-
 CreateCustomDataIdentifierResult::CreateCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateCustomDataIdentifierResult& CreateCustomDataIdentifierResult::operator =(c
   if(jsonValue.ValueExists("customDataIdentifierId"))
   {
     m_customDataIdentifierId = jsonValue.GetString("customDataIdentifierId");
-
+    m_customDataIdentifierIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

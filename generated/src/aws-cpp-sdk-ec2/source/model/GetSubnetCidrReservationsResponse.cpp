@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSubnetCidrReservationsResponse::GetSubnetCidrReservationsResponse()
-{
-}
-
 GetSubnetCidrReservationsResponse::GetSubnetCidrReservationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ GetSubnetCidrReservationsResponse& GetSubnetCidrReservationsResponse::operator =
     if(!subnetIpv4CidrReservationsNode.IsNull())
     {
       XmlNode subnetIpv4CidrReservationsMember = subnetIpv4CidrReservationsNode.FirstChild("item");
+      m_subnetIpv4CidrReservationsHasBeenSet = !subnetIpv4CidrReservationsMember.IsNull();
       while(!subnetIpv4CidrReservationsMember.IsNull())
       {
         m_subnetIpv4CidrReservations.push_back(subnetIpv4CidrReservationsMember);
         subnetIpv4CidrReservationsMember = subnetIpv4CidrReservationsMember.NextNode("item");
       }
 
+      m_subnetIpv4CidrReservationsHasBeenSet = true;
     }
     XmlNode subnetIpv6CidrReservationsNode = resultNode.FirstChild("subnetIpv6CidrReservationSet");
     if(!subnetIpv6CidrReservationsNode.IsNull())
     {
       XmlNode subnetIpv6CidrReservationsMember = subnetIpv6CidrReservationsNode.FirstChild("item");
+      m_subnetIpv6CidrReservationsHasBeenSet = !subnetIpv6CidrReservationsMember.IsNull();
       while(!subnetIpv6CidrReservationsMember.IsNull())
       {
         m_subnetIpv6CidrReservations.push_back(subnetIpv6CidrReservationsMember);
         subnetIpv6CidrReservationsMember = subnetIpv6CidrReservationsMember.NextNode("item");
       }
 
+      m_subnetIpv6CidrReservationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -72,6 +73,7 @@ GetSubnetCidrReservationsResponse& GetSubnetCidrReservationsResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetSubnetCidrReservationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

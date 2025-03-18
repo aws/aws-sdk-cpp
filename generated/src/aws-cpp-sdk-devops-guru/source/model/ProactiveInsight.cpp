@@ -18,23 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ProactiveInsight::ProactiveInsight() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_severity(InsightSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_ssmOpsItemIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ProactiveInsight::ProactiveInsight(JsonView jsonValue)
-  : ProactiveInsight()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ProactiveInsight& ProactiveInsight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = InsightSeverityMapper::GetInsightSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InsightStatusMapper::GetInsightStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightTimeRange"))
   {
     m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
-
     m_insightTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionTimeRange"))
   {
     m_predictionTimeRange = jsonValue.GetObject("PredictionTimeRange");
-
     m_predictionTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SsmOpsItemId"))
   {
     m_ssmOpsItemId = jsonValue.GetString("SsmOpsItemId");
-
     m_ssmOpsItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

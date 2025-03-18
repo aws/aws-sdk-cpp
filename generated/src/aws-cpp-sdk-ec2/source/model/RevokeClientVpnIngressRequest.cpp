@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RevokeClientVpnIngressRequest::RevokeClientVpnIngressRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_targetNetworkCidrHasBeenSet(false),
-    m_accessGroupIdHasBeenSet(false),
-    m_revokeAllGroups(false),
-    m_revokeAllGroupsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RevokeClientVpnIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

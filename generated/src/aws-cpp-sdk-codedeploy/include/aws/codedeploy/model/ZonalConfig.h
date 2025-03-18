@@ -42,7 +42,7 @@ namespace Model
   class ZonalConfig
   {
   public:
-    AWS_CODEDEPLOY_API ZonalConfig();
+    AWS_CODEDEPLOY_API ZonalConfig() = default;
     AWS_CODEDEPLOY_API ZonalConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API ZonalConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,7 +61,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
      * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline long long GetFirstZoneMonitorDurationInSeconds() const{ return m_firstZoneMonitorDurationInSeconds; }
+    inline long long GetFirstZoneMonitorDurationInSeconds() const { return m_firstZoneMonitorDurationInSeconds; }
     inline bool FirstZoneMonitorDurationInSecondsHasBeenSet() const { return m_firstZoneMonitorDurationInSecondsHasBeenSet; }
     inline void SetFirstZoneMonitorDurationInSeconds(long long value) { m_firstZoneMonitorDurationInSecondsHasBeenSet = true; m_firstZoneMonitorDurationInSeconds = value; }
     inline ZonalConfig& WithFirstZoneMonitorDurationInSeconds(long long value) { SetFirstZoneMonitorDurationInSeconds(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
      * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline long long GetMonitorDurationInSeconds() const{ return m_monitorDurationInSeconds; }
+    inline long long GetMonitorDurationInSeconds() const { return m_monitorDurationInSeconds; }
     inline bool MonitorDurationInSecondsHasBeenSet() const { return m_monitorDurationInSecondsHasBeenSet; }
     inline void SetMonitorDurationInSeconds(long long value) { m_monitorDurationInSecondsHasBeenSet = true; m_monitorDurationInSeconds = value; }
     inline ZonalConfig& WithMonitorDurationInSeconds(long long value) { SetMonitorDurationInSeconds(value); return *this;}
@@ -100,19 +100,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
      * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline const MinimumHealthyHostsPerZone& GetMinimumHealthyHostsPerZone() const{ return m_minimumHealthyHostsPerZone; }
+    inline const MinimumHealthyHostsPerZone& GetMinimumHealthyHostsPerZone() const { return m_minimumHealthyHostsPerZone; }
     inline bool MinimumHealthyHostsPerZoneHasBeenSet() const { return m_minimumHealthyHostsPerZoneHasBeenSet; }
-    inline void SetMinimumHealthyHostsPerZone(const MinimumHealthyHostsPerZone& value) { m_minimumHealthyHostsPerZoneHasBeenSet = true; m_minimumHealthyHostsPerZone = value; }
-    inline void SetMinimumHealthyHostsPerZone(MinimumHealthyHostsPerZone&& value) { m_minimumHealthyHostsPerZoneHasBeenSet = true; m_minimumHealthyHostsPerZone = std::move(value); }
-    inline ZonalConfig& WithMinimumHealthyHostsPerZone(const MinimumHealthyHostsPerZone& value) { SetMinimumHealthyHostsPerZone(value); return *this;}
-    inline ZonalConfig& WithMinimumHealthyHostsPerZone(MinimumHealthyHostsPerZone&& value) { SetMinimumHealthyHostsPerZone(std::move(value)); return *this;}
+    template<typename MinimumHealthyHostsPerZoneT = MinimumHealthyHostsPerZone>
+    void SetMinimumHealthyHostsPerZone(MinimumHealthyHostsPerZoneT&& value) { m_minimumHealthyHostsPerZoneHasBeenSet = true; m_minimumHealthyHostsPerZone = std::forward<MinimumHealthyHostsPerZoneT>(value); }
+    template<typename MinimumHealthyHostsPerZoneT = MinimumHealthyHostsPerZone>
+    ZonalConfig& WithMinimumHealthyHostsPerZone(MinimumHealthyHostsPerZoneT&& value) { SetMinimumHealthyHostsPerZone(std::forward<MinimumHealthyHostsPerZoneT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_firstZoneMonitorDurationInSeconds;
+    long long m_firstZoneMonitorDurationInSeconds{0};
     bool m_firstZoneMonitorDurationInSecondsHasBeenSet = false;
 
-    long long m_monitorDurationInSeconds;
+    long long m_monitorDurationInSeconds{0};
     bool m_monitorDurationInSecondsHasBeenSet = false;
 
     MinimumHealthyHostsPerZone m_minimumHealthyHostsPerZone;

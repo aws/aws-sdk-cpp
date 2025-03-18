@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup() : 
-    m_dimensionsHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 PerformanceInsightsMetricDimensionGroup::PerformanceInsightsMetricDimensionGroup(const XmlNode& xmlNode)
-  : PerformanceInsightsMetricDimensionGroup()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ PerformanceInsightsMetricDimensionGroup& PerformanceInsightsMetricDimensionGroup
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember.GetText());

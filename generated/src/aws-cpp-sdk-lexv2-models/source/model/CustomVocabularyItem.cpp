@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-CustomVocabularyItem::CustomVocabularyItem() : 
-    m_itemIdHasBeenSet(false),
-    m_phraseHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_displayAsHasBeenSet(false)
-{
-}
-
 CustomVocabularyItem::CustomVocabularyItem(JsonView jsonValue)
-  : CustomVocabularyItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CustomVocabularyItem& CustomVocabularyItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemId"))
   {
     m_itemId = jsonValue.GetString("itemId");
-
     m_itemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phrase"))
   {
     m_phrase = jsonValue.GetString("phrase");
-
     m_phraseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weight"))
   {
     m_weight = jsonValue.GetInteger("weight");
-
     m_weightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayAs"))
   {
     m_displayAs = jsonValue.GetString("displayAs");
-
     m_displayAsHasBeenSet = true;
   }
-
   return *this;
 }
 

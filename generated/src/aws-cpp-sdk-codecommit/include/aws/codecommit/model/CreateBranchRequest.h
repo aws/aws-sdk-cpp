@@ -25,7 +25,7 @@ namespace Model
   class CreateBranchRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API CreateBranchRequest();
+    AWS_CODECOMMIT_API CreateBranchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The name of the repository in which you want to create the new branch.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline CreateBranchRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline CreateBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline CreateBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    CreateBranchRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the new branch to create.</p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline CreateBranchRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline CreateBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline CreateBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    CreateBranchRequest& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the commit to point the new branch to.</p>
      */
-    inline const Aws::String& GetCommitId() const{ return m_commitId; }
+    inline const Aws::String& GetCommitId() const { return m_commitId; }
     inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
-    inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
-    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
-    inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
-    inline CreateBranchRequest& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
-    inline CreateBranchRequest& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
-    inline CreateBranchRequest& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+    template<typename CommitIdT = Aws::String>
+    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
+    template<typename CommitIdT = Aws::String>
+    CreateBranchRequest& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
     ///@}
   private:
 

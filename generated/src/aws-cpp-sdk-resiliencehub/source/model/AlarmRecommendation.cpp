@@ -18,23 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AlarmRecommendation::AlarmRecommendation() : 
-    m_appComponentNamesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_type(AlarmType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AlarmRecommendation::AlarmRecommendation(JsonView jsonValue)
-  : AlarmRecommendation()
 {
   *this = jsonValue;
 }
@@ -50,14 +34,11 @@ AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
     }
     m_appComponentNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -67,49 +48,36 @@ AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prerequisite"))
   {
     m_prerequisite = jsonValue.GetString("prerequisite");
-
     m_prerequisiteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AlarmTypeMapper::GetAlarmTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

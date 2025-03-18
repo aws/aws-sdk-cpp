@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListKxClustersRequest::ListKxClustersRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListKxClustersRequest::SerializePayload() const
 {
   return {};

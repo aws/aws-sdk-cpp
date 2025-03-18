@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-DomainInformation::DomainInformation() : 
-    m_ownerIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 DomainInformation::DomainInformation(JsonView jsonValue)
-  : DomainInformation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DomainInformation& DomainInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

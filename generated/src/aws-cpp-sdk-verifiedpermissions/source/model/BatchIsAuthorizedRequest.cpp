@@ -12,13 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchIsAuthorizedRequest::BatchIsAuthorizedRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_entitiesHasBeenSet(false),
-    m_requestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchIsAuthorizedRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_pipelineExecutionStartCondition(PipelineExecutionStartCondition::NOT_SET),
-    m_pipelineExecutionStartConditionHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("scheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timezone"))
   {
     m_timezone = jsonValue.GetString("timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineExecutionStartCondition"))
   {
     m_pipelineExecutionStartCondition = PipelineExecutionStartConditionMapper::GetPipelineExecutionStartConditionForName(jsonValue.GetString("pipelineExecutionStartCondition"));
-
     m_pipelineExecutionStartConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

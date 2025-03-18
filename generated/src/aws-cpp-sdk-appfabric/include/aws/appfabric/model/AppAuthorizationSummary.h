@@ -34,7 +34,7 @@ namespace Model
   class AppAuthorizationSummary
   {
   public:
-    AWS_APPFABRIC_API AppAuthorizationSummary();
+    AWS_APPFABRIC_API AppAuthorizationSummary() = default;
     AWS_APPFABRIC_API AppAuthorizationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API AppAuthorizationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the app authorization.</p>
      */
-    inline const Aws::String& GetAppAuthorizationArn() const{ return m_appAuthorizationArn; }
+    inline const Aws::String& GetAppAuthorizationArn() const { return m_appAuthorizationArn; }
     inline bool AppAuthorizationArnHasBeenSet() const { return m_appAuthorizationArnHasBeenSet; }
-    inline void SetAppAuthorizationArn(const Aws::String& value) { m_appAuthorizationArnHasBeenSet = true; m_appAuthorizationArn = value; }
-    inline void SetAppAuthorizationArn(Aws::String&& value) { m_appAuthorizationArnHasBeenSet = true; m_appAuthorizationArn = std::move(value); }
-    inline void SetAppAuthorizationArn(const char* value) { m_appAuthorizationArnHasBeenSet = true; m_appAuthorizationArn.assign(value); }
-    inline AppAuthorizationSummary& WithAppAuthorizationArn(const Aws::String& value) { SetAppAuthorizationArn(value); return *this;}
-    inline AppAuthorizationSummary& WithAppAuthorizationArn(Aws::String&& value) { SetAppAuthorizationArn(std::move(value)); return *this;}
-    inline AppAuthorizationSummary& WithAppAuthorizationArn(const char* value) { SetAppAuthorizationArn(value); return *this;}
+    template<typename AppAuthorizationArnT = Aws::String>
+    void SetAppAuthorizationArn(AppAuthorizationArnT&& value) { m_appAuthorizationArnHasBeenSet = true; m_appAuthorizationArn = std::forward<AppAuthorizationArnT>(value); }
+    template<typename AppAuthorizationArnT = Aws::String>
+    AppAuthorizationSummary& WithAppAuthorizationArn(AppAuthorizationArnT&& value) { SetAppAuthorizationArn(std::forward<AppAuthorizationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the app bundle for the app
      * authorization.</p>
      */
-    inline const Aws::String& GetAppBundleArn() const{ return m_appBundleArn; }
+    inline const Aws::String& GetAppBundleArn() const { return m_appBundleArn; }
     inline bool AppBundleArnHasBeenSet() const { return m_appBundleArnHasBeenSet; }
-    inline void SetAppBundleArn(const Aws::String& value) { m_appBundleArnHasBeenSet = true; m_appBundleArn = value; }
-    inline void SetAppBundleArn(Aws::String&& value) { m_appBundleArnHasBeenSet = true; m_appBundleArn = std::move(value); }
-    inline void SetAppBundleArn(const char* value) { m_appBundleArnHasBeenSet = true; m_appBundleArn.assign(value); }
-    inline AppAuthorizationSummary& WithAppBundleArn(const Aws::String& value) { SetAppBundleArn(value); return *this;}
-    inline AppAuthorizationSummary& WithAppBundleArn(Aws::String&& value) { SetAppBundleArn(std::move(value)); return *this;}
-    inline AppAuthorizationSummary& WithAppBundleArn(const char* value) { SetAppBundleArn(value); return *this;}
+    template<typename AppBundleArnT = Aws::String>
+    void SetAppBundleArn(AppBundleArnT&& value) { m_appBundleArnHasBeenSet = true; m_appBundleArn = std::forward<AppBundleArnT>(value); }
+    template<typename AppBundleArnT = Aws::String>
+    AppAuthorizationSummary& WithAppBundleArn(AppBundleArnT&& value) { SetAppBundleArn(std::forward<AppBundleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application.</p>
      */
-    inline const Aws::String& GetApp() const{ return m_app; }
+    inline const Aws::String& GetApp() const { return m_app; }
     inline bool AppHasBeenSet() const { return m_appHasBeenSet; }
-    inline void SetApp(const Aws::String& value) { m_appHasBeenSet = true; m_app = value; }
-    inline void SetApp(Aws::String&& value) { m_appHasBeenSet = true; m_app = std::move(value); }
-    inline void SetApp(const char* value) { m_appHasBeenSet = true; m_app.assign(value); }
-    inline AppAuthorizationSummary& WithApp(const Aws::String& value) { SetApp(value); return *this;}
-    inline AppAuthorizationSummary& WithApp(Aws::String&& value) { SetApp(std::move(value)); return *this;}
-    inline AppAuthorizationSummary& WithApp(const char* value) { SetApp(value); return *this;}
+    template<typename AppT = Aws::String>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = Aws::String>
+    AppAuthorizationSummary& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <p>Contains information about an application tenant, such as the application
      * display name and identifier.</p>
      */
-    inline const Tenant& GetTenant() const{ return m_tenant; }
+    inline const Tenant& GetTenant() const { return m_tenant; }
     inline bool TenantHasBeenSet() const { return m_tenantHasBeenSet; }
-    inline void SetTenant(const Tenant& value) { m_tenantHasBeenSet = true; m_tenant = value; }
-    inline void SetTenant(Tenant&& value) { m_tenantHasBeenSet = true; m_tenant = std::move(value); }
-    inline AppAuthorizationSummary& WithTenant(const Tenant& value) { SetTenant(value); return *this;}
-    inline AppAuthorizationSummary& WithTenant(Tenant&& value) { SetTenant(std::move(value)); return *this;}
+    template<typename TenantT = Tenant>
+    void SetTenant(TenantT&& value) { m_tenantHasBeenSet = true; m_tenant = std::forward<TenantT>(value); }
+    template<typename TenantT = Tenant>
+    AppAuthorizationSummary& WithTenant(TenantT&& value) { SetTenant(std::forward<TenantT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,24 +105,22 @@ namespace Model
      * token. If the app authorization is in this state, you should try to reconnect
      * the app authorization.</p> </li> </ul>
      */
-    inline const AppAuthorizationStatus& GetStatus() const{ return m_status; }
+    inline AppAuthorizationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AppAuthorizationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AppAuthorizationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AppAuthorizationSummary& WithStatus(const AppAuthorizationStatus& value) { SetStatus(value); return *this;}
-    inline AppAuthorizationSummary& WithStatus(AppAuthorizationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AppAuthorizationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AppAuthorizationSummary& WithStatus(AppAuthorizationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp for when the app authorization was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline AppAuthorizationSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline AppAuthorizationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    AppAuthorizationSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -144,10 +136,10 @@ namespace Model
     Tenant m_tenant;
     bool m_tenantHasBeenSet = false;
 
-    AppAuthorizationStatus m_status;
+    AppAuthorizationStatus m_status{AppAuthorizationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::InternetMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInternetEventRequest::GetInternetEventRequest() : 
-    m_eventIdHasBeenSet(false)
-{
-}
-
 Aws::String GetInternetEventRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-CacheReportFilter::CacheReportFilter() : 
-    m_name(CacheReportFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 CacheReportFilter::CacheReportFilter(JsonView jsonValue)
-  : CacheReportFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CacheReportFilter& CacheReportFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = CacheReportFilterNameMapper::GetCacheReportFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ CacheReportFilter& CacheReportFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

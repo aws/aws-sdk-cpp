@@ -32,7 +32,7 @@ namespace Model
   class SaudiArabiaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API SaudiArabiaAdditionalInfo();
+    AWS_TAXSETTINGS_API SaudiArabiaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API SaudiArabiaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API SaudiArabiaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> The tax registration number type. </p>
      */
-    inline const SaudiArabiaTaxRegistrationNumberType& GetTaxRegistrationNumberType() const{ return m_taxRegistrationNumberType; }
+    inline SaudiArabiaTaxRegistrationNumberType GetTaxRegistrationNumberType() const { return m_taxRegistrationNumberType; }
     inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
-    inline void SetTaxRegistrationNumberType(const SaudiArabiaTaxRegistrationNumberType& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
-    inline void SetTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType&& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = std::move(value); }
-    inline SaudiArabiaAdditionalInfo& WithTaxRegistrationNumberType(const SaudiArabiaTaxRegistrationNumberType& value) { SetTaxRegistrationNumberType(value); return *this;}
-    inline SaudiArabiaAdditionalInfo& WithTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType&& value) { SetTaxRegistrationNumberType(std::move(value)); return *this;}
+    inline void SetTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
+    inline SaudiArabiaAdditionalInfo& WithTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType value) { SetTaxRegistrationNumberType(value); return *this;}
     ///@}
   private:
 
-    SaudiArabiaTaxRegistrationNumberType m_taxRegistrationNumberType;
+    SaudiArabiaTaxRegistrationNumberType m_taxRegistrationNumberType{SaudiArabiaTaxRegistrationNumberType::NOT_SET};
     bool m_taxRegistrationNumberTypeHasBeenSet = false;
   };
 

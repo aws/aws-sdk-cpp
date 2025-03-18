@@ -18,31 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-DeploymentSummary::DeploymentSummary() : 
-    m_deploymentNumber(0),
-    m_deploymentNumberHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_configurationVersionHasBeenSet(false),
-    m_deploymentDurationInMinutes(0),
-    m_deploymentDurationInMinutesHasBeenSet(false),
-    m_growthType(GrowthType::NOT_SET),
-    m_growthTypeHasBeenSet(false),
-    m_growthFactor(0.0),
-    m_growthFactorHasBeenSet(false),
-    m_finalBakeTimeInMinutes(0),
-    m_finalBakeTimeInMinutesHasBeenSet(false),
-    m_state(DeploymentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_percentageComplete(0.0),
-    m_percentageCompleteHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
-{
-}
-
 DeploymentSummary::DeploymentSummary(JsonView jsonValue)
-  : DeploymentSummary()
 {
   *this = jsonValue;
 }
@@ -52,87 +28,63 @@ DeploymentSummary& DeploymentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentNumber"))
   {
     m_deploymentNumber = jsonValue.GetInteger("DeploymentNumber");
-
     m_deploymentNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationName"))
   {
     m_configurationName = jsonValue.GetString("ConfigurationName");
-
     m_configurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationVersion"))
   {
     m_configurationVersion = jsonValue.GetString("ConfigurationVersion");
-
     m_configurationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentDurationInMinutes"))
   {
     m_deploymentDurationInMinutes = jsonValue.GetInteger("DeploymentDurationInMinutes");
-
     m_deploymentDurationInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrowthType"))
   {
     m_growthType = GrowthTypeMapper::GetGrowthTypeForName(jsonValue.GetString("GrowthType"));
-
     m_growthTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrowthFactor"))
   {
     m_growthFactor = jsonValue.GetDouble("GrowthFactor");
-
     m_growthFactorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalBakeTimeInMinutes"))
   {
     m_finalBakeTimeInMinutes = jsonValue.GetInteger("FinalBakeTimeInMinutes");
-
     m_finalBakeTimeInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DeploymentStateMapper::GetDeploymentStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentageComplete"))
   {
     m_percentageComplete = jsonValue.GetDouble("PercentageComplete");
-
     m_percentageCompleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetString("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedAt"))
   {
     m_completedAt = jsonValue.GetString("CompletedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionLabel"))
   {
     m_versionLabel = jsonValue.GetString("VersionLabel");
-
     m_versionLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

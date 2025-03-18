@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAgentMemoryRequest::GetAgentMemoryRequest() : 
-    m_agentAliasIdHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_memoryIdHasBeenSet(false),
-    m_memoryType(MemoryType::NOT_SET),
-    m_memoryTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetAgentMemoryRequest::SerializePayload() const
 {
   return {};

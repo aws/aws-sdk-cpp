@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_databaseIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_preferred(false),
-    m_preferredHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseId"))
   {
     m_databaseId = jsonValue.GetString("DatabaseId");
-
     m_databaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineName"))
   {
     m_engineName = jsonValue.GetString("EngineName");
-
     m_engineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Preferred"))
   {
     m_preferred = jsonValue.GetBool("Preferred");
-
     m_preferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetObject("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

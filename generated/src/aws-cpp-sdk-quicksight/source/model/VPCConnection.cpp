@@ -18,26 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VPCConnection::VPCConnection() : 
-    m_vPCConnectionIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dnsResolversHasBeenSet(false),
-    m_status(VPCConnectionResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_availabilityStatus(VPCConnectionAvailabilityStatus::NOT_SET),
-    m_availabilityStatusHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 VPCConnection::VPCConnection(JsonView jsonValue)
-  : VPCConnection()
 {
   *this = jsonValue;
 }
@@ -47,31 +28,23 @@ VPCConnection& VPCConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VPCConnectionId"))
   {
     m_vPCConnectionId = jsonValue.GetString("VPCConnectionId");
-
     m_vPCConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPCId"))
   {
     m_vPCId = jsonValue.GetString("VPCId");
-
     m_vPCIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -81,7 +54,6 @@ VPCConnection& VPCConnection::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsResolvers"))
   {
     Aws::Utils::Array<JsonView> dnsResolversJsonList = jsonValue.GetArray("DnsResolvers");
@@ -91,21 +63,16 @@ VPCConnection& VPCConnection::operator =(JsonView jsonValue)
     }
     m_dnsResolversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VPCConnectionResourceStatusMapper::GetVPCConnectionResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityStatus"))
   {
     m_availabilityStatus = VPCConnectionAvailabilityStatusMapper::GetVPCConnectionAvailabilityStatusForName(jsonValue.GetString("AvailabilityStatus"));
-
     m_availabilityStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("NetworkInterfaces");
@@ -115,28 +82,21 @@ VPCConnection& VPCConnection::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

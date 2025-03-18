@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicConfigOptions::TopicConfigOptions() : 
-    m_qBusinessInsightsEnabled(false),
-    m_qBusinessInsightsEnabledHasBeenSet(false)
-{
-}
-
 TopicConfigOptions::TopicConfigOptions(JsonView jsonValue)
-  : TopicConfigOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TopicConfigOptions& TopicConfigOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QBusinessInsightsEnabled"))
   {
     m_qBusinessInsightsEnabled = jsonValue.GetBool("QBusinessInsightsEnabled");
-
     m_qBusinessInsightsEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

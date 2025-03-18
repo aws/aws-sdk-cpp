@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQAppRequest::DeleteQAppRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQAppRequest::SerializePayload() const
 {
   JsonValue payload;

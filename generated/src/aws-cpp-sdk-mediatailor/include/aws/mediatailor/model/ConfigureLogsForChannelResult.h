@@ -29,7 +29,7 @@ namespace Model
   class ConfigureLogsForChannelResult
   {
   public:
-    AWS_MEDIATAILOR_API ConfigureLogsForChannelResult();
+    AWS_MEDIATAILOR_API ConfigureLogsForChannelResult() = default;
     AWS_MEDIATAILOR_API ConfigureLogsForChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIATAILOR_API ConfigureLogsForChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,43 @@ namespace Model
     /**
      * <p>The name of the channel.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
-    inline void SetChannelName(const Aws::String& value) { m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelName.assign(value); }
-    inline ConfigureLogsForChannelResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline ConfigureLogsForChannelResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline ConfigureLogsForChannelResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    ConfigureLogsForChannelResult& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The types of logs collected.</p>
      */
-    inline const Aws::Vector<LogType>& GetLogTypes() const{ return m_logTypes; }
-    inline void SetLogTypes(const Aws::Vector<LogType>& value) { m_logTypes = value; }
-    inline void SetLogTypes(Aws::Vector<LogType>&& value) { m_logTypes = std::move(value); }
-    inline ConfigureLogsForChannelResult& WithLogTypes(const Aws::Vector<LogType>& value) { SetLogTypes(value); return *this;}
-    inline ConfigureLogsForChannelResult& WithLogTypes(Aws::Vector<LogType>&& value) { SetLogTypes(std::move(value)); return *this;}
-    inline ConfigureLogsForChannelResult& AddLogTypes(const LogType& value) { m_logTypes.push_back(value); return *this; }
-    inline ConfigureLogsForChannelResult& AddLogTypes(LogType&& value) { m_logTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogType>& GetLogTypes() const { return m_logTypes; }
+    template<typename LogTypesT = Aws::Vector<LogType>>
+    void SetLogTypes(LogTypesT&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::forward<LogTypesT>(value); }
+    template<typename LogTypesT = Aws::Vector<LogType>>
+    ConfigureLogsForChannelResult& WithLogTypes(LogTypesT&& value) { SetLogTypes(std::forward<LogTypesT>(value)); return *this;}
+    inline ConfigureLogsForChannelResult& AddLogTypes(LogType value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfigureLogsForChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfigureLogsForChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfigureLogsForChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfigureLogsForChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelName;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::Vector<LogType> m_logTypes;
+    bool m_logTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

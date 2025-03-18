@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableDomainTransferLockRequest::DisableDomainTransferLockRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DisableDomainTransferLockRequest::SerializePayload() const
 {
   JsonValue payload;

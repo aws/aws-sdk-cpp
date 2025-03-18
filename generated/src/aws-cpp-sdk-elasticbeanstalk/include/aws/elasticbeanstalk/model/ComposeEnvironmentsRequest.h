@@ -26,7 +26,7 @@ namespace Model
   class ComposeEnvironmentsRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API ComposeEnvironmentsRequest();
+    AWS_ELASTICBEANSTALK_API ComposeEnvironmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline ComposeEnvironmentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline ComposeEnvironmentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline ComposeEnvironmentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    ComposeEnvironmentsRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline ComposeEnvironmentsRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline ComposeEnvironmentsRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline ComposeEnvironmentsRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    ComposeEnvironmentsRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,15 +77,14 @@ namespace Model
      * the solution stack to use, and optionally can specify environment links to
      * create.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersionLabels() const{ return m_versionLabels; }
+    inline const Aws::Vector<Aws::String>& GetVersionLabels() const { return m_versionLabels; }
     inline bool VersionLabelsHasBeenSet() const { return m_versionLabelsHasBeenSet; }
-    inline void SetVersionLabels(const Aws::Vector<Aws::String>& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
-    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::move(value); }
-    inline ComposeEnvironmentsRequest& WithVersionLabels(const Aws::Vector<Aws::String>& value) { SetVersionLabels(value); return *this;}
-    inline ComposeEnvironmentsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(std::move(value)); return *this;}
-    inline ComposeEnvironmentsRequest& AddVersionLabels(const Aws::String& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
-    inline ComposeEnvironmentsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(std::move(value)); return *this; }
-    inline ComposeEnvironmentsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
+    template<typename VersionLabelsT = Aws::Vector<Aws::String>>
+    void SetVersionLabels(VersionLabelsT&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::forward<VersionLabelsT>(value); }
+    template<typename VersionLabelsT = Aws::Vector<Aws::String>>
+    ComposeEnvironmentsRequest& WithVersionLabels(VersionLabelsT&& value) { SetVersionLabels(std::forward<VersionLabelsT>(value)); return *this;}
+    template<typename VersionLabelsT = Aws::String>
+    ComposeEnvironmentsRequest& AddVersionLabels(VersionLabelsT&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.emplace_back(std::forward<VersionLabelsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class S3LogDeliveryDescription
   {
   public:
-    AWS_KAFKACONNECT_API S3LogDeliveryDescription();
+    AWS_KAFKACONNECT_API S3LogDeliveryDescription() = default;
     AWS_KAFKACONNECT_API S3LogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API S3LogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the S3 bucket that is the destination for log delivery.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3LogDeliveryDescription& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3LogDeliveryDescription& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3LogDeliveryDescription& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3LogDeliveryDescription& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Specifies whether connector logs get sent to the specified Amazon S3
      * destination.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline S3LogDeliveryDescription& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
     /**
      * <p>The S3 prefix that is the destination for log delivery.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline S3LogDeliveryDescription& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline S3LogDeliveryDescription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline S3LogDeliveryDescription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    S3LogDeliveryDescription& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_prefix;

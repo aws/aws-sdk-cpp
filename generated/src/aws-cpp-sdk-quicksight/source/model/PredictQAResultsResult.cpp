@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PredictQAResultsResult::PredictQAResultsResult() : 
-    m_status(0)
-{
-}
-
 PredictQAResultsResult::PredictQAResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PredictQAResultsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ PredictQAResultsResult& PredictQAResultsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("PrimaryResult"))
   {
     m_primaryResult = jsonValue.GetObject("PrimaryResult");
-
+    m_primaryResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalResults"))
   {
     Aws::Utils::Array<JsonView> additionalResultsJsonList = jsonValue.GetArray("AdditionalResults");
@@ -44,18 +37,19 @@ PredictQAResultsResult& PredictQAResultsResult::operator =(const Aws::AmazonWebS
     {
       m_additionalResults.push_back(additionalResultsJsonList[additionalResultsIndex].AsObject());
     }
+    m_additionalResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

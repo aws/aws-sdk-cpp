@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteResourceShareResult::DeleteResourceShareResult() : 
-    m_returnValue(false)
-{
-}
-
 DeleteResourceShareResult::DeleteResourceShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteResourceShareResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteResourceShareResult& DeleteResourceShareResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("returnValue"))
   {
     m_returnValue = jsonValue.GetBool("returnValue");
-
+    m_returnValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

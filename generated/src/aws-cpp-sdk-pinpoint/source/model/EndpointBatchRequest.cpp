@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EndpointBatchRequest::EndpointBatchRequest() : 
-    m_itemHasBeenSet(false)
-{
-}
-
 EndpointBatchRequest::EndpointBatchRequest(JsonView jsonValue)
-  : EndpointBatchRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EndpointBatchRequest& EndpointBatchRequest::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class CapabilityConfiguration
   {
   public:
-    AWS_B2BI_API CapabilityConfiguration();
+    AWS_B2BI_API CapabilityConfiguration() = default;
     AWS_B2BI_API CapabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API CapabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>An EDI (electronic data interchange) configuration object.</p>
      */
-    inline const EdiConfiguration& GetEdi() const{ return m_edi; }
+    inline const EdiConfiguration& GetEdi() const { return m_edi; }
     inline bool EdiHasBeenSet() const { return m_ediHasBeenSet; }
-    inline void SetEdi(const EdiConfiguration& value) { m_ediHasBeenSet = true; m_edi = value; }
-    inline void SetEdi(EdiConfiguration&& value) { m_ediHasBeenSet = true; m_edi = std::move(value); }
-    inline CapabilityConfiguration& WithEdi(const EdiConfiguration& value) { SetEdi(value); return *this;}
-    inline CapabilityConfiguration& WithEdi(EdiConfiguration&& value) { SetEdi(std::move(value)); return *this;}
+    template<typename EdiT = EdiConfiguration>
+    void SetEdi(EdiT&& value) { m_ediHasBeenSet = true; m_edi = std::forward<EdiT>(value); }
+    template<typename EdiT = EdiConfiguration>
+    CapabilityConfiguration& WithEdi(EdiT&& value) { SetEdi(std::forward<EdiT>(value)); return *this;}
     ///@}
   private:
 

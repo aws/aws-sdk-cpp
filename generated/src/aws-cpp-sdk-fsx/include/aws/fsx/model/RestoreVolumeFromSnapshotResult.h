@@ -30,7 +30,7 @@ namespace Model
   class RestoreVolumeFromSnapshotResult
   {
   public:
-    AWS_FSX_API RestoreVolumeFromSnapshotResult();
+    AWS_FSX_API RestoreVolumeFromSnapshotResult() = default;
     AWS_FSX_API RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API RestoreVolumeFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,24 +39,20 @@ namespace Model
     /**
      * <p>The ID of the volume that you restored.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-    inline RestoreVolumeFromSnapshotResult& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    RestoreVolumeFromSnapshotResult& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lifecycle state of the volume being restored.</p>
      */
-    inline const VolumeLifecycle& GetLifecycle() const{ return m_lifecycle; }
-    inline void SetLifecycle(const VolumeLifecycle& value) { m_lifecycle = value; }
-    inline void SetLifecycle(VolumeLifecycle&& value) { m_lifecycle = std::move(value); }
-    inline RestoreVolumeFromSnapshotResult& WithLifecycle(const VolumeLifecycle& value) { SetLifecycle(value); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithLifecycle(VolumeLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline VolumeLifecycle GetLifecycle() const { return m_lifecycle; }
+    inline void SetLifecycle(VolumeLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline RestoreVolumeFromSnapshotResult& WithLifecycle(VolumeLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
@@ -65,34 +61,36 @@ namespace Model
      * waiting to be processed. Administrative actions describe changes to the Amazon
      * FSx system.</p>
      */
-    inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const{ return m_administrativeActions; }
-    inline void SetAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { m_administrativeActions = value; }
-    inline void SetAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { m_administrativeActions = std::move(value); }
-    inline RestoreVolumeFromSnapshotResult& WithAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { SetAdministrativeActions(value); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { SetAdministrativeActions(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotResult& AddAdministrativeActions(const AdministrativeAction& value) { m_administrativeActions.push_back(value); return *this; }
-    inline RestoreVolumeFromSnapshotResult& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const { return m_administrativeActions; }
+    template<typename AdministrativeActionsT = Aws::Vector<AdministrativeAction>>
+    void SetAdministrativeActions(AdministrativeActionsT&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = std::forward<AdministrativeActionsT>(value); }
+    template<typename AdministrativeActionsT = Aws::Vector<AdministrativeAction>>
+    RestoreVolumeFromSnapshotResult& WithAdministrativeActions(AdministrativeActionsT&& value) { SetAdministrativeActions(std::forward<AdministrativeActionsT>(value)); return *this;}
+    template<typename AdministrativeActionsT = AdministrativeAction>
+    RestoreVolumeFromSnapshotResult& AddAdministrativeActions(AdministrativeActionsT&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.emplace_back(std::forward<AdministrativeActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreVolumeFromSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreVolumeFromSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet = false;
 
-    VolumeLifecycle m_lifecycle;
+    VolumeLifecycle m_lifecycle{VolumeLifecycle::NOT_SET};
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
+    bool m_administrativeActionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

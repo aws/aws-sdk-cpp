@@ -18,20 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-HostedConfigurationVersionSummary::HostedConfigurationVersionSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 HostedConfigurationVersionSummary::HostedConfigurationVersionSummary(JsonView jsonValue)
-  : HostedConfigurationVersionSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ HostedConfigurationVersionSummary& HostedConfigurationVersionSummary::operator =
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationProfileId"))
   {
     m_configurationProfileId = jsonValue.GetString("ConfigurationProfileId");
-
     m_configurationProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInteger("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionLabel"))
   {
     m_versionLabel = jsonValue.GetString("VersionLabel");
-
     m_versionLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

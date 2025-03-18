@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult() : 
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_lastUpdatedTimestamp(0),
-    m_creationTimestamp(0)
-{
-}
-
 DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeFeaturedResultsSetResult()
 {
   *this = result;
 }
@@ -36,27 +28,23 @@ DescribeFeaturedResultsSetResult& DescribeFeaturedResultsSetResult::operator =(c
   if(jsonValue.ValueExists("FeaturedResultsSetId"))
   {
     m_featuredResultsSetId = jsonValue.GetString("FeaturedResultsSetId");
-
+    m_featuredResultsSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturedResultsSetName"))
   {
     m_featuredResultsSetName = jsonValue.GetString("FeaturedResultsSetName");
-
+    m_featuredResultsSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeaturedResultsSetStatusMapper::GetFeaturedResultsSetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTexts"))
   {
     Aws::Utils::Array<JsonView> queryTextsJsonList = jsonValue.GetArray("QueryTexts");
@@ -64,8 +52,8 @@ DescribeFeaturedResultsSetResult& DescribeFeaturedResultsSetResult::operator =(c
     {
       m_queryTexts.push_back(queryTextsJsonList[queryTextsIndex].AsString());
     }
+    m_queryTextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturedDocumentsWithMetadata"))
   {
     Aws::Utils::Array<JsonView> featuredDocumentsWithMetadataJsonList = jsonValue.GetArray("FeaturedDocumentsWithMetadata");
@@ -73,8 +61,8 @@ DescribeFeaturedResultsSetResult& DescribeFeaturedResultsSetResult::operator =(c
     {
       m_featuredDocumentsWithMetadata.push_back(featuredDocumentsWithMetadataJsonList[featuredDocumentsWithMetadataIndex].AsObject());
     }
+    m_featuredDocumentsWithMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturedDocumentsMissing"))
   {
     Aws::Utils::Array<JsonView> featuredDocumentsMissingJsonList = jsonValue.GetArray("FeaturedDocumentsMissing");
@@ -82,26 +70,25 @@ DescribeFeaturedResultsSetResult& DescribeFeaturedResultsSetResult::operator =(c
     {
       m_featuredDocumentsMissing.push_back(featuredDocumentsMissingJsonList[featuredDocumentsMissingIndex].AsObject());
     }
+    m_featuredDocumentsMissingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetInt64("LastUpdatedTimestamp");
-
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetInt64("CreationTimestamp");
-
+    m_creationTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

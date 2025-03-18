@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-SupportTerm::SupportTerm() : 
-    m_refundPolicyHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 SupportTerm::SupportTerm(JsonView jsonValue)
-  : SupportTerm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SupportTerm& SupportTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("refundPolicy"))
   {
     m_refundPolicy = jsonValue.GetString("refundPolicy");
-
     m_refundPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

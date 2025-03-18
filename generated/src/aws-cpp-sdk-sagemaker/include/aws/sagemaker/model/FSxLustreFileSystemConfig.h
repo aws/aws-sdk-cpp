@@ -33,7 +33,7 @@ namespace Model
   class FSxLustreFileSystemConfig
   {
   public:
-    AWS_SAGEMAKER_API FSxLustreFileSystemConfig();
+    AWS_SAGEMAKER_API FSxLustreFileSystemConfig() = default;
     AWS_SAGEMAKER_API FSxLustreFileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API FSxLustreFileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The globally unique, 17-digit, ID of the file system, assigned by Amazon FSx
      * for Lustre.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline FSxLustreFileSystemConfig& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline FSxLustreFileSystemConfig& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline FSxLustreFileSystemConfig& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    FSxLustreFileSystemConfig& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The path to the file system directory that is accessible in Amazon SageMaker
      * Studio. Permitted users can access only this directory and below.</p>
      */
-    inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
+    inline const Aws::String& GetFileSystemPath() const { return m_fileSystemPath; }
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }
-    inline void SetFileSystemPath(const Aws::String& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = value; }
-    inline void SetFileSystemPath(Aws::String&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::move(value); }
-    inline void SetFileSystemPath(const char* value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath.assign(value); }
-    inline FSxLustreFileSystemConfig& WithFileSystemPath(const Aws::String& value) { SetFileSystemPath(value); return *this;}
-    inline FSxLustreFileSystemConfig& WithFileSystemPath(Aws::String&& value) { SetFileSystemPath(std::move(value)); return *this;}
-    inline FSxLustreFileSystemConfig& WithFileSystemPath(const char* value) { SetFileSystemPath(value); return *this;}
+    template<typename FileSystemPathT = Aws::String>
+    void SetFileSystemPath(FileSystemPathT&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::forward<FileSystemPathT>(value); }
+    template<typename FileSystemPathT = Aws::String>
+    FSxLustreFileSystemConfig& WithFileSystemPath(FileSystemPathT&& value) { SetFileSystemPath(std::forward<FileSystemPathT>(value)); return *this;}
     ///@}
   private:
 

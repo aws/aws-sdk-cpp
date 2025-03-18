@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDefaultAutoScalingConfigurationRequest::UpdateDefaultAutoScalingConfigurationRequest() : 
-    m_autoScalingConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDefaultAutoScalingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class GetTableMetadataResult
   {
   public:
-    AWS_ATHENA_API GetTableMetadataResult();
+    AWS_ATHENA_API GetTableMetadataResult() = default;
     AWS_ATHENA_API GetTableMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetTableMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that contains table metadata.</p>
      */
-    inline const TableMetadata& GetTableMetadata() const{ return m_tableMetadata; }
-    inline void SetTableMetadata(const TableMetadata& value) { m_tableMetadata = value; }
-    inline void SetTableMetadata(TableMetadata&& value) { m_tableMetadata = std::move(value); }
-    inline GetTableMetadataResult& WithTableMetadata(const TableMetadata& value) { SetTableMetadata(value); return *this;}
-    inline GetTableMetadataResult& WithTableMetadata(TableMetadata&& value) { SetTableMetadata(std::move(value)); return *this;}
+    inline const TableMetadata& GetTableMetadata() const { return m_tableMetadata; }
+    template<typename TableMetadataT = TableMetadata>
+    void SetTableMetadata(TableMetadataT&& value) { m_tableMetadataHasBeenSet = true; m_tableMetadata = std::forward<TableMetadataT>(value); }
+    template<typename TableMetadataT = TableMetadata>
+    GetTableMetadataResult& WithTableMetadata(TableMetadataT&& value) { SetTableMetadata(std::forward<TableMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TableMetadata m_tableMetadata;
+    bool m_tableMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

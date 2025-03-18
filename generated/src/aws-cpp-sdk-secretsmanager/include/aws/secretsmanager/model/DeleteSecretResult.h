@@ -28,7 +28,7 @@ namespace Model
   class DeleteSecretResult
   {
   public:
-    AWS_SECRETSMANAGER_API DeleteSecretResult();
+    AWS_SECRETSMANAGER_API DeleteSecretResult() = default;
     AWS_SECRETSMANAGER_API DeleteSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API DeleteSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ARN of the secret.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
-    inline void SetARN(const Aws::String& value) { m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRN.assign(value); }
-    inline DeleteSecretResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline DeleteSecretResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline DeleteSecretResult& WithARN(const char* value) { SetARN(value); return *this;}
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    DeleteSecretResult& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the secret.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteSecretResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteSecretResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteSecretResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteSecretResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,32 +62,34 @@ namespace Model
      * time of the delete request plus the number of days in
      * <code>RecoveryWindowInDays</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
-    inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDate = value; }
-    inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDate = std::move(value); }
-    inline DeleteSecretResult& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
-    inline DeleteSecretResult& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDeletionDate() const { return m_deletionDate; }
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    void SetDeletionDate(DeletionDateT&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::forward<DeletionDateT>(value); }
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    DeleteSecretResult& WithDeletionDate(DeletionDateT&& value) { SetDeletionDate(std::forward<DeletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteSecretResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteSecretResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteSecretResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteSecretResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletionDate;
+    Aws::Utils::DateTime m_deletionDate{};
+    bool m_deletionDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

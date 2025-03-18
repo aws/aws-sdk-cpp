@@ -25,7 +25,7 @@ namespace Model
   class CreateTableRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API CreateTableRequest();
+    AWS_GLUE_API CreateTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
      * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline CreateTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline CreateTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline CreateTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    CreateTableRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The catalog database in which to create the new table. For Hive
      * compatibility, this name is entirely lowercase.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CreateTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CreateTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CreateTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CreateTableRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * <p>The <code>TableInput</code> object that defines the metadata table to create
      * in the catalog.</p>
      */
-    inline const TableInput& GetTableInput() const{ return m_tableInput; }
+    inline const TableInput& GetTableInput() const { return m_tableInput; }
     inline bool TableInputHasBeenSet() const { return m_tableInputHasBeenSet; }
-    inline void SetTableInput(const TableInput& value) { m_tableInputHasBeenSet = true; m_tableInput = value; }
-    inline void SetTableInput(TableInput&& value) { m_tableInputHasBeenSet = true; m_tableInput = std::move(value); }
-    inline CreateTableRequest& WithTableInput(const TableInput& value) { SetTableInput(value); return *this;}
-    inline CreateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
+    template<typename TableInputT = TableInput>
+    void SetTableInput(TableInputT&& value) { m_tableInputHasBeenSet = true; m_tableInput = std::forward<TableInputT>(value); }
+    template<typename TableInputT = TableInput>
+    CreateTableRequest& WithTableInput(TableInputT&& value) { SetTableInput(std::forward<TableInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +82,26 @@ namespace Model
      * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
      * create in the table.</p>
      */
-    inline const Aws::Vector<PartitionIndex>& GetPartitionIndexes() const{ return m_partitionIndexes; }
+    inline const Aws::Vector<PartitionIndex>& GetPartitionIndexes() const { return m_partitionIndexes; }
     inline bool PartitionIndexesHasBeenSet() const { return m_partitionIndexesHasBeenSet; }
-    inline void SetPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = value; }
-    inline void SetPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = std::move(value); }
-    inline CreateTableRequest& WithPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { SetPartitionIndexes(value); return *this;}
-    inline CreateTableRequest& WithPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { SetPartitionIndexes(std::move(value)); return *this;}
-    inline CreateTableRequest& AddPartitionIndexes(const PartitionIndex& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(value); return *this; }
-    inline CreateTableRequest& AddPartitionIndexes(PartitionIndex&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(std::move(value)); return *this; }
+    template<typename PartitionIndexesT = Aws::Vector<PartitionIndex>>
+    void SetPartitionIndexes(PartitionIndexesT&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = std::forward<PartitionIndexesT>(value); }
+    template<typename PartitionIndexesT = Aws::Vector<PartitionIndex>>
+    CreateTableRequest& WithPartitionIndexes(PartitionIndexesT&& value) { SetPartitionIndexes(std::forward<PartitionIndexesT>(value)); return *this;}
+    template<typename PartitionIndexesT = PartitionIndex>
+    CreateTableRequest& AddPartitionIndexes(PartitionIndexesT&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.emplace_back(std::forward<PartitionIndexesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the transaction.</p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline CreateTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline CreateTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline CreateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    CreateTableRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +109,12 @@ namespace Model
      * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
      * open format table.</p>
      */
-    inline const OpenTableFormatInput& GetOpenTableFormatInput() const{ return m_openTableFormatInput; }
+    inline const OpenTableFormatInput& GetOpenTableFormatInput() const { return m_openTableFormatInput; }
     inline bool OpenTableFormatInputHasBeenSet() const { return m_openTableFormatInputHasBeenSet; }
-    inline void SetOpenTableFormatInput(const OpenTableFormatInput& value) { m_openTableFormatInputHasBeenSet = true; m_openTableFormatInput = value; }
-    inline void SetOpenTableFormatInput(OpenTableFormatInput&& value) { m_openTableFormatInputHasBeenSet = true; m_openTableFormatInput = std::move(value); }
-    inline CreateTableRequest& WithOpenTableFormatInput(const OpenTableFormatInput& value) { SetOpenTableFormatInput(value); return *this;}
-    inline CreateTableRequest& WithOpenTableFormatInput(OpenTableFormatInput&& value) { SetOpenTableFormatInput(std::move(value)); return *this;}
+    template<typename OpenTableFormatInputT = OpenTableFormatInput>
+    void SetOpenTableFormatInput(OpenTableFormatInputT&& value) { m_openTableFormatInputHasBeenSet = true; m_openTableFormatInput = std::forward<OpenTableFormatInputT>(value); }
+    template<typename OpenTableFormatInputT = OpenTableFormatInput>
+    CreateTableRequest& WithOpenTableFormatInput(OpenTableFormatInputT&& value) { SetOpenTableFormatInput(std::forward<OpenTableFormatInputT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class ProvisionedCapacity
   {
   public:
-    AWS_KAFKACONNECT_API ProvisionedCapacity();
+    AWS_KAFKACONNECT_API ProvisionedCapacity() = default;
     AWS_KAFKACONNECT_API ProvisionedCapacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API ProvisionedCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of microcontroller units (MCUs) allocated to each connector
      * worker. The valid values are 1,2,4,8.</p>
      */
-    inline int GetMcuCount() const{ return m_mcuCount; }
+    inline int GetMcuCount() const { return m_mcuCount; }
     inline bool McuCountHasBeenSet() const { return m_mcuCountHasBeenSet; }
     inline void SetMcuCount(int value) { m_mcuCountHasBeenSet = true; m_mcuCount = value; }
     inline ProvisionedCapacity& WithMcuCount(int value) { SetMcuCount(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The number of workers that are allocated to the connector.</p>
      */
-    inline int GetWorkerCount() const{ return m_workerCount; }
+    inline int GetWorkerCount() const { return m_workerCount; }
     inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
     inline void SetWorkerCount(int value) { m_workerCountHasBeenSet = true; m_workerCount = value; }
     inline ProvisionedCapacity& WithWorkerCount(int value) { SetWorkerCount(value); return *this;}
     ///@}
   private:
 
-    int m_mcuCount;
+    int m_mcuCount{0};
     bool m_mcuCountHasBeenSet = false;
 
-    int m_workerCount;
+    int m_workerCount{0};
     bool m_workerCountHasBeenSet = false;
   };
 

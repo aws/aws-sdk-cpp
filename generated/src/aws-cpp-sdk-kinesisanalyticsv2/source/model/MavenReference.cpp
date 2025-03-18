@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-MavenReference::MavenReference() : 
-    m_groupIdHasBeenSet(false),
-    m_artifactIdHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 MavenReference::MavenReference(JsonView jsonValue)
-  : MavenReference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MavenReference& MavenReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactId"))
   {
     m_artifactId = jsonValue.GetString("ArtifactId");
-
     m_artifactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,24 +13,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false),
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_startoverWindowSeconds(0),
-    m_startoverWindowSecondsHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_lowLatencyHlsManifestsHasBeenSet(false),
-    m_dashManifestsHasBeenSet(false),
-    m_forceEndpointErrorConfigurationHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

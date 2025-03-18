@@ -21,7 +21,7 @@ namespace Model
   class DisassociateAttributeGroupRequest : public AppRegistryRequest
   {
   public:
-    AWS_APPREGISTRY_API DisassociateAttributeGroupRequest();
+    AWS_APPREGISTRY_API DisassociateAttributeGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The name, ID, or ARN of the application. </p>
      */
-    inline const Aws::String& GetApplication() const{ return m_application; }
+    inline const Aws::String& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-    inline DisassociateAttributeGroupRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-    inline DisassociateAttributeGroupRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-    inline DisassociateAttributeGroupRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    template<typename ApplicationT = Aws::String>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = Aws::String>
+    DisassociateAttributeGroupRequest& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p> The name, ID, or ARN of the attribute group that holds the attributes to
      * describe the application. </p>
      */
-    inline const Aws::String& GetAttributeGroup() const{ return m_attributeGroup; }
+    inline const Aws::String& GetAttributeGroup() const { return m_attributeGroup; }
     inline bool AttributeGroupHasBeenSet() const { return m_attributeGroupHasBeenSet; }
-    inline void SetAttributeGroup(const Aws::String& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = value; }
-    inline void SetAttributeGroup(Aws::String&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::move(value); }
-    inline void SetAttributeGroup(const char* value) { m_attributeGroupHasBeenSet = true; m_attributeGroup.assign(value); }
-    inline DisassociateAttributeGroupRequest& WithAttributeGroup(const Aws::String& value) { SetAttributeGroup(value); return *this;}
-    inline DisassociateAttributeGroupRequest& WithAttributeGroup(Aws::String&& value) { SetAttributeGroup(std::move(value)); return *this;}
-    inline DisassociateAttributeGroupRequest& WithAttributeGroup(const char* value) { SetAttributeGroup(value); return *this;}
+    template<typename AttributeGroupT = Aws::String>
+    void SetAttributeGroup(AttributeGroupT&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::forward<AttributeGroupT>(value); }
+    template<typename AttributeGroupT = Aws::String>
+    DisassociateAttributeGroupRequest& WithAttributeGroup(AttributeGroupT&& value) { SetAttributeGroup(std::forward<AttributeGroupT>(value)); return *this;}
     ///@}
   private:
 

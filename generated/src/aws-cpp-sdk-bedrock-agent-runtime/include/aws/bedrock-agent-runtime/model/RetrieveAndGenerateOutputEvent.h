@@ -31,7 +31,7 @@ namespace Model
   class RetrieveAndGenerateOutputEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateOutputEvent();
+    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateOutputEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateOutputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateOutputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A text response.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline RetrieveAndGenerateOutputEvent& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline RetrieveAndGenerateOutputEvent& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline RetrieveAndGenerateOutputEvent& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RetrieveAndGenerateOutputEvent& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

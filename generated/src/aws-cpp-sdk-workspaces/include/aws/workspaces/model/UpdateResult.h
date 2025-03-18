@@ -34,7 +34,7 @@ namespace Model
   class UpdateResult
   {
   public:
-    AWS_WORKSPACES_API UpdateResult();
+    AWS_WORKSPACES_API UpdateResult() = default;
     AWS_WORKSPACES_API UpdateResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Indicates whether updated drivers or other components are available for the
      * specified WorkSpace image.</p>
      */
-    inline bool GetUpdateAvailable() const{ return m_updateAvailable; }
+    inline bool GetUpdateAvailable() const { return m_updateAvailable; }
     inline bool UpdateAvailableHasBeenSet() const { return m_updateAvailableHasBeenSet; }
     inline void SetUpdateAvailable(bool value) { m_updateAvailableHasBeenSet = true; m_updateAvailable = value; }
     inline UpdateResult& WithUpdateAvailable(bool value) { SetUpdateAvailable(value); return *this;}
@@ -56,18 +56,16 @@ namespace Model
      * <p>A description of whether updates for the WorkSpace image are pending or
      * available.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_updateAvailable;
+    bool m_updateAvailable{false};
     bool m_updateAvailableHasBeenSet = false;
 
     Aws::String m_description;

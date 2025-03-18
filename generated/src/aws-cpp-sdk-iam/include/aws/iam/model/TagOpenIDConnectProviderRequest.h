@@ -23,7 +23,7 @@ namespace Model
   class TagOpenIDConnectProviderRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API TagOpenIDConnectProviderRequest();
+    AWS_IAM_API TagOpenIDConnectProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
+    inline const Aws::String& GetOpenIDConnectProviderArn() const { return m_openIDConnectProviderArn; }
     inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
-    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
-    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
-    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
-    inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
-    inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
-    inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
+    template<typename OpenIDConnectProviderArnT = Aws::String>
+    void SetOpenIDConnectProviderArn(OpenIDConnectProviderArnT&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::forward<OpenIDConnectProviderArnT>(value); }
+    template<typename OpenIDConnectProviderArnT = Aws::String>
+    TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(OpenIDConnectProviderArnT&& value) { SetOpenIDConnectProviderArn(std::forward<OpenIDConnectProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * <p>The list of tags that you want to attach to the OIDC identity provider in
      * IAM. Each tag consists of a key name and an associated value.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagOpenIDConnectProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TagOpenIDConnectProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TagOpenIDConnectProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TagOpenIDConnectProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TagOpenIDConnectProviderRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TagOpenIDConnectProviderRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

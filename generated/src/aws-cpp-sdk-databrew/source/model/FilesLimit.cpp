@@ -18,18 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-FilesLimit::FilesLimit() : 
-    m_maxFiles(0),
-    m_maxFilesHasBeenSet(false),
-    m_orderedBy(OrderedBy::NOT_SET),
-    m_orderedByHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 FilesLimit::FilesLimit(JsonView jsonValue)
-  : FilesLimit()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ FilesLimit& FilesLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxFiles"))
   {
     m_maxFiles = jsonValue.GetInteger("MaxFiles");
-
     m_maxFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderedBy"))
   {
     m_orderedBy = OrderedByMapper::GetOrderedByForName(jsonValue.GetString("OrderedBy"));
-
     m_orderedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Order"))
   {
     m_order = OrderMapper::GetOrderForName(jsonValue.GetString("Order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

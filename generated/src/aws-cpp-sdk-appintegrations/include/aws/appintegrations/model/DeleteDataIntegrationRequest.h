@@ -21,7 +21,7 @@ namespace Model
   class DeleteDataIntegrationRequest : public AppIntegrationsServiceRequest
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationRequest();
+    AWS_APPINTEGRATIONSSERVICE_API DeleteDataIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>A unique identifier for the DataIntegration.</p>
      */
-    inline const Aws::String& GetDataIntegrationIdentifier() const{ return m_dataIntegrationIdentifier; }
+    inline const Aws::String& GetDataIntegrationIdentifier() const { return m_dataIntegrationIdentifier; }
     inline bool DataIntegrationIdentifierHasBeenSet() const { return m_dataIntegrationIdentifierHasBeenSet; }
-    inline void SetDataIntegrationIdentifier(const Aws::String& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = value; }
-    inline void SetDataIntegrationIdentifier(Aws::String&& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = std::move(value); }
-    inline void SetDataIntegrationIdentifier(const char* value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier.assign(value); }
-    inline DeleteDataIntegrationRequest& WithDataIntegrationIdentifier(const Aws::String& value) { SetDataIntegrationIdentifier(value); return *this;}
-    inline DeleteDataIntegrationRequest& WithDataIntegrationIdentifier(Aws::String&& value) { SetDataIntegrationIdentifier(std::move(value)); return *this;}
-    inline DeleteDataIntegrationRequest& WithDataIntegrationIdentifier(const char* value) { SetDataIntegrationIdentifier(value); return *this;}
+    template<typename DataIntegrationIdentifierT = Aws::String>
+    void SetDataIntegrationIdentifier(DataIntegrationIdentifierT&& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = std::forward<DataIntegrationIdentifierT>(value); }
+    template<typename DataIntegrationIdentifierT = Aws::String>
+    DeleteDataIntegrationRequest& WithDataIntegrationIdentifier(DataIntegrationIdentifierT&& value) { SetDataIntegrationIdentifier(std::forward<DataIntegrationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

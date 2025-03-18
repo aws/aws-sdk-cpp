@@ -27,7 +27,7 @@ namespace Model
   class CreateScalingPlanResult
   {
   public:
-    AWS_AUTOSCALINGPLANS_API CreateScalingPlanResult();
+    AWS_AUTOSCALINGPLANS_API CreateScalingPlanResult() = default;
     AWS_AUTOSCALINGPLANS_API CreateScalingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUTOSCALINGPLANS_API CreateScalingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,26 @@ namespace Model
      * <p>The version number of the scaling plan. This value is always <code>1</code>.
      * Currently, you cannot have multiple scaling plan versions.</p>
      */
-    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
-    inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersion = value; }
+    inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
+    inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
     inline CreateScalingPlanResult& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateScalingPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateScalingPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateScalingPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateScalingPlanResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_scalingPlanVersion;
+    long long m_scalingPlanVersion{0};
+    bool m_scalingPlanVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

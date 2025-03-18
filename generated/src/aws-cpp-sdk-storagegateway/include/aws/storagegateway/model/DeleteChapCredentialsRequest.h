@@ -27,7 +27,7 @@ namespace Model
   class DeleteChapCredentialsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DeleteChapCredentialsRequest();
+    AWS_STORAGEGATEWAY_API DeleteChapCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
      * for specified VolumeARN.</p>
      */
-    inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
+    inline const Aws::String& GetTargetARN() const { return m_targetARN; }
     inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
-    inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
-    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
-    inline void SetTargetARN(const char* value) { m_targetARNHasBeenSet = true; m_targetARN.assign(value); }
-    inline DeleteChapCredentialsRequest& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
-    inline DeleteChapCredentialsRequest& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
-    inline DeleteChapCredentialsRequest& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+    template<typename TargetARNT = Aws::String>
+    void SetTargetARN(TargetARNT&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::forward<TargetARNT>(value); }
+    template<typename TargetARNT = Aws::String>
+    DeleteChapCredentialsRequest& WithTargetARN(TargetARNT&& value) { SetTargetARN(std::forward<TargetARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The iSCSI initiator that connects to the target.</p>
      */
-    inline const Aws::String& GetInitiatorName() const{ return m_initiatorName; }
+    inline const Aws::String& GetInitiatorName() const { return m_initiatorName; }
     inline bool InitiatorNameHasBeenSet() const { return m_initiatorNameHasBeenSet; }
-    inline void SetInitiatorName(const Aws::String& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = value; }
-    inline void SetInitiatorName(Aws::String&& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = std::move(value); }
-    inline void SetInitiatorName(const char* value) { m_initiatorNameHasBeenSet = true; m_initiatorName.assign(value); }
-    inline DeleteChapCredentialsRequest& WithInitiatorName(const Aws::String& value) { SetInitiatorName(value); return *this;}
-    inline DeleteChapCredentialsRequest& WithInitiatorName(Aws::String&& value) { SetInitiatorName(std::move(value)); return *this;}
-    inline DeleteChapCredentialsRequest& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
+    template<typename InitiatorNameT = Aws::String>
+    void SetInitiatorName(InitiatorNameT&& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = std::forward<InitiatorNameT>(value); }
+    template<typename InitiatorNameT = Aws::String>
+    DeleteChapCredentialsRequest& WithInitiatorName(InitiatorNameT&& value) { SetInitiatorName(std::forward<InitiatorNameT>(value)); return *this;}
     ///@}
   private:
 

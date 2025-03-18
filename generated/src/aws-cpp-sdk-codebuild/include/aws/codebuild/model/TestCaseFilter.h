@@ -33,7 +33,7 @@ namespace Model
   class TestCaseFilter
   {
   public:
-    AWS_CODEBUILD_API TestCaseFilter();
+    AWS_CODEBUILD_API TestCaseFilter() = default;
     AWS_CODEBUILD_API TestCaseFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API TestCaseFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * </li> <li> <p> <code>SKIPPED</code> </p> </li> <li> <p> <code>UNKNOWN</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TestCaseFilter& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TestCaseFilter& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TestCaseFilter& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TestCaseFilter& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * substring of the <code>name</code> or the <code>prefix</code> will be
      * returned.</p>
      */
-    inline const Aws::String& GetKeyword() const{ return m_keyword; }
+    inline const Aws::String& GetKeyword() const { return m_keyword; }
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
-    inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
-    inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
-    inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
-    inline TestCaseFilter& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
-    inline TestCaseFilter& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
-    inline TestCaseFilter& WithKeyword(const char* value) { SetKeyword(value); return *this;}
+    template<typename KeywordT = Aws::String>
+    void SetKeyword(KeywordT&& value) { m_keywordHasBeenSet = true; m_keyword = std::forward<KeywordT>(value); }
+    template<typename KeywordT = Aws::String>
+    TestCaseFilter& WithKeyword(KeywordT&& value) { SetKeyword(std::forward<KeywordT>(value)); return *this;}
     ///@}
   private:
 

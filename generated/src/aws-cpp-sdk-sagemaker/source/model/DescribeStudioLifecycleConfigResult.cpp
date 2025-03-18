@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult() : 
-    m_studioLifecycleConfigAppType(StudioLifecycleConfigAppType::NOT_SET)
-{
-}
-
 DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeStudioLifecycleConfigResult()
 {
   *this = result;
 }
@@ -34,45 +28,40 @@ DescribeStudioLifecycleConfigResult& DescribeStudioLifecycleConfigResult::operat
   if(jsonValue.ValueExists("StudioLifecycleConfigArn"))
   {
     m_studioLifecycleConfigArn = jsonValue.GetString("StudioLifecycleConfigArn");
-
+    m_studioLifecycleConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigName"))
   {
     m_studioLifecycleConfigName = jsonValue.GetString("StudioLifecycleConfigName");
-
+    m_studioLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigContent"))
   {
     m_studioLifecycleConfigContent = jsonValue.GetString("StudioLifecycleConfigContent");
-
+    m_studioLifecycleConfigContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigAppType"))
   {
     m_studioLifecycleConfigAppType = StudioLifecycleConfigAppTypeMapper::GetStudioLifecycleConfigAppTypeForName(jsonValue.GetString("StudioLifecycleConfigAppType"));
-
+    m_studioLifecycleConfigAppTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

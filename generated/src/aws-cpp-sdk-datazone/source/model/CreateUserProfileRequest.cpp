@@ -12,16 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserProfileRequest::CreateUserProfileRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

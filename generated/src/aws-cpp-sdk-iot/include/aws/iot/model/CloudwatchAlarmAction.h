@@ -32,7 +32,7 @@ namespace Model
   class CloudwatchAlarmAction
   {
   public:
-    AWS_IOT_API CloudwatchAlarmAction();
+    AWS_IOT_API CloudwatchAlarmAction() = default;
     AWS_IOT_API CloudwatchAlarmAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CloudwatchAlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CloudwatchAlarmAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CloudwatchAlarmAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CloudwatchAlarmAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CloudwatchAlarmAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch alarm name.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline CloudwatchAlarmAction& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline CloudwatchAlarmAction& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline CloudwatchAlarmAction& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    CloudwatchAlarmAction& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the alarm change.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline CloudwatchAlarmAction& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline CloudwatchAlarmAction& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline CloudwatchAlarmAction& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    CloudwatchAlarmAction& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
      * INSUFFICIENT_DATA.</p>
      */
-    inline const Aws::String& GetStateValue() const{ return m_stateValue; }
+    inline const Aws::String& GetStateValue() const { return m_stateValue; }
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
-    inline void SetStateValue(const Aws::String& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
-    inline void SetStateValue(Aws::String&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
-    inline void SetStateValue(const char* value) { m_stateValueHasBeenSet = true; m_stateValue.assign(value); }
-    inline CloudwatchAlarmAction& WithStateValue(const Aws::String& value) { SetStateValue(value); return *this;}
-    inline CloudwatchAlarmAction& WithStateValue(Aws::String&& value) { SetStateValue(std::move(value)); return *this;}
-    inline CloudwatchAlarmAction& WithStateValue(const char* value) { SetStateValue(value); return *this;}
+    template<typename StateValueT = Aws::String>
+    void SetStateValue(StateValueT&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::forward<StateValueT>(value); }
+    template<typename StateValueT = Aws::String>
+    CloudwatchAlarmAction& WithStateValue(StateValueT&& value) { SetStateValue(std::forward<StateValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes() : 
-    m_domainNameHasBeenSet(false),
-    m_activeDirectoryIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue)
-  : ActiveDirectoryBackupAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActiveDirectoryBackupAttributes& ActiveDirectoryBackupAttributes::operator =(Jso
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDirectoryId"))
   {
     m_activeDirectoryId = jsonValue.GetString("ActiveDirectoryId");
-
     m_activeDirectoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   return *this;
 }
 

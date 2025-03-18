@@ -12,12 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetIncidentFindingsRequest::BatchGetIncidentFindingsRequest() : 
-    m_findingIdsHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetIncidentFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class CancelJobResult
   {
   public:
-    AWS_BRAKET_API CancelJobResult();
+    AWS_BRAKET_API CancelJobResult() = default;
     AWS_BRAKET_API CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BRAKET_API CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The status of the job cancellation request.</p>
      */
-    inline const CancellationStatus& GetCancellationStatus() const{ return m_cancellationStatus; }
-    inline void SetCancellationStatus(const CancellationStatus& value) { m_cancellationStatus = value; }
-    inline void SetCancellationStatus(CancellationStatus&& value) { m_cancellationStatus = std::move(value); }
-    inline CancelJobResult& WithCancellationStatus(const CancellationStatus& value) { SetCancellationStatus(value); return *this;}
-    inline CancelJobResult& WithCancellationStatus(CancellationStatus&& value) { SetCancellationStatus(std::move(value)); return *this;}
+    inline CancellationStatus GetCancellationStatus() const { return m_cancellationStatus; }
+    inline void SetCancellationStatus(CancellationStatus value) { m_cancellationStatusHasBeenSet = true; m_cancellationStatus = value; }
+    inline CancelJobResult& WithCancellationStatus(CancellationStatus value) { SetCancellationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Amazon Braket job.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-    inline CancelJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline CancelJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline CancelJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    CancelJobResult& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CancellationStatus m_cancellationStatus;
+    CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
+    bool m_cancellationStatusHasBeenSet = false;
 
     Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

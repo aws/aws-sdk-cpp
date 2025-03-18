@@ -27,7 +27,7 @@ namespace Model
   class GetWorldTemplateBodyResult
   {
   public:
-    AWS_ROBOMAKER_API GetWorldTemplateBodyResult();
+    AWS_ROBOMAKER_API GetWorldTemplateBodyResult() = default;
     AWS_ROBOMAKER_API GetWorldTemplateBodyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API GetWorldTemplateBodyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The world template body.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBody.assign(value); }
-    inline GetWorldTemplateBodyResult& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline GetWorldTemplateBodyResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline GetWorldTemplateBodyResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    GetWorldTemplateBodyResult& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorldTemplateBodyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorldTemplateBodyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorldTemplateBodyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorldTemplateBodyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_templateBody;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,19 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNodegroupVersionRequest::UpdateNodegroupVersionRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateNodegroupVersionRequest::SerializePayload() const
 {
   JsonValue payload;

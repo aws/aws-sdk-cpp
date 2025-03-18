@@ -32,7 +32,7 @@ namespace Model
   class UiTemplateInfo
   {
   public:
-    AWS_SAGEMAKER_API UiTemplateInfo();
+    AWS_SAGEMAKER_API UiTemplateInfo() = default;
     AWS_SAGEMAKER_API UiTemplateInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API UiTemplateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The URL for the user interface template.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline UiTemplateInfo& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline UiTemplateInfo& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline UiTemplateInfo& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    UiTemplateInfo& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA-256 digest of the contents of the template.</p>
      */
-    inline const Aws::String& GetContentSha256() const{ return m_contentSha256; }
+    inline const Aws::String& GetContentSha256() const { return m_contentSha256; }
     inline bool ContentSha256HasBeenSet() const { return m_contentSha256HasBeenSet; }
-    inline void SetContentSha256(const Aws::String& value) { m_contentSha256HasBeenSet = true; m_contentSha256 = value; }
-    inline void SetContentSha256(Aws::String&& value) { m_contentSha256HasBeenSet = true; m_contentSha256 = std::move(value); }
-    inline void SetContentSha256(const char* value) { m_contentSha256HasBeenSet = true; m_contentSha256.assign(value); }
-    inline UiTemplateInfo& WithContentSha256(const Aws::String& value) { SetContentSha256(value); return *this;}
-    inline UiTemplateInfo& WithContentSha256(Aws::String&& value) { SetContentSha256(std::move(value)); return *this;}
-    inline UiTemplateInfo& WithContentSha256(const char* value) { SetContentSha256(value); return *this;}
+    template<typename ContentSha256T = Aws::String>
+    void SetContentSha256(ContentSha256T&& value) { m_contentSha256HasBeenSet = true; m_contentSha256 = std::forward<ContentSha256T>(value); }
+    template<typename ContentSha256T = Aws::String>
+    UiTemplateInfo& WithContentSha256(ContentSha256T&& value) { SetContentSha256(std::forward<ContentSha256T>(value)); return *this;}
     ///@}
   private:
 

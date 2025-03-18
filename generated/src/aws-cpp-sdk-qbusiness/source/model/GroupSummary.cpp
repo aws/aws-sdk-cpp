@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-GroupSummary::GroupSummary() : 
-    m_groupNameHasBeenSet(false)
-{
-}
-
 GroupSummary::GroupSummary(JsonView jsonValue)
-  : GroupSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GroupSummary& GroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

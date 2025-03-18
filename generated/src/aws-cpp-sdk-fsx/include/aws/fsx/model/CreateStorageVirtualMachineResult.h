@@ -28,7 +28,7 @@ namespace Model
   class CreateStorageVirtualMachineResult
   {
   public:
-    AWS_FSX_API CreateStorageVirtualMachineResult();
+    AWS_FSX_API CreateStorageVirtualMachineResult() = default;
     AWS_FSX_API CreateStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CreateStorageVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returned after a successful <code>CreateStorageVirtualMachine</code>
      * operation; describes the SVM just created.</p>
      */
-    inline const StorageVirtualMachine& GetStorageVirtualMachine() const{ return m_storageVirtualMachine; }
-    inline void SetStorageVirtualMachine(const StorageVirtualMachine& value) { m_storageVirtualMachine = value; }
-    inline void SetStorageVirtualMachine(StorageVirtualMachine&& value) { m_storageVirtualMachine = std::move(value); }
-    inline CreateStorageVirtualMachineResult& WithStorageVirtualMachine(const StorageVirtualMachine& value) { SetStorageVirtualMachine(value); return *this;}
-    inline CreateStorageVirtualMachineResult& WithStorageVirtualMachine(StorageVirtualMachine&& value) { SetStorageVirtualMachine(std::move(value)); return *this;}
+    inline const StorageVirtualMachine& GetStorageVirtualMachine() const { return m_storageVirtualMachine; }
+    template<typename StorageVirtualMachineT = StorageVirtualMachine>
+    void SetStorageVirtualMachine(StorageVirtualMachineT&& value) { m_storageVirtualMachineHasBeenSet = true; m_storageVirtualMachine = std::forward<StorageVirtualMachineT>(value); }
+    template<typename StorageVirtualMachineT = StorageVirtualMachine>
+    CreateStorageVirtualMachineResult& WithStorageVirtualMachine(StorageVirtualMachineT&& value) { SetStorageVirtualMachine(std::forward<StorageVirtualMachineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStorageVirtualMachineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStorageVirtualMachineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStorageVirtualMachineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StorageVirtualMachine m_storageVirtualMachine;
+    bool m_storageVirtualMachineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

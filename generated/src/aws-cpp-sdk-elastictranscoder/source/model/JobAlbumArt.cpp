@@ -18,14 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-JobAlbumArt::JobAlbumArt() : 
-    m_mergePolicyHasBeenSet(false),
-    m_artworkHasBeenSet(false)
-{
-}
-
 JobAlbumArt::JobAlbumArt(JsonView jsonValue)
-  : JobAlbumArt()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JobAlbumArt& JobAlbumArt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MergePolicy"))
   {
     m_mergePolicy = jsonValue.GetString("MergePolicy");
-
     m_mergePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Artwork"))
   {
     Aws::Utils::Array<JsonView> artworkJsonList = jsonValue.GetArray("Artwork");
@@ -48,7 +39,6 @@ JobAlbumArt& JobAlbumArt::operator =(JsonView jsonValue)
     }
     m_artworkHasBeenSet = true;
   }
-
   return *this;
 }
 

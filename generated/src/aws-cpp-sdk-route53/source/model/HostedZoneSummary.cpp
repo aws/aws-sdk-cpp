@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneSummary::HostedZoneSummary() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 HostedZoneSummary::HostedZoneSummary(const XmlNode& xmlNode)
-  : HostedZoneSummary()
 {
   *this = xmlNode;
 }

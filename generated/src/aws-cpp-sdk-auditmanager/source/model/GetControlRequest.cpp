@@ -12,11 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetControlRequest::GetControlRequest() : 
-    m_controlIdHasBeenSet(false)
-{
-}
-
 Aws::String GetControlRequest::SerializePayload() const
 {
   return {};

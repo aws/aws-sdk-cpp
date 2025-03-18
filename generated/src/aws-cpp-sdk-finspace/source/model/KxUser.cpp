@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxUser::KxUser() : 
-    m_userArnHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_updateTimestampHasBeenSet(false)
-{
-}
-
 KxUser::KxUser(JsonView jsonValue)
-  : KxUser()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ KxUser& KxUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userArn"))
   {
     m_userArn = jsonValue.GetString("userArn");
-
     m_userArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userName"))
   {
     m_userName = jsonValue.GetString("userName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRole"))
   {
     m_iamRole = jsonValue.GetString("iamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("createTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTimestamp"))
   {
     m_updateTimestamp = jsonValue.GetDouble("updateTimestamp");
-
     m_updateTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class DeleteFleetLocationsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DeleteFleetLocationsRequest();
+    AWS_GAMELIFT_API DeleteFleetLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>A unique identifier for the fleet to delete locations for. You can use either
      * the fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline DeleteFleetLocationsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline DeleteFleetLocationsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline DeleteFleetLocationsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    DeleteFleetLocationsRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,15 +53,14 @@ namespace Model
      * <p>The list of fleet locations to delete. Specify locations in the form of an
      * Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLocations() const{ return m_locations; }
+    inline const Aws::Vector<Aws::String>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
-    inline void SetLocations(const Aws::Vector<Aws::String>& value) { m_locationsHasBeenSet = true; m_locations = value; }
-    inline void SetLocations(Aws::Vector<Aws::String>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
-    inline DeleteFleetLocationsRequest& WithLocations(const Aws::Vector<Aws::String>& value) { SetLocations(value); return *this;}
-    inline DeleteFleetLocationsRequest& WithLocations(Aws::Vector<Aws::String>&& value) { SetLocations(std::move(value)); return *this;}
-    inline DeleteFleetLocationsRequest& AddLocations(const Aws::String& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
-    inline DeleteFleetLocationsRequest& AddLocations(Aws::String&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
-    inline DeleteFleetLocationsRequest& AddLocations(const char* value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
+    template<typename LocationsT = Aws::Vector<Aws::String>>
+    void SetLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations = std::forward<LocationsT>(value); }
+    template<typename LocationsT = Aws::Vector<Aws::String>>
+    DeleteFleetLocationsRequest& WithLocations(LocationsT&& value) { SetLocations(std::forward<LocationsT>(value)); return *this;}
+    template<typename LocationsT = Aws::String>
+    DeleteFleetLocationsRequest& AddLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations.emplace_back(std::forward<LocationsT>(value)); return *this; }
     ///@}
   private:
 

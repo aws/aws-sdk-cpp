@@ -12,13 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateTemplateRequest::GenerateTemplateRequest() : 
-    m_appIdHasBeenSet(false),
-    m_templateFormat(OutputFormat::NOT_SET),
-    m_templateFormatHasBeenSet(false)
-{
-}
-
 Aws::String GenerateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

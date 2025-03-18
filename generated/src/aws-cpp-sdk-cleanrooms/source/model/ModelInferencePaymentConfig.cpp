@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ModelInferencePaymentConfig::ModelInferencePaymentConfig() : 
-    m_isResponsible(false),
-    m_isResponsibleHasBeenSet(false)
-{
-}
-
 ModelInferencePaymentConfig::ModelInferencePaymentConfig(JsonView jsonValue)
-  : ModelInferencePaymentConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ModelInferencePaymentConfig& ModelInferencePaymentConfig::operator =(JsonView js
   if(jsonValue.ValueExists("isResponsible"))
   {
     m_isResponsible = jsonValue.GetBool("isResponsible");
-
     m_isResponsibleHasBeenSet = true;
   }
-
   return *this;
 }
 

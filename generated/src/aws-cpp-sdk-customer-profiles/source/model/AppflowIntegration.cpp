@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AppflowIntegration::AppflowIntegration() : 
-    m_flowDefinitionHasBeenSet(false),
-    m_batchesHasBeenSet(false)
-{
-}
-
 AppflowIntegration::AppflowIntegration(JsonView jsonValue)
-  : AppflowIntegration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AppflowIntegration& AppflowIntegration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FlowDefinition"))
   {
     m_flowDefinition = jsonValue.GetObject("FlowDefinition");
-
     m_flowDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Batches"))
   {
     Aws::Utils::Array<JsonView> batchesJsonList = jsonValue.GetArray("Batches");
@@ -48,7 +39,6 @@ AppflowIntegration& AppflowIntegration::operator =(JsonView jsonValue)
     }
     m_batchesHasBeenSet = true;
   }
-
   return *this;
 }
 

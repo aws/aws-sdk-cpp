@@ -12,14 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContinuousExportsRequest::DescribeContinuousExportsRequest() : 
-    m_exportIdsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContinuousExportsRequest::SerializePayload() const
 {
   JsonValue payload;

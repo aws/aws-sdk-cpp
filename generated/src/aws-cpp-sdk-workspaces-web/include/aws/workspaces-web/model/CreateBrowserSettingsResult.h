@@ -27,7 +27,7 @@ namespace Model
   class CreateBrowserSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API CreateBrowserSettingsResult();
+    AWS_WORKSPACESWEB_API CreateBrowserSettingsResult() = default;
     AWS_WORKSPACESWEB_API CreateBrowserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API CreateBrowserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the browser settings.</p>
      */
-    inline const Aws::String& GetBrowserSettingsArn() const{ return m_browserSettingsArn; }
-    inline void SetBrowserSettingsArn(const Aws::String& value) { m_browserSettingsArn = value; }
-    inline void SetBrowserSettingsArn(Aws::String&& value) { m_browserSettingsArn = std::move(value); }
-    inline void SetBrowserSettingsArn(const char* value) { m_browserSettingsArn.assign(value); }
-    inline CreateBrowserSettingsResult& WithBrowserSettingsArn(const Aws::String& value) { SetBrowserSettingsArn(value); return *this;}
-    inline CreateBrowserSettingsResult& WithBrowserSettingsArn(Aws::String&& value) { SetBrowserSettingsArn(std::move(value)); return *this;}
-    inline CreateBrowserSettingsResult& WithBrowserSettingsArn(const char* value) { SetBrowserSettingsArn(value); return *this;}
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    CreateBrowserSettingsResult& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBrowserSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBrowserSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBrowserSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBrowserSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_browserSettingsArn;
+    bool m_browserSettingsArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

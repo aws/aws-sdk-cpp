@@ -24,7 +24,7 @@ namespace Model
   class CreateLocationFsxOntapRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API CreateLocationFsxOntapRequest();
+    AWS_DATASYNC_API CreateLocationFsxOntapRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const FsxProtocol& GetProtocol() const{ return m_protocol; }
+    inline const FsxProtocol& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const FsxProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(FsxProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline CreateLocationFsxOntapRequest& WithProtocol(const FsxProtocol& value) { SetProtocol(value); return *this;}
-    inline CreateLocationFsxOntapRequest& WithProtocol(FsxProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    template<typename ProtocolT = FsxProtocol>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = FsxProtocol>
+    CreateLocationFsxOntapRequest& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +57,14 @@ namespace Model
      * <p>Your file system's security groups must also allow inbound traffic on the
      * same ports.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const { return m_securityGroupArns; }
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
-    inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
-    inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
-    inline CreateLocationFsxOntapRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
-    inline CreateLocationFsxOntapRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
-    inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
-    inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
-    inline CreateLocationFsxOntapRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
+    template<typename SecurityGroupArnsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupArns(SecurityGroupArnsT&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::forward<SecurityGroupArnsT>(value); }
+    template<typename SecurityGroupArnsT = Aws::Vector<Aws::String>>
+    CreateLocationFsxOntapRequest& WithSecurityGroupArns(SecurityGroupArnsT&& value) { SetSecurityGroupArns(std::forward<SecurityGroupArnsT>(value)); return *this;}
+    template<typename SecurityGroupArnsT = Aws::String>
+    CreateLocationFsxOntapRequest& AddSecurityGroupArns(SecurityGroupArnsT&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.emplace_back(std::forward<SecurityGroupArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +72,12 @@ namespace Model
      * <p>Specifies the ARN of the storage virtual machine (SVM) in your file system
      * where you want to copy data to or from.</p>
      */
-    inline const Aws::String& GetStorageVirtualMachineArn() const{ return m_storageVirtualMachineArn; }
+    inline const Aws::String& GetStorageVirtualMachineArn() const { return m_storageVirtualMachineArn; }
     inline bool StorageVirtualMachineArnHasBeenSet() const { return m_storageVirtualMachineArnHasBeenSet; }
-    inline void SetStorageVirtualMachineArn(const Aws::String& value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn = value; }
-    inline void SetStorageVirtualMachineArn(Aws::String&& value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn = std::move(value); }
-    inline void SetStorageVirtualMachineArn(const char* value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn.assign(value); }
-    inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(const Aws::String& value) { SetStorageVirtualMachineArn(value); return *this;}
-    inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(Aws::String&& value) { SetStorageVirtualMachineArn(std::move(value)); return *this;}
-    inline CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(const char* value) { SetStorageVirtualMachineArn(value); return *this;}
+    template<typename StorageVirtualMachineArnT = Aws::String>
+    void SetStorageVirtualMachineArn(StorageVirtualMachineArnT&& value) { m_storageVirtualMachineArnHasBeenSet = true; m_storageVirtualMachineArn = std::forward<StorageVirtualMachineArnT>(value); }
+    template<typename StorageVirtualMachineArnT = Aws::String>
+    CreateLocationFsxOntapRequest& WithStorageVirtualMachineArn(StorageVirtualMachineArnT&& value) { SetStorageVirtualMachineArn(std::forward<StorageVirtualMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +92,12 @@ namespace Model
      * FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline CreateLocationFsxOntapRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline CreateLocationFsxOntapRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline CreateLocationFsxOntapRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    CreateLocationFsxOntapRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +106,14 @@ namespace Model
      * Web Services resources. We recommend creating at least a name tag for your
      * location.</p>
      */
-    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagListEntry>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLocationFsxOntapRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
-    inline CreateLocationFsxOntapRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLocationFsxOntapRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLocationFsxOntapRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    CreateLocationFsxOntapRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagListEntry>
+    CreateLocationFsxOntapRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

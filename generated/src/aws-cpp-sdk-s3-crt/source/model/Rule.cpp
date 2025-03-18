@@ -20,21 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Rule::Rule() : 
-    m_expirationHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_status(ExpirationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_transitionHasBeenSet(false),
-    m_noncurrentVersionTransitionHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false),
-    m_abortIncompleteMultipartUploadHasBeenSet(false)
-{
-}
-
 Rule::Rule(const XmlNode& xmlNode)
-  : Rule()
 {
   *this = xmlNode;
 }
@@ -66,7 +52,7 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode transitionNode = resultNode.FirstChild("Transition");

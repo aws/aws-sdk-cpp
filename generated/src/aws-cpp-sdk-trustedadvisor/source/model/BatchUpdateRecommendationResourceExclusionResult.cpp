@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUpdateRecommendationResourceExclusionResult::BatchUpdateRecommendationResourceExclusionResult()
-{
-}
-
 BatchUpdateRecommendationResourceExclusionResult::BatchUpdateRecommendationResourceExclusionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchUpdateRecommendationResourceExclusionResult& BatchUpdateRecommendationResou
     {
       m_batchUpdateRecommendationResourceExclusionErrors.push_back(batchUpdateRecommendationResourceExclusionErrorsJsonList[batchUpdateRecommendationResourceExclusionErrorsIndex].AsObject());
     }
+    m_batchUpdateRecommendationResourceExclusionErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

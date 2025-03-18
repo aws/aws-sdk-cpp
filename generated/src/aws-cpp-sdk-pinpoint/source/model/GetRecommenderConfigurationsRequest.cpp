@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRecommenderConfigurationsRequest::GetRecommenderConfigurationsRequest() : 
-    m_pageSizeHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String GetRecommenderConfigurationsRequest::SerializePayload() const
 {
   return {};

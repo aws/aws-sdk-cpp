@@ -35,7 +35,7 @@ namespace Model
   class FastLaunchLaunchTemplateSpecification
   {
   public:
-    AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification();
+    AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification() = default;
     AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The ID of the launch template to use for faster launching for a Windows
      * AMI.</p>
      */
-    inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
+    inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
-    inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
-    inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
-    inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
+    template<typename LaunchTemplateIdT = Aws::String>
+    void SetLaunchTemplateId(LaunchTemplateIdT&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::forward<LaunchTemplateIdT>(value); }
+    template<typename LaunchTemplateIdT = Aws::String>
+    FastLaunchLaunchTemplateSpecification& WithLaunchTemplateId(LaunchTemplateIdT&& value) { SetLaunchTemplateId(std::forward<LaunchTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The name of the launch template to use for faster launching for a Windows
      * AMI.</p>
      */
-    inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+    inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
-    inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
-    inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
-    inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
+    template<typename LaunchTemplateNameT = Aws::String>
+    void SetLaunchTemplateName(LaunchTemplateNameT&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::forward<LaunchTemplateNameT>(value); }
+    template<typename LaunchTemplateNameT = Aws::String>
+    FastLaunchLaunchTemplateSpecification& WithLaunchTemplateName(LaunchTemplateNameT&& value) { SetLaunchTemplateName(std::forward<LaunchTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>The version of the launch template to use for faster launching for a Windows
      * AMI.</p>
      */
-    inline const Aws::String& GetLaunchTemplateVersion() const{ return m_launchTemplateVersion; }
+    inline const Aws::String& GetLaunchTemplateVersion() const { return m_launchTemplateVersion; }
     inline bool LaunchTemplateVersionHasBeenSet() const { return m_launchTemplateVersionHasBeenSet; }
-    inline void SetLaunchTemplateVersion(const Aws::String& value) { m_launchTemplateVersionHasBeenSet = true; m_launchTemplateVersion = value; }
-    inline void SetLaunchTemplateVersion(Aws::String&& value) { m_launchTemplateVersionHasBeenSet = true; m_launchTemplateVersion = std::move(value); }
-    inline void SetLaunchTemplateVersion(const char* value) { m_launchTemplateVersionHasBeenSet = true; m_launchTemplateVersion.assign(value); }
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateVersion(const Aws::String& value) { SetLaunchTemplateVersion(value); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateVersion(Aws::String&& value) { SetLaunchTemplateVersion(std::move(value)); return *this;}
-    inline FastLaunchLaunchTemplateSpecification& WithLaunchTemplateVersion(const char* value) { SetLaunchTemplateVersion(value); return *this;}
+    template<typename LaunchTemplateVersionT = Aws::String>
+    void SetLaunchTemplateVersion(LaunchTemplateVersionT&& value) { m_launchTemplateVersionHasBeenSet = true; m_launchTemplateVersion = std::forward<LaunchTemplateVersionT>(value); }
+    template<typename LaunchTemplateVersionT = Aws::String>
+    FastLaunchLaunchTemplateSpecification& WithLaunchTemplateVersion(LaunchTemplateVersionT&& value) { SetLaunchTemplateVersion(std::forward<LaunchTemplateVersionT>(value)); return *this;}
     ///@}
   private:
 

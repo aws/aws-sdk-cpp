@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-AWSLocation::AWSLocation() : 
-    m_zoneHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
-{
-}
-
 AWSLocation::AWSLocation(JsonView jsonValue)
-  : AWSLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AWSLocation& AWSLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Zone"))
   {
     m_zone = jsonValue.GetString("Zone");
-
     m_zoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetArn"))
   {
     m_subnetArn = jsonValue.GetString("SubnetArn");
-
     m_subnetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

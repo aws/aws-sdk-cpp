@@ -32,7 +32,7 @@ namespace Model
   class MediaAnalysisOperationsConfig
   {
   public:
-    AWS_REKOGNITION_API MediaAnalysisOperationsConfig();
+    AWS_REKOGNITION_API MediaAnalysisOperationsConfig() = default;
     AWS_REKOGNITION_API MediaAnalysisOperationsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API MediaAnalysisOperationsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains configuration options for a DetectModerationLabels job.</p>
      */
-    inline const MediaAnalysisDetectModerationLabelsConfig& GetDetectModerationLabels() const{ return m_detectModerationLabels; }
+    inline const MediaAnalysisDetectModerationLabelsConfig& GetDetectModerationLabels() const { return m_detectModerationLabels; }
     inline bool DetectModerationLabelsHasBeenSet() const { return m_detectModerationLabelsHasBeenSet; }
-    inline void SetDetectModerationLabels(const MediaAnalysisDetectModerationLabelsConfig& value) { m_detectModerationLabelsHasBeenSet = true; m_detectModerationLabels = value; }
-    inline void SetDetectModerationLabels(MediaAnalysisDetectModerationLabelsConfig&& value) { m_detectModerationLabelsHasBeenSet = true; m_detectModerationLabels = std::move(value); }
-    inline MediaAnalysisOperationsConfig& WithDetectModerationLabels(const MediaAnalysisDetectModerationLabelsConfig& value) { SetDetectModerationLabels(value); return *this;}
-    inline MediaAnalysisOperationsConfig& WithDetectModerationLabels(MediaAnalysisDetectModerationLabelsConfig&& value) { SetDetectModerationLabels(std::move(value)); return *this;}
+    template<typename DetectModerationLabelsT = MediaAnalysisDetectModerationLabelsConfig>
+    void SetDetectModerationLabels(DetectModerationLabelsT&& value) { m_detectModerationLabelsHasBeenSet = true; m_detectModerationLabels = std::forward<DetectModerationLabelsT>(value); }
+    template<typename DetectModerationLabelsT = MediaAnalysisDetectModerationLabelsConfig>
+    MediaAnalysisOperationsConfig& WithDetectModerationLabels(DetectModerationLabelsT&& value) { SetDetectModerationLabels(std::forward<DetectModerationLabelsT>(value)); return *this;}
     ///@}
   private:
 

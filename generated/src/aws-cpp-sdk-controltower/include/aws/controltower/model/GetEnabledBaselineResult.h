@@ -28,7 +28,7 @@ namespace Model
   class GetEnabledBaselineResult
   {
   public:
-    AWS_CONTROLTOWER_API GetEnabledBaselineResult();
+    AWS_CONTROLTOWER_API GetEnabledBaselineResult() = default;
     AWS_CONTROLTOWER_API GetEnabledBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API GetEnabledBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details of the <code>EnabledBaseline</code> resource.</p>
      */
-    inline const EnabledBaselineDetails& GetEnabledBaselineDetails() const{ return m_enabledBaselineDetails; }
-    inline void SetEnabledBaselineDetails(const EnabledBaselineDetails& value) { m_enabledBaselineDetails = value; }
-    inline void SetEnabledBaselineDetails(EnabledBaselineDetails&& value) { m_enabledBaselineDetails = std::move(value); }
-    inline GetEnabledBaselineResult& WithEnabledBaselineDetails(const EnabledBaselineDetails& value) { SetEnabledBaselineDetails(value); return *this;}
-    inline GetEnabledBaselineResult& WithEnabledBaselineDetails(EnabledBaselineDetails&& value) { SetEnabledBaselineDetails(std::move(value)); return *this;}
+    inline const EnabledBaselineDetails& GetEnabledBaselineDetails() const { return m_enabledBaselineDetails; }
+    template<typename EnabledBaselineDetailsT = EnabledBaselineDetails>
+    void SetEnabledBaselineDetails(EnabledBaselineDetailsT&& value) { m_enabledBaselineDetailsHasBeenSet = true; m_enabledBaselineDetails = std::forward<EnabledBaselineDetailsT>(value); }
+    template<typename EnabledBaselineDetailsT = EnabledBaselineDetails>
+    GetEnabledBaselineResult& WithEnabledBaselineDetails(EnabledBaselineDetailsT&& value) { SetEnabledBaselineDetails(std::forward<EnabledBaselineDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEnabledBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEnabledBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEnabledBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEnabledBaselineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EnabledBaselineDetails m_enabledBaselineDetails;
+    bool m_enabledBaselineDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

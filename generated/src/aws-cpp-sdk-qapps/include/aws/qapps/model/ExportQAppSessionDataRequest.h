@@ -21,7 +21,7 @@ namespace Model
   class ExportQAppSessionDataRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API ExportQAppSessionDataRequest();
+    AWS_QAPPS_API ExportQAppSessionDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ExportQAppSessionDataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ExportQAppSessionDataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ExportQAppSessionDataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ExportQAppSessionDataRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Q App data collection session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ExportQAppSessionDataRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ExportQAppSessionDataRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ExportQAppSessionDataRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ExportQAppSessionDataRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 

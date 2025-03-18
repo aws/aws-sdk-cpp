@@ -36,7 +36,7 @@ namespace Model
   class AuthorizeVpcEndpointAccessResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API AuthorizeVpcEndpointAccessResult();
+    AWS_ELASTICSEARCHSERVICE_API AuthorizeVpcEndpointAccessResult() = default;
     AWS_ELASTICSEARCHSERVICE_API AuthorizeVpcEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API AuthorizeVpcEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * <p>Information about the account or service that was provided access to the
      * domain.</p>
      */
-    inline const AuthorizedPrincipal& GetAuthorizedPrincipal() const{ return m_authorizedPrincipal; }
-    inline void SetAuthorizedPrincipal(const AuthorizedPrincipal& value) { m_authorizedPrincipal = value; }
-    inline void SetAuthorizedPrincipal(AuthorizedPrincipal&& value) { m_authorizedPrincipal = std::move(value); }
-    inline AuthorizeVpcEndpointAccessResult& WithAuthorizedPrincipal(const AuthorizedPrincipal& value) { SetAuthorizedPrincipal(value); return *this;}
-    inline AuthorizeVpcEndpointAccessResult& WithAuthorizedPrincipal(AuthorizedPrincipal&& value) { SetAuthorizedPrincipal(std::move(value)); return *this;}
+    inline const AuthorizedPrincipal& GetAuthorizedPrincipal() const { return m_authorizedPrincipal; }
+    template<typename AuthorizedPrincipalT = AuthorizedPrincipal>
+    void SetAuthorizedPrincipal(AuthorizedPrincipalT&& value) { m_authorizedPrincipalHasBeenSet = true; m_authorizedPrincipal = std::forward<AuthorizedPrincipalT>(value); }
+    template<typename AuthorizedPrincipalT = AuthorizedPrincipal>
+    AuthorizeVpcEndpointAccessResult& WithAuthorizedPrincipal(AuthorizedPrincipalT&& value) { SetAuthorizedPrincipal(std::forward<AuthorizedPrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AuthorizeVpcEndpointAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AuthorizeVpcEndpointAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AuthorizeVpcEndpointAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AuthorizeVpcEndpointAccessResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthorizedPrincipal m_authorizedPrincipal;
+    bool m_authorizedPrincipalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

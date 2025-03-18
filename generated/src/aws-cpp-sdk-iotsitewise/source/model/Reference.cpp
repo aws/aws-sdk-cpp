@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Reference::Reference() : 
-    m_datasetHasBeenSet(false)
-{
-}
-
 Reference::Reference(JsonView jsonValue)
-  : Reference()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Reference& Reference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataset"))
   {
     m_dataset = jsonValue.GetObject("dataset");
-
     m_datasetHasBeenSet = true;
   }
-
   return *this;
 }
 

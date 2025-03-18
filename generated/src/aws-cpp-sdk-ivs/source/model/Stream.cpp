@@ -18,22 +18,7 @@ namespace IVS
 namespace Model
 {
 
-Stream::Stream() : 
-    m_channelArnHasBeenSet(false),
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_playbackUrlHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_state(StreamState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_viewerCount(0),
-    m_viewerCountHasBeenSet(false)
-{
-}
-
 Stream::Stream(JsonView jsonValue)
-  : Stream()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Stream& Stream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelArn"))
   {
     m_channelArn = jsonValue.GetString("channelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playbackUrl"))
   {
     m_playbackUrl = jsonValue.GetString("playbackUrl");
-
     m_playbackUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StreamStateMapper::GetStreamStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("viewerCount"))
   {
     m_viewerCount = jsonValue.GetInt64("viewerCount");
-
     m_viewerCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDelegatedAdministratorRequest::RegisterDelegatedAdministratorRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDelegatedAdministratorRequest::SerializePayload() const
 {
   JsonValue payload;

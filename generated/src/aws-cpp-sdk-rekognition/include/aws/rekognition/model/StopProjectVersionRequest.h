@@ -21,7 +21,7 @@ namespace Model
   class StopProjectVersionRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API StopProjectVersionRequest();
+    AWS_REKOGNITION_API StopProjectVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * stop.</p> <p>This operation requires permissions to perform the
      * <code>rekognition:StopProjectVersion</code> action.</p>
      */
-    inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
+    inline const Aws::String& GetProjectVersionArn() const { return m_projectVersionArn; }
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
-    inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
-    inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
-    inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
-    inline StopProjectVersionRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-    inline StopProjectVersionRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-    inline StopProjectVersionRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    template<typename ProjectVersionArnT = Aws::String>
+    void SetProjectVersionArn(ProjectVersionArnT&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::forward<ProjectVersionArnT>(value); }
+    template<typename ProjectVersionArnT = Aws::String>
+    StopProjectVersionRequest& WithProjectVersionArn(ProjectVersionArnT&& value) { SetProjectVersionArn(std::forward<ProjectVersionArnT>(value)); return *this;}
     ///@}
   private:
 

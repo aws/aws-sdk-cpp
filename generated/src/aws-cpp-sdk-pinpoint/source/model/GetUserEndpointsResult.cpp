@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUserEndpointsResult::GetUserEndpointsResult()
-{
-}
-
 GetUserEndpointsResult::GetUserEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetUserEndpointsResult& GetUserEndpointsResult::operator =(const Aws::AmazonWebS
 {
   JsonView jsonValue = result.GetPayload().View();
   m_endpointsResponse = jsonValue;
+  m_endpointsResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkspaceServiceAccountsResult::ListWorkspaceServiceAccountsResult()
-{
-}
-
 ListWorkspaceServiceAccountsResult::ListWorkspaceServiceAccountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkspaceServiceAccountsResult& ListWorkspaceServiceAccountsResult::operator
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceAccounts"))
   {
     Aws::Utils::Array<JsonView> serviceAccountsJsonList = jsonValue.GetArray("serviceAccounts");
@@ -42,20 +37,20 @@ ListWorkspaceServiceAccountsResult& ListWorkspaceServiceAccountsResult::operator
     {
       m_serviceAccounts.push_back(serviceAccountsJsonList[serviceAccountsIndex].AsObject());
     }
+    m_serviceAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
+    m_workspaceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

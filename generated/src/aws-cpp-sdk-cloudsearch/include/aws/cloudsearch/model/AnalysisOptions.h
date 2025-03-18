@@ -33,7 +33,7 @@ namespace Model
   class AnalysisOptions
   {
   public:
-    AWS_CLOUDSEARCH_API AnalysisOptions();
+    AWS_CLOUDSEARCH_API AnalysisOptions() = default;
     AWS_CLOUDSEARCH_API AnalysisOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API AnalysisOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a>
      * in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetSynonyms() const{ return m_synonyms; }
+    inline const Aws::String& GetSynonyms() const { return m_synonyms; }
     inline bool SynonymsHasBeenSet() const { return m_synonymsHasBeenSet; }
-    inline void SetSynonyms(const Aws::String& value) { m_synonymsHasBeenSet = true; m_synonyms = value; }
-    inline void SetSynonyms(Aws::String&& value) { m_synonymsHasBeenSet = true; m_synonyms = std::move(value); }
-    inline void SetSynonyms(const char* value) { m_synonymsHasBeenSet = true; m_synonyms.assign(value); }
-    inline AnalysisOptions& WithSynonyms(const Aws::String& value) { SetSynonyms(value); return *this;}
-    inline AnalysisOptions& WithSynonyms(Aws::String&& value) { SetSynonyms(std::move(value)); return *this;}
-    inline AnalysisOptions& WithSynonyms(const char* value) { SetSynonyms(value); return *this;}
+    template<typename SynonymsT = Aws::String>
+    void SetSynonyms(SynonymsT&& value) { m_synonymsHasBeenSet = true; m_synonyms = std::forward<SynonymsT>(value); }
+    template<typename SynonymsT = Aws::String>
+    AnalysisOptions& WithSynonyms(SynonymsT&& value) { SetSynonyms(std::forward<SynonymsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * list each word you want to ignore. Wildcards and regular expressions are not
      * supported. </p>
      */
-    inline const Aws::String& GetStopwords() const{ return m_stopwords; }
+    inline const Aws::String& GetStopwords() const { return m_stopwords; }
     inline bool StopwordsHasBeenSet() const { return m_stopwordsHasBeenSet; }
-    inline void SetStopwords(const Aws::String& value) { m_stopwordsHasBeenSet = true; m_stopwords = value; }
-    inline void SetStopwords(Aws::String&& value) { m_stopwordsHasBeenSet = true; m_stopwords = std::move(value); }
-    inline void SetStopwords(const char* value) { m_stopwordsHasBeenSet = true; m_stopwords.assign(value); }
-    inline AnalysisOptions& WithStopwords(const Aws::String& value) { SetStopwords(value); return *this;}
-    inline AnalysisOptions& WithStopwords(Aws::String&& value) { SetStopwords(std::move(value)); return *this;}
-    inline AnalysisOptions& WithStopwords(const char* value) { SetStopwords(value); return *this;}
+    template<typename StopwordsT = Aws::String>
+    void SetStopwords(StopwordsT&& value) { m_stopwordsHasBeenSet = true; m_stopwords = std::forward<StopwordsT>(value); }
+    template<typename StopwordsT = Aws::String>
+    AnalysisOptions& WithStopwords(StopwordsT&& value) { SetStopwords(std::forward<StopwordsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * algorithmic stemming to correct specific cases of overstemming or understemming.
      * The maximum size of a stemming dictionary is 500 KB.</p>
      */
-    inline const Aws::String& GetStemmingDictionary() const{ return m_stemmingDictionary; }
+    inline const Aws::String& GetStemmingDictionary() const { return m_stemmingDictionary; }
     inline bool StemmingDictionaryHasBeenSet() const { return m_stemmingDictionaryHasBeenSet; }
-    inline void SetStemmingDictionary(const Aws::String& value) { m_stemmingDictionaryHasBeenSet = true; m_stemmingDictionary = value; }
-    inline void SetStemmingDictionary(Aws::String&& value) { m_stemmingDictionaryHasBeenSet = true; m_stemmingDictionary = std::move(value); }
-    inline void SetStemmingDictionary(const char* value) { m_stemmingDictionaryHasBeenSet = true; m_stemmingDictionary.assign(value); }
-    inline AnalysisOptions& WithStemmingDictionary(const Aws::String& value) { SetStemmingDictionary(value); return *this;}
-    inline AnalysisOptions& WithStemmingDictionary(Aws::String&& value) { SetStemmingDictionary(std::move(value)); return *this;}
-    inline AnalysisOptions& WithStemmingDictionary(const char* value) { SetStemmingDictionary(value); return *this;}
+    template<typename StemmingDictionaryT = Aws::String>
+    void SetStemmingDictionary(StemmingDictionaryT&& value) { m_stemmingDictionaryHasBeenSet = true; m_stemmingDictionary = std::forward<StemmingDictionaryT>(value); }
+    template<typename StemmingDictionaryT = Aws::String>
+    AnalysisOptions& WithStemmingDictionary(StemmingDictionaryT&& value) { SetStemmingDictionary(std::forward<StemmingDictionaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * enables you to override the default tokenization for selected terms. This is
      * only valid for Japanese language fields.</p>
      */
-    inline const Aws::String& GetJapaneseTokenizationDictionary() const{ return m_japaneseTokenizationDictionary; }
+    inline const Aws::String& GetJapaneseTokenizationDictionary() const { return m_japaneseTokenizationDictionary; }
     inline bool JapaneseTokenizationDictionaryHasBeenSet() const { return m_japaneseTokenizationDictionaryHasBeenSet; }
-    inline void SetJapaneseTokenizationDictionary(const Aws::String& value) { m_japaneseTokenizationDictionaryHasBeenSet = true; m_japaneseTokenizationDictionary = value; }
-    inline void SetJapaneseTokenizationDictionary(Aws::String&& value) { m_japaneseTokenizationDictionaryHasBeenSet = true; m_japaneseTokenizationDictionary = std::move(value); }
-    inline void SetJapaneseTokenizationDictionary(const char* value) { m_japaneseTokenizationDictionaryHasBeenSet = true; m_japaneseTokenizationDictionary.assign(value); }
-    inline AnalysisOptions& WithJapaneseTokenizationDictionary(const Aws::String& value) { SetJapaneseTokenizationDictionary(value); return *this;}
-    inline AnalysisOptions& WithJapaneseTokenizationDictionary(Aws::String&& value) { SetJapaneseTokenizationDictionary(std::move(value)); return *this;}
-    inline AnalysisOptions& WithJapaneseTokenizationDictionary(const char* value) { SetJapaneseTokenizationDictionary(value); return *this;}
+    template<typename JapaneseTokenizationDictionaryT = Aws::String>
+    void SetJapaneseTokenizationDictionary(JapaneseTokenizationDictionaryT&& value) { m_japaneseTokenizationDictionaryHasBeenSet = true; m_japaneseTokenizationDictionary = std::forward<JapaneseTokenizationDictionaryT>(value); }
+    template<typename JapaneseTokenizationDictionaryT = Aws::String>
+    AnalysisOptions& WithJapaneseTokenizationDictionary(JapaneseTokenizationDictionaryT&& value) { SetJapaneseTokenizationDictionary(std::forward<JapaneseTokenizationDictionaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +118,10 @@ namespace Model
      * target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon
      * CloudSearch Developer Guide</i> </p>
      */
-    inline const AlgorithmicStemming& GetAlgorithmicStemming() const{ return m_algorithmicStemming; }
+    inline AlgorithmicStemming GetAlgorithmicStemming() const { return m_algorithmicStemming; }
     inline bool AlgorithmicStemmingHasBeenSet() const { return m_algorithmicStemmingHasBeenSet; }
-    inline void SetAlgorithmicStemming(const AlgorithmicStemming& value) { m_algorithmicStemmingHasBeenSet = true; m_algorithmicStemming = value; }
-    inline void SetAlgorithmicStemming(AlgorithmicStemming&& value) { m_algorithmicStemmingHasBeenSet = true; m_algorithmicStemming = std::move(value); }
-    inline AnalysisOptions& WithAlgorithmicStemming(const AlgorithmicStemming& value) { SetAlgorithmicStemming(value); return *this;}
-    inline AnalysisOptions& WithAlgorithmicStemming(AlgorithmicStemming&& value) { SetAlgorithmicStemming(std::move(value)); return *this;}
+    inline void SetAlgorithmicStemming(AlgorithmicStemming value) { m_algorithmicStemmingHasBeenSet = true; m_algorithmicStemming = value; }
+    inline AnalysisOptions& WithAlgorithmicStemming(AlgorithmicStemming value) { SetAlgorithmicStemming(value); return *this;}
     ///@}
   private:
 
@@ -147,7 +137,7 @@ namespace Model
     Aws::String m_japaneseTokenizationDictionary;
     bool m_japaneseTokenizationDictionaryHasBeenSet = false;
 
-    AlgorithmicStemming m_algorithmicStemming;
+    AlgorithmicStemming m_algorithmicStemming{AlgorithmicStemming::NOT_SET};
     bool m_algorithmicStemmingHasBeenSet = false;
   };
 

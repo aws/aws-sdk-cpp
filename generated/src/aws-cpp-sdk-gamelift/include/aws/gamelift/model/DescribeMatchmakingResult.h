@@ -29,7 +29,7 @@ namespace Model
   class DescribeMatchmakingResult
   {
   public:
-    AWS_GAMELIFT_API DescribeMatchmakingResult();
+    AWS_GAMELIFT_API DescribeMatchmakingResult() = default;
     AWS_GAMELIFT_API DescribeMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
-    inline const Aws::Vector<MatchmakingTicket>& GetTicketList() const{ return m_ticketList; }
-    inline void SetTicketList(const Aws::Vector<MatchmakingTicket>& value) { m_ticketList = value; }
-    inline void SetTicketList(Aws::Vector<MatchmakingTicket>&& value) { m_ticketList = std::move(value); }
-    inline DescribeMatchmakingResult& WithTicketList(const Aws::Vector<MatchmakingTicket>& value) { SetTicketList(value); return *this;}
-    inline DescribeMatchmakingResult& WithTicketList(Aws::Vector<MatchmakingTicket>&& value) { SetTicketList(std::move(value)); return *this;}
-    inline DescribeMatchmakingResult& AddTicketList(const MatchmakingTicket& value) { m_ticketList.push_back(value); return *this; }
-    inline DescribeMatchmakingResult& AddTicketList(MatchmakingTicket&& value) { m_ticketList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MatchmakingTicket>& GetTicketList() const { return m_ticketList; }
+    template<typename TicketListT = Aws::Vector<MatchmakingTicket>>
+    void SetTicketList(TicketListT&& value) { m_ticketListHasBeenSet = true; m_ticketList = std::forward<TicketListT>(value); }
+    template<typename TicketListT = Aws::Vector<MatchmakingTicket>>
+    DescribeMatchmakingResult& WithTicketList(TicketListT&& value) { SetTicketList(std::forward<TicketListT>(value)); return *this;}
+    template<typename TicketListT = MatchmakingTicket>
+    DescribeMatchmakingResult& AddTicketList(TicketListT&& value) { m_ticketListHasBeenSet = true; m_ticketList.emplace_back(std::forward<TicketListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMatchmakingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMatchmakingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMatchmakingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMatchmakingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MatchmakingTicket> m_ticketList;
+    bool m_ticketListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

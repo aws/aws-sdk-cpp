@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredUserDashboardVisualEmbeddingConfiguration::RegisteredUserDashboardVisualEmbeddingConfiguration() : 
-    m_initialDashboardVisualIdHasBeenSet(false)
-{
-}
-
 RegisteredUserDashboardVisualEmbeddingConfiguration::RegisteredUserDashboardVisualEmbeddingConfiguration(JsonView jsonValue)
-  : RegisteredUserDashboardVisualEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RegisteredUserDashboardVisualEmbeddingConfiguration& RegisteredUserDashboardVisu
   if(jsonValue.ValueExists("InitialDashboardVisualId"))
   {
     m_initialDashboardVisualId = jsonValue.GetObject("InitialDashboardVisualId");
-
     m_initialDashboardVisualIdHasBeenSet = true;
   }
-
   return *this;
 }
 

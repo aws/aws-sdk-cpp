@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointOutputConfiguration::EndpointOutputConfiguration() : 
-    m_endpointNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_initialInstanceCount(0),
-    m_initialInstanceCountHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false)
-{
-}
-
 EndpointOutputConfiguration::EndpointOutputConfiguration(JsonView jsonValue)
-  : EndpointOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ EndpointOutputConfiguration& EndpointOutputConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VariantName"))
   {
     m_variantName = jsonValue.GetString("VariantName");
-
     m_variantNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialInstanceCount"))
   {
     m_initialInstanceCount = jsonValue.GetInteger("InitialInstanceCount");
-
     m_initialInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerlessConfig"))
   {
     m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
-
     m_serverlessConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

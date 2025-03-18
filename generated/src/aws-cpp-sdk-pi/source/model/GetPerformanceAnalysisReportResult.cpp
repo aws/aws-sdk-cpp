@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPerformanceAnalysisReportResult::GetPerformanceAnalysisReportResult()
-{
-}
-
 GetPerformanceAnalysisReportResult::GetPerformanceAnalysisReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPerformanceAnalysisReportResult& GetPerformanceAnalysisReportResult::operator
   if(jsonValue.ValueExists("AnalysisReport"))
   {
     m_analysisReport = jsonValue.GetObject("AnalysisReport");
-
+    m_analysisReportHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

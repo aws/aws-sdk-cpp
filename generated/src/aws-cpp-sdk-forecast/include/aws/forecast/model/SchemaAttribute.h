@@ -36,7 +36,7 @@ namespace Model
   class SchemaAttribute
   {
   public:
-    AWS_FORECASTSERVICE_API SchemaAttribute();
+    AWS_FORECASTSERVICE_API SchemaAttribute() = default;
     AWS_FORECASTSERVICE_API SchemaAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API SchemaAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the dataset field.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline SchemaAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline SchemaAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline SchemaAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    SchemaAttribute& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * than date, item_id, and forecast dimensions attributes, all attributes should be
      * of numerical type (integer/float).</p>
      */
-    inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
+    inline AttributeType GetAttributeType() const { return m_attributeType; }
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
-    inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
-    inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
-    inline SchemaAttribute& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
-    inline SchemaAttribute& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
+    inline void SetAttributeType(AttributeType value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
+    inline SchemaAttribute& WithAttributeType(AttributeType value) { SetAttributeType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    AttributeType m_attributeType;
+    AttributeType m_attributeType{AttributeType::NOT_SET};
     bool m_attributeTypeHasBeenSet = false;
   };
 

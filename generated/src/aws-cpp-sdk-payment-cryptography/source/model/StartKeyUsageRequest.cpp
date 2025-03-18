@@ -12,11 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartKeyUsageRequest::StartKeyUsageRequest() : 
-    m_keyIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartKeyUsageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteBatchPredictionRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API DeleteBatchPredictionRequest();
+    AWS_MACHINELEARNING_API DeleteBatchPredictionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
-    inline const Aws::String& GetBatchPredictionId() const{ return m_batchPredictionId; }
+    inline const Aws::String& GetBatchPredictionId() const { return m_batchPredictionId; }
     inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
-    inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::move(value); }
-    inline void SetBatchPredictionId(const char* value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId.assign(value); }
-    inline DeleteBatchPredictionRequest& WithBatchPredictionId(const Aws::String& value) { SetBatchPredictionId(value); return *this;}
-    inline DeleteBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
-    inline DeleteBatchPredictionRequest& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
+    template<typename BatchPredictionIdT = Aws::String>
+    void SetBatchPredictionId(BatchPredictionIdT&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::forward<BatchPredictionIdT>(value); }
+    template<typename BatchPredictionIdT = Aws::String>
+    DeleteBatchPredictionRequest& WithBatchPredictionId(BatchPredictionIdT&& value) { SetBatchPredictionId(std::forward<BatchPredictionIdT>(value)); return *this;}
     ///@}
   private:
 

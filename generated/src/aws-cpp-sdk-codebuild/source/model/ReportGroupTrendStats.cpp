@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ReportGroupTrendStats::ReportGroupTrendStats() : 
-    m_averageHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_minHasBeenSet(false)
-{
-}
-
 ReportGroupTrendStats::ReportGroupTrendStats(JsonView jsonValue)
-  : ReportGroupTrendStats()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReportGroupTrendStats& ReportGroupTrendStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("average"))
   {
     m_average = jsonValue.GetString("average");
-
     m_averageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetString("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetString("min");
-
     m_minHasBeenSet = true;
   }
-
   return *this;
 }
 

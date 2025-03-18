@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ServiceNowConnectorProfileProperties::ServiceNowConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 ServiceNowConnectorProfileProperties::ServiceNowConnectorProfileProperties(JsonView jsonValue)
-  : ServiceNowConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceNowConnectorProfileProperties& ServiceNowConnectorProfileProperties::oper
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

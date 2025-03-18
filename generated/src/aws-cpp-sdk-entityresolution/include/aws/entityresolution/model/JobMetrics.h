@@ -31,7 +31,7 @@ namespace Model
   class JobMetrics
   {
   public:
-    AWS_ENTITYRESOLUTION_API JobMetrics();
+    AWS_ENTITYRESOLUTION_API JobMetrics() = default;
     AWS_ENTITYRESOLUTION_API JobMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API JobMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The total number of input records.</p>
      */
-    inline int GetInputRecords() const{ return m_inputRecords; }
+    inline int GetInputRecords() const { return m_inputRecords; }
     inline bool InputRecordsHasBeenSet() const { return m_inputRecordsHasBeenSet; }
     inline void SetInputRecords(int value) { m_inputRecordsHasBeenSet = true; m_inputRecords = value; }
     inline JobMetrics& WithInputRecords(int value) { SetInputRecords(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The total number of <code>matchID</code>s generated.</p>
      */
-    inline int GetMatchIDs() const{ return m_matchIDs; }
+    inline int GetMatchIDs() const { return m_matchIDs; }
     inline bool MatchIDsHasBeenSet() const { return m_matchIDsHasBeenSet; }
     inline void SetMatchIDs(int value) { m_matchIDsHasBeenSet = true; m_matchIDs = value; }
     inline JobMetrics& WithMatchIDs(int value) { SetMatchIDs(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>The total number of records that did not get processed.</p>
      */
-    inline int GetRecordsNotProcessed() const{ return m_recordsNotProcessed; }
+    inline int GetRecordsNotProcessed() const { return m_recordsNotProcessed; }
     inline bool RecordsNotProcessedHasBeenSet() const { return m_recordsNotProcessedHasBeenSet; }
     inline void SetRecordsNotProcessed(int value) { m_recordsNotProcessedHasBeenSet = true; m_recordsNotProcessed = value; }
     inline JobMetrics& WithRecordsNotProcessed(int value) { SetRecordsNotProcessed(value); return *this;}
@@ -71,23 +71,23 @@ namespace Model
     /**
      * <p>The total number of records processed.</p>
      */
-    inline int GetTotalRecordsProcessed() const{ return m_totalRecordsProcessed; }
+    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
     inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
     inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
     inline JobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
     ///@}
   private:
 
-    int m_inputRecords;
+    int m_inputRecords{0};
     bool m_inputRecordsHasBeenSet = false;
 
-    int m_matchIDs;
+    int m_matchIDs{0};
     bool m_matchIDsHasBeenSet = false;
 
-    int m_recordsNotProcessed;
+    int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
 
-    int m_totalRecordsProcessed;
+    int m_totalRecordsProcessed{0};
     bool m_totalRecordsProcessedHasBeenSet = false;
   };
 

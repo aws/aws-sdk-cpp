@@ -21,7 +21,7 @@ namespace Model
   class SetSecurityTokenServicePreferencesRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API SetSecurityTokenServicePreferencesRequest();
+    AWS_IAM_API SetSecurityTokenServicePreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,16 +48,14 @@ namespace Model
      * and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User
      * Guide</i>.</p>
      */
-    inline const GlobalEndpointTokenVersion& GetGlobalEndpointTokenVersion() const{ return m_globalEndpointTokenVersion; }
+    inline GlobalEndpointTokenVersion GetGlobalEndpointTokenVersion() const { return m_globalEndpointTokenVersion; }
     inline bool GlobalEndpointTokenVersionHasBeenSet() const { return m_globalEndpointTokenVersionHasBeenSet; }
-    inline void SetGlobalEndpointTokenVersion(const GlobalEndpointTokenVersion& value) { m_globalEndpointTokenVersionHasBeenSet = true; m_globalEndpointTokenVersion = value; }
-    inline void SetGlobalEndpointTokenVersion(GlobalEndpointTokenVersion&& value) { m_globalEndpointTokenVersionHasBeenSet = true; m_globalEndpointTokenVersion = std::move(value); }
-    inline SetSecurityTokenServicePreferencesRequest& WithGlobalEndpointTokenVersion(const GlobalEndpointTokenVersion& value) { SetGlobalEndpointTokenVersion(value); return *this;}
-    inline SetSecurityTokenServicePreferencesRequest& WithGlobalEndpointTokenVersion(GlobalEndpointTokenVersion&& value) { SetGlobalEndpointTokenVersion(std::move(value)); return *this;}
+    inline void SetGlobalEndpointTokenVersion(GlobalEndpointTokenVersion value) { m_globalEndpointTokenVersionHasBeenSet = true; m_globalEndpointTokenVersion = value; }
+    inline SetSecurityTokenServicePreferencesRequest& WithGlobalEndpointTokenVersion(GlobalEndpointTokenVersion value) { SetGlobalEndpointTokenVersion(value); return *this;}
     ///@}
   private:
 
-    GlobalEndpointTokenVersion m_globalEndpointTokenVersion;
+    GlobalEndpointTokenVersion m_globalEndpointTokenVersion{GlobalEndpointTokenVersion::NOT_SET};
     bool m_globalEndpointTokenVersionHasBeenSet = false;
   };
 

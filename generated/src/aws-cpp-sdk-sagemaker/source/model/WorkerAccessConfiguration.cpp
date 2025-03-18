@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-WorkerAccessConfiguration::WorkerAccessConfiguration() : 
-    m_s3PresignHasBeenSet(false)
-{
-}
-
 WorkerAccessConfiguration::WorkerAccessConfiguration(JsonView jsonValue)
-  : WorkerAccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkerAccessConfiguration& WorkerAccessConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("S3Presign"))
   {
     m_s3Presign = jsonValue.GetObject("S3Presign");
-
     m_s3PresignHasBeenSet = true;
   }
-
   return *this;
 }
 

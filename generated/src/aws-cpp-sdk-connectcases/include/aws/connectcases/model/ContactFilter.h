@@ -33,7 +33,7 @@ namespace Model
   class ContactFilter
   {
   public:
-    AWS_CONNECTCASES_API ContactFilter();
+    AWS_CONNECTCASES_API ContactFilter() = default;
     AWS_CONNECTCASES_API ContactFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API ContactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
      * <p>A list of channels to filter on for related items of type
      * <code>Contact</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetChannel() const{ return m_channel; }
+    inline const Aws::Vector<Aws::String>& GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Aws::Vector<Aws::String>& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Aws::Vector<Aws::String>&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline ContactFilter& WithChannel(const Aws::Vector<Aws::String>& value) { SetChannel(value); return *this;}
-    inline ContactFilter& WithChannel(Aws::Vector<Aws::String>&& value) { SetChannel(std::move(value)); return *this;}
-    inline ContactFilter& AddChannel(const Aws::String& value) { m_channelHasBeenSet = true; m_channel.push_back(value); return *this; }
-    inline ContactFilter& AddChannel(Aws::String&& value) { m_channelHasBeenSet = true; m_channel.push_back(std::move(value)); return *this; }
-    inline ContactFilter& AddChannel(const char* value) { m_channelHasBeenSet = true; m_channel.push_back(value); return *this; }
+    template<typename ChannelT = Aws::Vector<Aws::String>>
+    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
+    template<typename ChannelT = Aws::Vector<Aws::String>>
+    ContactFilter& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
+    template<typename ChannelT = Aws::String>
+    ContactFilter& AddChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel.emplace_back(std::forward<ChannelT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier of a contact in Amazon Connect.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline ContactFilter& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline ContactFilter& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline ContactFilter& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    ContactFilter& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
   private:
 

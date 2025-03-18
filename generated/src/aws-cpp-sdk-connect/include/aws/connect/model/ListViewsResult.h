@@ -29,7 +29,7 @@ namespace Model
   class ListViewsResult
   {
   public:
-    AWS_CONNECT_API ListViewsResult();
+    AWS_CONNECT_API ListViewsResult() = default;
     AWS_CONNECT_API ListViewsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListViewsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of view summaries.</p>
      */
-    inline const Aws::Vector<ViewSummary>& GetViewsSummaryList() const{ return m_viewsSummaryList; }
-    inline void SetViewsSummaryList(const Aws::Vector<ViewSummary>& value) { m_viewsSummaryList = value; }
-    inline void SetViewsSummaryList(Aws::Vector<ViewSummary>&& value) { m_viewsSummaryList = std::move(value); }
-    inline ListViewsResult& WithViewsSummaryList(const Aws::Vector<ViewSummary>& value) { SetViewsSummaryList(value); return *this;}
-    inline ListViewsResult& WithViewsSummaryList(Aws::Vector<ViewSummary>&& value) { SetViewsSummaryList(std::move(value)); return *this;}
-    inline ListViewsResult& AddViewsSummaryList(const ViewSummary& value) { m_viewsSummaryList.push_back(value); return *this; }
-    inline ListViewsResult& AddViewsSummaryList(ViewSummary&& value) { m_viewsSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ViewSummary>& GetViewsSummaryList() const { return m_viewsSummaryList; }
+    template<typename ViewsSummaryListT = Aws::Vector<ViewSummary>>
+    void SetViewsSummaryList(ViewsSummaryListT&& value) { m_viewsSummaryListHasBeenSet = true; m_viewsSummaryList = std::forward<ViewsSummaryListT>(value); }
+    template<typename ViewsSummaryListT = Aws::Vector<ViewSummary>>
+    ListViewsResult& WithViewsSummaryList(ViewsSummaryListT&& value) { SetViewsSummaryList(std::forward<ViewsSummaryListT>(value)); return *this;}
+    template<typename ViewsSummaryListT = ViewSummary>
+    ListViewsResult& AddViewsSummaryList(ViewsSummaryListT&& value) { m_viewsSummaryListHasBeenSet = true; m_viewsSummaryList.emplace_back(std::forward<ViewsSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListViewsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListViewsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListViewsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListViewsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListViewsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListViewsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListViewsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListViewsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ViewSummary> m_viewsSummaryList;
+    bool m_viewsSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

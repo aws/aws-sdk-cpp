@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SampleChannelDataResult::SampleChannelDataResult()
-{
-}
-
 SampleChannelDataResult::SampleChannelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -37,14 +33,15 @@ SampleChannelDataResult& SampleChannelDataResult::operator =(const Aws::AmazonWe
     {
       m_payloads.push_back(HashingUtils::Base64Decode(payloadsJsonList[payloadsIndex].AsString()));
     }
+    m_payloadsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

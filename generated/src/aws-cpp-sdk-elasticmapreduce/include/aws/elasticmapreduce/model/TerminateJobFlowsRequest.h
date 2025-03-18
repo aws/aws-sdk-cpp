@@ -26,7 +26,7 @@ namespace Model
   class TerminateJobFlowsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API TerminateJobFlowsRequest();
+    AWS_EMR_API TerminateJobFlowsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of job flows to be shut down.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const { return m_jobFlowIds; }
     inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
-    inline TerminateJobFlowsRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
-    inline TerminateJobFlowsRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
-    inline TerminateJobFlowsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
-    inline TerminateJobFlowsRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
-    inline TerminateJobFlowsRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    void SetJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::forward<JobFlowIdsT>(value); }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    TerminateJobFlowsRequest& WithJobFlowIds(JobFlowIdsT&& value) { SetJobFlowIds(std::forward<JobFlowIdsT>(value)); return *this;}
+    template<typename JobFlowIdsT = Aws::String>
+    TerminateJobFlowsRequest& AddJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.emplace_back(std::forward<JobFlowIdsT>(value)); return *this; }
     ///@}
   private:
 

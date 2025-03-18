@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListThemeAliasesResult::ListThemeAliasesResult() : 
-    m_status(0)
-{
-}
-
 ListThemeAliasesResult::ListThemeAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListThemeAliasesResult()
 {
   *this = result;
 }
@@ -38,24 +32,24 @@ ListThemeAliasesResult& ListThemeAliasesResult::operator =(const Aws::AmazonWebS
     {
       m_themeAliasList.push_back(themeAliasListJsonList[themeAliasListIndex].AsObject());
     }
+    m_themeAliasListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

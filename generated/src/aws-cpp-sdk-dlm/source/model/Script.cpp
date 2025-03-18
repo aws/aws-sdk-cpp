@@ -18,22 +18,7 @@ namespace DLM
 namespace Model
 {
 
-Script::Script() : 
-    m_stagesHasBeenSet(false),
-    m_executionHandlerService(ExecutionHandlerServiceValues::NOT_SET),
-    m_executionHandlerServiceHasBeenSet(false),
-    m_executionHandlerHasBeenSet(false),
-    m_executeOperationOnScriptFailure(false),
-    m_executeOperationOnScriptFailureHasBeenSet(false),
-    m_executionTimeout(0),
-    m_executionTimeoutHasBeenSet(false),
-    m_maximumRetryCount(0),
-    m_maximumRetryCountHasBeenSet(false)
-{
-}
-
 Script::Script(JsonView jsonValue)
-  : Script()
 {
   *this = jsonValue;
 }
@@ -49,42 +34,31 @@ Script& Script::operator =(JsonView jsonValue)
     }
     m_stagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionHandlerService"))
   {
     m_executionHandlerService = ExecutionHandlerServiceValuesMapper::GetExecutionHandlerServiceValuesForName(jsonValue.GetString("ExecutionHandlerService"));
-
     m_executionHandlerServiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionHandler"))
   {
     m_executionHandler = jsonValue.GetString("ExecutionHandler");
-
     m_executionHandlerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecuteOperationOnScriptFailure"))
   {
     m_executeOperationOnScriptFailure = jsonValue.GetBool("ExecuteOperationOnScriptFailure");
-
     m_executeOperationOnScriptFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTimeout"))
   {
     m_executionTimeout = jsonValue.GetInteger("ExecutionTimeout");
-
     m_executionTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumRetryCount"))
   {
     m_maximumRetryCount = jsonValue.GetInteger("MaximumRetryCount");
-
     m_maximumRetryCountHasBeenSet = true;
   }
-
   return *this;
 }
 

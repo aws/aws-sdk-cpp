@@ -12,23 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApiCacheRequest::CreateApiCacheRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_ttl(0),
-    m_ttlHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_apiCachingBehavior(ApiCachingBehavior::NOT_SET),
-    m_apiCachingBehaviorHasBeenSet(false),
-    m_type(ApiCacheType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
-    m_healthMetricsConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateApiCacheRequest::SerializePayload() const
 {
   JsonValue payload;

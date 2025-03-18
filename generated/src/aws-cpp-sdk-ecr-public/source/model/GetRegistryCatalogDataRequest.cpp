@@ -12,10 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegistryCatalogDataRequest::GetRegistryCatalogDataRequest()
-{
-}
-
 Aws::String GetRegistryCatalogDataRequest::SerializePayload() const
 {
   return "{}";

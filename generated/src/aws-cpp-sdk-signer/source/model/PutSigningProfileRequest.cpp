@@ -12,17 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSigningProfileRequest::PutSigningProfileRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_signingMaterialHasBeenSet(false),
-    m_signatureValidityPeriodHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_signingParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutSigningProfileRequest::SerializePayload() const
 {
   JsonValue payload;

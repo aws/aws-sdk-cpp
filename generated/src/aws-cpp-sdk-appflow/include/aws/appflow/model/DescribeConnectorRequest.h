@@ -22,7 +22,7 @@ namespace Model
   class DescribeConnectorRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API DescribeConnectorRequest();
+    AWS_APPFLOW_API DescribeConnectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
      * <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please
      * choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
      */
-    inline const ConnectorType& GetConnectorType() const{ return m_connectorType; }
+    inline ConnectorType GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const ConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(ConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline DescribeConnectorRequest& WithConnectorType(const ConnectorType& value) { SetConnectorType(value); return *this;}
-    inline DescribeConnectorRequest& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(ConnectorType value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline DescribeConnectorRequest& WithConnectorType(ConnectorType value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -52,18 +50,16 @@ namespace Model
      * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
      * needed if calling for CUSTOMCONNECTOR connector type/.</p>
      */
-    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+    inline const Aws::String& GetConnectorLabel() const { return m_connectorLabel; }
     inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
-    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
-    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
-    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
-    inline DescribeConnectorRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
-    inline DescribeConnectorRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
-    inline DescribeConnectorRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+    template<typename ConnectorLabelT = Aws::String>
+    void SetConnectorLabel(ConnectorLabelT&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::forward<ConnectorLabelT>(value); }
+    template<typename ConnectorLabelT = Aws::String>
+    DescribeConnectorRequest& WithConnectorLabel(ConnectorLabelT&& value) { SetConnectorLabel(std::forward<ConnectorLabelT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectorType m_connectorType;
+    ConnectorType m_connectorType{ConnectorType::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;

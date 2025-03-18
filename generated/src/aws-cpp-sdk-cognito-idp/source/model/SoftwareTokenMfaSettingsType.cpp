@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_preferredMfa(false),
-    m_preferredMfaHasBeenSet(false)
-{
-}
-
 SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(JsonView jsonValue)
-  : SoftwareTokenMfaSettingsType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SoftwareTokenMfaSettingsType& SoftwareTokenMfaSettingsType::operator =(JsonView 
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMfa"))
   {
     m_preferredMfa = jsonValue.GetBool("PreferredMfa");
-
     m_preferredMfaHasBeenSet = true;
   }
-
   return *this;
 }
 

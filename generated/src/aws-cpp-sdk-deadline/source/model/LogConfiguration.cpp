@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-LogConfiguration::LogConfiguration() : 
-    m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 LogConfiguration::LogConfiguration(JsonView jsonValue)
-  : LogConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logDriver"))
   {
     m_logDriver = jsonValue.GetString("logDriver");
-
     m_logDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
@@ -50,7 +39,6 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -60,14 +48,11 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

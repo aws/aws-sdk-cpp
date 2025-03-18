@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspacesRequest::CreateWorkspacesRequest() : 
-    m_workspacesHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspacesRequest::SerializePayload() const
 {
   JsonValue payload;

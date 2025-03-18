@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SummaryMetricConfiguration::SummaryMetricConfiguration() : 
-    m_status(SummaryMetricConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SummaryMetricConfiguration::SummaryMetricConfiguration(JsonView jsonValue)
-  : SummaryMetricConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SummaryMetricConfiguration& SummaryMetricConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SummaryMetricConfigurationStatusMapper::GetSummaryMetricConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

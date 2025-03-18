@@ -22,7 +22,7 @@ namespace Model
   class CreatePlacementRequest : public IoT1ClickProjectsRequest
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API CreatePlacementRequest();
+    AWS_IOT1CLICKPROJECTS_API CreatePlacementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The name of the placement to be created.</p>
      */
-    inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+    inline const Aws::String& GetPlacementName() const { return m_placementName; }
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-    inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-    inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-    inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-    inline CreatePlacementRequest& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-    inline CreatePlacementRequest& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-    inline CreatePlacementRequest& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    template<typename PlacementNameT = Aws::String>
+    void SetPlacementName(PlacementNameT&& value) { m_placementNameHasBeenSet = true; m_placementName = std::forward<PlacementNameT>(value); }
+    template<typename PlacementNameT = Aws::String>
+    CreatePlacementRequest& WithPlacementName(PlacementNameT&& value) { SetPlacementName(std::forward<PlacementNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in which to create the placement.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline CreatePlacementRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline CreatePlacementRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline CreatePlacementRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    CreatePlacementRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +62,16 @@ namespace Model
      * <p>Optional user-defined key/value pairs providing contextual data (such as
      * location or function) for the placement.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreatePlacementRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreatePlacementRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreatePlacementRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CreatePlacementRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreatePlacementRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreatePlacementRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePlacementRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreatePlacementRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreatePlacementRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreatePlacementRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreatePlacementRequest& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -18,23 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-Address::Address() : 
-    m_cityHasBeenSet(false),
-    m_companyHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_stateOrProvinceHasBeenSet(false),
-    m_street1HasBeenSet(false),
-    m_street2HasBeenSet(false),
-    m_street3HasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("company"))
   {
     m_company = jsonValue.GetString("company");
-
     m_companyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("phoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCode"))
   {
     m_postalCode = jsonValue.GetString("postalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateOrProvince"))
   {
     m_stateOrProvince = jsonValue.GetString("stateOrProvince");
-
     m_stateOrProvinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("street1"))
   {
     m_street1 = jsonValue.GetString("street1");
-
     m_street1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("street2"))
   {
     m_street2 = jsonValue.GetString("street2");
-
     m_street2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("street3"))
   {
     m_street3 = jsonValue.GetString("street3");
-
     m_street3HasBeenSet = true;
   }
-
   return *this;
 }
 

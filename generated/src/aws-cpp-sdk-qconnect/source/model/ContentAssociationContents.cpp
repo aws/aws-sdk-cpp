@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ContentAssociationContents::ContentAssociationContents() : 
-    m_amazonConnectGuideAssociationHasBeenSet(false)
-{
-}
-
 ContentAssociationContents::ContentAssociationContents(JsonView jsonValue)
-  : ContentAssociationContents()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContentAssociationContents& ContentAssociationContents::operator =(JsonView json
   if(jsonValue.ValueExists("amazonConnectGuideAssociation"))
   {
     m_amazonConnectGuideAssociation = jsonValue.GetObject("amazonConnectGuideAssociation");
-
     m_amazonConnectGuideAssociationHasBeenSet = true;
   }
-
   return *this;
 }
 

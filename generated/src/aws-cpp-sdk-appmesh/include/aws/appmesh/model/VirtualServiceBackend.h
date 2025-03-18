@@ -33,7 +33,7 @@ namespace Model
   class VirtualServiceBackend
   {
   public:
-    AWS_APPMESH_API VirtualServiceBackend();
+    AWS_APPMESH_API VirtualServiceBackend() = default;
     AWS_APPMESH_API VirtualServiceBackend(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualServiceBackend& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>A reference to an object that represents the client policy for a backend.</p>
      */
-    inline const ClientPolicy& GetClientPolicy() const{ return m_clientPolicy; }
+    inline const ClientPolicy& GetClientPolicy() const { return m_clientPolicy; }
     inline bool ClientPolicyHasBeenSet() const { return m_clientPolicyHasBeenSet; }
-    inline void SetClientPolicy(const ClientPolicy& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = value; }
-    inline void SetClientPolicy(ClientPolicy&& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = std::move(value); }
-    inline VirtualServiceBackend& WithClientPolicy(const ClientPolicy& value) { SetClientPolicy(value); return *this;}
-    inline VirtualServiceBackend& WithClientPolicy(ClientPolicy&& value) { SetClientPolicy(std::move(value)); return *this;}
+    template<typename ClientPolicyT = ClientPolicy>
+    void SetClientPolicy(ClientPolicyT&& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = std::forward<ClientPolicyT>(value); }
+    template<typename ClientPolicyT = ClientPolicy>
+    VirtualServiceBackend& WithClientPolicy(ClientPolicyT&& value) { SetClientPolicy(std::forward<ClientPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the virtual service that is acting as a virtual node backend.</p>
      */
-    inline const Aws::String& GetVirtualServiceName() const{ return m_virtualServiceName; }
+    inline const Aws::String& GetVirtualServiceName() const { return m_virtualServiceName; }
     inline bool VirtualServiceNameHasBeenSet() const { return m_virtualServiceNameHasBeenSet; }
-    inline void SetVirtualServiceName(const Aws::String& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = value; }
-    inline void SetVirtualServiceName(Aws::String&& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = std::move(value); }
-    inline void SetVirtualServiceName(const char* value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName.assign(value); }
-    inline VirtualServiceBackend& WithVirtualServiceName(const Aws::String& value) { SetVirtualServiceName(value); return *this;}
-    inline VirtualServiceBackend& WithVirtualServiceName(Aws::String&& value) { SetVirtualServiceName(std::move(value)); return *this;}
-    inline VirtualServiceBackend& WithVirtualServiceName(const char* value) { SetVirtualServiceName(value); return *this;}
+    template<typename VirtualServiceNameT = Aws::String>
+    void SetVirtualServiceName(VirtualServiceNameT&& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = std::forward<VirtualServiceNameT>(value); }
+    template<typename VirtualServiceNameT = Aws::String>
+    VirtualServiceBackend& WithVirtualServiceName(VirtualServiceNameT&& value) { SetVirtualServiceName(std::forward<VirtualServiceNameT>(value)); return *this;}
     ///@}
   private:
 

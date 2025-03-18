@@ -36,7 +36,7 @@ namespace Model
   class AwsEc2RouteTableDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2RouteTableDetails();
+    AWS_SECURITYHUB_API AwsEc2RouteTableDetails() = default;
     AWS_SECURITYHUB_API AwsEc2RouteTableDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2RouteTableDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,84 +47,78 @@ namespace Model
      * <p> The associations between a route table and one or more subnets or a gateway.
      * </p>
      */
-    inline const Aws::Vector<AssociationSetDetails>& GetAssociationSet() const{ return m_associationSet; }
+    inline const Aws::Vector<AssociationSetDetails>& GetAssociationSet() const { return m_associationSet; }
     inline bool AssociationSetHasBeenSet() const { return m_associationSetHasBeenSet; }
-    inline void SetAssociationSet(const Aws::Vector<AssociationSetDetails>& value) { m_associationSetHasBeenSet = true; m_associationSet = value; }
-    inline void SetAssociationSet(Aws::Vector<AssociationSetDetails>&& value) { m_associationSetHasBeenSet = true; m_associationSet = std::move(value); }
-    inline AwsEc2RouteTableDetails& WithAssociationSet(const Aws::Vector<AssociationSetDetails>& value) { SetAssociationSet(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithAssociationSet(Aws::Vector<AssociationSetDetails>&& value) { SetAssociationSet(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& AddAssociationSet(const AssociationSetDetails& value) { m_associationSetHasBeenSet = true; m_associationSet.push_back(value); return *this; }
-    inline AwsEc2RouteTableDetails& AddAssociationSet(AssociationSetDetails&& value) { m_associationSetHasBeenSet = true; m_associationSet.push_back(std::move(value)); return *this; }
+    template<typename AssociationSetT = Aws::Vector<AssociationSetDetails>>
+    void SetAssociationSet(AssociationSetT&& value) { m_associationSetHasBeenSet = true; m_associationSet = std::forward<AssociationSetT>(value); }
+    template<typename AssociationSetT = Aws::Vector<AssociationSetDetails>>
+    AwsEc2RouteTableDetails& WithAssociationSet(AssociationSetT&& value) { SetAssociationSet(std::forward<AssociationSetT>(value)); return *this;}
+    template<typename AssociationSetT = AssociationSetDetails>
+    AwsEc2RouteTableDetails& AddAssociationSet(AssociationSetT&& value) { m_associationSetHasBeenSet = true; m_associationSet.emplace_back(std::forward<AssociationSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The ID of the Amazon Web Services account that owns the route table. </p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline AwsEc2RouteTableDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    AwsEc2RouteTableDetails& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes a virtual private gateway propagating route. </p>
      */
-    inline const Aws::Vector<PropagatingVgwSetDetails>& GetPropagatingVgwSet() const{ return m_propagatingVgwSet; }
+    inline const Aws::Vector<PropagatingVgwSetDetails>& GetPropagatingVgwSet() const { return m_propagatingVgwSet; }
     inline bool PropagatingVgwSetHasBeenSet() const { return m_propagatingVgwSetHasBeenSet; }
-    inline void SetPropagatingVgwSet(const Aws::Vector<PropagatingVgwSetDetails>& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet = value; }
-    inline void SetPropagatingVgwSet(Aws::Vector<PropagatingVgwSetDetails>&& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet = std::move(value); }
-    inline AwsEc2RouteTableDetails& WithPropagatingVgwSet(const Aws::Vector<PropagatingVgwSetDetails>& value) { SetPropagatingVgwSet(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithPropagatingVgwSet(Aws::Vector<PropagatingVgwSetDetails>&& value) { SetPropagatingVgwSet(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& AddPropagatingVgwSet(const PropagatingVgwSetDetails& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet.push_back(value); return *this; }
-    inline AwsEc2RouteTableDetails& AddPropagatingVgwSet(PropagatingVgwSetDetails&& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet.push_back(std::move(value)); return *this; }
+    template<typename PropagatingVgwSetT = Aws::Vector<PropagatingVgwSetDetails>>
+    void SetPropagatingVgwSet(PropagatingVgwSetT&& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet = std::forward<PropagatingVgwSetT>(value); }
+    template<typename PropagatingVgwSetT = Aws::Vector<PropagatingVgwSetDetails>>
+    AwsEc2RouteTableDetails& WithPropagatingVgwSet(PropagatingVgwSetT&& value) { SetPropagatingVgwSet(std::forward<PropagatingVgwSetT>(value)); return *this;}
+    template<typename PropagatingVgwSetT = PropagatingVgwSetDetails>
+    AwsEc2RouteTableDetails& AddPropagatingVgwSet(PropagatingVgwSetT&& value) { m_propagatingVgwSetHasBeenSet = true; m_propagatingVgwSet.emplace_back(std::forward<PropagatingVgwSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The ID of the route table. </p>
      */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+    inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-    inline AwsEc2RouteTableDetails& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+    template<typename RouteTableIdT = Aws::String>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = Aws::String>
+    AwsEc2RouteTableDetails& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The routes in the route table. </p>
      */
-    inline const Aws::Vector<RouteSetDetails>& GetRouteSet() const{ return m_routeSet; }
+    inline const Aws::Vector<RouteSetDetails>& GetRouteSet() const { return m_routeSet; }
     inline bool RouteSetHasBeenSet() const { return m_routeSetHasBeenSet; }
-    inline void SetRouteSet(const Aws::Vector<RouteSetDetails>& value) { m_routeSetHasBeenSet = true; m_routeSet = value; }
-    inline void SetRouteSet(Aws::Vector<RouteSetDetails>&& value) { m_routeSetHasBeenSet = true; m_routeSet = std::move(value); }
-    inline AwsEc2RouteTableDetails& WithRouteSet(const Aws::Vector<RouteSetDetails>& value) { SetRouteSet(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithRouteSet(Aws::Vector<RouteSetDetails>&& value) { SetRouteSet(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& AddRouteSet(const RouteSetDetails& value) { m_routeSetHasBeenSet = true; m_routeSet.push_back(value); return *this; }
-    inline AwsEc2RouteTableDetails& AddRouteSet(RouteSetDetails&& value) { m_routeSetHasBeenSet = true; m_routeSet.push_back(std::move(value)); return *this; }
+    template<typename RouteSetT = Aws::Vector<RouteSetDetails>>
+    void SetRouteSet(RouteSetT&& value) { m_routeSetHasBeenSet = true; m_routeSet = std::forward<RouteSetT>(value); }
+    template<typename RouteSetT = Aws::Vector<RouteSetDetails>>
+    AwsEc2RouteTableDetails& WithRouteSet(RouteSetT&& value) { SetRouteSet(std::forward<RouteSetT>(value)); return *this;}
+    template<typename RouteSetT = RouteSetDetails>
+    AwsEc2RouteTableDetails& AddRouteSet(RouteSetT&& value) { m_routeSetHasBeenSet = true; m_routeSet.emplace_back(std::forward<RouteSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The ID of the virtual private cloud (VPC). </p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsEc2RouteTableDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsEc2RouteTableDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsEc2RouteTableDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2RouteTableDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

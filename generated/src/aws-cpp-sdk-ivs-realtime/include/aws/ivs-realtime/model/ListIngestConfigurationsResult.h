@@ -29,7 +29,7 @@ namespace Model
   class ListIngestConfigurationsResult
   {
   public:
-    AWS_IVSREALTIME_API ListIngestConfigurationsResult();
+    AWS_IVSREALTIME_API ListIngestConfigurationsResult() = default;
     AWS_IVSREALTIME_API ListIngestConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API ListIngestConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the matching ingest configurations (summary information only).</p>
      */
-    inline const Aws::Vector<IngestConfigurationSummary>& GetIngestConfigurations() const{ return m_ingestConfigurations; }
-    inline void SetIngestConfigurations(const Aws::Vector<IngestConfigurationSummary>& value) { m_ingestConfigurations = value; }
-    inline void SetIngestConfigurations(Aws::Vector<IngestConfigurationSummary>&& value) { m_ingestConfigurations = std::move(value); }
-    inline ListIngestConfigurationsResult& WithIngestConfigurations(const Aws::Vector<IngestConfigurationSummary>& value) { SetIngestConfigurations(value); return *this;}
-    inline ListIngestConfigurationsResult& WithIngestConfigurations(Aws::Vector<IngestConfigurationSummary>&& value) { SetIngestConfigurations(std::move(value)); return *this;}
-    inline ListIngestConfigurationsResult& AddIngestConfigurations(const IngestConfigurationSummary& value) { m_ingestConfigurations.push_back(value); return *this; }
-    inline ListIngestConfigurationsResult& AddIngestConfigurations(IngestConfigurationSummary&& value) { m_ingestConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IngestConfigurationSummary>& GetIngestConfigurations() const { return m_ingestConfigurations; }
+    template<typename IngestConfigurationsT = Aws::Vector<IngestConfigurationSummary>>
+    void SetIngestConfigurations(IngestConfigurationsT&& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = std::forward<IngestConfigurationsT>(value); }
+    template<typename IngestConfigurationsT = Aws::Vector<IngestConfigurationSummary>>
+    ListIngestConfigurationsResult& WithIngestConfigurations(IngestConfigurationsT&& value) { SetIngestConfigurations(std::forward<IngestConfigurationsT>(value)); return *this;}
+    template<typename IngestConfigurationsT = IngestConfigurationSummary>
+    ListIngestConfigurationsResult& AddIngestConfigurations(IngestConfigurationsT&& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations.emplace_back(std::forward<IngestConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more IngestConfigurations than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIngestConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIngestConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIngestConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIngestConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIngestConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIngestConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIngestConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIngestConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IngestConfigurationSummary> m_ingestConfigurations;
+    bool m_ingestConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

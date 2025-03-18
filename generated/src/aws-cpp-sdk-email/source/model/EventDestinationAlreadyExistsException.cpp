@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException(const XmlNode& xmlNode)
-  : EventDestinationAlreadyExistsException()
 {
   *this = xmlNode;
 }

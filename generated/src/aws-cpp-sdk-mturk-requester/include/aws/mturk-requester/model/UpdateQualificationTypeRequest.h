@@ -22,7 +22,7 @@ namespace Model
   class UpdateQualificationTypeRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API UpdateQualificationTypeRequest();
+    AWS_MTURK_API UpdateQualificationTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,40 +39,34 @@ namespace Model
     /**
      * <p>The ID of the Qualification type to update.</p>
      */
-    inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+    inline const Aws::String& GetQualificationTypeId() const { return m_qualificationTypeId; }
     inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
-    inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
-    inline void SetQualificationTypeId(const char* value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId.assign(value); }
-    inline UpdateQualificationTypeRequest& WithQualificationTypeId(const Aws::String& value) { SetQualificationTypeId(value); return *this;}
-    inline UpdateQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
-    inline UpdateQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+    template<typename QualificationTypeIdT = Aws::String>
+    void SetQualificationTypeId(QualificationTypeIdT&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::forward<QualificationTypeIdT>(value); }
+    template<typename QualificationTypeIdT = Aws::String>
+    UpdateQualificationTypeRequest& WithQualificationTypeId(QualificationTypeIdT&& value) { SetQualificationTypeId(std::forward<QualificationTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new description of the Qualification type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateQualificationTypeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateQualificationTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateQualificationTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateQualificationTypeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
-    inline const QualificationTypeStatus& GetQualificationTypeStatus() const{ return m_qualificationTypeStatus; }
+    inline QualificationTypeStatus GetQualificationTypeStatus() const { return m_qualificationTypeStatus; }
     inline bool QualificationTypeStatusHasBeenSet() const { return m_qualificationTypeStatusHasBeenSet; }
-    inline void SetQualificationTypeStatus(const QualificationTypeStatus& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
-    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = std::move(value); }
-    inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(const QualificationTypeStatus& value) { SetQualificationTypeStatus(value); return *this;}
-    inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
+    inline void SetQualificationTypeStatus(QualificationTypeStatus value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
+    inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus value) { SetQualificationTypeStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * If not specified, the Worker may request the Qualification without answering any
      * questions.</p>
      */
-    inline const Aws::String& GetTest() const{ return m_test; }
+    inline const Aws::String& GetTest() const { return m_test; }
     inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
-    inline void SetTest(const Aws::String& value) { m_testHasBeenSet = true; m_test = value; }
-    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
-    inline void SetTest(const char* value) { m_testHasBeenSet = true; m_test.assign(value); }
-    inline UpdateQualificationTypeRequest& WithTest(const Aws::String& value) { SetTest(value); return *this;}
-    inline UpdateQualificationTypeRequest& WithTest(Aws::String&& value) { SetTest(std::move(value)); return *this;}
-    inline UpdateQualificationTypeRequest& WithTest(const char* value) { SetTest(value); return *this;}
+    template<typename TestT = Aws::String>
+    void SetTest(TestT&& value) { m_testHasBeenSet = true; m_test = std::forward<TestT>(value); }
+    template<typename TestT = Aws::String>
+    UpdateQualificationTypeRequest& WithTest(TestT&& value) { SetTest(std::forward<TestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,12 @@ namespace Model
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p>
      */
-    inline const Aws::String& GetAnswerKey() const{ return m_answerKey; }
+    inline const Aws::String& GetAnswerKey() const { return m_answerKey; }
     inline bool AnswerKeyHasBeenSet() const { return m_answerKeyHasBeenSet; }
-    inline void SetAnswerKey(const Aws::String& value) { m_answerKeyHasBeenSet = true; m_answerKey = value; }
-    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = std::move(value); }
-    inline void SetAnswerKey(const char* value) { m_answerKeyHasBeenSet = true; m_answerKey.assign(value); }
-    inline UpdateQualificationTypeRequest& WithAnswerKey(const Aws::String& value) { SetAnswerKey(value); return *this;}
-    inline UpdateQualificationTypeRequest& WithAnswerKey(Aws::String&& value) { SetAnswerKey(std::move(value)); return *this;}
-    inline UpdateQualificationTypeRequest& WithAnswerKey(const char* value) { SetAnswerKey(value); return *this;}
+    template<typename AnswerKeyT = Aws::String>
+    void SetAnswerKey(AnswerKeyT&& value) { m_answerKeyHasBeenSet = true; m_answerKey = std::forward<AnswerKeyT>(value); }
+    template<typename AnswerKeyT = Aws::String>
+    UpdateQualificationTypeRequest& WithAnswerKey(AnswerKeyT&& value) { SetAnswerKey(std::forward<AnswerKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +105,7 @@ namespace Model
      * <p>The number of seconds the Worker has to complete the Qualification test,
      * starting from the time the Worker requests the Qualification.</p>
      */
-    inline long long GetTestDurationInSeconds() const{ return m_testDurationInSeconds; }
+    inline long long GetTestDurationInSeconds() const { return m_testDurationInSeconds; }
     inline bool TestDurationInSecondsHasBeenSet() const { return m_testDurationInSecondsHasBeenSet; }
     inline void SetTestDurationInSeconds(long long value) { m_testDurationInSecondsHasBeenSet = true; m_testDurationInSeconds = value; }
     inline UpdateQualificationTypeRequest& WithTestDurationInSeconds(long long value) { SetTestDurationInSeconds(value); return *this;}
@@ -131,7 +121,7 @@ namespace Model
      * DisposeQualificationType and then create a new Qualification type with retries
      * disabled using CreateQualificationType.</p>
      */
-    inline long long GetRetryDelayInSeconds() const{ return m_retryDelayInSeconds; }
+    inline long long GetRetryDelayInSeconds() const { return m_retryDelayInSeconds; }
     inline bool RetryDelayInSecondsHasBeenSet() const { return m_retryDelayInSecondsHasBeenSet; }
     inline void SetRetryDelayInSeconds(long long value) { m_retryDelayInSecondsHasBeenSet = true; m_retryDelayInSeconds = value; }
     inline UpdateQualificationTypeRequest& WithRetryDelayInSeconds(long long value) { SetRetryDelayInSeconds(value); return *this;}
@@ -144,7 +134,7 @@ namespace Model
      * <p>Constraints: If the Test parameter is specified, this parameter cannot be
      * true.</p>
      */
-    inline bool GetAutoGranted() const{ return m_autoGranted; }
+    inline bool GetAutoGranted() const { return m_autoGranted; }
     inline bool AutoGrantedHasBeenSet() const { return m_autoGrantedHasBeenSet; }
     inline void SetAutoGranted(bool value) { m_autoGrantedHasBeenSet = true; m_autoGranted = value; }
     inline UpdateQualificationTypeRequest& WithAutoGranted(bool value) { SetAutoGranted(value); return *this;}
@@ -155,7 +145,7 @@ namespace Model
      * <p>The Qualification value to use for automatically granted Qualifications. This
      * parameter is used only if the AutoGranted parameter is true.</p>
      */
-    inline int GetAutoGrantedValue() const{ return m_autoGrantedValue; }
+    inline int GetAutoGrantedValue() const { return m_autoGrantedValue; }
     inline bool AutoGrantedValueHasBeenSet() const { return m_autoGrantedValueHasBeenSet; }
     inline void SetAutoGrantedValue(int value) { m_autoGrantedValueHasBeenSet = true; m_autoGrantedValue = value; }
     inline UpdateQualificationTypeRequest& WithAutoGrantedValue(int value) { SetAutoGrantedValue(value); return *this;}
@@ -168,7 +158,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    QualificationTypeStatus m_qualificationTypeStatus;
+    QualificationTypeStatus m_qualificationTypeStatus{QualificationTypeStatus::NOT_SET};
     bool m_qualificationTypeStatusHasBeenSet = false;
 
     Aws::String m_test;
@@ -177,16 +167,16 @@ namespace Model
     Aws::String m_answerKey;
     bool m_answerKeyHasBeenSet = false;
 
-    long long m_testDurationInSeconds;
+    long long m_testDurationInSeconds{0};
     bool m_testDurationInSecondsHasBeenSet = false;
 
-    long long m_retryDelayInSeconds;
+    long long m_retryDelayInSeconds{0};
     bool m_retryDelayInSecondsHasBeenSet = false;
 
-    bool m_autoGranted;
+    bool m_autoGranted{false};
     bool m_autoGrantedHasBeenSet = false;
 
-    int m_autoGrantedValue;
+    int m_autoGrantedValue{0};
     bool m_autoGrantedValueHasBeenSet = false;
   };
 

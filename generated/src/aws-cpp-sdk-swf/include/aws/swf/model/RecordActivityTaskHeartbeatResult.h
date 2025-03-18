@@ -32,7 +32,7 @@ namespace Model
   class RecordActivityTaskHeartbeatResult
   {
   public:
-    AWS_SWF_API RecordActivityTaskHeartbeatResult();
+    AWS_SWF_API RecordActivityTaskHeartbeatResult() = default;
     AWS_SWF_API RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SWF_API RecordActivityTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,26 @@ namespace Model
     /**
      * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
      */
-    inline bool GetCancelRequested() const{ return m_cancelRequested; }
-    inline void SetCancelRequested(bool value) { m_cancelRequested = value; }
+    inline bool GetCancelRequested() const { return m_cancelRequested; }
+    inline void SetCancelRequested(bool value) { m_cancelRequestedHasBeenSet = true; m_cancelRequested = value; }
     inline RecordActivityTaskHeartbeatResult& WithCancelRequested(bool value) { SetCancelRequested(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RecordActivityTaskHeartbeatResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RecordActivityTaskHeartbeatResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RecordActivityTaskHeartbeatResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RecordActivityTaskHeartbeatResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_cancelRequested;
+    bool m_cancelRequested{false};
+    bool m_cancelRequestedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

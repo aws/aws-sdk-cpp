@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-CalculatedLifecycle::CalculatedLifecycle() : 
-    m_moveToColdStorageAtHasBeenSet(false),
-    m_deleteAtHasBeenSet(false)
-{
-}
-
 CalculatedLifecycle::CalculatedLifecycle(JsonView jsonValue)
-  : CalculatedLifecycle()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CalculatedLifecycle& CalculatedLifecycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MoveToColdStorageAt"))
   {
     m_moveToColdStorageAt = jsonValue.GetDouble("MoveToColdStorageAt");
-
     m_moveToColdStorageAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteAt"))
   {
     m_deleteAt = jsonValue.GetDouble("DeleteAt");
-
     m_deleteAtHasBeenSet = true;
   }
-
   return *this;
 }
 

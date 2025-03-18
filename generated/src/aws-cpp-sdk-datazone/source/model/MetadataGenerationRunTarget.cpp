@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-MetadataGenerationRunTarget::MetadataGenerationRunTarget() : 
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_type(MetadataGenerationTargetType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MetadataGenerationRunTarget::MetadataGenerationRunTarget(JsonView jsonValue)
-  : MetadataGenerationRunTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetadataGenerationRunTarget& MetadataGenerationRunTarget::operator =(JsonView js
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MetadataGenerationTargetTypeMapper::GetMetadataGenerationTargetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStateTemplatesRequest::ListStateTemplatesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_listResponseScope(ListResponseScope::NOT_SET),
-    m_listResponseScopeHasBeenSet(false)
-{
-}
-
 Aws::String ListStateTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class Cookies
   {
   public:
-    AWS_WAFV2_API Cookies();
+    AWS_WAFV2_API Cookies() = default;
     AWS_WAFV2_API Cookies(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Cookies& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
      * "session-id" ] }</code> </p>
      */
-    inline const CookieMatchPattern& GetMatchPattern() const{ return m_matchPattern; }
+    inline const CookieMatchPattern& GetMatchPattern() const { return m_matchPattern; }
     inline bool MatchPatternHasBeenSet() const { return m_matchPatternHasBeenSet; }
-    inline void SetMatchPattern(const CookieMatchPattern& value) { m_matchPatternHasBeenSet = true; m_matchPattern = value; }
-    inline void SetMatchPattern(CookieMatchPattern&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::move(value); }
-    inline Cookies& WithMatchPattern(const CookieMatchPattern& value) { SetMatchPattern(value); return *this;}
-    inline Cookies& WithMatchPattern(CookieMatchPattern&& value) { SetMatchPattern(std::move(value)); return *this;}
+    template<typename MatchPatternT = CookieMatchPattern>
+    void SetMatchPattern(MatchPatternT&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::forward<MatchPatternT>(value); }
+    template<typename MatchPatternT = CookieMatchPattern>
+    Cookies& WithMatchPattern(MatchPatternT&& value) { SetMatchPattern(std::forward<MatchPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,10 @@ namespace Model
      * <code>AND</code> statement to combine two match rules, one that inspects the
      * keys and another that inspects the values. </p>
      */
-    inline const MapMatchScope& GetMatchScope() const{ return m_matchScope; }
+    inline MapMatchScope GetMatchScope() const { return m_matchScope; }
     inline bool MatchScopeHasBeenSet() const { return m_matchScopeHasBeenSet; }
-    inline void SetMatchScope(const MapMatchScope& value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
-    inline void SetMatchScope(MapMatchScope&& value) { m_matchScopeHasBeenSet = true; m_matchScope = std::move(value); }
-    inline Cookies& WithMatchScope(const MapMatchScope& value) { SetMatchScope(value); return *this;}
-    inline Cookies& WithMatchScope(MapMatchScope&& value) { SetMatchScope(std::move(value)); return *this;}
+    inline void SetMatchScope(MapMatchScope value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
+    inline Cookies& WithMatchScope(MapMatchScope value) { SetMatchScope(value); return *this;}
     ///@}
 
     ///@{
@@ -91,22 +89,20 @@ namespace Model
      * applies the rule action to the request.</p> </li> <li> <p> <code>NO_MATCH</code>
      * - Treat the web request as not matching the rule statement.</p> </li> </ul>
      */
-    inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
+    inline OversizeHandling GetOversizeHandling() const { return m_oversizeHandling; }
     inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
-    inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
-    inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
-    inline Cookies& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
-    inline Cookies& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
+    inline void SetOversizeHandling(OversizeHandling value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
+    inline Cookies& WithOversizeHandling(OversizeHandling value) { SetOversizeHandling(value); return *this;}
     ///@}
   private:
 
     CookieMatchPattern m_matchPattern;
     bool m_matchPatternHasBeenSet = false;
 
-    MapMatchScope m_matchScope;
+    MapMatchScope m_matchScope{MapMatchScope::NOT_SET};
     bool m_matchScopeHasBeenSet = false;
 
-    OversizeHandling m_oversizeHandling;
+    OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
     bool m_oversizeHandlingHasBeenSet = false;
   };
 

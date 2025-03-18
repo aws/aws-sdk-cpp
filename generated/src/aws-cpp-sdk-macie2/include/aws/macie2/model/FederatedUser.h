@@ -35,7 +35,7 @@ namespace Model
   class FederatedUser
   {
   public:
-    AWS_MACIE2_API FederatedUser();
+    AWS_MACIE2_API FederatedUser() = default;
     AWS_MACIE2_API FederatedUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API FederatedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-    inline FederatedUser& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline FederatedUser& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline FederatedUser& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    FederatedUser& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The unique identifier for the Amazon Web Services account that owns the
      * entity that was used to get the credentials.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline FederatedUser& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline FederatedUser& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline FederatedUser& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    FederatedUser& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the entity that was used to get the
      * credentials.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FederatedUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FederatedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FederatedUser& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FederatedUser& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <p>The unique identifier for the entity that was used to get the
      * credentials.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline FederatedUser& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline FederatedUser& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline FederatedUser& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    FederatedUser& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +97,12 @@ namespace Model
      * <p>The details of the session that was created for the credentials, including
      * the entity that issued the session.</p>
      */
-    inline const SessionContext& GetSessionContext() const{ return m_sessionContext; }
+    inline const SessionContext& GetSessionContext() const { return m_sessionContext; }
     inline bool SessionContextHasBeenSet() const { return m_sessionContextHasBeenSet; }
-    inline void SetSessionContext(const SessionContext& value) { m_sessionContextHasBeenSet = true; m_sessionContext = value; }
-    inline void SetSessionContext(SessionContext&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::move(value); }
-    inline FederatedUser& WithSessionContext(const SessionContext& value) { SetSessionContext(value); return *this;}
-    inline FederatedUser& WithSessionContext(SessionContext&& value) { SetSessionContext(std::move(value)); return *this;}
+    template<typename SessionContextT = SessionContext>
+    void SetSessionContext(SessionContextT&& value) { m_sessionContextHasBeenSet = true; m_sessionContext = std::forward<SessionContextT>(value); }
+    template<typename SessionContextT = SessionContext>
+    FederatedUser& WithSessionContext(SessionContextT&& value) { SetSessionContext(std::forward<SessionContextT>(value)); return *this;}
     ///@}
   private:
 

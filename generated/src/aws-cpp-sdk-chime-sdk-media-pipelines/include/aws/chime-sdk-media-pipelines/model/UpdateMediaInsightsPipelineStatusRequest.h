@@ -22,7 +22,7 @@ namespace Model
   class UpdateMediaInsightsPipelineStatusRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaInsightsPipelineStatusRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaInsightsPipelineStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,33 +38,29 @@ namespace Model
      * <p>The unique identifier of the resource to be updated. Valid values include the
      * ID and ARN of the media insights pipeline.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateMediaInsightsPipelineStatusRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateMediaInsightsPipelineStatusRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateMediaInsightsPipelineStatusRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateMediaInsightsPipelineStatusRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The requested status of the media insights pipeline.</p>
      */
-    inline const MediaPipelineStatusUpdate& GetUpdateStatus() const{ return m_updateStatus; }
+    inline MediaPipelineStatusUpdate GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const MediaPipelineStatusUpdate& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(MediaPipelineStatusUpdate&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline UpdateMediaInsightsPipelineStatusRequest& WithUpdateStatus(const MediaPipelineStatusUpdate& value) { SetUpdateStatus(value); return *this;}
-    inline UpdateMediaInsightsPipelineStatusRequest& WithUpdateStatus(MediaPipelineStatusUpdate&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(MediaPipelineStatusUpdate value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline UpdateMediaInsightsPipelineStatusRequest& WithUpdateStatus(MediaPipelineStatusUpdate value) { SetUpdateStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    MediaPipelineStatusUpdate m_updateStatus;
+    MediaPipelineStatusUpdate m_updateStatus{MediaPipelineStatusUpdate::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
   };
 

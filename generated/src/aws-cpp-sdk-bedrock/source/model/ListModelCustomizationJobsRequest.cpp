@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListModelCustomizationJobsRequest::ListModelCustomizationJobsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_statusEquals(FineTuningJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortJobsBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListModelCustomizationJobsRequest::SerializePayload() const
 {
   return {};

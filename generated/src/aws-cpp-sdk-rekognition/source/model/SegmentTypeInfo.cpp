@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-SegmentTypeInfo::SegmentTypeInfo() : 
-    m_type(SegmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_modelVersionHasBeenSet(false)
-{
-}
-
 SegmentTypeInfo::SegmentTypeInfo(JsonView jsonValue)
-  : SegmentTypeInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SegmentTypeInfo& SegmentTypeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SegmentTypeMapper::GetSegmentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

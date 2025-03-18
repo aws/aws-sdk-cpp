@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAdminScopeRequest::GetAdminScopeRequest() : 
-    m_adminAccountHasBeenSet(false)
-{
-}
-
 Aws::String GetAdminScopeRequest::SerializePayload() const
 {
   JsonValue payload;

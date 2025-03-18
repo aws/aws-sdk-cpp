@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-InvalidNetworkInterface::InvalidNetworkInterface() : 
-    m_interfaceIdHasBeenSet(false),
-    m_reason(NetworkInterfaceFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InvalidNetworkInterface::InvalidNetworkInterface(JsonView jsonValue)
-  : InvalidNetworkInterface()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InvalidNetworkInterface& InvalidNetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interfaceId"))
   {
     m_interfaceId = jsonValue.GetString("interfaceId");
-
     m_interfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = NetworkInterfaceFailureReasonMapper::GetNetworkInterfaceFailureReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

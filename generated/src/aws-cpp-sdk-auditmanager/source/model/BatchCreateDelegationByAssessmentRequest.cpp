@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateDelegationByAssessmentRequest::BatchCreateDelegationByAssessmentRequest() : 
-    m_createDelegationRequestsHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateDelegationByAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

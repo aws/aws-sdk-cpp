@@ -29,7 +29,7 @@ namespace Model
   class GetFindingStatisticsResult
   {
   public:
-    AWS_MACIE2_API GetFindingStatisticsResult();
+    AWS_MACIE2_API GetFindingStatisticsResult() = default;
     AWS_MACIE2_API GetFindingStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetFindingStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array of objects, one for each group of findings that matches the filter
      * criteria specified in the request.</p>
      */
-    inline const Aws::Vector<GroupCount>& GetCountsByGroup() const{ return m_countsByGroup; }
-    inline void SetCountsByGroup(const Aws::Vector<GroupCount>& value) { m_countsByGroup = value; }
-    inline void SetCountsByGroup(Aws::Vector<GroupCount>&& value) { m_countsByGroup = std::move(value); }
-    inline GetFindingStatisticsResult& WithCountsByGroup(const Aws::Vector<GroupCount>& value) { SetCountsByGroup(value); return *this;}
-    inline GetFindingStatisticsResult& WithCountsByGroup(Aws::Vector<GroupCount>&& value) { SetCountsByGroup(std::move(value)); return *this;}
-    inline GetFindingStatisticsResult& AddCountsByGroup(const GroupCount& value) { m_countsByGroup.push_back(value); return *this; }
-    inline GetFindingStatisticsResult& AddCountsByGroup(GroupCount&& value) { m_countsByGroup.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupCount>& GetCountsByGroup() const { return m_countsByGroup; }
+    template<typename CountsByGroupT = Aws::Vector<GroupCount>>
+    void SetCountsByGroup(CountsByGroupT&& value) { m_countsByGroupHasBeenSet = true; m_countsByGroup = std::forward<CountsByGroupT>(value); }
+    template<typename CountsByGroupT = Aws::Vector<GroupCount>>
+    GetFindingStatisticsResult& WithCountsByGroup(CountsByGroupT&& value) { SetCountsByGroup(std::forward<CountsByGroupT>(value)); return *this;}
+    template<typename CountsByGroupT = GroupCount>
+    GetFindingStatisticsResult& AddCountsByGroup(CountsByGroupT&& value) { m_countsByGroupHasBeenSet = true; m_countsByGroup.emplace_back(std::forward<CountsByGroupT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFindingStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFindingStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFindingStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFindingStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GroupCount> m_countsByGroup;
+    bool m_countsByGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

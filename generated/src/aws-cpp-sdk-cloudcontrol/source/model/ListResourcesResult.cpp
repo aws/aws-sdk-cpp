@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourcesResult::ListResourcesResult()
-{
-}
-
 ListResourcesResult::ListResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
+    m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDescriptions"))
   {
     Aws::Utils::Array<JsonView> resourceDescriptionsJsonList = jsonValue.GetArray("ResourceDescriptions");
@@ -42,20 +37,20 @@ ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebService
     {
       m_resourceDescriptions.push_back(resourceDescriptionsJsonList[resourceDescriptionsIndex].AsObject());
     }
+    m_resourceDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

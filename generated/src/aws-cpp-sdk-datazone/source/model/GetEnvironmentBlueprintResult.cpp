@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnvironmentBlueprintResult::GetEnvironmentBlueprintResult()
-{
-}
-
 GetEnvironmentBlueprintResult::GetEnvironmentBlueprintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetEnvironmentBlueprintResult& GetEnvironmentBlueprintResult::operator =(const A
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentProperties"))
   {
     m_deploymentProperties = jsonValue.GetObject("deploymentProperties");
-
+    m_deploymentPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -54,38 +47,33 @@ GetEnvironmentBlueprintResult& GetEnvironmentBlueprintResult::operator =(const A
     {
       m_glossaryTerms.push_back(glossaryTermsJsonList[glossaryTermsIndex].AsString());
     }
+    m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetString("provider");
-
+    m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioningProperties"))
   {
     m_provisioningProperties = jsonValue.GetObject("provisioningProperties");
-
+    m_provisioningPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userParameters"))
   {
     Aws::Utils::Array<JsonView> userParametersJsonList = jsonValue.GetArray("userParameters");
@@ -93,14 +81,15 @@ GetEnvironmentBlueprintResult& GetEnvironmentBlueprintResult::operator =(const A
     {
       m_userParameters.push_back(userParametersJsonList[userParametersIndex].AsObject());
     }
+    m_userParametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

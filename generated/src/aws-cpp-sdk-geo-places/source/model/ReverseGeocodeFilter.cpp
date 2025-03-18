@@ -18,13 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-ReverseGeocodeFilter::ReverseGeocodeFilter() : 
-    m_includePlaceTypesHasBeenSet(false)
-{
-}
-
 ReverseGeocodeFilter::ReverseGeocodeFilter(JsonView jsonValue)
-  : ReverseGeocodeFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ReverseGeocodeFilter& ReverseGeocodeFilter::operator =(JsonView jsonValue)
     }
     m_includePlaceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

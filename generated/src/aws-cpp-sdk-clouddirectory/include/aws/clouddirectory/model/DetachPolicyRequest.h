@@ -22,7 +22,7 @@ namespace Model
   class DetachPolicyRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API DetachPolicyRequest();
+    AWS_CLOUDDIRECTORY_API DetachPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where both objects reside. For more information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline DetachPolicyRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline DetachPolicyRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline DetachPolicyRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    DetachPolicyRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reference that identifies the policy object.</p>
      */
-    inline const ObjectReference& GetPolicyReference() const{ return m_policyReference; }
+    inline const ObjectReference& GetPolicyReference() const { return m_policyReference; }
     inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
-    inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
-    inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
-    inline DetachPolicyRequest& WithPolicyReference(const ObjectReference& value) { SetPolicyReference(value); return *this;}
-    inline DetachPolicyRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+    template<typename PolicyReferenceT = ObjectReference>
+    void SetPolicyReference(PolicyReferenceT&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::forward<PolicyReferenceT>(value); }
+    template<typename PolicyReferenceT = ObjectReference>
+    DetachPolicyRequest& WithPolicyReference(PolicyReferenceT&& value) { SetPolicyReference(std::forward<PolicyReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * <p>Reference that identifies the object whose policy object will be
      * detached.</p>
      */
-    inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+    inline const ObjectReference& GetObjectReference() const { return m_objectReference; }
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-    inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-    inline DetachPolicyRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-    inline DetachPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    template<typename ObjectReferenceT = ObjectReference>
+    void SetObjectReference(ObjectReferenceT&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::forward<ObjectReferenceT>(value); }
+    template<typename ObjectReferenceT = ObjectReference>
+    DetachPolicyRequest& WithObjectReference(ObjectReferenceT&& value) { SetObjectReference(std::forward<ObjectReferenceT>(value)); return *this;}
     ///@}
   private:
 

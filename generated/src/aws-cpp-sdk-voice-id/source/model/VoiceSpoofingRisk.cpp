@@ -18,14 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-VoiceSpoofingRisk::VoiceSpoofingRisk() : 
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false)
-{
-}
-
 VoiceSpoofingRisk::VoiceSpoofingRisk(JsonView jsonValue)
-  : VoiceSpoofingRisk()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VoiceSpoofingRisk& VoiceSpoofingRisk::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RiskScore"))
   {
     m_riskScore = jsonValue.GetInteger("RiskScore");
-
     m_riskScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

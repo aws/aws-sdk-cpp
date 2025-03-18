@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-CaseRuleIdentifier::CaseRuleIdentifier() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CaseRuleIdentifier::CaseRuleIdentifier(JsonView jsonValue)
-  : CaseRuleIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CaseRuleIdentifier& CaseRuleIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

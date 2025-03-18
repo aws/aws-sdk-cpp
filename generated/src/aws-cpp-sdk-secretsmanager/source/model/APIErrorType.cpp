@@ -18,15 +18,7 @@ namespace SecretsManager
 namespace Model
 {
 
-APIErrorType::APIErrorType() : 
-    m_secretIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 APIErrorType::APIErrorType(JsonView jsonValue)
-  : APIErrorType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ APIErrorType& APIErrorType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecretId"))
   {
     m_secretId = jsonValue.GetString("SecretId");
-
     m_secretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

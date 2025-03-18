@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableOptions::TableOptions() : 
-    m_orientation(TableOrientation::NOT_SET),
-    m_orientationHasBeenSet(false),
-    m_headerStyleHasBeenSet(false),
-    m_cellStyleHasBeenSet(false),
-    m_rowAlternateColorOptionsHasBeenSet(false)
-{
-}
-
 TableOptions::TableOptions(JsonView jsonValue)
-  : TableOptions()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TableOptions& TableOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Orientation"))
   {
     m_orientation = TableOrientationMapper::GetTableOrientationForName(jsonValue.GetString("Orientation"));
-
     m_orientationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderStyle"))
   {
     m_headerStyle = jsonValue.GetObject("HeaderStyle");
-
     m_headerStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellStyle"))
   {
     m_cellStyle = jsonValue.GetObject("CellStyle");
-
     m_cellStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowAlternateColorOptions"))
   {
     m_rowAlternateColorOptions = jsonValue.GetObject("RowAlternateColorOptions");
-
     m_rowAlternateColorOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

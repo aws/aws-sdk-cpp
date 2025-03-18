@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSipRuleResult::GetSipRuleResult()
-{
-}
-
 GetSipRuleResult::GetSipRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSipRuleResult& GetSipRuleResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("SipRule"))
   {
     m_sipRule = jsonValue.GetObject("SipRule");
-
+    m_sipRuleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

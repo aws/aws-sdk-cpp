@@ -27,7 +27,7 @@ namespace Model
   class GetMatchIdResult
   {
   public:
-    AWS_ENTITYRESOLUTION_API GetMatchIdResult();
+    AWS_ENTITYRESOLUTION_API GetMatchIdResult() = default;
     AWS_ENTITYRESOLUTION_API GetMatchIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ENTITYRESOLUTION_API GetMatchIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The unique identifiers for this group of match records.</p>
      */
-    inline const Aws::String& GetMatchId() const{ return m_matchId; }
-    inline void SetMatchId(const Aws::String& value) { m_matchId = value; }
-    inline void SetMatchId(Aws::String&& value) { m_matchId = std::move(value); }
-    inline void SetMatchId(const char* value) { m_matchId.assign(value); }
-    inline GetMatchIdResult& WithMatchId(const Aws::String& value) { SetMatchId(value); return *this;}
-    inline GetMatchIdResult& WithMatchId(Aws::String&& value) { SetMatchId(std::move(value)); return *this;}
-    inline GetMatchIdResult& WithMatchId(const char* value) { SetMatchId(value); return *this;}
+    inline const Aws::String& GetMatchId() const { return m_matchId; }
+    template<typename MatchIdT = Aws::String>
+    void SetMatchId(MatchIdT&& value) { m_matchIdHasBeenSet = true; m_matchId = std::forward<MatchIdT>(value); }
+    template<typename MatchIdT = Aws::String>
+    GetMatchIdResult& WithMatchId(MatchIdT&& value) { SetMatchId(std::forward<MatchIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule the record matched on.</p>
      */
-    inline const Aws::String& GetMatchRule() const{ return m_matchRule; }
-    inline void SetMatchRule(const Aws::String& value) { m_matchRule = value; }
-    inline void SetMatchRule(Aws::String&& value) { m_matchRule = std::move(value); }
-    inline void SetMatchRule(const char* value) { m_matchRule.assign(value); }
-    inline GetMatchIdResult& WithMatchRule(const Aws::String& value) { SetMatchRule(value); return *this;}
-    inline GetMatchIdResult& WithMatchRule(Aws::String&& value) { SetMatchRule(std::move(value)); return *this;}
-    inline GetMatchIdResult& WithMatchRule(const char* value) { SetMatchRule(value); return *this;}
+    inline const Aws::String& GetMatchRule() const { return m_matchRule; }
+    template<typename MatchRuleT = Aws::String>
+    void SetMatchRule(MatchRuleT&& value) { m_matchRuleHasBeenSet = true; m_matchRule = std::forward<MatchRuleT>(value); }
+    template<typename MatchRuleT = Aws::String>
+    GetMatchIdResult& WithMatchRule(MatchRuleT&& value) { SetMatchRule(std::forward<MatchRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMatchIdResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMatchIdResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMatchIdResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMatchIdResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_matchId;
+    bool m_matchIdHasBeenSet = false;
 
     Aws::String m_matchRule;
+    bool m_matchRuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

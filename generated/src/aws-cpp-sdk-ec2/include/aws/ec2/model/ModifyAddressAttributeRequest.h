@@ -21,7 +21,7 @@ namespace Model
   class ModifyAddressAttributeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyAddressAttributeRequest();
+    AWS_EC2_API ModifyAddressAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline ModifyAddressAttributeRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline ModifyAddressAttributeRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline ModifyAddressAttributeRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    ModifyAddressAttributeRequest& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name to modify for the IP address.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline ModifyAddressAttributeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ModifyAddressAttributeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ModifyAddressAttributeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ModifyAddressAttributeRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyAddressAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

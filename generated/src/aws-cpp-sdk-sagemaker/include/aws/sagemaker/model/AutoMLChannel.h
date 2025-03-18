@@ -39,7 +39,7 @@ namespace Model
   class AutoMLChannel
   {
   public:
-    AWS_SAGEMAKER_API AutoMLChannel();
+    AWS_SAGEMAKER_API AutoMLChannel() = default;
     AWS_SAGEMAKER_API AutoMLChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
     /**
      * <p>The data source for an AutoML channel.</p>
      */
-    inline const AutoMLDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const AutoMLDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const AutoMLDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(AutoMLDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline AutoMLChannel& WithDataSource(const AutoMLDataSource& value) { SetDataSource(value); return *this;}
-    inline AutoMLChannel& WithDataSource(AutoMLDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = AutoMLDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = AutoMLDataSource>
+    AutoMLChannel& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,10 @@ namespace Model
      * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
      * <code>None</code>.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline AutoMLChannel& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline AutoMLChannel& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline AutoMLChannel& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p>The name of the target variable in supervised learning, usually represented
      * by 'y'.</p>
      */
-    inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
+    inline const Aws::String& GetTargetAttributeName() const { return m_targetAttributeName; }
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
-    inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
-    inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
-    inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
-    inline AutoMLChannel& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
-    inline AutoMLChannel& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
-    inline AutoMLChannel& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
+    template<typename TargetAttributeNameT = Aws::String>
+    void SetTargetAttributeName(TargetAttributeNameT&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::forward<TargetAttributeNameT>(value); }
+    template<typename TargetAttributeNameT = Aws::String>
+    AutoMLChannel& WithTargetAttributeName(TargetAttributeNameT&& value) { SetTargetAttributeName(std::forward<TargetAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline AutoMLChannel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline AutoMLChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline AutoMLChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    AutoMLChannel& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +105,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How
      * to specify training and validation datasets</a>.</p>
      */
-    inline const AutoMLChannelType& GetChannelType() const{ return m_channelType; }
+    inline AutoMLChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const AutoMLChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(AutoMLChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline AutoMLChannel& WithChannelType(const AutoMLChannelType& value) { SetChannelType(value); return *this;}
-    inline AutoMLChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(AutoMLChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline AutoMLChannel& WithChannelType(AutoMLChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -134,21 +126,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
      * mode only.</p>
      */
-    inline const Aws::String& GetSampleWeightAttributeName() const{ return m_sampleWeightAttributeName; }
+    inline const Aws::String& GetSampleWeightAttributeName() const { return m_sampleWeightAttributeName; }
     inline bool SampleWeightAttributeNameHasBeenSet() const { return m_sampleWeightAttributeNameHasBeenSet; }
-    inline void SetSampleWeightAttributeName(const Aws::String& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = value; }
-    inline void SetSampleWeightAttributeName(Aws::String&& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = std::move(value); }
-    inline void SetSampleWeightAttributeName(const char* value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName.assign(value); }
-    inline AutoMLChannel& WithSampleWeightAttributeName(const Aws::String& value) { SetSampleWeightAttributeName(value); return *this;}
-    inline AutoMLChannel& WithSampleWeightAttributeName(Aws::String&& value) { SetSampleWeightAttributeName(std::move(value)); return *this;}
-    inline AutoMLChannel& WithSampleWeightAttributeName(const char* value) { SetSampleWeightAttributeName(value); return *this;}
+    template<typename SampleWeightAttributeNameT = Aws::String>
+    void SetSampleWeightAttributeName(SampleWeightAttributeNameT&& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = std::forward<SampleWeightAttributeNameT>(value); }
+    template<typename SampleWeightAttributeNameT = Aws::String>
+    AutoMLChannel& WithSampleWeightAttributeName(SampleWeightAttributeNameT&& value) { SetSampleWeightAttributeName(std::forward<SampleWeightAttributeNameT>(value)); return *this;}
     ///@}
   private:
 
     AutoMLDataSource m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
     Aws::String m_targetAttributeName;
@@ -157,7 +147,7 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    AutoMLChannelType m_channelType;
+    AutoMLChannelType m_channelType{AutoMLChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
     Aws::String m_sampleWeightAttributeName;

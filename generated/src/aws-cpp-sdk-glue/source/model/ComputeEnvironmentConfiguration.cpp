@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ComputeEnvironmentConfiguration::ComputeEnvironmentConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_computeEnvironment(ComputeEnvironment::NOT_SET),
-    m_computeEnvironmentHasBeenSet(false),
-    m_supportedAuthenticationTypesHasBeenSet(false),
-    m_connectionOptionsHasBeenSet(false),
-    m_connectionPropertyNameOverridesHasBeenSet(false),
-    m_connectionOptionNameOverridesHasBeenSet(false),
-    m_connectionPropertiesRequiredOverridesHasBeenSet(false),
-    m_physicalConnectionPropertiesRequired(false),
-    m_physicalConnectionPropertiesRequiredHasBeenSet(false)
-{
-}
-
 ComputeEnvironmentConfiguration::ComputeEnvironmentConfiguration(JsonView jsonValue)
-  : ComputeEnvironmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeEnvironment"))
   {
     m_computeEnvironment = ComputeEnvironmentMapper::GetComputeEnvironmentForName(jsonValue.GetString("ComputeEnvironment"));
-
     m_computeEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedAuthenticationTypes"))
   {
     Aws::Utils::Array<JsonView> supportedAuthenticationTypesJsonList = jsonValue.GetArray("SupportedAuthenticationTypes");
@@ -71,7 +49,6 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
     }
     m_supportedAuthenticationTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionOptions"))
   {
     Aws::Map<Aws::String, JsonView> connectionOptionsJsonMap = jsonValue.GetObject("ConnectionOptions").GetAllObjects();
@@ -81,7 +58,6 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
     }
     m_connectionOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionPropertyNameOverrides"))
   {
     Aws::Map<Aws::String, JsonView> connectionPropertyNameOverridesJsonMap = jsonValue.GetObject("ConnectionPropertyNameOverrides").GetAllObjects();
@@ -91,7 +67,6 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
     }
     m_connectionPropertyNameOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionOptionNameOverrides"))
   {
     Aws::Map<Aws::String, JsonView> connectionOptionNameOverridesJsonMap = jsonValue.GetObject("ConnectionOptionNameOverrides").GetAllObjects();
@@ -101,7 +76,6 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
     }
     m_connectionOptionNameOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionPropertiesRequiredOverrides"))
   {
     Aws::Utils::Array<JsonView> connectionPropertiesRequiredOverridesJsonList = jsonValue.GetArray("ConnectionPropertiesRequiredOverrides");
@@ -111,14 +85,11 @@ ComputeEnvironmentConfiguration& ComputeEnvironmentConfiguration::operator =(Jso
     }
     m_connectionPropertiesRequiredOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhysicalConnectionPropertiesRequired"))
   {
     m_physicalConnectionPropertiesRequired = jsonValue.GetBool("PhysicalConnectionPropertiesRequired");
-
     m_physicalConnectionPropertiesRequiredHasBeenSet = true;
   }
-
   return *this;
 }
 

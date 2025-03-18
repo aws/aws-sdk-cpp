@@ -33,7 +33,7 @@ namespace Model
   class MatchingResource
   {
   public:
-    AWS_MACIE2_API MatchingResource();
+    AWS_MACIE2_API MatchingResource() = default;
     AWS_MACIE2_API MatchingResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API MatchingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The details of an S3 bucket that Amazon Macie monitors and analyzes for your
      * account.</p>
      */
-    inline const MatchingBucket& GetMatchingBucket() const{ return m_matchingBucket; }
+    inline const MatchingBucket& GetMatchingBucket() const { return m_matchingBucket; }
     inline bool MatchingBucketHasBeenSet() const { return m_matchingBucketHasBeenSet; }
-    inline void SetMatchingBucket(const MatchingBucket& value) { m_matchingBucketHasBeenSet = true; m_matchingBucket = value; }
-    inline void SetMatchingBucket(MatchingBucket&& value) { m_matchingBucketHasBeenSet = true; m_matchingBucket = std::move(value); }
-    inline MatchingResource& WithMatchingBucket(const MatchingBucket& value) { SetMatchingBucket(value); return *this;}
-    inline MatchingResource& WithMatchingBucket(MatchingBucket&& value) { SetMatchingBucket(std::move(value)); return *this;}
+    template<typename MatchingBucketT = MatchingBucket>
+    void SetMatchingBucket(MatchingBucketT&& value) { m_matchingBucketHasBeenSet = true; m_matchingBucket = std::forward<MatchingBucketT>(value); }
+    template<typename MatchingBucketT = MatchingBucket>
+    MatchingResource& WithMatchingBucket(MatchingBucketT&& value) { SetMatchingBucket(std::forward<MatchingBucketT>(value)); return *this;}
     ///@}
   private:
 

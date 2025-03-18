@@ -32,7 +32,7 @@ namespace Model
   class SourceConfig
   {
   public:
-    AWS_ROBOMAKER_API SourceConfig();
+    AWS_ROBOMAKER_API SourceConfig() = default;
     AWS_ROBOMAKER_API SourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,34 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket name.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline SourceConfig& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline SourceConfig& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline SourceConfig& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    SourceConfig& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The s3 object key.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline SourceConfig& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline SourceConfig& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline SourceConfig& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    SourceConfig& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target processor architecture for the application.</p>
      */
-    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+    inline Architecture GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline SourceConfig& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
-    inline SourceConfig& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(Architecture value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline SourceConfig& WithArchitecture(Architecture value) { SetArchitecture(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_s3Key;
     bool m_s3KeyHasBeenSet = false;
 
-    Architecture m_architecture;
+    Architecture m_architecture{Architecture::NOT_SET};
     bool m_architectureHasBeenSet = false;
   };
 

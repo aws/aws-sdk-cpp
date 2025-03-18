@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeLifecycleHooksRequest::DescribeLifecycleHooksRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleHookNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLifecycleHooksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

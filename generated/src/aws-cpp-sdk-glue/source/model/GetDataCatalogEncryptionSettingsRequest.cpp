@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataCatalogEncryptionSettingsRequest::GetDataCatalogEncryptionSettingsRequest() : 
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataCatalogEncryptionSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

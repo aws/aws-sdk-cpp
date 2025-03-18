@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration() : 
-    m_sectionIdHasBeenSet(false),
-    m_layoutHasBeenSet(false),
-    m_styleHasBeenSet(false)
-{
-}
-
 HeaderFooterSectionConfiguration::HeaderFooterSectionConfiguration(JsonView jsonValue)
-  : HeaderFooterSectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HeaderFooterSectionConfiguration& HeaderFooterSectionConfiguration::operator =(J
   if(jsonValue.ValueExists("SectionId"))
   {
     m_sectionId = jsonValue.GetString("SectionId");
-
     m_sectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Layout"))
   {
     m_layout = jsonValue.GetObject("Layout");
-
     m_layoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetObject("Style");
-
     m_styleHasBeenSet = true;
   }
-
   return *this;
 }
 

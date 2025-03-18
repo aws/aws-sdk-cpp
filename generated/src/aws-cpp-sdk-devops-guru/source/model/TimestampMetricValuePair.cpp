@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-TimestampMetricValuePair::TimestampMetricValuePair() : 
-    m_timestampHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false)
-{
-}
-
 TimestampMetricValuePair::TimestampMetricValuePair(JsonView jsonValue)
-  : TimestampMetricValuePair()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TimestampMetricValuePair& TimestampMetricValuePair::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricValue"))
   {
     m_metricValue = jsonValue.GetDouble("MetricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   return *this;
 }
 

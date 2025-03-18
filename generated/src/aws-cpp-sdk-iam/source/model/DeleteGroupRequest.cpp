@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteGroupRequest::DeleteGroupRequest() : 
-    m_groupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

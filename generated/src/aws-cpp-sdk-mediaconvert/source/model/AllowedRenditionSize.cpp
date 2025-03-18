@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AllowedRenditionSize::AllowedRenditionSize() : 
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_required(RequiredFlag::NOT_SET),
-    m_requiredHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 AllowedRenditionSize::AllowedRenditionSize(JsonView jsonValue)
-  : AllowedRenditionSize()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AllowedRenditionSize& AllowedRenditionSize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("height"))
   {
     m_height = jsonValue.GetInteger("height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = RequiredFlagMapper::GetRequiredFlagForName(jsonValue.GetString("required"));
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("width"))
   {
     m_width = jsonValue.GetInteger("width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

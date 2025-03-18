@@ -18,35 +18,7 @@ namespace DLM
 namespace Model
 {
 
-PolicyDetails::PolicyDetails() : 
-    m_policyType(PolicyTypeValues::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_resourceLocationsHasBeenSet(false),
-    m_targetTagsHasBeenSet(false),
-    m_schedulesHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_policyLanguage(PolicyLanguageValues::NOT_SET),
-    m_policyLanguageHasBeenSet(false),
-    m_resourceType(ResourceTypeValues::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createInterval(0),
-    m_createIntervalHasBeenSet(false),
-    m_retainInterval(0),
-    m_retainIntervalHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_crossRegionCopyTargetsHasBeenSet(false),
-    m_extendDeletion(false),
-    m_extendDeletionHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
-{
-}
-
 PolicyDetails::PolicyDetails(JsonView jsonValue)
-  : PolicyDetails()
 {
   *this = jsonValue;
 }
@@ -56,10 +28,8 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = PolicyTypeValuesMapper::GetPolicyTypeValuesForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
@@ -69,7 +39,6 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLocations"))
   {
     Aws::Utils::Array<JsonView> resourceLocationsJsonList = jsonValue.GetArray("ResourceLocations");
@@ -79,7 +48,6 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_resourceLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTags"))
   {
     Aws::Utils::Array<JsonView> targetTagsJsonList = jsonValue.GetArray("TargetTags");
@@ -89,7 +57,6 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_targetTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedules"))
   {
     Aws::Utils::Array<JsonView> schedulesJsonList = jsonValue.GetArray("Schedules");
@@ -99,21 +66,16 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_schedulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetObject("Parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSource"))
   {
     m_eventSource = jsonValue.GetObject("EventSource");
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -123,42 +85,31 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyLanguage"))
   {
     m_policyLanguage = PolicyLanguageValuesMapper::GetPolicyLanguageValuesForName(jsonValue.GetString("PolicyLanguage"));
-
     m_policyLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeValuesMapper::GetResourceTypeValuesForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateInterval"))
   {
     m_createInterval = jsonValue.GetInteger("CreateInterval");
-
     m_createIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetainInterval"))
   {
     m_retainInterval = jsonValue.GetInteger("RetainInterval");
-
     m_retainIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTags"))
   {
     m_copyTags = jsonValue.GetBool("CopyTags");
-
     m_copyTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossRegionCopyTargets"))
   {
     Aws::Utils::Array<JsonView> crossRegionCopyTargetsJsonList = jsonValue.GetArray("CrossRegionCopyTargets");
@@ -168,21 +119,16 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     }
     m_crossRegionCopyTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendDeletion"))
   {
     m_extendDeletion = jsonValue.GetBool("ExtendDeletion");
-
     m_extendDeletionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     m_exclusions = jsonValue.GetObject("Exclusions");
-
     m_exclusionsHasBeenSet = true;
   }
-
   return *this;
 }
 

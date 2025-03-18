@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyConversionConfigurationRequest::ModifyConversionConfigurationRequest() : 
-    m_migrationProjectIdentifierHasBeenSet(false),
-    m_conversionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyConversionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

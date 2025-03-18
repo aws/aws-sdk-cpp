@@ -23,7 +23,7 @@ namespace Model
   class DeleteLakeFormationOptInRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API DeleteLakeFormationOptInRequest();
+    AWS_LAKEFORMATION_API DeleteLakeFormationOptInRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,32 +36,32 @@ namespace Model
 
     ///@{
     
-    inline const DataLakePrincipal& GetPrincipal() const{ return m_principal; }
+    inline const DataLakePrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const DataLakePrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(DataLakePrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline DeleteLakeFormationOptInRequest& WithPrincipal(const DataLakePrincipal& value) { SetPrincipal(value); return *this;}
-    inline DeleteLakeFormationOptInRequest& WithPrincipal(DataLakePrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = DataLakePrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = DataLakePrincipal>
+    DeleteLakeFormationOptInRequest& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Resource& GetResource() const{ return m_resource; }
+    inline const Resource& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline DeleteLakeFormationOptInRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline DeleteLakeFormationOptInRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    DeleteLakeFormationOptInRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Condition& GetCondition() const{ return m_condition; }
+    inline const Condition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline DeleteLakeFormationOptInRequest& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-    inline DeleteLakeFormationOptInRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = Condition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Condition>
+    DeleteLakeFormationOptInRequest& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
   private:
 

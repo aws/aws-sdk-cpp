@@ -32,7 +32,7 @@ namespace Model
   class VirtualGatewayStatus
   {
   public:
-    AWS_APPMESH_API VirtualGatewayStatus();
+    AWS_APPMESH_API VirtualGatewayStatus() = default;
     AWS_APPMESH_API VirtualGatewayStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current status.</p>
      */
-    inline const VirtualGatewayStatusCode& GetStatus() const{ return m_status; }
+    inline VirtualGatewayStatusCode GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VirtualGatewayStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VirtualGatewayStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VirtualGatewayStatus& WithStatus(const VirtualGatewayStatusCode& value) { SetStatus(value); return *this;}
-    inline VirtualGatewayStatus& WithStatus(VirtualGatewayStatusCode&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VirtualGatewayStatusCode value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VirtualGatewayStatus& WithStatus(VirtualGatewayStatusCode value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    VirtualGatewayStatusCode m_status;
+    VirtualGatewayStatusCode m_status{VirtualGatewayStatusCode::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

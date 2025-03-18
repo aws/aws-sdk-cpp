@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-ImageStandardOutputConfiguration::ImageStandardOutputConfiguration() : 
-    m_extractionHasBeenSet(false),
-    m_generativeFieldHasBeenSet(false)
-{
-}
-
 ImageStandardOutputConfiguration::ImageStandardOutputConfiguration(JsonView jsonValue)
-  : ImageStandardOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageStandardOutputConfiguration& ImageStandardOutputConfiguration::operator =(J
   if(jsonValue.ValueExists("extraction"))
   {
     m_extraction = jsonValue.GetObject("extraction");
-
     m_extractionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generativeField"))
   {
     m_generativeField = jsonValue.GetObject("generativeField");
-
     m_generativeFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

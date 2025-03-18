@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationClusteringOptions::WaypointOptimizationClusteringOptions() : 
-    m_algorithm(WaypointOptimizationClusteringAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_drivingDistanceOptionsHasBeenSet(false)
-{
-}
-
 WaypointOptimizationClusteringOptions::WaypointOptimizationClusteringOptions(JsonView jsonValue)
-  : WaypointOptimizationClusteringOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WaypointOptimizationClusteringOptions& WaypointOptimizationClusteringOptions::op
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = WaypointOptimizationClusteringAlgorithmMapper::GetWaypointOptimizationClusteringAlgorithmForName(jsonValue.GetString("Algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrivingDistanceOptions"))
   {
     m_drivingDistanceOptions = jsonValue.GetObject("DrivingDistanceOptions");
-
     m_drivingDistanceOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

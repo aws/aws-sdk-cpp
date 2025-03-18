@@ -32,7 +32,7 @@ namespace Model
   class ECSService
   {
   public:
-    AWS_CODEDEPLOY_API ECSService();
+    AWS_CODEDEPLOY_API ECSService() = default;
     AWS_CODEDEPLOY_API ECSService(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API ECSService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The name of the target Amazon ECS service. </p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline ECSService& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline ECSService& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline ECSService& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    ECSService& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ECSService& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ECSService& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ECSService& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ECSService& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
   private:
 

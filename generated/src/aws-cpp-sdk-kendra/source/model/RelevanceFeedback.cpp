@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-RelevanceFeedback::RelevanceFeedback() : 
-    m_resultIdHasBeenSet(false),
-    m_relevanceValue(RelevanceType::NOT_SET),
-    m_relevanceValueHasBeenSet(false)
-{
-}
-
 RelevanceFeedback::RelevanceFeedback(JsonView jsonValue)
-  : RelevanceFeedback()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RelevanceFeedback& RelevanceFeedback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
-
     m_resultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelevanceValue"))
   {
     m_relevanceValue = RelevanceTypeMapper::GetRelevanceTypeForName(jsonValue.GetString("RelevanceValue"));
-
     m_relevanceValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QApps
 namespace Model
 {
 
-AppDefinitionInput::AppDefinitionInput() : 
-    m_cardsHasBeenSet(false),
-    m_initialPromptHasBeenSet(false)
-{
-}
-
 AppDefinitionInput::AppDefinitionInput(JsonView jsonValue)
-  : AppDefinitionInput()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AppDefinitionInput& AppDefinitionInput::operator =(JsonView jsonValue)
     }
     m_cardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initialPrompt"))
   {
     m_initialPrompt = jsonValue.GetString("initialPrompt");
-
     m_initialPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

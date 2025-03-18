@@ -18,18 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-ImportsListItem::ImportsListItem() : 
-    m_importIdHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 ImportsListItem::ImportsListItem(JsonView jsonValue)
-  : ImportsListItem()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ ImportsListItem& ImportsListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImportId"))
   {
     m_importId = jsonValue.GetString("ImportId");
-
     m_importIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("ImportStatus"));
-
     m_importStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -59,21 +44,16 @@ ImportsListItem& ImportsListItem::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetDouble("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

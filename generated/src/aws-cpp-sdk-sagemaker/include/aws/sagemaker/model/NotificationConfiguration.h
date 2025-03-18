@@ -32,7 +32,7 @@ namespace Model
   class NotificationConfiguration
   {
   public:
-    AWS_SAGEMAKER_API NotificationConfiguration();
+    AWS_SAGEMAKER_API NotificationConfiguration() = default;
     AWS_SAGEMAKER_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ARN for the Amazon SNS topic to which notifications should be
      * published.</p>
      */
-    inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
+    inline const Aws::String& GetNotificationTopicArn() const { return m_notificationTopicArn; }
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
-    inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
-    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
-    inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
-    inline NotificationConfiguration& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
-    inline NotificationConfiguration& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
-    inline NotificationConfiguration& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+    template<typename NotificationTopicArnT = Aws::String>
+    void SetNotificationTopicArn(NotificationTopicArnT&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::forward<NotificationTopicArnT>(value); }
+    template<typename NotificationTopicArnT = Aws::String>
+    NotificationConfiguration& WithNotificationTopicArn(NotificationTopicArnT&& value) { SetNotificationTopicArn(std::forward<NotificationTopicArnT>(value)); return *this;}
     ///@}
   private:
 

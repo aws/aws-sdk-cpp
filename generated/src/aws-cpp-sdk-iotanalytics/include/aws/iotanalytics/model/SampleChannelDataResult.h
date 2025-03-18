@@ -29,7 +29,7 @@ namespace Model
   class SampleChannelDataResult
   {
   public:
-    AWS_IOTANALYTICS_API SampleChannelDataResult();
+    AWS_IOTANALYTICS_API SampleChannelDataResult() = default;
     AWS_IOTANALYTICS_API SampleChannelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API SampleChannelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The list of message samples. Each sample message is returned as a
      * base64-encoded string.</p>
      */
-    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const{ return m_payloads; }
-    inline void SetPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_payloads = value; }
-    inline void SetPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_payloads = std::move(value); }
-    inline SampleChannelDataResult& WithPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetPayloads(value); return *this;}
-    inline SampleChannelDataResult& WithPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetPayloads(std::move(value)); return *this;}
-    inline SampleChannelDataResult& AddPayloads(const Aws::Utils::ByteBuffer& value) { m_payloads.push_back(value); return *this; }
-    inline SampleChannelDataResult& AddPayloads(Aws::Utils::ByteBuffer&& value) { m_payloads.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const { return m_payloads; }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    void SetPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads = std::forward<PayloadsT>(value); }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    SampleChannelDataResult& WithPayloads(PayloadsT&& value) { SetPayloads(std::forward<PayloadsT>(value)); return *this;}
+    template<typename PayloadsT = Aws::Utils::ByteBuffer>
+    SampleChannelDataResult& AddPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads.emplace_back(std::forward<PayloadsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SampleChannelDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SampleChannelDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SampleChannelDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SampleChannelDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
+    bool m_payloadsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

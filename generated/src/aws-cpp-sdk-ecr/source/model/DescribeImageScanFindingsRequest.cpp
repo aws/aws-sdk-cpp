@@ -12,16 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImageScanFindingsRequest::DescribeImageScanFindingsRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageScanFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

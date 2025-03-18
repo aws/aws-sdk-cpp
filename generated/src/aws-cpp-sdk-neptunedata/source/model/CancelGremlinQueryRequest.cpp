@@ -12,11 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelGremlinQueryRequest::CancelGremlinQueryRequest() : 
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelGremlinQueryRequest::SerializePayload() const
 {
   return {};

@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImportJobRequest::CreateImportJobRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_importJobRequestHasBeenSet(false)
-{
-}
-
 Aws::String CreateImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ResourceProfileArtifact::ResourceProfileArtifact() : 
-    m_arnHasBeenSet(false),
-    m_classificationResultStatusHasBeenSet(false),
-    m_sensitive(false),
-    m_sensitiveHasBeenSet(false)
-{
-}
-
 ResourceProfileArtifact::ResourceProfileArtifact(JsonView jsonValue)
-  : ResourceProfileArtifact()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceProfileArtifact& ResourceProfileArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("classificationResultStatus"))
   {
     m_classificationResultStatus = jsonValue.GetString("classificationResultStatus");
-
     m_classificationResultStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitive"))
   {
     m_sensitive = jsonValue.GetBool("sensitive");
-
     m_sensitiveHasBeenSet = true;
   }
-
   return *this;
 }
 

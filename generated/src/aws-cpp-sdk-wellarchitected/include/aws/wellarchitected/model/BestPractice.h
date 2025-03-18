@@ -32,7 +32,7 @@ namespace Model
   class BestPractice
   {
   public:
-    AWS_WELLARCHITECTED_API BestPractice();
+    AWS_WELLARCHITECTED_API BestPractice() = default;
     AWS_WELLARCHITECTED_API BestPractice(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API BestPractice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline BestPractice& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline BestPractice& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline BestPractice& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    BestPractice& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetChoiceTitle() const{ return m_choiceTitle; }
+    inline const Aws::String& GetChoiceTitle() const { return m_choiceTitle; }
     inline bool ChoiceTitleHasBeenSet() const { return m_choiceTitleHasBeenSet; }
-    inline void SetChoiceTitle(const Aws::String& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = value; }
-    inline void SetChoiceTitle(Aws::String&& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = std::move(value); }
-    inline void SetChoiceTitle(const char* value) { m_choiceTitleHasBeenSet = true; m_choiceTitle.assign(value); }
-    inline BestPractice& WithChoiceTitle(const Aws::String& value) { SetChoiceTitle(value); return *this;}
-    inline BestPractice& WithChoiceTitle(Aws::String&& value) { SetChoiceTitle(std::move(value)); return *this;}
-    inline BestPractice& WithChoiceTitle(const char* value) { SetChoiceTitle(value); return *this;}
+    template<typename ChoiceTitleT = Aws::String>
+    void SetChoiceTitle(ChoiceTitleT&& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = std::forward<ChoiceTitleT>(value); }
+    template<typename ChoiceTitleT = Aws::String>
+    BestPractice& WithChoiceTitle(ChoiceTitleT&& value) { SetChoiceTitle(std::forward<ChoiceTitleT>(value)); return *this;}
     ///@}
   private:
 

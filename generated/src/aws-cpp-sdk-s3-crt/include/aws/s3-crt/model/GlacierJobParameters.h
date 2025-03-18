@@ -30,7 +30,7 @@ namespace Model
   class GlacierJobParameters
   {
   public:
-    AWS_S3CRT_API GlacierJobParameters();
+    AWS_S3CRT_API GlacierJobParameters() = default;
     AWS_S3CRT_API GlacierJobParameters(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API GlacierJobParameters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Retrieval tier at which the restore will be processed.</p>
      */
-    inline const Tier& GetTier() const{ return m_tier; }
+    inline Tier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline GlacierJobParameters& WithTier(const Tier& value) { SetTier(value); return *this;}
-    inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(Tier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline GlacierJobParameters& WithTier(Tier value) { SetTier(value); return *this;}
     ///@}
   private:
 
-    Tier m_tier;
+    Tier m_tier{Tier::NOT_SET};
     bool m_tierHasBeenSet = false;
   };
 

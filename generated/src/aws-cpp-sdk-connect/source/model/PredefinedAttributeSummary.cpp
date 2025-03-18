@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PredefinedAttributeSummary::PredefinedAttributeSummary() : 
-    m_nameHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 PredefinedAttributeSummary::PredefinedAttributeSummary(JsonView jsonValue)
-  : PredefinedAttributeSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PredefinedAttributeSummary& PredefinedAttributeSummary::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

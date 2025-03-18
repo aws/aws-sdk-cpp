@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-SubnetMapping::SubnetMapping() : 
-    m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false),
-    m_iPv6AddressHasBeenSet(false),
-    m_sourceNatIpv6PrefixHasBeenSet(false)
-{
-}
-
 SubnetMapping::SubnetMapping(const XmlNode& xmlNode)
-  : SubnetMapping()
 {
   *this = xmlNode;
 }

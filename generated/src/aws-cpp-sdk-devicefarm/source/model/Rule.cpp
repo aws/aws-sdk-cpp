@@ -18,17 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Rule::Rule() : 
-    m_attribute(DeviceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operator(RuleOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = DeviceAttributeMapper::GetDeviceAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = RuleOperatorMapper::GetRuleOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

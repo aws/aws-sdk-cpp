@@ -27,7 +27,7 @@ namespace Model
   class DeleteSpaceResult
   {
   public:
-    AWS_CODECATALYST_API DeleteSpaceResult();
+    AWS_CODECATALYST_API DeleteSpaceResult() = default;
     AWS_CODECATALYST_API DeleteSpaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API DeleteSpaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteSpaceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteSpaceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteSpaceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteSpaceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,31 @@ namespace Model
      * <p>The friendly name of the space displayed to users of the space in Amazon
      * CodeCatalyst.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline DeleteSpaceResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline DeleteSpaceResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline DeleteSpaceResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    DeleteSpaceResult& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteSpaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteSpaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteSpaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteSpaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

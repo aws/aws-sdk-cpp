@@ -28,7 +28,7 @@ namespace Model
   class UpdatePortalResult
   {
   public:
-    AWS_WORKSPACESWEB_API UpdatePortalResult();
+    AWS_WORKSPACESWEB_API UpdatePortalResult() = default;
     AWS_WORKSPACESWEB_API UpdatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API UpdatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The web portal.</p>
      */
-    inline const Portal& GetPortal() const{ return m_portal; }
-    inline void SetPortal(const Portal& value) { m_portal = value; }
-    inline void SetPortal(Portal&& value) { m_portal = std::move(value); }
-    inline UpdatePortalResult& WithPortal(const Portal& value) { SetPortal(value); return *this;}
-    inline UpdatePortalResult& WithPortal(Portal&& value) { SetPortal(std::move(value)); return *this;}
+    inline const Portal& GetPortal() const { return m_portal; }
+    template<typename PortalT = Portal>
+    void SetPortal(PortalT&& value) { m_portalHasBeenSet = true; m_portal = std::forward<PortalT>(value); }
+    template<typename PortalT = Portal>
+    UpdatePortalResult& WithPortal(PortalT&& value) { SetPortal(std::forward<PortalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePortalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePortalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePortalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePortalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Portal m_portal;
+    bool m_portalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

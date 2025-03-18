@@ -33,7 +33,7 @@ namespace Model
   class ETag
   {
   public:
-    AWS_OMICS_API ETag();
+    AWS_OMICS_API ETag() = default;
     AWS_OMICS_API ETag(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ETag& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,38 @@ namespace Model
     /**
      * <p>The algorithm used to calculate the read set’s ETag(s).</p>
      */
-    inline const ETagAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline ETagAlgorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const ETagAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(ETagAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline ETag& WithAlgorithm(const ETagAlgorithm& value) { SetAlgorithm(value); return *this;}
-    inline ETag& WithAlgorithm(ETagAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(ETagAlgorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline ETag& WithAlgorithm(ETagAlgorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag hash calculated on Source1 of the read set.</p>
      */
-    inline const Aws::String& GetSource1() const{ return m_source1; }
+    inline const Aws::String& GetSource1() const { return m_source1; }
     inline bool Source1HasBeenSet() const { return m_source1HasBeenSet; }
-    inline void SetSource1(const Aws::String& value) { m_source1HasBeenSet = true; m_source1 = value; }
-    inline void SetSource1(Aws::String&& value) { m_source1HasBeenSet = true; m_source1 = std::move(value); }
-    inline void SetSource1(const char* value) { m_source1HasBeenSet = true; m_source1.assign(value); }
-    inline ETag& WithSource1(const Aws::String& value) { SetSource1(value); return *this;}
-    inline ETag& WithSource1(Aws::String&& value) { SetSource1(std::move(value)); return *this;}
-    inline ETag& WithSource1(const char* value) { SetSource1(value); return *this;}
+    template<typename Source1T = Aws::String>
+    void SetSource1(Source1T&& value) { m_source1HasBeenSet = true; m_source1 = std::forward<Source1T>(value); }
+    template<typename Source1T = Aws::String>
+    ETag& WithSource1(Source1T&& value) { SetSource1(std::forward<Source1T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag hash calculated on Source2 of the read set.</p>
      */
-    inline const Aws::String& GetSource2() const{ return m_source2; }
+    inline const Aws::String& GetSource2() const { return m_source2; }
     inline bool Source2HasBeenSet() const { return m_source2HasBeenSet; }
-    inline void SetSource2(const Aws::String& value) { m_source2HasBeenSet = true; m_source2 = value; }
-    inline void SetSource2(Aws::String&& value) { m_source2HasBeenSet = true; m_source2 = std::move(value); }
-    inline void SetSource2(const char* value) { m_source2HasBeenSet = true; m_source2.assign(value); }
-    inline ETag& WithSource2(const Aws::String& value) { SetSource2(value); return *this;}
-    inline ETag& WithSource2(Aws::String&& value) { SetSource2(std::move(value)); return *this;}
-    inline ETag& WithSource2(const char* value) { SetSource2(value); return *this;}
+    template<typename Source2T = Aws::String>
+    void SetSource2(Source2T&& value) { m_source2HasBeenSet = true; m_source2 = std::forward<Source2T>(value); }
+    template<typename Source2T = Aws::String>
+    ETag& WithSource2(Source2T&& value) { SetSource2(std::forward<Source2T>(value)); return *this;}
     ///@}
   private:
 
-    ETagAlgorithm m_algorithm;
+    ETagAlgorithm m_algorithm{ETagAlgorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
     Aws::String m_source1;

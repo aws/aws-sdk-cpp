@@ -12,13 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInstanceRequest::UpdateInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_instanceDescriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

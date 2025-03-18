@@ -34,7 +34,7 @@ namespace Model
   class ContextSummary
   {
   public:
-    AWS_SAGEMAKER_API ContextSummary();
+    AWS_SAGEMAKER_API ContextSummary() = default;
     AWS_SAGEMAKER_API ContextSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ContextSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,78 +44,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the context.</p>
      */
-    inline const Aws::String& GetContextArn() const{ return m_contextArn; }
+    inline const Aws::String& GetContextArn() const { return m_contextArn; }
     inline bool ContextArnHasBeenSet() const { return m_contextArnHasBeenSet; }
-    inline void SetContextArn(const Aws::String& value) { m_contextArnHasBeenSet = true; m_contextArn = value; }
-    inline void SetContextArn(Aws::String&& value) { m_contextArnHasBeenSet = true; m_contextArn = std::move(value); }
-    inline void SetContextArn(const char* value) { m_contextArnHasBeenSet = true; m_contextArn.assign(value); }
-    inline ContextSummary& WithContextArn(const Aws::String& value) { SetContextArn(value); return *this;}
-    inline ContextSummary& WithContextArn(Aws::String&& value) { SetContextArn(std::move(value)); return *this;}
-    inline ContextSummary& WithContextArn(const char* value) { SetContextArn(value); return *this;}
+    template<typename ContextArnT = Aws::String>
+    void SetContextArn(ContextArnT&& value) { m_contextArnHasBeenSet = true; m_contextArn = std::forward<ContextArnT>(value); }
+    template<typename ContextArnT = Aws::String>
+    ContextSummary& WithContextArn(ContextArnT&& value) { SetContextArn(std::forward<ContextArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the context.</p>
      */
-    inline const Aws::String& GetContextName() const{ return m_contextName; }
+    inline const Aws::String& GetContextName() const { return m_contextName; }
     inline bool ContextNameHasBeenSet() const { return m_contextNameHasBeenSet; }
-    inline void SetContextName(const Aws::String& value) { m_contextNameHasBeenSet = true; m_contextName = value; }
-    inline void SetContextName(Aws::String&& value) { m_contextNameHasBeenSet = true; m_contextName = std::move(value); }
-    inline void SetContextName(const char* value) { m_contextNameHasBeenSet = true; m_contextName.assign(value); }
-    inline ContextSummary& WithContextName(const Aws::String& value) { SetContextName(value); return *this;}
-    inline ContextSummary& WithContextName(Aws::String&& value) { SetContextName(std::move(value)); return *this;}
-    inline ContextSummary& WithContextName(const char* value) { SetContextName(value); return *this;}
+    template<typename ContextNameT = Aws::String>
+    void SetContextName(ContextNameT&& value) { m_contextNameHasBeenSet = true; m_contextName = std::forward<ContextNameT>(value); }
+    template<typename ContextNameT = Aws::String>
+    ContextSummary& WithContextName(ContextNameT&& value) { SetContextName(std::forward<ContextNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the context.</p>
      */
-    inline const ContextSource& GetSource() const{ return m_source; }
+    inline const ContextSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ContextSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ContextSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ContextSummary& WithSource(const ContextSource& value) { SetSource(value); return *this;}
-    inline ContextSummary& WithSource(ContextSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ContextSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ContextSource>
+    ContextSummary& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the context.</p>
      */
-    inline const Aws::String& GetContextType() const{ return m_contextType; }
+    inline const Aws::String& GetContextType() const { return m_contextType; }
     inline bool ContextTypeHasBeenSet() const { return m_contextTypeHasBeenSet; }
-    inline void SetContextType(const Aws::String& value) { m_contextTypeHasBeenSet = true; m_contextType = value; }
-    inline void SetContextType(Aws::String&& value) { m_contextTypeHasBeenSet = true; m_contextType = std::move(value); }
-    inline void SetContextType(const char* value) { m_contextTypeHasBeenSet = true; m_contextType.assign(value); }
-    inline ContextSummary& WithContextType(const Aws::String& value) { SetContextType(value); return *this;}
-    inline ContextSummary& WithContextType(Aws::String&& value) { SetContextType(std::move(value)); return *this;}
-    inline ContextSummary& WithContextType(const char* value) { SetContextType(value); return *this;}
+    template<typename ContextTypeT = Aws::String>
+    void SetContextType(ContextTypeT&& value) { m_contextTypeHasBeenSet = true; m_contextType = std::forward<ContextTypeT>(value); }
+    template<typename ContextTypeT = Aws::String>
+    ContextSummary& WithContextType(ContextTypeT&& value) { SetContextType(std::forward<ContextTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the context was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ContextSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ContextSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ContextSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the context was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline ContextSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ContextSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ContextSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -131,10 +125,10 @@ namespace Model
     Aws::String m_contextType;
     bool m_contextTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

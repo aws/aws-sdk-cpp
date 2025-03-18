@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ComponentState::ComponentState() : 
-    m_status(ComponentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ComponentState::ComponentState(JsonView jsonValue)
-  : ComponentState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComponentState& ComponentState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ComponentStatusMapper::GetComponentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProductViewDetail::ProductViewDetail() : 
-    m_productViewSummaryHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_productARNHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_sourceConnectionHasBeenSet(false)
-{
-}
-
 ProductViewDetail::ProductViewDetail(JsonView jsonValue)
-  : ProductViewDetail()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ProductViewDetail& ProductViewDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProductViewSummary"))
   {
     m_productViewSummary = jsonValue.GetObject("ProductViewSummary");
-
     m_productViewSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductARN"))
   {
     m_productARN = jsonValue.GetString("ProductARN");
-
     m_productARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceConnection"))
   {
     m_sourceConnection = jsonValue.GetObject("SourceConnection");
-
     m_sourceConnectionHasBeenSet = true;
   }
-
   return *this;
 }
 

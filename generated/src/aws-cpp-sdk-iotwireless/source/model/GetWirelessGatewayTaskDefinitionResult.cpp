@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult() : 
-    m_autoCreateTasks(false)
-{
-}
-
 GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWirelessGatewayTaskDefinitionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetWirelessGatewayTaskDefinitionResult& GetWirelessGatewayTaskDefinitionResult::
   if(jsonValue.ValueExists("AutoCreateTasks"))
   {
     m_autoCreateTasks = jsonValue.GetBool("AutoCreateTasks");
-
+    m_autoCreateTasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Update"))
   {
     m_update = jsonValue.GetObject("Update");
-
+    m_updateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

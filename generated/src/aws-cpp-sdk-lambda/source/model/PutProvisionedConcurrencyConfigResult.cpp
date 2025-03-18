@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult() : 
-    m_requestedProvisionedConcurrentExecutions(0),
-    m_availableProvisionedConcurrentExecutions(0),
-    m_allocatedProvisionedConcurrentExecutions(0),
-    m_status(ProvisionedConcurrencyStatusEnum::NOT_SET)
-{
-}
-
 PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutProvisionedConcurrencyConfigResult()
 {
   *this = result;
 }
@@ -37,45 +28,40 @@ PutProvisionedConcurrencyConfigResult& PutProvisionedConcurrencyConfigResult::op
   if(jsonValue.ValueExists("RequestedProvisionedConcurrentExecutions"))
   {
     m_requestedProvisionedConcurrentExecutions = jsonValue.GetInteger("RequestedProvisionedConcurrentExecutions");
-
+    m_requestedProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableProvisionedConcurrentExecutions"))
   {
     m_availableProvisionedConcurrentExecutions = jsonValue.GetInteger("AvailableProvisionedConcurrentExecutions");
-
+    m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedProvisionedConcurrentExecutions"))
   {
     m_allocatedProvisionedConcurrentExecutions = jsonValue.GetInteger("AllocatedProvisionedConcurrentExecutions");
-
+    m_allocatedProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProvisionedConcurrencyStatusEnumMapper::GetProvisionedConcurrencyStatusEnumForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
+    m_lastModifiedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

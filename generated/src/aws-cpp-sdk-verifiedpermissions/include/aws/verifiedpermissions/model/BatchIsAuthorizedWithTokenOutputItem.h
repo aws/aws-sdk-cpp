@@ -37,7 +37,7 @@ namespace Model
   class BatchIsAuthorizedWithTokenOutputItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenOutputItem();
+    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenOutputItem() = default;
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenOutputItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenOutputItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
     /**
      * <p>The authorization request that initiated the decision.</p>
      */
-    inline const BatchIsAuthorizedWithTokenInputItem& GetRequest() const{ return m_request; }
+    inline const BatchIsAuthorizedWithTokenInputItem& GetRequest() const { return m_request; }
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-    inline void SetRequest(const BatchIsAuthorizedWithTokenInputItem& value) { m_requestHasBeenSet = true; m_request = value; }
-    inline void SetRequest(BatchIsAuthorizedWithTokenInputItem&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-    inline BatchIsAuthorizedWithTokenOutputItem& WithRequest(const BatchIsAuthorizedWithTokenInputItem& value) { SetRequest(value); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& WithRequest(BatchIsAuthorizedWithTokenInputItem&& value) { SetRequest(std::move(value)); return *this;}
+    template<typename RequestT = BatchIsAuthorizedWithTokenInputItem>
+    void SetRequest(RequestT&& value) { m_requestHasBeenSet = true; m_request = std::forward<RequestT>(value); }
+    template<typename RequestT = BatchIsAuthorizedWithTokenInputItem>
+    BatchIsAuthorizedWithTokenOutputItem& WithRequest(RequestT&& value) { SetRequest(std::forward<RequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,10 @@ namespace Model
      * <p>An authorization decision that indicates if the authorization request should
      * be allowed or denied.</p>
      */
-    inline const Decision& GetDecision() const{ return m_decision; }
+    inline Decision GetDecision() const { return m_decision; }
     inline bool DecisionHasBeenSet() const { return m_decisionHasBeenSet; }
-    inline void SetDecision(const Decision& value) { m_decisionHasBeenSet = true; m_decision = value; }
-    inline void SetDecision(Decision&& value) { m_decisionHasBeenSet = true; m_decision = std::move(value); }
-    inline BatchIsAuthorizedWithTokenOutputItem& WithDecision(const Decision& value) { SetDecision(value); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& WithDecision(Decision&& value) { SetDecision(std::move(value)); return *this;}
+    inline void SetDecision(Decision value) { m_decisionHasBeenSet = true; m_decision = value; }
+    inline BatchIsAuthorizedWithTokenOutputItem& WithDecision(Decision value) { SetDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,14 @@ namespace Model
      * policies. In the case that no policies match, and hence the response is DENY,
      * there would be no determining policies.</p>
      */
-    inline const Aws::Vector<DeterminingPolicyItem>& GetDeterminingPolicies() const{ return m_determiningPolicies; }
+    inline const Aws::Vector<DeterminingPolicyItem>& GetDeterminingPolicies() const { return m_determiningPolicies; }
     inline bool DeterminingPoliciesHasBeenSet() const { return m_determiningPoliciesHasBeenSet; }
-    inline void SetDeterminingPolicies(const Aws::Vector<DeterminingPolicyItem>& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies = value; }
-    inline void SetDeterminingPolicies(Aws::Vector<DeterminingPolicyItem>&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies = std::move(value); }
-    inline BatchIsAuthorizedWithTokenOutputItem& WithDeterminingPolicies(const Aws::Vector<DeterminingPolicyItem>& value) { SetDeterminingPolicies(value); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& WithDeterminingPolicies(Aws::Vector<DeterminingPolicyItem>&& value) { SetDeterminingPolicies(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& AddDeterminingPolicies(const DeterminingPolicyItem& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies.push_back(value); return *this; }
-    inline BatchIsAuthorizedWithTokenOutputItem& AddDeterminingPolicies(DeterminingPolicyItem&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies.push_back(std::move(value)); return *this; }
+    template<typename DeterminingPoliciesT = Aws::Vector<DeterminingPolicyItem>>
+    void SetDeterminingPolicies(DeterminingPoliciesT&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies = std::forward<DeterminingPoliciesT>(value); }
+    template<typename DeterminingPoliciesT = Aws::Vector<DeterminingPolicyItem>>
+    BatchIsAuthorizedWithTokenOutputItem& WithDeterminingPolicies(DeterminingPoliciesT&& value) { SetDeterminingPolicies(std::forward<DeterminingPoliciesT>(value)); return *this;}
+    template<typename DeterminingPoliciesT = DeterminingPolicyItem>
+    BatchIsAuthorizedWithTokenOutputItem& AddDeterminingPolicies(DeterminingPoliciesT&& value) { m_determiningPoliciesHasBeenSet = true; m_determiningPolicies.emplace_back(std::forward<DeterminingPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,21 +91,21 @@ namespace Model
      * policy might reference an entity or attribute that doesn't exist in the
      * request.</p>
      */
-    inline const Aws::Vector<EvaluationErrorItem>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<EvaluationErrorItem>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<EvaluationErrorItem>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<EvaluationErrorItem>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline BatchIsAuthorizedWithTokenOutputItem& WithErrors(const Aws::Vector<EvaluationErrorItem>& value) { SetErrors(value); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& WithErrors(Aws::Vector<EvaluationErrorItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenOutputItem& AddErrors(const EvaluationErrorItem& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline BatchIsAuthorizedWithTokenOutputItem& AddErrors(EvaluationErrorItem&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<EvaluationErrorItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<EvaluationErrorItem>>
+    BatchIsAuthorizedWithTokenOutputItem& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = EvaluationErrorItem>
+    BatchIsAuthorizedWithTokenOutputItem& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 
     BatchIsAuthorizedWithTokenInputItem m_request;
     bool m_requestHasBeenSet = false;
 
-    Decision m_decision;
+    Decision m_decision{Decision::NOT_SET};
     bool m_decisionHasBeenSet = false;
 
     Aws::Vector<DeterminingPolicyItem> m_determiningPolicies;

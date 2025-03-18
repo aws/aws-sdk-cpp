@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-InputClipping::InputClipping() : 
-    m_endTimecodeHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false)
-{
-}
-
 InputClipping::InputClipping(JsonView jsonValue)
-  : InputClipping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputClipping& InputClipping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTimecode"))
   {
     m_endTimecode = jsonValue.GetString("endTimecode");
-
     m_endTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimecode"))
   {
     m_startTimecode = jsonValue.GetString("startTimecode");
-
     m_startTimecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

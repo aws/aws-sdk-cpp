@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserSecurityProfilesRequest::UpdateUserSecurityProfilesRequest() : 
-    m_securityProfileIdsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserSecurityProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

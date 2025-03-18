@@ -32,7 +32,7 @@ namespace Model
   class TrainedModelExportReceiverMember
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelExportReceiverMember();
+    AWS_CLEANROOMSML_API TrainedModelExportReceiverMember() = default;
     AWS_CLEANROOMSML_API TrainedModelExportReceiverMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelExportReceiverMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The account ID of the member who will receive trained model exports.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline TrainedModelExportReceiverMember& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline TrainedModelExportReceiverMember& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline TrainedModelExportReceiverMember& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    TrainedModelExportReceiverMember& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

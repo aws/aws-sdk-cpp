@@ -32,7 +32,7 @@ namespace Model
   class SourcePriority
   {
   public:
-    AWS_MEDIACONNECT_API SourcePriority();
+    AWS_MEDIACONNECT_API SourcePriority() = default;
     AWS_MEDIACONNECT_API SourcePriority(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API SourcePriority& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The name of the source you choose as the primary source for this flow.
      */
-    inline const Aws::String& GetPrimarySource() const{ return m_primarySource; }
+    inline const Aws::String& GetPrimarySource() const { return m_primarySource; }
     inline bool PrimarySourceHasBeenSet() const { return m_primarySourceHasBeenSet; }
-    inline void SetPrimarySource(const Aws::String& value) { m_primarySourceHasBeenSet = true; m_primarySource = value; }
-    inline void SetPrimarySource(Aws::String&& value) { m_primarySourceHasBeenSet = true; m_primarySource = std::move(value); }
-    inline void SetPrimarySource(const char* value) { m_primarySourceHasBeenSet = true; m_primarySource.assign(value); }
-    inline SourcePriority& WithPrimarySource(const Aws::String& value) { SetPrimarySource(value); return *this;}
-    inline SourcePriority& WithPrimarySource(Aws::String&& value) { SetPrimarySource(std::move(value)); return *this;}
-    inline SourcePriority& WithPrimarySource(const char* value) { SetPrimarySource(value); return *this;}
+    template<typename PrimarySourceT = Aws::String>
+    void SetPrimarySource(PrimarySourceT&& value) { m_primarySourceHasBeenSet = true; m_primarySource = std::forward<PrimarySourceT>(value); }
+    template<typename PrimarySourceT = Aws::String>
+    SourcePriority& WithPrimarySource(PrimarySourceT&& value) { SetPrimarySource(std::forward<PrimarySourceT>(value)); return *this;}
     ///@}
   private:
 

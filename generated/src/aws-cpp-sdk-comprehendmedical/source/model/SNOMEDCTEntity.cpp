@@ -18,28 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-SNOMEDCTEntity::SNOMEDCTEntity() : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_category(SNOMEDCTEntityCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_type(SNOMEDCTEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_traitsHasBeenSet(false),
-    m_sNOMEDCTConceptsHasBeenSet(false)
-{
-}
-
 SNOMEDCTEntity::SNOMEDCTEntity(JsonView jsonValue)
-  : SNOMEDCTEntity()
 {
   *this = jsonValue;
 }
@@ -49,52 +28,38 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = SNOMEDCTEntityCategoryMapper::GetSNOMEDCTEntityCategoryForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SNOMEDCTEntityTypeMapper::GetSNOMEDCTEntityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -104,7 +69,6 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Traits"))
   {
     Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
@@ -114,7 +78,6 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
     }
     m_traitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNOMEDCTConcepts"))
   {
     Aws::Utils::Array<JsonView> sNOMEDCTConceptsJsonList = jsonValue.GetArray("SNOMEDCTConcepts");
@@ -124,7 +87,6 @@ SNOMEDCTEntity& SNOMEDCTEntity::operator =(JsonView jsonValue)
     }
     m_sNOMEDCTConceptsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class OutboundEdiOptions
   {
   public:
-    AWS_B2BI_API OutboundEdiOptions();
+    AWS_B2BI_API OutboundEdiOptions() = default;
     AWS_B2BI_API OutboundEdiOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API OutboundEdiOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A structure that contains an X12 envelope structure.</p>
      */
-    inline const X12Envelope& GetX12() const{ return m_x12; }
+    inline const X12Envelope& GetX12() const { return m_x12; }
     inline bool X12HasBeenSet() const { return m_x12HasBeenSet; }
-    inline void SetX12(const X12Envelope& value) { m_x12HasBeenSet = true; m_x12 = value; }
-    inline void SetX12(X12Envelope&& value) { m_x12HasBeenSet = true; m_x12 = std::move(value); }
-    inline OutboundEdiOptions& WithX12(const X12Envelope& value) { SetX12(value); return *this;}
-    inline OutboundEdiOptions& WithX12(X12Envelope&& value) { SetX12(std::move(value)); return *this;}
+    template<typename X12T = X12Envelope>
+    void SetX12(X12T&& value) { m_x12HasBeenSet = true; m_x12 = std::forward<X12T>(value); }
+    template<typename X12T = X12Envelope>
+    OutboundEdiOptions& WithX12(X12T&& value) { SetX12(std::forward<X12T>(value)); return *this;}
     ///@}
   private:
 

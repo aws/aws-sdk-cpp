@@ -10,12 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SetEndpointAttributesRequest::SetEndpointAttributesRequest() : 
-    m_endpointArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String SetEndpointAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentImportResource::SegmentImportResource() : 
-    m_channelCountsHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 SegmentImportResource::SegmentImportResource(JsonView jsonValue)
-  : SegmentImportResource()
 {
   *this = jsonValue;
 }
@@ -47,42 +34,31 @@ SegmentImportResource& SegmentImportResource::operator =(JsonView jsonValue)
     }
     m_channelCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

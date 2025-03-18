@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AddonDetails::AddonDetails() : 
-    m_addonVersionHasBeenSet(false),
-    m_addonStatusHasBeenSet(false)
-{
-}
-
 AddonDetails::AddonDetails(JsonView jsonValue)
-  : AddonDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AddonDetails& AddonDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addonVersion"))
   {
     m_addonVersion = jsonValue.GetString("addonVersion");
-
     m_addonVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonStatus"))
   {
     m_addonStatus = jsonValue.GetString("addonStatus");
-
     m_addonStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

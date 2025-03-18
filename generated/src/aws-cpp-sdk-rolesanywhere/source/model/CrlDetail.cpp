@@ -19,21 +19,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-CrlDetail::CrlDetail() : 
-    m_createdAtHasBeenSet(false),
-    m_crlArnHasBeenSet(false),
-    m_crlDataHasBeenSet(false),
-    m_crlIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_trustAnchorArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 CrlDetail::CrlDetail(JsonView jsonValue)
-  : CrlDetail()
 {
   *this = jsonValue;
 }
@@ -43,58 +29,43 @@ CrlDetail& CrlDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("crlArn"))
   {
     m_crlArn = jsonValue.GetString("crlArn");
-
     m_crlArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("crlData"))
   {
     m_crlData = HashingUtils::Base64Decode(jsonValue.GetString("crlData"));
     m_crlDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("crlId"))
   {
     m_crlId = jsonValue.GetString("crlId");
-
     m_crlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trustAnchorArn"))
   {
     m_trustAnchorArn = jsonValue.GetString("trustAnchorArn");
-
     m_trustAnchorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRegistrationFieldDefinitionsRequest::DescribeRegistrationFieldDefinitionsRequest() : 
-    m_registrationTypeHasBeenSet(false),
-    m_sectionPathHasBeenSet(false),
-    m_fieldPathsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRegistrationFieldDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;

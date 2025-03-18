@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RelationalTable::RelationalTable() : 
-    m_dataSourceArnHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_inputColumnsHasBeenSet(false)
-{
-}
-
 RelationalTable::RelationalTable(JsonView jsonValue)
-  : RelationalTable()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetString("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputColumns"))
   {
     Aws::Utils::Array<JsonView> inputColumnsJsonList = jsonValue.GetArray("InputColumns");
@@ -72,7 +54,6 @@ RelationalTable& RelationalTable::operator =(JsonView jsonValue)
     }
     m_inputColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

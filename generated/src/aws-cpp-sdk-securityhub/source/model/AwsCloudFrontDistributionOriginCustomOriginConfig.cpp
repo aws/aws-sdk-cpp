@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginCustomOriginConfig::AwsCloudFrontDistributionOriginCustomOriginConfig() : 
-    m_httpPort(0),
-    m_httpPortHasBeenSet(false),
-    m_httpsPort(0),
-    m_httpsPortHasBeenSet(false),
-    m_originKeepaliveTimeout(0),
-    m_originKeepaliveTimeoutHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false),
-    m_originReadTimeout(0),
-    m_originReadTimeoutHasBeenSet(false),
-    m_originSslProtocolsHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginCustomOriginConfig::AwsCloudFrontDistributionOriginCustomOriginConfig(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginCustomOriginConfig()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ AwsCloudFrontDistributionOriginCustomOriginConfig& AwsCloudFrontDistributionOrig
   if(jsonValue.ValueExists("HttpPort"))
   {
     m_httpPort = jsonValue.GetInteger("HttpPort");
-
     m_httpPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpsPort"))
   {
     m_httpsPort = jsonValue.GetInteger("HttpsPort");
-
     m_httpsPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginKeepaliveTimeout"))
   {
     m_originKeepaliveTimeout = jsonValue.GetInteger("OriginKeepaliveTimeout");
-
     m_originKeepaliveTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginProtocolPolicy"))
   {
     m_originProtocolPolicy = jsonValue.GetString("OriginProtocolPolicy");
-
     m_originProtocolPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginReadTimeout"))
   {
     m_originReadTimeout = jsonValue.GetInteger("OriginReadTimeout");
-
     m_originReadTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginSslProtocols"))
   {
     m_originSslProtocols = jsonValue.GetObject("OriginSslProtocols");
-
     m_originSslProtocolsHasBeenSet = true;
   }
-
   return *this;
 }
 

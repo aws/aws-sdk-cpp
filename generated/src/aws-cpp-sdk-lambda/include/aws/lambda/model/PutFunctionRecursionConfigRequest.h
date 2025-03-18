@@ -22,7 +22,7 @@ namespace Model
   class PutFunctionRecursionConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API PutFunctionRecursionConfigRequest();
+    AWS_LAMBDA_API PutFunctionRecursionConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline PutFunctionRecursionConfigRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline PutFunctionRecursionConfigRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline PutFunctionRecursionConfigRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    PutFunctionRecursionConfigRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +72,17 @@ namespace Model
      * patterns that cause run-away Lambda functions</a> in Serverless Land.</p>
      * 
      */
-    inline const RecursiveLoop& GetRecursiveLoop() const{ return m_recursiveLoop; }
+    inline RecursiveLoop GetRecursiveLoop() const { return m_recursiveLoop; }
     inline bool RecursiveLoopHasBeenSet() const { return m_recursiveLoopHasBeenSet; }
-    inline void SetRecursiveLoop(const RecursiveLoop& value) { m_recursiveLoopHasBeenSet = true; m_recursiveLoop = value; }
-    inline void SetRecursiveLoop(RecursiveLoop&& value) { m_recursiveLoopHasBeenSet = true; m_recursiveLoop = std::move(value); }
-    inline PutFunctionRecursionConfigRequest& WithRecursiveLoop(const RecursiveLoop& value) { SetRecursiveLoop(value); return *this;}
-    inline PutFunctionRecursionConfigRequest& WithRecursiveLoop(RecursiveLoop&& value) { SetRecursiveLoop(std::move(value)); return *this;}
+    inline void SetRecursiveLoop(RecursiveLoop value) { m_recursiveLoopHasBeenSet = true; m_recursiveLoop = value; }
+    inline PutFunctionRecursionConfigRequest& WithRecursiveLoop(RecursiveLoop value) { SetRecursiveLoop(value); return *this;}
     ///@}
   private:
 
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet = false;
 
-    RecursiveLoop m_recursiveLoop;
+    RecursiveLoop m_recursiveLoop{RecursiveLoop::NOT_SET};
     bool m_recursiveLoopHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseScheduledInstancesResponse::PurchaseScheduledInstancesResponse()
-{
-}
-
 PurchaseScheduledInstancesResponse::PurchaseScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ PurchaseScheduledInstancesResponse& PurchaseScheduledInstancesResponse::operator
     if(!scheduledInstanceSetNode.IsNull())
     {
       XmlNode scheduledInstanceSetMember = scheduledInstanceSetNode.FirstChild("item");
+      m_scheduledInstanceSetHasBeenSet = !scheduledInstanceSetMember.IsNull();
       while(!scheduledInstanceSetMember.IsNull())
       {
         m_scheduledInstanceSet.push_back(scheduledInstanceSetMember);
         scheduledInstanceSetMember = scheduledInstanceSetMember.NextNode("item");
       }
 
+      m_scheduledInstanceSetHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ PurchaseScheduledInstancesResponse& PurchaseScheduledInstancesResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseScheduledInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

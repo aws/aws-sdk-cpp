@@ -18,16 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-OidcJwtUpdateConfiguration::OidcJwtUpdateConfiguration() : 
-    m_claimAttributePathHasBeenSet(false),
-    m_identityStoreAttributePathHasBeenSet(false),
-    m_jwksRetrievalOption(JwksRetrievalOption::NOT_SET),
-    m_jwksRetrievalOptionHasBeenSet(false)
-{
-}
-
 OidcJwtUpdateConfiguration::OidcJwtUpdateConfiguration(JsonView jsonValue)
-  : OidcJwtUpdateConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ OidcJwtUpdateConfiguration& OidcJwtUpdateConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ClaimAttributePath"))
   {
     m_claimAttributePath = jsonValue.GetString("ClaimAttributePath");
-
     m_claimAttributePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreAttributePath"))
   {
     m_identityStoreAttributePath = jsonValue.GetString("IdentityStoreAttributePath");
-
     m_identityStoreAttributePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JwksRetrievalOption"))
   {
     m_jwksRetrievalOption = JwksRetrievalOptionMapper::GetJwksRetrievalOptionForName(jsonValue.GetString("JwksRetrievalOption"));
-
     m_jwksRetrievalOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

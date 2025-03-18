@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAnomalyMonitorResult::UpdateAnomalyMonitorResult()
-{
-}
-
 UpdateAnomalyMonitorResult::UpdateAnomalyMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateAnomalyMonitorResult& UpdateAnomalyMonitorResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
+    m_monitorArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TrainingMetrics::TrainingMetrics() : 
-    m_auc(0.0),
-    m_aucHasBeenSet(false),
-    m_metricDataPointsHasBeenSet(false)
-{
-}
-
 TrainingMetrics::TrainingMetrics(JsonView jsonValue)
-  : TrainingMetrics()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ TrainingMetrics& TrainingMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("auc"))
   {
     m_auc = jsonValue.GetDouble("auc");
-
     m_aucHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDataPoints"))
   {
     Aws::Utils::Array<JsonView> metricDataPointsJsonList = jsonValue.GetArray("metricDataPoints");
@@ -49,7 +39,6 @@ TrainingMetrics& TrainingMetrics::operator =(JsonView jsonValue)
     }
     m_metricDataPointsHasBeenSet = true;
   }
-
   return *this;
 }
 

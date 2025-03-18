@@ -32,7 +32,7 @@ namespace Model
   class DedicatedIpPool
   {
   public:
-    AWS_SESV2_API DedicatedIpPool();
+    AWS_SESV2_API DedicatedIpPool() = default;
     AWS_SESV2_API DedicatedIpPool(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DedicatedIpPool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the dedicated IP pool.</p>
      */
-    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-    inline DedicatedIpPool& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-    inline DedicatedIpPool& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-    inline DedicatedIpPool& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    template<typename PoolNameT = Aws::String>
+    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
+    template<typename PoolNameT = Aws::String>
+    DedicatedIpPool& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * </li> <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation
      * and number of IPs are automatically managed by Amazon SES.</p> </li> </ul>
      */
-    inline const ScalingMode& GetScalingMode() const{ return m_scalingMode; }
+    inline ScalingMode GetScalingMode() const { return m_scalingMode; }
     inline bool ScalingModeHasBeenSet() const { return m_scalingModeHasBeenSet; }
-    inline void SetScalingMode(const ScalingMode& value) { m_scalingModeHasBeenSet = true; m_scalingMode = value; }
-    inline void SetScalingMode(ScalingMode&& value) { m_scalingModeHasBeenSet = true; m_scalingMode = std::move(value); }
-    inline DedicatedIpPool& WithScalingMode(const ScalingMode& value) { SetScalingMode(value); return *this;}
-    inline DedicatedIpPool& WithScalingMode(ScalingMode&& value) { SetScalingMode(std::move(value)); return *this;}
+    inline void SetScalingMode(ScalingMode value) { m_scalingModeHasBeenSet = true; m_scalingMode = value; }
+    inline DedicatedIpPool& WithScalingMode(ScalingMode value) { SetScalingMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet = false;
 
-    ScalingMode m_scalingMode;
+    ScalingMode m_scalingMode{ScalingMode::NOT_SET};
     bool m_scalingModeHasBeenSet = false;
   };
 

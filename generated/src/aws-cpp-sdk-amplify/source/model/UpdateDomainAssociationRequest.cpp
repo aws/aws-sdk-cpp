@@ -12,18 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainAssociationRequest::UpdateDomainAssociationRequest() : 
-    m_appIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_enableAutoSubDomain(false),
-    m_enableAutoSubDomainHasBeenSet(false),
-    m_subDomainSettingsHasBeenSet(false),
-    m_autoSubDomainCreationPatternsHasBeenSet(false),
-    m_autoSubDomainIAMRoleHasBeenSet(false),
-    m_certificateSettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

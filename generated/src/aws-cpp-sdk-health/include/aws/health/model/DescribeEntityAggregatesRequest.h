@@ -22,7 +22,7 @@ namespace Model
   class DescribeEntityAggregatesRequest : public HealthRequest
   {
   public:
-    AWS_HEALTH_API DescribeEntityAggregatesRequest();
+    AWS_HEALTH_API DescribeEntityAggregatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventArns() const{ return m_eventArns; }
+    inline const Aws::Vector<Aws::String>& GetEventArns() const { return m_eventArns; }
     inline bool EventArnsHasBeenSet() const { return m_eventArnsHasBeenSet; }
-    inline void SetEventArns(const Aws::Vector<Aws::String>& value) { m_eventArnsHasBeenSet = true; m_eventArns = value; }
-    inline void SetEventArns(Aws::Vector<Aws::String>&& value) { m_eventArnsHasBeenSet = true; m_eventArns = std::move(value); }
-    inline DescribeEntityAggregatesRequest& WithEventArns(const Aws::Vector<Aws::String>& value) { SetEventArns(value); return *this;}
-    inline DescribeEntityAggregatesRequest& WithEventArns(Aws::Vector<Aws::String>&& value) { SetEventArns(std::move(value)); return *this;}
-    inline DescribeEntityAggregatesRequest& AddEventArns(const Aws::String& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
-    inline DescribeEntityAggregatesRequest& AddEventArns(Aws::String&& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(std::move(value)); return *this; }
-    inline DescribeEntityAggregatesRequest& AddEventArns(const char* value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
+    template<typename EventArnsT = Aws::Vector<Aws::String>>
+    void SetEventArns(EventArnsT&& value) { m_eventArnsHasBeenSet = true; m_eventArns = std::forward<EventArnsT>(value); }
+    template<typename EventArnsT = Aws::Vector<Aws::String>>
+    DescribeEntityAggregatesRequest& WithEventArns(EventArnsT&& value) { SetEventArns(std::forward<EventArnsT>(value)); return *this;}
+    template<typename EventArnsT = Aws::String>
+    DescribeEntityAggregatesRequest& AddEventArns(EventArnsT&& value) { m_eventArnsHasBeenSet = true; m_eventArns.emplace_back(std::forward<EventArnsT>(value)); return *this; }
     ///@}
   private:
 

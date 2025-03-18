@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-MetadataFormSummary::MetadataFormSummary() : 
-    m_formNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 MetadataFormSummary::MetadataFormSummary(JsonView jsonValue)
-  : MetadataFormSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MetadataFormSummary& MetadataFormSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("formName"))
   {
     m_formName = jsonValue.GetString("formName");
-
     m_formNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeName"))
   {
     m_typeName = jsonValue.GetString("typeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Body::Body() : 
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
-{
-}
-
 Body::Body(const XmlNode& xmlNode)
-  : Body()
 {
   *this = xmlNode;
 }

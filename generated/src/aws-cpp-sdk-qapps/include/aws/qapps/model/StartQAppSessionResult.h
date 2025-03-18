@@ -27,7 +27,7 @@ namespace Model
   class StartQAppSessionResult
   {
   public:
-    AWS_QAPPS_API StartQAppSessionResult();
+    AWS_QAPPS_API StartQAppSessionResult() = default;
     AWS_QAPPS_API StartQAppSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API StartQAppSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The unique identifier of the new or retrieved Q App session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline StartQAppSessionResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline StartQAppSessionResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline StartQAppSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    StartQAppSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new Q App session.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArn.assign(value); }
-    inline StartQAppSessionResult& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline StartQAppSessionResult& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline StartQAppSessionResult& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    StartQAppSessionResult& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartQAppSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartQAppSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartQAppSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartQAppSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionArn;
+    bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

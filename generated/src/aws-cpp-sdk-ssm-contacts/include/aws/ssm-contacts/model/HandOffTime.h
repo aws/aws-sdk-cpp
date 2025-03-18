@@ -30,7 +30,7 @@ namespace Model
   class HandOffTime
   {
   public:
-    AWS_SSMCONTACTS_API HandOffTime();
+    AWS_SSMCONTACTS_API HandOffTime() = default;
     AWS_SSMCONTACTS_API HandOffTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API HandOffTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The hour when an on-call rotation shift begins or ends.</p>
      */
-    inline int GetHourOfDay() const{ return m_hourOfDay; }
+    inline int GetHourOfDay() const { return m_hourOfDay; }
     inline bool HourOfDayHasBeenSet() const { return m_hourOfDayHasBeenSet; }
     inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
     inline HandOffTime& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The minute when an on-call rotation shift begins or ends.</p>
      */
-    inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
+    inline int GetMinuteOfHour() const { return m_minuteOfHour; }
     inline bool MinuteOfHourHasBeenSet() const { return m_minuteOfHourHasBeenSet; }
     inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
     inline HandOffTime& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
     ///@}
   private:
 
-    int m_hourOfDay;
+    int m_hourOfDay{0};
     bool m_hourOfDayHasBeenSet = false;
 
-    int m_minuteOfHour;
+    int m_minuteOfHour{0};
     bool m_minuteOfHourHasBeenSet = false;
   };
 

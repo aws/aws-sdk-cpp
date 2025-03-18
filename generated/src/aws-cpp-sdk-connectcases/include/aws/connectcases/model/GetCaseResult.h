@@ -30,7 +30,7 @@ namespace Model
   class GetCaseResult
   {
   public:
-    AWS_CONNECTCASES_API GetCaseResult();
+    AWS_CONNECTCASES_API GetCaseResult() = default;
     AWS_CONNECTCASES_API GetCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API GetCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list of detailed field information. </p>
      */
-    inline const Aws::Vector<FieldValue>& GetFields() const{ return m_fields; }
-    inline void SetFields(const Aws::Vector<FieldValue>& value) { m_fields = value; }
-    inline void SetFields(Aws::Vector<FieldValue>&& value) { m_fields = std::move(value); }
-    inline GetCaseResult& WithFields(const Aws::Vector<FieldValue>& value) { SetFields(value); return *this;}
-    inline GetCaseResult& WithFields(Aws::Vector<FieldValue>&& value) { SetFields(std::move(value)); return *this;}
-    inline GetCaseResult& AddFields(const FieldValue& value) { m_fields.push_back(value); return *this; }
-    inline GetCaseResult& AddFields(FieldValue&& value) { m_fields.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FieldValue>& GetFields() const { return m_fields; }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    GetCaseResult& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FieldValue>
+    GetCaseResult& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,13 +53,11 @@ namespace Model
      * <p>The token for the next set of results. This is null if there are no more
      * results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetCaseResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCaseResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCaseResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCaseResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,54 +65,52 @@ namespace Model
      * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
      * to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetCaseResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetCaseResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetCaseResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetCaseResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCaseResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCaseResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetCaseResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCaseResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCaseResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetCaseResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetCaseResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier of a template.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
-    inline GetCaseResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline GetCaseResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline GetCaseResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    GetCaseResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FieldValue> m_fields;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

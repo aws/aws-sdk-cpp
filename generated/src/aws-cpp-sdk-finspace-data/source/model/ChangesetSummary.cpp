@@ -18,30 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-ChangesetSummary::ChangesetSummary() : 
-    m_changesetIdHasBeenSet(false),
-    m_changesetArnHasBeenSet(false),
-    m_datasetIdHasBeenSet(false),
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_sourceParamsHasBeenSet(false),
-    m_formatParamsHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_status(IngestionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_activeUntilTimestamp(0),
-    m_activeUntilTimestampHasBeenSet(false),
-    m_activeFromTimestamp(0),
-    m_activeFromTimestampHasBeenSet(false),
-    m_updatesChangesetIdHasBeenSet(false),
-    m_updatedByChangesetIdHasBeenSet(false)
-{
-}
-
 ChangesetSummary::ChangesetSummary(JsonView jsonValue)
-  : ChangesetSummary()
 {
   *this = jsonValue;
 }
@@ -51,31 +28,23 @@ ChangesetSummary& ChangesetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("changesetId"))
   {
     m_changesetId = jsonValue.GetString("changesetId");
-
     m_changesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changesetArn"))
   {
     m_changesetArn = jsonValue.GetString("changesetArn");
-
     m_changesetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetId"))
   {
     m_datasetId = jsonValue.GetString("datasetId");
-
     m_datasetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changeType"))
   {
     m_changeType = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("changeType"));
-
     m_changeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceParams"))
   {
     Aws::Map<Aws::String, JsonView> sourceParamsJsonMap = jsonValue.GetObject("sourceParams").GetAllObjects();
@@ -85,7 +54,6 @@ ChangesetSummary& ChangesetSummary::operator =(JsonView jsonValue)
     }
     m_sourceParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formatParams"))
   {
     Aws::Map<Aws::String, JsonView> formatParamsJsonMap = jsonValue.GetObject("formatParams").GetAllObjects();
@@ -95,56 +63,41 @@ ChangesetSummary& ChangesetSummary::operator =(JsonView jsonValue)
     }
     m_formatParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetInt64("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = IngestionStatusMapper::GetIngestionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeUntilTimestamp"))
   {
     m_activeUntilTimestamp = jsonValue.GetInt64("activeUntilTimestamp");
-
     m_activeUntilTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeFromTimestamp"))
   {
     m_activeFromTimestamp = jsonValue.GetInt64("activeFromTimestamp");
-
     m_activeFromTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatesChangesetId"))
   {
     m_updatesChangesetId = jsonValue.GetString("updatesChangesetId");
-
     m_updatesChangesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedByChangesetId"))
   {
     m_updatedByChangesetId = jsonValue.GetString("updatedByChangesetId");
-
     m_updatedByChangesetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

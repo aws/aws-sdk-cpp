@@ -12,24 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false),
-    m_targetInstancesHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_updateOutdatedInstancesOnly(false),
-    m_updateOutdatedInstancesOnlyHasBeenSet(false),
-    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false),
-    m_overrideAlarmConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

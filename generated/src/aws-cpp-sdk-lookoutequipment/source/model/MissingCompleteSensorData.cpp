@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-MissingCompleteSensorData::MissingCompleteSensorData() : 
-    m_affectedSensorCount(0),
-    m_affectedSensorCountHasBeenSet(false)
-{
-}
-
 MissingCompleteSensorData::MissingCompleteSensorData(JsonView jsonValue)
-  : MissingCompleteSensorData()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MissingCompleteSensorData& MissingCompleteSensorData::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AffectedSensorCount"))
   {
     m_affectedSensorCount = jsonValue.GetInteger("AffectedSensorCount");
-
     m_affectedSensorCountHasBeenSet = true;
   }
-
   return *this;
 }
 

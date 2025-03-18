@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget() : 
-    m_auditTaskIdHasBeenSet(false),
-    m_findingIdsHasBeenSet(false),
-    m_auditCheckToReasonCodeFilterHasBeenSet(false)
-{
-}
-
 AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget(JsonView jsonValue)
-  : AuditMitigationActionsTaskTarget()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
   if(jsonValue.ValueExists("auditTaskId"))
   {
     m_auditTaskId = jsonValue.GetString("auditTaskId");
-
     m_auditTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingIds"))
   {
     Aws::Utils::Array<JsonView> findingIdsJsonList = jsonValue.GetArray("findingIds");
@@ -49,7 +39,6 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
     }
     m_findingIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auditCheckToReasonCodeFilter"))
   {
     Aws::Map<Aws::String, JsonView> auditCheckToReasonCodeFilterJsonMap = jsonValue.GetObject("auditCheckToReasonCodeFilter").GetAllObjects();
@@ -66,7 +55,6 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
     }
     m_auditCheckToReasonCodeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

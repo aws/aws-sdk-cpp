@@ -12,12 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagResourceRequest::TagResourceRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

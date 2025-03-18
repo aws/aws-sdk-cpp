@@ -42,7 +42,7 @@ namespace Model
   class SheetDefinition
   {
   public:
-    AWS_QUICKSIGHT_API SheetDefinition();
+    AWS_QUICKSIGHT_API SheetDefinition() = default;
     AWS_QUICKSIGHT_API SheetDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,42 +52,36 @@ namespace Model
     /**
      * <p>The unique identifier of a sheet.</p>
      */
-    inline const Aws::String& GetSheetId() const{ return m_sheetId; }
+    inline const Aws::String& GetSheetId() const { return m_sheetId; }
     inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }
-    inline void SetSheetId(const Aws::String& value) { m_sheetIdHasBeenSet = true; m_sheetId = value; }
-    inline void SetSheetId(Aws::String&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::move(value); }
-    inline void SetSheetId(const char* value) { m_sheetIdHasBeenSet = true; m_sheetId.assign(value); }
-    inline SheetDefinition& WithSheetId(const Aws::String& value) { SetSheetId(value); return *this;}
-    inline SheetDefinition& WithSheetId(Aws::String&& value) { SetSheetId(std::move(value)); return *this;}
-    inline SheetDefinition& WithSheetId(const char* value) { SetSheetId(value); return *this;}
+    template<typename SheetIdT = Aws::String>
+    void SetSheetId(SheetIdT&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::forward<SheetIdT>(value); }
+    template<typename SheetIdT = Aws::String>
+    SheetDefinition& WithSheetId(SheetIdT&& value) { SetSheetId(std::forward<SheetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the sheet.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline SheetDefinition& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline SheetDefinition& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline SheetDefinition& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    SheetDefinition& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the sheet.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SheetDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SheetDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SheetDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SheetDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The name of the sheet. This name is displayed on the sheet's tab in the
      * Amazon QuickSight console.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SheetDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SheetDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SheetDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SheetDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,14 @@ namespace Model
      * a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight
      * User Guide</i>.</p>
      */
-    inline const Aws::Vector<ParameterControl>& GetParameterControls() const{ return m_parameterControls; }
+    inline const Aws::Vector<ParameterControl>& GetParameterControls() const { return m_parameterControls; }
     inline bool ParameterControlsHasBeenSet() const { return m_parameterControlsHasBeenSet; }
-    inline void SetParameterControls(const Aws::Vector<ParameterControl>& value) { m_parameterControlsHasBeenSet = true; m_parameterControls = value; }
-    inline void SetParameterControls(Aws::Vector<ParameterControl>&& value) { m_parameterControlsHasBeenSet = true; m_parameterControls = std::move(value); }
-    inline SheetDefinition& WithParameterControls(const Aws::Vector<ParameterControl>& value) { SetParameterControls(value); return *this;}
-    inline SheetDefinition& WithParameterControls(Aws::Vector<ParameterControl>&& value) { SetParameterControls(std::move(value)); return *this;}
-    inline SheetDefinition& AddParameterControls(const ParameterControl& value) { m_parameterControlsHasBeenSet = true; m_parameterControls.push_back(value); return *this; }
-    inline SheetDefinition& AddParameterControls(ParameterControl&& value) { m_parameterControlsHasBeenSet = true; m_parameterControls.push_back(std::move(value)); return *this; }
+    template<typename ParameterControlsT = Aws::Vector<ParameterControl>>
+    void SetParameterControls(ParameterControlsT&& value) { m_parameterControlsHasBeenSet = true; m_parameterControls = std::forward<ParameterControlsT>(value); }
+    template<typename ParameterControlsT = Aws::Vector<ParameterControl>>
+    SheetDefinition& WithParameterControls(ParameterControlsT&& value) { SetParameterControls(std::forward<ParameterControlsT>(value)); return *this;}
+    template<typename ParameterControlsT = ParameterControl>
+    SheetDefinition& AddParameterControls(ParameterControlsT&& value) { m_parameterControlsHasBeenSet = true; m_parameterControls.emplace_back(std::forward<ParameterControlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,14 +123,14 @@ namespace Model
      * filter controls to analysis sheets</a> in the <i>Amazon QuickSight User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<FilterControl>& GetFilterControls() const{ return m_filterControls; }
+    inline const Aws::Vector<FilterControl>& GetFilterControls() const { return m_filterControls; }
     inline bool FilterControlsHasBeenSet() const { return m_filterControlsHasBeenSet; }
-    inline void SetFilterControls(const Aws::Vector<FilterControl>& value) { m_filterControlsHasBeenSet = true; m_filterControls = value; }
-    inline void SetFilterControls(Aws::Vector<FilterControl>&& value) { m_filterControlsHasBeenSet = true; m_filterControls = std::move(value); }
-    inline SheetDefinition& WithFilterControls(const Aws::Vector<FilterControl>& value) { SetFilterControls(value); return *this;}
-    inline SheetDefinition& WithFilterControls(Aws::Vector<FilterControl>&& value) { SetFilterControls(std::move(value)); return *this;}
-    inline SheetDefinition& AddFilterControls(const FilterControl& value) { m_filterControlsHasBeenSet = true; m_filterControls.push_back(value); return *this; }
-    inline SheetDefinition& AddFilterControls(FilterControl&& value) { m_filterControlsHasBeenSet = true; m_filterControls.push_back(std::move(value)); return *this; }
+    template<typename FilterControlsT = Aws::Vector<FilterControl>>
+    void SetFilterControls(FilterControlsT&& value) { m_filterControlsHasBeenSet = true; m_filterControls = std::forward<FilterControlsT>(value); }
+    template<typename FilterControlsT = Aws::Vector<FilterControl>>
+    SheetDefinition& WithFilterControls(FilterControlsT&& value) { SetFilterControls(std::forward<FilterControlsT>(value)); return *this;}
+    template<typename FilterControlsT = FilterControl>
+    SheetDefinition& AddFilterControls(FilterControlsT&& value) { m_filterControlsHasBeenSet = true; m_filterControls.emplace_back(std::forward<FilterControlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,42 +138,42 @@ namespace Model
      * <p>A list of the visuals that are on a sheet. Visual placement is determined by
      * the layout of the sheet.</p>
      */
-    inline const Aws::Vector<Visual>& GetVisuals() const{ return m_visuals; }
+    inline const Aws::Vector<Visual>& GetVisuals() const { return m_visuals; }
     inline bool VisualsHasBeenSet() const { return m_visualsHasBeenSet; }
-    inline void SetVisuals(const Aws::Vector<Visual>& value) { m_visualsHasBeenSet = true; m_visuals = value; }
-    inline void SetVisuals(Aws::Vector<Visual>&& value) { m_visualsHasBeenSet = true; m_visuals = std::move(value); }
-    inline SheetDefinition& WithVisuals(const Aws::Vector<Visual>& value) { SetVisuals(value); return *this;}
-    inline SheetDefinition& WithVisuals(Aws::Vector<Visual>&& value) { SetVisuals(std::move(value)); return *this;}
-    inline SheetDefinition& AddVisuals(const Visual& value) { m_visualsHasBeenSet = true; m_visuals.push_back(value); return *this; }
-    inline SheetDefinition& AddVisuals(Visual&& value) { m_visualsHasBeenSet = true; m_visuals.push_back(std::move(value)); return *this; }
+    template<typename VisualsT = Aws::Vector<Visual>>
+    void SetVisuals(VisualsT&& value) { m_visualsHasBeenSet = true; m_visuals = std::forward<VisualsT>(value); }
+    template<typename VisualsT = Aws::Vector<Visual>>
+    SheetDefinition& WithVisuals(VisualsT&& value) { SetVisuals(std::forward<VisualsT>(value)); return *this;}
+    template<typename VisualsT = Visual>
+    SheetDefinition& AddVisuals(VisualsT&& value) { m_visualsHasBeenSet = true; m_visuals.emplace_back(std::forward<VisualsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The text boxes that are on a sheet.</p>
      */
-    inline const Aws::Vector<SheetTextBox>& GetTextBoxes() const{ return m_textBoxes; }
+    inline const Aws::Vector<SheetTextBox>& GetTextBoxes() const { return m_textBoxes; }
     inline bool TextBoxesHasBeenSet() const { return m_textBoxesHasBeenSet; }
-    inline void SetTextBoxes(const Aws::Vector<SheetTextBox>& value) { m_textBoxesHasBeenSet = true; m_textBoxes = value; }
-    inline void SetTextBoxes(Aws::Vector<SheetTextBox>&& value) { m_textBoxesHasBeenSet = true; m_textBoxes = std::move(value); }
-    inline SheetDefinition& WithTextBoxes(const Aws::Vector<SheetTextBox>& value) { SetTextBoxes(value); return *this;}
-    inline SheetDefinition& WithTextBoxes(Aws::Vector<SheetTextBox>&& value) { SetTextBoxes(std::move(value)); return *this;}
-    inline SheetDefinition& AddTextBoxes(const SheetTextBox& value) { m_textBoxesHasBeenSet = true; m_textBoxes.push_back(value); return *this; }
-    inline SheetDefinition& AddTextBoxes(SheetTextBox&& value) { m_textBoxesHasBeenSet = true; m_textBoxes.push_back(std::move(value)); return *this; }
+    template<typename TextBoxesT = Aws::Vector<SheetTextBox>>
+    void SetTextBoxes(TextBoxesT&& value) { m_textBoxesHasBeenSet = true; m_textBoxes = std::forward<TextBoxesT>(value); }
+    template<typename TextBoxesT = Aws::Vector<SheetTextBox>>
+    SheetDefinition& WithTextBoxes(TextBoxesT&& value) { SetTextBoxes(std::forward<TextBoxesT>(value)); return *this;}
+    template<typename TextBoxesT = SheetTextBox>
+    SheetDefinition& AddTextBoxes(TextBoxesT&& value) { m_textBoxesHasBeenSet = true; m_textBoxes.emplace_back(std::forward<TextBoxesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of images on a sheet.</p>
      */
-    inline const Aws::Vector<SheetImage>& GetImages() const{ return m_images; }
+    inline const Aws::Vector<SheetImage>& GetImages() const { return m_images; }
     inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
-    inline void SetImages(const Aws::Vector<SheetImage>& value) { m_imagesHasBeenSet = true; m_images = value; }
-    inline void SetImages(Aws::Vector<SheetImage>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
-    inline SheetDefinition& WithImages(const Aws::Vector<SheetImage>& value) { SetImages(value); return *this;}
-    inline SheetDefinition& WithImages(Aws::Vector<SheetImage>&& value) { SetImages(std::move(value)); return *this;}
-    inline SheetDefinition& AddImages(const SheetImage& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
-    inline SheetDefinition& AddImages(SheetImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    template<typename ImagesT = Aws::Vector<SheetImage>>
+    void SetImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images = std::forward<ImagesT>(value); }
+    template<typename ImagesT = Aws::Vector<SheetImage>>
+    SheetDefinition& WithImages(ImagesT&& value) { SetImages(std::forward<ImagesT>(value)); return *this;}
+    template<typename ImagesT = SheetImage>
+    SheetDefinition& AddImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images.emplace_back(std::forward<ImagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -191,28 +183,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
      * of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const Aws::Vector<Layout>& GetLayouts() const{ return m_layouts; }
+    inline const Aws::Vector<Layout>& GetLayouts() const { return m_layouts; }
     inline bool LayoutsHasBeenSet() const { return m_layoutsHasBeenSet; }
-    inline void SetLayouts(const Aws::Vector<Layout>& value) { m_layoutsHasBeenSet = true; m_layouts = value; }
-    inline void SetLayouts(Aws::Vector<Layout>&& value) { m_layoutsHasBeenSet = true; m_layouts = std::move(value); }
-    inline SheetDefinition& WithLayouts(const Aws::Vector<Layout>& value) { SetLayouts(value); return *this;}
-    inline SheetDefinition& WithLayouts(Aws::Vector<Layout>&& value) { SetLayouts(std::move(value)); return *this;}
-    inline SheetDefinition& AddLayouts(const Layout& value) { m_layoutsHasBeenSet = true; m_layouts.push_back(value); return *this; }
-    inline SheetDefinition& AddLayouts(Layout&& value) { m_layoutsHasBeenSet = true; m_layouts.push_back(std::move(value)); return *this; }
+    template<typename LayoutsT = Aws::Vector<Layout>>
+    void SetLayouts(LayoutsT&& value) { m_layoutsHasBeenSet = true; m_layouts = std::forward<LayoutsT>(value); }
+    template<typename LayoutsT = Aws::Vector<Layout>>
+    SheetDefinition& WithLayouts(LayoutsT&& value) { SetLayouts(std::forward<LayoutsT>(value)); return *this;}
+    template<typename LayoutsT = Layout>
+    SheetDefinition& AddLayouts(LayoutsT&& value) { m_layoutsHasBeenSet = true; m_layouts.emplace_back(std::forward<LayoutsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The control layouts of the sheet.</p>
      */
-    inline const Aws::Vector<SheetControlLayout>& GetSheetControlLayouts() const{ return m_sheetControlLayouts; }
+    inline const Aws::Vector<SheetControlLayout>& GetSheetControlLayouts() const { return m_sheetControlLayouts; }
     inline bool SheetControlLayoutsHasBeenSet() const { return m_sheetControlLayoutsHasBeenSet; }
-    inline void SetSheetControlLayouts(const Aws::Vector<SheetControlLayout>& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts = value; }
-    inline void SetSheetControlLayouts(Aws::Vector<SheetControlLayout>&& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts = std::move(value); }
-    inline SheetDefinition& WithSheetControlLayouts(const Aws::Vector<SheetControlLayout>& value) { SetSheetControlLayouts(value); return *this;}
-    inline SheetDefinition& WithSheetControlLayouts(Aws::Vector<SheetControlLayout>&& value) { SetSheetControlLayouts(std::move(value)); return *this;}
-    inline SheetDefinition& AddSheetControlLayouts(const SheetControlLayout& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts.push_back(value); return *this; }
-    inline SheetDefinition& AddSheetControlLayouts(SheetControlLayout&& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts.push_back(std::move(value)); return *this; }
+    template<typename SheetControlLayoutsT = Aws::Vector<SheetControlLayout>>
+    void SetSheetControlLayouts(SheetControlLayoutsT&& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts = std::forward<SheetControlLayoutsT>(value); }
+    template<typename SheetControlLayoutsT = Aws::Vector<SheetControlLayout>>
+    SheetDefinition& WithSheetControlLayouts(SheetControlLayoutsT&& value) { SetSheetControlLayouts(std::forward<SheetControlLayoutsT>(value)); return *this;}
+    template<typename SheetControlLayoutsT = SheetControlLayout>
+    SheetDefinition& AddSheetControlLayouts(SheetControlLayoutsT&& value) { m_sheetControlLayoutsHasBeenSet = true; m_sheetControlLayouts.emplace_back(std::forward<SheetControlLayoutsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -222,12 +214,10 @@ namespace Model
      * paginated report.</p> </li> <li> <p> <code>INTERACTIVE</code>: Creates a sheet
      * for an interactive dashboard.</p> </li> </ul>
      */
-    inline const SheetContentType& GetContentType() const{ return m_contentType; }
+    inline SheetContentType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const SheetContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(SheetContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline SheetDefinition& WithContentType(const SheetContentType& value) { SetContentType(value); return *this;}
-    inline SheetDefinition& WithContentType(SheetContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(SheetContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline SheetDefinition& WithContentType(SheetContentType value) { SetContentType(value); return *this;}
     ///@}
   private:
 
@@ -264,7 +254,7 @@ namespace Model
     Aws::Vector<SheetControlLayout> m_sheetControlLayouts;
     bool m_sheetControlLayoutsHasBeenSet = false;
 
-    SheetContentType m_contentType;
+    SheetContentType m_contentType{SheetContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
   };
 

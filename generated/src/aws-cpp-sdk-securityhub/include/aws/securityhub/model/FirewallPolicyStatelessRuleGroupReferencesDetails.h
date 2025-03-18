@@ -32,7 +32,7 @@ namespace Model
   class FirewallPolicyStatelessRuleGroupReferencesDetails
   {
   public:
-    AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails();
+    AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails() = default;
     AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The order in which to run the stateless rule group.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline FirewallPolicyStatelessRuleGroupReferencesDetails& WithPriority(int value) { SetPriority(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The ARN of the stateless rule group.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline FirewallPolicyStatelessRuleGroupReferencesDetails& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline FirewallPolicyStatelessRuleGroupReferencesDetails& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline FirewallPolicyStatelessRuleGroupReferencesDetails& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    FirewallPolicyStatelessRuleGroupReferencesDetails& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_resourceArn;

@@ -12,15 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest() : 
-    m_sourceSnapshotNameHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false),
-    m_targetBucketHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopySnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

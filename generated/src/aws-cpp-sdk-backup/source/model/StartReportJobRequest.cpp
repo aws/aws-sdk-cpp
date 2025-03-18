@@ -12,13 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReportJobRequest::StartReportJobRequest() : 
-    m_reportPlanNameHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartReportJobRequest::SerializePayload() const
 {
   JsonValue payload;

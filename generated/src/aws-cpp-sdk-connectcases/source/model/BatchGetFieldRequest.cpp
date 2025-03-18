@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetFieldRequest::BatchGetFieldRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFieldRequest::SerializePayload() const
 {
   JsonValue payload;

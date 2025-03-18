@@ -38,7 +38,7 @@ namespace Model
   class BaselinePerformanceFactors
   {
   public:
-    AWS_EC2_API BaselinePerformanceFactors();
+    AWS_EC2_API BaselinePerformanceFactors() = default;
     AWS_EC2_API BaselinePerformanceFactors(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BaselinePerformanceFactors& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,12 @@ namespace Model
      * <p>The CPU performance to consider, using an instance family as the baseline
      * reference.</p>
      */
-    inline const CpuPerformanceFactor& GetCpu() const{ return m_cpu; }
+    inline const CpuPerformanceFactor& GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-    inline void SetCpu(const CpuPerformanceFactor& value) { m_cpuHasBeenSet = true; m_cpu = value; }
-    inline void SetCpu(CpuPerformanceFactor&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
-    inline BaselinePerformanceFactors& WithCpu(const CpuPerformanceFactor& value) { SetCpu(value); return *this;}
-    inline BaselinePerformanceFactors& WithCpu(CpuPerformanceFactor&& value) { SetCpu(std::move(value)); return *this;}
+    template<typename CpuT = CpuPerformanceFactor>
+    void SetCpu(CpuT&& value) { m_cpuHasBeenSet = true; m_cpu = std::forward<CpuT>(value); }
+    template<typename CpuT = CpuPerformanceFactor>
+    BaselinePerformanceFactors& WithCpu(CpuT&& value) { SetCpu(std::forward<CpuT>(value)); return *this;}
     ///@}
   private:
 

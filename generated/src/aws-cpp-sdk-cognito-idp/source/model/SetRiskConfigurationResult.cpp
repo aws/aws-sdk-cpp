@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetRiskConfigurationResult::SetRiskConfigurationResult()
-{
-}
-
 SetRiskConfigurationResult::SetRiskConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ SetRiskConfigurationResult& SetRiskConfigurationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("RiskConfiguration"))
   {
     m_riskConfiguration = jsonValue.GetObject("RiskConfiguration");
-
+    m_riskConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

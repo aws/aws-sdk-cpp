@@ -12,12 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionRequest::UpdateSubscriptionRequest() : 
-    m_autoRenew(AutoRenew::NOT_SET),
-    m_autoRenewHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

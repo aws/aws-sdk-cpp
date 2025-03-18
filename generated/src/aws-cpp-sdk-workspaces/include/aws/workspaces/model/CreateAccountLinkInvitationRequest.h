@@ -21,7 +21,7 @@ namespace Model
   class CreateAccountLinkInvitationRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API CreateAccountLinkInvitationRequest();
+    AWS_WORKSPACES_API CreateAccountLinkInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the target account.</p>
      */
-    inline const Aws::String& GetTargetAccountId() const{ return m_targetAccountId; }
+    inline const Aws::String& GetTargetAccountId() const { return m_targetAccountId; }
     inline bool TargetAccountIdHasBeenSet() const { return m_targetAccountIdHasBeenSet; }
-    inline void SetTargetAccountId(const Aws::String& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = value; }
-    inline void SetTargetAccountId(Aws::String&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::move(value); }
-    inline void SetTargetAccountId(const char* value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId.assign(value); }
-    inline CreateAccountLinkInvitationRequest& WithTargetAccountId(const Aws::String& value) { SetTargetAccountId(value); return *this;}
-    inline CreateAccountLinkInvitationRequest& WithTargetAccountId(Aws::String&& value) { SetTargetAccountId(std::move(value)); return *this;}
-    inline CreateAccountLinkInvitationRequest& WithTargetAccountId(const char* value) { SetTargetAccountId(value); return *this;}
+    template<typename TargetAccountIdT = Aws::String>
+    void SetTargetAccountId(TargetAccountIdT&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::forward<TargetAccountIdT>(value); }
+    template<typename TargetAccountIdT = Aws::String>
+    CreateAccountLinkInvitationRequest& WithTargetAccountId(TargetAccountIdT&& value) { SetTargetAccountId(std::forward<TargetAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure
      * idempotent creation.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAccountLinkInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAccountLinkInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAccountLinkInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAccountLinkInvitationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

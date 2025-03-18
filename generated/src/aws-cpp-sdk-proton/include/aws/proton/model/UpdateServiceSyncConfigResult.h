@@ -28,7 +28,7 @@ namespace Model
   class UpdateServiceSyncConfigResult
   {
   public:
-    AWS_PROTON_API UpdateServiceSyncConfigResult();
+    AWS_PROTON_API UpdateServiceSyncConfigResult() = default;
     AWS_PROTON_API UpdateServiceSyncConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API UpdateServiceSyncConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the Proton Ops file.</p>
      */
-    inline const ServiceSyncConfig& GetServiceSyncConfig() const{ return m_serviceSyncConfig; }
-    inline void SetServiceSyncConfig(const ServiceSyncConfig& value) { m_serviceSyncConfig = value; }
-    inline void SetServiceSyncConfig(ServiceSyncConfig&& value) { m_serviceSyncConfig = std::move(value); }
-    inline UpdateServiceSyncConfigResult& WithServiceSyncConfig(const ServiceSyncConfig& value) { SetServiceSyncConfig(value); return *this;}
-    inline UpdateServiceSyncConfigResult& WithServiceSyncConfig(ServiceSyncConfig&& value) { SetServiceSyncConfig(std::move(value)); return *this;}
+    inline const ServiceSyncConfig& GetServiceSyncConfig() const { return m_serviceSyncConfig; }
+    template<typename ServiceSyncConfigT = ServiceSyncConfig>
+    void SetServiceSyncConfig(ServiceSyncConfigT&& value) { m_serviceSyncConfigHasBeenSet = true; m_serviceSyncConfig = std::forward<ServiceSyncConfigT>(value); }
+    template<typename ServiceSyncConfigT = ServiceSyncConfig>
+    UpdateServiceSyncConfigResult& WithServiceSyncConfig(ServiceSyncConfigT&& value) { SetServiceSyncConfig(std::forward<ServiceSyncConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServiceSyncConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServiceSyncConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServiceSyncConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServiceSyncConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceSyncConfig m_serviceSyncConfig;
+    bool m_serviceSyncConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

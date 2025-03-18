@@ -29,7 +29,7 @@ namespace Model
   class ListLexBotsResult
   {
   public:
-    AWS_CONNECT_API ListLexBotsResult();
+    AWS_CONNECT_API ListLexBotsResult() = default;
     AWS_CONNECT_API ListLexBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListLexBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated
      * with the specified instance.</p>
      */
-    inline const Aws::Vector<LexBot>& GetLexBots() const{ return m_lexBots; }
-    inline void SetLexBots(const Aws::Vector<LexBot>& value) { m_lexBots = value; }
-    inline void SetLexBots(Aws::Vector<LexBot>&& value) { m_lexBots = std::move(value); }
-    inline ListLexBotsResult& WithLexBots(const Aws::Vector<LexBot>& value) { SetLexBots(value); return *this;}
-    inline ListLexBotsResult& WithLexBots(Aws::Vector<LexBot>&& value) { SetLexBots(std::move(value)); return *this;}
-    inline ListLexBotsResult& AddLexBots(const LexBot& value) { m_lexBots.push_back(value); return *this; }
-    inline ListLexBotsResult& AddLexBots(LexBot&& value) { m_lexBots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LexBot>& GetLexBots() const { return m_lexBots; }
+    template<typename LexBotsT = Aws::Vector<LexBot>>
+    void SetLexBots(LexBotsT&& value) { m_lexBotsHasBeenSet = true; m_lexBots = std::forward<LexBotsT>(value); }
+    template<typename LexBotsT = Aws::Vector<LexBot>>
+    ListLexBotsResult& WithLexBots(LexBotsT&& value) { SetLexBots(std::forward<LexBotsT>(value)); return *this;}
+    template<typename LexBotsT = LexBot>
+    ListLexBotsResult& AddLexBots(LexBotsT&& value) { m_lexBotsHasBeenSet = true; m_lexBots.emplace_back(std::forward<LexBotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLexBotsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLexBotsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLexBotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLexBotsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLexBotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLexBotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLexBotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLexBotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LexBot> m_lexBots;
+    bool m_lexBotsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

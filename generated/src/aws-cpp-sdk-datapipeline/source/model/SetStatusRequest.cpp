@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetStatusRequest::SetStatusRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_objectIdsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String SetStatusRequest::SerializePayload() const
 {
   JsonValue payload;

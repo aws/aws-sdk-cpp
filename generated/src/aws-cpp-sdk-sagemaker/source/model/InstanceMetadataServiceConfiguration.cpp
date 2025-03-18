@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InstanceMetadataServiceConfiguration::InstanceMetadataServiceConfiguration() : 
-    m_minimumInstanceMetadataServiceVersionHasBeenSet(false)
-{
-}
-
 InstanceMetadataServiceConfiguration::InstanceMetadataServiceConfiguration(JsonView jsonValue)
-  : InstanceMetadataServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceMetadataServiceConfiguration& InstanceMetadataServiceConfiguration::oper
   if(jsonValue.ValueExists("MinimumInstanceMetadataServiceVersion"))
   {
     m_minimumInstanceMetadataServiceVersion = jsonValue.GetString("MinimumInstanceMetadataServiceVersion");
-
     m_minimumInstanceMetadataServiceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

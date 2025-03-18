@@ -34,7 +34,7 @@ namespace Model
   class EvaluationResult
   {
   public:
-    AWS_FORECASTSERVICE_API EvaluationResult();
+    AWS_FORECASTSERVICE_API EvaluationResult() = default;
     AWS_FORECASTSERVICE_API EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
      */
-    inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
+    inline const Aws::String& GetAlgorithmArn() const { return m_algorithmArn; }
     inline bool AlgorithmArnHasBeenSet() const { return m_algorithmArnHasBeenSet; }
-    inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = value; }
-    inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::move(value); }
-    inline void SetAlgorithmArn(const char* value) { m_algorithmArnHasBeenSet = true; m_algorithmArn.assign(value); }
-    inline EvaluationResult& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-    inline EvaluationResult& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-    inline EvaluationResult& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    template<typename AlgorithmArnT = Aws::String>
+    void SetAlgorithmArn(AlgorithmArnT&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::forward<AlgorithmArnT>(value); }
+    template<typename AlgorithmArnT = Aws::String>
+    EvaluationResult& WithAlgorithmArn(AlgorithmArnT&& value) { SetAlgorithmArn(std::forward<AlgorithmArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
      * determines the number of windows in the array.</p>
      */
-    inline const Aws::Vector<WindowSummary>& GetTestWindows() const{ return m_testWindows; }
+    inline const Aws::Vector<WindowSummary>& GetTestWindows() const { return m_testWindows; }
     inline bool TestWindowsHasBeenSet() const { return m_testWindowsHasBeenSet; }
-    inline void SetTestWindows(const Aws::Vector<WindowSummary>& value) { m_testWindowsHasBeenSet = true; m_testWindows = value; }
-    inline void SetTestWindows(Aws::Vector<WindowSummary>&& value) { m_testWindowsHasBeenSet = true; m_testWindows = std::move(value); }
-    inline EvaluationResult& WithTestWindows(const Aws::Vector<WindowSummary>& value) { SetTestWindows(value); return *this;}
-    inline EvaluationResult& WithTestWindows(Aws::Vector<WindowSummary>&& value) { SetTestWindows(std::move(value)); return *this;}
-    inline EvaluationResult& AddTestWindows(const WindowSummary& value) { m_testWindowsHasBeenSet = true; m_testWindows.push_back(value); return *this; }
-    inline EvaluationResult& AddTestWindows(WindowSummary&& value) { m_testWindowsHasBeenSet = true; m_testWindows.push_back(std::move(value)); return *this; }
+    template<typename TestWindowsT = Aws::Vector<WindowSummary>>
+    void SetTestWindows(TestWindowsT&& value) { m_testWindowsHasBeenSet = true; m_testWindows = std::forward<TestWindowsT>(value); }
+    template<typename TestWindowsT = Aws::Vector<WindowSummary>>
+    EvaluationResult& WithTestWindows(TestWindowsT&& value) { SetTestWindows(std::forward<TestWindowsT>(value)); return *this;}
+    template<typename TestWindowsT = WindowSummary>
+    EvaluationResult& AddTestWindows(TestWindowsT&& value) { m_testWindowsHasBeenSet = true; m_testWindows.emplace_back(std::forward<TestWindowsT>(value)); return *this; }
     ///@}
   private:
 

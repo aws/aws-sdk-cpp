@@ -23,7 +23,7 @@ namespace Model
   class StartAudienceGenerationJobRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API StartAudienceGenerationJobRequest();
+    AWS_CLEANROOMSML_API StartAudienceGenerationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the audience generation job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartAudienceGenerationJobRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,33 +51,31 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the configured audience model that is used
      * for this audience generation job.</p>
      */
-    inline const Aws::String& GetConfiguredAudienceModelArn() const{ return m_configuredAudienceModelArn; }
+    inline const Aws::String& GetConfiguredAudienceModelArn() const { return m_configuredAudienceModelArn; }
     inline bool ConfiguredAudienceModelArnHasBeenSet() const { return m_configuredAudienceModelArnHasBeenSet; }
-    inline void SetConfiguredAudienceModelArn(const Aws::String& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = value; }
-    inline void SetConfiguredAudienceModelArn(Aws::String&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::move(value); }
-    inline void SetConfiguredAudienceModelArn(const char* value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithConfiguredAudienceModelArn(const Aws::String& value) { SetConfiguredAudienceModelArn(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithConfiguredAudienceModelArn(Aws::String&& value) { SetConfiguredAudienceModelArn(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithConfiguredAudienceModelArn(const char* value) { SetConfiguredAudienceModelArn(value); return *this;}
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    void SetConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::forward<ConfiguredAudienceModelArnT>(value); }
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    StartAudienceGenerationJobRequest& WithConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { SetConfiguredAudienceModelArn(std::forward<ConfiguredAudienceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The seed audience that is used to generate the audience.</p>
      */
-    inline const AudienceGenerationJobDataSource& GetSeedAudience() const{ return m_seedAudience; }
+    inline const AudienceGenerationJobDataSource& GetSeedAudience() const { return m_seedAudience; }
     inline bool SeedAudienceHasBeenSet() const { return m_seedAudienceHasBeenSet; }
-    inline void SetSeedAudience(const AudienceGenerationJobDataSource& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = value; }
-    inline void SetSeedAudience(AudienceGenerationJobDataSource&& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = std::move(value); }
-    inline StartAudienceGenerationJobRequest& WithSeedAudience(const AudienceGenerationJobDataSource& value) { SetSeedAudience(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithSeedAudience(AudienceGenerationJobDataSource&& value) { SetSeedAudience(std::move(value)); return *this;}
+    template<typename SeedAudienceT = AudienceGenerationJobDataSource>
+    void SetSeedAudience(SeedAudienceT&& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = std::forward<SeedAudienceT>(value); }
+    template<typename SeedAudienceT = AudienceGenerationJobDataSource>
+    StartAudienceGenerationJobRequest& WithSeedAudience(SeedAudienceT&& value) { SetSeedAudience(std::forward<SeedAudienceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the seed audience is included in the audience generation output.</p>
      */
-    inline bool GetIncludeSeedInOutput() const{ return m_includeSeedInOutput; }
+    inline bool GetIncludeSeedInOutput() const { return m_includeSeedInOutput; }
     inline bool IncludeSeedInOutputHasBeenSet() const { return m_includeSeedInOutputHasBeenSet; }
     inline void SetIncludeSeedInOutput(bool value) { m_includeSeedInOutputHasBeenSet = true; m_includeSeedInOutput = value; }
     inline StartAudienceGenerationJobRequest& WithIncludeSeedInOutput(bool value) { SetIncludeSeedInOutput(value); return *this;}
@@ -90,28 +86,24 @@ namespace Model
      * <p>The identifier of the collaboration that contains the audience generation
      * job.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline const Aws::String& GetCollaborationId() const { return m_collaborationId; }
     inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    template<typename CollaborationIdT = Aws::String>
+    void SetCollaborationId(CollaborationIdT&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::forward<CollaborationIdT>(value); }
+    template<typename CollaborationIdT = Aws::String>
+    StartAudienceGenerationJobRequest& WithCollaborationId(CollaborationIdT&& value) { SetCollaborationId(std::forward<CollaborationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the audience generation job.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartAudienceGenerationJobRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartAudienceGenerationJobRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,19 +127,16 @@ namespace Model
      * count against the limit of 50 tags. Tags with only the key prefix of aws do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartAudienceGenerationJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartAudienceGenerationJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartAudienceGenerationJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartAudienceGenerationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartAudienceGenerationJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartAudienceGenerationJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -160,7 +149,7 @@ namespace Model
     AudienceGenerationJobDataSource m_seedAudience;
     bool m_seedAudienceHasBeenSet = false;
 
-    bool m_includeSeedInOutput;
+    bool m_includeSeedInOutput{false};
     bool m_includeSeedInOutputHasBeenSet = false;
 
     Aws::String m_collaborationId;

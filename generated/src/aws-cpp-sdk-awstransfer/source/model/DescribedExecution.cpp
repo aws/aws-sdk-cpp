@@ -18,21 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedExecution::DescribedExecution() : 
-    m_executionIdHasBeenSet(false),
-    m_initialFileLocationHasBeenSet(false),
-    m_serviceMetadataHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resultsHasBeenSet(false)
-{
-}
-
 DescribedExecution::DescribedExecution(JsonView jsonValue)
-  : DescribedExecution()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ DescribedExecution& DescribedExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionId"))
   {
     m_executionId = jsonValue.GetString("ExecutionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialFileLocation"))
   {
     m_initialFileLocation = jsonValue.GetObject("InitialFileLocation");
-
     m_initialFileLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceMetadata"))
   {
     m_serviceMetadata = jsonValue.GetObject("ServiceMetadata");
-
     m_serviceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingConfiguration"))
   {
     m_loggingConfiguration = jsonValue.GetObject("LoggingConfiguration");
-
     m_loggingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PosixProfile"))
   {
     m_posixProfile = jsonValue.GetObject("PosixProfile");
-
     m_posixProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Results"))
   {
     m_results = jsonValue.GetObject("Results");
-
     m_resultsHasBeenSet = true;
   }
-
   return *this;
 }
 

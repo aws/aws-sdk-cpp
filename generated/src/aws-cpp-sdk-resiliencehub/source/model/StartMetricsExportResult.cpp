@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMetricsExportResult::StartMetricsExportResult() : 
-    m_status(MetricsExportStatusType::NOT_SET)
-{
-}
-
 StartMetricsExportResult::StartMetricsExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartMetricsExportResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StartMetricsExportResult& StartMetricsExportResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("metricsExportId"))
   {
     m_metricsExportId = jsonValue.GetString("metricsExportId");
-
+    m_metricsExportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MetricsExportStatusTypeMapper::GetMetricsExportStatusTypeForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

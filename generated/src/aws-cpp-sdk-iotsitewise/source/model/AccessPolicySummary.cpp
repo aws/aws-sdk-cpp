@@ -18,19 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AccessPolicySummary::AccessPolicySummary() : 
-    m_idHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false)
-{
-}
-
 AccessPolicySummary::AccessPolicySummary(JsonView jsonValue)
-  : AccessPolicySummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AccessPolicySummary& AccessPolicySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identity"))
   {
     m_identity = jsonValue.GetObject("identity");
-
     m_identityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = PermissionMapper::GetPermissionForName(jsonValue.GetString("permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateDate"))
   {
     m_lastUpdateDate = jsonValue.GetDouble("lastUpdateDate");
-
     m_lastUpdateDateHasBeenSet = true;
   }
-
   return *this;
 }
 

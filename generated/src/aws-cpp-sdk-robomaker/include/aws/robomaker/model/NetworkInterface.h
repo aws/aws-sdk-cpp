@@ -31,7 +31,7 @@ namespace Model
   class NetworkInterface
   {
   public:
-    AWS_ROBOMAKER_API NetworkInterface();
+    AWS_ROBOMAKER_API NetworkInterface() = default;
     AWS_ROBOMAKER_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    NetworkInterface& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IPv4 address of the network interface within the subnet.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline const Aws::String& GetPrivateIpAddress() const { return m_privateIpAddress; }
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline NetworkInterface& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline NetworkInterface& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline NetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    template<typename PrivateIpAddressT = Aws::String>
+    void SetPrivateIpAddress(PrivateIpAddressT&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::forward<PrivateIpAddressT>(value); }
+    template<typename PrivateIpAddressT = Aws::String>
+    NetworkInterface& WithPrivateIpAddress(PrivateIpAddressT&& value) { SetPrivateIpAddress(std::forward<PrivateIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IPv4 public address of the network interface.</p>
      */
-    inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
+    inline const Aws::String& GetPublicIpAddress() const { return m_publicIpAddress; }
     inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
-    inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
-    inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::move(value); }
-    inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
-    inline NetworkInterface& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
-    inline NetworkInterface& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(std::move(value)); return *this;}
-    inline NetworkInterface& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
+    template<typename PublicIpAddressT = Aws::String>
+    void SetPublicIpAddress(PublicIpAddressT&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = std::forward<PublicIpAddressT>(value); }
+    template<typename PublicIpAddressT = Aws::String>
+    NetworkInterface& WithPublicIpAddress(PublicIpAddressT&& value) { SetPublicIpAddress(std::forward<PublicIpAddressT>(value)); return *this;}
     ///@}
   private:
 

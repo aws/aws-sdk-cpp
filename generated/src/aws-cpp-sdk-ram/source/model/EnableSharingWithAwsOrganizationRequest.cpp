@@ -12,10 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableSharingWithAwsOrganizationRequest::EnableSharingWithAwsOrganizationRequest()
-{
-}
-
 Aws::String EnableSharingWithAwsOrganizationRequest::SerializePayload() const
 {
   return {};

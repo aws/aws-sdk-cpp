@@ -28,7 +28,7 @@ namespace Model
   class ListLineageNodeHistoryRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListLineageNodeHistoryRequest();
+    AWS_DATAZONE_API ListLineageNodeHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,10 @@ namespace Model
      * the <code>ListLineageNodeHistory</code> API responds with historical versions
      * with upstream neighbors only.</p>
      */
-    inline const EdgeDirection& GetDirection() const{ return m_direction; }
+    inline EdgeDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const EdgeDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(EdgeDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline ListLineageNodeHistoryRequest& WithDirection(const EdgeDirection& value) { SetDirection(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithDirection(EdgeDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(EdgeDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline ListLineageNodeHistoryRequest& WithDirection(EdgeDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The ID of the domain where you want to list the history of the specified data
      * lineage node.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListLineageNodeHistoryRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListLineageNodeHistoryRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListLineageNodeHistoryRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,12 @@ namespace Model
      * <p>Specifies whether the action is to return data lineage node history from the
      * time after the event timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTimestampGTE() const{ return m_eventTimestampGTE; }
+    inline const Aws::Utils::DateTime& GetEventTimestampGTE() const { return m_eventTimestampGTE; }
     inline bool EventTimestampGTEHasBeenSet() const { return m_eventTimestampGTEHasBeenSet; }
-    inline void SetEventTimestampGTE(const Aws::Utils::DateTime& value) { m_eventTimestampGTEHasBeenSet = true; m_eventTimestampGTE = value; }
-    inline void SetEventTimestampGTE(Aws::Utils::DateTime&& value) { m_eventTimestampGTEHasBeenSet = true; m_eventTimestampGTE = std::move(value); }
-    inline ListLineageNodeHistoryRequest& WithEventTimestampGTE(const Aws::Utils::DateTime& value) { SetEventTimestampGTE(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithEventTimestampGTE(Aws::Utils::DateTime&& value) { SetEventTimestampGTE(std::move(value)); return *this;}
+    template<typename EventTimestampGTET = Aws::Utils::DateTime>
+    void SetEventTimestampGTE(EventTimestampGTET&& value) { m_eventTimestampGTEHasBeenSet = true; m_eventTimestampGTE = std::forward<EventTimestampGTET>(value); }
+    template<typename EventTimestampGTET = Aws::Utils::DateTime>
+    ListLineageNodeHistoryRequest& WithEventTimestampGTE(EventTimestampGTET&& value) { SetEventTimestampGTE(std::forward<EventTimestampGTET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +85,24 @@ namespace Model
      * <p>Specifies whether the action is to return data lineage node history from the
      * time prior of the event timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTimestampLTE() const{ return m_eventTimestampLTE; }
+    inline const Aws::Utils::DateTime& GetEventTimestampLTE() const { return m_eventTimestampLTE; }
     inline bool EventTimestampLTEHasBeenSet() const { return m_eventTimestampLTEHasBeenSet; }
-    inline void SetEventTimestampLTE(const Aws::Utils::DateTime& value) { m_eventTimestampLTEHasBeenSet = true; m_eventTimestampLTE = value; }
-    inline void SetEventTimestampLTE(Aws::Utils::DateTime&& value) { m_eventTimestampLTEHasBeenSet = true; m_eventTimestampLTE = std::move(value); }
-    inline ListLineageNodeHistoryRequest& WithEventTimestampLTE(const Aws::Utils::DateTime& value) { SetEventTimestampLTE(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithEventTimestampLTE(Aws::Utils::DateTime&& value) { SetEventTimestampLTE(std::move(value)); return *this;}
+    template<typename EventTimestampLTET = Aws::Utils::DateTime>
+    void SetEventTimestampLTE(EventTimestampLTET&& value) { m_eventTimestampLTEHasBeenSet = true; m_eventTimestampLTE = std::forward<EventTimestampLTET>(value); }
+    template<typename EventTimestampLTET = Aws::Utils::DateTime>
+    ListLineageNodeHistoryRequest& WithEventTimestampLTE(EventTimestampLTET&& value) { SetEventTimestampLTE(std::forward<EventTimestampLTET>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data lineage node whose history you want to list.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ListLineageNodeHistoryRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ListLineageNodeHistoryRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ListLineageNodeHistoryRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +113,7 @@ namespace Model
      * can use in a subsequent call to ListLineageNodeHistory to list the next set of
      * items.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLineageNodeHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -133,51 +127,47 @@ namespace Model
      * NextToken. You can specify this NextToken value in a subsequent call to
      * ListLineageNodeHistory to list the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLineageNodeHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLineageNodeHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLineageNodeHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order by which you want data lineage node history to be sorted.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListLineageNodeHistoryRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListLineageNodeHistoryRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListLineageNodeHistoryRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    EdgeDirection m_direction;
+    EdgeDirection m_direction{EdgeDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTimestampGTE;
+    Aws::Utils::DateTime m_eventTimestampGTE{};
     bool m_eventTimestampGTEHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTimestampLTE;
+    Aws::Utils::DateTime m_eventTimestampLTE{};
     bool m_eventTimestampLTEHasBeenSet = false;
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

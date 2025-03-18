@@ -32,7 +32,7 @@ namespace Model
   class Evidence
   {
   public:
-    AWS_INSPECTOR2_API Evidence();
+    AWS_INSPECTOR2_API Evidence() = default;
     AWS_INSPECTOR2_API Evidence(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Evidence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The evidence details.</p>
      */
-    inline const Aws::String& GetEvidenceDetail() const{ return m_evidenceDetail; }
+    inline const Aws::String& GetEvidenceDetail() const { return m_evidenceDetail; }
     inline bool EvidenceDetailHasBeenSet() const { return m_evidenceDetailHasBeenSet; }
-    inline void SetEvidenceDetail(const Aws::String& value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail = value; }
-    inline void SetEvidenceDetail(Aws::String&& value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail = std::move(value); }
-    inline void SetEvidenceDetail(const char* value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail.assign(value); }
-    inline Evidence& WithEvidenceDetail(const Aws::String& value) { SetEvidenceDetail(value); return *this;}
-    inline Evidence& WithEvidenceDetail(Aws::String&& value) { SetEvidenceDetail(std::move(value)); return *this;}
-    inline Evidence& WithEvidenceDetail(const char* value) { SetEvidenceDetail(value); return *this;}
+    template<typename EvidenceDetailT = Aws::String>
+    void SetEvidenceDetail(EvidenceDetailT&& value) { m_evidenceDetailHasBeenSet = true; m_evidenceDetail = std::forward<EvidenceDetailT>(value); }
+    template<typename EvidenceDetailT = Aws::String>
+    Evidence& WithEvidenceDetail(EvidenceDetailT&& value) { SetEvidenceDetail(std::forward<EvidenceDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The evidence rule.</p>
      */
-    inline const Aws::String& GetEvidenceRule() const{ return m_evidenceRule; }
+    inline const Aws::String& GetEvidenceRule() const { return m_evidenceRule; }
     inline bool EvidenceRuleHasBeenSet() const { return m_evidenceRuleHasBeenSet; }
-    inline void SetEvidenceRule(const Aws::String& value) { m_evidenceRuleHasBeenSet = true; m_evidenceRule = value; }
-    inline void SetEvidenceRule(Aws::String&& value) { m_evidenceRuleHasBeenSet = true; m_evidenceRule = std::move(value); }
-    inline void SetEvidenceRule(const char* value) { m_evidenceRuleHasBeenSet = true; m_evidenceRule.assign(value); }
-    inline Evidence& WithEvidenceRule(const Aws::String& value) { SetEvidenceRule(value); return *this;}
-    inline Evidence& WithEvidenceRule(Aws::String&& value) { SetEvidenceRule(std::move(value)); return *this;}
-    inline Evidence& WithEvidenceRule(const char* value) { SetEvidenceRule(value); return *this;}
+    template<typename EvidenceRuleT = Aws::String>
+    void SetEvidenceRule(EvidenceRuleT&& value) { m_evidenceRuleHasBeenSet = true; m_evidenceRule = std::forward<EvidenceRuleT>(value); }
+    template<typename EvidenceRuleT = Aws::String>
+    Evidence& WithEvidenceRule(EvidenceRuleT&& value) { SetEvidenceRule(std::forward<EvidenceRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The evidence severity.</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline Evidence& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline Evidence& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline Evidence& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    Evidence& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListMediaCapturePipelinesResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The media pipeline objects in the list.</p>
      */
-    inline const Aws::Vector<MediaCapturePipelineSummary>& GetMediaCapturePipelines() const{ return m_mediaCapturePipelines; }
-    inline void SetMediaCapturePipelines(const Aws::Vector<MediaCapturePipelineSummary>& value) { m_mediaCapturePipelines = value; }
-    inline void SetMediaCapturePipelines(Aws::Vector<MediaCapturePipelineSummary>&& value) { m_mediaCapturePipelines = std::move(value); }
-    inline ListMediaCapturePipelinesResult& WithMediaCapturePipelines(const Aws::Vector<MediaCapturePipelineSummary>& value) { SetMediaCapturePipelines(value); return *this;}
-    inline ListMediaCapturePipelinesResult& WithMediaCapturePipelines(Aws::Vector<MediaCapturePipelineSummary>&& value) { SetMediaCapturePipelines(std::move(value)); return *this;}
-    inline ListMediaCapturePipelinesResult& AddMediaCapturePipelines(const MediaCapturePipelineSummary& value) { m_mediaCapturePipelines.push_back(value); return *this; }
-    inline ListMediaCapturePipelinesResult& AddMediaCapturePipelines(MediaCapturePipelineSummary&& value) { m_mediaCapturePipelines.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MediaCapturePipelineSummary>& GetMediaCapturePipelines() const { return m_mediaCapturePipelines; }
+    template<typename MediaCapturePipelinesT = Aws::Vector<MediaCapturePipelineSummary>>
+    void SetMediaCapturePipelines(MediaCapturePipelinesT&& value) { m_mediaCapturePipelinesHasBeenSet = true; m_mediaCapturePipelines = std::forward<MediaCapturePipelinesT>(value); }
+    template<typename MediaCapturePipelinesT = Aws::Vector<MediaCapturePipelineSummary>>
+    ListMediaCapturePipelinesResult& WithMediaCapturePipelines(MediaCapturePipelinesT&& value) { SetMediaCapturePipelines(std::forward<MediaCapturePipelinesT>(value)); return *this;}
+    template<typename MediaCapturePipelinesT = MediaCapturePipelineSummary>
+    ListMediaCapturePipelinesResult& AddMediaCapturePipelines(MediaCapturePipelinesT&& value) { m_mediaCapturePipelinesHasBeenSet = true; m_mediaCapturePipelines.emplace_back(std::forward<MediaCapturePipelinesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token used to retrieve the next page of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMediaCapturePipelinesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMediaCapturePipelinesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMediaCapturePipelinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMediaCapturePipelinesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMediaCapturePipelinesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMediaCapturePipelinesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMediaCapturePipelinesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMediaCapturePipelinesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MediaCapturePipelineSummary> m_mediaCapturePipelines;
+    bool m_mediaCapturePipelinesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

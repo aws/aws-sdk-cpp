@@ -34,7 +34,7 @@ namespace Model
   class BuildtimeSettings
   {
   public:
-    AWS_LEXMODELSV2_API BuildtimeSettings();
+    AWS_LEXMODELSV2_API BuildtimeSettings() = default;
     AWS_LEXMODELSV2_API BuildtimeSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BuildtimeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
      * <p>An object containing specifications for the descriptive bot building
      * feature.</p>
      */
-    inline const DescriptiveBotBuilderSpecification& GetDescriptiveBotBuilder() const{ return m_descriptiveBotBuilder; }
+    inline const DescriptiveBotBuilderSpecification& GetDescriptiveBotBuilder() const { return m_descriptiveBotBuilder; }
     inline bool DescriptiveBotBuilderHasBeenSet() const { return m_descriptiveBotBuilderHasBeenSet; }
-    inline void SetDescriptiveBotBuilder(const DescriptiveBotBuilderSpecification& value) { m_descriptiveBotBuilderHasBeenSet = true; m_descriptiveBotBuilder = value; }
-    inline void SetDescriptiveBotBuilder(DescriptiveBotBuilderSpecification&& value) { m_descriptiveBotBuilderHasBeenSet = true; m_descriptiveBotBuilder = std::move(value); }
-    inline BuildtimeSettings& WithDescriptiveBotBuilder(const DescriptiveBotBuilderSpecification& value) { SetDescriptiveBotBuilder(value); return *this;}
-    inline BuildtimeSettings& WithDescriptiveBotBuilder(DescriptiveBotBuilderSpecification&& value) { SetDescriptiveBotBuilder(std::move(value)); return *this;}
+    template<typename DescriptiveBotBuilderT = DescriptiveBotBuilderSpecification>
+    void SetDescriptiveBotBuilder(DescriptiveBotBuilderT&& value) { m_descriptiveBotBuilderHasBeenSet = true; m_descriptiveBotBuilder = std::forward<DescriptiveBotBuilderT>(value); }
+    template<typename DescriptiveBotBuilderT = DescriptiveBotBuilderSpecification>
+    BuildtimeSettings& WithDescriptiveBotBuilder(DescriptiveBotBuilderT&& value) { SetDescriptiveBotBuilder(std::forward<DescriptiveBotBuilderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains specifications for the sample utterance generation feature.</p>
      */
-    inline const SampleUtteranceGenerationSpecification& GetSampleUtteranceGeneration() const{ return m_sampleUtteranceGeneration; }
+    inline const SampleUtteranceGenerationSpecification& GetSampleUtteranceGeneration() const { return m_sampleUtteranceGeneration; }
     inline bool SampleUtteranceGenerationHasBeenSet() const { return m_sampleUtteranceGenerationHasBeenSet; }
-    inline void SetSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = value; }
-    inline void SetSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = std::move(value); }
-    inline BuildtimeSettings& WithSampleUtteranceGeneration(const SampleUtteranceGenerationSpecification& value) { SetSampleUtteranceGeneration(value); return *this;}
-    inline BuildtimeSettings& WithSampleUtteranceGeneration(SampleUtteranceGenerationSpecification&& value) { SetSampleUtteranceGeneration(std::move(value)); return *this;}
+    template<typename SampleUtteranceGenerationT = SampleUtteranceGenerationSpecification>
+    void SetSampleUtteranceGeneration(SampleUtteranceGenerationT&& value) { m_sampleUtteranceGenerationHasBeenSet = true; m_sampleUtteranceGeneration = std::forward<SampleUtteranceGenerationT>(value); }
+    template<typename SampleUtteranceGenerationT = SampleUtteranceGenerationSpecification>
+    BuildtimeSettings& WithSampleUtteranceGeneration(SampleUtteranceGenerationT&& value) { SetSampleUtteranceGeneration(std::forward<SampleUtteranceGenerationT>(value)); return *this;}
     ///@}
   private:
 

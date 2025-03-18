@@ -20,18 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-AccessLog::AccessLog() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_emitInterval(0),
-    m_emitIntervalHasBeenSet(false),
-    m_s3BucketPrefixHasBeenSet(false)
-{
-}
-
 AccessLog::AccessLog(const XmlNode& xmlNode)
-  : AccessLog()
 {
   *this = xmlNode;
 }

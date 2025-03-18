@@ -33,7 +33,7 @@ namespace Model
   class AmiProductLastModifiedDateFilterDateRange
   {
   public:
-    AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilterDateRange();
+    AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilterDateRange() = default;
     AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilterDateRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilterDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>Date after which the AMI product was last modified.</p>
      */
-    inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
+    inline const Aws::String& GetAfterValue() const { return m_afterValue; }
     inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-    inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
-    inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
-    inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
-    inline AmiProductLastModifiedDateFilterDateRange& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
-    inline AmiProductLastModifiedDateFilterDateRange& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
-    inline AmiProductLastModifiedDateFilterDateRange& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+    template<typename AfterValueT = Aws::String>
+    void SetAfterValue(AfterValueT&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::forward<AfterValueT>(value); }
+    template<typename AfterValueT = Aws::String>
+    AmiProductLastModifiedDateFilterDateRange& WithAfterValue(AfterValueT&& value) { SetAfterValue(std::forward<AfterValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date before which the AMI product was last modified.</p>
      */
-    inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
+    inline const Aws::String& GetBeforeValue() const { return m_beforeValue; }
     inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-    inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
-    inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
-    inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
-    inline AmiProductLastModifiedDateFilterDateRange& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
-    inline AmiProductLastModifiedDateFilterDateRange& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
-    inline AmiProductLastModifiedDateFilterDateRange& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
+    template<typename BeforeValueT = Aws::String>
+    void SetBeforeValue(BeforeValueT&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::forward<BeforeValueT>(value); }
+    template<typename BeforeValueT = Aws::String>
+    AmiProductLastModifiedDateFilterDateRange& WithBeforeValue(BeforeValueT&& value) { SetBeforeValue(std::forward<BeforeValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class UdpOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API UdpOutputSettings();
+    AWS_MEDIALIVE_API UdpOutputSettings() = default;
     AWS_MEDIALIVE_API UdpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API UdpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
      * input disruptions, picture reordering, etc.
      */
-    inline int GetBufferMsec() const{ return m_bufferMsec; }
+    inline int GetBufferMsec() const { return m_bufferMsec; }
     inline bool BufferMsecHasBeenSet() const { return m_bufferMsecHasBeenSet; }
     inline void SetBufferMsec(int value) { m_bufferMsecHasBeenSet = true; m_bufferMsec = value; }
     inline UdpOutputSettings& WithBufferMsec(int value) { SetBufferMsec(value); return *this;}
@@ -54,12 +54,12 @@ namespace Model
 
     ///@{
     
-    inline const UdpContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+    inline const UdpContainerSettings& GetContainerSettings() const { return m_containerSettings; }
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
-    inline void SetContainerSettings(const UdpContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
-    inline void SetContainerSettings(UdpContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
-    inline UdpOutputSettings& WithContainerSettings(const UdpContainerSettings& value) { SetContainerSettings(value); return *this;}
-    inline UdpOutputSettings& WithContainerSettings(UdpContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    template<typename ContainerSettingsT = UdpContainerSettings>
+    void SetContainerSettings(ContainerSettingsT&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::forward<ContainerSettingsT>(value); }
+    template<typename ContainerSettingsT = UdpContainerSettings>
+    UdpOutputSettings& WithContainerSettings(ContainerSettingsT&& value) { SetContainerSettings(std::forward<ContainerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,28 +67,28 @@ namespace Model
      * Destination address and port number for RTP or UDP packets. Can be unicast or
      * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline UdpOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline UdpOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    UdpOutputSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
      */
-    inline const FecOutputSettings& GetFecOutputSettings() const{ return m_fecOutputSettings; }
+    inline const FecOutputSettings& GetFecOutputSettings() const { return m_fecOutputSettings; }
     inline bool FecOutputSettingsHasBeenSet() const { return m_fecOutputSettingsHasBeenSet; }
-    inline void SetFecOutputSettings(const FecOutputSettings& value) { m_fecOutputSettingsHasBeenSet = true; m_fecOutputSettings = value; }
-    inline void SetFecOutputSettings(FecOutputSettings&& value) { m_fecOutputSettingsHasBeenSet = true; m_fecOutputSettings = std::move(value); }
-    inline UdpOutputSettings& WithFecOutputSettings(const FecOutputSettings& value) { SetFecOutputSettings(value); return *this;}
-    inline UdpOutputSettings& WithFecOutputSettings(FecOutputSettings&& value) { SetFecOutputSettings(std::move(value)); return *this;}
+    template<typename FecOutputSettingsT = FecOutputSettings>
+    void SetFecOutputSettings(FecOutputSettingsT&& value) { m_fecOutputSettingsHasBeenSet = true; m_fecOutputSettings = std::forward<FecOutputSettingsT>(value); }
+    template<typename FecOutputSettingsT = FecOutputSettings>
+    UdpOutputSettings& WithFecOutputSettings(FecOutputSettingsT&& value) { SetFecOutputSettings(std::forward<FecOutputSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_bufferMsec;
+    int m_bufferMsec{0};
     bool m_bufferMsecHasBeenSet = false;
 
     UdpContainerSettings m_containerSettings;

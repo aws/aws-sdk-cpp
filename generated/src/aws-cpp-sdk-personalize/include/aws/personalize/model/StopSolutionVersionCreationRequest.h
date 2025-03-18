@@ -21,7 +21,7 @@ namespace Model
   class StopSolutionVersionCreationRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API StopSolutionVersionCreationRequest();
+    AWS_PERSONALIZE_API StopSolutionVersionCreationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the solution version you want to stop
      * creating.</p>
      */
-    inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
+    inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-    inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
-    inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
-    inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
-    inline StopSolutionVersionCreationRequest& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-    inline StopSolutionVersionCreationRequest& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-    inline StopSolutionVersionCreationRequest& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    template<typename SolutionVersionArnT = Aws::String>
+    void SetSolutionVersionArn(SolutionVersionArnT&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::forward<SolutionVersionArnT>(value); }
+    template<typename SolutionVersionArnT = Aws::String>
+    StopSolutionVersionCreationRequest& WithSolutionVersionArn(SolutionVersionArnT&& value) { SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value)); return *this;}
     ///@}
   private:
 

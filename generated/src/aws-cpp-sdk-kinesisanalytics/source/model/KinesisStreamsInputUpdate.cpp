@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-KinesisStreamsInputUpdate::KinesisStreamsInputUpdate() : 
-    m_resourceARNUpdateHasBeenSet(false),
-    m_roleARNUpdateHasBeenSet(false)
-{
-}
-
 KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue)
-  : KinesisStreamsInputUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {
     m_resourceARNUpdate = jsonValue.GetString("ResourceARNUpdate");
-
     m_resourceARNUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARNUpdate"))
   {
     m_roleARNUpdate = jsonValue.GetString("RoleARNUpdate");
-
     m_roleARNUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

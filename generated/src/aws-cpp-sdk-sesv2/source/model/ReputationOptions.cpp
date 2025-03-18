@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ReputationOptions::ReputationOptions() : 
-    m_reputationMetricsEnabled(false),
-    m_reputationMetricsEnabledHasBeenSet(false),
-    m_lastFreshStartHasBeenSet(false)
-{
-}
-
 ReputationOptions::ReputationOptions(JsonView jsonValue)
-  : ReputationOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReputationOptions& ReputationOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReputationMetricsEnabled"))
   {
     m_reputationMetricsEnabled = jsonValue.GetBool("ReputationMetricsEnabled");
-
     m_reputationMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFreshStart"))
   {
     m_lastFreshStart = jsonValue.GetDouble("LastFreshStart");
-
     m_lastFreshStartHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListLifecyclePoliciesResult
   {
   public:
-    AWS_IMAGEBUILDER_API ListLifecyclePoliciesResult();
+    AWS_IMAGEBUILDER_API ListLifecyclePoliciesResult() = default;
     AWS_IMAGEBUILDER_API ListLifecyclePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API ListLifecyclePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of lifecycle policies in your Amazon Web Services account that meet
      * the criteria specified in the request.</p>
      */
-    inline const Aws::Vector<LifecyclePolicySummary>& GetLifecyclePolicySummaryList() const{ return m_lifecyclePolicySummaryList; }
-    inline void SetLifecyclePolicySummaryList(const Aws::Vector<LifecyclePolicySummary>& value) { m_lifecyclePolicySummaryList = value; }
-    inline void SetLifecyclePolicySummaryList(Aws::Vector<LifecyclePolicySummary>&& value) { m_lifecyclePolicySummaryList = std::move(value); }
-    inline ListLifecyclePoliciesResult& WithLifecyclePolicySummaryList(const Aws::Vector<LifecyclePolicySummary>& value) { SetLifecyclePolicySummaryList(value); return *this;}
-    inline ListLifecyclePoliciesResult& WithLifecyclePolicySummaryList(Aws::Vector<LifecyclePolicySummary>&& value) { SetLifecyclePolicySummaryList(std::move(value)); return *this;}
-    inline ListLifecyclePoliciesResult& AddLifecyclePolicySummaryList(const LifecyclePolicySummary& value) { m_lifecyclePolicySummaryList.push_back(value); return *this; }
-    inline ListLifecyclePoliciesResult& AddLifecyclePolicySummaryList(LifecyclePolicySummary&& value) { m_lifecyclePolicySummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LifecyclePolicySummary>& GetLifecyclePolicySummaryList() const { return m_lifecyclePolicySummaryList; }
+    template<typename LifecyclePolicySummaryListT = Aws::Vector<LifecyclePolicySummary>>
+    void SetLifecyclePolicySummaryList(LifecyclePolicySummaryListT&& value) { m_lifecyclePolicySummaryListHasBeenSet = true; m_lifecyclePolicySummaryList = std::forward<LifecyclePolicySummaryListT>(value); }
+    template<typename LifecyclePolicySummaryListT = Aws::Vector<LifecyclePolicySummary>>
+    ListLifecyclePoliciesResult& WithLifecyclePolicySummaryList(LifecyclePolicySummaryListT&& value) { SetLifecyclePolicySummaryList(std::forward<LifecyclePolicySummaryListT>(value)); return *this;}
+    template<typename LifecyclePolicySummaryListT = LifecyclePolicySummary>
+    ListLifecyclePoliciesResult& AddLifecyclePolicySummaryList(LifecyclePolicySummaryListT&& value) { m_lifecyclePolicySummaryListHasBeenSet = true; m_lifecyclePolicySummaryList.emplace_back(std::forward<LifecyclePolicySummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * there are additional elements that the service hasn't included in this request.
      * Use this token with the next request to retrieve additional objects.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLifecyclePoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLifecyclePoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLifecyclePoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLifecyclePoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLifecyclePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLifecyclePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLifecyclePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLifecyclePoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LifecyclePolicySummary> m_lifecyclePolicySummaryList;
+    bool m_lifecyclePolicySummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWebACLRequest::UpdateWebACLRequest() : 
-    m_webACLIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_defaultActionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class ListResourcesRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API ListResourcesRequest();
+    AWS_WORKMAIL_API ListResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the resources exist.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline ListResourcesRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline ListResourcesRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline ListResourcesRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    ListResourcesRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,21 +52,19 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. The first call does
      * not contain any tokens.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -79,12 +75,12 @@ namespace Model
      * <p>Limit the resource search results based on the filter criteria. You can only
      * use one filter per request.</p>
      */
-    inline const ListResourcesFilters& GetFilters() const{ return m_filters; }
+    inline const ListResourcesFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const ListResourcesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(ListResourcesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListResourcesRequest& WithFilters(const ListResourcesFilters& value) { SetFilters(value); return *this;}
-    inline ListResourcesRequest& WithFilters(ListResourcesFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = ListResourcesFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ListResourcesFilters>
+    ListResourcesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 
@@ -94,7 +90,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     ListResourcesFilters m_filters;

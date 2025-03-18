@@ -21,7 +21,7 @@ namespace Model
   class GetCredentialsRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetCredentialsRequest();
+    AWS_REDSHIFTSERVERLESS_API GetCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The custom domain name associated with the workgroup. The custom domain name
      * or the workgroup name must be included in the request.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-    inline GetCredentialsRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline GetCredentialsRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline GetCredentialsRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    GetCredentialsRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words </a> in the Amazon Redshift Database Developer Guide</p> </li> </ul>
      */
-    inline const Aws::String& GetDbName() const{ return m_dbName; }
+    inline const Aws::String& GetDbName() const { return m_dbName; }
     inline bool DbNameHasBeenSet() const { return m_dbNameHasBeenSet; }
-    inline void SetDbName(const Aws::String& value) { m_dbNameHasBeenSet = true; m_dbName = value; }
-    inline void SetDbName(Aws::String&& value) { m_dbNameHasBeenSet = true; m_dbName = std::move(value); }
-    inline void SetDbName(const char* value) { m_dbNameHasBeenSet = true; m_dbName.assign(value); }
-    inline GetCredentialsRequest& WithDbName(const Aws::String& value) { SetDbName(value); return *this;}
-    inline GetCredentialsRequest& WithDbName(Aws::String&& value) { SetDbName(std::move(value)); return *this;}
-    inline GetCredentialsRequest& WithDbName(const char* value) { SetDbName(value); return *this;}
+    template<typename DbNameT = Aws::String>
+    void SetDbName(DbNameT&& value) { m_dbNameHasBeenSet = true; m_dbName = std::forward<DbNameT>(value); }
+    template<typename DbNameT = Aws::String>
+    GetCredentialsRequest& WithDbName(DbNameT&& value) { SetDbName(std::forward<DbNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>The number of seconds until the returned temporary password expires. The
      * minimum is 900 seconds, and the maximum is 3600 seconds.</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline GetCredentialsRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
     /**
      * <p>The name of the workgroup associated with the database.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline GetCredentialsRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline GetCredentialsRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline GetCredentialsRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    GetCredentialsRequest& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_dbName;
     bool m_dbNameHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_workgroupName;

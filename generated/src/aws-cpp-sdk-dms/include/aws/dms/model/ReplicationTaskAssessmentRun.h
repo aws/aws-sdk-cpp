@@ -38,7 +38,7 @@ namespace Model
   class ReplicationTaskAssessmentRun
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of this assessment run.</p>
      */
-    inline const Aws::String& GetReplicationTaskAssessmentRunArn() const{ return m_replicationTaskAssessmentRunArn; }
+    inline const Aws::String& GetReplicationTaskAssessmentRunArn() const { return m_replicationTaskAssessmentRunArn; }
     inline bool ReplicationTaskAssessmentRunArnHasBeenSet() const { return m_replicationTaskAssessmentRunArnHasBeenSet; }
-    inline void SetReplicationTaskAssessmentRunArn(const Aws::String& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = value; }
-    inline void SetReplicationTaskAssessmentRunArn(Aws::String&& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = std::move(value); }
-    inline void SetReplicationTaskAssessmentRunArn(const char* value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunArn(const Aws::String& value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunArn(Aws::String&& value) { SetReplicationTaskAssessmentRunArn(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunArn(const char* value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
+    template<typename ReplicationTaskAssessmentRunArnT = Aws::String>
+    void SetReplicationTaskAssessmentRunArn(ReplicationTaskAssessmentRunArnT&& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = std::forward<ReplicationTaskAssessmentRunArnT>(value); }
+    template<typename ReplicationTaskAssessmentRunArnT = Aws::String>
+    ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunArn(ReplicationTaskAssessmentRunArnT&& value) { SetReplicationTaskAssessmentRunArn(std::forward<ReplicationTaskAssessmentRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>ARN of the migration task associated with this premigration assessment
      * run.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    ReplicationTaskAssessmentRun& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * individual assessments were skipped (completed with a <code>skipped</code>
      * status).</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ReplicationTaskAssessmentRun& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,12 @@ namespace Model
      * <p>Date on which the assessment run was created using the
      * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
      */
-    inline const Aws::Utils::DateTime& GetReplicationTaskAssessmentRunCreationDate() const{ return m_replicationTaskAssessmentRunCreationDate; }
+    inline const Aws::Utils::DateTime& GetReplicationTaskAssessmentRunCreationDate() const { return m_replicationTaskAssessmentRunCreationDate; }
     inline bool ReplicationTaskAssessmentRunCreationDateHasBeenSet() const { return m_replicationTaskAssessmentRunCreationDateHasBeenSet; }
-    inline void SetReplicationTaskAssessmentRunCreationDate(const Aws::Utils::DateTime& value) { m_replicationTaskAssessmentRunCreationDateHasBeenSet = true; m_replicationTaskAssessmentRunCreationDate = value; }
-    inline void SetReplicationTaskAssessmentRunCreationDate(Aws::Utils::DateTime&& value) { m_replicationTaskAssessmentRunCreationDateHasBeenSet = true; m_replicationTaskAssessmentRunCreationDate = std::move(value); }
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunCreationDate(const Aws::Utils::DateTime& value) { SetReplicationTaskAssessmentRunCreationDate(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunCreationDate(Aws::Utils::DateTime&& value) { SetReplicationTaskAssessmentRunCreationDate(std::move(value)); return *this;}
+    template<typename ReplicationTaskAssessmentRunCreationDateT = Aws::Utils::DateTime>
+    void SetReplicationTaskAssessmentRunCreationDate(ReplicationTaskAssessmentRunCreationDateT&& value) { m_replicationTaskAssessmentRunCreationDateHasBeenSet = true; m_replicationTaskAssessmentRunCreationDate = std::forward<ReplicationTaskAssessmentRunCreationDateT>(value); }
+    template<typename ReplicationTaskAssessmentRunCreationDateT = Aws::Utils::DateTime>
+    ReplicationTaskAssessmentRun& WithReplicationTaskAssessmentRunCreationDate(ReplicationTaskAssessmentRunCreationDateT&& value) { SetReplicationTaskAssessmentRunCreationDate(std::forward<ReplicationTaskAssessmentRunCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,26 +120,24 @@ namespace Model
      * <p>Indication of the completion progress for the individual assessments
      * specified to run.</p>
      */
-    inline const ReplicationTaskAssessmentRunProgress& GetAssessmentProgress() const{ return m_assessmentProgress; }
+    inline const ReplicationTaskAssessmentRunProgress& GetAssessmentProgress() const { return m_assessmentProgress; }
     inline bool AssessmentProgressHasBeenSet() const { return m_assessmentProgressHasBeenSet; }
-    inline void SetAssessmentProgress(const ReplicationTaskAssessmentRunProgress& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = value; }
-    inline void SetAssessmentProgress(ReplicationTaskAssessmentRunProgress&& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = std::move(value); }
-    inline ReplicationTaskAssessmentRun& WithAssessmentProgress(const ReplicationTaskAssessmentRunProgress& value) { SetAssessmentProgress(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithAssessmentProgress(ReplicationTaskAssessmentRunProgress&& value) { SetAssessmentProgress(std::move(value)); return *this;}
+    template<typename AssessmentProgressT = ReplicationTaskAssessmentRunProgress>
+    void SetAssessmentProgress(AssessmentProgressT&& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = std::forward<AssessmentProgressT>(value); }
+    template<typename AssessmentProgressT = ReplicationTaskAssessmentRunProgress>
+    ReplicationTaskAssessmentRun& WithAssessmentProgress(AssessmentProgressT&& value) { SetAssessmentProgress(std::forward<AssessmentProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Last message generated by an individual assessment failure.</p>
      */
-    inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+    inline const Aws::String& GetLastFailureMessage() const { return m_lastFailureMessage; }
     inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
-    inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::move(value); }
-    inline void SetLastFailureMessage(const char* value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+    template<typename LastFailureMessageT = Aws::String>
+    void SetLastFailureMessage(LastFailureMessageT&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::forward<LastFailureMessageT>(value); }
+    template<typename LastFailureMessageT = Aws::String>
+    ReplicationTaskAssessmentRun& WithLastFailureMessage(LastFailureMessageT&& value) { SetLastFailureMessage(std::forward<LastFailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,28 +146,24 @@ namespace Model
      * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
      * the <code>iam:PassRole</code> action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
-    inline const Aws::String& GetResultLocationBucket() const{ return m_resultLocationBucket; }
+    inline const Aws::String& GetResultLocationBucket() const { return m_resultLocationBucket; }
     inline bool ResultLocationBucketHasBeenSet() const { return m_resultLocationBucketHasBeenSet; }
-    inline void SetResultLocationBucket(const Aws::String& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = value; }
-    inline void SetResultLocationBucket(Aws::String&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::move(value); }
-    inline void SetResultLocationBucket(const char* value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithResultLocationBucket(const Aws::String& value) { SetResultLocationBucket(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultLocationBucket(Aws::String&& value) { SetResultLocationBucket(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultLocationBucket(const char* value) { SetResultLocationBucket(value); return *this;}
+    template<typename ResultLocationBucketT = Aws::String>
+    void SetResultLocationBucket(ResultLocationBucketT&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::forward<ResultLocationBucketT>(value); }
+    template<typename ResultLocationBucketT = Aws::String>
+    ReplicationTaskAssessmentRun& WithResultLocationBucket(ResultLocationBucketT&& value) { SetResultLocationBucket(std::forward<ResultLocationBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,56 +171,48 @@ namespace Model
      * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
      * run.</p>
      */
-    inline const Aws::String& GetResultLocationFolder() const{ return m_resultLocationFolder; }
+    inline const Aws::String& GetResultLocationFolder() const { return m_resultLocationFolder; }
     inline bool ResultLocationFolderHasBeenSet() const { return m_resultLocationFolderHasBeenSet; }
-    inline void SetResultLocationFolder(const Aws::String& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = value; }
-    inline void SetResultLocationFolder(Aws::String&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::move(value); }
-    inline void SetResultLocationFolder(const char* value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithResultLocationFolder(const Aws::String& value) { SetResultLocationFolder(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultLocationFolder(Aws::String&& value) { SetResultLocationFolder(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultLocationFolder(const char* value) { SetResultLocationFolder(value); return *this;}
+    template<typename ResultLocationFolderT = Aws::String>
+    void SetResultLocationFolder(ResultLocationFolderT&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::forward<ResultLocationFolderT>(value); }
+    template<typename ResultLocationFolderT = Aws::String>
+    ReplicationTaskAssessmentRun& WithResultLocationFolder(ResultLocationFolderT&& value) { SetResultLocationFolder(std::forward<ResultLocationFolderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Encryption mode used to encrypt the assessment run results.</p>
      */
-    inline const Aws::String& GetResultEncryptionMode() const{ return m_resultEncryptionMode; }
+    inline const Aws::String& GetResultEncryptionMode() const { return m_resultEncryptionMode; }
     inline bool ResultEncryptionModeHasBeenSet() const { return m_resultEncryptionModeHasBeenSet; }
-    inline void SetResultEncryptionMode(const Aws::String& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = value; }
-    inline void SetResultEncryptionMode(Aws::String&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::move(value); }
-    inline void SetResultEncryptionMode(const char* value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithResultEncryptionMode(const Aws::String& value) { SetResultEncryptionMode(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultEncryptionMode(Aws::String&& value) { SetResultEncryptionMode(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultEncryptionMode(const char* value) { SetResultEncryptionMode(value); return *this;}
+    template<typename ResultEncryptionModeT = Aws::String>
+    void SetResultEncryptionMode(ResultEncryptionModeT&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::forward<ResultEncryptionModeT>(value); }
+    template<typename ResultEncryptionModeT = Aws::String>
+    ReplicationTaskAssessmentRun& WithResultEncryptionMode(ResultEncryptionModeT&& value) { SetResultEncryptionMode(std::forward<ResultEncryptionModeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
-    inline const Aws::String& GetResultKmsKeyArn() const{ return m_resultKmsKeyArn; }
+    inline const Aws::String& GetResultKmsKeyArn() const { return m_resultKmsKeyArn; }
     inline bool ResultKmsKeyArnHasBeenSet() const { return m_resultKmsKeyArnHasBeenSet; }
-    inline void SetResultKmsKeyArn(const Aws::String& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = value; }
-    inline void SetResultKmsKeyArn(Aws::String&& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = std::move(value); }
-    inline void SetResultKmsKeyArn(const char* value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(const Aws::String& value) { SetResultKmsKeyArn(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(Aws::String&& value) { SetResultKmsKeyArn(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(const char* value) { SetResultKmsKeyArn(value); return *this;}
+    template<typename ResultKmsKeyArnT = Aws::String>
+    void SetResultKmsKeyArn(ResultKmsKeyArnT&& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = std::forward<ResultKmsKeyArnT>(value); }
+    template<typename ResultKmsKeyArnT = Aws::String>
+    ReplicationTaskAssessmentRun& WithResultKmsKeyArn(ResultKmsKeyArnT&& value) { SetResultKmsKeyArn(std::forward<ResultKmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique name of the assessment run.</p>
      */
-    inline const Aws::String& GetAssessmentRunName() const{ return m_assessmentRunName; }
+    inline const Aws::String& GetAssessmentRunName() const { return m_assessmentRunName; }
     inline bool AssessmentRunNameHasBeenSet() const { return m_assessmentRunNameHasBeenSet; }
-    inline void SetAssessmentRunName(const Aws::String& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = value; }
-    inline void SetAssessmentRunName(Aws::String&& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = std::move(value); }
-    inline void SetAssessmentRunName(const char* value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName.assign(value); }
-    inline ReplicationTaskAssessmentRun& WithAssessmentRunName(const Aws::String& value) { SetAssessmentRunName(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithAssessmentRunName(Aws::String&& value) { SetAssessmentRunName(std::move(value)); return *this;}
-    inline ReplicationTaskAssessmentRun& WithAssessmentRunName(const char* value) { SetAssessmentRunName(value); return *this;}
+    template<typename AssessmentRunNameT = Aws::String>
+    void SetAssessmentRunName(AssessmentRunNameT&& value) { m_assessmentRunNameHasBeenSet = true; m_assessmentRunName = std::forward<AssessmentRunNameT>(value); }
+    template<typename AssessmentRunNameT = Aws::String>
+    ReplicationTaskAssessmentRun& WithAssessmentRunName(AssessmentRunNameT&& value) { SetAssessmentRunName(std::forward<AssessmentRunNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,7 +220,7 @@ namespace Model
      * <p>Indicates that the following PreflightAssessmentRun is the latest for the
      * ReplicationTask. The status is either true or false.</p>
      */
-    inline bool GetIsLatestTaskAssessmentRun() const{ return m_isLatestTaskAssessmentRun; }
+    inline bool GetIsLatestTaskAssessmentRun() const { return m_isLatestTaskAssessmentRun; }
     inline bool IsLatestTaskAssessmentRunHasBeenSet() const { return m_isLatestTaskAssessmentRunHasBeenSet; }
     inline void SetIsLatestTaskAssessmentRun(bool value) { m_isLatestTaskAssessmentRunHasBeenSet = true; m_isLatestTaskAssessmentRun = value; }
     inline ReplicationTaskAssessmentRun& WithIsLatestTaskAssessmentRun(bool value) { SetIsLatestTaskAssessmentRun(value); return *this;}
@@ -252,12 +232,12 @@ namespace Model
      * statistics of IndividualAssessments for how many assessments were passed,
      * failed, or encountered issues such as errors or warnings. </p>
      */
-    inline const ReplicationTaskAssessmentRunResultStatistic& GetResultStatistic() const{ return m_resultStatistic; }
+    inline const ReplicationTaskAssessmentRunResultStatistic& GetResultStatistic() const { return m_resultStatistic; }
     inline bool ResultStatisticHasBeenSet() const { return m_resultStatisticHasBeenSet; }
-    inline void SetResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = value; }
-    inline void SetResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = std::move(value); }
-    inline ReplicationTaskAssessmentRun& WithResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { SetResultStatistic(value); return *this;}
-    inline ReplicationTaskAssessmentRun& WithResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { SetResultStatistic(std::move(value)); return *this;}
+    template<typename ResultStatisticT = ReplicationTaskAssessmentRunResultStatistic>
+    void SetResultStatistic(ResultStatisticT&& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = std::forward<ResultStatisticT>(value); }
+    template<typename ResultStatisticT = ReplicationTaskAssessmentRunResultStatistic>
+    ReplicationTaskAssessmentRun& WithResultStatistic(ResultStatisticT&& value) { SetResultStatistic(std::forward<ResultStatisticT>(value)); return *this;}
     ///@}
   private:
 
@@ -270,7 +250,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_replicationTaskAssessmentRunCreationDate;
+    Aws::Utils::DateTime m_replicationTaskAssessmentRunCreationDate{};
     bool m_replicationTaskAssessmentRunCreationDateHasBeenSet = false;
 
     ReplicationTaskAssessmentRunProgress m_assessmentProgress;
@@ -297,7 +277,7 @@ namespace Model
     Aws::String m_assessmentRunName;
     bool m_assessmentRunNameHasBeenSet = false;
 
-    bool m_isLatestTaskAssessmentRun;
+    bool m_isLatestTaskAssessmentRun{false};
     bool m_isLatestTaskAssessmentRunHasBeenSet = false;
 
     ReplicationTaskAssessmentRunResultStatistic m_resultStatistic;

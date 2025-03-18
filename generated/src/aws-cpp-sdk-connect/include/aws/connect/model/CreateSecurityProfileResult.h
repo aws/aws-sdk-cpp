@@ -27,7 +27,7 @@ namespace Model
   class CreateSecurityProfileResult
   {
   public:
-    AWS_CONNECT_API CreateSecurityProfileResult();
+    AWS_CONNECT_API CreateSecurityProfileResult() = default;
     AWS_CONNECT_API CreateSecurityProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API CreateSecurityProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The identifier for the security profle.</p>
      */
-    inline const Aws::String& GetSecurityProfileId() const{ return m_securityProfileId; }
-    inline void SetSecurityProfileId(const Aws::String& value) { m_securityProfileId = value; }
-    inline void SetSecurityProfileId(Aws::String&& value) { m_securityProfileId = std::move(value); }
-    inline void SetSecurityProfileId(const char* value) { m_securityProfileId.assign(value); }
-    inline CreateSecurityProfileResult& WithSecurityProfileId(const Aws::String& value) { SetSecurityProfileId(value); return *this;}
-    inline CreateSecurityProfileResult& WithSecurityProfileId(Aws::String&& value) { SetSecurityProfileId(std::move(value)); return *this;}
-    inline CreateSecurityProfileResult& WithSecurityProfileId(const char* value) { SetSecurityProfileId(value); return *this;}
+    inline const Aws::String& GetSecurityProfileId() const { return m_securityProfileId; }
+    template<typename SecurityProfileIdT = Aws::String>
+    void SetSecurityProfileId(SecurityProfileIdT&& value) { m_securityProfileIdHasBeenSet = true; m_securityProfileId = std::forward<SecurityProfileIdT>(value); }
+    template<typename SecurityProfileIdT = Aws::String>
+    CreateSecurityProfileResult& WithSecurityProfileId(SecurityProfileIdT&& value) { SetSecurityProfileId(std::forward<SecurityProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the security profile.</p>
      */
-    inline const Aws::String& GetSecurityProfileArn() const{ return m_securityProfileArn; }
-    inline void SetSecurityProfileArn(const Aws::String& value) { m_securityProfileArn = value; }
-    inline void SetSecurityProfileArn(Aws::String&& value) { m_securityProfileArn = std::move(value); }
-    inline void SetSecurityProfileArn(const char* value) { m_securityProfileArn.assign(value); }
-    inline CreateSecurityProfileResult& WithSecurityProfileArn(const Aws::String& value) { SetSecurityProfileArn(value); return *this;}
-    inline CreateSecurityProfileResult& WithSecurityProfileArn(Aws::String&& value) { SetSecurityProfileArn(std::move(value)); return *this;}
-    inline CreateSecurityProfileResult& WithSecurityProfileArn(const char* value) { SetSecurityProfileArn(value); return *this;}
+    inline const Aws::String& GetSecurityProfileArn() const { return m_securityProfileArn; }
+    template<typename SecurityProfileArnT = Aws::String>
+    void SetSecurityProfileArn(SecurityProfileArnT&& value) { m_securityProfileArnHasBeenSet = true; m_securityProfileArn = std::forward<SecurityProfileArnT>(value); }
+    template<typename SecurityProfileArnT = Aws::String>
+    CreateSecurityProfileResult& WithSecurityProfileArn(SecurityProfileArnT&& value) { SetSecurityProfileArn(std::forward<SecurityProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSecurityProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSecurityProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSecurityProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSecurityProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_securityProfileId;
+    bool m_securityProfileIdHasBeenSet = false;
 
     Aws::String m_securityProfileArn;
+    bool m_securityProfileArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

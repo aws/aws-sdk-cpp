@@ -12,13 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExperienceEntitiesRequest::ListExperienceEntitiesRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListExperienceEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

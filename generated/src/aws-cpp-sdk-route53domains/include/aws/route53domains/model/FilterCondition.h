@@ -36,7 +36,7 @@ namespace Model
   class FilterCondition
   {
   public:
-    AWS_ROUTE53DOMAINS_API FilterCondition();
+    AWS_ROUTE53DOMAINS_API FilterCondition() = default;
     AWS_ROUTE53DOMAINS_API FilterCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>Name of the field which should be used for filtering the list of domains.</p>
      */
-    inline const ListDomainsAttributeName& GetName() const{ return m_name; }
+    inline ListDomainsAttributeName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ListDomainsAttributeName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ListDomainsAttributeName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline FilterCondition& WithName(const ListDomainsAttributeName& value) { SetName(value); return *this;}
-    inline FilterCondition& WithName(ListDomainsAttributeName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ListDomainsAttributeName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline FilterCondition& WithName(ListDomainsAttributeName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <code>GE</code>: Greater than, or equal to</p> </li> <li> <p>
      * <code>BEGINS_WITH</code>: Begins with</p> </li> </ul>
      */
-    inline const Operator& GetOperator() const{ return m_operator; }
+    inline Operator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline FilterCondition& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-    inline FilterCondition& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(Operator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline FilterCondition& WithOperator(Operator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -74,22 +70,21 @@ namespace Model
      * <p> An array of strings presenting values to compare. Only 1 item in the list is
      * currently supported.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline FilterCondition& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline FilterCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline FilterCondition& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline FilterCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline FilterCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    FilterCondition& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    FilterCondition& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    ListDomainsAttributeName m_name;
+    ListDomainsAttributeName m_name{ListDomainsAttributeName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    Operator m_operator;
+    Operator m_operator{Operator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

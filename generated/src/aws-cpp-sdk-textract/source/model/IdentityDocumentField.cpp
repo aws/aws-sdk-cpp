@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-IdentityDocumentField::IdentityDocumentField() : 
-    m_typeHasBeenSet(false),
-    m_valueDetectionHasBeenSet(false)
-{
-}
-
 IdentityDocumentField::IdentityDocumentField(JsonView jsonValue)
-  : IdentityDocumentField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityDocumentField& IdentityDocumentField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetObject("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueDetection"))
   {
     m_valueDetection = jsonValue.GetObject("ValueDetection");
-
     m_valueDetectionHasBeenSet = true;
   }
-
   return *this;
 }
 

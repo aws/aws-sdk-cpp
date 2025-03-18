@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClusterOperationStepInfo::ClusterOperationStepInfo() : 
-    m_stepStatusHasBeenSet(false)
-{
-}
-
 ClusterOperationStepInfo::ClusterOperationStepInfo(JsonView jsonValue)
-  : ClusterOperationStepInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClusterOperationStepInfo& ClusterOperationStepInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("stepStatus"))
   {
     m_stepStatus = jsonValue.GetString("stepStatus");
-
     m_stepStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

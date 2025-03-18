@@ -32,7 +32,7 @@ namespace Model
   class GeospatialSolidColor
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialSolidColor();
+    AWS_QUICKSIGHT_API GeospatialSolidColor() = default;
     AWS_QUICKSIGHT_API GeospatialSolidColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialSolidColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The color and opacity values for the color.</p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline GeospatialSolidColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline GeospatialSolidColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline GeospatialSolidColor& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    GeospatialSolidColor& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables and disables the view state of the color.</p>
      */
-    inline const GeospatialColorState& GetState() const{ return m_state; }
+    inline GeospatialColorState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const GeospatialColorState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(GeospatialColorState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline GeospatialSolidColor& WithState(const GeospatialColorState& value) { SetState(value); return *this;}
-    inline GeospatialSolidColor& WithState(GeospatialColorState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(GeospatialColorState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GeospatialSolidColor& WithState(GeospatialColorState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_color;
     bool m_colorHasBeenSet = false;
 
-    GeospatialColorState m_state;
+    GeospatialColorState m_state{GeospatialColorState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

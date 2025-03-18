@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-WafExcludedRule::WafExcludedRule() : 
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 WafExcludedRule::WafExcludedRule(JsonView jsonValue)
-  : WafExcludedRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WafExcludedRule& WafExcludedRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

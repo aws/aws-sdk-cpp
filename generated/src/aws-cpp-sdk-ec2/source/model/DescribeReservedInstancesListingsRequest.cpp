@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeReservedInstancesListingsRequest::DescribeReservedInstancesListingsRequest() : 
-    m_reservedInstancesIdHasBeenSet(false),
-    m_reservedInstancesListingIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedInstancesListingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

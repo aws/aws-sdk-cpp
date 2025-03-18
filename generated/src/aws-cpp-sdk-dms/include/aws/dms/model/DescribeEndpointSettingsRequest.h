@@ -21,7 +21,7 @@ namespace Model
   class DescribeEndpointSettingsRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeEndpointSettingsRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeEndpointSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The database engine used for your source or target endpoint.</p>
      */
-    inline const Aws::String& GetEngineName() const{ return m_engineName; }
+    inline const Aws::String& GetEngineName() const { return m_engineName; }
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
-    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
-    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
-    inline DescribeEndpointSettingsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
-    inline DescribeEndpointSettingsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
-    inline DescribeEndpointSettingsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+    template<typename EngineNameT = Aws::String>
+    void SetEngineName(EngineNameT&& value) { m_engineNameHasBeenSet = true; m_engineName = std::forward<EngineNameT>(value); }
+    template<typename EngineNameT = Aws::String>
+    DescribeEndpointSettingsRequest& WithEngineName(EngineNameT&& value) { SetEngineName(std::forward<EngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeEndpointSettingsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeEndpointSettingsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeEndpointSettingsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeEndpointSettingsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeEndpointSettingsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

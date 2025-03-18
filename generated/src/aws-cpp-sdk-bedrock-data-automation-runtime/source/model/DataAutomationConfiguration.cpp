@@ -18,15 +18,7 @@ namespace BedrockDataAutomationRuntime
 namespace Model
 {
 
-DataAutomationConfiguration::DataAutomationConfiguration() : 
-    m_dataAutomationProjectArnHasBeenSet(false),
-    m_stage(DataAutomationStage::NOT_SET),
-    m_stageHasBeenSet(false)
-{
-}
-
 DataAutomationConfiguration::DataAutomationConfiguration(JsonView jsonValue)
-  : DataAutomationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataAutomationConfiguration& DataAutomationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("dataAutomationProjectArn"))
   {
     m_dataAutomationProjectArn = jsonValue.GetString("dataAutomationProjectArn");
-
     m_dataAutomationProjectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = DataAutomationStageMapper::GetDataAutomationStageForName(jsonValue.GetString("stage"));
-
     m_stageHasBeenSet = true;
   }
-
   return *this;
 }
 

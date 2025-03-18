@@ -21,7 +21,7 @@ namespace Model
   class DescribeCacheReportRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeCacheReportRequest();
+    AWS_STORAGEGATEWAY_API DescribeCacheReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cache report you want to describe.</p>
      */
-    inline const Aws::String& GetCacheReportARN() const{ return m_cacheReportARN; }
+    inline const Aws::String& GetCacheReportARN() const { return m_cacheReportARN; }
     inline bool CacheReportARNHasBeenSet() const { return m_cacheReportARNHasBeenSet; }
-    inline void SetCacheReportARN(const Aws::String& value) { m_cacheReportARNHasBeenSet = true; m_cacheReportARN = value; }
-    inline void SetCacheReportARN(Aws::String&& value) { m_cacheReportARNHasBeenSet = true; m_cacheReportARN = std::move(value); }
-    inline void SetCacheReportARN(const char* value) { m_cacheReportARNHasBeenSet = true; m_cacheReportARN.assign(value); }
-    inline DescribeCacheReportRequest& WithCacheReportARN(const Aws::String& value) { SetCacheReportARN(value); return *this;}
-    inline DescribeCacheReportRequest& WithCacheReportARN(Aws::String&& value) { SetCacheReportARN(std::move(value)); return *this;}
-    inline DescribeCacheReportRequest& WithCacheReportARN(const char* value) { SetCacheReportARN(value); return *this;}
+    template<typename CacheReportARNT = Aws::String>
+    void SetCacheReportARN(CacheReportARNT&& value) { m_cacheReportARNHasBeenSet = true; m_cacheReportARN = std::forward<CacheReportARNT>(value); }
+    template<typename CacheReportARNT = Aws::String>
+    DescribeCacheReportRequest& WithCacheReportARN(CacheReportARNT&& value) { SetCacheReportARN(std::forward<CacheReportARNT>(value)); return *this;}
     ///@}
   private:
 

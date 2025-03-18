@@ -21,7 +21,7 @@ namespace Model
   class DeleteCoipPoolRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteCoipPoolRequest();
+    AWS_EC2_API DeleteCoipPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the CoIP pool that you want to delete. </p>
      */
-    inline const Aws::String& GetCoipPoolId() const{ return m_coipPoolId; }
+    inline const Aws::String& GetCoipPoolId() const { return m_coipPoolId; }
     inline bool CoipPoolIdHasBeenSet() const { return m_coipPoolIdHasBeenSet; }
-    inline void SetCoipPoolId(const Aws::String& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = value; }
-    inline void SetCoipPoolId(Aws::String&& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = std::move(value); }
-    inline void SetCoipPoolId(const char* value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId.assign(value); }
-    inline DeleteCoipPoolRequest& WithCoipPoolId(const Aws::String& value) { SetCoipPoolId(value); return *this;}
-    inline DeleteCoipPoolRequest& WithCoipPoolId(Aws::String&& value) { SetCoipPoolId(std::move(value)); return *this;}
-    inline DeleteCoipPoolRequest& WithCoipPoolId(const char* value) { SetCoipPoolId(value); return *this;}
+    template<typename CoipPoolIdT = Aws::String>
+    void SetCoipPoolId(CoipPoolIdT&& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = std::forward<CoipPoolIdT>(value); }
+    template<typename CoipPoolIdT = Aws::String>
+    DeleteCoipPoolRequest& WithCoipPoolId(CoipPoolIdT&& value) { SetCoipPoolId(std::forward<CoipPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteCoipPoolRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_coipPoolId;
     bool m_coipPoolIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

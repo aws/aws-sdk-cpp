@@ -12,11 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterSnapshotRequest::DeleteClusterSnapshotRequest() : 
-    m_snapshotArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterSnapshotRequest::SerializePayload() const
 {
   return {};

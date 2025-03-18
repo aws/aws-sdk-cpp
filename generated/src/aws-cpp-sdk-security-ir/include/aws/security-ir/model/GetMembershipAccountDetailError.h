@@ -31,7 +31,7 @@ namespace Model
   class GetMembershipAccountDetailError
   {
   public:
-    AWS_SECURITYIR_API GetMembershipAccountDetailError();
+    AWS_SECURITYIR_API GetMembershipAccountDetailError() = default;
     AWS_SECURITYIR_API GetMembershipAccountDetailError(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API GetMembershipAccountDetailError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetMembershipAccountDetailError& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetMembershipAccountDetailError& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetMembershipAccountDetailError& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetMembershipAccountDetailError& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline GetMembershipAccountDetailError& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline GetMembershipAccountDetailError& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline GetMembershipAccountDetailError& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    GetMembershipAccountDetailError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline GetMembershipAccountDetailError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline GetMembershipAccountDetailError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline GetMembershipAccountDetailError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    GetMembershipAccountDetailError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

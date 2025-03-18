@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWorkflowRequest::GetWorkflowRequest() : 
-    m_workflowBuildVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowRequest::SerializePayload() const
 {
   return {};

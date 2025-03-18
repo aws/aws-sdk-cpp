@@ -39,7 +39,7 @@ namespace Model
   class Policy
   {
   public:
-    AWS_SECURITYHUB_API Policy();
+    AWS_SECURITYHUB_API Policy() = default;
     AWS_SECURITYHUB_API Policy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p> The Amazon Web Services service that the configuration policy applies to.
      * </p>
      */
-    inline const SecurityHubPolicy& GetSecurityHub() const{ return m_securityHub; }
+    inline const SecurityHubPolicy& GetSecurityHub() const { return m_securityHub; }
     inline bool SecurityHubHasBeenSet() const { return m_securityHubHasBeenSet; }
-    inline void SetSecurityHub(const SecurityHubPolicy& value) { m_securityHubHasBeenSet = true; m_securityHub = value; }
-    inline void SetSecurityHub(SecurityHubPolicy&& value) { m_securityHubHasBeenSet = true; m_securityHub = std::move(value); }
-    inline Policy& WithSecurityHub(const SecurityHubPolicy& value) { SetSecurityHub(value); return *this;}
-    inline Policy& WithSecurityHub(SecurityHubPolicy&& value) { SetSecurityHub(std::move(value)); return *this;}
+    template<typename SecurityHubT = SecurityHubPolicy>
+    void SetSecurityHub(SecurityHubT&& value) { m_securityHubHasBeenSet = true; m_securityHub = std::forward<SecurityHubT>(value); }
+    template<typename SecurityHubT = SecurityHubPolicy>
+    Policy& WithSecurityHub(SecurityHubT&& value) { SetSecurityHub(std::forward<SecurityHubT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PartnerAppConfig::PartnerAppConfig() : 
-    m_adminUsersHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
-{
-}
-
 PartnerAppConfig::PartnerAppConfig(JsonView jsonValue)
-  : PartnerAppConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ PartnerAppConfig& PartnerAppConfig::operator =(JsonView jsonValue)
     }
     m_adminUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arguments"))
   {
     Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
@@ -51,7 +43,6 @@ PartnerAppConfig& PartnerAppConfig::operator =(JsonView jsonValue)
     }
     m_argumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

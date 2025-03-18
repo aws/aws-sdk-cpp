@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SchedulerConfig::SchedulerConfig() : 
-    m_priorityClassesHasBeenSet(false),
-    m_fairShare(FairShare::NOT_SET),
-    m_fairShareHasBeenSet(false)
-{
-}
-
 SchedulerConfig::SchedulerConfig(JsonView jsonValue)
-  : SchedulerConfig()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SchedulerConfig& SchedulerConfig::operator =(JsonView jsonValue)
     }
     m_priorityClassesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FairShare"))
   {
     m_fairShare = FairShareMapper::GetFairShareForName(jsonValue.GetString("FairShare"));
-
     m_fairShareHasBeenSet = true;
   }
-
   return *this;
 }
 

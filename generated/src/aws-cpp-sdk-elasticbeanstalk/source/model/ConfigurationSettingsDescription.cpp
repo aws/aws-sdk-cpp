@@ -20,23 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ConfigurationSettingsDescription::ConfigurationSettingsDescription() : 
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
-{
-}
-
 ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode)
-  : ConfigurationSettingsDescription()
 {
   *this = xmlNode;
 }
@@ -86,7 +70,7 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
     XmlNode deploymentStatusNode = resultNode.FirstChild("DeploymentStatus");
     if(!deploymentStatusNode.IsNull())
     {
-      m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentStatusNode.GetText()).c_str()).c_str());
+      m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentStatusNode.GetText()).c_str()));
       m_deploymentStatusHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
@@ -105,6 +89,7 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
     if(!optionSettingsNode.IsNull())
     {
       XmlNode optionSettingsMember = optionSettingsNode.FirstChild("member");
+      m_optionSettingsHasBeenSet = !optionSettingsMember.IsNull();
       while(!optionSettingsMember.IsNull())
       {
         m_optionSettings.push_back(optionSettingsMember);

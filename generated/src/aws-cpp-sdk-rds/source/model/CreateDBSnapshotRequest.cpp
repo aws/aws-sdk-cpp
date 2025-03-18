@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateDBSnapshotRequest::CreateDBSnapshotRequest() : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

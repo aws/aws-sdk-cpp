@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbSecurityGroupDetails::AwsRdsDbSecurityGroupDetails() : 
-    m_dbSecurityGroupArnHasBeenSet(false),
-    m_dbSecurityGroupDescriptionHasBeenSet(false),
-    m_dbSecurityGroupNameHasBeenSet(false),
-    m_ec2SecurityGroupsHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsRdsDbSecurityGroupDetails::AwsRdsDbSecurityGroupDetails(JsonView jsonValue)
-  : AwsRdsDbSecurityGroupDetails()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ AwsRdsDbSecurityGroupDetails& AwsRdsDbSecurityGroupDetails::operator =(JsonView 
   if(jsonValue.ValueExists("DbSecurityGroupArn"))
   {
     m_dbSecurityGroupArn = jsonValue.GetString("DbSecurityGroupArn");
-
     m_dbSecurityGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSecurityGroupDescription"))
   {
     m_dbSecurityGroupDescription = jsonValue.GetString("DbSecurityGroupDescription");
-
     m_dbSecurityGroupDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSecurityGroupName"))
   {
     m_dbSecurityGroupName = jsonValue.GetString("DbSecurityGroupName");
-
     m_dbSecurityGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> ec2SecurityGroupsJsonList = jsonValue.GetArray("Ec2SecurityGroups");
@@ -67,7 +49,6 @@ AwsRdsDbSecurityGroupDetails& AwsRdsDbSecurityGroupDetails::operator =(JsonView 
     }
     m_ec2SecurityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRanges"))
   {
     Aws::Utils::Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
@@ -77,21 +58,16 @@ AwsRdsDbSecurityGroupDetails& AwsRdsDbSecurityGroupDetails::operator =(JsonView 
     }
     m_ipRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

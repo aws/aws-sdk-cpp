@@ -36,7 +36,7 @@ namespace Model
   class Signal
   {
   public:
-    AWS_GUARDDUTY_API Signal();
+    AWS_GUARDDUTY_API Signal() = default;
     AWS_GUARDDUTY_API Signal(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Signal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The unique identifier of the signal.</p>
      */
-    inline const Aws::String& GetUid() const{ return m_uid; }
+    inline const Aws::String& GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Aws::String& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Aws::String&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline void SetUid(const char* value) { m_uidHasBeenSet = true; m_uid.assign(value); }
-    inline Signal& WithUid(const Aws::String& value) { SetUid(value); return *this;}
-    inline Signal& WithUid(Aws::String&& value) { SetUid(std::move(value)); return *this;}
-    inline Signal& WithUid(const char* value) { SetUid(value); return *this;}
+    template<typename UidT = Aws::String>
+    void SetUid(UidT&& value) { m_uidHasBeenSet = true; m_uid = std::forward<UidT>(value); }
+    template<typename UidT = Aws::String>
+    Signal& WithUid(UidT&& value) { SetUid(std::forward<UidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +72,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3
      * Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p> </li> </ul>
      */
-    inline const SignalType& GetType() const{ return m_type; }
+    inline SignalType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SignalType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SignalType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Signal& WithType(const SignalType& value) { SetType(value); return *this;}
-    inline Signal& WithType(SignalType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SignalType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Signal& WithType(SignalType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the signal.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Signal& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Signal& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Signal& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Signal& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * <p>The name of the signal. For example, when signal type is
      * <code>FINDING</code>, the signal name is the name of the finding.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Signal& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Signal& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Signal& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Signal& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,24 +108,24 @@ namespace Model
      * <p>The timestamp when the first finding or activity related to this signal was
      * observed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Signal& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Signal& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Signal& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this signal was last observed.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline Signal& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline Signal& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    Signal& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +133,12 @@ namespace Model
      * <p>The timestamp when the first finding or activity related to this signal was
      * observed.</p>
      */
-    inline const Aws::Utils::DateTime& GetFirstSeenAt() const{ return m_firstSeenAt; }
+    inline const Aws::Utils::DateTime& GetFirstSeenAt() const { return m_firstSeenAt; }
     inline bool FirstSeenAtHasBeenSet() const { return m_firstSeenAtHasBeenSet; }
-    inline void SetFirstSeenAt(const Aws::Utils::DateTime& value) { m_firstSeenAtHasBeenSet = true; m_firstSeenAt = value; }
-    inline void SetFirstSeenAt(Aws::Utils::DateTime&& value) { m_firstSeenAtHasBeenSet = true; m_firstSeenAt = std::move(value); }
-    inline Signal& WithFirstSeenAt(const Aws::Utils::DateTime& value) { SetFirstSeenAt(value); return *this;}
-    inline Signal& WithFirstSeenAt(Aws::Utils::DateTime&& value) { SetFirstSeenAt(std::move(value)); return *this;}
+    template<typename FirstSeenAtT = Aws::Utils::DateTime>
+    void SetFirstSeenAt(FirstSeenAtT&& value) { m_firstSeenAtHasBeenSet = true; m_firstSeenAt = std::forward<FirstSeenAtT>(value); }
+    template<typename FirstSeenAtT = Aws::Utils::DateTime>
+    Signal& WithFirstSeenAt(FirstSeenAtT&& value) { SetFirstSeenAt(std::forward<FirstSeenAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,12 +146,12 @@ namespace Model
      * <p>The timestamp when the last finding or activity related to this signal was
      * observed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastSeenAt() const{ return m_lastSeenAt; }
+    inline const Aws::Utils::DateTime& GetLastSeenAt() const { return m_lastSeenAt; }
     inline bool LastSeenAtHasBeenSet() const { return m_lastSeenAtHasBeenSet; }
-    inline void SetLastSeenAt(const Aws::Utils::DateTime& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = value; }
-    inline void SetLastSeenAt(Aws::Utils::DateTime&& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = std::move(value); }
-    inline Signal& WithLastSeenAt(const Aws::Utils::DateTime& value) { SetLastSeenAt(value); return *this;}
-    inline Signal& WithLastSeenAt(Aws::Utils::DateTime&& value) { SetLastSeenAt(std::move(value)); return *this;}
+    template<typename LastSeenAtT = Aws::Utils::DateTime>
+    void SetLastSeenAt(LastSeenAtT&& value) { m_lastSeenAtHasBeenSet = true; m_lastSeenAt = std::forward<LastSeenAtT>(value); }
+    template<typename LastSeenAtT = Aws::Utils::DateTime>
+    Signal& WithLastSeenAt(LastSeenAtT&& value) { SetLastSeenAt(std::forward<LastSeenAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,7 +161,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
      * severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
      */
-    inline double GetSeverity() const{ return m_severity; }
+    inline double GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
     inline void SetSeverity(double value) { m_severityHasBeenSet = true; m_severity = value; }
     inline Signal& WithSeverity(double value) { SetSeverity(value); return *this;}
@@ -179,7 +171,7 @@ namespace Model
     /**
      * <p>The number of times this signal was observed.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline Signal& WithCount(int value) { SetCount(value); return *this;}
@@ -190,66 +182,63 @@ namespace Model
      * <p>Information about the unique identifiers of the resources involved in the
      * signal.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceUids() const{ return m_resourceUids; }
+    inline const Aws::Vector<Aws::String>& GetResourceUids() const { return m_resourceUids; }
     inline bool ResourceUidsHasBeenSet() const { return m_resourceUidsHasBeenSet; }
-    inline void SetResourceUids(const Aws::Vector<Aws::String>& value) { m_resourceUidsHasBeenSet = true; m_resourceUids = value; }
-    inline void SetResourceUids(Aws::Vector<Aws::String>&& value) { m_resourceUidsHasBeenSet = true; m_resourceUids = std::move(value); }
-    inline Signal& WithResourceUids(const Aws::Vector<Aws::String>& value) { SetResourceUids(value); return *this;}
-    inline Signal& WithResourceUids(Aws::Vector<Aws::String>&& value) { SetResourceUids(std::move(value)); return *this;}
-    inline Signal& AddResourceUids(const Aws::String& value) { m_resourceUidsHasBeenSet = true; m_resourceUids.push_back(value); return *this; }
-    inline Signal& AddResourceUids(Aws::String&& value) { m_resourceUidsHasBeenSet = true; m_resourceUids.push_back(std::move(value)); return *this; }
-    inline Signal& AddResourceUids(const char* value) { m_resourceUidsHasBeenSet = true; m_resourceUids.push_back(value); return *this; }
+    template<typename ResourceUidsT = Aws::Vector<Aws::String>>
+    void SetResourceUids(ResourceUidsT&& value) { m_resourceUidsHasBeenSet = true; m_resourceUids = std::forward<ResourceUidsT>(value); }
+    template<typename ResourceUidsT = Aws::Vector<Aws::String>>
+    Signal& WithResourceUids(ResourceUidsT&& value) { SetResourceUids(std::forward<ResourceUidsT>(value)); return *this;}
+    template<typename ResourceUidsT = Aws::String>
+    Signal& AddResourceUids(ResourceUidsT&& value) { m_resourceUidsHasBeenSet = true; m_resourceUids.emplace_back(std::forward<ResourceUidsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the IDs of the threat actors involved in the signal.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActorIds() const{ return m_actorIds; }
+    inline const Aws::Vector<Aws::String>& GetActorIds() const { return m_actorIds; }
     inline bool ActorIdsHasBeenSet() const { return m_actorIdsHasBeenSet; }
-    inline void SetActorIds(const Aws::Vector<Aws::String>& value) { m_actorIdsHasBeenSet = true; m_actorIds = value; }
-    inline void SetActorIds(Aws::Vector<Aws::String>&& value) { m_actorIdsHasBeenSet = true; m_actorIds = std::move(value); }
-    inline Signal& WithActorIds(const Aws::Vector<Aws::String>& value) { SetActorIds(value); return *this;}
-    inline Signal& WithActorIds(Aws::Vector<Aws::String>&& value) { SetActorIds(std::move(value)); return *this;}
-    inline Signal& AddActorIds(const Aws::String& value) { m_actorIdsHasBeenSet = true; m_actorIds.push_back(value); return *this; }
-    inline Signal& AddActorIds(Aws::String&& value) { m_actorIdsHasBeenSet = true; m_actorIds.push_back(std::move(value)); return *this; }
-    inline Signal& AddActorIds(const char* value) { m_actorIdsHasBeenSet = true; m_actorIds.push_back(value); return *this; }
+    template<typename ActorIdsT = Aws::Vector<Aws::String>>
+    void SetActorIds(ActorIdsT&& value) { m_actorIdsHasBeenSet = true; m_actorIds = std::forward<ActorIdsT>(value); }
+    template<typename ActorIdsT = Aws::Vector<Aws::String>>
+    Signal& WithActorIds(ActorIdsT&& value) { SetActorIds(std::forward<ActorIdsT>(value)); return *this;}
+    template<typename ActorIdsT = Aws::String>
+    Signal& AddActorIds(ActorIdsT&& value) { m_actorIdsHasBeenSet = true; m_actorIds.emplace_back(std::forward<ActorIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the endpoint IDs associated with this signal.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEndpointIds() const{ return m_endpointIds; }
+    inline const Aws::Vector<Aws::String>& GetEndpointIds() const { return m_endpointIds; }
     inline bool EndpointIdsHasBeenSet() const { return m_endpointIdsHasBeenSet; }
-    inline void SetEndpointIds(const Aws::Vector<Aws::String>& value) { m_endpointIdsHasBeenSet = true; m_endpointIds = value; }
-    inline void SetEndpointIds(Aws::Vector<Aws::String>&& value) { m_endpointIdsHasBeenSet = true; m_endpointIds = std::move(value); }
-    inline Signal& WithEndpointIds(const Aws::Vector<Aws::String>& value) { SetEndpointIds(value); return *this;}
-    inline Signal& WithEndpointIds(Aws::Vector<Aws::String>&& value) { SetEndpointIds(std::move(value)); return *this;}
-    inline Signal& AddEndpointIds(const Aws::String& value) { m_endpointIdsHasBeenSet = true; m_endpointIds.push_back(value); return *this; }
-    inline Signal& AddEndpointIds(Aws::String&& value) { m_endpointIdsHasBeenSet = true; m_endpointIds.push_back(std::move(value)); return *this; }
-    inline Signal& AddEndpointIds(const char* value) { m_endpointIdsHasBeenSet = true; m_endpointIds.push_back(value); return *this; }
+    template<typename EndpointIdsT = Aws::Vector<Aws::String>>
+    void SetEndpointIds(EndpointIdsT&& value) { m_endpointIdsHasBeenSet = true; m_endpointIds = std::forward<EndpointIdsT>(value); }
+    template<typename EndpointIdsT = Aws::Vector<Aws::String>>
+    Signal& WithEndpointIds(EndpointIdsT&& value) { SetEndpointIds(std::forward<EndpointIdsT>(value)); return *this;}
+    template<typename EndpointIdsT = Aws::String>
+    Signal& AddEndpointIds(EndpointIdsT&& value) { m_endpointIdsHasBeenSet = true; m_endpointIds.emplace_back(std::forward<EndpointIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the indicators associated with the signals.</p>
      */
-    inline const Aws::Vector<Indicator>& GetSignalIndicators() const{ return m_signalIndicators; }
+    inline const Aws::Vector<Indicator>& GetSignalIndicators() const { return m_signalIndicators; }
     inline bool SignalIndicatorsHasBeenSet() const { return m_signalIndicatorsHasBeenSet; }
-    inline void SetSignalIndicators(const Aws::Vector<Indicator>& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators = value; }
-    inline void SetSignalIndicators(Aws::Vector<Indicator>&& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators = std::move(value); }
-    inline Signal& WithSignalIndicators(const Aws::Vector<Indicator>& value) { SetSignalIndicators(value); return *this;}
-    inline Signal& WithSignalIndicators(Aws::Vector<Indicator>&& value) { SetSignalIndicators(std::move(value)); return *this;}
-    inline Signal& AddSignalIndicators(const Indicator& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators.push_back(value); return *this; }
-    inline Signal& AddSignalIndicators(Indicator&& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators.push_back(std::move(value)); return *this; }
+    template<typename SignalIndicatorsT = Aws::Vector<Indicator>>
+    void SetSignalIndicators(SignalIndicatorsT&& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators = std::forward<SignalIndicatorsT>(value); }
+    template<typename SignalIndicatorsT = Aws::Vector<Indicator>>
+    Signal& WithSignalIndicators(SignalIndicatorsT&& value) { SetSignalIndicators(std::forward<SignalIndicatorsT>(value)); return *this;}
+    template<typename SignalIndicatorsT = Indicator>
+    Signal& AddSignalIndicators(SignalIndicatorsT&& value) { m_signalIndicatorsHasBeenSet = true; m_signalIndicators.emplace_back(std::forward<SignalIndicatorsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_uid;
     bool m_uidHasBeenSet = false;
 
-    SignalType m_type;
+    SignalType m_type{SignalType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
@@ -258,22 +247,22 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_firstSeenAt;
+    Aws::Utils::DateTime m_firstSeenAt{};
     bool m_firstSeenAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSeenAt;
+    Aws::Utils::DateTime m_lastSeenAt{};
     bool m_lastSeenAtHasBeenSet = false;
 
-    double m_severity;
+    double m_severity{0.0};
     bool m_severityHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceUids;

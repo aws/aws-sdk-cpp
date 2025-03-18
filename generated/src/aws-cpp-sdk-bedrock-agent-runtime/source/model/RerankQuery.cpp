@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankQuery::RerankQuery() : 
-    m_textQueryHasBeenSet(false),
-    m_type(RerankQueryContentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RerankQuery::RerankQuery(JsonView jsonValue)
-  : RerankQuery()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RerankQuery& RerankQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textQuery"))
   {
     m_textQuery = jsonValue.GetObject("textQuery");
-
     m_textQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RerankQueryContentTypeMapper::GetRerankQueryContentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

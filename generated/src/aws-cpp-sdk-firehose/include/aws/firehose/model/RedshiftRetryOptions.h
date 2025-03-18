@@ -30,7 +30,7 @@ namespace Model
   class RedshiftRetryOptions
   {
   public:
-    AWS_FIREHOSE_API RedshiftRetryOptions();
+    AWS_FIREHOSE_API RedshiftRetryOptions() = default;
     AWS_FIREHOSE_API RedshiftRetryOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API RedshiftRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
      * takes longer than the current value.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

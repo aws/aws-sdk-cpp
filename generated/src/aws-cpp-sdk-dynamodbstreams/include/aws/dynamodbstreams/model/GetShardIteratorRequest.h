@@ -26,7 +26,7 @@ namespace Model
   class GetShardIteratorRequest : public DynamoDBStreamsRequest
   {
   public:
-    AWS_DYNAMODBSTREAMS_API GetShardIteratorRequest();
+    AWS_DYNAMODBSTREAMS_API GetShardIteratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline GetShardIteratorRequest& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline GetShardIteratorRequest& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    GetShardIteratorRequest& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The identifier of the shard. The iterator will be returned for this shard
      * ID.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
+    inline const Aws::String& GetShardId() const { return m_shardId; }
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-    inline GetShardIteratorRequest& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    GetShardIteratorRequest& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * Start reading just after the most recent stream record in the shard, so that you
      * always read the most recent data in the shard.</p> </li> </ul>
      */
-    inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
+    inline ShardIteratorType GetShardIteratorType() const { return m_shardIteratorType; }
     inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
-    inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
-    inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = std::move(value); }
-    inline GetShardIteratorRequest& WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
-    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
+    inline void SetShardIteratorType(ShardIteratorType value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
+    inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType value) { SetShardIteratorType(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The sequence number of a stream record in the shard from which to start
      * reading.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
-    inline GetShardIteratorRequest& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline GetShardIteratorRequest& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline GetShardIteratorRequest& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    GetShardIteratorRequest& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet = false;
 
-    ShardIteratorType m_shardIteratorType;
+    ShardIteratorType m_shardIteratorType{ShardIteratorType::NOT_SET};
     bool m_shardIteratorTypeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;

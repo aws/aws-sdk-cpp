@@ -18,15 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolVnfcResourceInfoMetadata::GetSolVnfcResourceInfoMetadata() : 
-    m_clusterHasBeenSet(false),
-    m_helmChartHasBeenSet(false),
-    m_nodeGroupHasBeenSet(false)
-{
-}
-
 GetSolVnfcResourceInfoMetadata::GetSolVnfcResourceInfoMetadata(JsonView jsonValue)
-  : GetSolVnfcResourceInfoMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GetSolVnfcResourceInfoMetadata& GetSolVnfcResourceInfoMetadata::operator =(JsonV
   if(jsonValue.ValueExists("cluster"))
   {
     m_cluster = jsonValue.GetString("cluster");
-
     m_clusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("helmChart"))
   {
     m_helmChart = jsonValue.GetString("helmChart");
-
     m_helmChartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeGroup"))
   {
     m_nodeGroup = jsonValue.GetString("nodeGroup");
-
     m_nodeGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

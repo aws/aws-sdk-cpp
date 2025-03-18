@@ -23,7 +23,7 @@ namespace Model
   class StartImportRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API StartImportRequest();
+    AWS_LEXMODELSV2_API StartImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
      * operation.</p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
+    inline const Aws::String& GetImportId() const { return m_importId; }
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
-    inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
-    inline StartImportRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline StartImportRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline StartImportRequest& WithImportId(const char* value) { SetImportId(value); return *this;}
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    StartImportRequest& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
-    inline const ImportResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
+    inline const ImportResourceSpecification& GetResourceSpecification() const { return m_resourceSpecification; }
     inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }
-    inline void SetResourceSpecification(const ImportResourceSpecification& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = value; }
-    inline void SetResourceSpecification(ImportResourceSpecification&& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = std::move(value); }
-    inline StartImportRequest& WithResourceSpecification(const ImportResourceSpecification& value) { SetResourceSpecification(value); return *this;}
-    inline StartImportRequest& WithResourceSpecification(ImportResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
+    template<typename ResourceSpecificationT = ImportResourceSpecification>
+    void SetResourceSpecification(ResourceSpecificationT&& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = std::forward<ResourceSpecificationT>(value); }
+    template<typename ResourceSpecificationT = ImportResourceSpecification>
+    StartImportRequest& WithResourceSpecification(ResourceSpecificationT&& value) { SetResourceSpecification(std::forward<ResourceSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * <code>FailOnConflict</code> existing resources are not overwritten and the
      * import fails.</p>
      */
-    inline const MergeStrategy& GetMergeStrategy() const{ return m_mergeStrategy; }
+    inline MergeStrategy GetMergeStrategy() const { return m_mergeStrategy; }
     inline bool MergeStrategyHasBeenSet() const { return m_mergeStrategyHasBeenSet; }
-    inline void SetMergeStrategy(const MergeStrategy& value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = value; }
-    inline void SetMergeStrategy(MergeStrategy&& value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = std::move(value); }
-    inline StartImportRequest& WithMergeStrategy(const MergeStrategy& value) { SetMergeStrategy(value); return *this;}
-    inline StartImportRequest& WithMergeStrategy(MergeStrategy&& value) { SetMergeStrategy(std::move(value)); return *this;}
+    inline void SetMergeStrategy(MergeStrategy value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = value; }
+    inline StartImportRequest& WithMergeStrategy(MergeStrategy value) { SetMergeStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * definition. You should always encrypt the zip archive to protect it during
      * transit between your site and Amazon Lex.</p>
      */
-    inline const Aws::String& GetFilePassword() const{ return m_filePassword; }
+    inline const Aws::String& GetFilePassword() const { return m_filePassword; }
     inline bool FilePasswordHasBeenSet() const { return m_filePasswordHasBeenSet; }
-    inline void SetFilePassword(const Aws::String& value) { m_filePasswordHasBeenSet = true; m_filePassword = value; }
-    inline void SetFilePassword(Aws::String&& value) { m_filePasswordHasBeenSet = true; m_filePassword = std::move(value); }
-    inline void SetFilePassword(const char* value) { m_filePasswordHasBeenSet = true; m_filePassword.assign(value); }
-    inline StartImportRequest& WithFilePassword(const Aws::String& value) { SetFilePassword(value); return *this;}
-    inline StartImportRequest& WithFilePassword(Aws::String&& value) { SetFilePassword(std::move(value)); return *this;}
-    inline StartImportRequest& WithFilePassword(const char* value) { SetFilePassword(value); return *this;}
+    template<typename FilePasswordT = Aws::String>
+    void SetFilePassword(FilePasswordT&& value) { m_filePasswordHasBeenSet = true; m_filePassword = std::forward<FilePasswordT>(value); }
+    template<typename FilePasswordT = Aws::String>
+    StartImportRequest& WithFilePassword(FilePasswordT&& value) { SetFilePassword(std::forward<FilePasswordT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +95,7 @@ namespace Model
     ImportResourceSpecification m_resourceSpecification;
     bool m_resourceSpecificationHasBeenSet = false;
 
-    MergeStrategy m_mergeStrategy;
+    MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
     bool m_mergeStrategyHasBeenSet = false;
 
     Aws::String m_filePassword;

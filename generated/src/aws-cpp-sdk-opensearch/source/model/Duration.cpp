@@ -18,16 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-Duration::Duration() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(TimeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 Duration::Duration(JsonView jsonValue)
-  : Duration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Duration& Duration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

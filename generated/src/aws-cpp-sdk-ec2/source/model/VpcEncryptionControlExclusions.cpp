@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEncryptionControlExclusions::VpcEncryptionControlExclusions() : 
-    m_internetGatewayHasBeenSet(false),
-    m_egressOnlyInternetGatewayHasBeenSet(false),
-    m_natGatewayHasBeenSet(false),
-    m_virtualPrivateGatewayHasBeenSet(false),
-    m_vpcPeeringHasBeenSet(false)
-{
-}
-
 VpcEncryptionControlExclusions::VpcEncryptionControlExclusions(const XmlNode& xmlNode)
-  : VpcEncryptionControlExclusions()
 {
   *this = xmlNode;
 }

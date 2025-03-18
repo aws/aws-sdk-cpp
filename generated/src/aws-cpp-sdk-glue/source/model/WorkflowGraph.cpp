@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-WorkflowGraph::WorkflowGraph() : 
-    m_nodesHasBeenSet(false),
-    m_edgesHasBeenSet(false)
-{
-}
-
 WorkflowGraph::WorkflowGraph(JsonView jsonValue)
-  : WorkflowGraph()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ WorkflowGraph& WorkflowGraph::operator =(JsonView jsonValue)
     }
     m_nodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edges"))
   {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
@@ -51,7 +43,6 @@ WorkflowGraph& WorkflowGraph::operator =(JsonView jsonValue)
     }
     m_edgesHasBeenSet = true;
   }
-
   return *this;
 }
 

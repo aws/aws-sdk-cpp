@@ -19,14 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ByteContentFile::ByteContentFile() : 
-    m_dataHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false)
-{
-}
-
 ByteContentFile::ByteContentFile(JsonView jsonValue)
-  : ByteContentFile()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ ByteContentFile& ByteContentFile::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaType"))
   {
     m_mediaType = jsonValue.GetString("mediaType");
-
     m_mediaTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

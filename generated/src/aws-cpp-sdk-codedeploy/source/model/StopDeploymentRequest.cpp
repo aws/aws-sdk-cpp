@@ -12,13 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDeploymentRequest::StopDeploymentRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_autoRollbackEnabled(false),
-    m_autoRollbackEnabledHasBeenSet(false)
-{
-}
-
 Aws::String StopDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

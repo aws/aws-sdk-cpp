@@ -42,7 +42,7 @@ namespace Model
   class ComputeEnvironmentOrder
   {
   public:
-    AWS_BATCH_API ComputeEnvironmentOrder();
+    AWS_BATCH_API ComputeEnvironmentOrder() = default;
     AWS_BATCH_API ComputeEnvironmentOrder(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ComputeEnvironmentOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,7 +55,7 @@ namespace Model
      * job queue, the compute environment with a lower <code>order</code> integer value
      * is tried for job placement first.</p>
      */
-    inline int GetOrder() const{ return m_order; }
+    inline int GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
     inline ComputeEnvironmentOrder& WithOrder(int value) { SetOrder(value); return *this;}
@@ -65,18 +65,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
-    inline const Aws::String& GetComputeEnvironment() const{ return m_computeEnvironment; }
+    inline const Aws::String& GetComputeEnvironment() const { return m_computeEnvironment; }
     inline bool ComputeEnvironmentHasBeenSet() const { return m_computeEnvironmentHasBeenSet; }
-    inline void SetComputeEnvironment(const Aws::String& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
-    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::move(value); }
-    inline void SetComputeEnvironment(const char* value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment.assign(value); }
-    inline ComputeEnvironmentOrder& WithComputeEnvironment(const Aws::String& value) { SetComputeEnvironment(value); return *this;}
-    inline ComputeEnvironmentOrder& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(std::move(value)); return *this;}
-    inline ComputeEnvironmentOrder& WithComputeEnvironment(const char* value) { SetComputeEnvironment(value); return *this;}
+    template<typename ComputeEnvironmentT = Aws::String>
+    void SetComputeEnvironment(ComputeEnvironmentT&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::forward<ComputeEnvironmentT>(value); }
+    template<typename ComputeEnvironmentT = Aws::String>
+    ComputeEnvironmentOrder& WithComputeEnvironment(ComputeEnvironmentT&& value) { SetComputeEnvironment(std::forward<ComputeEnvironmentT>(value)); return *this;}
     ///@}
   private:
 
-    int m_order;
+    int m_order{0};
     bool m_orderHasBeenSet = false;
 
     Aws::String m_computeEnvironment;

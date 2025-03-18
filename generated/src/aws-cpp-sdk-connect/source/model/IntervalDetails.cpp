@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-IntervalDetails::IntervalDetails() : 
-    m_timeZoneHasBeenSet(false),
-    m_intervalPeriod(IntervalPeriod::NOT_SET),
-    m_intervalPeriodHasBeenSet(false)
-{
-}
-
 IntervalDetails::IntervalDetails(JsonView jsonValue)
-  : IntervalDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IntervalDetails& IntervalDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetString("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntervalPeriod"))
   {
     m_intervalPeriod = IntervalPeriodMapper::GetIntervalPeriodForName(jsonValue.GetString("IntervalPeriod"));
-
     m_intervalPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSinkPolicyRequest::PutSinkPolicyRequest() : 
-    m_policyHasBeenSet(false),
-    m_sinkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String PutSinkPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

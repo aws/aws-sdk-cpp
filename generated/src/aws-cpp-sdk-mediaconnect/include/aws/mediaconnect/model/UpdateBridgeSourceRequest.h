@@ -27,7 +27,7 @@ namespace Model
   class UpdateBridgeSourceRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API UpdateBridgeSourceRequest();
+    AWS_MEDIACONNECT_API UpdateBridgeSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,48 +42,44 @@ namespace Model
     /**
      * The ARN of the bridge that you want to update.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline UpdateBridgeSourceRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline UpdateBridgeSourceRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline UpdateBridgeSourceRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    UpdateBridgeSourceRequest& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateBridgeFlowSourceRequest& GetFlowSource() const{ return m_flowSource; }
+    inline const UpdateBridgeFlowSourceRequest& GetFlowSource() const { return m_flowSource; }
     inline bool FlowSourceHasBeenSet() const { return m_flowSourceHasBeenSet; }
-    inline void SetFlowSource(const UpdateBridgeFlowSourceRequest& value) { m_flowSourceHasBeenSet = true; m_flowSource = value; }
-    inline void SetFlowSource(UpdateBridgeFlowSourceRequest&& value) { m_flowSourceHasBeenSet = true; m_flowSource = std::move(value); }
-    inline UpdateBridgeSourceRequest& WithFlowSource(const UpdateBridgeFlowSourceRequest& value) { SetFlowSource(value); return *this;}
-    inline UpdateBridgeSourceRequest& WithFlowSource(UpdateBridgeFlowSourceRequest&& value) { SetFlowSource(std::move(value)); return *this;}
+    template<typename FlowSourceT = UpdateBridgeFlowSourceRequest>
+    void SetFlowSource(FlowSourceT&& value) { m_flowSourceHasBeenSet = true; m_flowSource = std::forward<FlowSourceT>(value); }
+    template<typename FlowSourceT = UpdateBridgeFlowSourceRequest>
+    UpdateBridgeSourceRequest& WithFlowSource(FlowSourceT&& value) { SetFlowSource(std::forward<FlowSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateBridgeNetworkSourceRequest& GetNetworkSource() const{ return m_networkSource; }
+    inline const UpdateBridgeNetworkSourceRequest& GetNetworkSource() const { return m_networkSource; }
     inline bool NetworkSourceHasBeenSet() const { return m_networkSourceHasBeenSet; }
-    inline void SetNetworkSource(const UpdateBridgeNetworkSourceRequest& value) { m_networkSourceHasBeenSet = true; m_networkSource = value; }
-    inline void SetNetworkSource(UpdateBridgeNetworkSourceRequest&& value) { m_networkSourceHasBeenSet = true; m_networkSource = std::move(value); }
-    inline UpdateBridgeSourceRequest& WithNetworkSource(const UpdateBridgeNetworkSourceRequest& value) { SetNetworkSource(value); return *this;}
-    inline UpdateBridgeSourceRequest& WithNetworkSource(UpdateBridgeNetworkSourceRequest&& value) { SetNetworkSource(std::move(value)); return *this;}
+    template<typename NetworkSourceT = UpdateBridgeNetworkSourceRequest>
+    void SetNetworkSource(NetworkSourceT&& value) { m_networkSourceHasBeenSet = true; m_networkSource = std::forward<NetworkSourceT>(value); }
+    template<typename NetworkSourceT = UpdateBridgeNetworkSourceRequest>
+    UpdateBridgeSourceRequest& WithNetworkSource(NetworkSourceT&& value) { SetNetworkSource(std::forward<NetworkSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the source that you want to update.
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline UpdateBridgeSourceRequest& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline UpdateBridgeSourceRequest& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline UpdateBridgeSourceRequest& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    UpdateBridgeSourceRequest& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
   private:
 

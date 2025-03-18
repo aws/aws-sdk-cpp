@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMonitorRequest::GetMonitorRequest() : 
-    m_monitorIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMonitorRequest::SerializePayload() const
 {
   return {};

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMonitoringSubscription2020_05_31Result::GetMonitoringSubscription2020_05_31Result()
-{
-}
-
 GetMonitoringSubscription2020_05_31Result::GetMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetMonitoringSubscription2020_05_31Result& GetMonitoringSubscription2020_05_31Re
   if(!resultNode.IsNull())
   {
     m_monitoringSubscription = resultNode;
+    m_monitoringSubscriptionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetMonitoringSubscription2020_05_31Result& GetMonitoringSubscription2020_05_31Re
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

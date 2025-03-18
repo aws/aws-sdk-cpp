@@ -12,10 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataLakeOrganizationConfigurationRequest::GetDataLakeOrganizationConfigurationRequest()
-{
-}
-
 Aws::String GetDataLakeOrganizationConfigurationRequest::SerializePayload() const
 {
   return {};

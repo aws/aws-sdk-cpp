@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianOverviewSummary::RoutePedestrianOverviewSummary() : 
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
-{
-}
-
 RoutePedestrianOverviewSummary::RoutePedestrianOverviewSummary(JsonView jsonValue)
-  : RoutePedestrianOverviewSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RoutePedestrianOverviewSummary& RoutePedestrianOverviewSummary::operator =(JsonV
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-TargetResource::TargetResource() : 
-    m_assetIdHasBeenSet(false)
-{
-}
-
 TargetResource::TargetResource(JsonView jsonValue)
-  : TargetResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetResource& TargetResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeclarativePoliciesReport::DeclarativePoliciesReport() : 
-    m_reportIdHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(ReportState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DeclarativePoliciesReport::DeclarativePoliciesReport(const XmlNode& xmlNode)
-  : DeclarativePoliciesReport()
 {
   *this = xmlNode;
 }
@@ -84,13 +70,14 @@ DeclarativePoliciesReport& DeclarativePoliciesReport::operator =(const XmlNode& 
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = ReportStateMapper::GetReportStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ReportStateMapper::GetReportStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

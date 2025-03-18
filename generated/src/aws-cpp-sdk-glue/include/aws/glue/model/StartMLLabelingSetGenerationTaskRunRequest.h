@@ -21,7 +21,7 @@ namespace Model
   class StartMLLabelingSetGenerationTaskRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API StartMLLabelingSetGenerationTaskRunRequest();
+    AWS_GLUE_API StartMLLabelingSetGenerationTaskRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier of the machine learning transform.</p>
      */
-    inline const Aws::String& GetTransformId() const{ return m_transformId; }
+    inline const Aws::String& GetTransformId() const { return m_transformId; }
     inline bool TransformIdHasBeenSet() const { return m_transformIdHasBeenSet; }
-    inline void SetTransformId(const Aws::String& value) { m_transformIdHasBeenSet = true; m_transformId = value; }
-    inline void SetTransformId(Aws::String&& value) { m_transformIdHasBeenSet = true; m_transformId = std::move(value); }
-    inline void SetTransformId(const char* value) { m_transformIdHasBeenSet = true; m_transformId.assign(value); }
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    template<typename TransformIdT = Aws::String>
+    void SetTransformId(TransformIdT&& value) { m_transformIdHasBeenSet = true; m_transformId = std::forward<TransformIdT>(value); }
+    template<typename TransformIdT = Aws::String>
+    StartMLLabelingSetGenerationTaskRunRequest& WithTransformId(TransformIdT&& value) { SetTransformId(std::forward<TransformIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the
      * labeling set.</p>
      */
-    inline const Aws::String& GetOutputS3Path() const{ return m_outputS3Path; }
+    inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
     inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
-    inline void SetOutputS3Path(const Aws::String& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = value; }
-    inline void SetOutputS3Path(Aws::String&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::move(value); }
-    inline void SetOutputS3Path(const char* value) { m_outputS3PathHasBeenSet = true; m_outputS3Path.assign(value); }
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithOutputS3Path(const Aws::String& value) { SetOutputS3Path(value); return *this;}
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithOutputS3Path(Aws::String&& value) { SetOutputS3Path(std::move(value)); return *this;}
-    inline StartMLLabelingSetGenerationTaskRunRequest& WithOutputS3Path(const char* value) { SetOutputS3Path(value); return *this;}
+    template<typename OutputS3PathT = Aws::String>
+    void SetOutputS3Path(OutputS3PathT&& value) { m_outputS3PathHasBeenSet = true; m_outputS3Path = std::forward<OutputS3PathT>(value); }
+    template<typename OutputS3PathT = Aws::String>
+    StartMLLabelingSetGenerationTaskRunRequest& WithOutputS3Path(OutputS3PathT&& value) { SetOutputS3Path(std::forward<OutputS3PathT>(value)); return *this;}
     ///@}
   private:
 

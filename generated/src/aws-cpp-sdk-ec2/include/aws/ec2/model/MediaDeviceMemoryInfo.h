@@ -30,7 +30,7 @@ namespace Model
   class MediaDeviceMemoryInfo
   {
   public:
-    AWS_EC2_API MediaDeviceMemoryInfo();
+    AWS_EC2_API MediaDeviceMemoryInfo() = default;
     AWS_EC2_API MediaDeviceMemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API MediaDeviceMemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The size of the memory available to each media accelerator, in MiB.</p>
      */
-    inline int GetSizeInMiB() const{ return m_sizeInMiB; }
+    inline int GetSizeInMiB() const { return m_sizeInMiB; }
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
     inline void SetSizeInMiB(int value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
     inline MediaDeviceMemoryInfo& WithSizeInMiB(int value) { SetSizeInMiB(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInMiB;
+    int m_sizeInMiB{0};
     bool m_sizeInMiBHasBeenSet = false;
   };
 

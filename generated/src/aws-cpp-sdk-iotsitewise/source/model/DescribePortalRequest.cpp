@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePortalRequest::DescribePortalRequest() : 
-    m_portalIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePortalRequest::SerializePayload() const
 {
   return {};

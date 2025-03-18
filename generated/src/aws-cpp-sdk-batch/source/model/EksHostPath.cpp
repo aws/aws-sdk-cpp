@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksHostPath::EksHostPath() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 EksHostPath::EksHostPath(JsonView jsonValue)
-  : EksHostPath()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EksHostPath& EksHostPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

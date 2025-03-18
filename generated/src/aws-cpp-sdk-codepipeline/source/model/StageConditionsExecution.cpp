@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StageConditionsExecution::StageConditionsExecution() : 
-    m_status(ConditionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 StageConditionsExecution::StageConditionsExecution(JsonView jsonValue)
-  : StageConditionsExecution()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StageConditionsExecution& StageConditionsExecution::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConditionExecutionStatusMapper::GetConditionExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-VolumeRecoveryPointInfo::VolumeRecoveryPointInfo() : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeRecoveryPointTimeHasBeenSet(false)
-{
-}
-
 VolumeRecoveryPointInfo::VolumeRecoveryPointInfo(JsonView jsonValue)
-  : VolumeRecoveryPointInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ VolumeRecoveryPointInfo& VolumeRecoveryPointInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
     m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInBytes"))
   {
     m_volumeSizeInBytes = jsonValue.GetInt64("VolumeSizeInBytes");
-
     m_volumeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeUsageInBytes"))
   {
     m_volumeUsageInBytes = jsonValue.GetInt64("VolumeUsageInBytes");
-
     m_volumeUsageInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeRecoveryPointTime"))
   {
     m_volumeRecoveryPointTime = jsonValue.GetString("VolumeRecoveryPointTime");
-
     m_volumeRecoveryPointTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

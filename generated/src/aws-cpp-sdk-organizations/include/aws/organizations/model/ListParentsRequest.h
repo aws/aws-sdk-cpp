@@ -21,7 +21,7 @@ namespace Model
   class ListParentsRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API ListParentsRequest();
+    AWS_ORGANIZATIONS_API ListParentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
      * digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetChildId() const{ return m_childId; }
+    inline const Aws::String& GetChildId() const { return m_childId; }
     inline bool ChildIdHasBeenSet() const { return m_childIdHasBeenSet; }
-    inline void SetChildId(const Aws::String& value) { m_childIdHasBeenSet = true; m_childId = value; }
-    inline void SetChildId(Aws::String&& value) { m_childIdHasBeenSet = true; m_childId = std::move(value); }
-    inline void SetChildId(const char* value) { m_childIdHasBeenSet = true; m_childId.assign(value); }
-    inline ListParentsRequest& WithChildId(const Aws::String& value) { SetChildId(value); return *this;}
-    inline ListParentsRequest& WithChildId(Aws::String&& value) { SetChildId(std::move(value)); return *this;}
-    inline ListParentsRequest& WithChildId(const char* value) { SetChildId(value); return *this;}
+    template<typename ChildIdT = Aws::String>
+    void SetChildId(ChildIdT&& value) { m_childIdHasBeenSet = true; m_childId = std::forward<ChildIdT>(value); }
+    template<typename ChildIdT = Aws::String>
+    ListParentsRequest& WithChildId(ChildIdT&& value) { SetChildId(std::forward<ChildIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListParentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListParentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListParentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListParentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +82,7 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListParentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,7 +95,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeStackRefactorRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackRefactorRequest();
+    AWS_CLOUDFORMATION_API DescribeStackRefactorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID associated with the stack refactor created from the
      * <a>CreateStackRefactor</a> action.</p>
      */
-    inline const Aws::String& GetStackRefactorId() const{ return m_stackRefactorId; }
+    inline const Aws::String& GetStackRefactorId() const { return m_stackRefactorId; }
     inline bool StackRefactorIdHasBeenSet() const { return m_stackRefactorIdHasBeenSet; }
-    inline void SetStackRefactorId(const Aws::String& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = value; }
-    inline void SetStackRefactorId(Aws::String&& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = std::move(value); }
-    inline void SetStackRefactorId(const char* value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId.assign(value); }
-    inline DescribeStackRefactorRequest& WithStackRefactorId(const Aws::String& value) { SetStackRefactorId(value); return *this;}
-    inline DescribeStackRefactorRequest& WithStackRefactorId(Aws::String&& value) { SetStackRefactorId(std::move(value)); return *this;}
-    inline DescribeStackRefactorRequest& WithStackRefactorId(const char* value) { SetStackRefactorId(value); return *this;}
+    template<typename StackRefactorIdT = Aws::String>
+    void SetStackRefactorId(StackRefactorIdT&& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = std::forward<StackRefactorIdT>(value); }
+    template<typename StackRefactorIdT = Aws::String>
+    DescribeStackRefactorRequest& WithStackRefactorId(StackRefactorIdT&& value) { SetStackRefactorId(std::forward<StackRefactorIdT>(value)); return *this;}
     ///@}
   private:
 

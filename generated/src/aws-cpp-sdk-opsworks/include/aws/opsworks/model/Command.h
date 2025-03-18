@@ -31,7 +31,7 @@ namespace Model
   class Command
   {
   public:
-    AWS_OPSWORKS_API Command();
+    AWS_OPSWORKS_API Command() = default;
     AWS_OPSWORKS_API Command(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Command& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,84 +41,72 @@ namespace Model
     /**
      * <p>The command ID.</p>
      */
-    inline const Aws::String& GetCommandId() const{ return m_commandId; }
+    inline const Aws::String& GetCommandId() const { return m_commandId; }
     inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
-    inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
-    inline void SetCommandId(const char* value) { m_commandIdHasBeenSet = true; m_commandId.assign(value); }
-    inline Command& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
-    inline Command& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
-    inline Command& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+    template<typename CommandIdT = Aws::String>
+    void SetCommandId(CommandIdT&& value) { m_commandIdHasBeenSet = true; m_commandId = std::forward<CommandIdT>(value); }
+    template<typename CommandIdT = Aws::String>
+    Command& WithCommandId(CommandIdT&& value) { SetCommandId(std::forward<CommandIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance where the command was executed.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline Command& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline Command& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline Command& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    Command& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The command deployment ID.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline Command& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline Command& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline Command& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    Command& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date and time when the command was run.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
-    inline Command& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline Command& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline Command& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    Command& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date and time when the command was acknowledged.</p>
      */
-    inline const Aws::String& GetAcknowledgedAt() const{ return m_acknowledgedAt; }
+    inline const Aws::String& GetAcknowledgedAt() const { return m_acknowledgedAt; }
     inline bool AcknowledgedAtHasBeenSet() const { return m_acknowledgedAtHasBeenSet; }
-    inline void SetAcknowledgedAt(const Aws::String& value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt = value; }
-    inline void SetAcknowledgedAt(Aws::String&& value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt = std::move(value); }
-    inline void SetAcknowledgedAt(const char* value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt.assign(value); }
-    inline Command& WithAcknowledgedAt(const Aws::String& value) { SetAcknowledgedAt(value); return *this;}
-    inline Command& WithAcknowledgedAt(Aws::String&& value) { SetAcknowledgedAt(std::move(value)); return *this;}
-    inline Command& WithAcknowledgedAt(const char* value) { SetAcknowledgedAt(value); return *this;}
+    template<typename AcknowledgedAtT = Aws::String>
+    void SetAcknowledgedAt(AcknowledgedAtT&& value) { m_acknowledgedAtHasBeenSet = true; m_acknowledgedAt = std::forward<AcknowledgedAtT>(value); }
+    template<typename AcknowledgedAtT = Aws::String>
+    Command& WithAcknowledgedAt(AcknowledgedAtT&& value) { SetAcknowledgedAt(std::forward<AcknowledgedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date when the command completed.</p>
      */
-    inline const Aws::String& GetCompletedAt() const{ return m_completedAt; }
+    inline const Aws::String& GetCompletedAt() const { return m_completedAt; }
     inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
-    inline void SetCompletedAt(const Aws::String& value) { m_completedAtHasBeenSet = true; m_completedAt = value; }
-    inline void SetCompletedAt(Aws::String&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::move(value); }
-    inline void SetCompletedAt(const char* value) { m_completedAtHasBeenSet = true; m_completedAt.assign(value); }
-    inline Command& WithCompletedAt(const Aws::String& value) { SetCompletedAt(value); return *this;}
-    inline Command& WithCompletedAt(Aws::String&& value) { SetCompletedAt(std::move(value)); return *this;}
-    inline Command& WithCompletedAt(const char* value) { SetCompletedAt(value); return *this;}
+    template<typename CompletedAtT = Aws::String>
+    void SetCompletedAt(CompletedAtT&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::forward<CompletedAtT>(value); }
+    template<typename CompletedAtT = Aws::String>
+    Command& WithCompletedAt(CompletedAtT&& value) { SetCompletedAt(std::forward<CompletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,21 +114,19 @@ namespace Model
      * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
      * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Command& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Command& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Command& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Command& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The command exit code.</p>
      */
-    inline int GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const { return m_exitCode; }
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
     inline Command& WithExitCode(int value) { SetExitCode(value); return *this;}
@@ -150,14 +136,12 @@ namespace Model
     /**
      * <p>The URL of the command log.</p>
      */
-    inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
+    inline const Aws::String& GetLogUrl() const { return m_logUrl; }
     inline bool LogUrlHasBeenSet() const { return m_logUrlHasBeenSet; }
-    inline void SetLogUrl(const Aws::String& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
-    inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::move(value); }
-    inline void SetLogUrl(const char* value) { m_logUrlHasBeenSet = true; m_logUrl.assign(value); }
-    inline Command& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
-    inline Command& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
-    inline Command& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
+    template<typename LogUrlT = Aws::String>
+    void SetLogUrl(LogUrlT&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::forward<LogUrlT>(value); }
+    template<typename LogUrlT = Aws::String>
+    Command& WithLogUrl(LogUrlT&& value) { SetLogUrl(std::forward<LogUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +155,12 @@ namespace Model
      * <p> <code>update_custom_cookbooks</code> </p> </li> <li> <p>
      * <code>update_dependencies</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Command& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Command& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Command& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Command& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -203,7 +185,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    int m_exitCode;
+    int m_exitCode{0};
     bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_logUrl;

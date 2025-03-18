@@ -12,14 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePartnerInputRequest::CreatePartnerInputRequest() : 
-    m_inputIdHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePartnerInputRequest::SerializePayload() const
 {
   JsonValue payload;

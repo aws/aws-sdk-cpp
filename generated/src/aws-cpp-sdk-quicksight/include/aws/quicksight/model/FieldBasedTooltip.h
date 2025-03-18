@@ -34,7 +34,7 @@ namespace Model
   class FieldBasedTooltip
   {
   public:
-    AWS_QUICKSIGHT_API FieldBasedTooltip();
+    AWS_QUICKSIGHT_API FieldBasedTooltip() = default;
     AWS_QUICKSIGHT_API FieldBasedTooltip(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FieldBasedTooltip& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The visibility of <code>Show aggregations</code>.</p>
      */
-    inline const Visibility& GetAggregationVisibility() const{ return m_aggregationVisibility; }
+    inline Visibility GetAggregationVisibility() const { return m_aggregationVisibility; }
     inline bool AggregationVisibilityHasBeenSet() const { return m_aggregationVisibilityHasBeenSet; }
-    inline void SetAggregationVisibility(const Visibility& value) { m_aggregationVisibilityHasBeenSet = true; m_aggregationVisibility = value; }
-    inline void SetAggregationVisibility(Visibility&& value) { m_aggregationVisibilityHasBeenSet = true; m_aggregationVisibility = std::move(value); }
-    inline FieldBasedTooltip& WithAggregationVisibility(const Visibility& value) { SetAggregationVisibility(value); return *this;}
-    inline FieldBasedTooltip& WithAggregationVisibility(Visibility&& value) { SetAggregationVisibility(std::move(value)); return *this;}
+    inline void SetAggregationVisibility(Visibility value) { m_aggregationVisibilityHasBeenSet = true; m_aggregationVisibility = value; }
+    inline FieldBasedTooltip& WithAggregationVisibility(Visibility value) { SetAggregationVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +57,31 @@ namespace Model
      * </li> <li> <p> <code>PRIMARY_VALUE</code>: Uses primary value as the title.</p>
      * </li> </ul>
      */
-    inline const TooltipTitleType& GetTooltipTitleType() const{ return m_tooltipTitleType; }
+    inline TooltipTitleType GetTooltipTitleType() const { return m_tooltipTitleType; }
     inline bool TooltipTitleTypeHasBeenSet() const { return m_tooltipTitleTypeHasBeenSet; }
-    inline void SetTooltipTitleType(const TooltipTitleType& value) { m_tooltipTitleTypeHasBeenSet = true; m_tooltipTitleType = value; }
-    inline void SetTooltipTitleType(TooltipTitleType&& value) { m_tooltipTitleTypeHasBeenSet = true; m_tooltipTitleType = std::move(value); }
-    inline FieldBasedTooltip& WithTooltipTitleType(const TooltipTitleType& value) { SetTooltipTitleType(value); return *this;}
-    inline FieldBasedTooltip& WithTooltipTitleType(TooltipTitleType&& value) { SetTooltipTitleType(std::move(value)); return *this;}
+    inline void SetTooltipTitleType(TooltipTitleType value) { m_tooltipTitleTypeHasBeenSet = true; m_tooltipTitleType = value; }
+    inline FieldBasedTooltip& WithTooltipTitleType(TooltipTitleType value) { SetTooltipTitleType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fields configuration in the tooltip.</p>
      */
-    inline const Aws::Vector<TooltipItem>& GetTooltipFields() const{ return m_tooltipFields; }
+    inline const Aws::Vector<TooltipItem>& GetTooltipFields() const { return m_tooltipFields; }
     inline bool TooltipFieldsHasBeenSet() const { return m_tooltipFieldsHasBeenSet; }
-    inline void SetTooltipFields(const Aws::Vector<TooltipItem>& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields = value; }
-    inline void SetTooltipFields(Aws::Vector<TooltipItem>&& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields = std::move(value); }
-    inline FieldBasedTooltip& WithTooltipFields(const Aws::Vector<TooltipItem>& value) { SetTooltipFields(value); return *this;}
-    inline FieldBasedTooltip& WithTooltipFields(Aws::Vector<TooltipItem>&& value) { SetTooltipFields(std::move(value)); return *this;}
-    inline FieldBasedTooltip& AddTooltipFields(const TooltipItem& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields.push_back(value); return *this; }
-    inline FieldBasedTooltip& AddTooltipFields(TooltipItem&& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields.push_back(std::move(value)); return *this; }
+    template<typename TooltipFieldsT = Aws::Vector<TooltipItem>>
+    void SetTooltipFields(TooltipFieldsT&& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields = std::forward<TooltipFieldsT>(value); }
+    template<typename TooltipFieldsT = Aws::Vector<TooltipItem>>
+    FieldBasedTooltip& WithTooltipFields(TooltipFieldsT&& value) { SetTooltipFields(std::forward<TooltipFieldsT>(value)); return *this;}
+    template<typename TooltipFieldsT = TooltipItem>
+    FieldBasedTooltip& AddTooltipFields(TooltipFieldsT&& value) { m_tooltipFieldsHasBeenSet = true; m_tooltipFields.emplace_back(std::forward<TooltipFieldsT>(value)); return *this; }
     ///@}
   private:
 
-    Visibility m_aggregationVisibility;
+    Visibility m_aggregationVisibility{Visibility::NOT_SET};
     bool m_aggregationVisibilityHasBeenSet = false;
 
-    TooltipTitleType m_tooltipTitleType;
+    TooltipTitleType m_tooltipTitleType{TooltipTitleType::NOT_SET};
     bool m_tooltipTitleTypeHasBeenSet = false;
 
     Aws::Vector<TooltipItem> m_tooltipFields;

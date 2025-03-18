@@ -28,35 +28,35 @@ namespace Model
   class VerifyOTPMessageResult
   {
   public:
-    AWS_PINPOINT_API VerifyOTPMessageResult();
+    AWS_PINPOINT_API VerifyOTPMessageResult() = default;
     AWS_PINPOINT_API VerifyOTPMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API VerifyOTPMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const VerificationResponse& GetVerificationResponse() const{ return m_verificationResponse; }
-    inline void SetVerificationResponse(const VerificationResponse& value) { m_verificationResponse = value; }
-    inline void SetVerificationResponse(VerificationResponse&& value) { m_verificationResponse = std::move(value); }
-    inline VerifyOTPMessageResult& WithVerificationResponse(const VerificationResponse& value) { SetVerificationResponse(value); return *this;}
-    inline VerifyOTPMessageResult& WithVerificationResponse(VerificationResponse&& value) { SetVerificationResponse(std::move(value)); return *this;}
+    inline const VerificationResponse& GetVerificationResponse() const { return m_verificationResponse; }
+    template<typename VerificationResponseT = VerificationResponse>
+    void SetVerificationResponse(VerificationResponseT&& value) { m_verificationResponseHasBeenSet = true; m_verificationResponse = std::forward<VerificationResponseT>(value); }
+    template<typename VerificationResponseT = VerificationResponse>
+    VerifyOTPMessageResult& WithVerificationResponse(VerificationResponseT&& value) { SetVerificationResponse(std::forward<VerificationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifyOTPMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifyOTPMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifyOTPMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifyOTPMessageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VerificationResponse m_verificationResponse;
+    bool m_verificationResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class ContentAssociationContents
   {
   public:
-    AWS_QCONNECT_API ContentAssociationContents();
+    AWS_QCONNECT_API ContentAssociationContents() = default;
     AWS_QCONNECT_API ContentAssociationContents(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ContentAssociationContents& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The data of the step-by-step guide association.</p>
      */
-    inline const AmazonConnectGuideAssociationData& GetAmazonConnectGuideAssociation() const{ return m_amazonConnectGuideAssociation; }
+    inline const AmazonConnectGuideAssociationData& GetAmazonConnectGuideAssociation() const { return m_amazonConnectGuideAssociation; }
     inline bool AmazonConnectGuideAssociationHasBeenSet() const { return m_amazonConnectGuideAssociationHasBeenSet; }
-    inline void SetAmazonConnectGuideAssociation(const AmazonConnectGuideAssociationData& value) { m_amazonConnectGuideAssociationHasBeenSet = true; m_amazonConnectGuideAssociation = value; }
-    inline void SetAmazonConnectGuideAssociation(AmazonConnectGuideAssociationData&& value) { m_amazonConnectGuideAssociationHasBeenSet = true; m_amazonConnectGuideAssociation = std::move(value); }
-    inline ContentAssociationContents& WithAmazonConnectGuideAssociation(const AmazonConnectGuideAssociationData& value) { SetAmazonConnectGuideAssociation(value); return *this;}
-    inline ContentAssociationContents& WithAmazonConnectGuideAssociation(AmazonConnectGuideAssociationData&& value) { SetAmazonConnectGuideAssociation(std::move(value)); return *this;}
+    template<typename AmazonConnectGuideAssociationT = AmazonConnectGuideAssociationData>
+    void SetAmazonConnectGuideAssociation(AmazonConnectGuideAssociationT&& value) { m_amazonConnectGuideAssociationHasBeenSet = true; m_amazonConnectGuideAssociation = std::forward<AmazonConnectGuideAssociationT>(value); }
+    template<typename AmazonConnectGuideAssociationT = AmazonConnectGuideAssociationData>
+    ContentAssociationContents& WithAmazonConnectGuideAssociation(AmazonConnectGuideAssociationT&& value) { SetAmazonConnectGuideAssociation(std::forward<AmazonConnectGuideAssociationT>(value)); return *this;}
     ///@}
   private:
 

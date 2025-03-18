@@ -33,7 +33,7 @@ namespace Model
   class MeshSpec
   {
   public:
-    AWS_APPMESH_API MeshSpec();
+    AWS_APPMESH_API MeshSpec() = default;
     AWS_APPMESH_API MeshSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API MeshSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,22 +43,22 @@ namespace Model
     /**
      * <p>The egress filter rules for the service mesh.</p>
      */
-    inline const EgressFilter& GetEgressFilter() const{ return m_egressFilter; }
+    inline const EgressFilter& GetEgressFilter() const { return m_egressFilter; }
     inline bool EgressFilterHasBeenSet() const { return m_egressFilterHasBeenSet; }
-    inline void SetEgressFilter(const EgressFilter& value) { m_egressFilterHasBeenSet = true; m_egressFilter = value; }
-    inline void SetEgressFilter(EgressFilter&& value) { m_egressFilterHasBeenSet = true; m_egressFilter = std::move(value); }
-    inline MeshSpec& WithEgressFilter(const EgressFilter& value) { SetEgressFilter(value); return *this;}
-    inline MeshSpec& WithEgressFilter(EgressFilter&& value) { SetEgressFilter(std::move(value)); return *this;}
+    template<typename EgressFilterT = EgressFilter>
+    void SetEgressFilter(EgressFilterT&& value) { m_egressFilterHasBeenSet = true; m_egressFilter = std::forward<EgressFilterT>(value); }
+    template<typename EgressFilterT = EgressFilter>
+    MeshSpec& WithEgressFilter(EgressFilterT&& value) { SetEgressFilter(std::forward<EgressFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MeshServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
+    inline const MeshServiceDiscovery& GetServiceDiscovery() const { return m_serviceDiscovery; }
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
-    inline void SetServiceDiscovery(const MeshServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
-    inline void SetServiceDiscovery(MeshServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
-    inline MeshSpec& WithServiceDiscovery(const MeshServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
-    inline MeshSpec& WithServiceDiscovery(MeshServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
+    template<typename ServiceDiscoveryT = MeshServiceDiscovery>
+    void SetServiceDiscovery(ServiceDiscoveryT&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::forward<ServiceDiscoveryT>(value); }
+    template<typename ServiceDiscoveryT = MeshServiceDiscovery>
+    MeshSpec& WithServiceDiscovery(ServiceDiscoveryT&& value) { SetServiceDiscovery(std::forward<ServiceDiscoveryT>(value)); return *this;}
     ///@}
   private:
 

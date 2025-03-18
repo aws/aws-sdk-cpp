@@ -12,27 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOpsItemRequest::CreateOpsItemRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_opsItemTypeHasBeenSet(false),
-    m_operationalDataHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_relatedOpsItemsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_actualStartTimeHasBeenSet(false),
-    m_actualEndTimeHasBeenSet(false),
-    m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateOpsItemRequest::SerializePayload() const
 {
   JsonValue payload;

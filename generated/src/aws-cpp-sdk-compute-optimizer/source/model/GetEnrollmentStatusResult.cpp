@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnrollmentStatusResult::GetEnrollmentStatusResult() : 
-    m_status(Status::NOT_SET),
-    m_memberAccountsEnrolled(false),
-    m_numberOfMemberAccountsOptedIn(0)
-{
-}
-
 GetEnrollmentStatusResult::GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEnrollmentStatusResult()
 {
   *this = result;
 }
@@ -36,39 +28,35 @@ GetEnrollmentStatusResult& GetEnrollmentStatusResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberAccountsEnrolled"))
   {
     m_memberAccountsEnrolled = jsonValue.GetBool("memberAccountsEnrolled");
-
+    m_memberAccountsEnrolledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
-
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfMemberAccountsOptedIn"))
   {
     m_numberOfMemberAccountsOptedIn = jsonValue.GetInteger("numberOfMemberAccountsOptedIn");
-
+    m_numberOfMemberAccountsOptedInHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

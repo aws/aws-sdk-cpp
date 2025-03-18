@@ -32,7 +32,7 @@ namespace Model
   class Contributor
   {
   public:
-    AWS_SHIELD_API Contributor();
+    AWS_SHIELD_API Contributor() = default;
     AWS_SHIELD_API Contributor(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Contributor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the
      * <code>Name</code> could be <code>United States</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Contributor& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Contributor& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Contributor& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Contributor& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The contribution of this contributor expressed in <a>Protection</a> units.
      * For example <code>10,000</code>.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline Contributor& WithValue(long long value) { SetValue(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

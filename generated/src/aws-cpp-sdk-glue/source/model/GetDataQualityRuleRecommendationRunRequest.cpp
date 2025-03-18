@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataQualityRuleRecommendationRunRequest::GetDataQualityRuleRecommendationRunRequest() : 
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataQualityRuleRecommendationRunRequest::SerializePayload() const
 {
   JsonValue payload;

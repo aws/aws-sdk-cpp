@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LineageSqlQueryRunDetails::LineageSqlQueryRunDetails() : 
-    m_errorMessagesHasBeenSet(false),
-    m_numQueriesFailed(0),
-    m_numQueriesFailedHasBeenSet(false),
-    m_queryEndTimeHasBeenSet(false),
-    m_queryStartTimeHasBeenSet(false),
-    m_totalQueriesProcessed(0),
-    m_totalQueriesProcessedHasBeenSet(false)
-{
-}
-
 LineageSqlQueryRunDetails::LineageSqlQueryRunDetails(JsonView jsonValue)
-  : LineageSqlQueryRunDetails()
 {
   *this = jsonValue;
 }
@@ -46,35 +34,26 @@ LineageSqlQueryRunDetails& LineageSqlQueryRunDetails::operator =(JsonView jsonVa
     }
     m_errorMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numQueriesFailed"))
   {
     m_numQueriesFailed = jsonValue.GetInteger("numQueriesFailed");
-
     m_numQueriesFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryEndTime"))
   {
     m_queryEndTime = jsonValue.GetDouble("queryEndTime");
-
     m_queryEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryStartTime"))
   {
     m_queryStartTime = jsonValue.GetDouble("queryStartTime");
-
     m_queryStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalQueriesProcessed"))
   {
     m_totalQueriesProcessed = jsonValue.GetInteger("totalQueriesProcessed");
-
     m_totalQueriesProcessedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ApplicationCostProfiler
 namespace Model
 {
 
-SourceS3Location::SourceS3Location() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_region(S3BucketRegion::NOT_SET),
-    m_regionHasBeenSet(false)
-{
-}
-
 SourceS3Location::SourceS3Location(JsonView jsonValue)
-  : SourceS3Location()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SourceS3Location& SourceS3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = S3BucketRegionMapper::GetS3BucketRegionForName(jsonValue.GetString("region"));
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

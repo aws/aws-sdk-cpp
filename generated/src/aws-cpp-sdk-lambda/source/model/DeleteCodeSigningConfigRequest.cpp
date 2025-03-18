@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCodeSigningConfigRequest::DeleteCodeSigningConfigRequest() : 
-    m_codeSigningConfigArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCodeSigningConfigRequest::SerializePayload() const
 {
   return {};

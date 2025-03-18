@@ -18,17 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListIndex::BatchListIndex() : 
-    m_rangesOnIndexedValuesHasBeenSet(false),
-    m_indexReferenceHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 BatchListIndex::BatchListIndex(JsonView jsonValue)
-  : BatchListIndex()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ BatchListIndex& BatchListIndex::operator =(JsonView jsonValue)
     }
     m_rangesOnIndexedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexReference"))
   {
     m_indexReference = jsonValue.GetObject("IndexReference");
-
     m_indexReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

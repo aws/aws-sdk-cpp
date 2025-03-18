@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAlarmsRequest::GetAlarmsRequest() : 
-    m_alarmNameHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_monitoredResourceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetAlarmsRequest::SerializePayload() const
 {
   JsonValue payload;

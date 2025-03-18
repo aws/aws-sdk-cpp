@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-GrammarSlotTypeSource::GrammarSlotTypeSource() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3ObjectKeyHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 GrammarSlotTypeSource::GrammarSlotTypeSource(JsonView jsonValue)
-  : GrammarSlotTypeSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GrammarSlotTypeSource& GrammarSlotTypeSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ObjectKey"))
   {
     m_s3ObjectKey = jsonValue.GetString("s3ObjectKey");
-
     m_s3ObjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class FolderConfiguration
   {
   public:
-    AWS_WORKMAIL_API FolderConfiguration();
+    AWS_WORKMAIL_API FolderConfiguration() = default;
     AWS_WORKMAIL_API FolderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API FolderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The folder name.</p>
      */
-    inline const FolderName& GetName() const{ return m_name; }
+    inline FolderName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const FolderName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(FolderName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline FolderConfiguration& WithName(const FolderName& value) { SetName(value); return *this;}
-    inline FolderConfiguration& WithName(FolderName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(FolderName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline FolderConfiguration& WithName(FolderName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,30 @@ namespace Model
      * <p>The action to take on the folder contents at the end of the folder
      * configuration period.</p>
      */
-    inline const RetentionAction& GetAction() const{ return m_action; }
+    inline RetentionAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RetentionAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RetentionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline FolderConfiguration& WithAction(const RetentionAction& value) { SetAction(value); return *this;}
-    inline FolderConfiguration& WithAction(RetentionAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(RetentionAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline FolderConfiguration& WithAction(RetentionAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days for which the folder-configuration action applies.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline FolderConfiguration& WithPeriod(int value) { SetPeriod(value); return *this;}
     ///@}
   private:
 
-    FolderName m_name;
+    FolderName m_name{FolderName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    RetentionAction m_action;
+    RetentionAction m_action{RetentionAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
   };
 

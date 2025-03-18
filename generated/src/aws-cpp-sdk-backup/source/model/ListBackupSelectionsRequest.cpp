@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBackupSelectionsRequest::ListBackupSelectionsRequest() : 
-    m_backupPlanIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListBackupSelectionsRequest::SerializePayload() const
 {
   return {};

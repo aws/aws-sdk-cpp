@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAddonSubscriptionRequest::GetAddonSubscriptionRequest() : 
-    m_addonSubscriptionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAddonSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

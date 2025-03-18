@@ -18,19 +18,7 @@ namespace IoTSecureTunneling
 namespace Model
 {
 
-TunnelSummary::TunnelSummary() : 
-    m_tunnelIdHasBeenSet(false),
-    m_tunnelArnHasBeenSet(false),
-    m_status(TunnelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 TunnelSummary::TunnelSummary(JsonView jsonValue)
-  : TunnelSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ TunnelSummary& TunnelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tunnelId"))
   {
     m_tunnelId = jsonValue.GetString("tunnelId");
-
     m_tunnelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tunnelArn"))
   {
     m_tunnelArn = jsonValue.GetString("tunnelArn");
-
     m_tunnelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TunnelStatusMapper::GetTunnelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MarketplaceDeployment
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_fieldNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComparisonFormatConfiguration::ComparisonFormatConfiguration() : 
-    m_numberDisplayFormatConfigurationHasBeenSet(false),
-    m_percentageDisplayFormatConfigurationHasBeenSet(false)
-{
-}
-
 ComparisonFormatConfiguration::ComparisonFormatConfiguration(JsonView jsonValue)
-  : ComparisonFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ComparisonFormatConfiguration& ComparisonFormatConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("NumberDisplayFormatConfiguration"))
   {
     m_numberDisplayFormatConfiguration = jsonValue.GetObject("NumberDisplayFormatConfiguration");
-
     m_numberDisplayFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentageDisplayFormatConfiguration"))
   {
     m_percentageDisplayFormatConfiguration = jsonValue.GetObject("PercentageDisplayFormatConfiguration");
-
     m_percentageDisplayFormatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

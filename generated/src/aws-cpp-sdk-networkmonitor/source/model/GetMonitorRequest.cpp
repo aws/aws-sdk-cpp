@@ -12,11 +12,6 @@ using namespace Aws::NetworkMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMonitorRequest::GetMonitorRequest() : 
-    m_monitorNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMonitorRequest::SerializePayload() const
 {
   return {};

@@ -18,23 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ExportTask::ExportTask() : 
-    m_taskIdHasBeenSet(false),
-    m_taskNameHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPrefixHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_executionInfoHasBeenSet(false)
-{
-}
-
 ExportTask::ExportTask(JsonView jsonValue)
-  : ExportTask()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ExportTask& ExportTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskName"))
   {
     m_taskName = jsonValue.GetString("taskName");
-
     m_taskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetInt64("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetInt64("to");
-
     m_toHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPrefix"))
   {
     m_destinationPrefix = jsonValue.GetString("destinationPrefix");
-
     m_destinationPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionInfo"))
   {
     m_executionInfo = jsonValue.GetObject("executionInfo");
-
     m_executionInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansUtilizationAggregates::SavingsPlansUtilizationAggregates() : 
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
-{
-}
-
 SavingsPlansUtilizationAggregates::SavingsPlansUtilizationAggregates(JsonView jsonValue)
-  : SavingsPlansUtilizationAggregates()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SavingsPlansUtilizationAggregates& SavingsPlansUtilizationAggregates::operator =
   if(jsonValue.ValueExists("Utilization"))
   {
     m_utilization = jsonValue.GetObject("Utilization");
-
     m_utilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Savings"))
   {
     m_savings = jsonValue.GetObject("Savings");
-
     m_savingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedCommitment"))
   {
     m_amortizedCommitment = jsonValue.GetObject("AmortizedCommitment");
-
     m_amortizedCommitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

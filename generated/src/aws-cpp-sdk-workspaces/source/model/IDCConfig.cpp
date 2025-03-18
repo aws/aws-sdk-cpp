@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-IDCConfig::IDCConfig() : 
-    m_instanceArnHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 IDCConfig::IDCConfig(JsonView jsonValue)
-  : IDCConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IDCConfig& IDCConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class AllowListStatus
   {
   public:
-    AWS_MACIE2_API AllowListStatus();
+    AWS_MACIE2_API AllowListStatus() = default;
     AWS_MACIE2_API AllowListStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API AllowListStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -73,12 +73,10 @@ namespace Model
      * Wait a few minutes and then try again. A list can also have this status if it's
      * encrypted with a key that Amazon S3 and Macie can't access or use.</p></li></ul>
      */
-    inline const AllowListStatusCode& GetCode() const{ return m_code; }
+    inline AllowListStatusCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const AllowListStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(AllowListStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline AllowListStatus& WithCode(const AllowListStatusCode& value) { SetCode(value); return *this;}
-    inline AllowListStatus& WithCode(AllowListStatusCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(AllowListStatusCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline AllowListStatus& WithCode(AllowListStatusCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -87,18 +85,16 @@ namespace Model
      * value to provide additional information about an error that occurred when Macie
      * tried to access and use the list's criteria.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AllowListStatus& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AllowListStatus& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AllowListStatus& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AllowListStatus& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    AllowListStatusCode m_code;
+    AllowListStatusCode m_code{AllowListStatusCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_description;

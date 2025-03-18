@@ -12,11 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQueueRequest::DeleteQueueRequest() : 
-    m_queueUrlHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueueRequest::SerializePayload() const
 {
   JsonValue payload;

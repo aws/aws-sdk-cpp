@@ -34,7 +34,7 @@ namespace Model
   class GetComplianceSummaryByResourceTypeResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult();
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult() = default;
     AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,30 +46,30 @@ namespace Model
      * numbers are returned for each resource type. The maximum number returned is
      * 100.</p>
      */
-    inline const Aws::Vector<ComplianceSummaryByResourceType>& GetComplianceSummariesByResourceType() const{ return m_complianceSummariesByResourceType; }
-    inline void SetComplianceSummariesByResourceType(const Aws::Vector<ComplianceSummaryByResourceType>& value) { m_complianceSummariesByResourceType = value; }
-    inline void SetComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { m_complianceSummariesByResourceType = std::move(value); }
-    inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(const Aws::Vector<ComplianceSummaryByResourceType>& value) { SetComplianceSummariesByResourceType(value); return *this;}
-    inline GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(Aws::Vector<ComplianceSummaryByResourceType>&& value) { SetComplianceSummariesByResourceType(std::move(value)); return *this;}
-    inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(const ComplianceSummaryByResourceType& value) { m_complianceSummariesByResourceType.push_back(value); return *this; }
-    inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummaryByResourceType&& value) { m_complianceSummariesByResourceType.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComplianceSummaryByResourceType>& GetComplianceSummariesByResourceType() const { return m_complianceSummariesByResourceType; }
+    template<typename ComplianceSummariesByResourceTypeT = Aws::Vector<ComplianceSummaryByResourceType>>
+    void SetComplianceSummariesByResourceType(ComplianceSummariesByResourceTypeT&& value) { m_complianceSummariesByResourceTypeHasBeenSet = true; m_complianceSummariesByResourceType = std::forward<ComplianceSummariesByResourceTypeT>(value); }
+    template<typename ComplianceSummariesByResourceTypeT = Aws::Vector<ComplianceSummaryByResourceType>>
+    GetComplianceSummaryByResourceTypeResult& WithComplianceSummariesByResourceType(ComplianceSummariesByResourceTypeT&& value) { SetComplianceSummariesByResourceType(std::forward<ComplianceSummariesByResourceTypeT>(value)); return *this;}
+    template<typename ComplianceSummariesByResourceTypeT = ComplianceSummaryByResourceType>
+    GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummariesByResourceTypeT&& value) { m_complianceSummariesByResourceTypeHasBeenSet = true; m_complianceSummariesByResourceType.emplace_back(std::forward<ComplianceSummariesByResourceTypeT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetComplianceSummaryByResourceTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetComplianceSummaryByResourceTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetComplianceSummaryByResourceTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetComplianceSummaryByResourceTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComplianceSummaryByResourceType> m_complianceSummariesByResourceType;
+    bool m_complianceSummariesByResourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

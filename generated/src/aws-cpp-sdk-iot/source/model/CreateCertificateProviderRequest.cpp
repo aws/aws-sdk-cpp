@@ -12,16 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCertificateProviderRequest::CreateCertificateProviderRequest() : 
-    m_certificateProviderNameHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_accountDefaultForOperationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCertificateProviderRequest::SerializePayload() const
 {
   JsonValue payload;

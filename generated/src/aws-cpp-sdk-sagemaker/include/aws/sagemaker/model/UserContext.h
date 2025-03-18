@@ -34,7 +34,7 @@ namespace Model
   class UserContext
   {
   public:
-    AWS_SAGEMAKER_API UserContext();
+    AWS_SAGEMAKER_API UserContext() = default;
     AWS_SAGEMAKER_API UserContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API UserContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
      */
-    inline const Aws::String& GetUserProfileArn() const{ return m_userProfileArn; }
+    inline const Aws::String& GetUserProfileArn() const { return m_userProfileArn; }
     inline bool UserProfileArnHasBeenSet() const { return m_userProfileArnHasBeenSet; }
-    inline void SetUserProfileArn(const Aws::String& value) { m_userProfileArnHasBeenSet = true; m_userProfileArn = value; }
-    inline void SetUserProfileArn(Aws::String&& value) { m_userProfileArnHasBeenSet = true; m_userProfileArn = std::move(value); }
-    inline void SetUserProfileArn(const char* value) { m_userProfileArnHasBeenSet = true; m_userProfileArn.assign(value); }
-    inline UserContext& WithUserProfileArn(const Aws::String& value) { SetUserProfileArn(value); return *this;}
-    inline UserContext& WithUserProfileArn(Aws::String&& value) { SetUserProfileArn(std::move(value)); return *this;}
-    inline UserContext& WithUserProfileArn(const char* value) { SetUserProfileArn(value); return *this;}
+    template<typename UserProfileArnT = Aws::String>
+    void SetUserProfileArn(UserProfileArnT&& value) { m_userProfileArnHasBeenSet = true; m_userProfileArn = std::forward<UserProfileArnT>(value); }
+    template<typename UserProfileArnT = Aws::String>
+    UserContext& WithUserProfileArn(UserProfileArnT&& value) { SetUserProfileArn(std::forward<UserProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user's profile.</p>
      */
-    inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
+    inline const Aws::String& GetUserProfileName() const { return m_userProfileName; }
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
-    inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
-    inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
-    inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
-    inline UserContext& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-    inline UserContext& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-    inline UserContext& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
+    template<typename UserProfileNameT = Aws::String>
+    void SetUserProfileName(UserProfileNameT&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::forward<UserProfileNameT>(value); }
+    template<typename UserProfileNameT = Aws::String>
+    UserContext& WithUserProfileName(UserProfileNameT&& value) { SetUserProfileName(std::forward<UserProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain associated with the user.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline UserContext& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline UserContext& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline UserContext& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    UserContext& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * associated with model package groups, model packages, and project entities
      * only.</p>
      */
-    inline const IamIdentity& GetIamIdentity() const{ return m_iamIdentity; }
+    inline const IamIdentity& GetIamIdentity() const { return m_iamIdentity; }
     inline bool IamIdentityHasBeenSet() const { return m_iamIdentityHasBeenSet; }
-    inline void SetIamIdentity(const IamIdentity& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = value; }
-    inline void SetIamIdentity(IamIdentity&& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = std::move(value); }
-    inline UserContext& WithIamIdentity(const IamIdentity& value) { SetIamIdentity(value); return *this;}
-    inline UserContext& WithIamIdentity(IamIdentity&& value) { SetIamIdentity(std::move(value)); return *this;}
+    template<typename IamIdentityT = IamIdentity>
+    void SetIamIdentity(IamIdentityT&& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = std::forward<IamIdentityT>(value); }
+    template<typename IamIdentityT = IamIdentity>
+    UserContext& WithIamIdentity(IamIdentityT&& value) { SetIamIdentity(std::forward<IamIdentityT>(value)); return *this;}
     ///@}
   private:
 

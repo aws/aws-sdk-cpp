@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FileFilter::FileFilter() : 
-    m_fileArnHasBeenSet(false)
-{
-}
-
 FileFilter::FileFilter(JsonView jsonValue)
-  : FileFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FileFilter& FileFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileArn"))
   {
     m_fileArn = jsonValue.GetString("fileArn");
-
     m_fileArnHasBeenSet = true;
   }
-
   return *this;
 }
 

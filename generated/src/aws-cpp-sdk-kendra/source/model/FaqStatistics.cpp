@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FaqStatistics::FaqStatistics() : 
-    m_indexedQuestionAnswersCount(0),
-    m_indexedQuestionAnswersCountHasBeenSet(false)
-{
-}
-
 FaqStatistics::FaqStatistics(JsonView jsonValue)
-  : FaqStatistics()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FaqStatistics& FaqStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IndexedQuestionAnswersCount"))
   {
     m_indexedQuestionAnswersCount = jsonValue.GetInteger("IndexedQuestionAnswersCount");
-
     m_indexedQuestionAnswersCountHasBeenSet = true;
   }
-
   return *this;
 }
 

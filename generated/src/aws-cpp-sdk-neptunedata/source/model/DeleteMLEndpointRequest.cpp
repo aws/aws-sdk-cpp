@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteMLEndpointRequest::DeleteMLEndpointRequest() : 
-    m_idHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_clean(false),
-    m_cleanHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMLEndpointRequest::SerializePayload() const
 {
   return {};

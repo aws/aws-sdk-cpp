@@ -12,14 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptMatchRequest::AcceptMatchRequest() : 
-    m_ticketIdHasBeenSet(false),
-    m_playerIdsHasBeenSet(false),
-    m_acceptanceType(AcceptanceType::NOT_SET),
-    m_acceptanceTypeHasBeenSet(false)
-{
-}
-
 Aws::String AcceptMatchRequest::SerializePayload() const
 {
   JsonValue payload;

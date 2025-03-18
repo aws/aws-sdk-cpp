@@ -18,22 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Theme::Theme() : 
-    m_stackNameHasBeenSet(false),
-    m_state(ThemeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_themeTitleTextHasBeenSet(false),
-    m_themeStyling(ThemeStyling::NOT_SET),
-    m_themeStylingHasBeenSet(false),
-    m_themeFooterLinksHasBeenSet(false),
-    m_themeOrganizationLogoURLHasBeenSet(false),
-    m_themeFaviconURLHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 Theme::Theme(JsonView jsonValue)
-  : Theme()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ Theme& Theme::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ThemeStateMapper::GetThemeStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeTitleText"))
   {
     m_themeTitleText = jsonValue.GetString("ThemeTitleText");
-
     m_themeTitleTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeStyling"))
   {
     m_themeStyling = ThemeStylingMapper::GetThemeStylingForName(jsonValue.GetString("ThemeStyling"));
-
     m_themeStylingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeFooterLinks"))
   {
     Aws::Utils::Array<JsonView> themeFooterLinksJsonList = jsonValue.GetArray("ThemeFooterLinks");
@@ -77,28 +54,21 @@ Theme& Theme::operator =(JsonView jsonValue)
     }
     m_themeFooterLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeOrganizationLogoURL"))
   {
     m_themeOrganizationLogoURL = jsonValue.GetString("ThemeOrganizationLogoURL");
-
     m_themeOrganizationLogoURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeFaviconURL"))
   {
     m_themeFaviconURL = jsonValue.GetString("ThemeFaviconURL");
-
     m_themeFaviconURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AmpConfiguration
   {
   public:
-    AWS_PROMETHEUSSERVICE_API AmpConfiguration();
+    AWS_PROMETHEUSSERVICE_API AmpConfiguration() = default;
     AWS_PROMETHEUSSERVICE_API AmpConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API AmpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
-    inline const Aws::String& GetWorkspaceArn() const{ return m_workspaceArn; }
+    inline const Aws::String& GetWorkspaceArn() const { return m_workspaceArn; }
     inline bool WorkspaceArnHasBeenSet() const { return m_workspaceArnHasBeenSet; }
-    inline void SetWorkspaceArn(const Aws::String& value) { m_workspaceArnHasBeenSet = true; m_workspaceArn = value; }
-    inline void SetWorkspaceArn(Aws::String&& value) { m_workspaceArnHasBeenSet = true; m_workspaceArn = std::move(value); }
-    inline void SetWorkspaceArn(const char* value) { m_workspaceArnHasBeenSet = true; m_workspaceArn.assign(value); }
-    inline AmpConfiguration& WithWorkspaceArn(const Aws::String& value) { SetWorkspaceArn(value); return *this;}
-    inline AmpConfiguration& WithWorkspaceArn(Aws::String&& value) { SetWorkspaceArn(std::move(value)); return *this;}
-    inline AmpConfiguration& WithWorkspaceArn(const char* value) { SetWorkspaceArn(value); return *this;}
+    template<typename WorkspaceArnT = Aws::String>
+    void SetWorkspaceArn(WorkspaceArnT&& value) { m_workspaceArnHasBeenSet = true; m_workspaceArn = std::forward<WorkspaceArnT>(value); }
+    template<typename WorkspaceArnT = Aws::String>
+    AmpConfiguration& WithWorkspaceArn(WorkspaceArnT&& value) { SetWorkspaceArn(std::forward<WorkspaceArnT>(value)); return *this;}
     ///@}
   private:
 

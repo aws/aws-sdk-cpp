@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNetworkProfileResult::CreateNetworkProfileResult()
-{
-}
-
 CreateNetworkProfileResult::CreateNetworkProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateNetworkProfileResult& CreateNetworkProfileResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("networkProfile"))
   {
     m_networkProfile = jsonValue.GetObject("networkProfile");
-
+    m_networkProfileHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

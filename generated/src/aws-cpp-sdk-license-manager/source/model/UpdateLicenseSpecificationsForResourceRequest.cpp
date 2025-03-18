@@ -12,13 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLicenseSpecificationsForResourceRequest::UpdateLicenseSpecificationsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_addLicenseSpecificationsHasBeenSet(false),
-    m_removeLicenseSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLicenseSpecificationsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;

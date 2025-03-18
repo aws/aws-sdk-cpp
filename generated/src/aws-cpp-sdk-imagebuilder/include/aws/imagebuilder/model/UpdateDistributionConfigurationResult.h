@@ -27,7 +27,7 @@ namespace Model
   class UpdateDistributionConfigurationResult
   {
   public:
-    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult();
+    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult() = default;
     AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API UpdateDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,22 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDistributionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDistributionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDistributionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDistributionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client token that uniquely identifies the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline UpdateDistributionConfigurationResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateDistributionConfigurationResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateDistributionConfigurationResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateDistributionConfigurationResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,21 +59,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that was
      * updated by this request.</p>
      */
-    inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
-    inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArn = value; }
-    inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArn = std::move(value); }
-    inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArn.assign(value); }
-    inline UpdateDistributionConfigurationResult& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
-    inline UpdateDistributionConfigurationResult& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
-    inline UpdateDistributionConfigurationResult& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
+    inline const Aws::String& GetDistributionConfigurationArn() const { return m_distributionConfigurationArn; }
+    template<typename DistributionConfigurationArnT = Aws::String>
+    void SetDistributionConfigurationArn(DistributionConfigurationArnT&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::forward<DistributionConfigurationArnT>(value); }
+    template<typename DistributionConfigurationArnT = Aws::String>
+    UpdateDistributionConfigurationResult& WithDistributionConfigurationArn(DistributionConfigurationArnT&& value) { SetDistributionConfigurationArn(std::forward<DistributionConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_distributionConfigurationArn;
+    bool m_distributionConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

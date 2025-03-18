@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Storage::Storage() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 Storage::Storage(const XmlNode& xmlNode)
-  : Storage()
 {
   *this = xmlNode;
 }

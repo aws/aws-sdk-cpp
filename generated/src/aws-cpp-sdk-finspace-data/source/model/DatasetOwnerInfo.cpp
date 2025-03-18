@@ -18,15 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-DatasetOwnerInfo::DatasetOwnerInfo() : 
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 DatasetOwnerInfo::DatasetOwnerInfo(JsonView jsonValue)
-  : DatasetOwnerInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatasetOwnerInfo& DatasetOwnerInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("phoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

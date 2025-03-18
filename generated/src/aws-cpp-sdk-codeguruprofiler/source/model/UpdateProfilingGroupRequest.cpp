@@ -12,12 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProfilingGroupRequest::UpdateProfilingGroupRequest() : 
-    m_agentOrchestrationConfigHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProfilingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

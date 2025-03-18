@@ -25,7 +25,7 @@ namespace Model
   class DeleteAgentActionGroupRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API DeleteAgentActionGroupRequest();
+    AWS_BEDROCKAGENT_API DeleteAgentActionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The unique identifier of the action group to delete.</p>
      */
-    inline const Aws::String& GetActionGroupId() const{ return m_actionGroupId; }
+    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
     inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
-    inline void SetActionGroupId(const Aws::String& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = value; }
-    inline void SetActionGroupId(Aws::String&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::move(value); }
-    inline void SetActionGroupId(const char* value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId.assign(value); }
-    inline DeleteAgentActionGroupRequest& WithActionGroupId(const Aws::String& value) { SetActionGroupId(value); return *this;}
-    inline DeleteAgentActionGroupRequest& WithActionGroupId(Aws::String&& value) { SetActionGroupId(std::move(value)); return *this;}
-    inline DeleteAgentActionGroupRequest& WithActionGroupId(const char* value) { SetActionGroupId(value); return *this;}
+    template<typename ActionGroupIdT = Aws::String>
+    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
+    template<typename ActionGroupIdT = Aws::String>
+    DeleteAgentActionGroupRequest& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent that the action group belongs to.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline DeleteAgentActionGroupRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline DeleteAgentActionGroupRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline DeleteAgentActionGroupRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    DeleteAgentActionGroupRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the agent that the action group belongs to.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline DeleteAgentActionGroupRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline DeleteAgentActionGroupRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline DeleteAgentActionGroupRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    DeleteAgentActionGroupRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +80,7 @@ namespace Model
      * resource is in use. If you set it to <code>true</code>, the resource will be
      * deleted even if the resource is in use.</p>
      */
-    inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
+    inline bool GetSkipResourceInUseCheck() const { return m_skipResourceInUseCheck; }
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
     inline DeleteAgentActionGroupRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
@@ -102,7 +96,7 @@ namespace Model
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
 
-    bool m_skipResourceInUseCheck;
+    bool m_skipResourceInUseCheck{false};
     bool m_skipResourceInUseCheckHasBeenSet = false;
   };
 

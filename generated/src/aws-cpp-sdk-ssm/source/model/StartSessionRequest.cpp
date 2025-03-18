@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSessionRequest::StartSessionRequest() : 
-    m_targetHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String StartSessionRequest::SerializePayload() const
 {
   JsonValue payload;

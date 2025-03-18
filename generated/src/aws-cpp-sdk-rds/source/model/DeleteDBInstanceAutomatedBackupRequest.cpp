@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBInstanceAutomatedBackupRequest::DeleteDBInstanceAutomatedBackupRequest() : 
-    m_dbiResourceIdHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBInstanceAutomatedBackupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

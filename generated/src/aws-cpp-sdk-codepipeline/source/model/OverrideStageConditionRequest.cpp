@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OverrideStageConditionRequest::OverrideStageConditionRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_conditionType(ConditionType::NOT_SET),
-    m_conditionTypeHasBeenSet(false)
-{
-}
-
 Aws::String OverrideStageConditionRequest::SerializePayload() const
 {
   JsonValue payload;

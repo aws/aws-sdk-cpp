@@ -33,7 +33,7 @@ namespace Model
   class VoiceTemplateRequest
   {
   public:
-    AWS_PINPOINT_API VoiceTemplateRequest();
+    AWS_PINPOINT_API VoiceTemplateRequest() = default;
     AWS_PINPOINT_API VoiceTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API VoiceTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The text of the script to use in messages that are based on the message
      * template, in plain text format.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline VoiceTemplateRequest& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline VoiceTemplateRequest& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    VoiceTemplateRequest& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * template, you can override these defaults with message-specific and
      * address-specific variables and values.</p>
      */
-    inline const Aws::String& GetDefaultSubstitutions() const{ return m_defaultSubstitutions; }
+    inline const Aws::String& GetDefaultSubstitutions() const { return m_defaultSubstitutions; }
     inline bool DefaultSubstitutionsHasBeenSet() const { return m_defaultSubstitutionsHasBeenSet; }
-    inline void SetDefaultSubstitutions(const Aws::String& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = value; }
-    inline void SetDefaultSubstitutions(Aws::String&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::move(value); }
-    inline void SetDefaultSubstitutions(const char* value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions.assign(value); }
-    inline VoiceTemplateRequest& WithDefaultSubstitutions(const Aws::String& value) { SetDefaultSubstitutions(value); return *this;}
-    inline VoiceTemplateRequest& WithDefaultSubstitutions(Aws::String&& value) { SetDefaultSubstitutions(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& WithDefaultSubstitutions(const char* value) { SetDefaultSubstitutions(value); return *this;}
+    template<typename DefaultSubstitutionsT = Aws::String>
+    void SetDefaultSubstitutions(DefaultSubstitutionsT&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::forward<DefaultSubstitutionsT>(value); }
+    template<typename DefaultSubstitutionsT = Aws::String>
+    VoiceTemplateRequest& WithDefaultSubstitutions(DefaultSubstitutionsT&& value) { SetDefaultSubstitutions(std::forward<DefaultSubstitutionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-    inline VoiceTemplateRequest& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-    inline VoiceTemplateRequest& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    template<typename LanguageCodeT = Aws::String>
+    void SetLanguageCode(LanguageCodeT&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::forward<LanguageCodeT>(value); }
+    template<typename LanguageCodeT = Aws::String>
+    VoiceTemplateRequest& WithLanguageCode(LanguageCodeT&& value) { SetLanguageCode(std::forward<LanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,33 +99,28 @@ namespace Model
      * key-value pairs that defines the tags to associate with the message template.
      * Each tag consists of a required tag key and an associated tag value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline VoiceTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline VoiceTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline VoiceTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline VoiceTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline VoiceTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline VoiceTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline VoiceTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline VoiceTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    VoiceTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    VoiceTemplateRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A custom description of the message template.</p>
      */
-    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+    inline const Aws::String& GetTemplateDescription() const { return m_templateDescription; }
     inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
-    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
-    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
-    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
-    inline VoiceTemplateRequest& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
-    inline VoiceTemplateRequest& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+    template<typename TemplateDescriptionT = Aws::String>
+    void SetTemplateDescription(TemplateDescriptionT&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::forward<TemplateDescriptionT>(value); }
+    template<typename TemplateDescriptionT = Aws::String>
+    VoiceTemplateRequest& WithTemplateDescription(TemplateDescriptionT&& value) { SetTemplateDescription(std::forward<TemplateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +130,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
-    inline VoiceTemplateRequest& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline VoiceTemplateRequest& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline VoiceTemplateRequest& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    VoiceTemplateRequest& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
   private:
 

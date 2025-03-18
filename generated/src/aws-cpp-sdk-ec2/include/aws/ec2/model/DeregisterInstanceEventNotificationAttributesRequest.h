@@ -21,7 +21,7 @@ namespace Model
   class DeregisterInstanceEventNotificationAttributesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeregisterInstanceEventNotificationAttributesRequest();
+    AWS_EC2_API DeregisterInstanceEventNotificationAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeregisterInstanceEventNotificationAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
     /**
      * <p>Information about the tag keys to deregister.</p>
      */
-    inline const DeregisterInstanceTagAttributeRequest& GetInstanceTagAttribute() const{ return m_instanceTagAttribute; }
+    inline const DeregisterInstanceTagAttributeRequest& GetInstanceTagAttribute() const { return m_instanceTagAttribute; }
     inline bool InstanceTagAttributeHasBeenSet() const { return m_instanceTagAttributeHasBeenSet; }
-    inline void SetInstanceTagAttribute(const DeregisterInstanceTagAttributeRequest& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = value; }
-    inline void SetInstanceTagAttribute(DeregisterInstanceTagAttributeRequest&& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = std::move(value); }
-    inline DeregisterInstanceEventNotificationAttributesRequest& WithInstanceTagAttribute(const DeregisterInstanceTagAttributeRequest& value) { SetInstanceTagAttribute(value); return *this;}
-    inline DeregisterInstanceEventNotificationAttributesRequest& WithInstanceTagAttribute(DeregisterInstanceTagAttributeRequest&& value) { SetInstanceTagAttribute(std::move(value)); return *this;}
+    template<typename InstanceTagAttributeT = DeregisterInstanceTagAttributeRequest>
+    void SetInstanceTagAttribute(InstanceTagAttributeT&& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = std::forward<InstanceTagAttributeT>(value); }
+    template<typename InstanceTagAttributeT = DeregisterInstanceTagAttributeRequest>
+    DeregisterInstanceEventNotificationAttributesRequest& WithInstanceTagAttribute(InstanceTagAttributeT&& value) { SetInstanceTagAttribute(std::forward<InstanceTagAttributeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     DeregisterInstanceTagAttributeRequest m_instanceTagAttribute;

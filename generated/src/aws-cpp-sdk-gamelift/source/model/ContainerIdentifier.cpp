@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerIdentifier::ContainerIdentifier() : 
-    m_containerNameHasBeenSet(false),
-    m_containerRuntimeIdHasBeenSet(false)
-{
-}
-
 ContainerIdentifier::ContainerIdentifier(JsonView jsonValue)
-  : ContainerIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContainerIdentifier& ContainerIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerRuntimeId"))
   {
     m_containerRuntimeId = jsonValue.GetString("ContainerRuntimeId");
-
     m_containerRuntimeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

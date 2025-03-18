@@ -35,7 +35,7 @@ namespace Model
   class HyperParameterTuningInstanceConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig() = default;
     AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningInstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance
      * type descriptions</a>.</p>
      */
-    inline const TrainingInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline TrainingInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const TrainingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(TrainingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline HyperParameterTuningInstanceConfig& WithInstanceType(const TrainingInstanceType& value) { SetInstanceType(value); return *this;}
-    inline HyperParameterTuningInstanceConfig& WithInstanceType(TrainingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(TrainingInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline HyperParameterTuningInstanceConfig& WithInstanceType(TrainingInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python
      * SDK</a> for more information.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline HyperParameterTuningInstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -79,20 +77,20 @@ namespace Model
      * <p>The volume size in GB of the data to be processed for hyperparameter
      * optimization (optional).</p>
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline HyperParameterTuningInstanceConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
     ///@}
   private:
 
-    TrainingInstanceType m_instanceType;
+    TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
   };
 

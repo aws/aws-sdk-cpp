@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateCustomDomainAssociationRequest::CreateCustomDomainAssociationRequest() : 
-    m_customDomainNameHasBeenSet(false),
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomDomainAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

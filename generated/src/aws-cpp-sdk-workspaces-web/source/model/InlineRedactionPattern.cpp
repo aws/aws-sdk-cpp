@@ -18,19 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-InlineRedactionPattern::InlineRedactionPattern() : 
-    m_builtInPatternIdHasBeenSet(false),
-    m_confidenceLevel(0),
-    m_confidenceLevelHasBeenSet(false),
-    m_customPatternHasBeenSet(false),
-    m_enforcedUrlsHasBeenSet(false),
-    m_exemptUrlsHasBeenSet(false),
-    m_redactionPlaceHolderHasBeenSet(false)
-{
-}
-
 InlineRedactionPattern::InlineRedactionPattern(JsonView jsonValue)
-  : InlineRedactionPattern()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ InlineRedactionPattern& InlineRedactionPattern::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("builtInPatternId"))
   {
     m_builtInPatternId = jsonValue.GetString("builtInPatternId");
-
     m_builtInPatternIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confidenceLevel"))
   {
     m_confidenceLevel = jsonValue.GetInteger("confidenceLevel");
-
     m_confidenceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customPattern"))
   {
     m_customPattern = jsonValue.GetObject("customPattern");
-
     m_customPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enforcedUrls"))
   {
     Aws::Utils::Array<JsonView> enforcedUrlsJsonList = jsonValue.GetArray("enforcedUrls");
@@ -67,7 +49,6 @@ InlineRedactionPattern& InlineRedactionPattern::operator =(JsonView jsonValue)
     }
     m_enforcedUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exemptUrls"))
   {
     Aws::Utils::Array<JsonView> exemptUrlsJsonList = jsonValue.GetArray("exemptUrls");
@@ -77,14 +58,11 @@ InlineRedactionPattern& InlineRedactionPattern::operator =(JsonView jsonValue)
     }
     m_exemptUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redactionPlaceHolder"))
   {
     m_redactionPlaceHolder = jsonValue.GetObject("redactionPlaceHolder");
-
     m_redactionPlaceHolderHasBeenSet = true;
   }
-
   return *this;
 }
 

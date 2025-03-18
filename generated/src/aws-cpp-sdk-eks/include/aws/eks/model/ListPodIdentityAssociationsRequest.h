@@ -25,7 +25,7 @@ namespace Model
   class ListPodIdentityAssociationsRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API ListPodIdentityAssociationsRequest();
+    AWS_EKS_API ListPodIdentityAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the cluster that the associations are in.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ListPodIdentityAssociationsRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ListPodIdentityAssociationsRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The name of the Kubernetes namespace inside the cluster that the associations
      * are in.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline ListPodIdentityAssociationsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ListPodIdentityAssociationsRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Kubernetes service account that the associations use.</p>
      */
-    inline const Aws::String& GetServiceAccount() const{ return m_serviceAccount; }
+    inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
-    inline void SetServiceAccount(const Aws::String& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = value; }
-    inline void SetServiceAccount(Aws::String&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::move(value); }
-    inline void SetServiceAccount(const char* value) { m_serviceAccountHasBeenSet = true; m_serviceAccount.assign(value); }
-    inline ListPodIdentityAssociationsRequest& WithServiceAccount(const Aws::String& value) { SetServiceAccount(value); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithServiceAccount(Aws::String&& value) { SetServiceAccount(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithServiceAccount(const char* value) { SetServiceAccount(value); return *this;}
+    template<typename ServiceAccountT = Aws::String>
+    void SetServiceAccount(ServiceAccountT&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::forward<ServiceAccountT>(value); }
+    template<typename ServiceAccountT = Aws::String>
+    ListPodIdentityAssociationsRequest& WithServiceAccount(ServiceAccountT&& value) { SetServiceAccount(std::forward<ServiceAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +88,7 @@ namespace Model
      * <code>ListPodIdentityAssociations</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPodIdentityAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -110,14 +104,12 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPodIdentityAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPodIdentityAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,7 +122,7 @@ namespace Model
     Aws::String m_serviceAccount;
     bool m_serviceAccountHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

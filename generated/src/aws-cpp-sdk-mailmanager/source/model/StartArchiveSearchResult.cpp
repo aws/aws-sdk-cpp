@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartArchiveSearchResult::StartArchiveSearchResult()
-{
-}
-
 StartArchiveSearchResult::StartArchiveSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartArchiveSearchResult& StartArchiveSearchResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("SearchId"))
   {
     m_searchId = jsonValue.GetString("SearchId");
-
+    m_searchIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

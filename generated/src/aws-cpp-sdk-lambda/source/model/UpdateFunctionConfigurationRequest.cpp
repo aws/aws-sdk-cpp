@@ -12,32 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_handlerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_fileSystemConfigsHasBeenSet(false),
-    m_imageConfigHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

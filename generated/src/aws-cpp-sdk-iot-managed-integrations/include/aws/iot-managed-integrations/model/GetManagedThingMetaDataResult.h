@@ -28,7 +28,7 @@ namespace Model
   class GetManagedThingMetaDataResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingMetaDataResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingMetaDataResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingMetaDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingMetaDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,50 +37,46 @@ namespace Model
     /**
      * <p>The managed thing id.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingId.assign(value); }
-    inline GetManagedThingMetaDataResult& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline GetManagedThingMetaDataResult& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline GetManagedThingMetaDataResult& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    GetManagedThingMetaDataResult& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata for the managed thing.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetaData() const{ return m_metaData; }
-    inline void SetMetaData(const Aws::Map<Aws::String, Aws::String>& value) { m_metaData = value; }
-    inline void SetMetaData(Aws::Map<Aws::String, Aws::String>&& value) { m_metaData = std::move(value); }
-    inline GetManagedThingMetaDataResult& WithMetaData(const Aws::Map<Aws::String, Aws::String>& value) { SetMetaData(value); return *this;}
-    inline GetManagedThingMetaDataResult& WithMetaData(Aws::Map<Aws::String, Aws::String>&& value) { SetMetaData(std::move(value)); return *this;}
-    inline GetManagedThingMetaDataResult& AddMetaData(const Aws::String& key, const Aws::String& value) { m_metaData.emplace(key, value); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(Aws::String&& key, const Aws::String& value) { m_metaData.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(const Aws::String& key, Aws::String&& value) { m_metaData.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(Aws::String&& key, Aws::String&& value) { m_metaData.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(const char* key, Aws::String&& value) { m_metaData.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(Aws::String&& key, const char* value) { m_metaData.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingMetaDataResult& AddMetaData(const char* key, const char* value) { m_metaData.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetaData() const { return m_metaData; }
+    template<typename MetaDataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetaData(MetaDataT&& value) { m_metaDataHasBeenSet = true; m_metaData = std::forward<MetaDataT>(value); }
+    template<typename MetaDataT = Aws::Map<Aws::String, Aws::String>>
+    GetManagedThingMetaDataResult& WithMetaData(MetaDataT&& value) { SetMetaData(std::forward<MetaDataT>(value)); return *this;}
+    template<typename MetaDataKeyT = Aws::String, typename MetaDataValueT = Aws::String>
+    GetManagedThingMetaDataResult& AddMetaData(MetaDataKeyT&& key, MetaDataValueT&& value) {
+      m_metaDataHasBeenSet = true; m_metaData.emplace(std::forward<MetaDataKeyT>(key), std::forward<MetaDataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedThingMetaDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedThingMetaDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedThingMetaDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedThingMetaDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_managedThingId;
+    bool m_managedThingIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metaData;
+    bool m_metaDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-Timezone::Timezone() : 
-    m_timezoneNameHasBeenSet(false)
-{
-}
-
 Timezone::Timezone(const XmlNode& xmlNode)
-  : Timezone()
 {
   *this = xmlNode;
 }

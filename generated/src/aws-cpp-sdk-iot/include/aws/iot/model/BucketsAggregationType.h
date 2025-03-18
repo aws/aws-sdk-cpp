@@ -31,7 +31,7 @@ namespace Model
   class BucketsAggregationType
   {
   public:
-    AWS_IOT_API BucketsAggregationType();
+    AWS_IOT_API BucketsAggregationType() = default;
     AWS_IOT_API BucketsAggregationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API BucketsAggregationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * buckets is a ranked list of the number of occurrences of an aggregation field
      * value.</p>
      */
-    inline const TermsAggregation& GetTermsAggregation() const{ return m_termsAggregation; }
+    inline const TermsAggregation& GetTermsAggregation() const { return m_termsAggregation; }
     inline bool TermsAggregationHasBeenSet() const { return m_termsAggregationHasBeenSet; }
-    inline void SetTermsAggregation(const TermsAggregation& value) { m_termsAggregationHasBeenSet = true; m_termsAggregation = value; }
-    inline void SetTermsAggregation(TermsAggregation&& value) { m_termsAggregationHasBeenSet = true; m_termsAggregation = std::move(value); }
-    inline BucketsAggregationType& WithTermsAggregation(const TermsAggregation& value) { SetTermsAggregation(value); return *this;}
-    inline BucketsAggregationType& WithTermsAggregation(TermsAggregation&& value) { SetTermsAggregation(std::move(value)); return *this;}
+    template<typename TermsAggregationT = TermsAggregation>
+    void SetTermsAggregation(TermsAggregationT&& value) { m_termsAggregationHasBeenSet = true; m_termsAggregation = std::forward<TermsAggregationT>(value); }
+    template<typename TermsAggregationT = TermsAggregation>
+    BucketsAggregationType& WithTermsAggregation(TermsAggregationT&& value) { SetTermsAggregation(std::forward<TermsAggregationT>(value)); return *this;}
     ///@}
   private:
 

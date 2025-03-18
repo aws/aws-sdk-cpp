@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDirectoryResult::GetDirectoryResult()
-{
-}
-
 GetDirectoryResult::GetDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDirectoryResult& GetDirectoryResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Directory"))
   {
     m_directory = jsonValue.GetObject("Directory");
-
+    m_directoryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

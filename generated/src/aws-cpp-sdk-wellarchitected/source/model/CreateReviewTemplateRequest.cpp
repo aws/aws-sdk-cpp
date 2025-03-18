@@ -12,17 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReviewTemplateRequest::CreateReviewTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateReviewTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

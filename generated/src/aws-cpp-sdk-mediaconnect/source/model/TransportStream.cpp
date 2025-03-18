@@ -18,24 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-TransportStream::TransportStream() : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_frameResolutionHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_sampleSize(0),
-    m_sampleSizeHasBeenSet(false),
-    m_streamTypeHasBeenSet(false)
-{
-}
-
 TransportStream::TransportStream(JsonView jsonValue)
-  : TransportStream()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ TransportStream& TransportStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInteger("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = jsonValue.GetString("codec");
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameRate"))
   {
     m_frameRate = jsonValue.GetString("frameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameResolution"))
   {
     m_frameResolution = jsonValue.GetObject("frameResolution");
-
     m_frameResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleSize"))
   {
     m_sampleSize = jsonValue.GetInteger("sampleSize");
-
     m_sampleSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamType"))
   {
     m_streamType = jsonValue.GetString("streamType");
-
     m_streamTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

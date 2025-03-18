@@ -36,7 +36,7 @@ namespace Model
   class VideoFeatures
   {
   public:
-    AWS_CHIMESDKMEETINGS_API VideoFeatures();
+    AWS_CHIMESDKMEETINGS_API VideoFeatures() = default;
     AWS_CHIMESDKMEETINGS_API VideoFeatures(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API VideoFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
      * default size limit of 250 attendees.</p> 
      */
-    inline const VideoResolution& GetMaxResolution() const{ return m_maxResolution; }
+    inline VideoResolution GetMaxResolution() const { return m_maxResolution; }
     inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }
-    inline void SetMaxResolution(const VideoResolution& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = value; }
-    inline void SetMaxResolution(VideoResolution&& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = std::move(value); }
-    inline VideoFeatures& WithMaxResolution(const VideoResolution& value) { SetMaxResolution(value); return *this;}
-    inline VideoFeatures& WithMaxResolution(VideoResolution&& value) { SetMaxResolution(std::move(value)); return *this;}
+    inline void SetMaxResolution(VideoResolution value) { m_maxResolutionHasBeenSet = true; m_maxResolution = value; }
+    inline VideoFeatures& WithMaxResolution(VideoResolution value) { SetMaxResolution(value); return *this;}
     ///@}
   private:
 
-    VideoResolution m_maxResolution;
+    VideoResolution m_maxResolution{VideoResolution::NOT_SET};
     bool m_maxResolutionHasBeenSet = false;
   };
 

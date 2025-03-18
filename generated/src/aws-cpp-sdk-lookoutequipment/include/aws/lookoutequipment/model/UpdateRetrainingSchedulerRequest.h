@@ -23,7 +23,7 @@ namespace Model
   class UpdateRetrainingSchedulerRequest : public LookoutEquipmentRequest
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API UpdateRetrainingSchedulerRequest();
+    AWS_LOOKOUTEQUIPMENT_API UpdateRetrainingSchedulerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the model whose retraining scheduler you want to update. </p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline UpdateRetrainingSchedulerRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    UpdateRetrainingSchedulerRequest& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The start date for the retraining scheduler. Lookout for Equipment truncates
      * the time you provide to the nearest UTC day.</p>
      */
-    inline const Aws::Utils::DateTime& GetRetrainingStartDate() const{ return m_retrainingStartDate; }
+    inline const Aws::Utils::DateTime& GetRetrainingStartDate() const { return m_retrainingStartDate; }
     inline bool RetrainingStartDateHasBeenSet() const { return m_retrainingStartDateHasBeenSet; }
-    inline void SetRetrainingStartDate(const Aws::Utils::DateTime& value) { m_retrainingStartDateHasBeenSet = true; m_retrainingStartDate = value; }
-    inline void SetRetrainingStartDate(Aws::Utils::DateTime&& value) { m_retrainingStartDateHasBeenSet = true; m_retrainingStartDate = std::move(value); }
-    inline UpdateRetrainingSchedulerRequest& WithRetrainingStartDate(const Aws::Utils::DateTime& value) { SetRetrainingStartDate(value); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithRetrainingStartDate(Aws::Utils::DateTime&& value) { SetRetrainingStartDate(std::move(value)); return *this;}
+    template<typename RetrainingStartDateT = Aws::Utils::DateTime>
+    void SetRetrainingStartDate(RetrainingStartDateT&& value) { m_retrainingStartDateHasBeenSet = true; m_retrainingStartDate = std::forward<RetrainingStartDateT>(value); }
+    template<typename RetrainingStartDateT = Aws::Utils::DateTime>
+    UpdateRetrainingSchedulerRequest& WithRetrainingStartDate(RetrainingStartDateT&& value) { SetRetrainingStartDate(std::forward<RetrainingStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +72,24 @@ namespace Model
      * Every 3 months and 15 days</p> </li> <li> <p>P2M – Every 2 months</p> </li> <li>
      * <p>P150D – Every 150 days</p> </li> </ul>
      */
-    inline const Aws::String& GetRetrainingFrequency() const{ return m_retrainingFrequency; }
+    inline const Aws::String& GetRetrainingFrequency() const { return m_retrainingFrequency; }
     inline bool RetrainingFrequencyHasBeenSet() const { return m_retrainingFrequencyHasBeenSet; }
-    inline void SetRetrainingFrequency(const Aws::String& value) { m_retrainingFrequencyHasBeenSet = true; m_retrainingFrequency = value; }
-    inline void SetRetrainingFrequency(Aws::String&& value) { m_retrainingFrequencyHasBeenSet = true; m_retrainingFrequency = std::move(value); }
-    inline void SetRetrainingFrequency(const char* value) { m_retrainingFrequencyHasBeenSet = true; m_retrainingFrequency.assign(value); }
-    inline UpdateRetrainingSchedulerRequest& WithRetrainingFrequency(const Aws::String& value) { SetRetrainingFrequency(value); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithRetrainingFrequency(Aws::String&& value) { SetRetrainingFrequency(std::move(value)); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithRetrainingFrequency(const char* value) { SetRetrainingFrequency(value); return *this;}
+    template<typename RetrainingFrequencyT = Aws::String>
+    void SetRetrainingFrequency(RetrainingFrequencyT&& value) { m_retrainingFrequencyHasBeenSet = true; m_retrainingFrequency = std::forward<RetrainingFrequencyT>(value); }
+    template<typename RetrainingFrequencyT = Aws::String>
+    UpdateRetrainingSchedulerRequest& WithRetrainingFrequency(RetrainingFrequencyT&& value) { SetRetrainingFrequency(std::forward<RetrainingFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of past days of data that will be used for retraining.</p>
      */
-    inline const Aws::String& GetLookbackWindow() const{ return m_lookbackWindow; }
+    inline const Aws::String& GetLookbackWindow() const { return m_lookbackWindow; }
     inline bool LookbackWindowHasBeenSet() const { return m_lookbackWindowHasBeenSet; }
-    inline void SetLookbackWindow(const Aws::String& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = value; }
-    inline void SetLookbackWindow(Aws::String&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::move(value); }
-    inline void SetLookbackWindow(const char* value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow.assign(value); }
-    inline UpdateRetrainingSchedulerRequest& WithLookbackWindow(const Aws::String& value) { SetLookbackWindow(value); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithLookbackWindow(Aws::String&& value) { SetLookbackWindow(std::move(value)); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithLookbackWindow(const char* value) { SetLookbackWindow(value); return *this;}
+    template<typename LookbackWindowT = Aws::String>
+    void SetLookbackWindow(LookbackWindowT&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::forward<LookbackWindowT>(value); }
+    template<typename LookbackWindowT = Aws::String>
+    UpdateRetrainingSchedulerRequest& WithLookbackWindow(LookbackWindowT&& value) { SetLookbackWindow(std::forward<LookbackWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,19 +101,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until
      * they are manually activated</a>.</p>
      */
-    inline const ModelPromoteMode& GetPromoteMode() const{ return m_promoteMode; }
+    inline ModelPromoteMode GetPromoteMode() const { return m_promoteMode; }
     inline bool PromoteModeHasBeenSet() const { return m_promoteModeHasBeenSet; }
-    inline void SetPromoteMode(const ModelPromoteMode& value) { m_promoteModeHasBeenSet = true; m_promoteMode = value; }
-    inline void SetPromoteMode(ModelPromoteMode&& value) { m_promoteModeHasBeenSet = true; m_promoteMode = std::move(value); }
-    inline UpdateRetrainingSchedulerRequest& WithPromoteMode(const ModelPromoteMode& value) { SetPromoteMode(value); return *this;}
-    inline UpdateRetrainingSchedulerRequest& WithPromoteMode(ModelPromoteMode&& value) { SetPromoteMode(std::move(value)); return *this;}
+    inline void SetPromoteMode(ModelPromoteMode value) { m_promoteModeHasBeenSet = true; m_promoteMode = value; }
+    inline UpdateRetrainingSchedulerRequest& WithPromoteMode(ModelPromoteMode value) { SetPromoteMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_retrainingStartDate;
+    Aws::Utils::DateTime m_retrainingStartDate{};
     bool m_retrainingStartDateHasBeenSet = false;
 
     Aws::String m_retrainingFrequency;
@@ -128,7 +120,7 @@ namespace Model
     Aws::String m_lookbackWindow;
     bool m_lookbackWindowHasBeenSet = false;
 
-    ModelPromoteMode m_promoteMode;
+    ModelPromoteMode m_promoteMode{ModelPromoteMode::NOT_SET};
     bool m_promoteModeHasBeenSet = false;
   };
 

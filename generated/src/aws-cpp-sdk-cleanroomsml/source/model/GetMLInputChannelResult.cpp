@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMLInputChannelResult::GetMLInputChannelResult() : 
-    m_status(MLInputChannelStatus::NOT_SET),
-    m_retentionInDays(0),
-    m_numberOfRecords(0),
-    m_numberOfFiles(0.0),
-    m_sizeInGb(0.0)
-{
-}
-
 GetMLInputChannelResult::GetMLInputChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMLInputChannelResult()
 {
   *this = result;
 }
@@ -38,51 +28,43 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
+    m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
-
+    m_collaborationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputChannel"))
   {
     m_inputChannel = jsonValue.GetObject("inputChannel");
-
+    m_inputChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protectedQueryIdentifier"))
   {
     m_protectedQueryIdentifier = jsonValue.GetString("protectedQueryIdentifier");
-
+    m_protectedQueryIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mlInputChannelArn"))
   {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
-
+    m_mlInputChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmAssociations"))
   {
     Aws::Utils::Array<JsonView> configuredModelAlgorithmAssociationsJsonList = jsonValue.GetArray("configuredModelAlgorithmAssociations");
@@ -90,56 +72,48 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
     {
       m_configuredModelAlgorithmAssociations.push_back(configuredModelAlgorithmAssociationsJsonList[configuredModelAlgorithmAssociationsIndex].AsString());
     }
+    m_configuredModelAlgorithmAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MLInputChannelStatusMapper::GetMLInputChannelStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusDetails"))
   {
     m_statusDetails = jsonValue.GetObject("statusDetails");
-
+    m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionInDays"))
   {
     m_retentionInDays = jsonValue.GetInteger("retentionInDays");
-
+    m_retentionInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRecords"))
   {
     m_numberOfRecords = jsonValue.GetInt64("numberOfRecords");
-
+    m_numberOfRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfFiles"))
   {
     m_numberOfFiles = jsonValue.GetDouble("numberOfFiles");
-
+    m_numberOfFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetDouble("sizeInGb");
-
+    m_sizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
+    m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -147,14 +121,15 @@ GetMLInputChannelResult& GetMLInputChannelResult::operator =(const Aws::AmazonWe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

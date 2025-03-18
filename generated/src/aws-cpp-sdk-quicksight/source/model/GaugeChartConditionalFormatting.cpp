@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartConditionalFormatting::GaugeChartConditionalFormatting() : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
-{
-}
-
 GaugeChartConditionalFormatting::GaugeChartConditionalFormatting(JsonView jsonValue)
-  : GaugeChartConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GaugeChartConditionalFormatting& GaugeChartConditionalFormatting::operator =(Jso
     }
     m_conditionalFormattingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ConversationHistory::ConversationHistory() : 
-    m_messagesHasBeenSet(false)
-{
-}
-
 ConversationHistory::ConversationHistory(JsonView jsonValue)
-  : ConversationHistory()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConversationHistory& ConversationHistory::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   return *this;
 }
 

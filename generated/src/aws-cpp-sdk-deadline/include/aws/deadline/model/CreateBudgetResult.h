@@ -27,7 +27,7 @@ namespace Model
   class CreateBudgetResult
   {
   public:
-    AWS_DEADLINE_API CreateBudgetResult();
+    AWS_DEADLINE_API CreateBudgetResult() = default;
     AWS_DEADLINE_API CreateBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The budget ID.</p>
      */
-    inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
-    inline void SetBudgetId(const Aws::String& value) { m_budgetId = value; }
-    inline void SetBudgetId(Aws::String&& value) { m_budgetId = std::move(value); }
-    inline void SetBudgetId(const char* value) { m_budgetId.assign(value); }
-    inline CreateBudgetResult& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
-    inline CreateBudgetResult& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
-    inline CreateBudgetResult& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
+    inline const Aws::String& GetBudgetId() const { return m_budgetId; }
+    template<typename BudgetIdT = Aws::String>
+    void SetBudgetId(BudgetIdT&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::forward<BudgetIdT>(value); }
+    template<typename BudgetIdT = Aws::String>
+    CreateBudgetResult& WithBudgetId(BudgetIdT&& value) { SetBudgetId(std::forward<BudgetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBudgetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBudgetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBudgetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBudgetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_budgetId;
+    bool m_budgetIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

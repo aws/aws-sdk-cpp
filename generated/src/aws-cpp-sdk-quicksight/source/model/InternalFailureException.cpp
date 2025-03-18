@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-InternalFailureException::InternalFailureException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 InternalFailureException::InternalFailureException(JsonView jsonValue)
-  : InternalFailureException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalFailureException& InternalFailureException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

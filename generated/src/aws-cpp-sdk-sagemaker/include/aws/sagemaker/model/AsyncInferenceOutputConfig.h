@@ -33,7 +33,7 @@ namespace Model
   class AsyncInferenceOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API AsyncInferenceOutputConfig();
+    AWS_SAGEMAKER_API AsyncInferenceOutputConfig() = default;
     AWS_SAGEMAKER_API AsyncInferenceOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AsyncInferenceOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * that SageMaker uses to encrypt the asynchronous inference output in Amazon
      * S3.</p> <p/>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline AsyncInferenceOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline AsyncInferenceOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline AsyncInferenceOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    AsyncInferenceOutputConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location to upload inference responses to.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline AsyncInferenceOutputConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline AsyncInferenceOutputConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline AsyncInferenceOutputConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    AsyncInferenceOutputConfig& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +70,24 @@ namespace Model
      * <p>Specifies the configuration for notifications of inference results for
      * asynchronous inference.</p>
      */
-    inline const AsyncInferenceNotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+    inline const AsyncInferenceNotificationConfig& GetNotificationConfig() const { return m_notificationConfig; }
     inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
-    inline void SetNotificationConfig(const AsyncInferenceNotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
-    inline void SetNotificationConfig(AsyncInferenceNotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
-    inline AsyncInferenceOutputConfig& WithNotificationConfig(const AsyncInferenceNotificationConfig& value) { SetNotificationConfig(value); return *this;}
-    inline AsyncInferenceOutputConfig& WithNotificationConfig(AsyncInferenceNotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
+    template<typename NotificationConfigT = AsyncInferenceNotificationConfig>
+    void SetNotificationConfig(NotificationConfigT&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::forward<NotificationConfigT>(value); }
+    template<typename NotificationConfigT = AsyncInferenceNotificationConfig>
+    AsyncInferenceOutputConfig& WithNotificationConfig(NotificationConfigT&& value) { SetNotificationConfig(std::forward<NotificationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location to upload failure inference responses to.</p>
      */
-    inline const Aws::String& GetS3FailurePath() const{ return m_s3FailurePath; }
+    inline const Aws::String& GetS3FailurePath() const { return m_s3FailurePath; }
     inline bool S3FailurePathHasBeenSet() const { return m_s3FailurePathHasBeenSet; }
-    inline void SetS3FailurePath(const Aws::String& value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath = value; }
-    inline void SetS3FailurePath(Aws::String&& value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath = std::move(value); }
-    inline void SetS3FailurePath(const char* value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath.assign(value); }
-    inline AsyncInferenceOutputConfig& WithS3FailurePath(const Aws::String& value) { SetS3FailurePath(value); return *this;}
-    inline AsyncInferenceOutputConfig& WithS3FailurePath(Aws::String&& value) { SetS3FailurePath(std::move(value)); return *this;}
-    inline AsyncInferenceOutputConfig& WithS3FailurePath(const char* value) { SetS3FailurePath(value); return *this;}
+    template<typename S3FailurePathT = Aws::String>
+    void SetS3FailurePath(S3FailurePathT&& value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath = std::forward<S3FailurePathT>(value); }
+    template<typename S3FailurePathT = Aws::String>
+    AsyncInferenceOutputConfig& WithS3FailurePath(S3FailurePathT&& value) { SetS3FailurePath(std::forward<S3FailurePathT>(value)); return *this;}
     ///@}
   private:
 

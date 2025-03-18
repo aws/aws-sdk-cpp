@@ -18,21 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-FileSystemAssociationInfo::FileSystemAssociationInfo() : 
-    m_fileSystemAssociationARNHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_fileSystemAssociationStatusHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_endpointNetworkConfigurationHasBeenSet(false),
-    m_fileSystemAssociationStatusDetailsHasBeenSet(false)
-{
-}
-
 FileSystemAssociationInfo::FileSystemAssociationInfo(JsonView jsonValue)
-  : FileSystemAssociationInfo()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FileSystemAssociationARN"))
   {
     m_fileSystemAssociationARN = jsonValue.GetString("FileSystemAssociationARN");
-
     m_fileSystemAssociationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationARN"))
   {
     m_locationARN = jsonValue.GetString("LocationARN");
-
     m_locationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAssociationStatus"))
   {
     m_fileSystemAssociationStatus = jsonValue.GetString("FileSystemAssociationStatus");
-
     m_fileSystemAssociationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditDestinationARN"))
   {
     m_auditDestinationARN = jsonValue.GetString("AuditDestinationARN");
-
     m_auditDestinationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -83,21 +59,16 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheAttributes"))
   {
     m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
-
     m_cacheAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointNetworkConfiguration"))
   {
     m_endpointNetworkConfiguration = jsonValue.GetObject("EndpointNetworkConfiguration");
-
     m_endpointNetworkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAssociationStatusDetails"))
   {
     Aws::Utils::Array<JsonView> fileSystemAssociationStatusDetailsJsonList = jsonValue.GetArray("FileSystemAssociationStatusDetails");
@@ -107,7 +78,6 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
     }
     m_fileSystemAssociationStatusDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

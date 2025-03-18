@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLinkRequest::DeleteLinkRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLinkRequest::SerializePayload() const
 {
   return {};

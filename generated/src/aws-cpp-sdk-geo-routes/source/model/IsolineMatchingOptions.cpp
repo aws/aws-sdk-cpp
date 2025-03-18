@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineMatchingOptions::IsolineMatchingOptions() : 
-    m_nameHintHasBeenSet(false),
-    m_onRoadThreshold(0),
-    m_onRoadThresholdHasBeenSet(false),
-    m_radius(0),
-    m_radiusHasBeenSet(false),
-    m_strategy(MatchingStrategy::NOT_SET),
-    m_strategyHasBeenSet(false)
-{
-}
-
 IsolineMatchingOptions::IsolineMatchingOptions(JsonView jsonValue)
-  : IsolineMatchingOptions()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ IsolineMatchingOptions& IsolineMatchingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NameHint"))
   {
     m_nameHint = jsonValue.GetString("NameHint");
-
     m_nameHintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnRoadThreshold"))
   {
     m_onRoadThreshold = jsonValue.GetInt64("OnRoadThreshold");
-
     m_onRoadThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetInt64("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Strategy"))
   {
     m_strategy = MatchingStrategyMapper::GetMatchingStrategyForName(jsonValue.GetString("Strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   return *this;
 }
 

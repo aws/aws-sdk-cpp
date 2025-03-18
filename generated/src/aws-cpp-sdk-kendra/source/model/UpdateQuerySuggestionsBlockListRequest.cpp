@@ -12,16 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQuerySuggestionsBlockListRequest::UpdateQuerySuggestionsBlockListRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceS3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQuerySuggestionsBlockListRequest::SerializePayload() const
 {
   JsonValue payload;

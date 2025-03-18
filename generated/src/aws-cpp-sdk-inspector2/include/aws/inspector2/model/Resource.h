@@ -35,7 +35,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_INSPECTOR2_API Resource();
+    AWS_INSPECTOR2_API Resource() = default;
     AWS_INSPECTOR2_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,85 +45,74 @@ namespace Model
     /**
      * <p>An object that contains details about the resource involved in a finding.</p>
      */
-    inline const ResourceDetails& GetDetails() const{ return m_details; }
+    inline const ResourceDetails& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const ResourceDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(ResourceDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline Resource& WithDetails(const ResourceDetails& value) { SetDetails(value); return *this;}
-    inline Resource& WithDetails(ResourceDetails&& value) { SetDetails(std::move(value)); return *this;}
+    template<typename DetailsT = ResourceDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = ResourceDetails>
+    Resource& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Resource& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Resource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Resource& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Resource& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The partition of the resource.</p>
      */
-    inline const Aws::String& GetPartition() const{ return m_partition; }
+    inline const Aws::String& GetPartition() const { return m_partition; }
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
-    inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
-    inline void SetPartition(Aws::String&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
-    inline void SetPartition(const char* value) { m_partitionHasBeenSet = true; m_partition.assign(value); }
-    inline Resource& WithPartition(const Aws::String& value) { SetPartition(value); return *this;}
-    inline Resource& WithPartition(Aws::String&& value) { SetPartition(std::move(value)); return *this;}
-    inline Resource& WithPartition(const char* value) { SetPartition(value); return *this;}
+    template<typename PartitionT = Aws::String>
+    void SetPartition(PartitionT&& value) { m_partitionHasBeenSet = true; m_partition = std::forward<PartitionT>(value); }
+    template<typename PartitionT = Aws::String>
+    Resource& WithPartition(PartitionT&& value) { SetPartition(std::forward<PartitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region the impacted resource is located in.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Resource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Resource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Resource& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Resource& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags attached to the resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Resource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Resource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Resource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Resource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Resource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Resource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Resource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Resource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Resource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Resource& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Resource& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The type of resource.</p>
      */
-    inline const ResourceType& GetType() const{ return m_type; }
+    inline ResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Resource& WithType(const ResourceType& value) { SetType(value); return *this;}
-    inline Resource& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Resource& WithType(ResourceType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -142,7 +131,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    ResourceType m_type;
+    ResourceType m_type{ResourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

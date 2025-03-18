@@ -18,24 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeSourceSelfManagedKafkaParameters::PipeSourceSelfManagedKafkaParameters() : 
-    m_topicNameHasBeenSet(false),
-    m_startingPosition(SelfManagedKafkaStartPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_additionalBootstrapServersHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_consumerGroupIDHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_serverRootCaCertificateHasBeenSet(false),
-    m_vpcHasBeenSet(false)
-{
-}
-
 PipeSourceSelfManagedKafkaParameters::PipeSourceSelfManagedKafkaParameters(JsonView jsonValue)
-  : PipeSourceSelfManagedKafkaParameters()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ PipeSourceSelfManagedKafkaParameters& PipeSourceSelfManagedKafkaParameters::oper
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingPosition"))
   {
     m_startingPosition = SelfManagedKafkaStartPositionMapper::GetSelfManagedKafkaStartPositionForName(jsonValue.GetString("StartingPosition"));
-
     m_startingPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalBootstrapServers"))
   {
     Aws::Utils::Array<JsonView> additionalBootstrapServersJsonList = jsonValue.GetArray("AdditionalBootstrapServers");
@@ -65,49 +44,36 @@ PipeSourceSelfManagedKafkaParameters& PipeSourceSelfManagedKafkaParameters::oper
     }
     m_additionalBootstrapServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
-
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerGroupID"))
   {
     m_consumerGroupID = jsonValue.GetString("ConsumerGroupID");
-
     m_consumerGroupIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerRootCaCertificate"))
   {
     m_serverRootCaCertificate = jsonValue.GetString("ServerRootCaCertificate");
-
     m_serverRootCaCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vpc"))
   {
     m_vpc = jsonValue.GetObject("Vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-RuleConfig::RuleConfig() : 
-    m_inverted(false),
-    m_invertedHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false),
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RuleConfig::RuleConfig(JsonView jsonValue)
-  : RuleConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RuleConfig& RuleConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Inverted"))
   {
     m_inverted = jsonValue.GetBool("Inverted");
-
     m_invertedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetInteger("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

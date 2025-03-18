@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PaginationConfiguration::PaginationConfiguration() : 
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false)
-{
-}
-
 PaginationConfiguration::PaginationConfiguration(JsonView jsonValue)
-  : PaginationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PaginationConfiguration& PaginationConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PageSize"))
   {
     m_pageSize = jsonValue.GetInt64("PageSize");
-
     m_pageSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageNumber"))
   {
     m_pageNumber = jsonValue.GetInt64("PageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

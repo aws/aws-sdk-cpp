@@ -31,7 +31,7 @@ namespace Model
   class OutboundEmailConfig
   {
   public:
-    AWS_CONNECT_API OutboundEmailConfig();
+    AWS_CONNECT_API OutboundEmailConfig() = default;
     AWS_CONNECT_API OutboundEmailConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API OutboundEmailConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of the email address.</p>
      */
-    inline const Aws::String& GetOutboundEmailAddressId() const{ return m_outboundEmailAddressId; }
+    inline const Aws::String& GetOutboundEmailAddressId() const { return m_outboundEmailAddressId; }
     inline bool OutboundEmailAddressIdHasBeenSet() const { return m_outboundEmailAddressIdHasBeenSet; }
-    inline void SetOutboundEmailAddressId(const Aws::String& value) { m_outboundEmailAddressIdHasBeenSet = true; m_outboundEmailAddressId = value; }
-    inline void SetOutboundEmailAddressId(Aws::String&& value) { m_outboundEmailAddressIdHasBeenSet = true; m_outboundEmailAddressId = std::move(value); }
-    inline void SetOutboundEmailAddressId(const char* value) { m_outboundEmailAddressIdHasBeenSet = true; m_outboundEmailAddressId.assign(value); }
-    inline OutboundEmailConfig& WithOutboundEmailAddressId(const Aws::String& value) { SetOutboundEmailAddressId(value); return *this;}
-    inline OutboundEmailConfig& WithOutboundEmailAddressId(Aws::String&& value) { SetOutboundEmailAddressId(std::move(value)); return *this;}
-    inline OutboundEmailConfig& WithOutboundEmailAddressId(const char* value) { SetOutboundEmailAddressId(value); return *this;}
+    template<typename OutboundEmailAddressIdT = Aws::String>
+    void SetOutboundEmailAddressId(OutboundEmailAddressIdT&& value) { m_outboundEmailAddressIdHasBeenSet = true; m_outboundEmailAddressId = std::forward<OutboundEmailAddressIdT>(value); }
+    template<typename OutboundEmailAddressIdT = Aws::String>
+    OutboundEmailConfig& WithOutboundEmailAddressId(OutboundEmailAddressIdT&& value) { SetOutboundEmailAddressId(std::forward<OutboundEmailAddressIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class IndexCapacityConfiguration
   {
   public:
-    AWS_QBUSINESS_API IndexCapacityConfiguration();
+    AWS_QBUSINESS_API IndexCapacityConfiguration() = default;
     AWS_QBUSINESS_API IndexCapacityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API IndexCapacityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of storage units configured for an Amazon Q Business index.</p>
      */
-    inline int GetUnits() const{ return m_units; }
+    inline int GetUnits() const { return m_units; }
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
     inline void SetUnits(int value) { m_unitsHasBeenSet = true; m_units = value; }
     inline IndexCapacityConfiguration& WithUnits(int value) { SetUnits(value); return *this;}
     ///@}
   private:
 
-    int m_units;
+    int m_units{0};
     bool m_unitsHasBeenSet = false;
   };
 

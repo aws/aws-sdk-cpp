@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DetachVolumeRequest::DetachVolumeRequest() : 
-    m_deviceHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DetachVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

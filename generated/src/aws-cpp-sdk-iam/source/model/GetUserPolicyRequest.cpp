@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetUserPolicyRequest::GetUserPolicyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String GetUserPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

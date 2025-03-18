@@ -12,14 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListArchiveSearchesRequest::ListArchiveSearchesRequest() : 
-    m_archiveIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListArchiveSearchesRequest::SerializePayload() const
 {
   JsonValue payload;

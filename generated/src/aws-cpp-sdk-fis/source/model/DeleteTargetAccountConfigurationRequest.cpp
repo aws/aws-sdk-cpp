@@ -12,12 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTargetAccountConfigurationRequest::DeleteTargetAccountConfigurationRequest() : 
-    m_experimentTemplateIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTargetAccountConfigurationRequest::SerializePayload() const
 {
   return {};

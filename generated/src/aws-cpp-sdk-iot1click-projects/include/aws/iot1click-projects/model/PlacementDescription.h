@@ -33,7 +33,7 @@ namespace Model
   class PlacementDescription
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API PlacementDescription();
+    AWS_IOT1CLICKPROJECTS_API PlacementDescription() = default;
     AWS_IOT1CLICKPROJECTS_API PlacementDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API PlacementDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,40 @@ namespace Model
     /**
      * <p>The name of the project containing the placement.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline PlacementDescription& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline PlacementDescription& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline PlacementDescription& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    PlacementDescription& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the placement.</p>
      */
-    inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+    inline const Aws::String& GetPlacementName() const { return m_placementName; }
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-    inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-    inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-    inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-    inline PlacementDescription& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-    inline PlacementDescription& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-    inline PlacementDescription& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    template<typename PlacementNameT = Aws::String>
+    void SetPlacementName(PlacementNameT&& value) { m_placementNameHasBeenSet = true; m_placementName = std::forward<PlacementNameT>(value); }
+    template<typename PlacementNameT = Aws::String>
+    PlacementDescription& WithPlacementName(PlacementNameT&& value) { SetPlacementName(std::forward<PlacementNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-defined attributes associated with the placement.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline PlacementDescription& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline PlacementDescription& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline PlacementDescription& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline PlacementDescription& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline PlacementDescription& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline PlacementDescription& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline PlacementDescription& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline PlacementDescription& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline PlacementDescription& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    PlacementDescription& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    PlacementDescription& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -91,12 +84,12 @@ namespace Model
      * <p>The date when the placement was initially created, in UNIX epoch time
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline PlacementDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline PlacementDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    PlacementDescription& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +98,12 @@ namespace Model
      * the placement was not updated, then <code>createdDate</code> and
      * <code>updatedDate</code> are the same.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+    inline const Aws::Utils::DateTime& GetUpdatedDate() const { return m_updatedDate; }
     inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
-    inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDateHasBeenSet = true; m_updatedDate = value; }
-    inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::move(value); }
-    inline PlacementDescription& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
-    inline PlacementDescription& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    void SetUpdatedDate(UpdatedDateT&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::forward<UpdatedDateT>(value); }
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    PlacementDescription& WithUpdatedDate(UpdatedDateT&& value) { SetUpdatedDate(std::forward<UpdatedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -123,10 +116,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedDate;
+    Aws::Utils::DateTime m_updatedDate{};
     bool m_updatedDateHasBeenSet = false;
   };
 

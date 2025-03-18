@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RegisterDBProxyTargetsRequest::RegisterDBProxyTargetsRequest() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_dBInstanceIdentifiersHasBeenSet(false),
-    m_dBClusterIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDBProxyTargetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

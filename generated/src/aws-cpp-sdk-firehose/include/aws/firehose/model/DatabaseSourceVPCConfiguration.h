@@ -33,7 +33,7 @@ namespace Model
   class DatabaseSourceVPCConfiguration
   {
   public:
-    AWS_FIREHOSE_API DatabaseSourceVPCConfiguration();
+    AWS_FIREHOSE_API DatabaseSourceVPCConfiguration() = default;
     AWS_FIREHOSE_API DatabaseSourceVPCConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DatabaseSourceVPCConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <code>com.amazonaws.vpce.&lt;region&gt;.&lt;vpc-endpoint-service-id&gt;</code>.
      * </p> <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
-    inline const Aws::String& GetVpcEndpointServiceName() const{ return m_vpcEndpointServiceName; }
+    inline const Aws::String& GetVpcEndpointServiceName() const { return m_vpcEndpointServiceName; }
     inline bool VpcEndpointServiceNameHasBeenSet() const { return m_vpcEndpointServiceNameHasBeenSet; }
-    inline void SetVpcEndpointServiceName(const Aws::String& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = value; }
-    inline void SetVpcEndpointServiceName(Aws::String&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::move(value); }
-    inline void SetVpcEndpointServiceName(const char* value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName.assign(value); }
-    inline DatabaseSourceVPCConfiguration& WithVpcEndpointServiceName(const Aws::String& value) { SetVpcEndpointServiceName(value); return *this;}
-    inline DatabaseSourceVPCConfiguration& WithVpcEndpointServiceName(Aws::String&& value) { SetVpcEndpointServiceName(std::move(value)); return *this;}
-    inline DatabaseSourceVPCConfiguration& WithVpcEndpointServiceName(const char* value) { SetVpcEndpointServiceName(value); return *this;}
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    void SetVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::forward<VpcEndpointServiceNameT>(value); }
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    DatabaseSourceVPCConfiguration& WithVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { SetVpcEndpointServiceName(std::forward<VpcEndpointServiceNameT>(value)); return *this;}
     ///@}
   private:
 

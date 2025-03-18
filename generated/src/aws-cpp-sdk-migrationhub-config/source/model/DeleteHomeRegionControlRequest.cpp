@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHomeRegionControlRequest::DeleteHomeRegionControlRequest() : 
-    m_controlIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHomeRegionControlRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPricesResult::ListPricesResult()
-{
-}
-
 ListPricesResult::ListPricesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListPricesResult& ListPricesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_prices.push_back(pricesJsonList[pricesIndex].AsObject());
     }
+    m_pricesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageMarker"))
   {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");
-
+    m_nextPageMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

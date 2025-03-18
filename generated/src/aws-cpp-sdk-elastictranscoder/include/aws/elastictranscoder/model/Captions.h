@@ -32,7 +32,7 @@ namespace Model
   class Captions
   {
   public:
-    AWS_ELASTICTRANSCODER_API Captions();
+    AWS_ELASTICTRANSCODER_API Captions() = default;
     AWS_ELASTICTRANSCODER_API Captions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Captions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
-    inline const Aws::Vector<CaptionFormat>& GetCaptionFormats() const{ return m_captionFormats; }
+    inline const Aws::Vector<CaptionFormat>& GetCaptionFormats() const { return m_captionFormats; }
     inline bool CaptionFormatsHasBeenSet() const { return m_captionFormatsHasBeenSet; }
-    inline void SetCaptionFormats(const Aws::Vector<CaptionFormat>& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = value; }
-    inline void SetCaptionFormats(Aws::Vector<CaptionFormat>&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = std::move(value); }
-    inline Captions& WithCaptionFormats(const Aws::Vector<CaptionFormat>& value) { SetCaptionFormats(value); return *this;}
-    inline Captions& WithCaptionFormats(Aws::Vector<CaptionFormat>&& value) { SetCaptionFormats(std::move(value)); return *this;}
-    inline Captions& AddCaptionFormats(const CaptionFormat& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(value); return *this; }
-    inline Captions& AddCaptionFormats(CaptionFormat&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(std::move(value)); return *this; }
+    template<typename CaptionFormatsT = Aws::Vector<CaptionFormat>>
+    void SetCaptionFormats(CaptionFormatsT&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = std::forward<CaptionFormatsT>(value); }
+    template<typename CaptionFormatsT = Aws::Vector<CaptionFormat>>
+    Captions& WithCaptionFormats(CaptionFormatsT&& value) { SetCaptionFormats(std::forward<CaptionFormatsT>(value)); return *this;}
+    template<typename CaptionFormatsT = CaptionFormat>
+    Captions& AddCaptionFormats(CaptionFormatsT&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.emplace_back(std::forward<CaptionFormatsT>(value)); return *this; }
     ///@}
   private:
 

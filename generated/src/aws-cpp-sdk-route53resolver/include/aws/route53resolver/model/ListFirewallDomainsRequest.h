@@ -21,7 +21,7 @@ namespace Model
   class ListFirewallDomainsRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListFirewallDomainsRequest();
+    AWS_ROUTE53RESOLVER_API ListFirewallDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the domain list whose domains you want to retrieve. </p>
      */
-    inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
+    inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-    inline void SetFirewallDomainListId(const Aws::String& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = value; }
-    inline void SetFirewallDomainListId(Aws::String&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::move(value); }
-    inline void SetFirewallDomainListId(const char* value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId.assign(value); }
-    inline ListFirewallDomainsRequest& WithFirewallDomainListId(const Aws::String& value) { SetFirewallDomainListId(value); return *this;}
-    inline ListFirewallDomainsRequest& WithFirewallDomainListId(Aws::String&& value) { SetFirewallDomainListId(std::move(value)); return *this;}
-    inline ListFirewallDomainsRequest& WithFirewallDomainListId(const char* value) { SetFirewallDomainListId(value); return *this;}
+    template<typename FirewallDomainListIdT = Aws::String>
+    void SetFirewallDomainListId(FirewallDomainListIdT&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value); }
+    template<typename FirewallDomainListIdT = Aws::String>
+    ListFirewallDomainsRequest& WithFirewallDomainListId(FirewallDomainListIdT&& value) { SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * next batch of objects.</p> <p>If you don't specify a value for
      * <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFirewallDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -71,21 +69,19 @@ namespace Model
      * retrieve the next batch of objects, use the token that was returned for the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFirewallDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFirewallDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFirewallDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFirewallDomainsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_firewallDomainListId;
     bool m_firewallDomainListIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

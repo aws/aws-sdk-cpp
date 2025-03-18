@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePackageScopeRequest::UpdatePackageScopeRequest() : 
-    m_packageIDHasBeenSet(false),
-    m_operation(PackageScopeOperationEnum::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_packageUserListHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePackageScopeRequest::SerializePayload() const
 {
   JsonValue payload;

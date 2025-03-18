@@ -32,7 +32,7 @@ namespace Model
   class TaskExecutionFilesListedDetail
   {
   public:
-    AWS_DATASYNC_API TaskExecutionFilesListedDetail();
+    AWS_DATASYNC_API TaskExecutionFilesListedDetail() = default;
     AWS_DATASYNC_API TaskExecutionFilesListedDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskExecutionFilesListedDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <li> <p>With an exclude filter, DataSync lists everything at your source
      * location before applying the filter.</p> </li> </ul>
      */
-    inline long long GetAtSource() const{ return m_atSource; }
+    inline long long GetAtSource() const { return m_atSource; }
     inline bool AtSourceHasBeenSet() const { return m_atSourceHasBeenSet; }
     inline void SetAtSource(long long value) { m_atSourceHasBeenSet = true; m_atSource = value; }
     inline TaskExecutionFilesListedDetail& WithAtSource(long long value) { SetAtSource(value); return *this;}
@@ -63,17 +63,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure
      * your task</a> to delete data in the destination that isn't in the source.</p>
      */
-    inline long long GetAtDestinationForDelete() const{ return m_atDestinationForDelete; }
+    inline long long GetAtDestinationForDelete() const { return m_atDestinationForDelete; }
     inline bool AtDestinationForDeleteHasBeenSet() const { return m_atDestinationForDeleteHasBeenSet; }
     inline void SetAtDestinationForDelete(long long value) { m_atDestinationForDeleteHasBeenSet = true; m_atDestinationForDelete = value; }
     inline TaskExecutionFilesListedDetail& WithAtDestinationForDelete(long long value) { SetAtDestinationForDelete(value); return *this;}
     ///@}
   private:
 
-    long long m_atSource;
+    long long m_atSource{0};
     bool m_atSourceHasBeenSet = false;
 
-    long long m_atDestinationForDelete;
+    long long m_atDestinationForDelete{0};
     bool m_atDestinationForDeleteHasBeenSet = false;
   };
 

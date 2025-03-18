@@ -18,19 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-ExportStatus::ExportStatus() : 
-    m_createdAtHasBeenSet(false),
-    m_lastRefreshedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusCode(ExportStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReason(ExecutionStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ExportStatus::ExportStatus(JsonView jsonValue)
-  : ExportStatus()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExportStatus& ExportStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRefreshedAt"))
   {
     m_lastRefreshedAt = jsonValue.GetString("LastRefreshedAt");
-
     m_lastRefreshedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = ExportStatusCodeMapper::GetExportStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = ExecutionStatusReasonMapper::GetExecutionStatusReasonForName(jsonValue.GetString("StatusReason"));
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

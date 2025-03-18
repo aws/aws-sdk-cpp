@@ -28,7 +28,7 @@ namespace Model
   class CreateArchiveRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API CreateArchiveRequest();
+    AWS_MAILMANAGER_API CreateArchiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>A unique name for the new archive.</p>
      */
-    inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
+    inline const Aws::String& GetArchiveName() const { return m_archiveName; }
     inline bool ArchiveNameHasBeenSet() const { return m_archiveNameHasBeenSet; }
-    inline void SetArchiveName(const Aws::String& value) { m_archiveNameHasBeenSet = true; m_archiveName = value; }
-    inline void SetArchiveName(Aws::String&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::move(value); }
-    inline void SetArchiveName(const char* value) { m_archiveNameHasBeenSet = true; m_archiveName.assign(value); }
-    inline CreateArchiveRequest& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-    inline CreateArchiveRequest& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-    inline CreateArchiveRequest& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    template<typename ArchiveNameT = Aws::String>
+    void SetArchiveName(ArchiveNameT&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::forward<ArchiveNameT>(value); }
+    template<typename ArchiveNameT = Aws::String>
+    CreateArchiveRequest& WithArchiveName(ArchiveNameT&& value) { SetArchiveName(std::forward<ArchiveNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateArchiveRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateArchiveRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateArchiveRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateArchiveRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +70,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
      * archive.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline CreateArchiveRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline CreateArchiveRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline CreateArchiveRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    CreateArchiveRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The period for retaining emails in the archive before automatic deletion.</p>
      */
-    inline const ArchiveRetention& GetRetention() const{ return m_retention; }
+    inline const ArchiveRetention& GetRetention() const { return m_retention; }
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
-    inline void SetRetention(const ArchiveRetention& value) { m_retentionHasBeenSet = true; m_retention = value; }
-    inline void SetRetention(ArchiveRetention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
-    inline CreateArchiveRequest& WithRetention(const ArchiveRetention& value) { SetRetention(value); return *this;}
-    inline CreateArchiveRequest& WithRetention(ArchiveRetention&& value) { SetRetention(std::move(value)); return *this;}
+    template<typename RetentionT = ArchiveRetention>
+    void SetRetention(RetentionT&& value) { m_retentionHasBeenSet = true; m_retention = std::forward<RetentionT>(value); }
+    template<typename RetentionT = ArchiveRetention>
+    CreateArchiveRequest& WithRetention(RetentionT&& value) { SetRetention(std::forward<RetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,14 @@ namespace Model
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateArchiveRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateArchiveRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateArchiveRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateArchiveRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateArchiveRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateArchiveRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

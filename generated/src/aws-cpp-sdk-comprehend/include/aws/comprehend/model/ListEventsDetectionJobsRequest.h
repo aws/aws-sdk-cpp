@@ -22,7 +22,7 @@ namespace Model
   class ListEventsDetectionJobsRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API ListEventsDetectionJobsRequest();
+    AWS_COMPREHEND_API ListEventsDetectionJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,33 +41,31 @@ namespace Model
      * status, or the date and time that they were submitted. You can only set one
      * filter at a time.</p>
      */
-    inline const EventsDetectionJobFilter& GetFilter() const{ return m_filter; }
+    inline const EventsDetectionJobFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const EventsDetectionJobFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(EventsDetectionJobFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListEventsDetectionJobsRequest& WithFilter(const EventsDetectionJobFilter& value) { SetFilter(value); return *this;}
-    inline ListEventsDetectionJobsRequest& WithFilter(EventsDetectionJobFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = EventsDetectionJobFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = EventsDetectionJobFilter>
+    ListEventsDetectionJobsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEventsDetectionJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventsDetectionJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventsDetectionJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventsDetectionJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in each page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEventsDetectionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

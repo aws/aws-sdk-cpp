@@ -34,7 +34,7 @@ namespace Model
   class RuleGroupRuleOptionsPair
   {
   public:
-    AWS_EC2_API RuleGroupRuleOptionsPair();
+    AWS_EC2_API RuleGroupRuleOptionsPair() = default;
     AWS_EC2_API RuleGroupRuleOptionsPair(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RuleGroupRuleOptionsPair& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The ARN of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
     inline bool RuleGroupArnHasBeenSet() const { return m_ruleGroupArnHasBeenSet; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn.assign(value); }
-    inline RuleGroupRuleOptionsPair& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline RuleGroupRuleOptionsPair& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline RuleGroupRuleOptionsPair& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    RuleGroupRuleOptionsPair& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule options.</p>
      */
-    inline const Aws::Vector<RuleOption>& GetRuleOptions() const{ return m_ruleOptions; }
+    inline const Aws::Vector<RuleOption>& GetRuleOptions() const { return m_ruleOptions; }
     inline bool RuleOptionsHasBeenSet() const { return m_ruleOptionsHasBeenSet; }
-    inline void SetRuleOptions(const Aws::Vector<RuleOption>& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = value; }
-    inline void SetRuleOptions(Aws::Vector<RuleOption>&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = std::move(value); }
-    inline RuleGroupRuleOptionsPair& WithRuleOptions(const Aws::Vector<RuleOption>& value) { SetRuleOptions(value); return *this;}
-    inline RuleGroupRuleOptionsPair& WithRuleOptions(Aws::Vector<RuleOption>&& value) { SetRuleOptions(std::move(value)); return *this;}
-    inline RuleGroupRuleOptionsPair& AddRuleOptions(const RuleOption& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(value); return *this; }
-    inline RuleGroupRuleOptionsPair& AddRuleOptions(RuleOption&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(std::move(value)); return *this; }
+    template<typename RuleOptionsT = Aws::Vector<RuleOption>>
+    void SetRuleOptions(RuleOptionsT&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = std::forward<RuleOptionsT>(value); }
+    template<typename RuleOptionsT = Aws::Vector<RuleOption>>
+    RuleGroupRuleOptionsPair& WithRuleOptions(RuleOptionsT&& value) { SetRuleOptions(std::forward<RuleOptionsT>(value)); return *this;}
+    template<typename RuleOptionsT = RuleOption>
+    RuleGroupRuleOptionsPair& AddRuleOptions(RuleOptionsT&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.emplace_back(std::forward<RuleOptionsT>(value)); return *this; }
     ///@}
   private:
 

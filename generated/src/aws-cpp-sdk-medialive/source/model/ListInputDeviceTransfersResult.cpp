@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInputDeviceTransfersResult::ListInputDeviceTransfersResult()
-{
-}
-
 ListInputDeviceTransfersResult::ListInputDeviceTransfersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListInputDeviceTransfersResult& ListInputDeviceTransfersResult::operator =(const
     {
       m_inputDeviceTransfers.push_back(inputDeviceTransfersJsonList[inputDeviceTransfersIndex].AsObject());
     }
+    m_inputDeviceTransfersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

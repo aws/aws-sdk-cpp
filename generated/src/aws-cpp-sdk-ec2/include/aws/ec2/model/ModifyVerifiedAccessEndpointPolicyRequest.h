@@ -23,7 +23,7 @@ namespace Model
   class ModifyVerifiedAccessEndpointPolicyRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessEndpointPolicyRequest();
+    AWS_EC2_API ModifyVerifiedAccessEndpointPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID of the Verified Access endpoint.</p>
      */
-    inline const Aws::String& GetVerifiedAccessEndpointId() const{ return m_verifiedAccessEndpointId; }
+    inline const Aws::String& GetVerifiedAccessEndpointId() const { return m_verifiedAccessEndpointId; }
     inline bool VerifiedAccessEndpointIdHasBeenSet() const { return m_verifiedAccessEndpointIdHasBeenSet; }
-    inline void SetVerifiedAccessEndpointId(const Aws::String& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = value; }
-    inline void SetVerifiedAccessEndpointId(Aws::String&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::move(value); }
-    inline void SetVerifiedAccessEndpointId(const char* value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId.assign(value); }
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(const Aws::String& value) { SetVerifiedAccessEndpointId(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(Aws::String&& value) { SetVerifiedAccessEndpointId(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(const char* value) { SetVerifiedAccessEndpointId(value); return *this;}
+    template<typename VerifiedAccessEndpointIdT = Aws::String>
+    void SetVerifiedAccessEndpointId(VerifiedAccessEndpointIdT&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::forward<VerifiedAccessEndpointIdT>(value); }
+    template<typename VerifiedAccessEndpointIdT = Aws::String>
+    ModifyVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(VerifiedAccessEndpointIdT&& value) { SetVerifiedAccessEndpointId(std::forward<VerifiedAccessEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the Verified Access policy.</p>
      */
-    inline bool GetPolicyEnabled() const{ return m_policyEnabled; }
+    inline bool GetPolicyEnabled() const { return m_policyEnabled; }
     inline bool PolicyEnabledHasBeenSet() const { return m_policyEnabledHasBeenSet; }
     inline void SetPolicyEnabled(bool value) { m_policyEnabledHasBeenSet = true; m_policyEnabled = value; }
     inline ModifyVerifiedAccessEndpointPolicyRequest& WithPolicyEnabled(bool value) { SetPolicyEnabled(value); return *this;}
@@ -66,14 +64,12 @@ namespace Model
     /**
      * <p>The Verified Access policy document.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    ModifyVerifiedAccessEndpointPolicyRequest& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ModifyVerifiedAccessEndpointPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +94,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVerifiedAccessEndpointPolicyRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -110,19 +104,19 @@ namespace Model
     /**
      * <p>The options for server side encryption.</p>
      */
-    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
+    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const { return m_sseSpecification; }
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
-    inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
-    inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationRequest>
+    void SetSseSpecification(SseSpecificationT&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::forward<SseSpecificationT>(value); }
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationRequest>
+    ModifyVerifiedAccessEndpointPolicyRequest& WithSseSpecification(SseSpecificationT&& value) { SetSseSpecification(std::forward<SseSpecificationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_verifiedAccessEndpointId;
     bool m_verifiedAccessEndpointIdHasBeenSet = false;
 
-    bool m_policyEnabled;
+    bool m_policyEnabled{false};
     bool m_policyEnabledHasBeenSet = false;
 
     Aws::String m_policyDocument;
@@ -131,7 +125,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     VerifiedAccessSseSpecificationRequest m_sseSpecification;

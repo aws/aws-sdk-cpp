@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEvaluationResultsRequest::DeleteEvaluationResultsRequest() : 
-    m_configRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEvaluationResultsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-LaunchIntoInstanceProperties::LaunchIntoInstanceProperties() : 
-    m_launchIntoEC2InstanceIDHasBeenSet(false)
-{
-}
-
 LaunchIntoInstanceProperties::LaunchIntoInstanceProperties(JsonView jsonValue)
-  : LaunchIntoInstanceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LaunchIntoInstanceProperties& LaunchIntoInstanceProperties::operator =(JsonView 
   if(jsonValue.ValueExists("launchIntoEC2InstanceID"))
   {
     m_launchIntoEC2InstanceID = jsonValue.GetString("launchIntoEC2InstanceID");
-
     m_launchIntoEC2InstanceIDHasBeenSet = true;
   }
-
   return *this;
 }
 

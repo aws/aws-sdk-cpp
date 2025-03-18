@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedProjectInput::SubscribedProjectInput() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 SubscribedProjectInput::SubscribedProjectInput(JsonView jsonValue)
-  : SubscribedProjectInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SubscribedProjectInput& SubscribedProjectInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

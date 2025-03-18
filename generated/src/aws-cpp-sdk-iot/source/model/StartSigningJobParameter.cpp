@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StartSigningJobParameter::StartSigningJobParameter() : 
-    m_signingProfileParameterHasBeenSet(false),
-    m_signingProfileNameHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 StartSigningJobParameter::StartSigningJobParameter(JsonView jsonValue)
-  : StartSigningJobParameter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StartSigningJobParameter& StartSigningJobParameter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("signingProfileParameter"))
   {
     m_signingProfileParameter = jsonValue.GetObject("signingProfileParameter");
-
     m_signingProfileParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingProfileName"))
   {
     m_signingProfileName = jsonValue.GetString("signingProfileName");
-
     m_signingProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

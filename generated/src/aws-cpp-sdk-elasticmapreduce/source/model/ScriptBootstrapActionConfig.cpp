@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() : 
-    m_pathHasBeenSet(false),
-    m_argsHasBeenSet(false)
-{
-}
-
 ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(JsonView jsonValue)
-  : ScriptBootstrapActionConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(JsonView js
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
@@ -48,7 +39,6 @@ ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(JsonView js
     }
     m_argsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class ConfigurationManagerSummary
   {
   public:
-    AWS_SSMQUICKSETUP_API ConfigurationManagerSummary();
+    AWS_SSMQUICKSETUP_API ConfigurationManagerSummary() = default;
     AWS_SSMQUICKSETUP_API ConfigurationManagerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API ConfigurationManagerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,50 @@ namespace Model
     /**
      * <p>A summary of the Quick Setup configuration definition.</p>
      */
-    inline const Aws::Vector<ConfigurationDefinitionSummary>& GetConfigurationDefinitionSummaries() const{ return m_configurationDefinitionSummaries; }
+    inline const Aws::Vector<ConfigurationDefinitionSummary>& GetConfigurationDefinitionSummaries() const { return m_configurationDefinitionSummaries; }
     inline bool ConfigurationDefinitionSummariesHasBeenSet() const { return m_configurationDefinitionSummariesHasBeenSet; }
-    inline void SetConfigurationDefinitionSummaries(const Aws::Vector<ConfigurationDefinitionSummary>& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries = value; }
-    inline void SetConfigurationDefinitionSummaries(Aws::Vector<ConfigurationDefinitionSummary>&& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries = std::move(value); }
-    inline ConfigurationManagerSummary& WithConfigurationDefinitionSummaries(const Aws::Vector<ConfigurationDefinitionSummary>& value) { SetConfigurationDefinitionSummaries(value); return *this;}
-    inline ConfigurationManagerSummary& WithConfigurationDefinitionSummaries(Aws::Vector<ConfigurationDefinitionSummary>&& value) { SetConfigurationDefinitionSummaries(std::move(value)); return *this;}
-    inline ConfigurationManagerSummary& AddConfigurationDefinitionSummaries(const ConfigurationDefinitionSummary& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries.push_back(value); return *this; }
-    inline ConfigurationManagerSummary& AddConfigurationDefinitionSummaries(ConfigurationDefinitionSummary&& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationDefinitionSummariesT = Aws::Vector<ConfigurationDefinitionSummary>>
+    void SetConfigurationDefinitionSummaries(ConfigurationDefinitionSummariesT&& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries = std::forward<ConfigurationDefinitionSummariesT>(value); }
+    template<typename ConfigurationDefinitionSummariesT = Aws::Vector<ConfigurationDefinitionSummary>>
+    ConfigurationManagerSummary& WithConfigurationDefinitionSummaries(ConfigurationDefinitionSummariesT&& value) { SetConfigurationDefinitionSummaries(std::forward<ConfigurationDefinitionSummariesT>(value)); return *this;}
+    template<typename ConfigurationDefinitionSummariesT = ConfigurationDefinitionSummary>
+    ConfigurationManagerSummary& AddConfigurationDefinitionSummaries(ConfigurationDefinitionSummariesT&& value) { m_configurationDefinitionSummariesHasBeenSet = true; m_configurationDefinitionSummaries.emplace_back(std::forward<ConfigurationDefinitionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The description of the configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ConfigurationManagerSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ConfigurationManagerSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ConfigurationManagerSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ConfigurationManagerSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Quick Setup configuration.</p>
      */
-    inline const Aws::String& GetManagerArn() const{ return m_managerArn; }
+    inline const Aws::String& GetManagerArn() const { return m_managerArn; }
     inline bool ManagerArnHasBeenSet() const { return m_managerArnHasBeenSet; }
-    inline void SetManagerArn(const Aws::String& value) { m_managerArnHasBeenSet = true; m_managerArn = value; }
-    inline void SetManagerArn(Aws::String&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::move(value); }
-    inline void SetManagerArn(const char* value) { m_managerArnHasBeenSet = true; m_managerArn.assign(value); }
-    inline ConfigurationManagerSummary& WithManagerArn(const Aws::String& value) { SetManagerArn(value); return *this;}
-    inline ConfigurationManagerSummary& WithManagerArn(Aws::String&& value) { SetManagerArn(std::move(value)); return *this;}
-    inline ConfigurationManagerSummary& WithManagerArn(const char* value) { SetManagerArn(value); return *this;}
+    template<typename ManagerArnT = Aws::String>
+    void SetManagerArn(ManagerArnT&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::forward<ManagerArnT>(value); }
+    template<typename ManagerArnT = Aws::String>
+    ConfigurationManagerSummary& WithManagerArn(ManagerArnT&& value) { SetManagerArn(std::forward<ManagerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfigurationManagerSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfigurationManagerSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfigurationManagerSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfigurationManagerSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,14 @@ namespace Model
      * the configuration manager. This includes deployment statuses, association
      * statuses, drift statuses, health checks, and more.</p>
      */
-    inline const Aws::Vector<StatusSummary>& GetStatusSummaries() const{ return m_statusSummaries; }
+    inline const Aws::Vector<StatusSummary>& GetStatusSummaries() const { return m_statusSummaries; }
     inline bool StatusSummariesHasBeenSet() const { return m_statusSummariesHasBeenSet; }
-    inline void SetStatusSummaries(const Aws::Vector<StatusSummary>& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries = value; }
-    inline void SetStatusSummaries(Aws::Vector<StatusSummary>&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries = std::move(value); }
-    inline ConfigurationManagerSummary& WithStatusSummaries(const Aws::Vector<StatusSummary>& value) { SetStatusSummaries(value); return *this;}
-    inline ConfigurationManagerSummary& WithStatusSummaries(Aws::Vector<StatusSummary>&& value) { SetStatusSummaries(std::move(value)); return *this;}
-    inline ConfigurationManagerSummary& AddStatusSummaries(const StatusSummary& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries.push_back(value); return *this; }
-    inline ConfigurationManagerSummary& AddStatusSummaries(StatusSummary&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries.push_back(std::move(value)); return *this; }
+    template<typename StatusSummariesT = Aws::Vector<StatusSummary>>
+    void SetStatusSummaries(StatusSummariesT&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries = std::forward<StatusSummariesT>(value); }
+    template<typename StatusSummariesT = Aws::Vector<StatusSummary>>
+    ConfigurationManagerSummary& WithStatusSummaries(StatusSummariesT&& value) { SetStatusSummaries(std::forward<StatusSummariesT>(value)); return *this;}
+    template<typename StatusSummariesT = StatusSummary>
+    ConfigurationManagerSummary& AddStatusSummaries(StatusSummariesT&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries.emplace_back(std::forward<StatusSummariesT>(value)); return *this; }
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class SparkSqlJobDriver
   {
   public:
-    AWS_EMRCONTAINERS_API SparkSqlJobDriver();
+    AWS_EMRCONTAINERS_API SparkSqlJobDriver() = default;
     AWS_EMRCONTAINERS_API SparkSqlJobDriver(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API SparkSqlJobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The SQL file to be executed.</p>
      */
-    inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
+    inline const Aws::String& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-    inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-    inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-    inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
-    inline SparkSqlJobDriver& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
-    inline SparkSqlJobDriver& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
-    inline SparkSqlJobDriver& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
+    template<typename EntryPointT = Aws::String>
+    void SetEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::forward<EntryPointT>(value); }
+    template<typename EntryPointT = Aws::String>
+    SparkSqlJobDriver& WithEntryPoint(EntryPointT&& value) { SetEntryPoint(std::forward<EntryPointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Spark parameters to be included in the Spark SQL command.</p>
      */
-    inline const Aws::String& GetSparkSqlParameters() const{ return m_sparkSqlParameters; }
+    inline const Aws::String& GetSparkSqlParameters() const { return m_sparkSqlParameters; }
     inline bool SparkSqlParametersHasBeenSet() const { return m_sparkSqlParametersHasBeenSet; }
-    inline void SetSparkSqlParameters(const Aws::String& value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters = value; }
-    inline void SetSparkSqlParameters(Aws::String&& value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters = std::move(value); }
-    inline void SetSparkSqlParameters(const char* value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters.assign(value); }
-    inline SparkSqlJobDriver& WithSparkSqlParameters(const Aws::String& value) { SetSparkSqlParameters(value); return *this;}
-    inline SparkSqlJobDriver& WithSparkSqlParameters(Aws::String&& value) { SetSparkSqlParameters(std::move(value)); return *this;}
-    inline SparkSqlJobDriver& WithSparkSqlParameters(const char* value) { SetSparkSqlParameters(value); return *this;}
+    template<typename SparkSqlParametersT = Aws::String>
+    void SetSparkSqlParameters(SparkSqlParametersT&& value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters = std::forward<SparkSqlParametersT>(value); }
+    template<typename SparkSqlParametersT = Aws::String>
+    SparkSqlJobDriver& WithSparkSqlParameters(SparkSqlParametersT&& value) { SetSparkSqlParameters(std::forward<SparkSqlParametersT>(value)); return *this;}
     ///@}
   private:
 

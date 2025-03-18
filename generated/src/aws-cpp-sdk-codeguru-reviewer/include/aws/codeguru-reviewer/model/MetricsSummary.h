@@ -29,7 +29,7 @@ namespace Model
   class MetricsSummary
   {
   public:
-    AWS_CODEGURUREVIEWER_API MetricsSummary();
+    AWS_CODEGURUREVIEWER_API MetricsSummary() = default;
     AWS_CODEGURUREVIEWER_API MetricsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API MetricsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
      * total of 2,725 lines of code.</p>
      */
-    inline long long GetMeteredLinesOfCodeCount() const{ return m_meteredLinesOfCodeCount; }
+    inline long long GetMeteredLinesOfCodeCount() const { return m_meteredLinesOfCodeCount; }
     inline bool MeteredLinesOfCodeCountHasBeenSet() const { return m_meteredLinesOfCodeCountHasBeenSet; }
     inline void SetMeteredLinesOfCodeCount(long long value) { m_meteredLinesOfCodeCountHasBeenSet = true; m_meteredLinesOfCodeCount = value; }
     inline MetricsSummary& WithMeteredLinesOfCodeCount(long long value) { SetMeteredLinesOfCodeCount(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
      * pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100)
      * as the total number of lines of code suppressed.</p>
      */
-    inline long long GetSuppressedLinesOfCodeCount() const{ return m_suppressedLinesOfCodeCount; }
+    inline long long GetSuppressedLinesOfCodeCount() const { return m_suppressedLinesOfCodeCount; }
     inline bool SuppressedLinesOfCodeCountHasBeenSet() const { return m_suppressedLinesOfCodeCountHasBeenSet; }
     inline void SetSuppressedLinesOfCodeCount(long long value) { m_suppressedLinesOfCodeCountHasBeenSet = true; m_suppressedLinesOfCodeCount = value; }
     inline MetricsSummary& WithSuppressedLinesOfCodeCount(long long value) { SetSuppressedLinesOfCodeCount(value); return *this;}
@@ -83,20 +83,20 @@ namespace Model
     /**
      * <p>Total number of recommendations found in the code review.</p>
      */
-    inline long long GetFindingsCount() const{ return m_findingsCount; }
+    inline long long GetFindingsCount() const { return m_findingsCount; }
     inline bool FindingsCountHasBeenSet() const { return m_findingsCountHasBeenSet; }
     inline void SetFindingsCount(long long value) { m_findingsCountHasBeenSet = true; m_findingsCount = value; }
     inline MetricsSummary& WithFindingsCount(long long value) { SetFindingsCount(value); return *this;}
     ///@}
   private:
 
-    long long m_meteredLinesOfCodeCount;
+    long long m_meteredLinesOfCodeCount{0};
     bool m_meteredLinesOfCodeCountHasBeenSet = false;
 
-    long long m_suppressedLinesOfCodeCount;
+    long long m_suppressedLinesOfCodeCount{0};
     bool m_suppressedLinesOfCodeCountHasBeenSet = false;
 
-    long long m_findingsCount;
+    long long m_findingsCount{0};
     bool m_findingsCountHasBeenSet = false;
   };
 

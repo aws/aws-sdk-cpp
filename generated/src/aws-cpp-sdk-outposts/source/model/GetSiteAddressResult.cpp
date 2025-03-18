@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSiteAddressResult::GetSiteAddressResult() : 
-    m_addressType(AddressType::NOT_SET)
-{
-}
-
 GetSiteAddressResult::GetSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSiteAddressResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetSiteAddressResult& GetSiteAddressResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("SiteId"))
   {
     m_siteId = jsonValue.GetString("SiteId");
-
+    m_siteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressType"))
   {
     m_addressType = AddressTypeMapper::GetAddressTypeForName(jsonValue.GetString("AddressType"));
-
+    m_addressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
+    m_addressHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

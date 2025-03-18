@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_profileAttributesHasBeenSet(false),
-    m_calculatedAttributesHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProfileAttributes"))
   {
     m_profileAttributes = jsonValue.GetObject("ProfileAttributes");
-
     m_profileAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedAttributes"))
   {
     Aws::Map<Aws::String, JsonView> calculatedAttributesJsonMap = jsonValue.GetObject("CalculatedAttributes").GetAllObjects();
@@ -48,7 +39,6 @@ Dimension& Dimension::operator =(JsonView jsonValue)
     }
     m_calculatedAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

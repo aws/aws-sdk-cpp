@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyIpamResourceDiscoveryRequest::ModifyIpamResourceDiscoveryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_addOperatingRegionsHasBeenSet(false),
-    m_removeOperatingRegionsHasBeenSet(false),
-    m_addOrganizationalUnitExclusionsHasBeenSet(false),
-    m_removeOrganizationalUnitExclusionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIpamResourceDiscoveryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

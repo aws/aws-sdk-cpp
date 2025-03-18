@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ForecastConfiguration::ForecastConfiguration() : 
-    m_forecastPropertiesHasBeenSet(false),
-    m_scenarioHasBeenSet(false)
-{
-}
-
 ForecastConfiguration::ForecastConfiguration(JsonView jsonValue)
-  : ForecastConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ForecastConfiguration& ForecastConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ForecastProperties"))
   {
     m_forecastProperties = jsonValue.GetObject("ForecastProperties");
-
     m_forecastPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scenario"))
   {
     m_scenario = jsonValue.GetObject("Scenario");
-
     m_scenarioHasBeenSet = true;
   }
-
   return *this;
 }
 

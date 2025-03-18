@@ -18,15 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-WorkerConfigurationDescription::WorkerConfigurationDescription() : 
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_workerConfigurationArnHasBeenSet(false)
-{
-}
-
 WorkerConfigurationDescription::WorkerConfigurationDescription(JsonView jsonValue)
-  : WorkerConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkerConfigurationDescription& WorkerConfigurationDescription::operator =(JsonV
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInt64("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerConfigurationArn"))
   {
     m_workerConfigurationArn = jsonValue.GetString("workerConfigurationArn");
-
     m_workerConfigurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

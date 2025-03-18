@@ -34,7 +34,7 @@ namespace Model
   class CreateResourceResult
   {
   public:
-    AWS_APIGATEWAY_API CreateResourceResult();
+    AWS_APIGATEWAY_API CreateResourceResult() = default;
     AWS_APIGATEWAY_API CreateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API CreateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,94 +43,88 @@ namespace Model
     /**
      * <p>The resource's identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateResourceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateResourceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateResourceResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateResourceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parent resource's identifier.</p>
      */
-    inline const Aws::String& GetParentId() const{ return m_parentId; }
-    inline void SetParentId(const Aws::String& value) { m_parentId = value; }
-    inline void SetParentId(Aws::String&& value) { m_parentId = std::move(value); }
-    inline void SetParentId(const char* value) { m_parentId.assign(value); }
-    inline CreateResourceResult& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
-    inline CreateResourceResult& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
-    inline CreateResourceResult& WithParentId(const char* value) { SetParentId(value); return *this;}
+    inline const Aws::String& GetParentId() const { return m_parentId; }
+    template<typename ParentIdT = Aws::String>
+    void SetParentId(ParentIdT&& value) { m_parentIdHasBeenSet = true; m_parentId = std::forward<ParentIdT>(value); }
+    template<typename ParentIdT = Aws::String>
+    CreateResourceResult& WithParentId(ParentIdT&& value) { SetParentId(std::forward<ParentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last path segment for this resource.</p>
      */
-    inline const Aws::String& GetPathPart() const{ return m_pathPart; }
-    inline void SetPathPart(const Aws::String& value) { m_pathPart = value; }
-    inline void SetPathPart(Aws::String&& value) { m_pathPart = std::move(value); }
-    inline void SetPathPart(const char* value) { m_pathPart.assign(value); }
-    inline CreateResourceResult& WithPathPart(const Aws::String& value) { SetPathPart(value); return *this;}
-    inline CreateResourceResult& WithPathPart(Aws::String&& value) { SetPathPart(std::move(value)); return *this;}
-    inline CreateResourceResult& WithPathPart(const char* value) { SetPathPart(value); return *this;}
+    inline const Aws::String& GetPathPart() const { return m_pathPart; }
+    template<typename PathPartT = Aws::String>
+    void SetPathPart(PathPartT&& value) { m_pathPartHasBeenSet = true; m_pathPart = std::forward<PathPartT>(value); }
+    template<typename PathPartT = Aws::String>
+    CreateResourceResult& WithPathPart(PathPartT&& value) { SetPathPart(std::forward<PathPartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The full path for this resource.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
-    inline void SetPath(const Aws::String& value) { m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_path.assign(value); }
-    inline CreateResourceResult& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CreateResourceResult& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CreateResourceResult& WithPath(const char* value) { SetPath(value); return *this;}
+    inline const Aws::String& GetPath() const { return m_path; }
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CreateResourceResult& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Gets an API resource's method of a given HTTP verb.</p>
      */
-    inline const Aws::Map<Aws::String, Method>& GetResourceMethods() const{ return m_resourceMethods; }
-    inline void SetResourceMethods(const Aws::Map<Aws::String, Method>& value) { m_resourceMethods = value; }
-    inline void SetResourceMethods(Aws::Map<Aws::String, Method>&& value) { m_resourceMethods = std::move(value); }
-    inline CreateResourceResult& WithResourceMethods(const Aws::Map<Aws::String, Method>& value) { SetResourceMethods(value); return *this;}
-    inline CreateResourceResult& WithResourceMethods(Aws::Map<Aws::String, Method>&& value) { SetResourceMethods(std::move(value)); return *this;}
-    inline CreateResourceResult& AddResourceMethods(const Aws::String& key, const Method& value) { m_resourceMethods.emplace(key, value); return *this; }
-    inline CreateResourceResult& AddResourceMethods(Aws::String&& key, const Method& value) { m_resourceMethods.emplace(std::move(key), value); return *this; }
-    inline CreateResourceResult& AddResourceMethods(const Aws::String& key, Method&& value) { m_resourceMethods.emplace(key, std::move(value)); return *this; }
-    inline CreateResourceResult& AddResourceMethods(Aws::String&& key, Method&& value) { m_resourceMethods.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateResourceResult& AddResourceMethods(const char* key, Method&& value) { m_resourceMethods.emplace(key, std::move(value)); return *this; }
-    inline CreateResourceResult& AddResourceMethods(const char* key, const Method& value) { m_resourceMethods.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Method>& GetResourceMethods() const { return m_resourceMethods; }
+    template<typename ResourceMethodsT = Aws::Map<Aws::String, Method>>
+    void SetResourceMethods(ResourceMethodsT&& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods = std::forward<ResourceMethodsT>(value); }
+    template<typename ResourceMethodsT = Aws::Map<Aws::String, Method>>
+    CreateResourceResult& WithResourceMethods(ResourceMethodsT&& value) { SetResourceMethods(std::forward<ResourceMethodsT>(value)); return *this;}
+    template<typename ResourceMethodsKeyT = Aws::String, typename ResourceMethodsValueT = Method>
+    CreateResourceResult& AddResourceMethods(ResourceMethodsKeyT&& key, ResourceMethodsValueT&& value) {
+      m_resourceMethodsHasBeenSet = true; m_resourceMethods.emplace(std::forward<ResourceMethodsKeyT>(key), std::forward<ResourceMethodsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_parentId;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_pathPart;
+    bool m_pathPartHasBeenSet = false;
 
     Aws::String m_path;
+    bool m_pathHasBeenSet = false;
 
     Aws::Map<Aws::String, Method> m_resourceMethods;
+    bool m_resourceMethodsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

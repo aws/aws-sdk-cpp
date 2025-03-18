@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComparisonConfiguration::ComparisonConfiguration() : 
-    m_comparisonMethod(ComparisonMethod::NOT_SET),
-    m_comparisonMethodHasBeenSet(false),
-    m_comparisonFormatHasBeenSet(false)
-{
-}
-
 ComparisonConfiguration::ComparisonConfiguration(JsonView jsonValue)
-  : ComparisonConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComparisonConfiguration& ComparisonConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComparisonMethod"))
   {
     m_comparisonMethod = ComparisonMethodMapper::GetComparisonMethodForName(jsonValue.GetString("ComparisonMethod"));
-
     m_comparisonMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonFormat"))
   {
     m_comparisonFormat = jsonValue.GetObject("ComparisonFormat");
-
     m_comparisonFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

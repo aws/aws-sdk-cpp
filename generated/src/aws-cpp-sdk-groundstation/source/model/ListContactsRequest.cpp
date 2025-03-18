@@ -12,19 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContactsRequest::ListContactsRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_groundStationHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_missionProfileArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_statusListHasBeenSet(false)
-{
-}
-
 Aws::String ListContactsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,31 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CsvClassifier::CsvClassifier() : 
-    m_nameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false),
-    m_containsHeader(CsvHeaderOption::NOT_SET),
-    m_containsHeaderHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_disableValueTrimming(false),
-    m_disableValueTrimmingHasBeenSet(false),
-    m_allowSingleColumn(false),
-    m_allowSingleColumnHasBeenSet(false),
-    m_customDatatypeConfigured(false),
-    m_customDatatypeConfiguredHasBeenSet(false),
-    m_customDatatypesHasBeenSet(false),
-    m_serde(CsvSerdeOption::NOT_SET),
-    m_serdeHasBeenSet(false)
-{
-}
-
 CsvClassifier::CsvClassifier(JsonView jsonValue)
-  : CsvClassifier()
 {
   *this = jsonValue;
 }
@@ -52,52 +28,38 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteSymbol"))
   {
     m_quoteSymbol = jsonValue.GetString("QuoteSymbol");
-
     m_quoteSymbolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainsHeader"))
   {
     m_containsHeader = CsvHeaderOptionMapper::GetCsvHeaderOptionForName(jsonValue.GetString("ContainsHeader"));
-
     m_containsHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Header"))
   {
     Aws::Utils::Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
@@ -107,28 +69,21 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
     }
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableValueTrimming"))
   {
     m_disableValueTrimming = jsonValue.GetBool("DisableValueTrimming");
-
     m_disableValueTrimmingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowSingleColumn"))
   {
     m_allowSingleColumn = jsonValue.GetBool("AllowSingleColumn");
-
     m_allowSingleColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDatatypeConfigured"))
   {
     m_customDatatypeConfigured = jsonValue.GetBool("CustomDatatypeConfigured");
-
     m_customDatatypeConfiguredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDatatypes"))
   {
     Aws::Utils::Array<JsonView> customDatatypesJsonList = jsonValue.GetArray("CustomDatatypes");
@@ -138,14 +93,11 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
     }
     m_customDatatypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Serde"))
   {
     m_serde = CsvSerdeOptionMapper::GetCsvSerdeOptionForName(jsonValue.GetString("Serde"));
-
     m_serdeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class MatchingRule
   {
   public:
-    AWS_CUSTOMERPROFILES_API MatchingRule();
+    AWS_CUSTOMERPROFILES_API MatchingRule() = default;
     AWS_CUSTOMERPROFILES_API MatchingRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API MatchingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
      * <p>A single rule level of the <code>MatchRules</code>. Configures how the
      * rule-based matching process should match profiles.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRule() const{ return m_rule; }
+    inline const Aws::Vector<Aws::String>& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const Aws::Vector<Aws::String>& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(Aws::Vector<Aws::String>&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline MatchingRule& WithRule(const Aws::Vector<Aws::String>& value) { SetRule(value); return *this;}
-    inline MatchingRule& WithRule(Aws::Vector<Aws::String>&& value) { SetRule(std::move(value)); return *this;}
-    inline MatchingRule& AddRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule.push_back(value); return *this; }
-    inline MatchingRule& AddRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule.push_back(std::move(value)); return *this; }
-    inline MatchingRule& AddRule(const char* value) { m_ruleHasBeenSet = true; m_rule.push_back(value); return *this; }
+    template<typename RuleT = Aws::Vector<Aws::String>>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = Aws::Vector<Aws::String>>
+    MatchingRule& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
+    template<typename RuleT = Aws::String>
+    MatchingRule& AddRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule.emplace_back(std::forward<RuleT>(value)); return *this; }
     ///@}
   private:
 

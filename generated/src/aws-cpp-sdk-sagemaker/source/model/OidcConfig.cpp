@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OidcConfig::OidcConfig() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_logoutEndpointHasBeenSet(false),
-    m_jwksUriHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false)
-{
-}
-
 OidcConfig::OidcConfig(JsonView jsonValue)
-  : OidcConfig()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ OidcConfig& OidcConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSecret"))
   {
     m_clientSecret = jsonValue.GetString("ClientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationEndpoint"))
   {
     m_authorizationEndpoint = jsonValue.GetString("AuthorizationEndpoint");
-
     m_authorizationEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenEndpoint"))
   {
     m_tokenEndpoint = jsonValue.GetString("TokenEndpoint");
-
     m_tokenEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserInfoEndpoint"))
   {
     m_userInfoEndpoint = jsonValue.GetString("UserInfoEndpoint");
-
     m_userInfoEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogoutEndpoint"))
   {
     m_logoutEndpoint = jsonValue.GetString("LogoutEndpoint");
-
     m_logoutEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JwksUri"))
   {
     m_jwksUri = jsonValue.GetString("JwksUri");
-
     m_jwksUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationRequestExtraParams"))
   {
     Aws::Map<Aws::String, JsonView> authenticationRequestExtraParamsJsonMap = jsonValue.GetObject("AuthenticationRequestExtraParams").GetAllObjects();
@@ -112,7 +79,6 @@ OidcConfig& OidcConfig::operator =(JsonView jsonValue)
     }
     m_authenticationRequestExtraParamsHasBeenSet = true;
   }
-
   return *this;
 }
 

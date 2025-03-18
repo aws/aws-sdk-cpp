@@ -34,7 +34,7 @@ namespace Model
   class EnrollmentJobFraudDetectionConfig
   {
   public:
-    AWS_VOICEID_API EnrollmentJobFraudDetectionConfig();
+    AWS_VOICEID_API EnrollmentJobFraudDetectionConfig() = default;
     AWS_VOICEID_API EnrollmentJobFraudDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API EnrollmentJobFraudDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * enrollment. Changing this value to <code>IGNORE</code> results in the speaker
      * being enrolled even if they are flagged by the fraud detection system.</p>
      */
-    inline const FraudDetectionAction& GetFraudDetectionAction() const{ return m_fraudDetectionAction; }
+    inline FraudDetectionAction GetFraudDetectionAction() const { return m_fraudDetectionAction; }
     inline bool FraudDetectionActionHasBeenSet() const { return m_fraudDetectionActionHasBeenSet; }
-    inline void SetFraudDetectionAction(const FraudDetectionAction& value) { m_fraudDetectionActionHasBeenSet = true; m_fraudDetectionAction = value; }
-    inline void SetFraudDetectionAction(FraudDetectionAction&& value) { m_fraudDetectionActionHasBeenSet = true; m_fraudDetectionAction = std::move(value); }
-    inline EnrollmentJobFraudDetectionConfig& WithFraudDetectionAction(const FraudDetectionAction& value) { SetFraudDetectionAction(value); return *this;}
-    inline EnrollmentJobFraudDetectionConfig& WithFraudDetectionAction(FraudDetectionAction&& value) { SetFraudDetectionAction(std::move(value)); return *this;}
+    inline void SetFraudDetectionAction(FraudDetectionAction value) { m_fraudDetectionActionHasBeenSet = true; m_fraudDetectionAction = value; }
+    inline EnrollmentJobFraudDetectionConfig& WithFraudDetectionAction(FraudDetectionAction value) { SetFraudDetectionAction(value); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * fraudulent. If the detected risk score calculated by Voice ID is greater than or
      * equal to the threshold, the speaker is considered a fraudster.</p>
      */
-    inline int GetRiskThreshold() const{ return m_riskThreshold; }
+    inline int GetRiskThreshold() const { return m_riskThreshold; }
     inline bool RiskThresholdHasBeenSet() const { return m_riskThresholdHasBeenSet; }
     inline void SetRiskThreshold(int value) { m_riskThresholdHasBeenSet = true; m_riskThreshold = value; }
     inline EnrollmentJobFraudDetectionConfig& WithRiskThreshold(int value) { SetRiskThreshold(value); return *this;}
@@ -71,22 +69,21 @@ namespace Model
     /**
      * <p>The identifier of watchlists against which fraud detection is performed. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetWatchlistIds() const{ return m_watchlistIds; }
+    inline const Aws::Vector<Aws::String>& GetWatchlistIds() const { return m_watchlistIds; }
     inline bool WatchlistIdsHasBeenSet() const { return m_watchlistIdsHasBeenSet; }
-    inline void SetWatchlistIds(const Aws::Vector<Aws::String>& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = value; }
-    inline void SetWatchlistIds(Aws::Vector<Aws::String>&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = std::move(value); }
-    inline EnrollmentJobFraudDetectionConfig& WithWatchlistIds(const Aws::Vector<Aws::String>& value) { SetWatchlistIds(value); return *this;}
-    inline EnrollmentJobFraudDetectionConfig& WithWatchlistIds(Aws::Vector<Aws::String>&& value) { SetWatchlistIds(std::move(value)); return *this;}
-    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(const Aws::String& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
-    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(Aws::String&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(std::move(value)); return *this; }
-    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(const char* value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+    template<typename WatchlistIdsT = Aws::Vector<Aws::String>>
+    void SetWatchlistIds(WatchlistIdsT&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = std::forward<WatchlistIdsT>(value); }
+    template<typename WatchlistIdsT = Aws::Vector<Aws::String>>
+    EnrollmentJobFraudDetectionConfig& WithWatchlistIds(WatchlistIdsT&& value) { SetWatchlistIds(std::forward<WatchlistIdsT>(value)); return *this;}
+    template<typename WatchlistIdsT = Aws::String>
+    EnrollmentJobFraudDetectionConfig& AddWatchlistIds(WatchlistIdsT&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.emplace_back(std::forward<WatchlistIdsT>(value)); return *this; }
     ///@}
   private:
 
-    FraudDetectionAction m_fraudDetectionAction;
+    FraudDetectionAction m_fraudDetectionAction{FraudDetectionAction::NOT_SET};
     bool m_fraudDetectionActionHasBeenSet = false;
 
-    int m_riskThreshold;
+    int m_riskThreshold{0};
     bool m_riskThresholdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_watchlistIds;

@@ -33,7 +33,7 @@ namespace Model
   class BatchPutGeofenceRequestEntry
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry() = default;
     AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The identifier for the geofence to be stored in a given geofence
      * collection.</p>
      */
-    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
+    inline const Aws::String& GetGeofenceId() const { return m_geofenceId; }
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-    inline BatchPutGeofenceRequestEntry& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-    inline BatchPutGeofenceRequestEntry& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-    inline BatchPutGeofenceRequestEntry& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    template<typename GeofenceIdT = Aws::String>
+    void SetGeofenceId(GeofenceIdT&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::forward<GeofenceIdT>(value); }
+    template<typename GeofenceIdT = Aws::String>
+    BatchPutGeofenceRequestEntry& WithGeofenceId(GeofenceIdT&& value) { SetGeofenceId(std::forward<GeofenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">Geofence
      * geobuf</a> format supports a maximum of 100,000 vertices.</p> 
      */
-    inline const GeofenceGeometry& GetGeometry() const{ return m_geometry; }
+    inline const GeofenceGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const GeofenceGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(GeofenceGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline BatchPutGeofenceRequestEntry& WithGeometry(const GeofenceGeometry& value) { SetGeometry(value); return *this;}
-    inline BatchPutGeofenceRequestEntry& WithGeometry(GeofenceGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = GeofenceGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = GeofenceGeometry>
+    BatchPutGeofenceRequestEntry& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,19 +76,16 @@ namespace Model
      * key-value pair stored with the geofence and added to any geofence event
      * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const { return m_geofenceProperties; }
     inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
-    inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
-    inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
-    inline BatchPutGeofenceRequestEntry& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
-    inline BatchPutGeofenceRequestEntry& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-    inline BatchPutGeofenceRequestEntry& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
+    template<typename GeofencePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetGeofenceProperties(GeofencePropertiesT&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::forward<GeofencePropertiesT>(value); }
+    template<typename GeofencePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    BatchPutGeofenceRequestEntry& WithGeofenceProperties(GeofencePropertiesT&& value) { SetGeofenceProperties(std::forward<GeofencePropertiesT>(value)); return *this;}
+    template<typename GeofencePropertiesKeyT = Aws::String, typename GeofencePropertiesValueT = Aws::String>
+    BatchPutGeofenceRequestEntry& AddGeofenceProperties(GeofencePropertiesKeyT&& key, GeofencePropertiesValueT&& value) {
+      m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::forward<GeofencePropertiesKeyT>(key), std::forward<GeofencePropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

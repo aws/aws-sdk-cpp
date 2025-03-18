@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeTagsRequest::DescribeTagsRequest() : 
-    m_resourceArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityProviderConfigurationResult::DescribeIdentityProviderConfigurationResult() : 
-    m_authenticationMode(IdentityProviderAuthenticationMode::NOT_SET)
-{
-}
-
 DescribeIdentityProviderConfigurationResult::DescribeIdentityProviderConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeIdentityProviderConfigurationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DescribeIdentityProviderConfigurationResult& DescribeIdentityProviderConfigurati
   if(jsonValue.ValueExists("AuthenticationMode"))
   {
     m_authenticationMode = IdentityProviderAuthenticationModeMapper::GetIdentityProviderAuthenticationModeForName(jsonValue.GetString("AuthenticationMode"));
-
+    m_authenticationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityCenterConfiguration"))
   {
     m_identityCenterConfiguration = jsonValue.GetObject("IdentityCenterConfiguration");
-
+    m_identityCenterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PersonalAccessTokenConfiguration"))
   {
     m_personalAccessTokenConfiguration = jsonValue.GetObject("PersonalAccessTokenConfiguration");
-
+    m_personalAccessTokenConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

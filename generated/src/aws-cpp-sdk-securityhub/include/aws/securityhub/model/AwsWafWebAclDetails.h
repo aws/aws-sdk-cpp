@@ -34,7 +34,7 @@ namespace Model
   class AwsWafWebAclDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafWebAclDetails();
+    AWS_SECURITYHUB_API AwsWafWebAclDetails() = default;
     AWS_SECURITYHUB_API AwsWafWebAclDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafWebAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>A friendly name or description of the web ACL. You can't change the name of a
      * web ACL after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsWafWebAclDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsWafWebAclDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsWafWebAclDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsWafWebAclDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The action to perform if none of the rules contained in the web ACL
      * match.</p>
      */
-    inline const Aws::String& GetDefaultAction() const{ return m_defaultAction; }
+    inline const Aws::String& GetDefaultAction() const { return m_defaultAction; }
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    inline void SetDefaultAction(const Aws::String& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
-    inline void SetDefaultAction(Aws::String&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
-    inline void SetDefaultAction(const char* value) { m_defaultActionHasBeenSet = true; m_defaultAction.assign(value); }
-    inline AwsWafWebAclDetails& WithDefaultAction(const Aws::String& value) { SetDefaultAction(value); return *this;}
-    inline AwsWafWebAclDetails& WithDefaultAction(Aws::String&& value) { SetDefaultAction(std::move(value)); return *this;}
-    inline AwsWafWebAclDetails& WithDefaultAction(const char* value) { SetDefaultAction(value); return *this;}
+    template<typename DefaultActionT = Aws::String>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = Aws::String>
+    AwsWafWebAclDetails& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +71,26 @@ namespace Model
      * <p>An array that contains the action for each rule in a web ACL, the priority of
      * the rule, and the ID of the rule.</p>
      */
-    inline const Aws::Vector<AwsWafWebAclRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<AwsWafWebAclRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<AwsWafWebAclRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<AwsWafWebAclRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline AwsWafWebAclDetails& WithRules(const Aws::Vector<AwsWafWebAclRule>& value) { SetRules(value); return *this;}
-    inline AwsWafWebAclDetails& WithRules(Aws::Vector<AwsWafWebAclRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline AwsWafWebAclDetails& AddRules(const AwsWafWebAclRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline AwsWafWebAclDetails& AddRules(AwsWafWebAclRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<AwsWafWebAclRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<AwsWafWebAclRule>>
+    AwsWafWebAclDetails& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = AwsWafWebAclRule>
+    AwsWafWebAclDetails& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a web ACL.</p>
      */
-    inline const Aws::String& GetWebAclId() const{ return m_webAclId; }
+    inline const Aws::String& GetWebAclId() const { return m_webAclId; }
     inline bool WebAclIdHasBeenSet() const { return m_webAclIdHasBeenSet; }
-    inline void SetWebAclId(const Aws::String& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
-    inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
-    inline void SetWebAclId(const char* value) { m_webAclIdHasBeenSet = true; m_webAclId.assign(value); }
-    inline AwsWafWebAclDetails& WithWebAclId(const Aws::String& value) { SetWebAclId(value); return *this;}
-    inline AwsWafWebAclDetails& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
-    inline AwsWafWebAclDetails& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
+    template<typename WebAclIdT = Aws::String>
+    void SetWebAclId(WebAclIdT&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::forward<WebAclIdT>(value); }
+    template<typename WebAclIdT = Aws::String>
+    AwsWafWebAclDetails& WithWebAclId(WebAclIdT&& value) { SetWebAclId(std::forward<WebAclIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailSensitiveInformationPolicyConfig::GuardrailSensitiveInformationPolicyConfig() : 
-    m_piiEntitiesConfigHasBeenSet(false),
-    m_regexesConfigHasBeenSet(false)
-{
-}
-
 GuardrailSensitiveInformationPolicyConfig::GuardrailSensitiveInformationPolicyConfig(JsonView jsonValue)
-  : GuardrailSensitiveInformationPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GuardrailSensitiveInformationPolicyConfig& GuardrailSensitiveInformationPolicyCo
     }
     m_piiEntitiesConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regexesConfig"))
   {
     Aws::Utils::Array<JsonView> regexesConfigJsonList = jsonValue.GetArray("regexesConfig");
@@ -51,7 +43,6 @@ GuardrailSensitiveInformationPolicyConfig& GuardrailSensitiveInformationPolicyCo
     }
     m_regexesConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

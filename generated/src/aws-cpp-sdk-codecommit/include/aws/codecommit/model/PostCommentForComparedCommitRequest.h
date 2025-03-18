@@ -23,7 +23,7 @@ namespace Model
   class PostCommentForComparedCommitRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API PostCommentForComparedCommitRequest();
+    AWS_CODECOMMIT_API PostCommentForComparedCommitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The name of the repository where you want to post a comment on the comparison
      * between commits.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline PostCommentForComparedCommitRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline PostCommentForComparedCommitRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    PostCommentForComparedCommitRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * before commit. Required for commenting on any commit unless that commit is the
      * initial commit.</p>
      */
-    inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+    inline const Aws::String& GetBeforeCommitId() const { return m_beforeCommitId; }
     inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
-    inline void SetBeforeCommitId(const Aws::String& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = value; }
-    inline void SetBeforeCommitId(Aws::String&& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = std::move(value); }
-    inline void SetBeforeCommitId(const char* value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId.assign(value); }
-    inline PostCommentForComparedCommitRequest& WithBeforeCommitId(const Aws::String& value) { SetBeforeCommitId(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithBeforeCommitId(Aws::String&& value) { SetBeforeCommitId(std::move(value)); return *this;}
-    inline PostCommentForComparedCommitRequest& WithBeforeCommitId(const char* value) { SetBeforeCommitId(value); return *this;}
+    template<typename BeforeCommitIdT = Aws::String>
+    void SetBeforeCommitId(BeforeCommitIdT&& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = std::forward<BeforeCommitIdT>(value); }
+    template<typename BeforeCommitIdT = Aws::String>
+    PostCommentForComparedCommitRequest& WithBeforeCommitId(BeforeCommitIdT&& value) { SetBeforeCommitId(std::forward<BeforeCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,40 +68,36 @@ namespace Model
      * <p>To establish the directionality of the comparison, the full commit ID of the
      * after commit.</p>
      */
-    inline const Aws::String& GetAfterCommitId() const{ return m_afterCommitId; }
+    inline const Aws::String& GetAfterCommitId() const { return m_afterCommitId; }
     inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
-    inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
-    inline void SetAfterCommitId(Aws::String&& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = std::move(value); }
-    inline void SetAfterCommitId(const char* value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId.assign(value); }
-    inline PostCommentForComparedCommitRequest& WithAfterCommitId(const Aws::String& value) { SetAfterCommitId(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithAfterCommitId(Aws::String&& value) { SetAfterCommitId(std::move(value)); return *this;}
-    inline PostCommentForComparedCommitRequest& WithAfterCommitId(const char* value) { SetAfterCommitId(value); return *this;}
+    template<typename AfterCommitIdT = Aws::String>
+    void SetAfterCommitId(AfterCommitIdT&& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = std::forward<AfterCommitIdT>(value); }
+    template<typename AfterCommitIdT = Aws::String>
+    PostCommentForComparedCommitRequest& WithAfterCommitId(AfterCommitIdT&& value) { SetAfterCommitId(std::forward<AfterCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the comparison where you want to comment.</p>
      */
-    inline const Location& GetLocation() const{ return m_location; }
+    inline const Location& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline PostCommentForComparedCommitRequest& WithLocation(const Location& value) { SetLocation(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = Location>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Location>
+    PostCommentForComparedCommitRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the comment you want to make.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline PostCommentForComparedCommitRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline PostCommentForComparedCommitRequest& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    PostCommentForComparedCommitRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline PostCommentForComparedCommitRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline PostCommentForComparedCommitRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline PostCommentForComparedCommitRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    PostCommentForComparedCommitRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

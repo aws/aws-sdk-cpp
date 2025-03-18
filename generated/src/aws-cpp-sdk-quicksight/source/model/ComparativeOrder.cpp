@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComparativeOrder::ComparativeOrder() : 
-    m_useOrdering(ColumnOrderingType::NOT_SET),
-    m_useOrderingHasBeenSet(false),
-    m_specifedOrderHasBeenSet(false),
-    m_treatUndefinedSpecifiedValues(UndefinedSpecifiedValueType::NOT_SET),
-    m_treatUndefinedSpecifiedValuesHasBeenSet(false)
-{
-}
-
 ComparativeOrder::ComparativeOrder(JsonView jsonValue)
-  : ComparativeOrder()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ComparativeOrder& ComparativeOrder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UseOrdering"))
   {
     m_useOrdering = ColumnOrderingTypeMapper::GetColumnOrderingTypeForName(jsonValue.GetString("UseOrdering"));
-
     m_useOrderingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpecifedOrder"))
   {
     Aws::Utils::Array<JsonView> specifedOrderJsonList = jsonValue.GetArray("SpecifedOrder");
@@ -51,14 +39,11 @@ ComparativeOrder& ComparativeOrder::operator =(JsonView jsonValue)
     }
     m_specifedOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatUndefinedSpecifiedValues"))
   {
     m_treatUndefinedSpecifiedValues = UndefinedSpecifiedValueTypeMapper::GetUndefinedSpecifiedValueTypeForName(jsonValue.GetString("TreatUndefinedSpecifiedValues"));
-
     m_treatUndefinedSpecifiedValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

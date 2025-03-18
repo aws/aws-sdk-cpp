@@ -25,7 +25,7 @@ namespace Model
   class CreateTapePoolRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateTapePoolRequest();
+    AWS_STORAGEGATEWAY_API CreateTapePoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the new custom tape pool.</p>
      */
-    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-    inline CreateTapePoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-    inline CreateTapePoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-    inline CreateTapePoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    template<typename PoolNameT = Aws::String>
+    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
+    template<typename PoolNameT = Aws::String>
+    CreateTapePoolRequest& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to
      * the pool.</p>
      */
-    inline const TapeStorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline TapeStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const TapeStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(TapeStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline CreateTapePoolRequest& WithStorageClass(const TapeStorageClass& value) { SetStorageClass(value); return *this;}
-    inline CreateTapePoolRequest& WithStorageClass(TapeStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(TapeStorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline CreateTapePoolRequest& WithStorageClass(TapeStorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * configured in compliance mode, the tape retention lock cannot be removed by any
      * user, including the root Amazon Web Services account.</p>
      */
-    inline const RetentionLockType& GetRetentionLockType() const{ return m_retentionLockType; }
+    inline RetentionLockType GetRetentionLockType() const { return m_retentionLockType; }
     inline bool RetentionLockTypeHasBeenSet() const { return m_retentionLockTypeHasBeenSet; }
-    inline void SetRetentionLockType(const RetentionLockType& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = value; }
-    inline void SetRetentionLockType(RetentionLockType&& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = std::move(value); }
-    inline CreateTapePoolRequest& WithRetentionLockType(const RetentionLockType& value) { SetRetentionLockType(value); return *this;}
-    inline CreateTapePoolRequest& WithRetentionLockType(RetentionLockType&& value) { SetRetentionLockType(std::move(value)); return *this;}
+    inline void SetRetentionLockType(RetentionLockType value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = value; }
+    inline CreateTapePoolRequest& WithRetentionLockType(RetentionLockType value) { SetRetentionLockType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <p>Tape retention lock time is set in days. Tape retention lock can be enabled
      * for up to 100 years (36,500 days).</p>
      */
-    inline int GetRetentionLockTimeInDays() const{ return m_retentionLockTimeInDays; }
+    inline int GetRetentionLockTimeInDays() const { return m_retentionLockTimeInDays; }
     inline bool RetentionLockTimeInDaysHasBeenSet() const { return m_retentionLockTimeInDaysHasBeenSet; }
     inline void SetRetentionLockTimeInDays(int value) { m_retentionLockTimeInDaysHasBeenSet = true; m_retentionLockTimeInDays = value; }
     inline CreateTapePoolRequest& WithRetentionLockTimeInDays(int value) { SetRetentionLockTimeInDays(value); return *this;}
@@ -102,27 +96,27 @@ namespace Model
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTapePoolRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTapePoolRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTapePoolRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTapePoolRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTapePoolRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTapePoolRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet = false;
 
-    TapeStorageClass m_storageClass;
+    TapeStorageClass m_storageClass{TapeStorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
-    RetentionLockType m_retentionLockType;
+    RetentionLockType m_retentionLockType{RetentionLockType::NOT_SET};
     bool m_retentionLockTypeHasBeenSet = false;
 
-    int m_retentionLockTimeInDays;
+    int m_retentionLockTimeInDays{0};
     bool m_retentionLockTimeInDaysHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

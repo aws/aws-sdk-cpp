@@ -32,7 +32,7 @@ namespace Model
   class CapacityReservationCommitmentInfo
   {
   public:
-    AWS_EC2_API CapacityReservationCommitmentInfo();
+    AWS_EC2_API CapacityReservationCommitmentInfo() = default;
     AWS_EC2_API CapacityReservationCommitmentInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationCommitmentInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * <p>The instance capacity that you committed to when you requested the
      * future-dated Capacity Reservation.</p>
      */
-    inline int GetCommittedInstanceCount() const{ return m_committedInstanceCount; }
+    inline int GetCommittedInstanceCount() const { return m_committedInstanceCount; }
     inline bool CommittedInstanceCountHasBeenSet() const { return m_committedInstanceCountHasBeenSet; }
     inline void SetCommittedInstanceCount(int value) { m_committedInstanceCountHasBeenSet = true; m_committedInstanceCount = value; }
     inline CapacityReservationCommitmentInfo& WithCommittedInstanceCount(int value) { SetCommittedInstanceCount(value); return *this;}
@@ -58,19 +58,19 @@ namespace Model
      * decrease the instance count or cancel the Capacity Reservation before this date
      * and time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCommitmentEndDate() const{ return m_commitmentEndDate; }
+    inline const Aws::Utils::DateTime& GetCommitmentEndDate() const { return m_commitmentEndDate; }
     inline bool CommitmentEndDateHasBeenSet() const { return m_commitmentEndDateHasBeenSet; }
-    inline void SetCommitmentEndDate(const Aws::Utils::DateTime& value) { m_commitmentEndDateHasBeenSet = true; m_commitmentEndDate = value; }
-    inline void SetCommitmentEndDate(Aws::Utils::DateTime&& value) { m_commitmentEndDateHasBeenSet = true; m_commitmentEndDate = std::move(value); }
-    inline CapacityReservationCommitmentInfo& WithCommitmentEndDate(const Aws::Utils::DateTime& value) { SetCommitmentEndDate(value); return *this;}
-    inline CapacityReservationCommitmentInfo& WithCommitmentEndDate(Aws::Utils::DateTime&& value) { SetCommitmentEndDate(std::move(value)); return *this;}
+    template<typename CommitmentEndDateT = Aws::Utils::DateTime>
+    void SetCommitmentEndDate(CommitmentEndDateT&& value) { m_commitmentEndDateHasBeenSet = true; m_commitmentEndDate = std::forward<CommitmentEndDateT>(value); }
+    template<typename CommitmentEndDateT = Aws::Utils::DateTime>
+    CapacityReservationCommitmentInfo& WithCommitmentEndDate(CommitmentEndDateT&& value) { SetCommitmentEndDate(std::forward<CommitmentEndDateT>(value)); return *this;}
     ///@}
   private:
 
-    int m_committedInstanceCount;
+    int m_committedInstanceCount{0};
     bool m_committedInstanceCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_commitmentEndDate;
+    Aws::Utils::DateTime m_commitmentEndDate{};
     bool m_commitmentEndDateHasBeenSet = false;
   };
 

@@ -18,29 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisionedProductPlanDetails::ProvisionedProductPlanDetails() : 
-    m_createdTimeHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_planNameHasBeenSet(false),
-    m_planIdHasBeenSet(false),
-    m_provisionProductIdHasBeenSet(false),
-    m_provisionProductNameHasBeenSet(false),
-    m_planType(ProvisionedProductPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_status(ProvisionedProductPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_provisioningParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ProvisionedProductPlanDetails::ProvisionedProductPlanDetails(JsonView jsonValue)
-  : ProvisionedProductPlanDetails()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PathId"))
   {
     m_pathId = jsonValue.GetString("PathId");
-
     m_pathIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanName"))
   {
     m_planName = jsonValue.GetString("PlanName");
-
     m_planNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanId"))
   {
     m_planId = jsonValue.GetString("PlanId");
-
     m_planIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionProductId"))
   {
     m_provisionProductId = jsonValue.GetString("ProvisionProductId");
-
     m_provisionProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionProductName"))
   {
     m_provisionProductName = jsonValue.GetString("ProvisionProductName");
-
     m_provisionProductNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanType"))
   {
     m_planType = ProvisionedProductPlanTypeMapper::GetProvisionedProductPlanTypeForName(jsonValue.GetString("PlanType"));
-
     m_planTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProvisionedProductPlanStatusMapper::GetProvisionedProductPlanStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTime"))
   {
     m_updatedTime = jsonValue.GetDouble("UpdatedTime");
-
     m_updatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationArns"))
   {
     Aws::Utils::Array<JsonView> notificationArnsJsonList = jsonValue.GetArray("NotificationArns");
@@ -133,7 +89,6 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
     }
     m_notificationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningParameters"))
   {
     Aws::Utils::Array<JsonView> provisioningParametersJsonList = jsonValue.GetArray("ProvisioningParameters");
@@ -143,7 +98,6 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
     }
     m_provisioningParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -153,14 +107,11 @@ ProvisionedProductPlanDetails& ProvisionedProductPlanDetails::operator =(JsonVie
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

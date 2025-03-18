@@ -21,7 +21,7 @@ namespace Model
   class RecognizeCelebritiesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API RecognizeCelebritiesRequest();
+    AWS_REKOGNITION_API RecognizeCelebritiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline RecognizeCelebritiesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline RecognizeCelebritiesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    RecognizeCelebritiesRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
   private:
 

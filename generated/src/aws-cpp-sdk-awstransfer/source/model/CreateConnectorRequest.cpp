@@ -12,17 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectorRequest::CreateConnectorRequest() : 
-    m_urlHasBeenSet(false),
-    m_as2ConfigHasBeenSet(false),
-    m_accessRoleHasBeenSet(false),
-    m_loggingRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sftpConfigHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

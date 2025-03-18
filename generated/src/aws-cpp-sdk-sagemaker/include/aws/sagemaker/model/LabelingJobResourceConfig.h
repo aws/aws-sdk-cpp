@@ -34,7 +34,7 @@ namespace Model
   class LabelingJobResourceConfig
   {
   public:
-    AWS_SAGEMAKER_API LabelingJobResourceConfig();
+    AWS_SAGEMAKER_API LabelingJobResourceConfig() = default;
     AWS_SAGEMAKER_API LabelingJobResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LabelingJobResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,24 +59,22 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline LabelingJobResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline LabelingJobResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline LabelingJobResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    LabelingJobResourceConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline LabelingJobResourceConfig& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline LabelingJobResourceConfig& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    LabelingJobResourceConfig& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
   private:
 

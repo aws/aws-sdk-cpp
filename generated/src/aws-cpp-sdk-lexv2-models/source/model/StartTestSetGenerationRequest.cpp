@@ -12,16 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTestSetGenerationRequest::StartTestSetGenerationRequest() : 
-    m_testSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_generationDataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_testSetTagsHasBeenSet(false)
-{
-}
-
 Aws::String StartTestSetGenerationRequest::SerializePayload() const
 {
   JsonValue payload;

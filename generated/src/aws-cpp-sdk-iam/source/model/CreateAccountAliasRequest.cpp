@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateAccountAliasRequest::CreateAccountAliasRequest() : 
-    m_accountAliasHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccountAliasRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,17 +18,7 @@ namespace IoTJobsDataPlane
 namespace Model
 {
 
-JobExecutionState::JobExecutionState() : 
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 JobExecutionState::JobExecutionState(JsonView jsonValue)
-  : JobExecutionState()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ JobExecutionState& JobExecutionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobExecutionStatusMapper::GetJobExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusDetails"))
   {
     Aws::Map<Aws::String, JsonView> statusDetailsJsonMap = jsonValue.GetObject("statusDetails").GetAllObjects();
@@ -51,14 +39,11 @@ JobExecutionState& JobExecutionState::operator =(JsonView jsonValue)
     }
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

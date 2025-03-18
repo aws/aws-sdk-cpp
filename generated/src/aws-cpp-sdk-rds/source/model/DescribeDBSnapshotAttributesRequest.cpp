@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBSnapshotAttributesRequest::DescribeDBSnapshotAttributesRequest() : 
-    m_dBSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBSnapshotAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

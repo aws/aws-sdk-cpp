@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSchemaResult::DeleteSchemaResult() : 
-    m_status(SchemaStatus::NOT_SET)
-{
-}
-
 DeleteSchemaResult::DeleteSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteSchemaResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteSchemaResult& DeleteSchemaResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
+    m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
+    m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SchemaStatusMapper::GetSchemaStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-CreateNetworkAclAction::CreateNetworkAclAction() : 
-    m_descriptionHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
-{
-}
-
 CreateNetworkAclAction::CreateNetworkAclAction(JsonView jsonValue)
-  : CreateNetworkAclAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CreateNetworkAclAction& CreateNetworkAclAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vpc"))
   {
     m_vpc = jsonValue.GetObject("Vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FMSCanRemediate"))
   {
     m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-
     m_fMSCanRemediateHasBeenSet = true;
   }
-
   return *this;
 }
 

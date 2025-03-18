@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-AutoScalingGroup::AutoScalingGroup() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode)
-  : AutoScalingGroup()
 {
   *this = xmlNode;
 }

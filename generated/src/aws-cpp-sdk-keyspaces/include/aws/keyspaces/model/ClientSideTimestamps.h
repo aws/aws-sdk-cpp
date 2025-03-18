@@ -35,7 +35,7 @@ namespace Model
   class ClientSideTimestamps
   {
   public:
-    AWS_KEYSPACES_API ClientSideTimestamps();
+    AWS_KEYSPACES_API ClientSideTimestamps() = default;
     AWS_KEYSPACES_API ClientSideTimestamps(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API ClientSideTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * <p>Shows how to enable client-side timestamps settings for the specified
      * table.</p>
      */
-    inline const ClientSideTimestampsStatus& GetStatus() const{ return m_status; }
+    inline ClientSideTimestampsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ClientSideTimestampsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ClientSideTimestampsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ClientSideTimestamps& WithStatus(const ClientSideTimestampsStatus& value) { SetStatus(value); return *this;}
-    inline ClientSideTimestamps& WithStatus(ClientSideTimestampsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ClientSideTimestampsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ClientSideTimestamps& WithStatus(ClientSideTimestampsStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ClientSideTimestampsStatus m_status;
+    ClientSideTimestampsStatus m_status{ClientSideTimestampsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

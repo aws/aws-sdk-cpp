@@ -12,15 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ViewBillingRequest::ViewBillingRequest() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ViewBillingRequest::SerializePayload() const
 {
   JsonValue payload;

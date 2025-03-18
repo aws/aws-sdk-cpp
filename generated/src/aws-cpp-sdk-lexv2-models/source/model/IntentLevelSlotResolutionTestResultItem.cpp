@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentLevelSlotResolutionTestResultItem::IntentLevelSlotResolutionTestResultItem() : 
-    m_intentNameHasBeenSet(false),
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_slotResolutionResultsHasBeenSet(false)
-{
-}
-
 IntentLevelSlotResolutionTestResultItem::IntentLevelSlotResolutionTestResultItem(JsonView jsonValue)
-  : IntentLevelSlotResolutionTestResultItem()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IntentLevelSlotResolutionTestResultItem& IntentLevelSlotResolutionTestResultItem
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiTurnConversation"))
   {
     m_multiTurnConversation = jsonValue.GetBool("multiTurnConversation");
-
     m_multiTurnConversationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotResolutionResults"))
   {
     Aws::Utils::Array<JsonView> slotResolutionResultsJsonList = jsonValue.GetArray("slotResolutionResults");
@@ -57,7 +44,6 @@ IntentLevelSlotResolutionTestResultItem& IntentLevelSlotResolutionTestResultItem
     }
     m_slotResolutionResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

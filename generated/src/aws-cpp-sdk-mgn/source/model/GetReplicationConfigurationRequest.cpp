@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReplicationConfigurationRequest::GetReplicationConfigurationRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String GetReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

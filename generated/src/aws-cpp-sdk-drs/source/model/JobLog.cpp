@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-JobLog::JobLog() : 
-    m_event(JobLogEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_eventDataHasBeenSet(false),
-    m_logDateTimeHasBeenSet(false)
-{
-}
-
 JobLog::JobLog(JsonView jsonValue)
-  : JobLog()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ JobLog& JobLog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("event"))
   {
     m_event = JobLogEventMapper::GetJobLogEventForName(jsonValue.GetString("event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventData"))
   {
     m_eventData = jsonValue.GetObject("eventData");
-
     m_eventDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logDateTime"))
   {
     m_logDateTime = jsonValue.GetString("logDateTime");
-
     m_logDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

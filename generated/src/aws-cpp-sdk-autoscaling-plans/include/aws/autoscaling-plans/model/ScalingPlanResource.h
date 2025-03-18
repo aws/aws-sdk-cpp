@@ -36,7 +36,7 @@ namespace Model
   class ScalingPlanResource
   {
   public:
-    AWS_AUTOSCALINGPLANS_API ScalingPlanResource();
+    AWS_AUTOSCALINGPLANS_API ScalingPlanResource() = default;
     AWS_AUTOSCALINGPLANS_API ScalingPlanResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API ScalingPlanResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
-    inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
+    inline const Aws::String& GetScalingPlanName() const { return m_scalingPlanName; }
     inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
-    inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
-    inline void SetScalingPlanName(Aws::String&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::move(value); }
-    inline void SetScalingPlanName(const char* value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName.assign(value); }
-    inline ScalingPlanResource& WithScalingPlanName(const Aws::String& value) { SetScalingPlanName(value); return *this;}
-    inline ScalingPlanResource& WithScalingPlanName(Aws::String&& value) { SetScalingPlanName(std::move(value)); return *this;}
-    inline ScalingPlanResource& WithScalingPlanName(const char* value) { SetScalingPlanName(value); return *this;}
+    template<typename ScalingPlanNameT = Aws::String>
+    void SetScalingPlanName(ScalingPlanNameT&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::forward<ScalingPlanNameT>(value); }
+    template<typename ScalingPlanNameT = Aws::String>
+    ScalingPlanResource& WithScalingPlanName(ScalingPlanNameT&& value) { SetScalingPlanName(std::forward<ScalingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the scaling plan.</p>
      */
-    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
+    inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
     inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
     inline ScalingPlanResource& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
@@ -70,12 +68,10 @@ namespace Model
     /**
      * <p>The namespace of the AWS service.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline ScalingPlanResource& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline ScalingPlanResource& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline ScalingPlanResource& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ScalingPlanResource& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ScalingPlanResource& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ScalingPlanResource& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ScalingPlanResource& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,26 +122,24 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline ScalingPlanResource& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline ScalingPlanResource& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline ScalingPlanResource& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scaling policies.</p>
      */
-    inline const Aws::Vector<ScalingPolicy>& GetScalingPolicies() const{ return m_scalingPolicies; }
+    inline const Aws::Vector<ScalingPolicy>& GetScalingPolicies() const { return m_scalingPolicies; }
     inline bool ScalingPoliciesHasBeenSet() const { return m_scalingPoliciesHasBeenSet; }
-    inline void SetScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies = value; }
-    inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies = std::move(value); }
-    inline ScalingPlanResource& WithScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { SetScalingPolicies(value); return *this;}
-    inline ScalingPlanResource& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(std::move(value)); return *this;}
-    inline ScalingPlanResource& AddScalingPolicies(const ScalingPolicy& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies.push_back(value); return *this; }
-    inline ScalingPlanResource& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies.push_back(std::move(value)); return *this; }
+    template<typename ScalingPoliciesT = Aws::Vector<ScalingPolicy>>
+    void SetScalingPolicies(ScalingPoliciesT&& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies = std::forward<ScalingPoliciesT>(value); }
+    template<typename ScalingPoliciesT = Aws::Vector<ScalingPolicy>>
+    ScalingPlanResource& WithScalingPolicies(ScalingPoliciesT&& value) { SetScalingPolicies(std::forward<ScalingPoliciesT>(value)); return *this;}
+    template<typename ScalingPoliciesT = ScalingPolicy>
+    ScalingPlanResource& AddScalingPolicies(ScalingPoliciesT&& value) { m_scalingPoliciesHasBeenSet = true; m_scalingPolicies.emplace_back(std::forward<ScalingPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -161,48 +153,44 @@ namespace Model
      * created or deleted or the scaling configuration could not be fully applied.
      * Check the status message for more information.</p> </li> </ul>
      */
-    inline const ScalingStatusCode& GetScalingStatusCode() const{ return m_scalingStatusCode; }
+    inline ScalingStatusCode GetScalingStatusCode() const { return m_scalingStatusCode; }
     inline bool ScalingStatusCodeHasBeenSet() const { return m_scalingStatusCodeHasBeenSet; }
-    inline void SetScalingStatusCode(const ScalingStatusCode& value) { m_scalingStatusCodeHasBeenSet = true; m_scalingStatusCode = value; }
-    inline void SetScalingStatusCode(ScalingStatusCode&& value) { m_scalingStatusCodeHasBeenSet = true; m_scalingStatusCode = std::move(value); }
-    inline ScalingPlanResource& WithScalingStatusCode(const ScalingStatusCode& value) { SetScalingStatusCode(value); return *this;}
-    inline ScalingPlanResource& WithScalingStatusCode(ScalingStatusCode&& value) { SetScalingStatusCode(std::move(value)); return *this;}
+    inline void SetScalingStatusCode(ScalingStatusCode value) { m_scalingStatusCodeHasBeenSet = true; m_scalingStatusCode = value; }
+    inline ScalingPlanResource& WithScalingStatusCode(ScalingStatusCode value) { SetScalingStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A simple message about the current scaling status of the resource.</p>
      */
-    inline const Aws::String& GetScalingStatusMessage() const{ return m_scalingStatusMessage; }
+    inline const Aws::String& GetScalingStatusMessage() const { return m_scalingStatusMessage; }
     inline bool ScalingStatusMessageHasBeenSet() const { return m_scalingStatusMessageHasBeenSet; }
-    inline void SetScalingStatusMessage(const Aws::String& value) { m_scalingStatusMessageHasBeenSet = true; m_scalingStatusMessage = value; }
-    inline void SetScalingStatusMessage(Aws::String&& value) { m_scalingStatusMessageHasBeenSet = true; m_scalingStatusMessage = std::move(value); }
-    inline void SetScalingStatusMessage(const char* value) { m_scalingStatusMessageHasBeenSet = true; m_scalingStatusMessage.assign(value); }
-    inline ScalingPlanResource& WithScalingStatusMessage(const Aws::String& value) { SetScalingStatusMessage(value); return *this;}
-    inline ScalingPlanResource& WithScalingStatusMessage(Aws::String&& value) { SetScalingStatusMessage(std::move(value)); return *this;}
-    inline ScalingPlanResource& WithScalingStatusMessage(const char* value) { SetScalingStatusMessage(value); return *this;}
+    template<typename ScalingStatusMessageT = Aws::String>
+    void SetScalingStatusMessage(ScalingStatusMessageT&& value) { m_scalingStatusMessageHasBeenSet = true; m_scalingStatusMessage = std::forward<ScalingStatusMessageT>(value); }
+    template<typename ScalingStatusMessageT = Aws::String>
+    ScalingPlanResource& WithScalingStatusMessage(ScalingStatusMessageT&& value) { SetScalingStatusMessage(std::forward<ScalingStatusMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scalingPlanName;
     bool m_scalingPlanNameHasBeenSet = false;
 
-    long long m_scalingPlanVersion;
+    long long m_scalingPlanVersion{0};
     bool m_scalingPlanVersionHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
     Aws::Vector<ScalingPolicy> m_scalingPolicies;
     bool m_scalingPoliciesHasBeenSet = false;
 
-    ScalingStatusCode m_scalingStatusCode;
+    ScalingStatusCode m_scalingStatusCode{ScalingStatusCode::NOT_SET};
     bool m_scalingStatusCodeHasBeenSet = false;
 
     Aws::String m_scalingStatusMessage;

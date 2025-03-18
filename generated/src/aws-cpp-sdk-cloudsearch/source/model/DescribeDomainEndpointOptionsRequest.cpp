@@ -10,13 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DescribeDomainEndpointOptionsRequest::DescribeDomainEndpointOptionsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_deployed(false),
-    m_deployedHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDomainEndpointOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

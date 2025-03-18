@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServerStrategiesRequest::GetServerStrategiesRequest() : 
-    m_serverIdHasBeenSet(false)
-{
-}
-
 Aws::String GetServerStrategiesRequest::SerializePayload() const
 {
   return {};

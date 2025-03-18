@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ManagedResourceSummary::ManagedResourceSummary() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_associationCount(0),
-    m_associationCountHasBeenSet(false)
-{
-}
-
 ManagedResourceSummary::ManagedResourceSummary(JsonView jsonValue)
-  : ManagedResourceSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ManagedResourceSummary& ManagedResourceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationCount"))
   {
     m_associationCount = jsonValue.GetInt64("AssociationCount");
-
     m_associationCountHasBeenSet = true;
   }
-
   return *this;
 }
 

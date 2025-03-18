@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-DnsResource::DnsResource() : 
-    m_domainNameHasBeenSet(false),
-    m_ipAddressType(ResourceConfigurationIpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
-{
-}
-
 DnsResource::DnsResource(JsonView jsonValue)
-  : DnsResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DnsResource& DnsResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = ResourceConfigurationIpAddressTypeMapper::GetResourceConfigurationIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

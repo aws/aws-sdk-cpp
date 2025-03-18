@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateUserAccessLoggingSettingsRequest::AssociateUserAccessLoggingSettingsRequest() : 
-    m_portalArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   return {};

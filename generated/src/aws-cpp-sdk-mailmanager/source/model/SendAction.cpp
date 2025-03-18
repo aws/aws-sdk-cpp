@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-SendAction::SendAction() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 SendAction::SendAction(JsonView jsonValue)
-  : SendAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SendAction& SendAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,24 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-ApiKey::ApiKey() : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_customerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_stageKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ApiKey::ApiKey(JsonView jsonValue)
-  : ApiKey()
 {
   *this = jsonValue;
 }
@@ -46,59 +29,43 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerId"))
   {
     m_customerId = jsonValue.GetString("customerId");
-
     m_customerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageKeys"))
   {
     Aws::Utils::Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
@@ -108,7 +75,6 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
     }
     m_stageKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -118,7 +84,6 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

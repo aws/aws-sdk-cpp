@@ -26,7 +26,7 @@ namespace Model
   class DescribeTableStatisticsRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeTableStatisticsRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeTableStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline DescribeTableStatisticsRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline DescribeTableStatisticsRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline DescribeTableStatisticsRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    DescribeTableStatisticsRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 500.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeTableStatisticsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -72,14 +70,12 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeTableStatisticsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeTableStatisticsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeTableStatisticsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeTableStatisticsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,21 +84,21 @@ namespace Model
      * table-name | table-state</p> <p>A combination of filters creates an AND
      * condition where each record matches all specified filters.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeTableStatisticsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeTableStatisticsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeTableStatisticsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeTableStatisticsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeTableStatisticsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeTableStatisticsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

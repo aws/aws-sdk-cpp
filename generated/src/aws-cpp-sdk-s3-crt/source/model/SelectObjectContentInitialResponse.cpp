@@ -20,10 +20,6 @@ namespace S3Crt
 namespace Model
 {
 
-SelectObjectContentInitialResponse::SelectObjectContentInitialResponse()
-{
-}
-
 SelectObjectContentInitialResponse::SelectObjectContentInitialResponse(const XmlNode& xmlNode)
 {
   *this = xmlNode;

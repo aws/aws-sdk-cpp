@@ -40,7 +40,7 @@ namespace Model
   class GreengrassV2
   {
   public:
-    AWS_IOTSITEWISE_API GreengrassV2();
+    AWS_IOTSITEWISE_API GreengrassV2() = default;
     AWS_IOTSITEWISE_API GreengrassV2(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API GreengrassV2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,33 +50,29 @@ namespace Model
     /**
      * <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
      */
-    inline const Aws::String& GetCoreDeviceThingName() const{ return m_coreDeviceThingName; }
+    inline const Aws::String& GetCoreDeviceThingName() const { return m_coreDeviceThingName; }
     inline bool CoreDeviceThingNameHasBeenSet() const { return m_coreDeviceThingNameHasBeenSet; }
-    inline void SetCoreDeviceThingName(const Aws::String& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = value; }
-    inline void SetCoreDeviceThingName(Aws::String&& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = std::move(value); }
-    inline void SetCoreDeviceThingName(const char* value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName.assign(value); }
-    inline GreengrassV2& WithCoreDeviceThingName(const Aws::String& value) { SetCoreDeviceThingName(value); return *this;}
-    inline GreengrassV2& WithCoreDeviceThingName(Aws::String&& value) { SetCoreDeviceThingName(std::move(value)); return *this;}
-    inline GreengrassV2& WithCoreDeviceThingName(const char* value) { SetCoreDeviceThingName(value); return *this;}
+    template<typename CoreDeviceThingNameT = Aws::String>
+    void SetCoreDeviceThingName(CoreDeviceThingNameT&& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = std::forward<CoreDeviceThingNameT>(value); }
+    template<typename CoreDeviceThingNameT = Aws::String>
+    GreengrassV2& WithCoreDeviceThingName(CoreDeviceThingNameT&& value) { SetCoreDeviceThingName(std::forward<CoreDeviceThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system of the core device in IoT Greengrass V2.</p>
      */
-    inline const CoreDeviceOperatingSystem& GetCoreDeviceOperatingSystem() const{ return m_coreDeviceOperatingSystem; }
+    inline CoreDeviceOperatingSystem GetCoreDeviceOperatingSystem() const { return m_coreDeviceOperatingSystem; }
     inline bool CoreDeviceOperatingSystemHasBeenSet() const { return m_coreDeviceOperatingSystemHasBeenSet; }
-    inline void SetCoreDeviceOperatingSystem(const CoreDeviceOperatingSystem& value) { m_coreDeviceOperatingSystemHasBeenSet = true; m_coreDeviceOperatingSystem = value; }
-    inline void SetCoreDeviceOperatingSystem(CoreDeviceOperatingSystem&& value) { m_coreDeviceOperatingSystemHasBeenSet = true; m_coreDeviceOperatingSystem = std::move(value); }
-    inline GreengrassV2& WithCoreDeviceOperatingSystem(const CoreDeviceOperatingSystem& value) { SetCoreDeviceOperatingSystem(value); return *this;}
-    inline GreengrassV2& WithCoreDeviceOperatingSystem(CoreDeviceOperatingSystem&& value) { SetCoreDeviceOperatingSystem(std::move(value)); return *this;}
+    inline void SetCoreDeviceOperatingSystem(CoreDeviceOperatingSystem value) { m_coreDeviceOperatingSystemHasBeenSet = true; m_coreDeviceOperatingSystem = value; }
+    inline GreengrassV2& WithCoreDeviceOperatingSystem(CoreDeviceOperatingSystem value) { SetCoreDeviceOperatingSystem(value); return *this;}
     ///@}
   private:
 
     Aws::String m_coreDeviceThingName;
     bool m_coreDeviceThingNameHasBeenSet = false;
 
-    CoreDeviceOperatingSystem m_coreDeviceOperatingSystem;
+    CoreDeviceOperatingSystem m_coreDeviceOperatingSystem{CoreDeviceOperatingSystem::NOT_SET};
     bool m_coreDeviceOperatingSystemHasBeenSet = false;
   };
 

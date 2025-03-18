@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-Access::Access() : 
-    m_actionsHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 Access::Access(JsonView jsonValue)
-  : Access()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Access& Access::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -51,7 +43,6 @@ Access& Access::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

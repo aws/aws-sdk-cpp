@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCallAnalyticsCategoryRequest::DeleteCallAnalyticsCategoryRequest() : 
-    m_categoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCallAnalyticsCategoryRequest::SerializePayload() const
 {
   JsonValue payload;

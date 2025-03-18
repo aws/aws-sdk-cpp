@@ -39,7 +39,7 @@ namespace Model
   class RoutePedestrianSpan
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianSpan();
+    AWS_GEOROUTES_API RoutePedestrianSpan() = default;
     AWS_GEOROUTES_API RoutePedestrianSpan(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianSpan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <p>Duration of the computed span without traffic congestion.</p> <p>
      * <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetBestCaseDuration() const{ return m_bestCaseDuration; }
+    inline long long GetBestCaseDuration() const { return m_bestCaseDuration; }
     inline bool BestCaseDurationHasBeenSet() const { return m_bestCaseDurationHasBeenSet; }
     inline void SetBestCaseDuration(long long value) { m_bestCaseDurationHasBeenSet = true; m_bestCaseDuration = value; }
     inline RoutePedestrianSpan& WithBestCaseDuration(long long value) { SetBestCaseDuration(value); return *this;}
@@ -60,14 +60,12 @@ namespace Model
     /**
      * <p>3 letter Country code corresponding to the Span.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline RoutePedestrianSpan& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline RoutePedestrianSpan& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    RoutePedestrianSpan& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * <p>Distance of the computed span. This feature doesn't split a span, but is
      * always computed on a span split by other properties.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RoutePedestrianSpan& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
      * always computed on a span split by other properties.</p> <p> <b>Unit</b>:
      * <code>seconds</code> </p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RoutePedestrianSpan& WithDuration(long long value) { SetDuration(value); return *this;}
@@ -98,19 +96,19 @@ namespace Model
      * <p>Dynamic speed details corresponding to the span.</p> <p> <b>Unit</b>:
      * <code>KilometersPerHour</code> </p>
      */
-    inline const RouteSpanDynamicSpeedDetails& GetDynamicSpeed() const{ return m_dynamicSpeed; }
+    inline const RouteSpanDynamicSpeedDetails& GetDynamicSpeed() const { return m_dynamicSpeed; }
     inline bool DynamicSpeedHasBeenSet() const { return m_dynamicSpeedHasBeenSet; }
-    inline void SetDynamicSpeed(const RouteSpanDynamicSpeedDetails& value) { m_dynamicSpeedHasBeenSet = true; m_dynamicSpeed = value; }
-    inline void SetDynamicSpeed(RouteSpanDynamicSpeedDetails&& value) { m_dynamicSpeedHasBeenSet = true; m_dynamicSpeed = std::move(value); }
-    inline RoutePedestrianSpan& WithDynamicSpeed(const RouteSpanDynamicSpeedDetails& value) { SetDynamicSpeed(value); return *this;}
-    inline RoutePedestrianSpan& WithDynamicSpeed(RouteSpanDynamicSpeedDetails&& value) { SetDynamicSpeed(std::move(value)); return *this;}
+    template<typename DynamicSpeedT = RouteSpanDynamicSpeedDetails>
+    void SetDynamicSpeed(DynamicSpeedT&& value) { m_dynamicSpeedHasBeenSet = true; m_dynamicSpeed = std::forward<DynamicSpeedT>(value); }
+    template<typename DynamicSpeedT = RouteSpanDynamicSpeedDetails>
+    RoutePedestrianSpan& WithDynamicSpeed(DynamicSpeedT&& value) { SetDynamicSpeed(std::forward<DynamicSpeedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Functional classification of the road segment corresponding to the span.</p>
      */
-    inline int GetFunctionalClassification() const{ return m_functionalClassification; }
+    inline int GetFunctionalClassification() const { return m_functionalClassification; }
     inline bool FunctionalClassificationHasBeenSet() const { return m_functionalClassificationHasBeenSet; }
     inline void SetFunctionalClassification(int value) { m_functionalClassificationHasBeenSet = true; m_functionalClassification = value; }
     inline RoutePedestrianSpan& WithFunctionalClassification(int value) { SetFunctionalClassification(value); return *this;}
@@ -120,7 +118,7 @@ namespace Model
     /**
      * <p>Offset in the leg geometry corresponding to the start of this span.</p>
      */
-    inline int GetGeometryOffset() const{ return m_geometryOffset; }
+    inline int GetGeometryOffset() const { return m_geometryOffset; }
     inline bool GeometryOffsetHasBeenSet() const { return m_geometryOffsetHasBeenSet; }
     inline void SetGeometryOffset(int value) { m_geometryOffsetHasBeenSet = true; m_geometryOffset = value; }
     inline RoutePedestrianSpan& WithGeometryOffset(int value) { SetGeometryOffset(value); return *this;}
@@ -131,12 +129,12 @@ namespace Model
      * <p>Incidents corresponding to the span. These index into the Incidents in the
      * parent Leg.</p>
      */
-    inline const Aws::Vector<int>& GetIncidents() const{ return m_incidents; }
+    inline const Aws::Vector<int>& GetIncidents() const { return m_incidents; }
     inline bool IncidentsHasBeenSet() const { return m_incidentsHasBeenSet; }
-    inline void SetIncidents(const Aws::Vector<int>& value) { m_incidentsHasBeenSet = true; m_incidents = value; }
-    inline void SetIncidents(Aws::Vector<int>&& value) { m_incidentsHasBeenSet = true; m_incidents = std::move(value); }
-    inline RoutePedestrianSpan& WithIncidents(const Aws::Vector<int>& value) { SetIncidents(value); return *this;}
-    inline RoutePedestrianSpan& WithIncidents(Aws::Vector<int>&& value) { SetIncidents(std::move(value)); return *this;}
+    template<typename IncidentsT = Aws::Vector<int>>
+    void SetIncidents(IncidentsT&& value) { m_incidentsHasBeenSet = true; m_incidents = std::forward<IncidentsT>(value); }
+    template<typename IncidentsT = Aws::Vector<int>>
+    RoutePedestrianSpan& WithIncidents(IncidentsT&& value) { SetIncidents(std::forward<IncidentsT>(value)); return *this;}
     inline RoutePedestrianSpan& AddIncidents(int value) { m_incidentsHasBeenSet = true; m_incidents.push_back(value); return *this; }
     ///@}
 
@@ -144,28 +142,27 @@ namespace Model
     /**
      * <p>Provides an array of names of the pedestrian span in available languages.</p>
      */
-    inline const Aws::Vector<LocalizedString>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<LocalizedString>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<LocalizedString>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<LocalizedString>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline RoutePedestrianSpan& WithNames(const Aws::Vector<LocalizedString>& value) { SetNames(value); return *this;}
-    inline RoutePedestrianSpan& WithNames(Aws::Vector<LocalizedString>&& value) { SetNames(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& AddNames(const LocalizedString& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline RoutePedestrianSpan& AddNames(LocalizedString&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
+    template<typename NamesT = Aws::Vector<LocalizedString>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<LocalizedString>>
+    RoutePedestrianSpan& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = LocalizedString>
+    RoutePedestrianSpan& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Access attributes for a pedestrian corresponding to the span.</p>
      */
-    inline const Aws::Vector<RouteSpanPedestrianAccessAttribute>& GetPedestrianAccess() const{ return m_pedestrianAccess; }
+    inline const Aws::Vector<RouteSpanPedestrianAccessAttribute>& GetPedestrianAccess() const { return m_pedestrianAccess; }
     inline bool PedestrianAccessHasBeenSet() const { return m_pedestrianAccessHasBeenSet; }
-    inline void SetPedestrianAccess(const Aws::Vector<RouteSpanPedestrianAccessAttribute>& value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess = value; }
-    inline void SetPedestrianAccess(Aws::Vector<RouteSpanPedestrianAccessAttribute>&& value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess = std::move(value); }
-    inline RoutePedestrianSpan& WithPedestrianAccess(const Aws::Vector<RouteSpanPedestrianAccessAttribute>& value) { SetPedestrianAccess(value); return *this;}
-    inline RoutePedestrianSpan& WithPedestrianAccess(Aws::Vector<RouteSpanPedestrianAccessAttribute>&& value) { SetPedestrianAccess(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& AddPedestrianAccess(const RouteSpanPedestrianAccessAttribute& value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess.push_back(value); return *this; }
-    inline RoutePedestrianSpan& AddPedestrianAccess(RouteSpanPedestrianAccessAttribute&& value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess.push_back(std::move(value)); return *this; }
+    template<typename PedestrianAccessT = Aws::Vector<RouteSpanPedestrianAccessAttribute>>
+    void SetPedestrianAccess(PedestrianAccessT&& value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess = std::forward<PedestrianAccessT>(value); }
+    template<typename PedestrianAccessT = Aws::Vector<RouteSpanPedestrianAccessAttribute>>
+    RoutePedestrianSpan& WithPedestrianAccess(PedestrianAccessT&& value) { SetPedestrianAccess(std::forward<PedestrianAccessT>(value)); return *this;}
+    inline RoutePedestrianSpan& AddPedestrianAccess(RouteSpanPedestrianAccessAttribute value) { m_pedestrianAccessHasBeenSet = true; m_pedestrianAccess.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -173,42 +170,39 @@ namespace Model
      * <p>2-3 letter Region code corresponding to the Span. This is either a province
      * or a state.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline RoutePedestrianSpan& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline RoutePedestrianSpan& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    RoutePedestrianSpan& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Attributes for the road segment corresponding to the span. </p>
      */
-    inline const Aws::Vector<RouteSpanRoadAttribute>& GetRoadAttributes() const{ return m_roadAttributes; }
+    inline const Aws::Vector<RouteSpanRoadAttribute>& GetRoadAttributes() const { return m_roadAttributes; }
     inline bool RoadAttributesHasBeenSet() const { return m_roadAttributesHasBeenSet; }
-    inline void SetRoadAttributes(const Aws::Vector<RouteSpanRoadAttribute>& value) { m_roadAttributesHasBeenSet = true; m_roadAttributes = value; }
-    inline void SetRoadAttributes(Aws::Vector<RouteSpanRoadAttribute>&& value) { m_roadAttributesHasBeenSet = true; m_roadAttributes = std::move(value); }
-    inline RoutePedestrianSpan& WithRoadAttributes(const Aws::Vector<RouteSpanRoadAttribute>& value) { SetRoadAttributes(value); return *this;}
-    inline RoutePedestrianSpan& WithRoadAttributes(Aws::Vector<RouteSpanRoadAttribute>&& value) { SetRoadAttributes(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& AddRoadAttributes(const RouteSpanRoadAttribute& value) { m_roadAttributesHasBeenSet = true; m_roadAttributes.push_back(value); return *this; }
-    inline RoutePedestrianSpan& AddRoadAttributes(RouteSpanRoadAttribute&& value) { m_roadAttributesHasBeenSet = true; m_roadAttributes.push_back(std::move(value)); return *this; }
+    template<typename RoadAttributesT = Aws::Vector<RouteSpanRoadAttribute>>
+    void SetRoadAttributes(RoadAttributesT&& value) { m_roadAttributesHasBeenSet = true; m_roadAttributes = std::forward<RoadAttributesT>(value); }
+    template<typename RoadAttributesT = Aws::Vector<RouteSpanRoadAttribute>>
+    RoutePedestrianSpan& WithRoadAttributes(RoadAttributesT&& value) { SetRoadAttributes(std::forward<RoadAttributesT>(value)); return *this;}
+    inline RoutePedestrianSpan& AddRoadAttributes(RouteSpanRoadAttribute value) { m_roadAttributesHasBeenSet = true; m_roadAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Designated route name or number corresponding to the span.</p>
      */
-    inline const Aws::Vector<RouteNumber>& GetRouteNumbers() const{ return m_routeNumbers; }
+    inline const Aws::Vector<RouteNumber>& GetRouteNumbers() const { return m_routeNumbers; }
     inline bool RouteNumbersHasBeenSet() const { return m_routeNumbersHasBeenSet; }
-    inline void SetRouteNumbers(const Aws::Vector<RouteNumber>& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers = value; }
-    inline void SetRouteNumbers(Aws::Vector<RouteNumber>&& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers = std::move(value); }
-    inline RoutePedestrianSpan& WithRouteNumbers(const Aws::Vector<RouteNumber>& value) { SetRouteNumbers(value); return *this;}
-    inline RoutePedestrianSpan& WithRouteNumbers(Aws::Vector<RouteNumber>&& value) { SetRouteNumbers(std::move(value)); return *this;}
-    inline RoutePedestrianSpan& AddRouteNumbers(const RouteNumber& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers.push_back(value); return *this; }
-    inline RoutePedestrianSpan& AddRouteNumbers(RouteNumber&& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers.push_back(std::move(value)); return *this; }
+    template<typename RouteNumbersT = Aws::Vector<RouteNumber>>
+    void SetRouteNumbers(RouteNumbersT&& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers = std::forward<RouteNumbersT>(value); }
+    template<typename RouteNumbersT = Aws::Vector<RouteNumber>>
+    RoutePedestrianSpan& WithRouteNumbers(RouteNumbersT&& value) { SetRouteNumbers(std::forward<RouteNumbersT>(value)); return *this;}
+    template<typename RouteNumbersT = RouteNumber>
+    RoutePedestrianSpan& AddRouteNumbers(RouteNumbersT&& value) { m_routeNumbersHasBeenSet = true; m_routeNumbers.emplace_back(std::forward<RouteNumbersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -216,12 +210,12 @@ namespace Model
      * <p>Speed limit details corresponding to the span.</p> <p> <b>Unit</b>:
      * <code>KilometersPerHour</code> </p>
      */
-    inline const RouteSpanSpeedLimitDetails& GetSpeedLimit() const{ return m_speedLimit; }
+    inline const RouteSpanSpeedLimitDetails& GetSpeedLimit() const { return m_speedLimit; }
     inline bool SpeedLimitHasBeenSet() const { return m_speedLimitHasBeenSet; }
-    inline void SetSpeedLimit(const RouteSpanSpeedLimitDetails& value) { m_speedLimitHasBeenSet = true; m_speedLimit = value; }
-    inline void SetSpeedLimit(RouteSpanSpeedLimitDetails&& value) { m_speedLimitHasBeenSet = true; m_speedLimit = std::move(value); }
-    inline RoutePedestrianSpan& WithSpeedLimit(const RouteSpanSpeedLimitDetails& value) { SetSpeedLimit(value); return *this;}
-    inline RoutePedestrianSpan& WithSpeedLimit(RouteSpanSpeedLimitDetails&& value) { SetSpeedLimit(std::move(value)); return *this;}
+    template<typename SpeedLimitT = RouteSpanSpeedLimitDetails>
+    void SetSpeedLimit(SpeedLimitT&& value) { m_speedLimitHasBeenSet = true; m_speedLimit = std::forward<SpeedLimitT>(value); }
+    template<typename SpeedLimitT = RouteSpanSpeedLimitDetails>
+    RoutePedestrianSpan& WithSpeedLimit(SpeedLimitT&& value) { SetSpeedLimit(std::forward<SpeedLimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,32 +223,32 @@ namespace Model
      * <p>Duration of the computed span under typical traffic congestion.</p> <p>
      * <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetTypicalDuration() const{ return m_typicalDuration; }
+    inline long long GetTypicalDuration() const { return m_typicalDuration; }
     inline bool TypicalDurationHasBeenSet() const { return m_typicalDurationHasBeenSet; }
     inline void SetTypicalDuration(long long value) { m_typicalDurationHasBeenSet = true; m_typicalDuration = value; }
     inline RoutePedestrianSpan& WithTypicalDuration(long long value) { SetTypicalDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_bestCaseDuration;
+    long long m_bestCaseDuration{0};
     bool m_bestCaseDurationHasBeenSet = false;
 
     Aws::String m_country;
     bool m_countryHasBeenSet = false;
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
 
     RouteSpanDynamicSpeedDetails m_dynamicSpeed;
     bool m_dynamicSpeedHasBeenSet = false;
 
-    int m_functionalClassification;
+    int m_functionalClassification{0};
     bool m_functionalClassificationHasBeenSet = false;
 
-    int m_geometryOffset;
+    int m_geometryOffset{0};
     bool m_geometryOffsetHasBeenSet = false;
 
     Aws::Vector<int> m_incidents;
@@ -278,7 +272,7 @@ namespace Model
     RouteSpanSpeedLimitDetails m_speedLimit;
     bool m_speedLimitHasBeenSet = false;
 
-    long long m_typicalDuration;
+    long long m_typicalDuration{0};
     bool m_typicalDurationHasBeenSet = false;
   };
 

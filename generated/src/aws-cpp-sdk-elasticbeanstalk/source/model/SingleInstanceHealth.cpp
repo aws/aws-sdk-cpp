@@ -20,22 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SingleInstanceHealth::SingleInstanceHealth() : 
-    m_instanceIdHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_causesHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_applicationMetricsHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_deploymentHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode)
-  : SingleInstanceHealth()
 {
   *this = xmlNode;
 }
@@ -68,6 +53,7 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     if(!causesNode.IsNull())
     {
       XmlNode causesMember = causesNode.FirstChild("member");
+      m_causesHasBeenSet = !causesMember.IsNull();
       while(!causesMember.IsNull())
       {
         m_causes.push_back(causesMember.GetText());

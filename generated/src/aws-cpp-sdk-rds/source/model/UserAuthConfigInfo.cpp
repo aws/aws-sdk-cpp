@@ -20,21 +20,7 @@ namespace RDS
 namespace Model
 {
 
-UserAuthConfigInfo::UserAuthConfigInfo() : 
-    m_descriptionHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_authScheme(AuthScheme::NOT_SET),
-    m_authSchemeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_iAMAuth(IAMAuthMode::NOT_SET),
-    m_iAMAuthHasBeenSet(false),
-    m_clientPasswordAuthType(ClientPasswordAuthType::NOT_SET),
-    m_clientPasswordAuthTypeHasBeenSet(false)
-{
-}
-
 UserAuthConfigInfo::UserAuthConfigInfo(const XmlNode& xmlNode)
-  : UserAuthConfigInfo()
 {
   *this = xmlNode;
 }
@@ -60,7 +46,7 @@ UserAuthConfigInfo& UserAuthConfigInfo::operator =(const XmlNode& xmlNode)
     XmlNode authSchemeNode = resultNode.FirstChild("AuthScheme");
     if(!authSchemeNode.IsNull())
     {
-      m_authScheme = AuthSchemeMapper::GetAuthSchemeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authSchemeNode.GetText()).c_str()).c_str());
+      m_authScheme = AuthSchemeMapper::GetAuthSchemeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authSchemeNode.GetText()).c_str()));
       m_authSchemeHasBeenSet = true;
     }
     XmlNode secretArnNode = resultNode.FirstChild("SecretArn");
@@ -72,13 +58,13 @@ UserAuthConfigInfo& UserAuthConfigInfo::operator =(const XmlNode& xmlNode)
     XmlNode iAMAuthNode = resultNode.FirstChild("IAMAuth");
     if(!iAMAuthNode.IsNull())
     {
-      m_iAMAuth = IAMAuthModeMapper::GetIAMAuthModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMAuthNode.GetText()).c_str()).c_str());
+      m_iAMAuth = IAMAuthModeMapper::GetIAMAuthModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMAuthNode.GetText()).c_str()));
       m_iAMAuthHasBeenSet = true;
     }
     XmlNode clientPasswordAuthTypeNode = resultNode.FirstChild("ClientPasswordAuthType");
     if(!clientPasswordAuthTypeNode.IsNull())
     {
-      m_clientPasswordAuthType = ClientPasswordAuthTypeMapper::GetClientPasswordAuthTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clientPasswordAuthTypeNode.GetText()).c_str()).c_str());
+      m_clientPasswordAuthType = ClientPasswordAuthTypeMapper::GetClientPasswordAuthTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clientPasswordAuthTypeNode.GetText()).c_str()));
       m_clientPasswordAuthTypeHasBeenSet = true;
     }
   }

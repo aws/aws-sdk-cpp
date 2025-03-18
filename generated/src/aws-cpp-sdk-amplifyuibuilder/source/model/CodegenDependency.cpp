@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenDependency::CodegenDependency() : 
-    m_nameHasBeenSet(false),
-    m_supportedVersionHasBeenSet(false),
-    m_isSemVer(false),
-    m_isSemVerHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 CodegenDependency::CodegenDependency(JsonView jsonValue)
-  : CodegenDependency()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CodegenDependency& CodegenDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedVersion"))
   {
     m_supportedVersion = jsonValue.GetString("supportedVersion");
-
     m_supportedVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSemVer"))
   {
     m_isSemVer = jsonValue.GetBool("isSemVer");
-
     m_isSemVerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

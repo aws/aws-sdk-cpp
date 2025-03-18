@@ -18,27 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ImportJob::ImportJob() : 
-    m_addressListIdHasBeenSet(false),
-    m_completedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_failedItemsCount(0),
-    m_failedItemsCountHasBeenSet(false),
-    m_importDataFormatHasBeenSet(false),
-    m_importedItemsCount(0),
-    m_importedItemsCountHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_status(ImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ImportJob::ImportJob(JsonView jsonValue)
-  : ImportJob()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ ImportJob& ImportJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddressListId"))
   {
     m_addressListId = jsonValue.GetString("AddressListId");
-
     m_addressListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedTimestamp"))
   {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
-
     m_completedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedItemsCount"))
   {
     m_failedItemsCount = jsonValue.GetInteger("FailedItemsCount");
-
     m_failedItemsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportDataFormat"))
   {
     m_importDataFormat = jsonValue.GetObject("ImportDataFormat");
-
     m_importDataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedItemsCount"))
   {
     m_importedItemsCount = jsonValue.GetInteger("ImportedItemsCount");
-
     m_importedItemsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreSignedUrl"))
   {
     m_preSignedUrl = jsonValue.GetString("PreSignedUrl");
-
     m_preSignedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class EmailInsights
   {
   public:
-    AWS_SESV2_API EmailInsights();
+    AWS_SESV2_API EmailInsights() = default;
     AWS_SESV2_API EmailInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API EmailInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,38 @@ namespace Model
     /**
      * <p>The recipient of the email.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline EmailInsights& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline EmailInsights& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline EmailInsights& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    EmailInsights& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
      */
-    inline const Aws::String& GetIsp() const{ return m_isp; }
+    inline const Aws::String& GetIsp() const { return m_isp; }
     inline bool IspHasBeenSet() const { return m_ispHasBeenSet; }
-    inline void SetIsp(const Aws::String& value) { m_ispHasBeenSet = true; m_isp = value; }
-    inline void SetIsp(Aws::String&& value) { m_ispHasBeenSet = true; m_isp = std::move(value); }
-    inline void SetIsp(const char* value) { m_ispHasBeenSet = true; m_isp.assign(value); }
-    inline EmailInsights& WithIsp(const Aws::String& value) { SetIsp(value); return *this;}
-    inline EmailInsights& WithIsp(Aws::String&& value) { SetIsp(std::move(value)); return *this;}
-    inline EmailInsights& WithIsp(const char* value) { SetIsp(value); return *this;}
+    template<typename IspT = Aws::String>
+    void SetIsp(IspT&& value) { m_ispHasBeenSet = true; m_isp = std::forward<IspT>(value); }
+    template<typename IspT = Aws::String>
+    EmailInsights& WithIsp(IspT&& value) { SetIsp(std::forward<IspT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of events associated with the sent email.</p>
      */
-    inline const Aws::Vector<InsightsEvent>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<InsightsEvent>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<InsightsEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<InsightsEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline EmailInsights& WithEvents(const Aws::Vector<InsightsEvent>& value) { SetEvents(value); return *this;}
-    inline EmailInsights& WithEvents(Aws::Vector<InsightsEvent>&& value) { SetEvents(std::move(value)); return *this;}
-    inline EmailInsights& AddEvents(const InsightsEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline EmailInsights& AddEvents(InsightsEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<InsightsEvent>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<InsightsEvent>>
+    EmailInsights& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = InsightsEvent>
+    EmailInsights& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
   private:
 

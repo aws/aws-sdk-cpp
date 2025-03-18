@@ -28,7 +28,7 @@ namespace Model
   class UpdateRouteCalculatorResult
   {
   public:
-    AWS_LOCATIONSERVICE_API UpdateRouteCalculatorResult();
+    AWS_LOCATIONSERVICE_API UpdateRouteCalculatorResult() = default;
     AWS_LOCATIONSERVICE_API UpdateRouteCalculatorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API UpdateRouteCalculatorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The name of the updated route calculator resource.</p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
-    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
-    inline UpdateRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-    inline UpdateRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-    inline UpdateRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    inline const Aws::String& GetCalculatorName() const { return m_calculatorName; }
+    template<typename CalculatorNameT = Aws::String>
+    void SetCalculatorName(CalculatorNameT&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::forward<CalculatorNameT>(value); }
+    template<typename CalculatorNameT = Aws::String>
+    UpdateRouteCalculatorResult& WithCalculatorName(CalculatorNameT&& value) { SetCalculatorName(std::forward<CalculatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetCalculatorArn() const{ return m_calculatorArn; }
-    inline void SetCalculatorArn(const Aws::String& value) { m_calculatorArn = value; }
-    inline void SetCalculatorArn(Aws::String&& value) { m_calculatorArn = std::move(value); }
-    inline void SetCalculatorArn(const char* value) { m_calculatorArn.assign(value); }
-    inline UpdateRouteCalculatorResult& WithCalculatorArn(const Aws::String& value) { SetCalculatorArn(value); return *this;}
-    inline UpdateRouteCalculatorResult& WithCalculatorArn(Aws::String&& value) { SetCalculatorArn(std::move(value)); return *this;}
-    inline UpdateRouteCalculatorResult& WithCalculatorArn(const char* value) { SetCalculatorArn(value); return *this;}
+    inline const Aws::String& GetCalculatorArn() const { return m_calculatorArn; }
+    template<typename CalculatorArnT = Aws::String>
+    void SetCalculatorArn(CalculatorArnT&& value) { m_calculatorArnHasBeenSet = true; m_calculatorArn = std::forward<CalculatorArnT>(value); }
+    template<typename CalculatorArnT = Aws::String>
+    UpdateRouteCalculatorResult& WithCalculatorArn(CalculatorArnT&& value) { SetCalculatorArn(std::forward<CalculatorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,32 +64,34 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline UpdateRouteCalculatorResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline UpdateRouteCalculatorResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    UpdateRouteCalculatorResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRouteCalculatorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRouteCalculatorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRouteCalculatorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRouteCalculatorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_calculatorName;
+    bool m_calculatorNameHasBeenSet = false;
 
     Aws::String m_calculatorArn;
+    bool m_calculatorArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SseAwsKeyManagementParams::SseAwsKeyManagementParams() : 
-    m_awsKmsKeyIdHasBeenSet(false),
-    m_awsKmsEncryptionContextHasBeenSet(false)
-{
-}
-
 SseAwsKeyManagementParams::SseAwsKeyManagementParams(JsonView jsonValue)
-  : SseAwsKeyManagementParams()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SseAwsKeyManagementParams& SseAwsKeyManagementParams::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AwsKmsKeyId"))
   {
     m_awsKmsKeyId = jsonValue.GetString("AwsKmsKeyId");
-
     m_awsKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsKmsEncryptionContext"))
   {
     m_awsKmsEncryptionContext = jsonValue.GetString("AwsKmsEncryptionContext");
-
     m_awsKmsEncryptionContextHasBeenSet = true;
   }
-
   return *this;
 }
 

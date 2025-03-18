@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-SuppressedDestinationAttributes::SuppressedDestinationAttributes() : 
-    m_messageIdHasBeenSet(false),
-    m_feedbackIdHasBeenSet(false)
-{
-}
-
 SuppressedDestinationAttributes::SuppressedDestinationAttributes(JsonView jsonValue)
-  : SuppressedDestinationAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SuppressedDestinationAttributes& SuppressedDestinationAttributes::operator =(Jso
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackId"))
   {
     m_feedbackId = jsonValue.GetString("FeedbackId");
-
     m_feedbackIdHasBeenSet = true;
   }
-
   return *this;
 }
 

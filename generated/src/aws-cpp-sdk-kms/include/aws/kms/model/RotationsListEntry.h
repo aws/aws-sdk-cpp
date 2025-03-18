@@ -34,7 +34,7 @@ namespace Model
   class RotationsListEntry
   {
   public:
-    AWS_KMS_API RotationsListEntry();
+    AWS_KMS_API RotationsListEntry() = default;
     AWS_KMS_API RotationsListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API RotationsListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Unique identifier of the key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline RotationsListEntry& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline RotationsListEntry& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline RotationsListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    RotationsListEntry& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>Date and time that the key material rotation completed. Formatted as Unix
      * time.</p>
      */
-    inline const Aws::Utils::DateTime& GetRotationDate() const{ return m_rotationDate; }
+    inline const Aws::Utils::DateTime& GetRotationDate() const { return m_rotationDate; }
     inline bool RotationDateHasBeenSet() const { return m_rotationDateHasBeenSet; }
-    inline void SetRotationDate(const Aws::Utils::DateTime& value) { m_rotationDateHasBeenSet = true; m_rotationDate = value; }
-    inline void SetRotationDate(Aws::Utils::DateTime&& value) { m_rotationDateHasBeenSet = true; m_rotationDate = std::move(value); }
-    inline RotationsListEntry& WithRotationDate(const Aws::Utils::DateTime& value) { SetRotationDate(value); return *this;}
-    inline RotationsListEntry& WithRotationDate(Aws::Utils::DateTime&& value) { SetRotationDate(std::move(value)); return *this;}
+    template<typename RotationDateT = Aws::Utils::DateTime>
+    void SetRotationDate(RotationDateT&& value) { m_rotationDateHasBeenSet = true; m_rotationDate = std::forward<RotationDateT>(value); }
+    template<typename RotationDateT = Aws::Utils::DateTime>
+    RotationsListEntry& WithRotationDate(RotationDateT&& value) { SetRotationDate(std::forward<RotationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +73,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-on-demand">on-demand
      * rotation</a>.</p>
      */
-    inline const RotationType& GetRotationType() const{ return m_rotationType; }
+    inline RotationType GetRotationType() const { return m_rotationType; }
     inline bool RotationTypeHasBeenSet() const { return m_rotationTypeHasBeenSet; }
-    inline void SetRotationType(const RotationType& value) { m_rotationTypeHasBeenSet = true; m_rotationType = value; }
-    inline void SetRotationType(RotationType&& value) { m_rotationTypeHasBeenSet = true; m_rotationType = std::move(value); }
-    inline RotationsListEntry& WithRotationType(const RotationType& value) { SetRotationType(value); return *this;}
-    inline RotationsListEntry& WithRotationType(RotationType&& value) { SetRotationType(std::move(value)); return *this;}
+    inline void SetRotationType(RotationType value) { m_rotationTypeHasBeenSet = true; m_rotationType = value; }
+    inline RotationsListEntry& WithRotationType(RotationType value) { SetRotationType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_rotationDate;
+    Aws::Utils::DateTime m_rotationDate{};
     bool m_rotationDateHasBeenSet = false;
 
-    RotationType m_rotationType;
+    RotationType m_rotationType{RotationType::NOT_SET};
     bool m_rotationTypeHasBeenSet = false;
   };
 

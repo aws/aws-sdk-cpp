@@ -32,7 +32,7 @@ namespace Model
   class ReplacementTemplate
   {
   public:
-    AWS_SESV2_API ReplacementTemplate();
+    AWS_SESV2_API ReplacementTemplate() = default;
     AWS_SESV2_API ReplacementTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ReplacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * JSON object, typically consisting of key-value pairs in which the keys
      * correspond to replacement tags in the email template.</p>
      */
-    inline const Aws::String& GetReplacementTemplateData() const{ return m_replacementTemplateData; }
+    inline const Aws::String& GetReplacementTemplateData() const { return m_replacementTemplateData; }
     inline bool ReplacementTemplateDataHasBeenSet() const { return m_replacementTemplateDataHasBeenSet; }
-    inline void SetReplacementTemplateData(const Aws::String& value) { m_replacementTemplateDataHasBeenSet = true; m_replacementTemplateData = value; }
-    inline void SetReplacementTemplateData(Aws::String&& value) { m_replacementTemplateDataHasBeenSet = true; m_replacementTemplateData = std::move(value); }
-    inline void SetReplacementTemplateData(const char* value) { m_replacementTemplateDataHasBeenSet = true; m_replacementTemplateData.assign(value); }
-    inline ReplacementTemplate& WithReplacementTemplateData(const Aws::String& value) { SetReplacementTemplateData(value); return *this;}
-    inline ReplacementTemplate& WithReplacementTemplateData(Aws::String&& value) { SetReplacementTemplateData(std::move(value)); return *this;}
-    inline ReplacementTemplate& WithReplacementTemplateData(const char* value) { SetReplacementTemplateData(value); return *this;}
+    template<typename ReplacementTemplateDataT = Aws::String>
+    void SetReplacementTemplateData(ReplacementTemplateDataT&& value) { m_replacementTemplateDataHasBeenSet = true; m_replacementTemplateData = std::forward<ReplacementTemplateDataT>(value); }
+    template<typename ReplacementTemplateDataT = Aws::String>
+    ReplacementTemplate& WithReplacementTemplateData(ReplacementTemplateDataT&& value) { SetReplacementTemplateData(std::forward<ReplacementTemplateDataT>(value)); return *this;}
     ///@}
   private:
 

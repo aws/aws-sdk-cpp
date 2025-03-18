@@ -20,15 +20,7 @@ namespace IAM
 namespace Model
 {
 
-AttachedPermissionsBoundary::AttachedPermissionsBoundary() : 
-    m_permissionsBoundaryType(PermissionsBoundaryAttachmentType::NOT_SET),
-    m_permissionsBoundaryTypeHasBeenSet(false),
-    m_permissionsBoundaryArnHasBeenSet(false)
-{
-}
-
 AttachedPermissionsBoundary::AttachedPermissionsBoundary(const XmlNode& xmlNode)
-  : AttachedPermissionsBoundary()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ AttachedPermissionsBoundary& AttachedPermissionsBoundary::operator =(const XmlNo
     XmlNode permissionsBoundaryTypeNode = resultNode.FirstChild("PermissionsBoundaryType");
     if(!permissionsBoundaryTypeNode.IsNull())
     {
-      m_permissionsBoundaryType = PermissionsBoundaryAttachmentTypeMapper::GetPermissionsBoundaryAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionsBoundaryTypeNode.GetText()).c_str()).c_str());
+      m_permissionsBoundaryType = PermissionsBoundaryAttachmentTypeMapper::GetPermissionsBoundaryAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionsBoundaryTypeNode.GetText()).c_str()));
       m_permissionsBoundaryTypeHasBeenSet = true;
     }
     XmlNode permissionsBoundaryArnNode = resultNode.FirstChild("PermissionsBoundaryArn");

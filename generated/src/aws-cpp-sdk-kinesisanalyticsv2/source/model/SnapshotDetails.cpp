@@ -18,20 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-SnapshotDetails::SnapshotDetails() : 
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotStatus(SnapshotStatus::NOT_SET),
-    m_snapshotStatusHasBeenSet(false),
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_snapshotCreationTimestampHasBeenSet(false),
-    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false)
-{
-}
-
 SnapshotDetails::SnapshotDetails(JsonView jsonValue)
-  : SnapshotDetails()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ SnapshotDetails& SnapshotDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SnapshotName"))
   {
     m_snapshotName = jsonValue.GetString("SnapshotName");
-
     m_snapshotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotStatus"))
   {
     m_snapshotStatus = SnapshotStatusMapper::GetSnapshotStatusForName(jsonValue.GetString("SnapshotStatus"));
-
     m_snapshotStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
     m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotCreationTimestamp"))
   {
     m_snapshotCreationTimestamp = jsonValue.GetDouble("SnapshotCreationTimestamp");
-
     m_snapshotCreationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeEnvironment"))
   {
     m_runtimeEnvironment = RuntimeEnvironmentMapper::GetRuntimeEnvironmentForName(jsonValue.GetString("RuntimeEnvironment"));
-
     m_runtimeEnvironmentHasBeenSet = true;
   }
-
   return *this;
 }
 

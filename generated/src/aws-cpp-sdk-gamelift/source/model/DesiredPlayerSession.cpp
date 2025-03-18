@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-DesiredPlayerSession::DesiredPlayerSession() : 
-    m_playerIdHasBeenSet(false),
-    m_playerDataHasBeenSet(false)
-{
-}
-
 DesiredPlayerSession::DesiredPlayerSession(JsonView jsonValue)
-  : DesiredPlayerSession()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DesiredPlayerSession& DesiredPlayerSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlayerId"))
   {
     m_playerId = jsonValue.GetString("PlayerId");
-
     m_playerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerData"))
   {
     m_playerData = jsonValue.GetString("PlayerData");
-
     m_playerDataHasBeenSet = true;
   }
-
   return *this;
 }
 

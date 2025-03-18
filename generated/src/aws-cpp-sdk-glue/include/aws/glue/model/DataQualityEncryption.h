@@ -33,7 +33,7 @@ namespace Model
   class DataQualityEncryption
   {
   public:
-    AWS_GLUE_API DataQualityEncryption();
+    AWS_GLUE_API DataQualityEncryption() = default;
     AWS_GLUE_API DataQualityEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataQualityEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * observations.</p> <p>Valid values are <code>SSEKMS</code> for encryption using a
      * customer-managed KMS key, or <code>DISABLED</code>.</p>
      */
-    inline const DataQualityEncryptionMode& GetDataQualityEncryptionMode() const{ return m_dataQualityEncryptionMode; }
+    inline DataQualityEncryptionMode GetDataQualityEncryptionMode() const { return m_dataQualityEncryptionMode; }
     inline bool DataQualityEncryptionModeHasBeenSet() const { return m_dataQualityEncryptionModeHasBeenSet; }
-    inline void SetDataQualityEncryptionMode(const DataQualityEncryptionMode& value) { m_dataQualityEncryptionModeHasBeenSet = true; m_dataQualityEncryptionMode = value; }
-    inline void SetDataQualityEncryptionMode(DataQualityEncryptionMode&& value) { m_dataQualityEncryptionModeHasBeenSet = true; m_dataQualityEncryptionMode = std::move(value); }
-    inline DataQualityEncryption& WithDataQualityEncryptionMode(const DataQualityEncryptionMode& value) { SetDataQualityEncryptionMode(value); return *this;}
-    inline DataQualityEncryption& WithDataQualityEncryptionMode(DataQualityEncryptionMode&& value) { SetDataQualityEncryptionMode(std::move(value)); return *this;}
+    inline void SetDataQualityEncryptionMode(DataQualityEncryptionMode value) { m_dataQualityEncryptionModeHasBeenSet = true; m_dataQualityEncryptionMode = value; }
+    inline DataQualityEncryption& WithDataQualityEncryptionMode(DataQualityEncryptionMode value) { SetDataQualityEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
      * data.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline DataQualityEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline DataQualityEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline DataQualityEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    DataQualityEncryption& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    DataQualityEncryptionMode m_dataQualityEncryptionMode;
+    DataQualityEncryptionMode m_dataQualityEncryptionMode{DataQualityEncryptionMode::NOT_SET};
     bool m_dataQualityEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

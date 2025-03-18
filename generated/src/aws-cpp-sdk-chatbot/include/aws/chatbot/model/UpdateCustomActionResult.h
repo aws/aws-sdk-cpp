@@ -27,7 +27,7 @@ namespace Model
   class UpdateCustomActionResult
   {
   public:
-    AWS_CHATBOT_API UpdateCustomActionResult();
+    AWS_CHATBOT_API UpdateCustomActionResult() = default;
     AWS_CHATBOT_API UpdateCustomActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API UpdateCustomActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The fully defined ARN of the custom action.</p>
      */
-    inline const Aws::String& GetCustomActionArn() const{ return m_customActionArn; }
-    inline void SetCustomActionArn(const Aws::String& value) { m_customActionArn = value; }
-    inline void SetCustomActionArn(Aws::String&& value) { m_customActionArn = std::move(value); }
-    inline void SetCustomActionArn(const char* value) { m_customActionArn.assign(value); }
-    inline UpdateCustomActionResult& WithCustomActionArn(const Aws::String& value) { SetCustomActionArn(value); return *this;}
-    inline UpdateCustomActionResult& WithCustomActionArn(Aws::String&& value) { SetCustomActionArn(std::move(value)); return *this;}
-    inline UpdateCustomActionResult& WithCustomActionArn(const char* value) { SetCustomActionArn(value); return *this;}
+    inline const Aws::String& GetCustomActionArn() const { return m_customActionArn; }
+    template<typename CustomActionArnT = Aws::String>
+    void SetCustomActionArn(CustomActionArnT&& value) { m_customActionArnHasBeenSet = true; m_customActionArn = std::forward<CustomActionArnT>(value); }
+    template<typename CustomActionArnT = Aws::String>
+    UpdateCustomActionResult& WithCustomActionArn(CustomActionArnT&& value) { SetCustomActionArn(std::forward<CustomActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCustomActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCustomActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCustomActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCustomActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customActionArn;
+    bool m_customActionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

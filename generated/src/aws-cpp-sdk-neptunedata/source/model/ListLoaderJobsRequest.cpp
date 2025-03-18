@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListLoaderJobsRequest::ListLoaderJobsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_includeQueuedLoads(false),
-    m_includeQueuedLoadsHasBeenSet(false)
-{
-}
-
 Aws::String ListLoaderJobsRequest::SerializePayload() const
 {
   return {};

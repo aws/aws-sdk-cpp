@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCapacityAssignmentConfigurationRequest::GetCapacityAssignmentConfigurationRequest() : 
-    m_capacityReservationNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCapacityAssignmentConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

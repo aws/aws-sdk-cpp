@@ -31,7 +31,7 @@ namespace Model
   class ProjectGrantFilter
   {
   public:
-    AWS_DATAZONE_API ProjectGrantFilter();
+    AWS_DATAZONE_API ProjectGrantFilter() = default;
     AWS_DATAZONE_API ProjectGrantFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ProjectGrantFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The domain unit filter of the project grant filter.</p>
      */
-    inline const DomainUnitFilterForProject& GetDomainUnitFilter() const{ return m_domainUnitFilter; }
+    inline const DomainUnitFilterForProject& GetDomainUnitFilter() const { return m_domainUnitFilter; }
     inline bool DomainUnitFilterHasBeenSet() const { return m_domainUnitFilterHasBeenSet; }
-    inline void SetDomainUnitFilter(const DomainUnitFilterForProject& value) { m_domainUnitFilterHasBeenSet = true; m_domainUnitFilter = value; }
-    inline void SetDomainUnitFilter(DomainUnitFilterForProject&& value) { m_domainUnitFilterHasBeenSet = true; m_domainUnitFilter = std::move(value); }
-    inline ProjectGrantFilter& WithDomainUnitFilter(const DomainUnitFilterForProject& value) { SetDomainUnitFilter(value); return *this;}
-    inline ProjectGrantFilter& WithDomainUnitFilter(DomainUnitFilterForProject&& value) { SetDomainUnitFilter(std::move(value)); return *this;}
+    template<typename DomainUnitFilterT = DomainUnitFilterForProject>
+    void SetDomainUnitFilter(DomainUnitFilterT&& value) { m_domainUnitFilterHasBeenSet = true; m_domainUnitFilter = std::forward<DomainUnitFilterT>(value); }
+    template<typename DomainUnitFilterT = DomainUnitFilterForProject>
+    ProjectGrantFilter& WithDomainUnitFilter(DomainUnitFilterT&& value) { SetDomainUnitFilter(std::forward<DomainUnitFilterT>(value)); return *this;}
     ///@}
   private:
 

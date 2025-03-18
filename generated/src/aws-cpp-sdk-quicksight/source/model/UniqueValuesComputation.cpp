@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-UniqueValuesComputation::UniqueValuesComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_categoryHasBeenSet(false)
-{
-}
-
 UniqueValuesComputation::UniqueValuesComputation(JsonView jsonValue)
-  : UniqueValuesComputation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UniqueValuesComputation& UniqueValuesComputation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetObject("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

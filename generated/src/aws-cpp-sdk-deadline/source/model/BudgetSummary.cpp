@@ -18,24 +18,7 @@ namespace deadline
 namespace Model
 {
 
-BudgetSummary::BudgetSummary() : 
-    m_budgetIdHasBeenSet(false),
-    m_usageTrackingResourceHasBeenSet(false),
-    m_status(BudgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
-    m_usagesHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 BudgetSummary::BudgetSummary(JsonView jsonValue)
-  : BudgetSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ BudgetSummary& BudgetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("budgetId"))
   {
     m_budgetId = jsonValue.GetString("budgetId");
-
     m_budgetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageTrackingResource"))
   {
     m_usageTrackingResource = jsonValue.GetObject("usageTrackingResource");
-
     m_usageTrackingResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BudgetStatusMapper::GetBudgetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approximateDollarLimit"))
   {
     m_approximateDollarLimit = jsonValue.GetDouble("approximateDollarLimit");
-
     m_approximateDollarLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usages"))
   {
     m_usages = jsonValue.GetObject("usages");
-
     m_usagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class StartImportRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API StartImportRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API StartImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * file containing the resource to import. The resource should match the type
      * specified in the <code>resourceType</code> field.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
+    inline const Aws::Utils::ByteBuffer& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline StartImportRequest& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
-    inline StartImportRequest& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    StartImportRequest& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,10 @@ namespace Model
      * intents.</p> </li> <li> <p>An intent exports dependent slot types.</p> </li>
      * </ul>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline StartImportRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline StartImportRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline StartImportRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,10 @@ namespace Model
      * The $LASTEST version of the existing resource is overwritten with the data from
      * the import file.</p> </li> </ul>
      */
-    inline const MergeStrategy& GetMergeStrategy() const{ return m_mergeStrategy; }
+    inline MergeStrategy GetMergeStrategy() const { return m_mergeStrategy; }
     inline bool MergeStrategyHasBeenSet() const { return m_mergeStrategyHasBeenSet; }
-    inline void SetMergeStrategy(const MergeStrategy& value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = value; }
-    inline void SetMergeStrategy(MergeStrategy&& value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = std::move(value); }
-    inline StartImportRequest& WithMergeStrategy(const MergeStrategy& value) { SetMergeStrategy(value); return *this;}
-    inline StartImportRequest& WithMergeStrategy(MergeStrategy&& value) { SetMergeStrategy(std::move(value)); return *this;}
+    inline void SetMergeStrategy(MergeStrategy value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = value; }
+    inline StartImportRequest& WithMergeStrategy(MergeStrategy value) { SetMergeStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -90,24 +86,24 @@ namespace Model
      * <p>A list of tags to add to the imported bot. You can only add tags when you
      * import a bot, you can't add tags to an intent or slot type.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartImportRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartImportRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartImportRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartImportRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartImportRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartImportRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_payload;
+    Aws::Utils::ByteBuffer m_payload{};
     bool m_payloadHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    MergeStrategy m_mergeStrategy;
+    MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
     bool m_mergeStrategyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

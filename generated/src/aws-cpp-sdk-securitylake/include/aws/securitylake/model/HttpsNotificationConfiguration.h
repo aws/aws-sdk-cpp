@@ -33,7 +33,7 @@ namespace Model
   class HttpsNotificationConfiguration
   {
   public:
-    AWS_SECURITYLAKE_API HttpsNotificationConfiguration();
+    AWS_SECURITYLAKE_API HttpsNotificationConfiguration() = default;
     AWS_SECURITYLAKE_API HttpsNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API HttpsNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The key name for the notification subscription.</p>
      */
-    inline const Aws::String& GetAuthorizationApiKeyName() const{ return m_authorizationApiKeyName; }
+    inline const Aws::String& GetAuthorizationApiKeyName() const { return m_authorizationApiKeyName; }
     inline bool AuthorizationApiKeyNameHasBeenSet() const { return m_authorizationApiKeyNameHasBeenSet; }
-    inline void SetAuthorizationApiKeyName(const Aws::String& value) { m_authorizationApiKeyNameHasBeenSet = true; m_authorizationApiKeyName = value; }
-    inline void SetAuthorizationApiKeyName(Aws::String&& value) { m_authorizationApiKeyNameHasBeenSet = true; m_authorizationApiKeyName = std::move(value); }
-    inline void SetAuthorizationApiKeyName(const char* value) { m_authorizationApiKeyNameHasBeenSet = true; m_authorizationApiKeyName.assign(value); }
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyName(const Aws::String& value) { SetAuthorizationApiKeyName(value); return *this;}
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyName(Aws::String&& value) { SetAuthorizationApiKeyName(std::move(value)); return *this;}
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyName(const char* value) { SetAuthorizationApiKeyName(value); return *this;}
+    template<typename AuthorizationApiKeyNameT = Aws::String>
+    void SetAuthorizationApiKeyName(AuthorizationApiKeyNameT&& value) { m_authorizationApiKeyNameHasBeenSet = true; m_authorizationApiKeyName = std::forward<AuthorizationApiKeyNameT>(value); }
+    template<typename AuthorizationApiKeyNameT = Aws::String>
+    HttpsNotificationConfiguration& WithAuthorizationApiKeyName(AuthorizationApiKeyNameT&& value) { SetAuthorizationApiKeyName(std::forward<AuthorizationApiKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key value for the notification subscription.</p>
      */
-    inline const Aws::String& GetAuthorizationApiKeyValue() const{ return m_authorizationApiKeyValue; }
+    inline const Aws::String& GetAuthorizationApiKeyValue() const { return m_authorizationApiKeyValue; }
     inline bool AuthorizationApiKeyValueHasBeenSet() const { return m_authorizationApiKeyValueHasBeenSet; }
-    inline void SetAuthorizationApiKeyValue(const Aws::String& value) { m_authorizationApiKeyValueHasBeenSet = true; m_authorizationApiKeyValue = value; }
-    inline void SetAuthorizationApiKeyValue(Aws::String&& value) { m_authorizationApiKeyValueHasBeenSet = true; m_authorizationApiKeyValue = std::move(value); }
-    inline void SetAuthorizationApiKeyValue(const char* value) { m_authorizationApiKeyValueHasBeenSet = true; m_authorizationApiKeyValue.assign(value); }
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyValue(const Aws::String& value) { SetAuthorizationApiKeyValue(value); return *this;}
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyValue(Aws::String&& value) { SetAuthorizationApiKeyValue(std::move(value)); return *this;}
-    inline HttpsNotificationConfiguration& WithAuthorizationApiKeyValue(const char* value) { SetAuthorizationApiKeyValue(value); return *this;}
+    template<typename AuthorizationApiKeyValueT = Aws::String>
+    void SetAuthorizationApiKeyValue(AuthorizationApiKeyValueT&& value) { m_authorizationApiKeyValueHasBeenSet = true; m_authorizationApiKeyValue = std::forward<AuthorizationApiKeyValueT>(value); }
+    template<typename AuthorizationApiKeyValueT = Aws::String>
+    HttpsNotificationConfiguration& WithAuthorizationApiKeyValue(AuthorizationApiKeyValueT&& value) { SetAuthorizationApiKeyValue(std::forward<AuthorizationApiKeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,22 @@ namespace Model
      * <p>The subscription endpoint in Security Lake. If you prefer notification with
      * an HTTPs endpoint, populate this field.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline HttpsNotificationConfiguration& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline HttpsNotificationConfiguration& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline HttpsNotificationConfiguration& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    HttpsNotificationConfiguration& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTPS method used for the notification subscription.</p>
      */
-    inline const HttpMethod& GetHttpMethod() const{ return m_httpMethod; }
+    inline HttpMethod GetHttpMethod() const { return m_httpMethod; }
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    inline void SetHttpMethod(const HttpMethod& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-    inline void SetHttpMethod(HttpMethod&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-    inline HttpsNotificationConfiguration& WithHttpMethod(const HttpMethod& value) { SetHttpMethod(value); return *this;}
-    inline HttpsNotificationConfiguration& WithHttpMethod(HttpMethod&& value) { SetHttpMethod(std::move(value)); return *this;}
+    inline void SetHttpMethod(HttpMethod value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline HttpsNotificationConfiguration& WithHttpMethod(HttpMethod value) { SetHttpMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetTargetRoleArn() const{ return m_targetRoleArn; }
+    inline const Aws::String& GetTargetRoleArn() const { return m_targetRoleArn; }
     inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }
-    inline void SetTargetRoleArn(const Aws::String& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = value; }
-    inline void SetTargetRoleArn(Aws::String&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::move(value); }
-    inline void SetTargetRoleArn(const char* value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn.assign(value); }
-    inline HttpsNotificationConfiguration& WithTargetRoleArn(const Aws::String& value) { SetTargetRoleArn(value); return *this;}
-    inline HttpsNotificationConfiguration& WithTargetRoleArn(Aws::String&& value) { SetTargetRoleArn(std::move(value)); return *this;}
-    inline HttpsNotificationConfiguration& WithTargetRoleArn(const char* value) { SetTargetRoleArn(value); return *this;}
+    template<typename TargetRoleArnT = Aws::String>
+    void SetTargetRoleArn(TargetRoleArnT&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::forward<TargetRoleArnT>(value); }
+    template<typename TargetRoleArnT = Aws::String>
+    HttpsNotificationConfiguration& WithTargetRoleArn(TargetRoleArnT&& value) { SetTargetRoleArn(std::forward<TargetRoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,7 +115,7 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    HttpMethod m_httpMethod;
+    HttpMethod m_httpMethod{HttpMethod::NOT_SET};
     bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_targetRoleArn;

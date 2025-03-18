@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DvbNitSettings::DvbNitSettings() : 
-    m_networkId(0),
-    m_networkIdHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_nitInterval(0),
-    m_nitIntervalHasBeenSet(false)
-{
-}
-
 DvbNitSettings::DvbNitSettings(JsonView jsonValue)
-  : DvbNitSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DvbNitSettings& DvbNitSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("networkId"))
   {
     m_networkId = jsonValue.GetInteger("networkId");
-
     m_networkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkName"))
   {
     m_networkName = jsonValue.GetString("networkName");
-
     m_networkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nitInterval"))
   {
     m_nitInterval = jsonValue.GetInteger("nitInterval");
-
     m_nitIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

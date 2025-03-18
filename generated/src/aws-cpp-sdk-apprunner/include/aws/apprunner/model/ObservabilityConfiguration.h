@@ -41,7 +41,7 @@ namespace Model
   class ObservabilityConfiguration
   {
   public:
-    AWS_APPRUNNER_API ObservabilityConfiguration();
+    AWS_APPRUNNER_API ObservabilityConfiguration() = default;
     AWS_APPRUNNER_API ObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API ObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
      */
-    inline const Aws::String& GetObservabilityConfigurationArn() const{ return m_observabilityConfigurationArn; }
+    inline const Aws::String& GetObservabilityConfigurationArn() const { return m_observabilityConfigurationArn; }
     inline bool ObservabilityConfigurationArnHasBeenSet() const { return m_observabilityConfigurationArnHasBeenSet; }
-    inline void SetObservabilityConfigurationArn(const Aws::String& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = value; }
-    inline void SetObservabilityConfigurationArn(Aws::String&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::move(value); }
-    inline void SetObservabilityConfigurationArn(const char* value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn.assign(value); }
-    inline ObservabilityConfiguration& WithObservabilityConfigurationArn(const Aws::String& value) { SetObservabilityConfigurationArn(value); return *this;}
-    inline ObservabilityConfiguration& WithObservabilityConfigurationArn(Aws::String&& value) { SetObservabilityConfigurationArn(std::move(value)); return *this;}
-    inline ObservabilityConfiguration& WithObservabilityConfigurationArn(const char* value) { SetObservabilityConfigurationArn(value); return *this;}
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    void SetObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::forward<ObservabilityConfigurationArnT>(value); }
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    ObservabilityConfiguration& WithObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { SetObservabilityConfigurationArn(std::forward<ObservabilityConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The customer-provided observability configuration name. It can be used in
      * multiple revisions of a configuration.</p>
      */
-    inline const Aws::String& GetObservabilityConfigurationName() const{ return m_observabilityConfigurationName; }
+    inline const Aws::String& GetObservabilityConfigurationName() const { return m_observabilityConfigurationName; }
     inline bool ObservabilityConfigurationNameHasBeenSet() const { return m_observabilityConfigurationNameHasBeenSet; }
-    inline void SetObservabilityConfigurationName(const Aws::String& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = value; }
-    inline void SetObservabilityConfigurationName(Aws::String&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::move(value); }
-    inline void SetObservabilityConfigurationName(const char* value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName.assign(value); }
-    inline ObservabilityConfiguration& WithObservabilityConfigurationName(const Aws::String& value) { SetObservabilityConfigurationName(value); return *this;}
-    inline ObservabilityConfiguration& WithObservabilityConfigurationName(Aws::String&& value) { SetObservabilityConfigurationName(std::move(value)); return *this;}
-    inline ObservabilityConfiguration& WithObservabilityConfigurationName(const char* value) { SetObservabilityConfigurationName(value); return *this;}
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    void SetObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::forward<ObservabilityConfigurationNameT>(value); }
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    ObservabilityConfiguration& WithObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { SetObservabilityConfigurationName(std::forward<ObservabilityConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +77,12 @@ namespace Model
      * <p>The configuration of the tracing feature within this observability
      * configuration. If not specified, tracing isn't enabled.</p>
      */
-    inline const TraceConfiguration& GetTraceConfiguration() const{ return m_traceConfiguration; }
+    inline const TraceConfiguration& GetTraceConfiguration() const { return m_traceConfiguration; }
     inline bool TraceConfigurationHasBeenSet() const { return m_traceConfigurationHasBeenSet; }
-    inline void SetTraceConfiguration(const TraceConfiguration& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = value; }
-    inline void SetTraceConfiguration(TraceConfiguration&& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = std::move(value); }
-    inline ObservabilityConfiguration& WithTraceConfiguration(const TraceConfiguration& value) { SetTraceConfiguration(value); return *this;}
-    inline ObservabilityConfiguration& WithTraceConfiguration(TraceConfiguration&& value) { SetTraceConfiguration(std::move(value)); return *this;}
+    template<typename TraceConfigurationT = TraceConfiguration>
+    void SetTraceConfiguration(TraceConfigurationT&& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = std::forward<TraceConfigurationT>(value); }
+    template<typename TraceConfigurationT = TraceConfiguration>
+    ObservabilityConfiguration& WithTraceConfiguration(TraceConfigurationT&& value) { SetTraceConfiguration(std::forward<TraceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +91,7 @@ namespace Model
      * active configurations (<code>"Status": "ACTIVE"</code>) that share the same
      * <code>ObservabilityConfigurationName</code>.</p>
      */
-    inline int GetObservabilityConfigurationRevision() const{ return m_observabilityConfigurationRevision; }
+    inline int GetObservabilityConfigurationRevision() const { return m_observabilityConfigurationRevision; }
     inline bool ObservabilityConfigurationRevisionHasBeenSet() const { return m_observabilityConfigurationRevisionHasBeenSet; }
     inline void SetObservabilityConfigurationRevision(int value) { m_observabilityConfigurationRevisionHasBeenSet = true; m_observabilityConfigurationRevision = value; }
     inline ObservabilityConfiguration& WithObservabilityConfigurationRevision(int value) { SetObservabilityConfigurationRevision(value); return *this;}
@@ -108,7 +104,7 @@ namespace Model
      * <code>ObservabilityConfigurationName</code>. It's set to <code>false</code>
      * otherwise.</p>
      */
-    inline bool GetLatest() const{ return m_latest; }
+    inline bool GetLatest() const { return m_latest; }
     inline bool LatestHasBeenSet() const { return m_latestHasBeenSet; }
     inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
     inline ObservabilityConfiguration& WithLatest(bool value) { SetLatest(value); return *this;}
@@ -121,12 +117,10 @@ namespace Model
      * used. Inactive configuration revisions are permanently removed some time after
      * they are deleted.</p>
      */
-    inline const ObservabilityConfigurationStatus& GetStatus() const{ return m_status; }
+    inline ObservabilityConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ObservabilityConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ObservabilityConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ObservabilityConfiguration& WithStatus(const ObservabilityConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline ObservabilityConfiguration& WithStatus(ObservabilityConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ObservabilityConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ObservabilityConfiguration& WithStatus(ObservabilityConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +128,12 @@ namespace Model
      * <p>The time when the observability configuration was created. It's in Unix time
      * stamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ObservabilityConfiguration& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ObservabilityConfiguration& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ObservabilityConfiguration& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +141,12 @@ namespace Model
      * <p>The time when the observability configuration was deleted. It's in Unix time
      * stamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
+    inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-    inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-    inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-    inline ObservabilityConfiguration& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-    inline ObservabilityConfiguration& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    void SetDeletedAt(DeletedAtT&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::forward<DeletedAtT>(value); }
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    ObservabilityConfiguration& WithDeletedAt(DeletedAtT&& value) { SetDeletedAt(std::forward<DeletedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,19 +159,19 @@ namespace Model
     TraceConfiguration m_traceConfiguration;
     bool m_traceConfigurationHasBeenSet = false;
 
-    int m_observabilityConfigurationRevision;
+    int m_observabilityConfigurationRevision{0};
     bool m_observabilityConfigurationRevisionHasBeenSet = false;
 
-    bool m_latest;
+    bool m_latest{false};
     bool m_latestHasBeenSet = false;
 
-    ObservabilityConfigurationStatus m_status;
+    ObservabilityConfigurationStatus m_status{ObservabilityConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletedAt;
+    Aws::Utils::DateTime m_deletedAt{};
     bool m_deletedAtHasBeenSet = false;
   };
 

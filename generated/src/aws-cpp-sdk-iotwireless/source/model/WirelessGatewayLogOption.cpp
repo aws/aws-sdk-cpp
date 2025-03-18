@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WirelessGatewayLogOption::WirelessGatewayLogOption() : 
-    m_type(WirelessGatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 WirelessGatewayLogOption::WirelessGatewayLogOption(JsonView jsonValue)
-  : WirelessGatewayLogOption()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ WirelessGatewayLogOption& WirelessGatewayLogOption::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Type"))
   {
     m_type = WirelessGatewayTypeMapper::GetWirelessGatewayTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
@@ -58,7 +44,6 @@ WirelessGatewayLogOption& WirelessGatewayLogOption::operator =(JsonView jsonValu
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

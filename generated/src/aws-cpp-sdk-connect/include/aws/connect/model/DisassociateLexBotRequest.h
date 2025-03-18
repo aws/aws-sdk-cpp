@@ -26,7 +26,7 @@ namespace Model
   class DisassociateLexBotRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DisassociateLexBotRequest();
+    AWS_CONNECT_API DisassociateLexBotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DisassociateLexBotRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DisassociateLexBotRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DisassociateLexBotRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DisassociateLexBotRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline DisassociateLexBotRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline DisassociateLexBotRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline DisassociateLexBotRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    DisassociateLexBotRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The Amazon Web Services Region in which the Amazon Lex bot has been
      * created.</p>
      */
-    inline const Aws::String& GetLexRegion() const{ return m_lexRegion; }
+    inline const Aws::String& GetLexRegion() const { return m_lexRegion; }
     inline bool LexRegionHasBeenSet() const { return m_lexRegionHasBeenSet; }
-    inline void SetLexRegion(const Aws::String& value) { m_lexRegionHasBeenSet = true; m_lexRegion = value; }
-    inline void SetLexRegion(Aws::String&& value) { m_lexRegionHasBeenSet = true; m_lexRegion = std::move(value); }
-    inline void SetLexRegion(const char* value) { m_lexRegionHasBeenSet = true; m_lexRegion.assign(value); }
-    inline DisassociateLexBotRequest& WithLexRegion(const Aws::String& value) { SetLexRegion(value); return *this;}
-    inline DisassociateLexBotRequest& WithLexRegion(Aws::String&& value) { SetLexRegion(std::move(value)); return *this;}
-    inline DisassociateLexBotRequest& WithLexRegion(const char* value) { SetLexRegion(value); return *this;}
+    template<typename LexRegionT = Aws::String>
+    void SetLexRegion(LexRegionT&& value) { m_lexRegionHasBeenSet = true; m_lexRegion = std::forward<LexRegionT>(value); }
+    template<typename LexRegionT = Aws::String>
+    DisassociateLexBotRequest& WithLexRegion(LexRegionT&& value) { SetLexRegion(std::forward<LexRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DisassociateLexBotRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DisassociateLexBotRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DisassociateLexBotRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DisassociateLexBotRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

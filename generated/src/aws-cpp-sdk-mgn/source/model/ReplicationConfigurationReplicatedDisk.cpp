@@ -18,21 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk() : 
-    m_deviceNameHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_isBootDisk(false),
-    m_isBootDiskHasBeenSet(false),
-    m_stagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET),
-    m_stagingDiskTypeHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
-{
-}
-
 ReplicationConfigurationReplicatedDisk::ReplicationConfigurationReplicatedDisk(JsonView jsonValue)
-  : ReplicationConfigurationReplicatedDisk()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ReplicationConfigurationReplicatedDisk& ReplicationConfigurationReplicatedDisk::
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetInt64("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isBootDisk"))
   {
     m_isBootDisk = jsonValue.GetBool("isBootDisk");
-
     m_isBootDiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingDiskType"))
   {
     m_stagingDiskType = ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(jsonValue.GetString("stagingDiskType"));
-
     m_stagingDiskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throughput"))
   {
     m_throughput = jsonValue.GetInt64("throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   return *this;
 }
 

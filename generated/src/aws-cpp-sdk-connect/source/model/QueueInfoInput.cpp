@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QueueInfoInput::QueueInfoInput() : 
-    m_idHasBeenSet(false)
-{
-}
-
 QueueInfoInput::QueueInfoInput(JsonView jsonValue)
-  : QueueInfoInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueueInfoInput& QueueInfoInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

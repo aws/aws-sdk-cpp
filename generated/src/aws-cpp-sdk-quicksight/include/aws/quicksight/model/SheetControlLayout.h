@@ -32,7 +32,7 @@ namespace Model
   class SheetControlLayout
   {
   public:
-    AWS_QUICKSIGHT_API SheetControlLayout();
+    AWS_QUICKSIGHT_API SheetControlLayout() = default;
     AWS_QUICKSIGHT_API SheetControlLayout(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetControlLayout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration that determines the elements and canvas size options of
      * sheet control.</p>
      */
-    inline const SheetControlLayoutConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const SheetControlLayoutConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const SheetControlLayoutConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(SheetControlLayoutConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline SheetControlLayout& WithConfiguration(const SheetControlLayoutConfiguration& value) { SetConfiguration(value); return *this;}
-    inline SheetControlLayout& WithConfiguration(SheetControlLayoutConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = SheetControlLayoutConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = SheetControlLayoutConfiguration>
+    SheetControlLayout& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

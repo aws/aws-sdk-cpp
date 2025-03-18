@@ -21,7 +21,7 @@ namespace Model
   class GetIamPortalLoginUrlRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API GetIamPortalLoginUrlRequest();
+    AWS_DATAZONE_API GetIamPortalLoginUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>the ID of the Amazon DataZone domain the data portal of which you want to
      * get.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline GetIamPortalLoginUrlRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    GetIamPortalLoginUrlRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
   private:
 

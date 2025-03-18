@@ -31,7 +31,7 @@ namespace Model
   class MobileDeviceAccessMatchedRule
   {
   public:
-    AWS_WORKMAIL_API MobileDeviceAccessMatchedRule();
+    AWS_WORKMAIL_API MobileDeviceAccessMatchedRule() = default;
     AWS_WORKMAIL_API MobileDeviceAccessMatchedRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API MobileDeviceAccessMatchedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Identifier of the rule that a simulated user matches.</p>
      */
-    inline const Aws::String& GetMobileDeviceAccessRuleId() const{ return m_mobileDeviceAccessRuleId; }
+    inline const Aws::String& GetMobileDeviceAccessRuleId() const { return m_mobileDeviceAccessRuleId; }
     inline bool MobileDeviceAccessRuleIdHasBeenSet() const { return m_mobileDeviceAccessRuleIdHasBeenSet; }
-    inline void SetMobileDeviceAccessRuleId(const Aws::String& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = value; }
-    inline void SetMobileDeviceAccessRuleId(Aws::String&& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = std::move(value); }
-    inline void SetMobileDeviceAccessRuleId(const char* value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId.assign(value); }
-    inline MobileDeviceAccessMatchedRule& WithMobileDeviceAccessRuleId(const Aws::String& value) { SetMobileDeviceAccessRuleId(value); return *this;}
-    inline MobileDeviceAccessMatchedRule& WithMobileDeviceAccessRuleId(Aws::String&& value) { SetMobileDeviceAccessRuleId(std::move(value)); return *this;}
-    inline MobileDeviceAccessMatchedRule& WithMobileDeviceAccessRuleId(const char* value) { SetMobileDeviceAccessRuleId(value); return *this;}
+    template<typename MobileDeviceAccessRuleIdT = Aws::String>
+    void SetMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = std::forward<MobileDeviceAccessRuleIdT>(value); }
+    template<typename MobileDeviceAccessRuleIdT = Aws::String>
+    MobileDeviceAccessMatchedRule& WithMobileDeviceAccessRuleId(MobileDeviceAccessRuleIdT&& value) { SetMobileDeviceAccessRuleId(std::forward<MobileDeviceAccessRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a rule that a simulated user matches.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MobileDeviceAccessMatchedRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MobileDeviceAccessMatchedRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MobileDeviceAccessMatchedRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MobileDeviceAccessMatchedRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

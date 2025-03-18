@@ -21,7 +21,7 @@ namespace Model
   class DeleteServiceRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API DeleteServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * Amazon Web Services resources in the virtual private cloud (VPC) prior to
      * deleting a service with a URL endpoint in a VPC.</p> 
      */
-    inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
+    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-    inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-    inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-    inline DeleteServiceRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-    inline DeleteServiceRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-    inline DeleteServiceRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    template<typename ApplicationIdentifierT = Aws::String>
+    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
+    template<typename ApplicationIdentifierT = Aws::String>
+    DeleteServiceRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the environment that the service is in.</p>
      */
-    inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
+    inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-    inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-    inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-    inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-    inline DeleteServiceRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-    inline DeleteServiceRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-    inline DeleteServiceRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    template<typename EnvironmentIdentifierT = Aws::String>
+    void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value); }
+    template<typename EnvironmentIdentifierT = Aws::String>
+    DeleteServiceRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) { SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service to delete.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-    inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-    inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-    inline DeleteServiceRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-    inline DeleteServiceRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-    inline DeleteServiceRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    DeleteServiceRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

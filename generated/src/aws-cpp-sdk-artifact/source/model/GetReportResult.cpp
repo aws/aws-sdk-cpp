@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReportResult::GetReportResult()
-{
-}
-
 GetReportResult::GetReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetReportResult& GetReportResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("documentPresignedUrl"))
   {
     m_documentPresignedUrl = jsonValue.GetString("documentPresignedUrl");
-
+    m_documentPresignedUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

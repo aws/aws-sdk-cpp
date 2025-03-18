@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-SetInstanceProtectionRequest::SetInstanceProtectionRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_protectedFromScaleIn(false),
-    m_protectedFromScaleInHasBeenSet(false)
-{
-}
-
 Aws::String SetInstanceProtectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

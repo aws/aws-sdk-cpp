@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQueryS3Output::ProtectedQueryS3Output() : 
-    m_locationHasBeenSet(false)
-{
-}
-
 ProtectedQueryS3Output::ProtectedQueryS3Output(JsonView jsonValue)
-  : ProtectedQueryS3Output()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedQueryS3Output& ProtectedQueryS3Output::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

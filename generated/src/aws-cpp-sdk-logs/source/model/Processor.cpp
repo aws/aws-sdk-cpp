@@ -18,34 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Processor::Processor() : 
-    m_addKeysHasBeenSet(false),
-    m_copyValueHasBeenSet(false),
-    m_csvHasBeenSet(false),
-    m_dateTimeConverterHasBeenSet(false),
-    m_deleteKeysHasBeenSet(false),
-    m_grokHasBeenSet(false),
-    m_listToMapHasBeenSet(false),
-    m_lowerCaseStringHasBeenSet(false),
-    m_moveKeysHasBeenSet(false),
-    m_parseCloudfrontHasBeenSet(false),
-    m_parseJSONHasBeenSet(false),
-    m_parseKeyValueHasBeenSet(false),
-    m_parseRoute53HasBeenSet(false),
-    m_parsePostgresHasBeenSet(false),
-    m_parseVPCHasBeenSet(false),
-    m_parseWAFHasBeenSet(false),
-    m_renameKeysHasBeenSet(false),
-    m_splitStringHasBeenSet(false),
-    m_substituteStringHasBeenSet(false),
-    m_trimStringHasBeenSet(false),
-    m_typeConverterHasBeenSet(false),
-    m_upperCaseStringHasBeenSet(false)
-{
-}
-
 Processor::Processor(JsonView jsonValue)
-  : Processor()
 {
   *this = jsonValue;
 }
@@ -55,157 +28,113 @@ Processor& Processor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addKeys"))
   {
     m_addKeys = jsonValue.GetObject("addKeys");
-
     m_addKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("copyValue"))
   {
     m_copyValue = jsonValue.GetObject("copyValue");
-
     m_copyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("csv"))
   {
     m_csv = jsonValue.GetObject("csv");
-
     m_csvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateTimeConverter"))
   {
     m_dateTimeConverter = jsonValue.GetObject("dateTimeConverter");
-
     m_dateTimeConverterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleteKeys"))
   {
     m_deleteKeys = jsonValue.GetObject("deleteKeys");
-
     m_deleteKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grok"))
   {
     m_grok = jsonValue.GetObject("grok");
-
     m_grokHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listToMap"))
   {
     m_listToMap = jsonValue.GetObject("listToMap");
-
     m_listToMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lowerCaseString"))
   {
     m_lowerCaseString = jsonValue.GetObject("lowerCaseString");
-
     m_lowerCaseStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moveKeys"))
   {
     m_moveKeys = jsonValue.GetObject("moveKeys");
-
     m_moveKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseCloudfront"))
   {
     m_parseCloudfront = jsonValue.GetObject("parseCloudfront");
-
     m_parseCloudfrontHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseJSON"))
   {
     m_parseJSON = jsonValue.GetObject("parseJSON");
-
     m_parseJSONHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseKeyValue"))
   {
     m_parseKeyValue = jsonValue.GetObject("parseKeyValue");
-
     m_parseKeyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseRoute53"))
   {
     m_parseRoute53 = jsonValue.GetObject("parseRoute53");
-
     m_parseRoute53HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsePostgres"))
   {
     m_parsePostgres = jsonValue.GetObject("parsePostgres");
-
     m_parsePostgresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseVPC"))
   {
     m_parseVPC = jsonValue.GetObject("parseVPC");
-
     m_parseVPCHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parseWAF"))
   {
     m_parseWAF = jsonValue.GetObject("parseWAF");
-
     m_parseWAFHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renameKeys"))
   {
     m_renameKeys = jsonValue.GetObject("renameKeys");
-
     m_renameKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("splitString"))
   {
     m_splitString = jsonValue.GetObject("splitString");
-
     m_splitStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("substituteString"))
   {
     m_substituteString = jsonValue.GetObject("substituteString");
-
     m_substituteStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trimString"))
   {
     m_trimString = jsonValue.GetObject("trimString");
-
     m_trimStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeConverter"))
   {
     m_typeConverter = jsonValue.GetObject("typeConverter");
-
     m_typeConverterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperCaseString"))
   {
     m_upperCaseString = jsonValue.GetObject("upperCaseString");
-
     m_upperCaseStringHasBeenSet = true;
   }
-
   return *this;
 }
 

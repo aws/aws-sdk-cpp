@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-QueryExecutionOptions::QueryExecutionOptions() : 
-    m_queryExecutionMode(QueryExecutionMode::NOT_SET),
-    m_queryExecutionModeHasBeenSet(false)
-{
-}
-
 QueryExecutionOptions::QueryExecutionOptions(JsonView jsonValue)
-  : QueryExecutionOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ QueryExecutionOptions& QueryExecutionOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryExecutionMode"))
   {
     m_queryExecutionMode = QueryExecutionModeMapper::GetQueryExecutionModeForName(jsonValue.GetString("QueryExecutionMode"));
-
     m_queryExecutionModeHasBeenSet = true;
   }
-
   return *this;
 }
 

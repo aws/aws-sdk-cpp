@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultContent::RetrievalResultContent() : 
-    m_byteContentHasBeenSet(false),
-    m_rowHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(RetrievalResultContentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RetrievalResultContent::RetrievalResultContent(JsonView jsonValue)
-  : RetrievalResultContent()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RetrievalResultContent& RetrievalResultContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetString("byteContent");
-
     m_byteContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("row"))
   {
     Aws::Utils::Array<JsonView> rowJsonList = jsonValue.GetArray("row");
@@ -51,21 +39,16 @@ RetrievalResultContent& RetrievalResultContent::operator =(JsonView jsonValue)
     }
     m_rowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RetrievalResultContentTypeMapper::GetRetrievalResultContentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

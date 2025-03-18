@@ -30,7 +30,7 @@ namespace Model
   class DatasetLabelStats
   {
   public:
-    AWS_REKOGNITION_API DatasetLabelStats();
+    AWS_REKOGNITION_API DatasetLabelStats() = default;
     AWS_REKOGNITION_API DatasetLabelStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DatasetLabelStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> The total number of images that use the label. </p>
      */
-    inline int GetEntryCount() const{ return m_entryCount; }
+    inline int GetEntryCount() const { return m_entryCount; }
     inline bool EntryCountHasBeenSet() const { return m_entryCountHasBeenSet; }
     inline void SetEntryCount(int value) { m_entryCountHasBeenSet = true; m_entryCount = value; }
     inline DatasetLabelStats& WithEntryCount(int value) { SetEntryCount(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p> The total number of images that have the label assigned to a bounding box.
      * </p>
      */
-    inline int GetBoundingBoxCount() const{ return m_boundingBoxCount; }
+    inline int GetBoundingBoxCount() const { return m_boundingBoxCount; }
     inline bool BoundingBoxCountHasBeenSet() const { return m_boundingBoxCountHasBeenSet; }
     inline void SetBoundingBoxCount(int value) { m_boundingBoxCountHasBeenSet = true; m_boundingBoxCount = value; }
     inline DatasetLabelStats& WithBoundingBoxCount(int value) { SetBoundingBoxCount(value); return *this;}
     ///@}
   private:
 
-    int m_entryCount;
+    int m_entryCount{0};
     bool m_entryCountHasBeenSet = false;
 
-    int m_boundingBoxCount;
+    int m_boundingBoxCount{0};
     bool m_boundingBoxCountHasBeenSet = false;
   };
 

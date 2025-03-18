@@ -30,7 +30,7 @@ namespace Model
   class ListTemplatesResult
   {
   public:
-    AWS_SES_API ListTemplatesResult();
+    AWS_SES_API ListTemplatesResult() = default;
     AWS_SES_API ListTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API ListTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array the contains the name and creation time stamp for each template in
      * your Amazon SES account.</p>
      */
-    inline const Aws::Vector<TemplateMetadata>& GetTemplatesMetadata() const{ return m_templatesMetadata; }
-    inline void SetTemplatesMetadata(const Aws::Vector<TemplateMetadata>& value) { m_templatesMetadata = value; }
-    inline void SetTemplatesMetadata(Aws::Vector<TemplateMetadata>&& value) { m_templatesMetadata = std::move(value); }
-    inline ListTemplatesResult& WithTemplatesMetadata(const Aws::Vector<TemplateMetadata>& value) { SetTemplatesMetadata(value); return *this;}
-    inline ListTemplatesResult& WithTemplatesMetadata(Aws::Vector<TemplateMetadata>&& value) { SetTemplatesMetadata(std::move(value)); return *this;}
-    inline ListTemplatesResult& AddTemplatesMetadata(const TemplateMetadata& value) { m_templatesMetadata.push_back(value); return *this; }
-    inline ListTemplatesResult& AddTemplatesMetadata(TemplateMetadata&& value) { m_templatesMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TemplateMetadata>& GetTemplatesMetadata() const { return m_templatesMetadata; }
+    template<typename TemplatesMetadataT = Aws::Vector<TemplateMetadata>>
+    void SetTemplatesMetadata(TemplatesMetadataT&& value) { m_templatesMetadataHasBeenSet = true; m_templatesMetadata = std::forward<TemplatesMetadataT>(value); }
+    template<typename TemplatesMetadataT = Aws::Vector<TemplateMetadata>>
+    ListTemplatesResult& WithTemplatesMetadata(TemplatesMetadataT&& value) { SetTemplatesMetadata(std::forward<TemplatesMetadataT>(value)); return *this;}
+    template<typename TemplatesMetadataT = TemplateMetadata>
+    ListTemplatesResult& AddTemplatesMetadata(TemplatesMetadataT&& value) { m_templatesMetadataHasBeenSet = true; m_templatesMetadata.emplace_back(std::forward<TemplatesMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * listed. Pass this token to a subsequent call to <code>ListTemplates</code> to
      * retrieve the next set of email templates within your page size.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListTemplatesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListTemplatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListTemplatesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TemplateMetadata> m_templatesMetadata;
+    bool m_templatesMetadataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

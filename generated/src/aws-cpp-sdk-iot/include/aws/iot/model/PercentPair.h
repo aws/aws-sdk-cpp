@@ -29,7 +29,7 @@ namespace Model
   class PercentPair
   {
   public:
-    AWS_IOT_API PercentPair();
+    AWS_IOT_API PercentPair() = default;
     AWS_IOT_API PercentPair(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API PercentPair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The percentile.</p>
      */
-    inline double GetPercent() const{ return m_percent; }
+    inline double GetPercent() const { return m_percent; }
     inline bool PercentHasBeenSet() const { return m_percentHasBeenSet; }
     inline void SetPercent(double value) { m_percentHasBeenSet = true; m_percent = value; }
     inline PercentPair& WithPercent(double value) { SetPercent(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>The value of the percentile.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline PercentPair& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    double m_percent;
+    double m_percent{0.0};
     bool m_percentHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

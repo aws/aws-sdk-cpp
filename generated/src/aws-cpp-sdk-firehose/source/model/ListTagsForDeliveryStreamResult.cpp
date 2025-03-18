@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForDeliveryStreamResult::ListTagsForDeliveryStreamResult() : 
-    m_hasMoreTags(false)
-{
-}
-
 ListTagsForDeliveryStreamResult::ListTagsForDeliveryStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListTagsForDeliveryStreamResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ ListTagsForDeliveryStreamResult& ListTagsForDeliveryStreamResult::operator =(con
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreTags"))
   {
     m_hasMoreTags = jsonValue.GetBool("HasMoreTags");
-
+    m_hasMoreTagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CommandEndpoint::CommandEndpoint() : 
-    m_endpointIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 CommandEndpoint::CommandEndpoint(JsonView jsonValue)
-  : CommandEndpoint()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CommandEndpoint& CommandEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endpointId"))
   {
     m_endpointId = jsonValue.GetString("endpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilities"))
   {
     Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
@@ -48,7 +39,6 @@ CommandEndpoint& CommandEndpoint::operator =(JsonView jsonValue)
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

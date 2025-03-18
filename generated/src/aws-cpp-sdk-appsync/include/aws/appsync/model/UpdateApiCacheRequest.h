@@ -28,7 +28,7 @@ namespace Model
   class UpdateApiCacheRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API UpdateApiCacheRequest();
+    AWS_APPSYNC_API UpdateApiCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The GraphQL API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline UpdateApiCacheRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline UpdateApiCacheRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline UpdateApiCacheRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    UpdateApiCacheRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
-    inline long long GetTtl() const{ return m_ttl; }
+    inline long long GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
     inline UpdateApiCacheRequest& WithTtl(long long value) { SetTtl(value); return *this;}
@@ -73,12 +71,10 @@ namespace Model
      * cached.</p> </li> <li> <p> <b>OPERATION_LEVEL_CACHING</b>: Full requests are
      * cached together and returned without executing resolvers.</p> </li> </ul>
      */
-    inline const ApiCachingBehavior& GetApiCachingBehavior() const{ return m_apiCachingBehavior; }
+    inline ApiCachingBehavior GetApiCachingBehavior() const { return m_apiCachingBehavior; }
     inline bool ApiCachingBehaviorHasBeenSet() const { return m_apiCachingBehaviorHasBeenSet; }
-    inline void SetApiCachingBehavior(const ApiCachingBehavior& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = value; }
-    inline void SetApiCachingBehavior(ApiCachingBehavior&& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = std::move(value); }
-    inline UpdateApiCacheRequest& WithApiCachingBehavior(const ApiCachingBehavior& value) { SetApiCachingBehavior(value); return *this;}
-    inline UpdateApiCacheRequest& WithApiCachingBehavior(ApiCachingBehavior&& value) { SetApiCachingBehavior(std::move(value)); return *this;}
+    inline void SetApiCachingBehavior(ApiCachingBehavior value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = value; }
+    inline UpdateApiCacheRequest& WithApiCachingBehavior(ApiCachingBehavior value) { SetApiCachingBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +95,10 @@ namespace Model
      * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
-    inline const ApiCacheType& GetType() const{ return m_type; }
+    inline ApiCacheType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ApiCacheType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ApiCacheType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UpdateApiCacheRequest& WithType(const ApiCacheType& value) { SetType(value); return *this;}
-    inline UpdateApiCacheRequest& WithType(ApiCacheType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ApiCacheType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateApiCacheRequest& WithType(ApiCacheType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -118,28 +112,26 @@ namespace Model
      * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
      * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const CacheHealthMetricsConfig& GetHealthMetricsConfig() const{ return m_healthMetricsConfig; }
+    inline CacheHealthMetricsConfig GetHealthMetricsConfig() const { return m_healthMetricsConfig; }
     inline bool HealthMetricsConfigHasBeenSet() const { return m_healthMetricsConfigHasBeenSet; }
-    inline void SetHealthMetricsConfig(const CacheHealthMetricsConfig& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
-    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig&& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = std::move(value); }
-    inline UpdateApiCacheRequest& WithHealthMetricsConfig(const CacheHealthMetricsConfig& value) { SetHealthMetricsConfig(value); return *this;}
-    inline UpdateApiCacheRequest& WithHealthMetricsConfig(CacheHealthMetricsConfig&& value) { SetHealthMetricsConfig(std::move(value)); return *this;}
+    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
+    inline UpdateApiCacheRequest& WithHealthMetricsConfig(CacheHealthMetricsConfig value) { SetHealthMetricsConfig(value); return *this;}
     ///@}
   private:
 
     Aws::String m_apiId;
     bool m_apiIdHasBeenSet = false;
 
-    long long m_ttl;
+    long long m_ttl{0};
     bool m_ttlHasBeenSet = false;
 
-    ApiCachingBehavior m_apiCachingBehavior;
+    ApiCachingBehavior m_apiCachingBehavior{ApiCachingBehavior::NOT_SET};
     bool m_apiCachingBehaviorHasBeenSet = false;
 
-    ApiCacheType m_type;
+    ApiCacheType m_type{ApiCacheType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    CacheHealthMetricsConfig m_healthMetricsConfig;
+    CacheHealthMetricsConfig m_healthMetricsConfig{CacheHealthMetricsConfig::NOT_SET};
     bool m_healthMetricsConfigHasBeenSet = false;
   };
 

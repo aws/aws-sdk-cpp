@@ -18,27 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplate::ExperimentTemplate() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_stopConditionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_experimentOptionsHasBeenSet(false),
-    m_targetAccountConfigurationsCount(0),
-    m_targetAccountConfigurationsCountHasBeenSet(false),
-    m_experimentReportConfigurationHasBeenSet(false)
-{
-}
-
 ExperimentTemplate::ExperimentTemplate(JsonView jsonValue)
-  : ExperimentTemplate()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("targets").GetAllObjects();
@@ -75,7 +49,6 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Map<Aws::String, JsonView> actionsJsonMap = jsonValue.GetObject("actions").GetAllObjects();
@@ -85,7 +58,6 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopConditions"))
   {
     Aws::Utils::Array<JsonView> stopConditionsJsonList = jsonValue.GetArray("stopConditions");
@@ -95,28 +67,21 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     }
     m_stopConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -126,35 +91,26 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentOptions"))
   {
     m_experimentOptions = jsonValue.GetObject("experimentOptions");
-
     m_experimentOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountConfigurationsCount"))
   {
     m_targetAccountConfigurationsCount = jsonValue.GetInt64("targetAccountConfigurationsCount");
-
     m_targetAccountConfigurationsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentReportConfiguration"))
   {
     m_experimentReportConfiguration = jsonValue.GetObject("experimentReportConfiguration");
-
     m_experimentReportConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

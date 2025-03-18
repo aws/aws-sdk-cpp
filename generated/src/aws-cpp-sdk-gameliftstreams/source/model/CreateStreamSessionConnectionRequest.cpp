@@ -12,15 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamSessionConnectionRequest::CreateStreamSessionConnectionRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_identifierHasBeenSet(false),
-    m_signalRequestHasBeenSet(false),
-    m_streamSessionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamSessionConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

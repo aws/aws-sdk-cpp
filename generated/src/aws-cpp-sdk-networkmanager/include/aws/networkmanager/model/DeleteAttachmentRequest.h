@@ -21,7 +21,7 @@ namespace Model
   class DeleteAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API DeleteAttachmentRequest();
+    AWS_NETWORKMANAGER_API DeleteAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the attachment to delete.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline DeleteAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline DeleteAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline DeleteAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    DeleteAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
   private:
 

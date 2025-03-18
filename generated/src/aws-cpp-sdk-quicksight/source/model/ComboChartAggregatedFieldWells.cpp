@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComboChartAggregatedFieldWells::ComboChartAggregatedFieldWells() : 
-    m_categoryHasBeenSet(false),
-    m_barValuesHasBeenSet(false),
-    m_colorsHasBeenSet(false),
-    m_lineValuesHasBeenSet(false)
-{
-}
-
 ComboChartAggregatedFieldWells::ComboChartAggregatedFieldWells(JsonView jsonValue)
-  : ComboChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ComboChartAggregatedFieldWells& ComboChartAggregatedFieldWells::operator =(JsonV
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BarValues"))
   {
     Aws::Utils::Array<JsonView> barValuesJsonList = jsonValue.GetArray("BarValues");
@@ -53,7 +43,6 @@ ComboChartAggregatedFieldWells& ComboChartAggregatedFieldWells::operator =(JsonV
     }
     m_barValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Colors"))
   {
     Aws::Utils::Array<JsonView> colorsJsonList = jsonValue.GetArray("Colors");
@@ -63,7 +52,6 @@ ComboChartAggregatedFieldWells& ComboChartAggregatedFieldWells::operator =(JsonV
     }
     m_colorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineValues"))
   {
     Aws::Utils::Array<JsonView> lineValuesJsonList = jsonValue.GetArray("LineValues");
@@ -73,7 +61,6 @@ ComboChartAggregatedFieldWells& ComboChartAggregatedFieldWells::operator =(JsonV
     }
     m_lineValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

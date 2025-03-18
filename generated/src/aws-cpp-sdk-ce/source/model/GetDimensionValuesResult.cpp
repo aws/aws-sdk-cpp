@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDimensionValuesResult::GetDimensionValuesResult() : 
-    m_returnSize(0),
-    m_totalSize(0)
-{
-}
-
 GetDimensionValuesResult::GetDimensionValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDimensionValuesResult()
 {
   *this = result;
 }
@@ -39,32 +32,30 @@ GetDimensionValuesResult& GetDimensionValuesResult::operator =(const Aws::Amazon
     {
       m_dimensionValues.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsObject());
     }
+    m_dimensionValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReturnSize"))
   {
     m_returnSize = jsonValue.GetInteger("ReturnSize");
-
+    m_returnSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSize"))
   {
     m_totalSize = jsonValue.GetInteger("TotalSize");
-
+    m_totalSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

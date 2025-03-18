@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

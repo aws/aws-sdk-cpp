@@ -36,7 +36,7 @@ namespace Model
   class Link
   {
   public:
-    AWS_NETWORKMANAGER_API Link();
+    AWS_NETWORKMANAGER_API Link() = default;
     AWS_NETWORKMANAGER_API Link(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Link& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,148 +46,132 @@ namespace Model
     /**
      * <p>The ID of the link.</p>
      */
-    inline const Aws::String& GetLinkId() const{ return m_linkId; }
+    inline const Aws::String& GetLinkId() const { return m_linkId; }
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-    inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-    inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-    inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-    inline Link& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-    inline Link& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-    inline Link& WithLinkId(const char* value) { SetLinkId(value); return *this;}
+    template<typename LinkIdT = Aws::String>
+    void SetLinkId(LinkIdT&& value) { m_linkIdHasBeenSet = true; m_linkId = std::forward<LinkIdT>(value); }
+    template<typename LinkIdT = Aws::String>
+    Link& WithLinkId(LinkIdT&& value) { SetLinkId(std::forward<LinkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the link.</p>
      */
-    inline const Aws::String& GetLinkArn() const{ return m_linkArn; }
+    inline const Aws::String& GetLinkArn() const { return m_linkArn; }
     inline bool LinkArnHasBeenSet() const { return m_linkArnHasBeenSet; }
-    inline void SetLinkArn(const Aws::String& value) { m_linkArnHasBeenSet = true; m_linkArn = value; }
-    inline void SetLinkArn(Aws::String&& value) { m_linkArnHasBeenSet = true; m_linkArn = std::move(value); }
-    inline void SetLinkArn(const char* value) { m_linkArnHasBeenSet = true; m_linkArn.assign(value); }
-    inline Link& WithLinkArn(const Aws::String& value) { SetLinkArn(value); return *this;}
-    inline Link& WithLinkArn(Aws::String&& value) { SetLinkArn(std::move(value)); return *this;}
-    inline Link& WithLinkArn(const char* value) { SetLinkArn(value); return *this;}
+    template<typename LinkArnT = Aws::String>
+    void SetLinkArn(LinkArnT&& value) { m_linkArnHasBeenSet = true; m_linkArn = std::forward<LinkArnT>(value); }
+    template<typename LinkArnT = Aws::String>
+    Link& WithLinkArn(LinkArnT&& value) { SetLinkArn(std::forward<LinkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline Link& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline Link& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline Link& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    Link& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the site.</p>
      */
-    inline const Aws::String& GetSiteId() const{ return m_siteId; }
+    inline const Aws::String& GetSiteId() const { return m_siteId; }
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
-    inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
-    inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
-    inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
-    inline Link& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
-    inline Link& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
-    inline Link& WithSiteId(const char* value) { SetSiteId(value); return *this;}
+    template<typename SiteIdT = Aws::String>
+    void SetSiteId(SiteIdT&& value) { m_siteIdHasBeenSet = true; m_siteId = std::forward<SiteIdT>(value); }
+    template<typename SiteIdT = Aws::String>
+    Link& WithSiteId(SiteIdT&& value) { SetSiteId(std::forward<SiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the link.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Link& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Link& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Link& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Link& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the link.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Link& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Link& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Link& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Link& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The bandwidth for the link.</p>
      */
-    inline const Bandwidth& GetBandwidth() const{ return m_bandwidth; }
+    inline const Bandwidth& GetBandwidth() const { return m_bandwidth; }
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
-    inline void SetBandwidth(const Bandwidth& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
-    inline void SetBandwidth(Bandwidth&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
-    inline Link& WithBandwidth(const Bandwidth& value) { SetBandwidth(value); return *this;}
-    inline Link& WithBandwidth(Bandwidth&& value) { SetBandwidth(std::move(value)); return *this;}
+    template<typename BandwidthT = Bandwidth>
+    void SetBandwidth(BandwidthT&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::forward<BandwidthT>(value); }
+    template<typename BandwidthT = Bandwidth>
+    Link& WithBandwidth(BandwidthT&& value) { SetBandwidth(std::forward<BandwidthT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provider of the link.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline Link& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline Link& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline Link& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    Link& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the link was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Link& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Link& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Link& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the link.</p>
      */
-    inline const LinkState& GetState() const{ return m_state; }
+    inline LinkState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const LinkState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(LinkState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Link& WithState(const LinkState& value) { SetState(value); return *this;}
-    inline Link& WithState(LinkState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(LinkState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Link& WithState(LinkState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the link.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Link& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Link& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Link& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Link& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Link& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Link& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -215,10 +199,10 @@ namespace Model
     Aws::String m_provider;
     bool m_providerHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    LinkState m_state;
+    LinkState m_state{LinkState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

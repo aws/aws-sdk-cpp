@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-ProcessingConfiguration::ProcessingConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_processorsHasBeenSet(false)
-{
-}
-
 ProcessingConfiguration::ProcessingConfiguration(JsonView jsonValue)
-  : ProcessingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProcessingConfiguration& ProcessingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Processors"))
   {
     Aws::Utils::Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
@@ -49,7 +39,6 @@ ProcessingConfiguration& ProcessingConfiguration::operator =(JsonView jsonValue)
     }
     m_processorsHasBeenSet = true;
   }
-
   return *this;
 }
 

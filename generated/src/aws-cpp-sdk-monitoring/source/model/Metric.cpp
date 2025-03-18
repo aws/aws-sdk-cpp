@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Metric::Metric() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 Metric::Metric(const XmlNode& xmlNode)
-  : Metric()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);

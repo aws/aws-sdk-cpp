@@ -12,13 +12,6 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteThemeRequest::DeleteThemeRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThemeRequest::SerializePayload() const
 {
   return {};

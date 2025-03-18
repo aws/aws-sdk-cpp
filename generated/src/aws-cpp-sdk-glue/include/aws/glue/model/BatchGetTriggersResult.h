@@ -29,7 +29,7 @@ namespace Model
   class BatchGetTriggersResult
   {
   public:
-    AWS_GLUE_API BatchGetTriggersResult();
+    AWS_GLUE_API BatchGetTriggersResult() = default;
     AWS_GLUE_API BatchGetTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>A list of trigger definitions.</p>
      */
-    inline const Aws::Vector<Trigger>& GetTriggers() const{ return m_triggers; }
-    inline void SetTriggers(const Aws::Vector<Trigger>& value) { m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<Trigger>&& value) { m_triggers = std::move(value); }
-    inline BatchGetTriggersResult& WithTriggers(const Aws::Vector<Trigger>& value) { SetTriggers(value); return *this;}
-    inline BatchGetTriggersResult& WithTriggers(Aws::Vector<Trigger>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline BatchGetTriggersResult& AddTriggers(const Trigger& value) { m_triggers.push_back(value); return *this; }
-    inline BatchGetTriggersResult& AddTriggers(Trigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Trigger>& GetTriggers() const { return m_triggers; }
+    template<typename TriggersT = Aws::Vector<Trigger>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<Trigger>>
+    BatchGetTriggersResult& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = Trigger>
+    BatchGetTriggersResult& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of names of triggers not found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTriggersNotFound() const{ return m_triggersNotFound; }
-    inline void SetTriggersNotFound(const Aws::Vector<Aws::String>& value) { m_triggersNotFound = value; }
-    inline void SetTriggersNotFound(Aws::Vector<Aws::String>&& value) { m_triggersNotFound = std::move(value); }
-    inline BatchGetTriggersResult& WithTriggersNotFound(const Aws::Vector<Aws::String>& value) { SetTriggersNotFound(value); return *this;}
-    inline BatchGetTriggersResult& WithTriggersNotFound(Aws::Vector<Aws::String>&& value) { SetTriggersNotFound(std::move(value)); return *this;}
-    inline BatchGetTriggersResult& AddTriggersNotFound(const Aws::String& value) { m_triggersNotFound.push_back(value); return *this; }
-    inline BatchGetTriggersResult& AddTriggersNotFound(Aws::String&& value) { m_triggersNotFound.push_back(std::move(value)); return *this; }
-    inline BatchGetTriggersResult& AddTriggersNotFound(const char* value) { m_triggersNotFound.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetTriggersNotFound() const { return m_triggersNotFound; }
+    template<typename TriggersNotFoundT = Aws::Vector<Aws::String>>
+    void SetTriggersNotFound(TriggersNotFoundT&& value) { m_triggersNotFoundHasBeenSet = true; m_triggersNotFound = std::forward<TriggersNotFoundT>(value); }
+    template<typename TriggersNotFoundT = Aws::Vector<Aws::String>>
+    BatchGetTriggersResult& WithTriggersNotFound(TriggersNotFoundT&& value) { SetTriggersNotFound(std::forward<TriggersNotFoundT>(value)); return *this;}
+    template<typename TriggersNotFoundT = Aws::String>
+    BatchGetTriggersResult& AddTriggersNotFound(TriggersNotFoundT&& value) { m_triggersNotFoundHasBeenSet = true; m_triggersNotFound.emplace_back(std::forward<TriggersNotFoundT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetTriggersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetTriggersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetTriggersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetTriggersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Trigger> m_triggers;
+    bool m_triggersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_triggersNotFound;
+    bool m_triggersNotFoundHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

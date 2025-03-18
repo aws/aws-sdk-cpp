@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-SchedulingPolicyDetail::SchedulingPolicyDetail() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_fairsharePolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SchedulingPolicyDetail::SchedulingPolicyDetail(JsonView jsonValue)
-  : SchedulingPolicyDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SchedulingPolicyDetail& SchedulingPolicyDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fairsharePolicy"))
   {
     m_fairsharePolicy = jsonValue.GetObject("fairsharePolicy");
-
     m_fairsharePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ SchedulingPolicyDetail& SchedulingPolicyDetail::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

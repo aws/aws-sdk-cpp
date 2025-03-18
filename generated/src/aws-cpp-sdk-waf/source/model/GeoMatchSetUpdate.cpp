@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-GeoMatchSetUpdate::GeoMatchSetUpdate() : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_geoMatchConstraintHasBeenSet(false)
-{
-}
-
 GeoMatchSetUpdate::GeoMatchSetUpdate(JsonView jsonValue)
-  : GeoMatchSetUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeoMatchSetUpdate& GeoMatchSetUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeoMatchConstraint"))
   {
     m_geoMatchConstraint = jsonValue.GetObject("GeoMatchConstraint");
-
     m_geoMatchConstraintHasBeenSet = true;
   }
-
   return *this;
 }
 

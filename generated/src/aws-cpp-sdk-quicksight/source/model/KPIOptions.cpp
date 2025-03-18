@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIOptions::KPIOptions() : 
-    m_progressBarHasBeenSet(false),
-    m_trendArrowsHasBeenSet(false),
-    m_secondaryValueHasBeenSet(false),
-    m_comparisonHasBeenSet(false),
-    m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
-    m_primaryValueDisplayTypeHasBeenSet(false),
-    m_primaryValueFontConfigurationHasBeenSet(false),
-    m_secondaryValueFontConfigurationHasBeenSet(false),
-    m_sparklineHasBeenSet(false),
-    m_visualLayoutOptionsHasBeenSet(false)
-{
-}
-
 KPIOptions::KPIOptions(JsonView jsonValue)
-  : KPIOptions()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ KPIOptions& KPIOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProgressBar"))
   {
     m_progressBar = jsonValue.GetObject("ProgressBar");
-
     m_progressBarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrendArrows"))
   {
     m_trendArrows = jsonValue.GetObject("TrendArrows");
-
     m_trendArrowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryValue"))
   {
     m_secondaryValue = jsonValue.GetObject("SecondaryValue");
-
     m_secondaryValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comparison"))
   {
     m_comparison = jsonValue.GetObject("Comparison");
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryValueDisplayType"))
   {
     m_primaryValueDisplayType = PrimaryValueDisplayTypeMapper::GetPrimaryValueDisplayTypeForName(jsonValue.GetString("PrimaryValueDisplayType"));
-
     m_primaryValueDisplayTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryValueFontConfiguration"))
   {
     m_primaryValueFontConfiguration = jsonValue.GetObject("PrimaryValueFontConfiguration");
-
     m_primaryValueFontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryValueFontConfiguration"))
   {
     m_secondaryValueFontConfiguration = jsonValue.GetObject("SecondaryValueFontConfiguration");
-
     m_secondaryValueFontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sparkline"))
   {
     m_sparkline = jsonValue.GetObject("Sparkline");
-
     m_sparklineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualLayoutOptions"))
   {
     m_visualLayoutOptions = jsonValue.GetObject("VisualLayoutOptions");
-
     m_visualLayoutOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ImageTagDetail
   {
   public:
-    AWS_ECRPUBLIC_API ImageTagDetail();
+    AWS_ECRPUBLIC_API ImageTagDetail() = default;
     AWS_ECRPUBLIC_API ImageTagDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECRPUBLIC_API ImageTagDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,43 @@ namespace Model
     /**
      * <p>The tag that's associated with the image.</p>
      */
-    inline const Aws::String& GetImageTag() const{ return m_imageTag; }
+    inline const Aws::String& GetImageTag() const { return m_imageTag; }
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
-    inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
-    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
-    inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
-    inline ImageTagDetail& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
-    inline ImageTagDetail& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
-    inline ImageTagDetail& WithImageTag(const char* value) { SetImageTag(value); return *this;}
+    template<typename ImageTagT = Aws::String>
+    void SetImageTag(ImageTagT&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::forward<ImageTagT>(value); }
+    template<typename ImageTagT = Aws::String>
+    ImageTagDetail& WithImageTag(ImageTagT&& value) { SetImageTag(std::forward<ImageTagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp that indicates when the image tag was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ImageTagDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ImageTagDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ImageTagDetail& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the details of an image.</p>
      */
-    inline const ReferencedImageDetail& GetImageDetail() const{ return m_imageDetail; }
+    inline const ReferencedImageDetail& GetImageDetail() const { return m_imageDetail; }
     inline bool ImageDetailHasBeenSet() const { return m_imageDetailHasBeenSet; }
-    inline void SetImageDetail(const ReferencedImageDetail& value) { m_imageDetailHasBeenSet = true; m_imageDetail = value; }
-    inline void SetImageDetail(ReferencedImageDetail&& value) { m_imageDetailHasBeenSet = true; m_imageDetail = std::move(value); }
-    inline ImageTagDetail& WithImageDetail(const ReferencedImageDetail& value) { SetImageDetail(value); return *this;}
-    inline ImageTagDetail& WithImageDetail(ReferencedImageDetail&& value) { SetImageDetail(std::move(value)); return *this;}
+    template<typename ImageDetailT = ReferencedImageDetail>
+    void SetImageDetail(ImageDetailT&& value) { m_imageDetailHasBeenSet = true; m_imageDetail = std::forward<ImageDetailT>(value); }
+    template<typename ImageDetailT = ReferencedImageDetail>
+    ImageTagDetail& WithImageDetail(ImageDetailT&& value) { SetImageDetail(std::forward<ImageDetailT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_imageTag;
     bool m_imageTagHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     ReferencedImageDetail m_imageDetail;

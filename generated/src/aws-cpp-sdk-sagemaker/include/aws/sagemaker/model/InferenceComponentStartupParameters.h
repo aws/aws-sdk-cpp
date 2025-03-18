@@ -30,7 +30,7 @@ namespace Model
   class InferenceComponentStartupParameters
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentStartupParameters();
+    AWS_SAGEMAKER_API InferenceComponentStartupParameters() = default;
     AWS_SAGEMAKER_API InferenceComponentStartupParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentStartupParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * want to host from Amazon S3 to the individual inference instance associated with
      * this inference component.</p>
      */
-    inline int GetModelDataDownloadTimeoutInSeconds() const{ return m_modelDataDownloadTimeoutInSeconds; }
+    inline int GetModelDataDownloadTimeoutInSeconds() const { return m_modelDataDownloadTimeoutInSeconds; }
     inline bool ModelDataDownloadTimeoutInSecondsHasBeenSet() const { return m_modelDataDownloadTimeoutInSecondsHasBeenSet; }
     inline void SetModelDataDownloadTimeoutInSeconds(int value) { m_modelDataDownloadTimeoutInSecondsHasBeenSet = true; m_modelDataDownloadTimeoutInSeconds = value; }
     inline InferenceComponentStartupParameters& WithModelDataDownloadTimeoutInSeconds(int value) { SetModelDataDownloadTimeoutInSeconds(value); return *this;}
@@ -55,17 +55,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
      * Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
      */
-    inline int GetContainerStartupHealthCheckTimeoutInSeconds() const{ return m_containerStartupHealthCheckTimeoutInSeconds; }
+    inline int GetContainerStartupHealthCheckTimeoutInSeconds() const { return m_containerStartupHealthCheckTimeoutInSeconds; }
     inline bool ContainerStartupHealthCheckTimeoutInSecondsHasBeenSet() const { return m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet; }
     inline void SetContainerStartupHealthCheckTimeoutInSeconds(int value) { m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true; m_containerStartupHealthCheckTimeoutInSeconds = value; }
     inline InferenceComponentStartupParameters& WithContainerStartupHealthCheckTimeoutInSeconds(int value) { SetContainerStartupHealthCheckTimeoutInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_modelDataDownloadTimeoutInSeconds;
+    int m_modelDataDownloadTimeoutInSeconds{0};
     bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
 
-    int m_containerStartupHealthCheckTimeoutInSeconds;
+    int m_containerStartupHealthCheckTimeoutInSeconds{0};
     bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
   };
 

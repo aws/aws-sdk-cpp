@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CidrCollectionChange::CidrCollectionChange() : 
-    m_locationNameHasBeenSet(false),
-    m_action(CidrCollectionChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_cidrListHasBeenSet(false)
-{
-}
-
 CidrCollectionChange::CidrCollectionChange(const XmlNode& xmlNode)
-  : CidrCollectionChange()
 {
   *this = xmlNode;
 }
@@ -49,13 +40,14 @@ CidrCollectionChange& CidrCollectionChange::operator =(const XmlNode& xmlNode)
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = CidrCollectionChangeActionMapper::GetCidrCollectionChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = CidrCollectionChangeActionMapper::GetCidrCollectionChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
     }
     XmlNode cidrListNode = resultNode.FirstChild("CidrList");
     if(!cidrListNode.IsNull())
     {
       XmlNode cidrListMember = cidrListNode.FirstChild("Cidr");
+      m_cidrListHasBeenSet = !cidrListMember.IsNull();
       while(!cidrListMember.IsNull())
       {
         m_cidrList.push_back(cidrListMember.GetText());

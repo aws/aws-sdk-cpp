@@ -18,28 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementInvitationSummary::EngagementInvitationSummary() : 
-    m_arnHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_engagementIdHasBeenSet(false),
-    m_engagementTitleHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_invitationDateHasBeenSet(false),
-    m_participantType(ParticipantType::NOT_SET),
-    m_participantTypeHasBeenSet(false),
-    m_payloadType(EngagementInvitationPayloadType::NOT_SET),
-    m_payloadTypeHasBeenSet(false),
-    m_receiverHasBeenSet(false),
-    m_senderAwsAccountIdHasBeenSet(false),
-    m_senderCompanyNameHasBeenSet(false),
-    m_status(InvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EngagementInvitationSummary::EngagementInvitationSummary(JsonView jsonValue)
-  : EngagementInvitationSummary()
 {
   *this = jsonValue;
 }
@@ -49,94 +28,68 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngagementId"))
   {
     m_engagementId = jsonValue.GetString("EngagementId");
-
     m_engagementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngagementTitle"))
   {
     m_engagementTitle = jsonValue.GetString("EngagementTitle");
-
     m_engagementTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitationDate"))
   {
     m_invitationDate = jsonValue.GetString("InvitationDate");
-
     m_invitationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantType"))
   {
     m_participantType = ParticipantTypeMapper::GetParticipantTypeForName(jsonValue.GetString("ParticipantType"));
-
     m_participantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PayloadType"))
   {
     m_payloadType = EngagementInvitationPayloadTypeMapper::GetEngagementInvitationPayloadTypeForName(jsonValue.GetString("PayloadType"));
-
     m_payloadTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Receiver"))
   {
     m_receiver = jsonValue.GetObject("Receiver");
-
     m_receiverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderAwsAccountId"))
   {
     m_senderAwsAccountId = jsonValue.GetString("SenderAwsAccountId");
-
     m_senderAwsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderCompanyName"))
   {
     m_senderCompanyName = jsonValue.GetString("SenderCompanyName");
-
     m_senderCompanyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

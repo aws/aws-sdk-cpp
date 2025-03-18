@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HeatMapConfiguration::HeatMapConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_rowLabelOptionsHasBeenSet(false),
-    m_columnLabelOptionsHasBeenSet(false),
-    m_colorScaleHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 HeatMapConfiguration::HeatMapConfiguration(JsonView jsonValue)
-  : HeatMapConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ HeatMapConfiguration& HeatMapConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowLabelOptions"))
   {
     m_rowLabelOptions = jsonValue.GetObject("RowLabelOptions");
-
     m_rowLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnLabelOptions"))
   {
     m_columnLabelOptions = jsonValue.GetObject("ColumnLabelOptions");
-
     m_columnLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorScale"))
   {
     m_colorScale = jsonValue.GetObject("ColorScale");
-
     m_colorScaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

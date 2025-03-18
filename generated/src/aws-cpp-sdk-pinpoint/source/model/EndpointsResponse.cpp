@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EndpointsResponse::EndpointsResponse() : 
-    m_itemHasBeenSet(false)
-{
-}
-
 EndpointsResponse::EndpointsResponse(JsonView jsonValue)
-  : EndpointsResponse()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EndpointsResponse& EndpointsResponse::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

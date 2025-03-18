@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-CodeSigningConfigNotFoundException::CodeSigningConfigNotFoundException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CodeSigningConfigNotFoundException::CodeSigningConfigNotFoundException(JsonView jsonValue)
-  : CodeSigningConfigNotFoundException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CodeSigningConfigNotFoundException& CodeSigningConfigNotFoundException::operator
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

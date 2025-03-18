@@ -33,7 +33,7 @@ namespace Model
   class PixelAnomaly
   {
   public:
-    AWS_LOOKOUTFORVISION_API PixelAnomaly();
+    AWS_LOOKOUTFORVISION_API PixelAnomaly() = default;
     AWS_LOOKOUTFORVISION_API PixelAnomaly(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API PixelAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The percentage area of the image that the anomaly type covers.</p>
      */
-    inline double GetTotalPercentageArea() const{ return m_totalPercentageArea; }
+    inline double GetTotalPercentageArea() const { return m_totalPercentageArea; }
     inline bool TotalPercentageAreaHasBeenSet() const { return m_totalPercentageAreaHasBeenSet; }
     inline void SetTotalPercentageArea(double value) { m_totalPercentageAreaHasBeenSet = true; m_totalPercentageArea = value; }
     inline PixelAnomaly& WithTotalPercentageArea(double value) { SetTotalPercentageArea(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * has a different mask color. The color maps to the color of the anomaly type used
      * in the training dataset. </p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline PixelAnomaly& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline PixelAnomaly& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline PixelAnomaly& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    PixelAnomaly& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
   private:
 
-    double m_totalPercentageArea;
+    double m_totalPercentageArea{0.0};
     bool m_totalPercentageAreaHasBeenSet = false;
 
     Aws::String m_color;

@@ -32,7 +32,7 @@ namespace Model
   class ProcessingFeatureStoreOutput
   {
   public:
-    AWS_SAGEMAKER_API ProcessingFeatureStoreOutput();
+    AWS_SAGEMAKER_API ProcessingFeatureStoreOutput() = default;
     AWS_SAGEMAKER_API ProcessingFeatureStoreOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingFeatureStoreOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * processing job output. Note that your processing script is responsible for
      * putting records into your Feature Store.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline ProcessingFeatureStoreOutput& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline ProcessingFeatureStoreOutput& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline ProcessingFeatureStoreOutput& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    ProcessingFeatureStoreOutput& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
   private:
 

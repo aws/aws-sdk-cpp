@@ -31,7 +31,7 @@ namespace Model
   class NegativeFormat
   {
   public:
-    AWS_QUICKSIGHT_API NegativeFormat();
+    AWS_QUICKSIGHT_API NegativeFormat() = default;
     AWS_QUICKSIGHT_API NegativeFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NegativeFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The prefix for a negative format.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline NegativeFormat& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline NegativeFormat& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline NegativeFormat& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    NegativeFormat& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The suffix for a negative format.</p>
      */
-    inline const Aws::String& GetSuffix() const{ return m_suffix; }
+    inline const Aws::String& GetSuffix() const { return m_suffix; }
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-    inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
-    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
-    inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
-    inline NegativeFormat& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
-    inline NegativeFormat& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
-    inline NegativeFormat& WithSuffix(const char* value) { SetSuffix(value); return *this;}
+    template<typename SuffixT = Aws::String>
+    void SetSuffix(SuffixT&& value) { m_suffixHasBeenSet = true; m_suffix = std::forward<SuffixT>(value); }
+    template<typename SuffixT = Aws::String>
+    NegativeFormat& WithSuffix(SuffixT&& value) { SetSuffix(std::forward<SuffixT>(value)); return *this;}
     ///@}
   private:
 

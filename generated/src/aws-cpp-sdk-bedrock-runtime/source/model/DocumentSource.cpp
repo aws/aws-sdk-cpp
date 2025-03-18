@@ -19,13 +19,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-DocumentSource::DocumentSource() : 
-    m_bytesHasBeenSet(false)
-{
-}
-
 DocumentSource::DocumentSource(JsonView jsonValue)
-  : DocumentSource()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ DocumentSource& DocumentSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   return *this;
 }
 

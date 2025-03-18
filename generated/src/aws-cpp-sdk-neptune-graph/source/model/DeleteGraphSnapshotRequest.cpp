@@ -12,11 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGraphSnapshotRequest::DeleteGraphSnapshotRequest() : 
-    m_snapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGraphSnapshotRequest::SerializePayload() const
 {
   return {};

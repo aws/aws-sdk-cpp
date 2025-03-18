@@ -35,7 +35,7 @@ namespace Model
   class BatchGetAssetPropertyAggregatesSuccessEntry
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the entry.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchGetAssetPropertyAggregatesSuccessEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p>The requested aggregated asset property values (for example, average,
      * minimum, and maximum).</p>
      */
-    inline const Aws::Vector<AggregatedValue>& GetAggregatedValues() const{ return m_aggregatedValues; }
+    inline const Aws::Vector<AggregatedValue>& GetAggregatedValues() const { return m_aggregatedValues; }
     inline bool AggregatedValuesHasBeenSet() const { return m_aggregatedValuesHasBeenSet; }
-    inline void SetAggregatedValues(const Aws::Vector<AggregatedValue>& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues = value; }
-    inline void SetAggregatedValues(Aws::Vector<AggregatedValue>&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues = std::move(value); }
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& WithAggregatedValues(const Aws::Vector<AggregatedValue>& value) { SetAggregatedValues(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& WithAggregatedValues(Aws::Vector<AggregatedValue>&& value) { SetAggregatedValues(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& AddAggregatedValues(const AggregatedValue& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues.push_back(value); return *this; }
-    inline BatchGetAssetPropertyAggregatesSuccessEntry& AddAggregatedValues(AggregatedValue&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues.push_back(std::move(value)); return *this; }
+    template<typename AggregatedValuesT = Aws::Vector<AggregatedValue>>
+    void SetAggregatedValues(AggregatedValuesT&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues = std::forward<AggregatedValuesT>(value); }
+    template<typename AggregatedValuesT = Aws::Vector<AggregatedValue>>
+    BatchGetAssetPropertyAggregatesSuccessEntry& WithAggregatedValues(AggregatedValuesT&& value) { SetAggregatedValues(std::forward<AggregatedValuesT>(value)); return *this;}
+    template<typename AggregatedValuesT = AggregatedValue>
+    BatchGetAssetPropertyAggregatesSuccessEntry& AddAggregatedValues(AggregatedValuesT&& value) { m_aggregatedValuesHasBeenSet = true; m_aggregatedValues.emplace_back(std::forward<AggregatedValuesT>(value)); return *this; }
     ///@}
   private:
 

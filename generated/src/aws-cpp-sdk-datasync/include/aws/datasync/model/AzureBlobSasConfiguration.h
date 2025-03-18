@@ -34,7 +34,7 @@ namespace Model
   class AzureBlobSasConfiguration
   {
   public:
-    AWS_DATASYNC_API AzureBlobSasConfiguration();
+    AWS_DATASYNC_API AzureBlobSasConfiguration() = default;
     AWS_DATASYNC_API AzureBlobSasConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API AzureBlobSasConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code>
      * </p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline AzureBlobSasConfiguration& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline AzureBlobSasConfiguration& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline AzureBlobSasConfiguration& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    AzureBlobSasConfiguration& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetQueryResultsWorkloadInsightsTopContributorsRequest::GetQueryResultsWorkloadInsightsTopContributorsRequest() : 
-    m_scopeIdHasBeenSet(false),
-    m_queryIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryResultsWorkloadInsightsTopContributorsRequest::SerializePayload() const
 {
   return {};

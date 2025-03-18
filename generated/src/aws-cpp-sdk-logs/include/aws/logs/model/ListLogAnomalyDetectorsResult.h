@@ -29,7 +29,7 @@ namespace Model
   class ListLogAnomalyDetectorsResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ListLogAnomalyDetectorsResult();
+    AWS_CLOUDWATCHLOGS_API ListLogAnomalyDetectorsResult() = default;
     AWS_CLOUDWATCHLOGS_API ListLogAnomalyDetectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API ListLogAnomalyDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,42 @@ namespace Model
      * <p>An array of structures, where each structure in the array contains
      * information about one anomaly detector.</p>
      */
-    inline const Aws::Vector<AnomalyDetector>& GetAnomalyDetectors() const{ return m_anomalyDetectors; }
-    inline void SetAnomalyDetectors(const Aws::Vector<AnomalyDetector>& value) { m_anomalyDetectors = value; }
-    inline void SetAnomalyDetectors(Aws::Vector<AnomalyDetector>&& value) { m_anomalyDetectors = std::move(value); }
-    inline ListLogAnomalyDetectorsResult& WithAnomalyDetectors(const Aws::Vector<AnomalyDetector>& value) { SetAnomalyDetectors(value); return *this;}
-    inline ListLogAnomalyDetectorsResult& WithAnomalyDetectors(Aws::Vector<AnomalyDetector>&& value) { SetAnomalyDetectors(std::move(value)); return *this;}
-    inline ListLogAnomalyDetectorsResult& AddAnomalyDetectors(const AnomalyDetector& value) { m_anomalyDetectors.push_back(value); return *this; }
-    inline ListLogAnomalyDetectorsResult& AddAnomalyDetectors(AnomalyDetector&& value) { m_anomalyDetectors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnomalyDetector>& GetAnomalyDetectors() const { return m_anomalyDetectors; }
+    template<typename AnomalyDetectorsT = Aws::Vector<AnomalyDetector>>
+    void SetAnomalyDetectors(AnomalyDetectorsT&& value) { m_anomalyDetectorsHasBeenSet = true; m_anomalyDetectors = std::forward<AnomalyDetectorsT>(value); }
+    template<typename AnomalyDetectorsT = Aws::Vector<AnomalyDetector>>
+    ListLogAnomalyDetectorsResult& WithAnomalyDetectors(AnomalyDetectorsT&& value) { SetAnomalyDetectors(std::forward<AnomalyDetectorsT>(value)); return *this;}
+    template<typename AnomalyDetectorsT = AnomalyDetector>
+    ListLogAnomalyDetectorsResult& AddAnomalyDetectors(AnomalyDetectorsT&& value) { m_anomalyDetectorsHasBeenSet = true; m_anomalyDetectors.emplace_back(std::forward<AnomalyDetectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLogAnomalyDetectorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLogAnomalyDetectorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLogAnomalyDetectorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLogAnomalyDetectorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLogAnomalyDetectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLogAnomalyDetectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLogAnomalyDetectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLogAnomalyDetectorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnomalyDetector> m_anomalyDetectors;
+    bool m_anomalyDetectorsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

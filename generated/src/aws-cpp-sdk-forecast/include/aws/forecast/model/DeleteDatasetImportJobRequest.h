@@ -21,7 +21,7 @@ namespace Model
   class DeleteDatasetImportJobRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DeleteDatasetImportJobRequest();
+    AWS_FORECASTSERVICE_API DeleteDatasetImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
      */
-    inline const Aws::String& GetDatasetImportJobArn() const{ return m_datasetImportJobArn; }
+    inline const Aws::String& GetDatasetImportJobArn() const { return m_datasetImportJobArn; }
     inline bool DatasetImportJobArnHasBeenSet() const { return m_datasetImportJobArnHasBeenSet; }
-    inline void SetDatasetImportJobArn(const Aws::String& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = value; }
-    inline void SetDatasetImportJobArn(Aws::String&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::move(value); }
-    inline void SetDatasetImportJobArn(const char* value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn.assign(value); }
-    inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(const Aws::String& value) { SetDatasetImportJobArn(value); return *this;}
-    inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(Aws::String&& value) { SetDatasetImportJobArn(std::move(value)); return *this;}
-    inline DeleteDatasetImportJobRequest& WithDatasetImportJobArn(const char* value) { SetDatasetImportJobArn(value); return *this;}
+    template<typename DatasetImportJobArnT = Aws::String>
+    void SetDatasetImportJobArn(DatasetImportJobArnT&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::forward<DatasetImportJobArnT>(value); }
+    template<typename DatasetImportJobArnT = Aws::String>
+    DeleteDatasetImportJobRequest& WithDatasetImportJobArn(DatasetImportJobArnT&& value) { SetDatasetImportJobArn(std::forward<DatasetImportJobArnT>(value)); return *this;}
     ///@}
   private:
 

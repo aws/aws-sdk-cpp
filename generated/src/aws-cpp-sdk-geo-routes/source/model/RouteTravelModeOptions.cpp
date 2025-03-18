@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTravelModeOptions::RouteTravelModeOptions() : 
-    m_carHasBeenSet(false),
-    m_pedestrianHasBeenSet(false),
-    m_scooterHasBeenSet(false),
-    m_truckHasBeenSet(false)
-{
-}
-
 RouteTravelModeOptions::RouteTravelModeOptions(JsonView jsonValue)
-  : RouteTravelModeOptions()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RouteTravelModeOptions& RouteTravelModeOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Car"))
   {
     m_car = jsonValue.GetObject("Car");
-
     m_carHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pedestrian"))
   {
     m_pedestrian = jsonValue.GetObject("Pedestrian");
-
     m_pedestrianHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scooter"))
   {
     m_scooter = jsonValue.GetObject("Scooter");
-
     m_scooterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Truck"))
   {
     m_truck = jsonValue.GetObject("Truck");
-
     m_truckHasBeenSet = true;
   }
-
   return *this;
 }
 

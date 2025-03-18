@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteSmsTemplateRequest::DeleteSmsTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSmsTemplateRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-DataProductFilters::DataProductFilters() : 
-    m_entityIdHasBeenSet(false),
-    m_productTitleHasBeenSet(false),
-    m_visibilityHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 DataProductFilters::DataProductFilters(JsonView jsonValue)
-  : DataProductFilters()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataProductFilters& DataProductFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetObject("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductTitle"))
   {
     m_productTitle = jsonValue.GetObject("ProductTitle");
-
     m_productTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = jsonValue.GetObject("Visibility");
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetObject("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

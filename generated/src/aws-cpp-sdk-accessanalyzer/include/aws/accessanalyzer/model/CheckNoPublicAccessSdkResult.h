@@ -30,7 +30,7 @@ namespace Model
   class CheckNoPublicAccessSdkResult
   {
   public:
-    AWS_ACCESSANALYZER_API CheckNoPublicAccessSdkResult();
+    AWS_ACCESSANALYZER_API CheckNoPublicAccessSdkResult() = default;
     AWS_ACCESSANALYZER_API CheckNoPublicAccessSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API CheckNoPublicAccessSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,9 @@ namespace Model
      * specified resource type. If the result is <code>FAIL</code>, the policy might
      * allow public access to the specified resource type.</p>
      */
-    inline const CheckNoPublicAccessResult& GetResult() const{ return m_result; }
-    inline void SetResult(const CheckNoPublicAccessResult& value) { m_result = value; }
-    inline void SetResult(CheckNoPublicAccessResult&& value) { m_result = std::move(value); }
-    inline CheckNoPublicAccessSdkResult& WithResult(const CheckNoPublicAccessResult& value) { SetResult(value); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithResult(CheckNoPublicAccessResult&& value) { SetResult(std::move(value)); return *this;}
+    inline CheckNoPublicAccessResult GetResult() const { return m_result; }
+    inline void SetResult(CheckNoPublicAccessResult value) { m_resultHasBeenSet = true; m_result = value; }
+    inline CheckNoPublicAccessSdkResult& WithResult(CheckNoPublicAccessResult value) { SetResult(value); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <p>The message indicating whether the specified policy allows public access to
      * resources.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline CheckNoPublicAccessSdkResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CheckNoPublicAccessSdkResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,34 +64,36 @@ namespace Model
      * <p>A list of reasons why the specified resource policy grants public access for
      * the resource type.</p>
      */
-    inline const Aws::Vector<ReasonSummary>& GetReasons() const{ return m_reasons; }
-    inline void SetReasons(const Aws::Vector<ReasonSummary>& value) { m_reasons = value; }
-    inline void SetReasons(Aws::Vector<ReasonSummary>&& value) { m_reasons = std::move(value); }
-    inline CheckNoPublicAccessSdkResult& WithReasons(const Aws::Vector<ReasonSummary>& value) { SetReasons(value); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithReasons(Aws::Vector<ReasonSummary>&& value) { SetReasons(std::move(value)); return *this;}
-    inline CheckNoPublicAccessSdkResult& AddReasons(const ReasonSummary& value) { m_reasons.push_back(value); return *this; }
-    inline CheckNoPublicAccessSdkResult& AddReasons(ReasonSummary&& value) { m_reasons.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReasonSummary>& GetReasons() const { return m_reasons; }
+    template<typename ReasonsT = Aws::Vector<ReasonSummary>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<ReasonSummary>>
+    CheckNoPublicAccessSdkResult& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    template<typename ReasonsT = ReasonSummary>
+    CheckNoPublicAccessSdkResult& AddReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons.emplace_back(std::forward<ReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CheckNoPublicAccessSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CheckNoPublicAccessSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CheckNoPublicAccessSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CheckNoPublicAccessResult m_result;
+    CheckNoPublicAccessResult m_result{CheckNoPublicAccessResult::NOT_SET};
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<ReasonSummary> m_reasons;
+    bool m_reasonsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

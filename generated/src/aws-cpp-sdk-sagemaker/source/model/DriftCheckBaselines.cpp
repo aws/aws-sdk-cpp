@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DriftCheckBaselines::DriftCheckBaselines() : 
-    m_biasHasBeenSet(false),
-    m_explainabilityHasBeenSet(false),
-    m_modelQualityHasBeenSet(false),
-    m_modelDataQualityHasBeenSet(false)
-{
-}
-
 DriftCheckBaselines::DriftCheckBaselines(JsonView jsonValue)
-  : DriftCheckBaselines()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DriftCheckBaselines& DriftCheckBaselines::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bias"))
   {
     m_bias = jsonValue.GetObject("Bias");
-
     m_biasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Explainability"))
   {
     m_explainability = jsonValue.GetObject("Explainability");
-
     m_explainabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelQuality"))
   {
     m_modelQuality = jsonValue.GetObject("ModelQuality");
-
     m_modelQualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataQuality"))
   {
     m_modelDataQuality = jsonValue.GetObject("ModelDataQuality");
-
     m_modelDataQualityHasBeenSet = true;
   }
-
   return *this;
 }
 

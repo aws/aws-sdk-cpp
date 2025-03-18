@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SqlKnowledgeBaseConfiguration::SqlKnowledgeBaseConfiguration() : 
-    m_redshiftConfigurationHasBeenSet(false),
-    m_type(QueryEngineType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SqlKnowledgeBaseConfiguration::SqlKnowledgeBaseConfiguration(JsonView jsonValue)
-  : SqlKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SqlKnowledgeBaseConfiguration& SqlKnowledgeBaseConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("redshiftConfiguration"))
   {
     m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
-
     m_redshiftConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = QueryEngineTypeMapper::GetQueryEngineTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

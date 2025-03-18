@@ -12,19 +12,6 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetManagedEndpointSessionCredentialsRequest::GetManagedEndpointSessionCredentialsRequest() : 
-    m_endpointIdentifierHasBeenSet(false),
-    m_virtualClusterIdentifierHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_credentialTypeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_logContextHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String GetManagedEndpointSessionCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

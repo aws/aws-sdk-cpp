@@ -25,7 +25,7 @@ namespace Model
   class DescribeTrailsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API DescribeTrailsRequest();
+    AWS_CLOUDTRAIL_API DescribeTrailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,15 +54,14 @@ namespace Model
      * only to the current Region and current account. To return information about a
      * trail in another Region, you must specify its trail ARN.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetTrailNameList() const{ return m_trailNameList; }
+    inline const Aws::Vector<Aws::String>& GetTrailNameList() const { return m_trailNameList; }
     inline bool TrailNameListHasBeenSet() const { return m_trailNameListHasBeenSet; }
-    inline void SetTrailNameList(const Aws::Vector<Aws::String>& value) { m_trailNameListHasBeenSet = true; m_trailNameList = value; }
-    inline void SetTrailNameList(Aws::Vector<Aws::String>&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = std::move(value); }
-    inline DescribeTrailsRequest& WithTrailNameList(const Aws::Vector<Aws::String>& value) { SetTrailNameList(value); return *this;}
-    inline DescribeTrailsRequest& WithTrailNameList(Aws::Vector<Aws::String>&& value) { SetTrailNameList(std::move(value)); return *this;}
-    inline DescribeTrailsRequest& AddTrailNameList(const Aws::String& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
-    inline DescribeTrailsRequest& AddTrailNameList(Aws::String&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(std::move(value)); return *this; }
-    inline DescribeTrailsRequest& AddTrailNameList(const char* value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
+    template<typename TrailNameListT = Aws::Vector<Aws::String>>
+    void SetTrailNameList(TrailNameListT&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = std::forward<TrailNameListT>(value); }
+    template<typename TrailNameListT = Aws::Vector<Aws::String>>
+    DescribeTrailsRequest& WithTrailNameList(TrailNameListT&& value) { SetTrailNameList(std::forward<TrailNameListT>(value)); return *this;}
+    template<typename TrailNameListT = Aws::String>
+    DescribeTrailsRequest& AddTrailNameList(TrailNameListT&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.emplace_back(std::forward<TrailNameListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,7 +73,7 @@ namespace Model
      * trails in a member account and Region replication trails will not be returned.
      * The default is true.</p>
      */
-    inline bool GetIncludeShadowTrails() const{ return m_includeShadowTrails; }
+    inline bool GetIncludeShadowTrails() const { return m_includeShadowTrails; }
     inline bool IncludeShadowTrailsHasBeenSet() const { return m_includeShadowTrailsHasBeenSet; }
     inline void SetIncludeShadowTrails(bool value) { m_includeShadowTrailsHasBeenSet = true; m_includeShadowTrails = value; }
     inline DescribeTrailsRequest& WithIncludeShadowTrails(bool value) { SetIncludeShadowTrails(value); return *this;}
@@ -84,7 +83,7 @@ namespace Model
     Aws::Vector<Aws::String> m_trailNameList;
     bool m_trailNameListHasBeenSet = false;
 
-    bool m_includeShadowTrails;
+    bool m_includeShadowTrails{false};
     bool m_includeShadowTrailsHasBeenSet = false;
   };
 

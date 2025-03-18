@@ -21,7 +21,7 @@ namespace Model
   class GetRotationOverrideRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API GetRotationOverrideRequest();
+    AWS_SSMCONTACTS_API GetRotationOverrideRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve
      * information about.</p>
      */
-    inline const Aws::String& GetRotationId() const{ return m_rotationId; }
+    inline const Aws::String& GetRotationId() const { return m_rotationId; }
     inline bool RotationIdHasBeenSet() const { return m_rotationIdHasBeenSet; }
-    inline void SetRotationId(const Aws::String& value) { m_rotationIdHasBeenSet = true; m_rotationId = value; }
-    inline void SetRotationId(Aws::String&& value) { m_rotationIdHasBeenSet = true; m_rotationId = std::move(value); }
-    inline void SetRotationId(const char* value) { m_rotationIdHasBeenSet = true; m_rotationId.assign(value); }
-    inline GetRotationOverrideRequest& WithRotationId(const Aws::String& value) { SetRotationId(value); return *this;}
-    inline GetRotationOverrideRequest& WithRotationId(Aws::String&& value) { SetRotationId(std::move(value)); return *this;}
-    inline GetRotationOverrideRequest& WithRotationId(const char* value) { SetRotationId(value); return *this;}
+    template<typename RotationIdT = Aws::String>
+    void SetRotationId(RotationIdT&& value) { m_rotationIdHasBeenSet = true; m_rotationId = std::forward<RotationIdT>(value); }
+    template<typename RotationIdT = Aws::String>
+    GetRotationOverrideRequest& WithRotationId(RotationIdT&& value) { SetRotationId(std::forward<RotationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve
      * information about.</p>
      */
-    inline const Aws::String& GetRotationOverrideId() const{ return m_rotationOverrideId; }
+    inline const Aws::String& GetRotationOverrideId() const { return m_rotationOverrideId; }
     inline bool RotationOverrideIdHasBeenSet() const { return m_rotationOverrideIdHasBeenSet; }
-    inline void SetRotationOverrideId(const Aws::String& value) { m_rotationOverrideIdHasBeenSet = true; m_rotationOverrideId = value; }
-    inline void SetRotationOverrideId(Aws::String&& value) { m_rotationOverrideIdHasBeenSet = true; m_rotationOverrideId = std::move(value); }
-    inline void SetRotationOverrideId(const char* value) { m_rotationOverrideIdHasBeenSet = true; m_rotationOverrideId.assign(value); }
-    inline GetRotationOverrideRequest& WithRotationOverrideId(const Aws::String& value) { SetRotationOverrideId(value); return *this;}
-    inline GetRotationOverrideRequest& WithRotationOverrideId(Aws::String&& value) { SetRotationOverrideId(std::move(value)); return *this;}
-    inline GetRotationOverrideRequest& WithRotationOverrideId(const char* value) { SetRotationOverrideId(value); return *this;}
+    template<typename RotationOverrideIdT = Aws::String>
+    void SetRotationOverrideId(RotationOverrideIdT&& value) { m_rotationOverrideIdHasBeenSet = true; m_rotationOverrideId = std::forward<RotationOverrideIdT>(value); }
+    template<typename RotationOverrideIdT = Aws::String>
+    GetRotationOverrideRequest& WithRotationOverrideId(RotationOverrideIdT&& value) { SetRotationOverrideId(std::forward<RotationOverrideIdT>(value)); return *this;}
     ///@}
   private:
 

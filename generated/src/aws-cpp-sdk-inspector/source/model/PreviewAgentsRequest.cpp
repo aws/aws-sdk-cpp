@@ -12,14 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PreviewAgentsRequest::PreviewAgentsRequest() : 
-    m_previewAgentsArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String PreviewAgentsRequest::SerializePayload() const
 {
   JsonValue payload;

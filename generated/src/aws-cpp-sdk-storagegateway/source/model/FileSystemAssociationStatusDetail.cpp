@@ -18,13 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail() : 
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail(JsonView jsonValue)
-  : FileSystemAssociationStatusDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FileSystemAssociationStatusDetail& FileSystemAssociationStatusDetail::operator =
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

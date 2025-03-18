@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EcsPropertiesDetail::EcsPropertiesDetail() : 
-    m_taskPropertiesHasBeenSet(false)
-{
-}
-
 EcsPropertiesDetail::EcsPropertiesDetail(JsonView jsonValue)
-  : EcsPropertiesDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EcsPropertiesDetail& EcsPropertiesDetail::operator =(JsonView jsonValue)
     }
     m_taskPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

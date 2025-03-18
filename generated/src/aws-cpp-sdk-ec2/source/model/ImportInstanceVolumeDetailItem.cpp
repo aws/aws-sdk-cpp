@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportInstanceVolumeDetailItem::ImportInstanceVolumeDetailItem() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_bytesConverted(0),
-    m_bytesConvertedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_volumeHasBeenSet(false)
-{
-}
-
 ImportInstanceVolumeDetailItem::ImportInstanceVolumeDetailItem(const XmlNode& xmlNode)
-  : ImportInstanceVolumeDetailItem()
 {
   *this = xmlNode;
 }

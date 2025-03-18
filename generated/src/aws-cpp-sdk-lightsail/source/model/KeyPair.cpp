@@ -18,21 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-KeyPair::KeyPair() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fingerprintHasBeenSet(false)
-{
-}
-
 KeyPair::KeyPair(JsonView jsonValue)
-  : KeyPair()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ KeyPair& KeyPair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -90,14 +64,11 @@ KeyPair& KeyPair::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("fingerprint");
-
     m_fingerprintHasBeenSet = true;
   }
-
   return *this;
 }
 

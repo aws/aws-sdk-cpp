@@ -18,18 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-ReferencedImageDetail::ReferencedImageDetail() : 
-    m_imageDigestHasBeenSet(false),
-    m_imageSizeInBytes(0),
-    m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
-{
-}
-
 ReferencedImageDetail::ReferencedImageDetail(JsonView jsonValue)
-  : ReferencedImageDetail()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ReferencedImageDetail& ReferencedImageDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSizeInBytes"))
   {
     m_imageSizeInBytes = jsonValue.GetInt64("imageSizeInBytes");
-
     m_imageSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePushedAt"))
   {
     m_imagePushedAt = jsonValue.GetDouble("imagePushedAt");
-
     m_imagePushedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageManifestMediaType"))
   {
     m_imageManifestMediaType = jsonValue.GetString("imageManifestMediaType");
-
     m_imageManifestMediaTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactMediaType"))
   {
     m_artifactMediaType = jsonValue.GetString("artifactMediaType");
-
     m_artifactMediaTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

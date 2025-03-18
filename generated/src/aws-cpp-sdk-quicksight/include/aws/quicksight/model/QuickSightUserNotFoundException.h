@@ -34,7 +34,7 @@ namespace Model
   class QuickSightUserNotFoundException
   {
   public:
-    AWS_QUICKSIGHT_API QuickSightUserNotFoundException();
+    AWS_QUICKSIGHT_API QuickSightUserNotFoundException() = default;
     AWS_QUICKSIGHT_API QuickSightUserNotFoundException(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API QuickSightUserNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline QuickSightUserNotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline QuickSightUserNotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline QuickSightUserNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    QuickSightUserNotFoundException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services request ID for this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline QuickSightUserNotFoundException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline QuickSightUserNotFoundException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline QuickSightUserNotFoundException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    QuickSightUserNotFoundException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

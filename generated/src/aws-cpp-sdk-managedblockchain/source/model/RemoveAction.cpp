@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-RemoveAction::RemoveAction() : 
-    m_memberIdHasBeenSet(false)
-{
-}
-
 RemoveAction::RemoveAction(JsonView jsonValue)
-  : RemoveAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RemoveAction& RemoveAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemberId"))
   {
     m_memberId = jsonValue.GetString("MemberId");
-
     m_memberIdHasBeenSet = true;
   }
-
   return *this;
 }
 

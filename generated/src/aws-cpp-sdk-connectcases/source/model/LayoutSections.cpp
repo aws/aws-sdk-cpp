@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-LayoutSections::LayoutSections() : 
-    m_sectionsHasBeenSet(false)
-{
-}
-
 LayoutSections::LayoutSections(JsonView jsonValue)
-  : LayoutSections()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LayoutSections& LayoutSections::operator =(JsonView jsonValue)
     }
     m_sectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListComponentsRequest::ListComponentsRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String ListComponentsRequest::SerializePayload() const
 {
   JsonValue payload;

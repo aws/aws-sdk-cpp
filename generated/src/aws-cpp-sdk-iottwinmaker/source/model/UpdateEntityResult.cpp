@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateEntityResult::UpdateEntityResult() : 
-    m_state(State::NOT_SET)
-{
-}
-
 UpdateEntityResult::UpdateEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateEntityResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateEntityResult& UpdateEntityResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
+    m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

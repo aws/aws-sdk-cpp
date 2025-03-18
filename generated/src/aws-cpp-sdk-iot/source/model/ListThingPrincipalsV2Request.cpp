@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListThingPrincipalsV2Request::ListThingPrincipalsV2Request() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_thingPrincipalType(ThingPrincipalType::NOT_SET),
-    m_thingPrincipalTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListThingPrincipalsV2Request::SerializePayload() const
 {
   return {};

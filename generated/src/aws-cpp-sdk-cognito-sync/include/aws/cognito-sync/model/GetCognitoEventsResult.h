@@ -33,7 +33,7 @@ namespace Model
   class GetCognitoEventsResult
   {
   public:
-    AWS_COGNITOSYNC_API GetCognitoEventsResult();
+    AWS_COGNITOSYNC_API GetCognitoEventsResult() = default;
     AWS_COGNITOSYNC_API GetCognitoEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API GetCognitoEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,35 +42,32 @@ namespace Model
     /**
      * <p>The Cognito Events returned from the GetCognitoEvents request</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEvents() const{ return m_events; }
-    inline void SetEvents(const Aws::Map<Aws::String, Aws::String>& value) { m_events = value; }
-    inline void SetEvents(Aws::Map<Aws::String, Aws::String>&& value) { m_events = std::move(value); }
-    inline GetCognitoEventsResult& WithEvents(const Aws::Map<Aws::String, Aws::String>& value) { SetEvents(value); return *this;}
-    inline GetCognitoEventsResult& WithEvents(Aws::Map<Aws::String, Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
-    inline GetCognitoEventsResult& AddEvents(const Aws::String& key, const Aws::String& value) { m_events.emplace(key, value); return *this; }
-    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, const Aws::String& value) { m_events.emplace(std::move(key), value); return *this; }
-    inline GetCognitoEventsResult& AddEvents(const Aws::String& key, Aws::String&& value) { m_events.emplace(key, std::move(value)); return *this; }
-    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, Aws::String&& value) { m_events.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetCognitoEventsResult& AddEvents(const char* key, Aws::String&& value) { m_events.emplace(key, std::move(value)); return *this; }
-    inline GetCognitoEventsResult& AddEvents(Aws::String&& key, const char* value) { m_events.emplace(std::move(key), value); return *this; }
-    inline GetCognitoEventsResult& AddEvents(const char* key, const char* value) { m_events.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEvents() const { return m_events; }
+    template<typename EventsT = Aws::Map<Aws::String, Aws::String>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Map<Aws::String, Aws::String>>
+    GetCognitoEventsResult& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsKeyT = Aws::String, typename EventsValueT = Aws::String>
+    GetCognitoEventsResult& AddEvents(EventsKeyT&& key, EventsValueT&& value) {
+      m_eventsHasBeenSet = true; m_events.emplace(std::forward<EventsKeyT>(key), std::forward<EventsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCognitoEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCognitoEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCognitoEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCognitoEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_events;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

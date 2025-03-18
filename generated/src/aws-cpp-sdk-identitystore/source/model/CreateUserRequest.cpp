@@ -12,24 +12,6 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_identityStoreIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_nickNameHasBeenSet(false),
-    m_profileUrlHasBeenSet(false),
-    m_emailsHasBeenSet(false),
-    m_addressesHasBeenSet(false),
-    m_phoneNumbersHasBeenSet(false),
-    m_userTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_preferredLanguageHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

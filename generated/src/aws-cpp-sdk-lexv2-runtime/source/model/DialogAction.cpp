@@ -18,18 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-DialogAction::DialogAction() : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_slotElicitationStyle(StyleType::NOT_SET),
-    m_slotElicitationStyleHasBeenSet(false),
-    m_subSlotToElicitHasBeenSet(false)
-{
-}
-
 DialogAction::DialogAction(JsonView jsonValue)
-  : DialogAction()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = DialogActionTypeMapper::GetDialogActionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotToElicit"))
   {
     m_slotToElicit = jsonValue.GetString("slotToElicit");
-
     m_slotToElicitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotElicitationStyle"))
   {
     m_slotElicitationStyle = StyleTypeMapper::GetStyleTypeForName(jsonValue.GetString("slotElicitationStyle"));
-
     m_slotElicitationStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subSlotToElicit"))
   {
     m_subSlotToElicit = jsonValue.GetObject("subSlotToElicit");
-
     m_subSlotToElicitHasBeenSet = true;
   }
-
   return *this;
 }
 

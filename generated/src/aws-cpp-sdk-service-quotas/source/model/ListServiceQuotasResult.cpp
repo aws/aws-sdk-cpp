@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceQuotasResult::ListServiceQuotasResult()
-{
-}
-
 ListServiceQuotasResult::ListServiceQuotasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListServiceQuotasResult& ListServiceQuotasResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quotas"))
   {
     Aws::Utils::Array<JsonView> quotasJsonList = jsonValue.GetArray("Quotas");
@@ -42,14 +37,15 @@ ListServiceQuotasResult& ListServiceQuotasResult::operator =(const Aws::AmazonWe
     {
       m_quotas.push_back(quotasJsonList[quotasIndex].AsObject());
     }
+    m_quotasHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

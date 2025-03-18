@@ -32,7 +32,7 @@ namespace Model
   class AssetOptions
   {
   public:
-    AWS_QUICKSIGHT_API AssetOptions();
+    AWS_QUICKSIGHT_API AssetOptions() = default;
     AWS_QUICKSIGHT_API AssetOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>Determines the timezone for the analysis.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline AssetOptions& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline AssetOptions& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline AssetOptions& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    AssetOptions& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the week start day for an analysis.</p>
      */
-    inline const DayOfTheWeek& GetWeekStart() const{ return m_weekStart; }
+    inline DayOfTheWeek GetWeekStart() const { return m_weekStart; }
     inline bool WeekStartHasBeenSet() const { return m_weekStartHasBeenSet; }
-    inline void SetWeekStart(const DayOfTheWeek& value) { m_weekStartHasBeenSet = true; m_weekStart = value; }
-    inline void SetWeekStart(DayOfTheWeek&& value) { m_weekStartHasBeenSet = true; m_weekStart = std::move(value); }
-    inline AssetOptions& WithWeekStart(const DayOfTheWeek& value) { SetWeekStart(value); return *this;}
-    inline AssetOptions& WithWeekStart(DayOfTheWeek&& value) { SetWeekStart(std::move(value)); return *this;}
+    inline void SetWeekStart(DayOfTheWeek value) { m_weekStartHasBeenSet = true; m_weekStart = value; }
+    inline AssetOptions& WithWeekStart(DayOfTheWeek value) { SetWeekStart(value); return *this;}
     ///@}
   private:
 
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet = false;
 
-    DayOfTheWeek m_weekStart;
+    DayOfTheWeek m_weekStart{DayOfTheWeek::NOT_SET};
     bool m_weekStartHasBeenSet = false;
   };
 

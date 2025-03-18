@@ -12,19 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagsRequest::GetTagsRequest() : 
-    m_searchStringHasBeenSet(false),
-    m_timePeriodHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTagsRequest::SerializePayload() const
 {
   JsonValue payload;

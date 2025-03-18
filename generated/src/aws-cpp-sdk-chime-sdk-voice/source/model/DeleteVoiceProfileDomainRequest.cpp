@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVoiceProfileDomainRequest::DeleteVoiceProfileDomainRequest() : 
-    m_voiceProfileDomainIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVoiceProfileDomainRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTableAutoScalingSettingsResult::GetTableAutoScalingSettingsResult()
-{
-}
-
 GetTableAutoScalingSettingsResult::GetTableAutoScalingSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ GetTableAutoScalingSettingsResult& GetTableAutoScalingSettingsResult::operator =
   if(jsonValue.ValueExists("keyspaceName"))
   {
     m_keyspaceName = jsonValue.GetString("keyspaceName");
-
+    m_keyspaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingSpecification"))
   {
     m_autoScalingSpecification = jsonValue.GetObject("autoScalingSpecification");
-
+    m_autoScalingSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicaSpecifications"))
   {
     Aws::Utils::Array<JsonView> replicaSpecificationsJsonList = jsonValue.GetArray("replicaSpecifications");
@@ -60,14 +52,15 @@ GetTableAutoScalingSettingsResult& GetTableAutoScalingSettingsResult::operator =
     {
       m_replicaSpecifications.push_back(replicaSpecificationsJsonList[replicaSpecificationsIndex].AsObject());
     }
+    m_replicaSpecificationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

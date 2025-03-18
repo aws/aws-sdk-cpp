@@ -34,7 +34,7 @@ namespace Model
   class CrawlsFilter
   {
   public:
-    AWS_GLUE_API CrawlsFilter();
+    AWS_GLUE_API CrawlsFilter() = default;
     AWS_GLUE_API CrawlsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CrawlsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * milliseconds.</p> </li> <li> <p> <code>DPU_HOUR</code>: The number of data
      * processing unit (DPU) hours used for the crawl.</p> </li> </ul>
      */
-    inline const FieldName& GetFieldName() const{ return m_fieldName; }
+    inline FieldName GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const FieldName& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(FieldName&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline CrawlsFilter& WithFieldName(const FieldName& value) { SetFieldName(value); return *this;}
-    inline CrawlsFilter& WithFieldName(FieldName&& value) { SetFieldName(std::move(value)); return *this;}
+    inline void SetFieldName(FieldName value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
+    inline CrawlsFilter& WithFieldName(FieldName value) { SetFieldName(value); return *this;}
     ///@}
 
     ///@{
@@ -67,33 +65,29 @@ namespace Model
      * <li> <p> <code>EQ</code>: Equal to.</p> </li> <li> <p> <code>NE</code>: Not
      * equal to.</p> </li> </ul>
      */
-    inline const FilterOperator& GetFilterOperator() const{ return m_filterOperator; }
+    inline FilterOperator GetFilterOperator() const { return m_filterOperator; }
     inline bool FilterOperatorHasBeenSet() const { return m_filterOperatorHasBeenSet; }
-    inline void SetFilterOperator(const FilterOperator& value) { m_filterOperatorHasBeenSet = true; m_filterOperator = value; }
-    inline void SetFilterOperator(FilterOperator&& value) { m_filterOperatorHasBeenSet = true; m_filterOperator = std::move(value); }
-    inline CrawlsFilter& WithFilterOperator(const FilterOperator& value) { SetFilterOperator(value); return *this;}
-    inline CrawlsFilter& WithFilterOperator(FilterOperator&& value) { SetFilterOperator(std::move(value)); return *this;}
+    inline void SetFilterOperator(FilterOperator value) { m_filterOperatorHasBeenSet = true; m_filterOperator = value; }
+    inline CrawlsFilter& WithFilterOperator(FilterOperator value) { SetFilterOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value provided for comparison on the crawl field. </p>
      */
-    inline const Aws::String& GetFieldValue() const{ return m_fieldValue; }
+    inline const Aws::String& GetFieldValue() const { return m_fieldValue; }
     inline bool FieldValueHasBeenSet() const { return m_fieldValueHasBeenSet; }
-    inline void SetFieldValue(const Aws::String& value) { m_fieldValueHasBeenSet = true; m_fieldValue = value; }
-    inline void SetFieldValue(Aws::String&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::move(value); }
-    inline void SetFieldValue(const char* value) { m_fieldValueHasBeenSet = true; m_fieldValue.assign(value); }
-    inline CrawlsFilter& WithFieldValue(const Aws::String& value) { SetFieldValue(value); return *this;}
-    inline CrawlsFilter& WithFieldValue(Aws::String&& value) { SetFieldValue(std::move(value)); return *this;}
-    inline CrawlsFilter& WithFieldValue(const char* value) { SetFieldValue(value); return *this;}
+    template<typename FieldValueT = Aws::String>
+    void SetFieldValue(FieldValueT&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::forward<FieldValueT>(value); }
+    template<typename FieldValueT = Aws::String>
+    CrawlsFilter& WithFieldValue(FieldValueT&& value) { SetFieldValue(std::forward<FieldValueT>(value)); return *this;}
     ///@}
   private:
 
-    FieldName m_fieldName;
+    FieldName m_fieldName{FieldName::NOT_SET};
     bool m_fieldNameHasBeenSet = false;
 
-    FilterOperator m_filterOperator;
+    FilterOperator m_filterOperator{FilterOperator::NOT_SET};
     bool m_filterOperatorHasBeenSet = false;
 
     Aws::String m_fieldValue;

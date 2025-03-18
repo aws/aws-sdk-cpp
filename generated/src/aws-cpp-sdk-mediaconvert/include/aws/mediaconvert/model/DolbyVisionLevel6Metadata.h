@@ -31,7 +31,7 @@ namespace Model
   class DolbyVisionLevel6Metadata
   {
   public:
-    AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata();
+    AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata() = default;
     AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DolbyVisionLevel6Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * Maximum Content Light Level. Static HDR metadata that corresponds to the
      * brightest pixel in the entire stream. Measured in nits.
      */
-    inline int GetMaxCll() const{ return m_maxCll; }
+    inline int GetMaxCll() const { return m_maxCll; }
     inline bool MaxCllHasBeenSet() const { return m_maxCllHasBeenSet; }
     inline void SetMaxCll(int value) { m_maxCllHasBeenSet = true; m_maxCll = value; }
     inline DolbyVisionLevel6Metadata& WithMaxCll(int value) { SetMaxCll(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the
      * highest frame-average brightness in the entire stream. Measured in nits.
      */
-    inline int GetMaxFall() const{ return m_maxFall; }
+    inline int GetMaxFall() const { return m_maxFall; }
     inline bool MaxFallHasBeenSet() const { return m_maxFallHasBeenSet; }
     inline void SetMaxFall(int value) { m_maxFallHasBeenSet = true; m_maxFall = value; }
     inline DolbyVisionLevel6Metadata& WithMaxFall(int value) { SetMaxFall(value); return *this;}
     ///@}
   private:
 
-    int m_maxCll;
+    int m_maxCll{0};
     bool m_maxCllHasBeenSet = false;
 
-    int m_maxFall;
+    int m_maxFall{0};
     bool m_maxFallHasBeenSet = false;
   };
 

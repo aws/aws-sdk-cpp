@@ -28,7 +28,7 @@ namespace Model
   class UpdateWorkspaceResult
   {
   public:
-    AWS_IOTTWINMAKER_API UpdateWorkspaceResult();
+    AWS_IOTTWINMAKER_API UpdateWorkspaceResult() = default;
     AWS_IOTTWINMAKER_API UpdateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API UpdateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The date and time of the current update.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTime = value; }
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTime = std::move(value); }
-    inline UpdateWorkspaceResult& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-    inline UpdateWorkspaceResult& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const { return m_updateDateTime; }
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    void SetUpdateDateTime(UpdateDateTimeT&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::forward<UpdateDateTimeT>(value); }
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    UpdateWorkspaceResult& WithUpdateDateTime(UpdateDateTimeT&& value) { SetUpdateDateTime(std::forward<UpdateDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkspaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkspaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkspaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkspaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_updateDateTime;
+    Aws::Utils::DateTime m_updateDateTime{};
+    bool m_updateDateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

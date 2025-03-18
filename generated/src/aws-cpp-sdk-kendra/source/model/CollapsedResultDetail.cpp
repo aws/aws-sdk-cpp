@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-CollapsedResultDetail::CollapsedResultDetail() : 
-    m_documentAttributeHasBeenSet(false),
-    m_expandedResultsHasBeenSet(false)
-{
-}
-
 CollapsedResultDetail::CollapsedResultDetail(JsonView jsonValue)
-  : CollapsedResultDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CollapsedResultDetail& CollapsedResultDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentAttribute"))
   {
     m_documentAttribute = jsonValue.GetObject("DocumentAttribute");
-
     m_documentAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpandedResults"))
   {
     Aws::Utils::Array<JsonView> expandedResultsJsonList = jsonValue.GetArray("ExpandedResults");
@@ -48,7 +39,6 @@ CollapsedResultDetail& CollapsedResultDetail::operator =(JsonView jsonValue)
     }
     m_expandedResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

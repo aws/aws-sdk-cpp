@@ -18,15 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-S3ImportSource::S3ImportSource() : 
-    m_s3LocationUriHasBeenSet(false),
-    m_s3BucketRegionHasBeenSet(false),
-    m_s3BucketAccessRoleArnHasBeenSet(false)
-{
-}
-
 S3ImportSource::S3ImportSource(JsonView jsonValue)
-  : S3ImportSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3ImportSource& S3ImportSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3LocationUri"))
   {
     m_s3LocationUri = jsonValue.GetString("S3LocationUri");
-
     m_s3LocationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketRegion"))
   {
     m_s3BucketRegion = jsonValue.GetString("S3BucketRegion");
-
     m_s3BucketRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketAccessRoleArn"))
   {
     m_s3BucketAccessRoleArn = jsonValue.GetString("S3BucketAccessRoleArn");
-
     m_s3BucketAccessRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

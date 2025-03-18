@@ -16,35 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStyleDescriptorResult::GetStyleDescriptorResult()
-{
-}
-
-GetStyleDescriptorResult::GetStyleDescriptorResult(GetStyleDescriptorResult&& toMove) : 
-    m_blob(std::move(toMove.m_blob)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_cacheControl(std::move(toMove.m_cacheControl)),
-    m_eTag(std::move(toMove.m_eTag)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetStyleDescriptorResult& GetStyleDescriptorResult::operator=(GetStyleDescriptorResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_blob = std::move(toMove.m_blob);
-   m_contentType = std::move(toMove.m_contentType);
-   m_cacheControl = std::move(toMove.m_cacheControl);
-   m_eTag = std::move(toMove.m_eTag);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetStyleDescriptorResult::GetStyleDescriptorResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -53,30 +24,35 @@ GetStyleDescriptorResult::GetStyleDescriptorResult(Aws::AmazonWebServiceResult<R
 GetStyleDescriptorResult& GetStyleDescriptorResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_blob = result.TakeOwnershipOfPayload();
+  m_blobHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& cacheControlIter = headers.find("cache-control");
   if(cacheControlIter != headers.end())
   {
     m_cacheControl = cacheControlIter->second;
+    m_cacheControlHasBeenSet = true;
   }
 
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

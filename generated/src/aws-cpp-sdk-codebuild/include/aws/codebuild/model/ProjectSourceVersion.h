@@ -32,7 +32,7 @@ namespace Model
   class ProjectSourceVersion
   {
   public:
-    AWS_CODEBUILD_API ProjectSourceVersion();
+    AWS_CODEBUILD_API ProjectSourceVersion() = default;
     AWS_CODEBUILD_API ProjectSourceVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectSourceVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * contain alphanumeric characters and underscores, and must be less than 128
      * characters in length. </p>
      */
-    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
-    inline ProjectSourceVersion& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
-    inline ProjectSourceVersion& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
-    inline ProjectSourceVersion& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+    template<typename SourceIdentifierT = Aws::String>
+    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
+    template<typename SourceIdentifierT = Aws::String>
+    ProjectSourceVersion& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
-    inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+    inline const Aws::String& GetSourceVersion() const { return m_sourceVersion; }
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
-    inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
-    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
-    inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
-    inline ProjectSourceVersion& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
-    inline ProjectSourceVersion& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
-    inline ProjectSourceVersion& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
+    template<typename SourceVersionT = Aws::String>
+    void SetSourceVersion(SourceVersionT&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::forward<SourceVersionT>(value); }
+    template<typename SourceVersionT = Aws::String>
+    ProjectSourceVersion& WithSourceVersion(SourceVersionT&& value) { SetSourceVersion(std::forward<SourceVersionT>(value)); return *this;}
     ///@}
   private:
 

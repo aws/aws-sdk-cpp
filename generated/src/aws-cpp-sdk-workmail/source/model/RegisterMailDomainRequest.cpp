@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterMailDomainRequest::RegisterMailDomainRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_organizationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String RegisterMailDomainRequest::SerializePayload() const
 {
   JsonValue payload;

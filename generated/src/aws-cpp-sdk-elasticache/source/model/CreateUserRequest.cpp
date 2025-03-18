@@ -10,19 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_userIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_passwordsHasBeenSet(false),
-    m_accessStringHasBeenSet(false),
-    m_noPasswordRequired(false),
-    m_noPasswordRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_authenticationModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

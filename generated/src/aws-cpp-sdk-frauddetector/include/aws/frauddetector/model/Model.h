@@ -32,7 +32,7 @@ namespace Model
   class Model
   {
   public:
-    AWS_FRAUDDETECTOR_API Model();
+    AWS_FRAUDDETECTOR_API Model() = default;
     AWS_FRAUDDETECTOR_API Model(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,103 +42,89 @@ namespace Model
     /**
      * <p>The model ID.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline Model& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline Model& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline Model& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    Model& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model type.</p>
      */
-    inline const ModelTypeEnum& GetModelType() const{ return m_modelType; }
+    inline ModelTypeEnum GetModelType() const { return m_modelType; }
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-    inline void SetModelType(const ModelTypeEnum& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-    inline void SetModelType(ModelTypeEnum&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-    inline Model& WithModelType(const ModelTypeEnum& value) { SetModelType(value); return *this;}
-    inline Model& WithModelType(ModelTypeEnum&& value) { SetModelType(std::move(value)); return *this;}
+    inline void SetModelType(ModelTypeEnum value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
+    inline Model& WithModelType(ModelTypeEnum value) { SetModelType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Model& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Model& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Model& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Model& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the event type.</p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline Model& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline Model& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline Model& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    Model& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp of when the model was created.</p>
      */
-    inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::String& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::String& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::String&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline void SetCreatedTime(const char* value) { m_createdTimeHasBeenSet = true; m_createdTime.assign(value); }
-    inline Model& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
-    inline Model& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
-    inline Model& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
+    template<typename CreatedTimeT = Aws::String>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::String>
+    Model& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp of last time the model was updated.</p>
      */
-    inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::String& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::String& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::String&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline void SetLastUpdatedTime(const char* value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime.assign(value); }
-    inline Model& WithLastUpdatedTime(const Aws::String& value) { SetLastUpdatedTime(value); return *this;}
-    inline Model& WithLastUpdatedTime(Aws::String&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-    inline Model& WithLastUpdatedTime(const char* value) { SetLastUpdatedTime(value); return *this;}
+    template<typename LastUpdatedTimeT = Aws::String>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::String>
+    Model& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the model.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Model& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Model& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Model& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Model& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
 
-    ModelTypeEnum m_modelType;
+    ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
     bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_description;

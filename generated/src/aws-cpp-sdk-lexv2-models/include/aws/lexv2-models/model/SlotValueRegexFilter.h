@@ -32,7 +32,7 @@ namespace Model
   class SlotValueRegexFilter
   {
   public:
-    AWS_LEXMODELSV2_API SlotValueRegexFilter();
+    AWS_LEXMODELSV2_API SlotValueRegexFilter() = default;
     AWS_LEXMODELSV2_API SlotValueRegexFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotValueRegexFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> <li> <p>Wild
      * card (.)</p> </li> </ul>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline SlotValueRegexFilter& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline SlotValueRegexFilter& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline SlotValueRegexFilter& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    SlotValueRegexFilter& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
   private:
 

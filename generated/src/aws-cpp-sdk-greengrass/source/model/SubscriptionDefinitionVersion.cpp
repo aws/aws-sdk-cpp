@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-SubscriptionDefinitionVersion::SubscriptionDefinitionVersion() : 
-    m_subscriptionsHasBeenSet(false)
-{
-}
-
 SubscriptionDefinitionVersion::SubscriptionDefinitionVersion(JsonView jsonValue)
-  : SubscriptionDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SubscriptionDefinitionVersion& SubscriptionDefinitionVersion::operator =(JsonVie
     }
     m_subscriptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

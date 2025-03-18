@@ -36,7 +36,7 @@ namespace Model
   class SpellCorrectionConfiguration
   {
   public:
-    AWS_KENDRA_API SpellCorrectionConfiguration();
+    AWS_KENDRA_API SpellCorrectionConfiguration() = default;
     AWS_KENDRA_API SpellCorrectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SpellCorrectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
      */
-    inline bool GetIncludeQuerySpellCheckSuggestions() const{ return m_includeQuerySpellCheckSuggestions; }
+    inline bool GetIncludeQuerySpellCheckSuggestions() const { return m_includeQuerySpellCheckSuggestions; }
     inline bool IncludeQuerySpellCheckSuggestionsHasBeenSet() const { return m_includeQuerySpellCheckSuggestionsHasBeenSet; }
     inline void SetIncludeQuerySpellCheckSuggestions(bool value) { m_includeQuerySpellCheckSuggestionsHasBeenSet = true; m_includeQuerySpellCheckSuggestions = value; }
     inline SpellCorrectionConfiguration& WithIncludeQuerySpellCheckSuggestions(bool value) { SetIncludeQuerySpellCheckSuggestions(value); return *this;}
     ///@}
   private:
 
-    bool m_includeQuerySpellCheckSuggestions;
+    bool m_includeQuerySpellCheckSuggestions{false};
     bool m_includeQuerySpellCheckSuggestionsHasBeenSet = false;
   };
 

@@ -43,7 +43,7 @@ namespace Model
   class AutoshiftSummary
   {
   public:
-    AWS_ARCZONALSHIFT_API AutoshiftSummary();
+    AWS_ARCZONALSHIFT_API AutoshiftSummary() = default;
     AWS_ARCZONALSHIFT_API AutoshiftSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API AutoshiftSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,63 +58,59 @@ namespace Model
      * resource, for example, when Amazon Web Services ends the autoshift for the
      * Availability Zone or when you disable zonal autoshift for the resource.</p>
      */
-    inline const Aws::String& GetAwayFrom() const{ return m_awayFrom; }
+    inline const Aws::String& GetAwayFrom() const { return m_awayFrom; }
     inline bool AwayFromHasBeenSet() const { return m_awayFromHasBeenSet; }
-    inline void SetAwayFrom(const Aws::String& value) { m_awayFromHasBeenSet = true; m_awayFrom = value; }
-    inline void SetAwayFrom(Aws::String&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::move(value); }
-    inline void SetAwayFrom(const char* value) { m_awayFromHasBeenSet = true; m_awayFrom.assign(value); }
-    inline AutoshiftSummary& WithAwayFrom(const Aws::String& value) { SetAwayFrom(value); return *this;}
-    inline AutoshiftSummary& WithAwayFrom(Aws::String&& value) { SetAwayFrom(std::move(value)); return *this;}
-    inline AutoshiftSummary& WithAwayFrom(const char* value) { SetAwayFrom(value); return *this;}
+    template<typename AwayFromT = Aws::String>
+    void SetAwayFrom(AwayFromT&& value) { m_awayFromHasBeenSet = true; m_awayFrom = std::forward<AwayFromT>(value); }
+    template<typename AwayFromT = Aws::String>
+    AutoshiftSummary& WithAwayFrom(AwayFromT&& value) { SetAwayFrom(std::forward<AwayFromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time (in UTC) when the autoshift ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline AutoshiftSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline AutoshiftSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    AutoshiftSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time (in UTC) when the autoshift started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline AutoshiftSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline AutoshiftSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    AutoshiftSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for an autoshift. </p>
      */
-    inline const AutoshiftExecutionStatus& GetStatus() const{ return m_status; }
+    inline AutoshiftExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutoshiftExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutoshiftExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AutoshiftSummary& WithStatus(const AutoshiftExecutionStatus& value) { SetStatus(value); return *this;}
-    inline AutoshiftSummary& WithStatus(AutoshiftExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AutoshiftExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AutoshiftSummary& WithStatus(AutoshiftExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_awayFrom;
     bool m_awayFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    AutoshiftExecutionStatus m_status;
+    AutoshiftExecutionStatus m_status{AutoshiftExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

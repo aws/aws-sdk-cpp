@@ -31,7 +31,7 @@ namespace Model
   class GroupOwnerSetting
   {
   public:
-    AWS_GREENGRASS_API GroupOwnerSetting();
+    AWS_GREENGRASS_API GroupOwnerSetting() = default;
     AWS_GREENGRASS_API GroupOwnerSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API GroupOwnerSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * owner of the resource to the Lambda process privileges. Thus the Lambda process
      * will have the file access permissions of the added Linux group.
      */
-    inline bool GetAutoAddGroupOwner() const{ return m_autoAddGroupOwner; }
+    inline bool GetAutoAddGroupOwner() const { return m_autoAddGroupOwner; }
     inline bool AutoAddGroupOwnerHasBeenSet() const { return m_autoAddGroupOwnerHasBeenSet; }
     inline void SetAutoAddGroupOwner(bool value) { m_autoAddGroupOwnerHasBeenSet = true; m_autoAddGroupOwner = value; }
     inline GroupOwnerSetting& WithAutoAddGroupOwner(bool value) { SetAutoAddGroupOwner(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * The name of the Linux OS group whose privileges will be added to the Lambda
      * process. This field is optional.
      */
-    inline const Aws::String& GetGroupOwner() const{ return m_groupOwner; }
+    inline const Aws::String& GetGroupOwner() const { return m_groupOwner; }
     inline bool GroupOwnerHasBeenSet() const { return m_groupOwnerHasBeenSet; }
-    inline void SetGroupOwner(const Aws::String& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = value; }
-    inline void SetGroupOwner(Aws::String&& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = std::move(value); }
-    inline void SetGroupOwner(const char* value) { m_groupOwnerHasBeenSet = true; m_groupOwner.assign(value); }
-    inline GroupOwnerSetting& WithGroupOwner(const Aws::String& value) { SetGroupOwner(value); return *this;}
-    inline GroupOwnerSetting& WithGroupOwner(Aws::String&& value) { SetGroupOwner(std::move(value)); return *this;}
-    inline GroupOwnerSetting& WithGroupOwner(const char* value) { SetGroupOwner(value); return *this;}
+    template<typename GroupOwnerT = Aws::String>
+    void SetGroupOwner(GroupOwnerT&& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = std::forward<GroupOwnerT>(value); }
+    template<typename GroupOwnerT = Aws::String>
+    GroupOwnerSetting& WithGroupOwner(GroupOwnerT&& value) { SetGroupOwner(std::forward<GroupOwnerT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoAddGroupOwner;
+    bool m_autoAddGroupOwner{false};
     bool m_autoAddGroupOwnerHasBeenSet = false;
 
     Aws::String m_groupOwner;

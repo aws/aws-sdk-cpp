@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceConnectService::ServiceConnectService() : 
-    m_portNameHasBeenSet(false),
-    m_discoveryNameHasBeenSet(false),
-    m_clientAliasesHasBeenSet(false),
-    m_ingressPortOverride(0),
-    m_ingressPortOverrideHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tlsHasBeenSet(false)
-{
-}
-
 ServiceConnectService::ServiceConnectService(JsonView jsonValue)
-  : ServiceConnectService()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ ServiceConnectService& ServiceConnectService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("portName"))
   {
     m_portName = jsonValue.GetString("portName");
-
     m_portNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("discoveryName"))
   {
     m_discoveryName = jsonValue.GetString("discoveryName");
-
     m_discoveryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientAliases"))
   {
     Aws::Utils::Array<JsonView> clientAliasesJsonList = jsonValue.GetArray("clientAliases");
@@ -60,28 +44,21 @@ ServiceConnectService& ServiceConnectService::operator =(JsonView jsonValue)
     }
     m_clientAliasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingressPortOverride"))
   {
     m_ingressPortOverride = jsonValue.GetInteger("ingressPortOverride");
-
     m_ingressPortOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetObject("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

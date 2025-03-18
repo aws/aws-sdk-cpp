@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FilterCriterion::FilterCriterion() : 
-    m_criterionKey(CriterionKey::NOT_SET),
-    m_criterionKeyHasBeenSet(false),
-    m_filterConditionHasBeenSet(false)
-{
-}
-
 FilterCriterion::FilterCriterion(JsonView jsonValue)
-  : FilterCriterion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FilterCriterion& FilterCriterion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("criterionKey"))
   {
     m_criterionKey = CriterionKeyMapper::GetCriterionKeyForName(jsonValue.GetString("criterionKey"));
-
     m_criterionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterCondition"))
   {
     m_filterCondition = jsonValue.GetObject("filterCondition");
-
     m_filterConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

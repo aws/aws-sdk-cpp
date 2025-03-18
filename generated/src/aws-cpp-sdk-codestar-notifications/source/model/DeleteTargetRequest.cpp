@@ -12,13 +12,6 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTargetRequest::DeleteTargetRequest() : 
-    m_targetAddressHasBeenSet(false),
-    m_forceUnsubscribeAll(false),
-    m_forceUnsubscribeAllHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTargetRequest::SerializePayload() const
 {
   JsonValue payload;

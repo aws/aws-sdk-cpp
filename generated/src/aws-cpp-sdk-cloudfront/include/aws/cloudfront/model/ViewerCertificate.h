@@ -72,7 +72,7 @@ namespace Model
   class ViewerCertificate
   {
   public:
-    AWS_CLOUDFRONT_API ViewerCertificate();
+    AWS_CLOUDFRONT_API ViewerCertificate() = default;
     AWS_CLOUDFRONT_API ViewerCertificate(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ViewerCertificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -90,7 +90,7 @@ namespace Model
      * for one, not both)</p> </li> <li> <p> <code>MinimumProtocolVersion</code> </p>
      * </li> <li> <p> <code>SSLSupportMethod</code> </p> </li> </ul>
      */
-    inline bool GetCloudFrontDefaultCertificate() const{ return m_cloudFrontDefaultCertificate; }
+    inline bool GetCloudFrontDefaultCertificate() const { return m_cloudFrontDefaultCertificate; }
     inline bool CloudFrontDefaultCertificateHasBeenSet() const { return m_cloudFrontDefaultCertificateHasBeenSet; }
     inline void SetCloudFrontDefaultCertificate(bool value) { m_cloudFrontDefaultCertificateHasBeenSet = true; m_cloudFrontDefaultCertificate = value; }
     inline ViewerCertificate& WithCloudFrontDefaultCertificate(bool value) { SetCloudFrontDefaultCertificate(value); return *this;}
@@ -105,14 +105,12 @@ namespace Model
      * <p>If you specify an IAM certificate ID, you must also specify values for
      * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
      */
-    inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
+    inline const Aws::String& GetIAMCertificateId() const { return m_iAMCertificateId; }
     inline bool IAMCertificateIdHasBeenSet() const { return m_iAMCertificateIdHasBeenSet; }
-    inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
-    inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = std::move(value); }
-    inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
-    inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
-    inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(std::move(value)); return *this;}
-    inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
+    template<typename IAMCertificateIdT = Aws::String>
+    void SetIAMCertificateId(IAMCertificateIdT&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = std::forward<IAMCertificateIdT>(value); }
+    template<typename IAMCertificateIdT = Aws::String>
+    ViewerCertificate& WithIAMCertificateId(IAMCertificateIdT&& value) { SetIAMCertificateId(std::forward<IAMCertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +124,12 @@ namespace Model
      * certificate ARN, you must also specify values for
      * <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
      */
-    inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
+    inline const Aws::String& GetACMCertificateArn() const { return m_aCMCertificateArn; }
     inline bool ACMCertificateArnHasBeenSet() const { return m_aCMCertificateArnHasBeenSet; }
-    inline void SetACMCertificateArn(const Aws::String& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
-    inline void SetACMCertificateArn(Aws::String&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = std::move(value); }
-    inline void SetACMCertificateArn(const char* value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn.assign(value); }
-    inline ViewerCertificate& WithACMCertificateArn(const Aws::String& value) { SetACMCertificateArn(value); return *this;}
-    inline ViewerCertificate& WithACMCertificateArn(Aws::String&& value) { SetACMCertificateArn(std::move(value)); return *this;}
-    inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
+    template<typename ACMCertificateArnT = Aws::String>
+    void SetACMCertificateArn(ACMCertificateArnT&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = std::forward<ACMCertificateArnT>(value); }
+    template<typename ACMCertificateArnT = Aws::String>
+    ViewerCertificate& WithACMCertificateArn(ACMCertificateArnT&& value) { SetACMCertificateArn(std::forward<ACMCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,12 +152,10 @@ namespace Model
      * name such as <code>d111111abcdef8.cloudfront.net</code>, don't set a value for
      * this field.</p>
      */
-    inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
+    inline SSLSupportMethod GetSSLSupportMethod() const { return m_sSLSupportMethod; }
     inline bool SSLSupportMethodHasBeenSet() const { return m_sSLSupportMethodHasBeenSet; }
-    inline void SetSSLSupportMethod(const SSLSupportMethod& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
-    inline void SetSSLSupportMethod(SSLSupportMethod&& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = std::move(value); }
-    inline ViewerCertificate& WithSSLSupportMethod(const SSLSupportMethod& value) { SetSSLSupportMethod(value); return *this;}
-    inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
+    inline void SetSSLSupportMethod(SSLSupportMethod value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
+    inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod value) { SetSSLSupportMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -186,16 +180,14 @@ namespace Model
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
-    inline const MinimumProtocolVersion& GetMinimumProtocolVersion() const{ return m_minimumProtocolVersion; }
+    inline MinimumProtocolVersion GetMinimumProtocolVersion() const { return m_minimumProtocolVersion; }
     inline bool MinimumProtocolVersionHasBeenSet() const { return m_minimumProtocolVersionHasBeenSet; }
-    inline void SetMinimumProtocolVersion(const MinimumProtocolVersion& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = value; }
-    inline void SetMinimumProtocolVersion(MinimumProtocolVersion&& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = std::move(value); }
-    inline ViewerCertificate& WithMinimumProtocolVersion(const MinimumProtocolVersion& value) { SetMinimumProtocolVersion(value); return *this;}
-    inline ViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersion&& value) { SetMinimumProtocolVersion(std::move(value)); return *this;}
+    inline void SetMinimumProtocolVersion(MinimumProtocolVersion value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = value; }
+    inline ViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersion value) { SetMinimumProtocolVersion(value); return *this;}
     ///@}
   private:
 
-    bool m_cloudFrontDefaultCertificate;
+    bool m_cloudFrontDefaultCertificate{false};
     bool m_cloudFrontDefaultCertificateHasBeenSet = false;
 
     Aws::String m_iAMCertificateId;
@@ -204,10 +196,10 @@ namespace Model
     Aws::String m_aCMCertificateArn;
     bool m_aCMCertificateArnHasBeenSet = false;
 
-    SSLSupportMethod m_sSLSupportMethod;
+    SSLSupportMethod m_sSLSupportMethod{SSLSupportMethod::NOT_SET};
     bool m_sSLSupportMethodHasBeenSet = false;
 
-    MinimumProtocolVersion m_minimumProtocolVersion;
+    MinimumProtocolVersion m_minimumProtocolVersion{MinimumProtocolVersion::NOT_SET};
     bool m_minimumProtocolVersionHasBeenSet = false;
   };
 

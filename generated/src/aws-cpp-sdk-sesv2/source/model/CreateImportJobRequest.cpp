@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImportJobRequest::CreateImportJobRequest() : 
-    m_importDestinationHasBeenSet(false),
-    m_importDataSourceHasBeenSet(false)
-{
-}
-
 Aws::String CreateImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

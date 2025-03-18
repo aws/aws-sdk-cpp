@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRepositoryTriggersResult::GetRepositoryTriggersResult()
-{
-}
-
 GetRepositoryTriggersResult::GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator =(const Aws::
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
-
+    m_configurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggers"))
   {
     Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
@@ -42,14 +37,15 @@ GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator =(const Aws::
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
     }
+    m_triggersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

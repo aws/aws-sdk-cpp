@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-RuleUpdateFailure::RuleUpdateFailure() : 
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false)
-{
-}
-
 RuleUpdateFailure::RuleUpdateFailure(JsonView jsonValue)
-  : RuleUpdateFailure()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RuleUpdateFailure& RuleUpdateFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleIdentifier"))
   {
     m_ruleIdentifier = jsonValue.GetString("ruleIdentifier");
-
     m_ruleIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

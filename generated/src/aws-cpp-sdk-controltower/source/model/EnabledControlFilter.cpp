@@ -18,15 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-EnabledControlFilter::EnabledControlFilter() : 
-    m_controlIdentifiersHasBeenSet(false),
-    m_driftStatusesHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 EnabledControlFilter::EnabledControlFilter(JsonView jsonValue)
-  : EnabledControlFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EnabledControlFilter& EnabledControlFilter::operator =(JsonView jsonValue)
     }
     m_controlIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driftStatuses"))
   {
     Aws::Utils::Array<JsonView> driftStatusesJsonList = jsonValue.GetArray("driftStatuses");
@@ -52,7 +43,6 @@ EnabledControlFilter& EnabledControlFilter::operator =(JsonView jsonValue)
     }
     m_driftStatusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statuses"))
   {
     Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
@@ -62,7 +52,6 @@ EnabledControlFilter& EnabledControlFilter::operator =(JsonView jsonValue)
     }
     m_statusesHasBeenSet = true;
   }
-
   return *this;
 }
 

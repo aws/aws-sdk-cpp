@@ -33,7 +33,7 @@ namespace Model
   class CostAllocationTagStatusEntry
   {
   public:
-    AWS_COSTEXPLORER_API CostAllocationTagStatusEntry();
+    AWS_COSTEXPLORER_API CostAllocationTagStatusEntry() = default;
     AWS_COSTEXPLORER_API CostAllocationTagStatusEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CostAllocationTagStatusEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The key for the cost allocation tag. </p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline CostAllocationTagStatusEntry& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline CostAllocationTagStatusEntry& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline CostAllocationTagStatusEntry& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    CostAllocationTagStatusEntry& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a cost allocation tag. </p>
      */
-    inline const CostAllocationTagStatus& GetStatus() const{ return m_status; }
+    inline CostAllocationTagStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CostAllocationTagStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CostAllocationTagStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CostAllocationTagStatusEntry& WithStatus(const CostAllocationTagStatus& value) { SetStatus(value); return *this;}
-    inline CostAllocationTagStatusEntry& WithStatus(CostAllocationTagStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CostAllocationTagStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CostAllocationTagStatusEntry& WithStatus(CostAllocationTagStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_tagKey;
     bool m_tagKeyHasBeenSet = false;
 
-    CostAllocationTagStatus m_status;
+    CostAllocationTagStatus m_status{CostAllocationTagStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

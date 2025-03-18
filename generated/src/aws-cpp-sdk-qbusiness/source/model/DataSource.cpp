@@ -18,19 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_displayNameHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,26 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelRequest::CreateModelRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetSchemaHasBeenSet(false),
-    m_labelsInputConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_trainingDataStartTimeHasBeenSet(false),
-    m_trainingDataEndTimeHasBeenSet(false),
-    m_evaluationDataStartTimeHasBeenSet(false),
-    m_evaluationDataEndTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataPreProcessingConfigurationHasBeenSet(false),
-    m_serverSideKmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_offConditionHasBeenSet(false),
-    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelRequest::SerializePayload() const
 {
   JsonValue payload;

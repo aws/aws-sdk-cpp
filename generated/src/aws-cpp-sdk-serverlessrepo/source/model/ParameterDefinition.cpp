@@ -18,30 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-ParameterDefinition::ParameterDefinition() : 
-    m_allowedPatternHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_constraintDescriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_minLength(0),
-    m_minLengthHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_referencedByResourcesHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ParameterDefinition::ParameterDefinition(JsonView jsonValue)
-  : ParameterDefinition()
 {
   *this = jsonValue;
 }
@@ -51,10 +28,8 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowedPattern"))
   {
     m_allowedPattern = jsonValue.GetString("allowedPattern");
-
     m_allowedPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
@@ -64,70 +39,51 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("constraintDescription"))
   {
     m_constraintDescription = jsonValue.GetString("constraintDescription");
-
     m_constraintDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxLength"))
   {
     m_maxLength = jsonValue.GetInteger("maxLength");
-
     m_maxLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxValue"))
   {
     m_maxValue = jsonValue.GetInteger("maxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minLength"))
   {
     m_minLength = jsonValue.GetInteger("minLength");
-
     m_minLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minValue"))
   {
     m_minValue = jsonValue.GetInteger("minValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noEcho"))
   {
     m_noEcho = jsonValue.GetBool("noEcho");
-
     m_noEchoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referencedByResources"))
   {
     Aws::Utils::Array<JsonView> referencedByResourcesJsonList = jsonValue.GetArray("referencedByResources");
@@ -137,14 +93,11 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
     }
     m_referencedByResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class PutInvocationStepResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PutInvocationStepResult();
+    AWS_BEDROCKAGENTRUNTIME_API PutInvocationStepResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API PutInvocationStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API PutInvocationStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of the invocation step in UUID format.</p>
      */
-    inline const Aws::String& GetInvocationStepId() const{ return m_invocationStepId; }
-    inline void SetInvocationStepId(const Aws::String& value) { m_invocationStepId = value; }
-    inline void SetInvocationStepId(Aws::String&& value) { m_invocationStepId = std::move(value); }
-    inline void SetInvocationStepId(const char* value) { m_invocationStepId.assign(value); }
-    inline PutInvocationStepResult& WithInvocationStepId(const Aws::String& value) { SetInvocationStepId(value); return *this;}
-    inline PutInvocationStepResult& WithInvocationStepId(Aws::String&& value) { SetInvocationStepId(std::move(value)); return *this;}
-    inline PutInvocationStepResult& WithInvocationStepId(const char* value) { SetInvocationStepId(value); return *this;}
+    inline const Aws::String& GetInvocationStepId() const { return m_invocationStepId; }
+    template<typename InvocationStepIdT = Aws::String>
+    void SetInvocationStepId(InvocationStepIdT&& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = std::forward<InvocationStepIdT>(value); }
+    template<typename InvocationStepIdT = Aws::String>
+    PutInvocationStepResult& WithInvocationStepId(InvocationStepIdT&& value) { SetInvocationStepId(std::forward<InvocationStepIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutInvocationStepResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutInvocationStepResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutInvocationStepResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutInvocationStepResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_invocationStepId;
+    bool m_invocationStepIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

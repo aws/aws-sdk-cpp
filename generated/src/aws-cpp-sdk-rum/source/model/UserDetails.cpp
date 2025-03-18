@@ -18,14 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-UserDetails::UserDetails() : 
-    m_sessionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 UserDetails::UserDetails(JsonView jsonValue)
-  : UserDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserDetails& UserDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

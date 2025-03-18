@@ -30,7 +30,7 @@ namespace Model
   class UpdateTaskRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateTaskRequest();
+    AWS_DATASYNC_API UpdateTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,24 +47,22 @@ namespace Model
     /**
      * <p>Specifies the ARN of the task that you want to update.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-    inline UpdateTaskRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline UpdateTaskRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline UpdateTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    UpdateTaskRequest& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Options& GetOptions() const{ return m_options; }
+    inline const Options& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline UpdateTaskRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
-    inline UpdateTaskRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = Options>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Options>
+    UpdateTaskRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
      * what DataSync transfers by using filters</a>.</p>
      */
-    inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
+    inline const Aws::Vector<FilterRule>& GetExcludes() const { return m_excludes; }
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-    inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-    inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-    inline UpdateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
-    inline UpdateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
-    inline UpdateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
-    inline UpdateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
+    template<typename ExcludesT = Aws::Vector<FilterRule>>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = Aws::Vector<FilterRule>>
+    UpdateTaskRequest& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
+    template<typename ExcludesT = FilterRule>
+    UpdateTaskRequest& AddExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes.emplace_back(std::forward<ExcludesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,26 +90,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
      */
-    inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
+    inline const TaskSchedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline UpdateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
-    inline UpdateTaskRequest& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = TaskSchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = TaskSchedule>
+    UpdateTaskRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the name of your task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateTaskRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTaskRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTaskRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTaskRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +120,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring
      * data transfers with CloudWatch Logs</a>.</p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
+    inline const Aws::String& GetCloudWatchLogGroupArn() const { return m_cloudWatchLogGroupArn; }
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
-    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
-    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
-    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
-    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
-    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    void SetCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::forward<CloudWatchLogGroupArnT>(value); }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    UpdateTaskRequest& WithCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { SetCloudWatchLogGroupArn(std::forward<CloudWatchLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +136,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
      * what DataSync transfers by using filters</a>.</p>
      */
-    inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
+    inline const Aws::Vector<FilterRule>& GetIncludes() const { return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-    inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
-    inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-    inline UpdateTaskRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
-    inline UpdateTaskRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
-    inline UpdateTaskRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
-    inline UpdateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
+    template<typename IncludesT = Aws::Vector<FilterRule>>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = Aws::Vector<FilterRule>>
+    UpdateTaskRequest& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
+    template<typename IncludesT = FilterRule>
+    UpdateTaskRequest& AddIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes.emplace_back(std::forward<IncludesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -164,12 +158,12 @@ namespace Model
      * policy includes this permission.</p> <p>To remove a manifest configuration,
      * specify this parameter as empty.</p>
      */
-    inline const ManifestConfig& GetManifestConfig() const{ return m_manifestConfig; }
+    inline const ManifestConfig& GetManifestConfig() const { return m_manifestConfig; }
     inline bool ManifestConfigHasBeenSet() const { return m_manifestConfigHasBeenSet; }
-    inline void SetManifestConfig(const ManifestConfig& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = value; }
-    inline void SetManifestConfig(ManifestConfig&& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = std::move(value); }
-    inline UpdateTaskRequest& WithManifestConfig(const ManifestConfig& value) { SetManifestConfig(value); return *this;}
-    inline UpdateTaskRequest& WithManifestConfig(ManifestConfig&& value) { SetManifestConfig(std::move(value)); return *this;}
+    template<typename ManifestConfigT = ManifestConfig>
+    void SetManifestConfig(ManifestConfigT&& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = std::forward<ManifestConfigT>(value); }
+    template<typename ManifestConfigT = ManifestConfig>
+    UpdateTaskRequest& WithManifestConfig(ManifestConfigT&& value) { SetManifestConfig(std::forward<ManifestConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,12 +178,12 @@ namespace Model
      * policy includes this permission.</p> <p>To remove a task report configuration,
      * specify this parameter as empty.</p>
      */
-    inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
+    inline const TaskReportConfig& GetTaskReportConfig() const { return m_taskReportConfig; }
     inline bool TaskReportConfigHasBeenSet() const { return m_taskReportConfigHasBeenSet; }
-    inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = value; }
-    inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::move(value); }
-    inline UpdateTaskRequest& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
-    inline UpdateTaskRequest& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
+    template<typename TaskReportConfigT = TaskReportConfig>
+    void SetTaskReportConfig(TaskReportConfigT&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::forward<TaskReportConfigT>(value); }
+    template<typename TaskReportConfigT = TaskReportConfig>
+    UpdateTaskRequest& WithTaskReportConfig(TaskReportConfigT&& value) { SetTaskReportConfig(std::forward<TaskReportConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-ExecutionStatus::ExecutionStatus() : 
-    m_timestampHasBeenSet(false),
-    m_status(AnomalyDetectionTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 ExecutionStatus::ExecutionStatus(JsonView jsonValue)
-  : ExecutionStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecutionStatus& ExecutionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetString("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AnomalyDetectionTaskStatusMapper::GetAnomalyDetectionTaskStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

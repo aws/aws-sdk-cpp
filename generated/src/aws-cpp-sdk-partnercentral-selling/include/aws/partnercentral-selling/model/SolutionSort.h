@@ -33,7 +33,7 @@ namespace Model
   class SolutionSort
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API SolutionSort();
+    AWS_PARTNERCENTRALSELLING_API SolutionSort() = default;
     AWS_PARTNERCENTRALSELLING_API SolutionSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API SolutionSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Specifies the attribute to sort by, such as <code>Name</code>,
      * <code>CreatedDate</code>, or <code>Status</code>.</p>
      */
-    inline const SolutionSortName& GetSortBy() const{ return m_sortBy; }
+    inline SolutionSortName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SolutionSortName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SolutionSortName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline SolutionSort& WithSortBy(const SolutionSortName& value) { SetSortBy(value); return *this;}
-    inline SolutionSort& WithSortBy(SolutionSortName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SolutionSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline SolutionSort& WithSortBy(SolutionSortName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * <p>Specifies the sorting order, either <code>Ascending</code> or
      * <code>Descending</code>. The default is <code>Descending</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SolutionSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline SolutionSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SolutionSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    SolutionSortName m_sortBy;
+    SolutionSortName m_sortBy{SolutionSortName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

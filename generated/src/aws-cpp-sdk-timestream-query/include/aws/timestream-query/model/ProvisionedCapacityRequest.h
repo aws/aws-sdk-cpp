@@ -32,7 +32,7 @@ namespace Model
   class ProvisionedCapacityRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API ProvisionedCapacityRequest();
+    AWS_TIMESTREAMQUERY_API ProvisionedCapacityRequest() = default;
     AWS_TIMESTREAMQUERY_API ProvisionedCapacityRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ProvisionedCapacityRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The target compute capacity for querying data, specified in Timestream
      * Compute Units (TCUs).</p>
      */
-    inline int GetTargetQueryTCU() const{ return m_targetQueryTCU; }
+    inline int GetTargetQueryTCU() const { return m_targetQueryTCU; }
     inline bool TargetQueryTCUHasBeenSet() const { return m_targetQueryTCUHasBeenSet; }
     inline void SetTargetQueryTCU(int value) { m_targetQueryTCUHasBeenSet = true; m_targetQueryTCU = value; }
     inline ProvisionedCapacityRequest& WithTargetQueryTCU(int value) { SetTargetQueryTCU(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
      * <p>Configuration settings for notifications related to the provisioned capacity
      * update.</p>
      */
-    inline const AccountSettingsNotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+    inline const AccountSettingsNotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-    inline void SetNotificationConfiguration(const AccountSettingsNotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-    inline void SetNotificationConfiguration(AccountSettingsNotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-    inline ProvisionedCapacityRequest& WithNotificationConfiguration(const AccountSettingsNotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-    inline ProvisionedCapacityRequest& WithNotificationConfiguration(AccountSettingsNotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    template<typename NotificationConfigurationT = AccountSettingsNotificationConfiguration>
+    void SetNotificationConfiguration(NotificationConfigurationT&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::forward<NotificationConfigurationT>(value); }
+    template<typename NotificationConfigurationT = AccountSettingsNotificationConfiguration>
+    ProvisionedCapacityRequest& WithNotificationConfiguration(NotificationConfigurationT&& value) { SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_targetQueryTCU;
+    int m_targetQueryTCU{0};
     bool m_targetQueryTCUHasBeenSet = false;
 
     AccountSettingsNotificationConfiguration m_notificationConfiguration;

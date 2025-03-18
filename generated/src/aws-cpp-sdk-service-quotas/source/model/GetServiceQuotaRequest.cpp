@@ -12,13 +12,6 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceQuotaRequest::GetServiceQuotaRequest() : 
-    m_serviceCodeHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_contextIdHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceQuotaRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class StartExecutionPreviewRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API StartExecutionPreviewRequest();
+    AWS_SSM_API StartExecutionPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the Automation runbook to run. The result of the execution
      * preview indicates what the impact would be of running this runbook.</p>
      */
-    inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+    inline const Aws::String& GetDocumentName() const { return m_documentName; }
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
-    inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
-    inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
-    inline StartExecutionPreviewRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-    inline StartExecutionPreviewRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-    inline StartExecutionPreviewRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    template<typename DocumentNameT = Aws::String>
+    void SetDocumentName(DocumentNameT&& value) { m_documentNameHasBeenSet = true; m_documentName = std::forward<DocumentNameT>(value); }
+    template<typename DocumentNameT = Aws::String>
+    StartExecutionPreviewRequest& WithDocumentName(DocumentNameT&& value) { SetDocumentName(std::forward<DocumentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The version of the Automation runbook to run. The default value is
      * <code>$DEFAULT</code>.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline StartExecutionPreviewRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline StartExecutionPreviewRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline StartExecutionPreviewRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    StartExecutionPreviewRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,12 @@ namespace Model
      * <p>Information about the inputs that can be specified for the preview operation.
      * </p>
      */
-    inline const ExecutionInputs& GetExecutionInputs() const{ return m_executionInputs; }
+    inline const ExecutionInputs& GetExecutionInputs() const { return m_executionInputs; }
     inline bool ExecutionInputsHasBeenSet() const { return m_executionInputsHasBeenSet; }
-    inline void SetExecutionInputs(const ExecutionInputs& value) { m_executionInputsHasBeenSet = true; m_executionInputs = value; }
-    inline void SetExecutionInputs(ExecutionInputs&& value) { m_executionInputsHasBeenSet = true; m_executionInputs = std::move(value); }
-    inline StartExecutionPreviewRequest& WithExecutionInputs(const ExecutionInputs& value) { SetExecutionInputs(value); return *this;}
-    inline StartExecutionPreviewRequest& WithExecutionInputs(ExecutionInputs&& value) { SetExecutionInputs(std::move(value)); return *this;}
+    template<typename ExecutionInputsT = ExecutionInputs>
+    void SetExecutionInputs(ExecutionInputsT&& value) { m_executionInputsHasBeenSet = true; m_executionInputs = std::forward<ExecutionInputsT>(value); }
+    template<typename ExecutionInputsT = ExecutionInputs>
+    StartExecutionPreviewRequest& WithExecutionInputs(ExecutionInputsT&& value) { SetExecutionInputs(std::forward<ExecutionInputsT>(value)); return *this;}
     ///@}
   private:
 

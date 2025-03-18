@@ -24,7 +24,7 @@ namespace Model
   class MonitorContactRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API MonitorContactRequest();
+    AWS_CONNECT_API MonitorContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
      * the ARN of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline MonitorContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline MonitorContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline MonitorContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    MonitorContactRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline MonitorContactRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline MonitorContactRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline MonitorContactRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    MonitorContactRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the user account.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline MonitorContactRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline MonitorContactRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline MonitorContactRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    MonitorContactRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,13 @@ namespace Model
      * whether the user is allowed to escalate from silent monitoring to barge.
      * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
-    inline const Aws::Vector<MonitorCapability>& GetAllowedMonitorCapabilities() const{ return m_allowedMonitorCapabilities; }
+    inline const Aws::Vector<MonitorCapability>& GetAllowedMonitorCapabilities() const { return m_allowedMonitorCapabilities; }
     inline bool AllowedMonitorCapabilitiesHasBeenSet() const { return m_allowedMonitorCapabilitiesHasBeenSet; }
-    inline void SetAllowedMonitorCapabilities(const Aws::Vector<MonitorCapability>& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities = value; }
-    inline void SetAllowedMonitorCapabilities(Aws::Vector<MonitorCapability>&& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities = std::move(value); }
-    inline MonitorContactRequest& WithAllowedMonitorCapabilities(const Aws::Vector<MonitorCapability>& value) { SetAllowedMonitorCapabilities(value); return *this;}
-    inline MonitorContactRequest& WithAllowedMonitorCapabilities(Aws::Vector<MonitorCapability>&& value) { SetAllowedMonitorCapabilities(std::move(value)); return *this;}
-    inline MonitorContactRequest& AddAllowedMonitorCapabilities(const MonitorCapability& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities.push_back(value); return *this; }
-    inline MonitorContactRequest& AddAllowedMonitorCapabilities(MonitorCapability&& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities.push_back(std::move(value)); return *this; }
+    template<typename AllowedMonitorCapabilitiesT = Aws::Vector<MonitorCapability>>
+    void SetAllowedMonitorCapabilities(AllowedMonitorCapabilitiesT&& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities = std::forward<AllowedMonitorCapabilitiesT>(value); }
+    template<typename AllowedMonitorCapabilitiesT = Aws::Vector<MonitorCapability>>
+    MonitorContactRequest& WithAllowedMonitorCapabilities(AllowedMonitorCapabilitiesT&& value) { SetAllowedMonitorCapabilities(std::forward<AllowedMonitorCapabilitiesT>(value)); return *this;}
+    inline MonitorContactRequest& AddAllowedMonitorCapabilities(MonitorCapability value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -102,14 +95,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline MonitorContactRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline MonitorContactRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline MonitorContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    MonitorContactRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

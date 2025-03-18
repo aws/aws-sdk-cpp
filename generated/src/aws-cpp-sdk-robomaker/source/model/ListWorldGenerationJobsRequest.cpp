@@ -12,14 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWorldGenerationJobsRequest::ListWorldGenerationJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListWorldGenerationJobsRequest::SerializePayload() const
 {
   JsonValue payload;

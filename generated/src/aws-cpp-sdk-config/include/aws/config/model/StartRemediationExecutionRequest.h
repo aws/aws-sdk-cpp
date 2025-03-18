@@ -23,7 +23,7 @@ namespace Model
   class StartRemediationExecutionRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API StartRemediationExecutionRequest();
+    AWS_CONFIGSERVICE_API StartRemediationExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The list of names of Config rules that you want to run remediation execution
      * for.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline StartRemediationExecutionRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline StartRemediationExecutionRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline StartRemediationExecutionRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    StartRemediationExecutionRequest& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p>A list of resource keys to be processed with the current request. Each
      * element in the list consists of the resource type and resource ID. </p>
      */
-    inline const Aws::Vector<ResourceKey>& GetResourceKeys() const{ return m_resourceKeys; }
+    inline const Aws::Vector<ResourceKey>& GetResourceKeys() const { return m_resourceKeys; }
     inline bool ResourceKeysHasBeenSet() const { return m_resourceKeysHasBeenSet; }
-    inline void SetResourceKeys(const Aws::Vector<ResourceKey>& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = value; }
-    inline void SetResourceKeys(Aws::Vector<ResourceKey>&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = std::move(value); }
-    inline StartRemediationExecutionRequest& WithResourceKeys(const Aws::Vector<ResourceKey>& value) { SetResourceKeys(value); return *this;}
-    inline StartRemediationExecutionRequest& WithResourceKeys(Aws::Vector<ResourceKey>&& value) { SetResourceKeys(std::move(value)); return *this;}
-    inline StartRemediationExecutionRequest& AddResourceKeys(const ResourceKey& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys.push_back(value); return *this; }
-    inline StartRemediationExecutionRequest& AddResourceKeys(ResourceKey&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys.push_back(std::move(value)); return *this; }
+    template<typename ResourceKeysT = Aws::Vector<ResourceKey>>
+    void SetResourceKeys(ResourceKeysT&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = std::forward<ResourceKeysT>(value); }
+    template<typename ResourceKeysT = Aws::Vector<ResourceKey>>
+    StartRemediationExecutionRequest& WithResourceKeys(ResourceKeysT&& value) { SetResourceKeys(std::forward<ResourceKeysT>(value)); return *this;}
+    template<typename ResourceKeysT = ResourceKey>
+    StartRemediationExecutionRequest& AddResourceKeys(ResourceKeysT&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys.emplace_back(std::forward<ResourceKeysT>(value)); return *this; }
     ///@}
   private:
 

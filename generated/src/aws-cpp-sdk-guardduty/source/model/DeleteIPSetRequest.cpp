@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIPSetRequest::DeleteIPSetRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_ipSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIPSetRequest::SerializePayload() const
 {
   return {};

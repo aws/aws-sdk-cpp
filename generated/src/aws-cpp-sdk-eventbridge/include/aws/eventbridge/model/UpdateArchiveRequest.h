@@ -21,7 +21,7 @@ namespace Model
   class UpdateArchiveRequest : public EventBridgeRequest
   {
   public:
-    AWS_EVENTBRIDGE_API UpdateArchiveRequest();
+    AWS_EVENTBRIDGE_API UpdateArchiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,49 +38,43 @@ namespace Model
     /**
      * <p>The name of the archive to update.</p>
      */
-    inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
+    inline const Aws::String& GetArchiveName() const { return m_archiveName; }
     inline bool ArchiveNameHasBeenSet() const { return m_archiveNameHasBeenSet; }
-    inline void SetArchiveName(const Aws::String& value) { m_archiveNameHasBeenSet = true; m_archiveName = value; }
-    inline void SetArchiveName(Aws::String&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::move(value); }
-    inline void SetArchiveName(const char* value) { m_archiveNameHasBeenSet = true; m_archiveName.assign(value); }
-    inline UpdateArchiveRequest& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-    inline UpdateArchiveRequest& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-    inline UpdateArchiveRequest& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    template<typename ArchiveNameT = Aws::String>
+    void SetArchiveName(ArchiveNameT&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::forward<ArchiveNameT>(value); }
+    template<typename ArchiveNameT = Aws::String>
+    UpdateArchiveRequest& WithArchiveName(ArchiveNameT&& value) { SetArchiveName(std::forward<ArchiveNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the archive.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateArchiveRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateArchiveRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateArchiveRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateArchiveRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event pattern to use to filter events sent to the archive.</p>
      */
-    inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
+    inline const Aws::String& GetEventPattern() const { return m_eventPattern; }
     inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
-    inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
-    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
-    inline void SetEventPattern(const char* value) { m_eventPatternHasBeenSet = true; m_eventPattern.assign(value); }
-    inline UpdateArchiveRequest& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
-    inline UpdateArchiveRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
-    inline UpdateArchiveRequest& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
+    template<typename EventPatternT = Aws::String>
+    void SetEventPattern(EventPatternT&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::forward<EventPatternT>(value); }
+    template<typename EventPatternT = Aws::String>
+    UpdateArchiveRequest& WithEventPattern(EventPatternT&& value) { SetEventPattern(std::forward<EventPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days to retain events in the archive.</p>
      */
-    inline int GetRetentionDays() const{ return m_retentionDays; }
+    inline int GetRetentionDays() const { return m_retentionDays; }
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
     inline UpdateArchiveRequest& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
@@ -96,7 +90,7 @@ namespace Model
     Aws::String m_eventPattern;
     bool m_eventPatternHasBeenSet = false;
 
-    int m_retentionDays;
+    int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;
   };
 

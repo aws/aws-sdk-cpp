@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrafficPolicyResult::CreateTrafficPolicyResult()
-{
-}
-
 CreateTrafficPolicyResult::CreateTrafficPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTrafficPolicyResult& CreateTrafficPolicyResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
-
+    m_trafficPolicyIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-SearchedFaceDetails::SearchedFaceDetails() : 
-    m_faceDetailHasBeenSet(false)
-{
-}
-
 SearchedFaceDetails::SearchedFaceDetails(JsonView jsonValue)
-  : SearchedFaceDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SearchedFaceDetails& SearchedFaceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FaceDetail"))
   {
     m_faceDetail = jsonValue.GetObject("FaceDetail");
-
     m_faceDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

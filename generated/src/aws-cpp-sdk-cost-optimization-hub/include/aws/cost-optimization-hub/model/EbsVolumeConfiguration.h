@@ -34,7 +34,7 @@ namespace Model
   class EbsVolumeConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API EbsVolumeConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API EbsVolumeConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API EbsVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API EbsVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>The disk storage of the Amazon Elastic Block Store volume.</p>
      */
-    inline const StorageConfiguration& GetStorage() const{ return m_storage; }
+    inline const StorageConfiguration& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const StorageConfiguration& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(StorageConfiguration&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline EbsVolumeConfiguration& WithStorage(const StorageConfiguration& value) { SetStorage(value); return *this;}
-    inline EbsVolumeConfiguration& WithStorage(StorageConfiguration&& value) { SetStorage(std::move(value)); return *this;}
+    template<typename StorageT = StorageConfiguration>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = StorageConfiguration>
+    EbsVolumeConfiguration& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Elastic Block Store performance configuration.</p>
      */
-    inline const BlockStoragePerformanceConfiguration& GetPerformance() const{ return m_performance; }
+    inline const BlockStoragePerformanceConfiguration& GetPerformance() const { return m_performance; }
     inline bool PerformanceHasBeenSet() const { return m_performanceHasBeenSet; }
-    inline void SetPerformance(const BlockStoragePerformanceConfiguration& value) { m_performanceHasBeenSet = true; m_performance = value; }
-    inline void SetPerformance(BlockStoragePerformanceConfiguration&& value) { m_performanceHasBeenSet = true; m_performance = std::move(value); }
-    inline EbsVolumeConfiguration& WithPerformance(const BlockStoragePerformanceConfiguration& value) { SetPerformance(value); return *this;}
-    inline EbsVolumeConfiguration& WithPerformance(BlockStoragePerformanceConfiguration&& value) { SetPerformance(std::move(value)); return *this;}
+    template<typename PerformanceT = BlockStoragePerformanceConfiguration>
+    void SetPerformance(PerformanceT&& value) { m_performanceHasBeenSet = true; m_performance = std::forward<PerformanceT>(value); }
+    template<typename PerformanceT = BlockStoragePerformanceConfiguration>
+    EbsVolumeConfiguration& WithPerformance(PerformanceT&& value) { SetPerformance(std::forward<PerformanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Elastic Block Store attachment state.</p>
      */
-    inline const Aws::String& GetAttachmentState() const{ return m_attachmentState; }
+    inline const Aws::String& GetAttachmentState() const { return m_attachmentState; }
     inline bool AttachmentStateHasBeenSet() const { return m_attachmentStateHasBeenSet; }
-    inline void SetAttachmentState(const Aws::String& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
-    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
-    inline void SetAttachmentState(const char* value) { m_attachmentStateHasBeenSet = true; m_attachmentState.assign(value); }
-    inline EbsVolumeConfiguration& WithAttachmentState(const Aws::String& value) { SetAttachmentState(value); return *this;}
-    inline EbsVolumeConfiguration& WithAttachmentState(Aws::String&& value) { SetAttachmentState(std::move(value)); return *this;}
-    inline EbsVolumeConfiguration& WithAttachmentState(const char* value) { SetAttachmentState(value); return *this;}
+    template<typename AttachmentStateT = Aws::String>
+    void SetAttachmentState(AttachmentStateT&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::forward<AttachmentStateT>(value); }
+    template<typename AttachmentStateT = Aws::String>
+    EbsVolumeConfiguration& WithAttachmentState(AttachmentStateT&& value) { SetAttachmentState(std::forward<AttachmentStateT>(value)); return *this;}
     ///@}
   private:
 

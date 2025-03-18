@@ -22,7 +22,7 @@ namespace Model
   class ProbeRequest : public MediaConvertRequest
   {
   public:
-    AWS_MEDIACONVERT_API ProbeRequest();
+    AWS_MEDIACONVERT_API ProbeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * The list of input media files to be probed.
      */
-    inline const Aws::Vector<ProbeInputFile>& GetInputFiles() const{ return m_inputFiles; }
+    inline const Aws::Vector<ProbeInputFile>& GetInputFiles() const { return m_inputFiles; }
     inline bool InputFilesHasBeenSet() const { return m_inputFilesHasBeenSet; }
-    inline void SetInputFiles(const Aws::Vector<ProbeInputFile>& value) { m_inputFilesHasBeenSet = true; m_inputFiles = value; }
-    inline void SetInputFiles(Aws::Vector<ProbeInputFile>&& value) { m_inputFilesHasBeenSet = true; m_inputFiles = std::move(value); }
-    inline ProbeRequest& WithInputFiles(const Aws::Vector<ProbeInputFile>& value) { SetInputFiles(value); return *this;}
-    inline ProbeRequest& WithInputFiles(Aws::Vector<ProbeInputFile>&& value) { SetInputFiles(std::move(value)); return *this;}
-    inline ProbeRequest& AddInputFiles(const ProbeInputFile& value) { m_inputFilesHasBeenSet = true; m_inputFiles.push_back(value); return *this; }
-    inline ProbeRequest& AddInputFiles(ProbeInputFile&& value) { m_inputFilesHasBeenSet = true; m_inputFiles.push_back(std::move(value)); return *this; }
+    template<typename InputFilesT = Aws::Vector<ProbeInputFile>>
+    void SetInputFiles(InputFilesT&& value) { m_inputFilesHasBeenSet = true; m_inputFiles = std::forward<InputFilesT>(value); }
+    template<typename InputFilesT = Aws::Vector<ProbeInputFile>>
+    ProbeRequest& WithInputFiles(InputFilesT&& value) { SetInputFiles(std::forward<InputFilesT>(value)); return *this;}
+    template<typename InputFilesT = ProbeInputFile>
+    ProbeRequest& AddInputFiles(InputFilesT&& value) { m_inputFilesHasBeenSet = true; m_inputFiles.emplace_back(std::forward<InputFilesT>(value)); return *this; }
     ///@}
   private:
 

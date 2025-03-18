@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ExportStatus::ExportStatus() : 
-    m_completionTimestampHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_state(ExportState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_submissionTimestampHasBeenSet(false)
-{
-}
-
 ExportStatus::ExportStatus(JsonView jsonValue)
-  : ExportStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExportStatus& ExportStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompletionTimestamp"))
   {
     m_completionTimestamp = jsonValue.GetDouble("CompletionTimestamp");
-
     m_completionTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ExportStateMapper::GetExportStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmissionTimestamp"))
   {
     m_submissionTimestamp = jsonValue.GetDouble("SubmissionTimestamp");
-
     m_submissionTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

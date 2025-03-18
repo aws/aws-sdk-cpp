@@ -45,7 +45,7 @@ namespace Model
   class ResaleAuthorizationFilters
   {
   public:
-    AWS_MARKETPLACECATALOG_API ResaleAuthorizationFilters();
+    AWS_MARKETPLACECATALOG_API ResaleAuthorizationFilters() = default;
     AWS_MARKETPLACECATALOG_API ResaleAuthorizationFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API ResaleAuthorizationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,36 +55,36 @@ namespace Model
     /**
      * <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationEntityIdFilter& GetEntityId() const{ return m_entityId; }
+    inline const ResaleAuthorizationEntityIdFilter& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const ResaleAuthorizationEntityIdFilter& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(ResaleAuthorizationEntityIdFilter&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline ResaleAuthorizationFilters& WithEntityId(const ResaleAuthorizationEntityIdFilter& value) { SetEntityId(value); return *this;}
-    inline ResaleAuthorizationFilters& WithEntityId(ResaleAuthorizationEntityIdFilter&& value) { SetEntityId(std::move(value)); return *this;}
+    template<typename EntityIdT = ResaleAuthorizationEntityIdFilter>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = ResaleAuthorizationEntityIdFilter>
+    ResaleAuthorizationFilters& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Allows filtering on the <code>Name</code> of a ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationNameFilter& GetName() const{ return m_name; }
+    inline const ResaleAuthorizationNameFilter& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ResaleAuthorizationNameFilter& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ResaleAuthorizationNameFilter&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ResaleAuthorizationFilters& WithName(const ResaleAuthorizationNameFilter& value) { SetName(value); return *this;}
-    inline ResaleAuthorizationFilters& WithName(ResaleAuthorizationNameFilter&& value) { SetName(std::move(value)); return *this;}
+    template<typename NameT = ResaleAuthorizationNameFilter>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = ResaleAuthorizationNameFilter>
+    ResaleAuthorizationFilters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Allows filtering on the <code>ProductId</code> of a ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationProductIdFilter& GetProductId() const{ return m_productId; }
+    inline const ResaleAuthorizationProductIdFilter& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const ResaleAuthorizationProductIdFilter& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(ResaleAuthorizationProductIdFilter&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline ResaleAuthorizationFilters& WithProductId(const ResaleAuthorizationProductIdFilter& value) { SetProductId(value); return *this;}
-    inline ResaleAuthorizationFilters& WithProductId(ResaleAuthorizationProductIdFilter&& value) { SetProductId(std::move(value)); return *this;}
+    template<typename ProductIdT = ResaleAuthorizationProductIdFilter>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = ResaleAuthorizationProductIdFilter>
+    ResaleAuthorizationFilters& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +92,12 @@ namespace Model
      * <p>Allows filtering on the <code>CreatedDate</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationCreatedDateFilter& GetCreatedDate() const{ return m_createdDate; }
+    inline const ResaleAuthorizationCreatedDateFilter& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const ResaleAuthorizationCreatedDateFilter& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(ResaleAuthorizationCreatedDateFilter&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline ResaleAuthorizationFilters& WithCreatedDate(const ResaleAuthorizationCreatedDateFilter& value) { SetCreatedDate(value); return *this;}
-    inline ResaleAuthorizationFilters& WithCreatedDate(ResaleAuthorizationCreatedDateFilter&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = ResaleAuthorizationCreatedDateFilter>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = ResaleAuthorizationCreatedDateFilter>
+    ResaleAuthorizationFilters& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +105,12 @@ namespace Model
      * <p>Allows filtering on the <code>AvailabilityEndDate</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationAvailabilityEndDateFilter& GetAvailabilityEndDate() const{ return m_availabilityEndDate; }
+    inline const ResaleAuthorizationAvailabilityEndDateFilter& GetAvailabilityEndDate() const { return m_availabilityEndDate; }
     inline bool AvailabilityEndDateHasBeenSet() const { return m_availabilityEndDateHasBeenSet; }
-    inline void SetAvailabilityEndDate(const ResaleAuthorizationAvailabilityEndDateFilter& value) { m_availabilityEndDateHasBeenSet = true; m_availabilityEndDate = value; }
-    inline void SetAvailabilityEndDate(ResaleAuthorizationAvailabilityEndDateFilter&& value) { m_availabilityEndDateHasBeenSet = true; m_availabilityEndDate = std::move(value); }
-    inline ResaleAuthorizationFilters& WithAvailabilityEndDate(const ResaleAuthorizationAvailabilityEndDateFilter& value) { SetAvailabilityEndDate(value); return *this;}
-    inline ResaleAuthorizationFilters& WithAvailabilityEndDate(ResaleAuthorizationAvailabilityEndDateFilter&& value) { SetAvailabilityEndDate(std::move(value)); return *this;}
+    template<typename AvailabilityEndDateT = ResaleAuthorizationAvailabilityEndDateFilter>
+    void SetAvailabilityEndDate(AvailabilityEndDateT&& value) { m_availabilityEndDateHasBeenSet = true; m_availabilityEndDate = std::forward<AvailabilityEndDateT>(value); }
+    template<typename AvailabilityEndDateT = ResaleAuthorizationAvailabilityEndDateFilter>
+    ResaleAuthorizationFilters& WithAvailabilityEndDate(AvailabilityEndDateT&& value) { SetAvailabilityEndDate(std::forward<AvailabilityEndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +118,12 @@ namespace Model
      * <p>Allows filtering on the <code>ManufacturerAccountId</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationManufacturerAccountIdFilter& GetManufacturerAccountId() const{ return m_manufacturerAccountId; }
+    inline const ResaleAuthorizationManufacturerAccountIdFilter& GetManufacturerAccountId() const { return m_manufacturerAccountId; }
     inline bool ManufacturerAccountIdHasBeenSet() const { return m_manufacturerAccountIdHasBeenSet; }
-    inline void SetManufacturerAccountId(const ResaleAuthorizationManufacturerAccountIdFilter& value) { m_manufacturerAccountIdHasBeenSet = true; m_manufacturerAccountId = value; }
-    inline void SetManufacturerAccountId(ResaleAuthorizationManufacturerAccountIdFilter&& value) { m_manufacturerAccountIdHasBeenSet = true; m_manufacturerAccountId = std::move(value); }
-    inline ResaleAuthorizationFilters& WithManufacturerAccountId(const ResaleAuthorizationManufacturerAccountIdFilter& value) { SetManufacturerAccountId(value); return *this;}
-    inline ResaleAuthorizationFilters& WithManufacturerAccountId(ResaleAuthorizationManufacturerAccountIdFilter&& value) { SetManufacturerAccountId(std::move(value)); return *this;}
+    template<typename ManufacturerAccountIdT = ResaleAuthorizationManufacturerAccountIdFilter>
+    void SetManufacturerAccountId(ManufacturerAccountIdT&& value) { m_manufacturerAccountIdHasBeenSet = true; m_manufacturerAccountId = std::forward<ManufacturerAccountIdT>(value); }
+    template<typename ManufacturerAccountIdT = ResaleAuthorizationManufacturerAccountIdFilter>
+    ResaleAuthorizationFilters& WithManufacturerAccountId(ManufacturerAccountIdT&& value) { SetManufacturerAccountId(std::forward<ManufacturerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +131,12 @@ namespace Model
      * <p>Allows filtering on the <code>ProductName</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationProductNameFilter& GetProductName() const{ return m_productName; }
+    inline const ResaleAuthorizationProductNameFilter& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const ResaleAuthorizationProductNameFilter& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(ResaleAuthorizationProductNameFilter&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline ResaleAuthorizationFilters& WithProductName(const ResaleAuthorizationProductNameFilter& value) { SetProductName(value); return *this;}
-    inline ResaleAuthorizationFilters& WithProductName(ResaleAuthorizationProductNameFilter&& value) { SetProductName(std::move(value)); return *this;}
+    template<typename ProductNameT = ResaleAuthorizationProductNameFilter>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = ResaleAuthorizationProductNameFilter>
+    ResaleAuthorizationFilters& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +144,12 @@ namespace Model
      * <p>Allows filtering on the <code>ManufacturerLegalName</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationManufacturerLegalNameFilter& GetManufacturerLegalName() const{ return m_manufacturerLegalName; }
+    inline const ResaleAuthorizationManufacturerLegalNameFilter& GetManufacturerLegalName() const { return m_manufacturerLegalName; }
     inline bool ManufacturerLegalNameHasBeenSet() const { return m_manufacturerLegalNameHasBeenSet; }
-    inline void SetManufacturerLegalName(const ResaleAuthorizationManufacturerLegalNameFilter& value) { m_manufacturerLegalNameHasBeenSet = true; m_manufacturerLegalName = value; }
-    inline void SetManufacturerLegalName(ResaleAuthorizationManufacturerLegalNameFilter&& value) { m_manufacturerLegalNameHasBeenSet = true; m_manufacturerLegalName = std::move(value); }
-    inline ResaleAuthorizationFilters& WithManufacturerLegalName(const ResaleAuthorizationManufacturerLegalNameFilter& value) { SetManufacturerLegalName(value); return *this;}
-    inline ResaleAuthorizationFilters& WithManufacturerLegalName(ResaleAuthorizationManufacturerLegalNameFilter&& value) { SetManufacturerLegalName(std::move(value)); return *this;}
+    template<typename ManufacturerLegalNameT = ResaleAuthorizationManufacturerLegalNameFilter>
+    void SetManufacturerLegalName(ManufacturerLegalNameT&& value) { m_manufacturerLegalNameHasBeenSet = true; m_manufacturerLegalName = std::forward<ManufacturerLegalNameT>(value); }
+    template<typename ManufacturerLegalNameT = ResaleAuthorizationManufacturerLegalNameFilter>
+    ResaleAuthorizationFilters& WithManufacturerLegalName(ManufacturerLegalNameT&& value) { SetManufacturerLegalName(std::forward<ManufacturerLegalNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +157,12 @@ namespace Model
      * <p>Allows filtering on the <code>ResellerAccountID</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationResellerAccountIDFilter& GetResellerAccountID() const{ return m_resellerAccountID; }
+    inline const ResaleAuthorizationResellerAccountIDFilter& GetResellerAccountID() const { return m_resellerAccountID; }
     inline bool ResellerAccountIDHasBeenSet() const { return m_resellerAccountIDHasBeenSet; }
-    inline void SetResellerAccountID(const ResaleAuthorizationResellerAccountIDFilter& value) { m_resellerAccountIDHasBeenSet = true; m_resellerAccountID = value; }
-    inline void SetResellerAccountID(ResaleAuthorizationResellerAccountIDFilter&& value) { m_resellerAccountIDHasBeenSet = true; m_resellerAccountID = std::move(value); }
-    inline ResaleAuthorizationFilters& WithResellerAccountID(const ResaleAuthorizationResellerAccountIDFilter& value) { SetResellerAccountID(value); return *this;}
-    inline ResaleAuthorizationFilters& WithResellerAccountID(ResaleAuthorizationResellerAccountIDFilter&& value) { SetResellerAccountID(std::move(value)); return *this;}
+    template<typename ResellerAccountIDT = ResaleAuthorizationResellerAccountIDFilter>
+    void SetResellerAccountID(ResellerAccountIDT&& value) { m_resellerAccountIDHasBeenSet = true; m_resellerAccountID = std::forward<ResellerAccountIDT>(value); }
+    template<typename ResellerAccountIDT = ResaleAuthorizationResellerAccountIDFilter>
+    ResaleAuthorizationFilters& WithResellerAccountID(ResellerAccountIDT&& value) { SetResellerAccountID(std::forward<ResellerAccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,24 +170,24 @@ namespace Model
      * <p>Allows filtering on the <code>ResellerLegalName</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationResellerLegalNameFilter& GetResellerLegalName() const{ return m_resellerLegalName; }
+    inline const ResaleAuthorizationResellerLegalNameFilter& GetResellerLegalName() const { return m_resellerLegalName; }
     inline bool ResellerLegalNameHasBeenSet() const { return m_resellerLegalNameHasBeenSet; }
-    inline void SetResellerLegalName(const ResaleAuthorizationResellerLegalNameFilter& value) { m_resellerLegalNameHasBeenSet = true; m_resellerLegalName = value; }
-    inline void SetResellerLegalName(ResaleAuthorizationResellerLegalNameFilter&& value) { m_resellerLegalNameHasBeenSet = true; m_resellerLegalName = std::move(value); }
-    inline ResaleAuthorizationFilters& WithResellerLegalName(const ResaleAuthorizationResellerLegalNameFilter& value) { SetResellerLegalName(value); return *this;}
-    inline ResaleAuthorizationFilters& WithResellerLegalName(ResaleAuthorizationResellerLegalNameFilter&& value) { SetResellerLegalName(std::move(value)); return *this;}
+    template<typename ResellerLegalNameT = ResaleAuthorizationResellerLegalNameFilter>
+    void SetResellerLegalName(ResellerLegalNameT&& value) { m_resellerLegalNameHasBeenSet = true; m_resellerLegalName = std::forward<ResellerLegalNameT>(value); }
+    template<typename ResellerLegalNameT = ResaleAuthorizationResellerLegalNameFilter>
+    ResaleAuthorizationFilters& WithResellerLegalName(ResellerLegalNameT&& value) { SetResellerLegalName(std::forward<ResellerLegalNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationStatusFilter& GetStatus() const{ return m_status; }
+    inline const ResaleAuthorizationStatusFilter& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResaleAuthorizationStatusFilter& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResaleAuthorizationStatusFilter&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResaleAuthorizationFilters& WithStatus(const ResaleAuthorizationStatusFilter& value) { SetStatus(value); return *this;}
-    inline ResaleAuthorizationFilters& WithStatus(ResaleAuthorizationStatusFilter&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = ResaleAuthorizationStatusFilter>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ResaleAuthorizationStatusFilter>
+    ResaleAuthorizationFilters& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +195,12 @@ namespace Model
      * <p>Allows filtering on the <code>OfferExtendedStatus</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationOfferExtendedStatusFilter& GetOfferExtendedStatus() const{ return m_offerExtendedStatus; }
+    inline const ResaleAuthorizationOfferExtendedStatusFilter& GetOfferExtendedStatus() const { return m_offerExtendedStatus; }
     inline bool OfferExtendedStatusHasBeenSet() const { return m_offerExtendedStatusHasBeenSet; }
-    inline void SetOfferExtendedStatus(const ResaleAuthorizationOfferExtendedStatusFilter& value) { m_offerExtendedStatusHasBeenSet = true; m_offerExtendedStatus = value; }
-    inline void SetOfferExtendedStatus(ResaleAuthorizationOfferExtendedStatusFilter&& value) { m_offerExtendedStatusHasBeenSet = true; m_offerExtendedStatus = std::move(value); }
-    inline ResaleAuthorizationFilters& WithOfferExtendedStatus(const ResaleAuthorizationOfferExtendedStatusFilter& value) { SetOfferExtendedStatus(value); return *this;}
-    inline ResaleAuthorizationFilters& WithOfferExtendedStatus(ResaleAuthorizationOfferExtendedStatusFilter&& value) { SetOfferExtendedStatus(std::move(value)); return *this;}
+    template<typename OfferExtendedStatusT = ResaleAuthorizationOfferExtendedStatusFilter>
+    void SetOfferExtendedStatus(OfferExtendedStatusT&& value) { m_offerExtendedStatusHasBeenSet = true; m_offerExtendedStatus = std::forward<OfferExtendedStatusT>(value); }
+    template<typename OfferExtendedStatusT = ResaleAuthorizationOfferExtendedStatusFilter>
+    ResaleAuthorizationFilters& WithOfferExtendedStatus(OfferExtendedStatusT&& value) { SetOfferExtendedStatus(std::forward<OfferExtendedStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +208,12 @@ namespace Model
      * <p>Allows filtering on the <code>LastModifiedDate</code> of a
      * ResaleAuthorization.</p>
      */
-    inline const ResaleAuthorizationLastModifiedDateFilter& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const ResaleAuthorizationLastModifiedDateFilter& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const ResaleAuthorizationLastModifiedDateFilter& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(ResaleAuthorizationLastModifiedDateFilter&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ResaleAuthorizationFilters& WithLastModifiedDate(const ResaleAuthorizationLastModifiedDateFilter& value) { SetLastModifiedDate(value); return *this;}
-    inline ResaleAuthorizationFilters& WithLastModifiedDate(ResaleAuthorizationLastModifiedDateFilter&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = ResaleAuthorizationLastModifiedDateFilter>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = ResaleAuthorizationLastModifiedDateFilter>
+    ResaleAuthorizationFilters& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
   private:
 

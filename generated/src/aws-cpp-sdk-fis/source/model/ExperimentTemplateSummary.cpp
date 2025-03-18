@@ -18,18 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateSummary::ExperimentTemplateSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ExperimentTemplateSummary::ExperimentTemplateSummary(JsonView jsonValue)
-  : ExperimentTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ExperimentTemplateSummary& ExperimentTemplateSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -80,7 +59,6 @@ ExperimentTemplateSummary& ExperimentTemplateSummary::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

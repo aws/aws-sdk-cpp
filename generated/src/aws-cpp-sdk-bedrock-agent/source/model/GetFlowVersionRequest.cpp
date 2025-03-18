@@ -12,12 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFlowVersionRequest::GetFlowVersionRequest() : 
-    m_flowIdentifierHasBeenSet(false),
-    m_flowVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetFlowVersionRequest::SerializePayload() const
 {
   return {};

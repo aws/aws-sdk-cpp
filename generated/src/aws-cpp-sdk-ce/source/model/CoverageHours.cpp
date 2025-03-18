@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CoverageHours::CoverageHours() : 
-    m_onDemandHoursHasBeenSet(false),
-    m_reservedHoursHasBeenSet(false),
-    m_totalRunningHoursHasBeenSet(false),
-    m_coverageHoursPercentageHasBeenSet(false)
-{
-}
-
 CoverageHours::CoverageHours(JsonView jsonValue)
-  : CoverageHours()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CoverageHours& CoverageHours::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OnDemandHours"))
   {
     m_onDemandHours = jsonValue.GetString("OnDemandHours");
-
     m_onDemandHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedHours"))
   {
     m_reservedHours = jsonValue.GetString("ReservedHours");
-
     m_reservedHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRunningHours"))
   {
     m_totalRunningHours = jsonValue.GetString("TotalRunningHours");
-
     m_totalRunningHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoverageHoursPercentage"))
   {
     m_coverageHoursPercentage = jsonValue.GetString("CoverageHoursPercentage");
-
     m_coverageHoursPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

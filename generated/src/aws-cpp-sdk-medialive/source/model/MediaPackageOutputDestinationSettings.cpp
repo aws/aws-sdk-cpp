@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings() : 
-    m_channelIdHasBeenSet(false),
-    m_channelGroupHasBeenSet(false),
-    m_channelNameHasBeenSet(false)
-{
-}
-
 MediaPackageOutputDestinationSettings::MediaPackageOutputDestinationSettings(JsonView jsonValue)
-  : MediaPackageOutputDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MediaPackageOutputDestinationSettings& MediaPackageOutputDestinationSettings::op
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelGroup"))
   {
     m_channelGroup = jsonValue.GetString("channelGroup");
-
     m_channelGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

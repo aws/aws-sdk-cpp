@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateIngressPointResult::CreateIngressPointResult()
-{
-}
-
 CreateIngressPointResult::CreateIngressPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateIngressPointResult& CreateIngressPointResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
-
+    m_ingressPointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

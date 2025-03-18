@@ -31,7 +31,7 @@ namespace Model
   class ContinuousDeploymentSingleWeightConfig
   {
   public:
-    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig() = default;
     AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of
      * traffic is sent to the staging distribution.</p>
      */
-    inline double GetWeight() const{ return m_weight; }
+    inline double GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
     inline ContinuousDeploymentSingleWeightConfig& WithWeight(double value) { SetWeight(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
 
     ///@{
     
-    inline const SessionStickinessConfig& GetSessionStickinessConfig() const{ return m_sessionStickinessConfig; }
+    inline const SessionStickinessConfig& GetSessionStickinessConfig() const { return m_sessionStickinessConfig; }
     inline bool SessionStickinessConfigHasBeenSet() const { return m_sessionStickinessConfigHasBeenSet; }
-    inline void SetSessionStickinessConfig(const SessionStickinessConfig& value) { m_sessionStickinessConfigHasBeenSet = true; m_sessionStickinessConfig = value; }
-    inline void SetSessionStickinessConfig(SessionStickinessConfig&& value) { m_sessionStickinessConfigHasBeenSet = true; m_sessionStickinessConfig = std::move(value); }
-    inline ContinuousDeploymentSingleWeightConfig& WithSessionStickinessConfig(const SessionStickinessConfig& value) { SetSessionStickinessConfig(value); return *this;}
-    inline ContinuousDeploymentSingleWeightConfig& WithSessionStickinessConfig(SessionStickinessConfig&& value) { SetSessionStickinessConfig(std::move(value)); return *this;}
+    template<typename SessionStickinessConfigT = SessionStickinessConfig>
+    void SetSessionStickinessConfig(SessionStickinessConfigT&& value) { m_sessionStickinessConfigHasBeenSet = true; m_sessionStickinessConfig = std::forward<SessionStickinessConfigT>(value); }
+    template<typename SessionStickinessConfigT = SessionStickinessConfig>
+    ContinuousDeploymentSingleWeightConfig& WithSessionStickinessConfig(SessionStickinessConfigT&& value) { SetSessionStickinessConfig(std::forward<SessionStickinessConfigT>(value)); return *this;}
     ///@}
   private:
 
-    double m_weight;
+    double m_weight{0.0};
     bool m_weightHasBeenSet = false;
 
     SessionStickinessConfig m_sessionStickinessConfig;

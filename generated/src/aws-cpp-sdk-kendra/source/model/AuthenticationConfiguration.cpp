@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AuthenticationConfiguration::AuthenticationConfiguration() : 
-    m_basicAuthenticationHasBeenSet(false)
-{
-}
-
 AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
     }
     m_basicAuthenticationHasBeenSet = true;
   }
-
   return *this;
 }
 

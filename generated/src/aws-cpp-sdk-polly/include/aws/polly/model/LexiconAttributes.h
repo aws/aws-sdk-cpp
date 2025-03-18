@@ -36,7 +36,7 @@ namespace Model
   class LexiconAttributes
   {
   public:
-    AWS_POLLY_API LexiconAttributes();
+    AWS_POLLY_API LexiconAttributes() = default;
     AWS_POLLY_API LexiconAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API LexiconAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and
      * <code>x-sampa</code>.</p>
      */
-    inline const Aws::String& GetAlphabet() const{ return m_alphabet; }
+    inline const Aws::String& GetAlphabet() const { return m_alphabet; }
     inline bool AlphabetHasBeenSet() const { return m_alphabetHasBeenSet; }
-    inline void SetAlphabet(const Aws::String& value) { m_alphabetHasBeenSet = true; m_alphabet = value; }
-    inline void SetAlphabet(Aws::String&& value) { m_alphabetHasBeenSet = true; m_alphabet = std::move(value); }
-    inline void SetAlphabet(const char* value) { m_alphabetHasBeenSet = true; m_alphabet.assign(value); }
-    inline LexiconAttributes& WithAlphabet(const Aws::String& value) { SetAlphabet(value); return *this;}
-    inline LexiconAttributes& WithAlphabet(Aws::String&& value) { SetAlphabet(std::move(value)); return *this;}
-    inline LexiconAttributes& WithAlphabet(const char* value) { SetAlphabet(value); return *this;}
+    template<typename AlphabetT = Aws::String>
+    void SetAlphabet(AlphabetT&& value) { m_alphabetHasBeenSet = true; m_alphabet = std::forward<AlphabetT>(value); }
+    template<typename AlphabetT = Aws::String>
+    LexiconAttributes& WithAlphabet(AlphabetT&& value) { SetAlphabet(std::forward<AlphabetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,45 +61,41 @@ namespace Model
      * such as "en" would be applied to all English languages (en-GB, en-US, en-AUS,
      * en-WLS, and so on.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline LexiconAttributes& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline LexiconAttributes& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline LexiconAttributes& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date lexicon was last modified (a timestamp value).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline LexiconAttributes& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline LexiconAttributes& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    LexiconAttributes& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the lexicon.</p>
      */
-    inline const Aws::String& GetLexiconArn() const{ return m_lexiconArn; }
+    inline const Aws::String& GetLexiconArn() const { return m_lexiconArn; }
     inline bool LexiconArnHasBeenSet() const { return m_lexiconArnHasBeenSet; }
-    inline void SetLexiconArn(const Aws::String& value) { m_lexiconArnHasBeenSet = true; m_lexiconArn = value; }
-    inline void SetLexiconArn(Aws::String&& value) { m_lexiconArnHasBeenSet = true; m_lexiconArn = std::move(value); }
-    inline void SetLexiconArn(const char* value) { m_lexiconArnHasBeenSet = true; m_lexiconArn.assign(value); }
-    inline LexiconAttributes& WithLexiconArn(const Aws::String& value) { SetLexiconArn(value); return *this;}
-    inline LexiconAttributes& WithLexiconArn(Aws::String&& value) { SetLexiconArn(std::move(value)); return *this;}
-    inline LexiconAttributes& WithLexiconArn(const char* value) { SetLexiconArn(value); return *this;}
+    template<typename LexiconArnT = Aws::String>
+    void SetLexiconArn(LexiconArnT&& value) { m_lexiconArnHasBeenSet = true; m_lexiconArn = std::forward<LexiconArnT>(value); }
+    template<typename LexiconArnT = Aws::String>
+    LexiconAttributes& WithLexiconArn(LexiconArnT&& value) { SetLexiconArn(std::forward<LexiconArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of lexemes in the lexicon.</p>
      */
-    inline int GetLexemesCount() const{ return m_lexemesCount; }
+    inline int GetLexemesCount() const { return m_lexemesCount; }
     inline bool LexemesCountHasBeenSet() const { return m_lexemesCountHasBeenSet; }
     inline void SetLexemesCount(int value) { m_lexemesCountHasBeenSet = true; m_lexemesCount = value; }
     inline LexiconAttributes& WithLexemesCount(int value) { SetLexemesCount(value); return *this;}
@@ -111,7 +105,7 @@ namespace Model
     /**
      * <p>Total size of the lexicon, in characters.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline LexiconAttributes& WithSize(int value) { SetSize(value); return *this;}
@@ -121,19 +115,19 @@ namespace Model
     Aws::String m_alphabet;
     bool m_alphabetHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_lexiconArn;
     bool m_lexiconArnHasBeenSet = false;
 
-    int m_lexemesCount;
+    int m_lexemesCount{0};
     bool m_lexemesCountHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

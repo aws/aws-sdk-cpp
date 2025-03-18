@@ -18,15 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-UnprocessedCluster::UnprocessedCluster() : 
-    m_clusterNameHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UnprocessedCluster::UnprocessedCluster(JsonView jsonValue)
-  : UnprocessedCluster()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedCluster& UnprocessedCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = jsonValue.GetString("ErrorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

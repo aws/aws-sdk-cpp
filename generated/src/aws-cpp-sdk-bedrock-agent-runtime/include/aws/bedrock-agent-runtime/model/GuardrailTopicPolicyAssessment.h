@@ -33,7 +33,7 @@ namespace Model
   class GuardrailTopicPolicyAssessment
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GuardrailTopicPolicyAssessment();
+    AWS_BEDROCKAGENTRUNTIME_API GuardrailTopicPolicyAssessment() = default;
     AWS_BEDROCKAGENTRUNTIME_API GuardrailTopicPolicyAssessment(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GuardrailTopicPolicyAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The topic details of the policy assessment used in the Guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailTopic>& GetTopics() const{ return m_topics; }
+    inline const Aws::Vector<GuardrailTopic>& GetTopics() const { return m_topics; }
     inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
-    inline void SetTopics(const Aws::Vector<GuardrailTopic>& value) { m_topicsHasBeenSet = true; m_topics = value; }
-    inline void SetTopics(Aws::Vector<GuardrailTopic>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
-    inline GuardrailTopicPolicyAssessment& WithTopics(const Aws::Vector<GuardrailTopic>& value) { SetTopics(value); return *this;}
-    inline GuardrailTopicPolicyAssessment& WithTopics(Aws::Vector<GuardrailTopic>&& value) { SetTopics(std::move(value)); return *this;}
-    inline GuardrailTopicPolicyAssessment& AddTopics(const GuardrailTopic& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
-    inline GuardrailTopicPolicyAssessment& AddTopics(GuardrailTopic&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
+    template<typename TopicsT = Aws::Vector<GuardrailTopic>>
+    void SetTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics = std::forward<TopicsT>(value); }
+    template<typename TopicsT = Aws::Vector<GuardrailTopic>>
+    GuardrailTopicPolicyAssessment& WithTopics(TopicsT&& value) { SetTopics(std::forward<TopicsT>(value)); return *this;}
+    template<typename TopicsT = GuardrailTopic>
+    GuardrailTopicPolicyAssessment& AddTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics.emplace_back(std::forward<TopicsT>(value)); return *this; }
     ///@}
   private:
 

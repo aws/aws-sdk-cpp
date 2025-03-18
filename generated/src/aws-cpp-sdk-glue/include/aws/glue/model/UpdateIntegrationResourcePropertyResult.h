@@ -29,7 +29,7 @@ namespace Model
   class UpdateIntegrationResourcePropertyResult
   {
   public:
-    AWS_GLUE_API UpdateIntegrationResourcePropertyResult();
+    AWS_GLUE_API UpdateIntegrationResourcePropertyResult() = default;
     AWS_GLUE_API UpdateIntegrationResourcePropertyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API UpdateIntegrationResourcePropertyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,56 +38,56 @@ namespace Model
     /**
      * <p>The connection ARN of the source, or the database ARN of the target.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline UpdateIntegrationResourcePropertyResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UpdateIntegrationResourcePropertyResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource properties associated with the integration source.</p>
      */
-    inline const SourceProcessingProperties& GetSourceProcessingProperties() const{ return m_sourceProcessingProperties; }
-    inline void SetSourceProcessingProperties(const SourceProcessingProperties& value) { m_sourceProcessingProperties = value; }
-    inline void SetSourceProcessingProperties(SourceProcessingProperties&& value) { m_sourceProcessingProperties = std::move(value); }
-    inline UpdateIntegrationResourcePropertyResult& WithSourceProcessingProperties(const SourceProcessingProperties& value) { SetSourceProcessingProperties(value); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithSourceProcessingProperties(SourceProcessingProperties&& value) { SetSourceProcessingProperties(std::move(value)); return *this;}
+    inline const SourceProcessingProperties& GetSourceProcessingProperties() const { return m_sourceProcessingProperties; }
+    template<typename SourceProcessingPropertiesT = SourceProcessingProperties>
+    void SetSourceProcessingProperties(SourceProcessingPropertiesT&& value) { m_sourceProcessingPropertiesHasBeenSet = true; m_sourceProcessingProperties = std::forward<SourceProcessingPropertiesT>(value); }
+    template<typename SourceProcessingPropertiesT = SourceProcessingProperties>
+    UpdateIntegrationResourcePropertyResult& WithSourceProcessingProperties(SourceProcessingPropertiesT&& value) { SetSourceProcessingProperties(std::forward<SourceProcessingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource properties associated with the integration target.</p>
      */
-    inline const TargetProcessingProperties& GetTargetProcessingProperties() const{ return m_targetProcessingProperties; }
-    inline void SetTargetProcessingProperties(const TargetProcessingProperties& value) { m_targetProcessingProperties = value; }
-    inline void SetTargetProcessingProperties(TargetProcessingProperties&& value) { m_targetProcessingProperties = std::move(value); }
-    inline UpdateIntegrationResourcePropertyResult& WithTargetProcessingProperties(const TargetProcessingProperties& value) { SetTargetProcessingProperties(value); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithTargetProcessingProperties(TargetProcessingProperties&& value) { SetTargetProcessingProperties(std::move(value)); return *this;}
+    inline const TargetProcessingProperties& GetTargetProcessingProperties() const { return m_targetProcessingProperties; }
+    template<typename TargetProcessingPropertiesT = TargetProcessingProperties>
+    void SetTargetProcessingProperties(TargetProcessingPropertiesT&& value) { m_targetProcessingPropertiesHasBeenSet = true; m_targetProcessingProperties = std::forward<TargetProcessingPropertiesT>(value); }
+    template<typename TargetProcessingPropertiesT = TargetProcessingProperties>
+    UpdateIntegrationResourcePropertyResult& WithTargetProcessingProperties(TargetProcessingPropertiesT&& value) { SetTargetProcessingProperties(std::forward<TargetProcessingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateIntegrationResourcePropertyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateIntegrationResourcePropertyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateIntegrationResourcePropertyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     SourceProcessingProperties m_sourceProcessingProperties;
+    bool m_sourceProcessingPropertiesHasBeenSet = false;
 
     TargetProcessingProperties m_targetProcessingProperties;
+    bool m_targetProcessingPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class ConfigureAccessPointResult
   {
   public:
-    AWS_PRIVATENETWORKS_API ConfigureAccessPointResult();
+    AWS_PRIVATENETWORKS_API ConfigureAccessPointResult() = default;
     AWS_PRIVATENETWORKS_API ConfigureAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API ConfigureAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the network resource.</p>
      */
-    inline const NetworkResource& GetAccessPoint() const{ return m_accessPoint; }
-    inline void SetAccessPoint(const NetworkResource& value) { m_accessPoint = value; }
-    inline void SetAccessPoint(NetworkResource&& value) { m_accessPoint = std::move(value); }
-    inline ConfigureAccessPointResult& WithAccessPoint(const NetworkResource& value) { SetAccessPoint(value); return *this;}
-    inline ConfigureAccessPointResult& WithAccessPoint(NetworkResource&& value) { SetAccessPoint(std::move(value)); return *this;}
+    inline const NetworkResource& GetAccessPoint() const { return m_accessPoint; }
+    template<typename AccessPointT = NetworkResource>
+    void SetAccessPoint(AccessPointT&& value) { m_accessPointHasBeenSet = true; m_accessPoint = std::forward<AccessPointT>(value); }
+    template<typename AccessPointT = NetworkResource>
+    ConfigureAccessPointResult& WithAccessPoint(AccessPointT&& value) { SetAccessPoint(std::forward<AccessPointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfigureAccessPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfigureAccessPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfigureAccessPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfigureAccessPointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NetworkResource m_accessPoint;
+    bool m_accessPointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

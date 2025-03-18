@@ -10,18 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StartActivityStreamRequest::StartActivityStreamRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_mode(ActivityStreamMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false),
-    m_engineNativeAuditFieldsIncluded(false),
-    m_engineNativeAuditFieldsIncludedHasBeenSet(false)
-{
-}
-
 Aws::String StartActivityStreamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

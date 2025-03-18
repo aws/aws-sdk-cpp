@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails() : 
-    m_redriveCount(0),
-    m_redriveCountHasBeenSet(false)
-{
-}
-
 ExecutionRedrivenEventDetails::ExecutionRedrivenEventDetails(JsonView jsonValue)
-  : ExecutionRedrivenEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExecutionRedrivenEventDetails& ExecutionRedrivenEventDetails::operator =(JsonVie
   if(jsonValue.ValueExists("redriveCount"))
   {
     m_redriveCount = jsonValue.GetInteger("redriveCount");
-
     m_redriveCountHasBeenSet = true;
   }
-
   return *this;
 }
 

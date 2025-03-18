@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-RdsRecommendation::RdsRecommendation() : 
-    m_requirementsToTargetHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
-{
-}
-
 RdsRecommendation::RdsRecommendation(JsonView jsonValue)
-  : RdsRecommendation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RdsRecommendation& RdsRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RequirementsToTarget"))
   {
     m_requirementsToTarget = jsonValue.GetObject("RequirementsToTarget");
-
     m_requirementsToTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetConfiguration"))
   {
     m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
-
     m_targetConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

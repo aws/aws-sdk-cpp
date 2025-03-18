@@ -18,18 +18,7 @@ namespace KendraRanking
 namespace Model
 {
 
-RescoreExecutionPlanSummary::RescoreExecutionPlanSummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(RescoreExecutionPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RescoreExecutionPlanSummary::RescoreExecutionPlanSummary(JsonView jsonValue)
-  : RescoreExecutionPlanSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RescoreExecutionPlanSummary& RescoreExecutionPlanSummary::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RescoreExecutionPlanStatusMapper::GetRescoreExecutionPlanStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

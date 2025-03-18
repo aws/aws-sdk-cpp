@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifySelfservicePermissionsRequest::ModifySelfservicePermissionsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_selfservicePermissionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifySelfservicePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourceRequest::DescribeResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourceRequest::SerializePayload() const
 {
   JsonValue payload;

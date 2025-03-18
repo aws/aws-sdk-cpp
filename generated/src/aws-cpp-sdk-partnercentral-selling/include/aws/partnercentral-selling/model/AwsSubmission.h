@@ -34,7 +34,7 @@ namespace Model
   class AwsSubmission
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsSubmission();
+    AWS_PARTNERCENTRALSELLING_API AwsSubmission() = default;
     AWS_PARTNERCENTRALSELLING_API AwsSubmission(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsSubmission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * deal support, or technical consultation. This helps categorize the nature of AWS
      * participation.</p>
      */
-    inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
+    inline SalesInvolvementType GetInvolvementType() const { return m_involvementType; }
     inline bool InvolvementTypeHasBeenSet() const { return m_involvementTypeHasBeenSet; }
-    inline void SetInvolvementType(const SalesInvolvementType& value) { m_involvementTypeHasBeenSet = true; m_involvementType = value; }
-    inline void SetInvolvementType(SalesInvolvementType&& value) { m_involvementTypeHasBeenSet = true; m_involvementType = std::move(value); }
-    inline AwsSubmission& WithInvolvementType(const SalesInvolvementType& value) { SetInvolvementType(value); return *this;}
-    inline AwsSubmission& WithInvolvementType(SalesInvolvementType&& value) { SetInvolvementType(std::move(value)); return *this;}
+    inline void SetInvolvementType(SalesInvolvementType value) { m_involvementTypeHasBeenSet = true; m_involvementType = value; }
+    inline AwsSubmission& WithInvolvementType(SalesInvolvementType value) { SetInvolvementType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * field is set to <code>Full</code> for most cases, but it may be restricted based
      * on special program requirements or confidentiality needs.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline AwsSubmission& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline AwsSubmission& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline AwsSubmission& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
-    SalesInvolvementType m_involvementType;
+    SalesInvolvementType m_involvementType{SalesInvolvementType::NOT_SET};
     bool m_involvementTypeHasBeenSet = false;
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

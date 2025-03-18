@@ -18,16 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-SearchScopeSummary::SearchScopeSummary() : 
-    m_totalRecoveryPointsToScanCount(0),
-    m_totalRecoveryPointsToScanCountHasBeenSet(false),
-    m_totalItemsToScanCount(0),
-    m_totalItemsToScanCountHasBeenSet(false)
-{
-}
-
 SearchScopeSummary::SearchScopeSummary(JsonView jsonValue)
-  : SearchScopeSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SearchScopeSummary& SearchScopeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalRecoveryPointsToScanCount"))
   {
     m_totalRecoveryPointsToScanCount = jsonValue.GetInteger("TotalRecoveryPointsToScanCount");
-
     m_totalRecoveryPointsToScanCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalItemsToScanCount"))
   {
     m_totalItemsToScanCount = jsonValue.GetInt64("TotalItemsToScanCount");
-
     m_totalItemsToScanCountHasBeenSet = true;
   }
-
   return *this;
 }
 

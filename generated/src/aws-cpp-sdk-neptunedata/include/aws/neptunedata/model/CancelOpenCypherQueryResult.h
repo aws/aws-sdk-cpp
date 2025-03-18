@@ -27,7 +27,7 @@ namespace Model
   class CancelOpenCypherQueryResult
   {
   public:
-    AWS_NEPTUNEDATA_API CancelOpenCypherQueryResult();
+    AWS_NEPTUNEDATA_API CancelOpenCypherQueryResult() = default;
     AWS_NEPTUNEDATA_API CancelOpenCypherQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API CancelOpenCypherQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The cancellation status of the openCypher query.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline CancelOpenCypherQueryResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline CancelOpenCypherQueryResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline CancelOpenCypherQueryResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    CancelOpenCypherQueryResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cancelation payload for the openCypher query.</p>
      */
-    inline bool GetPayload() const{ return m_payload; }
-    inline void SetPayload(bool value) { m_payload = value; }
+    inline bool GetPayload() const { return m_payload; }
+    inline void SetPayload(bool value) { m_payloadHasBeenSet = true; m_payload = value; }
     inline CancelOpenCypherQueryResult& WithPayload(bool value) { SetPayload(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelOpenCypherQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelOpenCypherQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelOpenCypherQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelOpenCypherQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    bool m_payload;
+    bool m_payload{false};
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

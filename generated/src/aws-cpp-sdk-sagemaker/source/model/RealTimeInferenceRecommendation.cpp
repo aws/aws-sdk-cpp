@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RealTimeInferenceRecommendation::RealTimeInferenceRecommendation() : 
-    m_recommendationIdHasBeenSet(false),
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 RealTimeInferenceRecommendation::RealTimeInferenceRecommendation(JsonView jsonValue)
-  : RealTimeInferenceRecommendation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RealTimeInferenceRecommendation& RealTimeInferenceRecommendation::operator =(Jso
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -57,7 +44,6 @@ RealTimeInferenceRecommendation& RealTimeInferenceRecommendation::operator =(Jso
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ExternalMetricsPreference
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ExternalMetricsPreference();
+    AWS_COMPUTEOPTIMIZER_API ExternalMetricsPreference() = default;
     AWS_COMPUTEOPTIMIZER_API ExternalMetricsPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ExternalMetricsPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> Contains the source options for external metrics preferences. </p>
      */
-    inline const ExternalMetricsSource& GetSource() const{ return m_source; }
+    inline ExternalMetricsSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ExternalMetricsSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ExternalMetricsSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ExternalMetricsPreference& WithSource(const ExternalMetricsSource& value) { SetSource(value); return *this;}
-    inline ExternalMetricsPreference& WithSource(ExternalMetricsSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(ExternalMetricsSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ExternalMetricsPreference& WithSource(ExternalMetricsSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    ExternalMetricsSource m_source;
+    ExternalMetricsSource m_source{ExternalMetricsSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

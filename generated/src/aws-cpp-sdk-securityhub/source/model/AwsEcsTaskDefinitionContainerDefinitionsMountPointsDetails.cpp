@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails() : 
-    m_containerPathHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_sourceVolumeHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails& AwsEcsTaskDefinition
   if(jsonValue.ValueExists("ContainerPath"))
   {
     m_containerPath = jsonValue.GetString("ContainerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceVolume"))
   {
     m_sourceVolume = jsonValue.GetString("SourceVolume");
-
     m_sourceVolumeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationRevisionRequest::DescribeConfigurationRevisionRequest() : 
-    m_configurationIdHasBeenSet(false),
-    m_configurationRevisionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationRevisionRequest::SerializePayload() const
 {
   return {};

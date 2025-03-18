@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMailDomainsRequest::ListMailDomainsRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMailDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

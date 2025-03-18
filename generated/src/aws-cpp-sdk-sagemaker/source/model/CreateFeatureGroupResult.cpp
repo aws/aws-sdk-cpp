@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFeatureGroupResult::CreateFeatureGroupResult()
-{
-}
-
 CreateFeatureGroupResult::CreateFeatureGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateFeatureGroupResult& CreateFeatureGroupResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("FeatureGroupArn"))
   {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");
-
+    m_featureGroupArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

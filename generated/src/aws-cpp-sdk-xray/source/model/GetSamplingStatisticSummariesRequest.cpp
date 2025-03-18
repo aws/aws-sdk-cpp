@@ -12,11 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSamplingStatisticSummariesRequest::GetSamplingStatisticSummariesRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSamplingStatisticSummariesRequest::SerializePayload() const
 {
   JsonValue payload;

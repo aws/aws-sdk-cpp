@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AssociationExecutionFilter::AssociationExecutionFilter() : 
-    m_key(AssociationExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(AssociationFilterOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AssociationExecutionFilter::AssociationExecutionFilter(JsonView jsonValue)
-  : AssociationExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AssociationExecutionFilter& AssociationExecutionFilter::operator =(JsonView json
   if(jsonValue.ValueExists("Key"))
   {
     m_key = AssociationExecutionFilterKeyMapper::GetAssociationExecutionFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AssociationFilterOperatorTypeMapper::GetAssociationFilterOperatorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

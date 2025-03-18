@@ -33,7 +33,7 @@ namespace Model
   class EventSubscription
   {
   public:
-    AWS_INSPECTOR_API EventSubscription();
+    AWS_INSPECTOR_API EventSubscription() = default;
     AWS_INSPECTOR_API EventSubscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,29 @@ namespace Model
      * <p>The event for which Amazon Simple Notification Service (SNS) notifications
      * are sent.</p>
      */
-    inline const InspectorEvent& GetEvent() const{ return m_event; }
+    inline InspectorEvent GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const InspectorEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(InspectorEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline EventSubscription& WithEvent(const InspectorEvent& value) { SetEvent(value); return *this;}
-    inline EventSubscription& WithEvent(InspectorEvent&& value) { SetEvent(std::move(value)); return *this;}
+    inline void SetEvent(InspectorEvent value) { m_eventHasBeenSet = true; m_event = value; }
+    inline EventSubscription& WithEvent(InspectorEvent value) { SetEvent(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which <a>SubscribeToEvent</a> is called.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubscribedAt() const{ return m_subscribedAt; }
+    inline const Aws::Utils::DateTime& GetSubscribedAt() const { return m_subscribedAt; }
     inline bool SubscribedAtHasBeenSet() const { return m_subscribedAtHasBeenSet; }
-    inline void SetSubscribedAt(const Aws::Utils::DateTime& value) { m_subscribedAtHasBeenSet = true; m_subscribedAt = value; }
-    inline void SetSubscribedAt(Aws::Utils::DateTime&& value) { m_subscribedAtHasBeenSet = true; m_subscribedAt = std::move(value); }
-    inline EventSubscription& WithSubscribedAt(const Aws::Utils::DateTime& value) { SetSubscribedAt(value); return *this;}
-    inline EventSubscription& WithSubscribedAt(Aws::Utils::DateTime&& value) { SetSubscribedAt(std::move(value)); return *this;}
+    template<typename SubscribedAtT = Aws::Utils::DateTime>
+    void SetSubscribedAt(SubscribedAtT&& value) { m_subscribedAtHasBeenSet = true; m_subscribedAt = std::forward<SubscribedAtT>(value); }
+    template<typename SubscribedAtT = Aws::Utils::DateTime>
+    EventSubscription& WithSubscribedAt(SubscribedAtT&& value) { SetSubscribedAt(std::forward<SubscribedAtT>(value)); return *this;}
     ///@}
   private:
 
-    InspectorEvent m_event;
+    InspectorEvent m_event{InspectorEvent::NOT_SET};
     bool m_eventHasBeenSet = false;
 
-    Aws::Utils::DateTime m_subscribedAt;
+    Aws::Utils::DateTime m_subscribedAt{};
     bool m_subscribedAtHasBeenSet = false;
   };
 

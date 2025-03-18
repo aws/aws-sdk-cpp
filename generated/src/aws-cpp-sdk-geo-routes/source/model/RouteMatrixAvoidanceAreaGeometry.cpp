@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixAvoidanceAreaGeometry::RouteMatrixAvoidanceAreaGeometry() : 
-    m_boundingBoxHasBeenSet(false),
-    m_polygonHasBeenSet(false),
-    m_polylinePolygonHasBeenSet(false)
-{
-}
-
 RouteMatrixAvoidanceAreaGeometry::RouteMatrixAvoidanceAreaGeometry(JsonView jsonValue)
-  : RouteMatrixAvoidanceAreaGeometry()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ RouteMatrixAvoidanceAreaGeometry& RouteMatrixAvoidanceAreaGeometry::operator =(J
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polygon"))
   {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -66,7 +57,6 @@ RouteMatrixAvoidanceAreaGeometry& RouteMatrixAvoidanceAreaGeometry::operator =(J
     }
     m_polygonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylinePolygon"))
   {
     Aws::Utils::Array<JsonView> polylinePolygonJsonList = jsonValue.GetArray("PolylinePolygon");
@@ -76,7 +66,6 @@ RouteMatrixAvoidanceAreaGeometry& RouteMatrixAvoidanceAreaGeometry::operator =(J
     }
     m_polylinePolygonHasBeenSet = true;
   }
-
   return *this;
 }
 

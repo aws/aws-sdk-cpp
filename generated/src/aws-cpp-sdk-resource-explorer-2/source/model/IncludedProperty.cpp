@@ -18,13 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-IncludedProperty::IncludedProperty() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 IncludedProperty::IncludedProperty(JsonView jsonValue)
-  : IncludedProperty()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IncludedProperty& IncludedProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode() : 
-    m_cardExpiryDateHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
-{
-}
-
 DiscoverDynamicCardVerificationCode::DiscoverDynamicCardVerificationCode(JsonView jsonValue)
-  : DiscoverDynamicCardVerificationCode()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DiscoverDynamicCardVerificationCode& DiscoverDynamicCardVerificationCode::operat
   if(jsonValue.ValueExists("CardExpiryDate"))
   {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
-
     m_cardExpiryDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnpredictableNumber"))
   {
     m_unpredictableNumber = jsonValue.GetString("UnpredictableNumber");
-
     m_unpredictableNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   return *this;
 }
 

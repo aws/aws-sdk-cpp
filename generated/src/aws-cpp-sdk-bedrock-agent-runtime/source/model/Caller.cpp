@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Caller::Caller() : 
-    m_agentAliasArnHasBeenSet(false)
-{
-}
-
 Caller::Caller(JsonView jsonValue)
-  : Caller()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Caller& Caller::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentAliasArn"))
   {
     m_agentAliasArn = jsonValue.GetString("agentAliasArn");
-
     m_agentAliasArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddCommunicationToCaseResult::AddCommunicationToCaseResult() : 
-    m_result(false)
-{
-}
-
 AddCommunicationToCaseResult::AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AddCommunicationToCaseResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ AddCommunicationToCaseResult& AddCommunicationToCaseResult::operator =(const Aws
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetBool("result");
-
+    m_resultHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

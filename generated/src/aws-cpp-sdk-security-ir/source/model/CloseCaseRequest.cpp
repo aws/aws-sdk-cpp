@@ -12,11 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CloseCaseRequest::CloseCaseRequest() : 
-    m_caseIdHasBeenSet(false)
-{
-}
-
 Aws::String CloseCaseRequest::SerializePayload() const
 {
   return {};

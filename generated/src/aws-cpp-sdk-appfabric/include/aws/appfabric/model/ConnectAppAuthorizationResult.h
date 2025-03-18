@@ -28,7 +28,7 @@ namespace Model
   class ConnectAppAuthorizationResult
   {
   public:
-    AWS_APPFABRIC_API ConnectAppAuthorizationResult();
+    AWS_APPFABRIC_API ConnectAppAuthorizationResult() = default;
     AWS_APPFABRIC_API ConnectAppAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFABRIC_API ConnectAppAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains a summary of the app authorization.</p>
      */
-    inline const AppAuthorizationSummary& GetAppAuthorizationSummary() const{ return m_appAuthorizationSummary; }
-    inline void SetAppAuthorizationSummary(const AppAuthorizationSummary& value) { m_appAuthorizationSummary = value; }
-    inline void SetAppAuthorizationSummary(AppAuthorizationSummary&& value) { m_appAuthorizationSummary = std::move(value); }
-    inline ConnectAppAuthorizationResult& WithAppAuthorizationSummary(const AppAuthorizationSummary& value) { SetAppAuthorizationSummary(value); return *this;}
-    inline ConnectAppAuthorizationResult& WithAppAuthorizationSummary(AppAuthorizationSummary&& value) { SetAppAuthorizationSummary(std::move(value)); return *this;}
+    inline const AppAuthorizationSummary& GetAppAuthorizationSummary() const { return m_appAuthorizationSummary; }
+    template<typename AppAuthorizationSummaryT = AppAuthorizationSummary>
+    void SetAppAuthorizationSummary(AppAuthorizationSummaryT&& value) { m_appAuthorizationSummaryHasBeenSet = true; m_appAuthorizationSummary = std::forward<AppAuthorizationSummaryT>(value); }
+    template<typename AppAuthorizationSummaryT = AppAuthorizationSummary>
+    ConnectAppAuthorizationResult& WithAppAuthorizationSummary(AppAuthorizationSummaryT&& value) { SetAppAuthorizationSummary(std::forward<AppAuthorizationSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConnectAppAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConnectAppAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConnectAppAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConnectAppAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppAuthorizationSummary m_appAuthorizationSummary;
+    bool m_appAuthorizationSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

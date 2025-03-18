@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ProposalSummary::ProposalSummary() : 
-    m_offerIdHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 ProposalSummary::ProposalSummary(JsonView jsonValue)
-  : ProposalSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProposalSummary& ProposalSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("offerId"))
   {
     m_offerId = jsonValue.GetString("offerId");
-
     m_offerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -48,7 +39,6 @@ ProposalSummary& ProposalSummary::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerMetadata::EntityRecognizerMetadata() : 
-    m_numberOfTrainedDocuments(0),
-    m_numberOfTrainedDocumentsHasBeenSet(false),
-    m_numberOfTestDocuments(0),
-    m_numberOfTestDocumentsHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false),
-    m_entityTypesHasBeenSet(false)
-{
-}
-
 EntityRecognizerMetadata::EntityRecognizerMetadata(JsonView jsonValue)
-  : EntityRecognizerMetadata()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EntityRecognizerMetadata& EntityRecognizerMetadata::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("NumberOfTrainedDocuments"))
   {
     m_numberOfTrainedDocuments = jsonValue.GetInteger("NumberOfTrainedDocuments");
-
     m_numberOfTrainedDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfTestDocuments"))
   {
     m_numberOfTestDocuments = jsonValue.GetInteger("NumberOfTestDocuments");
-
     m_numberOfTestDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMetrics"))
   {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
-
     m_evaluationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityTypes"))
   {
     Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
@@ -66,7 +49,6 @@ EntityRecognizerMetadata& EntityRecognizerMetadata::operator =(JsonView jsonValu
     }
     m_entityTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

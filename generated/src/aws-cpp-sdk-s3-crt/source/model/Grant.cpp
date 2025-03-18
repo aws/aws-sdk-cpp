@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Grant::Grant() : 
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
-{
-}
-
 Grant::Grant(const XmlNode& xmlNode)
-  : Grant()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ Grant& Grant::operator =(const XmlNode& xmlNode)
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
     }
   }

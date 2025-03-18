@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ImscDestinationSettings::ImscDestinationSettings() : 
-    m_accessibility(ImscAccessibilitySubs::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_stylePassthrough(ImscStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
-{
-}
-
 ImscDestinationSettings::ImscDestinationSettings(JsonView jsonValue)
-  : ImscDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ImscDestinationSettings& ImscDestinationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessibility"))
   {
     m_accessibility = ImscAccessibilitySubsMapper::GetImscAccessibilitySubsForName(jsonValue.GetString("accessibility"));
-
     m_accessibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stylePassthrough"))
   {
     m_stylePassthrough = ImscStylePassthroughMapper::GetImscStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
-
     m_stylePassthroughHasBeenSet = true;
   }
-
   return *this;
 }
 

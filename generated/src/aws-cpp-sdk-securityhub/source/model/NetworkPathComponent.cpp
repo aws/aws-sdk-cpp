@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkPathComponent::NetworkPathComponent() : 
-    m_componentIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_egressHasBeenSet(false),
-    m_ingressHasBeenSet(false)
-{
-}
-
 NetworkPathComponent::NetworkPathComponent(JsonView jsonValue)
-  : NetworkPathComponent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NetworkPathComponent& NetworkPathComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComponentId"))
   {
     m_componentId = jsonValue.GetString("ComponentId");
-
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentType"))
   {
     m_componentType = jsonValue.GetString("ComponentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Egress"))
   {
     m_egress = jsonValue.GetObject("Egress");
-
     m_egressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ingress"))
   {
     m_ingress = jsonValue.GetObject("Ingress");
-
     m_ingressHasBeenSet = true;
   }
-
   return *this;
 }
 

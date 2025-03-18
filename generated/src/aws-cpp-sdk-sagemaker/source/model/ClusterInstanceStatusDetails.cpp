@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterInstanceStatusDetails::ClusterInstanceStatusDetails() : 
-    m_status(ClusterInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ClusterInstanceStatusDetails::ClusterInstanceStatusDetails(JsonView jsonValue)
-  : ClusterInstanceStatusDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ClusterInstanceStatusDetails& ClusterInstanceStatusDetails::operator =(JsonView 
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ClusterInstanceStatusMapper::GetClusterInstanceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

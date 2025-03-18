@@ -43,7 +43,7 @@ namespace Model
   class TaskContainerDetails
   {
   public:
-    AWS_BATCH_API TaskContainerDetails();
+    AWS_BATCH_API TaskContainerDetails() = default;
     AWS_BATCH_API TaskContainerDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API TaskContainerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,29 +61,28 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline TaskContainerDetails& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline TaskContainerDetails& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline TaskContainerDetails& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline TaskContainerDetails& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    TaskContainerDetails& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    TaskContainerDetails& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of containers that this container depends on.</p>
      */
-    inline const Aws::Vector<TaskContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<TaskContainerDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<TaskContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<TaskContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline TaskContainerDetails& WithDependsOn(const Aws::Vector<TaskContainerDependency>& value) { SetDependsOn(value); return *this;}
-    inline TaskContainerDetails& WithDependsOn(Aws::Vector<TaskContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddDependsOn(const TaskContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline TaskContainerDetails& AddDependsOn(TaskContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<TaskContainerDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<TaskContainerDependency>>
+    TaskContainerDetails& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = TaskContainerDependency>
+    TaskContainerDetails& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,14 +97,14 @@ namespace Model
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p> 
      */
-    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline TaskContainerDetails& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
-    inline TaskContainerDetails& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
-    inline TaskContainerDetails& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    TaskContainerDetails& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentT = KeyValuePair>
+    TaskContainerDetails& AddEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment.emplace_back(std::forward<EnvironmentT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,7 +122,7 @@ namespace Model
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline bool GetEssential() const{ return m_essential; }
+    inline bool GetEssential() const { return m_essential; }
     inline bool EssentialHasBeenSet() const { return m_essentialHasBeenSet; }
     inline void SetEssential(bool value) { m_essentialHasBeenSet = true; m_essential = value; }
     inline TaskContainerDetails& WithEssential(bool value) { SetEssential(value); return *this;}
@@ -145,14 +144,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">
      * <i>docker run</i> </a>.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline TaskContainerDetails& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline TaskContainerDetails& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline TaskContainerDetails& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    TaskContainerDetails& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,12 +159,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p>
      *  <p>This parameter is not supported for Windows containers.</p> 
      */
-    inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
+    inline const LinuxParameters& GetLinuxParameters() const { return m_linuxParameters; }
     inline bool LinuxParametersHasBeenSet() const { return m_linuxParametersHasBeenSet; }
-    inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
-    inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
-    inline TaskContainerDetails& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
-    inline TaskContainerDetails& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
+    template<typename LinuxParametersT = LinuxParameters>
+    void SetLinuxParameters(LinuxParametersT&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::forward<LinuxParametersT>(value); }
+    template<typename LinuxParametersT = LinuxParameters>
+    TaskContainerDetails& WithLinuxParameters(LinuxParametersT&& value) { SetLinuxParameters(std::forward<LinuxParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,12 +201,12 @@ namespace Model
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
-    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline TaskContainerDetails& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline TaskContainerDetails& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfiguration>
+    TaskContainerDetails& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,28 +222,26 @@ namespace Model
      * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
      * a different drive, and mount point can't be across drives.</p>
      */
-    inline const Aws::Vector<MountPoint>& GetMountPoints() const{ return m_mountPoints; }
+    inline const Aws::Vector<MountPoint>& GetMountPoints() const { return m_mountPoints; }
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-    inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-    inline TaskContainerDetails& WithMountPoints(const Aws::Vector<MountPoint>& value) { SetMountPoints(value); return *this;}
-    inline TaskContainerDetails& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddMountPoints(const MountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-    inline TaskContainerDetails& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    void SetMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::forward<MountPointsT>(value); }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    TaskContainerDetails& WithMountPoints(MountPointsT&& value) { SetMountPoints(std::forward<MountPointsT>(value)); return *this;}
+    template<typename MountPointsT = MountPoint>
+    TaskContainerDetails& AddMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.emplace_back(std::forward<MountPointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of a container.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TaskContainerDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TaskContainerDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TaskContainerDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TaskContainerDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -262,7 +257,7 @@ namespace Model
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
      * tasks run on Fargate.</p> 
      */
-    inline bool GetPrivileged() const{ return m_privileged; }
+    inline bool GetPrivileged() const { return m_privileged; }
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
     inline TaskContainerDetails& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
@@ -280,7 +275,7 @@ namespace Model
      * run</a>.</p>  <p>This parameter is not supported for Windows
      * containers.</p> 
      */
-    inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
+    inline bool GetReadonlyRootFilesystem() const { return m_readonlyRootFilesystem; }
     inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
     inline TaskContainerDetails& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
@@ -290,12 +285,12 @@ namespace Model
     /**
      * <p>The private repository authentication credentials to use.</p>
      */
-    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+    inline const RepositoryCredentials& GetRepositoryCredentials() const { return m_repositoryCredentials; }
     inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
-    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
-    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
-    inline TaskContainerDetails& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
-    inline TaskContainerDetails& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    void SetRepositoryCredentials(RepositoryCredentialsT&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::forward<RepositoryCredentialsT>(value); }
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    TaskContainerDetails& WithRepositoryCredentials(RepositoryCredentialsT&& value) { SetRepositoryCredentials(std::forward<RepositoryCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,14 +298,14 @@ namespace Model
      * <p>The type and amount of a resource to assign to a container. The only
      * supported resource is a GPU.</p>
      */
-    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
-    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
-    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
-    inline TaskContainerDetails& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
-    inline TaskContainerDetails& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
-    inline TaskContainerDetails& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    void SetResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::forward<ResourceRequirementsT>(value); }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    TaskContainerDetails& WithResourceRequirements(ResourceRequirementsT&& value) { SetResourceRequirements(std::forward<ResourceRequirementsT>(value)); return *this;}
+    template<typename ResourceRequirementsT = ResourceRequirement>
+    TaskContainerDetails& AddResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.emplace_back(std::forward<ResourceRequirementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -319,14 +314,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
      * Sensitive Data</a> in the Amazon Elastic Container Service Developer Guide.</p>
      */
-    inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
+    inline const Aws::Vector<Secret>& GetSecrets() const { return m_secrets; }
     inline bool SecretsHasBeenSet() const { return m_secretsHasBeenSet; }
-    inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
-    inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
-    inline TaskContainerDetails& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
-    inline TaskContainerDetails& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
-    inline TaskContainerDetails& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    void SetSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets = std::forward<SecretsT>(value); }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    TaskContainerDetails& WithSecrets(SecretsT&& value) { SetSecrets(std::forward<SecretsT>(value)); return *this;}
+    template<typename SecretsT = Secret>
+    TaskContainerDetails& AddSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets.emplace_back(std::forward<SecretsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -352,14 +347,14 @@ namespace Model
      * <code>--format '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is
      * not supported for Windows containers.</p> 
      */
-    inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
+    inline const Aws::Vector<Ulimit>& GetUlimits() const { return m_ulimits; }
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
-    inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
-    inline TaskContainerDetails& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
-    inline TaskContainerDetails& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
-    inline TaskContainerDetails& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    void SetUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::forward<UlimitsT>(value); }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    TaskContainerDetails& WithUlimits(UlimitsT&& value) { SetUlimits(std::forward<UlimitsT>(value)); return *this;}
+    template<typename UlimitsT = Ulimit>
+    TaskContainerDetails& AddUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits.emplace_back(std::forward<UlimitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -377,21 +372,19 @@ namespace Model
      * <li> <p> <code/> </p> </li> </ul>  <p>This parameter is not supported for
      * Windows containers.</p> 
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline TaskContainerDetails& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline TaskContainerDetails& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline TaskContainerDetails& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    TaskContainerDetails& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The exit code returned upon completion.</p>
      */
-    inline int GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const { return m_exitCode; }
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
     inline TaskContainerDetails& WithExitCode(int value) { SetExitCode(value); return *this;}
@@ -402,14 +395,12 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details for a running or stopped container.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline TaskContainerDetails& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline TaskContainerDetails& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline TaskContainerDetails& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    TaskContainerDetails& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -419,28 +410,26 @@ namespace Model
      * attempt receives a log stream name when they reach the <code>RUNNING</code>
      * status. </p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline TaskContainerDetails& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline TaskContainerDetails& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline TaskContainerDetails& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    TaskContainerDetails& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network interfaces that are associated with the job.</p>
      */
-    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline TaskContainerDetails& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-    inline TaskContainerDetails& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline TaskContainerDetails& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline TaskContainerDetails& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    TaskContainerDetails& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = NetworkInterface>
+    TaskContainerDetails& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
   private:
 
@@ -453,7 +442,7 @@ namespace Model
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet = false;
 
-    bool m_essential;
+    bool m_essential{false};
     bool m_essentialHasBeenSet = false;
 
     Aws::String m_image;
@@ -471,10 +460,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_privileged;
+    bool m_privileged{false};
     bool m_privilegedHasBeenSet = false;
 
-    bool m_readonlyRootFilesystem;
+    bool m_readonlyRootFilesystem{false};
     bool m_readonlyRootFilesystemHasBeenSet = false;
 
     RepositoryCredentials m_repositoryCredentials;
@@ -492,7 +481,7 @@ namespace Model
     Aws::String m_user;
     bool m_userHasBeenSet = false;
 
-    int m_exitCode;
+    int m_exitCode{0};
     bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;

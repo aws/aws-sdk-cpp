@@ -33,7 +33,7 @@ namespace Model
   class RuleGroupVariables
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupVariables();
+    AWS_SECURITYHUB_API RuleGroupVariables() = default;
     AWS_SECURITYHUB_API RuleGroupVariables(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupVariables& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>A list of IP addresses and address ranges, in CIDR notation.</p>
      */
-    inline const RuleGroupVariablesIpSetsDetails& GetIpSets() const{ return m_ipSets; }
+    inline const RuleGroupVariablesIpSetsDetails& GetIpSets() const { return m_ipSets; }
     inline bool IpSetsHasBeenSet() const { return m_ipSetsHasBeenSet; }
-    inline void SetIpSets(const RuleGroupVariablesIpSetsDetails& value) { m_ipSetsHasBeenSet = true; m_ipSets = value; }
-    inline void SetIpSets(RuleGroupVariablesIpSetsDetails&& value) { m_ipSetsHasBeenSet = true; m_ipSets = std::move(value); }
-    inline RuleGroupVariables& WithIpSets(const RuleGroupVariablesIpSetsDetails& value) { SetIpSets(value); return *this;}
-    inline RuleGroupVariables& WithIpSets(RuleGroupVariablesIpSetsDetails&& value) { SetIpSets(std::move(value)); return *this;}
+    template<typename IpSetsT = RuleGroupVariablesIpSetsDetails>
+    void SetIpSets(IpSetsT&& value) { m_ipSetsHasBeenSet = true; m_ipSets = std::forward<IpSetsT>(value); }
+    template<typename IpSetsT = RuleGroupVariablesIpSetsDetails>
+    RuleGroupVariables& WithIpSets(IpSetsT&& value) { SetIpSets(std::forward<IpSetsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of port ranges.</p>
      */
-    inline const RuleGroupVariablesPortSetsDetails& GetPortSets() const{ return m_portSets; }
+    inline const RuleGroupVariablesPortSetsDetails& GetPortSets() const { return m_portSets; }
     inline bool PortSetsHasBeenSet() const { return m_portSetsHasBeenSet; }
-    inline void SetPortSets(const RuleGroupVariablesPortSetsDetails& value) { m_portSetsHasBeenSet = true; m_portSets = value; }
-    inline void SetPortSets(RuleGroupVariablesPortSetsDetails&& value) { m_portSetsHasBeenSet = true; m_portSets = std::move(value); }
-    inline RuleGroupVariables& WithPortSets(const RuleGroupVariablesPortSetsDetails& value) { SetPortSets(value); return *this;}
-    inline RuleGroupVariables& WithPortSets(RuleGroupVariablesPortSetsDetails&& value) { SetPortSets(std::move(value)); return *this;}
+    template<typename PortSetsT = RuleGroupVariablesPortSetsDetails>
+    void SetPortSets(PortSetsT&& value) { m_portSetsHasBeenSet = true; m_portSets = std::forward<PortSetsT>(value); }
+    template<typename PortSetsT = RuleGroupVariablesPortSetsDetails>
+    RuleGroupVariables& WithPortSets(PortSetsT&& value) { SetPortSets(std::forward<PortSetsT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateNotificationConfigurationRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
      * <p>The type of event triggering a device notification to the customer-managed
      * destination.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline CreateNotificationConfigurationRequest& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline CreateNotificationConfigurationRequest& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline CreateNotificationConfigurationRequest& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the destination for the notification configuration.</p>
      */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+    inline const Aws::String& GetDestinationName() const { return m_destinationName; }
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-    inline CreateNotificationConfigurationRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-    inline CreateNotificationConfigurationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-    inline CreateNotificationConfigurationRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+    template<typename DestinationNameT = Aws::String>
+    void SetDestinationName(DestinationNameT&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::forward<DestinationNameT>(value); }
+    template<typename DestinationNameT = Aws::String>
+    CreateNotificationConfigurationRequest& WithDestinationName(DestinationNameT&& value) { SetDestinationName(std::forward<DestinationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * initially using the same client token and parameters, then the retry attempt
      * will succeed without performing any further actions.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateNotificationConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateNotificationConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateNotificationConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateNotificationConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,23 +77,20 @@ namespace Model
      * <p>A set of key/value pairs that are used to manage the notification
      * configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNotificationConfigurationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateNotificationConfigurationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNotificationConfigurationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNotificationConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNotificationConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateNotificationConfigurationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_destinationName;

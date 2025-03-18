@@ -12,14 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConnectorsRequest::DescribeConnectorsRequest() : 
-    m_connectorTypesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConnectorsRequest::SerializePayload() const
 {
   JsonValue payload;

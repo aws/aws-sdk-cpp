@@ -36,7 +36,7 @@ namespace Model
   class ListAccessKeysResult
   {
   public:
-    AWS_IAM_API ListAccessKeysResult();
+    AWS_IAM_API ListAccessKeysResult() = default;
     AWS_IAM_API ListAccessKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API ListAccessKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,13 @@ namespace Model
     /**
      * <p>A list of objects containing metadata about the access keys.</p>
      */
-    inline const Aws::Vector<AccessKeyMetadata>& GetAccessKeyMetadata() const{ return m_accessKeyMetadata; }
-    inline void SetAccessKeyMetadata(const Aws::Vector<AccessKeyMetadata>& value) { m_accessKeyMetadata = value; }
-    inline void SetAccessKeyMetadata(Aws::Vector<AccessKeyMetadata>&& value) { m_accessKeyMetadata = std::move(value); }
-    inline ListAccessKeysResult& WithAccessKeyMetadata(const Aws::Vector<AccessKeyMetadata>& value) { SetAccessKeyMetadata(value); return *this;}
-    inline ListAccessKeysResult& WithAccessKeyMetadata(Aws::Vector<AccessKeyMetadata>&& value) { SetAccessKeyMetadata(std::move(value)); return *this;}
-    inline ListAccessKeysResult& AddAccessKeyMetadata(const AccessKeyMetadata& value) { m_accessKeyMetadata.push_back(value); return *this; }
-    inline ListAccessKeysResult& AddAccessKeyMetadata(AccessKeyMetadata&& value) { m_accessKeyMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessKeyMetadata>& GetAccessKeyMetadata() const { return m_accessKeyMetadata; }
+    template<typename AccessKeyMetadataT = Aws::Vector<AccessKeyMetadata>>
+    void SetAccessKeyMetadata(AccessKeyMetadataT&& value) { m_accessKeyMetadataHasBeenSet = true; m_accessKeyMetadata = std::forward<AccessKeyMetadataT>(value); }
+    template<typename AccessKeyMetadataT = Aws::Vector<AccessKeyMetadata>>
+    ListAccessKeysResult& WithAccessKeyMetadata(AccessKeyMetadataT&& value) { SetAccessKeyMetadata(std::forward<AccessKeyMetadataT>(value)); return *this;}
+    template<typename AccessKeyMetadataT = AccessKeyMetadata>
+    ListAccessKeysResult& AddAccessKeyMetadata(AccessKeyMetadataT&& value) { m_accessKeyMetadataHasBeenSet = true; m_accessKeyMetadata.emplace_back(std::forward<AccessKeyMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,8 +64,8 @@ namespace Model
      * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListAccessKeysResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -75,32 +75,34 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListAccessKeysResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListAccessKeysResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListAccessKeysResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListAccessKeysResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListAccessKeysResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListAccessKeysResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListAccessKeysResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccessKeyMetadata> m_accessKeyMetadata;
+    bool m_accessKeyMetadataHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

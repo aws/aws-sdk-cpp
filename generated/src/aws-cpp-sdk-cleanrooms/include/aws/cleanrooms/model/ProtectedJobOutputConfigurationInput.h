@@ -31,7 +31,7 @@ namespace Model
   class ProtectedJobOutputConfigurationInput
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationInput();
+    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationInput() = default;
     AWS_CLEANROOMS_API ProtectedJobOutputConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobOutputConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The member of the protected job output configuration input.</p>
      */
-    inline const ProtectedJobMemberOutputConfigurationInput& GetMember() const{ return m_member; }
+    inline const ProtectedJobMemberOutputConfigurationInput& GetMember() const { return m_member; }
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-    inline void SetMember(const ProtectedJobMemberOutputConfigurationInput& value) { m_memberHasBeenSet = true; m_member = value; }
-    inline void SetMember(ProtectedJobMemberOutputConfigurationInput&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-    inline ProtectedJobOutputConfigurationInput& WithMember(const ProtectedJobMemberOutputConfigurationInput& value) { SetMember(value); return *this;}
-    inline ProtectedJobOutputConfigurationInput& WithMember(ProtectedJobMemberOutputConfigurationInput&& value) { SetMember(std::move(value)); return *this;}
+    template<typename MemberT = ProtectedJobMemberOutputConfigurationInput>
+    void SetMember(MemberT&& value) { m_memberHasBeenSet = true; m_member = std::forward<MemberT>(value); }
+    template<typename MemberT = ProtectedJobMemberOutputConfigurationInput>
+    ProtectedJobOutputConfigurationInput& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class DescribeRdsDbInstancesRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeRdsDbInstancesRequest();
+    AWS_OPSWORKS_API DescribeRdsDbInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p>The ID of the stack with which the instances are registered. The operation
      * returns descriptions of all registered Amazon RDS instances.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline DescribeRdsDbInstancesRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeRdsDbInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeRdsDbInstancesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeRdsDbInstancesRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRdsDbInstanceArns() const{ return m_rdsDbInstanceArns; }
+    inline const Aws::Vector<Aws::String>& GetRdsDbInstanceArns() const { return m_rdsDbInstanceArns; }
     inline bool RdsDbInstanceArnsHasBeenSet() const { return m_rdsDbInstanceArnsHasBeenSet; }
-    inline void SetRdsDbInstanceArns(const Aws::Vector<Aws::String>& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = value; }
-    inline void SetRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = std::move(value); }
-    inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(const Aws::Vector<Aws::String>& value) { SetRdsDbInstanceArns(value); return *this;}
-    inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { SetRdsDbInstanceArns(std::move(value)); return *this;}
-    inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(const Aws::String& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
-    inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(Aws::String&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(std::move(value)); return *this; }
-    inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(const char* value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
+    template<typename RdsDbInstanceArnsT = Aws::Vector<Aws::String>>
+    void SetRdsDbInstanceArns(RdsDbInstanceArnsT&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = std::forward<RdsDbInstanceArnsT>(value); }
+    template<typename RdsDbInstanceArnsT = Aws::Vector<Aws::String>>
+    DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(RdsDbInstanceArnsT&& value) { SetRdsDbInstanceArns(std::forward<RdsDbInstanceArnsT>(value)); return *this;}
+    template<typename RdsDbInstanceArnsT = Aws::String>
+    DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(RdsDbInstanceArnsT&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.emplace_back(std::forward<RdsDbInstanceArnsT>(value)); return *this; }
     ///@}
   private:
 

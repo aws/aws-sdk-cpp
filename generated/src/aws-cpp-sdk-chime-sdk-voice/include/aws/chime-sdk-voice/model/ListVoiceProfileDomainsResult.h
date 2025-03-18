@@ -29,7 +29,7 @@ namespace Model
   class ListVoiceProfileDomainsResult
   {
   public:
-    AWS_CHIMESDKVOICE_API ListVoiceProfileDomainsResult();
+    AWS_CHIMESDKVOICE_API ListVoiceProfileDomainsResult() = default;
     AWS_CHIMESDKVOICE_API ListVoiceProfileDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API ListVoiceProfileDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of voice profile domains.</p>
      */
-    inline const Aws::Vector<VoiceProfileDomainSummary>& GetVoiceProfileDomains() const{ return m_voiceProfileDomains; }
-    inline void SetVoiceProfileDomains(const Aws::Vector<VoiceProfileDomainSummary>& value) { m_voiceProfileDomains = value; }
-    inline void SetVoiceProfileDomains(Aws::Vector<VoiceProfileDomainSummary>&& value) { m_voiceProfileDomains = std::move(value); }
-    inline ListVoiceProfileDomainsResult& WithVoiceProfileDomains(const Aws::Vector<VoiceProfileDomainSummary>& value) { SetVoiceProfileDomains(value); return *this;}
-    inline ListVoiceProfileDomainsResult& WithVoiceProfileDomains(Aws::Vector<VoiceProfileDomainSummary>&& value) { SetVoiceProfileDomains(std::move(value)); return *this;}
-    inline ListVoiceProfileDomainsResult& AddVoiceProfileDomains(const VoiceProfileDomainSummary& value) { m_voiceProfileDomains.push_back(value); return *this; }
-    inline ListVoiceProfileDomainsResult& AddVoiceProfileDomains(VoiceProfileDomainSummary&& value) { m_voiceProfileDomains.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VoiceProfileDomainSummary>& GetVoiceProfileDomains() const { return m_voiceProfileDomains; }
+    template<typename VoiceProfileDomainsT = Aws::Vector<VoiceProfileDomainSummary>>
+    void SetVoiceProfileDomains(VoiceProfileDomainsT&& value) { m_voiceProfileDomainsHasBeenSet = true; m_voiceProfileDomains = std::forward<VoiceProfileDomainsT>(value); }
+    template<typename VoiceProfileDomainsT = Aws::Vector<VoiceProfileDomainSummary>>
+    ListVoiceProfileDomainsResult& WithVoiceProfileDomains(VoiceProfileDomainsT&& value) { SetVoiceProfileDomains(std::forward<VoiceProfileDomainsT>(value)); return *this;}
+    template<typename VoiceProfileDomainsT = VoiceProfileDomainSummary>
+    ListVoiceProfileDomainsResult& AddVoiceProfileDomains(VoiceProfileDomainsT&& value) { m_voiceProfileDomainsHasBeenSet = true; m_voiceProfileDomains.emplace_back(std::forward<VoiceProfileDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token used to return the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListVoiceProfileDomainsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVoiceProfileDomainsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVoiceProfileDomainsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVoiceProfileDomainsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVoiceProfileDomainsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVoiceProfileDomainsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVoiceProfileDomainsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVoiceProfileDomainsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VoiceProfileDomainSummary> m_voiceProfileDomains;
+    bool m_voiceProfileDomainsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

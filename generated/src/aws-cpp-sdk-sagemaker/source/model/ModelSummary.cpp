@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelSummary::ModelSummary() : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ModelSummary::ModelSummary(JsonView jsonValue)
-  : ModelSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

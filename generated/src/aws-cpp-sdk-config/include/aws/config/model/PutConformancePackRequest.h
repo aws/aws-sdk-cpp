@@ -24,7 +24,7 @@ namespace Model
   class PutConformancePackRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutConformancePackRequest();
+    AWS_CONFIGSERVICE_API PutConformancePackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique name of the conformance pack you want to deploy.</p>
      */
-    inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
+    inline const Aws::String& GetConformancePackName() const { return m_conformancePackName; }
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
-    inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
-    inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
-    inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
-    inline PutConformancePackRequest& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
-    inline PutConformancePackRequest& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
-    inline PutConformancePackRequest& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
+    template<typename ConformancePackNameT = Aws::String>
+    void SetConformancePackName(ConformancePackNameT&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::forward<ConformancePackNameT>(value); }
+    template<typename ConformancePackNameT = Aws::String>
+    PutConformancePackRequest& WithConformancePackName(ConformancePackNameT&& value) { SetConformancePackName(std::forward<ConformancePackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
      * storage class</a> if this parameter is passed.</p> 
      */
-    inline const Aws::String& GetTemplateS3Uri() const{ return m_templateS3Uri; }
+    inline const Aws::String& GetTemplateS3Uri() const { return m_templateS3Uri; }
     inline bool TemplateS3UriHasBeenSet() const { return m_templateS3UriHasBeenSet; }
-    inline void SetTemplateS3Uri(const Aws::String& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = value; }
-    inline void SetTemplateS3Uri(Aws::String&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::move(value); }
-    inline void SetTemplateS3Uri(const char* value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri.assign(value); }
-    inline PutConformancePackRequest& WithTemplateS3Uri(const Aws::String& value) { SetTemplateS3Uri(value); return *this;}
-    inline PutConformancePackRequest& WithTemplateS3Uri(Aws::String&& value) { SetTemplateS3Uri(std::move(value)); return *this;}
-    inline PutConformancePackRequest& WithTemplateS3Uri(const char* value) { SetTemplateS3Uri(value); return *this;}
+    template<typename TemplateS3UriT = Aws::String>
+    void SetTemplateS3Uri(TemplateS3UriT&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::forward<TemplateS3UriT>(value); }
+    template<typename TemplateS3UriT = Aws::String>
+    PutConformancePackRequest& WithTemplateS3Uri(TemplateS3UriT&& value) { SetTemplateS3Uri(std::forward<TemplateS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline PutConformancePackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline PutConformancePackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline PutConformancePackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    PutConformancePackRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket where Config stores conformance pack
      * templates.</p>  <p>This field is optional.</p> 
      */
-    inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
+    inline const Aws::String& GetDeliveryS3Bucket() const { return m_deliveryS3Bucket; }
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
-    inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
-    inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
-    inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
-    inline PutConformancePackRequest& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
-    inline PutConformancePackRequest& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
-    inline PutConformancePackRequest& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
+    template<typename DeliveryS3BucketT = Aws::String>
+    void SetDeliveryS3Bucket(DeliveryS3BucketT&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::forward<DeliveryS3BucketT>(value); }
+    template<typename DeliveryS3BucketT = Aws::String>
+    PutConformancePackRequest& WithDeliveryS3Bucket(DeliveryS3BucketT&& value) { SetDeliveryS3Bucket(std::forward<DeliveryS3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,28 +102,26 @@ namespace Model
      * <p>The prefix for the Amazon S3 bucket. </p>  <p>This field is
      * optional.</p> 
      */
-    inline const Aws::String& GetDeliveryS3KeyPrefix() const{ return m_deliveryS3KeyPrefix; }
+    inline const Aws::String& GetDeliveryS3KeyPrefix() const { return m_deliveryS3KeyPrefix; }
     inline bool DeliveryS3KeyPrefixHasBeenSet() const { return m_deliveryS3KeyPrefixHasBeenSet; }
-    inline void SetDeliveryS3KeyPrefix(const Aws::String& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = value; }
-    inline void SetDeliveryS3KeyPrefix(Aws::String&& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = std::move(value); }
-    inline void SetDeliveryS3KeyPrefix(const char* value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix.assign(value); }
-    inline PutConformancePackRequest& WithDeliveryS3KeyPrefix(const Aws::String& value) { SetDeliveryS3KeyPrefix(value); return *this;}
-    inline PutConformancePackRequest& WithDeliveryS3KeyPrefix(Aws::String&& value) { SetDeliveryS3KeyPrefix(std::move(value)); return *this;}
-    inline PutConformancePackRequest& WithDeliveryS3KeyPrefix(const char* value) { SetDeliveryS3KeyPrefix(value); return *this;}
+    template<typename DeliveryS3KeyPrefixT = Aws::String>
+    void SetDeliveryS3KeyPrefix(DeliveryS3KeyPrefixT&& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = std::forward<DeliveryS3KeyPrefixT>(value); }
+    template<typename DeliveryS3KeyPrefixT = Aws::String>
+    PutConformancePackRequest& WithDeliveryS3KeyPrefix(DeliveryS3KeyPrefixT&& value) { SetDeliveryS3KeyPrefix(std::forward<DeliveryS3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
      */
-    inline const Aws::Vector<ConformancePackInputParameter>& GetConformancePackInputParameters() const{ return m_conformancePackInputParameters; }
+    inline const Aws::Vector<ConformancePackInputParameter>& GetConformancePackInputParameters() const { return m_conformancePackInputParameters; }
     inline bool ConformancePackInputParametersHasBeenSet() const { return m_conformancePackInputParametersHasBeenSet; }
-    inline void SetConformancePackInputParameters(const Aws::Vector<ConformancePackInputParameter>& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters = value; }
-    inline void SetConformancePackInputParameters(Aws::Vector<ConformancePackInputParameter>&& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters = std::move(value); }
-    inline PutConformancePackRequest& WithConformancePackInputParameters(const Aws::Vector<ConformancePackInputParameter>& value) { SetConformancePackInputParameters(value); return *this;}
-    inline PutConformancePackRequest& WithConformancePackInputParameters(Aws::Vector<ConformancePackInputParameter>&& value) { SetConformancePackInputParameters(std::move(value)); return *this;}
-    inline PutConformancePackRequest& AddConformancePackInputParameters(const ConformancePackInputParameter& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters.push_back(value); return *this; }
-    inline PutConformancePackRequest& AddConformancePackInputParameters(ConformancePackInputParameter&& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters.push_back(std::move(value)); return *this; }
+    template<typename ConformancePackInputParametersT = Aws::Vector<ConformancePackInputParameter>>
+    void SetConformancePackInputParameters(ConformancePackInputParametersT&& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters = std::forward<ConformancePackInputParametersT>(value); }
+    template<typename ConformancePackInputParametersT = Aws::Vector<ConformancePackInputParameter>>
+    PutConformancePackRequest& WithConformancePackInputParameters(ConformancePackInputParametersT&& value) { SetConformancePackInputParameters(std::forward<ConformancePackInputParametersT>(value)); return *this;}
+    template<typename ConformancePackInputParametersT = ConformancePackInputParameter>
+    PutConformancePackRequest& AddConformancePackInputParameters(ConformancePackInputParametersT&& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters.emplace_back(std::forward<ConformancePackInputParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -141,12 +131,12 @@ namespace Model
      * Manager document (SSM document) and the version of the SSM document that is used
      * to create a conformance pack.</p>
      */
-    inline const TemplateSSMDocumentDetails& GetTemplateSSMDocumentDetails() const{ return m_templateSSMDocumentDetails; }
+    inline const TemplateSSMDocumentDetails& GetTemplateSSMDocumentDetails() const { return m_templateSSMDocumentDetails; }
     inline bool TemplateSSMDocumentDetailsHasBeenSet() const { return m_templateSSMDocumentDetailsHasBeenSet; }
-    inline void SetTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = value; }
-    inline void SetTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = std::move(value); }
-    inline PutConformancePackRequest& WithTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { SetTemplateSSMDocumentDetails(value); return *this;}
-    inline PutConformancePackRequest& WithTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { SetTemplateSSMDocumentDetails(std::move(value)); return *this;}
+    template<typename TemplateSSMDocumentDetailsT = TemplateSSMDocumentDetails>
+    void SetTemplateSSMDocumentDetails(TemplateSSMDocumentDetailsT&& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = std::forward<TemplateSSMDocumentDetailsT>(value); }
+    template<typename TemplateSSMDocumentDetailsT = TemplateSSMDocumentDetails>
+    PutConformancePackRequest& WithTemplateSSMDocumentDetails(TemplateSSMDocumentDetailsT&& value) { SetTemplateSSMDocumentDetails(std::forward<TemplateSSMDocumentDetailsT>(value)); return *this;}
     ///@}
   private:
 

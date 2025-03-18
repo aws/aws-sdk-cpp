@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollPaymentSite::RouteTollPaymentSite() : 
-    m_nameHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 RouteTollPaymentSite::RouteTollPaymentSite(JsonView jsonValue)
-  : RouteTollPaymentSite()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteTollPaymentSite& RouteTollPaymentSite::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -48,7 +39,6 @@ RouteTollPaymentSite& RouteTollPaymentSite::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBuildRequest::DescribeBuildRequest() : 
-    m_buildIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBuildRequest::SerializePayload() const
 {
   JsonValue payload;

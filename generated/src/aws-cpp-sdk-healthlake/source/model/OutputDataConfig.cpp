@@ -18,13 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-OutputDataConfig::OutputDataConfig() : 
-    m_s3ConfigurationHasBeenSet(false)
-{
-}
-
 OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-  : OutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

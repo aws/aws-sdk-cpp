@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GuardrailPiiEntityConfig::GuardrailPiiEntityConfig() : 
-    m_action(GuardrailSensitiveInformationAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_type(GuardrailPiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailPiiEntityConfig::GuardrailPiiEntityConfig(JsonView jsonValue)
-  : GuardrailPiiEntityConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GuardrailPiiEntityConfig& GuardrailPiiEntityConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrafficMirrorTargetResponse::CreateTrafficMirrorTargetResponse()
-{
-}
-
 CreateTrafficMirrorTargetResponse::CreateTrafficMirrorTargetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateTrafficMirrorTargetResponse& CreateTrafficMirrorTargetResponse::operator =
     if(!trafficMirrorTargetNode.IsNull())
     {
       m_trafficMirrorTarget = trafficMirrorTargetNode;
+      m_trafficMirrorTargetHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ CreateTrafficMirrorTargetResponse& CreateTrafficMirrorTargetResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTrafficMirrorTargetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

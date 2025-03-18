@@ -25,7 +25,7 @@ namespace Model
   class CreateAccessRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API CreateAccessRequest();
+    AWS_TRANSFER_API CreateAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <code>HomeDirectory</code> parameter is only used if
      * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
-    inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
+    inline const Aws::String& GetHomeDirectory() const { return m_homeDirectory; }
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
-    inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
-    inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
-    inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
-    inline CreateAccessRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
-    inline CreateAccessRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
-    inline CreateAccessRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
+    template<typename HomeDirectoryT = Aws::String>
+    void SetHomeDirectory(HomeDirectoryT&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::forward<HomeDirectoryT>(value); }
+    template<typename HomeDirectoryT = Aws::String>
+    CreateAccessRequest& WithHomeDirectory(HomeDirectoryT&& value) { SetHomeDirectory(std::forward<HomeDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
      * template.</p> 
      */
-    inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
+    inline HomeDirectoryType GetHomeDirectoryType() const { return m_homeDirectoryType; }
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
-    inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
-    inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
-    inline CreateAccessRequest& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
-    inline CreateAccessRequest& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
+    inline void SetHomeDirectoryType(HomeDirectoryType value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
+    inline CreateAccessRequest& WithHomeDirectoryType(HomeDirectoryType value) { SetHomeDirectoryType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,14 @@ namespace Model
      * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
      * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
-    inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
+    inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const { return m_homeDirectoryMappings; }
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
-    inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
-    inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
-    inline CreateAccessRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
-    inline CreateAccessRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
-    inline CreateAccessRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
-    inline CreateAccessRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
+    template<typename HomeDirectoryMappingsT = Aws::Vector<HomeDirectoryMapEntry>>
+    void SetHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::forward<HomeDirectoryMappingsT>(value); }
+    template<typename HomeDirectoryMappingsT = Aws::Vector<HomeDirectoryMapEntry>>
+    CreateAccessRequest& WithHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { SetHomeDirectoryMappings(std::forward<HomeDirectoryMappingsT>(value)); return *this;}
+    template<typename HomeDirectoryMappingsT = HomeDirectoryMapEntry>
+    CreateAccessRequest& AddHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.emplace_back(std::forward<HomeDirectoryMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,24 +125,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>Security Token Service API Reference</i>.</p> 
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline CreateAccessRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline CreateAccessRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline CreateAccessRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    CreateAccessRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PosixProfile& GetPosixProfile() const{ return m_posixProfile; }
+    inline const PosixProfile& GetPosixProfile() const { return m_posixProfile; }
     inline bool PosixProfileHasBeenSet() const { return m_posixProfileHasBeenSet; }
-    inline void SetPosixProfile(const PosixProfile& value) { m_posixProfileHasBeenSet = true; m_posixProfile = value; }
-    inline void SetPosixProfile(PosixProfile&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::move(value); }
-    inline CreateAccessRequest& WithPosixProfile(const PosixProfile& value) { SetPosixProfile(value); return *this;}
-    inline CreateAccessRequest& WithPosixProfile(PosixProfile&& value) { SetPosixProfile(std::move(value)); return *this;}
+    template<typename PosixProfileT = PosixProfile>
+    void SetPosixProfile(PosixProfileT&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::forward<PosixProfileT>(value); }
+    template<typename PosixProfileT = PosixProfile>
+    CreateAccessRequest& WithPosixProfile(PosixProfileT&& value) { SetPosixProfile(std::forward<PosixProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +153,12 @@ namespace Model
      * trust relationship that allows the server to access your resources when
      * servicing your users' transfer requests.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline CreateAccessRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline CreateAccessRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline CreateAccessRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    CreateAccessRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,14 +166,12 @@ namespace Model
      * <p>A system-assigned unique identifier for a server instance. This is the
      * specific server that you added your user to.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline CreateAccessRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline CreateAccessRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline CreateAccessRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    CreateAccessRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,21 +188,19 @@ namespace Model
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline CreateAccessRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline CreateAccessRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline CreateAccessRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    CreateAccessRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_homeDirectory;
     bool m_homeDirectoryHasBeenSet = false;
 
-    HomeDirectoryType m_homeDirectoryType;
+    HomeDirectoryType m_homeDirectoryType{HomeDirectoryType::NOT_SET};
     bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;

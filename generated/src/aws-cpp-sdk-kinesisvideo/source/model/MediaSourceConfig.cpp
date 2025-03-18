@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-MediaSourceConfig::MediaSourceConfig() : 
-    m_mediaUriSecretArnHasBeenSet(false),
-    m_mediaUriType(MediaUriType::NOT_SET),
-    m_mediaUriTypeHasBeenSet(false)
-{
-}
-
 MediaSourceConfig::MediaSourceConfig(JsonView jsonValue)
-  : MediaSourceConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MediaSourceConfig& MediaSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaUriSecretArn"))
   {
     m_mediaUriSecretArn = jsonValue.GetString("MediaUriSecretArn");
-
     m_mediaUriSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaUriType"))
   {
     m_mediaUriType = MediaUriTypeMapper::GetMediaUriTypeForName(jsonValue.GetString("MediaUriType"));
-
     m_mediaUriTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

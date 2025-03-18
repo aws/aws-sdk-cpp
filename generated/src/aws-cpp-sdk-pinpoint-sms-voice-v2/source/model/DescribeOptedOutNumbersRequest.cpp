@@ -12,16 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOptedOutNumbersRequest::DescribeOptedOutNumbersRequest() : 
-    m_optOutListNameHasBeenSet(false),
-    m_optedOutNumbersHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOptedOutNumbersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class DescribeRdsDbInstancesResult
   {
   public:
-    AWS_OPSWORKS_API DescribeRdsDbInstancesResult();
+    AWS_OPSWORKS_API DescribeRdsDbInstancesResult() = default;
     AWS_OPSWORKS_API DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeRdsDbInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.</p>
      */
-    inline const Aws::Vector<RdsDbInstance>& GetRdsDbInstances() const{ return m_rdsDbInstances; }
-    inline void SetRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { m_rdsDbInstances = value; }
-    inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = std::move(value); }
-    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { SetRdsDbInstances(value); return *this;}
-    inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(std::move(value)); return *this;}
-    inline DescribeRdsDbInstancesResult& AddRdsDbInstances(const RdsDbInstance& value) { m_rdsDbInstances.push_back(value); return *this; }
-    inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RdsDbInstance>& GetRdsDbInstances() const { return m_rdsDbInstances; }
+    template<typename RdsDbInstancesT = Aws::Vector<RdsDbInstance>>
+    void SetRdsDbInstances(RdsDbInstancesT&& value) { m_rdsDbInstancesHasBeenSet = true; m_rdsDbInstances = std::forward<RdsDbInstancesT>(value); }
+    template<typename RdsDbInstancesT = Aws::Vector<RdsDbInstance>>
+    DescribeRdsDbInstancesResult& WithRdsDbInstances(RdsDbInstancesT&& value) { SetRdsDbInstances(std::forward<RdsDbInstancesT>(value)); return *this;}
+    template<typename RdsDbInstancesT = RdsDbInstance>
+    DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstancesT&& value) { m_rdsDbInstancesHasBeenSet = true; m_rdsDbInstances.emplace_back(std::forward<RdsDbInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRdsDbInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRdsDbInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRdsDbInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRdsDbInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RdsDbInstance> m_rdsDbInstances;
+    bool m_rdsDbInstancesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

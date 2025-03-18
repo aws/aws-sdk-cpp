@@ -33,7 +33,7 @@ namespace Model
   class MediaAcceleratorInfo
   {
   public:
-    AWS_EC2_API MediaAcceleratorInfo();
+    AWS_EC2_API MediaAcceleratorInfo() = default;
     AWS_EC2_API MediaAcceleratorInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API MediaAcceleratorInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>Describes the media accelerators for the instance type.</p>
      */
-    inline const Aws::Vector<MediaDeviceInfo>& GetAccelerators() const{ return m_accelerators; }
+    inline const Aws::Vector<MediaDeviceInfo>& GetAccelerators() const { return m_accelerators; }
     inline bool AcceleratorsHasBeenSet() const { return m_acceleratorsHasBeenSet; }
-    inline void SetAccelerators(const Aws::Vector<MediaDeviceInfo>& value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
-    inline void SetAccelerators(Aws::Vector<MediaDeviceInfo>&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::move(value); }
-    inline MediaAcceleratorInfo& WithAccelerators(const Aws::Vector<MediaDeviceInfo>& value) { SetAccelerators(value); return *this;}
-    inline MediaAcceleratorInfo& WithAccelerators(Aws::Vector<MediaDeviceInfo>&& value) { SetAccelerators(std::move(value)); return *this;}
-    inline MediaAcceleratorInfo& AddAccelerators(const MediaDeviceInfo& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(value); return *this; }
-    inline MediaAcceleratorInfo& AddAccelerators(MediaDeviceInfo&& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(std::move(value)); return *this; }
+    template<typename AcceleratorsT = Aws::Vector<MediaDeviceInfo>>
+    void SetAccelerators(AcceleratorsT&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::forward<AcceleratorsT>(value); }
+    template<typename AcceleratorsT = Aws::Vector<MediaDeviceInfo>>
+    MediaAcceleratorInfo& WithAccelerators(AcceleratorsT&& value) { SetAccelerators(std::forward<AcceleratorsT>(value)); return *this;}
+    template<typename AcceleratorsT = MediaDeviceInfo>
+    MediaAcceleratorInfo& AddAccelerators(AcceleratorsT&& value) { m_acceleratorsHasBeenSet = true; m_accelerators.emplace_back(std::forward<AcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * <p>The total size of the memory for the media accelerators for the instance
      * type, in MiB.</p>
      */
-    inline int GetTotalMediaMemoryInMiB() const{ return m_totalMediaMemoryInMiB; }
+    inline int GetTotalMediaMemoryInMiB() const { return m_totalMediaMemoryInMiB; }
     inline bool TotalMediaMemoryInMiBHasBeenSet() const { return m_totalMediaMemoryInMiBHasBeenSet; }
     inline void SetTotalMediaMemoryInMiB(int value) { m_totalMediaMemoryInMiBHasBeenSet = true; m_totalMediaMemoryInMiB = value; }
     inline MediaAcceleratorInfo& WithTotalMediaMemoryInMiB(int value) { SetTotalMediaMemoryInMiB(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     Aws::Vector<MediaDeviceInfo> m_accelerators;
     bool m_acceleratorsHasBeenSet = false;
 
-    int m_totalMediaMemoryInMiB;
+    int m_totalMediaMemoryInMiB{0};
     bool m_totalMediaMemoryInMiBHasBeenSet = false;
   };
 

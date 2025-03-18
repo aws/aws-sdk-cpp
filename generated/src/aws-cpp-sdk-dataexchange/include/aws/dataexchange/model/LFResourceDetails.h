@@ -33,7 +33,7 @@ namespace Model
   class LFResourceDetails
   {
   public:
-    AWS_DATAEXCHANGE_API LFResourceDetails();
+    AWS_DATAEXCHANGE_API LFResourceDetails() = default;
     AWS_DATAEXCHANGE_API LFResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API LFResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Details about the database resource included in the AWS Lake Formation data
      * permission.</p>
      */
-    inline const DatabaseLFTagPolicy& GetDatabase() const{ return m_database; }
+    inline const DatabaseLFTagPolicy& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const DatabaseLFTagPolicy& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(DatabaseLFTagPolicy&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline LFResourceDetails& WithDatabase(const DatabaseLFTagPolicy& value) { SetDatabase(value); return *this;}
-    inline LFResourceDetails& WithDatabase(DatabaseLFTagPolicy&& value) { SetDatabase(std::move(value)); return *this;}
+    template<typename DatabaseT = DatabaseLFTagPolicy>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = DatabaseLFTagPolicy>
+    LFResourceDetails& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Details about the table resource included in the AWS Lake Formation data
      * permission.</p>
      */
-    inline const TableLFTagPolicy& GetTable() const{ return m_table; }
+    inline const TableLFTagPolicy& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const TableLFTagPolicy& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(TableLFTagPolicy&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline LFResourceDetails& WithTable(const TableLFTagPolicy& value) { SetTable(value); return *this;}
-    inline LFResourceDetails& WithTable(TableLFTagPolicy&& value) { SetTable(std::move(value)); return *this;}
+    template<typename TableT = TableLFTagPolicy>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = TableLFTagPolicy>
+    LFResourceDetails& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
   private:
 

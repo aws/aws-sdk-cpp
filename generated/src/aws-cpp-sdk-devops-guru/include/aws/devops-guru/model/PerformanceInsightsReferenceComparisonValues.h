@@ -35,7 +35,7 @@ namespace Model
   class PerformanceInsightsReferenceComparisonValues
   {
   public:
-    AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues() = default;
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * metric values. This reference value is used to determine if an actual metric
      * value should be considered anomalous.</p>
      */
-    inline const PerformanceInsightsReferenceScalar& GetReferenceScalar() const{ return m_referenceScalar; }
+    inline const PerformanceInsightsReferenceScalar& GetReferenceScalar() const { return m_referenceScalar; }
     inline bool ReferenceScalarHasBeenSet() const { return m_referenceScalarHasBeenSet; }
-    inline void SetReferenceScalar(const PerformanceInsightsReferenceScalar& value) { m_referenceScalarHasBeenSet = true; m_referenceScalar = value; }
-    inline void SetReferenceScalar(PerformanceInsightsReferenceScalar&& value) { m_referenceScalarHasBeenSet = true; m_referenceScalar = std::move(value); }
-    inline PerformanceInsightsReferenceComparisonValues& WithReferenceScalar(const PerformanceInsightsReferenceScalar& value) { SetReferenceScalar(value); return *this;}
-    inline PerformanceInsightsReferenceComparisonValues& WithReferenceScalar(PerformanceInsightsReferenceScalar&& value) { SetReferenceScalar(std::move(value)); return *this;}
+    template<typename ReferenceScalarT = PerformanceInsightsReferenceScalar>
+    void SetReferenceScalar(ReferenceScalarT&& value) { m_referenceScalarHasBeenSet = true; m_referenceScalar = std::forward<ReferenceScalarT>(value); }
+    template<typename ReferenceScalarT = PerformanceInsightsReferenceScalar>
+    PerformanceInsightsReferenceComparisonValues& WithReferenceScalar(ReferenceScalarT&& value) { SetReferenceScalar(std::forward<ReferenceScalarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * metric is used to determine if an actual metric should be considered
      * anomalous.</p>
      */
-    inline const PerformanceInsightsReferenceMetric& GetReferenceMetric() const{ return m_referenceMetric; }
+    inline const PerformanceInsightsReferenceMetric& GetReferenceMetric() const { return m_referenceMetric; }
     inline bool ReferenceMetricHasBeenSet() const { return m_referenceMetricHasBeenSet; }
-    inline void SetReferenceMetric(const PerformanceInsightsReferenceMetric& value) { m_referenceMetricHasBeenSet = true; m_referenceMetric = value; }
-    inline void SetReferenceMetric(PerformanceInsightsReferenceMetric&& value) { m_referenceMetricHasBeenSet = true; m_referenceMetric = std::move(value); }
-    inline PerformanceInsightsReferenceComparisonValues& WithReferenceMetric(const PerformanceInsightsReferenceMetric& value) { SetReferenceMetric(value); return *this;}
-    inline PerformanceInsightsReferenceComparisonValues& WithReferenceMetric(PerformanceInsightsReferenceMetric&& value) { SetReferenceMetric(std::move(value)); return *this;}
+    template<typename ReferenceMetricT = PerformanceInsightsReferenceMetric>
+    void SetReferenceMetric(ReferenceMetricT&& value) { m_referenceMetricHasBeenSet = true; m_referenceMetric = std::forward<ReferenceMetricT>(value); }
+    template<typename ReferenceMetricT = PerformanceInsightsReferenceMetric>
+    PerformanceInsightsReferenceComparisonValues& WithReferenceMetric(ReferenceMetricT&& value) { SetReferenceMetric(std::forward<ReferenceMetricT>(value)); return *this;}
     ///@}
   private:
 

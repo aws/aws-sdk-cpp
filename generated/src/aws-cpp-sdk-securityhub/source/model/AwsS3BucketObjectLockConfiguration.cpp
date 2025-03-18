@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketObjectLockConfiguration::AwsS3BucketObjectLockConfiguration() : 
-    m_objectLockEnabledHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 AwsS3BucketObjectLockConfiguration::AwsS3BucketObjectLockConfiguration(JsonView jsonValue)
-  : AwsS3BucketObjectLockConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsS3BucketObjectLockConfiguration& AwsS3BucketObjectLockConfiguration::operator
   if(jsonValue.ValueExists("ObjectLockEnabled"))
   {
     m_objectLockEnabled = jsonValue.GetString("ObjectLockEnabled");
-
     m_objectLockEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rule"))
   {
     m_rule = jsonValue.GetObject("Rule");
-
     m_ruleHasBeenSet = true;
   }
-
   return *this;
 }
 

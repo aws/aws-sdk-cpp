@@ -36,7 +36,7 @@ namespace Model
   class ApplicationSummary
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ApplicationSummary();
+    AWS_GAMELIFTSTREAMS_API ApplicationSummary() = default;
     AWS_GAMELIFTSTREAMS_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * Format is <code>arn:aws:gameliftstreams:[AWS Region]:[AWS
      * account]:application/[resource ID]</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ApplicationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ApplicationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ApplicationSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ApplicationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,26 +63,24 @@ namespace Model
      * expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ApplicationSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ApplicationSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ApplicationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable label for the application. You can edit this value. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ApplicationSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ApplicationSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ApplicationSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ApplicationSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
      * or ID-<code>9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ApplicationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ApplicationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ApplicationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +106,12 @@ namespace Model
      * are expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline ApplicationSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline ApplicationSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    ApplicationSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +126,12 @@ namespace Model
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
      */
-    inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
+    inline const RuntimeEnvironment& GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
-    inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
-    inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
-    inline ApplicationSummary& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
-    inline ApplicationSummary& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    void SetRuntimeEnvironment(RuntimeEnvironmentT&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::forward<RuntimeEnvironmentT>(value); }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    ApplicationSummary& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,19 +148,17 @@ namespace Model
      * <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting
      * the application.</p> </li> </ul>
      */
-    inline const ApplicationStatus& GetStatus() const{ return m_status; }
+    inline ApplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApplicationSummary& WithStatus(const ApplicationStatus& value) { SetStatus(value); return *this;}
-    inline ApplicationSummary& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationSummary& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
@@ -175,13 +167,13 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
     bool m_runtimeEnvironmentHasBeenSet = false;
 
-    ApplicationStatus m_status;
+    ApplicationStatus m_status{ApplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

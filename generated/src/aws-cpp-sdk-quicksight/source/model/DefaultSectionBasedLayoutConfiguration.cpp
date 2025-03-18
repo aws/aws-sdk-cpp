@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultSectionBasedLayoutConfiguration::DefaultSectionBasedLayoutConfiguration() : 
-    m_canvasSizeOptionsHasBeenSet(false)
-{
-}
-
 DefaultSectionBasedLayoutConfiguration::DefaultSectionBasedLayoutConfiguration(JsonView jsonValue)
-  : DefaultSectionBasedLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DefaultSectionBasedLayoutConfiguration& DefaultSectionBasedLayoutConfiguration::
   if(jsonValue.ValueExists("CanvasSizeOptions"))
   {
     m_canvasSizeOptions = jsonValue.GetObject("CanvasSizeOptions");
-
     m_canvasSizeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

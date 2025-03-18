@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-AutoTuneOptionsStatus::AutoTuneOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AutoTuneOptionsStatus::AutoTuneOptionsStatus(JsonView jsonValue)
-  : AutoTuneOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoTuneOptionsStatus& AutoTuneOptionsStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

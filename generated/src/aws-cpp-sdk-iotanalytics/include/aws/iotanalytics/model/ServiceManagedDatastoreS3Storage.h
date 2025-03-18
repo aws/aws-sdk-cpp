@@ -31,7 +31,7 @@ namespace Model
   class ServiceManagedDatastoreS3Storage
   {
   public:
-    AWS_IOTANALYTICS_API ServiceManagedDatastoreS3Storage();
+    AWS_IOTANALYTICS_API ServiceManagedDatastoreS3Storage() = default;
     AWS_IOTANALYTICS_API ServiceManagedDatastoreS3Storage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ServiceManagedDatastoreS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -35,7 +35,7 @@ namespace Model
   class AutoScalingPolicy
   {
   public:
-    AWS_KEYSPACES_API AutoScalingPolicy();
+    AWS_KEYSPACES_API AutoScalingPolicy() = default;
     AWS_KEYSPACES_API AutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API AutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * target utilization rate, and then back down when it falls below the target. A
      * <code>double</code> between 20 and 90.</p>
      */
-    inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const{ return m_targetTrackingScalingPolicyConfiguration; }
+    inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const { return m_targetTrackingScalingPolicyConfiguration; }
     inline bool TargetTrackingScalingPolicyConfigurationHasBeenSet() const { return m_targetTrackingScalingPolicyConfigurationHasBeenSet; }
-    inline void SetTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = value; }
-    inline void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::move(value); }
-    inline AutoScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTrackingScalingPolicyConfiguration(value); return *this;}
-    inline AutoScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
+    template<typename TargetTrackingScalingPolicyConfigurationT = TargetTrackingScalingPolicyConfiguration>
+    void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationT&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::forward<TargetTrackingScalingPolicyConfigurationT>(value); }
+    template<typename TargetTrackingScalingPolicyConfigurationT = TargetTrackingScalingPolicyConfiguration>
+    AutoScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationT&& value) { SetTargetTrackingScalingPolicyConfiguration(std::forward<TargetTrackingScalingPolicyConfigurationT>(value)); return *this;}
     ///@}
   private:
 

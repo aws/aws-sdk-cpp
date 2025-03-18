@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdentityCenterApplicationRequest::DeleteIdentityCenterApplicationRequest() : 
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityCenterApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

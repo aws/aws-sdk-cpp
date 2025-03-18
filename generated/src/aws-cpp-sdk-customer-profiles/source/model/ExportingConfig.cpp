@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ExportingConfig::ExportingConfig() : 
-    m_s3ExportingHasBeenSet(false)
-{
-}
-
 ExportingConfig::ExportingConfig(JsonView jsonValue)
-  : ExportingConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportingConfig& ExportingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Exporting"))
   {
     m_s3Exporting = jsonValue.GetObject("S3Exporting");
-
     m_s3ExportingHasBeenSet = true;
   }
-
   return *this;
 }
 

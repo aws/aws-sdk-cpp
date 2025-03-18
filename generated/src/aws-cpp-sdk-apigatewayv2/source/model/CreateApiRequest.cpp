@@ -12,26 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApiRequest::CreateApiRequest() : 
-    m_apiKeySelectionExpressionHasBeenSet(false),
-    m_corsConfigurationHasBeenSet(false),
-    m_credentialsArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_disableSchemaValidation(false),
-    m_disableSchemaValidationHasBeenSet(false),
-    m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_routeKeyHasBeenSet(false),
-    m_routeSelectionExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String CreateApiRequest::SerializePayload() const
 {
   JsonValue payload;

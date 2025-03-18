@@ -32,7 +32,7 @@ namespace Model
   class DnsRequestAction
   {
   public:
-    AWS_SECURITYHUB_API DnsRequestAction();
+    AWS_SECURITYHUB_API DnsRequestAction() = default;
     AWS_SECURITYHUB_API DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
      * Constraints: 128.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DnsRequestAction& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,21 +56,19 @@ namespace Model
      * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
      * Minimum length of 1. Maximum length of 64.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline DnsRequestAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline DnsRequestAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline DnsRequestAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    DnsRequestAction& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the DNS request was blocked.</p>
      */
-    inline bool GetBlocked() const{ return m_blocked; }
+    inline bool GetBlocked() const { return m_blocked; }
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
     inline DnsRequestAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    bool m_blocked;
+    bool m_blocked{false};
     bool m_blockedHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class Threshold
   {
   public:
-    AWS_GLUEDATABREW_API Threshold();
+    AWS_GLUEDATABREW_API Threshold() = default;
     AWS_GLUEDATABREW_API Threshold(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Threshold& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The value of a threshold.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline Threshold& WithValue(double value) { SetValue(value); return *this;}
@@ -56,12 +56,10 @@ namespace Model
      * <p>The type of a threshold. Used for comparison of an actual count of rows that
      * satisfy the rule to the threshold value.</p>
      */
-    inline const ThresholdType& GetType() const{ return m_type; }
+    inline ThresholdType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ThresholdType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ThresholdType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Threshold& WithType(const ThresholdType& value) { SetType(value); return *this;}
-    inline Threshold& WithType(ThresholdType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ThresholdType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Threshold& WithType(ThresholdType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,22 +67,20 @@ namespace Model
      * <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full
      * sample size used for validation.</p>
      */
-    inline const ThresholdUnit& GetUnit() const{ return m_unit; }
+    inline ThresholdUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const ThresholdUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(ThresholdUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Threshold& WithUnit(const ThresholdUnit& value) { SetUnit(value); return *this;}
-    inline Threshold& WithUnit(ThresholdUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(ThresholdUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Threshold& WithUnit(ThresholdUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    ThresholdType m_type;
+    ThresholdType m_type{ThresholdType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ThresholdUnit m_unit;
+    ThresholdUnit m_unit{ThresholdUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

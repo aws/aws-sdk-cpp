@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTopicsResult::ListTopicsResult()
-{
-}
-
 ListTopicsResult::ListTopicsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListTopicsResult& ListTopicsResult::operator =(const Aws::AmazonWebServiceResult
     if(!topicsNode.IsNull())
     {
       XmlNode topicsMember = topicsNode.FirstChild("member");
+      m_topicsHasBeenSet = !topicsMember.IsNull();
       while(!topicsMember.IsNull())
       {
         m_topics.push_back(topicsMember);
         topicsMember = topicsMember.NextNode("member");
       }
 
+      m_topicsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListTopicsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

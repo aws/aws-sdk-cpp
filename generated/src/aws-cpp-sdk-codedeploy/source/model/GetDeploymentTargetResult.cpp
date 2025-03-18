@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeploymentTargetResult::GetDeploymentTargetResult()
-{
-}
-
 GetDeploymentTargetResult::GetDeploymentTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDeploymentTargetResult& GetDeploymentTargetResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("deploymentTarget"))
   {
     m_deploymentTarget = jsonValue.GetObject("deploymentTarget");
-
+    m_deploymentTargetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

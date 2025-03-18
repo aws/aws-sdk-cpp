@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-StopCisSessionMessage::StopCisSessionMessage() : 
-    m_benchmarkProfileHasBeenSet(false),
-    m_benchmarkVersionHasBeenSet(false),
-    m_computePlatformHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_status(StopCisSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 StopCisSessionMessage::StopCisSessionMessage(JsonView jsonValue)
-  : StopCisSessionMessage()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ StopCisSessionMessage& StopCisSessionMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("benchmarkProfile"))
   {
     m_benchmarkProfile = jsonValue.GetString("benchmarkProfile");
-
     m_benchmarkProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("benchmarkVersion"))
   {
     m_benchmarkVersion = jsonValue.GetString("benchmarkVersion");
-
     m_benchmarkVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computePlatform"))
   {
     m_computePlatform = jsonValue.GetObject("computePlatform");
-
     m_computePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progress"))
   {
     m_progress = jsonValue.GetObject("progress");
-
     m_progressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StopCisSessionStatusMapper::GetStopCisSessionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

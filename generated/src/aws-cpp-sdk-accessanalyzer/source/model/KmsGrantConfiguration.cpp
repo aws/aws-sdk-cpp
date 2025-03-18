@@ -18,17 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-KmsGrantConfiguration::KmsGrantConfiguration() : 
-    m_operationsHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false),
-    m_constraintsHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false)
-{
-}
-
 KmsGrantConfiguration::KmsGrantConfiguration(JsonView jsonValue)
-  : KmsGrantConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ KmsGrantConfiguration& KmsGrantConfiguration::operator =(JsonView jsonValue)
     }
     m_operationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("granteePrincipal"))
   {
     m_granteePrincipal = jsonValue.GetString("granteePrincipal");
-
     m_granteePrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retiringPrincipal"))
   {
     m_retiringPrincipal = jsonValue.GetString("retiringPrincipal");
-
     m_retiringPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("constraints"))
   {
     m_constraints = jsonValue.GetObject("constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuingAccount"))
   {
     m_issuingAccount = jsonValue.GetString("issuingAccount");
-
     m_issuingAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

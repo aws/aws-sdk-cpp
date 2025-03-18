@@ -12,15 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyWorkspaceImageRequest::CopyWorkspaceImageRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopyWorkspaceImageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MetricDatum::MetricDatum() : 
-    m_metricName(AutoMLMetricEnum::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_set(MetricSetSource::NOT_SET),
-    m_setHasBeenSet(false),
-    m_standardMetricName(AutoMLMetricExtendedEnum::NOT_SET),
-    m_standardMetricNameHasBeenSet(false)
-{
-}
-
 MetricDatum::MetricDatum(JsonView jsonValue)
-  : MetricDatum()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Set"))
   {
     m_set = MetricSetSourceMapper::GetMetricSetSourceForName(jsonValue.GetString("Set"));
-
     m_setHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardMetricName"))
   {
     m_standardMetricName = AutoMLMetricExtendedEnumMapper::GetAutoMLMetricExtendedEnumForName(jsonValue.GetString("StandardMetricName"));
-
     m_standardMetricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

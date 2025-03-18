@@ -21,7 +21,7 @@ namespace Model
   class DisassociateWirelessDeviceFromMulticastGroupRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API DisassociateWirelessDeviceFromMulticastGroupRequest();
+    AWS_IOTWIRELESS_API DisassociateWirelessDeviceFromMulticastGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,26 +34,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DisassociateWirelessDeviceFromMulticastGroupRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWirelessDeviceId() const{ return m_wirelessDeviceId; }
+    inline const Aws::String& GetWirelessDeviceId() const { return m_wirelessDeviceId; }
     inline bool WirelessDeviceIdHasBeenSet() const { return m_wirelessDeviceIdHasBeenSet; }
-    inline void SetWirelessDeviceId(const Aws::String& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = value; }
-    inline void SetWirelessDeviceId(Aws::String&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::move(value); }
-    inline void SetWirelessDeviceId(const char* value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId.assign(value); }
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithWirelessDeviceId(const Aws::String& value) { SetWirelessDeviceId(value); return *this;}
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithWirelessDeviceId(Aws::String&& value) { SetWirelessDeviceId(std::move(value)); return *this;}
-    inline DisassociateWirelessDeviceFromMulticastGroupRequest& WithWirelessDeviceId(const char* value) { SetWirelessDeviceId(value); return *this;}
+    template<typename WirelessDeviceIdT = Aws::String>
+    void SetWirelessDeviceId(WirelessDeviceIdT&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::forward<WirelessDeviceIdT>(value); }
+    template<typename WirelessDeviceIdT = Aws::String>
+    DisassociateWirelessDeviceFromMulticastGroupRequest& WithWirelessDeviceId(WirelessDeviceIdT&& value) { SetWirelessDeviceId(std::forward<WirelessDeviceIdT>(value)); return *this;}
     ///@}
   private:
 

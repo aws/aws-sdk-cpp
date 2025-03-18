@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ServiceLimitExceeded::ServiceLimitExceeded() : 
-    m_limit(ServiceLimit::NOT_SET),
-    m_limitHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ServiceLimitExceeded::ServiceLimitExceeded(JsonView jsonValue)
-  : ServiceLimitExceeded()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ServiceLimitExceeded& ServiceLimitExceeded::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = ServiceLimitMapper::GetServiceLimitForName(jsonValue.GetString("Limit"));
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

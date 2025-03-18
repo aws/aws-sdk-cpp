@@ -35,7 +35,7 @@ namespace Model
   class ResourceDataSyncDestinationDataSharing
   {
   public:
-    AWS_SSM_API ResourceDataSyncDestinationDataSharing();
+    AWS_SSM_API ResourceDataSyncDestinationDataSharing() = default;
     AWS_SSM_API ResourceDataSyncDestinationDataSharing(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResourceDataSyncDestinationDataSharing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
      */
-    inline const Aws::String& GetDestinationDataSharingType() const{ return m_destinationDataSharingType; }
+    inline const Aws::String& GetDestinationDataSharingType() const { return m_destinationDataSharingType; }
     inline bool DestinationDataSharingTypeHasBeenSet() const { return m_destinationDataSharingTypeHasBeenSet; }
-    inline void SetDestinationDataSharingType(const Aws::String& value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType = value; }
-    inline void SetDestinationDataSharingType(Aws::String&& value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType = std::move(value); }
-    inline void SetDestinationDataSharingType(const char* value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType.assign(value); }
-    inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(const Aws::String& value) { SetDestinationDataSharingType(value); return *this;}
-    inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(Aws::String&& value) { SetDestinationDataSharingType(std::move(value)); return *this;}
-    inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(const char* value) { SetDestinationDataSharingType(value); return *this;}
+    template<typename DestinationDataSharingTypeT = Aws::String>
+    void SetDestinationDataSharingType(DestinationDataSharingTypeT&& value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType = std::forward<DestinationDataSharingTypeT>(value); }
+    template<typename DestinationDataSharingTypeT = Aws::String>
+    ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(DestinationDataSharingTypeT&& value) { SetDestinationDataSharingType(std::forward<DestinationDataSharingTypeT>(value)); return *this;}
     ///@}
   private:
 

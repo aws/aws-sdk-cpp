@@ -18,22 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowModule::ContactFlowModule() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(ContactFlowModuleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_status(ContactFlowModuleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ContactFlowModule::ContactFlowModule(JsonView jsonValue)
-  : ContactFlowModule()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ContactFlowModule& ContactFlowModule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ContactFlowModuleStateMapper::GetContactFlowModuleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ContactFlowModuleStatusMapper::GetContactFlowModuleStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -98,7 +69,6 @@ ContactFlowModule& ContactFlowModule::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

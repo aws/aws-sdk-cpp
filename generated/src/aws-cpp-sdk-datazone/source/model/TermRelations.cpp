@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-TermRelations::TermRelations() : 
-    m_classifiesHasBeenSet(false),
-    m_isAHasBeenSet(false)
-{
-}
-
 TermRelations::TermRelations(JsonView jsonValue)
-  : TermRelations()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ TermRelations& TermRelations::operator =(JsonView jsonValue)
     }
     m_classifiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isA"))
   {
     Aws::Utils::Array<JsonView> isAJsonList = jsonValue.GetArray("isA");
@@ -51,7 +43,6 @@ TermRelations& TermRelations::operator =(JsonView jsonValue)
     }
     m_isAHasBeenSet = true;
   }
-
   return *this;
 }
 

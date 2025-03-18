@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRecipeRequest::DescribeRecipeRequest() : 
-    m_recipeArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecipeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class NewGeolocationDetail
   {
   public:
-    AWS_DETECTIVE_API NewGeolocationDetail();
+    AWS_DETECTIVE_API NewGeolocationDetail() = default;
     AWS_DETECTIVE_API NewGeolocationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API NewGeolocationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>Location where the resource was accessed.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline NewGeolocationDetail& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline NewGeolocationDetail& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline NewGeolocationDetail& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    NewGeolocationDetail& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>IP address using which the resource was accessed.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline NewGeolocationDetail& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline NewGeolocationDetail& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline NewGeolocationDetail& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    NewGeolocationDetail& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Checks if the geolocation is new for the entire account.</p>
      */
-    inline bool GetIsNewForEntireAccount() const{ return m_isNewForEntireAccount; }
+    inline bool GetIsNewForEntireAccount() const { return m_isNewForEntireAccount; }
     inline bool IsNewForEntireAccountHasBeenSet() const { return m_isNewForEntireAccountHasBeenSet; }
     inline void SetIsNewForEntireAccount(bool value) { m_isNewForEntireAccountHasBeenSet = true; m_isNewForEntireAccount = value; }
     inline NewGeolocationDetail& WithIsNewForEntireAccount(bool value) { SetIsNewForEntireAccount(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
 
-    bool m_isNewForEntireAccount;
+    bool m_isNewForEntireAccount{false};
     bool m_isNewForEntireAccountHasBeenSet = false;
   };
 

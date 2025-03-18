@@ -29,7 +29,7 @@ namespace Model
   class DeleteRemediationExceptionsResult
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteRemediationExceptionsResult();
+    AWS_CONFIGSERVICE_API DeleteRemediationExceptionsResult() = default;
     AWS_CONFIGSERVICE_API DeleteRemediationExceptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DeleteRemediationExceptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Returns a list of failed delete remediation exceptions batch objects. Each
      * object in the batch consists of a list of failed items and failure messages.</p>
      */
-    inline const Aws::Vector<FailedDeleteRemediationExceptionsBatch>& GetFailedBatches() const{ return m_failedBatches; }
-    inline void SetFailedBatches(const Aws::Vector<FailedDeleteRemediationExceptionsBatch>& value) { m_failedBatches = value; }
-    inline void SetFailedBatches(Aws::Vector<FailedDeleteRemediationExceptionsBatch>&& value) { m_failedBatches = std::move(value); }
-    inline DeleteRemediationExceptionsResult& WithFailedBatches(const Aws::Vector<FailedDeleteRemediationExceptionsBatch>& value) { SetFailedBatches(value); return *this;}
-    inline DeleteRemediationExceptionsResult& WithFailedBatches(Aws::Vector<FailedDeleteRemediationExceptionsBatch>&& value) { SetFailedBatches(std::move(value)); return *this;}
-    inline DeleteRemediationExceptionsResult& AddFailedBatches(const FailedDeleteRemediationExceptionsBatch& value) { m_failedBatches.push_back(value); return *this; }
-    inline DeleteRemediationExceptionsResult& AddFailedBatches(FailedDeleteRemediationExceptionsBatch&& value) { m_failedBatches.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedDeleteRemediationExceptionsBatch>& GetFailedBatches() const { return m_failedBatches; }
+    template<typename FailedBatchesT = Aws::Vector<FailedDeleteRemediationExceptionsBatch>>
+    void SetFailedBatches(FailedBatchesT&& value) { m_failedBatchesHasBeenSet = true; m_failedBatches = std::forward<FailedBatchesT>(value); }
+    template<typename FailedBatchesT = Aws::Vector<FailedDeleteRemediationExceptionsBatch>>
+    DeleteRemediationExceptionsResult& WithFailedBatches(FailedBatchesT&& value) { SetFailedBatches(std::forward<FailedBatchesT>(value)); return *this;}
+    template<typename FailedBatchesT = FailedDeleteRemediationExceptionsBatch>
+    DeleteRemediationExceptionsResult& AddFailedBatches(FailedBatchesT&& value) { m_failedBatchesHasBeenSet = true; m_failedBatches.emplace_back(std::forward<FailedBatchesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRemediationExceptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRemediationExceptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRemediationExceptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRemediationExceptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedDeleteRemediationExceptionsBatch> m_failedBatches;
+    bool m_failedBatchesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

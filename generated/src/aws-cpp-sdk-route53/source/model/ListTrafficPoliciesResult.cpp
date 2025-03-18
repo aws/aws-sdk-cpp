@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrafficPoliciesResult::ListTrafficPoliciesResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListTrafficPoliciesResult::ListTrafficPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListTrafficPoliciesResult()
 {
   *this = result;
 }
@@ -38,27 +32,32 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
     if(!trafficPolicySummariesNode.IsNull())
     {
       XmlNode trafficPolicySummariesMember = trafficPolicySummariesNode.FirstChild("TrafficPolicySummary");
+      m_trafficPolicySummariesHasBeenSet = !trafficPolicySummariesMember.IsNull();
       while(!trafficPolicySummariesMember.IsNull())
       {
         m_trafficPolicySummaries.push_back(trafficPolicySummariesMember);
         trafficPolicySummariesMember = trafficPolicySummariesMember.NextNode("TrafficPolicySummary");
       }
 
+      m_trafficPolicySummariesHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode trafficPolicyIdMarkerNode = resultNode.FirstChild("TrafficPolicyIdMarker");
     if(!trafficPolicyIdMarkerNode.IsNull())
     {
       m_trafficPolicyIdMarker = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyIdMarkerNode.GetText());
+      m_trafficPolicyIdMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -67,6 +66,7 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

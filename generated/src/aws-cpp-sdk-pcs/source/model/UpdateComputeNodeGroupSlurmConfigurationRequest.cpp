@@ -18,13 +18,7 @@ namespace PCS
 namespace Model
 {
 
-UpdateComputeNodeGroupSlurmConfigurationRequest::UpdateComputeNodeGroupSlurmConfigurationRequest() : 
-    m_slurmCustomSettingsHasBeenSet(false)
-{
-}
-
 UpdateComputeNodeGroupSlurmConfigurationRequest::UpdateComputeNodeGroupSlurmConfigurationRequest(JsonView jsonValue)
-  : UpdateComputeNodeGroupSlurmConfigurationRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateComputeNodeGroupSlurmConfigurationRequest& UpdateComputeNodeGroupSlurmConf
     }
     m_slurmCustomSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

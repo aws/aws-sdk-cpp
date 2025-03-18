@@ -22,7 +22,7 @@ namespace Model
   class DescribePrincipalIdFormatRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribePrincipalIdFormatRequest();
+    AWS_EC2_API DescribePrincipalIdFormatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribePrincipalIdFormatRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,15 +67,14 @@ namespace Model
      * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline DescribePrincipalIdFormatRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline DescribePrincipalIdFormatRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline DescribePrincipalIdFormatRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline DescribePrincipalIdFormatRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline DescribePrincipalIdFormatRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    DescribePrincipalIdFormatRequest& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    DescribePrincipalIdFormatRequest& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,7 +82,7 @@ namespace Model
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned NextToken value. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribePrincipalIdFormatRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -93,24 +92,22 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePrincipalIdFormatRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePrincipalIdFormatRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePrincipalIdFormatRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePrincipalIdFormatRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
     bool m_resourcesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChannelResult::CreateChannelResult()
-{
-}
-
 CreateChannelResult::CreateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
+    m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
+    m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -54,8 +47,8 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
+    m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -63,14 +56,15 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

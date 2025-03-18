@@ -18,16 +18,7 @@ namespace DLM
 namespace Model
 {
 
-Exclusions::Exclusions() : 
-    m_excludeBootVolumes(false),
-    m_excludeBootVolumesHasBeenSet(false),
-    m_excludeVolumeTypesHasBeenSet(false),
-    m_excludeTagsHasBeenSet(false)
-{
-}
-
 Exclusions::Exclusions(JsonView jsonValue)
-  : Exclusions()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Exclusions& Exclusions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExcludeBootVolumes"))
   {
     m_excludeBootVolumes = jsonValue.GetBool("ExcludeBootVolumes");
-
     m_excludeBootVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeVolumeTypes"))
   {
     Aws::Utils::Array<JsonView> excludeVolumeTypesJsonList = jsonValue.GetArray("ExcludeVolumeTypes");
@@ -50,7 +39,6 @@ Exclusions& Exclusions::operator =(JsonView jsonValue)
     }
     m_excludeVolumeTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeTags"))
   {
     Aws::Utils::Array<JsonView> excludeTagsJsonList = jsonValue.GetArray("ExcludeTags");
@@ -60,7 +48,6 @@ Exclusions& Exclusions::operator =(JsonView jsonValue)
     }
     m_excludeTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

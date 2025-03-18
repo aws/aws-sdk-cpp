@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTagsResult::DeleteTagsResult() : 
-    m_resourceType(TaggableResourceType::NOT_SET)
-{
-}
-
 DeleteTagsResult::DeleteTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteTagsResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteTagsResult& DeleteTagsResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = TaggableResourceTypeMapper::GetTaggableResourceTypeForName(jsonValue.GetString("ResourceType"));
-
+    m_resourceTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

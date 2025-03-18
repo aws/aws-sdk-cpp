@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListComponentsRequest::ListComponentsRequest() : 
-    m_scope(ComponentVisibilityScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListComponentsRequest::SerializePayload() const
 {
   return {};

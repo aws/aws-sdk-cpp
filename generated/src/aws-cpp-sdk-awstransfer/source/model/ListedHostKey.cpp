@@ -18,18 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedHostKey::ListedHostKey() : 
-    m_arnHasBeenSet(false),
-    m_hostKeyIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_dateImportedHasBeenSet(false)
-{
-}
-
 ListedHostKey::ListedHostKey(JsonView jsonValue)
-  : ListedHostKey()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ListedHostKey& ListedHostKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostKeyId"))
   {
     m_hostKeyId = jsonValue.GetString("HostKeyId");
-
     m_hostKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("Fingerprint");
-
     m_fingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateImported"))
   {
     m_dateImported = jsonValue.GetDouble("DateImported");
-
     m_dateImportedHasBeenSet = true;
   }
-
   return *this;
 }
 

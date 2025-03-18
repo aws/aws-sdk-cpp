@@ -18,39 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AmazonRedshiftNodeData::AmazonRedshiftNodeData() : 
-    m_accessTypeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_connectionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_catalogDatabaseHasBeenSet(false),
-    m_catalogTableHasBeenSet(false),
-    m_catalogRedshiftSchemaHasBeenSet(false),
-    m_catalogRedshiftTableHasBeenSet(false),
-    m_tempDirHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false),
-    m_sampleQueryHasBeenSet(false),
-    m_preActionHasBeenSet(false),
-    m_postActionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false),
-    m_upsert(false),
-    m_upsertHasBeenSet(false),
-    m_mergeActionHasBeenSet(false),
-    m_mergeWhenMatchedHasBeenSet(false),
-    m_mergeWhenNotMatchedHasBeenSet(false),
-    m_mergeClauseHasBeenSet(false),
-    m_crawlerConnectionHasBeenSet(false),
-    m_tableSchemaHasBeenSet(false),
-    m_stagingTableHasBeenSet(false),
-    m_selectedColumnsHasBeenSet(false)
-{
-}
-
 AmazonRedshiftNodeData::AmazonRedshiftNodeData(JsonView jsonValue)
-  : AmazonRedshiftNodeData()
 {
   *this = jsonValue;
 }
@@ -60,80 +28,58 @@ AmazonRedshiftNodeData& AmazonRedshiftNodeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessType"))
   {
     m_accessType = jsonValue.GetString("AccessType");
-
     m_accessTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connection"))
   {
     m_connection = jsonValue.GetObject("Connection");
-
     m_connectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetObject("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetObject("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogDatabase"))
   {
     m_catalogDatabase = jsonValue.GetObject("CatalogDatabase");
-
     m_catalogDatabaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogTable"))
   {
     m_catalogTable = jsonValue.GetObject("CatalogTable");
-
     m_catalogTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogRedshiftSchema"))
   {
     m_catalogRedshiftSchema = jsonValue.GetString("CatalogRedshiftSchema");
-
     m_catalogRedshiftSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogRedshiftTable"))
   {
     m_catalogRedshiftTable = jsonValue.GetString("CatalogRedshiftTable");
-
     m_catalogRedshiftTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TempDir"))
   {
     m_tempDir = jsonValue.GetString("TempDir");
-
     m_tempDirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRole"))
   {
     m_iamRole = jsonValue.GetObject("IamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedOptions"))
   {
     Aws::Utils::Array<JsonView> advancedOptionsJsonList = jsonValue.GetArray("AdvancedOptions");
@@ -143,84 +89,61 @@ AmazonRedshiftNodeData& AmazonRedshiftNodeData::operator =(JsonView jsonValue)
     }
     m_advancedOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleQuery"))
   {
     m_sampleQuery = jsonValue.GetString("SampleQuery");
-
     m_sampleQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreAction"))
   {
     m_preAction = jsonValue.GetString("PreAction");
-
     m_preActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAction"))
   {
     m_postAction = jsonValue.GetString("PostAction");
-
     m_postActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TablePrefix"))
   {
     m_tablePrefix = jsonValue.GetString("TablePrefix");
-
     m_tablePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Upsert"))
   {
     m_upsert = jsonValue.GetBool("Upsert");
-
     m_upsertHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeAction"))
   {
     m_mergeAction = jsonValue.GetString("MergeAction");
-
     m_mergeActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeWhenMatched"))
   {
     m_mergeWhenMatched = jsonValue.GetString("MergeWhenMatched");
-
     m_mergeWhenMatchedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeWhenNotMatched"))
   {
     m_mergeWhenNotMatched = jsonValue.GetString("MergeWhenNotMatched");
-
     m_mergeWhenNotMatchedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeClause"))
   {
     m_mergeClause = jsonValue.GetString("MergeClause");
-
     m_mergeClauseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlerConnection"))
   {
     m_crawlerConnection = jsonValue.GetString("CrawlerConnection");
-
     m_crawlerConnectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableSchema"))
   {
     Aws::Utils::Array<JsonView> tableSchemaJsonList = jsonValue.GetArray("TableSchema");
@@ -230,14 +153,11 @@ AmazonRedshiftNodeData& AmazonRedshiftNodeData::operator =(JsonView jsonValue)
     }
     m_tableSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StagingTable"))
   {
     m_stagingTable = jsonValue.GetString("StagingTable");
-
     m_stagingTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedColumns"))
   {
     Aws::Utils::Array<JsonView> selectedColumnsJsonList = jsonValue.GetArray("SelectedColumns");
@@ -247,7 +167,6 @@ AmazonRedshiftNodeData& AmazonRedshiftNodeData::operator =(JsonView jsonValue)
     }
     m_selectedColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class RangeEndsLabelType
   {
   public:
-    AWS_QUICKSIGHT_API RangeEndsLabelType();
+    AWS_QUICKSIGHT_API RangeEndsLabelType() = default;
     AWS_QUICKSIGHT_API RangeEndsLabelType(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RangeEndsLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The visibility of the range ends label.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline RangeEndsLabelType& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline RangeEndsLabelType& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline RangeEndsLabelType& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

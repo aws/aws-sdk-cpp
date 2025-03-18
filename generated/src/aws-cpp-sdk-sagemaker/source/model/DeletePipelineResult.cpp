@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeletePipelineResult::DeletePipelineResult()
-{
-}
-
 DeletePipelineResult::DeletePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeletePipelineResult& DeletePipelineResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("PipelineArn"))
   {
     m_pipelineArn = jsonValue.GetString("PipelineArn");
-
+    m_pipelineArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

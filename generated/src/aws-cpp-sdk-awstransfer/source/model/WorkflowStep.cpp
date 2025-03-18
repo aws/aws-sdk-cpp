@@ -18,19 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-WorkflowStep::WorkflowStep() : 
-    m_type(WorkflowStepType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_copyStepDetailsHasBeenSet(false),
-    m_customStepDetailsHasBeenSet(false),
-    m_deleteStepDetailsHasBeenSet(false),
-    m_tagStepDetailsHasBeenSet(false),
-    m_decryptStepDetailsHasBeenSet(false)
-{
-}
-
 WorkflowStep::WorkflowStep(JsonView jsonValue)
-  : WorkflowStep()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ WorkflowStep& WorkflowStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = WorkflowStepTypeMapper::GetWorkflowStepTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyStepDetails"))
   {
     m_copyStepDetails = jsonValue.GetObject("CopyStepDetails");
-
     m_copyStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomStepDetails"))
   {
     m_customStepDetails = jsonValue.GetObject("CustomStepDetails");
-
     m_customStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteStepDetails"))
   {
     m_deleteStepDetails = jsonValue.GetObject("DeleteStepDetails");
-
     m_deleteStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagStepDetails"))
   {
     m_tagStepDetails = jsonValue.GetObject("TagStepDetails");
-
     m_tagStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecryptStepDetails"))
   {
     m_decryptStepDetails = jsonValue.GetObject("DecryptStepDetails");
-
     m_decryptStepDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

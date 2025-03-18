@@ -33,7 +33,7 @@ namespace Model
   class AddonIssue
   {
   public:
-    AWS_EKS_API AddonIssue();
+    AWS_EKS_API AddonIssue() = default;
     AWS_EKS_API AddonIssue(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API AddonIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,40 @@ namespace Model
     /**
      * <p>A code that describes the type of issue.</p>
      */
-    inline const AddonIssueCode& GetCode() const{ return m_code; }
+    inline AddonIssueCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const AddonIssueCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(AddonIssueCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline AddonIssue& WithCode(const AddonIssueCode& value) { SetCode(value); return *this;}
-    inline AddonIssue& WithCode(AddonIssueCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(AddonIssueCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline AddonIssue& WithCode(AddonIssueCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that provides details about the issue and what might cause it.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AddonIssue& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AddonIssue& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AddonIssue& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AddonIssue& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource IDs of the issue.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline AddonIssue& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline AddonIssue& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline AddonIssue& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline AddonIssue& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline AddonIssue& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    AddonIssue& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    AddonIssue& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
-    AddonIssueCode m_code;
+    AddonIssueCode m_code{AddonIssueCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

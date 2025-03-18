@@ -21,7 +21,7 @@ namespace Model
   class PutComponentPolicyRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API PutComponentPolicyRequest();
+    AWS_IMAGEBUILDER_API PutComponentPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the component that this policy should be
      * applied to.</p>
      */
-    inline const Aws::String& GetComponentArn() const{ return m_componentArn; }
+    inline const Aws::String& GetComponentArn() const { return m_componentArn; }
     inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
-    inline void SetComponentArn(const Aws::String& value) { m_componentArnHasBeenSet = true; m_componentArn = value; }
-    inline void SetComponentArn(Aws::String&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::move(value); }
-    inline void SetComponentArn(const char* value) { m_componentArnHasBeenSet = true; m_componentArn.assign(value); }
-    inline PutComponentPolicyRequest& WithComponentArn(const Aws::String& value) { SetComponentArn(value); return *this;}
-    inline PutComponentPolicyRequest& WithComponentArn(Aws::String&& value) { SetComponentArn(std::move(value)); return *this;}
-    inline PutComponentPolicyRequest& WithComponentArn(const char* value) { SetComponentArn(value); return *this;}
+    template<typename ComponentArnT = Aws::String>
+    void SetComponentArn(ComponentArnT&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::forward<ComponentArnT>(value); }
+    template<typename ComponentArnT = Aws::String>
+    PutComponentPolicyRequest& WithComponentArn(ComponentArnT&& value) { SetComponentArn(std::forward<ComponentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy to apply.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutComponentPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutComponentPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutComponentPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutComponentPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

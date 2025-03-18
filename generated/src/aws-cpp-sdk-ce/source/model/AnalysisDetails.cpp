@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-AnalysisDetails::AnalysisDetails() : 
-    m_savingsPlansPurchaseAnalysisDetailsHasBeenSet(false)
-{
-}
-
 AnalysisDetails::AnalysisDetails(JsonView jsonValue)
-  : AnalysisDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisDetails& AnalysisDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SavingsPlansPurchaseAnalysisDetails"))
   {
     m_savingsPlansPurchaseAnalysisDetails = jsonValue.GetObject("SavingsPlansPurchaseAnalysisDetails");
-
     m_savingsPlansPurchaseAnalysisDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

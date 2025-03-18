@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelCardRequest::DeleteModelCardRequest() : 
-    m_modelCardNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelCardRequest::SerializePayload() const
 {
   JsonValue payload;

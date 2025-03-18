@@ -28,7 +28,7 @@ namespace Model
   class GetRelationalDatabaseLogStreamsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseLogStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,31 +38,30 @@ namespace Model
      * <p>An object describing the result of your get relational database log streams
      * request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogStreams() const{ return m_logStreams; }
-    inline void SetLogStreams(const Aws::Vector<Aws::String>& value) { m_logStreams = value; }
-    inline void SetLogStreams(Aws::Vector<Aws::String>&& value) { m_logStreams = std::move(value); }
-    inline GetRelationalDatabaseLogStreamsResult& WithLogStreams(const Aws::Vector<Aws::String>& value) { SetLogStreams(value); return *this;}
-    inline GetRelationalDatabaseLogStreamsResult& WithLogStreams(Aws::Vector<Aws::String>&& value) { SetLogStreams(std::move(value)); return *this;}
-    inline GetRelationalDatabaseLogStreamsResult& AddLogStreams(const Aws::String& value) { m_logStreams.push_back(value); return *this; }
-    inline GetRelationalDatabaseLogStreamsResult& AddLogStreams(Aws::String&& value) { m_logStreams.push_back(std::move(value)); return *this; }
-    inline GetRelationalDatabaseLogStreamsResult& AddLogStreams(const char* value) { m_logStreams.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetLogStreams() const { return m_logStreams; }
+    template<typename LogStreamsT = Aws::Vector<Aws::String>>
+    void SetLogStreams(LogStreamsT&& value) { m_logStreamsHasBeenSet = true; m_logStreams = std::forward<LogStreamsT>(value); }
+    template<typename LogStreamsT = Aws::Vector<Aws::String>>
+    GetRelationalDatabaseLogStreamsResult& WithLogStreams(LogStreamsT&& value) { SetLogStreams(std::forward<LogStreamsT>(value)); return *this;}
+    template<typename LogStreamsT = Aws::String>
+    GetRelationalDatabaseLogStreamsResult& AddLogStreams(LogStreamsT&& value) { m_logStreamsHasBeenSet = true; m_logStreams.emplace_back(std::forward<LogStreamsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseLogStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseLogStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseLogStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseLogStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_logStreams;
+    bool m_logStreamsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

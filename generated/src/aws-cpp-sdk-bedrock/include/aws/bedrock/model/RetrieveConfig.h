@@ -33,7 +33,7 @@ namespace Model
   class RetrieveConfig
   {
   public:
-    AWS_BEDROCK_API RetrieveConfig();
+    AWS_BEDROCK_API RetrieveConfig() = default;
     AWS_BEDROCK_API RetrieveConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API RetrieveConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier of the knowledge base.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline RetrieveConfig& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline RetrieveConfig& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline RetrieveConfig& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    RetrieveConfig& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains configuration details for knowledge base retrieval.</p>
      */
-    inline const KnowledgeBaseRetrievalConfiguration& GetKnowledgeBaseRetrievalConfiguration() const{ return m_knowledgeBaseRetrievalConfiguration; }
+    inline const KnowledgeBaseRetrievalConfiguration& GetKnowledgeBaseRetrievalConfiguration() const { return m_knowledgeBaseRetrievalConfiguration; }
     inline bool KnowledgeBaseRetrievalConfigurationHasBeenSet() const { return m_knowledgeBaseRetrievalConfigurationHasBeenSet; }
-    inline void SetKnowledgeBaseRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { m_knowledgeBaseRetrievalConfigurationHasBeenSet = true; m_knowledgeBaseRetrievalConfiguration = value; }
-    inline void SetKnowledgeBaseRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { m_knowledgeBaseRetrievalConfigurationHasBeenSet = true; m_knowledgeBaseRetrievalConfiguration = std::move(value); }
-    inline RetrieveConfig& WithKnowledgeBaseRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { SetKnowledgeBaseRetrievalConfiguration(value); return *this;}
-    inline RetrieveConfig& WithKnowledgeBaseRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetKnowledgeBaseRetrievalConfiguration(std::move(value)); return *this;}
+    template<typename KnowledgeBaseRetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+    void SetKnowledgeBaseRetrievalConfiguration(KnowledgeBaseRetrievalConfigurationT&& value) { m_knowledgeBaseRetrievalConfigurationHasBeenSet = true; m_knowledgeBaseRetrievalConfiguration = std::forward<KnowledgeBaseRetrievalConfigurationT>(value); }
+    template<typename KnowledgeBaseRetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+    RetrieveConfig& WithKnowledgeBaseRetrievalConfiguration(KnowledgeBaseRetrievalConfigurationT&& value) { SetKnowledgeBaseRetrievalConfiguration(std::forward<KnowledgeBaseRetrievalConfigurationT>(value)); return *this;}
     ///@}
   private:
 

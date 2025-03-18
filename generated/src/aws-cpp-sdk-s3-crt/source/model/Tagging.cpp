@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Tagging::Tagging() : 
-    m_tagSetHasBeenSet(false)
-{
-}
-
 Tagging::Tagging(const XmlNode& xmlNode)
-  : Tagging()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ Tagging& Tagging::operator =(const XmlNode& xmlNode)
     if(!tagSetNode.IsNull())
     {
       XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
+      m_tagSetHasBeenSet = !tagSetMember.IsNull();
       while(!tagSetMember.IsNull())
       {
         m_tagSet.push_back(tagSetMember);

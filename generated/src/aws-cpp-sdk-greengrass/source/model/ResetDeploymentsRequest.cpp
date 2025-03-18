@@ -13,14 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetDeploymentsRequest::ResetDeploymentsRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String ResetDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

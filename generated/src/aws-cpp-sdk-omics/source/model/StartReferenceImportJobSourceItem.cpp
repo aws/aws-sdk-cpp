@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem() : 
-    m_sourceFileHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 StartReferenceImportJobSourceItem::StartReferenceImportJobSourceItem(JsonView jsonValue)
-  : StartReferenceImportJobSourceItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =
   if(jsonValue.ValueExists("sourceFile"))
   {
     m_sourceFile = jsonValue.GetString("sourceFile");
-
     m_sourceFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ StartReferenceImportJobSourceItem& StartReferenceImportJobSourceItem::operator =
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

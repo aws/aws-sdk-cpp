@@ -12,22 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMediaCapturePipelineRequest::CreateMediaCapturePipelineRequest() : 
-    m_sourceType(MediaPipelineSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sinkType(MediaPipelineSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_sinkArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false),
-    m_sseAwsKeyManagementParamsHasBeenSet(false),
-    m_sinkIamRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMediaCapturePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

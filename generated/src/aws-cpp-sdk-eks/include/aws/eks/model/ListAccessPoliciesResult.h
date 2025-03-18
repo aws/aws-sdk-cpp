@@ -29,7 +29,7 @@ namespace Model
   class ListAccessPoliciesResult
   {
   public:
-    AWS_EKS_API ListAccessPoliciesResult();
+    AWS_EKS_API ListAccessPoliciesResult() = default;
     AWS_EKS_API ListAccessPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListAccessPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html#access-policy-permissions">Access
      * policy permissions</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::Vector<AccessPolicy>& GetAccessPolicies() const{ return m_accessPolicies; }
-    inline void SetAccessPolicies(const Aws::Vector<AccessPolicy>& value) { m_accessPolicies = value; }
-    inline void SetAccessPolicies(Aws::Vector<AccessPolicy>&& value) { m_accessPolicies = std::move(value); }
-    inline ListAccessPoliciesResult& WithAccessPolicies(const Aws::Vector<AccessPolicy>& value) { SetAccessPolicies(value); return *this;}
-    inline ListAccessPoliciesResult& WithAccessPolicies(Aws::Vector<AccessPolicy>&& value) { SetAccessPolicies(std::move(value)); return *this;}
-    inline ListAccessPoliciesResult& AddAccessPolicies(const AccessPolicy& value) { m_accessPolicies.push_back(value); return *this; }
-    inline ListAccessPoliciesResult& AddAccessPolicies(AccessPolicy&& value) { m_accessPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessPolicy>& GetAccessPolicies() const { return m_accessPolicies; }
+    template<typename AccessPoliciesT = Aws::Vector<AccessPolicy>>
+    void SetAccessPolicies(AccessPoliciesT&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::forward<AccessPoliciesT>(value); }
+    template<typename AccessPoliciesT = Aws::Vector<AccessPolicy>>
+    ListAccessPoliciesResult& WithAccessPolicies(AccessPoliciesT&& value) { SetAccessPolicies(std::forward<AccessPoliciesT>(value)); return *this;}
+    template<typename AccessPoliciesT = AccessPolicy>
+    ListAccessPoliciesResult& AddAccessPolicies(AccessPoliciesT&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies.emplace_back(std::forward<AccessPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,32 +60,31 @@ namespace Model
      * identifier that is used only to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccessPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessPoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccessPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccessPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccessPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccessPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccessPolicy> m_accessPolicies;
+    bool m_accessPoliciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

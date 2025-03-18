@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-SecurityGroupLimitExceeded::SecurityGroupLimitExceeded() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 SecurityGroupLimitExceeded::SecurityGroupLimitExceeded(JsonView jsonValue)
-  : SecurityGroupLimitExceeded()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityGroupLimitExceeded& SecurityGroupLimitExceeded::operator =(JsonView json
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

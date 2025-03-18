@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansSavings::SavingsPlansSavings() : 
-    m_netSavingsHasBeenSet(false),
-    m_onDemandCostEquivalentHasBeenSet(false)
-{
-}
-
 SavingsPlansSavings::SavingsPlansSavings(JsonView jsonValue)
-  : SavingsPlansSavings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SavingsPlansSavings& SavingsPlansSavings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NetSavings"))
   {
     m_netSavings = jsonValue.GetString("NetSavings");
-
     m_netSavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandCostEquivalent"))
   {
     m_onDemandCostEquivalent = jsonValue.GetString("OnDemandCostEquivalent");
-
     m_onDemandCostEquivalentHasBeenSet = true;
   }
-
   return *this;
 }
 

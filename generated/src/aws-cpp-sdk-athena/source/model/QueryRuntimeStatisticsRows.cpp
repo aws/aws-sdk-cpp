@@ -18,20 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows() : 
-    m_inputRows(0),
-    m_inputRowsHasBeenSet(false),
-    m_inputBytes(0),
-    m_inputBytesHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false)
-{
-}
-
 QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows(JsonView jsonValue)
-  : QueryRuntimeStatisticsRows()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ QueryRuntimeStatisticsRows& QueryRuntimeStatisticsRows::operator =(JsonView json
   if(jsonValue.ValueExists("InputRows"))
   {
     m_inputRows = jsonValue.GetInt64("InputRows");
-
     m_inputRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputBytes"))
   {
     m_inputBytes = jsonValue.GetInt64("InputBytes");
-
     m_inputBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputBytes"))
   {
     m_outputBytes = jsonValue.GetInt64("OutputBytes");
-
     m_outputBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputRows"))
   {
     m_outputRows = jsonValue.GetInt64("OutputRows");
-
     m_outputRowsHasBeenSet = true;
   }
-
   return *this;
 }
 

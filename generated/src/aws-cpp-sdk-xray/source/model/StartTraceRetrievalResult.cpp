@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartTraceRetrievalResult::StartTraceRetrievalResult()
-{
-}
-
 StartTraceRetrievalResult::StartTraceRetrievalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartTraceRetrievalResult& StartTraceRetrievalResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("RetrievalToken"))
   {
     m_retrievalToken = jsonValue.GetString("RetrievalToken");
-
+    m_retrievalTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

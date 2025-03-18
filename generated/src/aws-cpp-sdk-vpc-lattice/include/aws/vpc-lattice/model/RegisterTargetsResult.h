@@ -30,7 +30,7 @@ namespace Model
   class RegisterTargetsResult
   {
   public:
-    AWS_VPCLATTICE_API RegisterTargetsResult();
+    AWS_VPCLATTICE_API RegisterTargetsResult() = default;
     AWS_VPCLATTICE_API RegisterTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API RegisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The targets that were successfully registered.</p>
      */
-    inline const Aws::Vector<Target>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<Target>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<Target>&& value) { m_successful = std::move(value); }
-    inline RegisterTargetsResult& WithSuccessful(const Aws::Vector<Target>& value) { SetSuccessful(value); return *this;}
-    inline RegisterTargetsResult& WithSuccessful(Aws::Vector<Target>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline RegisterTargetsResult& AddSuccessful(const Target& value) { m_successful.push_back(value); return *this; }
-    inline RegisterTargetsResult& AddSuccessful(Target&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Target>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<Target>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<Target>>
+    RegisterTargetsResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = Target>
+    RegisterTargetsResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The targets that were not registered.</p>
      */
-    inline const Aws::Vector<TargetFailure>& GetUnsuccessful() const{ return m_unsuccessful; }
-    inline void SetUnsuccessful(const Aws::Vector<TargetFailure>& value) { m_unsuccessful = value; }
-    inline void SetUnsuccessful(Aws::Vector<TargetFailure>&& value) { m_unsuccessful = std::move(value); }
-    inline RegisterTargetsResult& WithUnsuccessful(const Aws::Vector<TargetFailure>& value) { SetUnsuccessful(value); return *this;}
-    inline RegisterTargetsResult& WithUnsuccessful(Aws::Vector<TargetFailure>&& value) { SetUnsuccessful(std::move(value)); return *this;}
-    inline RegisterTargetsResult& AddUnsuccessful(const TargetFailure& value) { m_unsuccessful.push_back(value); return *this; }
-    inline RegisterTargetsResult& AddUnsuccessful(TargetFailure&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetFailure>& GetUnsuccessful() const { return m_unsuccessful; }
+    template<typename UnsuccessfulT = Aws::Vector<TargetFailure>>
+    void SetUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful = std::forward<UnsuccessfulT>(value); }
+    template<typename UnsuccessfulT = Aws::Vector<TargetFailure>>
+    RegisterTargetsResult& WithUnsuccessful(UnsuccessfulT&& value) { SetUnsuccessful(std::forward<UnsuccessfulT>(value)); return *this;}
+    template<typename UnsuccessfulT = TargetFailure>
+    RegisterTargetsResult& AddUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful.emplace_back(std::forward<UnsuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Target> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::Vector<TargetFailure> m_unsuccessful;
+    bool m_unsuccessfulHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

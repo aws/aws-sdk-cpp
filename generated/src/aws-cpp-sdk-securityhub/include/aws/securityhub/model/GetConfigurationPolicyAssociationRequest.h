@@ -21,7 +21,7 @@ namespace Model
   class GetConfigurationPolicyAssociationRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API GetConfigurationPolicyAssociationRequest();
+    AWS_SECURITYHUB_API GetConfigurationPolicyAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
      * <p> The target account ID, organizational unit ID, or the root ID to retrieve
      * the association for. </p>
      */
-    inline const Target& GetTarget() const{ return m_target; }
+    inline const Target& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline GetConfigurationPolicyAssociationRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-    inline GetConfigurationPolicyAssociationRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = Target>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Target>
+    GetConfigurationPolicyAssociationRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

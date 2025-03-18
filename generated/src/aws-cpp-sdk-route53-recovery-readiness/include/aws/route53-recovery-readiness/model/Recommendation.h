@@ -32,7 +32,7 @@ namespace Model
   class Recommendation
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API Recommendation();
+    AWS_ROUTE53RECOVERYREADINESS_API Recommendation() = default;
     AWS_ROUTE53RECOVERYREADINESS_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Text of the recommendations that are provided to make an application more
      * recovery resilient.</p>
      */
-    inline const Aws::String& GetRecommendationText() const{ return m_recommendationText; }
+    inline const Aws::String& GetRecommendationText() const { return m_recommendationText; }
     inline bool RecommendationTextHasBeenSet() const { return m_recommendationTextHasBeenSet; }
-    inline void SetRecommendationText(const Aws::String& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = value; }
-    inline void SetRecommendationText(Aws::String&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = std::move(value); }
-    inline void SetRecommendationText(const char* value) { m_recommendationTextHasBeenSet = true; m_recommendationText.assign(value); }
-    inline Recommendation& WithRecommendationText(const Aws::String& value) { SetRecommendationText(value); return *this;}
-    inline Recommendation& WithRecommendationText(Aws::String&& value) { SetRecommendationText(std::move(value)); return *this;}
-    inline Recommendation& WithRecommendationText(const char* value) { SetRecommendationText(value); return *this;}
+    template<typename RecommendationTextT = Aws::String>
+    void SetRecommendationText(RecommendationTextT&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = std::forward<RecommendationTextT>(value); }
+    template<typename RecommendationTextT = Aws::String>
+    Recommendation& WithRecommendationText(RecommendationTextT&& value) { SetRecommendationText(std::forward<RecommendationTextT>(value)); return *this;}
     ///@}
   private:
 

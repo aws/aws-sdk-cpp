@@ -18,35 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Finding::Finding() : 
-    m_accountIdHasBeenSet(false),
-    m_archived(false),
-    m_archivedHasBeenSet(false),
-    m_category(FindingCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_classificationDetailsHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourcesAffectedHasBeenSet(false),
-    m_sample(false),
-    m_sampleHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_type(FindingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 Finding::Finding(JsonView jsonValue)
-  : Finding()
 {
   *this = jsonValue;
 }
@@ -56,129 +28,93 @@ Finding& Finding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("archived"))
   {
     m_archived = jsonValue.GetBool("archived");
-
     m_archivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = FindingCategoryMapper::GetFindingCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("classificationDetails"))
   {
     m_classificationDetails = jsonValue.GetObject("classificationDetails");
-
     m_classificationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partition"))
   {
     m_partition = jsonValue.GetString("partition");
-
     m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDetails"))
   {
     m_policyDetails = jsonValue.GetObject("policyDetails");
-
     m_policyDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesAffected"))
   {
     m_resourcesAffected = jsonValue.GetObject("resourcesAffected");
-
     m_resourcesAffectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sample"))
   {
     m_sample = jsonValue.GetBool("sample");
-
     m_sampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetObject("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FindingTypeMapper::GetFindingTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLandingZoneOperationRequest::GetLandingZoneOperationRequest() : 
-    m_operationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetLandingZoneOperationRequest::SerializePayload() const
 {
   JsonValue payload;

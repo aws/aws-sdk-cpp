@@ -25,7 +25,7 @@ namespace Model
   class QueryObjectsRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API QueryObjectsRequest();
+    AWS_DATAPIPELINE_API QueryObjectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline QueryObjectsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline QueryObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline QueryObjectsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    QueryObjectsRequest& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * limited to top-level String fields in the object. These filters can be applied
      * to components, instances, and attempts.</p>
      */
-    inline const Query& GetQuery() const{ return m_query; }
+    inline const Query& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Query& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline QueryObjectsRequest& WithQuery(const Query& value) { SetQuery(value); return *this;}
-    inline QueryObjectsRequest& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
+    template<typename QueryT = Query>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Query>
+    QueryObjectsRequest& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and
      * <code>ATTEMPT</code>.</p>
      */
-    inline const Aws::String& GetSphere() const{ return m_sphere; }
+    inline const Aws::String& GetSphere() const { return m_sphere; }
     inline bool SphereHasBeenSet() const { return m_sphereHasBeenSet; }
-    inline void SetSphere(const Aws::String& value) { m_sphereHasBeenSet = true; m_sphere = value; }
-    inline void SetSphere(Aws::String&& value) { m_sphereHasBeenSet = true; m_sphere = std::move(value); }
-    inline void SetSphere(const char* value) { m_sphereHasBeenSet = true; m_sphere.assign(value); }
-    inline QueryObjectsRequest& WithSphere(const Aws::String& value) { SetSphere(value); return *this;}
-    inline QueryObjectsRequest& WithSphere(Aws::String&& value) { SetSphere(std::move(value)); return *this;}
-    inline QueryObjectsRequest& WithSphere(const char* value) { SetSphere(value); return *this;}
+    template<typename SphereT = Aws::String>
+    void SetSphere(SphereT&& value) { m_sphereHasBeenSet = true; m_sphere = std::forward<SphereT>(value); }
+    template<typename SphereT = Aws::String>
+    QueryObjectsRequest& WithSphere(SphereT&& value) { SetSphere(std::forward<SphereT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * <code>QueryObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline QueryObjectsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline QueryObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline QueryObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    QueryObjectsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +99,7 @@ namespace Model
      * <p>The maximum number of object names that <code>QueryObjects</code> will return
      * in a single call. The default value is 100. </p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline QueryObjectsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -124,7 +118,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class MonitoringCsvDatasetFormat
   {
   public:
-    AWS_SAGEMAKER_API MonitoringCsvDatasetFormat();
+    AWS_SAGEMAKER_API MonitoringCsvDatasetFormat() = default;
     AWS_SAGEMAKER_API MonitoringCsvDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringCsvDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Indicates if the CSV data has a header.</p>
      */
-    inline bool GetHeader() const{ return m_header; }
+    inline bool GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
     inline void SetHeader(bool value) { m_headerHasBeenSet = true; m_header = value; }
     inline MonitoringCsvDatasetFormat& WithHeader(bool value) { SetHeader(value); return *this;}
     ///@}
   private:
 
-    bool m_header;
+    bool m_header{false};
     bool m_headerHasBeenSet = false;
   };
 

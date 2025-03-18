@@ -30,7 +30,7 @@ namespace Model
   class GetKxScalingGroupResult
   {
   public:
-    AWS_FINSPACE_API GetKxScalingGroupResult();
+    AWS_FINSPACE_API GetKxScalingGroupResult() = default;
     AWS_FINSPACE_API GetKxScalingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API GetKxScalingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>A unique identifier for the kdb scaling group. </p>
      */
-    inline const Aws::String& GetScalingGroupName() const{ return m_scalingGroupName; }
-    inline void SetScalingGroupName(const Aws::String& value) { m_scalingGroupName = value; }
-    inline void SetScalingGroupName(Aws::String&& value) { m_scalingGroupName = std::move(value); }
-    inline void SetScalingGroupName(const char* value) { m_scalingGroupName.assign(value); }
-    inline GetKxScalingGroupResult& WithScalingGroupName(const Aws::String& value) { SetScalingGroupName(value); return *this;}
-    inline GetKxScalingGroupResult& WithScalingGroupName(Aws::String&& value) { SetScalingGroupName(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithScalingGroupName(const char* value) { SetScalingGroupName(value); return *this;}
+    inline const Aws::String& GetScalingGroupName() const { return m_scalingGroupName; }
+    template<typename ScalingGroupNameT = Aws::String>
+    void SetScalingGroupName(ScalingGroupNameT&& value) { m_scalingGroupNameHasBeenSet = true; m_scalingGroupName = std::forward<ScalingGroupNameT>(value); }
+    template<typename ScalingGroupNameT = Aws::String>
+    GetKxScalingGroupResult& WithScalingGroupName(ScalingGroupNameT&& value) { SetScalingGroupName(std::forward<ScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN identifier for the scaling group. </p>
      */
-    inline const Aws::String& GetScalingGroupArn() const{ return m_scalingGroupArn; }
-    inline void SetScalingGroupArn(const Aws::String& value) { m_scalingGroupArn = value; }
-    inline void SetScalingGroupArn(Aws::String&& value) { m_scalingGroupArn = std::move(value); }
-    inline void SetScalingGroupArn(const char* value) { m_scalingGroupArn.assign(value); }
-    inline GetKxScalingGroupResult& WithScalingGroupArn(const Aws::String& value) { SetScalingGroupArn(value); return *this;}
-    inline GetKxScalingGroupResult& WithScalingGroupArn(Aws::String&& value) { SetScalingGroupArn(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithScalingGroupArn(const char* value) { SetScalingGroupArn(value); return *this;}
+    inline const Aws::String& GetScalingGroupArn() const { return m_scalingGroupArn; }
+    template<typename ScalingGroupArnT = Aws::String>
+    void SetScalingGroupArn(ScalingGroupArnT&& value) { m_scalingGroupArnHasBeenSet = true; m_scalingGroupArn = std::forward<ScalingGroupArnT>(value); }
+    template<typename ScalingGroupArnT = Aws::String>
+    GetKxScalingGroupResult& WithScalingGroupArn(ScalingGroupArnT&& value) { SetScalingGroupArn(std::forward<ScalingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,13 +76,11 @@ namespace Model
      * memory and 64 vCPUs.</p> </li> <li> <p> <code>kx.sg1.24xlarge</code> – The host
      * type with a configuration of 2948 GiB memory and 96 vCPUs.</p> </li> </ul>
      */
-    inline const Aws::String& GetHostType() const{ return m_hostType; }
-    inline void SetHostType(const Aws::String& value) { m_hostType = value; }
-    inline void SetHostType(Aws::String&& value) { m_hostType = std::move(value); }
-    inline void SetHostType(const char* value) { m_hostType.assign(value); }
-    inline GetKxScalingGroupResult& WithHostType(const Aws::String& value) { SetHostType(value); return *this;}
-    inline GetKxScalingGroupResult& WithHostType(Aws::String&& value) { SetHostType(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithHostType(const char* value) { SetHostType(value); return *this;}
+    inline const Aws::String& GetHostType() const { return m_hostType; }
+    template<typename HostTypeT = Aws::String>
+    void SetHostType(HostTypeT&& value) { m_hostTypeHasBeenSet = true; m_hostType = std::forward<HostTypeT>(value); }
+    template<typename HostTypeT = Aws::String>
+    GetKxScalingGroupResult& WithHostType(HostTypeT&& value) { SetHostType(std::forward<HostTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,27 +88,24 @@ namespace Model
      * <p> The list of Managed kdb clusters that are currently active in the given
      * scaling group. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetClusters() const{ return m_clusters; }
-    inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clusters = value; }
-    inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clusters = std::move(value); }
-    inline GetKxScalingGroupResult& WithClusters(const Aws::Vector<Aws::String>& value) { SetClusters(value); return *this;}
-    inline GetKxScalingGroupResult& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& AddClusters(const Aws::String& value) { m_clusters.push_back(value); return *this; }
-    inline GetKxScalingGroupResult& AddClusters(Aws::String&& value) { m_clusters.push_back(std::move(value)); return *this; }
-    inline GetKxScalingGroupResult& AddClusters(const char* value) { m_clusters.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetClusters() const { return m_clusters; }
+    template<typename ClustersT = Aws::Vector<Aws::String>>
+    void SetClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters = std::forward<ClustersT>(value); }
+    template<typename ClustersT = Aws::Vector<Aws::String>>
+    GetKxScalingGroupResult& WithClusters(ClustersT&& value) { SetClusters(std::forward<ClustersT>(value)); return *this;}
+    template<typename ClustersT = Aws::String>
+    GetKxScalingGroupResult& AddClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters.emplace_back(std::forward<ClustersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the availability zones.</p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneId.assign(value); }
-    inline GetKxScalingGroupResult& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline GetKxScalingGroupResult& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    GetKxScalingGroupResult& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,24 +120,20 @@ namespace Model
      * </li> <li> <p>DELETED – The scaling group is successfully deleted.</p> </li>
      * </ul>
      */
-    inline const KxScalingGroupStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const KxScalingGroupStatus& value) { m_status = value; }
-    inline void SetStatus(KxScalingGroupStatus&& value) { m_status = std::move(value); }
-    inline GetKxScalingGroupResult& WithStatus(const KxScalingGroupStatus& value) { SetStatus(value); return *this;}
-    inline GetKxScalingGroupResult& WithStatus(KxScalingGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline KxScalingGroupStatus GetStatus() const { return m_status; }
+    inline void SetStatus(KxScalingGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetKxScalingGroupResult& WithStatus(KxScalingGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The error message when a failed state occurs. </p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-    inline GetKxScalingGroupResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline GetKxScalingGroupResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    GetKxScalingGroupResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,11 +142,11 @@ namespace Model
      * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
-    inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestamp = value; }
-    inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestamp = std::move(value); }
-    inline GetKxScalingGroupResult& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-    inline GetKxScalingGroupResult& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    GetKxScalingGroupResult& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,44 +155,52 @@ namespace Model
      * is determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetKxScalingGroupResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetKxScalingGroupResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetKxScalingGroupResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetKxScalingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetKxScalingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetKxScalingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetKxScalingGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scalingGroupName;
+    bool m_scalingGroupNameHasBeenSet = false;
 
     Aws::String m_scalingGroupArn;
+    bool m_scalingGroupArnHasBeenSet = false;
 
     Aws::String m_hostType;
+    bool m_hostTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusters;
+    bool m_clustersHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
-    KxScalingGroupStatus m_status;
+    KxScalingGroupStatus m_status{KxScalingGroupStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp;
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
+    bool m_lastModifiedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

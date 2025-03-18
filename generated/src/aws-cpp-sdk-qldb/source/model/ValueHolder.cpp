@@ -18,13 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-ValueHolder::ValueHolder() : 
-    m_ionTextHasBeenSet(false)
-{
-}
-
 ValueHolder::ValueHolder(JsonView jsonValue)
-  : ValueHolder()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ValueHolder& ValueHolder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IonText"))
   {
     m_ionText = jsonValue.GetString("IonText");
-
     m_ionTextHasBeenSet = true;
   }
-
   return *this;
 }
 

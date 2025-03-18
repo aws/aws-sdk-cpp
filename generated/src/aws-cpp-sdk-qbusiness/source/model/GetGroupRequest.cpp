@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetGroupRequest::GetGroupRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupRequest::SerializePayload() const
 {
   return {};

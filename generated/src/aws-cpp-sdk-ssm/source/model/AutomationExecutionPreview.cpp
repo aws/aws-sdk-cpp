@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AutomationExecutionPreview::AutomationExecutionPreview() : 
-    m_stepPreviewsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_targetPreviewsHasBeenSet(false),
-    m_totalAccounts(0),
-    m_totalAccountsHasBeenSet(false)
-{
-}
-
 AutomationExecutionPreview::AutomationExecutionPreview(JsonView jsonValue)
-  : AutomationExecutionPreview()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ AutomationExecutionPreview& AutomationExecutionPreview::operator =(JsonView json
     }
     m_stepPreviewsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
@@ -54,7 +43,6 @@ AutomationExecutionPreview& AutomationExecutionPreview::operator =(JsonView json
     }
     m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetPreviews"))
   {
     Aws::Utils::Array<JsonView> targetPreviewsJsonList = jsonValue.GetArray("TargetPreviews");
@@ -64,14 +52,11 @@ AutomationExecutionPreview& AutomationExecutionPreview::operator =(JsonView json
     }
     m_targetPreviewsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAccounts"))
   {
     m_totalAccounts = jsonValue.GetInteger("TotalAccounts");
-
     m_totalAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

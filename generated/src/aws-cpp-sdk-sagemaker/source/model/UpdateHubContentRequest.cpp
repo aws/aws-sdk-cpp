@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateHubContentRequest::UpdateHubContentRequest() : 
-    m_hubNameHasBeenSet(false),
-    m_hubContentNameHasBeenSet(false),
-    m_hubContentType(HubContentType::NOT_SET),
-    m_hubContentTypeHasBeenSet(false),
-    m_hubContentVersionHasBeenSet(false),
-    m_hubContentDisplayNameHasBeenSet(false),
-    m_hubContentDescriptionHasBeenSet(false),
-    m_hubContentMarkdownHasBeenSet(false),
-    m_hubContentSearchKeywordsHasBeenSet(false),
-    m_supportStatus(HubContentSupportStatus::NOT_SET),
-    m_supportStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateHubContentRequest::SerializePayload() const
 {
   JsonValue payload;

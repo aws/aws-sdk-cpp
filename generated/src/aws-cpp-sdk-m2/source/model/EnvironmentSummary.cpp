@@ -18,24 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-EnvironmentSummary::EnvironmentSummary() : 
-    m_creationTimeHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_status(EnvironmentLifecycle::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
-  : EnvironmentSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentArn"))
   {
     m_environmentArn = jsonValue.GetString("environmentArn");
-
     m_environmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkType"))
   {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
-
     m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnvironmentLifecycleMapper::GetEnvironmentLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

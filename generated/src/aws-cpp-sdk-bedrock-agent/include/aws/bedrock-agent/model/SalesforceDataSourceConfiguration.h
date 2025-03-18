@@ -33,7 +33,7 @@ namespace Model
   class SalesforceDataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SalesforceDataSourceConfiguration();
+    AWS_BEDROCKAGENT_API SalesforceDataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API SalesforceDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SalesforceDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The configuration of the Salesforce content. For example, configuring
      * specific types of Salesforce content.</p>
      */
-    inline const SalesforceCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
+    inline const SalesforceCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    inline void SetCrawlerConfiguration(const SalesforceCrawlerConfiguration& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = value; }
-    inline void SetCrawlerConfiguration(SalesforceCrawlerConfiguration&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::move(value); }
-    inline SalesforceDataSourceConfiguration& WithCrawlerConfiguration(const SalesforceCrawlerConfiguration& value) { SetCrawlerConfiguration(value); return *this;}
-    inline SalesforceDataSourceConfiguration& WithCrawlerConfiguration(SalesforceCrawlerConfiguration&& value) { SetCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename CrawlerConfigurationT = SalesforceCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = SalesforceCrawlerConfiguration>
+    SalesforceDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint information to connect to your Salesforce data source.</p>
      */
-    inline const SalesforceSourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
+    inline const SalesforceSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    inline void SetSourceConfiguration(const SalesforceSourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-    inline void SetSourceConfiguration(SalesforceSourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-    inline SalesforceDataSourceConfiguration& WithSourceConfiguration(const SalesforceSourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-    inline SalesforceDataSourceConfiguration& WithSourceConfiguration(SalesforceSourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SalesforceSourceConfiguration>
+    SalesforceDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

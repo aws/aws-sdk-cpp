@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-RomaniaAdditionalInfo::RomaniaAdditionalInfo() : 
-    m_taxRegistrationNumberType(TaxRegistrationNumberType::NOT_SET),
-    m_taxRegistrationNumberTypeHasBeenSet(false)
-{
-}
-
 RomaniaAdditionalInfo::RomaniaAdditionalInfo(JsonView jsonValue)
-  : RomaniaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RomaniaAdditionalInfo& RomaniaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taxRegistrationNumberType"))
   {
     m_taxRegistrationNumberType = TaxRegistrationNumberTypeMapper::GetTaxRegistrationNumberTypeForName(jsonValue.GetString("taxRegistrationNumberType"));
-
     m_taxRegistrationNumberTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

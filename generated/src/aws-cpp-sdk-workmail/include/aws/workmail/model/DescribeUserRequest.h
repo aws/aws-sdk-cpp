@@ -21,7 +21,7 @@ namespace Model
   class DescribeUserRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API DescribeUserRequest();
+    AWS_WORKMAIL_API DescribeUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the user exists.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline DescribeUserRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline DescribeUserRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline DescribeUserRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    DescribeUserRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
      * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline DescribeUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline DescribeUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline DescribeUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    DescribeUserRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

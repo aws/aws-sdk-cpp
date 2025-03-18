@@ -18,18 +18,7 @@ namespace SecretsManager
 namespace Model
 {
 
-ReplicationStatusType::ReplicationStatusType() : 
-    m_regionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false)
-{
-}
-
 ReplicationStatusType::ReplicationStatusType(JsonView jsonValue)
-  : ReplicationStatusType()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ReplicationStatusType& ReplicationStatusType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessedDate"))
   {
     m_lastAccessedDate = jsonValue.GetDouble("LastAccessedDate");
-
     m_lastAccessedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

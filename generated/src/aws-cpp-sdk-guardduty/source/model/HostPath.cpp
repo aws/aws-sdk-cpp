@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-HostPath::HostPath() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 HostPath::HostPath(JsonView jsonValue)
-  : HostPath()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HostPath& HostPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

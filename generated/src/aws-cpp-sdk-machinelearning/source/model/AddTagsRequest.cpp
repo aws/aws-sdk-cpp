@@ -12,14 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest() : 
-    m_tagsHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TaggableResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsRequest::SerializePayload() const
 {
   JsonValue payload;

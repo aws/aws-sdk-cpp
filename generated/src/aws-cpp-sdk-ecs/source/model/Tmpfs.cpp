@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Tmpfs::Tmpfs() : 
-    m_containerPathHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
-{
-}
-
 Tmpfs::Tmpfs(JsonView jsonValue)
-  : Tmpfs()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Tmpfs& Tmpfs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerPath"))
   {
     m_containerPath = jsonValue.GetString("containerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInteger("size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountOptions"))
   {
     Aws::Utils::Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("mountOptions");
@@ -57,7 +44,6 @@ Tmpfs& Tmpfs::operator =(JsonView jsonValue)
     }
     m_mountOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_codeHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,28 +39,21 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

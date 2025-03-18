@@ -38,7 +38,7 @@ namespace Model
   class CodeReviewSummary
   {
   public:
-    AWS_CODEGURUREVIEWER_API CodeReviewSummary();
+    AWS_CODEGURUREVIEWER_API CodeReviewSummary() = default;
     AWS_CODEGURUREVIEWER_API CodeReviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API CodeReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the code review.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CodeReviewSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CodeReviewSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CodeReviewSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CodeReviewSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,28 +62,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
      * object. </p>
      */
-    inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
+    inline const Aws::String& GetCodeReviewArn() const { return m_codeReviewArn; }
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
-    inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
-    inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
-    inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
-    inline CodeReviewSummary& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
-    inline CodeReviewSummary& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
-    inline CodeReviewSummary& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
+    template<typename CodeReviewArnT = Aws::String>
+    void SetCodeReviewArn(CodeReviewArnT&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::forward<CodeReviewArnT>(value); }
+    template<typename CodeReviewArnT = Aws::String>
+    CodeReviewSummary& WithCodeReviewArn(CodeReviewArnT&& value) { SetCodeReviewArn(std::forward<CodeReviewArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline CodeReviewSummary& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline CodeReviewSummary& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline CodeReviewSummary& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    CodeReviewSummary& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,26 +90,22 @@ namespace Model
      * this is the username for the account that owns the repository. For an S3
      * repository, it can be the username or Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline CodeReviewSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline CodeReviewSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline CodeReviewSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    CodeReviewSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provider type of the repository association.</p>
      */
-    inline const ProviderType& GetProviderType() const{ return m_providerType; }
+    inline ProviderType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline CodeReviewSummary& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
-    inline CodeReviewSummary& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(ProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline CodeReviewSummary& WithProviderType(ProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +117,10 @@ namespace Model
      * </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p>
      * </li> </ul>
      */
-    inline const JobState& GetState() const{ return m_state; }
+    inline JobState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const JobState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(JobState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CodeReviewSummary& WithState(const JobState& value) { SetState(value); return *this;}
-    inline CodeReviewSummary& WithState(JobState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(JobState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CodeReviewSummary& WithState(JobState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +128,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the code review was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimeStamp() const{ return m_createdTimeStamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimeStamp() const { return m_createdTimeStamp; }
     inline bool CreatedTimeStampHasBeenSet() const { return m_createdTimeStampHasBeenSet; }
-    inline void SetCreatedTimeStamp(const Aws::Utils::DateTime& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = value; }
-    inline void SetCreatedTimeStamp(Aws::Utils::DateTime&& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = std::move(value); }
-    inline CodeReviewSummary& WithCreatedTimeStamp(const Aws::Utils::DateTime& value) { SetCreatedTimeStamp(value); return *this;}
-    inline CodeReviewSummary& WithCreatedTimeStamp(Aws::Utils::DateTime&& value) { SetCreatedTimeStamp(std::move(value)); return *this;}
+    template<typename CreatedTimeStampT = Aws::Utils::DateTime>
+    void SetCreatedTimeStamp(CreatedTimeStampT&& value) { m_createdTimeStampHasBeenSet = true; m_createdTimeStamp = std::forward<CreatedTimeStampT>(value); }
+    template<typename CreatedTimeStampT = Aws::Utils::DateTime>
+    CodeReviewSummary& WithCreatedTimeStamp(CreatedTimeStampT&& value) { SetCreatedTimeStamp(std::forward<CreatedTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,60 +141,56 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the code review was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimeStamp() const{ return m_lastUpdatedTimeStamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimeStamp() const { return m_lastUpdatedTimeStamp; }
     inline bool LastUpdatedTimeStampHasBeenSet() const { return m_lastUpdatedTimeStampHasBeenSet; }
-    inline void SetLastUpdatedTimeStamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = value; }
-    inline void SetLastUpdatedTimeStamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = std::move(value); }
-    inline CodeReviewSummary& WithLastUpdatedTimeStamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimeStamp(value); return *this;}
-    inline CodeReviewSummary& WithLastUpdatedTimeStamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimeStamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeStampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimeStamp(LastUpdatedTimeStampT&& value) { m_lastUpdatedTimeStampHasBeenSet = true; m_lastUpdatedTimeStamp = std::forward<LastUpdatedTimeStampT>(value); }
+    template<typename LastUpdatedTimeStampT = Aws::Utils::DateTime>
+    CodeReviewSummary& WithLastUpdatedTimeStamp(LastUpdatedTimeStampT&& value) { SetLastUpdatedTimeStamp(std::forward<LastUpdatedTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the code review.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CodeReviewSummary& WithType(const Type& value) { SetType(value); return *this;}
-    inline CodeReviewSummary& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CodeReviewSummary& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pull request ID for the code review.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline CodeReviewSummary& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline CodeReviewSummary& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline CodeReviewSummary& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    CodeReviewSummary& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The statistics from the code review.</p>
      */
-    inline const MetricsSummary& GetMetricsSummary() const{ return m_metricsSummary; }
+    inline const MetricsSummary& GetMetricsSummary() const { return m_metricsSummary; }
     inline bool MetricsSummaryHasBeenSet() const { return m_metricsSummaryHasBeenSet; }
-    inline void SetMetricsSummary(const MetricsSummary& value) { m_metricsSummaryHasBeenSet = true; m_metricsSummary = value; }
-    inline void SetMetricsSummary(MetricsSummary&& value) { m_metricsSummaryHasBeenSet = true; m_metricsSummary = std::move(value); }
-    inline CodeReviewSummary& WithMetricsSummary(const MetricsSummary& value) { SetMetricsSummary(value); return *this;}
-    inline CodeReviewSummary& WithMetricsSummary(MetricsSummary&& value) { SetMetricsSummary(std::move(value)); return *this;}
+    template<typename MetricsSummaryT = MetricsSummary>
+    void SetMetricsSummary(MetricsSummaryT&& value) { m_metricsSummaryHasBeenSet = true; m_metricsSummary = std::forward<MetricsSummaryT>(value); }
+    template<typename MetricsSummaryT = MetricsSummary>
+    CodeReviewSummary& WithMetricsSummary(MetricsSummaryT&& value) { SetMetricsSummary(std::forward<MetricsSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SourceCodeType& GetSourceCodeType() const{ return m_sourceCodeType; }
+    inline const SourceCodeType& GetSourceCodeType() const { return m_sourceCodeType; }
     inline bool SourceCodeTypeHasBeenSet() const { return m_sourceCodeTypeHasBeenSet; }
-    inline void SetSourceCodeType(const SourceCodeType& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = value; }
-    inline void SetSourceCodeType(SourceCodeType&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::move(value); }
-    inline CodeReviewSummary& WithSourceCodeType(const SourceCodeType& value) { SetSourceCodeType(value); return *this;}
-    inline CodeReviewSummary& WithSourceCodeType(SourceCodeType&& value) { SetSourceCodeType(std::move(value)); return *this;}
+    template<typename SourceCodeTypeT = SourceCodeType>
+    void SetSourceCodeType(SourceCodeTypeT&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::forward<SourceCodeTypeT>(value); }
+    template<typename SourceCodeTypeT = SourceCodeType>
+    CodeReviewSummary& WithSourceCodeType(SourceCodeTypeT&& value) { SetSourceCodeType(std::forward<SourceCodeTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -222,19 +206,19 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
-    ProviderType m_providerType;
+    ProviderType m_providerType{ProviderType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
-    JobState m_state;
+    JobState m_state{JobState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimeStamp;
+    Aws::Utils::DateTime m_createdTimeStamp{};
     bool m_createdTimeStampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimeStamp;
+    Aws::Utils::DateTime m_lastUpdatedTimeStamp{};
     bool m_lastUpdatedTimeStampHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_pullRequestId;

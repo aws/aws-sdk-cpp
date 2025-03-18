@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-UnassignPrivateNatGatewayAddressRequest::UnassignPrivateNatGatewayAddressRequest() : 
-    m_natGatewayIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_maxDrainDurationSeconds(0),
-    m_maxDrainDurationSecondsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String UnassignPrivateNatGatewayAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

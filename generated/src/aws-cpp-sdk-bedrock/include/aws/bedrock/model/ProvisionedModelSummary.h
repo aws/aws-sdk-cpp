@@ -37,7 +37,7 @@ namespace Model
   class ProvisionedModelSummary
   {
   public:
-    AWS_BEDROCK_API ProvisionedModelSummary();
+    AWS_BEDROCK_API ProvisionedModelSummary() = default;
     AWS_BEDROCK_API ProvisionedModelSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ProvisionedModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the Provisioned Throughput.</p>
      */
-    inline const Aws::String& GetProvisionedModelName() const{ return m_provisionedModelName; }
+    inline const Aws::String& GetProvisionedModelName() const { return m_provisionedModelName; }
     inline bool ProvisionedModelNameHasBeenSet() const { return m_provisionedModelNameHasBeenSet; }
-    inline void SetProvisionedModelName(const Aws::String& value) { m_provisionedModelNameHasBeenSet = true; m_provisionedModelName = value; }
-    inline void SetProvisionedModelName(Aws::String&& value) { m_provisionedModelNameHasBeenSet = true; m_provisionedModelName = std::move(value); }
-    inline void SetProvisionedModelName(const char* value) { m_provisionedModelNameHasBeenSet = true; m_provisionedModelName.assign(value); }
-    inline ProvisionedModelSummary& WithProvisionedModelName(const Aws::String& value) { SetProvisionedModelName(value); return *this;}
-    inline ProvisionedModelSummary& WithProvisionedModelName(Aws::String&& value) { SetProvisionedModelName(std::move(value)); return *this;}
-    inline ProvisionedModelSummary& WithProvisionedModelName(const char* value) { SetProvisionedModelName(value); return *this;}
+    template<typename ProvisionedModelNameT = Aws::String>
+    void SetProvisionedModelName(ProvisionedModelNameT&& value) { m_provisionedModelNameHasBeenSet = true; m_provisionedModelName = std::forward<ProvisionedModelNameT>(value); }
+    template<typename ProvisionedModelNameT = Aws::String>
+    ProvisionedModelSummary& WithProvisionedModelName(ProvisionedModelNameT&& value) { SetProvisionedModelName(std::forward<ProvisionedModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
      */
-    inline const Aws::String& GetProvisionedModelArn() const{ return m_provisionedModelArn; }
+    inline const Aws::String& GetProvisionedModelArn() const { return m_provisionedModelArn; }
     inline bool ProvisionedModelArnHasBeenSet() const { return m_provisionedModelArnHasBeenSet; }
-    inline void SetProvisionedModelArn(const Aws::String& value) { m_provisionedModelArnHasBeenSet = true; m_provisionedModelArn = value; }
-    inline void SetProvisionedModelArn(Aws::String&& value) { m_provisionedModelArnHasBeenSet = true; m_provisionedModelArn = std::move(value); }
-    inline void SetProvisionedModelArn(const char* value) { m_provisionedModelArnHasBeenSet = true; m_provisionedModelArn.assign(value); }
-    inline ProvisionedModelSummary& WithProvisionedModelArn(const Aws::String& value) { SetProvisionedModelArn(value); return *this;}
-    inline ProvisionedModelSummary& WithProvisionedModelArn(Aws::String&& value) { SetProvisionedModelArn(std::move(value)); return *this;}
-    inline ProvisionedModelSummary& WithProvisionedModelArn(const char* value) { SetProvisionedModelArn(value); return *this;}
+    template<typename ProvisionedModelArnT = Aws::String>
+    void SetProvisionedModelArn(ProvisionedModelArnT&& value) { m_provisionedModelArnHasBeenSet = true; m_provisionedModelArn = std::forward<ProvisionedModelArnT>(value); }
+    template<typename ProvisionedModelArnT = Aws::String>
+    ProvisionedModelSummary& WithProvisionedModelArn(ProvisionedModelArnT&& value) { SetProvisionedModelArn(std::forward<ProvisionedModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the model associated with the Provisioned
      * Throughput.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline ProvisionedModelSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline ProvisionedModelSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline ProvisionedModelSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    ProvisionedModelSummary& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * this Provisioned Throughput. This value differs from the <code>modelArn</code>
      * if updating hasn't completed.</p>
      */
-    inline const Aws::String& GetDesiredModelArn() const{ return m_desiredModelArn; }
+    inline const Aws::String& GetDesiredModelArn() const { return m_desiredModelArn; }
     inline bool DesiredModelArnHasBeenSet() const { return m_desiredModelArnHasBeenSet; }
-    inline void SetDesiredModelArn(const Aws::String& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = value; }
-    inline void SetDesiredModelArn(Aws::String&& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = std::move(value); }
-    inline void SetDesiredModelArn(const char* value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn.assign(value); }
-    inline ProvisionedModelSummary& WithDesiredModelArn(const Aws::String& value) { SetDesiredModelArn(value); return *this;}
-    inline ProvisionedModelSummary& WithDesiredModelArn(Aws::String&& value) { SetDesiredModelArn(std::move(value)); return *this;}
-    inline ProvisionedModelSummary& WithDesiredModelArn(const char* value) { SetDesiredModelArn(value); return *this;}
+    template<typename DesiredModelArnT = Aws::String>
+    void SetDesiredModelArn(DesiredModelArnT&& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = std::forward<DesiredModelArnT>(value); }
+    template<typename DesiredModelArnT = Aws::String>
+    ProvisionedModelSummary& WithDesiredModelArn(DesiredModelArnT&& value) { SetDesiredModelArn(std::forward<DesiredModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,21 +100,19 @@ namespace Model
      * Throughput was created, or of the base model that the custom model for which the
      * Provisioned Throughput was created was customized.</p>
      */
-    inline const Aws::String& GetFoundationModelArn() const{ return m_foundationModelArn; }
+    inline const Aws::String& GetFoundationModelArn() const { return m_foundationModelArn; }
     inline bool FoundationModelArnHasBeenSet() const { return m_foundationModelArnHasBeenSet; }
-    inline void SetFoundationModelArn(const Aws::String& value) { m_foundationModelArnHasBeenSet = true; m_foundationModelArn = value; }
-    inline void SetFoundationModelArn(Aws::String&& value) { m_foundationModelArnHasBeenSet = true; m_foundationModelArn = std::move(value); }
-    inline void SetFoundationModelArn(const char* value) { m_foundationModelArnHasBeenSet = true; m_foundationModelArn.assign(value); }
-    inline ProvisionedModelSummary& WithFoundationModelArn(const Aws::String& value) { SetFoundationModelArn(value); return *this;}
-    inline ProvisionedModelSummary& WithFoundationModelArn(Aws::String&& value) { SetFoundationModelArn(std::move(value)); return *this;}
-    inline ProvisionedModelSummary& WithFoundationModelArn(const char* value) { SetFoundationModelArn(value); return *this;}
+    template<typename FoundationModelArnT = Aws::String>
+    void SetFoundationModelArn(FoundationModelArnT&& value) { m_foundationModelArnHasBeenSet = true; m_foundationModelArn = std::forward<FoundationModelArnT>(value); }
+    template<typename FoundationModelArnT = Aws::String>
+    ProvisionedModelSummary& WithFoundationModelArn(FoundationModelArnT&& value) { SetFoundationModelArn(std::forward<FoundationModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of model units allocated to the Provisioned Throughput.</p>
      */
-    inline int GetModelUnits() const{ return m_modelUnits; }
+    inline int GetModelUnits() const { return m_modelUnits; }
     inline bool ModelUnitsHasBeenSet() const { return m_modelUnitsHasBeenSet; }
     inline void SetModelUnits(int value) { m_modelUnitsHasBeenSet = true; m_modelUnits = value; }
     inline ProvisionedModelSummary& WithModelUnits(int value) { SetModelUnits(value); return *this;}
@@ -133,7 +123,7 @@ namespace Model
      * <p>The number of model units that was requested to be allocated to the
      * Provisioned Throughput.</p>
      */
-    inline int GetDesiredModelUnits() const{ return m_desiredModelUnits; }
+    inline int GetDesiredModelUnits() const { return m_desiredModelUnits; }
     inline bool DesiredModelUnitsHasBeenSet() const { return m_desiredModelUnitsHasBeenSet; }
     inline void SetDesiredModelUnits(int value) { m_desiredModelUnitsHasBeenSet = true; m_desiredModelUnits = value; }
     inline ProvisionedModelSummary& WithDesiredModelUnits(int value) { SetDesiredModelUnits(value); return *this;}
@@ -143,24 +133,20 @@ namespace Model
     /**
      * <p>The status of the Provisioned Throughput.</p>
      */
-    inline const ProvisionedModelStatus& GetStatus() const{ return m_status; }
+    inline ProvisionedModelStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProvisionedModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProvisionedModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProvisionedModelSummary& WithStatus(const ProvisionedModelStatus& value) { SetStatus(value); return *this;}
-    inline ProvisionedModelSummary& WithStatus(ProvisionedModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProvisionedModelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProvisionedModelSummary& WithStatus(ProvisionedModelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration for which the Provisioned Throughput was committed.</p>
      */
-    inline const CommitmentDuration& GetCommitmentDuration() const{ return m_commitmentDuration; }
+    inline CommitmentDuration GetCommitmentDuration() const { return m_commitmentDuration; }
     inline bool CommitmentDurationHasBeenSet() const { return m_commitmentDurationHasBeenSet; }
-    inline void SetCommitmentDuration(const CommitmentDuration& value) { m_commitmentDurationHasBeenSet = true; m_commitmentDuration = value; }
-    inline void SetCommitmentDuration(CommitmentDuration&& value) { m_commitmentDurationHasBeenSet = true; m_commitmentDuration = std::move(value); }
-    inline ProvisionedModelSummary& WithCommitmentDuration(const CommitmentDuration& value) { SetCommitmentDuration(value); return *this;}
-    inline ProvisionedModelSummary& WithCommitmentDuration(CommitmentDuration&& value) { SetCommitmentDuration(std::move(value)); return *this;}
+    inline void SetCommitmentDuration(CommitmentDuration value) { m_commitmentDurationHasBeenSet = true; m_commitmentDuration = value; }
+    inline ProvisionedModelSummary& WithCommitmentDuration(CommitmentDuration value) { SetCommitmentDuration(value); return *this;}
     ///@}
 
     ///@{
@@ -168,36 +154,36 @@ namespace Model
      * <p>The timestamp for when the commitment term of the Provisioned Throughput
      * expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetCommitmentExpirationTime() const{ return m_commitmentExpirationTime; }
+    inline const Aws::Utils::DateTime& GetCommitmentExpirationTime() const { return m_commitmentExpirationTime; }
     inline bool CommitmentExpirationTimeHasBeenSet() const { return m_commitmentExpirationTimeHasBeenSet; }
-    inline void SetCommitmentExpirationTime(const Aws::Utils::DateTime& value) { m_commitmentExpirationTimeHasBeenSet = true; m_commitmentExpirationTime = value; }
-    inline void SetCommitmentExpirationTime(Aws::Utils::DateTime&& value) { m_commitmentExpirationTimeHasBeenSet = true; m_commitmentExpirationTime = std::move(value); }
-    inline ProvisionedModelSummary& WithCommitmentExpirationTime(const Aws::Utils::DateTime& value) { SetCommitmentExpirationTime(value); return *this;}
-    inline ProvisionedModelSummary& WithCommitmentExpirationTime(Aws::Utils::DateTime&& value) { SetCommitmentExpirationTime(std::move(value)); return *this;}
+    template<typename CommitmentExpirationTimeT = Aws::Utils::DateTime>
+    void SetCommitmentExpirationTime(CommitmentExpirationTimeT&& value) { m_commitmentExpirationTimeHasBeenSet = true; m_commitmentExpirationTime = std::forward<CommitmentExpirationTimeT>(value); }
+    template<typename CommitmentExpirationTimeT = Aws::Utils::DateTime>
+    ProvisionedModelSummary& WithCommitmentExpirationTime(CommitmentExpirationTimeT&& value) { SetCommitmentExpirationTime(std::forward<CommitmentExpirationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the Provisioned Throughput was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ProvisionedModelSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ProvisionedModelSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ProvisionedModelSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the Provisioned Throughput was last modified. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline ProvisionedModelSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ProvisionedModelSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ProvisionedModelSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -216,25 +202,25 @@ namespace Model
     Aws::String m_foundationModelArn;
     bool m_foundationModelArnHasBeenSet = false;
 
-    int m_modelUnits;
+    int m_modelUnits{0};
     bool m_modelUnitsHasBeenSet = false;
 
-    int m_desiredModelUnits;
+    int m_desiredModelUnits{0};
     bool m_desiredModelUnitsHasBeenSet = false;
 
-    ProvisionedModelStatus m_status;
+    ProvisionedModelStatus m_status{ProvisionedModelStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    CommitmentDuration m_commitmentDuration;
+    CommitmentDuration m_commitmentDuration{CommitmentDuration::NOT_SET};
     bool m_commitmentDurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_commitmentExpirationTime;
+    Aws::Utils::DateTime m_commitmentExpirationTime{};
     bool m_commitmentExpirationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

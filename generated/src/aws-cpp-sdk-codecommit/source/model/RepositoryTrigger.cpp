@@ -18,17 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-RepositoryTrigger::RepositoryTrigger() : 
-    m_nameHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_customDataHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 RepositoryTrigger::RepositoryTrigger(JsonView jsonValue)
-  : RepositoryTrigger()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RepositoryTrigger& RepositoryTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationArn"))
   {
     m_destinationArn = jsonValue.GetString("destinationArn");
-
     m_destinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customData"))
   {
     m_customData = jsonValue.GetString("customData");
-
     m_customDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branches"))
   {
     Aws::Utils::Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");
@@ -65,7 +49,6 @@ RepositoryTrigger& RepositoryTrigger::operator =(JsonView jsonValue)
     }
     m_branchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
@@ -75,7 +58,6 @@ RepositoryTrigger& RepositoryTrigger::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

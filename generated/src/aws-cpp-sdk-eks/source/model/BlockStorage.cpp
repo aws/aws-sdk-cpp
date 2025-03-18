@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-BlockStorage::BlockStorage() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 BlockStorage::BlockStorage(JsonView jsonValue)
-  : BlockStorage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BlockStorage& BlockStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

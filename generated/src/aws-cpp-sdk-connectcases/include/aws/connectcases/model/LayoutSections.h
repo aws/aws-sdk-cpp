@@ -34,7 +34,7 @@ namespace Model
   class LayoutSections
   {
   public:
-    AWS_CONNECTCASES_API LayoutSections();
+    AWS_CONNECTCASES_API LayoutSections() = default;
     AWS_CONNECTCASES_API LayoutSections(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API LayoutSections& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Section>& GetSections() const{ return m_sections; }
+    inline const Aws::Vector<Section>& GetSections() const { return m_sections; }
     inline bool SectionsHasBeenSet() const { return m_sectionsHasBeenSet; }
-    inline void SetSections(const Aws::Vector<Section>& value) { m_sectionsHasBeenSet = true; m_sections = value; }
-    inline void SetSections(Aws::Vector<Section>&& value) { m_sectionsHasBeenSet = true; m_sections = std::move(value); }
-    inline LayoutSections& WithSections(const Aws::Vector<Section>& value) { SetSections(value); return *this;}
-    inline LayoutSections& WithSections(Aws::Vector<Section>&& value) { SetSections(std::move(value)); return *this;}
-    inline LayoutSections& AddSections(const Section& value) { m_sectionsHasBeenSet = true; m_sections.push_back(value); return *this; }
-    inline LayoutSections& AddSections(Section&& value) { m_sectionsHasBeenSet = true; m_sections.push_back(std::move(value)); return *this; }
+    template<typename SectionsT = Aws::Vector<Section>>
+    void SetSections(SectionsT&& value) { m_sectionsHasBeenSet = true; m_sections = std::forward<SectionsT>(value); }
+    template<typename SectionsT = Aws::Vector<Section>>
+    LayoutSections& WithSections(SectionsT&& value) { SetSections(std::forward<SectionsT>(value)); return *this;}
+    template<typename SectionsT = Section>
+    LayoutSections& AddSections(SectionsT&& value) { m_sectionsHasBeenSet = true; m_sections.emplace_back(std::forward<SectionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,32 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSet::DataSet() : 
-    m_arnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_physicalTableMapHasBeenSet(false),
-    m_logicalTableMapHasBeenSet(false),
-    m_outputColumnsHasBeenSet(false),
-    m_importMode(DataSetImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_consumedSpiceCapacityInBytes(0),
-    m_consumedSpiceCapacityInBytesHasBeenSet(false),
-    m_columnGroupsHasBeenSet(false),
-    m_fieldFoldersHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false),
-    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
-    m_columnLevelPermissionRulesHasBeenSet(false),
-    m_dataSetUsageConfigurationHasBeenSet(false),
-    m_datasetParametersHasBeenSet(false),
-    m_performanceConfigurationHasBeenSet(false)
-{
-}
-
 DataSet::DataSet(JsonView jsonValue)
-  : DataSet()
 {
   *this = jsonValue;
 }
@@ -53,38 +28,28 @@ DataSet& DataSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhysicalTableMap"))
   {
     Aws::Map<Aws::String, JsonView> physicalTableMapJsonMap = jsonValue.GetObject("PhysicalTableMap").GetAllObjects();
@@ -94,7 +59,6 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_physicalTableMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogicalTableMap"))
   {
     Aws::Map<Aws::String, JsonView> logicalTableMapJsonMap = jsonValue.GetObject("LogicalTableMap").GetAllObjects();
@@ -104,7 +68,6 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_logicalTableMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputColumns"))
   {
     Aws::Utils::Array<JsonView> outputColumnsJsonList = jsonValue.GetArray("OutputColumns");
@@ -114,21 +77,16 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_outputColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportMode"))
   {
     m_importMode = DataSetImportModeMapper::GetDataSetImportModeForName(jsonValue.GetString("ImportMode"));
-
     m_importModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedSpiceCapacityInBytes"))
   {
     m_consumedSpiceCapacityInBytes = jsonValue.GetInt64("ConsumedSpiceCapacityInBytes");
-
     m_consumedSpiceCapacityInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnGroups"))
   {
     Aws::Utils::Array<JsonView> columnGroupsJsonList = jsonValue.GetArray("ColumnGroups");
@@ -138,7 +96,6 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_columnGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldFolders"))
   {
     Aws::Map<Aws::String, JsonView> fieldFoldersJsonMap = jsonValue.GetObject("FieldFolders").GetAllObjects();
@@ -148,21 +105,16 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_fieldFoldersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowLevelPermissionDataSet"))
   {
     m_rowLevelPermissionDataSet = jsonValue.GetObject("RowLevelPermissionDataSet");
-
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowLevelPermissionTagConfiguration"))
   {
     m_rowLevelPermissionTagConfiguration = jsonValue.GetObject("RowLevelPermissionTagConfiguration");
-
     m_rowLevelPermissionTagConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnLevelPermissionRules"))
   {
     Aws::Utils::Array<JsonView> columnLevelPermissionRulesJsonList = jsonValue.GetArray("ColumnLevelPermissionRules");
@@ -172,14 +124,11 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_columnLevelPermissionRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetUsageConfiguration"))
   {
     m_dataSetUsageConfiguration = jsonValue.GetObject("DataSetUsageConfiguration");
-
     m_dataSetUsageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetParameters"))
   {
     Aws::Utils::Array<JsonView> datasetParametersJsonList = jsonValue.GetArray("DatasetParameters");
@@ -189,14 +138,11 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     }
     m_datasetParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerformanceConfiguration"))
   {
     m_performanceConfiguration = jsonValue.GetObject("PerformanceConfiguration");
-
     m_performanceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

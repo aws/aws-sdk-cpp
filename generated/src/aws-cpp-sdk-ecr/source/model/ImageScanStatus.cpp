@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ImageScanStatus::ImageScanStatus() : 
-    m_status(ScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ImageScanStatus::ImageScanStatus(JsonView jsonValue)
-  : ImageScanStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageScanStatus& ImageScanStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ScanStatusMapper::GetScanStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

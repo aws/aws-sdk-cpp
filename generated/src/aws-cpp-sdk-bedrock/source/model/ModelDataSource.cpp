@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ModelDataSource::ModelDataSource() : 
-    m_s3DataSourceHasBeenSet(false)
-{
-}
-
 ModelDataSource::ModelDataSource(JsonView jsonValue)
-  : ModelDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelDataSource& ModelDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("s3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

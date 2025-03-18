@@ -29,7 +29,7 @@ namespace Model
   class DescribeDirectoryConfigsResult
   {
   public:
-    AWS_APPSTREAM_API DescribeDirectoryConfigsResult();
+    AWS_APPSTREAM_API DescribeDirectoryConfigsResult() = default;
     AWS_APPSTREAM_API DescribeDirectoryConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API DescribeDirectoryConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * response syntax in this topic includes the account password, this password is
      * not returned in the actual response. </p>
      */
-    inline const Aws::Vector<DirectoryConfig>& GetDirectoryConfigs() const{ return m_directoryConfigs; }
-    inline void SetDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { m_directoryConfigs = value; }
-    inline void SetDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { m_directoryConfigs = std::move(value); }
-    inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { SetDirectoryConfigs(value); return *this;}
-    inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { SetDirectoryConfigs(std::move(value)); return *this;}
-    inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(const DirectoryConfig& value) { m_directoryConfigs.push_back(value); return *this; }
-    inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(DirectoryConfig&& value) { m_directoryConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DirectoryConfig>& GetDirectoryConfigs() const { return m_directoryConfigs; }
+    template<typename DirectoryConfigsT = Aws::Vector<DirectoryConfig>>
+    void SetDirectoryConfigs(DirectoryConfigsT&& value) { m_directoryConfigsHasBeenSet = true; m_directoryConfigs = std::forward<DirectoryConfigsT>(value); }
+    template<typename DirectoryConfigsT = Aws::Vector<DirectoryConfig>>
+    DescribeDirectoryConfigsResult& WithDirectoryConfigs(DirectoryConfigsT&& value) { SetDirectoryConfigs(std::forward<DirectoryConfigsT>(value)); return *this;}
+    template<typename DirectoryConfigsT = DirectoryConfig>
+    DescribeDirectoryConfigsResult& AddDirectoryConfigs(DirectoryConfigsT&& value) { m_directoryConfigsHasBeenSet = true; m_directoryConfigs.emplace_back(std::forward<DirectoryConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDirectoryConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDirectoryConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDirectoryConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDirectoryConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDirectoryConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDirectoryConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDirectoryConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDirectoryConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DirectoryConfig> m_directoryConfigs;
+    bool m_directoryConfigsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

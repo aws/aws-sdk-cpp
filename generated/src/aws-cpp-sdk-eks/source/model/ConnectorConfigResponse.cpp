@@ -18,17 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ConnectorConfigResponse::ConnectorConfigResponse() : 
-    m_activationIdHasBeenSet(false),
-    m_activationCodeHasBeenSet(false),
-    m_activationExpiryHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 ConnectorConfigResponse::ConnectorConfigResponse(JsonView jsonValue)
-  : ConnectorConfigResponse()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ConnectorConfigResponse& ConnectorConfigResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activationId"))
   {
     m_activationId = jsonValue.GetString("activationId");
-
     m_activationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activationCode"))
   {
     m_activationCode = jsonValue.GetString("activationCode");
-
     m_activationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activationExpiry"))
   {
     m_activationExpiry = jsonValue.GetDouble("activationExpiry");
-
     m_activationExpiryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetString("provider");
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

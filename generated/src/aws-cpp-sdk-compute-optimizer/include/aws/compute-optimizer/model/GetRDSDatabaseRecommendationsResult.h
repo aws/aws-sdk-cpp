@@ -30,7 +30,7 @@ namespace Model
   class GetRDSDatabaseRecommendationsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,60 +39,60 @@ namespace Model
     /**
      * <p> The token to advance to the next page of Amazon RDS recommendations. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetRDSDatabaseRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetRDSDatabaseRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An array of objects that describe the Amazon RDS recommendations. </p>
      */
-    inline const Aws::Vector<RDSDBRecommendation>& GetRdsDBRecommendations() const{ return m_rdsDBRecommendations; }
-    inline void SetRdsDBRecommendations(const Aws::Vector<RDSDBRecommendation>& value) { m_rdsDBRecommendations = value; }
-    inline void SetRdsDBRecommendations(Aws::Vector<RDSDBRecommendation>&& value) { m_rdsDBRecommendations = std::move(value); }
-    inline GetRDSDatabaseRecommendationsResult& WithRdsDBRecommendations(const Aws::Vector<RDSDBRecommendation>& value) { SetRdsDBRecommendations(value); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithRdsDBRecommendations(Aws::Vector<RDSDBRecommendation>&& value) { SetRdsDBRecommendations(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& AddRdsDBRecommendations(const RDSDBRecommendation& value) { m_rdsDBRecommendations.push_back(value); return *this; }
-    inline GetRDSDatabaseRecommendationsResult& AddRdsDBRecommendations(RDSDBRecommendation&& value) { m_rdsDBRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RDSDBRecommendation>& GetRdsDBRecommendations() const { return m_rdsDBRecommendations; }
+    template<typename RdsDBRecommendationsT = Aws::Vector<RDSDBRecommendation>>
+    void SetRdsDBRecommendations(RdsDBRecommendationsT&& value) { m_rdsDBRecommendationsHasBeenSet = true; m_rdsDBRecommendations = std::forward<RdsDBRecommendationsT>(value); }
+    template<typename RdsDBRecommendationsT = Aws::Vector<RDSDBRecommendation>>
+    GetRDSDatabaseRecommendationsResult& WithRdsDBRecommendations(RdsDBRecommendationsT&& value) { SetRdsDBRecommendations(std::forward<RdsDBRecommendationsT>(value)); return *this;}
+    template<typename RdsDBRecommendationsT = RDSDBRecommendation>
+    GetRDSDatabaseRecommendationsResult& AddRdsDBRecommendations(RdsDBRecommendationsT&& value) { m_rdsDBRecommendationsHasBeenSet = true; m_rdsDBRecommendations.emplace_back(std::forward<RdsDBRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> An array of objects that describe errors of the request. </p>
      */
-    inline const Aws::Vector<GetRecommendationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<GetRecommendationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<GetRecommendationError>&& value) { m_errors = std::move(value); }
-    inline GetRDSDatabaseRecommendationsResult& WithErrors(const Aws::Vector<GetRecommendationError>& value) { SetErrors(value); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithErrors(Aws::Vector<GetRecommendationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& AddErrors(const GetRecommendationError& value) { m_errors.push_back(value); return *this; }
-    inline GetRDSDatabaseRecommendationsResult& AddErrors(GetRecommendationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetRecommendationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<GetRecommendationError>>
+    GetRDSDatabaseRecommendationsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = GetRecommendationError>
+    GetRDSDatabaseRecommendationsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRDSDatabaseRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRDSDatabaseRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RDSDBRecommendation> m_rdsDBRecommendations;
+    bool m_rdsDBRecommendationsHasBeenSet = false;
 
     Aws::Vector<GetRecommendationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

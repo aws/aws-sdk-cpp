@@ -33,7 +33,7 @@ namespace Model
   class S3OriginConfig
   {
   public:
-    AWS_CLOUDFRONT_API S3OriginConfig();
+    AWS_CLOUDFRONT_API S3OriginConfig() = default;
     AWS_CLOUDFRONT_API S3OriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API S3OriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -66,14 +66,12 @@ namespace Model
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
+    inline const Aws::String& GetOriginAccessIdentity() const { return m_originAccessIdentity; }
     inline bool OriginAccessIdentityHasBeenSet() const { return m_originAccessIdentityHasBeenSet; }
-    inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
-    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
-    inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity.assign(value); }
-    inline S3OriginConfig& WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
-    inline S3OriginConfig& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
-    inline S3OriginConfig& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
+    template<typename OriginAccessIdentityT = Aws::String>
+    void SetOriginAccessIdentity(OriginAccessIdentityT&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::forward<OriginAccessIdentityT>(value); }
+    template<typename OriginAccessIdentityT = Aws::String>
+    S3OriginConfig& WithOriginAccessIdentity(OriginAccessIdentityT&& value) { SetOriginAccessIdentity(std::forward<OriginAccessIdentityT>(value)); return *this;}
     ///@}
   private:
 

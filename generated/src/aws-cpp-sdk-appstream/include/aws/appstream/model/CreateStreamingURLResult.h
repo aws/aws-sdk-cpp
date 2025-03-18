@@ -28,7 +28,7 @@ namespace Model
   class CreateStreamingURLResult
   {
   public:
-    AWS_APPSTREAM_API CreateStreamingURLResult();
+    AWS_APPSTREAM_API CreateStreamingURLResult() = default;
     AWS_APPSTREAM_API CreateStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
      */
-    inline const Aws::String& GetStreamingURL() const{ return m_streamingURL; }
-    inline void SetStreamingURL(const Aws::String& value) { m_streamingURL = value; }
-    inline void SetStreamingURL(Aws::String&& value) { m_streamingURL = std::move(value); }
-    inline void SetStreamingURL(const char* value) { m_streamingURL.assign(value); }
-    inline CreateStreamingURLResult& WithStreamingURL(const Aws::String& value) { SetStreamingURL(value); return *this;}
-    inline CreateStreamingURLResult& WithStreamingURL(Aws::String&& value) { SetStreamingURL(std::move(value)); return *this;}
-    inline CreateStreamingURLResult& WithStreamingURL(const char* value) { SetStreamingURL(value); return *this;}
+    inline const Aws::String& GetStreamingURL() const { return m_streamingURL; }
+    template<typename StreamingURLT = Aws::String>
+    void SetStreamingURL(StreamingURLT&& value) { m_streamingURLHasBeenSet = true; m_streamingURL = std::forward<StreamingURLT>(value); }
+    template<typename StreamingURLT = Aws::String>
+    CreateStreamingURLResult& WithStreamingURL(StreamingURLT&& value) { SetStreamingURL(std::forward<StreamingURLT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
-    inline void SetExpires(const Aws::Utils::DateTime& value) { m_expires = value; }
-    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
-    inline CreateStreamingURLResult& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
-    inline CreateStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpires() const { return m_expires; }
+    template<typename ExpiresT = Aws::Utils::DateTime>
+    void SetExpires(ExpiresT&& value) { m_expiresHasBeenSet = true; m_expires = std::forward<ExpiresT>(value); }
+    template<typename ExpiresT = Aws::Utils::DateTime>
+    CreateStreamingURLResult& WithExpires(ExpiresT&& value) { SetExpires(std::forward<ExpiresT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStreamingURLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStreamingURLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStreamingURLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStreamingURLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamingURL;
+    bool m_streamingURLHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expires;
+    Aws::Utils::DateTime m_expires{};
+    bool m_expiresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

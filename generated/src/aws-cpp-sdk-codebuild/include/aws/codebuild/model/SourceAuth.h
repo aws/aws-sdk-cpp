@@ -33,7 +33,7 @@ namespace Model
   class SourceAuth
   {
   public:
-    AWS_CODEBUILD_API SourceAuth();
+    AWS_CODEBUILD_API SourceAuth() = default;
     AWS_CODEBUILD_API SourceAuth(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API SourceAuth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The authorization type to use. Valid options are OAUTH, CODECONNECTIONS, or
      * SECRETS_MANAGER.</p>
      */
-    inline const SourceAuthType& GetType() const{ return m_type; }
+    inline SourceAuthType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SourceAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SourceAuth& WithType(const SourceAuthType& value) { SetType(value); return *this;}
-    inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SourceAuthType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SourceAuth& WithType(SourceAuthType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline SourceAuth& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline SourceAuth& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline SourceAuth& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    SourceAuth& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 
-    SourceAuthType m_type;
+    SourceAuthType m_type{SourceAuthType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_resource;

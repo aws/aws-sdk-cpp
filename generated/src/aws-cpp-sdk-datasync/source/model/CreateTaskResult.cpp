@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTaskResult::CreateTaskResult()
-{
-}
-
 CreateTaskResult::CreateTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTaskResult& CreateTaskResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
+    m_taskArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DeltaTarget::DeltaTarget() : 
-    m_deltaTablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_writeManifest(false),
-    m_writeManifestHasBeenSet(false),
-    m_createNativeDeltaTable(false),
-    m_createNativeDeltaTableHasBeenSet(false)
-{
-}
-
 DeltaTarget::DeltaTarget(JsonView jsonValue)
-  : DeltaTarget()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ DeltaTarget& DeltaTarget::operator =(JsonView jsonValue)
     }
     m_deltaTablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteManifest"))
   {
     m_writeManifest = jsonValue.GetBool("WriteManifest");
-
     m_writeManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateNativeDeltaTable"))
   {
     m_createNativeDeltaTable = jsonValue.GetBool("CreateNativeDeltaTable");
-
     m_createNativeDeltaTableHasBeenSet = true;
   }
-
   return *this;
 }
 

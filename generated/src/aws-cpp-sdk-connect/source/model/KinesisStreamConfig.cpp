@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-KinesisStreamConfig::KinesisStreamConfig() : 
-    m_streamArnHasBeenSet(false)
-{
-}
-
 KinesisStreamConfig::KinesisStreamConfig(JsonView jsonValue)
-  : KinesisStreamConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisStreamConfig& KinesisStreamConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class BookmarksConfigurations
   {
   public:
-    AWS_QUICKSIGHT_API BookmarksConfigurations();
+    AWS_QUICKSIGHT_API BookmarksConfigurations() = default;
     AWS_QUICKSIGHT_API BookmarksConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BookmarksConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>A Boolean value that determines whether a user can bookmark an embedded
      * dashboard.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline BookmarksConfigurations& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

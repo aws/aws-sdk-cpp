@@ -21,7 +21,7 @@ namespace Model
   class DescribeProgramRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API DescribeProgramRequest();
+    AWS_MEDIATAILOR_API DescribeProgramRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the channel associated with this Program.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline DescribeProgramRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline DescribeProgramRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline DescribeProgramRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    DescribeProgramRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the program.</p>
      */
-    inline const Aws::String& GetProgramName() const{ return m_programName; }
+    inline const Aws::String& GetProgramName() const { return m_programName; }
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-    inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-    inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-    inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-    inline DescribeProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-    inline DescribeProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-    inline DescribeProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    template<typename ProgramNameT = Aws::String>
+    void SetProgramName(ProgramNameT&& value) { m_programNameHasBeenSet = true; m_programName = std::forward<ProgramNameT>(value); }
+    template<typename ProgramNameT = Aws::String>
+    DescribeProgramRequest& WithProgramName(ProgramNameT&& value) { SetProgramName(std::forward<ProgramNameT>(value)); return *this;}
     ///@}
   private:
 

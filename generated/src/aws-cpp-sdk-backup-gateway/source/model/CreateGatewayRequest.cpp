@@ -12,15 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGatewayRequest::CreateGatewayRequest() : 
-    m_activationKeyHasBeenSet(false),
-    m_gatewayDisplayNameHasBeenSet(false),
-    m_gatewayType(GatewayType::NOT_SET),
-    m_gatewayTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

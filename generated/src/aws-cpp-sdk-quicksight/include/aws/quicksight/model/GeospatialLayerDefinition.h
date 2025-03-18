@@ -34,7 +34,7 @@ namespace Model
   class GeospatialLayerDefinition
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLayerDefinition();
+    AWS_QUICKSIGHT_API GeospatialLayerDefinition() = default;
     AWS_QUICKSIGHT_API GeospatialLayerDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLayerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>The definition for a point layer.</p>
      */
-    inline const GeospatialPointLayer& GetPointLayer() const{ return m_pointLayer; }
+    inline const GeospatialPointLayer& GetPointLayer() const { return m_pointLayer; }
     inline bool PointLayerHasBeenSet() const { return m_pointLayerHasBeenSet; }
-    inline void SetPointLayer(const GeospatialPointLayer& value) { m_pointLayerHasBeenSet = true; m_pointLayer = value; }
-    inline void SetPointLayer(GeospatialPointLayer&& value) { m_pointLayerHasBeenSet = true; m_pointLayer = std::move(value); }
-    inline GeospatialLayerDefinition& WithPointLayer(const GeospatialPointLayer& value) { SetPointLayer(value); return *this;}
-    inline GeospatialLayerDefinition& WithPointLayer(GeospatialPointLayer&& value) { SetPointLayer(std::move(value)); return *this;}
+    template<typename PointLayerT = GeospatialPointLayer>
+    void SetPointLayer(PointLayerT&& value) { m_pointLayerHasBeenSet = true; m_pointLayer = std::forward<PointLayerT>(value); }
+    template<typename PointLayerT = GeospatialPointLayer>
+    GeospatialLayerDefinition& WithPointLayer(PointLayerT&& value) { SetPointLayer(std::forward<PointLayerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition for a line layer.</p>
      */
-    inline const GeospatialLineLayer& GetLineLayer() const{ return m_lineLayer; }
+    inline const GeospatialLineLayer& GetLineLayer() const { return m_lineLayer; }
     inline bool LineLayerHasBeenSet() const { return m_lineLayerHasBeenSet; }
-    inline void SetLineLayer(const GeospatialLineLayer& value) { m_lineLayerHasBeenSet = true; m_lineLayer = value; }
-    inline void SetLineLayer(GeospatialLineLayer&& value) { m_lineLayerHasBeenSet = true; m_lineLayer = std::move(value); }
-    inline GeospatialLayerDefinition& WithLineLayer(const GeospatialLineLayer& value) { SetLineLayer(value); return *this;}
-    inline GeospatialLayerDefinition& WithLineLayer(GeospatialLineLayer&& value) { SetLineLayer(std::move(value)); return *this;}
+    template<typename LineLayerT = GeospatialLineLayer>
+    void SetLineLayer(LineLayerT&& value) { m_lineLayerHasBeenSet = true; m_lineLayer = std::forward<LineLayerT>(value); }
+    template<typename LineLayerT = GeospatialLineLayer>
+    GeospatialLayerDefinition& WithLineLayer(LineLayerT&& value) { SetLineLayer(std::forward<LineLayerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition for a polygon layer.</p>
      */
-    inline const GeospatialPolygonLayer& GetPolygonLayer() const{ return m_polygonLayer; }
+    inline const GeospatialPolygonLayer& GetPolygonLayer() const { return m_polygonLayer; }
     inline bool PolygonLayerHasBeenSet() const { return m_polygonLayerHasBeenSet; }
-    inline void SetPolygonLayer(const GeospatialPolygonLayer& value) { m_polygonLayerHasBeenSet = true; m_polygonLayer = value; }
-    inline void SetPolygonLayer(GeospatialPolygonLayer&& value) { m_polygonLayerHasBeenSet = true; m_polygonLayer = std::move(value); }
-    inline GeospatialLayerDefinition& WithPolygonLayer(const GeospatialPolygonLayer& value) { SetPolygonLayer(value); return *this;}
-    inline GeospatialLayerDefinition& WithPolygonLayer(GeospatialPolygonLayer&& value) { SetPolygonLayer(std::move(value)); return *this;}
+    template<typename PolygonLayerT = GeospatialPolygonLayer>
+    void SetPolygonLayer(PolygonLayerT&& value) { m_polygonLayerHasBeenSet = true; m_polygonLayer = std::forward<PolygonLayerT>(value); }
+    template<typename PolygonLayerT = GeospatialPolygonLayer>
+    GeospatialLayerDefinition& WithPolygonLayer(PolygonLayerT&& value) { SetPolygonLayer(std::forward<PolygonLayerT>(value)); return *this;}
     ///@}
   private:
 

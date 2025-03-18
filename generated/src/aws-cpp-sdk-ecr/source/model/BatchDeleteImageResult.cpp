@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteImageResult::BatchDeleteImageResult()
-{
-}
-
 BatchDeleteImageResult::BatchDeleteImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDeleteImageResult& BatchDeleteImageResult::operator =(const Aws::AmazonWebS
     {
       m_imageIds.push_back(imageIdsJsonList[imageIdsIndex].AsObject());
     }
+    m_imageIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
@@ -45,14 +41,15 @@ BatchDeleteImageResult& BatchDeleteImageResult::operator =(const Aws::AmazonWebS
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
+    m_failuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class InstanceState
   {
   public:
-    AWS_ELASTICLOADBALANCING_API InstanceState();
+    AWS_ELASTICLOADBALANCING_API InstanceState() = default;
     AWS_ELASTICLOADBALANCING_API InstanceState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API InstanceState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline InstanceState& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline InstanceState& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline InstanceState& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    InstanceState& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The current state of the instance.</p> <p>Valid values:
      * <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline InstanceState& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline InstanceState& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline InstanceState& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    InstanceState& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
      * </p>
      */
-    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
-    inline InstanceState& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
-    inline InstanceState& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
-    inline InstanceState& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    InstanceState& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * <p> <code>Instance is in stopped state.</code> </p> </li> <li> <p>
      * <code>Instance is in terminated state.</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline InstanceState& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline InstanceState& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline InstanceState& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    InstanceState& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

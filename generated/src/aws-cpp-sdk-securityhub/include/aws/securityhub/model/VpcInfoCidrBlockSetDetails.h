@@ -32,7 +32,7 @@ namespace Model
   class VpcInfoCidrBlockSetDetails
   {
   public:
-    AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails();
+    AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails() = default;
     AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block for the VPC. </p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline VpcInfoCidrBlockSetDetails& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline VpcInfoCidrBlockSetDetails& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline VpcInfoCidrBlockSetDetails& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    VpcInfoCidrBlockSetDetails& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
   private:
 

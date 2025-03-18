@@ -29,7 +29,7 @@ namespace Model
   class AudioTrack
   {
   public:
-    AWS_MEDIALIVE_API AudioTrack();
+    AWS_MEDIALIVE_API AudioTrack() = default;
     AWS_MEDIALIVE_API AudioTrack(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioTrack& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * 1-based integer value that maps to a specific audio track
      */
-    inline int GetTrack() const{ return m_track; }
+    inline int GetTrack() const { return m_track; }
     inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
     inline void SetTrack(int value) { m_trackHasBeenSet = true; m_track = value; }
     inline AudioTrack& WithTrack(int value) { SetTrack(value); return *this;}
     ///@}
   private:
 
-    int m_track;
+    int m_track{0};
     bool m_trackHasBeenSet = false;
   };
 

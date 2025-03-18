@@ -37,7 +37,7 @@ namespace Model
   class DeviceState
   {
   public:
-    AWS_LOCATIONSERVICE_API DeviceState();
+    AWS_LOCATIONSERVICE_API DeviceState() = default;
     AWS_LOCATIONSERVICE_API DeviceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API DeviceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The device identifier.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline DeviceState& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline DeviceState& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline DeviceState& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    DeviceState& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,82 +61,80 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
+    inline const Aws::Utils::DateTime& GetSampleTime() const { return m_sampleTime; }
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
-    inline DeviceState& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-    inline DeviceState& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    void SetSampleTime(SampleTimeT&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::forward<SampleTimeT>(value); }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    DeviceState& WithSampleTime(SampleTimeT&& value) { SetSampleTime(std::forward<SampleTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last known device position.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline DeviceState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline DeviceState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    DeviceState& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline DeviceState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
+    inline const PositionalAccuracy& GetAccuracy() const { return m_accuracy; }
     inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
-    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
-    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
-    inline DeviceState& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-    inline DeviceState& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
+    template<typename AccuracyT = PositionalAccuracy>
+    void SetAccuracy(AccuracyT&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::forward<AccuracyT>(value); }
+    template<typename AccuracyT = PositionalAccuracy>
+    DeviceState& WithAccuracy(AccuracyT&& value) { SetAccuracy(std::forward<AccuracyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's Ipv4 address.</p>
      */
-    inline const Aws::String& GetIpv4Address() const{ return m_ipv4Address; }
+    inline const Aws::String& GetIpv4Address() const { return m_ipv4Address; }
     inline bool Ipv4AddressHasBeenSet() const { return m_ipv4AddressHasBeenSet; }
-    inline void SetIpv4Address(const Aws::String& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = value; }
-    inline void SetIpv4Address(Aws::String&& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = std::move(value); }
-    inline void SetIpv4Address(const char* value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address.assign(value); }
-    inline DeviceState& WithIpv4Address(const Aws::String& value) { SetIpv4Address(value); return *this;}
-    inline DeviceState& WithIpv4Address(Aws::String&& value) { SetIpv4Address(std::move(value)); return *this;}
-    inline DeviceState& WithIpv4Address(const char* value) { SetIpv4Address(value); return *this;}
+    template<typename Ipv4AddressT = Aws::String>
+    void SetIpv4Address(Ipv4AddressT&& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = std::forward<Ipv4AddressT>(value); }
+    template<typename Ipv4AddressT = Aws::String>
+    DeviceState& WithIpv4Address(Ipv4AddressT&& value) { SetIpv4Address(std::forward<Ipv4AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Wi-Fi access points the device is using.</p>
      */
-    inline const Aws::Vector<WiFiAccessPoint>& GetWiFiAccessPoints() const{ return m_wiFiAccessPoints; }
+    inline const Aws::Vector<WiFiAccessPoint>& GetWiFiAccessPoints() const { return m_wiFiAccessPoints; }
     inline bool WiFiAccessPointsHasBeenSet() const { return m_wiFiAccessPointsHasBeenSet; }
-    inline void SetWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = value; }
-    inline void SetWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = std::move(value); }
-    inline DeviceState& WithWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { SetWiFiAccessPoints(value); return *this;}
-    inline DeviceState& WithWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { SetWiFiAccessPoints(std::move(value)); return *this;}
-    inline DeviceState& AddWiFiAccessPoints(const WiFiAccessPoint& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(value); return *this; }
-    inline DeviceState& AddWiFiAccessPoints(WiFiAccessPoint&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(std::move(value)); return *this; }
+    template<typename WiFiAccessPointsT = Aws::Vector<WiFiAccessPoint>>
+    void SetWiFiAccessPoints(WiFiAccessPointsT&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = std::forward<WiFiAccessPointsT>(value); }
+    template<typename WiFiAccessPointsT = Aws::Vector<WiFiAccessPoint>>
+    DeviceState& WithWiFiAccessPoints(WiFiAccessPointsT&& value) { SetWiFiAccessPoints(std::forward<WiFiAccessPointsT>(value)); return *this;}
+    template<typename WiFiAccessPointsT = WiFiAccessPoint>
+    DeviceState& AddWiFiAccessPoints(WiFiAccessPointsT&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.emplace_back(std::forward<WiFiAccessPointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The cellular network infrastructure that the device is connected to.</p>
      */
-    inline const CellSignals& GetCellSignals() const{ return m_cellSignals; }
+    inline const CellSignals& GetCellSignals() const { return m_cellSignals; }
     inline bool CellSignalsHasBeenSet() const { return m_cellSignalsHasBeenSet; }
-    inline void SetCellSignals(const CellSignals& value) { m_cellSignalsHasBeenSet = true; m_cellSignals = value; }
-    inline void SetCellSignals(CellSignals&& value) { m_cellSignalsHasBeenSet = true; m_cellSignals = std::move(value); }
-    inline DeviceState& WithCellSignals(const CellSignals& value) { SetCellSignals(value); return *this;}
-    inline DeviceState& WithCellSignals(CellSignals&& value) { SetCellSignals(std::move(value)); return *this;}
+    template<typename CellSignalsT = CellSignals>
+    void SetCellSignals(CellSignalsT&& value) { m_cellSignalsHasBeenSet = true; m_cellSignals = std::forward<CellSignalsT>(value); }
+    template<typename CellSignalsT = CellSignals>
+    DeviceState& WithCellSignals(CellSignalsT&& value) { SetCellSignals(std::forward<CellSignalsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Utils::DateTime m_sampleTime{};
     bool m_sampleTimeHasBeenSet = false;
 
     Aws::Vector<double> m_position;

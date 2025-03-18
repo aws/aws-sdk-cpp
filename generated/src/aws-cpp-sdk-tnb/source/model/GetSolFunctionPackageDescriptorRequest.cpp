@@ -13,13 +13,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSolFunctionPackageDescriptorRequest::GetSolFunctionPackageDescriptorRequest() : 
-    m_accept(DescriptorContentType::NOT_SET),
-    m_acceptHasBeenSet(false),
-    m_vnfPkgIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSolFunctionPackageDescriptorRequest::SerializePayload() const
 {
   return {};

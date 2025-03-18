@@ -32,7 +32,7 @@ namespace Model
   class SubscriptionPrincipal
   {
   public:
-    AWS_QBUSINESS_API SubscriptionPrincipal();
+    AWS_QBUSINESS_API SubscriptionPrincipal() = default;
     AWS_QBUSINESS_API SubscriptionPrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SubscriptionPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The identifier of a user in the IAM Identity Center instance connected to the
      * Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline SubscriptionPrincipal& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline SubscriptionPrincipal& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline SubscriptionPrincipal& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    SubscriptionPrincipal& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The identifier of a group in the IAM Identity Center instance connected to
      * the Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline SubscriptionPrincipal& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline SubscriptionPrincipal& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline SubscriptionPrincipal& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    SubscriptionPrincipal& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
   private:
 

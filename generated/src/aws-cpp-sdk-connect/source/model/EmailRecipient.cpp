@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailRecipient::EmailRecipient() : 
-    m_addressHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 EmailRecipient::EmailRecipient(JsonView jsonValue)
-  : EmailRecipient()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailRecipient& EmailRecipient::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class RoutePedestrianDeparture
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianDeparture();
+    AWS_GEOROUTES_API RoutePedestrianDeparture() = default;
     AWS_GEOROUTES_API RoutePedestrianDeparture(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianDeparture& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The place details.</p>
      */
-    inline const RoutePedestrianPlace& GetPlace() const{ return m_place; }
+    inline const RoutePedestrianPlace& GetPlace() const { return m_place; }
     inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
-    inline void SetPlace(const RoutePedestrianPlace& value) { m_placeHasBeenSet = true; m_place = value; }
-    inline void SetPlace(RoutePedestrianPlace&& value) { m_placeHasBeenSet = true; m_place = std::move(value); }
-    inline RoutePedestrianDeparture& WithPlace(const RoutePedestrianPlace& value) { SetPlace(value); return *this;}
-    inline RoutePedestrianDeparture& WithPlace(RoutePedestrianPlace&& value) { SetPlace(std::move(value)); return *this;}
+    template<typename PlaceT = RoutePedestrianPlace>
+    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
+    template<typename PlaceT = RoutePedestrianPlace>
+    RoutePedestrianDeparture& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time.</p>
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline RoutePedestrianDeparture& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline RoutePedestrianDeparture& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline RoutePedestrianDeparture& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    RoutePedestrianDeparture& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 

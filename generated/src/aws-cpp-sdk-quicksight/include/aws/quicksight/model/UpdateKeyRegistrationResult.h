@@ -30,7 +30,7 @@ namespace Model
   class UpdateKeyRegistrationResult
   {
   public:
-    AWS_QUICKSIGHT_API UpdateKeyRegistrationResult();
+    AWS_QUICKSIGHT_API UpdateKeyRegistrationResult() = default;
     AWS_QUICKSIGHT_API UpdateKeyRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API UpdateKeyRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list of all customer managed key registrations that failed to update.</p>
      */
-    inline const Aws::Vector<FailedKeyRegistrationEntry>& GetFailedKeyRegistration() const{ return m_failedKeyRegistration; }
-    inline void SetFailedKeyRegistration(const Aws::Vector<FailedKeyRegistrationEntry>& value) { m_failedKeyRegistration = value; }
-    inline void SetFailedKeyRegistration(Aws::Vector<FailedKeyRegistrationEntry>&& value) { m_failedKeyRegistration = std::move(value); }
-    inline UpdateKeyRegistrationResult& WithFailedKeyRegistration(const Aws::Vector<FailedKeyRegistrationEntry>& value) { SetFailedKeyRegistration(value); return *this;}
-    inline UpdateKeyRegistrationResult& WithFailedKeyRegistration(Aws::Vector<FailedKeyRegistrationEntry>&& value) { SetFailedKeyRegistration(std::move(value)); return *this;}
-    inline UpdateKeyRegistrationResult& AddFailedKeyRegistration(const FailedKeyRegistrationEntry& value) { m_failedKeyRegistration.push_back(value); return *this; }
-    inline UpdateKeyRegistrationResult& AddFailedKeyRegistration(FailedKeyRegistrationEntry&& value) { m_failedKeyRegistration.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedKeyRegistrationEntry>& GetFailedKeyRegistration() const { return m_failedKeyRegistration; }
+    template<typename FailedKeyRegistrationT = Aws::Vector<FailedKeyRegistrationEntry>>
+    void SetFailedKeyRegistration(FailedKeyRegistrationT&& value) { m_failedKeyRegistrationHasBeenSet = true; m_failedKeyRegistration = std::forward<FailedKeyRegistrationT>(value); }
+    template<typename FailedKeyRegistrationT = Aws::Vector<FailedKeyRegistrationEntry>>
+    UpdateKeyRegistrationResult& WithFailedKeyRegistration(FailedKeyRegistrationT&& value) { SetFailedKeyRegistration(std::forward<FailedKeyRegistrationT>(value)); return *this;}
+    template<typename FailedKeyRegistrationT = FailedKeyRegistrationEntry>
+    UpdateKeyRegistrationResult& AddFailedKeyRegistration(FailedKeyRegistrationT&& value) { m_failedKeyRegistrationHasBeenSet = true; m_failedKeyRegistration.emplace_back(std::forward<FailedKeyRegistrationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p>A list of all customer managed key registrations that were successfully
      * updated.</p>
      */
-    inline const Aws::Vector<SuccessfulKeyRegistrationEntry>& GetSuccessfulKeyRegistration() const{ return m_successfulKeyRegistration; }
-    inline void SetSuccessfulKeyRegistration(const Aws::Vector<SuccessfulKeyRegistrationEntry>& value) { m_successfulKeyRegistration = value; }
-    inline void SetSuccessfulKeyRegistration(Aws::Vector<SuccessfulKeyRegistrationEntry>&& value) { m_successfulKeyRegistration = std::move(value); }
-    inline UpdateKeyRegistrationResult& WithSuccessfulKeyRegistration(const Aws::Vector<SuccessfulKeyRegistrationEntry>& value) { SetSuccessfulKeyRegistration(value); return *this;}
-    inline UpdateKeyRegistrationResult& WithSuccessfulKeyRegistration(Aws::Vector<SuccessfulKeyRegistrationEntry>&& value) { SetSuccessfulKeyRegistration(std::move(value)); return *this;}
-    inline UpdateKeyRegistrationResult& AddSuccessfulKeyRegistration(const SuccessfulKeyRegistrationEntry& value) { m_successfulKeyRegistration.push_back(value); return *this; }
-    inline UpdateKeyRegistrationResult& AddSuccessfulKeyRegistration(SuccessfulKeyRegistrationEntry&& value) { m_successfulKeyRegistration.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulKeyRegistrationEntry>& GetSuccessfulKeyRegistration() const { return m_successfulKeyRegistration; }
+    template<typename SuccessfulKeyRegistrationT = Aws::Vector<SuccessfulKeyRegistrationEntry>>
+    void SetSuccessfulKeyRegistration(SuccessfulKeyRegistrationT&& value) { m_successfulKeyRegistrationHasBeenSet = true; m_successfulKeyRegistration = std::forward<SuccessfulKeyRegistrationT>(value); }
+    template<typename SuccessfulKeyRegistrationT = Aws::Vector<SuccessfulKeyRegistrationEntry>>
+    UpdateKeyRegistrationResult& WithSuccessfulKeyRegistration(SuccessfulKeyRegistrationT&& value) { SetSuccessfulKeyRegistration(std::forward<SuccessfulKeyRegistrationT>(value)); return *this;}
+    template<typename SuccessfulKeyRegistrationT = SuccessfulKeyRegistrationEntry>
+    UpdateKeyRegistrationResult& AddSuccessfulKeyRegistration(SuccessfulKeyRegistrationT&& value) { m_successfulKeyRegistrationHasBeenSet = true; m_successfulKeyRegistration.emplace_back(std::forward<SuccessfulKeyRegistrationT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateKeyRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateKeyRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateKeyRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateKeyRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedKeyRegistrationEntry> m_failedKeyRegistration;
+    bool m_failedKeyRegistrationHasBeenSet = false;
 
     Aws::Vector<SuccessfulKeyRegistrationEntry> m_successfulKeyRegistration;
+    bool m_successfulKeyRegistrationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

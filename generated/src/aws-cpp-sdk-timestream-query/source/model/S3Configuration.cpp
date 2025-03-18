@@ -18,16 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-S3Configuration::S3Configuration() : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false),
-    m_encryptionOption(S3EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false)
-{
-}
-
 S3Configuration::S3Configuration(JsonView jsonValue)
-  : S3Configuration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ S3Configuration& S3Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectKeyPrefix"))
   {
     m_objectKeyPrefix = jsonValue.GetString("ObjectKeyPrefix");
-
     m_objectKeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionOption"))
   {
     m_encryptionOption = S3EncryptionOptionMapper::GetS3EncryptionOptionForName(jsonValue.GetString("EncryptionOption"));
-
     m_encryptionOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

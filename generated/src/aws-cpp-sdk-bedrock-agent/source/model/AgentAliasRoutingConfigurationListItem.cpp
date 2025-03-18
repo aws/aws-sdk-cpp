@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem() : 
-    m_agentVersionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
-{
-}
-
 AgentAliasRoutingConfigurationListItem::AgentAliasRoutingConfigurationListItem(JsonView jsonValue)
-  : AgentAliasRoutingConfigurationListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AgentAliasRoutingConfigurationListItem& AgentAliasRoutingConfigurationListItem::
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetString("provisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class CreatePushTemplateRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreatePushTemplateRequest();
+    AWS_PINPOINT_API CreatePushTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const PushNotificationTemplateRequest& GetPushNotificationTemplateRequest() const{ return m_pushNotificationTemplateRequest; }
+    inline const PushNotificationTemplateRequest& GetPushNotificationTemplateRequest() const { return m_pushNotificationTemplateRequest; }
     inline bool PushNotificationTemplateRequestHasBeenSet() const { return m_pushNotificationTemplateRequestHasBeenSet; }
-    inline void SetPushNotificationTemplateRequest(const PushNotificationTemplateRequest& value) { m_pushNotificationTemplateRequestHasBeenSet = true; m_pushNotificationTemplateRequest = value; }
-    inline void SetPushNotificationTemplateRequest(PushNotificationTemplateRequest&& value) { m_pushNotificationTemplateRequestHasBeenSet = true; m_pushNotificationTemplateRequest = std::move(value); }
-    inline CreatePushTemplateRequest& WithPushNotificationTemplateRequest(const PushNotificationTemplateRequest& value) { SetPushNotificationTemplateRequest(value); return *this;}
-    inline CreatePushTemplateRequest& WithPushNotificationTemplateRequest(PushNotificationTemplateRequest&& value) { SetPushNotificationTemplateRequest(std::move(value)); return *this;}
+    template<typename PushNotificationTemplateRequestT = PushNotificationTemplateRequest>
+    void SetPushNotificationTemplateRequest(PushNotificationTemplateRequestT&& value) { m_pushNotificationTemplateRequestHasBeenSet = true; m_pushNotificationTemplateRequest = std::forward<PushNotificationTemplateRequestT>(value); }
+    template<typename PushNotificationTemplateRequestT = PushNotificationTemplateRequest>
+    CreatePushTemplateRequest& WithPushNotificationTemplateRequest(PushNotificationTemplateRequestT&& value) { SetPushNotificationTemplateRequest(std::forward<PushNotificationTemplateRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,14 +50,12 @@ namespace Model
      * characters can be alphanumeric characters, underscores (_), or hyphens (-).
      * Template names are case sensitive.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline CreatePushTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline CreatePushTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline CreatePushTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    CreatePushTemplateRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 

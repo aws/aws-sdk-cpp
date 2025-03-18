@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-NexGuardFileMarkerSettings::NexGuardFileMarkerSettings() : 
-    m_licenseHasBeenSet(false),
-    m_payload(0),
-    m_payloadHasBeenSet(false),
-    m_presetHasBeenSet(false),
-    m_strength(WatermarkingStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
-{
-}
-
 NexGuardFileMarkerSettings::NexGuardFileMarkerSettings(JsonView jsonValue)
-  : NexGuardFileMarkerSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NexGuardFileMarkerSettings& NexGuardFileMarkerSettings::operator =(JsonView json
   if(jsonValue.ValueExists("license"))
   {
     m_license = jsonValue.GetString("license");
-
     m_licenseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetInteger("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preset"))
   {
     m_preset = jsonValue.GetString("preset");
-
     m_presetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = WatermarkingStrengthMapper::GetWatermarkingStrengthForName(jsonValue.GetString("strength"));
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

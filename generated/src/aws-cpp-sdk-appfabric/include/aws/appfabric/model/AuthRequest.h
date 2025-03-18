@@ -33,7 +33,7 @@ namespace Model
   class AuthRequest
   {
   public:
-    AWS_APPFABRIC_API AuthRequest();
+    AWS_APPFABRIC_API AuthRequest() = default;
     AWS_APPFABRIC_API AuthRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API AuthRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The redirect URL that is specified in the AuthURL and the application
      * client.</p>
      */
-    inline const Aws::String& GetRedirectUri() const{ return m_redirectUri; }
+    inline const Aws::String& GetRedirectUri() const { return m_redirectUri; }
     inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
-    inline void SetRedirectUri(const Aws::String& value) { m_redirectUriHasBeenSet = true; m_redirectUri = value; }
-    inline void SetRedirectUri(Aws::String&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::move(value); }
-    inline void SetRedirectUri(const char* value) { m_redirectUriHasBeenSet = true; m_redirectUri.assign(value); }
-    inline AuthRequest& WithRedirectUri(const Aws::String& value) { SetRedirectUri(value); return *this;}
-    inline AuthRequest& WithRedirectUri(Aws::String&& value) { SetRedirectUri(std::move(value)); return *this;}
-    inline AuthRequest& WithRedirectUri(const char* value) { SetRedirectUri(value); return *this;}
+    template<typename RedirectUriT = Aws::String>
+    void SetRedirectUri(RedirectUriT&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::forward<RedirectUriT>(value); }
+    template<typename RedirectUriT = Aws::String>
+    AuthRequest& WithRedirectUri(RedirectUriT&& value) { SetRedirectUri(std::forward<RedirectUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The authorization code returned by the application after permission is
      * granted in the application OAuth page (after clicking on the AuthURL).</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline AuthRequest& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline AuthRequest& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline AuthRequest& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    AuthRequest& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
   private:
 

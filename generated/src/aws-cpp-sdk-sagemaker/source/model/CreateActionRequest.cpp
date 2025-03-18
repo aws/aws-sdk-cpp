@@ -12,19 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateActionRequest::CreateActionRequest() : 
-    m_actionNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_actionTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateActionRequest::SerializePayload() const
 {
   JsonValue payload;

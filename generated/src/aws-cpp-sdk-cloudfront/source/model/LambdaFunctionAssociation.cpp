@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-LambdaFunctionAssociation::LambdaFunctionAssociation() : 
-    m_lambdaFunctionARNHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_includeBody(false),
-    m_includeBodyHasBeenSet(false)
-{
-}
-
 LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode)
-  : LambdaFunctionAssociation()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& 
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
+      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
     }
     XmlNode includeBodyNode = resultNode.FirstChild("IncludeBody");

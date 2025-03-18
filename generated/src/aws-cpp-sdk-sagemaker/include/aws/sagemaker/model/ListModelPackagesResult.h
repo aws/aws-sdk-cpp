@@ -29,7 +29,7 @@ namespace Model
   class ListModelPackagesResult
   {
   public:
-    AWS_SAGEMAKER_API ListModelPackagesResult();
+    AWS_SAGEMAKER_API ListModelPackagesResult() = default;
     AWS_SAGEMAKER_API ListModelPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListModelPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a
      * model package.</p>
      */
-    inline const Aws::Vector<ModelPackageSummary>& GetModelPackageSummaryList() const{ return m_modelPackageSummaryList; }
-    inline void SetModelPackageSummaryList(const Aws::Vector<ModelPackageSummary>& value) { m_modelPackageSummaryList = value; }
-    inline void SetModelPackageSummaryList(Aws::Vector<ModelPackageSummary>&& value) { m_modelPackageSummaryList = std::move(value); }
-    inline ListModelPackagesResult& WithModelPackageSummaryList(const Aws::Vector<ModelPackageSummary>& value) { SetModelPackageSummaryList(value); return *this;}
-    inline ListModelPackagesResult& WithModelPackageSummaryList(Aws::Vector<ModelPackageSummary>&& value) { SetModelPackageSummaryList(std::move(value)); return *this;}
-    inline ListModelPackagesResult& AddModelPackageSummaryList(const ModelPackageSummary& value) { m_modelPackageSummaryList.push_back(value); return *this; }
-    inline ListModelPackagesResult& AddModelPackageSummaryList(ModelPackageSummary&& value) { m_modelPackageSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ModelPackageSummary>& GetModelPackageSummaryList() const { return m_modelPackageSummaryList; }
+    template<typename ModelPackageSummaryListT = Aws::Vector<ModelPackageSummary>>
+    void SetModelPackageSummaryList(ModelPackageSummaryListT&& value) { m_modelPackageSummaryListHasBeenSet = true; m_modelPackageSummaryList = std::forward<ModelPackageSummaryListT>(value); }
+    template<typename ModelPackageSummaryListT = Aws::Vector<ModelPackageSummary>>
+    ListModelPackagesResult& WithModelPackageSummaryList(ModelPackageSummaryListT&& value) { SetModelPackageSummaryList(std::forward<ModelPackageSummaryListT>(value)); return *this;}
+    template<typename ModelPackageSummaryListT = ModelPackageSummary>
+    ListModelPackagesResult& AddModelPackageSummaryList(ModelPackageSummaryListT&& value) { m_modelPackageSummaryListHasBeenSet = true; m_modelPackageSummaryList.emplace_back(std::forward<ModelPackageSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of model packages, use it in the subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListModelPackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelPackagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListModelPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListModelPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListModelPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListModelPackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ModelPackageSummary> m_modelPackageSummaryList;
+    bool m_modelPackageSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

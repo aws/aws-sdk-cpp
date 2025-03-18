@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetDevEndpointsRequest::BatchGetDevEndpointsRequest() : 
-    m_devEndpointNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetDevEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

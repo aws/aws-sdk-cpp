@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLimitRequest::DeleteLimitRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLimitRequest::SerializePayload() const
 {
   return {};

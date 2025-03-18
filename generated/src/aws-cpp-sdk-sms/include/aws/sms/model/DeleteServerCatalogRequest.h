@@ -19,7 +19,7 @@ namespace Model
   class DeleteServerCatalogRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API DeleteServerCatalogRequest();
+    AWS_SMS_API DeleteServerCatalogRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -33,7 +33,7 @@ namespace Model
   class ImportFailureListItem
   {
   public:
-    AWS_CLOUDTRAIL_API ImportFailureListItem();
+    AWS_CLOUDTRAIL_API ImportFailureListItem() = default;
     AWS_CLOUDTRAIL_API ImportFailureListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API ImportFailureListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,73 +43,65 @@ namespace Model
     /**
      * <p> The location of the failure in the S3 bucket. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ImportFailureListItem& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ImportFailureListItem& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ImportFailureListItem& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ImportFailureListItem& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of the import. </p>
      */
-    inline const ImportFailureStatus& GetStatus() const{ return m_status; }
+    inline ImportFailureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ImportFailureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ImportFailureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImportFailureListItem& WithStatus(const ImportFailureStatus& value) { SetStatus(value); return *this;}
-    inline ImportFailureListItem& WithStatus(ImportFailureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ImportFailureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImportFailureListItem& WithStatus(ImportFailureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of import error. </p>
      */
-    inline const Aws::String& GetErrorType() const{ return m_errorType; }
+    inline const Aws::String& GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const Aws::String& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(Aws::String&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline void SetErrorType(const char* value) { m_errorTypeHasBeenSet = true; m_errorType.assign(value); }
-    inline ImportFailureListItem& WithErrorType(const Aws::String& value) { SetErrorType(value); return *this;}
-    inline ImportFailureListItem& WithErrorType(Aws::String&& value) { SetErrorType(std::move(value)); return *this;}
-    inline ImportFailureListItem& WithErrorType(const char* value) { SetErrorType(value); return *this;}
+    template<typename ErrorTypeT = Aws::String>
+    void SetErrorType(ErrorTypeT&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::forward<ErrorTypeT>(value); }
+    template<typename ErrorTypeT = Aws::String>
+    ImportFailureListItem& WithErrorType(ErrorTypeT&& value) { SetErrorType(std::forward<ErrorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides the reason the import failed. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ImportFailureListItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ImportFailureListItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ImportFailureListItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ImportFailureListItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> When the import was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline ImportFailureListItem& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline ImportFailureListItem& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    ImportFailureListItem& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    ImportFailureStatus m_status;
+    ImportFailureStatus m_status{ImportFailureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_errorType;
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
   };
 

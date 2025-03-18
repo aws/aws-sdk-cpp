@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportDiskImageResult::ImportDiskImageResult()
-{
-}
-
 ImportDiskImageResult::ImportDiskImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ImportDiskImageResult& ImportDiskImageResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBuildVersionArn"))
   {
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
-
+    m_imageBuildVersionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

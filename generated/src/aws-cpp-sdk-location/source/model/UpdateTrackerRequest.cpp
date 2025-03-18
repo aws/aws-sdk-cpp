@@ -12,18 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrackerRequest::UpdateTrackerRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_positionFiltering(PositionFiltering::NOT_SET),
-    m_positionFilteringHasBeenSet(false),
-    m_eventBridgeEnabled(false),
-    m_eventBridgeEnabledHasBeenSet(false),
-    m_kmsKeyEnableGeospatialQueries(false),
-    m_kmsKeyEnableGeospatialQueriesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrackerRequest::SerializePayload() const
 {
   JsonValue payload;

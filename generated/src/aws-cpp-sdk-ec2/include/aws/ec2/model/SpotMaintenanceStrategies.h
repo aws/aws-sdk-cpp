@@ -32,7 +32,7 @@ namespace Model
   class SpotMaintenanceStrategies
   {
   public:
-    AWS_EC2_API SpotMaintenanceStrategies();
+    AWS_EC2_API SpotMaintenanceStrategies() = default;
     AWS_EC2_API SpotMaintenanceStrategies(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotMaintenanceStrategies& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,12 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity
      * rebalancing</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const SpotCapacityRebalance& GetCapacityRebalance() const{ return m_capacityRebalance; }
+    inline const SpotCapacityRebalance& GetCapacityRebalance() const { return m_capacityRebalance; }
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
-    inline void SetCapacityRebalance(const SpotCapacityRebalance& value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
-    inline void SetCapacityRebalance(SpotCapacityRebalance&& value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = std::move(value); }
-    inline SpotMaintenanceStrategies& WithCapacityRebalance(const SpotCapacityRebalance& value) { SetCapacityRebalance(value); return *this;}
-    inline SpotMaintenanceStrategies& WithCapacityRebalance(SpotCapacityRebalance&& value) { SetCapacityRebalance(std::move(value)); return *this;}
+    template<typename CapacityRebalanceT = SpotCapacityRebalance>
+    void SetCapacityRebalance(CapacityRebalanceT&& value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = std::forward<CapacityRebalanceT>(value); }
+    template<typename CapacityRebalanceT = SpotCapacityRebalance>
+    SpotMaintenanceStrategies& WithCapacityRebalance(CapacityRebalanceT&& value) { SetCapacityRebalance(std::forward<CapacityRebalanceT>(value)); return *this;}
     ///@}
   private:
 

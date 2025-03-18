@@ -30,7 +30,7 @@ namespace Model
   class UpdateDestinationRequest : public FirehoseRequest
   {
   public:
-    AWS_FIREHOSE_API UpdateDestinationRequest();
+    AWS_FIREHOSE_API UpdateDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the Firehose stream.</p>
      */
-    inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
+    inline const Aws::String& GetDeliveryStreamName() const { return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
-    inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
-    inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
-    inline UpdateDestinationRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
-    inline UpdateDestinationRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
-    inline UpdateDestinationRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+    template<typename DeliveryStreamNameT = Aws::String>
+    void SetDeliveryStreamName(DeliveryStreamNameT&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::forward<DeliveryStreamNameT>(value); }
+    template<typename DeliveryStreamNameT = Aws::String>
+    UpdateDestinationRequest& WithDeliveryStreamName(DeliveryStreamNameT&& value) { SetDeliveryStreamName(std::forward<DeliveryStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,100 +64,96 @@ namespace Model
      * successful, the <code>VersionId</code> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
      */
-    inline const Aws::String& GetCurrentDeliveryStreamVersionId() const{ return m_currentDeliveryStreamVersionId; }
+    inline const Aws::String& GetCurrentDeliveryStreamVersionId() const { return m_currentDeliveryStreamVersionId; }
     inline bool CurrentDeliveryStreamVersionIdHasBeenSet() const { return m_currentDeliveryStreamVersionIdHasBeenSet; }
-    inline void SetCurrentDeliveryStreamVersionId(const Aws::String& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
-    inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::move(value); }
-    inline void SetCurrentDeliveryStreamVersionId(const char* value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId.assign(value); }
-    inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const Aws::String& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
-    inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(std::move(value)); return *this;}
-    inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const char* value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
+    template<typename CurrentDeliveryStreamVersionIdT = Aws::String>
+    void SetCurrentDeliveryStreamVersionId(CurrentDeliveryStreamVersionIdT&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::forward<CurrentDeliveryStreamVersionIdT>(value); }
+    template<typename CurrentDeliveryStreamVersionIdT = Aws::String>
+    UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(CurrentDeliveryStreamVersionIdT&& value) { SetCurrentDeliveryStreamVersionId(std::forward<CurrentDeliveryStreamVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the destination.</p>
      */
-    inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
+    inline const Aws::String& GetDestinationId() const { return m_destinationId; }
     inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
-    inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
-    inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::move(value); }
-    inline void SetDestinationId(const char* value) { m_destinationIdHasBeenSet = true; m_destinationId.assign(value); }
-    inline UpdateDestinationRequest& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
-    inline UpdateDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
-    inline UpdateDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
+    template<typename DestinationIdT = Aws::String>
+    void SetDestinationId(DestinationIdT&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::forward<DestinationIdT>(value); }
+    template<typename DestinationIdT = Aws::String>
+    UpdateDestinationRequest& WithDestinationId(DestinationIdT&& value) { SetDestinationId(std::forward<DestinationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
      */
-    inline const ExtendedS3DestinationUpdate& GetExtendedS3DestinationUpdate() const{ return m_extendedS3DestinationUpdate; }
+    inline const ExtendedS3DestinationUpdate& GetExtendedS3DestinationUpdate() const { return m_extendedS3DestinationUpdate; }
     inline bool ExtendedS3DestinationUpdateHasBeenSet() const { return m_extendedS3DestinationUpdateHasBeenSet; }
-    inline void SetExtendedS3DestinationUpdate(const ExtendedS3DestinationUpdate& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = value; }
-    inline void SetExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithExtendedS3DestinationUpdate(const ExtendedS3DestinationUpdate& value) { SetExtendedS3DestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { SetExtendedS3DestinationUpdate(std::move(value)); return *this;}
+    template<typename ExtendedS3DestinationUpdateT = ExtendedS3DestinationUpdate>
+    void SetExtendedS3DestinationUpdate(ExtendedS3DestinationUpdateT&& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = std::forward<ExtendedS3DestinationUpdateT>(value); }
+    template<typename ExtendedS3DestinationUpdateT = ExtendedS3DestinationUpdate>
+    UpdateDestinationRequest& WithExtendedS3DestinationUpdate(ExtendedS3DestinationUpdateT&& value) { SetExtendedS3DestinationUpdate(std::forward<ExtendedS3DestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
-    inline const RedshiftDestinationUpdate& GetRedshiftDestinationUpdate() const{ return m_redshiftDestinationUpdate; }
+    inline const RedshiftDestinationUpdate& GetRedshiftDestinationUpdate() const { return m_redshiftDestinationUpdate; }
     inline bool RedshiftDestinationUpdateHasBeenSet() const { return m_redshiftDestinationUpdateHasBeenSet; }
-    inline void SetRedshiftDestinationUpdate(const RedshiftDestinationUpdate& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = value; }
-    inline void SetRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(const RedshiftDestinationUpdate& value) { SetRedshiftDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { SetRedshiftDestinationUpdate(std::move(value)); return *this;}
+    template<typename RedshiftDestinationUpdateT = RedshiftDestinationUpdate>
+    void SetRedshiftDestinationUpdate(RedshiftDestinationUpdateT&& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = std::forward<RedshiftDestinationUpdateT>(value); }
+    template<typename RedshiftDestinationUpdateT = RedshiftDestinationUpdate>
+    UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdateT&& value) { SetRedshiftDestinationUpdate(std::forward<RedshiftDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
      */
-    inline const ElasticsearchDestinationUpdate& GetElasticsearchDestinationUpdate() const{ return m_elasticsearchDestinationUpdate; }
+    inline const ElasticsearchDestinationUpdate& GetElasticsearchDestinationUpdate() const { return m_elasticsearchDestinationUpdate; }
     inline bool ElasticsearchDestinationUpdateHasBeenSet() const { return m_elasticsearchDestinationUpdateHasBeenSet; }
-    inline void SetElasticsearchDestinationUpdate(const ElasticsearchDestinationUpdate& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = value; }
-    inline void SetElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(const ElasticsearchDestinationUpdate& value) { SetElasticsearchDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
+    template<typename ElasticsearchDestinationUpdateT = ElasticsearchDestinationUpdate>
+    void SetElasticsearchDestinationUpdate(ElasticsearchDestinationUpdateT&& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = std::forward<ElasticsearchDestinationUpdateT>(value); }
+    template<typename ElasticsearchDestinationUpdateT = ElasticsearchDestinationUpdate>
+    UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdateT&& value) { SetElasticsearchDestinationUpdate(std::forward<ElasticsearchDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
      */
-    inline const AmazonopensearchserviceDestinationUpdate& GetAmazonopensearchserviceDestinationUpdate() const{ return m_amazonopensearchserviceDestinationUpdate; }
+    inline const AmazonopensearchserviceDestinationUpdate& GetAmazonopensearchserviceDestinationUpdate() const { return m_amazonopensearchserviceDestinationUpdate; }
     inline bool AmazonopensearchserviceDestinationUpdateHasBeenSet() const { return m_amazonopensearchserviceDestinationUpdateHasBeenSet; }
-    inline void SetAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = value; }
-    inline void SetAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { SetAmazonopensearchserviceDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { SetAmazonopensearchserviceDestinationUpdate(std::move(value)); return *this;}
+    template<typename AmazonopensearchserviceDestinationUpdateT = AmazonopensearchserviceDestinationUpdate>
+    void SetAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdateT&& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = std::forward<AmazonopensearchserviceDestinationUpdateT>(value); }
+    template<typename AmazonopensearchserviceDestinationUpdateT = AmazonopensearchserviceDestinationUpdate>
+    UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdateT&& value) { SetAmazonopensearchserviceDestinationUpdate(std::forward<AmazonopensearchserviceDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update for a destination in Splunk.</p>
      */
-    inline const SplunkDestinationUpdate& GetSplunkDestinationUpdate() const{ return m_splunkDestinationUpdate; }
+    inline const SplunkDestinationUpdate& GetSplunkDestinationUpdate() const { return m_splunkDestinationUpdate; }
     inline bool SplunkDestinationUpdateHasBeenSet() const { return m_splunkDestinationUpdateHasBeenSet; }
-    inline void SetSplunkDestinationUpdate(const SplunkDestinationUpdate& value) { m_splunkDestinationUpdateHasBeenSet = true; m_splunkDestinationUpdate = value; }
-    inline void SetSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { m_splunkDestinationUpdateHasBeenSet = true; m_splunkDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithSplunkDestinationUpdate(const SplunkDestinationUpdate& value) { SetSplunkDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { SetSplunkDestinationUpdate(std::move(value)); return *this;}
+    template<typename SplunkDestinationUpdateT = SplunkDestinationUpdate>
+    void SetSplunkDestinationUpdate(SplunkDestinationUpdateT&& value) { m_splunkDestinationUpdateHasBeenSet = true; m_splunkDestinationUpdate = std::forward<SplunkDestinationUpdateT>(value); }
+    template<typename SplunkDestinationUpdateT = SplunkDestinationUpdate>
+    UpdateDestinationRequest& WithSplunkDestinationUpdate(SplunkDestinationUpdateT&& value) { SetSplunkDestinationUpdate(std::forward<SplunkDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update to the specified HTTP endpoint destination.</p>
      */
-    inline const HttpEndpointDestinationUpdate& GetHttpEndpointDestinationUpdate() const{ return m_httpEndpointDestinationUpdate; }
+    inline const HttpEndpointDestinationUpdate& GetHttpEndpointDestinationUpdate() const { return m_httpEndpointDestinationUpdate; }
     inline bool HttpEndpointDestinationUpdateHasBeenSet() const { return m_httpEndpointDestinationUpdateHasBeenSet; }
-    inline void SetHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = value; }
-    inline void SetHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { SetHttpEndpointDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { SetHttpEndpointDestinationUpdate(std::move(value)); return *this;}
+    template<typename HttpEndpointDestinationUpdateT = HttpEndpointDestinationUpdate>
+    void SetHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdateT&& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = std::forward<HttpEndpointDestinationUpdateT>(value); }
+    template<typename HttpEndpointDestinationUpdateT = HttpEndpointDestinationUpdate>
+    UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdateT&& value) { SetHttpEndpointDestinationUpdate(std::forward<HttpEndpointDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,36 +161,36 @@ namespace Model
      * <p>Describes an update for a destination in the Serverless offering for Amazon
      * OpenSearch Service.</p>
      */
-    inline const AmazonOpenSearchServerlessDestinationUpdate& GetAmazonOpenSearchServerlessDestinationUpdate() const{ return m_amazonOpenSearchServerlessDestinationUpdate; }
+    inline const AmazonOpenSearchServerlessDestinationUpdate& GetAmazonOpenSearchServerlessDestinationUpdate() const { return m_amazonOpenSearchServerlessDestinationUpdate; }
     inline bool AmazonOpenSearchServerlessDestinationUpdateHasBeenSet() const { return m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet; }
-    inline void SetAmazonOpenSearchServerlessDestinationUpdate(const AmazonOpenSearchServerlessDestinationUpdate& value) { m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = true; m_amazonOpenSearchServerlessDestinationUpdate = value; }
-    inline void SetAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdate&& value) { m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = true; m_amazonOpenSearchServerlessDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(const AmazonOpenSearchServerlessDestinationUpdate& value) { SetAmazonOpenSearchServerlessDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdate&& value) { SetAmazonOpenSearchServerlessDestinationUpdate(std::move(value)); return *this;}
+    template<typename AmazonOpenSearchServerlessDestinationUpdateT = AmazonOpenSearchServerlessDestinationUpdate>
+    void SetAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdateT&& value) { m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = true; m_amazonOpenSearchServerlessDestinationUpdate = std::forward<AmazonOpenSearchServerlessDestinationUpdateT>(value); }
+    template<typename AmazonOpenSearchServerlessDestinationUpdateT = AmazonOpenSearchServerlessDestinationUpdate>
+    UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdateT&& value) { SetAmazonOpenSearchServerlessDestinationUpdate(std::forward<AmazonOpenSearchServerlessDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update to the Snowflake destination configuration settings.</p>
      */
-    inline const SnowflakeDestinationUpdate& GetSnowflakeDestinationUpdate() const{ return m_snowflakeDestinationUpdate; }
+    inline const SnowflakeDestinationUpdate& GetSnowflakeDestinationUpdate() const { return m_snowflakeDestinationUpdate; }
     inline bool SnowflakeDestinationUpdateHasBeenSet() const { return m_snowflakeDestinationUpdateHasBeenSet; }
-    inline void SetSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = value; }
-    inline void SetSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { SetSnowflakeDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { SetSnowflakeDestinationUpdate(std::move(value)); return *this;}
+    template<typename SnowflakeDestinationUpdateT = SnowflakeDestinationUpdate>
+    void SetSnowflakeDestinationUpdate(SnowflakeDestinationUpdateT&& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = std::forward<SnowflakeDestinationUpdateT>(value); }
+    template<typename SnowflakeDestinationUpdateT = SnowflakeDestinationUpdate>
+    UpdateDestinationRequest& WithSnowflakeDestinationUpdate(SnowflakeDestinationUpdateT&& value) { SetSnowflakeDestinationUpdate(std::forward<SnowflakeDestinationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes an update for a destination in Apache Iceberg Tables. </p>
      */
-    inline const IcebergDestinationUpdate& GetIcebergDestinationUpdate() const{ return m_icebergDestinationUpdate; }
+    inline const IcebergDestinationUpdate& GetIcebergDestinationUpdate() const { return m_icebergDestinationUpdate; }
     inline bool IcebergDestinationUpdateHasBeenSet() const { return m_icebergDestinationUpdateHasBeenSet; }
-    inline void SetIcebergDestinationUpdate(const IcebergDestinationUpdate& value) { m_icebergDestinationUpdateHasBeenSet = true; m_icebergDestinationUpdate = value; }
-    inline void SetIcebergDestinationUpdate(IcebergDestinationUpdate&& value) { m_icebergDestinationUpdateHasBeenSet = true; m_icebergDestinationUpdate = std::move(value); }
-    inline UpdateDestinationRequest& WithIcebergDestinationUpdate(const IcebergDestinationUpdate& value) { SetIcebergDestinationUpdate(value); return *this;}
-    inline UpdateDestinationRequest& WithIcebergDestinationUpdate(IcebergDestinationUpdate&& value) { SetIcebergDestinationUpdate(std::move(value)); return *this;}
+    template<typename IcebergDestinationUpdateT = IcebergDestinationUpdate>
+    void SetIcebergDestinationUpdate(IcebergDestinationUpdateT&& value) { m_icebergDestinationUpdateHasBeenSet = true; m_icebergDestinationUpdate = std::forward<IcebergDestinationUpdateT>(value); }
+    template<typename IcebergDestinationUpdateT = IcebergDestinationUpdate>
+    UpdateDestinationRequest& WithIcebergDestinationUpdate(IcebergDestinationUpdateT&& value) { SetIcebergDestinationUpdate(std::forward<IcebergDestinationUpdateT>(value)); return *this;}
     ///@}
   private:
 

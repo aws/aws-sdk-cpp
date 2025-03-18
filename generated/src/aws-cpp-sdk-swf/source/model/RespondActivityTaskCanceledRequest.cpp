@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RespondActivityTaskCanceledRequest::RespondActivityTaskCanceledRequest() : 
-    m_taskTokenHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 Aws::String RespondActivityTaskCanceledRequest::SerializePayload() const
 {
   JsonValue payload;

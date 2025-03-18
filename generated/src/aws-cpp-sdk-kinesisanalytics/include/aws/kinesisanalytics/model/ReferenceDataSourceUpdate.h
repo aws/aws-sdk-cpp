@@ -37,7 +37,7 @@ namespace Model
   class ReferenceDataSourceUpdate
   {
   public:
-    AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate();
+    AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate() = default;
     AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
      * operation to get this value.</p>
      */
-    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline const Aws::String& GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
-    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
-    inline ReferenceDataSourceUpdate& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
-    inline ReferenceDataSourceUpdate& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
-    inline ReferenceDataSourceUpdate& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    template<typename ReferenceIdT = Aws::String>
+    void SetReferenceId(ReferenceIdT&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::forward<ReferenceIdT>(value); }
+    template<typename ReferenceIdT = Aws::String>
+    ReferenceDataSourceUpdate& WithReferenceId(ReferenceIdT&& value) { SetReferenceId(std::forward<ReferenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>In-application table name that is created by this update.</p>
      */
-    inline const Aws::String& GetTableNameUpdate() const{ return m_tableNameUpdate; }
+    inline const Aws::String& GetTableNameUpdate() const { return m_tableNameUpdate; }
     inline bool TableNameUpdateHasBeenSet() const { return m_tableNameUpdateHasBeenSet; }
-    inline void SetTableNameUpdate(const Aws::String& value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate = value; }
-    inline void SetTableNameUpdate(Aws::String&& value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate = std::move(value); }
-    inline void SetTableNameUpdate(const char* value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate.assign(value); }
-    inline ReferenceDataSourceUpdate& WithTableNameUpdate(const Aws::String& value) { SetTableNameUpdate(value); return *this;}
-    inline ReferenceDataSourceUpdate& WithTableNameUpdate(Aws::String&& value) { SetTableNameUpdate(std::move(value)); return *this;}
-    inline ReferenceDataSourceUpdate& WithTableNameUpdate(const char* value) { SetTableNameUpdate(value); return *this;}
+    template<typename TableNameUpdateT = Aws::String>
+    void SetTableNameUpdate(TableNameUpdateT&& value) { m_tableNameUpdateHasBeenSet = true; m_tableNameUpdate = std::forward<TableNameUpdateT>(value); }
+    template<typename TableNameUpdateT = Aws::String>
+    ReferenceDataSourceUpdate& WithTableNameUpdate(TableNameUpdateT&& value) { SetTableNameUpdate(std::forward<TableNameUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * Kinesis Analytics can assume to read the Amazon S3 object on your behalf and
      * populate the in-application reference table.</p>
      */
-    inline const S3ReferenceDataSourceUpdate& GetS3ReferenceDataSourceUpdate() const{ return m_s3ReferenceDataSourceUpdate; }
+    inline const S3ReferenceDataSourceUpdate& GetS3ReferenceDataSourceUpdate() const { return m_s3ReferenceDataSourceUpdate; }
     inline bool S3ReferenceDataSourceUpdateHasBeenSet() const { return m_s3ReferenceDataSourceUpdateHasBeenSet; }
-    inline void SetS3ReferenceDataSourceUpdate(const S3ReferenceDataSourceUpdate& value) { m_s3ReferenceDataSourceUpdateHasBeenSet = true; m_s3ReferenceDataSourceUpdate = value; }
-    inline void SetS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { m_s3ReferenceDataSourceUpdateHasBeenSet = true; m_s3ReferenceDataSourceUpdate = std::move(value); }
-    inline ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(const S3ReferenceDataSourceUpdate& value) { SetS3ReferenceDataSourceUpdate(value); return *this;}
-    inline ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { SetS3ReferenceDataSourceUpdate(std::move(value)); return *this;}
+    template<typename S3ReferenceDataSourceUpdateT = S3ReferenceDataSourceUpdate>
+    void SetS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdateT&& value) { m_s3ReferenceDataSourceUpdateHasBeenSet = true; m_s3ReferenceDataSourceUpdate = std::forward<S3ReferenceDataSourceUpdateT>(value); }
+    template<typename S3ReferenceDataSourceUpdateT = S3ReferenceDataSourceUpdate>
+    ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdateT&& value) { SetS3ReferenceDataSourceUpdate(std::forward<S3ReferenceDataSourceUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,12 @@ namespace Model
      * <p>Describes the format of the data in the streaming source, and how each data
      * element maps to corresponding columns created in the in-application stream. </p>
      */
-    inline const SourceSchema& GetReferenceSchemaUpdate() const{ return m_referenceSchemaUpdate; }
+    inline const SourceSchema& GetReferenceSchemaUpdate() const { return m_referenceSchemaUpdate; }
     inline bool ReferenceSchemaUpdateHasBeenSet() const { return m_referenceSchemaUpdateHasBeenSet; }
-    inline void SetReferenceSchemaUpdate(const SourceSchema& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = value; }
-    inline void SetReferenceSchemaUpdate(SourceSchema&& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = std::move(value); }
-    inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(const SourceSchema& value) { SetReferenceSchemaUpdate(value); return *this;}
-    inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(SourceSchema&& value) { SetReferenceSchemaUpdate(std::move(value)); return *this;}
+    template<typename ReferenceSchemaUpdateT = SourceSchema>
+    void SetReferenceSchemaUpdate(ReferenceSchemaUpdateT&& value) { m_referenceSchemaUpdateHasBeenSet = true; m_referenceSchemaUpdate = std::forward<ReferenceSchemaUpdateT>(value); }
+    template<typename ReferenceSchemaUpdateT = SourceSchema>
+    ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(ReferenceSchemaUpdateT&& value) { SetReferenceSchemaUpdate(std::forward<ReferenceSchemaUpdateT>(value)); return *this;}
     ///@}
   private:
 

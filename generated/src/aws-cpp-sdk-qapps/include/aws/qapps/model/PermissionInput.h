@@ -33,7 +33,7 @@ namespace Model
   class PermissionInput
   {
   public:
-    AWS_QAPPS_API PermissionInput();
+    AWS_QAPPS_API PermissionInput() = default;
     AWS_QAPPS_API PermissionInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API PermissionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The action associated with the permission.</p>
      */
-    inline const PermissionInputActionEnum& GetAction() const{ return m_action; }
+    inline PermissionInputActionEnum GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const PermissionInputActionEnum& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(PermissionInputActionEnum&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline PermissionInput& WithAction(const PermissionInputActionEnum& value) { SetAction(value); return *this;}
-    inline PermissionInput& WithAction(PermissionInputActionEnum&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(PermissionInputActionEnum value) { m_actionHasBeenSet = true; m_action = value; }
+    inline PermissionInput& WithAction(PermissionInputActionEnum value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The principal user to which the permission applies.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline PermissionInput& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline PermissionInput& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline PermissionInput& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    PermissionInput& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 
-    PermissionInputActionEnum m_action;
+    PermissionInputActionEnum m_action{PermissionInputActionEnum::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_principal;

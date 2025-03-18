@@ -18,18 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ResourceInfo::ResourceInfo() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 ResourceInfo::ResourceInfo(JsonView jsonValue)
-  : ResourceInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ResourceInfo& ResourceInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("resourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
@@ -73,7 +54,6 @@ ResourceInfo& ResourceInfo::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLakeFormationOptInRequest::DeleteLakeFormationOptInRequest() : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_conditionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLakeFormationOptInRequest::SerializePayload() const
 {
   JsonValue payload;

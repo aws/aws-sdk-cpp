@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateDelegationSignerFromDomainRequest::DisassociateDelegationSignerFromDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDelegationSignerFromDomainRequest::SerializePayload() const
 {
   JsonValue payload;

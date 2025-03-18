@@ -30,7 +30,7 @@ namespace Model
   class HoneycodeConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API HoneycodeConnectorProfileProperties();
+    AWS_APPFLOW_API HoneycodeConnectorProfileProperties() = default;
     AWS_APPFLOW_API HoneycodeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API HoneycodeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

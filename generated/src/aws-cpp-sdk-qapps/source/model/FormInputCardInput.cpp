@@ -18,19 +18,7 @@ namespace QApps
 namespace Model
 {
 
-FormInputCardInput::FormInputCardInput() : 
-    m_titleHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(CardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_computeMode(InputCardComputeMode::NOT_SET),
-    m_computeModeHasBeenSet(false)
-{
-}
-
 FormInputCardInput::FormInputCardInput(JsonView jsonValue)
-  : FormInputCardInput()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ FormInputCardInput& FormInputCardInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CardTypeMapper::GetCardTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeMode"))
   {
     m_computeMode = InputCardComputeModeMapper::GetInputCardComputeModeForName(jsonValue.GetString("computeMode"));
-
     m_computeModeHasBeenSet = true;
   }
-
   return *this;
 }
 

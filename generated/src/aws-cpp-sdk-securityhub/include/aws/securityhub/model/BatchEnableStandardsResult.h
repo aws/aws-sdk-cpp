@@ -29,7 +29,7 @@ namespace Model
   class BatchEnableStandardsResult
   {
   public:
-    AWS_SECURITYHUB_API BatchEnableStandardsResult();
+    AWS_SECURITYHUB_API BatchEnableStandardsResult() = default;
     AWS_SECURITYHUB_API BatchEnableStandardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API BatchEnableStandardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The details of the standards subscriptions that were enabled.</p>
      */
-    inline const Aws::Vector<StandardsSubscription>& GetStandardsSubscriptions() const{ return m_standardsSubscriptions; }
-    inline void SetStandardsSubscriptions(const Aws::Vector<StandardsSubscription>& value) { m_standardsSubscriptions = value; }
-    inline void SetStandardsSubscriptions(Aws::Vector<StandardsSubscription>&& value) { m_standardsSubscriptions = std::move(value); }
-    inline BatchEnableStandardsResult& WithStandardsSubscriptions(const Aws::Vector<StandardsSubscription>& value) { SetStandardsSubscriptions(value); return *this;}
-    inline BatchEnableStandardsResult& WithStandardsSubscriptions(Aws::Vector<StandardsSubscription>&& value) { SetStandardsSubscriptions(std::move(value)); return *this;}
-    inline BatchEnableStandardsResult& AddStandardsSubscriptions(const StandardsSubscription& value) { m_standardsSubscriptions.push_back(value); return *this; }
-    inline BatchEnableStandardsResult& AddStandardsSubscriptions(StandardsSubscription&& value) { m_standardsSubscriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StandardsSubscription>& GetStandardsSubscriptions() const { return m_standardsSubscriptions; }
+    template<typename StandardsSubscriptionsT = Aws::Vector<StandardsSubscription>>
+    void SetStandardsSubscriptions(StandardsSubscriptionsT&& value) { m_standardsSubscriptionsHasBeenSet = true; m_standardsSubscriptions = std::forward<StandardsSubscriptionsT>(value); }
+    template<typename StandardsSubscriptionsT = Aws::Vector<StandardsSubscription>>
+    BatchEnableStandardsResult& WithStandardsSubscriptions(StandardsSubscriptionsT&& value) { SetStandardsSubscriptions(std::forward<StandardsSubscriptionsT>(value)); return *this;}
+    template<typename StandardsSubscriptionsT = StandardsSubscription>
+    BatchEnableStandardsResult& AddStandardsSubscriptions(StandardsSubscriptionsT&& value) { m_standardsSubscriptionsHasBeenSet = true; m_standardsSubscriptions.emplace_back(std::forward<StandardsSubscriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchEnableStandardsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchEnableStandardsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchEnableStandardsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchEnableStandardsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StandardsSubscription> m_standardsSubscriptions;
+    bool m_standardsSubscriptionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

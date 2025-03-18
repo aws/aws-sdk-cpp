@@ -38,7 +38,7 @@ namespace Model
   class AggregatedVariablesImpactExplanation
   {
   public:
-    AWS_FRAUDDETECTOR_API AggregatedVariablesImpactExplanation();
+    AWS_FRAUDDETECTOR_API AggregatedVariablesImpactExplanation() = default;
     AWS_FRAUDDETECTOR_API AggregatedVariablesImpactExplanation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API AggregatedVariablesImpactExplanation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,15 +49,14 @@ namespace Model
      * <p> The names of all the event variables that were used to derive the aggregated
      * variables. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventVariableNames() const{ return m_eventVariableNames; }
+    inline const Aws::Vector<Aws::String>& GetEventVariableNames() const { return m_eventVariableNames; }
     inline bool EventVariableNamesHasBeenSet() const { return m_eventVariableNamesHasBeenSet; }
-    inline void SetEventVariableNames(const Aws::Vector<Aws::String>& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames = value; }
-    inline void SetEventVariableNames(Aws::Vector<Aws::String>&& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames = std::move(value); }
-    inline AggregatedVariablesImpactExplanation& WithEventVariableNames(const Aws::Vector<Aws::String>& value) { SetEventVariableNames(value); return *this;}
-    inline AggregatedVariablesImpactExplanation& WithEventVariableNames(Aws::Vector<Aws::String>&& value) { SetEventVariableNames(std::move(value)); return *this;}
-    inline AggregatedVariablesImpactExplanation& AddEventVariableNames(const Aws::String& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames.push_back(value); return *this; }
-    inline AggregatedVariablesImpactExplanation& AddEventVariableNames(Aws::String&& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames.push_back(std::move(value)); return *this; }
-    inline AggregatedVariablesImpactExplanation& AddEventVariableNames(const char* value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames.push_back(value); return *this; }
+    template<typename EventVariableNamesT = Aws::Vector<Aws::String>>
+    void SetEventVariableNames(EventVariableNamesT&& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames = std::forward<EventVariableNamesT>(value); }
+    template<typename EventVariableNamesT = Aws::Vector<Aws::String>>
+    AggregatedVariablesImpactExplanation& WithEventVariableNames(EventVariableNamesT&& value) { SetEventVariableNames(std::forward<EventVariableNamesT>(value)); return *this;}
+    template<typename EventVariableNamesT = Aws::String>
+    AggregatedVariablesImpactExplanation& AddEventVariableNames(EventVariableNamesT&& value) { m_eventVariableNamesHasBeenSet = true; m_eventVariableNames.emplace_back(std::forward<EventVariableNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +64,12 @@ namespace Model
      * <p> The relative impact of the aggregated variables in terms of magnitude on the
      * prediction scores. </p>
      */
-    inline const Aws::String& GetRelativeImpact() const{ return m_relativeImpact; }
+    inline const Aws::String& GetRelativeImpact() const { return m_relativeImpact; }
     inline bool RelativeImpactHasBeenSet() const { return m_relativeImpactHasBeenSet; }
-    inline void SetRelativeImpact(const Aws::String& value) { m_relativeImpactHasBeenSet = true; m_relativeImpact = value; }
-    inline void SetRelativeImpact(Aws::String&& value) { m_relativeImpactHasBeenSet = true; m_relativeImpact = std::move(value); }
-    inline void SetRelativeImpact(const char* value) { m_relativeImpactHasBeenSet = true; m_relativeImpact.assign(value); }
-    inline AggregatedVariablesImpactExplanation& WithRelativeImpact(const Aws::String& value) { SetRelativeImpact(value); return *this;}
-    inline AggregatedVariablesImpactExplanation& WithRelativeImpact(Aws::String&& value) { SetRelativeImpact(std::move(value)); return *this;}
-    inline AggregatedVariablesImpactExplanation& WithRelativeImpact(const char* value) { SetRelativeImpact(value); return *this;}
+    template<typename RelativeImpactT = Aws::String>
+    void SetRelativeImpact(RelativeImpactT&& value) { m_relativeImpactHasBeenSet = true; m_relativeImpact = std::forward<RelativeImpactT>(value); }
+    template<typename RelativeImpactT = Aws::String>
+    AggregatedVariablesImpactExplanation& WithRelativeImpact(RelativeImpactT&& value) { SetRelativeImpact(std::forward<RelativeImpactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +80,7 @@ namespace Model
      * the risk score up.</p> </li> <li> <p>A negative value indicates that the
      * variables drove the risk score down.</p> </li> </ul>
      */
-    inline double GetLogOddsImpact() const{ return m_logOddsImpact; }
+    inline double GetLogOddsImpact() const { return m_logOddsImpact; }
     inline bool LogOddsImpactHasBeenSet() const { return m_logOddsImpactHasBeenSet; }
     inline void SetLogOddsImpact(double value) { m_logOddsImpactHasBeenSet = true; m_logOddsImpact = value; }
     inline AggregatedVariablesImpactExplanation& WithLogOddsImpact(double value) { SetLogOddsImpact(value); return *this;}
@@ -96,7 +93,7 @@ namespace Model
     Aws::String m_relativeImpact;
     bool m_relativeImpactHasBeenSet = false;
 
-    double m_logOddsImpact;
+    double m_logOddsImpact{0.0};
     bool m_logOddsImpactHasBeenSet = false;
   };
 

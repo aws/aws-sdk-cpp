@@ -21,7 +21,7 @@ namespace Model
   class RegisterOrganizationAdminAccountRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountRequest();
+    AWS_AUDITMANAGER_API RegisterOrganizationAdminAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The identifier for the delegated administrator account. </p>
      */
-    inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
+    inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
     inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
-    inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = value; }
-    inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::move(value); }
-    inline void SetAdminAccountId(const char* value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId.assign(value); }
-    inline RegisterOrganizationAdminAccountRequest& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
-    inline RegisterOrganizationAdminAccountRequest& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
-    inline RegisterOrganizationAdminAccountRequest& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
+    template<typename AdminAccountIdT = Aws::String>
+    void SetAdminAccountId(AdminAccountIdT&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::forward<AdminAccountIdT>(value); }
+    template<typename AdminAccountIdT = Aws::String>
+    RegisterOrganizationAdminAccountRequest& WithAdminAccountId(AdminAccountIdT&& value) { SetAdminAccountId(std::forward<AdminAccountIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTaskExecutionRequest::CancelTaskExecutionRequest() : 
-    m_taskExecutionArnHasBeenSet(false)
-{
-}
-
 Aws::String CancelTaskExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

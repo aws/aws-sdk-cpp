@@ -18,19 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Destinations::Destinations() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expressionType(ExpressionType::NOT_SET),
-    m_expressionTypeHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Destinations::Destinations(JsonView jsonValue)
-  : Destinations()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Destinations& Destinations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionType"))
   {
     m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(jsonValue.GetString("ExpressionType"));
-
     m_expressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

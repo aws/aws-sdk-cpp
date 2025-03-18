@@ -29,7 +29,7 @@ namespace Model
   class ListEnabledBaselinesResult
   {
   public:
-    AWS_CONTROLTOWER_API ListEnabledBaselinesResult();
+    AWS_CONTROLTOWER_API ListEnabledBaselinesResult() = default;
     AWS_CONTROLTOWER_API ListEnabledBaselinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API ListEnabledBaselinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Retuens a list of summaries of <code>EnabledBaseline</code> resources.</p>
      */
-    inline const Aws::Vector<EnabledBaselineSummary>& GetEnabledBaselines() const{ return m_enabledBaselines; }
-    inline void SetEnabledBaselines(const Aws::Vector<EnabledBaselineSummary>& value) { m_enabledBaselines = value; }
-    inline void SetEnabledBaselines(Aws::Vector<EnabledBaselineSummary>&& value) { m_enabledBaselines = std::move(value); }
-    inline ListEnabledBaselinesResult& WithEnabledBaselines(const Aws::Vector<EnabledBaselineSummary>& value) { SetEnabledBaselines(value); return *this;}
-    inline ListEnabledBaselinesResult& WithEnabledBaselines(Aws::Vector<EnabledBaselineSummary>&& value) { SetEnabledBaselines(std::move(value)); return *this;}
-    inline ListEnabledBaselinesResult& AddEnabledBaselines(const EnabledBaselineSummary& value) { m_enabledBaselines.push_back(value); return *this; }
-    inline ListEnabledBaselinesResult& AddEnabledBaselines(EnabledBaselineSummary&& value) { m_enabledBaselines.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnabledBaselineSummary>& GetEnabledBaselines() const { return m_enabledBaselines; }
+    template<typename EnabledBaselinesT = Aws::Vector<EnabledBaselineSummary>>
+    void SetEnabledBaselines(EnabledBaselinesT&& value) { m_enabledBaselinesHasBeenSet = true; m_enabledBaselines = std::forward<EnabledBaselinesT>(value); }
+    template<typename EnabledBaselinesT = Aws::Vector<EnabledBaselineSummary>>
+    ListEnabledBaselinesResult& WithEnabledBaselines(EnabledBaselinesT&& value) { SetEnabledBaselines(std::forward<EnabledBaselinesT>(value)); return *this;}
+    template<typename EnabledBaselinesT = EnabledBaselineSummary>
+    ListEnabledBaselinesResult& AddEnabledBaselines(EnabledBaselinesT&& value) { m_enabledBaselinesHasBeenSet = true; m_enabledBaselines.emplace_back(std::forward<EnabledBaselinesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEnabledBaselinesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnabledBaselinesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnabledBaselinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnabledBaselinesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEnabledBaselinesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEnabledBaselinesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEnabledBaselinesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEnabledBaselinesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnabledBaselineSummary> m_enabledBaselines;
+    bool m_enabledBaselinesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

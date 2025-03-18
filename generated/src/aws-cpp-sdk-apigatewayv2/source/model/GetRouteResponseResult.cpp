@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRouteResponseResult::GetRouteResponseResult()
-{
-}
-
 GetRouteResponseResult::GetRouteResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetRouteResponseResult& GetRouteResponseResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("modelSelectionExpression"))
   {
     m_modelSelectionExpression = jsonValue.GetString("modelSelectionExpression");
-
+    m_modelSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseModels"))
   {
     Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
@@ -42,8 +37,8 @@ GetRouteResponseResult& GetRouteResponseResult::operator =(const Aws::AmazonWebS
     {
       m_responseModels[responseModelsItem.first] = responseModelsItem.second.AsString();
     }
+    m_responseModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -51,26 +46,25 @@ GetRouteResponseResult& GetRouteResponseResult::operator =(const Aws::AmazonWebS
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsObject();
     }
+    m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseId"))
   {
     m_routeResponseId = jsonValue.GetString("routeResponseId");
-
+    m_routeResponseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseKey"))
   {
     m_routeResponseKey = jsonValue.GetString("routeResponseKey");
-
+    m_routeResponseKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

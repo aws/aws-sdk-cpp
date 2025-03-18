@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrialComponentRequest::UpdateTrialComponentRequest() : 
-    m_trialComponentNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_parametersToRemoveHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_inputArtifactsToRemoveHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_outputArtifactsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrialComponentRequest::SerializePayload() const
 {
   JsonValue payload;

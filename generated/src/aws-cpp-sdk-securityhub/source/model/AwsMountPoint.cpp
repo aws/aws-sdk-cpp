@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsMountPoint::AwsMountPoint() : 
-    m_sourceVolumeHasBeenSet(false),
-    m_containerPathHasBeenSet(false)
-{
-}
-
 AwsMountPoint::AwsMountPoint(JsonView jsonValue)
-  : AwsMountPoint()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsMountPoint& AwsMountPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceVolume"))
   {
     m_sourceVolume = jsonValue.GetString("SourceVolume");
-
     m_sourceVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerPath"))
   {
     m_containerPath = jsonValue.GetString("ContainerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   return *this;
 }
 

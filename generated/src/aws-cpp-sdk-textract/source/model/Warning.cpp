@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-Warning::Warning() : 
-    m_errorCodeHasBeenSet(false),
-    m_pagesHasBeenSet(false)
-{
-}
-
 Warning::Warning(JsonView jsonValue)
-  : Warning()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Warning& Warning::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pages"))
   {
     Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
@@ -48,7 +39,6 @@ Warning& Warning::operator =(JsonView jsonValue)
     }
     m_pagesHasBeenSet = true;
   }
-
   return *this;
 }
 

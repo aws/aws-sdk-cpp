@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListComponentBuildVersionsResult::ListComponentBuildVersionsResult()
-{
-}
-
 ListComponentBuildVersionsResult::ListComponentBuildVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListComponentBuildVersionsResult& ListComponentBuildVersionsResult::operator =(c
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentSummaryList"))
   {
     Aws::Utils::Array<JsonView> componentSummaryListJsonList = jsonValue.GetArray("componentSummaryList");
@@ -41,14 +36,13 @@ ListComponentBuildVersionsResult& ListComponentBuildVersionsResult::operator =(c
     {
       m_componentSummaryList.push_back(componentSummaryListJsonList[componentSummaryListIndex].AsObject());
     }
+    m_componentSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

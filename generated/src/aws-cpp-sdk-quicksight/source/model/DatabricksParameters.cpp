@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DatabricksParameters::DatabricksParameters() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sqlEndpointPathHasBeenSet(false)
-{
-}
-
 DatabricksParameters::DatabricksParameters(JsonView jsonValue)
-  : DatabricksParameters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DatabricksParameters& DatabricksParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqlEndpointPath"))
   {
     m_sqlEndpointPath = jsonValue.GetString("SqlEndpointPath");
-
     m_sqlEndpointPathHasBeenSet = true;
   }
-
   return *this;
 }
 

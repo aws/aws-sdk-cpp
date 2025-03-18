@@ -33,7 +33,7 @@ namespace Model
   class RuleConfiguration
   {
   public:
-    AWS_QBUSINESS_API RuleConfiguration();
+    AWS_QBUSINESS_API RuleConfiguration() = default;
     AWS_QBUSINESS_API RuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API RuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,22 +44,22 @@ namespace Model
      * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
      * blocked topic.</p>
      */
-    inline const ContentBlockerRule& GetContentBlockerRule() const{ return m_contentBlockerRule; }
+    inline const ContentBlockerRule& GetContentBlockerRule() const { return m_contentBlockerRule; }
     inline bool ContentBlockerRuleHasBeenSet() const { return m_contentBlockerRuleHasBeenSet; }
-    inline void SetContentBlockerRule(const ContentBlockerRule& value) { m_contentBlockerRuleHasBeenSet = true; m_contentBlockerRule = value; }
-    inline void SetContentBlockerRule(ContentBlockerRule&& value) { m_contentBlockerRuleHasBeenSet = true; m_contentBlockerRule = std::move(value); }
-    inline RuleConfiguration& WithContentBlockerRule(const ContentBlockerRule& value) { SetContentBlockerRule(value); return *this;}
-    inline RuleConfiguration& WithContentBlockerRule(ContentBlockerRule&& value) { SetContentBlockerRule(std::move(value)); return *this;}
+    template<typename ContentBlockerRuleT = ContentBlockerRule>
+    void SetContentBlockerRule(ContentBlockerRuleT&& value) { m_contentBlockerRuleHasBeenSet = true; m_contentBlockerRule = std::forward<ContentBlockerRuleT>(value); }
+    template<typename ContentBlockerRuleT = ContentBlockerRule>
+    RuleConfiguration& WithContentBlockerRule(ContentBlockerRuleT&& value) { SetContentBlockerRule(std::forward<ContentBlockerRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ContentRetrievalRule& GetContentRetrievalRule() const{ return m_contentRetrievalRule; }
+    inline const ContentRetrievalRule& GetContentRetrievalRule() const { return m_contentRetrievalRule; }
     inline bool ContentRetrievalRuleHasBeenSet() const { return m_contentRetrievalRuleHasBeenSet; }
-    inline void SetContentRetrievalRule(const ContentRetrievalRule& value) { m_contentRetrievalRuleHasBeenSet = true; m_contentRetrievalRule = value; }
-    inline void SetContentRetrievalRule(ContentRetrievalRule&& value) { m_contentRetrievalRuleHasBeenSet = true; m_contentRetrievalRule = std::move(value); }
-    inline RuleConfiguration& WithContentRetrievalRule(const ContentRetrievalRule& value) { SetContentRetrievalRule(value); return *this;}
-    inline RuleConfiguration& WithContentRetrievalRule(ContentRetrievalRule&& value) { SetContentRetrievalRule(std::move(value)); return *this;}
+    template<typename ContentRetrievalRuleT = ContentRetrievalRule>
+    void SetContentRetrievalRule(ContentRetrievalRuleT&& value) { m_contentRetrievalRuleHasBeenSet = true; m_contentRetrievalRule = std::forward<ContentRetrievalRuleT>(value); }
+    template<typename ContentRetrievalRuleT = ContentRetrievalRule>
+    RuleConfiguration& WithContentRetrievalRule(ContentRetrievalRuleT&& value) { SetContentRetrievalRule(std::forward<ContentRetrievalRuleT>(value)); return *this;}
     ///@}
   private:
 

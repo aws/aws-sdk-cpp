@@ -22,7 +22,7 @@ namespace Model
   class DescribePoliciesRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribePoliciesRequest();
+    AWS_AUTOSCALING_API DescribePoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DescribePoliciesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DescribePoliciesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DescribePoliciesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DescribePoliciesRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * group. If you specify an unknown policy name, it is ignored with no error.</p>
      * <p>Array Members: Maximum number of 50 items.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+    inline const Aws::Vector<Aws::String>& GetPolicyNames() const { return m_policyNames; }
     inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
-    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
-    inline DescribePoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
-    inline DescribePoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
-    inline DescribePoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
-    inline DescribePoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
-    inline DescribePoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    void SetPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::forward<PolicyNamesT>(value); }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    DescribePoliciesRequest& WithPolicyNames(PolicyNamesT&& value) { SetPolicyNames(std::forward<PolicyNamesT>(value)); return *this;}
+    template<typename PolicyNamesT = Aws::String>
+    DescribePoliciesRequest& AddPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames.emplace_back(std::forward<PolicyNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,15 +72,14 @@ namespace Model
      * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
      * <code>PredictiveScaling</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
+    inline const Aws::Vector<Aws::String>& GetPolicyTypes() const { return m_policyTypes; }
     inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
-    inline void SetPolicyTypes(const Aws::Vector<Aws::String>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
-    inline void SetPolicyTypes(Aws::Vector<Aws::String>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
-    inline DescribePoliciesRequest& WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
-    inline DescribePoliciesRequest& WithPolicyTypes(Aws::Vector<Aws::String>&& value) { SetPolicyTypes(std::move(value)); return *this;}
-    inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
-    inline DescribePoliciesRequest& AddPolicyTypes(Aws::String&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
-    inline DescribePoliciesRequest& AddPolicyTypes(const char* value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
+    template<typename PolicyTypesT = Aws::Vector<Aws::String>>
+    void SetPolicyTypes(PolicyTypesT&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::forward<PolicyTypesT>(value); }
+    template<typename PolicyTypesT = Aws::Vector<Aws::String>>
+    DescribePoliciesRequest& WithPolicyTypes(PolicyTypesT&& value) { SetPolicyTypes(std::forward<PolicyTypesT>(value)); return *this;}
+    template<typename PolicyTypesT = Aws::String>
+    DescribePoliciesRequest& AddPolicyTypes(PolicyTypesT&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.emplace_back(std::forward<PolicyTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePoliciesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +100,7 @@ namespace Model
      * <p>The maximum number of items to be returned with each call. The default value
      * is <code>50</code> and the maximum value is <code>100</code>.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribePoliciesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -125,7 +119,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
   };
 

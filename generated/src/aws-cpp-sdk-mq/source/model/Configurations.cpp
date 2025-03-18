@@ -18,15 +18,7 @@ namespace MQ
 namespace Model
 {
 
-Configurations::Configurations() : 
-    m_currentHasBeenSet(false),
-    m_historyHasBeenSet(false),
-    m_pendingHasBeenSet(false)
-{
-}
-
 Configurations::Configurations(JsonView jsonValue)
-  : Configurations()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Configurations& Configurations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("current"))
   {
     m_current = jsonValue.GetObject("current");
-
     m_currentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("history"))
   {
     Aws::Utils::Array<JsonView> historyJsonList = jsonValue.GetArray("history");
@@ -49,14 +39,11 @@ Configurations& Configurations::operator =(JsonView jsonValue)
     }
     m_historyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pending"))
   {
     m_pending = jsonValue.GetObject("pending");
-
     m_pendingHasBeenSet = true;
   }
-
   return *this;
 }
 

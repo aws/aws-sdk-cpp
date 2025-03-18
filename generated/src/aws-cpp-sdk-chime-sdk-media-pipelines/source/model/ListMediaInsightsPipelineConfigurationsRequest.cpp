@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMediaInsightsPipelineConfigurationsRequest::ListMediaInsightsPipelineConfigurationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListMediaInsightsPipelineConfigurationsRequest::SerializePayload() const
 {
   return {};

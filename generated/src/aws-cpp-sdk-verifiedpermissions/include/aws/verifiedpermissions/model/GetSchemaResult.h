@@ -29,7 +29,7 @@ namespace Model
   class GetSchemaResult
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API GetSchemaResult();
+    AWS_VERIFIEDPERMISSIONS_API GetSchemaResult() = default;
     AWS_VERIFIEDPERMISSIONS_API GetSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VERIFIEDPERMISSIONS_API GetSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,87 +38,86 @@ namespace Model
     /**
      * <p>The ID of the policy store that contains the schema.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreId.assign(value); }
-    inline GetSchemaResult& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline GetSchemaResult& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline GetSchemaResult& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    GetSchemaResult& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The body of the schema, written in Cedar schema JSON.</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Aws::String& value) { m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schema.assign(value); }
-    inline GetSchemaResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline GetSchemaResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline GetSchemaResult& WithSchema(const char* value) { SetSchema(value); return *this;}
+    inline const Aws::String& GetSchema() const { return m_schema; }
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    GetSchemaResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the schema was originally created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetSchemaResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetSchemaResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetSchemaResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the schema was most recently updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
-    inline GetSchemaResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline GetSchemaResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    GetSchemaResult& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespaces of the entities referenced by this schema.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamespaces() const{ return m_namespaces; }
-    inline void SetNamespaces(const Aws::Vector<Aws::String>& value) { m_namespaces = value; }
-    inline void SetNamespaces(Aws::Vector<Aws::String>&& value) { m_namespaces = std::move(value); }
-    inline GetSchemaResult& WithNamespaces(const Aws::Vector<Aws::String>& value) { SetNamespaces(value); return *this;}
-    inline GetSchemaResult& WithNamespaces(Aws::Vector<Aws::String>&& value) { SetNamespaces(std::move(value)); return *this;}
-    inline GetSchemaResult& AddNamespaces(const Aws::String& value) { m_namespaces.push_back(value); return *this; }
-    inline GetSchemaResult& AddNamespaces(Aws::String&& value) { m_namespaces.push_back(std::move(value)); return *this; }
-    inline GetSchemaResult& AddNamespaces(const char* value) { m_namespaces.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNamespaces() const { return m_namespaces; }
+    template<typename NamespacesT = Aws::Vector<Aws::String>>
+    void SetNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces = std::forward<NamespacesT>(value); }
+    template<typename NamespacesT = Aws::Vector<Aws::String>>
+    GetSchemaResult& WithNamespaces(NamespacesT&& value) { SetNamespaces(std::forward<NamespacesT>(value)); return *this;}
+    template<typename NamespacesT = Aws::String>
+    GetSchemaResult& AddNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces.emplace_back(std::forward<NamespacesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyStoreId;
+    bool m_policyStoreIdHasBeenSet = false;
 
     Aws::String m_schema;
+    bool m_schemaHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_namespaces;
+    bool m_namespacesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

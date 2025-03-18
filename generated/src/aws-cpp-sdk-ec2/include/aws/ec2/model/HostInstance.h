@@ -31,7 +31,7 @@ namespace Model
   class HostInstance
   {
   public:
-    AWS_EC2_API HostInstance();
+    AWS_EC2_API HostInstance() = default;
     AWS_EC2_API HostInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API HostInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline HostInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline HostInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline HostInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    HostInstance& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline HostInstance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline HostInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline HostInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    HostInstance& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the instance.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline HostInstance& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline HostInstance& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline HostInstance& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    HostInstance& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,23 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedUser::DescribedUser() : 
-    m_arnHasBeenSet(false),
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryMappingsHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sshPublicKeysHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 DescribedUser::DescribedUser(JsonView jsonValue)
-  : DescribedUser()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectory"))
   {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
-
     m_homeDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryMappings"))
   {
     Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
@@ -64,35 +44,26 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
     }
     m_homeDirectoryMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryType"))
   {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
-
     m_homeDirectoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PosixProfile"))
   {
     m_posixProfile = jsonValue.GetObject("PosixProfile");
-
     m_posixProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshPublicKeys"))
   {
     Aws::Utils::Array<JsonView> sshPublicKeysJsonList = jsonValue.GetArray("SshPublicKeys");
@@ -102,7 +73,6 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
     }
     m_sshPublicKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -112,14 +82,11 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   return *this;
 }
 

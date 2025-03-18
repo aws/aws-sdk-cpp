@@ -21,7 +21,7 @@ namespace Model
   class CancelMessageMoveTaskRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API CancelMessageMoveTaskRequest();
+    AWS_SQS_API CancelMessageMoveTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>An identifier associated with a message movement task.</p>
      */
-    inline const Aws::String& GetTaskHandle() const{ return m_taskHandle; }
+    inline const Aws::String& GetTaskHandle() const { return m_taskHandle; }
     inline bool TaskHandleHasBeenSet() const { return m_taskHandleHasBeenSet; }
-    inline void SetTaskHandle(const Aws::String& value) { m_taskHandleHasBeenSet = true; m_taskHandle = value; }
-    inline void SetTaskHandle(Aws::String&& value) { m_taskHandleHasBeenSet = true; m_taskHandle = std::move(value); }
-    inline void SetTaskHandle(const char* value) { m_taskHandleHasBeenSet = true; m_taskHandle.assign(value); }
-    inline CancelMessageMoveTaskRequest& WithTaskHandle(const Aws::String& value) { SetTaskHandle(value); return *this;}
-    inline CancelMessageMoveTaskRequest& WithTaskHandle(Aws::String&& value) { SetTaskHandle(std::move(value)); return *this;}
-    inline CancelMessageMoveTaskRequest& WithTaskHandle(const char* value) { SetTaskHandle(value); return *this;}
+    template<typename TaskHandleT = Aws::String>
+    void SetTaskHandle(TaskHandleT&& value) { m_taskHandleHasBeenSet = true; m_taskHandle = std::forward<TaskHandleT>(value); }
+    template<typename TaskHandleT = Aws::String>
+    CancelMessageMoveTaskRequest& WithTaskHandle(TaskHandleT&& value) { SetTaskHandle(std::forward<TaskHandleT>(value)); return *this;}
     ///@}
   private:
 

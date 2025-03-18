@@ -30,7 +30,7 @@ namespace Model
   class AutoStartConfig
   {
   public:
-    AWS_EMRSERVERLESS_API AutoStartConfig();
+    AWS_EMRSERVERLESS_API AutoStartConfig() = default;
     AWS_EMRSERVERLESS_API AutoStartConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API AutoStartConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Enables the application to automatically start on job submission. Defaults to
      * true.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AutoStartConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

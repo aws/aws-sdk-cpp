@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SourceFlowConfig::SourceFlowConfig() : 
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_apiVersionHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_sourceConnectorPropertiesHasBeenSet(false),
-    m_incrementalPullConfigHasBeenSet(false)
-{
-}
-
 SourceFlowConfig::SourceFlowConfig(JsonView jsonValue)
-  : SourceFlowConfig()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SourceFlowConfig& SourceFlowConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectorType"))
   {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiVersion"))
   {
     m_apiVersion = jsonValue.GetString("apiVersion");
-
     m_apiVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorProfileName"))
   {
     m_connectorProfileName = jsonValue.GetString("connectorProfileName");
-
     m_connectorProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceConnectorProperties"))
   {
     m_sourceConnectorProperties = jsonValue.GetObject("sourceConnectorProperties");
-
     m_sourceConnectorPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incrementalPullConfig"))
   {
     m_incrementalPullConfig = jsonValue.GetObject("incrementalPullConfig");
-
     m_incrementalPullConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

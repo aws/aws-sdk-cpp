@@ -31,7 +31,7 @@ namespace Model
   class VerifiedAccessSseSpecificationResponse
   {
   public:
-    AWS_EC2_API VerifiedAccessSseSpecificationResponse();
+    AWS_EC2_API VerifiedAccessSseSpecificationResponse() = default;
     AWS_EC2_API VerifiedAccessSseSpecificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessSseSpecificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicates whether customer managed KMS keys are in use for server side
      * encryption.</p> <p>Valid values: <code>True</code> | <code>False</code> </p>
      */
-    inline bool GetCustomerManagedKeyEnabled() const{ return m_customerManagedKeyEnabled; }
+    inline bool GetCustomerManagedKeyEnabled() const { return m_customerManagedKeyEnabled; }
     inline bool CustomerManagedKeyEnabledHasBeenSet() const { return m_customerManagedKeyEnabledHasBeenSet; }
     inline void SetCustomerManagedKeyEnabled(bool value) { m_customerManagedKeyEnabledHasBeenSet = true; m_customerManagedKeyEnabled = value; }
     inline VerifiedAccessSseSpecificationResponse& WithCustomerManagedKeyEnabled(bool value) { SetCustomerManagedKeyEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
     /**
      * <p>The ARN of the KMS key.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline VerifiedAccessSseSpecificationResponse& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline VerifiedAccessSseSpecificationResponse& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline VerifiedAccessSseSpecificationResponse& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    VerifiedAccessSseSpecificationResponse& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_customerManagedKeyEnabled;
+    bool m_customerManagedKeyEnabled{false};
     bool m_customerManagedKeyEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

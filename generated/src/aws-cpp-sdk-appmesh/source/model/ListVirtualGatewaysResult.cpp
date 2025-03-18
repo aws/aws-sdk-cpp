@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVirtualGatewaysResult::ListVirtualGatewaysResult()
-{
-}
-
 ListVirtualGatewaysResult::ListVirtualGatewaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListVirtualGatewaysResult& ListVirtualGatewaysResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGateways"))
   {
     Aws::Utils::Array<JsonView> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");
@@ -42,14 +37,15 @@ ListVirtualGatewaysResult& ListVirtualGatewaysResult::operator =(const Aws::Amaz
     {
       m_virtualGateways.push_back(virtualGatewaysJsonList[virtualGatewaysIndex].AsObject());
     }
+    m_virtualGatewaysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

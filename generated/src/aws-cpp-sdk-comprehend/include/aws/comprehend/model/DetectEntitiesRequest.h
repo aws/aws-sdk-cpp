@@ -24,7 +24,7 @@ namespace Model
   class DetectEntitiesRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API DetectEntitiesRequest();
+    AWS_COMPREHEND_API DetectEntitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>A UTF-8 text string. The maximum string size is 100 KB. If you enter text
      * using this parameter, do not use the <code>Bytes</code> parameter.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DetectEntitiesRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DetectEntitiesRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DetectEntitiesRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DetectEntitiesRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * your custom model, and it ignores any language code that you specify here.</p>
      * <p>All input documents must be in the same language.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DetectEntitiesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DetectEntitiesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DetectEntitiesRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
      * endpoints</a>.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline DetectEntitiesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline DetectEntitiesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline DetectEntitiesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    DetectEntitiesRequest& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,12 @@ namespace Model
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
      * parameter.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::ByteBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline DetectEntitiesRequest& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-    inline DetectEntitiesRequest& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    DetectEntitiesRequest& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,25 +115,25 @@ namespace Model
      * <p>Provides configuration parameters to override the default actions for
      * extracting text from PDF documents and image files.</p>
      */
-    inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
+    inline const DocumentReaderConfig& GetDocumentReaderConfig() const { return m_documentReaderConfig; }
     inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
-    inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
-    inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
-    inline DetectEntitiesRequest& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
-    inline DetectEntitiesRequest& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    void SetDocumentReaderConfig(DocumentReaderConfigT&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::forward<DocumentReaderConfigT>(value); }
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    DetectEntitiesRequest& WithDocumentReaderConfig(DocumentReaderConfigT&& value) { SetDocumentReaderConfig(std::forward<DocumentReaderConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_bytes;
+    Aws::Utils::ByteBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
 
     DocumentReaderConfig m_documentReaderConfig;

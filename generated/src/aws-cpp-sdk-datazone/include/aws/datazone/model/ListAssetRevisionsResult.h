@@ -29,7 +29,7 @@ namespace Model
   class ListAssetRevisionsResult
   {
   public:
-    AWS_DATAZONE_API ListAssetRevisionsResult();
+    AWS_DATAZONE_API ListAssetRevisionsResult() = default;
     AWS_DATAZONE_API ListAssetRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API ListAssetRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The results of the <code>ListAssetRevisions</code> action.</p>
      */
-    inline const Aws::Vector<AssetRevision>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<AssetRevision>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<AssetRevision>&& value) { m_items = std::move(value); }
-    inline ListAssetRevisionsResult& WithItems(const Aws::Vector<AssetRevision>& value) { SetItems(value); return *this;}
-    inline ListAssetRevisionsResult& WithItems(Aws::Vector<AssetRevision>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListAssetRevisionsResult& AddItems(const AssetRevision& value) { m_items.push_back(value); return *this; }
-    inline ListAssetRevisionsResult& AddItems(AssetRevision&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssetRevision>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<AssetRevision>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<AssetRevision>>
+    ListAssetRevisionsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = AssetRevision>
+    ListAssetRevisionsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to
      * <code>ListAssetRevisions</code> to list the next set of revisions.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAssetRevisionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssetRevisionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssetRevisionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssetRevisionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAssetRevisionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAssetRevisionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAssetRevisionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAssetRevisionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssetRevision> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

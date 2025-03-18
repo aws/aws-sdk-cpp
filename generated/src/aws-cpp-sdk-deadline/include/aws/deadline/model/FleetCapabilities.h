@@ -33,7 +33,7 @@ namespace Model
   class FleetCapabilities
   {
   public:
-    AWS_DEADLINE_API FleetCapabilities();
+    AWS_DEADLINE_API FleetCapabilities() = default;
     AWS_DEADLINE_API FleetCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API FleetCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Amount capabilities of the fleet.</p>
      */
-    inline const Aws::Vector<FleetAmountCapability>& GetAmounts() const{ return m_amounts; }
+    inline const Aws::Vector<FleetAmountCapability>& GetAmounts() const { return m_amounts; }
     inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
-    inline void SetAmounts(const Aws::Vector<FleetAmountCapability>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
-    inline void SetAmounts(Aws::Vector<FleetAmountCapability>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
-    inline FleetCapabilities& WithAmounts(const Aws::Vector<FleetAmountCapability>& value) { SetAmounts(value); return *this;}
-    inline FleetCapabilities& WithAmounts(Aws::Vector<FleetAmountCapability>&& value) { SetAmounts(std::move(value)); return *this;}
-    inline FleetCapabilities& AddAmounts(const FleetAmountCapability& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
-    inline FleetCapabilities& AddAmounts(FleetAmountCapability&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
+    template<typename AmountsT = Aws::Vector<FleetAmountCapability>>
+    void SetAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts = std::forward<AmountsT>(value); }
+    template<typename AmountsT = Aws::Vector<FleetAmountCapability>>
+    FleetCapabilities& WithAmounts(AmountsT&& value) { SetAmounts(std::forward<AmountsT>(value)); return *this;}
+    template<typename AmountsT = FleetAmountCapability>
+    FleetCapabilities& AddAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts.emplace_back(std::forward<AmountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Attribute capabilities of the fleet.</p>
      */
-    inline const Aws::Vector<FleetAttributeCapability>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<FleetAttributeCapability>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<FleetAttributeCapability>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<FleetAttributeCapability>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline FleetCapabilities& WithAttributes(const Aws::Vector<FleetAttributeCapability>& value) { SetAttributes(value); return *this;}
-    inline FleetCapabilities& WithAttributes(Aws::Vector<FleetAttributeCapability>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline FleetCapabilities& AddAttributes(const FleetAttributeCapability& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline FleetCapabilities& AddAttributes(FleetAttributeCapability&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<FleetAttributeCapability>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<FleetAttributeCapability>>
+    FleetCapabilities& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = FleetAttributeCapability>
+    FleetCapabilities& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

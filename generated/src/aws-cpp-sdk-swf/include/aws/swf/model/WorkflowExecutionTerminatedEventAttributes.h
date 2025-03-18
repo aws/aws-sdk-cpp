@@ -34,7 +34,7 @@ namespace Model
   class WorkflowExecutionTerminatedEventAttributes
   {
   public:
-    AWS_SWF_API WorkflowExecutionTerminatedEventAttributes();
+    AWS_SWF_API WorkflowExecutionTerminatedEventAttributes() = default;
     AWS_SWF_API WorkflowExecutionTerminatedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionTerminatedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The reason provided for the termination.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline WorkflowExecutionTerminatedEventAttributes& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    WorkflowExecutionTerminatedEventAttributes& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details provided for the termination.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline WorkflowExecutionTerminatedEventAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    WorkflowExecutionTerminatedEventAttributes& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,10 @@ namespace Model
      * <code>ABANDON</code> – No action is taken. The child executions continue to
      * run.</p> </li> </ul>
      */
-    inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
+    inline ChildPolicy GetChildPolicy() const { return m_childPolicy; }
     inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
-    inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
-    inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
+    inline void SetChildPolicy(ChildPolicy value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(ChildPolicy value) { SetChildPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,10 @@ namespace Model
      * and specifies the cause. This happens if the parent workflow execution times out
      * or is terminated and the child policy is set to terminate child executions.</p>
      */
-    inline const WorkflowExecutionTerminatedCause& GetCause() const{ return m_cause; }
+    inline WorkflowExecutionTerminatedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const WorkflowExecutionTerminatedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(WorkflowExecutionTerminatedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline WorkflowExecutionTerminatedEventAttributes& WithCause(const WorkflowExecutionTerminatedCause& value) { SetCause(value); return *this;}
-    inline WorkflowExecutionTerminatedEventAttributes& WithCause(WorkflowExecutionTerminatedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(WorkflowExecutionTerminatedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline WorkflowExecutionTerminatedEventAttributes& WithCause(WorkflowExecutionTerminatedCause value) { SetCause(value); return *this;}
     ///@}
   private:
 
@@ -109,10 +101,10 @@ namespace Model
     Aws::String m_details;
     bool m_detailsHasBeenSet = false;
 
-    ChildPolicy m_childPolicy;
+    ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
     bool m_childPolicyHasBeenSet = false;
 
-    WorkflowExecutionTerminatedCause m_cause;
+    WorkflowExecutionTerminatedCause m_cause{WorkflowExecutionTerminatedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
   };
 

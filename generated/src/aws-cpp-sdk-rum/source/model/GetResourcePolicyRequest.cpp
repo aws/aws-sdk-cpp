@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSoftwareUpdatesRequest::GetSoftwareUpdatesRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSoftwareUpdatesRequest::SerializePayload() const
 {
   JsonValue payload;

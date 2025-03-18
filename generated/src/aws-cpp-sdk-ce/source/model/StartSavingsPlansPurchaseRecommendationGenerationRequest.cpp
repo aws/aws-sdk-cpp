@@ -12,10 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSavingsPlansPurchaseRecommendationGenerationRequest::StartSavingsPlansPurchaseRecommendationGenerationRequest()
-{
-}
-
 Aws::String StartSavingsPlansPurchaseRecommendationGenerationRequest::SerializePayload() const
 {
   return "{}";

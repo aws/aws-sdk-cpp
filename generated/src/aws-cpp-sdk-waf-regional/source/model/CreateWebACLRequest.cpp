@@ -12,15 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebACLRequest::CreateWebACLRequest() : 
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSensitivityInspectionTemplateRequest::GetSensitivityInspectionTemplateRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetSensitivityInspectionTemplateRequest::SerializePayload() const
 {
   return {};

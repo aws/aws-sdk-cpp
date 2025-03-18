@@ -12,14 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyJobTemplateRequest::CopyJobTemplateRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_targetS3LocationHasBeenSet(false)
-{
-}
-
 Aws::String CopyJobTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

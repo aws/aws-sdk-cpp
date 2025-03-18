@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Configuration::Configuration() : 
-    m_classificationHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 Configuration::Configuration(JsonView jsonValue)
-  : Configuration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Configuration& Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configurations"))
   {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
@@ -49,7 +39,6 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     }
     m_configurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
@@ -59,7 +48,6 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

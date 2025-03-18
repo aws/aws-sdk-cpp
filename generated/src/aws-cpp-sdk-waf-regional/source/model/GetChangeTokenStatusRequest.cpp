@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChangeTokenStatusRequest::GetChangeTokenStatusRequest() : 
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetChangeTokenStatusRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateInferenceComponentRuntimeConfigResult::UpdateInferenceComponentRuntimeConfigResult()
-{
-}
-
 UpdateInferenceComponentRuntimeConfigResult::UpdateInferenceComponentRuntimeConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateInferenceComponentRuntimeConfigResult& UpdateInferenceComponentRuntimeConf
   if(jsonValue.ValueExists("InferenceComponentArn"))
   {
     m_inferenceComponentArn = jsonValue.GetString("InferenceComponentArn");
-
+    m_inferenceComponentArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

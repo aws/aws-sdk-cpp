@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchRemoveRoleResult::BatchRemoveRoleResult()
-{
-}
-
 BatchRemoveRoleResult::BatchRemoveRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchRemoveRoleResult& BatchRemoveRoleResult::operator =(const Aws::AmazonWebSer
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("removedAccessorIds"))
   {
     Aws::Utils::Array<JsonView> removedAccessorIdsJsonList = jsonValue.GetArray("removedAccessorIds");
@@ -45,14 +41,15 @@ BatchRemoveRoleResult& BatchRemoveRoleResult::operator =(const Aws::AmazonWebSer
     {
       m_removedAccessorIds.push_back(removedAccessorIdsJsonList[removedAccessorIdsIndex].AsString());
     }
+    m_removedAccessorIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

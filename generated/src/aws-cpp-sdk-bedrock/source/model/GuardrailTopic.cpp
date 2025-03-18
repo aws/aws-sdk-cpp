@@ -18,17 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailTopic::GuardrailTopic() : 
-    m_nameHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_examplesHasBeenSet(false),
-    m_type(GuardrailTopicType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailTopic::GuardrailTopic(JsonView jsonValue)
-  : GuardrailTopic()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ GuardrailTopic& GuardrailTopic::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetString("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("examples"))
   {
     Aws::Utils::Array<JsonView> examplesJsonList = jsonValue.GetArray("examples");
@@ -58,14 +44,11 @@ GuardrailTopic& GuardrailTopic::operator =(JsonView jsonValue)
     }
     m_examplesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailTopicTypeMapper::GetGuardrailTopicTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

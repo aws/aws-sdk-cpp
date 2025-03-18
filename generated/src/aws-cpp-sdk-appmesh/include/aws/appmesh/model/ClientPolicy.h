@@ -31,7 +31,7 @@ namespace Model
   class ClientPolicy
   {
   public:
-    AWS_APPMESH_API ClientPolicy();
+    AWS_APPMESH_API ClientPolicy() = default;
     AWS_APPMESH_API ClientPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ClientPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>A reference to an object that represents a Transport Layer Security (TLS)
      * client policy.</p>
      */
-    inline const ClientPolicyTls& GetTls() const{ return m_tls; }
+    inline const ClientPolicyTls& GetTls() const { return m_tls; }
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-    inline void SetTls(const ClientPolicyTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
-    inline void SetTls(ClientPolicyTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-    inline ClientPolicy& WithTls(const ClientPolicyTls& value) { SetTls(value); return *this;}
-    inline ClientPolicy& WithTls(ClientPolicyTls&& value) { SetTls(std::move(value)); return *this;}
+    template<typename TlsT = ClientPolicyTls>
+    void SetTls(TlsT&& value) { m_tlsHasBeenSet = true; m_tls = std::forward<TlsT>(value); }
+    template<typename TlsT = ClientPolicyTls>
+    ClientPolicy& WithTls(TlsT&& value) { SetTls(std::forward<TlsT>(value)); return *this;}
     ///@}
   private:
 

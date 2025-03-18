@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SecurityConfigurationSummary::SecurityConfigurationSummary() : 
-    m_nameHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
-{
-}
-
 SecurityConfigurationSummary::SecurityConfigurationSummary(JsonView jsonValue)
-  : SecurityConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityConfigurationSummary& SecurityConfigurationSummary::operator =(JsonView 
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

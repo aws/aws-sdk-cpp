@@ -33,7 +33,7 @@ namespace Model
   class CollectorFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API CollectorFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API CollectorFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API CollectorFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CollectorFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -34,7 +34,7 @@ namespace Model
   class Computer
   {
   public:
-    AWS_DIRECTORYSERVICE_API Computer();
+    AWS_DIRECTORYSERVICE_API Computer() = default;
     AWS_DIRECTORYSERVICE_API Computer(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Computer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The identifier of the computer.</p>
      */
-    inline const Aws::String& GetComputerId() const{ return m_computerId; }
+    inline const Aws::String& GetComputerId() const { return m_computerId; }
     inline bool ComputerIdHasBeenSet() const { return m_computerIdHasBeenSet; }
-    inline void SetComputerId(const Aws::String& value) { m_computerIdHasBeenSet = true; m_computerId = value; }
-    inline void SetComputerId(Aws::String&& value) { m_computerIdHasBeenSet = true; m_computerId = std::move(value); }
-    inline void SetComputerId(const char* value) { m_computerIdHasBeenSet = true; m_computerId.assign(value); }
-    inline Computer& WithComputerId(const Aws::String& value) { SetComputerId(value); return *this;}
-    inline Computer& WithComputerId(Aws::String&& value) { SetComputerId(std::move(value)); return *this;}
-    inline Computer& WithComputerId(const char* value) { SetComputerId(value); return *this;}
+    template<typename ComputerIdT = Aws::String>
+    void SetComputerId(ComputerIdT&& value) { m_computerIdHasBeenSet = true; m_computerId = std::forward<ComputerIdT>(value); }
+    template<typename ComputerIdT = Aws::String>
+    Computer& WithComputerId(ComputerIdT&& value) { SetComputerId(std::forward<ComputerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The computer name.</p>
      */
-    inline const Aws::String& GetComputerName() const{ return m_computerName; }
+    inline const Aws::String& GetComputerName() const { return m_computerName; }
     inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
-    inline void SetComputerName(const Aws::String& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
-    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
-    inline void SetComputerName(const char* value) { m_computerNameHasBeenSet = true; m_computerName.assign(value); }
-    inline Computer& WithComputerName(const Aws::String& value) { SetComputerName(value); return *this;}
-    inline Computer& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
-    inline Computer& WithComputerName(const char* value) { SetComputerName(value); return *this;}
+    template<typename ComputerNameT = Aws::String>
+    void SetComputerName(ComputerNameT&& value) { m_computerNameHasBeenSet = true; m_computerName = std::forward<ComputerNameT>(value); }
+    template<typename ComputerNameT = Aws::String>
+    Computer& WithComputerName(ComputerNameT&& value) { SetComputerName(std::forward<ComputerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,14 @@ namespace Model
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
      * belong to the computer account.</p>
      */
-    inline const Aws::Vector<Attribute>& GetComputerAttributes() const{ return m_computerAttributes; }
+    inline const Aws::Vector<Attribute>& GetComputerAttributes() const { return m_computerAttributes; }
     inline bool ComputerAttributesHasBeenSet() const { return m_computerAttributesHasBeenSet; }
-    inline void SetComputerAttributes(const Aws::Vector<Attribute>& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = value; }
-    inline void SetComputerAttributes(Aws::Vector<Attribute>&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = std::move(value); }
-    inline Computer& WithComputerAttributes(const Aws::Vector<Attribute>& value) { SetComputerAttributes(value); return *this;}
-    inline Computer& WithComputerAttributes(Aws::Vector<Attribute>&& value) { SetComputerAttributes(std::move(value)); return *this;}
-    inline Computer& AddComputerAttributes(const Attribute& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(value); return *this; }
-    inline Computer& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(std::move(value)); return *this; }
+    template<typename ComputerAttributesT = Aws::Vector<Attribute>>
+    void SetComputerAttributes(ComputerAttributesT&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes = std::forward<ComputerAttributesT>(value); }
+    template<typename ComputerAttributesT = Aws::Vector<Attribute>>
+    Computer& WithComputerAttributes(ComputerAttributesT&& value) { SetComputerAttributes(std::forward<ComputerAttributesT>(value)); return *this;}
+    template<typename ComputerAttributesT = Attribute>
+    Computer& AddComputerAttributes(ComputerAttributesT&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.emplace_back(std::forward<ComputerAttributesT>(value)); return *this; }
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeSnapshotSchedulesResult
   {
   public:
-    AWS_REDSHIFT_API DescribeSnapshotSchedulesResult();
+    AWS_REDSHIFT_API DescribeSnapshotSchedulesResult() = default;
     AWS_REDSHIFT_API DescribeSnapshotSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeSnapshotSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list of SnapshotSchedules.</p>
      */
-    inline const Aws::Vector<SnapshotSchedule>& GetSnapshotSchedules() const{ return m_snapshotSchedules; }
-    inline void SetSnapshotSchedules(const Aws::Vector<SnapshotSchedule>& value) { m_snapshotSchedules = value; }
-    inline void SetSnapshotSchedules(Aws::Vector<SnapshotSchedule>&& value) { m_snapshotSchedules = std::move(value); }
-    inline DescribeSnapshotSchedulesResult& WithSnapshotSchedules(const Aws::Vector<SnapshotSchedule>& value) { SetSnapshotSchedules(value); return *this;}
-    inline DescribeSnapshotSchedulesResult& WithSnapshotSchedules(Aws::Vector<SnapshotSchedule>&& value) { SetSnapshotSchedules(std::move(value)); return *this;}
-    inline DescribeSnapshotSchedulesResult& AddSnapshotSchedules(const SnapshotSchedule& value) { m_snapshotSchedules.push_back(value); return *this; }
-    inline DescribeSnapshotSchedulesResult& AddSnapshotSchedules(SnapshotSchedule&& value) { m_snapshotSchedules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SnapshotSchedule>& GetSnapshotSchedules() const { return m_snapshotSchedules; }
+    template<typename SnapshotSchedulesT = Aws::Vector<SnapshotSchedule>>
+    void SetSnapshotSchedules(SnapshotSchedulesT&& value) { m_snapshotSchedulesHasBeenSet = true; m_snapshotSchedules = std::forward<SnapshotSchedulesT>(value); }
+    template<typename SnapshotSchedulesT = Aws::Vector<SnapshotSchedule>>
+    DescribeSnapshotSchedulesResult& WithSnapshotSchedules(SnapshotSchedulesT&& value) { SetSnapshotSchedules(std::forward<SnapshotSchedulesT>(value)); return *this;}
+    template<typename SnapshotSchedulesT = SnapshotSchedule>
+    DescribeSnapshotSchedulesResult& AddSnapshotSchedules(SnapshotSchedulesT&& value) { m_snapshotSchedulesHasBeenSet = true; m_snapshotSchedules.emplace_back(std::forward<SnapshotSchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * <code>marker</code> field is empty, all response records have been retrieved for
      * the request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeSnapshotSchedulesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeSnapshotSchedulesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeSnapshotSchedulesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeSnapshotSchedulesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSnapshotSchedulesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSnapshotSchedulesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSnapshotSchedulesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SnapshotSchedule> m_snapshotSchedules;
+    bool m_snapshotSchedulesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

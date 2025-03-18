@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseHostReservationResponse::PurchaseHostReservationResponse() : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET)
-{
-}
-
 PurchaseHostReservationResponse::PurchaseHostReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PurchaseHostReservationResponse()
 {
   *this = result;
 }
@@ -44,32 +38,38 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
+      m_currencyCodeHasBeenSet = true;
     }
     XmlNode purchaseNode = resultNode.FirstChild("purchase");
     if(!purchaseNode.IsNull())
     {
       XmlNode purchaseMember = purchaseNode.FirstChild("item");
+      m_purchaseHasBeenSet = !purchaseMember.IsNull();
       while(!purchaseMember.IsNull())
       {
         m_purchase.push_back(purchaseMember);
         purchaseMember = purchaseMember.NextNode("item");
       }
 
+      m_purchaseHasBeenSet = true;
     }
     XmlNode totalHourlyPriceNode = resultNode.FirstChild("totalHourlyPrice");
     if(!totalHourlyPriceNode.IsNull())
     {
       m_totalHourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(totalHourlyPriceNode.GetText());
+      m_totalHourlyPriceHasBeenSet = true;
     }
     XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
     if(!totalUpfrontPriceNode.IsNull())
     {
       m_totalUpfrontPrice = Aws::Utils::Xml::DecodeEscapedXmlText(totalUpfrontPriceNode.GetText());
+      m_totalUpfrontPriceHasBeenSet = true;
     }
   }
 
@@ -78,6 +78,7 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseHostReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

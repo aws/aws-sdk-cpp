@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-FileFormat::FileFormat() : 
-    m_csvHasBeenSet(false),
-    m_parquetHasBeenSet(false)
-{
-}
-
 FileFormat::FileFormat(JsonView jsonValue)
-  : FileFormat()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FileFormat& FileFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("csv"))
   {
     m_csv = jsonValue.GetObject("csv");
-
     m_csvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquet"))
   {
     m_parquet = jsonValue.GetObject("parquet");
-
     m_parquetHasBeenSet = true;
   }
-
   return *this;
 }
 

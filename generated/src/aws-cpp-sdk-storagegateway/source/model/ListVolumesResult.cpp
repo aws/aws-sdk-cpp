@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVolumesResult::ListVolumesResult()
-{
-}
-
 ListVolumesResult::ListVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeInfos"))
   {
     Aws::Utils::Array<JsonView> volumeInfosJsonList = jsonValue.GetArray("VolumeInfos");
@@ -48,14 +42,15 @@ ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_volumeInfos.push_back(volumeInfosJsonList[volumeInfosIndex].AsObject());
     }
+    m_volumeInfosHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

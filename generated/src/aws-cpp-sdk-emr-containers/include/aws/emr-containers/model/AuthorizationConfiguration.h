@@ -33,7 +33,7 @@ namespace Model
   class AuthorizationConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API AuthorizationConfiguration();
+    AWS_EMRCONTAINERS_API AuthorizationConfiguration() = default;
     AWS_EMRCONTAINERS_API AuthorizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API AuthorizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>Lake Formation related configuration inputs for the security
      * configuration.</p>
      */
-    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const { return m_lakeFormationConfiguration; }
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
-    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
-    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
-    inline AuthorizationConfiguration& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
-    inline AuthorizationConfiguration& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+    template<typename LakeFormationConfigurationT = LakeFormationConfiguration>
+    void SetLakeFormationConfiguration(LakeFormationConfigurationT&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::forward<LakeFormationConfigurationT>(value); }
+    template<typename LakeFormationConfigurationT = LakeFormationConfiguration>
+    AuthorizationConfiguration& WithLakeFormationConfiguration(LakeFormationConfigurationT&& value) { SetLakeFormationConfiguration(std::forward<LakeFormationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Encryption-related configuration input for the security configuration.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline AuthorizationConfiguration& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline AuthorizationConfiguration& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    AuthorizationConfiguration& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-JavaScriptSourceMaps::JavaScriptSourceMaps() : 
-    m_s3UriHasBeenSet(false),
-    m_status(DeobfuscationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 JavaScriptSourceMaps::JavaScriptSourceMaps(JsonView jsonValue)
-  : JavaScriptSourceMaps()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JavaScriptSourceMaps& JavaScriptSourceMaps::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DeobfuscationStatusMapper::GetDeobfuscationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

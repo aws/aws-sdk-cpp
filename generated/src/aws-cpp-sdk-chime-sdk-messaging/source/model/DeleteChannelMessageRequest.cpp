@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteChannelMessageRequest::DeleteChannelMessageRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelMessageRequest::SerializePayload() const
 {
   return {};

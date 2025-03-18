@@ -30,7 +30,7 @@ namespace Model
   class GetSavingsPlansUtilizationResult
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationResult();
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationResult() = default;
     AWS_COSTEXPLORER_API GetSavingsPlansUtilizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetSavingsPlansUtilizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The amount of cost/commitment that you used your Savings Plans. You can use
      * it to specify date ranges.</p>
      */
-    inline const Aws::Vector<SavingsPlansUtilizationByTime>& GetSavingsPlansUtilizationsByTime() const{ return m_savingsPlansUtilizationsByTime; }
-    inline void SetSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { m_savingsPlansUtilizationsByTime = value; }
-    inline void SetSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { m_savingsPlansUtilizationsByTime = std::move(value); }
-    inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { SetSavingsPlansUtilizationsByTime(value); return *this;}
-    inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { SetSavingsPlansUtilizationsByTime(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(const SavingsPlansUtilizationByTime& value) { m_savingsPlansUtilizationsByTime.push_back(value); return *this; }
-    inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(SavingsPlansUtilizationByTime&& value) { m_savingsPlansUtilizationsByTime.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SavingsPlansUtilizationByTime>& GetSavingsPlansUtilizationsByTime() const { return m_savingsPlansUtilizationsByTime; }
+    template<typename SavingsPlansUtilizationsByTimeT = Aws::Vector<SavingsPlansUtilizationByTime>>
+    void SetSavingsPlansUtilizationsByTime(SavingsPlansUtilizationsByTimeT&& value) { m_savingsPlansUtilizationsByTimeHasBeenSet = true; m_savingsPlansUtilizationsByTime = std::forward<SavingsPlansUtilizationsByTimeT>(value); }
+    template<typename SavingsPlansUtilizationsByTimeT = Aws::Vector<SavingsPlansUtilizationByTime>>
+    GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(SavingsPlansUtilizationsByTimeT&& value) { SetSavingsPlansUtilizationsByTime(std::forward<SavingsPlansUtilizationsByTimeT>(value)); return *this;}
+    template<typename SavingsPlansUtilizationsByTimeT = SavingsPlansUtilizationByTime>
+    GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(SavingsPlansUtilizationsByTimeT&& value) { m_savingsPlansUtilizationsByTimeHasBeenSet = true; m_savingsPlansUtilizationsByTime.emplace_back(std::forward<SavingsPlansUtilizationsByTimeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,31 @@ namespace Model
      * <p>The total amount of cost/commitment that you used your Savings Plans,
      * regardless of date ranges.</p>
      */
-    inline const SavingsPlansUtilizationAggregates& GetTotal() const{ return m_total; }
-    inline void SetTotal(const SavingsPlansUtilizationAggregates& value) { m_total = value; }
-    inline void SetTotal(SavingsPlansUtilizationAggregates&& value) { m_total = std::move(value); }
-    inline GetSavingsPlansUtilizationResult& WithTotal(const SavingsPlansUtilizationAggregates& value) { SetTotal(value); return *this;}
-    inline GetSavingsPlansUtilizationResult& WithTotal(SavingsPlansUtilizationAggregates&& value) { SetTotal(std::move(value)); return *this;}
+    inline const SavingsPlansUtilizationAggregates& GetTotal() const { return m_total; }
+    template<typename TotalT = SavingsPlansUtilizationAggregates>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = SavingsPlansUtilizationAggregates>
+    GetSavingsPlansUtilizationResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSavingsPlansUtilizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSavingsPlansUtilizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSavingsPlansUtilizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SavingsPlansUtilizationByTime> m_savingsPlansUtilizationsByTime;
+    bool m_savingsPlansUtilizationsByTimeHasBeenSet = false;
 
     SavingsPlansUtilizationAggregates m_total;
+    bool m_totalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

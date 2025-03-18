@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateDefaultSubnetRequest::CreateDefaultSubnetRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false)
-{
-}
-
 Aws::String CreateDefaultSubnetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

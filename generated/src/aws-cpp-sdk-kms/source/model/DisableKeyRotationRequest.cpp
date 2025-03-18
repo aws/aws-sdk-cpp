@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableKeyRotationRequest::DisableKeyRotationRequest() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableKeyRotationRequest::SerializePayload() const
 {
   JsonValue payload;

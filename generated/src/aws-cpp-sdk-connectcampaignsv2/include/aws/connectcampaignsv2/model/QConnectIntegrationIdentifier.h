@@ -31,7 +31,7 @@ namespace Model
   class QConnectIntegrationIdentifier
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API QConnectIntegrationIdentifier();
+    AWS_CONNECTCAMPAIGNSV2_API QConnectIntegrationIdentifier() = default;
     AWS_CONNECTCAMPAIGNSV2_API QConnectIntegrationIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API QConnectIntegrationIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetKnowledgeBaseArn() const{ return m_knowledgeBaseArn; }
+    inline const Aws::String& GetKnowledgeBaseArn() const { return m_knowledgeBaseArn; }
     inline bool KnowledgeBaseArnHasBeenSet() const { return m_knowledgeBaseArnHasBeenSet; }
-    inline void SetKnowledgeBaseArn(const Aws::String& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = value; }
-    inline void SetKnowledgeBaseArn(Aws::String&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::move(value); }
-    inline void SetKnowledgeBaseArn(const char* value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn.assign(value); }
-    inline QConnectIntegrationIdentifier& WithKnowledgeBaseArn(const Aws::String& value) { SetKnowledgeBaseArn(value); return *this;}
-    inline QConnectIntegrationIdentifier& WithKnowledgeBaseArn(Aws::String&& value) { SetKnowledgeBaseArn(std::move(value)); return *this;}
-    inline QConnectIntegrationIdentifier& WithKnowledgeBaseArn(const char* value) { SetKnowledgeBaseArn(value); return *this;}
+    template<typename KnowledgeBaseArnT = Aws::String>
+    void SetKnowledgeBaseArn(KnowledgeBaseArnT&& value) { m_knowledgeBaseArnHasBeenSet = true; m_knowledgeBaseArn = std::forward<KnowledgeBaseArnT>(value); }
+    template<typename KnowledgeBaseArnT = Aws::String>
+    QConnectIntegrationIdentifier& WithKnowledgeBaseArn(KnowledgeBaseArnT&& value) { SetKnowledgeBaseArn(std::forward<KnowledgeBaseArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ListenerTlsSdsCertificate
   {
   public:
-    AWS_APPMESH_API ListenerTlsSdsCertificate();
+    AWS_APPMESH_API ListenerTlsSdsCertificate() = default;
     AWS_APPMESH_API ListenerTlsSdsCertificate(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTlsSdsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * from the Secret Discovery Service provider representing Transport Layer Security
      * (TLS) materials like a certificate or certificate chain.</p>
      */
-    inline const Aws::String& GetSecretName() const{ return m_secretName; }
+    inline const Aws::String& GetSecretName() const { return m_secretName; }
     inline bool SecretNameHasBeenSet() const { return m_secretNameHasBeenSet; }
-    inline void SetSecretName(const Aws::String& value) { m_secretNameHasBeenSet = true; m_secretName = value; }
-    inline void SetSecretName(Aws::String&& value) { m_secretNameHasBeenSet = true; m_secretName = std::move(value); }
-    inline void SetSecretName(const char* value) { m_secretNameHasBeenSet = true; m_secretName.assign(value); }
-    inline ListenerTlsSdsCertificate& WithSecretName(const Aws::String& value) { SetSecretName(value); return *this;}
-    inline ListenerTlsSdsCertificate& WithSecretName(Aws::String&& value) { SetSecretName(std::move(value)); return *this;}
-    inline ListenerTlsSdsCertificate& WithSecretName(const char* value) { SetSecretName(value); return *this;}
+    template<typename SecretNameT = Aws::String>
+    void SetSecretName(SecretNameT&& value) { m_secretNameHasBeenSet = true; m_secretName = std::forward<SecretNameT>(value); }
+    template<typename SecretNameT = Aws::String>
+    ListenerTlsSdsCertificate& WithSecretName(SecretNameT&& value) { SetSecretName(std::forward<SecretNameT>(value)); return *this;}
     ///@}
   private:
 

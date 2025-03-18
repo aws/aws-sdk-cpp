@@ -12,13 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGatewaysRequest::ListGatewaysRequest() : 
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListGatewaysRequest::SerializePayload() const
 {
   JsonValue payload;

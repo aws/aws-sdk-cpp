@@ -18,15 +18,7 @@ namespace FMS
 namespace Model
 {
 
-EC2CopyRouteTableAction::EC2CopyRouteTableAction() : 
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
-{
-}
-
 EC2CopyRouteTableAction::EC2CopyRouteTableAction(JsonView jsonValue)
-  : EC2CopyRouteTableAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EC2CopyRouteTableAction& EC2CopyRouteTableAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetObject("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetObject("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   return *this;
 }
 

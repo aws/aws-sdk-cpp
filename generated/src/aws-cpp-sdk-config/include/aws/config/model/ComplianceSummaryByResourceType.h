@@ -34,7 +34,7 @@ namespace Model
   class ComplianceSummaryByResourceType
   {
   public:
-    AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType();
+    AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType() = default;
     AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The type of Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ComplianceSummaryByResourceType& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ComplianceSummaryByResourceType& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ComplianceSummaryByResourceType& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ComplianceSummaryByResourceType& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The number of Amazon Web Services resources that are compliant or
      * noncompliant, up to a maximum of 100 for each.</p>
      */
-    inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
+    inline const ComplianceSummary& GetComplianceSummary() const { return m_complianceSummary; }
     inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
-    inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
-    inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
-    inline ComplianceSummaryByResourceType& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
-    inline ComplianceSummaryByResourceType& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    void SetComplianceSummary(ComplianceSummaryT&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::forward<ComplianceSummaryT>(value); }
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    ComplianceSummaryByResourceType& WithComplianceSummary(ComplianceSummaryT&& value) { SetComplianceSummary(std::forward<ComplianceSummaryT>(value)); return *this;}
     ///@}
   private:
 

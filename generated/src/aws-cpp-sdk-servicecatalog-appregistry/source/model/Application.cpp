@@ -18,20 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-Application::Application() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_applicationTagHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetString("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -89,7 +64,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationTag"))
   {
     Aws::Map<Aws::String, JsonView> applicationTagJsonMap = jsonValue.GetObject("applicationTag").GetAllObjects();
@@ -99,7 +73,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_applicationTagHasBeenSet = true;
   }
-
   return *this;
 }
 

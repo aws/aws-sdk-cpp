@@ -32,7 +32,7 @@ namespace Model
   class Transition
   {
   public:
-    AWS_MEDIATAILOR_API Transition();
+    AWS_MEDIATAILOR_API Transition() = default;
     AWS_MEDIATAILOR_API Transition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Transition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The duration of the live program in seconds.</p>
      */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline long long GetDurationMillis() const { return m_durationMillis; }
     inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
     inline Transition& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
@@ -53,12 +53,10 @@ namespace Model
      * <p>The position where this program will be inserted relative to the
      * <code>RelativePosition</code>.</p>
      */
-    inline const RelativePosition& GetRelativePosition() const{ return m_relativePosition; }
+    inline RelativePosition GetRelativePosition() const { return m_relativePosition; }
     inline bool RelativePositionHasBeenSet() const { return m_relativePositionHasBeenSet; }
-    inline void SetRelativePosition(const RelativePosition& value) { m_relativePositionHasBeenSet = true; m_relativePosition = value; }
-    inline void SetRelativePosition(RelativePosition&& value) { m_relativePositionHasBeenSet = true; m_relativePosition = std::move(value); }
-    inline Transition& WithRelativePosition(const RelativePosition& value) { SetRelativePosition(value); return *this;}
-    inline Transition& WithRelativePosition(RelativePosition&& value) { SetRelativePosition(std::move(value)); return *this;}
+    inline void SetRelativePosition(RelativePosition value) { m_relativePositionHasBeenSet = true; m_relativePosition = value; }
+    inline Transition& WithRelativePosition(RelativePosition value) { SetRelativePosition(value); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The name of the program that this program will be inserted next to, as
      * defined by <code>RelativePosition</code>.</p>
      */
-    inline const Aws::String& GetRelativeProgram() const{ return m_relativeProgram; }
+    inline const Aws::String& GetRelativeProgram() const { return m_relativeProgram; }
     inline bool RelativeProgramHasBeenSet() const { return m_relativeProgramHasBeenSet; }
-    inline void SetRelativeProgram(const Aws::String& value) { m_relativeProgramHasBeenSet = true; m_relativeProgram = value; }
-    inline void SetRelativeProgram(Aws::String&& value) { m_relativeProgramHasBeenSet = true; m_relativeProgram = std::move(value); }
-    inline void SetRelativeProgram(const char* value) { m_relativeProgramHasBeenSet = true; m_relativeProgram.assign(value); }
-    inline Transition& WithRelativeProgram(const Aws::String& value) { SetRelativeProgram(value); return *this;}
-    inline Transition& WithRelativeProgram(Aws::String&& value) { SetRelativeProgram(std::move(value)); return *this;}
-    inline Transition& WithRelativeProgram(const char* value) { SetRelativeProgram(value); return *this;}
+    template<typename RelativeProgramT = Aws::String>
+    void SetRelativeProgram(RelativeProgramT&& value) { m_relativeProgramHasBeenSet = true; m_relativeProgram = std::forward<RelativeProgramT>(value); }
+    template<typename RelativeProgramT = Aws::String>
+    Transition& WithRelativeProgram(RelativeProgramT&& value) { SetRelativeProgram(std::forward<RelativeProgramT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * <p>The date and time that the program is scheduled to start, in epoch
      * milliseconds.</p>
      */
-    inline long long GetScheduledStartTimeMillis() const{ return m_scheduledStartTimeMillis; }
+    inline long long GetScheduledStartTimeMillis() const { return m_scheduledStartTimeMillis; }
     inline bool ScheduledStartTimeMillisHasBeenSet() const { return m_scheduledStartTimeMillisHasBeenSet; }
     inline void SetScheduledStartTimeMillis(long long value) { m_scheduledStartTimeMillisHasBeenSet = true; m_scheduledStartTimeMillis = value; }
     inline Transition& WithScheduledStartTimeMillis(long long value) { SetScheduledStartTimeMillis(value); return *this;}
@@ -102,27 +98,25 @@ namespace Model
      * before or after a program that you specify via
      * <code>RelativePosition</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Transition& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Transition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Transition& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Transition& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_durationMillis;
+    long long m_durationMillis{0};
     bool m_durationMillisHasBeenSet = false;
 
-    RelativePosition m_relativePosition;
+    RelativePosition m_relativePosition{RelativePosition::NOT_SET};
     bool m_relativePositionHasBeenSet = false;
 
     Aws::String m_relativeProgram;
     bool m_relativeProgramHasBeenSet = false;
 
-    long long m_scheduledStartTimeMillis;
+    long long m_scheduledStartTimeMillis{0};
     bool m_scheduledStartTimeMillisHasBeenSet = false;
 
     Aws::String m_type;

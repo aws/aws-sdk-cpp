@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTypeRequest::CreateTypeRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String CreateTypeRequest::SerializePayload() const
 {
   JsonValue payload;

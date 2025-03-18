@@ -33,7 +33,7 @@ namespace Model
   class TimecodeConfig
   {
   public:
-    AWS_MEDIACONVERT_API TimecodeConfig();
+    AWS_MEDIACONVERT_API TimecodeConfig() = default;
     AWS_MEDIACONVERT_API TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * set to Embedded, the first frame is the timecode value on the first input frame
      * of the input.
      */
-    inline const Aws::String& GetAnchor() const{ return m_anchor; }
+    inline const Aws::String& GetAnchor() const { return m_anchor; }
     inline bool AnchorHasBeenSet() const { return m_anchorHasBeenSet; }
-    inline void SetAnchor(const Aws::String& value) { m_anchorHasBeenSet = true; m_anchor = value; }
-    inline void SetAnchor(Aws::String&& value) { m_anchorHasBeenSet = true; m_anchor = std::move(value); }
-    inline void SetAnchor(const char* value) { m_anchorHasBeenSet = true; m_anchor.assign(value); }
-    inline TimecodeConfig& WithAnchor(const Aws::String& value) { SetAnchor(value); return *this;}
-    inline TimecodeConfig& WithAnchor(Aws::String&& value) { SetAnchor(std::move(value)); return *this;}
-    inline TimecodeConfig& WithAnchor(const char* value) { SetAnchor(value); return *this;}
+    template<typename AnchorT = Aws::String>
+    void SetAnchor(AnchorT&& value) { m_anchorHasBeenSet = true; m_anchor = std::forward<AnchorT>(value); }
+    template<typename AnchorT = Aws::String>
+    TimecodeConfig& WithAnchor(AnchorT&& value) { SetAnchor(std::forward<AnchorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * Specified Start - Set the timecode of the initial frame to a value other than
      * zero. You use Start timecode to provide this value.
      */
-    inline const TimecodeSource& GetSource() const{ return m_source; }
+    inline TimecodeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const TimecodeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(TimecodeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline TimecodeConfig& WithSource(const TimecodeSource& value) { SetSource(value); return *this;}
-    inline TimecodeConfig& WithSource(TimecodeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(TimecodeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline TimecodeConfig& WithSource(TimecodeSource value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * the timecode for the initial frame. Use 24-hour format with frame number,
      * (HH:MM:SS:FF) or (HH:MM:SS;FF).
      */
-    inline const Aws::String& GetStart() const{ return m_start; }
+    inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
-    inline TimecodeConfig& WithStart(const Aws::String& value) { SetStart(value); return *this;}
-    inline TimecodeConfig& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
-    inline TimecodeConfig& WithStart(const char* value) { SetStart(value); return *this;}
+    template<typename StartT = Aws::String>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::String>
+    TimecodeConfig& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,21 +101,19 @@ namespace Model
      * settings. For example, if the date part of your timecodes is 2002-1-25 and you
      * want to change it to one year later, set Timestamp offset to 2003-1-25.
      */
-    inline const Aws::String& GetTimestampOffset() const{ return m_timestampOffset; }
+    inline const Aws::String& GetTimestampOffset() const { return m_timestampOffset; }
     inline bool TimestampOffsetHasBeenSet() const { return m_timestampOffsetHasBeenSet; }
-    inline void SetTimestampOffset(const Aws::String& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = value; }
-    inline void SetTimestampOffset(Aws::String&& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = std::move(value); }
-    inline void SetTimestampOffset(const char* value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset.assign(value); }
-    inline TimecodeConfig& WithTimestampOffset(const Aws::String& value) { SetTimestampOffset(value); return *this;}
-    inline TimecodeConfig& WithTimestampOffset(Aws::String&& value) { SetTimestampOffset(std::move(value)); return *this;}
-    inline TimecodeConfig& WithTimestampOffset(const char* value) { SetTimestampOffset(value); return *this;}
+    template<typename TimestampOffsetT = Aws::String>
+    void SetTimestampOffset(TimestampOffsetT&& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = std::forward<TimestampOffsetT>(value); }
+    template<typename TimestampOffsetT = Aws::String>
+    TimecodeConfig& WithTimestampOffset(TimestampOffsetT&& value) { SetTimestampOffset(std::forward<TimestampOffsetT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_anchor;
     bool m_anchorHasBeenSet = false;
 
-    TimecodeSource m_source;
+    TimecodeSource m_source{TimecodeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
     Aws::String m_start;

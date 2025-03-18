@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdNamespaceRequest::GetIdNamespaceRequest() : 
-    m_idNamespaceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetIdNamespaceRequest::SerializePayload() const
 {
   return {};

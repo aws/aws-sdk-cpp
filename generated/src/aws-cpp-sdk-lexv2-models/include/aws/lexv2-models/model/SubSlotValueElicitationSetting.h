@@ -42,7 +42,7 @@ namespace Model
   class SubSlotValueElicitationSetting
   {
   public:
-    AWS_LEXMODELSV2_API SubSlotValueElicitationSetting();
+    AWS_LEXMODELSV2_API SubSlotValueElicitationSetting() = default;
     AWS_LEXMODELSV2_API SubSlotValueElicitationSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SubSlotValueElicitationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,22 +50,22 @@ namespace Model
 
     ///@{
     
-    inline const SlotDefaultValueSpecification& GetDefaultValueSpecification() const{ return m_defaultValueSpecification; }
+    inline const SlotDefaultValueSpecification& GetDefaultValueSpecification() const { return m_defaultValueSpecification; }
     inline bool DefaultValueSpecificationHasBeenSet() const { return m_defaultValueSpecificationHasBeenSet; }
-    inline void SetDefaultValueSpecification(const SlotDefaultValueSpecification& value) { m_defaultValueSpecificationHasBeenSet = true; m_defaultValueSpecification = value; }
-    inline void SetDefaultValueSpecification(SlotDefaultValueSpecification&& value) { m_defaultValueSpecificationHasBeenSet = true; m_defaultValueSpecification = std::move(value); }
-    inline SubSlotValueElicitationSetting& WithDefaultValueSpecification(const SlotDefaultValueSpecification& value) { SetDefaultValueSpecification(value); return *this;}
-    inline SubSlotValueElicitationSetting& WithDefaultValueSpecification(SlotDefaultValueSpecification&& value) { SetDefaultValueSpecification(std::move(value)); return *this;}
+    template<typename DefaultValueSpecificationT = SlotDefaultValueSpecification>
+    void SetDefaultValueSpecification(DefaultValueSpecificationT&& value) { m_defaultValueSpecificationHasBeenSet = true; m_defaultValueSpecification = std::forward<DefaultValueSpecificationT>(value); }
+    template<typename DefaultValueSpecificationT = SlotDefaultValueSpecification>
+    SubSlotValueElicitationSetting& WithDefaultValueSpecification(DefaultValueSpecificationT&& value) { SetDefaultValueSpecification(std::forward<DefaultValueSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PromptSpecification& GetPromptSpecification() const{ return m_promptSpecification; }
+    inline const PromptSpecification& GetPromptSpecification() const { return m_promptSpecification; }
     inline bool PromptSpecificationHasBeenSet() const { return m_promptSpecificationHasBeenSet; }
-    inline void SetPromptSpecification(const PromptSpecification& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = value; }
-    inline void SetPromptSpecification(PromptSpecification&& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = std::move(value); }
-    inline SubSlotValueElicitationSetting& WithPromptSpecification(const PromptSpecification& value) { SetPromptSpecification(value); return *this;}
-    inline SubSlotValueElicitationSetting& WithPromptSpecification(PromptSpecification&& value) { SetPromptSpecification(std::move(value)); return *this;}
+    template<typename PromptSpecificationT = PromptSpecification>
+    void SetPromptSpecification(PromptSpecificationT&& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = std::forward<PromptSpecificationT>(value); }
+    template<typename PromptSpecificationT = PromptSpecification>
+    SubSlotValueElicitationSetting& WithPromptSpecification(PromptSpecificationT&& value) { SetPromptSpecification(std::forward<PromptSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,24 +75,24 @@ namespace Model
      * accuracy. This is optional. In most cases Amazon Lex is capable of understanding
      * user utterances. This is similar to <code>SampleUtterances</code> for slots.</p>
      */
-    inline const Aws::Vector<SampleUtterance>& GetSampleUtterances() const{ return m_sampleUtterances; }
+    inline const Aws::Vector<SampleUtterance>& GetSampleUtterances() const { return m_sampleUtterances; }
     inline bool SampleUtterancesHasBeenSet() const { return m_sampleUtterancesHasBeenSet; }
-    inline void SetSampleUtterances(const Aws::Vector<SampleUtterance>& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = value; }
-    inline void SetSampleUtterances(Aws::Vector<SampleUtterance>&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::move(value); }
-    inline SubSlotValueElicitationSetting& WithSampleUtterances(const Aws::Vector<SampleUtterance>& value) { SetSampleUtterances(value); return *this;}
-    inline SubSlotValueElicitationSetting& WithSampleUtterances(Aws::Vector<SampleUtterance>&& value) { SetSampleUtterances(std::move(value)); return *this;}
-    inline SubSlotValueElicitationSetting& AddSampleUtterances(const SampleUtterance& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
-    inline SubSlotValueElicitationSetting& AddSampleUtterances(SampleUtterance&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(std::move(value)); return *this; }
+    template<typename SampleUtterancesT = Aws::Vector<SampleUtterance>>
+    void SetSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::forward<SampleUtterancesT>(value); }
+    template<typename SampleUtterancesT = Aws::Vector<SampleUtterance>>
+    SubSlotValueElicitationSetting& WithSampleUtterances(SampleUtterancesT&& value) { SetSampleUtterances(std::forward<SampleUtterancesT>(value)); return *this;}
+    template<typename SampleUtterancesT = SampleUtterance>
+    SubSlotValueElicitationSetting& AddSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.emplace_back(std::forward<SampleUtterancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const WaitAndContinueSpecification& GetWaitAndContinueSpecification() const{ return m_waitAndContinueSpecification; }
+    inline const WaitAndContinueSpecification& GetWaitAndContinueSpecification() const { return m_waitAndContinueSpecification; }
     inline bool WaitAndContinueSpecificationHasBeenSet() const { return m_waitAndContinueSpecificationHasBeenSet; }
-    inline void SetWaitAndContinueSpecification(const WaitAndContinueSpecification& value) { m_waitAndContinueSpecificationHasBeenSet = true; m_waitAndContinueSpecification = value; }
-    inline void SetWaitAndContinueSpecification(WaitAndContinueSpecification&& value) { m_waitAndContinueSpecificationHasBeenSet = true; m_waitAndContinueSpecification = std::move(value); }
-    inline SubSlotValueElicitationSetting& WithWaitAndContinueSpecification(const WaitAndContinueSpecification& value) { SetWaitAndContinueSpecification(value); return *this;}
-    inline SubSlotValueElicitationSetting& WithWaitAndContinueSpecification(WaitAndContinueSpecification&& value) { SetWaitAndContinueSpecification(std::move(value)); return *this;}
+    template<typename WaitAndContinueSpecificationT = WaitAndContinueSpecification>
+    void SetWaitAndContinueSpecification(WaitAndContinueSpecificationT&& value) { m_waitAndContinueSpecificationHasBeenSet = true; m_waitAndContinueSpecification = std::forward<WaitAndContinueSpecificationT>(value); }
+    template<typename WaitAndContinueSpecificationT = WaitAndContinueSpecification>
+    SubSlotValueElicitationSetting& WithWaitAndContinueSpecification(WaitAndContinueSpecificationT&& value) { SetWaitAndContinueSpecification(std::forward<WaitAndContinueSpecificationT>(value)); return *this;}
     ///@}
   private:
 

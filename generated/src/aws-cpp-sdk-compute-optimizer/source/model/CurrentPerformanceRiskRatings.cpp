@@ -18,20 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings() : 
-    m_high(0),
-    m_highHasBeenSet(false),
-    m_medium(0),
-    m_mediumHasBeenSet(false),
-    m_low(0),
-    m_lowHasBeenSet(false),
-    m_veryLow(0),
-    m_veryLowHasBeenSet(false)
-{
-}
-
 CurrentPerformanceRiskRatings::CurrentPerformanceRiskRatings(JsonView jsonValue)
-  : CurrentPerformanceRiskRatings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ CurrentPerformanceRiskRatings& CurrentPerformanceRiskRatings::operator =(JsonVie
   if(jsonValue.ValueExists("high"))
   {
     m_high = jsonValue.GetInt64("high");
-
     m_highHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("medium"))
   {
     m_medium = jsonValue.GetInt64("medium");
-
     m_mediumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("low"))
   {
     m_low = jsonValue.GetInt64("low");
-
     m_lowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("veryLow"))
   {
     m_veryLow = jsonValue.GetInt64("veryLow");
-
     m_veryLowHasBeenSet = true;
   }
-
   return *this;
 }
 

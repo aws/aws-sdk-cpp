@@ -24,7 +24,7 @@ namespace Model
   class DeleteClusterSubnetGroupRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeleteClusterSubnetGroupRequest();
+    AWS_REDSHIFT_API DeleteClusterSubnetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
-    inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
+    inline const Aws::String& GetClusterSubnetGroupName() const { return m_clusterSubnetGroupName; }
     inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
-    inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
-    inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
-    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
-    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
-    inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
+    template<typename ClusterSubnetGroupNameT = Aws::String>
+    void SetClusterSubnetGroupName(ClusterSubnetGroupNameT&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::forward<ClusterSubnetGroupNameT>(value); }
+    template<typename ClusterSubnetGroupNameT = Aws::String>
+    DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(ClusterSubnetGroupNameT&& value) { SetClusterSubnetGroupName(std::forward<ClusterSubnetGroupNameT>(value)); return *this;}
     ///@}
   private:
 

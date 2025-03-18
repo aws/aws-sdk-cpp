@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentConfigurationParametersDetails::EnvironmentConfigurationParametersDetails() : 
-    m_parameterOverridesHasBeenSet(false),
-    m_resolvedParametersHasBeenSet(false),
-    m_ssmPathHasBeenSet(false)
-{
-}
-
 EnvironmentConfigurationParametersDetails::EnvironmentConfigurationParametersDetails(JsonView jsonValue)
-  : EnvironmentConfigurationParametersDetails()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EnvironmentConfigurationParametersDetails& EnvironmentConfigurationParametersDet
     }
     m_parameterOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedParameters"))
   {
     Aws::Utils::Array<JsonView> resolvedParametersJsonList = jsonValue.GetArray("resolvedParameters");
@@ -52,14 +43,11 @@ EnvironmentConfigurationParametersDetails& EnvironmentConfigurationParametersDet
     }
     m_resolvedParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmPath"))
   {
     m_ssmPath = jsonValue.GetString("ssmPath");
-
     m_ssmPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class CreateBatchPredictionJobRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API CreateBatchPredictionJobRequest();
+    AWS_FRAUDDETECTOR_API CreateBatchPredictionJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,84 +40,72 @@ namespace Model
     /**
      * <p>The ID of the batch prediction job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    CreateBatchPredictionJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location of your training file.</p>
      */
-    inline const Aws::String& GetInputPath() const{ return m_inputPath; }
+    inline const Aws::String& GetInputPath() const { return m_inputPath; }
     inline bool InputPathHasBeenSet() const { return m_inputPathHasBeenSet; }
-    inline void SetInputPath(const Aws::String& value) { m_inputPathHasBeenSet = true; m_inputPath = value; }
-    inline void SetInputPath(Aws::String&& value) { m_inputPathHasBeenSet = true; m_inputPath = std::move(value); }
-    inline void SetInputPath(const char* value) { m_inputPathHasBeenSet = true; m_inputPath.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithInputPath(const Aws::String& value) { SetInputPath(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithInputPath(Aws::String&& value) { SetInputPath(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithInputPath(const char* value) { SetInputPath(value); return *this;}
+    template<typename InputPathT = Aws::String>
+    void SetInputPath(InputPathT&& value) { m_inputPathHasBeenSet = true; m_inputPath = std::forward<InputPathT>(value); }
+    template<typename InputPathT = Aws::String>
+    CreateBatchPredictionJobRequest& WithInputPath(InputPathT&& value) { SetInputPath(std::forward<InputPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location of your output file.</p>
      */
-    inline const Aws::String& GetOutputPath() const{ return m_outputPath; }
+    inline const Aws::String& GetOutputPath() const { return m_outputPath; }
     inline bool OutputPathHasBeenSet() const { return m_outputPathHasBeenSet; }
-    inline void SetOutputPath(const Aws::String& value) { m_outputPathHasBeenSet = true; m_outputPath = value; }
-    inline void SetOutputPath(Aws::String&& value) { m_outputPathHasBeenSet = true; m_outputPath = std::move(value); }
-    inline void SetOutputPath(const char* value) { m_outputPathHasBeenSet = true; m_outputPath.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithOutputPath(const Aws::String& value) { SetOutputPath(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithOutputPath(Aws::String&& value) { SetOutputPath(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithOutputPath(const char* value) { SetOutputPath(value); return *this;}
+    template<typename OutputPathT = Aws::String>
+    void SetOutputPath(OutputPathT&& value) { m_outputPathHasBeenSet = true; m_outputPath = std::forward<OutputPathT>(value); }
+    template<typename OutputPathT = Aws::String>
+    CreateBatchPredictionJobRequest& WithOutputPath(OutputPathT&& value) { SetOutputPath(std::forward<OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the event type.</p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    CreateBatchPredictionJobRequest& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the detector.</p>
      */
-    inline const Aws::String& GetDetectorName() const{ return m_detectorName; }
+    inline const Aws::String& GetDetectorName() const { return m_detectorName; }
     inline bool DetectorNameHasBeenSet() const { return m_detectorNameHasBeenSet; }
-    inline void SetDetectorName(const Aws::String& value) { m_detectorNameHasBeenSet = true; m_detectorName = value; }
-    inline void SetDetectorName(Aws::String&& value) { m_detectorNameHasBeenSet = true; m_detectorName = std::move(value); }
-    inline void SetDetectorName(const char* value) { m_detectorNameHasBeenSet = true; m_detectorName.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithDetectorName(const Aws::String& value) { SetDetectorName(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithDetectorName(Aws::String&& value) { SetDetectorName(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithDetectorName(const char* value) { SetDetectorName(value); return *this;}
+    template<typename DetectorNameT = Aws::String>
+    void SetDetectorName(DetectorNameT&& value) { m_detectorNameHasBeenSet = true; m_detectorName = std::forward<DetectorNameT>(value); }
+    template<typename DetectorNameT = Aws::String>
+    CreateBatchPredictionJobRequest& WithDetectorName(DetectorNameT&& value) { SetDetectorName(std::forward<DetectorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version.</p>
      */
-    inline const Aws::String& GetDetectorVersion() const{ return m_detectorVersion; }
+    inline const Aws::String& GetDetectorVersion() const { return m_detectorVersion; }
     inline bool DetectorVersionHasBeenSet() const { return m_detectorVersionHasBeenSet; }
-    inline void SetDetectorVersion(const Aws::String& value) { m_detectorVersionHasBeenSet = true; m_detectorVersion = value; }
-    inline void SetDetectorVersion(Aws::String&& value) { m_detectorVersionHasBeenSet = true; m_detectorVersion = std::move(value); }
-    inline void SetDetectorVersion(const char* value) { m_detectorVersionHasBeenSet = true; m_detectorVersion.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithDetectorVersion(const Aws::String& value) { SetDetectorVersion(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithDetectorVersion(Aws::String&& value) { SetDetectorVersion(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithDetectorVersion(const char* value) { SetDetectorVersion(value); return *this;}
+    template<typename DetectorVersionT = Aws::String>
+    void SetDetectorVersion(DetectorVersionT&& value) { m_detectorVersionHasBeenSet = true; m_detectorVersion = std::forward<DetectorVersionT>(value); }
+    template<typename DetectorVersionT = Aws::String>
+    CreateBatchPredictionJobRequest& WithDetectorVersion(DetectorVersionT&& value) { SetDetectorVersion(std::forward<DetectorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,28 +116,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
      * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline CreateBatchPredictionJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    CreateBatchPredictionJobRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of key and value pairs.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateBatchPredictionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateBatchPredictionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateBatchPredictionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateBatchPredictionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBatchPredictionJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBatchPredictionJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

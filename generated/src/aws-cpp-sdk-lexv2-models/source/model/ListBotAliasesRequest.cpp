@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBotAliasesRequest::ListBotAliasesRequest() : 
-    m_botIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBotAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

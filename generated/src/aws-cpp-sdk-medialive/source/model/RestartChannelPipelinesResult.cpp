@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestartChannelPipelinesResult::RestartChannelPipelinesResult() : 
-    m_channelClass(ChannelClass::NOT_SET),
-    m_logLevel(LogLevel::NOT_SET),
-    m_pipelinesRunningCount(0),
-    m_state(ChannelState::NOT_SET)
-{
-}
-
 RestartChannelPipelinesResult::RestartChannelPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RestartChannelPipelinesResult()
 {
   *this = result;
 }
@@ -37,21 +28,18 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cdiInputSpecification"))
   {
     m_cdiInputSpecification = jsonValue.GetObject("cdiInputSpecification");
-
+    m_cdiInputSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelClass"))
   {
     m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));
-
+    m_channelClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
@@ -59,8 +47,8 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
+    m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressEndpoints"))
   {
     Aws::Utils::Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
@@ -68,20 +56,18 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
     }
+    m_egressEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encoderSettings"))
   {
     m_encoderSettings = jsonValue.GetObject("encoderSettings");
-
+    m_encoderSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputAttachments"))
   {
     Aws::Utils::Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
@@ -89,38 +75,33 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());
     }
+    m_inputAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSpecification"))
   {
     m_inputSpecification = jsonValue.GetObject("inputSpecification");
-
+    m_inputSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
-
+    m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenance"))
   {
     m_maintenance = jsonValue.GetObject("maintenance");
-
+    m_maintenanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceStatus"))
   {
     m_maintenanceStatus = jsonValue.GetString("maintenanceStatus");
-
+    m_maintenanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineDetails"))
   {
     Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
@@ -128,26 +109,23 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
     {
       m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
     }
+    m_pipelineDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelinesRunningCount"))
   {
     m_pipelinesRunningCount = jsonValue.GetInteger("pipelinesRunningCount");
-
+    m_pipelinesRunningCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ChannelStateMapper::GetChannelStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -155,32 +133,30 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpc"))
   {
     m_vpc = jsonValue.GetObject("vpc");
-
+    m_vpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anywhereSettings"))
   {
     m_anywhereSettings = jsonValue.GetObject("anywhereSettings");
-
+    m_anywhereSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelEngineVersion"))
   {
     m_channelEngineVersion = jsonValue.GetObject("channelEngineVersion");
-
+    m_channelEngineVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

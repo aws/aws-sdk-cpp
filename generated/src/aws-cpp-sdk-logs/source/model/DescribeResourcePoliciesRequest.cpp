@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourcePoliciesRequest::DescribeResourcePoliciesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourcePoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

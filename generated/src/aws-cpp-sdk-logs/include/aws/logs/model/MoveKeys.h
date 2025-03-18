@@ -36,7 +36,7 @@ namespace Model
   class MoveKeys
   {
   public:
-    AWS_CLOUDWATCHLOGS_API MoveKeys();
+    AWS_CLOUDWATCHLOGS_API MoveKeys() = default;
     AWS_CLOUDWATCHLOGS_API MoveKeys(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API MoveKeys& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>An array of objects, where each object contains the information about one key
      * to move. </p>
      */
-    inline const Aws::Vector<MoveKeyEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<MoveKeyEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<MoveKeyEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<MoveKeyEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline MoveKeys& WithEntries(const Aws::Vector<MoveKeyEntry>& value) { SetEntries(value); return *this;}
-    inline MoveKeys& WithEntries(Aws::Vector<MoveKeyEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline MoveKeys& AddEntries(const MoveKeyEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline MoveKeys& AddEntries(MoveKeyEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<MoveKeyEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<MoveKeyEntry>>
+    MoveKeys& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = MoveKeyEntry>
+    MoveKeys& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class ListImagePackagesRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API ListImagePackagesRequest();
+    AWS_IMAGEBUILDER_API ListImagePackagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,21 +37,19 @@ namespace Model
      * <p>Filter results for the ListImagePackages request by the Image Build Version
      * ARN</p>
      */
-    inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
+    inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
     inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
-    inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = value; }
-    inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::move(value); }
-    inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn.assign(value); }
-    inline ListImagePackagesRequest& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-    inline ListImagePackagesRequest& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-    inline ListImagePackagesRequest& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
+    template<typename ImageBuildVersionArnT = Aws::String>
+    void SetImageBuildVersionArn(ImageBuildVersionArnT&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::forward<ImageBuildVersionArnT>(value); }
+    template<typename ImageBuildVersionArnT = Aws::String>
+    ListImagePackagesRequest& WithImageBuildVersionArn(ImageBuildVersionArnT&& value) { SetImageBuildVersionArn(std::forward<ImageBuildVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum items to return in a request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListImagePackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,21 +60,19 @@ namespace Model
      * <p>A token to specify where to start paginating. This is the nextToken from a
      * previously truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImagePackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImagePackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImagePackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImagePackagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_imageBuildVersionArn;
     bool m_imageBuildVersionArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

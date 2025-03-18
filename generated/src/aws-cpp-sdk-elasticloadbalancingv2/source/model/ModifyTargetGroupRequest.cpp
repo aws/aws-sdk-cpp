@@ -10,26 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyTargetGroupRequest::ModifyTargetGroupRequest() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_healthCheckProtocol(ProtocolEnum::NOT_SET),
-    m_healthCheckProtocolHasBeenSet(false),
-    m_healthCheckPortHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_healthCheckEnabled(false),
-    m_healthCheckEnabledHasBeenSet(false),
-    m_healthCheckIntervalSeconds(0),
-    m_healthCheckIntervalSecondsHasBeenSet(false),
-    m_healthCheckTimeoutSeconds(0),
-    m_healthCheckTimeoutSecondsHasBeenSet(false),
-    m_healthyThresholdCount(0),
-    m_healthyThresholdCountHasBeenSet(false),
-    m_unhealthyThresholdCount(0),
-    m_unhealthyThresholdCountHasBeenSet(false),
-    m_matcherHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTargetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

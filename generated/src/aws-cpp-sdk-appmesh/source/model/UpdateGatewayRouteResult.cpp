@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGatewayRouteResult::UpdateGatewayRouteResult()
-{
-}
-
 UpdateGatewayRouteResult::UpdateGatewayRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ UpdateGatewayRouteResult& UpdateGatewayRouteResult::operator =(const Aws::Amazon
 {
   JsonView jsonValue = result.GetPayload().View();
   m_gatewayRoute = jsonValue;
+  m_gatewayRouteHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

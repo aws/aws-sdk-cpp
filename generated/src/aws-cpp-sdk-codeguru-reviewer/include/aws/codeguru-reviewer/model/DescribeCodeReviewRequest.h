@@ -21,7 +21,7 @@ namespace Model
   class DescribeCodeReviewRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API DescribeCodeReviewRequest();
+    AWS_CODEGURUREVIEWER_API DescribeCodeReviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
      * object. </p>
      */
-    inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
+    inline const Aws::String& GetCodeReviewArn() const { return m_codeReviewArn; }
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
-    inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
-    inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
-    inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
-    inline DescribeCodeReviewRequest& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
-    inline DescribeCodeReviewRequest& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
-    inline DescribeCodeReviewRequest& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
+    template<typename CodeReviewArnT = Aws::String>
+    void SetCodeReviewArn(CodeReviewArnT&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::forward<CodeReviewArnT>(value); }
+    template<typename CodeReviewArnT = Aws::String>
+    DescribeCodeReviewRequest& WithCodeReviewArn(CodeReviewArnT&& value) { SetCodeReviewArn(std::forward<CodeReviewArnT>(value)); return *this;}
     ///@}
   private:
 

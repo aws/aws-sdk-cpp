@@ -36,7 +36,7 @@ namespace Model
   class PostProcessingModelInvocationOutput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PostProcessingModelInvocationOutput();
+    AWS_BEDROCKAGENTRUNTIME_API PostProcessingModelInvocationOutput() = default;
     AWS_BEDROCKAGENTRUNTIME_API PostProcessingModelInvocationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API PostProcessingModelInvocationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p> Contains information about the foundation model output from the
      * post-processing step. </p>
      */
-    inline const Metadata& GetMetadata() const{ return m_metadata; }
+    inline const Metadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline PostProcessingModelInvocationOutput& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
-    inline PostProcessingModelInvocationOutput& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    PostProcessingModelInvocationOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,24 +60,24 @@ namespace Model
      * <p>Details about the response from the Lambda parsing of the output of the
      * post-processing step.</p>
      */
-    inline const PostProcessingParsedResponse& GetParsedResponse() const{ return m_parsedResponse; }
+    inline const PostProcessingParsedResponse& GetParsedResponse() const { return m_parsedResponse; }
     inline bool ParsedResponseHasBeenSet() const { return m_parsedResponseHasBeenSet; }
-    inline void SetParsedResponse(const PostProcessingParsedResponse& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = value; }
-    inline void SetParsedResponse(PostProcessingParsedResponse&& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = std::move(value); }
-    inline PostProcessingModelInvocationOutput& WithParsedResponse(const PostProcessingParsedResponse& value) { SetParsedResponse(value); return *this;}
-    inline PostProcessingModelInvocationOutput& WithParsedResponse(PostProcessingParsedResponse&& value) { SetParsedResponse(std::move(value)); return *this;}
+    template<typename ParsedResponseT = PostProcessingParsedResponse>
+    void SetParsedResponse(ParsedResponseT&& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = std::forward<ParsedResponseT>(value); }
+    template<typename ParsedResponseT = PostProcessingParsedResponse>
+    PostProcessingModelInvocationOutput& WithParsedResponse(ParsedResponseT&& value) { SetParsedResponse(std::forward<ParsedResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Details of the raw response from the foundation model output. </p>
      */
-    inline const RawResponse& GetRawResponse() const{ return m_rawResponse; }
+    inline const RawResponse& GetRawResponse() const { return m_rawResponse; }
     inline bool RawResponseHasBeenSet() const { return m_rawResponseHasBeenSet; }
-    inline void SetRawResponse(const RawResponse& value) { m_rawResponseHasBeenSet = true; m_rawResponse = value; }
-    inline void SetRawResponse(RawResponse&& value) { m_rawResponseHasBeenSet = true; m_rawResponse = std::move(value); }
-    inline PostProcessingModelInvocationOutput& WithRawResponse(const RawResponse& value) { SetRawResponse(value); return *this;}
-    inline PostProcessingModelInvocationOutput& WithRawResponse(RawResponse&& value) { SetRawResponse(std::move(value)); return *this;}
+    template<typename RawResponseT = RawResponse>
+    void SetRawResponse(RawResponseT&& value) { m_rawResponseHasBeenSet = true; m_rawResponse = std::forward<RawResponseT>(value); }
+    template<typename RawResponseT = RawResponse>
+    PostProcessingModelInvocationOutput& WithRawResponse(RawResponseT&& value) { SetRawResponse(std::forward<RawResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,26 +85,24 @@ namespace Model
      * <p>Contains content about the reasoning that the model made during the
      * post-processing step.</p>
      */
-    inline const ReasoningContentBlock& GetReasoningContent() const{ return m_reasoningContent; }
+    inline const ReasoningContentBlock& GetReasoningContent() const { return m_reasoningContent; }
     inline bool ReasoningContentHasBeenSet() const { return m_reasoningContentHasBeenSet; }
-    inline void SetReasoningContent(const ReasoningContentBlock& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = value; }
-    inline void SetReasoningContent(ReasoningContentBlock&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::move(value); }
-    inline PostProcessingModelInvocationOutput& WithReasoningContent(const ReasoningContentBlock& value) { SetReasoningContent(value); return *this;}
-    inline PostProcessingModelInvocationOutput& WithReasoningContent(ReasoningContentBlock&& value) { SetReasoningContent(std::move(value)); return *this;}
+    template<typename ReasoningContentT = ReasoningContentBlock>
+    void SetReasoningContent(ReasoningContentT&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::forward<ReasoningContentT>(value); }
+    template<typename ReasoningContentT = ReasoningContentBlock>
+    PostProcessingModelInvocationOutput& WithReasoningContent(ReasoningContentT&& value) { SetReasoningContent(std::forward<ReasoningContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the trace.</p>
      */
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-    inline PostProcessingModelInvocationOutput& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-    inline PostProcessingModelInvocationOutput& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-    inline PostProcessingModelInvocationOutput& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    PostProcessingModelInvocationOutput& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
   private:
 

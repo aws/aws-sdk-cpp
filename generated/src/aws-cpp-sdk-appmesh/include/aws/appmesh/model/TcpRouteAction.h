@@ -33,7 +33,7 @@ namespace Model
   class TcpRouteAction
   {
   public:
-    AWS_APPMESH_API TcpRouteAction();
+    AWS_APPMESH_API TcpRouteAction() = default;
     AWS_APPMESH_API TcpRouteAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API TcpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>An object that represents the targets that traffic is routed to when a
      * request matches the route.</p>
      */
-    inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const{ return m_weightedTargets; }
+    inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const { return m_weightedTargets; }
     inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
-    inline void SetWeightedTargets(const Aws::Vector<WeightedTarget>& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = value; }
-    inline void SetWeightedTargets(Aws::Vector<WeightedTarget>&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::move(value); }
-    inline TcpRouteAction& WithWeightedTargets(const Aws::Vector<WeightedTarget>& value) { SetWeightedTargets(value); return *this;}
-    inline TcpRouteAction& WithWeightedTargets(Aws::Vector<WeightedTarget>&& value) { SetWeightedTargets(std::move(value)); return *this;}
-    inline TcpRouteAction& AddWeightedTargets(const WeightedTarget& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(value); return *this; }
-    inline TcpRouteAction& AddWeightedTargets(WeightedTarget&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(std::move(value)); return *this; }
+    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+    void SetWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::forward<WeightedTargetsT>(value); }
+    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+    TcpRouteAction& WithWeightedTargets(WeightedTargetsT&& value) { SetWeightedTargets(std::forward<WeightedTargetsT>(value)); return *this;}
+    template<typename WeightedTargetsT = WeightedTarget>
+    TcpRouteAction& AddWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.emplace_back(std::forward<WeightedTargetsT>(value)); return *this; }
     ///@}
   private:
 

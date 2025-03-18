@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectSubscriptionRequestRequest::RejectSubscriptionRequestRequest() : 
-    m_decisionCommentHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String RejectSubscriptionRequestRequest::SerializePayload() const
 {
   JsonValue payload;

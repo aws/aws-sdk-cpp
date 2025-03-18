@@ -18,21 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceSummary::ServiceSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ServiceSummary::ServiceSummary(JsonView jsonValue)
-  : ServiceSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceStatusMapper::GetServiceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

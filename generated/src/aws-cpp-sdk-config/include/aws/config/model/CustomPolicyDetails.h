@@ -33,7 +33,7 @@ namespace Model
   class CustomPolicyDetails
   {
   public:
-    AWS_CONFIGSERVICE_API CustomPolicyDetails();
+    AWS_CONFIGSERVICE_API CustomPolicyDetails() = default;
     AWS_CONFIGSERVICE_API CustomPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API CustomPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
      * Repository</a>.</p>
      */
-    inline const Aws::String& GetPolicyRuntime() const{ return m_policyRuntime; }
+    inline const Aws::String& GetPolicyRuntime() const { return m_policyRuntime; }
     inline bool PolicyRuntimeHasBeenSet() const { return m_policyRuntimeHasBeenSet; }
-    inline void SetPolicyRuntime(const Aws::String& value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime = value; }
-    inline void SetPolicyRuntime(Aws::String&& value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime = std::move(value); }
-    inline void SetPolicyRuntime(const char* value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime.assign(value); }
-    inline CustomPolicyDetails& WithPolicyRuntime(const Aws::String& value) { SetPolicyRuntime(value); return *this;}
-    inline CustomPolicyDetails& WithPolicyRuntime(Aws::String&& value) { SetPolicyRuntime(std::move(value)); return *this;}
-    inline CustomPolicyDetails& WithPolicyRuntime(const char* value) { SetPolicyRuntime(value); return *this;}
+    template<typename PolicyRuntimeT = Aws::String>
+    void SetPolicyRuntime(PolicyRuntimeT&& value) { m_policyRuntimeHasBeenSet = true; m_policyRuntime = std::forward<PolicyRuntimeT>(value); }
+    template<typename PolicyRuntimeT = Aws::String>
+    CustomPolicyDetails& WithPolicyRuntime(PolicyRuntimeT&& value) { SetPolicyRuntime(std::forward<PolicyRuntimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The policy definition containing the logic for your Config Custom Policy
      * rule.</p>
      */
-    inline const Aws::String& GetPolicyText() const{ return m_policyText; }
+    inline const Aws::String& GetPolicyText() const { return m_policyText; }
     inline bool PolicyTextHasBeenSet() const { return m_policyTextHasBeenSet; }
-    inline void SetPolicyText(const Aws::String& value) { m_policyTextHasBeenSet = true; m_policyText = value; }
-    inline void SetPolicyText(Aws::String&& value) { m_policyTextHasBeenSet = true; m_policyText = std::move(value); }
-    inline void SetPolicyText(const char* value) { m_policyTextHasBeenSet = true; m_policyText.assign(value); }
-    inline CustomPolicyDetails& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
-    inline CustomPolicyDetails& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
-    inline CustomPolicyDetails& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
+    template<typename PolicyTextT = Aws::String>
+    void SetPolicyText(PolicyTextT&& value) { m_policyTextHasBeenSet = true; m_policyText = std::forward<PolicyTextT>(value); }
+    template<typename PolicyTextT = Aws::String>
+    CustomPolicyDetails& WithPolicyText(PolicyTextT&& value) { SetPolicyText(std::forward<PolicyTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * <p>The boolean expression for enabling debug logging for your Config Custom
      * Policy rule. The default value is <code>false</code>.</p>
      */
-    inline bool GetEnableDebugLogDelivery() const{ return m_enableDebugLogDelivery; }
+    inline bool GetEnableDebugLogDelivery() const { return m_enableDebugLogDelivery; }
     inline bool EnableDebugLogDeliveryHasBeenSet() const { return m_enableDebugLogDeliveryHasBeenSet; }
     inline void SetEnableDebugLogDelivery(bool value) { m_enableDebugLogDeliveryHasBeenSet = true; m_enableDebugLogDelivery = value; }
     inline CustomPolicyDetails& WithEnableDebugLogDelivery(bool value) { SetEnableDebugLogDelivery(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_policyText;
     bool m_policyTextHasBeenSet = false;
 
-    bool m_enableDebugLogDelivery;
+    bool m_enableDebugLogDelivery{false};
     bool m_enableDebugLogDeliveryHasBeenSet = false;
   };
 

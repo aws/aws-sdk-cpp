@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetMetricDataRequest::BatchGetMetricDataRequest() : 
-    m_queriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

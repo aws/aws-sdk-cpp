@@ -28,7 +28,7 @@ namespace Model
   class AcceptAccountLinkInvitationResult
   {
   public:
-    AWS_WORKSPACES_API AcceptAccountLinkInvitationResult();
+    AWS_WORKSPACES_API AcceptAccountLinkInvitationResult() = default;
     AWS_WORKSPACES_API AcceptAccountLinkInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API AcceptAccountLinkInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the account link.</p>
      */
-    inline const AccountLink& GetAccountLink() const{ return m_accountLink; }
-    inline void SetAccountLink(const AccountLink& value) { m_accountLink = value; }
-    inline void SetAccountLink(AccountLink&& value) { m_accountLink = std::move(value); }
-    inline AcceptAccountLinkInvitationResult& WithAccountLink(const AccountLink& value) { SetAccountLink(value); return *this;}
-    inline AcceptAccountLinkInvitationResult& WithAccountLink(AccountLink&& value) { SetAccountLink(std::move(value)); return *this;}
+    inline const AccountLink& GetAccountLink() const { return m_accountLink; }
+    template<typename AccountLinkT = AccountLink>
+    void SetAccountLink(AccountLinkT&& value) { m_accountLinkHasBeenSet = true; m_accountLink = std::forward<AccountLinkT>(value); }
+    template<typename AccountLinkT = AccountLink>
+    AcceptAccountLinkInvitationResult& WithAccountLink(AccountLinkT&& value) { SetAccountLink(std::forward<AccountLinkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcceptAccountLinkInvitationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcceptAccountLinkInvitationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcceptAccountLinkInvitationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcceptAccountLinkInvitationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountLink m_accountLink;
+    bool m_accountLinkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class SolutionUpdateConfig
   {
   public:
-    AWS_PERSONALIZE_API SolutionUpdateConfig();
+    AWS_PERSONALIZE_API SolutionUpdateConfig() = default;
     AWS_PERSONALIZE_API SolutionUpdateConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API SolutionUpdateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const AutoTrainingConfig& GetAutoTrainingConfig() const{ return m_autoTrainingConfig; }
+    inline const AutoTrainingConfig& GetAutoTrainingConfig() const { return m_autoTrainingConfig; }
     inline bool AutoTrainingConfigHasBeenSet() const { return m_autoTrainingConfigHasBeenSet; }
-    inline void SetAutoTrainingConfig(const AutoTrainingConfig& value) { m_autoTrainingConfigHasBeenSet = true; m_autoTrainingConfig = value; }
-    inline void SetAutoTrainingConfig(AutoTrainingConfig&& value) { m_autoTrainingConfigHasBeenSet = true; m_autoTrainingConfig = std::move(value); }
-    inline SolutionUpdateConfig& WithAutoTrainingConfig(const AutoTrainingConfig& value) { SetAutoTrainingConfig(value); return *this;}
-    inline SolutionUpdateConfig& WithAutoTrainingConfig(AutoTrainingConfig&& value) { SetAutoTrainingConfig(std::move(value)); return *this;}
+    template<typename AutoTrainingConfigT = AutoTrainingConfig>
+    void SetAutoTrainingConfig(AutoTrainingConfigT&& value) { m_autoTrainingConfigHasBeenSet = true; m_autoTrainingConfig = std::forward<AutoTrainingConfigT>(value); }
+    template<typename AutoTrainingConfigT = AutoTrainingConfig>
+    SolutionUpdateConfig& WithAutoTrainingConfig(AutoTrainingConfigT&& value) { SetAutoTrainingConfig(std::forward<AutoTrainingConfigT>(value)); return *this;}
     ///@}
   private:
 

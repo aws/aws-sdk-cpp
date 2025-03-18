@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AthenaPropertiesPatch::AthenaPropertiesPatch() : 
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 AthenaPropertiesPatch::AthenaPropertiesPatch(JsonView jsonValue)
-  : AthenaPropertiesPatch()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AthenaPropertiesPatch& AthenaPropertiesPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

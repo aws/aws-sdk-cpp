@@ -34,7 +34,7 @@ namespace Model
   class AutoRollbackConfiguration
   {
   public:
-    AWS_CODEDEPLOY_API AutoRollbackConfiguration();
+    AWS_CODEDEPLOY_API AutoRollbackConfiguration() = default;
     AWS_CODEDEPLOY_API AutoRollbackConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API AutoRollbackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Indicates whether a defined automatic rollback configuration is currently
      * enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AutoRollbackConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,18 +55,17 @@ namespace Model
     /**
      * <p>The event type or types that trigger a rollback.</p>
      */
-    inline const Aws::Vector<AutoRollbackEvent>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<AutoRollbackEvent>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<AutoRollbackEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<AutoRollbackEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline AutoRollbackConfiguration& WithEvents(const Aws::Vector<AutoRollbackEvent>& value) { SetEvents(value); return *this;}
-    inline AutoRollbackConfiguration& WithEvents(Aws::Vector<AutoRollbackEvent>&& value) { SetEvents(std::move(value)); return *this;}
-    inline AutoRollbackConfiguration& AddEvents(const AutoRollbackEvent& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline AutoRollbackConfiguration& AddEvents(AutoRollbackEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<AutoRollbackEvent>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<AutoRollbackEvent>>
+    AutoRollbackConfiguration& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    inline AutoRollbackConfiguration& AddEvents(AutoRollbackEvent value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<AutoRollbackEvent> m_events;

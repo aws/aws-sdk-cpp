@@ -33,7 +33,7 @@ namespace Model
   class ColumnWildcard
   {
   public:
-    AWS_LAKEFORMATION_API ColumnWildcard();
+    AWS_LAKEFORMATION_API ColumnWildcard() = default;
     AWS_LAKEFORMATION_API ColumnWildcard(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API ColumnWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>Excludes column names. Any column with this name will be excluded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludedColumnNames() const{ return m_excludedColumnNames; }
+    inline const Aws::Vector<Aws::String>& GetExcludedColumnNames() const { return m_excludedColumnNames; }
     inline bool ExcludedColumnNamesHasBeenSet() const { return m_excludedColumnNamesHasBeenSet; }
-    inline void SetExcludedColumnNames(const Aws::Vector<Aws::String>& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames = value; }
-    inline void SetExcludedColumnNames(Aws::Vector<Aws::String>&& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames = std::move(value); }
-    inline ColumnWildcard& WithExcludedColumnNames(const Aws::Vector<Aws::String>& value) { SetExcludedColumnNames(value); return *this;}
-    inline ColumnWildcard& WithExcludedColumnNames(Aws::Vector<Aws::String>&& value) { SetExcludedColumnNames(std::move(value)); return *this;}
-    inline ColumnWildcard& AddExcludedColumnNames(const Aws::String& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames.push_back(value); return *this; }
-    inline ColumnWildcard& AddExcludedColumnNames(Aws::String&& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames.push_back(std::move(value)); return *this; }
-    inline ColumnWildcard& AddExcludedColumnNames(const char* value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames.push_back(value); return *this; }
+    template<typename ExcludedColumnNamesT = Aws::Vector<Aws::String>>
+    void SetExcludedColumnNames(ExcludedColumnNamesT&& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames = std::forward<ExcludedColumnNamesT>(value); }
+    template<typename ExcludedColumnNamesT = Aws::Vector<Aws::String>>
+    ColumnWildcard& WithExcludedColumnNames(ExcludedColumnNamesT&& value) { SetExcludedColumnNames(std::forward<ExcludedColumnNamesT>(value)); return *this;}
+    template<typename ExcludedColumnNamesT = Aws::String>
+    ColumnWildcard& AddExcludedColumnNames(ExcludedColumnNamesT&& value) { m_excludedColumnNamesHasBeenSet = true; m_excludedColumnNames.emplace_back(std::forward<ExcludedColumnNamesT>(value)); return *this; }
     ///@}
   private:
 

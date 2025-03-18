@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CancelOpenCypherQueryRequest::CancelOpenCypherQueryRequest() : 
-    m_queryIdHasBeenSet(false),
-    m_silent(false),
-    m_silentHasBeenSet(false)
-{
-}
-
 Aws::String CancelOpenCypherQueryRequest::SerializePayload() const
 {
   return {};

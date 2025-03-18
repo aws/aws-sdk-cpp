@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWorkflowStepGroupsRequest::ListWorkflowStepGroupsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkflowStepGroupsRequest::SerializePayload() const
 {
   return {};

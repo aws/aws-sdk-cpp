@@ -35,7 +35,7 @@ namespace Model
   class CreateVPCAssociationAuthorizationResult
   {
   public:
-    AWS_ROUTE53_API CreateVPCAssociationAuthorizationResult();
+    AWS_ROUTE53_API CreateVPCAssociationAuthorizationResult() = default;
     AWS_ROUTE53_API CreateVPCAssociationAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API CreateVPCAssociationAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,43 +44,42 @@ namespace Model
     /**
      * <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneId.assign(value); }
-    inline CreateVPCAssociationAuthorizationResult& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline CreateVPCAssociationAuthorizationResult& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline CreateVPCAssociationAuthorizationResult& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    CreateVPCAssociationAuthorizationResult& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC that you authorized associating with a hosted zone.</p>
      */
-    inline const VPC& GetVPC() const{ return m_vPC; }
-    inline void SetVPC(const VPC& value) { m_vPC = value; }
-    inline void SetVPC(VPC&& value) { m_vPC = std::move(value); }
-    inline CreateVPCAssociationAuthorizationResult& WithVPC(const VPC& value) { SetVPC(value); return *this;}
-    inline CreateVPCAssociationAuthorizationResult& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
+    inline const VPC& GetVPC() const { return m_vPC; }
+    template<typename VPCT = VPC>
+    void SetVPC(VPCT&& value) { m_vPCHasBeenSet = true; m_vPC = std::forward<VPCT>(value); }
+    template<typename VPCT = VPC>
+    CreateVPCAssociationAuthorizationResult& WithVPC(VPCT&& value) { SetVPC(std::forward<VPCT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVPCAssociationAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVPCAssociationAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVPCAssociationAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVPCAssociationAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hostedZoneId;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     VPC m_vPC;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

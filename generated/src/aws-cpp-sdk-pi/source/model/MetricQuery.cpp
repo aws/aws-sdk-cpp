@@ -18,15 +18,7 @@ namespace PI
 namespace Model
 {
 
-MetricQuery::MetricQuery() : 
-    m_metricHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 MetricQuery::MetricQuery(JsonView jsonValue)
-  : MetricQuery()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricQuery& MetricQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetString("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupBy"))
   {
     m_groupBy = jsonValue.GetObject("GroupBy");
-
     m_groupByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filter"))
   {
     Aws::Map<Aws::String, JsonView> filterJsonMap = jsonValue.GetObject("Filter").GetAllObjects();
@@ -56,7 +44,6 @@ MetricQuery& MetricQuery::operator =(JsonView jsonValue)
     }
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

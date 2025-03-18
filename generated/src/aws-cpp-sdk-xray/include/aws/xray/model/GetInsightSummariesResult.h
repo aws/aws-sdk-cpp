@@ -29,7 +29,7 @@ namespace Model
   class GetInsightSummariesResult
   {
   public:
-    AWS_XRAY_API GetInsightSummariesResult();
+    AWS_XRAY_API GetInsightSummariesResult() = default;
     AWS_XRAY_API GetInsightSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetInsightSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * the root cause and client impact statistics, the top anomalous services, and the
      * status of the insight.</p>
      */
-    inline const Aws::Vector<InsightSummary>& GetInsightSummaries() const{ return m_insightSummaries; }
-    inline void SetInsightSummaries(const Aws::Vector<InsightSummary>& value) { m_insightSummaries = value; }
-    inline void SetInsightSummaries(Aws::Vector<InsightSummary>&& value) { m_insightSummaries = std::move(value); }
-    inline GetInsightSummariesResult& WithInsightSummaries(const Aws::Vector<InsightSummary>& value) { SetInsightSummaries(value); return *this;}
-    inline GetInsightSummariesResult& WithInsightSummaries(Aws::Vector<InsightSummary>&& value) { SetInsightSummaries(std::move(value)); return *this;}
-    inline GetInsightSummariesResult& AddInsightSummaries(const InsightSummary& value) { m_insightSummaries.push_back(value); return *this; }
-    inline GetInsightSummariesResult& AddInsightSummaries(InsightSummary&& value) { m_insightSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InsightSummary>& GetInsightSummaries() const { return m_insightSummaries; }
+    template<typename InsightSummariesT = Aws::Vector<InsightSummary>>
+    void SetInsightSummaries(InsightSummariesT&& value) { m_insightSummariesHasBeenSet = true; m_insightSummaries = std::forward<InsightSummariesT>(value); }
+    template<typename InsightSummariesT = Aws::Vector<InsightSummary>>
+    GetInsightSummariesResult& WithInsightSummaries(InsightSummariesT&& value) { SetInsightSummaries(std::forward<InsightSummariesT>(value)); return *this;}
+    template<typename InsightSummariesT = InsightSummary>
+    GetInsightSummariesResult& AddInsightSummaries(InsightSummariesT&& value) { m_insightSummariesHasBeenSet = true; m_insightSummaries.emplace_back(std::forward<InsightSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetInsightSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInsightSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInsightSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInsightSummariesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInsightSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInsightSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInsightSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInsightSummariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InsightSummary> m_insightSummaries;
+    bool m_insightSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

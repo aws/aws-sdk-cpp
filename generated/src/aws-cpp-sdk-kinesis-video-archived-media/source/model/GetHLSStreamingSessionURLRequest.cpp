@@ -12,25 +12,6 @@ using namespace Aws::KinesisVideoArchivedMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHLSStreamingSessionURLRequest::GetHLSStreamingSessionURLRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_playbackMode(HLSPlaybackMode::NOT_SET),
-    m_playbackModeHasBeenSet(false),
-    m_hLSFragmentSelectorHasBeenSet(false),
-    m_containerFormat(ContainerFormat::NOT_SET),
-    m_containerFormatHasBeenSet(false),
-    m_discontinuityMode(HLSDiscontinuityMode::NOT_SET),
-    m_discontinuityModeHasBeenSet(false),
-    m_displayFragmentTimestamp(HLSDisplayFragmentTimestamp::NOT_SET),
-    m_displayFragmentTimestampHasBeenSet(false),
-    m_expires(0),
-    m_expiresHasBeenSet(false),
-    m_maxMediaPlaylistFragmentResults(0),
-    m_maxMediaPlaylistFragmentResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetHLSStreamingSessionURLRequest::SerializePayload() const
 {
   JsonValue payload;

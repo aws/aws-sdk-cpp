@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptFilter::ReceiptFilter() : 
-    m_nameHasBeenSet(false),
-    m_ipFilterHasBeenSet(false)
-{
-}
-
 ReceiptFilter::ReceiptFilter(const XmlNode& xmlNode)
-  : ReceiptFilter()
 {
   *this = xmlNode;
 }

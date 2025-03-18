@@ -32,7 +32,7 @@ namespace Model
   class TransitGatewayPeering
   {
   public:
-    AWS_NETWORKMANAGER_API TransitGatewayPeering();
+    AWS_NETWORKMANAGER_API TransitGatewayPeering() = default;
     AWS_NETWORKMANAGER_API TransitGatewayPeering(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API TransitGatewayPeering& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>Describes a transit gateway peer connection.</p>
      */
-    inline const Peering& GetPeering() const{ return m_peering; }
+    inline const Peering& GetPeering() const { return m_peering; }
     inline bool PeeringHasBeenSet() const { return m_peeringHasBeenSet; }
-    inline void SetPeering(const Peering& value) { m_peeringHasBeenSet = true; m_peering = value; }
-    inline void SetPeering(Peering&& value) { m_peeringHasBeenSet = true; m_peering = std::move(value); }
-    inline TransitGatewayPeering& WithPeering(const Peering& value) { SetPeering(value); return *this;}
-    inline TransitGatewayPeering& WithPeering(Peering&& value) { SetPeering(std::move(value)); return *this;}
+    template<typename PeeringT = Peering>
+    void SetPeering(PeeringT&& value) { m_peeringHasBeenSet = true; m_peering = std::forward<PeeringT>(value); }
+    template<typename PeeringT = Peering>
+    TransitGatewayPeering& WithPeering(PeeringT&& value) { SetPeering(std::forward<PeeringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the transit gateway.</p>
      */
-    inline const Aws::String& GetTransitGatewayArn() const{ return m_transitGatewayArn; }
+    inline const Aws::String& GetTransitGatewayArn() const { return m_transitGatewayArn; }
     inline bool TransitGatewayArnHasBeenSet() const { return m_transitGatewayArnHasBeenSet; }
-    inline void SetTransitGatewayArn(const Aws::String& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = value; }
-    inline void SetTransitGatewayArn(Aws::String&& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = std::move(value); }
-    inline void SetTransitGatewayArn(const char* value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn.assign(value); }
-    inline TransitGatewayPeering& WithTransitGatewayArn(const Aws::String& value) { SetTransitGatewayArn(value); return *this;}
-    inline TransitGatewayPeering& WithTransitGatewayArn(Aws::String&& value) { SetTransitGatewayArn(std::move(value)); return *this;}
-    inline TransitGatewayPeering& WithTransitGatewayArn(const char* value) { SetTransitGatewayArn(value); return *this;}
+    template<typename TransitGatewayArnT = Aws::String>
+    void SetTransitGatewayArn(TransitGatewayArnT&& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = std::forward<TransitGatewayArnT>(value); }
+    template<typename TransitGatewayArnT = Aws::String>
+    TransitGatewayPeering& WithTransitGatewayArn(TransitGatewayArnT&& value) { SetTransitGatewayArn(std::forward<TransitGatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the transit gateway peering attachment.</p>
      */
-    inline const Aws::String& GetTransitGatewayPeeringAttachmentId() const{ return m_transitGatewayPeeringAttachmentId; }
+    inline const Aws::String& GetTransitGatewayPeeringAttachmentId() const { return m_transitGatewayPeeringAttachmentId; }
     inline bool TransitGatewayPeeringAttachmentIdHasBeenSet() const { return m_transitGatewayPeeringAttachmentIdHasBeenSet; }
-    inline void SetTransitGatewayPeeringAttachmentId(const Aws::String& value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId = value; }
-    inline void SetTransitGatewayPeeringAttachmentId(Aws::String&& value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId = std::move(value); }
-    inline void SetTransitGatewayPeeringAttachmentId(const char* value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId.assign(value); }
-    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(const Aws::String& value) { SetTransitGatewayPeeringAttachmentId(value); return *this;}
-    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(Aws::String&& value) { SetTransitGatewayPeeringAttachmentId(std::move(value)); return *this;}
-    inline TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(const char* value) { SetTransitGatewayPeeringAttachmentId(value); return *this;}
+    template<typename TransitGatewayPeeringAttachmentIdT = Aws::String>
+    void SetTransitGatewayPeeringAttachmentId(TransitGatewayPeeringAttachmentIdT&& value) { m_transitGatewayPeeringAttachmentIdHasBeenSet = true; m_transitGatewayPeeringAttachmentId = std::forward<TransitGatewayPeeringAttachmentIdT>(value); }
+    template<typename TransitGatewayPeeringAttachmentIdT = Aws::String>
+    TransitGatewayPeering& WithTransitGatewayPeeringAttachmentId(TransitGatewayPeeringAttachmentIdT&& value) { SetTransitGatewayPeeringAttachmentId(std::forward<TransitGatewayPeeringAttachmentIdT>(value)); return *this;}
     ///@}
   private:
 

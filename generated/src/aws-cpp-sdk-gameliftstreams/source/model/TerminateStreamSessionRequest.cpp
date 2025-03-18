@@ -12,12 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateStreamSessionRequest::TerminateStreamSessionRequest() : 
-    m_identifierHasBeenSet(false),
-    m_streamSessionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String TerminateStreamSessionRequest::SerializePayload() const
 {
   return {};

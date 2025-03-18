@@ -32,7 +32,7 @@ namespace Model
   class BatchError
   {
   public:
-    AWS_IVS_API BatchError();
+    AWS_IVS_API BatchError() = default;
     AWS_IVS_API BatchError(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API BatchError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>ARN of an IVS resource; e.g., channel.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline BatchError& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline BatchError& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline BatchError& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    BatchError& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error code.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline BatchError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline BatchError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline BatchError& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    BatchError& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error message, determined by the application.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,23 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-ScheduledUpdateGroupActionRequest::ScheduledUpdateGroupActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
-{
-}
-
 ScheduledUpdateGroupActionRequest::ScheduledUpdateGroupActionRequest(const XmlNode& xmlNode)
-  : ScheduledUpdateGroupActionRequest()
 {
   *this = xmlNode;
 }

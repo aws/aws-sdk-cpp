@@ -30,7 +30,7 @@ namespace Model
   class SendRawEmailRequest : public SESRequest
   {
   public:
-    AWS_SES_API SendRawEmailRequest();
+    AWS_SES_API SendRawEmailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -67,14 +67,12 @@ namespace Model
      * precedence over any Return-Path header that you might include in the raw text of
      * the message.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline SendRawEmailRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline SendRawEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline SendRawEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    SendRawEmailRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +80,14 @@ namespace Model
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
      * addresses.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<Aws::String>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline SendRawEmailRequest& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
-    inline SendRawEmailRequest& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline SendRawEmailRequest& AddDestinations(const Aws::String& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline SendRawEmailRequest& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
-    inline SendRawEmailRequest& AddDestinations(const char* value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    SendRawEmailRequest& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Aws::String>
+    SendRawEmailRequest& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,12 +111,12 @@ namespace Model
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
      * 1,000 characters.</p> </li> </ul>
      */
-    inline const RawMessage& GetRawMessage() const{ return m_rawMessage; }
+    inline const RawMessage& GetRawMessage() const { return m_rawMessage; }
     inline bool RawMessageHasBeenSet() const { return m_rawMessageHasBeenSet; }
-    inline void SetRawMessage(const RawMessage& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
-    inline void SetRawMessage(RawMessage&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = std::move(value); }
-    inline SendRawEmailRequest& WithRawMessage(const RawMessage& value) { SetRawMessage(value); return *this;}
-    inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(std::move(value)); return *this;}
+    template<typename RawMessageT = RawMessage>
+    void SetRawMessage(RawMessageT&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = std::forward<RawMessageT>(value); }
+    template<typename RawMessageT = RawMessage>
+    SendRawEmailRequest& WithRawMessage(RawMessageT&& value) { SetRawMessage(std::forward<RawMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +133,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> 
      */
-    inline const Aws::String& GetFromArn() const{ return m_fromArn; }
+    inline const Aws::String& GetFromArn() const { return m_fromArn; }
     inline bool FromArnHasBeenSet() const { return m_fromArnHasBeenSet; }
-    inline void SetFromArn(const Aws::String& value) { m_fromArnHasBeenSet = true; m_fromArn = value; }
-    inline void SetFromArn(Aws::String&& value) { m_fromArnHasBeenSet = true; m_fromArn = std::move(value); }
-    inline void SetFromArn(const char* value) { m_fromArnHasBeenSet = true; m_fromArn.assign(value); }
-    inline SendRawEmailRequest& WithFromArn(const Aws::String& value) { SetFromArn(value); return *this;}
-    inline SendRawEmailRequest& WithFromArn(Aws::String&& value) { SetFromArn(std::move(value)); return *this;}
-    inline SendRawEmailRequest& WithFromArn(const char* value) { SetFromArn(value); return *this;}
+    template<typename FromArnT = Aws::String>
+    void SetFromArn(FromArnT&& value) { m_fromArnHasBeenSet = true; m_fromArn = std::forward<FromArnT>(value); }
+    template<typename FromArnT = Aws::String>
+    SendRawEmailRequest& WithFromArn(FromArnT&& value) { SetFromArn(std::forward<FromArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,14 +161,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> 
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline SendRawEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline SendRawEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline SendRawEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    SendRawEmailRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,14 +190,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> 
      */
-    inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
+    inline const Aws::String& GetReturnPathArn() const { return m_returnPathArn; }
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
-    inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
-    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
-    inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
-    inline SendRawEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
-    inline SendRawEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
-    inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
+    template<typename ReturnPathArnT = Aws::String>
+    void SetReturnPathArn(ReturnPathArnT&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::forward<ReturnPathArnT>(value); }
+    template<typename ReturnPathArnT = Aws::String>
+    SendRawEmailRequest& WithReturnPathArn(ReturnPathArnT&& value) { SetReturnPathArn(std::forward<ReturnPathArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +204,14 @@ namespace Model
      * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
      * the email that you define, so that you can publish email sending events.</p>
      */
-    inline const Aws::Vector<MessageTag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<MessageTag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<MessageTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SendRawEmailRequest& WithTags(const Aws::Vector<MessageTag>& value) { SetTags(value); return *this;}
-    inline SendRawEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline SendRawEmailRequest& AddTags(const MessageTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline SendRawEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<MessageTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<MessageTag>>
+    SendRawEmailRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = MessageTag>
+    SendRawEmailRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -228,14 +219,12 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendRawEmail</code>.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline SendRawEmailRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline SendRawEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline SendRawEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    SendRawEmailRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
   private:
 

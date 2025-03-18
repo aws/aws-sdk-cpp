@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CustomDocumentIdentifier::CustomDocumentIdentifier() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CustomDocumentIdentifier::CustomDocumentIdentifier(JsonView jsonValue)
-  : CustomDocumentIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomDocumentIdentifier& CustomDocumentIdentifier::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

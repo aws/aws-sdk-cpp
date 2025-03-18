@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingGroupMetadata::ThingGroupMetadata() : 
-    m_parentGroupNameHasBeenSet(false),
-    m_rootToParentThingGroupsHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 ThingGroupMetadata::ThingGroupMetadata(JsonView jsonValue)
-  : ThingGroupMetadata()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ThingGroupMetadata& ThingGroupMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parentGroupName"))
   {
     m_parentGroupName = jsonValue.GetString("parentGroupName");
-
     m_parentGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootToParentThingGroups"))
   {
     Aws::Utils::Array<JsonView> rootToParentThingGroupsJsonList = jsonValue.GetArray("rootToParentThingGroups");
@@ -49,14 +39,11 @@ ThingGroupMetadata& ThingGroupMetadata::operator =(JsonView jsonValue)
     }
     m_rootToParentThingGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

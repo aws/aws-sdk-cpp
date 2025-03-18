@@ -18,16 +18,7 @@ namespace EKSAuth
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_sessionTokenHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_expirationHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetDouble("expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   return *this;
 }
 

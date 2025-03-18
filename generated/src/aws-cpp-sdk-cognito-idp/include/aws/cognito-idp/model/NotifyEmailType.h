@@ -33,7 +33,7 @@ namespace Model
   class NotifyEmailType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType();
+    AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The subject of the threat protection email notification.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline NotifyEmailType& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline NotifyEmailType& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline NotifyEmailType& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    NotifyEmailType& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>HtmlBody</code> or a <code>TextBody</code> to send an HTML-formatted or
      * plaintext message, respectively.</p>
      */
-    inline const Aws::String& GetHtmlBody() const{ return m_htmlBody; }
+    inline const Aws::String& GetHtmlBody() const { return m_htmlBody; }
     inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
-    inline void SetHtmlBody(const Aws::String& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = value; }
-    inline void SetHtmlBody(Aws::String&& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = std::move(value); }
-    inline void SetHtmlBody(const char* value) { m_htmlBodyHasBeenSet = true; m_htmlBody.assign(value); }
-    inline NotifyEmailType& WithHtmlBody(const Aws::String& value) { SetHtmlBody(value); return *this;}
-    inline NotifyEmailType& WithHtmlBody(Aws::String&& value) { SetHtmlBody(std::move(value)); return *this;}
-    inline NotifyEmailType& WithHtmlBody(const char* value) { SetHtmlBody(value); return *this;}
+    template<typename HtmlBodyT = Aws::String>
+    void SetHtmlBody(HtmlBodyT&& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = std::forward<HtmlBodyT>(value); }
+    template<typename HtmlBodyT = Aws::String>
+    NotifyEmailType& WithHtmlBody(HtmlBodyT&& value) { SetHtmlBody(std::forward<HtmlBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <code>HtmlBody</code> or a <code>TextBody</code> to send an HTML-formatted or
      * plaintext message, respectively.</p>
      */
-    inline const Aws::String& GetTextBody() const{ return m_textBody; }
+    inline const Aws::String& GetTextBody() const { return m_textBody; }
     inline bool TextBodyHasBeenSet() const { return m_textBodyHasBeenSet; }
-    inline void SetTextBody(const Aws::String& value) { m_textBodyHasBeenSet = true; m_textBody = value; }
-    inline void SetTextBody(Aws::String&& value) { m_textBodyHasBeenSet = true; m_textBody = std::move(value); }
-    inline void SetTextBody(const char* value) { m_textBodyHasBeenSet = true; m_textBody.assign(value); }
-    inline NotifyEmailType& WithTextBody(const Aws::String& value) { SetTextBody(value); return *this;}
-    inline NotifyEmailType& WithTextBody(Aws::String&& value) { SetTextBody(std::move(value)); return *this;}
-    inline NotifyEmailType& WithTextBody(const char* value) { SetTextBody(value); return *this;}
+    template<typename TextBodyT = Aws::String>
+    void SetTextBody(TextBodyT&& value) { m_textBodyHasBeenSet = true; m_textBody = std::forward<TextBodyT>(value); }
+    template<typename TextBodyT = Aws::String>
+    NotifyEmailType& WithTextBody(TextBodyT&& value) { SetTextBody(std::forward<TextBodyT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriberRequest::UpdateSubscriberRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_oldSubscriberHasBeenSet(false),
-    m_newSubscriberHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriberRequest::SerializePayload() const
 {
   JsonValue payload;

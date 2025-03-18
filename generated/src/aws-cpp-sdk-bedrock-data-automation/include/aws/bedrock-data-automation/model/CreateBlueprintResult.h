@@ -33,35 +33,35 @@ namespace Model
   class CreateBlueprintResult
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintResult();
+    AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintResult() = default;
     AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Blueprint& GetBlueprint() const{ return m_blueprint; }
-    inline void SetBlueprint(const Blueprint& value) { m_blueprint = value; }
-    inline void SetBlueprint(Blueprint&& value) { m_blueprint = std::move(value); }
-    inline CreateBlueprintResult& WithBlueprint(const Blueprint& value) { SetBlueprint(value); return *this;}
-    inline CreateBlueprintResult& WithBlueprint(Blueprint&& value) { SetBlueprint(std::move(value)); return *this;}
+    inline const Blueprint& GetBlueprint() const { return m_blueprint; }
+    template<typename BlueprintT = Blueprint>
+    void SetBlueprint(BlueprintT&& value) { m_blueprintHasBeenSet = true; m_blueprint = std::forward<BlueprintT>(value); }
+    template<typename BlueprintT = Blueprint>
+    CreateBlueprintResult& WithBlueprint(BlueprintT&& value) { SetBlueprint(std::forward<BlueprintT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBlueprintResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBlueprintResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBlueprintResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBlueprintResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Blueprint m_blueprint;
+    bool m_blueprintHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

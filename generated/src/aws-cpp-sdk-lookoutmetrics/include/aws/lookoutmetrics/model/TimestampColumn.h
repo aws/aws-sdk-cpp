@@ -32,7 +32,7 @@ namespace Model
   class TimestampColumn
   {
   public:
-    AWS_LOOKOUTMETRICS_API TimestampColumn();
+    AWS_LOOKOUTMETRICS_API TimestampColumn() = default;
     AWS_LOOKOUTMETRICS_API TimestampColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API TimestampColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the timestamp column.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline TimestampColumn& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline TimestampColumn& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline TimestampColumn& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    TimestampColumn& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the timestamp column.</p>
      */
-    inline const Aws::String& GetColumnFormat() const{ return m_columnFormat; }
+    inline const Aws::String& GetColumnFormat() const { return m_columnFormat; }
     inline bool ColumnFormatHasBeenSet() const { return m_columnFormatHasBeenSet; }
-    inline void SetColumnFormat(const Aws::String& value) { m_columnFormatHasBeenSet = true; m_columnFormat = value; }
-    inline void SetColumnFormat(Aws::String&& value) { m_columnFormatHasBeenSet = true; m_columnFormat = std::move(value); }
-    inline void SetColumnFormat(const char* value) { m_columnFormatHasBeenSet = true; m_columnFormat.assign(value); }
-    inline TimestampColumn& WithColumnFormat(const Aws::String& value) { SetColumnFormat(value); return *this;}
-    inline TimestampColumn& WithColumnFormat(Aws::String&& value) { SetColumnFormat(std::move(value)); return *this;}
-    inline TimestampColumn& WithColumnFormat(const char* value) { SetColumnFormat(value); return *this;}
+    template<typename ColumnFormatT = Aws::String>
+    void SetColumnFormat(ColumnFormatT&& value) { m_columnFormatHasBeenSet = true; m_columnFormat = std::forward<ColumnFormatT>(value); }
+    template<typename ColumnFormatT = Aws::String>
+    TimestampColumn& WithColumnFormat(ColumnFormatT&& value) { SetColumnFormat(std::forward<ColumnFormatT>(value)); return *this;}
     ///@}
   private:
 

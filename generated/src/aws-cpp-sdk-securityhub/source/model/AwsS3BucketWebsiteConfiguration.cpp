@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketWebsiteConfiguration::AwsS3BucketWebsiteConfiguration() : 
-    m_errorDocumentHasBeenSet(false),
-    m_indexDocumentSuffixHasBeenSet(false),
-    m_redirectAllRequestsToHasBeenSet(false),
-    m_routingRulesHasBeenSet(false)
-{
-}
-
 AwsS3BucketWebsiteConfiguration::AwsS3BucketWebsiteConfiguration(JsonView jsonValue)
-  : AwsS3BucketWebsiteConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsS3BucketWebsiteConfiguration& AwsS3BucketWebsiteConfiguration::operator =(Jso
   if(jsonValue.ValueExists("ErrorDocument"))
   {
     m_errorDocument = jsonValue.GetString("ErrorDocument");
-
     m_errorDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexDocumentSuffix"))
   {
     m_indexDocumentSuffix = jsonValue.GetString("IndexDocumentSuffix");
-
     m_indexDocumentSuffixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedirectAllRequestsTo"))
   {
     m_redirectAllRequestsTo = jsonValue.GetObject("RedirectAllRequestsTo");
-
     m_redirectAllRequestsToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingRules"))
   {
     Aws::Utils::Array<JsonView> routingRulesJsonList = jsonValue.GetArray("RoutingRules");
@@ -64,7 +49,6 @@ AwsS3BucketWebsiteConfiguration& AwsS3BucketWebsiteConfiguration::operator =(Jso
     }
     m_routingRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

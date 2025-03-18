@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyCertificateBasedAuthPropertiesRequest::ModifyCertificateBasedAuthPropertiesRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false),
-    m_propertiesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCertificateBasedAuthPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class DescribeConnectionTypeResult
   {
   public:
-    AWS_GLUE_API DescribeConnectionTypeResult();
+    AWS_GLUE_API DescribeConnectionTypeResult() = default;
     AWS_GLUE_API DescribeConnectionTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API DescribeConnectionTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The name of the connection type.</p>
      */
-    inline const Aws::String& GetConnectionType() const{ return m_connectionType; }
-    inline void SetConnectionType(const Aws::String& value) { m_connectionType = value; }
-    inline void SetConnectionType(Aws::String&& value) { m_connectionType = std::move(value); }
-    inline void SetConnectionType(const char* value) { m_connectionType.assign(value); }
-    inline DescribeConnectionTypeResult& WithConnectionType(const Aws::String& value) { SetConnectionType(value); return *this;}
-    inline DescribeConnectionTypeResult& WithConnectionType(Aws::String&& value) { SetConnectionType(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& WithConnectionType(const char* value) { SetConnectionType(value); return *this;}
+    inline const Aws::String& GetConnectionType() const { return m_connectionType; }
+    template<typename ConnectionTypeT = Aws::String>
+    void SetConnectionType(ConnectionTypeT&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::forward<ConnectionTypeT>(value); }
+    template<typename ConnectionTypeT = Aws::String>
+    DescribeConnectionTypeResult& WithConnectionType(ConnectionTypeT&& value) { SetConnectionType(std::forward<ConnectionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the connection type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeConnectionTypeResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeConnectionTypeResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeConnectionTypeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,28 +64,26 @@ namespace Model
      * <p>The supported authentication types, data interface types (compute
      * environments), and data operations of the connector.</p>
      */
-    inline const Capabilities& GetCapabilities() const{ return m_capabilities; }
-    inline void SetCapabilities(const Capabilities& value) { m_capabilities = value; }
-    inline void SetCapabilities(Capabilities&& value) { m_capabilities = std::move(value); }
-    inline DescribeConnectionTypeResult& WithCapabilities(const Capabilities& value) { SetCapabilities(value); return *this;}
-    inline DescribeConnectionTypeResult& WithCapabilities(Capabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    inline const Capabilities& GetCapabilities() const { return m_capabilities; }
+    template<typename CapabilitiesT = Capabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Capabilities>
+    DescribeConnectionTypeResult& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Connection properties which are common across compute environments.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetConnectionProperties() const{ return m_connectionProperties; }
-    inline void SetConnectionProperties(const Aws::Map<Aws::String, Property>& value) { m_connectionProperties = value; }
-    inline void SetConnectionProperties(Aws::Map<Aws::String, Property>&& value) { m_connectionProperties = std::move(value); }
-    inline DescribeConnectionTypeResult& WithConnectionProperties(const Aws::Map<Aws::String, Property>& value) { SetConnectionProperties(value); return *this;}
-    inline DescribeConnectionTypeResult& WithConnectionProperties(Aws::Map<Aws::String, Property>&& value) { SetConnectionProperties(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddConnectionProperties(const Aws::String& key, const Property& value) { m_connectionProperties.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionProperties(Aws::String&& key, const Property& value) { m_connectionProperties.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionProperties(const Aws::String& key, Property&& value) { m_connectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionProperties(Aws::String&& key, Property&& value) { m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionProperties(const char* key, Property&& value) { m_connectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionProperties(const char* key, const Property& value) { m_connectionProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetConnectionProperties() const { return m_connectionProperties; }
+    template<typename ConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetConnectionProperties(ConnectionPropertiesT&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::forward<ConnectionPropertiesT>(value); }
+    template<typename ConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithConnectionProperties(ConnectionPropertiesT&& value) { SetConnectionProperties(std::forward<ConnectionPropertiesT>(value)); return *this;}
+    template<typename ConnectionPropertiesKeyT = Aws::String, typename ConnectionPropertiesValueT = Property>
+    DescribeConnectionTypeResult& AddConnectionProperties(ConnectionPropertiesKeyT&& key, ConnectionPropertiesValueT&& value) {
+      m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::forward<ConnectionPropertiesKeyT>(key), std::forward<ConnectionPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -99,45 +93,41 @@ namespace Model
      * <code>ConnectionOptions</code> defines parameters that can be set in a Spark ETL
      * script in the connection options map passed to a dataframe.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetConnectionOptions() const{ return m_connectionOptions; }
-    inline void SetConnectionOptions(const Aws::Map<Aws::String, Property>& value) { m_connectionOptions = value; }
-    inline void SetConnectionOptions(Aws::Map<Aws::String, Property>&& value) { m_connectionOptions = std::move(value); }
-    inline DescribeConnectionTypeResult& WithConnectionOptions(const Aws::Map<Aws::String, Property>& value) { SetConnectionOptions(value); return *this;}
-    inline DescribeConnectionTypeResult& WithConnectionOptions(Aws::Map<Aws::String, Property>&& value) { SetConnectionOptions(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddConnectionOptions(const Aws::String& key, const Property& value) { m_connectionOptions.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionOptions(Aws::String&& key, const Property& value) { m_connectionOptions.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionOptions(const Aws::String& key, Property&& value) { m_connectionOptions.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionOptions(Aws::String&& key, Property&& value) { m_connectionOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionOptions(const char* key, Property&& value) { m_connectionOptions.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddConnectionOptions(const char* key, const Property& value) { m_connectionOptions.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetConnectionOptions() const { return m_connectionOptions; }
+    template<typename ConnectionOptionsT = Aws::Map<Aws::String, Property>>
+    void SetConnectionOptions(ConnectionOptionsT&& value) { m_connectionOptionsHasBeenSet = true; m_connectionOptions = std::forward<ConnectionOptionsT>(value); }
+    template<typename ConnectionOptionsT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithConnectionOptions(ConnectionOptionsT&& value) { SetConnectionOptions(std::forward<ConnectionOptionsT>(value)); return *this;}
+    template<typename ConnectionOptionsKeyT = Aws::String, typename ConnectionOptionsValueT = Property>
+    DescribeConnectionTypeResult& AddConnectionOptions(ConnectionOptionsKeyT&& key, ConnectionOptionsValueT&& value) {
+      m_connectionOptionsHasBeenSet = true; m_connectionOptions.emplace(std::forward<ConnectionOptionsKeyT>(key), std::forward<ConnectionOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The type of authentication used for the connection.</p>
      */
-    inline const AuthConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
-    inline void SetAuthenticationConfiguration(const AuthConfiguration& value) { m_authenticationConfiguration = value; }
-    inline void SetAuthenticationConfiguration(AuthConfiguration&& value) { m_authenticationConfiguration = std::move(value); }
-    inline DescribeConnectionTypeResult& WithAuthenticationConfiguration(const AuthConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
-    inline DescribeConnectionTypeResult& WithAuthenticationConfiguration(AuthConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+    inline const AuthConfiguration& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
+    template<typename AuthenticationConfigurationT = AuthConfiguration>
+    void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value); }
+    template<typename AuthenticationConfigurationT = AuthConfiguration>
+    DescribeConnectionTypeResult& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) { SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compute environments that are supported by the connection.</p>
      */
-    inline const Aws::Map<Aws::String, ComputeEnvironmentConfiguration>& GetComputeEnvironmentConfigurations() const{ return m_computeEnvironmentConfigurations; }
-    inline void SetComputeEnvironmentConfigurations(const Aws::Map<Aws::String, ComputeEnvironmentConfiguration>& value) { m_computeEnvironmentConfigurations = value; }
-    inline void SetComputeEnvironmentConfigurations(Aws::Map<Aws::String, ComputeEnvironmentConfiguration>&& value) { m_computeEnvironmentConfigurations = std::move(value); }
-    inline DescribeConnectionTypeResult& WithComputeEnvironmentConfigurations(const Aws::Map<Aws::String, ComputeEnvironmentConfiguration>& value) { SetComputeEnvironmentConfigurations(value); return *this;}
-    inline DescribeConnectionTypeResult& WithComputeEnvironmentConfigurations(Aws::Map<Aws::String, ComputeEnvironmentConfiguration>&& value) { SetComputeEnvironmentConfigurations(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(const Aws::String& key, const ComputeEnvironmentConfiguration& value) { m_computeEnvironmentConfigurations.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(Aws::String&& key, const ComputeEnvironmentConfiguration& value) { m_computeEnvironmentConfigurations.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(const Aws::String& key, ComputeEnvironmentConfiguration&& value) { m_computeEnvironmentConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(Aws::String&& key, ComputeEnvironmentConfiguration&& value) { m_computeEnvironmentConfigurations.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(const char* key, ComputeEnvironmentConfiguration&& value) { m_computeEnvironmentConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(const char* key, const ComputeEnvironmentConfiguration& value) { m_computeEnvironmentConfigurations.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, ComputeEnvironmentConfiguration>& GetComputeEnvironmentConfigurations() const { return m_computeEnvironmentConfigurations; }
+    template<typename ComputeEnvironmentConfigurationsT = Aws::Map<Aws::String, ComputeEnvironmentConfiguration>>
+    void SetComputeEnvironmentConfigurations(ComputeEnvironmentConfigurationsT&& value) { m_computeEnvironmentConfigurationsHasBeenSet = true; m_computeEnvironmentConfigurations = std::forward<ComputeEnvironmentConfigurationsT>(value); }
+    template<typename ComputeEnvironmentConfigurationsT = Aws::Map<Aws::String, ComputeEnvironmentConfiguration>>
+    DescribeConnectionTypeResult& WithComputeEnvironmentConfigurations(ComputeEnvironmentConfigurationsT&& value) { SetComputeEnvironmentConfigurations(std::forward<ComputeEnvironmentConfigurationsT>(value)); return *this;}
+    template<typename ComputeEnvironmentConfigurationsKeyT = Aws::String, typename ComputeEnvironmentConfigurationsValueT = ComputeEnvironmentConfiguration>
+    DescribeConnectionTypeResult& AddComputeEnvironmentConfigurations(ComputeEnvironmentConfigurationsKeyT&& key, ComputeEnvironmentConfigurationsValueT&& value) {
+      m_computeEnvironmentConfigurationsHasBeenSet = true; m_computeEnvironmentConfigurations.emplace(std::forward<ComputeEnvironmentConfigurationsKeyT>(key), std::forward<ComputeEnvironmentConfigurationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -145,105 +135,107 @@ namespace Model
      * <p>Physical requirements for a connection, such as VPC, Subnet and Security
      * Group specifications.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetPhysicalConnectionRequirements() const{ return m_physicalConnectionRequirements; }
-    inline void SetPhysicalConnectionRequirements(const Aws::Map<Aws::String, Property>& value) { m_physicalConnectionRequirements = value; }
-    inline void SetPhysicalConnectionRequirements(Aws::Map<Aws::String, Property>&& value) { m_physicalConnectionRequirements = std::move(value); }
-    inline DescribeConnectionTypeResult& WithPhysicalConnectionRequirements(const Aws::Map<Aws::String, Property>& value) { SetPhysicalConnectionRequirements(value); return *this;}
-    inline DescribeConnectionTypeResult& WithPhysicalConnectionRequirements(Aws::Map<Aws::String, Property>&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(const Aws::String& key, const Property& value) { m_physicalConnectionRequirements.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(Aws::String&& key, const Property& value) { m_physicalConnectionRequirements.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(const Aws::String& key, Property&& value) { m_physicalConnectionRequirements.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(Aws::String&& key, Property&& value) { m_physicalConnectionRequirements.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(const char* key, Property&& value) { m_physicalConnectionRequirements.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(const char* key, const Property& value) { m_physicalConnectionRequirements.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetPhysicalConnectionRequirements() const { return m_physicalConnectionRequirements; }
+    template<typename PhysicalConnectionRequirementsT = Aws::Map<Aws::String, Property>>
+    void SetPhysicalConnectionRequirements(PhysicalConnectionRequirementsT&& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = std::forward<PhysicalConnectionRequirementsT>(value); }
+    template<typename PhysicalConnectionRequirementsT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithPhysicalConnectionRequirements(PhysicalConnectionRequirementsT&& value) { SetPhysicalConnectionRequirements(std::forward<PhysicalConnectionRequirementsT>(value)); return *this;}
+    template<typename PhysicalConnectionRequirementsKeyT = Aws::String, typename PhysicalConnectionRequirementsValueT = Property>
+    DescribeConnectionTypeResult& AddPhysicalConnectionRequirements(PhysicalConnectionRequirementsKeyT&& key, PhysicalConnectionRequirementsValueT&& value) {
+      m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements.emplace(std::forward<PhysicalConnectionRequirementsKeyT>(key), std::forward<PhysicalConnectionRequirementsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Connection properties specific to the Athena compute environment.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetAthenaConnectionProperties() const{ return m_athenaConnectionProperties; }
-    inline void SetAthenaConnectionProperties(const Aws::Map<Aws::String, Property>& value) { m_athenaConnectionProperties = value; }
-    inline void SetAthenaConnectionProperties(Aws::Map<Aws::String, Property>&& value) { m_athenaConnectionProperties = std::move(value); }
-    inline DescribeConnectionTypeResult& WithAthenaConnectionProperties(const Aws::Map<Aws::String, Property>& value) { SetAthenaConnectionProperties(value); return *this;}
-    inline DescribeConnectionTypeResult& WithAthenaConnectionProperties(Aws::Map<Aws::String, Property>&& value) { SetAthenaConnectionProperties(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(const Aws::String& key, const Property& value) { m_athenaConnectionProperties.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(Aws::String&& key, const Property& value) { m_athenaConnectionProperties.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(const Aws::String& key, Property&& value) { m_athenaConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(Aws::String&& key, Property&& value) { m_athenaConnectionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(const char* key, Property&& value) { m_athenaConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddAthenaConnectionProperties(const char* key, const Property& value) { m_athenaConnectionProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetAthenaConnectionProperties() const { return m_athenaConnectionProperties; }
+    template<typename AthenaConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetAthenaConnectionProperties(AthenaConnectionPropertiesT&& value) { m_athenaConnectionPropertiesHasBeenSet = true; m_athenaConnectionProperties = std::forward<AthenaConnectionPropertiesT>(value); }
+    template<typename AthenaConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithAthenaConnectionProperties(AthenaConnectionPropertiesT&& value) { SetAthenaConnectionProperties(std::forward<AthenaConnectionPropertiesT>(value)); return *this;}
+    template<typename AthenaConnectionPropertiesKeyT = Aws::String, typename AthenaConnectionPropertiesValueT = Property>
+    DescribeConnectionTypeResult& AddAthenaConnectionProperties(AthenaConnectionPropertiesKeyT&& key, AthenaConnectionPropertiesValueT&& value) {
+      m_athenaConnectionPropertiesHasBeenSet = true; m_athenaConnectionProperties.emplace(std::forward<AthenaConnectionPropertiesKeyT>(key), std::forward<AthenaConnectionPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Connection properties specific to the Python compute environment.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetPythonConnectionProperties() const{ return m_pythonConnectionProperties; }
-    inline void SetPythonConnectionProperties(const Aws::Map<Aws::String, Property>& value) { m_pythonConnectionProperties = value; }
-    inline void SetPythonConnectionProperties(Aws::Map<Aws::String, Property>&& value) { m_pythonConnectionProperties = std::move(value); }
-    inline DescribeConnectionTypeResult& WithPythonConnectionProperties(const Aws::Map<Aws::String, Property>& value) { SetPythonConnectionProperties(value); return *this;}
-    inline DescribeConnectionTypeResult& WithPythonConnectionProperties(Aws::Map<Aws::String, Property>&& value) { SetPythonConnectionProperties(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(const Aws::String& key, const Property& value) { m_pythonConnectionProperties.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(Aws::String&& key, const Property& value) { m_pythonConnectionProperties.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(const Aws::String& key, Property&& value) { m_pythonConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(Aws::String&& key, Property&& value) { m_pythonConnectionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(const char* key, Property&& value) { m_pythonConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddPythonConnectionProperties(const char* key, const Property& value) { m_pythonConnectionProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetPythonConnectionProperties() const { return m_pythonConnectionProperties; }
+    template<typename PythonConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetPythonConnectionProperties(PythonConnectionPropertiesT&& value) { m_pythonConnectionPropertiesHasBeenSet = true; m_pythonConnectionProperties = std::forward<PythonConnectionPropertiesT>(value); }
+    template<typename PythonConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithPythonConnectionProperties(PythonConnectionPropertiesT&& value) { SetPythonConnectionProperties(std::forward<PythonConnectionPropertiesT>(value)); return *this;}
+    template<typename PythonConnectionPropertiesKeyT = Aws::String, typename PythonConnectionPropertiesValueT = Property>
+    DescribeConnectionTypeResult& AddPythonConnectionProperties(PythonConnectionPropertiesKeyT&& key, PythonConnectionPropertiesValueT&& value) {
+      m_pythonConnectionPropertiesHasBeenSet = true; m_pythonConnectionProperties.emplace(std::forward<PythonConnectionPropertiesKeyT>(key), std::forward<PythonConnectionPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Connection properties specific to the Spark compute environment.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetSparkConnectionProperties() const{ return m_sparkConnectionProperties; }
-    inline void SetSparkConnectionProperties(const Aws::Map<Aws::String, Property>& value) { m_sparkConnectionProperties = value; }
-    inline void SetSparkConnectionProperties(Aws::Map<Aws::String, Property>&& value) { m_sparkConnectionProperties = std::move(value); }
-    inline DescribeConnectionTypeResult& WithSparkConnectionProperties(const Aws::Map<Aws::String, Property>& value) { SetSparkConnectionProperties(value); return *this;}
-    inline DescribeConnectionTypeResult& WithSparkConnectionProperties(Aws::Map<Aws::String, Property>&& value) { SetSparkConnectionProperties(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(const Aws::String& key, const Property& value) { m_sparkConnectionProperties.emplace(key, value); return *this; }
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(Aws::String&& key, const Property& value) { m_sparkConnectionProperties.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(const Aws::String& key, Property&& value) { m_sparkConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(Aws::String&& key, Property&& value) { m_sparkConnectionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(const char* key, Property&& value) { m_sparkConnectionProperties.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectionTypeResult& AddSparkConnectionProperties(const char* key, const Property& value) { m_sparkConnectionProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Property>& GetSparkConnectionProperties() const { return m_sparkConnectionProperties; }
+    template<typename SparkConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetSparkConnectionProperties(SparkConnectionPropertiesT&& value) { m_sparkConnectionPropertiesHasBeenSet = true; m_sparkConnectionProperties = std::forward<SparkConnectionPropertiesT>(value); }
+    template<typename SparkConnectionPropertiesT = Aws::Map<Aws::String, Property>>
+    DescribeConnectionTypeResult& WithSparkConnectionProperties(SparkConnectionPropertiesT&& value) { SetSparkConnectionProperties(std::forward<SparkConnectionPropertiesT>(value)); return *this;}
+    template<typename SparkConnectionPropertiesKeyT = Aws::String, typename SparkConnectionPropertiesValueT = Property>
+    DescribeConnectionTypeResult& AddSparkConnectionProperties(SparkConnectionPropertiesKeyT&& key, SparkConnectionPropertiesValueT&& value) {
+      m_sparkConnectionPropertiesHasBeenSet = true; m_sparkConnectionProperties.emplace(std::forward<SparkConnectionPropertiesKeyT>(key), std::forward<SparkConnectionPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConnectionTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConnectionTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConnectionTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConnectionTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectionType;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Capabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_connectionProperties;
+    bool m_connectionPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_connectionOptions;
+    bool m_connectionOptionsHasBeenSet = false;
 
     AuthConfiguration m_authenticationConfiguration;
+    bool m_authenticationConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, ComputeEnvironmentConfiguration> m_computeEnvironmentConfigurations;
+    bool m_computeEnvironmentConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_physicalConnectionRequirements;
+    bool m_physicalConnectionRequirementsHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_athenaConnectionProperties;
+    bool m_athenaConnectionPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_pythonConnectionProperties;
+    bool m_pythonConnectionPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Property> m_sparkConnectionProperties;
+    bool m_sparkConnectionPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

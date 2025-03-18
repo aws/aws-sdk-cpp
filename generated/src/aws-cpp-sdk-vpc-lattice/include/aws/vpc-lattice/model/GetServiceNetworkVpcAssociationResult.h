@@ -30,7 +30,7 @@ namespace Model
   class GetServiceNetworkVpcAssociationResult
   {
   public:
-    AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationResult();
+    AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationResult() = default;
     AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,76 +39,66 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the association.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetServiceNetworkVpcAssociationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account that created the association.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure code.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCode.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure message.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,129 +106,130 @@ namespace Model
      * <p>The date and time that the association was last updated, in ISO-8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetServiceNetworkVpcAssociationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the security groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIds = std::move(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIds.push_back(value); return *this; }
-    inline GetServiceNetworkVpcAssociationResult& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline GetServiceNetworkVpcAssociationResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    GetServiceNetworkVpcAssociationResult& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the service network.</p>
      */
-    inline const Aws::String& GetServiceNetworkArn() const{ return m_serviceNetworkArn; }
-    inline void SetServiceNetworkArn(const Aws::String& value) { m_serviceNetworkArn = value; }
-    inline void SetServiceNetworkArn(Aws::String&& value) { m_serviceNetworkArn = std::move(value); }
-    inline void SetServiceNetworkArn(const char* value) { m_serviceNetworkArn.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkArn(const Aws::String& value) { SetServiceNetworkArn(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkArn(Aws::String&& value) { SetServiceNetworkArn(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkArn(const char* value) { SetServiceNetworkArn(value); return *this;}
+    inline const Aws::String& GetServiceNetworkArn() const { return m_serviceNetworkArn; }
+    template<typename ServiceNetworkArnT = Aws::String>
+    void SetServiceNetworkArn(ServiceNetworkArnT&& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = std::forward<ServiceNetworkArnT>(value); }
+    template<typename ServiceNetworkArnT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithServiceNetworkArn(ServiceNetworkArnT&& value) { SetServiceNetworkArn(std::forward<ServiceNetworkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service network.</p>
      */
-    inline const Aws::String& GetServiceNetworkId() const{ return m_serviceNetworkId; }
-    inline void SetServiceNetworkId(const Aws::String& value) { m_serviceNetworkId = value; }
-    inline void SetServiceNetworkId(Aws::String&& value) { m_serviceNetworkId = std::move(value); }
-    inline void SetServiceNetworkId(const char* value) { m_serviceNetworkId.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkId(const Aws::String& value) { SetServiceNetworkId(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkId(Aws::String&& value) { SetServiceNetworkId(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkId(const char* value) { SetServiceNetworkId(value); return *this;}
+    inline const Aws::String& GetServiceNetworkId() const { return m_serviceNetworkId; }
+    template<typename ServiceNetworkIdT = Aws::String>
+    void SetServiceNetworkId(ServiceNetworkIdT&& value) { m_serviceNetworkIdHasBeenSet = true; m_serviceNetworkId = std::forward<ServiceNetworkIdT>(value); }
+    template<typename ServiceNetworkIdT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithServiceNetworkId(ServiceNetworkIdT&& value) { SetServiceNetworkId(std::forward<ServiceNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service network.</p>
      */
-    inline const Aws::String& GetServiceNetworkName() const{ return m_serviceNetworkName; }
-    inline void SetServiceNetworkName(const Aws::String& value) { m_serviceNetworkName = value; }
-    inline void SetServiceNetworkName(Aws::String&& value) { m_serviceNetworkName = std::move(value); }
-    inline void SetServiceNetworkName(const char* value) { m_serviceNetworkName.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkName(const Aws::String& value) { SetServiceNetworkName(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkName(Aws::String&& value) { SetServiceNetworkName(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithServiceNetworkName(const char* value) { SetServiceNetworkName(value); return *this;}
+    inline const Aws::String& GetServiceNetworkName() const { return m_serviceNetworkName; }
+    template<typename ServiceNetworkNameT = Aws::String>
+    void SetServiceNetworkName(ServiceNetworkNameT&& value) { m_serviceNetworkNameHasBeenSet = true; m_serviceNetworkName = std::forward<ServiceNetworkNameT>(value); }
+    template<typename ServiceNetworkNameT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithServiceNetworkName(ServiceNetworkNameT&& value) { SetServiceNetworkName(std::forward<ServiceNetworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the association.</p>
      */
-    inline const ServiceNetworkVpcAssociationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ServiceNetworkVpcAssociationStatus& value) { m_status = value; }
-    inline void SetStatus(ServiceNetworkVpcAssociationStatus&& value) { m_status = std::move(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithStatus(const ServiceNetworkVpcAssociationStatus& value) { SetStatus(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ServiceNetworkVpcAssociationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ServiceNetworkVpcAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceNetworkVpcAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceNetworkVpcAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_serviceNetworkArn;
+    bool m_serviceNetworkArnHasBeenSet = false;
 
     Aws::String m_serviceNetworkId;
+    bool m_serviceNetworkIdHasBeenSet = false;
 
     Aws::String m_serviceNetworkName;
+    bool m_serviceNetworkNameHasBeenSet = false;
 
-    ServiceNetworkVpcAssociationStatus m_status;
+    ServiceNetworkVpcAssociationStatus m_status{ServiceNetworkVpcAssociationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

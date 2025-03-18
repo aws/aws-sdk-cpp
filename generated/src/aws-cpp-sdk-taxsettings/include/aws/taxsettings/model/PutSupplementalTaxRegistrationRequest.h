@@ -21,7 +21,7 @@ namespace Model
   class PutSupplementalTaxRegistrationRequest : public TaxSettingsRequest
   {
   public:
-    AWS_TAXSETTINGS_API PutSupplementalTaxRegistrationRequest();
+    AWS_TAXSETTINGS_API PutSupplementalTaxRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
      * <p> The supplemental TRN information that will be stored for the caller account
      * ID. </p>
      */
-    inline const SupplementalTaxRegistrationEntry& GetTaxRegistrationEntry() const{ return m_taxRegistrationEntry; }
+    inline const SupplementalTaxRegistrationEntry& GetTaxRegistrationEntry() const { return m_taxRegistrationEntry; }
     inline bool TaxRegistrationEntryHasBeenSet() const { return m_taxRegistrationEntryHasBeenSet; }
-    inline void SetTaxRegistrationEntry(const SupplementalTaxRegistrationEntry& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = value; }
-    inline void SetTaxRegistrationEntry(SupplementalTaxRegistrationEntry&& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = std::move(value); }
-    inline PutSupplementalTaxRegistrationRequest& WithTaxRegistrationEntry(const SupplementalTaxRegistrationEntry& value) { SetTaxRegistrationEntry(value); return *this;}
-    inline PutSupplementalTaxRegistrationRequest& WithTaxRegistrationEntry(SupplementalTaxRegistrationEntry&& value) { SetTaxRegistrationEntry(std::move(value)); return *this;}
+    template<typename TaxRegistrationEntryT = SupplementalTaxRegistrationEntry>
+    void SetTaxRegistrationEntry(TaxRegistrationEntryT&& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = std::forward<TaxRegistrationEntryT>(value); }
+    template<typename TaxRegistrationEntryT = SupplementalTaxRegistrationEntry>
+    PutSupplementalTaxRegistrationRequest& WithTaxRegistrationEntry(TaxRegistrationEntryT&& value) { SetTaxRegistrationEntry(std::forward<TaxRegistrationEntryT>(value)); return *this;}
     ///@}
   private:
 

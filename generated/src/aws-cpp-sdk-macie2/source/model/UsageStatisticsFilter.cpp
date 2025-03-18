@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UsageStatisticsFilter::UsageStatisticsFilter() : 
-    m_comparator(UsageStatisticsFilterComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(UsageStatisticsFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 UsageStatisticsFilter::UsageStatisticsFilter(JsonView jsonValue)
-  : UsageStatisticsFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ UsageStatisticsFilter& UsageStatisticsFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = UsageStatisticsFilterComparatorMapper::GetUsageStatisticsFilterComparatorForName(jsonValue.GetString("comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = UsageStatisticsFilterKeyMapper::GetUsageStatisticsFilterKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ UsageStatisticsFilter& UsageStatisticsFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

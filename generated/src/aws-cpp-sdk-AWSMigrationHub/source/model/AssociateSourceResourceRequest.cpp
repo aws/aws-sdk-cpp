@@ -12,15 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateSourceResourceRequest::AssociateSourceResourceRequest() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_sourceResourceHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSourceResourceRequest::SerializePayload() const
 {
   JsonValue payload;

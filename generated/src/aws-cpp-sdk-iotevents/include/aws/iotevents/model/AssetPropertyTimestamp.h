@@ -50,7 +50,7 @@ namespace Model
   class AssetPropertyTimestamp
   {
   public:
-    AWS_IOTEVENTS_API AssetPropertyTimestamp();
+    AWS_IOTEVENTS_API AssetPropertyTimestamp() = default;
     AWS_IOTEVENTS_API AssetPropertyTimestamp(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API AssetPropertyTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,14 +61,12 @@ namespace Model
      * <p>The timestamp, in seconds, in the Unix epoch format. The valid range is
      * between 1-31556889864403199.</p>
      */
-    inline const Aws::String& GetTimeInSeconds() const{ return m_timeInSeconds; }
+    inline const Aws::String& GetTimeInSeconds() const { return m_timeInSeconds; }
     inline bool TimeInSecondsHasBeenSet() const { return m_timeInSecondsHasBeenSet; }
-    inline void SetTimeInSeconds(const Aws::String& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = value; }
-    inline void SetTimeInSeconds(Aws::String&& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = std::move(value); }
-    inline void SetTimeInSeconds(const char* value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds.assign(value); }
-    inline AssetPropertyTimestamp& WithTimeInSeconds(const Aws::String& value) { SetTimeInSeconds(value); return *this;}
-    inline AssetPropertyTimestamp& WithTimeInSeconds(Aws::String&& value) { SetTimeInSeconds(std::move(value)); return *this;}
-    inline AssetPropertyTimestamp& WithTimeInSeconds(const char* value) { SetTimeInSeconds(value); return *this;}
+    template<typename TimeInSecondsT = Aws::String>
+    void SetTimeInSeconds(TimeInSecondsT&& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = std::forward<TimeInSecondsT>(value); }
+    template<typename TimeInSecondsT = Aws::String>
+    AssetPropertyTimestamp& WithTimeInSeconds(TimeInSecondsT&& value) { SetTimeInSeconds(std::forward<TimeInSecondsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid
      * range is between 0-999999999.</p>
      */
-    inline const Aws::String& GetOffsetInNanos() const{ return m_offsetInNanos; }
+    inline const Aws::String& GetOffsetInNanos() const { return m_offsetInNanos; }
     inline bool OffsetInNanosHasBeenSet() const { return m_offsetInNanosHasBeenSet; }
-    inline void SetOffsetInNanos(const Aws::String& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = value; }
-    inline void SetOffsetInNanos(Aws::String&& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = std::move(value); }
-    inline void SetOffsetInNanos(const char* value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos.assign(value); }
-    inline AssetPropertyTimestamp& WithOffsetInNanos(const Aws::String& value) { SetOffsetInNanos(value); return *this;}
-    inline AssetPropertyTimestamp& WithOffsetInNanos(Aws::String&& value) { SetOffsetInNanos(std::move(value)); return *this;}
-    inline AssetPropertyTimestamp& WithOffsetInNanos(const char* value) { SetOffsetInNanos(value); return *this;}
+    template<typename OffsetInNanosT = Aws::String>
+    void SetOffsetInNanos(OffsetInNanosT&& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = std::forward<OffsetInNanosT>(value); }
+    template<typename OffsetInNanosT = Aws::String>
+    AssetPropertyTimestamp& WithOffsetInNanos(OffsetInNanosT&& value) { SetOffsetInNanos(std::forward<OffsetInNanosT>(value)); return *this;}
     ///@}
   private:
 

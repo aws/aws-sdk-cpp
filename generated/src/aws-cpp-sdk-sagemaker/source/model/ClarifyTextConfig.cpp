@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClarifyTextConfig::ClarifyTextConfig() : 
-    m_language(ClarifyTextLanguage::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_granularity(ClarifyTextGranularity::NOT_SET),
-    m_granularityHasBeenSet(false)
-{
-}
-
 ClarifyTextConfig::ClarifyTextConfig(JsonView jsonValue)
-  : ClarifyTextConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ClarifyTextConfig& ClarifyTextConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Language"))
   {
     m_language = ClarifyTextLanguageMapper::GetClarifyTextLanguageForName(jsonValue.GetString("Language"));
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Granularity"))
   {
     m_granularity = ClarifyTextGranularityMapper::GetClarifyTextGranularityForName(jsonValue.GetString("Granularity"));
-
     m_granularityHasBeenSet = true;
   }
-
   return *this;
 }
 

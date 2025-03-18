@@ -40,7 +40,7 @@ namespace Model
   class DynamicAudioSelector
   {
   public:
-    AWS_MEDIACONVERT_API DynamicAudioSelector();
+    AWS_MEDIACONVERT_API DynamicAudioSelector() = default;
     AWS_MEDIACONVERT_API DynamicAudioSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DynamicAudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,26 +66,22 @@ namespace Model
      * your input's STTS table. Your output audio and video may not be aligned or it
      * may contain audio artifacts.
      */
-    inline const AudioDurationCorrection& GetAudioDurationCorrection() const{ return m_audioDurationCorrection; }
+    inline AudioDurationCorrection GetAudioDurationCorrection() const { return m_audioDurationCorrection; }
     inline bool AudioDurationCorrectionHasBeenSet() const { return m_audioDurationCorrectionHasBeenSet; }
-    inline void SetAudioDurationCorrection(const AudioDurationCorrection& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = value; }
-    inline void SetAudioDurationCorrection(AudioDurationCorrection&& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = std::move(value); }
-    inline DynamicAudioSelector& WithAudioDurationCorrection(const AudioDurationCorrection& value) { SetAudioDurationCorrection(value); return *this;}
-    inline DynamicAudioSelector& WithAudioDurationCorrection(AudioDurationCorrection&& value) { SetAudioDurationCorrection(std::move(value)); return *this;}
+    inline void SetAudioDurationCorrection(AudioDurationCorrection value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = value; }
+    inline DynamicAudioSelector& WithAudioDurationCorrection(AudioDurationCorrection value) { SetAudioDurationCorrection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Specify the S3, HTTP, or HTTPS URL for your external audio file input.
      */
-    inline const Aws::String& GetExternalAudioFileInput() const{ return m_externalAudioFileInput; }
+    inline const Aws::String& GetExternalAudioFileInput() const { return m_externalAudioFileInput; }
     inline bool ExternalAudioFileInputHasBeenSet() const { return m_externalAudioFileInputHasBeenSet; }
-    inline void SetExternalAudioFileInput(const Aws::String& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = value; }
-    inline void SetExternalAudioFileInput(Aws::String&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::move(value); }
-    inline void SetExternalAudioFileInput(const char* value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput.assign(value); }
-    inline DynamicAudioSelector& WithExternalAudioFileInput(const Aws::String& value) { SetExternalAudioFileInput(value); return *this;}
-    inline DynamicAudioSelector& WithExternalAudioFileInput(Aws::String&& value) { SetExternalAudioFileInput(std::move(value)); return *this;}
-    inline DynamicAudioSelector& WithExternalAudioFileInput(const char* value) { SetExternalAudioFileInput(value); return *this;}
+    template<typename ExternalAudioFileInputT = Aws::String>
+    void SetExternalAudioFileInput(ExternalAudioFileInputT&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::forward<ExternalAudioFileInputT>(value); }
+    template<typename ExternalAudioFileInputT = Aws::String>
+    DynamicAudioSelector& WithExternalAudioFileInput(ExternalAudioFileInputT&& value) { SetExternalAudioFileInput(std::forward<ExternalAudioFileInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,10 @@ namespace Model
      * an ISO 639-2 three-letter code listed at
      * https://www.loc.gov/standards/iso639-2/php/code_list.php
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DynamicAudioSelector& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DynamicAudioSelector& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DynamicAudioSelector& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -111,7 +105,7 @@ To specify no offset: Keep the default value, 0.
 To specify an offset:
      * Enter an integer from -2147483648 to 2147483647
      */
-    inline int GetOffset() const{ return m_offset; }
+    inline int GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
     inline DynamicAudioSelector& WithOffset(int value) { SetOffset(value); return *this;}
@@ -125,28 +119,26 @@ To specify an offset:
      * specify a language code under the Language code setting. If there is no matching
      * Language code in your source, then no track will be selected.
      */
-    inline const DynamicAudioSelectorType& GetSelectorType() const{ return m_selectorType; }
+    inline DynamicAudioSelectorType GetSelectorType() const { return m_selectorType; }
     inline bool SelectorTypeHasBeenSet() const { return m_selectorTypeHasBeenSet; }
-    inline void SetSelectorType(const DynamicAudioSelectorType& value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
-    inline void SetSelectorType(DynamicAudioSelectorType&& value) { m_selectorTypeHasBeenSet = true; m_selectorType = std::move(value); }
-    inline DynamicAudioSelector& WithSelectorType(const DynamicAudioSelectorType& value) { SetSelectorType(value); return *this;}
-    inline DynamicAudioSelector& WithSelectorType(DynamicAudioSelectorType&& value) { SetSelectorType(std::move(value)); return *this;}
+    inline void SetSelectorType(DynamicAudioSelectorType value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
+    inline DynamicAudioSelector& WithSelectorType(DynamicAudioSelectorType value) { SetSelectorType(value); return *this;}
     ///@}
   private:
 
-    AudioDurationCorrection m_audioDurationCorrection;
+    AudioDurationCorrection m_audioDurationCorrection{AudioDurationCorrection::NOT_SET};
     bool m_audioDurationCorrectionHasBeenSet = false;
 
     Aws::String m_externalAudioFileInput;
     bool m_externalAudioFileInputHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_offset;
+    int m_offset{0};
     bool m_offsetHasBeenSet = false;
 
-    DynamicAudioSelectorType m_selectorType;
+    DynamicAudioSelectorType m_selectorType{DynamicAudioSelectorType::NOT_SET};
     bool m_selectorTypeHasBeenSet = false;
   };
 

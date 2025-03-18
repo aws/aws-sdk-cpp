@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDataSetRefreshPropertiesResult::DeleteDataSetRefreshPropertiesResult() : 
-    m_status(0)
-{
-}
-
 DeleteDataSetRefreshPropertiesResult::DeleteDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDataSetRefreshPropertiesResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteDataSetRefreshPropertiesResult& DeleteDataSetRefreshPropertiesResult::oper
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

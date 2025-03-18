@@ -26,7 +26,7 @@ namespace Model
   class CreateAIAgentRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API CreateAIAgentRequest();
+    AWS_QCONNECT_API CreateAIAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline CreateAIAgentRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline CreateAIAgentRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline CreateAIAgentRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    CreateAIAgentRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,97 +58,84 @@ namespace Model
      * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>..</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAIAgentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAIAgentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAIAgentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAIAgentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the AI Agent.</p>
      */
-    inline const AIAgentConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AIAgentConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AIAgentConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AIAgentConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateAIAgentRequest& WithConfiguration(const AIAgentConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateAIAgentRequest& WithConfiguration(AIAgentConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AIAgentConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AIAgentConfiguration>
+    CreateAIAgentRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the AI Agent.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAIAgentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAIAgentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAIAgentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAIAgentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the AI Agent.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAIAgentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAIAgentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAIAgentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAIAgentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAIAgentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAIAgentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAIAgentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAIAgentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAIAgentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAIAgentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAIAgentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAIAgentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAIAgentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAIAgentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAIAgentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The type of the AI Agent.</p>
      */
-    inline const AIAgentType& GetType() const{ return m_type; }
+    inline AIAgentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AIAgentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AIAgentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateAIAgentRequest& WithType(const AIAgentType& value) { SetType(value); return *this;}
-    inline CreateAIAgentRequest& WithType(AIAgentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AIAgentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateAIAgentRequest& WithType(AIAgentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility status of the AI Agent.</p>
      */
-    inline const VisibilityStatus& GetVisibilityStatus() const{ return m_visibilityStatus; }
+    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
     inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
-    inline void SetVisibilityStatus(const VisibilityStatus& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
-    inline void SetVisibilityStatus(VisibilityStatus&& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = std::move(value); }
-    inline CreateAIAgentRequest& WithVisibilityStatus(const VisibilityStatus& value) { SetVisibilityStatus(value); return *this;}
-    inline CreateAIAgentRequest& WithVisibilityStatus(VisibilityStatus&& value) { SetVisibilityStatus(std::move(value)); return *this;}
+    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
+    inline CreateAIAgentRequest& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
     ///@}
   private:
 
@@ -172,10 +157,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AIAgentType m_type;
+    AIAgentType m_type{AIAgentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    VisibilityStatus m_visibilityStatus;
+    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
     bool m_visibilityStatusHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class InputDataConfig
   {
   public:
-    AWS_COMPREHEND_API InputDataConfig();
+    AWS_COMPREHEND_API InputDataConfig() = default;
     AWS_COMPREHEND_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * single file, Amazon Comprehend uses that file as input. If more than one file
      * begins with the prefix, Amazon Comprehend uses all of them as input.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    InputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * - Each line in a file is considered a separate document. Use this option when
      * you are processing many short documents, such as text messages.</p> </li> </ul>
      */
-    inline const InputFormat& GetInputFormat() const{ return m_inputFormat; }
+    inline InputFormat GetInputFormat() const { return m_inputFormat; }
     inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
-    inline void SetInputFormat(const InputFormat& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
-    inline void SetInputFormat(InputFormat&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::move(value); }
-    inline InputDataConfig& WithInputFormat(const InputFormat& value) { SetInputFormat(value); return *this;}
-    inline InputDataConfig& WithInputFormat(InputFormat&& value) { SetInputFormat(std::move(value)); return *this;}
+    inline void SetInputFormat(InputFormat value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
+    inline InputDataConfig& WithInputFormat(InputFormat value) { SetInputFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -82,19 +78,19 @@ namespace Model
      * <p>Provides configuration parameters to override the default actions for
      * extracting text from PDF documents and image files.</p>
      */
-    inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
+    inline const DocumentReaderConfig& GetDocumentReaderConfig() const { return m_documentReaderConfig; }
     inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
-    inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
-    inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
-    inline InputDataConfig& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
-    inline InputDataConfig& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    void SetDocumentReaderConfig(DocumentReaderConfigT&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::forward<DocumentReaderConfigT>(value); }
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    InputDataConfig& WithDocumentReaderConfig(DocumentReaderConfigT&& value) { SetDocumentReaderConfig(std::forward<DocumentReaderConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    InputFormat m_inputFormat;
+    InputFormat m_inputFormat{InputFormat::NOT_SET};
     bool m_inputFormatHasBeenSet = false;
 
     DocumentReaderConfig m_documentReaderConfig;

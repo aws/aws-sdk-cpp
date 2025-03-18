@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetParameterHistoryRequest::GetParameterHistoryRequest() : 
-    m_nameHasBeenSet(false),
-    m_withDecryption(false),
-    m_withDecryptionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetParameterHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

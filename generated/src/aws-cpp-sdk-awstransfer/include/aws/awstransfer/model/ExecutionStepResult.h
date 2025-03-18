@@ -34,7 +34,7 @@ namespace Model
   class ExecutionStepResult
   {
   public:
-    AWS_TRANSFER_API ExecutionStepResult();
+    AWS_TRANSFER_API ExecutionStepResult() = default;
     AWS_TRANSFER_API ExecutionStepResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ExecutionStepResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * </li> <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
      * </ul>
      */
-    inline const WorkflowStepType& GetStepType() const{ return m_stepType; }
+    inline WorkflowStepType GetStepType() const { return m_stepType; }
     inline bool StepTypeHasBeenSet() const { return m_stepTypeHasBeenSet; }
-    inline void SetStepType(const WorkflowStepType& value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
-    inline void SetStepType(WorkflowStepType&& value) { m_stepTypeHasBeenSet = true; m_stepType = std::move(value); }
-    inline ExecutionStepResult& WithStepType(const WorkflowStepType& value) { SetStepType(value); return *this;}
-    inline ExecutionStepResult& WithStepType(WorkflowStepType&& value) { SetStepType(std::move(value)); return *this;}
+    inline void SetStepType(WorkflowStepType value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
+    inline ExecutionStepResult& WithStepType(WorkflowStepType value) { SetStepType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The values for the key/value pair applied as a tag to the file. Only
      * applicable if the step type is <code>TAG</code>.</p>
      */
-    inline const Aws::String& GetOutputs() const{ return m_outputs; }
+    inline const Aws::String& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::String& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::String&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline void SetOutputs(const char* value) { m_outputsHasBeenSet = true; m_outputs.assign(value); }
-    inline ExecutionStepResult& WithOutputs(const Aws::String& value) { SetOutputs(value); return *this;}
-    inline ExecutionStepResult& WithOutputs(Aws::String&& value) { SetOutputs(std::move(value)); return *this;}
-    inline ExecutionStepResult& WithOutputs(const char* value) { SetOutputs(value); return *this;}
+    template<typename OutputsT = Aws::String>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::String>
+    ExecutionStepResult& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,16 +74,16 @@ namespace Model
      * <p>Specifies the details for an error, if it occurred during execution of the
      * specified workflow step.</p>
      */
-    inline const ExecutionError& GetError() const{ return m_error; }
+    inline const ExecutionError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ExecutionError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ExecutionError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ExecutionStepResult& WithError(const ExecutionError& value) { SetError(value); return *this;}
-    inline ExecutionStepResult& WithError(ExecutionError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ExecutionError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ExecutionError>
+    ExecutionStepResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    WorkflowStepType m_stepType;
+    WorkflowStepType m_stepType{WorkflowStepType::NOT_SET};
     bool m_stepTypeHasBeenSet = false;
 
     Aws::String m_outputs;

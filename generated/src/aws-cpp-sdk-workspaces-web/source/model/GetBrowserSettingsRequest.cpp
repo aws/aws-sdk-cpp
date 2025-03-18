@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBrowserSettingsRequest::GetBrowserSettingsRequest() : 
-    m_browserSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetBrowserSettingsRequest::SerializePayload() const
 {
   return {};

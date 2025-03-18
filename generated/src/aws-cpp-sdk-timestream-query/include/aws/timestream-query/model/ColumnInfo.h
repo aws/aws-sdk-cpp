@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -34,7 +34,7 @@ namespace Model
   class ColumnInfo
   {
   public:
-    AWS_TIMESTREAMQUERY_API ColumnInfo();
+    AWS_TIMESTREAMQUERY_API ColumnInfo() = default;
     AWS_TIMESTREAMQUERY_API ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p> The name of the result set column. The name of the result set is available
      * for columns of all data types except for arrays. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ColumnInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ColumnInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ColumnInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ColumnInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,17 @@ namespace Model
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    AWS_TIMESTREAMQUERY_API const Type& GetType() const;
-    AWS_TIMESTREAMQUERY_API bool TypeHasBeenSet() const;
-    AWS_TIMESTREAMQUERY_API void SetType(const Type& value);
-    AWS_TIMESTREAMQUERY_API void SetType(Type&& value);
-    AWS_TIMESTREAMQUERY_API ColumnInfo& WithType(const Type& value);
-    AWS_TIMESTREAMQUERY_API ColumnInfo& WithType(Type&& value);
+    inline const Type& GetType() const{
+      return *m_type;
+    }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    template<typename TypeT = Type>
+    void SetType(TypeT&& value) {
+      m_typeHasBeenSet = true; 
+      m_type = Aws::MakeShared<Type>("ColumnInfo", std::forward<TypeT>(value));
+    }
+    template<typename TypeT = Type>
+    ColumnInfo& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

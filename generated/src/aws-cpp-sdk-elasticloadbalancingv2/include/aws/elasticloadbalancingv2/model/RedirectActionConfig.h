@@ -41,7 +41,7 @@ namespace Model
   class RedirectActionConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,28 +55,24 @@ namespace Model
      * HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to
      * HTTP.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline RedirectActionConfig& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline RedirectActionConfig& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline RedirectActionConfig& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    RedirectActionConfig& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
      */
-    inline const Aws::String& GetPort() const{ return m_port; }
+    inline const Aws::String& GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-    inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
-    inline void SetPort(Aws::String&& value) { m_portHasBeenSet = true; m_port = std::move(value); }
-    inline void SetPort(const char* value) { m_portHasBeenSet = true; m_port.assign(value); }
-    inline RedirectActionConfig& WithPort(const Aws::String& value) { SetPort(value); return *this;}
-    inline RedirectActionConfig& WithPort(Aws::String&& value) { SetPort(std::move(value)); return *this;}
-    inline RedirectActionConfig& WithPort(const char* value) { SetPort(value); return *this;}
+    template<typename PortT = Aws::String>
+    void SetPort(PortT&& value) { m_portHasBeenSet = true; m_port = std::forward<PortT>(value); }
+    template<typename PortT = Aws::String>
+    RedirectActionConfig& WithPort(PortT&& value) { SetPort(std::forward<PortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>The hostname. This component is not percent-encoded. The hostname can contain
      * #{host}.</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline RedirectActionConfig& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline RedirectActionConfig& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline RedirectActionConfig& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    RedirectActionConfig& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +93,12 @@ namespace Model
      * <p>The absolute path, starting with the leading "/". This component is not
      * percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline RedirectActionConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline RedirectActionConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline RedirectActionConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    RedirectActionConfig& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * not include the leading "?", as it is automatically added. You can specify any
      * of the reserved keywords.</p>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline RedirectActionConfig& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline RedirectActionConfig& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline RedirectActionConfig& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    RedirectActionConfig& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +120,10 @@ namespace Model
      * <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or
      * temporary (HTTP 302).</p>
      */
-    inline const RedirectActionStatusCodeEnum& GetStatusCode() const{ return m_statusCode; }
+    inline RedirectActionStatusCodeEnum GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const RedirectActionStatusCodeEnum& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(RedirectActionStatusCodeEnum&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline RedirectActionConfig& WithStatusCode(const RedirectActionStatusCodeEnum& value) { SetStatusCode(value); return *this;}
-    inline RedirectActionConfig& WithStatusCode(RedirectActionStatusCodeEnum&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(RedirectActionStatusCodeEnum value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline RedirectActionConfig& WithStatusCode(RedirectActionStatusCodeEnum value) { SetStatusCode(value); return *this;}
     ///@}
   private:
 
@@ -154,7 +142,7 @@ namespace Model
     Aws::String m_query;
     bool m_queryHasBeenSet = false;
 
-    RedirectActionStatusCodeEnum m_statusCode;
+    RedirectActionStatusCodeEnum m_statusCode{RedirectActionStatusCodeEnum::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
   };
 

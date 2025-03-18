@@ -36,7 +36,7 @@ namespace Model
   class S3Presign
   {
   public:
-    AWS_SAGEMAKER_API S3Presign();
+    AWS_SAGEMAKER_API S3Presign() = default;
     AWS_SAGEMAKER_API S3Presign(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API S3Presign& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Use this parameter to specify the allowed request source. Possible sources
      * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
      */
-    inline const IamPolicyConstraints& GetIamPolicyConstraints() const{ return m_iamPolicyConstraints; }
+    inline const IamPolicyConstraints& GetIamPolicyConstraints() const { return m_iamPolicyConstraints; }
     inline bool IamPolicyConstraintsHasBeenSet() const { return m_iamPolicyConstraintsHasBeenSet; }
-    inline void SetIamPolicyConstraints(const IamPolicyConstraints& value) { m_iamPolicyConstraintsHasBeenSet = true; m_iamPolicyConstraints = value; }
-    inline void SetIamPolicyConstraints(IamPolicyConstraints&& value) { m_iamPolicyConstraintsHasBeenSet = true; m_iamPolicyConstraints = std::move(value); }
-    inline S3Presign& WithIamPolicyConstraints(const IamPolicyConstraints& value) { SetIamPolicyConstraints(value); return *this;}
-    inline S3Presign& WithIamPolicyConstraints(IamPolicyConstraints&& value) { SetIamPolicyConstraints(std::move(value)); return *this;}
+    template<typename IamPolicyConstraintsT = IamPolicyConstraints>
+    void SetIamPolicyConstraints(IamPolicyConstraintsT&& value) { m_iamPolicyConstraintsHasBeenSet = true; m_iamPolicyConstraints = std::forward<IamPolicyConstraintsT>(value); }
+    template<typename IamPolicyConstraintsT = IamPolicyConstraints>
+    S3Presign& WithIamPolicyConstraints(IamPolicyConstraintsT&& value) { SetIamPolicyConstraints(std::forward<IamPolicyConstraintsT>(value)); return *this;}
     ///@}
   private:
 

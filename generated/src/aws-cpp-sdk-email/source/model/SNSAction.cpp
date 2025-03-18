@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-SNSAction::SNSAction() : 
-    m_topicArnHasBeenSet(false),
-    m_encoding(SNSActionEncoding::NOT_SET),
-    m_encodingHasBeenSet(false)
-{
-}
-
 SNSAction::SNSAction(const XmlNode& xmlNode)
-  : SNSAction()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ SNSAction& SNSAction::operator =(const XmlNode& xmlNode)
     XmlNode encodingNode = resultNode.FirstChild("Encoding");
     if(!encodingNode.IsNull())
     {
-      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encodingNode.GetText()).c_str()).c_str());
+      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encodingNode.GetText()).c_str()));
       m_encodingHasBeenSet = true;
     }
   }

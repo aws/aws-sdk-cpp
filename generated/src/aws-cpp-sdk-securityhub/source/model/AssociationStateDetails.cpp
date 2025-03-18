@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AssociationStateDetails::AssociationStateDetails() : 
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 AssociationStateDetails::AssociationStateDetails(JsonView jsonValue)
-  : AssociationStateDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssociationStateDetails& AssociationStateDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

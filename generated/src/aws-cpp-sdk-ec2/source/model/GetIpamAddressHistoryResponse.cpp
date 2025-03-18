@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpamAddressHistoryResponse::GetIpamAddressHistoryResponse()
-{
-}
-
 GetIpamAddressHistoryResponse::GetIpamAddressHistoryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetIpamAddressHistoryResponse& GetIpamAddressHistoryResponse::operator =(const A
     if(!historyRecordsNode.IsNull())
     {
       XmlNode historyRecordsMember = historyRecordsNode.FirstChild("item");
+      m_historyRecordsHasBeenSet = !historyRecordsMember.IsNull();
       while(!historyRecordsMember.IsNull())
       {
         m_historyRecords.push_back(historyRecordsMember);
         historyRecordsMember = historyRecordsMember.NextNode("item");
       }
 
+      m_historyRecordsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetIpamAddressHistoryResponse& GetIpamAddressHistoryResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetIpamAddressHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

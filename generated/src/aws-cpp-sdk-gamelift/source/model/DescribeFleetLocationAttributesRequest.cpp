@@ -12,15 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFleetLocationAttributesRequest::DescribeFleetLocationAttributesRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_locationsHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetLocationAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

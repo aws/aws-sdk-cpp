@@ -18,13 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Metadata::Metadata() : 
-    m_sourceArnHasBeenSet(false)
-{
-}
-
 Metadata::Metadata(JsonView jsonValue)
-  : Metadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Metadata& Metadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConnectionsRequest::ListConnectionsRequest() : 
-    m_connectionNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectionsRequest::SerializePayload() const
 {
   JsonValue payload;

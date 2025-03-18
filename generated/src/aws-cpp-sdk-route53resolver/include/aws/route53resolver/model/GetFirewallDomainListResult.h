@@ -28,7 +28,7 @@ namespace Model
   class GetFirewallDomainListResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetFirewallDomainListResult();
+    AWS_ROUTE53RESOLVER_API GetFirewallDomainListResult() = default;
     AWS_ROUTE53RESOLVER_API GetFirewallDomainListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API GetFirewallDomainListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The domain list that you requested. </p>
      */
-    inline const FirewallDomainList& GetFirewallDomainList() const{ return m_firewallDomainList; }
-    inline void SetFirewallDomainList(const FirewallDomainList& value) { m_firewallDomainList = value; }
-    inline void SetFirewallDomainList(FirewallDomainList&& value) { m_firewallDomainList = std::move(value); }
-    inline GetFirewallDomainListResult& WithFirewallDomainList(const FirewallDomainList& value) { SetFirewallDomainList(value); return *this;}
-    inline GetFirewallDomainListResult& WithFirewallDomainList(FirewallDomainList&& value) { SetFirewallDomainList(std::move(value)); return *this;}
+    inline const FirewallDomainList& GetFirewallDomainList() const { return m_firewallDomainList; }
+    template<typename FirewallDomainListT = FirewallDomainList>
+    void SetFirewallDomainList(FirewallDomainListT&& value) { m_firewallDomainListHasBeenSet = true; m_firewallDomainList = std::forward<FirewallDomainListT>(value); }
+    template<typename FirewallDomainListT = FirewallDomainList>
+    GetFirewallDomainListResult& WithFirewallDomainList(FirewallDomainListT&& value) { SetFirewallDomainList(std::forward<FirewallDomainListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFirewallDomainListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFirewallDomainListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFirewallDomainListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFirewallDomainListResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FirewallDomainList m_firewallDomainList;
+    bool m_firewallDomainListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

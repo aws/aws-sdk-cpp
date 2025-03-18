@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails() : 
-    m_onDemandAllocationStrategyHasBeenSet(false),
-    m_onDemandBaseCapacity(0),
-    m_onDemandBaseCapacityHasBeenSet(false),
-    m_onDemandPercentageAboveBaseCapacity(0),
-    m_onDemandPercentageAboveBaseCapacityHasBeenSet(false),
-    m_spotAllocationStrategyHasBeenSet(false),
-    m_spotInstancePools(0),
-    m_spotInstancePoolsHasBeenSet(false),
-    m_spotMaxPriceHasBeenSet(false)
-{
-}
-
 AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails(JsonView jsonValue)
-  : AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& 
   if(jsonValue.ValueExists("OnDemandAllocationStrategy"))
   {
     m_onDemandAllocationStrategy = jsonValue.GetString("OnDemandAllocationStrategy");
-
     m_onDemandAllocationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandBaseCapacity"))
   {
     m_onDemandBaseCapacity = jsonValue.GetInteger("OnDemandBaseCapacity");
-
     m_onDemandBaseCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandPercentageAboveBaseCapacity"))
   {
     m_onDemandPercentageAboveBaseCapacity = jsonValue.GetInteger("OnDemandPercentageAboveBaseCapacity");
-
     m_onDemandPercentageAboveBaseCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpotAllocationStrategy"))
   {
     m_spotAllocationStrategy = jsonValue.GetString("SpotAllocationStrategy");
-
     m_spotAllocationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpotInstancePools"))
   {
     m_spotInstancePools = jsonValue.GetInteger("SpotInstancePools");
-
     m_spotInstancePoolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpotMaxPrice"))
   {
     m_spotMaxPrice = jsonValue.GetString("SpotMaxPrice");
-
     m_spotMaxPriceHasBeenSet = true;
   }
-
   return *this;
 }
 

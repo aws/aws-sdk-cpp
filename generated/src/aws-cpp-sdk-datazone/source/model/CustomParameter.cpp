@@ -18,20 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CustomParameter::CustomParameter() : 
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fieldTypeHasBeenSet(false),
-    m_isEditable(false),
-    m_isEditableHasBeenSet(false),
-    m_isOptional(false),
-    m_isOptionalHasBeenSet(false),
-    m_keyNameHasBeenSet(false)
-{
-}
-
 CustomParameter::CustomParameter(JsonView jsonValue)
-  : CustomParameter()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ CustomParameter& CustomParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldType"))
   {
     m_fieldType = jsonValue.GetString("fieldType");
-
     m_fieldTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isEditable"))
   {
     m_isEditable = jsonValue.GetBool("isEditable");
-
     m_isEditableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isOptional"))
   {
     m_isOptional = jsonValue.GetBool("isOptional");
-
     m_isOptionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyName"))
   {
     m_keyName = jsonValue.GetString("keyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

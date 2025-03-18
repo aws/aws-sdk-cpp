@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingCriteriaInputStepExpiry::RoutingCriteriaInputStepExpiry() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 RoutingCriteriaInputStepExpiry::RoutingCriteriaInputStepExpiry(JsonView jsonValue)
-  : RoutingCriteriaInputStepExpiry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoutingCriteriaInputStepExpiry& RoutingCriteriaInputStepExpiry::operator =(JsonV
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MQ
 namespace Model
 {
 
-DataReplicationCounterpart::DataReplicationCounterpart() : 
-    m_brokerIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 DataReplicationCounterpart::DataReplicationCounterpart(JsonView jsonValue)
-  : DataReplicationCounterpart()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataReplicationCounterpart& DataReplicationCounterpart::operator =(JsonView json
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
-
     m_brokerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateVpcEndpointResponse
   {
   public:
-    AWS_EC2_API CreateVpcEndpointResponse();
+    AWS_EC2_API CreateVpcEndpointResponse() = default;
     AWS_EC2_API CreateVpcEndpointResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateVpcEndpointResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the endpoint.</p>
      */
-    inline const VpcEndpoint& GetVpcEndpoint() const{ return m_vpcEndpoint; }
-    inline void SetVpcEndpoint(const VpcEndpoint& value) { m_vpcEndpoint = value; }
-    inline void SetVpcEndpoint(VpcEndpoint&& value) { m_vpcEndpoint = std::move(value); }
-    inline CreateVpcEndpointResponse& WithVpcEndpoint(const VpcEndpoint& value) { SetVpcEndpoint(value); return *this;}
-    inline CreateVpcEndpointResponse& WithVpcEndpoint(VpcEndpoint&& value) { SetVpcEndpoint(std::move(value)); return *this;}
+    inline const VpcEndpoint& GetVpcEndpoint() const { return m_vpcEndpoint; }
+    template<typename VpcEndpointT = VpcEndpoint>
+    void SetVpcEndpoint(VpcEndpointT&& value) { m_vpcEndpointHasBeenSet = true; m_vpcEndpoint = std::forward<VpcEndpointT>(value); }
+    template<typename VpcEndpointT = VpcEndpoint>
+    CreateVpcEndpointResponse& WithVpcEndpoint(VpcEndpointT&& value) { SetVpcEndpoint(std::forward<VpcEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,30 +50,31 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateVpcEndpointResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVpcEndpointResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVpcEndpointResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVpcEndpointResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateVpcEndpointResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateVpcEndpointResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateVpcEndpointResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcEndpoint m_vpcEndpoint;
+    bool m_vpcEndpointHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

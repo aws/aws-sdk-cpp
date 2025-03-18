@@ -29,7 +29,7 @@ namespace Model
   class ListSnapshotCopyConfigurationsResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ListSnapshotCopyConfigurationsResult();
+    AWS_REDSHIFTSERVERLESS_API ListSnapshotCopyConfigurationsResult() = default;
     AWS_REDSHIFTSERVERLESS_API ListSnapshotCopyConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API ListSnapshotCopyConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * value of <code>nextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSnapshotCopyConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSnapshotCopyConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>All of the returned snapshot copy configurations.</p>
      */
-    inline const Aws::Vector<SnapshotCopyConfiguration>& GetSnapshotCopyConfigurations() const{ return m_snapshotCopyConfigurations; }
-    inline void SetSnapshotCopyConfigurations(const Aws::Vector<SnapshotCopyConfiguration>& value) { m_snapshotCopyConfigurations = value; }
-    inline void SetSnapshotCopyConfigurations(Aws::Vector<SnapshotCopyConfiguration>&& value) { m_snapshotCopyConfigurations = std::move(value); }
-    inline ListSnapshotCopyConfigurationsResult& WithSnapshotCopyConfigurations(const Aws::Vector<SnapshotCopyConfiguration>& value) { SetSnapshotCopyConfigurations(value); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& WithSnapshotCopyConfigurations(Aws::Vector<SnapshotCopyConfiguration>&& value) { SetSnapshotCopyConfigurations(std::move(value)); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& AddSnapshotCopyConfigurations(const SnapshotCopyConfiguration& value) { m_snapshotCopyConfigurations.push_back(value); return *this; }
-    inline ListSnapshotCopyConfigurationsResult& AddSnapshotCopyConfigurations(SnapshotCopyConfiguration&& value) { m_snapshotCopyConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SnapshotCopyConfiguration>& GetSnapshotCopyConfigurations() const { return m_snapshotCopyConfigurations; }
+    template<typename SnapshotCopyConfigurationsT = Aws::Vector<SnapshotCopyConfiguration>>
+    void SetSnapshotCopyConfigurations(SnapshotCopyConfigurationsT&& value) { m_snapshotCopyConfigurationsHasBeenSet = true; m_snapshotCopyConfigurations = std::forward<SnapshotCopyConfigurationsT>(value); }
+    template<typename SnapshotCopyConfigurationsT = Aws::Vector<SnapshotCopyConfiguration>>
+    ListSnapshotCopyConfigurationsResult& WithSnapshotCopyConfigurations(SnapshotCopyConfigurationsT&& value) { SetSnapshotCopyConfigurations(std::forward<SnapshotCopyConfigurationsT>(value)); return *this;}
+    template<typename SnapshotCopyConfigurationsT = SnapshotCopyConfiguration>
+    ListSnapshotCopyConfigurationsResult& AddSnapshotCopyConfigurations(SnapshotCopyConfigurationsT&& value) { m_snapshotCopyConfigurationsHasBeenSet = true; m_snapshotCopyConfigurations.emplace_back(std::forward<SnapshotCopyConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSnapshotCopyConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSnapshotCopyConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSnapshotCopyConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<SnapshotCopyConfiguration> m_snapshotCopyConfigurations;
+    bool m_snapshotCopyConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

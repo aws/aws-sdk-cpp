@@ -35,7 +35,7 @@ namespace Model
   class AudioNormalizationSettings
   {
   public:
-    AWS_MEDIACONVERT_API AudioNormalizationSettings();
+    AWS_MEDIACONVERT_API AudioNormalizationSettings() = default;
     AWS_MEDIACONVERT_API AudioNormalizationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioNormalizationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * more audio channels than the other algorithms, including configurations such as
      * 7.1.
      */
-    inline const AudioNormalizationAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline AudioNormalizationAlgorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const AudioNormalizationAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(AudioNormalizationAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline AudioNormalizationSettings& WithAlgorithm(const AudioNormalizationAlgorithm& value) { SetAlgorithm(value); return *this;}
-    inline AudioNormalizationSettings& WithAlgorithm(AudioNormalizationAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(AudioNormalizationAlgorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline AudioNormalizationSettings& WithAlgorithm(AudioNormalizationAlgorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * When enabled the output audio is corrected using the chosen algorithm. If
      * disabled, the audio will be measured but not adjusted.
      */
-    inline const AudioNormalizationAlgorithmControl& GetAlgorithmControl() const{ return m_algorithmControl; }
+    inline AudioNormalizationAlgorithmControl GetAlgorithmControl() const { return m_algorithmControl; }
     inline bool AlgorithmControlHasBeenSet() const { return m_algorithmControlHasBeenSet; }
-    inline void SetAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
-    inline void SetAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = std::move(value); }
-    inline AudioNormalizationSettings& WithAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { SetAlgorithmControl(value); return *this;}
-    inline AudioNormalizationSettings& WithAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { SetAlgorithmControl(std::move(value)); return *this;}
+    inline void SetAlgorithmControl(AudioNormalizationAlgorithmControl value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
+    inline AudioNormalizationSettings& WithAlgorithmControl(AudioNormalizationAlgorithmControl value) { SetAlgorithmControl(value); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * Content measuring above this level will be corrected to the target level.
      * Content measuring below this level will not be corrected.
      */
-    inline int GetCorrectionGateLevel() const{ return m_correctionGateLevel; }
+    inline int GetCorrectionGateLevel() const { return m_correctionGateLevel; }
     inline bool CorrectionGateLevelHasBeenSet() const { return m_correctionGateLevelHasBeenSet; }
     inline void SetCorrectionGateLevel(int value) { m_correctionGateLevelHasBeenSet = true; m_correctionGateLevel = value; }
     inline AudioNormalizationSettings& WithCorrectionGateLevel(int value) { SetCorrectionGateLevel(value); return *this;}
@@ -90,12 +86,10 @@ namespace Model
     /**
      * If set to LOG, log each output's audio track loudness to a CSV file.
      */
-    inline const AudioNormalizationLoudnessLogging& GetLoudnessLogging() const{ return m_loudnessLogging; }
+    inline AudioNormalizationLoudnessLogging GetLoudnessLogging() const { return m_loudnessLogging; }
     inline bool LoudnessLoggingHasBeenSet() const { return m_loudnessLoggingHasBeenSet; }
-    inline void SetLoudnessLogging(const AudioNormalizationLoudnessLogging& value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = value; }
-    inline void SetLoudnessLogging(AudioNormalizationLoudnessLogging&& value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = std::move(value); }
-    inline AudioNormalizationSettings& WithLoudnessLogging(const AudioNormalizationLoudnessLogging& value) { SetLoudnessLogging(value); return *this;}
-    inline AudioNormalizationSettings& WithLoudnessLogging(AudioNormalizationLoudnessLogging&& value) { SetLoudnessLogging(std::move(value)); return *this;}
+    inline void SetLoudnessLogging(AudioNormalizationLoudnessLogging value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = value; }
+    inline AudioNormalizationSettings& WithLoudnessLogging(AudioNormalizationLoudnessLogging value) { SetLoudnessLogging(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
      * track loudness.
      */
-    inline const AudioNormalizationPeakCalculation& GetPeakCalculation() const{ return m_peakCalculation; }
+    inline AudioNormalizationPeakCalculation GetPeakCalculation() const { return m_peakCalculation; }
     inline bool PeakCalculationHasBeenSet() const { return m_peakCalculationHasBeenSet; }
-    inline void SetPeakCalculation(const AudioNormalizationPeakCalculation& value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = value; }
-    inline void SetPeakCalculation(AudioNormalizationPeakCalculation&& value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = std::move(value); }
-    inline AudioNormalizationSettings& WithPeakCalculation(const AudioNormalizationPeakCalculation& value) { SetPeakCalculation(value); return *this;}
-    inline AudioNormalizationSettings& WithPeakCalculation(AudioNormalizationPeakCalculation&& value) { SetPeakCalculation(std::move(value)); return *this;}
+    inline void SetPeakCalculation(AudioNormalizationPeakCalculation value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = value; }
+    inline AudioNormalizationSettings& WithPeakCalculation(AudioNormalizationPeakCalculation value) { SetPeakCalculation(value); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +111,7 @@ namespace Model
      * algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
      * choose -23 LKFS.
      */
-    inline double GetTargetLkfs() const{ return m_targetLkfs; }
+    inline double GetTargetLkfs() const { return m_targetLkfs; }
     inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
     inline void SetTargetLkfs(double value) { m_targetLkfsHasBeenSet = true; m_targetLkfs = value; }
     inline AudioNormalizationSettings& WithTargetLkfs(double value) { SetTargetLkfs(value); return *this;}
@@ -132,32 +124,32 @@ namespace Model
      * the value that you specify, without affecting the overall target LKFS. Enter a
      * value from 0 to -8. Leave blank to use the default value 0.
      */
-    inline double GetTruePeakLimiterThreshold() const{ return m_truePeakLimiterThreshold; }
+    inline double GetTruePeakLimiterThreshold() const { return m_truePeakLimiterThreshold; }
     inline bool TruePeakLimiterThresholdHasBeenSet() const { return m_truePeakLimiterThresholdHasBeenSet; }
     inline void SetTruePeakLimiterThreshold(double value) { m_truePeakLimiterThresholdHasBeenSet = true; m_truePeakLimiterThreshold = value; }
     inline AudioNormalizationSettings& WithTruePeakLimiterThreshold(double value) { SetTruePeakLimiterThreshold(value); return *this;}
     ///@}
   private:
 
-    AudioNormalizationAlgorithm m_algorithm;
+    AudioNormalizationAlgorithm m_algorithm{AudioNormalizationAlgorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
-    AudioNormalizationAlgorithmControl m_algorithmControl;
+    AudioNormalizationAlgorithmControl m_algorithmControl{AudioNormalizationAlgorithmControl::NOT_SET};
     bool m_algorithmControlHasBeenSet = false;
 
-    int m_correctionGateLevel;
+    int m_correctionGateLevel{0};
     bool m_correctionGateLevelHasBeenSet = false;
 
-    AudioNormalizationLoudnessLogging m_loudnessLogging;
+    AudioNormalizationLoudnessLogging m_loudnessLogging{AudioNormalizationLoudnessLogging::NOT_SET};
     bool m_loudnessLoggingHasBeenSet = false;
 
-    AudioNormalizationPeakCalculation m_peakCalculation;
+    AudioNormalizationPeakCalculation m_peakCalculation{AudioNormalizationPeakCalculation::NOT_SET};
     bool m_peakCalculationHasBeenSet = false;
 
-    double m_targetLkfs;
+    double m_targetLkfs{0.0};
     bool m_targetLkfsHasBeenSet = false;
 
-    double m_truePeakLimiterThreshold;
+    double m_truePeakLimiterThreshold{0.0};
     bool m_truePeakLimiterThresholdHasBeenSet = false;
   };
 

@@ -18,26 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-OrderableReplicationInstance::OrderableReplicationInstance() : 
-    m_engineVersionHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_minAllocatedStorage(0),
-    m_minAllocatedStorageHasBeenSet(false),
-    m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false),
-    m_defaultAllocatedStorage(0),
-    m_defaultAllocatedStorageHasBeenSet(false),
-    m_includedAllocatedStorage(0),
-    m_includedAllocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_releaseStatus(ReleaseStatusValues::NOT_SET),
-    m_releaseStatusHasBeenSet(false)
-{
-}
-
 OrderableReplicationInstance::OrderableReplicationInstance(JsonView jsonValue)
-  : OrderableReplicationInstance()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ OrderableReplicationInstance& OrderableReplicationInstance::operator =(JsonView 
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceClass"))
   {
     m_replicationInstanceClass = jsonValue.GetString("ReplicationInstanceClass");
-
     m_replicationInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = jsonValue.GetString("StorageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinAllocatedStorage"))
   {
     m_minAllocatedStorage = jsonValue.GetInteger("MinAllocatedStorage");
-
     m_minAllocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAllocatedStorage"))
   {
     m_maxAllocatedStorage = jsonValue.GetInteger("MaxAllocatedStorage");
-
     m_maxAllocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAllocatedStorage"))
   {
     m_defaultAllocatedStorage = jsonValue.GetInteger("DefaultAllocatedStorage");
-
     m_defaultAllocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludedAllocatedStorage"))
   {
     m_includedAllocatedStorage = jsonValue.GetInteger("IncludedAllocatedStorage");
-
     m_includedAllocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -102,14 +69,11 @@ OrderableReplicationInstance& OrderableReplicationInstance::operator =(JsonView 
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseStatus"))
   {
     m_releaseStatus = ReleaseStatusValuesMapper::GetReleaseStatusValuesForName(jsonValue.GetString("ReleaseStatus"));
-
     m_releaseStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

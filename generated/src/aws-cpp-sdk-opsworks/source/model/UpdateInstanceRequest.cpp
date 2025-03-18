@@ -12,26 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInstanceRequest::UpdateInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_layerIdsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_autoScalingType(AutoScalingType::NOT_SET),
-    m_autoScalingTypeHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class RealTimeInferenceConfig
   {
   public:
-    AWS_SAGEMAKER_API RealTimeInferenceConfig();
+    AWS_SAGEMAKER_API RealTimeInferenceConfig() = default;
     AWS_SAGEMAKER_API RealTimeInferenceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RealTimeInferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>The instance type the model is deployed to.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline RealTimeInferenceConfig& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline RealTimeInferenceConfig& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline RealTimeInferenceConfig& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,17 +53,17 @@ namespace Model
      * <p>The number of instances of the type specified by
      * <code>InstanceType</code>.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline RealTimeInferenceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
     ///@}
   private:
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
   };
 

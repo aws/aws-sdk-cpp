@@ -32,7 +32,7 @@ namespace Model
   class ThirdPartySourceRepository
   {
   public:
-    AWS_CODEGURUREVIEWER_API ThirdPartySourceRepository();
+    AWS_CODEGURUREVIEWER_API ThirdPartySourceRepository() = default;
     AWS_CODEGURUREVIEWER_API ThirdPartySourceRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API ThirdPartySourceRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the third party source repository.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ThirdPartySourceRepository& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ThirdPartySourceRepository& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ThirdPartySourceRepository& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ThirdPartySourceRepository& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
      * in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline ThirdPartySourceRepository& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline ThirdPartySourceRepository& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline ThirdPartySourceRepository& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    ThirdPartySourceRepository& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * an S3 repository, this can be the username or Amazon Web Services account ID
      * </p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline ThirdPartySourceRepository& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline ThirdPartySourceRepository& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline ThirdPartySourceRepository& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    ThirdPartySourceRepository& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationVersionSummary::ApplicationVersionSummary() : 
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false)
-{
-}
-
 ApplicationVersionSummary::ApplicationVersionSummary(JsonView jsonValue)
-  : ApplicationVersionSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ApplicationVersionSummary& ApplicationVersionSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
     m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationStatus"))
   {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));
-
     m_applicationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

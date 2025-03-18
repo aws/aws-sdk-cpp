@@ -33,7 +33,7 @@ namespace Model
   class DiscoveryJobListEntry
   {
   public:
-    AWS_DATASYNC_API DiscoveryJobListEntry();
+    AWS_DATASYNC_API DiscoveryJobListEntry() = default;
     AWS_DATASYNC_API DiscoveryJobListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API DiscoveryJobListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a discovery job.</p>
      */
-    inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
+    inline const Aws::String& GetDiscoveryJobArn() const { return m_discoveryJobArn; }
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-    inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-    inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-    inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-    inline DiscoveryJobListEntry& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-    inline DiscoveryJobListEntry& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-    inline DiscoveryJobListEntry& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
+    template<typename DiscoveryJobArnT = Aws::String>
+    void SetDiscoveryJobArn(DiscoveryJobArnT&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::forward<DiscoveryJobArnT>(value); }
+    template<typename DiscoveryJobArnT = Aws::String>
+    DiscoveryJobListEntry& WithDiscoveryJobArn(DiscoveryJobArnT&& value) { SetDiscoveryJobArn(std::forward<DiscoveryJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery
      * job statuses</a>.</p>
      */
-    inline const DiscoveryJobStatus& GetStatus() const{ return m_status; }
+    inline DiscoveryJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DiscoveryJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DiscoveryJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DiscoveryJobListEntry& WithStatus(const DiscoveryJobStatus& value) { SetStatus(value); return *this;}
-    inline DiscoveryJobListEntry& WithStatus(DiscoveryJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DiscoveryJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DiscoveryJobListEntry& WithStatus(DiscoveryJobStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_discoveryJobArn;
     bool m_discoveryJobArnHasBeenSet = false;
 
-    DiscoveryJobStatus m_status;
+    DiscoveryJobStatus m_status{DiscoveryJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

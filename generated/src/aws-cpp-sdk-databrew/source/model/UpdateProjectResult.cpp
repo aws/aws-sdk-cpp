@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProjectResult::UpdateProjectResult()
-{
-}
-
 UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateProjectResult& UpdateProjectResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

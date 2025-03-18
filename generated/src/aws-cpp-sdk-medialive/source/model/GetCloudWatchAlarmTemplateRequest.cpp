@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCloudWatchAlarmTemplateRequest::GetCloudWatchAlarmTemplateRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCloudWatchAlarmTemplateRequest::SerializePayload() const
 {
   return {};

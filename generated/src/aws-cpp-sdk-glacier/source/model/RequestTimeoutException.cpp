@@ -18,15 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-RequestTimeoutException::RequestTimeoutException() : 
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RequestTimeoutException::RequestTimeoutException(JsonView jsonValue)
-  : RequestTimeoutException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RequestTimeoutException& RequestTimeoutException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

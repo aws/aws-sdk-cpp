@@ -32,7 +32,7 @@ namespace Model
   class SourceConfiguration
   {
   public:
-    AWS_ELASTICBEANSTALK_API SourceConfiguration();
+    AWS_ELASTICBEANSTALK_API SourceConfiguration() = default;
     AWS_ELASTICBEANSTALK_API SourceConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API SourceConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the application associated with the configuration.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline SourceConfiguration& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline SourceConfiguration& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline SourceConfiguration& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    SourceConfiguration& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline SourceConfiguration& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline SourceConfiguration& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline SourceConfiguration& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    SourceConfiguration& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 

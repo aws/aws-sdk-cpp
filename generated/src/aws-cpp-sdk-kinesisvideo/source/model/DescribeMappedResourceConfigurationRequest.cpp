@@ -12,15 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMappedResourceConfigurationRequest::DescribeMappedResourceConfigurationRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMappedResourceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

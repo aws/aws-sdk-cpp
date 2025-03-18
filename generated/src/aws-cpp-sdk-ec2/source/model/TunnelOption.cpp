@@ -20,40 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TunnelOption::TunnelOption() : 
-    m_outsideIpAddressHasBeenSet(false),
-    m_tunnelInsideCidrHasBeenSet(false),
-    m_tunnelInsideIpv6CidrHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_dpdTimeoutSeconds(0),
-    m_dpdTimeoutSecondsHasBeenSet(false),
-    m_dpdTimeoutActionHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1DHGroupNumbersHasBeenSet(false),
-    m_phase2DHGroupNumbersHasBeenSet(false),
-    m_ikeVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false),
-    m_enableTunnelLifecycleControl(false),
-    m_enableTunnelLifecycleControlHasBeenSet(false)
-{
-}
-
 TunnelOption::TunnelOption(const XmlNode& xmlNode)
-  : TunnelOption()
 {
   *this = xmlNode;
 }
@@ -134,6 +101,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase1EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase1EncryptionAlgorithmsMember = phase1EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase1EncryptionAlgorithmsHasBeenSet = !phase1EncryptionAlgorithmsMember.IsNull();
       while(!phase1EncryptionAlgorithmsMember.IsNull())
       {
         m_phase1EncryptionAlgorithms.push_back(phase1EncryptionAlgorithmsMember);
@@ -146,6 +114,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase2EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase2EncryptionAlgorithmsMember = phase2EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase2EncryptionAlgorithmsHasBeenSet = !phase2EncryptionAlgorithmsMember.IsNull();
       while(!phase2EncryptionAlgorithmsMember.IsNull())
       {
         m_phase2EncryptionAlgorithms.push_back(phase2EncryptionAlgorithmsMember);
@@ -158,6 +127,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase1IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase1IntegrityAlgorithmsMember = phase1IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase1IntegrityAlgorithmsHasBeenSet = !phase1IntegrityAlgorithmsMember.IsNull();
       while(!phase1IntegrityAlgorithmsMember.IsNull())
       {
         m_phase1IntegrityAlgorithms.push_back(phase1IntegrityAlgorithmsMember);
@@ -170,6 +140,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase2IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase2IntegrityAlgorithmsMember = phase2IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase2IntegrityAlgorithmsHasBeenSet = !phase2IntegrityAlgorithmsMember.IsNull();
       while(!phase2IntegrityAlgorithmsMember.IsNull())
       {
         m_phase2IntegrityAlgorithms.push_back(phase2IntegrityAlgorithmsMember);
@@ -182,6 +153,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase1DHGroupNumbersNode.IsNull())
     {
       XmlNode phase1DHGroupNumbersMember = phase1DHGroupNumbersNode.FirstChild("item");
+      m_phase1DHGroupNumbersHasBeenSet = !phase1DHGroupNumbersMember.IsNull();
       while(!phase1DHGroupNumbersMember.IsNull())
       {
         m_phase1DHGroupNumbers.push_back(phase1DHGroupNumbersMember);
@@ -194,6 +166,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!phase2DHGroupNumbersNode.IsNull())
     {
       XmlNode phase2DHGroupNumbersMember = phase2DHGroupNumbersNode.FirstChild("item");
+      m_phase2DHGroupNumbersHasBeenSet = !phase2DHGroupNumbersMember.IsNull();
       while(!phase2DHGroupNumbersMember.IsNull())
       {
         m_phase2DHGroupNumbers.push_back(phase2DHGroupNumbersMember);
@@ -206,6 +179,7 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
     if(!ikeVersionsNode.IsNull())
     {
       XmlNode ikeVersionsMember = ikeVersionsNode.FirstChild("item");
+      m_ikeVersionsHasBeenSet = !ikeVersionsMember.IsNull();
       while(!ikeVersionsMember.IsNull())
       {
         m_ikeVersions.push_back(ikeVersionsMember);

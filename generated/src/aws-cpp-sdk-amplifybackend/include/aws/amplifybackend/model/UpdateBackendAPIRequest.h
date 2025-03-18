@@ -25,7 +25,7 @@ namespace Model
   class UpdateBackendAPIRequest : public AmplifyBackendRequest
   {
   public:
-    AWS_AMPLIFYBACKEND_API UpdateBackendAPIRequest();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAPIRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline UpdateBackendAPIRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline UpdateBackendAPIRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline UpdateBackendAPIRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    UpdateBackendAPIRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the backend environment.</p>
      */
-    inline const Aws::String& GetBackendEnvironmentName() const{ return m_backendEnvironmentName; }
+    inline const Aws::String& GetBackendEnvironmentName() const { return m_backendEnvironmentName; }
     inline bool BackendEnvironmentNameHasBeenSet() const { return m_backendEnvironmentNameHasBeenSet; }
-    inline void SetBackendEnvironmentName(const Aws::String& value) { m_backendEnvironmentNameHasBeenSet = true; m_backendEnvironmentName = value; }
-    inline void SetBackendEnvironmentName(Aws::String&& value) { m_backendEnvironmentNameHasBeenSet = true; m_backendEnvironmentName = std::move(value); }
-    inline void SetBackendEnvironmentName(const char* value) { m_backendEnvironmentNameHasBeenSet = true; m_backendEnvironmentName.assign(value); }
-    inline UpdateBackendAPIRequest& WithBackendEnvironmentName(const Aws::String& value) { SetBackendEnvironmentName(value); return *this;}
-    inline UpdateBackendAPIRequest& WithBackendEnvironmentName(Aws::String&& value) { SetBackendEnvironmentName(std::move(value)); return *this;}
-    inline UpdateBackendAPIRequest& WithBackendEnvironmentName(const char* value) { SetBackendEnvironmentName(value); return *this;}
+    template<typename BackendEnvironmentNameT = Aws::String>
+    void SetBackendEnvironmentName(BackendEnvironmentNameT&& value) { m_backendEnvironmentNameHasBeenSet = true; m_backendEnvironmentName = std::forward<BackendEnvironmentNameT>(value); }
+    template<typename BackendEnvironmentNameT = Aws::String>
+    UpdateBackendAPIRequest& WithBackendEnvironmentName(BackendEnvironmentNameT&& value) { SetBackendEnvironmentName(std::forward<BackendEnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,26 +65,24 @@ namespace Model
      * <p>Defines the resource configuration for the data model in your Amplify
      * project.</p>
      */
-    inline const BackendAPIResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
+    inline const BackendAPIResourceConfig& GetResourceConfig() const { return m_resourceConfig; }
     inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
-    inline void SetResourceConfig(const BackendAPIResourceConfig& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
-    inline void SetResourceConfig(BackendAPIResourceConfig&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
-    inline UpdateBackendAPIRequest& WithResourceConfig(const BackendAPIResourceConfig& value) { SetResourceConfig(value); return *this;}
-    inline UpdateBackendAPIRequest& WithResourceConfig(BackendAPIResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
+    template<typename ResourceConfigT = BackendAPIResourceConfig>
+    void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
+    template<typename ResourceConfigT = BackendAPIResourceConfig>
+    UpdateBackendAPIRequest& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this resource.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline UpdateBackendAPIRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline UpdateBackendAPIRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline UpdateBackendAPIRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    UpdateBackendAPIRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class WriteSegmentRequest
   {
   public:
-    AWS_PINPOINT_API WriteSegmentRequest();
+    AWS_PINPOINT_API WriteSegmentRequest() = default;
     AWS_PINPOINT_API WriteSegmentRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API WriteSegmentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The criteria that define the dimensions for the segment.</p>
      */
-    inline const SegmentDimensions& GetDimensions() const{ return m_dimensions; }
+    inline const SegmentDimensions& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const SegmentDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(SegmentDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline WriteSegmentRequest& WithDimensions(const SegmentDimensions& value) { SetDimensions(value); return *this;}
-    inline WriteSegmentRequest& WithDimensions(SegmentDimensions&& value) { SetDimensions(std::move(value)); return *this;}
+    template<typename DimensionsT = SegmentDimensions>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = SegmentDimensions>
+    WriteSegmentRequest& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the segment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WriteSegmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WriteSegmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WriteSegmentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WriteSegmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * segments in order to build the segment. A segment group can consist of zero or
      * more base segments. Your request can include only one segment group.</p>
      */
-    inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
+    inline const SegmentGroupList& GetSegmentGroups() const { return m_segmentGroups; }
     inline bool SegmentGroupsHasBeenSet() const { return m_segmentGroupsHasBeenSet; }
-    inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
-    inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
-    inline WriteSegmentRequest& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
-    inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
+    template<typename SegmentGroupsT = SegmentGroupList>
+    void SetSegmentGroups(SegmentGroupsT&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::forward<SegmentGroupsT>(value); }
+    template<typename SegmentGroupsT = SegmentGroupList>
+    WriteSegmentRequest& WithSegmentGroups(SegmentGroupsT&& value) { SetSegmentGroups(std::forward<SegmentGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,19 +94,16 @@ namespace Model
      * key-value pairs that defines the tags to associate with the segment. Each tag
      * consists of a required tag key and an associated tag value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline WriteSegmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline WriteSegmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline WriteSegmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline WriteSegmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WriteSegmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WriteSegmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline WriteSegmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WriteSegmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WriteSegmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    WriteSegmentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    WriteSegmentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

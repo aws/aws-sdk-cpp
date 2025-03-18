@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration() : 
-    m_dashboardHasBeenSet(false),
-    m_quickSightConsoleHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_generativeQnAHasBeenSet(false)
-{
-}
-
 RegisteredUserEmbeddingExperienceConfiguration::RegisteredUserEmbeddingExperienceConfiguration(JsonView jsonValue)
-  : RegisteredUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RegisteredUserEmbeddingExperienceConfiguration& RegisteredUserEmbeddingExperienc
   if(jsonValue.ValueExists("Dashboard"))
   {
     m_dashboard = jsonValue.GetObject("Dashboard");
-
     m_dashboardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuickSightConsole"))
   {
     m_quickSightConsole = jsonValue.GetObject("QuickSightConsole");
-
     m_quickSightConsoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QSearchBar"))
   {
     m_qSearchBar = jsonValue.GetObject("QSearchBar");
-
     m_qSearchBarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardVisual"))
   {
     m_dashboardVisual = jsonValue.GetObject("DashboardVisual");
-
     m_dashboardVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerativeQnA"))
   {
     m_generativeQnA = jsonValue.GetObject("GenerativeQnA");
-
     m_generativeQnAHasBeenSet = true;
   }
-
   return *this;
 }
 

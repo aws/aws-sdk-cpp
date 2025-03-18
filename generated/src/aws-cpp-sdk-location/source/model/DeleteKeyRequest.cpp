@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteKeyRequest::DeleteKeyRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKeyRequest::SerializePayload() const
 {
   return {};

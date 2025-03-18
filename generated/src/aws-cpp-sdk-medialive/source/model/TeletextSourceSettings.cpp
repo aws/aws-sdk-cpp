@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TeletextSourceSettings::TeletextSourceSettings() : 
-    m_outputRectangleHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
-{
-}
-
 TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue)
-  : TeletextSourceSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("outputRectangle"))
   {
     m_outputRectangle = jsonValue.GetObject("outputRectangle");
-
     m_outputRectangleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pageNumber"))
   {
     m_pageNumber = jsonValue.GetString("pageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

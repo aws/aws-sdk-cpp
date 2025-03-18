@@ -31,7 +31,7 @@ namespace Model
   class EndpointConfig
   {
   public:
-    AWS_BEDROCK_API EndpointConfig();
+    AWS_BEDROCK_API EndpointConfig() = default;
     AWS_BEDROCK_API EndpointConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The configuration specific to Amazon SageMaker for the endpoint.</p>
      */
-    inline const SageMakerEndpoint& GetSageMaker() const{ return m_sageMaker; }
+    inline const SageMakerEndpoint& GetSageMaker() const { return m_sageMaker; }
     inline bool SageMakerHasBeenSet() const { return m_sageMakerHasBeenSet; }
-    inline void SetSageMaker(const SageMakerEndpoint& value) { m_sageMakerHasBeenSet = true; m_sageMaker = value; }
-    inline void SetSageMaker(SageMakerEndpoint&& value) { m_sageMakerHasBeenSet = true; m_sageMaker = std::move(value); }
-    inline EndpointConfig& WithSageMaker(const SageMakerEndpoint& value) { SetSageMaker(value); return *this;}
-    inline EndpointConfig& WithSageMaker(SageMakerEndpoint&& value) { SetSageMaker(std::move(value)); return *this;}
+    template<typename SageMakerT = SageMakerEndpoint>
+    void SetSageMaker(SageMakerT&& value) { m_sageMakerHasBeenSet = true; m_sageMaker = std::forward<SageMakerT>(value); }
+    template<typename SageMakerT = SageMakerEndpoint>
+    EndpointConfig& WithSageMaker(SageMakerT&& value) { SetSageMaker(std::forward<SageMakerT>(value)); return *this;}
     ///@}
   private:
 

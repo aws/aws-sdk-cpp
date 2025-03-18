@@ -29,7 +29,7 @@ namespace Model
   class ListWorldsResult
   {
   public:
-    AWS_ROBOMAKER_API ListWorldsResult();
+    AWS_ROBOMAKER_API ListWorldsResult() = default;
     AWS_ROBOMAKER_API ListWorldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListWorldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information for worlds.</p>
      */
-    inline const Aws::Vector<WorldSummary>& GetWorldSummaries() const{ return m_worldSummaries; }
-    inline void SetWorldSummaries(const Aws::Vector<WorldSummary>& value) { m_worldSummaries = value; }
-    inline void SetWorldSummaries(Aws::Vector<WorldSummary>&& value) { m_worldSummaries = std::move(value); }
-    inline ListWorldsResult& WithWorldSummaries(const Aws::Vector<WorldSummary>& value) { SetWorldSummaries(value); return *this;}
-    inline ListWorldsResult& WithWorldSummaries(Aws::Vector<WorldSummary>&& value) { SetWorldSummaries(std::move(value)); return *this;}
-    inline ListWorldsResult& AddWorldSummaries(const WorldSummary& value) { m_worldSummaries.push_back(value); return *this; }
-    inline ListWorldsResult& AddWorldSummaries(WorldSummary&& value) { m_worldSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorldSummary>& GetWorldSummaries() const { return m_worldSummaries; }
+    template<typename WorldSummariesT = Aws::Vector<WorldSummary>>
+    void SetWorldSummaries(WorldSummariesT&& value) { m_worldSummariesHasBeenSet = true; m_worldSummaries = std::forward<WorldSummariesT>(value); }
+    template<typename WorldSummariesT = Aws::Vector<WorldSummary>>
+    ListWorldsResult& WithWorldSummaries(WorldSummariesT&& value) { SetWorldSummaries(std::forward<WorldSummariesT>(value)); return *this;}
+    template<typename WorldSummariesT = WorldSummary>
+    ListWorldsResult& AddWorldSummaries(WorldSummariesT&& value) { m_worldSummariesHasBeenSet = true; m_worldSummaries.emplace_back(std::forward<WorldSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * If there are no remaining results, the previous response object's NextToken
      * parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorldsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorldsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorldsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorldsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorldsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorldsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorldsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorldsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorldSummary> m_worldSummaries;
+    bool m_worldSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

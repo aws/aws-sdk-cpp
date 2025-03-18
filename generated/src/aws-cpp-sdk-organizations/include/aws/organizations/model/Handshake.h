@@ -44,7 +44,7 @@ namespace Model
   class Handshake
   {
   public:
-    AWS_ORGANIZATIONS_API Handshake();
+    AWS_ORGANIZATIONS_API Handshake() = default;
     AWS_ORGANIZATIONS_API Handshake(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Handshake& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Handshake& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Handshake& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Handshake& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Handshake& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
      * Authorization Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Handshake& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Handshake& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Handshake& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Handshake& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,14 @@ namespace Model
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
      */
-    inline const Aws::Vector<HandshakeParty>& GetParties() const{ return m_parties; }
+    inline const Aws::Vector<HandshakeParty>& GetParties() const { return m_parties; }
     inline bool PartiesHasBeenSet() const { return m_partiesHasBeenSet; }
-    inline void SetParties(const Aws::Vector<HandshakeParty>& value) { m_partiesHasBeenSet = true; m_parties = value; }
-    inline void SetParties(Aws::Vector<HandshakeParty>&& value) { m_partiesHasBeenSet = true; m_parties = std::move(value); }
-    inline Handshake& WithParties(const Aws::Vector<HandshakeParty>& value) { SetParties(value); return *this;}
-    inline Handshake& WithParties(Aws::Vector<HandshakeParty>&& value) { SetParties(std::move(value)); return *this;}
-    inline Handshake& AddParties(const HandshakeParty& value) { m_partiesHasBeenSet = true; m_parties.push_back(value); return *this; }
-    inline Handshake& AddParties(HandshakeParty&& value) { m_partiesHasBeenSet = true; m_parties.push_back(std::move(value)); return *this; }
+    template<typename PartiesT = Aws::Vector<HandshakeParty>>
+    void SetParties(PartiesT&& value) { m_partiesHasBeenSet = true; m_parties = std::forward<PartiesT>(value); }
+    template<typename PartiesT = Aws::Vector<HandshakeParty>>
+    Handshake& WithParties(PartiesT&& value) { SetParties(std::forward<PartiesT>(value)); return *this;}
+    template<typename PartiesT = HandshakeParty>
+    Handshake& AddParties(PartiesT&& value) { m_partiesHasBeenSet = true; m_parties.emplace_back(std::forward<PartiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,24 +115,22 @@ namespace Model
      * not receive a response of any kind from the recipient before the expiration time
      * (15 days).</p> </li> </ul>
      */
-    inline const HandshakeState& GetState() const{ return m_state; }
+    inline HandshakeState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const HandshakeState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(HandshakeState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Handshake& WithState(const HandshakeState& value) { SetState(value); return *this;}
-    inline Handshake& WithState(HandshakeState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(HandshakeState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Handshake& WithState(HandshakeState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the handshake request was made.</p>
      */
-    inline const Aws::Utils::DateTime& GetRequestedTimestamp() const{ return m_requestedTimestamp; }
+    inline const Aws::Utils::DateTime& GetRequestedTimestamp() const { return m_requestedTimestamp; }
     inline bool RequestedTimestampHasBeenSet() const { return m_requestedTimestampHasBeenSet; }
-    inline void SetRequestedTimestamp(const Aws::Utils::DateTime& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = value; }
-    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::move(value); }
-    inline Handshake& WithRequestedTimestamp(const Aws::Utils::DateTime& value) { SetRequestedTimestamp(value); return *this;}
-    inline Handshake& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
+    template<typename RequestedTimestampT = Aws::Utils::DateTime>
+    void SetRequestedTimestamp(RequestedTimestampT&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::forward<RequestedTimestampT>(value); }
+    template<typename RequestedTimestampT = Aws::Utils::DateTime>
+    Handshake& WithRequestedTimestamp(RequestedTimestampT&& value) { SetRequestedTimestamp(std::forward<RequestedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +139,12 @@ namespace Model
      * handshake request fails to respond before the specified date and time, the
      * handshake becomes inactive and is no longer valid.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const{ return m_expirationTimestamp; }
+    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const { return m_expirationTimestamp; }
     inline bool ExpirationTimestampHasBeenSet() const { return m_expirationTimestampHasBeenSet; }
-    inline void SetExpirationTimestamp(const Aws::Utils::DateTime& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = value; }
-    inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::move(value); }
-    inline Handshake& WithExpirationTimestamp(const Aws::Utils::DateTime& value) { SetExpirationTimestamp(value); return *this;}
-    inline Handshake& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    void SetExpirationTimestamp(ExpirationTimestampT&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::forward<ExpirationTimestampT>(value); }
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    Handshake& WithExpirationTimestamp(ExpirationTimestampT&& value) { SetExpirationTimestamp(std::forward<ExpirationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,26 +164,24 @@ namespace Model
      * account and signals the master that it can finalize the process to enable all
      * features.</p> </li> </ul>
      */
-    inline const ActionType& GetAction() const{ return m_action; }
+    inline ActionType GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ActionType& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ActionType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline Handshake& WithAction(const ActionType& value) { SetAction(value); return *this;}
-    inline Handshake& WithAction(ActionType&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ActionType value) { m_actionHasBeenSet = true; m_action = value; }
+    inline Handshake& WithAction(ActionType value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information that is needed to process the handshake.</p>
      */
-    inline const Aws::Vector<HandshakeResource>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<HandshakeResource>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<HandshakeResource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<HandshakeResource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline Handshake& WithResources(const Aws::Vector<HandshakeResource>& value) { SetResources(value); return *this;}
-    inline Handshake& WithResources(Aws::Vector<HandshakeResource>&& value) { SetResources(std::move(value)); return *this;}
-    inline Handshake& AddResources(const HandshakeResource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline Handshake& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
+    template<typename ResourcesT = Aws::Vector<HandshakeResource>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<HandshakeResource>>
+    Handshake& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = HandshakeResource>
+    Handshake& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
   private:
 
@@ -202,16 +194,16 @@ namespace Model
     Aws::Vector<HandshakeParty> m_parties;
     bool m_partiesHasBeenSet = false;
 
-    HandshakeState m_state;
+    HandshakeState m_state{HandshakeState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_requestedTimestamp;
+    Aws::Utils::DateTime m_requestedTimestamp{};
     bool m_requestedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTimestamp;
+    Aws::Utils::DateTime m_expirationTimestamp{};
     bool m_expirationTimestampHasBeenSet = false;
 
-    ActionType m_action;
+    ActionType m_action{ActionType::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::Vector<HandshakeResource> m_resources;

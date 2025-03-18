@@ -54,7 +54,7 @@ namespace Model
   class IotSiteWiseAction
   {
   public:
-    AWS_IOTEVENTS_API IotSiteWiseAction();
+    AWS_IOTEVENTS_API IotSiteWiseAction() = default;
     AWS_IOTEVENTS_API IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,56 +66,48 @@ namespace Model
      * data entry causes an error in case of failure. The default is a new unique
      * identifier.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline IotSiteWiseAction& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline IotSiteWiseAction& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline IotSiteWiseAction& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    IotSiteWiseAction& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset that has the specified property.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline IotSiteWiseAction& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline IotSiteWiseAction& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline IotSiteWiseAction& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    IotSiteWiseAction& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset property.</p>
      */
-    inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
+    inline const Aws::String& GetPropertyId() const { return m_propertyId; }
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
-    inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
-    inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
-    inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
-    inline IotSiteWiseAction& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
-    inline IotSiteWiseAction& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
-    inline IotSiteWiseAction& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
+    template<typename PropertyIdT = Aws::String>
+    void SetPropertyId(PropertyIdT&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::forward<PropertyIdT>(value); }
+    template<typename PropertyIdT = Aws::String>
+    IotSiteWiseAction& WithPropertyId(PropertyIdT&& value) { SetPropertyId(std::forward<PropertyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias of the asset property.</p>
      */
-    inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
+    inline const Aws::String& GetPropertyAlias() const { return m_propertyAlias; }
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
-    inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
-    inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
-    inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
-    inline IotSiteWiseAction& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
-    inline IotSiteWiseAction& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
-    inline IotSiteWiseAction& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}
+    template<typename PropertyAliasT = Aws::String>
+    void SetPropertyAlias(PropertyAliasT&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::forward<PropertyAliasT>(value); }
+    template<typename PropertyAliasT = Aws::String>
+    IotSiteWiseAction& WithPropertyAlias(PropertyAliasT&& value) { SetPropertyAlias(std::forward<PropertyAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,12 @@ namespace Model
      * <p>The value to send to the asset property. This value contains timestamp,
      * quality, and value (TQV) information. </p>
      */
-    inline const AssetPropertyValue& GetPropertyValue() const{ return m_propertyValue; }
+    inline const AssetPropertyValue& GetPropertyValue() const { return m_propertyValue; }
     inline bool PropertyValueHasBeenSet() const { return m_propertyValueHasBeenSet; }
-    inline void SetPropertyValue(const AssetPropertyValue& value) { m_propertyValueHasBeenSet = true; m_propertyValue = value; }
-    inline void SetPropertyValue(AssetPropertyValue&& value) { m_propertyValueHasBeenSet = true; m_propertyValue = std::move(value); }
-    inline IotSiteWiseAction& WithPropertyValue(const AssetPropertyValue& value) { SetPropertyValue(value); return *this;}
-    inline IotSiteWiseAction& WithPropertyValue(AssetPropertyValue&& value) { SetPropertyValue(std::move(value)); return *this;}
+    template<typename PropertyValueT = AssetPropertyValue>
+    void SetPropertyValue(PropertyValueT&& value) { m_propertyValueHasBeenSet = true; m_propertyValue = std::forward<PropertyValueT>(value); }
+    template<typename PropertyValueT = AssetPropertyValue>
+    IotSiteWiseAction& WithPropertyValue(PropertyValueT&& value) { SetPropertyValue(std::forward<PropertyValueT>(value)); return *this;}
     ///@}
   private:
 

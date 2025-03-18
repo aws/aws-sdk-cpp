@@ -36,7 +36,7 @@ namespace Model
   class GroupType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GroupType();
+    AWS_COGNITOIDENTITYPROVIDER_API GroupType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API GroupType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API GroupType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline GroupType& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GroupType& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GroupType& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GroupType& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user pool that contains the group.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline GroupType& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline GroupType& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline GroupType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    GroupType& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A friendly description of the group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline GroupType& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GroupType& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GroupType& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GroupType& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * priority of a user's groups, users who authenticate with an identity pool get
      * credentials for the <code>RoleArn</code> that's associated with the group.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline GroupType& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GroupType& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GroupType& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GroupType& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +109,7 @@ namespace Model
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is <code>null</code>.</p>
      */
-    inline int GetPrecedence() const{ return m_precedence; }
+    inline int GetPrecedence() const { return m_precedence; }
     inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
     inline GroupType& WithPrecedence(int value) { SetPrecedence(value); return *this;}
@@ -129,12 +121,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline GroupType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline GroupType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    GroupType& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +135,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline GroupType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline GroupType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    GroupType& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,13 +156,13 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    int m_precedence;
+    int m_precedence{0};
     bool m_precedenceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
   };
 

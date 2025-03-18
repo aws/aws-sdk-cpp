@@ -32,7 +32,7 @@ namespace Model
   class CreateProjectRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API CreateProjectRequest();
+    AWS_CODEBUILD_API CreateProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,54 +49,50 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateProjectRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description that makes the build project easy to identify.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateProjectRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateProjectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateProjectRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the build input source code for the build project.</p>
      */
-    inline const ProjectSource& GetSource() const{ return m_source; }
+    inline const ProjectSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ProjectSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline CreateProjectRequest& WithSource(const ProjectSource& value) { SetSource(value); return *this;}
-    inline CreateProjectRequest& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ProjectSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ProjectSource>
+    CreateProjectRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>ProjectSource</code> objects. </p>
      */
-    inline const Aws::Vector<ProjectSource>& GetSecondarySources() const{ return m_secondarySources; }
+    inline const Aws::Vector<ProjectSource>& GetSecondarySources() const { return m_secondarySources; }
     inline bool SecondarySourcesHasBeenSet() const { return m_secondarySourcesHasBeenSet; }
-    inline void SetSecondarySources(const Aws::Vector<ProjectSource>& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = value; }
-    inline void SetSecondarySources(Aws::Vector<ProjectSource>&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = std::move(value); }
-    inline CreateProjectRequest& WithSecondarySources(const Aws::Vector<ProjectSource>& value) { SetSecondarySources(value); return *this;}
-    inline CreateProjectRequest& WithSecondarySources(Aws::Vector<ProjectSource>&& value) { SetSecondarySources(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddSecondarySources(const ProjectSource& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(value); return *this; }
-    inline CreateProjectRequest& AddSecondarySources(ProjectSource&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(std::move(value)); return *this; }
+    template<typename SecondarySourcesT = Aws::Vector<ProjectSource>>
+    void SetSecondarySources(SecondarySourcesT&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = std::forward<SecondarySourcesT>(value); }
+    template<typename SecondarySourcesT = Aws::Vector<ProjectSource>>
+    CreateProjectRequest& WithSecondarySources(SecondarySourcesT&& value) { SetSecondarySources(std::forward<SecondarySourcesT>(value)); return *this;}
+    template<typename SecondarySourcesT = ProjectSource>
+    CreateProjectRequest& AddSecondarySources(SecondarySourcesT&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.emplace_back(std::forward<SecondarySourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,14 +117,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
-    inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+    inline const Aws::String& GetSourceVersion() const { return m_sourceVersion; }
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
-    inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
-    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
-    inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
-    inline CreateProjectRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
-    inline CreateProjectRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
+    template<typename SourceVersionT = Aws::String>
+    void SetSourceVersion(SourceVersionT&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::forward<SourceVersionT>(value); }
+    template<typename SourceVersionT = Aws::String>
+    CreateProjectRequest& WithSourceVersion(SourceVersionT&& value) { SetSourceVersion(std::forward<SourceVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,40 +132,40 @@ namespace Model
      * take precedence over these <code>secondarySourceVersions</code> (at the project
      * level). </p>
      */
-    inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
+    inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const { return m_secondarySourceVersions; }
     inline bool SecondarySourceVersionsHasBeenSet() const { return m_secondarySourceVersionsHasBeenSet; }
-    inline void SetSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = value; }
-    inline void SetSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::move(value); }
-    inline CreateProjectRequest& WithSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourceVersions(value); return *this;}
-    inline CreateProjectRequest& WithSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourceVersions(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddSecondarySourceVersions(const ProjectSourceVersion& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(value); return *this; }
-    inline CreateProjectRequest& AddSecondarySourceVersions(ProjectSourceVersion&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(std::move(value)); return *this; }
+    template<typename SecondarySourceVersionsT = Aws::Vector<ProjectSourceVersion>>
+    void SetSecondarySourceVersions(SecondarySourceVersionsT&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::forward<SecondarySourceVersionsT>(value); }
+    template<typename SecondarySourceVersionsT = Aws::Vector<ProjectSourceVersion>>
+    CreateProjectRequest& WithSecondarySourceVersions(SecondarySourceVersionsT&& value) { SetSecondarySourceVersions(std::forward<SecondarySourceVersionsT>(value)); return *this;}
+    template<typename SecondarySourceVersionsT = ProjectSourceVersion>
+    CreateProjectRequest& AddSecondarySourceVersions(SecondarySourceVersionsT&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.emplace_back(std::forward<SecondarySourceVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the build output artifacts for the build project.</p>
      */
-    inline const ProjectArtifacts& GetArtifacts() const{ return m_artifacts; }
+    inline const ProjectArtifacts& GetArtifacts() const { return m_artifacts; }
     inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
-    inline void SetArtifacts(const ProjectArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
-    inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
-    inline CreateProjectRequest& WithArtifacts(const ProjectArtifacts& value) { SetArtifacts(value); return *this;}
-    inline CreateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
+    template<typename ArtifactsT = ProjectArtifacts>
+    void SetArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::forward<ArtifactsT>(value); }
+    template<typename ArtifactsT = ProjectArtifacts>
+    CreateProjectRequest& WithArtifacts(ArtifactsT&& value) { SetArtifacts(std::forward<ArtifactsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>ProjectArtifacts</code> objects. </p>
      */
-    inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+    inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const { return m_secondaryArtifacts; }
     inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
-    inline void SetSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
-    inline void SetSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
-    inline CreateProjectRequest& WithSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { SetSecondaryArtifacts(value); return *this;}
-    inline CreateProjectRequest& WithSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddSecondaryArtifacts(const ProjectArtifacts& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
-    inline CreateProjectRequest& AddSecondaryArtifacts(ProjectArtifacts&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
+    template<typename SecondaryArtifactsT = Aws::Vector<ProjectArtifacts>>
+    void SetSecondaryArtifacts(SecondaryArtifactsT&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::forward<SecondaryArtifactsT>(value); }
+    template<typename SecondaryArtifactsT = Aws::Vector<ProjectArtifacts>>
+    CreateProjectRequest& WithSecondaryArtifacts(SecondaryArtifactsT&& value) { SetSecondaryArtifacts(std::forward<SecondaryArtifactsT>(value)); return *this;}
+    template<typename SecondaryArtifactsT = ProjectArtifacts>
+    CreateProjectRequest& AddSecondaryArtifacts(SecondaryArtifactsT&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.emplace_back(std::forward<SecondaryArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,24 +173,24 @@ namespace Model
      * <p>Stores recently used information so that it can be quickly accessed at a
      * later time.</p>
      */
-    inline const ProjectCache& GetCache() const{ return m_cache; }
+    inline const ProjectCache& GetCache() const { return m_cache; }
     inline bool CacheHasBeenSet() const { return m_cacheHasBeenSet; }
-    inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
-    inline void SetCache(ProjectCache&& value) { m_cacheHasBeenSet = true; m_cache = std::move(value); }
-    inline CreateProjectRequest& WithCache(const ProjectCache& value) { SetCache(value); return *this;}
-    inline CreateProjectRequest& WithCache(ProjectCache&& value) { SetCache(std::move(value)); return *this;}
+    template<typename CacheT = ProjectCache>
+    void SetCache(CacheT&& value) { m_cacheHasBeenSet = true; m_cache = std::forward<CacheT>(value); }
+    template<typename CacheT = ProjectCache>
+    CreateProjectRequest& WithCache(CacheT&& value) { SetCache(std::forward<CacheT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the build environment for the build project.</p>
      */
-    inline const ProjectEnvironment& GetEnvironment() const{ return m_environment; }
+    inline const ProjectEnvironment& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const ProjectEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline CreateProjectRequest& WithEnvironment(const ProjectEnvironment& value) { SetEnvironment(value); return *this;}
-    inline CreateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+    template<typename EnvironmentT = ProjectEnvironment>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = ProjectEnvironment>
+    CreateProjectRequest& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,14 +198,12 @@ namespace Model
      * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
      * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline CreateProjectRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline CreateProjectRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    CreateProjectRequest& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,7 +212,7 @@ namespace Model
      * it times out any build that has not been marked as completed. The default is 60
      * minutes.</p>
      */
-    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+    inline int GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
     inline CreateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
@@ -231,7 +223,7 @@ namespace Model
      * <p>The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
-    inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+    inline int GetQueuedTimeoutInMinutes() const { return m_queuedTimeoutInMinutes; }
     inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
     inline void SetQueuedTimeoutInMinutes(int value) { m_queuedTimeoutInMinutesHasBeenSet = true; m_queuedTimeoutInMinutes = value; }
     inline CreateProjectRequest& WithQueuedTimeoutInMinutes(int value) { SetQueuedTimeoutInMinutes(value); return *this;}
@@ -246,14 +238,12 @@ namespace Model
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/&lt;alias-name&gt;</code>). </p>
      */
-    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const Aws::String& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
-    inline CreateProjectRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
-    inline CreateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+    template<typename EncryptionKeyT = Aws::String>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = Aws::String>
+    CreateProjectRequest& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -262,14 +252,14 @@ namespace Model
      * <p>These tags are available for use by Amazon Web Services services that support
      * CodeBuild build project tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateProjectRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateProjectRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -278,12 +268,12 @@ namespace Model
      * <p>If you're using compute fleets during project creation, do not provide
      * vpcConfig.</p> 
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline CreateProjectRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline CreateProjectRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    CreateProjectRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -291,7 +281,7 @@ namespace Model
      * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
-    inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
+    inline bool GetBadgeEnabled() const { return m_badgeEnabled; }
     inline bool BadgeEnabledHasBeenSet() const { return m_badgeEnabledHasBeenSet; }
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
     inline CreateProjectRequest& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
@@ -302,12 +292,12 @@ namespace Model
      * <p>Information about logs for the build project. These can be logs in CloudWatch
      * Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
-    inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
+    inline const LogsConfig& GetLogsConfig() const { return m_logsConfig; }
     inline bool LogsConfigHasBeenSet() const { return m_logsConfigHasBeenSet; }
-    inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
-    inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
-    inline CreateProjectRequest& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
-    inline CreateProjectRequest& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
+    template<typename LogsConfigT = LogsConfig>
+    void SetLogsConfig(LogsConfigT&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::forward<LogsConfigT>(value); }
+    template<typename LogsConfigT = LogsConfig>
+    CreateProjectRequest& WithLogsConfig(LogsConfigT&& value) { SetLogsConfig(std::forward<LogsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -318,14 +308,14 @@ namespace Model
      * <code>mountPoint</code>, and <code>type</code> of a file system created using
      * Amazon Elastic File System. </p>
      */
-    inline const Aws::Vector<ProjectFileSystemLocation>& GetFileSystemLocations() const{ return m_fileSystemLocations; }
+    inline const Aws::Vector<ProjectFileSystemLocation>& GetFileSystemLocations() const { return m_fileSystemLocations; }
     inline bool FileSystemLocationsHasBeenSet() const { return m_fileSystemLocationsHasBeenSet; }
-    inline void SetFileSystemLocations(const Aws::Vector<ProjectFileSystemLocation>& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = value; }
-    inline void SetFileSystemLocations(Aws::Vector<ProjectFileSystemLocation>&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = std::move(value); }
-    inline CreateProjectRequest& WithFileSystemLocations(const Aws::Vector<ProjectFileSystemLocation>& value) { SetFileSystemLocations(value); return *this;}
-    inline CreateProjectRequest& WithFileSystemLocations(Aws::Vector<ProjectFileSystemLocation>&& value) { SetFileSystemLocations(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddFileSystemLocations(const ProjectFileSystemLocation& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(value); return *this; }
-    inline CreateProjectRequest& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
+    template<typename FileSystemLocationsT = Aws::Vector<ProjectFileSystemLocation>>
+    void SetFileSystemLocations(FileSystemLocationsT&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = std::forward<FileSystemLocationsT>(value); }
+    template<typename FileSystemLocationsT = Aws::Vector<ProjectFileSystemLocation>>
+    CreateProjectRequest& WithFileSystemLocations(FileSystemLocationsT&& value) { SetFileSystemLocations(std::forward<FileSystemLocationsT>(value)); return *this;}
+    template<typename FileSystemLocationsT = ProjectFileSystemLocation>
+    CreateProjectRequest& AddFileSystemLocations(FileSystemLocationsT&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.emplace_back(std::forward<FileSystemLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -333,12 +323,12 @@ namespace Model
      * <p>A <a>ProjectBuildBatchConfig</a> object that defines the batch build options
      * for the project.</p>
      */
-    inline const ProjectBuildBatchConfig& GetBuildBatchConfig() const{ return m_buildBatchConfig; }
+    inline const ProjectBuildBatchConfig& GetBuildBatchConfig() const { return m_buildBatchConfig; }
     inline bool BuildBatchConfigHasBeenSet() const { return m_buildBatchConfigHasBeenSet; }
-    inline void SetBuildBatchConfig(const ProjectBuildBatchConfig& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = value; }
-    inline void SetBuildBatchConfig(ProjectBuildBatchConfig&& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = std::move(value); }
-    inline CreateProjectRequest& WithBuildBatchConfig(const ProjectBuildBatchConfig& value) { SetBuildBatchConfig(value); return *this;}
-    inline CreateProjectRequest& WithBuildBatchConfig(ProjectBuildBatchConfig&& value) { SetBuildBatchConfig(std::move(value)); return *this;}
+    template<typename BuildBatchConfigT = ProjectBuildBatchConfig>
+    void SetBuildBatchConfig(BuildBatchConfigT&& value) { m_buildBatchConfigHasBeenSet = true; m_buildBatchConfig = std::forward<BuildBatchConfigT>(value); }
+    template<typename BuildBatchConfigT = ProjectBuildBatchConfig>
+    CreateProjectRequest& WithBuildBatchConfig(BuildBatchConfigT&& value) { SetBuildBatchConfig(std::forward<BuildBatchConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -348,7 +338,7 @@ namespace Model
      * less than or equal to this limit. If the current build count meets this limit,
      * new builds are throttled and are not run.</p>
      */
-    inline int GetConcurrentBuildLimit() const{ return m_concurrentBuildLimit; }
+    inline int GetConcurrentBuildLimit() const { return m_concurrentBuildLimit; }
     inline bool ConcurrentBuildLimitHasBeenSet() const { return m_concurrentBuildLimitHasBeenSet; }
     inline void SetConcurrentBuildLimit(int value) { m_concurrentBuildLimitHasBeenSet = true; m_concurrentBuildLimit = value; }
     inline CreateProjectRequest& WithConcurrentBuildLimit(int value) { SetConcurrentBuildLimit(value); return *this;}
@@ -361,7 +351,7 @@ namespace Model
      * <code>RetryBuild</code> API to automatically retry your build for up to 2
      * additional times.</p>
      */
-    inline int GetAutoRetryLimit() const{ return m_autoRetryLimit; }
+    inline int GetAutoRetryLimit() const { return m_autoRetryLimit; }
     inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
     inline void SetAutoRetryLimit(int value) { m_autoRetryLimitHasBeenSet = true; m_autoRetryLimit = value; }
     inline CreateProjectRequest& WithAutoRetryLimit(int value) { SetAutoRetryLimit(value); return *this;}
@@ -401,10 +391,10 @@ namespace Model
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet = false;
 
-    int m_timeoutInMinutes;
+    int m_timeoutInMinutes{0};
     bool m_timeoutInMinutesHasBeenSet = false;
 
-    int m_queuedTimeoutInMinutes;
+    int m_queuedTimeoutInMinutes{0};
     bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
     Aws::String m_encryptionKey;
@@ -416,7 +406,7 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
 
-    bool m_badgeEnabled;
+    bool m_badgeEnabled{false};
     bool m_badgeEnabledHasBeenSet = false;
 
     LogsConfig m_logsConfig;
@@ -428,10 +418,10 @@ namespace Model
     ProjectBuildBatchConfig m_buildBatchConfig;
     bool m_buildBatchConfigHasBeenSet = false;
 
-    int m_concurrentBuildLimit;
+    int m_concurrentBuildLimit{0};
     bool m_concurrentBuildLimitHasBeenSet = false;
 
-    int m_autoRetryLimit;
+    int m_autoRetryLimit{0};
     bool m_autoRetryLimitHasBeenSet = false;
   };
 

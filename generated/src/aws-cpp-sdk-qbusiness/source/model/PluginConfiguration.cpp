@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-PluginConfiguration::PluginConfiguration() : 
-    m_pluginIdHasBeenSet(false)
-{
-}
-
 PluginConfiguration::PluginConfiguration(JsonView jsonValue)
-  : PluginConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PluginConfiguration& PluginConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pluginId"))
   {
     m_pluginId = jsonValue.GetString("pluginId");
-
     m_pluginIdHasBeenSet = true;
   }
-
   return *this;
 }
 

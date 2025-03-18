@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPullRequestOverrideStateResult::GetPullRequestOverrideStateResult() : 
-    m_overridden(false)
-{
-}
-
 GetPullRequestOverrideStateResult::GetPullRequestOverrideStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPullRequestOverrideStateResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetPullRequestOverrideStateResult& GetPullRequestOverrideStateResult::operator =
   if(jsonValue.ValueExists("overridden"))
   {
     m_overridden = jsonValue.GetBool("overridden");
-
+    m_overriddenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrider"))
   {
     m_overrider = jsonValue.GetString("overrider");
-
+    m_overriderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

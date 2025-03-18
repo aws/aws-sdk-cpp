@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrainedModelInferenceJobRequest::GetTrainedModelInferenceJobRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_trainedModelInferenceJobArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTrainedModelInferenceJobRequest::SerializePayload() const
 {
   return {};

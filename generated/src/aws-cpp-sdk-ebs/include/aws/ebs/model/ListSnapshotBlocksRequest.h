@@ -25,7 +25,7 @@ namespace Model
   class ListSnapshotBlocksRequest : public EBSRequest
   {
   public:
-    AWS_EBS_API ListSnapshotBlocksRequest();
+    AWS_EBS_API ListSnapshotBlocksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline ListSnapshotBlocksRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline ListSnapshotBlocksRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline ListSnapshotBlocksRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    ListSnapshotBlocksRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The token to request the next page of results.</p> <p>If you specify
      * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSnapshotBlocksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSnapshotBlocksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSnapshotBlocksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSnapshotBlocksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * returned <b>NextToken</b> value. The value of <b>NextToken</b> is
      * <code>null</code> when there are no more blocks to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSnapshotBlocksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
      * snapshot.</p> <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b>
      * is ignored.</p>
      */
-    inline int GetStartingBlockIndex() const{ return m_startingBlockIndex; }
+    inline int GetStartingBlockIndex() const { return m_startingBlockIndex; }
     inline bool StartingBlockIndexHasBeenSet() const { return m_startingBlockIndexHasBeenSet; }
     inline void SetStartingBlockIndex(int value) { m_startingBlockIndexHasBeenSet = true; m_startingBlockIndex = value; }
     inline ListSnapshotBlocksRequest& WithStartingBlockIndex(int value) { SetStartingBlockIndex(value); return *this;}
@@ -102,10 +98,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    int m_startingBlockIndex;
+    int m_startingBlockIndex{0};
     bool m_startingBlockIndexHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListTLSInspectionConfigurationsResult
   {
   public:
-    AWS_NETWORKFIREWALL_API ListTLSInspectionConfigurationsResult();
+    AWS_NETWORKFIREWALL_API ListTLSInspectionConfigurationsResult() = default;
     AWS_NETWORKFIREWALL_API ListTLSInspectionConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API ListTLSInspectionConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTLSInspectionConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTLSInspectionConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTLSInspectionConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTLSInspectionConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,32 +55,33 @@ namespace Model
      * Depending on your setting for max results and the number of TLS inspection
      * configurations, this might not be the full list.</p>
      */
-    inline const Aws::Vector<TLSInspectionConfigurationMetadata>& GetTLSInspectionConfigurations() const{ return m_tLSInspectionConfigurations; }
-    inline void SetTLSInspectionConfigurations(const Aws::Vector<TLSInspectionConfigurationMetadata>& value) { m_tLSInspectionConfigurations = value; }
-    inline void SetTLSInspectionConfigurations(Aws::Vector<TLSInspectionConfigurationMetadata>&& value) { m_tLSInspectionConfigurations = std::move(value); }
-    inline ListTLSInspectionConfigurationsResult& WithTLSInspectionConfigurations(const Aws::Vector<TLSInspectionConfigurationMetadata>& value) { SetTLSInspectionConfigurations(value); return *this;}
-    inline ListTLSInspectionConfigurationsResult& WithTLSInspectionConfigurations(Aws::Vector<TLSInspectionConfigurationMetadata>&& value) { SetTLSInspectionConfigurations(std::move(value)); return *this;}
-    inline ListTLSInspectionConfigurationsResult& AddTLSInspectionConfigurations(const TLSInspectionConfigurationMetadata& value) { m_tLSInspectionConfigurations.push_back(value); return *this; }
-    inline ListTLSInspectionConfigurationsResult& AddTLSInspectionConfigurations(TLSInspectionConfigurationMetadata&& value) { m_tLSInspectionConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TLSInspectionConfigurationMetadata>& GetTLSInspectionConfigurations() const { return m_tLSInspectionConfigurations; }
+    template<typename TLSInspectionConfigurationsT = Aws::Vector<TLSInspectionConfigurationMetadata>>
+    void SetTLSInspectionConfigurations(TLSInspectionConfigurationsT&& value) { m_tLSInspectionConfigurationsHasBeenSet = true; m_tLSInspectionConfigurations = std::forward<TLSInspectionConfigurationsT>(value); }
+    template<typename TLSInspectionConfigurationsT = Aws::Vector<TLSInspectionConfigurationMetadata>>
+    ListTLSInspectionConfigurationsResult& WithTLSInspectionConfigurations(TLSInspectionConfigurationsT&& value) { SetTLSInspectionConfigurations(std::forward<TLSInspectionConfigurationsT>(value)); return *this;}
+    template<typename TLSInspectionConfigurationsT = TLSInspectionConfigurationMetadata>
+    ListTLSInspectionConfigurationsResult& AddTLSInspectionConfigurations(TLSInspectionConfigurationsT&& value) { m_tLSInspectionConfigurationsHasBeenSet = true; m_tLSInspectionConfigurations.emplace_back(std::forward<TLSInspectionConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTLSInspectionConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTLSInspectionConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTLSInspectionConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTLSInspectionConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<TLSInspectionConfigurationMetadata> m_tLSInspectionConfigurations;
+    bool m_tLSInspectionConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

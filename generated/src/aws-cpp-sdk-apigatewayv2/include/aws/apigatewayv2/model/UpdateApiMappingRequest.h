@@ -24,7 +24,7 @@ namespace Model
   class UpdateApiMappingRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API UpdateApiMappingRequest();
+    AWS_APIGATEWAYV2_API UpdateApiMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,70 +39,60 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline UpdateApiMappingRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline UpdateApiMappingRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline UpdateApiMappingRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    UpdateApiMappingRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API mapping identifier.</p>
      */
-    inline const Aws::String& GetApiMappingId() const{ return m_apiMappingId; }
+    inline const Aws::String& GetApiMappingId() const { return m_apiMappingId; }
     inline bool ApiMappingIdHasBeenSet() const { return m_apiMappingIdHasBeenSet; }
-    inline void SetApiMappingId(const Aws::String& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = value; }
-    inline void SetApiMappingId(Aws::String&& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = std::move(value); }
-    inline void SetApiMappingId(const char* value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId.assign(value); }
-    inline UpdateApiMappingRequest& WithApiMappingId(const Aws::String& value) { SetApiMappingId(value); return *this;}
-    inline UpdateApiMappingRequest& WithApiMappingId(Aws::String&& value) { SetApiMappingId(std::move(value)); return *this;}
-    inline UpdateApiMappingRequest& WithApiMappingId(const char* value) { SetApiMappingId(value); return *this;}
+    template<typename ApiMappingIdT = Aws::String>
+    void SetApiMappingId(ApiMappingIdT&& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = std::forward<ApiMappingIdT>(value); }
+    template<typename ApiMappingIdT = Aws::String>
+    UpdateApiMappingRequest& WithApiMappingId(ApiMappingIdT&& value) { SetApiMappingId(std::forward<ApiMappingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API mapping key.</p>
      */
-    inline const Aws::String& GetApiMappingKey() const{ return m_apiMappingKey; }
+    inline const Aws::String& GetApiMappingKey() const { return m_apiMappingKey; }
     inline bool ApiMappingKeyHasBeenSet() const { return m_apiMappingKeyHasBeenSet; }
-    inline void SetApiMappingKey(const Aws::String& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = value; }
-    inline void SetApiMappingKey(Aws::String&& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = std::move(value); }
-    inline void SetApiMappingKey(const char* value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey.assign(value); }
-    inline UpdateApiMappingRequest& WithApiMappingKey(const Aws::String& value) { SetApiMappingKey(value); return *this;}
-    inline UpdateApiMappingRequest& WithApiMappingKey(Aws::String&& value) { SetApiMappingKey(std::move(value)); return *this;}
-    inline UpdateApiMappingRequest& WithApiMappingKey(const char* value) { SetApiMappingKey(value); return *this;}
+    template<typename ApiMappingKeyT = Aws::String>
+    void SetApiMappingKey(ApiMappingKeyT&& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = std::forward<ApiMappingKeyT>(value); }
+    template<typename ApiMappingKeyT = Aws::String>
+    UpdateApiMappingRequest& WithApiMappingKey(ApiMappingKeyT&& value) { SetApiMappingKey(std::forward<ApiMappingKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpdateApiMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpdateApiMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpdateApiMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpdateApiMappingRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API stage.</p>
      */
-    inline const Aws::String& GetStage() const{ return m_stage; }
+    inline const Aws::String& GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
-    inline UpdateApiMappingRequest& WithStage(const Aws::String& value) { SetStage(value); return *this;}
-    inline UpdateApiMappingRequest& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
-    inline UpdateApiMappingRequest& WithStage(const char* value) { SetStage(value); return *this;}
+    template<typename StageT = Aws::String>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = Aws::String>
+    UpdateApiMappingRequest& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
   private:
 

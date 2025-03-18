@@ -36,7 +36,7 @@ namespace Model
   class Intent
   {
   public:
-    AWS_LEXRUNTIMEV2_API Intent();
+    AWS_LEXRUNTIMEV2_API Intent() = default;
     AWS_LEXRUNTIMEV2_API Intent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Intent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the intent.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Intent& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Intent& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Intent& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Intent& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * <p>A map of all of the slots for the intent. The name of the slot maps to the
      * value of the slot. If a slot has not been filled, the value is null.</p>
      */
-    inline const Aws::Map<Aws::String, Slot>& GetSlots() const{ return m_slots; }
+    inline const Aws::Map<Aws::String, Slot>& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::Map<Aws::String, Slot>& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::Map<Aws::String, Slot>&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline Intent& WithSlots(const Aws::Map<Aws::String, Slot>& value) { SetSlots(value); return *this;}
-    inline Intent& WithSlots(Aws::Map<Aws::String, Slot>&& value) { SetSlots(std::move(value)); return *this;}
-    inline Intent& AddSlots(const Aws::String& key, const Slot& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, value); return *this; }
-    inline Intent& AddSlots(Aws::String&& key, const Slot& value) { m_slotsHasBeenSet = true; m_slots.emplace(std::move(key), value); return *this; }
-    inline Intent& AddSlots(const Aws::String& key, Slot&& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, std::move(value)); return *this; }
-    inline Intent& AddSlots(Aws::String&& key, Slot&& value) { m_slotsHasBeenSet = true; m_slots.emplace(std::move(key), std::move(value)); return *this; }
-    inline Intent& AddSlots(const char* key, Slot&& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, std::move(value)); return *this; }
-    inline Intent& AddSlots(const char* key, const Slot& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, value); return *this; }
+    template<typename SlotsT = Aws::Map<Aws::String, Slot>>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::Map<Aws::String, Slot>>
+    Intent& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
+    template<typename SlotsKeyT = Aws::String, typename SlotsValueT = Slot>
+    Intent& AddSlots(SlotsKeyT&& key, SlotsValueT&& value) {
+      m_slotsHasBeenSet = true; m_slots.emplace(std::forward<SlotsKeyT>(key), std::forward<SlotsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * <code>Waiting</code> – The bot is waiting for a response from the user (limited
      * to streaming conversations).</p> </li> </ul>
      */
-    inline const IntentState& GetState() const{ return m_state; }
+    inline IntentState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const IntentState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(IntentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Intent& WithState(const IntentState& value) { SetState(value); return *this;}
-    inline Intent& WithState(IntentState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(IntentState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Intent& WithState(IntentState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * <code>Denied</code>, or <code>None</code> if the confirmation stage has not yet
      * been reached.</p>
      */
-    inline const ConfirmationState& GetConfirmationState() const{ return m_confirmationState; }
+    inline ConfirmationState GetConfirmationState() const { return m_confirmationState; }
     inline bool ConfirmationStateHasBeenSet() const { return m_confirmationStateHasBeenSet; }
-    inline void SetConfirmationState(const ConfirmationState& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
-    inline void SetConfirmationState(ConfirmationState&& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = std::move(value); }
-    inline Intent& WithConfirmationState(const ConfirmationState& value) { SetConfirmationState(value); return *this;}
-    inline Intent& WithConfirmationState(ConfirmationState&& value) { SetConfirmationState(std::move(value)); return *this;}
+    inline void SetConfirmationState(ConfirmationState value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
+    inline Intent& WithConfirmationState(ConfirmationState value) { SetConfirmationState(value); return *this;}
     ///@}
   private:
 
@@ -118,10 +110,10 @@ namespace Model
     Aws::Map<Aws::String, Slot> m_slots;
     bool m_slotsHasBeenSet = false;
 
-    IntentState m_state;
+    IntentState m_state{IntentState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    ConfirmationState m_confirmationState;
+    ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
     bool m_confirmationStateHasBeenSet = false;
   };
 

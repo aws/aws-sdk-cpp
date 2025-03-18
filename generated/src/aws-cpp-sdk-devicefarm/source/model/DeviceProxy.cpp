@@ -18,15 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-DeviceProxy::DeviceProxy() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 DeviceProxy::DeviceProxy(JsonView jsonValue)
-  : DeviceProxy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeviceProxy& DeviceProxy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("host"))
   {
     m_host = jsonValue.GetString("host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

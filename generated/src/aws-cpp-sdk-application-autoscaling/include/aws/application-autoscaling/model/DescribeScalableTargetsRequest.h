@@ -24,7 +24,7 @@ namespace Model
   class DescribeScalableTargetsRequest : public ApplicationAutoScalingRequest
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API DescribeScalableTargetsRequest();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScalableTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,10 @@ namespace Model
      * For a resource provided by your own application or service, use
      * <code>custom-resource</code> instead.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline DescribeScalableTargetsRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline DescribeScalableTargetsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline DescribeScalableTargetsRequest& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +111,14 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline DescribeScalableTargetsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline DescribeScalableTargetsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline DescribeScalableTargetsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline DescribeScalableTargetsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline DescribeScalableTargetsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    DescribeScalableTargetsRequest& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    DescribeScalableTargetsRequest& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -177,12 +174,10 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline DescribeScalableTargetsRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -195,7 +190,7 @@ namespace Model
      * used, the operation returns up to 50 results and a <code>NextToken</code> value,
      * if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeScalableTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -205,27 +200,25 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeScalableTargetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScalableTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScalableTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScalableTargetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

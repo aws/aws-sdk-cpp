@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTemplateStepRequest::GetTemplateStepRequest() : 
-    m_idHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_stepGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateStepRequest::SerializePayload() const
 {
   return {};

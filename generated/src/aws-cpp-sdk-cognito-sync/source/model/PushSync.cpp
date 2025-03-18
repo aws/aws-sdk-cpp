@@ -18,14 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-PushSync::PushSync() : 
-    m_applicationArnsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 PushSync::PushSync(JsonView jsonValue)
-  : PushSync()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ PushSync& PushSync::operator =(JsonView jsonValue)
     }
     m_applicationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

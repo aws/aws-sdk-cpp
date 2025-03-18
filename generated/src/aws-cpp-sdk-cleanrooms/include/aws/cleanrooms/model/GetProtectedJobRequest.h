@@ -21,7 +21,7 @@ namespace Model
   class GetProtectedJobRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API GetProtectedJobRequest();
+    AWS_CLEANROOMS_API GetProtectedJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p> The identifier for a membership in a protected job instance.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline GetProtectedJobRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline GetProtectedJobRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline GetProtectedJobRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    GetProtectedJobRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the protected job instance.</p>
      */
-    inline const Aws::String& GetProtectedJobIdentifier() const{ return m_protectedJobIdentifier; }
+    inline const Aws::String& GetProtectedJobIdentifier() const { return m_protectedJobIdentifier; }
     inline bool ProtectedJobIdentifierHasBeenSet() const { return m_protectedJobIdentifierHasBeenSet; }
-    inline void SetProtectedJobIdentifier(const Aws::String& value) { m_protectedJobIdentifierHasBeenSet = true; m_protectedJobIdentifier = value; }
-    inline void SetProtectedJobIdentifier(Aws::String&& value) { m_protectedJobIdentifierHasBeenSet = true; m_protectedJobIdentifier = std::move(value); }
-    inline void SetProtectedJobIdentifier(const char* value) { m_protectedJobIdentifierHasBeenSet = true; m_protectedJobIdentifier.assign(value); }
-    inline GetProtectedJobRequest& WithProtectedJobIdentifier(const Aws::String& value) { SetProtectedJobIdentifier(value); return *this;}
-    inline GetProtectedJobRequest& WithProtectedJobIdentifier(Aws::String&& value) { SetProtectedJobIdentifier(std::move(value)); return *this;}
-    inline GetProtectedJobRequest& WithProtectedJobIdentifier(const char* value) { SetProtectedJobIdentifier(value); return *this;}
+    template<typename ProtectedJobIdentifierT = Aws::String>
+    void SetProtectedJobIdentifier(ProtectedJobIdentifierT&& value) { m_protectedJobIdentifierHasBeenSet = true; m_protectedJobIdentifier = std::forward<ProtectedJobIdentifierT>(value); }
+    template<typename ProtectedJobIdentifierT = Aws::String>
+    GetProtectedJobRequest& WithProtectedJobIdentifier(ProtectedJobIdentifierT&& value) { SetProtectedJobIdentifier(std::forward<ProtectedJobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

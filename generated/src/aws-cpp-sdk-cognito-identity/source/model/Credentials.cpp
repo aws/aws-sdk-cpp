@@ -18,16 +18,7 @@ namespace CognitoIdentity
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expirationHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretKey"))
   {
     m_secretKey = jsonValue.GetString("SecretKey");
-
     m_secretKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionToken"))
   {
     m_sessionToken = jsonValue.GetString("SessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expiration"))
   {
     m_expiration = jsonValue.GetDouble("Expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   return *this;
 }
 

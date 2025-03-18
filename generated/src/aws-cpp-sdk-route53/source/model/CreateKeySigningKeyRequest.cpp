@@ -14,14 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateKeySigningKeyRequest::CreateKeySigningKeyRequest() : 
-    m_callerReferenceHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_keyManagementServiceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
 
 Aws::String CreateKeySigningKeyRequest::SerializePayload() const
 {

@@ -34,7 +34,7 @@ namespace Model
   class SimpleCondition
   {
   public:
-    AWS_PINPOINT_API SimpleCondition();
+    AWS_PINPOINT_API SimpleCondition() = default;
     AWS_PINPOINT_API SimpleCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SimpleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The dimension settings for the event that's associated with the activity.</p>
      */
-    inline const EventCondition& GetEventCondition() const{ return m_eventCondition; }
+    inline const EventCondition& GetEventCondition() const { return m_eventCondition; }
     inline bool EventConditionHasBeenSet() const { return m_eventConditionHasBeenSet; }
-    inline void SetEventCondition(const EventCondition& value) { m_eventConditionHasBeenSet = true; m_eventCondition = value; }
-    inline void SetEventCondition(EventCondition&& value) { m_eventConditionHasBeenSet = true; m_eventCondition = std::move(value); }
-    inline SimpleCondition& WithEventCondition(const EventCondition& value) { SetEventCondition(value); return *this;}
-    inline SimpleCondition& WithEventCondition(EventCondition&& value) { SetEventCondition(std::move(value)); return *this;}
+    template<typename EventConditionT = EventCondition>
+    void SetEventCondition(EventConditionT&& value) { m_eventConditionHasBeenSet = true; m_eventCondition = std::forward<EventConditionT>(value); }
+    template<typename EventConditionT = EventCondition>
+    SimpleCondition& WithEventCondition(EventConditionT&& value) { SetEventCondition(std::forward<EventConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segment that's associated with the activity.</p>
      */
-    inline const SegmentCondition& GetSegmentCondition() const{ return m_segmentCondition; }
+    inline const SegmentCondition& GetSegmentCondition() const { return m_segmentCondition; }
     inline bool SegmentConditionHasBeenSet() const { return m_segmentConditionHasBeenSet; }
-    inline void SetSegmentCondition(const SegmentCondition& value) { m_segmentConditionHasBeenSet = true; m_segmentCondition = value; }
-    inline void SetSegmentCondition(SegmentCondition&& value) { m_segmentConditionHasBeenSet = true; m_segmentCondition = std::move(value); }
-    inline SimpleCondition& WithSegmentCondition(const SegmentCondition& value) { SetSegmentCondition(value); return *this;}
-    inline SimpleCondition& WithSegmentCondition(SegmentCondition&& value) { SetSegmentCondition(std::move(value)); return *this;}
+    template<typename SegmentConditionT = SegmentCondition>
+    void SetSegmentCondition(SegmentConditionT&& value) { m_segmentConditionHasBeenSet = true; m_segmentCondition = std::forward<SegmentConditionT>(value); }
+    template<typename SegmentConditionT = SegmentCondition>
+    SimpleCondition& WithSegmentCondition(SegmentConditionT&& value) { SetSegmentCondition(std::forward<SegmentConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * <p>The dimension settings for the segment that's associated with the
      * activity.</p>
      */
-    inline const SegmentDimensions& GetSegmentDimensions() const{ return m_segmentDimensions; }
+    inline const SegmentDimensions& GetSegmentDimensions() const { return m_segmentDimensions; }
     inline bool SegmentDimensionsHasBeenSet() const { return m_segmentDimensionsHasBeenSet; }
-    inline void SetSegmentDimensions(const SegmentDimensions& value) { m_segmentDimensionsHasBeenSet = true; m_segmentDimensions = value; }
-    inline void SetSegmentDimensions(SegmentDimensions&& value) { m_segmentDimensionsHasBeenSet = true; m_segmentDimensions = std::move(value); }
-    inline SimpleCondition& WithSegmentDimensions(const SegmentDimensions& value) { SetSegmentDimensions(value); return *this;}
-    inline SimpleCondition& WithSegmentDimensions(SegmentDimensions&& value) { SetSegmentDimensions(std::move(value)); return *this;}
+    template<typename SegmentDimensionsT = SegmentDimensions>
+    void SetSegmentDimensions(SegmentDimensionsT&& value) { m_segmentDimensionsHasBeenSet = true; m_segmentDimensions = std::forward<SegmentDimensionsT>(value); }
+    template<typename SegmentDimensionsT = SegmentDimensions>
+    SimpleCondition& WithSegmentDimensions(SegmentDimensionsT&& value) { SetSegmentDimensions(std::forward<SegmentDimensionsT>(value)); return *this;}
     ///@}
   private:
 

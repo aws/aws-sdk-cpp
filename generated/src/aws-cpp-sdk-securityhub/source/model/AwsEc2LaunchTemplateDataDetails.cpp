@@ -18,45 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataDetails::AwsEc2LaunchTemplateDataDetails() : 
-    m_blockDeviceMappingSetHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false),
-    m_disableApiStop(false),
-    m_disableApiStopHasBeenSet(false),
-    m_disableApiTermination(false),
-    m_disableApiTerminationHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_elasticGpuSpecificationSetHasBeenSet(false),
-    m_elasticInferenceAcceleratorSetHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_licenseSetHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_networkInterfaceSetHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false),
-    m_ramDiskIdHasBeenSet(false),
-    m_securityGroupIdSetHasBeenSet(false),
-    m_securityGroupSetHasBeenSet(false),
-    m_userDataHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataDetails::AwsEc2LaunchTemplateDataDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataDetails()
 {
   *this = jsonValue;
 }
@@ -72,49 +34,36 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_blockDeviceMappingSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityReservationSpecification"))
   {
     m_capacityReservationSpecification = jsonValue.GetObject("CapacityReservationSpecification");
-
     m_capacityReservationSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CpuOptions"))
   {
     m_cpuOptions = jsonValue.GetObject("CpuOptions");
-
     m_cpuOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreditSpecification"))
   {
     m_creditSpecification = jsonValue.GetObject("CreditSpecification");
-
     m_creditSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableApiStop"))
   {
     m_disableApiStop = jsonValue.GetBool("DisableApiStop");
-
     m_disableApiStopHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableApiTermination"))
   {
     m_disableApiTermination = jsonValue.GetBool("DisableApiTermination");
-
     m_disableApiTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimized"))
   {
     m_ebsOptimized = jsonValue.GetBool("EbsOptimized");
-
     m_ebsOptimizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticGpuSpecificationSet"))
   {
     Aws::Utils::Array<JsonView> elasticGpuSpecificationSetJsonList = jsonValue.GetArray("ElasticGpuSpecificationSet");
@@ -124,7 +73,6 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_elasticGpuSpecificationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticInferenceAcceleratorSet"))
   {
     Aws::Utils::Array<JsonView> elasticInferenceAcceleratorSetJsonList = jsonValue.GetArray("ElasticInferenceAcceleratorSet");
@@ -134,77 +82,56 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_elasticInferenceAcceleratorSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnclaveOptions"))
   {
     m_enclaveOptions = jsonValue.GetObject("EnclaveOptions");
-
     m_enclaveOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HibernationOptions"))
   {
     m_hibernationOptions = jsonValue.GetObject("HibernationOptions");
-
     m_hibernationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamInstanceProfile"))
   {
     m_iamInstanceProfile = jsonValue.GetObject("IamInstanceProfile");
-
     m_iamInstanceProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageId"))
   {
     m_imageId = jsonValue.GetString("ImageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceInitiatedShutdownBehavior"))
   {
     m_instanceInitiatedShutdownBehavior = jsonValue.GetString("InstanceInitiatedShutdownBehavior");
-
     m_instanceInitiatedShutdownBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceMarketOptions"))
   {
     m_instanceMarketOptions = jsonValue.GetObject("InstanceMarketOptions");
-
     m_instanceMarketOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceRequirements"))
   {
     m_instanceRequirements = jsonValue.GetObject("InstanceRequirements");
-
     m_instanceRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KernelId"))
   {
     m_kernelId = jsonValue.GetString("KernelId");
-
     m_kernelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseSet"))
   {
     Aws::Utils::Array<JsonView> licenseSetJsonList = jsonValue.GetArray("LicenseSet");
@@ -214,28 +141,21 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_licenseSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceOptions"))
   {
     m_maintenanceOptions = jsonValue.GetObject("MaintenanceOptions");
-
     m_maintenanceOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataOptions"))
   {
     m_metadataOptions = jsonValue.GetObject("MetadataOptions");
-
     m_metadataOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Monitoring"))
   {
     m_monitoring = jsonValue.GetObject("Monitoring");
-
     m_monitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceSet"))
   {
     Aws::Utils::Array<JsonView> networkInterfaceSetJsonList = jsonValue.GetArray("NetworkInterfaceSet");
@@ -245,28 +165,21 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_networkInterfaceSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Placement"))
   {
     m_placement = jsonValue.GetObject("Placement");
-
     m_placementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDnsNameOptions"))
   {
     m_privateDnsNameOptions = jsonValue.GetObject("PrivateDnsNameOptions");
-
     m_privateDnsNameOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RamDiskId"))
   {
     m_ramDiskId = jsonValue.GetString("RamDiskId");
-
     m_ramDiskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIdSet"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdSetJsonList = jsonValue.GetArray("SecurityGroupIdSet");
@@ -276,7 +189,6 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_securityGroupIdSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupSet"))
   {
     Aws::Utils::Array<JsonView> securityGroupSetJsonList = jsonValue.GetArray("SecurityGroupSet");
@@ -286,14 +198,11 @@ AwsEc2LaunchTemplateDataDetails& AwsEc2LaunchTemplateDataDetails::operator =(Jso
     }
     m_securityGroupSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserData"))
   {
     m_userData = jsonValue.GetString("UserData");
-
     m_userDataHasBeenSet = true;
   }
-
   return *this;
 }
 

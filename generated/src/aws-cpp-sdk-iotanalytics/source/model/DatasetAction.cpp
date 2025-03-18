@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetAction::DatasetAction() : 
-    m_actionNameHasBeenSet(false),
-    m_queryActionHasBeenSet(false),
-    m_containerActionHasBeenSet(false)
-{
-}
-
 DatasetAction::DatasetAction(JsonView jsonValue)
-  : DatasetAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatasetAction& DatasetAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryAction"))
   {
     m_queryAction = jsonValue.GetObject("queryAction");
-
     m_queryActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerAction"))
   {
     m_containerAction = jsonValue.GetObject("containerAction");
-
     m_containerActionHasBeenSet = true;
   }
-
   return *this;
 }
 

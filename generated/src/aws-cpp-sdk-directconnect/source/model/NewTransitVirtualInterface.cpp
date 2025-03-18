@@ -18,28 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-NewTransitVirtualInterface::NewTransitVirtualInterface() : 
-    m_virtualInterfaceNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableSiteLink(false),
-    m_enableSiteLinkHasBeenSet(false)
-{
-}
-
 NewTransitVirtualInterface::NewTransitVirtualInterface(JsonView jsonValue)
-  : NewTransitVirtualInterface()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ NewTransitVirtualInterface& NewTransitVirtualInterface::operator =(JsonView json
   if(jsonValue.ValueExists("virtualInterfaceName"))
   {
     m_virtualInterfaceName = jsonValue.GetString("virtualInterfaceName");
-
     m_virtualInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vlan"))
   {
     m_vlan = jsonValue.GetInteger("vlan");
-
     m_vlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetInteger("asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mtu"))
   {
     m_mtu = jsonValue.GetInteger("mtu");
-
     m_mtuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
-
     m_authKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonAddress"))
   {
     m_amazonAddress = jsonValue.GetString("amazonAddress");
-
     m_amazonAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerAddress"))
   {
     m_customerAddress = jsonValue.GetString("customerAddress");
-
     m_customerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressFamily"))
   {
     m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
-
     m_addressFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -118,14 +79,11 @@ NewTransitVirtualInterface& NewTransitVirtualInterface::operator =(JsonView json
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableSiteLink"))
   {
     m_enableSiteLink = jsonValue.GetBool("enableSiteLink");
-
     m_enableSiteLinkHasBeenSet = true;
   }
-
   return *this;
 }
 

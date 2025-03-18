@@ -18,16 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-Shard::Shard() : 
-    m_createTimeHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Shard::Shard(JsonView jsonValue)
-  : Shard()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Shard& Shard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shardId"))
   {
     m_shardId = jsonValue.GetString("shardId");
-
     m_shardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

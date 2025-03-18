@@ -30,7 +30,7 @@ namespace Model
   class UpdateAbpV1_1
   {
   public:
-    AWS_IOTWIRELESS_API UpdateAbpV1_1();
+    AWS_IOTWIRELESS_API UpdateAbpV1_1() = default;
     AWS_IOTWIRELESS_API UpdateAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API UpdateAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The FCnt init value.</p>
      */
-    inline int GetFCntStart() const{ return m_fCntStart; }
+    inline int GetFCntStart() const { return m_fCntStart; }
     inline bool FCntStartHasBeenSet() const { return m_fCntStartHasBeenSet; }
     inline void SetFCntStart(int value) { m_fCntStartHasBeenSet = true; m_fCntStart = value; }
     inline UpdateAbpV1_1& WithFCntStart(int value) { SetFCntStart(value); return *this;}
     ///@}
   private:
 
-    int m_fCntStart;
+    int m_fCntStart{0};
     bool m_fCntStartHasBeenSet = false;
   };
 

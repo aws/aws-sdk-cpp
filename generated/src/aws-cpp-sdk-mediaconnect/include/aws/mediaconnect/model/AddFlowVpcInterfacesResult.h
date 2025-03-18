@@ -29,7 +29,7 @@ namespace Model
   class AddFlowVpcInterfacesResult
   {
   public:
-    AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult();
+    AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult() = default;
     AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * The ARN of the flow that these VPC interfaces were added to.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline AddFlowVpcInterfacesResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline AddFlowVpcInterfacesResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline AddFlowVpcInterfacesResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    AddFlowVpcInterfacesResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The details of the newly added VPC interfaces.
      */
-    inline const Aws::Vector<VpcInterface>& GetVpcInterfaces() const{ return m_vpcInterfaces; }
-    inline void SetVpcInterfaces(const Aws::Vector<VpcInterface>& value) { m_vpcInterfaces = value; }
-    inline void SetVpcInterfaces(Aws::Vector<VpcInterface>&& value) { m_vpcInterfaces = std::move(value); }
-    inline AddFlowVpcInterfacesResult& WithVpcInterfaces(const Aws::Vector<VpcInterface>& value) { SetVpcInterfaces(value); return *this;}
-    inline AddFlowVpcInterfacesResult& WithVpcInterfaces(Aws::Vector<VpcInterface>&& value) { SetVpcInterfaces(std::move(value)); return *this;}
-    inline AddFlowVpcInterfacesResult& AddVpcInterfaces(const VpcInterface& value) { m_vpcInterfaces.push_back(value); return *this; }
-    inline AddFlowVpcInterfacesResult& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcInterface>& GetVpcInterfaces() const { return m_vpcInterfaces; }
+    template<typename VpcInterfacesT = Aws::Vector<VpcInterface>>
+    void SetVpcInterfaces(VpcInterfacesT&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = std::forward<VpcInterfacesT>(value); }
+    template<typename VpcInterfacesT = Aws::Vector<VpcInterface>>
+    AddFlowVpcInterfacesResult& WithVpcInterfaces(VpcInterfacesT&& value) { SetVpcInterfaces(std::forward<VpcInterfacesT>(value)); return *this;}
+    template<typename VpcInterfacesT = VpcInterface>
+    AddFlowVpcInterfacesResult& AddVpcInterfaces(VpcInterfacesT&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.emplace_back(std::forward<VpcInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddFlowVpcInterfacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddFlowVpcInterfacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddFlowVpcInterfacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddFlowVpcInterfacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<VpcInterface> m_vpcInterfaces;
+    bool m_vpcInterfacesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

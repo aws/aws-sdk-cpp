@@ -33,7 +33,7 @@ namespace Model
   class NotificationConfigurationSummary
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API NotificationConfigurationSummary();
+    AWS_IOTMANAGEDINTEGRATIONS_API NotificationConfigurationSummary() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API NotificationConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API NotificationConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The type of event triggering a device notification to the customer-managed
      * destination.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline NotificationConfigurationSummary& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline NotificationConfigurationSummary& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline NotificationConfigurationSummary& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the destination for the notification configuration.</p>
      */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+    inline const Aws::String& GetDestinationName() const { return m_destinationName; }
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-    inline NotificationConfigurationSummary& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-    inline NotificationConfigurationSummary& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-    inline NotificationConfigurationSummary& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+    template<typename DestinationNameT = Aws::String>
+    void SetDestinationName(DestinationNameT&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::forward<DestinationNameT>(value); }
+    template<typename DestinationNameT = Aws::String>
+    NotificationConfigurationSummary& WithDestinationName(DestinationNameT&& value) { SetDestinationName(std::forward<DestinationNameT>(value)); return *this;}
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_destinationName;

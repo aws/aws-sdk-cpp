@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRestoreTestingPlanResult::CreateRestoreTestingPlanResult()
-{
-}
-
 CreateRestoreTestingPlanResult::CreateRestoreTestingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateRestoreTestingPlanResult& CreateRestoreTestingPlanResult::operator =(const
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanArn"))
   {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
-
+    m_restoreTestingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
+    m_restoreTestingPlanNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,28 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ParameterHistory::ParameterHistory() : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_tier(ParameterTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
-{
-}
-
 ParameterHistory::ParameterHistory(JsonView jsonValue)
-  : ParameterHistory()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedUser"))
   {
     m_lastModifiedUser = jsonValue.GetString("LastModifiedUser");
-
     m_lastModifiedUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedPattern"))
   {
     m_allowedPattern = jsonValue.GetString("AllowedPattern");
-
     m_allowedPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -118,14 +79,11 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = ParameterTierMapper::GetParameterTierForName(jsonValue.GetString("Tier"));
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policies"))
   {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
@@ -135,14 +93,11 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
     }
     m_policiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-LambdaResource::LambdaResource() : 
-    m_lambdaArnHasBeenSet(false),
-    m_eventTriggersHasBeenSet(false)
-{
-}
-
 LambdaResource::LambdaResource(JsonView jsonValue)
-  : LambdaResource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LambdaResource& LambdaResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTriggers"))
   {
     Aws::Utils::Array<JsonView> eventTriggersJsonList = jsonValue.GetArray("EventTriggers");
@@ -48,7 +39,6 @@ LambdaResource& LambdaResource::operator =(JsonView jsonValue)
     }
     m_eventTriggersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class GroupMembers
   {
   public:
-    AWS_QBUSINESS_API GroupMembers();
+    AWS_QBUSINESS_API GroupMembers() = default;
     AWS_QBUSINESS_API GroupMembers(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API GroupMembers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * "Research", "Engineering", and "Sales and Marketing" all belong to the group
      * "Company".</p>
      */
-    inline const Aws::Vector<MemberGroup>& GetMemberGroups() const{ return m_memberGroups; }
+    inline const Aws::Vector<MemberGroup>& GetMemberGroups() const { return m_memberGroups; }
     inline bool MemberGroupsHasBeenSet() const { return m_memberGroupsHasBeenSet; }
-    inline void SetMemberGroups(const Aws::Vector<MemberGroup>& value) { m_memberGroupsHasBeenSet = true; m_memberGroups = value; }
-    inline void SetMemberGroups(Aws::Vector<MemberGroup>&& value) { m_memberGroupsHasBeenSet = true; m_memberGroups = std::move(value); }
-    inline GroupMembers& WithMemberGroups(const Aws::Vector<MemberGroup>& value) { SetMemberGroups(value); return *this;}
-    inline GroupMembers& WithMemberGroups(Aws::Vector<MemberGroup>&& value) { SetMemberGroups(std::move(value)); return *this;}
-    inline GroupMembers& AddMemberGroups(const MemberGroup& value) { m_memberGroupsHasBeenSet = true; m_memberGroups.push_back(value); return *this; }
-    inline GroupMembers& AddMemberGroups(MemberGroup&& value) { m_memberGroupsHasBeenSet = true; m_memberGroups.push_back(std::move(value)); return *this; }
+    template<typename MemberGroupsT = Aws::Vector<MemberGroup>>
+    void SetMemberGroups(MemberGroupsT&& value) { m_memberGroupsHasBeenSet = true; m_memberGroups = std::forward<MemberGroupsT>(value); }
+    template<typename MemberGroupsT = Aws::Vector<MemberGroup>>
+    GroupMembers& WithMemberGroups(MemberGroupsT&& value) { SetMemberGroups(std::forward<MemberGroupsT>(value)); return *this;}
+    template<typename MemberGroupsT = MemberGroup>
+    GroupMembers& AddMemberGroups(MemberGroupsT&& value) { m_memberGroupsHasBeenSet = true; m_memberGroups.emplace_back(std::forward<MemberGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,24 +63,24 @@ namespace Model
      * <p>A list of users that belong to a group. For example, a list of interns all
      * belong to the "Interns" group.</p>
      */
-    inline const Aws::Vector<MemberUser>& GetMemberUsers() const{ return m_memberUsers; }
+    inline const Aws::Vector<MemberUser>& GetMemberUsers() const { return m_memberUsers; }
     inline bool MemberUsersHasBeenSet() const { return m_memberUsersHasBeenSet; }
-    inline void SetMemberUsers(const Aws::Vector<MemberUser>& value) { m_memberUsersHasBeenSet = true; m_memberUsers = value; }
-    inline void SetMemberUsers(Aws::Vector<MemberUser>&& value) { m_memberUsersHasBeenSet = true; m_memberUsers = std::move(value); }
-    inline GroupMembers& WithMemberUsers(const Aws::Vector<MemberUser>& value) { SetMemberUsers(value); return *this;}
-    inline GroupMembers& WithMemberUsers(Aws::Vector<MemberUser>&& value) { SetMemberUsers(std::move(value)); return *this;}
-    inline GroupMembers& AddMemberUsers(const MemberUser& value) { m_memberUsersHasBeenSet = true; m_memberUsers.push_back(value); return *this; }
-    inline GroupMembers& AddMemberUsers(MemberUser&& value) { m_memberUsersHasBeenSet = true; m_memberUsers.push_back(std::move(value)); return *this; }
+    template<typename MemberUsersT = Aws::Vector<MemberUser>>
+    void SetMemberUsers(MemberUsersT&& value) { m_memberUsersHasBeenSet = true; m_memberUsers = std::forward<MemberUsersT>(value); }
+    template<typename MemberUsersT = Aws::Vector<MemberUser>>
+    GroupMembers& WithMemberUsers(MemberUsersT&& value) { SetMemberUsers(std::forward<MemberUsersT>(value)); return *this;}
+    template<typename MemberUsersT = MemberUser>
+    GroupMembers& AddMemberUsers(MemberUsersT&& value) { m_memberUsersHasBeenSet = true; m_memberUsers.emplace_back(std::forward<MemberUsersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const S3& GetS3PathForGroupMembers() const{ return m_s3PathForGroupMembers; }
+    inline const S3& GetS3PathForGroupMembers() const { return m_s3PathForGroupMembers; }
     inline bool S3PathForGroupMembersHasBeenSet() const { return m_s3PathForGroupMembersHasBeenSet; }
-    inline void SetS3PathForGroupMembers(const S3& value) { m_s3PathForGroupMembersHasBeenSet = true; m_s3PathForGroupMembers = value; }
-    inline void SetS3PathForGroupMembers(S3&& value) { m_s3PathForGroupMembersHasBeenSet = true; m_s3PathForGroupMembers = std::move(value); }
-    inline GroupMembers& WithS3PathForGroupMembers(const S3& value) { SetS3PathForGroupMembers(value); return *this;}
-    inline GroupMembers& WithS3PathForGroupMembers(S3&& value) { SetS3PathForGroupMembers(std::move(value)); return *this;}
+    template<typename S3PathForGroupMembersT = S3>
+    void SetS3PathForGroupMembers(S3PathForGroupMembersT&& value) { m_s3PathForGroupMembersHasBeenSet = true; m_s3PathForGroupMembers = std::forward<S3PathForGroupMembersT>(value); }
+    template<typename S3PathForGroupMembersT = S3>
+    GroupMembers& WithS3PathForGroupMembers(S3PathForGroupMembersT&& value) { SetS3PathForGroupMembers(std::forward<S3PathForGroupMembersT>(value)); return *this;}
     ///@}
   private:
 

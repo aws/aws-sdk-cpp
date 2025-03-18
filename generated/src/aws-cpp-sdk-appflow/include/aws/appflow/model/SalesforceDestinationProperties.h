@@ -36,7 +36,7 @@ namespace Model
   class SalesforceDestinationProperties
   {
   public:
-    AWS_APPFLOW_API SalesforceDestinationProperties();
+    AWS_APPFLOW_API SalesforceDestinationProperties() = default;
     AWS_APPFLOW_API SalesforceDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SalesforceDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p> The object specified in the Salesforce flow destination. </p>
      */
-    inline const Aws::String& GetObject() const{ return m_object; }
+    inline const Aws::String& GetObject() const { return m_object; }
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
-    inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
-    inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
-    inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
-    inline SalesforceDestinationProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
-    inline SalesforceDestinationProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
-    inline SalesforceDestinationProperties& WithObject(const char* value) { SetObject(value); return *this;}
+    template<typename ObjectT = Aws::String>
+    void SetObject(ObjectT&& value) { m_objectHasBeenSet = true; m_object = std::forward<ObjectT>(value); }
+    template<typename ObjectT = Aws::String>
+    SalesforceDestinationProperties& WithObject(ObjectT&& value) { SetObject(std::forward<ObjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p> The name of the field that Amazon AppFlow uses as an ID when performing a
      * write operation such as update or delete. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const{ return m_idFieldNames; }
+    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const { return m_idFieldNames; }
     inline bool IdFieldNamesHasBeenSet() const { return m_idFieldNamesHasBeenSet; }
-    inline void SetIdFieldNames(const Aws::Vector<Aws::String>& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = value; }
-    inline void SetIdFieldNames(Aws::Vector<Aws::String>&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::move(value); }
-    inline SalesforceDestinationProperties& WithIdFieldNames(const Aws::Vector<Aws::String>& value) { SetIdFieldNames(value); return *this;}
-    inline SalesforceDestinationProperties& WithIdFieldNames(Aws::Vector<Aws::String>&& value) { SetIdFieldNames(std::move(value)); return *this;}
-    inline SalesforceDestinationProperties& AddIdFieldNames(const Aws::String& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
-    inline SalesforceDestinationProperties& AddIdFieldNames(Aws::String&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(std::move(value)); return *this; }
-    inline SalesforceDestinationProperties& AddIdFieldNames(const char* value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    void SetIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::forward<IdFieldNamesT>(value); }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    SalesforceDestinationProperties& WithIdFieldNames(IdFieldNamesT&& value) { SetIdFieldNames(std::forward<IdFieldNamesT>(value)); return *this;}
+    template<typename IdFieldNamesT = Aws::String>
+    SalesforceDestinationProperties& AddIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.emplace_back(std::forward<IdFieldNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,12 +78,12 @@ namespace Model
      * <code>ErrorHandlingConfig</code> is a part of the destination connector details.
      * </p>
      */
-    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const{ return m_errorHandlingConfig; }
+    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const { return m_errorHandlingConfig; }
     inline bool ErrorHandlingConfigHasBeenSet() const { return m_errorHandlingConfigHasBeenSet; }
-    inline void SetErrorHandlingConfig(const ErrorHandlingConfig& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = value; }
-    inline void SetErrorHandlingConfig(ErrorHandlingConfig&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::move(value); }
-    inline SalesforceDestinationProperties& WithErrorHandlingConfig(const ErrorHandlingConfig& value) { SetErrorHandlingConfig(value); return *this;}
-    inline SalesforceDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfig&& value) { SetErrorHandlingConfig(std::move(value)); return *this;}
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    void SetErrorHandlingConfig(ErrorHandlingConfigT&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::forward<ErrorHandlingConfigT>(value); }
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    SalesforceDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfigT&& value) { SetErrorHandlingConfig(std::forward<ErrorHandlingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +92,10 @@ namespace Model
      * When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is
      * required. </p>
      */
-    inline const WriteOperationType& GetWriteOperationType() const{ return m_writeOperationType; }
+    inline WriteOperationType GetWriteOperationType() const { return m_writeOperationType; }
     inline bool WriteOperationTypeHasBeenSet() const { return m_writeOperationTypeHasBeenSet; }
-    inline void SetWriteOperationType(const WriteOperationType& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
-    inline void SetWriteOperationType(WriteOperationType&& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = std::move(value); }
-    inline SalesforceDestinationProperties& WithWriteOperationType(const WriteOperationType& value) { SetWriteOperationType(value); return *this;}
-    inline SalesforceDestinationProperties& WithWriteOperationType(WriteOperationType&& value) { SetWriteOperationType(std::move(value)); return *this;}
+    inline void SetWriteOperationType(WriteOperationType value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
+    inline SalesforceDestinationProperties& WithWriteOperationType(WriteOperationType value) { SetWriteOperationType(value); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +127,10 @@ namespace Model
      * Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set
      * of data, it might fail with a timed out error.</p> </dd> </dl>
      */
-    inline const SalesforceDataTransferApi& GetDataTransferApi() const{ return m_dataTransferApi; }
+    inline SalesforceDataTransferApi GetDataTransferApi() const { return m_dataTransferApi; }
     inline bool DataTransferApiHasBeenSet() const { return m_dataTransferApiHasBeenSet; }
-    inline void SetDataTransferApi(const SalesforceDataTransferApi& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = value; }
-    inline void SetDataTransferApi(SalesforceDataTransferApi&& value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = std::move(value); }
-    inline SalesforceDestinationProperties& WithDataTransferApi(const SalesforceDataTransferApi& value) { SetDataTransferApi(value); return *this;}
-    inline SalesforceDestinationProperties& WithDataTransferApi(SalesforceDataTransferApi&& value) { SetDataTransferApi(std::move(value)); return *this;}
+    inline void SetDataTransferApi(SalesforceDataTransferApi value) { m_dataTransferApiHasBeenSet = true; m_dataTransferApi = value; }
+    inline SalesforceDestinationProperties& WithDataTransferApi(SalesforceDataTransferApi value) { SetDataTransferApi(value); return *this;}
     ///@}
   private:
 
@@ -150,10 +143,10 @@ namespace Model
     ErrorHandlingConfig m_errorHandlingConfig;
     bool m_errorHandlingConfigHasBeenSet = false;
 
-    WriteOperationType m_writeOperationType;
+    WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
     bool m_writeOperationTypeHasBeenSet = false;
 
-    SalesforceDataTransferApi m_dataTransferApi;
+    SalesforceDataTransferApi m_dataTransferApi{SalesforceDataTransferApi::NOT_SET};
     bool m_dataTransferApiHasBeenSet = false;
   };
 

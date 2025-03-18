@@ -34,7 +34,7 @@ namespace Model
   class ImageConfig
   {
   public:
-    AWS_SAGEMAKER_API ImageConfig();
+    AWS_SAGEMAKER_API ImageConfig() = default;
     AWS_SAGEMAKER_API ImageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in
      * your VPC.</p> </li> </ul>
      */
-    inline const RepositoryAccessMode& GetRepositoryAccessMode() const{ return m_repositoryAccessMode; }
+    inline RepositoryAccessMode GetRepositoryAccessMode() const { return m_repositoryAccessMode; }
     inline bool RepositoryAccessModeHasBeenSet() const { return m_repositoryAccessModeHasBeenSet; }
-    inline void SetRepositoryAccessMode(const RepositoryAccessMode& value) { m_repositoryAccessModeHasBeenSet = true; m_repositoryAccessMode = value; }
-    inline void SetRepositoryAccessMode(RepositoryAccessMode&& value) { m_repositoryAccessModeHasBeenSet = true; m_repositoryAccessMode = std::move(value); }
-    inline ImageConfig& WithRepositoryAccessMode(const RepositoryAccessMode& value) { SetRepositoryAccessMode(value); return *this;}
-    inline ImageConfig& WithRepositoryAccessMode(RepositoryAccessMode&& value) { SetRepositoryAccessMode(std::move(value)); return *this;}
+    inline void SetRepositoryAccessMode(RepositoryAccessMode value) { m_repositoryAccessModeHasBeenSet = true; m_repositoryAccessMode = value; }
+    inline ImageConfig& WithRepositoryAccessMode(RepositoryAccessMode value) { SetRepositoryAccessMode(value); return *this;}
     ///@}
 
     ///@{
@@ -63,16 +61,16 @@ namespace Model
      * <code>RepositoryAccessMode</code> field, and the private Docker registry where
      * the model image is hosted requires authentication.</p>
      */
-    inline const RepositoryAuthConfig& GetRepositoryAuthConfig() const{ return m_repositoryAuthConfig; }
+    inline const RepositoryAuthConfig& GetRepositoryAuthConfig() const { return m_repositoryAuthConfig; }
     inline bool RepositoryAuthConfigHasBeenSet() const { return m_repositoryAuthConfigHasBeenSet; }
-    inline void SetRepositoryAuthConfig(const RepositoryAuthConfig& value) { m_repositoryAuthConfigHasBeenSet = true; m_repositoryAuthConfig = value; }
-    inline void SetRepositoryAuthConfig(RepositoryAuthConfig&& value) { m_repositoryAuthConfigHasBeenSet = true; m_repositoryAuthConfig = std::move(value); }
-    inline ImageConfig& WithRepositoryAuthConfig(const RepositoryAuthConfig& value) { SetRepositoryAuthConfig(value); return *this;}
-    inline ImageConfig& WithRepositoryAuthConfig(RepositoryAuthConfig&& value) { SetRepositoryAuthConfig(std::move(value)); return *this;}
+    template<typename RepositoryAuthConfigT = RepositoryAuthConfig>
+    void SetRepositoryAuthConfig(RepositoryAuthConfigT&& value) { m_repositoryAuthConfigHasBeenSet = true; m_repositoryAuthConfig = std::forward<RepositoryAuthConfigT>(value); }
+    template<typename RepositoryAuthConfigT = RepositoryAuthConfig>
+    ImageConfig& WithRepositoryAuthConfig(RepositoryAuthConfigT&& value) { SetRepositoryAuthConfig(std::forward<RepositoryAuthConfigT>(value)); return *this;}
     ///@}
   private:
 
-    RepositoryAccessMode m_repositoryAccessMode;
+    RepositoryAccessMode m_repositoryAccessMode{RepositoryAccessMode::NOT_SET};
     bool m_repositoryAccessModeHasBeenSet = false;
 
     RepositoryAuthConfig m_repositoryAuthConfig;

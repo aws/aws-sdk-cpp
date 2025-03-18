@@ -34,7 +34,7 @@ namespace Model
   class Payload
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Payload();
+    AWS_PARTNERCENTRALSELLING_API Payload() = default;
     AWS_PARTNERCENTRALSELLING_API Payload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Payload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * Invitation payload. This data helps partners understand the context, scope, and
      * expected involvement for the opportunity from AWS.</p>
      */
-    inline const OpportunityInvitationPayload& GetOpportunityInvitation() const{ return m_opportunityInvitation; }
+    inline const OpportunityInvitationPayload& GetOpportunityInvitation() const { return m_opportunityInvitation; }
     inline bool OpportunityInvitationHasBeenSet() const { return m_opportunityInvitationHasBeenSet; }
-    inline void SetOpportunityInvitation(const OpportunityInvitationPayload& value) { m_opportunityInvitationHasBeenSet = true; m_opportunityInvitation = value; }
-    inline void SetOpportunityInvitation(OpportunityInvitationPayload&& value) { m_opportunityInvitationHasBeenSet = true; m_opportunityInvitation = std::move(value); }
-    inline Payload& WithOpportunityInvitation(const OpportunityInvitationPayload& value) { SetOpportunityInvitation(value); return *this;}
-    inline Payload& WithOpportunityInvitation(OpportunityInvitationPayload&& value) { SetOpportunityInvitation(std::move(value)); return *this;}
+    template<typename OpportunityInvitationT = OpportunityInvitationPayload>
+    void SetOpportunityInvitation(OpportunityInvitationT&& value) { m_opportunityInvitationHasBeenSet = true; m_opportunityInvitation = std::forward<OpportunityInvitationT>(value); }
+    template<typename OpportunityInvitationT = OpportunityInvitationPayload>
+    Payload& WithOpportunityInvitation(OpportunityInvitationT&& value) { SetOpportunityInvitation(std::forward<OpportunityInvitationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceProfileRequest::DeleteInstanceProfileRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

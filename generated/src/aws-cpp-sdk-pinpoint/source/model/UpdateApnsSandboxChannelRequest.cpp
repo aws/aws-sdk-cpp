@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApnsSandboxChannelRequest::UpdateApnsSandboxChannelRequest() : 
-    m_aPNSSandboxChannelRequestHasBeenSet(false),
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApnsSandboxChannelRequest::SerializePayload() const
 {
   JsonValue payload;

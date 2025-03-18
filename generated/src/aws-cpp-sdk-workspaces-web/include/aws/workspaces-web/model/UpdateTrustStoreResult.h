@@ -27,7 +27,7 @@ namespace Model
   class UpdateTrustStoreResult
   {
   public:
-    AWS_WORKSPACESWEB_API UpdateTrustStoreResult();
+    AWS_WORKSPACESWEB_API UpdateTrustStoreResult() = default;
     AWS_WORKSPACESWEB_API UpdateTrustStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API UpdateTrustStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArn.assign(value); }
-    inline UpdateTrustStoreResult& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline UpdateTrustStoreResult& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline UpdateTrustStoreResult& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    UpdateTrustStoreResult& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTrustStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTrustStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTrustStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTrustStoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trustStoreArn;
+    bool m_trustStoreArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Athena
 namespace Model
 {
 
-Datum::Datum() : 
-    m_varCharValueHasBeenSet(false)
-{
-}
-
 Datum::Datum(JsonView jsonValue)
-  : Datum()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Datum& Datum::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VarCharValue"))
   {
     m_varCharValue = jsonValue.GetString("VarCharValue");
-
     m_varCharValueHasBeenSet = true;
   }
-
   return *this;
 }
 

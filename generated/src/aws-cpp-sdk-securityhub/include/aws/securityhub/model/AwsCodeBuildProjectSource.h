@@ -32,7 +32,7 @@ namespace Model
   class AwsCodeBuildProjectSource
   {
   public:
-    AWS_SECURITYHUB_API AwsCodeBuildProjectSource();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectSource() = default;
     AWS_SECURITYHUB_API AwsCodeBuildProjectSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCodeBuildProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * have input source code.</p> </li> <li> <p> <code>S3</code> - The source code is
      * in an S3 input bucket. </p> </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsCodeBuildProjectSource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsCodeBuildProjectSource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectSource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsCodeBuildProjectSource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +81,19 @@ namespace Model
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
      * repository that contains the source and the build spec file. </p> </li> </ul>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline AwsCodeBuildProjectSource& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline AwsCodeBuildProjectSource& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    AwsCodeBuildProjectSource& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Git clone depth for the build project.</p>
      */
-    inline int GetGitCloneDepth() const{ return m_gitCloneDepth; }
+    inline int GetGitCloneDepth() const { return m_gitCloneDepth; }
     inline bool GitCloneDepthHasBeenSet() const { return m_gitCloneDepthHasBeenSet; }
     inline void SetGitCloneDepth(int value) { m_gitCloneDepthHasBeenSet = true; m_gitCloneDepth = value; }
     inline AwsCodeBuildProjectSource& WithGitCloneDepth(int value) { SetGitCloneDepth(value); return *this;}
@@ -108,7 +104,7 @@ namespace Model
      * <p>Whether to ignore SSL warnings while connecting to the project source
      * code.</p>
      */
-    inline bool GetInsecureSsl() const{ return m_insecureSsl; }
+    inline bool GetInsecureSsl() const { return m_insecureSsl; }
     inline bool InsecureSslHasBeenSet() const { return m_insecureSslHasBeenSet; }
     inline void SetInsecureSsl(bool value) { m_insecureSslHasBeenSet = true; m_insecureSsl = value; }
     inline AwsCodeBuildProjectSource& WithInsecureSsl(bool value) { SetInsecureSsl(value); return *this;}
@@ -121,10 +117,10 @@ namespace Model
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    int m_gitCloneDepth;
+    int m_gitCloneDepth{0};
     bool m_gitCloneDepthHasBeenSet = false;
 
-    bool m_insecureSsl;
+    bool m_insecureSsl{false};
     bool m_insecureSslHasBeenSet = false;
   };
 

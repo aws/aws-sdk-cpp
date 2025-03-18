@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-DiscoveryServerConfiguration::DiscoveryServerConfiguration() : 
-    m_serverHostnameHasBeenSet(false),
-    m_serverPort(0),
-    m_serverPortHasBeenSet(false)
-{
-}
-
 DiscoveryServerConfiguration::DiscoveryServerConfiguration(JsonView jsonValue)
-  : DiscoveryServerConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DiscoveryServerConfiguration& DiscoveryServerConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ServerHostname"))
   {
     m_serverHostname = jsonValue.GetString("ServerHostname");
-
     m_serverHostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerPort"))
   {
     m_serverPort = jsonValue.GetInteger("ServerPort");
-
     m_serverPortHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class GetPublicKeyCertificateResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API GetPublicKeyCertificateResult();
+    AWS_PAYMENTCRYPTOGRAPHY_API GetPublicKeyCertificateResult() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API GetPublicKeyCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHY_API GetPublicKeyCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * format (base64 encoded). It is signed by the root certificate authority (CA).
      * The certificate expires in 90 days.</p>
      */
-    inline const Aws::String& GetKeyCertificate() const{ return m_keyCertificate; }
-    inline void SetKeyCertificate(const Aws::String& value) { m_keyCertificate = value; }
-    inline void SetKeyCertificate(Aws::String&& value) { m_keyCertificate = std::move(value); }
-    inline void SetKeyCertificate(const char* value) { m_keyCertificate.assign(value); }
-    inline GetPublicKeyCertificateResult& WithKeyCertificate(const Aws::String& value) { SetKeyCertificate(value); return *this;}
-    inline GetPublicKeyCertificateResult& WithKeyCertificate(Aws::String&& value) { SetKeyCertificate(std::move(value)); return *this;}
-    inline GetPublicKeyCertificateResult& WithKeyCertificate(const char* value) { SetKeyCertificate(value); return *this;}
+    inline const Aws::String& GetKeyCertificate() const { return m_keyCertificate; }
+    template<typename KeyCertificateT = Aws::String>
+    void SetKeyCertificate(KeyCertificateT&& value) { m_keyCertificateHasBeenSet = true; m_keyCertificate = std::forward<KeyCertificateT>(value); }
+    template<typename KeyCertificateT = Aws::String>
+    GetPublicKeyCertificateResult& WithKeyCertificate(KeyCertificateT&& value) { SetKeyCertificate(std::forward<KeyCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * <p>The root certificate authority (CA) that signed the public key certificate in
      * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
-    inline const Aws::String& GetKeyCertificateChain() const{ return m_keyCertificateChain; }
-    inline void SetKeyCertificateChain(const Aws::String& value) { m_keyCertificateChain = value; }
-    inline void SetKeyCertificateChain(Aws::String&& value) { m_keyCertificateChain = std::move(value); }
-    inline void SetKeyCertificateChain(const char* value) { m_keyCertificateChain.assign(value); }
-    inline GetPublicKeyCertificateResult& WithKeyCertificateChain(const Aws::String& value) { SetKeyCertificateChain(value); return *this;}
-    inline GetPublicKeyCertificateResult& WithKeyCertificateChain(Aws::String&& value) { SetKeyCertificateChain(std::move(value)); return *this;}
-    inline GetPublicKeyCertificateResult& WithKeyCertificateChain(const char* value) { SetKeyCertificateChain(value); return *this;}
+    inline const Aws::String& GetKeyCertificateChain() const { return m_keyCertificateChain; }
+    template<typename KeyCertificateChainT = Aws::String>
+    void SetKeyCertificateChain(KeyCertificateChainT&& value) { m_keyCertificateChainHasBeenSet = true; m_keyCertificateChain = std::forward<KeyCertificateChainT>(value); }
+    template<typename KeyCertificateChainT = Aws::String>
+    GetPublicKeyCertificateResult& WithKeyCertificateChain(KeyCertificateChainT&& value) { SetKeyCertificateChain(std::forward<KeyCertificateChainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPublicKeyCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPublicKeyCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPublicKeyCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPublicKeyCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyCertificate;
+    bool m_keyCertificateHasBeenSet = false;
 
     Aws::String m_keyCertificateChain;
+    bool m_keyCertificateChainHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

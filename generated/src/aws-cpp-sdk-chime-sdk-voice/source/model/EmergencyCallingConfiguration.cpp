@@ -18,13 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-EmergencyCallingConfiguration::EmergencyCallingConfiguration() : 
-    m_dNISHasBeenSet(false)
-{
-}
-
 EmergencyCallingConfiguration::EmergencyCallingConfiguration(JsonView jsonValue)
-  : EmergencyCallingConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EmergencyCallingConfiguration& EmergencyCallingConfiguration::operator =(JsonVie
     }
     m_dNISHasBeenSet = true;
   }
-
   return *this;
 }
 

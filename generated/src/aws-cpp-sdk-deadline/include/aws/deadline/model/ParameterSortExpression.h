@@ -33,7 +33,7 @@ namespace Model
   class ParameterSortExpression
   {
   public:
-    AWS_DEADLINE_API ParameterSortExpression();
+    AWS_DEADLINE_API ParameterSortExpression() = default;
     AWS_DEADLINE_API ParameterSortExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API ParameterSortExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The sort order for the parameter.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ParameterSortExpression& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ParameterSortExpression& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ParameterSortExpression& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter name to sort by.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ParameterSortExpression& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ParameterSortExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ParameterSortExpression& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ParameterSortExpression& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_name;

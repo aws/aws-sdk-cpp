@@ -21,7 +21,7 @@ namespace Model
   class GetDataflowGraphRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetDataflowGraphRequest();
+    AWS_GLUE_API GetDataflowGraphRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Python script to transform.</p>
      */
-    inline const Aws::String& GetPythonScript() const{ return m_pythonScript; }
+    inline const Aws::String& GetPythonScript() const { return m_pythonScript; }
     inline bool PythonScriptHasBeenSet() const { return m_pythonScriptHasBeenSet; }
-    inline void SetPythonScript(const Aws::String& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = value; }
-    inline void SetPythonScript(Aws::String&& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = std::move(value); }
-    inline void SetPythonScript(const char* value) { m_pythonScriptHasBeenSet = true; m_pythonScript.assign(value); }
-    inline GetDataflowGraphRequest& WithPythonScript(const Aws::String& value) { SetPythonScript(value); return *this;}
-    inline GetDataflowGraphRequest& WithPythonScript(Aws::String&& value) { SetPythonScript(std::move(value)); return *this;}
-    inline GetDataflowGraphRequest& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
+    template<typename PythonScriptT = Aws::String>
+    void SetPythonScript(PythonScriptT&& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = std::forward<PythonScriptT>(value); }
+    template<typename PythonScriptT = Aws::String>
+    GetDataflowGraphRequest& WithPythonScript(PythonScriptT&& value) { SetPythonScript(std::forward<PythonScriptT>(value)); return *this;}
     ///@}
   private:
 

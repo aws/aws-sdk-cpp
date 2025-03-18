@@ -32,7 +32,7 @@ namespace Model
   class AssistantAssociationOutputData
   {
   public:
-    AWS_QCONNECT_API AssistantAssociationOutputData();
+    AWS_QCONNECT_API AssistantAssociationOutputData() = default;
     AWS_QCONNECT_API AssistantAssociationOutputData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AssistantAssociationOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The knowledge base where output data is sent.</p>
      */
-    inline const KnowledgeBaseAssociationData& GetKnowledgeBaseAssociation() const{ return m_knowledgeBaseAssociation; }
+    inline const KnowledgeBaseAssociationData& GetKnowledgeBaseAssociation() const { return m_knowledgeBaseAssociation; }
     inline bool KnowledgeBaseAssociationHasBeenSet() const { return m_knowledgeBaseAssociationHasBeenSet; }
-    inline void SetKnowledgeBaseAssociation(const KnowledgeBaseAssociationData& value) { m_knowledgeBaseAssociationHasBeenSet = true; m_knowledgeBaseAssociation = value; }
-    inline void SetKnowledgeBaseAssociation(KnowledgeBaseAssociationData&& value) { m_knowledgeBaseAssociationHasBeenSet = true; m_knowledgeBaseAssociation = std::move(value); }
-    inline AssistantAssociationOutputData& WithKnowledgeBaseAssociation(const KnowledgeBaseAssociationData& value) { SetKnowledgeBaseAssociation(value); return *this;}
-    inline AssistantAssociationOutputData& WithKnowledgeBaseAssociation(KnowledgeBaseAssociationData&& value) { SetKnowledgeBaseAssociation(std::move(value)); return *this;}
+    template<typename KnowledgeBaseAssociationT = KnowledgeBaseAssociationData>
+    void SetKnowledgeBaseAssociation(KnowledgeBaseAssociationT&& value) { m_knowledgeBaseAssociationHasBeenSet = true; m_knowledgeBaseAssociation = std::forward<KnowledgeBaseAssociationT>(value); }
+    template<typename KnowledgeBaseAssociationT = KnowledgeBaseAssociationData>
+    AssistantAssociationOutputData& WithKnowledgeBaseAssociation(KnowledgeBaseAssociationT&& value) { SetKnowledgeBaseAssociation(std::forward<KnowledgeBaseAssociationT>(value)); return *this;}
     ///@}
   private:
 

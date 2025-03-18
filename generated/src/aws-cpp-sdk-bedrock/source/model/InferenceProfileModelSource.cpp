@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-InferenceProfileModelSource::InferenceProfileModelSource() : 
-    m_copyFromHasBeenSet(false)
-{
-}
-
 InferenceProfileModelSource::InferenceProfileModelSource(JsonView jsonValue)
-  : InferenceProfileModelSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceProfileModelSource& InferenceProfileModelSource::operator =(JsonView js
   if(jsonValue.ValueExists("copyFrom"))
   {
     m_copyFrom = jsonValue.GetString("copyFrom");
-
     m_copyFromHasBeenSet = true;
   }
-
   return *this;
 }
 

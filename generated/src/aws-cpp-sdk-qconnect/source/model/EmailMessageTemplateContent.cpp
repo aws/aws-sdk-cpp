@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-EmailMessageTemplateContent::EmailMessageTemplateContent() : 
-    m_bodyHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_subjectHasBeenSet(false)
-{
-}
-
 EmailMessageTemplateContent::EmailMessageTemplateContent(JsonView jsonValue)
-  : EmailMessageTemplateContent()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EmailMessageTemplateContent& EmailMessageTemplateContent::operator =(JsonView js
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetObject("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
@@ -49,14 +39,11 @@ EmailMessageTemplateContent& EmailMessageTemplateContent::operator =(JsonView js
     }
     m_headersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
-
     m_subjectHasBeenSet = true;
   }
-
   return *this;
 }
 

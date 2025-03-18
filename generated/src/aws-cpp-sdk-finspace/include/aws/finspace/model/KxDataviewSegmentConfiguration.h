@@ -36,7 +36,7 @@ namespace Model
   class KxDataviewSegmentConfiguration
   {
   public:
-    AWS_FINSPACE_API KxDataviewSegmentConfiguration();
+    AWS_FINSPACE_API KxDataviewSegmentConfiguration() = default;
     AWS_FINSPACE_API KxDataviewSegmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxDataviewSegmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,29 +48,26 @@ namespace Model
      * for the segment. Each segment must have a unique database path for each
      * volume.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDbPaths() const{ return m_dbPaths; }
+    inline const Aws::Vector<Aws::String>& GetDbPaths() const { return m_dbPaths; }
     inline bool DbPathsHasBeenSet() const { return m_dbPathsHasBeenSet; }
-    inline void SetDbPaths(const Aws::Vector<Aws::String>& value) { m_dbPathsHasBeenSet = true; m_dbPaths = value; }
-    inline void SetDbPaths(Aws::Vector<Aws::String>&& value) { m_dbPathsHasBeenSet = true; m_dbPaths = std::move(value); }
-    inline KxDataviewSegmentConfiguration& WithDbPaths(const Aws::Vector<Aws::String>& value) { SetDbPaths(value); return *this;}
-    inline KxDataviewSegmentConfiguration& WithDbPaths(Aws::Vector<Aws::String>&& value) { SetDbPaths(std::move(value)); return *this;}
-    inline KxDataviewSegmentConfiguration& AddDbPaths(const Aws::String& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
-    inline KxDataviewSegmentConfiguration& AddDbPaths(Aws::String&& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(std::move(value)); return *this; }
-    inline KxDataviewSegmentConfiguration& AddDbPaths(const char* value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
+    template<typename DbPathsT = Aws::Vector<Aws::String>>
+    void SetDbPaths(DbPathsT&& value) { m_dbPathsHasBeenSet = true; m_dbPaths = std::forward<DbPathsT>(value); }
+    template<typename DbPathsT = Aws::Vector<Aws::String>>
+    KxDataviewSegmentConfiguration& WithDbPaths(DbPathsT&& value) { SetDbPaths(std::forward<DbPathsT>(value)); return *this;}
+    template<typename DbPathsT = Aws::String>
+    KxDataviewSegmentConfiguration& AddDbPaths(DbPathsT&& value) { m_dbPathsHasBeenSet = true; m_dbPaths.emplace_back(std::forward<DbPathsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The name of the volume where you want to add data. </p>
      */
-    inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
+    inline const Aws::String& GetVolumeName() const { return m_volumeName; }
     inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
-    inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
-    inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
-    inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
-    inline KxDataviewSegmentConfiguration& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
-    inline KxDataviewSegmentConfiguration& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
-    inline KxDataviewSegmentConfiguration& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
+    template<typename VolumeNameT = Aws::String>
+    void SetVolumeName(VolumeNameT&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::forward<VolumeNameT>(value); }
+    template<typename VolumeNameT = Aws::String>
+    KxDataviewSegmentConfiguration& WithVolumeName(VolumeNameT&& value) { SetVolumeName(std::forward<VolumeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +78,7 @@ namespace Model
      * needed. When it is set to <b>False</b>, everything is cached. The default value
      * is <b>False</b>. </p>
      */
-    inline bool GetOnDemand() const{ return m_onDemand; }
+    inline bool GetOnDemand() const { return m_onDemand; }
     inline bool OnDemandHasBeenSet() const { return m_onDemandHasBeenSet; }
     inline void SetOnDemand(bool value) { m_onDemandHasBeenSet = true; m_onDemand = value; }
     inline KxDataviewSegmentConfiguration& WithOnDemand(bool value) { SetOnDemand(value); return *this;}
@@ -94,7 +91,7 @@ namespace Model
     Aws::String m_volumeName;
     bool m_volumeNameHasBeenSet = false;
 
-    bool m_onDemand;
+    bool m_onDemand{false};
     bool m_onDemandHasBeenSet = false;
   };
 

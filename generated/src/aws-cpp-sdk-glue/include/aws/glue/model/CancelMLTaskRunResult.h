@@ -28,7 +28,7 @@ namespace Model
   class CancelMLTaskRunResult
   {
   public:
-    AWS_GLUE_API CancelMLTaskRunResult();
+    AWS_GLUE_API CancelMLTaskRunResult() = default;
     AWS_GLUE_API CancelMLTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API CancelMLTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The unique identifier of the machine learning transform.</p>
      */
-    inline const Aws::String& GetTransformId() const{ return m_transformId; }
-    inline void SetTransformId(const Aws::String& value) { m_transformId = value; }
-    inline void SetTransformId(Aws::String&& value) { m_transformId = std::move(value); }
-    inline void SetTransformId(const char* value) { m_transformId.assign(value); }
-    inline CancelMLTaskRunResult& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-    inline CancelMLTaskRunResult& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-    inline CancelMLTaskRunResult& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    inline const Aws::String& GetTransformId() const { return m_transformId; }
+    template<typename TransformIdT = Aws::String>
+    void SetTransformId(TransformIdT&& value) { m_transformIdHasBeenSet = true; m_transformId = std::forward<TransformIdT>(value); }
+    template<typename TransformIdT = Aws::String>
+    CancelMLTaskRunResult& WithTransformId(TransformIdT&& value) { SetTransformId(std::forward<TransformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the task run.</p>
      */
-    inline const Aws::String& GetTaskRunId() const{ return m_taskRunId; }
-    inline void SetTaskRunId(const Aws::String& value) { m_taskRunId = value; }
-    inline void SetTaskRunId(Aws::String&& value) { m_taskRunId = std::move(value); }
-    inline void SetTaskRunId(const char* value) { m_taskRunId.assign(value); }
-    inline CancelMLTaskRunResult& WithTaskRunId(const Aws::String& value) { SetTaskRunId(value); return *this;}
-    inline CancelMLTaskRunResult& WithTaskRunId(Aws::String&& value) { SetTaskRunId(std::move(value)); return *this;}
-    inline CancelMLTaskRunResult& WithTaskRunId(const char* value) { SetTaskRunId(value); return *this;}
+    inline const Aws::String& GetTaskRunId() const { return m_taskRunId; }
+    template<typename TaskRunIdT = Aws::String>
+    void SetTaskRunId(TaskRunIdT&& value) { m_taskRunIdHasBeenSet = true; m_taskRunId = std::forward<TaskRunIdT>(value); }
+    template<typename TaskRunIdT = Aws::String>
+    CancelMLTaskRunResult& WithTaskRunId(TaskRunIdT&& value) { SetTaskRunId(std::forward<TaskRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for this run.</p>
      */
-    inline const TaskStatusType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TaskStatusType& value) { m_status = value; }
-    inline void SetStatus(TaskStatusType&& value) { m_status = std::move(value); }
-    inline CancelMLTaskRunResult& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-    inline CancelMLTaskRunResult& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline TaskStatusType GetStatus() const { return m_status; }
+    inline void SetStatus(TaskStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CancelMLTaskRunResult& WithStatus(TaskStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelMLTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelMLTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelMLTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelMLTaskRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transformId;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_taskRunId;
+    bool m_taskRunIdHasBeenSet = false;
 
-    TaskStatusType m_status;
+    TaskStatusType m_status{TaskStatusType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

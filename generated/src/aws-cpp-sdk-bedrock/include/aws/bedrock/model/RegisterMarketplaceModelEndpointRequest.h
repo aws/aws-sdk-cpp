@@ -21,7 +21,7 @@ namespace Model
   class RegisterMarketplaceModelEndpointRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API RegisterMarketplaceModelEndpointRequest();
+    AWS_BEDROCK_API RegisterMarketplaceModelEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The ARN of the Amazon SageMaker endpoint you want to register with Amazon
      * Bedrock Marketplace.</p>
      */
-    inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+    inline const Aws::String& GetEndpointIdentifier() const { return m_endpointIdentifier; }
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
-    inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
-    inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
-    inline RegisterMarketplaceModelEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
-    inline RegisterMarketplaceModelEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
-    inline RegisterMarketplaceModelEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
+    template<typename EndpointIdentifierT = Aws::String>
+    void SetEndpointIdentifier(EndpointIdentifierT&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::forward<EndpointIdentifierT>(value); }
+    template<typename EndpointIdentifierT = Aws::String>
+    RegisterMarketplaceModelEndpointRequest& WithEndpointIdentifier(EndpointIdentifierT&& value) { SetEndpointIdentifier(std::forward<EndpointIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The ARN of the model from Amazon Bedrock Marketplace that is deployed on the
      * endpoint.</p>
      */
-    inline const Aws::String& GetModelSourceIdentifier() const{ return m_modelSourceIdentifier; }
+    inline const Aws::String& GetModelSourceIdentifier() const { return m_modelSourceIdentifier; }
     inline bool ModelSourceIdentifierHasBeenSet() const { return m_modelSourceIdentifierHasBeenSet; }
-    inline void SetModelSourceIdentifier(const Aws::String& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = value; }
-    inline void SetModelSourceIdentifier(Aws::String&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::move(value); }
-    inline void SetModelSourceIdentifier(const char* value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier.assign(value); }
-    inline RegisterMarketplaceModelEndpointRequest& WithModelSourceIdentifier(const Aws::String& value) { SetModelSourceIdentifier(value); return *this;}
-    inline RegisterMarketplaceModelEndpointRequest& WithModelSourceIdentifier(Aws::String&& value) { SetModelSourceIdentifier(std::move(value)); return *this;}
-    inline RegisterMarketplaceModelEndpointRequest& WithModelSourceIdentifier(const char* value) { SetModelSourceIdentifier(value); return *this;}
+    template<typename ModelSourceIdentifierT = Aws::String>
+    void SetModelSourceIdentifier(ModelSourceIdentifierT&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::forward<ModelSourceIdentifierT>(value); }
+    template<typename ModelSourceIdentifierT = Aws::String>
+    RegisterMarketplaceModelEndpointRequest& WithModelSourceIdentifier(ModelSourceIdentifierT&& value) { SetModelSourceIdentifier(std::forward<ModelSourceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

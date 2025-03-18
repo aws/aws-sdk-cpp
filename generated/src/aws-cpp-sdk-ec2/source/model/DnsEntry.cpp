@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DnsEntry::DnsEntry() : 
-    m_dnsNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
-
 DnsEntry::DnsEntry(const XmlNode& xmlNode)
-  : DnsEntry()
 {
   *this = xmlNode;
 }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRegisteredSubscriptionProvidersResult::ListRegisteredSubscriptionProvidersResult()
-{
-}
-
 ListRegisteredSubscriptionProvidersResult::ListRegisteredSubscriptionProvidersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRegisteredSubscriptionProvidersResult& ListRegisteredSubscriptionProvidersRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredSubscriptionProviders"))
   {
     Aws::Utils::Array<JsonView> registeredSubscriptionProvidersJsonList = jsonValue.GetArray("RegisteredSubscriptionProviders");
@@ -42,14 +37,15 @@ ListRegisteredSubscriptionProvidersResult& ListRegisteredSubscriptionProvidersRe
     {
       m_registeredSubscriptionProviders.push_back(registeredSubscriptionProvidersJsonList[registeredSubscriptionProvidersIndex].AsObject());
     }
+    m_registeredSubscriptionProvidersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

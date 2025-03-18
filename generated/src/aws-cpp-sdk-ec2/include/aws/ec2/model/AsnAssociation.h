@@ -33,7 +33,7 @@ namespace Model
   class AsnAssociation
   {
   public:
-    AWS_EC2_API AsnAssociation();
+    AWS_EC2_API AsnAssociation() = default;
     AWS_EC2_API AsnAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AsnAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,54 +45,46 @@ namespace Model
     /**
      * <p>The association's ASN.</p>
      */
-    inline const Aws::String& GetAsn() const{ return m_asn; }
+    inline const Aws::String& GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-    inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
-    inline void SetAsn(Aws::String&& value) { m_asnHasBeenSet = true; m_asn = std::move(value); }
-    inline void SetAsn(const char* value) { m_asnHasBeenSet = true; m_asn.assign(value); }
-    inline AsnAssociation& WithAsn(const Aws::String& value) { SetAsn(value); return *this;}
-    inline AsnAssociation& WithAsn(Aws::String&& value) { SetAsn(std::move(value)); return *this;}
-    inline AsnAssociation& WithAsn(const char* value) { SetAsn(value); return *this;}
+    template<typename AsnT = Aws::String>
+    void SetAsn(AsnT&& value) { m_asnHasBeenSet = true; m_asn = std::forward<AsnT>(value); }
+    template<typename AsnT = Aws::String>
+    AsnAssociation& WithAsn(AsnT&& value) { SetAsn(std::forward<AsnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association's CIDR.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline AsnAssociation& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline AsnAssociation& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline AsnAssociation& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    AsnAssociation& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association's status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline AsnAssociation& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline AsnAssociation& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline AsnAssociation& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    AsnAssociation& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association's state.</p>
      */
-    inline const AsnAssociationState& GetState() const{ return m_state; }
+    inline AsnAssociationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AsnAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AsnAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AsnAssociation& WithState(const AsnAssociationState& value) { SetState(value); return *this;}
-    inline AsnAssociation& WithState(AsnAssociationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AsnAssociationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline AsnAssociation& WithState(AsnAssociationState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -105,7 +97,7 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    AsnAssociationState m_state;
+    AsnAssociationState m_state{AsnAssociationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

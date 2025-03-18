@@ -18,26 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataSourceRunSummary::DataSourceRunSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lineageSummaryHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_runStatisticsForAssetsHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(DataSourceRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false),
-    m_type(DataSourceRunType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DataSourceRunSummary::DataSourceRunSummary(JsonView jsonValue)
-  : DataSourceRunSummary()
 {
   *this = jsonValue;
 }
@@ -47,87 +28,63 @@ DataSourceRunSummary& DataSourceRunSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetObject("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageSummary"))
   {
     m_lineageSummary = jsonValue.GetObject("lineageSummary");
-
     m_lineageSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStatisticsForAssets"))
   {
     m_runStatisticsForAssets = jsonValue.GetObject("runStatisticsForAssets");
-
     m_runStatisticsForAssetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceRunStatusMapper::GetDataSourceRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stoppedAt"))
   {
     m_stoppedAt = jsonValue.GetString("stoppedAt");
-
     m_stoppedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataSourceRunTypeMapper::GetDataSourceRunTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

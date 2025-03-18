@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ReplacementEmailContent::ReplacementEmailContent() : 
-    m_replacementTemplateHasBeenSet(false)
-{
-}
-
 ReplacementEmailContent::ReplacementEmailContent(JsonView jsonValue)
-  : ReplacementEmailContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReplacementEmailContent& ReplacementEmailContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplacementTemplate"))
   {
     m_replacementTemplate = jsonValue.GetObject("ReplacementTemplate");
-
     m_replacementTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

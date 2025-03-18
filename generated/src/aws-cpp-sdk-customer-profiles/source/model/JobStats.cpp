@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-JobStats::JobStats() : 
-    m_numberOfProfilesReviewed(0),
-    m_numberOfProfilesReviewedHasBeenSet(false),
-    m_numberOfMatchesFound(0),
-    m_numberOfMatchesFoundHasBeenSet(false),
-    m_numberOfMergesDone(0),
-    m_numberOfMergesDoneHasBeenSet(false)
-{
-}
-
 JobStats::JobStats(JsonView jsonValue)
-  : JobStats()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ JobStats& JobStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfProfilesReviewed"))
   {
     m_numberOfProfilesReviewed = jsonValue.GetInt64("NumberOfProfilesReviewed");
-
     m_numberOfProfilesReviewedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfMatchesFound"))
   {
     m_numberOfMatchesFound = jsonValue.GetInt64("NumberOfMatchesFound");
-
     m_numberOfMatchesFoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfMergesDone"))
   {
     m_numberOfMergesDone = jsonValue.GetInt64("NumberOfMergesDone");
-
     m_numberOfMergesDoneHasBeenSet = true;
   }
-
   return *this;
 }
 

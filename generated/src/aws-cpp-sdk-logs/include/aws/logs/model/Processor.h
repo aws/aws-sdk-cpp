@@ -53,7 +53,7 @@ namespace Model
   class Processor
   {
   public:
-    AWS_CLOUDWATCHLOGS_API Processor();
+    AWS_CLOUDWATCHLOGS_API Processor() = default;
     AWS_CLOUDWATCHLOGS_API Processor(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,12 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-addKeys">
      * addKeys</a> processor in your transformer.</p>
      */
-    inline const AddKeys& GetAddKeys() const{ return m_addKeys; }
+    inline const AddKeys& GetAddKeys() const { return m_addKeys; }
     inline bool AddKeysHasBeenSet() const { return m_addKeysHasBeenSet; }
-    inline void SetAddKeys(const AddKeys& value) { m_addKeysHasBeenSet = true; m_addKeys = value; }
-    inline void SetAddKeys(AddKeys&& value) { m_addKeysHasBeenSet = true; m_addKeys = std::move(value); }
-    inline Processor& WithAddKeys(const AddKeys& value) { SetAddKeys(value); return *this;}
-    inline Processor& WithAddKeys(AddKeys&& value) { SetAddKeys(std::move(value)); return *this;}
+    template<typename AddKeysT = AddKeys>
+    void SetAddKeys(AddKeysT&& value) { m_addKeysHasBeenSet = true; m_addKeys = std::forward<AddKeysT>(value); }
+    template<typename AddKeysT = AddKeys>
+    Processor& WithAddKeys(AddKeysT&& value) { SetAddKeys(std::forward<AddKeysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-copyValue">
      * copyValue</a> processor in your transformer.</p>
      */
-    inline const CopyValue& GetCopyValue() const{ return m_copyValue; }
+    inline const CopyValue& GetCopyValue() const { return m_copyValue; }
     inline bool CopyValueHasBeenSet() const { return m_copyValueHasBeenSet; }
-    inline void SetCopyValue(const CopyValue& value) { m_copyValueHasBeenSet = true; m_copyValue = value; }
-    inline void SetCopyValue(CopyValue&& value) { m_copyValueHasBeenSet = true; m_copyValue = std::move(value); }
-    inline Processor& WithCopyValue(const CopyValue& value) { SetCopyValue(value); return *this;}
-    inline Processor& WithCopyValue(CopyValue&& value) { SetCopyValue(std::move(value)); return *this;}
+    template<typename CopyValueT = CopyValue>
+    void SetCopyValue(CopyValueT&& value) { m_copyValueHasBeenSet = true; m_copyValue = std::forward<CopyValueT>(value); }
+    template<typename CopyValueT = CopyValue>
+    Processor& WithCopyValue(CopyValueT&& value) { SetCopyValue(std::forward<CopyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +93,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-CSV">
      * CSV</a> processor in your transformer.</p>
      */
-    inline const CSV& GetCsv() const{ return m_csv; }
+    inline const CSV& GetCsv() const { return m_csv; }
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-    inline void SetCsv(const CSV& value) { m_csvHasBeenSet = true; m_csv = value; }
-    inline void SetCsv(CSV&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-    inline Processor& WithCsv(const CSV& value) { SetCsv(value); return *this;}
-    inline Processor& WithCsv(CSV&& value) { SetCsv(std::move(value)); return *this;}
+    template<typename CsvT = CSV>
+    void SetCsv(CsvT&& value) { m_csvHasBeenSet = true; m_csv = std::forward<CsvT>(value); }
+    template<typename CsvT = CSV>
+    Processor& WithCsv(CsvT&& value) { SetCsv(std::forward<CsvT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-datetimeConverter">
      * datetimeConverter</a> processor in your transformer.</p>
      */
-    inline const DateTimeConverter& GetDateTimeConverter() const{ return m_dateTimeConverter; }
+    inline const DateTimeConverter& GetDateTimeConverter() const { return m_dateTimeConverter; }
     inline bool DateTimeConverterHasBeenSet() const { return m_dateTimeConverterHasBeenSet; }
-    inline void SetDateTimeConverter(const DateTimeConverter& value) { m_dateTimeConverterHasBeenSet = true; m_dateTimeConverter = value; }
-    inline void SetDateTimeConverter(DateTimeConverter&& value) { m_dateTimeConverterHasBeenSet = true; m_dateTimeConverter = std::move(value); }
-    inline Processor& WithDateTimeConverter(const DateTimeConverter& value) { SetDateTimeConverter(value); return *this;}
-    inline Processor& WithDateTimeConverter(DateTimeConverter&& value) { SetDateTimeConverter(std::move(value)); return *this;}
+    template<typename DateTimeConverterT = DateTimeConverter>
+    void SetDateTimeConverter(DateTimeConverterT&& value) { m_dateTimeConverterHasBeenSet = true; m_dateTimeConverter = std::forward<DateTimeConverterT>(value); }
+    template<typename DateTimeConverterT = DateTimeConverter>
+    Processor& WithDateTimeConverter(DateTimeConverterT&& value) { SetDateTimeConverter(std::forward<DateTimeConverterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +121,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-deleteKeys">
      * deleteKeys</a> processor in your transformer.</p>
      */
-    inline const DeleteKeys& GetDeleteKeys() const{ return m_deleteKeys; }
+    inline const DeleteKeys& GetDeleteKeys() const { return m_deleteKeys; }
     inline bool DeleteKeysHasBeenSet() const { return m_deleteKeysHasBeenSet; }
-    inline void SetDeleteKeys(const DeleteKeys& value) { m_deleteKeysHasBeenSet = true; m_deleteKeys = value; }
-    inline void SetDeleteKeys(DeleteKeys&& value) { m_deleteKeysHasBeenSet = true; m_deleteKeys = std::move(value); }
-    inline Processor& WithDeleteKeys(const DeleteKeys& value) { SetDeleteKeys(value); return *this;}
-    inline Processor& WithDeleteKeys(DeleteKeys&& value) { SetDeleteKeys(std::move(value)); return *this;}
+    template<typename DeleteKeysT = DeleteKeys>
+    void SetDeleteKeys(DeleteKeysT&& value) { m_deleteKeysHasBeenSet = true; m_deleteKeys = std::forward<DeleteKeysT>(value); }
+    template<typename DeleteKeysT = DeleteKeys>
+    Processor& WithDeleteKeys(DeleteKeysT&& value) { SetDeleteKeys(std::forward<DeleteKeysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +135,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-grok">
      * grok</a> processor in your transformer.</p>
      */
-    inline const Grok& GetGrok() const{ return m_grok; }
+    inline const Grok& GetGrok() const { return m_grok; }
     inline bool GrokHasBeenSet() const { return m_grokHasBeenSet; }
-    inline void SetGrok(const Grok& value) { m_grokHasBeenSet = true; m_grok = value; }
-    inline void SetGrok(Grok&& value) { m_grokHasBeenSet = true; m_grok = std::move(value); }
-    inline Processor& WithGrok(const Grok& value) { SetGrok(value); return *this;}
-    inline Processor& WithGrok(Grok&& value) { SetGrok(std::move(value)); return *this;}
+    template<typename GrokT = Grok>
+    void SetGrok(GrokT&& value) { m_grokHasBeenSet = true; m_grok = std::forward<GrokT>(value); }
+    template<typename GrokT = Grok>
+    Processor& WithGrok(GrokT&& value) { SetGrok(std::forward<GrokT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +149,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-listToMap">
      * listToMap</a> processor in your transformer.</p>
      */
-    inline const ListToMap& GetListToMap() const{ return m_listToMap; }
+    inline const ListToMap& GetListToMap() const { return m_listToMap; }
     inline bool ListToMapHasBeenSet() const { return m_listToMapHasBeenSet; }
-    inline void SetListToMap(const ListToMap& value) { m_listToMapHasBeenSet = true; m_listToMap = value; }
-    inline void SetListToMap(ListToMap&& value) { m_listToMapHasBeenSet = true; m_listToMap = std::move(value); }
-    inline Processor& WithListToMap(const ListToMap& value) { SetListToMap(value); return *this;}
-    inline Processor& WithListToMap(ListToMap&& value) { SetListToMap(std::move(value)); return *this;}
+    template<typename ListToMapT = ListToMap>
+    void SetListToMap(ListToMapT&& value) { m_listToMapHasBeenSet = true; m_listToMap = std::forward<ListToMapT>(value); }
+    template<typename ListToMapT = ListToMap>
+    Processor& WithListToMap(ListToMapT&& value) { SetListToMap(std::forward<ListToMapT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +163,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-lowerCaseString">
      * lowerCaseString</a> processor in your transformer.</p>
      */
-    inline const LowerCaseString& GetLowerCaseString() const{ return m_lowerCaseString; }
+    inline const LowerCaseString& GetLowerCaseString() const { return m_lowerCaseString; }
     inline bool LowerCaseStringHasBeenSet() const { return m_lowerCaseStringHasBeenSet; }
-    inline void SetLowerCaseString(const LowerCaseString& value) { m_lowerCaseStringHasBeenSet = true; m_lowerCaseString = value; }
-    inline void SetLowerCaseString(LowerCaseString&& value) { m_lowerCaseStringHasBeenSet = true; m_lowerCaseString = std::move(value); }
-    inline Processor& WithLowerCaseString(const LowerCaseString& value) { SetLowerCaseString(value); return *this;}
-    inline Processor& WithLowerCaseString(LowerCaseString&& value) { SetLowerCaseString(std::move(value)); return *this;}
+    template<typename LowerCaseStringT = LowerCaseString>
+    void SetLowerCaseString(LowerCaseStringT&& value) { m_lowerCaseStringHasBeenSet = true; m_lowerCaseString = std::forward<LowerCaseStringT>(value); }
+    template<typename LowerCaseStringT = LowerCaseString>
+    Processor& WithLowerCaseString(LowerCaseStringT&& value) { SetLowerCaseString(std::forward<LowerCaseStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +177,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-moveKeys">
      * moveKeys</a> processor in your transformer.</p>
      */
-    inline const MoveKeys& GetMoveKeys() const{ return m_moveKeys; }
+    inline const MoveKeys& GetMoveKeys() const { return m_moveKeys; }
     inline bool MoveKeysHasBeenSet() const { return m_moveKeysHasBeenSet; }
-    inline void SetMoveKeys(const MoveKeys& value) { m_moveKeysHasBeenSet = true; m_moveKeys = value; }
-    inline void SetMoveKeys(MoveKeys&& value) { m_moveKeysHasBeenSet = true; m_moveKeys = std::move(value); }
-    inline Processor& WithMoveKeys(const MoveKeys& value) { SetMoveKeys(value); return *this;}
-    inline Processor& WithMoveKeys(MoveKeys&& value) { SetMoveKeys(std::move(value)); return *this;}
+    template<typename MoveKeysT = MoveKeys>
+    void SetMoveKeys(MoveKeysT&& value) { m_moveKeysHasBeenSet = true; m_moveKeys = std::forward<MoveKeysT>(value); }
+    template<typename MoveKeysT = MoveKeys>
+    Processor& WithMoveKeys(MoveKeysT&& value) { SetMoveKeys(std::forward<MoveKeysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +192,12 @@ namespace Model
      * parseCloudfront</a> processor in your transformer.</p> <p>If you use this
      * processor, it must be the first processor in your transformer.</p>
      */
-    inline const ParseCloudfront& GetParseCloudfront() const{ return m_parseCloudfront; }
+    inline const ParseCloudfront& GetParseCloudfront() const { return m_parseCloudfront; }
     inline bool ParseCloudfrontHasBeenSet() const { return m_parseCloudfrontHasBeenSet; }
-    inline void SetParseCloudfront(const ParseCloudfront& value) { m_parseCloudfrontHasBeenSet = true; m_parseCloudfront = value; }
-    inline void SetParseCloudfront(ParseCloudfront&& value) { m_parseCloudfrontHasBeenSet = true; m_parseCloudfront = std::move(value); }
-    inline Processor& WithParseCloudfront(const ParseCloudfront& value) { SetParseCloudfront(value); return *this;}
-    inline Processor& WithParseCloudfront(ParseCloudfront&& value) { SetParseCloudfront(std::move(value)); return *this;}
+    template<typename ParseCloudfrontT = ParseCloudfront>
+    void SetParseCloudfront(ParseCloudfrontT&& value) { m_parseCloudfrontHasBeenSet = true; m_parseCloudfront = std::forward<ParseCloudfrontT>(value); }
+    template<typename ParseCloudfrontT = ParseCloudfront>
+    Processor& WithParseCloudfront(ParseCloudfrontT&& value) { SetParseCloudfront(std::forward<ParseCloudfrontT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +206,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseJSON">
      * parseJSON</a> processor in your transformer.</p>
      */
-    inline const ParseJSON& GetParseJSON() const{ return m_parseJSON; }
+    inline const ParseJSON& GetParseJSON() const { return m_parseJSON; }
     inline bool ParseJSONHasBeenSet() const { return m_parseJSONHasBeenSet; }
-    inline void SetParseJSON(const ParseJSON& value) { m_parseJSONHasBeenSet = true; m_parseJSON = value; }
-    inline void SetParseJSON(ParseJSON&& value) { m_parseJSONHasBeenSet = true; m_parseJSON = std::move(value); }
-    inline Processor& WithParseJSON(const ParseJSON& value) { SetParseJSON(value); return *this;}
-    inline Processor& WithParseJSON(ParseJSON&& value) { SetParseJSON(std::move(value)); return *this;}
+    template<typename ParseJSONT = ParseJSON>
+    void SetParseJSON(ParseJSONT&& value) { m_parseJSONHasBeenSet = true; m_parseJSON = std::forward<ParseJSONT>(value); }
+    template<typename ParseJSONT = ParseJSON>
+    Processor& WithParseJSON(ParseJSONT&& value) { SetParseJSON(std::forward<ParseJSONT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,12 +220,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseKeyValue">
      * parseKeyValue</a> processor in your transformer.</p>
      */
-    inline const ParseKeyValue& GetParseKeyValue() const{ return m_parseKeyValue; }
+    inline const ParseKeyValue& GetParseKeyValue() const { return m_parseKeyValue; }
     inline bool ParseKeyValueHasBeenSet() const { return m_parseKeyValueHasBeenSet; }
-    inline void SetParseKeyValue(const ParseKeyValue& value) { m_parseKeyValueHasBeenSet = true; m_parseKeyValue = value; }
-    inline void SetParseKeyValue(ParseKeyValue&& value) { m_parseKeyValueHasBeenSet = true; m_parseKeyValue = std::move(value); }
-    inline Processor& WithParseKeyValue(const ParseKeyValue& value) { SetParseKeyValue(value); return *this;}
-    inline Processor& WithParseKeyValue(ParseKeyValue&& value) { SetParseKeyValue(std::move(value)); return *this;}
+    template<typename ParseKeyValueT = ParseKeyValue>
+    void SetParseKeyValue(ParseKeyValueT&& value) { m_parseKeyValueHasBeenSet = true; m_parseKeyValue = std::forward<ParseKeyValueT>(value); }
+    template<typename ParseKeyValueT = ParseKeyValue>
+    Processor& WithParseKeyValue(ParseKeyValueT&& value) { SetParseKeyValue(std::forward<ParseKeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,12 +235,12 @@ namespace Model
      * parseRoute53</a> processor in your transformer.</p> <p>If you use this
      * processor, it must be the first processor in your transformer.</p>
      */
-    inline const ParseRoute53& GetParseRoute53() const{ return m_parseRoute53; }
+    inline const ParseRoute53& GetParseRoute53() const { return m_parseRoute53; }
     inline bool ParseRoute53HasBeenSet() const { return m_parseRoute53HasBeenSet; }
-    inline void SetParseRoute53(const ParseRoute53& value) { m_parseRoute53HasBeenSet = true; m_parseRoute53 = value; }
-    inline void SetParseRoute53(ParseRoute53&& value) { m_parseRoute53HasBeenSet = true; m_parseRoute53 = std::move(value); }
-    inline Processor& WithParseRoute53(const ParseRoute53& value) { SetParseRoute53(value); return *this;}
-    inline Processor& WithParseRoute53(ParseRoute53&& value) { SetParseRoute53(std::move(value)); return *this;}
+    template<typename ParseRoute53T = ParseRoute53>
+    void SetParseRoute53(ParseRoute53T&& value) { m_parseRoute53HasBeenSet = true; m_parseRoute53 = std::forward<ParseRoute53T>(value); }
+    template<typename ParseRoute53T = ParseRoute53>
+    Processor& WithParseRoute53(ParseRoute53T&& value) { SetParseRoute53(std::forward<ParseRoute53T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,12 +250,12 @@ namespace Model
      * parsePostGres</a> processor in your transformer.</p> <p>If you use this
      * processor, it must be the first processor in your transformer.</p>
      */
-    inline const ParsePostgres& GetParsePostgres() const{ return m_parsePostgres; }
+    inline const ParsePostgres& GetParsePostgres() const { return m_parsePostgres; }
     inline bool ParsePostgresHasBeenSet() const { return m_parsePostgresHasBeenSet; }
-    inline void SetParsePostgres(const ParsePostgres& value) { m_parsePostgresHasBeenSet = true; m_parsePostgres = value; }
-    inline void SetParsePostgres(ParsePostgres&& value) { m_parsePostgresHasBeenSet = true; m_parsePostgres = std::move(value); }
-    inline Processor& WithParsePostgres(const ParsePostgres& value) { SetParsePostgres(value); return *this;}
-    inline Processor& WithParsePostgres(ParsePostgres&& value) { SetParsePostgres(std::move(value)); return *this;}
+    template<typename ParsePostgresT = ParsePostgres>
+    void SetParsePostgres(ParsePostgresT&& value) { m_parsePostgresHasBeenSet = true; m_parsePostgres = std::forward<ParsePostgresT>(value); }
+    template<typename ParsePostgresT = ParsePostgres>
+    Processor& WithParsePostgres(ParsePostgresT&& value) { SetParsePostgres(std::forward<ParsePostgresT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,12 +265,12 @@ namespace Model
      * parseVPC</a> processor in your transformer.</p> <p>If you use this processor, it
      * must be the first processor in your transformer.</p>
      */
-    inline const ParseVPC& GetParseVPC() const{ return m_parseVPC; }
+    inline const ParseVPC& GetParseVPC() const { return m_parseVPC; }
     inline bool ParseVPCHasBeenSet() const { return m_parseVPCHasBeenSet; }
-    inline void SetParseVPC(const ParseVPC& value) { m_parseVPCHasBeenSet = true; m_parseVPC = value; }
-    inline void SetParseVPC(ParseVPC&& value) { m_parseVPCHasBeenSet = true; m_parseVPC = std::move(value); }
-    inline Processor& WithParseVPC(const ParseVPC& value) { SetParseVPC(value); return *this;}
-    inline Processor& WithParseVPC(ParseVPC&& value) { SetParseVPC(std::move(value)); return *this;}
+    template<typename ParseVPCT = ParseVPC>
+    void SetParseVPC(ParseVPCT&& value) { m_parseVPCHasBeenSet = true; m_parseVPC = std::forward<ParseVPCT>(value); }
+    template<typename ParseVPCT = ParseVPC>
+    Processor& WithParseVPC(ParseVPCT&& value) { SetParseVPC(std::forward<ParseVPCT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -280,12 +280,12 @@ namespace Model
      * parseWAF</a> processor in your transformer.</p> <p>If you use this processor, it
      * must be the first processor in your transformer.</p>
      */
-    inline const ParseWAF& GetParseWAF() const{ return m_parseWAF; }
+    inline const ParseWAF& GetParseWAF() const { return m_parseWAF; }
     inline bool ParseWAFHasBeenSet() const { return m_parseWAFHasBeenSet; }
-    inline void SetParseWAF(const ParseWAF& value) { m_parseWAFHasBeenSet = true; m_parseWAF = value; }
-    inline void SetParseWAF(ParseWAF&& value) { m_parseWAFHasBeenSet = true; m_parseWAF = std::move(value); }
-    inline Processor& WithParseWAF(const ParseWAF& value) { SetParseWAF(value); return *this;}
-    inline Processor& WithParseWAF(ParseWAF&& value) { SetParseWAF(std::move(value)); return *this;}
+    template<typename ParseWAFT = ParseWAF>
+    void SetParseWAF(ParseWAFT&& value) { m_parseWAFHasBeenSet = true; m_parseWAF = std::forward<ParseWAFT>(value); }
+    template<typename ParseWAFT = ParseWAF>
+    Processor& WithParseWAF(ParseWAFT&& value) { SetParseWAF(std::forward<ParseWAFT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,12 +294,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-renameKeys">
      * renameKeys</a> processor in your transformer.</p>
      */
-    inline const RenameKeys& GetRenameKeys() const{ return m_renameKeys; }
+    inline const RenameKeys& GetRenameKeys() const { return m_renameKeys; }
     inline bool RenameKeysHasBeenSet() const { return m_renameKeysHasBeenSet; }
-    inline void SetRenameKeys(const RenameKeys& value) { m_renameKeysHasBeenSet = true; m_renameKeys = value; }
-    inline void SetRenameKeys(RenameKeys&& value) { m_renameKeysHasBeenSet = true; m_renameKeys = std::move(value); }
-    inline Processor& WithRenameKeys(const RenameKeys& value) { SetRenameKeys(value); return *this;}
-    inline Processor& WithRenameKeys(RenameKeys&& value) { SetRenameKeys(std::move(value)); return *this;}
+    template<typename RenameKeysT = RenameKeys>
+    void SetRenameKeys(RenameKeysT&& value) { m_renameKeysHasBeenSet = true; m_renameKeys = std::forward<RenameKeysT>(value); }
+    template<typename RenameKeysT = RenameKeys>
+    Processor& WithRenameKeys(RenameKeysT&& value) { SetRenameKeys(std::forward<RenameKeysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -308,12 +308,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-splitString">
      * splitString</a> processor in your transformer.</p>
      */
-    inline const SplitString& GetSplitString() const{ return m_splitString; }
+    inline const SplitString& GetSplitString() const { return m_splitString; }
     inline bool SplitStringHasBeenSet() const { return m_splitStringHasBeenSet; }
-    inline void SetSplitString(const SplitString& value) { m_splitStringHasBeenSet = true; m_splitString = value; }
-    inline void SetSplitString(SplitString&& value) { m_splitStringHasBeenSet = true; m_splitString = std::move(value); }
-    inline Processor& WithSplitString(const SplitString& value) { SetSplitString(value); return *this;}
-    inline Processor& WithSplitString(SplitString&& value) { SetSplitString(std::move(value)); return *this;}
+    template<typename SplitStringT = SplitString>
+    void SetSplitString(SplitStringT&& value) { m_splitStringHasBeenSet = true; m_splitString = std::forward<SplitStringT>(value); }
+    template<typename SplitStringT = SplitString>
+    Processor& WithSplitString(SplitStringT&& value) { SetSplitString(std::forward<SplitStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -322,12 +322,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-substituteString">
      * substituteString</a> processor in your transformer.</p>
      */
-    inline const SubstituteString& GetSubstituteString() const{ return m_substituteString; }
+    inline const SubstituteString& GetSubstituteString() const { return m_substituteString; }
     inline bool SubstituteStringHasBeenSet() const { return m_substituteStringHasBeenSet; }
-    inline void SetSubstituteString(const SubstituteString& value) { m_substituteStringHasBeenSet = true; m_substituteString = value; }
-    inline void SetSubstituteString(SubstituteString&& value) { m_substituteStringHasBeenSet = true; m_substituteString = std::move(value); }
-    inline Processor& WithSubstituteString(const SubstituteString& value) { SetSubstituteString(value); return *this;}
-    inline Processor& WithSubstituteString(SubstituteString&& value) { SetSubstituteString(std::move(value)); return *this;}
+    template<typename SubstituteStringT = SubstituteString>
+    void SetSubstituteString(SubstituteStringT&& value) { m_substituteStringHasBeenSet = true; m_substituteString = std::forward<SubstituteStringT>(value); }
+    template<typename SubstituteStringT = SubstituteString>
+    Processor& WithSubstituteString(SubstituteStringT&& value) { SetSubstituteString(std::forward<SubstituteStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -336,12 +336,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-trimString">
      * trimString</a> processor in your transformer.</p>
      */
-    inline const TrimString& GetTrimString() const{ return m_trimString; }
+    inline const TrimString& GetTrimString() const { return m_trimString; }
     inline bool TrimStringHasBeenSet() const { return m_trimStringHasBeenSet; }
-    inline void SetTrimString(const TrimString& value) { m_trimStringHasBeenSet = true; m_trimString = value; }
-    inline void SetTrimString(TrimString&& value) { m_trimStringHasBeenSet = true; m_trimString = std::move(value); }
-    inline Processor& WithTrimString(const TrimString& value) { SetTrimString(value); return *this;}
-    inline Processor& WithTrimString(TrimString&& value) { SetTrimString(std::move(value)); return *this;}
+    template<typename TrimStringT = TrimString>
+    void SetTrimString(TrimStringT&& value) { m_trimStringHasBeenSet = true; m_trimString = std::forward<TrimStringT>(value); }
+    template<typename TrimStringT = TrimString>
+    Processor& WithTrimString(TrimStringT&& value) { SetTrimString(std::forward<TrimStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -350,12 +350,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-typeConverter">
      * typeConverter</a> processor in your transformer.</p>
      */
-    inline const TypeConverter& GetTypeConverter() const{ return m_typeConverter; }
+    inline const TypeConverter& GetTypeConverter() const { return m_typeConverter; }
     inline bool TypeConverterHasBeenSet() const { return m_typeConverterHasBeenSet; }
-    inline void SetTypeConverter(const TypeConverter& value) { m_typeConverterHasBeenSet = true; m_typeConverter = value; }
-    inline void SetTypeConverter(TypeConverter&& value) { m_typeConverterHasBeenSet = true; m_typeConverter = std::move(value); }
-    inline Processor& WithTypeConverter(const TypeConverter& value) { SetTypeConverter(value); return *this;}
-    inline Processor& WithTypeConverter(TypeConverter&& value) { SetTypeConverter(std::move(value)); return *this;}
+    template<typename TypeConverterT = TypeConverter>
+    void SetTypeConverter(TypeConverterT&& value) { m_typeConverterHasBeenSet = true; m_typeConverter = std::forward<TypeConverterT>(value); }
+    template<typename TypeConverterT = TypeConverter>
+    Processor& WithTypeConverter(TypeConverterT&& value) { SetTypeConverter(std::forward<TypeConverterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -364,12 +364,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-upperCaseString">
      * upperCaseString</a> processor in your transformer.</p>
      */
-    inline const UpperCaseString& GetUpperCaseString() const{ return m_upperCaseString; }
+    inline const UpperCaseString& GetUpperCaseString() const { return m_upperCaseString; }
     inline bool UpperCaseStringHasBeenSet() const { return m_upperCaseStringHasBeenSet; }
-    inline void SetUpperCaseString(const UpperCaseString& value) { m_upperCaseStringHasBeenSet = true; m_upperCaseString = value; }
-    inline void SetUpperCaseString(UpperCaseString&& value) { m_upperCaseStringHasBeenSet = true; m_upperCaseString = std::move(value); }
-    inline Processor& WithUpperCaseString(const UpperCaseString& value) { SetUpperCaseString(value); return *this;}
-    inline Processor& WithUpperCaseString(UpperCaseString&& value) { SetUpperCaseString(std::move(value)); return *this;}
+    template<typename UpperCaseStringT = UpperCaseString>
+    void SetUpperCaseString(UpperCaseStringT&& value) { m_upperCaseStringHasBeenSet = true; m_upperCaseString = std::forward<UpperCaseStringT>(value); }
+    template<typename UpperCaseStringT = UpperCaseString>
+    Processor& WithUpperCaseString(UpperCaseStringT&& value) { SetUpperCaseString(std::forward<UpperCaseStringT>(value)); return *this;}
     ///@}
   private:
 

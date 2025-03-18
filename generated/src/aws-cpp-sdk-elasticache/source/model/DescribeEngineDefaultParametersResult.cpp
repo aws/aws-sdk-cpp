@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult()
-{
-}
-
 DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::op
     if(!engineDefaultsNode.IsNull())
     {
       m_engineDefaults = engineDefaultsNode;
+      m_engineDefaultsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeEngineDefaultParametersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportBackupPlanTemplateRequest::ExportBackupPlanTemplateRequest() : 
-    m_backupPlanIdHasBeenSet(false)
-{
-}
-
 Aws::String ExportBackupPlanTemplateRequest::SerializePayload() const
 {
   return {};

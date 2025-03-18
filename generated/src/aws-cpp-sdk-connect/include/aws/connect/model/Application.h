@@ -34,7 +34,7 @@ namespace Model
   class Application
   {
   public:
-    AWS_CONNECT_API Application();
+    AWS_CONNECT_API Application() = default;
     AWS_CONNECT_API Application(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Namespace of the application that you want to give access to.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline Application& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline Application& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline Application& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    Application& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>The permissions that the agent is granted on the application. Only the
      * <code>ACCESS</code> permission is supported.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationPermissions() const{ return m_applicationPermissions; }
+    inline const Aws::Vector<Aws::String>& GetApplicationPermissions() const { return m_applicationPermissions; }
     inline bool ApplicationPermissionsHasBeenSet() const { return m_applicationPermissionsHasBeenSet; }
-    inline void SetApplicationPermissions(const Aws::Vector<Aws::String>& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = value; }
-    inline void SetApplicationPermissions(Aws::Vector<Aws::String>&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = std::move(value); }
-    inline Application& WithApplicationPermissions(const Aws::Vector<Aws::String>& value) { SetApplicationPermissions(value); return *this;}
-    inline Application& WithApplicationPermissions(Aws::Vector<Aws::String>&& value) { SetApplicationPermissions(std::move(value)); return *this;}
-    inline Application& AddApplicationPermissions(const Aws::String& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(value); return *this; }
-    inline Application& AddApplicationPermissions(Aws::String&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(std::move(value)); return *this; }
-    inline Application& AddApplicationPermissions(const char* value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(value); return *this; }
+    template<typename ApplicationPermissionsT = Aws::Vector<Aws::String>>
+    void SetApplicationPermissions(ApplicationPermissionsT&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = std::forward<ApplicationPermissionsT>(value); }
+    template<typename ApplicationPermissionsT = Aws::Vector<Aws::String>>
+    Application& WithApplicationPermissions(ApplicationPermissionsT&& value) { SetApplicationPermissions(std::forward<ApplicationPermissionsT>(value)); return *this;}
+    template<typename ApplicationPermissionsT = Aws::String>
+    Application& AddApplicationPermissions(ApplicationPermissionsT&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.emplace_back(std::forward<ApplicationPermissionsT>(value)); return *this; }
     ///@}
   private:
 

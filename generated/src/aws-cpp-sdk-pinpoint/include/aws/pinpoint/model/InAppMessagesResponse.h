@@ -32,7 +32,7 @@ namespace Model
   class InAppMessagesResponse
   {
   public:
-    AWS_PINPOINT_API InAppMessagesResponse();
+    AWS_PINPOINT_API InAppMessagesResponse() = default;
     AWS_PINPOINT_API InAppMessagesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API InAppMessagesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>List of targeted in-app message campaigns.</p>
      */
-    inline const Aws::Vector<InAppMessageCampaign>& GetInAppMessageCampaigns() const{ return m_inAppMessageCampaigns; }
+    inline const Aws::Vector<InAppMessageCampaign>& GetInAppMessageCampaigns() const { return m_inAppMessageCampaigns; }
     inline bool InAppMessageCampaignsHasBeenSet() const { return m_inAppMessageCampaignsHasBeenSet; }
-    inline void SetInAppMessageCampaigns(const Aws::Vector<InAppMessageCampaign>& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns = value; }
-    inline void SetInAppMessageCampaigns(Aws::Vector<InAppMessageCampaign>&& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns = std::move(value); }
-    inline InAppMessagesResponse& WithInAppMessageCampaigns(const Aws::Vector<InAppMessageCampaign>& value) { SetInAppMessageCampaigns(value); return *this;}
-    inline InAppMessagesResponse& WithInAppMessageCampaigns(Aws::Vector<InAppMessageCampaign>&& value) { SetInAppMessageCampaigns(std::move(value)); return *this;}
-    inline InAppMessagesResponse& AddInAppMessageCampaigns(const InAppMessageCampaign& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns.push_back(value); return *this; }
-    inline InAppMessagesResponse& AddInAppMessageCampaigns(InAppMessageCampaign&& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns.push_back(std::move(value)); return *this; }
+    template<typename InAppMessageCampaignsT = Aws::Vector<InAppMessageCampaign>>
+    void SetInAppMessageCampaigns(InAppMessageCampaignsT&& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns = std::forward<InAppMessageCampaignsT>(value); }
+    template<typename InAppMessageCampaignsT = Aws::Vector<InAppMessageCampaign>>
+    InAppMessagesResponse& WithInAppMessageCampaigns(InAppMessageCampaignsT&& value) { SetInAppMessageCampaigns(std::forward<InAppMessageCampaignsT>(value)); return *this;}
+    template<typename InAppMessageCampaignsT = InAppMessageCampaign>
+    InAppMessagesResponse& AddInAppMessageCampaigns(InAppMessageCampaignsT&& value) { m_inAppMessageCampaignsHasBeenSet = true; m_inAppMessageCampaigns.emplace_back(std::forward<InAppMessageCampaignsT>(value)); return *this; }
     ///@}
   private:
 

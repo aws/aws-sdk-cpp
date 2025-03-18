@@ -21,7 +21,7 @@ namespace Model
   class GetNetworkAnalyzerConfigurationRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetNetworkAnalyzerConfigurationRequest();
+    AWS_IOTWIRELESS_API GetNetworkAnalyzerConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+    inline const Aws::String& GetConfigurationName() const { return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
-    inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
-    inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
-    inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
-    inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-    inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-    inline GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+    template<typename ConfigurationNameT = Aws::String>
+    void SetConfigurationName(ConfigurationNameT&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::forward<ConfigurationNameT>(value); }
+    template<typename ConfigurationNameT = Aws::String>
+    GetNetworkAnalyzerConfigurationRequest& WithConfigurationName(ConfigurationNameT&& value) { SetConfigurationName(std::forward<ConfigurationNameT>(value)); return *this;}
     ///@}
   private:
 

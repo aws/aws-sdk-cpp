@@ -34,7 +34,7 @@ namespace Model
   class AdditionalModelDataSource
   {
   public:
-    AWS_SAGEMAKER_API AdditionalModelDataSource();
+    AWS_SAGEMAKER_API AdditionalModelDataSource() = default;
     AWS_SAGEMAKER_API AdditionalModelDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AdditionalModelDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
     /**
      * <p>A custom name for this <code>AdditionalModelDataSource</code> object.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline AdditionalModelDataSource& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline AdditionalModelDataSource& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline AdditionalModelDataSource& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    AdditionalModelDataSource& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3ModelDataSource& GetS3DataSource() const{ return m_s3DataSource; }
+    inline const S3ModelDataSource& GetS3DataSource() const { return m_s3DataSource; }
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
-    inline void SetS3DataSource(const S3ModelDataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
-    inline void SetS3DataSource(S3ModelDataSource&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
-    inline AdditionalModelDataSource& WithS3DataSource(const S3ModelDataSource& value) { SetS3DataSource(value); return *this;}
-    inline AdditionalModelDataSource& WithS3DataSource(S3ModelDataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
+    template<typename S3DataSourceT = S3ModelDataSource>
+    void SetS3DataSource(S3DataSourceT&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::forward<S3DataSourceT>(value); }
+    template<typename S3DataSourceT = S3ModelDataSource>
+    AdditionalModelDataSource& WithS3DataSource(S3DataSourceT&& value) { SetS3DataSource(std::forward<S3DataSourceT>(value)); return *this;}
     ///@}
   private:
 

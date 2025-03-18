@@ -35,7 +35,7 @@ namespace Model
   class ForecastSummary
   {
   public:
-    AWS_FORECASTSERVICE_API ForecastSummary();
+    AWS_FORECASTSERVICE_API ForecastSummary() = default;
     AWS_FORECASTSERVICE_API ForecastSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API ForecastSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,49 +45,43 @@ namespace Model
     /**
      * <p>The ARN of the forecast.</p>
      */
-    inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
+    inline const Aws::String& GetForecastArn() const { return m_forecastArn; }
     inline bool ForecastArnHasBeenSet() const { return m_forecastArnHasBeenSet; }
-    inline void SetForecastArn(const Aws::String& value) { m_forecastArnHasBeenSet = true; m_forecastArn = value; }
-    inline void SetForecastArn(Aws::String&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::move(value); }
-    inline void SetForecastArn(const char* value) { m_forecastArnHasBeenSet = true; m_forecastArn.assign(value); }
-    inline ForecastSummary& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
-    inline ForecastSummary& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
-    inline ForecastSummary& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
+    template<typename ForecastArnT = Aws::String>
+    void SetForecastArn(ForecastArnT&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::forward<ForecastArnT>(value); }
+    template<typename ForecastArnT = Aws::String>
+    ForecastSummary& WithForecastArn(ForecastArnT&& value) { SetForecastArn(std::forward<ForecastArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the forecast.</p>
      */
-    inline const Aws::String& GetForecastName() const{ return m_forecastName; }
+    inline const Aws::String& GetForecastName() const { return m_forecastName; }
     inline bool ForecastNameHasBeenSet() const { return m_forecastNameHasBeenSet; }
-    inline void SetForecastName(const Aws::String& value) { m_forecastNameHasBeenSet = true; m_forecastName = value; }
-    inline void SetForecastName(Aws::String&& value) { m_forecastNameHasBeenSet = true; m_forecastName = std::move(value); }
-    inline void SetForecastName(const char* value) { m_forecastNameHasBeenSet = true; m_forecastName.assign(value); }
-    inline ForecastSummary& WithForecastName(const Aws::String& value) { SetForecastName(value); return *this;}
-    inline ForecastSummary& WithForecastName(Aws::String&& value) { SetForecastName(std::move(value)); return *this;}
-    inline ForecastSummary& WithForecastName(const char* value) { SetForecastName(value); return *this;}
+    template<typename ForecastNameT = Aws::String>
+    void SetForecastName(ForecastNameT&& value) { m_forecastNameHasBeenSet = true; m_forecastName = std::forward<ForecastNameT>(value); }
+    template<typename ForecastNameT = Aws::String>
+    ForecastSummary& WithForecastName(ForecastNameT&& value) { SetForecastName(std::forward<ForecastNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the predictor used to generate the forecast.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
     inline bool PredictorArnHasBeenSet() const { return m_predictorArnHasBeenSet; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArnHasBeenSet = true; m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArnHasBeenSet = true; m_predictorArn.assign(value); }
-    inline ForecastSummary& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline ForecastSummary& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline ForecastSummary& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    ForecastSummary& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the Forecast was created from an AutoPredictor.</p>
      */
-    inline bool GetCreatedUsingAutoPredictor() const{ return m_createdUsingAutoPredictor; }
+    inline bool GetCreatedUsingAutoPredictor() const { return m_createdUsingAutoPredictor; }
     inline bool CreatedUsingAutoPredictorHasBeenSet() const { return m_createdUsingAutoPredictorHasBeenSet; }
     inline void SetCreatedUsingAutoPredictor(bool value) { m_createdUsingAutoPredictorHasBeenSet = true; m_createdUsingAutoPredictor = value; }
     inline ForecastSummary& WithCreatedUsingAutoPredictor(bool value) { SetCreatedUsingAutoPredictor(value); return *this;}
@@ -98,14 +92,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dataset group that provided the data
      * used to train the predictor.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline ForecastSummary& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline ForecastSummary& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline ForecastSummary& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    ForecastSummary& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,40 +111,36 @@ namespace Model
      * the forecast must be <code>ACTIVE</code> before you can query or export the
      * forecast.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ForecastSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ForecastSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ForecastSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ForecastSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, an informational message about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ForecastSummary& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ForecastSummary& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ForecastSummary& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ForecastSummary& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the forecast creation task was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ForecastSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ForecastSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ForecastSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +153,12 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
-    inline ForecastSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline ForecastSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    ForecastSummary& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,7 +171,7 @@ namespace Model
     Aws::String m_predictorArn;
     bool m_predictorArnHasBeenSet = false;
 
-    bool m_createdUsingAutoPredictor;
+    bool m_createdUsingAutoPredictor{false};
     bool m_createdUsingAutoPredictorHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
@@ -195,10 +183,10 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
     bool m_lastModificationTimeHasBeenSet = false;
   };
 

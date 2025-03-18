@@ -12,13 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelRequest::DeleteModelRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelRequest::SerializePayload() const
 {
   JsonValue payload;

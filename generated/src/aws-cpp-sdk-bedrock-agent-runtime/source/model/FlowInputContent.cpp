@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowInputContent::FlowInputContent() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 FlowInputContent::FlowInputContent(JsonView jsonValue)
-  : FlowInputContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowInputContent& FlowInputContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

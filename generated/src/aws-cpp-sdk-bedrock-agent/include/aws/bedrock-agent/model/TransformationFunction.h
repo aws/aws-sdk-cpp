@@ -31,7 +31,7 @@ namespace Model
   class TransformationFunction
   {
   public:
-    AWS_BEDROCKAGENT_API TransformationFunction();
+    AWS_BEDROCKAGENT_API TransformationFunction() = default;
     AWS_BEDROCKAGENT_API TransformationFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API TransformationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Lambda function.</p>
      */
-    inline const TransformationLambdaConfiguration& GetTransformationLambdaConfiguration() const{ return m_transformationLambdaConfiguration; }
+    inline const TransformationLambdaConfiguration& GetTransformationLambdaConfiguration() const { return m_transformationLambdaConfiguration; }
     inline bool TransformationLambdaConfigurationHasBeenSet() const { return m_transformationLambdaConfigurationHasBeenSet; }
-    inline void SetTransformationLambdaConfiguration(const TransformationLambdaConfiguration& value) { m_transformationLambdaConfigurationHasBeenSet = true; m_transformationLambdaConfiguration = value; }
-    inline void SetTransformationLambdaConfiguration(TransformationLambdaConfiguration&& value) { m_transformationLambdaConfigurationHasBeenSet = true; m_transformationLambdaConfiguration = std::move(value); }
-    inline TransformationFunction& WithTransformationLambdaConfiguration(const TransformationLambdaConfiguration& value) { SetTransformationLambdaConfiguration(value); return *this;}
-    inline TransformationFunction& WithTransformationLambdaConfiguration(TransformationLambdaConfiguration&& value) { SetTransformationLambdaConfiguration(std::move(value)); return *this;}
+    template<typename TransformationLambdaConfigurationT = TransformationLambdaConfiguration>
+    void SetTransformationLambdaConfiguration(TransformationLambdaConfigurationT&& value) { m_transformationLambdaConfigurationHasBeenSet = true; m_transformationLambdaConfiguration = std::forward<TransformationLambdaConfigurationT>(value); }
+    template<typename TransformationLambdaConfigurationT = TransformationLambdaConfiguration>
+    TransformationFunction& WithTransformationLambdaConfiguration(TransformationLambdaConfigurationT&& value) { SetTransformationLambdaConfiguration(std::forward<TransformationLambdaConfigurationT>(value)); return *this;}
     ///@}
   private:
 

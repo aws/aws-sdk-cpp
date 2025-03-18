@@ -29,7 +29,7 @@ namespace Model
   class DescribeRecommendationExportJobsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult();
+    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult() = default;
     AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of objects that describe recommendation export jobs.</p>
      */
-    inline const Aws::Vector<RecommendationExportJob>& GetRecommendationExportJobs() const{ return m_recommendationExportJobs; }
-    inline void SetRecommendationExportJobs(const Aws::Vector<RecommendationExportJob>& value) { m_recommendationExportJobs = value; }
-    inline void SetRecommendationExportJobs(Aws::Vector<RecommendationExportJob>&& value) { m_recommendationExportJobs = std::move(value); }
-    inline DescribeRecommendationExportJobsResult& WithRecommendationExportJobs(const Aws::Vector<RecommendationExportJob>& value) { SetRecommendationExportJobs(value); return *this;}
-    inline DescribeRecommendationExportJobsResult& WithRecommendationExportJobs(Aws::Vector<RecommendationExportJob>&& value) { SetRecommendationExportJobs(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsResult& AddRecommendationExportJobs(const RecommendationExportJob& value) { m_recommendationExportJobs.push_back(value); return *this; }
-    inline DescribeRecommendationExportJobsResult& AddRecommendationExportJobs(RecommendationExportJob&& value) { m_recommendationExportJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecommendationExportJob>& GetRecommendationExportJobs() const { return m_recommendationExportJobs; }
+    template<typename RecommendationExportJobsT = Aws::Vector<RecommendationExportJob>>
+    void SetRecommendationExportJobs(RecommendationExportJobsT&& value) { m_recommendationExportJobsHasBeenSet = true; m_recommendationExportJobs = std::forward<RecommendationExportJobsT>(value); }
+    template<typename RecommendationExportJobsT = Aws::Vector<RecommendationExportJob>>
+    DescribeRecommendationExportJobsResult& WithRecommendationExportJobs(RecommendationExportJobsT&& value) { SetRecommendationExportJobs(std::forward<RecommendationExportJobsT>(value)); return *this;}
+    template<typename RecommendationExportJobsT = RecommendationExportJob>
+    DescribeRecommendationExportJobsResult& AddRecommendationExportJobs(RecommendationExportJobsT&& value) { m_recommendationExportJobsHasBeenSet = true; m_recommendationExportJobs.emplace_back(std::forward<RecommendationExportJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to advance to the next page of export jobs.</p> <p>This
      * value is null when there are no more pages of export jobs to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRecommendationExportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRecommendationExportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRecommendationExportJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRecommendationExportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRecommendationExportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRecommendationExportJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RecommendationExportJob> m_recommendationExportJobs;
+    bool m_recommendationExportJobsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

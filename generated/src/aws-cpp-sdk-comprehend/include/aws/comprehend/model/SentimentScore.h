@@ -30,7 +30,7 @@ namespace Model
   class SentimentScore
   {
   public:
-    AWS_COMPREHEND_API SentimentScore();
+    AWS_COMPREHEND_API SentimentScore() = default;
     AWS_COMPREHEND_API SentimentScore(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>POSITIVE</code> sentiment.</p>
      */
-    inline double GetPositive() const{ return m_positive; }
+    inline double GetPositive() const { return m_positive; }
     inline bool PositiveHasBeenSet() const { return m_positiveHasBeenSet; }
     inline void SetPositive(double value) { m_positiveHasBeenSet = true; m_positive = value; }
     inline SentimentScore& WithPositive(double value) { SetPositive(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>NEGATIVE</code> sentiment.</p>
      */
-    inline double GetNegative() const{ return m_negative; }
+    inline double GetNegative() const { return m_negative; }
     inline bool NegativeHasBeenSet() const { return m_negativeHasBeenSet; }
     inline void SetNegative(double value) { m_negativeHasBeenSet = true; m_negative = value; }
     inline SentimentScore& WithNegative(double value) { SetNegative(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>NEUTRAL</code> sentiment.</p>
      */
-    inline double GetNeutral() const{ return m_neutral; }
+    inline double GetNeutral() const { return m_neutral; }
     inline bool NeutralHasBeenSet() const { return m_neutralHasBeenSet; }
     inline void SetNeutral(double value) { m_neutralHasBeenSet = true; m_neutral = value; }
     inline SentimentScore& WithNeutral(double value) { SetNeutral(value); return *this;}
@@ -74,23 +74,23 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>MIXED</code> sentiment.</p>
      */
-    inline double GetMixed() const{ return m_mixed; }
+    inline double GetMixed() const { return m_mixed; }
     inline bool MixedHasBeenSet() const { return m_mixedHasBeenSet; }
     inline void SetMixed(double value) { m_mixedHasBeenSet = true; m_mixed = value; }
     inline SentimentScore& WithMixed(double value) { SetMixed(value); return *this;}
     ///@}
   private:
 
-    double m_positive;
+    double m_positive{0.0};
     bool m_positiveHasBeenSet = false;
 
-    double m_negative;
+    double m_negative{0.0};
     bool m_negativeHasBeenSet = false;
 
-    double m_neutral;
+    double m_neutral{0.0};
     bool m_neutralHasBeenSet = false;
 
-    double m_mixed;
+    double m_mixed{0.0};
     bool m_mixedHasBeenSet = false;
   };
 

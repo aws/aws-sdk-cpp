@@ -21,7 +21,7 @@ namespace Model
   class DeleteAccountAliasRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API DeleteAccountAliasRequest();
+    AWS_IAM_API DeleteAccountAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * string of characters consisting of lowercase letters, digits, and dashes. You
      * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
      */
-    inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
+    inline const Aws::String& GetAccountAlias() const { return m_accountAlias; }
     inline bool AccountAliasHasBeenSet() const { return m_accountAliasHasBeenSet; }
-    inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
-    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
-    inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
-    inline DeleteAccountAliasRequest& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
-    inline DeleteAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
-    inline DeleteAccountAliasRequest& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
+    template<typename AccountAliasT = Aws::String>
+    void SetAccountAlias(AccountAliasT&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::forward<AccountAliasT>(value); }
+    template<typename AccountAliasT = Aws::String>
+    DeleteAccountAliasRequest& WithAccountAlias(AccountAliasT&& value) { SetAccountAlias(std::forward<AccountAliasT>(value)); return *this;}
     ///@}
   private:
 

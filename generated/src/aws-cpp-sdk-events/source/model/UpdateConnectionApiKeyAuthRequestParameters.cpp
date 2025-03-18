@@ -18,14 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-UpdateConnectionApiKeyAuthRequestParameters::UpdateConnectionApiKeyAuthRequestParameters() : 
-    m_apiKeyNameHasBeenSet(false),
-    m_apiKeyValueHasBeenSet(false)
-{
-}
-
 UpdateConnectionApiKeyAuthRequestParameters::UpdateConnectionApiKeyAuthRequestParameters(JsonView jsonValue)
-  : UpdateConnectionApiKeyAuthRequestParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateConnectionApiKeyAuthRequestParameters& UpdateConnectionApiKeyAuthRequestPa
   if(jsonValue.ValueExists("ApiKeyName"))
   {
     m_apiKeyName = jsonValue.GetString("ApiKeyName");
-
     m_apiKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiKeyValue"))
   {
     m_apiKeyValue = jsonValue.GetString("ApiKeyValue");
-
     m_apiKeyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

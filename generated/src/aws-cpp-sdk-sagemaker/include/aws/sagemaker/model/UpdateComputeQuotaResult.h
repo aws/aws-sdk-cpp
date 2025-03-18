@@ -27,7 +27,7 @@ namespace Model
   class UpdateComputeQuotaResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateComputeQuotaResult();
+    AWS_SAGEMAKER_API UpdateComputeQuotaResult() = default;
     AWS_SAGEMAKER_API UpdateComputeQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateComputeQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>ARN of the compute allocation definition.</p>
      */
-    inline const Aws::String& GetComputeQuotaArn() const{ return m_computeQuotaArn; }
-    inline void SetComputeQuotaArn(const Aws::String& value) { m_computeQuotaArn = value; }
-    inline void SetComputeQuotaArn(Aws::String&& value) { m_computeQuotaArn = std::move(value); }
-    inline void SetComputeQuotaArn(const char* value) { m_computeQuotaArn.assign(value); }
-    inline UpdateComputeQuotaResult& WithComputeQuotaArn(const Aws::String& value) { SetComputeQuotaArn(value); return *this;}
-    inline UpdateComputeQuotaResult& WithComputeQuotaArn(Aws::String&& value) { SetComputeQuotaArn(std::move(value)); return *this;}
-    inline UpdateComputeQuotaResult& WithComputeQuotaArn(const char* value) { SetComputeQuotaArn(value); return *this;}
+    inline const Aws::String& GetComputeQuotaArn() const { return m_computeQuotaArn; }
+    template<typename ComputeQuotaArnT = Aws::String>
+    void SetComputeQuotaArn(ComputeQuotaArnT&& value) { m_computeQuotaArnHasBeenSet = true; m_computeQuotaArn = std::forward<ComputeQuotaArnT>(value); }
+    template<typename ComputeQuotaArnT = Aws::String>
+    UpdateComputeQuotaResult& WithComputeQuotaArn(ComputeQuotaArnT&& value) { SetComputeQuotaArn(std::forward<ComputeQuotaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version of the compute allocation definition.</p>
      */
-    inline int GetComputeQuotaVersion() const{ return m_computeQuotaVersion; }
-    inline void SetComputeQuotaVersion(int value) { m_computeQuotaVersion = value; }
+    inline int GetComputeQuotaVersion() const { return m_computeQuotaVersion; }
+    inline void SetComputeQuotaVersion(int value) { m_computeQuotaVersionHasBeenSet = true; m_computeQuotaVersion = value; }
     inline UpdateComputeQuotaResult& WithComputeQuotaVersion(int value) { SetComputeQuotaVersion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateComputeQuotaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateComputeQuotaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateComputeQuotaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateComputeQuotaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_computeQuotaArn;
+    bool m_computeQuotaArnHasBeenSet = false;
 
-    int m_computeQuotaVersion;
+    int m_computeQuotaVersion{0};
+    bool m_computeQuotaVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

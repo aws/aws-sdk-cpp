@@ -34,7 +34,7 @@ namespace Model
   class SnapStartResponse
   {
   public:
-    AWS_LAMBDA_API SnapStartResponse();
+    AWS_LAMBDA_API SnapStartResponse() = default;
     AWS_LAMBDA_API SnapStartResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API SnapStartResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the
      * execution environment when you publish a function version.</p>
      */
-    inline const SnapStartApplyOn& GetApplyOn() const{ return m_applyOn; }
+    inline SnapStartApplyOn GetApplyOn() const { return m_applyOn; }
     inline bool ApplyOnHasBeenSet() const { return m_applyOnHasBeenSet; }
-    inline void SetApplyOn(const SnapStartApplyOn& value) { m_applyOnHasBeenSet = true; m_applyOn = value; }
-    inline void SetApplyOn(SnapStartApplyOn&& value) { m_applyOnHasBeenSet = true; m_applyOn = std::move(value); }
-    inline SnapStartResponse& WithApplyOn(const SnapStartApplyOn& value) { SetApplyOn(value); return *this;}
-    inline SnapStartResponse& WithApplyOn(SnapStartApplyOn&& value) { SetApplyOn(std::move(value)); return *this;}
+    inline void SetApplyOn(SnapStartApplyOn value) { m_applyOnHasBeenSet = true; m_applyOn = value; }
+    inline SnapStartResponse& WithApplyOn(SnapStartApplyOn value) { SetApplyOn(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * Amazon Resource Name (ARN)</a>, this response element indicates whether
      * SnapStart is activated for the specified function version.</p>
      */
-    inline const SnapStartOptimizationStatus& GetOptimizationStatus() const{ return m_optimizationStatus; }
+    inline SnapStartOptimizationStatus GetOptimizationStatus() const { return m_optimizationStatus; }
     inline bool OptimizationStatusHasBeenSet() const { return m_optimizationStatusHasBeenSet; }
-    inline void SetOptimizationStatus(const SnapStartOptimizationStatus& value) { m_optimizationStatusHasBeenSet = true; m_optimizationStatus = value; }
-    inline void SetOptimizationStatus(SnapStartOptimizationStatus&& value) { m_optimizationStatusHasBeenSet = true; m_optimizationStatus = std::move(value); }
-    inline SnapStartResponse& WithOptimizationStatus(const SnapStartOptimizationStatus& value) { SetOptimizationStatus(value); return *this;}
-    inline SnapStartResponse& WithOptimizationStatus(SnapStartOptimizationStatus&& value) { SetOptimizationStatus(std::move(value)); return *this;}
+    inline void SetOptimizationStatus(SnapStartOptimizationStatus value) { m_optimizationStatusHasBeenSet = true; m_optimizationStatus = value; }
+    inline SnapStartResponse& WithOptimizationStatus(SnapStartOptimizationStatus value) { SetOptimizationStatus(value); return *this;}
     ///@}
   private:
 
-    SnapStartApplyOn m_applyOn;
+    SnapStartApplyOn m_applyOn{SnapStartApplyOn::NOT_SET};
     bool m_applyOnHasBeenSet = false;
 
-    SnapStartOptimizationStatus m_optimizationStatus;
+    SnapStartOptimizationStatus m_optimizationStatus{SnapStartOptimizationStatus::NOT_SET};
     bool m_optimizationStatusHasBeenSet = false;
   };
 

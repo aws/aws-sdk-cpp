@@ -33,7 +33,7 @@ namespace Model
   class DatabaseSourceAuthenticationConfiguration
   {
   public:
-    AWS_FIREHOSE_API DatabaseSourceAuthenticationConfiguration();
+    AWS_FIREHOSE_API DatabaseSourceAuthenticationConfiguration() = default;
     AWS_FIREHOSE_API DatabaseSourceAuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DatabaseSourceAuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const { return m_secretsManagerConfiguration; }
     inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
-    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
-    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
-    inline DatabaseSourceAuthenticationConfiguration& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
-    inline DatabaseSourceAuthenticationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    void SetSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::forward<SecretsManagerConfigurationT>(value); }
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    DatabaseSourceAuthenticationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { SetSecretsManagerConfiguration(std::forward<SecretsManagerConfigurationT>(value)); return *this;}
     ///@}
   private:
 

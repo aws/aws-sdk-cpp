@@ -18,16 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-Index::Index() : 
-    m_arnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_type(IndexType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Index::Index(JsonView jsonValue)
-  : Index()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Index& Index::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

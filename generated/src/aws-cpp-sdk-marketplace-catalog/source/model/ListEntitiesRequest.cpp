@@ -12,21 +12,6 @@ using namespace Aws::MarketplaceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEntitiesRequest::ListEntitiesRequest() : 
-    m_catalogHasBeenSet(false),
-    m_entityTypeHasBeenSet(false),
-    m_filterListHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_ownershipType(OwnershipType::NOT_SET),
-    m_ownershipTypeHasBeenSet(false),
-    m_entityTypeFiltersHasBeenSet(false),
-    m_entityTypeSortHasBeenSet(false)
-{
-}
-
 Aws::String ListEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

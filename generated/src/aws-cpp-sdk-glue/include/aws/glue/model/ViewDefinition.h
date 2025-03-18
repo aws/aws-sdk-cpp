@@ -34,7 +34,7 @@ namespace Model
   class ViewDefinition
   {
   public:
-    AWS_GLUE_API ViewDefinition();
+    AWS_GLUE_API ViewDefinition() = default;
     AWS_GLUE_API ViewDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ViewDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * comply. Refer to the engine's documentation to understand the guarantees
      * provided, if any.</p>
      */
-    inline bool GetIsProtected() const{ return m_isProtected; }
+    inline bool GetIsProtected() const { return m_isProtected; }
     inline bool IsProtectedHasBeenSet() const { return m_isProtectedHasBeenSet; }
     inline void SetIsProtected(bool value) { m_isProtectedHasBeenSet = true; m_isProtected = value; }
     inline ViewDefinition& WithIsProtected(bool value) { SetIsProtected(value); return *this;}
@@ -58,47 +58,44 @@ namespace Model
     /**
      * <p>The definer of a view in SQL.</p>
      */
-    inline const Aws::String& GetDefiner() const{ return m_definer; }
+    inline const Aws::String& GetDefiner() const { return m_definer; }
     inline bool DefinerHasBeenSet() const { return m_definerHasBeenSet; }
-    inline void SetDefiner(const Aws::String& value) { m_definerHasBeenSet = true; m_definer = value; }
-    inline void SetDefiner(Aws::String&& value) { m_definerHasBeenSet = true; m_definer = std::move(value); }
-    inline void SetDefiner(const char* value) { m_definerHasBeenSet = true; m_definer.assign(value); }
-    inline ViewDefinition& WithDefiner(const Aws::String& value) { SetDefiner(value); return *this;}
-    inline ViewDefinition& WithDefiner(Aws::String&& value) { SetDefiner(std::move(value)); return *this;}
-    inline ViewDefinition& WithDefiner(const char* value) { SetDefiner(value); return *this;}
+    template<typename DefinerT = Aws::String>
+    void SetDefiner(DefinerT&& value) { m_definerHasBeenSet = true; m_definer = std::forward<DefinerT>(value); }
+    template<typename DefinerT = Aws::String>
+    ViewDefinition& WithDefiner(DefinerT&& value) { SetDefiner(std::forward<DefinerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of table Amazon Resource Names (ARNs).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubObjects() const{ return m_subObjects; }
+    inline const Aws::Vector<Aws::String>& GetSubObjects() const { return m_subObjects; }
     inline bool SubObjectsHasBeenSet() const { return m_subObjectsHasBeenSet; }
-    inline void SetSubObjects(const Aws::Vector<Aws::String>& value) { m_subObjectsHasBeenSet = true; m_subObjects = value; }
-    inline void SetSubObjects(Aws::Vector<Aws::String>&& value) { m_subObjectsHasBeenSet = true; m_subObjects = std::move(value); }
-    inline ViewDefinition& WithSubObjects(const Aws::Vector<Aws::String>& value) { SetSubObjects(value); return *this;}
-    inline ViewDefinition& WithSubObjects(Aws::Vector<Aws::String>&& value) { SetSubObjects(std::move(value)); return *this;}
-    inline ViewDefinition& AddSubObjects(const Aws::String& value) { m_subObjectsHasBeenSet = true; m_subObjects.push_back(value); return *this; }
-    inline ViewDefinition& AddSubObjects(Aws::String&& value) { m_subObjectsHasBeenSet = true; m_subObjects.push_back(std::move(value)); return *this; }
-    inline ViewDefinition& AddSubObjects(const char* value) { m_subObjectsHasBeenSet = true; m_subObjects.push_back(value); return *this; }
+    template<typename SubObjectsT = Aws::Vector<Aws::String>>
+    void SetSubObjects(SubObjectsT&& value) { m_subObjectsHasBeenSet = true; m_subObjects = std::forward<SubObjectsT>(value); }
+    template<typename SubObjectsT = Aws::Vector<Aws::String>>
+    ViewDefinition& WithSubObjects(SubObjectsT&& value) { SetSubObjects(std::forward<SubObjectsT>(value)); return *this;}
+    template<typename SubObjectsT = Aws::String>
+    ViewDefinition& AddSubObjects(SubObjectsT&& value) { m_subObjectsHasBeenSet = true; m_subObjects.emplace_back(std::forward<SubObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of representations.</p>
      */
-    inline const Aws::Vector<ViewRepresentation>& GetRepresentations() const{ return m_representations; }
+    inline const Aws::Vector<ViewRepresentation>& GetRepresentations() const { return m_representations; }
     inline bool RepresentationsHasBeenSet() const { return m_representationsHasBeenSet; }
-    inline void SetRepresentations(const Aws::Vector<ViewRepresentation>& value) { m_representationsHasBeenSet = true; m_representations = value; }
-    inline void SetRepresentations(Aws::Vector<ViewRepresentation>&& value) { m_representationsHasBeenSet = true; m_representations = std::move(value); }
-    inline ViewDefinition& WithRepresentations(const Aws::Vector<ViewRepresentation>& value) { SetRepresentations(value); return *this;}
-    inline ViewDefinition& WithRepresentations(Aws::Vector<ViewRepresentation>&& value) { SetRepresentations(std::move(value)); return *this;}
-    inline ViewDefinition& AddRepresentations(const ViewRepresentation& value) { m_representationsHasBeenSet = true; m_representations.push_back(value); return *this; }
-    inline ViewDefinition& AddRepresentations(ViewRepresentation&& value) { m_representationsHasBeenSet = true; m_representations.push_back(std::move(value)); return *this; }
+    template<typename RepresentationsT = Aws::Vector<ViewRepresentation>>
+    void SetRepresentations(RepresentationsT&& value) { m_representationsHasBeenSet = true; m_representations = std::forward<RepresentationsT>(value); }
+    template<typename RepresentationsT = Aws::Vector<ViewRepresentation>>
+    ViewDefinition& WithRepresentations(RepresentationsT&& value) { SetRepresentations(std::forward<RepresentationsT>(value)); return *this;}
+    template<typename RepresentationsT = ViewRepresentation>
+    ViewDefinition& AddRepresentations(RepresentationsT&& value) { m_representationsHasBeenSet = true; m_representations.emplace_back(std::forward<RepresentationsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_isProtected;
+    bool m_isProtected{false};
     bool m_isProtectedHasBeenSet = false;
 
     Aws::String m_definer;

@@ -21,7 +21,7 @@ namespace Model
   class UploadSigningCertificateRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UploadSigningCertificateRequest();
+    AWS_IAM_API UploadSigningCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UploadSigningCertificateRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UploadSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UploadSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UploadSigningCertificateRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
-    inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+    inline const Aws::String& GetCertificateBody() const { return m_certificateBody; }
     inline bool CertificateBodyHasBeenSet() const { return m_certificateBodyHasBeenSet; }
-    inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
-    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::move(value); }
-    inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
-    inline UploadSigningCertificateRequest& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
-    inline UploadSigningCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(std::move(value)); return *this;}
-    inline UploadSigningCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
+    template<typename CertificateBodyT = Aws::String>
+    void SetCertificateBody(CertificateBodyT&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::forward<CertificateBodyT>(value); }
+    template<typename CertificateBodyT = Aws::String>
+    UploadSigningCertificateRequest& WithCertificateBody(CertificateBodyT&& value) { SetCertificateBody(std::forward<CertificateBodyT>(value)); return *this;}
     ///@}
   private:
 

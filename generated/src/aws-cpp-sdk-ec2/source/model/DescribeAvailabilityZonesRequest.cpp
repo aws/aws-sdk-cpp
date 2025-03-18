@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAvailabilityZonesRequest::DescribeAvailabilityZonesRequest() : 
-    m_zoneNamesHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false),
-    m_allAvailabilityZones(false),
-    m_allAvailabilityZonesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

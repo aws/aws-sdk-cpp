@@ -12,12 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceSnapshotJobRequest::DeleteResourceSnapshotJobRequest() : 
-    m_catalogHasBeenSet(false),
-    m_resourceSnapshotJobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceSnapshotJobRequest::SerializePayload() const
 {
   JsonValue payload;

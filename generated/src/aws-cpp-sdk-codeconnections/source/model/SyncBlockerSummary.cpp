@@ -18,15 +18,7 @@ namespace CodeConnections
 namespace Model
 {
 
-SyncBlockerSummary::SyncBlockerSummary() : 
-    m_resourceNameHasBeenSet(false),
-    m_parentResourceNameHasBeenSet(false),
-    m_latestBlockersHasBeenSet(false)
-{
-}
-
 SyncBlockerSummary::SyncBlockerSummary(JsonView jsonValue)
-  : SyncBlockerSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SyncBlockerSummary& SyncBlockerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentResourceName"))
   {
     m_parentResourceName = jsonValue.GetString("ParentResourceName");
-
     m_parentResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestBlockers"))
   {
     Aws::Utils::Array<JsonView> latestBlockersJsonList = jsonValue.GetArray("LatestBlockers");
@@ -56,7 +44,6 @@ SyncBlockerSummary& SyncBlockerSummary::operator =(JsonView jsonValue)
     }
     m_latestBlockersHasBeenSet = true;
   }
-
   return *this;
 }
 

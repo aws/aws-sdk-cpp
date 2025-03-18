@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptFlowNodeResourceConfiguration::PromptFlowNodeResourceConfiguration() : 
-    m_promptArnHasBeenSet(false)
-{
-}
-
 PromptFlowNodeResourceConfiguration::PromptFlowNodeResourceConfiguration(JsonView jsonValue)
-  : PromptFlowNodeResourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptFlowNodeResourceConfiguration& PromptFlowNodeResourceConfiguration::operat
   if(jsonValue.ValueExists("promptArn"))
   {
     m_promptArn = jsonValue.GetString("promptArn");
-
     m_promptArnHasBeenSet = true;
   }
-
   return *this;
 }
 

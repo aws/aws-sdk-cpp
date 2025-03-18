@@ -33,7 +33,7 @@ namespace Model
   class RateLimitHTTPMethod
   {
   public:
-    AWS_WAFV2_API RateLimitHTTPMethod();
+    AWS_WAFV2_API RateLimitHTTPMethod() = default;
     AWS_WAFV2_API RateLimitHTTPMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateLimitHTTPMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -18,25 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditFinding::AuditFinding() : 
-    m_findingIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_checkNameHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_findingTimeHasBeenSet(false),
-    m_severity(AuditFindingSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_nonCompliantResourceHasBeenSet(false),
-    m_relatedResourcesHasBeenSet(false),
-    m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false),
-    m_isSuppressed(false),
-    m_isSuppressedHasBeenSet(false)
-{
-}
-
 AuditFinding::AuditFinding(JsonView jsonValue)
-  : AuditFinding()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("findingId"))
   {
     m_findingId = jsonValue.GetString("findingId");
-
     m_findingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkName"))
   {
     m_checkName = jsonValue.GetString("checkName");
-
     m_checkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartTime"))
   {
     m_taskStartTime = jsonValue.GetDouble("taskStartTime");
-
     m_taskStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingTime"))
   {
     m_findingTime = jsonValue.GetDouble("findingTime");
-
     m_findingTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = AuditFindingSeverityMapper::GetAuditFindingSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nonCompliantResource"))
   {
     m_nonCompliantResource = jsonValue.GetObject("nonCompliantResource");
-
     m_nonCompliantResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedResources"))
   {
     Aws::Utils::Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("relatedResources");
@@ -101,28 +69,21 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
     }
     m_relatedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasonForNonCompliance"))
   {
     m_reasonForNonCompliance = jsonValue.GetString("reasonForNonCompliance");
-
     m_reasonForNonComplianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasonForNonComplianceCode"))
   {
     m_reasonForNonComplianceCode = jsonValue.GetString("reasonForNonComplianceCode");
-
     m_reasonForNonComplianceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSuppressed"))
   {
     m_isSuppressed = jsonValue.GetBool("isSuppressed");
-
     m_isSuppressedHasBeenSet = true;
   }
-
   return *this;
 }
 

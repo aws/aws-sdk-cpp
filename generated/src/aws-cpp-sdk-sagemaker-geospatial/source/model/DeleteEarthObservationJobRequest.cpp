@@ -12,11 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEarthObservationJobRequest::DeleteEarthObservationJobRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEarthObservationJobRequest::SerializePayload() const
 {
   return {};

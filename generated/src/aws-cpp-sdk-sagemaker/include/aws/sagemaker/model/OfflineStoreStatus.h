@@ -32,7 +32,7 @@ namespace Model
   class OfflineStoreStatus
   {
   public:
-    AWS_SAGEMAKER_API OfflineStoreStatus();
+    AWS_SAGEMAKER_API OfflineStoreStatus() = default;
     AWS_SAGEMAKER_API OfflineStoreStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OfflineStoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>An <code>OfflineStore</code> status.</p>
      */
-    inline const OfflineStoreStatusValue& GetStatus() const{ return m_status; }
+    inline OfflineStoreStatusValue GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OfflineStoreStatusValue& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OfflineStoreStatusValue&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OfflineStoreStatus& WithStatus(const OfflineStoreStatusValue& value) { SetStatus(value); return *this;}
-    inline OfflineStoreStatus& WithStatus(OfflineStoreStatusValue&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OfflineStoreStatusValue value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OfflineStoreStatus& WithStatus(OfflineStoreStatusValue value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -55,18 +53,16 @@ namespace Model
      * <p>The justification for why the OfflineStoreStatus is Blocked (if
      * applicable).</p>
      */
-    inline const Aws::String& GetBlockedReason() const{ return m_blockedReason; }
+    inline const Aws::String& GetBlockedReason() const { return m_blockedReason; }
     inline bool BlockedReasonHasBeenSet() const { return m_blockedReasonHasBeenSet; }
-    inline void SetBlockedReason(const Aws::String& value) { m_blockedReasonHasBeenSet = true; m_blockedReason = value; }
-    inline void SetBlockedReason(Aws::String&& value) { m_blockedReasonHasBeenSet = true; m_blockedReason = std::move(value); }
-    inline void SetBlockedReason(const char* value) { m_blockedReasonHasBeenSet = true; m_blockedReason.assign(value); }
-    inline OfflineStoreStatus& WithBlockedReason(const Aws::String& value) { SetBlockedReason(value); return *this;}
-    inline OfflineStoreStatus& WithBlockedReason(Aws::String&& value) { SetBlockedReason(std::move(value)); return *this;}
-    inline OfflineStoreStatus& WithBlockedReason(const char* value) { SetBlockedReason(value); return *this;}
+    template<typename BlockedReasonT = Aws::String>
+    void SetBlockedReason(BlockedReasonT&& value) { m_blockedReasonHasBeenSet = true; m_blockedReason = std::forward<BlockedReasonT>(value); }
+    template<typename BlockedReasonT = Aws::String>
+    OfflineStoreStatus& WithBlockedReason(BlockedReasonT&& value) { SetBlockedReason(std::forward<BlockedReasonT>(value)); return *this;}
     ///@}
   private:
 
-    OfflineStoreStatusValue m_status;
+    OfflineStoreStatusValue m_status{OfflineStoreStatusValue::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_blockedReason;

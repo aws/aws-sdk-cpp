@@ -34,7 +34,7 @@ namespace Model
   class Ec2InstanceAggregationResponse
   {
   public:
-    AWS_INSPECTOR2_API Ec2InstanceAggregationResponse();
+    AWS_INSPECTOR2_API Ec2InstanceAggregationResponse() = default;
     AWS_INSPECTOR2_API Ec2InstanceAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Ec2InstanceAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,68 +44,59 @@ namespace Model
     /**
      * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Ec2InstanceAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Ec2InstanceAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Ec2InstanceAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetAmi() const{ return m_ami; }
+    inline const Aws::String& GetAmi() const { return m_ami; }
     inline bool AmiHasBeenSet() const { return m_amiHasBeenSet; }
-    inline void SetAmi(const Aws::String& value) { m_amiHasBeenSet = true; m_ami = value; }
-    inline void SetAmi(Aws::String&& value) { m_amiHasBeenSet = true; m_ami = std::move(value); }
-    inline void SetAmi(const char* value) { m_amiHasBeenSet = true; m_ami.assign(value); }
-    inline Ec2InstanceAggregationResponse& WithAmi(const Aws::String& value) { SetAmi(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithAmi(Aws::String&& value) { SetAmi(std::move(value)); return *this;}
-    inline Ec2InstanceAggregationResponse& WithAmi(const char* value) { SetAmi(value); return *this;}
+    template<typename AmiT = Aws::String>
+    void SetAmi(AmiT&& value) { m_amiHasBeenSet = true; m_ami = std::forward<AmiT>(value); }
+    template<typename AmiT = Aws::String>
+    Ec2InstanceAggregationResponse& WithAmi(AmiT&& value) { SetAmi(std::forward<AmiT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline Ec2InstanceAggregationResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline Ec2InstanceAggregationResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    Ec2InstanceAggregationResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags attached to the instance.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetInstanceTags() const{ return m_instanceTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetInstanceTags() const { return m_instanceTags; }
     inline bool InstanceTagsHasBeenSet() const { return m_instanceTagsHasBeenSet; }
-    inline void SetInstanceTags(const Aws::Map<Aws::String, Aws::String>& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = value; }
-    inline void SetInstanceTags(Aws::Map<Aws::String, Aws::String>&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::move(value); }
-    inline Ec2InstanceAggregationResponse& WithInstanceTags(const Aws::Map<Aws::String, Aws::String>& value) { SetInstanceTags(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithInstanceTags(Aws::Map<Aws::String, Aws::String>&& value) { SetInstanceTags(std::move(value)); return *this;}
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(const Aws::String& key, const Aws::String& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(key, value); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(Aws::String&& key, const Aws::String& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(std::move(key), value); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(const Aws::String& key, Aws::String&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(key, std::move(value)); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(Aws::String&& key, Aws::String&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(const char* key, Aws::String&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(key, std::move(value)); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(Aws::String&& key, const char* value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(std::move(key), value); return *this; }
-    inline Ec2InstanceAggregationResponse& AddInstanceTags(const char* key, const char* value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(key, value); return *this; }
+    template<typename InstanceTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetInstanceTags(InstanceTagsT&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::forward<InstanceTagsT>(value); }
+    template<typename InstanceTagsT = Aws::Map<Aws::String, Aws::String>>
+    Ec2InstanceAggregationResponse& WithInstanceTags(InstanceTagsT&& value) { SetInstanceTags(std::forward<InstanceTagsT>(value)); return *this;}
+    template<typename InstanceTagsKeyT = Aws::String, typename InstanceTagsValueT = Aws::String>
+    Ec2InstanceAggregationResponse& AddInstanceTags(InstanceTagsKeyT&& key, InstanceTagsValueT&& value) {
+      m_instanceTagsHasBeenSet = true; m_instanceTags.emplace(std::forward<InstanceTagsKeyT>(key), std::forward<InstanceTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The number of network findings for the Amazon EC2 instance.</p>
      */
-    inline long long GetNetworkFindings() const{ return m_networkFindings; }
+    inline long long GetNetworkFindings() const { return m_networkFindings; }
     inline bool NetworkFindingsHasBeenSet() const { return m_networkFindingsHasBeenSet; }
     inline void SetNetworkFindings(long long value) { m_networkFindingsHasBeenSet = true; m_networkFindings = value; }
     inline Ec2InstanceAggregationResponse& WithNetworkFindings(long long value) { SetNetworkFindings(value); return *this;}
@@ -115,26 +106,24 @@ namespace Model
     /**
      * <p>The operating system of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const Aws::String& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(Aws::String&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline void SetOperatingSystem(const char* value) { m_operatingSystemHasBeenSet = true; m_operatingSystem.assign(value); }
-    inline Ec2InstanceAggregationResponse& WithOperatingSystem(const Aws::String& value) { SetOperatingSystem(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithOperatingSystem(Aws::String&& value) { SetOperatingSystem(std::move(value)); return *this;}
-    inline Ec2InstanceAggregationResponse& WithOperatingSystem(const char* value) { SetOperatingSystem(value); return *this;}
+    template<typename OperatingSystemT = Aws::String>
+    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
+    template<typename OperatingSystemT = Aws::String>
+    Ec2InstanceAggregationResponse& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains the count of matched findings per severity.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline Ec2InstanceAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline Ec2InstanceAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    Ec2InstanceAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 
@@ -150,7 +139,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_instanceTags;
     bool m_instanceTagsHasBeenSet = false;
 
-    long long m_networkFindings;
+    long long m_networkFindings{0};
     bool m_networkFindingsHasBeenSet = false;
 
     Aws::String m_operatingSystem;

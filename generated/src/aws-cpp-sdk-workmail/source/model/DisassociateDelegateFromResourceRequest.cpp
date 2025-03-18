@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateDelegateFromResourceRequest::DisassociateDelegateFromResourceRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDelegateFromResourceRequest::SerializePayload() const
 {
   JsonValue payload;

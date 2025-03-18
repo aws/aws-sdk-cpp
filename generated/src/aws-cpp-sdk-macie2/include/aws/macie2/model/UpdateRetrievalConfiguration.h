@@ -39,7 +39,7 @@ namespace Model
   class UpdateRetrievalConfiguration
   {
   public:
-    AWS_MACIE2_API UpdateRetrievalConfiguration();
+    AWS_MACIE2_API UpdateRetrievalConfiguration() = default;
     AWS_MACIE2_API UpdateRetrievalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API UpdateRetrievalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * the configuration. These settings can't be recovered after they're
      * deleted.</p>
      */
-    inline const RetrievalMode& GetRetrievalMode() const{ return m_retrievalMode; }
+    inline RetrievalMode GetRetrievalMode() const { return m_retrievalMode; }
     inline bool RetrievalModeHasBeenSet() const { return m_retrievalModeHasBeenSet; }
-    inline void SetRetrievalMode(const RetrievalMode& value) { m_retrievalModeHasBeenSet = true; m_retrievalMode = value; }
-    inline void SetRetrievalMode(RetrievalMode&& value) { m_retrievalModeHasBeenSet = true; m_retrievalMode = std::move(value); }
-    inline UpdateRetrievalConfiguration& WithRetrievalMode(const RetrievalMode& value) { SetRetrievalMode(value); return *this;}
-    inline UpdateRetrievalConfiguration& WithRetrievalMode(RetrievalMode&& value) { SetRetrievalMode(std::move(value)); return *this;}
+    inline void SetRetrievalMode(RetrievalMode value) { m_retrievalModeHasBeenSet = true; m_retrievalMode = value; }
+    inline UpdateRetrievalConfiguration& WithRetrievalMode(RetrievalMode value) { SetRetrievalMode(value); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * affected S3 objects for the account. The trust and permissions policies for the
      * role must meet all requirements for Macie to assume the role.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline UpdateRetrievalConfiguration& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline UpdateRetrievalConfiguration& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline UpdateRetrievalConfiguration& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    UpdateRetrievalConfiguration& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
   private:
 
-    RetrievalMode m_retrievalMode;
+    RetrievalMode m_retrievalMode{RetrievalMode::NOT_SET};
     bool m_retrievalModeHasBeenSet = false;
 
     Aws::String m_roleName;

@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MetricReference::MetricReference() : 
-    m_nameHasBeenSet(false),
-    m_referenceDetailsHasBeenSet(false)
-{
-}
-
 MetricReference::MetricReference(const XmlNode& xmlNode)
-  : MetricReference()
 {
   *this = xmlNode;
 }

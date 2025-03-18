@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMapStyleDescriptorRequest::GetMapStyleDescriptorRequest() : 
-    m_mapNameHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetMapStyleDescriptorRequest::SerializePayload() const
 {
   return {};

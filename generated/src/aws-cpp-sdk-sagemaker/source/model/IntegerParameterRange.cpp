@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IntegerParameterRange::IntegerParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false),
-    m_scalingType(HyperParameterScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
-{
-}
-
 IntegerParameterRange::IntegerParameterRange(JsonView jsonValue)
-  : IntegerParameterRange()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IntegerParameterRange& IntegerParameterRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetString("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetString("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingType"))
   {
     m_scalingType = HyperParameterScalingTypeMapper::GetHyperParameterScalingTypeForName(jsonValue.GetString("ScalingType"));
-
     m_scalingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

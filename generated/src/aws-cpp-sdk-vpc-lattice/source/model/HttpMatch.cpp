@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-HttpMatch::HttpMatch() : 
-    m_headerMatchesHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_pathMatchHasBeenSet(false)
-{
-}
-
 HttpMatch::HttpMatch(JsonView jsonValue)
-  : HttpMatch()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ HttpMatch& HttpMatch::operator =(JsonView jsonValue)
     }
     m_headerMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("method"))
   {
     m_method = jsonValue.GetString("method");
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathMatch"))
   {
     m_pathMatch = jsonValue.GetObject("pathMatch");
-
     m_pathMatchHasBeenSet = true;
   }
-
   return *this;
 }
 

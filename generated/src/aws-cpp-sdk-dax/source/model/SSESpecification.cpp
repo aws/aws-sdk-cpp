@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-SSESpecification::SSESpecification() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SSESpecification::SSESpecification(JsonView jsonValue)
-  : SSESpecification()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SSESpecification& SSESpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

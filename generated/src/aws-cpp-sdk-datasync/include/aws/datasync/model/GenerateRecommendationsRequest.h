@@ -23,7 +23,7 @@ namespace Model
   class GenerateRecommendationsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API GenerateRecommendationsRequest();
+    AWS_DATASYNC_API GenerateRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects
      * information about your on-premises storage system.</p>
      */
-    inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
+    inline const Aws::String& GetDiscoveryJobArn() const { return m_discoveryJobArn; }
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-    inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-    inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-    inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-    inline GenerateRecommendationsRequest& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-    inline GenerateRecommendationsRequest& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-    inline GenerateRecommendationsRequest& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
+    template<typename DiscoveryJobArnT = Aws::String>
+    void SetDiscoveryJobArn(DiscoveryJobArnT&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::forward<DiscoveryJobArnT>(value); }
+    template<typename DiscoveryJobArnT = Aws::String>
+    GenerateRecommendationsRequest& WithDiscoveryJobArn(DiscoveryJobArnT&& value) { SetDiscoveryJobArn(std::forward<DiscoveryJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>Specifies the universally unique identifiers (UUIDs) of the resources in your
      * storage system that you want recommendations on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline GenerateRecommendationsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline GenerateRecommendationsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline GenerateRecommendationsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline GenerateRecommendationsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline GenerateRecommendationsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    GenerateRecommendationsRequest& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    GenerateRecommendationsRequest& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,12 +69,10 @@ namespace Model
      * <p>Specifies the type of resource in your storage system that you want
      * recommendations on.</p>
      */
-    inline const DiscoveryResourceType& GetResourceType() const{ return m_resourceType; }
+    inline DiscoveryResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const DiscoveryResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(DiscoveryResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GenerateRecommendationsRequest& WithResourceType(const DiscoveryResourceType& value) { SetResourceType(value); return *this;}
-    inline GenerateRecommendationsRequest& WithResourceType(DiscoveryResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(DiscoveryResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GenerateRecommendationsRequest& WithResourceType(DiscoveryResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +82,7 @@ namespace Model
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    DiscoveryResourceType m_resourceType;
+    DiscoveryResourceType m_resourceType{DiscoveryResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

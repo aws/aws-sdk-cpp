@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUsageTotalsResult::GetUsageTotalsResult() : 
-    m_timeRange(TimeRange::NOT_SET)
-{
-}
-
 GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetUsageTotalsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetUsageTotalsResult& GetUsageTotalsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("timeRange"))
   {
     m_timeRange = TimeRangeMapper::GetTimeRangeForName(jsonValue.GetString("timeRange"));
-
+    m_timeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageTotals"))
   {
     Aws::Utils::Array<JsonView> usageTotalsJsonList = jsonValue.GetArray("usageTotals");
@@ -44,14 +37,15 @@ GetUsageTotalsResult& GetUsageTotalsResult::operator =(const Aws::AmazonWebServi
     {
       m_usageTotals.push_back(usageTotalsJsonList[usageTotalsIndex].AsObject());
     }
+    m_usageTotalsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

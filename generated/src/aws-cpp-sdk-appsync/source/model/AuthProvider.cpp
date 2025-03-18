@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-AuthProvider::AuthProvider() : 
-    m_authType(AuthenticationType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_cognitoConfigHasBeenSet(false),
-    m_openIDConnectConfigHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
-{
-}
-
 AuthProvider::AuthProvider(JsonView jsonValue)
-  : AuthProvider()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AuthProvider& AuthProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cognitoConfig"))
   {
     m_cognitoConfig = jsonValue.GetObject("cognitoConfig");
-
     m_cognitoConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDConnectConfig"))
   {
     m_openIDConnectConfig = jsonValue.GetObject("openIDConnectConfig");
-
     m_openIDConnectConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
   {
     m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
-
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

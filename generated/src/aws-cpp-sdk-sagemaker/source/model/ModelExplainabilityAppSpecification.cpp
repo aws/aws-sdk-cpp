@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelExplainabilityAppSpecification::ModelExplainabilityAppSpecification() : 
-    m_imageUriHasBeenSet(false),
-    m_configUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 ModelExplainabilityAppSpecification::ModelExplainabilityAppSpecification(JsonView jsonValue)
-  : ModelExplainabilityAppSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelExplainabilityAppSpecification& ModelExplainabilityAppSpecification::operat
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigUri"))
   {
     m_configUri = jsonValue.GetString("ConfigUri");
-
     m_configUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -56,7 +44,6 @@ ModelExplainabilityAppSpecification& ModelExplainabilityAppSpecification::operat
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

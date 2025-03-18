@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetTerminationProtectionRequest::SetTerminationProtectionRequest() : 
-    m_jobFlowIdsHasBeenSet(false),
-    m_terminationProtected(false),
-    m_terminationProtectedHasBeenSet(false)
-{
-}
-
 Aws::String SetTerminationProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

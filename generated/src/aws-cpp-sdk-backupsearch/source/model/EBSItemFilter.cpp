@@ -18,16 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-EBSItemFilter::EBSItemFilter() : 
-    m_filePathsHasBeenSet(false),
-    m_sizesHasBeenSet(false),
-    m_creationTimesHasBeenSet(false),
-    m_lastModificationTimesHasBeenSet(false)
-{
-}
-
 EBSItemFilter::EBSItemFilter(JsonView jsonValue)
-  : EBSItemFilter()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ EBSItemFilter& EBSItemFilter::operator =(JsonView jsonValue)
     }
     m_filePathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sizes"))
   {
     Aws::Utils::Array<JsonView> sizesJsonList = jsonValue.GetArray("Sizes");
@@ -53,7 +43,6 @@ EBSItemFilter& EBSItemFilter::operator =(JsonView jsonValue)
     }
     m_sizesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimes"))
   {
     Aws::Utils::Array<JsonView> creationTimesJsonList = jsonValue.GetArray("CreationTimes");
@@ -63,7 +52,6 @@ EBSItemFilter& EBSItemFilter::operator =(JsonView jsonValue)
     }
     m_creationTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTimes"))
   {
     Aws::Utils::Array<JsonView> lastModificationTimesJsonList = jsonValue.GetArray("LastModificationTimes");
@@ -73,7 +61,6 @@ EBSItemFilter& EBSItemFilter::operator =(JsonView jsonValue)
     }
     m_lastModificationTimesHasBeenSet = true;
   }
-
   return *this;
 }
 

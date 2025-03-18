@@ -18,17 +18,7 @@ namespace SQS
 namespace Model
 {
 
-BatchResultErrorEntry::BatchResultErrorEntry() : 
-    m_idHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue)
-  : BatchResultErrorEntry()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderFault"))
   {
     m_senderFault = jsonValue.GetBool("SenderFault");
-
     m_senderFaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLocationEfsResult::CreateLocationEfsResult()
-{
-}
-
 CreateLocationEfsResult::CreateLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLocationEfsResult& CreateLocationEfsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutLogEventsResult::PutLogEventsResult()
-{
-}
-
 PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ PutLogEventsResult& PutLogEventsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("nextSequenceToken"))
   {
     m_nextSequenceToken = jsonValue.GetString("nextSequenceToken");
-
+    m_nextSequenceTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rejectedLogEventsInfo"))
   {
     m_rejectedLogEventsInfo = jsonValue.GetObject("rejectedLogEventsInfo");
-
+    m_rejectedLogEventsInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rejectedEntityInfo"))
   {
     m_rejectedEntityInfo = jsonValue.GetObject("rejectedEntityInfo");
-
+    m_rejectedEntityInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

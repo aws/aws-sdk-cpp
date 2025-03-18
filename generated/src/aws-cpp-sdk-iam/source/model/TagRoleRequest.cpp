@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagRoleRequest::TagRoleRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

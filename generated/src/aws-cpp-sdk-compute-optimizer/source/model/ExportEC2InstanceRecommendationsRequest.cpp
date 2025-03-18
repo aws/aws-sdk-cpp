@@ -12,19 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportEC2InstanceRecommendationsRequest::ExportEC2InstanceRecommendationsRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_fieldsToExportHasBeenSet(false),
-    m_s3DestinationConfigHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_includeMemberAccounts(false),
-    m_includeMemberAccountsHasBeenSet(false),
-    m_recommendationPreferencesHasBeenSet(false)
-{
-}
-
 Aws::String ExportEC2InstanceRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class BrokerLogs
   {
   public:
-    AWS_KAFKA_API BrokerLogs();
+    AWS_KAFKA_API BrokerLogs() = default;
     AWS_KAFKA_API BrokerLogs(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API BrokerLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -36,32 +36,32 @@ namespace Model
 
     ///@{
     
-    inline const CloudWatchLogs& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const CloudWatchLogs& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const CloudWatchLogs& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(CloudWatchLogs&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline BrokerLogs& WithCloudWatchLogs(const CloudWatchLogs& value) { SetCloudWatchLogs(value); return *this;}
-    inline BrokerLogs& WithCloudWatchLogs(CloudWatchLogs&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = CloudWatchLogs>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = CloudWatchLogs>
+    BrokerLogs& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Firehose& GetFirehose() const{ return m_firehose; }
+    inline const Firehose& GetFirehose() const { return m_firehose; }
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
-    inline void SetFirehose(const Firehose& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
-    inline void SetFirehose(Firehose&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
-    inline BrokerLogs& WithFirehose(const Firehose& value) { SetFirehose(value); return *this;}
-    inline BrokerLogs& WithFirehose(Firehose&& value) { SetFirehose(std::move(value)); return *this;}
+    template<typename FirehoseT = Firehose>
+    void SetFirehose(FirehoseT&& value) { m_firehoseHasBeenSet = true; m_firehose = std::forward<FirehoseT>(value); }
+    template<typename FirehoseT = Firehose>
+    BrokerLogs& WithFirehose(FirehoseT&& value) { SetFirehose(std::forward<FirehoseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3& GetS3() const{ return m_s3; }
+    inline const S3& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline BrokerLogs& WithS3(const S3& value) { SetS3(value); return *this;}
-    inline BrokerLogs& WithS3(S3&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3>
+    BrokerLogs& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

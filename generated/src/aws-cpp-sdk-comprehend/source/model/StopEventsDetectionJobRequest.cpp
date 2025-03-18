@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopEventsDetectionJobRequest::StopEventsDetectionJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopEventsDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

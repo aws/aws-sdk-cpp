@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetEntityRecognizerDocuments::DatasetEntityRecognizerDocuments() : 
-    m_s3UriHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false)
-{
-}
-
 DatasetEntityRecognizerDocuments::DatasetEntityRecognizerDocuments(JsonView jsonValue)
-  : DatasetEntityRecognizerDocuments()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DatasetEntityRecognizerDocuments& DatasetEntityRecognizerDocuments::operator =(J
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputFormat"))
   {
     m_inputFormat = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("InputFormat"));
-
     m_inputFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

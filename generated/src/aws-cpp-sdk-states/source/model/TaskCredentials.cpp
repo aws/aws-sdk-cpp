@@ -18,13 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TaskCredentials::TaskCredentials() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 TaskCredentials::TaskCredentials(JsonView jsonValue)
-  : TaskCredentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TaskCredentials& TaskCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

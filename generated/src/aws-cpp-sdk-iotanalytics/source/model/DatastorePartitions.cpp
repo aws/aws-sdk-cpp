@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatastorePartitions::DatastorePartitions() : 
-    m_partitionsHasBeenSet(false)
-{
-}
-
 DatastorePartitions::DatastorePartitions(JsonView jsonValue)
-  : DatastorePartitions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DatastorePartitions& DatastorePartitions::operator =(JsonView jsonValue)
     }
     m_partitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails() : 
-    m_operandsHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails(JsonView jsonValue)
-  : AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& AwsS3BucketB
     }
     m_operandsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tag"))
   {
     m_tag = jsonValue.GetObject("Tag");
-
     m_tagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

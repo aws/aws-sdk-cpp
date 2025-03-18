@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAnalyzedResourceRequest::GetAnalyzedResourceRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAnalyzedResourceRequest::SerializePayload() const
 {
   return {};

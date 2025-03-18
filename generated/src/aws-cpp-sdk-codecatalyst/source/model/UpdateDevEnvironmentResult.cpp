@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDevEnvironmentResult::UpdateDevEnvironmentResult() : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_inactivityTimeoutMinutes(0)
-{
-}
-
 UpdateDevEnvironmentResult::UpdateDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDevEnvironmentResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ UpdateDevEnvironmentResult& UpdateDevEnvironmentResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spaceName"))
   {
     m_spaceName = jsonValue.GetString("spaceName");
-
+    m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
+    m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
-
+    m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ides"))
   {
     Aws::Utils::Array<JsonView> idesJsonList = jsonValue.GetArray("ides");
@@ -63,32 +52,30 @@ UpdateDevEnvironmentResult& UpdateDevEnvironmentResult::operator =(const Aws::Am
     {
       m_ides.push_back(idesJsonList[idesIndex].AsObject());
     }
+    m_idesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
-
+    m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inactivityTimeoutMinutes"))
   {
     m_inactivityTimeoutMinutes = jsonValue.GetInteger("inactivityTimeoutMinutes");
-
+    m_inactivityTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

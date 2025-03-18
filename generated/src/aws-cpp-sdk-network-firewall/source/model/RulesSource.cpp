@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RulesSource::RulesSource() : 
-    m_rulesStringHasBeenSet(false),
-    m_rulesSourceListHasBeenSet(false),
-    m_statefulRulesHasBeenSet(false),
-    m_statelessRulesAndCustomActionsHasBeenSet(false)
-{
-}
-
 RulesSource::RulesSource(JsonView jsonValue)
-  : RulesSource()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RulesSource& RulesSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RulesString"))
   {
     m_rulesString = jsonValue.GetString("RulesString");
-
     m_rulesStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesSourceList"))
   {
     m_rulesSourceList = jsonValue.GetObject("RulesSourceList");
-
     m_rulesSourceListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatefulRules"))
   {
     Aws::Utils::Array<JsonView> statefulRulesJsonList = jsonValue.GetArray("StatefulRules");
@@ -57,14 +44,11 @@ RulesSource& RulesSource::operator =(JsonView jsonValue)
     }
     m_statefulRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatelessRulesAndCustomActions"))
   {
     m_statelessRulesAndCustomActions = jsonValue.GetObject("StatelessRulesAndCustomActions");
-
     m_statelessRulesAndCustomActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetStreamKeyResult
   {
   public:
-    AWS_IVS_API GetStreamKeyResult();
+    AWS_IVS_API GetStreamKeyResult() = default;
     AWS_IVS_API GetStreamKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API GetStreamKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <zonbook></zonbook><xhtml></xhtml>
      */
-    inline const StreamKey& GetStreamKey() const{ return m_streamKey; }
-    inline void SetStreamKey(const StreamKey& value) { m_streamKey = value; }
-    inline void SetStreamKey(StreamKey&& value) { m_streamKey = std::move(value); }
-    inline GetStreamKeyResult& WithStreamKey(const StreamKey& value) { SetStreamKey(value); return *this;}
-    inline GetStreamKeyResult& WithStreamKey(StreamKey&& value) { SetStreamKey(std::move(value)); return *this;}
+    inline const StreamKey& GetStreamKey() const { return m_streamKey; }
+    template<typename StreamKeyT = StreamKey>
+    void SetStreamKey(StreamKeyT&& value) { m_streamKeyHasBeenSet = true; m_streamKey = std::forward<StreamKeyT>(value); }
+    template<typename StreamKeyT = StreamKey>
+    GetStreamKeyResult& WithStreamKey(StreamKeyT&& value) { SetStreamKey(std::forward<StreamKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStreamKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStreamKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStreamKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStreamKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamKey m_streamKey;
+    bool m_streamKeyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

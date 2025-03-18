@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnvironmentResult::GetEnvironmentResult() : 
-    m_actualCapacity(0),
-    m_engineType(EngineType::NOT_SET),
-    m_networkType(NetworkType::NOT_SET),
-    m_publiclyAccessible(false),
-    m_status(EnvironmentLifecycle::NOT_SET)
-{
-}
-
 GetEnvironmentResult::GetEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEnvironmentResult()
 {
   *this = result;
 }
@@ -38,99 +28,83 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("actualCapacity"))
   {
     m_actualCapacity = jsonValue.GetInteger("actualCapacity");
-
+    m_actualCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
-
+    m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
+    m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentArn"))
   {
     m_environmentArn = jsonValue.GetString("environmentArn");
-
+    m_environmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("highAvailabilityConfig"))
   {
     m_highAvailabilityConfig = jsonValue.GetObject("highAvailabilityConfig");
-
+    m_highAvailabilityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
+    m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loadBalancerArn"))
   {
     m_loadBalancerArn = jsonValue.GetString("loadBalancerArn");
-
+    m_loadBalancerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkType"))
   {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
-
+    m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingMaintenance"))
   {
     m_pendingMaintenance = jsonValue.GetObject("pendingMaintenance");
-
+    m_pendingMaintenanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("preferredMaintenanceWindow");
-
+    m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");
-
+    m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -138,20 +112,18 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
+    m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnvironmentLifecycleMapper::GetEnvironmentLifecycleForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageConfigurations"))
   {
     Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
@@ -159,8 +131,8 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
     {
       m_storageConfigurations.push_back(storageConfigurationsJsonList[storageConfigurationsIndex].AsObject());
     }
+    m_storageConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -168,8 +140,8 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
+    m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -177,20 +149,20 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
+    m_vpcIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

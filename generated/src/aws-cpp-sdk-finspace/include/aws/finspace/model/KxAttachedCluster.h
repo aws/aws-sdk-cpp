@@ -34,7 +34,7 @@ namespace Model
   class KxAttachedCluster
   {
   public:
-    AWS_FINSPACE_API KxAttachedCluster();
+    AWS_FINSPACE_API KxAttachedCluster() = default;
     AWS_FINSPACE_API KxAttachedCluster(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxAttachedCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A unique name for the attached cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline KxAttachedCluster& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline KxAttachedCluster& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline KxAttachedCluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    KxAttachedCluster& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>Specifies the type of cluster. The volume for TP and RDB cluster types will
      * be used for TP logs.</p>
      */
-    inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
+    inline KxClusterType GetClusterType() const { return m_clusterType; }
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
-    inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
-    inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
-    inline KxAttachedCluster& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
-    inline KxAttachedCluster& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
+    inline void SetClusterType(KxClusterType value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline KxAttachedCluster& WithClusterType(KxClusterType value) { SetClusterType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,22 +74,20 @@ namespace Model
      * </li> <li> <p>DELETED – The cluster has been deleted.</p> </li> <li>
      * <p>DELETE_FAILED – The cluster failed to delete.</p> </li> </ul>
      */
-    inline const KxClusterStatus& GetClusterStatus() const{ return m_clusterStatus; }
+    inline KxClusterStatus GetClusterStatus() const { return m_clusterStatus; }
     inline bool ClusterStatusHasBeenSet() const { return m_clusterStatusHasBeenSet; }
-    inline void SetClusterStatus(const KxClusterStatus& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
-    inline void SetClusterStatus(KxClusterStatus&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = std::move(value); }
-    inline KxAttachedCluster& WithClusterStatus(const KxClusterStatus& value) { SetClusterStatus(value); return *this;}
-    inline KxAttachedCluster& WithClusterStatus(KxClusterStatus&& value) { SetClusterStatus(std::move(value)); return *this;}
+    inline void SetClusterStatus(KxClusterStatus value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
+    inline KxAttachedCluster& WithClusterStatus(KxClusterStatus value) { SetClusterStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    KxClusterType m_clusterType;
+    KxClusterType m_clusterType{KxClusterType::NOT_SET};
     bool m_clusterTypeHasBeenSet = false;
 
-    KxClusterStatus m_clusterStatus;
+    KxClusterStatus m_clusterStatus{KxClusterStatus::NOT_SET};
     bool m_clusterStatusHasBeenSet = false;
   };
 

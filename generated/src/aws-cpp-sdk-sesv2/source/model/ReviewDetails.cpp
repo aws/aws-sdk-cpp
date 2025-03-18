@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ReviewDetails::ReviewDetails() : 
-    m_status(ReviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_caseIdHasBeenSet(false)
-{
-}
-
 ReviewDetails::ReviewDetails(JsonView jsonValue)
-  : ReviewDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReviewDetails& ReviewDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaseId"))
   {
     m_caseId = jsonValue.GetString("CaseId");
-
     m_caseIdHasBeenSet = true;
   }
-
   return *this;
 }
 

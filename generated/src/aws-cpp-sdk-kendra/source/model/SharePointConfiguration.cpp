@@ -18,31 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SharePointConfiguration::SharePointConfiguration() : 
-    m_sharePointVersion(SharePointVersion::NOT_SET),
-    m_sharePointVersionHasBeenSet(false),
-    m_urlsHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_documentTitleFieldNameHasBeenSet(false),
-    m_disableLocalGroups(false),
-    m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false),
-    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
-{
-}
-
 SharePointConfiguration::SharePointConfiguration(JsonView jsonValue)
-  : SharePointConfiguration()
 {
   *this = jsonValue;
 }
@@ -52,10 +28,8 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SharePointVersion"))
   {
     m_sharePointVersion = SharePointVersionMapper::GetSharePointVersionForName(jsonValue.GetString("SharePointVersion"));
-
     m_sharePointVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Urls"))
   {
     Aws::Utils::Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
@@ -65,28 +39,21 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     }
     m_urlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlAttachments"))
   {
     m_crawlAttachments = jsonValue.GetBool("CrawlAttachments");
-
     m_crawlAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseChangeLog"))
   {
     m_useChangeLog = jsonValue.GetBool("UseChangeLog");
-
     m_useChangeLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -96,7 +63,6 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -106,14 +72,11 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldMappings"))
   {
     Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
@@ -123,42 +86,31 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     }
     m_fieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentTitleFieldName"))
   {
     m_documentTitleFieldName = jsonValue.GetString("DocumentTitleFieldName");
-
     m_documentTitleFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableLocalGroups"))
   {
     m_disableLocalGroups = jsonValue.GetBool("DisableLocalGroups");
-
     m_disableLocalGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslCertificateS3Path"))
   {
     m_sslCertificateS3Path = jsonValue.GetObject("SslCertificateS3Path");
-
     m_sslCertificateS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = SharePointOnlineAuthenticationTypeMapper::GetSharePointOnlineAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProxyConfiguration"))
   {
     m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
-
     m_proxyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

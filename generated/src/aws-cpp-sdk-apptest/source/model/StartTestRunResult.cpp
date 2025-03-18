@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartTestRunResult::StartTestRunResult() : 
-    m_testRunStatus(TestRunStatus::NOT_SET)
-{
-}
-
 StartTestRunResult::StartTestRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartTestRunResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StartTestRunResult& StartTestRunResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("testRunId"))
   {
     m_testRunId = jsonValue.GetString("testRunId");
-
+    m_testRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testRunStatus"))
   {
     m_testRunStatus = TestRunStatusMapper::GetTestRunStatusForName(jsonValue.GetString("testRunStatus"));
-
+    m_testRunStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

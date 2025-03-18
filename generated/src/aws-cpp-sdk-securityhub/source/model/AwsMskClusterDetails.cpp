@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsMskClusterDetails::AwsMskClusterDetails() : 
-    m_clusterInfoHasBeenSet(false)
-{
-}
-
 AwsMskClusterDetails::AwsMskClusterDetails(JsonView jsonValue)
-  : AwsMskClusterDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsMskClusterDetails& AwsMskClusterDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterInfo"))
   {
     m_clusterInfo = jsonValue.GetObject("ClusterInfo");
-
     m_clusterInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

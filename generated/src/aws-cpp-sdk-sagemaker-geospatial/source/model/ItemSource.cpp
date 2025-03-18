@@ -18,17 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ItemSource::ItemSource() : 
-    m_assetsHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 ItemSource::ItemSource(JsonView jsonValue)
-  : ItemSource()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ ItemSource& ItemSource::operator =(JsonView jsonValue)
     }
     m_assetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTime"))
   {
     m_dateTime = jsonValue.GetDouble("DateTime");
-
     m_dateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     m_properties = jsonValue.GetObject("Properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DefaultServerSideEncryption::DefaultServerSideEncryption() : 
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsMasterKeyArnHasBeenSet(false)
-{
-}
-
 DefaultServerSideEncryption::DefaultServerSideEncryption(JsonView jsonValue)
-  : DefaultServerSideEncryption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultServerSideEncryption& DefaultServerSideEncryption::operator =(JsonView js
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = jsonValue.GetString("encryptionType");
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsMasterKeyArn"))
   {
     m_kmsMasterKeyArn = jsonValue.GetString("kmsMasterKeyArn");
-
     m_kmsMasterKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

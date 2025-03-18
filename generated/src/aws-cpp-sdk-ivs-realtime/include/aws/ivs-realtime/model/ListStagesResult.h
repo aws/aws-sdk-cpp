@@ -29,7 +29,7 @@ namespace Model
   class ListStagesResult
   {
   public:
-    AWS_IVSREALTIME_API ListStagesResult();
+    AWS_IVSREALTIME_API ListStagesResult() = default;
     AWS_IVSREALTIME_API ListStagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API ListStagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the matching stages (summary information only).</p>
      */
-    inline const Aws::Vector<StageSummary>& GetStages() const{ return m_stages; }
-    inline void SetStages(const Aws::Vector<StageSummary>& value) { m_stages = value; }
-    inline void SetStages(Aws::Vector<StageSummary>&& value) { m_stages = std::move(value); }
-    inline ListStagesResult& WithStages(const Aws::Vector<StageSummary>& value) { SetStages(value); return *this;}
-    inline ListStagesResult& WithStages(Aws::Vector<StageSummary>&& value) { SetStages(std::move(value)); return *this;}
-    inline ListStagesResult& AddStages(const StageSummary& value) { m_stages.push_back(value); return *this; }
-    inline ListStagesResult& AddStages(StageSummary&& value) { m_stages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StageSummary>& GetStages() const { return m_stages; }
+    template<typename StagesT = Aws::Vector<StageSummary>>
+    void SetStages(StagesT&& value) { m_stagesHasBeenSet = true; m_stages = std::forward<StagesT>(value); }
+    template<typename StagesT = Aws::Vector<StageSummary>>
+    ListStagesResult& WithStages(StagesT&& value) { SetStages(std::forward<StagesT>(value)); return *this;}
+    template<typename StagesT = StageSummary>
+    ListStagesResult& AddStages(StagesT&& value) { m_stagesHasBeenSet = true; m_stages.emplace_back(std::forward<StagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more stages than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StageSummary> m_stages;
+    bool m_stagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

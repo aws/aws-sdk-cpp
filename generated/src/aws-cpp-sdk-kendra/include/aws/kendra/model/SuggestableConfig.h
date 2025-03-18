@@ -32,7 +32,7 @@ namespace Model
   class SuggestableConfig
   {
   public:
-    AWS_KENDRA_API SuggestableConfig();
+    AWS_KENDRA_API SuggestableConfig() = default;
     AWS_KENDRA_API SuggestableConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SuggestableConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the document field/attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline SuggestableConfig& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline SuggestableConfig& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline SuggestableConfig& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    SuggestableConfig& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p> <code>TRUE</code> means the document field/attribute is suggestible, so the
      * contents within the field can be used for query suggestions.</p>
      */
-    inline bool GetSuggestable() const{ return m_suggestable; }
+    inline bool GetSuggestable() const { return m_suggestable; }
     inline bool SuggestableHasBeenSet() const { return m_suggestableHasBeenSet; }
     inline void SetSuggestable(bool value) { m_suggestableHasBeenSet = true; m_suggestable = value; }
     inline SuggestableConfig& WithSuggestable(bool value) { SetSuggestable(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    bool m_suggestable;
+    bool m_suggestable{false};
     bool m_suggestableHasBeenSet = false;
   };
 

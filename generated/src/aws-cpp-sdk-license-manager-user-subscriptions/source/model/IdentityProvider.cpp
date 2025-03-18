@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-IdentityProvider::IdentityProvider() : 
-    m_activeDirectoryIdentityProviderHasBeenSet(false)
-{
-}
-
 IdentityProvider::IdentityProvider(JsonView jsonValue)
-  : IdentityProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IdentityProvider& IdentityProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActiveDirectoryIdentityProvider"))
   {
     m_activeDirectoryIdentityProvider = jsonValue.GetObject("ActiveDirectoryIdentityProvider");
-
     m_activeDirectoryIdentityProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

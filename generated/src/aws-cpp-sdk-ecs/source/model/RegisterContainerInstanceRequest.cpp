@@ -12,19 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterContainerInstanceRequest::RegisterContainerInstanceRequest() : 
-    m_clusterHasBeenSet(false),
-    m_instanceIdentityDocumentHasBeenSet(false),
-    m_instanceIdentityDocumentSignatureHasBeenSet(false),
-    m_totalResourcesHasBeenSet(false),
-    m_versionInfoHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_platformDevicesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

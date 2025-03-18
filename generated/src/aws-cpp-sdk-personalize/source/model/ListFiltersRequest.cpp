@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFiltersRequest::ListFiltersRequest() : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFiltersRequest::SerializePayload() const
 {
   JsonValue payload;

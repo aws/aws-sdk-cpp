@@ -23,7 +23,7 @@ namespace Model
   class DescribeHostReservationsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeHostReservationsRequest();
+    AWS_EC2_API DescribeHostReservationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,29 +55,28 @@ namespace Model
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
+    inline const Aws::Vector<Filter>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline DescribeHostReservationsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
-    inline DescribeHostReservationsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
-    inline DescribeHostReservationsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
-    inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
+    template<typename FilterT = Aws::Vector<Filter>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Vector<Filter>>
+    DescribeHostReservationsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterT = Filter>
+    DescribeHostReservationsRequest& AddFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter.emplace_back(std::forward<FilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The host reservation IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const{ return m_hostReservationIdSet; }
+    inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const { return m_hostReservationIdSet; }
     inline bool HostReservationIdSetHasBeenSet() const { return m_hostReservationIdSetHasBeenSet; }
-    inline void SetHostReservationIdSet(const Aws::Vector<Aws::String>& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = value; }
-    inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::move(value); }
-    inline DescribeHostReservationsRequest& WithHostReservationIdSet(const Aws::Vector<Aws::String>& value) { SetHostReservationIdSet(value); return *this;}
-    inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(std::move(value)); return *this;}
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const Aws::String& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(std::move(value)); return *this; }
-    inline DescribeHostReservationsRequest& AddHostReservationIdSet(const char* value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
+    template<typename HostReservationIdSetT = Aws::Vector<Aws::String>>
+    void SetHostReservationIdSet(HostReservationIdSetT&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::forward<HostReservationIdSetT>(value); }
+    template<typename HostReservationIdSetT = Aws::Vector<Aws::String>>
+    DescribeHostReservationsRequest& WithHostReservationIdSet(HostReservationIdSetT&& value) { SetHostReservationIdSet(std::forward<HostReservationIdSetT>(value)); return *this;}
+    template<typename HostReservationIdSetT = Aws::String>
+    DescribeHostReservationsRequest& AddHostReservationIdSet(HostReservationIdSetT&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.emplace_back(std::forward<HostReservationIdSetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,7 +87,7 @@ namespace Model
      * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeHostReservationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -98,14 +97,12 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeHostReservationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeHostReservationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeHostReservationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeHostReservationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +112,7 @@ namespace Model
     Aws::Vector<Aws::String> m_hostReservationIdSet;
     bool m_hostReservationIdSetHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

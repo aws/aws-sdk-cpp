@@ -35,7 +35,7 @@ namespace Model
   class ReportDetail
   {
   public:
-    AWS_ARTIFACT_API ReportDetail();
+    AWS_ARTIFACT_API ReportDetail() = default;
     AWS_ARTIFACT_API ReportDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARTIFACT_API ReportDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,205 +45,185 @@ namespace Model
     /**
      * <p>Unique resource ID for the report resource.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ReportDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ReportDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ReportDetail& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ReportDetail& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name for the report resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ReportDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ReportDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ReportDetail& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ReportDetail& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description for the report resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ReportDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ReportDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ReportDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ReportDetail& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp indicating the report resource effective start.</p>
      */
-    inline const Aws::Utils::DateTime& GetPeriodStart() const{ return m_periodStart; }
+    inline const Aws::Utils::DateTime& GetPeriodStart() const { return m_periodStart; }
     inline bool PeriodStartHasBeenSet() const { return m_periodStartHasBeenSet; }
-    inline void SetPeriodStart(const Aws::Utils::DateTime& value) { m_periodStartHasBeenSet = true; m_periodStart = value; }
-    inline void SetPeriodStart(Aws::Utils::DateTime&& value) { m_periodStartHasBeenSet = true; m_periodStart = std::move(value); }
-    inline ReportDetail& WithPeriodStart(const Aws::Utils::DateTime& value) { SetPeriodStart(value); return *this;}
-    inline ReportDetail& WithPeriodStart(Aws::Utils::DateTime&& value) { SetPeriodStart(std::move(value)); return *this;}
+    template<typename PeriodStartT = Aws::Utils::DateTime>
+    void SetPeriodStart(PeriodStartT&& value) { m_periodStartHasBeenSet = true; m_periodStart = std::forward<PeriodStartT>(value); }
+    template<typename PeriodStartT = Aws::Utils::DateTime>
+    ReportDetail& WithPeriodStart(PeriodStartT&& value) { SetPeriodStart(std::forward<PeriodStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp indicating the report resource effective end.</p>
      */
-    inline const Aws::Utils::DateTime& GetPeriodEnd() const{ return m_periodEnd; }
+    inline const Aws::Utils::DateTime& GetPeriodEnd() const { return m_periodEnd; }
     inline bool PeriodEndHasBeenSet() const { return m_periodEndHasBeenSet; }
-    inline void SetPeriodEnd(const Aws::Utils::DateTime& value) { m_periodEndHasBeenSet = true; m_periodEnd = value; }
-    inline void SetPeriodEnd(Aws::Utils::DateTime&& value) { m_periodEndHasBeenSet = true; m_periodEnd = std::move(value); }
-    inline ReportDetail& WithPeriodEnd(const Aws::Utils::DateTime& value) { SetPeriodEnd(value); return *this;}
-    inline ReportDetail& WithPeriodEnd(Aws::Utils::DateTime&& value) { SetPeriodEnd(std::move(value)); return *this;}
+    template<typename PeriodEndT = Aws::Utils::DateTime>
+    void SetPeriodEnd(PeriodEndT&& value) { m_periodEndHasBeenSet = true; m_periodEnd = std::forward<PeriodEndT>(value); }
+    template<typename PeriodEndT = Aws::Utils::DateTime>
+    ReportDetail& WithPeriodEnd(PeriodEndT&& value) { SetPeriodEnd(std::forward<PeriodEndT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp indicating when the report resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ReportDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ReportDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ReportDetail& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp indicating when the report resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const{ return m_lastModifiedAt; }
+    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
     inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
-    inline void SetLastModifiedAt(const Aws::Utils::DateTime& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = value; }
-    inline void SetLastModifiedAt(Aws::Utils::DateTime&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::move(value); }
-    inline ReportDetail& WithLastModifiedAt(const Aws::Utils::DateTime& value) { SetLastModifiedAt(value); return *this;}
-    inline ReportDetail& WithLastModifiedAt(Aws::Utils::DateTime&& value) { SetLastModifiedAt(std::move(value)); return *this;}
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    ReportDetail& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp indicating when the report resource was deleted.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
+    inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-    inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-    inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-    inline ReportDetail& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-    inline ReportDetail& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    void SetDeletedAt(DeletedAtT&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::forward<DeletedAtT>(value); }
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    ReportDetail& WithDeletedAt(DeletedAtT&& value) { SetDeletedAt(std::forward<DeletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current state of the report resource</p>
      */
-    inline const PublishedState& GetState() const{ return m_state; }
+    inline PublishedState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const PublishedState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(PublishedState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ReportDetail& WithState(const PublishedState& value) { SetState(value); return *this;}
-    inline ReportDetail& WithState(PublishedState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(PublishedState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ReportDetail& WithState(PublishedState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN for the report resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ReportDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ReportDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ReportDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ReportDetail& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Series for the report resource.</p>
      */
-    inline const Aws::String& GetSeries() const{ return m_series; }
+    inline const Aws::String& GetSeries() const { return m_series; }
     inline bool SeriesHasBeenSet() const { return m_seriesHasBeenSet; }
-    inline void SetSeries(const Aws::String& value) { m_seriesHasBeenSet = true; m_series = value; }
-    inline void SetSeries(Aws::String&& value) { m_seriesHasBeenSet = true; m_series = std::move(value); }
-    inline void SetSeries(const char* value) { m_seriesHasBeenSet = true; m_series.assign(value); }
-    inline ReportDetail& WithSeries(const Aws::String& value) { SetSeries(value); return *this;}
-    inline ReportDetail& WithSeries(Aws::String&& value) { SetSeries(std::move(value)); return *this;}
-    inline ReportDetail& WithSeries(const char* value) { SetSeries(value); return *this;}
+    template<typename SeriesT = Aws::String>
+    void SetSeries(SeriesT&& value) { m_seriesHasBeenSet = true; m_series = std::forward<SeriesT>(value); }
+    template<typename SeriesT = Aws::String>
+    ReportDetail& WithSeries(SeriesT&& value) { SetSeries(std::forward<SeriesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Category for the report resource.</p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline ReportDetail& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline ReportDetail& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline ReportDetail& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    ReportDetail& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Associated company name for the report resource.</p>
      */
-    inline const Aws::String& GetCompanyName() const{ return m_companyName; }
+    inline const Aws::String& GetCompanyName() const { return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
-    inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
-    inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
-    inline ReportDetail& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
-    inline ReportDetail& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
-    inline ReportDetail& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
+    template<typename CompanyNameT = Aws::String>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::String>
+    ReportDetail& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Associated product name for the report resource.</p>
      */
-    inline const Aws::String& GetProductName() const{ return m_productName; }
+    inline const Aws::String& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
-    inline ReportDetail& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
-    inline ReportDetail& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
-    inline ReportDetail& WithProductName(const char* value) { SetProductName(value); return *this;}
+    template<typename ProductNameT = Aws::String>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = Aws::String>
+    ReportDetail& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique resource ARN for term resource.</p>
      */
-    inline const Aws::String& GetTermArn() const{ return m_termArn; }
+    inline const Aws::String& GetTermArn() const { return m_termArn; }
     inline bool TermArnHasBeenSet() const { return m_termArnHasBeenSet; }
-    inline void SetTermArn(const Aws::String& value) { m_termArnHasBeenSet = true; m_termArn = value; }
-    inline void SetTermArn(Aws::String&& value) { m_termArnHasBeenSet = true; m_termArn = std::move(value); }
-    inline void SetTermArn(const char* value) { m_termArnHasBeenSet = true; m_termArn.assign(value); }
-    inline ReportDetail& WithTermArn(const Aws::String& value) { SetTermArn(value); return *this;}
-    inline ReportDetail& WithTermArn(Aws::String&& value) { SetTermArn(std::move(value)); return *this;}
-    inline ReportDetail& WithTermArn(const char* value) { SetTermArn(value); return *this;}
+    template<typename TermArnT = Aws::String>
+    void SetTermArn(TermArnT&& value) { m_termArnHasBeenSet = true; m_termArn = std::forward<TermArnT>(value); }
+    template<typename TermArnT = Aws::String>
+    ReportDetail& WithTermArn(TermArnT&& value) { SetTermArn(std::forward<TermArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version for the report resource.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline ReportDetail& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -253,19 +233,17 @@ namespace Model
     /**
      * <p>Acceptance type for report.</p>
      */
-    inline const AcceptanceType& GetAcceptanceType() const{ return m_acceptanceType; }
+    inline AcceptanceType GetAcceptanceType() const { return m_acceptanceType; }
     inline bool AcceptanceTypeHasBeenSet() const { return m_acceptanceTypeHasBeenSet; }
-    inline void SetAcceptanceType(const AcceptanceType& value) { m_acceptanceTypeHasBeenSet = true; m_acceptanceType = value; }
-    inline void SetAcceptanceType(AcceptanceType&& value) { m_acceptanceTypeHasBeenSet = true; m_acceptanceType = std::move(value); }
-    inline ReportDetail& WithAcceptanceType(const AcceptanceType& value) { SetAcceptanceType(value); return *this;}
-    inline ReportDetail& WithAcceptanceType(AcceptanceType&& value) { SetAcceptanceType(std::move(value)); return *this;}
+    inline void SetAcceptanceType(AcceptanceType value) { m_acceptanceTypeHasBeenSet = true; m_acceptanceType = value; }
+    inline ReportDetail& WithAcceptanceType(AcceptanceType value) { SetAcceptanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sequence number to enforce optimistic locking.</p>
      */
-    inline long long GetSequenceNumber() const{ return m_sequenceNumber; }
+    inline long long GetSequenceNumber() const { return m_sequenceNumber; }
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
     inline void SetSequenceNumber(long long value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
     inline ReportDetail& WithSequenceNumber(long long value) { SetSequenceNumber(value); return *this;}
@@ -275,26 +253,22 @@ namespace Model
     /**
      * <p>The current state of the document upload.</p>
      */
-    inline const UploadState& GetUploadState() const{ return m_uploadState; }
+    inline UploadState GetUploadState() const { return m_uploadState; }
     inline bool UploadStateHasBeenSet() const { return m_uploadStateHasBeenSet; }
-    inline void SetUploadState(const UploadState& value) { m_uploadStateHasBeenSet = true; m_uploadState = value; }
-    inline void SetUploadState(UploadState&& value) { m_uploadStateHasBeenSet = true; m_uploadState = std::move(value); }
-    inline ReportDetail& WithUploadState(const UploadState& value) { SetUploadState(value); return *this;}
-    inline ReportDetail& WithUploadState(UploadState&& value) { SetUploadState(std::move(value)); return *this;}
+    inline void SetUploadState(UploadState value) { m_uploadStateHasBeenSet = true; m_uploadState = value; }
+    inline ReportDetail& WithUploadState(UploadState value) { SetUploadState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message associated with the current upload state.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ReportDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ReportDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ReportDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ReportDetail& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -307,22 +281,22 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_periodStart;
+    Aws::Utils::DateTime m_periodStart{};
     bool m_periodStartHasBeenSet = false;
 
-    Aws::Utils::DateTime m_periodEnd;
+    Aws::Utils::DateTime m_periodEnd{};
     bool m_periodEndHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAt;
+    Aws::Utils::DateTime m_lastModifiedAt{};
     bool m_lastModifiedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletedAt;
+    Aws::Utils::DateTime m_deletedAt{};
     bool m_deletedAtHasBeenSet = false;
 
-    PublishedState m_state;
+    PublishedState m_state{PublishedState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_arn;
@@ -343,16 +317,16 @@ namespace Model
     Aws::String m_termArn;
     bool m_termArnHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
 
-    AcceptanceType m_acceptanceType;
+    AcceptanceType m_acceptanceType{AcceptanceType::NOT_SET};
     bool m_acceptanceTypeHasBeenSet = false;
 
-    long long m_sequenceNumber;
+    long long m_sequenceNumber{0};
     bool m_sequenceNumberHasBeenSet = false;
 
-    UploadState m_uploadState;
+    UploadState m_uploadState{UploadState::NOT_SET};
     bool m_uploadStateHasBeenSet = false;
 
     Aws::String m_statusMessage;

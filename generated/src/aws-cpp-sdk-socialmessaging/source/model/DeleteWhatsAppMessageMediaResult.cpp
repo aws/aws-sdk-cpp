@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteWhatsAppMessageMediaResult::DeleteWhatsAppMessageMediaResult() : 
-    m_success(false)
-{
-}
-
 DeleteWhatsAppMessageMediaResult::DeleteWhatsAppMessageMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteWhatsAppMessageMediaResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteWhatsAppMessageMediaResult& DeleteWhatsAppMessageMediaResult::operator =(c
   if(jsonValue.ValueExists("success"))
   {
     m_success = jsonValue.GetBool("success");
-
+    m_successHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

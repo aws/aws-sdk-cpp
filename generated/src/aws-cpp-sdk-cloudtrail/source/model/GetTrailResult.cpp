@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrailResult::GetTrailResult()
-{
-}
-
 GetTrailResult::GetTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTrailResult& GetTrailResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("Trail"))
   {
     m_trail = jsonValue.GetObject("Trail");
-
+    m_trailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

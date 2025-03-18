@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CountPendingActivityTasksResult::CountPendingActivityTasksResult() : 
-    m_count(0),
-    m_truncated(false)
-{
-}
-
 CountPendingActivityTasksResult::CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CountPendingActivityTasksResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ CountPendingActivityTasksResult& CountPendingActivityTasksResult::operator =(con
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
+    m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truncated"))
   {
     m_truncated = jsonValue.GetBool("truncated");
-
+    m_truncatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

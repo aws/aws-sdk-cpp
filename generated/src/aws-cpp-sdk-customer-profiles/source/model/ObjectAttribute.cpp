@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ObjectAttribute::ObjectAttribute() : 
-    m_sourceHasBeenSet(false),
-    m_fieldNameHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ObjectAttribute::ObjectAttribute(JsonView jsonValue)
-  : ObjectAttribute()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ObjectAttribute& ObjectAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -65,7 +49,6 @@ ObjectAttribute& ObjectAttribute::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

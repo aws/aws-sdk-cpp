@@ -25,7 +25,7 @@ namespace Model
   class GetCoreNetworkChangeEventsRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsRequest();
+    AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline GetCoreNetworkChangeEventsRequest& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline GetCoreNetworkChangeEventsRequest& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline GetCoreNetworkChangeEventsRequest& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    GetCoreNetworkChangeEventsRequest& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the policy version.</p>
      */
-    inline int GetPolicyVersionId() const{ return m_policyVersionId; }
+    inline int GetPolicyVersionId() const { return m_policyVersionId; }
     inline bool PolicyVersionIdHasBeenSet() const { return m_policyVersionIdHasBeenSet; }
     inline void SetPolicyVersionId(int value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = value; }
     inline GetCoreNetworkChangeEventsRequest& WithPolicyVersionId(int value) { SetPolicyVersionId(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCoreNetworkChangeEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -76,24 +74,22 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetCoreNetworkChangeEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCoreNetworkChangeEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCoreNetworkChangeEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCoreNetworkChangeEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_coreNetworkId;
     bool m_coreNetworkIdHasBeenSet = false;
 
-    int m_policyVersionId;
+    int m_policyVersionId{0};
     bool m_policyVersionIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

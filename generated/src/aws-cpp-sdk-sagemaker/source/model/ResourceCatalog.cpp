@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ResourceCatalog::ResourceCatalog() : 
-    m_resourceCatalogArnHasBeenSet(false),
-    m_resourceCatalogNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ResourceCatalog::ResourceCatalog(JsonView jsonValue)
-  : ResourceCatalog()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourceCatalog& ResourceCatalog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceCatalogArn"))
   {
     m_resourceCatalogArn = jsonValue.GetString("ResourceCatalogArn");
-
     m_resourceCatalogArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCatalogName"))
   {
     m_resourceCatalogName = jsonValue.GetString("ResourceCatalogName");
-
     m_resourceCatalogNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

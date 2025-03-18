@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentAttributeConfiguration::DocumentAttributeConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_type(AttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_search(Status::NOT_SET),
-    m_searchHasBeenSet(false)
-{
-}
-
 DocumentAttributeConfiguration::DocumentAttributeConfiguration(JsonView jsonValue)
-  : DocumentAttributeConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DocumentAttributeConfiguration& DocumentAttributeConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("search"))
   {
     m_search = StatusMapper::GetStatusForName(jsonValue.GetString("search"));
-
     m_searchHasBeenSet = true;
   }
-
   return *this;
 }
 

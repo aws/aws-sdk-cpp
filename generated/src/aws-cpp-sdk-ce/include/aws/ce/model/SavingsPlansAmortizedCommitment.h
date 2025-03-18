@@ -32,7 +32,7 @@ namespace Model
   class SavingsPlansAmortizedCommitment
   {
   public:
-    AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment();
+    AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment() = default;
     AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The amortized amount of your Savings Plans commitment that was purchased with
      * either a <code>Partial</code> or a <code>NoUpfront</code>.</p>
      */
-    inline const Aws::String& GetAmortizedRecurringCommitment() const{ return m_amortizedRecurringCommitment; }
+    inline const Aws::String& GetAmortizedRecurringCommitment() const { return m_amortizedRecurringCommitment; }
     inline bool AmortizedRecurringCommitmentHasBeenSet() const { return m_amortizedRecurringCommitmentHasBeenSet; }
-    inline void SetAmortizedRecurringCommitment(const Aws::String& value) { m_amortizedRecurringCommitmentHasBeenSet = true; m_amortizedRecurringCommitment = value; }
-    inline void SetAmortizedRecurringCommitment(Aws::String&& value) { m_amortizedRecurringCommitmentHasBeenSet = true; m_amortizedRecurringCommitment = std::move(value); }
-    inline void SetAmortizedRecurringCommitment(const char* value) { m_amortizedRecurringCommitmentHasBeenSet = true; m_amortizedRecurringCommitment.assign(value); }
-    inline SavingsPlansAmortizedCommitment& WithAmortizedRecurringCommitment(const Aws::String& value) { SetAmortizedRecurringCommitment(value); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithAmortizedRecurringCommitment(Aws::String&& value) { SetAmortizedRecurringCommitment(std::move(value)); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithAmortizedRecurringCommitment(const char* value) { SetAmortizedRecurringCommitment(value); return *this;}
+    template<typename AmortizedRecurringCommitmentT = Aws::String>
+    void SetAmortizedRecurringCommitment(AmortizedRecurringCommitmentT&& value) { m_amortizedRecurringCommitmentHasBeenSet = true; m_amortizedRecurringCommitment = std::forward<AmortizedRecurringCommitmentT>(value); }
+    template<typename AmortizedRecurringCommitmentT = Aws::String>
+    SavingsPlansAmortizedCommitment& WithAmortizedRecurringCommitment(AmortizedRecurringCommitmentT&& value) { SetAmortizedRecurringCommitment(std::forward<AmortizedRecurringCommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The amortized amount of your Savings Plans commitment that was purchased with
      * an <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
      */
-    inline const Aws::String& GetAmortizedUpfrontCommitment() const{ return m_amortizedUpfrontCommitment; }
+    inline const Aws::String& GetAmortizedUpfrontCommitment() const { return m_amortizedUpfrontCommitment; }
     inline bool AmortizedUpfrontCommitmentHasBeenSet() const { return m_amortizedUpfrontCommitmentHasBeenSet; }
-    inline void SetAmortizedUpfrontCommitment(const Aws::String& value) { m_amortizedUpfrontCommitmentHasBeenSet = true; m_amortizedUpfrontCommitment = value; }
-    inline void SetAmortizedUpfrontCommitment(Aws::String&& value) { m_amortizedUpfrontCommitmentHasBeenSet = true; m_amortizedUpfrontCommitment = std::move(value); }
-    inline void SetAmortizedUpfrontCommitment(const char* value) { m_amortizedUpfrontCommitmentHasBeenSet = true; m_amortizedUpfrontCommitment.assign(value); }
-    inline SavingsPlansAmortizedCommitment& WithAmortizedUpfrontCommitment(const Aws::String& value) { SetAmortizedUpfrontCommitment(value); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithAmortizedUpfrontCommitment(Aws::String&& value) { SetAmortizedUpfrontCommitment(std::move(value)); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithAmortizedUpfrontCommitment(const char* value) { SetAmortizedUpfrontCommitment(value); return *this;}
+    template<typename AmortizedUpfrontCommitmentT = Aws::String>
+    void SetAmortizedUpfrontCommitment(AmortizedUpfrontCommitmentT&& value) { m_amortizedUpfrontCommitmentHasBeenSet = true; m_amortizedUpfrontCommitment = std::forward<AmortizedUpfrontCommitmentT>(value); }
+    template<typename AmortizedUpfrontCommitmentT = Aws::String>
+    SavingsPlansAmortizedCommitment& WithAmortizedUpfrontCommitment(AmortizedUpfrontCommitmentT&& value) { SetAmortizedUpfrontCommitment(std::forward<AmortizedUpfrontCommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The total amortized amount of your Savings Plans commitment, regardless of
      * your Savings Plans purchase method. </p>
      */
-    inline const Aws::String& GetTotalAmortizedCommitment() const{ return m_totalAmortizedCommitment; }
+    inline const Aws::String& GetTotalAmortizedCommitment() const { return m_totalAmortizedCommitment; }
     inline bool TotalAmortizedCommitmentHasBeenSet() const { return m_totalAmortizedCommitmentHasBeenSet; }
-    inline void SetTotalAmortizedCommitment(const Aws::String& value) { m_totalAmortizedCommitmentHasBeenSet = true; m_totalAmortizedCommitment = value; }
-    inline void SetTotalAmortizedCommitment(Aws::String&& value) { m_totalAmortizedCommitmentHasBeenSet = true; m_totalAmortizedCommitment = std::move(value); }
-    inline void SetTotalAmortizedCommitment(const char* value) { m_totalAmortizedCommitmentHasBeenSet = true; m_totalAmortizedCommitment.assign(value); }
-    inline SavingsPlansAmortizedCommitment& WithTotalAmortizedCommitment(const Aws::String& value) { SetTotalAmortizedCommitment(value); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithTotalAmortizedCommitment(Aws::String&& value) { SetTotalAmortizedCommitment(std::move(value)); return *this;}
-    inline SavingsPlansAmortizedCommitment& WithTotalAmortizedCommitment(const char* value) { SetTotalAmortizedCommitment(value); return *this;}
+    template<typename TotalAmortizedCommitmentT = Aws::String>
+    void SetTotalAmortizedCommitment(TotalAmortizedCommitmentT&& value) { m_totalAmortizedCommitmentHasBeenSet = true; m_totalAmortizedCommitment = std::forward<TotalAmortizedCommitmentT>(value); }
+    template<typename TotalAmortizedCommitmentT = Aws::String>
+    SavingsPlansAmortizedCommitment& WithTotalAmortizedCommitment(TotalAmortizedCommitmentT&& value) { SetTotalAmortizedCommitment(std::forward<TotalAmortizedCommitmentT>(value)); return *this;}
     ///@}
   private:
 

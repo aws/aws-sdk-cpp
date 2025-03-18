@@ -30,7 +30,7 @@ namespace Model
   class DescribeScheduledActionsResult
   {
   public:
-    AWS_AUTOSCALING_API DescribeScheduledActionsResult();
+    AWS_AUTOSCALING_API DescribeScheduledActionsResult() = default;
     AWS_AUTOSCALING_API DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API DescribeScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The scheduled actions.</p>
      */
-    inline const Aws::Vector<ScheduledUpdateGroupAction>& GetScheduledUpdateGroupActions() const{ return m_scheduledUpdateGroupActions; }
-    inline void SetScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { m_scheduledUpdateGroupActions = value; }
-    inline void SetScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { m_scheduledUpdateGroupActions = std::move(value); }
-    inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupAction>& value) { SetScheduledUpdateGroupActions(value); return *this;}
-    inline DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupAction>&& value) { SetScheduledUpdateGroupActions(std::move(value)); return *this;}
-    inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(const ScheduledUpdateGroupAction& value) { m_scheduledUpdateGroupActions.push_back(value); return *this; }
-    inline DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(ScheduledUpdateGroupAction&& value) { m_scheduledUpdateGroupActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScheduledUpdateGroupAction>& GetScheduledUpdateGroupActions() const { return m_scheduledUpdateGroupActions; }
+    template<typename ScheduledUpdateGroupActionsT = Aws::Vector<ScheduledUpdateGroupAction>>
+    void SetScheduledUpdateGroupActions(ScheduledUpdateGroupActionsT&& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions = std::forward<ScheduledUpdateGroupActionsT>(value); }
+    template<typename ScheduledUpdateGroupActionsT = Aws::Vector<ScheduledUpdateGroupAction>>
+    DescribeScheduledActionsResult& WithScheduledUpdateGroupActions(ScheduledUpdateGroupActionsT&& value) { SetScheduledUpdateGroupActions(std::forward<ScheduledUpdateGroupActionsT>(value)); return *this;}
+    template<typename ScheduledUpdateGroupActionsT = ScheduledUpdateGroupAction>
+    DescribeScheduledActionsResult& AddScheduledUpdateGroupActions(ScheduledUpdateGroupActionsT&& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions.emplace_back(std::forward<ScheduledUpdateGroupActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * for the <code>NextToken</code> value when requesting the next set of items. This
      * value is null when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeScheduledActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScheduledActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScheduledActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScheduledActionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeScheduledActionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeScheduledActionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeScheduledActionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScheduledUpdateGroupAction> m_scheduledUpdateGroupActions;
+    bool m_scheduledUpdateGroupActionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

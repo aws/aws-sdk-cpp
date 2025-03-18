@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-KernelSpec::KernelSpec() : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 KernelSpec::KernelSpec(JsonView jsonValue)
-  : KernelSpec()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KernelSpec& KernelSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

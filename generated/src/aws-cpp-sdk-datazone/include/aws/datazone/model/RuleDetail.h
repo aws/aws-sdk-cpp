@@ -31,7 +31,7 @@ namespace Model
   class RuleDetail
   {
   public:
-    AWS_DATAZONE_API RuleDetail();
+    AWS_DATAZONE_API RuleDetail() = default;
     AWS_DATAZONE_API RuleDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RuleDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The enforcement detail of the metadata form.</p>
      */
-    inline const MetadataFormEnforcementDetail& GetMetadataFormEnforcementDetail() const{ return m_metadataFormEnforcementDetail; }
+    inline const MetadataFormEnforcementDetail& GetMetadataFormEnforcementDetail() const { return m_metadataFormEnforcementDetail; }
     inline bool MetadataFormEnforcementDetailHasBeenSet() const { return m_metadataFormEnforcementDetailHasBeenSet; }
-    inline void SetMetadataFormEnforcementDetail(const MetadataFormEnforcementDetail& value) { m_metadataFormEnforcementDetailHasBeenSet = true; m_metadataFormEnforcementDetail = value; }
-    inline void SetMetadataFormEnforcementDetail(MetadataFormEnforcementDetail&& value) { m_metadataFormEnforcementDetailHasBeenSet = true; m_metadataFormEnforcementDetail = std::move(value); }
-    inline RuleDetail& WithMetadataFormEnforcementDetail(const MetadataFormEnforcementDetail& value) { SetMetadataFormEnforcementDetail(value); return *this;}
-    inline RuleDetail& WithMetadataFormEnforcementDetail(MetadataFormEnforcementDetail&& value) { SetMetadataFormEnforcementDetail(std::move(value)); return *this;}
+    template<typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
+    void SetMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) { m_metadataFormEnforcementDetailHasBeenSet = true; m_metadataFormEnforcementDetail = std::forward<MetadataFormEnforcementDetailT>(value); }
+    template<typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
+    RuleDetail& WithMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) { SetMetadataFormEnforcementDetail(std::forward<MetadataFormEnforcementDetailT>(value)); return *this;}
     ///@}
   private:
 

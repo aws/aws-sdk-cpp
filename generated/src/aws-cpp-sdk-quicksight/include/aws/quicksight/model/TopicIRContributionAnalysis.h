@@ -36,7 +36,7 @@ namespace Model
   class TopicIRContributionAnalysis
   {
   public:
-    AWS_QUICKSIGHT_API TopicIRContributionAnalysis();
+    AWS_QUICKSIGHT_API TopicIRContributionAnalysis() = default;
     AWS_QUICKSIGHT_API TopicIRContributionAnalysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicIRContributionAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,50 +46,46 @@ namespace Model
     /**
      * <p>The factors for a <code>TopicIRContributionAnalysis</code>.</p>
      */
-    inline const Aws::Vector<ContributionAnalysisFactor>& GetFactors() const{ return m_factors; }
+    inline const Aws::Vector<ContributionAnalysisFactor>& GetFactors() const { return m_factors; }
     inline bool FactorsHasBeenSet() const { return m_factorsHasBeenSet; }
-    inline void SetFactors(const Aws::Vector<ContributionAnalysisFactor>& value) { m_factorsHasBeenSet = true; m_factors = value; }
-    inline void SetFactors(Aws::Vector<ContributionAnalysisFactor>&& value) { m_factorsHasBeenSet = true; m_factors = std::move(value); }
-    inline TopicIRContributionAnalysis& WithFactors(const Aws::Vector<ContributionAnalysisFactor>& value) { SetFactors(value); return *this;}
-    inline TopicIRContributionAnalysis& WithFactors(Aws::Vector<ContributionAnalysisFactor>&& value) { SetFactors(std::move(value)); return *this;}
-    inline TopicIRContributionAnalysis& AddFactors(const ContributionAnalysisFactor& value) { m_factorsHasBeenSet = true; m_factors.push_back(value); return *this; }
-    inline TopicIRContributionAnalysis& AddFactors(ContributionAnalysisFactor&& value) { m_factorsHasBeenSet = true; m_factors.push_back(std::move(value)); return *this; }
+    template<typename FactorsT = Aws::Vector<ContributionAnalysisFactor>>
+    void SetFactors(FactorsT&& value) { m_factorsHasBeenSet = true; m_factors = std::forward<FactorsT>(value); }
+    template<typename FactorsT = Aws::Vector<ContributionAnalysisFactor>>
+    TopicIRContributionAnalysis& WithFactors(FactorsT&& value) { SetFactors(std::forward<FactorsT>(value)); return *this;}
+    template<typename FactorsT = ContributionAnalysisFactor>
+    TopicIRContributionAnalysis& AddFactors(FactorsT&& value) { m_factorsHasBeenSet = true; m_factors.emplace_back(std::forward<FactorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time ranges for the <code>TopicIRContributionAnalysis</code>.</p>
      */
-    inline const ContributionAnalysisTimeRanges& GetTimeRanges() const{ return m_timeRanges; }
+    inline const ContributionAnalysisTimeRanges& GetTimeRanges() const { return m_timeRanges; }
     inline bool TimeRangesHasBeenSet() const { return m_timeRangesHasBeenSet; }
-    inline void SetTimeRanges(const ContributionAnalysisTimeRanges& value) { m_timeRangesHasBeenSet = true; m_timeRanges = value; }
-    inline void SetTimeRanges(ContributionAnalysisTimeRanges&& value) { m_timeRangesHasBeenSet = true; m_timeRanges = std::move(value); }
-    inline TopicIRContributionAnalysis& WithTimeRanges(const ContributionAnalysisTimeRanges& value) { SetTimeRanges(value); return *this;}
-    inline TopicIRContributionAnalysis& WithTimeRanges(ContributionAnalysisTimeRanges&& value) { SetTimeRanges(std::move(value)); return *this;}
+    template<typename TimeRangesT = ContributionAnalysisTimeRanges>
+    void SetTimeRanges(TimeRangesT&& value) { m_timeRangesHasBeenSet = true; m_timeRanges = std::forward<TimeRangesT>(value); }
+    template<typename TimeRangesT = ContributionAnalysisTimeRanges>
+    TopicIRContributionAnalysis& WithTimeRanges(TimeRangesT&& value) { SetTimeRanges(std::forward<TimeRangesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The direction for the <code>TopicIRContributionAnalysis</code>.</p>
      */
-    inline const ContributionAnalysisDirection& GetDirection() const{ return m_direction; }
+    inline ContributionAnalysisDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const ContributionAnalysisDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(ContributionAnalysisDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline TopicIRContributionAnalysis& WithDirection(const ContributionAnalysisDirection& value) { SetDirection(value); return *this;}
-    inline TopicIRContributionAnalysis& WithDirection(ContributionAnalysisDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(ContributionAnalysisDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline TopicIRContributionAnalysis& WithDirection(ContributionAnalysisDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort type for the <code>TopicIRContributionAnalysis</code>.</p>
      */
-    inline const ContributionAnalysisSortType& GetSortType() const{ return m_sortType; }
+    inline ContributionAnalysisSortType GetSortType() const { return m_sortType; }
     inline bool SortTypeHasBeenSet() const { return m_sortTypeHasBeenSet; }
-    inline void SetSortType(const ContributionAnalysisSortType& value) { m_sortTypeHasBeenSet = true; m_sortType = value; }
-    inline void SetSortType(ContributionAnalysisSortType&& value) { m_sortTypeHasBeenSet = true; m_sortType = std::move(value); }
-    inline TopicIRContributionAnalysis& WithSortType(const ContributionAnalysisSortType& value) { SetSortType(value); return *this;}
-    inline TopicIRContributionAnalysis& WithSortType(ContributionAnalysisSortType&& value) { SetSortType(std::move(value)); return *this;}
+    inline void SetSortType(ContributionAnalysisSortType value) { m_sortTypeHasBeenSet = true; m_sortType = value; }
+    inline TopicIRContributionAnalysis& WithSortType(ContributionAnalysisSortType value) { SetSortType(value); return *this;}
     ///@}
   private:
 
@@ -99,10 +95,10 @@ namespace Model
     ContributionAnalysisTimeRanges m_timeRanges;
     bool m_timeRangesHasBeenSet = false;
 
-    ContributionAnalysisDirection m_direction;
+    ContributionAnalysisDirection m_direction{ContributionAnalysisDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
-    ContributionAnalysisSortType m_sortType;
+    ContributionAnalysisSortType m_sortType{ContributionAnalysisSortType::NOT_SET};
     bool m_sortTypeHasBeenSet = false;
   };
 

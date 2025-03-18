@@ -33,7 +33,7 @@ namespace Model
   class DatasetContentStatus
   {
   public:
-    AWS_IOTANALYTICS_API DatasetContentStatus();
+    AWS_IOTANALYTICS_API DatasetContentStatus() = default;
     AWS_IOTANALYTICS_API DatasetContentStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetContentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
      * or FAILED.</p>
      */
-    inline const DatasetContentState& GetState() const{ return m_state; }
+    inline DatasetContentState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DatasetContentState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DatasetContentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline DatasetContentStatus& WithState(const DatasetContentState& value) { SetState(value); return *this;}
-    inline DatasetContentStatus& WithState(DatasetContentState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(DatasetContentState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DatasetContentStatus& WithState(DatasetContentState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason the dataset contents are in this state.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline DatasetContentStatus& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline DatasetContentStatus& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline DatasetContentStatus& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    DatasetContentStatus& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    DatasetContentState m_state;
+    DatasetContentState m_state{DatasetContentState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_reason;

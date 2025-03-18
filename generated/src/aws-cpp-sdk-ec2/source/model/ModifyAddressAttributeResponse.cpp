@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyAddressAttributeResponse::ModifyAddressAttributeResponse()
-{
-}
-
 ModifyAddressAttributeResponse::ModifyAddressAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyAddressAttributeResponse& ModifyAddressAttributeResponse::operator =(const
     if(!addressNode.IsNull())
     {
       m_address = addressNode;
+      m_addressHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyAddressAttributeResponse& ModifyAddressAttributeResponse::operator =(const
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyAddressAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

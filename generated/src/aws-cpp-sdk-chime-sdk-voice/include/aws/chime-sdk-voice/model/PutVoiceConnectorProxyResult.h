@@ -28,7 +28,7 @@ namespace Model
   class PutVoiceConnectorProxyResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorProxyResult();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorProxyResult() = default;
     AWS_CHIMESDKVOICE_API PutVoiceConnectorProxyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutVoiceConnectorProxyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The proxy configuration details.</p>
      */
-    inline const Proxy& GetProxy() const{ return m_proxy; }
-    inline void SetProxy(const Proxy& value) { m_proxy = value; }
-    inline void SetProxy(Proxy&& value) { m_proxy = std::move(value); }
-    inline PutVoiceConnectorProxyResult& WithProxy(const Proxy& value) { SetProxy(value); return *this;}
-    inline PutVoiceConnectorProxyResult& WithProxy(Proxy&& value) { SetProxy(std::move(value)); return *this;}
+    inline const Proxy& GetProxy() const { return m_proxy; }
+    template<typename ProxyT = Proxy>
+    void SetProxy(ProxyT&& value) { m_proxyHasBeenSet = true; m_proxy = std::forward<ProxyT>(value); }
+    template<typename ProxyT = Proxy>
+    PutVoiceConnectorProxyResult& WithProxy(ProxyT&& value) { SetProxy(std::forward<ProxyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutVoiceConnectorProxyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutVoiceConnectorProxyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutVoiceConnectorProxyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutVoiceConnectorProxyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Proxy m_proxy;
+    bool m_proxyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

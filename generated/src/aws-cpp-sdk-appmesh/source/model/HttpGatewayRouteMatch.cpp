@@ -18,21 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpGatewayRouteMatch::HttpGatewayRouteMatch() : 
-    m_headersHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_method(HttpMethod::NOT_SET),
-    m_methodHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_queryParametersHasBeenSet(false)
-{
-}
-
 HttpGatewayRouteMatch::HttpGatewayRouteMatch(JsonView jsonValue)
-  : HttpGatewayRouteMatch()
 {
   *this = jsonValue;
 }
@@ -48,42 +34,31 @@ HttpGatewayRouteMatch& HttpGatewayRouteMatch::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetObject("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("method"))
   {
     m_method = HttpMethodMapper::GetHttpMethodForName(jsonValue.GetString("method"));
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetObject("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryParameters"))
   {
     Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("queryParameters");
@@ -93,7 +68,6 @@ HttpGatewayRouteMatch& HttpGatewayRouteMatch::operator =(JsonView jsonValue)
     }
     m_queryParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

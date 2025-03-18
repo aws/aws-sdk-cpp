@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProvisioningTemplateResult::CreateProvisioningTemplateResult() : 
-    m_defaultVersionId(0)
-{
-}
-
 CreateProvisioningTemplateResult::CreateProvisioningTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateProvisioningTemplateResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateProvisioningTemplateResult& CreateProvisioningTemplateResult::operator =(c
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
+    m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
+    m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVersionId"))
   {
     m_defaultVersionId = jsonValue.GetInteger("defaultVersionId");
-
+    m_defaultVersionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,10 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-IsVpcPeeredRequest::IsVpcPeeredRequest()
-{
-}
-
 Aws::String IsVpcPeeredRequest::SerializePayload() const
 {
   return "{}";

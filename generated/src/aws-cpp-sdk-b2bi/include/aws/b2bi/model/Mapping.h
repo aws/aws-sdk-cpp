@@ -33,7 +33,7 @@ namespace Model
   class Mapping
   {
   public:
-    AWS_B2BI_API Mapping();
+    AWS_B2BI_API Mapping() = default;
     AWS_B2BI_API Mapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Mapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The transformation language for the template, either XSLT or JSONATA.</p>
      */
-    inline const MappingTemplateLanguage& GetTemplateLanguage() const{ return m_templateLanguage; }
+    inline MappingTemplateLanguage GetTemplateLanguage() const { return m_templateLanguage; }
     inline bool TemplateLanguageHasBeenSet() const { return m_templateLanguageHasBeenSet; }
-    inline void SetTemplateLanguage(const MappingTemplateLanguage& value) { m_templateLanguageHasBeenSet = true; m_templateLanguage = value; }
-    inline void SetTemplateLanguage(MappingTemplateLanguage&& value) { m_templateLanguageHasBeenSet = true; m_templateLanguage = std::move(value); }
-    inline Mapping& WithTemplateLanguage(const MappingTemplateLanguage& value) { SetTemplateLanguage(value); return *this;}
-    inline Mapping& WithTemplateLanguage(MappingTemplateLanguage&& value) { SetTemplateLanguage(std::move(value)); return *this;}
+    inline void SetTemplateLanguage(MappingTemplateLanguage value) { m_templateLanguageHasBeenSet = true; m_templateLanguage = value; }
+    inline Mapping& WithTemplateLanguage(MappingTemplateLanguage value) { SetTemplateLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>A string that represents the mapping template, in the transformation language
      * specified in <code>templateLanguage</code>.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
+    inline const Aws::String& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-    inline Mapping& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline Mapping& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline Mapping& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    Mapping& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
   private:
 
-    MappingTemplateLanguage m_templateLanguage;
+    MappingTemplateLanguage m_templateLanguage{MappingTemplateLanguage::NOT_SET};
     bool m_templateLanguageHasBeenSet = false;
 
     Aws::String m_template;

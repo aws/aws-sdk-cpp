@@ -28,7 +28,7 @@ namespace Model
   class TerminateSessionResult
   {
   public:
-    AWS_ATHENA_API TerminateSessionResult();
+    AWS_ATHENA_API TerminateSessionResult() = default;
     AWS_ATHENA_API TerminateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API TerminateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,26 @@ namespace Model
      * no healthy coordinators.</p> <p> <code>FAILED</code> - Due to a failure, the
      * session and its resources are no longer running.</p>
      */
-    inline const SessionState& GetState() const{ return m_state; }
-    inline void SetState(const SessionState& value) { m_state = value; }
-    inline void SetState(SessionState&& value) { m_state = std::move(value); }
-    inline TerminateSessionResult& WithState(const SessionState& value) { SetState(value); return *this;}
-    inline TerminateSessionResult& WithState(SessionState&& value) { SetState(std::move(value)); return *this;}
+    inline SessionState GetState() const { return m_state; }
+    inline void SetState(SessionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TerminateSessionResult& WithState(SessionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TerminateSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TerminateSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TerminateSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TerminateSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SessionState m_state;
+    SessionState m_state{SessionState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

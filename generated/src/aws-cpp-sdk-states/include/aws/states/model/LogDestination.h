@@ -31,7 +31,7 @@ namespace Model
   class LogDestination
   {
   public:
-    AWS_SFN_API LogDestination();
+    AWS_SFN_API LogDestination() = default;
     AWS_SFN_API LogDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
      * in the CloudFormation User Guide.</p>
      */
-    inline const CloudWatchLogsLogGroup& GetCloudWatchLogsLogGroup() const{ return m_cloudWatchLogsLogGroup; }
+    inline const CloudWatchLogsLogGroup& GetCloudWatchLogsLogGroup() const { return m_cloudWatchLogsLogGroup; }
     inline bool CloudWatchLogsLogGroupHasBeenSet() const { return m_cloudWatchLogsLogGroupHasBeenSet; }
-    inline void SetCloudWatchLogsLogGroup(const CloudWatchLogsLogGroup& value) { m_cloudWatchLogsLogGroupHasBeenSet = true; m_cloudWatchLogsLogGroup = value; }
-    inline void SetCloudWatchLogsLogGroup(CloudWatchLogsLogGroup&& value) { m_cloudWatchLogsLogGroupHasBeenSet = true; m_cloudWatchLogsLogGroup = std::move(value); }
-    inline LogDestination& WithCloudWatchLogsLogGroup(const CloudWatchLogsLogGroup& value) { SetCloudWatchLogsLogGroup(value); return *this;}
-    inline LogDestination& WithCloudWatchLogsLogGroup(CloudWatchLogsLogGroup&& value) { SetCloudWatchLogsLogGroup(std::move(value)); return *this;}
+    template<typename CloudWatchLogsLogGroupT = CloudWatchLogsLogGroup>
+    void SetCloudWatchLogsLogGroup(CloudWatchLogsLogGroupT&& value) { m_cloudWatchLogsLogGroupHasBeenSet = true; m_cloudWatchLogsLogGroup = std::forward<CloudWatchLogsLogGroupT>(value); }
+    template<typename CloudWatchLogsLogGroupT = CloudWatchLogsLogGroup>
+    LogDestination& WithCloudWatchLogsLogGroup(CloudWatchLogsLogGroupT&& value) { SetCloudWatchLogsLogGroup(std::forward<CloudWatchLogsLogGroupT>(value)); return *this;}
     ///@}
   private:
 

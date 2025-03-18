@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteDelegationByAssessmentRequest::BatchDeleteDelegationByAssessmentRequest() : 
-    m_delegationIdsHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteDelegationByAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

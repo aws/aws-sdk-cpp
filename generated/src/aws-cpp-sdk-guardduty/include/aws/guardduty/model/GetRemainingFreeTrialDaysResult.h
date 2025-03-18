@@ -30,7 +30,7 @@ namespace Model
   class GetRemainingFreeTrialDaysResult
   {
   public:
-    AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult();
+    AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult() = default;
     AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The member accounts which were included in a request and were processed
      * successfully.</p>
      */
-    inline const Aws::Vector<AccountFreeTrialInfo>& GetAccounts() const{ return m_accounts; }
-    inline void SetAccounts(const Aws::Vector<AccountFreeTrialInfo>& value) { m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<AccountFreeTrialInfo>&& value) { m_accounts = std::move(value); }
-    inline GetRemainingFreeTrialDaysResult& WithAccounts(const Aws::Vector<AccountFreeTrialInfo>& value) { SetAccounts(value); return *this;}
-    inline GetRemainingFreeTrialDaysResult& WithAccounts(Aws::Vector<AccountFreeTrialInfo>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline GetRemainingFreeTrialDaysResult& AddAccounts(const AccountFreeTrialInfo& value) { m_accounts.push_back(value); return *this; }
-    inline GetRemainingFreeTrialDaysResult& AddAccounts(AccountFreeTrialInfo&& value) { m_accounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountFreeTrialInfo>& GetAccounts() const { return m_accounts; }
+    template<typename AccountsT = Aws::Vector<AccountFreeTrialInfo>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<AccountFreeTrialInfo>>
+    GetRemainingFreeTrialDaysResult& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = AccountFreeTrialInfo>
+    GetRemainingFreeTrialDaysResult& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>The member account that was included in a request but for which the request
      * could not be processed.</p>
      */
-    inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
-    inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
-    inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
-    inline GetRemainingFreeTrialDaysResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
-    inline GetRemainingFreeTrialDaysResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
-    inline GetRemainingFreeTrialDaysResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
-    inline GetRemainingFreeTrialDaysResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const { return m_unprocessedAccounts; }
+    template<typename UnprocessedAccountsT = Aws::Vector<UnprocessedAccount>>
+    void SetUnprocessedAccounts(UnprocessedAccountsT&& value) { m_unprocessedAccountsHasBeenSet = true; m_unprocessedAccounts = std::forward<UnprocessedAccountsT>(value); }
+    template<typename UnprocessedAccountsT = Aws::Vector<UnprocessedAccount>>
+    GetRemainingFreeTrialDaysResult& WithUnprocessedAccounts(UnprocessedAccountsT&& value) { SetUnprocessedAccounts(std::forward<UnprocessedAccountsT>(value)); return *this;}
+    template<typename UnprocessedAccountsT = UnprocessedAccount>
+    GetRemainingFreeTrialDaysResult& AddUnprocessedAccounts(UnprocessedAccountsT&& value) { m_unprocessedAccountsHasBeenSet = true; m_unprocessedAccounts.emplace_back(std::forward<UnprocessedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRemainingFreeTrialDaysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRemainingFreeTrialDaysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRemainingFreeTrialDaysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRemainingFreeTrialDaysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountFreeTrialInfo> m_accounts;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
+    bool m_unprocessedAccountsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

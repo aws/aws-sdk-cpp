@@ -18,14 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-CapacityForecast::CapacityForecast() : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 CapacityForecast::CapacityForecast(JsonView jsonValue)
-  : CapacityForecast()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ CapacityForecast& CapacityForecast::operator =(JsonView jsonValue)
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,7 +43,6 @@ CapacityForecast& CapacityForecast::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

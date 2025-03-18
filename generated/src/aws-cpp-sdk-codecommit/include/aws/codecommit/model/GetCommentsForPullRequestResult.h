@@ -29,7 +29,7 @@ namespace Model
   class GetCommentsForPullRequestResult
   {
   public:
-    AWS_CODECOMMIT_API GetCommentsForPullRequestResult();
+    AWS_CODECOMMIT_API GetCommentsForPullRequestResult() = default;
     AWS_CODECOMMIT_API GetCommentsForPullRequestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetCommentsForPullRequestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of comment objects on the pull request.</p>
      */
-    inline const Aws::Vector<CommentsForPullRequest>& GetCommentsForPullRequestData() const{ return m_commentsForPullRequestData; }
-    inline void SetCommentsForPullRequestData(const Aws::Vector<CommentsForPullRequest>& value) { m_commentsForPullRequestData = value; }
-    inline void SetCommentsForPullRequestData(Aws::Vector<CommentsForPullRequest>&& value) { m_commentsForPullRequestData = std::move(value); }
-    inline GetCommentsForPullRequestResult& WithCommentsForPullRequestData(const Aws::Vector<CommentsForPullRequest>& value) { SetCommentsForPullRequestData(value); return *this;}
-    inline GetCommentsForPullRequestResult& WithCommentsForPullRequestData(Aws::Vector<CommentsForPullRequest>&& value) { SetCommentsForPullRequestData(std::move(value)); return *this;}
-    inline GetCommentsForPullRequestResult& AddCommentsForPullRequestData(const CommentsForPullRequest& value) { m_commentsForPullRequestData.push_back(value); return *this; }
-    inline GetCommentsForPullRequestResult& AddCommentsForPullRequestData(CommentsForPullRequest&& value) { m_commentsForPullRequestData.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommentsForPullRequest>& GetCommentsForPullRequestData() const { return m_commentsForPullRequestData; }
+    template<typename CommentsForPullRequestDataT = Aws::Vector<CommentsForPullRequest>>
+    void SetCommentsForPullRequestData(CommentsForPullRequestDataT&& value) { m_commentsForPullRequestDataHasBeenSet = true; m_commentsForPullRequestData = std::forward<CommentsForPullRequestDataT>(value); }
+    template<typename CommentsForPullRequestDataT = Aws::Vector<CommentsForPullRequest>>
+    GetCommentsForPullRequestResult& WithCommentsForPullRequestData(CommentsForPullRequestDataT&& value) { SetCommentsForPullRequestData(std::forward<CommentsForPullRequestDataT>(value)); return *this;}
+    template<typename CommentsForPullRequestDataT = CommentsForPullRequest>
+    GetCommentsForPullRequestResult& AddCommentsForPullRequestData(CommentsForPullRequestDataT&& value) { m_commentsForPullRequestDataHasBeenSet = true; m_commentsForPullRequestData.emplace_back(std::forward<CommentsForPullRequestDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetCommentsForPullRequestResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCommentsForPullRequestResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCommentsForPullRequestResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCommentsForPullRequestResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCommentsForPullRequestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCommentsForPullRequestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCommentsForPullRequestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCommentsForPullRequestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CommentsForPullRequest> m_commentsForPullRequestData;
+    bool m_commentsForPullRequestDataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

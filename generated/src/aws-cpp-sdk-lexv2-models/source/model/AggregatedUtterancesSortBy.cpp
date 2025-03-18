@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AggregatedUtterancesSortBy::AggregatedUtterancesSortBy() : 
-    m_attribute(AggregatedUtterancesSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 AggregatedUtterancesSortBy::AggregatedUtterancesSortBy(JsonView jsonValue)
-  : AggregatedUtterancesSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AggregatedUtterancesSortBy& AggregatedUtterancesSortBy::operator =(JsonView json
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = AggregatedUtterancesSortAttributeMapper::GetAggregatedUtterancesSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

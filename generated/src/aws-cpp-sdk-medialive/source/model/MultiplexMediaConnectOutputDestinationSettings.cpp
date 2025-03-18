@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexMediaConnectOutputDestinationSettings::MultiplexMediaConnectOutputDestinationSettings() : 
-    m_entitlementArnHasBeenSet(false)
-{
-}
-
 MultiplexMediaConnectOutputDestinationSettings::MultiplexMediaConnectOutputDestinationSettings(JsonView jsonValue)
-  : MultiplexMediaConnectOutputDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MultiplexMediaConnectOutputDestinationSettings& MultiplexMediaConnectOutputDesti
   if(jsonValue.ValueExists("entitlementArn"))
   {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
-
     m_entitlementArnHasBeenSet = true;
   }
-
   return *this;
 }
 

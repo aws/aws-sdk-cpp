@@ -27,7 +27,7 @@ namespace Model
   class GetModelResult
   {
   public:
-    AWS_APIGATEWAYV2_API GetModelResult();
+    AWS_APIGATEWAYV2_API GetModelResult() = default;
     AWS_APIGATEWAYV2_API GetModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAYV2_API GetModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,52 +36,44 @@ namespace Model
     /**
      * <p>The content-type for the model, for example, "application/json".</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetModelResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetModelResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetModelResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetModelResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the model.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetModelResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetModelResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetModelResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetModelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model identifier.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
-    inline void SetModelId(const Aws::String& value) { m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelId.assign(value); }
-    inline GetModelResult& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline GetModelResult& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline GetModelResult& WithModelId(const char* value) { SetModelId(value); return *this;}
+    inline const Aws::String& GetModelId() const { return m_modelId; }
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    GetModelResult& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the model. Must be alphanumeric.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetModelResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetModelResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetModelResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetModelResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,38 +81,40 @@ namespace Model
      * <p>The schema for the model. For application/json models, this should be JSON
      * schema draft 4 model.</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Aws::String& value) { m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schema.assign(value); }
-    inline GetModelResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline GetModelResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline GetModelResult& WithSchema(const char* value) { SetSchema(value); return *this;}
+    inline const Aws::String& GetSchema() const { return m_schema; }
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    GetModelResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_modelId;
+    bool m_modelIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_schema;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

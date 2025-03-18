@@ -38,7 +38,7 @@ namespace Model
   class DescribedUser
   {
   public:
-    AWS_TRANSFER_API DescribedUser();
+    AWS_TRANSFER_API DescribedUser() = default;
     AWS_TRANSFER_API DescribedUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) for the user that was
      * requested to be described.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribedUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribedUser& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribedUser& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <code>HomeDirectory</code> parameter is only used if
      * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
-    inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
+    inline const Aws::String& GetHomeDirectory() const { return m_homeDirectory; }
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
-    inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
-    inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
-    inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
-    inline DescribedUser& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
-    inline DescribedUser& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
-    inline DescribedUser& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
+    template<typename HomeDirectoryT = Aws::String>
+    void SetHomeDirectory(HomeDirectoryT&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::forward<HomeDirectoryT>(value); }
+    template<typename HomeDirectoryT = Aws::String>
+    DescribedUser& WithHomeDirectory(HomeDirectoryT&& value) { SetHomeDirectory(std::forward<HomeDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,14 @@ namespace Model
      * you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.</p>
      */
-    inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
+    inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const { return m_homeDirectoryMappings; }
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
-    inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
-    inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
-    inline DescribedUser& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
-    inline DescribedUser& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
-    inline DescribedUser& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
-    inline DescribedUser& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
+    template<typename HomeDirectoryMappingsT = Aws::Vector<HomeDirectoryMapEntry>>
+    void SetHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::forward<HomeDirectoryMappingsT>(value); }
+    template<typename HomeDirectoryMappingsT = Aws::Vector<HomeDirectoryMapEntry>>
+    DescribedUser& WithHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { SetHomeDirectoryMappings(std::forward<HomeDirectoryMappingsT>(value)); return *this;}
+    template<typename HomeDirectoryMappingsT = HomeDirectoryMapEntry>
+    DescribedUser& AddHomeDirectoryMappings(HomeDirectoryMappingsT&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.emplace_back(std::forward<HomeDirectoryMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,12 +114,10 @@ namespace Model
      * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
      * template.</p> 
      */
-    inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
+    inline HomeDirectoryType GetHomeDirectoryType() const { return m_homeDirectoryType; }
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
-    inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
-    inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
-    inline DescribedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
-    inline DescribedUser& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
+    inline void SetHomeDirectoryType(HomeDirectoryType value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
+    inline DescribedUser& WithHomeDirectoryType(HomeDirectoryType value) { SetHomeDirectoryType(value); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +129,12 @@ namespace Model
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline DescribedUser& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline DescribedUser& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline DescribedUser& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    DescribedUser& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +147,12 @@ namespace Model
      * your users get when transferring files into and out of your Amazon EFS file
      * systems.</p>
      */
-    inline const PosixProfile& GetPosixProfile() const{ return m_posixProfile; }
+    inline const PosixProfile& GetPosixProfile() const { return m_posixProfile; }
     inline bool PosixProfileHasBeenSet() const { return m_posixProfileHasBeenSet; }
-    inline void SetPosixProfile(const PosixProfile& value) { m_posixProfileHasBeenSet = true; m_posixProfile = value; }
-    inline void SetPosixProfile(PosixProfile&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::move(value); }
-    inline DescribedUser& WithPosixProfile(const PosixProfile& value) { SetPosixProfile(value); return *this;}
-    inline DescribedUser& WithPosixProfile(PosixProfile&& value) { SetPosixProfile(std::move(value)); return *this;}
+    template<typename PosixProfileT = PosixProfile>
+    void SetPosixProfile(PosixProfileT&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::forward<PosixProfileT>(value); }
+    template<typename PosixProfileT = PosixProfile>
+    DescribedUser& WithPosixProfile(PosixProfileT&& value) { SetPosixProfile(std::forward<PosixProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,14 +165,12 @@ namespace Model
      * trust relationship that allows the server to access your resources when
      * servicing your users' transfer requests.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline DescribedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline DescribedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline DescribedUser& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    DescribedUser& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +178,14 @@ namespace Model
      * <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for
      * the described user.</p>
      */
-    inline const Aws::Vector<SshPublicKey>& GetSshPublicKeys() const{ return m_sshPublicKeys; }
+    inline const Aws::Vector<SshPublicKey>& GetSshPublicKeys() const { return m_sshPublicKeys; }
     inline bool SshPublicKeysHasBeenSet() const { return m_sshPublicKeysHasBeenSet; }
-    inline void SetSshPublicKeys(const Aws::Vector<SshPublicKey>& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys = value; }
-    inline void SetSshPublicKeys(Aws::Vector<SshPublicKey>&& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys = std::move(value); }
-    inline DescribedUser& WithSshPublicKeys(const Aws::Vector<SshPublicKey>& value) { SetSshPublicKeys(value); return *this;}
-    inline DescribedUser& WithSshPublicKeys(Aws::Vector<SshPublicKey>&& value) { SetSshPublicKeys(std::move(value)); return *this;}
-    inline DescribedUser& AddSshPublicKeys(const SshPublicKey& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys.push_back(value); return *this; }
-    inline DescribedUser& AddSshPublicKeys(SshPublicKey&& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys.push_back(std::move(value)); return *this; }
+    template<typename SshPublicKeysT = Aws::Vector<SshPublicKey>>
+    void SetSshPublicKeys(SshPublicKeysT&& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys = std::forward<SshPublicKeysT>(value); }
+    template<typename SshPublicKeysT = Aws::Vector<SshPublicKey>>
+    DescribedUser& WithSshPublicKeys(SshPublicKeysT&& value) { SetSshPublicKeys(std::forward<SshPublicKeysT>(value)); return *this;}
+    template<typename SshPublicKeysT = SshPublicKey>
+    DescribedUser& AddSshPublicKeys(SshPublicKeysT&& value) { m_sshPublicKeysHasBeenSet = true; m_sshPublicKeys.emplace_back(std::forward<SshPublicKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -203,14 +193,14 @@ namespace Model
      * <p>Specifies the key-value pairs for the user requested. Tag can be used to
      * search for and group users for a variety of purposes.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DescribedUser& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribedUser& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribedUser& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DescribedUser& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribedUser& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribedUser& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,14 +209,12 @@ namespace Model
      * are used for authentication purposes. This is the string that will be used by
      * your user when they log in to your server.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline DescribedUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline DescribedUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline DescribedUser& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    DescribedUser& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -239,7 +227,7 @@ namespace Model
     Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;
     bool m_homeDirectoryMappingsHasBeenSet = false;
 
-    HomeDirectoryType m_homeDirectoryType;
+    HomeDirectoryType m_homeDirectoryType{HomeDirectoryType::NOT_SET};
     bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_policy;

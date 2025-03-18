@@ -34,7 +34,7 @@ namespace Model
   class VisualPalette
   {
   public:
-    AWS_QUICKSIGHT_API VisualPalette();
+    AWS_QUICKSIGHT_API VisualPalette() = default;
     AWS_QUICKSIGHT_API VisualPalette(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API VisualPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The chart color options for the visual palette.</p>
      */
-    inline const Aws::String& GetChartColor() const{ return m_chartColor; }
+    inline const Aws::String& GetChartColor() const { return m_chartColor; }
     inline bool ChartColorHasBeenSet() const { return m_chartColorHasBeenSet; }
-    inline void SetChartColor(const Aws::String& value) { m_chartColorHasBeenSet = true; m_chartColor = value; }
-    inline void SetChartColor(Aws::String&& value) { m_chartColorHasBeenSet = true; m_chartColor = std::move(value); }
-    inline void SetChartColor(const char* value) { m_chartColorHasBeenSet = true; m_chartColor.assign(value); }
-    inline VisualPalette& WithChartColor(const Aws::String& value) { SetChartColor(value); return *this;}
-    inline VisualPalette& WithChartColor(Aws::String&& value) { SetChartColor(std::move(value)); return *this;}
-    inline VisualPalette& WithChartColor(const char* value) { SetChartColor(value); return *this;}
+    template<typename ChartColorT = Aws::String>
+    void SetChartColor(ChartColorT&& value) { m_chartColorHasBeenSet = true; m_chartColor = std::forward<ChartColorT>(value); }
+    template<typename ChartColorT = Aws::String>
+    VisualPalette& WithChartColor(ChartColorT&& value) { SetChartColor(std::forward<ChartColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color map options for the visual palette.</p>
      */
-    inline const Aws::Vector<DataPathColor>& GetColorMap() const{ return m_colorMap; }
+    inline const Aws::Vector<DataPathColor>& GetColorMap() const { return m_colorMap; }
     inline bool ColorMapHasBeenSet() const { return m_colorMapHasBeenSet; }
-    inline void SetColorMap(const Aws::Vector<DataPathColor>& value) { m_colorMapHasBeenSet = true; m_colorMap = value; }
-    inline void SetColorMap(Aws::Vector<DataPathColor>&& value) { m_colorMapHasBeenSet = true; m_colorMap = std::move(value); }
-    inline VisualPalette& WithColorMap(const Aws::Vector<DataPathColor>& value) { SetColorMap(value); return *this;}
-    inline VisualPalette& WithColorMap(Aws::Vector<DataPathColor>&& value) { SetColorMap(std::move(value)); return *this;}
-    inline VisualPalette& AddColorMap(const DataPathColor& value) { m_colorMapHasBeenSet = true; m_colorMap.push_back(value); return *this; }
-    inline VisualPalette& AddColorMap(DataPathColor&& value) { m_colorMapHasBeenSet = true; m_colorMap.push_back(std::move(value)); return *this; }
+    template<typename ColorMapT = Aws::Vector<DataPathColor>>
+    void SetColorMap(ColorMapT&& value) { m_colorMapHasBeenSet = true; m_colorMap = std::forward<ColorMapT>(value); }
+    template<typename ColorMapT = Aws::Vector<DataPathColor>>
+    VisualPalette& WithColorMap(ColorMapT&& value) { SetColorMap(std::forward<ColorMapT>(value)); return *this;}
+    template<typename ColorMapT = DataPathColor>
+    VisualPalette& AddColorMap(ColorMapT&& value) { m_colorMapHasBeenSet = true; m_colorMap.emplace_back(std::forward<ColorMapT>(value)); return *this; }
     ///@}
   private:
 

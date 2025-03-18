@@ -18,23 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CurrentInstance::CurrentInstance() : 
-    m_resourceIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_resourceUtilizationHasBeenSet(false),
-    m_reservationCoveredHoursInLookbackPeriodHasBeenSet(false),
-    m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet(false),
-    m_onDemandHoursInLookbackPeriodHasBeenSet(false),
-    m_totalRunningHoursInLookbackPeriodHasBeenSet(false),
-    m_monthlyCostHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 CurrentInstance::CurrentInstance(JsonView jsonValue)
-  : CurrentInstance()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ CurrentInstance& CurrentInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceName"))
   {
     m_instanceName = jsonValue.GetString("InstanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -64,63 +44,46 @@ CurrentInstance& CurrentInstance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("ResourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceUtilization"))
   {
     m_resourceUtilization = jsonValue.GetObject("ResourceUtilization");
-
     m_resourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservationCoveredHoursInLookbackPeriod"))
   {
     m_reservationCoveredHoursInLookbackPeriod = jsonValue.GetString("ReservationCoveredHoursInLookbackPeriod");
-
     m_reservationCoveredHoursInLookbackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansCoveredHoursInLookbackPeriod"))
   {
     m_savingsPlansCoveredHoursInLookbackPeriod = jsonValue.GetString("SavingsPlansCoveredHoursInLookbackPeriod");
-
     m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandHoursInLookbackPeriod"))
   {
     m_onDemandHoursInLookbackPeriod = jsonValue.GetString("OnDemandHoursInLookbackPeriod");
-
     m_onDemandHoursInLookbackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRunningHoursInLookbackPeriod"))
   {
     m_totalRunningHoursInLookbackPeriod = jsonValue.GetString("TotalRunningHoursInLookbackPeriod");
-
     m_totalRunningHoursInLookbackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonthlyCost"))
   {
     m_monthlyCost = jsonValue.GetString("MonthlyCost");
-
     m_monthlyCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

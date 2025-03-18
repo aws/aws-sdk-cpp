@@ -18,15 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QueryComputeResponse::QueryComputeResponse() : 
-    m_computeMode(ComputeMode::NOT_SET),
-    m_computeModeHasBeenSet(false),
-    m_provisionedCapacityHasBeenSet(false)
-{
-}
-
 QueryComputeResponse::QueryComputeResponse(JsonView jsonValue)
-  : QueryComputeResponse()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ QueryComputeResponse& QueryComputeResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComputeMode"))
   {
     m_computeMode = ComputeModeMapper::GetComputeModeForName(jsonValue.GetString("ComputeMode"));
-
     m_computeModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedCapacity"))
   {
     m_provisionedCapacity = jsonValue.GetObject("ProvisionedCapacity");
-
     m_provisionedCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

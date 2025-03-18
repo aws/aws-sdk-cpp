@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCrossAccountAttachmentRequest::DeleteCrossAccountAttachmentRequest() : 
-    m_attachmentArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCrossAccountAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

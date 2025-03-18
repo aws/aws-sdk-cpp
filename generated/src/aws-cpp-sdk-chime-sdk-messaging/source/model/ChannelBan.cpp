@@ -18,16 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelBan::ChannelBan() : 
-    m_memberHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 ChannelBan::ChannelBan(JsonView jsonValue)
-  : ChannelBan()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ChannelBan& ChannelBan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Member"))
   {
     m_member = jsonValue.GetObject("Member");
-
     m_memberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

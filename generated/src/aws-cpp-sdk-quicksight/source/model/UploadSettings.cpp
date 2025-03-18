@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-UploadSettings::UploadSettings() : 
-    m_format(FileFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_startFromRow(0),
-    m_startFromRowHasBeenSet(false),
-    m_containsHeader(false),
-    m_containsHeaderHasBeenSet(false),
-    m_textQualifier(TextQualifier::NOT_SET),
-    m_textQualifierHasBeenSet(false),
-    m_delimiterHasBeenSet(false)
-{
-}
-
 UploadSettings::UploadSettings(JsonView jsonValue)
-  : UploadSettings()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ UploadSettings& UploadSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Format"))
   {
     m_format = FileFormatMapper::GetFileFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartFromRow"))
   {
     m_startFromRow = jsonValue.GetInteger("StartFromRow");
-
     m_startFromRowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainsHeader"))
   {
     m_containsHeader = jsonValue.GetBool("ContainsHeader");
-
     m_containsHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextQualifier"))
   {
     m_textQualifier = TextQualifierMapper::GetTextQualifierForName(jsonValue.GetString("TextQualifier"));
-
     m_textQualifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   return *this;
 }
 

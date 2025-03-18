@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginGroupFailoverCriteria::OriginGroupFailoverCriteria() : 
-    m_statusCodesHasBeenSet(false)
-{
-}
-
 OriginGroupFailoverCriteria::OriginGroupFailoverCriteria(const XmlNode& xmlNode)
-  : OriginGroupFailoverCriteria()
 {
   *this = xmlNode;
 }

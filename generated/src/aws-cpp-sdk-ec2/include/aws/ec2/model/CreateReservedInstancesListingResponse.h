@@ -35,7 +35,7 @@ namespace Model
   class CreateReservedInstancesListingResponse
   {
   public:
-    AWS_EC2_API CreateReservedInstancesListingResponse();
+    AWS_EC2_API CreateReservedInstancesListingResponse() = default;
     AWS_EC2_API CreateReservedInstancesListingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateReservedInstancesListingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>Information about the Standard Reserved Instance listing.</p>
      */
-    inline const Aws::Vector<ReservedInstancesListing>& GetReservedInstancesListings() const{ return m_reservedInstancesListings; }
-    inline void SetReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { m_reservedInstancesListings = value; }
-    inline void SetReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { m_reservedInstancesListings = std::move(value); }
-    inline CreateReservedInstancesListingResponse& WithReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { SetReservedInstancesListings(value); return *this;}
-    inline CreateReservedInstancesListingResponse& WithReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { SetReservedInstancesListings(std::move(value)); return *this;}
-    inline CreateReservedInstancesListingResponse& AddReservedInstancesListings(const ReservedInstancesListing& value) { m_reservedInstancesListings.push_back(value); return *this; }
-    inline CreateReservedInstancesListingResponse& AddReservedInstancesListings(ReservedInstancesListing&& value) { m_reservedInstancesListings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedInstancesListing>& GetReservedInstancesListings() const { return m_reservedInstancesListings; }
+    template<typename ReservedInstancesListingsT = Aws::Vector<ReservedInstancesListing>>
+    void SetReservedInstancesListings(ReservedInstancesListingsT&& value) { m_reservedInstancesListingsHasBeenSet = true; m_reservedInstancesListings = std::forward<ReservedInstancesListingsT>(value); }
+    template<typename ReservedInstancesListingsT = Aws::Vector<ReservedInstancesListing>>
+    CreateReservedInstancesListingResponse& WithReservedInstancesListings(ReservedInstancesListingsT&& value) { SetReservedInstancesListings(std::forward<ReservedInstancesListingsT>(value)); return *this;}
+    template<typename ReservedInstancesListingsT = ReservedInstancesListing>
+    CreateReservedInstancesListingResponse& AddReservedInstancesListings(ReservedInstancesListingsT&& value) { m_reservedInstancesListingsHasBeenSet = true; m_reservedInstancesListings.emplace_back(std::forward<ReservedInstancesListingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateReservedInstancesListingResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateReservedInstancesListingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateReservedInstancesListingResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReservedInstancesListing> m_reservedInstancesListings;
+    bool m_reservedInstancesListingsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

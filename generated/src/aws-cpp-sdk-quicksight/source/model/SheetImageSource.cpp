@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetImageSource::SheetImageSource() : 
-    m_sheetImageStaticFileSourceHasBeenSet(false)
-{
-}
-
 SheetImageSource::SheetImageSource(JsonView jsonValue)
-  : SheetImageSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SheetImageSource& SheetImageSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SheetImageStaticFileSource"))
   {
     m_sheetImageStaticFileSource = jsonValue.GetObject("SheetImageStaticFileSource");
-
     m_sheetImageStaticFileSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

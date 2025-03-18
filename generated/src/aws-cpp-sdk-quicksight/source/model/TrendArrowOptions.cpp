@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TrendArrowOptions::TrendArrowOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 TrendArrowOptions::TrendArrowOptions(JsonView jsonValue)
-  : TrendArrowOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TrendArrowOptions& TrendArrowOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

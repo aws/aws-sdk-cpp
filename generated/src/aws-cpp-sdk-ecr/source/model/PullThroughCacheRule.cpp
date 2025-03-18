@@ -18,22 +18,7 @@ namespace ECR
 namespace Model
 {
 
-PullThroughCacheRule::PullThroughCacheRule() : 
-    m_ecrRepositoryPrefixHasBeenSet(false),
-    m_upstreamRegistryUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_credentialArnHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false),
-    m_upstreamRepositoryPrefixHasBeenSet(false),
-    m_upstreamRegistry(UpstreamRegistry::NOT_SET),
-    m_upstreamRegistryHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 PullThroughCacheRule::PullThroughCacheRule(JsonView jsonValue)
-  : PullThroughCacheRule()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ PullThroughCacheRule& PullThroughCacheRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ecrRepositoryPrefix"))
   {
     m_ecrRepositoryPrefix = jsonValue.GetString("ecrRepositoryPrefix");
-
     m_ecrRepositoryPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRegistryUrl"))
   {
     m_upstreamRegistryUrl = jsonValue.GetString("upstreamRegistryUrl");
-
     m_upstreamRegistryUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialArn"))
   {
     m_credentialArn = jsonValue.GetString("credentialArn");
-
     m_credentialArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customRoleArn"))
   {
     m_customRoleArn = jsonValue.GetString("customRoleArn");
-
     m_customRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRepositoryPrefix"))
   {
     m_upstreamRepositoryPrefix = jsonValue.GetString("upstreamRepositoryPrefix");
-
     m_upstreamRepositoryPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRegistry"))
   {
     m_upstreamRegistry = UpstreamRegistryMapper::GetUpstreamRegistryForName(jsonValue.GetString("upstreamRegistry"));
-
     m_upstreamRegistryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

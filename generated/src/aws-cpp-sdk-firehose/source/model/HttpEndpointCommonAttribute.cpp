@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-HttpEndpointCommonAttribute::HttpEndpointCommonAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 HttpEndpointCommonAttribute::HttpEndpointCommonAttribute(JsonView jsonValue)
-  : HttpEndpointCommonAttribute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HttpEndpointCommonAttribute& HttpEndpointCommonAttribute::operator =(JsonView js
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeValue"))
   {
     m_attributeValue = jsonValue.GetString("AttributeValue");
-
     m_attributeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

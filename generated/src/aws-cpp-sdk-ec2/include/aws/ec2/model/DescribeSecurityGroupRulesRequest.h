@@ -23,7 +23,7 @@ namespace Model
   class DescribeSecurityGroupRulesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeSecurityGroupRulesRequest();
+    AWS_EC2_API DescribeSecurityGroupRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,29 +49,28 @@ namespace Model
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSecurityGroupRulesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeSecurityGroupRulesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeSecurityGroupRulesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeSecurityGroupRulesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeSecurityGroupRulesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeSecurityGroupRulesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the security group rules.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const { return m_securityGroupRuleIds; }
     inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
-    inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
-    inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
-    inline DescribeSecurityGroupRulesRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
-    inline DescribeSecurityGroupRulesRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
-    inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
-    inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
-    inline DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+    template<typename SecurityGroupRuleIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupRuleIds(SecurityGroupRuleIdsT&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::forward<SecurityGroupRuleIdsT>(value); }
+    template<typename SecurityGroupRuleIdsT = Aws::Vector<Aws::String>>
+    DescribeSecurityGroupRulesRequest& WithSecurityGroupRuleIds(SecurityGroupRuleIdsT&& value) { SetSecurityGroupRuleIds(std::forward<SecurityGroupRuleIdsT>(value)); return *this;}
+    template<typename SecurityGroupRuleIdsT = Aws::String>
+    DescribeSecurityGroupRulesRequest& AddSecurityGroupRuleIds(SecurityGroupRuleIdsT&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.emplace_back(std::forward<SecurityGroupRuleIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,7 +80,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeSecurityGroupRulesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -92,14 +91,12 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSecurityGroupRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSecurityGroupRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSecurityGroupRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSecurityGroupRulesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +107,7 @@ namespace Model
      * are returned. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSecurityGroupRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -123,13 +120,13 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroupRuleIds;
     bool m_securityGroupRuleIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

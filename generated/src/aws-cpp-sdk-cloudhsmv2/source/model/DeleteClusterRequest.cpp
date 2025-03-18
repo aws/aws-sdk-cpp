@@ -12,11 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterRequest::DeleteClusterRequest() : 
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class ListAssetsRequest : public MediaPackageVodRequest
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API ListAssetsRequest();
+    AWS_MEDIAPACKAGEVOD_API ListAssetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * Upper bound on number of records to return.
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -52,32 +52,28 @@ namespace Model
     /**
      * A token used to resume pagination from the end of a previous request.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Returns Assets associated with the specified PackagingGroup.
      */
-    inline const Aws::String& GetPackagingGroupId() const{ return m_packagingGroupId; }
+    inline const Aws::String& GetPackagingGroupId() const { return m_packagingGroupId; }
     inline bool PackagingGroupIdHasBeenSet() const { return m_packagingGroupIdHasBeenSet; }
-    inline void SetPackagingGroupId(const Aws::String& value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId = value; }
-    inline void SetPackagingGroupId(Aws::String&& value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId = std::move(value); }
-    inline void SetPackagingGroupId(const char* value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId.assign(value); }
-    inline ListAssetsRequest& WithPackagingGroupId(const Aws::String& value) { SetPackagingGroupId(value); return *this;}
-    inline ListAssetsRequest& WithPackagingGroupId(Aws::String&& value) { SetPackagingGroupId(std::move(value)); return *this;}
-    inline ListAssetsRequest& WithPackagingGroupId(const char* value) { SetPackagingGroupId(value); return *this;}
+    template<typename PackagingGroupIdT = Aws::String>
+    void SetPackagingGroupId(PackagingGroupIdT&& value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId = std::forward<PackagingGroupIdT>(value); }
+    template<typename PackagingGroupIdT = Aws::String>
+    ListAssetsRequest& WithPackagingGroupId(PackagingGroupIdT&& value) { SetPackagingGroupId(std::forward<PackagingGroupIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

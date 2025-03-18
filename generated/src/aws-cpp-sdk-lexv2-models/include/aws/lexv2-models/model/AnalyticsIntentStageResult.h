@@ -36,7 +36,7 @@ namespace Model
   class AnalyticsIntentStageResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentStageResult();
+    AWS_LEXMODELSV2_API AnalyticsIntentStageResult() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentStageResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentStageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>A list of objects containing the criteria you requested for binning results
      * and the values of the bins.</p>
      */
-    inline const Aws::Vector<AnalyticsBinKey>& GetBinKeys() const{ return m_binKeys; }
+    inline const Aws::Vector<AnalyticsBinKey>& GetBinKeys() const { return m_binKeys; }
     inline bool BinKeysHasBeenSet() const { return m_binKeysHasBeenSet; }
-    inline void SetBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { m_binKeysHasBeenSet = true; m_binKeys = value; }
-    inline void SetBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { m_binKeysHasBeenSet = true; m_binKeys = std::move(value); }
-    inline AnalyticsIntentStageResult& WithBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { SetBinKeys(value); return *this;}
-    inline AnalyticsIntentStageResult& WithBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { SetBinKeys(std::move(value)); return *this;}
-    inline AnalyticsIntentStageResult& AddBinKeys(const AnalyticsBinKey& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(value); return *this; }
-    inline AnalyticsIntentStageResult& AddBinKeys(AnalyticsBinKey&& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(std::move(value)); return *this; }
+    template<typename BinKeysT = Aws::Vector<AnalyticsBinKey>>
+    void SetBinKeys(BinKeysT&& value) { m_binKeysHasBeenSet = true; m_binKeys = std::forward<BinKeysT>(value); }
+    template<typename BinKeysT = Aws::Vector<AnalyticsBinKey>>
+    AnalyticsIntentStageResult& WithBinKeys(BinKeysT&& value) { SetBinKeys(std::forward<BinKeysT>(value)); return *this;}
+    template<typename BinKeysT = AnalyticsBinKey>
+    AnalyticsIntentStageResult& AddBinKeys(BinKeysT&& value) { m_binKeysHasBeenSet = true; m_binKeys.emplace_back(std::forward<BinKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * <p>A list of objects containing the criteria you requested for grouping results
      * and the values of the bins.</p>
      */
-    inline const Aws::Vector<AnalyticsIntentStageGroupByKey>& GetGroupByKeys() const{ return m_groupByKeys; }
+    inline const Aws::Vector<AnalyticsIntentStageGroupByKey>& GetGroupByKeys() const { return m_groupByKeys; }
     inline bool GroupByKeysHasBeenSet() const { return m_groupByKeysHasBeenSet; }
-    inline void SetGroupByKeys(const Aws::Vector<AnalyticsIntentStageGroupByKey>& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = value; }
-    inline void SetGroupByKeys(Aws::Vector<AnalyticsIntentStageGroupByKey>&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = std::move(value); }
-    inline AnalyticsIntentStageResult& WithGroupByKeys(const Aws::Vector<AnalyticsIntentStageGroupByKey>& value) { SetGroupByKeys(value); return *this;}
-    inline AnalyticsIntentStageResult& WithGroupByKeys(Aws::Vector<AnalyticsIntentStageGroupByKey>&& value) { SetGroupByKeys(std::move(value)); return *this;}
-    inline AnalyticsIntentStageResult& AddGroupByKeys(const AnalyticsIntentStageGroupByKey& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(value); return *this; }
-    inline AnalyticsIntentStageResult& AddGroupByKeys(AnalyticsIntentStageGroupByKey&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(std::move(value)); return *this; }
+    template<typename GroupByKeysT = Aws::Vector<AnalyticsIntentStageGroupByKey>>
+    void SetGroupByKeys(GroupByKeysT&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = std::forward<GroupByKeysT>(value); }
+    template<typename GroupByKeysT = Aws::Vector<AnalyticsIntentStageGroupByKey>>
+    AnalyticsIntentStageResult& WithGroupByKeys(GroupByKeysT&& value) { SetGroupByKeys(std::forward<GroupByKeysT>(value)); return *this;}
+    template<typename GroupByKeysT = AnalyticsIntentStageGroupByKey>
+    AnalyticsIntentStageResult& AddGroupByKeys(GroupByKeysT&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.emplace_back(std::forward<GroupByKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +78,14 @@ namespace Model
      * statistic for the metric you want to return, and the method by which to organize
      * the results.</p>
      */
-    inline const Aws::Vector<AnalyticsIntentStageMetricResult>& GetMetricsResults() const{ return m_metricsResults; }
+    inline const Aws::Vector<AnalyticsIntentStageMetricResult>& GetMetricsResults() const { return m_metricsResults; }
     inline bool MetricsResultsHasBeenSet() const { return m_metricsResultsHasBeenSet; }
-    inline void SetMetricsResults(const Aws::Vector<AnalyticsIntentStageMetricResult>& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = value; }
-    inline void SetMetricsResults(Aws::Vector<AnalyticsIntentStageMetricResult>&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = std::move(value); }
-    inline AnalyticsIntentStageResult& WithMetricsResults(const Aws::Vector<AnalyticsIntentStageMetricResult>& value) { SetMetricsResults(value); return *this;}
-    inline AnalyticsIntentStageResult& WithMetricsResults(Aws::Vector<AnalyticsIntentStageMetricResult>&& value) { SetMetricsResults(std::move(value)); return *this;}
-    inline AnalyticsIntentStageResult& AddMetricsResults(const AnalyticsIntentStageMetricResult& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(value); return *this; }
-    inline AnalyticsIntentStageResult& AddMetricsResults(AnalyticsIntentStageMetricResult&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(std::move(value)); return *this; }
+    template<typename MetricsResultsT = Aws::Vector<AnalyticsIntentStageMetricResult>>
+    void SetMetricsResults(MetricsResultsT&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = std::forward<MetricsResultsT>(value); }
+    template<typename MetricsResultsT = Aws::Vector<AnalyticsIntentStageMetricResult>>
+    AnalyticsIntentStageResult& WithMetricsResults(MetricsResultsT&& value) { SetMetricsResults(std::forward<MetricsResultsT>(value)); return *this;}
+    template<typename MetricsResultsT = AnalyticsIntentStageMetricResult>
+    AnalyticsIntentStageResult& AddMetricsResults(MetricsResultsT&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.emplace_back(std::forward<MetricsResultsT>(value)); return *this; }
     ///@}
   private:
 

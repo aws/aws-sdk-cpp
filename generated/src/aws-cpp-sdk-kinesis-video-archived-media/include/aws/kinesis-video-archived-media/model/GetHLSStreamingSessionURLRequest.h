@@ -26,7 +26,7 @@ namespace Model
   class GetHLSStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetHLSStreamingSessionURLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>You must specify either the <code>StreamName</code> or the
      * <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline GetHLSStreamingSessionURLRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    GetHLSStreamingSessionURLRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * master playlist URL.</p> <p>You must specify either the <code>StreamName</code>
      * or the <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline GetHLSStreamingSessionURLRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    GetHLSStreamingSessionURLRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +108,10 @@ namespace Model
      * lead to unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
-    inline const HLSPlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
+    inline HLSPlaybackMode GetPlaybackMode() const { return m_playbackMode; }
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
-    inline void SetPlaybackMode(const HLSPlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
-    inline void SetPlaybackMode(HLSPlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
-    inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(const HLSPlaybackMode& value) { SetPlaybackMode(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(HLSPlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
+    inline void SetPlaybackMode(HLSPlaybackMode value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
+    inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(HLSPlaybackMode value) { SetPlaybackMode(value); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +126,12 @@ namespace Model
      * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be
      * set.</p>
      */
-    inline const HLSFragmentSelector& GetHLSFragmentSelector() const{ return m_hLSFragmentSelector; }
+    inline const HLSFragmentSelector& GetHLSFragmentSelector() const { return m_hLSFragmentSelector; }
     inline bool HLSFragmentSelectorHasBeenSet() const { return m_hLSFragmentSelectorHasBeenSet; }
-    inline void SetHLSFragmentSelector(const HLSFragmentSelector& value) { m_hLSFragmentSelectorHasBeenSet = true; m_hLSFragmentSelector = value; }
-    inline void SetHLSFragmentSelector(HLSFragmentSelector&& value) { m_hLSFragmentSelectorHasBeenSet = true; m_hLSFragmentSelector = std::move(value); }
-    inline GetHLSStreamingSessionURLRequest& WithHLSFragmentSelector(const HLSFragmentSelector& value) { SetHLSFragmentSelector(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithHLSFragmentSelector(HLSFragmentSelector&& value) { SetHLSFragmentSelector(std::move(value)); return *this;}
+    template<typename HLSFragmentSelectorT = HLSFragmentSelector>
+    void SetHLSFragmentSelector(HLSFragmentSelectorT&& value) { m_hLSFragmentSelectorHasBeenSet = true; m_hLSFragmentSelector = std::forward<HLSFragmentSelectorT>(value); }
+    template<typename HLSFragmentSelectorT = HLSFragmentSelector>
+    GetHLSStreamingSessionURLRequest& WithHLSFragmentSelector(HLSFragmentSelectorT&& value) { SetHLSFragmentSelector(std::forward<HLSFragmentSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +146,10 @@ namespace Model
      * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
      * <code>FRAGMENTED_MP4</code>.</p>
      */
-    inline const ContainerFormat& GetContainerFormat() const{ return m_containerFormat; }
+    inline ContainerFormat GetContainerFormat() const { return m_containerFormat; }
     inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
-    inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
-    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
-    inline GetHLSStreamingSessionURLRequest& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
+    inline void SetContainerFormat(ContainerFormat value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline GetHLSStreamingSessionURLRequest& WithContainerFormat(ContainerFormat value) { SetContainerFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +180,10 @@ namespace Model
      * <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
      */
-    inline const HLSDiscontinuityMode& GetDiscontinuityMode() const{ return m_discontinuityMode; }
+    inline HLSDiscontinuityMode GetDiscontinuityMode() const { return m_discontinuityMode; }
     inline bool DiscontinuityModeHasBeenSet() const { return m_discontinuityModeHasBeenSet; }
-    inline void SetDiscontinuityMode(const HLSDiscontinuityMode& value) { m_discontinuityModeHasBeenSet = true; m_discontinuityMode = value; }
-    inline void SetDiscontinuityMode(HLSDiscontinuityMode&& value) { m_discontinuityModeHasBeenSet = true; m_discontinuityMode = std::move(value); }
-    inline GetHLSStreamingSessionURLRequest& WithDiscontinuityMode(const HLSDiscontinuityMode& value) { SetDiscontinuityMode(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithDiscontinuityMode(HLSDiscontinuityMode&& value) { SetDiscontinuityMode(std::move(value)); return *this;}
+    inline void SetDiscontinuityMode(HLSDiscontinuityMode value) { m_discontinuityModeHasBeenSet = true; m_discontinuityMode = value; }
+    inline GetHLSStreamingSessionURLRequest& WithDiscontinuityMode(HLSDiscontinuityMode value) { SetDiscontinuityMode(value); return *this;}
     ///@}
 
     ///@{
@@ -211,12 +201,10 @@ namespace Model
      * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
      * timestamps. </p>
      */
-    inline const HLSDisplayFragmentTimestamp& GetDisplayFragmentTimestamp() const{ return m_displayFragmentTimestamp; }
+    inline HLSDisplayFragmentTimestamp GetDisplayFragmentTimestamp() const { return m_displayFragmentTimestamp; }
     inline bool DisplayFragmentTimestampHasBeenSet() const { return m_displayFragmentTimestampHasBeenSet; }
-    inline void SetDisplayFragmentTimestamp(const HLSDisplayFragmentTimestamp& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = value; }
-    inline void SetDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp&& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = std::move(value); }
-    inline GetHLSStreamingSessionURLRequest& WithDisplayFragmentTimestamp(const HLSDisplayFragmentTimestamp& value) { SetDisplayFragmentTimestamp(value); return *this;}
-    inline GetHLSStreamingSessionURLRequest& WithDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp&& value) { SetDisplayFragmentTimestamp(std::move(value)); return *this;}
+    inline void SetDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = value; }
+    inline GetHLSStreamingSessionURLRequest& WithDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp value) { SetDisplayFragmentTimestamp(value); return *this;}
     ///@}
 
     ///@{
@@ -228,7 +216,7 @@ namespace Model
      * <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for
      * that session.</p> <p>The default is 300 (5 minutes).</p>
      */
-    inline int GetExpires() const{ return m_expires; }
+    inline int GetExpires() const { return m_expires; }
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
     inline void SetExpires(int value) { m_expiresHasBeenSet = true; m_expires = value; }
     inline GetHLSStreamingSessionURLRequest& WithExpires(int value) { SetExpires(value); return *this;}
@@ -252,7 +240,7 @@ namespace Model
      * streams with 1-second fragments, and more than 13 hours of video on streams with
      * 10-second fragments.</p>
      */
-    inline long long GetMaxMediaPlaylistFragmentResults() const{ return m_maxMediaPlaylistFragmentResults; }
+    inline long long GetMaxMediaPlaylistFragmentResults() const { return m_maxMediaPlaylistFragmentResults; }
     inline bool MaxMediaPlaylistFragmentResultsHasBeenSet() const { return m_maxMediaPlaylistFragmentResultsHasBeenSet; }
     inline void SetMaxMediaPlaylistFragmentResults(long long value) { m_maxMediaPlaylistFragmentResultsHasBeenSet = true; m_maxMediaPlaylistFragmentResults = value; }
     inline GetHLSStreamingSessionURLRequest& WithMaxMediaPlaylistFragmentResults(long long value) { SetMaxMediaPlaylistFragmentResults(value); return *this;}
@@ -265,25 +253,25 @@ namespace Model
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet = false;
 
-    HLSPlaybackMode m_playbackMode;
+    HLSPlaybackMode m_playbackMode{HLSPlaybackMode::NOT_SET};
     bool m_playbackModeHasBeenSet = false;
 
     HLSFragmentSelector m_hLSFragmentSelector;
     bool m_hLSFragmentSelectorHasBeenSet = false;
 
-    ContainerFormat m_containerFormat;
+    ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
     bool m_containerFormatHasBeenSet = false;
 
-    HLSDiscontinuityMode m_discontinuityMode;
+    HLSDiscontinuityMode m_discontinuityMode{HLSDiscontinuityMode::NOT_SET};
     bool m_discontinuityModeHasBeenSet = false;
 
-    HLSDisplayFragmentTimestamp m_displayFragmentTimestamp;
+    HLSDisplayFragmentTimestamp m_displayFragmentTimestamp{HLSDisplayFragmentTimestamp::NOT_SET};
     bool m_displayFragmentTimestampHasBeenSet = false;
 
-    int m_expires;
+    int m_expires{0};
     bool m_expiresHasBeenSet = false;
 
-    long long m_maxMediaPlaylistFragmentResults;
+    long long m_maxMediaPlaylistFragmentResults{0};
     bool m_maxMediaPlaylistFragmentResultsHasBeenSet = false;
   };
 

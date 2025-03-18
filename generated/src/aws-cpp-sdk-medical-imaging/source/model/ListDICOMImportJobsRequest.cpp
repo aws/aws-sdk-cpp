@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDICOMImportJobsRequest::ListDICOMImportJobsRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDICOMImportJobsRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class S3ContentBaseLocationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate();
+    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate() = default;
     AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketARNUpdate() const{ return m_bucketARNUpdate; }
+    inline const Aws::String& GetBucketARNUpdate() const { return m_bucketARNUpdate; }
     inline bool BucketARNUpdateHasBeenSet() const { return m_bucketARNUpdateHasBeenSet; }
-    inline void SetBucketARNUpdate(const Aws::String& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = value; }
-    inline void SetBucketARNUpdate(Aws::String&& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = std::move(value); }
-    inline void SetBucketARNUpdate(const char* value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate.assign(value); }
-    inline S3ContentBaseLocationUpdate& WithBucketARNUpdate(const Aws::String& value) { SetBucketARNUpdate(value); return *this;}
-    inline S3ContentBaseLocationUpdate& WithBucketARNUpdate(Aws::String&& value) { SetBucketARNUpdate(std::move(value)); return *this;}
-    inline S3ContentBaseLocationUpdate& WithBucketARNUpdate(const char* value) { SetBucketARNUpdate(value); return *this;}
+    template<typename BucketARNUpdateT = Aws::String>
+    void SetBucketARNUpdate(BucketARNUpdateT&& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = std::forward<BucketARNUpdateT>(value); }
+    template<typename BucketARNUpdateT = Aws::String>
+    S3ContentBaseLocationUpdate& WithBucketARNUpdate(BucketARNUpdateT&& value) { SetBucketARNUpdate(std::forward<BucketARNUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated S3 bucket path.</p>
      */
-    inline const Aws::String& GetBasePathUpdate() const{ return m_basePathUpdate; }
+    inline const Aws::String& GetBasePathUpdate() const { return m_basePathUpdate; }
     inline bool BasePathUpdateHasBeenSet() const { return m_basePathUpdateHasBeenSet; }
-    inline void SetBasePathUpdate(const Aws::String& value) { m_basePathUpdateHasBeenSet = true; m_basePathUpdate = value; }
-    inline void SetBasePathUpdate(Aws::String&& value) { m_basePathUpdateHasBeenSet = true; m_basePathUpdate = std::move(value); }
-    inline void SetBasePathUpdate(const char* value) { m_basePathUpdateHasBeenSet = true; m_basePathUpdate.assign(value); }
-    inline S3ContentBaseLocationUpdate& WithBasePathUpdate(const Aws::String& value) { SetBasePathUpdate(value); return *this;}
-    inline S3ContentBaseLocationUpdate& WithBasePathUpdate(Aws::String&& value) { SetBasePathUpdate(std::move(value)); return *this;}
-    inline S3ContentBaseLocationUpdate& WithBasePathUpdate(const char* value) { SetBasePathUpdate(value); return *this;}
+    template<typename BasePathUpdateT = Aws::String>
+    void SetBasePathUpdate(BasePathUpdateT&& value) { m_basePathUpdateHasBeenSet = true; m_basePathUpdate = std::forward<BasePathUpdateT>(value); }
+    template<typename BasePathUpdateT = Aws::String>
+    S3ContentBaseLocationUpdate& WithBasePathUpdate(BasePathUpdateT&& value) { SetBasePathUpdate(std::forward<BasePathUpdateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-MixedInstanceConfiguration::MixedInstanceConfiguration() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 MixedInstanceConfiguration::MixedInstanceConfiguration(JsonView jsonValue)
-  : MixedInstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MixedInstanceConfiguration& MixedInstanceConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

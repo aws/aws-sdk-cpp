@@ -18,16 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-StorageRuleType::StorageRuleType() : 
-    m_storageAllocatedInBytes(0),
-    m_storageAllocatedInBytesHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 StorageRuleType::StorageRuleType(JsonView jsonValue)
-  : StorageRuleType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StorageRuleType& StorageRuleType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageAllocatedInBytes"))
   {
     m_storageAllocatedInBytes = jsonValue.GetInt64("StorageAllocatedInBytes");
-
     m_storageAllocatedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("StorageType"));
-
     m_storageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

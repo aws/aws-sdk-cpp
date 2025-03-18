@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceTreeRequest::DeleteResourceTreeRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceTreeRequest::SerializePayload() const
 {
   JsonValue payload;

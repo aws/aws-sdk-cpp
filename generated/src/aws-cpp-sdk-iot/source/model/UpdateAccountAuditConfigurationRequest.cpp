@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountAuditConfigurationRequest::UpdateAccountAuditConfigurationRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_auditNotificationTargetConfigurationsHasBeenSet(false),
-    m_auditCheckConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountAuditConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

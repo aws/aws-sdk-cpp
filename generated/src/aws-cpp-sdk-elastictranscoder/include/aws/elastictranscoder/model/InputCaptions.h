@@ -33,7 +33,7 @@ namespace Model
   class InputCaptions
   {
   public:
-    AWS_ELASTICTRANSCODER_API InputCaptions();
+    AWS_ELASTICTRANSCODER_API InputCaptions() = default;
     AWS_ELASTICTRANSCODER_API InputCaptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API InputCaptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * you specify in <code>CaptionSources</code>.</p> </li> </ul> <p>
      * <code>MergePolicy</code> cannot be null.</p>
      */
-    inline const Aws::String& GetMergePolicy() const{ return m_mergePolicy; }
+    inline const Aws::String& GetMergePolicy() const { return m_mergePolicy; }
     inline bool MergePolicyHasBeenSet() const { return m_mergePolicyHasBeenSet; }
-    inline void SetMergePolicy(const Aws::String& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = value; }
-    inline void SetMergePolicy(Aws::String&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = std::move(value); }
-    inline void SetMergePolicy(const char* value) { m_mergePolicyHasBeenSet = true; m_mergePolicy.assign(value); }
-    inline InputCaptions& WithMergePolicy(const Aws::String& value) { SetMergePolicy(value); return *this;}
-    inline InputCaptions& WithMergePolicy(Aws::String&& value) { SetMergePolicy(std::move(value)); return *this;}
-    inline InputCaptions& WithMergePolicy(const char* value) { SetMergePolicy(value); return *this;}
+    template<typename MergePolicyT = Aws::String>
+    void SetMergePolicy(MergePolicyT&& value) { m_mergePolicyHasBeenSet = true; m_mergePolicy = std::forward<MergePolicyT>(value); }
+    template<typename MergePolicyT = Aws::String>
+    InputCaptions& WithMergePolicy(MergePolicyT&& value) { SetMergePolicy(std::forward<MergePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,14 @@ namespace Model
      * process. To omit all sidecar captions, leave <code>CaptionSources</code>
      * blank.</p>
      */
-    inline const Aws::Vector<CaptionSource>& GetCaptionSources() const{ return m_captionSources; }
+    inline const Aws::Vector<CaptionSource>& GetCaptionSources() const { return m_captionSources; }
     inline bool CaptionSourcesHasBeenSet() const { return m_captionSourcesHasBeenSet; }
-    inline void SetCaptionSources(const Aws::Vector<CaptionSource>& value) { m_captionSourcesHasBeenSet = true; m_captionSources = value; }
-    inline void SetCaptionSources(Aws::Vector<CaptionSource>&& value) { m_captionSourcesHasBeenSet = true; m_captionSources = std::move(value); }
-    inline InputCaptions& WithCaptionSources(const Aws::Vector<CaptionSource>& value) { SetCaptionSources(value); return *this;}
-    inline InputCaptions& WithCaptionSources(Aws::Vector<CaptionSource>&& value) { SetCaptionSources(std::move(value)); return *this;}
-    inline InputCaptions& AddCaptionSources(const CaptionSource& value) { m_captionSourcesHasBeenSet = true; m_captionSources.push_back(value); return *this; }
-    inline InputCaptions& AddCaptionSources(CaptionSource&& value) { m_captionSourcesHasBeenSet = true; m_captionSources.push_back(std::move(value)); return *this; }
+    template<typename CaptionSourcesT = Aws::Vector<CaptionSource>>
+    void SetCaptionSources(CaptionSourcesT&& value) { m_captionSourcesHasBeenSet = true; m_captionSources = std::forward<CaptionSourcesT>(value); }
+    template<typename CaptionSourcesT = Aws::Vector<CaptionSource>>
+    InputCaptions& WithCaptionSources(CaptionSourcesT&& value) { SetCaptionSources(std::forward<CaptionSourcesT>(value)); return *this;}
+    template<typename CaptionSourcesT = CaptionSource>
+    InputCaptions& AddCaptionSources(CaptionSourcesT&& value) { m_captionSourcesHasBeenSet = true; m_captionSources.emplace_back(std::forward<CaptionSourcesT>(value)); return *this; }
     ///@}
   private:
 

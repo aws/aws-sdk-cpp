@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OwnerGroupProperties::OwnerGroupProperties() : 
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 OwnerGroupProperties::OwnerGroupProperties(JsonView jsonValue)
-  : OwnerGroupProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OwnerGroupProperties& OwnerGroupProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupIdentifier"))
   {
     m_groupIdentifier = jsonValue.GetString("groupIdentifier");
-
     m_groupIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

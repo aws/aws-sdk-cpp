@@ -29,7 +29,7 @@ namespace Model
   class DescribeDomainControllersResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeDomainControllersResult();
+    AWS_DIRECTORYSERVICE_API DescribeDomainControllersResult() = default;
     AWS_DIRECTORYSERVICE_API DescribeDomainControllersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API DescribeDomainControllersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the <a>DomainController</a> objects that were retrieved.</p>
      */
-    inline const Aws::Vector<DomainController>& GetDomainControllers() const{ return m_domainControllers; }
-    inline void SetDomainControllers(const Aws::Vector<DomainController>& value) { m_domainControllers = value; }
-    inline void SetDomainControllers(Aws::Vector<DomainController>&& value) { m_domainControllers = std::move(value); }
-    inline DescribeDomainControllersResult& WithDomainControllers(const Aws::Vector<DomainController>& value) { SetDomainControllers(value); return *this;}
-    inline DescribeDomainControllersResult& WithDomainControllers(Aws::Vector<DomainController>&& value) { SetDomainControllers(std::move(value)); return *this;}
-    inline DescribeDomainControllersResult& AddDomainControllers(const DomainController& value) { m_domainControllers.push_back(value); return *this; }
-    inline DescribeDomainControllersResult& AddDomainControllers(DomainController&& value) { m_domainControllers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainController>& GetDomainControllers() const { return m_domainControllers; }
+    template<typename DomainControllersT = Aws::Vector<DomainController>>
+    void SetDomainControllers(DomainControllersT&& value) { m_domainControllersHasBeenSet = true; m_domainControllers = std::forward<DomainControllersT>(value); }
+    template<typename DomainControllersT = Aws::Vector<DomainController>>
+    DescribeDomainControllersResult& WithDomainControllers(DomainControllersT&& value) { SetDomainControllers(std::forward<DomainControllersT>(value)); return *this;}
+    template<typename DomainControllersT = DomainController>
+    DescribeDomainControllersResult& AddDomainControllers(DomainControllersT&& value) { m_domainControllersHasBeenSet = true; m_domainControllers.emplace_back(std::forward<DomainControllersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <code>NextToken</code> parameter in a subsequent call to
      * <a>DescribeDomainControllers</a> retrieve the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDomainControllersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDomainControllersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDomainControllersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDomainControllersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDomainControllersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDomainControllersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDomainControllersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDomainControllersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainController> m_domainControllers;
+    bool m_domainControllersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

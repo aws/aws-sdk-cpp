@@ -21,7 +21,7 @@ namespace Model
   class StopRelationalDatabaseRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API StopRelationalDatabaseRequest();
+    AWS_LIGHTSAIL_API StopRelationalDatabaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of your database to stop.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
+    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-    inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-    inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    template<typename RelationalDatabaseNameT = Aws::String>
+    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
+    template<typename RelationalDatabaseNameT = Aws::String>
+    StopRelationalDatabaseRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The name of your new database snapshot to be created before stopping your
      * database.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
+    inline const Aws::String& GetRelationalDatabaseSnapshotName() const { return m_relationalDatabaseSnapshotName; }
     inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
-    inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
-    inline void SetRelationalDatabaseSnapshotName(Aws::String&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::move(value); }
-    inline void SetRelationalDatabaseSnapshotName(const char* value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName.assign(value); }
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(const Aws::String& value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(Aws::String&& value) { SetRelationalDatabaseSnapshotName(std::move(value)); return *this;}
-    inline StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(const char* value) { SetRelationalDatabaseSnapshotName(value); return *this;}
+    template<typename RelationalDatabaseSnapshotNameT = Aws::String>
+    void SetRelationalDatabaseSnapshotName(RelationalDatabaseSnapshotNameT&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::forward<RelationalDatabaseSnapshotNameT>(value); }
+    template<typename RelationalDatabaseSnapshotNameT = Aws::String>
+    StopRelationalDatabaseRequest& WithRelationalDatabaseSnapshotName(RelationalDatabaseSnapshotNameT&& value) { SetRelationalDatabaseSnapshotName(std::forward<RelationalDatabaseSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

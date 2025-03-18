@@ -18,20 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-InterruptionFilter::InterruptionFilter() : 
-    m_threshold(0),
-    m_thresholdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
-{
-}
-
 InterruptionFilter::InterruptionFilter(JsonView jsonValue)
-  : InterruptionFilter()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ InterruptionFilter& InterruptionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetInt64("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbsoluteTimeRange"))
   {
     m_absoluteTimeRange = jsonValue.GetObject("AbsoluteTimeRange");
-
     m_absoluteTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeTimeRange"))
   {
     m_relativeTimeRange = jsonValue.GetObject("RelativeTimeRange");
-
     m_relativeTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negate"))
   {
     m_negate = jsonValue.GetBool("Negate");
-
     m_negateHasBeenSet = true;
   }
-
   return *this;
 }
 

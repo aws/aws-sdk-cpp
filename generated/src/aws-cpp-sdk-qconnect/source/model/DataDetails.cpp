@@ -19,57 +19,33 @@ namespace QConnect
 namespace Model
 {
 
-DataDetails::DataDetails() : 
-    m_contentDataHasBeenSet(false),
-    m_generativeDataHasBeenSet(false),
-    m_intentDetectedDataHasBeenSet(false),
-    m_sourceContentDataHasBeenSet(false)
-{
-}
-
 DataDetails::DataDetails(JsonView jsonValue)
-  : DataDetails()
 {
   *this = jsonValue;
 }
-
-const GenerativeDataDetails& DataDetails::GetGenerativeData() const{ return *m_generativeData; }
-bool DataDetails::GenerativeDataHasBeenSet() const { return m_generativeDataHasBeenSet; }
-void DataDetails::SetGenerativeData(const GenerativeDataDetails& value) { m_generativeDataHasBeenSet = true; m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", value); }
-void DataDetails::SetGenerativeData(GenerativeDataDetails&& value) { m_generativeDataHasBeenSet = true; m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", std::move(value)); }
-DataDetails& DataDetails::WithGenerativeData(const GenerativeDataDetails& value) { SetGenerativeData(value); return *this;}
-DataDetails& DataDetails::WithGenerativeData(GenerativeDataDetails&& value) { SetGenerativeData(std::move(value)); return *this;}
 
 DataDetails& DataDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("contentData"))
   {
     m_contentData = jsonValue.GetObject("contentData");
-
     m_contentDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generativeData"))
   {
     m_generativeData = Aws::MakeShared<GenerativeDataDetails>("DataDetails", jsonValue.GetObject("generativeData"));
-
     m_generativeDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentDetectedData"))
   {
     m_intentDetectedData = jsonValue.GetObject("intentDetectedData");
-
     m_intentDetectedDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceContentData"))
   {
     m_sourceContentData = jsonValue.GetObject("sourceContentData");
-
     m_sourceContentDataHasBeenSet = true;
   }
-
   return *this;
 }
 

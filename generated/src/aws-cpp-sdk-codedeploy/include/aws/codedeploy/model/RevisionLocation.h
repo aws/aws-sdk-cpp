@@ -36,7 +36,7 @@ namespace Model
   class RevisionLocation
   {
   public:
-    AWS_CODEDEPLOY_API RevisionLocation();
+    AWS_CODEDEPLOY_API RevisionLocation() = default;
     AWS_CODEDEPLOY_API RevisionLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API RevisionLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,36 +52,34 @@ namespace Model
      * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
      * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
-    inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
+    inline RevisionLocationType GetRevisionType() const { return m_revisionType; }
     inline bool RevisionTypeHasBeenSet() const { return m_revisionTypeHasBeenSet; }
-    inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
-    inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
-    inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
-    inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(std::move(value)); return *this;}
+    inline void SetRevisionType(RevisionLocationType value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
+    inline RevisionLocation& WithRevisionType(RevisionLocationType value) { SetRevisionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the location of a revision stored in Amazon S3. </p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline RevisionLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    RevisionLocation& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
      */
-    inline const GitHubLocation& GetGitHubLocation() const{ return m_gitHubLocation; }
+    inline const GitHubLocation& GetGitHubLocation() const { return m_gitHubLocation; }
     inline bool GitHubLocationHasBeenSet() const { return m_gitHubLocationHasBeenSet; }
-    inline void SetGitHubLocation(const GitHubLocation& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
-    inline void SetGitHubLocation(GitHubLocation&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = std::move(value); }
-    inline RevisionLocation& WithGitHubLocation(const GitHubLocation& value) { SetGitHubLocation(value); return *this;}
-    inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(std::move(value)); return *this;}
+    template<typename GitHubLocationT = GitHubLocation>
+    void SetGitHubLocation(GitHubLocationT&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = std::forward<GitHubLocationT>(value); }
+    template<typename GitHubLocationT = GitHubLocation>
+    RevisionLocation& WithGitHubLocation(GitHubLocationT&& value) { SetGitHubLocation(std::forward<GitHubLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +87,12 @@ namespace Model
      * <p>Information about the location of an Lambda deployment revision stored as a
      * RawString.</p>
      */
-    inline const RawString& GetString() const{ return m_string; }
+    inline const RawString& GetString() const { return m_string; }
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
-    inline void SetString(const RawString& value) { m_stringHasBeenSet = true; m_string = value; }
-    inline void SetString(RawString&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
-    inline RevisionLocation& WithString(const RawString& value) { SetString(value); return *this;}
-    inline RevisionLocation& WithString(RawString&& value) { SetString(std::move(value)); return *this;}
+    template<typename StringT = RawString>
+    void SetString(StringT&& value) { m_stringHasBeenSet = true; m_string = std::forward<StringT>(value); }
+    template<typename StringT = RawString>
+    RevisionLocation& WithString(StringT&& value) { SetString(std::forward<StringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,16 +100,16 @@ namespace Model
      * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
      * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
-    inline const AppSpecContent& GetAppSpecContent() const{ return m_appSpecContent; }
+    inline const AppSpecContent& GetAppSpecContent() const { return m_appSpecContent; }
     inline bool AppSpecContentHasBeenSet() const { return m_appSpecContentHasBeenSet; }
-    inline void SetAppSpecContent(const AppSpecContent& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = value; }
-    inline void SetAppSpecContent(AppSpecContent&& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = std::move(value); }
-    inline RevisionLocation& WithAppSpecContent(const AppSpecContent& value) { SetAppSpecContent(value); return *this;}
-    inline RevisionLocation& WithAppSpecContent(AppSpecContent&& value) { SetAppSpecContent(std::move(value)); return *this;}
+    template<typename AppSpecContentT = AppSpecContent>
+    void SetAppSpecContent(AppSpecContentT&& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = std::forward<AppSpecContentT>(value); }
+    template<typename AppSpecContentT = AppSpecContent>
+    RevisionLocation& WithAppSpecContent(AppSpecContentT&& value) { SetAppSpecContent(std::forward<AppSpecContentT>(value)); return *this;}
     ///@}
   private:
 
-    RevisionLocationType m_revisionType;
+    RevisionLocationType m_revisionType{RevisionLocationType::NOT_SET};
     bool m_revisionTypeHasBeenSet = false;
 
     S3Location m_s3Location;

@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMemberRequest::DisassociateMemberRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMemberRequest::SerializePayload() const
 {
   JsonValue payload;

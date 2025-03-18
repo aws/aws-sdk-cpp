@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TagDescription::TagDescription() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_propagateAtLaunch(false),
-    m_propagateAtLaunchHasBeenSet(false)
-{
-}
-
 TagDescription::TagDescription(const XmlNode& xmlNode)
-  : TagDescription()
 {
   *this = xmlNode;
 }

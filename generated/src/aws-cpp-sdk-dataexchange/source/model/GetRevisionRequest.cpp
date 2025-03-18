@@ -12,12 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRevisionRequest::GetRevisionRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRevisionRequest::SerializePayload() const
 {
   return {};

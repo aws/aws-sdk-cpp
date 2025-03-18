@@ -21,7 +21,7 @@ namespace Model
   class DeleteProvisionedModelThroughputRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API DeleteProvisionedModelThroughputRequest();
+    AWS_BEDROCK_API DeleteProvisionedModelThroughputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
      */
-    inline const Aws::String& GetProvisionedModelId() const{ return m_provisionedModelId; }
+    inline const Aws::String& GetProvisionedModelId() const { return m_provisionedModelId; }
     inline bool ProvisionedModelIdHasBeenSet() const { return m_provisionedModelIdHasBeenSet; }
-    inline void SetProvisionedModelId(const Aws::String& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = value; }
-    inline void SetProvisionedModelId(Aws::String&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::move(value); }
-    inline void SetProvisionedModelId(const char* value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId.assign(value); }
-    inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(const Aws::String& value) { SetProvisionedModelId(value); return *this;}
-    inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(Aws::String&& value) { SetProvisionedModelId(std::move(value)); return *this;}
-    inline DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(const char* value) { SetProvisionedModelId(value); return *this;}
+    template<typename ProvisionedModelIdT = Aws::String>
+    void SetProvisionedModelId(ProvisionedModelIdT&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::forward<ProvisionedModelIdT>(value); }
+    template<typename ProvisionedModelIdT = Aws::String>
+    DeleteProvisionedModelThroughputRequest& WithProvisionedModelId(ProvisionedModelIdT&& value) { SetProvisionedModelId(std::forward<ProvisionedModelIdT>(value)); return *this;}
     ///@}
   private:
 

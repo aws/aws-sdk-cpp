@@ -18,29 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceDeployment::ServiceDeployment() : 
-    m_serviceDeploymentArnHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_sourceServiceRevisionsHasBeenSet(false),
-    m_targetServiceRevisionHasBeenSet(false),
-    m_status(ServiceDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_rollbackHasBeenSet(false),
-    m_deploymentCircuitBreakerHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
-{
-}
-
 ServiceDeployment::ServiceDeployment(JsonView jsonValue)
-  : ServiceDeployment()
 {
   *this = jsonValue;
 }
@@ -50,59 +28,43 @@ ServiceDeployment& ServiceDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceDeploymentArn"))
   {
     m_serviceDeploymentArn = jsonValue.GetString("serviceDeploymentArn");
-
     m_serviceDeploymentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceArn"))
   {
     m_serviceArn = jsonValue.GetString("serviceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finishedAt"))
   {
     m_finishedAt = jsonValue.GetDouble("finishedAt");
-
     m_finishedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stoppedAt"))
   {
     m_stoppedAt = jsonValue.GetDouble("stoppedAt");
-
     m_stoppedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServiceRevisions"))
   {
     Aws::Utils::Array<JsonView> sourceServiceRevisionsJsonList = jsonValue.GetArray("sourceServiceRevisions");
@@ -112,56 +74,41 @@ ServiceDeployment& ServiceDeployment::operator =(JsonView jsonValue)
     }
     m_sourceServiceRevisionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetServiceRevision"))
   {
     m_targetServiceRevision = jsonValue.GetObject("targetServiceRevision");
-
     m_targetServiceRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceDeploymentStatusMapper::GetServiceDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentConfiguration"))
   {
     m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
-
     m_deploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollback"))
   {
     m_rollback = jsonValue.GetObject("rollback");
-
     m_rollbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentCircuitBreaker"))
   {
     m_deploymentCircuitBreaker = jsonValue.GetObject("deploymentCircuitBreaker");
-
     m_deploymentCircuitBreakerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarms"))
   {
     m_alarms = jsonValue.GetObject("alarms");
-
     m_alarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

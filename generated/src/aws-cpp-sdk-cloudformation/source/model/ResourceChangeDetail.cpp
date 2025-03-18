@@ -20,18 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceChangeDetail::ResourceChangeDetail() : 
-    m_targetHasBeenSet(false),
-    m_evaluation(EvaluationType::NOT_SET),
-    m_evaluationHasBeenSet(false),
-    m_changeSource(ChangeSource::NOT_SET),
-    m_changeSourceHasBeenSet(false),
-    m_causingEntityHasBeenSet(false)
-{
-}
-
 ResourceChangeDetail::ResourceChangeDetail(const XmlNode& xmlNode)
-  : ResourceChangeDetail()
 {
   *this = xmlNode;
 }
@@ -51,13 +40,13 @@ ResourceChangeDetail& ResourceChangeDetail::operator =(const XmlNode& xmlNode)
     XmlNode evaluationNode = resultNode.FirstChild("Evaluation");
     if(!evaluationNode.IsNull())
     {
-      m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationNode.GetText()).c_str()).c_str());
+      m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationNode.GetText()).c_str()));
       m_evaluationHasBeenSet = true;
     }
     XmlNode changeSourceNode = resultNode.FirstChild("ChangeSource");
     if(!changeSourceNode.IsNull())
     {
-      m_changeSource = ChangeSourceMapper::GetChangeSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeSourceNode.GetText()).c_str()).c_str());
+      m_changeSource = ChangeSourceMapper::GetChangeSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeSourceNode.GetText()).c_str()));
       m_changeSourceHasBeenSet = true;
     }
     XmlNode causingEntityNode = resultNode.FirstChild("CausingEntity");

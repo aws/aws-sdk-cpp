@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ConnectionAliasPermission::ConnectionAliasPermission() : 
-    m_sharedAccountIdHasBeenSet(false),
-    m_allowAssociation(false),
-    m_allowAssociationHasBeenSet(false)
-{
-}
-
 ConnectionAliasPermission::ConnectionAliasPermission(JsonView jsonValue)
-  : ConnectionAliasPermission()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConnectionAliasPermission& ConnectionAliasPermission::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SharedAccountId"))
   {
     m_sharedAccountId = jsonValue.GetString("SharedAccountId");
-
     m_sharedAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowAssociation"))
   {
     m_allowAssociation = jsonValue.GetBool("AllowAssociation");
-
     m_allowAssociationHasBeenSet = true;
   }
-
   return *this;
 }
 

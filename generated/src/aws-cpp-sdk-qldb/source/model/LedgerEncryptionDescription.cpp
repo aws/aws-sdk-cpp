@@ -18,16 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-LedgerEncryptionDescription::LedgerEncryptionDescription() : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_encryptionStatus(EncryptionStatus::NOT_SET),
-    m_encryptionStatusHasBeenSet(false),
-    m_inaccessibleKmsKeyDateTimeHasBeenSet(false)
-{
-}
-
 LedgerEncryptionDescription::LedgerEncryptionDescription(JsonView jsonValue)
-  : LedgerEncryptionDescription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LedgerEncryptionDescription& LedgerEncryptionDescription::operator =(JsonView js
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionStatus"))
   {
     m_encryptionStatus = EncryptionStatusMapper::GetEncryptionStatusForName(jsonValue.GetString("EncryptionStatus"));
-
     m_encryptionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InaccessibleKmsKeyDateTime"))
   {
     m_inaccessibleKmsKeyDateTime = jsonValue.GetDouble("InaccessibleKmsKeyDateTime");
-
     m_inaccessibleKmsKeyDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

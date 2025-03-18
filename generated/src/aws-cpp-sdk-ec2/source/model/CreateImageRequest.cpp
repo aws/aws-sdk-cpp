@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateImageRequest::CreateImageRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_noReboot(false),
-    m_noRebootHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

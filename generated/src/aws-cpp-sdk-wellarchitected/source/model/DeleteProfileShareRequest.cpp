@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteProfileShareRequest::DeleteProfileShareRequest() : 
-    m_shareIdHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteProfileShareRequest::SerializePayload() const
 {
   return {};

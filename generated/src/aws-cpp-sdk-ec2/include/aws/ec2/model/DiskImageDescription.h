@@ -32,7 +32,7 @@ namespace Model
   class DiskImageDescription
   {
   public:
-    AWS_EC2_API DiskImageDescription();
+    AWS_EC2_API DiskImageDescription() = default;
     AWS_EC2_API DiskImageDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DiskImageDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The checksum computed for the disk image.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline DiskImageDescription& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline DiskImageDescription& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline DiskImageDescription& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    DiskImageDescription& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The disk image format.</p>
      */
-    inline const DiskImageFormat& GetFormat() const{ return m_format; }
+    inline DiskImageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const DiskImageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(DiskImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline DiskImageDescription& WithFormat(const DiskImageFormat& value) { SetFormat(value); return *this;}
-    inline DiskImageDescription& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(DiskImageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline DiskImageDescription& WithFormat(DiskImageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -78,21 +74,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
-    inline const Aws::String& GetImportManifestUrl() const{ return m_importManifestUrl; }
+    inline const Aws::String& GetImportManifestUrl() const { return m_importManifestUrl; }
     inline bool ImportManifestUrlHasBeenSet() const { return m_importManifestUrlHasBeenSet; }
-    inline void SetImportManifestUrl(const Aws::String& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = value; }
-    inline void SetImportManifestUrl(Aws::String&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = std::move(value); }
-    inline void SetImportManifestUrl(const char* value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl.assign(value); }
-    inline DiskImageDescription& WithImportManifestUrl(const Aws::String& value) { SetImportManifestUrl(value); return *this;}
-    inline DiskImageDescription& WithImportManifestUrl(Aws::String&& value) { SetImportManifestUrl(std::move(value)); return *this;}
-    inline DiskImageDescription& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}
+    template<typename ImportManifestUrlT = Aws::String>
+    void SetImportManifestUrl(ImportManifestUrlT&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = std::forward<ImportManifestUrlT>(value); }
+    template<typename ImportManifestUrlT = Aws::String>
+    DiskImageDescription& WithImportManifestUrl(ImportManifestUrlT&& value) { SetImportManifestUrl(std::forward<ImportManifestUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the disk image, in GiB.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline DiskImageDescription& WithSize(long long value) { SetSize(value); return *this;}
@@ -102,13 +96,13 @@ namespace Model
     Aws::String m_checksum;
     bool m_checksumHasBeenSet = false;
 
-    DiskImageFormat m_format;
+    DiskImageFormat m_format{DiskImageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_importManifestUrl;
     bool m_importManifestUrlHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

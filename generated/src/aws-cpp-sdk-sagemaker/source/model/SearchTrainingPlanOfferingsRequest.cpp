@@ -12,19 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchTrainingPlanOfferingsRequest::SearchTrainingPlanOfferingsRequest() : 
-    m_instanceType(ReservedCapacityInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_startTimeAfterHasBeenSet(false),
-    m_endTimeBeforeHasBeenSet(false),
-    m_durationHours(0),
-    m_durationHoursHasBeenSet(false),
-    m_targetResourcesHasBeenSet(false)
-{
-}
-
 Aws::String SearchTrainingPlanOfferingsRequest::SerializePayload() const
 {
   JsonValue payload;

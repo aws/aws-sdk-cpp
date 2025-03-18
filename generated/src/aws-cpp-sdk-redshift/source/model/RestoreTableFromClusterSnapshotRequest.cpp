@@ -10,20 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RestoreTableFromClusterSnapshotRequest::RestoreTableFromClusterSnapshotRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_sourceDatabaseNameHasBeenSet(false),
-    m_sourceSchemaNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false),
-    m_enableCaseSensitiveIdentifier(false),
-    m_enableCaseSensitiveIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RestoreTableFromClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

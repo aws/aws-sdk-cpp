@@ -23,7 +23,7 @@ namespace Model
   class BatchGetDocumentStatusRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API BatchGetDocumentStatusRequest();
+    AWS_KENDRA_API BatchGetDocumentStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
      * </a> API.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline BatchGetDocumentStatusRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline BatchGetDocumentStatusRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline BatchGetDocumentStatusRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    BatchGetDocumentStatusRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * which to get the status. You identify the documents by their document ID and
      * optional attributes.</p>
      */
-    inline const Aws::Vector<DocumentInfo>& GetDocumentInfoList() const{ return m_documentInfoList; }
+    inline const Aws::Vector<DocumentInfo>& GetDocumentInfoList() const { return m_documentInfoList; }
     inline bool DocumentInfoListHasBeenSet() const { return m_documentInfoListHasBeenSet; }
-    inline void SetDocumentInfoList(const Aws::Vector<DocumentInfo>& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList = value; }
-    inline void SetDocumentInfoList(Aws::Vector<DocumentInfo>&& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList = std::move(value); }
-    inline BatchGetDocumentStatusRequest& WithDocumentInfoList(const Aws::Vector<DocumentInfo>& value) { SetDocumentInfoList(value); return *this;}
-    inline BatchGetDocumentStatusRequest& WithDocumentInfoList(Aws::Vector<DocumentInfo>&& value) { SetDocumentInfoList(std::move(value)); return *this;}
-    inline BatchGetDocumentStatusRequest& AddDocumentInfoList(const DocumentInfo& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList.push_back(value); return *this; }
-    inline BatchGetDocumentStatusRequest& AddDocumentInfoList(DocumentInfo&& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList.push_back(std::move(value)); return *this; }
+    template<typename DocumentInfoListT = Aws::Vector<DocumentInfo>>
+    void SetDocumentInfoList(DocumentInfoListT&& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList = std::forward<DocumentInfoListT>(value); }
+    template<typename DocumentInfoListT = Aws::Vector<DocumentInfo>>
+    BatchGetDocumentStatusRequest& WithDocumentInfoList(DocumentInfoListT&& value) { SetDocumentInfoList(std::forward<DocumentInfoListT>(value)); return *this;}
+    template<typename DocumentInfoListT = DocumentInfo>
+    BatchGetDocumentStatusRequest& AddDocumentInfoList(DocumentInfoListT&& value) { m_documentInfoListHasBeenSet = true; m_documentInfoList.emplace_back(std::forward<DocumentInfoListT>(value)); return *this; }
     ///@}
   private:
 

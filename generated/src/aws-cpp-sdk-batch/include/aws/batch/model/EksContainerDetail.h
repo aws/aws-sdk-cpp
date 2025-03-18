@@ -38,7 +38,7 @@ namespace Model
   class EksContainerDetail
   {
   public:
-    AWS_BATCH_API EksContainerDetail();
+    AWS_BATCH_API EksContainerDetail() = default;
     AWS_BATCH_API EksContainerDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * "<code>Default</code>" is used. Each container in a pod must have a unique
      * name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EksContainerDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EksContainerDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EksContainerDetail& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EksContainerDetail& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Docker image used to start the container.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline EksContainerDetail& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline EksContainerDetail& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline EksContainerDetail& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    EksContainerDetail& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating
      * images</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::String& GetImagePullPolicy() const{ return m_imagePullPolicy; }
+    inline const Aws::String& GetImagePullPolicy() const { return m_imagePullPolicy; }
     inline bool ImagePullPolicyHasBeenSet() const { return m_imagePullPolicyHasBeenSet; }
-    inline void SetImagePullPolicy(const Aws::String& value) { m_imagePullPolicyHasBeenSet = true; m_imagePullPolicy = value; }
-    inline void SetImagePullPolicy(Aws::String&& value) { m_imagePullPolicyHasBeenSet = true; m_imagePullPolicy = std::move(value); }
-    inline void SetImagePullPolicy(const char* value) { m_imagePullPolicyHasBeenSet = true; m_imagePullPolicy.assign(value); }
-    inline EksContainerDetail& WithImagePullPolicy(const Aws::String& value) { SetImagePullPolicy(value); return *this;}
-    inline EksContainerDetail& WithImagePullPolicy(Aws::String&& value) { SetImagePullPolicy(std::move(value)); return *this;}
-    inline EksContainerDetail& WithImagePullPolicy(const char* value) { SetImagePullPolicy(value); return *this;}
+    template<typename ImagePullPolicyT = Aws::String>
+    void SetImagePullPolicy(ImagePullPolicyT&& value) { m_imagePullPolicyHasBeenSet = true; m_imagePullPolicy = std::forward<ImagePullPolicyT>(value); }
+    template<typename ImagePullPolicyT = Aws::String>
+    EksContainerDetail& WithImagePullPolicy(ImagePullPolicyT&& value) { SetImagePullPolicy(std::forward<ImagePullPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,15 +93,14 @@ namespace Model
      * href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a>
      * in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline EksContainerDetail& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline EksContainerDetail& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline EksContainerDetail& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline EksContainerDetail& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline EksContainerDetail& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    EksContainerDetail& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    EksContainerDetail& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,15 +126,14 @@ namespace Model
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+    inline const Aws::Vector<Aws::String>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline EksContainerDetail& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-    inline EksContainerDetail& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-    inline EksContainerDetail& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-    inline EksContainerDetail& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-    inline EksContainerDetail& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    EksContainerDetail& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsT = Aws::String>
+    EksContainerDetail& AddArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args.emplace_back(std::forward<ArgsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -150,14 +142,14 @@ namespace Model
      * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
      * reserved for variables that Batch sets.</p> 
      */
-    inline const Aws::Vector<EksContainerEnvironmentVariable>& GetEnv() const{ return m_env; }
+    inline const Aws::Vector<EksContainerEnvironmentVariable>& GetEnv() const { return m_env; }
     inline bool EnvHasBeenSet() const { return m_envHasBeenSet; }
-    inline void SetEnv(const Aws::Vector<EksContainerEnvironmentVariable>& value) { m_envHasBeenSet = true; m_env = value; }
-    inline void SetEnv(Aws::Vector<EksContainerEnvironmentVariable>&& value) { m_envHasBeenSet = true; m_env = std::move(value); }
-    inline EksContainerDetail& WithEnv(const Aws::Vector<EksContainerEnvironmentVariable>& value) { SetEnv(value); return *this;}
-    inline EksContainerDetail& WithEnv(Aws::Vector<EksContainerEnvironmentVariable>&& value) { SetEnv(std::move(value)); return *this;}
-    inline EksContainerDetail& AddEnv(const EksContainerEnvironmentVariable& value) { m_envHasBeenSet = true; m_env.push_back(value); return *this; }
-    inline EksContainerDetail& AddEnv(EksContainerEnvironmentVariable&& value) { m_envHasBeenSet = true; m_env.push_back(std::move(value)); return *this; }
+    template<typename EnvT = Aws::Vector<EksContainerEnvironmentVariable>>
+    void SetEnv(EnvT&& value) { m_envHasBeenSet = true; m_env = std::forward<EnvT>(value); }
+    template<typename EnvT = Aws::Vector<EksContainerEnvironmentVariable>>
+    EksContainerDetail& WithEnv(EnvT&& value) { SetEnv(std::forward<EnvT>(value)); return *this;}
+    template<typename EnvT = EksContainerEnvironmentVariable>
+    EksContainerDetail& AddEnv(EnvT&& value) { m_envHasBeenSet = true; m_env.emplace_back(std::forward<EnvT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,12 +161,12 @@ namespace Model
      * management for pods and containers</a> in the <i>Kubernetes
      * documentation</i>.</p>
      */
-    inline const EksContainerResourceRequirements& GetResources() const{ return m_resources; }
+    inline const EksContainerResourceRequirements& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const EksContainerResourceRequirements& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(EksContainerResourceRequirements&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline EksContainerDetail& WithResources(const EksContainerResourceRequirements& value) { SetResources(value); return *this;}
-    inline EksContainerDetail& WithResources(EksContainerResourceRequirements&& value) { SetResources(std::move(value)); return *this;}
+    template<typename ResourcesT = EksContainerResourceRequirements>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = EksContainerResourceRequirements>
+    EksContainerDetail& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,7 +174,7 @@ namespace Model
      * <p>The exit code returned for the job attempt. A non-zero exit code is
      * considered failed.</p>
      */
-    inline int GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const { return m_exitCode; }
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
     inline EksContainerDetail& WithExitCode(int value) { SetExitCode(value); return *this;}
@@ -193,14 +185,12 @@ namespace Model
      * <p>A short human-readable string to provide additional details for a running or
      * stopped container. It can be up to 255 characters long.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline EksContainerDetail& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline EksContainerDetail& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline EksContainerDetail& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    EksContainerDetail& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,14 +201,14 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the
      * <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::Vector<EksContainerVolumeMount>& GetVolumeMounts() const{ return m_volumeMounts; }
+    inline const Aws::Vector<EksContainerVolumeMount>& GetVolumeMounts() const { return m_volumeMounts; }
     inline bool VolumeMountsHasBeenSet() const { return m_volumeMountsHasBeenSet; }
-    inline void SetVolumeMounts(const Aws::Vector<EksContainerVolumeMount>& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts = value; }
-    inline void SetVolumeMounts(Aws::Vector<EksContainerVolumeMount>&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts = std::move(value); }
-    inline EksContainerDetail& WithVolumeMounts(const Aws::Vector<EksContainerVolumeMount>& value) { SetVolumeMounts(value); return *this;}
-    inline EksContainerDetail& WithVolumeMounts(Aws::Vector<EksContainerVolumeMount>&& value) { SetVolumeMounts(std::move(value)); return *this;}
-    inline EksContainerDetail& AddVolumeMounts(const EksContainerVolumeMount& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts.push_back(value); return *this; }
-    inline EksContainerDetail& AddVolumeMounts(EksContainerVolumeMount&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts.push_back(std::move(value)); return *this; }
+    template<typename VolumeMountsT = Aws::Vector<EksContainerVolumeMount>>
+    void SetVolumeMounts(VolumeMountsT&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts = std::forward<VolumeMountsT>(value); }
+    template<typename VolumeMountsT = Aws::Vector<EksContainerVolumeMount>>
+    EksContainerDetail& WithVolumeMounts(VolumeMountsT&& value) { SetVolumeMounts(std::forward<VolumeMountsT>(value)); return *this;}
+    template<typename VolumeMountsT = EksContainerVolumeMount>
+    EksContainerDetail& AddVolumeMounts(VolumeMountsT&& value) { m_volumeMountsHasBeenSet = true; m_volumeMounts.emplace_back(std::forward<VolumeMountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -228,12 +218,12 @@ namespace Model
      * a security context for a pod or container</a> in the <i>Kubernetes
      * documentation</i>.</p>
      */
-    inline const EksContainerSecurityContext& GetSecurityContext() const{ return m_securityContext; }
+    inline const EksContainerSecurityContext& GetSecurityContext() const { return m_securityContext; }
     inline bool SecurityContextHasBeenSet() const { return m_securityContextHasBeenSet; }
-    inline void SetSecurityContext(const EksContainerSecurityContext& value) { m_securityContextHasBeenSet = true; m_securityContext = value; }
-    inline void SetSecurityContext(EksContainerSecurityContext&& value) { m_securityContextHasBeenSet = true; m_securityContext = std::move(value); }
-    inline EksContainerDetail& WithSecurityContext(const EksContainerSecurityContext& value) { SetSecurityContext(value); return *this;}
-    inline EksContainerDetail& WithSecurityContext(EksContainerSecurityContext&& value) { SetSecurityContext(std::move(value)); return *this;}
+    template<typename SecurityContextT = EksContainerSecurityContext>
+    void SetSecurityContext(SecurityContextT&& value) { m_securityContextHasBeenSet = true; m_securityContext = std::forward<SecurityContextT>(value); }
+    template<typename SecurityContextT = EksContainerSecurityContext>
+    EksContainerDetail& WithSecurityContext(SecurityContextT&& value) { SetSecurityContext(std::forward<SecurityContextT>(value)); return *this;}
     ///@}
   private:
 
@@ -258,7 +248,7 @@ namespace Model
     EksContainerResourceRequirements m_resources;
     bool m_resourcesHasBeenSet = false;
 
-    int m_exitCode;
+    int m_exitCode{0};
     bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;

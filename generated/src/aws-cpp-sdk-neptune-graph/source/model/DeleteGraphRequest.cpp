@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteGraphRequest::DeleteGraphRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_skipSnapshot(false),
-    m_skipSnapshotHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGraphRequest::SerializePayload() const
 {
   return {};

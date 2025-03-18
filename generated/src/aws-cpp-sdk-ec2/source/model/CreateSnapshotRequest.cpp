@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSnapshotRequest::CreateSnapshotRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_location(SnapshotLocationEnum::NOT_SET),
-    m_locationHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

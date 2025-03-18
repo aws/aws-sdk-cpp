@@ -35,7 +35,7 @@ namespace Model
   class NodegroupResources
   {
   public:
-    AWS_EKS_API NodegroupResources();
+    AWS_EKS_API NodegroupResources() = default;
     AWS_EKS_API NodegroupResources(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API NodegroupResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>The Auto Scaling groups associated with the node group.</p>
      */
-    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const { return m_autoScalingGroups; }
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
-    inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
-    inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
-    inline NodegroupResources& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
-    inline NodegroupResources& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
-    inline NodegroupResources& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
-    inline NodegroupResources& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    void SetAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::forward<AutoScalingGroupsT>(value); }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    NodegroupResources& WithAutoScalingGroups(AutoScalingGroupsT&& value) { SetAutoScalingGroups(std::forward<AutoScalingGroupsT>(value)); return *this;}
+    template<typename AutoScalingGroupsT = AutoScalingGroup>
+    NodegroupResources& AddAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p>The remote access security group associated with the node group. This
      * security group controls SSH access to the nodes.</p>
      */
-    inline const Aws::String& GetRemoteAccessSecurityGroup() const{ return m_remoteAccessSecurityGroup; }
+    inline const Aws::String& GetRemoteAccessSecurityGroup() const { return m_remoteAccessSecurityGroup; }
     inline bool RemoteAccessSecurityGroupHasBeenSet() const { return m_remoteAccessSecurityGroupHasBeenSet; }
-    inline void SetRemoteAccessSecurityGroup(const Aws::String& value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup = value; }
-    inline void SetRemoteAccessSecurityGroup(Aws::String&& value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup = std::move(value); }
-    inline void SetRemoteAccessSecurityGroup(const char* value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup.assign(value); }
-    inline NodegroupResources& WithRemoteAccessSecurityGroup(const Aws::String& value) { SetRemoteAccessSecurityGroup(value); return *this;}
-    inline NodegroupResources& WithRemoteAccessSecurityGroup(Aws::String&& value) { SetRemoteAccessSecurityGroup(std::move(value)); return *this;}
-    inline NodegroupResources& WithRemoteAccessSecurityGroup(const char* value) { SetRemoteAccessSecurityGroup(value); return *this;}
+    template<typename RemoteAccessSecurityGroupT = Aws::String>
+    void SetRemoteAccessSecurityGroup(RemoteAccessSecurityGroupT&& value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup = std::forward<RemoteAccessSecurityGroupT>(value); }
+    template<typename RemoteAccessSecurityGroupT = Aws::String>
+    NodegroupResources& WithRemoteAccessSecurityGroup(RemoteAccessSecurityGroupT&& value) { SetRemoteAccessSecurityGroup(std::forward<RemoteAccessSecurityGroupT>(value)); return *this;}
     ///@}
   private:
 

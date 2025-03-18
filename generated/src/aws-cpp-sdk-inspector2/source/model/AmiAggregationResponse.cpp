@@ -18,17 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AmiAggregationResponse::AmiAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_affectedInstances(0),
-    m_affectedInstancesHasBeenSet(false),
-    m_amiHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 AmiAggregationResponse::AmiAggregationResponse(JsonView jsonValue)
-  : AmiAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AmiAggregationResponse& AmiAggregationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("affectedInstances"))
   {
     m_affectedInstances = jsonValue.GetInt64("affectedInstances");
-
     m_affectedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ami"))
   {
     m_ami = jsonValue.GetString("ami");
-
     m_amiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

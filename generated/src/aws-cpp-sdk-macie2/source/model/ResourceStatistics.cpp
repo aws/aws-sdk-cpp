@@ -18,30 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ResourceStatistics::ResourceStatistics() : 
-    m_totalBytesClassified(0),
-    m_totalBytesClassifiedHasBeenSet(false),
-    m_totalDetections(0),
-    m_totalDetectionsHasBeenSet(false),
-    m_totalDetectionsSuppressed(0),
-    m_totalDetectionsSuppressedHasBeenSet(false),
-    m_totalItemsClassified(0),
-    m_totalItemsClassifiedHasBeenSet(false),
-    m_totalItemsSensitive(0),
-    m_totalItemsSensitiveHasBeenSet(false),
-    m_totalItemsSkipped(0),
-    m_totalItemsSkippedHasBeenSet(false),
-    m_totalItemsSkippedInvalidEncryption(0),
-    m_totalItemsSkippedInvalidEncryptionHasBeenSet(false),
-    m_totalItemsSkippedInvalidKms(0),
-    m_totalItemsSkippedInvalidKmsHasBeenSet(false),
-    m_totalItemsSkippedPermissionDenied(0),
-    m_totalItemsSkippedPermissionDeniedHasBeenSet(false)
-{
-}
-
 ResourceStatistics::ResourceStatistics(JsonView jsonValue)
-  : ResourceStatistics()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ ResourceStatistics& ResourceStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalBytesClassified"))
   {
     m_totalBytesClassified = jsonValue.GetInt64("totalBytesClassified");
-
     m_totalBytesClassifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalDetections"))
   {
     m_totalDetections = jsonValue.GetInt64("totalDetections");
-
     m_totalDetectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalDetectionsSuppressed"))
   {
     m_totalDetectionsSuppressed = jsonValue.GetInt64("totalDetectionsSuppressed");
-
     m_totalDetectionsSuppressedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsClassified"))
   {
     m_totalItemsClassified = jsonValue.GetInt64("totalItemsClassified");
-
     m_totalItemsClassifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsSensitive"))
   {
     m_totalItemsSensitive = jsonValue.GetInt64("totalItemsSensitive");
-
     m_totalItemsSensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsSkipped"))
   {
     m_totalItemsSkipped = jsonValue.GetInt64("totalItemsSkipped");
-
     m_totalItemsSkippedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsSkippedInvalidEncryption"))
   {
     m_totalItemsSkippedInvalidEncryption = jsonValue.GetInt64("totalItemsSkippedInvalidEncryption");
-
     m_totalItemsSkippedInvalidEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsSkippedInvalidKms"))
   {
     m_totalItemsSkippedInvalidKms = jsonValue.GetInt64("totalItemsSkippedInvalidKms");
-
     m_totalItemsSkippedInvalidKmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalItemsSkippedPermissionDenied"))
   {
     m_totalItemsSkippedPermissionDenied = jsonValue.GetInt64("totalItemsSkippedPermissionDenied");
-
     m_totalItemsSkippedPermissionDeniedHasBeenSet = true;
   }
-
   return *this;
 }
 

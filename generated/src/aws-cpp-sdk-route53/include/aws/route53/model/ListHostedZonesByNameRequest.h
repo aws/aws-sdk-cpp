@@ -30,7 +30,7 @@ namespace Model
   class ListHostedZonesByNameRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListHostedZonesByNameRequest();
+    AWS_ROUTE53_API ListHostedZonesByNameRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
      * value of <code>NextDNSName</code> from the previous response.</p>
      */
-    inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+    inline const Aws::String& GetDNSName() const { return m_dNSName; }
     inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
-    inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
-    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::move(value); }
-    inline void SetDNSName(const char* value) { m_dNSNameHasBeenSet = true; m_dNSName.assign(value); }
-    inline ListHostedZonesByNameRequest& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
-    inline ListHostedZonesByNameRequest& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
-    inline ListHostedZonesByNameRequest& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+    template<typename DNSNameT = Aws::String>
+    void SetDNSName(DNSNameT&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::forward<DNSNameT>(value); }
+    template<typename DNSNameT = Aws::String>
+    ListHostedZonesByNameRequest& WithDNSName(DNSNameT&& value) { SetDNSName(std::forward<DNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <code>hostedzoneid</code>, specify the value of the
      * <code>NextHostedZoneId</code> element from the previous response.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline ListHostedZonesByNameRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline ListHostedZonesByNameRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline ListHostedZonesByNameRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    ListHostedZonesByNameRequest& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,12 @@ namespace Model
      * values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the
      * first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListHostedZonesByNameRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListHostedZonesByNameRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListHostedZonesByNameRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListHostedZonesByNameRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
   private:
 

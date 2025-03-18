@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidSnsTopicException::InvalidSnsTopicException() : 
-    m_topicHasBeenSet(false)
-{
-}
-
 InvalidSnsTopicException::InvalidSnsTopicException(const XmlNode& xmlNode)
-  : InvalidSnsTopicException()
 {
   *this = xmlNode;
 }

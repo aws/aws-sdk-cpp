@@ -25,7 +25,7 @@ namespace Model
   class DescribeGroupsRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API DescribeGroupsRequest();
+    AWS_WORKDOCS_API DescribeGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,42 +45,36 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline DescribeGroupsRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline DescribeGroupsRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline DescribeGroupsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    DescribeGroupsRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A query to describe groups by group name.</p>
      */
-    inline const Aws::String& GetSearchQuery() const{ return m_searchQuery; }
+    inline const Aws::String& GetSearchQuery() const { return m_searchQuery; }
     inline bool SearchQueryHasBeenSet() const { return m_searchQueryHasBeenSet; }
-    inline void SetSearchQuery(const Aws::String& value) { m_searchQueryHasBeenSet = true; m_searchQuery = value; }
-    inline void SetSearchQuery(Aws::String&& value) { m_searchQueryHasBeenSet = true; m_searchQuery = std::move(value); }
-    inline void SetSearchQuery(const char* value) { m_searchQueryHasBeenSet = true; m_searchQuery.assign(value); }
-    inline DescribeGroupsRequest& WithSearchQuery(const Aws::String& value) { SetSearchQuery(value); return *this;}
-    inline DescribeGroupsRequest& WithSearchQuery(Aws::String&& value) { SetSearchQuery(std::move(value)); return *this;}
-    inline DescribeGroupsRequest& WithSearchQuery(const char* value) { SetSearchQuery(value); return *this;}
+    template<typename SearchQueryT = Aws::String>
+    void SetSearchQuery(SearchQueryT&& value) { m_searchQueryHasBeenSet = true; m_searchQuery = std::forward<SearchQueryT>(value); }
+    template<typename SearchQueryT = Aws::String>
+    DescribeGroupsRequest& WithSearchQuery(SearchQueryT&& value) { SetSearchQuery(std::forward<SearchQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the organization.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline DescribeGroupsRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline DescribeGroupsRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline DescribeGroupsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    DescribeGroupsRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,21 +82,19 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeGroupsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeGroupsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeGroupsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -121,7 +113,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

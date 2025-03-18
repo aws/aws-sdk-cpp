@@ -26,7 +26,7 @@ namespace Model
   class CreateRecommendationTemplateRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API CreateRecommendationTemplateRequest();
+    AWS_RESILIENCEHUB_API CreateRecommendationTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
+    inline const Aws::String& GetAssessmentArn() const { return m_assessmentArn; }
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
-    inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
-    inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
-    inline CreateRecommendationTemplateRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
+    template<typename AssessmentArnT = Aws::String>
+    void SetAssessmentArn(AssessmentArnT&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::forward<AssessmentArnT>(value); }
+    template<typename AssessmentArnT = Aws::String>
+    CreateRecommendationTemplateRequest& WithAssessmentArn(AssessmentArnT&& value) { SetAssessmentArn(std::forward<AssessmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket that will contain the recommendation
      * template.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline CreateRecommendationTemplateRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    CreateRecommendationTemplateRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * string of up to 64 ASCII characters. You should not reuse the same client token
      * for other API requests.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateRecommendationTemplateRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateRecommendationTemplateRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,26 +87,22 @@ namespace Model
      * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
      * template is CloudFormation YAML.</p> </dd> </dl>
      */
-    inline const TemplateFormat& GetFormat() const{ return m_format; }
+    inline TemplateFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const TemplateFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(TemplateFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline CreateRecommendationTemplateRequest& WithFormat(const TemplateFormat& value) { SetFormat(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithFormat(TemplateFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(TemplateFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline CreateRecommendationTemplateRequest& WithFormat(TemplateFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the recommendation template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateRecommendationTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRecommendationTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,15 +110,14 @@ namespace Model
      * <p>Identifiers for the recommendations used to create a recommendation
      * template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const{ return m_recommendationIds; }
+    inline const Aws::Vector<Aws::String>& GetRecommendationIds() const { return m_recommendationIds; }
     inline bool RecommendationIdsHasBeenSet() const { return m_recommendationIdsHasBeenSet; }
-    inline void SetRecommendationIds(const Aws::Vector<Aws::String>& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = value; }
-    inline void SetRecommendationIds(Aws::Vector<Aws::String>&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::move(value); }
-    inline CreateRecommendationTemplateRequest& WithRecommendationIds(const Aws::Vector<Aws::String>& value) { SetRecommendationIds(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithRecommendationIds(Aws::Vector<Aws::String>&& value) { SetRecommendationIds(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& AddRecommendationIds(const Aws::String& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
-    inline CreateRecommendationTemplateRequest& AddRecommendationIds(Aws::String&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(std::move(value)); return *this; }
-    inline CreateRecommendationTemplateRequest& AddRecommendationIds(const char* value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.push_back(value); return *this; }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    void SetRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds = std::forward<RecommendationIdsT>(value); }
+    template<typename RecommendationIdsT = Aws::Vector<Aws::String>>
+    CreateRecommendationTemplateRequest& WithRecommendationIds(RecommendationIdsT&& value) { SetRecommendationIds(std::forward<RecommendationIdsT>(value)); return *this;}
+    template<typename RecommendationIdsT = Aws::String>
+    CreateRecommendationTemplateRequest& AddRecommendationIds(RecommendationIdsT&& value) { m_recommendationIdsHasBeenSet = true; m_recommendationIds.emplace_back(std::forward<RecommendationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,14 +128,13 @@ namespace Model
      * is a <a>SopRecommendation</a> template.</p> </dd> <dt>Test</dt> <dd> <p>The
      * template is a <a>TestRecommendation</a> template.</p> </dd> </dl>
      */
-    inline const Aws::Vector<RenderRecommendationType>& GetRecommendationTypes() const{ return m_recommendationTypes; }
+    inline const Aws::Vector<RenderRecommendationType>& GetRecommendationTypes() const { return m_recommendationTypes; }
     inline bool RecommendationTypesHasBeenSet() const { return m_recommendationTypesHasBeenSet; }
-    inline void SetRecommendationTypes(const Aws::Vector<RenderRecommendationType>& value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes = value; }
-    inline void SetRecommendationTypes(Aws::Vector<RenderRecommendationType>&& value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes = std::move(value); }
-    inline CreateRecommendationTemplateRequest& WithRecommendationTypes(const Aws::Vector<RenderRecommendationType>& value) { SetRecommendationTypes(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithRecommendationTypes(Aws::Vector<RenderRecommendationType>&& value) { SetRecommendationTypes(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& AddRecommendationTypes(const RenderRecommendationType& value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes.push_back(value); return *this; }
-    inline CreateRecommendationTemplateRequest& AddRecommendationTypes(RenderRecommendationType&& value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes.push_back(std::move(value)); return *this; }
+    template<typename RecommendationTypesT = Aws::Vector<RenderRecommendationType>>
+    void SetRecommendationTypes(RecommendationTypesT&& value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes = std::forward<RecommendationTypesT>(value); }
+    template<typename RecommendationTypesT = Aws::Vector<RenderRecommendationType>>
+    CreateRecommendationTemplateRequest& WithRecommendationTypes(RecommendationTypesT&& value) { SetRecommendationTypes(std::forward<RecommendationTypesT>(value)); return *this;}
+    inline CreateRecommendationTemplateRequest& AddRecommendationTypes(RenderRecommendationType value) { m_recommendationTypesHasBeenSet = true; m_recommendationTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -154,19 +142,16 @@ namespace Model
      * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
      * Web Services resource. Each tag consists of a key/value pair.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRecommendationTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateRecommendationTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRecommendationTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRecommendationTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateRecommendationTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateRecommendationTemplateRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -179,7 +164,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    TemplateFormat m_format;
+    TemplateFormat m_format{TemplateFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_name;

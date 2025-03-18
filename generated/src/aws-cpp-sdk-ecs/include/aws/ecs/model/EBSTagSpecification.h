@@ -34,7 +34,7 @@ namespace Model
   class EBSTagSpecification
   {
   public:
-    AWS_ECS_API EBSTagSpecification();
+    AWS_ECS_API EBSTagSpecification() = default;
     AWS_ECS_API EBSTagSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API EBSTagSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of volume resource.</p>
      */
-    inline const EBSResourceType& GetResourceType() const{ return m_resourceType; }
+    inline EBSResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const EBSResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(EBSResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline EBSTagSpecification& WithResourceType(const EBSResourceType& value) { SetResourceType(value); return *this;}
-    inline EBSTagSpecification& WithResourceType(EBSResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(EBSResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline EBSTagSpecification& WithResourceType(EBSResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,14 @@ namespace Model
      * <p>The tags applied to this Amazon EBS volume. <code>AmazonECSCreated</code> and
      * <code>AmazonECSManaged</code> are reserved tags that can't be used.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline EBSTagSpecification& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline EBSTagSpecification& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline EBSTagSpecification& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline EBSTagSpecification& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    EBSTagSpecification& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    EBSTagSpecification& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,22 +72,20 @@ namespace Model
      * specified in &#x2028;<code>ServiceVolumeConfiguration</code>. If no value is
      * specified, the tags aren't &#x2028;propagated.</p>
      */
-    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+    inline PropagateTags GetPropagateTags() const { return m_propagateTags; }
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
-    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
-    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
-    inline EBSTagSpecification& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
-    inline EBSTagSpecification& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
+    inline void SetPropagateTags(PropagateTags value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+    inline EBSTagSpecification& WithPropagateTags(PropagateTags value) { SetPropagateTags(value); return *this;}
     ///@}
   private:
 
-    EBSResourceType m_resourceType;
+    EBSResourceType m_resourceType{EBSResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    PropagateTags m_propagateTags;
+    PropagateTags m_propagateTags{PropagateTags::NOT_SET};
     bool m_propagateTagsHasBeenSet = false;
   };
 

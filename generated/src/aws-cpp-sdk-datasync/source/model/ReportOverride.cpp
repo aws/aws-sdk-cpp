@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ReportOverride::ReportOverride() : 
-    m_reportLevel(ReportLevel::NOT_SET),
-    m_reportLevelHasBeenSet(false)
-{
-}
-
 ReportOverride::ReportOverride(JsonView jsonValue)
-  : ReportOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReportOverride& ReportOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportLevel"))
   {
     m_reportLevel = ReportLevelMapper::GetReportLevelForName(jsonValue.GetString("ReportLevel"));
-
     m_reportLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

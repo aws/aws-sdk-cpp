@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-StateEnteredEventDetails::StateEnteredEventDetails() : 
-    m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false)
-{
-}
-
 StateEnteredEventDetails::StateEnteredEventDetails(JsonView jsonValue)
-  : StateEnteredEventDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StateEnteredEventDetails& StateEnteredEventDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDetails"))
   {
     m_inputDetails = jsonValue.GetObject("inputDetails");
-
     m_inputDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,20 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecurityProfileRequest::CreateSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_hierarchyRestrictedResourcesHasBeenSet(false),
-    m_allowedAccessControlHierarchyGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecurityProfileRequest::SerializePayload() const
 {
   JsonValue payload;

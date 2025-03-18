@@ -18,22 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ListVectorEnrichmentJobOutputConfig::ListVectorEnrichmentJobOutputConfig() : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(VectorEnrichmentJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(VectorEnrichmentJobType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ListVectorEnrichmentJobOutputConfig::ListVectorEnrichmentJobOutputConfig(JsonView jsonValue)
-  : ListVectorEnrichmentJobOutputConfig()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ListVectorEnrichmentJobOutputConfig& ListVectorEnrichmentJobOutputConfig::operat
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VectorEnrichmentJobStatusMapper::GetVectorEnrichmentJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -84,14 +59,11 @@ ListVectorEnrichmentJobOutputConfig& ListVectorEnrichmentJobOutputConfig::operat
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = VectorEnrichmentJobTypeMapper::GetVectorEnrichmentJobTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

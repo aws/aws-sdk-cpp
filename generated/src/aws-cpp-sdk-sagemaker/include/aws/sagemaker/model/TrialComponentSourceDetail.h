@@ -36,7 +36,7 @@ namespace Model
   class TrialComponentSourceDetail
   {
   public:
-    AWS_SAGEMAKER_API TrialComponentSourceDetail();
+    AWS_SAGEMAKER_API TrialComponentSourceDetail() = default;
     AWS_SAGEMAKER_API TrialComponentSourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrialComponentSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the source.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline TrialComponentSourceDetail& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline TrialComponentSourceDetail& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline TrialComponentSourceDetail& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    TrialComponentSourceDetail& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a training job that's the source of a trial component.</p>
      */
-    inline const TrainingJob& GetTrainingJob() const{ return m_trainingJob; }
+    inline const TrainingJob& GetTrainingJob() const { return m_trainingJob; }
     inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
-    inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
-    inline void SetTrainingJob(TrainingJob&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::move(value); }
-    inline TrialComponentSourceDetail& WithTrainingJob(const TrainingJob& value) { SetTrainingJob(value); return *this;}
-    inline TrialComponentSourceDetail& WithTrainingJob(TrainingJob&& value) { SetTrainingJob(std::move(value)); return *this;}
+    template<typename TrainingJobT = TrainingJob>
+    void SetTrainingJob(TrainingJobT&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::forward<TrainingJobT>(value); }
+    template<typename TrainingJobT = TrainingJob>
+    TrialComponentSourceDetail& WithTrainingJob(TrainingJobT&& value) { SetTrainingJob(std::forward<TrainingJobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,24 +71,24 @@ namespace Model
      * <p>Information about a processing job that's the source of a trial
      * component.</p>
      */
-    inline const ProcessingJob& GetProcessingJob() const{ return m_processingJob; }
+    inline const ProcessingJob& GetProcessingJob() const { return m_processingJob; }
     inline bool ProcessingJobHasBeenSet() const { return m_processingJobHasBeenSet; }
-    inline void SetProcessingJob(const ProcessingJob& value) { m_processingJobHasBeenSet = true; m_processingJob = value; }
-    inline void SetProcessingJob(ProcessingJob&& value) { m_processingJobHasBeenSet = true; m_processingJob = std::move(value); }
-    inline TrialComponentSourceDetail& WithProcessingJob(const ProcessingJob& value) { SetProcessingJob(value); return *this;}
-    inline TrialComponentSourceDetail& WithProcessingJob(ProcessingJob&& value) { SetProcessingJob(std::move(value)); return *this;}
+    template<typename ProcessingJobT = ProcessingJob>
+    void SetProcessingJob(ProcessingJobT&& value) { m_processingJobHasBeenSet = true; m_processingJob = std::forward<ProcessingJobT>(value); }
+    template<typename ProcessingJobT = ProcessingJob>
+    TrialComponentSourceDetail& WithProcessingJob(ProcessingJobT&& value) { SetProcessingJob(std::forward<ProcessingJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a transform job that's the source of a trial component.</p>
      */
-    inline const TransformJob& GetTransformJob() const{ return m_transformJob; }
+    inline const TransformJob& GetTransformJob() const { return m_transformJob; }
     inline bool TransformJobHasBeenSet() const { return m_transformJobHasBeenSet; }
-    inline void SetTransformJob(const TransformJob& value) { m_transformJobHasBeenSet = true; m_transformJob = value; }
-    inline void SetTransformJob(TransformJob&& value) { m_transformJobHasBeenSet = true; m_transformJob = std::move(value); }
-    inline TrialComponentSourceDetail& WithTransformJob(const TransformJob& value) { SetTransformJob(value); return *this;}
-    inline TrialComponentSourceDetail& WithTransformJob(TransformJob&& value) { SetTransformJob(std::move(value)); return *this;}
+    template<typename TransformJobT = TransformJob>
+    void SetTransformJob(TransformJobT&& value) { m_transformJobHasBeenSet = true; m_transformJob = std::forward<TransformJobT>(value); }
+    template<typename TransformJobT = TransformJob>
+    TrialComponentSourceDetail& WithTransformJob(TransformJobT&& value) { SetTransformJob(std::forward<TransformJobT>(value)); return *this;}
     ///@}
   private:
 

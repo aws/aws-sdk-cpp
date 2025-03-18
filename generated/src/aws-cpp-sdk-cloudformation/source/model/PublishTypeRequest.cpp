@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-PublishTypeRequest::PublishTypeRequest() : 
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false)
-{
-}
-
 Aws::String PublishTypeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

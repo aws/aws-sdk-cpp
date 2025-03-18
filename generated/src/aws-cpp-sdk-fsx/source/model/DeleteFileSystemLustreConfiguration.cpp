@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DeleteFileSystemLustreConfiguration::DeleteFileSystemLustreConfiguration() : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
-{
-}
-
 DeleteFileSystemLustreConfiguration::DeleteFileSystemLustreConfiguration(JsonView jsonValue)
-  : DeleteFileSystemLustreConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DeleteFileSystemLustreConfiguration& DeleteFileSystemLustreConfiguration::operat
   if(jsonValue.ValueExists("SkipFinalBackup"))
   {
     m_skipFinalBackup = jsonValue.GetBool("SkipFinalBackup");
-
     m_skipFinalBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
     Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
@@ -49,7 +39,6 @@ DeleteFileSystemLustreConfiguration& DeleteFileSystemLustreConfiguration::operat
     }
     m_finalBackupTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

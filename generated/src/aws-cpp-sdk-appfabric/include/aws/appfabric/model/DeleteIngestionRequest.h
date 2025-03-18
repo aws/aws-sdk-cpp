@@ -21,7 +21,7 @@ namespace Model
   class DeleteIngestionRequest : public AppFabricRequest
   {
   public:
-    AWS_APPFABRIC_API DeleteIngestionRequest();
+    AWS_APPFABRIC_API DeleteIngestionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app bundle to use for the request.</p>
      */
-    inline const Aws::String& GetAppBundleIdentifier() const{ return m_appBundleIdentifier; }
+    inline const Aws::String& GetAppBundleIdentifier() const { return m_appBundleIdentifier; }
     inline bool AppBundleIdentifierHasBeenSet() const { return m_appBundleIdentifierHasBeenSet; }
-    inline void SetAppBundleIdentifier(const Aws::String& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = value; }
-    inline void SetAppBundleIdentifier(Aws::String&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::move(value); }
-    inline void SetAppBundleIdentifier(const char* value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier.assign(value); }
-    inline DeleteIngestionRequest& WithAppBundleIdentifier(const Aws::String& value) { SetAppBundleIdentifier(value); return *this;}
-    inline DeleteIngestionRequest& WithAppBundleIdentifier(Aws::String&& value) { SetAppBundleIdentifier(std::move(value)); return *this;}
-    inline DeleteIngestionRequest& WithAppBundleIdentifier(const char* value) { SetAppBundleIdentifier(value); return *this;}
+    template<typename AppBundleIdentifierT = Aws::String>
+    void SetAppBundleIdentifier(AppBundleIdentifierT&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::forward<AppBundleIdentifierT>(value); }
+    template<typename AppBundleIdentifierT = Aws::String>
+    DeleteIngestionRequest& WithAppBundleIdentifier(AppBundleIdentifierT&& value) { SetAppBundleIdentifier(std::forward<AppBundleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * ingestion to use for the request.</p>
      */
-    inline const Aws::String& GetIngestionIdentifier() const{ return m_ingestionIdentifier; }
+    inline const Aws::String& GetIngestionIdentifier() const { return m_ingestionIdentifier; }
     inline bool IngestionIdentifierHasBeenSet() const { return m_ingestionIdentifierHasBeenSet; }
-    inline void SetIngestionIdentifier(const Aws::String& value) { m_ingestionIdentifierHasBeenSet = true; m_ingestionIdentifier = value; }
-    inline void SetIngestionIdentifier(Aws::String&& value) { m_ingestionIdentifierHasBeenSet = true; m_ingestionIdentifier = std::move(value); }
-    inline void SetIngestionIdentifier(const char* value) { m_ingestionIdentifierHasBeenSet = true; m_ingestionIdentifier.assign(value); }
-    inline DeleteIngestionRequest& WithIngestionIdentifier(const Aws::String& value) { SetIngestionIdentifier(value); return *this;}
-    inline DeleteIngestionRequest& WithIngestionIdentifier(Aws::String&& value) { SetIngestionIdentifier(std::move(value)); return *this;}
-    inline DeleteIngestionRequest& WithIngestionIdentifier(const char* value) { SetIngestionIdentifier(value); return *this;}
+    template<typename IngestionIdentifierT = Aws::String>
+    void SetIngestionIdentifier(IngestionIdentifierT&& value) { m_ingestionIdentifierHasBeenSet = true; m_ingestionIdentifier = std::forward<IngestionIdentifierT>(value); }
+    template<typename IngestionIdentifierT = Aws::String>
+    DeleteIngestionRequest& WithIngestionIdentifier(IngestionIdentifierT&& value) { SetIngestionIdentifier(std::forward<IngestionIdentifierT>(value)); return *this;}
     ///@}
   private:
 

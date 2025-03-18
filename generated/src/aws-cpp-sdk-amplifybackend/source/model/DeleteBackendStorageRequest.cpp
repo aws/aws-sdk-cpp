@@ -12,15 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackendStorageRequest::DeleteBackendStorageRequest() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackendStorageRequest::SerializePayload() const
 {
   JsonValue payload;

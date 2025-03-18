@@ -28,7 +28,7 @@ namespace Model
   class GetViolationDetailsResult
   {
   public:
-    AWS_FMS_API GetViolationDetailsResult();
+    AWS_FMS_API GetViolationDetailsResult() = default;
     AWS_FMS_API GetViolationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetViolationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Violation detail for a resource.</p>
      */
-    inline const ViolationDetail& GetViolationDetail() const{ return m_violationDetail; }
-    inline void SetViolationDetail(const ViolationDetail& value) { m_violationDetail = value; }
-    inline void SetViolationDetail(ViolationDetail&& value) { m_violationDetail = std::move(value); }
-    inline GetViolationDetailsResult& WithViolationDetail(const ViolationDetail& value) { SetViolationDetail(value); return *this;}
-    inline GetViolationDetailsResult& WithViolationDetail(ViolationDetail&& value) { SetViolationDetail(std::move(value)); return *this;}
+    inline const ViolationDetail& GetViolationDetail() const { return m_violationDetail; }
+    template<typename ViolationDetailT = ViolationDetail>
+    void SetViolationDetail(ViolationDetailT&& value) { m_violationDetailHasBeenSet = true; m_violationDetail = std::forward<ViolationDetailT>(value); }
+    template<typename ViolationDetailT = ViolationDetail>
+    GetViolationDetailsResult& WithViolationDetail(ViolationDetailT&& value) { SetViolationDetail(std::forward<ViolationDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetViolationDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetViolationDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetViolationDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetViolationDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ViolationDetail m_violationDetail;
+    bool m_violationDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

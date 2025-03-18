@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TargetHealthDescription::TargetHealthDescription() : 
-    m_targetHasBeenSet(false),
-    m_healthCheckPortHasBeenSet(false),
-    m_targetHealthHasBeenSet(false),
-    m_anomalyDetectionHasBeenSet(false),
-    m_administrativeOverrideHasBeenSet(false)
-{
-}
-
 TargetHealthDescription::TargetHealthDescription(const XmlNode& xmlNode)
-  : TargetHealthDescription()
 {
   *this = xmlNode;
 }

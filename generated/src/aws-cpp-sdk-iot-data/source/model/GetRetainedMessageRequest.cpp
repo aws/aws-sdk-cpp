@@ -12,11 +12,6 @@ using namespace Aws::IoTDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRetainedMessageRequest::GetRetainedMessageRequest() : 
-    m_topicHasBeenSet(false)
-{
-}
-
 Aws::String GetRetainedMessageRequest::SerializePayload() const
 {
   return {};

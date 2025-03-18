@@ -33,7 +33,7 @@ namespace Model
   class DefaultMessage
   {
   public:
-    AWS_PINPOINT_API DefaultMessage();
+    AWS_PINPOINT_API DefaultMessage() = default;
     AWS_PINPOINT_API DefaultMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API DefaultMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The default body of the message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline DefaultMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline DefaultMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline DefaultMessage& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    DefaultMessage& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p>The default message variables to use in the message. You can override these
      * default variables with individual address variables.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const { return m_substitutions; }
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
-    inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
-    inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
-    inline DefaultMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
-    inline DefaultMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
-    inline DefaultMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
-    inline DefaultMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
-    inline DefaultMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline DefaultMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
-    inline DefaultMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline DefaultMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetSubstitutions(SubstitutionsT&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::forward<SubstitutionsT>(value); }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    DefaultMessage& WithSubstitutions(SubstitutionsT&& value) { SetSubstitutions(std::forward<SubstitutionsT>(value)); return *this;}
+    template<typename SubstitutionsKeyT = Aws::String, typename SubstitutionsValueT = Aws::Vector<Aws::String>>
+    DefaultMessage& AddSubstitutions(SubstitutionsKeyT&& key, SubstitutionsValueT&& value) {
+      m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::forward<SubstitutionsKeyT>(key), std::forward<SubstitutionsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

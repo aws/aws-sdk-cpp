@@ -29,7 +29,7 @@ namespace Model
   class ListIpRoutesResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API ListIpRoutesResult();
+    AWS_DIRECTORYSERVICE_API ListIpRoutesResult() = default;
     AWS_DIRECTORYSERVICE_API ListIpRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API ListIpRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of <a>IpRoute</a>s.</p>
      */
-    inline const Aws::Vector<IpRouteInfo>& GetIpRoutesInfo() const{ return m_ipRoutesInfo; }
-    inline void SetIpRoutesInfo(const Aws::Vector<IpRouteInfo>& value) { m_ipRoutesInfo = value; }
-    inline void SetIpRoutesInfo(Aws::Vector<IpRouteInfo>&& value) { m_ipRoutesInfo = std::move(value); }
-    inline ListIpRoutesResult& WithIpRoutesInfo(const Aws::Vector<IpRouteInfo>& value) { SetIpRoutesInfo(value); return *this;}
-    inline ListIpRoutesResult& WithIpRoutesInfo(Aws::Vector<IpRouteInfo>&& value) { SetIpRoutesInfo(std::move(value)); return *this;}
-    inline ListIpRoutesResult& AddIpRoutesInfo(const IpRouteInfo& value) { m_ipRoutesInfo.push_back(value); return *this; }
-    inline ListIpRoutesResult& AddIpRoutesInfo(IpRouteInfo&& value) { m_ipRoutesInfo.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IpRouteInfo>& GetIpRoutesInfo() const { return m_ipRoutesInfo; }
+    template<typename IpRoutesInfoT = Aws::Vector<IpRouteInfo>>
+    void SetIpRoutesInfo(IpRoutesInfoT&& value) { m_ipRoutesInfoHasBeenSet = true; m_ipRoutesInfo = std::forward<IpRoutesInfoT>(value); }
+    template<typename IpRoutesInfoT = Aws::Vector<IpRouteInfo>>
+    ListIpRoutesResult& WithIpRoutesInfo(IpRoutesInfoT&& value) { SetIpRoutesInfo(std::forward<IpRoutesInfoT>(value)); return *this;}
+    template<typename IpRoutesInfoT = IpRouteInfo>
+    ListIpRoutesResult& AddIpRoutesInfo(IpRoutesInfoT&& value) { m_ipRoutesInfoHasBeenSet = true; m_ipRoutesInfo.emplace_back(std::forward<IpRoutesInfoT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
      * retrieve the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIpRoutesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIpRoutesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIpRoutesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIpRoutesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIpRoutesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIpRoutesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIpRoutesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIpRoutesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IpRouteInfo> m_ipRoutesInfo;
+    bool m_ipRoutesInfoHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SageMakerRunConfigurationOutput::SageMakerRunConfigurationOutput() : 
-    m_accountIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_trackingAssetsHasBeenSet(false)
-{
-}
-
 SageMakerRunConfigurationOutput::SageMakerRunConfigurationOutput(JsonView jsonValue)
-  : SageMakerRunConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SageMakerRunConfigurationOutput& SageMakerRunConfigurationOutput::operator =(Jso
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingAssets"))
   {
     Aws::Map<Aws::String, JsonView> trackingAssetsJsonMap = jsonValue.GetObject("trackingAssets").GetAllObjects();
@@ -63,7 +51,6 @@ SageMakerRunConfigurationOutput& SageMakerRunConfigurationOutput::operator =(Jso
     }
     m_trackingAssetsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class CreateAppResult
   {
   public:
-    AWS_OPSWORKS_API CreateAppResult();
+    AWS_OPSWORKS_API CreateAppResult() = default;
     AWS_OPSWORKS_API CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
-    inline CreateAppResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline CreateAppResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    CreateAppResult& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

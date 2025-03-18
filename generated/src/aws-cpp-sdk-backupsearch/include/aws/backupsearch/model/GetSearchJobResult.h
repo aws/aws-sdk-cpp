@@ -33,7 +33,7 @@ namespace Model
   class GetSearchJobResult
   {
   public:
-    AWS_BACKUPSEARCH_API GetSearchJobResult();
+    AWS_BACKUPSEARCH_API GetSearchJobResult() = default;
     AWS_BACKUPSEARCH_API GetSearchJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPSEARCH_API GetSearchJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
     /**
      * <p>Returned name of the specified search job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetSearchJobResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetSearchJobResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetSearchJobResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,11 +56,11 @@ namespace Model
      * search.</p> </li> <li> <p>TotalItemsToScanCount, the number of items returned by
      * the search.</p> </li> </ul>
      */
-    inline const SearchScopeSummary& GetSearchScopeSummary() const{ return m_searchScopeSummary; }
-    inline void SetSearchScopeSummary(const SearchScopeSummary& value) { m_searchScopeSummary = value; }
-    inline void SetSearchScopeSummary(SearchScopeSummary&& value) { m_searchScopeSummary = std::move(value); }
-    inline GetSearchJobResult& WithSearchScopeSummary(const SearchScopeSummary& value) { SetSearchScopeSummary(value); return *this;}
-    inline GetSearchJobResult& WithSearchScopeSummary(SearchScopeSummary&& value) { SetSearchScopeSummary(std::move(value)); return *this;}
+    inline const SearchScopeSummary& GetSearchScopeSummary() const { return m_searchScopeSummary; }
+    template<typename SearchScopeSummaryT = SearchScopeSummary>
+    void SetSearchScopeSummary(SearchScopeSummaryT&& value) { m_searchScopeSummaryHasBeenSet = true; m_searchScopeSummary = std::forward<SearchScopeSummaryT>(value); }
+    template<typename SearchScopeSummaryT = SearchScopeSummary>
+    GetSearchJobResult& WithSearchScopeSummary(SearchScopeSummaryT&& value) { SetSearchScopeSummary(std::forward<SearchScopeSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,11 +68,11 @@ namespace Model
      * <p>Returns numbers representing BackupsScannedCount, ItemsScanned, and
      * ItemsMatched.</p>
      */
-    inline const CurrentSearchProgress& GetCurrentSearchProgress() const{ return m_currentSearchProgress; }
-    inline void SetCurrentSearchProgress(const CurrentSearchProgress& value) { m_currentSearchProgress = value; }
-    inline void SetCurrentSearchProgress(CurrentSearchProgress&& value) { m_currentSearchProgress = std::move(value); }
-    inline GetSearchJobResult& WithCurrentSearchProgress(const CurrentSearchProgress& value) { SetCurrentSearchProgress(value); return *this;}
-    inline GetSearchJobResult& WithCurrentSearchProgress(CurrentSearchProgress&& value) { SetCurrentSearchProgress(std::move(value)); return *this;}
+    inline const CurrentSearchProgress& GetCurrentSearchProgress() const { return m_currentSearchProgress; }
+    template<typename CurrentSearchProgressT = CurrentSearchProgress>
+    void SetCurrentSearchProgress(CurrentSearchProgressT&& value) { m_currentSearchProgressHasBeenSet = true; m_currentSearchProgress = std::forward<CurrentSearchProgressT>(value); }
+    template<typename CurrentSearchProgressT = CurrentSearchProgress>
+    GetSearchJobResult& WithCurrentSearchProgress(CurrentSearchProgressT&& value) { SetCurrentSearchProgress(std::forward<CurrentSearchProgressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,13 +82,11 @@ namespace Model
      * <p>For example, a message may say that a search contained recovery points unable
      * to be scanned because of a permissions issue.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetSearchJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetSearchJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetSearchJobResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,13 +94,11 @@ namespace Model
      * <p>The encryption key for the specified search job.</p> <p>Example:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArn.assign(value); }
-    inline GetSearchJobResult& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline GetSearchJobResult& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    GetSearchJobResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,11 +108,11 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-    inline GetSearchJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline GetSearchJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    GetSearchJobResult& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,22 +122,20 @@ namespace Model
      * <code>STOPPED</code>; <code>FAILED</code>; <code>TIMED_OUT</code>; or
      * <code>EXPIRED</code> .</p>
      */
-    inline const SearchJobState& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SearchJobState& value) { m_status = value; }
-    inline void SetStatus(SearchJobState&& value) { m_status = std::move(value); }
-    inline GetSearchJobResult& WithStatus(const SearchJobState& value) { SetStatus(value); return *this;}
-    inline GetSearchJobResult& WithStatus(SearchJobState&& value) { SetStatus(std::move(value)); return *this;}
+    inline SearchJobState GetStatus() const { return m_status; }
+    inline void SetStatus(SearchJobState value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSearchJobResult& WithStatus(SearchJobState value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The search scope is all backup properties input into a search.</p>
      */
-    inline const SearchScope& GetSearchScope() const{ return m_searchScope; }
-    inline void SetSearchScope(const SearchScope& value) { m_searchScope = value; }
-    inline void SetSearchScope(SearchScope&& value) { m_searchScope = std::move(value); }
-    inline GetSearchJobResult& WithSearchScope(const SearchScope& value) { SetSearchScope(value); return *this;}
-    inline GetSearchJobResult& WithSearchScope(SearchScope&& value) { SetSearchScope(std::move(value)); return *this;}
+    inline const SearchScope& GetSearchScope() const { return m_searchScope; }
+    template<typename SearchScopeT = SearchScope>
+    void SetSearchScope(SearchScopeT&& value) { m_searchScopeHasBeenSet = true; m_searchScope = std::forward<SearchScopeT>(value); }
+    template<typename SearchScopeT = SearchScope>
+    GetSearchJobResult& WithSearchScope(SearchScopeT&& value) { SetSearchScope(std::forward<SearchScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,11 +143,11 @@ namespace Model
      * <p>Item Filters represent all input item properties specified when the search
      * was created.</p>
      */
-    inline const ItemFilters& GetItemFilters() const{ return m_itemFilters; }
-    inline void SetItemFilters(const ItemFilters& value) { m_itemFilters = value; }
-    inline void SetItemFilters(ItemFilters&& value) { m_itemFilters = std::move(value); }
-    inline GetSearchJobResult& WithItemFilters(const ItemFilters& value) { SetItemFilters(value); return *this;}
-    inline GetSearchJobResult& WithItemFilters(ItemFilters&& value) { SetItemFilters(std::move(value)); return *this;}
+    inline const ItemFilters& GetItemFilters() const { return m_itemFilters; }
+    template<typename ItemFiltersT = ItemFilters>
+    void SetItemFilters(ItemFiltersT&& value) { m_itemFiltersHasBeenSet = true; m_itemFilters = std::forward<ItemFiltersT>(value); }
+    template<typename ItemFiltersT = ItemFilters>
+    GetSearchJobResult& WithItemFilters(ItemFiltersT&& value) { SetItemFilters(std::forward<ItemFiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,24 +157,22 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetSearchJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetSearchJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetSearchJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique string that identifies the specified search job.</p>
      */
-    inline const Aws::String& GetSearchJobIdentifier() const{ return m_searchJobIdentifier; }
-    inline void SetSearchJobIdentifier(const Aws::String& value) { m_searchJobIdentifier = value; }
-    inline void SetSearchJobIdentifier(Aws::String&& value) { m_searchJobIdentifier = std::move(value); }
-    inline void SetSearchJobIdentifier(const char* value) { m_searchJobIdentifier.assign(value); }
-    inline GetSearchJobResult& WithSearchJobIdentifier(const Aws::String& value) { SetSearchJobIdentifier(value); return *this;}
-    inline GetSearchJobResult& WithSearchJobIdentifier(Aws::String&& value) { SetSearchJobIdentifier(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithSearchJobIdentifier(const char* value) { SetSearchJobIdentifier(value); return *this;}
+    inline const Aws::String& GetSearchJobIdentifier() const { return m_searchJobIdentifier; }
+    template<typename SearchJobIdentifierT = Aws::String>
+    void SetSearchJobIdentifier(SearchJobIdentifierT&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::forward<SearchJobIdentifierT>(value); }
+    template<typename SearchJobIdentifierT = Aws::String>
+    GetSearchJobResult& WithSearchJobIdentifier(SearchJobIdentifierT&& value) { SetSearchJobIdentifier(std::forward<SearchJobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,52 +180,61 @@ namespace Model
      * <p>The unique string that identifies the Amazon Resource Name (ARN) of the
      * specified search job.</p>
      */
-    inline const Aws::String& GetSearchJobArn() const{ return m_searchJobArn; }
-    inline void SetSearchJobArn(const Aws::String& value) { m_searchJobArn = value; }
-    inline void SetSearchJobArn(Aws::String&& value) { m_searchJobArn = std::move(value); }
-    inline void SetSearchJobArn(const char* value) { m_searchJobArn.assign(value); }
-    inline GetSearchJobResult& WithSearchJobArn(const Aws::String& value) { SetSearchJobArn(value); return *this;}
-    inline GetSearchJobResult& WithSearchJobArn(Aws::String&& value) { SetSearchJobArn(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithSearchJobArn(const char* value) { SetSearchJobArn(value); return *this;}
+    inline const Aws::String& GetSearchJobArn() const { return m_searchJobArn; }
+    template<typename SearchJobArnT = Aws::String>
+    void SetSearchJobArn(SearchJobArnT&& value) { m_searchJobArnHasBeenSet = true; m_searchJobArn = std::forward<SearchJobArnT>(value); }
+    template<typename SearchJobArnT = Aws::String>
+    GetSearchJobResult& WithSearchJobArn(SearchJobArnT&& value) { SetSearchJobArn(std::forward<SearchJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSearchJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSearchJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSearchJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSearchJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     SearchScopeSummary m_searchScopeSummary;
+    bool m_searchScopeSummaryHasBeenSet = false;
 
     CurrentSearchProgress m_currentSearchProgress;
+    bool m_currentSearchProgressHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
+    bool m_completionTimeHasBeenSet = false;
 
-    SearchJobState m_status;
+    SearchJobState m_status{SearchJobState::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     SearchScope m_searchScope;
+    bool m_searchScopeHasBeenSet = false;
 
     ItemFilters m_itemFilters;
+    bool m_itemFiltersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_searchJobIdentifier;
+    bool m_searchJobIdentifierHasBeenSet = false;
 
     Aws::String m_searchJobArn;
+    bool m_searchJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

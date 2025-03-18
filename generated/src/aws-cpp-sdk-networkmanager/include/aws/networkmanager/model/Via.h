@@ -35,7 +35,7 @@ namespace Model
   class Via
   {
   public:
-    AWS_NETWORKMANAGER_API Via();
+    AWS_NETWORKMANAGER_API Via() = default;
     AWS_NETWORKMANAGER_API Via(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Via& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>The list of network function groups associated with the service insertion
      * action.</p>
      */
-    inline const Aws::Vector<NetworkFunctionGroup>& GetNetworkFunctionGroups() const{ return m_networkFunctionGroups; }
+    inline const Aws::Vector<NetworkFunctionGroup>& GetNetworkFunctionGroups() const { return m_networkFunctionGroups; }
     inline bool NetworkFunctionGroupsHasBeenSet() const { return m_networkFunctionGroupsHasBeenSet; }
-    inline void SetNetworkFunctionGroups(const Aws::Vector<NetworkFunctionGroup>& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = value; }
-    inline void SetNetworkFunctionGroups(Aws::Vector<NetworkFunctionGroup>&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::move(value); }
-    inline Via& WithNetworkFunctionGroups(const Aws::Vector<NetworkFunctionGroup>& value) { SetNetworkFunctionGroups(value); return *this;}
-    inline Via& WithNetworkFunctionGroups(Aws::Vector<NetworkFunctionGroup>&& value) { SetNetworkFunctionGroups(std::move(value)); return *this;}
-    inline Via& AddNetworkFunctionGroups(const NetworkFunctionGroup& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(value); return *this; }
-    inline Via& AddNetworkFunctionGroups(NetworkFunctionGroup&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(std::move(value)); return *this; }
+    template<typename NetworkFunctionGroupsT = Aws::Vector<NetworkFunctionGroup>>
+    void SetNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::forward<NetworkFunctionGroupsT>(value); }
+    template<typename NetworkFunctionGroupsT = Aws::Vector<NetworkFunctionGroup>>
+    Via& WithNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { SetNetworkFunctionGroups(std::forward<NetworkFunctionGroupsT>(value)); return *this;}
+    template<typename NetworkFunctionGroupsT = NetworkFunctionGroup>
+    Via& AddNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.emplace_back(std::forward<NetworkFunctionGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,14 @@ namespace Model
      * <p>Describes any edge overrides. An edge override is a specific edge to be used
      * for traffic.</p>
      */
-    inline const Aws::Vector<EdgeOverride>& GetWithEdgeOverrides() const{ return m_withEdgeOverrides; }
+    inline const Aws::Vector<EdgeOverride>& GetWithEdgeOverrides() const { return m_withEdgeOverrides; }
     inline bool WithEdgeOverridesHasBeenSet() const { return m_withEdgeOverridesHasBeenSet; }
-    inline void SetWithEdgeOverrides(const Aws::Vector<EdgeOverride>& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides = value; }
-    inline void SetWithEdgeOverrides(Aws::Vector<EdgeOverride>&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides = std::move(value); }
-    inline Via& WithWithEdgeOverrides(const Aws::Vector<EdgeOverride>& value) { SetWithEdgeOverrides(value); return *this;}
-    inline Via& WithWithEdgeOverrides(Aws::Vector<EdgeOverride>&& value) { SetWithEdgeOverrides(std::move(value)); return *this;}
-    inline Via& AddWithEdgeOverrides(const EdgeOverride& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides.push_back(value); return *this; }
-    inline Via& AddWithEdgeOverrides(EdgeOverride&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides.push_back(std::move(value)); return *this; }
+    template<typename WithEdgeOverridesT = Aws::Vector<EdgeOverride>>
+    void SetWithEdgeOverrides(WithEdgeOverridesT&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides = std::forward<WithEdgeOverridesT>(value); }
+    template<typename WithEdgeOverridesT = Aws::Vector<EdgeOverride>>
+    Via& WithWithEdgeOverrides(WithEdgeOverridesT&& value) { SetWithEdgeOverrides(std::forward<WithEdgeOverridesT>(value)); return *this;}
+    template<typename WithEdgeOverridesT = EdgeOverride>
+    Via& AddWithEdgeOverrides(WithEdgeOverridesT&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides.emplace_back(std::forward<WithEdgeOverridesT>(value)); return *this; }
     ///@}
   private:
 

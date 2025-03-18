@@ -35,7 +35,7 @@ namespace Model
   class CreateVpcEndpointResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointResult();
+    AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointResult() = default;
     AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>Information about the newly created VPC endpoint.</p>
      */
-    inline const VpcEndpoint& GetVpcEndpoint() const{ return m_vpcEndpoint; }
-    inline void SetVpcEndpoint(const VpcEndpoint& value) { m_vpcEndpoint = value; }
-    inline void SetVpcEndpoint(VpcEndpoint&& value) { m_vpcEndpoint = std::move(value); }
-    inline CreateVpcEndpointResult& WithVpcEndpoint(const VpcEndpoint& value) { SetVpcEndpoint(value); return *this;}
-    inline CreateVpcEndpointResult& WithVpcEndpoint(VpcEndpoint&& value) { SetVpcEndpoint(std::move(value)); return *this;}
+    inline const VpcEndpoint& GetVpcEndpoint() const { return m_vpcEndpoint; }
+    template<typename VpcEndpointT = VpcEndpoint>
+    void SetVpcEndpoint(VpcEndpointT&& value) { m_vpcEndpointHasBeenSet = true; m_vpcEndpoint = std::forward<VpcEndpointT>(value); }
+    template<typename VpcEndpointT = VpcEndpoint>
+    CreateVpcEndpointResult& WithVpcEndpoint(VpcEndpointT&& value) { SetVpcEndpoint(std::forward<VpcEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVpcEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcEndpoint m_vpcEndpoint;
+    bool m_vpcEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

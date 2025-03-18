@@ -25,7 +25,7 @@ namespace Model
   class DeleteTrafficPolicyInstanceRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API DeleteTrafficPolicyInstanceRequest();
+    AWS_ROUTE53_API DeleteTrafficPolicyInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * deletes all of the resource record sets that were created when you created the
      * traffic policy instance.</p> 
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteTrafficPolicyInstanceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteTrafficPolicyInstanceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

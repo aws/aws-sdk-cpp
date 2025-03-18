@@ -18,14 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_resourcePolicySummaryHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourcePolicySummary"))
   {
     m_resourcePolicySummary = jsonValue.GetObject("ResourcePolicySummary");
-
     m_resourcePolicySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

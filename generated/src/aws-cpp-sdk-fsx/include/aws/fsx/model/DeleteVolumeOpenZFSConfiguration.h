@@ -33,7 +33,7 @@ namespace Model
   class DeleteVolumeOpenZFSConfiguration
   {
   public:
-    AWS_FSX_API DeleteVolumeOpenZFSConfiguration();
+    AWS_FSX_API DeleteVolumeOpenZFSConfiguration() = default;
     AWS_FSX_API DeleteVolumeOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DeleteVolumeOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p>To delete the volume's child volumes, snapshots, and clones, use the string
      * <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
      */
-    inline const Aws::Vector<DeleteOpenZFSVolumeOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<DeleteOpenZFSVolumeOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<DeleteOpenZFSVolumeOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<DeleteOpenZFSVolumeOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline DeleteVolumeOpenZFSConfiguration& WithOptions(const Aws::Vector<DeleteOpenZFSVolumeOption>& value) { SetOptions(value); return *this;}
-    inline DeleteVolumeOpenZFSConfiguration& WithOptions(Aws::Vector<DeleteOpenZFSVolumeOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline DeleteVolumeOpenZFSConfiguration& AddOptions(const DeleteOpenZFSVolumeOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline DeleteVolumeOpenZFSConfiguration& AddOptions(DeleteOpenZFSVolumeOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<DeleteOpenZFSVolumeOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<DeleteOpenZFSVolumeOption>>
+    DeleteVolumeOpenZFSConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    inline DeleteVolumeOpenZFSConfiguration& AddOptions(DeleteOpenZFSVolumeOption value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
     ///@}
   private:
 

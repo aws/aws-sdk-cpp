@@ -12,14 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExecutionsRequest::ListExecutionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 Aws::String ListExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

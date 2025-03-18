@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceNetworkPerformanceOptionsResponse::ModifyInstanceNetworkPerformanceOptionsResponse() : 
-    m_bandwidthWeighting(InstanceBandwidthWeighting::NOT_SET)
-{
-}
-
 ModifyInstanceNetworkPerformanceOptionsResponse::ModifyInstanceNetworkPerformanceOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyInstanceNetworkPerformanceOptionsResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ ModifyInstanceNetworkPerformanceOptionsResponse& ModifyInstanceNetworkPerformanc
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode bandwidthWeightingNode = resultNode.FirstChild("bandwidthWeighting");
     if(!bandwidthWeightingNode.IsNull())
     {
-      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()).c_str());
+      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()));
+      m_bandwidthWeightingHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ ModifyInstanceNetworkPerformanceOptionsResponse& ModifyInstanceNetworkPerformanc
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceNetworkPerformanceOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

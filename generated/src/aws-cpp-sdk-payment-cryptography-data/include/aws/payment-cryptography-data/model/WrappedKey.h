@@ -33,7 +33,7 @@ namespace Model
   class WrappedKey
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKey();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKey() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
      */
-    inline const WrappedKeyMaterial& GetWrappedKeyMaterial() const{ return m_wrappedKeyMaterial; }
+    inline const WrappedKeyMaterial& GetWrappedKeyMaterial() const { return m_wrappedKeyMaterial; }
     inline bool WrappedKeyMaterialHasBeenSet() const { return m_wrappedKeyMaterialHasBeenSet; }
-    inline void SetWrappedKeyMaterial(const WrappedKeyMaterial& value) { m_wrappedKeyMaterialHasBeenSet = true; m_wrappedKeyMaterial = value; }
-    inline void SetWrappedKeyMaterial(WrappedKeyMaterial&& value) { m_wrappedKeyMaterialHasBeenSet = true; m_wrappedKeyMaterial = std::move(value); }
-    inline WrappedKey& WithWrappedKeyMaterial(const WrappedKeyMaterial& value) { SetWrappedKeyMaterial(value); return *this;}
-    inline WrappedKey& WithWrappedKeyMaterial(WrappedKeyMaterial&& value) { SetWrappedKeyMaterial(std::move(value)); return *this;}
+    template<typename WrappedKeyMaterialT = WrappedKeyMaterial>
+    void SetWrappedKeyMaterial(WrappedKeyMaterialT&& value) { m_wrappedKeyMaterialHasBeenSet = true; m_wrappedKeyMaterial = std::forward<WrappedKeyMaterialT>(value); }
+    template<typename WrappedKeyMaterialT = WrappedKeyMaterial>
+    WrappedKey& WithWrappedKeyMaterial(WrappedKeyMaterialT&& value) { SetWrappedKeyMaterial(std::forward<WrappedKeyMaterialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
      * the encrypted result.</p>
      */
-    inline const KeyCheckValueAlgorithm& GetKeyCheckValueAlgorithm() const{ return m_keyCheckValueAlgorithm; }
+    inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
     inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
-    inline void SetKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
-    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = std::move(value); }
-    inline WrappedKey& WithKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { SetKeyCheckValueAlgorithm(value); return *this;}
-    inline WrappedKey& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { SetKeyCheckValueAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
+    inline WrappedKey& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { SetKeyCheckValueAlgorithm(value); return *this;}
     ///@}
   private:
 
     WrappedKeyMaterial m_wrappedKeyMaterial;
     bool m_wrappedKeyMaterialHasBeenSet = false;
 
-    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm;
+    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
     bool m_keyCheckValueAlgorithmHasBeenSet = false;
   };
 

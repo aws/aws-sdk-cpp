@@ -18,23 +18,7 @@ namespace Omics
 namespace Model
 {
 
-VariantImportJobItem::VariantImportJobItem() : 
-    m_idHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
-    m_annotationFieldsHasBeenSet(false)
-{
-}
-
 VariantImportJobItem::VariantImportJobItem(JsonView jsonValue)
-  : VariantImportJobItem()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ VariantImportJobItem& VariantImportJobItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationName"))
   {
     m_destinationName = jsonValue.GetString("destinationName");
-
     m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetString("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runLeftNormalization"))
   {
     m_runLeftNormalization = jsonValue.GetBool("runLeftNormalization");
-
     m_runLeftNormalizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("annotationFields"))
   {
     Aws::Map<Aws::String, JsonView> annotationFieldsJsonMap = jsonValue.GetObject("annotationFields").GetAllObjects();
@@ -106,7 +74,6 @@ VariantImportJobItem& VariantImportJobItem::operator =(JsonView jsonValue)
     }
     m_annotationFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

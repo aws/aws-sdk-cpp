@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSServiceRecommendationFilter::ECSServiceRecommendationFilter() : 
-    m_name(ECSServiceRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ECSServiceRecommendationFilter::ECSServiceRecommendationFilter(JsonView jsonValue)
-  : ECSServiceRecommendationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ECSServiceRecommendationFilter& ECSServiceRecommendationFilter::operator =(JsonV
   if(jsonValue.ValueExists("name"))
   {
     m_name = ECSServiceRecommendationFilterNameMapper::GetECSServiceRecommendationFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ ECSServiceRecommendationFilter& ECSServiceRecommendationFilter::operator =(JsonV
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

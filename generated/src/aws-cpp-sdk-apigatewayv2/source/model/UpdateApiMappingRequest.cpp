@@ -12,15 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApiMappingRequest::UpdateApiMappingRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_apiMappingIdHasBeenSet(false),
-    m_apiMappingKeyHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_stageHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApiMappingRequest::SerializePayload() const
 {
   JsonValue payload;

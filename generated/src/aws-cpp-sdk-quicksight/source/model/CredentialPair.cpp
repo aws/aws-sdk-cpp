@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CredentialPair::CredentialPair() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_alternateDataSourceParametersHasBeenSet(false)
-{
-}
-
 CredentialPair::CredentialPair(JsonView jsonValue)
-  : CredentialPair()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CredentialPair& CredentialPair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateDataSourceParameters"))
   {
     Aws::Utils::Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
@@ -56,7 +44,6 @@ CredentialPair& CredentialPair::operator =(JsonView jsonValue)
     }
     m_alternateDataSourceParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

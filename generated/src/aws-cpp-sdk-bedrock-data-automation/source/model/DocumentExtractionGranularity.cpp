@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentExtractionGranularity::DocumentExtractionGranularity() : 
-    m_typesHasBeenSet(false)
-{
-}
-
 DocumentExtractionGranularity::DocumentExtractionGranularity(JsonView jsonValue)
-  : DocumentExtractionGranularity()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DocumentExtractionGranularity& DocumentExtractionGranularity::operator =(JsonVie
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

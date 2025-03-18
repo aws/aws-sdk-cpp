@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-RealtimeLogConfig::RealtimeLogConfig() : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_samplingRate(0),
-    m_samplingRateHasBeenSet(false),
-    m_endPointsHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode)
-  : RealtimeLogConfig()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
     if(!endPointsNode.IsNull())
     {
       XmlNode endPointsMember = endPointsNode.FirstChild("member");
+      m_endPointsHasBeenSet = !endPointsMember.IsNull();
       while(!endPointsMember.IsNull())
       {
         m_endPoints.push_back(endPointsMember);
@@ -76,6 +66,7 @@ RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
     if(!fieldsNode.IsNull())
     {
       XmlNode fieldsMember = fieldsNode.FirstChild("Field");
+      m_fieldsHasBeenSet = !fieldsMember.IsNull();
       while(!fieldsMember.IsNull())
       {
         m_fields.push_back(fieldsMember.GetText());

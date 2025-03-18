@@ -12,20 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAggregatedUtterancesRequest::ListAggregatedUtterancesRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_aggregationDurationHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAggregatedUtterancesRequest::SerializePayload() const
 {
   JsonValue payload;

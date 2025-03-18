@@ -12,12 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessRequest::DeleteAccessRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessRequest::SerializePayload() const
 {
   JsonValue payload;

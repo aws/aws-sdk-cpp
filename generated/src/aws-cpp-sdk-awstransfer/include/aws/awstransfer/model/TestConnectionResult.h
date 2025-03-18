@@ -27,7 +27,7 @@ namespace Model
   class TestConnectionResult
   {
   public:
-    AWS_TRANSFER_API TestConnectionResult();
+    AWS_TRANSFER_API TestConnectionResult() = default;
     AWS_TRANSFER_API TestConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API TestConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>Returns the identifier of the connector object that you are testing.</p>
      */
-    inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
-    inline void SetConnectorId(const Aws::String& value) { m_connectorId = value; }
-    inline void SetConnectorId(Aws::String&& value) { m_connectorId = std::move(value); }
-    inline void SetConnectorId(const char* value) { m_connectorId.assign(value); }
-    inline TestConnectionResult& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
-    inline TestConnectionResult& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
-    inline TestConnectionResult& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+    inline const Aws::String& GetConnectorId() const { return m_connectorId; }
+    template<typename ConnectorIdT = Aws::String>
+    void SetConnectorId(ConnectorIdT&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::forward<ConnectorIdT>(value); }
+    template<typename ConnectorIdT = Aws::String>
+    TestConnectionResult& WithConnectorId(ConnectorIdT&& value) { SetConnectorId(std::forward<ConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +48,11 @@ namespace Model
      * <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the
      * test fails.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline TestConnectionResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TestConnectionResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TestConnectionResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TestConnectionResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,34 +68,34 @@ namespace Model
      * host key in the connector configuration matches the <code>ssh-keyscan</code>
      * output.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline TestConnectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline TestConnectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline TestConnectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    TestConnectionResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorId;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

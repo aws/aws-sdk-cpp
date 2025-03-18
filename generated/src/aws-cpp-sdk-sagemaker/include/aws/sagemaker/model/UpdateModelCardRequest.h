@@ -22,7 +22,7 @@ namespace Model
   class UpdateModelCardRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateModelCardRequest();
+    AWS_SAGEMAKER_API UpdateModelCardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
      */
-    inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
+    inline const Aws::String& GetModelCardName() const { return m_modelCardName; }
     inline bool ModelCardNameHasBeenSet() const { return m_modelCardNameHasBeenSet; }
-    inline void SetModelCardName(const Aws::String& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = value; }
-    inline void SetModelCardName(Aws::String&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::move(value); }
-    inline void SetModelCardName(const char* value) { m_modelCardNameHasBeenSet = true; m_modelCardName.assign(value); }
-    inline UpdateModelCardRequest& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
-    inline UpdateModelCardRequest& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
-    inline UpdateModelCardRequest& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
+    template<typename ModelCardNameT = Aws::String>
+    void SetModelCardName(ModelCardNameT&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::forward<ModelCardNameT>(value); }
+    template<typename ModelCardNameT = Aws::String>
+    UpdateModelCardRequest& WithModelCardName(ModelCardNameT&& value) { SetModelCardName(std::forward<ModelCardNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline UpdateModelCardRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline UpdateModelCardRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline UpdateModelCardRequest& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    UpdateModelCardRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,10 @@ namespace Model
      * No more updates should be made to the model card, but it can still be
      * exported.</p> </li> </ul>
      */
-    inline const ModelCardStatus& GetModelCardStatus() const{ return m_modelCardStatus; }
+    inline ModelCardStatus GetModelCardStatus() const { return m_modelCardStatus; }
     inline bool ModelCardStatusHasBeenSet() const { return m_modelCardStatusHasBeenSet; }
-    inline void SetModelCardStatus(const ModelCardStatus& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
-    inline void SetModelCardStatus(ModelCardStatus&& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = std::move(value); }
-    inline UpdateModelCardRequest& WithModelCardStatus(const ModelCardStatus& value) { SetModelCardStatus(value); return *this;}
-    inline UpdateModelCardRequest& WithModelCardStatus(ModelCardStatus&& value) { SetModelCardStatus(std::move(value)); return *this;}
+    inline void SetModelCardStatus(ModelCardStatus value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
+    inline UpdateModelCardRequest& WithModelCardStatus(ModelCardStatus value) { SetModelCardStatus(value); return *this;}
     ///@}
   private:
 
@@ -92,7 +86,7 @@ namespace Model
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    ModelCardStatus m_modelCardStatus;
+    ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
     bool m_modelCardStatusHasBeenSet = false;
   };
 

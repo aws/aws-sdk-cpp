@@ -31,7 +31,7 @@ namespace Model
   class WeightedTargetGroup
   {
   public:
-    AWS_VPCLATTICE_API WeightedTargetGroup();
+    AWS_VPCLATTICE_API WeightedTargetGroup() = default;
     AWS_VPCLATTICE_API WeightedTargetGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API WeightedTargetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID or ARN of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
+    inline const Aws::String& GetTargetGroupIdentifier() const { return m_targetGroupIdentifier; }
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-    inline void SetTargetGroupIdentifier(const Aws::String& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = value; }
-    inline void SetTargetGroupIdentifier(Aws::String&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::move(value); }
-    inline void SetTargetGroupIdentifier(const char* value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier.assign(value); }
-    inline WeightedTargetGroup& WithTargetGroupIdentifier(const Aws::String& value) { SetTargetGroupIdentifier(value); return *this;}
-    inline WeightedTargetGroup& WithTargetGroupIdentifier(Aws::String&& value) { SetTargetGroupIdentifier(std::move(value)); return *this;}
-    inline WeightedTargetGroup& WithTargetGroupIdentifier(const char* value) { SetTargetGroupIdentifier(value); return *this;}
+    template<typename TargetGroupIdentifierT = Aws::String>
+    void SetTargetGroupIdentifier(TargetGroupIdentifierT&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::forward<TargetGroupIdentifierT>(value); }
+    template<typename TargetGroupIdentifierT = Aws::String>
+    WeightedTargetGroup& WithTargetGroupIdentifier(TargetGroupIdentifierT&& value) { SetTargetGroupIdentifier(std::forward<TargetGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * receives twice as many requests as the other target group. If there's only one
      * target group specified, then the default value is 100.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline WeightedTargetGroup& WithWeight(int value) { SetWeight(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_targetGroupIdentifier;
     bool m_targetGroupIdentifierHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
   };
 

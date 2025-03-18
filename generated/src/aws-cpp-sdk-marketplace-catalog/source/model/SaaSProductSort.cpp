@@ -18,16 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-SaaSProductSort::SaaSProductSort() : 
-    m_sortBy(SaaSProductSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 SaaSProductSort::SaaSProductSort(JsonView jsonValue)
-  : SaaSProductSort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SaaSProductSort& SaaSProductSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = SaaSProductSortByMapper::GetSaaSProductSortByForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

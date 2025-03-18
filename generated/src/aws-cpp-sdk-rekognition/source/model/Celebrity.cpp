@@ -18,19 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Celebrity::Celebrity() : 
-    m_urlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_faceHasBeenSet(false),
-    m_matchConfidence(0.0),
-    m_matchConfidenceHasBeenSet(false),
-    m_knownGenderHasBeenSet(false)
-{
-}
-
 Celebrity::Celebrity(JsonView jsonValue)
-  : Celebrity()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ Celebrity& Celebrity::operator =(JsonView jsonValue)
     }
     m_urlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Face"))
   {
     m_face = jsonValue.GetObject("Face");
-
     m_faceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchConfidence"))
   {
     m_matchConfidence = jsonValue.GetDouble("MatchConfidence");
-
     m_matchConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KnownGender"))
   {
     m_knownGender = jsonValue.GetObject("KnownGender");
-
     m_knownGenderHasBeenSet = true;
   }
-
   return *this;
 }
 

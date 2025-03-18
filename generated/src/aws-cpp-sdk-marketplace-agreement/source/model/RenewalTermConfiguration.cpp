@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-RenewalTermConfiguration::RenewalTermConfiguration() : 
-    m_enableAutoRenew(false),
-    m_enableAutoRenewHasBeenSet(false)
-{
-}
-
 RenewalTermConfiguration::RenewalTermConfiguration(JsonView jsonValue)
-  : RenewalTermConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RenewalTermConfiguration& RenewalTermConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("enableAutoRenew"))
   {
     m_enableAutoRenew = jsonValue.GetBool("enableAutoRenew");
-
     m_enableAutoRenewHasBeenSet = true;
   }
-
   return *this;
 }
 

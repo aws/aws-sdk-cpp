@@ -37,7 +37,7 @@ namespace Model
   class KinesisFirehoseDestination
   {
   public:
-    AWS_SES_API KinesisFirehoseDestination();
+    AWS_SES_API KinesisFirehoseDestination() = default;
     AWS_SES_API KinesisFirehoseDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API KinesisFirehoseDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
      * <p>The ARN of the IAM role under which Amazon SES publishes email sending events
      * to the Amazon Kinesis Firehose stream.</p>
      */
-    inline const Aws::String& GetIAMRoleARN() const{ return m_iAMRoleARN; }
+    inline const Aws::String& GetIAMRoleARN() const { return m_iAMRoleARN; }
     inline bool IAMRoleARNHasBeenSet() const { return m_iAMRoleARNHasBeenSet; }
-    inline void SetIAMRoleARN(const Aws::String& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = value; }
-    inline void SetIAMRoleARN(Aws::String&& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = std::move(value); }
-    inline void SetIAMRoleARN(const char* value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN.assign(value); }
-    inline KinesisFirehoseDestination& WithIAMRoleARN(const Aws::String& value) { SetIAMRoleARN(value); return *this;}
-    inline KinesisFirehoseDestination& WithIAMRoleARN(Aws::String&& value) { SetIAMRoleARN(std::move(value)); return *this;}
-    inline KinesisFirehoseDestination& WithIAMRoleARN(const char* value) { SetIAMRoleARN(value); return *this;}
+    template<typename IAMRoleARNT = Aws::String>
+    void SetIAMRoleARN(IAMRoleARNT&& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = std::forward<IAMRoleARNT>(value); }
+    template<typename IAMRoleARNT = Aws::String>
+    KinesisFirehoseDestination& WithIAMRoleARN(IAMRoleARNT&& value) { SetIAMRoleARN(std::forward<IAMRoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>The ARN of the Amazon Kinesis Firehose stream that email sending events
      * should be published to.</p>
      */
-    inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
+    inline const Aws::String& GetDeliveryStreamARN() const { return m_deliveryStreamARN; }
     inline bool DeliveryStreamARNHasBeenSet() const { return m_deliveryStreamARNHasBeenSet; }
-    inline void SetDeliveryStreamARN(const Aws::String& value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN = value; }
-    inline void SetDeliveryStreamARN(Aws::String&& value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN = std::move(value); }
-    inline void SetDeliveryStreamARN(const char* value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN.assign(value); }
-    inline KinesisFirehoseDestination& WithDeliveryStreamARN(const Aws::String& value) { SetDeliveryStreamARN(value); return *this;}
-    inline KinesisFirehoseDestination& WithDeliveryStreamARN(Aws::String&& value) { SetDeliveryStreamARN(std::move(value)); return *this;}
-    inline KinesisFirehoseDestination& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
+    template<typename DeliveryStreamARNT = Aws::String>
+    void SetDeliveryStreamARN(DeliveryStreamARNT&& value) { m_deliveryStreamARNHasBeenSet = true; m_deliveryStreamARN = std::forward<DeliveryStreamARNT>(value); }
+    template<typename DeliveryStreamARNT = Aws::String>
+    KinesisFirehoseDestination& WithDeliveryStreamARN(DeliveryStreamARNT&& value) { SetDeliveryStreamARN(std::forward<DeliveryStreamARNT>(value)); return *this;}
     ///@}
   private:
 

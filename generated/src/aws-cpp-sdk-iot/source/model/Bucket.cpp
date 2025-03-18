@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Bucket::Bucket() : 
-    m_keyValueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 Bucket::Bucket(JsonView jsonValue)
-  : Bucket()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Bucket& Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

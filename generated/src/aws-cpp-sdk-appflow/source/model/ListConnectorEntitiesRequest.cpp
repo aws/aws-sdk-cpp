@@ -12,18 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConnectorEntitiesRequest::ListConnectorEntitiesRequest() : 
-    m_connectorProfileNameHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_entitiesPathHasBeenSet(false),
-    m_apiVersionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectorEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

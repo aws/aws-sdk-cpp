@@ -27,7 +27,7 @@ namespace Model
   class CreateResourceGroupResult
   {
   public:
-    AWS_INSPECTOR_API CreateResourceGroupResult();
+    AWS_INSPECTOR_API CreateResourceGroupResult() = default;
     AWS_INSPECTOR_API CreateResourceGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API CreateResourceGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN that specifies the resource group that is created.</p>
      */
-    inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
-    inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArn = value; }
-    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArn = std::move(value); }
-    inline void SetResourceGroupArn(const char* value) { m_resourceGroupArn.assign(value); }
-    inline CreateResourceGroupResult& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
-    inline CreateResourceGroupResult& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
-    inline CreateResourceGroupResult& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
+    inline const Aws::String& GetResourceGroupArn() const { return m_resourceGroupArn; }
+    template<typename ResourceGroupArnT = Aws::String>
+    void SetResourceGroupArn(ResourceGroupArnT&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::forward<ResourceGroupArnT>(value); }
+    template<typename ResourceGroupArnT = Aws::String>
+    CreateResourceGroupResult& WithResourceGroupArn(ResourceGroupArnT&& value) { SetResourceGroupArn(std::forward<ResourceGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceGroupArn;
+    bool m_resourceGroupArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

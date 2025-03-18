@@ -39,7 +39,7 @@ namespace Model
   class InvocationResultMember
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvocationResultMember();
+    AWS_BEDROCKAGENTRUNTIME_API InvocationResultMember() = default;
     AWS_BEDROCKAGENTRUNTIME_API InvocationResultMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvocationResultMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
     /**
      * <p>The result from the API response from the action group invocation.</p>
      */
-    inline const ApiResult& GetApiResult() const{ return m_apiResult; }
+    inline const ApiResult& GetApiResult() const { return m_apiResult; }
     inline bool ApiResultHasBeenSet() const { return m_apiResultHasBeenSet; }
-    inline void SetApiResult(const ApiResult& value) { m_apiResultHasBeenSet = true; m_apiResult = value; }
-    inline void SetApiResult(ApiResult&& value) { m_apiResultHasBeenSet = true; m_apiResult = std::move(value); }
-    inline InvocationResultMember& WithApiResult(const ApiResult& value) { SetApiResult(value); return *this;}
-    inline InvocationResultMember& WithApiResult(ApiResult&& value) { SetApiResult(std::move(value)); return *this;}
+    template<typename ApiResultT = ApiResult>
+    void SetApiResult(ApiResultT&& value) { m_apiResultHasBeenSet = true; m_apiResult = std::forward<ApiResultT>(value); }
+    template<typename ApiResultT = ApiResult>
+    InvocationResultMember& WithApiResult(ApiResultT&& value) { SetApiResult(std::forward<ApiResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result from the function from the action group invocation.</p>
      */
-    inline const FunctionResult& GetFunctionResult() const{ return m_functionResult; }
+    inline const FunctionResult& GetFunctionResult() const { return m_functionResult; }
     inline bool FunctionResultHasBeenSet() const { return m_functionResultHasBeenSet; }
-    inline void SetFunctionResult(const FunctionResult& value) { m_functionResultHasBeenSet = true; m_functionResult = value; }
-    inline void SetFunctionResult(FunctionResult&& value) { m_functionResultHasBeenSet = true; m_functionResult = std::move(value); }
-    inline InvocationResultMember& WithFunctionResult(const FunctionResult& value) { SetFunctionResult(value); return *this;}
-    inline InvocationResultMember& WithFunctionResult(FunctionResult&& value) { SetFunctionResult(std::move(value)); return *this;}
+    template<typename FunctionResultT = FunctionResult>
+    void SetFunctionResult(FunctionResultT&& value) { m_functionResultHasBeenSet = true; m_functionResult = std::forward<FunctionResultT>(value); }
+    template<typename FunctionResultT = FunctionResult>
+    InvocationResultMember& WithFunctionResult(FunctionResultT&& value) { SetFunctionResult(std::forward<FunctionResultT>(value)); return *this;}
     ///@}
   private:
 

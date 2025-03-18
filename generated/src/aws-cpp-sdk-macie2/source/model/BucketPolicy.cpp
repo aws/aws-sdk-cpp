@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketPolicy::BucketPolicy() : 
-    m_allowsPublicReadAccess(false),
-    m_allowsPublicReadAccessHasBeenSet(false),
-    m_allowsPublicWriteAccess(false),
-    m_allowsPublicWriteAccessHasBeenSet(false)
-{
-}
-
 BucketPolicy::BucketPolicy(JsonView jsonValue)
-  : BucketPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BucketPolicy& BucketPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowsPublicReadAccess"))
   {
     m_allowsPublicReadAccess = jsonValue.GetBool("allowsPublicReadAccess");
-
     m_allowsPublicReadAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowsPublicWriteAccess"))
   {
     m_allowsPublicWriteAccess = jsonValue.GetBool("allowsPublicWriteAccess");
-
     m_allowsPublicWriteAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

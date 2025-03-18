@@ -12,13 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBulkAssociateWirelessDeviceWithMulticastGroupRequest::StartBulkAssociateWirelessDeviceWithMulticastGroupRequest() : 
-    m_idHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartBulkAssociateWirelessDeviceWithMulticastGroupRequest::SerializePayload() const
 {
   JsonValue payload;

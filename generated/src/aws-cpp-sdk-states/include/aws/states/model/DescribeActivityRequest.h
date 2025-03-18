@@ -21,7 +21,7 @@ namespace Model
   class DescribeActivityRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DescribeActivityRequest();
+    AWS_SFN_API DescribeActivityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
      */
-    inline const Aws::String& GetActivityArn() const{ return m_activityArn; }
+    inline const Aws::String& GetActivityArn() const { return m_activityArn; }
     inline bool ActivityArnHasBeenSet() const { return m_activityArnHasBeenSet; }
-    inline void SetActivityArn(const Aws::String& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
-    inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::move(value); }
-    inline void SetActivityArn(const char* value) { m_activityArnHasBeenSet = true; m_activityArn.assign(value); }
-    inline DescribeActivityRequest& WithActivityArn(const Aws::String& value) { SetActivityArn(value); return *this;}
-    inline DescribeActivityRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
-    inline DescribeActivityRequest& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
+    template<typename ActivityArnT = Aws::String>
+    void SetActivityArn(ActivityArnT&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::forward<ActivityArnT>(value); }
+    template<typename ActivityArnT = Aws::String>
+    DescribeActivityRequest& WithActivityArn(ActivityArnT&& value) { SetActivityArn(std::forward<ActivityArnT>(value)); return *this;}
     ///@}
   private:
 

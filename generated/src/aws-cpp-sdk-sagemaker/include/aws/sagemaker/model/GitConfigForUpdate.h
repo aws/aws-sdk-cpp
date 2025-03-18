@@ -32,7 +32,7 @@ namespace Model
   class GitConfigForUpdate
   {
   public:
-    AWS_SAGEMAKER_API GitConfigForUpdate();
+    AWS_SAGEMAKER_API GitConfigForUpdate() = default;
     AWS_SAGEMAKER_API GitConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API GitConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline GitConfigForUpdate& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline GitConfigForUpdate& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline GitConfigForUpdate& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    GitConfigForUpdate& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

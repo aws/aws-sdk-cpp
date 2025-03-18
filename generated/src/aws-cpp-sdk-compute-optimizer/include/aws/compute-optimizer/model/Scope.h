@@ -47,7 +47,7 @@ namespace Model
   class Scope
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API Scope();
+    AWS_COMPUTEOPTIMIZER_API Scope() = default;
     AWS_COMPUTEOPTIMIZER_API Scope(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * Specifies that the recommendation preference applies at the individual resource
      * level.</p> </li> </ul>
      */
-    inline const ScopeName& GetName() const{ return m_name; }
+    inline ScopeName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ScopeName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ScopeName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Scope& WithName(const ScopeName& value) { SetName(value); return *this;}
-    inline Scope& WithName(ScopeName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ScopeName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Scope& WithName(ScopeName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -83,18 +81,16 @@ namespace Model
      * </li> </ul> <p>Only EC2 instance and Auto Scaling group ARNs are currently
      * supported.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Scope& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Scope& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Scope& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Scope& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ScopeName m_name;
+    ScopeName m_name{ScopeName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

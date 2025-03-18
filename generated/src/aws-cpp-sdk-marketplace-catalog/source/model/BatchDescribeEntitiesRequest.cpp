@@ -12,11 +12,6 @@ using namespace Aws::MarketplaceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDescribeEntitiesRequest::BatchDescribeEntitiesRequest() : 
-    m_entityRequestListHasBeenSet(false)
-{
-}
-
 Aws::String BatchDescribeEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

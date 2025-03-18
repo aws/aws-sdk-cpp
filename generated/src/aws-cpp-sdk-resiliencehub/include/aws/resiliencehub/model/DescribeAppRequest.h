@@ -21,7 +21,7 @@ namespace Model
   class DescribeAppRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeAppRequest();
+    AWS_RESILIENCEHUB_API DescribeAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline DescribeAppRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DescribeAppRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DescribeAppRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DescribeAppRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
   private:
 

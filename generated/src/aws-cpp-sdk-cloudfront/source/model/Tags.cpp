@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Tags::Tags() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 Tags::Tags(const XmlNode& xmlNode)
-  : Tags()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ Tags& Tags::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Tag");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

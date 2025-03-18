@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssumeImpersonationRoleResult::AssumeImpersonationRoleResult() : 
-    m_expiresIn(0)
-{
-}
-
 AssumeImpersonationRoleResult::AssumeImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AssumeImpersonationRoleResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ AssumeImpersonationRoleResult& AssumeImpersonationRoleResult::operator =(const A
   if(jsonValue.ValueExists("Token"))
   {
     m_token = jsonValue.GetString("Token");
-
+    m_tokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresIn"))
   {
     m_expiresIn = jsonValue.GetInt64("ExpiresIn");
-
+    m_expiresInHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

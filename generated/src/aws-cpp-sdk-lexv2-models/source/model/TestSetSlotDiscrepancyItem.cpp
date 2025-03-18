@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetSlotDiscrepancyItem::TestSetSlotDiscrepancyItem() : 
-    m_intentNameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 TestSetSlotDiscrepancyItem::TestSetSlotDiscrepancyItem(JsonView jsonValue)
-  : TestSetSlotDiscrepancyItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TestSetSlotDiscrepancyItem& TestSetSlotDiscrepancyItem::operator =(JsonView json
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotName"))
   {
     m_slotName = jsonValue.GetString("slotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

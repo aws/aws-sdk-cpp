@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-DatabasePreferences::DatabasePreferences() : 
-    m_databaseManagementPreference(DatabaseManagementPreference::NOT_SET),
-    m_databaseManagementPreferenceHasBeenSet(false),
-    m_databaseMigrationPreferenceHasBeenSet(false)
-{
-}
-
 DatabasePreferences::DatabasePreferences(JsonView jsonValue)
-  : DatabasePreferences()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DatabasePreferences& DatabasePreferences::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("databaseManagementPreference"))
   {
     m_databaseManagementPreference = DatabaseManagementPreferenceMapper::GetDatabaseManagementPreferenceForName(jsonValue.GetString("databaseManagementPreference"));
-
     m_databaseManagementPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseMigrationPreference"))
   {
     m_databaseMigrationPreference = jsonValue.GetObject("databaseMigrationPreference");
-
     m_databaseMigrationPreferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

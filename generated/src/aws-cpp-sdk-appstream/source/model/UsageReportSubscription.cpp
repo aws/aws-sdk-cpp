@@ -18,17 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-UsageReportSubscription::UsageReportSubscription() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_schedule(UsageReportSchedule::NOT_SET),
-    m_scheduleHasBeenSet(false),
-    m_lastGeneratedReportDateHasBeenSet(false),
-    m_subscriptionErrorsHasBeenSet(false)
-{
-}
-
 UsageReportSubscription::UsageReportSubscription(JsonView jsonValue)
-  : UsageReportSubscription()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ UsageReportSubscription& UsageReportSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = UsageReportScheduleMapper::GetUsageReportScheduleForName(jsonValue.GetString("Schedule"));
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastGeneratedReportDate"))
   {
     m_lastGeneratedReportDate = jsonValue.GetDouble("LastGeneratedReportDate");
-
     m_lastGeneratedReportDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionErrors"))
   {
     Aws::Utils::Array<JsonView> subscriptionErrorsJsonList = jsonValue.GetArray("SubscriptionErrors");
@@ -65,7 +49,6 @@ UsageReportSubscription& UsageReportSubscription::operator =(JsonView jsonValue)
     }
     m_subscriptionErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

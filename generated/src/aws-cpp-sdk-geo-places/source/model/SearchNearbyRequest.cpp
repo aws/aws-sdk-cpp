@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchNearbyRequest::SearchNearbyRequest() : 
-    m_queryPositionHasBeenSet(false),
-    m_queryRadius(0),
-    m_queryRadiusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_additionalFeaturesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_intendedUse(SearchNearbyIntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String SearchNearbyRequest::SerializePayload() const
 {
   JsonValue payload;

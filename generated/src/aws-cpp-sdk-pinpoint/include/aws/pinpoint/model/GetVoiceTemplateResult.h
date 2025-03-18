@@ -28,35 +28,35 @@ namespace Model
   class GetVoiceTemplateResult
   {
   public:
-    AWS_PINPOINT_API GetVoiceTemplateResult();
+    AWS_PINPOINT_API GetVoiceTemplateResult() = default;
     AWS_PINPOINT_API GetVoiceTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetVoiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const VoiceTemplateResponse& GetVoiceTemplateResponse() const{ return m_voiceTemplateResponse; }
-    inline void SetVoiceTemplateResponse(const VoiceTemplateResponse& value) { m_voiceTemplateResponse = value; }
-    inline void SetVoiceTemplateResponse(VoiceTemplateResponse&& value) { m_voiceTemplateResponse = std::move(value); }
-    inline GetVoiceTemplateResult& WithVoiceTemplateResponse(const VoiceTemplateResponse& value) { SetVoiceTemplateResponse(value); return *this;}
-    inline GetVoiceTemplateResult& WithVoiceTemplateResponse(VoiceTemplateResponse&& value) { SetVoiceTemplateResponse(std::move(value)); return *this;}
+    inline const VoiceTemplateResponse& GetVoiceTemplateResponse() const { return m_voiceTemplateResponse; }
+    template<typename VoiceTemplateResponseT = VoiceTemplateResponse>
+    void SetVoiceTemplateResponse(VoiceTemplateResponseT&& value) { m_voiceTemplateResponseHasBeenSet = true; m_voiceTemplateResponse = std::forward<VoiceTemplateResponseT>(value); }
+    template<typename VoiceTemplateResponseT = VoiceTemplateResponse>
+    GetVoiceTemplateResult& WithVoiceTemplateResponse(VoiceTemplateResponseT&& value) { SetVoiceTemplateResponse(std::forward<VoiceTemplateResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVoiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVoiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVoiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVoiceTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VoiceTemplateResponse m_voiceTemplateResponse;
+    bool m_voiceTemplateResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

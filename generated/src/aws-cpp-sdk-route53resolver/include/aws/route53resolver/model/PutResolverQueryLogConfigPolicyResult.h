@@ -33,7 +33,7 @@ namespace Model
   class PutResolverQueryLogConfigPolicyResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult();
+    AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult() = default;
     AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,26 +43,26 @@ namespace Model
      * <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was
      * successful.</p>
      */
-    inline bool GetReturnValue() const{ return m_returnValue; }
-    inline void SetReturnValue(bool value) { m_returnValue = value; }
+    inline bool GetReturnValue() const { return m_returnValue; }
+    inline void SetReturnValue(bool value) { m_returnValueHasBeenSet = true; m_returnValue = value; }
     inline PutResolverQueryLogConfigPolicyResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutResolverQueryLogConfigPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutResolverQueryLogConfigPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutResolverQueryLogConfigPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutResolverQueryLogConfigPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_returnValue;
+    bool m_returnValue{false};
+    bool m_returnValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

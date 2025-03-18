@@ -34,7 +34,7 @@ namespace Model
   class SkewedInfo
   {
   public:
-    AWS_GLUE_API SkewedInfo();
+    AWS_GLUE_API SkewedInfo() = default;
     AWS_GLUE_API SkewedInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SkewedInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,49 +44,44 @@ namespace Model
     /**
      * <p>A list of names of columns that contain skewed values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSkewedColumnNames() const{ return m_skewedColumnNames; }
+    inline const Aws::Vector<Aws::String>& GetSkewedColumnNames() const { return m_skewedColumnNames; }
     inline bool SkewedColumnNamesHasBeenSet() const { return m_skewedColumnNamesHasBeenSet; }
-    inline void SetSkewedColumnNames(const Aws::Vector<Aws::String>& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames = value; }
-    inline void SetSkewedColumnNames(Aws::Vector<Aws::String>&& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames = std::move(value); }
-    inline SkewedInfo& WithSkewedColumnNames(const Aws::Vector<Aws::String>& value) { SetSkewedColumnNames(value); return *this;}
-    inline SkewedInfo& WithSkewedColumnNames(Aws::Vector<Aws::String>&& value) { SetSkewedColumnNames(std::move(value)); return *this;}
-    inline SkewedInfo& AddSkewedColumnNames(const Aws::String& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames.push_back(value); return *this; }
-    inline SkewedInfo& AddSkewedColumnNames(Aws::String&& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames.push_back(std::move(value)); return *this; }
-    inline SkewedInfo& AddSkewedColumnNames(const char* value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames.push_back(value); return *this; }
+    template<typename SkewedColumnNamesT = Aws::Vector<Aws::String>>
+    void SetSkewedColumnNames(SkewedColumnNamesT&& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames = std::forward<SkewedColumnNamesT>(value); }
+    template<typename SkewedColumnNamesT = Aws::Vector<Aws::String>>
+    SkewedInfo& WithSkewedColumnNames(SkewedColumnNamesT&& value) { SetSkewedColumnNames(std::forward<SkewedColumnNamesT>(value)); return *this;}
+    template<typename SkewedColumnNamesT = Aws::String>
+    SkewedInfo& AddSkewedColumnNames(SkewedColumnNamesT&& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames.emplace_back(std::forward<SkewedColumnNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of values that appear so frequently as to be considered skewed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSkewedColumnValues() const{ return m_skewedColumnValues; }
+    inline const Aws::Vector<Aws::String>& GetSkewedColumnValues() const { return m_skewedColumnValues; }
     inline bool SkewedColumnValuesHasBeenSet() const { return m_skewedColumnValuesHasBeenSet; }
-    inline void SetSkewedColumnValues(const Aws::Vector<Aws::String>& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues = value; }
-    inline void SetSkewedColumnValues(Aws::Vector<Aws::String>&& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues = std::move(value); }
-    inline SkewedInfo& WithSkewedColumnValues(const Aws::Vector<Aws::String>& value) { SetSkewedColumnValues(value); return *this;}
-    inline SkewedInfo& WithSkewedColumnValues(Aws::Vector<Aws::String>&& value) { SetSkewedColumnValues(std::move(value)); return *this;}
-    inline SkewedInfo& AddSkewedColumnValues(const Aws::String& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues.push_back(value); return *this; }
-    inline SkewedInfo& AddSkewedColumnValues(Aws::String&& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues.push_back(std::move(value)); return *this; }
-    inline SkewedInfo& AddSkewedColumnValues(const char* value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues.push_back(value); return *this; }
+    template<typename SkewedColumnValuesT = Aws::Vector<Aws::String>>
+    void SetSkewedColumnValues(SkewedColumnValuesT&& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues = std::forward<SkewedColumnValuesT>(value); }
+    template<typename SkewedColumnValuesT = Aws::Vector<Aws::String>>
+    SkewedInfo& WithSkewedColumnValues(SkewedColumnValuesT&& value) { SetSkewedColumnValues(std::forward<SkewedColumnValuesT>(value)); return *this;}
+    template<typename SkewedColumnValuesT = Aws::String>
+    SkewedInfo& AddSkewedColumnValues(SkewedColumnValuesT&& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues.emplace_back(std::forward<SkewedColumnValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A mapping of skewed values to the columns that contain them.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSkewedColumnValueLocationMaps() const{ return m_skewedColumnValueLocationMaps; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSkewedColumnValueLocationMaps() const { return m_skewedColumnValueLocationMaps; }
     inline bool SkewedColumnValueLocationMapsHasBeenSet() const { return m_skewedColumnValueLocationMapsHasBeenSet; }
-    inline void SetSkewedColumnValueLocationMaps(const Aws::Map<Aws::String, Aws::String>& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps = value; }
-    inline void SetSkewedColumnValueLocationMaps(Aws::Map<Aws::String, Aws::String>&& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps = std::move(value); }
-    inline SkewedInfo& WithSkewedColumnValueLocationMaps(const Aws::Map<Aws::String, Aws::String>& value) { SetSkewedColumnValueLocationMaps(value); return *this;}
-    inline SkewedInfo& WithSkewedColumnValueLocationMaps(Aws::Map<Aws::String, Aws::String>&& value) { SetSkewedColumnValueLocationMaps(std::move(value)); return *this;}
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(const Aws::String& key, const Aws::String& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(key, value); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(Aws::String&& key, const Aws::String& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(std::move(key), value); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(const Aws::String& key, Aws::String&& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(key, std::move(value)); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(Aws::String&& key, Aws::String&& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(std::move(key), std::move(value)); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(const char* key, Aws::String&& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(key, std::move(value)); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(Aws::String&& key, const char* value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(std::move(key), value); return *this; }
-    inline SkewedInfo& AddSkewedColumnValueLocationMaps(const char* key, const char* value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(key, value); return *this; }
+    template<typename SkewedColumnValueLocationMapsT = Aws::Map<Aws::String, Aws::String>>
+    void SetSkewedColumnValueLocationMaps(SkewedColumnValueLocationMapsT&& value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps = std::forward<SkewedColumnValueLocationMapsT>(value); }
+    template<typename SkewedColumnValueLocationMapsT = Aws::Map<Aws::String, Aws::String>>
+    SkewedInfo& WithSkewedColumnValueLocationMaps(SkewedColumnValueLocationMapsT&& value) { SetSkewedColumnValueLocationMaps(std::forward<SkewedColumnValueLocationMapsT>(value)); return *this;}
+    template<typename SkewedColumnValueLocationMapsKeyT = Aws::String, typename SkewedColumnValueLocationMapsValueT = Aws::String>
+    SkewedInfo& AddSkewedColumnValueLocationMaps(SkewedColumnValueLocationMapsKeyT&& key, SkewedColumnValueLocationMapsValueT&& value) {
+      m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(std::forward<SkewedColumnValueLocationMapsKeyT>(key), std::forward<SkewedColumnValueLocationMapsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

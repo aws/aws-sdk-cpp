@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedInstancesModificationsResponse::DescribeReservedInstancesModificationsResponse()
-{
-}
-
 DescribeReservedInstancesModificationsResponse::DescribeReservedInstancesModificationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode reservedInstancesModificationsNode = resultNode.FirstChild("reservedInstancesModificationsSet");
     if(!reservedInstancesModificationsNode.IsNull())
     {
       XmlNode reservedInstancesModificationsMember = reservedInstancesModificationsNode.FirstChild("item");
+      m_reservedInstancesModificationsHasBeenSet = !reservedInstancesModificationsMember.IsNull();
       while(!reservedInstancesModificationsMember.IsNull())
       {
         m_reservedInstancesModifications.push_back(reservedInstancesModificationsMember);
         reservedInstancesModificationsMember = reservedInstancesModificationsMember.NextNode("item");
       }
 
+      m_reservedInstancesModificationsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReservedInstancesModificationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

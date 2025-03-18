@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-BranchDiffSourceCodeType::BranchDiffSourceCodeType() : 
-    m_sourceBranchNameHasBeenSet(false),
-    m_destinationBranchNameHasBeenSet(false)
-{
-}
-
 BranchDiffSourceCodeType::BranchDiffSourceCodeType(JsonView jsonValue)
-  : BranchDiffSourceCodeType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BranchDiffSourceCodeType& BranchDiffSourceCodeType::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SourceBranchName"))
   {
     m_sourceBranchName = jsonValue.GetString("SourceBranchName");
-
     m_sourceBranchNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationBranchName"))
   {
     m_destinationBranchName = jsonValue.GetString("DestinationBranchName");
-
     m_destinationBranchNameHasBeenSet = true;
   }
-
   return *this;
 }
 

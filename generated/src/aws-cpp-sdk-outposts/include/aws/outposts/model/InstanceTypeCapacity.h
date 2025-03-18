@@ -32,7 +32,7 @@ namespace Model
   class InstanceTypeCapacity
   {
   public:
-    AWS_OUTPOSTS_API InstanceTypeCapacity();
+    AWS_OUTPOSTS_API InstanceTypeCapacity() = default;
     AWS_OUTPOSTS_API InstanceTypeCapacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API InstanceTypeCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The instance type of the hosts.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceTypeCapacity& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceTypeCapacity& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceTypeCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceTypeCapacity& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances for the specified instance type.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline InstanceTypeCapacity& WithCount(int value) { SetCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

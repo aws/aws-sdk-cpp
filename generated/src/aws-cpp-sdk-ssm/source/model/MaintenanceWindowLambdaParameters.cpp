@@ -19,15 +19,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters() : 
-    m_clientContextHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue)
-  : MaintenanceWindowLambdaParameters()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ MaintenanceWindowLambdaParameters& MaintenanceWindowLambdaParameters::operator =
   if(jsonValue.ValueExists("ClientContext"))
   {
     m_clientContext = jsonValue.GetString("ClientContext");
-
     m_clientContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Qualifier"))
   {
     m_qualifier = jsonValue.GetString("Qualifier");
-
     m_qualifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Payload"))
   {
     m_payload = HashingUtils::Base64Decode(jsonValue.GetString("Payload"));
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

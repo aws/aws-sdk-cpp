@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   return {};

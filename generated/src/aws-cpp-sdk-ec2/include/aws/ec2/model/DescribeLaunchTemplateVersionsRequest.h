@@ -23,7 +23,7 @@ namespace Model
   class DescribeLaunchTemplateVersionsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeLaunchTemplateVersionsRequest();
+    AWS_EC2_API DescribeLaunchTemplateVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeLaunchTemplateVersionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * launch template name, but not both.</p> <p>To describe all the latest or default
      * launch template versions in your account, you must omit this parameter.</p>
      */
-    inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
+    inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
-    inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
-    inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
-    inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
+    template<typename LaunchTemplateIdT = Aws::String>
+    void SetLaunchTemplateId(LaunchTemplateIdT&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::forward<LaunchTemplateIdT>(value); }
+    template<typename LaunchTemplateIdT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateId(LaunchTemplateIdT&& value) { SetLaunchTemplateId(std::forward<LaunchTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * default launch template versions in your account, you must omit this
      * parameter.</p>
      */
-    inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+    inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
-    inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
-    inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
-    inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
+    template<typename LaunchTemplateNameT = Aws::String>
+    void SetLaunchTemplateName(LaunchTemplateNameT&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::forward<LaunchTemplateNameT>(value); }
+    template<typename LaunchTemplateNameT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& WithLaunchTemplateName(LaunchTemplateNameT&& value) { SetLaunchTemplateName(std::forward<LaunchTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,57 +95,50 @@ namespace Model
      * can specify <code>$Latest</code> and <code>$Default</code> in the same request.
      * You cannot specify numbers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+    inline const Aws::Vector<Aws::String>& GetVersions() const { return m_versions; }
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
-    inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
-    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
-    inline DescribeLaunchTemplateVersionsRequest& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
-    inline DescribeLaunchTemplateVersionsRequest& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    DescribeLaunchTemplateVersionsRequest& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The version number after which to describe launch template versions.</p>
      */
-    inline const Aws::String& GetMinVersion() const{ return m_minVersion; }
+    inline const Aws::String& GetMinVersion() const { return m_minVersion; }
     inline bool MinVersionHasBeenSet() const { return m_minVersionHasBeenSet; }
-    inline void SetMinVersion(const Aws::String& value) { m_minVersionHasBeenSet = true; m_minVersion = value; }
-    inline void SetMinVersion(Aws::String&& value) { m_minVersionHasBeenSet = true; m_minVersion = std::move(value); }
-    inline void SetMinVersion(const char* value) { m_minVersionHasBeenSet = true; m_minVersion.assign(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithMinVersion(const Aws::String& value) { SetMinVersion(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithMinVersion(Aws::String&& value) { SetMinVersion(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithMinVersion(const char* value) { SetMinVersion(value); return *this;}
+    template<typename MinVersionT = Aws::String>
+    void SetMinVersion(MinVersionT&& value) { m_minVersionHasBeenSet = true; m_minVersion = std::forward<MinVersionT>(value); }
+    template<typename MinVersionT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& WithMinVersion(MinVersionT&& value) { SetMinVersion(std::forward<MinVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number up to which to describe launch template versions.</p>
      */
-    inline const Aws::String& GetMaxVersion() const{ return m_maxVersion; }
+    inline const Aws::String& GetMaxVersion() const { return m_maxVersion; }
     inline bool MaxVersionHasBeenSet() const { return m_maxVersionHasBeenSet; }
-    inline void SetMaxVersion(const Aws::String& value) { m_maxVersionHasBeenSet = true; m_maxVersion = value; }
-    inline void SetMaxVersion(Aws::String&& value) { m_maxVersionHasBeenSet = true; m_maxVersion = std::move(value); }
-    inline void SetMaxVersion(const char* value) { m_maxVersionHasBeenSet = true; m_maxVersion.assign(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithMaxVersion(const Aws::String& value) { SetMaxVersion(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithMaxVersion(Aws::String&& value) { SetMaxVersion(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithMaxVersion(const char* value) { SetMaxVersion(value); return *this;}
+    template<typename MaxVersionT = Aws::String>
+    void SetMaxVersion(MaxVersionT&& value) { m_maxVersionHasBeenSet = true; m_maxVersion = std::forward<MaxVersionT>(value); }
+    template<typename MaxVersionT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& WithMaxVersion(MaxVersionT&& value) { SetMaxVersion(std::forward<MaxVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeLaunchTemplateVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,7 +147,7 @@ namespace Model
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 1 and 200.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeLaunchTemplateVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -189,14 +178,14 @@ namespace Model
      * the network card.</p> </li> <li> <p> <code>ram-disk-id</code> - The RAM disk
      * ID.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeLaunchTemplateVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeLaunchTemplateVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeLaunchTemplateVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeLaunchTemplateVersionsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeLaunchTemplateVersionsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -210,14 +199,14 @@ namespace Model
      * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
      * Guide</i>.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetResolveAlias() const{ return m_resolveAlias; }
+    inline bool GetResolveAlias() const { return m_resolveAlias; }
     inline bool ResolveAliasHasBeenSet() const { return m_resolveAliasHasBeenSet; }
     inline void SetResolveAlias(bool value) { m_resolveAliasHasBeenSet = true; m_resolveAlias = value; }
     inline DescribeLaunchTemplateVersionsRequest& WithResolveAlias(bool value) { SetResolveAlias(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_launchTemplateId;
@@ -238,13 +227,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    bool m_resolveAlias;
+    bool m_resolveAlias{false};
     bool m_resolveAliasHasBeenSet = false;
   };
 

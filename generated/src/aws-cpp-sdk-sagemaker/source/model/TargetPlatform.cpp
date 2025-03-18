@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TargetPlatform::TargetPlatform() : 
-    m_os(TargetPlatformOs::NOT_SET),
-    m_osHasBeenSet(false),
-    m_arch(TargetPlatformArch::NOT_SET),
-    m_archHasBeenSet(false),
-    m_accelerator(TargetPlatformAccelerator::NOT_SET),
-    m_acceleratorHasBeenSet(false)
-{
-}
-
 TargetPlatform::TargetPlatform(JsonView jsonValue)
-  : TargetPlatform()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TargetPlatform& TargetPlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Os"))
   {
     m_os = TargetPlatformOsMapper::GetTargetPlatformOsForName(jsonValue.GetString("Os"));
-
     m_osHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arch"))
   {
     m_arch = TargetPlatformArchMapper::GetTargetPlatformArchForName(jsonValue.GetString("Arch"));
-
     m_archHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accelerator"))
   {
     m_accelerator = TargetPlatformAcceleratorMapper::GetTargetPlatformAcceleratorForName(jsonValue.GetString("Accelerator"));
-
     m_acceleratorHasBeenSet = true;
   }
-
   return *this;
 }
 

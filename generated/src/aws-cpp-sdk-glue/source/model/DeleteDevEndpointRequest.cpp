@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDevEndpointRequest::DeleteDevEndpointRequest() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDevEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

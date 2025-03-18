@@ -12,13 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRestoreTestingSelectionRequest::UpdateRestoreTestingSelectionRequest() : 
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_restoreTestingSelectionHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRestoreTestingSelectionRequest::SerializePayload() const
 {
   JsonValue payload;

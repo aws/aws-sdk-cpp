@@ -10,11 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteLaunchConfigurationRequest::DeleteLaunchConfigurationRequest() : 
-    m_launchConfigurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRegistryResult::DeleteRegistryResult() : 
-    m_status(RegistryStatus::NOT_SET)
-{
-}
-
 DeleteRegistryResult::DeleteRegistryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteRegistryResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteRegistryResult& DeleteRegistryResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
+    m_registryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryArn"))
   {
     m_registryArn = jsonValue.GetString("RegistryArn");
-
+    m_registryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RegistryStatusMapper::GetRegistryStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

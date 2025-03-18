@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketCorsResult::GetBucketCorsResult()
-{
-}
-
 GetBucketCorsResult::GetBucketCorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetBucketCorsResult& GetBucketCorsResult::operator =(const Aws::AmazonWebService
     if(!cORSRulesNode.IsNull())
     {
       XmlNode cORSRuleMember = cORSRulesNode;
+      m_cORSRulesHasBeenSet = !cORSRuleMember.IsNull();
       while(!cORSRuleMember.IsNull())
       {
         m_cORSRules.push_back(cORSRuleMember);
         cORSRuleMember = cORSRuleMember.NextNode("CORSRule");
       }
 
+      m_cORSRulesHasBeenSet = true;
     }
   }
 
@@ -50,6 +48,7 @@ GetBucketCorsResult& GetBucketCorsResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenJobSummary::CodegenJobSummary() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 CodegenJobSummary::CodegenJobSummary(JsonView jsonValue)
-  : CodegenJobSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CodegenJobSummary& CodegenJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

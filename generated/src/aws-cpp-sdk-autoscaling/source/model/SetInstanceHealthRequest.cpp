@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-SetInstanceHealthRequest::SetInstanceHealthRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_shouldRespectGracePeriod(false),
-    m_shouldRespectGracePeriodHasBeenSet(false)
-{
-}
-
 Aws::String SetInstanceHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;

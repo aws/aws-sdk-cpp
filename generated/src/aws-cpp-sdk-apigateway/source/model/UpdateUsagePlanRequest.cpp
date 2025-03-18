@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUsagePlanRequest::UpdateUsagePlanRequest() : 
-    m_usagePlanIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUsagePlanRequest::SerializePayload() const
 {
   JsonValue payload;

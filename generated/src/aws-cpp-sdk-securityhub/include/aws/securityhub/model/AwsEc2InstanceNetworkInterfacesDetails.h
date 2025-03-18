@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2InstanceNetworkInterfacesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2InstanceNetworkInterfacesDetails();
+    AWS_SECURITYHUB_API AwsEc2InstanceNetworkInterfacesDetails() = default;
     AWS_SECURITYHUB_API AwsEc2InstanceNetworkInterfacesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2InstanceNetworkInterfacesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The identifier of the network interface. The details are in a corresponding
      * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
   private:
 

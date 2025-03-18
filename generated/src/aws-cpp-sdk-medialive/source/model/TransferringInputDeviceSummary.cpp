@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TransferringInputDeviceSummary::TransferringInputDeviceSummary() : 
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_targetCustomerIdHasBeenSet(false),
-    m_transferType(InputDeviceTransferType::NOT_SET),
-    m_transferTypeHasBeenSet(false)
-{
-}
-
 TransferringInputDeviceSummary::TransferringInputDeviceSummary(JsonView jsonValue)
-  : TransferringInputDeviceSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TransferringInputDeviceSummary& TransferringInputDeviceSummary::operator =(JsonV
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetCustomerId"))
   {
     m_targetCustomerId = jsonValue.GetString("targetCustomerId");
-
     m_targetCustomerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferType"))
   {
     m_transferType = InputDeviceTransferTypeMapper::GetInputDeviceTransferTypeForName(jsonValue.GetString("transferType"));
-
     m_transferTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace RedshiftDataAPIService
 namespace Model
 {
 
-TableMember::TableMember() : 
-    m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 TableMember::TableMember(JsonView jsonValue)
-  : TableMember()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TableMember& TableMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetString("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

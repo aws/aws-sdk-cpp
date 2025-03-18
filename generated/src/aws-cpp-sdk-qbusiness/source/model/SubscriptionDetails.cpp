@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SubscriptionDetails::SubscriptionDetails() : 
-    m_type(SubscriptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SubscriptionDetails::SubscriptionDetails(JsonView jsonValue)
-  : SubscriptionDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SubscriptionDetails& SubscriptionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = SubscriptionTypeMapper::GetSubscriptionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

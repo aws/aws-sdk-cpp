@@ -32,7 +32,7 @@ namespace Model
   class HttpEndpointCommonAttribute
   {
   public:
-    AWS_FIREHOSE_API HttpEndpointCommonAttribute();
+    AWS_FIREHOSE_API HttpEndpointCommonAttribute() = default;
     AWS_FIREHOSE_API HttpEndpointCommonAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API HttpEndpointCommonAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the HTTP endpoint common attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline HttpEndpointCommonAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline HttpEndpointCommonAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline HttpEndpointCommonAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    HttpEndpointCommonAttribute& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the HTTP endpoint common attribute.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline HttpEndpointCommonAttribute& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline HttpEndpointCommonAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline HttpEndpointCommonAttribute& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    HttpEndpointCommonAttribute& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
   private:
 

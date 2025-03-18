@@ -28,7 +28,7 @@ namespace Model
   class StartMatchBackfillResult
   {
   public:
-    AWS_GAMELIFT_API StartMatchBackfillResult();
+    AWS_GAMELIFT_API StartMatchBackfillResult() = default;
     AWS_GAMELIFT_API StartMatchBackfillResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API StartMatchBackfillResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * the information in the request, ticket status, and match results as generated
      * during the matchmaking process.</p>
      */
-    inline const MatchmakingTicket& GetMatchmakingTicket() const{ return m_matchmakingTicket; }
-    inline void SetMatchmakingTicket(const MatchmakingTicket& value) { m_matchmakingTicket = value; }
-    inline void SetMatchmakingTicket(MatchmakingTicket&& value) { m_matchmakingTicket = std::move(value); }
-    inline StartMatchBackfillResult& WithMatchmakingTicket(const MatchmakingTicket& value) { SetMatchmakingTicket(value); return *this;}
-    inline StartMatchBackfillResult& WithMatchmakingTicket(MatchmakingTicket&& value) { SetMatchmakingTicket(std::move(value)); return *this;}
+    inline const MatchmakingTicket& GetMatchmakingTicket() const { return m_matchmakingTicket; }
+    template<typename MatchmakingTicketT = MatchmakingTicket>
+    void SetMatchmakingTicket(MatchmakingTicketT&& value) { m_matchmakingTicketHasBeenSet = true; m_matchmakingTicket = std::forward<MatchmakingTicketT>(value); }
+    template<typename MatchmakingTicketT = MatchmakingTicket>
+    StartMatchBackfillResult& WithMatchmakingTicket(MatchmakingTicketT&& value) { SetMatchmakingTicket(std::forward<MatchmakingTicketT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartMatchBackfillResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartMatchBackfillResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartMatchBackfillResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartMatchBackfillResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MatchmakingTicket m_matchmakingTicket;
+    bool m_matchmakingTicketHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

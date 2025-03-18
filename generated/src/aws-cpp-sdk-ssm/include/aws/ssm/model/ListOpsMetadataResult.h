@@ -29,7 +29,7 @@ namespace Model
   class ListOpsMetadataResult
   {
   public:
-    AWS_SSM_API ListOpsMetadataResult();
+    AWS_SSM_API ListOpsMetadataResult() = default;
     AWS_SSM_API ListOpsMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API ListOpsMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a list of OpsMetadata objects.</p>
      */
-    inline const Aws::Vector<OpsMetadata>& GetOpsMetadataList() const{ return m_opsMetadataList; }
-    inline void SetOpsMetadataList(const Aws::Vector<OpsMetadata>& value) { m_opsMetadataList = value; }
-    inline void SetOpsMetadataList(Aws::Vector<OpsMetadata>&& value) { m_opsMetadataList = std::move(value); }
-    inline ListOpsMetadataResult& WithOpsMetadataList(const Aws::Vector<OpsMetadata>& value) { SetOpsMetadataList(value); return *this;}
-    inline ListOpsMetadataResult& WithOpsMetadataList(Aws::Vector<OpsMetadata>&& value) { SetOpsMetadataList(std::move(value)); return *this;}
-    inline ListOpsMetadataResult& AddOpsMetadataList(const OpsMetadata& value) { m_opsMetadataList.push_back(value); return *this; }
-    inline ListOpsMetadataResult& AddOpsMetadataList(OpsMetadata&& value) { m_opsMetadataList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OpsMetadata>& GetOpsMetadataList() const { return m_opsMetadataList; }
+    template<typename OpsMetadataListT = Aws::Vector<OpsMetadata>>
+    void SetOpsMetadataList(OpsMetadataListT&& value) { m_opsMetadataListHasBeenSet = true; m_opsMetadataList = std::forward<OpsMetadataListT>(value); }
+    template<typename OpsMetadataListT = Aws::Vector<OpsMetadata>>
+    ListOpsMetadataResult& WithOpsMetadataList(OpsMetadataListT&& value) { SetOpsMetadataList(std::forward<OpsMetadataListT>(value)); return *this;}
+    template<typename OpsMetadataListT = OpsMetadata>
+    ListOpsMetadataResult& AddOpsMetadataList(OpsMetadataListT&& value) { m_opsMetadataListHasBeenSet = true; m_opsMetadataList.emplace_back(std::forward<OpsMetadataListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOpsMetadataResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOpsMetadataResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOpsMetadataResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOpsMetadataResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOpsMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOpsMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOpsMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOpsMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OpsMetadata> m_opsMetadataList;
+    bool m_opsMetadataListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

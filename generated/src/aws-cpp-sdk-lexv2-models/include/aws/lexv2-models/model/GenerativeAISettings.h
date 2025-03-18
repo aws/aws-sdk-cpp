@@ -33,7 +33,7 @@ namespace Model
   class GenerativeAISettings
   {
   public:
-    AWS_LEXMODELSV2_API GenerativeAISettings();
+    AWS_LEXMODELSV2_API GenerativeAISettings() = default;
     AWS_LEXMODELSV2_API GenerativeAISettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API GenerativeAISettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,22 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const RuntimeSettings& GetRuntimeSettings() const{ return m_runtimeSettings; }
+    inline const RuntimeSettings& GetRuntimeSettings() const { return m_runtimeSettings; }
     inline bool RuntimeSettingsHasBeenSet() const { return m_runtimeSettingsHasBeenSet; }
-    inline void SetRuntimeSettings(const RuntimeSettings& value) { m_runtimeSettingsHasBeenSet = true; m_runtimeSettings = value; }
-    inline void SetRuntimeSettings(RuntimeSettings&& value) { m_runtimeSettingsHasBeenSet = true; m_runtimeSettings = std::move(value); }
-    inline GenerativeAISettings& WithRuntimeSettings(const RuntimeSettings& value) { SetRuntimeSettings(value); return *this;}
-    inline GenerativeAISettings& WithRuntimeSettings(RuntimeSettings&& value) { SetRuntimeSettings(std::move(value)); return *this;}
+    template<typename RuntimeSettingsT = RuntimeSettings>
+    void SetRuntimeSettings(RuntimeSettingsT&& value) { m_runtimeSettingsHasBeenSet = true; m_runtimeSettings = std::forward<RuntimeSettingsT>(value); }
+    template<typename RuntimeSettingsT = RuntimeSettings>
+    GenerativeAISettings& WithRuntimeSettings(RuntimeSettingsT&& value) { SetRuntimeSettings(std::forward<RuntimeSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BuildtimeSettings& GetBuildtimeSettings() const{ return m_buildtimeSettings; }
+    inline const BuildtimeSettings& GetBuildtimeSettings() const { return m_buildtimeSettings; }
     inline bool BuildtimeSettingsHasBeenSet() const { return m_buildtimeSettingsHasBeenSet; }
-    inline void SetBuildtimeSettings(const BuildtimeSettings& value) { m_buildtimeSettingsHasBeenSet = true; m_buildtimeSettings = value; }
-    inline void SetBuildtimeSettings(BuildtimeSettings&& value) { m_buildtimeSettingsHasBeenSet = true; m_buildtimeSettings = std::move(value); }
-    inline GenerativeAISettings& WithBuildtimeSettings(const BuildtimeSettings& value) { SetBuildtimeSettings(value); return *this;}
-    inline GenerativeAISettings& WithBuildtimeSettings(BuildtimeSettings&& value) { SetBuildtimeSettings(std::move(value)); return *this;}
+    template<typename BuildtimeSettingsT = BuildtimeSettings>
+    void SetBuildtimeSettings(BuildtimeSettingsT&& value) { m_buildtimeSettingsHasBeenSet = true; m_buildtimeSettings = std::forward<BuildtimeSettingsT>(value); }
+    template<typename BuildtimeSettingsT = BuildtimeSettings>
+    GenerativeAISettings& WithBuildtimeSettings(BuildtimeSettingsT&& value) { SetBuildtimeSettings(std::forward<BuildtimeSettingsT>(value)); return *this;}
     ///@}
   private:
 

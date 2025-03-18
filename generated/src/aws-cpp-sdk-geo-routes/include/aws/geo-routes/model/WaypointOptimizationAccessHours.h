@@ -32,7 +32,7 @@ namespace Model
   class WaypointOptimizationAccessHours
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationAccessHours();
+    AWS_GEOROUTES_API WaypointOptimizationAccessHours() = default;
     AWS_GEOROUTES_API WaypointOptimizationAccessHours(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationAccessHours& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Contains the ID of the starting waypoint in this connection.</p>
      */
-    inline const WaypointOptimizationAccessHoursEntry& GetFrom() const{ return m_from; }
+    inline const WaypointOptimizationAccessHoursEntry& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const WaypointOptimizationAccessHoursEntry& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(WaypointOptimizationAccessHoursEntry&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline WaypointOptimizationAccessHours& WithFrom(const WaypointOptimizationAccessHoursEntry& value) { SetFrom(value); return *this;}
-    inline WaypointOptimizationAccessHours& WithFrom(WaypointOptimizationAccessHoursEntry&& value) { SetFrom(std::move(value)); return *this;}
+    template<typename FromT = WaypointOptimizationAccessHoursEntry>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = WaypointOptimizationAccessHoursEntry>
+    WaypointOptimizationAccessHours& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the ID of the ending waypoint in this connection.</p>
      */
-    inline const WaypointOptimizationAccessHoursEntry& GetTo() const{ return m_to; }
+    inline const WaypointOptimizationAccessHoursEntry& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const WaypointOptimizationAccessHoursEntry& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(WaypointOptimizationAccessHoursEntry&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline WaypointOptimizationAccessHours& WithTo(const WaypointOptimizationAccessHoursEntry& value) { SetTo(value); return *this;}
-    inline WaypointOptimizationAccessHours& WithTo(WaypointOptimizationAccessHoursEntry&& value) { SetTo(std::move(value)); return *this;}
+    template<typename ToT = WaypointOptimizationAccessHoursEntry>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = WaypointOptimizationAccessHoursEntry>
+    WaypointOptimizationAccessHours& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
   private:
 

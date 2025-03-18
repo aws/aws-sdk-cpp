@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DnsRequestAction::DnsRequestAction() : 
-    m_domainHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_blocked(false),
-    m_blockedHasBeenSet(false),
-    m_domainWithSuffixHasBeenSet(false)
-{
-}
-
 DnsRequestAction::DnsRequestAction(JsonView jsonValue)
-  : DnsRequestAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetString("domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = jsonValue.GetString("protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blocked"))
   {
     m_blocked = jsonValue.GetBool("blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainWithSuffix"))
   {
     m_domainWithSuffix = jsonValue.GetString("domainWithSuffix");
-
     m_domainWithSuffixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-FormatOptions::FormatOptions() : 
-    m_x12HasBeenSet(false)
-{
-}
-
 FormatOptions::FormatOptions(JsonView jsonValue)
-  : FormatOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FormatOptions& FormatOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("x12"))
   {
     m_x12 = jsonValue.GetObject("x12");
-
     m_x12HasBeenSet = true;
   }
-
   return *this;
 }
 

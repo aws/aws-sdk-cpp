@@ -27,7 +27,7 @@ namespace Model
   class ImportApplicationUsageResult
   {
   public:
-    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult();
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult() = default;
     AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>ID of the import request.</p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
-    inline void SetImportId(const Aws::String& value) { m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importId.assign(value); }
-    inline ImportApplicationUsageResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline ImportApplicationUsageResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline ImportApplicationUsageResult& WithImportId(const char* value) { SetImportId(value); return *this;}
+    inline const Aws::String& GetImportId() const { return m_importId; }
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    ImportApplicationUsageResult& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportApplicationUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportApplicationUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportApplicationUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportApplicationUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_importId;
+    bool m_importIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

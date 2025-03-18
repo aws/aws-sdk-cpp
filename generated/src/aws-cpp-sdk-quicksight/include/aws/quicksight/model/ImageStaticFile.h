@@ -32,7 +32,7 @@ namespace Model
   class ImageStaticFile
   {
   public:
-    AWS_QUICKSIGHT_API ImageStaticFile();
+    AWS_QUICKSIGHT_API ImageStaticFile() = default;
     AWS_QUICKSIGHT_API ImageStaticFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ImageStaticFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The ID of the static file that contains an image.</p>
      */
-    inline const Aws::String& GetStaticFileId() const{ return m_staticFileId; }
+    inline const Aws::String& GetStaticFileId() const { return m_staticFileId; }
     inline bool StaticFileIdHasBeenSet() const { return m_staticFileIdHasBeenSet; }
-    inline void SetStaticFileId(const Aws::String& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = value; }
-    inline void SetStaticFileId(Aws::String&& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = std::move(value); }
-    inline void SetStaticFileId(const char* value) { m_staticFileIdHasBeenSet = true; m_staticFileId.assign(value); }
-    inline ImageStaticFile& WithStaticFileId(const Aws::String& value) { SetStaticFileId(value); return *this;}
-    inline ImageStaticFile& WithStaticFileId(Aws::String&& value) { SetStaticFileId(std::move(value)); return *this;}
-    inline ImageStaticFile& WithStaticFileId(const char* value) { SetStaticFileId(value); return *this;}
+    template<typename StaticFileIdT = Aws::String>
+    void SetStaticFileId(StaticFileIdT&& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = std::forward<StaticFileIdT>(value); }
+    template<typename StaticFileIdT = Aws::String>
+    ImageStaticFile& WithStaticFileId(StaticFileIdT&& value) { SetStaticFileId(std::forward<StaticFileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the image static file.</p>
      */
-    inline const StaticFileSource& GetSource() const{ return m_source; }
+    inline const StaticFileSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const StaticFileSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(StaticFileSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ImageStaticFile& WithSource(const StaticFileSource& value) { SetSource(value); return *this;}
-    inline ImageStaticFile& WithSource(StaticFileSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = StaticFileSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = StaticFileSource>
+    ImageStaticFile& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

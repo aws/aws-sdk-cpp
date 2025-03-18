@@ -22,7 +22,7 @@ namespace Model
   class StartExportTaskRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API StartExportTaskRequest();
+    AWS_RDS_API StartExportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>A unique identifier for the export task. This ID isn't an identifier for the
      * Amazon S3 bucket where the data is to be exported.</p>
      */
-    inline const Aws::String& GetExportTaskIdentifier() const{ return m_exportTaskIdentifier; }
+    inline const Aws::String& GetExportTaskIdentifier() const { return m_exportTaskIdentifier; }
     inline bool ExportTaskIdentifierHasBeenSet() const { return m_exportTaskIdentifierHasBeenSet; }
-    inline void SetExportTaskIdentifier(const Aws::String& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = value; }
-    inline void SetExportTaskIdentifier(Aws::String&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::move(value); }
-    inline void SetExportTaskIdentifier(const char* value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier.assign(value); }
-    inline StartExportTaskRequest& WithExportTaskIdentifier(const Aws::String& value) { SetExportTaskIdentifier(value); return *this;}
-    inline StartExportTaskRequest& WithExportTaskIdentifier(Aws::String&& value) { SetExportTaskIdentifier(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithExportTaskIdentifier(const char* value) { SetExportTaskIdentifier(value); return *this;}
+    template<typename ExportTaskIdentifierT = Aws::String>
+    void SetExportTaskIdentifier(ExportTaskIdentifierT&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::forward<ExportTaskIdentifierT>(value); }
+    template<typename ExportTaskIdentifierT = Aws::String>
+    StartExportTaskRequest& WithExportTaskIdentifier(ExportTaskIdentifierT&& value) { SetExportTaskIdentifier(std::forward<ExportTaskIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon
      * S3.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline StartExportTaskRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline StartExportTaskRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    StartExportTaskRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket to export the snapshot or cluster data
      * to.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline StartExportTaskRequest& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline StartExportTaskRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    StartExportTaskRequest& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> <li> <p>
      * <code>arn:aws:s3:::<i>your-s3-bucket</i>/ *</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline StartExportTaskRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline StartExportTaskRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    StartExportTaskRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * </li> <li> <p>kms:ReEncryptTo</p> </li> <li> <p>kms:CreateGrant</p> </li> <li>
      * <p>kms:DescribeKey</p> </li> <li> <p>kms:RetireGrant</p> </li> </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline StartExportTaskRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline StartExportTaskRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    StartExportTaskRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +123,12 @@ namespace Model
      * <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
      * data.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline StartExportTaskRequest& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline StartExportTaskRequest& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline StartExportTaskRequest& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    StartExportTaskRequest& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,15 +145,14 @@ namespace Model
      * of the database schema. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetExportOnly() const{ return m_exportOnly; }
+    inline const Aws::Vector<Aws::String>& GetExportOnly() const { return m_exportOnly; }
     inline bool ExportOnlyHasBeenSet() const { return m_exportOnlyHasBeenSet; }
-    inline void SetExportOnly(const Aws::Vector<Aws::String>& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = value; }
-    inline void SetExportOnly(Aws::Vector<Aws::String>&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = std::move(value); }
-    inline StartExportTaskRequest& WithExportOnly(const Aws::Vector<Aws::String>& value) { SetExportOnly(value); return *this;}
-    inline StartExportTaskRequest& WithExportOnly(Aws::Vector<Aws::String>&& value) { SetExportOnly(std::move(value)); return *this;}
-    inline StartExportTaskRequest& AddExportOnly(const Aws::String& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
-    inline StartExportTaskRequest& AddExportOnly(Aws::String&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(std::move(value)); return *this; }
-    inline StartExportTaskRequest& AddExportOnly(const char* value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
+    template<typename ExportOnlyT = Aws::Vector<Aws::String>>
+    void SetExportOnly(ExportOnlyT&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = std::forward<ExportOnlyT>(value); }
+    template<typename ExportOnlyT = Aws::Vector<Aws::String>>
+    StartExportTaskRequest& WithExportOnly(ExportOnlyT&& value) { SetExportOnly(std::forward<ExportOnlyT>(value)); return *this;}
+    template<typename ExportOnlyT = Aws::String>
+    StartExportTaskRequest& AddExportOnly(ExportOnlyT&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.emplace_back(std::forward<ExportOnlyT>(value)); return *this; }
     ///@}
   private:
 

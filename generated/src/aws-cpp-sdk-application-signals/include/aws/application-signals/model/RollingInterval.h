@@ -32,7 +32,7 @@ namespace Model
   class RollingInterval
   {
   public:
-    AWS_APPLICATIONSIGNALS_API RollingInterval();
+    AWS_APPLICATIONSIGNALS_API RollingInterval() = default;
     AWS_APPLICATIONSIGNALS_API RollingInterval(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API RollingInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>Specifies the rolling interval unit.</p>
      */
-    inline const DurationUnit& GetDurationUnit() const{ return m_durationUnit; }
+    inline DurationUnit GetDurationUnit() const { return m_durationUnit; }
     inline bool DurationUnitHasBeenSet() const { return m_durationUnitHasBeenSet; }
-    inline void SetDurationUnit(const DurationUnit& value) { m_durationUnitHasBeenSet = true; m_durationUnit = value; }
-    inline void SetDurationUnit(DurationUnit&& value) { m_durationUnitHasBeenSet = true; m_durationUnit = std::move(value); }
-    inline RollingInterval& WithDurationUnit(const DurationUnit& value) { SetDurationUnit(value); return *this;}
-    inline RollingInterval& WithDurationUnit(DurationUnit&& value) { SetDurationUnit(std::move(value)); return *this;}
+    inline void SetDurationUnit(DurationUnit value) { m_durationUnitHasBeenSet = true; m_durationUnit = value; }
+    inline RollingInterval& WithDurationUnit(DurationUnit value) { SetDurationUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <code>Duration</code> is <code>7</code> and <code>DurationUnit</code> is
      * <code>DAY</code>, each rolling interval is seven days.</p>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RollingInterval& WithDuration(int value) { SetDuration(value); return *this;}
     ///@}
   private:
 
-    DurationUnit m_durationUnit;
+    DurationUnit m_durationUnit{DurationUnit::NOT_SET};
     bool m_durationUnitHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
   };
 

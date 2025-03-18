@@ -32,7 +32,7 @@ namespace Model
   class RouteAvoidanceArea
   {
   public:
-    AWS_GEOROUTES_API RouteAvoidanceArea();
+    AWS_GEOROUTES_API RouteAvoidanceArea() = default;
     AWS_GEOROUTES_API RouteAvoidanceArea(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteAvoidanceArea& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
      * <p>Exceptions to the provided avoidance geometry, to be included while
      * calculating the route.</p>
      */
-    inline const Aws::Vector<RouteAvoidanceAreaGeometry>& GetExcept() const{ return m_except; }
+    inline const Aws::Vector<RouteAvoidanceAreaGeometry>& GetExcept() const { return m_except; }
     inline bool ExceptHasBeenSet() const { return m_exceptHasBeenSet; }
-    inline void SetExcept(const Aws::Vector<RouteAvoidanceAreaGeometry>& value) { m_exceptHasBeenSet = true; m_except = value; }
-    inline void SetExcept(Aws::Vector<RouteAvoidanceAreaGeometry>&& value) { m_exceptHasBeenSet = true; m_except = std::move(value); }
-    inline RouteAvoidanceArea& WithExcept(const Aws::Vector<RouteAvoidanceAreaGeometry>& value) { SetExcept(value); return *this;}
-    inline RouteAvoidanceArea& WithExcept(Aws::Vector<RouteAvoidanceAreaGeometry>&& value) { SetExcept(std::move(value)); return *this;}
-    inline RouteAvoidanceArea& AddExcept(const RouteAvoidanceAreaGeometry& value) { m_exceptHasBeenSet = true; m_except.push_back(value); return *this; }
-    inline RouteAvoidanceArea& AddExcept(RouteAvoidanceAreaGeometry&& value) { m_exceptHasBeenSet = true; m_except.push_back(std::move(value)); return *this; }
+    template<typename ExceptT = Aws::Vector<RouteAvoidanceAreaGeometry>>
+    void SetExcept(ExceptT&& value) { m_exceptHasBeenSet = true; m_except = std::forward<ExceptT>(value); }
+    template<typename ExceptT = Aws::Vector<RouteAvoidanceAreaGeometry>>
+    RouteAvoidanceArea& WithExcept(ExceptT&& value) { SetExcept(std::forward<ExceptT>(value)); return *this;}
+    template<typename ExceptT = RouteAvoidanceAreaGeometry>
+    RouteAvoidanceArea& AddExcept(ExceptT&& value) { m_exceptHasBeenSet = true; m_except.emplace_back(std::forward<ExceptT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const RouteAvoidanceAreaGeometry& GetGeometry() const{ return m_geometry; }
+    inline const RouteAvoidanceAreaGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const RouteAvoidanceAreaGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(RouteAvoidanceAreaGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline RouteAvoidanceArea& WithGeometry(const RouteAvoidanceAreaGeometry& value) { SetGeometry(value); return *this;}
-    inline RouteAvoidanceArea& WithGeometry(RouteAvoidanceAreaGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = RouteAvoidanceAreaGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = RouteAvoidanceAreaGeometry>
+    RouteAvoidanceArea& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
   private:
 

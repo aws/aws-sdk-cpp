@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTasksResult::SearchTasksResult() : 
-    m_nextItemOffset(0),
-    m_totalResults(0)
-{
-}
-
 SearchTasksResult::SearchTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchTasksResult()
 {
   *this = result;
 }
@@ -39,26 +32,25 @@ SearchTasksResult& SearchTasksResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
     }
+    m_tasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextItemOffset"))
   {
     m_nextItemOffset = jsonValue.GetInteger("nextItemOffset");
-
+    m_nextItemOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResults"))
   {
     m_totalResults = jsonValue.GetInteger("totalResults");
-
+    m_totalResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

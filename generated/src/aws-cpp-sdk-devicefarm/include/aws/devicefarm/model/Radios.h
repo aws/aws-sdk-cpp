@@ -30,7 +30,7 @@ namespace Model
   class Radios
   {
   public:
-    AWS_DEVICEFARM_API Radios();
+    AWS_DEVICEFARM_API Radios() = default;
     AWS_DEVICEFARM_API Radios(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Radios& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
      */
-    inline bool GetWifi() const{ return m_wifi; }
+    inline bool GetWifi() const { return m_wifi; }
     inline bool WifiHasBeenSet() const { return m_wifiHasBeenSet; }
     inline void SetWifi(bool value) { m_wifiHasBeenSet = true; m_wifi = value; }
     inline Radios& WithWifi(bool value) { SetWifi(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
      * <p>True if Bluetooth is enabled at the beginning of the test. Otherwise,
      * false.</p>
      */
-    inline bool GetBluetooth() const{ return m_bluetooth; }
+    inline bool GetBluetooth() const { return m_bluetooth; }
     inline bool BluetoothHasBeenSet() const { return m_bluetoothHasBeenSet; }
     inline void SetBluetooth(bool value) { m_bluetoothHasBeenSet = true; m_bluetooth = value; }
     inline Radios& WithBluetooth(bool value) { SetBluetooth(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
      */
-    inline bool GetNfc() const{ return m_nfc; }
+    inline bool GetNfc() const { return m_nfc; }
     inline bool NfcHasBeenSet() const { return m_nfcHasBeenSet; }
     inline void SetNfc(bool value) { m_nfcHasBeenSet = true; m_nfc = value; }
     inline Radios& WithNfc(bool value) { SetNfc(value); return *this;}
@@ -71,23 +71,23 @@ namespace Model
     /**
      * <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
      */
-    inline bool GetGps() const{ return m_gps; }
+    inline bool GetGps() const { return m_gps; }
     inline bool GpsHasBeenSet() const { return m_gpsHasBeenSet; }
     inline void SetGps(bool value) { m_gpsHasBeenSet = true; m_gps = value; }
     inline Radios& WithGps(bool value) { SetGps(value); return *this;}
     ///@}
   private:
 
-    bool m_wifi;
+    bool m_wifi{false};
     bool m_wifiHasBeenSet = false;
 
-    bool m_bluetooth;
+    bool m_bluetooth{false};
     bool m_bluetoothHasBeenSet = false;
 
-    bool m_nfc;
+    bool m_nfc{false};
     bool m_nfcHasBeenSet = false;
 
-    bool m_gps;
+    bool m_gps{false};
     bool m_gpsHasBeenSet = false;
   };
 

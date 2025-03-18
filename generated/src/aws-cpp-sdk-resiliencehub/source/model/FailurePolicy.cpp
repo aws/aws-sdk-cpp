@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-FailurePolicy::FailurePolicy() : 
-    m_rpoInSecs(0),
-    m_rpoInSecsHasBeenSet(false),
-    m_rtoInSecs(0),
-    m_rtoInSecsHasBeenSet(false)
-{
-}
-
 FailurePolicy::FailurePolicy(JsonView jsonValue)
-  : FailurePolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FailurePolicy& FailurePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rpoInSecs"))
   {
     m_rpoInSecs = jsonValue.GetInteger("rpoInSecs");
-
     m_rpoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtoInSecs"))
   {
     m_rtoInSecs = jsonValue.GetInteger("rtoInSecs");
-
     m_rtoInSecsHasBeenSet = true;
   }
-
   return *this;
 }
 

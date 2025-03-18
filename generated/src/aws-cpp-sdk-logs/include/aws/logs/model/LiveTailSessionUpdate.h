@@ -34,7 +34,7 @@ namespace Model
   class LiveTailSessionUpdate
   {
   public:
-    AWS_CLOUDWATCHLOGS_API LiveTailSessionUpdate();
+    AWS_CLOUDWATCHLOGS_API LiveTailSessionUpdate() = default;
     AWS_CLOUDWATCHLOGS_API LiveTailSessionUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API LiveTailSessionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>This object contains the session metadata for a Live Tail session.</p>
      */
-    inline const LiveTailSessionMetadata& GetSessionMetadata() const{ return m_sessionMetadata; }
+    inline const LiveTailSessionMetadata& GetSessionMetadata() const { return m_sessionMetadata; }
     inline bool SessionMetadataHasBeenSet() const { return m_sessionMetadataHasBeenSet; }
-    inline void SetSessionMetadata(const LiveTailSessionMetadata& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = value; }
-    inline void SetSessionMetadata(LiveTailSessionMetadata&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::move(value); }
-    inline LiveTailSessionUpdate& WithSessionMetadata(const LiveTailSessionMetadata& value) { SetSessionMetadata(value); return *this;}
-    inline LiveTailSessionUpdate& WithSessionMetadata(LiveTailSessionMetadata&& value) { SetSessionMetadata(std::move(value)); return *this;}
+    template<typename SessionMetadataT = LiveTailSessionMetadata>
+    void SetSessionMetadata(SessionMetadataT&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::forward<SessionMetadataT>(value); }
+    template<typename SessionMetadataT = LiveTailSessionMetadata>
+    LiveTailSessionUpdate& WithSessionMetadata(SessionMetadataT&& value) { SetSessionMetadata(std::forward<SessionMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * request exceeds 500 per second, the log events are sampled down to 500 log
      * events to be included in each <code>sessionUpdate</code> structure.</p>
      */
-    inline const Aws::Vector<LiveTailSessionLogEvent>& GetSessionResults() const{ return m_sessionResults; }
+    inline const Aws::Vector<LiveTailSessionLogEvent>& GetSessionResults() const { return m_sessionResults; }
     inline bool SessionResultsHasBeenSet() const { return m_sessionResultsHasBeenSet; }
-    inline void SetSessionResults(const Aws::Vector<LiveTailSessionLogEvent>& value) { m_sessionResultsHasBeenSet = true; m_sessionResults = value; }
-    inline void SetSessionResults(Aws::Vector<LiveTailSessionLogEvent>&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults = std::move(value); }
-    inline LiveTailSessionUpdate& WithSessionResults(const Aws::Vector<LiveTailSessionLogEvent>& value) { SetSessionResults(value); return *this;}
-    inline LiveTailSessionUpdate& WithSessionResults(Aws::Vector<LiveTailSessionLogEvent>&& value) { SetSessionResults(std::move(value)); return *this;}
-    inline LiveTailSessionUpdate& AddSessionResults(const LiveTailSessionLogEvent& value) { m_sessionResultsHasBeenSet = true; m_sessionResults.push_back(value); return *this; }
-    inline LiveTailSessionUpdate& AddSessionResults(LiveTailSessionLogEvent&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults.push_back(std::move(value)); return *this; }
+    template<typename SessionResultsT = Aws::Vector<LiveTailSessionLogEvent>>
+    void SetSessionResults(SessionResultsT&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults = std::forward<SessionResultsT>(value); }
+    template<typename SessionResultsT = Aws::Vector<LiveTailSessionLogEvent>>
+    LiveTailSessionUpdate& WithSessionResults(SessionResultsT&& value) { SetSessionResults(std::forward<SessionResultsT>(value)); return *this;}
+    template<typename SessionResultsT = LiveTailSessionLogEvent>
+    LiveTailSessionUpdate& AddSessionResults(SessionResultsT&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults.emplace_back(std::forward<SessionResultsT>(value)); return *this; }
     ///@}
   private:
 

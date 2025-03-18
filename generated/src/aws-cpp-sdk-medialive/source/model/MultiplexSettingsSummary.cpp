@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexSettingsSummary::MultiplexSettingsSummary() : 
-    m_transportStreamBitrate(0),
-    m_transportStreamBitrateHasBeenSet(false)
-{
-}
-
 MultiplexSettingsSummary::MultiplexSettingsSummary(JsonView jsonValue)
-  : MultiplexSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MultiplexSettingsSummary& MultiplexSettingsSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("transportStreamBitrate"))
   {
     m_transportStreamBitrate = jsonValue.GetInteger("transportStreamBitrate");
-
     m_transportStreamBitrateHasBeenSet = true;
   }
-
   return *this;
 }
 

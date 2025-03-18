@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-AssetSourceEntry::AssetSourceEntry() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 AssetSourceEntry::AssetSourceEntry(JsonView jsonValue)
-  : AssetSourceEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetSourceEntry& AssetSourceEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

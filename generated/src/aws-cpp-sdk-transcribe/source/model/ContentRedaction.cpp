@@ -18,17 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-ContentRedaction::ContentRedaction() : 
-    m_redactionType(RedactionType::NOT_SET),
-    m_redactionTypeHasBeenSet(false),
-    m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false)
-{
-}
-
 ContentRedaction::ContentRedaction(JsonView jsonValue)
-  : ContentRedaction()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ContentRedaction& ContentRedaction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RedactionType"))
   {
     m_redactionType = RedactionTypeMapper::GetRedactionTypeForName(jsonValue.GetString("RedactionType"));
-
     m_redactionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedactionOutput"))
   {
     m_redactionOutput = RedactionOutputMapper::GetRedactionOutputForName(jsonValue.GetString("RedactionOutput"));
-
     m_redactionOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PiiEntityTypes"))
   {
     Aws::Utils::Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
@@ -58,7 +44,6 @@ ContentRedaction& ContentRedaction::operator =(JsonView jsonValue)
     }
     m_piiEntityTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class UntagResourceRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UntagResourceRequest();
+    AWS_DATASYNC_API UntagResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,29 +43,26 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags
      * from.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UntagResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the keys in the tags that you want to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
+    inline const Aws::Vector<Aws::String>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline UntagResourceRequest& WithKeys(const Aws::Vector<Aws::String>& value) { SetKeys(value); return *this;}
-    inline UntagResourceRequest& WithKeys(Aws::Vector<Aws::String>&& value) { SetKeys(std::move(value)); return *this;}
-    inline UntagResourceRequest& AddKeys(const Aws::String& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-    inline UntagResourceRequest& AddKeys(Aws::String&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
-    inline UntagResourceRequest& AddKeys(const char* value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
+    template<typename KeysT = Aws::Vector<Aws::String>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<Aws::String>>
+    UntagResourceRequest& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = Aws::String>
+    UntagResourceRequest& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
   private:
 

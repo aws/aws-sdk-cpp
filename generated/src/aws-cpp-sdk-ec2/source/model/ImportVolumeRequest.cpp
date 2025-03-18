@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ImportVolumeRequest::ImportVolumeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_volumeHasBeenSet(false)
-{
-}
-
 Aws::String ImportVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

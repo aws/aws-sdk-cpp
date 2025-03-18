@@ -29,7 +29,7 @@ namespace Model
   class ListEventsDetectionJobsResult
   {
   public:
-    AWS_COMPREHEND_API ListEventsDetectionJobsResult();
+    AWS_COMPREHEND_API ListEventsDetectionJobsResult() = default;
     AWS_COMPREHEND_API ListEventsDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ListEventsDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
-    inline const Aws::Vector<EventsDetectionJobProperties>& GetEventsDetectionJobPropertiesList() const{ return m_eventsDetectionJobPropertiesList; }
-    inline void SetEventsDetectionJobPropertiesList(const Aws::Vector<EventsDetectionJobProperties>& value) { m_eventsDetectionJobPropertiesList = value; }
-    inline void SetEventsDetectionJobPropertiesList(Aws::Vector<EventsDetectionJobProperties>&& value) { m_eventsDetectionJobPropertiesList = std::move(value); }
-    inline ListEventsDetectionJobsResult& WithEventsDetectionJobPropertiesList(const Aws::Vector<EventsDetectionJobProperties>& value) { SetEventsDetectionJobPropertiesList(value); return *this;}
-    inline ListEventsDetectionJobsResult& WithEventsDetectionJobPropertiesList(Aws::Vector<EventsDetectionJobProperties>&& value) { SetEventsDetectionJobPropertiesList(std::move(value)); return *this;}
-    inline ListEventsDetectionJobsResult& AddEventsDetectionJobPropertiesList(const EventsDetectionJobProperties& value) { m_eventsDetectionJobPropertiesList.push_back(value); return *this; }
-    inline ListEventsDetectionJobsResult& AddEventsDetectionJobPropertiesList(EventsDetectionJobProperties&& value) { m_eventsDetectionJobPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventsDetectionJobProperties>& GetEventsDetectionJobPropertiesList() const { return m_eventsDetectionJobPropertiesList; }
+    template<typename EventsDetectionJobPropertiesListT = Aws::Vector<EventsDetectionJobProperties>>
+    void SetEventsDetectionJobPropertiesList(EventsDetectionJobPropertiesListT&& value) { m_eventsDetectionJobPropertiesListHasBeenSet = true; m_eventsDetectionJobPropertiesList = std::forward<EventsDetectionJobPropertiesListT>(value); }
+    template<typename EventsDetectionJobPropertiesListT = Aws::Vector<EventsDetectionJobProperties>>
+    ListEventsDetectionJobsResult& WithEventsDetectionJobPropertiesList(EventsDetectionJobPropertiesListT&& value) { SetEventsDetectionJobPropertiesList(std::forward<EventsDetectionJobPropertiesListT>(value)); return *this;}
+    template<typename EventsDetectionJobPropertiesListT = EventsDetectionJobProperties>
+    ListEventsDetectionJobsResult& AddEventsDetectionJobPropertiesList(EventsDetectionJobPropertiesListT&& value) { m_eventsDetectionJobPropertiesListHasBeenSet = true; m_eventsDetectionJobPropertiesList.emplace_back(std::forward<EventsDetectionJobPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventsDetectionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventsDetectionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventsDetectionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventsDetectionJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventsDetectionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventsDetectionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventsDetectionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventsDetectionJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventsDetectionJobProperties> m_eventsDetectionJobPropertiesList;
+    bool m_eventsDetectionJobPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

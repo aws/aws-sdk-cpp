@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AddOn::AddOn() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_snapshotTimeOfDayHasBeenSet(false),
-    m_nextSnapshotTimeOfDayHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_durationHasBeenSet(false)
-{
-}
-
 AddOn::AddOn(JsonView jsonValue)
-  : AddOn()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AddOn& AddOn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotTimeOfDay"))
   {
     m_snapshotTimeOfDay = jsonValue.GetString("snapshotTimeOfDay");
-
     m_snapshotTimeOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextSnapshotTimeOfDay"))
   {
     m_nextSnapshotTimeOfDay = jsonValue.GetString("nextSnapshotTimeOfDay");
-
     m_nextSnapshotTimeOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetString("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetString("duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

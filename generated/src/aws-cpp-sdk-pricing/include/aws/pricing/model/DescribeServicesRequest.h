@@ -21,7 +21,7 @@ namespace Model
   class DescribeServicesRequest : public PricingRequest
   {
   public:
-    AWS_PRICING_API DescribeServicesRequest();
+    AWS_PRICING_API DescribeServicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * results in a <code>GetProducts</code> call. To retrieve a list of all services,
      * leave this blank.</p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline DescribeServicesRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline DescribeServicesRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline DescribeServicesRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    DescribeServicesRequest& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The format version that you want the response to be in.</p> <p>Valid values
      * are: <code>aws_v1</code> </p>
      */
-    inline const Aws::String& GetFormatVersion() const{ return m_formatVersion; }
+    inline const Aws::String& GetFormatVersion() const { return m_formatVersion; }
     inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
-    inline void SetFormatVersion(const Aws::String& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
-    inline void SetFormatVersion(Aws::String&& value) { m_formatVersionHasBeenSet = true; m_formatVersion = std::move(value); }
-    inline void SetFormatVersion(const char* value) { m_formatVersionHasBeenSet = true; m_formatVersion.assign(value); }
-    inline DescribeServicesRequest& WithFormatVersion(const Aws::String& value) { SetFormatVersion(value); return *this;}
-    inline DescribeServicesRequest& WithFormatVersion(Aws::String&& value) { SetFormatVersion(std::move(value)); return *this;}
-    inline DescribeServicesRequest& WithFormatVersion(const char* value) { SetFormatVersion(value); return *this;}
+    template<typename FormatVersionT = Aws::String>
+    void SetFormatVersion(FormatVersionT&& value) { m_formatVersionHasBeenSet = true; m_formatVersion = std::forward<FormatVersionT>(value); }
+    template<typename FormatVersionT = Aws::String>
+    DescribeServicesRequest& WithFormatVersion(FormatVersionT&& value) { SetFormatVersion(std::forward<FormatVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,21 +67,19 @@ namespace Model
      * <p>The pagination token that indicates the next set of results that you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeServicesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeServicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeServicesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results that you want returned in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeServicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -101,7 +95,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

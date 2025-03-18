@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Indicator::Indicator() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Indicator::Indicator(JsonView jsonValue)
-  : Indicator()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Indicator& Indicator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -50,21 +39,16 @@ Indicator& Indicator::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

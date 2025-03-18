@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCoreDefinitionVersionRequest::GetCoreDefinitionVersionRequest() : 
-    m_coreDefinitionIdHasBeenSet(false),
-    m_coreDefinitionVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCoreDefinitionVersionRequest::SerializePayload() const
 {
   return {};

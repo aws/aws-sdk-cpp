@@ -32,7 +32,7 @@ namespace Model
   class JobExecutionStatusDetails
   {
   public:
-    AWS_IOT_API JobExecutionStatusDetails();
+    AWS_IOT_API JobExecutionStatusDetails() = default;
     AWS_IOT_API JobExecutionStatusDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API JobExecutionStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,16 @@ namespace Model
     /**
      * <p>The job execution status.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDetailsMap() const{ return m_detailsMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDetailsMap() const { return m_detailsMap; }
     inline bool DetailsMapHasBeenSet() const { return m_detailsMapHasBeenSet; }
-    inline void SetDetailsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_detailsMapHasBeenSet = true; m_detailsMap = value; }
-    inline void SetDetailsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_detailsMapHasBeenSet = true; m_detailsMap = std::move(value); }
-    inline JobExecutionStatusDetails& WithDetailsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetDetailsMap(value); return *this;}
-    inline JobExecutionStatusDetails& WithDetailsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetDetailsMap(std::move(value)); return *this;}
-    inline JobExecutionStatusDetails& AddDetailsMap(const Aws::String& key, const Aws::String& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, value); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, const Aws::String& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), value); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(const Aws::String& key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, std::move(value)); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(const char* key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, std::move(value)); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, const char* value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), value); return *this; }
-    inline JobExecutionStatusDetails& AddDetailsMap(const char* key, const char* value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, value); return *this; }
+    template<typename DetailsMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetDetailsMap(DetailsMapT&& value) { m_detailsMapHasBeenSet = true; m_detailsMap = std::forward<DetailsMapT>(value); }
+    template<typename DetailsMapT = Aws::Map<Aws::String, Aws::String>>
+    JobExecutionStatusDetails& WithDetailsMap(DetailsMapT&& value) { SetDetailsMap(std::forward<DetailsMapT>(value)); return *this;}
+    template<typename DetailsMapKeyT = Aws::String, typename DetailsMapValueT = Aws::String>
+    JobExecutionStatusDetails& AddDetailsMap(DetailsMapKeyT&& key, DetailsMapValueT&& value) {
+      m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::forward<DetailsMapKeyT>(key), std::forward<DetailsMapValueT>(value)); return *this;
+    }
     ///@}
   private:
 

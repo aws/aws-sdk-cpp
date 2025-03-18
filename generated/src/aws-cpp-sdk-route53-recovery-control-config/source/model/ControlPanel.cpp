@@ -18,22 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-ControlPanel::ControlPanel() : 
-    m_clusterArnHasBeenSet(false),
-    m_controlPanelArnHasBeenSet(false),
-    m_defaultControlPanel(false),
-    m_defaultControlPanelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routingControlCount(0),
-    m_routingControlCountHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 ControlPanel::ControlPanel(JsonView jsonValue)
-  : ControlPanel()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ControlPanel& ControlPanel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlPanelArn"))
   {
     m_controlPanelArn = jsonValue.GetString("ControlPanelArn");
-
     m_controlPanelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultControlPanel"))
   {
     m_defaultControlPanel = jsonValue.GetBool("DefaultControlPanel");
-
     m_defaultControlPanelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingControlCount"))
   {
     m_routingControlCount = jsonValue.GetInteger("RoutingControlCount");
-
     m_routingControlCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

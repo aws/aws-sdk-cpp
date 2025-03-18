@@ -21,7 +21,7 @@ namespace Model
   class DescribeMonitorRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeMonitorRequest();
+    AWS_FORECASTSERVICE_API DescribeMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-    inline DescribeMonitorRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline DescribeMonitorRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline DescribeMonitorRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    DescribeMonitorRequest& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
   private:
 

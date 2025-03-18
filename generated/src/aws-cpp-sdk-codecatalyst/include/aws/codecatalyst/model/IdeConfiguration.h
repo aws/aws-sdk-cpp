@@ -32,7 +32,7 @@ namespace Model
   class IdeConfiguration
   {
   public:
-    AWS_CODECATALYST_API IdeConfiguration();
+    AWS_CODECATALYST_API IdeConfiguration() = default;
     AWS_CODECATALYST_API IdeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API IdeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>A link to the IDE runtime image. </p>  <p>This parameter is not
      * required for <code>VSCode</code>.</p> 
      */
-    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline const Aws::String& GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
-    inline IdeConfiguration& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
-    inline IdeConfiguration& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
-    inline IdeConfiguration& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    template<typename RuntimeT = Aws::String>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = Aws::String>
+    IdeConfiguration& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>IntelliJ</code>, <code>PyCharm</code>, <code>GoLand</code>, and
      * <code>VSCode</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IdeConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IdeConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IdeConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IdeConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

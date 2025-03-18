@@ -12,12 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingsRequest::GetFindingsRequest() : 
-    m_findingIdsHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

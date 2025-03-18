@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPackagesForDomainResult::ListPackagesForDomainResult()
-{
-}
-
 ListPackagesForDomainResult::ListPackagesForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListPackagesForDomainResult& ListPackagesForDomainResult::operator =(const Aws::
     {
       m_domainPackageDetailsList.push_back(domainPackageDetailsListJsonList[domainPackageDetailsListIndex].AsObject());
     }
+    m_domainPackageDetailsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

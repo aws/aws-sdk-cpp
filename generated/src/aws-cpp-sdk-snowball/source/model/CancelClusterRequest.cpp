@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelClusterRequest::CancelClusterRequest() : 
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelClusterRequest::SerializePayload() const
 {
   JsonValue payload;

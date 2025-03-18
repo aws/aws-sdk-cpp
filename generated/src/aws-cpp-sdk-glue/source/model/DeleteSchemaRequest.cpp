@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSchemaRequest::DeleteSchemaRequest() : 
-    m_schemaIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

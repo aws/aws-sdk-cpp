@@ -12,14 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationAssignmentRequest::CreateApplicationAssignmentRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationAssignmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class BatchGrantPermissionsResult
   {
   public:
-    AWS_LAKEFORMATION_API BatchGrantPermissionsResult();
+    AWS_LAKEFORMATION_API BatchGrantPermissionsResult() = default;
     AWS_LAKEFORMATION_API BatchGrantPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API BatchGrantPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of failures to grant permissions to the resources.</p>
      */
-    inline const Aws::Vector<BatchPermissionsFailureEntry>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<BatchPermissionsFailureEntry>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<BatchPermissionsFailureEntry>&& value) { m_failures = std::move(value); }
-    inline BatchGrantPermissionsResult& WithFailures(const Aws::Vector<BatchPermissionsFailureEntry>& value) { SetFailures(value); return *this;}
-    inline BatchGrantPermissionsResult& WithFailures(Aws::Vector<BatchPermissionsFailureEntry>&& value) { SetFailures(std::move(value)); return *this;}
-    inline BatchGrantPermissionsResult& AddFailures(const BatchPermissionsFailureEntry& value) { m_failures.push_back(value); return *this; }
-    inline BatchGrantPermissionsResult& AddFailures(BatchPermissionsFailureEntry&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPermissionsFailureEntry>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<BatchPermissionsFailureEntry>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<BatchPermissionsFailureEntry>>
+    BatchGrantPermissionsResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = BatchPermissionsFailureEntry>
+    BatchGrantPermissionsResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGrantPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGrantPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGrantPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGrantPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchPermissionsFailureEntry> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

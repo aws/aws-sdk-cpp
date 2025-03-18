@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMetricStatisticsResult::GetMetricStatisticsResult()
-{
-}
-
 GetMetricStatisticsResult::GetMetricStatisticsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const Aws::Amaz
     if(!labelNode.IsNull())
     {
       m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
+      m_labelHasBeenSet = true;
     }
     XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
     if(!datapointsNode.IsNull())
     {
       XmlNode datapointsMember = datapointsNode.FirstChild("member");
+      m_datapointsHasBeenSet = !datapointsMember.IsNull();
       while(!datapointsMember.IsNull())
       {
         m_datapoints.push_back(datapointsMember);
         datapointsMember = datapointsMember.NextNode("member");
       }
 
+      m_datapointsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricStatisticsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

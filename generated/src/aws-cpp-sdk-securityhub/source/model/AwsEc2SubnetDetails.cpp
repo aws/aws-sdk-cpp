@@ -18,29 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2SubnetDetails::AwsEc2SubnetDetails() : 
-    m_assignIpv6AddressOnCreation(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false)
-{
-}
-
 AwsEc2SubnetDetails::AwsEc2SubnetDetails(JsonView jsonValue)
-  : AwsEc2SubnetDetails()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ AwsEc2SubnetDetails& AwsEc2SubnetDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssignIpv6AddressOnCreation"))
   {
     m_assignIpv6AddressOnCreation = jsonValue.GetBool("AssignIpv6AddressOnCreation");
-
     m_assignIpv6AddressOnCreationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
-
     m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableIpAddressCount"))
   {
     m_availableIpAddressCount = jsonValue.GetInteger("AvailableIpAddressCount");
-
     m_availableIpAddressCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultForAz"))
   {
     m_defaultForAz = jsonValue.GetBool("DefaultForAz");
-
     m_defaultForAzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapPublicIpOnLaunch"))
   {
     m_mapPublicIpOnLaunch = jsonValue.GetBool("MapPublicIpOnLaunch");
-
     m_mapPublicIpOnLaunchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetArn"))
   {
     m_subnetArn = jsonValue.GetString("SubnetArn");
-
     m_subnetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlockAssociationSet"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
@@ -140,7 +94,6 @@ AwsEc2SubnetDetails& AwsEc2SubnetDetails::operator =(JsonView jsonValue)
     }
     m_ipv6CidrBlockAssociationSetHasBeenSet = true;
   }
-
   return *this;
 }
 

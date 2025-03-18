@@ -25,7 +25,7 @@ namespace Model
   class DeleteCacheSubnetGroupRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DeleteCacheSubnetGroupRequest();
+    AWS_ELASTICACHE_API DeleteCacheSubnetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.</p>
      */
-    inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
+    inline const Aws::String& GetCacheSubnetGroupName() const { return m_cacheSubnetGroupName; }
     inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
-    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
-    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
-    inline DeleteCacheSubnetGroupRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
-    inline DeleteCacheSubnetGroupRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
-    inline DeleteCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    void SetCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::forward<CacheSubnetGroupNameT>(value); }
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    DeleteCacheSubnetGroupRequest& WithCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { SetCacheSubnetGroupName(std::forward<CacheSubnetGroupNameT>(value)); return *this;}
     ///@}
   private:
 

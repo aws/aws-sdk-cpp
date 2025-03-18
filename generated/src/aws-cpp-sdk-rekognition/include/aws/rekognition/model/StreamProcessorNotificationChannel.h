@@ -40,7 +40,7 @@ namespace Model
   class StreamProcessorNotificationChannel
   {
   public:
-    AWS_REKOGNITION_API StreamProcessorNotificationChannel();
+    AWS_REKOGNITION_API StreamProcessorNotificationChannel() = default;
     AWS_REKOGNITION_API StreamProcessorNotificationChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessorNotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p> The Amazon Resource Number (ARN) of the Amazon Amazon Simple Notification
      * Service topic to which Amazon Rekognition posts the completion status. </p>
      */
-    inline const Aws::String& GetSNSTopicArn() const{ return m_sNSTopicArn; }
+    inline const Aws::String& GetSNSTopicArn() const { return m_sNSTopicArn; }
     inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
-    inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
-    inline void SetSNSTopicArn(Aws::String&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::move(value); }
-    inline void SetSNSTopicArn(const char* value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn.assign(value); }
-    inline StreamProcessorNotificationChannel& WithSNSTopicArn(const Aws::String& value) { SetSNSTopicArn(value); return *this;}
-    inline StreamProcessorNotificationChannel& WithSNSTopicArn(Aws::String&& value) { SetSNSTopicArn(std::move(value)); return *this;}
-    inline StreamProcessorNotificationChannel& WithSNSTopicArn(const char* value) { SetSNSTopicArn(value); return *this;}
+    template<typename SNSTopicArnT = Aws::String>
+    void SetSNSTopicArn(SNSTopicArnT&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::forward<SNSTopicArnT>(value); }
+    template<typename SNSTopicArnT = Aws::String>
+    StreamProcessorNotificationChannel& WithSNSTopicArn(SNSTopicArnT&& value) { SetSNSTopicArn(std::forward<SNSTopicArnT>(value)); return *this;}
     ///@}
   private:
 

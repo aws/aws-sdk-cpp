@@ -22,7 +22,7 @@ namespace Model
   class GetSampledRequestsRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API GetSampledRequestsRequest();
+    AWS_WAF_API GetSampledRequestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</p>
      */
-    inline const Aws::String& GetWebAclId() const{ return m_webAclId; }
+    inline const Aws::String& GetWebAclId() const { return m_webAclId; }
     inline bool WebAclIdHasBeenSet() const { return m_webAclIdHasBeenSet; }
-    inline void SetWebAclId(const Aws::String& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
-    inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
-    inline void SetWebAclId(const char* value) { m_webAclIdHasBeenSet = true; m_webAclId.assign(value); }
-    inline GetSampledRequestsRequest& WithWebAclId(const Aws::String& value) { SetWebAclId(value); return *this;}
-    inline GetSampledRequestsRequest& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
-    inline GetSampledRequestsRequest& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
+    template<typename WebAclIdT = Aws::String>
+    void SetWebAclId(WebAclIdT&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::forward<WebAclIdT>(value); }
+    template<typename WebAclIdT = Aws::String>
+    GetSampledRequestsRequest& WithWebAclId(WebAclIdT&& value) { SetWebAclId(std::forward<WebAclIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * that didn't match any of the rules in the specified <code>WebACL</code>.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline GetSampledRequestsRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline GetSampledRequestsRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline GetSampledRequestsRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    GetSampledRequestsRequest& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
      * three hours.</p>
      */
-    inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
+    inline const TimeWindow& GetTimeWindow() const { return m_timeWindow; }
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
-    inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
-    inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
-    inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
+    template<typename TimeWindowT = TimeWindow>
+    void SetTimeWindow(TimeWindowT&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::forward<TimeWindowT>(value); }
+    template<typename TimeWindowT = TimeWindow>
+    GetSampledRequestsRequest& WithTimeWindow(TimeWindowT&& value) { SetTimeWindow(std::forward<TimeWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +90,7 @@ namespace Model
      * resource received fewer requests than the value of <code>MaxItems</code>,
      * <code>GetSampledRequests</code> returns information about all of them. </p>
      */
-    inline long long GetMaxItems() const{ return m_maxItems; }
+    inline long long GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(long long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline GetSampledRequestsRequest& WithMaxItems(long long value) { SetMaxItems(value); return *this;}
@@ -110,7 +106,7 @@ namespace Model
     TimeWindow m_timeWindow;
     bool m_timeWindowHasBeenSet = false;
 
-    long long m_maxItems;
+    long long m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

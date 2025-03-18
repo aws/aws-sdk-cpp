@@ -18,24 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClusterOperationInfo::ClusterOperationInfo() : 
-    m_clientRequestIdHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_operationArnHasBeenSet(false),
-    m_operationStateHasBeenSet(false),
-    m_operationStepsHasBeenSet(false),
-    m_operationTypeHasBeenSet(false),
-    m_sourceClusterInfoHasBeenSet(false),
-    m_targetClusterInfoHasBeenSet(false),
-    m_vpcConnectionInfoHasBeenSet(false)
-{
-}
-
 ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue)
-  : ClusterOperationInfo()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientRequestId"))
   {
     m_clientRequestId = jsonValue.GetString("clientRequestId");
-
     m_clientRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationArn"))
   {
     m_operationArn = jsonValue.GetString("operationArn");
-
     m_operationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationState"))
   {
     m_operationState = jsonValue.GetString("operationState");
-
     m_operationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationSteps"))
   {
     Aws::Utils::Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
@@ -100,35 +69,26 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
     }
     m_operationStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationType"))
   {
     m_operationType = jsonValue.GetString("operationType");
-
     m_operationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceClusterInfo"))
   {
     m_sourceClusterInfo = jsonValue.GetObject("sourceClusterInfo");
-
     m_sourceClusterInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetClusterInfo"))
   {
     m_targetClusterInfo = jsonValue.GetObject("targetClusterInfo");
-
     m_targetClusterInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConnectionInfo"))
   {
     m_vpcConnectionInfo = jsonValue.GetObject("vpcConnectionInfo");
-
     m_vpcConnectionInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

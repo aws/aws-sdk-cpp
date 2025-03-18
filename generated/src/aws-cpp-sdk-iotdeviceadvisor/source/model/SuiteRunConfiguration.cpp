@@ -18,16 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-SuiteRunConfiguration::SuiteRunConfiguration() : 
-    m_primaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false),
-    m_parallelRun(false),
-    m_parallelRunHasBeenSet(false)
-{
-}
-
 SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue)
-  : SuiteRunConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("primaryDevice"))
   {
     m_primaryDevice = jsonValue.GetObject("primaryDevice");
-
     m_primaryDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectedTestList"))
   {
     Aws::Utils::Array<JsonView> selectedTestListJsonList = jsonValue.GetArray("selectedTestList");
@@ -50,14 +39,11 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
     }
     m_selectedTestListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parallelRun"))
   {
     m_parallelRun = jsonValue.GetBool("parallelRun");
-
     m_parallelRunHasBeenSet = true;
   }
-
   return *this;
 }
 

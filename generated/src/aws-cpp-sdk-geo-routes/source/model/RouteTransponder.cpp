@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTransponder::RouteTransponder() : 
-    m_systemNameHasBeenSet(false)
-{
-}
-
 RouteTransponder::RouteTransponder(JsonView jsonValue)
-  : RouteTransponder()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RouteTransponder& RouteTransponder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SystemName"))
   {
     m_systemName = jsonValue.GetString("SystemName");
-
     m_systemNameHasBeenSet = true;
   }
-
   return *this;
 }
 

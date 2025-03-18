@@ -22,7 +22,7 @@ namespace Model
   class UpdateEndpointsBatchRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateEndpointsBatchRequest();
+    AWS_PINPOINT_API UpdateEndpointsBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateEndpointsBatchRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateEndpointsBatchRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateEndpointsBatchRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateEndpointsBatchRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EndpointBatchRequest& GetEndpointBatchRequest() const{ return m_endpointBatchRequest; }
+    inline const EndpointBatchRequest& GetEndpointBatchRequest() const { return m_endpointBatchRequest; }
     inline bool EndpointBatchRequestHasBeenSet() const { return m_endpointBatchRequestHasBeenSet; }
-    inline void SetEndpointBatchRequest(const EndpointBatchRequest& value) { m_endpointBatchRequestHasBeenSet = true; m_endpointBatchRequest = value; }
-    inline void SetEndpointBatchRequest(EndpointBatchRequest&& value) { m_endpointBatchRequestHasBeenSet = true; m_endpointBatchRequest = std::move(value); }
-    inline UpdateEndpointsBatchRequest& WithEndpointBatchRequest(const EndpointBatchRequest& value) { SetEndpointBatchRequest(value); return *this;}
-    inline UpdateEndpointsBatchRequest& WithEndpointBatchRequest(EndpointBatchRequest&& value) { SetEndpointBatchRequest(std::move(value)); return *this;}
+    template<typename EndpointBatchRequestT = EndpointBatchRequest>
+    void SetEndpointBatchRequest(EndpointBatchRequestT&& value) { m_endpointBatchRequestHasBeenSet = true; m_endpointBatchRequest = std::forward<EndpointBatchRequestT>(value); }
+    template<typename EndpointBatchRequestT = EndpointBatchRequest>
+    UpdateEndpointsBatchRequest& WithEndpointBatchRequest(EndpointBatchRequestT&& value) { SetEndpointBatchRequest(std::forward<EndpointBatchRequestT>(value)); return *this;}
     ///@}
   private:
 

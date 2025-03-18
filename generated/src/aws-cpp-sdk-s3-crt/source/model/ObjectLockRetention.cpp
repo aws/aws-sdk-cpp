@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ObjectLockRetention::ObjectLockRetention() : 
-    m_mode(ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retainUntilDateHasBeenSet(false)
-{
-}
-
 ObjectLockRetention::ObjectLockRetention(const XmlNode& xmlNode)
-  : ObjectLockRetention()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ ObjectLockRetention& ObjectLockRetention::operator =(const XmlNode& xmlNode)
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
     XmlNode retainUntilDateNode = resultNode.FirstChild("RetainUntilDate");

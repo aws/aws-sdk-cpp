@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStudioLifecycleConfigsResult::ListStudioLifecycleConfigsResult()
-{
-}
-
 ListStudioLifecycleConfigsResult::ListStudioLifecycleConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListStudioLifecycleConfigsResult& ListStudioLifecycleConfigsResult::operator =(c
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigs"))
   {
     Aws::Utils::Array<JsonView> studioLifecycleConfigsJsonList = jsonValue.GetArray("StudioLifecycleConfigs");
@@ -42,14 +37,15 @@ ListStudioLifecycleConfigsResult& ListStudioLifecycleConfigsResult::operator =(c
     {
       m_studioLifecycleConfigs.push_back(studioLifecycleConfigsJsonList[studioLifecycleConfigsIndex].AsObject());
     }
+    m_studioLifecycleConfigsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

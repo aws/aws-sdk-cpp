@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourceProfileRequest::GetResourceProfileRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceProfileRequest::SerializePayload() const
 {
   return {};

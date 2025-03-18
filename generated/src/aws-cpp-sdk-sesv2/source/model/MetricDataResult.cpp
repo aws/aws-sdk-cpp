@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MetricDataResult::MetricDataResult() : 
-    m_idHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 MetricDataResult::MetricDataResult(JsonView jsonValue)
-  : MetricDataResult()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ MetricDataResult& MetricDataResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("Timestamps");
@@ -49,7 +39,6 @@ MetricDataResult& MetricDataResult::operator =(JsonView jsonValue)
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -59,7 +48,6 @@ MetricDataResult& MetricDataResult::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

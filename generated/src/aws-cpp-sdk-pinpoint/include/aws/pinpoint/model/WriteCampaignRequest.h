@@ -41,7 +41,7 @@ namespace Model
   class WriteCampaignRequest
   {
   public:
-    AWS_PINPOINT_API WriteCampaignRequest();
+    AWS_PINPOINT_API WriteCampaignRequest() = default;
     AWS_PINPOINT_API WriteCampaignRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API WriteCampaignRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <p>An array of requests that defines additional treatments for the campaign, in
      * addition to the default treatment for the campaign.</p>
      */
-    inline const Aws::Vector<WriteTreatmentResource>& GetAdditionalTreatments() const{ return m_additionalTreatments; }
+    inline const Aws::Vector<WriteTreatmentResource>& GetAdditionalTreatments() const { return m_additionalTreatments; }
     inline bool AdditionalTreatmentsHasBeenSet() const { return m_additionalTreatmentsHasBeenSet; }
-    inline void SetAdditionalTreatments(const Aws::Vector<WriteTreatmentResource>& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = value; }
-    inline void SetAdditionalTreatments(Aws::Vector<WriteTreatmentResource>&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = std::move(value); }
-    inline WriteCampaignRequest& WithAdditionalTreatments(const Aws::Vector<WriteTreatmentResource>& value) { SetAdditionalTreatments(value); return *this;}
-    inline WriteCampaignRequest& WithAdditionalTreatments(Aws::Vector<WriteTreatmentResource>&& value) { SetAdditionalTreatments(std::move(value)); return *this;}
-    inline WriteCampaignRequest& AddAdditionalTreatments(const WriteTreatmentResource& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(value); return *this; }
-    inline WriteCampaignRequest& AddAdditionalTreatments(WriteTreatmentResource&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(std::move(value)); return *this; }
+    template<typename AdditionalTreatmentsT = Aws::Vector<WriteTreatmentResource>>
+    void SetAdditionalTreatments(AdditionalTreatmentsT&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = std::forward<AdditionalTreatmentsT>(value); }
+    template<typename AdditionalTreatmentsT = Aws::Vector<WriteTreatmentResource>>
+    WriteCampaignRequest& WithAdditionalTreatments(AdditionalTreatmentsT&& value) { SetAdditionalTreatments(std::forward<AdditionalTreatmentsT>(value)); return *this;}
+    template<typename AdditionalTreatmentsT = WriteTreatmentResource>
+    WriteCampaignRequest& AddAdditionalTreatments(AdditionalTreatmentsT&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.emplace_back(std::forward<AdditionalTreatmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,26 +68,24 @@ namespace Model
      * channel. This object is required if the MessageConfiguration object for the
      * campaign specifies a CustomMessage object.</p>
      */
-    inline const CustomDeliveryConfiguration& GetCustomDeliveryConfiguration() const{ return m_customDeliveryConfiguration; }
+    inline const CustomDeliveryConfiguration& GetCustomDeliveryConfiguration() const { return m_customDeliveryConfiguration; }
     inline bool CustomDeliveryConfigurationHasBeenSet() const { return m_customDeliveryConfigurationHasBeenSet; }
-    inline void SetCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = value; }
-    inline void SetCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = std::move(value); }
-    inline WriteCampaignRequest& WithCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { SetCustomDeliveryConfiguration(value); return *this;}
-    inline WriteCampaignRequest& WithCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { SetCustomDeliveryConfiguration(std::move(value)); return *this;}
+    template<typename CustomDeliveryConfigurationT = CustomDeliveryConfiguration>
+    void SetCustomDeliveryConfiguration(CustomDeliveryConfigurationT&& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = std::forward<CustomDeliveryConfigurationT>(value); }
+    template<typename CustomDeliveryConfigurationT = CustomDeliveryConfiguration>
+    WriteCampaignRequest& WithCustomDeliveryConfiguration(CustomDeliveryConfigurationT&& value) { SetCustomDeliveryConfiguration(std::forward<CustomDeliveryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom description of the campaign.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WriteCampaignRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WriteCampaignRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WriteCampaignRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WriteCampaignRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +93,7 @@ namespace Model
      * <p>The allocated percentage of users (segment members) who shouldn't receive
      * messages from the campaign.</p>
      */
-    inline int GetHoldoutPercent() const{ return m_holdoutPercent; }
+    inline int GetHoldoutPercent() const { return m_holdoutPercent; }
     inline bool HoldoutPercentHasBeenSet() const { return m_holdoutPercentHasBeenSet; }
     inline void SetHoldoutPercent(int value) { m_holdoutPercentHasBeenSet = true; m_holdoutPercent = value; }
     inline WriteCampaignRequest& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
@@ -107,12 +105,12 @@ namespace Model
      * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
-    inline const CampaignHook& GetHook() const{ return m_hook; }
+    inline const CampaignHook& GetHook() const { return m_hook; }
     inline bool HookHasBeenSet() const { return m_hookHasBeenSet; }
-    inline void SetHook(const CampaignHook& value) { m_hookHasBeenSet = true; m_hook = value; }
-    inline void SetHook(CampaignHook&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
-    inline WriteCampaignRequest& WithHook(const CampaignHook& value) { SetHook(value); return *this;}
-    inline WriteCampaignRequest& WithHook(CampaignHook&& value) { SetHook(std::move(value)); return *this;}
+    template<typename HookT = CampaignHook>
+    void SetHook(HookT&& value) { m_hookHasBeenSet = true; m_hook = std::forward<HookT>(value); }
+    template<typename HookT = CampaignHook>
+    WriteCampaignRequest& WithHook(HookT&& value) { SetHook(std::forward<HookT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +118,7 @@ namespace Model
      * <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless
      * you resume it by changing this value to false.</p>
      */
-    inline bool GetIsPaused() const{ return m_isPaused; }
+    inline bool GetIsPaused() const { return m_isPaused; }
     inline bool IsPausedHasBeenSet() const { return m_isPausedHasBeenSet; }
     inline void SetIsPaused(bool value) { m_isPausedHasBeenSet = true; m_isPaused = value; }
     inline WriteCampaignRequest& WithIsPaused(bool value) { SetIsPaused(value); return *this;}
@@ -130,71 +128,67 @@ namespace Model
     /**
      * <p>The messaging limits for the campaign.</p>
      */
-    inline const CampaignLimits& GetLimits() const{ return m_limits; }
+    inline const CampaignLimits& GetLimits() const { return m_limits; }
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
-    inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
-    inline WriteCampaignRequest& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
-    inline WriteCampaignRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
+    template<typename LimitsT = CampaignLimits>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = CampaignLimits>
+    WriteCampaignRequest& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message configuration settings for the campaign.</p>
      */
-    inline const MessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
+    inline const MessageConfiguration& GetMessageConfiguration() const { return m_messageConfiguration; }
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
-    inline void SetMessageConfiguration(const MessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
-    inline void SetMessageConfiguration(MessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
-    inline WriteCampaignRequest& WithMessageConfiguration(const MessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
-    inline WriteCampaignRequest& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+    template<typename MessageConfigurationT = MessageConfiguration>
+    void SetMessageConfiguration(MessageConfigurationT&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::forward<MessageConfigurationT>(value); }
+    template<typename MessageConfigurationT = MessageConfiguration>
+    WriteCampaignRequest& WithMessageConfiguration(MessageConfigurationT&& value) { SetMessageConfiguration(std::forward<MessageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom name for the campaign.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WriteCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WriteCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WriteCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WriteCampaignRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schedule settings for the campaign.</p>
      */
-    inline const Schedule& GetSchedule() const{ return m_schedule; }
+    inline const Schedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline WriteCampaignRequest& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-    inline WriteCampaignRequest& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = Schedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Schedule>
+    WriteCampaignRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline WriteCampaignRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline WriteCampaignRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline WriteCampaignRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    WriteCampaignRequest& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the segment to associate with the campaign.</p>
      */
-    inline int GetSegmentVersion() const{ return m_segmentVersion; }
+    inline int GetSegmentVersion() const { return m_segmentVersion; }
     inline bool SegmentVersionHasBeenSet() const { return m_segmentVersionHasBeenSet; }
     inline void SetSegmentVersion(int value) { m_segmentVersionHasBeenSet = true; m_segmentVersion = value; }
     inline WriteCampaignRequest& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
@@ -214,45 +208,40 @@ namespace Model
      * key-value pairs that defines the tags to associate with the campaign. Each tag
      * consists of a required tag key and an associated tag value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline WriteCampaignRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline WriteCampaignRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline WriteCampaignRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline WriteCampaignRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WriteCampaignRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WriteCampaignRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline WriteCampaignRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WriteCampaignRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WriteCampaignRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    WriteCampaignRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    WriteCampaignRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The message template to use for the campaign.</p>
      */
-    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const TemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline WriteCampaignRequest& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline WriteCampaignRequest& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    WriteCampaignRequest& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom description of the default treatment for the campaign.</p>
      */
-    inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
+    inline const Aws::String& GetTreatmentDescription() const { return m_treatmentDescription; }
     inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
-    inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
-    inline void SetTreatmentDescription(Aws::String&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::move(value); }
-    inline void SetTreatmentDescription(const char* value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription.assign(value); }
-    inline WriteCampaignRequest& WithTreatmentDescription(const Aws::String& value) { SetTreatmentDescription(value); return *this;}
-    inline WriteCampaignRequest& WithTreatmentDescription(Aws::String&& value) { SetTreatmentDescription(std::move(value)); return *this;}
-    inline WriteCampaignRequest& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
+    template<typename TreatmentDescriptionT = Aws::String>
+    void SetTreatmentDescription(TreatmentDescriptionT&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::forward<TreatmentDescriptionT>(value); }
+    template<typename TreatmentDescriptionT = Aws::String>
+    WriteCampaignRequest& WithTreatmentDescription(TreatmentDescriptionT&& value) { SetTreatmentDescription(std::forward<TreatmentDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,14 +250,12 @@ namespace Model
      * multiple treatments. A <i>treatment</i> is a variation of a campaign that's used
      * for A/B testing.</p>
      */
-    inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
+    inline const Aws::String& GetTreatmentName() const { return m_treatmentName; }
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
-    inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
-    inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
-    inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
-    inline WriteCampaignRequest& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
-    inline WriteCampaignRequest& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
-    inline WriteCampaignRequest& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
+    template<typename TreatmentNameT = Aws::String>
+    void SetTreatmentName(TreatmentNameT&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::forward<TreatmentNameT>(value); }
+    template<typename TreatmentNameT = Aws::String>
+    WriteCampaignRequest& WithTreatmentName(TreatmentNameT&& value) { SetTreatmentName(std::forward<TreatmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -277,7 +264,7 @@ namespace Model
      * displayed to user if there are multiple messages scheduled to be displayed at
      * the same moment.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline WriteCampaignRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -293,13 +280,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_holdoutPercent;
+    int m_holdoutPercent{0};
     bool m_holdoutPercentHasBeenSet = false;
 
     CampaignHook m_hook;
     bool m_hookHasBeenSet = false;
 
-    bool m_isPaused;
+    bool m_isPaused{false};
     bool m_isPausedHasBeenSet = false;
 
     CampaignLimits m_limits;
@@ -317,7 +304,7 @@ namespace Model
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet = false;
 
-    int m_segmentVersion;
+    int m_segmentVersion{0};
     bool m_segmentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
@@ -332,7 +319,7 @@ namespace Model
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

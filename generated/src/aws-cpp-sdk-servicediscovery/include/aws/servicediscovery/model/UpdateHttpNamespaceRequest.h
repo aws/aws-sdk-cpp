@@ -23,7 +23,7 @@ namespace Model
   class UpdateHttpNamespaceRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceRequest();
+    AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the namespace that you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateHttpNamespaceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateHttpNamespaceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateHttpNamespaceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateHttpNamespaceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +55,24 @@ namespace Model
      * running the operation twice. <code>UpdaterRequestId</code> can be any unique
      * string (for example, a date/timestamp).</p>
      */
-    inline const Aws::String& GetUpdaterRequestId() const{ return m_updaterRequestId; }
+    inline const Aws::String& GetUpdaterRequestId() const { return m_updaterRequestId; }
     inline bool UpdaterRequestIdHasBeenSet() const { return m_updaterRequestIdHasBeenSet; }
-    inline void SetUpdaterRequestId(const Aws::String& value) { m_updaterRequestIdHasBeenSet = true; m_updaterRequestId = value; }
-    inline void SetUpdaterRequestId(Aws::String&& value) { m_updaterRequestIdHasBeenSet = true; m_updaterRequestId = std::move(value); }
-    inline void SetUpdaterRequestId(const char* value) { m_updaterRequestIdHasBeenSet = true; m_updaterRequestId.assign(value); }
-    inline UpdateHttpNamespaceRequest& WithUpdaterRequestId(const Aws::String& value) { SetUpdaterRequestId(value); return *this;}
-    inline UpdateHttpNamespaceRequest& WithUpdaterRequestId(Aws::String&& value) { SetUpdaterRequestId(std::move(value)); return *this;}
-    inline UpdateHttpNamespaceRequest& WithUpdaterRequestId(const char* value) { SetUpdaterRequestId(value); return *this;}
+    template<typename UpdaterRequestIdT = Aws::String>
+    void SetUpdaterRequestId(UpdaterRequestIdT&& value) { m_updaterRequestIdHasBeenSet = true; m_updaterRequestId = std::forward<UpdaterRequestIdT>(value); }
+    template<typename UpdaterRequestIdT = Aws::String>
+    UpdateHttpNamespaceRequest& WithUpdaterRequestId(UpdaterRequestIdT&& value) { SetUpdaterRequestId(std::forward<UpdaterRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updated properties for the the HTTP namespace.</p>
      */
-    inline const HttpNamespaceChange& GetNamespace() const{ return m_namespace; }
+    inline const HttpNamespaceChange& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const HttpNamespaceChange& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(HttpNamespaceChange&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline UpdateHttpNamespaceRequest& WithNamespace(const HttpNamespaceChange& value) { SetNamespace(value); return *this;}
-    inline UpdateHttpNamespaceRequest& WithNamespace(HttpNamespaceChange&& value) { SetNamespace(std::move(value)); return *this;}
+    template<typename NamespaceT = HttpNamespaceChange>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = HttpNamespaceChange>
+    UpdateHttpNamespaceRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class NodegroupHealth
   {
   public:
-    AWS_EKS_API NodegroupHealth();
+    AWS_EKS_API NodegroupHealth() = default;
     AWS_EKS_API NodegroupHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API NodegroupHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Any issues that are associated with the node group. </p>
      */
-    inline const Aws::Vector<Issue>& GetIssues() const{ return m_issues; }
+    inline const Aws::Vector<Issue>& GetIssues() const { return m_issues; }
     inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
-    inline void SetIssues(const Aws::Vector<Issue>& value) { m_issuesHasBeenSet = true; m_issues = value; }
-    inline void SetIssues(Aws::Vector<Issue>&& value) { m_issuesHasBeenSet = true; m_issues = std::move(value); }
-    inline NodegroupHealth& WithIssues(const Aws::Vector<Issue>& value) { SetIssues(value); return *this;}
-    inline NodegroupHealth& WithIssues(Aws::Vector<Issue>&& value) { SetIssues(std::move(value)); return *this;}
-    inline NodegroupHealth& AddIssues(const Issue& value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
-    inline NodegroupHealth& AddIssues(Issue&& value) { m_issuesHasBeenSet = true; m_issues.push_back(std::move(value)); return *this; }
+    template<typename IssuesT = Aws::Vector<Issue>>
+    void SetIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues = std::forward<IssuesT>(value); }
+    template<typename IssuesT = Aws::Vector<Issue>>
+    NodegroupHealth& WithIssues(IssuesT&& value) { SetIssues(std::forward<IssuesT>(value)); return *this;}
+    template<typename IssuesT = Issue>
+    NodegroupHealth& AddIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues.emplace_back(std::forward<IssuesT>(value)); return *this; }
     ///@}
   private:
 

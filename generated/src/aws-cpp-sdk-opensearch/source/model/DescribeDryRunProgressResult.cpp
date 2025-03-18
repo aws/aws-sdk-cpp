@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDryRunProgressResult::DescribeDryRunProgressResult()
-{
-}
-
 DescribeDryRunProgressResult::DescribeDryRunProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DescribeDryRunProgressResult& DescribeDryRunProgressResult::operator =(const Aws
   if(jsonValue.ValueExists("DryRunProgressStatus"))
   {
     m_dryRunProgressStatus = jsonValue.GetObject("DryRunProgressStatus");
-
+    m_dryRunProgressStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DryRunConfig"))
   {
     m_dryRunConfig = jsonValue.GetObject("DryRunConfig");
-
+    m_dryRunConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DryRunResults"))
   {
     m_dryRunResults = jsonValue.GetObject("DryRunResults");
-
+    m_dryRunResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

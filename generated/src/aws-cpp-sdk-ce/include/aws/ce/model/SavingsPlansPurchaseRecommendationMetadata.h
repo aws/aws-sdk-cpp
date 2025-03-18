@@ -32,7 +32,7 @@ namespace Model
   class SavingsPlansPurchaseRecommendationMetadata
   {
   public:
-    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata();
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata() = default;
     AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The unique identifier for the recommendation set.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline SavingsPlansPurchaseRecommendationMetadata& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    SavingsPlansPurchaseRecommendationMetadata& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp that shows when the recommendations were generated.</p>
      */
-    inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
+    inline const Aws::String& GetGenerationTimestamp() const { return m_generationTimestamp; }
     inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
-    inline void SetGenerationTimestamp(const Aws::String& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = value; }
-    inline void SetGenerationTimestamp(Aws::String&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::move(value); }
-    inline void SetGenerationTimestamp(const char* value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp.assign(value); }
-    inline SavingsPlansPurchaseRecommendationMetadata& WithGenerationTimestamp(const Aws::String& value) { SetGenerationTimestamp(value); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithGenerationTimestamp(Aws::String&& value) { SetGenerationTimestamp(std::move(value)); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithGenerationTimestamp(const char* value) { SetGenerationTimestamp(value); return *this;}
+    template<typename GenerationTimestampT = Aws::String>
+    void SetGenerationTimestamp(GenerationTimestampT&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::forward<GenerationTimestampT>(value); }
+    template<typename GenerationTimestampT = Aws::String>
+    SavingsPlansPurchaseRecommendationMetadata& WithGenerationTimestamp(GenerationTimestampT&& value) { SetGenerationTimestamp(std::forward<GenerationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
-    inline const Aws::String& GetAdditionalMetadata() const{ return m_additionalMetadata; }
+    inline const Aws::String& GetAdditionalMetadata() const { return m_additionalMetadata; }
     inline bool AdditionalMetadataHasBeenSet() const { return m_additionalMetadataHasBeenSet; }
-    inline void SetAdditionalMetadata(const Aws::String& value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata = value; }
-    inline void SetAdditionalMetadata(Aws::String&& value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata = std::move(value); }
-    inline void SetAdditionalMetadata(const char* value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata.assign(value); }
-    inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(const Aws::String& value) { SetAdditionalMetadata(value); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(Aws::String&& value) { SetAdditionalMetadata(std::move(value)); return *this;}
-    inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(const char* value) { SetAdditionalMetadata(value); return *this;}
+    template<typename AdditionalMetadataT = Aws::String>
+    void SetAdditionalMetadata(AdditionalMetadataT&& value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata = std::forward<AdditionalMetadataT>(value); }
+    template<typename AdditionalMetadataT = Aws::String>
+    SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(AdditionalMetadataT&& value) { SetAdditionalMetadata(std::forward<AdditionalMetadataT>(value)); return *this;}
     ///@}
   private:
 

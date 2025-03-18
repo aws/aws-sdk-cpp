@@ -18,24 +18,7 @@ namespace IoT
 namespace Model
 {
 
-JobSummary::JobSummary() : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_thingGroupIdHasBeenSet(false),
-    m_targetSelection(TargetSelection::NOT_SET),
-    m_targetSelectionHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_isConcurrent(false),
-    m_isConcurrentHasBeenSet(false)
-{
-}
-
 JobSummary::JobSummary(JsonView jsonValue)
-  : JobSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingGroupId"))
   {
     m_thingGroupId = jsonValue.GetString("thingGroupId");
-
     m_thingGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetSelection"))
   {
     m_targetSelection = TargetSelectionMapper::GetTargetSelectionForName(jsonValue.GetString("targetSelection"));
-
     m_targetSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isConcurrent"))
   {
     m_isConcurrent = jsonValue.GetBool("isConcurrent");
-
     m_isConcurrentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsElbLoadBalancerHealthCheck
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck() = default;
     AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of consecutive health check successes required before the instance
      * is moved to the Healthy state.</p>
      */
-    inline int GetHealthyThreshold() const{ return m_healthyThreshold; }
+    inline int GetHealthyThreshold() const { return m_healthyThreshold; }
     inline bool HealthyThresholdHasBeenSet() const { return m_healthyThresholdHasBeenSet; }
     inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
     inline AwsElbLoadBalancerHealthCheck& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>The approximate interval, in seconds, between health checks of an individual
      * instance.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline AwsElbLoadBalancerHealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
@@ -72,14 +72,12 @@ namespace Model
      * <i>&lt;protocol&gt;</i>:<i>&lt;port&gt;</i>/<i>&lt;path to ping&gt;</i>
      * </code>.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline AwsElbLoadBalancerHealthCheck& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline AwsElbLoadBalancerHealthCheck& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerHealthCheck& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    AwsElbLoadBalancerHealthCheck& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline AwsElbLoadBalancerHealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -98,26 +96,26 @@ namespace Model
      * <p>The number of consecutive health check failures that must occur before the
      * instance is moved to the Unhealthy state.</p>
      */
-    inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
+    inline int GetUnhealthyThreshold() const { return m_unhealthyThreshold; }
     inline bool UnhealthyThresholdHasBeenSet() const { return m_unhealthyThresholdHasBeenSet; }
     inline void SetUnhealthyThreshold(int value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
     inline AwsElbLoadBalancerHealthCheck& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
     ///@}
   private:
 
-    int m_healthyThreshold;
+    int m_healthyThreshold{0};
     bool m_healthyThresholdHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    int m_unhealthyThreshold;
+    int m_unhealthyThreshold{0};
     bool m_unhealthyThresholdHasBeenSet = false;
   };
 

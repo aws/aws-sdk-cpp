@@ -20,18 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRule::InsightRule() : 
-    m_nameHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_managedRule(false),
-    m_managedRuleHasBeenSet(false)
-{
-}
-
 InsightRule::InsightRule(const XmlNode& xmlNode)
-  : InsightRule()
 {
   *this = xmlNode;
 }

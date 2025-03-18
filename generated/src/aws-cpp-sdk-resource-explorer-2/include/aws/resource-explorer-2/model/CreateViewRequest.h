@@ -26,7 +26,7 @@ namespace Model
   class CreateViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API CreateViewRequest();
+    AWS_RESOURCEEXPLORER2_API CreateViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type
      * value</a> to ensure the uniqueness of your views.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateViewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateViewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateViewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateViewRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,12 @@ namespace Model
      * <i>not</i> tagged with a key <code>Stage</code> that has the value
      * <code>prod</code>.</p> 
      */
-    inline const SearchFilter& GetFilters() const{ return m_filters; }
+    inline const SearchFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const SearchFilter& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(SearchFilter&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline CreateViewRequest& WithFilters(const SearchFilter& value) { SetFilters(value); return *this;}
-    inline CreateViewRequest& WithFilters(SearchFilter&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = SearchFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = SearchFilter>
+    CreateViewRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +87,14 @@ namespace Model
      * view. It is a list of objects that each describe a field to include.</p> <p>The
      * default is an empty list, with no optional fields included in the results.</p>
      */
-    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const{ return m_includedProperties; }
+    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
     inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
-    inline void SetIncludedProperties(const Aws::Vector<IncludedProperty>& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = value; }
-    inline void SetIncludedProperties(Aws::Vector<IncludedProperty>&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::move(value); }
-    inline CreateViewRequest& WithIncludedProperties(const Aws::Vector<IncludedProperty>& value) { SetIncludedProperties(value); return *this;}
-    inline CreateViewRequest& WithIncludedProperties(Aws::Vector<IncludedProperty>&& value) { SetIncludedProperties(std::move(value)); return *this;}
-    inline CreateViewRequest& AddIncludedProperties(const IncludedProperty& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.push_back(value); return *this; }
-    inline CreateViewRequest& AddIncludedProperties(IncludedProperty&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.push_back(std::move(value)); return *this; }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    CreateViewRequest& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
+    template<typename IncludedPropertiesT = IncludedProperty>
+    CreateViewRequest& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,33 +102,28 @@ namespace Model
      * <p>The root ARN of the account, an organizational unit (OU), or an organization
      * ARN. If left empty, the default is account.</p>
      */
-    inline const Aws::String& GetScope() const{ return m_scope; }
+    inline const Aws::String& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-    inline CreateViewRequest& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-    inline CreateViewRequest& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-    inline CreateViewRequest& WithScope(const char* value) { SetScope(value); return *this;}
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    CreateViewRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tag key and value pairs that are attached to the view.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateViewRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateViewRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateViewRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateViewRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateViewRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateViewRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateViewRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateViewRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateViewRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateViewRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateViewRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -140,14 +133,12 @@ namespace Model
      * include letters, digits, and the dash (-) character. The name must be unique
      * within its Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetViewName() const{ return m_viewName; }
+    inline const Aws::String& GetViewName() const { return m_viewName; }
     inline bool ViewNameHasBeenSet() const { return m_viewNameHasBeenSet; }
-    inline void SetViewName(const Aws::String& value) { m_viewNameHasBeenSet = true; m_viewName = value; }
-    inline void SetViewName(Aws::String&& value) { m_viewNameHasBeenSet = true; m_viewName = std::move(value); }
-    inline void SetViewName(const char* value) { m_viewNameHasBeenSet = true; m_viewName.assign(value); }
-    inline CreateViewRequest& WithViewName(const Aws::String& value) { SetViewName(value); return *this;}
-    inline CreateViewRequest& WithViewName(Aws::String&& value) { SetViewName(std::move(value)); return *this;}
-    inline CreateViewRequest& WithViewName(const char* value) { SetViewName(value); return *this;}
+    template<typename ViewNameT = Aws::String>
+    void SetViewName(ViewNameT&& value) { m_viewNameHasBeenSet = true; m_viewName = std::forward<ViewNameT>(value); }
+    template<typename ViewNameT = Aws::String>
+    CreateViewRequest& WithViewName(ViewNameT&& value) { SetViewName(std::forward<ViewNameT>(value)); return *this;}
     ///@}
   private:
 

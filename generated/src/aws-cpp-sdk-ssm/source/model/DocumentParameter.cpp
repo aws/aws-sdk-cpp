@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentParameter::DocumentParameter() : 
-    m_nameHasBeenSet(false),
-    m_type(DocumentParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 DocumentParameter::DocumentParameter(JsonView jsonValue)
-  : DocumentParameter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DocumentParameter& DocumentParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DocumentParameterTypeMapper::GetDocumentParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

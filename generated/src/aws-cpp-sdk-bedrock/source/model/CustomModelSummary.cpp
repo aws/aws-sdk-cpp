@@ -18,20 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-CustomModelSummary::CustomModelSummary() : 
-    m_modelArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_baseModelArnHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false),
-    m_customizationType(CustomizationType::NOT_SET),
-    m_customizationTypeHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false)
-{
-}
-
 CustomModelSummary::CustomModelSummary(JsonView jsonValue)
-  : CustomModelSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ CustomModelSummary& CustomModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelName"))
   {
     m_modelName = jsonValue.GetString("modelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseModelArn"))
   {
     m_baseModelArn = jsonValue.GetString("baseModelArn");
-
     m_baseModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseModelName"))
   {
     m_baseModelName = jsonValue.GetString("baseModelName");
-
     m_baseModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customizationType"))
   {
     m_customizationType = CustomizationTypeMapper::GetCustomizationTypeForName(jsonValue.GetString("customizationType"));
-
     m_customizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

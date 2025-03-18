@@ -34,7 +34,7 @@ namespace Model
   class NodeGroupUpdateStatus
   {
   public:
-    AWS_ELASTICACHE_API NodeGroupUpdateStatus();
+    AWS_ELASTICACHE_API NodeGroupUpdateStatus() = default;
     AWS_ELASTICACHE_API NodeGroupUpdateStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API NodeGroupUpdateStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The ID of the node group</p>
      */
-    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+    inline const Aws::String& GetNodeGroupId() const { return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
-    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
-    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
-    inline NodeGroupUpdateStatus& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
-    inline NodeGroupUpdateStatus& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
-    inline NodeGroupUpdateStatus& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+    template<typename NodeGroupIdT = Aws::String>
+    void SetNodeGroupId(NodeGroupIdT&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::forward<NodeGroupIdT>(value); }
+    template<typename NodeGroupIdT = Aws::String>
+    NodeGroupUpdateStatus& WithNodeGroupId(NodeGroupIdT&& value) { SetNodeGroupId(std::forward<NodeGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the service update on the node group member</p>
      */
-    inline const Aws::Vector<NodeGroupMemberUpdateStatus>& GetNodeGroupMemberUpdateStatus() const{ return m_nodeGroupMemberUpdateStatus; }
+    inline const Aws::Vector<NodeGroupMemberUpdateStatus>& GetNodeGroupMemberUpdateStatus() const { return m_nodeGroupMemberUpdateStatus; }
     inline bool NodeGroupMemberUpdateStatusHasBeenSet() const { return m_nodeGroupMemberUpdateStatusHasBeenSet; }
-    inline void SetNodeGroupMemberUpdateStatus(const Aws::Vector<NodeGroupMemberUpdateStatus>& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus = value; }
-    inline void SetNodeGroupMemberUpdateStatus(Aws::Vector<NodeGroupMemberUpdateStatus>&& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus = std::move(value); }
-    inline NodeGroupUpdateStatus& WithNodeGroupMemberUpdateStatus(const Aws::Vector<NodeGroupMemberUpdateStatus>& value) { SetNodeGroupMemberUpdateStatus(value); return *this;}
-    inline NodeGroupUpdateStatus& WithNodeGroupMemberUpdateStatus(Aws::Vector<NodeGroupMemberUpdateStatus>&& value) { SetNodeGroupMemberUpdateStatus(std::move(value)); return *this;}
-    inline NodeGroupUpdateStatus& AddNodeGroupMemberUpdateStatus(const NodeGroupMemberUpdateStatus& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus.push_back(value); return *this; }
-    inline NodeGroupUpdateStatus& AddNodeGroupMemberUpdateStatus(NodeGroupMemberUpdateStatus&& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus.push_back(std::move(value)); return *this; }
+    template<typename NodeGroupMemberUpdateStatusT = Aws::Vector<NodeGroupMemberUpdateStatus>>
+    void SetNodeGroupMemberUpdateStatus(NodeGroupMemberUpdateStatusT&& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus = std::forward<NodeGroupMemberUpdateStatusT>(value); }
+    template<typename NodeGroupMemberUpdateStatusT = Aws::Vector<NodeGroupMemberUpdateStatus>>
+    NodeGroupUpdateStatus& WithNodeGroupMemberUpdateStatus(NodeGroupMemberUpdateStatusT&& value) { SetNodeGroupMemberUpdateStatus(std::forward<NodeGroupMemberUpdateStatusT>(value)); return *this;}
+    template<typename NodeGroupMemberUpdateStatusT = NodeGroupMemberUpdateStatus>
+    NodeGroupUpdateStatus& AddNodeGroupMemberUpdateStatus(NodeGroupMemberUpdateStatusT&& value) { m_nodeGroupMemberUpdateStatusHasBeenSet = true; m_nodeGroupMemberUpdateStatus.emplace_back(std::forward<NodeGroupMemberUpdateStatusT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRepositoryRequest::CreateRepositoryRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

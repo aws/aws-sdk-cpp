@@ -12,14 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateAccessPolicyRequest::AssociateAccessPolicyRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_accessScopeHasBeenSet(false)
-{
-}
-
 Aws::String AssociateAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

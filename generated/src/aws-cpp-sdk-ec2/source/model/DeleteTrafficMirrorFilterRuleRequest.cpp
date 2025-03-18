@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTrafficMirrorFilterRuleRequest::DeleteTrafficMirrorFilterRuleRequest() : 
-    m_trafficMirrorFilterRuleIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrafficMirrorFilterRuleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

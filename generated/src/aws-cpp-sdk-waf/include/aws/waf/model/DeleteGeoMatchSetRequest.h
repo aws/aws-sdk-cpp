@@ -21,7 +21,7 @@ namespace Model
   class DeleteGeoMatchSetRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API DeleteGeoMatchSetRequest();
+    AWS_WAF_API DeleteGeoMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
      * by <a>ListGeoMatchSets</a>.</p>
      */
-    inline const Aws::String& GetGeoMatchSetId() const{ return m_geoMatchSetId; }
+    inline const Aws::String& GetGeoMatchSetId() const { return m_geoMatchSetId; }
     inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
-    inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
-    inline void SetGeoMatchSetId(Aws::String&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::move(value); }
-    inline void SetGeoMatchSetId(const char* value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId.assign(value); }
-    inline DeleteGeoMatchSetRequest& WithGeoMatchSetId(const Aws::String& value) { SetGeoMatchSetId(value); return *this;}
-    inline DeleteGeoMatchSetRequest& WithGeoMatchSetId(Aws::String&& value) { SetGeoMatchSetId(std::move(value)); return *this;}
-    inline DeleteGeoMatchSetRequest& WithGeoMatchSetId(const char* value) { SetGeoMatchSetId(value); return *this;}
+    template<typename GeoMatchSetIdT = Aws::String>
+    void SetGeoMatchSetId(GeoMatchSetIdT&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::forward<GeoMatchSetIdT>(value); }
+    template<typename GeoMatchSetIdT = Aws::String>
+    DeleteGeoMatchSetRequest& WithGeoMatchSetId(GeoMatchSetIdT&& value) { SetGeoMatchSetId(std::forward<GeoMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline DeleteGeoMatchSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline DeleteGeoMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline DeleteGeoMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    DeleteGeoMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
   private:
 

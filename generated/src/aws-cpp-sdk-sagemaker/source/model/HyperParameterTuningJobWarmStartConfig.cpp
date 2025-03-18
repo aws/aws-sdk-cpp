@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobWarmStartConfig::HyperParameterTuningJobWarmStartConfig() : 
-    m_parentHyperParameterTuningJobsHasBeenSet(false),
-    m_warmStartType(HyperParameterTuningJobWarmStartType::NOT_SET),
-    m_warmStartTypeHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobWarmStartConfig::HyperParameterTuningJobWarmStartConfig(JsonView jsonValue)
-  : HyperParameterTuningJobWarmStartConfig()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ HyperParameterTuningJobWarmStartConfig& HyperParameterTuningJobWarmStartConfig::
     }
     m_parentHyperParameterTuningJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmStartType"))
   {
     m_warmStartType = HyperParameterTuningJobWarmStartTypeMapper::GetHyperParameterTuningJobWarmStartTypeForName(jsonValue.GetString("WarmStartType"));
-
     m_warmStartTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

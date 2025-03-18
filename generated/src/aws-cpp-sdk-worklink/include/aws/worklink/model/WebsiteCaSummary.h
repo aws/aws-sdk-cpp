@@ -32,7 +32,7 @@ namespace Model
   class WebsiteCaSummary
   {
   public:
-    AWS_WORKLINK_API WebsiteCaSummary();
+    AWS_WORKLINK_API WebsiteCaSummary() = default;
     AWS_WORKLINK_API WebsiteCaSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKLINK_API WebsiteCaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,47 +42,43 @@ namespace Model
     /**
      * <p>A unique identifier for the CA.</p>
      */
-    inline const Aws::String& GetWebsiteCaId() const{ return m_websiteCaId; }
+    inline const Aws::String& GetWebsiteCaId() const { return m_websiteCaId; }
     inline bool WebsiteCaIdHasBeenSet() const { return m_websiteCaIdHasBeenSet; }
-    inline void SetWebsiteCaId(const Aws::String& value) { m_websiteCaIdHasBeenSet = true; m_websiteCaId = value; }
-    inline void SetWebsiteCaId(Aws::String&& value) { m_websiteCaIdHasBeenSet = true; m_websiteCaId = std::move(value); }
-    inline void SetWebsiteCaId(const char* value) { m_websiteCaIdHasBeenSet = true; m_websiteCaId.assign(value); }
-    inline WebsiteCaSummary& WithWebsiteCaId(const Aws::String& value) { SetWebsiteCaId(value); return *this;}
-    inline WebsiteCaSummary& WithWebsiteCaId(Aws::String&& value) { SetWebsiteCaId(std::move(value)); return *this;}
-    inline WebsiteCaSummary& WithWebsiteCaId(const char* value) { SetWebsiteCaId(value); return *this;}
+    template<typename WebsiteCaIdT = Aws::String>
+    void SetWebsiteCaId(WebsiteCaIdT&& value) { m_websiteCaIdHasBeenSet = true; m_websiteCaId = std::forward<WebsiteCaIdT>(value); }
+    template<typename WebsiteCaIdT = Aws::String>
+    WebsiteCaSummary& WithWebsiteCaId(WebsiteCaIdT&& value) { SetWebsiteCaId(std::forward<WebsiteCaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the CA was added.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline WebsiteCaSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline WebsiteCaSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    WebsiteCaSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name to display.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline WebsiteCaSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline WebsiteCaSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline WebsiteCaSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    WebsiteCaSummary& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_websiteCaId;
     bool m_websiteCaIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_displayName;

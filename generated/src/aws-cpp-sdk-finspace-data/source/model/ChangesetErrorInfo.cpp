@@ -18,15 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-ChangesetErrorInfo::ChangesetErrorInfo() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCategory(ErrorCategory::NOT_SET),
-    m_errorCategoryHasBeenSet(false)
-{
-}
-
 ChangesetErrorInfo::ChangesetErrorInfo(JsonView jsonValue)
-  : ChangesetErrorInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ChangesetErrorInfo& ChangesetErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCategory"))
   {
     m_errorCategory = ErrorCategoryMapper::GetErrorCategoryForName(jsonValue.GetString("errorCategory"));
-
     m_errorCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

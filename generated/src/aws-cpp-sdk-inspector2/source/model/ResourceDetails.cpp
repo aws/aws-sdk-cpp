@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_awsEc2InstanceHasBeenSet(false),
-    m_awsEcrContainerImageHasBeenSet(false),
-    m_awsLambdaFunctionHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsEc2Instance"))
   {
     m_awsEc2Instance = jsonValue.GetObject("awsEc2Instance");
-
     m_awsEc2InstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsEcrContainerImage"))
   {
     m_awsEcrContainerImage = jsonValue.GetObject("awsEcrContainerImage");
-
     m_awsEcrContainerImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLambdaFunction"))
   {
     m_awsLambdaFunction = jsonValue.GetObject("awsLambdaFunction");
-
     m_awsLambdaFunctionHasBeenSet = true;
   }
-
   return *this;
 }
 

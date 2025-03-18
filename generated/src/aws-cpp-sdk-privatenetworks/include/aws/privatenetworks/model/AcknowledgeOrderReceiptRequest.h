@@ -21,7 +21,7 @@ namespace Model
   class AcknowledgeOrderReceiptRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptRequest();
+    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the order.</p>
      */
-    inline const Aws::String& GetOrderArn() const{ return m_orderArn; }
+    inline const Aws::String& GetOrderArn() const { return m_orderArn; }
     inline bool OrderArnHasBeenSet() const { return m_orderArnHasBeenSet; }
-    inline void SetOrderArn(const Aws::String& value) { m_orderArnHasBeenSet = true; m_orderArn = value; }
-    inline void SetOrderArn(Aws::String&& value) { m_orderArnHasBeenSet = true; m_orderArn = std::move(value); }
-    inline void SetOrderArn(const char* value) { m_orderArnHasBeenSet = true; m_orderArn.assign(value); }
-    inline AcknowledgeOrderReceiptRequest& WithOrderArn(const Aws::String& value) { SetOrderArn(value); return *this;}
-    inline AcknowledgeOrderReceiptRequest& WithOrderArn(Aws::String&& value) { SetOrderArn(std::move(value)); return *this;}
-    inline AcknowledgeOrderReceiptRequest& WithOrderArn(const char* value) { SetOrderArn(value); return *this;}
+    template<typename OrderArnT = Aws::String>
+    void SetOrderArn(OrderArnT&& value) { m_orderArnHasBeenSet = true; m_orderArn = std::forward<OrderArnT>(value); }
+    template<typename OrderArnT = Aws::String>
+    AcknowledgeOrderReceiptRequest& WithOrderArn(OrderArnT&& value) { SetOrderArn(std::forward<OrderArnT>(value)); return *this;}
     ///@}
   private:
 

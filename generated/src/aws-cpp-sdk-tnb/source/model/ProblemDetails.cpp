@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ProblemDetails::ProblemDetails() : 
-    m_detailHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 ProblemDetails::ProblemDetails(JsonView jsonValue)
-  : ProblemDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProblemDetails& ProblemDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detail"))
   {
     m_detail = jsonValue.GetString("detail");
-
     m_detailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class OnDemandProvisioningSpecification
   {
   public:
-    AWS_EMR_API OnDemandProvisioningSpecification();
+    AWS_EMR_API OnDemandProvisioningSpecification() = default;
     AWS_EMR_API OnDemandProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API OnDemandProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * launch the instances with the highest priority first. The default is
      * <code>lowest-price</code>.</p>
      */
-    inline const OnDemandProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline OnDemandProvisioningAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline OnDemandProvisioningSpecification& WithAllocationStrategy(const OnDemandProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline OnDemandProvisioningSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(OnDemandProvisioningAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline OnDemandProvisioningSpecification& WithAllocationStrategy(OnDemandProvisioningAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -64,16 +62,16 @@ namespace Model
      * <p>The launch specification for On-Demand instances in the instance fleet, which
      * determines the allocation strategy.</p>
      */
-    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+    inline const OnDemandCapacityReservationOptions& GetCapacityReservationOptions() const { return m_capacityReservationOptions; }
     inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
-    inline void SetCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
-    inline void SetCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
-    inline OnDemandProvisioningSpecification& WithCapacityReservationOptions(const OnDemandCapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
-    inline OnDemandProvisioningSpecification& WithCapacityReservationOptions(OnDemandCapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
+    template<typename CapacityReservationOptionsT = OnDemandCapacityReservationOptions>
+    void SetCapacityReservationOptions(CapacityReservationOptionsT&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::forward<CapacityReservationOptionsT>(value); }
+    template<typename CapacityReservationOptionsT = OnDemandCapacityReservationOptions>
+    OnDemandProvisioningSpecification& WithCapacityReservationOptions(CapacityReservationOptionsT&& value) { SetCapacityReservationOptions(std::forward<CapacityReservationOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    OnDemandProvisioningAllocationStrategy m_allocationStrategy;
+    OnDemandProvisioningAllocationStrategy m_allocationStrategy{OnDemandProvisioningAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandCapacityReservationOptions m_capacityReservationOptions;

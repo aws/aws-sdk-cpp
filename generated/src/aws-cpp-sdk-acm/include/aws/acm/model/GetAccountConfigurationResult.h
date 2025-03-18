@@ -28,7 +28,7 @@ namespace Model
   class GetAccountConfigurationResult
   {
   public:
-    AWS_ACM_API GetAccountConfigurationResult();
+    AWS_ACM_API GetAccountConfigurationResult() = default;
     AWS_ACM_API GetAccountConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACM_API GetAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Expiration events configuration options associated with the Amazon Web
      * Services account.</p>
      */
-    inline const ExpiryEventsConfiguration& GetExpiryEvents() const{ return m_expiryEvents; }
-    inline void SetExpiryEvents(const ExpiryEventsConfiguration& value) { m_expiryEvents = value; }
-    inline void SetExpiryEvents(ExpiryEventsConfiguration&& value) { m_expiryEvents = std::move(value); }
-    inline GetAccountConfigurationResult& WithExpiryEvents(const ExpiryEventsConfiguration& value) { SetExpiryEvents(value); return *this;}
-    inline GetAccountConfigurationResult& WithExpiryEvents(ExpiryEventsConfiguration&& value) { SetExpiryEvents(std::move(value)); return *this;}
+    inline const ExpiryEventsConfiguration& GetExpiryEvents() const { return m_expiryEvents; }
+    template<typename ExpiryEventsT = ExpiryEventsConfiguration>
+    void SetExpiryEvents(ExpiryEventsT&& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = std::forward<ExpiryEventsT>(value); }
+    template<typename ExpiryEventsT = ExpiryEventsConfiguration>
+    GetAccountConfigurationResult& WithExpiryEvents(ExpiryEventsT&& value) { SetExpiryEvents(std::forward<ExpiryEventsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExpiryEventsConfiguration m_expiryEvents;
+    bool m_expiryEventsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

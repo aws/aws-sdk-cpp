@@ -28,7 +28,7 @@ namespace Model
   class GetEntitlementsRequest : public MarketplaceEntitlementServiceRequest
   {
   public:
-    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsRequest();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * product code will be provided by AWS Marketplace when the product listing is
      * created.</p>
      */
-    inline const Aws::String& GetProductCode() const{ return m_productCode; }
+    inline const Aws::String& GetProductCode() const { return m_productCode; }
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
-    inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
-    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
-    inline void SetProductCode(const char* value) { m_productCodeHasBeenSet = true; m_productCode.assign(value); }
-    inline GetEntitlementsRequest& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
-    inline GetEntitlementsRequest& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
-    inline GetEntitlementsRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+    template<typename ProductCodeT = Aws::String>
+    void SetProductCode(ProductCodeT&& value) { m_productCodeHasBeenSet = true; m_productCode = std::forward<ProductCodeT>(value); }
+    template<typename ProductCodeT = Aws::String>
+    GetEntitlementsRequest& WithProductCode(ProductCodeT&& value) { SetProductCode(std::forward<ProductCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,16 +62,15 @@ namespace Model
      * Filtered requests are <i>unioned</i> for each value in the value list, and then
      * <i>intersected</i> for each filter key.</p>
      */
-    inline const Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetEntitlementsRequest& WithFilter(const Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>& value) { SetFilter(value); return *this;}
-    inline GetEntitlementsRequest& WithFilter(Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>&& value) { SetFilter(std::move(value)); return *this;}
-    inline GetEntitlementsRequest& AddFilter(const GetEntitlementFilterName& key, const Aws::Vector<Aws::String>& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline GetEntitlementsRequest& AddFilter(GetEntitlementFilterName&& key, const Aws::Vector<Aws::String>& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline GetEntitlementsRequest& AddFilter(const GetEntitlementFilterName& key, Aws::Vector<Aws::String>&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline GetEntitlementsRequest& AddFilter(GetEntitlementFilterName&& key, Aws::Vector<Aws::String>&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename FilterT = Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>>>
+    GetEntitlementsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    inline GetEntitlementsRequest& AddFilter(GetEntitlementFilterName key, Aws::Vector<Aws::String> value) {
+      m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,14 +78,12 @@ namespace Model
      * <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
      * GetEntitlementsResult.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetEntitlementsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetEntitlementsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetEntitlementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetEntitlementsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +92,7 @@ namespace Model
      * For pagination, use the NextToken field in subsequent calls to
      * GetEntitlements.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetEntitlementsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -113,7 +108,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

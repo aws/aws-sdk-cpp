@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateWebACLRequest::DisassociateWebACLRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

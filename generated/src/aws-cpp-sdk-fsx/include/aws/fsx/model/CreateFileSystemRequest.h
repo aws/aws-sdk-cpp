@@ -34,7 +34,7 @@ namespace Model
   class CreateFileSystemRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API CreateFileSystemRequest();
+    AWS_FSX_API CreateFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * idempotent creation. This string is automatically filled on your behalf when you
      * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateFileSystemRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and
      * <code>OPENZFS</code>.</p>
      */
-    inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
+    inline FileSystemType GetFileSystemType() const { return m_fileSystemType; }
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
-    inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
-    inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
-    inline CreateFileSystemRequest& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
-    inline CreateFileSystemRequest& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
+    inline void SetFileSystemType(FileSystemType value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
+    inline CreateFileSystemRequest& WithFileSystemType(FileSystemType value) { SetFileSystemType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +98,7 @@ namespace Model
      * <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
      * </ul>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
@@ -131,12 +127,10 @@ namespace Model
      * with Intelligent-Tiering</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      */
-    inline const StorageType& GetStorageType() const{ return m_storageType; }
+    inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline CreateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
-    inline CreateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline CreateFileSystemRequest& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
 
     ///@{
@@ -157,15 +151,14 @@ namespace Model
      * <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one
      * subnet ID. The file server is launched in that subnet's Availability Zone.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline CreateFileSystemRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline CreateFileSystemRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline CreateFileSystemRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline CreateFileSystemRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateFileSystemRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateFileSystemRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,15 +169,14 @@ namespace Model
      * security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
      * subnet that has been shared with you.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateFileSystemRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateFileSystemRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateFileSystemRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateFileSystemRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateFileSystemRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateFileSystemRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -192,26 +184,24 @@ namespace Model
      * <p>The tags to apply to the file system that's being created. The key value of
      * the <code>Name</code> tag appears in the console as the file system name.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFileSystemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFileSystemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFileSystemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFileSystemRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFileSystemRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateFileSystemRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,32 +209,32 @@ namespace Model
      * <p>The Microsoft Windows configuration for the file system that's being
      * created.</p>
      */
-    inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
+    inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const { return m_windowsConfiguration; }
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
-    inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
-    inline void SetWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
-    inline CreateFileSystemRequest& WithWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
-    inline CreateFileSystemRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
+    template<typename WindowsConfigurationT = CreateFileSystemWindowsConfiguration>
+    void SetWindowsConfiguration(WindowsConfigurationT&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::forward<WindowsConfigurationT>(value); }
+    template<typename WindowsConfigurationT = CreateFileSystemWindowsConfiguration>
+    CreateFileSystemRequest& WithWindowsConfiguration(WindowsConfigurationT&& value) { SetWindowsConfiguration(std::forward<WindowsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CreateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+    inline const CreateFileSystemLustreConfiguration& GetLustreConfiguration() const { return m_lustreConfiguration; }
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-    inline void SetLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-    inline void SetLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-    inline CreateFileSystemRequest& WithLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-    inline CreateFileSystemRequest& WithLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    template<typename LustreConfigurationT = CreateFileSystemLustreConfiguration>
+    void SetLustreConfiguration(LustreConfigurationT&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::forward<LustreConfigurationT>(value); }
+    template<typename LustreConfigurationT = CreateFileSystemLustreConfiguration>
+    CreateFileSystemRequest& WithLustreConfiguration(LustreConfigurationT&& value) { SetLustreConfiguration(std::forward<LustreConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CreateFileSystemOntapConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
+    inline const CreateFileSystemOntapConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
     inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
-    inline void SetOntapConfiguration(const CreateFileSystemOntapConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
-    inline void SetOntapConfiguration(CreateFileSystemOntapConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
-    inline CreateFileSystemRequest& WithOntapConfiguration(const CreateFileSystemOntapConfiguration& value) { SetOntapConfiguration(value); return *this;}
-    inline CreateFileSystemRequest& WithOntapConfiguration(CreateFileSystemOntapConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
+    template<typename OntapConfigurationT = CreateFileSystemOntapConfiguration>
+    void SetOntapConfiguration(OntapConfigurationT&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::forward<OntapConfigurationT>(value); }
+    template<typename OntapConfigurationT = CreateFileSystemOntapConfiguration>
+    CreateFileSystemRequest& WithOntapConfiguration(OntapConfigurationT&& value) { SetOntapConfiguration(std::forward<OntapConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,39 +253,37 @@ namespace Model
      * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
      * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
-    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+    inline const Aws::String& GetFileSystemTypeVersion() const { return m_fileSystemTypeVersion; }
     inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
-    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
-    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
-    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
-    inline CreateFileSystemRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
-    inline CreateFileSystemRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
-    inline CreateFileSystemRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+    template<typename FileSystemTypeVersionT = Aws::String>
+    void SetFileSystemTypeVersion(FileSystemTypeVersionT&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::forward<FileSystemTypeVersionT>(value); }
+    template<typename FileSystemTypeVersionT = Aws::String>
+    CreateFileSystemRequest& WithFileSystemTypeVersion(FileSystemTypeVersionT&& value) { SetFileSystemTypeVersion(std::forward<FileSystemTypeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OpenZFS configuration for the file system that's being created.</p>
      */
-    inline const CreateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+    inline const CreateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const { return m_openZFSConfiguration; }
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
-    inline void SetOpenZFSConfiguration(const CreateFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
-    inline void SetOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
-    inline CreateFileSystemRequest& WithOpenZFSConfiguration(const CreateFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
-    inline CreateFileSystemRequest& WithOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
+    template<typename OpenZFSConfigurationT = CreateFileSystemOpenZFSConfiguration>
+    void SetOpenZFSConfiguration(OpenZFSConfigurationT&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::forward<OpenZFSConfigurationT>(value); }
+    template<typename OpenZFSConfigurationT = CreateFileSystemOpenZFSConfiguration>
+    CreateFileSystemRequest& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    FileSystemType m_fileSystemType;
+    FileSystemType m_fileSystemType{FileSystemType::NOT_SET};
     bool m_fileSystemTypeHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
 
-    StorageType m_storageType;
+    StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;

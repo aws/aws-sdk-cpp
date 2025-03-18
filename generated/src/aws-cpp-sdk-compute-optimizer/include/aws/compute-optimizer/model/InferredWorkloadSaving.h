@@ -38,7 +38,7 @@ namespace Model
   class InferredWorkloadSaving
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API InferredWorkloadSaving();
+    AWS_COMPUTEOPTIMIZER_API InferredWorkloadSaving() = default;
     AWS_COMPUTEOPTIMIZER_API InferredWorkloadSaving(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API InferredWorkloadSaving& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,13 @@ namespace Model
      * <code>SQLServer</code> - Infers that SQLServer might be running on the
      * instance.</p> </li> </ul>
      */
-    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
-    inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
-    inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
-    inline InferredWorkloadSaving& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
-    inline InferredWorkloadSaving& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
-    inline InferredWorkloadSaving& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
-    inline InferredWorkloadSaving& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    void SetInferredWorkloadTypes(InferredWorkloadTypesT&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::forward<InferredWorkloadTypesT>(value); }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    InferredWorkloadSaving& WithInferredWorkloadTypes(InferredWorkloadTypesT&& value) { SetInferredWorkloadTypes(std::forward<InferredWorkloadTypesT>(value)); return *this;}
+    inline InferredWorkloadSaving& AddInferredWorkloadTypes(InferredWorkloadType value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +78,12 @@ namespace Model
      * adopting Compute Optimizer recommendations for a given resource. This is based
      * on the On-Demand instance pricing.</p>
      */
-    inline const EstimatedMonthlySavings& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
+    inline const EstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-    inline void SetEstimatedMonthlySavings(const EstimatedMonthlySavings& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-    inline void SetEstimatedMonthlySavings(EstimatedMonthlySavings&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
-    inline InferredWorkloadSaving& WithEstimatedMonthlySavings(const EstimatedMonthlySavings& value) { SetEstimatedMonthlySavings(value); return *this;}
-    inline InferredWorkloadSaving& WithEstimatedMonthlySavings(EstimatedMonthlySavings&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
+    template<typename EstimatedMonthlySavingsT = EstimatedMonthlySavings>
+    void SetEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::forward<EstimatedMonthlySavingsT>(value); }
+    template<typename EstimatedMonthlySavingsT = EstimatedMonthlySavings>
+    InferredWorkloadSaving& WithEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { SetEstimatedMonthlySavings(std::forward<EstimatedMonthlySavingsT>(value)); return *this;}
     ///@}
   private:
 

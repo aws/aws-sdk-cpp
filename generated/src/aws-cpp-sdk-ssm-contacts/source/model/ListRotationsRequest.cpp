@@ -12,14 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRotationsRequest::ListRotationsRequest() : 
-    m_rotationNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRotationsRequest::SerializePayload() const
 {
   JsonValue payload;

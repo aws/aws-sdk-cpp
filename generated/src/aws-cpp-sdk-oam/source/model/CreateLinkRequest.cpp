@@ -12,15 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLinkRequest::CreateLinkRequest() : 
-    m_labelTemplateHasBeenSet(false),
-    m_linkConfigurationHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_sinkIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLinkRequest::SerializePayload() const
 {
   JsonValue payload;

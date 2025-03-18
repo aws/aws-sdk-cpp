@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCustomLogSourceRequest::DeleteCustomLogSourceRequest() : 
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomLogSourceRequest::SerializePayload() const
 {
   return {};

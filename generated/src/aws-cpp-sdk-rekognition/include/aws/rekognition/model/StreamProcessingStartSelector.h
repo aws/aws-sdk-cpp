@@ -33,7 +33,7 @@ namespace Model
   class StreamProcessingStartSelector
   {
   public:
-    AWS_REKOGNITION_API StreamProcessingStartSelector();
+    AWS_REKOGNITION_API StreamProcessingStartSelector() = default;
     AWS_REKOGNITION_API StreamProcessingStartSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessingStartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Specifies the starting point in the stream to start processing. This can be
      * done with a producer timestamp or a fragment number in a Kinesis stream. </p>
      */
-    inline const KinesisVideoStreamStartSelector& GetKVSStreamStartSelector() const{ return m_kVSStreamStartSelector; }
+    inline const KinesisVideoStreamStartSelector& GetKVSStreamStartSelector() const { return m_kVSStreamStartSelector; }
     inline bool KVSStreamStartSelectorHasBeenSet() const { return m_kVSStreamStartSelectorHasBeenSet; }
-    inline void SetKVSStreamStartSelector(const KinesisVideoStreamStartSelector& value) { m_kVSStreamStartSelectorHasBeenSet = true; m_kVSStreamStartSelector = value; }
-    inline void SetKVSStreamStartSelector(KinesisVideoStreamStartSelector&& value) { m_kVSStreamStartSelectorHasBeenSet = true; m_kVSStreamStartSelector = std::move(value); }
-    inline StreamProcessingStartSelector& WithKVSStreamStartSelector(const KinesisVideoStreamStartSelector& value) { SetKVSStreamStartSelector(value); return *this;}
-    inline StreamProcessingStartSelector& WithKVSStreamStartSelector(KinesisVideoStreamStartSelector&& value) { SetKVSStreamStartSelector(std::move(value)); return *this;}
+    template<typename KVSStreamStartSelectorT = KinesisVideoStreamStartSelector>
+    void SetKVSStreamStartSelector(KVSStreamStartSelectorT&& value) { m_kVSStreamStartSelectorHasBeenSet = true; m_kVSStreamStartSelector = std::forward<KVSStreamStartSelectorT>(value); }
+    template<typename KVSStreamStartSelectorT = KinesisVideoStreamStartSelector>
+    StreamProcessingStartSelector& WithKVSStreamStartSelector(KVSStreamStartSelectorT&& value) { SetKVSStreamStartSelector(std::forward<KVSStreamStartSelectorT>(value)); return *this;}
     ///@}
   private:
 

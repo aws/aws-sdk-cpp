@@ -24,7 +24,7 @@ namespace Model
   class UpdatePipelineRequest : public OSISRequest
   {
   public:
-    AWS_OSIS_API UpdatePipelineRequest();
+    AWS_OSIS_API UpdatePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
     /**
      * <p>The name of the pipeline to update.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline UpdatePipelineRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline UpdatePipelineRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline UpdatePipelineRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    UpdatePipelineRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
      */
-    inline int GetMinUnits() const{ return m_minUnits; }
+    inline int GetMinUnits() const { return m_minUnits; }
     inline bool MinUnitsHasBeenSet() const { return m_minUnitsHasBeenSet; }
     inline void SetMinUnits(int value) { m_minUnitsHasBeenSet = true; m_minUnits = value; }
     inline UpdatePipelineRequest& WithMinUnits(int value) { SetMinUnits(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     /**
      * <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs)</p>
      */
-    inline int GetMaxUnits() const{ return m_maxUnits; }
+    inline int GetMaxUnits() const { return m_maxUnits; }
     inline bool MaxUnitsHasBeenSet() const { return m_maxUnitsHasBeenSet; }
     inline void SetMaxUnits(int value) { m_maxUnitsHasBeenSet = true; m_maxUnits = value; }
     inline UpdatePipelineRequest& WithMaxUnits(int value) { SetMaxUnits(value); return *this;}
@@ -76,38 +74,36 @@ namespace Model
      * configuration as a string, each new line must be escaped with
      * <code>\n</code>.</p>
      */
-    inline const Aws::String& GetPipelineConfigurationBody() const{ return m_pipelineConfigurationBody; }
+    inline const Aws::String& GetPipelineConfigurationBody() const { return m_pipelineConfigurationBody; }
     inline bool PipelineConfigurationBodyHasBeenSet() const { return m_pipelineConfigurationBodyHasBeenSet; }
-    inline void SetPipelineConfigurationBody(const Aws::String& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = value; }
-    inline void SetPipelineConfigurationBody(Aws::String&& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = std::move(value); }
-    inline void SetPipelineConfigurationBody(const char* value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody.assign(value); }
-    inline UpdatePipelineRequest& WithPipelineConfigurationBody(const Aws::String& value) { SetPipelineConfigurationBody(value); return *this;}
-    inline UpdatePipelineRequest& WithPipelineConfigurationBody(Aws::String&& value) { SetPipelineConfigurationBody(std::move(value)); return *this;}
-    inline UpdatePipelineRequest& WithPipelineConfigurationBody(const char* value) { SetPipelineConfigurationBody(value); return *this;}
+    template<typename PipelineConfigurationBodyT = Aws::String>
+    void SetPipelineConfigurationBody(PipelineConfigurationBodyT&& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = std::forward<PipelineConfigurationBodyT>(value); }
+    template<typename PipelineConfigurationBodyT = Aws::String>
+    UpdatePipelineRequest& WithPipelineConfigurationBody(PipelineConfigurationBodyT&& value) { SetPipelineConfigurationBody(std::forward<PipelineConfigurationBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs to configure log publishing.</p>
      */
-    inline const LogPublishingOptions& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+    inline const LogPublishingOptions& GetLogPublishingOptions() const { return m_logPublishingOptions; }
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
-    inline void SetLogPublishingOptions(const LogPublishingOptions& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
-    inline void SetLogPublishingOptions(LogPublishingOptions&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
-    inline UpdatePipelineRequest& WithLogPublishingOptions(const LogPublishingOptions& value) { SetLogPublishingOptions(value); return *this;}
-    inline UpdatePipelineRequest& WithLogPublishingOptions(LogPublishingOptions&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+    template<typename LogPublishingOptionsT = LogPublishingOptions>
+    void SetLogPublishingOptions(LogPublishingOptionsT&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::forward<LogPublishingOptionsT>(value); }
+    template<typename LogPublishingOptionsT = LogPublishingOptions>
+    UpdatePipelineRequest& WithLogPublishingOptions(LogPublishingOptionsT&& value) { SetLogPublishingOptions(std::forward<LogPublishingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
      */
-    inline const BufferOptions& GetBufferOptions() const{ return m_bufferOptions; }
+    inline const BufferOptions& GetBufferOptions() const { return m_bufferOptions; }
     inline bool BufferOptionsHasBeenSet() const { return m_bufferOptionsHasBeenSet; }
-    inline void SetBufferOptions(const BufferOptions& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = value; }
-    inline void SetBufferOptions(BufferOptions&& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = std::move(value); }
-    inline UpdatePipelineRequest& WithBufferOptions(const BufferOptions& value) { SetBufferOptions(value); return *this;}
-    inline UpdatePipelineRequest& WithBufferOptions(BufferOptions&& value) { SetBufferOptions(std::move(value)); return *this;}
+    template<typename BufferOptionsT = BufferOptions>
+    void SetBufferOptions(BufferOptionsT&& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = std::forward<BufferOptionsT>(value); }
+    template<typename BufferOptionsT = BufferOptions>
+    UpdatePipelineRequest& WithBufferOptions(BufferOptionsT&& value) { SetBufferOptions(std::forward<BufferOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,22 +111,22 @@ namespace Model
      * <p>Key-value pairs to configure encryption for data that is written to a
      * persistent buffer.</p>
      */
-    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const { return m_encryptionAtRestOptions; }
     inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
-    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
-    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
-    inline UpdatePipelineRequest& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
-    inline UpdatePipelineRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+    template<typename EncryptionAtRestOptionsT = EncryptionAtRestOptions>
+    void SetEncryptionAtRestOptions(EncryptionAtRestOptionsT&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::forward<EncryptionAtRestOptionsT>(value); }
+    template<typename EncryptionAtRestOptionsT = EncryptionAtRestOptions>
+    UpdatePipelineRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptionsT&& value) { SetEncryptionAtRestOptions(std::forward<EncryptionAtRestOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet = false;
 
-    int m_minUnits;
+    int m_minUnits{0};
     bool m_minUnitsHasBeenSet = false;
 
-    int m_maxUnits;
+    int m_maxUnits{0};
     bool m_maxUnitsHasBeenSet = false;
 
     Aws::String m_pipelineConfigurationBody;

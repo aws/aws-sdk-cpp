@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAlarmModelResult::CreateAlarmModelResult() : 
-    m_status(AlarmModelVersionStatus::NOT_SET)
-{
-}
-
 CreateAlarmModelResult::CreateAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateAlarmModelResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ CreateAlarmModelResult& CreateAlarmModelResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelArn"))
   {
     m_alarmModelArn = jsonValue.GetString("alarmModelArn");
-
+    m_alarmModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelVersion"))
   {
     m_alarmModelVersion = jsonValue.GetString("alarmModelVersion");
-
+    m_alarmModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
+    m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AlarmModelVersionStatusMapper::GetAlarmModelVersionStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -28,7 +28,7 @@ namespace Model
   class AcknowledgeOrderReceiptResult
   {
   public:
-    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult();
+    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult() = default;
     AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the order.</p>
      */
-    inline const Order& GetOrder() const{ return m_order; }
-    inline void SetOrder(const Order& value) { m_order = value; }
-    inline void SetOrder(Order&& value) { m_order = std::move(value); }
-    inline AcknowledgeOrderReceiptResult& WithOrder(const Order& value) { SetOrder(value); return *this;}
-    inline AcknowledgeOrderReceiptResult& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
+    inline const Order& GetOrder() const { return m_order; }
+    template<typename OrderT = Order>
+    void SetOrder(OrderT&& value) { m_orderHasBeenSet = true; m_order = std::forward<OrderT>(value); }
+    template<typename OrderT = Order>
+    AcknowledgeOrderReceiptResult& WithOrder(OrderT&& value) { SetOrder(std::forward<OrderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcknowledgeOrderReceiptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcknowledgeOrderReceiptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcknowledgeOrderReceiptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcknowledgeOrderReceiptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Order m_order;
+    bool m_orderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

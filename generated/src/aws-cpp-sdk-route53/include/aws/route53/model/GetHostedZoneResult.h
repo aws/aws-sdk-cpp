@@ -37,7 +37,7 @@ namespace Model
   class GetHostedZoneResult
   {
   public:
-    AWS_ROUTE53_API GetHostedZoneResult();
+    AWS_ROUTE53_API GetHostedZoneResult() = default;
     AWS_ROUTE53_API GetHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,11 +47,11 @@ namespace Model
      * <p>A complex type that contains general information about the specified hosted
      * zone.</p>
      */
-    inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
-    inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
-    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
-    inline GetHostedZoneResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
-    inline GetHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
+    inline const HostedZone& GetHostedZone() const { return m_hostedZone; }
+    template<typename HostedZoneT = HostedZone>
+    void SetHostedZone(HostedZoneT&& value) { m_hostedZoneHasBeenSet = true; m_hostedZone = std::forward<HostedZoneT>(value); }
+    template<typename HostedZoneT = HostedZone>
+    GetHostedZoneResult& WithHostedZone(HostedZoneT&& value) { SetHostedZone(std::forward<HostedZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,11 +59,11 @@ namespace Model
      * <p>A complex type that lists the Amazon Route 53 name servers for the specified
      * hosted zone.</p>
      */
-    inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
-    inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
-    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = std::move(value); }
-    inline GetHostedZoneResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
-    inline GetHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+    inline const DelegationSet& GetDelegationSet() const { return m_delegationSet; }
+    template<typename DelegationSetT = DelegationSet>
+    void SetDelegationSet(DelegationSetT&& value) { m_delegationSetHasBeenSet = true; m_delegationSet = std::forward<DelegationSetT>(value); }
+    template<typename DelegationSetT = DelegationSet>
+    GetHostedZoneResult& WithDelegationSet(DelegationSetT&& value) { SetDelegationSet(std::forward<DelegationSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,34 +71,36 @@ namespace Model
      * <p>A complex type that contains information about the VPCs that are associated
      * with the specified hosted zone.</p>
      */
-    inline const Aws::Vector<VPC>& GetVPCs() const{ return m_vPCs; }
-    inline void SetVPCs(const Aws::Vector<VPC>& value) { m_vPCs = value; }
-    inline void SetVPCs(Aws::Vector<VPC>&& value) { m_vPCs = std::move(value); }
-    inline GetHostedZoneResult& WithVPCs(const Aws::Vector<VPC>& value) { SetVPCs(value); return *this;}
-    inline GetHostedZoneResult& WithVPCs(Aws::Vector<VPC>&& value) { SetVPCs(std::move(value)); return *this;}
-    inline GetHostedZoneResult& AddVPCs(const VPC& value) { m_vPCs.push_back(value); return *this; }
-    inline GetHostedZoneResult& AddVPCs(VPC&& value) { m_vPCs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VPC>& GetVPCs() const { return m_vPCs; }
+    template<typename VPCsT = Aws::Vector<VPC>>
+    void SetVPCs(VPCsT&& value) { m_vPCsHasBeenSet = true; m_vPCs = std::forward<VPCsT>(value); }
+    template<typename VPCsT = Aws::Vector<VPC>>
+    GetHostedZoneResult& WithVPCs(VPCsT&& value) { SetVPCs(std::forward<VPCsT>(value)); return *this;}
+    template<typename VPCsT = VPC>
+    GetHostedZoneResult& AddVPCs(VPCsT&& value) { m_vPCsHasBeenSet = true; m_vPCs.emplace_back(std::forward<VPCsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHostedZoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHostedZoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHostedZoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHostedZoneResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HostedZone m_hostedZone;
+    bool m_hostedZoneHasBeenSet = false;
 
     DelegationSet m_delegationSet;
+    bool m_delegationSetHasBeenSet = false;
 
     Aws::Vector<VPC> m_vPCs;
+    bool m_vPCsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

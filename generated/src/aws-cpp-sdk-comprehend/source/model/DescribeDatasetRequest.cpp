@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetRequest::DescribeDatasetRequest() : 
-    m_datasetArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

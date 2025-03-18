@@ -27,7 +27,7 @@ namespace Model
   class ReverseReplicationResult
   {
   public:
-    AWS_DRS_API ReverseReplicationResult();
+    AWS_DRS_API ReverseReplicationResult() = default;
     AWS_DRS_API ReverseReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API ReverseReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>ARN of created SourceServer.</p>
      */
-    inline const Aws::String& GetReversedDirectionSourceServerArn() const{ return m_reversedDirectionSourceServerArn; }
-    inline void SetReversedDirectionSourceServerArn(const Aws::String& value) { m_reversedDirectionSourceServerArn = value; }
-    inline void SetReversedDirectionSourceServerArn(Aws::String&& value) { m_reversedDirectionSourceServerArn = std::move(value); }
-    inline void SetReversedDirectionSourceServerArn(const char* value) { m_reversedDirectionSourceServerArn.assign(value); }
-    inline ReverseReplicationResult& WithReversedDirectionSourceServerArn(const Aws::String& value) { SetReversedDirectionSourceServerArn(value); return *this;}
-    inline ReverseReplicationResult& WithReversedDirectionSourceServerArn(Aws::String&& value) { SetReversedDirectionSourceServerArn(std::move(value)); return *this;}
-    inline ReverseReplicationResult& WithReversedDirectionSourceServerArn(const char* value) { SetReversedDirectionSourceServerArn(value); return *this;}
+    inline const Aws::String& GetReversedDirectionSourceServerArn() const { return m_reversedDirectionSourceServerArn; }
+    template<typename ReversedDirectionSourceServerArnT = Aws::String>
+    void SetReversedDirectionSourceServerArn(ReversedDirectionSourceServerArnT&& value) { m_reversedDirectionSourceServerArnHasBeenSet = true; m_reversedDirectionSourceServerArn = std::forward<ReversedDirectionSourceServerArnT>(value); }
+    template<typename ReversedDirectionSourceServerArnT = Aws::String>
+    ReverseReplicationResult& WithReversedDirectionSourceServerArn(ReversedDirectionSourceServerArnT&& value) { SetReversedDirectionSourceServerArn(std::forward<ReversedDirectionSourceServerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ReverseReplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ReverseReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ReverseReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ReverseReplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reversedDirectionSourceServerArn;
+    bool m_reversedDirectionSourceServerArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

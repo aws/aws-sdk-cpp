@@ -34,7 +34,7 @@ namespace Model
   class MemberSummary
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API MemberSummary();
+    AWS_MANAGEDBLOCKCHAIN_API MemberSummary() = default;
     AWS_MANAGEDBLOCKCHAIN_API MemberSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API MemberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The unique identifier of the member.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline MemberSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline MemberSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline MemberSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    MemberSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the member.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MemberSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MemberSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MemberSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MemberSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the member.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline MemberSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline MemberSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline MemberSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    MemberSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,24 +101,22 @@ namespace Model
      * resource to discover that the key is inaccessible. When a resource is in this
      * state, we recommend deleting and recreating the resource.</p> </li> </ul>
      */
-    inline const MemberStatus& GetStatus() const{ return m_status; }
+    inline MemberStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MemberSummary& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
-    inline MemberSummary& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MemberStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MemberSummary& WithStatus(MemberStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the member was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline MemberSummary& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline MemberSummary& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    MemberSummary& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +124,7 @@ namespace Model
      * <p>An indicator of whether the member is owned by your Amazon Web Services
      * account or a different Amazon Web Services account.</p>
      */
-    inline bool GetIsOwned() const{ return m_isOwned; }
+    inline bool GetIsOwned() const { return m_isOwned; }
     inline bool IsOwnedHasBeenSet() const { return m_isOwnedHasBeenSet; }
     inline void SetIsOwned(bool value) { m_isOwnedHasBeenSet = true; m_isOwned = value; }
     inline MemberSummary& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
@@ -146,14 +138,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline MemberSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline MemberSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline MemberSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    MemberSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,13 +156,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    MemberStatus m_status;
+    MemberStatus m_status{MemberStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    bool m_isOwned;
+    bool m_isOwned{false};
     bool m_isOwnedHasBeenSet = false;
 
     Aws::String m_arn;

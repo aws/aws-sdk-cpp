@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-S3ObjectFile::S3ObjectFile() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 S3ObjectFile::S3ObjectFile(JsonView jsonValue)
-  : S3ObjectFile()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ObjectFile& S3ObjectFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

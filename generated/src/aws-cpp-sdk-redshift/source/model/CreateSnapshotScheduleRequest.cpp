@@ -10,18 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateSnapshotScheduleRequest::CreateSnapshotScheduleRequest() : 
-    m_scheduleDefinitionsHasBeenSet(false),
-    m_scheduleIdentifierHasBeenSet(false),
-    m_scheduleDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nextInvocations(0),
-    m_nextInvocationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotScheduleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

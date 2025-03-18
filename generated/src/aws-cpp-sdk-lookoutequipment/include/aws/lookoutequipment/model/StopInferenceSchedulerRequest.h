@@ -21,7 +21,7 @@ namespace Model
   class StopInferenceSchedulerRequest : public LookoutEquipmentRequest
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API StopInferenceSchedulerRequest();
+    AWS_LOOKOUTEQUIPMENT_API StopInferenceSchedulerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the inference scheduler to be stopped. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerName() const{ return m_inferenceSchedulerName; }
+    inline const Aws::String& GetInferenceSchedulerName() const { return m_inferenceSchedulerName; }
     inline bool InferenceSchedulerNameHasBeenSet() const { return m_inferenceSchedulerNameHasBeenSet; }
-    inline void SetInferenceSchedulerName(const Aws::String& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = value; }
-    inline void SetInferenceSchedulerName(Aws::String&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::move(value); }
-    inline void SetInferenceSchedulerName(const char* value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName.assign(value); }
-    inline StopInferenceSchedulerRequest& WithInferenceSchedulerName(const Aws::String& value) { SetInferenceSchedulerName(value); return *this;}
-    inline StopInferenceSchedulerRequest& WithInferenceSchedulerName(Aws::String&& value) { SetInferenceSchedulerName(std::move(value)); return *this;}
-    inline StopInferenceSchedulerRequest& WithInferenceSchedulerName(const char* value) { SetInferenceSchedulerName(value); return *this;}
+    template<typename InferenceSchedulerNameT = Aws::String>
+    void SetInferenceSchedulerName(InferenceSchedulerNameT&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::forward<InferenceSchedulerNameT>(value); }
+    template<typename InferenceSchedulerNameT = Aws::String>
+    StopInferenceSchedulerRequest& WithInferenceSchedulerName(InferenceSchedulerNameT&& value) { SetInferenceSchedulerName(std::forward<InferenceSchedulerNameT>(value)); return *this;}
     ///@}
   private:
 

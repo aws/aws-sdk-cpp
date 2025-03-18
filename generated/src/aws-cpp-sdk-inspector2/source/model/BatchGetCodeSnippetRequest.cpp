@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCodeSnippetRequest::BatchGetCodeSnippetRequest() : 
-    m_findingArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCodeSnippetRequest::SerializePayload() const
 {
   JsonValue payload;

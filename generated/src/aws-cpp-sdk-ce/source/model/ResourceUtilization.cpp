@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ResourceUtilization::ResourceUtilization() : 
-    m_eC2ResourceUtilizationHasBeenSet(false)
-{
-}
-
 ResourceUtilization::ResourceUtilization(JsonView jsonValue)
-  : ResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceUtilization& ResourceUtilization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EC2ResourceUtilization"))
   {
     m_eC2ResourceUtilization = jsonValue.GetObject("EC2ResourceUtilization");
-
     m_eC2ResourceUtilizationHasBeenSet = true;
   }
-
   return *this;
 }
 

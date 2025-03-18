@@ -32,7 +32,7 @@ namespace Model
   class EdgeMetric
   {
   public:
-    AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric();
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric() = default;
     AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The dimension of metrics published.</p>
      */
-    inline const Aws::String& GetDimension() const{ return m_dimension; }
+    inline const Aws::String& GetDimension() const { return m_dimension; }
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
-    inline void SetDimension(const Aws::String& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
-    inline void SetDimension(Aws::String&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
-    inline void SetDimension(const char* value) { m_dimensionHasBeenSet = true; m_dimension.assign(value); }
-    inline EdgeMetric& WithDimension(const Aws::String& value) { SetDimension(value); return *this;}
-    inline EdgeMetric& WithDimension(Aws::String&& value) { SetDimension(std::move(value)); return *this;}
-    inline EdgeMetric& WithDimension(const char* value) { SetDimension(value); return *this;}
+    template<typename DimensionT = Aws::String>
+    void SetDimension(DimensionT&& value) { m_dimensionHasBeenSet = true; m_dimension = std::forward<DimensionT>(value); }
+    template<typename DimensionT = Aws::String>
+    EdgeMetric& WithDimension(DimensionT&& value) { SetDimension(std::forward<DimensionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the name of the metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline EdgeMetric& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline EdgeMetric& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline EdgeMetric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    EdgeMetric& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the value of the metric.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline EdgeMetric& WithValue(double value) { SetValue(value); return *this;}
@@ -80,12 +76,12 @@ namespace Model
     /**
      * <p>Timestamp of when the metric was requested.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline EdgeMetric& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline EdgeMetric& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    EdgeMetric& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -95,10 +91,10 @@ namespace Model
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

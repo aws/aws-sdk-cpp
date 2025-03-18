@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-TemporalStatisticsConfigInput::TemporalStatisticsConfigInput() : 
-    m_groupBy(GroupBy::NOT_SET),
-    m_groupByHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
-{
-}
-
 TemporalStatisticsConfigInput::TemporalStatisticsConfigInput(JsonView jsonValue)
-  : TemporalStatisticsConfigInput()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ TemporalStatisticsConfigInput& TemporalStatisticsConfigInput::operator =(JsonVie
   if(jsonValue.ValueExists("GroupBy"))
   {
     m_groupBy = GroupByMapper::GetGroupByForName(jsonValue.GetString("GroupBy"));
-
     m_groupByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistics"))
   {
     Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("Statistics");
@@ -50,7 +39,6 @@ TemporalStatisticsConfigInput& TemporalStatisticsConfigInput::operator =(JsonVie
     }
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetBands"))
   {
     Aws::Utils::Array<JsonView> targetBandsJsonList = jsonValue.GetArray("TargetBands");
@@ -60,7 +48,6 @@ TemporalStatisticsConfigInput& TemporalStatisticsConfigInput::operator =(JsonVie
     }
     m_targetBandsHasBeenSet = true;
   }
-
   return *this;
 }
 

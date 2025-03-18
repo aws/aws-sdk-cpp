@@ -31,7 +31,7 @@ namespace Model
   class Thing
   {
   public:
-    AWS_IOTTHINGSGRAPH_API Thing();
+    AWS_IOTTHINGSGRAPH_API Thing() = default;
     AWS_IOTTHINGSGRAPH_API Thing(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Thing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ARN of the thing.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-    inline Thing& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline Thing& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline Thing& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    Thing& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline Thing& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline Thing& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline Thing& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    Thing& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
   private:
 

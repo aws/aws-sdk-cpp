@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDetectMitigationActionsTaskResult::DescribeDetectMitigationActionsTaskResult()
-{
-}
-
 DescribeDetectMitigationActionsTaskResult::DescribeDetectMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeDetectMitigationActionsTaskResult& DescribeDetectMitigationActionsTaskRe
   if(jsonValue.ValueExists("taskSummary"))
   {
     m_taskSummary = jsonValue.GetObject("taskSummary");
-
+    m_taskSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

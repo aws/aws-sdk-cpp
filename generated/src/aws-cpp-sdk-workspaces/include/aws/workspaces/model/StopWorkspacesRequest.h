@@ -22,7 +22,7 @@ namespace Model
   class StopWorkspacesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API StopWorkspacesRequest();
+    AWS_WORKSPACES_API StopWorkspacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
      */
-    inline const Aws::Vector<StopRequest>& GetStopWorkspaceRequests() const{ return m_stopWorkspaceRequests; }
+    inline const Aws::Vector<StopRequest>& GetStopWorkspaceRequests() const { return m_stopWorkspaceRequests; }
     inline bool StopWorkspaceRequestsHasBeenSet() const { return m_stopWorkspaceRequestsHasBeenSet; }
-    inline void SetStopWorkspaceRequests(const Aws::Vector<StopRequest>& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = value; }
-    inline void SetStopWorkspaceRequests(Aws::Vector<StopRequest>&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = std::move(value); }
-    inline StopWorkspacesRequest& WithStopWorkspaceRequests(const Aws::Vector<StopRequest>& value) { SetStopWorkspaceRequests(value); return *this;}
-    inline StopWorkspacesRequest& WithStopWorkspaceRequests(Aws::Vector<StopRequest>&& value) { SetStopWorkspaceRequests(std::move(value)); return *this;}
-    inline StopWorkspacesRequest& AddStopWorkspaceRequests(const StopRequest& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests.push_back(value); return *this; }
-    inline StopWorkspacesRequest& AddStopWorkspaceRequests(StopRequest&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests.push_back(std::move(value)); return *this; }
+    template<typename StopWorkspaceRequestsT = Aws::Vector<StopRequest>>
+    void SetStopWorkspaceRequests(StopWorkspaceRequestsT&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = std::forward<StopWorkspaceRequestsT>(value); }
+    template<typename StopWorkspaceRequestsT = Aws::Vector<StopRequest>>
+    StopWorkspacesRequest& WithStopWorkspaceRequests(StopWorkspaceRequestsT&& value) { SetStopWorkspaceRequests(std::forward<StopWorkspaceRequestsT>(value)); return *this;}
+    template<typename StopWorkspaceRequestsT = StopRequest>
+    StopWorkspacesRequest& AddStopWorkspaceRequests(StopWorkspaceRequestsT&& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests.emplace_back(std::forward<StopWorkspaceRequestsT>(value)); return *this; }
     ///@}
   private:
 

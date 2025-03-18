@@ -36,7 +36,7 @@ namespace Model
   class InstanceSummary
   {
   public:
-    AWS_CODEDEPLOY_API InstanceSummary();
+    AWS_CODEDEPLOY_API InstanceSummary() = default;
     AWS_CODEDEPLOY_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline InstanceSummary& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline InstanceSummary& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    InstanceSummary& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline InstanceSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline InstanceSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline InstanceSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    InstanceSummary& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
      * instance.</p> </li> </ul>
      */
-    inline const InstanceStatus& GetStatus() const{ return m_status; }
+    inline InstanceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline InstanceSummary& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
-    inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InstanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline InstanceSummary& WithStatus(InstanceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -95,26 +89,26 @@ namespace Model
      * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline InstanceSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    InstanceSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of lifecycle events for this instance.</p>
      */
-    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const { return m_lifecycleEvents; }
     inline bool LifecycleEventsHasBeenSet() const { return m_lifecycleEventsHasBeenSet; }
-    inline void SetLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
-    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::move(value); }
-    inline InstanceSummary& WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
-    inline InstanceSummary& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(std::move(value)); return *this;}
-    inline InstanceSummary& AddLifecycleEvents(const LifecycleEvent& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
-    inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    void SetLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::forward<LifecycleEventsT>(value); }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    InstanceSummary& WithLifecycleEvents(LifecycleEventsT&& value) { SetLifecycleEvents(std::forward<LifecycleEventsT>(value)); return *this;}
+    template<typename LifecycleEventsT = LifecycleEvent>
+    InstanceSummary& AddLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.emplace_back(std::forward<LifecycleEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,12 +118,10 @@ namespace Model
      * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
      * environment.</p> </li> </ul>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline InstanceSummary& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline InstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline InstanceSummary& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
   private:
 
@@ -139,16 +131,16 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    InstanceStatus m_status;
+    InstanceStatus m_status{InstanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
   };
 

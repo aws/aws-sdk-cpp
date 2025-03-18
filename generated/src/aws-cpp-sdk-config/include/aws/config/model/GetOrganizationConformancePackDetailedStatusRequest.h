@@ -22,7 +22,7 @@ namespace Model
   class GetOrganizationConformancePackDetailedStatusRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusRequest();
+    AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The name of organization conformance pack for which you want status details
      * for member accounts.</p>
      */
-    inline const Aws::String& GetOrganizationConformancePackName() const{ return m_organizationConformancePackName; }
+    inline const Aws::String& GetOrganizationConformancePackName() const { return m_organizationConformancePackName; }
     inline bool OrganizationConformancePackNameHasBeenSet() const { return m_organizationConformancePackNameHasBeenSet; }
-    inline void SetOrganizationConformancePackName(const Aws::String& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = value; }
-    inline void SetOrganizationConformancePackName(Aws::String&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::move(value); }
-    inline void SetOrganizationConformancePackName(const char* value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName.assign(value); }
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithOrganizationConformancePackName(const Aws::String& value) { SetOrganizationConformancePackName(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithOrganizationConformancePackName(Aws::String&& value) { SetOrganizationConformancePackName(std::move(value)); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithOrganizationConformancePackName(const char* value) { SetOrganizationConformancePackName(value); return *this;}
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    void SetOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::forward<OrganizationConformancePackNameT>(value); }
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    GetOrganizationConformancePackDetailedStatusRequest& WithOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { SetOrganizationConformancePackName(std::forward<OrganizationConformancePackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
      */
-    inline const OrganizationResourceDetailedStatusFilters& GetFilters() const{ return m_filters; }
+    inline const OrganizationResourceDetailedStatusFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const OrganizationResourceDetailedStatusFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(OrganizationResourceDetailedStatusFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithFilters(const OrganizationResourceDetailedStatusFilters& value) { SetFilters(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithFilters(OrganizationResourceDetailedStatusFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = OrganizationResourceDetailedStatusFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = OrganizationResourceDetailedStatusFilters>
+    GetOrganizationConformancePackDetailedStatusRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * If you do not specify a number, Config uses the default. The default is 100.
      * </p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetOrganizationConformancePackDetailedStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -80,14 +78,12 @@ namespace Model
      * <p>The nextToken string returned on a previous page that you use to get the next
      * page of results in a paginated response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetOrganizationConformancePackDetailedStatusRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,7 +93,7 @@ namespace Model
     OrganizationResourceDetailedStatusFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

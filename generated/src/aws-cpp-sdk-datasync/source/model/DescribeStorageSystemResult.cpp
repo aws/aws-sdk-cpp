@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStorageSystemResult::DescribeStorageSystemResult() : 
-    m_systemType(DiscoverySystemType::NOT_SET),
-    m_connectivityStatus(StorageSystemConnectivityStatus::NOT_SET)
-{
-}
-
 DescribeStorageSystemResult::DescribeStorageSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeStorageSystemResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ DescribeStorageSystemResult& DescribeStorageSystemResult::operator =(const Aws::
   if(jsonValue.ValueExists("StorageSystemArn"))
   {
     m_storageSystemArn = jsonValue.GetString("StorageSystemArn");
-
+    m_storageSystemArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerConfiguration"))
   {
     m_serverConfiguration = jsonValue.GetObject("ServerConfiguration");
-
+    m_serverConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SystemType"))
   {
     m_systemType = DiscoverySystemTypeMapper::GetDiscoverySystemTypeForName(jsonValue.GetString("SystemType"));
-
+    m_systemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentArns"))
   {
     Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
@@ -57,50 +47,45 @@ DescribeStorageSystemResult& DescribeStorageSystemResult::operator =(const Aws::
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
     }
+    m_agentArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectivityStatus"))
   {
     m_connectivityStatus = StorageSystemConnectivityStatusMapper::GetStorageSystemConnectivityStatusForName(jsonValue.GetString("ConnectivityStatus"));
-
+    m_connectivityStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogGroupArn"))
   {
     m_cloudWatchLogGroupArn = jsonValue.GetString("CloudWatchLogGroupArn");
-
+    m_cloudWatchLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerArn"))
   {
     m_secretsManagerArn = jsonValue.GetString("SecretsManagerArn");
-
+    m_secretsManagerArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

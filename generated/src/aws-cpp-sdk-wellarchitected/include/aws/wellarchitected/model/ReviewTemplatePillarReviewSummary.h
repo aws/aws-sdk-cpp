@@ -33,7 +33,7 @@ namespace Model
   class ReviewTemplatePillarReviewSummary
   {
   public:
-    AWS_WELLARCHITECTED_API ReviewTemplatePillarReviewSummary();
+    AWS_WELLARCHITECTED_API ReviewTemplatePillarReviewSummary() = default;
     AWS_WELLARCHITECTED_API ReviewTemplatePillarReviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ReviewTemplatePillarReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,38 +41,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline ReviewTemplatePillarReviewSummary& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    ReviewTemplatePillarReviewSummary& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarName() const{ return m_pillarName; }
+    inline const Aws::String& GetPillarName() const { return m_pillarName; }
     inline bool PillarNameHasBeenSet() const { return m_pillarNameHasBeenSet; }
-    inline void SetPillarName(const Aws::String& value) { m_pillarNameHasBeenSet = true; m_pillarName = value; }
-    inline void SetPillarName(Aws::String&& value) { m_pillarNameHasBeenSet = true; m_pillarName = std::move(value); }
-    inline void SetPillarName(const char* value) { m_pillarNameHasBeenSet = true; m_pillarName.assign(value); }
-    inline ReviewTemplatePillarReviewSummary& WithPillarName(const Aws::String& value) { SetPillarName(value); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithPillarName(Aws::String&& value) { SetPillarName(std::move(value)); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithPillarName(const char* value) { SetPillarName(value); return *this;}
+    template<typename PillarNameT = Aws::String>
+    void SetPillarName(PillarNameT&& value) { m_pillarNameHasBeenSet = true; m_pillarName = std::forward<PillarNameT>(value); }
+    template<typename PillarNameT = Aws::String>
+    ReviewTemplatePillarReviewSummary& WithPillarName(PillarNameT&& value) { SetPillarName(std::forward<PillarNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline ReviewTemplatePillarReviewSummary& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    ReviewTemplatePillarReviewSummary& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +74,15 @@ namespace Model
      * <p>A count of how many questions are answered and unanswered in the requested
      * pillar of the lens review.</p>
      */
-    inline const Aws::Map<Question, int>& GetQuestionCounts() const{ return m_questionCounts; }
+    inline const Aws::Map<Question, int>& GetQuestionCounts() const { return m_questionCounts; }
     inline bool QuestionCountsHasBeenSet() const { return m_questionCountsHasBeenSet; }
-    inline void SetQuestionCounts(const Aws::Map<Question, int>& value) { m_questionCountsHasBeenSet = true; m_questionCounts = value; }
-    inline void SetQuestionCounts(Aws::Map<Question, int>&& value) { m_questionCountsHasBeenSet = true; m_questionCounts = std::move(value); }
-    inline ReviewTemplatePillarReviewSummary& WithQuestionCounts(const Aws::Map<Question, int>& value) { SetQuestionCounts(value); return *this;}
-    inline ReviewTemplatePillarReviewSummary& WithQuestionCounts(Aws::Map<Question, int>&& value) { SetQuestionCounts(std::move(value)); return *this;}
-    inline ReviewTemplatePillarReviewSummary& AddQuestionCounts(const Question& key, int value) { m_questionCountsHasBeenSet = true; m_questionCounts.emplace(key, value); return *this; }
-    inline ReviewTemplatePillarReviewSummary& AddQuestionCounts(Question&& key, int value) { m_questionCountsHasBeenSet = true; m_questionCounts.emplace(std::move(key), value); return *this; }
+    template<typename QuestionCountsT = Aws::Map<Question, int>>
+    void SetQuestionCounts(QuestionCountsT&& value) { m_questionCountsHasBeenSet = true; m_questionCounts = std::forward<QuestionCountsT>(value); }
+    template<typename QuestionCountsT = Aws::Map<Question, int>>
+    ReviewTemplatePillarReviewSummary& WithQuestionCounts(QuestionCountsT&& value) { SetQuestionCounts(std::forward<QuestionCountsT>(value)); return *this;}
+    inline ReviewTemplatePillarReviewSummary& AddQuestionCounts(Question key, int value) {
+      m_questionCountsHasBeenSet = true; m_questionCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

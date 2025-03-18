@@ -12,18 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebhookRequest::CreateWebhookRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_branchFilterHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
-    m_buildType(WebhookBuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false),
-    m_manualCreation(false),
-    m_manualCreationHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebhookRequest::SerializePayload() const
 {
   JsonValue payload;

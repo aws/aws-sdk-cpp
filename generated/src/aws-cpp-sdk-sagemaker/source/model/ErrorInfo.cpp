@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ErrorInfo::ErrorInfo() : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ErrorInfo::ErrorInfo(JsonView jsonValue)
-  : ErrorInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

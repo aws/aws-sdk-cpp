@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ListMonitoredResourcesFilters::ListMonitoredResourcesFilters() : 
-    m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false),
-    m_resourceTypeFiltersHasBeenSet(false)
-{
-}
-
 ListMonitoredResourcesFilters::ListMonitoredResourcesFilters(JsonView jsonValue)
-  : ListMonitoredResourcesFilters()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ListMonitoredResourcesFilters& ListMonitoredResourcesFilters::operator =(JsonVie
   if(jsonValue.ValueExists("ResourcePermission"))
   {
     m_resourcePermission = ResourcePermissionMapper::GetResourcePermissionForName(jsonValue.GetString("ResourcePermission"));
-
     m_resourcePermissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypeFilters"))
   {
     Aws::Utils::Array<JsonView> resourceTypeFiltersJsonList = jsonValue.GetArray("ResourceTypeFilters");
@@ -49,7 +39,6 @@ ListMonitoredResourcesFilters& ListMonitoredResourcesFilters::operator =(JsonVie
     }
     m_resourceTypeFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,27 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameServerGroup::GameServerGroup() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerGroupArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_instanceDefinitionsHasBeenSet(false),
-    m_balancingStrategy(BalancingStrategy::NOT_SET),
-    m_balancingStrategyHasBeenSet(false),
-    m_gameServerProtectionPolicy(GameServerProtectionPolicy::NOT_SET),
-    m_gameServerProtectionPolicyHasBeenSet(false),
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_status(GameServerGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_suspendedActionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 GameServerGroup::GameServerGroup(JsonView jsonValue)
-  : GameServerGroup()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ GameServerGroup& GameServerGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GameServerGroupName"))
   {
     m_gameServerGroupName = jsonValue.GetString("GameServerGroupName");
-
     m_gameServerGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerGroupArn"))
   {
     m_gameServerGroupArn = jsonValue.GetString("GameServerGroupArn");
-
     m_gameServerGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceDefinitions"))
   {
     Aws::Utils::Array<JsonView> instanceDefinitionsJsonList = jsonValue.GetArray("InstanceDefinitions");
@@ -75,42 +49,31 @@ GameServerGroup& GameServerGroup::operator =(JsonView jsonValue)
     }
     m_instanceDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BalancingStrategy"))
   {
     m_balancingStrategy = BalancingStrategyMapper::GetBalancingStrategyForName(jsonValue.GetString("BalancingStrategy"));
-
     m_balancingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerProtectionPolicy"))
   {
     m_gameServerProtectionPolicy = GameServerProtectionPolicyMapper::GetGameServerProtectionPolicyForName(jsonValue.GetString("GameServerProtectionPolicy"));
-
     m_gameServerProtectionPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingGroupArn"))
   {
     m_autoScalingGroupArn = jsonValue.GetString("AutoScalingGroupArn");
-
     m_autoScalingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = GameServerGroupStatusMapper::GetGameServerGroupStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuspendedActions"))
   {
     Aws::Utils::Array<JsonView> suspendedActionsJsonList = jsonValue.GetArray("SuspendedActions");
@@ -120,21 +83,16 @@ GameServerGroup& GameServerGroup::operator =(JsonView jsonValue)
     }
     m_suspendedActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class X12OutboundEdiHeaders
   {
   public:
-    AWS_B2BI_API X12OutboundEdiHeaders();
+    AWS_B2BI_API X12OutboundEdiHeaders() = default;
     AWS_B2BI_API X12OutboundEdiHeaders(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12OutboundEdiHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
      * <p>In X12 EDI messages, delimiters are used to mark the end of segments or
      * elements, and are defined in the interchange control header.</p>
      */
-    inline const X12InterchangeControlHeaders& GetInterchangeControlHeaders() const{ return m_interchangeControlHeaders; }
+    inline const X12InterchangeControlHeaders& GetInterchangeControlHeaders() const { return m_interchangeControlHeaders; }
     inline bool InterchangeControlHeadersHasBeenSet() const { return m_interchangeControlHeadersHasBeenSet; }
-    inline void SetInterchangeControlHeaders(const X12InterchangeControlHeaders& value) { m_interchangeControlHeadersHasBeenSet = true; m_interchangeControlHeaders = value; }
-    inline void SetInterchangeControlHeaders(X12InterchangeControlHeaders&& value) { m_interchangeControlHeadersHasBeenSet = true; m_interchangeControlHeaders = std::move(value); }
-    inline X12OutboundEdiHeaders& WithInterchangeControlHeaders(const X12InterchangeControlHeaders& value) { SetInterchangeControlHeaders(value); return *this;}
-    inline X12OutboundEdiHeaders& WithInterchangeControlHeaders(X12InterchangeControlHeaders&& value) { SetInterchangeControlHeaders(std::move(value)); return *this;}
+    template<typename InterchangeControlHeadersT = X12InterchangeControlHeaders>
+    void SetInterchangeControlHeaders(InterchangeControlHeadersT&& value) { m_interchangeControlHeadersHasBeenSet = true; m_interchangeControlHeaders = std::forward<InterchangeControlHeadersT>(value); }
+    template<typename InterchangeControlHeadersT = X12InterchangeControlHeaders>
+    X12OutboundEdiHeaders& WithInterchangeControlHeaders(InterchangeControlHeadersT&& value) { SetInterchangeControlHeaders(std::forward<InterchangeControlHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The functional group headers for the X12 object.</p>
      */
-    inline const X12FunctionalGroupHeaders& GetFunctionalGroupHeaders() const{ return m_functionalGroupHeaders; }
+    inline const X12FunctionalGroupHeaders& GetFunctionalGroupHeaders() const { return m_functionalGroupHeaders; }
     inline bool FunctionalGroupHeadersHasBeenSet() const { return m_functionalGroupHeadersHasBeenSet; }
-    inline void SetFunctionalGroupHeaders(const X12FunctionalGroupHeaders& value) { m_functionalGroupHeadersHasBeenSet = true; m_functionalGroupHeaders = value; }
-    inline void SetFunctionalGroupHeaders(X12FunctionalGroupHeaders&& value) { m_functionalGroupHeadersHasBeenSet = true; m_functionalGroupHeaders = std::move(value); }
-    inline X12OutboundEdiHeaders& WithFunctionalGroupHeaders(const X12FunctionalGroupHeaders& value) { SetFunctionalGroupHeaders(value); return *this;}
-    inline X12OutboundEdiHeaders& WithFunctionalGroupHeaders(X12FunctionalGroupHeaders&& value) { SetFunctionalGroupHeaders(std::move(value)); return *this;}
+    template<typename FunctionalGroupHeadersT = X12FunctionalGroupHeaders>
+    void SetFunctionalGroupHeaders(FunctionalGroupHeadersT&& value) { m_functionalGroupHeadersHasBeenSet = true; m_functionalGroupHeaders = std::forward<FunctionalGroupHeadersT>(value); }
+    template<typename FunctionalGroupHeadersT = X12FunctionalGroupHeaders>
+    X12OutboundEdiHeaders& WithFunctionalGroupHeaders(FunctionalGroupHeadersT&& value) { SetFunctionalGroupHeaders(std::forward<FunctionalGroupHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <p>The delimiters, for example semicolon (<code>;</code>), that separates
      * sections of the headers for the X12 object.</p>
      */
-    inline const X12Delimiters& GetDelimiters() const{ return m_delimiters; }
+    inline const X12Delimiters& GetDelimiters() const { return m_delimiters; }
     inline bool DelimitersHasBeenSet() const { return m_delimitersHasBeenSet; }
-    inline void SetDelimiters(const X12Delimiters& value) { m_delimitersHasBeenSet = true; m_delimiters = value; }
-    inline void SetDelimiters(X12Delimiters&& value) { m_delimitersHasBeenSet = true; m_delimiters = std::move(value); }
-    inline X12OutboundEdiHeaders& WithDelimiters(const X12Delimiters& value) { SetDelimiters(value); return *this;}
-    inline X12OutboundEdiHeaders& WithDelimiters(X12Delimiters&& value) { SetDelimiters(std::move(value)); return *this;}
+    template<typename DelimitersT = X12Delimiters>
+    void SetDelimiters(DelimitersT&& value) { m_delimitersHasBeenSet = true; m_delimiters = std::forward<DelimitersT>(value); }
+    template<typename DelimitersT = X12Delimiters>
+    X12OutboundEdiHeaders& WithDelimiters(DelimitersT&& value) { SetDelimiters(std::forward<DelimitersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +83,7 @@ namespace Model
      * <p>Specifies whether or not to validate the EDI for this X12 object:
      * <code>TRUE</code> or <code>FALSE</code>.</p>
      */
-    inline bool GetValidateEdi() const{ return m_validateEdi; }
+    inline bool GetValidateEdi() const { return m_validateEdi; }
     inline bool ValidateEdiHasBeenSet() const { return m_validateEdiHasBeenSet; }
     inline void SetValidateEdi(bool value) { m_validateEdiHasBeenSet = true; m_validateEdi = value; }
     inline X12OutboundEdiHeaders& WithValidateEdi(bool value) { SetValidateEdi(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
     X12Delimiters m_delimiters;
     bool m_delimitersHasBeenSet = false;
 
-    bool m_validateEdi;
+    bool m_validateEdi{false};
     bool m_validateEdiHasBeenSet = false;
   };
 

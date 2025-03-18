@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-S3Object::S3Object() : 
-    m_bucketHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 S3Object::S3Object(JsonView jsonValue)
-  : S3Object()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Object& S3Object::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

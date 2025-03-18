@@ -37,7 +37,7 @@ namespace Model
   class InstanceDefinition
   {
   public:
-    AWS_GAMELIFT_API InstanceDefinition();
+    AWS_GAMELIFT_API InstanceDefinition() = default;
     AWS_GAMELIFT_API InstanceDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API InstanceDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>An Amazon EC2 instance type designation.</p>
      */
-    inline const GameServerGroupInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline GameServerGroupInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const GameServerGroupInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(GameServerGroupInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline InstanceDefinition& WithInstanceType(const GameServerGroupInstanceType& value) { SetInstanceType(value); return *this;}
-    inline InstanceDefinition& WithInstanceType(GameServerGroupInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(GameServerGroupInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline InstanceDefinition& WithInstanceType(GameServerGroupInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +64,16 @@ namespace Model
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
      */
-    inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
+    inline const Aws::String& GetWeightedCapacity() const { return m_weightedCapacity; }
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
-    inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
-    inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
-    inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
-    inline InstanceDefinition& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
-    inline InstanceDefinition& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
-    inline InstanceDefinition& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
+    template<typename WeightedCapacityT = Aws::String>
+    void SetWeightedCapacity(WeightedCapacityT&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::forward<WeightedCapacityT>(value); }
+    template<typename WeightedCapacityT = Aws::String>
+    InstanceDefinition& WithWeightedCapacity(WeightedCapacityT&& value) { SetWeightedCapacity(std::forward<WeightedCapacityT>(value)); return *this;}
     ///@}
   private:
 
-    GameServerGroupInstanceType m_instanceType;
+    GameServerGroupInstanceType m_instanceType{GameServerGroupInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_weightedCapacity;

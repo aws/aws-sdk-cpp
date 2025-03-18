@@ -35,7 +35,7 @@ namespace Model
   class CheckSummary
   {
   public:
-    AWS_WELLARCHITECTED_API CheckSummary();
+    AWS_WELLARCHITECTED_API CheckSummary() = default;
     AWS_WELLARCHITECTED_API CheckSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API CheckSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,140 +45,123 @@ namespace Model
     /**
      * <p>Trusted Advisor check ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CheckSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CheckSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CheckSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CheckSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Trusted Advisor check name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CheckSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CheckSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CheckSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CheckSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provider of the check related to the best practice.</p>
      */
-    inline const CheckProvider& GetProvider() const{ return m_provider; }
+    inline CheckProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const CheckProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(CheckProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline CheckSummary& WithProvider(const CheckProvider& value) { SetProvider(value); return *this;}
-    inline CheckSummary& WithProvider(CheckProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(CheckProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline CheckSummary& WithProvider(CheckProvider value) { SetProvider(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Trusted Advisor check description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CheckSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CheckSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CheckSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CheckSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline CheckSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline CheckSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    CheckSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Well-Architected Lens ARN associated to the check.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-    inline CheckSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline CheckSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline CheckSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    CheckSummary& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline CheckSummary& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline CheckSummary& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline CheckSummary& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    CheckSummary& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline CheckSummary& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline CheckSummary& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline CheckSummary& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    CheckSummary& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline CheckSummary& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline CheckSummary& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline CheckSummary& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    CheckSummary& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status associated to the check.</p>
      */
-    inline const CheckStatus& GetStatus() const{ return m_status; }
+    inline CheckStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CheckStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CheckStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CheckSummary& WithStatus(const CheckStatus& value) { SetStatus(value); return *this;}
-    inline CheckSummary& WithStatus(CheckStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CheckStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CheckSummary& WithStatus(CheckStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Account summary associated to the check.</p>
      */
-    inline const Aws::Map<CheckStatus, int>& GetAccountSummary() const{ return m_accountSummary; }
+    inline const Aws::Map<CheckStatus, int>& GetAccountSummary() const { return m_accountSummary; }
     inline bool AccountSummaryHasBeenSet() const { return m_accountSummaryHasBeenSet; }
-    inline void SetAccountSummary(const Aws::Map<CheckStatus, int>& value) { m_accountSummaryHasBeenSet = true; m_accountSummary = value; }
-    inline void SetAccountSummary(Aws::Map<CheckStatus, int>&& value) { m_accountSummaryHasBeenSet = true; m_accountSummary = std::move(value); }
-    inline CheckSummary& WithAccountSummary(const Aws::Map<CheckStatus, int>& value) { SetAccountSummary(value); return *this;}
-    inline CheckSummary& WithAccountSummary(Aws::Map<CheckStatus, int>&& value) { SetAccountSummary(std::move(value)); return *this;}
-    inline CheckSummary& AddAccountSummary(const CheckStatus& key, int value) { m_accountSummaryHasBeenSet = true; m_accountSummary.emplace(key, value); return *this; }
-    inline CheckSummary& AddAccountSummary(CheckStatus&& key, int value) { m_accountSummaryHasBeenSet = true; m_accountSummary.emplace(std::move(key), value); return *this; }
+    template<typename AccountSummaryT = Aws::Map<CheckStatus, int>>
+    void SetAccountSummary(AccountSummaryT&& value) { m_accountSummaryHasBeenSet = true; m_accountSummary = std::forward<AccountSummaryT>(value); }
+    template<typename AccountSummaryT = Aws::Map<CheckStatus, int>>
+    CheckSummary& WithAccountSummary(AccountSummaryT&& value) { SetAccountSummary(std::forward<AccountSummaryT>(value)); return *this;}
+    inline CheckSummary& AddAccountSummary(CheckStatus key, int value) {
+      m_accountSummaryHasBeenSet = true; m_accountSummary.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -188,13 +171,13 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    CheckProvider m_provider;
+    CheckProvider m_provider{CheckProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_lensArn;
@@ -209,7 +192,7 @@ namespace Model
     Aws::String m_choiceId;
     bool m_choiceIdHasBeenSet = false;
 
-    CheckStatus m_status;
+    CheckStatus m_status{CheckStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<CheckStatus, int> m_accountSummary;

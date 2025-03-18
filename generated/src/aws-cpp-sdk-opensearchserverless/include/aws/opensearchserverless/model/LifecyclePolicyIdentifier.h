@@ -33,7 +33,7 @@ namespace Model
   class LifecyclePolicyIdentifier
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyIdentifier();
+    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyIdentifier() = default;
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The type of lifecycle policy.</p>
      */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline LifecyclePolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LifecyclePolicyIdentifier& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline LifecyclePolicyIdentifier& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LifecyclePolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline LifecyclePolicyIdentifier& WithType(LifecyclePolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the lifecycle policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LifecyclePolicyIdentifier& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LifecyclePolicyIdentifier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LifecyclePolicyIdentifier& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LifecyclePolicyIdentifier& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    LifecyclePolicyType m_type;
+    LifecyclePolicyType m_type{LifecyclePolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;

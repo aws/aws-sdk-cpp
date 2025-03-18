@@ -35,7 +35,7 @@ namespace Model
   class DescribeReportDefinitionsResult
   {
   public:
-    AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult();
+    AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult() = default;
     AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,43 +44,42 @@ namespace Model
     /**
      * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
-    inline const Aws::Vector<ReportDefinition>& GetReportDefinitions() const{ return m_reportDefinitions; }
-    inline void SetReportDefinitions(const Aws::Vector<ReportDefinition>& value) { m_reportDefinitions = value; }
-    inline void SetReportDefinitions(Aws::Vector<ReportDefinition>&& value) { m_reportDefinitions = std::move(value); }
-    inline DescribeReportDefinitionsResult& WithReportDefinitions(const Aws::Vector<ReportDefinition>& value) { SetReportDefinitions(value); return *this;}
-    inline DescribeReportDefinitionsResult& WithReportDefinitions(Aws::Vector<ReportDefinition>&& value) { SetReportDefinitions(std::move(value)); return *this;}
-    inline DescribeReportDefinitionsResult& AddReportDefinitions(const ReportDefinition& value) { m_reportDefinitions.push_back(value); return *this; }
-    inline DescribeReportDefinitionsResult& AddReportDefinitions(ReportDefinition&& value) { m_reportDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReportDefinition>& GetReportDefinitions() const { return m_reportDefinitions; }
+    template<typename ReportDefinitionsT = Aws::Vector<ReportDefinition>>
+    void SetReportDefinitions(ReportDefinitionsT&& value) { m_reportDefinitionsHasBeenSet = true; m_reportDefinitions = std::forward<ReportDefinitionsT>(value); }
+    template<typename ReportDefinitionsT = Aws::Vector<ReportDefinition>>
+    DescribeReportDefinitionsResult& WithReportDefinitions(ReportDefinitionsT&& value) { SetReportDefinitions(std::forward<ReportDefinitionsT>(value)); return *this;}
+    template<typename ReportDefinitionsT = ReportDefinition>
+    DescribeReportDefinitionsResult& AddReportDefinitions(ReportDefinitionsT&& value) { m_reportDefinitionsHasBeenSet = true; m_reportDefinitions.emplace_back(std::forward<ReportDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReportDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReportDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReportDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReportDefinitionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReportDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReportDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReportDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReportDefinitionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReportDefinition> m_reportDefinitions;
+    bool m_reportDefinitionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

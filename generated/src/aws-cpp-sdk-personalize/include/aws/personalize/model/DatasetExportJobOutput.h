@@ -32,7 +32,7 @@ namespace Model
   class DatasetExportJobOutput
   {
   public:
-    AWS_PERSONALIZE_API DatasetExportJobOutput();
+    AWS_PERSONALIZE_API DatasetExportJobOutput() = default;
     AWS_PERSONALIZE_API DatasetExportJobOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API DatasetExportJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const S3DataConfig& GetS3DataDestination() const{ return m_s3DataDestination; }
+    inline const S3DataConfig& GetS3DataDestination() const { return m_s3DataDestination; }
     inline bool S3DataDestinationHasBeenSet() const { return m_s3DataDestinationHasBeenSet; }
-    inline void SetS3DataDestination(const S3DataConfig& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = value; }
-    inline void SetS3DataDestination(S3DataConfig&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::move(value); }
-    inline DatasetExportJobOutput& WithS3DataDestination(const S3DataConfig& value) { SetS3DataDestination(value); return *this;}
-    inline DatasetExportJobOutput& WithS3DataDestination(S3DataConfig&& value) { SetS3DataDestination(std::move(value)); return *this;}
+    template<typename S3DataDestinationT = S3DataConfig>
+    void SetS3DataDestination(S3DataDestinationT&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::forward<S3DataDestinationT>(value); }
+    template<typename S3DataDestinationT = S3DataConfig>
+    DatasetExportJobOutput& WithS3DataDestination(S3DataDestinationT&& value) { SetS3DataDestination(std::forward<S3DataDestinationT>(value)); return *this;}
     ///@}
   private:
 

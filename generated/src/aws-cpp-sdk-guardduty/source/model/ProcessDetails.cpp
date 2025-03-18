@@ -18,29 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ProcessDetails::ProcessDetails() : 
-    m_nameHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_executableSha256HasBeenSet(false),
-    m_namespacePid(0),
-    m_namespacePidHasBeenSet(false),
-    m_pwdHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_uuidHasBeenSet(false),
-    m_parentUuidHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_userId(0),
-    m_userIdHasBeenSet(false),
-    m_euid(0),
-    m_euidHasBeenSet(false),
-    m_lineageHasBeenSet(false)
-{
-}
-
 ProcessDetails::ProcessDetails(JsonView jsonValue)
-  : ProcessDetails()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ ProcessDetails& ProcessDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executablePath"))
   {
     m_executablePath = jsonValue.GetString("executablePath");
-
     m_executablePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executableSha256"))
   {
     m_executableSha256 = jsonValue.GetString("executableSha256");
-
     m_executableSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespacePid"))
   {
     m_namespacePid = jsonValue.GetInteger("namespacePid");
-
     m_namespacePidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pwd"))
   {
     m_pwd = jsonValue.GetString("pwd");
-
     m_pwdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uuid"))
   {
     m_uuid = jsonValue.GetString("uuid");
-
     m_uuidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentUuid"))
   {
     m_parentUuid = jsonValue.GetString("parentUuid");
-
     m_parentUuidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetInteger("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("euid"))
   {
     m_euid = jsonValue.GetInteger("euid");
-
     m_euidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineage"))
   {
     Aws::Utils::Array<JsonView> lineageJsonList = jsonValue.GetArray("lineage");
@@ -140,7 +94,6 @@ ProcessDetails& ProcessDetails::operator =(JsonView jsonValue)
     }
     m_lineageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventLabelRequest::UpdateEventLabelRequest() : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_assignedLabelHasBeenSet(false),
-    m_labelTimestampHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventLabelRequest::SerializePayload() const
 {
   JsonValue payload;

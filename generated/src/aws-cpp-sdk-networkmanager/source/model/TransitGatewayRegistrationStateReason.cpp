@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-TransitGatewayRegistrationStateReason::TransitGatewayRegistrationStateReason() : 
-    m_code(TransitGatewayRegistrationState::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TransitGatewayRegistrationStateReason::TransitGatewayRegistrationStateReason(JsonView jsonValue)
-  : TransitGatewayRegistrationStateReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TransitGatewayRegistrationStateReason& TransitGatewayRegistrationStateReason::op
   if(jsonValue.ValueExists("Code"))
   {
     m_code = TransitGatewayRegistrationStateMapper::GetTransitGatewayRegistrationStateForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

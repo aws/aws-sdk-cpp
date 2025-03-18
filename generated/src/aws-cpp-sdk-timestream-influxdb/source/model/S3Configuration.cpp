@@ -18,15 +18,7 @@ namespace TimestreamInfluxDB
 namespace Model
 {
 
-S3Configuration::S3Configuration() : 
-    m_bucketNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 S3Configuration::S3Configuration(JsonView jsonValue)
-  : S3Configuration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3Configuration& S3Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

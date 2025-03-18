@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetGroup::TargetGroup() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 TargetGroup::TargetGroup(const XmlNode& xmlNode)
-  : TargetGroup()
 {
   *this = xmlNode;
 }

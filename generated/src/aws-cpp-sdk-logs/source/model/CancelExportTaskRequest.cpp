@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelExportTaskRequest::CancelExportTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelExportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

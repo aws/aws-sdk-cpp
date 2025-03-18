@@ -36,7 +36,7 @@ namespace Model
   class FleetLaunchTemplateOverridesRequest
   {
   public:
-    AWS_EC2_API FleetLaunchTemplateOverridesRequest();
+    AWS_EC2_API FleetLaunchTemplateOverridesRequest() = default;
     AWS_EC2_API FleetLaunchTemplateOverridesRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FleetLaunchTemplateOverridesRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,10 @@ namespace Model
      * <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p> 
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline FleetLaunchTemplateOverridesRequest& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * $0.001. Specifying a value below USD $0.001 will result in an
      * <code>InvalidParameterValue</code> error message.</p> 
      */
-    inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
+    inline const Aws::String& GetMaxPrice() const { return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
-    inline void SetMaxPrice(const Aws::String& value) { m_maxPriceHasBeenSet = true; m_maxPrice = value; }
-    inline void SetMaxPrice(Aws::String&& value) { m_maxPriceHasBeenSet = true; m_maxPrice = std::move(value); }
-    inline void SetMaxPrice(const char* value) { m_maxPriceHasBeenSet = true; m_maxPrice.assign(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithMaxPrice(const Aws::String& value) { SetMaxPrice(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithMaxPrice(Aws::String&& value) { SetMaxPrice(std::move(value)); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithMaxPrice(const char* value) { SetMaxPrice(value); return *this;}
+    template<typename MaxPriceT = Aws::String>
+    void SetMaxPrice(MaxPriceT&& value) { m_maxPriceHasBeenSet = true; m_maxPrice = std::forward<MaxPriceT>(value); }
+    template<typename MaxPriceT = Aws::String>
+    FleetLaunchTemplateOverridesRequest& WithMaxPrice(MaxPriceT&& value) { SetMaxPrice(std::forward<MaxPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,28 +83,24 @@ namespace Model
      * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
      * have only one subnet ID.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    FleetLaunchTemplateOverridesRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone in which to launch the instances.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    FleetLaunchTemplateOverridesRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +117,7 @@ namespace Model
      * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the
      * price used is per <i>instance</i> hour.</p> 
      */
-    inline double GetWeightedCapacity() const{ return m_weightedCapacity; }
+    inline double GetWeightedCapacity() const { return m_weightedCapacity; }
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
     inline void SetWeightedCapacity(double value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
     inline FleetLaunchTemplateOverridesRequest& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
@@ -146,7 +138,7 @@ namespace Model
      * priority. You can set the same priority for different launch template
      * overrides.</p>
      */
-    inline double GetPriority() const{ return m_priority; }
+    inline double GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline FleetLaunchTemplateOverridesRequest& WithPriority(double value) { SetPriority(value); return *this;}
@@ -156,12 +148,12 @@ namespace Model
     /**
      * <p>The location where the instance launched, if applicable.</p>
      */
-    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline const Placement& GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    template<typename PlacementT = Placement>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = Placement>
+    FleetLaunchTemplateOverridesRequest& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,14 +171,14 @@ namespace Model
      * <code>DeviceName</code> that doesn't exist in the launch template.</p> </li>
      * <li> <p>Specify all desired parameters here.</p> </li> </ul>
      */
-    inline const Aws::Vector<FleetBlockDeviceMappingRequest>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<FleetBlockDeviceMappingRequest>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<FleetBlockDeviceMappingRequest>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<FleetBlockDeviceMappingRequest>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithBlockDeviceMappings(const Aws::Vector<FleetBlockDeviceMappingRequest>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithBlockDeviceMappings(Aws::Vector<FleetBlockDeviceMappingRequest>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(const FleetBlockDeviceMappingRequest& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(FleetBlockDeviceMappingRequest&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<FleetBlockDeviceMappingRequest>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<FleetBlockDeviceMappingRequest>>
+    FleetLaunchTemplateOverridesRequest& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = FleetBlockDeviceMappingRequest>
+    FleetLaunchTemplateOverridesRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -196,12 +188,12 @@ namespace Model
      * you specify <code>InstanceRequirements</code>, you can't specify
      * <code>InstanceType</code>.</p> 
      */
-    inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
+    inline const InstanceRequirementsRequest& GetInstanceRequirements() const { return m_instanceRequirements; }
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
-    inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
-    inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+    template<typename InstanceRequirementsT = InstanceRequirementsRequest>
+    void SetInstanceRequirements(InstanceRequirementsT&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::forward<InstanceRequirementsT>(value); }
+    template<typename InstanceRequirementsT = InstanceRequirementsRequest>
+    FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(InstanceRequirementsT&& value) { SetInstanceRequirements(std::forward<InstanceRequirementsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,18 +219,16 @@ namespace Model
      * <code>request</code>, you must specify the AMI ID in the launch template.</p>
      * 
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline FleetLaunchTemplateOverridesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline FleetLaunchTemplateOverridesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    FleetLaunchTemplateOverridesRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_maxPrice;
@@ -250,10 +240,10 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    double m_weightedCapacity;
+    double m_weightedCapacity{0.0};
     bool m_weightedCapacityHasBeenSet = false;
 
-    double m_priority;
+    double m_priority{0.0};
     bool m_priorityHasBeenSet = false;
 
     Placement m_placement;

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamAccessKeySessionContext::AwsIamAccessKeySessionContext() : 
-    m_attributesHasBeenSet(false),
-    m_sessionIssuerHasBeenSet(false)
-{
-}
-
 AwsIamAccessKeySessionContext::AwsIamAccessKeySessionContext(JsonView jsonValue)
-  : AwsIamAccessKeySessionContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsIamAccessKeySessionContext& AwsIamAccessKeySessionContext::operator =(JsonVie
   if(jsonValue.ValueExists("Attributes"))
   {
     m_attributes = jsonValue.GetObject("Attributes");
-
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionIssuer"))
   {
     m_sessionIssuer = jsonValue.GetObject("SessionIssuer");
-
     m_sessionIssuerHasBeenSet = true;
   }
-
   return *this;
 }
 

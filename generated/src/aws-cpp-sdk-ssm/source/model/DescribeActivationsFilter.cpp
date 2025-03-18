@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DescribeActivationsFilter::DescribeActivationsFilter() : 
-    m_filterKey(DescribeActivationsFilterKeys::NOT_SET),
-    m_filterKeyHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
-{
-}
-
 DescribeActivationsFilter::DescribeActivationsFilter(JsonView jsonValue)
-  : DescribeActivationsFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DescribeActivationsFilter& DescribeActivationsFilter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FilterKey"))
   {
     m_filterKey = DescribeActivationsFilterKeysMapper::GetDescribeActivationsFilterKeysForName(jsonValue.GetString("FilterKey"));
-
     m_filterKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterValues"))
   {
     Aws::Utils::Array<JsonView> filterValuesJsonList = jsonValue.GetArray("FilterValues");
@@ -49,7 +39,6 @@ DescribeActivationsFilter& DescribeActivationsFilter::operator =(JsonView jsonVa
     }
     m_filterValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-SubjectStructure::SubjectStructure() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_predicatesHasBeenSet(false)
-{
-}
-
 SubjectStructure::SubjectStructure(JsonView jsonValue)
-  : SubjectStructure()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SubjectStructure& SubjectStructure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predicates"))
   {
     Aws::Utils::Array<JsonView> predicatesJsonList = jsonValue.GetArray("predicates");
@@ -49,7 +39,6 @@ SubjectStructure& SubjectStructure::operator =(JsonView jsonValue)
     }
     m_predicatesHasBeenSet = true;
   }
-
   return *this;
 }
 

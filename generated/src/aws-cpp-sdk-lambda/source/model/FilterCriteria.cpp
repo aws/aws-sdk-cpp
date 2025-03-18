@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-FilterCriteria::FilterCriteria() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 FilterCriteria::FilterCriteria(JsonView jsonValue)
-  : FilterCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteProfileRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API DeleteProfileRequest();
+    AWS_CUSTOMERPROFILES_API DeleteProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of a customer profile.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline DeleteProfileRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline DeleteProfileRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline DeleteProfileRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    DeleteProfileRequest& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteProfileRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteProfileRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteProfileRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteProfileRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
   private:
 

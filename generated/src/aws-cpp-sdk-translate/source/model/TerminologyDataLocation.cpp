@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-TerminologyDataLocation::TerminologyDataLocation() : 
-    m_repositoryTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 TerminologyDataLocation::TerminologyDataLocation(JsonView jsonValue)
-  : TerminologyDataLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TerminologyDataLocation& TerminologyDataLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryType"))
   {
     m_repositoryType = jsonValue.GetString("RepositoryType");
-
     m_repositoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

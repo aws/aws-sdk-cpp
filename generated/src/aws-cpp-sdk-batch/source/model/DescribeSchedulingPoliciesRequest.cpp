@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSchedulingPoliciesRequest::DescribeSchedulingPoliciesRequest() : 
-    m_arnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSchedulingPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -8,8 +8,8 @@
 #include <aws/iotfleetwise/model/PrimitiveMessageDefinition.h>
 #include <aws/iotfleetwise/model/StructuredMessageFieldNameAndDataTypePair.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -40,7 +40,7 @@ namespace Model
   class StructuredMessage
   {
   public:
-    AWS_IOTFLEETWISE_API StructuredMessage();
+    AWS_IOTFLEETWISE_API StructuredMessage() = default;
     AWS_IOTFLEETWISE_API StructuredMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API StructuredMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,38 +50,43 @@ namespace Model
     /**
      * <p>Represents a primitive type node of the complex data structure.</p>
      */
-    inline const PrimitiveMessageDefinition& GetPrimitiveMessageDefinition() const{ return m_primitiveMessageDefinition; }
+    inline const PrimitiveMessageDefinition& GetPrimitiveMessageDefinition() const { return m_primitiveMessageDefinition; }
     inline bool PrimitiveMessageDefinitionHasBeenSet() const { return m_primitiveMessageDefinitionHasBeenSet; }
-    inline void SetPrimitiveMessageDefinition(const PrimitiveMessageDefinition& value) { m_primitiveMessageDefinitionHasBeenSet = true; m_primitiveMessageDefinition = value; }
-    inline void SetPrimitiveMessageDefinition(PrimitiveMessageDefinition&& value) { m_primitiveMessageDefinitionHasBeenSet = true; m_primitiveMessageDefinition = std::move(value); }
-    inline StructuredMessage& WithPrimitiveMessageDefinition(const PrimitiveMessageDefinition& value) { SetPrimitiveMessageDefinition(value); return *this;}
-    inline StructuredMessage& WithPrimitiveMessageDefinition(PrimitiveMessageDefinition&& value) { SetPrimitiveMessageDefinition(std::move(value)); return *this;}
+    template<typename PrimitiveMessageDefinitionT = PrimitiveMessageDefinition>
+    void SetPrimitiveMessageDefinition(PrimitiveMessageDefinitionT&& value) { m_primitiveMessageDefinitionHasBeenSet = true; m_primitiveMessageDefinition = std::forward<PrimitiveMessageDefinitionT>(value); }
+    template<typename PrimitiveMessageDefinitionT = PrimitiveMessageDefinition>
+    StructuredMessage& WithPrimitiveMessageDefinition(PrimitiveMessageDefinitionT&& value) { SetPrimitiveMessageDefinition(std::forward<PrimitiveMessageDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents a list type node of the complex data structure.</p>
      */
-    AWS_IOTFLEETWISE_API const StructuredMessageListDefinition& GetStructuredMessageListDefinition() const;
-    AWS_IOTFLEETWISE_API bool StructuredMessageListDefinitionHasBeenSet() const;
-    AWS_IOTFLEETWISE_API void SetStructuredMessageListDefinition(const StructuredMessageListDefinition& value);
-    AWS_IOTFLEETWISE_API void SetStructuredMessageListDefinition(StructuredMessageListDefinition&& value);
-    AWS_IOTFLEETWISE_API StructuredMessage& WithStructuredMessageListDefinition(const StructuredMessageListDefinition& value);
-    AWS_IOTFLEETWISE_API StructuredMessage& WithStructuredMessageListDefinition(StructuredMessageListDefinition&& value);
+    inline const StructuredMessageListDefinition& GetStructuredMessageListDefinition() const{
+      return *m_structuredMessageListDefinition;
+    }
+    inline bool StructuredMessageListDefinitionHasBeenSet() const { return m_structuredMessageListDefinitionHasBeenSet; }
+    template<typename StructuredMessageListDefinitionT = StructuredMessageListDefinition>
+    void SetStructuredMessageListDefinition(StructuredMessageListDefinitionT&& value) {
+      m_structuredMessageListDefinitionHasBeenSet = true; 
+      m_structuredMessageListDefinition = Aws::MakeShared<StructuredMessageListDefinition>("StructuredMessage", std::forward<StructuredMessageListDefinitionT>(value));
+    }
+    template<typename StructuredMessageListDefinitionT = StructuredMessageListDefinition>
+    StructuredMessage& WithStructuredMessageListDefinition(StructuredMessageListDefinitionT&& value) { SetStructuredMessageListDefinition(std::forward<StructuredMessageListDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents a struct type node of the complex data structure.</p>
      */
-    inline const Aws::Vector<StructuredMessageFieldNameAndDataTypePair>& GetStructuredMessageDefinition() const{ return m_structuredMessageDefinition; }
+    inline const Aws::Vector<StructuredMessageFieldNameAndDataTypePair>& GetStructuredMessageDefinition() const { return m_structuredMessageDefinition; }
     inline bool StructuredMessageDefinitionHasBeenSet() const { return m_structuredMessageDefinitionHasBeenSet; }
-    inline void SetStructuredMessageDefinition(const Aws::Vector<StructuredMessageFieldNameAndDataTypePair>& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition = value; }
-    inline void SetStructuredMessageDefinition(Aws::Vector<StructuredMessageFieldNameAndDataTypePair>&& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition = std::move(value); }
-    inline StructuredMessage& WithStructuredMessageDefinition(const Aws::Vector<StructuredMessageFieldNameAndDataTypePair>& value) { SetStructuredMessageDefinition(value); return *this;}
-    inline StructuredMessage& WithStructuredMessageDefinition(Aws::Vector<StructuredMessageFieldNameAndDataTypePair>&& value) { SetStructuredMessageDefinition(std::move(value)); return *this;}
-    inline StructuredMessage& AddStructuredMessageDefinition(const StructuredMessageFieldNameAndDataTypePair& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition.push_back(value); return *this; }
-    inline StructuredMessage& AddStructuredMessageDefinition(StructuredMessageFieldNameAndDataTypePair&& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition.push_back(std::move(value)); return *this; }
+    template<typename StructuredMessageDefinitionT = Aws::Vector<StructuredMessageFieldNameAndDataTypePair>>
+    void SetStructuredMessageDefinition(StructuredMessageDefinitionT&& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition = std::forward<StructuredMessageDefinitionT>(value); }
+    template<typename StructuredMessageDefinitionT = Aws::Vector<StructuredMessageFieldNameAndDataTypePair>>
+    StructuredMessage& WithStructuredMessageDefinition(StructuredMessageDefinitionT&& value) { SetStructuredMessageDefinition(std::forward<StructuredMessageDefinitionT>(value)); return *this;}
+    template<typename StructuredMessageDefinitionT = StructuredMessageFieldNameAndDataTypePair>
+    StructuredMessage& AddStructuredMessageDefinition(StructuredMessageDefinitionT&& value) { m_structuredMessageDefinitionHasBeenSet = true; m_structuredMessageDefinition.emplace_back(std::forward<StructuredMessageDefinitionT>(value)); return *this; }
     ///@}
   private:
 

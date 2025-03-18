@@ -12,15 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCommentReactionsRequest::GetCommentReactionsRequest() : 
-    m_commentIdHasBeenSet(false),
-    m_reactionUserArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetCommentReactionsRequest::SerializePayload() const
 {
   JsonValue payload;

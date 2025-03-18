@@ -18,15 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-BatchIsAuthorizedWithTokenInputItem::BatchIsAuthorizedWithTokenInputItem() : 
-    m_actionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 BatchIsAuthorizedWithTokenInputItem::BatchIsAuthorizedWithTokenInputItem(JsonView jsonValue)
-  : BatchIsAuthorizedWithTokenInputItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchIsAuthorizedWithTokenInputItem& BatchIsAuthorizedWithTokenInputItem::operat
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("context"))
   {
     m_context = jsonValue.GetObject("context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

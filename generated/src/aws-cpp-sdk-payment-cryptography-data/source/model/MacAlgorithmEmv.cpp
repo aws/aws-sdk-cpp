@@ -18,19 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-MacAlgorithmEmv::MacAlgorithmEmv() : 
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_sessionKeyDerivationMode(SessionKeyDerivationMode::NOT_SET),
-    m_sessionKeyDerivationModeHasBeenSet(false),
-    m_sessionKeyDerivationValueHasBeenSet(false)
-{
-}
-
 MacAlgorithmEmv::MacAlgorithmEmv(JsonView jsonValue)
-  : MacAlgorithmEmv()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ MacAlgorithmEmv& MacAlgorithmEmv::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
-
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionKeyDerivationMode"))
   {
     m_sessionKeyDerivationMode = SessionKeyDerivationModeMapper::GetSessionKeyDerivationModeForName(jsonValue.GetString("SessionKeyDerivationMode"));
-
     m_sessionKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionKeyDerivationValue"))
   {
     m_sessionKeyDerivationValue = jsonValue.GetObject("SessionKeyDerivationValue");
-
     m_sessionKeyDerivationValueHasBeenSet = true;
   }
-
   return *this;
 }
 

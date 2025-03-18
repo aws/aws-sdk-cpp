@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-PolylineCorridor::PolylineCorridor() : 
-    m_polylineHasBeenSet(false),
-    m_radius(0),
-    m_radiusHasBeenSet(false)
-{
-}
-
 PolylineCorridor::PolylineCorridor(JsonView jsonValue)
-  : PolylineCorridor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PolylineCorridor& PolylineCorridor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Polyline"))
   {
     m_polyline = jsonValue.GetString("Polyline");
-
     m_polylineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetInteger("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   return *this;
 }
 

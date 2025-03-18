@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInterconnectRequest::DeleteInterconnectRequest() : 
-    m_interconnectIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInterconnectRequest::SerializePayload() const
 {
   JsonValue payload;

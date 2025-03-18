@@ -36,7 +36,7 @@ namespace Model
   class ReplaceRecipientAction
   {
   public:
-    AWS_MAILMANAGER_API ReplaceRecipientAction();
+    AWS_MAILMANAGER_API ReplaceRecipientAction() = default;
     AWS_MAILMANAGER_API ReplaceRecipientAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ReplaceRecipientAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>This action specifies the replacement recipient email addresses to
      * insert.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplaceWith() const{ return m_replaceWith; }
+    inline const Aws::Vector<Aws::String>& GetReplaceWith() const { return m_replaceWith; }
     inline bool ReplaceWithHasBeenSet() const { return m_replaceWithHasBeenSet; }
-    inline void SetReplaceWith(const Aws::Vector<Aws::String>& value) { m_replaceWithHasBeenSet = true; m_replaceWith = value; }
-    inline void SetReplaceWith(Aws::Vector<Aws::String>&& value) { m_replaceWithHasBeenSet = true; m_replaceWith = std::move(value); }
-    inline ReplaceRecipientAction& WithReplaceWith(const Aws::Vector<Aws::String>& value) { SetReplaceWith(value); return *this;}
-    inline ReplaceRecipientAction& WithReplaceWith(Aws::Vector<Aws::String>&& value) { SetReplaceWith(std::move(value)); return *this;}
-    inline ReplaceRecipientAction& AddReplaceWith(const Aws::String& value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(value); return *this; }
-    inline ReplaceRecipientAction& AddReplaceWith(Aws::String&& value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(std::move(value)); return *this; }
-    inline ReplaceRecipientAction& AddReplaceWith(const char* value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(value); return *this; }
+    template<typename ReplaceWithT = Aws::Vector<Aws::String>>
+    void SetReplaceWith(ReplaceWithT&& value) { m_replaceWithHasBeenSet = true; m_replaceWith = std::forward<ReplaceWithT>(value); }
+    template<typename ReplaceWithT = Aws::Vector<Aws::String>>
+    ReplaceRecipientAction& WithReplaceWith(ReplaceWithT&& value) { SetReplaceWith(std::forward<ReplaceWithT>(value)); return *this;}
+    template<typename ReplaceWithT = Aws::String>
+    ReplaceRecipientAction& AddReplaceWith(ReplaceWithT&& value) { m_replaceWithHasBeenSet = true; m_replaceWith.emplace_back(std::forward<ReplaceWithT>(value)); return *this; }
     ///@}
   private:
 

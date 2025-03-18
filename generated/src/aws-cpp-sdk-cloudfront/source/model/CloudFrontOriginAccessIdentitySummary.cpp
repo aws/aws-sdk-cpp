@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary() : 
-    m_idHasBeenSet(false),
-    m_s3CanonicalUserIdHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary(const XmlNode& xmlNode)
-  : CloudFrontOriginAccessIdentitySummary()
 {
   *this = xmlNode;
 }

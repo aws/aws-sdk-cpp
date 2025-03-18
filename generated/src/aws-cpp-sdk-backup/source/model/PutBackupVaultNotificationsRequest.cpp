@@ -12,13 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBackupVaultNotificationsRequest::PutBackupVaultNotificationsRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_sNSTopicArnHasBeenSet(false),
-    m_backupVaultEventsHasBeenSet(false)
-{
-}
-
 Aws::String PutBackupVaultNotificationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateActiveVersionRequest::UpdateTemplateActiveVersionRequest() : 
-    m_templateActiveVersionRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateActiveVersionRequest::SerializePayload() const
 {
   JsonValue payload;

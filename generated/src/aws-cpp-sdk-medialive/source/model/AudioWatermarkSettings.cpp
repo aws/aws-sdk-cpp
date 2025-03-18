@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioWatermarkSettings::AudioWatermarkSettings() : 
-    m_nielsenWatermarksSettingsHasBeenSet(false)
-{
-}
-
 AudioWatermarkSettings::AudioWatermarkSettings(JsonView jsonValue)
-  : AudioWatermarkSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AudioWatermarkSettings& AudioWatermarkSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nielsenWatermarksSettings"))
   {
     m_nielsenWatermarksSettings = jsonValue.GetObject("nielsenWatermarksSettings");
-
     m_nielsenWatermarksSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

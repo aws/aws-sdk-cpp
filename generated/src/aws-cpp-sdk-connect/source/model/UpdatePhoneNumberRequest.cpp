@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePhoneNumberRequest::UpdatePhoneNumberRequest() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdatePhoneNumberRequest::SerializePayload() const
 {
   JsonValue payload;

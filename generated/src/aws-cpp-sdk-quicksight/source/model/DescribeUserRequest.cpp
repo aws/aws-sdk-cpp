@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserRequest::DescribeUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserRequest::SerializePayload() const
 {
   return {};

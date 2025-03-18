@@ -32,7 +32,7 @@ namespace Model
   class OSInfo
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OSInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OSInfo() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OSInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API OSInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p> Information about the type of operating system. </p>
      */
-    inline const OSType& GetType() const{ return m_type; }
+    inline OSType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OSType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OSType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline OSInfo& WithType(const OSType& value) { SetType(value); return *this;}
-    inline OSInfo& WithType(OSType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OSType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline OSInfo& WithType(OSType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the version of operating system. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline OSInfo& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline OSInfo& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline OSInfo& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    OSInfo& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    OSType m_type;
+    OSType m_type{OSType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_version;

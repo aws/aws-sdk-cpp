@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainElasticsearchClusterConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigDetails() : 
-    m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false),
-    m_dedicatedMasterEnabled(false),
-    m_dedicatedMasterEnabledHasBeenSet(false),
-    m_dedicatedMasterTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_zoneAwarenessConfigHasBeenSet(false),
-    m_zoneAwarenessEnabled(false),
-    m_zoneAwarenessEnabledHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainElasticsearchClusterConfigDetails::AwsElasticsearchDomainElasticsearchClusterConfigDetails(JsonView jsonValue)
-  : AwsElasticsearchDomainElasticsearchClusterConfigDetails()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ AwsElasticsearchDomainElasticsearchClusterConfigDetails& AwsElasticsearchDomainE
   if(jsonValue.ValueExists("DedicatedMasterCount"))
   {
     m_dedicatedMasterCount = jsonValue.GetInteger("DedicatedMasterCount");
-
     m_dedicatedMasterCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedMasterEnabled"))
   {
     m_dedicatedMasterEnabled = jsonValue.GetBool("DedicatedMasterEnabled");
-
     m_dedicatedMasterEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedMasterType"))
   {
     m_dedicatedMasterType = jsonValue.GetString("DedicatedMasterType");
-
     m_dedicatedMasterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZoneAwarenessConfig"))
   {
     m_zoneAwarenessConfig = jsonValue.GetObject("ZoneAwarenessConfig");
-
     m_zoneAwarenessConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZoneAwarenessEnabled"))
   {
     m_zoneAwarenessEnabled = jsonValue.GetBool("ZoneAwarenessEnabled");
-
     m_zoneAwarenessEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

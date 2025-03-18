@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoutingControlRequest::DeleteRoutingControlRequest() : 
-    m_routingControlArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoutingControlRequest::SerializePayload() const
 {
   return {};

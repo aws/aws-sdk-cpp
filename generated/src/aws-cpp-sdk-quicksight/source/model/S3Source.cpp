@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-S3Source::S3Source() : 
-    m_dataSourceArnHasBeenSet(false),
-    m_uploadSettingsHasBeenSet(false),
-    m_inputColumnsHasBeenSet(false)
-{
-}
-
 S3Source::S3Source(JsonView jsonValue)
-  : S3Source()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3Source& S3Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploadSettings"))
   {
     m_uploadSettings = jsonValue.GetObject("UploadSettings");
-
     m_uploadSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputColumns"))
   {
     Aws::Utils::Array<JsonView> inputColumnsJsonList = jsonValue.GetArray("InputColumns");
@@ -56,7 +44,6 @@ S3Source& S3Source::operator =(JsonView jsonValue)
     }
     m_inputColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

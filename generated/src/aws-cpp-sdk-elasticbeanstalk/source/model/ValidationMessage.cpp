@@ -20,17 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ValidationMessage::ValidationMessage() : 
-    m_messageHasBeenSet(false),
-    m_severity(ValidationSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false)
-{
-}
-
 ValidationMessage::ValidationMessage(const XmlNode& xmlNode)
-  : ValidationMessage()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ ValidationMessage& ValidationMessage::operator =(const XmlNode& xmlNode)
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
-      m_severity = ValidationSeverityMapper::GetValidationSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText()).c_str()).c_str());
+      m_severity = ValidationSeverityMapper::GetValidationSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText()).c_str()));
       m_severityHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");

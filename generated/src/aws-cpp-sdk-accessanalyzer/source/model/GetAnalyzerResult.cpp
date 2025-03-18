@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAnalyzerResult::GetAnalyzerResult()
-{
-}
-
 GetAnalyzerResult::GetAnalyzerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAnalyzerResult& GetAnalyzerResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("analyzer"))
   {
     m_analyzer = jsonValue.GetObject("analyzer");
-
+    m_analyzerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

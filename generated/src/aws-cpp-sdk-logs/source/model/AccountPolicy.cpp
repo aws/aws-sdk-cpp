@@ -18,22 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-AccountPolicy::AccountPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_lastUpdatedTime(0),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 AccountPolicy::AccountPolicy(JsonView jsonValue)
-  : AccountPolicy()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ AccountPolicy& AccountPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDocument"))
   {
     m_policyDocument = jsonValue.GetString("policyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetInt64("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("policyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = ScopeMapper::GetScopeForName(jsonValue.GetString("scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectionCriteria"))
   {
     m_selectionCriteria = jsonValue.GetString("selectionCriteria");
-
     m_selectionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-GifSettings::GifSettings() : 
-    m_framerateControl(GifFramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(GifFramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false)
-{
-}
-
 GifSettings::GifSettings(JsonView jsonValue)
-  : GifSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ GifSettings& GifSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("framerateControl"))
   {
     m_framerateControl = GifFramerateControlMapper::GetGifFramerateControlForName(jsonValue.GetString("framerateControl"));
-
     m_framerateControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateConversionAlgorithm"))
   {
     m_framerateConversionAlgorithm = GifFramerateConversionAlgorithmMapper::GetGifFramerateConversionAlgorithmForName(jsonValue.GetString("framerateConversionAlgorithm"));
-
     m_framerateConversionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   return *this;
 }
 

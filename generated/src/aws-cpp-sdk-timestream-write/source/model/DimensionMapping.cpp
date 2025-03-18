@@ -18,14 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-DimensionMapping::DimensionMapping() : 
-    m_sourceColumnHasBeenSet(false),
-    m_destinationColumnHasBeenSet(false)
-{
-}
-
 DimensionMapping::DimensionMapping(JsonView jsonValue)
-  : DimensionMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DimensionMapping& DimensionMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceColumn"))
   {
     m_sourceColumn = jsonValue.GetString("SourceColumn");
-
     m_sourceColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationColumn"))
   {
     m_destinationColumn = jsonValue.GetString("DestinationColumn");
-
     m_destinationColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

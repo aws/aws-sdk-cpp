@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSourceRegionsResult::DescribeSourceRegionsResult()
-{
-}
-
 DescribeSourceRegionsResult::DescribeSourceRegionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeSourceRegionsResult& DescribeSourceRegionsResult::operator =(const Aws::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode sourceRegionsNode = resultNode.FirstChild("SourceRegions");
     if(!sourceRegionsNode.IsNull())
     {
       XmlNode sourceRegionsMember = sourceRegionsNode.FirstChild("SourceRegion");
+      m_sourceRegionsHasBeenSet = !sourceRegionsMember.IsNull();
       while(!sourceRegionsMember.IsNull())
       {
         m_sourceRegions.push_back(sourceRegionsMember);
         sourceRegionsMember = sourceRegionsMember.NextNode("SourceRegion");
       }
 
+      m_sourceRegionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeSourceRegionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

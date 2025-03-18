@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ErrorDocument::ErrorDocument() : 
-    m_keyHasBeenSet(false)
-{
-}
-
 ErrorDocument::ErrorDocument(const XmlNode& xmlNode)
-  : ErrorDocument()
 {
   *this = xmlNode;
 }

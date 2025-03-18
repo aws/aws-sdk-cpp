@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedNodesResult::DescribeReservedNodesResult()
-{
-}
-
 DescribeReservedNodesResult::DescribeReservedNodesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeReservedNodesResult& DescribeReservedNodesResult::operator =(const Aws::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode reservedNodesNode = resultNode.FirstChild("ReservedNodes");
     if(!reservedNodesNode.IsNull())
     {
       XmlNode reservedNodesMember = reservedNodesNode.FirstChild("ReservedNode");
+      m_reservedNodesHasBeenSet = !reservedNodesMember.IsNull();
       while(!reservedNodesMember.IsNull())
       {
         m_reservedNodes.push_back(reservedNodesMember);
         reservedNodesMember = reservedNodesMember.NextNode("ReservedNode");
       }
 
+      m_reservedNodesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeReservedNodesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

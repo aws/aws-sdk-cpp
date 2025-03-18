@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AccountConfiguration::AccountConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 AccountConfiguration::AccountConfiguration(JsonView jsonValue)
-  : AccountConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccountConfiguration& AccountConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

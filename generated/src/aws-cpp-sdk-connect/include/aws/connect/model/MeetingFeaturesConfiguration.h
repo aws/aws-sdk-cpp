@@ -32,7 +32,7 @@ namespace Model
   class MeetingFeaturesConfiguration
   {
   public:
-    AWS_CONNECT_API MeetingFeaturesConfiguration();
+    AWS_CONNECT_API MeetingFeaturesConfiguration() = default;
     AWS_CONNECT_API MeetingFeaturesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API MeetingFeaturesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration settings for the audio features available to a meeting.</p>
      */
-    inline const AudioFeatures& GetAudio() const{ return m_audio; }
+    inline const AudioFeatures& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioFeatures& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioFeatures&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline MeetingFeaturesConfiguration& WithAudio(const AudioFeatures& value) { SetAudio(value); return *this;}
-    inline MeetingFeaturesConfiguration& WithAudio(AudioFeatures&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioFeatures>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioFeatures>
+    MeetingFeaturesConfiguration& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
   private:
 

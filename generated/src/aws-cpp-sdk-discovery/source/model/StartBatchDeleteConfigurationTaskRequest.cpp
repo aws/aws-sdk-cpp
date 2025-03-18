@@ -12,13 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBatchDeleteConfigurationTaskRequest::StartBatchDeleteConfigurationTaskRequest() : 
-    m_configurationType(DeletionConfigurationItemType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_configurationIdsHasBeenSet(false)
-{
-}
-
 Aws::String StartBatchDeleteConfigurationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

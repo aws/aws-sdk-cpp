@@ -18,23 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ExecutionResult::ExecutionResult() : 
-    m_errorInfoHasBeenSet(false),
-    m_bytesProcessed(0),
-    m_bytesProcessedHasBeenSet(false),
-    m_bytesWritten(0),
-    m_bytesWrittenHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_numParallelProcesses(0),
-    m_numParallelProcessesHasBeenSet(false),
-    m_maxPageSize(0),
-    m_maxPageSizeHasBeenSet(false)
-{
-}
-
 ExecutionResult::ExecutionResult(JsonView jsonValue)
-  : ExecutionResult()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ ExecutionResult& ExecutionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bytesProcessed"))
   {
     m_bytesProcessed = jsonValue.GetInt64("bytesProcessed");
-
     m_bytesProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bytesWritten"))
   {
     m_bytesWritten = jsonValue.GetInt64("bytesWritten");
-
     m_bytesWrittenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordsProcessed"))
   {
     m_recordsProcessed = jsonValue.GetInt64("recordsProcessed");
-
     m_recordsProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numParallelProcesses"))
   {
     m_numParallelProcesses = jsonValue.GetInt64("numParallelProcesses");
-
     m_numParallelProcessesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxPageSize"))
   {
     m_maxPageSize = jsonValue.GetInt64("maxPageSize");
-
     m_maxPageSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

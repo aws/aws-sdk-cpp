@@ -12,24 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePartnerAppRequest::CreatePartnerAppRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(PartnerAppType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_maintenanceConfigHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_applicationConfigHasBeenSet(false),
-    m_authType(PartnerAppAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_enableIamSessionBasedIdentity(false),
-    m_enableIamSessionBasedIdentityHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePartnerAppRequest::SerializePayload() const
 {
   JsonValue payload;

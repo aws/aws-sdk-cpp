@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseReservedNodesOfferingResult::PurchaseReservedNodesOfferingResult()
-{
-}
-
 PurchaseReservedNodesOfferingResult::PurchaseReservedNodesOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PurchaseReservedNodesOfferingResult& PurchaseReservedNodesOfferingResult::operat
   if(jsonValue.ValueExists("ReservedNode"))
   {
     m_reservedNode = jsonValue.GetObject("ReservedNode");
-
+    m_reservedNodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-PerformanceTarget::PerformanceTarget() : 
-    m_level(0),
-    m_levelHasBeenSet(false),
-    m_status(PerformanceTargetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 PerformanceTarget::PerformanceTarget(JsonView jsonValue)
-  : PerformanceTarget()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PerformanceTarget& PerformanceTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("level"))
   {
     m_level = jsonValue.GetInteger("level");
-
     m_levelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PerformanceTargetStatusMapper::GetPerformanceTargetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

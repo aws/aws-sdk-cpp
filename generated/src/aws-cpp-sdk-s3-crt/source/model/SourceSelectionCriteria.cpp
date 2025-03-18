@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-SourceSelectionCriteria::SourceSelectionCriteria() : 
-    m_sseKmsEncryptedObjectsHasBeenSet(false),
-    m_replicaModificationsHasBeenSet(false)
-{
-}
-
 SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode)
-  : SourceSelectionCriteria()
 {
   *this = xmlNode;
 }

@@ -12,19 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGrantVersionRequest::CreateGrantVersionRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_grantArnHasBeenSet(false),
-    m_grantNameHasBeenSet(false),
-    m_allowedOperationsHasBeenSet(false),
-    m_status(GrantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGrantVersionRequest::SerializePayload() const
 {
   JsonValue payload;

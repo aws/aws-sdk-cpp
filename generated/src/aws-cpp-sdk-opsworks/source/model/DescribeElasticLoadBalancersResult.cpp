@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult()
-{
-}
-
 DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeElasticLoadBalancersResult& DescribeElasticLoadBalancersResult::operator
     {
       m_elasticLoadBalancers.push_back(elasticLoadBalancersJsonList[elasticLoadBalancersIndex].AsObject());
     }
+    m_elasticLoadBalancersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

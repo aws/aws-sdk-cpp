@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-EnvironmentPlatform::EnvironmentPlatform() : 
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_languagesHasBeenSet(false)
-{
-}
-
 EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue)
-  : EnvironmentPlatform()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languages"))
   {
     Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("languages");
@@ -49,7 +39,6 @@ EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
     }
     m_languagesHasBeenSet = true;
   }
-
   return *this;
 }
 

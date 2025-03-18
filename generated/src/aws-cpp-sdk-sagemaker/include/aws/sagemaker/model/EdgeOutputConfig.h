@@ -32,7 +32,7 @@ namespace Model
   class EdgeOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API EdgeOutputConfig();
+    AWS_SAGEMAKER_API EdgeOutputConfig() = default;
     AWS_SAGEMAKER_API EdgeOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EdgeOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage (S3) bucker URI.</p>
      */
-    inline const Aws::String& GetS3OutputLocation() const{ return m_s3OutputLocation; }
+    inline const Aws::String& GetS3OutputLocation() const { return m_s3OutputLocation; }
     inline bool S3OutputLocationHasBeenSet() const { return m_s3OutputLocationHasBeenSet; }
-    inline void SetS3OutputLocation(const Aws::String& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = value; }
-    inline void SetS3OutputLocation(Aws::String&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::move(value); }
-    inline void SetS3OutputLocation(const char* value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation.assign(value); }
-    inline EdgeOutputConfig& WithS3OutputLocation(const Aws::String& value) { SetS3OutputLocation(value); return *this;}
-    inline EdgeOutputConfig& WithS3OutputLocation(Aws::String&& value) { SetS3OutputLocation(std::move(value)); return *this;}
-    inline EdgeOutputConfig& WithS3OutputLocation(const char* value) { SetS3OutputLocation(value); return *this;}
+    template<typename S3OutputLocationT = Aws::String>
+    void SetS3OutputLocation(S3OutputLocationT&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::forward<S3OutputLocationT>(value); }
+    template<typename S3OutputLocationT = Aws::String>
+    EdgeOutputConfig& WithS3OutputLocation(S3OutputLocationT&& value) { SetS3OutputLocation(std::forward<S3OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
      * default KMS key for Amazon S3 for your role's account.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline EdgeOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline EdgeOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline EdgeOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    EdgeOutputConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
      * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
-    inline const EdgePresetDeploymentType& GetPresetDeploymentType() const{ return m_presetDeploymentType; }
+    inline EdgePresetDeploymentType GetPresetDeploymentType() const { return m_presetDeploymentType; }
     inline bool PresetDeploymentTypeHasBeenSet() const { return m_presetDeploymentTypeHasBeenSet; }
-    inline void SetPresetDeploymentType(const EdgePresetDeploymentType& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = value; }
-    inline void SetPresetDeploymentType(EdgePresetDeploymentType&& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = std::move(value); }
-    inline EdgeOutputConfig& WithPresetDeploymentType(const EdgePresetDeploymentType& value) { SetPresetDeploymentType(value); return *this;}
-    inline EdgeOutputConfig& WithPresetDeploymentType(EdgePresetDeploymentType&& value) { SetPresetDeploymentType(std::move(value)); return *this;}
+    inline void SetPresetDeploymentType(EdgePresetDeploymentType value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = value; }
+    inline EdgeOutputConfig& WithPresetDeploymentType(EdgePresetDeploymentType value) { SetPresetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
      * Linux x86_64, Linux ARMV8.</p> </li> </ul>
      */
-    inline const Aws::String& GetPresetDeploymentConfig() const{ return m_presetDeploymentConfig; }
+    inline const Aws::String& GetPresetDeploymentConfig() const { return m_presetDeploymentConfig; }
     inline bool PresetDeploymentConfigHasBeenSet() const { return m_presetDeploymentConfigHasBeenSet; }
-    inline void SetPresetDeploymentConfig(const Aws::String& value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig = value; }
-    inline void SetPresetDeploymentConfig(Aws::String&& value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig = std::move(value); }
-    inline void SetPresetDeploymentConfig(const char* value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig.assign(value); }
-    inline EdgeOutputConfig& WithPresetDeploymentConfig(const Aws::String& value) { SetPresetDeploymentConfig(value); return *this;}
-    inline EdgeOutputConfig& WithPresetDeploymentConfig(Aws::String&& value) { SetPresetDeploymentConfig(std::move(value)); return *this;}
-    inline EdgeOutputConfig& WithPresetDeploymentConfig(const char* value) { SetPresetDeploymentConfig(value); return *this;}
+    template<typename PresetDeploymentConfigT = Aws::String>
+    void SetPresetDeploymentConfig(PresetDeploymentConfigT&& value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig = std::forward<PresetDeploymentConfigT>(value); }
+    template<typename PresetDeploymentConfigT = Aws::String>
+    EdgeOutputConfig& WithPresetDeploymentConfig(PresetDeploymentConfigT&& value) { SetPresetDeploymentConfig(std::forward<PresetDeploymentConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,7 +112,7 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    EdgePresetDeploymentType m_presetDeploymentType;
+    EdgePresetDeploymentType m_presetDeploymentType{EdgePresetDeploymentType::NOT_SET};
     bool m_presetDeploymentTypeHasBeenSet = false;
 
     Aws::String m_presetDeploymentConfig;

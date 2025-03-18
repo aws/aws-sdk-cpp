@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWirelessDeviceImportTasksResult::ListWirelessDeviceImportTasksResult()
-{
-}
-
 ListWirelessDeviceImportTasksResult::ListWirelessDeviceImportTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWirelessDeviceImportTasksResult& ListWirelessDeviceImportTasksResult::operat
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessDeviceImportTaskList"))
   {
     Aws::Utils::Array<JsonView> wirelessDeviceImportTaskListJsonList = jsonValue.GetArray("WirelessDeviceImportTaskList");
@@ -42,14 +37,15 @@ ListWirelessDeviceImportTasksResult& ListWirelessDeviceImportTasksResult::operat
     {
       m_wirelessDeviceImportTaskList.push_back(wirelessDeviceImportTaskListJsonList[wirelessDeviceImportTaskListIndex].AsObject());
     }
+    m_wirelessDeviceImportTaskListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

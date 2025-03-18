@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AttachSecurityProfileRequest::AttachSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_securityProfileTargetArnHasBeenSet(false)
-{
-}
-
 Aws::String AttachSecurityProfileRequest::SerializePayload() const
 {
   return {};

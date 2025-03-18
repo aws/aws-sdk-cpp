@@ -32,7 +32,7 @@ namespace Model
   class OpenIDConnectProviderListEntry
   {
   public:
-    AWS_IAM_API OpenIDConnectProviderListEntry();
+    AWS_IAM_API OpenIDConnectProviderListEntry() = default;
     AWS_IAM_API OpenIDConnectProviderListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API OpenIDConnectProviderListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline OpenIDConnectProviderListEntry& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline OpenIDConnectProviderListEntry& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline OpenIDConnectProviderListEntry& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    OpenIDConnectProviderListEntry& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

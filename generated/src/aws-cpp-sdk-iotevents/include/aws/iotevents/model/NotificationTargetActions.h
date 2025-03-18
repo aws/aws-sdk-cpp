@@ -34,7 +34,7 @@ namespace Model
   class NotificationTargetActions
   {
   public:
-    AWS_IOTEVENTS_API NotificationTargetActions();
+    AWS_IOTEVENTS_API NotificationTargetActions() = default;
     AWS_IOTEVENTS_API NotificationTargetActions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API NotificationTargetActions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const LambdaAction& GetLambdaAction() const{ return m_lambdaAction; }
+    inline const LambdaAction& GetLambdaAction() const { return m_lambdaAction; }
     inline bool LambdaActionHasBeenSet() const { return m_lambdaActionHasBeenSet; }
-    inline void SetLambdaAction(const LambdaAction& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
-    inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = std::move(value); }
-    inline NotificationTargetActions& WithLambdaAction(const LambdaAction& value) { SetLambdaAction(value); return *this;}
-    inline NotificationTargetActions& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(std::move(value)); return *this;}
+    template<typename LambdaActionT = LambdaAction>
+    void SetLambdaAction(LambdaActionT&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = std::forward<LambdaActionT>(value); }
+    template<typename LambdaActionT = LambdaAction>
+    NotificationTargetActions& WithLambdaAction(LambdaActionT&& value) { SetLambdaAction(std::forward<LambdaActionT>(value)); return *this;}
     ///@}
   private:
 

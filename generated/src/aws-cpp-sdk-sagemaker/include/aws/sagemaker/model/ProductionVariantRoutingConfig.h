@@ -32,7 +32,7 @@ namespace Model
   class ProductionVariantRoutingConfig
   {
   public:
-    AWS_SAGEMAKER_API ProductionVariantRoutingConfig();
+    AWS_SAGEMAKER_API ProductionVariantRoutingConfig() = default;
     AWS_SAGEMAKER_API ProductionVariantRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProductionVariantRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
      * instance.</p> </li> </ul>
      */
-    inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
+    inline RoutingStrategy GetRoutingStrategy() const { return m_routingStrategy; }
     inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
-    inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
-    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
-    inline ProductionVariantRoutingConfig& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
-    inline ProductionVariantRoutingConfig& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
+    inline void SetRoutingStrategy(RoutingStrategy value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
+    inline ProductionVariantRoutingConfig& WithRoutingStrategy(RoutingStrategy value) { SetRoutingStrategy(value); return *this;}
     ///@}
   private:
 
-    RoutingStrategy m_routingStrategy;
+    RoutingStrategy m_routingStrategy{RoutingStrategy::NOT_SET};
     bool m_routingStrategyHasBeenSet = false;
   };
 

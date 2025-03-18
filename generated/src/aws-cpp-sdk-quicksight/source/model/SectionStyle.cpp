@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SectionStyle::SectionStyle() : 
-    m_heightHasBeenSet(false),
-    m_paddingHasBeenSet(false)
-{
-}
-
 SectionStyle::SectionStyle(JsonView jsonValue)
-  : SectionStyle()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SectionStyle& SectionStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetString("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Padding"))
   {
     m_padding = jsonValue.GetObject("Padding");
-
     m_paddingHasBeenSet = true;
   }
-
   return *this;
 }
 

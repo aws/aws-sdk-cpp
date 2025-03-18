@@ -12,14 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAddressListRequest::CreateAddressListRequest() : 
-    m_addressListNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAddressListRequest::SerializePayload() const
 {
   JsonValue payload;

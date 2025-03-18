@@ -12,12 +12,6 @@ using namespace Aws::EMRServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelJobRunRequest::CancelJobRunRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelJobRunRequest::SerializePayload() const
 {
   return {};

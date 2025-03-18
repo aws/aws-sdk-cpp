@@ -32,7 +32,7 @@ namespace Model
   class RecommendationSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API RecommendationSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API RecommendationSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API RecommendationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API RecommendationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Valid values include <code>"total-capacity"</code> and
      * <code>"utilization"</code>.</p>
      */
-    inline const Aws::String& GetInstanceSizingType() const{ return m_instanceSizingType; }
+    inline const Aws::String& GetInstanceSizingType() const { return m_instanceSizingType; }
     inline bool InstanceSizingTypeHasBeenSet() const { return m_instanceSizingTypeHasBeenSet; }
-    inline void SetInstanceSizingType(const Aws::String& value) { m_instanceSizingTypeHasBeenSet = true; m_instanceSizingType = value; }
-    inline void SetInstanceSizingType(Aws::String&& value) { m_instanceSizingTypeHasBeenSet = true; m_instanceSizingType = std::move(value); }
-    inline void SetInstanceSizingType(const char* value) { m_instanceSizingTypeHasBeenSet = true; m_instanceSizingType.assign(value); }
-    inline RecommendationSettings& WithInstanceSizingType(const Aws::String& value) { SetInstanceSizingType(value); return *this;}
-    inline RecommendationSettings& WithInstanceSizingType(Aws::String&& value) { SetInstanceSizingType(std::move(value)); return *this;}
-    inline RecommendationSettings& WithInstanceSizingType(const char* value) { SetInstanceSizingType(value); return *this;}
+    template<typename InstanceSizingTypeT = Aws::String>
+    void SetInstanceSizingType(InstanceSizingTypeT&& value) { m_instanceSizingTypeHasBeenSet = true; m_instanceSizingType = std::forward<InstanceSizingTypeT>(value); }
+    template<typename InstanceSizingTypeT = Aws::String>
+    RecommendationSettings& WithInstanceSizingType(InstanceSizingTypeT&& value) { SetInstanceSizingType(std::forward<InstanceSizingTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Advisor chooses Single-AZ deployment. Valid values include
      * <code>"development"</code> and <code>"production"</code>.</p>
      */
-    inline const Aws::String& GetWorkloadType() const{ return m_workloadType; }
+    inline const Aws::String& GetWorkloadType() const { return m_workloadType; }
     inline bool WorkloadTypeHasBeenSet() const { return m_workloadTypeHasBeenSet; }
-    inline void SetWorkloadType(const Aws::String& value) { m_workloadTypeHasBeenSet = true; m_workloadType = value; }
-    inline void SetWorkloadType(Aws::String&& value) { m_workloadTypeHasBeenSet = true; m_workloadType = std::move(value); }
-    inline void SetWorkloadType(const char* value) { m_workloadTypeHasBeenSet = true; m_workloadType.assign(value); }
-    inline RecommendationSettings& WithWorkloadType(const Aws::String& value) { SetWorkloadType(value); return *this;}
-    inline RecommendationSettings& WithWorkloadType(Aws::String&& value) { SetWorkloadType(std::move(value)); return *this;}
-    inline RecommendationSettings& WithWorkloadType(const char* value) { SetWorkloadType(value); return *this;}
+    template<typename WorkloadTypeT = Aws::String>
+    void SetWorkloadType(WorkloadTypeT&& value) { m_workloadTypeHasBeenSet = true; m_workloadType = std::forward<WorkloadTypeT>(value); }
+    template<typename WorkloadTypeT = Aws::String>
+    RecommendationSettings& WithWorkloadType(WorkloadTypeT&& value) { SetWorkloadType(std::forward<WorkloadTypeT>(value)); return *this;}
     ///@}
   private:
 

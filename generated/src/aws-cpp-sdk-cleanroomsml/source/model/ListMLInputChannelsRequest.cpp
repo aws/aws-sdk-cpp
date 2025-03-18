@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMLInputChannelsRequest::ListMLInputChannelsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListMLInputChannelsRequest::SerializePayload() const
 {
   return {};

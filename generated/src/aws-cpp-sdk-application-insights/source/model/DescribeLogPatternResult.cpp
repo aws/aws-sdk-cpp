@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLogPatternResult::DescribeLogPatternResult()
-{
-}
-
 DescribeLogPatternResult::DescribeLogPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DescribeLogPatternResult& DescribeLogPatternResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ResourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
-
+    m_resourceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
+    m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogPattern"))
   {
     m_logPattern = jsonValue.GetObject("LogPattern");
-
+    m_logPatternHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

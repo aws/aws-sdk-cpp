@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestExecutionTarget::TestExecutionTarget() : 
-    m_botAliasTargetHasBeenSet(false)
-{
-}
-
 TestExecutionTarget::TestExecutionTarget(JsonView jsonValue)
-  : TestExecutionTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TestExecutionTarget& TestExecutionTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botAliasTarget"))
   {
     m_botAliasTarget = jsonValue.GetObject("botAliasTarget");
-
     m_botAliasTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

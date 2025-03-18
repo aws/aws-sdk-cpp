@@ -12,14 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStreamSessionsRequest::ListStreamSessionsRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANUpdateGatewayTaskCreate::LoRaWANUpdateGatewayTaskCreate() : 
-    m_updateSignatureHasBeenSet(false),
-    m_sigKeyCrc(0),
-    m_sigKeyCrcHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_updateVersionHasBeenSet(false)
-{
-}
-
 LoRaWANUpdateGatewayTaskCreate::LoRaWANUpdateGatewayTaskCreate(JsonView jsonValue)
-  : LoRaWANUpdateGatewayTaskCreate()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LoRaWANUpdateGatewayTaskCreate& LoRaWANUpdateGatewayTaskCreate::operator =(JsonV
   if(jsonValue.ValueExists("UpdateSignature"))
   {
     m_updateSignature = jsonValue.GetString("UpdateSignature");
-
     m_updateSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigKeyCrc"))
   {
     m_sigKeyCrc = jsonValue.GetInt64("SigKeyCrc");
-
     m_sigKeyCrcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentVersion"))
   {
     m_currentVersion = jsonValue.GetObject("CurrentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateVersion"))
   {
     m_updateVersion = jsonValue.GetObject("UpdateVersion");
-
     m_updateVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

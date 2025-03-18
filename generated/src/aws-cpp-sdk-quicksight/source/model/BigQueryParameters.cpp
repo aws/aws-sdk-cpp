@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BigQueryParameters::BigQueryParameters() : 
-    m_projectIdHasBeenSet(false),
-    m_dataSetRegionHasBeenSet(false)
-{
-}
-
 BigQueryParameters::BigQueryParameters(JsonView jsonValue)
-  : BigQueryParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BigQueryParameters& BigQueryParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProjectId"))
   {
     m_projectId = jsonValue.GetString("ProjectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetRegion"))
   {
     m_dataSetRegion = jsonValue.GetString("DataSetRegion");
-
     m_dataSetRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

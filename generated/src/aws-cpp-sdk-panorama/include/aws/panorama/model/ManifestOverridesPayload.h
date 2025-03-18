@@ -33,7 +33,7 @@ namespace Model
   class ManifestOverridesPayload
   {
   public:
-    AWS_PANORAMA_API ManifestOverridesPayload();
+    AWS_PANORAMA_API ManifestOverridesPayload() = default;
     AWS_PANORAMA_API ManifestOverridesPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API ManifestOverridesPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The overrides document.</p>
      */
-    inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
+    inline const Aws::String& GetPayloadData() const { return m_payloadData; }
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
-    inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
-    inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
-    inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
-    inline ManifestOverridesPayload& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
-    inline ManifestOverridesPayload& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
-    inline ManifestOverridesPayload& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
+    template<typename PayloadDataT = Aws::String>
+    void SetPayloadData(PayloadDataT&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::forward<PayloadDataT>(value); }
+    template<typename PayloadDataT = Aws::String>
+    ManifestOverridesPayload& WithPayloadData(PayloadDataT&& value) { SetPayloadData(std::forward<PayloadDataT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,10 +18,6 @@ namespace Macie2
 namespace Model
 {
 
-DailySchedule::DailySchedule()
-{
-}
-
 DailySchedule::DailySchedule(JsonView jsonValue)
 {
   *this = jsonValue;

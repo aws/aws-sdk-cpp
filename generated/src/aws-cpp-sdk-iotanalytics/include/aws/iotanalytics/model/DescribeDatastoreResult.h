@@ -29,7 +29,7 @@ namespace Model
   class DescribeDatastoreResult
   {
   public:
-    AWS_IOTANALYTICS_API DescribeDatastoreResult();
+    AWS_IOTANALYTICS_API DescribeDatastoreResult() = default;
     AWS_IOTANALYTICS_API DescribeDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API DescribeDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the data store.</p>
      */
-    inline const Datastore& GetDatastore() const{ return m_datastore; }
-    inline void SetDatastore(const Datastore& value) { m_datastore = value; }
-    inline void SetDatastore(Datastore&& value) { m_datastore = std::move(value); }
-    inline DescribeDatastoreResult& WithDatastore(const Datastore& value) { SetDatastore(value); return *this;}
-    inline DescribeDatastoreResult& WithDatastore(Datastore&& value) { SetDatastore(std::move(value)); return *this;}
+    inline const Datastore& GetDatastore() const { return m_datastore; }
+    template<typename DatastoreT = Datastore>
+    void SetDatastore(DatastoreT&& value) { m_datastoreHasBeenSet = true; m_datastore = std::forward<DatastoreT>(value); }
+    template<typename DatastoreT = Datastore>
+    DescribeDatastoreResult& WithDatastore(DatastoreT&& value) { SetDatastore(std::forward<DatastoreT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,31 @@ namespace Model
      * <code>includeStatistics</code> parameter is set to <code>true</code> in the
      * request.</p>
      */
-    inline const DatastoreStatistics& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const DatastoreStatistics& value) { m_statistics = value; }
-    inline void SetStatistics(DatastoreStatistics&& value) { m_statistics = std::move(value); }
-    inline DescribeDatastoreResult& WithStatistics(const DatastoreStatistics& value) { SetStatistics(value); return *this;}
-    inline DescribeDatastoreResult& WithStatistics(DatastoreStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    inline const DatastoreStatistics& GetStatistics() const { return m_statistics; }
+    template<typename StatisticsT = DatastoreStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = DatastoreStatistics>
+    DescribeDatastoreResult& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatastoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatastoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatastoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatastoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Datastore m_datastore;
+    bool m_datastoreHasBeenSet = false;
 
     DatastoreStatistics m_statistics;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

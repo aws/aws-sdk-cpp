@@ -33,7 +33,7 @@ namespace Model
   class GitBranchFilterCriteria
   {
   public:
-    AWS_CODEPIPELINE_API GitBranchFilterCriteria();
+    AWS_CODEPIPELINE_API GitBranchFilterCriteria() = default;
     AWS_CODEPIPELINE_API GitBranchFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API GitBranchFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The list of patterns of Git branches that, when a commit is pushed, are to be
      * included as criteria that starts the pipeline.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludes() const{ return m_includes; }
+    inline const Aws::Vector<Aws::String>& GetIncludes() const { return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-    inline void SetIncludes(const Aws::Vector<Aws::String>& value) { m_includesHasBeenSet = true; m_includes = value; }
-    inline void SetIncludes(Aws::Vector<Aws::String>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-    inline GitBranchFilterCriteria& WithIncludes(const Aws::Vector<Aws::String>& value) { SetIncludes(value); return *this;}
-    inline GitBranchFilterCriteria& WithIncludes(Aws::Vector<Aws::String>&& value) { SetIncludes(std::move(value)); return *this;}
-    inline GitBranchFilterCriteria& AddIncludes(const Aws::String& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
-    inline GitBranchFilterCriteria& AddIncludes(Aws::String&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
-    inline GitBranchFilterCriteria& AddIncludes(const char* value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
+    template<typename IncludesT = Aws::Vector<Aws::String>>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = Aws::Vector<Aws::String>>
+    GitBranchFilterCriteria& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
+    template<typename IncludesT = Aws::String>
+    GitBranchFilterCriteria& AddIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes.emplace_back(std::forward<IncludesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>The list of patterns of Git branches that, when a commit is pushed, are to be
      * excluded from starting the pipeline.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludes() const{ return m_excludes; }
+    inline const Aws::Vector<Aws::String>& GetExcludes() const { return m_excludes; }
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-    inline void SetExcludes(const Aws::Vector<Aws::String>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-    inline void SetExcludes(Aws::Vector<Aws::String>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-    inline GitBranchFilterCriteria& WithExcludes(const Aws::Vector<Aws::String>& value) { SetExcludes(value); return *this;}
-    inline GitBranchFilterCriteria& WithExcludes(Aws::Vector<Aws::String>&& value) { SetExcludes(std::move(value)); return *this;}
-    inline GitBranchFilterCriteria& AddExcludes(const Aws::String& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
-    inline GitBranchFilterCriteria& AddExcludes(Aws::String&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
-    inline GitBranchFilterCriteria& AddExcludes(const char* value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
+    template<typename ExcludesT = Aws::Vector<Aws::String>>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = Aws::Vector<Aws::String>>
+    GitBranchFilterCriteria& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
+    template<typename ExcludesT = Aws::String>
+    GitBranchFilterCriteria& AddExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes.emplace_back(std::forward<ExcludesT>(value)); return *this; }
     ///@}
   private:
 

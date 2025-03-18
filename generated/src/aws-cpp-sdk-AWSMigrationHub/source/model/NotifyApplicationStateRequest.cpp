@@ -12,16 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyApplicationStateRequest::NotifyApplicationStateRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String NotifyApplicationStateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFleetResult::CreateFleetResult()
-{
-}
-
 CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("fleetId"))
   {
     m_fleetId = jsonValue.GetString("fleetId");
-
+    m_fleetIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

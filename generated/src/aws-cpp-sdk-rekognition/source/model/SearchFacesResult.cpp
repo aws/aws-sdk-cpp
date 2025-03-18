@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchFacesResult::SearchFacesResult()
-{
-}
-
 SearchFacesResult::SearchFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("SearchedFaceId"))
   {
     m_searchedFaceId = jsonValue.GetString("SearchedFaceId");
-
+    m_searchedFaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceMatches"))
   {
     Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
@@ -42,20 +37,20 @@ SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
     }
+    m_faceMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-AutoScalingGroup::AutoScalingGroup() : 
-    m_nameHasBeenSet(false),
-    m_hookHasBeenSet(false),
-    m_terminationHookHasBeenSet(false)
-{
-}
-
 AutoScalingGroup::AutoScalingGroup(JsonView jsonValue)
-  : AutoScalingGroup()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hook"))
   {
     m_hook = jsonValue.GetString("hook");
-
     m_hookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terminationHook"))
   {
     m_terminationHook = jsonValue.GetString("terminationHook");
-
     m_terminationHookHasBeenSet = true;
   }
-
   return *this;
 }
 

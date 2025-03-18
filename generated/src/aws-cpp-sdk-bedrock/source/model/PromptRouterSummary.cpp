@@ -18,24 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-PromptRouterSummary::PromptRouterSummary() : 
-    m_promptRouterNameHasBeenSet(false),
-    m_routingCriteriaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_promptRouterArnHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_fallbackModelHasBeenSet(false),
-    m_status(PromptRouterStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(PromptRouterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 PromptRouterSummary::PromptRouterSummary(JsonView jsonValue)
-  : PromptRouterSummary()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ PromptRouterSummary& PromptRouterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("promptRouterName"))
   {
     m_promptRouterName = jsonValue.GetString("promptRouterName");
-
     m_promptRouterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routingCriteria"))
   {
     m_routingCriteria = jsonValue.GetObject("routingCriteria");
-
     m_routingCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptRouterArn"))
   {
     m_promptRouterArn = jsonValue.GetString("promptRouterArn");
-
     m_promptRouterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("models"))
   {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
@@ -93,28 +64,21 @@ PromptRouterSummary& PromptRouterSummary::operator =(JsonView jsonValue)
     }
     m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fallbackModel"))
   {
     m_fallbackModel = jsonValue.GetObject("fallbackModel");
-
     m_fallbackModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PromptRouterStatusMapper::GetPromptRouterStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PromptRouterTypeMapper::GetPromptRouterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConnectInstanceIntegrationsRequest::ListConnectInstanceIntegrationsRequest() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectInstanceIntegrationsRequest::SerializePayload() const
 {
   return {};

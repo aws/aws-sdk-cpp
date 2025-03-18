@@ -33,7 +33,7 @@ namespace Model
   class ModifyClusterParameterGroupResult
   {
   public:
-    AWS_REDSHIFT_API ModifyClusterParameterGroupResult();
+    AWS_REDSHIFT_API ModifyClusterParameterGroupResult() = default;
     AWS_REDSHIFT_API ModifyClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API ModifyClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,13 +42,11 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
-    inline ModifyClusterParameterGroupResult& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline ModifyClusterParameterGroupResult& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline ModifyClusterParameterGroupResult& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    ModifyClusterParameterGroupResult& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,30 +55,31 @@ namespace Model
      * parameter group name-value pair, then the change could be pending a reboot of an
      * associated cluster.</p>
      */
-    inline const Aws::String& GetParameterGroupStatus() const{ return m_parameterGroupStatus; }
-    inline void SetParameterGroupStatus(const Aws::String& value) { m_parameterGroupStatus = value; }
-    inline void SetParameterGroupStatus(Aws::String&& value) { m_parameterGroupStatus = std::move(value); }
-    inline void SetParameterGroupStatus(const char* value) { m_parameterGroupStatus.assign(value); }
-    inline ModifyClusterParameterGroupResult& WithParameterGroupStatus(const Aws::String& value) { SetParameterGroupStatus(value); return *this;}
-    inline ModifyClusterParameterGroupResult& WithParameterGroupStatus(Aws::String&& value) { SetParameterGroupStatus(std::move(value)); return *this;}
-    inline ModifyClusterParameterGroupResult& WithParameterGroupStatus(const char* value) { SetParameterGroupStatus(value); return *this;}
+    inline const Aws::String& GetParameterGroupStatus() const { return m_parameterGroupStatus; }
+    template<typename ParameterGroupStatusT = Aws::String>
+    void SetParameterGroupStatus(ParameterGroupStatusT&& value) { m_parameterGroupStatusHasBeenSet = true; m_parameterGroupStatus = std::forward<ParameterGroupStatusT>(value); }
+    template<typename ParameterGroupStatusT = Aws::String>
+    ModifyClusterParameterGroupResult& WithParameterGroupStatus(ParameterGroupStatusT&& value) { SetParameterGroupStatus(std::forward<ParameterGroupStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyClusterParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyClusterParameterGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_parameterGroupName;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterGroupStatus;
+    bool m_parameterGroupStatusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

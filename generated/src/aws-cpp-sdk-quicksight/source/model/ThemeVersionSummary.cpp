@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ThemeVersionSummary::ThemeVersionSummary() : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ThemeVersionSummary::ThemeVersionSummary(JsonView jsonValue)
-  : ThemeVersionSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ThemeVersionSummary& ThemeVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

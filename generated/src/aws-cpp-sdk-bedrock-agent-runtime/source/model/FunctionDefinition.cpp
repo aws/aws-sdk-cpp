@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FunctionDefinition::FunctionDefinition() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_requireConfirmation(RequireConfirmation::NOT_SET),
-    m_requireConfirmationHasBeenSet(false)
-{
-}
-
 FunctionDefinition::FunctionDefinition(JsonView jsonValue)
-  : FunctionDefinition()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FunctionDefinition& FunctionDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -58,14 +44,11 @@ FunctionDefinition& FunctionDefinition::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requireConfirmation"))
   {
     m_requireConfirmation = RequireConfirmationMapper::GetRequireConfirmationForName(jsonValue.GetString("requireConfirmation"));
-
     m_requireConfirmationHasBeenSet = true;
   }
-
   return *this;
 }
 

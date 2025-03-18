@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CreateJsonClassifierRequest::CreateJsonClassifierRequest() : 
-    m_nameHasBeenSet(false),
-    m_jsonPathHasBeenSet(false)
-{
-}
-
 CreateJsonClassifierRequest::CreateJsonClassifierRequest(JsonView jsonValue)
-  : CreateJsonClassifierRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreateJsonClassifierRequest& CreateJsonClassifierRequest::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonPath"))
   {
     m_jsonPath = jsonValue.GetString("JsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   return *this;
 }
 

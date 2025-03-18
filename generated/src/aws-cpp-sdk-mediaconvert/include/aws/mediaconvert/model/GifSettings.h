@@ -33,7 +33,7 @@ namespace Model
   class GifSettings
   {
   public:
-    AWS_MEDIACONVERT_API GifSettings();
+    AWS_MEDIACONVERT_API GifSettings() = default;
     AWS_MEDIACONVERT_API GifSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API GifSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * input. Choose SPECIFIED if you want the service to use the frame rate you
      * specify in the settings FramerateNumerator and FramerateDenominator.
      */
-    inline const GifFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline GifFramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const GifFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(GifFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline GifSettings& WithFramerateControl(const GifFramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline GifSettings& WithFramerateControl(GifFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(GifFramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline GifSettings& WithFramerateControl(GifFramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose
      * Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
      */
-    inline const GifFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline GifFramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const GifFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(GifFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline GifSettings& WithFramerateConversionAlgorithm(const GifFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline GifSettings& WithFramerateConversionAlgorithm(GifFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(GifFramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline GifSettings& WithFramerateConversionAlgorithm(GifFramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline GifSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -99,23 +95,23 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline GifSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
     ///@}
   private:
 
-    GifFramerateControl m_framerateControl;
+    GifFramerateControl m_framerateControl{GifFramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    GifFramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    GifFramerateConversionAlgorithm m_framerateConversionAlgorithm{GifFramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
   };
 

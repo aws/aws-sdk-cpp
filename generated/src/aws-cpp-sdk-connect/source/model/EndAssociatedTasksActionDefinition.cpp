@@ -18,10 +18,6 @@ namespace Connect
 namespace Model
 {
 
-EndAssociatedTasksActionDefinition::EndAssociatedTasksActionDefinition()
-{
-}
-
 EndAssociatedTasksActionDefinition::EndAssociatedTasksActionDefinition(JsonView jsonValue)
 {
   *this = jsonValue;

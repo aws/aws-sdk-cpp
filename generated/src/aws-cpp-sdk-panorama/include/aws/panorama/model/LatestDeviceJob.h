@@ -34,7 +34,7 @@ namespace Model
   class LatestDeviceJob
   {
   public:
-    AWS_PANORAMA_API LatestDeviceJob();
+    AWS_PANORAMA_API LatestDeviceJob() = default;
     AWS_PANORAMA_API LatestDeviceJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API LatestDeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,42 @@ namespace Model
     /**
      * <p>The target version of the device software.</p>
      */
-    inline const Aws::String& GetImageVersion() const{ return m_imageVersion; }
+    inline const Aws::String& GetImageVersion() const { return m_imageVersion; }
     inline bool ImageVersionHasBeenSet() const { return m_imageVersionHasBeenSet; }
-    inline void SetImageVersion(const Aws::String& value) { m_imageVersionHasBeenSet = true; m_imageVersion = value; }
-    inline void SetImageVersion(Aws::String&& value) { m_imageVersionHasBeenSet = true; m_imageVersion = std::move(value); }
-    inline void SetImageVersion(const char* value) { m_imageVersionHasBeenSet = true; m_imageVersion.assign(value); }
-    inline LatestDeviceJob& WithImageVersion(const Aws::String& value) { SetImageVersion(value); return *this;}
-    inline LatestDeviceJob& WithImageVersion(Aws::String&& value) { SetImageVersion(std::move(value)); return *this;}
-    inline LatestDeviceJob& WithImageVersion(const char* value) { SetImageVersion(value); return *this;}
+    template<typename ImageVersionT = Aws::String>
+    void SetImageVersion(ImageVersionT&& value) { m_imageVersionHasBeenSet = true; m_imageVersion = std::forward<ImageVersionT>(value); }
+    template<typename ImageVersionT = Aws::String>
+    LatestDeviceJob& WithImageVersion(ImageVersionT&& value) { SetImageVersion(std::forward<ImageVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's type.</p>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline LatestDeviceJob& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline LatestDeviceJob& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline LatestDeviceJob& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the latest device job.</p>
      */
-    inline const UpdateProgress& GetStatus() const{ return m_status; }
+    inline UpdateProgress GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const UpdateProgress& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(UpdateProgress&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LatestDeviceJob& WithStatus(const UpdateProgress& value) { SetStatus(value); return *this;}
-    inline LatestDeviceJob& WithStatus(UpdateProgress&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(UpdateProgress value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LatestDeviceJob& WithStatus(UpdateProgress value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_imageVersion;
     bool m_imageVersionHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
 
-    UpdateProgress m_status;
+    UpdateProgress m_status{UpdateProgress::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class GetApplicationAccessScopeResult
   {
   public:
-    AWS_SSOADMIN_API GetApplicationAccessScopeResult();
+    AWS_SSOADMIN_API GetApplicationAccessScopeResult() = default;
     AWS_SSOADMIN_API GetApplicationAccessScopeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API GetApplicationAccessScopeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>An array of authorized targets associated with this access scope.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const{ return m_authorizedTargets; }
-    inline void SetAuthorizedTargets(const Aws::Vector<Aws::String>& value) { m_authorizedTargets = value; }
-    inline void SetAuthorizedTargets(Aws::Vector<Aws::String>&& value) { m_authorizedTargets = std::move(value); }
-    inline GetApplicationAccessScopeResult& WithAuthorizedTargets(const Aws::Vector<Aws::String>& value) { SetAuthorizedTargets(value); return *this;}
-    inline GetApplicationAccessScopeResult& WithAuthorizedTargets(Aws::Vector<Aws::String>&& value) { SetAuthorizedTargets(std::move(value)); return *this;}
-    inline GetApplicationAccessScopeResult& AddAuthorizedTargets(const Aws::String& value) { m_authorizedTargets.push_back(value); return *this; }
-    inline GetApplicationAccessScopeResult& AddAuthorizedTargets(Aws::String&& value) { m_authorizedTargets.push_back(std::move(value)); return *this; }
-    inline GetApplicationAccessScopeResult& AddAuthorizedTargets(const char* value) { m_authorizedTargets.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const { return m_authorizedTargets; }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    void SetAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::forward<AuthorizedTargetsT>(value); }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    GetApplicationAccessScopeResult& WithAuthorizedTargets(AuthorizedTargetsT&& value) { SetAuthorizedTargets(std::forward<AuthorizedTargetsT>(value)); return *this;}
+    template<typename AuthorizedTargetsT = Aws::String>
+    GetApplicationAccessScopeResult& AddAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.emplace_back(std::forward<AuthorizedTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +51,31 @@ namespace Model
      * <p>The name of the access scope that can be used with the authorized
      * targets.</p>
      */
-    inline const Aws::String& GetScope() const{ return m_scope; }
-    inline void SetScope(const Aws::String& value) { m_scope = value; }
-    inline void SetScope(Aws::String&& value) { m_scope = std::move(value); }
-    inline void SetScope(const char* value) { m_scope.assign(value); }
-    inline GetApplicationAccessScopeResult& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-    inline GetApplicationAccessScopeResult& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-    inline GetApplicationAccessScopeResult& WithScope(const char* value) { SetScope(value); return *this;}
+    inline const Aws::String& GetScope() const { return m_scope; }
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    GetApplicationAccessScopeResult& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationAccessScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationAccessScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationAccessScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationAccessScopeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_authorizedTargets;
+    bool m_authorizedTargetsHasBeenSet = false;
 
     Aws::String m_scope;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

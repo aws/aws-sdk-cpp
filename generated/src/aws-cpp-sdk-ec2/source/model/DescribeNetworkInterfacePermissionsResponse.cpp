@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse()
-{
-}
-
 DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissions
     if(!networkInterfacePermissionsNode.IsNull())
     {
       XmlNode networkInterfacePermissionsMember = networkInterfacePermissionsNode.FirstChild("item");
+      m_networkInterfacePermissionsHasBeenSet = !networkInterfacePermissionsMember.IsNull();
       while(!networkInterfacePermissionsMember.IsNull())
       {
         m_networkInterfacePermissions.push_back(networkInterfacePermissionsMember);
         networkInterfacePermissionsMember = networkInterfacePermissionsMember.NextNode("item");
       }
 
+      m_networkInterfacePermissionsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissions
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInterfacePermissionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-QueryLoggingConfig::QueryLoggingConfig() : 
-    m_idHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false)
-{
-}
-
 QueryLoggingConfig::QueryLoggingConfig(const XmlNode& xmlNode)
-  : QueryLoggingConfig()
 {
   *this = xmlNode;
 }

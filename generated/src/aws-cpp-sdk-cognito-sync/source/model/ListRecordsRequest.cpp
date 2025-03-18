@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecordsRequest::ListRecordsRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_lastSyncCount(0),
-    m_lastSyncCountHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_syncSessionTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRecordsRequest::SerializePayload() const
 {
   return {};

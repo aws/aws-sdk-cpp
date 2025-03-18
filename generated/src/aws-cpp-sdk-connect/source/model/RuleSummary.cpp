@@ -18,22 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RuleSummary::RuleSummary() : 
-    m_nameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleArnHasBeenSet(false),
-    m_eventSourceName(EventSourceName::NOT_SET),
-    m_eventSourceNameHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false),
-    m_actionSummariesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 RuleSummary::RuleSummary(JsonView jsonValue)
-  : RuleSummary()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ RuleSummary& RuleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleArn"))
   {
     m_ruleArn = jsonValue.GetString("RuleArn");
-
     m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSourceName"))
   {
     m_eventSourceName = EventSourceNameMapper::GetEventSourceNameForName(jsonValue.GetString("EventSourceName"));
-
     m_eventSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishStatus"))
   {
     m_publishStatus = RulePublishStatusMapper::GetRulePublishStatusForName(jsonValue.GetString("PublishStatus"));
-
     m_publishStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionSummaries"))
   {
     Aws::Utils::Array<JsonView> actionSummariesJsonList = jsonValue.GetArray("ActionSummaries");
@@ -84,21 +59,16 @@ RuleSummary& RuleSummary::operator =(JsonView jsonValue)
     }
     m_actionSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

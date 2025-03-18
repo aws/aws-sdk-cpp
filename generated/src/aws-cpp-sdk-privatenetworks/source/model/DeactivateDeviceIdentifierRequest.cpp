@@ -12,12 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeactivateDeviceIdentifierRequest::DeactivateDeviceIdentifierRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_deviceIdentifierArnHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateDeviceIdentifierRequest::SerializePayload() const
 {
   JsonValue payload;

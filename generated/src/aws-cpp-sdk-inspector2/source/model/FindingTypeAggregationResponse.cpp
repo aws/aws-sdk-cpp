@@ -18,18 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FindingTypeAggregationResponse::FindingTypeAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_exploitAvailableCount(0),
-    m_exploitAvailableCountHasBeenSet(false),
-    m_fixAvailableCount(0),
-    m_fixAvailableCountHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 FindingTypeAggregationResponse::FindingTypeAggregationResponse(JsonView jsonValue)
-  : FindingTypeAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FindingTypeAggregationResponse& FindingTypeAggregationResponse::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exploitAvailableCount"))
   {
     m_exploitAvailableCount = jsonValue.GetInt64("exploitAvailableCount");
-
     m_exploitAvailableCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixAvailableCount"))
   {
     m_fixAvailableCount = jsonValue.GetInt64("fixAvailableCount");
-
     m_fixAvailableCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

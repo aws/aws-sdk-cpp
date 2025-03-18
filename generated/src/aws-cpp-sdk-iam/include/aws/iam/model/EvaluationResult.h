@@ -40,7 +40,7 @@ namespace Model
   class EvaluationResult
   {
   public:
-    AWS_IAM_API EvaluationResult();
+    AWS_IAM_API EvaluationResult() = default;
     AWS_IAM_API EvaluationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API EvaluationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,40 +52,34 @@ namespace Model
     /**
      * <p>The name of the API operation tested on the indicated resource.</p>
      */
-    inline const Aws::String& GetEvalActionName() const{ return m_evalActionName; }
+    inline const Aws::String& GetEvalActionName() const { return m_evalActionName; }
     inline bool EvalActionNameHasBeenSet() const { return m_evalActionNameHasBeenSet; }
-    inline void SetEvalActionName(const Aws::String& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
-    inline void SetEvalActionName(Aws::String&& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = std::move(value); }
-    inline void SetEvalActionName(const char* value) { m_evalActionNameHasBeenSet = true; m_evalActionName.assign(value); }
-    inline EvaluationResult& WithEvalActionName(const Aws::String& value) { SetEvalActionName(value); return *this;}
-    inline EvaluationResult& WithEvalActionName(Aws::String&& value) { SetEvalActionName(std::move(value)); return *this;}
-    inline EvaluationResult& WithEvalActionName(const char* value) { SetEvalActionName(value); return *this;}
+    template<typename EvalActionNameT = Aws::String>
+    void SetEvalActionName(EvalActionNameT&& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = std::forward<EvalActionNameT>(value); }
+    template<typename EvalActionNameT = Aws::String>
+    EvaluationResult& WithEvalActionName(EvalActionNameT&& value) { SetEvalActionName(std::forward<EvalActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
-    inline const Aws::String& GetEvalResourceName() const{ return m_evalResourceName; }
+    inline const Aws::String& GetEvalResourceName() const { return m_evalResourceName; }
     inline bool EvalResourceNameHasBeenSet() const { return m_evalResourceNameHasBeenSet; }
-    inline void SetEvalResourceName(const Aws::String& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = value; }
-    inline void SetEvalResourceName(Aws::String&& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = std::move(value); }
-    inline void SetEvalResourceName(const char* value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName.assign(value); }
-    inline EvaluationResult& WithEvalResourceName(const Aws::String& value) { SetEvalResourceName(value); return *this;}
-    inline EvaluationResult& WithEvalResourceName(Aws::String&& value) { SetEvalResourceName(std::move(value)); return *this;}
-    inline EvaluationResult& WithEvalResourceName(const char* value) { SetEvalResourceName(value); return *this;}
+    template<typename EvalResourceNameT = Aws::String>
+    void SetEvalResourceName(EvalResourceNameT&& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = std::forward<EvalResourceNameT>(value); }
+    template<typename EvalResourceNameT = Aws::String>
+    EvaluationResult& WithEvalResourceName(EvalResourceNameT&& value) { SetEvalResourceName(std::forward<EvalResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result of the simulation.</p>
      */
-    inline const PolicyEvaluationDecisionType& GetEvalDecision() const{ return m_evalDecision; }
+    inline PolicyEvaluationDecisionType GetEvalDecision() const { return m_evalDecision; }
     inline bool EvalDecisionHasBeenSet() const { return m_evalDecisionHasBeenSet; }
-    inline void SetEvalDecision(const PolicyEvaluationDecisionType& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
-    inline void SetEvalDecision(PolicyEvaluationDecisionType&& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = std::move(value); }
-    inline EvaluationResult& WithEvalDecision(const PolicyEvaluationDecisionType& value) { SetEvalDecision(value); return *this;}
-    inline EvaluationResult& WithEvalDecision(PolicyEvaluationDecisionType&& value) { SetEvalDecision(std::move(value)); return *this;}
+    inline void SetEvalDecision(PolicyEvaluationDecisionType value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
+    inline EvaluationResult& WithEvalDecision(PolicyEvaluationDecisionType value) { SetEvalDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,14 @@ namespace Model
      * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
-    inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
+    inline const Aws::Vector<Statement>& GetMatchedStatements() const { return m_matchedStatements; }
     inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
-    inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
-    inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
-    inline EvaluationResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
-    inline EvaluationResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
-    inline EvaluationResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
-    inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
+    template<typename MatchedStatementsT = Aws::Vector<Statement>>
+    void SetMatchedStatements(MatchedStatementsT&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::forward<MatchedStatementsT>(value); }
+    template<typename MatchedStatementsT = Aws::Vector<Statement>>
+    EvaluationResult& WithMatchedStatements(MatchedStatementsT&& value) { SetMatchedStatements(std::forward<MatchedStatementsT>(value)); return *this;}
+    template<typename MatchedStatementsT = Statement>
+    EvaluationResult& AddMatchedStatements(MatchedStatementsT&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.emplace_back(std::forward<MatchedStatementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,15 +111,14 @@ namespace Model
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+    inline const Aws::Vector<Aws::String>& GetMissingContextValues() const { return m_missingContextValues; }
     inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
-    inline void SetMissingContextValues(const Aws::Vector<Aws::String>& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
-    inline void SetMissingContextValues(Aws::Vector<Aws::String>&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = std::move(value); }
-    inline EvaluationResult& WithMissingContextValues(const Aws::Vector<Aws::String>& value) { SetMissingContextValues(value); return *this;}
-    inline EvaluationResult& WithMissingContextValues(Aws::Vector<Aws::String>&& value) { SetMissingContextValues(std::move(value)); return *this;}
-    inline EvaluationResult& AddMissingContextValues(const Aws::String& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
-    inline EvaluationResult& AddMissingContextValues(Aws::String&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(std::move(value)); return *this; }
-    inline EvaluationResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
+    template<typename MissingContextValuesT = Aws::Vector<Aws::String>>
+    void SetMissingContextValues(MissingContextValuesT&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = std::forward<MissingContextValuesT>(value); }
+    template<typename MissingContextValuesT = Aws::Vector<Aws::String>>
+    EvaluationResult& WithMissingContextValues(MissingContextValuesT&& value) { SetMissingContextValues(std::forward<MissingContextValuesT>(value)); return *this;}
+    template<typename MissingContextValuesT = Aws::String>
+    EvaluationResult& AddMissingContextValues(MissingContextValuesT&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.emplace_back(std::forward<MissingContextValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,12 +127,12 @@ namespace Model
      * affect the results of the simulation. Only applies if the simulated user's
      * account is part of an organization.</p>
      */
-    inline const OrganizationsDecisionDetail& GetOrganizationsDecisionDetail() const{ return m_organizationsDecisionDetail; }
+    inline const OrganizationsDecisionDetail& GetOrganizationsDecisionDetail() const { return m_organizationsDecisionDetail; }
     inline bool OrganizationsDecisionDetailHasBeenSet() const { return m_organizationsDecisionDetailHasBeenSet; }
-    inline void SetOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
-    inline void SetOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = std::move(value); }
-    inline EvaluationResult& WithOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { SetOrganizationsDecisionDetail(value); return *this;}
-    inline EvaluationResult& WithOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { SetOrganizationsDecisionDetail(std::move(value)); return *this;}
+    template<typename OrganizationsDecisionDetailT = OrganizationsDecisionDetail>
+    void SetOrganizationsDecisionDetail(OrganizationsDecisionDetailT&& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = std::forward<OrganizationsDecisionDetailT>(value); }
+    template<typename OrganizationsDecisionDetailT = OrganizationsDecisionDetail>
+    EvaluationResult& WithOrganizationsDecisionDetail(OrganizationsDecisionDetailT&& value) { SetOrganizationsDecisionDetail(std::forward<OrganizationsDecisionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +140,12 @@ namespace Model
      * <p>Contains information about the effect that a permissions boundary has on a
      * policy simulation when the boundary is applied to an IAM entity.</p>
      */
-    inline const PermissionsBoundaryDecisionDetail& GetPermissionsBoundaryDecisionDetail() const{ return m_permissionsBoundaryDecisionDetail; }
+    inline const PermissionsBoundaryDecisionDetail& GetPermissionsBoundaryDecisionDetail() const { return m_permissionsBoundaryDecisionDetail; }
     inline bool PermissionsBoundaryDecisionDetailHasBeenSet() const { return m_permissionsBoundaryDecisionDetailHasBeenSet; }
-    inline void SetPermissionsBoundaryDecisionDetail(const PermissionsBoundaryDecisionDetail& value) { m_permissionsBoundaryDecisionDetailHasBeenSet = true; m_permissionsBoundaryDecisionDetail = value; }
-    inline void SetPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail&& value) { m_permissionsBoundaryDecisionDetailHasBeenSet = true; m_permissionsBoundaryDecisionDetail = std::move(value); }
-    inline EvaluationResult& WithPermissionsBoundaryDecisionDetail(const PermissionsBoundaryDecisionDetail& value) { SetPermissionsBoundaryDecisionDetail(value); return *this;}
-    inline EvaluationResult& WithPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail&& value) { SetPermissionsBoundaryDecisionDetail(std::move(value)); return *this;}
+    template<typename PermissionsBoundaryDecisionDetailT = PermissionsBoundaryDecisionDetail>
+    void SetPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetailT&& value) { m_permissionsBoundaryDecisionDetailHasBeenSet = true; m_permissionsBoundaryDecisionDetail = std::forward<PermissionsBoundaryDecisionDetailT>(value); }
+    template<typename PermissionsBoundaryDecisionDetailT = PermissionsBoundaryDecisionDetail>
+    EvaluationResult& WithPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetailT&& value) { SetPermissionsBoundaryDecisionDetail(std::forward<PermissionsBoundaryDecisionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,18 +166,15 @@ namespace Model
      * the evaluation denies access, the simulation ends. In this case, policy
      * evaluation does not proceed any further and this parameter is not returned.</p>
      */
-    inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
+    inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const { return m_evalDecisionDetails; }
     inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
-    inline void SetEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
-    inline void SetEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = std::move(value); }
-    inline EvaluationResult& WithEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { SetEvalDecisionDetails(value); return *this;}
-    inline EvaluationResult& WithEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { SetEvalDecisionDetails(std::move(value)); return *this;}
-    inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
-    inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), value); return *this; }
-    inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
-    inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline EvaluationResult& AddEvalDecisionDetails(const char* key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
-    inline EvaluationResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
+    template<typename EvalDecisionDetailsT = Aws::Map<Aws::String, PolicyEvaluationDecisionType>>
+    void SetEvalDecisionDetails(EvalDecisionDetailsT&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = std::forward<EvalDecisionDetailsT>(value); }
+    template<typename EvalDecisionDetailsT = Aws::Map<Aws::String, PolicyEvaluationDecisionType>>
+    EvaluationResult& WithEvalDecisionDetails(EvalDecisionDetailsT&& value) { SetEvalDecisionDetails(std::forward<EvalDecisionDetailsT>(value)); return *this;}
+    inline EvaluationResult& AddEvalDecisionDetails(Aws::String key, PolicyEvaluationDecisionType value) {
+      m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -192,14 +182,14 @@ namespace Model
      * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
-    inline const Aws::Vector<ResourceSpecificResult>& GetResourceSpecificResults() const{ return m_resourceSpecificResults; }
+    inline const Aws::Vector<ResourceSpecificResult>& GetResourceSpecificResults() const { return m_resourceSpecificResults; }
     inline bool ResourceSpecificResultsHasBeenSet() const { return m_resourceSpecificResultsHasBeenSet; }
-    inline void SetResourceSpecificResults(const Aws::Vector<ResourceSpecificResult>& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults = value; }
-    inline void SetResourceSpecificResults(Aws::Vector<ResourceSpecificResult>&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults = std::move(value); }
-    inline EvaluationResult& WithResourceSpecificResults(const Aws::Vector<ResourceSpecificResult>& value) { SetResourceSpecificResults(value); return *this;}
-    inline EvaluationResult& WithResourceSpecificResults(Aws::Vector<ResourceSpecificResult>&& value) { SetResourceSpecificResults(std::move(value)); return *this;}
-    inline EvaluationResult& AddResourceSpecificResults(const ResourceSpecificResult& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.push_back(value); return *this; }
-    inline EvaluationResult& AddResourceSpecificResults(ResourceSpecificResult&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.push_back(std::move(value)); return *this; }
+    template<typename ResourceSpecificResultsT = Aws::Vector<ResourceSpecificResult>>
+    void SetResourceSpecificResults(ResourceSpecificResultsT&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults = std::forward<ResourceSpecificResultsT>(value); }
+    template<typename ResourceSpecificResultsT = Aws::Vector<ResourceSpecificResult>>
+    EvaluationResult& WithResourceSpecificResults(ResourceSpecificResultsT&& value) { SetResourceSpecificResults(std::forward<ResourceSpecificResultsT>(value)); return *this;}
+    template<typename ResourceSpecificResultsT = ResourceSpecificResult>
+    EvaluationResult& AddResourceSpecificResults(ResourceSpecificResultsT&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.emplace_back(std::forward<ResourceSpecificResultsT>(value)); return *this; }
     ///@}
   private:
 
@@ -209,7 +199,7 @@ namespace Model
     Aws::String m_evalResourceName;
     bool m_evalResourceNameHasBeenSet = false;
 
-    PolicyEvaluationDecisionType m_evalDecision;
+    PolicyEvaluationDecisionType m_evalDecision{PolicyEvaluationDecisionType::NOT_SET};
     bool m_evalDecisionHasBeenSet = false;
 
     Aws::Vector<Statement> m_matchedStatements;

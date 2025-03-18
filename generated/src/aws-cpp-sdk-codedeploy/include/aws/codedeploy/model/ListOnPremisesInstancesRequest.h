@@ -28,7 +28,7 @@ namespace Model
   class ListOnPremisesInstancesRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API ListOnPremisesInstancesRequest();
+    AWS_CODEDEPLOY_API ListOnPremisesInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,10 @@ namespace Model
      * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
      * on-premises instances in the resulting list.</p> </li> </ul>
      */
-    inline const RegistrationStatus& GetRegistrationStatus() const{ return m_registrationStatus; }
+    inline RegistrationStatus GetRegistrationStatus() const { return m_registrationStatus; }
     inline bool RegistrationStatusHasBeenSet() const { return m_registrationStatusHasBeenSet; }
-    inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
-    inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = std::move(value); }
-    inline ListOnPremisesInstancesRequest& WithRegistrationStatus(const RegistrationStatus& value) { SetRegistrationStatus(value); return *this;}
-    inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+    inline void SetRegistrationStatus(RegistrationStatus value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
+    inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus value) { SetRegistrationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * <p>The on-premises instance tags that are used to restrict the on-premises
      * instance names returned.</p>
      */
-    inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+    inline const Aws::Vector<TagFilter>& GetTagFilters() const { return m_tagFilters; }
     inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
-    inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
-    inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
-    inline ListOnPremisesInstancesRequest& WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
-    inline ListOnPremisesInstancesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
-    inline ListOnPremisesInstancesRequest& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
-    inline ListOnPremisesInstancesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
+    template<typename TagFiltersT = Aws::Vector<TagFilter>>
+    void SetTagFilters(TagFiltersT&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::forward<TagFiltersT>(value); }
+    template<typename TagFiltersT = Aws::Vector<TagFilter>>
+    ListOnPremisesInstancesRequest& WithTagFilters(TagFiltersT&& value) { SetTagFilters(std::forward<TagFiltersT>(value)); return *this;}
+    template<typename TagFiltersT = TagFilter>
+    ListOnPremisesInstancesRequest& AddTagFilters(TagFiltersT&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.emplace_back(std::forward<TagFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,18 +74,16 @@ namespace Model
      * <p>An identifier returned from the previous list on-premises instances call. It
      * can be used to return the next set of on-premises instances in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOnPremisesInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOnPremisesInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOnPremisesInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOnPremisesInstancesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    RegistrationStatus m_registrationStatus;
+    RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
     bool m_registrationStatusHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;

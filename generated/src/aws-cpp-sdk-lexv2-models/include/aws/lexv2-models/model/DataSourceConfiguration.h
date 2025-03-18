@@ -35,7 +35,7 @@ namespace Model
   class DataSourceConfiguration
   {
   public:
-    AWS_LEXMODELSV2_API DataSourceConfiguration();
+    AWS_LEXMODELSV2_API DataSourceConfiguration() = default;
     AWS_LEXMODELSV2_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating
      * and managing Amazon OpenSearch Service domains</a>.</p>
      */
-    inline const OpensearchConfiguration& GetOpensearchConfiguration() const{ return m_opensearchConfiguration; }
+    inline const OpensearchConfiguration& GetOpensearchConfiguration() const { return m_opensearchConfiguration; }
     inline bool OpensearchConfigurationHasBeenSet() const { return m_opensearchConfigurationHasBeenSet; }
-    inline void SetOpensearchConfiguration(const OpensearchConfiguration& value) { m_opensearchConfigurationHasBeenSet = true; m_opensearchConfiguration = value; }
-    inline void SetOpensearchConfiguration(OpensearchConfiguration&& value) { m_opensearchConfigurationHasBeenSet = true; m_opensearchConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithOpensearchConfiguration(const OpensearchConfiguration& value) { SetOpensearchConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithOpensearchConfiguration(OpensearchConfiguration&& value) { SetOpensearchConfiguration(std::move(value)); return *this;}
+    template<typename OpensearchConfigurationT = OpensearchConfiguration>
+    void SetOpensearchConfiguration(OpensearchConfigurationT&& value) { m_opensearchConfigurationHasBeenSet = true; m_opensearchConfiguration = std::forward<OpensearchConfigurationT>(value); }
+    template<typename OpensearchConfigurationT = OpensearchConfiguration>
+    DataSourceConfiguration& WithOpensearchConfiguration(OpensearchConfigurationT&& value) { SetOpensearchConfiguration(std::forward<OpensearchConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/create-index.html">Creating
      * an index</a>.</p>
      */
-    inline const QnAKendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
+    inline const QnAKendraConfiguration& GetKendraConfiguration() const { return m_kendraConfiguration; }
     inline bool KendraConfigurationHasBeenSet() const { return m_kendraConfigurationHasBeenSet; }
-    inline void SetKendraConfiguration(const QnAKendraConfiguration& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = value; }
-    inline void SetKendraConfiguration(QnAKendraConfiguration&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithKendraConfiguration(const QnAKendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithKendraConfiguration(QnAKendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
+    template<typename KendraConfigurationT = QnAKendraConfiguration>
+    void SetKendraConfiguration(KendraConfigurationT&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::forward<KendraConfigurationT>(value); }
+    template<typename KendraConfigurationT = QnAKendraConfiguration>
+    DataSourceConfiguration& WithKendraConfiguration(KendraConfigurationT&& value) { SetKendraConfiguration(std::forward<KendraConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html">Building
      * a knowledge base</a>.</p>
      */
-    inline const BedrockKnowledgeStoreConfiguration& GetBedrockKnowledgeStoreConfiguration() const{ return m_bedrockKnowledgeStoreConfiguration; }
+    inline const BedrockKnowledgeStoreConfiguration& GetBedrockKnowledgeStoreConfiguration() const { return m_bedrockKnowledgeStoreConfiguration; }
     inline bool BedrockKnowledgeStoreConfigurationHasBeenSet() const { return m_bedrockKnowledgeStoreConfigurationHasBeenSet; }
-    inline void SetBedrockKnowledgeStoreConfiguration(const BedrockKnowledgeStoreConfiguration& value) { m_bedrockKnowledgeStoreConfigurationHasBeenSet = true; m_bedrockKnowledgeStoreConfiguration = value; }
-    inline void SetBedrockKnowledgeStoreConfiguration(BedrockKnowledgeStoreConfiguration&& value) { m_bedrockKnowledgeStoreConfigurationHasBeenSet = true; m_bedrockKnowledgeStoreConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithBedrockKnowledgeStoreConfiguration(const BedrockKnowledgeStoreConfiguration& value) { SetBedrockKnowledgeStoreConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithBedrockKnowledgeStoreConfiguration(BedrockKnowledgeStoreConfiguration&& value) { SetBedrockKnowledgeStoreConfiguration(std::move(value)); return *this;}
+    template<typename BedrockKnowledgeStoreConfigurationT = BedrockKnowledgeStoreConfiguration>
+    void SetBedrockKnowledgeStoreConfiguration(BedrockKnowledgeStoreConfigurationT&& value) { m_bedrockKnowledgeStoreConfigurationHasBeenSet = true; m_bedrockKnowledgeStoreConfiguration = std::forward<BedrockKnowledgeStoreConfigurationT>(value); }
+    template<typename BedrockKnowledgeStoreConfigurationT = BedrockKnowledgeStoreConfiguration>
+    DataSourceConfiguration& WithBedrockKnowledgeStoreConfiguration(BedrockKnowledgeStoreConfigurationT&& value) { SetBedrockKnowledgeStoreConfiguration(std::forward<BedrockKnowledgeStoreConfigurationT>(value)); return *this;}
     ///@}
   private:
 

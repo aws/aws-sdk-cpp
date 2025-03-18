@@ -33,7 +33,7 @@ namespace Model
   class TooltipItem
   {
   public:
-    AWS_QUICKSIGHT_API TooltipItem();
+    AWS_QUICKSIGHT_API TooltipItem() = default;
     AWS_QUICKSIGHT_API TooltipItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TooltipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The tooltip item for the fields.</p>
      */
-    inline const FieldTooltipItem& GetFieldTooltipItem() const{ return m_fieldTooltipItem; }
+    inline const FieldTooltipItem& GetFieldTooltipItem() const { return m_fieldTooltipItem; }
     inline bool FieldTooltipItemHasBeenSet() const { return m_fieldTooltipItemHasBeenSet; }
-    inline void SetFieldTooltipItem(const FieldTooltipItem& value) { m_fieldTooltipItemHasBeenSet = true; m_fieldTooltipItem = value; }
-    inline void SetFieldTooltipItem(FieldTooltipItem&& value) { m_fieldTooltipItemHasBeenSet = true; m_fieldTooltipItem = std::move(value); }
-    inline TooltipItem& WithFieldTooltipItem(const FieldTooltipItem& value) { SetFieldTooltipItem(value); return *this;}
-    inline TooltipItem& WithFieldTooltipItem(FieldTooltipItem&& value) { SetFieldTooltipItem(std::move(value)); return *this;}
+    template<typename FieldTooltipItemT = FieldTooltipItem>
+    void SetFieldTooltipItem(FieldTooltipItemT&& value) { m_fieldTooltipItemHasBeenSet = true; m_fieldTooltipItem = std::forward<FieldTooltipItemT>(value); }
+    template<typename FieldTooltipItemT = FieldTooltipItem>
+    TooltipItem& WithFieldTooltipItem(FieldTooltipItemT&& value) { SetFieldTooltipItem(std::forward<FieldTooltipItemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tooltip item for the columns that are not part of a field well.</p>
      */
-    inline const ColumnTooltipItem& GetColumnTooltipItem() const{ return m_columnTooltipItem; }
+    inline const ColumnTooltipItem& GetColumnTooltipItem() const { return m_columnTooltipItem; }
     inline bool ColumnTooltipItemHasBeenSet() const { return m_columnTooltipItemHasBeenSet; }
-    inline void SetColumnTooltipItem(const ColumnTooltipItem& value) { m_columnTooltipItemHasBeenSet = true; m_columnTooltipItem = value; }
-    inline void SetColumnTooltipItem(ColumnTooltipItem&& value) { m_columnTooltipItemHasBeenSet = true; m_columnTooltipItem = std::move(value); }
-    inline TooltipItem& WithColumnTooltipItem(const ColumnTooltipItem& value) { SetColumnTooltipItem(value); return *this;}
-    inline TooltipItem& WithColumnTooltipItem(ColumnTooltipItem&& value) { SetColumnTooltipItem(std::move(value)); return *this;}
+    template<typename ColumnTooltipItemT = ColumnTooltipItem>
+    void SetColumnTooltipItem(ColumnTooltipItemT&& value) { m_columnTooltipItemHasBeenSet = true; m_columnTooltipItem = std::forward<ColumnTooltipItemT>(value); }
+    template<typename ColumnTooltipItemT = ColumnTooltipItem>
+    TooltipItem& WithColumnTooltipItem(ColumnTooltipItemT&& value) { SetColumnTooltipItem(std::forward<ColumnTooltipItemT>(value)); return *this;}
     ///@}
   private:
 

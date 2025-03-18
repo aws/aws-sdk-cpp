@@ -35,7 +35,7 @@ namespace Model
   class VPC
   {
   public:
-    AWS_ROUTE53_API VPC();
+    AWS_ROUTE53_API VPC() = default;
     AWS_ROUTE53_API VPC(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API VPC& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
-    inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
+    inline VPCRegion GetVPCRegion() const { return m_vPCRegion; }
     inline bool VPCRegionHasBeenSet() const { return m_vPCRegionHasBeenSet; }
-    inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
-    inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
-    inline VPC& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
-    inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
+    inline void SetVPCRegion(VPCRegion value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
+    inline VPC& WithVPCRegion(VPCRegion value) { SetVPCRegion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetVPCId() const{ return m_vPCId; }
+    inline const Aws::String& GetVPCId() const { return m_vPCId; }
     inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
-    inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
-    inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::move(value); }
-    inline void SetVPCId(const char* value) { m_vPCIdHasBeenSet = true; m_vPCId.assign(value); }
-    inline VPC& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
-    inline VPC& WithVPCId(Aws::String&& value) { SetVPCId(std::move(value)); return *this;}
-    inline VPC& WithVPCId(const char* value) { SetVPCId(value); return *this;}
+    template<typename VPCIdT = Aws::String>
+    void SetVPCId(VPCIdT&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::forward<VPCIdT>(value); }
+    template<typename VPCIdT = Aws::String>
+    VPC& WithVPCId(VPCIdT&& value) { SetVPCId(std::forward<VPCIdT>(value)); return *this;}
     ///@}
   private:
 
-    VPCRegion m_vPCRegion;
+    VPCRegion m_vPCRegion{VPCRegion::NOT_SET};
     bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_vPCId;

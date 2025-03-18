@@ -34,7 +34,7 @@ namespace Model
   class PivotTableDataPathOption
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableDataPathOption();
+    AWS_QUICKSIGHT_API PivotTableDataPathOption() = default;
     AWS_QUICKSIGHT_API PivotTableDataPathOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableDataPathOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The list of data path values for the data path options.</p>
      */
-    inline const Aws::Vector<DataPathValue>& GetDataPathList() const{ return m_dataPathList; }
+    inline const Aws::Vector<DataPathValue>& GetDataPathList() const { return m_dataPathList; }
     inline bool DataPathListHasBeenSet() const { return m_dataPathListHasBeenSet; }
-    inline void SetDataPathList(const Aws::Vector<DataPathValue>& value) { m_dataPathListHasBeenSet = true; m_dataPathList = value; }
-    inline void SetDataPathList(Aws::Vector<DataPathValue>&& value) { m_dataPathListHasBeenSet = true; m_dataPathList = std::move(value); }
-    inline PivotTableDataPathOption& WithDataPathList(const Aws::Vector<DataPathValue>& value) { SetDataPathList(value); return *this;}
-    inline PivotTableDataPathOption& WithDataPathList(Aws::Vector<DataPathValue>&& value) { SetDataPathList(std::move(value)); return *this;}
-    inline PivotTableDataPathOption& AddDataPathList(const DataPathValue& value) { m_dataPathListHasBeenSet = true; m_dataPathList.push_back(value); return *this; }
-    inline PivotTableDataPathOption& AddDataPathList(DataPathValue&& value) { m_dataPathListHasBeenSet = true; m_dataPathList.push_back(std::move(value)); return *this; }
+    template<typename DataPathListT = Aws::Vector<DataPathValue>>
+    void SetDataPathList(DataPathListT&& value) { m_dataPathListHasBeenSet = true; m_dataPathList = std::forward<DataPathListT>(value); }
+    template<typename DataPathListT = Aws::Vector<DataPathValue>>
+    PivotTableDataPathOption& WithDataPathList(DataPathListT&& value) { SetDataPathList(std::forward<DataPathListT>(value)); return *this;}
+    template<typename DataPathListT = DataPathValue>
+    PivotTableDataPathOption& AddDataPathList(DataPathListT&& value) { m_dataPathListHasBeenSet = true; m_dataPathList.emplace_back(std::forward<DataPathListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The width of the data path option.</p>
      */
-    inline const Aws::String& GetWidth() const{ return m_width; }
+    inline const Aws::String& GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-    inline void SetWidth(const Aws::String& value) { m_widthHasBeenSet = true; m_width = value; }
-    inline void SetWidth(Aws::String&& value) { m_widthHasBeenSet = true; m_width = std::move(value); }
-    inline void SetWidth(const char* value) { m_widthHasBeenSet = true; m_width.assign(value); }
-    inline PivotTableDataPathOption& WithWidth(const Aws::String& value) { SetWidth(value); return *this;}
-    inline PivotTableDataPathOption& WithWidth(Aws::String&& value) { SetWidth(std::move(value)); return *this;}
-    inline PivotTableDataPathOption& WithWidth(const char* value) { SetWidth(value); return *this;}
+    template<typename WidthT = Aws::String>
+    void SetWidth(WidthT&& value) { m_widthHasBeenSet = true; m_width = std::forward<WidthT>(value); }
+    template<typename WidthT = Aws::String>
+    PivotTableDataPathOption& WithWidth(WidthT&& value) { SetWidth(std::forward<WidthT>(value)); return *this;}
     ///@}
   private:
 

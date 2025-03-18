@@ -18,20 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-PrincipalResourcePermissions::PrincipalResourcePermissions() : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false)
-{
-}
-
 PrincipalResourcePermissions::PrincipalResourcePermissions(JsonView jsonValue)
-  : PrincipalResourcePermissions()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
   if(jsonValue.ValueExists("Principal"))
   {
     m_principal = jsonValue.GetObject("Principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = jsonValue.GetObject("Resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetObject("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -68,7 +49,6 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
     }
     m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsWithGrantOption"))
   {
     Aws::Utils::Array<JsonView> permissionsWithGrantOptionJsonList = jsonValue.GetArray("PermissionsWithGrantOption");
@@ -78,28 +58,21 @@ PrincipalResourcePermissions& PrincipalResourcePermissions::operator =(JsonView 
     }
     m_permissionsWithGrantOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalDetails"))
   {
     m_additionalDetails = jsonValue.GetObject("AdditionalDetails");
-
     m_additionalDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("LastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

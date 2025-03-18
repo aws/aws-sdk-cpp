@@ -26,7 +26,7 @@ namespace Model
   class ListBulkImportJobsRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API ListBulkImportJobsRequest();
+    AWS_IOTSITEWISE_API ListBulkImportJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The token to be used for the next set of paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBulkImportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBulkImportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBulkImportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBulkImportJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return for each paginated request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBulkImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,22 +66,20 @@ namespace Model
      * <p>You can use a filter to select the bulk import jobs that you want to
      * retrieve.</p>
      */
-    inline const ListBulkImportJobsFilter& GetFilter() const{ return m_filter; }
+    inline ListBulkImportJobsFilter GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ListBulkImportJobsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ListBulkImportJobsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListBulkImportJobsRequest& WithFilter(const ListBulkImportJobsFilter& value) { SetFilter(value); return *this;}
-    inline ListBulkImportJobsRequest& WithFilter(ListBulkImportJobsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline void SetFilter(ListBulkImportJobsFilter value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline ListBulkImportJobsRequest& WithFilter(ListBulkImportJobsFilter value) { SetFilter(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ListBulkImportJobsFilter m_filter;
+    ListBulkImportJobsFilter m_filter{ListBulkImportJobsFilter::NOT_SET};
     bool m_filterHasBeenSet = false;
   };
 

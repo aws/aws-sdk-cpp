@@ -12,21 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceRequest::CreateInstanceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_identityManagementType(DirectoryType::NOT_SET),
-    m_identityManagementTypeHasBeenSet(false),
-    m_instanceAliasHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_inboundCallsEnabled(false),
-    m_inboundCallsEnabledHasBeenSet(false),
-    m_outboundCallsEnabled(false),
-    m_outboundCallsEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

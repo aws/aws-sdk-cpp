@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-NodegroupResources::NodegroupResources() : 
-    m_autoScalingGroupsHasBeenSet(false),
-    m_remoteAccessSecurityGroupHasBeenSet(false)
-{
-}
-
 NodegroupResources::NodegroupResources(JsonView jsonValue)
-  : NodegroupResources()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ NodegroupResources& NodegroupResources::operator =(JsonView jsonValue)
     }
     m_autoScalingGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteAccessSecurityGroup"))
   {
     m_remoteAccessSecurityGroup = jsonValue.GetString("remoteAccessSecurityGroup");
-
     m_remoteAccessSecurityGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

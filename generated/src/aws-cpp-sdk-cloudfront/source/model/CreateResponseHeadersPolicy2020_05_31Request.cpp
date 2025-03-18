@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateResponseHeadersPolicy2020_05_31Request::CreateResponseHeadersPolicy2020_05_31Request() : 
-    m_responseHeadersPolicyConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateResponseHeadersPolicy2020_05_31Request::SerializePayload() const
 {

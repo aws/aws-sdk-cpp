@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeliverySourceRequest::GetDeliverySourceRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDeliverySourceRequest::SerializePayload() const
 {
   JsonValue payload;

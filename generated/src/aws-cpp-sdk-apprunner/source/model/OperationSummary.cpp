@@ -18,21 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-OperationSummary::OperationSummary() : 
-    m_idHasBeenSet(false),
-    m_type(OperationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 OperationSummary::OperationSummary(JsonView jsonValue)
-  : OperationSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ OperationSummary& OperationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndedAt"))
   {
     m_endedAt = jsonValue.GetDouble("EndedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

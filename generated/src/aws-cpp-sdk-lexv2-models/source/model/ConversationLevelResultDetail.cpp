@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConversationLevelResultDetail::ConversationLevelResultDetail() : 
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false)
-{
-}
-
 ConversationLevelResultDetail::ConversationLevelResultDetail(JsonView jsonValue)
-  : ConversationLevelResultDetail()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConversationLevelResultDetail& ConversationLevelResultDetail::operator =(JsonVie
   if(jsonValue.ValueExists("endToEndResult"))
   {
     m_endToEndResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("endToEndResult"));
-
     m_endToEndResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResult"))
   {
     m_speechTranscriptionResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("speechTranscriptionResult"));
-
     m_speechTranscriptionResultHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace deadline
 namespace Model
 {
 
-WorkerSessionSummary::WorkerSessionSummary() : 
-    m_sessionIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lifecycleStatus(SessionLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
-    m_targetLifecycleStatusHasBeenSet(false)
-{
-}
-
 WorkerSessionSummary::WorkerSessionSummary(JsonView jsonValue)
-  : WorkerSessionSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ WorkerSessionSummary& WorkerSessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStatus"))
   {
     m_lifecycleStatus = SessionLifecycleStatusMapper::GetSessionLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
-
     m_lifecycleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLifecycleStatus"))
   {
     m_targetLifecycleStatus = SessionLifecycleTargetStatusMapper::GetSessionLifecycleTargetStatusForName(jsonValue.GetString("targetLifecycleStatus"));
-
     m_targetLifecycleStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

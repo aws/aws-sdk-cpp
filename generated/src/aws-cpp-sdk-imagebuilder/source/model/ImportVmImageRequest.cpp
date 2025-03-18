@@ -12,20 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportVmImageRequest::ImportVmImageRequest() : 
-    m_nameHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_vmImportTaskIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String ImportVmImageRequest::SerializePayload() const
 {
   JsonValue payload;

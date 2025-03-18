@@ -22,7 +22,7 @@ namespace Model
   class SendInvitesRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API SendInvitesRequest();
+    AWS_REPOSTSPACE_API SendInvitesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,57 +37,50 @@ namespace Model
     /**
      * <p>The array of identifiers for the users and groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccessorIds() const{ return m_accessorIds; }
+    inline const Aws::Vector<Aws::String>& GetAccessorIds() const { return m_accessorIds; }
     inline bool AccessorIdsHasBeenSet() const { return m_accessorIdsHasBeenSet; }
-    inline void SetAccessorIds(const Aws::Vector<Aws::String>& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = value; }
-    inline void SetAccessorIds(Aws::Vector<Aws::String>&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = std::move(value); }
-    inline SendInvitesRequest& WithAccessorIds(const Aws::Vector<Aws::String>& value) { SetAccessorIds(value); return *this;}
-    inline SendInvitesRequest& WithAccessorIds(Aws::Vector<Aws::String>&& value) { SetAccessorIds(std::move(value)); return *this;}
-    inline SendInvitesRequest& AddAccessorIds(const Aws::String& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(value); return *this; }
-    inline SendInvitesRequest& AddAccessorIds(Aws::String&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(std::move(value)); return *this; }
-    inline SendInvitesRequest& AddAccessorIds(const char* value) { m_accessorIdsHasBeenSet = true; m_accessorIds.push_back(value); return *this; }
+    template<typename AccessorIdsT = Aws::Vector<Aws::String>>
+    void SetAccessorIds(AccessorIdsT&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds = std::forward<AccessorIdsT>(value); }
+    template<typename AccessorIdsT = Aws::Vector<Aws::String>>
+    SendInvitesRequest& WithAccessorIds(AccessorIdsT&& value) { SetAccessorIds(std::forward<AccessorIdsT>(value)); return *this;}
+    template<typename AccessorIdsT = Aws::String>
+    SendInvitesRequest& AddAccessorIds(AccessorIdsT&& value) { m_accessorIdsHasBeenSet = true; m_accessorIds.emplace_back(std::forward<AccessorIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The body of the invite.</p>
      */
-    inline const Aws::String& GetMemberBody() const{ return m_body; }
+    inline const Aws::String& GetMemberBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline SendInvitesRequest& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline SendInvitesRequest& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline SendInvitesRequest& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    SendInvitesRequest& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the private re:Post.</p>
      */
-    inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-    inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-    inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-    inline SendInvitesRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-    inline SendInvitesRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-    inline SendInvitesRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    SendInvitesRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the invite.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline SendInvitesRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline SendInvitesRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline SendInvitesRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    SendInvitesRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeShardsRequest::MergeShardsRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_shardToMergeHasBeenSet(false),
-    m_adjacentShardToMergeHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String MergeShardsRequest::SerializePayload() const
 {
   JsonValue payload;

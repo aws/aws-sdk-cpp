@@ -20,19 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-CopyPartResult::CopyPartResult() : 
-    m_eTagHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
-{
-}
-
 CopyPartResult::CopyPartResult(const XmlNode& xmlNode)
-  : CopyPartResult()
 {
   *this = xmlNode;
 }

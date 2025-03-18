@@ -35,7 +35,7 @@ namespace Model
   class DescribeLoadBasedAutoScalingResult
   {
   public:
-    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult();
+    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult() = default;
     AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
      * describe each layer's configuration.</p>
      */
-    inline const Aws::Vector<LoadBasedAutoScalingConfiguration>& GetLoadBasedAutoScalingConfigurations() const{ return m_loadBasedAutoScalingConfigurations; }
-    inline void SetLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { m_loadBasedAutoScalingConfigurations = value; }
-    inline void SetLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { m_loadBasedAutoScalingConfigurations = std::move(value); }
-    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
-    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { SetLoadBasedAutoScalingConfigurations(std::move(value)); return *this;}
-    inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(const LoadBasedAutoScalingConfiguration& value) { m_loadBasedAutoScalingConfigurations.push_back(value); return *this; }
-    inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LoadBasedAutoScalingConfiguration>& GetLoadBasedAutoScalingConfigurations() const { return m_loadBasedAutoScalingConfigurations; }
+    template<typename LoadBasedAutoScalingConfigurationsT = Aws::Vector<LoadBasedAutoScalingConfiguration>>
+    void SetLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfigurationsT&& value) { m_loadBasedAutoScalingConfigurationsHasBeenSet = true; m_loadBasedAutoScalingConfigurations = std::forward<LoadBasedAutoScalingConfigurationsT>(value); }
+    template<typename LoadBasedAutoScalingConfigurationsT = Aws::Vector<LoadBasedAutoScalingConfiguration>>
+    DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfigurationsT&& value) { SetLoadBasedAutoScalingConfigurations(std::forward<LoadBasedAutoScalingConfigurationsT>(value)); return *this;}
+    template<typename LoadBasedAutoScalingConfigurationsT = LoadBasedAutoScalingConfiguration>
+    DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfigurationsT&& value) { m_loadBasedAutoScalingConfigurationsHasBeenSet = true; m_loadBasedAutoScalingConfigurations.emplace_back(std::forward<LoadBasedAutoScalingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLoadBasedAutoScalingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLoadBasedAutoScalingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLoadBasedAutoScalingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLoadBasedAutoScalingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LoadBasedAutoScalingConfiguration> m_loadBasedAutoScalingConfigurations;
+    bool m_loadBasedAutoScalingConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

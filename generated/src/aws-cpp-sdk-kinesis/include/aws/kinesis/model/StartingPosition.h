@@ -34,7 +34,7 @@ namespace Model
   class StartingPosition
   {
   public:
-    AWS_KINESIS_API StartingPosition();
+    AWS_KINESIS_API StartingPosition() = default;
     AWS_KINESIS_API StartingPosition(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API StartingPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * <code>LATEST</code>: Start streaming just after the most recent record in the
      * shard, so that you always read the most recent data in the shard.</p>
      */
-    inline const ShardIteratorType& GetType() const{ return m_type; }
+    inline ShardIteratorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ShardIteratorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ShardIteratorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StartingPosition& WithType(const ShardIteratorType& value) { SetType(value); return *this;}
-    inline StartingPosition& WithType(ShardIteratorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ShardIteratorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StartingPosition& WithType(ShardIteratorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * streaming. To specify a sequence number, set <code>StartingPosition</code> to
      * <code>AT_SEQUENCE_NUMBER</code> or <code>AFTER_SEQUENCE_NUMBER</code>.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
-    inline StartingPosition& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline StartingPosition& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline StartingPosition& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    StartingPosition& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,22 +85,22 @@ namespace Model
      * horizon, records will be streamed from the oldest untrimmed data record
      * (<code>TRIM_HORIZON</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline StartingPosition& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline StartingPosition& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    StartingPosition& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
-    ShardIteratorType m_type;
+    ShardIteratorType m_type{ShardIteratorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

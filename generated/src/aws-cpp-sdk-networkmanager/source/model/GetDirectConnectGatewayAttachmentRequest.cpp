@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDirectConnectGatewayAttachmentRequest::GetDirectConnectGatewayAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDirectConnectGatewayAttachmentRequest::SerializePayload() const
 {
   return {};

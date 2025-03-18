@@ -92,7 +92,7 @@ namespace Model
   class AccountQuota
   {
   public:
-    AWS_RDS_API AccountQuota();
+    AWS_RDS_API AccountQuota() = default;
     AWS_RDS_API AccountQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API AccountQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -104,21 +104,19 @@ namespace Model
     /**
      * <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccountQuotaName() const{ return m_accountQuotaName; }
+    inline const Aws::String& GetAccountQuotaName() const { return m_accountQuotaName; }
     inline bool AccountQuotaNameHasBeenSet() const { return m_accountQuotaNameHasBeenSet; }
-    inline void SetAccountQuotaName(const Aws::String& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
-    inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = std::move(value); }
-    inline void SetAccountQuotaName(const char* value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName.assign(value); }
-    inline AccountQuota& WithAccountQuotaName(const Aws::String& value) { SetAccountQuotaName(value); return *this;}
-    inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(std::move(value)); return *this;}
-    inline AccountQuota& WithAccountQuotaName(const char* value) { SetAccountQuotaName(value); return *this;}
+    template<typename AccountQuotaNameT = Aws::String>
+    void SetAccountQuotaName(AccountQuotaNameT&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = std::forward<AccountQuotaNameT>(value); }
+    template<typename AccountQuotaNameT = Aws::String>
+    AccountQuota& WithAccountQuotaName(AccountQuotaNameT&& value) { SetAccountQuotaName(std::forward<AccountQuotaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount currently used toward the quota maximum.</p>
      */
-    inline long long GetUsed() const{ return m_used; }
+    inline long long GetUsed() const { return m_used; }
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
     inline AccountQuota& WithUsed(long long value) { SetUsed(value); return *this;}
@@ -128,7 +126,7 @@ namespace Model
     /**
      * <p>The maximum allowed value for the quota.</p>
      */
-    inline long long GetMax() const{ return m_max; }
+    inline long long GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(long long value) { m_maxHasBeenSet = true; m_max = value; }
     inline AccountQuota& WithMax(long long value) { SetMax(value); return *this;}
@@ -138,10 +136,10 @@ namespace Model
     Aws::String m_accountQuotaName;
     bool m_accountQuotaNameHasBeenSet = false;
 
-    long long m_used;
+    long long m_used{0};
     bool m_usedHasBeenSet = false;
 
-    long long m_max;
+    long long m_max{0};
     bool m_maxHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class ModifyInstanceCreditSpecificationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyInstanceCreditSpecificationRequest();
+    AWS_EC2_API ModifyInstanceCreditSpecificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyInstanceCreditSpecificationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,32 +58,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ModifyInstanceCreditSpecificationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ModifyInstanceCreditSpecificationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ModifyInstanceCreditSpecificationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ModifyInstanceCreditSpecificationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the credit option for CPU usage.</p>
      */
-    inline const Aws::Vector<InstanceCreditSpecificationRequest>& GetInstanceCreditSpecifications() const{ return m_instanceCreditSpecifications; }
+    inline const Aws::Vector<InstanceCreditSpecificationRequest>& GetInstanceCreditSpecifications() const { return m_instanceCreditSpecifications; }
     inline bool InstanceCreditSpecificationsHasBeenSet() const { return m_instanceCreditSpecificationsHasBeenSet; }
-    inline void SetInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecificationRequest>& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = value; }
-    inline void SetInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecificationRequest>&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = std::move(value); }
-    inline ModifyInstanceCreditSpecificationRequest& WithInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecificationRequest>& value) { SetInstanceCreditSpecifications(value); return *this;}
-    inline ModifyInstanceCreditSpecificationRequest& WithInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecificationRequest>&& value) { SetInstanceCreditSpecifications(std::move(value)); return *this;}
-    inline ModifyInstanceCreditSpecificationRequest& AddInstanceCreditSpecifications(const InstanceCreditSpecificationRequest& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.push_back(value); return *this; }
-    inline ModifyInstanceCreditSpecificationRequest& AddInstanceCreditSpecifications(InstanceCreditSpecificationRequest&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.push_back(std::move(value)); return *this; }
+    template<typename InstanceCreditSpecificationsT = Aws::Vector<InstanceCreditSpecificationRequest>>
+    void SetInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = std::forward<InstanceCreditSpecificationsT>(value); }
+    template<typename InstanceCreditSpecificationsT = Aws::Vector<InstanceCreditSpecificationRequest>>
+    ModifyInstanceCreditSpecificationRequest& WithInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { SetInstanceCreditSpecifications(std::forward<InstanceCreditSpecificationsT>(value)); return *this;}
+    template<typename InstanceCreditSpecificationsT = InstanceCreditSpecificationRequest>
+    ModifyInstanceCreditSpecificationRequest& AddInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.emplace_back(std::forward<InstanceCreditSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;

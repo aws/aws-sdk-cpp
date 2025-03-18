@@ -30,7 +30,7 @@ namespace Model
   class SearchInsightsResult
   {
   public:
-    AWS_DEVOPSGURU_API SearchInsightsResult();
+    AWS_DEVOPSGURU_API SearchInsightsResult() = default;
     AWS_DEVOPSGURU_API SearchInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVOPSGURU_API SearchInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,26 @@ namespace Model
     /**
      * <p> The returned proactive insights. </p>
      */
-    inline const Aws::Vector<ProactiveInsightSummary>& GetProactiveInsights() const{ return m_proactiveInsights; }
-    inline void SetProactiveInsights(const Aws::Vector<ProactiveInsightSummary>& value) { m_proactiveInsights = value; }
-    inline void SetProactiveInsights(Aws::Vector<ProactiveInsightSummary>&& value) { m_proactiveInsights = std::move(value); }
-    inline SearchInsightsResult& WithProactiveInsights(const Aws::Vector<ProactiveInsightSummary>& value) { SetProactiveInsights(value); return *this;}
-    inline SearchInsightsResult& WithProactiveInsights(Aws::Vector<ProactiveInsightSummary>&& value) { SetProactiveInsights(std::move(value)); return *this;}
-    inline SearchInsightsResult& AddProactiveInsights(const ProactiveInsightSummary& value) { m_proactiveInsights.push_back(value); return *this; }
-    inline SearchInsightsResult& AddProactiveInsights(ProactiveInsightSummary&& value) { m_proactiveInsights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProactiveInsightSummary>& GetProactiveInsights() const { return m_proactiveInsights; }
+    template<typename ProactiveInsightsT = Aws::Vector<ProactiveInsightSummary>>
+    void SetProactiveInsights(ProactiveInsightsT&& value) { m_proactiveInsightsHasBeenSet = true; m_proactiveInsights = std::forward<ProactiveInsightsT>(value); }
+    template<typename ProactiveInsightsT = Aws::Vector<ProactiveInsightSummary>>
+    SearchInsightsResult& WithProactiveInsights(ProactiveInsightsT&& value) { SetProactiveInsights(std::forward<ProactiveInsightsT>(value)); return *this;}
+    template<typename ProactiveInsightsT = ProactiveInsightSummary>
+    SearchInsightsResult& AddProactiveInsights(ProactiveInsightsT&& value) { m_proactiveInsightsHasBeenSet = true; m_proactiveInsights.emplace_back(std::forward<ProactiveInsightsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The returned reactive insights. </p>
      */
-    inline const Aws::Vector<ReactiveInsightSummary>& GetReactiveInsights() const{ return m_reactiveInsights; }
-    inline void SetReactiveInsights(const Aws::Vector<ReactiveInsightSummary>& value) { m_reactiveInsights = value; }
-    inline void SetReactiveInsights(Aws::Vector<ReactiveInsightSummary>&& value) { m_reactiveInsights = std::move(value); }
-    inline SearchInsightsResult& WithReactiveInsights(const Aws::Vector<ReactiveInsightSummary>& value) { SetReactiveInsights(value); return *this;}
-    inline SearchInsightsResult& WithReactiveInsights(Aws::Vector<ReactiveInsightSummary>&& value) { SetReactiveInsights(std::move(value)); return *this;}
-    inline SearchInsightsResult& AddReactiveInsights(const ReactiveInsightSummary& value) { m_reactiveInsights.push_back(value); return *this; }
-    inline SearchInsightsResult& AddReactiveInsights(ReactiveInsightSummary&& value) { m_reactiveInsights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReactiveInsightSummary>& GetReactiveInsights() const { return m_reactiveInsights; }
+    template<typename ReactiveInsightsT = Aws::Vector<ReactiveInsightSummary>>
+    void SetReactiveInsights(ReactiveInsightsT&& value) { m_reactiveInsightsHasBeenSet = true; m_reactiveInsights = std::forward<ReactiveInsightsT>(value); }
+    template<typename ReactiveInsightsT = Aws::Vector<ReactiveInsightSummary>>
+    SearchInsightsResult& WithReactiveInsights(ReactiveInsightsT&& value) { SetReactiveInsights(std::forward<ReactiveInsightsT>(value)); return *this;}
+    template<typename ReactiveInsightsT = ReactiveInsightSummary>
+    SearchInsightsResult& AddReactiveInsights(ReactiveInsightsT&& value) { m_reactiveInsightsHasBeenSet = true; m_reactiveInsights.emplace_back(std::forward<ReactiveInsightsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,34 +66,34 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchInsightsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchInsightsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchInsightsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchInsightsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProactiveInsightSummary> m_proactiveInsights;
+    bool m_proactiveInsightsHasBeenSet = false;
 
     Aws::Vector<ReactiveInsightSummary> m_reactiveInsights;
+    bool m_reactiveInsightsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

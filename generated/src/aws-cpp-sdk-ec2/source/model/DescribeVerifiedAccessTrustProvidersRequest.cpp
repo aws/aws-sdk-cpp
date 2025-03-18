@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeVerifiedAccessTrustProvidersRequest::DescribeVerifiedAccessTrustProvidersRequest() : 
-    m_verifiedAccessTrustProviderIdsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVerifiedAccessTrustProvidersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

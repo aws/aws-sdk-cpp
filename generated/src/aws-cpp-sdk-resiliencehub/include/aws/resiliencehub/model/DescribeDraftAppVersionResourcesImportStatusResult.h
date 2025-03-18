@@ -31,7 +31,7 @@ namespace Model
   class DescribeDraftAppVersionResourcesImportStatusResult
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeDraftAppVersionResourcesImportStatusResult();
+    AWS_RESILIENCEHUB_API DescribeDraftAppVersionResourcesImportStatusResult() = default;
     AWS_RESILIENCEHUB_API DescribeDraftAppVersionResourcesImportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DescribeDraftAppVersionResourcesImportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,101 +46,98 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the application.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of errors that were encountered while importing resources.</p>
      */
-    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
-    inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetails = value; }
-    inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetails = std::move(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& AddErrorDetails(const ErrorDetail& value) { m_errorDetails.push_back(value); return *this; }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& AddErrorDetails(ErrorDetail&& value) { m_errorDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
+    template<typename ErrorDetailsT = ErrorDetail>
+    DescribeDraftAppVersionResourcesImportStatusResult& AddErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The error message returned for the resource request.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the action.</p>
      */
-    inline const ResourceImportStatusType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourceImportStatusType& value) { m_status = value; }
-    inline void SetStatus(ResourceImportStatusType&& value) { m_status = std::move(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithStatus(const ResourceImportStatusType& value) { SetStatus(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithStatus(ResourceImportStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourceImportStatusType GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceImportStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeDraftAppVersionResourcesImportStatusResult& WithStatus(ResourceImportStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the status last changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetStatusChangeTime() const{ return m_statusChangeTime; }
-    inline void SetStatusChangeTime(const Aws::Utils::DateTime& value) { m_statusChangeTime = value; }
-    inline void SetStatusChangeTime(Aws::Utils::DateTime&& value) { m_statusChangeTime = std::move(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithStatusChangeTime(const Aws::Utils::DateTime& value) { SetStatusChangeTime(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithStatusChangeTime(Aws::Utils::DateTime&& value) { SetStatusChangeTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStatusChangeTime() const { return m_statusChangeTime; }
+    template<typename StatusChangeTimeT = Aws::Utils::DateTime>
+    void SetStatusChangeTime(StatusChangeTimeT&& value) { m_statusChangeTimeHasBeenSet = true; m_statusChangeTime = std::forward<StatusChangeTimeT>(value); }
+    template<typename StatusChangeTimeT = Aws::Utils::DateTime>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithStatusChangeTime(StatusChangeTimeT&& value) { SetStatusChangeTime(std::forward<StatusChangeTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDraftAppVersionResourcesImportStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDraftAppVersionResourcesImportStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetails;
+    bool m_errorDetailsHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
-    ResourceImportStatusType m_status;
+    ResourceImportStatusType m_status{ResourceImportStatusType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_statusChangeTime;
+    Aws::Utils::DateTime m_statusChangeTime{};
+    bool m_statusChangeTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

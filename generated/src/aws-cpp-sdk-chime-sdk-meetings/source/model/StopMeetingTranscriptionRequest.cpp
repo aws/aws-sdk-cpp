@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopMeetingTranscriptionRequest::StopMeetingTranscriptionRequest() : 
-    m_meetingIdHasBeenSet(false)
-{
-}
-
 Aws::String StopMeetingTranscriptionRequest::SerializePayload() const
 {
   return {};

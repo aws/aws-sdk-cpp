@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBotReplicaResult::CreateBotReplicaResult() : 
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET)
-{
-}
-
 CreateBotReplicaResult::CreateBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateBotReplicaResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ CreateBotReplicaResult& CreateBotReplicaResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicaRegion"))
   {
     m_replicaRegion = jsonValue.GetString("replicaRegion");
-
+    m_replicaRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("sourceRegion");
-
+    m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botReplicaStatus"))
   {
     m_botReplicaStatus = BotReplicaStatusMapper::GetBotReplicaStatusForName(jsonValue.GetString("botReplicaStatus"));
-
+    m_botReplicaStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

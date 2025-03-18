@@ -32,7 +32,7 @@ namespace Model
   class PipelineInfo
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PipelineInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PipelineInfo() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PipelineInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PipelineInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The time when the pipeline info was configured.</p>
      */
-    inline const Aws::String& GetPipelineConfigurationTimeStamp() const{ return m_pipelineConfigurationTimeStamp; }
+    inline const Aws::String& GetPipelineConfigurationTimeStamp() const { return m_pipelineConfigurationTimeStamp; }
     inline bool PipelineConfigurationTimeStampHasBeenSet() const { return m_pipelineConfigurationTimeStampHasBeenSet; }
-    inline void SetPipelineConfigurationTimeStamp(const Aws::String& value) { m_pipelineConfigurationTimeStampHasBeenSet = true; m_pipelineConfigurationTimeStamp = value; }
-    inline void SetPipelineConfigurationTimeStamp(Aws::String&& value) { m_pipelineConfigurationTimeStampHasBeenSet = true; m_pipelineConfigurationTimeStamp = std::move(value); }
-    inline void SetPipelineConfigurationTimeStamp(const char* value) { m_pipelineConfigurationTimeStampHasBeenSet = true; m_pipelineConfigurationTimeStamp.assign(value); }
-    inline PipelineInfo& WithPipelineConfigurationTimeStamp(const Aws::String& value) { SetPipelineConfigurationTimeStamp(value); return *this;}
-    inline PipelineInfo& WithPipelineConfigurationTimeStamp(Aws::String&& value) { SetPipelineConfigurationTimeStamp(std::move(value)); return *this;}
-    inline PipelineInfo& WithPipelineConfigurationTimeStamp(const char* value) { SetPipelineConfigurationTimeStamp(value); return *this;}
+    template<typename PipelineConfigurationTimeStampT = Aws::String>
+    void SetPipelineConfigurationTimeStamp(PipelineConfigurationTimeStampT&& value) { m_pipelineConfigurationTimeStampHasBeenSet = true; m_pipelineConfigurationTimeStamp = std::forward<PipelineConfigurationTimeStampT>(value); }
+    template<typename PipelineConfigurationTimeStampT = Aws::String>
+    PipelineInfo& WithPipelineConfigurationTimeStamp(PipelineConfigurationTimeStampT&& value) { SetPipelineConfigurationTimeStamp(std::forward<PipelineConfigurationTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of pipeline.</p>
      */
-    inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
+    inline PipelineType GetPipelineType() const { return m_pipelineType; }
     inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
-    inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
-    inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
-    inline PipelineInfo& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
-    inline PipelineInfo& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
+    inline void SetPipelineType(PipelineType value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
+    inline PipelineInfo& WithPipelineType(PipelineType value) { SetPipelineType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_pipelineConfigurationTimeStamp;
     bool m_pipelineConfigurationTimeStampHasBeenSet = false;
 
-    PipelineType m_pipelineType;
+    PipelineType m_pipelineType{PipelineType::NOT_SET};
     bool m_pipelineTypeHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-SchemaDefinition::SchemaDefinition() : 
-    m_cedarJsonHasBeenSet(false)
-{
-}
-
 SchemaDefinition::SchemaDefinition(JsonView jsonValue)
-  : SchemaDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cedarJson"))
   {
     m_cedarJson = jsonValue.GetString("cedarJson");
-
     m_cedarJsonHasBeenSet = true;
   }
-
   return *this;
 }
 

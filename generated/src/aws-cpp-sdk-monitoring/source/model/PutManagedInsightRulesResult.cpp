@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutManagedInsightRulesResult::PutManagedInsightRulesResult()
-{
-}
-
 PutManagedInsightRulesResult::PutManagedInsightRulesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ PutManagedInsightRulesResult& PutManagedInsightRulesResult::operator =(const Aws
     if(!failuresNode.IsNull())
     {
       XmlNode failuresMember = failuresNode.FirstChild("member");
+      m_failuresHasBeenSet = !failuresMember.IsNull();
       while(!failuresMember.IsNull())
       {
         m_failures.push_back(failuresMember);
         failuresMember = failuresMember.NextNode("member");
       }
 
+      m_failuresHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutManagedInsightRulesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

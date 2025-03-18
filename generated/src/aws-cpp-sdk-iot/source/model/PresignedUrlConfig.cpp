@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PresignedUrlConfig::PresignedUrlConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_expiresInSec(0),
-    m_expiresInSecHasBeenSet(false)
-{
-}
-
 PresignedUrlConfig::PresignedUrlConfig(JsonView jsonValue)
-  : PresignedUrlConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PresignedUrlConfig& PresignedUrlConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresInSec"))
   {
     m_expiresInSec = jsonValue.GetInt64("expiresInSec");
-
     m_expiresInSecHasBeenSet = true;
   }
-
   return *this;
 }
 

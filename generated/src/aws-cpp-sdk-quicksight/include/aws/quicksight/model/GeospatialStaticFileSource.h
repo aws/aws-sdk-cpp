@@ -32,7 +32,7 @@ namespace Model
   class GeospatialStaticFileSource
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialStaticFileSource();
+    AWS_QUICKSIGHT_API GeospatialStaticFileSource() = default;
     AWS_QUICKSIGHT_API GeospatialStaticFileSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialStaticFileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the static file.</p>
      */
-    inline const Aws::String& GetStaticFileId() const{ return m_staticFileId; }
+    inline const Aws::String& GetStaticFileId() const { return m_staticFileId; }
     inline bool StaticFileIdHasBeenSet() const { return m_staticFileIdHasBeenSet; }
-    inline void SetStaticFileId(const Aws::String& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = value; }
-    inline void SetStaticFileId(Aws::String&& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = std::move(value); }
-    inline void SetStaticFileId(const char* value) { m_staticFileIdHasBeenSet = true; m_staticFileId.assign(value); }
-    inline GeospatialStaticFileSource& WithStaticFileId(const Aws::String& value) { SetStaticFileId(value); return *this;}
-    inline GeospatialStaticFileSource& WithStaticFileId(Aws::String&& value) { SetStaticFileId(std::move(value)); return *this;}
-    inline GeospatialStaticFileSource& WithStaticFileId(const char* value) { SetStaticFileId(value); return *this;}
+    template<typename StaticFileIdT = Aws::String>
+    void SetStaticFileId(StaticFileIdT&& value) { m_staticFileIdHasBeenSet = true; m_staticFileId = std::forward<StaticFileIdT>(value); }
+    template<typename StaticFileIdT = Aws::String>
+    GeospatialStaticFileSource& WithStaticFileId(StaticFileIdT&& value) { SetStaticFileId(std::forward<StaticFileIdT>(value)); return *this;}
     ///@}
   private:
 

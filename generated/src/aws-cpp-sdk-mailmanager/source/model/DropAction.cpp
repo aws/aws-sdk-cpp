@@ -18,10 +18,6 @@ namespace MailManager
 namespace Model
 {
 
-DropAction::DropAction()
-{
-}
-
 DropAction::DropAction(JsonView jsonValue)
 {
   *this = jsonValue;

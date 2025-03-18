@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRegistriesRequest::ListRegistriesRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_registryNamePrefixHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 Aws::String ListRegistriesRequest::SerializePayload() const
 {
   return {};

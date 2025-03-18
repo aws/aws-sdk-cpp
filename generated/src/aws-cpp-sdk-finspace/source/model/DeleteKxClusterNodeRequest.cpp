@@ -12,13 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKxClusterNodeRequest::DeleteKxClusterNodeRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKxClusterNodeRequest::SerializePayload() const
 {
   return {};

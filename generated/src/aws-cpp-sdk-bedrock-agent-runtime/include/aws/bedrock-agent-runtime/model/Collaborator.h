@@ -38,7 +38,7 @@ namespace Model
   class Collaborator
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Collaborator();
+    AWS_BEDROCKAGENTRUNTIME_API Collaborator() = default;
     AWS_BEDROCKAGENTRUNTIME_API Collaborator(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Collaborator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p> List of action groups with each action group defining tasks the inline
      * collaborator agent needs to carry out. </p>
      */
-    inline const Aws::Vector<AgentActionGroup>& GetActionGroups() const{ return m_actionGroups; }
+    inline const Aws::Vector<AgentActionGroup>& GetActionGroups() const { return m_actionGroups; }
     inline bool ActionGroupsHasBeenSet() const { return m_actionGroupsHasBeenSet; }
-    inline void SetActionGroups(const Aws::Vector<AgentActionGroup>& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = value; }
-    inline void SetActionGroups(Aws::Vector<AgentActionGroup>&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = std::move(value); }
-    inline Collaborator& WithActionGroups(const Aws::Vector<AgentActionGroup>& value) { SetActionGroups(value); return *this;}
-    inline Collaborator& WithActionGroups(Aws::Vector<AgentActionGroup>&& value) { SetActionGroups(std::move(value)); return *this;}
-    inline Collaborator& AddActionGroups(const AgentActionGroup& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(value); return *this; }
-    inline Collaborator& AddActionGroups(AgentActionGroup&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(std::move(value)); return *this; }
+    template<typename ActionGroupsT = Aws::Vector<AgentActionGroup>>
+    void SetActionGroups(ActionGroupsT&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups = std::forward<ActionGroupsT>(value); }
+    template<typename ActionGroupsT = Aws::Vector<AgentActionGroup>>
+    Collaborator& WithActionGroups(ActionGroupsT&& value) { SetActionGroups(std::forward<ActionGroupsT>(value)); return *this;}
+    template<typename ActionGroupsT = AgentActionGroup>
+    Collaborator& AddActionGroups(ActionGroupsT&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.emplace_back(std::forward<ActionGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,12 +64,10 @@ namespace Model
      * <p> Defines how the inline supervisor agent handles information across multiple
      * collaborator agents to coordinate a final response. </p>
      */
-    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
     inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
-    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
-    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
-    inline Collaborator& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
-    inline Collaborator& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline Collaborator& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
     ///@}
 
     ///@{
@@ -77,28 +75,26 @@ namespace Model
      * <p> Name of the inline collaborator agent which must be the same name as
      * specified for <code>collaboratorName</code>. </p>
      */
-    inline const Aws::String& GetAgentName() const{ return m_agentName; }
+    inline const Aws::String& GetAgentName() const { return m_agentName; }
     inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
-    inline void SetAgentName(const Aws::String& value) { m_agentNameHasBeenSet = true; m_agentName = value; }
-    inline void SetAgentName(Aws::String&& value) { m_agentNameHasBeenSet = true; m_agentName = std::move(value); }
-    inline void SetAgentName(const char* value) { m_agentNameHasBeenSet = true; m_agentName.assign(value); }
-    inline Collaborator& WithAgentName(const Aws::String& value) { SetAgentName(value); return *this;}
-    inline Collaborator& WithAgentName(Aws::String&& value) { SetAgentName(std::move(value)); return *this;}
-    inline Collaborator& WithAgentName(const char* value) { SetAgentName(value); return *this;}
+    template<typename AgentNameT = Aws::String>
+    void SetAgentName(AgentNameT&& value) { m_agentNameHasBeenSet = true; m_agentName = std::forward<AgentNameT>(value); }
+    template<typename AgentNameT = Aws::String>
+    Collaborator& WithAgentName(AgentNameT&& value) { SetAgentName(std::forward<AgentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Settings of the collaborator agent. </p>
      */
-    inline const Aws::Vector<CollaboratorConfiguration>& GetCollaboratorConfigurations() const{ return m_collaboratorConfigurations; }
+    inline const Aws::Vector<CollaboratorConfiguration>& GetCollaboratorConfigurations() const { return m_collaboratorConfigurations; }
     inline bool CollaboratorConfigurationsHasBeenSet() const { return m_collaboratorConfigurationsHasBeenSet; }
-    inline void SetCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = value; }
-    inline void SetCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = std::move(value); }
-    inline Collaborator& WithCollaboratorConfigurations(const Aws::Vector<CollaboratorConfiguration>& value) { SetCollaboratorConfigurations(value); return *this;}
-    inline Collaborator& WithCollaboratorConfigurations(Aws::Vector<CollaboratorConfiguration>&& value) { SetCollaboratorConfigurations(std::move(value)); return *this;}
-    inline Collaborator& AddCollaboratorConfigurations(const CollaboratorConfiguration& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(value); return *this; }
-    inline Collaborator& AddCollaboratorConfigurations(CollaboratorConfiguration&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.push_back(std::move(value)); return *this; }
+    template<typename CollaboratorConfigurationsT = Aws::Vector<CollaboratorConfiguration>>
+    void SetCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations = std::forward<CollaboratorConfigurationsT>(value); }
+    template<typename CollaboratorConfigurationsT = Aws::Vector<CollaboratorConfiguration>>
+    Collaborator& WithCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { SetCollaboratorConfigurations(std::forward<CollaboratorConfigurationsT>(value)); return *this;}
+    template<typename CollaboratorConfigurationsT = CollaboratorConfiguration>
+    Collaborator& AddCollaboratorConfigurations(CollaboratorConfigurationsT&& value) { m_collaboratorConfigurationsHasBeenSet = true; m_collaboratorConfigurations.emplace_back(std::forward<CollaboratorConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,40 +102,36 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the AWS KMS key that encrypts the inline
      * collaborator. </p>
      */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
-    inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
-    inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
-    inline Collaborator& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
-    inline Collaborator& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
-    inline Collaborator& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    Collaborator& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The foundation model used by the inline collaborator agent. </p>
      */
-    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
     inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
-    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
-    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
-    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
-    inline Collaborator& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
-    inline Collaborator& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
-    inline Collaborator& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    template<typename FoundationModelT = Aws::String>
+    void SetFoundationModel(FoundationModelT&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::forward<FoundationModelT>(value); }
+    template<typename FoundationModelT = Aws::String>
+    Collaborator& WithFoundationModel(FoundationModelT&& value) { SetFoundationModel(std::forward<FoundationModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Details of the guardwrail associated with the inline collaborator. </p>
      */
-    inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline const GuardrailConfigurationWithArn& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    inline void SetGuardrailConfiguration(const GuardrailConfigurationWithArn& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
-    inline void SetGuardrailConfiguration(GuardrailConfigurationWithArn&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
-    inline Collaborator& WithGuardrailConfiguration(const GuardrailConfigurationWithArn& value) { SetGuardrailConfiguration(value); return *this;}
-    inline Collaborator& WithGuardrailConfiguration(GuardrailConfigurationWithArn&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    template<typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfigurationWithArn>
+    Collaborator& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +142,7 @@ namespace Model
      * occurs during this time, the session expires and Amazon Bedrock deletes any data
      * provided before the timeout. </p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
     inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline Collaborator& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
@@ -161,28 +153,26 @@ namespace Model
      * <p> Instruction that tell the inline collaborator agent what it should do and
      * how it should interact with users. </p>
      */
-    inline const Aws::String& GetInstruction() const{ return m_instruction; }
+    inline const Aws::String& GetInstruction() const { return m_instruction; }
     inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-    inline void SetInstruction(const Aws::String& value) { m_instructionHasBeenSet = true; m_instruction = value; }
-    inline void SetInstruction(Aws::String&& value) { m_instructionHasBeenSet = true; m_instruction = std::move(value); }
-    inline void SetInstruction(const char* value) { m_instructionHasBeenSet = true; m_instruction.assign(value); }
-    inline Collaborator& WithInstruction(const Aws::String& value) { SetInstruction(value); return *this;}
-    inline Collaborator& WithInstruction(Aws::String&& value) { SetInstruction(std::move(value)); return *this;}
-    inline Collaborator& WithInstruction(const char* value) { SetInstruction(value); return *this;}
+    template<typename InstructionT = Aws::String>
+    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
+    template<typename InstructionT = Aws::String>
+    Collaborator& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Knowledge base associated with the inline collaborator agent. </p>
      */
-    inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const{ return m_knowledgeBases; }
+    inline const Aws::Vector<KnowledgeBase>& GetKnowledgeBases() const { return m_knowledgeBases; }
     inline bool KnowledgeBasesHasBeenSet() const { return m_knowledgeBasesHasBeenSet; }
-    inline void SetKnowledgeBases(const Aws::Vector<KnowledgeBase>& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = value; }
-    inline void SetKnowledgeBases(Aws::Vector<KnowledgeBase>&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = std::move(value); }
-    inline Collaborator& WithKnowledgeBases(const Aws::Vector<KnowledgeBase>& value) { SetKnowledgeBases(value); return *this;}
-    inline Collaborator& WithKnowledgeBases(Aws::Vector<KnowledgeBase>&& value) { SetKnowledgeBases(std::move(value)); return *this;}
-    inline Collaborator& AddKnowledgeBases(const KnowledgeBase& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.push_back(value); return *this; }
-    inline Collaborator& AddKnowledgeBases(KnowledgeBase&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.push_back(std::move(value)); return *this; }
+    template<typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+    void SetKnowledgeBases(KnowledgeBasesT&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases = std::forward<KnowledgeBasesT>(value); }
+    template<typename KnowledgeBasesT = Aws::Vector<KnowledgeBase>>
+    Collaborator& WithKnowledgeBases(KnowledgeBasesT&& value) { SetKnowledgeBases(std::forward<KnowledgeBasesT>(value)); return *this;}
+    template<typename KnowledgeBasesT = KnowledgeBase>
+    Collaborator& AddKnowledgeBases(KnowledgeBasesT&& value) { m_knowledgeBasesHasBeenSet = true; m_knowledgeBases.emplace_back(std::forward<KnowledgeBasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -192,19 +182,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
      * prompts</a>. </p>
      */
-    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const{ return m_promptOverrideConfiguration; }
+    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
     inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
-    inline void SetPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = value; }
-    inline void SetPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::move(value); }
-    inline Collaborator& WithPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { SetPromptOverrideConfiguration(value); return *this;}
-    inline Collaborator& WithPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { SetPromptOverrideConfiguration(std::move(value)); return *this;}
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value); }
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    Collaborator& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentActionGroup> m_actionGroups;
     bool m_actionGroupsHasBeenSet = false;
 
-    AgentCollaboration m_agentCollaboration;
+    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
     bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentName;
@@ -222,7 +212,7 @@ namespace Model
     GuardrailConfigurationWithArn m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_instruction;

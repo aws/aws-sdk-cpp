@@ -50,7 +50,7 @@ namespace Model
   class RegexMatchSet
   {
   public:
-    AWS_WAF_API RegexMatchSet();
+    AWS_WAF_API RegexMatchSet() = default;
     AWS_WAF_API RegexMatchSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API RegexMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,14 +68,12 @@ namespace Model
      * <p> <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and
      * by <a>ListRegexMatchSets</a>.</p>
      */
-    inline const Aws::String& GetRegexMatchSetId() const{ return m_regexMatchSetId; }
+    inline const Aws::String& GetRegexMatchSetId() const { return m_regexMatchSetId; }
     inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
-    inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
-    inline void SetRegexMatchSetId(Aws::String&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::move(value); }
-    inline void SetRegexMatchSetId(const char* value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId.assign(value); }
-    inline RegexMatchSet& WithRegexMatchSetId(const Aws::String& value) { SetRegexMatchSetId(value); return *this;}
-    inline RegexMatchSet& WithRegexMatchSetId(Aws::String&& value) { SetRegexMatchSetId(std::move(value)); return *this;}
-    inline RegexMatchSet& WithRegexMatchSetId(const char* value) { SetRegexMatchSetId(value); return *this;}
+    template<typename RegexMatchSetIdT = Aws::String>
+    void SetRegexMatchSetId(RegexMatchSetIdT&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::forward<RegexMatchSetIdT>(value); }
+    template<typename RegexMatchSetIdT = Aws::String>
+    RegexMatchSet& WithRegexMatchSetId(RegexMatchSetIdT&& value) { SetRegexMatchSetId(std::forward<RegexMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RegexMatchSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RegexMatchSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RegexMatchSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RegexMatchSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +100,14 @@ namespace Model
      * perform any conversions on the request, such as converting it to lowercase,
      * before inspecting it for the specified string.</p> </li> </ul>
      */
-    inline const Aws::Vector<RegexMatchTuple>& GetRegexMatchTuples() const{ return m_regexMatchTuples; }
+    inline const Aws::Vector<RegexMatchTuple>& GetRegexMatchTuples() const { return m_regexMatchTuples; }
     inline bool RegexMatchTuplesHasBeenSet() const { return m_regexMatchTuplesHasBeenSet; }
-    inline void SetRegexMatchTuples(const Aws::Vector<RegexMatchTuple>& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples = value; }
-    inline void SetRegexMatchTuples(Aws::Vector<RegexMatchTuple>&& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples = std::move(value); }
-    inline RegexMatchSet& WithRegexMatchTuples(const Aws::Vector<RegexMatchTuple>& value) { SetRegexMatchTuples(value); return *this;}
-    inline RegexMatchSet& WithRegexMatchTuples(Aws::Vector<RegexMatchTuple>&& value) { SetRegexMatchTuples(std::move(value)); return *this;}
-    inline RegexMatchSet& AddRegexMatchTuples(const RegexMatchTuple& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples.push_back(value); return *this; }
-    inline RegexMatchSet& AddRegexMatchTuples(RegexMatchTuple&& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples.push_back(std::move(value)); return *this; }
+    template<typename RegexMatchTuplesT = Aws::Vector<RegexMatchTuple>>
+    void SetRegexMatchTuples(RegexMatchTuplesT&& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples = std::forward<RegexMatchTuplesT>(value); }
+    template<typename RegexMatchTuplesT = Aws::Vector<RegexMatchTuple>>
+    RegexMatchSet& WithRegexMatchTuples(RegexMatchTuplesT&& value) { SetRegexMatchTuples(std::forward<RegexMatchTuplesT>(value)); return *this;}
+    template<typename RegexMatchTuplesT = RegexMatchTuple>
+    RegexMatchSet& AddRegexMatchTuples(RegexMatchTuplesT&& value) { m_regexMatchTuplesHasBeenSet = true; m_regexMatchTuples.emplace_back(std::forward<RegexMatchTuplesT>(value)); return *this; }
     ///@}
   private:
 

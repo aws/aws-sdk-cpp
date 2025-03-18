@@ -33,7 +33,7 @@ namespace Model
   class ModelRegisterSettings
   {
   public:
-    AWS_SAGEMAKER_API ModelRegisterSettings();
+    AWS_SAGEMAKER_API ModelRegisterSettings() = default;
     AWS_SAGEMAKER_API ModelRegisterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelRegisterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Describes whether the integration to the model registry is enabled or
      * disabled in the Canvas application.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ModelRegisterSettings& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline ModelRegisterSettings& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ModelRegisterSettings& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * Amazon Web Services account than the Amazon Web Services account in which
      * SageMaker model registry is set up.</p>
      */
-    inline const Aws::String& GetCrossAccountModelRegisterRoleArn() const{ return m_crossAccountModelRegisterRoleArn; }
+    inline const Aws::String& GetCrossAccountModelRegisterRoleArn() const { return m_crossAccountModelRegisterRoleArn; }
     inline bool CrossAccountModelRegisterRoleArnHasBeenSet() const { return m_crossAccountModelRegisterRoleArnHasBeenSet; }
-    inline void SetCrossAccountModelRegisterRoleArn(const Aws::String& value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn = value; }
-    inline void SetCrossAccountModelRegisterRoleArn(Aws::String&& value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn = std::move(value); }
-    inline void SetCrossAccountModelRegisterRoleArn(const char* value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn.assign(value); }
-    inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(const Aws::String& value) { SetCrossAccountModelRegisterRoleArn(value); return *this;}
-    inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(Aws::String&& value) { SetCrossAccountModelRegisterRoleArn(std::move(value)); return *this;}
-    inline ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(const char* value) { SetCrossAccountModelRegisterRoleArn(value); return *this;}
+    template<typename CrossAccountModelRegisterRoleArnT = Aws::String>
+    void SetCrossAccountModelRegisterRoleArn(CrossAccountModelRegisterRoleArnT&& value) { m_crossAccountModelRegisterRoleArnHasBeenSet = true; m_crossAccountModelRegisterRoleArn = std::forward<CrossAccountModelRegisterRoleArnT>(value); }
+    template<typename CrossAccountModelRegisterRoleArnT = Aws::String>
+    ModelRegisterSettings& WithCrossAccountModelRegisterRoleArn(CrossAccountModelRegisterRoleArnT&& value) { SetCrossAccountModelRegisterRoleArn(std::forward<CrossAccountModelRegisterRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_crossAccountModelRegisterRoleArn;

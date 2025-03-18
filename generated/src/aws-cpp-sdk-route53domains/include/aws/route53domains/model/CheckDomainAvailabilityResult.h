@@ -34,7 +34,7 @@ namespace Model
   class CheckDomainAvailabilityResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult();
+    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult() = default;
     AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -61,28 +61,26 @@ namespace Model
      * available.</p> </dd> <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is
      * forbidden.</p> </dd> </dl>
      */
-    inline const DomainAvailability& GetAvailability() const{ return m_availability; }
-    inline void SetAvailability(const DomainAvailability& value) { m_availability = value; }
-    inline void SetAvailability(DomainAvailability&& value) { m_availability = std::move(value); }
-    inline CheckDomainAvailabilityResult& WithAvailability(const DomainAvailability& value) { SetAvailability(value); return *this;}
-    inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability&& value) { SetAvailability(std::move(value)); return *this;}
+    inline DomainAvailability GetAvailability() const { return m_availability; }
+    inline void SetAvailability(DomainAvailability value) { m_availabilityHasBeenSet = true; m_availability = value; }
+    inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability value) { SetAvailability(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CheckDomainAvailabilityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CheckDomainAvailabilityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CheckDomainAvailabilityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CheckDomainAvailabilityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DomainAvailability m_availability;
+    DomainAvailability m_availability{DomainAvailability::NOT_SET};
+    bool m_availabilityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

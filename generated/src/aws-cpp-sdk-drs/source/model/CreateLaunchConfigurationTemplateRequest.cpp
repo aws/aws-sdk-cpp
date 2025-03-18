@@ -12,25 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLaunchConfigurationTemplateRequest::CreateLaunchConfigurationTemplateRequest() : 
-    m_copyPrivateIp(false),
-    m_copyPrivateIpHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_exportBucketArnHasBeenSet(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_launchDispositionHasBeenSet(false),
-    m_launchIntoSourceInstance(false),
-    m_launchIntoSourceInstanceHasBeenSet(false),
-    m_licensingHasBeenSet(false),
-    m_postLaunchEnabled(false),
-    m_postLaunchEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
-    m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
-{
-}
-
 Aws::String CreateLaunchConfigurationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

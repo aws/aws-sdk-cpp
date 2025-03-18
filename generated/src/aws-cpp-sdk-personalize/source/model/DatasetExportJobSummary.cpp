@@ -18,18 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DatasetExportJobSummary::DatasetExportJobSummary() : 
-    m_datasetExportJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 DatasetExportJobSummary::DatasetExportJobSummary(JsonView jsonValue)
-  : DatasetExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ DatasetExportJobSummary& DatasetExportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasetExportJobArn"))
   {
     m_datasetExportJobArn = jsonValue.GetString("datasetExportJobArn");
-
     m_datasetExportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

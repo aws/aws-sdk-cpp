@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HostInstance::HostInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 HostInstance::HostInstance(const XmlNode& xmlNode)
-  : HostInstance()
 {
   *this = xmlNode;
 }

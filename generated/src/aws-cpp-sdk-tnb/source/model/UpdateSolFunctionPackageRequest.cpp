@@ -12,13 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSolFunctionPackageRequest::UpdateSolFunctionPackageRequest() : 
-    m_operationalState(OperationalState::NOT_SET),
-    m_operationalStateHasBeenSet(false),
-    m_vnfPkgIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSolFunctionPackageRequest::SerializePayload() const
 {
   JsonValue payload;

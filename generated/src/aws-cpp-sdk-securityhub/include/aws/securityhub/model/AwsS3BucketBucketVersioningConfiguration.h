@@ -31,7 +31,7 @@ namespace Model
   class AwsS3BucketBucketVersioningConfiguration
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration() = default;
     AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * configuration. If the S3 bucket was never configured with MFA delete, then this
      * attribute is not included.</p>
      */
-    inline bool GetIsMfaDeleteEnabled() const{ return m_isMfaDeleteEnabled; }
+    inline bool GetIsMfaDeleteEnabled() const { return m_isMfaDeleteEnabled; }
     inline bool IsMfaDeleteEnabledHasBeenSet() const { return m_isMfaDeleteEnabledHasBeenSet; }
     inline void SetIsMfaDeleteEnabled(bool value) { m_isMfaDeleteEnabledHasBeenSet = true; m_isMfaDeleteEnabled = value; }
     inline AwsS3BucketBucketVersioningConfiguration& WithIsMfaDeleteEnabled(bool value) { SetIsMfaDeleteEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
      * or <code>Suspended</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsS3BucketBucketVersioningConfiguration& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsS3BucketBucketVersioningConfiguration& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isMfaDeleteEnabled;
+    bool m_isMfaDeleteEnabled{false};
     bool m_isMfaDeleteEnabledHasBeenSet = false;
 
     Aws::String m_status;

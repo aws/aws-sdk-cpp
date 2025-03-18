@@ -24,7 +24,7 @@ namespace Model
   class ListVolumeInitiatorsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API ListVolumeInitiatorsRequest();
+    AWS_STORAGEGATEWAY_API ListVolumeInitiatorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes for the gateway.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline ListVolumeInitiatorsRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline ListVolumeInitiatorsRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline ListVolumeInitiatorsRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    ListVolumeInitiatorsRequest& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
   private:
 

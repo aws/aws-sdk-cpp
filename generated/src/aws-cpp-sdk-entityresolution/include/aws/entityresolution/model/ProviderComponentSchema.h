@@ -33,7 +33,7 @@ namespace Model
   class ProviderComponentSchema
   {
   public:
-    AWS_ENTITYRESOLUTION_API ProviderComponentSchema();
+    AWS_ENTITYRESOLUTION_API ProviderComponentSchema() = default;
     AWS_ENTITYRESOLUTION_API ProviderComponentSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API ProviderComponentSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The provider schema attributes.</p>
      */
-    inline const Aws::Vector<ProviderSchemaAttribute>& GetProviderSchemaAttributes() const{ return m_providerSchemaAttributes; }
+    inline const Aws::Vector<ProviderSchemaAttribute>& GetProviderSchemaAttributes() const { return m_providerSchemaAttributes; }
     inline bool ProviderSchemaAttributesHasBeenSet() const { return m_providerSchemaAttributesHasBeenSet; }
-    inline void SetProviderSchemaAttributes(const Aws::Vector<ProviderSchemaAttribute>& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = value; }
-    inline void SetProviderSchemaAttributes(Aws::Vector<ProviderSchemaAttribute>&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = std::move(value); }
-    inline ProviderComponentSchema& WithProviderSchemaAttributes(const Aws::Vector<ProviderSchemaAttribute>& value) { SetProviderSchemaAttributes(value); return *this;}
-    inline ProviderComponentSchema& WithProviderSchemaAttributes(Aws::Vector<ProviderSchemaAttribute>&& value) { SetProviderSchemaAttributes(std::move(value)); return *this;}
-    inline ProviderComponentSchema& AddProviderSchemaAttributes(const ProviderSchemaAttribute& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.push_back(value); return *this; }
-    inline ProviderComponentSchema& AddProviderSchemaAttributes(ProviderSchemaAttribute&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.push_back(std::move(value)); return *this; }
+    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
+    void SetProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = std::forward<ProviderSchemaAttributesT>(value); }
+    template<typename ProviderSchemaAttributesT = Aws::Vector<ProviderSchemaAttribute>>
+    ProviderComponentSchema& WithProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { SetProviderSchemaAttributes(std::forward<ProviderSchemaAttributesT>(value)); return *this;}
+    template<typename ProviderSchemaAttributesT = ProviderSchemaAttribute>
+    ProviderComponentSchema& AddProviderSchemaAttributes(ProviderSchemaAttributesT&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.emplace_back(std::forward<ProviderSchemaAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Input schema for the provider service.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSchemas() const{ return m_schemas; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSchemas() const { return m_schemas; }
     inline bool SchemasHasBeenSet() const { return m_schemasHasBeenSet; }
-    inline void SetSchemas(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_schemasHasBeenSet = true; m_schemas = value; }
-    inline void SetSchemas(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_schemasHasBeenSet = true; m_schemas = std::move(value); }
-    inline ProviderComponentSchema& WithSchemas(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetSchemas(value); return *this;}
-    inline ProviderComponentSchema& WithSchemas(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetSchemas(std::move(value)); return *this;}
-    inline ProviderComponentSchema& AddSchemas(const Aws::Vector<Aws::String>& value) { m_schemasHasBeenSet = true; m_schemas.push_back(value); return *this; }
-    inline ProviderComponentSchema& AddSchemas(Aws::Vector<Aws::String>&& value) { m_schemasHasBeenSet = true; m_schemas.push_back(std::move(value)); return *this; }
+    template<typename SchemasT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas = std::forward<SchemasT>(value); }
+    template<typename SchemasT = Aws::Vector<Aws::Vector<Aws::String>>>
+    ProviderComponentSchema& WithSchemas(SchemasT&& value) { SetSchemas(std::forward<SchemasT>(value)); return *this;}
+    template<typename SchemasT = Aws::Vector<Aws::String>>
+    ProviderComponentSchema& AddSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas.emplace_back(std::forward<SchemasT>(value)); return *this; }
     ///@}
   private:
 

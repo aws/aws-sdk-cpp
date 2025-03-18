@@ -12,12 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTaxInheritanceRequest::PutTaxInheritanceRequest() : 
-    m_heritageStatus(HeritageStatus::NOT_SET),
-    m_heritageStatusHasBeenSet(false)
-{
-}
-
 Aws::String PutTaxInheritanceRequest::SerializePayload() const
 {
   JsonValue payload;

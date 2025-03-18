@@ -12,15 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationFsxWindowsRequest::UpdateLocationFsxWindowsRequest() : 
-    m_locationArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationFsxWindowsRequest::SerializePayload() const
 {
   JsonValue payload;

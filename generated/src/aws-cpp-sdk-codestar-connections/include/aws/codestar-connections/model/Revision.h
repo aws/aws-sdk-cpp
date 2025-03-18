@@ -33,7 +33,7 @@ namespace Model
   class Revision
   {
   public:
-    AWS_CODESTARCONNECTIONS_API Revision();
+    AWS_CODESTARCONNECTIONS_API Revision() = default;
     AWS_CODESTARCONNECTIONS_API Revision(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API Revision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The branch name for a specific revision.</p>
      */
-    inline const Aws::String& GetBranch() const{ return m_branch; }
+    inline const Aws::String& GetBranch() const { return m_branch; }
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-    inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
-    inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-    inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
-    inline Revision& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
-    inline Revision& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
-    inline Revision& WithBranch(const char* value) { SetBranch(value); return *this;}
+    template<typename BranchT = Aws::String>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Aws::String>
+    Revision& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The directory, if any, for a specific revision.</p>
      */
-    inline const Aws::String& GetDirectory() const{ return m_directory; }
+    inline const Aws::String& GetDirectory() const { return m_directory; }
     inline bool DirectoryHasBeenSet() const { return m_directoryHasBeenSet; }
-    inline void SetDirectory(const Aws::String& value) { m_directoryHasBeenSet = true; m_directory = value; }
-    inline void SetDirectory(Aws::String&& value) { m_directoryHasBeenSet = true; m_directory = std::move(value); }
-    inline void SetDirectory(const char* value) { m_directoryHasBeenSet = true; m_directory.assign(value); }
-    inline Revision& WithDirectory(const Aws::String& value) { SetDirectory(value); return *this;}
-    inline Revision& WithDirectory(Aws::String&& value) { SetDirectory(std::move(value)); return *this;}
-    inline Revision& WithDirectory(const char* value) { SetDirectory(value); return *this;}
+    template<typename DirectoryT = Aws::String>
+    void SetDirectory(DirectoryT&& value) { m_directoryHasBeenSet = true; m_directory = std::forward<DirectoryT>(value); }
+    template<typename DirectoryT = Aws::String>
+    Revision& WithDirectory(DirectoryT&& value) { SetDirectory(std::forward<DirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,54 +68,46 @@ namespace Model
      * <p>The owner ID for a specific revision, such as the GitHub owner ID for a
      * GitHub repository.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline Revision& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline Revision& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline Revision& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    Revision& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name for a specific revision.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline Revision& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline Revision& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline Revision& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    Revision& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provider type for a revision, such as GitHub.</p>
      */
-    inline const ProviderType& GetProviderType() const{ return m_providerType; }
+    inline ProviderType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline Revision& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
-    inline Revision& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(ProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline Revision& WithProviderType(ProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA, such as the commit ID, for a specific revision.</p>
      */
-    inline const Aws::String& GetSha() const{ return m_sha; }
+    inline const Aws::String& GetSha() const { return m_sha; }
     inline bool ShaHasBeenSet() const { return m_shaHasBeenSet; }
-    inline void SetSha(const Aws::String& value) { m_shaHasBeenSet = true; m_sha = value; }
-    inline void SetSha(Aws::String&& value) { m_shaHasBeenSet = true; m_sha = std::move(value); }
-    inline void SetSha(const char* value) { m_shaHasBeenSet = true; m_sha.assign(value); }
-    inline Revision& WithSha(const Aws::String& value) { SetSha(value); return *this;}
-    inline Revision& WithSha(Aws::String&& value) { SetSha(std::move(value)); return *this;}
-    inline Revision& WithSha(const char* value) { SetSha(value); return *this;}
+    template<typename ShaT = Aws::String>
+    void SetSha(ShaT&& value) { m_shaHasBeenSet = true; m_sha = std::forward<ShaT>(value); }
+    template<typename ShaT = Aws::String>
+    Revision& WithSha(ShaT&& value) { SetSha(std::forward<ShaT>(value)); return *this;}
     ///@}
   private:
 
@@ -135,7 +123,7 @@ namespace Model
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet = false;
 
-    ProviderType m_providerType;
+    ProviderType m_providerType{ProviderType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_sha;

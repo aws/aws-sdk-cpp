@@ -19,31 +19,7 @@ namespace DirectConnect
 namespace Model
 {
 
-Interconnect::Interconnect() : 
-    m_interconnectIdHasBeenSet(false),
-    m_interconnectNameHasBeenSet(false),
-    m_interconnectState(InterconnectState::NOT_SET),
-    m_interconnectStateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Interconnect::Interconnect(JsonView jsonValue)
-  : Interconnect()
 {
   *this = jsonValue;
 }
@@ -53,94 +29,68 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interconnectId"))
   {
     m_interconnectId = jsonValue.GetString("interconnectId");
-
     m_interconnectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interconnectName"))
   {
     m_interconnectName = jsonValue.GetString("interconnectName");
-
     m_interconnectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interconnectState"))
   {
     m_interconnectState = InterconnectStateMapper::GetInterconnectStateForName(jsonValue.GetString("interconnectState"));
-
     m_interconnectStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bandwidth"))
   {
     m_bandwidth = jsonValue.GetString("bandwidth");
-
     m_bandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loaIssueTime"))
   {
     m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
-
     m_loaIssueTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagId"))
   {
     m_lagId = jsonValue.GetString("lagId");
-
     m_lagIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
-
     m_awsDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
-
     m_jumboFrameCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
     m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
-
     m_hasLogicalRedundancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -150,14 +100,11 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
     m_providerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

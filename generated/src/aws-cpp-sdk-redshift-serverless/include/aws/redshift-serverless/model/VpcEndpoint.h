@@ -34,7 +34,7 @@ namespace Model
   class VpcEndpoint
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API VpcEndpoint();
+    AWS_REDSHIFTSERVERLESS_API VpcEndpoint() = default;
     AWS_REDSHIFTSERVERLESS_API VpcEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API VpcEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,38 @@ namespace Model
      * <p>One or more network interfaces of the endpoint. Also known as an interface
      * endpoint.</p>
      */
-    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline VpcEndpoint& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-    inline VpcEndpoint& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline VpcEndpoint& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline VpcEndpoint& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    VpcEndpoint& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = NetworkInterface>
+    VpcEndpoint& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-    inline VpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    VpcEndpoint& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC identifier that the endpoint is associated with.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline VpcEndpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline VpcEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline VpcEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    VpcEndpoint& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

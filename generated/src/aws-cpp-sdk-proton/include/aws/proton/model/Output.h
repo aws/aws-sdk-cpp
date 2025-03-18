@@ -31,7 +31,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_PROTON_API Output();
+    AWS_PROTON_API Output() = default;
     AWS_PROTON_API Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The output key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Output& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Output& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Output& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Output& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output value.</p>
      */
-    inline const Aws::String& GetValueString() const{ return m_valueString; }
+    inline const Aws::String& GetValueString() const { return m_valueString; }
     inline bool ValueStringHasBeenSet() const { return m_valueStringHasBeenSet; }
-    inline void SetValueString(const Aws::String& value) { m_valueStringHasBeenSet = true; m_valueString = value; }
-    inline void SetValueString(Aws::String&& value) { m_valueStringHasBeenSet = true; m_valueString = std::move(value); }
-    inline void SetValueString(const char* value) { m_valueStringHasBeenSet = true; m_valueString.assign(value); }
-    inline Output& WithValueString(const Aws::String& value) { SetValueString(value); return *this;}
-    inline Output& WithValueString(Aws::String&& value) { SetValueString(std::move(value)); return *this;}
-    inline Output& WithValueString(const char* value) { SetValueString(value); return *this;}
+    template<typename ValueStringT = Aws::String>
+    void SetValueString(ValueStringT&& value) { m_valueStringHasBeenSet = true; m_valueString = std::forward<ValueStringT>(value); }
+    template<typename ValueStringT = Aws::String>
+    Output& WithValueString(ValueStringT&& value) { SetValueString(std::forward<ValueStringT>(value)); return *this;}
     ///@}
   private:
 

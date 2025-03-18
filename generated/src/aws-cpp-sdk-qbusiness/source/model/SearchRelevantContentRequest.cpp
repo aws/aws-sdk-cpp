@@ -12,17 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRelevantContentRequest::SearchRelevantContentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_queryTextHasBeenSet(false),
-    m_contentSourceHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchRelevantContentRequest::SerializePayload() const
 {
   JsonValue payload;

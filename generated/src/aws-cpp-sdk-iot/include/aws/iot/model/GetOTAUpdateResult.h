@@ -28,7 +28,7 @@ namespace Model
   class GetOTAUpdateResult
   {
   public:
-    AWS_IOT_API GetOTAUpdateResult();
+    AWS_IOT_API GetOTAUpdateResult() = default;
     AWS_IOT_API GetOTAUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetOTAUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The OTA update info.</p>
      */
-    inline const OTAUpdateInfo& GetOtaUpdateInfo() const{ return m_otaUpdateInfo; }
-    inline void SetOtaUpdateInfo(const OTAUpdateInfo& value) { m_otaUpdateInfo = value; }
-    inline void SetOtaUpdateInfo(OTAUpdateInfo&& value) { m_otaUpdateInfo = std::move(value); }
-    inline GetOTAUpdateResult& WithOtaUpdateInfo(const OTAUpdateInfo& value) { SetOtaUpdateInfo(value); return *this;}
-    inline GetOTAUpdateResult& WithOtaUpdateInfo(OTAUpdateInfo&& value) { SetOtaUpdateInfo(std::move(value)); return *this;}
+    inline const OTAUpdateInfo& GetOtaUpdateInfo() const { return m_otaUpdateInfo; }
+    template<typename OtaUpdateInfoT = OTAUpdateInfo>
+    void SetOtaUpdateInfo(OtaUpdateInfoT&& value) { m_otaUpdateInfoHasBeenSet = true; m_otaUpdateInfo = std::forward<OtaUpdateInfoT>(value); }
+    template<typename OtaUpdateInfoT = OTAUpdateInfo>
+    GetOTAUpdateResult& WithOtaUpdateInfo(OtaUpdateInfoT&& value) { SetOtaUpdateInfo(std::forward<OtaUpdateInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOTAUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOTAUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOTAUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOTAUpdateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OTAUpdateInfo m_otaUpdateInfo;
+    bool m_otaUpdateInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcknowledgeOrderReceiptResult::AcknowledgeOrderReceiptResult()
-{
-}
-
 AcknowledgeOrderReceiptResult::AcknowledgeOrderReceiptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AcknowledgeOrderReceiptResult& AcknowledgeOrderReceiptResult::operator =(const A
   if(jsonValue.ValueExists("order"))
   {
     m_order = jsonValue.GetObject("order");
-
+    m_orderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

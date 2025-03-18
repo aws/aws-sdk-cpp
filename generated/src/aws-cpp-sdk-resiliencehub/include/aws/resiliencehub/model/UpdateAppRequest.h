@@ -25,7 +25,7 @@ namespace Model
   class UpdateAppRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API UpdateAppRequest();
+    AWS_RESILIENCEHUB_API UpdateAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,33 +46,29 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline UpdateAppRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline UpdateAppRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    UpdateAppRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
      */
-    inline const AppAssessmentScheduleType& GetAssessmentSchedule() const{ return m_assessmentSchedule; }
+    inline AppAssessmentScheduleType GetAssessmentSchedule() const { return m_assessmentSchedule; }
     inline bool AssessmentScheduleHasBeenSet() const { return m_assessmentScheduleHasBeenSet; }
-    inline void SetAssessmentSchedule(const AppAssessmentScheduleType& value) { m_assessmentScheduleHasBeenSet = true; m_assessmentSchedule = value; }
-    inline void SetAssessmentSchedule(AppAssessmentScheduleType&& value) { m_assessmentScheduleHasBeenSet = true; m_assessmentSchedule = std::move(value); }
-    inline UpdateAppRequest& WithAssessmentSchedule(const AppAssessmentScheduleType& value) { SetAssessmentSchedule(value); return *this;}
-    inline UpdateAppRequest& WithAssessmentSchedule(AppAssessmentScheduleType&& value) { SetAssessmentSchedule(std::move(value)); return *this;}
+    inline void SetAssessmentSchedule(AppAssessmentScheduleType value) { m_assessmentScheduleHasBeenSet = true; m_assessmentSchedule = value; }
+    inline UpdateAppRequest& WithAssessmentSchedule(AppAssessmentScheduleType value) { SetAssessmentSchedule(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies if the resiliency policy ARN should be cleared.</p>
      */
-    inline bool GetClearResiliencyPolicyArn() const{ return m_clearResiliencyPolicyArn; }
+    inline bool GetClearResiliencyPolicyArn() const { return m_clearResiliencyPolicyArn; }
     inline bool ClearResiliencyPolicyArnHasBeenSet() const { return m_clearResiliencyPolicyArnHasBeenSet; }
     inline void SetClearResiliencyPolicyArn(bool value) { m_clearResiliencyPolicyArnHasBeenSet = true; m_clearResiliencyPolicyArn = value; }
     inline UpdateAppRequest& WithClearResiliencyPolicyArn(bool value) { SetClearResiliencyPolicyArn(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
     /**
      * <p>The optional description for an app.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAppRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAppRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAppRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,14 @@ namespace Model
      * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
      * and <b>Scheduled assessment failure</b> events.</p>
      */
-    inline const Aws::Vector<EventSubscription>& GetEventSubscriptions() const{ return m_eventSubscriptions; }
+    inline const Aws::Vector<EventSubscription>& GetEventSubscriptions() const { return m_eventSubscriptions; }
     inline bool EventSubscriptionsHasBeenSet() const { return m_eventSubscriptionsHasBeenSet; }
-    inline void SetEventSubscriptions(const Aws::Vector<EventSubscription>& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions = value; }
-    inline void SetEventSubscriptions(Aws::Vector<EventSubscription>&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions = std::move(value); }
-    inline UpdateAppRequest& WithEventSubscriptions(const Aws::Vector<EventSubscription>& value) { SetEventSubscriptions(value); return *this;}
-    inline UpdateAppRequest& WithEventSubscriptions(Aws::Vector<EventSubscription>&& value) { SetEventSubscriptions(std::move(value)); return *this;}
-    inline UpdateAppRequest& AddEventSubscriptions(const EventSubscription& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.push_back(value); return *this; }
-    inline UpdateAppRequest& AddEventSubscriptions(EventSubscription&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.push_back(std::move(value)); return *this; }
+    template<typename EventSubscriptionsT = Aws::Vector<EventSubscription>>
+    void SetEventSubscriptions(EventSubscriptionsT&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions = std::forward<EventSubscriptionsT>(value); }
+    template<typename EventSubscriptionsT = Aws::Vector<EventSubscription>>
+    UpdateAppRequest& WithEventSubscriptions(EventSubscriptionsT&& value) { SetEventSubscriptions(std::forward<EventSubscriptionsT>(value)); return *this;}
+    template<typename EventSubscriptionsT = EventSubscription>
+    UpdateAppRequest& AddEventSubscriptions(EventSubscriptionsT&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.emplace_back(std::forward<EventSubscriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,12 +107,12 @@ namespace Model
      * <p>Defines the roles and credentials that Resilience Hub would use while
      * creating an application, importing its resources, and running an assessment.</p>
      */
-    inline const PermissionModel& GetPermissionModel() const{ return m_permissionModel; }
+    inline const PermissionModel& GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
-    inline void SetPermissionModel(const PermissionModel& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
-    inline void SetPermissionModel(PermissionModel&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
-    inline UpdateAppRequest& WithPermissionModel(const PermissionModel& value) { SetPermissionModel(value); return *this;}
-    inline UpdateAppRequest& WithPermissionModel(PermissionModel&& value) { SetPermissionModel(std::move(value)); return *this;}
+    template<typename PermissionModelT = PermissionModel>
+    void SetPermissionModel(PermissionModelT&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::forward<PermissionModelT>(value); }
+    template<typename PermissionModelT = PermissionModel>
+    UpdateAppRequest& WithPermissionModel(PermissionModelT&& value) { SetPermissionModel(std::forward<PermissionModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,24 +125,22 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline UpdateAppRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline UpdateAppRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    UpdateAppRequest& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
 
-    AppAssessmentScheduleType m_assessmentSchedule;
+    AppAssessmentScheduleType m_assessmentSchedule{AppAssessmentScheduleType::NOT_SET};
     bool m_assessmentScheduleHasBeenSet = false;
 
-    bool m_clearResiliencyPolicyArn;
+    bool m_clearResiliencyPolicyArn{false};
     bool m_clearResiliencyPolicyArnHasBeenSet = false;
 
     Aws::String m_description;

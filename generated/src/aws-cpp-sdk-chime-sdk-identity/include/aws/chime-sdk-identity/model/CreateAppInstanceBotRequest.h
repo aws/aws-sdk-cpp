@@ -25,7 +25,7 @@ namespace Model
   class CreateAppInstanceBotRequest : public ChimeSDKIdentityRequest
   {
   public:
-    AWS_CHIMESDKIDENTITY_API CreateAppInstanceBotRequest();
+    AWS_CHIMESDKIDENTITY_API CreateAppInstanceBotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The ARN of the <code>AppInstance</code> request.</p>
      */
-    inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
+    inline const Aws::String& GetAppInstanceArn() const { return m_appInstanceArn; }
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
-    inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
-    inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
-    inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
-    inline CreateAppInstanceBotRequest& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
-    inline CreateAppInstanceBotRequest& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
+    template<typename AppInstanceArnT = Aws::String>
+    void SetAppInstanceArn(AppInstanceArnT&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::forward<AppInstanceArnT>(value); }
+    template<typename AppInstanceArnT = Aws::String>
+    CreateAppInstanceBotRequest& WithAppInstanceArn(AppInstanceArnT&& value) { SetAppInstanceArn(std::forward<AppInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAppInstanceBotRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAppInstanceBotRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAppInstanceBotRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline CreateAppInstanceBotRequest& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline CreateAppInstanceBotRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    CreateAppInstanceBotRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,40 +77,38 @@ namespace Model
      * <p>The unique ID for the client making the request. Use different tokens for
      * different <code>AppInstanceBots</code>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateAppInstanceBotRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateAppInstanceBotRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateAppInstanceBotRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAppInstanceBotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAppInstanceBotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAppInstanceBotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAppInstanceBotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAppInstanceBotRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
      */
-    inline const Configuration& GetConfiguration() const{ return m_configuration; }
+    inline const Configuration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Configuration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Configuration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateAppInstanceBotRequest& WithConfiguration(const Configuration& value) { SetConfiguration(value); return *this;}
-    inline CreateAppInstanceBotRequest& WithConfiguration(Configuration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Configuration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Configuration>
+    CreateAppInstanceBotRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

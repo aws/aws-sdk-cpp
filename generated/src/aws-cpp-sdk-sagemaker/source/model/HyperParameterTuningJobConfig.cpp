@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() : 
-    m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_strategyConfigHasBeenSet(false),
-    m_hyperParameterTuningJobObjectiveHasBeenSet(false),
-    m_resourceLimitsHasBeenSet(false),
-    m_parameterRangesHasBeenSet(false),
-    m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
-    m_trainingJobEarlyStoppingTypeHasBeenSet(false),
-    m_tuningJobCompletionCriteriaHasBeenSet(false),
-    m_randomSeed(0),
-    m_randomSeedHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
-  : HyperParameterTuningJobConfig()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonVie
   if(jsonValue.ValueExists("Strategy"))
   {
     m_strategy = HyperParameterTuningJobStrategyTypeMapper::GetHyperParameterTuningJobStrategyTypeForName(jsonValue.GetString("Strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrategyConfig"))
   {
     m_strategyConfig = jsonValue.GetObject("StrategyConfig");
-
     m_strategyConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterTuningJobObjective"))
   {
     m_hyperParameterTuningJobObjective = jsonValue.GetObject("HyperParameterTuningJobObjective");
-
     m_hyperParameterTuningJobObjectiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLimits"))
   {
     m_resourceLimits = jsonValue.GetObject("ResourceLimits");
-
     m_resourceLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterRanges"))
   {
     m_parameterRanges = jsonValue.GetObject("ParameterRanges");
-
     m_parameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobEarlyStoppingType"))
   {
     m_trainingJobEarlyStoppingType = TrainingJobEarlyStoppingTypeMapper::GetTrainingJobEarlyStoppingTypeForName(jsonValue.GetString("TrainingJobEarlyStoppingType"));
-
     m_trainingJobEarlyStoppingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TuningJobCompletionCriteria"))
   {
     m_tuningJobCompletionCriteria = jsonValue.GetObject("TuningJobCompletionCriteria");
-
     m_tuningJobCompletionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RandomSeed"))
   {
     m_randomSeed = jsonValue.GetInteger("RandomSeed");
-
     m_randomSeedHasBeenSet = true;
   }
-
   return *this;
 }
 

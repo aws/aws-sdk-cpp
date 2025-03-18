@@ -18,18 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-SolutionSummary::SolutionSummary() : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_recipeArnHasBeenSet(false)
-{
-}
-
 SolutionSummary::SolutionSummary(JsonView jsonValue)
-  : SolutionSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SolutionSummary& SolutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionArn"))
   {
     m_solutionArn = jsonValue.GetString("solutionArn");
-
     m_solutionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recipeArn"))
   {
     m_recipeArn = jsonValue.GetString("recipeArn");
-
     m_recipeArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-LastModifiedDate::LastModifiedDate() : 
-    m_afterLastModifiedDateHasBeenSet(false),
-    m_beforeLastModifiedDateHasBeenSet(false)
-{
-}
-
 LastModifiedDate::LastModifiedDate(JsonView jsonValue)
-  : LastModifiedDate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LastModifiedDate& LastModifiedDate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AfterLastModifiedDate"))
   {
     m_afterLastModifiedDate = jsonValue.GetString("AfterLastModifiedDate");
-
     m_afterLastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeforeLastModifiedDate"))
   {
     m_beforeLastModifiedDate = jsonValue.GetString("BeforeLastModifiedDate");
-
     m_beforeLastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

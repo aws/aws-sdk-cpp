@@ -13,18 +13,6 @@ using namespace Aws::LexRuntimeV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSessionRequest::PutSessionRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_responseContentTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutSessionRequest::SerializePayload() const
 {
   JsonValue payload;

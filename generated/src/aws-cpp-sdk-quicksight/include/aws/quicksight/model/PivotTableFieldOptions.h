@@ -34,7 +34,7 @@ namespace Model
   class PivotTableFieldOptions
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableFieldOptions();
+    AWS_QUICKSIGHT_API PivotTableFieldOptions() = default;
     AWS_QUICKSIGHT_API PivotTableFieldOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,42 @@ namespace Model
     /**
      * <p>The selected field options for the pivot table field options.</p>
      */
-    inline const Aws::Vector<PivotTableFieldOption>& GetSelectedFieldOptions() const{ return m_selectedFieldOptions; }
+    inline const Aws::Vector<PivotTableFieldOption>& GetSelectedFieldOptions() const { return m_selectedFieldOptions; }
     inline bool SelectedFieldOptionsHasBeenSet() const { return m_selectedFieldOptionsHasBeenSet; }
-    inline void SetSelectedFieldOptions(const Aws::Vector<PivotTableFieldOption>& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions = value; }
-    inline void SetSelectedFieldOptions(Aws::Vector<PivotTableFieldOption>&& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions = std::move(value); }
-    inline PivotTableFieldOptions& WithSelectedFieldOptions(const Aws::Vector<PivotTableFieldOption>& value) { SetSelectedFieldOptions(value); return *this;}
-    inline PivotTableFieldOptions& WithSelectedFieldOptions(Aws::Vector<PivotTableFieldOption>&& value) { SetSelectedFieldOptions(std::move(value)); return *this;}
-    inline PivotTableFieldOptions& AddSelectedFieldOptions(const PivotTableFieldOption& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions.push_back(value); return *this; }
-    inline PivotTableFieldOptions& AddSelectedFieldOptions(PivotTableFieldOption&& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions.push_back(std::move(value)); return *this; }
+    template<typename SelectedFieldOptionsT = Aws::Vector<PivotTableFieldOption>>
+    void SetSelectedFieldOptions(SelectedFieldOptionsT&& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions = std::forward<SelectedFieldOptionsT>(value); }
+    template<typename SelectedFieldOptionsT = Aws::Vector<PivotTableFieldOption>>
+    PivotTableFieldOptions& WithSelectedFieldOptions(SelectedFieldOptionsT&& value) { SetSelectedFieldOptions(std::forward<SelectedFieldOptionsT>(value)); return *this;}
+    template<typename SelectedFieldOptionsT = PivotTableFieldOption>
+    PivotTableFieldOptions& AddSelectedFieldOptions(SelectedFieldOptionsT&& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions.emplace_back(std::forward<SelectedFieldOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The data path options for the pivot table field options.</p>
      */
-    inline const Aws::Vector<PivotTableDataPathOption>& GetDataPathOptions() const{ return m_dataPathOptions; }
+    inline const Aws::Vector<PivotTableDataPathOption>& GetDataPathOptions() const { return m_dataPathOptions; }
     inline bool DataPathOptionsHasBeenSet() const { return m_dataPathOptionsHasBeenSet; }
-    inline void SetDataPathOptions(const Aws::Vector<PivotTableDataPathOption>& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions = value; }
-    inline void SetDataPathOptions(Aws::Vector<PivotTableDataPathOption>&& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions = std::move(value); }
-    inline PivotTableFieldOptions& WithDataPathOptions(const Aws::Vector<PivotTableDataPathOption>& value) { SetDataPathOptions(value); return *this;}
-    inline PivotTableFieldOptions& WithDataPathOptions(Aws::Vector<PivotTableDataPathOption>&& value) { SetDataPathOptions(std::move(value)); return *this;}
-    inline PivotTableFieldOptions& AddDataPathOptions(const PivotTableDataPathOption& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions.push_back(value); return *this; }
-    inline PivotTableFieldOptions& AddDataPathOptions(PivotTableDataPathOption&& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions.push_back(std::move(value)); return *this; }
+    template<typename DataPathOptionsT = Aws::Vector<PivotTableDataPathOption>>
+    void SetDataPathOptions(DataPathOptionsT&& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions = std::forward<DataPathOptionsT>(value); }
+    template<typename DataPathOptionsT = Aws::Vector<PivotTableDataPathOption>>
+    PivotTableFieldOptions& WithDataPathOptions(DataPathOptionsT&& value) { SetDataPathOptions(std::forward<DataPathOptionsT>(value)); return *this;}
+    template<typename DataPathOptionsT = PivotTableDataPathOption>
+    PivotTableFieldOptions& AddDataPathOptions(DataPathOptionsT&& value) { m_dataPathOptionsHasBeenSet = true; m_dataPathOptions.emplace_back(std::forward<DataPathOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The collapse state options for the pivot table field options.</p>
      */
-    inline const Aws::Vector<PivotTableFieldCollapseStateOption>& GetCollapseStateOptions() const{ return m_collapseStateOptions; }
+    inline const Aws::Vector<PivotTableFieldCollapseStateOption>& GetCollapseStateOptions() const { return m_collapseStateOptions; }
     inline bool CollapseStateOptionsHasBeenSet() const { return m_collapseStateOptionsHasBeenSet; }
-    inline void SetCollapseStateOptions(const Aws::Vector<PivotTableFieldCollapseStateOption>& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions = value; }
-    inline void SetCollapseStateOptions(Aws::Vector<PivotTableFieldCollapseStateOption>&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions = std::move(value); }
-    inline PivotTableFieldOptions& WithCollapseStateOptions(const Aws::Vector<PivotTableFieldCollapseStateOption>& value) { SetCollapseStateOptions(value); return *this;}
-    inline PivotTableFieldOptions& WithCollapseStateOptions(Aws::Vector<PivotTableFieldCollapseStateOption>&& value) { SetCollapseStateOptions(std::move(value)); return *this;}
-    inline PivotTableFieldOptions& AddCollapseStateOptions(const PivotTableFieldCollapseStateOption& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions.push_back(value); return *this; }
-    inline PivotTableFieldOptions& AddCollapseStateOptions(PivotTableFieldCollapseStateOption&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions.push_back(std::move(value)); return *this; }
+    template<typename CollapseStateOptionsT = Aws::Vector<PivotTableFieldCollapseStateOption>>
+    void SetCollapseStateOptions(CollapseStateOptionsT&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions = std::forward<CollapseStateOptionsT>(value); }
+    template<typename CollapseStateOptionsT = Aws::Vector<PivotTableFieldCollapseStateOption>>
+    PivotTableFieldOptions& WithCollapseStateOptions(CollapseStateOptionsT&& value) { SetCollapseStateOptions(std::forward<CollapseStateOptionsT>(value)); return *this;}
+    template<typename CollapseStateOptionsT = PivotTableFieldCollapseStateOption>
+    PivotTableFieldOptions& AddCollapseStateOptions(CollapseStateOptionsT&& value) { m_collapseStateOptionsHasBeenSet = true; m_collapseStateOptions.emplace_back(std::forward<CollapseStateOptionsT>(value)); return *this; }
     ///@}
   private:
 

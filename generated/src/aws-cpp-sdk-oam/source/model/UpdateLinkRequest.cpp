@@ -12,13 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLinkRequest::UpdateLinkRequest() : 
-    m_identifierHasBeenSet(false),
-    m_linkConfigurationHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLinkRequest::SerializePayload() const
 {
   JsonValue payload;

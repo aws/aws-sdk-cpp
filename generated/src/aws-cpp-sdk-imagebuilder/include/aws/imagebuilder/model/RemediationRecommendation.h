@@ -32,7 +32,7 @@ namespace Model
   class RemediationRecommendation
   {
   public:
-    AWS_IMAGEBUILDER_API RemediationRecommendation();
+    AWS_IMAGEBUILDER_API RemediationRecommendation() = default;
     AWS_IMAGEBUILDER_API RemediationRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API RemediationRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The recommended course of action to remediate the finding.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline RemediationRecommendation& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline RemediationRecommendation& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline RemediationRecommendation& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RemediationRecommendation& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>A link to more information about the recommended remediation for this
      * vulnerability.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline RemediationRecommendation& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline RemediationRecommendation& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline RemediationRecommendation& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    RemediationRecommendation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

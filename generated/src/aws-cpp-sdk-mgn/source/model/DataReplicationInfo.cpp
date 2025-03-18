@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-DataReplicationInfo::DataReplicationInfo() : 
-    m_dataReplicationErrorHasBeenSet(false),
-    m_dataReplicationInitiationHasBeenSet(false),
-    m_dataReplicationState(DataReplicationState::NOT_SET),
-    m_dataReplicationStateHasBeenSet(false),
-    m_etaDateTimeHasBeenSet(false),
-    m_lagDurationHasBeenSet(false),
-    m_lastSnapshotDateTimeHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false)
-{
-}
-
 DataReplicationInfo::DataReplicationInfo(JsonView jsonValue)
-  : DataReplicationInfo()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataReplicationError"))
   {
     m_dataReplicationError = jsonValue.GetObject("dataReplicationError");
-
     m_dataReplicationErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationInitiation"))
   {
     m_dataReplicationInitiation = jsonValue.GetObject("dataReplicationInitiation");
-
     m_dataReplicationInitiationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationState"))
   {
     m_dataReplicationState = DataReplicationStateMapper::GetDataReplicationStateForName(jsonValue.GetString("dataReplicationState"));
-
     m_dataReplicationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("etaDateTime"))
   {
     m_etaDateTime = jsonValue.GetString("etaDateTime");
-
     m_etaDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagDuration"))
   {
     m_lagDuration = jsonValue.GetString("lagDuration");
-
     m_lagDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSnapshotDateTime"))
   {
     m_lastSnapshotDateTime = jsonValue.GetString("lastSnapshotDateTime");
-
     m_lastSnapshotDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatedDisks"))
   {
     Aws::Utils::Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
@@ -89,7 +64,6 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
     }
     m_replicatedDisksHasBeenSet = true;
   }
-
   return *this;
 }
 

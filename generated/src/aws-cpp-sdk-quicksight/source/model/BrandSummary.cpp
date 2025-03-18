@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BrandSummary::BrandSummary() : 
-    m_arnHasBeenSet(false),
-    m_brandIdHasBeenSet(false),
-    m_brandNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_brandStatus(BrandStatus::NOT_SET),
-    m_brandStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 BrandSummary::BrandSummary(JsonView jsonValue)
-  : BrandSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ BrandSummary& BrandSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandId"))
   {
     m_brandId = jsonValue.GetString("BrandId");
-
     m_brandIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandName"))
   {
     m_brandName = jsonValue.GetString("BrandName");
-
     m_brandNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandStatus"))
   {
     m_brandStatus = BrandStatusMapper::GetBrandStatusForName(jsonValue.GetString("BrandStatus"));
-
     m_brandStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

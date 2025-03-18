@@ -31,7 +31,7 @@ namespace Model
   class MessageInput
   {
   public:
-    AWS_QCONNECT_API MessageInput();
+    AWS_QCONNECT_API MessageInput() = default;
     AWS_QCONNECT_API MessageInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API MessageInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The message input value.</p>
      */
-    inline const MessageData& GetValue() const{ return m_value; }
+    inline const MessageData& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const MessageData& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(MessageData&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline MessageInput& WithValue(const MessageData& value) { SetValue(value); return *this;}
-    inline MessageInput& WithValue(MessageData&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = MessageData>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = MessageData>
+    MessageInput& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

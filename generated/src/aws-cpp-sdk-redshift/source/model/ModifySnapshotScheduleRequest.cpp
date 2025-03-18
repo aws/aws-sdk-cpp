@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifySnapshotScheduleRequest::ModifySnapshotScheduleRequest() : 
-    m_scheduleIdentifierHasBeenSet(false),
-    m_scheduleDefinitionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifySnapshotScheduleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

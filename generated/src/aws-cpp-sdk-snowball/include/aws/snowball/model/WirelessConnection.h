@@ -30,7 +30,7 @@ namespace Model
   class WirelessConnection
   {
   public:
-    AWS_SNOWBALL_API WirelessConnection();
+    AWS_SNOWBALL_API WirelessConnection() = default;
     AWS_SNOWBALL_API WirelessConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API WirelessConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
      */
-    inline bool GetIsWifiEnabled() const{ return m_isWifiEnabled; }
+    inline bool GetIsWifiEnabled() const { return m_isWifiEnabled; }
     inline bool IsWifiEnabledHasBeenSet() const { return m_isWifiEnabledHasBeenSet; }
     inline void SetIsWifiEnabled(bool value) { m_isWifiEnabledHasBeenSet = true; m_isWifiEnabled = value; }
     inline WirelessConnection& WithIsWifiEnabled(bool value) { SetIsWifiEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_isWifiEnabled;
+    bool m_isWifiEnabled{false};
     bool m_isWifiEnabledHasBeenSet = false;
   };
 

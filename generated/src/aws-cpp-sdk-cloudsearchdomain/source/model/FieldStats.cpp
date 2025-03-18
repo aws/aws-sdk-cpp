@@ -18,25 +18,7 @@ namespace CloudSearchDomain
 namespace Model
 {
 
-FieldStats::FieldStats() : 
-    m_minHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_missing(0),
-    m_missingHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_sumOfSquares(0.0),
-    m_sumOfSquaresHasBeenSet(false),
-    m_meanHasBeenSet(false),
-    m_stddev(0.0),
-    m_stddevHasBeenSet(false)
-{
-}
-
 FieldStats::FieldStats(JsonView jsonValue)
-  : FieldStats()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ FieldStats& FieldStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetString("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetString("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("missing"))
   {
     m_missing = jsonValue.GetInt64("missing");
-
     m_missingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sum"))
   {
     m_sum = jsonValue.GetDouble("sum");
-
     m_sumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sumOfSquares"))
   {
     m_sumOfSquares = jsonValue.GetDouble("sumOfSquares");
-
     m_sumOfSquaresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mean"))
   {
     m_mean = jsonValue.GetString("mean");
-
     m_meanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stddev"))
   {
     m_stddev = jsonValue.GetDouble("stddev");
-
     m_stddevHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafWebAclDetails::AwsWafWebAclDetails() : 
-    m_nameHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_webAclIdHasBeenSet(false)
-{
-}
-
 AwsWafWebAclDetails::AwsWafWebAclDetails(JsonView jsonValue)
-  : AwsWafWebAclDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsWafWebAclDetails& AwsWafWebAclDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = jsonValue.GetString("DefaultAction");
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -57,14 +44,11 @@ AwsWafWebAclDetails& AwsWafWebAclDetails::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAclId"))
   {
     m_webAclId = jsonValue.GetString("WebAclId");
-
     m_webAclIdHasBeenSet = true;
   }
-
   return *this;
 }
 

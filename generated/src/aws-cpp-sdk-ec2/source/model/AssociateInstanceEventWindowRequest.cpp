@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateInstanceEventWindowRequest::AssociateInstanceEventWindowRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_associationTargetHasBeenSet(false)
-{
-}
-
 Aws::String AssociateInstanceEventWindowRequest::SerializePayload() const
 {
   Aws::StringStream ss;

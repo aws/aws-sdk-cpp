@@ -30,7 +30,7 @@ namespace Model
   class CreateStackSetRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API CreateStackSetRequest();
+    AWS_CLOUDFORMATION_API CreateStackSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> 
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline CreateStackSetRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline CreateStackSetRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    CreateStackSetRequest& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p>A description of the stack set. You can use the description to identify the
      * stack set's purpose or other important information.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateStackSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateStackSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateStackSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * byte and a maximum length of 51,200 bytes.</p> <p>Conditional: You must specify
      * either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline CreateStackSetRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline CreateStackSetRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    CreateStackSetRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * <code>https://</code>.</p> <p>Conditional: You must specify either the
      * TemplateBody or the TemplateURL parameter, but not both.</p>
      */
-    inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+    inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-    inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-    inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-    inline CreateStackSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-    inline CreateStackSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    template<typename TemplateURLT = Aws::String>
+    void SetTemplateURL(TemplateURLT&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::forward<TemplateURLT>(value); }
+    template<typename TemplateURLT = Aws::String>
+    CreateStackSetRequest& WithTemplateURL(TemplateURLT&& value) { SetTemplateURL(std::forward<TemplateURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,28 +108,26 @@ namespace Model
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
      * Resource Name (ARN) of the stack.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline CreateStackSetRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline CreateStackSetRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    CreateStackSetRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input parameters for the stack set template.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateStackSetRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline CreateStackSetRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CreateStackSetRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline CreateStackSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    CreateStackSetRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    CreateStackSetRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -192,14 +182,13 @@ namespace Model
      * macro in your template the stack set operation will fail.</p>  </li>
      * </ul>
      */
-    inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline CreateStackSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-    inline CreateStackSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline CreateStackSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline CreateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    CreateStackSetRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline CreateStackSetRequest& AddCapabilities(Capability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -212,14 +201,14 @@ namespace Model
      * resources. If you don't, the entire <code>CreateStackSet</code> action fails
      * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateStackSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateStackSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateStackSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateStackSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateStackSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateStackSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -231,14 +220,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
      * for using StackSets</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
+    inline const Aws::String& GetAdministrationRoleARN() const { return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
-    inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
-    inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
-    inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
-    inline CreateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
-    inline CreateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
+    template<typename AdministrationRoleARNT = Aws::String>
+    void SetAdministrationRoleARN(AdministrationRoleARNT&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::forward<AdministrationRoleARNT>(value); }
+    template<typename AdministrationRoleARNT = Aws::String>
+    CreateStackSetRequest& WithAdministrationRoleARN(AdministrationRoleARNT&& value) { SetAdministrationRoleARN(std::forward<AdministrationRoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +237,12 @@ namespace Model
      * roles to control which stack resources users and groups can include in their
      * stack sets.</p>
      */
-    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+    inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
-    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
-    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
-    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
-    inline CreateStackSetRequest& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
-    inline CreateStackSetRequest& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
+    template<typename ExecutionRoleNameT = Aws::String>
+    void SetExecutionRoleName(ExecutionRoleNameT&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::forward<ExecutionRoleNameT>(value); }
+    template<typename ExecutionRoleNameT = Aws::String>
+    CreateStackSetRequest& WithExecutionRoleName(ExecutionRoleNameT&& value) { SetExecutionRoleName(std::forward<ExecutionRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -275,12 +260,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
      * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
-    inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
+    inline PermissionModels GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
-    inline void SetPermissionModel(const PermissionModels& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
-    inline void SetPermissionModel(PermissionModels&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
-    inline CreateStackSetRequest& WithPermissionModel(const PermissionModels& value) { SetPermissionModel(value); return *this;}
-    inline CreateStackSetRequest& WithPermissionModel(PermissionModels&& value) { SetPermissionModel(std::move(value)); return *this;}
+    inline void SetPermissionModel(PermissionModels value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+    inline CreateStackSetRequest& WithPermissionModel(PermissionModels value) { SetPermissionModel(value); return *this;}
     ///@}
 
     ///@{
@@ -289,12 +272,12 @@ namespace Model
      * that are added to the target organization or organizational unit (OU). Specify
      * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
-    inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
+    inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
-    inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
-    inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
-    inline CreateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
-    inline CreateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
+    template<typename AutoDeploymentT = AutoDeployment>
+    void SetAutoDeployment(AutoDeploymentT&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::forward<AutoDeploymentT>(value); }
+    template<typename AutoDeploymentT = AutoDeployment>
+    CreateStackSetRequest& WithAutoDeployment(AutoDeploymentT&& value) { SetAutoDeployment(std::forward<AutoDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -316,12 +299,10 @@ namespace Model
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
-    inline const CallAs& GetCallAs() const{ return m_callAs; }
+    inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
-    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
-    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
-    inline CreateStackSetRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
-    inline CreateStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+    inline void SetCallAs(CallAs value) { m_callAsHasBeenSet = true; m_callAs = value; }
+    inline CreateStackSetRequest& WithCallAs(CallAs value) { SetCallAs(value); return *this;}
     ///@}
 
     ///@{
@@ -333,14 +314,12 @@ namespace Model
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateStackSetRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateStackSetRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateStackSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateStackSetRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -348,12 +327,12 @@ namespace Model
      * <p>Describes whether StackSets performs non-conflicting operations concurrently
      * and queues conflicting operations.</p>
      */
-    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+    inline const ManagedExecution& GetManagedExecution() const { return m_managedExecution; }
     inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
-    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
-    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
-    inline CreateStackSetRequest& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
-    inline CreateStackSetRequest& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+    template<typename ManagedExecutionT = ManagedExecution>
+    void SetManagedExecution(ManagedExecutionT&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::forward<ManagedExecutionT>(value); }
+    template<typename ManagedExecutionT = ManagedExecution>
+    CreateStackSetRequest& WithManagedExecution(ManagedExecutionT&& value) { SetManagedExecution(std::forward<ManagedExecutionT>(value)); return *this;}
     ///@}
   private:
 
@@ -387,13 +366,13 @@ namespace Model
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet = false;
 
-    PermissionModels m_permissionModel;
+    PermissionModels m_permissionModel{PermissionModels::NOT_SET};
     bool m_permissionModelHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
     bool m_autoDeploymentHasBeenSet = false;
 
-    CallAs m_callAs;
+    CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

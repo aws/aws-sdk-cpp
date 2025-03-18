@@ -18,19 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-PullRequestTarget::PullRequestTarget() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceReferenceHasBeenSet(false),
-    m_destinationReferenceHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false),
-    m_sourceCommitHasBeenSet(false),
-    m_mergeBaseHasBeenSet(false),
-    m_mergeMetadataHasBeenSet(false)
-{
-}
-
 PullRequestTarget::PullRequestTarget(JsonView jsonValue)
-  : PullRequestTarget()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ PullRequestTarget& PullRequestTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceReference"))
   {
     m_sourceReference = jsonValue.GetString("sourceReference");
-
     m_sourceReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationReference"))
   {
     m_destinationReference = jsonValue.GetString("destinationReference");
-
     m_destinationReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCommit"))
   {
     m_destinationCommit = jsonValue.GetString("destinationCommit");
-
     m_destinationCommitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCommit"))
   {
     m_sourceCommit = jsonValue.GetString("sourceCommit");
-
     m_sourceCommitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeBase"))
   {
     m_mergeBase = jsonValue.GetString("mergeBase");
-
     m_mergeBaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeMetadata"))
   {
     m_mergeMetadata = jsonValue.GetObject("mergeMetadata");
-
     m_mergeMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

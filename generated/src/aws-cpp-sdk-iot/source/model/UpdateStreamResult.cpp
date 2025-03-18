@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateStreamResult::UpdateStreamResult() : 
-    m_streamVersion(0)
-{
-}
-
 UpdateStreamResult::UpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateStreamResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateStreamResult& UpdateStreamResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
+    m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamArn"))
   {
     m_streamArn = jsonValue.GetString("streamArn");
-
+    m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamVersion"))
   {
     m_streamVersion = jsonValue.GetInteger("streamVersion");
-
+    m_streamVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

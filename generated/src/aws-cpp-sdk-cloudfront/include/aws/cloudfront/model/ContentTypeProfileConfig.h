@@ -31,7 +31,7 @@ namespace Model
   class ContentTypeProfileConfig
   {
   public:
-    AWS_CLOUDFRONT_API ContentTypeProfileConfig();
+    AWS_CLOUDFRONT_API ContentTypeProfileConfig() = default;
     AWS_CLOUDFRONT_API ContentTypeProfileConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContentTypeProfileConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * unknown. If false (the default), an error is returned when the content type is
      * unknown.</p>
      */
-    inline bool GetForwardWhenContentTypeIsUnknown() const{ return m_forwardWhenContentTypeIsUnknown; }
+    inline bool GetForwardWhenContentTypeIsUnknown() const { return m_forwardWhenContentTypeIsUnknown; }
     inline bool ForwardWhenContentTypeIsUnknownHasBeenSet() const { return m_forwardWhenContentTypeIsUnknownHasBeenSet; }
     inline void SetForwardWhenContentTypeIsUnknown(bool value) { m_forwardWhenContentTypeIsUnknownHasBeenSet = true; m_forwardWhenContentTypeIsUnknown = value; }
     inline ContentTypeProfileConfig& WithForwardWhenContentTypeIsUnknown(bool value) { SetForwardWhenContentTypeIsUnknown(value); return *this;}
@@ -56,16 +56,16 @@ namespace Model
     /**
      * <p>The configuration for a field-level encryption content type-profile.</p>
      */
-    inline const ContentTypeProfiles& GetContentTypeProfiles() const{ return m_contentTypeProfiles; }
+    inline const ContentTypeProfiles& GetContentTypeProfiles() const { return m_contentTypeProfiles; }
     inline bool ContentTypeProfilesHasBeenSet() const { return m_contentTypeProfilesHasBeenSet; }
-    inline void SetContentTypeProfiles(const ContentTypeProfiles& value) { m_contentTypeProfilesHasBeenSet = true; m_contentTypeProfiles = value; }
-    inline void SetContentTypeProfiles(ContentTypeProfiles&& value) { m_contentTypeProfilesHasBeenSet = true; m_contentTypeProfiles = std::move(value); }
-    inline ContentTypeProfileConfig& WithContentTypeProfiles(const ContentTypeProfiles& value) { SetContentTypeProfiles(value); return *this;}
-    inline ContentTypeProfileConfig& WithContentTypeProfiles(ContentTypeProfiles&& value) { SetContentTypeProfiles(std::move(value)); return *this;}
+    template<typename ContentTypeProfilesT = ContentTypeProfiles>
+    void SetContentTypeProfiles(ContentTypeProfilesT&& value) { m_contentTypeProfilesHasBeenSet = true; m_contentTypeProfiles = std::forward<ContentTypeProfilesT>(value); }
+    template<typename ContentTypeProfilesT = ContentTypeProfiles>
+    ContentTypeProfileConfig& WithContentTypeProfiles(ContentTypeProfilesT&& value) { SetContentTypeProfiles(std::forward<ContentTypeProfilesT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_forwardWhenContentTypeIsUnknown;
+    bool m_forwardWhenContentTypeIsUnknown{false};
     bool m_forwardWhenContentTypeIsUnknownHasBeenSet = false;
 
     ContentTypeProfiles m_contentTypeProfiles;

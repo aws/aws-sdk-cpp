@@ -31,7 +31,7 @@ namespace Model
   class SoftwareTokenMfaConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The activation state of TOTP MFA.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SoftwareTokenMfaConfigType& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

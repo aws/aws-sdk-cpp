@@ -18,13 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-JiraSelectedQuestionConfiguration::JiraSelectedQuestionConfiguration() : 
-    m_selectedPillarsHasBeenSet(false)
-{
-}
-
 JiraSelectedQuestionConfiguration::JiraSelectedQuestionConfiguration(JsonView jsonValue)
-  : JiraSelectedQuestionConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ JiraSelectedQuestionConfiguration& JiraSelectedQuestionConfiguration::operator =
     }
     m_selectedPillarsHasBeenSet = true;
   }
-
   return *this;
 }
 

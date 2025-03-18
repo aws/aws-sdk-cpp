@@ -18,14 +18,7 @@ namespace Shield
 namespace Model
 {
 
-SubscriptionLimits::SubscriptionLimits() : 
-    m_protectionLimitsHasBeenSet(false),
-    m_protectionGroupLimitsHasBeenSet(false)
-{
-}
-
 SubscriptionLimits::SubscriptionLimits(JsonView jsonValue)
-  : SubscriptionLimits()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubscriptionLimits& SubscriptionLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProtectionLimits"))
   {
     m_protectionLimits = jsonValue.GetObject("ProtectionLimits");
-
     m_protectionLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionGroupLimits"))
   {
     m_protectionGroupLimits = jsonValue.GetObject("ProtectionGroupLimits");
-
     m_protectionGroupLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

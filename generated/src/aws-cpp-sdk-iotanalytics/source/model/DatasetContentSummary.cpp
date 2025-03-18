@@ -18,17 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetContentSummary::DatasetContentSummary() : 
-    m_versionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_scheduleTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
-{
-}
-
 DatasetContentSummary::DatasetContentSummary(JsonView jsonValue)
-  : DatasetContentSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DatasetContentSummary& DatasetContentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleTime"))
   {
     m_scheduleTime = jsonValue.GetDouble("scheduleTime");
-
     m_scheduleTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetDouble("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFirewallPoliciesRequest::ListFirewallPoliciesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFirewallPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

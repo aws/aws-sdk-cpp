@@ -18,18 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("limit"))
   {
     m_limit = jsonValue.GetInteger("limit");
-
     m_limitHasBeenSet = true;
   }
-
   return *this;
 }
 

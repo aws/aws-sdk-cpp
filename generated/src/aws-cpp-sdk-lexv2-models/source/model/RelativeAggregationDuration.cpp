@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RelativeAggregationDuration::RelativeAggregationDuration() : 
-    m_timeDimension(TimeDimension::NOT_SET),
-    m_timeDimensionHasBeenSet(false),
-    m_timeValue(0),
-    m_timeValueHasBeenSet(false)
-{
-}
-
 RelativeAggregationDuration::RelativeAggregationDuration(JsonView jsonValue)
-  : RelativeAggregationDuration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RelativeAggregationDuration& RelativeAggregationDuration::operator =(JsonView js
   if(jsonValue.ValueExists("timeDimension"))
   {
     m_timeDimension = TimeDimensionMapper::GetTimeDimensionForName(jsonValue.GetString("timeDimension"));
-
     m_timeDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeValue"))
   {
     m_timeValue = jsonValue.GetInteger("timeValue");
-
     m_timeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

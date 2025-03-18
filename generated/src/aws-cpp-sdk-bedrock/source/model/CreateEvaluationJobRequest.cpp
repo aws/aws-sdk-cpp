@@ -12,22 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEvaluationJobRequest::CreateEvaluationJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobDescriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_roleArnHasBeenSet(false),
-    m_customerEncryptionKeyIdHasBeenSet(false),
-    m_jobTagsHasBeenSet(false),
-    m_applicationType(ApplicationType::NOT_SET),
-    m_applicationTypeHasBeenSet(false),
-    m_evaluationConfigHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateEvaluationJobRequest::SerializePayload() const
 {
   JsonValue payload;

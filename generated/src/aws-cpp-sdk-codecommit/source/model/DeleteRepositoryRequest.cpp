@@ -12,11 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() : 
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

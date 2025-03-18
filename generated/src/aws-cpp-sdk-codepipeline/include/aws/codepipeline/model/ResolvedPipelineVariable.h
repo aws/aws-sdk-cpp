@@ -32,7 +32,7 @@ namespace Model
   class ResolvedPipelineVariable
   {
   public:
-    AWS_CODEPIPELINE_API ResolvedPipelineVariable();
+    AWS_CODEPIPELINE_API ResolvedPipelineVariable() = default;
     AWS_CODEPIPELINE_API ResolvedPipelineVariable(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ResolvedPipelineVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of a pipeline-level variable.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResolvedPipelineVariable& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResolvedPipelineVariable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResolvedPipelineVariable& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResolvedPipelineVariable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resolved value of a pipeline-level variable.</p>
      */
-    inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
+    inline const Aws::String& GetResolvedValue() const { return m_resolvedValue; }
     inline bool ResolvedValueHasBeenSet() const { return m_resolvedValueHasBeenSet; }
-    inline void SetResolvedValue(const Aws::String& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = value; }
-    inline void SetResolvedValue(Aws::String&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::move(value); }
-    inline void SetResolvedValue(const char* value) { m_resolvedValueHasBeenSet = true; m_resolvedValue.assign(value); }
-    inline ResolvedPipelineVariable& WithResolvedValue(const Aws::String& value) { SetResolvedValue(value); return *this;}
-    inline ResolvedPipelineVariable& WithResolvedValue(Aws::String&& value) { SetResolvedValue(std::move(value)); return *this;}
-    inline ResolvedPipelineVariable& WithResolvedValue(const char* value) { SetResolvedValue(value); return *this;}
+    template<typename ResolvedValueT = Aws::String>
+    void SetResolvedValue(ResolvedValueT&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::forward<ResolvedValueT>(value); }
+    template<typename ResolvedValueT = Aws::String>
+    ResolvedPipelineVariable& WithResolvedValue(ResolvedValueT&& value) { SetResolvedValue(std::forward<ResolvedValueT>(value)); return *this;}
     ///@}
   private:
 

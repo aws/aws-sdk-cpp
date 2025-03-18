@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRateBasedStatementManagedKeysResult::GetRateBasedStatementManagedKeysResult()
-{
-}
-
 GetRateBasedStatementManagedKeysResult::GetRateBasedStatementManagedKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRateBasedStatementManagedKeysResult& GetRateBasedStatementManagedKeysResult::
   if(jsonValue.ValueExists("ManagedKeysIPV4"))
   {
     m_managedKeysIPV4 = jsonValue.GetObject("ManagedKeysIPV4");
-
+    m_managedKeysIPV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedKeysIPV6"))
   {
     m_managedKeysIPV6 = jsonValue.GetObject("ManagedKeysIPV6");
-
+    m_managedKeysIPV6HasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

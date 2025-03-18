@@ -18,16 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CalculationResult::CalculationResult() : 
-    m_stdOutS3UriHasBeenSet(false),
-    m_stdErrorS3UriHasBeenSet(false),
-    m_resultS3UriHasBeenSet(false),
-    m_resultTypeHasBeenSet(false)
-{
-}
-
 CalculationResult::CalculationResult(JsonView jsonValue)
-  : CalculationResult()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CalculationResult& CalculationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StdOutS3Uri"))
   {
     m_stdOutS3Uri = jsonValue.GetString("StdOutS3Uri");
-
     m_stdOutS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StdErrorS3Uri"))
   {
     m_stdErrorS3Uri = jsonValue.GetString("StdErrorS3Uri");
-
     m_stdErrorS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultS3Uri"))
   {
     m_resultS3Uri = jsonValue.GetString("ResultS3Uri");
-
     m_resultS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultType"))
   {
     m_resultType = jsonValue.GetString("ResultType");
-
     m_resultTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

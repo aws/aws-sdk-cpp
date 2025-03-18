@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-ServerCertificate::ServerCertificate() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ServerCertificate::ServerCertificate(JsonView jsonValue)
-  : ServerCertificate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerCertificate& ServerCertificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

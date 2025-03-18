@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FilterValue::FilterValue() : 
-    m_type(FilterValueType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FilterValue::FilterValue(JsonView jsonValue)
-  : FilterValue()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FilterValue& FilterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = FilterValueTypeMapper::GetFilterValueTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -49,7 +39,6 @@ FilterValue& FilterValue::operator =(JsonView jsonValue)
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

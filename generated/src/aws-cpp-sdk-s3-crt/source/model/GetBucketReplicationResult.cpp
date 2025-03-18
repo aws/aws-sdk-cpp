@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketReplicationResult::GetBucketReplicationResult()
-{
-}
-
 GetBucketReplicationResult::GetBucketReplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketReplicationResult& GetBucketReplicationResult::operator =(const Aws::Am
   if(!resultNode.IsNull())
   {
     m_replicationConfiguration = resultNode;
+    m_replicationConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketReplicationResult& GetBucketReplicationResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

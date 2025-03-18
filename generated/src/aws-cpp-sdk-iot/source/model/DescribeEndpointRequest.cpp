@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeEndpointRequest::DescribeEndpointRequest() : 
-    m_endpointTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointRequest::SerializePayload() const
 {
   return {};

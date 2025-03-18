@@ -27,7 +27,7 @@ namespace Model
   class CreateFlowLogsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateFlowLogsRequest();
+    AWS_EC2_API CreateFlowLogsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,7 +49,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateFlowLogsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -62,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateFlowLogsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFlowLogsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
      * monitor are in different accounts.</p>
      */
-    inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
+    inline const Aws::String& GetDeliverLogsPermissionArn() const { return m_deliverLogsPermissionArn; }
     inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
-    inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
-    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
-    inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
+    template<typename DeliverLogsPermissionArnT = Aws::String>
+    void SetDeliverLogsPermissionArn(DeliverLogsPermissionArnT&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::forward<DeliverLogsPermissionArnT>(value); }
+    template<typename DeliverLogsPermissionArnT = Aws::String>
+    CreateFlowLogsRequest& WithDeliverLogsPermissionArn(DeliverLogsPermissionArnT&& value) { SetDeliverLogsPermissionArn(std::forward<DeliverLogsPermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs across
      * accounts.</p>
      */
-    inline const Aws::String& GetDeliverCrossAccountRole() const{ return m_deliverCrossAccountRole; }
+    inline const Aws::String& GetDeliverCrossAccountRole() const { return m_deliverCrossAccountRole; }
     inline bool DeliverCrossAccountRoleHasBeenSet() const { return m_deliverCrossAccountRoleHasBeenSet; }
-    inline void SetDeliverCrossAccountRole(const Aws::String& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = value; }
-    inline void SetDeliverCrossAccountRole(Aws::String&& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = std::move(value); }
-    inline void SetDeliverCrossAccountRole(const char* value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole.assign(value); }
-    inline CreateFlowLogsRequest& WithDeliverCrossAccountRole(const Aws::String& value) { SetDeliverCrossAccountRole(value); return *this;}
-    inline CreateFlowLogsRequest& WithDeliverCrossAccountRole(Aws::String&& value) { SetDeliverCrossAccountRole(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithDeliverCrossAccountRole(const char* value) { SetDeliverCrossAccountRole(value); return *this;}
+    template<typename DeliverCrossAccountRoleT = Aws::String>
+    void SetDeliverCrossAccountRole(DeliverCrossAccountRoleT&& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = std::forward<DeliverCrossAccountRoleT>(value); }
+    template<typename DeliverCrossAccountRoleT = Aws::String>
+    CreateFlowLogsRequest& WithDeliverCrossAccountRole(DeliverCrossAccountRoleT&& value) { SetDeliverCrossAccountRole(std::forward<DeliverCrossAccountRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +105,12 @@ namespace Model
      * publishes your flow logs.</p> <p>This parameter is valid only if the destination
      * type is <code>cloud-watch-logs</code>.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CreateFlowLogsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CreateFlowLogsRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,27 +120,24 @@ namespace Model
      * for transit gateway resource types. Maximum of 1000 for the other resource
      * types.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline CreateFlowLogsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline CreateFlowLogsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    CreateFlowLogsRequest& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    CreateFlowLogsRequest& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of resource to monitor.</p>
      */
-    inline const FlowLogsResourceType& GetResourceType() const{ return m_resourceType; }
+    inline FlowLogsResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const FlowLogsResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(FlowLogsResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline CreateFlowLogsRequest& WithResourceType(const FlowLogsResourceType& value) { SetResourceType(value); return *this;}
-    inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(FlowLogsResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +146,10 @@ namespace Model
      * traffic). This parameter is not supported for transit gateway resource types. It
      * is required for the other resource types.</p>
      */
-    inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
+    inline TrafficType GetTrafficType() const { return m_trafficType; }
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
-    inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
-    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
-    inline CreateFlowLogsRequest& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
-    inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
+    inline void SetTrafficType(TrafficType value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+    inline CreateFlowLogsRequest& WithTrafficType(TrafficType value) { SetTrafficType(value); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +157,10 @@ namespace Model
      * <p>The type of destination for the flow log data.</p> <p>Default:
      * <code>cloud-watch-logs</code> </p>
      */
-    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+    inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
-    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
-    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
-    inline CreateFlowLogsRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
-    inline CreateFlowLogsRequest& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+    inline void SetLogDestinationType(LogDestinationType value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+    inline CreateFlowLogsRequest& WithLogDestinationType(LogDestinationType value) { SetLogDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -195,14 +180,12 @@ namespace Model
      * <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
+    inline const Aws::String& GetLogDestination() const { return m_logDestination; }
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
-    inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
-    inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
-    inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
-    inline CreateFlowLogsRequest& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
-    inline CreateFlowLogsRequest& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
+    template<typename LogDestinationT = Aws::String>
+    void SetLogDestination(LogDestinationT&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::forward<LogDestinationT>(value); }
+    template<typename LogDestinationT = Aws::String>
+    CreateFlowLogsRequest& WithLogDestination(LogDestinationT&& value) { SetLogDestination(std::forward<LogDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,28 +201,26 @@ namespace Model
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces.</p>
      */
-    inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
+    inline const Aws::String& GetLogFormat() const { return m_logFormat; }
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
-    inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
-    inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
-    inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
-    inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
-    inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
+    template<typename LogFormatT = Aws::String>
+    void SetLogFormat(LogFormatT&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::forward<LogFormatT>(value); }
+    template<typename LogFormatT = Aws::String>
+    CreateFlowLogsRequest& WithLogFormat(LogFormatT&& value) { SetLogFormat(std::forward<LogFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the flow logs.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateFlowLogsRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateFlowLogsRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateFlowLogsRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateFlowLogsRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateFlowLogsRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateFlowLogsRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -252,7 +233,7 @@ namespace Model
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>
      */
-    inline int GetMaxAggregationInterval() const{ return m_maxAggregationInterval; }
+    inline int GetMaxAggregationInterval() const { return m_maxAggregationInterval; }
     inline bool MaxAggregationIntervalHasBeenSet() const { return m_maxAggregationIntervalHasBeenSet; }
     inline void SetMaxAggregationInterval(int value) { m_maxAggregationIntervalHasBeenSet = true; m_maxAggregationInterval = value; }
     inline CreateFlowLogsRequest& WithMaxAggregationInterval(int value) { SetMaxAggregationInterval(value); return *this;}
@@ -262,16 +243,16 @@ namespace Model
     /**
      * <p>The destination options.</p>
      */
-    inline const DestinationOptionsRequest& GetDestinationOptions() const{ return m_destinationOptions; }
+    inline const DestinationOptionsRequest& GetDestinationOptions() const { return m_destinationOptions; }
     inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
-    inline void SetDestinationOptions(const DestinationOptionsRequest& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = value; }
-    inline void SetDestinationOptions(DestinationOptionsRequest&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::move(value); }
-    inline CreateFlowLogsRequest& WithDestinationOptions(const DestinationOptionsRequest& value) { SetDestinationOptions(value); return *this;}
-    inline CreateFlowLogsRequest& WithDestinationOptions(DestinationOptionsRequest&& value) { SetDestinationOptions(std::move(value)); return *this;}
+    template<typename DestinationOptionsT = DestinationOptionsRequest>
+    void SetDestinationOptions(DestinationOptionsT&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::forward<DestinationOptionsT>(value); }
+    template<typename DestinationOptionsT = DestinationOptionsRequest>
+    CreateFlowLogsRequest& WithDestinationOptions(DestinationOptionsT&& value) { SetDestinationOptions(std::forward<DestinationOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -289,13 +270,13 @@ namespace Model
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    FlowLogsResourceType m_resourceType;
+    FlowLogsResourceType m_resourceType{FlowLogsResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    TrafficType m_trafficType;
+    TrafficType m_trafficType{TrafficType::NOT_SET};
     bool m_trafficTypeHasBeenSet = false;
 
-    LogDestinationType m_logDestinationType;
+    LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
     bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::String m_logDestination;
@@ -307,7 +288,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    int m_maxAggregationInterval;
+    int m_maxAggregationInterval{0};
     bool m_maxAggregationIntervalHasBeenSet = false;
 
     DestinationOptionsRequest m_destinationOptions;

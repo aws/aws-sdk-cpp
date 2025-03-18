@@ -31,7 +31,7 @@ namespace Model
   class UpdateAdapterResult
   {
   public:
-    AWS_TEXTRACT_API UpdateAdapterResult();
+    AWS_TEXTRACT_API UpdateAdapterResult() = default;
     AWS_TEXTRACT_API UpdateAdapterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TEXTRACT_API UpdateAdapterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>A string containing a unique ID for the adapter that has been updated.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterId.assign(value); }
-    inline UpdateAdapterResult& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline UpdateAdapterResult& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline UpdateAdapterResult& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    UpdateAdapterResult& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string containing the name of the adapter that has been updated.</p>
      */
-    inline const Aws::String& GetAdapterName() const{ return m_adapterName; }
-    inline void SetAdapterName(const Aws::String& value) { m_adapterName = value; }
-    inline void SetAdapterName(Aws::String&& value) { m_adapterName = std::move(value); }
-    inline void SetAdapterName(const char* value) { m_adapterName.assign(value); }
-    inline UpdateAdapterResult& WithAdapterName(const Aws::String& value) { SetAdapterName(value); return *this;}
-    inline UpdateAdapterResult& WithAdapterName(Aws::String&& value) { SetAdapterName(std::move(value)); return *this;}
-    inline UpdateAdapterResult& WithAdapterName(const char* value) { SetAdapterName(value); return *this;}
+    inline const Aws::String& GetAdapterName() const { return m_adapterName; }
+    template<typename AdapterNameT = Aws::String>
+    void SetAdapterName(AdapterNameT&& value) { m_adapterNameHasBeenSet = true; m_adapterName = std::forward<AdapterNameT>(value); }
+    template<typename AdapterNameT = Aws::String>
+    UpdateAdapterResult& WithAdapterName(AdapterNameT&& value) { SetAdapterName(std::forward<AdapterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,75 +63,75 @@ namespace Model
      * <p>An object specifying the creation time of the the adapter that has been
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline UpdateAdapterResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline UpdateAdapterResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    UpdateAdapterResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string containing the description of the adapter that has been updated.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateAdapterResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAdapterResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAdapterResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAdapterResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of the targeted feature types for the updated adapter.</p>
      */
-    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
-    inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypes = std::move(value); }
-    inline UpdateAdapterResult& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
-    inline UpdateAdapterResult& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline UpdateAdapterResult& AddFeatureTypes(const FeatureType& value) { m_featureTypes.push_back(value); return *this; }
-    inline UpdateAdapterResult& AddFeatureTypes(FeatureType&& value) { m_featureTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const { return m_featureTypes; }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    UpdateAdapterResult& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline UpdateAdapterResult& AddFeatureTypes(FeatureType value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The auto-update status of the adapter that has been updated.</p>
      */
-    inline const AutoUpdate& GetAutoUpdate() const{ return m_autoUpdate; }
-    inline void SetAutoUpdate(const AutoUpdate& value) { m_autoUpdate = value; }
-    inline void SetAutoUpdate(AutoUpdate&& value) { m_autoUpdate = std::move(value); }
-    inline UpdateAdapterResult& WithAutoUpdate(const AutoUpdate& value) { SetAutoUpdate(value); return *this;}
-    inline UpdateAdapterResult& WithAutoUpdate(AutoUpdate&& value) { SetAutoUpdate(std::move(value)); return *this;}
+    inline AutoUpdate GetAutoUpdate() const { return m_autoUpdate; }
+    inline void SetAutoUpdate(AutoUpdate value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
+    inline UpdateAdapterResult& WithAutoUpdate(AutoUpdate value) { SetAutoUpdate(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAdapterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAdapterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAdapterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAdapterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_adapterId;
+    bool m_adapterIdHasBeenSet = false;
 
     Aws::String m_adapterName;
+    bool m_adapterNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<FeatureType> m_featureTypes;
+    bool m_featureTypesHasBeenSet = false;
 
-    AutoUpdate m_autoUpdate;
+    AutoUpdate m_autoUpdate{AutoUpdate::NOT_SET};
+    bool m_autoUpdateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInboundIntegrationsResult::DescribeInboundIntegrationsResult()
-{
-}
-
 DescribeInboundIntegrationsResult::DescribeInboundIntegrationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeInboundIntegrationsResult& DescribeInboundIntegrationsResult::operator =
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode inboundIntegrationsNode = resultNode.FirstChild("InboundIntegrations");
     if(!inboundIntegrationsNode.IsNull())
     {
       XmlNode inboundIntegrationsMember = inboundIntegrationsNode.FirstChild("InboundIntegration");
+      m_inboundIntegrationsHasBeenSet = !inboundIntegrationsMember.IsNull();
       while(!inboundIntegrationsMember.IsNull())
       {
         m_inboundIntegrations.push_back(inboundIntegrationsMember);
         inboundIntegrationsMember = inboundIntegrationsMember.NextNode("InboundIntegration");
       }
 
+      m_inboundIntegrationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeInboundIntegrationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

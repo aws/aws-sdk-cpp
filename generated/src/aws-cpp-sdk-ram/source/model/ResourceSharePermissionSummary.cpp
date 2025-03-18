@@ -18,28 +18,7 @@ namespace RAM
 namespace Model
 {
 
-ResourceSharePermissionSummary::ResourceSharePermissionSummary() : 
-    m_arnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_isResourceTypeDefault(false),
-    m_isResourceTypeDefaultHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_featureSet(PermissionFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ResourceSharePermissionSummary::ResourceSharePermissionSummary(JsonView jsonValue)
-  : ResourceSharePermissionSummary()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ ResourceSharePermissionSummary& ResourceSharePermissionSummary::operator =(JsonV
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVersion"))
   {
     m_defaultVersion = jsonValue.GetBool("defaultVersion");
-
     m_defaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isResourceTypeDefault"))
   {
     m_isResourceTypeDefault = jsonValue.GetBool("isResourceTypeDefault");
-
     m_isResourceTypeDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissionType"))
   {
     m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(jsonValue.GetString("permissionType"));
-
     m_permissionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureSet"))
   {
     m_featureSet = PermissionFeatureSetMapper::GetPermissionFeatureSetForName(jsonValue.GetString("featureSet"));
-
     m_featureSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -132,7 +89,6 @@ ResourceSharePermissionSummary& ResourceSharePermissionSummary::operator =(JsonV
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

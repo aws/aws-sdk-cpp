@@ -27,7 +27,7 @@ namespace Model
   class GetSavingsPlansCoverageRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansCoverageRequest();
+    AWS_COSTEXPLORER_API GetSavingsPlansCoverageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,12 @@ namespace Model
      * <code>Start</code> date, and before the current date. Future dates can't be used
      * as an <code>End</code> date.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetSavingsPlansCoverageRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>,
      * <code>REGION</code>, or <code>SERVICE</code>.</p>
      */
-    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
+    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline GetSavingsPlansCoverageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
-    inline GetSavingsPlansCoverageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    GetSavingsPlansCoverageRequest& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
+    template<typename GroupByT = GroupDefinition>
+    GetSavingsPlansCoverageRequest& AddGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy.emplace_back(std::forward<GroupByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,12 +77,10 @@ namespace Model
      * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
-    inline const Granularity& GetGranularity() const{ return m_granularity; }
+    inline Granularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(Granularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GetSavingsPlansCoverageRequest& WithGranularity(Granularity value) { SetGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +95,12 @@ namespace Model
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p> <p>Cost category is also supported.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetSavingsPlansCoverageRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,15 +108,14 @@ namespace Model
      * <p>The measurement that you want your Savings Plans coverage reported in. The
      * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<Aws::String>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline GetSavingsPlansCoverageRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline GetSavingsPlansCoverageRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
-    inline GetSavingsPlansCoverageRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    GetSavingsPlansCoverageRequest& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = Aws::String>
+    GetSavingsPlansCoverageRequest& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,14 +124,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSavingsPlansCoverageRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSavingsPlansCoverageRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,7 +137,7 @@ namespace Model
      * <p>The number of items to be returned in a response. The default is
      * <code>20</code>, with a minimum value of <code>1</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSavingsPlansCoverageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -160,12 +155,12 @@ namespace Model
      * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
-    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+    inline const SortDefinition& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetSavingsPlansCoverageRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
-    inline GetSavingsPlansCoverageRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = SortDefinition>
+    GetSavingsPlansCoverageRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
   private:
 
@@ -175,7 +170,7 @@ namespace Model
     Aws::Vector<GroupDefinition> m_groupBy;
     bool m_groupByHasBeenSet = false;
 
-    Granularity m_granularity;
+    Granularity m_granularity{Granularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
@@ -187,7 +182,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     SortDefinition m_sortBy;

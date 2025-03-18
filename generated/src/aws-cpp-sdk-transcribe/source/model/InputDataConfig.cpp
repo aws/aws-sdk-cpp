@@ -18,15 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-InputDataConfig::InputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_tuningDataS3UriHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
-{
-}
-
 InputDataConfig::InputDataConfig(JsonView jsonValue)
-  : InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TuningDataS3Uri"))
   {
     m_tuningDataS3Uri = jsonValue.GetString("TuningDataS3Uri");
-
     m_tuningDataS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

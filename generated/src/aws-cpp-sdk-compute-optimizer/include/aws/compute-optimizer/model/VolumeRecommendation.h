@@ -41,7 +41,7 @@ namespace Model
   class VolumeRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API VolumeRecommendation();
+    AWS_COMPUTEOPTIMIZER_API VolumeRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API VolumeRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API VolumeRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the current volume.</p>
      */
-    inline const Aws::String& GetVolumeArn() const{ return m_volumeArn; }
+    inline const Aws::String& GetVolumeArn() const { return m_volumeArn; }
     inline bool VolumeArnHasBeenSet() const { return m_volumeArnHasBeenSet; }
-    inline void SetVolumeArn(const Aws::String& value) { m_volumeArnHasBeenSet = true; m_volumeArn = value; }
-    inline void SetVolumeArn(Aws::String&& value) { m_volumeArnHasBeenSet = true; m_volumeArn = std::move(value); }
-    inline void SetVolumeArn(const char* value) { m_volumeArnHasBeenSet = true; m_volumeArn.assign(value); }
-    inline VolumeRecommendation& WithVolumeArn(const Aws::String& value) { SetVolumeArn(value); return *this;}
-    inline VolumeRecommendation& WithVolumeArn(Aws::String&& value) { SetVolumeArn(std::move(value)); return *this;}
-    inline VolumeRecommendation& WithVolumeArn(const char* value) { SetVolumeArn(value); return *this;}
+    template<typename VolumeArnT = Aws::String>
+    void SetVolumeArn(VolumeArnT&& value) { m_volumeArnHasBeenSet = true; m_volumeArn = std::forward<VolumeArnT>(value); }
+    template<typename VolumeArnT = Aws::String>
+    VolumeRecommendation& WithVolumeArn(VolumeArnT&& value) { SetVolumeArn(std::forward<VolumeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the volume.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline VolumeRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline VolumeRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline VolumeRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    VolumeRecommendation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
      * <p>An array of objects that describe the current configuration of the
      * volume.</p>
      */
-    inline const VolumeConfiguration& GetCurrentConfiguration() const{ return m_currentConfiguration; }
+    inline const VolumeConfiguration& GetCurrentConfiguration() const { return m_currentConfiguration; }
     inline bool CurrentConfigurationHasBeenSet() const { return m_currentConfigurationHasBeenSet; }
-    inline void SetCurrentConfiguration(const VolumeConfiguration& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = value; }
-    inline void SetCurrentConfiguration(VolumeConfiguration&& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = std::move(value); }
-    inline VolumeRecommendation& WithCurrentConfiguration(const VolumeConfiguration& value) { SetCurrentConfiguration(value); return *this;}
-    inline VolumeRecommendation& WithCurrentConfiguration(VolumeConfiguration&& value) { SetCurrentConfiguration(std::move(value)); return *this;}
+    template<typename CurrentConfigurationT = VolumeConfiguration>
+    void SetCurrentConfiguration(CurrentConfigurationT&& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = std::forward<CurrentConfigurationT>(value); }
+    template<typename CurrentConfigurationT = VolumeConfiguration>
+    VolumeRecommendation& WithCurrentConfiguration(CurrentConfigurationT&& value) { SetCurrentConfiguration(std::forward<CurrentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,26 +95,24 @@ namespace Model
      * workload based on the chosen volume type. For optimized resources, Compute
      * Optimizer might recommend a new generation volume type.</p> </li> </ul>
      */
-    inline const EBSFinding& GetFinding() const{ return m_finding; }
+    inline EBSFinding GetFinding() const { return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
-    inline void SetFinding(const EBSFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
-    inline void SetFinding(EBSFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-    inline VolumeRecommendation& WithFinding(const EBSFinding& value) { SetFinding(value); return *this;}
-    inline VolumeRecommendation& WithFinding(EBSFinding&& value) { SetFinding(std::move(value)); return *this;}
+    inline void SetFinding(EBSFinding value) { m_findingHasBeenSet = true; m_finding = value; }
+    inline VolumeRecommendation& WithFinding(EBSFinding value) { SetFinding(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of objects that describe the utilization metrics of the volume.</p>
      */
-    inline const Aws::Vector<EBSUtilizationMetric>& GetUtilizationMetrics() const{ return m_utilizationMetrics; }
+    inline const Aws::Vector<EBSUtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
-    inline void SetUtilizationMetrics(const Aws::Vector<EBSUtilizationMetric>& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = value; }
-    inline void SetUtilizationMetrics(Aws::Vector<EBSUtilizationMetric>&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::move(value); }
-    inline VolumeRecommendation& WithUtilizationMetrics(const Aws::Vector<EBSUtilizationMetric>& value) { SetUtilizationMetrics(value); return *this;}
-    inline VolumeRecommendation& WithUtilizationMetrics(Aws::Vector<EBSUtilizationMetric>&& value) { SetUtilizationMetrics(std::move(value)); return *this;}
-    inline VolumeRecommendation& AddUtilizationMetrics(const EBSUtilizationMetric& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(value); return *this; }
-    inline VolumeRecommendation& AddUtilizationMetrics(EBSUtilizationMetric&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename UtilizationMetricsT = Aws::Vector<EBSUtilizationMetric>>
+    void SetUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::forward<UtilizationMetricsT>(value); }
+    template<typename UtilizationMetricsT = Aws::Vector<EBSUtilizationMetric>>
+    VolumeRecommendation& WithUtilizationMetrics(UtilizationMetricsT&& value) { SetUtilizationMetrics(std::forward<UtilizationMetricsT>(value)); return *this;}
+    template<typename UtilizationMetricsT = EBSUtilizationMetric>
+    VolumeRecommendation& AddUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.emplace_back(std::forward<UtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,7 +120,7 @@ namespace Model
      * <p>The number of days for which utilization metrics were analyzed for the
      * volume.</p>
      */
-    inline double GetLookBackPeriodInDays() const{ return m_lookBackPeriodInDays; }
+    inline double GetLookBackPeriodInDays() const { return m_lookBackPeriodInDays; }
     inline bool LookBackPeriodInDaysHasBeenSet() const { return m_lookBackPeriodInDaysHasBeenSet; }
     inline void SetLookBackPeriodInDays(double value) { m_lookBackPeriodInDaysHasBeenSet = true; m_lookBackPeriodInDays = value; }
     inline VolumeRecommendation& WithLookBackPeriodInDays(double value) { SetLookBackPeriodInDays(value); return *this;}
@@ -137,26 +131,26 @@ namespace Model
      * <p>An array of objects that describe the recommendation options for the
      * volume.</p>
      */
-    inline const Aws::Vector<VolumeRecommendationOption>& GetVolumeRecommendationOptions() const{ return m_volumeRecommendationOptions; }
+    inline const Aws::Vector<VolumeRecommendationOption>& GetVolumeRecommendationOptions() const { return m_volumeRecommendationOptions; }
     inline bool VolumeRecommendationOptionsHasBeenSet() const { return m_volumeRecommendationOptionsHasBeenSet; }
-    inline void SetVolumeRecommendationOptions(const Aws::Vector<VolumeRecommendationOption>& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions = value; }
-    inline void SetVolumeRecommendationOptions(Aws::Vector<VolumeRecommendationOption>&& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions = std::move(value); }
-    inline VolumeRecommendation& WithVolumeRecommendationOptions(const Aws::Vector<VolumeRecommendationOption>& value) { SetVolumeRecommendationOptions(value); return *this;}
-    inline VolumeRecommendation& WithVolumeRecommendationOptions(Aws::Vector<VolumeRecommendationOption>&& value) { SetVolumeRecommendationOptions(std::move(value)); return *this;}
-    inline VolumeRecommendation& AddVolumeRecommendationOptions(const VolumeRecommendationOption& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions.push_back(value); return *this; }
-    inline VolumeRecommendation& AddVolumeRecommendationOptions(VolumeRecommendationOption&& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions.push_back(std::move(value)); return *this; }
+    template<typename VolumeRecommendationOptionsT = Aws::Vector<VolumeRecommendationOption>>
+    void SetVolumeRecommendationOptions(VolumeRecommendationOptionsT&& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions = std::forward<VolumeRecommendationOptionsT>(value); }
+    template<typename VolumeRecommendationOptionsT = Aws::Vector<VolumeRecommendationOption>>
+    VolumeRecommendation& WithVolumeRecommendationOptions(VolumeRecommendationOptionsT&& value) { SetVolumeRecommendationOptions(std::forward<VolumeRecommendationOptionsT>(value)); return *this;}
+    template<typename VolumeRecommendationOptionsT = VolumeRecommendationOption>
+    VolumeRecommendation& AddVolumeRecommendationOptions(VolumeRecommendationOptionsT&& value) { m_volumeRecommendationOptionsHasBeenSet = true; m_volumeRecommendationOptions.emplace_back(std::forward<VolumeRecommendationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline VolumeRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline VolumeRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    void SetLastRefreshTimestamp(LastRefreshTimestampT&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::forward<LastRefreshTimestampT>(value); }
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    VolumeRecommendation& WithLastRefreshTimestamp(LastRefreshTimestampT&& value) { SetLastRefreshTimestamp(std::forward<LastRefreshTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +159,10 @@ namespace Model
      * workloads. The higher the risk, the more likely the current EBS volume doesn't
      * have sufficient capacity.</p>
      */
-    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+    inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
-    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
-    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
-    inline VolumeRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
-    inline VolumeRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+    inline VolumeRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk value) { SetCurrentPerformanceRisk(value); return *this;}
     ///@}
 
     ///@{
@@ -178,26 +170,26 @@ namespace Model
      * <p> Describes the effective recommendation preferences for Amazon EBS volume.
      * </p>
      */
-    inline const EBSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+    inline const EBSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
-    inline void SetEffectiveRecommendationPreferences(const EBSEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
-    inline void SetEffectiveRecommendationPreferences(EBSEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
-    inline VolumeRecommendation& WithEffectiveRecommendationPreferences(const EBSEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
-    inline VolumeRecommendation& WithEffectiveRecommendationPreferences(EBSEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+    template<typename EffectiveRecommendationPreferencesT = EBSEffectiveRecommendationPreferences>
+    void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::forward<EffectiveRecommendationPreferencesT>(value); }
+    template<typename EffectiveRecommendationPreferencesT = EBSEffectiveRecommendationPreferences>
+    VolumeRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { SetEffectiveRecommendationPreferences(std::forward<EffectiveRecommendationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline VolumeRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline VolumeRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline VolumeRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline VolumeRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    VolumeRecommendation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    VolumeRecommendation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -210,22 +202,22 @@ namespace Model
     VolumeConfiguration m_currentConfiguration;
     bool m_currentConfigurationHasBeenSet = false;
 
-    EBSFinding m_finding;
+    EBSFinding m_finding{EBSFinding::NOT_SET};
     bool m_findingHasBeenSet = false;
 
     Aws::Vector<EBSUtilizationMetric> m_utilizationMetrics;
     bool m_utilizationMetricsHasBeenSet = false;
 
-    double m_lookBackPeriodInDays;
+    double m_lookBackPeriodInDays{0.0};
     bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<VolumeRecommendationOption> m_volumeRecommendationOptions;
     bool m_volumeRecommendationOptionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    Aws::Utils::DateTime m_lastRefreshTimestamp{};
     bool m_lastRefreshTimestampHasBeenSet = false;
 
-    CurrentPerformanceRisk m_currentPerformanceRisk;
+    CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
     bool m_currentPerformanceRiskHasBeenSet = false;
 
     EBSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;

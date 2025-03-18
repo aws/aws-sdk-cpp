@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListObservabilityConfigurationsResult::ListObservabilityConfigurationsResult()
-{
-}
-
 ListObservabilityConfigurationsResult::ListObservabilityConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListObservabilityConfigurationsResult& ListObservabilityConfigurationsResult::op
     {
       m_observabilityConfigurationSummaryList.push_back(observabilityConfigurationSummaryListJsonList[observabilityConfigurationSummaryListIndex].AsObject());
     }
+    m_observabilityConfigurationSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

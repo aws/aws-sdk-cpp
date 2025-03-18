@@ -12,13 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPermissionsBoundaryToPermissionSetRequest::PutPermissionsBoundaryToPermissionSetRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
-{
-}
-
 Aws::String PutPermissionsBoundaryToPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

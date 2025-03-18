@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SignUpResult::SignUpResult() : 
-    m_userConfirmed(false)
-{
-}
-
 SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SignUpResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ SignUpResult& SignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("UserConfirmed"))
   {
     m_userConfirmed = jsonValue.GetBool("UserConfirmed");
-
+    m_userConfirmedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeDeliveryDetails"))
   {
     m_codeDeliveryDetails = jsonValue.GetObject("CodeDeliveryDetails");
-
+    m_codeDeliveryDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserSub"))
   {
     m_userSub = jsonValue.GetString("UserSub");
-
+    m_userSubHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetString("Session");
-
+    m_sessionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

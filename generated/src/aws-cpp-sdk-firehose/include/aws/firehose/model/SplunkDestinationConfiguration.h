@@ -40,7 +40,7 @@ namespace Model
   class SplunkDestinationConfiguration
   {
   public:
-    AWS_FIREHOSE_API SplunkDestinationConfiguration();
+    AWS_FIREHOSE_API SplunkDestinationConfiguration() = default;
     AWS_FIREHOSE_API SplunkDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API SplunkDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,26 +51,22 @@ namespace Model
      * <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your
      * data.</p>
      */
-    inline const Aws::String& GetHECEndpoint() const{ return m_hECEndpoint; }
+    inline const Aws::String& GetHECEndpoint() const { return m_hECEndpoint; }
     inline bool HECEndpointHasBeenSet() const { return m_hECEndpointHasBeenSet; }
-    inline void SetHECEndpoint(const Aws::String& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = value; }
-    inline void SetHECEndpoint(Aws::String&& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = std::move(value); }
-    inline void SetHECEndpoint(const char* value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint.assign(value); }
-    inline SplunkDestinationConfiguration& WithHECEndpoint(const Aws::String& value) { SetHECEndpoint(value); return *this;}
-    inline SplunkDestinationConfiguration& WithHECEndpoint(Aws::String&& value) { SetHECEndpoint(std::move(value)); return *this;}
-    inline SplunkDestinationConfiguration& WithHECEndpoint(const char* value) { SetHECEndpoint(value); return *this;}
+    template<typename HECEndpointT = Aws::String>
+    void SetHECEndpoint(HECEndpointT&& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = std::forward<HECEndpointT>(value); }
+    template<typename HECEndpointT = Aws::String>
+    SplunkDestinationConfiguration& WithHECEndpoint(HECEndpointT&& value) { SetHECEndpoint(std::forward<HECEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This type can be either "Raw" or "Event."</p>
      */
-    inline const HECEndpointType& GetHECEndpointType() const{ return m_hECEndpointType; }
+    inline HECEndpointType GetHECEndpointType() const { return m_hECEndpointType; }
     inline bool HECEndpointTypeHasBeenSet() const { return m_hECEndpointTypeHasBeenSet; }
-    inline void SetHECEndpointType(const HECEndpointType& value) { m_hECEndpointTypeHasBeenSet = true; m_hECEndpointType = value; }
-    inline void SetHECEndpointType(HECEndpointType&& value) { m_hECEndpointTypeHasBeenSet = true; m_hECEndpointType = std::move(value); }
-    inline SplunkDestinationConfiguration& WithHECEndpointType(const HECEndpointType& value) { SetHECEndpointType(value); return *this;}
-    inline SplunkDestinationConfiguration& WithHECEndpointType(HECEndpointType&& value) { SetHECEndpointType(std::move(value)); return *this;}
+    inline void SetHECEndpointType(HECEndpointType value) { m_hECEndpointTypeHasBeenSet = true; m_hECEndpointType = value; }
+    inline SplunkDestinationConfiguration& WithHECEndpointType(HECEndpointType value) { SetHECEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>This is a GUID that you obtain from your Splunk cluster when you create a new
      * HEC endpoint.</p>
      */
-    inline const Aws::String& GetHECToken() const{ return m_hECToken; }
+    inline const Aws::String& GetHECToken() const { return m_hECToken; }
     inline bool HECTokenHasBeenSet() const { return m_hECTokenHasBeenSet; }
-    inline void SetHECToken(const Aws::String& value) { m_hECTokenHasBeenSet = true; m_hECToken = value; }
-    inline void SetHECToken(Aws::String&& value) { m_hECTokenHasBeenSet = true; m_hECToken = std::move(value); }
-    inline void SetHECToken(const char* value) { m_hECTokenHasBeenSet = true; m_hECToken.assign(value); }
-    inline SplunkDestinationConfiguration& WithHECToken(const Aws::String& value) { SetHECToken(value); return *this;}
-    inline SplunkDestinationConfiguration& WithHECToken(Aws::String&& value) { SetHECToken(std::move(value)); return *this;}
-    inline SplunkDestinationConfiguration& WithHECToken(const char* value) { SetHECToken(value); return *this;}
+    template<typename HECTokenT = Aws::String>
+    void SetHECToken(HECTokenT&& value) { m_hECTokenHasBeenSet = true; m_hECToken = std::forward<HECTokenT>(value); }
+    template<typename HECTokenT = Aws::String>
+    SplunkDestinationConfiguration& WithHECToken(HECTokenT&& value) { SetHECToken(std::forward<HECTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * tries to send the data again or considers it an error, based on your retry
      * settings.</p>
      */
-    inline int GetHECAcknowledgmentTimeoutInSeconds() const{ return m_hECAcknowledgmentTimeoutInSeconds; }
+    inline int GetHECAcknowledgmentTimeoutInSeconds() const { return m_hECAcknowledgmentTimeoutInSeconds; }
     inline bool HECAcknowledgmentTimeoutInSecondsHasBeenSet() const { return m_hECAcknowledgmentTimeoutInSecondsHasBeenSet; }
     inline void SetHECAcknowledgmentTimeoutInSeconds(int value) { m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = true; m_hECAcknowledgmentTimeoutInSeconds = value; }
     inline SplunkDestinationConfiguration& WithHECAcknowledgmentTimeoutInSeconds(int value) { SetHECAcknowledgmentTimeoutInSeconds(value); return *this;}
@@ -106,12 +100,12 @@ namespace Model
      * <p>The retry behavior in case Firehose is unable to deliver data to Splunk, or
      * if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
-    inline const SplunkRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const SplunkRetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const SplunkRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(SplunkRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline SplunkDestinationConfiguration& WithRetryOptions(const SplunkRetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline SplunkDestinationConfiguration& WithRetryOptions(SplunkRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = SplunkRetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = SplunkRetryOptions>
+    SplunkDestinationConfiguration& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,48 +119,46 @@ namespace Model
      * <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
      * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
      */
-    inline const SplunkS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline SplunkS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const SplunkS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(SplunkS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline SplunkDestinationConfiguration& WithS3BackupMode(const SplunkS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline SplunkDestinationConfiguration& WithS3BackupMode(SplunkS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(SplunkS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline SplunkDestinationConfiguration& WithS3BackupMode(SplunkS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the backup Amazon S3 location.</p>
      */
-    inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DestinationConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline SplunkDestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline SplunkDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    SplunkDestinationConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data processing configuration.</p>
      */
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline SplunkDestinationConfiguration& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline SplunkDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    SplunkDestinationConfiguration& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline SplunkDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline SplunkDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    SplunkDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,43 +166,43 @@ namespace Model
      * <p>The buffering options. If no value is specified, the default values for
      * Splunk are used.</p>
      */
-    inline const SplunkBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const SplunkBufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const SplunkBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(SplunkBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline SplunkDestinationConfiguration& WithBufferingHints(const SplunkBufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline SplunkDestinationConfiguration& WithBufferingHints(SplunkBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = SplunkBufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = SplunkBufferingHints>
+    SplunkDestinationConfiguration& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration that defines how you access secrets for Splunk. </p>
      */
-    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const { return m_secretsManagerConfiguration; }
     inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
-    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
-    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
-    inline SplunkDestinationConfiguration& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
-    inline SplunkDestinationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    void SetSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::forward<SecretsManagerConfigurationT>(value); }
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    SplunkDestinationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { SetSecretsManagerConfiguration(std::forward<SecretsManagerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hECEndpoint;
     bool m_hECEndpointHasBeenSet = false;
 
-    HECEndpointType m_hECEndpointType;
+    HECEndpointType m_hECEndpointType{HECEndpointType::NOT_SET};
     bool m_hECEndpointTypeHasBeenSet = false;
 
     Aws::String m_hECToken;
     bool m_hECTokenHasBeenSet = false;
 
-    int m_hECAcknowledgmentTimeoutInSeconds;
+    int m_hECAcknowledgmentTimeoutInSeconds{0};
     bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = false;
 
     SplunkRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet = false;
 
-    SplunkS3BackupMode m_s3BackupMode;
+    SplunkS3BackupMode m_s3BackupMode{SplunkS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;

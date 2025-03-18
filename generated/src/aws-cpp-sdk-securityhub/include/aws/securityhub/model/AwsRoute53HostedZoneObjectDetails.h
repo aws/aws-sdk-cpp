@@ -33,7 +33,7 @@ namespace Model
   class AwsRoute53HostedZoneObjectDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsRoute53HostedZoneObjectDetails();
+    AWS_SECURITYHUB_API AwsRoute53HostedZoneObjectDetails() = default;
     AWS_SECURITYHUB_API AwsRoute53HostedZoneObjectDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRoute53HostedZoneObjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The ID that Route 53 assigns to the hosted zone when you create it. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsRoute53HostedZoneObjectDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsRoute53HostedZoneObjectDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsRoute53HostedZoneObjectDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsRoute53HostedZoneObjectDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,24 @@ namespace Model
      * <p> The name of the domain. For public hosted zones, this is the name that you
      * have registered with your DNS registrar.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsRoute53HostedZoneObjectDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsRoute53HostedZoneObjectDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsRoute53HostedZoneObjectDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsRoute53HostedZoneObjectDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An object that includes the <code>Comment</code> element.</p>
      */
-    inline const AwsRoute53HostedZoneConfigDetails& GetConfig() const{ return m_config; }
+    inline const AwsRoute53HostedZoneConfigDetails& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const AwsRoute53HostedZoneConfigDetails& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(AwsRoute53HostedZoneConfigDetails&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline AwsRoute53HostedZoneObjectDetails& WithConfig(const AwsRoute53HostedZoneConfigDetails& value) { SetConfig(value); return *this;}
-    inline AwsRoute53HostedZoneObjectDetails& WithConfig(AwsRoute53HostedZoneConfigDetails&& value) { SetConfig(std::move(value)); return *this;}
+    template<typename ConfigT = AwsRoute53HostedZoneConfigDetails>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = AwsRoute53HostedZoneConfigDetails>
+    AwsRoute53HostedZoneObjectDetails& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
   private:
 

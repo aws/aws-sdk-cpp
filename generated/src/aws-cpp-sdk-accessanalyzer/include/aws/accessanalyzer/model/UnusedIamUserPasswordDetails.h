@@ -35,7 +35,7 @@ namespace Model
   class UnusedIamUserPasswordDetails
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedIamUserPasswordDetails();
+    AWS_ACCESSANALYZER_API UnusedIamUserPasswordDetails() = default;
     AWS_ACCESSANALYZER_API UnusedIamUserPasswordDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedIamUserPasswordDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,16 @@ namespace Model
     /**
      * <p>The time at which the password was last accessed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
+    inline const Aws::Utils::DateTime& GetLastAccessed() const { return m_lastAccessed; }
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
-    inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
-    inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
-    inline UnusedIamUserPasswordDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
-    inline UnusedIamUserPasswordDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    void SetLastAccessed(LastAccessedT&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::forward<LastAccessedT>(value); }
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    UnusedIamUserPasswordDetails& WithLastAccessed(LastAccessedT&& value) { SetLastAccessed(std::forward<LastAccessedT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastAccessed;
+    Aws::Utils::DateTime m_lastAccessed{};
     bool m_lastAccessedHasBeenSet = false;
   };
 

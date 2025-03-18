@@ -43,7 +43,7 @@ namespace Model
   class ContainerPortConfiguration
   {
   public:
-    AWS_GAMELIFT_API ContainerPortConfiguration();
+    AWS_GAMELIFT_API ContainerPortConfiguration() = default;
     AWS_GAMELIFT_API ContainerPortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerPortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,14 @@ namespace Model
      * <p>A set of one or more container port number ranges. The ranges can't overlap.
      * </p>
      */
-    inline const Aws::Vector<ContainerPortRange>& GetContainerPortRanges() const{ return m_containerPortRanges; }
+    inline const Aws::Vector<ContainerPortRange>& GetContainerPortRanges() const { return m_containerPortRanges; }
     inline bool ContainerPortRangesHasBeenSet() const { return m_containerPortRangesHasBeenSet; }
-    inline void SetContainerPortRanges(const Aws::Vector<ContainerPortRange>& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges = value; }
-    inline void SetContainerPortRanges(Aws::Vector<ContainerPortRange>&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges = std::move(value); }
-    inline ContainerPortConfiguration& WithContainerPortRanges(const Aws::Vector<ContainerPortRange>& value) { SetContainerPortRanges(value); return *this;}
-    inline ContainerPortConfiguration& WithContainerPortRanges(Aws::Vector<ContainerPortRange>&& value) { SetContainerPortRanges(std::move(value)); return *this;}
-    inline ContainerPortConfiguration& AddContainerPortRanges(const ContainerPortRange& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges.push_back(value); return *this; }
-    inline ContainerPortConfiguration& AddContainerPortRanges(ContainerPortRange&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges.push_back(std::move(value)); return *this; }
+    template<typename ContainerPortRangesT = Aws::Vector<ContainerPortRange>>
+    void SetContainerPortRanges(ContainerPortRangesT&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges = std::forward<ContainerPortRangesT>(value); }
+    template<typename ContainerPortRangesT = Aws::Vector<ContainerPortRange>>
+    ContainerPortConfiguration& WithContainerPortRanges(ContainerPortRangesT&& value) { SetContainerPortRanges(std::forward<ContainerPortRangesT>(value)); return *this;}
+    template<typename ContainerPortRangesT = ContainerPortRange>
+    ContainerPortConfiguration& AddContainerPortRanges(ContainerPortRangesT&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges.emplace_back(std::forward<ContainerPortRangesT>(value)); return *this; }
     ///@}
   private:
 

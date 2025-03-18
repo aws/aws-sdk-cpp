@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-MySqlDataProviderSettings::MySqlDataProviderSettings() : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 MySqlDataProviderSettings::MySqlDataProviderSettings(JsonView jsonValue)
-  : MySqlDataProviderSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MySqlDataProviderSettings& MySqlDataProviderSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslMode"))
   {
     m_sslMode = DmsSslModeValueMapper::GetDmsSslModeValueForName(jsonValue.GetString("SslMode"));
-
     m_sslModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

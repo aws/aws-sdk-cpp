@@ -18,18 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-MergeMetadata::MergeMetadata() : 
-    m_isMerged(false),
-    m_isMergedHasBeenSet(false),
-    m_mergedByHasBeenSet(false),
-    m_mergeCommitIdHasBeenSet(false),
-    m_mergeOption(MergeOptionTypeEnum::NOT_SET),
-    m_mergeOptionHasBeenSet(false)
-{
-}
-
 MergeMetadata::MergeMetadata(JsonView jsonValue)
-  : MergeMetadata()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MergeMetadata& MergeMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isMerged"))
   {
     m_isMerged = jsonValue.GetBool("isMerged");
-
     m_isMergedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergedBy"))
   {
     m_mergedBy = jsonValue.GetString("mergedBy");
-
     m_mergedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeCommitId"))
   {
     m_mergeCommitId = jsonValue.GetString("mergeCommitId");
-
     m_mergeCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeOption"))
   {
     m_mergeOption = MergeOptionTypeEnumMapper::GetMergeOptionTypeEnumForName(jsonValue.GetString("mergeOption"));
-
     m_mergeOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

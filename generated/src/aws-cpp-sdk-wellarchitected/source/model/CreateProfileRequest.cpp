@@ -12,16 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProfileRequest::CreateProfileRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_profileDescriptionHasBeenSet(false),
-    m_profileQuestionsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

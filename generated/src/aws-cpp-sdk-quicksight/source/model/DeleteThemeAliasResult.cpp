@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteThemeAliasResult::DeleteThemeAliasResult() : 
-    m_status(0)
-{
-}
-
 DeleteThemeAliasResult::DeleteThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteThemeAliasResult()
 {
   *this = result;
 }
@@ -34,31 +28,29 @@ DeleteThemeAliasResult& DeleteThemeAliasResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("AliasName"))
   {
     m_aliasName = jsonValue.GetString("AliasName");
-
+    m_aliasNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeId"))
   {
     m_themeId = jsonValue.GetString("ThemeId");
-
+    m_themeIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

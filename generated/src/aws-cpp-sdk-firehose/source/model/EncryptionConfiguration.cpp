@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_noEncryptionConfig(NoEncryptionConfig::NOT_SET),
-    m_noEncryptionConfigHasBeenSet(false),
-    m_kMSEncryptionConfigHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NoEncryptionConfig"))
   {
     m_noEncryptionConfig = NoEncryptionConfigMapper::GetNoEncryptionConfigForName(jsonValue.GetString("NoEncryptionConfig"));
-
     m_noEncryptionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSEncryptionConfig"))
   {
     m_kMSEncryptionConfig = jsonValue.GetObject("KMSEncryptionConfig");
-
     m_kMSEncryptionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

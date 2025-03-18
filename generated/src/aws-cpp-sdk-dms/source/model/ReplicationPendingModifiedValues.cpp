@@ -18,19 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationPendingModifiedValues::ReplicationPendingModifiedValues() : 
-    m_replicationInstanceClassHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(JsonView jsonValue)
-  : ReplicationPendingModifiedValues()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ReplicationPendingModifiedValues& ReplicationPendingModifiedValues::operator =(J
   if(jsonValue.ValueExists("ReplicationInstanceClass"))
   {
     m_replicationInstanceClass = jsonValue.GetString("ReplicationInstanceClass");
-
     m_replicationInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAZ"))
   {
     m_multiAZ = jsonValue.GetBool("MultiAZ");
-
     m_multiAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkType"))
   {
     m_networkType = jsonValue.GetString("NetworkType");
-
     m_networkTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

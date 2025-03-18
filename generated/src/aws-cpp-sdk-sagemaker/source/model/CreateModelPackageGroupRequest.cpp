@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelPackageGroupRequest::CreateModelPackageGroupRequest() : 
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelPackageGroupRequest::SerializePayload() const
 {
   JsonValue payload;

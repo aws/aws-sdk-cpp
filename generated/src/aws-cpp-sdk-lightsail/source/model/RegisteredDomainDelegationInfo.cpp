@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RegisteredDomainDelegationInfo::RegisteredDomainDelegationInfo() : 
-    m_nameServersUpdateStateHasBeenSet(false),
-    m_r53HostedZoneDeletionStateHasBeenSet(false)
-{
-}
-
 RegisteredDomainDelegationInfo::RegisteredDomainDelegationInfo(JsonView jsonValue)
-  : RegisteredDomainDelegationInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegisteredDomainDelegationInfo& RegisteredDomainDelegationInfo::operator =(JsonV
   if(jsonValue.ValueExists("nameServersUpdateState"))
   {
     m_nameServersUpdateState = jsonValue.GetObject("nameServersUpdateState");
-
     m_nameServersUpdateStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("r53HostedZoneDeletionState"))
   {
     m_r53HostedZoneDeletionState = jsonValue.GetObject("r53HostedZoneDeletionState");
-
     m_r53HostedZoneDeletionStateHasBeenSet = true;
   }
-
   return *this;
 }
 

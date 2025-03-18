@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelInferenceJobsConfigurationPolicy::TrainedModelInferenceJobsConfigurationPolicy() : 
-    m_containerLogsHasBeenSet(false),
-    m_maxOutputSizeHasBeenSet(false)
-{
-}
-
 TrainedModelInferenceJobsConfigurationPolicy::TrainedModelInferenceJobsConfigurationPolicy(JsonView jsonValue)
-  : TrainedModelInferenceJobsConfigurationPolicy()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TrainedModelInferenceJobsConfigurationPolicy& TrainedModelInferenceJobsConfigura
     }
     m_containerLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxOutputSize"))
   {
     m_maxOutputSize = jsonValue.GetObject("maxOutputSize");
-
     m_maxOutputSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

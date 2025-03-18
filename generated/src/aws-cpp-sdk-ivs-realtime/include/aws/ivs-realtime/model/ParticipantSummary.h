@@ -35,7 +35,7 @@ namespace Model
   class ParticipantSummary
   {
   public:
-    AWS_IVSREALTIME_API ParticipantSummary();
+    AWS_IVSREALTIME_API ParticipantSummary() = default;
     AWS_IVSREALTIME_API ParticipantSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API ParticipantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>Unique identifier for this participant, assigned by IVS.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline ParticipantSummary& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline ParticipantSummary& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline ParticipantSummary& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    ParticipantSummary& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +61,22 @@ namespace Model
      * be used for personally identifying, confidential, or sensitive
      * information</i>.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline ParticipantSummary& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline ParticipantSummary& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline ParticipantSummary& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    ParticipantSummary& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the participant is connected to or disconnected from the stage.</p>
      */
-    inline const ParticipantState& GetState() const{ return m_state; }
+    inline ParticipantState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ParticipantState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ParticipantState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ParticipantSummary& WithState(const ParticipantState& value) { SetState(value); return *this;}
-    inline ParticipantSummary& WithState(ParticipantState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ParticipantState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ParticipantSummary& WithState(ParticipantState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +84,19 @@ namespace Model
      * <p>ISO 8601 timestamp (returned as a string) when the participant first joined
      * the stage session.</p>
      */
-    inline const Aws::Utils::DateTime& GetFirstJoinTime() const{ return m_firstJoinTime; }
+    inline const Aws::Utils::DateTime& GetFirstJoinTime() const { return m_firstJoinTime; }
     inline bool FirstJoinTimeHasBeenSet() const { return m_firstJoinTimeHasBeenSet; }
-    inline void SetFirstJoinTime(const Aws::Utils::DateTime& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = value; }
-    inline void SetFirstJoinTime(Aws::Utils::DateTime&& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = std::move(value); }
-    inline ParticipantSummary& WithFirstJoinTime(const Aws::Utils::DateTime& value) { SetFirstJoinTime(value); return *this;}
-    inline ParticipantSummary& WithFirstJoinTime(Aws::Utils::DateTime&& value) { SetFirstJoinTime(std::move(value)); return *this;}
+    template<typename FirstJoinTimeT = Aws::Utils::DateTime>
+    void SetFirstJoinTime(FirstJoinTimeT&& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = std::forward<FirstJoinTimeT>(value); }
+    template<typename FirstJoinTimeT = Aws::Utils::DateTime>
+    ParticipantSummary& WithFirstJoinTime(FirstJoinTimeT&& value) { SetFirstJoinTime(std::forward<FirstJoinTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the participant ever published to the stage session.</p>
      */
-    inline bool GetPublished() const{ return m_published; }
+    inline bool GetPublished() const { return m_published; }
     inline bool PublishedHasBeenSet() const { return m_publishedHasBeenSet; }
     inline void SetPublished(bool value) { m_publishedHasBeenSet = true; m_published = value; }
     inline ParticipantSummary& WithPublished(bool value) { SetPublished(value); return *this;}
@@ -112,12 +106,10 @@ namespace Model
     /**
      * <p>The participant’s recording state.</p>
      */
-    inline const ParticipantRecordingState& GetRecordingState() const{ return m_recordingState; }
+    inline ParticipantRecordingState GetRecordingState() const { return m_recordingState; }
     inline bool RecordingStateHasBeenSet() const { return m_recordingStateHasBeenSet; }
-    inline void SetRecordingState(const ParticipantRecordingState& value) { m_recordingStateHasBeenSet = true; m_recordingState = value; }
-    inline void SetRecordingState(ParticipantRecordingState&& value) { m_recordingStateHasBeenSet = true; m_recordingState = std::move(value); }
-    inline ParticipantSummary& WithRecordingState(const ParticipantRecordingState& value) { SetRecordingState(value); return *this;}
-    inline ParticipantSummary& WithRecordingState(ParticipantRecordingState&& value) { SetRecordingState(std::move(value)); return *this;}
+    inline void SetRecordingState(ParticipantRecordingState value) { m_recordingStateHasBeenSet = true; m_recordingState = value; }
+    inline ParticipantSummary& WithRecordingState(ParticipantRecordingState value) { SetRecordingState(value); return *this;}
     ///@}
   private:
 
@@ -127,16 +119,16 @@ namespace Model
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    ParticipantState m_state;
+    ParticipantState m_state{ParticipantState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_firstJoinTime;
+    Aws::Utils::DateTime m_firstJoinTime{};
     bool m_firstJoinTimeHasBeenSet = false;
 
-    bool m_published;
+    bool m_published{false};
     bool m_publishedHasBeenSet = false;
 
-    ParticipantRecordingState m_recordingState;
+    ParticipantRecordingState m_recordingState{ParticipantRecordingState::NOT_SET};
     bool m_recordingStateHasBeenSet = false;
   };
 

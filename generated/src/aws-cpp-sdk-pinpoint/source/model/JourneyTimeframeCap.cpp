@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyTimeframeCap::JourneyTimeframeCap() : 
-    m_cap(0),
-    m_capHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false)
-{
-}
-
 JourneyTimeframeCap::JourneyTimeframeCap(JsonView jsonValue)
-  : JourneyTimeframeCap()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ JourneyTimeframeCap& JourneyTimeframeCap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Cap"))
   {
     m_cap = jsonValue.GetInteger("Cap");
-
     m_capHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Days"))
   {
     m_days = jsonValue.GetInteger("Days");
-
     m_daysHasBeenSet = true;
   }
-
   return *this;
 }
 

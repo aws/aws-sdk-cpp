@@ -18,16 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ConflictExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_zonalShiftIdHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ConflictExceptionReasonMapper::GetConflictExceptionReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalShiftId"))
   {
     m_zonalShiftId = jsonValue.GetString("zonalShiftId");
-
     m_zonalShiftIdHasBeenSet = true;
   }
-
   return *this;
 }
 

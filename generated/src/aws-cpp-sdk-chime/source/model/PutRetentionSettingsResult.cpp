@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRetentionSettingsResult::PutRetentionSettingsResult()
-{
-}
-
 PutRetentionSettingsResult::PutRetentionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PutRetentionSettingsResult& PutRetentionSettingsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("RetentionSettings"))
   {
     m_retentionSettings = jsonValue.GetObject("RetentionSettings");
-
+    m_retentionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiateDeletionTimestamp"))
   {
     m_initiateDeletionTimestamp = jsonValue.GetString("InitiateDeletionTimestamp");
-
+    m_initiateDeletionTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

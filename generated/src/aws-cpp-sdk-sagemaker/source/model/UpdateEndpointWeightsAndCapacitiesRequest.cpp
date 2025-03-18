@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointWeightsAndCapacitiesRequest::UpdateEndpointWeightsAndCapacitiesRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_desiredWeightsAndCapacitiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointWeightsAndCapacitiesRequest::SerializePayload() const
 {
   JsonValue payload;

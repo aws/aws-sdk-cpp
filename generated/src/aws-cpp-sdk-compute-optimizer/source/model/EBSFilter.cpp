@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-EBSFilter::EBSFilter() : 
-    m_name(EBSFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 EBSFilter::EBSFilter(JsonView jsonValue)
-  : EBSFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EBSFilter& EBSFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = EBSFilterNameMapper::GetEBSFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ EBSFilter& EBSFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

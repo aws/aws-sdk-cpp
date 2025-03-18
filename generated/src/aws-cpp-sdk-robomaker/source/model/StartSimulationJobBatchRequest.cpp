@@ -12,15 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSimulationJobBatchRequest::StartSimulationJobBatchRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_batchPolicyHasBeenSet(false),
-    m_createSimulationJobRequestsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartSimulationJobBatchRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-QueryArgProfile::QueryArgProfile() : 
-    m_queryArgHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
-{
-}
-
 QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode)
-  : QueryArgProfile()
 {
   *this = xmlNode;
 }

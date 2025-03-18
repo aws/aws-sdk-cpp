@@ -20,29 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReservedCacheNode::ReservedCacheNode() : 
-    m_reservedCacheNodeIdHasBeenSet(false),
-    m_reservedCacheNodesOfferingIdHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_cacheNodeCount(0),
-    m_cacheNodeCountHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_reservationARNHasBeenSet(false)
-{
-}
-
 ReservedCacheNode::ReservedCacheNode(const XmlNode& xmlNode)
-  : ReservedCacheNode()
 {
   *this = xmlNode;
 }
@@ -123,6 +101,7 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);

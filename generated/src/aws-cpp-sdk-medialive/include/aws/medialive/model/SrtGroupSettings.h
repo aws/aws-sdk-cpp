@@ -31,7 +31,7 @@ namespace Model
   class SrtGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API SrtGroupSettings();
+    AWS_MEDIALIVE_API SrtGroupSettings() = default;
     AWS_MEDIALIVE_API SrtGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SrtGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * to be produced normally with repeat frames, black frames, or slate frames
      * substituted for the absent input video.
      */
-    inline const InputLossActionForUdpOut& GetInputLossAction() const{ return m_inputLossAction; }
+    inline InputLossActionForUdpOut GetInputLossAction() const { return m_inputLossAction; }
     inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
-    inline void SetInputLossAction(const InputLossActionForUdpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
-    inline void SetInputLossAction(InputLossActionForUdpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
-    inline SrtGroupSettings& WithInputLossAction(const InputLossActionForUdpOut& value) { SetInputLossAction(value); return *this;}
-    inline SrtGroupSettings& WithInputLossAction(InputLossActionForUdpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+    inline void SetInputLossAction(InputLossActionForUdpOut value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
+    inline SrtGroupSettings& WithInputLossAction(InputLossActionForUdpOut value) { SetInputLossAction(value); return *this;}
     ///@}
   private:
 
-    InputLossActionForUdpOut m_inputLossAction;
+    InputLossActionForUdpOut m_inputLossAction{InputLossActionForUdpOut::NOT_SET};
     bool m_inputLossActionHasBeenSet = false;
   };
 

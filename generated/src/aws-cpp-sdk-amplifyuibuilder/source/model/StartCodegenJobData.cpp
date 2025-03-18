@@ -18,18 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-StartCodegenJobData::StartCodegenJobData() : 
-    m_renderConfigHasBeenSet(false),
-    m_genericDataSchemaHasBeenSet(false),
-    m_autoGenerateForms(false),
-    m_autoGenerateFormsHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 StartCodegenJobData::StartCodegenJobData(JsonView jsonValue)
-  : StartCodegenJobData()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ StartCodegenJobData& StartCodegenJobData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("renderConfig"))
   {
     m_renderConfig = jsonValue.GetObject("renderConfig");
-
     m_renderConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("genericDataSchema"))
   {
     m_genericDataSchema = jsonValue.GetObject("genericDataSchema");
-
     m_genericDataSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoGenerateForms"))
   {
     m_autoGenerateForms = jsonValue.GetBool("autoGenerateForms");
-
     m_autoGenerateFormsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("features"))
   {
     m_features = jsonValue.GetObject("features");
-
     m_featuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -73,7 +54,6 @@ StartCodegenJobData& StartCodegenJobData::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

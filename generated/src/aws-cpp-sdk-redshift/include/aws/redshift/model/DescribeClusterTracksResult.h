@@ -30,7 +30,7 @@ namespace Model
   class DescribeClusterTracksResult
   {
   public:
-    AWS_REDSHIFT_API DescribeClusterTracksResult();
+    AWS_REDSHIFT_API DescribeClusterTracksResult() = default;
     AWS_REDSHIFT_API DescribeClusterTracksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeClusterTracksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
      * operation. </p>
      */
-    inline const Aws::Vector<MaintenanceTrack>& GetMaintenanceTracks() const{ return m_maintenanceTracks; }
-    inline void SetMaintenanceTracks(const Aws::Vector<MaintenanceTrack>& value) { m_maintenanceTracks = value; }
-    inline void SetMaintenanceTracks(Aws::Vector<MaintenanceTrack>&& value) { m_maintenanceTracks = std::move(value); }
-    inline DescribeClusterTracksResult& WithMaintenanceTracks(const Aws::Vector<MaintenanceTrack>& value) { SetMaintenanceTracks(value); return *this;}
-    inline DescribeClusterTracksResult& WithMaintenanceTracks(Aws::Vector<MaintenanceTrack>&& value) { SetMaintenanceTracks(std::move(value)); return *this;}
-    inline DescribeClusterTracksResult& AddMaintenanceTracks(const MaintenanceTrack& value) { m_maintenanceTracks.push_back(value); return *this; }
-    inline DescribeClusterTracksResult& AddMaintenanceTracks(MaintenanceTrack&& value) { m_maintenanceTracks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MaintenanceTrack>& GetMaintenanceTracks() const { return m_maintenanceTracks; }
+    template<typename MaintenanceTracksT = Aws::Vector<MaintenanceTrack>>
+    void SetMaintenanceTracks(MaintenanceTracksT&& value) { m_maintenanceTracksHasBeenSet = true; m_maintenanceTracks = std::forward<MaintenanceTracksT>(value); }
+    template<typename MaintenanceTracksT = Aws::Vector<MaintenanceTrack>>
+    DescribeClusterTracksResult& WithMaintenanceTracks(MaintenanceTracksT&& value) { SetMaintenanceTracks(std::forward<MaintenanceTracksT>(value)); return *this;}
+    template<typename MaintenanceTracksT = MaintenanceTrack>
+    DescribeClusterTracksResult& AddMaintenanceTracks(MaintenanceTracksT&& value) { m_maintenanceTracksHasBeenSet = true; m_maintenanceTracks.emplace_back(std::forward<MaintenanceTracksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * retrieve the next set of response records by providing the returned marker value
      * in the <code>Marker</code> parameter and retrying the request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeClusterTracksResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeClusterTracksResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeClusterTracksResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeClusterTracksResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeClusterTracksResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeClusterTracksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeClusterTracksResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MaintenanceTrack> m_maintenanceTracks;
+    bool m_maintenanceTracksHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

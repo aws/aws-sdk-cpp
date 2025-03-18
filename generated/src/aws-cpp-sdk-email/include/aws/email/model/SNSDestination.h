@@ -36,7 +36,7 @@ namespace Model
   class SNSDestination
   {
   public:
-    AWS_SES_API SNSDestination();
+    AWS_SES_API SNSDestination() = default;
     AWS_SES_API SNSDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API SNSDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,14 +53,12 @@ namespace Model
      * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
      * SNS Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
+    inline const Aws::String& GetTopicARN() const { return m_topicARN; }
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
-    inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
-    inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
-    inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
-    inline SNSDestination& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
-    inline SNSDestination& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
-    inline SNSDestination& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
+    template<typename TopicARNT = Aws::String>
+    void SetTopicARN(TopicARNT&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::forward<TopicARNT>(value); }
+    template<typename TopicARNT = Aws::String>
+    SNSDestination& WithTopicARN(TopicARNT&& value) { SetTopicARN(std::forward<TopicARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class OrderByElement
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API OrderByElement();
+    AWS_APPLICATIONDISCOVERYSERVICE_API OrderByElement() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API OrderByElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API OrderByElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The field on which to order.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline OrderByElement& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline OrderByElement& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline OrderByElement& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    OrderByElement& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Ordering direction.</p>
      */
-    inline const OrderString& GetSortOrder() const{ return m_sortOrder; }
+    inline OrderString GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const OrderString& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(OrderString&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline OrderByElement& WithSortOrder(const OrderString& value) { SetSortOrder(value); return *this;}
-    inline OrderByElement& WithSortOrder(OrderString&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(OrderString value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline OrderByElement& WithSortOrder(OrderString value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet = false;
 
-    OrderString m_sortOrder;
+    OrderString m_sortOrder{OrderString::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

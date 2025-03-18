@@ -18,25 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Collaborator::Collaborator() : 
-    m_actionGroupsHasBeenSet(false),
-    m_agentCollaboration(AgentCollaboration::NOT_SET),
-    m_agentCollaborationHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_collaboratorConfigurationsHasBeenSet(false),
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_foundationModelHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_knowledgeBasesHasBeenSet(false),
-    m_promptOverrideConfigurationHasBeenSet(false)
-{
-}
-
 Collaborator::Collaborator(JsonView jsonValue)
-  : Collaborator()
 {
   *this = jsonValue;
 }
@@ -52,21 +34,16 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
     }
     m_actionGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentCollaboration"))
   {
     m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
-
     m_agentCollaborationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentName"))
   {
     m_agentName = jsonValue.GetString("agentName");
-
     m_agentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorConfigurations"))
   {
     Aws::Utils::Array<JsonView> collaboratorConfigurationsJsonList = jsonValue.GetArray("collaboratorConfigurations");
@@ -76,42 +53,31 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
     }
     m_collaboratorConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
   {
     m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
-
     m_customerEncryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("foundationModel"))
   {
     m_foundationModel = jsonValue.GetString("foundationModel");
-
     m_foundationModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
   {
     m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
-
     m_idleSessionTTLInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instruction"))
   {
     m_instruction = jsonValue.GetString("instruction");
-
     m_instructionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBases"))
   {
     Aws::Utils::Array<JsonView> knowledgeBasesJsonList = jsonValue.GetArray("knowledgeBases");
@@ -121,14 +87,11 @@ Collaborator& Collaborator::operator =(JsonView jsonValue)
     }
     m_knowledgeBasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptOverrideConfiguration"))
   {
     m_promptOverrideConfiguration = jsonValue.GetObject("promptOverrideConfiguration");
-
     m_promptOverrideConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

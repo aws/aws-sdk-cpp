@@ -18,17 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RuleMetadata::RuleMetadata() : 
-    m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_ruleTagsHasBeenSet(false)
-{
-}
-
 RuleMetadata::RuleMetadata(JsonView jsonValue)
-  : RuleMetadata()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RuleMetadata& RuleMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortDescription"))
   {
     m_shortDescription = jsonValue.GetString("ShortDescription");
-
     m_shortDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongDescription"))
   {
     m_longDescription = jsonValue.GetString("LongDescription");
-
     m_longDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleTags"))
   {
     Aws::Utils::Array<JsonView> ruleTagsJsonList = jsonValue.GetArray("RuleTags");
@@ -72,7 +54,6 @@ RuleMetadata& RuleMetadata::operator =(JsonView jsonValue)
     }
     m_ruleTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

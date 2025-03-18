@@ -12,11 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnvironmentRequest::GetEnvironmentRequest() : 
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetEnvironmentRequest::SerializePayload() const
 {
   return {};

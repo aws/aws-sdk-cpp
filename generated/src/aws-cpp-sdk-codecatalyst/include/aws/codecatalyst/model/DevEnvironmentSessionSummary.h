@@ -33,7 +33,7 @@ namespace Model
   class DevEnvironmentSessionSummary
   {
   public:
-    AWS_CODECATALYST_API DevEnvironmentSessionSummary();
+    AWS_CODECATALYST_API DevEnvironmentSessionSummary() = default;
     AWS_CODECATALYST_API DevEnvironmentSessionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API DevEnvironmentSessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-    inline DevEnvironmentSessionSummary& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline DevEnvironmentSessionSummary& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline DevEnvironmentSessionSummary& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    DevEnvironmentSessionSummary& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline DevEnvironmentSessionSummary& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DevEnvironmentSessionSummary& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DevEnvironmentSessionSummary& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DevEnvironmentSessionSummary& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the Dev Environment.</p>
      */
-    inline const Aws::String& GetDevEnvironmentId() const{ return m_devEnvironmentId; }
+    inline const Aws::String& GetDevEnvironmentId() const { return m_devEnvironmentId; }
     inline bool DevEnvironmentIdHasBeenSet() const { return m_devEnvironmentIdHasBeenSet; }
-    inline void SetDevEnvironmentId(const Aws::String& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = value; }
-    inline void SetDevEnvironmentId(Aws::String&& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = std::move(value); }
-    inline void SetDevEnvironmentId(const char* value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId.assign(value); }
-    inline DevEnvironmentSessionSummary& WithDevEnvironmentId(const Aws::String& value) { SetDevEnvironmentId(value); return *this;}
-    inline DevEnvironmentSessionSummary& WithDevEnvironmentId(Aws::String&& value) { SetDevEnvironmentId(std::move(value)); return *this;}
-    inline DevEnvironmentSessionSummary& WithDevEnvironmentId(const char* value) { SetDevEnvironmentId(value); return *this;}
+    template<typename DevEnvironmentIdT = Aws::String>
+    void SetDevEnvironmentId(DevEnvironmentIdT&& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = std::forward<DevEnvironmentIdT>(value); }
+    template<typename DevEnvironmentIdT = Aws::String>
+    DevEnvironmentSessionSummary& WithDevEnvironmentId(DevEnvironmentIdT&& value) { SetDevEnvironmentId(std::forward<DevEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,26 +81,24 @@ namespace Model
      * timestamp format as specified in <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
      */
-    inline const Aws::Utils::DateTime& GetStartedTime() const{ return m_startedTime; }
+    inline const Aws::Utils::DateTime& GetStartedTime() const { return m_startedTime; }
     inline bool StartedTimeHasBeenSet() const { return m_startedTimeHasBeenSet; }
-    inline void SetStartedTime(const Aws::Utils::DateTime& value) { m_startedTimeHasBeenSet = true; m_startedTime = value; }
-    inline void SetStartedTime(Aws::Utils::DateTime&& value) { m_startedTimeHasBeenSet = true; m_startedTime = std::move(value); }
-    inline DevEnvironmentSessionSummary& WithStartedTime(const Aws::Utils::DateTime& value) { SetStartedTime(value); return *this;}
-    inline DevEnvironmentSessionSummary& WithStartedTime(Aws::Utils::DateTime&& value) { SetStartedTime(std::move(value)); return *this;}
+    template<typename StartedTimeT = Aws::Utils::DateTime>
+    void SetStartedTime(StartedTimeT&& value) { m_startedTimeHasBeenSet = true; m_startedTime = std::forward<StartedTimeT>(value); }
+    template<typename StartedTimeT = Aws::Utils::DateTime>
+    DevEnvironmentSessionSummary& WithStartedTime(StartedTimeT&& value) { SetStartedTime(std::forward<StartedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the Dev Environment session.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DevEnvironmentSessionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DevEnvironmentSessionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DevEnvironmentSessionSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DevEnvironmentSessionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,7 +111,7 @@ namespace Model
     Aws::String m_devEnvironmentId;
     bool m_devEnvironmentIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedTime;
+    Aws::Utils::DateTime m_startedTime{};
     bool m_startedTimeHasBeenSet = false;
 
     Aws::String m_id;

@@ -32,7 +32,7 @@ namespace Model
   class CustomOutputConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API CustomOutputConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API CustomOutputConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API CustomOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API CustomOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<BlueprintItem>& GetBlueprints() const{ return m_blueprints; }
+    inline const Aws::Vector<BlueprintItem>& GetBlueprints() const { return m_blueprints; }
     inline bool BlueprintsHasBeenSet() const { return m_blueprintsHasBeenSet; }
-    inline void SetBlueprints(const Aws::Vector<BlueprintItem>& value) { m_blueprintsHasBeenSet = true; m_blueprints = value; }
-    inline void SetBlueprints(Aws::Vector<BlueprintItem>&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::move(value); }
-    inline CustomOutputConfiguration& WithBlueprints(const Aws::Vector<BlueprintItem>& value) { SetBlueprints(value); return *this;}
-    inline CustomOutputConfiguration& WithBlueprints(Aws::Vector<BlueprintItem>&& value) { SetBlueprints(std::move(value)); return *this;}
-    inline CustomOutputConfiguration& AddBlueprints(const BlueprintItem& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(value); return *this; }
-    inline CustomOutputConfiguration& AddBlueprints(BlueprintItem&& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(std::move(value)); return *this; }
+    template<typename BlueprintsT = Aws::Vector<BlueprintItem>>
+    void SetBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::forward<BlueprintsT>(value); }
+    template<typename BlueprintsT = Aws::Vector<BlueprintItem>>
+    CustomOutputConfiguration& WithBlueprints(BlueprintsT&& value) { SetBlueprints(std::forward<BlueprintsT>(value)); return *this;}
+    template<typename BlueprintsT = BlueprintItem>
+    CustomOutputConfiguration& AddBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints.emplace_back(std::forward<BlueprintsT>(value)); return *this; }
     ///@}
   private:
 

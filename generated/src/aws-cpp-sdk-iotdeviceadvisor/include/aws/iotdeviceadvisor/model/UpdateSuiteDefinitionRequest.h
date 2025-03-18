@@ -22,7 +22,7 @@ namespace Model
   class UpdateSuiteDefinitionRequest : public IoTDeviceAdvisorRequest
   {
   public:
-    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionRequest();
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>Suite definition ID of the test suite to be updated.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
+    inline const Aws::String& GetSuiteDefinitionId() const { return m_suiteDefinitionId; }
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
-    inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
-    inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
-    inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
-    inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
-    inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
-    inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
+    template<typename SuiteDefinitionIdT = Aws::String>
+    void SetSuiteDefinitionId(SuiteDefinitionIdT&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::forward<SuiteDefinitionIdT>(value); }
+    template<typename SuiteDefinitionIdT = Aws::String>
+    UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(SuiteDefinitionIdT&& value) { SetSuiteDefinitionId(std::forward<SuiteDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates a Device Advisor test suite with suite definition configuration.</p>
      */
-    inline const SuiteDefinitionConfiguration& GetSuiteDefinitionConfiguration() const{ return m_suiteDefinitionConfiguration; }
+    inline const SuiteDefinitionConfiguration& GetSuiteDefinitionConfiguration() const { return m_suiteDefinitionConfiguration; }
     inline bool SuiteDefinitionConfigurationHasBeenSet() const { return m_suiteDefinitionConfigurationHasBeenSet; }
-    inline void SetSuiteDefinitionConfiguration(const SuiteDefinitionConfiguration& value) { m_suiteDefinitionConfigurationHasBeenSet = true; m_suiteDefinitionConfiguration = value; }
-    inline void SetSuiteDefinitionConfiguration(SuiteDefinitionConfiguration&& value) { m_suiteDefinitionConfigurationHasBeenSet = true; m_suiteDefinitionConfiguration = std::move(value); }
-    inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionConfiguration(const SuiteDefinitionConfiguration& value) { SetSuiteDefinitionConfiguration(value); return *this;}
-    inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionConfiguration(SuiteDefinitionConfiguration&& value) { SetSuiteDefinitionConfiguration(std::move(value)); return *this;}
+    template<typename SuiteDefinitionConfigurationT = SuiteDefinitionConfiguration>
+    void SetSuiteDefinitionConfiguration(SuiteDefinitionConfigurationT&& value) { m_suiteDefinitionConfigurationHasBeenSet = true; m_suiteDefinitionConfiguration = std::forward<SuiteDefinitionConfigurationT>(value); }
+    template<typename SuiteDefinitionConfigurationT = SuiteDefinitionConfiguration>
+    UpdateSuiteDefinitionRequest& WithSuiteDefinitionConfiguration(SuiteDefinitionConfigurationT&& value) { SetSuiteDefinitionConfiguration(std::forward<SuiteDefinitionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

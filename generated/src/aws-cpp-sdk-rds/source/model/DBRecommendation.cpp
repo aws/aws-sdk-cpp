@@ -20,32 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBRecommendation::DBRecommendation() : 
-    m_recommendationIdHasBeenSet(false),
-    m_typeIdHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_detectionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_typeDetectionHasBeenSet(false),
-    m_typeRecommendationHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_linksHasBeenSet(false),
-    m_issueDetailsHasBeenSet(false)
-{
-}
-
 DBRecommendation::DBRecommendation(const XmlNode& xmlNode)
-  : DBRecommendation()
 {
   *this = xmlNode;
 }
@@ -126,6 +101,7 @@ DBRecommendation& DBRecommendation::operator =(const XmlNode& xmlNode)
     if(!recommendedActionsNode.IsNull())
     {
       XmlNode recommendedActionsMember = recommendedActionsNode.FirstChild("member");
+      m_recommendedActionsHasBeenSet = !recommendedActionsMember.IsNull();
       while(!recommendedActionsMember.IsNull())
       {
         m_recommendedActions.push_back(recommendedActionsMember);
@@ -174,6 +150,7 @@ DBRecommendation& DBRecommendation::operator =(const XmlNode& xmlNode)
     if(!linksNode.IsNull())
     {
       XmlNode linksMember = linksNode.FirstChild("member");
+      m_linksHasBeenSet = !linksMember.IsNull();
       while(!linksMember.IsNull())
       {
         m_links.push_back(linksMember);

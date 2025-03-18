@@ -36,7 +36,7 @@ namespace Model
   class NodeGroup
   {
   public:
-    AWS_ELASTICACHE_API NodeGroup();
+    AWS_ELASTICACHE_API NodeGroup() = default;
     AWS_ELASTICACHE_API NodeGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API NodeGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can
      * provide the id for a node group. </p>
      */
-    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+    inline const Aws::String& GetNodeGroupId() const { return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
-    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
-    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
-    inline NodeGroup& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
-    inline NodeGroup& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
-    inline NodeGroup& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+    template<typename NodeGroupIdT = Aws::String>
+    void SetNodeGroupId(NodeGroupIdT&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::forward<NodeGroupIdT>(value); }
+    template<typename NodeGroupIdT = Aws::String>
+    NodeGroup& WithNodeGroupId(NodeGroupIdT&& value) { SetNodeGroupId(std::forward<NodeGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,24 @@ namespace Model
      * <p>The current state of this replication group - <code>creating</code>,
      * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline NodeGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline NodeGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline NodeGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    NodeGroup& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint of the primary node in this node group (shard).</p>
      */
-    inline const Endpoint& GetPrimaryEndpoint() const{ return m_primaryEndpoint; }
+    inline const Endpoint& GetPrimaryEndpoint() const { return m_primaryEndpoint; }
     inline bool PrimaryEndpointHasBeenSet() const { return m_primaryEndpointHasBeenSet; }
-    inline void SetPrimaryEndpoint(const Endpoint& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
-    inline void SetPrimaryEndpoint(Endpoint&& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = std::move(value); }
-    inline NodeGroup& WithPrimaryEndpoint(const Endpoint& value) { SetPrimaryEndpoint(value); return *this;}
-    inline NodeGroup& WithPrimaryEndpoint(Endpoint&& value) { SetPrimaryEndpoint(std::move(value)); return *this;}
+    template<typename PrimaryEndpointT = Endpoint>
+    void SetPrimaryEndpoint(PrimaryEndpointT&& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = std::forward<PrimaryEndpointT>(value); }
+    template<typename PrimaryEndpointT = Endpoint>
+    NodeGroup& WithPrimaryEndpoint(PrimaryEndpointT&& value) { SetPrimaryEndpoint(std::forward<PrimaryEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,26 +90,24 @@ namespace Model
      * <p>The endpoint of the replica nodes in this node group (shard). This value is
      * read-only.</p>
      */
-    inline const Endpoint& GetReaderEndpoint() const{ return m_readerEndpoint; }
+    inline const Endpoint& GetReaderEndpoint() const { return m_readerEndpoint; }
     inline bool ReaderEndpointHasBeenSet() const { return m_readerEndpointHasBeenSet; }
-    inline void SetReaderEndpoint(const Endpoint& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
-    inline void SetReaderEndpoint(Endpoint&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::move(value); }
-    inline NodeGroup& WithReaderEndpoint(const Endpoint& value) { SetReaderEndpoint(value); return *this;}
-    inline NodeGroup& WithReaderEndpoint(Endpoint&& value) { SetReaderEndpoint(std::move(value)); return *this;}
+    template<typename ReaderEndpointT = Endpoint>
+    void SetReaderEndpoint(ReaderEndpointT&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::forward<ReaderEndpointT>(value); }
+    template<typename ReaderEndpointT = Endpoint>
+    NodeGroup& WithReaderEndpoint(ReaderEndpointT&& value) { SetReaderEndpoint(std::forward<ReaderEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keyspace for this node group (shard).</p>
      */
-    inline const Aws::String& GetSlots() const{ return m_slots; }
+    inline const Aws::String& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::String& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline void SetSlots(const char* value) { m_slotsHasBeenSet = true; m_slots.assign(value); }
-    inline NodeGroup& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
-    inline NodeGroup& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
-    inline NodeGroup& WithSlots(const char* value) { SetSlots(value); return *this;}
+    template<typename SlotsT = Aws::String>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::String>
+    NodeGroup& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,14 @@ namespace Model
      * <p>A list containing information about individual nodes within the node group
      * (shard).</p>
      */
-    inline const Aws::Vector<NodeGroupMember>& GetNodeGroupMembers() const{ return m_nodeGroupMembers; }
+    inline const Aws::Vector<NodeGroupMember>& GetNodeGroupMembers() const { return m_nodeGroupMembers; }
     inline bool NodeGroupMembersHasBeenSet() const { return m_nodeGroupMembersHasBeenSet; }
-    inline void SetNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = value; }
-    inline void SetNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = std::move(value); }
-    inline NodeGroup& WithNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { SetNodeGroupMembers(value); return *this;}
-    inline NodeGroup& WithNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { SetNodeGroupMembers(std::move(value)); return *this;}
-    inline NodeGroup& AddNodeGroupMembers(const NodeGroupMember& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(value); return *this; }
-    inline NodeGroup& AddNodeGroupMembers(NodeGroupMember&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(std::move(value)); return *this; }
+    template<typename NodeGroupMembersT = Aws::Vector<NodeGroupMember>>
+    void SetNodeGroupMembers(NodeGroupMembersT&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = std::forward<NodeGroupMembersT>(value); }
+    template<typename NodeGroupMembersT = Aws::Vector<NodeGroupMember>>
+    NodeGroup& WithNodeGroupMembers(NodeGroupMembersT&& value) { SetNodeGroupMembers(std::forward<NodeGroupMembersT>(value)); return *this;}
+    template<typename NodeGroupMembersT = NodeGroupMember>
+    NodeGroup& AddNodeGroupMembers(NodeGroupMembersT&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.emplace_back(std::forward<NodeGroupMembersT>(value)); return *this; }
     ///@}
   private:
 

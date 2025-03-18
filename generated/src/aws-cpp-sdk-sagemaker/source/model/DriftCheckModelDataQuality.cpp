@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DriftCheckModelDataQuality::DriftCheckModelDataQuality() : 
-    m_statisticsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
-{
-}
-
 DriftCheckModelDataQuality::DriftCheckModelDataQuality(JsonView jsonValue)
-  : DriftCheckModelDataQuality()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DriftCheckModelDataQuality& DriftCheckModelDataQuality::operator =(JsonView json
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

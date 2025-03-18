@@ -27,7 +27,7 @@ namespace Model
   class DeleteApplicationVpcConfigurationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeleteApplicationVpcConfigurationResult();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationVpcConfigurationResult() = default;
     AWS_KINESISANALYTICSV2_API DeleteApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API DeleteApplicationVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,21 +36,19 @@ namespace Model
     /**
      * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-    inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    DeleteApplicationVpcConfigurationResult& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated version ID of the application.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-    inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
+    inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline DeleteApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
     ///@}
 
@@ -58,34 +56,34 @@ namespace Model
     /**
      * Operation ID for tracking DeleteApplicationVpcConfiguration request
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline DeleteApplicationVpcConfigurationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    DeleteApplicationVpcConfigurationResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteApplicationVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteApplicationVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteApplicationVpcConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationARN;
+    bool m_applicationARNHasBeenSet = false;
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
+    bool m_applicationVersionIdHasBeenSet = false;
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

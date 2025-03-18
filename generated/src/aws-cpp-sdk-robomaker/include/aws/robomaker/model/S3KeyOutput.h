@@ -31,7 +31,7 @@ namespace Model
   class S3KeyOutput
   {
   public:
-    AWS_ROBOMAKER_API S3KeyOutput();
+    AWS_ROBOMAKER_API S3KeyOutput() = default;
     AWS_ROBOMAKER_API S3KeyOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API S3KeyOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The S3 key.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline S3KeyOutput& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline S3KeyOutput& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline S3KeyOutput& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    S3KeyOutput& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The etag for the object.</p>
      */
-    inline const Aws::String& GetEtag() const{ return m_etag; }
+    inline const Aws::String& GetEtag() const { return m_etag; }
     inline bool EtagHasBeenSet() const { return m_etagHasBeenSet; }
-    inline void SetEtag(const Aws::String& value) { m_etagHasBeenSet = true; m_etag = value; }
-    inline void SetEtag(Aws::String&& value) { m_etagHasBeenSet = true; m_etag = std::move(value); }
-    inline void SetEtag(const char* value) { m_etagHasBeenSet = true; m_etag.assign(value); }
-    inline S3KeyOutput& WithEtag(const Aws::String& value) { SetEtag(value); return *this;}
-    inline S3KeyOutput& WithEtag(Aws::String&& value) { SetEtag(std::move(value)); return *this;}
-    inline S3KeyOutput& WithEtag(const char* value) { SetEtag(value); return *this;}
+    template<typename EtagT = Aws::String>
+    void SetEtag(EtagT&& value) { m_etagHasBeenSet = true; m_etag = std::forward<EtagT>(value); }
+    template<typename EtagT = Aws::String>
+    S3KeyOutput& WithEtag(EtagT&& value) { SetEtag(std::forward<EtagT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Support
 namespace Model
 {
 
-DateInterval::DateInterval() : 
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 DateInterval::DateInterval(JsonView jsonValue)
-  : DateInterval()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateInterval& DateInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startDateTime"))
   {
     m_startDateTime = jsonValue.GetString("startDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDateTime"))
   {
     m_endDateTime = jsonValue.GetString("endDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Expiry::Expiry() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_expiryTimestampHasBeenSet(false)
-{
-}
-
 Expiry::Expiry(JsonView jsonValue)
-  : Expiry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Expiry& Expiry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryTimestamp"))
   {
     m_expiryTimestamp = jsonValue.GetDouble("ExpiryTimestamp");
-
     m_expiryTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

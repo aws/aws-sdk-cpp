@@ -12,19 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelImportJobRequest::CreateModelImportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_importedModelNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false),
-    m_jobTagsHasBeenSet(false),
-    m_importedModelTagsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_importedModelKmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetTestGridSessionRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API GetTestGridSessionRequest();
+    AWS_DEVICEFARM_API GetTestGridSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * <p>The ARN for the project that this session belongs to. See
      * <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline GetTestGridSessionRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline GetTestGridSessionRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline GetTestGridSessionRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    GetTestGridSessionRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ID associated with this session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline GetTestGridSessionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetTestGridSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetTestGridSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetTestGridSessionRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
     inline bool SessionArnHasBeenSet() const { return m_sessionArnHasBeenSet; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArnHasBeenSet = true; m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArnHasBeenSet = true; m_sessionArn.assign(value); }
-    inline GetTestGridSessionRequest& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline GetTestGridSessionRequest& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline GetTestGridSessionRequest& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    GetTestGridSessionRequest& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
   private:
 

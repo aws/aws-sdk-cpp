@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-SqlApplicationConfigurationUpdate::SqlApplicationConfigurationUpdate() : 
-    m_inputUpdatesHasBeenSet(false),
-    m_outputUpdatesHasBeenSet(false),
-    m_referenceDataSourceUpdatesHasBeenSet(false)
-{
-}
-
 SqlApplicationConfigurationUpdate::SqlApplicationConfigurationUpdate(JsonView jsonValue)
-  : SqlApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
     }
     m_inputUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputUpdates"))
   {
     Aws::Utils::Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
@@ -52,7 +43,6 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
     }
     m_outputUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceDataSourceUpdates"))
   {
     Aws::Utils::Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
@@ -62,7 +52,6 @@ SqlApplicationConfigurationUpdate& SqlApplicationConfigurationUpdate::operator =
     }
     m_referenceDataSourceUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

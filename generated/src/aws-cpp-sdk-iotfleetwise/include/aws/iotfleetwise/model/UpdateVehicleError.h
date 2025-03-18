@@ -32,7 +32,7 @@ namespace Model
   class UpdateVehicleError
   {
   public:
-    AWS_IOTFLEETWISE_API UpdateVehicleError();
+    AWS_IOTFLEETWISE_API UpdateVehicleError() = default;
     AWS_IOTFLEETWISE_API UpdateVehicleError(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API UpdateVehicleError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID of the vehicle with the error.</p>
      */
-    inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
+    inline const Aws::String& GetVehicleName() const { return m_vehicleName; }
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-    inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-    inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-    inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-    inline UpdateVehicleError& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-    inline UpdateVehicleError& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-    inline UpdateVehicleError& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    template<typename VehicleNameT = Aws::String>
+    void SetVehicleName(VehicleNameT&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::forward<VehicleNameT>(value); }
+    template<typename VehicleNameT = Aws::String>
+    UpdateVehicleError& WithVehicleName(VehicleNameT&& value) { SetVehicleName(std::forward<VehicleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relevant HTTP error code (400+).</p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline UpdateVehicleError& WithCode(int value) { SetCode(value); return *this;}
@@ -66,21 +64,19 @@ namespace Model
     /**
      * <p>A message associated with the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline UpdateVehicleError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline UpdateVehicleError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline UpdateVehicleError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    UpdateVehicleError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vehicleName;
     bool m_vehicleNameHasBeenSet = false;
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

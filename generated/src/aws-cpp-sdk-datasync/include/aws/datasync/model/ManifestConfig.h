@@ -36,7 +36,7 @@ namespace Model
   class ManifestConfig
   {
   public:
-    AWS_DATASYNC_API ManifestConfig();
+    AWS_DATASYNC_API ManifestConfig() = default;
     AWS_DATASYNC_API ManifestConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API ManifestConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>Specifies what DataSync uses the manifest for.</p>
      */
-    inline const ManifestAction& GetAction() const{ return m_action; }
+    inline ManifestAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ManifestAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ManifestAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ManifestConfig& WithAction(const ManifestAction& value) { SetAction(value); return *this;}
-    inline ManifestConfig& WithAction(ManifestAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ManifestAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ManifestConfig& WithAction(ManifestAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-create">Creating
      * a manifest</a>.</p>
      */
-    inline const ManifestFormat& GetFormat() const{ return m_format; }
+    inline ManifestFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const ManifestFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(ManifestFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ManifestConfig& WithFormat(const ManifestFormat& value) { SetFormat(value); return *this;}
-    inline ManifestConfig& WithFormat(ManifestFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(ManifestFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ManifestConfig& WithFormat(ManifestFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +75,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing
      * DataSync access to your manifest</a>.</p> 
      */
-    inline const SourceManifestConfig& GetSource() const{ return m_source; }
+    inline const SourceManifestConfig& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const SourceManifestConfig& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(SourceManifestConfig&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ManifestConfig& WithSource(const SourceManifestConfig& value) { SetSource(value); return *this;}
-    inline ManifestConfig& WithSource(SourceManifestConfig&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = SourceManifestConfig>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = SourceManifestConfig>
+    ManifestConfig& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    ManifestAction m_action;
+    ManifestAction m_action{ManifestAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    ManifestFormat m_format;
+    ManifestFormat m_format{ManifestFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     SourceManifestConfig m_source;

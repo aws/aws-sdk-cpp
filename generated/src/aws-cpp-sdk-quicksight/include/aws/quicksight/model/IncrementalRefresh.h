@@ -32,7 +32,7 @@ namespace Model
   class IncrementalRefresh
   {
   public:
-    AWS_QUICKSIGHT_API IncrementalRefresh();
+    AWS_QUICKSIGHT_API IncrementalRefresh() = default;
     AWS_QUICKSIGHT_API IncrementalRefresh(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IncrementalRefresh& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The lookback window setup for an incremental refresh configuration.</p>
      */
-    inline const LookbackWindow& GetLookbackWindow() const{ return m_lookbackWindow; }
+    inline const LookbackWindow& GetLookbackWindow() const { return m_lookbackWindow; }
     inline bool LookbackWindowHasBeenSet() const { return m_lookbackWindowHasBeenSet; }
-    inline void SetLookbackWindow(const LookbackWindow& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = value; }
-    inline void SetLookbackWindow(LookbackWindow&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::move(value); }
-    inline IncrementalRefresh& WithLookbackWindow(const LookbackWindow& value) { SetLookbackWindow(value); return *this;}
-    inline IncrementalRefresh& WithLookbackWindow(LookbackWindow&& value) { SetLookbackWindow(std::move(value)); return *this;}
+    template<typename LookbackWindowT = LookbackWindow>
+    void SetLookbackWindow(LookbackWindowT&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::forward<LookbackWindowT>(value); }
+    template<typename LookbackWindowT = LookbackWindow>
+    IncrementalRefresh& WithLookbackWindow(LookbackWindowT&& value) { SetLookbackWindow(std::forward<LookbackWindowT>(value)); return *this;}
     ///@}
   private:
 

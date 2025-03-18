@@ -27,7 +27,7 @@ namespace Model
   class PutTaxExemptionResult
   {
   public:
-    AWS_TAXSETTINGS_API PutTaxExemptionResult();
+    AWS_TAXSETTINGS_API PutTaxExemptionResult() = default;
     AWS_TAXSETTINGS_API PutTaxExemptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API PutTaxExemptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The customer support case ID. </p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
-    inline void SetCaseId(const Aws::String& value) { m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseId.assign(value); }
-    inline PutTaxExemptionResult& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline PutTaxExemptionResult& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline PutTaxExemptionResult& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    PutTaxExemptionResult& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutTaxExemptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutTaxExemptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutTaxExemptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutTaxExemptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_caseId;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QuickConnectConfig::QuickConnectConfig() : 
-    m_quickConnectType(QuickConnectType::NOT_SET),
-    m_quickConnectTypeHasBeenSet(false),
-    m_userConfigHasBeenSet(false),
-    m_queueConfigHasBeenSet(false),
-    m_phoneConfigHasBeenSet(false)
-{
-}
-
 QuickConnectConfig::QuickConnectConfig(JsonView jsonValue)
-  : QuickConnectConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ QuickConnectConfig& QuickConnectConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuickConnectType"))
   {
     m_quickConnectType = QuickConnectTypeMapper::GetQuickConnectTypeForName(jsonValue.GetString("QuickConnectType"));
-
     m_quickConnectTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserConfig"))
   {
     m_userConfig = jsonValue.GetObject("UserConfig");
-
     m_userConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueConfig"))
   {
     m_queueConfig = jsonValue.GetObject("QueueConfig");
-
     m_queueConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneConfig"))
   {
     m_phoneConfig = jsonValue.GetObject("PhoneConfig");
-
     m_phoneConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

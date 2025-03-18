@@ -33,7 +33,7 @@ namespace Model
   class MessageGroup
   {
   public:
-    AWS_LEXMODELSV2_API MessageGroup();
+    AWS_LEXMODELSV2_API MessageGroup() = default;
     AWS_LEXMODELSV2_API MessageGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API MessageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The primary message that Amazon Lex should send to the user.</p>
      */
-    inline const Message& GetMessage() const{ return m_message; }
+    inline const Message& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Message& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline MessageGroup& WithMessage(const Message& value) { SetMessage(value); return *this;}
-    inline MessageGroup& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
+    template<typename MessageT = Message>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Message>
+    MessageGroup& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,14 @@ namespace Model
      * Lex chooses the primary message or one of the variations to send to the
      * user.</p>
      */
-    inline const Aws::Vector<Message>& GetVariations() const{ return m_variations; }
+    inline const Aws::Vector<Message>& GetVariations() const { return m_variations; }
     inline bool VariationsHasBeenSet() const { return m_variationsHasBeenSet; }
-    inline void SetVariations(const Aws::Vector<Message>& value) { m_variationsHasBeenSet = true; m_variations = value; }
-    inline void SetVariations(Aws::Vector<Message>&& value) { m_variationsHasBeenSet = true; m_variations = std::move(value); }
-    inline MessageGroup& WithVariations(const Aws::Vector<Message>& value) { SetVariations(value); return *this;}
-    inline MessageGroup& WithVariations(Aws::Vector<Message>&& value) { SetVariations(std::move(value)); return *this;}
-    inline MessageGroup& AddVariations(const Message& value) { m_variationsHasBeenSet = true; m_variations.push_back(value); return *this; }
-    inline MessageGroup& AddVariations(Message&& value) { m_variationsHasBeenSet = true; m_variations.push_back(std::move(value)); return *this; }
+    template<typename VariationsT = Aws::Vector<Message>>
+    void SetVariations(VariationsT&& value) { m_variationsHasBeenSet = true; m_variations = std::forward<VariationsT>(value); }
+    template<typename VariationsT = Aws::Vector<Message>>
+    MessageGroup& WithVariations(VariationsT&& value) { SetVariations(std::forward<VariationsT>(value)); return *this;}
+    template<typename VariationsT = Message>
+    MessageGroup& AddVariations(VariationsT&& value) { m_variationsHasBeenSet = true; m_variations.emplace_back(std::forward<VariationsT>(value)); return *this; }
     ///@}
   private:
 

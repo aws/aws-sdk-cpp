@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-PeriodicStateTemplateUpdateStrategy::PeriodicStateTemplateUpdateStrategy() : 
-    m_stateTemplateUpdateRateHasBeenSet(false)
-{
-}
-
 PeriodicStateTemplateUpdateStrategy::PeriodicStateTemplateUpdateStrategy(JsonView jsonValue)
-  : PeriodicStateTemplateUpdateStrategy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PeriodicStateTemplateUpdateStrategy& PeriodicStateTemplateUpdateStrategy::operat
   if(jsonValue.ValueExists("stateTemplateUpdateRate"))
   {
     m_stateTemplateUpdateRate = jsonValue.GetObject("stateTemplateUpdateRate");
-
     m_stateTemplateUpdateRateHasBeenSet = true;
   }
-
   return *this;
 }
 

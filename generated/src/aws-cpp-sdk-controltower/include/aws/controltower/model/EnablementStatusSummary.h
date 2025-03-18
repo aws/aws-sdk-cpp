@@ -33,7 +33,7 @@ namespace Model
   class EnablementStatusSummary
   {
   public:
-    AWS_CONTROLTOWER_API EnablementStatusSummary();
+    AWS_CONTROLTOWER_API EnablementStatusSummary() = default;
     AWS_CONTROLTOWER_API EnablementStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API EnablementStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The last operation identifier for the enabled resource.</p>
      */
-    inline const Aws::String& GetLastOperationIdentifier() const{ return m_lastOperationIdentifier; }
+    inline const Aws::String& GetLastOperationIdentifier() const { return m_lastOperationIdentifier; }
     inline bool LastOperationIdentifierHasBeenSet() const { return m_lastOperationIdentifierHasBeenSet; }
-    inline void SetLastOperationIdentifier(const Aws::String& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = value; }
-    inline void SetLastOperationIdentifier(Aws::String&& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = std::move(value); }
-    inline void SetLastOperationIdentifier(const char* value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier.assign(value); }
-    inline EnablementStatusSummary& WithLastOperationIdentifier(const Aws::String& value) { SetLastOperationIdentifier(value); return *this;}
-    inline EnablementStatusSummary& WithLastOperationIdentifier(Aws::String&& value) { SetLastOperationIdentifier(std::move(value)); return *this;}
-    inline EnablementStatusSummary& WithLastOperationIdentifier(const char* value) { SetLastOperationIdentifier(value); return *this;}
+    template<typename LastOperationIdentifierT = Aws::String>
+    void SetLastOperationIdentifier(LastOperationIdentifierT&& value) { m_lastOperationIdentifierHasBeenSet = true; m_lastOperationIdentifier = std::forward<LastOperationIdentifierT>(value); }
+    template<typename LastOperationIdentifierT = Aws::String>
+    EnablementStatusSummary& WithLastOperationIdentifier(LastOperationIdentifierT&& value) { SetLastOperationIdentifier(std::forward<LastOperationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * <code>FAILED</code>: The <code>EnabledControl</code> or
      * <code>EnabledBaseline</code> configuration failed to deploy.</p> </li> </ul>
      */
-    inline const EnablementStatus& GetStatus() const{ return m_status; }
+    inline EnablementStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EnablementStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EnablementStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EnablementStatusSummary& WithStatus(const EnablementStatus& value) { SetStatus(value); return *this;}
-    inline EnablementStatusSummary& WithStatus(EnablementStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EnablementStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EnablementStatusSummary& WithStatus(EnablementStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_lastOperationIdentifier;
     bool m_lastOperationIdentifierHasBeenSet = false;
 
-    EnablementStatus m_status;
+    EnablementStatus m_status{EnablementStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

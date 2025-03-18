@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateUserAccessLoggingSettingsRequest::DisassociateUserAccessLoggingSettingsRequest() : 
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   return {};

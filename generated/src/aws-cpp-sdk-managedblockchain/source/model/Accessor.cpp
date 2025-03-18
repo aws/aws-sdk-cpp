@@ -18,23 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-Accessor::Accessor() : 
-    m_idHasBeenSet(false),
-    m_type(AccessorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_billingTokenHasBeenSet(false),
-    m_status(AccessorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkType(AccessorNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 Accessor::Accessor(JsonView jsonValue)
-  : Accessor()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ Accessor& Accessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AccessorTypeMapper::GetAccessorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingToken"))
   {
     m_billingToken = jsonValue.GetString("BillingToken");
-
     m_billingTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AccessorStatusMapper::GetAccessorStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -92,14 +64,11 @@ Accessor& Accessor::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkType"))
   {
     m_networkType = AccessorNetworkTypeMapper::GetAccessorNetworkTypeForName(jsonValue.GetString("NetworkType"));
-
     m_networkTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

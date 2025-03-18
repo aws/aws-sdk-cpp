@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse() : 
-    m_associatePublicIpAddress(false)
-{
-}
-
 DescribeNetworkInterfaceAttributeResponse::DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeNetworkInterfaceAttributeResponse()
 {
   *this = result;
 }
@@ -44,37 +38,44 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
     if(!attachmentNode.IsNull())
     {
       m_attachment = attachmentNode;
+      m_attachmentHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = descriptionNode;
+      m_descriptionHasBeenSet = true;
     }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember);
         groupsMember = groupsMember.NextNode("item");
       }
 
+      m_groupsHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
+      m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
     if(!sourceDestCheckNode.IsNull())
     {
       m_sourceDestCheck = sourceDestCheckNode;
+      m_sourceDestCheckHasBeenSet = true;
     }
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("associatePublicIpAddress");
     if(!associatePublicIpAddressNode.IsNull())
     {
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
+      m_associatePublicIpAddressHasBeenSet = true;
     }
   }
 
@@ -83,6 +84,7 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInterfaceAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

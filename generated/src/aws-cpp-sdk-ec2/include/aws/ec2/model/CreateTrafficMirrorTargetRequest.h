@@ -24,7 +24,7 @@ namespace Model
   class CreateTrafficMirrorTargetRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateTrafficMirrorTargetRequest();
+    AWS_EC2_API CreateTrafficMirrorTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The network interface ID that is associated with the target.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline CreateTrafficMirrorTargetRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    CreateTrafficMirrorTargetRequest& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,38 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Network Load Balancer that is
      * associated with the target.</p>
      */
-    inline const Aws::String& GetNetworkLoadBalancerArn() const{ return m_networkLoadBalancerArn; }
+    inline const Aws::String& GetNetworkLoadBalancerArn() const { return m_networkLoadBalancerArn; }
     inline bool NetworkLoadBalancerArnHasBeenSet() const { return m_networkLoadBalancerArnHasBeenSet; }
-    inline void SetNetworkLoadBalancerArn(const Aws::String& value) { m_networkLoadBalancerArnHasBeenSet = true; m_networkLoadBalancerArn = value; }
-    inline void SetNetworkLoadBalancerArn(Aws::String&& value) { m_networkLoadBalancerArnHasBeenSet = true; m_networkLoadBalancerArn = std::move(value); }
-    inline void SetNetworkLoadBalancerArn(const char* value) { m_networkLoadBalancerArnHasBeenSet = true; m_networkLoadBalancerArn.assign(value); }
-    inline CreateTrafficMirrorTargetRequest& WithNetworkLoadBalancerArn(const Aws::String& value) { SetNetworkLoadBalancerArn(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithNetworkLoadBalancerArn(Aws::String&& value) { SetNetworkLoadBalancerArn(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithNetworkLoadBalancerArn(const char* value) { SetNetworkLoadBalancerArn(value); return *this;}
+    template<typename NetworkLoadBalancerArnT = Aws::String>
+    void SetNetworkLoadBalancerArn(NetworkLoadBalancerArnT&& value) { m_networkLoadBalancerArnHasBeenSet = true; m_networkLoadBalancerArn = std::forward<NetworkLoadBalancerArnT>(value); }
+    template<typename NetworkLoadBalancerArnT = Aws::String>
+    CreateTrafficMirrorTargetRequest& WithNetworkLoadBalancerArn(NetworkLoadBalancerArnT&& value) { SetNetworkLoadBalancerArn(std::forward<NetworkLoadBalancerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the Traffic Mirror target.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateTrafficMirrorTargetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateTrafficMirrorTargetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the Traffic Mirror target.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateTrafficMirrorTargetRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateTrafficMirrorTargetRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateTrafficMirrorTargetRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateTrafficMirrorTargetRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateTrafficMirrorTargetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -116,28 +110,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateTrafficMirrorTargetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTrafficMirrorTargetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Gateway Load Balancer endpoint.</p>
      */
-    inline const Aws::String& GetGatewayLoadBalancerEndpointId() const{ return m_gatewayLoadBalancerEndpointId; }
+    inline const Aws::String& GetGatewayLoadBalancerEndpointId() const { return m_gatewayLoadBalancerEndpointId; }
     inline bool GatewayLoadBalancerEndpointIdHasBeenSet() const { return m_gatewayLoadBalancerEndpointIdHasBeenSet; }
-    inline void SetGatewayLoadBalancerEndpointId(const Aws::String& value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId = value; }
-    inline void SetGatewayLoadBalancerEndpointId(Aws::String&& value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId = std::move(value); }
-    inline void SetGatewayLoadBalancerEndpointId(const char* value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId.assign(value); }
-    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(const Aws::String& value) { SetGatewayLoadBalancerEndpointId(value); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(Aws::String&& value) { SetGatewayLoadBalancerEndpointId(std::move(value)); return *this;}
-    inline CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(const char* value) { SetGatewayLoadBalancerEndpointId(value); return *this;}
+    template<typename GatewayLoadBalancerEndpointIdT = Aws::String>
+    void SetGatewayLoadBalancerEndpointId(GatewayLoadBalancerEndpointIdT&& value) { m_gatewayLoadBalancerEndpointIdHasBeenSet = true; m_gatewayLoadBalancerEndpointId = std::forward<GatewayLoadBalancerEndpointIdT>(value); }
+    template<typename GatewayLoadBalancerEndpointIdT = Aws::String>
+    CreateTrafficMirrorTargetRequest& WithGatewayLoadBalancerEndpointId(GatewayLoadBalancerEndpointIdT&& value) { SetGatewayLoadBalancerEndpointId(std::forward<GatewayLoadBalancerEndpointIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,7 +143,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;

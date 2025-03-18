@@ -29,7 +29,7 @@ namespace Model
   class BatchPutDocumentResult
   {
   public:
-    AWS_QBUSINESS_API BatchPutDocumentResult();
+    AWS_QBUSINESS_API BatchPutDocumentResult() = default;
     AWS_QBUSINESS_API BatchPutDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API BatchPutDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * because the document failed a validation check. Each document contains an error
      * message that indicates why the document couldn't be added to the index. </p>
      */
-    inline const Aws::Vector<FailedDocument>& GetFailedDocuments() const{ return m_failedDocuments; }
-    inline void SetFailedDocuments(const Aws::Vector<FailedDocument>& value) { m_failedDocuments = value; }
-    inline void SetFailedDocuments(Aws::Vector<FailedDocument>&& value) { m_failedDocuments = std::move(value); }
-    inline BatchPutDocumentResult& WithFailedDocuments(const Aws::Vector<FailedDocument>& value) { SetFailedDocuments(value); return *this;}
-    inline BatchPutDocumentResult& WithFailedDocuments(Aws::Vector<FailedDocument>&& value) { SetFailedDocuments(std::move(value)); return *this;}
-    inline BatchPutDocumentResult& AddFailedDocuments(const FailedDocument& value) { m_failedDocuments.push_back(value); return *this; }
-    inline BatchPutDocumentResult& AddFailedDocuments(FailedDocument&& value) { m_failedDocuments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedDocument>& GetFailedDocuments() const { return m_failedDocuments; }
+    template<typename FailedDocumentsT = Aws::Vector<FailedDocument>>
+    void SetFailedDocuments(FailedDocumentsT&& value) { m_failedDocumentsHasBeenSet = true; m_failedDocuments = std::forward<FailedDocumentsT>(value); }
+    template<typename FailedDocumentsT = Aws::Vector<FailedDocument>>
+    BatchPutDocumentResult& WithFailedDocuments(FailedDocumentsT&& value) { SetFailedDocuments(std::forward<FailedDocumentsT>(value)); return *this;}
+    template<typename FailedDocumentsT = FailedDocument>
+    BatchPutDocumentResult& AddFailedDocuments(FailedDocumentsT&& value) { m_failedDocumentsHasBeenSet = true; m_failedDocuments.emplace_back(std::forward<FailedDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutDocumentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedDocument> m_failedDocuments;
+    bool m_failedDocumentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

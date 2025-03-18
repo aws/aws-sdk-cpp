@@ -33,7 +33,7 @@ namespace Model
   class StartSegmentDetectionFilters
   {
   public:
-    AWS_REKOGNITION_API StartSegmentDetectionFilters();
+    AWS_REKOGNITION_API StartSegmentDetectionFilters() = default;
     AWS_REKOGNITION_API StartSegmentDetectionFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StartSegmentDetectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Filters that are specific to technical cues.</p>
      */
-    inline const StartTechnicalCueDetectionFilter& GetTechnicalCueFilter() const{ return m_technicalCueFilter; }
+    inline const StartTechnicalCueDetectionFilter& GetTechnicalCueFilter() const { return m_technicalCueFilter; }
     inline bool TechnicalCueFilterHasBeenSet() const { return m_technicalCueFilterHasBeenSet; }
-    inline void SetTechnicalCueFilter(const StartTechnicalCueDetectionFilter& value) { m_technicalCueFilterHasBeenSet = true; m_technicalCueFilter = value; }
-    inline void SetTechnicalCueFilter(StartTechnicalCueDetectionFilter&& value) { m_technicalCueFilterHasBeenSet = true; m_technicalCueFilter = std::move(value); }
-    inline StartSegmentDetectionFilters& WithTechnicalCueFilter(const StartTechnicalCueDetectionFilter& value) { SetTechnicalCueFilter(value); return *this;}
-    inline StartSegmentDetectionFilters& WithTechnicalCueFilter(StartTechnicalCueDetectionFilter&& value) { SetTechnicalCueFilter(std::move(value)); return *this;}
+    template<typename TechnicalCueFilterT = StartTechnicalCueDetectionFilter>
+    void SetTechnicalCueFilter(TechnicalCueFilterT&& value) { m_technicalCueFilterHasBeenSet = true; m_technicalCueFilter = std::forward<TechnicalCueFilterT>(value); }
+    template<typename TechnicalCueFilterT = StartTechnicalCueDetectionFilter>
+    StartSegmentDetectionFilters& WithTechnicalCueFilter(TechnicalCueFilterT&& value) { SetTechnicalCueFilter(std::forward<TechnicalCueFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters that are specific to shot detections.</p>
      */
-    inline const StartShotDetectionFilter& GetShotFilter() const{ return m_shotFilter; }
+    inline const StartShotDetectionFilter& GetShotFilter() const { return m_shotFilter; }
     inline bool ShotFilterHasBeenSet() const { return m_shotFilterHasBeenSet; }
-    inline void SetShotFilter(const StartShotDetectionFilter& value) { m_shotFilterHasBeenSet = true; m_shotFilter = value; }
-    inline void SetShotFilter(StartShotDetectionFilter&& value) { m_shotFilterHasBeenSet = true; m_shotFilter = std::move(value); }
-    inline StartSegmentDetectionFilters& WithShotFilter(const StartShotDetectionFilter& value) { SetShotFilter(value); return *this;}
-    inline StartSegmentDetectionFilters& WithShotFilter(StartShotDetectionFilter&& value) { SetShotFilter(std::move(value)); return *this;}
+    template<typename ShotFilterT = StartShotDetectionFilter>
+    void SetShotFilter(ShotFilterT&& value) { m_shotFilterHasBeenSet = true; m_shotFilter = std::forward<ShotFilterT>(value); }
+    template<typename ShotFilterT = StartShotDetectionFilter>
+    StartSegmentDetectionFilters& WithShotFilter(ShotFilterT&& value) { SetShotFilter(std::forward<ShotFilterT>(value)); return *this;}
     ///@}
   private:
 

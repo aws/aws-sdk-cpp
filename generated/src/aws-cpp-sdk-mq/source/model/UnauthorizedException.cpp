@@ -18,14 +18,7 @@ namespace MQ
 namespace Model
 {
 
-UnauthorizedException::UnauthorizedException() : 
-    m_errorAttributeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnauthorizedException::UnauthorizedException(JsonView jsonValue)
-  : UnauthorizedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnauthorizedException& UnauthorizedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorAttribute"))
   {
     m_errorAttribute = jsonValue.GetString("errorAttribute");
-
     m_errorAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

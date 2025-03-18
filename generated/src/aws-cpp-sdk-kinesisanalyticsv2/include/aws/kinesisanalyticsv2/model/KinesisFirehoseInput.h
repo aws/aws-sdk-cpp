@@ -33,7 +33,7 @@ namespace Model
   class KinesisFirehoseInput
   {
   public:
-    AWS_KINESISANALYTICSV2_API KinesisFirehoseInput();
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseInput() = default;
     AWS_KINESISANALYTICSV2_API KinesisFirehoseInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API KinesisFirehoseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline KinesisFirehoseInput& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline KinesisFirehoseInput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline KinesisFirehoseInput& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    KinesisFirehoseInput& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
   private:
 

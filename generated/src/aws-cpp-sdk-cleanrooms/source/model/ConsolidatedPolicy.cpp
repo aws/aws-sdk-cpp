@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConsolidatedPolicy::ConsolidatedPolicy() : 
-    m_v1HasBeenSet(false)
-{
-}
-
 ConsolidatedPolicy::ConsolidatedPolicy(JsonView jsonValue)
-  : ConsolidatedPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConsolidatedPolicy& ConsolidatedPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("v1"))
   {
     m_v1 = jsonValue.GetObject("v1");
-
     m_v1HasBeenSet = true;
   }
-
   return *this;
 }
 

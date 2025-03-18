@@ -12,16 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReplicationTasksRequest::DescribeReplicationTasksRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_withoutSettings(false),
-    m_withoutSettingsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReplicationTasksRequest::SerializePayload() const
 {
   JsonValue payload;

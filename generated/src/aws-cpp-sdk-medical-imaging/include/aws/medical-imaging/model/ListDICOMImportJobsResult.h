@@ -29,7 +29,7 @@ namespace Model
   class ListDICOMImportJobsResult
   {
   public:
-    AWS_MEDICALIMAGING_API ListDICOMImportJobsResult();
+    AWS_MEDICALIMAGING_API ListDICOMImportJobsResult() = default;
     AWS_MEDICALIMAGING_API ListDICOMImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDICALIMAGING_API ListDICOMImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of job summaries.</p>
      */
-    inline const Aws::Vector<DICOMImportJobSummary>& GetJobSummaries() const{ return m_jobSummaries; }
-    inline void SetJobSummaries(const Aws::Vector<DICOMImportJobSummary>& value) { m_jobSummaries = value; }
-    inline void SetJobSummaries(Aws::Vector<DICOMImportJobSummary>&& value) { m_jobSummaries = std::move(value); }
-    inline ListDICOMImportJobsResult& WithJobSummaries(const Aws::Vector<DICOMImportJobSummary>& value) { SetJobSummaries(value); return *this;}
-    inline ListDICOMImportJobsResult& WithJobSummaries(Aws::Vector<DICOMImportJobSummary>&& value) { SetJobSummaries(std::move(value)); return *this;}
-    inline ListDICOMImportJobsResult& AddJobSummaries(const DICOMImportJobSummary& value) { m_jobSummaries.push_back(value); return *this; }
-    inline ListDICOMImportJobsResult& AddJobSummaries(DICOMImportJobSummary&& value) { m_jobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DICOMImportJobSummary>& GetJobSummaries() const { return m_jobSummaries; }
+    template<typename JobSummariesT = Aws::Vector<DICOMImportJobSummary>>
+    void SetJobSummaries(JobSummariesT&& value) { m_jobSummariesHasBeenSet = true; m_jobSummaries = std::forward<JobSummariesT>(value); }
+    template<typename JobSummariesT = Aws::Vector<DICOMImportJobSummary>>
+    ListDICOMImportJobsResult& WithJobSummaries(JobSummariesT&& value) { SetJobSummaries(std::forward<JobSummariesT>(value)); return *this;}
+    template<typename JobSummariesT = DICOMImportJobSummary>
+    ListDICOMImportJobsResult& AddJobSummaries(JobSummariesT&& value) { m_jobSummariesHasBeenSet = true; m_jobSummaries.emplace_back(std::forward<JobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token used to retrieve the list of import jobs on the next
      * page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDICOMImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDICOMImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDICOMImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDICOMImportJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDICOMImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDICOMImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDICOMImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDICOMImportJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DICOMImportJobSummary> m_jobSummaries;
+    bool m_jobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

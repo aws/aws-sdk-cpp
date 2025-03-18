@@ -29,7 +29,7 @@ namespace Model
   class ListConfigurationRecordersResult
   {
   public:
-    AWS_CONFIGSERVICE_API ListConfigurationRecordersResult();
+    AWS_CONFIGSERVICE_API ListConfigurationRecordersResult() = default;
     AWS_CONFIGSERVICE_API ListConfigurationRecordersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API ListConfigurationRecordersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <code>ConfigurationRecorderSummary</code> objects that
      * includes.</p>
      */
-    inline const Aws::Vector<ConfigurationRecorderSummary>& GetConfigurationRecorderSummaries() const{ return m_configurationRecorderSummaries; }
-    inline void SetConfigurationRecorderSummaries(const Aws::Vector<ConfigurationRecorderSummary>& value) { m_configurationRecorderSummaries = value; }
-    inline void SetConfigurationRecorderSummaries(Aws::Vector<ConfigurationRecorderSummary>&& value) { m_configurationRecorderSummaries = std::move(value); }
-    inline ListConfigurationRecordersResult& WithConfigurationRecorderSummaries(const Aws::Vector<ConfigurationRecorderSummary>& value) { SetConfigurationRecorderSummaries(value); return *this;}
-    inline ListConfigurationRecordersResult& WithConfigurationRecorderSummaries(Aws::Vector<ConfigurationRecorderSummary>&& value) { SetConfigurationRecorderSummaries(std::move(value)); return *this;}
-    inline ListConfigurationRecordersResult& AddConfigurationRecorderSummaries(const ConfigurationRecorderSummary& value) { m_configurationRecorderSummaries.push_back(value); return *this; }
-    inline ListConfigurationRecordersResult& AddConfigurationRecorderSummaries(ConfigurationRecorderSummary&& value) { m_configurationRecorderSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfigurationRecorderSummary>& GetConfigurationRecorderSummaries() const { return m_configurationRecorderSummaries; }
+    template<typename ConfigurationRecorderSummariesT = Aws::Vector<ConfigurationRecorderSummary>>
+    void SetConfigurationRecorderSummaries(ConfigurationRecorderSummariesT&& value) { m_configurationRecorderSummariesHasBeenSet = true; m_configurationRecorderSummaries = std::forward<ConfigurationRecorderSummariesT>(value); }
+    template<typename ConfigurationRecorderSummariesT = Aws::Vector<ConfigurationRecorderSummary>>
+    ListConfigurationRecordersResult& WithConfigurationRecorderSummaries(ConfigurationRecorderSummariesT&& value) { SetConfigurationRecorderSummaries(std::forward<ConfigurationRecorderSummariesT>(value)); return *this;}
+    template<typename ConfigurationRecorderSummariesT = ConfigurationRecorderSummary>
+    ListConfigurationRecordersResult& AddConfigurationRecorderSummaries(ConfigurationRecorderSummariesT&& value) { m_configurationRecorderSummariesHasBeenSet = true; m_configurationRecorderSummaries.emplace_back(std::forward<ConfigurationRecorderSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfigurationRecordersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfigurationRecordersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfigurationRecordersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfigurationRecordersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfigurationRecordersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfigurationRecordersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfigurationRecordersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfigurationRecordersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConfigurationRecorderSummary> m_configurationRecorderSummaries;
+    bool m_configurationRecorderSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

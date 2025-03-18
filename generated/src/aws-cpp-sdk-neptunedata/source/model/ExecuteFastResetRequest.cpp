@@ -12,13 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteFastResetRequest::ExecuteFastResetRequest() : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteFastResetRequest::SerializePayload() const
 {
   JsonValue payload;

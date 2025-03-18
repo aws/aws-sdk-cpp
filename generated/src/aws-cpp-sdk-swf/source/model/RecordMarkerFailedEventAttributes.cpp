@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes() : 
-    m_markerNameHasBeenSet(false),
-    m_cause(RecordMarkerFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(JsonView jsonValue)
-  : RecordMarkerFailedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RecordMarkerFailedEventAttributes& RecordMarkerFailedEventAttributes::operator =
   if(jsonValue.ValueExists("markerName"))
   {
     m_markerName = jsonValue.GetString("markerName");
-
     m_markerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = RecordMarkerFailedCauseMapper::GetRecordMarkerFailedCauseForName(jsonValue.GetString("cause"));
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-UnsupportedOperationException::UnsupportedOperationException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 UnsupportedOperationException::UnsupportedOperationException(JsonView jsonValue)
-  : UnsupportedOperationException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedOperationException& UnsupportedOperationException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

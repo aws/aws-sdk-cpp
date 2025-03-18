@@ -21,7 +21,7 @@ namespace Model
   class DeleteParameterGroupRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API DeleteParameterGroupRequest();
+    AWS_MEMORYDB_API DeleteParameterGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the parameter group to delete.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-    inline DeleteParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline DeleteParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline DeleteParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    DeleteParameterGroupRequest& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
   private:
 

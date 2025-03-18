@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AddonCompatibilityDetail::AddonCompatibilityDetail() : 
-    m_nameHasBeenSet(false),
-    m_compatibleVersionsHasBeenSet(false)
-{
-}
-
 AddonCompatibilityDetail::AddonCompatibilityDetail(JsonView jsonValue)
-  : AddonCompatibilityDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AddonCompatibilityDetail& AddonCompatibilityDetail::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compatibleVersions"))
   {
     Aws::Utils::Array<JsonView> compatibleVersionsJsonList = jsonValue.GetArray("compatibleVersions");
@@ -48,7 +39,6 @@ AddonCompatibilityDetail& AddonCompatibilityDetail::operator =(JsonView jsonValu
     }
     m_compatibleVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

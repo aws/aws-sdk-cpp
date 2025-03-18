@@ -29,7 +29,7 @@ namespace Model
   class DescribeCanariesResult
   {
   public:
-    AWS_SYNTHETICS_API DescribeCanariesResult();
+    AWS_SYNTHETICS_API DescribeCanariesResult() = default;
     AWS_SYNTHETICS_API DescribeCanariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SYNTHETICS_API DescribeCanariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>Returns an array. Each item in the array contains the full information about
      * one canary.</p>
      */
-    inline const Aws::Vector<Canary>& GetCanaries() const{ return m_canaries; }
-    inline void SetCanaries(const Aws::Vector<Canary>& value) { m_canaries = value; }
-    inline void SetCanaries(Aws::Vector<Canary>&& value) { m_canaries = std::move(value); }
-    inline DescribeCanariesResult& WithCanaries(const Aws::Vector<Canary>& value) { SetCanaries(value); return *this;}
-    inline DescribeCanariesResult& WithCanaries(Aws::Vector<Canary>&& value) { SetCanaries(std::move(value)); return *this;}
-    inline DescribeCanariesResult& AddCanaries(const Canary& value) { m_canaries.push_back(value); return *this; }
-    inline DescribeCanariesResult& AddCanaries(Canary&& value) { m_canaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Canary>& GetCanaries() const { return m_canaries; }
+    template<typename CanariesT = Aws::Vector<Canary>>
+    void SetCanaries(CanariesT&& value) { m_canariesHasBeenSet = true; m_canaries = std::forward<CanariesT>(value); }
+    template<typename CanariesT = Aws::Vector<Canary>>
+    DescribeCanariesResult& WithCanaries(CanariesT&& value) { SetCanaries(std::forward<CanariesT>(value)); return *this;}
+    template<typename CanariesT = Canary>
+    DescribeCanariesResult& AddCanaries(CanariesT&& value) { m_canariesHasBeenSet = true; m_canaries.emplace_back(std::forward<CanariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
      * next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCanariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCanariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCanariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCanariesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCanariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCanariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCanariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCanariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Canary> m_canaries;
+    bool m_canariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace ACM
 namespace Model
 {
 
-ResourceRecord::ResourceRecord() : 
-    m_nameHasBeenSet(false),
-    m_type(RecordType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ResourceRecord::ResourceRecord(JsonView jsonValue)
-  : ResourceRecord()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceRecord& ResourceRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RecordTypeMapper::GetRecordTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

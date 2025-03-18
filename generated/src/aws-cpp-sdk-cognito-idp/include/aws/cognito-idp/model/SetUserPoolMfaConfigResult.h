@@ -32,7 +32,7 @@ namespace Model
   class SetUserPoolMfaConfigResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigResult();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
      * SMS-message OTPs. Includes the message template and the SMS message sending
      * configuration for Amazon SNS.</p>
      */
-    inline const SmsMfaConfigType& GetSmsMfaConfiguration() const{ return m_smsMfaConfiguration; }
-    inline void SetSmsMfaConfiguration(const SmsMfaConfigType& value) { m_smsMfaConfiguration = value; }
-    inline void SetSmsMfaConfiguration(SmsMfaConfigType&& value) { m_smsMfaConfiguration = std::move(value); }
-    inline SetUserPoolMfaConfigResult& WithSmsMfaConfiguration(const SmsMfaConfigType& value) { SetSmsMfaConfiguration(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithSmsMfaConfiguration(SmsMfaConfigType&& value) { SetSmsMfaConfiguration(std::move(value)); return *this;}
+    inline const SmsMfaConfigType& GetSmsMfaConfiguration() const { return m_smsMfaConfiguration; }
+    template<typename SmsMfaConfigurationT = SmsMfaConfigType>
+    void SetSmsMfaConfiguration(SmsMfaConfigurationT&& value) { m_smsMfaConfigurationHasBeenSet = true; m_smsMfaConfiguration = std::forward<SmsMfaConfigurationT>(value); }
+    template<typename SmsMfaConfigurationT = SmsMfaConfigType>
+    SetUserPoolMfaConfigResult& WithSmsMfaConfiguration(SmsMfaConfigurationT&& value) { SetSmsMfaConfiguration(std::forward<SmsMfaConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,11 +55,11 @@ namespace Model
      * <p>Shows user pool configuration for time-based one-time password (TOTP) MFA.
      * Includes TOTP enabled or disabled state.</p>
      */
-    inline const SoftwareTokenMfaConfigType& GetSoftwareTokenMfaConfiguration() const{ return m_softwareTokenMfaConfiguration; }
-    inline void SetSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { m_softwareTokenMfaConfiguration = value; }
-    inline void SetSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { m_softwareTokenMfaConfiguration = std::move(value); }
-    inline SetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(const SoftwareTokenMfaConfigType& value) { SetSoftwareTokenMfaConfiguration(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigType&& value) { SetSoftwareTokenMfaConfiguration(std::move(value)); return *this;}
+    inline const SoftwareTokenMfaConfigType& GetSoftwareTokenMfaConfiguration() const { return m_softwareTokenMfaConfiguration; }
+    template<typename SoftwareTokenMfaConfigurationT = SoftwareTokenMfaConfigType>
+    void SetSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigurationT&& value) { m_softwareTokenMfaConfigurationHasBeenSet = true; m_softwareTokenMfaConfiguration = std::forward<SoftwareTokenMfaConfigurationT>(value); }
+    template<typename SoftwareTokenMfaConfigurationT = SoftwareTokenMfaConfigType>
+    SetUserPoolMfaConfigResult& WithSoftwareTokenMfaConfiguration(SoftwareTokenMfaConfigurationT&& value) { SetSoftwareTokenMfaConfiguration(std::forward<SoftwareTokenMfaConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,11 +71,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
      * Essentials tier</a> or higher.</p>
      */
-    inline const EmailMfaConfigType& GetEmailMfaConfiguration() const{ return m_emailMfaConfiguration; }
-    inline void SetEmailMfaConfiguration(const EmailMfaConfigType& value) { m_emailMfaConfiguration = value; }
-    inline void SetEmailMfaConfiguration(EmailMfaConfigType&& value) { m_emailMfaConfiguration = std::move(value); }
-    inline SetUserPoolMfaConfigResult& WithEmailMfaConfiguration(const EmailMfaConfigType& value) { SetEmailMfaConfiguration(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithEmailMfaConfiguration(EmailMfaConfigType&& value) { SetEmailMfaConfiguration(std::move(value)); return *this;}
+    inline const EmailMfaConfigType& GetEmailMfaConfiguration() const { return m_emailMfaConfiguration; }
+    template<typename EmailMfaConfigurationT = EmailMfaConfigType>
+    void SetEmailMfaConfiguration(EmailMfaConfigurationT&& value) { m_emailMfaConfigurationHasBeenSet = true; m_emailMfaConfiguration = std::forward<EmailMfaConfigurationT>(value); }
+    template<typename EmailMfaConfigurationT = EmailMfaConfigType>
+    SetUserPoolMfaConfigResult& WithEmailMfaConfiguration(EmailMfaConfigurationT&& value) { SetEmailMfaConfiguration(std::forward<EmailMfaConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,11 +90,9 @@ namespace Model
      * in API responses and in managed login for users who have chosen and configured a
      * preferred MFA factor.</p>
      */
-    inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
-    inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfiguration = value; }
-    inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfiguration = std::move(value); }
-    inline SetUserPoolMfaConfigResult& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
+    inline UserPoolMfaType GetMfaConfiguration() const { return m_mfaConfiguration; }
+    inline void SetMfaConfiguration(UserPoolMfaType value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
+    inline SetUserPoolMfaConfigResult& WithMfaConfiguration(UserPoolMfaType value) { SetMfaConfiguration(value); return *this;}
     ///@}
 
     ///@{
@@ -103,36 +101,40 @@ namespace Model
      * authenticators like biometric and security-key devices. Includes relying-party
      * configuration and settings for user-verification requirements.</p>
      */
-    inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const{ return m_webAuthnConfiguration; }
-    inline void SetWebAuthnConfiguration(const WebAuthnConfigurationType& value) { m_webAuthnConfiguration = value; }
-    inline void SetWebAuthnConfiguration(WebAuthnConfigurationType&& value) { m_webAuthnConfiguration = std::move(value); }
-    inline SetUserPoolMfaConfigResult& WithWebAuthnConfiguration(const WebAuthnConfigurationType& value) { SetWebAuthnConfiguration(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithWebAuthnConfiguration(WebAuthnConfigurationType&& value) { SetWebAuthnConfiguration(std::move(value)); return *this;}
+    inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const { return m_webAuthnConfiguration; }
+    template<typename WebAuthnConfigurationT = WebAuthnConfigurationType>
+    void SetWebAuthnConfiguration(WebAuthnConfigurationT&& value) { m_webAuthnConfigurationHasBeenSet = true; m_webAuthnConfiguration = std::forward<WebAuthnConfigurationT>(value); }
+    template<typename WebAuthnConfigurationT = WebAuthnConfigurationType>
+    SetUserPoolMfaConfigResult& WithWebAuthnConfiguration(WebAuthnConfigurationT&& value) { SetWebAuthnConfiguration(std::forward<WebAuthnConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SetUserPoolMfaConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SetUserPoolMfaConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SetUserPoolMfaConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SetUserPoolMfaConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SmsMfaConfigType m_smsMfaConfiguration;
+    bool m_smsMfaConfigurationHasBeenSet = false;
 
     SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
+    bool m_softwareTokenMfaConfigurationHasBeenSet = false;
 
     EmailMfaConfigType m_emailMfaConfiguration;
+    bool m_emailMfaConfigurationHasBeenSet = false;
 
-    UserPoolMfaType m_mfaConfiguration;
+    UserPoolMfaType m_mfaConfiguration{UserPoolMfaType::NOT_SET};
+    bool m_mfaConfigurationHasBeenSet = false;
 
     WebAuthnConfigurationType m_webAuthnConfiguration;
+    bool m_webAuthnConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

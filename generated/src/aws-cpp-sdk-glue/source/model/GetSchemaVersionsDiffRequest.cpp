@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSchemaVersionsDiffRequest::GetSchemaVersionsDiffRequest() : 
-    m_schemaIdHasBeenSet(false),
-    m_firstSchemaVersionNumberHasBeenSet(false),
-    m_secondSchemaVersionNumberHasBeenSet(false),
-    m_schemaDiffType(SchemaDiffType::NOT_SET),
-    m_schemaDiffTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetSchemaVersionsDiffRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartImagePipelineExecutionResult::StartImagePipelineExecutionResult()
-{
-}
-
 StartImagePipelineExecutionResult::StartImagePipelineExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,21 +27,18 @@ StartImagePipelineExecutionResult& StartImagePipelineExecutionResult::operator =
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBuildVersionArn"))
   {
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
-
+    m_imageBuildVersionArnHasBeenSet = true;
   }
-
 
 
   return *this;

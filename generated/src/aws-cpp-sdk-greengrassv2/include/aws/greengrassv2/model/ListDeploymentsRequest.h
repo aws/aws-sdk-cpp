@@ -26,7 +26,7 @@ namespace Model
   class ListDeploymentsRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API ListDeploymentsRequest();
+    AWS_GREENGRASSV2_API ListDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the target IoT thing or thing group.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline ListDeploymentsRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline ListDeploymentsRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline ListDeploymentsRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    ListDeploymentsRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * only the latest revision of each deployment.</p> </li> </ul> <p>Default:
      * <code>LATEST_ONLY</code> </p>
      */
-    inline const DeploymentHistoryFilter& GetHistoryFilter() const{ return m_historyFilter; }
+    inline DeploymentHistoryFilter GetHistoryFilter() const { return m_historyFilter; }
     inline bool HistoryFilterHasBeenSet() const { return m_historyFilterHasBeenSet; }
-    inline void SetHistoryFilter(const DeploymentHistoryFilter& value) { m_historyFilterHasBeenSet = true; m_historyFilter = value; }
-    inline void SetHistoryFilter(DeploymentHistoryFilter&& value) { m_historyFilterHasBeenSet = true; m_historyFilter = std::move(value); }
-    inline ListDeploymentsRequest& WithHistoryFilter(const DeploymentHistoryFilter& value) { SetHistoryFilter(value); return *this;}
-    inline ListDeploymentsRequest& WithHistoryFilter(DeploymentHistoryFilter&& value) { SetHistoryFilter(std::move(value)); return *this;}
+    inline void SetHistoryFilter(DeploymentHistoryFilter value) { m_historyFilterHasBeenSet = true; m_historyFilter = value; }
+    inline ListDeploymentsRequest& WithHistoryFilter(DeploymentHistoryFilter value) { SetHistoryFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * within a subdeployment.</p>
      */
-    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
+    inline const Aws::String& GetParentTargetArn() const { return m_parentTargetArn; }
     inline bool ParentTargetArnHasBeenSet() const { return m_parentTargetArnHasBeenSet; }
-    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = value; }
-    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::move(value); }
-    inline void SetParentTargetArn(const char* value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn.assign(value); }
-    inline ListDeploymentsRequest& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
-    inline ListDeploymentsRequest& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
-    inline ListDeploymentsRequest& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+    template<typename ParentTargetArnT = Aws::String>
+    void SetParentTargetArn(ParentTargetArnT&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::forward<ParentTargetArnT>(value); }
+    template<typename ParentTargetArnT = Aws::String>
+    ListDeploymentsRequest& WithParentTargetArn(ParentTargetArnT&& value) { SetParentTargetArn(std::forward<ParentTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +86,7 @@ namespace Model
      * <p>The maximum number of results to be returned per paginated request.</p>
      * <p>Default: <code>50</code> </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -102,27 +96,25 @@ namespace Model
     /**
      * <p>The token to be used for the next set of paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDeploymentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
 
-    DeploymentHistoryFilter m_historyFilter;
+    DeploymentHistoryFilter m_historyFilter{DeploymentHistoryFilter::NOT_SET};
     bool m_historyFilterHasBeenSet = false;
 
     Aws::String m_parentTargetArn;
     bool m_parentTargetArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

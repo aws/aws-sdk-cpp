@@ -18,16 +18,7 @@ namespace LicenseManagerLinuxSubscriptions
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(JsonView jsonValue)
-  : Subscription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Subscription& Subscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInt64("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

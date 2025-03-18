@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ResourceConfig::ResourceConfig() : 
-    m_openSearchResourceConfigHasBeenSet(false)
-{
-}
-
 ResourceConfig::ResourceConfig(JsonView jsonValue)
-  : ResourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("openSearchResourceConfig"))
   {
     m_openSearchResourceConfig = jsonValue.GetObject("openSearchResourceConfig");
-
     m_openSearchResourceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

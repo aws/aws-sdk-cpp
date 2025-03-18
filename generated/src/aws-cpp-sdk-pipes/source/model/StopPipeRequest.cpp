@@ -12,11 +12,6 @@ using namespace Aws::Pipes::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopPipeRequest::StopPipeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StopPipeRequest::SerializePayload() const
 {
   return {};

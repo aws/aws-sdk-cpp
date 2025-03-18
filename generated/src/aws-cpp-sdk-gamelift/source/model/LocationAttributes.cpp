@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LocationAttributes::LocationAttributes() : 
-    m_locationStateHasBeenSet(false),
-    m_stoppedActionsHasBeenSet(false),
-    m_updateStatus(LocationUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false)
-{
-}
-
 LocationAttributes::LocationAttributes(JsonView jsonValue)
-  : LocationAttributes()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ LocationAttributes& LocationAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocationState"))
   {
     m_locationState = jsonValue.GetObject("LocationState");
-
     m_locationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppedActions"))
   {
     Aws::Utils::Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
@@ -50,14 +39,11 @@ LocationAttributes& LocationAttributes::operator =(JsonView jsonValue)
     }
     m_stoppedActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = LocationUpdateStatusMapper::GetLocationUpdateStatusForName(jsonValue.GetString("UpdateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

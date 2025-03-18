@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DebugHookConfig::DebugHookConfig() : 
-    m_localPathHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_hookParametersHasBeenSet(false),
-    m_collectionConfigurationsHasBeenSet(false)
-{
-}
-
 DebugHookConfig::DebugHookConfig(JsonView jsonValue)
-  : DebugHookConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DebugHookConfig& DebugHookConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocalPath"))
   {
     m_localPath = jsonValue.GetString("LocalPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HookParameters"))
   {
     Aws::Map<Aws::String, JsonView> hookParametersJsonMap = jsonValue.GetObject("HookParameters").GetAllObjects();
@@ -57,7 +44,6 @@ DebugHookConfig& DebugHookConfig::operator =(JsonView jsonValue)
     }
     m_hookParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionConfigurations"))
   {
     Aws::Utils::Array<JsonView> collectionConfigurationsJsonList = jsonValue.GetArray("CollectionConfigurations");
@@ -67,7 +53,6 @@ DebugHookConfig& DebugHookConfig::operator =(JsonView jsonValue)
     }
     m_collectionConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

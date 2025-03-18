@@ -33,7 +33,7 @@ namespace Model
   class PredictiveScalingMetricStat
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMetricStat();
+    AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMetricStat() = default;
     AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMetricStat(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API PredictiveScalingMetricStat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      */
-    inline const PredictiveScalingMetric& GetMetric() const{ return m_metric; }
+    inline const PredictiveScalingMetric& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const PredictiveScalingMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(PredictiveScalingMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline PredictiveScalingMetricStat& WithMetric(const PredictiveScalingMetric& value) { SetMetric(value); return *this;}
-    inline PredictiveScalingMetricStat& WithMetric(PredictiveScalingMetric&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = PredictiveScalingMetric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = PredictiveScalingMetric>
+    PredictiveScalingMetricStat& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,12 @@ namespace Model
      * metrics for predictive scaling are <code>Average</code> and
      * <code>Sum</code>.</p>
      */
-    inline const Aws::String& GetStat() const{ return m_stat; }
+    inline const Aws::String& GetStat() const { return m_stat; }
     inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
-    inline void SetStat(const Aws::String& value) { m_statHasBeenSet = true; m_stat = value; }
-    inline void SetStat(Aws::String&& value) { m_statHasBeenSet = true; m_stat = std::move(value); }
-    inline void SetStat(const char* value) { m_statHasBeenSet = true; m_stat.assign(value); }
-    inline PredictiveScalingMetricStat& WithStat(const Aws::String& value) { SetStat(value); return *this;}
-    inline PredictiveScalingMetricStat& WithStat(Aws::String&& value) { SetStat(std::move(value)); return *this;}
-    inline PredictiveScalingMetricStat& WithStat(const char* value) { SetStat(value); return *this;}
+    template<typename StatT = Aws::String>
+    void SetStat(StatT&& value) { m_statHasBeenSet = true; m_stat = std::forward<StatT>(value); }
+    template<typename StatT = Aws::String>
+    PredictiveScalingMetricStat& WithStat(StatT&& value) { SetStat(std::forward<StatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
      * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline PredictiveScalingMetricStat& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline PredictiveScalingMetricStat& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline PredictiveScalingMetricStat& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    PredictiveScalingMetricStat& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 

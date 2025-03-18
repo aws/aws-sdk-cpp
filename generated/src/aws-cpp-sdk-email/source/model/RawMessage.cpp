@@ -21,13 +21,7 @@ namespace SES
 namespace Model
 {
 
-RawMessage::RawMessage() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 RawMessage::RawMessage(const XmlNode& xmlNode)
-  : RawMessage()
 {
   *this = xmlNode;
 }

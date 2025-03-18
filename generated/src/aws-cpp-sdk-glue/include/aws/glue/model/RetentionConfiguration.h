@@ -32,7 +32,7 @@ namespace Model
   class RetentionConfiguration
   {
   public:
-    AWS_GLUE_API RetentionConfiguration();
+    AWS_GLUE_API RetentionConfiguration() = default;
     AWS_GLUE_API RetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration for an Iceberg snapshot retention optimizer.</p>
      */
-    inline const IcebergRetentionConfiguration& GetIcebergConfiguration() const{ return m_icebergConfiguration; }
+    inline const IcebergRetentionConfiguration& GetIcebergConfiguration() const { return m_icebergConfiguration; }
     inline bool IcebergConfigurationHasBeenSet() const { return m_icebergConfigurationHasBeenSet; }
-    inline void SetIcebergConfiguration(const IcebergRetentionConfiguration& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = value; }
-    inline void SetIcebergConfiguration(IcebergRetentionConfiguration&& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = std::move(value); }
-    inline RetentionConfiguration& WithIcebergConfiguration(const IcebergRetentionConfiguration& value) { SetIcebergConfiguration(value); return *this;}
-    inline RetentionConfiguration& WithIcebergConfiguration(IcebergRetentionConfiguration&& value) { SetIcebergConfiguration(std::move(value)); return *this;}
+    template<typename IcebergConfigurationT = IcebergRetentionConfiguration>
+    void SetIcebergConfiguration(IcebergConfigurationT&& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = std::forward<IcebergConfigurationT>(value); }
+    template<typename IcebergConfigurationT = IcebergRetentionConfiguration>
+    RetentionConfiguration& WithIcebergConfiguration(IcebergConfigurationT&& value) { SetIcebergConfiguration(std::forward<IcebergConfigurationT>(value)); return *this;}
     ///@}
   private:
 

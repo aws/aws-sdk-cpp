@@ -12,24 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListHubContentsRequest::ListHubContentsRequest() : 
-    m_hubNameHasBeenSet(false),
-    m_hubContentType(HubContentType::NOT_SET),
-    m_hubContentTypeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_maxSchemaVersionHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_sortBy(HubContentSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListHubContentsRequest::SerializePayload() const
 {
   JsonValue payload;

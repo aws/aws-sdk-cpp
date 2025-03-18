@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMLEndpointResult::GetMLEndpointResult()
-{
-}
-
 GetMLEndpointResult::GetMLEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetMLEndpointResult& GetMLEndpointResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
-
+    m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointConfig"))
   {
     m_endpointConfig = jsonValue.GetObject("endpointConfig");
-
+    m_endpointConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

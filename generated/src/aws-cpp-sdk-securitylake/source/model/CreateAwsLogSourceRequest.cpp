@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAwsLogSourceRequest::CreateAwsLogSourceRequest() : 
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String CreateAwsLogSourceRequest::SerializePayload() const
 {
   JsonValue payload;

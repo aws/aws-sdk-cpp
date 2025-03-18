@@ -27,7 +27,7 @@ namespace Model
   class DescribeVoicesRequest : public PollyRequest
   {
   public:
-    AWS_POLLY_API DescribeVoicesRequest();
+    AWS_POLLY_API DescribeVoicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,10 @@ namespace Model
      * <code>long-form</code> or <code>generative</code>) used by Amazon Polly when
      * processing input text for speech synthesis. </p>
      */
-    inline const Engine& GetEngine() const{ return m_engine; }
+    inline Engine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline DescribeVoicesRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
-    inline DescribeVoicesRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
+    inline void SetEngine(Engine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline DescribeVoicesRequest& WithEngine(Engine value) { SetEngine(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * country code) for filtering the list of voices returned. If you don't specify
      * this optional parameter, all available voices are returned. </p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DescribeVoicesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DescribeVoicesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DescribeVoicesRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * both Italian (it-IT) and US English, that voice will be included if you specify
      * <code>yes</code> but not if you specify <code>no</code>.</p>
      */
-    inline bool GetIncludeAdditionalLanguageCodes() const{ return m_includeAdditionalLanguageCodes; }
+    inline bool GetIncludeAdditionalLanguageCodes() const { return m_includeAdditionalLanguageCodes; }
     inline bool IncludeAdditionalLanguageCodesHasBeenSet() const { return m_includeAdditionalLanguageCodesHasBeenSet; }
     inline void SetIncludeAdditionalLanguageCodes(bool value) { m_includeAdditionalLanguageCodesHasBeenSet = true; m_includeAdditionalLanguageCodes = value; }
     inline DescribeVoicesRequest& WithIncludeAdditionalLanguageCodes(bool value) { SetIncludeAdditionalLanguageCodes(value); return *this;}
@@ -88,24 +84,22 @@ namespace Model
      * <code>DescribeVoices</code> operation. If present, this indicates where to
      * continue the listing.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeVoicesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVoicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVoicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVoicesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    Engine m_engine;
+    Engine m_engine{Engine::NOT_SET};
     bool m_engineHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    bool m_includeAdditionalLanguageCodes;
+    bool m_includeAdditionalLanguageCodes{false};
     bool m_includeAdditionalLanguageCodesHasBeenSet = false;
 
     Aws::String m_nextToken;

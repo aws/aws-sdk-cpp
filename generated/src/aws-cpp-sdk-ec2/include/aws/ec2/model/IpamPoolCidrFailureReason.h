@@ -33,7 +33,7 @@ namespace Model
   class IpamPoolCidrFailureReason
   {
   public:
-    AWS_EC2_API IpamPoolCidrFailureReason();
+    AWS_EC2_API IpamPoolCidrFailureReason() = default;
     AWS_EC2_API IpamPoolCidrFailureReason(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamPoolCidrFailureReason& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,30 +45,26 @@ namespace Model
     /**
      * <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
      */
-    inline const IpamPoolCidrFailureCode& GetCode() const{ return m_code; }
+    inline IpamPoolCidrFailureCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const IpamPoolCidrFailureCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(IpamPoolCidrFailureCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline IpamPoolCidrFailureReason& WithCode(const IpamPoolCidrFailureCode& value) { SetCode(value); return *this;}
-    inline IpamPoolCidrFailureReason& WithCode(IpamPoolCidrFailureCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(IpamPoolCidrFailureCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline IpamPoolCidrFailureReason& WithCode(IpamPoolCidrFailureCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline IpamPoolCidrFailureReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline IpamPoolCidrFailureReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline IpamPoolCidrFailureReason& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    IpamPoolCidrFailureReason& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    IpamPoolCidrFailureCode m_code;
+    IpamPoolCidrFailureCode m_code{IpamPoolCidrFailureCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

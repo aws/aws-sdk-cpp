@@ -29,7 +29,7 @@ namespace Model
   class DescribeVpcPeeringConnectionsResult
   {
   public:
-    AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult();
+    AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult() = default;
     AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A collection of VPC peering connection records that match the request.</p>
      */
-    inline const Aws::Vector<VpcPeeringConnection>& GetVpcPeeringConnections() const{ return m_vpcPeeringConnections; }
-    inline void SetVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { m_vpcPeeringConnections = value; }
-    inline void SetVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { m_vpcPeeringConnections = std::move(value); }
-    inline DescribeVpcPeeringConnectionsResult& WithVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { SetVpcPeeringConnections(value); return *this;}
-    inline DescribeVpcPeeringConnectionsResult& WithVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { SetVpcPeeringConnections(std::move(value)); return *this;}
-    inline DescribeVpcPeeringConnectionsResult& AddVpcPeeringConnections(const VpcPeeringConnection& value) { m_vpcPeeringConnections.push_back(value); return *this; }
-    inline DescribeVpcPeeringConnectionsResult& AddVpcPeeringConnections(VpcPeeringConnection&& value) { m_vpcPeeringConnections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcPeeringConnection>& GetVpcPeeringConnections() const { return m_vpcPeeringConnections; }
+    template<typename VpcPeeringConnectionsT = Aws::Vector<VpcPeeringConnection>>
+    void SetVpcPeeringConnections(VpcPeeringConnectionsT&& value) { m_vpcPeeringConnectionsHasBeenSet = true; m_vpcPeeringConnections = std::forward<VpcPeeringConnectionsT>(value); }
+    template<typename VpcPeeringConnectionsT = Aws::Vector<VpcPeeringConnection>>
+    DescribeVpcPeeringConnectionsResult& WithVpcPeeringConnections(VpcPeeringConnectionsT&& value) { SetVpcPeeringConnections(std::forward<VpcPeeringConnectionsT>(value)); return *this;}
+    template<typename VpcPeeringConnectionsT = VpcPeeringConnection>
+    DescribeVpcPeeringConnectionsResult& AddVpcPeeringConnections(VpcPeeringConnectionsT&& value) { m_vpcPeeringConnectionsHasBeenSet = true; m_vpcPeeringConnections.emplace_back(std::forward<VpcPeeringConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVpcPeeringConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVpcPeeringConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVpcPeeringConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVpcPeeringConnectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VpcPeeringConnection> m_vpcPeeringConnections;
+    bool m_vpcPeeringConnectionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

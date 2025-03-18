@@ -20,27 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceChange::ResourceChange() : 
-    m_policyAction(PolicyAction::NOT_SET),
-    m_policyActionHasBeenSet(false),
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_replacement(Replacement::NOT_SET),
-    m_replacementHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false),
-    m_beforeContextHasBeenSet(false),
-    m_afterContextHasBeenSet(false)
-{
-}
-
 ResourceChange::ResourceChange(const XmlNode& xmlNode)
-  : ResourceChange()
 {
   *this = xmlNode;
 }
@@ -54,13 +34,13 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
     XmlNode policyActionNode = resultNode.FirstChild("PolicyAction");
     if(!policyActionNode.IsNull())
     {
-      m_policyAction = PolicyActionMapper::GetPolicyActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyActionNode.GetText()).c_str()).c_str());
+      m_policyAction = PolicyActionMapper::GetPolicyActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyActionNode.GetText()).c_str()));
       m_policyActionHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
@@ -84,13 +64,14 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
     XmlNode replacementNode = resultNode.FirstChild("Replacement");
     if(!replacementNode.IsNull())
     {
-      m_replacement = ReplacementMapper::GetReplacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementNode.GetText()).c_str()).c_str());
+      m_replacement = ReplacementMapper::GetReplacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementNode.GetText()).c_str()));
       m_replacementHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
       XmlNode scopeMember = scopeNode.FirstChild("member");
+      m_scopeHasBeenSet = !scopeMember.IsNull();
       while(!scopeMember.IsNull())
       {
         m_scope.push_back(ResourceAttributeMapper::GetResourceAttributeForName(StringUtils::Trim(scopeMember.GetText().c_str())));
@@ -103,6 +84,7 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
     if(!detailsNode.IsNull())
     {
       XmlNode detailsMember = detailsNode.FirstChild("member");
+      m_detailsHasBeenSet = !detailsMember.IsNull();
       while(!detailsMember.IsNull())
       {
         m_details.push_back(detailsMember);

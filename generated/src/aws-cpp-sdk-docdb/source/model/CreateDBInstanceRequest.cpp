@@ -10,27 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-CreateDBInstanceRequest::CreateDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_enablePerformanceInsights(false),
-    m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

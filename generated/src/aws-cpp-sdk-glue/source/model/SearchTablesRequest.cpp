@@ -12,21 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchTablesRequest::SearchTablesRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_searchTextHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_resourceShareType(ResourceShareType::NOT_SET),
-    m_resourceShareTypeHasBeenSet(false),
-    m_includeStatusDetails(false),
-    m_includeStatusDetailsHasBeenSet(false)
-{
-}
-
 Aws::String SearchTablesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,23 +12,6 @@ using namespace Aws::CodeConnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSyncConfigurationRequest::CreateSyncConfigurationRequest() : 
-    m_branchHasBeenSet(false),
-    m_configFileHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false),
-    m_publishDeploymentStatus(PublishDeploymentStatus::NOT_SET),
-    m_publishDeploymentStatusHasBeenSet(false),
-    m_triggerResourceUpdateOn(TriggerResourceUpdateOn::NOT_SET),
-    m_triggerResourceUpdateOnHasBeenSet(false),
-    m_pullRequestComment(PullRequestComment::NOT_SET),
-    m_pullRequestCommentHasBeenSet(false)
-{
-}
-
 Aws::String CreateSyncConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

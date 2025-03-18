@@ -18,18 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-LifeCycleForView::LifeCycleForView() : 
-    m_nextStepsHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_targetCloseDateHasBeenSet(false)
-{
-}
-
 LifeCycleForView::LifeCycleForView(JsonView jsonValue)
-  : LifeCycleForView()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LifeCycleForView& LifeCycleForView::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NextSteps"))
   {
     m_nextSteps = jsonValue.GetString("NextSteps");
-
     m_nextStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCloseDate"))
   {
     m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-
     m_targetCloseDateHasBeenSet = true;
   }
-
   return *this;
 }
 

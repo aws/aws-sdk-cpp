@@ -28,7 +28,7 @@ namespace Model
   class GetBackendAPIResult
   {
   public:
-    AWS_AMPLIFYBACKEND_API GetBackendAPIResult();
+    AWS_AMPLIFYBACKEND_API GetBackendAPIResult() = default;
     AWS_AMPLIFYBACKEND_API GetBackendAPIResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYBACKEND_API GetBackendAPIResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,88 +37,84 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
-    inline GetBackendAPIResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetBackendAPIResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetBackendAPIResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetBackendAPIResult& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the backend environment.</p>
      */
-    inline const Aws::String& GetBackendEnvironmentName() const{ return m_backendEnvironmentName; }
-    inline void SetBackendEnvironmentName(const Aws::String& value) { m_backendEnvironmentName = value; }
-    inline void SetBackendEnvironmentName(Aws::String&& value) { m_backendEnvironmentName = std::move(value); }
-    inline void SetBackendEnvironmentName(const char* value) { m_backendEnvironmentName.assign(value); }
-    inline GetBackendAPIResult& WithBackendEnvironmentName(const Aws::String& value) { SetBackendEnvironmentName(value); return *this;}
-    inline GetBackendAPIResult& WithBackendEnvironmentName(Aws::String&& value) { SetBackendEnvironmentName(std::move(value)); return *this;}
-    inline GetBackendAPIResult& WithBackendEnvironmentName(const char* value) { SetBackendEnvironmentName(value); return *this;}
+    inline const Aws::String& GetBackendEnvironmentName() const { return m_backendEnvironmentName; }
+    template<typename BackendEnvironmentNameT = Aws::String>
+    void SetBackendEnvironmentName(BackendEnvironmentNameT&& value) { m_backendEnvironmentNameHasBeenSet = true; m_backendEnvironmentName = std::forward<BackendEnvironmentNameT>(value); }
+    template<typename BackendEnvironmentNameT = Aws::String>
+    GetBackendAPIResult& WithBackendEnvironmentName(BackendEnvironmentNameT&& value) { SetBackendEnvironmentName(std::forward<BackendEnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the request fails, this error is returned.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline void SetError(const Aws::String& value) { m_error = value; }
-    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
-    inline void SetError(const char* value) { m_error.assign(value); }
-    inline GetBackendAPIResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline GetBackendAPIResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline GetBackendAPIResult& WithError(const char* value) { SetError(value); return *this;}
+    inline const Aws::String& GetError() const { return m_error; }
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    GetBackendAPIResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource configuration for this response object.</p>
      */
-    inline const BackendAPIResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
-    inline void SetResourceConfig(const BackendAPIResourceConfig& value) { m_resourceConfig = value; }
-    inline void SetResourceConfig(BackendAPIResourceConfig&& value) { m_resourceConfig = std::move(value); }
-    inline GetBackendAPIResult& WithResourceConfig(const BackendAPIResourceConfig& value) { SetResourceConfig(value); return *this;}
-    inline GetBackendAPIResult& WithResourceConfig(BackendAPIResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
+    inline const BackendAPIResourceConfig& GetResourceConfig() const { return m_resourceConfig; }
+    template<typename ResourceConfigT = BackendAPIResourceConfig>
+    void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
+    template<typename ResourceConfigT = BackendAPIResourceConfig>
+    GetBackendAPIResult& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this resource.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceName.assign(value); }
-    inline GetBackendAPIResult& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline GetBackendAPIResult& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline GetBackendAPIResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    GetBackendAPIResult& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBackendAPIResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBackendAPIResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBackendAPIResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBackendAPIResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_backendEnvironmentName;
+    bool m_backendEnvironmentNameHasBeenSet = false;
 
     Aws::String m_error;
+    bool m_errorHasBeenSet = false;
 
     BackendAPIResourceConfig m_resourceConfig;
+    bool m_resourceConfigHasBeenSet = false;
 
     Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

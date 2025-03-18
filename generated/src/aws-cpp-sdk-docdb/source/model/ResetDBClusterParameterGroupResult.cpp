@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResetDBClusterParameterGroupResult::ResetDBClusterParameterGroupResult()
-{
-}
-
 ResetDBClusterParameterGroupResult::ResetDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ResetDBClusterParameterGroupResult& ResetDBClusterParameterGroupResult::operator
     if(!dBClusterParameterGroupNameNode.IsNull())
     {
       m_dBClusterParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupNameNode.GetText());
+      m_dBClusterParameterGroupNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::ResetDBClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

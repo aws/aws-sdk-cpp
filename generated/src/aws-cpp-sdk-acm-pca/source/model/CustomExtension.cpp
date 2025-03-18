@@ -18,16 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CustomExtension::CustomExtension() : 
-    m_objectIdentifierHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_critical(false),
-    m_criticalHasBeenSet(false)
-{
-}
-
 CustomExtension::CustomExtension(JsonView jsonValue)
-  : CustomExtension()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomExtension& CustomExtension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Critical"))
   {
     m_critical = jsonValue.GetBool("Critical");
-
     m_criticalHasBeenSet = true;
   }
-
   return *this;
 }
 

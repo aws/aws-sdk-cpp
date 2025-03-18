@@ -12,13 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSetRequest::UpdateDataSetRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSetRequest::SerializePayload() const
 {
   JsonValue payload;

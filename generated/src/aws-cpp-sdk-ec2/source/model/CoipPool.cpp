@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipPool::CoipPool() : 
-    m_poolIdHasBeenSet(false),
-    m_poolCidrsHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_poolArnHasBeenSet(false)
-{
-}
-
 CoipPool::CoipPool(const XmlNode& xmlNode)
-  : CoipPool()
 {
   *this = xmlNode;
 }
@@ -51,6 +41,7 @@ CoipPool& CoipPool::operator =(const XmlNode& xmlNode)
     if(!poolCidrsNode.IsNull())
     {
       XmlNode poolCidrsMember = poolCidrsNode.FirstChild("item");
+      m_poolCidrsHasBeenSet = !poolCidrsMember.IsNull();
       while(!poolCidrsMember.IsNull())
       {
         m_poolCidrs.push_back(poolCidrsMember.GetText());
@@ -69,6 +60,7 @@ CoipPool& CoipPool::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

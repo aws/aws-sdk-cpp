@@ -34,7 +34,7 @@ namespace Model
   class DataSourceCredentials
   {
   public:
-    AWS_QUICKSIGHT_API DataSourceCredentials();
+    AWS_QUICKSIGHT_API DataSourceCredentials() = default;
     AWS_QUICKSIGHT_API DataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
      * </code>.</p>
      */
-    inline const CredentialPair& GetCredentialPair() const{ return m_credentialPair; }
+    inline const CredentialPair& GetCredentialPair() const { return m_credentialPair; }
     inline bool CredentialPairHasBeenSet() const { return m_credentialPairHasBeenSet; }
-    inline void SetCredentialPair(const CredentialPair& value) { m_credentialPairHasBeenSet = true; m_credentialPair = value; }
-    inline void SetCredentialPair(CredentialPair&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::move(value); }
-    inline DataSourceCredentials& WithCredentialPair(const CredentialPair& value) { SetCredentialPair(value); return *this;}
-    inline DataSourceCredentials& WithCredentialPair(CredentialPair&& value) { SetCredentialPair(std::move(value)); return *this;}
+    template<typename CredentialPairT = CredentialPair>
+    void SetCredentialPair(CredentialPairT&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::forward<CredentialPairT>(value); }
+    template<typename CredentialPairT = CredentialPair>
+    DataSourceCredentials& WithCredentialPair(CredentialPairT&& value) { SetCredentialPair(std::forward<CredentialPairT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * credential pair from the data source in the ARN is used as the credentials for
      * the <code>DataSourceCredentials</code> structure.</p>
      */
-    inline const Aws::String& GetCopySourceArn() const{ return m_copySourceArn; }
+    inline const Aws::String& GetCopySourceArn() const { return m_copySourceArn; }
     inline bool CopySourceArnHasBeenSet() const { return m_copySourceArnHasBeenSet; }
-    inline void SetCopySourceArn(const Aws::String& value) { m_copySourceArnHasBeenSet = true; m_copySourceArn = value; }
-    inline void SetCopySourceArn(Aws::String&& value) { m_copySourceArnHasBeenSet = true; m_copySourceArn = std::move(value); }
-    inline void SetCopySourceArn(const char* value) { m_copySourceArnHasBeenSet = true; m_copySourceArn.assign(value); }
-    inline DataSourceCredentials& WithCopySourceArn(const Aws::String& value) { SetCopySourceArn(value); return *this;}
-    inline DataSourceCredentials& WithCopySourceArn(Aws::String&& value) { SetCopySourceArn(std::move(value)); return *this;}
-    inline DataSourceCredentials& WithCopySourceArn(const char* value) { SetCopySourceArn(value); return *this;}
+    template<typename CopySourceArnT = Aws::String>
+    void SetCopySourceArn(CopySourceArnT&& value) { m_copySourceArnHasBeenSet = true; m_copySourceArn = std::forward<CopySourceArnT>(value); }
+    template<typename CopySourceArnT = Aws::String>
+    DataSourceCredentials& WithCopySourceArn(CopySourceArnT&& value) { SetCopySourceArn(std::forward<CopySourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
      * in Amazon Secrets Manager.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline DataSourceCredentials& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline DataSourceCredentials& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline DataSourceCredentials& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    DataSourceCredentials& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

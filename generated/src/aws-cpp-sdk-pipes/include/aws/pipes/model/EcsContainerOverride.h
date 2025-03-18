@@ -39,7 +39,7 @@ namespace Model
   class EcsContainerOverride
   {
   public:
-    AWS_PIPES_API EcsContainerOverride();
+    AWS_PIPES_API EcsContainerOverride() = default;
     AWS_PIPES_API EcsContainerOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API EcsContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,15 +51,14 @@ namespace Model
      * the Docker image or the task definition. You must also specify a container
      * name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline EcsContainerOverride& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline EcsContainerOverride& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline EcsContainerOverride& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline EcsContainerOverride& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline EcsContainerOverride& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    EcsContainerOverride& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    EcsContainerOverride& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,7 +67,7 @@ namespace Model
      * the default value from the task definition. You must also specify a container
      * name.</p>
      */
-    inline int GetCpu() const{ return m_cpu; }
+    inline int GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
     inline EcsContainerOverride& WithCpu(int value) { SetCpu(value); return *this;}
@@ -81,14 +80,14 @@ namespace Model
      * override the existing environment variables from the Docker image or the task
      * definition. You must also specify a container name.</p>
      */
-    inline const Aws::Vector<EcsEnvironmentVariable>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Vector<EcsEnvironmentVariable>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Vector<EcsEnvironmentVariable>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Vector<EcsEnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline EcsContainerOverride& WithEnvironment(const Aws::Vector<EcsEnvironmentVariable>& value) { SetEnvironment(value); return *this;}
-    inline EcsContainerOverride& WithEnvironment(Aws::Vector<EcsEnvironmentVariable>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline EcsContainerOverride& AddEnvironment(const EcsEnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
-    inline EcsContainerOverride& AddEnvironment(EcsEnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentT = Aws::Vector<EcsEnvironmentVariable>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Vector<EcsEnvironmentVariable>>
+    EcsContainerOverride& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentT = EcsEnvironmentVariable>
+    EcsContainerOverride& AddEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment.emplace_back(std::forward<EnvironmentT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,14 +95,14 @@ namespace Model
      * <p>A list of files containing the environment variables to pass to a container,
      * instead of the value from the container definition.</p>
      */
-    inline const Aws::Vector<EcsEnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
+    inline const Aws::Vector<EcsEnvironmentFile>& GetEnvironmentFiles() const { return m_environmentFiles; }
     inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
-    inline void SetEnvironmentFiles(const Aws::Vector<EcsEnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
-    inline void SetEnvironmentFiles(Aws::Vector<EcsEnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
-    inline EcsContainerOverride& WithEnvironmentFiles(const Aws::Vector<EcsEnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
-    inline EcsContainerOverride& WithEnvironmentFiles(Aws::Vector<EcsEnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
-    inline EcsContainerOverride& AddEnvironmentFiles(const EcsEnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
-    inline EcsContainerOverride& AddEnvironmentFiles(EcsEnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentFilesT = Aws::Vector<EcsEnvironmentFile>>
+    void SetEnvironmentFiles(EnvironmentFilesT&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::forward<EnvironmentFilesT>(value); }
+    template<typename EnvironmentFilesT = Aws::Vector<EcsEnvironmentFile>>
+    EcsContainerOverride& WithEnvironmentFiles(EnvironmentFilesT&& value) { SetEnvironmentFiles(std::forward<EnvironmentFilesT>(value)); return *this;}
+    template<typename EnvironmentFilesT = EcsEnvironmentFile>
+    EcsContainerOverride& AddEnvironmentFiles(EnvironmentFilesT&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.emplace_back(std::forward<EnvironmentFilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,7 +112,7 @@ namespace Model
      * memory specified here, the container is killed. You must also specify a
      * container name.</p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline int GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline EcsContainerOverride& WithMemory(int value) { SetMemory(value); return *this;}
@@ -125,7 +124,7 @@ namespace Model
      * the default value from the task definition. You must also specify a container
      * name.</p>
      */
-    inline int GetMemoryReservation() const{ return m_memoryReservation; }
+    inline int GetMemoryReservation() const { return m_memoryReservation; }
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
     inline EcsContainerOverride& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
@@ -136,14 +135,12 @@ namespace Model
      * <p>The name of the container that receives the override. This parameter is
      * required if any override is specified.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EcsContainerOverride& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EcsContainerOverride& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EcsContainerOverride& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EcsContainerOverride& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,21 +149,21 @@ namespace Model
      * default value from the task definition. The only supported resource is a
      * GPU.</p>
      */
-    inline const Aws::Vector<EcsResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+    inline const Aws::Vector<EcsResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
-    inline void SetResourceRequirements(const Aws::Vector<EcsResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
-    inline void SetResourceRequirements(Aws::Vector<EcsResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
-    inline EcsContainerOverride& WithResourceRequirements(const Aws::Vector<EcsResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
-    inline EcsContainerOverride& WithResourceRequirements(Aws::Vector<EcsResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
-    inline EcsContainerOverride& AddResourceRequirements(const EcsResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
-    inline EcsContainerOverride& AddResourceRequirements(EcsResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+    template<typename ResourceRequirementsT = Aws::Vector<EcsResourceRequirement>>
+    void SetResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::forward<ResourceRequirementsT>(value); }
+    template<typename ResourceRequirementsT = Aws::Vector<EcsResourceRequirement>>
+    EcsContainerOverride& WithResourceRequirements(ResourceRequirementsT&& value) { SetResourceRequirements(std::forward<ResourceRequirementsT>(value)); return *this;}
+    template<typename ResourceRequirementsT = EcsResourceRequirement>
+    EcsContainerOverride& AddResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.emplace_back(std::forward<ResourceRequirementsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet = false;
 
-    int m_cpu;
+    int m_cpu{0};
     bool m_cpuHasBeenSet = false;
 
     Aws::Vector<EcsEnvironmentVariable> m_environment;
@@ -175,10 +172,10 @@ namespace Model
     Aws::Vector<EcsEnvironmentFile> m_environmentFiles;
     bool m_environmentFilesHasBeenSet = false;
 
-    int m_memory;
+    int m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    int m_memoryReservation;
+    int m_memoryReservation{0};
     bool m_memoryReservationHasBeenSet = false;
 
     Aws::String m_name;

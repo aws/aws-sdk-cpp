@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSiteRequest::DeleteSiteRequest() : 
-    m_siteIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSiteRequest::SerializePayload() const
 {
   return {};

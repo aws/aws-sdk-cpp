@@ -31,7 +31,7 @@ namespace Model
   class DeleteFileEntry
   {
   public:
-    AWS_CODECOMMIT_API DeleteFileEntry();
+    AWS_CODECOMMIT_API DeleteFileEntry() = default;
     AWS_CODECOMMIT_API DeleteFileEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API DeleteFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
-    inline const Aws::String& GetFilePath() const{ return m_filePath; }
+    inline const Aws::String& GetFilePath() const { return m_filePath; }
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-    inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-    inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-    inline DeleteFileEntry& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-    inline DeleteFileEntry& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-    inline DeleteFileEntry& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    template<typename FilePathT = Aws::String>
+    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
+    template<typename FilePathT = Aws::String>
+    DeleteFileEntry& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
     ///@}
   private:
 

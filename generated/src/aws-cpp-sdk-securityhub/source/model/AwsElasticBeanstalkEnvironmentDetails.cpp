@@ -18,28 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticBeanstalkEnvironmentDetails::AwsElasticBeanstalkEnvironmentDetails() : 
-    m_applicationNameHasBeenSet(false),
-    m_cnameHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_environmentLinksHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
-{
-}
-
 AwsElasticBeanstalkEnvironmentDetails::AwsElasticBeanstalkEnvironmentDetails(JsonView jsonValue)
-  : AwsElasticBeanstalkEnvironmentDetails()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ AwsElasticBeanstalkEnvironmentDetails& AwsElasticBeanstalkEnvironmentDetails::op
   if(jsonValue.ValueExists("ApplicationName"))
   {
     m_applicationName = jsonValue.GetString("ApplicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cname"))
   {
     m_cname = jsonValue.GetString("Cname");
-
     m_cnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetString("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateUpdated"))
   {
     m_dateUpdated = jsonValue.GetString("DateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointUrl"))
   {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
-
     m_endpointUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentArn"))
   {
     m_environmentArn = jsonValue.GetString("EnvironmentArn");
-
     m_environmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentId"))
   {
     m_environmentId = jsonValue.GetString("EnvironmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentLinks"))
   {
     Aws::Utils::Array<JsonView> environmentLinksJsonList = jsonValue.GetArray("EnvironmentLinks");
@@ -111,14 +74,11 @@ AwsElasticBeanstalkEnvironmentDetails& AwsElasticBeanstalkEnvironmentDetails::op
     }
     m_environmentLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentName"))
   {
     m_environmentName = jsonValue.GetString("EnvironmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptionSettings"))
   {
     Aws::Utils::Array<JsonView> optionSettingsJsonList = jsonValue.GetArray("OptionSettings");
@@ -128,42 +88,31 @@ AwsElasticBeanstalkEnvironmentDetails& AwsElasticBeanstalkEnvironmentDetails::op
     }
     m_optionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformArn"))
   {
     m_platformArn = jsonValue.GetString("PlatformArn");
-
     m_platformArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SolutionStackName"))
   {
     m_solutionStackName = jsonValue.GetString("SolutionStackName");
-
     m_solutionStackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = jsonValue.GetObject("Tier");
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionLabel"))
   {
     m_versionLabel = jsonValue.GetString("VersionLabel");
-
     m_versionLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

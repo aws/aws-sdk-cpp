@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSnapshotCopyGrantsResult::DescribeSnapshotCopyGrantsResult()
-{
-}
-
 DescribeSnapshotCopyGrantsResult::DescribeSnapshotCopyGrantsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeSnapshotCopyGrantsResult& DescribeSnapshotCopyGrantsResult::operator =(c
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode snapshotCopyGrantsNode = resultNode.FirstChild("SnapshotCopyGrants");
     if(!snapshotCopyGrantsNode.IsNull())
     {
       XmlNode snapshotCopyGrantsMember = snapshotCopyGrantsNode.FirstChild("SnapshotCopyGrant");
+      m_snapshotCopyGrantsHasBeenSet = !snapshotCopyGrantsMember.IsNull();
       while(!snapshotCopyGrantsMember.IsNull())
       {
         m_snapshotCopyGrants.push_back(snapshotCopyGrantsMember);
         snapshotCopyGrantsMember = snapshotCopyGrantsMember.NextNode("SnapshotCopyGrant");
       }
 
+      m_snapshotCopyGrantsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeSnapshotCopyGrantsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

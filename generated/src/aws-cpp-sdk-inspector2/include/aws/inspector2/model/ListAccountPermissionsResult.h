@@ -29,7 +29,7 @@ namespace Model
   class ListAccountPermissionsResult
   {
   public:
-    AWS_INSPECTOR2_API ListAccountPermissionsResult();
+    AWS_INSPECTOR2_API ListAccountPermissionsResult() = default;
     AWS_INSPECTOR2_API ListAccountPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API ListAccountPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * subsequent calls, use the <code>NextToken</code> value returned from the
      * previous request to continue listing results after the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccountPermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountPermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountPermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountPermissionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * <p>Contains details on the permissions an account has to configure Amazon
      * Inspector.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = std::move(value); }
-    inline ListAccountPermissionsResult& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline ListAccountPermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline ListAccountPermissionsResult& AddPermissions(const Permission& value) { m_permissions.push_back(value); return *this; }
-    inline ListAccountPermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    ListAccountPermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = Permission>
+    ListAccountPermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccountPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccountPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccountPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccountPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

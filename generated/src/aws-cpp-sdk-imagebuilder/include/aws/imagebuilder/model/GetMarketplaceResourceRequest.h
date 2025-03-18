@@ -22,7 +22,7 @@ namespace Model
   class GetMarketplaceResourceRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetMarketplaceResourceRequest();
+    AWS_IMAGEBUILDER_API GetMarketplaceResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
      * <p>Specifies which type of Amazon Web Services Marketplace resource Image
      * Builder retrieves.</p>
      */
-    inline const MarketplaceResourceType& GetResourceType() const{ return m_resourceType; }
+    inline MarketplaceResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const MarketplaceResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(MarketplaceResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetMarketplaceResourceRequest& WithResourceType(const MarketplaceResourceType& value) { SetResourceType(value); return *this;}
-    inline GetMarketplaceResourceRequest& WithResourceType(MarketplaceResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(MarketplaceResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetMarketplaceResourceRequest& WithResourceType(MarketplaceResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that uniquely identifies an Amazon Web
      * Services Marketplace resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline GetMarketplaceResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetMarketplaceResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetMarketplaceResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetMarketplaceResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +62,16 @@ namespace Model
      * <p>The bucket path that you can specify to download the resource from Amazon
      * S3.</p>
      */
-    inline const Aws::String& GetResourceLocation() const{ return m_resourceLocation; }
+    inline const Aws::String& GetResourceLocation() const { return m_resourceLocation; }
     inline bool ResourceLocationHasBeenSet() const { return m_resourceLocationHasBeenSet; }
-    inline void SetResourceLocation(const Aws::String& value) { m_resourceLocationHasBeenSet = true; m_resourceLocation = value; }
-    inline void SetResourceLocation(Aws::String&& value) { m_resourceLocationHasBeenSet = true; m_resourceLocation = std::move(value); }
-    inline void SetResourceLocation(const char* value) { m_resourceLocationHasBeenSet = true; m_resourceLocation.assign(value); }
-    inline GetMarketplaceResourceRequest& WithResourceLocation(const Aws::String& value) { SetResourceLocation(value); return *this;}
-    inline GetMarketplaceResourceRequest& WithResourceLocation(Aws::String&& value) { SetResourceLocation(std::move(value)); return *this;}
-    inline GetMarketplaceResourceRequest& WithResourceLocation(const char* value) { SetResourceLocation(value); return *this;}
+    template<typename ResourceLocationT = Aws::String>
+    void SetResourceLocation(ResourceLocationT&& value) { m_resourceLocationHasBeenSet = true; m_resourceLocation = std::forward<ResourceLocationT>(value); }
+    template<typename ResourceLocationT = Aws::String>
+    GetMarketplaceResourceRequest& WithResourceLocation(ResourceLocationT&& value) { SetResourceLocation(std::forward<ResourceLocationT>(value)); return *this;}
     ///@}
   private:
 
-    MarketplaceResourceType m_resourceType;
+    MarketplaceResourceType m_resourceType{MarketplaceResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceArn;

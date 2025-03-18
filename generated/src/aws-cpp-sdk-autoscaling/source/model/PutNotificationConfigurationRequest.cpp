@@ -10,13 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutNotificationConfigurationRequest::PutNotificationConfigurationRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_topicARNHasBeenSet(false),
-    m_notificationTypesHasBeenSet(false)
-{
-}
-
 Aws::String PutNotificationConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

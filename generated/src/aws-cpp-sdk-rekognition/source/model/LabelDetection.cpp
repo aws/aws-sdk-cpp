@@ -18,21 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-LabelDetection::LabelDetection() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
-{
-}
-
 LabelDetection::LabelDetection(JsonView jsonValue)
-  : LabelDetection()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ LabelDetection& LabelDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetObject("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestampMillis"))
   {
     m_startTimestampMillis = jsonValue.GetInt64("StartTimestampMillis");
-
     m_startTimestampMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimestampMillis"))
   {
     m_endTimestampMillis = jsonValue.GetInt64("EndTimestampMillis");
-
     m_endTimestampMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseSnapshot::RelationalDatabaseSnapshot() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_fromRelationalDatabaseNameHasBeenSet(false),
-    m_fromRelationalDatabaseArnHasBeenSet(false),
-    m_fromRelationalDatabaseBundleIdHasBeenSet(false),
-    m_fromRelationalDatabaseBlueprintIdHasBeenSet(false)
-{
-}
-
 RelationalDatabaseSnapshot::RelationalDatabaseSnapshot(JsonView jsonValue)
-  : RelationalDatabaseSnapshot()
 {
   *this = jsonValue;
 }
@@ -50,45 +28,33 @@ RelationalDatabaseSnapshot& RelationalDatabaseSnapshot::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -98,63 +64,46 @@ RelationalDatabaseSnapshot& RelationalDatabaseSnapshot::operator =(JsonView json
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = jsonValue.GetString("engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
-
     m_sizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromRelationalDatabaseName"))
   {
     m_fromRelationalDatabaseName = jsonValue.GetString("fromRelationalDatabaseName");
-
     m_fromRelationalDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromRelationalDatabaseArn"))
   {
     m_fromRelationalDatabaseArn = jsonValue.GetString("fromRelationalDatabaseArn");
-
     m_fromRelationalDatabaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromRelationalDatabaseBundleId"))
   {
     m_fromRelationalDatabaseBundleId = jsonValue.GetString("fromRelationalDatabaseBundleId");
-
     m_fromRelationalDatabaseBundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromRelationalDatabaseBlueprintId"))
   {
     m_fromRelationalDatabaseBlueprintId = jsonValue.GetString("fromRelationalDatabaseBlueprintId");
-
     m_fromRelationalDatabaseBlueprintIdHasBeenSet = true;
   }
-
   return *this;
 }
 

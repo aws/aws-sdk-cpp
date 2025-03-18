@@ -12,17 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdMappingWorkflowRequest::CreateIdMappingWorkflowRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_idMappingTechniquesHasBeenSet(false),
-    m_inputSourceConfigHasBeenSet(false),
-    m_outputSourceConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdMappingWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

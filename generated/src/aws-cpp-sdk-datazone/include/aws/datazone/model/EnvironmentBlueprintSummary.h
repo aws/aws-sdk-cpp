@@ -34,7 +34,7 @@ namespace Model
   class EnvironmentBlueprintSummary
   {
   public:
-    AWS_DATAZONE_API EnvironmentBlueprintSummary();
+    AWS_DATAZONE_API EnvironmentBlueprintSummary() = default;
     AWS_DATAZONE_API EnvironmentBlueprintSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EnvironmentBlueprintSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,96 +44,88 @@ namespace Model
     /**
      * <p>The timestamp of when an environment blueprint was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline EnvironmentBlueprintSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    EnvironmentBlueprintSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of a blueprint.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EnvironmentBlueprintSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EnvironmentBlueprintSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EnvironmentBlueprintSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the blueprint.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline EnvironmentBlueprintSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline EnvironmentBlueprintSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    EnvironmentBlueprintSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the blueprint.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EnvironmentBlueprintSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EnvironmentBlueprintSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EnvironmentBlueprintSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provider of the blueprint.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline EnvironmentBlueprintSummary& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline EnvironmentBlueprintSummary& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    EnvironmentBlueprintSummary& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provisioning properties of the blueprint.</p>
      */
-    inline const ProvisioningProperties& GetProvisioningProperties() const{ return m_provisioningProperties; }
+    inline const ProvisioningProperties& GetProvisioningProperties() const { return m_provisioningProperties; }
     inline bool ProvisioningPropertiesHasBeenSet() const { return m_provisioningPropertiesHasBeenSet; }
-    inline void SetProvisioningProperties(const ProvisioningProperties& value) { m_provisioningPropertiesHasBeenSet = true; m_provisioningProperties = value; }
-    inline void SetProvisioningProperties(ProvisioningProperties&& value) { m_provisioningPropertiesHasBeenSet = true; m_provisioningProperties = std::move(value); }
-    inline EnvironmentBlueprintSummary& WithProvisioningProperties(const ProvisioningProperties& value) { SetProvisioningProperties(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithProvisioningProperties(ProvisioningProperties&& value) { SetProvisioningProperties(std::move(value)); return *this;}
+    template<typename ProvisioningPropertiesT = ProvisioningProperties>
+    void SetProvisioningProperties(ProvisioningPropertiesT&& value) { m_provisioningPropertiesHasBeenSet = true; m_provisioningProperties = std::forward<ProvisioningPropertiesT>(value); }
+    template<typename ProvisioningPropertiesT = ProvisioningProperties>
+    EnvironmentBlueprintSummary& WithProvisioningProperties(ProvisioningPropertiesT&& value) { SetProvisioningProperties(std::forward<ProvisioningPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the blueprint was enabled.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline EnvironmentBlueprintSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline EnvironmentBlueprintSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    EnvironmentBlueprintSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
@@ -151,7 +143,7 @@ namespace Model
     ProvisioningProperties m_provisioningProperties;
     bool m_provisioningPropertiesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

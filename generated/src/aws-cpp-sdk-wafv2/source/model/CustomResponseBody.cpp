@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-CustomResponseBody::CustomResponseBody() : 
-    m_contentType(ResponseContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 CustomResponseBody::CustomResponseBody(JsonView jsonValue)
-  : CustomResponseBody()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomResponseBody& CustomResponseBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = ResponseContentTypeMapper::GetResponseContentTypeForName(jsonValue.GetString("ContentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

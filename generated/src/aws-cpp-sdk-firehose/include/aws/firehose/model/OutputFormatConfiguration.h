@@ -33,7 +33,7 @@ namespace Model
   class OutputFormatConfiguration
   {
   public:
-    AWS_FIREHOSE_API OutputFormatConfiguration();
+    AWS_FIREHOSE_API OutputFormatConfiguration() = default;
     AWS_FIREHOSE_API OutputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API OutputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
      * Parquet SerDe. If both are non-null, the server rejects the request.</p>
      */
-    inline const Serializer& GetSerializer() const{ return m_serializer; }
+    inline const Serializer& GetSerializer() const { return m_serializer; }
     inline bool SerializerHasBeenSet() const { return m_serializerHasBeenSet; }
-    inline void SetSerializer(const Serializer& value) { m_serializerHasBeenSet = true; m_serializer = value; }
-    inline void SetSerializer(Serializer&& value) { m_serializerHasBeenSet = true; m_serializer = std::move(value); }
-    inline OutputFormatConfiguration& WithSerializer(const Serializer& value) { SetSerializer(value); return *this;}
-    inline OutputFormatConfiguration& WithSerializer(Serializer&& value) { SetSerializer(std::move(value)); return *this;}
+    template<typename SerializerT = Serializer>
+    void SetSerializer(SerializerT&& value) { m_serializerHasBeenSet = true; m_serializer = std::forward<SerializerT>(value); }
+    template<typename SerializerT = Serializer>
+    OutputFormatConfiguration& WithSerializer(SerializerT&& value) { SetSerializer(std::forward<SerializerT>(value)); return *this;}
     ///@}
   private:
 

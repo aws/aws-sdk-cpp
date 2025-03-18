@@ -21,7 +21,7 @@ namespace Model
   class ListServicePipelineProvisionedResourcesRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API ListServicePipelineProvisionedResourcesRequest();
+    AWS_PROTON_API ListServicePipelineProvisionedResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * array of provisioned resources, after the list of provisioned resources that was
      * previously requested.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServicePipelineProvisionedResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServicePipelineProvisionedResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServicePipelineProvisionedResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServicePipelineProvisionedResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service whose pipeline's provisioned resources you want.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline ListServicePipelineProvisionedResourcesRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    ListServicePipelineProvisionedResourcesRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
   private:
 

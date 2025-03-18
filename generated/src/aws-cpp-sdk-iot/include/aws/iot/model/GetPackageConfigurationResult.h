@@ -28,7 +28,7 @@ namespace Model
   class GetPackageConfigurationResult
   {
   public:
-    AWS_IOT_API GetPackageConfigurationResult();
+    AWS_IOT_API GetPackageConfigurationResult() = default;
     AWS_IOT_API GetPackageConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetPackageConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The version that is associated to a specific job.</p>
      */
-    inline const VersionUpdateByJobsConfig& GetVersionUpdateByJobsConfig() const{ return m_versionUpdateByJobsConfig; }
-    inline void SetVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { m_versionUpdateByJobsConfig = value; }
-    inline void SetVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { m_versionUpdateByJobsConfig = std::move(value); }
-    inline GetPackageConfigurationResult& WithVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { SetVersionUpdateByJobsConfig(value); return *this;}
-    inline GetPackageConfigurationResult& WithVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { SetVersionUpdateByJobsConfig(std::move(value)); return *this;}
+    inline const VersionUpdateByJobsConfig& GetVersionUpdateByJobsConfig() const { return m_versionUpdateByJobsConfig; }
+    template<typename VersionUpdateByJobsConfigT = VersionUpdateByJobsConfig>
+    void SetVersionUpdateByJobsConfig(VersionUpdateByJobsConfigT&& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = std::forward<VersionUpdateByJobsConfigT>(value); }
+    template<typename VersionUpdateByJobsConfigT = VersionUpdateByJobsConfig>
+    GetPackageConfigurationResult& WithVersionUpdateByJobsConfig(VersionUpdateByJobsConfigT&& value) { SetVersionUpdateByJobsConfig(std::forward<VersionUpdateByJobsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPackageConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPackageConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPackageConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPackageConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;
+    bool m_versionUpdateByJobsConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

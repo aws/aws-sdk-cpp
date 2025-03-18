@@ -32,7 +32,7 @@ namespace Model
   class GetSessionResult
   {
   public:
-    AWS_DEADLINE_API GetSessionResult();
+    AWS_DEADLINE_API GetSessionResult() = default;
     AWS_DEADLINE_API GetSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,179 +41,178 @@ namespace Model
     /**
      * <p>The session ID.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline GetSessionResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetSessionResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fleet ID for the session.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline GetSessionResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline GetSessionResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline GetSessionResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    GetSessionResult& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker ID for the session.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerId.assign(value); }
-    inline GetSessionResult& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline GetSessionResult& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline GetSessionResult& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    GetSessionResult& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource started running.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-    inline GetSessionResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline GetSessionResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    GetSessionResult& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session log.</p>
      */
-    inline const LogConfiguration& GetLog() const{ return m_log; }
-    inline void SetLog(const LogConfiguration& value) { m_log = value; }
-    inline void SetLog(LogConfiguration&& value) { m_log = std::move(value); }
-    inline GetSessionResult& WithLog(const LogConfiguration& value) { SetLog(value); return *this;}
-    inline GetSessionResult& WithLog(LogConfiguration&& value) { SetLog(std::move(value)); return *this;}
+    inline const LogConfiguration& GetLog() const { return m_log; }
+    template<typename LogT = LogConfiguration>
+    void SetLog(LogT&& value) { m_logHasBeenSet = true; m_log = std::forward<LogT>(value); }
+    template<typename LogT = LogConfiguration>
+    GetSessionResult& WithLog(LogT&& value) { SetLog(std::forward<LogT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The life cycle status of the session.</p>
      */
-    inline const SessionLifecycleStatus& GetLifecycleStatus() const{ return m_lifecycleStatus; }
-    inline void SetLifecycleStatus(const SessionLifecycleStatus& value) { m_lifecycleStatus = value; }
-    inline void SetLifecycleStatus(SessionLifecycleStatus&& value) { m_lifecycleStatus = std::move(value); }
-    inline GetSessionResult& WithLifecycleStatus(const SessionLifecycleStatus& value) { SetLifecycleStatus(value); return *this;}
-    inline GetSessionResult& WithLifecycleStatus(SessionLifecycleStatus&& value) { SetLifecycleStatus(std::move(value)); return *this;}
+    inline SessionLifecycleStatus GetLifecycleStatus() const { return m_lifecycleStatus; }
+    inline void SetLifecycleStatus(SessionLifecycleStatus value) { m_lifecycleStatusHasBeenSet = true; m_lifecycleStatus = value; }
+    inline GetSessionResult& WithLifecycleStatus(SessionLifecycleStatus value) { SetLifecycleStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource ended running.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
-    inline GetSessionResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline GetSessionResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    GetSessionResult& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline GetSessionResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GetSessionResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetSessionResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user or system that updated this resource.</p>
      */
-    inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
-    inline void SetUpdatedBy(const Aws::String& value) { m_updatedBy = value; }
-    inline void SetUpdatedBy(Aws::String&& value) { m_updatedBy = std::move(value); }
-    inline void SetUpdatedBy(const char* value) { m_updatedBy.assign(value); }
-    inline GetSessionResult& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-    inline GetSessionResult& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-    inline GetSessionResult& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    GetSessionResult& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The life cycle status with which the session started.</p>
      */
-    inline const SessionLifecycleTargetStatus& GetTargetLifecycleStatus() const{ return m_targetLifecycleStatus; }
-    inline void SetTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { m_targetLifecycleStatus = value; }
-    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { m_targetLifecycleStatus = std::move(value); }
-    inline GetSessionResult& WithTargetLifecycleStatus(const SessionLifecycleTargetStatus& value) { SetTargetLifecycleStatus(value); return *this;}
-    inline GetSessionResult& WithTargetLifecycleStatus(SessionLifecycleTargetStatus&& value) { SetTargetLifecycleStatus(std::move(value)); return *this;}
+    inline SessionLifecycleTargetStatus GetTargetLifecycleStatus() const { return m_targetLifecycleStatus; }
+    inline void SetTargetLifecycleStatus(SessionLifecycleTargetStatus value) { m_targetLifecycleStatusHasBeenSet = true; m_targetLifecycleStatus = value; }
+    inline GetSessionResult& WithTargetLifecycleStatus(SessionLifecycleTargetStatus value) { SetTargetLifecycleStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the Amazon EC2 properties of the host.</p>
      */
-    inline const HostPropertiesResponse& GetHostProperties() const{ return m_hostProperties; }
-    inline void SetHostProperties(const HostPropertiesResponse& value) { m_hostProperties = value; }
-    inline void SetHostProperties(HostPropertiesResponse&& value) { m_hostProperties = std::move(value); }
-    inline GetSessionResult& WithHostProperties(const HostPropertiesResponse& value) { SetHostProperties(value); return *this;}
-    inline GetSessionResult& WithHostProperties(HostPropertiesResponse&& value) { SetHostProperties(std::move(value)); return *this;}
+    inline const HostPropertiesResponse& GetHostProperties() const { return m_hostProperties; }
+    template<typename HostPropertiesT = HostPropertiesResponse>
+    void SetHostProperties(HostPropertiesT&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::forward<HostPropertiesT>(value); }
+    template<typename HostPropertiesT = HostPropertiesResponse>
+    GetSessionResult& WithHostProperties(HostPropertiesT&& value) { SetHostProperties(std::forward<HostPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker log for the session.</p>
      */
-    inline const LogConfiguration& GetWorkerLog() const{ return m_workerLog; }
-    inline void SetWorkerLog(const LogConfiguration& value) { m_workerLog = value; }
-    inline void SetWorkerLog(LogConfiguration&& value) { m_workerLog = std::move(value); }
-    inline GetSessionResult& WithWorkerLog(const LogConfiguration& value) { SetWorkerLog(value); return *this;}
-    inline GetSessionResult& WithWorkerLog(LogConfiguration&& value) { SetWorkerLog(std::move(value)); return *this;}
+    inline const LogConfiguration& GetWorkerLog() const { return m_workerLog; }
+    template<typename WorkerLogT = LogConfiguration>
+    void SetWorkerLog(WorkerLogT&& value) { m_workerLogHasBeenSet = true; m_workerLog = std::forward<WorkerLogT>(value); }
+    template<typename WorkerLogT = LogConfiguration>
+    GetSessionResult& WithWorkerLog(WorkerLogT&& value) { SetWorkerLog(std::forward<WorkerLogT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_workerId;
+    bool m_workerIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
+    bool m_startedAtHasBeenSet = false;
 
     LogConfiguration m_log;
+    bool m_logHasBeenSet = false;
 
-    SessionLifecycleStatus m_lifecycleStatus;
+    SessionLifecycleStatus m_lifecycleStatus{SessionLifecycleStatus::NOT_SET};
+    bool m_lifecycleStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
+    Aws::Utils::DateTime m_endedAt{};
+    bool m_endedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
-    SessionLifecycleTargetStatus m_targetLifecycleStatus;
+    SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
+    bool m_targetLifecycleStatusHasBeenSet = false;
 
     HostPropertiesResponse m_hostProperties;
+    bool m_hostPropertiesHasBeenSet = false;
 
     LogConfiguration m_workerLog;
+    bool m_workerLogHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

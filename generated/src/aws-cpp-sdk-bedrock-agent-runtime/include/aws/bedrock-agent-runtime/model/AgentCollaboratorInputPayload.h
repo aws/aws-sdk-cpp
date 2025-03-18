@@ -34,7 +34,7 @@ namespace Model
   class AgentCollaboratorInputPayload
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API AgentCollaboratorInputPayload();
+    AWS_BEDROCKAGENTRUNTIME_API AgentCollaboratorInputPayload() = default;
     AWS_BEDROCKAGENTRUNTIME_API AgentCollaboratorInputPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API AgentCollaboratorInputPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
     /**
      * <p>An action invocation result.</p>
      */
-    inline const ReturnControlResults& GetReturnControlResults() const{ return m_returnControlResults; }
+    inline const ReturnControlResults& GetReturnControlResults() const { return m_returnControlResults; }
     inline bool ReturnControlResultsHasBeenSet() const { return m_returnControlResultsHasBeenSet; }
-    inline void SetReturnControlResults(const ReturnControlResults& value) { m_returnControlResultsHasBeenSet = true; m_returnControlResults = value; }
-    inline void SetReturnControlResults(ReturnControlResults&& value) { m_returnControlResultsHasBeenSet = true; m_returnControlResults = std::move(value); }
-    inline AgentCollaboratorInputPayload& WithReturnControlResults(const ReturnControlResults& value) { SetReturnControlResults(value); return *this;}
-    inline AgentCollaboratorInputPayload& WithReturnControlResults(ReturnControlResults&& value) { SetReturnControlResults(std::move(value)); return *this;}
+    template<typename ReturnControlResultsT = ReturnControlResults>
+    void SetReturnControlResults(ReturnControlResultsT&& value) { m_returnControlResultsHasBeenSet = true; m_returnControlResults = std::forward<ReturnControlResultsT>(value); }
+    template<typename ReturnControlResultsT = ReturnControlResults>
+    AgentCollaboratorInputPayload& WithReturnControlResults(ReturnControlResultsT&& value) { SetReturnControlResults(std::forward<ReturnControlResultsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input text.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline AgentCollaboratorInputPayload& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline AgentCollaboratorInputPayload& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline AgentCollaboratorInputPayload& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    AgentCollaboratorInputPayload& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input type.</p>
      */
-    inline const PayloadType& GetType() const{ return m_type; }
+    inline PayloadType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PayloadType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PayloadType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AgentCollaboratorInputPayload& WithType(const PayloadType& value) { SetType(value); return *this;}
-    inline AgentCollaboratorInputPayload& WithType(PayloadType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PayloadType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AgentCollaboratorInputPayload& WithType(PayloadType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    PayloadType m_type;
+    PayloadType m_type{PayloadType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

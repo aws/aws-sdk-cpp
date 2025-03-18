@@ -12,16 +12,6 @@ using namespace Aws::SocialMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWhatsAppMessageMediaRequest::GetWhatsAppMessageMediaRequest() : 
-    m_mediaIdHasBeenSet(false),
-    m_originationPhoneNumberIdHasBeenSet(false),
-    m_metadataOnly(false),
-    m_metadataOnlyHasBeenSet(false),
-    m_destinationS3PresignedUrlHasBeenSet(false),
-    m_destinationS3FileHasBeenSet(false)
-{
-}
-
 Aws::String GetWhatsAppMessageMediaRequest::SerializePayload() const
 {
   JsonValue payload;

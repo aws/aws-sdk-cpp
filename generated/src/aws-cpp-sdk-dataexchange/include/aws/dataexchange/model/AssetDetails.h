@@ -35,7 +35,7 @@ namespace Model
   class AssetDetails
   {
   public:
-    AWS_DATAEXCHANGE_API AssetDetails();
+    AWS_DATAEXCHANGE_API AssetDetails() = default;
     AWS_DATAEXCHANGE_API AssetDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API AssetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,60 +45,60 @@ namespace Model
     /**
      * <p>The Amazon S3 object that is the asset.</p>
      */
-    inline const S3SnapshotAsset& GetS3SnapshotAsset() const{ return m_s3SnapshotAsset; }
+    inline const S3SnapshotAsset& GetS3SnapshotAsset() const { return m_s3SnapshotAsset; }
     inline bool S3SnapshotAssetHasBeenSet() const { return m_s3SnapshotAssetHasBeenSet; }
-    inline void SetS3SnapshotAsset(const S3SnapshotAsset& value) { m_s3SnapshotAssetHasBeenSet = true; m_s3SnapshotAsset = value; }
-    inline void SetS3SnapshotAsset(S3SnapshotAsset&& value) { m_s3SnapshotAssetHasBeenSet = true; m_s3SnapshotAsset = std::move(value); }
-    inline AssetDetails& WithS3SnapshotAsset(const S3SnapshotAsset& value) { SetS3SnapshotAsset(value); return *this;}
-    inline AssetDetails& WithS3SnapshotAsset(S3SnapshotAsset&& value) { SetS3SnapshotAsset(std::move(value)); return *this;}
+    template<typename S3SnapshotAssetT = S3SnapshotAsset>
+    void SetS3SnapshotAsset(S3SnapshotAssetT&& value) { m_s3SnapshotAssetHasBeenSet = true; m_s3SnapshotAsset = std::forward<S3SnapshotAssetT>(value); }
+    template<typename S3SnapshotAssetT = S3SnapshotAsset>
+    AssetDetails& WithS3SnapshotAsset(S3SnapshotAssetT&& value) { SetS3SnapshotAsset(std::forward<S3SnapshotAssetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Redshift datashare that is the asset.</p>
      */
-    inline const RedshiftDataShareAsset& GetRedshiftDataShareAsset() const{ return m_redshiftDataShareAsset; }
+    inline const RedshiftDataShareAsset& GetRedshiftDataShareAsset() const { return m_redshiftDataShareAsset; }
     inline bool RedshiftDataShareAssetHasBeenSet() const { return m_redshiftDataShareAssetHasBeenSet; }
-    inline void SetRedshiftDataShareAsset(const RedshiftDataShareAsset& value) { m_redshiftDataShareAssetHasBeenSet = true; m_redshiftDataShareAsset = value; }
-    inline void SetRedshiftDataShareAsset(RedshiftDataShareAsset&& value) { m_redshiftDataShareAssetHasBeenSet = true; m_redshiftDataShareAsset = std::move(value); }
-    inline AssetDetails& WithRedshiftDataShareAsset(const RedshiftDataShareAsset& value) { SetRedshiftDataShareAsset(value); return *this;}
-    inline AssetDetails& WithRedshiftDataShareAsset(RedshiftDataShareAsset&& value) { SetRedshiftDataShareAsset(std::move(value)); return *this;}
+    template<typename RedshiftDataShareAssetT = RedshiftDataShareAsset>
+    void SetRedshiftDataShareAsset(RedshiftDataShareAssetT&& value) { m_redshiftDataShareAssetHasBeenSet = true; m_redshiftDataShareAsset = std::forward<RedshiftDataShareAssetT>(value); }
+    template<typename RedshiftDataShareAssetT = RedshiftDataShareAsset>
+    AssetDetails& WithRedshiftDataShareAsset(RedshiftDataShareAssetT&& value) { SetRedshiftDataShareAsset(std::forward<RedshiftDataShareAssetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the API Gateway API asset.</p>
      */
-    inline const ApiGatewayApiAsset& GetApiGatewayApiAsset() const{ return m_apiGatewayApiAsset; }
+    inline const ApiGatewayApiAsset& GetApiGatewayApiAsset() const { return m_apiGatewayApiAsset; }
     inline bool ApiGatewayApiAssetHasBeenSet() const { return m_apiGatewayApiAssetHasBeenSet; }
-    inline void SetApiGatewayApiAsset(const ApiGatewayApiAsset& value) { m_apiGatewayApiAssetHasBeenSet = true; m_apiGatewayApiAsset = value; }
-    inline void SetApiGatewayApiAsset(ApiGatewayApiAsset&& value) { m_apiGatewayApiAssetHasBeenSet = true; m_apiGatewayApiAsset = std::move(value); }
-    inline AssetDetails& WithApiGatewayApiAsset(const ApiGatewayApiAsset& value) { SetApiGatewayApiAsset(value); return *this;}
-    inline AssetDetails& WithApiGatewayApiAsset(ApiGatewayApiAsset&& value) { SetApiGatewayApiAsset(std::move(value)); return *this;}
+    template<typename ApiGatewayApiAssetT = ApiGatewayApiAsset>
+    void SetApiGatewayApiAsset(ApiGatewayApiAssetT&& value) { m_apiGatewayApiAssetHasBeenSet = true; m_apiGatewayApiAsset = std::forward<ApiGatewayApiAssetT>(value); }
+    template<typename ApiGatewayApiAssetT = ApiGatewayApiAsset>
+    AssetDetails& WithApiGatewayApiAsset(ApiGatewayApiAssetT&& value) { SetApiGatewayApiAsset(std::forward<ApiGatewayApiAssetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 data access that is the asset.</p>
      */
-    inline const S3DataAccessAsset& GetS3DataAccessAsset() const{ return m_s3DataAccessAsset; }
+    inline const S3DataAccessAsset& GetS3DataAccessAsset() const { return m_s3DataAccessAsset; }
     inline bool S3DataAccessAssetHasBeenSet() const { return m_s3DataAccessAssetHasBeenSet; }
-    inline void SetS3DataAccessAsset(const S3DataAccessAsset& value) { m_s3DataAccessAssetHasBeenSet = true; m_s3DataAccessAsset = value; }
-    inline void SetS3DataAccessAsset(S3DataAccessAsset&& value) { m_s3DataAccessAssetHasBeenSet = true; m_s3DataAccessAsset = std::move(value); }
-    inline AssetDetails& WithS3DataAccessAsset(const S3DataAccessAsset& value) { SetS3DataAccessAsset(value); return *this;}
-    inline AssetDetails& WithS3DataAccessAsset(S3DataAccessAsset&& value) { SetS3DataAccessAsset(std::move(value)); return *this;}
+    template<typename S3DataAccessAssetT = S3DataAccessAsset>
+    void SetS3DataAccessAsset(S3DataAccessAssetT&& value) { m_s3DataAccessAssetHasBeenSet = true; m_s3DataAccessAsset = std::forward<S3DataAccessAssetT>(value); }
+    template<typename S3DataAccessAssetT = S3DataAccessAsset>
+    AssetDetails& WithS3DataAccessAsset(S3DataAccessAssetT&& value) { SetS3DataAccessAsset(std::forward<S3DataAccessAssetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS Lake Formation data permission that is the asset.</p>
      */
-    inline const LakeFormationDataPermissionAsset& GetLakeFormationDataPermissionAsset() const{ return m_lakeFormationDataPermissionAsset; }
+    inline const LakeFormationDataPermissionAsset& GetLakeFormationDataPermissionAsset() const { return m_lakeFormationDataPermissionAsset; }
     inline bool LakeFormationDataPermissionAssetHasBeenSet() const { return m_lakeFormationDataPermissionAssetHasBeenSet; }
-    inline void SetLakeFormationDataPermissionAsset(const LakeFormationDataPermissionAsset& value) { m_lakeFormationDataPermissionAssetHasBeenSet = true; m_lakeFormationDataPermissionAsset = value; }
-    inline void SetLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset&& value) { m_lakeFormationDataPermissionAssetHasBeenSet = true; m_lakeFormationDataPermissionAsset = std::move(value); }
-    inline AssetDetails& WithLakeFormationDataPermissionAsset(const LakeFormationDataPermissionAsset& value) { SetLakeFormationDataPermissionAsset(value); return *this;}
-    inline AssetDetails& WithLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset&& value) { SetLakeFormationDataPermissionAsset(std::move(value)); return *this;}
+    template<typename LakeFormationDataPermissionAssetT = LakeFormationDataPermissionAsset>
+    void SetLakeFormationDataPermissionAsset(LakeFormationDataPermissionAssetT&& value) { m_lakeFormationDataPermissionAssetHasBeenSet = true; m_lakeFormationDataPermissionAsset = std::forward<LakeFormationDataPermissionAssetT>(value); }
+    template<typename LakeFormationDataPermissionAssetT = LakeFormationDataPermissionAsset>
+    AssetDetails& WithLakeFormationDataPermissionAsset(LakeFormationDataPermissionAssetT&& value) { SetLakeFormationDataPermissionAsset(std::forward<LakeFormationDataPermissionAssetT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Citation::Citation() : 
-    m_referenceHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Citation::Citation(JsonView jsonValue)
-  : Citation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Citation& Citation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reference"))
   {
     m_reference = jsonValue.GetObject("reference");
-
     m_referenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

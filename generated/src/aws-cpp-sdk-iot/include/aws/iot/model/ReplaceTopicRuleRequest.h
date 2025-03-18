@@ -25,7 +25,7 @@ namespace Model
   class ReplaceTopicRuleRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ReplaceTopicRuleRequest();
+    AWS_IOT_API ReplaceTopicRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline ReplaceTopicRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline ReplaceTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline ReplaceTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    ReplaceTopicRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule payload.</p>
      */
-    inline const TopicRulePayload& GetTopicRulePayload() const{ return m_topicRulePayload; }
+    inline const TopicRulePayload& GetTopicRulePayload() const { return m_topicRulePayload; }
     inline bool TopicRulePayloadHasBeenSet() const { return m_topicRulePayloadHasBeenSet; }
-    inline void SetTopicRulePayload(const TopicRulePayload& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = value; }
-    inline void SetTopicRulePayload(TopicRulePayload&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::move(value); }
-    inline ReplaceTopicRuleRequest& WithTopicRulePayload(const TopicRulePayload& value) { SetTopicRulePayload(value); return *this;}
-    inline ReplaceTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(std::move(value)); return *this;}
+    template<typename TopicRulePayloadT = TopicRulePayload>
+    void SetTopicRulePayload(TopicRulePayloadT&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::forward<TopicRulePayloadT>(value); }
+    template<typename TopicRulePayloadT = TopicRulePayload>
+    ReplaceTopicRuleRequest& WithTopicRulePayload(TopicRulePayloadT&& value) { SetTopicRulePayload(std::forward<TopicRulePayloadT>(value)); return *this;}
     ///@}
   private:
 

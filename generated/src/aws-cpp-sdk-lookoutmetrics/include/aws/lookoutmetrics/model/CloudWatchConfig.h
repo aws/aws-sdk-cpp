@@ -32,7 +32,7 @@ namespace Model
   class CloudWatchConfig
   {
   public:
-    AWS_LOOKOUTMETRICS_API CloudWatchConfig();
+    AWS_LOOKOUTMETRICS_API CloudWatchConfig() = default;
     AWS_LOOKOUTMETRICS_API CloudWatchConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API CloudWatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
      * <p>An IAM role that gives Amazon Lookout for Metrics permission to access data
      * in Amazon CloudWatch.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CloudWatchConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CloudWatchConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CloudWatchConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CloudWatchConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings for backtest mode.</p>
      */
-    inline const BackTestConfiguration& GetBackTestConfiguration() const{ return m_backTestConfiguration; }
+    inline const BackTestConfiguration& GetBackTestConfiguration() const { return m_backTestConfiguration; }
     inline bool BackTestConfigurationHasBeenSet() const { return m_backTestConfigurationHasBeenSet; }
-    inline void SetBackTestConfiguration(const BackTestConfiguration& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = value; }
-    inline void SetBackTestConfiguration(BackTestConfiguration&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::move(value); }
-    inline CloudWatchConfig& WithBackTestConfiguration(const BackTestConfiguration& value) { SetBackTestConfiguration(value); return *this;}
-    inline CloudWatchConfig& WithBackTestConfiguration(BackTestConfiguration&& value) { SetBackTestConfiguration(std::move(value)); return *this;}
+    template<typename BackTestConfigurationT = BackTestConfiguration>
+    void SetBackTestConfiguration(BackTestConfigurationT&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::forward<BackTestConfigurationT>(value); }
+    template<typename BackTestConfigurationT = BackTestConfiguration>
+    CloudWatchConfig& WithBackTestConfiguration(BackTestConfigurationT&& value) { SetBackTestConfiguration(std::forward<BackTestConfigurationT>(value)); return *this;}
     ///@}
   private:
 

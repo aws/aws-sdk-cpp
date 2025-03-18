@@ -25,7 +25,7 @@ namespace Model
   class DeletePushNotificationRegistrationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DeletePushNotificationRegistrationRequest();
+    AWS_CONNECT_API DeletePushNotificationRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,42 +44,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DeletePushNotificationRegistrationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DeletePushNotificationRegistrationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-    inline DeletePushNotificationRegistrationRequest& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    DeletePushNotificationRegistrationRequest& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact within the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline DeletePushNotificationRegistrationRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline DeletePushNotificationRegistrationRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    DeletePushNotificationRegistrationRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
   private:
 

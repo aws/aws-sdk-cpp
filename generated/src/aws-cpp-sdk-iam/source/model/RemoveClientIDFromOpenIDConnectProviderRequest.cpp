@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-RemoveClientIDFromOpenIDConnectProviderRequest::RemoveClientIDFromOpenIDConnectProviderRequest() : 
-    m_openIDConnectProviderArnHasBeenSet(false),
-    m_clientIDHasBeenSet(false)
-{
-}
-
 Aws::String RemoveClientIDFromOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

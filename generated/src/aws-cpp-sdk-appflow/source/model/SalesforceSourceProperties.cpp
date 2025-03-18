@@ -18,19 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SalesforceSourceProperties::SalesforceSourceProperties() : 
-    m_objectHasBeenSet(false),
-    m_enableDynamicFieldUpdate(false),
-    m_enableDynamicFieldUpdateHasBeenSet(false),
-    m_includeDeletedRecords(false),
-    m_includeDeletedRecordsHasBeenSet(false),
-    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
-    m_dataTransferApiHasBeenSet(false)
-{
-}
-
 SalesforceSourceProperties::SalesforceSourceProperties(JsonView jsonValue)
-  : SalesforceSourceProperties()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ SalesforceSourceProperties& SalesforceSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableDynamicFieldUpdate"))
   {
     m_enableDynamicFieldUpdate = jsonValue.GetBool("enableDynamicFieldUpdate");
-
     m_enableDynamicFieldUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeDeletedRecords"))
   {
     m_includeDeletedRecords = jsonValue.GetBool("includeDeletedRecords");
-
     m_includeDeletedRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTransferApi"))
   {
     m_dataTransferApi = SalesforceDataTransferApiMapper::GetSalesforceDataTransferApiForName(jsonValue.GetString("dataTransferApi"));
-
     m_dataTransferApiHasBeenSet = true;
   }
-
   return *this;
 }
 

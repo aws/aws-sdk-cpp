@@ -18,18 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-CsvConfiguration::CsvConfiguration() : 
-    m_columnSeparatorHasBeenSet(false),
-    m_escapeCharHasBeenSet(false),
-    m_quoteCharHasBeenSet(false),
-    m_nullValueHasBeenSet(false),
-    m_trimWhiteSpace(false),
-    m_trimWhiteSpaceHasBeenSet(false)
-{
-}
-
 CsvConfiguration::CsvConfiguration(JsonView jsonValue)
-  : CsvConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CsvConfiguration& CsvConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnSeparator"))
   {
     m_columnSeparator = jsonValue.GetString("ColumnSeparator");
-
     m_columnSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EscapeChar"))
   {
     m_escapeChar = jsonValue.GetString("EscapeChar");
-
     m_escapeCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteChar"))
   {
     m_quoteChar = jsonValue.GetString("QuoteChar");
-
     m_quoteCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullValue"))
   {
     m_nullValue = jsonValue.GetString("NullValue");
-
     m_nullValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrimWhiteSpace"))
   {
     m_trimWhiteSpace = jsonValue.GetBool("TrimWhiteSpace");
-
     m_trimWhiteSpaceHasBeenSet = true;
   }
-
   return *this;
 }
 

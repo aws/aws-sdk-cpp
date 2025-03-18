@@ -32,7 +32,7 @@ namespace Model
   class AttachedFileError
   {
   public:
-    AWS_CONNECT_API AttachedFileError();
+    AWS_CONNECT_API AttachedFileError() = default;
     AWS_CONNECT_API AttachedFileError(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AttachedFileError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p> Status code describing the failure. </p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline AttachedFileError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline AttachedFileError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline AttachedFileError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    AttachedFileError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Why the attached file couldn't be retrieved. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline AttachedFileError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline AttachedFileError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline AttachedFileError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    AttachedFileError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the attached file resource.</p>
      */
-    inline const Aws::String& GetFileId() const{ return m_fileId; }
+    inline const Aws::String& GetFileId() const { return m_fileId; }
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
-    inline void SetFileId(const Aws::String& value) { m_fileIdHasBeenSet = true; m_fileId = value; }
-    inline void SetFileId(Aws::String&& value) { m_fileIdHasBeenSet = true; m_fileId = std::move(value); }
-    inline void SetFileId(const char* value) { m_fileIdHasBeenSet = true; m_fileId.assign(value); }
-    inline AttachedFileError& WithFileId(const Aws::String& value) { SetFileId(value); return *this;}
-    inline AttachedFileError& WithFileId(Aws::String&& value) { SetFileId(std::move(value)); return *this;}
-    inline AttachedFileError& WithFileId(const char* value) { SetFileId(value); return *this;}
+    template<typename FileIdT = Aws::String>
+    void SetFileId(FileIdT&& value) { m_fileIdHasBeenSet = true; m_fileId = std::forward<FileIdT>(value); }
+    template<typename FileIdT = Aws::String>
+    AttachedFileError& WithFileId(FileIdT&& value) { SetFileId(std::forward<FileIdT>(value)); return *this;}
     ///@}
   private:
 

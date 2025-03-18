@@ -32,7 +32,7 @@ namespace Model
   class ReverseGeocodeFilter
   {
   public:
-    AWS_GEOPLACES_API ReverseGeocodeFilter();
+    AWS_GEOPLACES_API ReverseGeocodeFilter() = default;
     AWS_GEOPLACES_API ReverseGeocodeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API ReverseGeocodeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,13 @@ namespace Model
     /**
      * <p>The included place types.</p>
      */
-    inline const Aws::Vector<ReverseGeocodeFilterPlaceType>& GetIncludePlaceTypes() const{ return m_includePlaceTypes; }
+    inline const Aws::Vector<ReverseGeocodeFilterPlaceType>& GetIncludePlaceTypes() const { return m_includePlaceTypes; }
     inline bool IncludePlaceTypesHasBeenSet() const { return m_includePlaceTypesHasBeenSet; }
-    inline void SetIncludePlaceTypes(const Aws::Vector<ReverseGeocodeFilterPlaceType>& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = value; }
-    inline void SetIncludePlaceTypes(Aws::Vector<ReverseGeocodeFilterPlaceType>&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = std::move(value); }
-    inline ReverseGeocodeFilter& WithIncludePlaceTypes(const Aws::Vector<ReverseGeocodeFilterPlaceType>& value) { SetIncludePlaceTypes(value); return *this;}
-    inline ReverseGeocodeFilter& WithIncludePlaceTypes(Aws::Vector<ReverseGeocodeFilterPlaceType>&& value) { SetIncludePlaceTypes(std::move(value)); return *this;}
-    inline ReverseGeocodeFilter& AddIncludePlaceTypes(const ReverseGeocodeFilterPlaceType& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(value); return *this; }
-    inline ReverseGeocodeFilter& AddIncludePlaceTypes(ReverseGeocodeFilterPlaceType&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(std::move(value)); return *this; }
+    template<typename IncludePlaceTypesT = Aws::Vector<ReverseGeocodeFilterPlaceType>>
+    void SetIncludePlaceTypes(IncludePlaceTypesT&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = std::forward<IncludePlaceTypesT>(value); }
+    template<typename IncludePlaceTypesT = Aws::Vector<ReverseGeocodeFilterPlaceType>>
+    ReverseGeocodeFilter& WithIncludePlaceTypes(IncludePlaceTypesT&& value) { SetIncludePlaceTypes(std::forward<IncludePlaceTypesT>(value)); return *this;}
+    inline ReverseGeocodeFilter& AddIncludePlaceTypes(ReverseGeocodeFilterPlaceType value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(value); return *this; }
     ///@}
   private:
 

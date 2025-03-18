@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AssignedPrivateIpAddress::AssignedPrivateIpAddress() : 
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 AssignedPrivateIpAddress::AssignedPrivateIpAddress(const XmlNode& xmlNode)
-  : AssignedPrivateIpAddress()
 {
   *this = xmlNode;
 }

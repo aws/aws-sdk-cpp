@@ -18,18 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderSchemaAttribute::ProviderSchemaAttribute() : 
-    m_fieldNameHasBeenSet(false),
-    m_hashing(false),
-    m_hashingHasBeenSet(false),
-    m_subTypeHasBeenSet(false),
-    m_type(SchemaAttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ProviderSchemaAttribute::ProviderSchemaAttribute(JsonView jsonValue)
-  : ProviderSchemaAttribute()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ProviderSchemaAttribute& ProviderSchemaAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashing"))
   {
     m_hashing = jsonValue.GetBool("hashing");
-
     m_hashingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subType"))
   {
     m_subType = jsonValue.GetString("subType");
-
     m_subTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SchemaAttributeTypeMapper::GetSchemaAttributeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

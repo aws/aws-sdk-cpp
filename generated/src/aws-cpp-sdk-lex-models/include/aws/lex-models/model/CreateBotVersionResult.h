@@ -34,7 +34,7 @@ namespace Model
   class CreateBotVersionResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionResult();
+    AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The name of the bot.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateBotVersionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBotVersionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBotVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the bot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateBotVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBotVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBotVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +66,13 @@ namespace Model
      * <p>An array of <code>Intent</code> objects. For more information, see
      * <a>PutBot</a>.</p>
      */
-    inline const Aws::Vector<Intent>& GetIntents() const{ return m_intents; }
-    inline void SetIntents(const Aws::Vector<Intent>& value) { m_intents = value; }
-    inline void SetIntents(Aws::Vector<Intent>&& value) { m_intents = std::move(value); }
-    inline CreateBotVersionResult& WithIntents(const Aws::Vector<Intent>& value) { SetIntents(value); return *this;}
-    inline CreateBotVersionResult& WithIntents(Aws::Vector<Intent>&& value) { SetIntents(std::move(value)); return *this;}
-    inline CreateBotVersionResult& AddIntents(const Intent& value) { m_intents.push_back(value); return *this; }
-    inline CreateBotVersionResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Intent>& GetIntents() const { return m_intents; }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    CreateBotVersionResult& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
+    template<typename IntentsT = Intent>
+    CreateBotVersionResult& AddIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents.emplace_back(std::forward<IntentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,11 +80,11 @@ namespace Model
      * <p>The message that Amazon Lex uses when it doesn't understand the user's
      * request. For more information, see <a>PutBot</a>. </p>
      */
-    inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
-    inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPrompt = value; }
-    inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPrompt = std::move(value); }
-    inline CreateBotVersionResult& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
-    inline CreateBotVersionResult& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
+    inline const Prompt& GetClarificationPrompt() const { return m_clarificationPrompt; }
+    template<typename ClarificationPromptT = Prompt>
+    void SetClarificationPrompt(ClarificationPromptT&& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = std::forward<ClarificationPromptT>(value); }
+    template<typename ClarificationPromptT = Prompt>
+    CreateBotVersionResult& WithClarificationPrompt(ClarificationPromptT&& value) { SetClarificationPrompt(std::forward<ClarificationPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,11 +92,11 @@ namespace Model
      * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
-    inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
-    inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
-    inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
-    inline CreateBotVersionResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
-    inline CreateBotVersionResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
+    inline const Statement& GetAbortStatement() const { return m_abortStatement; }
+    template<typename AbortStatementT = Statement>
+    void SetAbortStatement(AbortStatementT&& value) { m_abortStatementHasBeenSet = true; m_abortStatement = std::forward<AbortStatementT>(value); }
+    template<typename AbortStatementT = Statement>
+    CreateBotVersionResult& WithAbortStatement(AbortStatementT&& value) { SetAbortStatement(std::forward<AbortStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,11 +108,9 @@ namespace Model
      * Lex returns the reason for the failure in the <code>failureReason</code>
      * response element. </p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline CreateBotVersionResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline CreateBotVersionResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateBotVersionResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -124,35 +118,33 @@ namespace Model
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
      * that it failed to build the bot.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline CreateBotVersionResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline CreateBotVersionResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    CreateBotVersionResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
-    inline CreateBotVersionResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline CreateBotVersionResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    CreateBotVersionResult& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the bot version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline CreateBotVersionResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline CreateBotVersionResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    CreateBotVersionResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,8 +152,8 @@ namespace Model
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
      * conversation. For more information, see <a>PutBot</a>.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
-    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSeconds = value; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
+    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline CreateBotVersionResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
     ///@}
 
@@ -170,50 +162,42 @@ namespace Model
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with
      * the user.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceId.assign(value); }
-    inline CreateBotVersionResult& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline CreateBotVersionResult& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    CreateBotVersionResult& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Checksum identifying the version of the bot that was created.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline CreateBotVersionResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline CreateBotVersionResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    CreateBotVersionResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline CreateBotVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateBotVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateBotVersionResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies the target locale for the bot. </p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
-    inline void SetLocale(const Locale& value) { m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_locale = std::move(value); }
-    inline CreateBotVersionResult& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline CreateBotVersionResult& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline Locale GetLocale() const { return m_locale; }
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline CreateBotVersionResult& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
 
     ///@{
@@ -242,8 +226,8 @@ namespace Model
      * whole or in part, to children under age 13, see the <a
      * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
      */
-    inline bool GetChildDirected() const{ return m_childDirected; }
-    inline void SetChildDirected(bool value) { m_childDirected = value; }
+    inline bool GetChildDirected() const { return m_childDirected; }
+    inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
     inline CreateBotVersionResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
     ///@}
 
@@ -253,8 +237,8 @@ namespace Model
      * indicates that the bot is using the improvements, otherwise,
      * <code>false</code>.</p>
      */
-    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
-    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+    inline bool GetEnableModelImprovements() const { return m_enableModelImprovements; }
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
     inline CreateBotVersionResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
     ///@}
 
@@ -263,58 +247,74 @@ namespace Model
      * <p>Indicates whether utterances entered by the user should be sent to Amazon
      * Comprehend for sentiment analysis.</p>
      */
-    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
-    inline void SetDetectSentiment(bool value) { m_detectSentiment = value; }
+    inline bool GetDetectSentiment() const { return m_detectSentiment; }
+    inline void SetDetectSentiment(bool value) { m_detectSentimentHasBeenSet = true; m_detectSentiment = value; }
     inline CreateBotVersionResult& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBotVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBotVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBotVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Intent> m_intents;
+    bool m_intentsHasBeenSet = false;
 
     Prompt m_clarificationPrompt;
+    bool m_clarificationPromptHasBeenSet = false;
 
     Statement m_abortStatement;
+    bool m_abortStatementHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
+    bool m_lastUpdatedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_voiceId;
+    bool m_voiceIdHasBeenSet = false;
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
+    bool m_localeHasBeenSet = false;
 
-    bool m_childDirected;
+    bool m_childDirected{false};
+    bool m_childDirectedHasBeenSet = false;
 
-    bool m_enableModelImprovements;
+    bool m_enableModelImprovements{false};
+    bool m_enableModelImprovementsHasBeenSet = false;
 
-    bool m_detectSentiment;
+    bool m_detectSentiment{false};
+    bool m_detectSentimentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

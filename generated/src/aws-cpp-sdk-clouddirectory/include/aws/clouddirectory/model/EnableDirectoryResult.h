@@ -27,7 +27,7 @@ namespace Model
   class EnableDirectoryResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API EnableDirectoryResult();
+    AWS_CLOUDDIRECTORY_API EnableDirectoryResult() = default;
     AWS_CLOUDDIRECTORY_API EnableDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API EnableDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the enabled directory.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArn.assign(value); }
-    inline EnableDirectoryResult& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline EnableDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline EnableDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    EnableDirectoryResult& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EnableDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EnableDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EnableDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EnableDirectoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryArn;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

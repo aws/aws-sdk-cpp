@@ -20,57 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSnapshot::DBSnapshot() : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dBSnapshotArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_originalSnapshotCreateTimeHasBeenSet(false),
-    m_snapshotDatabaseTimeHasBeenSet(false),
-    m_snapshotTargetHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false),
-    m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false),
-    m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
-{
-}
-
 DBSnapshot::DBSnapshot(const XmlNode& xmlNode)
-  : DBSnapshot()
 {
   *this = xmlNode;
 }
@@ -241,6 +191,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     if(!processorFeaturesNode.IsNull())
     {
       XmlNode processorFeaturesMember = processorFeaturesNode.FirstChild("ProcessorFeature");
+      m_processorFeaturesHasBeenSet = !processorFeaturesMember.IsNull();
       while(!processorFeaturesMember.IsNull())
       {
         m_processorFeatures.push_back(processorFeaturesMember);
@@ -259,6 +210,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

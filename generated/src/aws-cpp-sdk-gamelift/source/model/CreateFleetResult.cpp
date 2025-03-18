@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFleetResult::CreateFleetResult()
-{
-}
-
 CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("FleetAttributes"))
   {
     m_fleetAttributes = jsonValue.GetObject("FleetAttributes");
-
+    m_fleetAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationStates"))
   {
     Aws::Utils::Array<JsonView> locationStatesJsonList = jsonValue.GetArray("LocationStates");
@@ -42,14 +37,15 @@ CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_locationStates.push_back(locationStatesJsonList[locationStatesIndex].AsObject());
     }
+    m_locationStatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

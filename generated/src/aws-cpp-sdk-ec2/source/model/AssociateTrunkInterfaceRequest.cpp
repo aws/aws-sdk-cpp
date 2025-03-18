@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateTrunkInterfaceRequest::AssociateTrunkInterfaceRequest() : 
-    m_branchInterfaceIdHasBeenSet(false),
-    m_trunkInterfaceIdHasBeenSet(false),
-    m_vlanId(0),
-    m_vlanIdHasBeenSet(false),
-    m_greKey(0),
-    m_greKeyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTrunkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

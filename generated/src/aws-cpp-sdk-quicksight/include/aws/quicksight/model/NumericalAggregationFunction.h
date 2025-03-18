@@ -32,7 +32,7 @@ namespace Model
   class NumericalAggregationFunction
   {
   public:
-    AWS_QUICKSIGHT_API NumericalAggregationFunction();
+    AWS_QUICKSIGHT_API NumericalAggregationFunction() = default;
     AWS_QUICKSIGHT_API NumericalAggregationFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NumericalAggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * partitioned standard deviation of a dimension or measure.</p> </li> <li> <p>
      * <code>MEDIAN</code>: The median value of a dimension or measure.</p> </li> </ul>
      */
-    inline const SimpleNumericalAggregationFunction& GetSimpleNumericalAggregation() const{ return m_simpleNumericalAggregation; }
+    inline SimpleNumericalAggregationFunction GetSimpleNumericalAggregation() const { return m_simpleNumericalAggregation; }
     inline bool SimpleNumericalAggregationHasBeenSet() const { return m_simpleNumericalAggregationHasBeenSet; }
-    inline void SetSimpleNumericalAggregation(const SimpleNumericalAggregationFunction& value) { m_simpleNumericalAggregationHasBeenSet = true; m_simpleNumericalAggregation = value; }
-    inline void SetSimpleNumericalAggregation(SimpleNumericalAggregationFunction&& value) { m_simpleNumericalAggregationHasBeenSet = true; m_simpleNumericalAggregation = std::move(value); }
-    inline NumericalAggregationFunction& WithSimpleNumericalAggregation(const SimpleNumericalAggregationFunction& value) { SetSimpleNumericalAggregation(value); return *this;}
-    inline NumericalAggregationFunction& WithSimpleNumericalAggregation(SimpleNumericalAggregationFunction&& value) { SetSimpleNumericalAggregation(std::move(value)); return *this;}
+    inline void SetSimpleNumericalAggregation(SimpleNumericalAggregationFunction value) { m_simpleNumericalAggregationHasBeenSet = true; m_simpleNumericalAggregation = value; }
+    inline NumericalAggregationFunction& WithSimpleNumericalAggregation(SimpleNumericalAggregationFunction value) { SetSimpleNumericalAggregation(value); return *this;}
     ///@}
 
     ///@{
@@ -67,16 +65,16 @@ namespace Model
      * <p>An aggregation based on the percentile of values in a dimension or
      * measure.</p>
      */
-    inline const PercentileAggregation& GetPercentileAggregation() const{ return m_percentileAggregation; }
+    inline const PercentileAggregation& GetPercentileAggregation() const { return m_percentileAggregation; }
     inline bool PercentileAggregationHasBeenSet() const { return m_percentileAggregationHasBeenSet; }
-    inline void SetPercentileAggregation(const PercentileAggregation& value) { m_percentileAggregationHasBeenSet = true; m_percentileAggregation = value; }
-    inline void SetPercentileAggregation(PercentileAggregation&& value) { m_percentileAggregationHasBeenSet = true; m_percentileAggregation = std::move(value); }
-    inline NumericalAggregationFunction& WithPercentileAggregation(const PercentileAggregation& value) { SetPercentileAggregation(value); return *this;}
-    inline NumericalAggregationFunction& WithPercentileAggregation(PercentileAggregation&& value) { SetPercentileAggregation(std::move(value)); return *this;}
+    template<typename PercentileAggregationT = PercentileAggregation>
+    void SetPercentileAggregation(PercentileAggregationT&& value) { m_percentileAggregationHasBeenSet = true; m_percentileAggregation = std::forward<PercentileAggregationT>(value); }
+    template<typename PercentileAggregationT = PercentileAggregation>
+    NumericalAggregationFunction& WithPercentileAggregation(PercentileAggregationT&& value) { SetPercentileAggregation(std::forward<PercentileAggregationT>(value)); return *this;}
     ///@}
   private:
 
-    SimpleNumericalAggregationFunction m_simpleNumericalAggregation;
+    SimpleNumericalAggregationFunction m_simpleNumericalAggregation{SimpleNumericalAggregationFunction::NOT_SET};
     bool m_simpleNumericalAggregationHasBeenSet = false;
 
     PercentileAggregation m_percentileAggregation;

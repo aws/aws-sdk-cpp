@@ -36,7 +36,7 @@ namespace Model
   class ResponseInspectionStatusCode
   {
   public:
-    AWS_WAFV2_API ResponseInspectionStatusCode();
+    AWS_WAFV2_API ResponseInspectionStatusCode() = default;
     AWS_WAFV2_API ResponseInspectionStatusCode(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ResponseInspectionStatusCode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * status codes. </p> <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code>
      * </p>
      */
-    inline const Aws::Vector<int>& GetSuccessCodes() const{ return m_successCodes; }
+    inline const Aws::Vector<int>& GetSuccessCodes() const { return m_successCodes; }
     inline bool SuccessCodesHasBeenSet() const { return m_successCodesHasBeenSet; }
-    inline void SetSuccessCodes(const Aws::Vector<int>& value) { m_successCodesHasBeenSet = true; m_successCodes = value; }
-    inline void SetSuccessCodes(Aws::Vector<int>&& value) { m_successCodesHasBeenSet = true; m_successCodes = std::move(value); }
-    inline ResponseInspectionStatusCode& WithSuccessCodes(const Aws::Vector<int>& value) { SetSuccessCodes(value); return *this;}
-    inline ResponseInspectionStatusCode& WithSuccessCodes(Aws::Vector<int>&& value) { SetSuccessCodes(std::move(value)); return *this;}
+    template<typename SuccessCodesT = Aws::Vector<int>>
+    void SetSuccessCodes(SuccessCodesT&& value) { m_successCodesHasBeenSet = true; m_successCodes = std::forward<SuccessCodesT>(value); }
+    template<typename SuccessCodesT = Aws::Vector<int>>
+    ResponseInspectionStatusCode& WithSuccessCodes(SuccessCodesT&& value) { SetSuccessCodes(std::forward<SuccessCodesT>(value)); return *this;}
     inline ResponseInspectionStatusCode& AddSuccessCodes(int value) { m_successCodesHasBeenSet = true; m_successCodes.push_back(value); return *this; }
     ///@}
 
@@ -66,12 +66,12 @@ namespace Model
      * these. Each code must be unique among the success and failure status codes. </p>
      * <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
      */
-    inline const Aws::Vector<int>& GetFailureCodes() const{ return m_failureCodes; }
+    inline const Aws::Vector<int>& GetFailureCodes() const { return m_failureCodes; }
     inline bool FailureCodesHasBeenSet() const { return m_failureCodesHasBeenSet; }
-    inline void SetFailureCodes(const Aws::Vector<int>& value) { m_failureCodesHasBeenSet = true; m_failureCodes = value; }
-    inline void SetFailureCodes(Aws::Vector<int>&& value) { m_failureCodesHasBeenSet = true; m_failureCodes = std::move(value); }
-    inline ResponseInspectionStatusCode& WithFailureCodes(const Aws::Vector<int>& value) { SetFailureCodes(value); return *this;}
-    inline ResponseInspectionStatusCode& WithFailureCodes(Aws::Vector<int>&& value) { SetFailureCodes(std::move(value)); return *this;}
+    template<typename FailureCodesT = Aws::Vector<int>>
+    void SetFailureCodes(FailureCodesT&& value) { m_failureCodesHasBeenSet = true; m_failureCodes = std::forward<FailureCodesT>(value); }
+    template<typename FailureCodesT = Aws::Vector<int>>
+    ResponseInspectionStatusCode& WithFailureCodes(FailureCodesT&& value) { SetFailureCodes(std::forward<FailureCodesT>(value)); return *this;}
     inline ResponseInspectionStatusCode& AddFailureCodes(int value) { m_failureCodesHasBeenSet = true; m_failureCodes.push_back(value); return *this; }
     ///@}
   private:

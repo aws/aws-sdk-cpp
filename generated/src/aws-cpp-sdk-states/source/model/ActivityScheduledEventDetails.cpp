@@ -18,19 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ActivityScheduledEventDetails::ActivityScheduledEventDetails() : 
-    m_resourceHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_heartbeatInSeconds(0),
-    m_heartbeatInSecondsHasBeenSet(false)
-{
-}
-
 ActivityScheduledEventDetails::ActivityScheduledEventDetails(JsonView jsonValue)
-  : ActivityScheduledEventDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ActivityScheduledEventDetails& ActivityScheduledEventDetails::operator =(JsonVie
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDetails"))
   {
     m_inputDetails = jsonValue.GetObject("inputDetails");
-
     m_inputDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInt64("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("heartbeatInSeconds"))
   {
     m_heartbeatInSeconds = jsonValue.GetInt64("heartbeatInSeconds");
-
     m_heartbeatInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

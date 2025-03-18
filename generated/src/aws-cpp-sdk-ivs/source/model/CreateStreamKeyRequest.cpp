@@ -12,12 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamKeyRequest::CreateStreamKeyRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamKeyRequest::SerializePayload() const
 {
   JsonValue payload;

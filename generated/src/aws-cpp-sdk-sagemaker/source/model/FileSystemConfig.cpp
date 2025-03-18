@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FileSystemConfig::FileSystemConfig() : 
-    m_mountPathHasBeenSet(false),
-    m_defaultUid(0),
-    m_defaultUidHasBeenSet(false),
-    m_defaultGid(0),
-    m_defaultGidHasBeenSet(false)
-{
-}
-
 FileSystemConfig::FileSystemConfig(JsonView jsonValue)
-  : FileSystemConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FileSystemConfig& FileSystemConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MountPath"))
   {
     m_mountPath = jsonValue.GetString("MountPath");
-
     m_mountPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultUid"))
   {
     m_defaultUid = jsonValue.GetInteger("DefaultUid");
-
     m_defaultUidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultGid"))
   {
     m_defaultGid = jsonValue.GetInteger("DefaultGid");
-
     m_defaultGidHasBeenSet = true;
   }
-
   return *this;
 }
 

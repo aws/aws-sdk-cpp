@@ -30,7 +30,7 @@ namespace Model
   class DescribeDatasetResult
   {
   public:
-    AWS_IOTSITEWISE_API DescribeDatasetResult();
+    AWS_IOTSITEWISE_API DescribeDatasetResult() = default;
     AWS_IOTSITEWISE_API DescribeDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The ID of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
-    inline void SetDatasetId(const Aws::String& value) { m_datasetId = value; }
-    inline void SetDatasetId(Aws::String&& value) { m_datasetId = std::move(value); }
-    inline void SetDatasetId(const char* value) { m_datasetId.assign(value); }
-    inline DescribeDatasetResult& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+    inline const Aws::String& GetDatasetId() const { return m_datasetId; }
+    template<typename DatasetIdT = Aws::String>
+    void SetDatasetId(DatasetIdT&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::forward<DatasetIdT>(value); }
+    template<typename DatasetIdT = Aws::String>
+    DescribeDatasetResult& WithDatasetId(DatasetIdT&& value) { SetDatasetId(std::forward<DatasetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,50 +53,44 @@ namespace Model
      * of the dataset. The format is
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dataset/${DatasetId}</code>.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArn.assign(value); }
-    inline DescribeDatasetResult& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    DescribeDatasetResult& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetName.assign(value); }
-    inline DescribeDatasetResult& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DescribeDatasetResult& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description about the dataset, and its functionality.</p>
      */
-    inline const Aws::String& GetDatasetDescription() const{ return m_datasetDescription; }
-    inline void SetDatasetDescription(const Aws::String& value) { m_datasetDescription = value; }
-    inline void SetDatasetDescription(Aws::String&& value) { m_datasetDescription = std::move(value); }
-    inline void SetDatasetDescription(const char* value) { m_datasetDescription.assign(value); }
-    inline DescribeDatasetResult& WithDatasetDescription(const Aws::String& value) { SetDatasetDescription(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetDescription(Aws::String&& value) { SetDatasetDescription(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetDescription(const char* value) { SetDatasetDescription(value); return *this;}
+    inline const Aws::String& GetDatasetDescription() const { return m_datasetDescription; }
+    template<typename DatasetDescriptionT = Aws::String>
+    void SetDatasetDescription(DatasetDescriptionT&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::forward<DatasetDescriptionT>(value); }
+    template<typename DatasetDescriptionT = Aws::String>
+    DescribeDatasetResult& WithDatasetDescription(DatasetDescriptionT&& value) { SetDatasetDescription(std::forward<DatasetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data source for the dataset.</p>
      */
-    inline const DatasetSource& GetDatasetSource() const{ return m_datasetSource; }
-    inline void SetDatasetSource(const DatasetSource& value) { m_datasetSource = value; }
-    inline void SetDatasetSource(DatasetSource&& value) { m_datasetSource = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetSource(const DatasetSource& value) { SetDatasetSource(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetSource(DatasetSource&& value) { SetDatasetSource(std::move(value)); return *this;}
+    inline const DatasetSource& GetDatasetSource() const { return m_datasetSource; }
+    template<typename DatasetSourceT = DatasetSource>
+    void SetDatasetSource(DatasetSourceT&& value) { m_datasetSourceHasBeenSet = true; m_datasetSource = std::forward<DatasetSourceT>(value); }
+    template<typename DatasetSourceT = DatasetSource>
+    DescribeDatasetResult& WithDatasetSource(DatasetSourceT&& value) { SetDatasetSource(std::forward<DatasetSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,79 +100,85 @@ namespace Model
      * associated error message. The state is <code>ACTIVE</code> when ready to
      * use.</p>
      */
-    inline const DatasetStatus& GetDatasetStatus() const{ return m_datasetStatus; }
-    inline void SetDatasetStatus(const DatasetStatus& value) { m_datasetStatus = value; }
-    inline void SetDatasetStatus(DatasetStatus&& value) { m_datasetStatus = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetStatus(const DatasetStatus& value) { SetDatasetStatus(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetStatus(DatasetStatus&& value) { SetDatasetStatus(std::move(value)); return *this;}
+    inline const DatasetStatus& GetDatasetStatus() const { return m_datasetStatus; }
+    template<typename DatasetStatusT = DatasetStatus>
+    void SetDatasetStatus(DatasetStatusT&& value) { m_datasetStatusHasBeenSet = true; m_datasetStatus = std::forward<DatasetStatusT>(value); }
+    template<typename DatasetStatusT = DatasetStatus>
+    DescribeDatasetResult& WithDatasetStatus(DatasetStatusT&& value) { SetDatasetStatus(std::forward<DatasetStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset creation date, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetDatasetCreationDate() const{ return m_datasetCreationDate; }
-    inline void SetDatasetCreationDate(const Aws::Utils::DateTime& value) { m_datasetCreationDate = value; }
-    inline void SetDatasetCreationDate(Aws::Utils::DateTime&& value) { m_datasetCreationDate = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetCreationDate(const Aws::Utils::DateTime& value) { SetDatasetCreationDate(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetCreationDate(Aws::Utils::DateTime&& value) { SetDatasetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDatasetCreationDate() const { return m_datasetCreationDate; }
+    template<typename DatasetCreationDateT = Aws::Utils::DateTime>
+    void SetDatasetCreationDate(DatasetCreationDateT&& value) { m_datasetCreationDateHasBeenSet = true; m_datasetCreationDate = std::forward<DatasetCreationDateT>(value); }
+    template<typename DatasetCreationDateT = Aws::Utils::DateTime>
+    DescribeDatasetResult& WithDatasetCreationDate(DatasetCreationDateT&& value) { SetDatasetCreationDate(std::forward<DatasetCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the dataset was last updated, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetDatasetLastUpdateDate() const{ return m_datasetLastUpdateDate; }
-    inline void SetDatasetLastUpdateDate(const Aws::Utils::DateTime& value) { m_datasetLastUpdateDate = value; }
-    inline void SetDatasetLastUpdateDate(Aws::Utils::DateTime&& value) { m_datasetLastUpdateDate = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetLastUpdateDate(const Aws::Utils::DateTime& value) { SetDatasetLastUpdateDate(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetLastUpdateDate(Aws::Utils::DateTime&& value) { SetDatasetLastUpdateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDatasetLastUpdateDate() const { return m_datasetLastUpdateDate; }
+    template<typename DatasetLastUpdateDateT = Aws::Utils::DateTime>
+    void SetDatasetLastUpdateDate(DatasetLastUpdateDateT&& value) { m_datasetLastUpdateDateHasBeenSet = true; m_datasetLastUpdateDate = std::forward<DatasetLastUpdateDateT>(value); }
+    template<typename DatasetLastUpdateDateT = Aws::Utils::DateTime>
+    DescribeDatasetResult& WithDatasetLastUpdateDate(DatasetLastUpdateDateT&& value) { SetDatasetLastUpdateDate(std::forward<DatasetLastUpdateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetVersion() const{ return m_datasetVersion; }
-    inline void SetDatasetVersion(const Aws::String& value) { m_datasetVersion = value; }
-    inline void SetDatasetVersion(Aws::String&& value) { m_datasetVersion = std::move(value); }
-    inline void SetDatasetVersion(const char* value) { m_datasetVersion.assign(value); }
-    inline DescribeDatasetResult& WithDatasetVersion(const Aws::String& value) { SetDatasetVersion(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetVersion(Aws::String&& value) { SetDatasetVersion(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetVersion(const char* value) { SetDatasetVersion(value); return *this;}
+    inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
+    template<typename DatasetVersionT = Aws::String>
+    void SetDatasetVersion(DatasetVersionT&& value) { m_datasetVersionHasBeenSet = true; m_datasetVersion = std::forward<DatasetVersionT>(value); }
+    template<typename DatasetVersionT = Aws::String>
+    DescribeDatasetResult& WithDatasetVersion(DatasetVersionT&& value) { SetDatasetVersion(std::forward<DatasetVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetId;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_datasetArn;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::String m_datasetName;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_datasetDescription;
+    bool m_datasetDescriptionHasBeenSet = false;
 
     DatasetSource m_datasetSource;
+    bool m_datasetSourceHasBeenSet = false;
 
     DatasetStatus m_datasetStatus;
+    bool m_datasetStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_datasetCreationDate;
+    Aws::Utils::DateTime m_datasetCreationDate{};
+    bool m_datasetCreationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_datasetLastUpdateDate;
+    Aws::Utils::DateTime m_datasetLastUpdateDate{};
+    bool m_datasetLastUpdateDateHasBeenSet = false;
 
     Aws::String m_datasetVersion;
+    bool m_datasetVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

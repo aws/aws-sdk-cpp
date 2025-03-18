@@ -37,7 +37,7 @@ namespace Model
   class ToolChoice
   {
   public:
-    AWS_BEDROCKAGENT_API ToolChoice();
+    AWS_BEDROCKAGENT_API ToolChoice() = default;
     AWS_BEDROCKAGENT_API ToolChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * is generated but the results of tool use are sent back to the model to help
      * generate a response.</p>
      */
-    inline const AnyToolChoice& GetAny() const{ return m_any; }
+    inline const AnyToolChoice& GetAny() const { return m_any; }
     inline bool AnyHasBeenSet() const { return m_anyHasBeenSet; }
-    inline void SetAny(const AnyToolChoice& value) { m_anyHasBeenSet = true; m_any = value; }
-    inline void SetAny(AnyToolChoice&& value) { m_anyHasBeenSet = true; m_any = std::move(value); }
-    inline ToolChoice& WithAny(const AnyToolChoice& value) { SetAny(value); return *this;}
-    inline ToolChoice& WithAny(AnyToolChoice&& value) { SetAny(std::move(value)); return *this;}
+    template<typename AnyT = AnyToolChoice>
+    void SetAny(AnyT&& value) { m_anyHasBeenSet = true; m_any = std::forward<AnyT>(value); }
+    template<typename AnyT = AnyToolChoice>
+    ToolChoice& WithAny(AnyT&& value) { SetAny(std::forward<AnyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>Defines tools. The model automatically decides whether to call a tool or to
      * generate text instead.</p>
      */
-    inline const AutoToolChoice& GetAuto() const{ return m_auto; }
+    inline const AutoToolChoice& GetAuto() const { return m_auto; }
     inline bool AutoHasBeenSet() const { return m_autoHasBeenSet; }
-    inline void SetAuto(const AutoToolChoice& value) { m_autoHasBeenSet = true; m_auto = value; }
-    inline void SetAuto(AutoToolChoice&& value) { m_autoHasBeenSet = true; m_auto = std::move(value); }
-    inline ToolChoice& WithAuto(const AutoToolChoice& value) { SetAuto(value); return *this;}
-    inline ToolChoice& WithAuto(AutoToolChoice&& value) { SetAuto(std::move(value)); return *this;}
+    template<typename AutoT = AutoToolChoice>
+    void SetAuto(AutoT&& value) { m_autoHasBeenSet = true; m_auto = std::forward<AutoT>(value); }
+    template<typename AutoT = AutoToolChoice>
+    ToolChoice& WithAuto(AutoT&& value) { SetAuto(std::forward<AutoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * the results of tool use are sent back to the model to help generate a
      * response.</p>
      */
-    inline const SpecificToolChoice& GetTool() const{ return m_tool; }
+    inline const SpecificToolChoice& GetTool() const { return m_tool; }
     inline bool ToolHasBeenSet() const { return m_toolHasBeenSet; }
-    inline void SetTool(const SpecificToolChoice& value) { m_toolHasBeenSet = true; m_tool = value; }
-    inline void SetTool(SpecificToolChoice&& value) { m_toolHasBeenSet = true; m_tool = std::move(value); }
-    inline ToolChoice& WithTool(const SpecificToolChoice& value) { SetTool(value); return *this;}
-    inline ToolChoice& WithTool(SpecificToolChoice&& value) { SetTool(std::move(value)); return *this;}
+    template<typename ToolT = SpecificToolChoice>
+    void SetTool(ToolT&& value) { m_toolHasBeenSet = true; m_tool = std::forward<ToolT>(value); }
+    template<typename ToolT = SpecificToolChoice>
+    ToolChoice& WithTool(ToolT&& value) { SetTool(std::forward<ToolT>(value)); return *this;}
     ///@}
   private:
 

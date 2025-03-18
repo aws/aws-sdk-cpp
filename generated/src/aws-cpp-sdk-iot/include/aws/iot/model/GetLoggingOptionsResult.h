@@ -34,7 +34,7 @@ namespace Model
   class GetLoggingOptionsResult
   {
   public:
-    AWS_IOT_API GetLoggingOptionsResult();
+    AWS_IOT_API GetLoggingOptionsResult() = default;
     AWS_IOT_API GetLoggingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,43 +43,40 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline GetLoggingOptionsResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GetLoggingOptionsResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GetLoggingOptionsResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GetLoggingOptionsResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logging level.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
-    inline GetLoggingOptionsResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline GetLoggingOptionsResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline GetLoggingOptionsResult& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLoggingOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLoggingOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLoggingOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLoggingOptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
+    bool m_logLevelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class DescribeScheduledActionsResult
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult() = default;
     AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the scheduled actions.</p>
      */
-    inline const Aws::Vector<ScheduledAction>& GetScheduledActions() const{ return m_scheduledActions; }
-    inline void SetScheduledActions(const Aws::Vector<ScheduledAction>& value) { m_scheduledActions = value; }
-    inline void SetScheduledActions(Aws::Vector<ScheduledAction>&& value) { m_scheduledActions = std::move(value); }
-    inline DescribeScheduledActionsResult& WithScheduledActions(const Aws::Vector<ScheduledAction>& value) { SetScheduledActions(value); return *this;}
-    inline DescribeScheduledActionsResult& WithScheduledActions(Aws::Vector<ScheduledAction>&& value) { SetScheduledActions(std::move(value)); return *this;}
-    inline DescribeScheduledActionsResult& AddScheduledActions(const ScheduledAction& value) { m_scheduledActions.push_back(value); return *this; }
-    inline DescribeScheduledActionsResult& AddScheduledActions(ScheduledAction&& value) { m_scheduledActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScheduledAction>& GetScheduledActions() const { return m_scheduledActions; }
+    template<typename ScheduledActionsT = Aws::Vector<ScheduledAction>>
+    void SetScheduledActions(ScheduledActionsT&& value) { m_scheduledActionsHasBeenSet = true; m_scheduledActions = std::forward<ScheduledActionsT>(value); }
+    template<typename ScheduledActionsT = Aws::Vector<ScheduledAction>>
+    DescribeScheduledActionsResult& WithScheduledActions(ScheduledActionsT&& value) { SetScheduledActions(std::forward<ScheduledActionsT>(value)); return *this;}
+    template<typename ScheduledActionsT = ScheduledAction>
+    DescribeScheduledActionsResult& AddScheduledActions(ScheduledActionsT&& value) { m_scheduledActionsHasBeenSet = true; m_scheduledActions.emplace_back(std::forward<ScheduledActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeScheduledActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScheduledActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScheduledActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScheduledActionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeScheduledActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeScheduledActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeScheduledActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeScheduledActionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScheduledAction> m_scheduledActions;
+    bool m_scheduledActionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

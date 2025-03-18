@@ -31,7 +31,7 @@ namespace Model
   class ApiKeyFilter
   {
   public:
-    AWS_LOCATIONSERVICE_API ApiKeyFilter();
+    AWS_LOCATIONSERVICE_API ApiKeyFilter() = default;
     AWS_LOCATIONSERVICE_API ApiKeyFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ApiKeyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
      */
-    inline const Status& GetKeyStatus() const{ return m_keyStatus; }
+    inline Status GetKeyStatus() const { return m_keyStatus; }
     inline bool KeyStatusHasBeenSet() const { return m_keyStatusHasBeenSet; }
-    inline void SetKeyStatus(const Status& value) { m_keyStatusHasBeenSet = true; m_keyStatus = value; }
-    inline void SetKeyStatus(Status&& value) { m_keyStatusHasBeenSet = true; m_keyStatus = std::move(value); }
-    inline ApiKeyFilter& WithKeyStatus(const Status& value) { SetKeyStatus(value); return *this;}
-    inline ApiKeyFilter& WithKeyStatus(Status&& value) { SetKeyStatus(std::move(value)); return *this;}
+    inline void SetKeyStatus(Status value) { m_keyStatusHasBeenSet = true; m_keyStatus = value; }
+    inline ApiKeyFilter& WithKeyStatus(Status value) { SetKeyStatus(value); return *this;}
     ///@}
   private:
 
-    Status m_keyStatus;
+    Status m_keyStatus{Status::NOT_SET};
     bool m_keyStatusHasBeenSet = false;
   };
 

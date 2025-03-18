@@ -32,7 +32,7 @@ namespace Model
   class UpdateCACertificateParams
   {
   public:
-    AWS_IOT_API UpdateCACertificateParams();
+    AWS_IOT_API UpdateCACertificateParams() = default;
     AWS_IOT_API UpdateCACertificateParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API UpdateCACertificateParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
-    inline const CACertificateUpdateAction& GetAction() const{ return m_action; }
+    inline CACertificateUpdateAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const CACertificateUpdateAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(CACertificateUpdateAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UpdateCACertificateParams& WithAction(const CACertificateUpdateAction& value) { SetAction(value); return *this;}
-    inline UpdateCACertificateParams& WithAction(CACertificateUpdateAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(CACertificateUpdateAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UpdateCACertificateParams& WithAction(CACertificateUpdateAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    CACertificateUpdateAction m_action;
+    CACertificateUpdateAction m_action{CACertificateUpdateAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

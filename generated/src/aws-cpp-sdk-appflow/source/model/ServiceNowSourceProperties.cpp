@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ServiceNowSourceProperties::ServiceNowSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 ServiceNowSourceProperties::ServiceNowSourceProperties(JsonView jsonValue)
-  : ServiceNowSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceNowSourceProperties& ServiceNowSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

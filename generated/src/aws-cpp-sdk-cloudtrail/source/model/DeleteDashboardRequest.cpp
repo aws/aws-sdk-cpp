@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDashboardRequest::DeleteDashboardRequest() : 
-    m_dashboardIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDashboardRequest::SerializePayload() const
 {
   JsonValue payload;

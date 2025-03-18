@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddStreamGroupLocationsResult::AddStreamGroupLocationsResult()
-{
-}
-
 AddStreamGroupLocationsResult::AddStreamGroupLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AddStreamGroupLocationsResult& AddStreamGroupLocationsResult::operator =(const A
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
+    m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locations"))
   {
     Aws::Utils::Array<JsonView> locationsJsonList = jsonValue.GetArray("Locations");
@@ -42,14 +37,15 @@ AddStreamGroupLocationsResult& AddStreamGroupLocationsResult::operator =(const A
     {
       m_locations.push_back(locationsJsonList[locationsIndex].AsObject());
     }
+    m_locationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

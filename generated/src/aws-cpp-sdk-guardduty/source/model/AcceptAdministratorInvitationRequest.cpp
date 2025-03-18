@@ -12,13 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptAdministratorInvitationRequest::AcceptAdministratorInvitationRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_administratorIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptAdministratorInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

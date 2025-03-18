@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QuerySpatialCoverage::QuerySpatialCoverage() : 
-    m_maxHasBeenSet(false)
-{
-}
-
 QuerySpatialCoverage::QuerySpatialCoverage(JsonView jsonValue)
-  : QuerySpatialCoverage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QuerySpatialCoverage& QuerySpatialCoverage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetObject("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

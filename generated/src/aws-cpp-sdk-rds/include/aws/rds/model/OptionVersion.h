@@ -32,7 +32,7 @@ namespace Model
   class OptionVersion
   {
   public:
-    AWS_RDS_API OptionVersion();
+    AWS_RDS_API OptionVersion() = default;
     AWS_RDS_API OptionVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API OptionVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The version of the option.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline OptionVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline OptionVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline OptionVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    OptionVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the version is the default version of the option.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline OptionVersion& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
   };
 

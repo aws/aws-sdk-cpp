@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRealtimeEndpointRequest::CreateRealtimeEndpointRequest() : 
-    m_mLModelIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateRealtimeEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

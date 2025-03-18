@@ -33,7 +33,7 @@ namespace Model
   class RerankSource
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankSource();
+    AWS_BEDROCKAGENTRUNTIME_API RerankSource() = default;
     AWS_BEDROCKAGENTRUNTIME_API RerankSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RerankSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>Contains an inline definition of a source for reranking.</p>
      */
-    inline const RerankDocument& GetInlineDocumentSource() const{ return m_inlineDocumentSource; }
+    inline const RerankDocument& GetInlineDocumentSource() const { return m_inlineDocumentSource; }
     inline bool InlineDocumentSourceHasBeenSet() const { return m_inlineDocumentSourceHasBeenSet; }
-    inline void SetInlineDocumentSource(const RerankDocument& value) { m_inlineDocumentSourceHasBeenSet = true; m_inlineDocumentSource = value; }
-    inline void SetInlineDocumentSource(RerankDocument&& value) { m_inlineDocumentSourceHasBeenSet = true; m_inlineDocumentSource = std::move(value); }
-    inline RerankSource& WithInlineDocumentSource(const RerankDocument& value) { SetInlineDocumentSource(value); return *this;}
-    inline RerankSource& WithInlineDocumentSource(RerankDocument&& value) { SetInlineDocumentSource(std::move(value)); return *this;}
+    template<typename InlineDocumentSourceT = RerankDocument>
+    void SetInlineDocumentSource(InlineDocumentSourceT&& value) { m_inlineDocumentSourceHasBeenSet = true; m_inlineDocumentSource = std::forward<InlineDocumentSourceT>(value); }
+    template<typename InlineDocumentSourceT = RerankDocument>
+    RerankSource& WithInlineDocumentSource(InlineDocumentSourceT&& value) { SetInlineDocumentSource(std::forward<InlineDocumentSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the source.</p>
      */
-    inline const RerankSourceType& GetType() const{ return m_type; }
+    inline RerankSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RerankSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RerankSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RerankSource& WithType(const RerankSourceType& value) { SetType(value); return *this;}
-    inline RerankSource& WithType(RerankSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RerankSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RerankSource& WithType(RerankSourceType value) { SetType(value); return *this;}
     ///@}
   private:
 
     RerankDocument m_inlineDocumentSource;
     bool m_inlineDocumentSourceHasBeenSet = false;
 
-    RerankSourceType m_type;
+    RerankSourceType m_type{RerankSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

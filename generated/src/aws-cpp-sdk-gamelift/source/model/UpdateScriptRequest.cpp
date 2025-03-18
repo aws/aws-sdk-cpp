@@ -13,15 +13,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScriptRequest::UpdateScriptRequest() : 
-    m_scriptIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_zipFileHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScriptRequest::SerializePayload() const
 {
   JsonValue payload;

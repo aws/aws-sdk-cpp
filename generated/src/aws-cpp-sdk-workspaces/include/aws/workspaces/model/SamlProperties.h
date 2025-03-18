@@ -34,7 +34,7 @@ namespace Model
   class SamlProperties
   {
   public:
-    AWS_WORKSPACES_API SamlProperties();
+    AWS_WORKSPACES_API SamlProperties() = default;
     AWS_WORKSPACES_API SamlProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API SamlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * prevent clients that do not support SAML 2.0 authentication from connecting as
      * if SAML 2.0 authentication was disabled.</p> </li> </ul>
      */
-    inline const SamlStatusEnum& GetStatus() const{ return m_status; }
+    inline SamlStatusEnum GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SamlStatusEnum& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SamlStatusEnum&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SamlProperties& WithStatus(const SamlStatusEnum& value) { SetStatus(value); return *this;}
-    inline SamlProperties& WithStatus(SamlStatusEnum&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SamlStatusEnum value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SamlProperties& WithStatus(SamlStatusEnum value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * navigate to in their web browser in order to federate from the IdP and directly
      * access the application, without any SAML 2.0 service provider (SP) bindings.</p>
      */
-    inline const Aws::String& GetUserAccessUrl() const{ return m_userAccessUrl; }
+    inline const Aws::String& GetUserAccessUrl() const { return m_userAccessUrl; }
     inline bool UserAccessUrlHasBeenSet() const { return m_userAccessUrlHasBeenSet; }
-    inline void SetUserAccessUrl(const Aws::String& value) { m_userAccessUrlHasBeenSet = true; m_userAccessUrl = value; }
-    inline void SetUserAccessUrl(Aws::String&& value) { m_userAccessUrlHasBeenSet = true; m_userAccessUrl = std::move(value); }
-    inline void SetUserAccessUrl(const char* value) { m_userAccessUrlHasBeenSet = true; m_userAccessUrl.assign(value); }
-    inline SamlProperties& WithUserAccessUrl(const Aws::String& value) { SetUserAccessUrl(value); return *this;}
-    inline SamlProperties& WithUserAccessUrl(Aws::String&& value) { SetUserAccessUrl(std::move(value)); return *this;}
-    inline SamlProperties& WithUserAccessUrl(const char* value) { SetUserAccessUrl(value); return *this;}
+    template<typename UserAccessUrlT = Aws::String>
+    void SetUserAccessUrl(UserAccessUrlT&& value) { m_userAccessUrlHasBeenSet = true; m_userAccessUrl = std::forward<UserAccessUrlT>(value); }
+    template<typename UserAccessUrlT = Aws::String>
+    SamlProperties& WithUserAccessUrl(UserAccessUrlT&& value) { SetUserAccessUrl(std::forward<UserAccessUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,18 +84,16 @@ namespace Model
      * with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay
      * state URL. Consult your IdP documentation for more information.</p>
      */
-    inline const Aws::String& GetRelayStateParameterName() const{ return m_relayStateParameterName; }
+    inline const Aws::String& GetRelayStateParameterName() const { return m_relayStateParameterName; }
     inline bool RelayStateParameterNameHasBeenSet() const { return m_relayStateParameterNameHasBeenSet; }
-    inline void SetRelayStateParameterName(const Aws::String& value) { m_relayStateParameterNameHasBeenSet = true; m_relayStateParameterName = value; }
-    inline void SetRelayStateParameterName(Aws::String&& value) { m_relayStateParameterNameHasBeenSet = true; m_relayStateParameterName = std::move(value); }
-    inline void SetRelayStateParameterName(const char* value) { m_relayStateParameterNameHasBeenSet = true; m_relayStateParameterName.assign(value); }
-    inline SamlProperties& WithRelayStateParameterName(const Aws::String& value) { SetRelayStateParameterName(value); return *this;}
-    inline SamlProperties& WithRelayStateParameterName(Aws::String&& value) { SetRelayStateParameterName(std::move(value)); return *this;}
-    inline SamlProperties& WithRelayStateParameterName(const char* value) { SetRelayStateParameterName(value); return *this;}
+    template<typename RelayStateParameterNameT = Aws::String>
+    void SetRelayStateParameterName(RelayStateParameterNameT&& value) { m_relayStateParameterNameHasBeenSet = true; m_relayStateParameterName = std::forward<RelayStateParameterNameT>(value); }
+    template<typename RelayStateParameterNameT = Aws::String>
+    SamlProperties& WithRelayStateParameterName(RelayStateParameterNameT&& value) { SetRelayStateParameterName(std::forward<RelayStateParameterNameT>(value)); return *this;}
     ///@}
   private:
 
-    SamlStatusEnum m_status;
+    SamlStatusEnum m_status{SamlStatusEnum::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_userAccessUrl;

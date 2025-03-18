@@ -22,7 +22,7 @@ namespace Model
   class UpdateRevealConfigurationRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateRevealConfigurationRequest();
+    AWS_MACIE2_API UpdateRevealConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,24 @@ namespace Model
      * <p>The KMS key to use to encrypt the sensitive data, and the status of the
      * configuration for the Amazon Macie account.</p>
      */
-    inline const RevealConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const RevealConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const RevealConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(RevealConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateRevealConfigurationRequest& WithConfiguration(const RevealConfiguration& value) { SetConfiguration(value); return *this;}
-    inline UpdateRevealConfigurationRequest& WithConfiguration(RevealConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = RevealConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = RevealConfiguration>
+    UpdateRevealConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
-    inline const UpdateRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
+    inline const UpdateRetrievalConfiguration& GetRetrievalConfiguration() const { return m_retrievalConfiguration; }
     inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
-    inline void SetRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
-    inline void SetRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
-    inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
-    inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
+    template<typename RetrievalConfigurationT = UpdateRetrievalConfiguration>
+    void SetRetrievalConfiguration(RetrievalConfigurationT&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::forward<RetrievalConfigurationT>(value); }
+    template<typename RetrievalConfigurationT = UpdateRetrievalConfiguration>
+    UpdateRevealConfigurationRequest& WithRetrievalConfiguration(RetrievalConfigurationT&& value) { SetRetrievalConfiguration(std::forward<RetrievalConfigurationT>(value)); return *this;}
     ///@}
   private:
 

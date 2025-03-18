@@ -31,7 +31,7 @@ namespace Model
   class InvalidationBatch
   {
   public:
-    AWS_CLOUDFRONT_API InvalidationBatch();
+    AWS_CLOUDFRONT_API InvalidationBatch() = default;
     AWS_CLOUDFRONT_API InvalidationBatch(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API InvalidationBatch& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const Paths& GetPaths() const{ return m_paths; }
+    inline const Paths& GetPaths() const { return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
-    inline void SetPaths(const Paths& value) { m_pathsHasBeenSet = true; m_paths = value; }
-    inline void SetPaths(Paths&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
-    inline InvalidationBatch& WithPaths(const Paths& value) { SetPaths(value); return *this;}
-    inline InvalidationBatch& WithPaths(Paths&& value) { SetPaths(std::move(value)); return *this;}
+    template<typename PathsT = Paths>
+    void SetPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths = std::forward<PathsT>(value); }
+    template<typename PathsT = Paths>
+    InvalidationBatch& WithPaths(PathsT&& value) { SetPaths(std::forward<PathsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +72,12 @@ namespace Model
      * from the original request, CloudFront returns an
      * <code>InvalidationBatchAlreadyExists</code> error.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline InvalidationBatch& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline InvalidationBatch& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline InvalidationBatch& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    InvalidationBatch& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
   private:
 

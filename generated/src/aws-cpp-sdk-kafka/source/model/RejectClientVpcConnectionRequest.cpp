@@ -12,12 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectClientVpcConnectionRequest::RejectClientVpcConnectionRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_vpcConnectionArnHasBeenSet(false)
-{
-}
-
 Aws::String RejectClientVpcConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

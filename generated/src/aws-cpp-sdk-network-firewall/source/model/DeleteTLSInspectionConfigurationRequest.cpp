@@ -12,12 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTLSInspectionConfigurationRequest::DeleteTLSInspectionConfigurationRequest() : 
-    m_tLSInspectionConfigurationArnHasBeenSet(false),
-    m_tLSInspectionConfigurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTLSInspectionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

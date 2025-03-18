@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchSegmentJobOutput::BatchSegmentJobOutput() : 
-    m_s3DataDestinationHasBeenSet(false)
-{
-}
-
 BatchSegmentJobOutput::BatchSegmentJobOutput(JsonView jsonValue)
-  : BatchSegmentJobOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchSegmentJobOutput& BatchSegmentJobOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataDestination"))
   {
     m_s3DataDestination = jsonValue.GetObject("s3DataDestination");
-
     m_s3DataDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

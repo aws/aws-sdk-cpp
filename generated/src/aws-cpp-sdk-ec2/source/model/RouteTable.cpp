@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RouteTable::RouteTable() : 
-    m_associationsHasBeenSet(false),
-    m_propagatingVgwsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 RouteTable::RouteTable(const XmlNode& xmlNode)
-  : RouteTable()
 {
   *this = xmlNode;
 }
@@ -47,6 +35,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
@@ -59,6 +48,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     if(!propagatingVgwsNode.IsNull())
     {
       XmlNode propagatingVgwsMember = propagatingVgwsNode.FirstChild("item");
+      m_propagatingVgwsHasBeenSet = !propagatingVgwsMember.IsNull();
       while(!propagatingVgwsMember.IsNull())
       {
         m_propagatingVgws.push_back(propagatingVgwsMember);
@@ -77,6 +67,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
@@ -89,6 +80,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

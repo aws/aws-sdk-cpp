@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCoreNetworkChangeEventsRequest::GetCoreNetworkChangeEventsRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCoreNetworkChangeEventsRequest::SerializePayload() const
 {
   return {};

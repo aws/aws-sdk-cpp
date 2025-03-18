@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSafetyRuleRequest::DeleteSafetyRuleRequest() : 
-    m_safetyRuleArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSafetyRuleRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class RegionalConfiguration
   {
   public:
-    AWS_ELASTICACHE_API RegionalConfiguration();
+    AWS_ELASTICACHE_API RegionalConfiguration() = default;
     AWS_ELASTICACHE_API RegionalConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API RegionalConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of the secondary cluster</p>
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline RegionalConfiguration& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline RegionalConfiguration& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline RegionalConfiguration& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    RegionalConfiguration& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon region where the cluster is stored</p>
      */
-    inline const Aws::String& GetReplicationGroupRegion() const{ return m_replicationGroupRegion; }
+    inline const Aws::String& GetReplicationGroupRegion() const { return m_replicationGroupRegion; }
     inline bool ReplicationGroupRegionHasBeenSet() const { return m_replicationGroupRegionHasBeenSet; }
-    inline void SetReplicationGroupRegion(const Aws::String& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = value; }
-    inline void SetReplicationGroupRegion(Aws::String&& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = std::move(value); }
-    inline void SetReplicationGroupRegion(const char* value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion.assign(value); }
-    inline RegionalConfiguration& WithReplicationGroupRegion(const Aws::String& value) { SetReplicationGroupRegion(value); return *this;}
-    inline RegionalConfiguration& WithReplicationGroupRegion(Aws::String&& value) { SetReplicationGroupRegion(std::move(value)); return *this;}
-    inline RegionalConfiguration& WithReplicationGroupRegion(const char* value) { SetReplicationGroupRegion(value); return *this;}
+    template<typename ReplicationGroupRegionT = Aws::String>
+    void SetReplicationGroupRegion(ReplicationGroupRegionT&& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = std::forward<ReplicationGroupRegionT>(value); }
+    template<typename ReplicationGroupRegionT = Aws::String>
+    RegionalConfiguration& WithReplicationGroupRegion(ReplicationGroupRegionT&& value) { SetReplicationGroupRegion(std::forward<ReplicationGroupRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,14 @@ namespace Model
      * <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the
      * configuration of a node group in the resharded cluster. </p>
      */
-    inline const Aws::Vector<ReshardingConfiguration>& GetReshardingConfiguration() const{ return m_reshardingConfiguration; }
+    inline const Aws::Vector<ReshardingConfiguration>& GetReshardingConfiguration() const { return m_reshardingConfiguration; }
     inline bool ReshardingConfigurationHasBeenSet() const { return m_reshardingConfigurationHasBeenSet; }
-    inline void SetReshardingConfiguration(const Aws::Vector<ReshardingConfiguration>& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration = value; }
-    inline void SetReshardingConfiguration(Aws::Vector<ReshardingConfiguration>&& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration = std::move(value); }
-    inline RegionalConfiguration& WithReshardingConfiguration(const Aws::Vector<ReshardingConfiguration>& value) { SetReshardingConfiguration(value); return *this;}
-    inline RegionalConfiguration& WithReshardingConfiguration(Aws::Vector<ReshardingConfiguration>&& value) { SetReshardingConfiguration(std::move(value)); return *this;}
-    inline RegionalConfiguration& AddReshardingConfiguration(const ReshardingConfiguration& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration.push_back(value); return *this; }
-    inline RegionalConfiguration& AddReshardingConfiguration(ReshardingConfiguration&& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration.push_back(std::move(value)); return *this; }
+    template<typename ReshardingConfigurationT = Aws::Vector<ReshardingConfiguration>>
+    void SetReshardingConfiguration(ReshardingConfigurationT&& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration = std::forward<ReshardingConfigurationT>(value); }
+    template<typename ReshardingConfigurationT = Aws::Vector<ReshardingConfiguration>>
+    RegionalConfiguration& WithReshardingConfiguration(ReshardingConfigurationT&& value) { SetReshardingConfiguration(std::forward<ReshardingConfigurationT>(value)); return *this;}
+    template<typename ReshardingConfigurationT = ReshardingConfiguration>
+    RegionalConfiguration& AddReshardingConfiguration(ReshardingConfigurationT&& value) { m_reshardingConfigurationHasBeenSet = true; m_reshardingConfiguration.emplace_back(std::forward<ReshardingConfigurationT>(value)); return *this; }
     ///@}
   private:
 

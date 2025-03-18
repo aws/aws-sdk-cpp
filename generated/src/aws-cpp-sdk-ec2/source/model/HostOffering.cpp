@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HostOffering::HostOffering() : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false)
-{
-}
-
 HostOffering::HostOffering(const XmlNode& xmlNode)
-  : HostOffering()
 {
   *this = xmlNode;
 }
@@ -49,7 +34,7 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
@@ -79,7 +64,7 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
     XmlNode paymentOptionNode = resultNode.FirstChild("paymentOption");
     if(!paymentOptionNode.IsNull())
     {
-      m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(paymentOptionNode.GetText()).c_str()).c_str());
+      m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(paymentOptionNode.GetText()).c_str()));
       m_paymentOptionHasBeenSet = true;
     }
     XmlNode upfrontPriceNode = resultNode.FirstChild("upfrontPrice");

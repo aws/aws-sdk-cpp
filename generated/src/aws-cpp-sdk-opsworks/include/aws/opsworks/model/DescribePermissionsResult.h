@@ -35,7 +35,7 @@ namespace Model
   class DescribePermissionsResult
   {
   public:
-    AWS_OPSWORKS_API DescribePermissionsResult();
+    AWS_OPSWORKS_API DescribePermissionsResult() = default;
     AWS_OPSWORKS_API DescribePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -51,30 +51,30 @@ namespace Model
      * ID and an IAM ARN, the array contains a single <code>Permission</code> object
      * with permissions for the specified stack and IAM ARN.</p> </li> </ul>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = std::move(value); }
-    inline DescribePermissionsResult& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline DescribePermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline DescribePermissionsResult& AddPermissions(const Permission& value) { m_permissions.push_back(value); return *this; }
-    inline DescribePermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    DescribePermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = Permission>
+    DescribePermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Permission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

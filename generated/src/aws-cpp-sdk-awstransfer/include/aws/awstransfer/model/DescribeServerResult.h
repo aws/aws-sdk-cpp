@@ -28,7 +28,7 @@ namespace Model
   class DescribeServerResult
   {
   public:
-    AWS_TRANSFER_API DescribeServerResult();
+    AWS_TRANSFER_API DescribeServerResult() = default;
     AWS_TRANSFER_API DescribeServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API DescribeServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An array containing the properties of a server with the <code>ServerID</code>
      * you specified.</p>
      */
-    inline const DescribedServer& GetServer() const{ return m_server; }
-    inline void SetServer(const DescribedServer& value) { m_server = value; }
-    inline void SetServer(DescribedServer&& value) { m_server = std::move(value); }
-    inline DescribeServerResult& WithServer(const DescribedServer& value) { SetServer(value); return *this;}
-    inline DescribeServerResult& WithServer(DescribedServer&& value) { SetServer(std::move(value)); return *this;}
+    inline const DescribedServer& GetServer() const { return m_server; }
+    template<typename ServerT = DescribedServer>
+    void SetServer(ServerT&& value) { m_serverHasBeenSet = true; m_server = std::forward<ServerT>(value); }
+    template<typename ServerT = DescribedServer>
+    DescribeServerResult& WithServer(ServerT&& value) { SetServer(std::forward<ServerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeServerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DescribedServer m_server;
+    bool m_serverHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

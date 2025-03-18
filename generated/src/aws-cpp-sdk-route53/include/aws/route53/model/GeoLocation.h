@@ -31,7 +31,7 @@ namespace Model
   class GeoLocation
   {
   public:
-    AWS_ROUTE53_API GeoLocation();
+    AWS_ROUTE53_API GeoLocation() = default;
     AWS_ROUTE53_API GeoLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API GeoLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
      * <code>InvalidInput</code> error.</p>
      */
-    inline const Aws::String& GetContinentCode() const{ return m_continentCode; }
+    inline const Aws::String& GetContinentCode() const { return m_continentCode; }
     inline bool ContinentCodeHasBeenSet() const { return m_continentCodeHasBeenSet; }
-    inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
-    inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::move(value); }
-    inline void SetContinentCode(const char* value) { m_continentCodeHasBeenSet = true; m_continentCode.assign(value); }
-    inline GeoLocation& WithContinentCode(const Aws::String& value) { SetContinentCode(value); return *this;}
-    inline GeoLocation& WithContinentCode(Aws::String&& value) { SetContinentCode(std::move(value)); return *this;}
-    inline GeoLocation& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
+    template<typename ContinentCodeT = Aws::String>
+    void SetContinentCode(ContinentCodeT&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::forward<ContinentCodeT>(value); }
+    template<typename ContinentCodeT = Aws::String>
+    GeoLocation& WithContinentCode(ContinentCodeT&& value) { SetContinentCode(std::forward<ContinentCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * alpha-2</a>.</p> <p>Route 53 also supports the country code <b>UA</b> for
      * Ukraine.</p>
      */
-    inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
+    inline const Aws::String& GetCountryCode() const { return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-    inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-    inline GeoLocation& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-    inline GeoLocation& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-    inline GeoLocation& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+    template<typename CountryCodeT = Aws::String>
+    void SetCountryCode(CountryCodeT&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::forward<CountryCodeT>(value); }
+    template<typename CountryCodeT = Aws::String>
+    GeoLocation& WithCountryCode(CountryCodeT&& value) { SetCountryCode(std::forward<CountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>If you specify <code>subdivisioncode</code>, you must also specify
      * <code>US</code> for <code>CountryCode</code>. </p>
      */
-    inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
+    inline const Aws::String& GetSubdivisionCode() const { return m_subdivisionCode; }
     inline bool SubdivisionCodeHasBeenSet() const { return m_subdivisionCodeHasBeenSet; }
-    inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
-    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
-    inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
-    inline GeoLocation& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
-    inline GeoLocation& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
-    inline GeoLocation& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
+    template<typename SubdivisionCodeT = Aws::String>
+    void SetSubdivisionCode(SubdivisionCodeT&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::forward<SubdivisionCodeT>(value); }
+    template<typename SubdivisionCodeT = Aws::String>
+    GeoLocation& WithSubdivisionCode(SubdivisionCodeT&& value) { SetSubdivisionCode(std::forward<SubdivisionCodeT>(value)); return *this;}
     ///@}
   private:
 

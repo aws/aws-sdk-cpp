@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTransitGatewayMulticastDomainResponse::DeleteTransitGatewayMulticastDomainResponse()
-{
-}
-
 DeleteTransitGatewayMulticastDomainResponse::DeleteTransitGatewayMulticastDomainResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteTransitGatewayMulticastDomainResponse& DeleteTransitGatewayMulticastDomain
     if(!transitGatewayMulticastDomainNode.IsNull())
     {
       m_transitGatewayMulticastDomain = transitGatewayMulticastDomainNode;
+      m_transitGatewayMulticastDomainHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteTransitGatewayMulticastDomainResponse& DeleteTransitGatewayMulticastDomain
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTransitGatewayMulticastDomainResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

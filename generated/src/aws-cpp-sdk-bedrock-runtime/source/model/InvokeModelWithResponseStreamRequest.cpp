@@ -15,19 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeModelWithResponseStreamRequest::InvokeModelWithResponseStreamRequest() : 
-    m_acceptHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_trace(Trace::NOT_SET),
-    m_traceHasBeenSet(false),
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET),
-    m_performanceConfigLatencyHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection InvokeModelWithResponseStreamRequest::GetRequestSpecificHeaders() const

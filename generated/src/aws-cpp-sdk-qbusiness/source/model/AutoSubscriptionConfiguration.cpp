@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AutoSubscriptionConfiguration::AutoSubscriptionConfiguration() : 
-    m_autoSubscribe(AutoSubscriptionStatus::NOT_SET),
-    m_autoSubscribeHasBeenSet(false),
-    m_defaultSubscriptionType(SubscriptionType::NOT_SET),
-    m_defaultSubscriptionTypeHasBeenSet(false)
-{
-}
-
 AutoSubscriptionConfiguration::AutoSubscriptionConfiguration(JsonView jsonValue)
-  : AutoSubscriptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AutoSubscriptionConfiguration& AutoSubscriptionConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("autoSubscribe"))
   {
     m_autoSubscribe = AutoSubscriptionStatusMapper::GetAutoSubscriptionStatusForName(jsonValue.GetString("autoSubscribe"));
-
     m_autoSubscribeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultSubscriptionType"))
   {
     m_defaultSubscriptionType = SubscriptionTypeMapper::GetSubscriptionTypeForName(jsonValue.GetString("defaultSubscriptionType"));
-
     m_defaultSubscriptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

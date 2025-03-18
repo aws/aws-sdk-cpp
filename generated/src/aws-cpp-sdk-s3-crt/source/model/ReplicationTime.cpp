@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ReplicationTime::ReplicationTime() : 
-    m_status(ReplicationTimeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 ReplicationTime::ReplicationTime(const XmlNode& xmlNode)
-  : ReplicationTime()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ ReplicationTime& ReplicationTime::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ReplicationTimeStatusMapper::GetReplicationTimeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ReplicationTimeStatusMapper::GetReplicationTimeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode timeNode = resultNode.FirstChild("Time");

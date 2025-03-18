@@ -18,20 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-MaintenanceStartTime::MaintenanceStartTime() : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(0),
-    m_dayOfWeekHasBeenSet(false),
-    m_hourOfDay(0),
-    m_hourOfDayHasBeenSet(false),
-    m_minuteOfHour(0),
-    m_minuteOfHourHasBeenSet(false)
-{
-}
-
 MaintenanceStartTime::MaintenanceStartTime(JsonView jsonValue)
-  : MaintenanceStartTime()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MaintenanceStartTime& MaintenanceStartTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetInteger("DayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = jsonValue.GetInteger("DayOfWeek");
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HourOfDay"))
   {
     m_hourOfDay = jsonValue.GetInteger("HourOfDay");
-
     m_hourOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinuteOfHour"))
   {
     m_minuteOfHour = jsonValue.GetInteger("MinuteOfHour");
-
     m_minuteOfHourHasBeenSet = true;
   }
-
   return *this;
 }
 

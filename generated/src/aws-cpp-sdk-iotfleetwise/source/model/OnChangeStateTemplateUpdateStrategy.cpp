@@ -18,10 +18,6 @@ namespace IoTFleetWise
 namespace Model
 {
 
-OnChangeStateTemplateUpdateStrategy::OnChangeStateTemplateUpdateStrategy()
-{
-}
-
 OnChangeStateTemplateUpdateStrategy::OnChangeStateTemplateUpdateStrategy(JsonView jsonValue)
 {
   *this = jsonValue;

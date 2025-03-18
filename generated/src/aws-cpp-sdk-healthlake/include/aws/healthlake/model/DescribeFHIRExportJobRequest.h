@@ -21,7 +21,7 @@ namespace Model
   class DescribeFHIRExportJobRequest : public HealthLakeRequest
   {
   public:
-    AWS_HEALTHLAKE_API DescribeFHIRExportJobRequest();
+    AWS_HEALTHLAKE_API DescribeFHIRExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The AWS generated ID for the data store from which files are being exported
      * from for an export job.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-    inline DescribeFHIRExportJobRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline DescribeFHIRExportJobRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline DescribeFHIRExportJobRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    DescribeFHIRExportJobRequest& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS generated ID for an export job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline DescribeFHIRExportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DescribeFHIRExportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DescribeFHIRExportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DescribeFHIRExportJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class UpdateParticipantRoleConfigChannelInfo
   {
   public:
-    AWS_CONNECT_API UpdateParticipantRoleConfigChannelInfo();
+    AWS_CONNECT_API UpdateParticipantRoleConfigChannelInfo() = default;
     AWS_CONNECT_API UpdateParticipantRoleConfigChannelInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UpdateParticipantRoleConfigChannelInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Configuration information for the chat participant role.</p>
      */
-    inline const ChatParticipantRoleConfig& GetChat() const{ return m_chat; }
+    inline const ChatParticipantRoleConfig& GetChat() const { return m_chat; }
     inline bool ChatHasBeenSet() const { return m_chatHasBeenSet; }
-    inline void SetChat(const ChatParticipantRoleConfig& value) { m_chatHasBeenSet = true; m_chat = value; }
-    inline void SetChat(ChatParticipantRoleConfig&& value) { m_chatHasBeenSet = true; m_chat = std::move(value); }
-    inline UpdateParticipantRoleConfigChannelInfo& WithChat(const ChatParticipantRoleConfig& value) { SetChat(value); return *this;}
-    inline UpdateParticipantRoleConfigChannelInfo& WithChat(ChatParticipantRoleConfig&& value) { SetChat(std::move(value)); return *this;}
+    template<typename ChatT = ChatParticipantRoleConfig>
+    void SetChat(ChatT&& value) { m_chatHasBeenSet = true; m_chat = std::forward<ChatT>(value); }
+    template<typename ChatT = ChatParticipantRoleConfig>
+    UpdateParticipantRoleConfigChannelInfo& WithChat(ChatT&& value) { SetChat(std::forward<ChatT>(value)); return *this;}
     ///@}
   private:
 

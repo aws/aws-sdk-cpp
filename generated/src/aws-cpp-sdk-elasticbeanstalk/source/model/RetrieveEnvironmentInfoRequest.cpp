@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-RetrieveEnvironmentInfoRequest::RetrieveEnvironmentInfoRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_infoType(EnvironmentInfoType::NOT_SET),
-    m_infoTypeHasBeenSet(false)
-{
-}
-
 Aws::String RetrieveEnvironmentInfoRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FeatureGroupSummary::FeatureGroupSummary() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_featureGroupArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
-    m_featureGroupStatusHasBeenSet(false),
-    m_offlineStoreStatusHasBeenSet(false)
-{
-}
-
 FeatureGroupSummary::FeatureGroupSummary(JsonView jsonValue)
-  : FeatureGroupSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FeatureGroupSummary& FeatureGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupArn"))
   {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");
-
     m_featureGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupStatus"))
   {
     m_featureGroupStatus = FeatureGroupStatusMapper::GetFeatureGroupStatusForName(jsonValue.GetString("FeatureGroupStatus"));
-
     m_featureGroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfflineStoreStatus"))
   {
     m_offlineStoreStatus = jsonValue.GetObject("OfflineStoreStatus");
-
     m_offlineStoreStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

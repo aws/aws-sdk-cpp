@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Av1QvbrSettings::Av1QvbrSettings() : 
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_qvbrQualityLevelFineTune(0.0),
-    m_qvbrQualityLevelFineTuneHasBeenSet(false)
-{
-}
-
 Av1QvbrSettings::Av1QvbrSettings(JsonView jsonValue)
-  : Av1QvbrSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Av1QvbrSettings& Av1QvbrSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("qvbrQualityLevel"))
   {
     m_qvbrQualityLevel = jsonValue.GetInteger("qvbrQualityLevel");
-
     m_qvbrQualityLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qvbrQualityLevelFineTune"))
   {
     m_qvbrQualityLevelFineTune = jsonValue.GetDouble("qvbrQualityLevelFineTune");
-
     m_qvbrQualityLevelFineTuneHasBeenSet = true;
   }
-
   return *this;
 }
 

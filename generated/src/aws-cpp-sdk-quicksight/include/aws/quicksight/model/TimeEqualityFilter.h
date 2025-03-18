@@ -37,7 +37,7 @@ namespace Model
   class TimeEqualityFilter
   {
   public:
-    AWS_QUICKSIGHT_API TimeEqualityFilter();
+    AWS_QUICKSIGHT_API TimeEqualityFilter() = default;
     AWS_QUICKSIGHT_API TimeEqualityFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TimeEqualityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,24 @@ namespace Model
      * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
      * or template.</p>
      */
-    inline const Aws::String& GetFilterId() const{ return m_filterId; }
+    inline const Aws::String& GetFilterId() const { return m_filterId; }
     inline bool FilterIdHasBeenSet() const { return m_filterIdHasBeenSet; }
-    inline void SetFilterId(const Aws::String& value) { m_filterIdHasBeenSet = true; m_filterId = value; }
-    inline void SetFilterId(Aws::String&& value) { m_filterIdHasBeenSet = true; m_filterId = std::move(value); }
-    inline void SetFilterId(const char* value) { m_filterIdHasBeenSet = true; m_filterId.assign(value); }
-    inline TimeEqualityFilter& WithFilterId(const Aws::String& value) { SetFilterId(value); return *this;}
-    inline TimeEqualityFilter& WithFilterId(Aws::String&& value) { SetFilterId(std::move(value)); return *this;}
-    inline TimeEqualityFilter& WithFilterId(const char* value) { SetFilterId(value); return *this;}
+    template<typename FilterIdT = Aws::String>
+    void SetFilterId(FilterIdT&& value) { m_filterIdHasBeenSet = true; m_filterId = std::forward<FilterIdT>(value); }
+    template<typename FilterIdT = Aws::String>
+    TimeEqualityFilter& WithFilterId(FilterIdT&& value) { SetFilterId(std::forward<FilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column that the filter is applied to.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline TimeEqualityFilter& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline TimeEqualityFilter& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    TimeEqualityFilter& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * mutually exclusive to <code>RollingDate</code> and
      * <code>ParameterName</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetValue() const{ return m_value; }
+    inline const Aws::Utils::DateTime& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::DateTime& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::DateTime&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline TimeEqualityFilter& WithValue(const Aws::Utils::DateTime& value) { SetValue(value); return *this;}
-    inline TimeEqualityFilter& WithValue(Aws::Utils::DateTime&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::DateTime>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::DateTime>
+    TimeEqualityFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +88,12 @@ namespace Model
      * field is mutually exclusive to <code>Value</code> and
      * <code>RollingDate</code>.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline TimeEqualityFilter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline TimeEqualityFilter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline TimeEqualityFilter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    TimeEqualityFilter& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +101,10 @@ namespace Model
      * <p>The level of time precision that is used to aggregate <code>DateTime</code>
      * values.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline TimeEqualityFilter& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline TimeEqualityFilter& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline TimeEqualityFilter& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,12 @@ namespace Model
      * field is mutually exclusive to <code>Value</code> and
      * <code>ParameterName</code>.</p>
      */
-    inline const RollingDateConfiguration& GetRollingDate() const{ return m_rollingDate; }
+    inline const RollingDateConfiguration& GetRollingDate() const { return m_rollingDate; }
     inline bool RollingDateHasBeenSet() const { return m_rollingDateHasBeenSet; }
-    inline void SetRollingDate(const RollingDateConfiguration& value) { m_rollingDateHasBeenSet = true; m_rollingDate = value; }
-    inline void SetRollingDate(RollingDateConfiguration&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::move(value); }
-    inline TimeEqualityFilter& WithRollingDate(const RollingDateConfiguration& value) { SetRollingDate(value); return *this;}
-    inline TimeEqualityFilter& WithRollingDate(RollingDateConfiguration&& value) { SetRollingDate(std::move(value)); return *this;}
+    template<typename RollingDateT = RollingDateConfiguration>
+    void SetRollingDate(RollingDateT&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::forward<RollingDateT>(value); }
+    template<typename RollingDateT = RollingDateConfiguration>
+    TimeEqualityFilter& WithRollingDate(RollingDateT&& value) { SetRollingDate(std::forward<RollingDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +126,12 @@ namespace Model
      * <p>The default configurations for the associated controls. This applies only for
      * filters that are scoped to multiple sheets.</p>
      */
-    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const{ return m_defaultFilterControlConfiguration; }
+    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const { return m_defaultFilterControlConfiguration; }
     inline bool DefaultFilterControlConfigurationHasBeenSet() const { return m_defaultFilterControlConfigurationHasBeenSet; }
-    inline void SetDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = value; }
-    inline void SetDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::move(value); }
-    inline TimeEqualityFilter& WithDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { SetDefaultFilterControlConfiguration(value); return *this;}
-    inline TimeEqualityFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { SetDefaultFilterControlConfiguration(std::move(value)); return *this;}
+    template<typename DefaultFilterControlConfigurationT = DefaultFilterControlConfiguration>
+    void SetDefaultFilterControlConfiguration(DefaultFilterControlConfigurationT&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::forward<DefaultFilterControlConfigurationT>(value); }
+    template<typename DefaultFilterControlConfigurationT = DefaultFilterControlConfiguration>
+    TimeEqualityFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfigurationT&& value) { SetDefaultFilterControlConfiguration(std::forward<DefaultFilterControlConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,13 +141,13 @@ namespace Model
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_value;
+    Aws::Utils::DateTime m_value{};
     bool m_valueHasBeenSet = false;
 
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
 
     RollingDateConfiguration m_rollingDate;

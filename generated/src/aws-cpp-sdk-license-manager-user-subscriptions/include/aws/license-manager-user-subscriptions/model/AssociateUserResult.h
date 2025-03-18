@@ -28,7 +28,7 @@ namespace Model
   class AssociateUserResult
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API AssociateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Metadata that describes the associate user operation.</p>
      */
-    inline const InstanceUserSummary& GetInstanceUserSummary() const{ return m_instanceUserSummary; }
-    inline void SetInstanceUserSummary(const InstanceUserSummary& value) { m_instanceUserSummary = value; }
-    inline void SetInstanceUserSummary(InstanceUserSummary&& value) { m_instanceUserSummary = std::move(value); }
-    inline AssociateUserResult& WithInstanceUserSummary(const InstanceUserSummary& value) { SetInstanceUserSummary(value); return *this;}
-    inline AssociateUserResult& WithInstanceUserSummary(InstanceUserSummary&& value) { SetInstanceUserSummary(std::move(value)); return *this;}
+    inline const InstanceUserSummary& GetInstanceUserSummary() const { return m_instanceUserSummary; }
+    template<typename InstanceUserSummaryT = InstanceUserSummary>
+    void SetInstanceUserSummary(InstanceUserSummaryT&& value) { m_instanceUserSummaryHasBeenSet = true; m_instanceUserSummary = std::forward<InstanceUserSummaryT>(value); }
+    template<typename InstanceUserSummaryT = InstanceUserSummary>
+    AssociateUserResult& WithInstanceUserSummary(InstanceUserSummaryT&& value) { SetInstanceUserSummary(std::forward<InstanceUserSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InstanceUserSummary m_instanceUserSummary;
+    bool m_instanceUserSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,22 +18,7 @@ namespace PI
 namespace Model
 {
 
-AnalysisReport::AnalysisReport() : 
-    m_analysisReportIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightsHasBeenSet(false)
-{
-}
-
 AnalysisReport::AnalysisReport(JsonView jsonValue)
-  : AnalysisReport()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ AnalysisReport& AnalysisReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnalysisReportId"))
   {
     m_analysisReportId = jsonValue.GetString("AnalysisReportId");
-
     m_analysisReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceType"))
   {
     m_serviceType = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("ServiceType"));
-
     m_serviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AnalysisStatusMapper::GetAnalysisStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insights"))
   {
     Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("Insights");
@@ -98,7 +69,6 @@ AnalysisReport& AnalysisReport::operator =(JsonView jsonValue)
     }
     m_insightsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class GreenFleetProvisioningOption
   {
   public:
-    AWS_CODEDEPLOY_API GreenFleetProvisioningOption();
+    AWS_CODEDEPLOY_API GreenFleetProvisioningOption() = default;
     AWS_CODEDEPLOY_API GreenFleetProvisioningOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API GreenFleetProvisioningOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * settings from a specified Auto Scaling group to define and create instances in a
      * new Auto Scaling group.</p> </li> </ul>
      */
-    inline const GreenFleetProvisioningAction& GetAction() const{ return m_action; }
+    inline GreenFleetProvisioningAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const GreenFleetProvisioningAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(GreenFleetProvisioningAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GreenFleetProvisioningOption& WithAction(const GreenFleetProvisioningAction& value) { SetAction(value); return *this;}
-    inline GreenFleetProvisioningOption& WithAction(GreenFleetProvisioningAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(GreenFleetProvisioningAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GreenFleetProvisioningOption& WithAction(GreenFleetProvisioningAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    GreenFleetProvisioningAction m_action;
+    GreenFleetProvisioningAction m_action{GreenFleetProvisioningAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

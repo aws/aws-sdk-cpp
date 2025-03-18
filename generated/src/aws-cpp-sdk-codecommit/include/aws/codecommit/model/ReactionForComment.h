@@ -34,7 +34,7 @@ namespace Model
   class ReactionForComment
   {
   public:
-    AWS_CODECOMMIT_API ReactionForComment();
+    AWS_CODECOMMIT_API ReactionForComment() = default;
     AWS_CODECOMMIT_API ReactionForComment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API ReactionForComment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The reaction for a specified comment.</p>
      */
-    inline const ReactionValueFormats& GetReaction() const{ return m_reaction; }
+    inline const ReactionValueFormats& GetReaction() const { return m_reaction; }
     inline bool ReactionHasBeenSet() const { return m_reactionHasBeenSet; }
-    inline void SetReaction(const ReactionValueFormats& value) { m_reactionHasBeenSet = true; m_reaction = value; }
-    inline void SetReaction(ReactionValueFormats&& value) { m_reactionHasBeenSet = true; m_reaction = std::move(value); }
-    inline ReactionForComment& WithReaction(const ReactionValueFormats& value) { SetReaction(value); return *this;}
-    inline ReactionForComment& WithReaction(ReactionValueFormats&& value) { SetReaction(std::move(value)); return *this;}
+    template<typename ReactionT = ReactionValueFormats>
+    void SetReaction(ReactionT&& value) { m_reactionHasBeenSet = true; m_reaction = std::forward<ReactionT>(value); }
+    template<typename ReactionT = ReactionValueFormats>
+    ReactionForComment& WithReaction(ReactionT&& value) { SetReaction(std::forward<ReactionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +57,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the
      * comment.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReactionUsers() const{ return m_reactionUsers; }
+    inline const Aws::Vector<Aws::String>& GetReactionUsers() const { return m_reactionUsers; }
     inline bool ReactionUsersHasBeenSet() const { return m_reactionUsersHasBeenSet; }
-    inline void SetReactionUsers(const Aws::Vector<Aws::String>& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers = value; }
-    inline void SetReactionUsers(Aws::Vector<Aws::String>&& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers = std::move(value); }
-    inline ReactionForComment& WithReactionUsers(const Aws::Vector<Aws::String>& value) { SetReactionUsers(value); return *this;}
-    inline ReactionForComment& WithReactionUsers(Aws::Vector<Aws::String>&& value) { SetReactionUsers(std::move(value)); return *this;}
-    inline ReactionForComment& AddReactionUsers(const Aws::String& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers.push_back(value); return *this; }
-    inline ReactionForComment& AddReactionUsers(Aws::String&& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers.push_back(std::move(value)); return *this; }
-    inline ReactionForComment& AddReactionUsers(const char* value) { m_reactionUsersHasBeenSet = true; m_reactionUsers.push_back(value); return *this; }
+    template<typename ReactionUsersT = Aws::Vector<Aws::String>>
+    void SetReactionUsers(ReactionUsersT&& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers = std::forward<ReactionUsersT>(value); }
+    template<typename ReactionUsersT = Aws::Vector<Aws::String>>
+    ReactionForComment& WithReactionUsers(ReactionUsersT&& value) { SetReactionUsers(std::forward<ReactionUsersT>(value)); return *this;}
+    template<typename ReactionUsersT = Aws::String>
+    ReactionForComment& AddReactionUsers(ReactionUsersT&& value) { m_reactionUsersHasBeenSet = true; m_reactionUsers.emplace_back(std::forward<ReactionUsersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +74,7 @@ namespace Model
      * roles no longer exist, the reactions might still appear in total reaction
      * counts.</p>
      */
-    inline int GetReactionsFromDeletedUsersCount() const{ return m_reactionsFromDeletedUsersCount; }
+    inline int GetReactionsFromDeletedUsersCount() const { return m_reactionsFromDeletedUsersCount; }
     inline bool ReactionsFromDeletedUsersCountHasBeenSet() const { return m_reactionsFromDeletedUsersCountHasBeenSet; }
     inline void SetReactionsFromDeletedUsersCount(int value) { m_reactionsFromDeletedUsersCountHasBeenSet = true; m_reactionsFromDeletedUsersCount = value; }
     inline ReactionForComment& WithReactionsFromDeletedUsersCount(int value) { SetReactionsFromDeletedUsersCount(value); return *this;}
@@ -88,7 +87,7 @@ namespace Model
     Aws::Vector<Aws::String> m_reactionUsers;
     bool m_reactionUsersHasBeenSet = false;
 
-    int m_reactionsFromDeletedUsersCount;
+    int m_reactionsFromDeletedUsersCount{0};
     bool m_reactionsFromDeletedUsersCountHasBeenSet = false;
   };
 

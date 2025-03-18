@@ -32,7 +32,7 @@ namespace Model
   class ValidationExceptionDetail
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ValidationExceptionDetail();
+    AWS_COSTOPTIMIZATIONHUB_API ValidationExceptionDetail() = default;
     AWS_COSTOPTIMIZATIONHUB_API ValidationExceptionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ValidationExceptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The field name where the invalid entry was detected.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline ValidationExceptionDetail& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline ValidationExceptionDetail& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline ValidationExceptionDetail& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    ValidationExceptionDetail& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message with the reason for the validation exception error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationExceptionDetail& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationExceptionDetail& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationExceptionDetail& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationExceptionDetail& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

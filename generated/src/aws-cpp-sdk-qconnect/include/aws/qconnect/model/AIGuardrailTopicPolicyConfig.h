@@ -33,7 +33,7 @@ namespace Model
   class AIGuardrailTopicPolicyConfig
   {
   public:
-    AWS_QCONNECT_API AIGuardrailTopicPolicyConfig();
+    AWS_QCONNECT_API AIGuardrailTopicPolicyConfig() = default;
     AWS_QCONNECT_API AIGuardrailTopicPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIGuardrailTopicPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of policies related to topics that the AI Guardrail should deny.</p>
      */
-    inline const Aws::Vector<GuardrailTopicConfig>& GetTopicsConfig() const{ return m_topicsConfig; }
+    inline const Aws::Vector<GuardrailTopicConfig>& GetTopicsConfig() const { return m_topicsConfig; }
     inline bool TopicsConfigHasBeenSet() const { return m_topicsConfigHasBeenSet; }
-    inline void SetTopicsConfig(const Aws::Vector<GuardrailTopicConfig>& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig = value; }
-    inline void SetTopicsConfig(Aws::Vector<GuardrailTopicConfig>&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig = std::move(value); }
-    inline AIGuardrailTopicPolicyConfig& WithTopicsConfig(const Aws::Vector<GuardrailTopicConfig>& value) { SetTopicsConfig(value); return *this;}
-    inline AIGuardrailTopicPolicyConfig& WithTopicsConfig(Aws::Vector<GuardrailTopicConfig>&& value) { SetTopicsConfig(std::move(value)); return *this;}
-    inline AIGuardrailTopicPolicyConfig& AddTopicsConfig(const GuardrailTopicConfig& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.push_back(value); return *this; }
-    inline AIGuardrailTopicPolicyConfig& AddTopicsConfig(GuardrailTopicConfig&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.push_back(std::move(value)); return *this; }
+    template<typename TopicsConfigT = Aws::Vector<GuardrailTopicConfig>>
+    void SetTopicsConfig(TopicsConfigT&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig = std::forward<TopicsConfigT>(value); }
+    template<typename TopicsConfigT = Aws::Vector<GuardrailTopicConfig>>
+    AIGuardrailTopicPolicyConfig& WithTopicsConfig(TopicsConfigT&& value) { SetTopicsConfig(std::forward<TopicsConfigT>(value)); return *this;}
+    template<typename TopicsConfigT = GuardrailTopicConfig>
+    AIGuardrailTopicPolicyConfig& AddTopicsConfig(TopicsConfigT&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.emplace_back(std::forward<TopicsConfigT>(value)); return *this; }
     ///@}
   private:
 

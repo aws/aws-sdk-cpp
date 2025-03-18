@@ -12,18 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKxDataviewRequest::UpdateKxDataviewRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateKxDataviewRequest::SerializePayload() const
 {
   JsonValue payload;

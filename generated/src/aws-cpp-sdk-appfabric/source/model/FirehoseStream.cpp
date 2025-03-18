@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-FirehoseStream::FirehoseStream() : 
-    m_streamNameHasBeenSet(false)
-{
-}
-
 FirehoseStream::FirehoseStream(JsonView jsonValue)
-  : FirehoseStream()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FirehoseStream& FirehoseStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

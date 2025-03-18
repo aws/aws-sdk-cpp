@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DataSourceSyncJobMetrics::DataSourceSyncJobMetrics() : 
-    m_documentsAddedHasBeenSet(false),
-    m_documentsModifiedHasBeenSet(false),
-    m_documentsDeletedHasBeenSet(false),
-    m_documentsFailedHasBeenSet(false),
-    m_documentsScannedHasBeenSet(false)
-{
-}
-
 DataSourceSyncJobMetrics::DataSourceSyncJobMetrics(JsonView jsonValue)
-  : DataSourceSyncJobMetrics()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataSourceSyncJobMetrics& DataSourceSyncJobMetrics::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("documentsAdded"))
   {
     m_documentsAdded = jsonValue.GetString("documentsAdded");
-
     m_documentsAddedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentsModified"))
   {
     m_documentsModified = jsonValue.GetString("documentsModified");
-
     m_documentsModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentsDeleted"))
   {
     m_documentsDeleted = jsonValue.GetString("documentsDeleted");
-
     m_documentsDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentsFailed"))
   {
     m_documentsFailed = jsonValue.GetString("documentsFailed");
-
     m_documentsFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentsScanned"))
   {
     m_documentsScanned = jsonValue.GetString("documentsScanned");
-
     m_documentsScannedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetInstancePortStatesResult
   {
   public:
-    AWS_LIGHTSAIL_API GetInstancePortStatesResult();
+    AWS_LIGHTSAIL_API GetInstancePortStatesResult() = default;
     AWS_LIGHTSAIL_API GetInstancePortStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetInstancePortStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array of objects that describe the firewall port states for the specified
      * instance.</p>
      */
-    inline const Aws::Vector<InstancePortState>& GetPortStates() const{ return m_portStates; }
-    inline void SetPortStates(const Aws::Vector<InstancePortState>& value) { m_portStates = value; }
-    inline void SetPortStates(Aws::Vector<InstancePortState>&& value) { m_portStates = std::move(value); }
-    inline GetInstancePortStatesResult& WithPortStates(const Aws::Vector<InstancePortState>& value) { SetPortStates(value); return *this;}
-    inline GetInstancePortStatesResult& WithPortStates(Aws::Vector<InstancePortState>&& value) { SetPortStates(std::move(value)); return *this;}
-    inline GetInstancePortStatesResult& AddPortStates(const InstancePortState& value) { m_portStates.push_back(value); return *this; }
-    inline GetInstancePortStatesResult& AddPortStates(InstancePortState&& value) { m_portStates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstancePortState>& GetPortStates() const { return m_portStates; }
+    template<typename PortStatesT = Aws::Vector<InstancePortState>>
+    void SetPortStates(PortStatesT&& value) { m_portStatesHasBeenSet = true; m_portStates = std::forward<PortStatesT>(value); }
+    template<typename PortStatesT = Aws::Vector<InstancePortState>>
+    GetInstancePortStatesResult& WithPortStates(PortStatesT&& value) { SetPortStates(std::forward<PortStatesT>(value)); return *this;}
+    template<typename PortStatesT = InstancePortState>
+    GetInstancePortStatesResult& AddPortStates(PortStatesT&& value) { m_portStatesHasBeenSet = true; m_portStates.emplace_back(std::forward<PortStatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInstancePortStatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInstancePortStatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInstancePortStatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInstancePortStatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstancePortState> m_portStates;
+    bool m_portStatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

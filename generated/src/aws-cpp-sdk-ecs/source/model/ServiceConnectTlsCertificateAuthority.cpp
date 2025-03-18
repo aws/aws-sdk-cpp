@@ -18,13 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceConnectTlsCertificateAuthority::ServiceConnectTlsCertificateAuthority() : 
-    m_awsPcaAuthorityArnHasBeenSet(false)
-{
-}
-
 ServiceConnectTlsCertificateAuthority::ServiceConnectTlsCertificateAuthority(JsonView jsonValue)
-  : ServiceConnectTlsCertificateAuthority()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceConnectTlsCertificateAuthority& ServiceConnectTlsCertificateAuthority::op
   if(jsonValue.ValueExists("awsPcaAuthorityArn"))
   {
     m_awsPcaAuthorityArn = jsonValue.GetString("awsPcaAuthorityArn");
-
     m_awsPcaAuthorityArnHasBeenSet = true;
   }
-
   return *this;
 }
 

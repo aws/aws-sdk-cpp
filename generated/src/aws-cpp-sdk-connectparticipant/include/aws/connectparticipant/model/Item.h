@@ -37,7 +37,7 @@ namespace Model
   class Item
   {
   public:
-    AWS_CONNECTPARTICIPANT_API Item();
+    AWS_CONNECTPARTICIPANT_API Item() = default;
     AWS_CONNECTPARTICIPANT_API Item(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Item& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,122 +49,106 @@ namespace Model
      * 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
      * 2019-11-08T02:41:28.172Z.</p>
      */
-    inline const Aws::String& GetAbsoluteTime() const{ return m_absoluteTime; }
+    inline const Aws::String& GetAbsoluteTime() const { return m_absoluteTime; }
     inline bool AbsoluteTimeHasBeenSet() const { return m_absoluteTimeHasBeenSet; }
-    inline void SetAbsoluteTime(const Aws::String& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = value; }
-    inline void SetAbsoluteTime(Aws::String&& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = std::move(value); }
-    inline void SetAbsoluteTime(const char* value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime.assign(value); }
-    inline Item& WithAbsoluteTime(const Aws::String& value) { SetAbsoluteTime(value); return *this;}
-    inline Item& WithAbsoluteTime(Aws::String&& value) { SetAbsoluteTime(std::move(value)); return *this;}
-    inline Item& WithAbsoluteTime(const char* value) { SetAbsoluteTime(value); return *this;}
+    template<typename AbsoluteTimeT = Aws::String>
+    void SetAbsoluteTime(AbsoluteTimeT&& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = std::forward<AbsoluteTimeT>(value); }
+    template<typename AbsoluteTimeT = Aws::String>
+    Item& WithAbsoluteTime(AbsoluteTimeT&& value) { SetAbsoluteTime(std::forward<AbsoluteTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the message or event.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline Item& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline Item& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline Item& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    Item& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of content of the item.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline Item& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline Item& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline Item& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    Item& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the item.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Item& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Item& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Item& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Item& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the item: message or event. </p>
      */
-    inline const ChatItemType& GetType() const{ return m_type; }
+    inline ChatItemType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChatItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChatItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Item& WithType(const ChatItemType& value) { SetType(value); return *this;}
-    inline Item& WithType(ChatItemType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChatItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Item& WithType(ChatItemType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the sender in the session.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline Item& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline Item& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline Item& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    Item& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The chat display name of the sender.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Item& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Item& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Item& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Item& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role of the sender. For example, is it a customer, agent, or system.</p>
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline Item& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline Item& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline Item& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information about the attachments.</p>
      */
-    inline const Aws::Vector<AttachmentItem>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<AttachmentItem>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<AttachmentItem>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<AttachmentItem>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline Item& WithAttachments(const Aws::Vector<AttachmentItem>& value) { SetAttachments(value); return *this;}
-    inline Item& WithAttachments(Aws::Vector<AttachmentItem>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline Item& AddAttachments(const AttachmentItem& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline Item& AddAttachments(AttachmentItem&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<AttachmentItem>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<AttachmentItem>>
+    Item& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = AttachmentItem>
+    Item& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -172,12 +156,12 @@ namespace Model
      * <p>The metadata related to the message. Currently this supports only information
      * related to message receipts.</p>
      */
-    inline const MessageMetadata& GetMessageMetadata() const{ return m_messageMetadata; }
+    inline const MessageMetadata& GetMessageMetadata() const { return m_messageMetadata; }
     inline bool MessageMetadataHasBeenSet() const { return m_messageMetadataHasBeenSet; }
-    inline void SetMessageMetadata(const MessageMetadata& value) { m_messageMetadataHasBeenSet = true; m_messageMetadata = value; }
-    inline void SetMessageMetadata(MessageMetadata&& value) { m_messageMetadataHasBeenSet = true; m_messageMetadata = std::move(value); }
-    inline Item& WithMessageMetadata(const MessageMetadata& value) { SetMessageMetadata(value); return *this;}
-    inline Item& WithMessageMetadata(MessageMetadata&& value) { SetMessageMetadata(std::move(value)); return *this;}
+    template<typename MessageMetadataT = MessageMetadata>
+    void SetMessageMetadata(MessageMetadataT&& value) { m_messageMetadataHasBeenSet = true; m_messageMetadata = std::forward<MessageMetadataT>(value); }
+    template<typename MessageMetadataT = MessageMetadata>
+    Item& WithMessageMetadata(MessageMetadataT&& value) { SetMessageMetadata(std::forward<MessageMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +172,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
      * persistent chat</a>.</p>
      */
-    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+    inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
-    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
-    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
-    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
-    inline Item& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
-    inline Item& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
-    inline Item& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+    template<typename RelatedContactIdT = Aws::String>
+    void SetRelatedContactId(RelatedContactIdT&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::forward<RelatedContactIdT>(value); }
+    template<typename RelatedContactIdT = Aws::String>
+    Item& WithRelatedContactId(RelatedContactIdT&& value) { SetRelatedContactId(std::forward<RelatedContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,14 +185,12 @@ namespace Model
      * <p>The contactId on which the transcript item was originally sent. This field is
      * populated only when the transcript item is from the current chat session.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline Item& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline Item& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline Item& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    Item& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -226,7 +206,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ChatItemType m_type;
+    ChatItemType m_type{ChatItemType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_participantId;
@@ -235,7 +215,7 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
     Aws::Vector<AttachmentItem> m_attachments;

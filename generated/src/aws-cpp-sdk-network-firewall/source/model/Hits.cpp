@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-Hits::Hits() : 
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 Hits::Hits(JsonView jsonValue)
-  : Hits()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Hits& Hits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

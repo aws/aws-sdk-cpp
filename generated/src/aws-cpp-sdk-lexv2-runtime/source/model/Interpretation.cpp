@@ -18,17 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-Interpretation::Interpretation() : 
-    m_nluConfidenceHasBeenSet(false),
-    m_sentimentResponseHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_interpretationSource(InterpretationSource::NOT_SET),
-    m_interpretationSourceHasBeenSet(false)
-{
-}
-
 Interpretation::Interpretation(JsonView jsonValue)
-  : Interpretation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Interpretation& Interpretation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nluConfidence"))
   {
     m_nluConfidence = jsonValue.GetObject("nluConfidence");
-
     m_nluConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sentimentResponse"))
   {
     m_sentimentResponse = jsonValue.GetObject("sentimentResponse");
-
     m_sentimentResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intent"))
   {
     m_intent = jsonValue.GetObject("intent");
-
     m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interpretationSource"))
   {
     m_interpretationSource = InterpretationSourceMapper::GetInterpretationSourceForName(jsonValue.GetString("interpretationSource"));
-
     m_interpretationSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

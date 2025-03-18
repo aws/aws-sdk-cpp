@@ -12,11 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSinkRequest::DeleteSinkRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSinkRequest::SerializePayload() const
 {
   JsonValue payload;

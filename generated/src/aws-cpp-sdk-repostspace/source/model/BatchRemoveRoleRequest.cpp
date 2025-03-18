@@ -12,14 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchRemoveRoleRequest::BatchRemoveRoleRequest() : 
-    m_accessorIdsHasBeenSet(false),
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_spaceIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchRemoveRoleRequest::SerializePayload() const
 {
   JsonValue payload;

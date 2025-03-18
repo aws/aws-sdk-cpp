@@ -34,7 +34,7 @@ namespace Model
   class BatchDetectDominantLanguageItemResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult();
+    AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult() = default;
     AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchDetectDominantLanguageItemResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
      * <p>One or more <a>DominantLanguage</a> objects describing the dominant languages
      * in the document.</p>
      */
-    inline const Aws::Vector<DominantLanguage>& GetLanguages() const{ return m_languages; }
+    inline const Aws::Vector<DominantLanguage>& GetLanguages() const { return m_languages; }
     inline bool LanguagesHasBeenSet() const { return m_languagesHasBeenSet; }
-    inline void SetLanguages(const Aws::Vector<DominantLanguage>& value) { m_languagesHasBeenSet = true; m_languages = value; }
-    inline void SetLanguages(Aws::Vector<DominantLanguage>&& value) { m_languagesHasBeenSet = true; m_languages = std::move(value); }
-    inline BatchDetectDominantLanguageItemResult& WithLanguages(const Aws::Vector<DominantLanguage>& value) { SetLanguages(value); return *this;}
-    inline BatchDetectDominantLanguageItemResult& WithLanguages(Aws::Vector<DominantLanguage>&& value) { SetLanguages(std::move(value)); return *this;}
-    inline BatchDetectDominantLanguageItemResult& AddLanguages(const DominantLanguage& value) { m_languagesHasBeenSet = true; m_languages.push_back(value); return *this; }
-    inline BatchDetectDominantLanguageItemResult& AddLanguages(DominantLanguage&& value) { m_languagesHasBeenSet = true; m_languages.push_back(std::move(value)); return *this; }
+    template<typename LanguagesT = Aws::Vector<DominantLanguage>>
+    void SetLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages = std::forward<LanguagesT>(value); }
+    template<typename LanguagesT = Aws::Vector<DominantLanguage>>
+    BatchDetectDominantLanguageItemResult& WithLanguages(LanguagesT&& value) { SetLanguages(std::forward<LanguagesT>(value)); return *this;}
+    template<typename LanguagesT = DominantLanguage>
+    BatchDetectDominantLanguageItemResult& AddLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages.emplace_back(std::forward<LanguagesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
     Aws::Vector<DominantLanguage> m_languages;

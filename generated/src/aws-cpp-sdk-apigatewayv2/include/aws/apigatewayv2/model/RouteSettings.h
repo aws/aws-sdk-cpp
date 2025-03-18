@@ -31,7 +31,7 @@ namespace Model
   class RouteSettings
   {
   public:
-    AWS_APIGATEWAYV2_API RouteSettings();
+    AWS_APIGATEWAYV2_API RouteSettings() = default;
     AWS_APIGATEWAYV2_API RouteSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API RouteSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * this route. This property affects the log entries pushed to Amazon CloudWatch
      * Logs. Supported only for WebSocket APIs.</p>
      */
-    inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
+    inline bool GetDataTraceEnabled() const { return m_dataTraceEnabled; }
     inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
     inline RouteSettings& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Specifies whether detailed metrics are enabled.</p>
      */
-    inline bool GetDetailedMetricsEnabled() const{ return m_detailedMetricsEnabled; }
+    inline bool GetDetailedMetricsEnabled() const { return m_detailedMetricsEnabled; }
     inline bool DetailedMetricsEnabledHasBeenSet() const { return m_detailedMetricsEnabledHasBeenSet; }
     inline void SetDetailedMetricsEnabled(bool value) { m_detailedMetricsEnabledHasBeenSet = true; m_detailedMetricsEnabled = value; }
     inline RouteSettings& WithDetailedMetricsEnabled(bool value) { SetDetailedMetricsEnabled(value); return *this;}
@@ -65,19 +65,17 @@ namespace Model
      * property affects the log entries pushed to Amazon CloudWatch Logs. Supported
      * only for WebSocket APIs.</p>
      */
-    inline const LoggingLevel& GetLoggingLevel() const{ return m_loggingLevel; }
+    inline LoggingLevel GetLoggingLevel() const { return m_loggingLevel; }
     inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
-    inline void SetLoggingLevel(const LoggingLevel& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = value; }
-    inline void SetLoggingLevel(LoggingLevel&& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = std::move(value); }
-    inline RouteSettings& WithLoggingLevel(const LoggingLevel& value) { SetLoggingLevel(value); return *this;}
-    inline RouteSettings& WithLoggingLevel(LoggingLevel&& value) { SetLoggingLevel(std::move(value)); return *this;}
+    inline void SetLoggingLevel(LoggingLevel value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = value; }
+    inline RouteSettings& WithLoggingLevel(LoggingLevel value) { SetLoggingLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the throttling burst limit.</p>
      */
-    inline int GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
+    inline int GetThrottlingBurstLimit() const { return m_throttlingBurstLimit; }
     inline bool ThrottlingBurstLimitHasBeenSet() const { return m_throttlingBurstLimitHasBeenSet; }
     inline void SetThrottlingBurstLimit(int value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
     inline RouteSettings& WithThrottlingBurstLimit(int value) { SetThrottlingBurstLimit(value); return *this;}
@@ -87,26 +85,26 @@ namespace Model
     /**
      * <p>Specifies the throttling rate limit.</p>
      */
-    inline double GetThrottlingRateLimit() const{ return m_throttlingRateLimit; }
+    inline double GetThrottlingRateLimit() const { return m_throttlingRateLimit; }
     inline bool ThrottlingRateLimitHasBeenSet() const { return m_throttlingRateLimitHasBeenSet; }
     inline void SetThrottlingRateLimit(double value) { m_throttlingRateLimitHasBeenSet = true; m_throttlingRateLimit = value; }
     inline RouteSettings& WithThrottlingRateLimit(double value) { SetThrottlingRateLimit(value); return *this;}
     ///@}
   private:
 
-    bool m_dataTraceEnabled;
+    bool m_dataTraceEnabled{false};
     bool m_dataTraceEnabledHasBeenSet = false;
 
-    bool m_detailedMetricsEnabled;
+    bool m_detailedMetricsEnabled{false};
     bool m_detailedMetricsEnabledHasBeenSet = false;
 
-    LoggingLevel m_loggingLevel;
+    LoggingLevel m_loggingLevel{LoggingLevel::NOT_SET};
     bool m_loggingLevelHasBeenSet = false;
 
-    int m_throttlingBurstLimit;
+    int m_throttlingBurstLimit{0};
     bool m_throttlingBurstLimitHasBeenSet = false;
 
-    double m_throttlingRateLimit;
+    double m_throttlingRateLimit{0.0};
     bool m_throttlingRateLimitHasBeenSet = false;
   };
 

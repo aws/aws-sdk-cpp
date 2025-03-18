@@ -27,7 +27,7 @@ namespace Model
   class CreateApiKeyRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API CreateApiKeyRequest();
+    AWS_APIGATEWAY_API CreateApiKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The name of the ApiKey.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateApiKeyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateApiKeyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateApiKeyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the ApiKey.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateApiKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateApiKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateApiKeyRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CreateApiKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
      * identifier is distinct from the created API key value. This parameter is
      * deprecated and should not be used.</p>
      */
-    inline bool GetGenerateDistinctId() const{ return m_generateDistinctId; }
+    inline bool GetGenerateDistinctId() const { return m_generateDistinctId; }
     inline bool GenerateDistinctIdHasBeenSet() const { return m_generateDistinctIdHasBeenSet; }
     inline void SetGenerateDistinctId(bool value) { m_generateDistinctIdHasBeenSet = true; m_generateDistinctId = value; }
     inline CreateApiKeyRequest& WithGenerateDistinctId(bool value) { SetGenerateDistinctId(value); return *this;}
@@ -92,14 +88,12 @@ namespace Model
     /**
      * <p>Specifies a value of the API key.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CreateApiKeyRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CreateApiKeyRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CreateApiKeyRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,14 @@ namespace Model
      * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
      * key.</p>
      */
-    inline const Aws::Vector<StageKey>& GetStageKeys() const{ return m_stageKeys; }
+    inline const Aws::Vector<StageKey>& GetStageKeys() const { return m_stageKeys; }
     inline bool StageKeysHasBeenSet() const { return m_stageKeysHasBeenSet; }
-    inline void SetStageKeys(const Aws::Vector<StageKey>& value) { m_stageKeysHasBeenSet = true; m_stageKeys = value; }
-    inline void SetStageKeys(Aws::Vector<StageKey>&& value) { m_stageKeysHasBeenSet = true; m_stageKeys = std::move(value); }
-    inline CreateApiKeyRequest& WithStageKeys(const Aws::Vector<StageKey>& value) { SetStageKeys(value); return *this;}
-    inline CreateApiKeyRequest& WithStageKeys(Aws::Vector<StageKey>&& value) { SetStageKeys(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& AddStageKeys(const StageKey& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
-    inline CreateApiKeyRequest& AddStageKeys(StageKey&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(std::move(value)); return *this; }
+    template<typename StageKeysT = Aws::Vector<StageKey>>
+    void SetStageKeys(StageKeysT&& value) { m_stageKeysHasBeenSet = true; m_stageKeys = std::forward<StageKeysT>(value); }
+    template<typename StageKeysT = Aws::Vector<StageKey>>
+    CreateApiKeyRequest& WithStageKeys(StageKeysT&& value) { SetStageKeys(std::forward<StageKeysT>(value)); return *this;}
+    template<typename StageKeysT = StageKey>
+    CreateApiKeyRequest& AddStageKeys(StageKeysT&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.emplace_back(std::forward<StageKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,14 +116,12 @@ namespace Model
      * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
      * the Amazon Web Services SaaS Marketplace.</p>
      */
-    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+    inline const Aws::String& GetCustomerId() const { return m_customerId; }
     inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
-    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
-    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
-    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
-    inline CreateApiKeyRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
-    inline CreateApiKeyRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+    template<typename CustomerIdT = Aws::String>
+    void SetCustomerId(CustomerIdT&& value) { m_customerIdHasBeenSet = true; m_customerId = std::forward<CustomerIdT>(value); }
+    template<typename CustomerIdT = Aws::String>
+    CreateApiKeyRequest& WithCustomerId(CustomerIdT&& value) { SetCustomerId(std::forward<CustomerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,19 +130,16 @@ namespace Model
      * tag key can be up to 128 characters and must not start with <code>aws:</code>.
      * The tag value can be up to 256 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateApiKeyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateApiKeyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateApiKeyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateApiKeyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateApiKeyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateApiKeyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateApiKeyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateApiKeyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateApiKeyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateApiKeyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateApiKeyRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -160,10 +149,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_generateDistinctId;
+    bool m_generateDistinctId{false};
     bool m_generateDistinctIdHasBeenSet = false;
 
     Aws::String m_value;

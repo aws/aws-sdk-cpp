@@ -38,7 +38,7 @@ namespace Model
   class DataCatalog
   {
   public:
-    AWS_ATHENA_API DataCatalog();
+    AWS_ATHENA_API DataCatalog() = default;
     AWS_ATHENA_API DataCatalog(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API DataCatalog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
      * sign, or hyphen characters. The remainder of the length constraint of 256 is
      * reserved for use by Athena.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataCatalog& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataCatalog& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataCatalog& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataCatalog& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the data catalog.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DataCatalog& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DataCatalog& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DataCatalog& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DataCatalog& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * for which Athena creates the connection and the Lambda function for you based on
      * the parameters that you pass.</p>
      */
-    inline const DataCatalogType& GetType() const{ return m_type; }
+    inline DataCatalogType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataCatalogType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataCatalogType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataCatalog& WithType(const DataCatalogType& value) { SetType(value); return *this;}
-    inline DataCatalog& WithType(DataCatalogType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataCatalogType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataCatalog& WithType(DataCatalogType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -127,19 +121,16 @@ namespace Model
      * <code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code>
      * </p> </li> </ul> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline DataCatalog& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline DataCatalog& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline DataCatalog& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline DataCatalog& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline DataCatalog& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline DataCatalog& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DataCatalog& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline DataCatalog& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline DataCatalog& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    DataCatalog& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    DataCatalog& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -164,12 +155,10 @@ namespace Model
      * Federated data catalog deleted.</p> </li> <li> <p> <code>DELETE_FAILED</code>:
      * Federated data catalog could not be deleted.</p> </li> </ul>
      */
-    inline const DataCatalogStatus& GetStatus() const{ return m_status; }
+    inline DataCatalogStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataCatalogStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataCatalogStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataCatalog& WithStatus(const DataCatalogStatus& value) { SetStatus(value); return *this;}
-    inline DataCatalog& WithStatus(DataCatalogStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataCatalogStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataCatalog& WithStatus(DataCatalogStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -180,26 +169,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available
      * data source connectors</a>.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline DataCatalog& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline DataCatalog& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline DataCatalog& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Text of the error that occurred during data catalog creation or deletion.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline DataCatalog& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline DataCatalog& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline DataCatalog& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    DataCatalog& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
@@ -209,16 +194,16 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    DataCatalogType m_type;
+    DataCatalogType m_type{DataCatalogType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet = false;
 
-    DataCatalogStatus m_status;
+    DataCatalogStatus m_status{DataCatalogStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_error;

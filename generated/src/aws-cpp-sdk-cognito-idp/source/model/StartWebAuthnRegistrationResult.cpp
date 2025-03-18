@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartWebAuthnRegistrationResult::StartWebAuthnRegistrationResult()
-{
-}
-
 StartWebAuthnRegistrationResult::StartWebAuthnRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartWebAuthnRegistrationResult& StartWebAuthnRegistrationResult::operator =(con
   if(jsonValue.ValueExists("CredentialCreationOptions"))
   {
     m_credentialCreationOptions = jsonValue.GetObject("CredentialCreationOptions");
-
+    m_credentialCreationOptionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetControlLayout::SheetControlLayout() : 
-    m_configurationHasBeenSet(false)
-{
-}
-
 SheetControlLayout::SheetControlLayout(JsonView jsonValue)
-  : SheetControlLayout()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SheetControlLayout& SheetControlLayout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,23 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-IntOptions::IntOptions() : 
-    m_defaultValue(0),
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false)
-{
-}
-
 IntOptions::IntOptions(const XmlNode& xmlNode)
-  : IntOptions()
 {
   *this = xmlNode;
 }

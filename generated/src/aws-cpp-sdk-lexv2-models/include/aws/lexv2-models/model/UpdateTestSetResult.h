@@ -31,7 +31,7 @@ namespace Model
   class UpdateTestSetResult
   {
   public:
-    AWS_LEXMODELSV2_API UpdateTestSetResult();
+    AWS_LEXMODELSV2_API UpdateTestSetResult() = default;
     AWS_LEXMODELSV2_API UpdateTestSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API UpdateTestSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,61 +40,51 @@ namespace Model
     /**
      * <p>The test set Id for which update test operation to be performed.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetId.assign(value); }
-    inline UpdateTestSetResult& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline UpdateTestSetResult& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline UpdateTestSetResult& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    UpdateTestSetResult& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set name for the updated test set.</p>
      */
-    inline const Aws::String& GetTestSetName() const{ return m_testSetName; }
-    inline void SetTestSetName(const Aws::String& value) { m_testSetName = value; }
-    inline void SetTestSetName(Aws::String&& value) { m_testSetName = std::move(value); }
-    inline void SetTestSetName(const char* value) { m_testSetName.assign(value); }
-    inline UpdateTestSetResult& WithTestSetName(const Aws::String& value) { SetTestSetName(value); return *this;}
-    inline UpdateTestSetResult& WithTestSetName(Aws::String&& value) { SetTestSetName(std::move(value)); return *this;}
-    inline UpdateTestSetResult& WithTestSetName(const char* value) { SetTestSetName(value); return *this;}
+    inline const Aws::String& GetTestSetName() const { return m_testSetName; }
+    template<typename TestSetNameT = Aws::String>
+    void SetTestSetName(TestSetNameT&& value) { m_testSetNameHasBeenSet = true; m_testSetName = std::forward<TestSetNameT>(value); }
+    template<typename TestSetNameT = Aws::String>
+    UpdateTestSetResult& WithTestSetName(TestSetNameT&& value) { SetTestSetName(std::forward<TestSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set description for the updated test set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateTestSetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateTestSetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateTestSetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateTestSetResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether audio or text is used for the updated test set.</p>
      */
-    inline const TestSetModality& GetModality() const{ return m_modality; }
-    inline void SetModality(const TestSetModality& value) { m_modality = value; }
-    inline void SetModality(TestSetModality&& value) { m_modality = std::move(value); }
-    inline UpdateTestSetResult& WithModality(const TestSetModality& value) { SetModality(value); return *this;}
-    inline UpdateTestSetResult& WithModality(TestSetModality&& value) { SetModality(std::move(value)); return *this;}
+    inline TestSetModality GetModality() const { return m_modality; }
+    inline void SetModality(TestSetModality value) { m_modalityHasBeenSet = true; m_modality = value; }
+    inline UpdateTestSetResult& WithModality(TestSetModality value) { SetModality(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for the updated test set.</p>
      */
-    inline const TestSetStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TestSetStatus& value) { m_status = value; }
-    inline void SetStatus(TestSetStatus&& value) { m_status = std::move(value); }
-    inline UpdateTestSetResult& WithStatus(const TestSetStatus& value) { SetStatus(value); return *this;}
-    inline UpdateTestSetResult& WithStatus(TestSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TestSetStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TestSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateTestSetResult& WithStatus(TestSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -102,21 +92,19 @@ namespace Model
      * <p>The roleARN used for any operation in the test set to access resources in the
      * Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline UpdateTestSetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateTestSetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateTestSetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateTestSetResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of conversation turns from the updated test set.</p>
      */
-    inline int GetNumTurns() const{ return m_numTurns; }
-    inline void SetNumTurns(int value) { m_numTurns = value; }
+    inline int GetNumTurns() const { return m_numTurns; }
+    inline void SetNumTurns(int value) { m_numTurnsHasBeenSet = true; m_numTurns = value; }
     inline UpdateTestSetResult& WithNumTurns(int value) { SetNumTurns(value); return *this;}
     ///@}
 
@@ -124,68 +112,77 @@ namespace Model
     /**
      * <p>The Amazon S3 storage location for the updated test set.</p>
      */
-    inline const TestSetStorageLocation& GetStorageLocation() const{ return m_storageLocation; }
-    inline void SetStorageLocation(const TestSetStorageLocation& value) { m_storageLocation = value; }
-    inline void SetStorageLocation(TestSetStorageLocation&& value) { m_storageLocation = std::move(value); }
-    inline UpdateTestSetResult& WithStorageLocation(const TestSetStorageLocation& value) { SetStorageLocation(value); return *this;}
-    inline UpdateTestSetResult& WithStorageLocation(TestSetStorageLocation&& value) { SetStorageLocation(std::move(value)); return *this;}
+    inline const TestSetStorageLocation& GetStorageLocation() const { return m_storageLocation; }
+    template<typename StorageLocationT = TestSetStorageLocation>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = TestSetStorageLocation>
+    UpdateTestSetResult& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time for the updated test set.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline UpdateTestSetResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline UpdateTestSetResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    UpdateTestSetResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date and time of the last update for the updated test set.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline UpdateTestSetResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline UpdateTestSetResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    UpdateTestSetResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTestSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTestSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTestSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTestSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testSetId;
+    bool m_testSetIdHasBeenSet = false;
 
     Aws::String m_testSetName;
+    bool m_testSetNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    TestSetModality m_modality;
+    TestSetModality m_modality{TestSetModality::NOT_SET};
+    bool m_modalityHasBeenSet = false;
 
-    TestSetStatus m_status;
+    TestSetStatus m_status{TestSetStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    int m_numTurns;
+    int m_numTurns{0};
+    bool m_numTurnsHasBeenSet = false;
 
     TestSetStorageLocation m_storageLocation;
+    bool m_storageLocationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

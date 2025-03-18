@@ -18,14 +18,7 @@ namespace IVS
 namespace Model
 {
 
-IngestConfiguration::IngestConfiguration() : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false)
-{
-}
-
 IngestConfiguration::IngestConfiguration(JsonView jsonValue)
-  : IngestConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IngestConfiguration& IngestConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audio"))
   {
     m_audio = jsonValue.GetObject("audio");
-
     m_audioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("video"))
   {
     m_video = jsonValue.GetObject("video");
-
     m_videoHasBeenSet = true;
   }
-
   return *this;
 }
 

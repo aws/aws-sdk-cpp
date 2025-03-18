@@ -36,7 +36,7 @@ namespace Model
   class Variable
   {
   public:
-    AWS_IOTANALYTICS_API Variable();
+    AWS_IOTANALYTICS_API Variable() = default;
     AWS_IOTANALYTICS_API Variable(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Variable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,35 +46,31 @@ namespace Model
     /**
      * <p>The name of the variable.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Variable& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Variable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Variable& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Variable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the variable as a string.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline Variable& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline Variable& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline Variable& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    Variable& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the variable as a double (numeric).</p>
      */
-    inline double GetDoubleValue() const{ return m_doubleValue; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline Variable& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
@@ -85,12 +81,12 @@ namespace Model
      * <p>The value of the variable as a structure that specifies a dataset content
      * version.</p>
      */
-    inline const DatasetContentVersionValue& GetDatasetContentVersionValue() const{ return m_datasetContentVersionValue; }
+    inline const DatasetContentVersionValue& GetDatasetContentVersionValue() const { return m_datasetContentVersionValue; }
     inline bool DatasetContentVersionValueHasBeenSet() const { return m_datasetContentVersionValueHasBeenSet; }
-    inline void SetDatasetContentVersionValue(const DatasetContentVersionValue& value) { m_datasetContentVersionValueHasBeenSet = true; m_datasetContentVersionValue = value; }
-    inline void SetDatasetContentVersionValue(DatasetContentVersionValue&& value) { m_datasetContentVersionValueHasBeenSet = true; m_datasetContentVersionValue = std::move(value); }
-    inline Variable& WithDatasetContentVersionValue(const DatasetContentVersionValue& value) { SetDatasetContentVersionValue(value); return *this;}
-    inline Variable& WithDatasetContentVersionValue(DatasetContentVersionValue&& value) { SetDatasetContentVersionValue(std::move(value)); return *this;}
+    template<typename DatasetContentVersionValueT = DatasetContentVersionValue>
+    void SetDatasetContentVersionValue(DatasetContentVersionValueT&& value) { m_datasetContentVersionValueHasBeenSet = true; m_datasetContentVersionValue = std::forward<DatasetContentVersionValueT>(value); }
+    template<typename DatasetContentVersionValueT = DatasetContentVersionValue>
+    Variable& WithDatasetContentVersionValue(DatasetContentVersionValueT&& value) { SetDatasetContentVersionValue(std::forward<DatasetContentVersionValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +94,12 @@ namespace Model
      * <p>The value of the variable as a structure that specifies an output file
      * URI.</p>
      */
-    inline const OutputFileUriValue& GetOutputFileUriValue() const{ return m_outputFileUriValue; }
+    inline const OutputFileUriValue& GetOutputFileUriValue() const { return m_outputFileUriValue; }
     inline bool OutputFileUriValueHasBeenSet() const { return m_outputFileUriValueHasBeenSet; }
-    inline void SetOutputFileUriValue(const OutputFileUriValue& value) { m_outputFileUriValueHasBeenSet = true; m_outputFileUriValue = value; }
-    inline void SetOutputFileUriValue(OutputFileUriValue&& value) { m_outputFileUriValueHasBeenSet = true; m_outputFileUriValue = std::move(value); }
-    inline Variable& WithOutputFileUriValue(const OutputFileUriValue& value) { SetOutputFileUriValue(value); return *this;}
-    inline Variable& WithOutputFileUriValue(OutputFileUriValue&& value) { SetOutputFileUriValue(std::move(value)); return *this;}
+    template<typename OutputFileUriValueT = OutputFileUriValue>
+    void SetOutputFileUriValue(OutputFileUriValueT&& value) { m_outputFileUriValueHasBeenSet = true; m_outputFileUriValue = std::forward<OutputFileUriValueT>(value); }
+    template<typename OutputFileUriValueT = OutputFileUriValue>
+    Variable& WithOutputFileUriValue(OutputFileUriValueT&& value) { SetOutputFileUriValue(std::forward<OutputFileUriValueT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +109,7 @@ namespace Model
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
     bool m_doubleValueHasBeenSet = false;
 
     DatasetContentVersionValue m_datasetContentVersionValue;

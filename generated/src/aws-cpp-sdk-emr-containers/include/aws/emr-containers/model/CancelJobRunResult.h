@@ -27,7 +27,7 @@ namespace Model
   class CancelJobRunResult
   {
   public:
-    AWS_EMRCONTAINERS_API CancelJobRunResult();
+    AWS_EMRCONTAINERS_API CancelJobRunResult() = default;
     AWS_EMRCONTAINERS_API CancelJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMRCONTAINERS_API CancelJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The output contains the ID of the cancelled job run.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CancelJobRunResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CancelJobRunResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CancelJobRunResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CancelJobRunResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,31 @@ namespace Model
      * <p>The output contains the virtual cluster ID for which the job run is
      * cancelled.</p>
      */
-    inline const Aws::String& GetVirtualClusterId() const{ return m_virtualClusterId; }
-    inline void SetVirtualClusterId(const Aws::String& value) { m_virtualClusterId = value; }
-    inline void SetVirtualClusterId(Aws::String&& value) { m_virtualClusterId = std::move(value); }
-    inline void SetVirtualClusterId(const char* value) { m_virtualClusterId.assign(value); }
-    inline CancelJobRunResult& WithVirtualClusterId(const Aws::String& value) { SetVirtualClusterId(value); return *this;}
-    inline CancelJobRunResult& WithVirtualClusterId(Aws::String&& value) { SetVirtualClusterId(std::move(value)); return *this;}
-    inline CancelJobRunResult& WithVirtualClusterId(const char* value) { SetVirtualClusterId(value); return *this;}
+    inline const Aws::String& GetVirtualClusterId() const { return m_virtualClusterId; }
+    template<typename VirtualClusterIdT = Aws::String>
+    void SetVirtualClusterId(VirtualClusterIdT&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::forward<VirtualClusterIdT>(value); }
+    template<typename VirtualClusterIdT = Aws::String>
+    CancelJobRunResult& WithVirtualClusterId(VirtualClusterIdT&& value) { SetVirtualClusterId(std::forward<VirtualClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelJobRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_virtualClusterId;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

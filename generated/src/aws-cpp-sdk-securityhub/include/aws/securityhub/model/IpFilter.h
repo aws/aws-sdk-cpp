@@ -31,7 +31,7 @@ namespace Model
   class IpFilter
   {
   public:
-    AWS_SECURITYHUB_API IpFilter();
+    AWS_SECURITYHUB_API IpFilter() = default;
     AWS_SECURITYHUB_API IpFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API IpFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A finding's CIDR value.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline IpFilter& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline IpFilter& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline IpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    IpFilter& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 

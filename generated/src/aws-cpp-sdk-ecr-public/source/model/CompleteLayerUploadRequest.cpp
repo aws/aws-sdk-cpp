@@ -12,14 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompleteLayerUploadRequest::CompleteLayerUploadRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_layerDigestsHasBeenSet(false)
-{
-}
-
 Aws::String CompleteLayerUploadRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class SoftwareUpdateOptionsStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptionsStatus() = default;
     AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The service software update options for a domain.</p>
      */
-    inline const SoftwareUpdateOptions& GetOptions() const{ return m_options; }
+    inline const SoftwareUpdateOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const SoftwareUpdateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(SoftwareUpdateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline SoftwareUpdateOptionsStatus& WithOptions(const SoftwareUpdateOptions& value) { SetOptions(value); return *this;}
-    inline SoftwareUpdateOptionsStatus& WithOptions(SoftwareUpdateOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = SoftwareUpdateOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = SoftwareUpdateOptions>
+    SoftwareUpdateOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The status of service software update options, including creation date and
      * last updated date.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SoftwareUpdateOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline SoftwareUpdateOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    SoftwareUpdateOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

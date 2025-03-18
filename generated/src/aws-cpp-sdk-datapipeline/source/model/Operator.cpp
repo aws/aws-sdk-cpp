@@ -18,15 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-Operator::Operator() : 
-    m_type(OperatorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 Operator::Operator(JsonView jsonValue)
-  : Operator()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Operator& Operator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = OperatorTypeMapper::GetOperatorTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ Operator& Operator::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

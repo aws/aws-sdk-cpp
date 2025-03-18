@@ -25,7 +25,7 @@ namespace Model
   class DescribeApplicationVersionsRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeApplicationVersionsRequest();
+    AWS_ELASTICBEANSTALK_API DescribeApplicationVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,29 +45,26 @@ namespace Model
      * <p>Specify an application name to show only application versions for that
      * application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline DescribeApplicationVersionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline DescribeApplicationVersionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline DescribeApplicationVersionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    DescribeApplicationVersionsRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify a version label to show a specific application version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersionLabels() const{ return m_versionLabels; }
+    inline const Aws::Vector<Aws::String>& GetVersionLabels() const { return m_versionLabels; }
     inline bool VersionLabelsHasBeenSet() const { return m_versionLabelsHasBeenSet; }
-    inline void SetVersionLabels(const Aws::Vector<Aws::String>& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
-    inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::move(value); }
-    inline DescribeApplicationVersionsRequest& WithVersionLabels(const Aws::Vector<Aws::String>& value) { SetVersionLabels(value); return *this;}
-    inline DescribeApplicationVersionsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(std::move(value)); return *this;}
-    inline DescribeApplicationVersionsRequest& AddVersionLabels(const Aws::String& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
-    inline DescribeApplicationVersionsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(std::move(value)); return *this; }
-    inline DescribeApplicationVersionsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
+    template<typename VersionLabelsT = Aws::Vector<Aws::String>>
+    void SetVersionLabels(VersionLabelsT&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = std::forward<VersionLabelsT>(value); }
+    template<typename VersionLabelsT = Aws::Vector<Aws::String>>
+    DescribeApplicationVersionsRequest& WithVersionLabels(VersionLabelsT&& value) { SetVersionLabels(std::forward<VersionLabelsT>(value)); return *this;}
+    template<typename VersionLabelsT = Aws::String>
+    DescribeApplicationVersionsRequest& AddVersionLabels(VersionLabelsT&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.emplace_back(std::forward<VersionLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,7 +73,7 @@ namespace Model
      * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
      * available application versions are retrieved in a single response.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeApplicationVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -89,14 +86,12 @@ namespace Model
      * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
      * is specified, the first page is retrieved.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeApplicationVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeApplicationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeApplicationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeApplicationVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +101,7 @@ namespace Model
     Aws::Vector<Aws::String> m_versionLabels;
     bool m_versionLabelsHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

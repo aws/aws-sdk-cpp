@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ValidationError::ValidationError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationError::ValidationError(const XmlNode& xmlNode)
-  : ValidationError()
 {
   *this = xmlNode;
 }

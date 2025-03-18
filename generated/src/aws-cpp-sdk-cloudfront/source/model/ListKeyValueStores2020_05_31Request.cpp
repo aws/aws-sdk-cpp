@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListKeyValueStores2020_05_31Request::ListKeyValueStores2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
 
 Aws::String ListKeyValueStores2020_05_31Request::SerializePayload() const
 {

@@ -18,17 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ChannelGroupListConfiguration::ChannelGroupListConfiguration() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ChannelGroupListConfiguration::ChannelGroupListConfiguration(JsonView jsonValue)
-  : ChannelGroupListConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ChannelGroupListConfiguration& ChannelGroupListConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("ChannelGroupName"))
   {
     m_channelGroupName = jsonValue.GetString("ChannelGroupName");
-
     m_channelGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("ModifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

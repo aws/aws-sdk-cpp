@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteSecurityProfileRequest::DeleteSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSecurityProfileRequest::SerializePayload() const
 {
   return {};

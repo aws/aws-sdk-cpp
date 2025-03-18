@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAlarmRequest::DeleteAlarmRequest() : 
-    m_alarmNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAlarmRequest::SerializePayload() const
 {
   JsonValue payload;

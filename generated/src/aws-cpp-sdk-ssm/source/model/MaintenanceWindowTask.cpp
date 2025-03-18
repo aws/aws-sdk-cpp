@@ -18,30 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowTask::MaintenanceWindowTask() : 
-    m_windowIdHasBeenSet(false),
-    m_windowTaskIdHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_type(MaintenanceWindowTaskType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_taskParametersHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false)
-{
-}
-
 MaintenanceWindowTask::MaintenanceWindowTask(JsonView jsonValue)
-  : MaintenanceWindowTask()
 {
   *this = jsonValue;
 }
@@ -51,31 +28,23 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowTaskId"))
   {
     m_windowTaskId = jsonValue.GetString("WindowTaskId");
-
     m_windowTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MaintenanceWindowTaskTypeMapper::GetMaintenanceWindowTaskTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -85,7 +54,6 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskParameters"))
   {
     Aws::Map<Aws::String, JsonView> taskParametersJsonMap = jsonValue.GetObject("TaskParameters").GetAllObjects();
@@ -95,70 +63,51 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
     }
     m_taskParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingInfo"))
   {
     m_loggingInfo = jsonValue.GetObject("LoggingInfo");
-
     m_loggingInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRoleArn"))
   {
     m_serviceRoleArn = jsonValue.GetString("ServiceRoleArn");
-
     m_serviceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxErrors"))
   {
     m_maxErrors = jsonValue.GetString("MaxErrors");
-
     m_maxErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CutoffBehavior"))
   {
     m_cutoffBehavior = MaintenanceWindowTaskCutoffBehaviorMapper::GetMaintenanceWindowTaskCutoffBehaviorForName(jsonValue.GetString("CutoffBehavior"));
-
     m_cutoffBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

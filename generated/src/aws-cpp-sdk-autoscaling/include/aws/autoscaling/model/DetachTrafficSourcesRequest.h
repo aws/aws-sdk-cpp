@@ -23,7 +23,7 @@ namespace Model
   class DetachTrafficSourcesRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DetachTrafficSourcesRequest();
+    AWS_AUTOSCALING_API DetachTrafficSourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DetachTrafficSourcesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DetachTrafficSourcesRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,14 @@ namespace Model
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
      * 10 traffic sources.</p>
      */
-    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
+    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const { return m_trafficSources; }
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
-    inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
-    inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
-    inline DetachTrafficSourcesRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
-    inline DetachTrafficSourcesRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
-    inline DetachTrafficSourcesRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
-    inline DetachTrafficSourcesRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
+    template<typename TrafficSourcesT = Aws::Vector<TrafficSourceIdentifier>>
+    void SetTrafficSources(TrafficSourcesT&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::forward<TrafficSourcesT>(value); }
+    template<typename TrafficSourcesT = Aws::Vector<TrafficSourceIdentifier>>
+    DetachTrafficSourcesRequest& WithTrafficSources(TrafficSourcesT&& value) { SetTrafficSources(std::forward<TrafficSourcesT>(value)); return *this;}
+    template<typename TrafficSourcesT = TrafficSourceIdentifier>
+    DetachTrafficSourcesRequest& AddTrafficSources(TrafficSourcesT&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.emplace_back(std::forward<TrafficSourcesT>(value)); return *this; }
     ///@}
   private:
 

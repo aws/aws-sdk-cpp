@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRecoveryPointLifecycleResult::UpdateRecoveryPointLifecycleResult()
-{
-}
-
 UpdateRecoveryPointLifecycleResult::UpdateRecoveryPointLifecycleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ UpdateRecoveryPointLifecycleResult& UpdateRecoveryPointLifecycleResult::operator
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
+    m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
-
+    m_recoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
-
+    m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedLifecycle"))
   {
     m_calculatedLifecycle = jsonValue.GetObject("CalculatedLifecycle");
-
+    m_calculatedLifecycleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

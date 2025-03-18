@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeThingRegistrationTaskRequest::DescribeThingRegistrationTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThingRegistrationTaskRequest::SerializePayload() const
 {
   return {};

@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-FailoverPrimaryComputeRequest::FailoverPrimaryComputeRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String FailoverPrimaryComputeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

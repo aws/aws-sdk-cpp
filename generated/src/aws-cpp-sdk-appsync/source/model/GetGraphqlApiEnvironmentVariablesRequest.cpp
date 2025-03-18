@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGraphqlApiEnvironmentVariablesRequest::GetGraphqlApiEnvironmentVariablesRequest() : 
-    m_apiIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGraphqlApiEnvironmentVariablesRequest::SerializePayload() const
 {
   return {};

@@ -36,7 +36,7 @@ namespace Model
   class PlacementGroupConfig
   {
   public:
-    AWS_EMR_API PlacementGroupConfig();
+    AWS_EMR_API PlacementGroupConfig() = default;
     AWS_EMR_API PlacementGroupConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API PlacementGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>Role of the instance in the cluster.</p> <p>Starting with Amazon EMR release
      * 5.23.0, the only supported instance role is <code>MASTER</code>.</p>
      */
-    inline const InstanceRoleType& GetInstanceRole() const{ return m_instanceRole; }
+    inline InstanceRoleType GetInstanceRole() const { return m_instanceRole; }
     inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
-    inline void SetInstanceRole(const InstanceRoleType& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
-    inline void SetInstanceRole(InstanceRoleType&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
-    inline PlacementGroupConfig& WithInstanceRole(const InstanceRoleType& value) { SetInstanceRole(value); return *this;}
-    inline PlacementGroupConfig& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(std::move(value)); return *this;}
+    inline void SetInstanceRole(InstanceRoleType value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
+    inline PlacementGroupConfig& WithInstanceRole(InstanceRoleType value) { SetInstanceRole(value); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * <p>Starting with Amazon EMR release 5.23.0, the only supported placement
      * strategy is <code>SPREAD</code> for the <code>MASTER</code> instance role.</p>
      */
-    inline const PlacementGroupStrategy& GetPlacementStrategy() const{ return m_placementStrategy; }
+    inline PlacementGroupStrategy GetPlacementStrategy() const { return m_placementStrategy; }
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
-    inline void SetPlacementStrategy(const PlacementGroupStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
-    inline void SetPlacementStrategy(PlacementGroupStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
-    inline PlacementGroupConfig& WithPlacementStrategy(const PlacementGroupStrategy& value) { SetPlacementStrategy(value); return *this;}
-    inline PlacementGroupConfig& WithPlacementStrategy(PlacementGroupStrategy&& value) { SetPlacementStrategy(std::move(value)); return *this;}
+    inline void SetPlacementStrategy(PlacementGroupStrategy value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+    inline PlacementGroupConfig& WithPlacementStrategy(PlacementGroupStrategy value) { SetPlacementStrategy(value); return *this;}
     ///@}
   private:
 
-    InstanceRoleType m_instanceRole;
+    InstanceRoleType m_instanceRole{InstanceRoleType::NOT_SET};
     bool m_instanceRoleHasBeenSet = false;
 
-    PlacementGroupStrategy m_placementStrategy;
+    PlacementGroupStrategy m_placementStrategy{PlacementGroupStrategy::NOT_SET};
     bool m_placementStrategyHasBeenSet = false;
   };
 

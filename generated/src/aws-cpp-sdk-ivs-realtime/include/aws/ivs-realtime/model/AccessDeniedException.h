@@ -31,7 +31,7 @@ namespace Model
   class AccessDeniedException
   {
   public:
-    AWS_IVSREALTIME_API AccessDeniedException();
+    AWS_IVSREALTIME_API AccessDeniedException() = default;
     AWS_IVSREALTIME_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,126 +41,108 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccessControlAllowOrigin() const{ return m_accessControlAllowOrigin; }
+    inline const Aws::String& GetAccessControlAllowOrigin() const { return m_accessControlAllowOrigin; }
     inline bool AccessControlAllowOriginHasBeenSet() const { return m_accessControlAllowOriginHasBeenSet; }
-    inline void SetAccessControlAllowOrigin(const Aws::String& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = value; }
-    inline void SetAccessControlAllowOrigin(Aws::String&& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = std::move(value); }
-    inline void SetAccessControlAllowOrigin(const char* value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin.assign(value); }
-    inline AccessDeniedException& WithAccessControlAllowOrigin(const Aws::String& value) { SetAccessControlAllowOrigin(value); return *this;}
-    inline AccessDeniedException& WithAccessControlAllowOrigin(Aws::String&& value) { SetAccessControlAllowOrigin(std::move(value)); return *this;}
-    inline AccessDeniedException& WithAccessControlAllowOrigin(const char* value) { SetAccessControlAllowOrigin(value); return *this;}
+    template<typename AccessControlAllowOriginT = Aws::String>
+    void SetAccessControlAllowOrigin(AccessControlAllowOriginT&& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = std::forward<AccessControlAllowOriginT>(value); }
+    template<typename AccessControlAllowOriginT = Aws::String>
+    AccessDeniedException& WithAccessControlAllowOrigin(AccessControlAllowOriginT&& value) { SetAccessControlAllowOrigin(std::forward<AccessControlAllowOriginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccessControlExposeHeaders() const{ return m_accessControlExposeHeaders; }
+    inline const Aws::String& GetAccessControlExposeHeaders() const { return m_accessControlExposeHeaders; }
     inline bool AccessControlExposeHeadersHasBeenSet() const { return m_accessControlExposeHeadersHasBeenSet; }
-    inline void SetAccessControlExposeHeaders(const Aws::String& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = value; }
-    inline void SetAccessControlExposeHeaders(Aws::String&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::move(value); }
-    inline void SetAccessControlExposeHeaders(const char* value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders.assign(value); }
-    inline AccessDeniedException& WithAccessControlExposeHeaders(const Aws::String& value) { SetAccessControlExposeHeaders(value); return *this;}
-    inline AccessDeniedException& WithAccessControlExposeHeaders(Aws::String&& value) { SetAccessControlExposeHeaders(std::move(value)); return *this;}
-    inline AccessDeniedException& WithAccessControlExposeHeaders(const char* value) { SetAccessControlExposeHeaders(value); return *this;}
+    template<typename AccessControlExposeHeadersT = Aws::String>
+    void SetAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::forward<AccessControlExposeHeadersT>(value); }
+    template<typename AccessControlExposeHeadersT = Aws::String>
+    AccessDeniedException& WithAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { SetAccessControlExposeHeaders(std::forward<AccessControlExposeHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
-    inline AccessDeniedException& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline AccessDeniedException& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline AccessDeniedException& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    AccessDeniedException& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetContentSecurityPolicy() const{ return m_contentSecurityPolicy; }
+    inline const Aws::String& GetContentSecurityPolicy() const { return m_contentSecurityPolicy; }
     inline bool ContentSecurityPolicyHasBeenSet() const { return m_contentSecurityPolicyHasBeenSet; }
-    inline void SetContentSecurityPolicy(const Aws::String& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = value; }
-    inline void SetContentSecurityPolicy(Aws::String&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::move(value); }
-    inline void SetContentSecurityPolicy(const char* value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy.assign(value); }
-    inline AccessDeniedException& WithContentSecurityPolicy(const Aws::String& value) { SetContentSecurityPolicy(value); return *this;}
-    inline AccessDeniedException& WithContentSecurityPolicy(Aws::String&& value) { SetContentSecurityPolicy(std::move(value)); return *this;}
-    inline AccessDeniedException& WithContentSecurityPolicy(const char* value) { SetContentSecurityPolicy(value); return *this;}
+    template<typename ContentSecurityPolicyT = Aws::String>
+    void SetContentSecurityPolicy(ContentSecurityPolicyT&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::forward<ContentSecurityPolicyT>(value); }
+    template<typename ContentSecurityPolicyT = Aws::String>
+    AccessDeniedException& WithContentSecurityPolicy(ContentSecurityPolicyT&& value) { SetContentSecurityPolicy(std::forward<ContentSecurityPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetStrictTransportSecurity() const{ return m_strictTransportSecurity; }
+    inline const Aws::String& GetStrictTransportSecurity() const { return m_strictTransportSecurity; }
     inline bool StrictTransportSecurityHasBeenSet() const { return m_strictTransportSecurityHasBeenSet; }
-    inline void SetStrictTransportSecurity(const Aws::String& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = value; }
-    inline void SetStrictTransportSecurity(Aws::String&& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = std::move(value); }
-    inline void SetStrictTransportSecurity(const char* value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity.assign(value); }
-    inline AccessDeniedException& WithStrictTransportSecurity(const Aws::String& value) { SetStrictTransportSecurity(value); return *this;}
-    inline AccessDeniedException& WithStrictTransportSecurity(Aws::String&& value) { SetStrictTransportSecurity(std::move(value)); return *this;}
-    inline AccessDeniedException& WithStrictTransportSecurity(const char* value) { SetStrictTransportSecurity(value); return *this;}
+    template<typename StrictTransportSecurityT = Aws::String>
+    void SetStrictTransportSecurity(StrictTransportSecurityT&& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = std::forward<StrictTransportSecurityT>(value); }
+    template<typename StrictTransportSecurityT = Aws::String>
+    AccessDeniedException& WithStrictTransportSecurity(StrictTransportSecurityT&& value) { SetStrictTransportSecurity(std::forward<StrictTransportSecurityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXContentTypeOptions() const{ return m_xContentTypeOptions; }
+    inline const Aws::String& GetXContentTypeOptions() const { return m_xContentTypeOptions; }
     inline bool XContentTypeOptionsHasBeenSet() const { return m_xContentTypeOptionsHasBeenSet; }
-    inline void SetXContentTypeOptions(const Aws::String& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = value; }
-    inline void SetXContentTypeOptions(Aws::String&& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = std::move(value); }
-    inline void SetXContentTypeOptions(const char* value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions.assign(value); }
-    inline AccessDeniedException& WithXContentTypeOptions(const Aws::String& value) { SetXContentTypeOptions(value); return *this;}
-    inline AccessDeniedException& WithXContentTypeOptions(Aws::String&& value) { SetXContentTypeOptions(std::move(value)); return *this;}
-    inline AccessDeniedException& WithXContentTypeOptions(const char* value) { SetXContentTypeOptions(value); return *this;}
+    template<typename XContentTypeOptionsT = Aws::String>
+    void SetXContentTypeOptions(XContentTypeOptionsT&& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = std::forward<XContentTypeOptionsT>(value); }
+    template<typename XContentTypeOptionsT = Aws::String>
+    AccessDeniedException& WithXContentTypeOptions(XContentTypeOptionsT&& value) { SetXContentTypeOptions(std::forward<XContentTypeOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXFrameOptions() const{ return m_xFrameOptions; }
+    inline const Aws::String& GetXFrameOptions() const { return m_xFrameOptions; }
     inline bool XFrameOptionsHasBeenSet() const { return m_xFrameOptionsHasBeenSet; }
-    inline void SetXFrameOptions(const Aws::String& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = value; }
-    inline void SetXFrameOptions(Aws::String&& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = std::move(value); }
-    inline void SetXFrameOptions(const char* value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions.assign(value); }
-    inline AccessDeniedException& WithXFrameOptions(const Aws::String& value) { SetXFrameOptions(value); return *this;}
-    inline AccessDeniedException& WithXFrameOptions(Aws::String&& value) { SetXFrameOptions(std::move(value)); return *this;}
-    inline AccessDeniedException& WithXFrameOptions(const char* value) { SetXFrameOptions(value); return *this;}
+    template<typename XFrameOptionsT = Aws::String>
+    void SetXFrameOptions(XFrameOptionsT&& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = std::forward<XFrameOptionsT>(value); }
+    template<typename XFrameOptionsT = Aws::String>
+    AccessDeniedException& WithXFrameOptions(XFrameOptionsT&& value) { SetXFrameOptions(std::forward<XFrameOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXAmznErrorType() const{ return m_xAmznErrorType; }
+    inline const Aws::String& GetXAmznErrorType() const { return m_xAmznErrorType; }
     inline bool XAmznErrorTypeHasBeenSet() const { return m_xAmznErrorTypeHasBeenSet; }
-    inline void SetXAmznErrorType(const Aws::String& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = value; }
-    inline void SetXAmznErrorType(Aws::String&& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = std::move(value); }
-    inline void SetXAmznErrorType(const char* value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType.assign(value); }
-    inline AccessDeniedException& WithXAmznErrorType(const Aws::String& value) { SetXAmznErrorType(value); return *this;}
-    inline AccessDeniedException& WithXAmznErrorType(Aws::String&& value) { SetXAmznErrorType(std::move(value)); return *this;}
-    inline AccessDeniedException& WithXAmznErrorType(const char* value) { SetXAmznErrorType(value); return *this;}
+    template<typename XAmznErrorTypeT = Aws::String>
+    void SetXAmznErrorType(XAmznErrorTypeT&& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = std::forward<XAmznErrorTypeT>(value); }
+    template<typename XAmznErrorTypeT = Aws::String>
+    AccessDeniedException& WithXAmznErrorType(XAmznErrorTypeT&& value) { SetXAmznErrorType(std::forward<XAmznErrorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>User does not have sufficient access to perform this action.</p>
      */
-    inline const Aws::String& GetExceptionMessage() const{ return m_exceptionMessage; }
+    inline const Aws::String& GetExceptionMessage() const { return m_exceptionMessage; }
     inline bool ExceptionMessageHasBeenSet() const { return m_exceptionMessageHasBeenSet; }
-    inline void SetExceptionMessage(const Aws::String& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = value; }
-    inline void SetExceptionMessage(Aws::String&& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = std::move(value); }
-    inline void SetExceptionMessage(const char* value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage.assign(value); }
-    inline AccessDeniedException& WithExceptionMessage(const Aws::String& value) { SetExceptionMessage(value); return *this;}
-    inline AccessDeniedException& WithExceptionMessage(Aws::String&& value) { SetExceptionMessage(std::move(value)); return *this;}
-    inline AccessDeniedException& WithExceptionMessage(const char* value) { SetExceptionMessage(value); return *this;}
+    template<typename ExceptionMessageT = Aws::String>
+    void SetExceptionMessage(ExceptionMessageT&& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = std::forward<ExceptionMessageT>(value); }
+    template<typename ExceptionMessageT = Aws::String>
+    AccessDeniedException& WithExceptionMessage(ExceptionMessageT&& value) { SetExceptionMessage(std::forward<ExceptionMessageT>(value)); return *this;}
     ///@}
   private:
 

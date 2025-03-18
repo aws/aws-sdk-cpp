@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceMetadataDefaultsRequest::ModifyInstanceMetadataDefaultsRequest() : 
-    m_httpTokens(MetadataDefaultHttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(DefaultInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_instanceMetadataTags(DefaultInstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

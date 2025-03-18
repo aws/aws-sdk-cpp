@@ -18,17 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-AwsCredentials::AwsCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expiration(0),
-    m_expirationHasBeenSet(false)
-{
-}
-
 AwsCredentials::AwsCredentials(JsonView jsonValue)
-  : AwsCredentials()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsCredentials& AwsCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetInt64("expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaInfo::FpgaInfo() : 
-    m_fpgasHasBeenSet(false),
-    m_totalFpgaMemoryInMiB(0),
-    m_totalFpgaMemoryInMiBHasBeenSet(false)
-{
-}
-
 FpgaInfo::FpgaInfo(const XmlNode& xmlNode)
-  : FpgaInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ FpgaInfo& FpgaInfo::operator =(const XmlNode& xmlNode)
     if(!fpgasNode.IsNull())
     {
       XmlNode fpgasMember = fpgasNode.FirstChild("item");
+      m_fpgasHasBeenSet = !fpgasMember.IsNull();
       while(!fpgasMember.IsNull())
       {
         m_fpgas.push_back(fpgasMember);

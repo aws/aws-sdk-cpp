@@ -12,11 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventRuleRequest::DeleteEventRuleRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventRuleRequest::SerializePayload() const
 {
   return {};

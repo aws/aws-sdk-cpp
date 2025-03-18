@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLogGroupRequest::CreateLogGroupRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logGroupClass(LogGroupClass::NOT_SET),
-    m_logGroupClassHasBeenSet(false)
-{
-}
-
 Aws::String CreateLogGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-OffPeakWindow::OffPeakWindow() : 
-    m_windowStartTimeHasBeenSet(false)
-{
-}
-
 OffPeakWindow::OffPeakWindow(JsonView jsonValue)
-  : OffPeakWindow()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OffPeakWindow& OffPeakWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WindowStartTime"))
   {
     m_windowStartTime = jsonValue.GetObject("WindowStartTime");
-
     m_windowStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

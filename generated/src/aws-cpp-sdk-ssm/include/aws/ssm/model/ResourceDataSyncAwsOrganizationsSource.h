@@ -36,7 +36,7 @@ namespace Model
   class ResourceDataSyncAwsOrganizationsSource
   {
   public:
-    AWS_SSM_API ResourceDataSyncAwsOrganizationsSource();
+    AWS_SSM_API ResourceDataSyncAwsOrganizationsSource() = default;
     AWS_SSM_API ResourceDataSyncAwsOrganizationsSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResourceDataSyncAwsOrganizationsSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,26 @@ namespace Model
      * organization units. For <code>EntireOrganization</code>, the data is aggregated
      * from the entire Amazon Web Services organization.</p>
      */
-    inline const Aws::String& GetOrganizationSourceType() const{ return m_organizationSourceType; }
+    inline const Aws::String& GetOrganizationSourceType() const { return m_organizationSourceType; }
     inline bool OrganizationSourceTypeHasBeenSet() const { return m_organizationSourceTypeHasBeenSet; }
-    inline void SetOrganizationSourceType(const Aws::String& value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType = value; }
-    inline void SetOrganizationSourceType(Aws::String&& value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType = std::move(value); }
-    inline void SetOrganizationSourceType(const char* value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType.assign(value); }
-    inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(const Aws::String& value) { SetOrganizationSourceType(value); return *this;}
-    inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(Aws::String&& value) { SetOrganizationSourceType(std::move(value)); return *this;}
-    inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(const char* value) { SetOrganizationSourceType(value); return *this;}
+    template<typename OrganizationSourceTypeT = Aws::String>
+    void SetOrganizationSourceType(OrganizationSourceTypeT&& value) { m_organizationSourceTypeHasBeenSet = true; m_organizationSourceType = std::forward<OrganizationSourceTypeT>(value); }
+    template<typename OrganizationSourceTypeT = Aws::String>
+    ResourceDataSyncAwsOrganizationsSource& WithOrganizationSourceType(OrganizationSourceTypeT&& value) { SetOrganizationSourceType(std::forward<OrganizationSourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Organizations organization units included in the sync.</p>
      */
-    inline const Aws::Vector<ResourceDataSyncOrganizationalUnit>& GetOrganizationalUnits() const{ return m_organizationalUnits; }
+    inline const Aws::Vector<ResourceDataSyncOrganizationalUnit>& GetOrganizationalUnits() const { return m_organizationalUnits; }
     inline bool OrganizationalUnitsHasBeenSet() const { return m_organizationalUnitsHasBeenSet; }
-    inline void SetOrganizationalUnits(const Aws::Vector<ResourceDataSyncOrganizationalUnit>& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = value; }
-    inline void SetOrganizationalUnits(Aws::Vector<ResourceDataSyncOrganizationalUnit>&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = std::move(value); }
-    inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationalUnits(const Aws::Vector<ResourceDataSyncOrganizationalUnit>& value) { SetOrganizationalUnits(value); return *this;}
-    inline ResourceDataSyncAwsOrganizationsSource& WithOrganizationalUnits(Aws::Vector<ResourceDataSyncOrganizationalUnit>&& value) { SetOrganizationalUnits(std::move(value)); return *this;}
-    inline ResourceDataSyncAwsOrganizationsSource& AddOrganizationalUnits(const ResourceDataSyncOrganizationalUnit& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(value); return *this; }
-    inline ResourceDataSyncAwsOrganizationsSource& AddOrganizationalUnits(ResourceDataSyncOrganizationalUnit&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(std::move(value)); return *this; }
+    template<typename OrganizationalUnitsT = Aws::Vector<ResourceDataSyncOrganizationalUnit>>
+    void SetOrganizationalUnits(OrganizationalUnitsT&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = std::forward<OrganizationalUnitsT>(value); }
+    template<typename OrganizationalUnitsT = Aws::Vector<ResourceDataSyncOrganizationalUnit>>
+    ResourceDataSyncAwsOrganizationsSource& WithOrganizationalUnits(OrganizationalUnitsT&& value) { SetOrganizationalUnits(std::forward<OrganizationalUnitsT>(value)); return *this;}
+    template<typename OrganizationalUnitsT = ResourceDataSyncOrganizationalUnit>
+    ResourceDataSyncAwsOrganizationsSource& AddOrganizationalUnits(OrganizationalUnitsT&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.emplace_back(std::forward<OrganizationalUnitsT>(value)); return *this; }
     ///@}
   private:
 

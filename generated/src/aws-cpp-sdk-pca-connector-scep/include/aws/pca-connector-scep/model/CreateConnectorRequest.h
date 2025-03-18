@@ -24,7 +24,7 @@ namespace Model
   class CreateConnectorRequest : public PcaConnectorScepRequest
   {
   public:
-    AWS_PCACONNECTORSCEP_API CreateConnectorRequest();
+    AWS_PCACONNECTORSCEP_API CreateConnectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
      * using the Amazon Web Services Private CA API.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline CreateConnectorRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline CreateConnectorRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline CreateConnectorRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    CreateConnectorRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
      * Connector for SCEP for Microsoft Intune</a>.</p>
      */
-    inline const MobileDeviceManagement& GetMobileDeviceManagement() const{ return m_mobileDeviceManagement; }
+    inline const MobileDeviceManagement& GetMobileDeviceManagement() const { return m_mobileDeviceManagement; }
     inline bool MobileDeviceManagementHasBeenSet() const { return m_mobileDeviceManagementHasBeenSet; }
-    inline void SetMobileDeviceManagement(const MobileDeviceManagement& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = value; }
-    inline void SetMobileDeviceManagement(MobileDeviceManagement&& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = std::move(value); }
-    inline CreateConnectorRequest& WithMobileDeviceManagement(const MobileDeviceManagement& value) { SetMobileDeviceManagement(value); return *this;}
-    inline CreateConnectorRequest& WithMobileDeviceManagement(MobileDeviceManagement&& value) { SetMobileDeviceManagement(std::move(value)); return *this;}
+    template<typename MobileDeviceManagementT = MobileDeviceManagement>
+    void SetMobileDeviceManagement(MobileDeviceManagementT&& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = std::forward<MobileDeviceManagementT>(value); }
+    template<typename MobileDeviceManagementT = MobileDeviceManagement>
+    CreateConnectorRequest& WithMobileDeviceManagement(MobileDeviceManagementT&& value) { SetMobileDeviceManagement(std::forward<MobileDeviceManagementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,33 +88,28 @@ namespace Model
      * change the client token for each call, Connector for SCEP recognizes that you
      * are requesting multiple challenge passwords.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateConnectorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateConnectorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateConnectorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateConnectorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key-value pairs to associate with the resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateConnectorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateConnectorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateConnectorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateConnectorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConnectorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConnectorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateConnectorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConnectorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConnectorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateConnectorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateConnectorRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

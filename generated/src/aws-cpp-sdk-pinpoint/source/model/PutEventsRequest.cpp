@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEventsRequest::PutEventsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_eventsRequestHasBeenSet(false)
-{
-}
-
 Aws::String PutEventsRequest::SerializePayload() const
 {
   JsonValue payload;

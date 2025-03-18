@@ -23,7 +23,7 @@ namespace Model
   class UpdateAppAuthorizationRequest : public AppFabricRequest
   {
   public:
-    AWS_APPFABRIC_API UpdateAppAuthorizationRequest();
+    AWS_APPFABRIC_API UpdateAppAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app bundle to use for the request.</p>
      */
-    inline const Aws::String& GetAppBundleIdentifier() const{ return m_appBundleIdentifier; }
+    inline const Aws::String& GetAppBundleIdentifier() const { return m_appBundleIdentifier; }
     inline bool AppBundleIdentifierHasBeenSet() const { return m_appBundleIdentifierHasBeenSet; }
-    inline void SetAppBundleIdentifier(const Aws::String& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = value; }
-    inline void SetAppBundleIdentifier(Aws::String&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::move(value); }
-    inline void SetAppBundleIdentifier(const char* value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier.assign(value); }
-    inline UpdateAppAuthorizationRequest& WithAppBundleIdentifier(const Aws::String& value) { SetAppBundleIdentifier(value); return *this;}
-    inline UpdateAppAuthorizationRequest& WithAppBundleIdentifier(Aws::String&& value) { SetAppBundleIdentifier(std::move(value)); return *this;}
-    inline UpdateAppAuthorizationRequest& WithAppBundleIdentifier(const char* value) { SetAppBundleIdentifier(value); return *this;}
+    template<typename AppBundleIdentifierT = Aws::String>
+    void SetAppBundleIdentifier(AppBundleIdentifierT&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::forward<AppBundleIdentifierT>(value); }
+    template<typename AppBundleIdentifierT = Aws::String>
+    UpdateAppAuthorizationRequest& WithAppBundleIdentifier(AppBundleIdentifierT&& value) { SetAppBundleIdentifier(std::forward<AppBundleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app authorization to use for the request.</p>
      */
-    inline const Aws::String& GetAppAuthorizationIdentifier() const{ return m_appAuthorizationIdentifier; }
+    inline const Aws::String& GetAppAuthorizationIdentifier() const { return m_appAuthorizationIdentifier; }
     inline bool AppAuthorizationIdentifierHasBeenSet() const { return m_appAuthorizationIdentifierHasBeenSet; }
-    inline void SetAppAuthorizationIdentifier(const Aws::String& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = value; }
-    inline void SetAppAuthorizationIdentifier(Aws::String&& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = std::move(value); }
-    inline void SetAppAuthorizationIdentifier(const char* value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier.assign(value); }
-    inline UpdateAppAuthorizationRequest& WithAppAuthorizationIdentifier(const Aws::String& value) { SetAppAuthorizationIdentifier(value); return *this;}
-    inline UpdateAppAuthorizationRequest& WithAppAuthorizationIdentifier(Aws::String&& value) { SetAppAuthorizationIdentifier(std::move(value)); return *this;}
-    inline UpdateAppAuthorizationRequest& WithAppAuthorizationIdentifier(const char* value) { SetAppAuthorizationIdentifier(value); return *this;}
+    template<typename AppAuthorizationIdentifierT = Aws::String>
+    void SetAppAuthorizationIdentifier(AppAuthorizationIdentifierT&& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = std::forward<AppAuthorizationIdentifierT>(value); }
+    template<typename AppAuthorizationIdentifierT = Aws::String>
+    UpdateAppAuthorizationRequest& WithAppAuthorizationIdentifier(AppAuthorizationIdentifierT&& value) { SetAppAuthorizationIdentifier(std::forward<AppAuthorizationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * app authorization is OAuth2 (<code>oauth2</code>), then you should provide only
      * the OAuth2 credentials.</p>
      */
-    inline const Credential& GetCredential() const{ return m_credential; }
+    inline const Credential& GetCredential() const { return m_credential; }
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
-    inline void SetCredential(const Credential& value) { m_credentialHasBeenSet = true; m_credential = value; }
-    inline void SetCredential(Credential&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
-    inline UpdateAppAuthorizationRequest& WithCredential(const Credential& value) { SetCredential(value); return *this;}
-    inline UpdateAppAuthorizationRequest& WithCredential(Credential&& value) { SetCredential(std::move(value)); return *this;}
+    template<typename CredentialT = Credential>
+    void SetCredential(CredentialT&& value) { m_credentialHasBeenSet = true; m_credential = std::forward<CredentialT>(value); }
+    template<typename CredentialT = Credential>
+    UpdateAppAuthorizationRequest& WithCredential(CredentialT&& value) { SetCredential(std::forward<CredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,12 @@ namespace Model
      * <p>Contains information about an application tenant, such as the application
      * display name and identifier.</p>
      */
-    inline const Tenant& GetTenant() const{ return m_tenant; }
+    inline const Tenant& GetTenant() const { return m_tenant; }
     inline bool TenantHasBeenSet() const { return m_tenantHasBeenSet; }
-    inline void SetTenant(const Tenant& value) { m_tenantHasBeenSet = true; m_tenant = value; }
-    inline void SetTenant(Tenant&& value) { m_tenantHasBeenSet = true; m_tenant = std::move(value); }
-    inline UpdateAppAuthorizationRequest& WithTenant(const Tenant& value) { SetTenant(value); return *this;}
-    inline UpdateAppAuthorizationRequest& WithTenant(Tenant&& value) { SetTenant(std::move(value)); return *this;}
+    template<typename TenantT = Tenant>
+    void SetTenant(TenantT&& value) { m_tenantHasBeenSet = true; m_tenant = std::forward<TenantT>(value); }
+    template<typename TenantT = Tenant>
+    UpdateAppAuthorizationRequest& WithTenant(TenantT&& value) { SetTenant(std::forward<TenantT>(value)); return *this;}
     ///@}
   private:
 

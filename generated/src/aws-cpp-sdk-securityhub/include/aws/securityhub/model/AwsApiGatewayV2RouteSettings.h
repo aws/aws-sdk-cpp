@@ -31,7 +31,7 @@ namespace Model
   class AwsApiGatewayV2RouteSettings
   {
   public:
-    AWS_SECURITYHUB_API AwsApiGatewayV2RouteSettings();
+    AWS_SECURITYHUB_API AwsApiGatewayV2RouteSettings() = default;
     AWS_SECURITYHUB_API AwsApiGatewayV2RouteSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsApiGatewayV2RouteSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Indicates whether detailed metrics are enabled.</p>
      */
-    inline bool GetDetailedMetricsEnabled() const{ return m_detailedMetricsEnabled; }
+    inline bool GetDetailedMetricsEnabled() const { return m_detailedMetricsEnabled; }
     inline bool DetailedMetricsEnabledHasBeenSet() const { return m_detailedMetricsEnabledHasBeenSet; }
     inline void SetDetailedMetricsEnabled(bool value) { m_detailedMetricsEnabledHasBeenSet = true; m_detailedMetricsEnabled = value; }
     inline AwsApiGatewayV2RouteSettings& WithDetailedMetricsEnabled(bool value) { SetDetailedMetricsEnabled(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * <code>ERROR</code> events and extra informational events.</p> <p>Valid values:
      * <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
      */
-    inline const Aws::String& GetLoggingLevel() const{ return m_loggingLevel; }
+    inline const Aws::String& GetLoggingLevel() const { return m_loggingLevel; }
     inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
-    inline void SetLoggingLevel(const Aws::String& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = value; }
-    inline void SetLoggingLevel(Aws::String&& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = std::move(value); }
-    inline void SetLoggingLevel(const char* value) { m_loggingLevelHasBeenSet = true; m_loggingLevel.assign(value); }
-    inline AwsApiGatewayV2RouteSettings& WithLoggingLevel(const Aws::String& value) { SetLoggingLevel(value); return *this;}
-    inline AwsApiGatewayV2RouteSettings& WithLoggingLevel(Aws::String&& value) { SetLoggingLevel(std::move(value)); return *this;}
-    inline AwsApiGatewayV2RouteSettings& WithLoggingLevel(const char* value) { SetLoggingLevel(value); return *this;}
+    template<typename LoggingLevelT = Aws::String>
+    void SetLoggingLevel(LoggingLevelT&& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = std::forward<LoggingLevelT>(value); }
+    template<typename LoggingLevelT = Aws::String>
+    AwsApiGatewayV2RouteSettings& WithLoggingLevel(LoggingLevelT&& value) { SetLoggingLevel(std::forward<LoggingLevelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket
      * APIs.</p>
      */
-    inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
+    inline bool GetDataTraceEnabled() const { return m_dataTraceEnabled; }
     inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
     inline AwsApiGatewayV2RouteSettings& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     /**
      * <p>The throttling burst limit.</p>
      */
-    inline int GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
+    inline int GetThrottlingBurstLimit() const { return m_throttlingBurstLimit; }
     inline bool ThrottlingBurstLimitHasBeenSet() const { return m_throttlingBurstLimitHasBeenSet; }
     inline void SetThrottlingBurstLimit(int value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
     inline AwsApiGatewayV2RouteSettings& WithThrottlingBurstLimit(int value) { SetThrottlingBurstLimit(value); return *this;}
@@ -92,26 +90,26 @@ namespace Model
     /**
      * <p>The throttling rate limit.</p>
      */
-    inline double GetThrottlingRateLimit() const{ return m_throttlingRateLimit; }
+    inline double GetThrottlingRateLimit() const { return m_throttlingRateLimit; }
     inline bool ThrottlingRateLimitHasBeenSet() const { return m_throttlingRateLimitHasBeenSet; }
     inline void SetThrottlingRateLimit(double value) { m_throttlingRateLimitHasBeenSet = true; m_throttlingRateLimit = value; }
     inline AwsApiGatewayV2RouteSettings& WithThrottlingRateLimit(double value) { SetThrottlingRateLimit(value); return *this;}
     ///@}
   private:
 
-    bool m_detailedMetricsEnabled;
+    bool m_detailedMetricsEnabled{false};
     bool m_detailedMetricsEnabledHasBeenSet = false;
 
     Aws::String m_loggingLevel;
     bool m_loggingLevelHasBeenSet = false;
 
-    bool m_dataTraceEnabled;
+    bool m_dataTraceEnabled{false};
     bool m_dataTraceEnabledHasBeenSet = false;
 
-    int m_throttlingBurstLimit;
+    int m_throttlingBurstLimit{0};
     bool m_throttlingBurstLimitHasBeenSet = false;
 
-    double m_throttlingRateLimit;
+    double m_throttlingRateLimit{0.0};
     bool m_throttlingRateLimitHasBeenSet = false;
   };
 

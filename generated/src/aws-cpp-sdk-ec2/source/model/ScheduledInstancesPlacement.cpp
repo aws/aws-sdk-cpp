@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesPlacement::ScheduledInstancesPlacement() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 ScheduledInstancesPlacement::ScheduledInstancesPlacement(const XmlNode& xmlNode)
-  : ScheduledInstancesPlacement()
 {
   *this = xmlNode;
 }

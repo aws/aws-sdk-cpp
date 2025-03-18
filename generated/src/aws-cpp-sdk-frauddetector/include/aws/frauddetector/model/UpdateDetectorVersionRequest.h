@@ -25,7 +25,7 @@ namespace Model
   class UpdateDetectorVersionRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateDetectorVersionRequest();
+    AWS_FRAUDDETECTOR_API UpdateDetectorVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,85 +42,78 @@ namespace Model
     /**
      * <p>The parent detector ID for the detector version you want to update.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline UpdateDetectorVersionRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    UpdateDetectorVersionRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version ID. </p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
     inline bool DetectorVersionIdHasBeenSet() const { return m_detectorVersionIdHasBeenSet; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId.assign(value); }
-    inline UpdateDetectorVersionRequest& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    UpdateDetectorVersionRequest& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExternalModelEndpoints() const{ return m_externalModelEndpoints; }
+    inline const Aws::Vector<Aws::String>& GetExternalModelEndpoints() const { return m_externalModelEndpoints; }
     inline bool ExternalModelEndpointsHasBeenSet() const { return m_externalModelEndpointsHasBeenSet; }
-    inline void SetExternalModelEndpoints(const Aws::Vector<Aws::String>& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints = value; }
-    inline void SetExternalModelEndpoints(Aws::Vector<Aws::String>&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints = std::move(value); }
-    inline UpdateDetectorVersionRequest& WithExternalModelEndpoints(const Aws::Vector<Aws::String>& value) { SetExternalModelEndpoints(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithExternalModelEndpoints(Aws::Vector<Aws::String>&& value) { SetExternalModelEndpoints(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& AddExternalModelEndpoints(const Aws::String& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints.push_back(value); return *this; }
-    inline UpdateDetectorVersionRequest& AddExternalModelEndpoints(Aws::String&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints.push_back(std::move(value)); return *this; }
-    inline UpdateDetectorVersionRequest& AddExternalModelEndpoints(const char* value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints.push_back(value); return *this; }
+    template<typename ExternalModelEndpointsT = Aws::Vector<Aws::String>>
+    void SetExternalModelEndpoints(ExternalModelEndpointsT&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints = std::forward<ExternalModelEndpointsT>(value); }
+    template<typename ExternalModelEndpointsT = Aws::Vector<Aws::String>>
+    UpdateDetectorVersionRequest& WithExternalModelEndpoints(ExternalModelEndpointsT&& value) { SetExternalModelEndpoints(std::forward<ExternalModelEndpointsT>(value)); return *this;}
+    template<typename ExternalModelEndpointsT = Aws::String>
+    UpdateDetectorVersionRequest& AddExternalModelEndpoints(ExternalModelEndpointsT&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints.emplace_back(std::forward<ExternalModelEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The rules to include in the detector version.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline UpdateDetectorVersionRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline UpdateDetectorVersionRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    UpdateDetectorVersionRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    UpdateDetectorVersionRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The detector version description. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateDetectorVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateDetectorVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model versions to include in the detector version.</p>
      */
-    inline const Aws::Vector<ModelVersion>& GetModelVersions() const{ return m_modelVersions; }
+    inline const Aws::Vector<ModelVersion>& GetModelVersions() const { return m_modelVersions; }
     inline bool ModelVersionsHasBeenSet() const { return m_modelVersionsHasBeenSet; }
-    inline void SetModelVersions(const Aws::Vector<ModelVersion>& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = value; }
-    inline void SetModelVersions(Aws::Vector<ModelVersion>&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = std::move(value); }
-    inline UpdateDetectorVersionRequest& WithModelVersions(const Aws::Vector<ModelVersion>& value) { SetModelVersions(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithModelVersions(Aws::Vector<ModelVersion>&& value) { SetModelVersions(std::move(value)); return *this;}
-    inline UpdateDetectorVersionRequest& AddModelVersions(const ModelVersion& value) { m_modelVersionsHasBeenSet = true; m_modelVersions.push_back(value); return *this; }
-    inline UpdateDetectorVersionRequest& AddModelVersions(ModelVersion&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions.push_back(std::move(value)); return *this; }
+    template<typename ModelVersionsT = Aws::Vector<ModelVersion>>
+    void SetModelVersions(ModelVersionsT&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = std::forward<ModelVersionsT>(value); }
+    template<typename ModelVersionsT = Aws::Vector<ModelVersion>>
+    UpdateDetectorVersionRequest& WithModelVersions(ModelVersionsT&& value) { SetModelVersions(std::forward<ModelVersionsT>(value)); return *this;}
+    template<typename ModelVersionsT = ModelVersion>
+    UpdateDetectorVersionRequest& AddModelVersions(ModelVersionsT&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions.emplace_back(std::forward<ModelVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,12 +127,10 @@ namespace Model
      * detector version level, when it is in draft status.</p> <p>The default behavior
      * is <code>FIRST_MATCHED</code>.</p>
      */
-    inline const RuleExecutionMode& GetRuleExecutionMode() const{ return m_ruleExecutionMode; }
+    inline RuleExecutionMode GetRuleExecutionMode() const { return m_ruleExecutionMode; }
     inline bool RuleExecutionModeHasBeenSet() const { return m_ruleExecutionModeHasBeenSet; }
-    inline void SetRuleExecutionMode(const RuleExecutionMode& value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = value; }
-    inline void SetRuleExecutionMode(RuleExecutionMode&& value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = std::move(value); }
-    inline UpdateDetectorVersionRequest& WithRuleExecutionMode(const RuleExecutionMode& value) { SetRuleExecutionMode(value); return *this;}
-    inline UpdateDetectorVersionRequest& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
+    inline void SetRuleExecutionMode(RuleExecutionMode value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = value; }
+    inline UpdateDetectorVersionRequest& WithRuleExecutionMode(RuleExecutionMode value) { SetRuleExecutionMode(value); return *this;}
     ///@}
   private:
 
@@ -161,7 +152,7 @@ namespace Model
     Aws::Vector<ModelVersion> m_modelVersions;
     bool m_modelVersionsHasBeenSet = false;
 
-    RuleExecutionMode m_ruleExecutionMode;
+    RuleExecutionMode m_ruleExecutionMode{RuleExecutionMode::NOT_SET};
     bool m_ruleExecutionModeHasBeenSet = false;
   };
 

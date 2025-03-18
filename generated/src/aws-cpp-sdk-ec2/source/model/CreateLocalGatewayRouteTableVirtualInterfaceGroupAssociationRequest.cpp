@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest() : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

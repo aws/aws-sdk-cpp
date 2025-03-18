@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RenameField::RenameField() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_targetPathHasBeenSet(false)
-{
-}
-
 RenameField::RenameField(JsonView jsonValue)
-  : RenameField()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ RenameField& RenameField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,7 +39,6 @@ RenameField& RenameField::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePath"))
   {
     Aws::Utils::Array<JsonView> sourcePathJsonList = jsonValue.GetArray("SourcePath");
@@ -60,7 +48,6 @@ RenameField& RenameField::operator =(JsonView jsonValue)
     }
     m_sourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetPath"))
   {
     Aws::Utils::Array<JsonView> targetPathJsonList = jsonValue.GetArray("TargetPath");
@@ -70,7 +57,6 @@ RenameField& RenameField::operator =(JsonView jsonValue)
     }
     m_targetPathHasBeenSet = true;
   }
-
   return *this;
 }
 

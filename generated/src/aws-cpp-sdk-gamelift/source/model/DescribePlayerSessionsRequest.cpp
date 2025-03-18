@@ -12,17 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePlayerSessionsRequest::DescribePlayerSessionsRequest() : 
-    m_gameSessionIdHasBeenSet(false),
-    m_playerIdHasBeenSet(false),
-    m_playerSessionIdHasBeenSet(false),
-    m_playerSessionStatusFilterHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribePlayerSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

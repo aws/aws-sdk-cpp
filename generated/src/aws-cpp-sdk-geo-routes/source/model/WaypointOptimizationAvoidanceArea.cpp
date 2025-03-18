@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationAvoidanceArea::WaypointOptimizationAvoidanceArea() : 
-    m_geometryHasBeenSet(false)
-{
-}
-
 WaypointOptimizationAvoidanceArea::WaypointOptimizationAvoidanceArea(JsonView jsonValue)
-  : WaypointOptimizationAvoidanceArea()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WaypointOptimizationAvoidanceArea& WaypointOptimizationAvoidanceArea::operator =
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Ec2Metadata::Ec2Metadata() : 
-    m_amiIdHasBeenSet(false),
-    m_platform(Ec2Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Ec2Metadata::Ec2Metadata(JsonView jsonValue)
-  : Ec2Metadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Ec2Metadata& Ec2Metadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amiId"))
   {
     m_amiId = jsonValue.GetString("amiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = Ec2PlatformMapper::GetEc2PlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -57,7 +44,6 @@ Ec2Metadata& Ec2Metadata::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

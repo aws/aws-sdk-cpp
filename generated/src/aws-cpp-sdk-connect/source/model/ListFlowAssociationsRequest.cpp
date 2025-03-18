@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFlowAssociationsRequest::ListFlowAssociationsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_resourceType(ListFlowAssociationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFlowAssociationsRequest::SerializePayload() const
 {
   return {};

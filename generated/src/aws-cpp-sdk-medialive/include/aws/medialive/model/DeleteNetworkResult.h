@@ -36,7 +36,7 @@ namespace Model
   class DeleteNetworkResult
   {
   public:
-    AWS_MEDIALIVE_API DeleteNetworkResult();
+    AWS_MEDIALIVE_API DeleteNetworkResult() = default;
     AWS_MEDIALIVE_API DeleteNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API DeleteNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,25 +46,22 @@ namespace Model
      * The ARN of this Network. It is automatically assigned when the Network is
      * created.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DeleteNetworkResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteNetworkResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteNetworkResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteNetworkResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetAssociatedClusterIds() const{ return m_associatedClusterIds; }
-    inline void SetAssociatedClusterIds(const Aws::Vector<Aws::String>& value) { m_associatedClusterIds = value; }
-    inline void SetAssociatedClusterIds(Aws::Vector<Aws::String>&& value) { m_associatedClusterIds = std::move(value); }
-    inline DeleteNetworkResult& WithAssociatedClusterIds(const Aws::Vector<Aws::String>& value) { SetAssociatedClusterIds(value); return *this;}
-    inline DeleteNetworkResult& WithAssociatedClusterIds(Aws::Vector<Aws::String>&& value) { SetAssociatedClusterIds(std::move(value)); return *this;}
-    inline DeleteNetworkResult& AddAssociatedClusterIds(const Aws::String& value) { m_associatedClusterIds.push_back(value); return *this; }
-    inline DeleteNetworkResult& AddAssociatedClusterIds(Aws::String&& value) { m_associatedClusterIds.push_back(std::move(value)); return *this; }
-    inline DeleteNetworkResult& AddAssociatedClusterIds(const char* value) { m_associatedClusterIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedClusterIds() const { return m_associatedClusterIds; }
+    template<typename AssociatedClusterIdsT = Aws::Vector<Aws::String>>
+    void SetAssociatedClusterIds(AssociatedClusterIdsT&& value) { m_associatedClusterIdsHasBeenSet = true; m_associatedClusterIds = std::forward<AssociatedClusterIdsT>(value); }
+    template<typename AssociatedClusterIdsT = Aws::Vector<Aws::String>>
+    DeleteNetworkResult& WithAssociatedClusterIds(AssociatedClusterIdsT&& value) { SetAssociatedClusterIds(std::forward<AssociatedClusterIdsT>(value)); return *this;}
+    template<typename AssociatedClusterIdsT = Aws::String>
+    DeleteNetworkResult& AddAssociatedClusterIds(AssociatedClusterIdsT&& value) { m_associatedClusterIdsHasBeenSet = true; m_associatedClusterIds.emplace_back(std::forward<AssociatedClusterIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,13 +69,11 @@ namespace Model
      * The ID of the Network. Unique in the AWS account. The ID is the resource-id
      * portion of the ARN.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline DeleteNetworkResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteNetworkResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteNetworkResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteNetworkResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +84,24 @@ namespace Model
      * NAT networks) and for output destinations (only in Bridge networks). Each IpPool
      * specifies one CIDR block.
      */
-    inline const Aws::Vector<IpPool>& GetIpPools() const{ return m_ipPools; }
-    inline void SetIpPools(const Aws::Vector<IpPool>& value) { m_ipPools = value; }
-    inline void SetIpPools(Aws::Vector<IpPool>&& value) { m_ipPools = std::move(value); }
-    inline DeleteNetworkResult& WithIpPools(const Aws::Vector<IpPool>& value) { SetIpPools(value); return *this;}
-    inline DeleteNetworkResult& WithIpPools(Aws::Vector<IpPool>&& value) { SetIpPools(std::move(value)); return *this;}
-    inline DeleteNetworkResult& AddIpPools(const IpPool& value) { m_ipPools.push_back(value); return *this; }
-    inline DeleteNetworkResult& AddIpPools(IpPool&& value) { m_ipPools.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IpPool>& GetIpPools() const { return m_ipPools; }
+    template<typename IpPoolsT = Aws::Vector<IpPool>>
+    void SetIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools = std::forward<IpPoolsT>(value); }
+    template<typename IpPoolsT = Aws::Vector<IpPool>>
+    DeleteNetworkResult& WithIpPools(IpPoolsT&& value) { SetIpPools(std::forward<IpPoolsT>(value)); return *this;}
+    template<typename IpPoolsT = IpPool>
+    DeleteNetworkResult& AddIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools.emplace_back(std::forward<IpPoolsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The name that you specified for the Network.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteNetworkResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteNetworkResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteNetworkResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteNetworkResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,53 +109,57 @@ namespace Model
      * An array of routes that MediaLive Anywhere needs to know about in order to route
      * encoding traffic.
      */
-    inline const Aws::Vector<Route>& GetRoutes() const{ return m_routes; }
-    inline void SetRoutes(const Aws::Vector<Route>& value) { m_routes = value; }
-    inline void SetRoutes(Aws::Vector<Route>&& value) { m_routes = std::move(value); }
-    inline DeleteNetworkResult& WithRoutes(const Aws::Vector<Route>& value) { SetRoutes(value); return *this;}
-    inline DeleteNetworkResult& WithRoutes(Aws::Vector<Route>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline DeleteNetworkResult& AddRoutes(const Route& value) { m_routes.push_back(value); return *this; }
-    inline DeleteNetworkResult& AddRoutes(Route&& value) { m_routes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Route>& GetRoutes() const { return m_routes; }
+    template<typename RoutesT = Aws::Vector<Route>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<Route>>
+    DeleteNetworkResult& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = Route>
+    DeleteNetworkResult& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The current state of the Network. Only MediaLive Anywhere can change the state.
      */
-    inline const NetworkState& GetState() const{ return m_state; }
-    inline void SetState(const NetworkState& value) { m_state = value; }
-    inline void SetState(NetworkState&& value) { m_state = std::move(value); }
-    inline DeleteNetworkResult& WithState(const NetworkState& value) { SetState(value); return *this;}
-    inline DeleteNetworkResult& WithState(NetworkState&& value) { SetState(std::move(value)); return *this;}
+    inline NetworkState GetState() const { return m_state; }
+    inline void SetState(NetworkState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteNetworkResult& WithState(NetworkState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteNetworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedClusterIds;
+    bool m_associatedClusterIdsHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<IpPool> m_ipPools;
+    bool m_ipPoolsHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Route> m_routes;
+    bool m_routesHasBeenSet = false;
 
-    NetworkState m_state;
+    NetworkState m_state{NetworkState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

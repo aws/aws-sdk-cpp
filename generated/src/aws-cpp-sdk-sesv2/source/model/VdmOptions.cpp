@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-VdmOptions::VdmOptions() : 
-    m_dashboardOptionsHasBeenSet(false),
-    m_guardianOptionsHasBeenSet(false)
-{
-}
-
 VdmOptions::VdmOptions(JsonView jsonValue)
-  : VdmOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VdmOptions& VdmOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashboardOptions"))
   {
     m_dashboardOptions = jsonValue.GetObject("DashboardOptions");
-
     m_dashboardOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GuardianOptions"))
   {
     m_guardianOptions = jsonValue.GetObject("GuardianOptions");
-
     m_guardianOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

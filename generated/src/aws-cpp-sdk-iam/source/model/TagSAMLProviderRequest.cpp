@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagSAMLProviderRequest::TagSAMLProviderRequest() : 
-    m_sAMLProviderArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

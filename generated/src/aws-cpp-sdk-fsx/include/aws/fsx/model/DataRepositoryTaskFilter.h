@@ -37,7 +37,7 @@ namespace Model
   class DataRepositoryTaskFilter
   {
   public:
-    AWS_FSX_API DataRepositoryTaskFilter();
+    AWS_FSX_API DataRepositoryTaskFilter() = default;
     AWS_FSX_API DataRepositoryTaskFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DataRepositoryTaskFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and
      * SUCCEEDED.</p> </li> </ul>
      */
-    inline const DataRepositoryTaskFilterName& GetName() const{ return m_name; }
+    inline DataRepositoryTaskFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DataRepositoryTaskFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DataRepositoryTaskFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DataRepositoryTaskFilter& WithName(const DataRepositoryTaskFilterName& value) { SetName(value); return *this;}
-    inline DataRepositoryTaskFilter& WithName(DataRepositoryTaskFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DataRepositoryTaskFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DataRepositoryTaskFilter& WithName(DataRepositoryTaskFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,18 @@ namespace Model
      * <p>Use Values to include the specific file system IDs and task lifecycle states
      * for the filters you are using.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DataRepositoryTaskFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DataRepositoryTaskFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DataRepositoryTaskFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DataRepositoryTaskFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DataRepositoryTaskFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DataRepositoryTaskFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DataRepositoryTaskFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    DataRepositoryTaskFilterName m_name;
+    DataRepositoryTaskFilterName m_name{DataRepositoryTaskFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

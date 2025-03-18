@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ChannelMessages::ChannelMessages() : 
-    m_s3PathsHasBeenSet(false)
-{
-}
-
 ChannelMessages::ChannelMessages(JsonView jsonValue)
-  : ChannelMessages()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ChannelMessages& ChannelMessages::operator =(JsonView jsonValue)
     }
     m_s3PathsHasBeenSet = true;
   }
-
   return *this;
 }
 

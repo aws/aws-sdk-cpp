@@ -21,7 +21,7 @@ namespace Model
   class ManageSparqlStatisticsRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API ManageSparqlStatisticsRequest();
+    AWS_NEPTUNEDATA_API ManageSparqlStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,16 +38,14 @@ namespace Model
      * <code>ENABLE_AUTOCOMPUTE</code>, or <code>REFRESH</code>, the last of which
      * manually triggers DFE statistics generation.</p>
      */
-    inline const StatisticsAutoGenerationMode& GetMode() const{ return m_mode; }
+    inline StatisticsAutoGenerationMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const StatisticsAutoGenerationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(StatisticsAutoGenerationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ManageSparqlStatisticsRequest& WithMode(const StatisticsAutoGenerationMode& value) { SetMode(value); return *this;}
-    inline ManageSparqlStatisticsRequest& WithMode(StatisticsAutoGenerationMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(StatisticsAutoGenerationMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ManageSparqlStatisticsRequest& WithMode(StatisticsAutoGenerationMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    StatisticsAutoGenerationMode m_mode;
+    StatisticsAutoGenerationMode m_mode{StatisticsAutoGenerationMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

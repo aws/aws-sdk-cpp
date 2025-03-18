@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicySecurityHeadersConfig::ResponseHeadersPolicySecurityHeadersConfig() : 
-    m_xSSProtectionHasBeenSet(false),
-    m_frameOptionsHasBeenSet(false),
-    m_referrerPolicyHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false),
-    m_contentTypeOptionsHasBeenSet(false),
-    m_strictTransportSecurityHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicySecurityHeadersConfig::ResponseHeadersPolicySecurityHeadersConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicySecurityHeadersConfig()
 {
   *this = xmlNode;
 }

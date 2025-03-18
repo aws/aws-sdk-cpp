@@ -21,7 +21,7 @@ namespace Model
   class EnableAddressTransferRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableAddressTransferRequest();
+    AWS_EC2_API EnableAddressTransferRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The allocation ID of an Elastic IP address.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline EnableAddressTransferRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline EnableAddressTransferRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline EnableAddressTransferRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    EnableAddressTransferRequest& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The ID of the account that you want to transfer the Elastic IP address
      * to.</p>
      */
-    inline const Aws::String& GetTransferAccountId() const{ return m_transferAccountId; }
+    inline const Aws::String& GetTransferAccountId() const { return m_transferAccountId; }
     inline bool TransferAccountIdHasBeenSet() const { return m_transferAccountIdHasBeenSet; }
-    inline void SetTransferAccountId(const Aws::String& value) { m_transferAccountIdHasBeenSet = true; m_transferAccountId = value; }
-    inline void SetTransferAccountId(Aws::String&& value) { m_transferAccountIdHasBeenSet = true; m_transferAccountId = std::move(value); }
-    inline void SetTransferAccountId(const char* value) { m_transferAccountIdHasBeenSet = true; m_transferAccountId.assign(value); }
-    inline EnableAddressTransferRequest& WithTransferAccountId(const Aws::String& value) { SetTransferAccountId(value); return *this;}
-    inline EnableAddressTransferRequest& WithTransferAccountId(Aws::String&& value) { SetTransferAccountId(std::move(value)); return *this;}
-    inline EnableAddressTransferRequest& WithTransferAccountId(const char* value) { SetTransferAccountId(value); return *this;}
+    template<typename TransferAccountIdT = Aws::String>
+    void SetTransferAccountId(TransferAccountIdT&& value) { m_transferAccountIdHasBeenSet = true; m_transferAccountId = std::forward<TransferAccountIdT>(value); }
+    template<typename TransferAccountIdT = Aws::String>
+    EnableAddressTransferRequest& WithTransferAccountId(TransferAccountIdT&& value) { SetTransferAccountId(std::forward<TransferAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableAddressTransferRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_transferAccountId;
     bool m_transferAccountIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

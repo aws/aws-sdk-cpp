@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisTimeData
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisTimeData();
+    AWS_CONNECT_API RealTimeContactAnalysisTimeData() = default;
     AWS_CONNECT_API RealTimeContactAnalysisTimeData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisTimeData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,16 @@ namespace Model
      * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
      * 2019-11-08T02:41:28.172Z.</p>
      */
-    inline const Aws::Utils::DateTime& GetAbsoluteTime() const{ return m_absoluteTime; }
+    inline const Aws::Utils::DateTime& GetAbsoluteTime() const { return m_absoluteTime; }
     inline bool AbsoluteTimeHasBeenSet() const { return m_absoluteTimeHasBeenSet; }
-    inline void SetAbsoluteTime(const Aws::Utils::DateTime& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = value; }
-    inline void SetAbsoluteTime(Aws::Utils::DateTime&& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = std::move(value); }
-    inline RealTimeContactAnalysisTimeData& WithAbsoluteTime(const Aws::Utils::DateTime& value) { SetAbsoluteTime(value); return *this;}
-    inline RealTimeContactAnalysisTimeData& WithAbsoluteTime(Aws::Utils::DateTime&& value) { SetAbsoluteTime(std::move(value)); return *this;}
+    template<typename AbsoluteTimeT = Aws::Utils::DateTime>
+    void SetAbsoluteTime(AbsoluteTimeT&& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = std::forward<AbsoluteTimeT>(value); }
+    template<typename AbsoluteTimeT = Aws::Utils::DateTime>
+    RealTimeContactAnalysisTimeData& WithAbsoluteTime(AbsoluteTimeT&& value) { SetAbsoluteTime(std::forward<AbsoluteTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_absoluteTime;
+    Aws::Utils::DateTime m_absoluteTime{};
     bool m_absoluteTimeHasBeenSet = false;
   };
 

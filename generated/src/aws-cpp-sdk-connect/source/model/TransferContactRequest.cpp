@@ -12,17 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TransferContactRequest::TransferContactRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String TransferContactRequest::SerializePayload() const
 {
   JsonValue payload;

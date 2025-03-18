@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConnectionResult::GetConnectionResult() : 
-    m_type(ConnectionType::NOT_SET)
-{
-}
-
 GetConnectionResult::GetConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetConnectionResult()
 {
   *this = result;
 }
@@ -34,51 +28,43 @@ GetConnectionResult& GetConnectionResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("connectionCredentials"))
   {
     m_connectionCredentials = jsonValue.GetObject("connectionCredentials");
-
+    m_connectionCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
+    m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainUnitId"))
   {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
-
+    m_domainUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentUserRole"))
   {
     m_environmentUserRole = jsonValue.GetString("environmentUserRole");
-
+    m_environmentUserRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalEndpoints"))
   {
     Aws::Utils::Array<JsonView> physicalEndpointsJsonList = jsonValue.GetArray("physicalEndpoints");
@@ -86,32 +72,30 @@ GetConnectionResult& GetConnectionResult::operator =(const Aws::AmazonWebService
     {
       m_physicalEndpoints.push_back(physicalEndpointsJsonList[physicalEndpointsIndex].AsObject());
     }
+    m_physicalEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
+    m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("props"))
   {
     m_props = jsonValue.GetObject("props");
-
+    m_propsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

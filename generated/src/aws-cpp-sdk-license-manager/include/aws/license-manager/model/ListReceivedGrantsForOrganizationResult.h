@@ -29,7 +29,7 @@ namespace Model
   class ListReceivedGrantsForOrganizationResult
   {
   public:
-    AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult();
+    AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult() = default;
     AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Lists the grants the organization has received.</p>
      */
-    inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
-    inline void SetGrants(const Aws::Vector<Grant>& value) { m_grants = value; }
-    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = std::move(value); }
-    inline ListReceivedGrantsForOrganizationResult& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& AddGrants(const Grant& value) { m_grants.push_back(value); return *this; }
-    inline ListReceivedGrantsForOrganizationResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Grant>& GetGrants() const { return m_grants; }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    void SetGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants = std::forward<GrantsT>(value); }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    ListReceivedGrantsForOrganizationResult& WithGrants(GrantsT&& value) { SetGrants(std::forward<GrantsT>(value)); return *this;}
+    template<typename GrantsT = Grant>
+    ListReceivedGrantsForOrganizationResult& AddGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants.emplace_back(std::forward<GrantsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReceivedGrantsForOrganizationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReceivedGrantsForOrganizationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReceivedGrantsForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReceivedGrantsForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReceivedGrantsForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Grant> m_grants;
+    bool m_grantsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

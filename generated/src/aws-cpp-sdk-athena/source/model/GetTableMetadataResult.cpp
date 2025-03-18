@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTableMetadataResult::GetTableMetadataResult()
-{
-}
-
 GetTableMetadataResult::GetTableMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTableMetadataResult& GetTableMetadataResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("TableMetadata"))
   {
     m_tableMetadata = jsonValue.GetObject("TableMetadata");
-
+    m_tableMetadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFunctionRecursionConfigRequest::PutFunctionRecursionConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_recursiveLoop(RecursiveLoop::NOT_SET),
-    m_recursiveLoopHasBeenSet(false)
-{
-}
-
 Aws::String PutFunctionRecursionConfigRequest::SerializePayload() const
 {
   JsonValue payload;

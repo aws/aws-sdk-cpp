@@ -21,7 +21,7 @@ namespace Model
   class CreateFieldLevelEncryptionProfile2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateFieldLevelEncryptionProfile2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateFieldLevelEncryptionProfile2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The request to create a field-level encryption profile.</p>
      */
-    inline const FieldLevelEncryptionProfileConfig& GetFieldLevelEncryptionProfileConfig() const{ return m_fieldLevelEncryptionProfileConfig; }
+    inline const FieldLevelEncryptionProfileConfig& GetFieldLevelEncryptionProfileConfig() const { return m_fieldLevelEncryptionProfileConfig; }
     inline bool FieldLevelEncryptionProfileConfigHasBeenSet() const { return m_fieldLevelEncryptionProfileConfigHasBeenSet; }
-    inline void SetFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = value; }
-    inline void SetFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = std::move(value); }
-    inline CreateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { SetFieldLevelEncryptionProfileConfig(value); return *this;}
-    inline CreateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { SetFieldLevelEncryptionProfileConfig(std::move(value)); return *this;}
+    template<typename FieldLevelEncryptionProfileConfigT = FieldLevelEncryptionProfileConfig>
+    void SetFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfigT&& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = std::forward<FieldLevelEncryptionProfileConfigT>(value); }
+    template<typename FieldLevelEncryptionProfileConfigT = FieldLevelEncryptionProfileConfig>
+    CreateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfigT&& value) { SetFieldLevelEncryptionProfileConfig(std::forward<FieldLevelEncryptionProfileConfigT>(value)); return *this;}
     ///@}
   private:
 

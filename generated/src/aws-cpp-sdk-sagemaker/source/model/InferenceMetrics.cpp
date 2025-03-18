@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceMetrics::InferenceMetrics() : 
-    m_maxInvocations(0),
-    m_maxInvocationsHasBeenSet(false),
-    m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
-{
-}
-
 InferenceMetrics::InferenceMetrics(JsonView jsonValue)
-  : InferenceMetrics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InferenceMetrics& InferenceMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxInvocations"))
   {
     m_maxInvocations = jsonValue.GetInteger("MaxInvocations");
-
     m_maxInvocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelLatency"))
   {
     m_modelLatency = jsonValue.GetInteger("ModelLatency");
-
     m_modelLatencyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVTLDevicesRequest::DescribeVTLDevicesRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_vTLDeviceARNsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVTLDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

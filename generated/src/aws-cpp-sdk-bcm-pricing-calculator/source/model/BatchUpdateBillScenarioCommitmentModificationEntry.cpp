@@ -18,14 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchUpdateBillScenarioCommitmentModificationEntry::BatchUpdateBillScenarioCommitmentModificationEntry() : 
-    m_idHasBeenSet(false),
-    m_groupHasBeenSet(false)
-{
-}
-
 BatchUpdateBillScenarioCommitmentModificationEntry::BatchUpdateBillScenarioCommitmentModificationEntry(JsonView jsonValue)
-  : BatchUpdateBillScenarioCommitmentModificationEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchUpdateBillScenarioCommitmentModificationEntry& BatchUpdateBillScenarioCommi
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   return *this;
 }
 

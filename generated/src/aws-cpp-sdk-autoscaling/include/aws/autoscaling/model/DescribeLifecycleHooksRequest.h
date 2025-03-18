@@ -22,7 +22,7 @@ namespace Model
   class DescribeLifecycleHooksRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribeLifecycleHooksRequest();
+    AWS_AUTOSCALING_API DescribeLifecycleHooksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DescribeLifecycleHooksRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
+    inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const { return m_lifecycleHookNames; }
     inline bool LifecycleHookNamesHasBeenSet() const { return m_lifecycleHookNamesHasBeenSet; }
-    inline void SetLifecycleHookNames(const Aws::Vector<Aws::String>& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = value; }
-    inline void SetLifecycleHookNames(Aws::Vector<Aws::String>&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = std::move(value); }
-    inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
-    inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(Aws::Vector<Aws::String>&& value) { SetLifecycleHookNames(std::move(value)); return *this;}
-    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const Aws::String& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
-    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(Aws::String&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(std::move(value)); return *this; }
-    inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const char* value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
+    template<typename LifecycleHookNamesT = Aws::Vector<Aws::String>>
+    void SetLifecycleHookNames(LifecycleHookNamesT&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = std::forward<LifecycleHookNamesT>(value); }
+    template<typename LifecycleHookNamesT = Aws::Vector<Aws::String>>
+    DescribeLifecycleHooksRequest& WithLifecycleHookNames(LifecycleHookNamesT&& value) { SetLifecycleHookNames(std::forward<LifecycleHookNamesT>(value)); return *this;}
+    template<typename LifecycleHookNamesT = Aws::String>
+    DescribeLifecycleHooksRequest& AddLifecycleHookNames(LifecycleHookNamesT&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.emplace_back(std::forward<LifecycleHookNamesT>(value)); return *this; }
     ///@}
   private:
 

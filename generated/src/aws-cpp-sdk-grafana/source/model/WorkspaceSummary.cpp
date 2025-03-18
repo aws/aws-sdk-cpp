@@ -18,27 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-WorkspaceSummary::WorkspaceSummary() : 
-    m_authenticationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_grafanaTokenHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_modifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_notificationDestinationsHasBeenSet(false),
-    m_status(WorkspaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
-  : WorkspaceSummary()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = jsonValue.GetObject("authentication");
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grafanaToken"))
   {
     m_grafanaToken = jsonValue.GetString("grafanaToken");
-
     m_grafanaTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grafanaVersion"))
   {
     m_grafanaVersion = jsonValue.GetString("grafanaVersion");
-
     m_grafanaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseType"))
   {
     m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modified"))
   {
     m_modified = jsonValue.GetDouble("modified");
-
     m_modifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationDestinations"))
   {
     Aws::Utils::Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
@@ -124,14 +84,11 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     }
     m_notificationDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkspaceStatusMapper::GetWorkspaceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -141,7 +98,6 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

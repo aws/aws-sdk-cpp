@@ -33,7 +33,7 @@ namespace Model
   class FailedQueuedPurchaseDeletion
   {
   public:
-    AWS_EC2_API FailedQueuedPurchaseDeletion();
+    AWS_EC2_API FailedQueuedPurchaseDeletion() = default;
     AWS_EC2_API FailedQueuedPurchaseDeletion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FailedQueuedPurchaseDeletion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The error.</p>
      */
-    inline const DeleteQueuedReservedInstancesError& GetError() const{ return m_error; }
+    inline const DeleteQueuedReservedInstancesError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const DeleteQueuedReservedInstancesError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(DeleteQueuedReservedInstancesError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline FailedQueuedPurchaseDeletion& WithError(const DeleteQueuedReservedInstancesError& value) { SetError(value); return *this;}
-    inline FailedQueuedPurchaseDeletion& WithError(DeleteQueuedReservedInstancesError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = DeleteQueuedReservedInstancesError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = DeleteQueuedReservedInstancesError>
+    FailedQueuedPurchaseDeletion& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+    inline const Aws::String& GetReservedInstancesId() const { return m_reservedInstancesId; }
     inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
-    inline FailedQueuedPurchaseDeletion& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-    inline FailedQueuedPurchaseDeletion& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-    inline FailedQueuedPurchaseDeletion& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    template<typename ReservedInstancesIdT = Aws::String>
+    void SetReservedInstancesId(ReservedInstancesIdT&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::forward<ReservedInstancesIdT>(value); }
+    template<typename ReservedInstancesIdT = Aws::String>
+    FailedQueuedPurchaseDeletion& WithReservedInstancesId(ReservedInstancesIdT&& value) { SetReservedInstancesId(std::forward<ReservedInstancesIdT>(value)); return *this;}
     ///@}
   private:
 

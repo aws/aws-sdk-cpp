@@ -29,7 +29,7 @@ namespace Model
   class AuthorizeSecurityGroupIngressResponse
   {
   public:
-    AWS_EC2_API AuthorizeSecurityGroupIngressResponse();
+    AWS_EC2_API AuthorizeSecurityGroupIngressResponse() = default;
     AWS_EC2_API AuthorizeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AuthorizeSecurityGroupIngressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,8 +39,8 @@ namespace Model
      * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
      * error.</p>
      */
-    inline bool GetReturn() const{ return m_return; }
-    inline void SetReturn(bool value) { m_return = value; }
+    inline bool GetReturn() const { return m_return; }
+    inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }
     inline AuthorizeSecurityGroupIngressResponse& WithReturn(bool value) { SetReturn(value); return *this;}
     ///@}
 
@@ -49,30 +49,33 @@ namespace Model
      * <p>Information about the inbound (ingress) security group rules that were
      * added.</p>
      */
-    inline const Aws::Vector<SecurityGroupRule>& GetSecurityGroupRules() const{ return m_securityGroupRules; }
-    inline void SetSecurityGroupRules(const Aws::Vector<SecurityGroupRule>& value) { m_securityGroupRules = value; }
-    inline void SetSecurityGroupRules(Aws::Vector<SecurityGroupRule>&& value) { m_securityGroupRules = std::move(value); }
-    inline AuthorizeSecurityGroupIngressResponse& WithSecurityGroupRules(const Aws::Vector<SecurityGroupRule>& value) { SetSecurityGroupRules(value); return *this;}
-    inline AuthorizeSecurityGroupIngressResponse& WithSecurityGroupRules(Aws::Vector<SecurityGroupRule>&& value) { SetSecurityGroupRules(std::move(value)); return *this;}
-    inline AuthorizeSecurityGroupIngressResponse& AddSecurityGroupRules(const SecurityGroupRule& value) { m_securityGroupRules.push_back(value); return *this; }
-    inline AuthorizeSecurityGroupIngressResponse& AddSecurityGroupRules(SecurityGroupRule&& value) { m_securityGroupRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecurityGroupRule>& GetSecurityGroupRules() const { return m_securityGroupRules; }
+    template<typename SecurityGroupRulesT = Aws::Vector<SecurityGroupRule>>
+    void SetSecurityGroupRules(SecurityGroupRulesT&& value) { m_securityGroupRulesHasBeenSet = true; m_securityGroupRules = std::forward<SecurityGroupRulesT>(value); }
+    template<typename SecurityGroupRulesT = Aws::Vector<SecurityGroupRule>>
+    AuthorizeSecurityGroupIngressResponse& WithSecurityGroupRules(SecurityGroupRulesT&& value) { SetSecurityGroupRules(std::forward<SecurityGroupRulesT>(value)); return *this;}
+    template<typename SecurityGroupRulesT = SecurityGroupRule>
+    AuthorizeSecurityGroupIngressResponse& AddSecurityGroupRules(SecurityGroupRulesT&& value) { m_securityGroupRulesHasBeenSet = true; m_securityGroupRules.emplace_back(std::forward<SecurityGroupRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AuthorizeSecurityGroupIngressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AuthorizeSecurityGroupIngressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AuthorizeSecurityGroupIngressResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_return;
+    bool m_return{false};
+    bool m_returnHasBeenSet = false;
 
     Aws::Vector<SecurityGroupRule> m_securityGroupRules;
+    bool m_securityGroupRulesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

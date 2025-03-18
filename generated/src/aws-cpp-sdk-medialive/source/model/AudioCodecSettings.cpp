@@ -18,19 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioCodecSettings::AudioCodecSettings() : 
-    m_aacSettingsHasBeenSet(false),
-    m_ac3SettingsHasBeenSet(false),
-    m_eac3AtmosSettingsHasBeenSet(false),
-    m_eac3SettingsHasBeenSet(false),
-    m_mp2SettingsHasBeenSet(false),
-    m_passThroughSettingsHasBeenSet(false),
-    m_wavSettingsHasBeenSet(false)
-{
-}
-
 AudioCodecSettings::AudioCodecSettings(JsonView jsonValue)
-  : AudioCodecSettings()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aacSettings"))
   {
     m_aacSettings = jsonValue.GetObject("aacSettings");
-
     m_aacSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ac3Settings"))
   {
     m_ac3Settings = jsonValue.GetObject("ac3Settings");
-
     m_ac3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eac3AtmosSettings"))
   {
     m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
-
     m_eac3AtmosSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eac3Settings"))
   {
     m_eac3Settings = jsonValue.GetObject("eac3Settings");
-
     m_eac3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mp2Settings"))
   {
     m_mp2Settings = jsonValue.GetObject("mp2Settings");
-
     m_mp2SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passThroughSettings"))
   {
     m_passThroughSettings = jsonValue.GetObject("passThroughSettings");
-
     m_passThroughSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wavSettings"))
   {
     m_wavSettings = jsonValue.GetObject("wavSettings");
-
     m_wavSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

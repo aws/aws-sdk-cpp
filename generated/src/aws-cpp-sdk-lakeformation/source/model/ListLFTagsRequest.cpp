@@ -12,16 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLFTagsRequest::ListLFTagsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceShareType(ResourceShareType::NOT_SET),
-    m_resourceShareTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLFTagsRequest::SerializePayload() const
 {
   JsonValue payload;

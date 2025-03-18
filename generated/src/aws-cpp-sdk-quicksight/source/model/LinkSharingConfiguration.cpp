@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LinkSharingConfiguration::LinkSharingConfiguration() : 
-    m_permissionsHasBeenSet(false)
-{
-}
-
 LinkSharingConfiguration::LinkSharingConfiguration(JsonView jsonValue)
-  : LinkSharingConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LinkSharingConfiguration& LinkSharingConfiguration::operator =(JsonView jsonValu
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

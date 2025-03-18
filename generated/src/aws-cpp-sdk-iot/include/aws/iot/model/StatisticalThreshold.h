@@ -33,7 +33,7 @@ namespace Model
   class StatisticalThreshold
   {
   public:
-    AWS_IOT_API StatisticalThreshold();
+    AWS_IOT_API StatisticalThreshold() = default;
     AWS_IOT_API StatisticalThreshold(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API StatisticalThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * the percentile specified, then the device is considered to be in compliance with
      * the behavior, otherwise a violation occurs.</p>
      */
-    inline const Aws::String& GetStatistic() const{ return m_statistic; }
+    inline const Aws::String& GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const Aws::String& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(Aws::String&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline void SetStatistic(const char* value) { m_statisticHasBeenSet = true; m_statistic.assign(value); }
-    inline StatisticalThreshold& WithStatistic(const Aws::String& value) { SetStatistic(value); return *this;}
-    inline StatisticalThreshold& WithStatistic(Aws::String&& value) { SetStatistic(std::move(value)); return *this;}
-    inline StatisticalThreshold& WithStatistic(const char* value) { SetStatistic(value); return *this;}
+    template<typename StatisticT = Aws::String>
+    void SetStatistic(StatisticT&& value) { m_statisticHasBeenSet = true; m_statistic = std::forward<StatisticT>(value); }
+    template<typename StatisticT = Aws::String>
+    StatisticalThreshold& WithStatistic(StatisticT&& value) { SetStatistic(std::forward<StatisticT>(value)); return *this;}
     ///@}
   private:
 

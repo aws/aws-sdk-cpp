@@ -31,7 +31,7 @@ namespace Model
   class JobExecutionsRolloutConfig
   {
   public:
-    AWS_IOT_API JobExecutionsRolloutConfig();
+    AWS_IOT_API JobExecutionsRolloutConfig() = default;
     AWS_IOT_API JobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API JobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The maximum number of things that will be notified of a pending job, per
      * minute. This parameter allows you to create a staged rollout.</p>
      */
-    inline int GetMaximumPerMinute() const{ return m_maximumPerMinute; }
+    inline int GetMaximumPerMinute() const { return m_maximumPerMinute; }
     inline bool MaximumPerMinuteHasBeenSet() const { return m_maximumPerMinuteHasBeenSet; }
     inline void SetMaximumPerMinute(int value) { m_maximumPerMinuteHasBeenSet = true; m_maximumPerMinute = value; }
     inline JobExecutionsRolloutConfig& WithMaximumPerMinute(int value) { SetMaximumPerMinute(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
      * <p>The rate of increase for a job rollout. This parameter allows you to define
      * an exponential rate for a job rollout.</p>
      */
-    inline const ExponentialRolloutRate& GetExponentialRate() const{ return m_exponentialRate; }
+    inline const ExponentialRolloutRate& GetExponentialRate() const { return m_exponentialRate; }
     inline bool ExponentialRateHasBeenSet() const { return m_exponentialRateHasBeenSet; }
-    inline void SetExponentialRate(const ExponentialRolloutRate& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = value; }
-    inline void SetExponentialRate(ExponentialRolloutRate&& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = std::move(value); }
-    inline JobExecutionsRolloutConfig& WithExponentialRate(const ExponentialRolloutRate& value) { SetExponentialRate(value); return *this;}
-    inline JobExecutionsRolloutConfig& WithExponentialRate(ExponentialRolloutRate&& value) { SetExponentialRate(std::move(value)); return *this;}
+    template<typename ExponentialRateT = ExponentialRolloutRate>
+    void SetExponentialRate(ExponentialRateT&& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = std::forward<ExponentialRateT>(value); }
+    template<typename ExponentialRateT = ExponentialRolloutRate>
+    JobExecutionsRolloutConfig& WithExponentialRate(ExponentialRateT&& value) { SetExponentialRate(std::forward<ExponentialRateT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maximumPerMinute;
+    int m_maximumPerMinute{0};
     bool m_maximumPerMinuteHasBeenSet = false;
 
     ExponentialRolloutRate m_exponentialRate;

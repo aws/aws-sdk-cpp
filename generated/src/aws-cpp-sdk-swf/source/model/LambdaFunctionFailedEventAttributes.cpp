@@ -18,18 +18,7 @@ namespace SWF
 namespace Model
 {
 
-LambdaFunctionFailedEventAttributes::LambdaFunctionFailedEventAttributes() : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 LambdaFunctionFailedEventAttributes::LambdaFunctionFailedEventAttributes(JsonView jsonValue)
-  : LambdaFunctionFailedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LambdaFunctionFailedEventAttributes& LambdaFunctionFailedEventAttributes::operat
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

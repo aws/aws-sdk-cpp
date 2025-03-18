@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPromptsResult::ListPromptsResult()
-{
-}
-
 ListPromptsResult::ListPromptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListPromptsResult& ListPromptsResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptSummaries"))
   {
     Aws::Utils::Array<JsonView> promptSummariesJsonList = jsonValue.GetArray("promptSummaries");
@@ -42,14 +37,15 @@ ListPromptsResult& ListPromptsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_promptSummaries.push_back(promptSummariesJsonList[promptSummariesIndex].AsObject());
     }
+    m_promptSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

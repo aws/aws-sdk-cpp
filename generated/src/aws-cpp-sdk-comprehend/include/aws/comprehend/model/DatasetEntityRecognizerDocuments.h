@@ -33,7 +33,7 @@ namespace Model
   class DatasetEntityRecognizerDocuments
   {
   public:
-    AWS_COMPREHEND_API DatasetEntityRecognizerDocuments();
+    AWS_COMPREHEND_API DatasetEntityRecognizerDocuments() = default;
     AWS_COMPREHEND_API DatasetEntityRecognizerDocuments(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DatasetEntityRecognizerDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p> Specifies the Amazon S3 location where the documents for the dataset are
      * located. </p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline DatasetEntityRecognizerDocuments& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline DatasetEntityRecognizerDocuments& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline DatasetEntityRecognizerDocuments& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    DatasetEntityRecognizerDocuments& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * Each line in a file is considered a separate document. Use this option when you
      * are processing many short documents, such as text messages.</p>
      */
-    inline const InputFormat& GetInputFormat() const{ return m_inputFormat; }
+    inline InputFormat GetInputFormat() const { return m_inputFormat; }
     inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
-    inline void SetInputFormat(const InputFormat& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
-    inline void SetInputFormat(InputFormat&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::move(value); }
-    inline DatasetEntityRecognizerDocuments& WithInputFormat(const InputFormat& value) { SetInputFormat(value); return *this;}
-    inline DatasetEntityRecognizerDocuments& WithInputFormat(InputFormat&& value) { SetInputFormat(std::move(value)); return *this;}
+    inline void SetInputFormat(InputFormat value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
+    inline DatasetEntityRecognizerDocuments& WithInputFormat(InputFormat value) { SetInputFormat(value); return *this;}
     ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    InputFormat m_inputFormat;
+    InputFormat m_inputFormat{InputFormat::NOT_SET};
     bool m_inputFormatHasBeenSet = false;
   };
 

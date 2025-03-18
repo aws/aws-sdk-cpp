@@ -18,28 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Application::Application() : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_iconURLHasBeenSet(false),
-    m_launchPathHasBeenSet(false),
-    m_launchParametersHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_appBlockArnHasBeenSet(false),
-    m_iconS3LocationHasBeenSet(false),
-    m_platformsHasBeenSet(false),
-    m_instanceFamiliesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -49,45 +28,33 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IconURL"))
   {
     m_iconURL = jsonValue.GetString("IconURL");
-
     m_iconURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchPath"))
   {
     m_launchPath = jsonValue.GetString("LaunchPath");
-
     m_launchPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchParameters"))
   {
     m_launchParameters = jsonValue.GetString("LaunchParameters");
-
     m_launchParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
@@ -97,42 +64,31 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkingDirectory"))
   {
     m_workingDirectory = jsonValue.GetString("WorkingDirectory");
-
     m_workingDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppBlockArn"))
   {
     m_appBlockArn = jsonValue.GetString("AppBlockArn");
-
     m_appBlockArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IconS3Location"))
   {
     m_iconS3Location = jsonValue.GetObject("IconS3Location");
-
     m_iconS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platforms"))
   {
     Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("Platforms");
@@ -142,7 +98,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_platformsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFamilies"))
   {
     Aws::Utils::Array<JsonView> instanceFamiliesJsonList = jsonValue.GetArray("InstanceFamilies");
@@ -152,14 +107,11 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_instanceFamiliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

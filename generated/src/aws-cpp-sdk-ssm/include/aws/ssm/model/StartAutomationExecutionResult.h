@@ -27,7 +27,7 @@ namespace Model
   class StartAutomationExecutionResult
   {
   public:
-    AWS_SSM_API StartAutomationExecutionResult();
+    AWS_SSM_API StartAutomationExecutionResult() = default;
     AWS_SSM_API StartAutomationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API StartAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
      */
-    inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
-    inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionId = value; }
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionId = std::move(value); }
-    inline void SetAutomationExecutionId(const char* value) { m_automationExecutionId.assign(value); }
-    inline StartAutomationExecutionResult& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-    inline StartAutomationExecutionResult& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-    inline StartAutomationExecutionResult& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    inline const Aws::String& GetAutomationExecutionId() const { return m_automationExecutionId; }
+    template<typename AutomationExecutionIdT = Aws::String>
+    void SetAutomationExecutionId(AutomationExecutionIdT&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::forward<AutomationExecutionIdT>(value); }
+    template<typename AutomationExecutionIdT = Aws::String>
+    StartAutomationExecutionResult& WithAutomationExecutionId(AutomationExecutionIdT&& value) { SetAutomationExecutionId(std::forward<AutomationExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartAutomationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartAutomationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartAutomationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartAutomationExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_automationExecutionId;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

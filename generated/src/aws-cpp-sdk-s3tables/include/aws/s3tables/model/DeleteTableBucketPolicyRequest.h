@@ -21,7 +21,7 @@ namespace Model
   class DeleteTableBucketPolicyRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API DeleteTableBucketPolicyRequest();
+    AWS_S3TABLES_API DeleteTableBucketPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table bucket.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline DeleteTableBucketPolicyRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline DeleteTableBucketPolicyRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline DeleteTableBucketPolicyRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    DeleteTableBucketPolicyRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
   private:
 

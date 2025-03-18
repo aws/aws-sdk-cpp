@@ -10,15 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeTrustStoreRevocationsRequest::DescribeTrustStoreRevocationsRequest() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_revocationIdsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrustStoreRevocationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

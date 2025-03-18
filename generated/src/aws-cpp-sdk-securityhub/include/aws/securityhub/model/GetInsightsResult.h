@@ -29,7 +29,7 @@ namespace Model
   class GetInsightsResult
   {
   public:
-    AWS_SECURITYHUB_API GetInsightsResult();
+    AWS_SECURITYHUB_API GetInsightsResult() = default;
     AWS_SECURITYHUB_API GetInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API GetInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The insights returned by the operation.</p>
      */
-    inline const Aws::Vector<Insight>& GetInsights() const{ return m_insights; }
-    inline void SetInsights(const Aws::Vector<Insight>& value) { m_insights = value; }
-    inline void SetInsights(Aws::Vector<Insight>&& value) { m_insights = std::move(value); }
-    inline GetInsightsResult& WithInsights(const Aws::Vector<Insight>& value) { SetInsights(value); return *this;}
-    inline GetInsightsResult& WithInsights(Aws::Vector<Insight>&& value) { SetInsights(std::move(value)); return *this;}
-    inline GetInsightsResult& AddInsights(const Insight& value) { m_insights.push_back(value); return *this; }
-    inline GetInsightsResult& AddInsights(Insight&& value) { m_insights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
+    template<typename InsightsT = Aws::Vector<Insight>>
+    void SetInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights = std::forward<InsightsT>(value); }
+    template<typename InsightsT = Aws::Vector<Insight>>
+    GetInsightsResult& WithInsights(InsightsT&& value) { SetInsights(std::forward<InsightsT>(value)); return *this;}
+    template<typename InsightsT = Insight>
+    GetInsightsResult& AddInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights.emplace_back(std::forward<InsightsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token to use to request the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetInsightsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInsightsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInsightsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInsightsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Insight> m_insights;
+    bool m_insightsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStreamGroupResult::CreateStreamGroupResult() : 
-    m_status(StreamGroupStatus::NOT_SET),
-    m_statusReason(StreamGroupStatusReason::NOT_SET),
-    m_streamClass(StreamClass::NOT_SET)
-{
-}
-
 CreateStreamGroupResult::CreateStreamGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateStreamGroupResult()
 {
   *this = result;
 }
@@ -36,9 +28,8 @@ CreateStreamGroupResult& CreateStreamGroupResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedApplications"))
   {
     Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("AssociatedApplications");
@@ -46,38 +37,33 @@ CreateStreamGroupResult& CreateStreamGroupResult::operator =(const Aws::AmazonWe
     {
       m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsString());
     }
+    m_associatedApplicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultApplication"))
   {
     m_defaultApplication = jsonValue.GetObject("DefaultApplication");
-
+    m_defaultApplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationStates"))
   {
     Aws::Utils::Array<JsonView> locationStatesJsonList = jsonValue.GetArray("LocationStates");
@@ -85,32 +71,30 @@ CreateStreamGroupResult& CreateStreamGroupResult::operator =(const Aws::AmazonWe
     {
       m_locationStates.push_back(locationStatesJsonList[locationStatesIndex].AsObject());
     }
+    m_locationStatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StreamGroupStatusMapper::GetStreamGroupStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = StreamGroupStatusReasonMapper::GetStreamGroupStatusReasonForName(jsonValue.GetString("StatusReason"));
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamClass"))
   {
     m_streamClass = StreamClassMapper::GetStreamClassForName(jsonValue.GetString("StreamClass"));
-
+    m_streamClassHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

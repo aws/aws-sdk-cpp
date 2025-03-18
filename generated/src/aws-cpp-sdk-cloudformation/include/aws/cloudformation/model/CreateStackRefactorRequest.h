@@ -24,7 +24,7 @@ namespace Model
   class CreateStackRefactorRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API CreateStackRefactorRequest();
+    AWS_CLOUDFORMATION_API CreateStackRefactorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>A description to help you identify the stack refactor.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateStackRefactorRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateStackRefactorRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateStackRefactorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateStackRefactorRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines if a new stack is created with the refactor.</p>
      */
-    inline bool GetEnableStackCreation() const{ return m_enableStackCreation; }
+    inline bool GetEnableStackCreation() const { return m_enableStackCreation; }
     inline bool EnableStackCreationHasBeenSet() const { return m_enableStackCreationHasBeenSet; }
     inline void SetEnableStackCreation(bool value) { m_enableStackCreationHasBeenSet = true; m_enableStackCreation = value; }
     inline CreateStackRefactorRequest& WithEnableStackCreation(bool value) { SetEnableStackCreation(value); return *this;}
@@ -68,35 +66,35 @@ namespace Model
      * <p>The mappings for the stack resource <code>Source</code> and stack resource
      * <code>Destination</code>.</p>
      */
-    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const{ return m_resourceMappings; }
+    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const { return m_resourceMappings; }
     inline bool ResourceMappingsHasBeenSet() const { return m_resourceMappingsHasBeenSet; }
-    inline void SetResourceMappings(const Aws::Vector<ResourceMapping>& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings = value; }
-    inline void SetResourceMappings(Aws::Vector<ResourceMapping>&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings = std::move(value); }
-    inline CreateStackRefactorRequest& WithResourceMappings(const Aws::Vector<ResourceMapping>& value) { SetResourceMappings(value); return *this;}
-    inline CreateStackRefactorRequest& WithResourceMappings(Aws::Vector<ResourceMapping>&& value) { SetResourceMappings(std::move(value)); return *this;}
-    inline CreateStackRefactorRequest& AddResourceMappings(const ResourceMapping& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings.push_back(value); return *this; }
-    inline CreateStackRefactorRequest& AddResourceMappings(ResourceMapping&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings.push_back(std::move(value)); return *this; }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    void SetResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings = std::forward<ResourceMappingsT>(value); }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    CreateStackRefactorRequest& WithResourceMappings(ResourceMappingsT&& value) { SetResourceMappings(std::forward<ResourceMappingsT>(value)); return *this;}
+    template<typename ResourceMappingsT = ResourceMapping>
+    CreateStackRefactorRequest& AddResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings.emplace_back(std::forward<ResourceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The stacks being refactored.</p>
      */
-    inline const Aws::Vector<StackDefinition>& GetStackDefinitions() const{ return m_stackDefinitions; }
+    inline const Aws::Vector<StackDefinition>& GetStackDefinitions() const { return m_stackDefinitions; }
     inline bool StackDefinitionsHasBeenSet() const { return m_stackDefinitionsHasBeenSet; }
-    inline void SetStackDefinitions(const Aws::Vector<StackDefinition>& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions = value; }
-    inline void SetStackDefinitions(Aws::Vector<StackDefinition>&& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions = std::move(value); }
-    inline CreateStackRefactorRequest& WithStackDefinitions(const Aws::Vector<StackDefinition>& value) { SetStackDefinitions(value); return *this;}
-    inline CreateStackRefactorRequest& WithStackDefinitions(Aws::Vector<StackDefinition>&& value) { SetStackDefinitions(std::move(value)); return *this;}
-    inline CreateStackRefactorRequest& AddStackDefinitions(const StackDefinition& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions.push_back(value); return *this; }
-    inline CreateStackRefactorRequest& AddStackDefinitions(StackDefinition&& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions.push_back(std::move(value)); return *this; }
+    template<typename StackDefinitionsT = Aws::Vector<StackDefinition>>
+    void SetStackDefinitions(StackDefinitionsT&& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions = std::forward<StackDefinitionsT>(value); }
+    template<typename StackDefinitionsT = Aws::Vector<StackDefinition>>
+    CreateStackRefactorRequest& WithStackDefinitions(StackDefinitionsT&& value) { SetStackDefinitions(std::forward<StackDefinitionsT>(value)); return *this;}
+    template<typename StackDefinitionsT = StackDefinition>
+    CreateStackRefactorRequest& AddStackDefinitions(StackDefinitionsT&& value) { m_stackDefinitionsHasBeenSet = true; m_stackDefinitions.emplace_back(std::forward<StackDefinitionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_enableStackCreation;
+    bool m_enableStackCreation{false};
     bool m_enableStackCreationHasBeenSet = false;
 
     Aws::Vector<ResourceMapping> m_resourceMappings;

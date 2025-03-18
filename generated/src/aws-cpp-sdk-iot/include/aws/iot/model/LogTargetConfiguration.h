@@ -32,7 +32,7 @@ namespace Model
   class LogTargetConfiguration
   {
   public:
-    AWS_IOT_API LogTargetConfiguration();
+    AWS_IOT_API LogTargetConfiguration() = default;
     AWS_IOT_API LogTargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API LogTargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,29 @@ namespace Model
     /**
      * <p>A log target</p>
      */
-    inline const LogTarget& GetLogTarget() const{ return m_logTarget; }
+    inline const LogTarget& GetLogTarget() const { return m_logTarget; }
     inline bool LogTargetHasBeenSet() const { return m_logTargetHasBeenSet; }
-    inline void SetLogTarget(const LogTarget& value) { m_logTargetHasBeenSet = true; m_logTarget = value; }
-    inline void SetLogTarget(LogTarget&& value) { m_logTargetHasBeenSet = true; m_logTarget = std::move(value); }
-    inline LogTargetConfiguration& WithLogTarget(const LogTarget& value) { SetLogTarget(value); return *this;}
-    inline LogTargetConfiguration& WithLogTarget(LogTarget&& value) { SetLogTarget(std::move(value)); return *this;}
+    template<typename LogTargetT = LogTarget>
+    void SetLogTarget(LogTargetT&& value) { m_logTargetHasBeenSet = true; m_logTarget = std::forward<LogTargetT>(value); }
+    template<typename LogTargetT = LogTarget>
+    LogTargetConfiguration& WithLogTarget(LogTargetT&& value) { SetLogTarget(std::forward<LogTargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logging level.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline LogTargetConfiguration& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline LogTargetConfiguration& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline LogTargetConfiguration& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
     LogTarget m_logTarget;
     bool m_logTargetHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

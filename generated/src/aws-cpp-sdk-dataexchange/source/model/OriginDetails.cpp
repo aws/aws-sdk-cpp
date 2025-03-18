@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-OriginDetails::OriginDetails() : 
-    m_productIdHasBeenSet(false),
-    m_dataGrantIdHasBeenSet(false)
-{
-}
-
 OriginDetails::OriginDetails(JsonView jsonValue)
-  : OriginDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OriginDetails& OriginDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataGrantId"))
   {
     m_dataGrantId = jsonValue.GetString("DataGrantId");
-
     m_dataGrantIdHasBeenSet = true;
   }
-
   return *this;
 }
 

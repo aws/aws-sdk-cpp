@@ -31,7 +31,7 @@ namespace Model
   class CalculateRouteMatrixRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API CalculateRouteMatrixRequest();
+    AWS_LOCATIONSERVICE_API CalculateRouteMatrixRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the route calculator resource that you want to use to calculate
      * the route matrix. </p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+    inline const Aws::String& GetCalculatorName() const { return m_calculatorName; }
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
-    inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
-    inline CalculateRouteMatrixRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-    inline CalculateRouteMatrixRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    template<typename CalculatorNameT = Aws::String>
+    void SetCalculatorName(CalculatorNameT&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::forward<CalculatorNameT>(value); }
+    template<typename CalculatorNameT = Aws::String>
+    CalculateRouteMatrixRequest& WithCalculatorName(CalculatorNameT&& value) { SetCalculatorName(std::forward<CalculatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,14 @@ namespace Model
      * the result in <code>SnappedDeparturePositions</code>.</p>  <p>Valid
      * Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
-    inline const Aws::Vector<Aws::Vector<double>>& GetDeparturePositions() const{ return m_departurePositions; }
+    inline const Aws::Vector<Aws::Vector<double>>& GetDeparturePositions() const { return m_departurePositions; }
     inline bool DeparturePositionsHasBeenSet() const { return m_departurePositionsHasBeenSet; }
-    inline void SetDeparturePositions(const Aws::Vector<Aws::Vector<double>>& value) { m_departurePositionsHasBeenSet = true; m_departurePositions = value; }
-    inline void SetDeparturePositions(Aws::Vector<Aws::Vector<double>>&& value) { m_departurePositionsHasBeenSet = true; m_departurePositions = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithDeparturePositions(const Aws::Vector<Aws::Vector<double>>& value) { SetDeparturePositions(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithDeparturePositions(Aws::Vector<Aws::Vector<double>>&& value) { SetDeparturePositions(std::move(value)); return *this;}
-    inline CalculateRouteMatrixRequest& AddDeparturePositions(const Aws::Vector<double>& value) { m_departurePositionsHasBeenSet = true; m_departurePositions.push_back(value); return *this; }
-    inline CalculateRouteMatrixRequest& AddDeparturePositions(Aws::Vector<double>&& value) { m_departurePositionsHasBeenSet = true; m_departurePositions.push_back(std::move(value)); return *this; }
+    template<typename DeparturePositionsT = Aws::Vector<Aws::Vector<double>>>
+    void SetDeparturePositions(DeparturePositionsT&& value) { m_departurePositionsHasBeenSet = true; m_departurePositions = std::forward<DeparturePositionsT>(value); }
+    template<typename DeparturePositionsT = Aws::Vector<Aws::Vector<double>>>
+    CalculateRouteMatrixRequest& WithDeparturePositions(DeparturePositionsT&& value) { SetDeparturePositions(std::forward<DeparturePositionsT>(value)); return *this;}
+    template<typename DeparturePositionsT = Aws::Vector<double>>
+    CalculateRouteMatrixRequest& AddDeparturePositions(DeparturePositionsT&& value) { m_departurePositionsHasBeenSet = true; m_departurePositions.emplace_back(std::forward<DeparturePositionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,14 +105,14 @@ namespace Model
      * the result in <code>SnappedDestinationPositions</code>.</p>  <p>Valid
      * Values: <code>[-180 to 180,-90 to 90]</code> </p>
      */
-    inline const Aws::Vector<Aws::Vector<double>>& GetDestinationPositions() const{ return m_destinationPositions; }
+    inline const Aws::Vector<Aws::Vector<double>>& GetDestinationPositions() const { return m_destinationPositions; }
     inline bool DestinationPositionsHasBeenSet() const { return m_destinationPositionsHasBeenSet; }
-    inline void SetDestinationPositions(const Aws::Vector<Aws::Vector<double>>& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions = value; }
-    inline void SetDestinationPositions(Aws::Vector<Aws::Vector<double>>&& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithDestinationPositions(const Aws::Vector<Aws::Vector<double>>& value) { SetDestinationPositions(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithDestinationPositions(Aws::Vector<Aws::Vector<double>>&& value) { SetDestinationPositions(std::move(value)); return *this;}
-    inline CalculateRouteMatrixRequest& AddDestinationPositions(const Aws::Vector<double>& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions.push_back(value); return *this; }
-    inline CalculateRouteMatrixRequest& AddDestinationPositions(Aws::Vector<double>&& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions.push_back(std::move(value)); return *this; }
+    template<typename DestinationPositionsT = Aws::Vector<Aws::Vector<double>>>
+    void SetDestinationPositions(DestinationPositionsT&& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions = std::forward<DestinationPositionsT>(value); }
+    template<typename DestinationPositionsT = Aws::Vector<Aws::Vector<double>>>
+    CalculateRouteMatrixRequest& WithDestinationPositions(DestinationPositionsT&& value) { SetDestinationPositions(std::forward<DestinationPositionsT>(value)); return *this;}
+    template<typename DestinationPositionsT = Aws::Vector<double>>
+    CalculateRouteMatrixRequest& AddDestinationPositions(DestinationPositionsT&& value) { m_destinationPositionsHasBeenSet = true; m_destinationPositions.emplace_back(std::forward<DestinationPositionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,12 +131,10 @@ namespace Model
      * in the <i>Amazon Location Service Developer Guide</i>.</p>  <p>Default
      * Value: <code>Car</code> </p>
      */
-    inline const TravelMode& GetTravelMode() const{ return m_travelMode; }
+    inline TravelMode GetTravelMode() const { return m_travelMode; }
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
-    inline void SetTravelMode(const TravelMode& value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
-    inline void SetTravelMode(TravelMode&& value) { m_travelModeHasBeenSet = true; m_travelMode = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithTravelMode(const TravelMode& value) { SetTravelMode(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithTravelMode(TravelMode&& value) { SetTravelMode(std::move(value)); return *this;}
+    inline void SetTravelMode(TravelMode value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
+    inline CalculateRouteMatrixRequest& WithTravelMode(TravelMode value) { SetTravelMode(value); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +149,12 @@ namespace Model
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetDepartureTime() const{ return m_departureTime; }
+    inline const Aws::Utils::DateTime& GetDepartureTime() const { return m_departureTime; }
     inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
-    inline void SetDepartureTime(const Aws::Utils::DateTime& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
-    inline void SetDepartureTime(Aws::Utils::DateTime&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithDepartureTime(const Aws::Utils::DateTime& value) { SetDepartureTime(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithDepartureTime(Aws::Utils::DateTime&& value) { SetDepartureTime(std::move(value)); return *this;}
+    template<typename DepartureTimeT = Aws::Utils::DateTime>
+    void SetDepartureTime(DepartureTimeT&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::forward<DepartureTimeT>(value); }
+    template<typename DepartureTimeT = Aws::Utils::DateTime>
+    CalculateRouteMatrixRequest& WithDepartureTime(DepartureTimeT&& value) { SetDepartureTime(std::forward<DepartureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,7 +166,7 @@ namespace Model
      * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
      * <code>true</code> </p>
      */
-    inline bool GetDepartNow() const{ return m_departNow; }
+    inline bool GetDepartNow() const { return m_departNow; }
     inline bool DepartNowHasBeenSet() const { return m_departNowHasBeenSet; }
     inline void SetDepartNow(bool value) { m_departNowHasBeenSet = true; m_departNow = value; }
     inline CalculateRouteMatrixRequest& WithDepartNow(bool value) { SetDepartNow(value); return *this;}
@@ -181,12 +177,10 @@ namespace Model
      * <p>Set the unit system to specify the distance.</p> <p>Default Value:
      * <code>Kilometers</code> </p>
      */
-    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
+    inline DistanceUnit GetDistanceUnit() const { return m_distanceUnit; }
     inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
-    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
-    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
+    inline void SetDistanceUnit(DistanceUnit value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
+    inline CalculateRouteMatrixRequest& WithDistanceUnit(DistanceUnit value) { SetDistanceUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +189,12 @@ namespace Model
      * avoiding routes that use ferries or tolls.</p> <p>Requirements:
      * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
      */
-    inline const CalculateRouteCarModeOptions& GetCarModeOptions() const{ return m_carModeOptions; }
+    inline const CalculateRouteCarModeOptions& GetCarModeOptions() const { return m_carModeOptions; }
     inline bool CarModeOptionsHasBeenSet() const { return m_carModeOptionsHasBeenSet; }
-    inline void SetCarModeOptions(const CalculateRouteCarModeOptions& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = value; }
-    inline void SetCarModeOptions(CalculateRouteCarModeOptions&& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithCarModeOptions(const CalculateRouteCarModeOptions& value) { SetCarModeOptions(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithCarModeOptions(CalculateRouteCarModeOptions&& value) { SetCarModeOptions(std::move(value)); return *this;}
+    template<typename CarModeOptionsT = CalculateRouteCarModeOptions>
+    void SetCarModeOptions(CarModeOptionsT&& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = std::forward<CarModeOptionsT>(value); }
+    template<typename CarModeOptionsT = CalculateRouteCarModeOptions>
+    CalculateRouteMatrixRequest& WithCarModeOptions(CarModeOptionsT&& value) { SetCarModeOptions(std::forward<CarModeOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,12 +204,12 @@ namespace Model
      * when choosing an optimal road.</p> <p>Requirements: <code>TravelMode</code> must
      * be specified as <code>Truck</code>.</p>
      */
-    inline const CalculateRouteTruckModeOptions& GetTruckModeOptions() const{ return m_truckModeOptions; }
+    inline const CalculateRouteTruckModeOptions& GetTruckModeOptions() const { return m_truckModeOptions; }
     inline bool TruckModeOptionsHasBeenSet() const { return m_truckModeOptionsHasBeenSet; }
-    inline void SetTruckModeOptions(const CalculateRouteTruckModeOptions& value) { m_truckModeOptionsHasBeenSet = true; m_truckModeOptions = value; }
-    inline void SetTruckModeOptions(CalculateRouteTruckModeOptions&& value) { m_truckModeOptionsHasBeenSet = true; m_truckModeOptions = std::move(value); }
-    inline CalculateRouteMatrixRequest& WithTruckModeOptions(const CalculateRouteTruckModeOptions& value) { SetTruckModeOptions(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithTruckModeOptions(CalculateRouteTruckModeOptions&& value) { SetTruckModeOptions(std::move(value)); return *this;}
+    template<typename TruckModeOptionsT = CalculateRouteTruckModeOptions>
+    void SetTruckModeOptions(TruckModeOptionsT&& value) { m_truckModeOptionsHasBeenSet = true; m_truckModeOptions = std::forward<TruckModeOptionsT>(value); }
+    template<typename TruckModeOptionsT = CalculateRouteTruckModeOptions>
+    CalculateRouteMatrixRequest& WithTruckModeOptions(TruckModeOptionsT&& value) { SetTruckModeOptions(std::forward<TruckModeOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,14 +218,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline CalculateRouteMatrixRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline CalculateRouteMatrixRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline CalculateRouteMatrixRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    CalculateRouteMatrixRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -244,16 +236,16 @@ namespace Model
     Aws::Vector<Aws::Vector<double>> m_destinationPositions;
     bool m_destinationPositionsHasBeenSet = false;
 
-    TravelMode m_travelMode;
+    TravelMode m_travelMode{TravelMode::NOT_SET};
     bool m_travelModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_departureTime;
+    Aws::Utils::DateTime m_departureTime{};
     bool m_departureTimeHasBeenSet = false;
 
-    bool m_departNow;
+    bool m_departNow{false};
     bool m_departNowHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
+    DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
     bool m_distanceUnitHasBeenSet = false;
 
     CalculateRouteCarModeOptions m_carModeOptions;

@@ -12,10 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSourceCredentialsRequest::ListSourceCredentialsRequest()
-{
-}
-
 Aws::String ListSourceCredentialsRequest::SerializePayload() const
 {
   return "{}";

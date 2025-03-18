@@ -32,7 +32,7 @@ namespace Model
   class KxUser
   {
   public:
-    AWS_FINSPACE_API KxUser();
+    AWS_FINSPACE_API KxUser() = default;
     AWS_FINSPACE_API KxUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,66 +45,60 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline KxUser& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline KxUser& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline KxUser& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    KxUser& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the user.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline KxUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline KxUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline KxUser& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    KxUser& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN that is associated with the user.</p>
      */
-    inline const Aws::String& GetIamRole() const{ return m_iamRole; }
+    inline const Aws::String& GetIamRole() const { return m_iamRole; }
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
-    inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
-    inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
-    inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
-    inline KxUser& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
-    inline KxUser& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
-    inline KxUser& WithIamRole(const char* value) { SetIamRole(value); return *this;}
+    template<typename IamRoleT = Aws::String>
+    void SetIamRole(IamRoleT&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::forward<IamRoleT>(value); }
+    template<typename IamRoleT = Aws::String>
+    KxUser& WithIamRole(IamRoleT&& value) { SetIamRole(std::forward<IamRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the kdb user was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const { return m_createTimestamp; }
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-    inline KxUser& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-    inline KxUser& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    void SetCreateTimestamp(CreateTimestampT&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::forward<CreateTimestampT>(value); }
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    KxUser& WithCreateTimestamp(CreateTimestampT&& value) { SetCreateTimestamp(std::forward<CreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the kdb user was updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTimestamp() const{ return m_updateTimestamp; }
+    inline const Aws::Utils::DateTime& GetUpdateTimestamp() const { return m_updateTimestamp; }
     inline bool UpdateTimestampHasBeenSet() const { return m_updateTimestampHasBeenSet; }
-    inline void SetUpdateTimestamp(const Aws::Utils::DateTime& value) { m_updateTimestampHasBeenSet = true; m_updateTimestamp = value; }
-    inline void SetUpdateTimestamp(Aws::Utils::DateTime&& value) { m_updateTimestampHasBeenSet = true; m_updateTimestamp = std::move(value); }
-    inline KxUser& WithUpdateTimestamp(const Aws::Utils::DateTime& value) { SetUpdateTimestamp(value); return *this;}
-    inline KxUser& WithUpdateTimestamp(Aws::Utils::DateTime&& value) { SetUpdateTimestamp(std::move(value)); return *this;}
+    template<typename UpdateTimestampT = Aws::Utils::DateTime>
+    void SetUpdateTimestamp(UpdateTimestampT&& value) { m_updateTimestampHasBeenSet = true; m_updateTimestamp = std::forward<UpdateTimestampT>(value); }
+    template<typename UpdateTimestampT = Aws::Utils::DateTime>
+    KxUser& WithUpdateTimestamp(UpdateTimestampT&& value) { SetUpdateTimestamp(std::forward<UpdateTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,10 +111,10 @@ namespace Model
     Aws::String m_iamRole;
     bool m_iamRoleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTimestamp;
+    Aws::Utils::DateTime m_createTimestamp{};
     bool m_createTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTimestamp;
+    Aws::Utils::DateTime m_updateTimestamp{};
     bool m_updateTimestampHasBeenSet = false;
   };
 

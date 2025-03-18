@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials() : 
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
-{
-}
-
 HoneycodeConnectorProfileCredentials::HoneycodeConnectorProfileCredentials(JsonView jsonValue)
-  : HoneycodeConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HoneycodeConnectorProfileCredentials& HoneycodeConnectorProfileCredentials::oper
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthRequest"))
   {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
-
     m_oAuthRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

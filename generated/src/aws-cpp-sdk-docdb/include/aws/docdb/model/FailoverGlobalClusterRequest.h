@@ -21,7 +21,7 @@ namespace Model
   class FailoverGlobalClusterRequest : public DocDBRequest
   {
   public:
-    AWS_DOCDB_API FailoverGlobalClusterRequest();
+    AWS_DOCDB_API FailoverGlobalClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * cluster.</p> </li> <li> <p>Minimum length of 1. Maximum length of 255.</p> </li>
      * </ul> <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code> </p>
      */
-    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+    inline const Aws::String& GetGlobalClusterIdentifier() const { return m_globalClusterIdentifier; }
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-    inline FailoverGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-    inline FailoverGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-    inline FailoverGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    void SetGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::forward<GlobalClusterIdentifierT>(value); }
+    template<typename GlobalClusterIdentifierT = Aws::String>
+    FailoverGlobalClusterRequest& WithGlobalClusterIdentifier(GlobalClusterIdentifierT&& value) { SetGlobalClusterIdentifier(std::forward<GlobalClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * 1. Maximum length of 255.</p> </li> </ul> <p>Pattern:
      * <code>[A-Za-z][0-9A-Za-z-:._]*</code> </p>
      */
-    inline const Aws::String& GetTargetDbClusterIdentifier() const{ return m_targetDbClusterIdentifier; }
+    inline const Aws::String& GetTargetDbClusterIdentifier() const { return m_targetDbClusterIdentifier; }
     inline bool TargetDbClusterIdentifierHasBeenSet() const { return m_targetDbClusterIdentifierHasBeenSet; }
-    inline void SetTargetDbClusterIdentifier(const Aws::String& value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier = value; }
-    inline void SetTargetDbClusterIdentifier(Aws::String&& value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier = std::move(value); }
-    inline void SetTargetDbClusterIdentifier(const char* value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier.assign(value); }
-    inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(const Aws::String& value) { SetTargetDbClusterIdentifier(value); return *this;}
-    inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(Aws::String&& value) { SetTargetDbClusterIdentifier(std::move(value)); return *this;}
-    inline FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(const char* value) { SetTargetDbClusterIdentifier(value); return *this;}
+    template<typename TargetDbClusterIdentifierT = Aws::String>
+    void SetTargetDbClusterIdentifier(TargetDbClusterIdentifierT&& value) { m_targetDbClusterIdentifierHasBeenSet = true; m_targetDbClusterIdentifier = std::forward<TargetDbClusterIdentifierT>(value); }
+    template<typename TargetDbClusterIdentifierT = Aws::String>
+    FailoverGlobalClusterRequest& WithTargetDbClusterIdentifier(TargetDbClusterIdentifierT&& value) { SetTargetDbClusterIdentifier(std::forward<TargetDbClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * switchover.</p> <p>Constraints:</p> <ul> <li> <p>Can't be specified together
      * with the <code>Switchover</code> parameter.</p> </li> </ul>
      */
-    inline bool GetAllowDataLoss() const{ return m_allowDataLoss; }
+    inline bool GetAllowDataLoss() const { return m_allowDataLoss; }
     inline bool AllowDataLossHasBeenSet() const { return m_allowDataLossHasBeenSet; }
     inline void SetAllowDataLoss(bool value) { m_allowDataLossHasBeenSet = true; m_allowDataLoss = value; }
     inline FailoverGlobalClusterRequest& WithAllowDataLoss(bool value) { SetAllowDataLoss(value); return *this;}
@@ -95,7 +91,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Can't be specified together with the
      * <code>AllowDataLoss</code> parameter.</p> </li> </ul>
      */
-    inline bool GetSwitchover() const{ return m_switchover; }
+    inline bool GetSwitchover() const { return m_switchover; }
     inline bool SwitchoverHasBeenSet() const { return m_switchoverHasBeenSet; }
     inline void SetSwitchover(bool value) { m_switchoverHasBeenSet = true; m_switchover = value; }
     inline FailoverGlobalClusterRequest& WithSwitchover(bool value) { SetSwitchover(value); return *this;}
@@ -108,10 +104,10 @@ namespace Model
     Aws::String m_targetDbClusterIdentifier;
     bool m_targetDbClusterIdentifierHasBeenSet = false;
 
-    bool m_allowDataLoss;
+    bool m_allowDataLoss{false};
     bool m_allowDataLossHasBeenSet = false;
 
-    bool m_switchover;
+    bool m_switchover{false};
     bool m_switchoverHasBeenSet = false;
   };
 

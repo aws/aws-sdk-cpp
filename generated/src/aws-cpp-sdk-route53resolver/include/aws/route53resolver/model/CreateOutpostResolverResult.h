@@ -28,7 +28,7 @@ namespace Model
   class CreateOutpostResolverResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API CreateOutpostResolverResult();
+    AWS_ROUTE53RESOLVER_API CreateOutpostResolverResult() = default;
     AWS_ROUTE53RESOLVER_API CreateOutpostResolverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API CreateOutpostResolverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the <code>CreateOutpostResolver</code> request, including
      * the status of the request.</p>
      */
-    inline const OutpostResolver& GetOutpostResolver() const{ return m_outpostResolver; }
-    inline void SetOutpostResolver(const OutpostResolver& value) { m_outpostResolver = value; }
-    inline void SetOutpostResolver(OutpostResolver&& value) { m_outpostResolver = std::move(value); }
-    inline CreateOutpostResolverResult& WithOutpostResolver(const OutpostResolver& value) { SetOutpostResolver(value); return *this;}
-    inline CreateOutpostResolverResult& WithOutpostResolver(OutpostResolver&& value) { SetOutpostResolver(std::move(value)); return *this;}
+    inline const OutpostResolver& GetOutpostResolver() const { return m_outpostResolver; }
+    template<typename OutpostResolverT = OutpostResolver>
+    void SetOutpostResolver(OutpostResolverT&& value) { m_outpostResolverHasBeenSet = true; m_outpostResolver = std::forward<OutpostResolverT>(value); }
+    template<typename OutpostResolverT = OutpostResolver>
+    CreateOutpostResolverResult& WithOutpostResolver(OutpostResolverT&& value) { SetOutpostResolver(std::forward<OutpostResolverT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateOutpostResolverResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateOutpostResolverResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateOutpostResolverResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateOutpostResolverResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OutpostResolver m_outpostResolver;
+    bool m_outpostResolverHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

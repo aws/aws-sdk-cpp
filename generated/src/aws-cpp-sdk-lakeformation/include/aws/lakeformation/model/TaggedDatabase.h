@@ -34,7 +34,7 @@ namespace Model
   class TaggedDatabase
   {
   public:
-    AWS_LAKEFORMATION_API TaggedDatabase();
+    AWS_LAKEFORMATION_API TaggedDatabase() = default;
     AWS_LAKEFORMATION_API TaggedDatabase(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API TaggedDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>A database that has LF-tags attached to it.</p>
      */
-    inline const DatabaseResource& GetDatabase() const{ return m_database; }
+    inline const DatabaseResource& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const DatabaseResource& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(DatabaseResource&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline TaggedDatabase& WithDatabase(const DatabaseResource& value) { SetDatabase(value); return *this;}
-    inline TaggedDatabase& WithDatabase(DatabaseResource&& value) { SetDatabase(std::move(value)); return *this;}
+    template<typename DatabaseT = DatabaseResource>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = DatabaseResource>
+    TaggedDatabase& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of LF-tags attached to the database.</p>
      */
-    inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
+    inline const Aws::Vector<LFTagPair>& GetLFTags() const { return m_lFTags; }
     inline bool LFTagsHasBeenSet() const { return m_lFTagsHasBeenSet; }
-    inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTagsHasBeenSet = true; m_lFTags = value; }
-    inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::move(value); }
-    inline TaggedDatabase& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
-    inline TaggedDatabase& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
-    inline TaggedDatabase& AddLFTags(const LFTagPair& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(value); return *this; }
-    inline TaggedDatabase& AddLFTags(LFTagPair&& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(std::move(value)); return *this; }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    void SetLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::forward<LFTagsT>(value); }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    TaggedDatabase& WithLFTags(LFTagsT&& value) { SetLFTags(std::forward<LFTagsT>(value)); return *this;}
+    template<typename LFTagsT = LFTagPair>
+    TaggedDatabase& AddLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags.emplace_back(std::forward<LFTagsT>(value)); return *this; }
     ///@}
   private:
 

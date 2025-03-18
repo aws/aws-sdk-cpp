@@ -33,7 +33,7 @@ namespace Model
   class ImageAggregation
   {
   public:
-    AWS_IMAGEBUILDER_API ImageAggregation();
+    AWS_IMAGEBUILDER_API ImageAggregation() = default;
     AWS_IMAGEBUILDER_API ImageAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ImageAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the image for this
      * aggregation.</p>
      */
-    inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
+    inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
     inline bool ImageBuildVersionArnHasBeenSet() const { return m_imageBuildVersionArnHasBeenSet; }
-    inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = value; }
-    inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::move(value); }
-    inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn.assign(value); }
-    inline ImageAggregation& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-    inline ImageAggregation& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-    inline ImageAggregation& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
+    template<typename ImageBuildVersionArnT = Aws::String>
+    void SetImageBuildVersionArn(ImageBuildVersionArnT&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::forward<ImageBuildVersionArnT>(value); }
+    template<typename ImageBuildVersionArnT = Aws::String>
+    ImageAggregation& WithImageBuildVersionArn(ImageBuildVersionArnT&& value) { SetImageBuildVersionArn(std::forward<ImageBuildVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>Counts by severity level for medium severity and higher level findings, plus
      * a total for all of the findings for the specified image.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline ImageAggregation& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline ImageAggregation& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    ImageAggregation& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 

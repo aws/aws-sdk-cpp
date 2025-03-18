@@ -18,13 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-ManifestOverridesPayload::ManifestOverridesPayload() : 
-    m_payloadDataHasBeenSet(false)
-{
-}
-
 ManifestOverridesPayload::ManifestOverridesPayload(JsonView jsonValue)
-  : ManifestOverridesPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ManifestOverridesPayload& ManifestOverridesPayload::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("PayloadData"))
   {
     m_payloadData = jsonValue.GetString("PayloadData");
-
     m_payloadDataHasBeenSet = true;
   }
-
   return *this;
 }
 

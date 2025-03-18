@@ -28,7 +28,7 @@ namespace Model
   class DeleteLaunchTemplateResponse
   {
   public:
-    AWS_EC2_API DeleteLaunchTemplateResponse();
+    AWS_EC2_API DeleteLaunchTemplateResponse() = default;
     AWS_EC2_API DeleteLaunchTemplateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteLaunchTemplateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the launch template.</p>
      */
-    inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
-    inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplate = std::move(value); }
-    inline DeleteLaunchTemplateResponse& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
-    inline DeleteLaunchTemplateResponse& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    inline const LaunchTemplate& GetLaunchTemplate() const { return m_launchTemplate; }
+    template<typename LaunchTemplateT = LaunchTemplate>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplate>
+    DeleteLaunchTemplateResponse& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteLaunchTemplateResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteLaunchTemplateResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteLaunchTemplateResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     LaunchTemplate m_launchTemplate;
+    bool m_launchTemplateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

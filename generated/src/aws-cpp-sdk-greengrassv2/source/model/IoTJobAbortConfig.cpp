@@ -18,13 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-IoTJobAbortConfig::IoTJobAbortConfig() : 
-    m_criteriaListHasBeenSet(false)
-{
-}
-
 IoTJobAbortConfig::IoTJobAbortConfig(JsonView jsonValue)
-  : IoTJobAbortConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IoTJobAbortConfig& IoTJobAbortConfig::operator =(JsonView jsonValue)
     }
     m_criteriaListHasBeenSet = true;
   }
-
   return *this;
 }
 

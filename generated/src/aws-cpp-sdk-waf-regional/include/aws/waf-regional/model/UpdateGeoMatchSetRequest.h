@@ -23,7 +23,7 @@ namespace Model
   class UpdateGeoMatchSetRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API UpdateGeoMatchSetRequest();
+    AWS_WAFREGIONAL_API UpdateGeoMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
      * by <a>ListGeoMatchSets</a>.</p>
      */
-    inline const Aws::String& GetGeoMatchSetId() const{ return m_geoMatchSetId; }
+    inline const Aws::String& GetGeoMatchSetId() const { return m_geoMatchSetId; }
     inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
-    inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
-    inline void SetGeoMatchSetId(Aws::String&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::move(value); }
-    inline void SetGeoMatchSetId(const char* value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId.assign(value); }
-    inline UpdateGeoMatchSetRequest& WithGeoMatchSetId(const Aws::String& value) { SetGeoMatchSetId(value); return *this;}
-    inline UpdateGeoMatchSetRequest& WithGeoMatchSetId(Aws::String&& value) { SetGeoMatchSetId(std::move(value)); return *this;}
-    inline UpdateGeoMatchSetRequest& WithGeoMatchSetId(const char* value) { SetGeoMatchSetId(value); return *this;}
+    template<typename GeoMatchSetIdT = Aws::String>
+    void SetGeoMatchSetId(GeoMatchSetIdT&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::forward<GeoMatchSetIdT>(value); }
+    template<typename GeoMatchSetIdT = Aws::String>
+    UpdateGeoMatchSetRequest& WithGeoMatchSetId(GeoMatchSetIdT&& value) { SetGeoMatchSetId(std::forward<GeoMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline UpdateGeoMatchSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline UpdateGeoMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline UpdateGeoMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    UpdateGeoMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * <code>GeoMatchConstraint</code>. To add multiple countries, include multiple
      * <code>GeoMatchSetUpdate</code> objects in your request.</p> </li> </ul>
      */
-    inline const Aws::Vector<GeoMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<GeoMatchSetUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<GeoMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<GeoMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline UpdateGeoMatchSetRequest& WithUpdates(const Aws::Vector<GeoMatchSetUpdate>& value) { SetUpdates(value); return *this;}
-    inline UpdateGeoMatchSetRequest& WithUpdates(Aws::Vector<GeoMatchSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline UpdateGeoMatchSetRequest& AddUpdates(const GeoMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline UpdateGeoMatchSetRequest& AddUpdates(GeoMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<GeoMatchSetUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<GeoMatchSetUpdate>>
+    UpdateGeoMatchSetRequest& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = GeoMatchSetUpdate>
+    UpdateGeoMatchSetRequest& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
   private:
 

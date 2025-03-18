@@ -32,7 +32,7 @@ namespace Model
   class SchemaId
   {
   public:
-    AWS_GLUE_API SchemaId();
+    AWS_GLUE_API SchemaId() = default;
     AWS_GLUE_API SchemaId(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SchemaId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
      * or <code>SchemaName</code> has to be provided.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-    inline SchemaId& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline SchemaId& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline SchemaId& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    SchemaId& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p>The name of the schema. One of <code>SchemaArn</code> or
      * <code>SchemaName</code> has to be provided.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline SchemaId& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline SchemaId& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline SchemaId& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    SchemaId& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema registry that contains the schema.</p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
-    inline SchemaId& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline SchemaId& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline SchemaId& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    SchemaId& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
   private:
 

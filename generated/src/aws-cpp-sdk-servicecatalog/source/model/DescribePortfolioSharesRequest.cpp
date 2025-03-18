@@ -12,16 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePortfolioSharesRequest::DescribePortfolioSharesRequest() : 
-    m_portfolioIdHasBeenSet(false),
-    m_type(DescribePortfolioShareType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribePortfolioSharesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScheduledActionsResult::DescribeScheduledActionsResult()
-{
-}
-
 DescribeScheduledActionsResult::DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode scheduledActionsNode = resultNode.FirstChild("ScheduledActions");
     if(!scheduledActionsNode.IsNull())
     {
       XmlNode scheduledActionsMember = scheduledActionsNode.FirstChild("ScheduledAction");
+      m_scheduledActionsHasBeenSet = !scheduledActionsMember.IsNull();
       while(!scheduledActionsMember.IsNull())
       {
         m_scheduledActions.push_back(scheduledActionsMember);
         scheduledActionsMember = scheduledActionsMember.NextNode("ScheduledAction");
       }
 
+      m_scheduledActionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeScheduledActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

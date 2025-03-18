@@ -18,15 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-EksConfiguration::EksConfiguration() : 
-    m_clusterArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 EksConfiguration::EksConfiguration(JsonView jsonValue)
-  : EksConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EksConfiguration& EksConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -49,7 +39,6 @@ EksConfiguration& EksConfiguration::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -59,7 +48,6 @@ EksConfiguration& EksConfiguration::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

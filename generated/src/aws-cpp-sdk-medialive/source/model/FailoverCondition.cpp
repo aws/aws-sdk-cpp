@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FailoverCondition::FailoverCondition() : 
-    m_failoverConditionSettingsHasBeenSet(false)
-{
-}
-
 FailoverCondition::FailoverCondition(JsonView jsonValue)
-  : FailoverCondition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FailoverCondition& FailoverCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failoverConditionSettings"))
   {
     m_failoverConditionSettings = jsonValue.GetObject("failoverConditionSettings");
-
     m_failoverConditionSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

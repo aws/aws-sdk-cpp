@@ -22,7 +22,7 @@ namespace Model
   class ModifyEndpointAccessRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ModifyEndpointAccessRequest();
+    AWS_REDSHIFT_API ModifyEndpointAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The endpoint to be modified.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline ModifyEndpointAccessRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline ModifyEndpointAccessRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline ModifyEndpointAccessRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    ModifyEndpointAccessRequest& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>The complete list of VPC security groups associated with the endpoint after
      * the endpoint is modified.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline ModifyEndpointAccessRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline ModifyEndpointAccessRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline ModifyEndpointAccessRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline ModifyEndpointAccessRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline ModifyEndpointAccessRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ModifyEndpointAccessRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    ModifyEndpointAccessRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 

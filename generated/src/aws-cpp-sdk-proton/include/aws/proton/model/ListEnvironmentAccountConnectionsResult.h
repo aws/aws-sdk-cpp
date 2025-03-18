@@ -29,7 +29,7 @@ namespace Model
   class ListEnvironmentAccountConnectionsResult
   {
   public:
-    AWS_PROTON_API ListEnvironmentAccountConnectionsResult();
+    AWS_PROTON_API ListEnvironmentAccountConnectionsResult() = default;
     AWS_PROTON_API ListEnvironmentAccountConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API ListEnvironmentAccountConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of environment account connections with details that's returned by
      * Proton. </p>
      */
-    inline const Aws::Vector<EnvironmentAccountConnectionSummary>& GetEnvironmentAccountConnections() const{ return m_environmentAccountConnections; }
-    inline void SetEnvironmentAccountConnections(const Aws::Vector<EnvironmentAccountConnectionSummary>& value) { m_environmentAccountConnections = value; }
-    inline void SetEnvironmentAccountConnections(Aws::Vector<EnvironmentAccountConnectionSummary>&& value) { m_environmentAccountConnections = std::move(value); }
-    inline ListEnvironmentAccountConnectionsResult& WithEnvironmentAccountConnections(const Aws::Vector<EnvironmentAccountConnectionSummary>& value) { SetEnvironmentAccountConnections(value); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& WithEnvironmentAccountConnections(Aws::Vector<EnvironmentAccountConnectionSummary>&& value) { SetEnvironmentAccountConnections(std::move(value)); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& AddEnvironmentAccountConnections(const EnvironmentAccountConnectionSummary& value) { m_environmentAccountConnections.push_back(value); return *this; }
-    inline ListEnvironmentAccountConnectionsResult& AddEnvironmentAccountConnections(EnvironmentAccountConnectionSummary&& value) { m_environmentAccountConnections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnvironmentAccountConnectionSummary>& GetEnvironmentAccountConnections() const { return m_environmentAccountConnections; }
+    template<typename EnvironmentAccountConnectionsT = Aws::Vector<EnvironmentAccountConnectionSummary>>
+    void SetEnvironmentAccountConnections(EnvironmentAccountConnectionsT&& value) { m_environmentAccountConnectionsHasBeenSet = true; m_environmentAccountConnections = std::forward<EnvironmentAccountConnectionsT>(value); }
+    template<typename EnvironmentAccountConnectionsT = Aws::Vector<EnvironmentAccountConnectionSummary>>
+    ListEnvironmentAccountConnectionsResult& WithEnvironmentAccountConnections(EnvironmentAccountConnectionsT&& value) { SetEnvironmentAccountConnections(std::forward<EnvironmentAccountConnectionsT>(value)); return *this;}
+    template<typename EnvironmentAccountConnectionsT = EnvironmentAccountConnectionSummary>
+    ListEnvironmentAccountConnectionsResult& AddEnvironmentAccountConnections(EnvironmentAccountConnectionsT&& value) { m_environmentAccountConnectionsHasBeenSet = true; m_environmentAccountConnections.emplace_back(std::forward<EnvironmentAccountConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * connection in the array of environment account connections, after the current
      * requested list of environment account connections.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEnvironmentAccountConnectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnvironmentAccountConnectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEnvironmentAccountConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEnvironmentAccountConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEnvironmentAccountConnectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnvironmentAccountConnectionSummary> m_environmentAccountConnections;
+    bool m_environmentAccountConnectionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

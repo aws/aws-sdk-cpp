@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_pendingMaintenanceActionDetailsHasBeenSet(false)
-{
-}
-
 ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(const XmlNode& xmlNode)
-  : ResourcePendingMaintenanceActions()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
     if(!pendingMaintenanceActionDetailsNode.IsNull())
     {
       XmlNode pendingMaintenanceActionDetailsMember = pendingMaintenanceActionDetailsNode.FirstChild("PendingMaintenanceAction");
+      m_pendingMaintenanceActionDetailsHasBeenSet = !pendingMaintenanceActionDetailsMember.IsNull();
       while(!pendingMaintenanceActionDetailsMember.IsNull())
       {
         m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionDetailsMember);

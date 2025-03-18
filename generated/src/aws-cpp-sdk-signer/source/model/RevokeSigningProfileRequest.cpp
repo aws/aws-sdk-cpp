@@ -12,14 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeSigningProfileRequest::RevokeSigningProfileRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_effectiveTimeHasBeenSet(false)
-{
-}
-
 Aws::String RevokeSigningProfileRequest::SerializePayload() const
 {
   JsonValue payload;

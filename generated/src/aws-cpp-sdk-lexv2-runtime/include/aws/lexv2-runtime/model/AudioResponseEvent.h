@@ -33,7 +33,7 @@ namespace Model
   class AudioResponseEvent
   {
   public:
-    AWS_LEXRUNTIMEV2_API AudioResponseEvent();
+    AWS_LEXRUNTIMEV2_API AudioResponseEvent() = default;
     AWS_LEXRUNTIMEV2_API AudioResponseEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API AudioResponseEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>A chunk of the audio to play. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetAudioChunk() const{ return m_audioChunk; }
+    inline const Aws::Utils::ByteBuffer& GetAudioChunk() const { return m_audioChunk; }
     inline bool AudioChunkHasBeenSet() const { return m_audioChunkHasBeenSet; }
-    inline void SetAudioChunk(const Aws::Utils::ByteBuffer& value) { m_audioChunkHasBeenSet = true; m_audioChunk = value; }
-    inline void SetAudioChunk(Aws::Utils::ByteBuffer&& value) { m_audioChunkHasBeenSet = true; m_audioChunk = std::move(value); }
-    inline AudioResponseEvent& WithAudioChunk(const Aws::Utils::ByteBuffer& value) { SetAudioChunk(value); return *this;}
-    inline AudioResponseEvent& WithAudioChunk(Aws::Utils::ByteBuffer&& value) { SetAudioChunk(std::move(value)); return *this;}
+    template<typename AudioChunkT = Aws::Utils::ByteBuffer>
+    void SetAudioChunk(AudioChunkT&& value) { m_audioChunkHasBeenSet = true; m_audioChunk = std::forward<AudioChunkT>(value); }
+    template<typename AudioChunkT = Aws::Utils::ByteBuffer>
+    AudioResponseEvent& WithAudioChunk(AudioChunkT&& value) { SetAudioChunk(std::forward<AudioChunkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * in the <code>contentType</code> field of the
      * <code>ConfigurationEvent</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline AudioResponseEvent& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline AudioResponseEvent& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline AudioResponseEvent& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    AudioResponseEvent& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * the form <code>RESPONSE-N</code>, where N is a number starting with one and
      * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline AudioResponseEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline AudioResponseEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline AudioResponseEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    AudioResponseEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_audioChunk;
+    Aws::Utils::ByteBuffer m_audioChunk{};
     bool m_audioChunkHasBeenSet = false;
 
     Aws::String m_contentType;

@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-WebAuthnConfigurationType::WebAuthnConfigurationType() : 
-    m_relyingPartyIdHasBeenSet(false),
-    m_userVerification(UserVerificationType::NOT_SET),
-    m_userVerificationHasBeenSet(false)
-{
-}
-
 WebAuthnConfigurationType::WebAuthnConfigurationType(JsonView jsonValue)
-  : WebAuthnConfigurationType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WebAuthnConfigurationType& WebAuthnConfigurationType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("RelyingPartyId"))
   {
     m_relyingPartyId = jsonValue.GetString("RelyingPartyId");
-
     m_relyingPartyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserVerification"))
   {
     m_userVerification = UserVerificationTypeMapper::GetUserVerificationTypeForName(jsonValue.GetString("UserVerification"));
-
     m_userVerificationHasBeenSet = true;
   }
-
   return *this;
 }
 

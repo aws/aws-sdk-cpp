@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDistributionMetricDataResult::GetDistributionMetricDataResult() : 
-    m_metricName(DistributionMetricName::NOT_SET)
-{
-}
-
 GetDistributionMetricDataResult::GetDistributionMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDistributionMetricDataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetDistributionMetricDataResult& GetDistributionMetricDataResult::operator =(con
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = DistributionMetricNameMapper::GetDistributionMetricNameForName(jsonValue.GetString("metricName"));
-
+    m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricData"))
   {
     Aws::Utils::Array<JsonView> metricDataJsonList = jsonValue.GetArray("metricData");
@@ -44,14 +37,15 @@ GetDistributionMetricDataResult& GetDistributionMetricDataResult::operator =(con
     {
       m_metricData.push_back(metricDataJsonList[metricDataIndex].AsObject());
     }
+    m_metricDataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

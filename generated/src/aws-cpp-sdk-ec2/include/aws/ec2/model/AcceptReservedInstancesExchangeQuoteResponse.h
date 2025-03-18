@@ -34,7 +34,7 @@ namespace Model
   class AcceptReservedInstancesExchangeQuoteResponse
   {
   public:
-    AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse();
+    AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse() = default;
     AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The ID of the successful exchange.</p>
      */
-    inline const Aws::String& GetExchangeId() const{ return m_exchangeId; }
-    inline void SetExchangeId(const Aws::String& value) { m_exchangeId = value; }
-    inline void SetExchangeId(Aws::String&& value) { m_exchangeId = std::move(value); }
-    inline void SetExchangeId(const char* value) { m_exchangeId.assign(value); }
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(const Aws::String& value) { SetExchangeId(value); return *this;}
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(Aws::String&& value) { SetExchangeId(std::move(value)); return *this;}
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(const char* value) { SetExchangeId(value); return *this;}
+    inline const Aws::String& GetExchangeId() const { return m_exchangeId; }
+    template<typename ExchangeIdT = Aws::String>
+    void SetExchangeId(ExchangeIdT&& value) { m_exchangeIdHasBeenSet = true; m_exchangeId = std::forward<ExchangeIdT>(value); }
+    template<typename ExchangeIdT = Aws::String>
+    AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(ExchangeIdT&& value) { SetExchangeId(std::forward<ExchangeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_exchangeId;
+    bool m_exchangeIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

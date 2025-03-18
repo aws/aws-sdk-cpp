@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBInstanceAutomatedBackupsRequest::DescribeDBInstanceAutomatedBackupsRequest() : 
-    m_dbiResourceIdHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBInstanceAutomatedBackupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

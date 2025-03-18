@@ -32,7 +32,7 @@ namespace Model
   class UpdateWebAppIdentityProviderDetails
   {
   public:
-    AWS_TRANSFER_API UpdateWebAppIdentityProviderDetails();
+    AWS_TRANSFER_API UpdateWebAppIdentityProviderDetails() = default;
     AWS_TRANSFER_API UpdateWebAppIdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API UpdateWebAppIdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A structure that describes the values to use for the IAM Identity Center
      * settings when you update a web app.</p>
      */
-    inline const UpdateWebAppIdentityCenterConfig& GetIdentityCenterConfig() const{ return m_identityCenterConfig; }
+    inline const UpdateWebAppIdentityCenterConfig& GetIdentityCenterConfig() const { return m_identityCenterConfig; }
     inline bool IdentityCenterConfigHasBeenSet() const { return m_identityCenterConfigHasBeenSet; }
-    inline void SetIdentityCenterConfig(const UpdateWebAppIdentityCenterConfig& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = value; }
-    inline void SetIdentityCenterConfig(UpdateWebAppIdentityCenterConfig&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::move(value); }
-    inline UpdateWebAppIdentityProviderDetails& WithIdentityCenterConfig(const UpdateWebAppIdentityCenterConfig& value) { SetIdentityCenterConfig(value); return *this;}
-    inline UpdateWebAppIdentityProviderDetails& WithIdentityCenterConfig(UpdateWebAppIdentityCenterConfig&& value) { SetIdentityCenterConfig(std::move(value)); return *this;}
+    template<typename IdentityCenterConfigT = UpdateWebAppIdentityCenterConfig>
+    void SetIdentityCenterConfig(IdentityCenterConfigT&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::forward<IdentityCenterConfigT>(value); }
+    template<typename IdentityCenterConfigT = UpdateWebAppIdentityCenterConfig>
+    UpdateWebAppIdentityProviderDetails& WithIdentityCenterConfig(IdentityCenterConfigT&& value) { SetIdentityCenterConfig(std::forward<IdentityCenterConfigT>(value)); return *this;}
     ///@}
   private:
 

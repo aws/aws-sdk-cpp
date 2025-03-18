@@ -36,7 +36,7 @@ namespace Model
   class ApplicationProvider
   {
   public:
-    AWS_SSOADMIN_API ApplicationProvider();
+    AWS_SSOADMIN_API ApplicationProvider() = default;
     AWS_SSOADMIN_API ApplicationProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API ApplicationProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ARN of the application provider.</p>
      */
-    inline const Aws::String& GetApplicationProviderArn() const{ return m_applicationProviderArn; }
+    inline const Aws::String& GetApplicationProviderArn() const { return m_applicationProviderArn; }
     inline bool ApplicationProviderArnHasBeenSet() const { return m_applicationProviderArnHasBeenSet; }
-    inline void SetApplicationProviderArn(const Aws::String& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = value; }
-    inline void SetApplicationProviderArn(Aws::String&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::move(value); }
-    inline void SetApplicationProviderArn(const char* value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn.assign(value); }
-    inline ApplicationProvider& WithApplicationProviderArn(const Aws::String& value) { SetApplicationProviderArn(value); return *this;}
-    inline ApplicationProvider& WithApplicationProviderArn(Aws::String&& value) { SetApplicationProviderArn(std::move(value)); return *this;}
-    inline ApplicationProvider& WithApplicationProviderArn(const char* value) { SetApplicationProviderArn(value); return *this;}
+    template<typename ApplicationProviderArnT = Aws::String>
+    void SetApplicationProviderArn(ApplicationProviderArnT&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::forward<ApplicationProviderArnT>(value); }
+    template<typename ApplicationProviderArnT = Aws::String>
+    ApplicationProvider& WithApplicationProviderArn(ApplicationProviderArnT&& value) { SetApplicationProviderArn(std::forward<ApplicationProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,36 +59,34 @@ namespace Model
      * <p>A structure that describes how IAM Identity Center represents the application
      * provider in the portal.</p>
      */
-    inline const DisplayData& GetDisplayData() const{ return m_displayData; }
+    inline const DisplayData& GetDisplayData() const { return m_displayData; }
     inline bool DisplayDataHasBeenSet() const { return m_displayDataHasBeenSet; }
-    inline void SetDisplayData(const DisplayData& value) { m_displayDataHasBeenSet = true; m_displayData = value; }
-    inline void SetDisplayData(DisplayData&& value) { m_displayDataHasBeenSet = true; m_displayData = std::move(value); }
-    inline ApplicationProvider& WithDisplayData(const DisplayData& value) { SetDisplayData(value); return *this;}
-    inline ApplicationProvider& WithDisplayData(DisplayData&& value) { SetDisplayData(std::move(value)); return *this;}
+    template<typename DisplayDataT = DisplayData>
+    void SetDisplayData(DisplayDataT&& value) { m_displayDataHasBeenSet = true; m_displayData = std::forward<DisplayDataT>(value); }
+    template<typename DisplayDataT = DisplayData>
+    ApplicationProvider& WithDisplayData(DisplayDataT&& value) { SetDisplayData(std::forward<DisplayDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protocol that the application provider uses to perform federation.</p>
      */
-    inline const FederationProtocol& GetFederationProtocol() const{ return m_federationProtocol; }
+    inline FederationProtocol GetFederationProtocol() const { return m_federationProtocol; }
     inline bool FederationProtocolHasBeenSet() const { return m_federationProtocolHasBeenSet; }
-    inline void SetFederationProtocol(const FederationProtocol& value) { m_federationProtocolHasBeenSet = true; m_federationProtocol = value; }
-    inline void SetFederationProtocol(FederationProtocol&& value) { m_federationProtocolHasBeenSet = true; m_federationProtocol = std::move(value); }
-    inline ApplicationProvider& WithFederationProtocol(const FederationProtocol& value) { SetFederationProtocol(value); return *this;}
-    inline ApplicationProvider& WithFederationProtocol(FederationProtocol&& value) { SetFederationProtocol(std::move(value)); return *this;}
+    inline void SetFederationProtocol(FederationProtocol value) { m_federationProtocolHasBeenSet = true; m_federationProtocol = value; }
+    inline ApplicationProvider& WithFederationProtocol(FederationProtocol value) { SetFederationProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure that describes the application provider's resource server.</p>
      */
-    inline const ResourceServerConfig& GetResourceServerConfig() const{ return m_resourceServerConfig; }
+    inline const ResourceServerConfig& GetResourceServerConfig() const { return m_resourceServerConfig; }
     inline bool ResourceServerConfigHasBeenSet() const { return m_resourceServerConfigHasBeenSet; }
-    inline void SetResourceServerConfig(const ResourceServerConfig& value) { m_resourceServerConfigHasBeenSet = true; m_resourceServerConfig = value; }
-    inline void SetResourceServerConfig(ResourceServerConfig&& value) { m_resourceServerConfigHasBeenSet = true; m_resourceServerConfig = std::move(value); }
-    inline ApplicationProvider& WithResourceServerConfig(const ResourceServerConfig& value) { SetResourceServerConfig(value); return *this;}
-    inline ApplicationProvider& WithResourceServerConfig(ResourceServerConfig&& value) { SetResourceServerConfig(std::move(value)); return *this;}
+    template<typename ResourceServerConfigT = ResourceServerConfig>
+    void SetResourceServerConfig(ResourceServerConfigT&& value) { m_resourceServerConfigHasBeenSet = true; m_resourceServerConfig = std::forward<ResourceServerConfigT>(value); }
+    template<typename ResourceServerConfigT = ResourceServerConfig>
+    ApplicationProvider& WithResourceServerConfig(ResourceServerConfigT&& value) { SetResourceServerConfig(std::forward<ResourceServerConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +96,7 @@ namespace Model
     DisplayData m_displayData;
     bool m_displayDataHasBeenSet = false;
 
-    FederationProtocol m_federationProtocol;
+    FederationProtocol m_federationProtocol{FederationProtocol::NOT_SET};
     bool m_federationProtocolHasBeenSet = false;
 
     ResourceServerConfig m_resourceServerConfig;

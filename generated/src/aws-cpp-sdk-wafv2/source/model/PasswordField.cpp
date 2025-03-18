@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-PasswordField::PasswordField() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 PasswordField::PasswordField(JsonView jsonValue)
-  : PasswordField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PasswordField& PasswordField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

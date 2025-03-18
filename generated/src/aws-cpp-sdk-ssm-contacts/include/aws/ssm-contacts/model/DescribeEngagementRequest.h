@@ -21,7 +21,7 @@ namespace Model
   class DescribeEngagementRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API DescribeEngagementRequest();
+    AWS_SSMCONTACTS_API DescribeEngagementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
      */
-    inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
+    inline const Aws::String& GetEngagementId() const { return m_engagementId; }
     inline bool EngagementIdHasBeenSet() const { return m_engagementIdHasBeenSet; }
-    inline void SetEngagementId(const Aws::String& value) { m_engagementIdHasBeenSet = true; m_engagementId = value; }
-    inline void SetEngagementId(Aws::String&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::move(value); }
-    inline void SetEngagementId(const char* value) { m_engagementIdHasBeenSet = true; m_engagementId.assign(value); }
-    inline DescribeEngagementRequest& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
-    inline DescribeEngagementRequest& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
-    inline DescribeEngagementRequest& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
+    template<typename EngagementIdT = Aws::String>
+    void SetEngagementId(EngagementIdT&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::forward<EngagementIdT>(value); }
+    template<typename EngagementIdT = Aws::String>
+    DescribeEngagementRequest& WithEngagementId(EngagementIdT&& value) { SetEngagementId(std::forward<EngagementIdT>(value)); return *this;}
     ///@}
   private:
 

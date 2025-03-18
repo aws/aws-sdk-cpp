@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartQueryWorkloadInsightsTopContributorsResult::StartQueryWorkloadInsightsTopContributorsResult()
-{
-}
-
 StartQueryWorkloadInsightsTopContributorsResult::StartQueryWorkloadInsightsTopContributorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartQueryWorkloadInsightsTopContributorsResult& StartQueryWorkloadInsightsTopCo
   if(jsonValue.ValueExists("queryId"))
   {
     m_queryId = jsonValue.GetString("queryId");
-
+    m_queryIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

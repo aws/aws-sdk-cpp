@@ -34,7 +34,7 @@ namespace Model
   class TransitGatewayVpcAttachmentOptions
   {
   public:
-    AWS_EC2_API TransitGatewayVpcAttachmentOptions();
+    AWS_EC2_API TransitGatewayVpcAttachmentOptions() = default;
     AWS_EC2_API TransitGatewayVpcAttachmentOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayVpcAttachmentOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>Indicates whether DNS support is enabled.</p>
      */
-    inline const DnsSupportValue& GetDnsSupport() const{ return m_dnsSupport; }
+    inline DnsSupportValue GetDnsSupport() const { return m_dnsSupport; }
     inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
-    inline void SetDnsSupport(const DnsSupportValue& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
-    inline void SetDnsSupport(DnsSupportValue&& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = std::move(value); }
-    inline TransitGatewayVpcAttachmentOptions& WithDnsSupport(const DnsSupportValue& value) { SetDnsSupport(value); return *this;}
-    inline TransitGatewayVpcAttachmentOptions& WithDnsSupport(DnsSupportValue&& value) { SetDnsSupport(std::move(value)); return *this;}
+    inline void SetDnsSupport(DnsSupportValue value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
+    inline TransitGatewayVpcAttachmentOptions& WithDnsSupport(DnsSupportValue value) { SetDnsSupport(value); return *this;}
     ///@}
 
     ///@{
@@ -63,49 +61,43 @@ namespace Model
      * group referencing</a> in the <i>Amazon Web Services Transit Gateways
      * Guide</i>.</p>
      */
-    inline const SecurityGroupReferencingSupportValue& GetSecurityGroupReferencingSupport() const{ return m_securityGroupReferencingSupport; }
+    inline SecurityGroupReferencingSupportValue GetSecurityGroupReferencingSupport() const { return m_securityGroupReferencingSupport; }
     inline bool SecurityGroupReferencingSupportHasBeenSet() const { return m_securityGroupReferencingSupportHasBeenSet; }
-    inline void SetSecurityGroupReferencingSupport(const SecurityGroupReferencingSupportValue& value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = value; }
-    inline void SetSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue&& value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = std::move(value); }
-    inline TransitGatewayVpcAttachmentOptions& WithSecurityGroupReferencingSupport(const SecurityGroupReferencingSupportValue& value) { SetSecurityGroupReferencingSupport(value); return *this;}
-    inline TransitGatewayVpcAttachmentOptions& WithSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue&& value) { SetSecurityGroupReferencingSupport(std::move(value)); return *this;}
+    inline void SetSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue value) { m_securityGroupReferencingSupportHasBeenSet = true; m_securityGroupReferencingSupport = value; }
+    inline TransitGatewayVpcAttachmentOptions& WithSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue value) { SetSecurityGroupReferencingSupport(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether IPv6 support is disabled.</p>
      */
-    inline const Ipv6SupportValue& GetIpv6Support() const{ return m_ipv6Support; }
+    inline Ipv6SupportValue GetIpv6Support() const { return m_ipv6Support; }
     inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
-    inline void SetIpv6Support(const Ipv6SupportValue& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = value; }
-    inline void SetIpv6Support(Ipv6SupportValue&& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = std::move(value); }
-    inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(const Ipv6SupportValue& value) { SetIpv6Support(value); return *this;}
-    inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(Ipv6SupportValue&& value) { SetIpv6Support(std::move(value)); return *this;}
+    inline void SetIpv6Support(Ipv6SupportValue value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = value; }
+    inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(Ipv6SupportValue value) { SetIpv6Support(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether appliance mode support is enabled.</p>
      */
-    inline const ApplianceModeSupportValue& GetApplianceModeSupport() const{ return m_applianceModeSupport; }
+    inline ApplianceModeSupportValue GetApplianceModeSupport() const { return m_applianceModeSupport; }
     inline bool ApplianceModeSupportHasBeenSet() const { return m_applianceModeSupportHasBeenSet; }
-    inline void SetApplianceModeSupport(const ApplianceModeSupportValue& value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
-    inline void SetApplianceModeSupport(ApplianceModeSupportValue&& value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = std::move(value); }
-    inline TransitGatewayVpcAttachmentOptions& WithApplianceModeSupport(const ApplianceModeSupportValue& value) { SetApplianceModeSupport(value); return *this;}
-    inline TransitGatewayVpcAttachmentOptions& WithApplianceModeSupport(ApplianceModeSupportValue&& value) { SetApplianceModeSupport(std::move(value)); return *this;}
+    inline void SetApplianceModeSupport(ApplianceModeSupportValue value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
+    inline TransitGatewayVpcAttachmentOptions& WithApplianceModeSupport(ApplianceModeSupportValue value) { SetApplianceModeSupport(value); return *this;}
     ///@}
   private:
 
-    DnsSupportValue m_dnsSupport;
+    DnsSupportValue m_dnsSupport{DnsSupportValue::NOT_SET};
     bool m_dnsSupportHasBeenSet = false;
 
-    SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport;
+    SecurityGroupReferencingSupportValue m_securityGroupReferencingSupport{SecurityGroupReferencingSupportValue::NOT_SET};
     bool m_securityGroupReferencingSupportHasBeenSet = false;
 
-    Ipv6SupportValue m_ipv6Support;
+    Ipv6SupportValue m_ipv6Support{Ipv6SupportValue::NOT_SET};
     bool m_ipv6SupportHasBeenSet = false;
 
-    ApplianceModeSupportValue m_applianceModeSupport;
+    ApplianceModeSupportValue m_applianceModeSupport{ApplianceModeSupportValue::NOT_SET};
     bool m_applianceModeSupportHasBeenSet = false;
   };
 

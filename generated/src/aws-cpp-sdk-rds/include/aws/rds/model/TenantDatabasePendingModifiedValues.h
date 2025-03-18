@@ -33,7 +33,7 @@ namespace Model
   class TenantDatabasePendingModifiedValues
   {
   public:
-    AWS_RDS_API TenantDatabasePendingModifiedValues();
+    AWS_RDS_API TenantDatabasePendingModifiedValues() = default;
     AWS_RDS_API TenantDatabasePendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API TenantDatabasePendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The master password for the tenant database.</p>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline TenantDatabasePendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline TenantDatabasePendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline TenantDatabasePendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    TenantDatabasePendingModifiedValues& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the tenant database.</p>
      */
-    inline const Aws::String& GetTenantDBName() const{ return m_tenantDBName; }
+    inline const Aws::String& GetTenantDBName() const { return m_tenantDBName; }
     inline bool TenantDBNameHasBeenSet() const { return m_tenantDBNameHasBeenSet; }
-    inline void SetTenantDBName(const Aws::String& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = value; }
-    inline void SetTenantDBName(Aws::String&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::move(value); }
-    inline void SetTenantDBName(const char* value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName.assign(value); }
-    inline TenantDatabasePendingModifiedValues& WithTenantDBName(const Aws::String& value) { SetTenantDBName(value); return *this;}
-    inline TenantDatabasePendingModifiedValues& WithTenantDBName(Aws::String&& value) { SetTenantDBName(std::move(value)); return *this;}
-    inline TenantDatabasePendingModifiedValues& WithTenantDBName(const char* value) { SetTenantDBName(value); return *this;}
+    template<typename TenantDBNameT = Aws::String>
+    void SetTenantDBName(TenantDBNameT&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::forward<TenantDBNameT>(value); }
+    template<typename TenantDBNameT = Aws::String>
+    TenantDatabasePendingModifiedValues& WithTenantDBName(TenantDBNameT&& value) { SetTenantDBName(std::forward<TenantDBNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,21 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RequestCertificateRequest::RequestCertificateRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_validationMethod(ValidationMethod::NOT_SET),
-    m_validationMethodHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false)
-{
-}
-
 Aws::String RequestCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

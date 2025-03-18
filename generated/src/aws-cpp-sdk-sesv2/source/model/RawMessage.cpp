@@ -19,13 +19,7 @@ namespace SESV2
 namespace Model
 {
 
-RawMessage::RawMessage() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 RawMessage::RawMessage(JsonView jsonValue)
-  : RawMessage()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ RawMessage& RawMessage::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class DecimalDatasetParameter
   {
   public:
-    AWS_QUICKSIGHT_API DecimalDatasetParameter();
+    AWS_QUICKSIGHT_API DecimalDatasetParameter() = default;
     AWS_QUICKSIGHT_API DecimalDatasetParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DecimalDatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>An identifier for the decimal parameter created in the dataset.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DecimalDatasetParameter& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DecimalDatasetParameter& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DecimalDatasetParameter& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DecimalDatasetParameter& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the decimal parameter that is created in the dataset.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DecimalDatasetParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DecimalDatasetParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DecimalDatasetParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DecimalDatasetParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * <p>The value type of the dataset parameter. Valid values are <code>single
      * value</code> or <code>multi value</code>.</p>
      */
-    inline const DatasetParameterValueType& GetValueType() const{ return m_valueType; }
+    inline DatasetParameterValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const DatasetParameterValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(DatasetParameterValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline DecimalDatasetParameter& WithValueType(const DatasetParameterValueType& value) { SetValueType(value); return *this;}
-    inline DecimalDatasetParameter& WithValueType(DatasetParameterValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(DatasetParameterValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline DecimalDatasetParameter& WithValueType(DatasetParameterValueType value) { SetValueType(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,12 @@ namespace Model
      * <p>A list of default values for a given decimal parameter. This structure only
      * accepts static values.</p>
      */
-    inline const DecimalDatasetParameterDefaultValues& GetDefaultValues() const{ return m_defaultValues; }
+    inline const DecimalDatasetParameterDefaultValues& GetDefaultValues() const { return m_defaultValues; }
     inline bool DefaultValuesHasBeenSet() const { return m_defaultValuesHasBeenSet; }
-    inline void SetDefaultValues(const DecimalDatasetParameterDefaultValues& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = value; }
-    inline void SetDefaultValues(DecimalDatasetParameterDefaultValues&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::move(value); }
-    inline DecimalDatasetParameter& WithDefaultValues(const DecimalDatasetParameterDefaultValues& value) { SetDefaultValues(value); return *this;}
-    inline DecimalDatasetParameter& WithDefaultValues(DecimalDatasetParameterDefaultValues&& value) { SetDefaultValues(std::move(value)); return *this;}
+    template<typename DefaultValuesT = DecimalDatasetParameterDefaultValues>
+    void SetDefaultValues(DefaultValuesT&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::forward<DefaultValuesT>(value); }
+    template<typename DefaultValuesT = DecimalDatasetParameterDefaultValues>
+    DecimalDatasetParameter& WithDefaultValues(DefaultValuesT&& value) { SetDefaultValues(std::forward<DefaultValuesT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +94,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    DatasetParameterValueType m_valueType;
+    DatasetParameterValueType m_valueType{DatasetParameterValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
 
     DecimalDatasetParameterDefaultValues m_defaultValues;

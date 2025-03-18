@@ -25,7 +25,7 @@ namespace Model
   class DetachNetworkInterfaceRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DetachNetworkInterfaceRequest();
+    AWS_EC2_API DetachNetworkInterfaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DetachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -57,14 +57,12 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline DetachNetworkInterfaceRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline DetachNetworkInterfaceRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline DetachNetworkInterfaceRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    DetachNetworkInterfaceRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,20 +80,20 @@ namespace Model
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
      * 
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DetachNetworkInterfaceRequest& WithForce(bool value) { SetForce(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

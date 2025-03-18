@@ -21,7 +21,7 @@ namespace Model
   class DeleteDataAccessorRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API DeleteDataAccessorRequest();
+    AWS_QBUSINESS_API DeleteDataAccessorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline DeleteDataAccessorRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline DeleteDataAccessorRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline DeleteDataAccessorRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    DeleteDataAccessorRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the data accessor to delete.</p>
      */
-    inline const Aws::String& GetDataAccessorId() const{ return m_dataAccessorId; }
+    inline const Aws::String& GetDataAccessorId() const { return m_dataAccessorId; }
     inline bool DataAccessorIdHasBeenSet() const { return m_dataAccessorIdHasBeenSet; }
-    inline void SetDataAccessorId(const Aws::String& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = value; }
-    inline void SetDataAccessorId(Aws::String&& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = std::move(value); }
-    inline void SetDataAccessorId(const char* value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId.assign(value); }
-    inline DeleteDataAccessorRequest& WithDataAccessorId(const Aws::String& value) { SetDataAccessorId(value); return *this;}
-    inline DeleteDataAccessorRequest& WithDataAccessorId(Aws::String&& value) { SetDataAccessorId(std::move(value)); return *this;}
-    inline DeleteDataAccessorRequest& WithDataAccessorId(const char* value) { SetDataAccessorId(value); return *this;}
+    template<typename DataAccessorIdT = Aws::String>
+    void SetDataAccessorId(DataAccessorIdT&& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = std::forward<DataAccessorIdT>(value); }
+    template<typename DataAccessorIdT = Aws::String>
+    DeleteDataAccessorRequest& WithDataAccessorId(DataAccessorIdT&& value) { SetDataAccessorId(std::forward<DataAccessorIdT>(value)); return *this;}
     ///@}
   private:
 

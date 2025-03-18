@@ -31,7 +31,7 @@ namespace Model
   class SocketAddress
   {
   public:
-    AWS_GROUNDSTATION_API SocketAddress();
+    AWS_GROUNDSTATION_API SocketAddress() = default;
     AWS_GROUNDSTATION_API SocketAddress(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Name of a socket address.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SocketAddress& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SocketAddress& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SocketAddress& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SocketAddress& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Port of a socket address.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline SocketAddress& WithPort(int value) { SetPort(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

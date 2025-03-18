@@ -39,7 +39,7 @@ namespace Model
   class RecoveryOptionType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API RecoveryOptionType();
+    AWS_COGNITOIDENTITYPROVIDER_API RecoveryOptionType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API RecoveryOptionType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API RecoveryOptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <p>Your priority preference for using the specified attribute in account
      * recovery. The highest priority is <code>1</code>.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RecoveryOptionType& WithPriority(int value) { SetPriority(value); return *this;}
@@ -60,19 +60,17 @@ namespace Model
     /**
      * <p>The recovery method that this object sets a recovery option for.</p>
      */
-    inline const RecoveryOptionNameType& GetName() const{ return m_name; }
+    inline RecoveryOptionNameType GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RecoveryOptionNameType& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RecoveryOptionNameType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RecoveryOptionType& WithName(const RecoveryOptionNameType& value) { SetName(value); return *this;}
-    inline RecoveryOptionType& WithName(RecoveryOptionNameType&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RecoveryOptionNameType value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RecoveryOptionType& WithName(RecoveryOptionNameType value) { SetName(value); return *this;}
     ///@}
   private:
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    RecoveryOptionNameType m_name;
+    RecoveryOptionNameType m_name{RecoveryOptionNameType::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

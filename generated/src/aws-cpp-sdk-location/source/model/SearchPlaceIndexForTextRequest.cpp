@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterBBoxHasBeenSet(false),
-    m_filterCountriesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
 {
   JsonValue payload;

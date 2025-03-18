@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNetworkAclRequest::CreateNetworkAclRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkAclRequest::SerializePayload() const
 {
   Aws::StringStream ss;

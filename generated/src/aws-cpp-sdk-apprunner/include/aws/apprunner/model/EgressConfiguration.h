@@ -33,7 +33,7 @@ namespace Model
   class EgressConfiguration
   {
   public:
-    AWS_APPRUNNER_API EgressConfiguration();
+    AWS_APPRUNNER_API EgressConfiguration() = default;
     AWS_APPRUNNER_API EgressConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API EgressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * associate your service to a custom VPC specified by
      * <code>VpcConnectorArn</code>.</p>
      */
-    inline const EgressType& GetEgressType() const{ return m_egressType; }
+    inline EgressType GetEgressType() const { return m_egressType; }
     inline bool EgressTypeHasBeenSet() const { return m_egressTypeHasBeenSet; }
-    inline void SetEgressType(const EgressType& value) { m_egressTypeHasBeenSet = true; m_egressType = value; }
-    inline void SetEgressType(EgressType&& value) { m_egressTypeHasBeenSet = true; m_egressType = std::move(value); }
-    inline EgressConfiguration& WithEgressType(const EgressType& value) { SetEgressType(value); return *this;}
-    inline EgressConfiguration& WithEgressType(EgressType&& value) { SetEgressType(std::move(value)); return *this;}
+    inline void SetEgressType(EgressType value) { m_egressTypeHasBeenSet = true; m_egressType = value; }
+    inline EgressConfiguration& WithEgressType(EgressType value) { SetEgressType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,18 +58,16 @@ namespace Model
      * to associate with your App Runner service. Only valid when <code>EgressType =
      * VPC</code>.</p>
      */
-    inline const Aws::String& GetVpcConnectorArn() const{ return m_vpcConnectorArn; }
+    inline const Aws::String& GetVpcConnectorArn() const { return m_vpcConnectorArn; }
     inline bool VpcConnectorArnHasBeenSet() const { return m_vpcConnectorArnHasBeenSet; }
-    inline void SetVpcConnectorArn(const Aws::String& value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn = value; }
-    inline void SetVpcConnectorArn(Aws::String&& value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn = std::move(value); }
-    inline void SetVpcConnectorArn(const char* value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn.assign(value); }
-    inline EgressConfiguration& WithVpcConnectorArn(const Aws::String& value) { SetVpcConnectorArn(value); return *this;}
-    inline EgressConfiguration& WithVpcConnectorArn(Aws::String&& value) { SetVpcConnectorArn(std::move(value)); return *this;}
-    inline EgressConfiguration& WithVpcConnectorArn(const char* value) { SetVpcConnectorArn(value); return *this;}
+    template<typename VpcConnectorArnT = Aws::String>
+    void SetVpcConnectorArn(VpcConnectorArnT&& value) { m_vpcConnectorArnHasBeenSet = true; m_vpcConnectorArn = std::forward<VpcConnectorArnT>(value); }
+    template<typename VpcConnectorArnT = Aws::String>
+    EgressConfiguration& WithVpcConnectorArn(VpcConnectorArnT&& value) { SetVpcConnectorArn(std::forward<VpcConnectorArnT>(value)); return *this;}
     ///@}
   private:
 
-    EgressType m_egressType;
+    EgressType m_egressType{EgressType::NOT_SET};
     bool m_egressTypeHasBeenSet = false;
 
     Aws::String m_vpcConnectorArn;

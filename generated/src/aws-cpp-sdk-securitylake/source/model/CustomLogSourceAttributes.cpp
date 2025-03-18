@@ -18,15 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-CustomLogSourceAttributes::CustomLogSourceAttributes() : 
-    m_crawlerArnHasBeenSet(false),
-    m_databaseArnHasBeenSet(false),
-    m_tableArnHasBeenSet(false)
-{
-}
-
 CustomLogSourceAttributes::CustomLogSourceAttributes(JsonView jsonValue)
-  : CustomLogSourceAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CustomLogSourceAttributes& CustomLogSourceAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("crawlerArn"))
   {
     m_crawlerArn = jsonValue.GetString("crawlerArn");
-
     m_crawlerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseArn"))
   {
     m_databaseArn = jsonValue.GetString("databaseArn");
-
     m_databaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableArn"))
   {
     m_tableArn = jsonValue.GetString("tableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   return *this;
 }
 

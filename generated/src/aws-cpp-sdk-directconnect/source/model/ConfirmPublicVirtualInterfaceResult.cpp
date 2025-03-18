@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfirmPublicVirtualInterfaceResult::ConfirmPublicVirtualInterfaceResult() : 
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
-{
-}
-
 ConfirmPublicVirtualInterfaceResult::ConfirmPublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ConfirmPublicVirtualInterfaceResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ ConfirmPublicVirtualInterfaceResult& ConfirmPublicVirtualInterfaceResult::operat
   if(jsonValue.ValueExists("virtualInterfaceState"))
   {
     m_virtualInterfaceState = VirtualInterfaceStateMapper::GetVirtualInterfaceStateForName(jsonValue.GetString("virtualInterfaceState"));
-
+    m_virtualInterfaceStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

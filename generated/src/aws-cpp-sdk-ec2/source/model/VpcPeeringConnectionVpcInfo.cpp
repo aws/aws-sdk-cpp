@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() : 
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockSetHasBeenSet(false),
-    m_cidrBlockSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_peeringOptionsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode)
-  : VpcPeeringConnectionVpcInfo()
 {
   *this = xmlNode;
 }
@@ -53,6 +41,7 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     if(!ipv6CidrBlockSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockSetMember = ipv6CidrBlockSetNode.FirstChild("item");
+      m_ipv6CidrBlockSetHasBeenSet = !ipv6CidrBlockSetMember.IsNull();
       while(!ipv6CidrBlockSetMember.IsNull())
       {
         m_ipv6CidrBlockSet.push_back(ipv6CidrBlockSetMember);
@@ -65,6 +54,7 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     if(!cidrBlockSetNode.IsNull())
     {
       XmlNode cidrBlockSetMember = cidrBlockSetNode.FirstChild("item");
+      m_cidrBlockSetHasBeenSet = !cidrBlockSetMember.IsNull();
       while(!cidrBlockSetMember.IsNull())
       {
         m_cidrBlockSet.push_back(cidrBlockSetMember);

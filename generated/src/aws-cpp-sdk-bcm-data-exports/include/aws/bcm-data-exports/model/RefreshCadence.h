@@ -32,7 +32,7 @@ namespace Model
   class RefreshCadence
   {
   public:
-    AWS_BCMDATAEXPORTS_API RefreshCadence();
+    AWS_BCMDATAEXPORTS_API RefreshCadence() = default;
     AWS_BCMDATAEXPORTS_API RefreshCadence(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API RefreshCadence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The frequency that data exports are updated. The export refreshes each time
      * the source data updates, up to three times daily.</p>
      */
-    inline const FrequencyOption& GetFrequency() const{ return m_frequency; }
+    inline FrequencyOption GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-    inline void SetFrequency(const FrequencyOption& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-    inline void SetFrequency(FrequencyOption&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-    inline RefreshCadence& WithFrequency(const FrequencyOption& value) { SetFrequency(value); return *this;}
-    inline RefreshCadence& WithFrequency(FrequencyOption&& value) { SetFrequency(std::move(value)); return *this;}
+    inline void SetFrequency(FrequencyOption value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline RefreshCadence& WithFrequency(FrequencyOption value) { SetFrequency(value); return *this;}
     ///@}
   private:
 
-    FrequencyOption m_frequency;
+    FrequencyOption m_frequency{FrequencyOption::NOT_SET};
     bool m_frequencyHasBeenSet = false;
   };
 

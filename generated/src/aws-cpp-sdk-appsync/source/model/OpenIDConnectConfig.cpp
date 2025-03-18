@@ -18,18 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-OpenIDConnectConfig::OpenIDConnectConfig() : 
-    m_issuerHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_iatTTL(0),
-    m_iatTTLHasBeenSet(false),
-    m_authTTL(0),
-    m_authTTLHasBeenSet(false)
-{
-}
-
 OpenIDConnectConfig::OpenIDConnectConfig(JsonView jsonValue)
-  : OpenIDConnectConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ OpenIDConnectConfig& OpenIDConnectConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iatTTL"))
   {
     m_iatTTL = jsonValue.GetInt64("iatTTL");
-
     m_iatTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authTTL"))
   {
     m_authTTL = jsonValue.GetInt64("authTTL");
-
     m_authTTLHasBeenSet = true;
   }
-
   return *this;
 }
 

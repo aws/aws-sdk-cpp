@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SourceProcessingProperties::SourceProcessingProperties() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 SourceProcessingProperties::SourceProcessingProperties(JsonView jsonValue)
-  : SourceProcessingProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceProcessingProperties& SourceProcessingProperties::operator =(JsonView json
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

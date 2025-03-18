@@ -33,7 +33,7 @@ namespace Model
   class SortCriterion
   {
   public:
-    AWS_SECURITYHUB_API SortCriterion();
+    AWS_SECURITYHUB_API SortCriterion() = default;
     AWS_SECURITYHUB_API SortCriterion(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API SortCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The finding attribute used to sort findings.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline SortCriterion& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline SortCriterion& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline SortCriterion& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    SortCriterion& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order used to sort findings.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SortCriterion& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline SortCriterion& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SortCriterion& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_field;
     bool m_fieldHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

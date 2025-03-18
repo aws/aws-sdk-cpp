@@ -33,7 +33,7 @@ namespace Model
   class StatusDetailFilters
   {
   public:
-    AWS_CONFIGSERVICE_API StatusDetailFilters();
+    AWS_CONFIGSERVICE_API StatusDetailFilters() = default;
     AWS_CONFIGSERVICE_API StatusDetailFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API StatusDetailFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the member account within an organization.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline StatusDetailFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline StatusDetailFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline StatusDetailFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    StatusDetailFilters& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,19 +76,17 @@ namespace Model
      * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
-    inline const MemberAccountRuleStatus& GetMemberAccountRuleStatus() const{ return m_memberAccountRuleStatus; }
+    inline MemberAccountRuleStatus GetMemberAccountRuleStatus() const { return m_memberAccountRuleStatus; }
     inline bool MemberAccountRuleStatusHasBeenSet() const { return m_memberAccountRuleStatusHasBeenSet; }
-    inline void SetMemberAccountRuleStatus(const MemberAccountRuleStatus& value) { m_memberAccountRuleStatusHasBeenSet = true; m_memberAccountRuleStatus = value; }
-    inline void SetMemberAccountRuleStatus(MemberAccountRuleStatus&& value) { m_memberAccountRuleStatusHasBeenSet = true; m_memberAccountRuleStatus = std::move(value); }
-    inline StatusDetailFilters& WithMemberAccountRuleStatus(const MemberAccountRuleStatus& value) { SetMemberAccountRuleStatus(value); return *this;}
-    inline StatusDetailFilters& WithMemberAccountRuleStatus(MemberAccountRuleStatus&& value) { SetMemberAccountRuleStatus(std::move(value)); return *this;}
+    inline void SetMemberAccountRuleStatus(MemberAccountRuleStatus value) { m_memberAccountRuleStatusHasBeenSet = true; m_memberAccountRuleStatus = value; }
+    inline StatusDetailFilters& WithMemberAccountRuleStatus(MemberAccountRuleStatus value) { SetMemberAccountRuleStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    MemberAccountRuleStatus m_memberAccountRuleStatus;
+    MemberAccountRuleStatus m_memberAccountRuleStatus{MemberAccountRuleStatus::NOT_SET};
     bool m_memberAccountRuleStatusHasBeenSet = false;
   };
 

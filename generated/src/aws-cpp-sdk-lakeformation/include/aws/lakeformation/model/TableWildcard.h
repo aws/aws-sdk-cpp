@@ -30,7 +30,7 @@ namespace Model
   class TableWildcard
   {
   public:
-    AWS_LAKEFORMATION_API TableWildcard();
+    AWS_LAKEFORMATION_API TableWildcard() = default;
     AWS_LAKEFORMATION_API TableWildcard(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API TableWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;

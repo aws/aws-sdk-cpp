@@ -31,7 +31,7 @@ namespace Model
   class DescribeCustomPluginResult
   {
   public:
-    AWS_KAFKACONNECT_API DescribeCustomPluginResult();
+    AWS_KAFKACONNECT_API DescribeCustomPluginResult() = default;
     AWS_KAFKACONNECT_API DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API DescribeCustomPluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,48 +40,42 @@ namespace Model
     /**
      * <p>The time that the custom plugin was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeCustomPluginResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeCustomPluginResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeCustomPluginResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
      */
-    inline const Aws::String& GetCustomPluginArn() const{ return m_customPluginArn; }
-    inline void SetCustomPluginArn(const Aws::String& value) { m_customPluginArn = value; }
-    inline void SetCustomPluginArn(Aws::String&& value) { m_customPluginArn = std::move(value); }
-    inline void SetCustomPluginArn(const char* value) { m_customPluginArn.assign(value); }
-    inline DescribeCustomPluginResult& WithCustomPluginArn(const Aws::String& value) { SetCustomPluginArn(value); return *this;}
-    inline DescribeCustomPluginResult& WithCustomPluginArn(Aws::String&& value) { SetCustomPluginArn(std::move(value)); return *this;}
-    inline DescribeCustomPluginResult& WithCustomPluginArn(const char* value) { SetCustomPluginArn(value); return *this;}
+    inline const Aws::String& GetCustomPluginArn() const { return m_customPluginArn; }
+    template<typename CustomPluginArnT = Aws::String>
+    void SetCustomPluginArn(CustomPluginArnT&& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = std::forward<CustomPluginArnT>(value); }
+    template<typename CustomPluginArnT = Aws::String>
+    DescribeCustomPluginResult& WithCustomPluginArn(CustomPluginArnT&& value) { SetCustomPluginArn(std::forward<CustomPluginArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the custom plugin.</p>
      */
-    inline const CustomPluginState& GetCustomPluginState() const{ return m_customPluginState; }
-    inline void SetCustomPluginState(const CustomPluginState& value) { m_customPluginState = value; }
-    inline void SetCustomPluginState(CustomPluginState&& value) { m_customPluginState = std::move(value); }
-    inline DescribeCustomPluginResult& WithCustomPluginState(const CustomPluginState& value) { SetCustomPluginState(value); return *this;}
-    inline DescribeCustomPluginResult& WithCustomPluginState(CustomPluginState&& value) { SetCustomPluginState(std::move(value)); return *this;}
+    inline CustomPluginState GetCustomPluginState() const { return m_customPluginState; }
+    inline void SetCustomPluginState(CustomPluginState value) { m_customPluginStateHasBeenSet = true; m_customPluginState = value; }
+    inline DescribeCustomPluginResult& WithCustomPluginState(CustomPluginState value) { SetCustomPluginState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the custom plugin.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeCustomPluginResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeCustomPluginResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeCustomPluginResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeCustomPluginResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,64 +83,68 @@ namespace Model
      * <p>The latest successfully created revision of the custom plugin. If there are
      * no successfully created revisions, this field will be absent.</p>
      */
-    inline const CustomPluginRevisionSummary& GetLatestRevision() const{ return m_latestRevision; }
-    inline void SetLatestRevision(const CustomPluginRevisionSummary& value) { m_latestRevision = value; }
-    inline void SetLatestRevision(CustomPluginRevisionSummary&& value) { m_latestRevision = std::move(value); }
-    inline DescribeCustomPluginResult& WithLatestRevision(const CustomPluginRevisionSummary& value) { SetLatestRevision(value); return *this;}
-    inline DescribeCustomPluginResult& WithLatestRevision(CustomPluginRevisionSummary&& value) { SetLatestRevision(std::move(value)); return *this;}
+    inline const CustomPluginRevisionSummary& GetLatestRevision() const { return m_latestRevision; }
+    template<typename LatestRevisionT = CustomPluginRevisionSummary>
+    void SetLatestRevision(LatestRevisionT&& value) { m_latestRevisionHasBeenSet = true; m_latestRevision = std::forward<LatestRevisionT>(value); }
+    template<typename LatestRevisionT = CustomPluginRevisionSummary>
+    DescribeCustomPluginResult& WithLatestRevision(LatestRevisionT&& value) { SetLatestRevision(std::forward<LatestRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the custom plugin.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeCustomPluginResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeCustomPluginResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeCustomPluginResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeCustomPluginResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the state of a custom plugin.</p>
      */
-    inline const StateDescription& GetStateDescription() const{ return m_stateDescription; }
-    inline void SetStateDescription(const StateDescription& value) { m_stateDescription = value; }
-    inline void SetStateDescription(StateDescription&& value) { m_stateDescription = std::move(value); }
-    inline DescribeCustomPluginResult& WithStateDescription(const StateDescription& value) { SetStateDescription(value); return *this;}
-    inline DescribeCustomPluginResult& WithStateDescription(StateDescription&& value) { SetStateDescription(std::move(value)); return *this;}
+    inline const StateDescription& GetStateDescription() const { return m_stateDescription; }
+    template<typename StateDescriptionT = StateDescription>
+    void SetStateDescription(StateDescriptionT&& value) { m_stateDescriptionHasBeenSet = true; m_stateDescription = std::forward<StateDescriptionT>(value); }
+    template<typename StateDescriptionT = StateDescription>
+    DescribeCustomPluginResult& WithStateDescription(StateDescriptionT&& value) { SetStateDescription(std::forward<StateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCustomPluginResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCustomPluginResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCustomPluginResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCustomPluginResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_customPluginArn;
+    bool m_customPluginArnHasBeenSet = false;
 
-    CustomPluginState m_customPluginState;
+    CustomPluginState m_customPluginState{CustomPluginState::NOT_SET};
+    bool m_customPluginStateHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     CustomPluginRevisionSummary m_latestRevision;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     StateDescription m_stateDescription;
+    bool m_stateDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

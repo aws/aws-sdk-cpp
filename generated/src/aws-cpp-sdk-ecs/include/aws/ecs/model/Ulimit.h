@@ -38,7 +38,7 @@ namespace Model
   class Ulimit
   {
   public:
-    AWS_ECS_API Ulimit();
+    AWS_ECS_API Ulimit() = default;
     AWS_ECS_API Ulimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
      */
-    inline const UlimitName& GetName() const{ return m_name; }
+    inline UlimitName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const UlimitName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(UlimitName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Ulimit& WithName(const UlimitName& value) { SetName(value); return *this;}
-    inline Ulimit& WithName(UlimitName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(UlimitName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Ulimit& WithName(UlimitName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * in bytes, seconds, or as a count, depending on the <code>type</code> of the
      * <code>ulimit</code>.</p>
      */
-    inline int GetSoftLimit() const{ return m_softLimit; }
+    inline int GetSoftLimit() const { return m_softLimit; }
     inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
     inline void SetSoftLimit(int value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
     inline Ulimit& WithSoftLimit(int value) { SetSoftLimit(value); return *this;}
@@ -74,20 +72,20 @@ namespace Model
      * in bytes, seconds, or as a count, depending on the <code>type</code> of the
      * <code>ulimit</code>.</p>
      */
-    inline int GetHardLimit() const{ return m_hardLimit; }
+    inline int GetHardLimit() const { return m_hardLimit; }
     inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
     inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
     inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
     ///@}
   private:
 
-    UlimitName m_name;
+    UlimitName m_name{UlimitName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    int m_softLimit;
+    int m_softLimit{0};
     bool m_softLimitHasBeenSet = false;
 
-    int m_hardLimit;
+    int m_hardLimit{0};
     bool m_hardLimitHasBeenSet = false;
   };
 

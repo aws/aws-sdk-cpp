@@ -22,7 +22,7 @@ namespace Model
   class GetRelationalDatabaseLogEventsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseLogEventsRequest();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseLogEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of your database for which to get log events.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
+    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-    inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-    inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-    inline GetRelationalDatabaseLogEventsRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    template<typename RelationalDatabaseNameT = Aws::String>
+    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
+    template<typename RelationalDatabaseNameT = Aws::String>
+    GetRelationalDatabaseLogEventsRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The name of the log stream.</p> <p>Use the <code>get relational database log
      * streams</code> operation to get a list of available log streams.</p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline GetRelationalDatabaseLogEventsRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    GetRelationalDatabaseLogEventsRequest& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetRelationalDatabaseLogEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetRelationalDatabaseLogEventsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetRelationalDatabaseLogEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetRelationalDatabaseLogEventsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +100,7 @@ namespace Model
      * log.</p>  <p>For PostgreSQL, the default value of <code>false</code> is
      * the only option available.</p> 
      */
-    inline bool GetStartFromHead() const{ return m_startFromHead; }
+    inline bool GetStartFromHead() const { return m_startFromHead; }
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
     inline GetRelationalDatabaseLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
@@ -118,14 +114,12 @@ namespace Model
      * paginated, the response will return a next forward token and/or next backward
      * token that you can specify as the page token in a subsequent request.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline GetRelationalDatabaseLogEventsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline GetRelationalDatabaseLogEventsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    GetRelationalDatabaseLogEventsRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -135,13 +129,13 @@ namespace Model
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    bool m_startFromHead;
+    bool m_startFromHead{false};
     bool m_startFromHeadHasBeenSet = false;
 
     Aws::String m_pageToken;

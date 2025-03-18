@@ -18,26 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WcdmaObj::WcdmaObj() : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_utranCid(0),
-    m_utranCidHasBeenSet(false),
-    m_wcdmaLocalIdHasBeenSet(false),
-    m_rscp(0),
-    m_rscpHasBeenSet(false),
-    m_pathLoss(0),
-    m_pathLossHasBeenSet(false),
-    m_wcdmaNmrHasBeenSet(false)
-{
-}
-
 WcdmaObj::WcdmaObj(JsonView jsonValue)
-  : WcdmaObj()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ WcdmaObj& WcdmaObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mcc"))
   {
     m_mcc = jsonValue.GetInteger("Mcc");
-
     m_mccHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mnc"))
   {
     m_mnc = jsonValue.GetInteger("Mnc");
-
     m_mncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lac"))
   {
     m_lac = jsonValue.GetInteger("Lac");
-
     m_lacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtranCid"))
   {
     m_utranCid = jsonValue.GetInteger("UtranCid");
-
     m_utranCidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WcdmaLocalId"))
   {
     m_wcdmaLocalId = jsonValue.GetObject("WcdmaLocalId");
-
     m_wcdmaLocalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rscp"))
   {
     m_rscp = jsonValue.GetInteger("Rscp");
-
     m_rscpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PathLoss"))
   {
     m_pathLoss = jsonValue.GetInteger("PathLoss");
-
     m_pathLossHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WcdmaNmr"))
   {
     Aws::Utils::Array<JsonView> wcdmaNmrJsonList = jsonValue.GetArray("WcdmaNmr");
@@ -102,7 +69,6 @@ WcdmaObj& WcdmaObj::operator =(JsonView jsonValue)
     }
     m_wcdmaNmrHasBeenSet = true;
   }
-
   return *this;
 }
 

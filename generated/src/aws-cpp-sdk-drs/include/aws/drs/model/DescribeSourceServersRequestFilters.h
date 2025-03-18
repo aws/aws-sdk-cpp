@@ -33,7 +33,7 @@ namespace Model
   class DescribeSourceServersRequestFilters
   {
   public:
-    AWS_DRS_API DescribeSourceServersRequestFilters();
+    AWS_DRS_API DescribeSourceServersRequestFilters() = default;
     AWS_DRS_API DescribeSourceServersRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API DescribeSourceServersRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>An ID that describes the hardware of the Source Server. This is either an EC2
      * instance id, a VMware uuid or a mac address.</p>
      */
-    inline const Aws::String& GetHardwareId() const{ return m_hardwareId; }
+    inline const Aws::String& GetHardwareId() const { return m_hardwareId; }
     inline bool HardwareIdHasBeenSet() const { return m_hardwareIdHasBeenSet; }
-    inline void SetHardwareId(const Aws::String& value) { m_hardwareIdHasBeenSet = true; m_hardwareId = value; }
-    inline void SetHardwareId(Aws::String&& value) { m_hardwareIdHasBeenSet = true; m_hardwareId = std::move(value); }
-    inline void SetHardwareId(const char* value) { m_hardwareIdHasBeenSet = true; m_hardwareId.assign(value); }
-    inline DescribeSourceServersRequestFilters& WithHardwareId(const Aws::String& value) { SetHardwareId(value); return *this;}
-    inline DescribeSourceServersRequestFilters& WithHardwareId(Aws::String&& value) { SetHardwareId(std::move(value)); return *this;}
-    inline DescribeSourceServersRequestFilters& WithHardwareId(const char* value) { SetHardwareId(value); return *this;}
+    template<typename HardwareIdT = Aws::String>
+    void SetHardwareId(HardwareIdT&& value) { m_hardwareIdHasBeenSet = true; m_hardwareId = std::forward<HardwareIdT>(value); }
+    template<typename HardwareIdT = Aws::String>
+    DescribeSourceServersRequestFilters& WithHardwareId(HardwareIdT&& value) { SetHardwareId(std::forward<HardwareIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>An array of Source Servers IDs that should be returned. An empty array means
      * all Source Servers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const{ return m_sourceServerIDs; }
+    inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const { return m_sourceServerIDs; }
     inline bool SourceServerIDsHasBeenSet() const { return m_sourceServerIDsHasBeenSet; }
-    inline void SetSourceServerIDs(const Aws::Vector<Aws::String>& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = value; }
-    inline void SetSourceServerIDs(Aws::Vector<Aws::String>&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = std::move(value); }
-    inline DescribeSourceServersRequestFilters& WithSourceServerIDs(const Aws::Vector<Aws::String>& value) { SetSourceServerIDs(value); return *this;}
-    inline DescribeSourceServersRequestFilters& WithSourceServerIDs(Aws::Vector<Aws::String>&& value) { SetSourceServerIDs(std::move(value)); return *this;}
-    inline DescribeSourceServersRequestFilters& AddSourceServerIDs(const Aws::String& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
-    inline DescribeSourceServersRequestFilters& AddSourceServerIDs(Aws::String&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(std::move(value)); return *this; }
-    inline DescribeSourceServersRequestFilters& AddSourceServerIDs(const char* value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
+    template<typename SourceServerIDsT = Aws::Vector<Aws::String>>
+    void SetSourceServerIDs(SourceServerIDsT&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs = std::forward<SourceServerIDsT>(value); }
+    template<typename SourceServerIDsT = Aws::Vector<Aws::String>>
+    DescribeSourceServersRequestFilters& WithSourceServerIDs(SourceServerIDsT&& value) { SetSourceServerIDs(std::forward<SourceServerIDsT>(value)); return *this;}
+    template<typename SourceServerIDsT = Aws::String>
+    DescribeSourceServersRequestFilters& AddSourceServerIDs(SourceServerIDsT&& value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.emplace_back(std::forward<SourceServerIDsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,15 +72,14 @@ namespace Model
      * <p>An array of staging account IDs that extended source servers belong to. An
      * empty array means all source servers will be shown.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStagingAccountIDs() const{ return m_stagingAccountIDs; }
+    inline const Aws::Vector<Aws::String>& GetStagingAccountIDs() const { return m_stagingAccountIDs; }
     inline bool StagingAccountIDsHasBeenSet() const { return m_stagingAccountIDsHasBeenSet; }
-    inline void SetStagingAccountIDs(const Aws::Vector<Aws::String>& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs = value; }
-    inline void SetStagingAccountIDs(Aws::Vector<Aws::String>&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs = std::move(value); }
-    inline DescribeSourceServersRequestFilters& WithStagingAccountIDs(const Aws::Vector<Aws::String>& value) { SetStagingAccountIDs(value); return *this;}
-    inline DescribeSourceServersRequestFilters& WithStagingAccountIDs(Aws::Vector<Aws::String>&& value) { SetStagingAccountIDs(std::move(value)); return *this;}
-    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(const Aws::String& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(value); return *this; }
-    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(Aws::String&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(std::move(value)); return *this; }
-    inline DescribeSourceServersRequestFilters& AddStagingAccountIDs(const char* value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.push_back(value); return *this; }
+    template<typename StagingAccountIDsT = Aws::Vector<Aws::String>>
+    void SetStagingAccountIDs(StagingAccountIDsT&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs = std::forward<StagingAccountIDsT>(value); }
+    template<typename StagingAccountIDsT = Aws::Vector<Aws::String>>
+    DescribeSourceServersRequestFilters& WithStagingAccountIDs(StagingAccountIDsT&& value) { SetStagingAccountIDs(std::forward<StagingAccountIDsT>(value)); return *this;}
+    template<typename StagingAccountIDsT = Aws::String>
+    DescribeSourceServersRequestFilters& AddStagingAccountIDs(StagingAccountIDsT&& value) { m_stagingAccountIDsHasBeenSet = true; m_stagingAccountIDs.emplace_back(std::forward<StagingAccountIDsT>(value)); return *this; }
     ///@}
   private:
 

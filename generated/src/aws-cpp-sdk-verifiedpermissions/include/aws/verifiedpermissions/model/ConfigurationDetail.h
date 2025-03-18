@@ -35,7 +35,7 @@ namespace Model
   class ConfigurationDetail
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API ConfigurationDetail();
+    AWS_VERIFIEDPERMISSIONS_API ConfigurationDetail() = default;
     AWS_VERIFIEDPERMISSIONS_API ConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API ConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,12 @@ namespace Model
      * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
      * "MyCorp::Group"}}}</code> </p>
      */
-    inline const CognitoUserPoolConfigurationDetail& GetCognitoUserPoolConfiguration() const{ return m_cognitoUserPoolConfiguration; }
+    inline const CognitoUserPoolConfigurationDetail& GetCognitoUserPoolConfiguration() const { return m_cognitoUserPoolConfiguration; }
     inline bool CognitoUserPoolConfigurationHasBeenSet() const { return m_cognitoUserPoolConfigurationHasBeenSet; }
-    inline void SetCognitoUserPoolConfiguration(const CognitoUserPoolConfigurationDetail& value) { m_cognitoUserPoolConfigurationHasBeenSet = true; m_cognitoUserPoolConfiguration = value; }
-    inline void SetCognitoUserPoolConfiguration(CognitoUserPoolConfigurationDetail&& value) { m_cognitoUserPoolConfigurationHasBeenSet = true; m_cognitoUserPoolConfiguration = std::move(value); }
-    inline ConfigurationDetail& WithCognitoUserPoolConfiguration(const CognitoUserPoolConfigurationDetail& value) { SetCognitoUserPoolConfiguration(value); return *this;}
-    inline ConfigurationDetail& WithCognitoUserPoolConfiguration(CognitoUserPoolConfigurationDetail&& value) { SetCognitoUserPoolConfiguration(std::move(value)); return *this;}
+    template<typename CognitoUserPoolConfigurationT = CognitoUserPoolConfigurationDetail>
+    void SetCognitoUserPoolConfiguration(CognitoUserPoolConfigurationT&& value) { m_cognitoUserPoolConfigurationHasBeenSet = true; m_cognitoUserPoolConfiguration = std::forward<CognitoUserPoolConfigurationT>(value); }
+    template<typename CognitoUserPoolConfigurationT = CognitoUserPoolConfigurationDetail>
+    ConfigurationDetail& WithCognitoUserPoolConfiguration(CognitoUserPoolConfigurationT&& value) { SetCognitoUserPoolConfiguration(std::forward<CognitoUserPoolConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
      * </p>
      */
-    inline const OpenIdConnectConfigurationDetail& GetOpenIdConnectConfiguration() const{ return m_openIdConnectConfiguration; }
+    inline const OpenIdConnectConfigurationDetail& GetOpenIdConnectConfiguration() const { return m_openIdConnectConfiguration; }
     inline bool OpenIdConnectConfigurationHasBeenSet() const { return m_openIdConnectConfigurationHasBeenSet; }
-    inline void SetOpenIdConnectConfiguration(const OpenIdConnectConfigurationDetail& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = value; }
-    inline void SetOpenIdConnectConfiguration(OpenIdConnectConfigurationDetail&& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = std::move(value); }
-    inline ConfigurationDetail& WithOpenIdConnectConfiguration(const OpenIdConnectConfigurationDetail& value) { SetOpenIdConnectConfiguration(value); return *this;}
-    inline ConfigurationDetail& WithOpenIdConnectConfiguration(OpenIdConnectConfigurationDetail&& value) { SetOpenIdConnectConfiguration(std::move(value)); return *this;}
+    template<typename OpenIdConnectConfigurationT = OpenIdConnectConfigurationDetail>
+    void SetOpenIdConnectConfiguration(OpenIdConnectConfigurationT&& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = std::forward<OpenIdConnectConfigurationT>(value); }
+    template<typename OpenIdConnectConfigurationT = OpenIdConnectConfigurationDetail>
+    ConfigurationDetail& WithOpenIdConnectConfiguration(OpenIdConnectConfigurationT&& value) { SetOpenIdConnectConfiguration(std::forward<OpenIdConnectConfigurationT>(value)); return *this;}
     ///@}
   private:
 

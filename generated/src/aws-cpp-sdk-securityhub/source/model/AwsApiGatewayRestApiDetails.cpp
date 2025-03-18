@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayRestApiDetails::AwsApiGatewayRestApiDetails() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false),
-    m_minimumCompressionSize(0),
-    m_minimumCompressionSizeHasBeenSet(false),
-    m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
-{
-}
-
 AwsApiGatewayRestApiDetails::AwsApiGatewayRestApiDetails(JsonView jsonValue)
-  : AwsApiGatewayRestApiDetails()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ AwsApiGatewayRestApiDetails& AwsApiGatewayRestApiDetails::operator =(JsonView js
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinaryMediaTypes"))
   {
     Aws::Utils::Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("BinaryMediaTypes");
@@ -84,28 +59,21 @@ AwsApiGatewayRestApiDetails& AwsApiGatewayRestApiDetails::operator =(JsonView js
     }
     m_binaryMediaTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumCompressionSize"))
   {
     m_minimumCompressionSize = jsonValue.GetInteger("MinimumCompressionSize");
-
     m_minimumCompressionSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiKeySource"))
   {
     m_apiKeySource = jsonValue.GetString("ApiKeySource");
-
     m_apiKeySourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfiguration"))
   {
     m_endpointConfiguration = jsonValue.GetObject("EndpointConfiguration");
-
     m_endpointConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

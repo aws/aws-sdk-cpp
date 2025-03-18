@@ -33,7 +33,7 @@ namespace Model
   class ComparisonConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ComparisonConfiguration();
+    AWS_QUICKSIGHT_API ComparisonConfiguration() = default;
     AWS_QUICKSIGHT_API ComparisonConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ComparisonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
      * <code>PERCENT_DIFFERENCE</code> </p> </li> <li> <p> <code>PERCENT</code> </p>
      * </li> </ul>
      */
-    inline const ComparisonMethod& GetComparisonMethod() const{ return m_comparisonMethod; }
+    inline ComparisonMethod GetComparisonMethod() const { return m_comparisonMethod; }
     inline bool ComparisonMethodHasBeenSet() const { return m_comparisonMethodHasBeenSet; }
-    inline void SetComparisonMethod(const ComparisonMethod& value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = value; }
-    inline void SetComparisonMethod(ComparisonMethod&& value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = std::move(value); }
-    inline ComparisonConfiguration& WithComparisonMethod(const ComparisonMethod& value) { SetComparisonMethod(value); return *this;}
-    inline ComparisonConfiguration& WithComparisonMethod(ComparisonMethod&& value) { SetComparisonMethod(std::move(value)); return *this;}
+    inline void SetComparisonMethod(ComparisonMethod value) { m_comparisonMethodHasBeenSet = true; m_comparisonMethod = value; }
+    inline ComparisonConfiguration& WithComparisonMethod(ComparisonMethod value) { SetComparisonMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the comparison.</p>
      */
-    inline const ComparisonFormatConfiguration& GetComparisonFormat() const{ return m_comparisonFormat; }
+    inline const ComparisonFormatConfiguration& GetComparisonFormat() const { return m_comparisonFormat; }
     inline bool ComparisonFormatHasBeenSet() const { return m_comparisonFormatHasBeenSet; }
-    inline void SetComparisonFormat(const ComparisonFormatConfiguration& value) { m_comparisonFormatHasBeenSet = true; m_comparisonFormat = value; }
-    inline void SetComparisonFormat(ComparisonFormatConfiguration&& value) { m_comparisonFormatHasBeenSet = true; m_comparisonFormat = std::move(value); }
-    inline ComparisonConfiguration& WithComparisonFormat(const ComparisonFormatConfiguration& value) { SetComparisonFormat(value); return *this;}
-    inline ComparisonConfiguration& WithComparisonFormat(ComparisonFormatConfiguration&& value) { SetComparisonFormat(std::move(value)); return *this;}
+    template<typename ComparisonFormatT = ComparisonFormatConfiguration>
+    void SetComparisonFormat(ComparisonFormatT&& value) { m_comparisonFormatHasBeenSet = true; m_comparisonFormat = std::forward<ComparisonFormatT>(value); }
+    template<typename ComparisonFormatT = ComparisonFormatConfiguration>
+    ComparisonConfiguration& WithComparisonFormat(ComparisonFormatT&& value) { SetComparisonFormat(std::forward<ComparisonFormatT>(value)); return *this;}
     ///@}
   private:
 
-    ComparisonMethod m_comparisonMethod;
+    ComparisonMethod m_comparisonMethod{ComparisonMethod::NOT_SET};
     bool m_comparisonMethodHasBeenSet = false;
 
     ComparisonFormatConfiguration m_comparisonFormat;

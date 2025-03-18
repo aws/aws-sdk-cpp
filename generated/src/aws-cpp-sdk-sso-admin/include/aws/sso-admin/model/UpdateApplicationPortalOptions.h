@@ -32,7 +32,7 @@ namespace Model
   class UpdateApplicationPortalOptions
   {
   public:
-    AWS_SSOADMIN_API UpdateApplicationPortalOptions();
+    AWS_SSOADMIN_API UpdateApplicationPortalOptions() = default;
     AWS_SSOADMIN_API UpdateApplicationPortalOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API UpdateApplicationPortalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const SignInOptions& GetSignInOptions() const{ return m_signInOptions; }
+    inline const SignInOptions& GetSignInOptions() const { return m_signInOptions; }
     inline bool SignInOptionsHasBeenSet() const { return m_signInOptionsHasBeenSet; }
-    inline void SetSignInOptions(const SignInOptions& value) { m_signInOptionsHasBeenSet = true; m_signInOptions = value; }
-    inline void SetSignInOptions(SignInOptions&& value) { m_signInOptionsHasBeenSet = true; m_signInOptions = std::move(value); }
-    inline UpdateApplicationPortalOptions& WithSignInOptions(const SignInOptions& value) { SetSignInOptions(value); return *this;}
-    inline UpdateApplicationPortalOptions& WithSignInOptions(SignInOptions&& value) { SetSignInOptions(std::move(value)); return *this;}
+    template<typename SignInOptionsT = SignInOptions>
+    void SetSignInOptions(SignInOptionsT&& value) { m_signInOptionsHasBeenSet = true; m_signInOptions = std::forward<SignInOptionsT>(value); }
+    template<typename SignInOptionsT = SignInOptions>
+    UpdateApplicationPortalOptions& WithSignInOptions(SignInOptionsT&& value) { SetSignInOptions(std::forward<SignInOptionsT>(value)); return *this;}
     ///@}
   private:
 

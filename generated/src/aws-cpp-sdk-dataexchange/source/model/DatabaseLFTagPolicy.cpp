@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-DatabaseLFTagPolicy::DatabaseLFTagPolicy() : 
-    m_expressionHasBeenSet(false)
-{
-}
-
 DatabaseLFTagPolicy::DatabaseLFTagPolicy(JsonView jsonValue)
-  : DatabaseLFTagPolicy()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DatabaseLFTagPolicy& DatabaseLFTagPolicy::operator =(JsonView jsonValue)
     }
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-Message::Message() : 
-    m_plainTextMessageHasBeenSet(false),
-    m_customPayloadHasBeenSet(false),
-    m_ssmlMessageHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("plainTextMessage"))
   {
     m_plainTextMessage = jsonValue.GetObject("plainTextMessage");
-
     m_plainTextMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customPayload"))
   {
     m_customPayload = jsonValue.GetObject("customPayload");
-
     m_customPayloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmlMessage"))
   {
     m_ssmlMessage = jsonValue.GetObject("ssmlMessage");
-
     m_ssmlMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageResponseCard"))
   {
     m_imageResponseCard = jsonValue.GetObject("imageResponseCard");
-
     m_imageResponseCardHasBeenSet = true;
   }
-
   return *this;
 }
 

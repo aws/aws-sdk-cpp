@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetReadinessCheckResourceStatusRequest::GetReadinessCheckResourceStatusRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_readinessCheckNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetReadinessCheckResourceStatusRequest::SerializePayload() const
 {
   return {};

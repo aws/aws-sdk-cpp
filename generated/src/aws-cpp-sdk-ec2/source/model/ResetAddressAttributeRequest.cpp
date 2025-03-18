@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ResetAddressAttributeRequest::ResetAddressAttributeRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_attribute(AddressAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ResetAddressAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

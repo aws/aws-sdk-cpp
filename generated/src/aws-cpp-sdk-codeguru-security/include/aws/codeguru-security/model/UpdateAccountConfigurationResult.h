@@ -28,7 +28,7 @@ namespace Model
   class UpdateAccountConfigurationResult
   {
   public:
-    AWS_CODEGURUSECURITY_API UpdateAccountConfigurationResult();
+    AWS_CODEGURUSECURITY_API UpdateAccountConfigurationResult() = default;
     AWS_CODEGURUSECURITY_API UpdateAccountConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUSECURITY_API UpdateAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * used for encryption. If you did not specify a customer-managed KMS key in the
      * request, returns empty. </p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
-    inline UpdateAccountConfigurationResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline UpdateAccountConfigurationResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    UpdateAccountConfigurationResult& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAccountConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EncryptionConfig m_encryptionConfig;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

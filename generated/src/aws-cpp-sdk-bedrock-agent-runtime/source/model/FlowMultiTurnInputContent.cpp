@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowMultiTurnInputContent::FlowMultiTurnInputContent() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 FlowMultiTurnInputContent::FlowMultiTurnInputContent(JsonView jsonValue)
-  : FlowMultiTurnInputContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowMultiTurnInputContent& FlowMultiTurnInputContent::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

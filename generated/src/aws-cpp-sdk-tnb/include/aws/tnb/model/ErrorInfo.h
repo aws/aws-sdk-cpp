@@ -31,7 +31,7 @@ namespace Model
   class ErrorInfo
   {
   public:
-    AWS_TNB_API ErrorInfo();
+    AWS_TNB_API ErrorInfo() = default;
     AWS_TNB_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Error cause.</p>
      */
-    inline const Aws::String& GetCause() const{ return m_cause; }
+    inline const Aws::String& GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
-    inline ErrorInfo& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-    inline ErrorInfo& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-    inline ErrorInfo& WithCause(const char* value) { SetCause(value); return *this;}
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    ErrorInfo& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error details.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline ErrorInfo& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline ErrorInfo& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline ErrorInfo& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    ErrorInfo& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

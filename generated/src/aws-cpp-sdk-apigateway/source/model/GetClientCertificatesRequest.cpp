@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetClientCertificatesRequest::GetClientCertificatesRequest() : 
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String GetClientCertificatesRequest::SerializePayload() const
 {
   return {};

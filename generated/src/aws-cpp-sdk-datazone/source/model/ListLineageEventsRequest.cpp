@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListLineageEventsRequest::ListLineageEventsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_processingStatus(LineageEventProcessingStatus::NOT_SET),
-    m_processingStatusHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_timestampAfterHasBeenSet(false),
-    m_timestampBeforeHasBeenSet(false)
-{
-}
-
 Aws::String ListLineageEventsRequest::SerializePayload() const
 {
   return {};

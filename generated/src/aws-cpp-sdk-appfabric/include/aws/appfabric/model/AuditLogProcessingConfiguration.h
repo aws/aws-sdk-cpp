@@ -33,7 +33,7 @@ namespace Model
   class AuditLogProcessingConfiguration
   {
   public:
-    AWS_APPFABRIC_API AuditLogProcessingConfiguration();
+    AWS_APPFABRIC_API AuditLogProcessingConfiguration() = default;
     AWS_APPFABRIC_API AuditLogProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API AuditLogProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The event schema in which the audit logs need to be formatted.</p>
      */
-    inline const Schema& GetSchema() const{ return m_schema; }
+    inline Schema GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Schema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Schema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline AuditLogProcessingConfiguration& WithSchema(const Schema& value) { SetSchema(value); return *this;}
-    inline AuditLogProcessingConfiguration& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+    inline void SetSchema(Schema value) { m_schemaHasBeenSet = true; m_schema = value; }
+    inline AuditLogProcessingConfiguration& WithSchema(Schema value) { SetSchema(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format in which the audit logs need to be formatted.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline AuditLogProcessingConfiguration& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline AuditLogProcessingConfiguration& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline AuditLogProcessingConfiguration& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
   private:
 
-    Schema m_schema;
+    Schema m_schema{Schema::NOT_SET};
     bool m_schemaHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
   };
 

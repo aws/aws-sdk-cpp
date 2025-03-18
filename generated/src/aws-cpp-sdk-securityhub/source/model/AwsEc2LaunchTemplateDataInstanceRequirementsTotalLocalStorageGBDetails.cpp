@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails() : 
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetails& AwsEc2La
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetDouble("Min");
-
     m_minHasBeenSet = true;
   }
-
   return *this;
 }
 

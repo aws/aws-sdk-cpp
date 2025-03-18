@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetFreeTrialInfoRequest::BatchGetFreeTrialInfoRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFreeTrialInfoRequest::SerializePayload() const
 {
   JsonValue payload;

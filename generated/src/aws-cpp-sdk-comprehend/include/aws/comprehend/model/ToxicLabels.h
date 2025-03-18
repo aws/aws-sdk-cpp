@@ -36,7 +36,7 @@ namespace Model
   class ToxicLabels
   {
   public:
-    AWS_COMPREHEND_API ToxicLabels();
+    AWS_COMPREHEND_API ToxicLabels() = default;
     AWS_COMPREHEND_API ToxicLabels(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API ToxicLabels& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>Array of toxic content types identified in the string.</p>
      */
-    inline const Aws::Vector<ToxicContent>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<ToxicContent>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<ToxicContent>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<ToxicContent>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline ToxicLabels& WithLabels(const Aws::Vector<ToxicContent>& value) { SetLabels(value); return *this;}
-    inline ToxicLabels& WithLabels(Aws::Vector<ToxicContent>&& value) { SetLabels(std::move(value)); return *this;}
-    inline ToxicLabels& AddLabels(const ToxicContent& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline ToxicLabels& AddLabels(ToxicContent&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+    template<typename LabelsT = Aws::Vector<ToxicContent>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<ToxicContent>>
+    ToxicLabels& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = ToxicContent>
+    ToxicLabels& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
      * <p>Overall toxicity score for the string. Value range is zero to one, where one
      * is the highest confidence.</p>
      */
-    inline double GetToxicity() const{ return m_toxicity; }
+    inline double GetToxicity() const { return m_toxicity; }
     inline bool ToxicityHasBeenSet() const { return m_toxicityHasBeenSet; }
     inline void SetToxicity(double value) { m_toxicityHasBeenSet = true; m_toxicity = value; }
     inline ToxicLabels& WithToxicity(double value) { SetToxicity(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     Aws::Vector<ToxicContent> m_labels;
     bool m_labelsHasBeenSet = false;
 
-    double m_toxicity;
+    double m_toxicity{0.0};
     bool m_toxicityHasBeenSet = false;
   };
 

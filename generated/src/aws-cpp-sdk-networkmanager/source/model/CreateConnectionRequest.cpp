@@ -12,17 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionRequest::CreateConnectionRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_connectedDeviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_connectedLinkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,18 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAttributesRequest::ListAttributesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

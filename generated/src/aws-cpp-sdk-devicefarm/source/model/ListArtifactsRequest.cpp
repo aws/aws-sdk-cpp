@@ -12,14 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListArtifactsRequest::ListArtifactsRequest() : 
-    m_arnHasBeenSet(false),
-    m_type(ArtifactCategory::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListArtifactsRequest::SerializePayload() const
 {
   JsonValue payload;

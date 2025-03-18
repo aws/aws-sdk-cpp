@@ -33,7 +33,7 @@ namespace Model
   class Action
   {
   public:
-    AWS_LOOKOUTMETRICS_API Action();
+    AWS_LOOKOUTMETRICS_API Action() = default;
     AWS_LOOKOUTMETRICS_API Action(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>A configuration for an Amazon SNS channel.</p>
      */
-    inline const SNSConfiguration& GetSNSConfiguration() const{ return m_sNSConfiguration; }
+    inline const SNSConfiguration& GetSNSConfiguration() const { return m_sNSConfiguration; }
     inline bool SNSConfigurationHasBeenSet() const { return m_sNSConfigurationHasBeenSet; }
-    inline void SetSNSConfiguration(const SNSConfiguration& value) { m_sNSConfigurationHasBeenSet = true; m_sNSConfiguration = value; }
-    inline void SetSNSConfiguration(SNSConfiguration&& value) { m_sNSConfigurationHasBeenSet = true; m_sNSConfiguration = std::move(value); }
-    inline Action& WithSNSConfiguration(const SNSConfiguration& value) { SetSNSConfiguration(value); return *this;}
-    inline Action& WithSNSConfiguration(SNSConfiguration&& value) { SetSNSConfiguration(std::move(value)); return *this;}
+    template<typename SNSConfigurationT = SNSConfiguration>
+    void SetSNSConfiguration(SNSConfigurationT&& value) { m_sNSConfigurationHasBeenSet = true; m_sNSConfiguration = std::forward<SNSConfigurationT>(value); }
+    template<typename SNSConfigurationT = SNSConfiguration>
+    Action& WithSNSConfiguration(SNSConfigurationT&& value) { SetSNSConfiguration(std::forward<SNSConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A configuration for an AWS Lambda channel.</p>
      */
-    inline const LambdaConfiguration& GetLambdaConfiguration() const{ return m_lambdaConfiguration; }
+    inline const LambdaConfiguration& GetLambdaConfiguration() const { return m_lambdaConfiguration; }
     inline bool LambdaConfigurationHasBeenSet() const { return m_lambdaConfigurationHasBeenSet; }
-    inline void SetLambdaConfiguration(const LambdaConfiguration& value) { m_lambdaConfigurationHasBeenSet = true; m_lambdaConfiguration = value; }
-    inline void SetLambdaConfiguration(LambdaConfiguration&& value) { m_lambdaConfigurationHasBeenSet = true; m_lambdaConfiguration = std::move(value); }
-    inline Action& WithLambdaConfiguration(const LambdaConfiguration& value) { SetLambdaConfiguration(value); return *this;}
-    inline Action& WithLambdaConfiguration(LambdaConfiguration&& value) { SetLambdaConfiguration(std::move(value)); return *this;}
+    template<typename LambdaConfigurationT = LambdaConfiguration>
+    void SetLambdaConfiguration(LambdaConfigurationT&& value) { m_lambdaConfigurationHasBeenSet = true; m_lambdaConfiguration = std::forward<LambdaConfigurationT>(value); }
+    template<typename LambdaConfigurationT = LambdaConfiguration>
+    Action& WithLambdaConfiguration(LambdaConfigurationT&& value) { SetLambdaConfiguration(std::forward<LambdaConfigurationT>(value)); return *this;}
     ///@}
   private:
 

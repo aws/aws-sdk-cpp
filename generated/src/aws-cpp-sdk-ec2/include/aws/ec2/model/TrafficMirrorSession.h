@@ -33,7 +33,7 @@ namespace Model
   class TrafficMirrorSession
   {
   public:
-    AWS_EC2_API TrafficMirrorSession();
+    AWS_EC2_API TrafficMirrorSession() = default;
     AWS_EC2_API TrafficMirrorSession(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TrafficMirrorSession& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,70 +45,60 @@ namespace Model
     /**
      * <p>The ID for the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetTrafficMirrorSessionId() const{ return m_trafficMirrorSessionId; }
+    inline const Aws::String& GetTrafficMirrorSessionId() const { return m_trafficMirrorSessionId; }
     inline bool TrafficMirrorSessionIdHasBeenSet() const { return m_trafficMirrorSessionIdHasBeenSet; }
-    inline void SetTrafficMirrorSessionId(const Aws::String& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = value; }
-    inline void SetTrafficMirrorSessionId(Aws::String&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::move(value); }
-    inline void SetTrafficMirrorSessionId(const char* value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId.assign(value); }
-    inline TrafficMirrorSession& WithTrafficMirrorSessionId(const Aws::String& value) { SetTrafficMirrorSessionId(value); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorSessionId(Aws::String&& value) { SetTrafficMirrorSessionId(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorSessionId(const char* value) { SetTrafficMirrorSessionId(value); return *this;}
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    void SetTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::forward<TrafficMirrorSessionIdT>(value); }
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    TrafficMirrorSession& WithTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { SetTrafficMirrorSessionId(std::forward<TrafficMirrorSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Traffic Mirror target.</p>
      */
-    inline const Aws::String& GetTrafficMirrorTargetId() const{ return m_trafficMirrorTargetId; }
+    inline const Aws::String& GetTrafficMirrorTargetId() const { return m_trafficMirrorTargetId; }
     inline bool TrafficMirrorTargetIdHasBeenSet() const { return m_trafficMirrorTargetIdHasBeenSet; }
-    inline void SetTrafficMirrorTargetId(const Aws::String& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = value; }
-    inline void SetTrafficMirrorTargetId(Aws::String&& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = std::move(value); }
-    inline void SetTrafficMirrorTargetId(const char* value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId.assign(value); }
-    inline TrafficMirrorSession& WithTrafficMirrorTargetId(const Aws::String& value) { SetTrafficMirrorTargetId(value); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorTargetId(Aws::String&& value) { SetTrafficMirrorTargetId(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorTargetId(const char* value) { SetTrafficMirrorTargetId(value); return *this;}
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    void SetTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = std::forward<TrafficMirrorTargetIdT>(value); }
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    TrafficMirrorSession& WithTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { SetTrafficMirrorTargetId(std::forward<TrafficMirrorTargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Traffic Mirror filter.</p>
      */
-    inline const Aws::String& GetTrafficMirrorFilterId() const{ return m_trafficMirrorFilterId; }
+    inline const Aws::String& GetTrafficMirrorFilterId() const { return m_trafficMirrorFilterId; }
     inline bool TrafficMirrorFilterIdHasBeenSet() const { return m_trafficMirrorFilterIdHasBeenSet; }
-    inline void SetTrafficMirrorFilterId(const Aws::String& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = value; }
-    inline void SetTrafficMirrorFilterId(Aws::String&& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = std::move(value); }
-    inline void SetTrafficMirrorFilterId(const char* value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId.assign(value); }
-    inline TrafficMirrorSession& WithTrafficMirrorFilterId(const Aws::String& value) { SetTrafficMirrorFilterId(value); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorFilterId(Aws::String&& value) { SetTrafficMirrorFilterId(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithTrafficMirrorFilterId(const char* value) { SetTrafficMirrorFilterId(value); return *this;}
+    template<typename TrafficMirrorFilterIdT = Aws::String>
+    void SetTrafficMirrorFilterId(TrafficMirrorFilterIdT&& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = std::forward<TrafficMirrorFilterIdT>(value); }
+    template<typename TrafficMirrorFilterIdT = Aws::String>
+    TrafficMirrorSession& WithTrafficMirrorFilterId(TrafficMirrorFilterIdT&& value) { SetTrafficMirrorFilterId(std::forward<TrafficMirrorFilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Traffic Mirror session's network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline TrafficMirrorSession& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline TrafficMirrorSession& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    TrafficMirrorSession& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account that owns the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline TrafficMirrorSession& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline TrafficMirrorSession& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    TrafficMirrorSession& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +109,7 @@ namespace Model
      * the filter criteria are copied to the target. Do not specify this parameter when
      * you want to mirror the entire packet</p>
      */
-    inline int GetPacketLength() const{ return m_packetLength; }
+    inline int GetPacketLength() const { return m_packetLength; }
     inline bool PacketLengthHasBeenSet() const { return m_packetLengthHasBeenSet; }
     inline void SetPacketLength(int value) { m_packetLengthHasBeenSet = true; m_packetLength = value; }
     inline TrafficMirrorSession& WithPacketLength(int value) { SetPacketLength(value); return *this;}
@@ -131,7 +121,7 @@ namespace Model
      * an interface is used by multiple sessions. The first session with a matching
      * filter is the one that mirrors the packets.</p> <p>Valid values are 1-32766.</p>
      */
-    inline int GetSessionNumber() const{ return m_sessionNumber; }
+    inline int GetSessionNumber() const { return m_sessionNumber; }
     inline bool SessionNumberHasBeenSet() const { return m_sessionNumberHasBeenSet; }
     inline void SetSessionNumber(int value) { m_sessionNumberHasBeenSet = true; m_sessionNumber = value; }
     inline TrafficMirrorSession& WithSessionNumber(int value) { SetSessionNumber(value); return *this;}
@@ -141,7 +131,7 @@ namespace Model
     /**
      * <p>The virtual network ID associated with the Traffic Mirror session.</p>
      */
-    inline int GetVirtualNetworkId() const{ return m_virtualNetworkId; }
+    inline int GetVirtualNetworkId() const { return m_virtualNetworkId; }
     inline bool VirtualNetworkIdHasBeenSet() const { return m_virtualNetworkIdHasBeenSet; }
     inline void SetVirtualNetworkId(int value) { m_virtualNetworkIdHasBeenSet = true; m_virtualNetworkId = value; }
     inline TrafficMirrorSession& WithVirtualNetworkId(int value) { SetVirtualNetworkId(value); return *this;}
@@ -151,28 +141,26 @@ namespace Model
     /**
      * <p>The description of the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TrafficMirrorSession& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TrafficMirrorSession& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TrafficMirrorSession& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TrafficMirrorSession& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the Traffic Mirror session.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TrafficMirrorSession& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TrafficMirrorSession& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TrafficMirrorSession& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TrafficMirrorSession& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TrafficMirrorSession& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TrafficMirrorSession& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -191,13 +179,13 @@ namespace Model
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
-    int m_packetLength;
+    int m_packetLength{0};
     bool m_packetLengthHasBeenSet = false;
 
-    int m_sessionNumber;
+    int m_sessionNumber{0};
     bool m_sessionNumberHasBeenSet = false;
 
-    int m_virtualNetworkId;
+    int m_virtualNetworkId{0};
     bool m_virtualNetworkIdHasBeenSet = false;
 
     Aws::String m_description;

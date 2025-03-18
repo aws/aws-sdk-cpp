@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-GeoLocationTarget::GeoLocationTarget() : 
-    m_nameHasBeenSet(false),
-    m_order(TargetFieldOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 GeoLocationTarget::GeoLocationTarget(JsonView jsonValue)
-  : GeoLocationTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeoLocationTarget& GeoLocationTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = TargetFieldOrderMapper::GetTargetFieldOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

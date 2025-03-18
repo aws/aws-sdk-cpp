@@ -32,7 +32,7 @@ namespace Model
   class NtpStatus
   {
   public:
-    AWS_PANORAMA_API NtpStatus();
+    AWS_PANORAMA_API NtpStatus() = default;
     AWS_PANORAMA_API NtpStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API NtpStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The connection's status.</p>
      */
-    inline const NetworkConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+    inline NetworkConnectionStatus GetConnectionStatus() const { return m_connectionStatus; }
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
-    inline void SetConnectionStatus(const NetworkConnectionStatus& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
-    inline void SetConnectionStatus(NetworkConnectionStatus&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
-    inline NtpStatus& WithConnectionStatus(const NetworkConnectionStatus& value) { SetConnectionStatus(value); return *this;}
-    inline NtpStatus& WithConnectionStatus(NetworkConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    inline void SetConnectionStatus(NetworkConnectionStatus value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+    inline NtpStatus& WithConnectionStatus(NetworkConnectionStatus value) { SetConnectionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address of the server.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline NtpStatus& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline NtpStatus& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline NtpStatus& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    NtpStatus& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name of the server.</p>
      */
-    inline const Aws::String& GetNtpServerName() const{ return m_ntpServerName; }
+    inline const Aws::String& GetNtpServerName() const { return m_ntpServerName; }
     inline bool NtpServerNameHasBeenSet() const { return m_ntpServerNameHasBeenSet; }
-    inline void SetNtpServerName(const Aws::String& value) { m_ntpServerNameHasBeenSet = true; m_ntpServerName = value; }
-    inline void SetNtpServerName(Aws::String&& value) { m_ntpServerNameHasBeenSet = true; m_ntpServerName = std::move(value); }
-    inline void SetNtpServerName(const char* value) { m_ntpServerNameHasBeenSet = true; m_ntpServerName.assign(value); }
-    inline NtpStatus& WithNtpServerName(const Aws::String& value) { SetNtpServerName(value); return *this;}
-    inline NtpStatus& WithNtpServerName(Aws::String&& value) { SetNtpServerName(std::move(value)); return *this;}
-    inline NtpStatus& WithNtpServerName(const char* value) { SetNtpServerName(value); return *this;}
+    template<typename NtpServerNameT = Aws::String>
+    void SetNtpServerName(NtpServerNameT&& value) { m_ntpServerNameHasBeenSet = true; m_ntpServerName = std::forward<NtpServerNameT>(value); }
+    template<typename NtpServerNameT = Aws::String>
+    NtpStatus& WithNtpServerName(NtpServerNameT&& value) { SetNtpServerName(std::forward<NtpServerNameT>(value)); return *this;}
     ///@}
   private:
 
-    NetworkConnectionStatus m_connectionStatus;
+    NetworkConnectionStatus m_connectionStatus{NetworkConnectionStatus::NOT_SET};
     bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_ipAddress;

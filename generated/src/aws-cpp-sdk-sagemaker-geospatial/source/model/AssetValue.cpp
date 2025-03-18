@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-AssetValue::AssetValue() : 
-    m_hrefHasBeenSet(false)
-{
-}
-
 AssetValue::AssetValue(JsonView jsonValue)
-  : AssetValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssetValue& AssetValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Href"))
   {
     m_href = jsonValue.GetString("Href");
-
     m_hrefHasBeenSet = true;
   }
-
   return *this;
 }
 

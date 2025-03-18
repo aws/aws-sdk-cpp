@@ -32,7 +32,7 @@ namespace Model
   class RuleScope
   {
   public:
-    AWS_DATAZONE_API RuleScope();
+    AWS_DATAZONE_API RuleScope() = default;
     AWS_DATAZONE_API RuleScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RuleScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
     /**
      * <p>The asset type included in the rule scope.</p>
      */
-    inline const AssetTypesForRule& GetAssetType() const{ return m_assetType; }
+    inline const AssetTypesForRule& GetAssetType() const { return m_assetType; }
     inline bool AssetTypeHasBeenSet() const { return m_assetTypeHasBeenSet; }
-    inline void SetAssetType(const AssetTypesForRule& value) { m_assetTypeHasBeenSet = true; m_assetType = value; }
-    inline void SetAssetType(AssetTypesForRule&& value) { m_assetTypeHasBeenSet = true; m_assetType = std::move(value); }
-    inline RuleScope& WithAssetType(const AssetTypesForRule& value) { SetAssetType(value); return *this;}
-    inline RuleScope& WithAssetType(AssetTypesForRule&& value) { SetAssetType(std::move(value)); return *this;}
+    template<typename AssetTypeT = AssetTypesForRule>
+    void SetAssetType(AssetTypeT&& value) { m_assetTypeHasBeenSet = true; m_assetType = std::forward<AssetTypeT>(value); }
+    template<typename AssetTypeT = AssetTypesForRule>
+    RuleScope& WithAssetType(AssetTypeT&& value) { SetAssetType(std::forward<AssetTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data product included in the rule scope.</p>
      */
-    inline bool GetDataProduct() const{ return m_dataProduct; }
+    inline bool GetDataProduct() const { return m_dataProduct; }
     inline bool DataProductHasBeenSet() const { return m_dataProductHasBeenSet; }
     inline void SetDataProduct(bool value) { m_dataProductHasBeenSet = true; m_dataProduct = value; }
     inline RuleScope& WithDataProduct(bool value) { SetDataProduct(value); return *this;}
@@ -64,19 +64,19 @@ namespace Model
     /**
      * <p>The project included in the rule scope.</p>
      */
-    inline const ProjectsForRule& GetProject() const{ return m_project; }
+    inline const ProjectsForRule& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const ProjectsForRule& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(ProjectsForRule&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline RuleScope& WithProject(const ProjectsForRule& value) { SetProject(value); return *this;}
-    inline RuleScope& WithProject(ProjectsForRule&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = ProjectsForRule>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = ProjectsForRule>
+    RuleScope& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 
     AssetTypesForRule m_assetType;
     bool m_assetTypeHasBeenSet = false;
 
-    bool m_dataProduct;
+    bool m_dataProduct{false};
     bool m_dataProductHasBeenSet = false;
 
     ProjectsForRule m_project;

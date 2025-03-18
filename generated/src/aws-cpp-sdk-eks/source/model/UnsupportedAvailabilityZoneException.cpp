@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UnsupportedAvailabilityZoneException::UnsupportedAvailabilityZoneException() : 
-    m_messageHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_validZonesHasBeenSet(false)
-{
-}
-
 UnsupportedAvailabilityZoneException::UnsupportedAvailabilityZoneException(JsonView jsonValue)
-  : UnsupportedAvailabilityZoneException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UnsupportedAvailabilityZoneException& UnsupportedAvailabilityZoneException::oper
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodegroupName"))
   {
     m_nodegroupName = jsonValue.GetString("nodegroupName");
-
     m_nodegroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validZones"))
   {
     Aws::Utils::Array<JsonView> validZonesJsonList = jsonValue.GetArray("validZones");
@@ -64,7 +49,6 @@ UnsupportedAvailabilityZoneException& UnsupportedAvailabilityZoneException::oper
     }
     m_validZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

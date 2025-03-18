@@ -18,15 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentStandardOutputConfiguration::DocumentStandardOutputConfiguration() : 
-    m_extractionHasBeenSet(false),
-    m_generativeFieldHasBeenSet(false),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 DocumentStandardOutputConfiguration::DocumentStandardOutputConfiguration(JsonView jsonValue)
-  : DocumentStandardOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DocumentStandardOutputConfiguration& DocumentStandardOutputConfiguration::operat
   if(jsonValue.ValueExists("extraction"))
   {
     m_extraction = jsonValue.GetObject("extraction");
-
     m_extractionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generativeField"))
   {
     m_generativeField = jsonValue.GetObject("generativeField");
-
     m_generativeFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputFormat"))
   {
     m_outputFormat = jsonValue.GetObject("outputFormat");
-
     m_outputFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

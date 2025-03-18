@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-TemplateConfiguration::TemplateConfiguration() : 
-    m_templateHasBeenSet(false)
-{
-}
-
 TemplateConfiguration::TemplateConfiguration(JsonView jsonValue)
-  : TemplateConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TemplateConfiguration& TemplateConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Template"))
   {
     m_template = jsonValue.GetObject("Template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

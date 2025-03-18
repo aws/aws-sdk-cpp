@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectoryConfigRequest::DeleteDirectoryConfigRequest() : 
-    m_directoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectoryConfigRequest::SerializePayload() const
 {
   JsonValue payload;

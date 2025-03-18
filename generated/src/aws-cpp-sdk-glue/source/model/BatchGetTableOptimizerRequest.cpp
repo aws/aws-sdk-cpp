@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetTableOptimizerRequest::BatchGetTableOptimizerRequest() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetTableOptimizerRequest::SerializePayload() const
 {
   JsonValue payload;

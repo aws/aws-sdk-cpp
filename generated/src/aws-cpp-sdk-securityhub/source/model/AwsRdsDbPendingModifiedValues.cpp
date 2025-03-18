@@ -18,32 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbPendingModifiedValues::AwsRdsDbPendingModifiedValues() : 
-    m_dbInstanceClassHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_caCertificateIdentifierHasBeenSet(false),
-    m_dbSubnetGroupNameHasBeenSet(false),
-    m_pendingCloudWatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
-{
-}
-
 AwsRdsDbPendingModifiedValues::AwsRdsDbPendingModifiedValues(JsonView jsonValue)
-  : AwsRdsDbPendingModifiedValues()
 {
   *this = jsonValue;
 }
@@ -53,101 +28,73 @@ AwsRdsDbPendingModifiedValues& AwsRdsDbPendingModifiedValues::operator =(JsonVie
   if(jsonValue.ValueExists("DbInstanceClass"))
   {
     m_dbInstanceClass = jsonValue.GetString("DbInstanceClass");
-
     m_dbInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserPassword"))
   {
     m_masterUserPassword = jsonValue.GetString("MasterUserPassword");
-
     m_masterUserPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupRetentionPeriod"))
   {
     m_backupRetentionPeriod = jsonValue.GetInteger("BackupRetentionPeriod");
-
     m_backupRetentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAZ"))
   {
     m_multiAZ = jsonValue.GetBool("MultiAZ");
-
     m_multiAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseModel"))
   {
     m_licenseModel = jsonValue.GetString("LicenseModel");
-
     m_licenseModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbInstanceIdentifier"))
   {
     m_dbInstanceIdentifier = jsonValue.GetString("DbInstanceIdentifier");
-
     m_dbInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = jsonValue.GetString("StorageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaCertificateIdentifier"))
   {
     m_caCertificateIdentifier = jsonValue.GetString("CaCertificateIdentifier");
-
     m_caCertificateIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSubnetGroupName"))
   {
     m_dbSubnetGroupName = jsonValue.GetString("DbSubnetGroupName");
-
     m_dbSubnetGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingCloudWatchLogsExports"))
   {
     m_pendingCloudWatchLogsExports = jsonValue.GetObject("PendingCloudWatchLogsExports");
-
     m_pendingCloudWatchLogsExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessorFeatures"))
   {
     Aws::Utils::Array<JsonView> processorFeaturesJsonList = jsonValue.GetArray("ProcessorFeatures");
@@ -157,7 +104,6 @@ AwsRdsDbPendingModifiedValues& AwsRdsDbPendingModifiedValues::operator =(JsonVie
     }
     m_processorFeaturesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInfrastructureConfigurationsResult::ListInfrastructureConfigurationsResult()
-{
-}
-
 ListInfrastructureConfigurationsResult::ListInfrastructureConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListInfrastructureConfigurationsResult& ListInfrastructureConfigurationsResult::
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("infrastructureConfigurationSummaryList"))
   {
     Aws::Utils::Array<JsonView> infrastructureConfigurationSummaryListJsonList = jsonValue.GetArray("infrastructureConfigurationSummaryList");
@@ -41,14 +36,13 @@ ListInfrastructureConfigurationsResult& ListInfrastructureConfigurationsResult::
     {
       m_infrastructureConfigurationSummaryList.push_back(infrastructureConfigurationSummaryListJsonList[infrastructureConfigurationSummaryListIndex].AsObject());
     }
+    m_infrastructureConfigurationSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

@@ -18,15 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-NotificationAction::NotificationAction() : 
-    m_actionHasBeenSet(false),
-    m_smsConfigurationsHasBeenSet(false),
-    m_emailConfigurationsHasBeenSet(false)
-{
-}
-
 NotificationAction::NotificationAction(JsonView jsonValue)
-  : NotificationAction()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ NotificationAction& NotificationAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smsConfigurations"))
   {
     Aws::Utils::Array<JsonView> smsConfigurationsJsonList = jsonValue.GetArray("smsConfigurations");
@@ -49,7 +39,6 @@ NotificationAction& NotificationAction::operator =(JsonView jsonValue)
     }
     m_smsConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailConfigurations"))
   {
     Aws::Utils::Array<JsonView> emailConfigurationsJsonList = jsonValue.GetArray("emailConfigurations");
@@ -59,7 +48,6 @@ NotificationAction& NotificationAction::operator =(JsonView jsonValue)
     }
     m_emailConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

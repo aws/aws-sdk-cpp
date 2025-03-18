@@ -23,7 +23,7 @@ namespace Model
   class GetRecommendationPreferencesRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetRecommendationPreferencesRequest();
+    AWS_COMPUTEOPTIMIZER_API GetRecommendationPreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
      * an Auto Scaling group.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetRecommendationPreferencesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline GetRecommendationPreferencesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetRecommendationPreferencesRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
      * Guide</i>.</p>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline GetRecommendationPreferencesRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline GetRecommendationPreferencesRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    GetRecommendationPreferencesRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token to advance to the next page of recommendation preferences.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetRecommendationPreferencesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetRecommendationPreferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetRecommendationPreferencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetRecommendationPreferencesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,14 @@ namespace Model
      * request.</p> <p>To retrieve the remaining results, make another request with the
      * returned <code>nextToken</code> value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetRecommendationPreferencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Scope m_scope;
@@ -106,7 +102,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateHealthCheckRequest::AssociateHealthCheckRequest() : 
-    m_protectionIdHasBeenSet(false),
-    m_healthCheckArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateHealthCheckRequest::SerializePayload() const
 {
   JsonValue payload;

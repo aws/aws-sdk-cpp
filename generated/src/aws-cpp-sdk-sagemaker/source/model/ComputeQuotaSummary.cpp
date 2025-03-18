@@ -18,26 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ComputeQuotaSummary::ComputeQuotaSummary() : 
-    m_computeQuotaArnHasBeenSet(false),
-    m_computeQuotaIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_computeQuotaVersion(0),
-    m_computeQuotaVersionHasBeenSet(false),
-    m_status(SchedulerResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_computeQuotaConfigHasBeenSet(false),
-    m_computeQuotaTargetHasBeenSet(false),
-    m_activationState(ActivationState::NOT_SET),
-    m_activationStateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 ComputeQuotaSummary::ComputeQuotaSummary(JsonView jsonValue)
-  : ComputeQuotaSummary()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ ComputeQuotaSummary& ComputeQuotaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComputeQuotaArn"))
   {
     m_computeQuotaArn = jsonValue.GetString("ComputeQuotaArn");
-
     m_computeQuotaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeQuotaId"))
   {
     m_computeQuotaId = jsonValue.GetString("ComputeQuotaId");
-
     m_computeQuotaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeQuotaVersion"))
   {
     m_computeQuotaVersion = jsonValue.GetInteger("ComputeQuotaVersion");
-
     m_computeQuotaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SchedulerResourceStatusMapper::GetSchedulerResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeQuotaConfig"))
   {
     m_computeQuotaConfig = jsonValue.GetObject("ComputeQuotaConfig");
-
     m_computeQuotaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeQuotaTarget"))
   {
     m_computeQuotaTarget = jsonValue.GetObject("ComputeQuotaTarget");
-
     m_computeQuotaTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivationState"))
   {
     m_activationState = ActivationStateMapper::GetActivationStateForName(jsonValue.GetString("ActivationState"));
-
     m_activationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

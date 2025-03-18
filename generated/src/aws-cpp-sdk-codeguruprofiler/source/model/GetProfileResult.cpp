@@ -16,33 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetProfileResult::GetProfileResult()
-{
-}
-
-GetProfileResult::GetProfileResult(GetProfileResult&& toMove) : 
-    m_contentEncoding(std::move(toMove.m_contentEncoding)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_profile(std::move(toMove.m_profile)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetProfileResult& GetProfileResult::operator=(GetProfileResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_contentEncoding = std::move(toMove.m_contentEncoding);
-   m_contentType = std::move(toMove.m_contentType);
-   m_profile = std::move(toMove.m_profile);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetProfileResult::GetProfileResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -51,24 +24,28 @@ GetProfileResult::GetProfileResult(Aws::AmazonWebServiceResult<ResponseStream>&&
 GetProfileResult& GetProfileResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_profile = result.TakeOwnershipOfPayload();
+  m_profileHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentEncodingIter = headers.find("content-encoding");
   if(contentEncodingIter != headers.end())
   {
     m_contentEncoding = contentEncodingIter->second;
+    m_contentEncodingHasBeenSet = true;
   }
 
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

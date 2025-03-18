@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEncryptionConfigurationResult::GetEncryptionConfigurationResult() : 
-    m_encryptionStatus(EncryptionStatus::NOT_SET),
-    m_encryptionType(EncryptionType::NOT_SET)
-{
-}
-
 GetEncryptionConfigurationResult::GetEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEncryptionConfigurationResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ GetEncryptionConfigurationResult& GetEncryptionConfigurationResult::operator =(c
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionStatus"))
   {
     m_encryptionStatus = EncryptionStatusMapper::GetEncryptionStatusForName(jsonValue.GetString("encryptionStatus"));
-
+    m_encryptionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
+    m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
-
+    m_lastModificationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

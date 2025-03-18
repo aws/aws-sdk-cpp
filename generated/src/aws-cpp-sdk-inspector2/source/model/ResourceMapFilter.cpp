@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ResourceMapFilter::ResourceMapFilter() : 
-    m_comparison(ResourceMapComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ResourceMapFilter::ResourceMapFilter(JsonView jsonValue)
-  : ResourceMapFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceMapFilter& ResourceMapFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = ResourceMapComparisonMapper::GetResourceMapComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

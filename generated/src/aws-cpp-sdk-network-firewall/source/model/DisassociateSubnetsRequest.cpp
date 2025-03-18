@@ -12,14 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateSubnetsRequest::DisassociateSubnetsRequest() : 
-    m_updateTokenHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateSubnetsRequest::SerializePayload() const
 {
   JsonValue payload;

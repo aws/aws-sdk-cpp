@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAutoMLJobV2Request::DescribeAutoMLJobV2Request() : 
-    m_autoMLJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAutoMLJobV2Request::SerializePayload() const
 {
   JsonValue payload;

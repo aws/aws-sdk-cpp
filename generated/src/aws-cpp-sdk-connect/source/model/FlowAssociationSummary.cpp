@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-FlowAssociationSummary::FlowAssociationSummary() : 
-    m_resourceIdHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
-    m_resourceType(ListFlowAssociationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 FlowAssociationSummary::FlowAssociationSummary(JsonView jsonValue)
-  : FlowAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FlowAssociationSummary& FlowAssociationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowId"))
   {
     m_flowId = jsonValue.GetString("FlowId");
-
     m_flowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ListFlowAssociationResourceTypeMapper::GetListFlowAssociationResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

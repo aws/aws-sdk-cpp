@@ -29,7 +29,7 @@ namespace Model
   class SmpteTtDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API SmpteTtDestinationSettings();
+    AWS_MEDIALIVE_API SmpteTtDestinationSettings() = default;
     AWS_MEDIALIVE_API SmpteTtDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SmpteTtDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

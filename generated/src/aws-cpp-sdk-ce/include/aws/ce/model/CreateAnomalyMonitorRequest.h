@@ -23,7 +23,7 @@ namespace Model
   class CreateAnomalyMonitorRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API CreateAnomalyMonitorRequest();
+    AWS_COSTEXPLORER_API CreateAnomalyMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
-    inline const AnomalyMonitor& GetAnomalyMonitor() const{ return m_anomalyMonitor; }
+    inline const AnomalyMonitor& GetAnomalyMonitor() const { return m_anomalyMonitor; }
     inline bool AnomalyMonitorHasBeenSet() const { return m_anomalyMonitorHasBeenSet; }
-    inline void SetAnomalyMonitor(const AnomalyMonitor& value) { m_anomalyMonitorHasBeenSet = true; m_anomalyMonitor = value; }
-    inline void SetAnomalyMonitor(AnomalyMonitor&& value) { m_anomalyMonitorHasBeenSet = true; m_anomalyMonitor = std::move(value); }
-    inline CreateAnomalyMonitorRequest& WithAnomalyMonitor(const AnomalyMonitor& value) { SetAnomalyMonitor(value); return *this;}
-    inline CreateAnomalyMonitorRequest& WithAnomalyMonitor(AnomalyMonitor&& value) { SetAnomalyMonitor(std::move(value)); return *this;}
+    template<typename AnomalyMonitorT = AnomalyMonitor>
+    void SetAnomalyMonitor(AnomalyMonitorT&& value) { m_anomalyMonitorHasBeenSet = true; m_anomalyMonitor = std::forward<AnomalyMonitorT>(value); }
+    template<typename AnomalyMonitorT = AnomalyMonitor>
+    CreateAnomalyMonitorRequest& WithAnomalyMonitor(AnomalyMonitorT&& value) { SetAnomalyMonitor(std::forward<AnomalyMonitorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,14 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateAnomalyMonitorRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateAnomalyMonitorRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateAnomalyMonitorRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateAnomalyMonitorRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateAnomalyMonitorRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateAnomalyMonitorRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 

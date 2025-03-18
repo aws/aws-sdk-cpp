@@ -35,7 +35,7 @@ namespace Model
   class LocationAttributes
   {
   public:
-    AWS_GAMELIFT_API LocationAttributes();
+    AWS_GAMELIFT_API LocationAttributes() = default;
     AWS_GAMELIFT_API LocationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API LocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,25 @@ namespace Model
     /**
      * <p>A fleet location and its current life-cycle state.</p>
      */
-    inline const LocationState& GetLocationState() const{ return m_locationState; }
+    inline const LocationState& GetLocationState() const { return m_locationState; }
     inline bool LocationStateHasBeenSet() const { return m_locationStateHasBeenSet; }
-    inline void SetLocationState(const LocationState& value) { m_locationStateHasBeenSet = true; m_locationState = value; }
-    inline void SetLocationState(LocationState&& value) { m_locationStateHasBeenSet = true; m_locationState = std::move(value); }
-    inline LocationAttributes& WithLocationState(const LocationState& value) { SetLocationState(value); return *this;}
-    inline LocationAttributes& WithLocationState(LocationState&& value) { SetLocationState(std::move(value)); return *this;}
+    template<typename LocationStateT = LocationState>
+    void SetLocationState(LocationStateT&& value) { m_locationStateHasBeenSet = true; m_locationState = std::forward<LocationStateT>(value); }
+    template<typename LocationStateT = LocationState>
+    LocationAttributes& WithLocationState(LocationStateT&& value) { SetLocationState(std::forward<LocationStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of fleet actions that have been suspended in the fleet location.</p>
      */
-    inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
+    inline const Aws::Vector<FleetAction>& GetStoppedActions() const { return m_stoppedActions; }
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
-    inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
-    inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
-    inline LocationAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
-    inline LocationAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
-    inline LocationAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
-    inline LocationAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
+    template<typename StoppedActionsT = Aws::Vector<FleetAction>>
+    void SetStoppedActions(StoppedActionsT&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::forward<StoppedActionsT>(value); }
+    template<typename StoppedActionsT = Aws::Vector<FleetAction>>
+    LocationAttributes& WithStoppedActions(StoppedActionsT&& value) { SetStoppedActions(std::forward<StoppedActionsT>(value)); return *this;}
+    inline LocationAttributes& AddStoppedActions(FleetAction value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -74,12 +73,10 @@ namespace Model
      * <code>StartFleetActions</code> has been requested but the update has not yet
      * been completed for the location.</p>
      */
-    inline const LocationUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline LocationUpdateStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const LocationUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(LocationUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline LocationAttributes& WithUpdateStatus(const LocationUpdateStatus& value) { SetUpdateStatus(value); return *this;}
-    inline LocationAttributes& WithUpdateStatus(LocationUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(LocationUpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline LocationAttributes& WithUpdateStatus(LocationUpdateStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +86,7 @@ namespace Model
     Aws::Vector<FleetAction> m_stoppedActions;
     bool m_stoppedActionsHasBeenSet = false;
 
-    LocationUpdateStatus m_updateStatus;
+    LocationUpdateStatus m_updateStatus{LocationUpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
   };
 

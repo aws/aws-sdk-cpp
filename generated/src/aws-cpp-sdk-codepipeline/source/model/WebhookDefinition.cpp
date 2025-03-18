@@ -18,19 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-WebhookDefinition::WebhookDefinition() : 
-    m_nameHasBeenSet(false),
-    m_targetPipelineHasBeenSet(false),
-    m_targetActionHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_authentication(WebhookAuthenticationType::NOT_SET),
-    m_authenticationHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
-{
-}
-
 WebhookDefinition::WebhookDefinition(JsonView jsonValue)
-  : WebhookDefinition()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ WebhookDefinition& WebhookDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetPipeline"))
   {
     m_targetPipeline = jsonValue.GetString("targetPipeline");
-
     m_targetPipelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAction"))
   {
     m_targetAction = jsonValue.GetString("targetAction");
-
     m_targetActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
@@ -67,21 +49,16 @@ WebhookDefinition& WebhookDefinition::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = WebhookAuthenticationTypeMapper::GetWebhookAuthenticationTypeForName(jsonValue.GetString("authentication"));
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationConfiguration"))
   {
     m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
-
     m_authenticationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

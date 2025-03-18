@@ -18,15 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-UploadMetadata::UploadMetadata() : 
-    m_urlHasBeenSet(false),
-    m_urlExpiryHasBeenSet(false),
-    m_headersToIncludeHasBeenSet(false)
-{
-}
-
 UploadMetadata::UploadMetadata(JsonView jsonValue)
-  : UploadMetadata()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UploadMetadata& UploadMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UrlExpiry"))
   {
     m_urlExpiry = jsonValue.GetString("UrlExpiry");
-
     m_urlExpiryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeadersToInclude"))
   {
     Aws::Map<Aws::String, JsonView> headersToIncludeJsonMap = jsonValue.GetObject("HeadersToInclude").GetAllObjects();
@@ -56,7 +44,6 @@ UploadMetadata& UploadMetadata::operator =(JsonView jsonValue)
     }
     m_headersToIncludeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class PutScalingPolicyResult
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyResult();
+    AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyResult() = default;
     AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
      */
-    inline const Aws::String& GetPolicyARN() const{ return m_policyARN; }
-    inline void SetPolicyARN(const Aws::String& value) { m_policyARN = value; }
-    inline void SetPolicyARN(Aws::String&& value) { m_policyARN = std::move(value); }
-    inline void SetPolicyARN(const char* value) { m_policyARN.assign(value); }
-    inline PutScalingPolicyResult& WithPolicyARN(const Aws::String& value) { SetPolicyARN(value); return *this;}
-    inline PutScalingPolicyResult& WithPolicyARN(Aws::String&& value) { SetPolicyARN(std::move(value)); return *this;}
-    inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+    inline const Aws::String& GetPolicyARN() const { return m_policyARN; }
+    template<typename PolicyARNT = Aws::String>
+    void SetPolicyARN(PolicyARNT&& value) { m_policyARNHasBeenSet = true; m_policyARN = std::forward<PolicyARNT>(value); }
+    template<typename PolicyARNT = Aws::String>
+    PutScalingPolicyResult& WithPolicyARN(PolicyARNT&& value) { SetPolicyARN(std::forward<PolicyARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
      */
-    inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
-    inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarms = value; }
-    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarms = std::move(value); }
-    inline PutScalingPolicyResult& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
-    inline PutScalingPolicyResult& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
-    inline PutScalingPolicyResult& AddAlarms(const Alarm& value) { m_alarms.push_back(value); return *this; }
-    inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Alarm>& GetAlarms() const { return m_alarms; }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    PutScalingPolicyResult& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
+    template<typename AlarmsT = Alarm>
+    PutScalingPolicyResult& AddAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms.emplace_back(std::forward<AlarmsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutScalingPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutScalingPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutScalingPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutScalingPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyARN;
+    bool m_policyARNHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
+    bool m_alarmsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

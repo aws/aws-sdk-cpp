@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWebhookRequest::DeleteWebhookRequest() : 
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWebhookRequest::SerializePayload() const
 {
   JsonValue payload;

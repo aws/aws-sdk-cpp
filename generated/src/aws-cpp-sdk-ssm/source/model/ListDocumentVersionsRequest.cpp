@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDocumentVersionsRequest::ListDocumentVersionsRequest() : 
-    m_nameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDocumentVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

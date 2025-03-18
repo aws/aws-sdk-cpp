@@ -34,7 +34,7 @@ namespace Model
   class EventSubscription
   {
   public:
-    AWS_RESILIENCEHUB_API EventSubscription();
+    AWS_RESILIENCEHUB_API EventSubscription() = default;
     AWS_RESILIENCEHUB_API EventSubscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
      * (<code>DriftDetected</code>) and <b>Scheduled assessment failure</b>
      * (<code>ScheduledAssessmentFailure</code>) events.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline EventSubscription& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline EventSubscription& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline EventSubscription& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique name to identify an event subscription.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EventSubscription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EventSubscription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EventSubscription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EventSubscription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,18 +75,16 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline EventSubscription& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline EventSubscription& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline EventSubscription& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    EventSubscription& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_name;

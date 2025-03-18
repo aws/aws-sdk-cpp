@@ -32,7 +32,7 @@ namespace Model
   class EngineWorkflowResourceIdentifier
   {
   public:
-    AWS_SERVICECATALOG_API EngineWorkflowResourceIdentifier();
+    AWS_SERVICECATALOG_API EngineWorkflowResourceIdentifier() = default;
     AWS_SERVICECATALOG_API EngineWorkflowResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API EngineWorkflowResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The unique key-value pair for a tag that identifies provisioned product
      * resources. </p>
      */
-    inline const UniqueTagResourceIdentifier& GetUniqueTag() const{ return m_uniqueTag; }
+    inline const UniqueTagResourceIdentifier& GetUniqueTag() const { return m_uniqueTag; }
     inline bool UniqueTagHasBeenSet() const { return m_uniqueTagHasBeenSet; }
-    inline void SetUniqueTag(const UniqueTagResourceIdentifier& value) { m_uniqueTagHasBeenSet = true; m_uniqueTag = value; }
-    inline void SetUniqueTag(UniqueTagResourceIdentifier&& value) { m_uniqueTagHasBeenSet = true; m_uniqueTag = std::move(value); }
-    inline EngineWorkflowResourceIdentifier& WithUniqueTag(const UniqueTagResourceIdentifier& value) { SetUniqueTag(value); return *this;}
-    inline EngineWorkflowResourceIdentifier& WithUniqueTag(UniqueTagResourceIdentifier&& value) { SetUniqueTag(std::move(value)); return *this;}
+    template<typename UniqueTagT = UniqueTagResourceIdentifier>
+    void SetUniqueTag(UniqueTagT&& value) { m_uniqueTagHasBeenSet = true; m_uniqueTag = std::forward<UniqueTagT>(value); }
+    template<typename UniqueTagT = UniqueTagResourceIdentifier>
+    EngineWorkflowResourceIdentifier& WithUniqueTag(UniqueTagT&& value) { SetUniqueTag(std::forward<UniqueTagT>(value)); return *this;}
     ///@}
   private:
 

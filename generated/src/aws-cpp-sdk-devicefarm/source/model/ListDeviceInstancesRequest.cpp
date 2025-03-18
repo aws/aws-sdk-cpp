@@ -12,13 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeviceInstancesRequest::ListDeviceInstancesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDeviceInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

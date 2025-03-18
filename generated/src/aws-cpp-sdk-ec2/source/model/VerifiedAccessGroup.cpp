@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessGroup::VerifiedAccessGroup() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_verifiedAccessGroupArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
-{
-}
-
 VerifiedAccessGroup::VerifiedAccessGroup(const XmlNode& xmlNode)
-  : VerifiedAccessGroup()
 {
   *this = xmlNode;
 }
@@ -98,6 +83,7 @@ VerifiedAccessGroup& VerifiedAccessGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

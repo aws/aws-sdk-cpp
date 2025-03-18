@@ -19,7 +19,7 @@ namespace Model
   class DescribeRegionSettingsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DescribeRegionSettingsRequest();
+    AWS_BACKUP_API DescribeRegionSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

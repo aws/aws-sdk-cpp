@@ -22,7 +22,7 @@ namespace Model
   class GetColumnStatisticsForTableRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetColumnStatisticsForTableRequest();
+    AWS_GLUE_API GetColumnStatisticsForTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,57 +40,50 @@ namespace Model
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
      * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline GetColumnStatisticsForTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    GetColumnStatisticsForTableRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the catalog database where the partitions reside.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline GetColumnStatisticsForTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    GetColumnStatisticsForTableRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the partitions' table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline GetColumnStatisticsForTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    GetColumnStatisticsForTableRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the column names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumnNames() const{ return m_columnNames; }
+    inline const Aws::Vector<Aws::String>& GetColumnNames() const { return m_columnNames; }
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
-    inline void SetColumnNames(const Aws::Vector<Aws::String>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
-    inline void SetColumnNames(Aws::Vector<Aws::String>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
-    inline GetColumnStatisticsForTableRequest& WithColumnNames(const Aws::Vector<Aws::String>& value) { SetColumnNames(value); return *this;}
-    inline GetColumnStatisticsForTableRequest& WithColumnNames(Aws::Vector<Aws::String>&& value) { SetColumnNames(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableRequest& AddColumnNames(const Aws::String& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
-    inline GetColumnStatisticsForTableRequest& AddColumnNames(Aws::String&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
-    inline GetColumnStatisticsForTableRequest& AddColumnNames(const char* value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    void SetColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::forward<ColumnNamesT>(value); }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    GetColumnStatisticsForTableRequest& WithColumnNames(ColumnNamesT&& value) { SetColumnNames(std::forward<ColumnNamesT>(value)); return *this;}
+    template<typename ColumnNamesT = Aws::String>
+    GetColumnStatisticsForTableRequest& AddColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames.emplace_back(std::forward<ColumnNamesT>(value)); return *this; }
     ///@}
   private:
 

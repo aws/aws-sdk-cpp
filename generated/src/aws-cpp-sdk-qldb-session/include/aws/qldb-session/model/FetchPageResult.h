@@ -33,7 +33,7 @@ namespace Model
   class FetchPageResult
   {
   public:
-    AWS_QLDBSESSION_API FetchPageResult();
+    AWS_QLDBSESSION_API FetchPageResult() = default;
     AWS_QLDBSESSION_API FetchPageResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API FetchPageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>Contains details of the fetched page.</p>
      */
-    inline const Page& GetPage() const{ return m_page; }
+    inline const Page& GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-    inline void SetPage(const Page& value) { m_pageHasBeenSet = true; m_page = value; }
-    inline void SetPage(Page&& value) { m_pageHasBeenSet = true; m_page = std::move(value); }
-    inline FetchPageResult& WithPage(const Page& value) { SetPage(value); return *this;}
-    inline FetchPageResult& WithPage(Page&& value) { SetPage(std::move(value)); return *this;}
+    template<typename PageT = Page>
+    void SetPage(PageT&& value) { m_pageHasBeenSet = true; m_page = std::forward<PageT>(value); }
+    template<typename PageT = Page>
+    FetchPageResult& WithPage(PageT&& value) { SetPage(std::forward<PageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains server-side performance information for the command.</p>
      */
-    inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
+    inline const TimingInformation& GetTimingInformation() const { return m_timingInformation; }
     inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
-    inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
-    inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
-    inline FetchPageResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
-    inline FetchPageResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+    template<typename TimingInformationT = TimingInformation>
+    void SetTimingInformation(TimingInformationT&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::forward<TimingInformationT>(value); }
+    template<typename TimingInformationT = TimingInformation>
+    FetchPageResult& WithTimingInformation(TimingInformationT&& value) { SetTimingInformation(std::forward<TimingInformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains metrics about the number of I/O requests that were consumed.</p>
      */
-    inline const IOUsage& GetConsumedIOs() const{ return m_consumedIOs; }
+    inline const IOUsage& GetConsumedIOs() const { return m_consumedIOs; }
     inline bool ConsumedIOsHasBeenSet() const { return m_consumedIOsHasBeenSet; }
-    inline void SetConsumedIOs(const IOUsage& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = value; }
-    inline void SetConsumedIOs(IOUsage&& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = std::move(value); }
-    inline FetchPageResult& WithConsumedIOs(const IOUsage& value) { SetConsumedIOs(value); return *this;}
-    inline FetchPageResult& WithConsumedIOs(IOUsage&& value) { SetConsumedIOs(std::move(value)); return *this;}
+    template<typename ConsumedIOsT = IOUsage>
+    void SetConsumedIOs(ConsumedIOsT&& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = std::forward<ConsumedIOsT>(value); }
+    template<typename ConsumedIOsT = IOUsage>
+    FetchPageResult& WithConsumedIOs(ConsumedIOsT&& value) { SetConsumedIOs(std::forward<ConsumedIOsT>(value)); return *this;}
     ///@}
   private:
 

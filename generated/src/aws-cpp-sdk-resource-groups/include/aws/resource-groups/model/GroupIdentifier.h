@@ -31,7 +31,7 @@ namespace Model
   class GroupIdentifier
   {
   public:
-    AWS_RESOURCEGROUPS_API GroupIdentifier();
+    AWS_RESOURCEGROUPS_API GroupIdentifier() = default;
     AWS_RESOURCEGROUPS_API GroupIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API GroupIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline GroupIdentifier& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GroupIdentifier& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GroupIdentifier& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GroupIdentifier& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon resource name (ARN) of the resource group.</p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-    inline GroupIdentifier& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline GroupIdentifier& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline GroupIdentifier& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    GroupIdentifier& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the application group. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline GroupIdentifier& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GroupIdentifier& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GroupIdentifier& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GroupIdentifier& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +78,7 @@ namespace Model
      * <p>The critical rank of the application group on a scale of 1 to 10, with a rank
      * of 1 being the most critical, and a rank of 10 being least critical.</p>
      */
-    inline int GetCriticality() const{ return m_criticality; }
+    inline int GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
     inline GroupIdentifier& WithCriticality(int value) { SetCriticality(value); return *this;}
@@ -95,28 +89,24 @@ namespace Model
      * <p>A name, email address or other identifier for the person or group who is
      * considered as the owner of this group within your organization. </p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline GroupIdentifier& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline GroupIdentifier& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline GroupIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    GroupIdentifier& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application group, which you can change at any time. </p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline GroupIdentifier& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GroupIdentifier& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GroupIdentifier& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    GroupIdentifier& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,7 +119,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_criticality;
+    int m_criticality{0};
     bool m_criticalityHasBeenSet = false;
 
     Aws::String m_owner;

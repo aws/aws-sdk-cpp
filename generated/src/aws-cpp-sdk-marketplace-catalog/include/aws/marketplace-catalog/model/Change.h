@@ -36,7 +36,7 @@ namespace Model
   class Change
   {
   public:
-    AWS_MARKETPLACECATALOG_API Change();
+    AWS_MARKETPLACECATALOG_API Change() = default;
     AWS_MARKETPLACECATALOG_API Change(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Change& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,40 +54,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
      */
-    inline const Aws::String& GetChangeType() const{ return m_changeType; }
+    inline const Aws::String& GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const Aws::String& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(Aws::String&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline void SetChangeType(const char* value) { m_changeTypeHasBeenSet = true; m_changeType.assign(value); }
-    inline Change& WithChangeType(const Aws::String& value) { SetChangeType(value); return *this;}
-    inline Change& WithChangeType(Aws::String&& value) { SetChangeType(std::move(value)); return *this;}
-    inline Change& WithChangeType(const char* value) { SetChangeType(value); return *this;}
+    template<typename ChangeTypeT = Aws::String>
+    void SetChangeType(ChangeTypeT&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::forward<ChangeTypeT>(value); }
+    template<typename ChangeTypeT = Aws::String>
+    Change& WithChangeType(ChangeTypeT&& value) { SetChangeType(std::forward<ChangeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity to be changed.</p>
      */
-    inline const Entity& GetEntity() const{ return m_entity; }
+    inline const Entity& GetEntity() const { return m_entity; }
     inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }
-    inline void SetEntity(const Entity& value) { m_entityHasBeenSet = true; m_entity = value; }
-    inline void SetEntity(Entity&& value) { m_entityHasBeenSet = true; m_entity = std::move(value); }
-    inline Change& WithEntity(const Entity& value) { SetEntity(value); return *this;}
-    inline Change& WithEntity(Entity&& value) { SetEntity(std::move(value)); return *this;}
+    template<typename EntityT = Entity>
+    void SetEntity(EntityT&& value) { m_entityHasBeenSet = true; m_entity = std::forward<EntityT>(value); }
+    template<typename EntityT = Entity>
+    Change& WithEntity(EntityT&& value) { SetEntity(std::forward<EntityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the change.</p>
      */
-    inline const Aws::Vector<Tag>& GetEntityTags() const{ return m_entityTags; }
+    inline const Aws::Vector<Tag>& GetEntityTags() const { return m_entityTags; }
     inline bool EntityTagsHasBeenSet() const { return m_entityTagsHasBeenSet; }
-    inline void SetEntityTags(const Aws::Vector<Tag>& value) { m_entityTagsHasBeenSet = true; m_entityTags = value; }
-    inline void SetEntityTags(Aws::Vector<Tag>&& value) { m_entityTagsHasBeenSet = true; m_entityTags = std::move(value); }
-    inline Change& WithEntityTags(const Aws::Vector<Tag>& value) { SetEntityTags(value); return *this;}
-    inline Change& WithEntityTags(Aws::Vector<Tag>&& value) { SetEntityTags(std::move(value)); return *this;}
-    inline Change& AddEntityTags(const Tag& value) { m_entityTagsHasBeenSet = true; m_entityTags.push_back(value); return *this; }
-    inline Change& AddEntityTags(Tag&& value) { m_entityTagsHasBeenSet = true; m_entityTags.push_back(std::move(value)); return *this; }
+    template<typename EntityTagsT = Aws::Vector<Tag>>
+    void SetEntityTags(EntityTagsT&& value) { m_entityTagsHasBeenSet = true; m_entityTags = std::forward<EntityTagsT>(value); }
+    template<typename EntityTagsT = Aws::Vector<Tag>>
+    Change& WithEntityTags(EntityTagsT&& value) { SetEntityTags(std::forward<EntityTagsT>(value)); return *this;}
+    template<typename EntityTagsT = Tag>
+    Change& AddEntityTags(EntityTagsT&& value) { m_entityTagsHasBeenSet = true; m_entityTags.emplace_back(std::forward<EntityTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +99,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline Change& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline Change& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline Change& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    Change& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,26 +113,24 @@ namespace Model
      * <code>ChangeType</code> details. You can use either <code>Details</code> or
      * <code>DetailsDocument</code>, but not both.</p>
      */
-    inline Aws::Utils::DocumentView GetDetailsDocument() const{ return m_detailsDocument; }
+    inline Aws::Utils::DocumentView GetDetailsDocument() const { return m_detailsDocument; }
     inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }
-    inline void SetDetailsDocument(const Aws::Utils::Document& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = value; }
-    inline void SetDetailsDocument(Aws::Utils::Document&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::move(value); }
-    inline Change& WithDetailsDocument(const Aws::Utils::Document& value) { SetDetailsDocument(value); return *this;}
-    inline Change& WithDetailsDocument(Aws::Utils::Document&& value) { SetDetailsDocument(std::move(value)); return *this;}
+    template<typename DetailsDocumentT = Aws::Utils::Document>
+    void SetDetailsDocument(DetailsDocumentT&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::forward<DetailsDocumentT>(value); }
+    template<typename DetailsDocumentT = Aws::Utils::Document>
+    Change& WithDetailsDocument(DetailsDocumentT&& value) { SetDetailsDocument(std::forward<DetailsDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional name for the change.</p>
      */
-    inline const Aws::String& GetChangeName() const{ return m_changeName; }
+    inline const Aws::String& GetChangeName() const { return m_changeName; }
     inline bool ChangeNameHasBeenSet() const { return m_changeNameHasBeenSet; }
-    inline void SetChangeName(const Aws::String& value) { m_changeNameHasBeenSet = true; m_changeName = value; }
-    inline void SetChangeName(Aws::String&& value) { m_changeNameHasBeenSet = true; m_changeName = std::move(value); }
-    inline void SetChangeName(const char* value) { m_changeNameHasBeenSet = true; m_changeName.assign(value); }
-    inline Change& WithChangeName(const Aws::String& value) { SetChangeName(value); return *this;}
-    inline Change& WithChangeName(Aws::String&& value) { SetChangeName(std::move(value)); return *this;}
-    inline Change& WithChangeName(const char* value) { SetChangeName(value); return *this;}
+    template<typename ChangeNameT = Aws::String>
+    void SetChangeName(ChangeNameT&& value) { m_changeNameHasBeenSet = true; m_changeName = std::forward<ChangeNameT>(value); }
+    template<typename ChangeNameT = Aws::String>
+    Change& WithChangeName(ChangeNameT&& value) { SetChangeName(std::forward<ChangeNameT>(value)); return *this;}
     ///@}
   private:
 

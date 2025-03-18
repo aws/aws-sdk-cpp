@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult() : 
-    m_status(0)
-{
-}
-
 DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeIAMPolicyAssignmentResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeIAMPolicyAssignmentResult& DescribeIAMPolicyAssignmentResult::operator =
   if(jsonValue.ValueExists("IAMPolicyAssignment"))
   {
     m_iAMPolicyAssignment = jsonValue.GetObject("IAMPolicyAssignment");
-
+    m_iAMPolicyAssignmentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

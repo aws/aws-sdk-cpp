@@ -21,7 +21,7 @@ namespace Model
   class DescribePublisherRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribePublisherRequest();
+    AWS_CLOUDFORMATION_API DescribePublisherRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>DescribePublisher</code> returns information about your own publisher
      * account.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-    inline DescribePublisherRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline DescribePublisherRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline DescribePublisherRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    DescribePublisherRequest& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
   private:
 

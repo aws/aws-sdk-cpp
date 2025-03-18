@@ -30,7 +30,7 @@ namespace Model
   class GetSpotPlacementScoresResponse
   {
   public:
-    AWS_EC2_API GetSpotPlacementScoresResponse();
+    AWS_EC2_API GetSpotPlacementScoresResponse() = default;
     AWS_EC2_API GetSpotPlacementScoresResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetSpotPlacementScoresResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -53,13 +53,13 @@ namespace Model
      * Spot placement score serves as a recommendation only. No score guarantees that
      * your Spot request will be fully or partially fulfilled.</p> 
      */
-    inline const Aws::Vector<SpotPlacementScore>& GetSpotPlacementScores() const{ return m_spotPlacementScores; }
-    inline void SetSpotPlacementScores(const Aws::Vector<SpotPlacementScore>& value) { m_spotPlacementScores = value; }
-    inline void SetSpotPlacementScores(Aws::Vector<SpotPlacementScore>&& value) { m_spotPlacementScores = std::move(value); }
-    inline GetSpotPlacementScoresResponse& WithSpotPlacementScores(const Aws::Vector<SpotPlacementScore>& value) { SetSpotPlacementScores(value); return *this;}
-    inline GetSpotPlacementScoresResponse& WithSpotPlacementScores(Aws::Vector<SpotPlacementScore>&& value) { SetSpotPlacementScores(std::move(value)); return *this;}
-    inline GetSpotPlacementScoresResponse& AddSpotPlacementScores(const SpotPlacementScore& value) { m_spotPlacementScores.push_back(value); return *this; }
-    inline GetSpotPlacementScoresResponse& AddSpotPlacementScores(SpotPlacementScore&& value) { m_spotPlacementScores.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SpotPlacementScore>& GetSpotPlacementScores() const { return m_spotPlacementScores; }
+    template<typename SpotPlacementScoresT = Aws::Vector<SpotPlacementScore>>
+    void SetSpotPlacementScores(SpotPlacementScoresT&& value) { m_spotPlacementScoresHasBeenSet = true; m_spotPlacementScores = std::forward<SpotPlacementScoresT>(value); }
+    template<typename SpotPlacementScoresT = Aws::Vector<SpotPlacementScore>>
+    GetSpotPlacementScoresResponse& WithSpotPlacementScores(SpotPlacementScoresT&& value) { SetSpotPlacementScores(std::forward<SpotPlacementScoresT>(value)); return *this;}
+    template<typename SpotPlacementScoresT = SpotPlacementScore>
+    GetSpotPlacementScoresResponse& AddSpotPlacementScores(SpotPlacementScoresT&& value) { m_spotPlacementScoresHasBeenSet = true; m_spotPlacementScores.emplace_back(std::forward<SpotPlacementScoresT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,30 +67,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetSpotPlacementScoresResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSpotPlacementScoresResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSpotPlacementScoresResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSpotPlacementScoresResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetSpotPlacementScoresResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetSpotPlacementScoresResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetSpotPlacementScoresResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SpotPlacementScore> m_spotPlacementScores;
+    bool m_spotPlacementScoresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

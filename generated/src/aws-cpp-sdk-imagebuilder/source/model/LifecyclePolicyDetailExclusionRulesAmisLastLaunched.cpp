@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecyclePolicyDetailExclusionRulesAmisLastLaunched::LifecyclePolicyDetailExclusionRulesAmisLastLaunched() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(LifecyclePolicyTimeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 LifecyclePolicyDetailExclusionRulesAmisLastLaunched::LifecyclePolicyDetailExclusionRulesAmisLastLaunched(JsonView jsonValue)
-  : LifecyclePolicyDetailExclusionRulesAmisLastLaunched()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LifecyclePolicyDetailExclusionRulesAmisLastLaunched& LifecyclePolicyDetailExclus
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = LifecyclePolicyTimeUnitMapper::GetLifecyclePolicyTimeUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

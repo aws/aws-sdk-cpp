@@ -21,7 +21,7 @@ namespace Model
   class GetInsightRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API GetInsightRequest();
+    AWS_XRAY_API GetInsightRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The insight's unique identifier. Use the GetInsightSummaries action to
      * retrieve an InsightId.</p>
      */
-    inline const Aws::String& GetInsightId() const{ return m_insightId; }
+    inline const Aws::String& GetInsightId() const { return m_insightId; }
     inline bool InsightIdHasBeenSet() const { return m_insightIdHasBeenSet; }
-    inline void SetInsightId(const Aws::String& value) { m_insightIdHasBeenSet = true; m_insightId = value; }
-    inline void SetInsightId(Aws::String&& value) { m_insightIdHasBeenSet = true; m_insightId = std::move(value); }
-    inline void SetInsightId(const char* value) { m_insightIdHasBeenSet = true; m_insightId.assign(value); }
-    inline GetInsightRequest& WithInsightId(const Aws::String& value) { SetInsightId(value); return *this;}
-    inline GetInsightRequest& WithInsightId(Aws::String&& value) { SetInsightId(std::move(value)); return *this;}
-    inline GetInsightRequest& WithInsightId(const char* value) { SetInsightId(value); return *this;}
+    template<typename InsightIdT = Aws::String>
+    void SetInsightId(InsightIdT&& value) { m_insightIdHasBeenSet = true; m_insightId = std::forward<InsightIdT>(value); }
+    template<typename InsightIdT = Aws::String>
+    GetInsightRequest& WithInsightId(InsightIdT&& value) { SetInsightId(std::forward<InsightIdT>(value)); return *this;}
     ///@}
   private:
 

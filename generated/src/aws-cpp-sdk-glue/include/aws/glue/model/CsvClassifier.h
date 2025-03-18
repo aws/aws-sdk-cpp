@@ -36,7 +36,7 @@ namespace Model
   class CsvClassifier
   {
   public:
-    AWS_GLUE_API CsvClassifier();
+    AWS_GLUE_API CsvClassifier() = default;
     AWS_GLUE_API CsvClassifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CsvClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,45 +46,43 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CsvClassifier& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CsvClassifier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CsvClassifier& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CsvClassifier& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that this classifier was registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline CsvClassifier& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline CsvClassifier& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    CsvClassifier& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that this classifier was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline CsvClassifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline CsvClassifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    CsvClassifier& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of this classifier.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline CsvClassifier& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -94,14 +92,12 @@ namespace Model
     /**
      * <p>A custom symbol to denote what separates each column entry in the row.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline CsvClassifier& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline CsvClassifier& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline CsvClassifier& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    CsvClassifier& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,41 +105,36 @@ namespace Model
      * <p>A custom symbol to denote what combines content into a single column value.
      * It must be different from the column delimiter.</p>
      */
-    inline const Aws::String& GetQuoteSymbol() const{ return m_quoteSymbol; }
+    inline const Aws::String& GetQuoteSymbol() const { return m_quoteSymbol; }
     inline bool QuoteSymbolHasBeenSet() const { return m_quoteSymbolHasBeenSet; }
-    inline void SetQuoteSymbol(const Aws::String& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = value; }
-    inline void SetQuoteSymbol(Aws::String&& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = std::move(value); }
-    inline void SetQuoteSymbol(const char* value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol.assign(value); }
-    inline CsvClassifier& WithQuoteSymbol(const Aws::String& value) { SetQuoteSymbol(value); return *this;}
-    inline CsvClassifier& WithQuoteSymbol(Aws::String&& value) { SetQuoteSymbol(std::move(value)); return *this;}
-    inline CsvClassifier& WithQuoteSymbol(const char* value) { SetQuoteSymbol(value); return *this;}
+    template<typename QuoteSymbolT = Aws::String>
+    void SetQuoteSymbol(QuoteSymbolT&& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = std::forward<QuoteSymbolT>(value); }
+    template<typename QuoteSymbolT = Aws::String>
+    CsvClassifier& WithQuoteSymbol(QuoteSymbolT&& value) { SetQuoteSymbol(std::forward<QuoteSymbolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the CSV file contains a header.</p>
      */
-    inline const CsvHeaderOption& GetContainsHeader() const{ return m_containsHeader; }
+    inline CsvHeaderOption GetContainsHeader() const { return m_containsHeader; }
     inline bool ContainsHeaderHasBeenSet() const { return m_containsHeaderHasBeenSet; }
-    inline void SetContainsHeader(const CsvHeaderOption& value) { m_containsHeaderHasBeenSet = true; m_containsHeader = value; }
-    inline void SetContainsHeader(CsvHeaderOption&& value) { m_containsHeaderHasBeenSet = true; m_containsHeader = std::move(value); }
-    inline CsvClassifier& WithContainsHeader(const CsvHeaderOption& value) { SetContainsHeader(value); return *this;}
-    inline CsvClassifier& WithContainsHeader(CsvHeaderOption&& value) { SetContainsHeader(std::move(value)); return *this;}
+    inline void SetContainsHeader(CsvHeaderOption value) { m_containsHeaderHasBeenSet = true; m_containsHeader = value; }
+    inline CsvClassifier& WithContainsHeader(CsvHeaderOption value) { SetContainsHeader(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of strings representing column names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHeader() const{ return m_header; }
+    inline const Aws::Vector<Aws::String>& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Aws::Vector<Aws::String>& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Aws::Vector<Aws::String>&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline CsvClassifier& WithHeader(const Aws::Vector<Aws::String>& value) { SetHeader(value); return *this;}
-    inline CsvClassifier& WithHeader(Aws::Vector<Aws::String>&& value) { SetHeader(std::move(value)); return *this;}
-    inline CsvClassifier& AddHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header.push_back(value); return *this; }
-    inline CsvClassifier& AddHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header.push_back(std::move(value)); return *this; }
-    inline CsvClassifier& AddHeader(const char* value) { m_headerHasBeenSet = true; m_header.push_back(value); return *this; }
+    template<typename HeaderT = Aws::Vector<Aws::String>>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Aws::Vector<Aws::String>>
+    CsvClassifier& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
+    template<typename HeaderT = Aws::String>
+    CsvClassifier& AddHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header.emplace_back(std::forward<HeaderT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,7 +142,7 @@ namespace Model
      * <p>Specifies not to trim values before identifying the type of column values.
      * The default value is <code>true</code>.</p>
      */
-    inline bool GetDisableValueTrimming() const{ return m_disableValueTrimming; }
+    inline bool GetDisableValueTrimming() const { return m_disableValueTrimming; }
     inline bool DisableValueTrimmingHasBeenSet() const { return m_disableValueTrimmingHasBeenSet; }
     inline void SetDisableValueTrimming(bool value) { m_disableValueTrimmingHasBeenSet = true; m_disableValueTrimming = value; }
     inline CsvClassifier& WithDisableValueTrimming(bool value) { SetDisableValueTrimming(value); return *this;}
@@ -161,7 +152,7 @@ namespace Model
     /**
      * <p>Enables the processing of files that contain only one column.</p>
      */
-    inline bool GetAllowSingleColumn() const{ return m_allowSingleColumn; }
+    inline bool GetAllowSingleColumn() const { return m_allowSingleColumn; }
     inline bool AllowSingleColumnHasBeenSet() const { return m_allowSingleColumnHasBeenSet; }
     inline void SetAllowSingleColumn(bool value) { m_allowSingleColumnHasBeenSet = true; m_allowSingleColumn = value; }
     inline CsvClassifier& WithAllowSingleColumn(bool value) { SetAllowSingleColumn(value); return *this;}
@@ -171,7 +162,7 @@ namespace Model
     /**
      * <p>Enables the custom datatype to be configured.</p>
      */
-    inline bool GetCustomDatatypeConfigured() const{ return m_customDatatypeConfigured; }
+    inline bool GetCustomDatatypeConfigured() const { return m_customDatatypeConfigured; }
     inline bool CustomDatatypeConfiguredHasBeenSet() const { return m_customDatatypeConfiguredHasBeenSet; }
     inline void SetCustomDatatypeConfigured(bool value) { m_customDatatypeConfiguredHasBeenSet = true; m_customDatatypeConfigured = value; }
     inline CsvClassifier& WithCustomDatatypeConfigured(bool value) { SetCustomDatatypeConfigured(value); return *this;}
@@ -182,15 +173,14 @@ namespace Model
      * <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL",
      * "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomDatatypes() const{ return m_customDatatypes; }
+    inline const Aws::Vector<Aws::String>& GetCustomDatatypes() const { return m_customDatatypes; }
     inline bool CustomDatatypesHasBeenSet() const { return m_customDatatypesHasBeenSet; }
-    inline void SetCustomDatatypes(const Aws::Vector<Aws::String>& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = value; }
-    inline void SetCustomDatatypes(Aws::Vector<Aws::String>&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = std::move(value); }
-    inline CsvClassifier& WithCustomDatatypes(const Aws::Vector<Aws::String>& value) { SetCustomDatatypes(value); return *this;}
-    inline CsvClassifier& WithCustomDatatypes(Aws::Vector<Aws::String>&& value) { SetCustomDatatypes(std::move(value)); return *this;}
-    inline CsvClassifier& AddCustomDatatypes(const Aws::String& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
-    inline CsvClassifier& AddCustomDatatypes(Aws::String&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(std::move(value)); return *this; }
-    inline CsvClassifier& AddCustomDatatypes(const char* value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
+    template<typename CustomDatatypesT = Aws::Vector<Aws::String>>
+    void SetCustomDatatypes(CustomDatatypesT&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = std::forward<CustomDatatypesT>(value); }
+    template<typename CustomDatatypesT = Aws::Vector<Aws::String>>
+    CsvClassifier& WithCustomDatatypes(CustomDatatypesT&& value) { SetCustomDatatypes(std::forward<CustomDatatypesT>(value)); return *this;}
+    template<typename CustomDatatypesT = Aws::String>
+    CsvClassifier& AddCustomDatatypes(CustomDatatypesT&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.emplace_back(std::forward<CustomDatatypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -200,25 +190,23 @@ namespace Model
      * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
      * <code>None</code> value when you want the crawler to do the detection.</p>
      */
-    inline const CsvSerdeOption& GetSerde() const{ return m_serde; }
+    inline CsvSerdeOption GetSerde() const { return m_serde; }
     inline bool SerdeHasBeenSet() const { return m_serdeHasBeenSet; }
-    inline void SetSerde(const CsvSerdeOption& value) { m_serdeHasBeenSet = true; m_serde = value; }
-    inline void SetSerde(CsvSerdeOption&& value) { m_serdeHasBeenSet = true; m_serde = std::move(value); }
-    inline CsvClassifier& WithSerde(const CsvSerdeOption& value) { SetSerde(value); return *this;}
-    inline CsvClassifier& WithSerde(CsvSerdeOption&& value) { SetSerde(std::move(value)); return *this;}
+    inline void SetSerde(CsvSerdeOption value) { m_serdeHasBeenSet = true; m_serde = value; }
+    inline CsvClassifier& WithSerde(CsvSerdeOption value) { SetSerde(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
 
     Aws::String m_delimiter;
@@ -227,25 +215,25 @@ namespace Model
     Aws::String m_quoteSymbol;
     bool m_quoteSymbolHasBeenSet = false;
 
-    CsvHeaderOption m_containsHeader;
+    CsvHeaderOption m_containsHeader{CsvHeaderOption::NOT_SET};
     bool m_containsHeaderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_header;
     bool m_headerHasBeenSet = false;
 
-    bool m_disableValueTrimming;
+    bool m_disableValueTrimming{false};
     bool m_disableValueTrimmingHasBeenSet = false;
 
-    bool m_allowSingleColumn;
+    bool m_allowSingleColumn{false};
     bool m_allowSingleColumnHasBeenSet = false;
 
-    bool m_customDatatypeConfigured;
+    bool m_customDatatypeConfigured{false};
     bool m_customDatatypeConfiguredHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customDatatypes;
     bool m_customDatatypesHasBeenSet = false;
 
-    CsvSerdeOption m_serde;
+    CsvSerdeOption m_serde{CsvSerdeOption::NOT_SET};
     bool m_serdeHasBeenSet = false;
   };
 

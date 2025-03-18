@@ -26,7 +26,7 @@ namespace Model
   class BatchGetDeploymentGroupsRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetDeploymentGroupsRequest();
+    AWS_CODEDEPLOY_API BatchGetDeploymentGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,29 +44,26 @@ namespace Model
      * <p>The name of an CodeDeploy application associated with the applicable user or
      * Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline BatchGetDeploymentGroupsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline BatchGetDeploymentGroupsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline BatchGetDeploymentGroupsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    BatchGetDeploymentGroupsRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The names of the deployment groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeploymentGroupNames() const{ return m_deploymentGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetDeploymentGroupNames() const { return m_deploymentGroupNames; }
     inline bool DeploymentGroupNamesHasBeenSet() const { return m_deploymentGroupNamesHasBeenSet; }
-    inline void SetDeploymentGroupNames(const Aws::Vector<Aws::String>& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames = value; }
-    inline void SetDeploymentGroupNames(Aws::Vector<Aws::String>&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames = std::move(value); }
-    inline BatchGetDeploymentGroupsRequest& WithDeploymentGroupNames(const Aws::Vector<Aws::String>& value) { SetDeploymentGroupNames(value); return *this;}
-    inline BatchGetDeploymentGroupsRequest& WithDeploymentGroupNames(Aws::Vector<Aws::String>&& value) { SetDeploymentGroupNames(std::move(value)); return *this;}
-    inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(const Aws::String& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(value); return *this; }
-    inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(Aws::String&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(std::move(value)); return *this; }
-    inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(const char* value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(value); return *this; }
+    template<typename DeploymentGroupNamesT = Aws::Vector<Aws::String>>
+    void SetDeploymentGroupNames(DeploymentGroupNamesT&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames = std::forward<DeploymentGroupNamesT>(value); }
+    template<typename DeploymentGroupNamesT = Aws::Vector<Aws::String>>
+    BatchGetDeploymentGroupsRequest& WithDeploymentGroupNames(DeploymentGroupNamesT&& value) { SetDeploymentGroupNames(std::forward<DeploymentGroupNamesT>(value)); return *this;}
+    template<typename DeploymentGroupNamesT = Aws::String>
+    BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(DeploymentGroupNamesT&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.emplace_back(std::forward<DeploymentGroupNamesT>(value)); return *this; }
     ///@}
   private:
 

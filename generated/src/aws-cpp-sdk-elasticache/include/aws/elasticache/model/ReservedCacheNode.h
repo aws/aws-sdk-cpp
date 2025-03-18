@@ -35,7 +35,7 @@ namespace Model
   class ReservedCacheNode
   {
   public:
-    AWS_ELASTICACHE_API ReservedCacheNode();
+    AWS_ELASTICACHE_API ReservedCacheNode() = default;
     AWS_ELASTICACHE_API ReservedCacheNode(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API ReservedCacheNode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
-    inline const Aws::String& GetReservedCacheNodeId() const{ return m_reservedCacheNodeId; }
+    inline const Aws::String& GetReservedCacheNodeId() const { return m_reservedCacheNodeId; }
     inline bool ReservedCacheNodeIdHasBeenSet() const { return m_reservedCacheNodeIdHasBeenSet; }
-    inline void SetReservedCacheNodeId(const Aws::String& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
-    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
-    inline void SetReservedCacheNodeId(const char* value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId.assign(value); }
-    inline ReservedCacheNode& WithReservedCacheNodeId(const Aws::String& value) { SetReservedCacheNodeId(value); return *this;}
-    inline ReservedCacheNode& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}
+    template<typename ReservedCacheNodeIdT = Aws::String>
+    void SetReservedCacheNodeId(ReservedCacheNodeIdT&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::forward<ReservedCacheNodeIdT>(value); }
+    template<typename ReservedCacheNodeIdT = Aws::String>
+    ReservedCacheNode& WithReservedCacheNodeId(ReservedCacheNodeIdT&& value) { SetReservedCacheNodeId(std::forward<ReservedCacheNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The offering identifier.</p>
      */
-    inline const Aws::String& GetReservedCacheNodesOfferingId() const{ return m_reservedCacheNodesOfferingId; }
+    inline const Aws::String& GetReservedCacheNodesOfferingId() const { return m_reservedCacheNodesOfferingId; }
     inline bool ReservedCacheNodesOfferingIdHasBeenSet() const { return m_reservedCacheNodesOfferingIdHasBeenSet; }
-    inline void SetReservedCacheNodesOfferingId(const Aws::String& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
-    inline void SetReservedCacheNodesOfferingId(const char* value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId.assign(value); }
-    inline ReservedCacheNode& WithReservedCacheNodesOfferingId(const Aws::String& value) { SetReservedCacheNodesOfferingId(value); return *this;}
-    inline ReservedCacheNode& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    void SetReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::forward<ReservedCacheNodesOfferingIdT>(value); }
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    ReservedCacheNode& WithReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { SetReservedCacheNodesOfferingId(std::forward<ReservedCacheNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,33 +142,31 @@ namespace Model
      * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
      * version 2.8.22 and later.</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+    inline const Aws::String& GetCacheNodeType() const { return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
-    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
-    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
-    inline ReservedCacheNode& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
-    inline ReservedCacheNode& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+    template<typename CacheNodeTypeT = Aws::String>
+    void SetCacheNodeType(CacheNodeTypeT&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::forward<CacheNodeTypeT>(value); }
+    template<typename CacheNodeTypeT = Aws::String>
+    ReservedCacheNode& WithCacheNodeType(CacheNodeTypeT&& value) { SetCacheNodeType(std::forward<CacheNodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the reservation started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ReservedCacheNode& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ReservedCacheNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ReservedCacheNode& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline ReservedCacheNode& WithDuration(int value) { SetDuration(value); return *this;}
@@ -182,7 +176,7 @@ namespace Model
     /**
      * <p>The fixed price charged for this reserved cache node.</p>
      */
-    inline double GetFixedPrice() const{ return m_fixedPrice; }
+    inline double GetFixedPrice() const { return m_fixedPrice; }
     inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
     inline ReservedCacheNode& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
@@ -192,7 +186,7 @@ namespace Model
     /**
      * <p>The hourly price charged for this reserved cache node.</p>
      */
-    inline double GetUsagePrice() const{ return m_usagePrice; }
+    inline double GetUsagePrice() const { return m_usagePrice; }
     inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
     inline ReservedCacheNode& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
@@ -202,7 +196,7 @@ namespace Model
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
-    inline int GetCacheNodeCount() const{ return m_cacheNodeCount; }
+    inline int GetCacheNodeCount() const { return m_cacheNodeCount; }
     inline bool CacheNodeCountHasBeenSet() const { return m_cacheNodeCountHasBeenSet; }
     inline void SetCacheNodeCount(int value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
     inline ReservedCacheNode& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
@@ -212,56 +206,50 @@ namespace Model
     /**
      * <p>The description of the reserved cache node.</p>
      */
-    inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+    inline const Aws::String& GetProductDescription() const { return m_productDescription; }
     inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
-    inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
-    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
-    inline void SetProductDescription(const char* value) { m_productDescriptionHasBeenSet = true; m_productDescription.assign(value); }
-    inline ReservedCacheNode& WithProductDescription(const Aws::String& value) { SetProductDescription(value); return *this;}
-    inline ReservedCacheNode& WithProductDescription(Aws::String&& value) { SetProductDescription(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
+    template<typename ProductDescriptionT = Aws::String>
+    void SetProductDescription(ProductDescriptionT&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::forward<ProductDescriptionT>(value); }
+    template<typename ProductDescriptionT = Aws::String>
+    ReservedCacheNode& WithProductDescription(ProductDescriptionT&& value) { SetProductDescription(std::forward<ProductDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The offering type of this reserved cache node.</p>
      */
-    inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+    inline const Aws::String& GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
-    inline ReservedCacheNode& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
-    inline ReservedCacheNode& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+    template<typename OfferingTypeT = Aws::String>
+    void SetOfferingType(OfferingTypeT&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::forward<OfferingTypeT>(value); }
+    template<typename OfferingTypeT = Aws::String>
+    ReservedCacheNode& WithOfferingType(OfferingTypeT&& value) { SetOfferingType(std::forward<OfferingTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the reserved cache node.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline ReservedCacheNode& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline ReservedCacheNode& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    ReservedCacheNode& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
      */
-    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+    inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const { return m_recurringCharges; }
     inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
-    inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
-    inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
-    inline ReservedCacheNode& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
-    inline ReservedCacheNode& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
-    inline ReservedCacheNode& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
-    inline ReservedCacheNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
+    template<typename RecurringChargesT = Aws::Vector<RecurringCharge>>
+    void SetRecurringCharges(RecurringChargesT&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::forward<RecurringChargesT>(value); }
+    template<typename RecurringChargesT = Aws::Vector<RecurringCharge>>
+    ReservedCacheNode& WithRecurringCharges(RecurringChargesT&& value) { SetRecurringCharges(std::forward<RecurringChargesT>(value)); return *this;}
+    template<typename RecurringChargesT = RecurringCharge>
+    ReservedCacheNode& AddRecurringCharges(RecurringChargesT&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.emplace_back(std::forward<RecurringChargesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -270,14 +258,12 @@ namespace Model
      * <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
      * </p>
      */
-    inline const Aws::String& GetReservationARN() const{ return m_reservationARN; }
+    inline const Aws::String& GetReservationARN() const { return m_reservationARN; }
     inline bool ReservationARNHasBeenSet() const { return m_reservationARNHasBeenSet; }
-    inline void SetReservationARN(const Aws::String& value) { m_reservationARNHasBeenSet = true; m_reservationARN = value; }
-    inline void SetReservationARN(Aws::String&& value) { m_reservationARNHasBeenSet = true; m_reservationARN = std::move(value); }
-    inline void SetReservationARN(const char* value) { m_reservationARNHasBeenSet = true; m_reservationARN.assign(value); }
-    inline ReservedCacheNode& WithReservationARN(const Aws::String& value) { SetReservationARN(value); return *this;}
-    inline ReservedCacheNode& WithReservationARN(Aws::String&& value) { SetReservationARN(std::move(value)); return *this;}
-    inline ReservedCacheNode& WithReservationARN(const char* value) { SetReservationARN(value); return *this;}
+    template<typename ReservationARNT = Aws::String>
+    void SetReservationARN(ReservationARNT&& value) { m_reservationARNHasBeenSet = true; m_reservationARN = std::forward<ReservationARNT>(value); }
+    template<typename ReservationARNT = Aws::String>
+    ReservedCacheNode& WithReservationARN(ReservationARNT&& value) { SetReservationARN(std::forward<ReservationARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -290,19 +276,19 @@ namespace Model
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    double m_fixedPrice;
+    double m_fixedPrice{0.0};
     bool m_fixedPriceHasBeenSet = false;
 
-    double m_usagePrice;
+    double m_usagePrice{0.0};
     bool m_usagePriceHasBeenSet = false;
 
-    int m_cacheNodeCount;
+    int m_cacheNodeCount{0};
     bool m_cacheNodeCountHasBeenSet = false;
 
     Aws::String m_productDescription;

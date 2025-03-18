@@ -32,7 +32,7 @@ namespace Model
   class GetTargetGroupResult
   {
   public:
-    AWS_VPCLATTICE_API GetTargetGroupResult();
+    AWS_VPCLATTICE_API GetTargetGroupResult() = default;
     AWS_VPCLATTICE_API GetTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API GetTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,74 +41,66 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetTargetGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetTargetGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetTargetGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target group configuration.</p>
      */
-    inline const TargetGroupConfig& GetConfig() const{ return m_config; }
-    inline void SetConfig(const TargetGroupConfig& value) { m_config = value; }
-    inline void SetConfig(TargetGroupConfig&& value) { m_config = std::move(value); }
-    inline GetTargetGroupResult& WithConfig(const TargetGroupConfig& value) { SetConfig(value); return *this;}
-    inline GetTargetGroupResult& WithConfig(TargetGroupConfig&& value) { SetConfig(std::move(value)); return *this;}
+    inline const TargetGroupConfig& GetConfig() const { return m_config; }
+    template<typename ConfigT = TargetGroupConfig>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = TargetGroupConfig>
+    GetTargetGroupResult& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the target group was created, in ISO-8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetTargetGroupResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetTargetGroupResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetTargetGroupResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure code.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCode.assign(value); }
-    inline GetTargetGroupResult& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline GetTargetGroupResult& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    GetTargetGroupResult& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure message.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline GetTargetGroupResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline GetTargetGroupResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetTargetGroupResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the target group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetTargetGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetTargetGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetTargetGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,97 +108,100 @@ namespace Model
      * <p>The date and time that the target group was last updated, in ISO-8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetTargetGroupResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetTargetGroupResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetTargetGroupResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetTargetGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTargetGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTargetGroupResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceArns() const{ return m_serviceArns; }
-    inline void SetServiceArns(const Aws::Vector<Aws::String>& value) { m_serviceArns = value; }
-    inline void SetServiceArns(Aws::Vector<Aws::String>&& value) { m_serviceArns = std::move(value); }
-    inline GetTargetGroupResult& WithServiceArns(const Aws::Vector<Aws::String>& value) { SetServiceArns(value); return *this;}
-    inline GetTargetGroupResult& WithServiceArns(Aws::Vector<Aws::String>&& value) { SetServiceArns(std::move(value)); return *this;}
-    inline GetTargetGroupResult& AddServiceArns(const Aws::String& value) { m_serviceArns.push_back(value); return *this; }
-    inline GetTargetGroupResult& AddServiceArns(Aws::String&& value) { m_serviceArns.push_back(std::move(value)); return *this; }
-    inline GetTargetGroupResult& AddServiceArns(const char* value) { m_serviceArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetServiceArns() const { return m_serviceArns; }
+    template<typename ServiceArnsT = Aws::Vector<Aws::String>>
+    void SetServiceArns(ServiceArnsT&& value) { m_serviceArnsHasBeenSet = true; m_serviceArns = std::forward<ServiceArnsT>(value); }
+    template<typename ServiceArnsT = Aws::Vector<Aws::String>>
+    GetTargetGroupResult& WithServiceArns(ServiceArnsT&& value) { SetServiceArns(std::forward<ServiceArnsT>(value)); return *this;}
+    template<typename ServiceArnsT = Aws::String>
+    GetTargetGroupResult& AddServiceArns(ServiceArnsT&& value) { m_serviceArnsHasBeenSet = true; m_serviceArns.emplace_back(std::forward<ServiceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status.</p>
      */
-    inline const TargetGroupStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TargetGroupStatus& value) { m_status = value; }
-    inline void SetStatus(TargetGroupStatus&& value) { m_status = std::move(value); }
-    inline GetTargetGroupResult& WithStatus(const TargetGroupStatus& value) { SetStatus(value); return *this;}
-    inline GetTargetGroupResult& WithStatus(TargetGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TargetGroupStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TargetGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTargetGroupResult& WithStatus(TargetGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target group type.</p>
      */
-    inline const TargetGroupType& GetType() const{ return m_type; }
-    inline void SetType(const TargetGroupType& value) { m_type = value; }
-    inline void SetType(TargetGroupType&& value) { m_type = std::move(value); }
-    inline GetTargetGroupResult& WithType(const TargetGroupType& value) { SetType(value); return *this;}
-    inline GetTargetGroupResult& WithType(TargetGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline TargetGroupType GetType() const { return m_type; }
+    inline void SetType(TargetGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetTargetGroupResult& WithType(TargetGroupType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTargetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTargetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTargetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTargetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     TargetGroupConfig m_config;
+    bool m_configHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceArns;
+    bool m_serviceArnsHasBeenSet = false;
 
-    TargetGroupStatus m_status;
+    TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    TargetGroupType m_type;
+    TargetGroupType m_type{TargetGroupType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

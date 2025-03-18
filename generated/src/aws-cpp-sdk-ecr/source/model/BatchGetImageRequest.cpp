@@ -12,14 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetImageRequest::BatchGetImageRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdsHasBeenSet(false),
-    m_acceptedMediaTypesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetImageRequest::SerializePayload() const
 {
   JsonValue payload;

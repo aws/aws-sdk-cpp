@@ -12,13 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTestGridUrlRequest::CreateTestGridUrlRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_expiresInSeconds(0),
-    m_expiresInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTestGridUrlRequest::SerializePayload() const
 {
   JsonValue payload;

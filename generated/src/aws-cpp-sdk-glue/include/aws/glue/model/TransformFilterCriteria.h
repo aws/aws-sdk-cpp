@@ -37,7 +37,7 @@ namespace Model
   class TransformFilterCriteria
   {
   public:
-    AWS_GLUE_API TransformFilterCriteria();
+    AWS_GLUE_API TransformFilterCriteria() = default;
     AWS_GLUE_API TransformFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TransformFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>A unique transform name that is used to filter the machine learning
      * transforms.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TransformFilterCriteria& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TransformFilterCriteria& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TransformFilterCriteria& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TransformFilterCriteria& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The type of machine learning transform that is used to filter the machine
      * learning transforms.</p>
      */
-    inline const TransformType& GetTransformType() const{ return m_transformType; }
+    inline TransformType GetTransformType() const { return m_transformType; }
     inline bool TransformTypeHasBeenSet() const { return m_transformTypeHasBeenSet; }
-    inline void SetTransformType(const TransformType& value) { m_transformTypeHasBeenSet = true; m_transformType = value; }
-    inline void SetTransformType(TransformType&& value) { m_transformTypeHasBeenSet = true; m_transformType = std::move(value); }
-    inline TransformFilterCriteria& WithTransformType(const TransformType& value) { SetTransformType(value); return *this;}
-    inline TransformFilterCriteria& WithTransformType(TransformType&& value) { SetTransformType(std::move(value)); return *this;}
+    inline void SetTransformType(TransformType value) { m_transformTypeHasBeenSet = true; m_transformType = value; }
+    inline TransformFilterCriteria& WithTransformType(TransformType value) { SetTransformType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,10 @@ namespace Model
      * the transforms (to indicate whether a transform can be used or not). One of
      * "NOT_READY", "READY", or "DELETING".</p>
      */
-    inline const TransformStatusType& GetStatus() const{ return m_status; }
+    inline TransformStatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TransformStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TransformStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TransformFilterCriteria& WithStatus(const TransformStatusType& value) { SetStatus(value); return *this;}
-    inline TransformFilterCriteria& WithStatus(TransformStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TransformStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TransformFilterCriteria& WithStatus(TransformStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -94,62 +88,60 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      * Versions</a> in the developer guide.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline TransformFilterCriteria& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline TransformFilterCriteria& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline TransformFilterCriteria& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    TransformFilterCriteria& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time and date before which the transforms were created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
+    inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
-    inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
-    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
-    inline TransformFilterCriteria& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
-    inline TransformFilterCriteria& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    void SetCreatedBefore(CreatedBeforeT&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::forward<CreatedBeforeT>(value); }
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    TransformFilterCriteria& WithCreatedBefore(CreatedBeforeT&& value) { SetCreatedBefore(std::forward<CreatedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time and date after which the transforms were created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
+    inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
-    inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
-    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
-    inline TransformFilterCriteria& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
-    inline TransformFilterCriteria& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    void SetCreatedAfter(CreatedAfterT&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::forward<CreatedAfterT>(value); }
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    TransformFilterCriteria& WithCreatedAfter(CreatedAfterT&& value) { SetCreatedAfter(std::forward<CreatedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on transforms last modified before this date.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedBefore() const{ return m_lastModifiedBefore; }
+    inline const Aws::Utils::DateTime& GetLastModifiedBefore() const { return m_lastModifiedBefore; }
     inline bool LastModifiedBeforeHasBeenSet() const { return m_lastModifiedBeforeHasBeenSet; }
-    inline void SetLastModifiedBefore(const Aws::Utils::DateTime& value) { m_lastModifiedBeforeHasBeenSet = true; m_lastModifiedBefore = value; }
-    inline void SetLastModifiedBefore(Aws::Utils::DateTime&& value) { m_lastModifiedBeforeHasBeenSet = true; m_lastModifiedBefore = std::move(value); }
-    inline TransformFilterCriteria& WithLastModifiedBefore(const Aws::Utils::DateTime& value) { SetLastModifiedBefore(value); return *this;}
-    inline TransformFilterCriteria& WithLastModifiedBefore(Aws::Utils::DateTime&& value) { SetLastModifiedBefore(std::move(value)); return *this;}
+    template<typename LastModifiedBeforeT = Aws::Utils::DateTime>
+    void SetLastModifiedBefore(LastModifiedBeforeT&& value) { m_lastModifiedBeforeHasBeenSet = true; m_lastModifiedBefore = std::forward<LastModifiedBeforeT>(value); }
+    template<typename LastModifiedBeforeT = Aws::Utils::DateTime>
+    TransformFilterCriteria& WithLastModifiedBefore(LastModifiedBeforeT&& value) { SetLastModifiedBefore(std::forward<LastModifiedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on transforms last modified after this date.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAfter() const{ return m_lastModifiedAfter; }
+    inline const Aws::Utils::DateTime& GetLastModifiedAfter() const { return m_lastModifiedAfter; }
     inline bool LastModifiedAfterHasBeenSet() const { return m_lastModifiedAfterHasBeenSet; }
-    inline void SetLastModifiedAfter(const Aws::Utils::DateTime& value) { m_lastModifiedAfterHasBeenSet = true; m_lastModifiedAfter = value; }
-    inline void SetLastModifiedAfter(Aws::Utils::DateTime&& value) { m_lastModifiedAfterHasBeenSet = true; m_lastModifiedAfter = std::move(value); }
-    inline TransformFilterCriteria& WithLastModifiedAfter(const Aws::Utils::DateTime& value) { SetLastModifiedAfter(value); return *this;}
-    inline TransformFilterCriteria& WithLastModifiedAfter(Aws::Utils::DateTime&& value) { SetLastModifiedAfter(std::move(value)); return *this;}
+    template<typename LastModifiedAfterT = Aws::Utils::DateTime>
+    void SetLastModifiedAfter(LastModifiedAfterT&& value) { m_lastModifiedAfterHasBeenSet = true; m_lastModifiedAfter = std::forward<LastModifiedAfterT>(value); }
+    template<typename LastModifiedAfterT = Aws::Utils::DateTime>
+    TransformFilterCriteria& WithLastModifiedAfter(LastModifiedAfterT&& value) { SetLastModifiedAfter(std::forward<LastModifiedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,39 +152,39 @@ namespace Model
      * <code>Type</code> is the type of the data such as an integer or string. Has an
      * upper bound of 100 columns.</p>
      */
-    inline const Aws::Vector<SchemaColumn>& GetSchema() const{ return m_schema; }
+    inline const Aws::Vector<SchemaColumn>& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::Vector<SchemaColumn>& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::Vector<SchemaColumn>&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline TransformFilterCriteria& WithSchema(const Aws::Vector<SchemaColumn>& value) { SetSchema(value); return *this;}
-    inline TransformFilterCriteria& WithSchema(Aws::Vector<SchemaColumn>&& value) { SetSchema(std::move(value)); return *this;}
-    inline TransformFilterCriteria& AddSchema(const SchemaColumn& value) { m_schemaHasBeenSet = true; m_schema.push_back(value); return *this; }
-    inline TransformFilterCriteria& AddSchema(SchemaColumn&& value) { m_schemaHasBeenSet = true; m_schema.push_back(std::move(value)); return *this; }
+    template<typename SchemaT = Aws::Vector<SchemaColumn>>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Vector<SchemaColumn>>
+    TransformFilterCriteria& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
+    template<typename SchemaT = SchemaColumn>
+    TransformFilterCriteria& AddSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema.emplace_back(std::forward<SchemaT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TransformType m_transformType;
+    TransformType m_transformType{TransformType::NOT_SET};
     bool m_transformTypeHasBeenSet = false;
 
-    TransformStatusType m_status;
+    TransformStatusType m_status{TransformStatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdBefore;
+    Aws::Utils::DateTime m_createdBefore{};
     bool m_createdBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAfter;
+    Aws::Utils::DateTime m_createdAfter{};
     bool m_createdAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedBefore;
+    Aws::Utils::DateTime m_lastModifiedBefore{};
     bool m_lastModifiedBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAfter;
+    Aws::Utils::DateTime m_lastModifiedAfter{};
     bool m_lastModifiedAfterHasBeenSet = false;
 
     Aws::Vector<SchemaColumn> m_schema;

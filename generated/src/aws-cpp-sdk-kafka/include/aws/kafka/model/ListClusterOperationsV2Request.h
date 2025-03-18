@@ -25,7 +25,7 @@ namespace Model
   class ListClusterOperationsV2Request : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API ListClusterOperationsV2Request();
+    AWS_KAFKA_API ListClusterOperationsV2Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * The arn of the cluster whose operations are being requested.
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline ListClusterOperationsV2Request& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline ListClusterOperationsV2Request& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline ListClusterOperationsV2Request& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    ListClusterOperationsV2Request& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The maxResults of the query.
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListClusterOperationsV2Request& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,21 +64,19 @@ namespace Model
     /**
      * The nextToken of the query.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListClusterOperationsV2Request& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClusterOperationsV2Request& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClusterOperationsV2Request& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClusterOperationsV2Request& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

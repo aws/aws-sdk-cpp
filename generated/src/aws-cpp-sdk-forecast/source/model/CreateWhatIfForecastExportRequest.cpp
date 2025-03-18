@@ -12,15 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWhatIfForecastExportRequest::CreateWhatIfForecastExportRequest() : 
-    m_whatIfForecastExportNameHasBeenSet(false),
-    m_whatIfForecastArnsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String CreateWhatIfForecastExportRequest::SerializePayload() const
 {
   JsonValue payload;

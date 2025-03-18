@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGroupPoliciesResult::ListGroupPoliciesResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListGroupPoliciesResult::ListGroupPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListGroupPoliciesResult()
 {
   *this = result;
 }
@@ -44,28 +38,33 @@ ListGroupPoliciesResult& ListGroupPoliciesResult::operator =(const Aws::AmazonWe
     if(!policyNamesNode.IsNull())
     {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
       while(!policyNamesMember.IsNull())
       {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
 
+      m_policyNamesHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListGroupPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -34,7 +34,7 @@ namespace Model
   class SourceConfiguration
   {
   public:
-    AWS_APPRUNNER_API SourceConfiguration();
+    AWS_APPRUNNER_API SourceConfiguration() = default;
     AWS_APPRUNNER_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The description of a source code repository.</p> <p>You must provide either
      * this member or <code>ImageRepository</code> (but not both).</p>
      */
-    inline const CodeRepository& GetCodeRepository() const{ return m_codeRepository; }
+    inline const CodeRepository& GetCodeRepository() const { return m_codeRepository; }
     inline bool CodeRepositoryHasBeenSet() const { return m_codeRepositoryHasBeenSet; }
-    inline void SetCodeRepository(const CodeRepository& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = value; }
-    inline void SetCodeRepository(CodeRepository&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::move(value); }
-    inline SourceConfiguration& WithCodeRepository(const CodeRepository& value) { SetCodeRepository(value); return *this;}
-    inline SourceConfiguration& WithCodeRepository(CodeRepository&& value) { SetCodeRepository(std::move(value)); return *this;}
+    template<typename CodeRepositoryT = CodeRepository>
+    void SetCodeRepository(CodeRepositoryT&& value) { m_codeRepositoryHasBeenSet = true; m_codeRepository = std::forward<CodeRepositoryT>(value); }
+    template<typename CodeRepositoryT = CodeRepository>
+    SourceConfiguration& WithCodeRepository(CodeRepositoryT&& value) { SetCodeRepository(std::forward<CodeRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The description of a source image repository.</p> <p>You must provide either
      * this member or <code>CodeRepository</code> (but not both).</p>
      */
-    inline const ImageRepository& GetImageRepository() const{ return m_imageRepository; }
+    inline const ImageRepository& GetImageRepository() const { return m_imageRepository; }
     inline bool ImageRepositoryHasBeenSet() const { return m_imageRepositoryHasBeenSet; }
-    inline void SetImageRepository(const ImageRepository& value) { m_imageRepositoryHasBeenSet = true; m_imageRepository = value; }
-    inline void SetImageRepository(ImageRepository&& value) { m_imageRepositoryHasBeenSet = true; m_imageRepository = std::move(value); }
-    inline SourceConfiguration& WithImageRepository(const ImageRepository& value) { SetImageRepository(value); return *this;}
-    inline SourceConfiguration& WithImageRepository(ImageRepository&& value) { SetImageRepository(std::move(value)); return *this;}
+    template<typename ImageRepositoryT = ImageRepository>
+    void SetImageRepository(ImageRepositoryT&& value) { m_imageRepositoryHasBeenSet = true; m_imageRepository = std::forward<ImageRepositoryT>(value); }
+    template<typename ImageRepositoryT = ImageRepository>
+    SourceConfiguration& WithImageRepository(ImageRepositoryT&& value) { SetImageRepository(std::forward<ImageRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +77,7 @@ namespace Model
      * other cases (which currently include a source code repository or a source image
      * using a same-account ECR repository).</p>
      */
-    inline bool GetAutoDeploymentsEnabled() const{ return m_autoDeploymentsEnabled; }
+    inline bool GetAutoDeploymentsEnabled() const { return m_autoDeploymentsEnabled; }
     inline bool AutoDeploymentsEnabledHasBeenSet() const { return m_autoDeploymentsEnabledHasBeenSet; }
     inline void SetAutoDeploymentsEnabled(bool value) { m_autoDeploymentsEnabledHasBeenSet = true; m_autoDeploymentsEnabled = value; }
     inline SourceConfiguration& WithAutoDeploymentsEnabled(bool value) { SetAutoDeploymentsEnabled(value); return *this;}
@@ -88,12 +88,12 @@ namespace Model
      * <p>Describes the resources that are needed to authenticate access to some source
      * repositories.</p>
      */
-    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-    inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
-    inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
-    inline SourceConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
-    inline SourceConfiguration& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value); }
+    template<typename AuthenticationConfigurationT = AuthenticationConfiguration>
+    SourceConfiguration& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) { SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +103,7 @@ namespace Model
     ImageRepository m_imageRepository;
     bool m_imageRepositoryHasBeenSet = false;
 
-    bool m_autoDeploymentsEnabled;
+    bool m_autoDeploymentsEnabled{false};
     bool m_autoDeploymentsEnabledHasBeenSet = false;
 
     AuthenticationConfiguration m_authenticationConfiguration;

@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TtmlDestinationSettings::TtmlDestinationSettings() : 
-    m_stylePassthrough(TtmlStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
-{
-}
-
 TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue)
-  : TtmlDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TtmlDestinationSettings& TtmlDestinationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stylePassthrough"))
   {
     m_stylePassthrough = TtmlStylePassthroughMapper::GetTtmlStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
-
     m_stylePassthroughHasBeenSet = true;
   }
-
   return *this;
 }
 

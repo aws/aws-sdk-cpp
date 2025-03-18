@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QueueReference::QueueReference() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 QueueReference::QueueReference(JsonView jsonValue)
-  : QueueReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QueueReference& QueueReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

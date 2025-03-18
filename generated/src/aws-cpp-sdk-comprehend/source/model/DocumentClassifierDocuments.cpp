@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierDocuments::DocumentClassifierDocuments() : 
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false)
-{
-}
-
 DocumentClassifierDocuments::DocumentClassifierDocuments(JsonView jsonValue)
-  : DocumentClassifierDocuments()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DocumentClassifierDocuments& DocumentClassifierDocuments::operator =(JsonView js
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestS3Uri"))
   {
     m_testS3Uri = jsonValue.GetString("TestS3Uri");
-
     m_testS3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

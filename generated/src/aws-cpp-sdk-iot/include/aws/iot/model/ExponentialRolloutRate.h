@@ -32,7 +32,7 @@ namespace Model
   class ExponentialRolloutRate
   {
   public:
-    AWS_IOT_API ExponentialRolloutRate();
+    AWS_IOT_API ExponentialRolloutRate() = default;
     AWS_IOT_API ExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * minute at the start of job rollout. This parameter allows you to define the
      * initial rate of rollout.</p>
      */
-    inline int GetBaseRatePerMinute() const{ return m_baseRatePerMinute; }
+    inline int GetBaseRatePerMinute() const { return m_baseRatePerMinute; }
     inline bool BaseRatePerMinuteHasBeenSet() const { return m_baseRatePerMinuteHasBeenSet; }
     inline void SetBaseRatePerMinute(int value) { m_baseRatePerMinuteHasBeenSet = true; m_baseRatePerMinute = value; }
     inline ExponentialRolloutRate& WithBaseRatePerMinute(int value) { SetBaseRatePerMinute(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
      * example, 1.5, but not 1.55).</p>
      */
-    inline double GetIncrementFactor() const{ return m_incrementFactor; }
+    inline double GetIncrementFactor() const { return m_incrementFactor; }
     inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
     inline ExponentialRolloutRate& WithIncrementFactor(double value) { SetIncrementFactor(value); return *this;}
@@ -66,19 +66,19 @@ namespace Model
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
      */
-    inline const RateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
+    inline const RateIncreaseCriteria& GetRateIncreaseCriteria() const { return m_rateIncreaseCriteria; }
     inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
-    inline void SetRateIncreaseCriteria(const RateIncreaseCriteria& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = value; }
-    inline void SetRateIncreaseCriteria(RateIncreaseCriteria&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::move(value); }
-    inline ExponentialRolloutRate& WithRateIncreaseCriteria(const RateIncreaseCriteria& value) { SetRateIncreaseCriteria(value); return *this;}
-    inline ExponentialRolloutRate& WithRateIncreaseCriteria(RateIncreaseCriteria&& value) { SetRateIncreaseCriteria(std::move(value)); return *this;}
+    template<typename RateIncreaseCriteriaT = RateIncreaseCriteria>
+    void SetRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::forward<RateIncreaseCriteriaT>(value); }
+    template<typename RateIncreaseCriteriaT = RateIncreaseCriteria>
+    ExponentialRolloutRate& WithRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { SetRateIncreaseCriteria(std::forward<RateIncreaseCriteriaT>(value)); return *this;}
     ///@}
   private:
 
-    int m_baseRatePerMinute;
+    int m_baseRatePerMinute{0};
     bool m_baseRatePerMinuteHasBeenSet = false;
 
-    double m_incrementFactor;
+    double m_incrementFactor{0.0};
     bool m_incrementFactorHasBeenSet = false;
 
     RateIncreaseCriteria m_rateIncreaseCriteria;

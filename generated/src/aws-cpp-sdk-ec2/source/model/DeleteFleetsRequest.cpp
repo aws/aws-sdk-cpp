@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteFleetsRequest::DeleteFleetsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_fleetIdsHasBeenSet(false),
-    m_terminateInstances(false),
-    m_terminateInstancesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

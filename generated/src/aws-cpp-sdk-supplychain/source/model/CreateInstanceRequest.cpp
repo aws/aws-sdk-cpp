@@ -12,17 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceRequest::CreateInstanceRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_instanceDescriptionHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_webAppDnsDomainHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

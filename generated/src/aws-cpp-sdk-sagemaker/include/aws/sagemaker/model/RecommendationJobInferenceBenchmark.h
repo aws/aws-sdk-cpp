@@ -37,7 +37,7 @@ namespace Model
   class RecommendationJobInferenceBenchmark
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark();
+    AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark() = default;
     AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,80 +45,78 @@ namespace Model
 
     ///@{
     
-    inline const RecommendationMetrics& GetMetrics() const{ return m_metrics; }
+    inline const RecommendationMetrics& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const RecommendationMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(RecommendationMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithMetrics(const RecommendationMetrics& value) { SetMetrics(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithMetrics(RecommendationMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+    template<typename MetricsT = RecommendationMetrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = RecommendationMetrics>
+    RecommendationJobInferenceBenchmark& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InferenceMetrics& GetEndpointMetrics() const{ return m_endpointMetrics; }
+    inline const InferenceMetrics& GetEndpointMetrics() const { return m_endpointMetrics; }
     inline bool EndpointMetricsHasBeenSet() const { return m_endpointMetricsHasBeenSet; }
-    inline void SetEndpointMetrics(const InferenceMetrics& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = value; }
-    inline void SetEndpointMetrics(InferenceMetrics&& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(const InferenceMetrics& value) { SetEndpointMetrics(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(InferenceMetrics&& value) { SetEndpointMetrics(std::move(value)); return *this;}
+    template<typename EndpointMetricsT = InferenceMetrics>
+    void SetEndpointMetrics(EndpointMetricsT&& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = std::forward<EndpointMetricsT>(value); }
+    template<typename EndpointMetricsT = InferenceMetrics>
+    RecommendationJobInferenceBenchmark& WithEndpointMetrics(EndpointMetricsT&& value) { SetEndpointMetrics(std::forward<EndpointMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EndpointOutputConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
+    inline const EndpointOutputConfiguration& GetEndpointConfiguration() const { return m_endpointConfiguration; }
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
-    inline void SetEndpointConfiguration(const EndpointOutputConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
-    inline void SetEndpointConfiguration(EndpointOutputConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithEndpointConfiguration(const EndpointOutputConfiguration& value) { SetEndpointConfiguration(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithEndpointConfiguration(EndpointOutputConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
+    template<typename EndpointConfigurationT = EndpointOutputConfiguration>
+    void SetEndpointConfiguration(EndpointConfigurationT&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::forward<EndpointConfigurationT>(value); }
+    template<typename EndpointConfigurationT = EndpointOutputConfiguration>
+    RecommendationJobInferenceBenchmark& WithEndpointConfiguration(EndpointConfigurationT&& value) { SetEndpointConfiguration(std::forward<EndpointConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ModelConfiguration& GetModelConfiguration() const{ return m_modelConfiguration; }
+    inline const ModelConfiguration& GetModelConfiguration() const { return m_modelConfiguration; }
     inline bool ModelConfigurationHasBeenSet() const { return m_modelConfigurationHasBeenSet; }
-    inline void SetModelConfiguration(const ModelConfiguration& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = value; }
-    inline void SetModelConfiguration(ModelConfiguration&& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithModelConfiguration(const ModelConfiguration& value) { SetModelConfiguration(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithModelConfiguration(ModelConfiguration&& value) { SetModelConfiguration(std::move(value)); return *this;}
+    template<typename ModelConfigurationT = ModelConfiguration>
+    void SetModelConfiguration(ModelConfigurationT&& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = std::forward<ModelConfigurationT>(value); }
+    template<typename ModelConfigurationT = ModelConfiguration>
+    RecommendationJobInferenceBenchmark& WithModelConfiguration(ModelConfigurationT&& value) { SetModelConfiguration(std::forward<ModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why a benchmark failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline RecommendationJobInferenceBenchmark& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    RecommendationJobInferenceBenchmark& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the benchmark completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetInvocationEndTime() const{ return m_invocationEndTime; }
+    inline const Aws::Utils::DateTime& GetInvocationEndTime() const { return m_invocationEndTime; }
     inline bool InvocationEndTimeHasBeenSet() const { return m_invocationEndTimeHasBeenSet; }
-    inline void SetInvocationEndTime(const Aws::Utils::DateTime& value) { m_invocationEndTimeHasBeenSet = true; m_invocationEndTime = value; }
-    inline void SetInvocationEndTime(Aws::Utils::DateTime&& value) { m_invocationEndTimeHasBeenSet = true; m_invocationEndTime = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithInvocationEndTime(const Aws::Utils::DateTime& value) { SetInvocationEndTime(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithInvocationEndTime(Aws::Utils::DateTime&& value) { SetInvocationEndTime(std::move(value)); return *this;}
+    template<typename InvocationEndTimeT = Aws::Utils::DateTime>
+    void SetInvocationEndTime(InvocationEndTimeT&& value) { m_invocationEndTimeHasBeenSet = true; m_invocationEndTime = std::forward<InvocationEndTimeT>(value); }
+    template<typename InvocationEndTimeT = Aws::Utils::DateTime>
+    RecommendationJobInferenceBenchmark& WithInvocationEndTime(InvocationEndTimeT&& value) { SetInvocationEndTime(std::forward<InvocationEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the benchmark started.</p>
      */
-    inline const Aws::Utils::DateTime& GetInvocationStartTime() const{ return m_invocationStartTime; }
+    inline const Aws::Utils::DateTime& GetInvocationStartTime() const { return m_invocationStartTime; }
     inline bool InvocationStartTimeHasBeenSet() const { return m_invocationStartTimeHasBeenSet; }
-    inline void SetInvocationStartTime(const Aws::Utils::DateTime& value) { m_invocationStartTimeHasBeenSet = true; m_invocationStartTime = value; }
-    inline void SetInvocationStartTime(Aws::Utils::DateTime&& value) { m_invocationStartTimeHasBeenSet = true; m_invocationStartTime = std::move(value); }
-    inline RecommendationJobInferenceBenchmark& WithInvocationStartTime(const Aws::Utils::DateTime& value) { SetInvocationStartTime(value); return *this;}
-    inline RecommendationJobInferenceBenchmark& WithInvocationStartTime(Aws::Utils::DateTime&& value) { SetInvocationStartTime(std::move(value)); return *this;}
+    template<typename InvocationStartTimeT = Aws::Utils::DateTime>
+    void SetInvocationStartTime(InvocationStartTimeT&& value) { m_invocationStartTimeHasBeenSet = true; m_invocationStartTime = std::forward<InvocationStartTimeT>(value); }
+    template<typename InvocationStartTimeT = Aws::Utils::DateTime>
+    RecommendationJobInferenceBenchmark& WithInvocationStartTime(InvocationStartTimeT&& value) { SetInvocationStartTime(std::forward<InvocationStartTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,10 +135,10 @@ namespace Model
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invocationEndTime;
+    Aws::Utils::DateTime m_invocationEndTime{};
     bool m_invocationEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invocationStartTime;
+    Aws::Utils::DateTime m_invocationStartTime{};
     bool m_invocationStartTimeHasBeenSet = false;
   };
 

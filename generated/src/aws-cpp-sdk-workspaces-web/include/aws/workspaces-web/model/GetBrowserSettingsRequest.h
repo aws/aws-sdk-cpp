@@ -21,7 +21,7 @@ namespace Model
   class GetBrowserSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API GetBrowserSettingsRequest();
+    AWS_WORKSPACESWEB_API GetBrowserSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the browser settings.</p>
      */
-    inline const Aws::String& GetBrowserSettingsArn() const{ return m_browserSettingsArn; }
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
     inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-    inline void SetBrowserSettingsArn(const Aws::String& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = value; }
-    inline void SetBrowserSettingsArn(Aws::String&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::move(value); }
-    inline void SetBrowserSettingsArn(const char* value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn.assign(value); }
-    inline GetBrowserSettingsRequest& WithBrowserSettingsArn(const Aws::String& value) { SetBrowserSettingsArn(value); return *this;}
-    inline GetBrowserSettingsRequest& WithBrowserSettingsArn(Aws::String&& value) { SetBrowserSettingsArn(std::move(value)); return *this;}
-    inline GetBrowserSettingsRequest& WithBrowserSettingsArn(const char* value) { SetBrowserSettingsArn(value); return *this;}
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    GetBrowserSettingsRequest& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
     ///@}
   private:
 

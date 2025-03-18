@@ -12,12 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartResourceSnapshotJobRequest::StartResourceSnapshotJobRequest() : 
-    m_catalogHasBeenSet(false),
-    m_resourceSnapshotJobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartResourceSnapshotJobRequest::SerializePayload() const
 {
   JsonValue payload;

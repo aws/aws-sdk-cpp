@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProvisioningClaimRequest::CreateProvisioningClaimRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateProvisioningClaimRequest::SerializePayload() const
 {
   return {};

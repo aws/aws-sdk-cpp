@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelPolicyRequest::DeleteChannelPolicyRequest() : 
-    m_channelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelPolicyRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class AwsIamAccessKeySessionContextAttributes
   {
   public:
-    AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes();
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes() = default;
     AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether the session used multi-factor authentication (MFA).</p>
      */
-    inline bool GetMfaAuthenticated() const{ return m_mfaAuthenticated; }
+    inline bool GetMfaAuthenticated() const { return m_mfaAuthenticated; }
     inline bool MfaAuthenticatedHasBeenSet() const { return m_mfaAuthenticatedHasBeenSet; }
     inline void SetMfaAuthenticated(bool value) { m_mfaAuthenticatedHasBeenSet = true; m_mfaAuthenticated = value; }
     inline AwsIamAccessKeySessionContextAttributes& WithMfaAuthenticated(bool value) { SetMfaAuthenticated(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline AwsIamAccessKeySessionContextAttributes& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline AwsIamAccessKeySessionContextAttributes& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline AwsIamAccessKeySessionContextAttributes& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    AwsIamAccessKeySessionContextAttributes& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_mfaAuthenticated;
+    bool m_mfaAuthenticated{false};
     bool m_mfaAuthenticatedHasBeenSet = false;
 
     Aws::String m_creationDate;

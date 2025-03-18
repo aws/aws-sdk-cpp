@@ -18,16 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-OpenIdConnectConfiguration::OpenIdConnectConfiguration() : 
-    m_issuerHasBeenSet(false),
-    m_entityIdPrefixHasBeenSet(false),
-    m_groupConfigurationHasBeenSet(false),
-    m_tokenSelectionHasBeenSet(false)
-{
-}
-
 OpenIdConnectConfiguration::OpenIdConnectConfiguration(JsonView jsonValue)
-  : OpenIdConnectConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OpenIdConnectConfiguration& OpenIdConnectConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityIdPrefix"))
   {
     m_entityIdPrefix = jsonValue.GetString("entityIdPrefix");
-
     m_entityIdPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupConfiguration"))
   {
     m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
-
     m_groupConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenSelection"))
   {
     m_tokenSelection = jsonValue.GetObject("tokenSelection");
-
     m_tokenSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CloudwatchMetricAction::CloudwatchMetricAction() : 
-    m_roleArnHasBeenSet(false),
-    m_metricNamespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_metricUnitHasBeenSet(false),
-    m_metricTimestampHasBeenSet(false)
-{
-}
-
 CloudwatchMetricAction::CloudwatchMetricAction(JsonView jsonValue)
-  : CloudwatchMetricAction()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ CloudwatchMetricAction& CloudwatchMetricAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricNamespace"))
   {
     m_metricNamespace = jsonValue.GetString("metricNamespace");
-
     m_metricNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricValue"))
   {
     m_metricValue = jsonValue.GetString("metricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricUnit"))
   {
     m_metricUnit = jsonValue.GetString("metricUnit");
-
     m_metricUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricTimestamp"))
   {
     m_metricTimestamp = jsonValue.GetString("metricTimestamp");
-
     m_metricTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

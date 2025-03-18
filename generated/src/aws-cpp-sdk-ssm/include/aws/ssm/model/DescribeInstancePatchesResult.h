@@ -29,7 +29,7 @@ namespace Model
   class DescribeInstancePatchesResult
   {
   public:
-    AWS_SSM_API DescribeInstancePatchesResult();
+    AWS_SSM_API DescribeInstancePatchesResult() = default;
     AWS_SSM_API DescribeInstancePatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribeInstancePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
      * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
-    inline const Aws::Vector<PatchComplianceData>& GetPatches() const{ return m_patches; }
-    inline void SetPatches(const Aws::Vector<PatchComplianceData>& value) { m_patches = value; }
-    inline void SetPatches(Aws::Vector<PatchComplianceData>&& value) { m_patches = std::move(value); }
-    inline DescribeInstancePatchesResult& WithPatches(const Aws::Vector<PatchComplianceData>& value) { SetPatches(value); return *this;}
-    inline DescribeInstancePatchesResult& WithPatches(Aws::Vector<PatchComplianceData>&& value) { SetPatches(std::move(value)); return *this;}
-    inline DescribeInstancePatchesResult& AddPatches(const PatchComplianceData& value) { m_patches.push_back(value); return *this; }
-    inline DescribeInstancePatchesResult& AddPatches(PatchComplianceData&& value) { m_patches.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PatchComplianceData>& GetPatches() const { return m_patches; }
+    template<typename PatchesT = Aws::Vector<PatchComplianceData>>
+    void SetPatches(PatchesT&& value) { m_patchesHasBeenSet = true; m_patches = std::forward<PatchesT>(value); }
+    template<typename PatchesT = Aws::Vector<PatchComplianceData>>
+    DescribeInstancePatchesResult& WithPatches(PatchesT&& value) { SetPatches(std::forward<PatchesT>(value)); return *this;}
+    template<typename PatchesT = PatchComplianceData>
+    DescribeInstancePatchesResult& AddPatches(PatchesT&& value) { m_patchesHasBeenSet = true; m_patches.emplace_back(std::forward<PatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeInstancePatchesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInstancePatchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInstancePatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeInstancePatchesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInstancePatchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInstancePatchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInstancePatchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInstancePatchesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PatchComplianceData> m_patches;
+    bool m_patchesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

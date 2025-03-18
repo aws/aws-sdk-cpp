@@ -32,7 +32,7 @@ namespace Model
   class S3Location
   {
   public:
-    AWS_GAMELIFT_API S3Location();
+    AWS_GAMELIFT_API S3Location() = default;
     AWS_GAMELIFT_API S3Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names
      * that contain a dot (.).</p> 
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3Location& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3Location& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3Location& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the zip file that contains the build files or script files. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3Location& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3Location& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3Location& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline S3Location& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline S3Location& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline S3Location& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    S3Location& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * that you own. Use this parameter to specify a specific version of the file. If
      * not set, the latest version of the file is retrieved. </p>
      */
-    inline const Aws::String& GetObjectVersion() const{ return m_objectVersion; }
+    inline const Aws::String& GetObjectVersion() const { return m_objectVersion; }
     inline bool ObjectVersionHasBeenSet() const { return m_objectVersionHasBeenSet; }
-    inline void SetObjectVersion(const Aws::String& value) { m_objectVersionHasBeenSet = true; m_objectVersion = value; }
-    inline void SetObjectVersion(Aws::String&& value) { m_objectVersionHasBeenSet = true; m_objectVersion = std::move(value); }
-    inline void SetObjectVersion(const char* value) { m_objectVersionHasBeenSet = true; m_objectVersion.assign(value); }
-    inline S3Location& WithObjectVersion(const Aws::String& value) { SetObjectVersion(value); return *this;}
-    inline S3Location& WithObjectVersion(Aws::String&& value) { SetObjectVersion(std::move(value)); return *this;}
-    inline S3Location& WithObjectVersion(const char* value) { SetObjectVersion(value); return *this;}
+    template<typename ObjectVersionT = Aws::String>
+    void SetObjectVersion(ObjectVersionT&& value) { m_objectVersionHasBeenSet = true; m_objectVersion = std::forward<ObjectVersionT>(value); }
+    template<typename ObjectVersionT = Aws::String>
+    S3Location& WithObjectVersion(ObjectVersionT&& value) { SetObjectVersion(std::forward<ObjectVersionT>(value)); return *this;}
     ///@}
   private:
 

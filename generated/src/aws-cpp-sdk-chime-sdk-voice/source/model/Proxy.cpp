@@ -18,18 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-Proxy::Proxy() : 
-    m_defaultSessionExpiryMinutes(0),
-    m_defaultSessionExpiryMinutesHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_fallBackPhoneNumberHasBeenSet(false),
-    m_phoneNumberCountriesHasBeenSet(false)
-{
-}
-
 Proxy::Proxy(JsonView jsonValue)
-  : Proxy()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Proxy& Proxy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultSessionExpiryMinutes"))
   {
     m_defaultSessionExpiryMinutes = jsonValue.GetInteger("DefaultSessionExpiryMinutes");
-
     m_defaultSessionExpiryMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FallBackPhoneNumber"))
   {
     m_fallBackPhoneNumber = jsonValue.GetString("FallBackPhoneNumber");
-
     m_fallBackPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberCountries"))
   {
     Aws::Utils::Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");
@@ -66,7 +49,6 @@ Proxy& Proxy::operator =(JsonView jsonValue)
     }
     m_phoneNumberCountriesHasBeenSet = true;
   }
-
   return *this;
 }
 

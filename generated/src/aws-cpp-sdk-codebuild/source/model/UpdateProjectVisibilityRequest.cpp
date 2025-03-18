@@ -12,14 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProjectVisibilityRequest::UpdateProjectVisibilityRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_projectVisibility(ProjectVisibilityType::NOT_SET),
-    m_projectVisibilityHasBeenSet(false),
-    m_resourceAccessRoleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProjectVisibilityRequest::SerializePayload() const
 {
   JsonValue payload;

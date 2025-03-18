@@ -18,18 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-ManagedWorkgroupListItem::ManagedWorkgroupListItem() : 
-    m_creationDateHasBeenSet(false),
-    m_managedWorkgroupIdHasBeenSet(false),
-    m_managedWorkgroupNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_status(ManagedWorkgroupStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ManagedWorkgroupListItem::ManagedWorkgroupListItem(JsonView jsonValue)
-  : ManagedWorkgroupListItem()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ManagedWorkgroupListItem& ManagedWorkgroupListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetString("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedWorkgroupId"))
   {
     m_managedWorkgroupId = jsonValue.GetString("managedWorkgroupId");
-
     m_managedWorkgroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedWorkgroupName"))
   {
     m_managedWorkgroupName = jsonValue.GetString("managedWorkgroupName");
-
     m_managedWorkgroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceArn"))
   {
     m_sourceArn = jsonValue.GetString("sourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ManagedWorkgroupStatusMapper::GetManagedWorkgroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

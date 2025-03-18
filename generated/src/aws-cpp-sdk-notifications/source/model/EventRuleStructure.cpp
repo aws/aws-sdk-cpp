@@ -18,21 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-EventRuleStructure::EventRuleStructure() : 
-    m_arnHasBeenSet(false),
-    m_notificationConfigurationArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_managedRulesHasBeenSet(false),
-    m_statusSummaryByRegionHasBeenSet(false)
-{
-}
-
 EventRuleStructure::EventRuleStructure(JsonView jsonValue)
-  : EventRuleStructure()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ EventRuleStructure& EventRuleStructure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationConfigurationArn"))
   {
     m_notificationConfigurationArn = jsonValue.GetString("notificationConfigurationArn");
-
     m_notificationConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventPattern"))
   {
     m_eventPattern = jsonValue.GetString("eventPattern");
-
     m_eventPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
@@ -90,7 +64,6 @@ EventRuleStructure& EventRuleStructure::operator =(JsonView jsonValue)
     }
     m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedRules"))
   {
     Aws::Utils::Array<JsonView> managedRulesJsonList = jsonValue.GetArray("managedRules");
@@ -100,7 +73,6 @@ EventRuleStructure& EventRuleStructure::operator =(JsonView jsonValue)
     }
     m_managedRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusSummaryByRegion"))
   {
     Aws::Map<Aws::String, JsonView> statusSummaryByRegionJsonMap = jsonValue.GetObject("statusSummaryByRegion").GetAllObjects();
@@ -110,7 +82,6 @@ EventRuleStructure& EventRuleStructure::operator =(JsonView jsonValue)
     }
     m_statusSummaryByRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

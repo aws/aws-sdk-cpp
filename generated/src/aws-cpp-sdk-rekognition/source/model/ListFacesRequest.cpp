@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFacesRequest::ListFacesRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_faceIdsHasBeenSet(false)
-{
-}
-
 Aws::String ListFacesRequest::SerializePayload() const
 {
   JsonValue payload;

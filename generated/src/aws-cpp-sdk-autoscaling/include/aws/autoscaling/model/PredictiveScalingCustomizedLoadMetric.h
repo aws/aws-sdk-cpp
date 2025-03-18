@@ -33,7 +33,7 @@ namespace Model
   class PredictiveScalingCustomizedLoadMetric
   {
   public:
-    AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric();
+    AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric() = default;
     AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,14 @@ namespace Model
      * Use multiple metric data queries only if you are performing a math expression on
      * returned data. </p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
+    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const { return m_metricDataQueries; }
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
-    inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
-    inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
-    inline PredictiveScalingCustomizedLoadMetric& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
-    inline PredictiveScalingCustomizedLoadMetric& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
-    inline PredictiveScalingCustomizedLoadMetric& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
-    inline PredictiveScalingCustomizedLoadMetric& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    void SetMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::forward<MetricDataQueriesT>(value); }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    PredictiveScalingCustomizedLoadMetric& WithMetricDataQueries(MetricDataQueriesT&& value) { SetMetricDataQueries(std::forward<MetricDataQueriesT>(value)); return *this;}
+    template<typename MetricDataQueriesT = MetricDataQuery>
+    PredictiveScalingCustomizedLoadMetric& AddMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.emplace_back(std::forward<MetricDataQueriesT>(value)); return *this; }
     ///@}
   private:
 

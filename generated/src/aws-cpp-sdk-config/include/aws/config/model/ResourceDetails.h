@@ -33,7 +33,7 @@ namespace Model
   class ResourceDetails
   {
   public:
-    AWS_CONFIGSERVICE_API ResourceDetails();
+    AWS_CONFIGSERVICE_API ResourceDetails() = default;
     AWS_CONFIGSERVICE_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>A unique resource ID for an evaluation.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResourceDetails& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResourceDetails& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResourceDetails& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResourceDetails& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource being evaluated.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ResourceDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ResourceDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResourceDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ResourceDetails& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The resource definition to be evaluated as per the resource configuration
      * schema type.</p>
      */
-    inline const Aws::String& GetResourceConfiguration() const{ return m_resourceConfiguration; }
+    inline const Aws::String& GetResourceConfiguration() const { return m_resourceConfiguration; }
     inline bool ResourceConfigurationHasBeenSet() const { return m_resourceConfigurationHasBeenSet; }
-    inline void SetResourceConfiguration(const Aws::String& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = value; }
-    inline void SetResourceConfiguration(Aws::String&& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = std::move(value); }
-    inline void SetResourceConfiguration(const char* value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration.assign(value); }
-    inline ResourceDetails& WithResourceConfiguration(const Aws::String& value) { SetResourceConfiguration(value); return *this;}
-    inline ResourceDetails& WithResourceConfiguration(Aws::String&& value) { SetResourceConfiguration(std::move(value)); return *this;}
-    inline ResourceDetails& WithResourceConfiguration(const char* value) { SetResourceConfiguration(value); return *this;}
+    template<typename ResourceConfigurationT = Aws::String>
+    void SetResourceConfiguration(ResourceConfigurationT&& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = std::forward<ResourceConfigurationT>(value); }
+    template<typename ResourceConfigurationT = Aws::String>
+    ResourceDetails& WithResourceConfiguration(ResourceConfigurationT&& value) { SetResourceConfiguration(std::forward<ResourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * Web Services resource and property types reference</a> in the CloudFormation
      * User Guide.</p> 
      */
-    inline const ResourceConfigurationSchemaType& GetResourceConfigurationSchemaType() const{ return m_resourceConfigurationSchemaType; }
+    inline ResourceConfigurationSchemaType GetResourceConfigurationSchemaType() const { return m_resourceConfigurationSchemaType; }
     inline bool ResourceConfigurationSchemaTypeHasBeenSet() const { return m_resourceConfigurationSchemaTypeHasBeenSet; }
-    inline void SetResourceConfigurationSchemaType(const ResourceConfigurationSchemaType& value) { m_resourceConfigurationSchemaTypeHasBeenSet = true; m_resourceConfigurationSchemaType = value; }
-    inline void SetResourceConfigurationSchemaType(ResourceConfigurationSchemaType&& value) { m_resourceConfigurationSchemaTypeHasBeenSet = true; m_resourceConfigurationSchemaType = std::move(value); }
-    inline ResourceDetails& WithResourceConfigurationSchemaType(const ResourceConfigurationSchemaType& value) { SetResourceConfigurationSchemaType(value); return *this;}
-    inline ResourceDetails& WithResourceConfigurationSchemaType(ResourceConfigurationSchemaType&& value) { SetResourceConfigurationSchemaType(std::move(value)); return *this;}
+    inline void SetResourceConfigurationSchemaType(ResourceConfigurationSchemaType value) { m_resourceConfigurationSchemaTypeHasBeenSet = true; m_resourceConfigurationSchemaType = value; }
+    inline ResourceDetails& WithResourceConfigurationSchemaType(ResourceConfigurationSchemaType value) { SetResourceConfigurationSchemaType(value); return *this;}
     ///@}
   private:
 
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_resourceConfiguration;
     bool m_resourceConfigurationHasBeenSet = false;
 
-    ResourceConfigurationSchemaType m_resourceConfigurationSchemaType;
+    ResourceConfigurationSchemaType m_resourceConfigurationSchemaType{ResourceConfigurationSchemaType::NOT_SET};
     bool m_resourceConfigurationSchemaTypeHasBeenSet = false;
   };
 

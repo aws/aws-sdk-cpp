@@ -33,7 +33,7 @@ namespace Model
   class ConnectorDefinitionVersion
   {
   public:
-    AWS_GREENGRASS_API ConnectorDefinitionVersion();
+    AWS_GREENGRASS_API ConnectorDefinitionVersion() = default;
     AWS_GREENGRASS_API ConnectorDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API ConnectorDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * A list of references to connectors in this version, with their corresponding
      * configuration settings.
      */
-    inline const Aws::Vector<Connector>& GetConnectors() const{ return m_connectors; }
+    inline const Aws::Vector<Connector>& GetConnectors() const { return m_connectors; }
     inline bool ConnectorsHasBeenSet() const { return m_connectorsHasBeenSet; }
-    inline void SetConnectors(const Aws::Vector<Connector>& value) { m_connectorsHasBeenSet = true; m_connectors = value; }
-    inline void SetConnectors(Aws::Vector<Connector>&& value) { m_connectorsHasBeenSet = true; m_connectors = std::move(value); }
-    inline ConnectorDefinitionVersion& WithConnectors(const Aws::Vector<Connector>& value) { SetConnectors(value); return *this;}
-    inline ConnectorDefinitionVersion& WithConnectors(Aws::Vector<Connector>&& value) { SetConnectors(std::move(value)); return *this;}
-    inline ConnectorDefinitionVersion& AddConnectors(const Connector& value) { m_connectorsHasBeenSet = true; m_connectors.push_back(value); return *this; }
-    inline ConnectorDefinitionVersion& AddConnectors(Connector&& value) { m_connectorsHasBeenSet = true; m_connectors.push_back(std::move(value)); return *this; }
+    template<typename ConnectorsT = Aws::Vector<Connector>>
+    void SetConnectors(ConnectorsT&& value) { m_connectorsHasBeenSet = true; m_connectors = std::forward<ConnectorsT>(value); }
+    template<typename ConnectorsT = Aws::Vector<Connector>>
+    ConnectorDefinitionVersion& WithConnectors(ConnectorsT&& value) { SetConnectors(std::forward<ConnectorsT>(value)); return *this;}
+    template<typename ConnectorsT = Connector>
+    ConnectorDefinitionVersion& AddConnectors(ConnectorsT&& value) { m_connectorsHasBeenSet = true; m_connectors.emplace_back(std::forward<ConnectorsT>(value)); return *this; }
     ///@}
   private:
 

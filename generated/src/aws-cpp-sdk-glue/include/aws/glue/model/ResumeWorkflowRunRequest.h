@@ -22,7 +22,7 @@ namespace Model
   class ResumeWorkflowRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API ResumeWorkflowRunRequest();
+    AWS_GLUE_API ResumeWorkflowRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of the workflow to resume.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResumeWorkflowRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResumeWorkflowRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResumeWorkflowRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResumeWorkflowRunRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workflow run to resume.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline ResumeWorkflowRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline ResumeWorkflowRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline ResumeWorkflowRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    ResumeWorkflowRunRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,15 +64,14 @@ namespace Model
      * <p>A list of the node IDs for the nodes you want to restart. The nodes that are
      * to be restarted must have a run attempt in the original run.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNodeIds() const{ return m_nodeIds; }
+    inline const Aws::Vector<Aws::String>& GetNodeIds() const { return m_nodeIds; }
     inline bool NodeIdsHasBeenSet() const { return m_nodeIdsHasBeenSet; }
-    inline void SetNodeIds(const Aws::Vector<Aws::String>& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = value; }
-    inline void SetNodeIds(Aws::Vector<Aws::String>&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = std::move(value); }
-    inline ResumeWorkflowRunRequest& WithNodeIds(const Aws::Vector<Aws::String>& value) { SetNodeIds(value); return *this;}
-    inline ResumeWorkflowRunRequest& WithNodeIds(Aws::Vector<Aws::String>&& value) { SetNodeIds(std::move(value)); return *this;}
-    inline ResumeWorkflowRunRequest& AddNodeIds(const Aws::String& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
-    inline ResumeWorkflowRunRequest& AddNodeIds(Aws::String&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(std::move(value)); return *this; }
-    inline ResumeWorkflowRunRequest& AddNodeIds(const char* value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
+    template<typename NodeIdsT = Aws::Vector<Aws::String>>
+    void SetNodeIds(NodeIdsT&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = std::forward<NodeIdsT>(value); }
+    template<typename NodeIdsT = Aws::Vector<Aws::String>>
+    ResumeWorkflowRunRequest& WithNodeIds(NodeIdsT&& value) { SetNodeIds(std::forward<NodeIdsT>(value)); return *this;}
+    template<typename NodeIdsT = Aws::String>
+    ResumeWorkflowRunRequest& AddNodeIds(NodeIdsT&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.emplace_back(std::forward<NodeIdsT>(value)); return *this; }
     ///@}
   private:
 

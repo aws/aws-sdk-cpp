@@ -31,7 +31,7 @@ namespace Model
   class LaunchTemplateDiskConf
   {
   public:
-    AWS_MGN_API LaunchTemplateDiskConf();
+    AWS_MGN_API LaunchTemplateDiskConf() = default;
     AWS_MGN_API LaunchTemplateDiskConf(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API LaunchTemplateDiskConf& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Launch template disk iops configuration.</p>
      */
-    inline long long GetIops() const{ return m_iops; }
+    inline long long GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline LaunchTemplateDiskConf& WithIops(long long value) { SetIops(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Launch template disk throughput configuration.</p>
      */
-    inline long long GetThroughput() const{ return m_throughput; }
+    inline long long GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(long long value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline LaunchTemplateDiskConf& WithThroughput(long long value) { SetThroughput(value); return *this;}
@@ -61,22 +61,20 @@ namespace Model
     /**
      * <p>Launch template disk volume type configuration.</p>
      */
-    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+    inline VolumeType GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline LaunchTemplateDiskConf& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-    inline LaunchTemplateDiskConf& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+    inline void SetVolumeType(VolumeType value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline LaunchTemplateDiskConf& WithVolumeType(VolumeType value) { SetVolumeType(value); return *this;}
     ///@}
   private:
 
-    long long m_iops;
+    long long m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    long long m_throughput;
+    long long m_throughput{0};
     bool m_throughputHasBeenSet = false;
 
-    VolumeType m_volumeType;
+    VolumeType m_volumeType{VolumeType::NOT_SET};
     bool m_volumeTypeHasBeenSet = false;
   };
 

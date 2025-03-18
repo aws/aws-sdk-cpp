@@ -22,7 +22,7 @@ namespace Model
   class ListGameServersRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ListGameServersRequest();
+    AWS_GAMELIFT_API ListGameServersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>An identifier for the game server group to retrieve a list of game servers
      * from. Use either the name or ARN value.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline ListGameServersRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline ListGameServersRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline ListGameServersRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    ListGameServersRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,10 @@ namespace Model
      * use <code>DESCENDING</code> to retrieve newest game servers first. If this
      * parameter is left empty, game servers are returned in no particular order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListGameServersRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListGameServersRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListGameServersRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListGameServersRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -82,24 +78,22 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListGameServersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGameServersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGameServersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGameServersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gameServerGroupName;
     bool m_gameServerGroupNameHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

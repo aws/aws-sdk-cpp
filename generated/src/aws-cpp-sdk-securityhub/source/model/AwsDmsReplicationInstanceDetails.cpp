@@ -18,28 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDmsReplicationInstanceDetails::AwsDmsReplicationInstanceDetails() : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_replicationInstanceIdentifierHasBeenSet(false),
-    m_replicationSubnetGroupHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
-{
-}
-
 AwsDmsReplicationInstanceDetails::AwsDmsReplicationInstanceDetails(JsonView jsonValue)
-  : AwsDmsReplicationInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ AwsDmsReplicationInstanceDetails& AwsDmsReplicationInstanceDetails::operator =(J
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
-
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAZ"))
   {
     m_multiAZ = jsonValue.GetBool("MultiAZ");
-
     m_multiAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PubliclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("PubliclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceClass"))
   {
     m_replicationInstanceClass = jsonValue.GetString("ReplicationInstanceClass");
-
     m_replicationInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceIdentifier"))
   {
     m_replicationInstanceIdentifier = jsonValue.GetString("ReplicationInstanceIdentifier");
-
     m_replicationInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationSubnetGroup"))
   {
     m_replicationSubnetGroup = jsonValue.GetObject("ReplicationSubnetGroup");
-
     m_replicationSubnetGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
@@ -132,7 +89,6 @@ AwsDmsReplicationInstanceDetails& AwsDmsReplicationInstanceDetails::operator =(J
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

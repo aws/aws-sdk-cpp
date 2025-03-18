@@ -24,7 +24,7 @@ namespace Model
   class PutVoiceConnectorExternalSystemsConfigurationRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationRequest();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,38 @@ namespace Model
      * <p>The ID of the Voice Connector for which to add the external system
      * configuration.</p>
      */
-    inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
+    inline const Aws::String& GetVoiceConnectorId() const { return m_voiceConnectorId; }
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-    inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-    inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-    inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    template<typename VoiceConnectorIdT = Aws::String>
+    void SetVoiceConnectorId(VoiceConnectorIdT&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::forward<VoiceConnectorIdT>(value); }
+    template<typename VoiceConnectorIdT = Aws::String>
+    PutVoiceConnectorExternalSystemsConfigurationRequest& WithVoiceConnectorId(VoiceConnectorIdT&& value) { SetVoiceConnectorId(std::forward<VoiceConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session border controllers to use.</p>
      */
-    inline const Aws::Vector<SessionBorderControllerType>& GetSessionBorderControllerTypes() const{ return m_sessionBorderControllerTypes; }
+    inline const Aws::Vector<SessionBorderControllerType>& GetSessionBorderControllerTypes() const { return m_sessionBorderControllerTypes; }
     inline bool SessionBorderControllerTypesHasBeenSet() const { return m_sessionBorderControllerTypesHasBeenSet; }
-    inline void SetSessionBorderControllerTypes(const Aws::Vector<SessionBorderControllerType>& value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes = value; }
-    inline void SetSessionBorderControllerTypes(Aws::Vector<SessionBorderControllerType>&& value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes = std::move(value); }
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithSessionBorderControllerTypes(const Aws::Vector<SessionBorderControllerType>& value) { SetSessionBorderControllerTypes(value); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithSessionBorderControllerTypes(Aws::Vector<SessionBorderControllerType>&& value) { SetSessionBorderControllerTypes(std::move(value)); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddSessionBorderControllerTypes(const SessionBorderControllerType& value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes.push_back(value); return *this; }
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddSessionBorderControllerTypes(SessionBorderControllerType&& value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes.push_back(std::move(value)); return *this; }
+    template<typename SessionBorderControllerTypesT = Aws::Vector<SessionBorderControllerType>>
+    void SetSessionBorderControllerTypes(SessionBorderControllerTypesT&& value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes = std::forward<SessionBorderControllerTypesT>(value); }
+    template<typename SessionBorderControllerTypesT = Aws::Vector<SessionBorderControllerType>>
+    PutVoiceConnectorExternalSystemsConfigurationRequest& WithSessionBorderControllerTypes(SessionBorderControllerTypesT&& value) { SetSessionBorderControllerTypes(std::forward<SessionBorderControllerTypesT>(value)); return *this;}
+    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddSessionBorderControllerTypes(SessionBorderControllerType value) { m_sessionBorderControllerTypesHasBeenSet = true; m_sessionBorderControllerTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The contact center system to use.</p>
      */
-    inline const Aws::Vector<ContactCenterSystemType>& GetContactCenterSystemTypes() const{ return m_contactCenterSystemTypes; }
+    inline const Aws::Vector<ContactCenterSystemType>& GetContactCenterSystemTypes() const { return m_contactCenterSystemTypes; }
     inline bool ContactCenterSystemTypesHasBeenSet() const { return m_contactCenterSystemTypesHasBeenSet; }
-    inline void SetContactCenterSystemTypes(const Aws::Vector<ContactCenterSystemType>& value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes = value; }
-    inline void SetContactCenterSystemTypes(Aws::Vector<ContactCenterSystemType>&& value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes = std::move(value); }
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithContactCenterSystemTypes(const Aws::Vector<ContactCenterSystemType>& value) { SetContactCenterSystemTypes(value); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& WithContactCenterSystemTypes(Aws::Vector<ContactCenterSystemType>&& value) { SetContactCenterSystemTypes(std::move(value)); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddContactCenterSystemTypes(const ContactCenterSystemType& value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes.push_back(value); return *this; }
-    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddContactCenterSystemTypes(ContactCenterSystemType&& value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes.push_back(std::move(value)); return *this; }
+    template<typename ContactCenterSystemTypesT = Aws::Vector<ContactCenterSystemType>>
+    void SetContactCenterSystemTypes(ContactCenterSystemTypesT&& value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes = std::forward<ContactCenterSystemTypesT>(value); }
+    template<typename ContactCenterSystemTypesT = Aws::Vector<ContactCenterSystemType>>
+    PutVoiceConnectorExternalSystemsConfigurationRequest& WithContactCenterSystemTypes(ContactCenterSystemTypesT&& value) { SetContactCenterSystemTypes(std::forward<ContactCenterSystemTypesT>(value)); return *this;}
+    inline PutVoiceConnectorExternalSystemsConfigurationRequest& AddContactCenterSystemTypes(ContactCenterSystemType value) { m_contactCenterSystemTypesHasBeenSet = true; m_contactCenterSystemTypes.push_back(value); return *this; }
     ///@}
   private:
 

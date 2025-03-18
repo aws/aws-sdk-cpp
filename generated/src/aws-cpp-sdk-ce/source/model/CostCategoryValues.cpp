@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategoryValues::CostCategoryValues() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_matchOptionsHasBeenSet(false)
-{
-}
-
 CostCategoryValues::CostCategoryValues(JsonView jsonValue)
-  : CostCategoryValues()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CostCategoryValues& CostCategoryValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ CostCategoryValues& CostCategoryValues::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchOptions"))
   {
     Aws::Utils::Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("MatchOptions");
@@ -59,7 +48,6 @@ CostCategoryValues& CostCategoryValues::operator =(JsonView jsonValue)
     }
     m_matchOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

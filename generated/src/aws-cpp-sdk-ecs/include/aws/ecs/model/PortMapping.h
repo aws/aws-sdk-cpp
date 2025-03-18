@@ -49,7 +49,7 @@ namespace Model
   class PortMapping
   {
   public:
-    AWS_ECS_API PortMapping();
+    AWS_ECS_API PortMapping() = default;
     AWS_ECS_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,7 +67,7 @@ namespace Model
      * mappings that are automatically assigned in this way do not count toward the 100
      * reserved ports limit of a container instance.</p>
      */
-    inline int GetContainerPort() const{ return m_containerPort; }
+    inline int GetContainerPort() const { return m_containerPort; }
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
     inline PortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
@@ -109,7 +109,7 @@ namespace Model
      * number includes the default reserved ports. Automatically assigned ports aren't
      * included in the 100 reserved ports quota.</p>
      */
-    inline int GetHostPort() const{ return m_hostPort; }
+    inline int GetHostPort() const { return m_hostPort; }
     inline bool HostPortHasBeenSet() const { return m_hostPortHasBeenSet; }
     inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
     inline PortMapping& WithHostPort(int value) { SetHostPort(value); return *this;}
@@ -122,12 +122,10 @@ namespace Model
      * immutable in a Service Connect service. Updating this field requires a service
      * deletion and redeployment. </p>
      */
-    inline const TransportProtocol& GetProtocol() const{ return m_protocol; }
+    inline TransportProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const TransportProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline PortMapping& WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
-    inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(TransportProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline PortMapping& WithProtocol(TransportProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +136,12 @@ namespace Model
      * 64 characters. The characters can include lowercase letters, numbers,
      * underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PortMapping& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PortMapping& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PortMapping& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PortMapping& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,12 +164,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const ApplicationProtocol& GetAppProtocol() const{ return m_appProtocol; }
+    inline ApplicationProtocol GetAppProtocol() const { return m_appProtocol; }
     inline bool AppProtocolHasBeenSet() const { return m_appProtocolHasBeenSet; }
-    inline void SetAppProtocol(const ApplicationProtocol& value) { m_appProtocolHasBeenSet = true; m_appProtocol = value; }
-    inline void SetAppProtocol(ApplicationProtocol&& value) { m_appProtocolHasBeenSet = true; m_appProtocol = std::move(value); }
-    inline PortMapping& WithAppProtocol(const ApplicationProtocol& value) { SetAppProtocol(value); return *this;}
-    inline PortMapping& WithAppProtocol(ApplicationProtocol&& value) { SetAppProtocol(std::move(value)); return *this;}
+    inline void SetAppProtocol(ApplicationProtocol value) { m_appProtocolHasBeenSet = true; m_appProtocol = value; }
+    inline PortMapping& WithAppProtocol(ApplicationProtocol value) { SetAppProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -212,30 +206,28 @@ namespace Model
      * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are
      * the host ports that are bound to the container ports.</p>
      */
-    inline const Aws::String& GetContainerPortRange() const{ return m_containerPortRange; }
+    inline const Aws::String& GetContainerPortRange() const { return m_containerPortRange; }
     inline bool ContainerPortRangeHasBeenSet() const { return m_containerPortRangeHasBeenSet; }
-    inline void SetContainerPortRange(const Aws::String& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = value; }
-    inline void SetContainerPortRange(Aws::String&& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = std::move(value); }
-    inline void SetContainerPortRange(const char* value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange.assign(value); }
-    inline PortMapping& WithContainerPortRange(const Aws::String& value) { SetContainerPortRange(value); return *this;}
-    inline PortMapping& WithContainerPortRange(Aws::String&& value) { SetContainerPortRange(std::move(value)); return *this;}
-    inline PortMapping& WithContainerPortRange(const char* value) { SetContainerPortRange(value); return *this;}
+    template<typename ContainerPortRangeT = Aws::String>
+    void SetContainerPortRange(ContainerPortRangeT&& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = std::forward<ContainerPortRangeT>(value); }
+    template<typename ContainerPortRangeT = Aws::String>
+    PortMapping& WithContainerPortRange(ContainerPortRangeT&& value) { SetContainerPortRange(std::forward<ContainerPortRangeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_containerPort;
+    int m_containerPort{0};
     bool m_containerPortHasBeenSet = false;
 
-    int m_hostPort;
+    int m_hostPort{0};
     bool m_hostPortHasBeenSet = false;
 
-    TransportProtocol m_protocol;
+    TransportProtocol m_protocol{TransportProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ApplicationProtocol m_appProtocol;
+    ApplicationProtocol m_appProtocol{ApplicationProtocol::NOT_SET};
     bool m_appProtocolHasBeenSet = false;
 
     Aws::String m_containerPortRange;

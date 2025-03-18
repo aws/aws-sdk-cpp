@@ -22,7 +22,7 @@ namespace Model
   class UpdateApnsSandboxChannelRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateApnsSandboxChannelRequest();
+    AWS_PINPOINT_API UpdateApnsSandboxChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const APNSSandboxChannelRequest& GetAPNSSandboxChannelRequest() const{ return m_aPNSSandboxChannelRequest; }
+    inline const APNSSandboxChannelRequest& GetAPNSSandboxChannelRequest() const { return m_aPNSSandboxChannelRequest; }
     inline bool APNSSandboxChannelRequestHasBeenSet() const { return m_aPNSSandboxChannelRequestHasBeenSet; }
-    inline void SetAPNSSandboxChannelRequest(const APNSSandboxChannelRequest& value) { m_aPNSSandboxChannelRequestHasBeenSet = true; m_aPNSSandboxChannelRequest = value; }
-    inline void SetAPNSSandboxChannelRequest(APNSSandboxChannelRequest&& value) { m_aPNSSandboxChannelRequestHasBeenSet = true; m_aPNSSandboxChannelRequest = std::move(value); }
-    inline UpdateApnsSandboxChannelRequest& WithAPNSSandboxChannelRequest(const APNSSandboxChannelRequest& value) { SetAPNSSandboxChannelRequest(value); return *this;}
-    inline UpdateApnsSandboxChannelRequest& WithAPNSSandboxChannelRequest(APNSSandboxChannelRequest&& value) { SetAPNSSandboxChannelRequest(std::move(value)); return *this;}
+    template<typename APNSSandboxChannelRequestT = APNSSandboxChannelRequest>
+    void SetAPNSSandboxChannelRequest(APNSSandboxChannelRequestT&& value) { m_aPNSSandboxChannelRequestHasBeenSet = true; m_aPNSSandboxChannelRequest = std::forward<APNSSandboxChannelRequestT>(value); }
+    template<typename APNSSandboxChannelRequestT = APNSSandboxChannelRequest>
+    UpdateApnsSandboxChannelRequest& WithAPNSSandboxChannelRequest(APNSSandboxChannelRequestT&& value) { SetAPNSSandboxChannelRequest(std::forward<APNSSandboxChannelRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -48,14 +48,12 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateApnsSandboxChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateApnsSandboxChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateApnsSandboxChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateApnsSandboxChannelRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -43,7 +43,7 @@ namespace Model
   class Job
   {
   public:
-    AWS_GLUEDATABREW_API Job();
+    AWS_GLUEDATABREW_API Job() = default;
     AWS_GLUEDATABREW_API Job(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,54 +53,48 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Job& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Job& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Job& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Job& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline Job& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline Job& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline Job& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    Job& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline Job& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline Job& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    Job& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A dataset that the job is to process.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline Job& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline Job& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline Job& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    Job& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
      * data written by DataBrew jobs</a> </p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline Job& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline Job& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline Job& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    Job& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,26 +119,22 @@ namespace Model
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
-    inline const EncryptionMode& GetEncryptionMode() const{ return m_encryptionMode; }
+    inline EncryptionMode GetEncryptionMode() const { return m_encryptionMode; }
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
-    inline void SetEncryptionMode(const EncryptionMode& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
-    inline void SetEncryptionMode(EncryptionMode&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
-    inline Job& WithEncryptionMode(const EncryptionMode& value) { SetEncryptionMode(value); return *this;}
-    inline Job& WithEncryptionMode(EncryptionMode&& value) { SetEncryptionMode(std::move(value)); return *this;}
+    inline void SetEncryptionMode(EncryptionMode value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+    inline Job& WithEncryptionMode(EncryptionMode value) { SetEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Job& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Job& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Job& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Job& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,50 +144,44 @@ namespace Model
      * data types, data distribution, and more.</p> </li> <li> <p> <code>RECIPE</code>
      * - A job to apply one or more transformations to a dataset.</p> </li> </ul>
      */
-    inline const JobType& GetType() const{ return m_type; }
+    inline JobType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const JobType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(JobType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Job& WithType(const JobType& value) { SetType(value); return *this;}
-    inline Job& WithType(JobType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(JobType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Job& WithType(JobType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
-    inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-    inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
-    inline Job& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
-    inline Job& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
-    inline Job& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+    template<typename LastModifiedByT = Aws::String>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = Aws::String>
+    Job& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The modification date and time of the job.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline Job& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline Job& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    Job& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of Amazon CloudWatch logging for the job.</p>
      */
-    inline const LogSubscription& GetLogSubscription() const{ return m_logSubscription; }
+    inline LogSubscription GetLogSubscription() const { return m_logSubscription; }
     inline bool LogSubscriptionHasBeenSet() const { return m_logSubscriptionHasBeenSet; }
-    inline void SetLogSubscription(const LogSubscription& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
-    inline void SetLogSubscription(LogSubscription&& value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = std::move(value); }
-    inline Job& WithLogSubscription(const LogSubscription& value) { SetLogSubscription(value); return *this;}
-    inline Job& WithLogSubscription(LogSubscription&& value) { SetLogSubscription(std::move(value)); return *this;}
+    inline void SetLogSubscription(LogSubscription value) { m_logSubscriptionHasBeenSet = true; m_logSubscription = value; }
+    inline Job& WithLogSubscription(LogSubscription value) { SetLogSubscription(value); return *this;}
     ///@}
 
     ///@{
@@ -207,7 +189,7 @@ namespace Model
      * <p>The maximum number of nodes that can be consumed when the job processes
      * data.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline Job& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -217,7 +199,7 @@ namespace Model
     /**
      * <p>The maximum number of times to retry the job after a job run fails.</p>
      */
-    inline int GetMaxRetries() const{ return m_maxRetries; }
+    inline int GetMaxRetries() const { return m_maxRetries; }
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
     inline Job& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
@@ -227,14 +209,14 @@ namespace Model
     /**
      * <p>One or more artifacts that represent output from running the job.</p>
      */
-    inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<Output>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline Job& WithOutputs(const Aws::Vector<Output>& value) { SetOutputs(value); return *this;}
-    inline Job& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline Job& AddOutputs(const Output& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline Job& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<Output>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<Output>>
+    Job& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = Output>
+    Job& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -242,14 +224,14 @@ namespace Model
      * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
-    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const { return m_dataCatalogOutputs; }
     inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
-    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
-    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
-    inline Job& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
-    inline Job& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
-    inline Job& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
-    inline Job& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+    template<typename DataCatalogOutputsT = Aws::Vector<DataCatalogOutput>>
+    void SetDataCatalogOutputs(DataCatalogOutputsT&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::forward<DataCatalogOutputsT>(value); }
+    template<typename DataCatalogOutputsT = Aws::Vector<DataCatalogOutput>>
+    Job& WithDataCatalogOutputs(DataCatalogOutputsT&& value) { SetDataCatalogOutputs(std::forward<DataCatalogOutputsT>(value)); return *this;}
+    template<typename DataCatalogOutputsT = DataCatalogOutput>
+    Job& AddDataCatalogOutputs(DataCatalogOutputsT&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.emplace_back(std::forward<DataCatalogOutputsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -257,68 +239,62 @@ namespace Model
      * <p>Represents a list of JDBC database output objects which defines the output
      * destination for a DataBrew recipe job to write into.</p>
      */
-    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const{ return m_databaseOutputs; }
+    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const { return m_databaseOutputs; }
     inline bool DatabaseOutputsHasBeenSet() const { return m_databaseOutputsHasBeenSet; }
-    inline void SetDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = value; }
-    inline void SetDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = std::move(value); }
-    inline Job& WithDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { SetDatabaseOutputs(value); return *this;}
-    inline Job& WithDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { SetDatabaseOutputs(std::move(value)); return *this;}
-    inline Job& AddDatabaseOutputs(const DatabaseOutput& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(value); return *this; }
-    inline Job& AddDatabaseOutputs(DatabaseOutput&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(std::move(value)); return *this; }
+    template<typename DatabaseOutputsT = Aws::Vector<DatabaseOutput>>
+    void SetDatabaseOutputs(DatabaseOutputsT&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = std::forward<DatabaseOutputsT>(value); }
+    template<typename DatabaseOutputsT = Aws::Vector<DatabaseOutput>>
+    Job& WithDatabaseOutputs(DatabaseOutputsT&& value) { SetDatabaseOutputs(std::forward<DatabaseOutputsT>(value)); return *this;}
+    template<typename DatabaseOutputsT = DatabaseOutput>
+    Job& AddDatabaseOutputs(DatabaseOutputsT&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.emplace_back(std::forward<DatabaseOutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the project that the job is associated with.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline Job& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline Job& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline Job& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    Job& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of steps that the job runs.</p>
      */
-    inline const RecipeReference& GetRecipeReference() const{ return m_recipeReference; }
+    inline const RecipeReference& GetRecipeReference() const { return m_recipeReference; }
     inline bool RecipeReferenceHasBeenSet() const { return m_recipeReferenceHasBeenSet; }
-    inline void SetRecipeReference(const RecipeReference& value) { m_recipeReferenceHasBeenSet = true; m_recipeReference = value; }
-    inline void SetRecipeReference(RecipeReference&& value) { m_recipeReferenceHasBeenSet = true; m_recipeReference = std::move(value); }
-    inline Job& WithRecipeReference(const RecipeReference& value) { SetRecipeReference(value); return *this;}
-    inline Job& WithRecipeReference(RecipeReference&& value) { SetRecipeReference(std::move(value)); return *this;}
+    template<typename RecipeReferenceT = RecipeReference>
+    void SetRecipeReference(RecipeReferenceT&& value) { m_recipeReferenceHasBeenSet = true; m_recipeReference = std::forward<RecipeReferenceT>(value); }
+    template<typename RecipeReferenceT = RecipeReference>
+    Job& WithRecipeReference(RecipeReferenceT&& value) { SetRecipeReference(std::forward<RecipeReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique Amazon Resource Name (ARN) for the job.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline Job& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline Job& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline Job& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    Job& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline Job& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline Job& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline Job& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    Job& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -326,7 +302,7 @@ namespace Model
      * <p>The job's timeout in minutes. A job that attempts to run longer than this
      * timeout period ends with a status of <code>TIMEOUT</code>.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline Job& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -336,19 +312,16 @@ namespace Model
     /**
      * <p>Metadata tags that have been applied to the job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Job& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Job& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Job& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Job& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Job& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Job& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Job& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Job& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Job& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Job& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Job& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -358,26 +331,26 @@ namespace Model
      * provided, the default value is used. The default value is CUSTOM_ROWS for the
      * mode parameter and 20,000 for the size parameter.</p>
      */
-    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+    inline const JobSample& GetJobSample() const { return m_jobSample; }
     inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
-    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
-    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
-    inline Job& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
-    inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+    template<typename JobSampleT = JobSample>
+    void SetJobSample(JobSampleT&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::forward<JobSampleT>(value); }
+    template<typename JobSampleT = JobSample>
+    Job& WithJobSample(JobSampleT&& value) { SetJobSample(std::forward<JobSampleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of validation configurations that are applied to the profile job.</p>
      */
-    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const { return m_validationConfigurations; }
     inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
-    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
-    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
-    inline Job& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
-    inline Job& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
-    inline Job& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
-    inline Job& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ValidationConfigurationsT = Aws::Vector<ValidationConfiguration>>
+    void SetValidationConfigurations(ValidationConfigurationsT&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::forward<ValidationConfigurationsT>(value); }
+    template<typename ValidationConfigurationsT = Aws::Vector<ValidationConfiguration>>
+    Job& WithValidationConfigurations(ValidationConfigurationsT&& value) { SetValidationConfigurations(std::forward<ValidationConfigurationsT>(value)); return *this;}
+    template<typename ValidationConfigurationsT = ValidationConfiguration>
+    Job& AddValidationConfigurations(ValidationConfigurationsT&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.emplace_back(std::forward<ValidationConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -387,7 +360,7 @@ namespace Model
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
     Aws::String m_datasetName;
@@ -396,28 +369,28 @@ namespace Model
     Aws::String m_encryptionKeyArn;
     bool m_encryptionKeyArnHasBeenSet = false;
 
-    EncryptionMode m_encryptionMode;
+    EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
     bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    JobType m_type;
+    JobType m_type{JobType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
-    LogSubscription m_logSubscription;
+    LogSubscription m_logSubscription{LogSubscription::NOT_SET};
     bool m_logSubscriptionHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
-    int m_maxRetries;
+    int m_maxRetries{0};
     bool m_maxRetriesHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
@@ -441,7 +414,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

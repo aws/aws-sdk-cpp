@@ -18,25 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Resource::Resource() : 
-    m_accessKeyDetailsHasBeenSet(false),
-    m_s3BucketDetailsHasBeenSet(false),
-    m_instanceDetailsHasBeenSet(false),
-    m_eksClusterDetailsHasBeenSet(false),
-    m_kubernetesDetailsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_ebsVolumeDetailsHasBeenSet(false),
-    m_ecsClusterDetailsHasBeenSet(false),
-    m_containerDetailsHasBeenSet(false),
-    m_rdsDbInstanceDetailsHasBeenSet(false),
-    m_rdsLimitlessDbDetailsHasBeenSet(false),
-    m_rdsDbUserDetailsHasBeenSet(false),
-    m_lambdaDetailsHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -46,10 +28,8 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyDetails"))
   {
     m_accessKeyDetails = jsonValue.GetObject("accessKeyDetails");
-
     m_accessKeyDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketDetails"))
   {
     Aws::Utils::Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
@@ -59,84 +39,61 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_s3BucketDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceDetails"))
   {
     m_instanceDetails = jsonValue.GetObject("instanceDetails");
-
     m_instanceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksClusterDetails"))
   {
     m_eksClusterDetails = jsonValue.GetObject("eksClusterDetails");
-
     m_eksClusterDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesDetails"))
   {
     m_kubernetesDetails = jsonValue.GetObject("kubernetesDetails");
-
     m_kubernetesDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsVolumeDetails"))
   {
     m_ebsVolumeDetails = jsonValue.GetObject("ebsVolumeDetails");
-
     m_ebsVolumeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsClusterDetails"))
   {
     m_ecsClusterDetails = jsonValue.GetObject("ecsClusterDetails");
-
     m_ecsClusterDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerDetails"))
   {
     m_containerDetails = jsonValue.GetObject("containerDetails");
-
     m_containerDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbInstanceDetails"))
   {
     m_rdsDbInstanceDetails = jsonValue.GetObject("rdsDbInstanceDetails");
-
     m_rdsDbInstanceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsLimitlessDbDetails"))
   {
     m_rdsLimitlessDbDetails = jsonValue.GetObject("rdsLimitlessDbDetails");
-
     m_rdsLimitlessDbDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbUserDetails"))
   {
     m_rdsDbUserDetails = jsonValue.GetObject("rdsDbUserDetails");
-
     m_rdsDbUserDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaDetails"))
   {
     m_lambdaDetails = jsonValue.GetObject("lambdaDetails");
-
     m_lambdaDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNotebookRequest::UpdateNotebookRequest() : 
-    m_notebookIdHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_type(NotebookType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNotebookRequest::SerializePayload() const
 {
   JsonValue payload;

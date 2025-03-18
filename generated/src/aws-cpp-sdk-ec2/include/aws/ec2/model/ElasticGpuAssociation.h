@@ -33,7 +33,7 @@ namespace Model
   class ElasticGpuAssociation
   {
   public:
-    AWS_EC2_API ElasticGpuAssociation();
+    AWS_EC2_API ElasticGpuAssociation() = default;
     AWS_EC2_API ElasticGpuAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ElasticGpuAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The ID of the Elastic Graphics accelerator.</p>
      */
-    inline const Aws::String& GetElasticGpuId() const{ return m_elasticGpuId; }
+    inline const Aws::String& GetElasticGpuId() const { return m_elasticGpuId; }
     inline bool ElasticGpuIdHasBeenSet() const { return m_elasticGpuIdHasBeenSet; }
-    inline void SetElasticGpuId(const Aws::String& value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId = value; }
-    inline void SetElasticGpuId(Aws::String&& value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId = std::move(value); }
-    inline void SetElasticGpuId(const char* value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId.assign(value); }
-    inline ElasticGpuAssociation& WithElasticGpuId(const Aws::String& value) { SetElasticGpuId(value); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuId(Aws::String&& value) { SetElasticGpuId(std::move(value)); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuId(const char* value) { SetElasticGpuId(value); return *this;}
+    template<typename ElasticGpuIdT = Aws::String>
+    void SetElasticGpuId(ElasticGpuIdT&& value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId = std::forward<ElasticGpuIdT>(value); }
+    template<typename ElasticGpuIdT = Aws::String>
+    ElasticGpuAssociation& WithElasticGpuId(ElasticGpuIdT&& value) { SetElasticGpuId(std::forward<ElasticGpuIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetElasticGpuAssociationId() const{ return m_elasticGpuAssociationId; }
+    inline const Aws::String& GetElasticGpuAssociationId() const { return m_elasticGpuAssociationId; }
     inline bool ElasticGpuAssociationIdHasBeenSet() const { return m_elasticGpuAssociationIdHasBeenSet; }
-    inline void SetElasticGpuAssociationId(const Aws::String& value) { m_elasticGpuAssociationIdHasBeenSet = true; m_elasticGpuAssociationId = value; }
-    inline void SetElasticGpuAssociationId(Aws::String&& value) { m_elasticGpuAssociationIdHasBeenSet = true; m_elasticGpuAssociationId = std::move(value); }
-    inline void SetElasticGpuAssociationId(const char* value) { m_elasticGpuAssociationIdHasBeenSet = true; m_elasticGpuAssociationId.assign(value); }
-    inline ElasticGpuAssociation& WithElasticGpuAssociationId(const Aws::String& value) { SetElasticGpuAssociationId(value); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationId(Aws::String&& value) { SetElasticGpuAssociationId(std::move(value)); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationId(const char* value) { SetElasticGpuAssociationId(value); return *this;}
+    template<typename ElasticGpuAssociationIdT = Aws::String>
+    void SetElasticGpuAssociationId(ElasticGpuAssociationIdT&& value) { m_elasticGpuAssociationIdHasBeenSet = true; m_elasticGpuAssociationId = std::forward<ElasticGpuAssociationIdT>(value); }
+    template<typename ElasticGpuAssociationIdT = Aws::String>
+    ElasticGpuAssociation& WithElasticGpuAssociationId(ElasticGpuAssociationIdT&& value) { SetElasticGpuAssociationId(std::forward<ElasticGpuAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The state of the association between the instance and the Elastic Graphics
      * accelerator.</p>
      */
-    inline const Aws::String& GetElasticGpuAssociationState() const{ return m_elasticGpuAssociationState; }
+    inline const Aws::String& GetElasticGpuAssociationState() const { return m_elasticGpuAssociationState; }
     inline bool ElasticGpuAssociationStateHasBeenSet() const { return m_elasticGpuAssociationStateHasBeenSet; }
-    inline void SetElasticGpuAssociationState(const Aws::String& value) { m_elasticGpuAssociationStateHasBeenSet = true; m_elasticGpuAssociationState = value; }
-    inline void SetElasticGpuAssociationState(Aws::String&& value) { m_elasticGpuAssociationStateHasBeenSet = true; m_elasticGpuAssociationState = std::move(value); }
-    inline void SetElasticGpuAssociationState(const char* value) { m_elasticGpuAssociationStateHasBeenSet = true; m_elasticGpuAssociationState.assign(value); }
-    inline ElasticGpuAssociation& WithElasticGpuAssociationState(const Aws::String& value) { SetElasticGpuAssociationState(value); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationState(Aws::String&& value) { SetElasticGpuAssociationState(std::move(value)); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationState(const char* value) { SetElasticGpuAssociationState(value); return *this;}
+    template<typename ElasticGpuAssociationStateT = Aws::String>
+    void SetElasticGpuAssociationState(ElasticGpuAssociationStateT&& value) { m_elasticGpuAssociationStateHasBeenSet = true; m_elasticGpuAssociationState = std::forward<ElasticGpuAssociationStateT>(value); }
+    template<typename ElasticGpuAssociationStateT = Aws::String>
+    ElasticGpuAssociation& WithElasticGpuAssociationState(ElasticGpuAssociationStateT&& value) { SetElasticGpuAssociationState(std::forward<ElasticGpuAssociationStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * <p>The time the Elastic Graphics accelerator was associated with the
      * instance.</p>
      */
-    inline const Aws::String& GetElasticGpuAssociationTime() const{ return m_elasticGpuAssociationTime; }
+    inline const Aws::String& GetElasticGpuAssociationTime() const { return m_elasticGpuAssociationTime; }
     inline bool ElasticGpuAssociationTimeHasBeenSet() const { return m_elasticGpuAssociationTimeHasBeenSet; }
-    inline void SetElasticGpuAssociationTime(const Aws::String& value) { m_elasticGpuAssociationTimeHasBeenSet = true; m_elasticGpuAssociationTime = value; }
-    inline void SetElasticGpuAssociationTime(Aws::String&& value) { m_elasticGpuAssociationTimeHasBeenSet = true; m_elasticGpuAssociationTime = std::move(value); }
-    inline void SetElasticGpuAssociationTime(const char* value) { m_elasticGpuAssociationTimeHasBeenSet = true; m_elasticGpuAssociationTime.assign(value); }
-    inline ElasticGpuAssociation& WithElasticGpuAssociationTime(const Aws::String& value) { SetElasticGpuAssociationTime(value); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationTime(Aws::String&& value) { SetElasticGpuAssociationTime(std::move(value)); return *this;}
-    inline ElasticGpuAssociation& WithElasticGpuAssociationTime(const char* value) { SetElasticGpuAssociationTime(value); return *this;}
+    template<typename ElasticGpuAssociationTimeT = Aws::String>
+    void SetElasticGpuAssociationTime(ElasticGpuAssociationTimeT&& value) { m_elasticGpuAssociationTimeHasBeenSet = true; m_elasticGpuAssociationTime = std::forward<ElasticGpuAssociationTimeT>(value); }
+    template<typename ElasticGpuAssociationTimeT = Aws::String>
+    ElasticGpuAssociation& WithElasticGpuAssociationTime(ElasticGpuAssociationTimeT&& value) { SetElasticGpuAssociationTime(std::forward<ElasticGpuAssociationTimeT>(value)); return *this;}
     ///@}
   private:
 

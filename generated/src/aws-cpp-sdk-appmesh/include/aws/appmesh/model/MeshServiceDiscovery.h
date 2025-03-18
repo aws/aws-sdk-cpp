@@ -32,7 +32,7 @@ namespace Model
   class MeshServiceDiscovery
   {
   public:
-    AWS_APPMESH_API MeshServiceDiscovery();
+    AWS_APPMESH_API MeshServiceDiscovery() = default;
     AWS_APPMESH_API MeshServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API MeshServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The IP version to use to control traffic within the mesh.</p>
      */
-    inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
+    inline IpPreference GetIpPreference() const { return m_ipPreference; }
     inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
-    inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
-    inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
-    inline MeshServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
-    inline MeshServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
+    inline void SetIpPreference(IpPreference value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
+    inline MeshServiceDiscovery& WithIpPreference(IpPreference value) { SetIpPreference(value); return *this;}
     ///@}
   private:
 
-    IpPreference m_ipPreference;
+    IpPreference m_ipPreference{IpPreference::NOT_SET};
     bool m_ipPreferenceHasBeenSet = false;
   };
 

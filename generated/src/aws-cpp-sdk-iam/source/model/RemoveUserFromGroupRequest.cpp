@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-RemoveUserFromGroupRequest::RemoveUserFromGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveUserFromGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

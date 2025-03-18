@@ -12,22 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExperimentResultsRequest::GetExperimentResultsRequest() : 
-    m_baseStat(ExperimentBaseStat::NOT_SET),
-    m_baseStatHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_experimentHasBeenSet(false),
-    m_metricNamesHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_reportNamesHasBeenSet(false),
-    m_resultStatsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_treatmentNamesHasBeenSet(false)
-{
-}
-
 Aws::String GetExperimentResultsRequest::SerializePayload() const
 {
   JsonValue payload;

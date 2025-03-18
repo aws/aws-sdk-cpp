@@ -22,7 +22,7 @@ namespace Model
   class BatchDisassociateAnalyticsDataSetRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API BatchDisassociateAnalyticsDataSetRequest();
+    AWS_CONNECT_API BatchDisassociateAnalyticsDataSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BatchDisassociateAnalyticsDataSetRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BatchDisassociateAnalyticsDataSetRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of associated dataset identifiers to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataSetIds() const{ return m_dataSetIds; }
+    inline const Aws::Vector<Aws::String>& GetDataSetIds() const { return m_dataSetIds; }
     inline bool DataSetIdsHasBeenSet() const { return m_dataSetIdsHasBeenSet; }
-    inline void SetDataSetIds(const Aws::Vector<Aws::String>& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds = value; }
-    inline void SetDataSetIds(Aws::Vector<Aws::String>&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds = std::move(value); }
-    inline BatchDisassociateAnalyticsDataSetRequest& WithDataSetIds(const Aws::Vector<Aws::String>& value) { SetDataSetIds(value); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& WithDataSetIds(Aws::Vector<Aws::String>&& value) { SetDataSetIds(std::move(value)); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& AddDataSetIds(const Aws::String& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(value); return *this; }
-    inline BatchDisassociateAnalyticsDataSetRequest& AddDataSetIds(Aws::String&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(std::move(value)); return *this; }
-    inline BatchDisassociateAnalyticsDataSetRequest& AddDataSetIds(const char* value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.push_back(value); return *this; }
+    template<typename DataSetIdsT = Aws::Vector<Aws::String>>
+    void SetDataSetIds(DataSetIdsT&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds = std::forward<DataSetIdsT>(value); }
+    template<typename DataSetIdsT = Aws::Vector<Aws::String>>
+    BatchDisassociateAnalyticsDataSetRequest& WithDataSetIds(DataSetIdsT&& value) { SetDataSetIds(std::forward<DataSetIdsT>(value)); return *this;}
+    template<typename DataSetIdsT = Aws::String>
+    BatchDisassociateAnalyticsDataSetRequest& AddDataSetIds(DataSetIdsT&& value) { m_dataSetIdsHasBeenSet = true; m_dataSetIds.emplace_back(std::forward<DataSetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,14 +68,12 @@ namespace Model
      * specified, by default this value is the Amazon Web Services account that has the
      * Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetTargetAccountId() const{ return m_targetAccountId; }
+    inline const Aws::String& GetTargetAccountId() const { return m_targetAccountId; }
     inline bool TargetAccountIdHasBeenSet() const { return m_targetAccountIdHasBeenSet; }
-    inline void SetTargetAccountId(const Aws::String& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = value; }
-    inline void SetTargetAccountId(Aws::String&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::move(value); }
-    inline void SetTargetAccountId(const char* value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId.assign(value); }
-    inline BatchDisassociateAnalyticsDataSetRequest& WithTargetAccountId(const Aws::String& value) { SetTargetAccountId(value); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& WithTargetAccountId(Aws::String&& value) { SetTargetAccountId(std::move(value)); return *this;}
-    inline BatchDisassociateAnalyticsDataSetRequest& WithTargetAccountId(const char* value) { SetTargetAccountId(value); return *this;}
+    template<typename TargetAccountIdT = Aws::String>
+    void SetTargetAccountId(TargetAccountIdT&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::forward<TargetAccountIdT>(value); }
+    template<typename TargetAccountIdT = Aws::String>
+    BatchDisassociateAnalyticsDataSetRequest& WithTargetAccountId(TargetAccountIdT&& value) { SetTargetAccountId(std::forward<TargetAccountIdT>(value)); return *this;}
     ///@}
   private:
 

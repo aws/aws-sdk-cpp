@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressStringExpression::IngressStringExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(IngressStringOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 IngressStringExpression::IngressStringExpression(JsonView jsonValue)
-  : IngressStringExpression()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IngressStringExpression& IngressStringExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = IngressStringOperatorMapper::GetIngressStringOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -57,7 +44,6 @@ IngressStringExpression& IngressStringExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

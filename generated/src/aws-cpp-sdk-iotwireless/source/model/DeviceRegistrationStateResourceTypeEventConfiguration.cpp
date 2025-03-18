@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-DeviceRegistrationStateResourceTypeEventConfiguration::DeviceRegistrationStateResourceTypeEventConfiguration() : 
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 DeviceRegistrationStateResourceTypeEventConfiguration::DeviceRegistrationStateResourceTypeEventConfiguration(JsonView jsonValue)
-  : DeviceRegistrationStateResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeviceRegistrationStateResourceTypeEventConfiguration& DeviceRegistrationStateRe
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   return *this;
 }
 

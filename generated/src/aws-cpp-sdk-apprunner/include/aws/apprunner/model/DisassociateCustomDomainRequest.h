@@ -21,7 +21,7 @@ namespace Model
   class DisassociateCustomDomainRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API DisassociateCustomDomainRequest();
+    AWS_APPRUNNER_API DisassociateCustomDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
      * disassociate a custom domain name from.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline DisassociateCustomDomainRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline DisassociateCustomDomainRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline DisassociateCustomDomainRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    DisassociateCustomDomainRequest& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The domain name that you want to disassociate from the App Runner
      * service.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DisassociateCustomDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DisassociateCustomDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DisassociateCustomDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DisassociateCustomDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
   private:
 

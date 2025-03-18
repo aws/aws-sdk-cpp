@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ColumnDescription::ColumnDescription() : 
-    m_nameHasBeenSet(false),
-    m_type(ColumnType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ColumnDescription::ColumnDescription(JsonView jsonValue)
-  : ColumnDescription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ColumnDescription& ColumnDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ColumnTypeMapper::GetColumnTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RecordingGroup::RecordingGroup() : 
-    m_allSupported(false),
-    m_allSupportedHasBeenSet(false),
-    m_includeGlobalResourceTypes(false),
-    m_includeGlobalResourceTypesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_exclusionByResourceTypesHasBeenSet(false),
-    m_recordingStrategyHasBeenSet(false)
-{
-}
-
 RecordingGroup::RecordingGroup(JsonView jsonValue)
-  : RecordingGroup()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ RecordingGroup& RecordingGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allSupported"))
   {
     m_allSupported = jsonValue.GetBool("allSupported");
-
     m_allSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeGlobalResourceTypes"))
   {
     m_includeGlobalResourceTypes = jsonValue.GetBool("includeGlobalResourceTypes");
-
     m_includeGlobalResourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
@@ -60,21 +44,16 @@ RecordingGroup& RecordingGroup::operator =(JsonView jsonValue)
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exclusionByResourceTypes"))
   {
     m_exclusionByResourceTypes = jsonValue.GetObject("exclusionByResourceTypes");
-
     m_exclusionByResourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingStrategy"))
   {
     m_recordingStrategy = jsonValue.GetObject("recordingStrategy");
-
     m_recordingStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

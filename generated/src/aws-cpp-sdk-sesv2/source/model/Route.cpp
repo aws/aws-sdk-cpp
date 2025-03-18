@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Route::Route() : 
-    m_regionHasBeenSet(false)
-{
-}
-
 Route::Route(JsonView jsonValue)
-  : Route()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Route& Route::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

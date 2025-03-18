@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-UpsolverS3OutputFormatConfig::UpsolverS3OutputFormatConfig() : 
-    m_fileType(FileType::NOT_SET),
-    m_fileTypeHasBeenSet(false),
-    m_prefixConfigHasBeenSet(false),
-    m_aggregationConfigHasBeenSet(false)
-{
-}
-
 UpsolverS3OutputFormatConfig::UpsolverS3OutputFormatConfig(JsonView jsonValue)
-  : UpsolverS3OutputFormatConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UpsolverS3OutputFormatConfig& UpsolverS3OutputFormatConfig::operator =(JsonView 
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = FileTypeMapper::GetFileTypeForName(jsonValue.GetString("fileType"));
-
     m_fileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefixConfig"))
   {
     m_prefixConfig = jsonValue.GetObject("prefixConfig");
-
     m_prefixConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationConfig"))
   {
     m_aggregationConfig = jsonValue.GetObject("aggregationConfig");
-
     m_aggregationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

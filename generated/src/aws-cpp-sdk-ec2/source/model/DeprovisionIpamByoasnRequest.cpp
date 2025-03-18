@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeprovisionIpamByoasnRequest::DeprovisionIpamByoasnRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_asnHasBeenSet(false)
-{
-}
-
 Aws::String DeprovisionIpamByoasnRequest::SerializePayload() const
 {
   Aws::StringStream ss;

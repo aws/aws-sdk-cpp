@@ -12,11 +12,6 @@ using namespace Aws::BackupSearch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSearchResultExportJobRequest::GetSearchResultExportJobRequest() : 
-    m_exportJobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetSearchResultExportJobRequest::SerializePayload() const
 {
   return {};

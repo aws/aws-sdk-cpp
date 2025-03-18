@@ -18,19 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-Webhook::Webhook() : 
-    m_webhookArnHasBeenSet(false),
-    m_webhookIdHasBeenSet(false),
-    m_webhookUrlHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 Webhook::Webhook(JsonView jsonValue)
-  : Webhook()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ Webhook& Webhook::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("webhookArn"))
   {
     m_webhookArn = jsonValue.GetString("webhookArn");
-
     m_webhookArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webhookId"))
   {
     m_webhookId = jsonValue.GetString("webhookId");
-
     m_webhookIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webhookUrl"))
   {
     m_webhookUrl = jsonValue.GetString("webhookUrl");
-
     m_webhookUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchName"))
   {
     m_branchName = jsonValue.GetString("branchName");
-
     m_branchNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

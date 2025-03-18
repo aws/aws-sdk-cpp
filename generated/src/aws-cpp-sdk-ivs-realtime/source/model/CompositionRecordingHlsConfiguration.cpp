@@ -18,14 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-CompositionRecordingHlsConfiguration::CompositionRecordingHlsConfiguration() : 
-    m_targetSegmentDurationSeconds(0),
-    m_targetSegmentDurationSecondsHasBeenSet(false)
-{
-}
-
 CompositionRecordingHlsConfiguration::CompositionRecordingHlsConfiguration(JsonView jsonValue)
-  : CompositionRecordingHlsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CompositionRecordingHlsConfiguration& CompositionRecordingHlsConfiguration::oper
   if(jsonValue.ValueExists("targetSegmentDurationSeconds"))
   {
     m_targetSegmentDurationSeconds = jsonValue.GetInteger("targetSegmentDurationSeconds");
-
     m_targetSegmentDurationSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

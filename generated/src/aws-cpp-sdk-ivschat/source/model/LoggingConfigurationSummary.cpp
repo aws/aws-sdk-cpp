@@ -18,21 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-LoggingConfigurationSummary::LoggingConfigurationSummary() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_state(LoggingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LoggingConfigurationSummary::LoggingConfigurationSummary(JsonView jsonValue)
-  : LoggingConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ LoggingConfigurationSummary& LoggingConfigurationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConfiguration"))
   {
     m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
     m_destinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = LoggingConfigurationStateMapper::GetLoggingConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -97,7 +69,6 @@ LoggingConfigurationSummary& LoggingConfigurationSummary::operator =(JsonView js
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

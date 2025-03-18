@@ -12,15 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMemberRequest::CreateMemberRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_invitationIdHasBeenSet(false),
-    m_networkIdHasBeenSet(false),
-    m_memberConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateMemberRequest::SerializePayload() const
 {
   JsonValue payload;

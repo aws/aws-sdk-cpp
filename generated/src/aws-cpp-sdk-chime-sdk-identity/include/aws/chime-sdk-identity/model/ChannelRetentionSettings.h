@@ -30,7 +30,7 @@ namespace Model
   class ChannelRetentionSettings
   {
   public:
-    AWS_CHIMESDKIDENTITY_API ChannelRetentionSettings();
+    AWS_CHIMESDKIDENTITY_API ChannelRetentionSettings() = default;
     AWS_CHIMESDKIDENTITY_API ChannelRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API ChannelRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The time in days to retain the messages in a channel.</p>
      */
-    inline int GetRetentionDays() const{ return m_retentionDays; }
+    inline int GetRetentionDays() const { return m_retentionDays; }
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
     inline ChannelRetentionSettings& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
     ///@}
   private:
 
-    int m_retentionDays;
+    int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class ApplicationPolicyStatement
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * 
  Permissions</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline ApplicationPolicyStatement& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline ApplicationPolicyStatement& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline ApplicationPolicyStatement& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline ApplicationPolicyStatement& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline ApplicationPolicyStatement& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    ApplicationPolicyStatement& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    ApplicationPolicyStatement& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,44 +61,40 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a>
      * global condition key.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrincipalOrgIDs() const{ return m_principalOrgIDs; }
+    inline const Aws::Vector<Aws::String>& GetPrincipalOrgIDs() const { return m_principalOrgIDs; }
     inline bool PrincipalOrgIDsHasBeenSet() const { return m_principalOrgIDsHasBeenSet; }
-    inline void SetPrincipalOrgIDs(const Aws::Vector<Aws::String>& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs = value; }
-    inline void SetPrincipalOrgIDs(Aws::Vector<Aws::String>&& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs = std::move(value); }
-    inline ApplicationPolicyStatement& WithPrincipalOrgIDs(const Aws::Vector<Aws::String>& value) { SetPrincipalOrgIDs(value); return *this;}
-    inline ApplicationPolicyStatement& WithPrincipalOrgIDs(Aws::Vector<Aws::String>&& value) { SetPrincipalOrgIDs(std::move(value)); return *this;}
-    inline ApplicationPolicyStatement& AddPrincipalOrgIDs(const Aws::String& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs.push_back(value); return *this; }
-    inline ApplicationPolicyStatement& AddPrincipalOrgIDs(Aws::String&& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs.push_back(std::move(value)); return *this; }
-    inline ApplicationPolicyStatement& AddPrincipalOrgIDs(const char* value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs.push_back(value); return *this; }
+    template<typename PrincipalOrgIDsT = Aws::Vector<Aws::String>>
+    void SetPrincipalOrgIDs(PrincipalOrgIDsT&& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs = std::forward<PrincipalOrgIDsT>(value); }
+    template<typename PrincipalOrgIDsT = Aws::Vector<Aws::String>>
+    ApplicationPolicyStatement& WithPrincipalOrgIDs(PrincipalOrgIDsT&& value) { SetPrincipalOrgIDs(std::forward<PrincipalOrgIDsT>(value)); return *this;}
+    template<typename PrincipalOrgIDsT = Aws::String>
+    ApplicationPolicyStatement& AddPrincipalOrgIDs(PrincipalOrgIDsT&& value) { m_principalOrgIDsHasBeenSet = true; m_principalOrgIDs.emplace_back(std::forward<PrincipalOrgIDsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<Aws::String>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline ApplicationPolicyStatement& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
-    inline ApplicationPolicyStatement& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline ApplicationPolicyStatement& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline ApplicationPolicyStatement& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
-    inline ApplicationPolicyStatement& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    ApplicationPolicyStatement& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Aws::String>
+    ApplicationPolicyStatement& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique ID for the statement.</p>
      */
-    inline const Aws::String& GetStatementId() const{ return m_statementId; }
+    inline const Aws::String& GetStatementId() const { return m_statementId; }
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
-    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
-    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
-    inline ApplicationPolicyStatement& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
-    inline ApplicationPolicyStatement& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
-    inline ApplicationPolicyStatement& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+    template<typename StatementIdT = Aws::String>
+    void SetStatementId(StatementIdT&& value) { m_statementIdHasBeenSet = true; m_statementId = std::forward<StatementIdT>(value); }
+    template<typename StatementIdT = Aws::String>
+    ApplicationPolicyStatement& WithStatementId(StatementIdT&& value) { SetStatementId(std::forward<StatementIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VideoAttribute::VideoAttribute() : 
-    m_cornerRadius(0),
-    m_cornerRadiusHasBeenSet(false),
-    m_borderColor(BorderColor::NOT_SET),
-    m_borderColorHasBeenSet(false),
-    m_highlightColor(HighlightColor::NOT_SET),
-    m_highlightColorHasBeenSet(false),
-    m_borderThickness(0),
-    m_borderThicknessHasBeenSet(false)
-{
-}
-
 VideoAttribute::VideoAttribute(JsonView jsonValue)
-  : VideoAttribute()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ VideoAttribute& VideoAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CornerRadius"))
   {
     m_cornerRadius = jsonValue.GetInteger("CornerRadius");
-
     m_cornerRadiusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderColor"))
   {
     m_borderColor = BorderColorMapper::GetBorderColorForName(jsonValue.GetString("BorderColor"));
-
     m_borderColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HighlightColor"))
   {
     m_highlightColor = HighlightColorMapper::GetHighlightColorForName(jsonValue.GetString("HighlightColor"));
-
     m_highlightColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderThickness"))
   {
     m_borderThickness = jsonValue.GetInteger("BorderThickness");
-
     m_borderThicknessHasBeenSet = true;
   }
-
   return *this;
 }
 

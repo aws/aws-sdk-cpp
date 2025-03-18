@@ -27,50 +27,47 @@ namespace Model
   class RemoveBridgeSourceResult
   {
   public:
-    AWS_MEDIACONNECT_API RemoveBridgeSourceResult();
+    AWS_MEDIACONNECT_API RemoveBridgeSourceResult() = default;
     AWS_MEDIACONNECT_API RemoveBridgeSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API RemoveBridgeSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArn.assign(value); }
-    inline RemoveBridgeSourceResult& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline RemoveBridgeSourceResult& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline RemoveBridgeSourceResult& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    RemoveBridgeSourceResult& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceName.assign(value); }
-    inline RemoveBridgeSourceResult& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline RemoveBridgeSourceResult& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline RemoveBridgeSourceResult& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    RemoveBridgeSourceResult& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveBridgeSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveBridgeSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveBridgeSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveBridgeSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bridgeArn;
+    bool m_bridgeArnHasBeenSet = false;
 
     Aws::String m_sourceName;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

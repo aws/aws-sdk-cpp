@@ -26,7 +26,7 @@ namespace Model
   class CreateOptionGroupRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CreateOptionGroupRequest();
+    AWS_RDS_API CreateOptionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline CreateOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline CreateOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline CreateOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    CreateOptionGroupRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
      * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetEngineName() const{ return m_engineName; }
+    inline const Aws::String& GetEngineName() const { return m_engineName; }
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
-    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
-    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
-    inline CreateOptionGroupRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
-    inline CreateOptionGroupRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
-    inline CreateOptionGroupRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+    template<typename EngineNameT = Aws::String>
+    void SetEngineName(EngineNameT&& value) { m_engineNameHasBeenSet = true; m_engineName = std::forward<EngineNameT>(value); }
+    template<typename EngineNameT = Aws::String>
+    CreateOptionGroupRequest& WithEngineName(EngineNameT&& value) { SetEngineName(std::forward<EngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,42 +82,38 @@ namespace Model
      * <p>Specifies the major version of the engine that this option group should be
      * associated with.</p>
      */
-    inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+    inline const Aws::String& GetMajorEngineVersion() const { return m_majorEngineVersion; }
     inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
-    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
-    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
-    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
-    inline CreateOptionGroupRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
-    inline CreateOptionGroupRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
-    inline CreateOptionGroupRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
+    template<typename MajorEngineVersionT = Aws::String>
+    void SetMajorEngineVersion(MajorEngineVersionT&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::forward<MajorEngineVersionT>(value); }
+    template<typename MajorEngineVersionT = Aws::String>
+    CreateOptionGroupRequest& WithMajorEngineVersion(MajorEngineVersionT&& value) { SetMajorEngineVersion(std::forward<MajorEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the option group.</p>
      */
-    inline const Aws::String& GetOptionGroupDescription() const{ return m_optionGroupDescription; }
+    inline const Aws::String& GetOptionGroupDescription() const { return m_optionGroupDescription; }
     inline bool OptionGroupDescriptionHasBeenSet() const { return m_optionGroupDescriptionHasBeenSet; }
-    inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
-    inline void SetOptionGroupDescription(Aws::String&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = std::move(value); }
-    inline void SetOptionGroupDescription(const char* value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription.assign(value); }
-    inline CreateOptionGroupRequest& WithOptionGroupDescription(const Aws::String& value) { SetOptionGroupDescription(value); return *this;}
-    inline CreateOptionGroupRequest& WithOptionGroupDescription(Aws::String&& value) { SetOptionGroupDescription(std::move(value)); return *this;}
-    inline CreateOptionGroupRequest& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
+    template<typename OptionGroupDescriptionT = Aws::String>
+    void SetOptionGroupDescription(OptionGroupDescriptionT&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = std::forward<OptionGroupDescriptionT>(value); }
+    template<typename OptionGroupDescriptionT = Aws::String>
+    CreateOptionGroupRequest& WithOptionGroupDescription(OptionGroupDescriptionT&& value) { SetOptionGroupDescription(std::forward<OptionGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags to assign to the option group.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateOptionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateOptionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOptionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateOptionGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateOptionGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

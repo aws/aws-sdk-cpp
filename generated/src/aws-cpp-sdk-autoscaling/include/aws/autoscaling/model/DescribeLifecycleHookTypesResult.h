@@ -29,7 +29,7 @@ namespace Model
   class DescribeLifecycleHookTypesResult
   {
   public:
-    AWS_AUTOSCALING_API DescribeLifecycleHookTypesResult();
+    AWS_AUTOSCALING_API DescribeLifecycleHookTypesResult() = default;
     AWS_AUTOSCALING_API DescribeLifecycleHookTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API DescribeLifecycleHookTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,29 +38,30 @@ namespace Model
     /**
      * <p>The lifecycle hook types.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLifecycleHookTypes() const{ return m_lifecycleHookTypes; }
-    inline void SetLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { m_lifecycleHookTypes = value; }
-    inline void SetLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { m_lifecycleHookTypes = std::move(value); }
-    inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(const Aws::Vector<Aws::String>& value) { SetLifecycleHookTypes(value); return *this;}
-    inline DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(Aws::Vector<Aws::String>&& value) { SetLifecycleHookTypes(std::move(value)); return *this;}
-    inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const Aws::String& value) { m_lifecycleHookTypes.push_back(value); return *this; }
-    inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(Aws::String&& value) { m_lifecycleHookTypes.push_back(std::move(value)); return *this; }
-    inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const char* value) { m_lifecycleHookTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetLifecycleHookTypes() const { return m_lifecycleHookTypes; }
+    template<typename LifecycleHookTypesT = Aws::Vector<Aws::String>>
+    void SetLifecycleHookTypes(LifecycleHookTypesT&& value) { m_lifecycleHookTypesHasBeenSet = true; m_lifecycleHookTypes = std::forward<LifecycleHookTypesT>(value); }
+    template<typename LifecycleHookTypesT = Aws::Vector<Aws::String>>
+    DescribeLifecycleHookTypesResult& WithLifecycleHookTypes(LifecycleHookTypesT&& value) { SetLifecycleHookTypes(std::forward<LifecycleHookTypesT>(value)); return *this;}
+    template<typename LifecycleHookTypesT = Aws::String>
+    DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(LifecycleHookTypesT&& value) { m_lifecycleHookTypesHasBeenSet = true; m_lifecycleHookTypes.emplace_back(std::forward<LifecycleHookTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeLifecycleHookTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeLifecycleHookTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeLifecycleHookTypesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_lifecycleHookTypes;
+    bool m_lifecycleHookTypesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

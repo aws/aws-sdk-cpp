@@ -33,7 +33,7 @@ namespace Model
   class S3Action
   {
   public:
-    AWS_IOT_API S3Action();
+    AWS_IOT_API S3Action() = default;
     AWS_IOT_API S3Action(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API S3Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline S3Action& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline S3Action& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline S3Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    S3Action& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3Action& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3Action& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3Action& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
      * resources, and condition keys for Amazon S3</a>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3Action& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3Action& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3Action& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3Action& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +84,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
      * canned ACLs</a>.</p>
      */
-    inline const CannedAccessControlList& GetCannedAcl() const{ return m_cannedAcl; }
+    inline CannedAccessControlList GetCannedAcl() const { return m_cannedAcl; }
     inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-    inline void SetCannedAcl(const CannedAccessControlList& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-    inline void SetCannedAcl(CannedAccessControlList&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = std::move(value); }
-    inline S3Action& WithCannedAcl(const CannedAccessControlList& value) { SetCannedAcl(value); return *this;}
-    inline S3Action& WithCannedAcl(CannedAccessControlList&& value) { SetCannedAcl(std::move(value)); return *this;}
+    inline void SetCannedAcl(CannedAccessControlList value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
+    inline S3Action& WithCannedAcl(CannedAccessControlList value) { SetCannedAcl(value); return *this;}
     ///@}
   private:
 
@@ -108,7 +100,7 @@ namespace Model
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    CannedAccessControlList m_cannedAcl;
+    CannedAccessControlList m_cannedAcl{CannedAccessControlList::NOT_SET};
     bool m_cannedAclHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeForecastResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeForecastResult();
+    AWS_FORECASTSERVICE_API DescribeForecastResult() = default;
     AWS_FORECASTSERVICE_API DescribeForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,53 +39,46 @@ namespace Model
     /**
      * <p>The forecast ARN as specified in the request.</p>
      */
-    inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
-    inline void SetForecastArn(const Aws::String& value) { m_forecastArn = value; }
-    inline void SetForecastArn(Aws::String&& value) { m_forecastArn = std::move(value); }
-    inline void SetForecastArn(const char* value) { m_forecastArn.assign(value); }
-    inline DescribeForecastResult& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
-    inline DescribeForecastResult& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
+    inline const Aws::String& GetForecastArn() const { return m_forecastArn; }
+    template<typename ForecastArnT = Aws::String>
+    void SetForecastArn(ForecastArnT&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::forward<ForecastArnT>(value); }
+    template<typename ForecastArnT = Aws::String>
+    DescribeForecastResult& WithForecastArn(ForecastArnT&& value) { SetForecastArn(std::forward<ForecastArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the forecast.</p>
      */
-    inline const Aws::String& GetForecastName() const{ return m_forecastName; }
-    inline void SetForecastName(const Aws::String& value) { m_forecastName = value; }
-    inline void SetForecastName(Aws::String&& value) { m_forecastName = std::move(value); }
-    inline void SetForecastName(const char* value) { m_forecastName.assign(value); }
-    inline DescribeForecastResult& WithForecastName(const Aws::String& value) { SetForecastName(value); return *this;}
-    inline DescribeForecastResult& WithForecastName(Aws::String&& value) { SetForecastName(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithForecastName(const char* value) { SetForecastName(value); return *this;}
+    inline const Aws::String& GetForecastName() const { return m_forecastName; }
+    template<typename ForecastNameT = Aws::String>
+    void SetForecastName(ForecastNameT&& value) { m_forecastNameHasBeenSet = true; m_forecastName = std::forward<ForecastNameT>(value); }
+    template<typename ForecastNameT = Aws::String>
+    DescribeForecastResult& WithForecastName(ForecastNameT&& value) { SetForecastName(std::forward<ForecastNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
-    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
-    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
-    inline DescribeForecastResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
-    inline DescribeForecastResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
-    inline DescribeForecastResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
-    inline DescribeForecastResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
-    inline DescribeForecastResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const { return m_forecastTypes; }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    void SetForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::forward<ForecastTypesT>(value); }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    DescribeForecastResult& WithForecastTypes(ForecastTypesT&& value) { SetForecastTypes(std::forward<ForecastTypesT>(value)); return *this;}
+    template<typename ForecastTypesT = Aws::String>
+    DescribeForecastResult& AddForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.emplace_back(std::forward<ForecastTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the predictor used to generate the forecast.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArn.assign(value); }
-    inline DescribeForecastResult& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline DescribeForecastResult& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    DescribeForecastResult& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,21 +86,19 @@ namespace Model
      * <p>The ARN of the dataset group that provided the data used to train the
      * predictor.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArn.assign(value); }
-    inline DescribeForecastResult& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline DescribeForecastResult& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    DescribeForecastResult& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The estimated time remaining in minutes for the forecast job to complete.</p>
      */
-    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
-    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+    inline long long GetEstimatedTimeRemainingInMinutes() const { return m_estimatedTimeRemainingInMinutes; }
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutesHasBeenSet = true; m_estimatedTimeRemainingInMinutes = value; }
     inline DescribeForecastResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
     ///@}
 
@@ -122,37 +113,33 @@ namespace Model
      * the forecast must be <code>ACTIVE</code> before you can query or export the
      * forecast.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeForecastResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeForecastResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeForecastResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, an informational message about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeForecastResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeForecastResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeForecastResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the forecast creation task was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeForecastResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeForecastResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeForecastResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,59 +152,69 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeForecastResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeForecastResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeForecastResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time series to include in the forecast.</p>
      */
-    inline const TimeSeriesSelector& GetTimeSeriesSelector() const{ return m_timeSeriesSelector; }
-    inline void SetTimeSeriesSelector(const TimeSeriesSelector& value) { m_timeSeriesSelector = value; }
-    inline void SetTimeSeriesSelector(TimeSeriesSelector&& value) { m_timeSeriesSelector = std::move(value); }
-    inline DescribeForecastResult& WithTimeSeriesSelector(const TimeSeriesSelector& value) { SetTimeSeriesSelector(value); return *this;}
-    inline DescribeForecastResult& WithTimeSeriesSelector(TimeSeriesSelector&& value) { SetTimeSeriesSelector(std::move(value)); return *this;}
+    inline const TimeSeriesSelector& GetTimeSeriesSelector() const { return m_timeSeriesSelector; }
+    template<typename TimeSeriesSelectorT = TimeSeriesSelector>
+    void SetTimeSeriesSelector(TimeSeriesSelectorT&& value) { m_timeSeriesSelectorHasBeenSet = true; m_timeSeriesSelector = std::forward<TimeSeriesSelectorT>(value); }
+    template<typename TimeSeriesSelectorT = TimeSeriesSelector>
+    DescribeForecastResult& WithTimeSeriesSelector(TimeSeriesSelectorT&& value) { SetTimeSeriesSelector(std::forward<TimeSeriesSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeForecastResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeForecastResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeForecastResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeForecastResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_forecastArn;
+    bool m_forecastArnHasBeenSet = false;
 
     Aws::String m_forecastName;
+    bool m_forecastNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
+    bool m_forecastTypesHasBeenSet = false;
 
     Aws::String m_predictorArn;
+    bool m_predictorArnHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
+    bool m_datasetGroupArnHasBeenSet = false;
 
-    long long m_estimatedTimeRemainingInMinutes;
+    long long m_estimatedTimeRemainingInMinutes{0};
+    bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     TimeSeriesSelector m_timeSeriesSelector;
+    bool m_timeSeriesSelectorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class DisassociateDRTLogBucketRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DisassociateDRTLogBucketRequest();
+    AWS_SHIELD_API DisassociateDRTLogBucketRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
      */
-    inline const Aws::String& GetLogBucket() const{ return m_logBucket; }
+    inline const Aws::String& GetLogBucket() const { return m_logBucket; }
     inline bool LogBucketHasBeenSet() const { return m_logBucketHasBeenSet; }
-    inline void SetLogBucket(const Aws::String& value) { m_logBucketHasBeenSet = true; m_logBucket = value; }
-    inline void SetLogBucket(Aws::String&& value) { m_logBucketHasBeenSet = true; m_logBucket = std::move(value); }
-    inline void SetLogBucket(const char* value) { m_logBucketHasBeenSet = true; m_logBucket.assign(value); }
-    inline DisassociateDRTLogBucketRequest& WithLogBucket(const Aws::String& value) { SetLogBucket(value); return *this;}
-    inline DisassociateDRTLogBucketRequest& WithLogBucket(Aws::String&& value) { SetLogBucket(std::move(value)); return *this;}
-    inline DisassociateDRTLogBucketRequest& WithLogBucket(const char* value) { SetLogBucket(value); return *this;}
+    template<typename LogBucketT = Aws::String>
+    void SetLogBucket(LogBucketT&& value) { m_logBucketHasBeenSet = true; m_logBucket = std::forward<LogBucketT>(value); }
+    template<typename LogBucketT = Aws::String>
+    DisassociateDRTLogBucketRequest& WithLogBucket(LogBucketT&& value) { SetLogBucket(std::forward<LogBucketT>(value)); return *this;}
     ///@}
   private:
 

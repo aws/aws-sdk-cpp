@@ -18,13 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-FilterConfiguration::FilterConfiguration() : 
-    m_allowedLocationsHasBeenSet(false)
-{
-}
-
 FilterConfiguration::FilterConfiguration(JsonView jsonValue)
-  : FilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
     }
     m_allowedLocationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVocabularyFilterResult::CreateVocabularyFilterResult() : 
-    m_languageCode(LanguageCode::NOT_SET)
-{
-}
-
 CreateVocabularyFilterResult::CreateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateVocabularyFilterResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateVocabularyFilterResult& CreateVocabularyFilterResult::operator =(const Aws
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
+    m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
+    m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

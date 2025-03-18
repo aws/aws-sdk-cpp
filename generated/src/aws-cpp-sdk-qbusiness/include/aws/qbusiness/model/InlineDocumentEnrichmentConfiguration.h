@@ -40,7 +40,7 @@ namespace Model
   class InlineDocumentEnrichmentConfiguration
   {
   public:
-    AWS_QBUSINESS_API InlineDocumentEnrichmentConfiguration();
+    AWS_QBUSINESS_API InlineDocumentEnrichmentConfiguration() = default;
     AWS_QBUSINESS_API InlineDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API InlineDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,22 +48,22 @@ namespace Model
 
     ///@{
     
-    inline const DocumentAttributeCondition& GetCondition() const{ return m_condition; }
+    inline const DocumentAttributeCondition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const DocumentAttributeCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(DocumentAttributeCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline InlineDocumentEnrichmentConfiguration& WithCondition(const DocumentAttributeCondition& value) { SetCondition(value); return *this;}
-    inline InlineDocumentEnrichmentConfiguration& WithCondition(DocumentAttributeCondition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = DocumentAttributeCondition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = DocumentAttributeCondition>
+    InlineDocumentEnrichmentConfiguration& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentAttributeTarget& GetTarget() const{ return m_target; }
+    inline const DocumentAttributeTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const DocumentAttributeTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(DocumentAttributeTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline InlineDocumentEnrichmentConfiguration& WithTarget(const DocumentAttributeTarget& value) { SetTarget(value); return *this;}
-    inline InlineDocumentEnrichmentConfiguration& WithTarget(DocumentAttributeTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = DocumentAttributeTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = DocumentAttributeTarget>
+    InlineDocumentEnrichmentConfiguration& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,10 @@ namespace Model
      * <p> <code>TRUE</code> to delete content if the condition used for the target
      * attribute is met.</p>
      */
-    inline const DocumentContentOperator& GetDocumentContentOperator() const{ return m_documentContentOperator; }
+    inline DocumentContentOperator GetDocumentContentOperator() const { return m_documentContentOperator; }
     inline bool DocumentContentOperatorHasBeenSet() const { return m_documentContentOperatorHasBeenSet; }
-    inline void SetDocumentContentOperator(const DocumentContentOperator& value) { m_documentContentOperatorHasBeenSet = true; m_documentContentOperator = value; }
-    inline void SetDocumentContentOperator(DocumentContentOperator&& value) { m_documentContentOperatorHasBeenSet = true; m_documentContentOperator = std::move(value); }
-    inline InlineDocumentEnrichmentConfiguration& WithDocumentContentOperator(const DocumentContentOperator& value) { SetDocumentContentOperator(value); return *this;}
-    inline InlineDocumentEnrichmentConfiguration& WithDocumentContentOperator(DocumentContentOperator&& value) { SetDocumentContentOperator(std::move(value)); return *this;}
+    inline void SetDocumentContentOperator(DocumentContentOperator value) { m_documentContentOperatorHasBeenSet = true; m_documentContentOperator = value; }
+    inline InlineDocumentEnrichmentConfiguration& WithDocumentContentOperator(DocumentContentOperator value) { SetDocumentContentOperator(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +84,7 @@ namespace Model
     DocumentAttributeTarget m_target;
     bool m_targetHasBeenSet = false;
 
-    DocumentContentOperator m_documentContentOperator;
+    DocumentContentOperator m_documentContentOperator{DocumentContentOperator::NOT_SET};
     bool m_documentContentOperatorHasBeenSet = false;
   };
 

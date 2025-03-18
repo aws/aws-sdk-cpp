@@ -33,7 +33,7 @@ namespace Model
   class S3LogDestinationParameters
   {
   public:
-    AWS_PIPES_API S3LogDestinationParameters();
+    AWS_PIPES_API S3LogDestinationParameters() = default;
     AWS_PIPES_API S3LogDestinationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API S3LogDestinationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Specifies the name of the Amazon S3 bucket to which EventBridge delivers the
      * log records for the pipe.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3LogDestinationParameters& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3LogDestinationParameters& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3LogDestinationParameters& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3LogDestinationParameters& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Specifies the Amazon Web Services account that owns the Amazon S3 bucket to
      * which EventBridge delivers the log records for the pipe.</p>
      */
-    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+    inline const Aws::String& GetBucketOwner() const { return m_bucketOwner; }
     inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
-    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
-    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
-    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
-    inline S3LogDestinationParameters& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
-    inline S3LogDestinationParameters& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
-    inline S3LogDestinationParameters& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+    template<typename BucketOwnerT = Aws::String>
+    void SetBucketOwner(BucketOwnerT&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::forward<BucketOwnerT>(value); }
+    template<typename BucketOwnerT = Aws::String>
+    S3LogDestinationParameters& WithBucketOwner(BucketOwnerT&& value) { SetBucketOwner(std::forward<BucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * <p>How EventBridge should format the log records.</p> <p>EventBridge currently
      * only supports <code>json</code> formatting.</p>
      */
-    inline const S3OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline S3OutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const S3OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(S3OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline S3LogDestinationParameters& WithOutputFormat(const S3OutputFormat& value) { SetOutputFormat(value); return *this;}
-    inline S3LogDestinationParameters& WithOutputFormat(S3OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    inline void SetOutputFormat(S3OutputFormat value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline S3LogDestinationParameters& WithOutputFormat(S3OutputFormat value) { SetOutputFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline S3LogDestinationParameters& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline S3LogDestinationParameters& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline S3LogDestinationParameters& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    S3LogDestinationParameters& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,7 +102,7 @@ namespace Model
     Aws::String m_bucketOwner;
     bool m_bucketOwnerHasBeenSet = false;
 
-    S3OutputFormat m_outputFormat;
+    S3OutputFormat m_outputFormat{S3OutputFormat::NOT_SET};
     bool m_outputFormatHasBeenSet = false;
 
     Aws::String m_prefix;

@@ -24,7 +24,7 @@ namespace Model
   class MoveReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API MoveReplicationTaskRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API MoveReplicationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline MoveReplicationTaskRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline MoveReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline MoveReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    MoveReplicationTaskRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the replication instance where you want to move the task to.</p>
      */
-    inline const Aws::String& GetTargetReplicationInstanceArn() const{ return m_targetReplicationInstanceArn; }
+    inline const Aws::String& GetTargetReplicationInstanceArn() const { return m_targetReplicationInstanceArn; }
     inline bool TargetReplicationInstanceArnHasBeenSet() const { return m_targetReplicationInstanceArnHasBeenSet; }
-    inline void SetTargetReplicationInstanceArn(const Aws::String& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = value; }
-    inline void SetTargetReplicationInstanceArn(Aws::String&& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = std::move(value); }
-    inline void SetTargetReplicationInstanceArn(const char* value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn.assign(value); }
-    inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(const Aws::String& value) { SetTargetReplicationInstanceArn(value); return *this;}
-    inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(Aws::String&& value) { SetTargetReplicationInstanceArn(std::move(value)); return *this;}
-    inline MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(const char* value) { SetTargetReplicationInstanceArn(value); return *this;}
+    template<typename TargetReplicationInstanceArnT = Aws::String>
+    void SetTargetReplicationInstanceArn(TargetReplicationInstanceArnT&& value) { m_targetReplicationInstanceArnHasBeenSet = true; m_targetReplicationInstanceArn = std::forward<TargetReplicationInstanceArnT>(value); }
+    template<typename TargetReplicationInstanceArnT = Aws::String>
+    MoveReplicationTaskRequest& WithTargetReplicationInstanceArn(TargetReplicationInstanceArnT&& value) { SetTargetReplicationInstanceArn(std::forward<TargetReplicationInstanceArnT>(value)); return *this;}
     ///@}
   private:
 

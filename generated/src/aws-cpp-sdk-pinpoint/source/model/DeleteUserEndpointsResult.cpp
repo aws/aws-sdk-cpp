@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteUserEndpointsResult::DeleteUserEndpointsResult()
-{
-}
-
 DeleteUserEndpointsResult::DeleteUserEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ DeleteUserEndpointsResult& DeleteUserEndpointsResult::operator =(const Aws::Amaz
 {
   JsonView jsonValue = result.GetPayload().View();
   m_endpointsResponse = jsonValue;
+  m_endpointsResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

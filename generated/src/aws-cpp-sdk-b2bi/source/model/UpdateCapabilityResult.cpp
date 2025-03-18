@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCapabilityResult::UpdateCapabilityResult() : 
-    m_type(CapabilityType::NOT_SET)
-{
-}
-
 UpdateCapabilityResult::UpdateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateCapabilityResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ UpdateCapabilityResult& UpdateCapabilityResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("capabilityId"))
   {
     m_capabilityId = jsonValue.GetString("capabilityId");
-
+    m_capabilityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityArn"))
   {
     m_capabilityArn = jsonValue.GetString("capabilityArn");
-
+    m_capabilityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CapabilityTypeMapper::GetCapabilityTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
+    m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instructionsDocuments"))
   {
     Aws::Utils::Array<JsonView> instructionsDocumentsJsonList = jsonValue.GetArray("instructionsDocuments");
@@ -68,26 +57,25 @@ UpdateCapabilityResult& UpdateCapabilityResult::operator =(const Aws::AmazonWebS
     {
       m_instructionsDocuments.push_back(instructionsDocumentsJsonList[instructionsDocumentsIndex].AsObject());
     }
+    m_instructionsDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
+    m_modifiedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

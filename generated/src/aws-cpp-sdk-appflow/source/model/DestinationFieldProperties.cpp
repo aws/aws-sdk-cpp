@@ -18,23 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DestinationFieldProperties::DestinationFieldProperties() : 
-    m_isCreatable(false),
-    m_isCreatableHasBeenSet(false),
-    m_isNullable(false),
-    m_isNullableHasBeenSet(false),
-    m_isUpsertable(false),
-    m_isUpsertableHasBeenSet(false),
-    m_isUpdatable(false),
-    m_isUpdatableHasBeenSet(false),
-    m_isDefaultedOnCreate(false),
-    m_isDefaultedOnCreateHasBeenSet(false),
-    m_supportedWriteOperationsHasBeenSet(false)
-{
-}
-
 DestinationFieldProperties::DestinationFieldProperties(JsonView jsonValue)
-  : DestinationFieldProperties()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ DestinationFieldProperties& DestinationFieldProperties::operator =(JsonView json
   if(jsonValue.ValueExists("isCreatable"))
   {
     m_isCreatable = jsonValue.GetBool("isCreatable");
-
     m_isCreatableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isNullable"))
   {
     m_isNullable = jsonValue.GetBool("isNullable");
-
     m_isNullableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isUpsertable"))
   {
     m_isUpsertable = jsonValue.GetBool("isUpsertable");
-
     m_isUpsertableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isUpdatable"))
   {
     m_isUpdatable = jsonValue.GetBool("isUpdatable");
-
     m_isUpdatableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefaultedOnCreate"))
   {
     m_isDefaultedOnCreate = jsonValue.GetBool("isDefaultedOnCreate");
-
     m_isDefaultedOnCreateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedWriteOperations"))
   {
     Aws::Utils::Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
@@ -85,7 +59,6 @@ DestinationFieldProperties& DestinationFieldProperties::operator =(JsonView json
     }
     m_supportedWriteOperationsHasBeenSet = true;
   }
-
   return *this;
 }
 

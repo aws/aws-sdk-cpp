@@ -28,7 +28,7 @@ namespace Model
   class DescribeProtectionResult
   {
   public:
-    AWS_SHIELD_API DescribeProtectionResult();
+    AWS_SHIELD_API DescribeProtectionResult() = default;
     AWS_SHIELD_API DescribeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SHIELD_API DescribeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <a>Protection</a> that you requested. </p>
      */
-    inline const Protection& GetProtection() const{ return m_protection; }
-    inline void SetProtection(const Protection& value) { m_protection = value; }
-    inline void SetProtection(Protection&& value) { m_protection = std::move(value); }
-    inline DescribeProtectionResult& WithProtection(const Protection& value) { SetProtection(value); return *this;}
-    inline DescribeProtectionResult& WithProtection(Protection&& value) { SetProtection(std::move(value)); return *this;}
+    inline const Protection& GetProtection() const { return m_protection; }
+    template<typename ProtectionT = Protection>
+    void SetProtection(ProtectionT&& value) { m_protectionHasBeenSet = true; m_protection = std::forward<ProtectionT>(value); }
+    template<typename ProtectionT = Protection>
+    DescribeProtectionResult& WithProtection(ProtectionT&& value) { SetProtection(std::forward<ProtectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProtectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Protection m_protection;
+    bool m_protectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

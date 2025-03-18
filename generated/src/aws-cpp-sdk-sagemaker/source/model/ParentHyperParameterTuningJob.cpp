@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ParentHyperParameterTuningJob::ParentHyperParameterTuningJob() : 
-    m_hyperParameterTuningJobNameHasBeenSet(false)
-{
-}
-
 ParentHyperParameterTuningJob::ParentHyperParameterTuningJob(JsonView jsonValue)
-  : ParentHyperParameterTuningJob()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParentHyperParameterTuningJob& ParentHyperParameterTuningJob::operator =(JsonVie
   if(jsonValue.ValueExists("HyperParameterTuningJobName"))
   {
     m_hyperParameterTuningJobName = jsonValue.GetString("HyperParameterTuningJobName");
-
     m_hyperParameterTuningJobNameHasBeenSet = true;
   }
-
   return *this;
 }
 

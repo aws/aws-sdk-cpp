@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PieChartConfiguration::PieChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_donutOptionsHasBeenSet(false),
-    m_smallMultiplesOptionsHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_valueLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 PieChartConfiguration::PieChartConfiguration(JsonView jsonValue)
-  : PieChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ PieChartConfiguration& PieChartConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DonutOptions"))
   {
     m_donutOptions = jsonValue.GetObject("DonutOptions");
-
     m_donutOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesOptions"))
   {
     m_smallMultiplesOptions = jsonValue.GetObject("SmallMultiplesOptions");
-
     m_smallMultiplesOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueLabelOptions"))
   {
     m_valueLabelOptions = jsonValue.GetObject("ValueLabelOptions");
-
     m_valueLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributionAnalysisDefaults"))
   {
     Aws::Utils::Array<JsonView> contributionAnalysisDefaultsJsonList = jsonValue.GetArray("ContributionAnalysisDefaults");
@@ -121,14 +84,11 @@ PieChartConfiguration& PieChartConfiguration::operator =(JsonView jsonValue)
     }
     m_contributionAnalysisDefaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

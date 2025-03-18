@@ -18,15 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-ImageExtractionCategory::ImageExtractionCategory() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 ImageExtractionCategory::ImageExtractionCategory(JsonView jsonValue)
-  : ImageExtractionCategory()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ImageExtractionCategory& ImageExtractionCategory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
@@ -49,7 +39,6 @@ ImageExtractionCategory& ImageExtractionCategory::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

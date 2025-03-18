@@ -12,13 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateScheduleRequest::BatchUpdateScheduleRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_createsHasBeenSet(false),
-    m_deletesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

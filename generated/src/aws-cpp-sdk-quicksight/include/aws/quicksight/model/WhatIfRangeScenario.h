@@ -32,7 +32,7 @@ namespace Model
   class WhatIfRangeScenario
   {
   public:
-    AWS_QUICKSIGHT_API WhatIfRangeScenario();
+    AWS_QUICKSIGHT_API WhatIfRangeScenario() = default;
     AWS_QUICKSIGHT_API WhatIfRangeScenario(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WhatIfRangeScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,44 @@ namespace Model
     /**
      * <p>The start date in the date range that you need the forecast results for.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline WhatIfRangeScenario& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline WhatIfRangeScenario& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    WhatIfRangeScenario& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end date in the date range that you need the forecast results for.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline WhatIfRangeScenario& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline WhatIfRangeScenario& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    WhatIfRangeScenario& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target value that you want to meet for the provided date range.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline WhatIfRangeScenario& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

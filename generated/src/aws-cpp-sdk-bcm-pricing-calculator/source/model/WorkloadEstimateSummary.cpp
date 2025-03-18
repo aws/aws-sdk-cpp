@@ -18,26 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-WorkloadEstimateSummary::WorkloadEstimateSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_rateType(WorkloadEstimateRateType::NOT_SET),
-    m_rateTypeHasBeenSet(false),
-    m_rateTimestampHasBeenSet(false),
-    m_status(WorkloadEstimateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_totalCost(0.0),
-    m_totalCostHasBeenSet(false),
-    m_costCurrency(CurrencyCode::NOT_SET),
-    m_costCurrencyHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
-{
-}
-
 WorkloadEstimateSummary::WorkloadEstimateSummary(JsonView jsonValue)
-  : WorkloadEstimateSummary()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ WorkloadEstimateSummary& WorkloadEstimateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateType"))
   {
     m_rateType = WorkloadEstimateRateTypeMapper::GetWorkloadEstimateRateTypeForName(jsonValue.GetString("rateType"));
-
     m_rateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateTimestamp"))
   {
     m_rateTimestamp = jsonValue.GetDouble("rateTimestamp");
-
     m_rateTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkloadEstimateStatusMapper::GetWorkloadEstimateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalCost"))
   {
     m_totalCost = jsonValue.GetDouble("totalCost");
-
     m_totalCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCurrency"))
   {
     m_costCurrency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("costCurrency"));
-
     m_costCurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

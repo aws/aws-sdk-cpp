@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OAuth2ClientApplication::OAuth2ClientApplication() : 
-    m_userManagedClientApplicationClientIdHasBeenSet(false),
-    m_aWSManagedClientApplicationReferenceHasBeenSet(false)
-{
-}
-
 OAuth2ClientApplication::OAuth2ClientApplication(JsonView jsonValue)
-  : OAuth2ClientApplication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OAuth2ClientApplication& OAuth2ClientApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserManagedClientApplicationClientId"))
   {
     m_userManagedClientApplicationClientId = jsonValue.GetString("UserManagedClientApplicationClientId");
-
     m_userManagedClientApplicationClientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSManagedClientApplicationReference"))
   {
     m_aWSManagedClientApplicationReference = jsonValue.GetString("AWSManagedClientApplicationReference");
-
     m_aWSManagedClientApplicationReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

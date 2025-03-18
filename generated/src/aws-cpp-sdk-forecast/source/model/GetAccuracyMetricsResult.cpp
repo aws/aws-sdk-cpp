@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult() : 
-    m_isAutoPredictor(false),
-    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
-    m_optimizationMetric(OptimizationMetric::NOT_SET)
-{
-}
-
 GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAccuracyMetricsResult()
 {
   *this = result;
 }
@@ -40,32 +32,30 @@ GetAccuracyMetricsResult& GetAccuracyMetricsResult::operator =(const Aws::Amazon
     {
       m_predictorEvaluationResults.push_back(predictorEvaluationResultsJsonList[predictorEvaluationResultsIndex].AsObject());
     }
+    m_predictorEvaluationResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsAutoPredictor"))
   {
     m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
-
+    m_isAutoPredictorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMLOverrideStrategy"))
   {
     m_autoMLOverrideStrategy = AutoMLOverrideStrategyMapper::GetAutoMLOverrideStrategyForName(jsonValue.GetString("AutoMLOverrideStrategy"));
-
+    m_autoMLOverrideStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationMetric"))
   {
     m_optimizationMetric = OptimizationMetricMapper::GetOptimizationMetricForName(jsonValue.GetString("OptimizationMetric"));
-
+    m_optimizationMetricHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

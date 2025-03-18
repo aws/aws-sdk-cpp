@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionList::FunctionList() : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 FunctionList::FunctionList(const XmlNode& xmlNode)
-  : FunctionList()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ FunctionList& FunctionList::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("FunctionSummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

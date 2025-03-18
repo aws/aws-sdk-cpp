@@ -18,14 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-DataQuery::DataQuery() : 
-    m_queryStatementHasBeenSet(false),
-    m_tableConfigurationsHasBeenSet(false)
-{
-}
-
 DataQuery::DataQuery(JsonView jsonValue)
-  : DataQuery()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataQuery& DataQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryStatement"))
   {
     m_queryStatement = jsonValue.GetString("QueryStatement");
-
     m_queryStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableConfigurations"))
   {
     Aws::Map<Aws::String, JsonView> tableConfigurationsJsonMap = jsonValue.GetObject("TableConfigurations").GetAllObjects();
@@ -54,7 +45,6 @@ DataQuery& DataQuery::operator =(JsonView jsonValue)
     }
     m_tableConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

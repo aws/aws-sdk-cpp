@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address() : 
-    m_ipv6AddressHasBeenSet(false),
-    m_isPrimaryIpv6(false),
-    m_isPrimaryIpv6HasBeenSet(false)
-{
-}
-
 NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address(const XmlNode& xmlNode)
-  : NetworkInterfaceIpv6Address()
 {
   *this = xmlNode;
 }

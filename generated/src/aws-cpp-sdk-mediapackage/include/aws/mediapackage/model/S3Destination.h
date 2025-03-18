@@ -33,7 +33,7 @@ namespace Model
   class S3Destination
   {
   public:
-    AWS_MEDIAPACKAGE_API S3Destination();
+    AWS_MEDIAPACKAGE_API S3Destination() = default;
     AWS_MEDIAPACKAGE_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * The name of an S3 bucket within which harvested content will be exported
 
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3Destination& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3Destination& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3Destination& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3Destination& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * be placed.
 
      */
-    inline const Aws::String& GetManifestKey() const{ return m_manifestKey; }
+    inline const Aws::String& GetManifestKey() const { return m_manifestKey; }
     inline bool ManifestKeyHasBeenSet() const { return m_manifestKeyHasBeenSet; }
-    inline void SetManifestKey(const Aws::String& value) { m_manifestKeyHasBeenSet = true; m_manifestKey = value; }
-    inline void SetManifestKey(Aws::String&& value) { m_manifestKeyHasBeenSet = true; m_manifestKey = std::move(value); }
-    inline void SetManifestKey(const char* value) { m_manifestKeyHasBeenSet = true; m_manifestKey.assign(value); }
-    inline S3Destination& WithManifestKey(const Aws::String& value) { SetManifestKey(value); return *this;}
-    inline S3Destination& WithManifestKey(Aws::String&& value) { SetManifestKey(std::move(value)); return *this;}
-    inline S3Destination& WithManifestKey(const char* value) { SetManifestKey(value); return *this;}
+    template<typename ManifestKeyT = Aws::String>
+    void SetManifestKey(ManifestKeyT&& value) { m_manifestKeyHasBeenSet = true; m_manifestKey = std::forward<ManifestKeyT>(value); }
+    template<typename ManifestKeyT = Aws::String>
+    S3Destination& WithManifestKey(ManifestKeyT&& value) { SetManifestKey(std::forward<ManifestKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * The IAM role used to write to the specified S3 bucket
 
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline S3Destination& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline S3Destination& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline S3Destination& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    S3Destination& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

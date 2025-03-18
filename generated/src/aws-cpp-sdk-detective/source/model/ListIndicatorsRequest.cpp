@@ -12,17 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListIndicatorsRequest::ListIndicatorsRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_investigationIdHasBeenSet(false),
-    m_indicatorType(IndicatorType::NOT_SET),
-    m_indicatorTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListIndicatorsRequest::SerializePayload() const
 {
   JsonValue payload;

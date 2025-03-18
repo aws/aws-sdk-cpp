@@ -38,7 +38,7 @@ namespace Model
   class StackSetSummary
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetSummary();
+    AWS_CLOUDFORMATION_API StackSetSummary() = default;
     AWS_CLOUDFORMATION_API StackSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The name of the stack set.</p>
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline StackSetSummary& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline StackSetSummary& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline StackSetSummary& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    StackSetSummary& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the stack set.</p>
      */
-    inline const Aws::String& GetStackSetId() const{ return m_stackSetId; }
+    inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
-    inline void SetStackSetId(const Aws::String& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = value; }
-    inline void SetStackSetId(Aws::String&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::move(value); }
-    inline void SetStackSetId(const char* value) { m_stackSetIdHasBeenSet = true; m_stackSetId.assign(value); }
-    inline StackSetSummary& WithStackSetId(const Aws::String& value) { SetStackSetId(value); return *this;}
-    inline StackSetSummary& WithStackSetId(Aws::String&& value) { SetStackSetId(std::move(value)); return *this;}
-    inline StackSetSummary& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+    template<typename StackSetIdT = Aws::String>
+    void SetStackSetId(StackSetIdT&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::forward<StackSetIdT>(value); }
+    template<typename StackSetIdT = Aws::String>
+    StackSetSummary& WithStackSetId(StackSetIdT&& value) { SetStackSetId(std::forward<StackSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,26 +75,22 @@ namespace Model
      * <p>A description of the stack set that you specify when the stack set is created
      * or updated.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StackSetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StackSetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StackSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StackSetSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the stack set.</p>
      */
-    inline const StackSetStatus& GetStatus() const{ return m_status; }
+    inline StackSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StackSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StackSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StackSetSummary& WithStatus(const StackSetStatus& value) { SetStatus(value); return *this;}
-    inline StackSetSummary& WithStatus(StackSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StackSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StackSetSummary& WithStatus(StackSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +99,12 @@ namespace Model
      * deploys to Organizations accounts that are added to a target organizational unit
      * (OU).</p>
      */
-    inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
+    inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
-    inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
-    inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
-    inline StackSetSummary& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
-    inline StackSetSummary& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
+    template<typename AutoDeploymentT = AutoDeployment>
+    void SetAutoDeployment(AutoDeploymentT&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::forward<AutoDeploymentT>(value); }
+    template<typename AutoDeploymentT = AutoDeployment>
+    StackSetSummary& WithAutoDeployment(AutoDeploymentT&& value) { SetAutoDeployment(std::forward<AutoDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +121,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
      * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
-    inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
+    inline PermissionModels GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
-    inline void SetPermissionModel(const PermissionModels& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
-    inline void SetPermissionModel(PermissionModels&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
-    inline StackSetSummary& WithPermissionModel(const PermissionModels& value) { SetPermissionModel(value); return *this;}
-    inline StackSetSummary& WithPermissionModel(PermissionModels&& value) { SetPermissionModel(std::move(value)); return *this;}
+    inline void SetPermissionModel(PermissionModels value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+    inline StackSetSummary& WithPermissionModel(PermissionModels value) { SetPermissionModel(value); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +142,10 @@ namespace Model
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
      */
-    inline const StackDriftStatus& GetDriftStatus() const{ return m_driftStatus; }
+    inline StackDriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-    inline void SetDriftStatus(const StackDriftStatus& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
-    inline void SetDriftStatus(StackDriftStatus&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
-    inline StackSetSummary& WithDriftStatus(const StackDriftStatus& value) { SetDriftStatus(value); return *this;}
-    inline StackSetSummary& WithDriftStatus(StackDriftStatus&& value) { SetDriftStatus(std::move(value)); return *this;}
+    inline void SetDriftStatus(StackDriftStatus value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
+    inline StackSetSummary& WithDriftStatus(StackDriftStatus value) { SetDriftStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +154,12 @@ namespace Model
      * the stack set. This value will be <code>NULL</code> for any stack set on which
      * drift detection hasn't yet been performed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const { return m_lastDriftCheckTimestamp; }
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
-    inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
-    inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
-    inline StackSetSummary& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
-    inline StackSetSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    void SetLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::forward<LastDriftCheckTimestampT>(value); }
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    StackSetSummary& WithLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { SetLastDriftCheckTimestamp(std::forward<LastDriftCheckTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,12 +167,12 @@ namespace Model
      * <p>Describes whether StackSets performs non-conflicting operations concurrently
      * and queues conflicting operations.</p>
      */
-    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+    inline const ManagedExecution& GetManagedExecution() const { return m_managedExecution; }
     inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
-    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
-    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
-    inline StackSetSummary& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
-    inline StackSetSummary& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+    template<typename ManagedExecutionT = ManagedExecution>
+    void SetManagedExecution(ManagedExecutionT&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::forward<ManagedExecutionT>(value); }
+    template<typename ManagedExecutionT = ManagedExecution>
+    StackSetSummary& WithManagedExecution(ManagedExecutionT&& value) { SetManagedExecution(std::forward<ManagedExecutionT>(value)); return *this;}
     ///@}
   private:
 
@@ -197,19 +185,19 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    StackSetStatus m_status;
+    StackSetStatus m_status{StackSetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
     bool m_autoDeploymentHasBeenSet = false;
 
-    PermissionModels m_permissionModel;
+    PermissionModels m_permissionModel{PermissionModels::NOT_SET};
     bool m_permissionModelHasBeenSet = false;
 
-    StackDriftStatus m_driftStatus;
+    StackDriftStatus m_driftStatus{StackDriftStatus::NOT_SET};
     bool m_driftStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDriftCheckTimestamp;
+    Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
     bool m_lastDriftCheckTimestampHasBeenSet = false;
 
     ManagedExecution m_managedExecution;

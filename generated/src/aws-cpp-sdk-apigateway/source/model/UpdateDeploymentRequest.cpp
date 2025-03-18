@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeploymentRequest::UpdateDeploymentRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

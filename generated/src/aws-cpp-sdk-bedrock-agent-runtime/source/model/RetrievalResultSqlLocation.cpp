@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultSqlLocation::RetrievalResultSqlLocation() : 
-    m_queryHasBeenSet(false)
-{
-}
-
 RetrievalResultSqlLocation::RetrievalResultSqlLocation(JsonView jsonValue)
-  : RetrievalResultSqlLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalResultSqlLocation& RetrievalResultSqlLocation::operator =(JsonView json
   if(jsonValue.ValueExists("query"))
   {
     m_query = jsonValue.GetString("query");
-
     m_queryHasBeenSet = true;
   }
-
   return *this;
 }
 

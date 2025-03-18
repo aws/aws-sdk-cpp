@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DynatraceSourceProperties::DynatraceSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 DynatraceSourceProperties::DynatraceSourceProperties(JsonView jsonValue)
-  : DynatraceSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DynatraceSourceProperties& DynatraceSourceProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

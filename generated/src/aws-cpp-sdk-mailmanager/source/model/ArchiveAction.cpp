@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveAction::ArchiveAction() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_targetArchiveHasBeenSet(false)
-{
-}
-
 ArchiveAction::ArchiveAction(JsonView jsonValue)
-  : ArchiveAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ArchiveAction& ArchiveAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetArchive"))
   {
     m_targetArchive = jsonValue.GetString("TargetArchive");
-
     m_targetArchiveHasBeenSet = true;
   }
-
   return *this;
 }
 

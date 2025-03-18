@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-WAFInvalidParameterException::WAFInvalidParameterException() : 
-    m_messageHasBeenSet(false),
-    m_field(ParameterExceptionField::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_parameterHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 WAFInvalidParameterException::WAFInvalidParameterException(JsonView jsonValue)
-  : WAFInvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ WAFInvalidParameterException& WAFInvalidParameterException::operator =(JsonView 
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Field"))
   {
     m_field = ParameterExceptionFieldMapper::GetParameterExceptionFieldForName(jsonValue.GetString("Field"));
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameter"))
   {
     m_parameter = jsonValue.GetString("Parameter");
-
     m_parameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

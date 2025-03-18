@@ -34,7 +34,7 @@ namespace Model
   class GetHostedZoneLimitResult
   {
   public:
-    AWS_ROUTE53_API GetHostedZoneLimitResult();
+    AWS_ROUTE53_API GetHostedZoneLimitResult() = default;
     AWS_ROUTE53_API GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetHostedZoneLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,11 +46,11 @@ namespace Model
      * request, the value of <code>Limit</code> is the maximum number of records that
      * you can create in the specified hosted zone.</p>
      */
-    inline const HostedZoneLimit& GetLimit() const{ return m_limit; }
-    inline void SetLimit(const HostedZoneLimit& value) { m_limit = value; }
-    inline void SetLimit(HostedZoneLimit&& value) { m_limit = std::move(value); }
-    inline GetHostedZoneLimitResult& WithLimit(const HostedZoneLimit& value) { SetLimit(value); return *this;}
-    inline GetHostedZoneLimitResult& WithLimit(HostedZoneLimit&& value) { SetLimit(std::move(value)); return *this;}
+    inline const HostedZoneLimit& GetLimit() const { return m_limit; }
+    template<typename LimitT = HostedZoneLimit>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = HostedZoneLimit>
+    GetHostedZoneLimitResult& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +60,29 @@ namespace Model
      * <code>Type</code> in the request, the value of <code>Count</code> is the current
      * number of records that you have created in the specified hosted zone.</p>
      */
-    inline long long GetCount() const{ return m_count; }
-    inline void SetCount(long long value) { m_count = value; }
+    inline long long GetCount() const { return m_count; }
+    inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline GetHostedZoneLimitResult& WithCount(long long value) { SetCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHostedZoneLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHostedZoneLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHostedZoneLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHostedZoneLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HostedZoneLimit m_limit;
+    bool m_limitHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
+    bool m_countHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

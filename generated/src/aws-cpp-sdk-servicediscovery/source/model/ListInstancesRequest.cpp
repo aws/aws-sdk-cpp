@@ -12,14 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInstancesRequest::ListInstancesRequest() : 
-    m_serviceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

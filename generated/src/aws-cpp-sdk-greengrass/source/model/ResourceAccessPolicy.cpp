@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ResourceAccessPolicy::ResourceAccessPolicy() : 
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue)
-  : ResourceAccessPolicy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceAccessPolicy& ResourceAccessPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Permission"))
   {
     m_permission = PermissionMapper::GetPermissionForName(jsonValue.GetString("Permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

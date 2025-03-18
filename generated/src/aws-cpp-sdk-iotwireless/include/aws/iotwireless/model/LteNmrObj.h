@@ -29,7 +29,7 @@ namespace Model
   class LteNmrObj
   {
   public:
-    AWS_IOTWIRELESS_API LteNmrObj();
+    AWS_IOTWIRELESS_API LteNmrObj() = default;
     AWS_IOTWIRELESS_API LteNmrObj(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LteNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Physical cell ID.</p>
      */
-    inline int GetPci() const{ return m_pci; }
+    inline int GetPci() const { return m_pci; }
     inline bool PciHasBeenSet() const { return m_pciHasBeenSet; }
     inline void SetPci(int value) { m_pciHasBeenSet = true; m_pci = value; }
     inline LteNmrObj& WithPci(int value) { SetPci(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
      * <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency
      * channel Number (EARFCN).</p>
      */
-    inline int GetEarfcn() const{ return m_earfcn; }
+    inline int GetEarfcn() const { return m_earfcn; }
     inline bool EarfcnHasBeenSet() const { return m_earfcnHasBeenSet; }
     inline void SetEarfcn(int value) { m_earfcnHasBeenSet = true; m_earfcn = value; }
     inline LteNmrObj& WithEarfcn(int value) { SetEarfcn(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
      * <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global
      * identifier (EUTRANCID).</p>
      */
-    inline int GetEutranCid() const{ return m_eutranCid; }
+    inline int GetEutranCid() const { return m_eutranCid; }
     inline bool EutranCidHasBeenSet() const { return m_eutranCidHasBeenSet; }
     inline void SetEutranCid(int value) { m_eutranCidHasBeenSet = true; m_eutranCid = value; }
     inline LteNmrObj& WithEutranCid(int value) { SetEutranCid(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
      * <p>Signal power of the reference signal received, measured in dBm
      * (decibel-milliwatts).</p>
      */
-    inline int GetRsrp() const{ return m_rsrp; }
+    inline int GetRsrp() const { return m_rsrp; }
     inline bool RsrpHasBeenSet() const { return m_rsrpHasBeenSet; }
     inline void SetRsrp(int value) { m_rsrpHasBeenSet = true; m_rsrp = value; }
     inline LteNmrObj& WithRsrp(int value) { SetRsrp(value); return *this;}
@@ -83,26 +83,26 @@ namespace Model
      * <p>Signal quality of the reference Signal received, measured in decibels
      * (dB).</p>
      */
-    inline double GetRsrq() const{ return m_rsrq; }
+    inline double GetRsrq() const { return m_rsrq; }
     inline bool RsrqHasBeenSet() const { return m_rsrqHasBeenSet; }
     inline void SetRsrq(double value) { m_rsrqHasBeenSet = true; m_rsrq = value; }
     inline LteNmrObj& WithRsrq(double value) { SetRsrq(value); return *this;}
     ///@}
   private:
 
-    int m_pci;
+    int m_pci{0};
     bool m_pciHasBeenSet = false;
 
-    int m_earfcn;
+    int m_earfcn{0};
     bool m_earfcnHasBeenSet = false;
 
-    int m_eutranCid;
+    int m_eutranCid{0};
     bool m_eutranCidHasBeenSet = false;
 
-    int m_rsrp;
+    int m_rsrp{0};
     bool m_rsrpHasBeenSet = false;
 
-    double m_rsrq;
+    double m_rsrq{0.0};
     bool m_rsrqHasBeenSet = false;
   };
 

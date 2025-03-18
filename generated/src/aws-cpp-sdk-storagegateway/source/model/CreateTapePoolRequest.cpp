@@ -12,18 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTapePoolRequest::CreateTapePoolRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_storageClass(TapeStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_retentionLockType(RetentionLockType::NOT_SET),
-    m_retentionLockTypeHasBeenSet(false),
-    m_retentionLockTimeInDays(0),
-    m_retentionLockTimeInDaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTapePoolRequest::SerializePayload() const
 {
   JsonValue payload;

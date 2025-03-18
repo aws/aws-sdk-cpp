@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-PinData::PinData() : 
-    m_pinOffsetHasBeenSet(false),
-    m_verificationValueHasBeenSet(false)
-{
-}
-
 PinData::PinData(JsonView jsonValue)
-  : PinData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PinData& PinData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PinOffset"))
   {
     m_pinOffset = jsonValue.GetString("PinOffset");
-
     m_pinOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerificationValue"))
   {
     m_verificationValue = jsonValue.GetString("VerificationValue");
-
     m_verificationValueHasBeenSet = true;
   }
-
   return *this;
 }
 

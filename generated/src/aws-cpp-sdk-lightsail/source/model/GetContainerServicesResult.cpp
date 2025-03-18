@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContainerServicesResult::GetContainerServicesResult()
-{
-}
-
 GetContainerServicesResult::GetContainerServicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetContainerServicesResult& GetContainerServicesResult::operator =(const Aws::Am
     {
       m_containerServices.push_back(containerServicesJsonList[containerServicesIndex].AsObject());
     }
+    m_containerServicesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

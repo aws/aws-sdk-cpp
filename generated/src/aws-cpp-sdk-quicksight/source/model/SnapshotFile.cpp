@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotFile::SnapshotFile() : 
-    m_sheetSelectionsHasBeenSet(false),
-    m_formatType(SnapshotFileFormatType::NOT_SET),
-    m_formatTypeHasBeenSet(false)
-{
-}
-
 SnapshotFile::SnapshotFile(JsonView jsonValue)
-  : SnapshotFile()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SnapshotFile& SnapshotFile::operator =(JsonView jsonValue)
     }
     m_sheetSelectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatType"))
   {
     m_formatType = SnapshotFileFormatTypeMapper::GetSnapshotFileFormatTypeForName(jsonValue.GetString("FormatType"));
-
     m_formatTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

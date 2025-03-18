@@ -32,7 +32,7 @@ namespace Model
   class ValueHolder
   {
   public:
-    AWS_QLDB_API ValueHolder();
+    AWS_QLDB_API ValueHolder() = default;
     AWS_QLDB_API ValueHolder(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API ValueHolder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
      * structure.</p>
      */
-    inline const Aws::String& GetIonText() const{ return m_ionText; }
+    inline const Aws::String& GetIonText() const { return m_ionText; }
     inline bool IonTextHasBeenSet() const { return m_ionTextHasBeenSet; }
-    inline void SetIonText(const Aws::String& value) { m_ionTextHasBeenSet = true; m_ionText = value; }
-    inline void SetIonText(Aws::String&& value) { m_ionTextHasBeenSet = true; m_ionText = std::move(value); }
-    inline void SetIonText(const char* value) { m_ionTextHasBeenSet = true; m_ionText.assign(value); }
-    inline ValueHolder& WithIonText(const Aws::String& value) { SetIonText(value); return *this;}
-    inline ValueHolder& WithIonText(Aws::String&& value) { SetIonText(std::move(value)); return *this;}
-    inline ValueHolder& WithIonText(const char* value) { SetIonText(value); return *this;}
+    template<typename IonTextT = Aws::String>
+    void SetIonText(IonTextT&& value) { m_ionTextHasBeenSet = true; m_ionText = std::forward<IonTextT>(value); }
+    template<typename IonTextT = Aws::String>
+    ValueHolder& WithIonText(IonTextT&& value) { SetIonText(std::forward<IonTextT>(value)); return *this;}
     ///@}
   private:
 

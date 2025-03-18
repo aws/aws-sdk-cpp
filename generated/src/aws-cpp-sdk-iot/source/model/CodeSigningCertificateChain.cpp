@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CodeSigningCertificateChain::CodeSigningCertificateChain() : 
-    m_certificateNameHasBeenSet(false),
-    m_inlineDocumentHasBeenSet(false)
-{
-}
-
 CodeSigningCertificateChain::CodeSigningCertificateChain(JsonView jsonValue)
-  : CodeSigningCertificateChain()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(JsonView js
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
-
     m_certificateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inlineDocument"))
   {
     m_inlineDocument = jsonValue.GetString("inlineDocument");
-
     m_inlineDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

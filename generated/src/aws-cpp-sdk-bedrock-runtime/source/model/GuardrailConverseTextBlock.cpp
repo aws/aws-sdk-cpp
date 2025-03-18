@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailConverseTextBlock::GuardrailConverseTextBlock() : 
-    m_textHasBeenSet(false),
-    m_qualifiersHasBeenSet(false)
-{
-}
-
 GuardrailConverseTextBlock::GuardrailConverseTextBlock(JsonView jsonValue)
-  : GuardrailConverseTextBlock()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GuardrailConverseTextBlock& GuardrailConverseTextBlock::operator =(JsonView json
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qualifiers"))
   {
     Aws::Utils::Array<JsonView> qualifiersJsonList = jsonValue.GetArray("qualifiers");
@@ -48,7 +39,6 @@ GuardrailConverseTextBlock& GuardrailConverseTextBlock::operator =(JsonView json
     }
     m_qualifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

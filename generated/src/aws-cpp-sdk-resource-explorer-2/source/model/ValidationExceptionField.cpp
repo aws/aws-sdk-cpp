@@ -18,14 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_nameHasBeenSet(false),
-    m_validationIssueHasBeenSet(false)
-{
-}
-
 ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationIssue"))
   {
     m_validationIssue = jsonValue.GetString("ValidationIssue");
-
     m_validationIssueHasBeenSet = true;
   }
-
   return *this;
 }
 

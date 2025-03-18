@@ -12,22 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPartitionsRequest::GetPartitionsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_excludeColumnSchema(false),
-    m_excludeColumnSchemaHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_queryAsOfTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetPartitionsRequest::SerializePayload() const
 {
   JsonValue payload;

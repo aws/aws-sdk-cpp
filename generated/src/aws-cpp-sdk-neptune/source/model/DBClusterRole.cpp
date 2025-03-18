@@ -20,15 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterRole::DBClusterRole() : 
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
-{
-}
-
 DBClusterRole::DBClusterRole(const XmlNode& xmlNode)
-  : DBClusterRole()
 {
   *this = xmlNode;
 }

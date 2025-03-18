@@ -21,7 +21,7 @@ namespace Model
   class GetFaceLivenessSessionResultsRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API GetFaceLivenessSessionResultsRequest();
+    AWS_REKOGNITION_API GetFaceLivenessSessionResultsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique 128-bit UUID. This is used to uniquely identify the session and also
      * acts as an idempotency token for all operations associated with the session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline GetFaceLivenessSessionResultsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetFaceLivenessSessionResultsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetFaceLivenessSessionResultsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetFaceLivenessSessionResultsRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 

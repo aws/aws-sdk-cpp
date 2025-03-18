@@ -28,7 +28,7 @@ namespace Model
   class StartMessageMoveTaskResult
   {
   public:
-    AWS_SQS_API StartMessageMoveTaskResult();
+    AWS_SQS_API StartMessageMoveTaskResult() = default;
     AWS_SQS_API StartMessageMoveTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SQS_API StartMessageMoveTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,41 +39,40 @@ namespace Model
      * identifier to cancel a specified message movement task using the
      * <code>CancelMessageMoveTask</code> action.</p>
      */
-    inline const Aws::String& GetTaskHandle() const{ return m_taskHandle; }
-    inline void SetTaskHandle(const Aws::String& value) { m_taskHandle = value; }
-    inline void SetTaskHandle(Aws::String&& value) { m_taskHandle = std::move(value); }
-    inline void SetTaskHandle(const char* value) { m_taskHandle.assign(value); }
-    inline StartMessageMoveTaskResult& WithTaskHandle(const Aws::String& value) { SetTaskHandle(value); return *this;}
-    inline StartMessageMoveTaskResult& WithTaskHandle(Aws::String&& value) { SetTaskHandle(std::move(value)); return *this;}
-    inline StartMessageMoveTaskResult& WithTaskHandle(const char* value) { SetTaskHandle(value); return *this;}
+    inline const Aws::String& GetTaskHandle() const { return m_taskHandle; }
+    template<typename TaskHandleT = Aws::String>
+    void SetTaskHandle(TaskHandleT&& value) { m_taskHandleHasBeenSet = true; m_taskHandle = std::forward<TaskHandleT>(value); }
+    template<typename TaskHandleT = Aws::String>
+    StartMessageMoveTaskResult& WithTaskHandle(TaskHandleT&& value) { SetTaskHandle(std::forward<TaskHandleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartMessageMoveTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartMessageMoveTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartMessageMoveTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartMessageMoveTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartMessageMoveTaskResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartMessageMoveTaskResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartMessageMoveTaskResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskHandle;
+    bool m_taskHandleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

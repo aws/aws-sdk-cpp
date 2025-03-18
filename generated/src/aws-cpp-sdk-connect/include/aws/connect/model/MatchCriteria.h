@@ -31,7 +31,7 @@ namespace Model
   class MatchCriteria
   {
   public:
-    AWS_CONNECT_API MatchCriteria();
+    AWS_CONNECT_API MatchCriteria() = default;
     AWS_CONNECT_API MatchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API MatchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>An object to define agentIds.</p>
      */
-    inline const AgentsCriteria& GetAgentsCriteria() const{ return m_agentsCriteria; }
+    inline const AgentsCriteria& GetAgentsCriteria() const { return m_agentsCriteria; }
     inline bool AgentsCriteriaHasBeenSet() const { return m_agentsCriteriaHasBeenSet; }
-    inline void SetAgentsCriteria(const AgentsCriteria& value) { m_agentsCriteriaHasBeenSet = true; m_agentsCriteria = value; }
-    inline void SetAgentsCriteria(AgentsCriteria&& value) { m_agentsCriteriaHasBeenSet = true; m_agentsCriteria = std::move(value); }
-    inline MatchCriteria& WithAgentsCriteria(const AgentsCriteria& value) { SetAgentsCriteria(value); return *this;}
-    inline MatchCriteria& WithAgentsCriteria(AgentsCriteria&& value) { SetAgentsCriteria(std::move(value)); return *this;}
+    template<typename AgentsCriteriaT = AgentsCriteria>
+    void SetAgentsCriteria(AgentsCriteriaT&& value) { m_agentsCriteriaHasBeenSet = true; m_agentsCriteria = std::forward<AgentsCriteriaT>(value); }
+    template<typename AgentsCriteriaT = AgentsCriteria>
+    MatchCriteria& WithAgentsCriteria(AgentsCriteriaT&& value) { SetAgentsCriteria(std::forward<AgentsCriteriaT>(value)); return *this;}
     ///@}
   private:
 

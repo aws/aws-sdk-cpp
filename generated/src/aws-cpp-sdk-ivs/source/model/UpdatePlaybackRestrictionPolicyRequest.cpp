@@ -12,16 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePlaybackRestrictionPolicyRequest::UpdatePlaybackRestrictionPolicyRequest() : 
-    m_allowedCountriesHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_enableStrictOriginEnforcement(false),
-    m_enableStrictOriginEnforcementHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePlaybackRestrictionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

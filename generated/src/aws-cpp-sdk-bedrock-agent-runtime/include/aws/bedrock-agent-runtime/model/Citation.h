@@ -40,7 +40,7 @@ namespace Model
   class Citation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Citation();
+    AWS_BEDROCKAGENTRUNTIME_API Citation() = default;
     AWS_BEDROCKAGENTRUNTIME_API Citation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Citation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,26 @@ namespace Model
     /**
      * <p>Contains the generated response and metadata </p>
      */
-    inline const GeneratedResponsePart& GetGeneratedResponsePart() const{ return m_generatedResponsePart; }
+    inline const GeneratedResponsePart& GetGeneratedResponsePart() const { return m_generatedResponsePart; }
     inline bool GeneratedResponsePartHasBeenSet() const { return m_generatedResponsePartHasBeenSet; }
-    inline void SetGeneratedResponsePart(const GeneratedResponsePart& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = value; }
-    inline void SetGeneratedResponsePart(GeneratedResponsePart&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::move(value); }
-    inline Citation& WithGeneratedResponsePart(const GeneratedResponsePart& value) { SetGeneratedResponsePart(value); return *this;}
-    inline Citation& WithGeneratedResponsePart(GeneratedResponsePart&& value) { SetGeneratedResponsePart(std::move(value)); return *this;}
+    template<typename GeneratedResponsePartT = GeneratedResponsePart>
+    void SetGeneratedResponsePart(GeneratedResponsePartT&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::forward<GeneratedResponsePartT>(value); }
+    template<typename GeneratedResponsePartT = GeneratedResponsePart>
+    Citation& WithGeneratedResponsePart(GeneratedResponsePartT&& value) { SetGeneratedResponsePart(std::forward<GeneratedResponsePartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains metadata about the sources cited for the generated response.</p>
      */
-    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
+    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const { return m_retrievedReferences; }
     inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
-    inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
-    inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
-    inline Citation& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
-    inline Citation& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
-    inline Citation& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
-    inline Citation& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    void SetRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::forward<RetrievedReferencesT>(value); }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    Citation& WithRetrievedReferences(RetrievedReferencesT&& value) { SetRetrievedReferences(std::forward<RetrievedReferencesT>(value)); return *this;}
+    template<typename RetrievedReferencesT = RetrievedReference>
+    Citation& AddRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.emplace_back(std::forward<RetrievedReferencesT>(value)); return *this; }
     ///@}
   private:
 

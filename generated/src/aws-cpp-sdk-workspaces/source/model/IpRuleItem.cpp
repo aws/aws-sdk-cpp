@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-IpRuleItem::IpRuleItem() : 
-    m_ipRuleHasBeenSet(false),
-    m_ruleDescHasBeenSet(false)
-{
-}
-
 IpRuleItem::IpRuleItem(JsonView jsonValue)
-  : IpRuleItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IpRuleItem& IpRuleItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipRule"))
   {
     m_ipRule = jsonValue.GetString("ipRule");
-
     m_ipRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleDesc"))
   {
     m_ruleDesc = jsonValue.GetString("ruleDesc");
-
     m_ruleDescHasBeenSet = true;
   }
-
   return *this;
 }
 

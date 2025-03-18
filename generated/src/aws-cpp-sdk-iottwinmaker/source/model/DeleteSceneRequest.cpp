@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSceneRequest::DeleteSceneRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_sceneIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSceneRequest::SerializePayload() const
 {
   return {};

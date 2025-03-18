@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-InvalidRequestException::InvalidRequestException() : 
-    m_athenaErrorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-  : InvalidRequestException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AthenaErrorCode"))
   {
     m_athenaErrorCode = jsonValue.GetString("AthenaErrorCode");
-
     m_athenaErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

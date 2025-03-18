@@ -12,14 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAssetContractsRequest::ListAssetContractsRequest() : 
-    m_contractFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssetContractsRequest::SerializePayload() const
 {
   JsonValue payload;

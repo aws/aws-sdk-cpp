@@ -34,7 +34,7 @@ namespace Model
   class FunctionResponse
   {
   public:
-    AWS_IOTTWINMAKER_API FunctionResponse();
+    AWS_IOTTWINMAKER_API FunctionResponse() = default;
     AWS_IOTTWINMAKER_API FunctionResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API FunctionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,46 +44,43 @@ namespace Model
     /**
      * <p>The required properties of the function.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequiredProperties() const{ return m_requiredProperties; }
+    inline const Aws::Vector<Aws::String>& GetRequiredProperties() const { return m_requiredProperties; }
     inline bool RequiredPropertiesHasBeenSet() const { return m_requiredPropertiesHasBeenSet; }
-    inline void SetRequiredProperties(const Aws::Vector<Aws::String>& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties = value; }
-    inline void SetRequiredProperties(Aws::Vector<Aws::String>&& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties = std::move(value); }
-    inline FunctionResponse& WithRequiredProperties(const Aws::Vector<Aws::String>& value) { SetRequiredProperties(value); return *this;}
-    inline FunctionResponse& WithRequiredProperties(Aws::Vector<Aws::String>&& value) { SetRequiredProperties(std::move(value)); return *this;}
-    inline FunctionResponse& AddRequiredProperties(const Aws::String& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties.push_back(value); return *this; }
-    inline FunctionResponse& AddRequiredProperties(Aws::String&& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties.push_back(std::move(value)); return *this; }
-    inline FunctionResponse& AddRequiredProperties(const char* value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties.push_back(value); return *this; }
+    template<typename RequiredPropertiesT = Aws::Vector<Aws::String>>
+    void SetRequiredProperties(RequiredPropertiesT&& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties = std::forward<RequiredPropertiesT>(value); }
+    template<typename RequiredPropertiesT = Aws::Vector<Aws::String>>
+    FunctionResponse& WithRequiredProperties(RequiredPropertiesT&& value) { SetRequiredProperties(std::forward<RequiredPropertiesT>(value)); return *this;}
+    template<typename RequiredPropertiesT = Aws::String>
+    FunctionResponse& AddRequiredProperties(RequiredPropertiesT&& value) { m_requiredPropertiesHasBeenSet = true; m_requiredProperties.emplace_back(std::forward<RequiredPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The scope of the function.</p>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline FunctionResponse& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline FunctionResponse& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline FunctionResponse& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data connector.</p>
      */
-    inline const DataConnector& GetImplementedBy() const{ return m_implementedBy; }
+    inline const DataConnector& GetImplementedBy() const { return m_implementedBy; }
     inline bool ImplementedByHasBeenSet() const { return m_implementedByHasBeenSet; }
-    inline void SetImplementedBy(const DataConnector& value) { m_implementedByHasBeenSet = true; m_implementedBy = value; }
-    inline void SetImplementedBy(DataConnector&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::move(value); }
-    inline FunctionResponse& WithImplementedBy(const DataConnector& value) { SetImplementedBy(value); return *this;}
-    inline FunctionResponse& WithImplementedBy(DataConnector&& value) { SetImplementedBy(std::move(value)); return *this;}
+    template<typename ImplementedByT = DataConnector>
+    void SetImplementedBy(ImplementedByT&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::forward<ImplementedByT>(value); }
+    template<typename ImplementedByT = DataConnector>
+    FunctionResponse& WithImplementedBy(ImplementedByT&& value) { SetImplementedBy(std::forward<ImplementedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether this function is inherited.</p>
      */
-    inline bool GetIsInherited() const{ return m_isInherited; }
+    inline bool GetIsInherited() const { return m_isInherited; }
     inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
     inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
     inline FunctionResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
@@ -93,13 +90,13 @@ namespace Model
     Aws::Vector<Aws::String> m_requiredProperties;
     bool m_requiredPropertiesHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     DataConnector m_implementedBy;
     bool m_implementedByHasBeenSet = false;
 
-    bool m_isInherited;
+    bool m_isInherited{false};
     bool m_isInheritedHasBeenSet = false;
   };
 

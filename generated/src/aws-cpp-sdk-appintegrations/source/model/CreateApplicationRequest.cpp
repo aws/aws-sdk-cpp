@@ -12,18 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
-    m_nameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_applicationSourceConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

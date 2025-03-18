@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReadinessCheckResourceStatusResult::GetReadinessCheckResourceStatusResult() : 
-    m_readiness(Readiness::NOT_SET)
-{
-}
-
 GetReadinessCheckResourceStatusResult::GetReadinessCheckResourceStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetReadinessCheckResourceStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetReadinessCheckResourceStatusResult& GetReadinessCheckResourceStatusResult::op
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readiness"))
   {
     m_readiness = ReadinessMapper::GetReadinessForName(jsonValue.GetString("readiness"));
-
+    m_readinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -50,14 +42,15 @@ GetReadinessCheckResourceStatusResult& GetReadinessCheckResourceStatusResult::op
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
+    m_rulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class RecordsIngested
   {
   public:
-    AWS_TIMESTREAMWRITE_API RecordsIngested();
+    AWS_TIMESTREAMWRITE_API RecordsIngested() = default;
     AWS_TIMESTREAMWRITE_API RecordsIngested(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API RecordsIngested& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Total count of successfully ingested records.</p>
      */
-    inline int GetTotal() const{ return m_total; }
+    inline int GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
     inline RecordsIngested& WithTotal(int value) { SetTotal(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Count of records ingested into the memory store.</p>
      */
-    inline int GetMemoryStore() const{ return m_memoryStore; }
+    inline int GetMemoryStore() const { return m_memoryStore; }
     inline bool MemoryStoreHasBeenSet() const { return m_memoryStoreHasBeenSet; }
     inline void SetMemoryStore(int value) { m_memoryStoreHasBeenSet = true; m_memoryStore = value; }
     inline RecordsIngested& WithMemoryStore(int value) { SetMemoryStore(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>Count of records ingested into the magnetic store.</p>
      */
-    inline int GetMagneticStore() const{ return m_magneticStore; }
+    inline int GetMagneticStore() const { return m_magneticStore; }
     inline bool MagneticStoreHasBeenSet() const { return m_magneticStoreHasBeenSet; }
     inline void SetMagneticStore(int value) { m_magneticStoreHasBeenSet = true; m_magneticStore = value; }
     inline RecordsIngested& WithMagneticStore(int value) { SetMagneticStore(value); return *this;}
     ///@}
   private:
 
-    int m_total;
+    int m_total{0};
     bool m_totalHasBeenSet = false;
 
-    int m_memoryStore;
+    int m_memoryStore{0};
     bool m_memoryStoreHasBeenSet = false;
 
-    int m_magneticStore;
+    int m_magneticStore{0};
     bool m_magneticStoreHasBeenSet = false;
   };
 

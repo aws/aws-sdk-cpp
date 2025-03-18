@@ -28,7 +28,7 @@ namespace Model
   class CreateConfiguredTableAssociationResult
   {
   public:
-    AWS_CLEANROOMS_API CreateConfiguredTableAssociationResult();
+    AWS_CLEANROOMS_API CreateConfiguredTableAssociationResult() = default;
     AWS_CLEANROOMS_API CreateConfiguredTableAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API CreateConfiguredTableAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The configured table association.</p>
      */
-    inline const ConfiguredTableAssociation& GetConfiguredTableAssociation() const{ return m_configuredTableAssociation; }
-    inline void SetConfiguredTableAssociation(const ConfiguredTableAssociation& value) { m_configuredTableAssociation = value; }
-    inline void SetConfiguredTableAssociation(ConfiguredTableAssociation&& value) { m_configuredTableAssociation = std::move(value); }
-    inline CreateConfiguredTableAssociationResult& WithConfiguredTableAssociation(const ConfiguredTableAssociation& value) { SetConfiguredTableAssociation(value); return *this;}
-    inline CreateConfiguredTableAssociationResult& WithConfiguredTableAssociation(ConfiguredTableAssociation&& value) { SetConfiguredTableAssociation(std::move(value)); return *this;}
+    inline const ConfiguredTableAssociation& GetConfiguredTableAssociation() const { return m_configuredTableAssociation; }
+    template<typename ConfiguredTableAssociationT = ConfiguredTableAssociation>
+    void SetConfiguredTableAssociation(ConfiguredTableAssociationT&& value) { m_configuredTableAssociationHasBeenSet = true; m_configuredTableAssociation = std::forward<ConfiguredTableAssociationT>(value); }
+    template<typename ConfiguredTableAssociationT = ConfiguredTableAssociation>
+    CreateConfiguredTableAssociationResult& WithConfiguredTableAssociation(ConfiguredTableAssociationT&& value) { SetConfiguredTableAssociation(std::forward<ConfiguredTableAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConfiguredTableAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConfiguredTableAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConfiguredTableAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConfiguredTableAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConfiguredTableAssociation m_configuredTableAssociation;
+    bool m_configuredTableAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

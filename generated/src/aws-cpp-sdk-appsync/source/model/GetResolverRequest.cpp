@@ -12,13 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResolverRequest::GetResolverRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_fieldNameHasBeenSet(false)
-{
-}
-
 Aws::String GetResolverRequest::SerializePayload() const
 {
   return {};

@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-VersioningConfiguration::VersioningConfiguration() : 
-    m_mFADelete(MFADelete::NOT_SET),
-    m_mFADeleteHasBeenSet(false),
-    m_status(BucketVersioningStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 VersioningConfiguration::VersioningConfiguration(const XmlNode& xmlNode)
-  : VersioningConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,13 +34,13 @@ VersioningConfiguration& VersioningConfiguration::operator =(const XmlNode& xmlN
     XmlNode mFADeleteNode = resultNode.FirstChild("MfaDelete");
     if(!mFADeleteNode.IsNull())
     {
-      m_mFADelete = MFADeleteMapper::GetMFADeleteForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()).c_str());
+      m_mFADelete = MFADeleteMapper::GetMFADeleteForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()));
       m_mFADeleteHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

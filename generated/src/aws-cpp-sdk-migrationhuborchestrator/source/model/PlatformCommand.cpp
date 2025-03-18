@@ -18,14 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-PlatformCommand::PlatformCommand() : 
-    m_linuxHasBeenSet(false),
-    m_windowsHasBeenSet(false)
-{
-}
-
 PlatformCommand::PlatformCommand(JsonView jsonValue)
-  : PlatformCommand()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PlatformCommand& PlatformCommand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("linux"))
   {
     m_linux = jsonValue.GetString("linux");
-
     m_linuxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("windows"))
   {
     m_windows = jsonValue.GetString("windows");
-
     m_windowsHasBeenSet = true;
   }
-
   return *this;
 }
 

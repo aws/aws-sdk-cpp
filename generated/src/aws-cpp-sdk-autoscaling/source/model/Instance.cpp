@@ -20,23 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-Instance::Instance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_lifecycleState(LifecycleState::NOT_SET),
-    m_lifecycleStateHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_protectedFromScaleIn(false),
-    m_protectedFromScaleInHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }
@@ -68,7 +52,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
     if(!lifecycleStateNode.IsNull())
     {
-      m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText()).c_str()).c_str());
+      m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText()).c_str()));
       m_lifecycleStateHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");

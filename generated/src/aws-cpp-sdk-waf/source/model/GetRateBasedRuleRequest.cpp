@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRateBasedRuleRequest::GetRateBasedRuleRequest() : 
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRateBasedRuleRequest::SerializePayload() const
 {
   JsonValue payload;

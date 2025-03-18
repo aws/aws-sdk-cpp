@@ -18,15 +18,7 @@ namespace EBS
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ServiceQuotaExceededExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ServiceQuotaExceededExceptionReasonMapper::GetServiceQuotaExceededExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

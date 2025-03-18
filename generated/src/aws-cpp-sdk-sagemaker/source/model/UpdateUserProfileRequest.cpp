@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserProfileRequest::UpdateUserProfileRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_userSettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

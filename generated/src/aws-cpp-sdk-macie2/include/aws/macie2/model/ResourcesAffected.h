@@ -33,7 +33,7 @@ namespace Model
   class ResourcesAffected
   {
   public:
-    AWS_MACIE2_API ResourcesAffected();
+    AWS_MACIE2_API ResourcesAffected() = default;
     AWS_MACIE2_API ResourcesAffected(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ResourcesAffected& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The details of the S3 bucket that the finding applies to.</p>
      */
-    inline const S3Bucket& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const S3Bucket& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const S3Bucket& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(S3Bucket&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline ResourcesAffected& WithS3Bucket(const S3Bucket& value) { SetS3Bucket(value); return *this;}
-    inline ResourcesAffected& WithS3Bucket(S3Bucket&& value) { SetS3Bucket(std::move(value)); return *this;}
+    template<typename S3BucketT = S3Bucket>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = S3Bucket>
+    ResourcesAffected& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the S3 object that the finding applies to.</p>
      */
-    inline const S3Object& GetS3Object() const{ return m_s3Object; }
+    inline const S3Object& GetS3Object() const { return m_s3Object; }
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-    inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-    inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-    inline ResourcesAffected& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-    inline ResourcesAffected& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
+    template<typename S3ObjectT = S3Object>
+    void SetS3Object(S3ObjectT&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::forward<S3ObjectT>(value); }
+    template<typename S3ObjectT = S3Object>
+    ResourcesAffected& WithS3Object(S3ObjectT&& value) { SetS3Object(std::forward<S3ObjectT>(value)); return *this;}
     ///@}
   private:
 

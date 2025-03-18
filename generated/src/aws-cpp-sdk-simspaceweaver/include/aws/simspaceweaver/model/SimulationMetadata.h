@@ -34,7 +34,7 @@ namespace Model
   class SimulationMetadata
   {
   public:
-    AWS_SIMSPACEWEAVER_API SimulationMetadata();
+    AWS_SIMSPACEWEAVER_API SimulationMetadata() = default;
     AWS_SIMSPACEWEAVER_API SimulationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API SimulationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline SimulationMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline SimulationMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline SimulationMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    SimulationMetadata& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,66 +61,60 @@ namespace Model
      * <p>The time when the simulation was created, expressed as the number of seconds
      * and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline SimulationMetadata& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline SimulationMetadata& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    SimulationMetadata& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SimulationMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SimulationMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SimulationMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SimulationMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the simulation.</p>
      */
-    inline const SimulationStatus& GetStatus() const{ return m_status; }
+    inline SimulationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SimulationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SimulationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SimulationMetadata& WithStatus(const SimulationStatus& value) { SetStatus(value); return *this;}
-    inline SimulationMetadata& WithStatus(SimulationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SimulationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SimulationMetadata& WithStatus(SimulationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The desired status of the simulation.</p>
      */
-    inline const SimulationTargetStatus& GetTargetStatus() const{ return m_targetStatus; }
+    inline SimulationTargetStatus GetTargetStatus() const { return m_targetStatus; }
     inline bool TargetStatusHasBeenSet() const { return m_targetStatusHasBeenSet; }
-    inline void SetTargetStatus(const SimulationTargetStatus& value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
-    inline void SetTargetStatus(SimulationTargetStatus&& value) { m_targetStatusHasBeenSet = true; m_targetStatus = std::move(value); }
-    inline SimulationMetadata& WithTargetStatus(const SimulationTargetStatus& value) { SetTargetStatus(value); return *this;}
-    inline SimulationMetadata& WithTargetStatus(SimulationTargetStatus&& value) { SetTargetStatus(std::move(value)); return *this;}
+    inline void SetTargetStatus(SimulationTargetStatus value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
+    inline SimulationMetadata& WithTargetStatus(SimulationTargetStatus value) { SetTargetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SimulationStatus m_status;
+    SimulationStatus m_status{SimulationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    SimulationTargetStatus m_targetStatus;
+    SimulationTargetStatus m_targetStatus{SimulationTargetStatus::NOT_SET};
     bool m_targetStatusHasBeenSet = false;
   };
 

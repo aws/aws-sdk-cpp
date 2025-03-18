@@ -21,7 +21,7 @@ namespace Model
   class DeleteTrafficPolicyRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API DeleteTrafficPolicyRequest();
+    AWS_MAILMANAGER_API DeleteTrafficPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the traffic policy that you want to delete.</p>
      */
-    inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
+    inline const Aws::String& GetTrafficPolicyId() const { return m_trafficPolicyId; }
     inline bool TrafficPolicyIdHasBeenSet() const { return m_trafficPolicyIdHasBeenSet; }
-    inline void SetTrafficPolicyId(const Aws::String& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = value; }
-    inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::move(value); }
-    inline void SetTrafficPolicyId(const char* value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId.assign(value); }
-    inline DeleteTrafficPolicyRequest& WithTrafficPolicyId(const Aws::String& value) { SetTrafficPolicyId(value); return *this;}
-    inline DeleteTrafficPolicyRequest& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
-    inline DeleteTrafficPolicyRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
+    template<typename TrafficPolicyIdT = Aws::String>
+    void SetTrafficPolicyId(TrafficPolicyIdT&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::forward<TrafficPolicyIdT>(value); }
+    template<typename TrafficPolicyIdT = Aws::String>
+    DeleteTrafficPolicyRequest& WithTrafficPolicyId(TrafficPolicyIdT&& value) { SetTrafficPolicyId(std::forward<TrafficPolicyIdT>(value)); return *this;}
     ///@}
   private:
 

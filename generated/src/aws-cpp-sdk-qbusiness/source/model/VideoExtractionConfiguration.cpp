@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-VideoExtractionConfiguration::VideoExtractionConfiguration() : 
-    m_videoExtractionStatus(VideoExtractionStatus::NOT_SET),
-    m_videoExtractionStatusHasBeenSet(false)
-{
-}
-
 VideoExtractionConfiguration::VideoExtractionConfiguration(JsonView jsonValue)
-  : VideoExtractionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VideoExtractionConfiguration& VideoExtractionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("videoExtractionStatus"))
   {
     m_videoExtractionStatus = VideoExtractionStatusMapper::GetVideoExtractionStatusForName(jsonValue.GetString("videoExtractionStatus"));
-
     m_videoExtractionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

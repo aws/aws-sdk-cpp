@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataSetResult::DescribeDataSetResult() : 
-    m_status(0)
-{
-}
-
 DescribeDataSetResult::DescribeDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDataSetResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeDataSetResult& DescribeDataSetResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DataSet"))
   {
     m_dataSet = jsonValue.GetObject("DataSet");
-
+    m_dataSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

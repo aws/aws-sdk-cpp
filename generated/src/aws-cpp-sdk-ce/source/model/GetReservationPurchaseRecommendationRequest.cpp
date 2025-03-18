@@ -12,25 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReservationPurchaseRecommendationRequest::GetReservationPurchaseRecommendationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_serviceSpecificationHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetReservationPurchaseRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

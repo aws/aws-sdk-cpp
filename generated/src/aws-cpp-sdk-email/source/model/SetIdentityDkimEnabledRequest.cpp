@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SetIdentityDkimEnabledRequest::SetIdentityDkimEnabledRequest() : 
-    m_identityHasBeenSet(false),
-    m_dkimEnabled(false),
-    m_dkimEnabledHasBeenSet(false)
-{
-}
-
 Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

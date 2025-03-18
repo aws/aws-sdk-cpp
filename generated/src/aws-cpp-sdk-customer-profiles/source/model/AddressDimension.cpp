@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AddressDimension::AddressDimension() : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_countyHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_provinceHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 AddressDimension::AddressDimension(JsonView jsonValue)
-  : AddressDimension()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AddressDimension& AddressDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetObject("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetObject("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("County"))
   {
     m_county = jsonValue.GetObject("County");
-
     m_countyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetObject("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Province"))
   {
     m_province = jsonValue.GetObject("Province");
-
     m_provinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

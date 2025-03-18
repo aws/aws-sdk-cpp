@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnalysisSummary::AnalysisSummary() : 
-    m_arnHasBeenSet(false),
-    m_analysisIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 AnalysisSummary::AnalysisSummary(JsonView jsonValue)
-  : AnalysisSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AnalysisSummary& AnalysisSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisId"))
   {
     m_analysisId = jsonValue.GetString("AnalysisId");
-
     m_analysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableFieldSubtotalOptions::PivotTableFieldSubtotalOptions() : 
-    m_fieldIdHasBeenSet(false)
-{
-}
-
 PivotTableFieldSubtotalOptions::PivotTableFieldSubtotalOptions(JsonView jsonValue)
-  : PivotTableFieldSubtotalOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PivotTableFieldSubtotalOptions& PivotTableFieldSubtotalOptions::operator =(JsonV
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   return *this;
 }
 

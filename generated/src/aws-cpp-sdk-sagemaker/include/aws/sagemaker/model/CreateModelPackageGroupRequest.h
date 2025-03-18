@@ -23,7 +23,7 @@ namespace Model
   class CreateModelPackageGroupRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateModelPackageGroupRequest();
+    AWS_SAGEMAKER_API CreateModelPackageGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The name of the model group.</p>
      */
-    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+    inline const Aws::String& GetModelPackageGroupName() const { return m_modelPackageGroupName; }
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
-    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
-    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
-    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+    template<typename ModelPackageGroupNameT = Aws::String>
+    void SetModelPackageGroupName(ModelPackageGroupNameT&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::forward<ModelPackageGroupNameT>(value); }
+    template<typename ModelPackageGroupNameT = Aws::String>
+    CreateModelPackageGroupRequest& WithModelPackageGroupName(ModelPackageGroupNameT&& value) { SetModelPackageGroupName(std::forward<ModelPackageGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the model group.</p>
      */
-    inline const Aws::String& GetModelPackageGroupDescription() const{ return m_modelPackageGroupDescription; }
+    inline const Aws::String& GetModelPackageGroupDescription() const { return m_modelPackageGroupDescription; }
     inline bool ModelPackageGroupDescriptionHasBeenSet() const { return m_modelPackageGroupDescriptionHasBeenSet; }
-    inline void SetModelPackageGroupDescription(const Aws::String& value) { m_modelPackageGroupDescriptionHasBeenSet = true; m_modelPackageGroupDescription = value; }
-    inline void SetModelPackageGroupDescription(Aws::String&& value) { m_modelPackageGroupDescriptionHasBeenSet = true; m_modelPackageGroupDescription = std::move(value); }
-    inline void SetModelPackageGroupDescription(const char* value) { m_modelPackageGroupDescriptionHasBeenSet = true; m_modelPackageGroupDescription.assign(value); }
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupDescription(const Aws::String& value) { SetModelPackageGroupDescription(value); return *this;}
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupDescription(Aws::String&& value) { SetModelPackageGroupDescription(std::move(value)); return *this;}
-    inline CreateModelPackageGroupRequest& WithModelPackageGroupDescription(const char* value) { SetModelPackageGroupDescription(value); return *this;}
+    template<typename ModelPackageGroupDescriptionT = Aws::String>
+    void SetModelPackageGroupDescription(ModelPackageGroupDescriptionT&& value) { m_modelPackageGroupDescriptionHasBeenSet = true; m_modelPackageGroupDescription = std::forward<ModelPackageGroupDescriptionT>(value); }
+    template<typename ModelPackageGroupDescriptionT = Aws::String>
+    CreateModelPackageGroupRequest& WithModelPackageGroupDescription(ModelPackageGroupDescriptionT&& value) { SetModelPackageGroupDescription(std::forward<ModelPackageGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
      * Reference Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateModelPackageGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateModelPackageGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateModelPackageGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateModelPackageGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateModelPackageGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateModelPackageGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

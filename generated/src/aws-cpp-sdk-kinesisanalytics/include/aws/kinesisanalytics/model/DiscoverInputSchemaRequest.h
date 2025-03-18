@@ -24,7 +24,7 @@ namespace Model
   class DiscoverInputSchemaRequest : public KinesisAnalyticsRequest
   {
   public:
-    AWS_KINESISANALYTICS_API DiscoverInputSchemaRequest();
+    AWS_KINESISANALYTICS_API DiscoverInputSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the streaming source.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline DiscoverInputSchemaRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline DiscoverInputSchemaRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline DiscoverInputSchemaRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    DiscoverInputSchemaRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
      * stream on your behalf.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline DiscoverInputSchemaRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline DiscoverInputSchemaRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline DiscoverInputSchemaRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    DiscoverInputSchemaRequest& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,12 @@ namespace Model
      * <p>Point at which you want Amazon Kinesis Analytics to start reading records
      * from the specified streaming source discovery purposes.</p>
      */
-    inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const{ return m_inputStartingPositionConfiguration; }
+    inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const { return m_inputStartingPositionConfiguration; }
     inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
-    inline void SetInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = value; }
-    inline void SetInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::move(value); }
-    inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { SetInputStartingPositionConfiguration(value); return *this;}
-    inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
+    template<typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+    void SetInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::forward<InputStartingPositionConfigurationT>(value); }
+    template<typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+    DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) { SetInputStartingPositionConfiguration(std::forward<InputStartingPositionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * <p>Specify this parameter to discover a schema from data in an Amazon S3
      * object.</p>
      */
-    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline DiscoverInputSchemaRequest& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-    inline DiscoverInputSchemaRequest& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3Configuration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3Configuration>
+    DiscoverInputSchemaRequest& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +95,12 @@ namespace Model
      * to use to preprocess the records before discovering the schema of the
      * records.</p>
      */
-    inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
+    inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const { return m_inputProcessingConfiguration; }
     inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
-    inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
-    inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
-    inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
-    inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
+    template<typename InputProcessingConfigurationT = InputProcessingConfiguration>
+    void SetInputProcessingConfiguration(InputProcessingConfigurationT&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::forward<InputProcessingConfigurationT>(value); }
+    template<typename InputProcessingConfigurationT = InputProcessingConfiguration>
+    DiscoverInputSchemaRequest& WithInputProcessingConfiguration(InputProcessingConfigurationT&& value) { SetInputProcessingConfiguration(std::forward<InputProcessingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

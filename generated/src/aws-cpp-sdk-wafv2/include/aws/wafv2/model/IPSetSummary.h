@@ -35,7 +35,7 @@ namespace Model
   class IPSetSummary
   {
   public:
-    AWS_WAFV2_API IPSetSummary();
+    AWS_WAFV2_API IPSetSummary() = default;
     AWS_WAFV2_API IPSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API IPSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
      * after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IPSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IPSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IPSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IPSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,24 @@ namespace Model
      * create and list commands. You provide it to operations like update and
      * delete.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline IPSetSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline IPSetSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline IPSetSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    IPSetSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the IP set that helps with identification. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline IPSetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline IPSetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline IPSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IPSetSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,28 +91,24 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
-    inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
-    inline IPSetSummary& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline IPSetSummary& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline IPSetSummary& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    IPSetSummary& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the entity.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline IPSetSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline IPSetSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline IPSetSummary& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    IPSetSummary& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
   private:
 

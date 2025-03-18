@@ -29,7 +29,7 @@ namespace Model
   class CreateLaunchTemplateResponse
   {
   public:
-    AWS_EC2_API CreateLaunchTemplateResponse();
+    AWS_EC2_API CreateLaunchTemplateResponse() = default;
     AWS_EC2_API CreateLaunchTemplateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateLaunchTemplateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the launch template.</p>
      */
-    inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
-    inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplate = std::move(value); }
-    inline CreateLaunchTemplateResponse& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
-    inline CreateLaunchTemplateResponse& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    inline const LaunchTemplate& GetLaunchTemplate() const { return m_launchTemplate; }
+    template<typename LaunchTemplateT = LaunchTemplate>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplate>
+    CreateLaunchTemplateResponse& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,28 +51,31 @@ namespace Model
      * not valid, an error code and an error message are returned for each issue that's
      * found.</p>
      */
-    inline const ValidationWarning& GetWarning() const{ return m_warning; }
-    inline void SetWarning(const ValidationWarning& value) { m_warning = value; }
-    inline void SetWarning(ValidationWarning&& value) { m_warning = std::move(value); }
-    inline CreateLaunchTemplateResponse& WithWarning(const ValidationWarning& value) { SetWarning(value); return *this;}
-    inline CreateLaunchTemplateResponse& WithWarning(ValidationWarning&& value) { SetWarning(std::move(value)); return *this;}
+    inline const ValidationWarning& GetWarning() const { return m_warning; }
+    template<typename WarningT = ValidationWarning>
+    void SetWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning = std::forward<WarningT>(value); }
+    template<typename WarningT = ValidationWarning>
+    CreateLaunchTemplateResponse& WithWarning(WarningT&& value) { SetWarning(std::forward<WarningT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateLaunchTemplateResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateLaunchTemplateResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateLaunchTemplateResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     LaunchTemplate m_launchTemplate;
+    bool m_launchTemplateHasBeenSet = false;
 
     ValidationWarning m_warning;
+    bool m_warningHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

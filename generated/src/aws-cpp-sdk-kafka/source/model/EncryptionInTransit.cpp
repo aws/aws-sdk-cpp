@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-EncryptionInTransit::EncryptionInTransit() : 
-    m_clientBroker(ClientBroker::NOT_SET),
-    m_clientBrokerHasBeenSet(false),
-    m_inCluster(false),
-    m_inClusterHasBeenSet(false)
-{
-}
-
 EncryptionInTransit::EncryptionInTransit(JsonView jsonValue)
-  : EncryptionInTransit()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EncryptionInTransit& EncryptionInTransit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientBroker"))
   {
     m_clientBroker = ClientBrokerMapper::GetClientBrokerForName(jsonValue.GetString("clientBroker"));
-
     m_clientBrokerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inCluster"))
   {
     m_inCluster = jsonValue.GetBool("inCluster");
-
     m_inClusterHasBeenSet = true;
   }
-
   return *this;
 }
 

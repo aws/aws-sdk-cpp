@@ -21,7 +21,7 @@ namespace Model
   class CreateAliasRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API CreateAliasRequest();
+    AWS_KMS_API CreateAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
-    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+    inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-    inline CreateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-    inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-    inline CreateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+    template<typename AliasNameT = Aws::String>
+    void SetAliasName(AliasNameT&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::forward<AliasNameT>(value); }
+    template<typename AliasNameT = Aws::String>
+    CreateAliasRequest& WithAliasName(AliasNameT&& value) { SetAliasName(std::forward<AliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
+    inline const Aws::String& GetTargetKeyId() const { return m_targetKeyId; }
     inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
-    inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
-    inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
-    inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
-    inline CreateAliasRequest& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
-    inline CreateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
-    inline CreateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
+    template<typename TargetKeyIdT = Aws::String>
+    void SetTargetKeyId(TargetKeyIdT&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::forward<TargetKeyIdT>(value); }
+    template<typename TargetKeyIdT = Aws::String>
+    CreateAliasRequest& WithTargetKeyId(TargetKeyIdT&& value) { SetTargetKeyId(std::forward<TargetKeyIdT>(value)); return *this;}
     ///@}
   private:
 

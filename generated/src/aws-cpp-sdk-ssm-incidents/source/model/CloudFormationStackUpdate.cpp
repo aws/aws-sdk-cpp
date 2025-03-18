@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-CloudFormationStackUpdate::CloudFormationStackUpdate() : 
-    m_endTimeHasBeenSet(false),
-    m_stackArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 CloudFormationStackUpdate::CloudFormationStackUpdate(JsonView jsonValue)
-  : CloudFormationStackUpdate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CloudFormationStackUpdate& CloudFormationStackUpdate::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackArn"))
   {
     m_stackArn = jsonValue.GetString("stackArn");
-
     m_stackArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

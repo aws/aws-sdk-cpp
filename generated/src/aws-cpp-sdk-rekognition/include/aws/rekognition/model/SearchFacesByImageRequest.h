@@ -23,7 +23,7 @@ namespace Model
   class SearchFacesByImageRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API SearchFacesByImageRequest();
+    AWS_REKOGNITION_API SearchFacesByImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>ID of the collection to search.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline SearchFacesByImageRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline SearchFacesByImageRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline SearchFacesByImageRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    SearchFacesByImageRequest& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline SearchFacesByImageRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline SearchFacesByImageRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    SearchFacesByImageRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <p>Maximum number of faces to return. The operation returns the maximum number
      * of faces with the highest confidence in the match.</p>
      */
-    inline int GetMaxFaces() const{ return m_maxFaces; }
+    inline int GetMaxFaces() const { return m_maxFaces; }
     inline bool MaxFacesHasBeenSet() const { return m_maxFacesHasBeenSet; }
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
     inline SearchFacesByImageRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * example, don't return any matches where confidence in matches is less than 70%.
      * The default value is 80%.</p>
      */
-    inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
+    inline double GetFaceMatchThreshold() const { return m_faceMatchThreshold; }
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
     inline SearchFacesByImageRequest& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
@@ -104,12 +102,10 @@ namespace Model
      * <code>NONE</code>. </p> <p>To use quality filtering, the collection you are
      * using must be associated with version 3 of the face model or higher.</p>
      */
-    inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
+    inline QualityFilter GetQualityFilter() const { return m_qualityFilter; }
     inline bool QualityFilterHasBeenSet() const { return m_qualityFilterHasBeenSet; }
-    inline void SetQualityFilter(const QualityFilter& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
-    inline void SetQualityFilter(QualityFilter&& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = std::move(value); }
-    inline SearchFacesByImageRequest& WithQualityFilter(const QualityFilter& value) { SetQualityFilter(value); return *this;}
-    inline SearchFacesByImageRequest& WithQualityFilter(QualityFilter&& value) { SetQualityFilter(std::move(value)); return *this;}
+    inline void SetQualityFilter(QualityFilter value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
+    inline SearchFacesByImageRequest& WithQualityFilter(QualityFilter value) { SetQualityFilter(value); return *this;}
     ///@}
   private:
 
@@ -119,13 +115,13 @@ namespace Model
     Image m_image;
     bool m_imageHasBeenSet = false;
 
-    int m_maxFaces;
+    int m_maxFaces{0};
     bool m_maxFacesHasBeenSet = false;
 
-    double m_faceMatchThreshold;
+    double m_faceMatchThreshold{0.0};
     bool m_faceMatchThresholdHasBeenSet = false;
 
-    QualityFilter m_qualityFilter;
+    QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
     bool m_qualityFilterHasBeenSet = false;
   };
 

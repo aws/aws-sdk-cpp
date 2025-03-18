@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ResourceSpecificResult::ResourceSpecificResult() : 
-    m_evalResourceNameHasBeenSet(false),
-    m_evalResourceDecision(PolicyEvaluationDecisionType::NOT_SET),
-    m_evalResourceDecisionHasBeenSet(false),
-    m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false),
-    m_evalDecisionDetailsHasBeenSet(false),
-    m_permissionsBoundaryDecisionDetailHasBeenSet(false)
-{
-}
-
 ResourceSpecificResult::ResourceSpecificResult(const XmlNode& xmlNode)
-  : ResourceSpecificResult()
 {
   *this = xmlNode;
 }
@@ -52,13 +40,14 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     XmlNode evalResourceDecisionNode = resultNode.FirstChild("EvalResourceDecision");
     if(!evalResourceDecisionNode.IsNull())
     {
-      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceDecisionNode.GetText()).c_str()).c_str());
+      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceDecisionNode.GetText()).c_str()));
       m_evalResourceDecisionHasBeenSet = true;
     }
     XmlNode matchedStatementsNode = resultNode.FirstChild("MatchedStatements");
     if(!matchedStatementsNode.IsNull())
     {
       XmlNode matchedStatementsMember = matchedStatementsNode.FirstChild("member");
+      m_matchedStatementsHasBeenSet = !matchedStatementsMember.IsNull();
       while(!matchedStatementsMember.IsNull())
       {
         m_matchedStatements.push_back(matchedStatementsMember);
@@ -71,6 +60,7 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     if(!missingContextValuesNode.IsNull())
     {
       XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
+      m_missingContextValuesHasBeenSet = !missingContextValuesMember.IsNull();
       while(!missingContextValuesMember.IsNull())
       {
         m_missingContextValues.push_back(missingContextValuesMember.GetText());
@@ -84,6 +74,7 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     if(!evalDecisionDetailsNode.IsNull())
     {
       XmlNode evalDecisionDetailsEntry = evalDecisionDetailsNode.FirstChild("entry");
+      m_evalDecisionDetailsHasBeenSet = !evalDecisionDetailsEntry.IsNull();
       while(!evalDecisionDetailsEntry.IsNull())
       {
         XmlNode keyNode = evalDecisionDetailsEntry.FirstChild("key");

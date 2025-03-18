@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartExecutionPreviewResult::StartExecutionPreviewResult()
-{
-}
-
 StartExecutionPreviewResult::StartExecutionPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartExecutionPreviewResult& StartExecutionPreviewResult::operator =(const Aws::
   if(jsonValue.ValueExists("ExecutionPreviewId"))
   {
     m_executionPreviewId = jsonValue.GetString("ExecutionPreviewId");
-
+    m_executionPreviewIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

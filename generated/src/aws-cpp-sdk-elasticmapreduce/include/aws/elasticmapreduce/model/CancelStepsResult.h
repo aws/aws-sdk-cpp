@@ -35,7 +35,7 @@ namespace Model
   class CancelStepsResult
   {
   public:
-    AWS_EMR_API CancelStepsResult();
+    AWS_EMR_API CancelStepsResult() = default;
     AWS_EMR_API CancelStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API CancelStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
      * requests for each <code>StepID</code> specified.</p>
      */
-    inline const Aws::Vector<CancelStepsInfo>& GetCancelStepsInfoList() const{ return m_cancelStepsInfoList; }
-    inline void SetCancelStepsInfoList(const Aws::Vector<CancelStepsInfo>& value) { m_cancelStepsInfoList = value; }
-    inline void SetCancelStepsInfoList(Aws::Vector<CancelStepsInfo>&& value) { m_cancelStepsInfoList = std::move(value); }
-    inline CancelStepsResult& WithCancelStepsInfoList(const Aws::Vector<CancelStepsInfo>& value) { SetCancelStepsInfoList(value); return *this;}
-    inline CancelStepsResult& WithCancelStepsInfoList(Aws::Vector<CancelStepsInfo>&& value) { SetCancelStepsInfoList(std::move(value)); return *this;}
-    inline CancelStepsResult& AddCancelStepsInfoList(const CancelStepsInfo& value) { m_cancelStepsInfoList.push_back(value); return *this; }
-    inline CancelStepsResult& AddCancelStepsInfoList(CancelStepsInfo&& value) { m_cancelStepsInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CancelStepsInfo>& GetCancelStepsInfoList() const { return m_cancelStepsInfoList; }
+    template<typename CancelStepsInfoListT = Aws::Vector<CancelStepsInfo>>
+    void SetCancelStepsInfoList(CancelStepsInfoListT&& value) { m_cancelStepsInfoListHasBeenSet = true; m_cancelStepsInfoList = std::forward<CancelStepsInfoListT>(value); }
+    template<typename CancelStepsInfoListT = Aws::Vector<CancelStepsInfo>>
+    CancelStepsResult& WithCancelStepsInfoList(CancelStepsInfoListT&& value) { SetCancelStepsInfoList(std::forward<CancelStepsInfoListT>(value)); return *this;}
+    template<typename CancelStepsInfoListT = CancelStepsInfo>
+    CancelStepsResult& AddCancelStepsInfoList(CancelStepsInfoListT&& value) { m_cancelStepsInfoListHasBeenSet = true; m_cancelStepsInfoList.emplace_back(std::forward<CancelStepsInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelStepsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelStepsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelStepsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelStepsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CancelStepsInfo> m_cancelStepsInfoList;
+    bool m_cancelStepsInfoListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

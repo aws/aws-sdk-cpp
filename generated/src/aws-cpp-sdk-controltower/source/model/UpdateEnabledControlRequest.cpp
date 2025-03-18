@@ -12,12 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnabledControlRequest::UpdateEnabledControlRequest() : 
-    m_enabledControlIdentifierHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnabledControlRequest::SerializePayload() const
 {
   JsonValue payload;

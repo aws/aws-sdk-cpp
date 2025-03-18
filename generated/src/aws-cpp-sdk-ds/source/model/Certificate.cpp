@@ -18,22 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateIdHasBeenSet(false),
-    m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_registeredDateTimeHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_clientCertAuthSettingsHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = CertificateStateMapper::GetCertificateStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommonName"))
   {
     m_commonName = jsonValue.GetString("CommonName");
-
     m_commonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredDateTime"))
   {
     m_registeredDateTime = jsonValue.GetDouble("RegisteredDateTime");
-
     m_registeredDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryDateTime"))
   {
     m_expiryDateTime = jsonValue.GetDouble("ExpiryDateTime");
-
     m_expiryDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientCertAuthSettings"))
   {
     m_clientCertAuthSettings = jsonValue.GetObject("ClientCertAuthSettings");
-
     m_clientCertAuthSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeManagedPrefixListsResponse
   {
   public:
-    AWS_EC2_API DescribeManagedPrefixListsResponse();
+    AWS_EC2_API DescribeManagedPrefixListsResponse() = default;
     AWS_EC2_API DescribeManagedPrefixListsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeManagedPrefixListsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeManagedPrefixListsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeManagedPrefixListsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeManagedPrefixListsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeManagedPrefixListsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the prefix lists.</p>
      */
-    inline const Aws::Vector<ManagedPrefixList>& GetPrefixLists() const{ return m_prefixLists; }
-    inline void SetPrefixLists(const Aws::Vector<ManagedPrefixList>& value) { m_prefixLists = value; }
-    inline void SetPrefixLists(Aws::Vector<ManagedPrefixList>&& value) { m_prefixLists = std::move(value); }
-    inline DescribeManagedPrefixListsResponse& WithPrefixLists(const Aws::Vector<ManagedPrefixList>& value) { SetPrefixLists(value); return *this;}
-    inline DescribeManagedPrefixListsResponse& WithPrefixLists(Aws::Vector<ManagedPrefixList>&& value) { SetPrefixLists(std::move(value)); return *this;}
-    inline DescribeManagedPrefixListsResponse& AddPrefixLists(const ManagedPrefixList& value) { m_prefixLists.push_back(value); return *this; }
-    inline DescribeManagedPrefixListsResponse& AddPrefixLists(ManagedPrefixList&& value) { m_prefixLists.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ManagedPrefixList>& GetPrefixLists() const { return m_prefixLists; }
+    template<typename PrefixListsT = Aws::Vector<ManagedPrefixList>>
+    void SetPrefixLists(PrefixListsT&& value) { m_prefixListsHasBeenSet = true; m_prefixLists = std::forward<PrefixListsT>(value); }
+    template<typename PrefixListsT = Aws::Vector<ManagedPrefixList>>
+    DescribeManagedPrefixListsResponse& WithPrefixLists(PrefixListsT&& value) { SetPrefixLists(std::forward<PrefixListsT>(value)); return *this;}
+    template<typename PrefixListsT = ManagedPrefixList>
+    DescribeManagedPrefixListsResponse& AddPrefixLists(PrefixListsT&& value) { m_prefixListsHasBeenSet = true; m_prefixLists.emplace_back(std::forward<PrefixListsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeManagedPrefixListsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeManagedPrefixListsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeManagedPrefixListsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ManagedPrefixList> m_prefixLists;
+    bool m_prefixListsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

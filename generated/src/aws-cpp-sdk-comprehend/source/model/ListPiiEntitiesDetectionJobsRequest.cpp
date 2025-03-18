@@ -12,14 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPiiEntitiesDetectionJobsRequest::ListPiiEntitiesDetectionJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPiiEntitiesDetectionJobsRequest::SerializePayload() const
 {
   JsonValue payload;

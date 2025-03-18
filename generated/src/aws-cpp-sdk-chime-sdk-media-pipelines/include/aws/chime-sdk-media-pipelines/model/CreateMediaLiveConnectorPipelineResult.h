@@ -28,7 +28,7 @@ namespace Model
   class CreateMediaLiveConnectorPipelineResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The new media live connector pipeline.</p>
      */
-    inline const MediaLiveConnectorPipeline& GetMediaLiveConnectorPipeline() const{ return m_mediaLiveConnectorPipeline; }
-    inline void SetMediaLiveConnectorPipeline(const MediaLiveConnectorPipeline& value) { m_mediaLiveConnectorPipeline = value; }
-    inline void SetMediaLiveConnectorPipeline(MediaLiveConnectorPipeline&& value) { m_mediaLiveConnectorPipeline = std::move(value); }
-    inline CreateMediaLiveConnectorPipelineResult& WithMediaLiveConnectorPipeline(const MediaLiveConnectorPipeline& value) { SetMediaLiveConnectorPipeline(value); return *this;}
-    inline CreateMediaLiveConnectorPipelineResult& WithMediaLiveConnectorPipeline(MediaLiveConnectorPipeline&& value) { SetMediaLiveConnectorPipeline(std::move(value)); return *this;}
+    inline const MediaLiveConnectorPipeline& GetMediaLiveConnectorPipeline() const { return m_mediaLiveConnectorPipeline; }
+    template<typename MediaLiveConnectorPipelineT = MediaLiveConnectorPipeline>
+    void SetMediaLiveConnectorPipeline(MediaLiveConnectorPipelineT&& value) { m_mediaLiveConnectorPipelineHasBeenSet = true; m_mediaLiveConnectorPipeline = std::forward<MediaLiveConnectorPipelineT>(value); }
+    template<typename MediaLiveConnectorPipelineT = MediaLiveConnectorPipeline>
+    CreateMediaLiveConnectorPipelineResult& WithMediaLiveConnectorPipeline(MediaLiveConnectorPipelineT&& value) { SetMediaLiveConnectorPipeline(std::forward<MediaLiveConnectorPipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMediaLiveConnectorPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMediaLiveConnectorPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMediaLiveConnectorPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMediaLiveConnectorPipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MediaLiveConnectorPipeline m_mediaLiveConnectorPipeline;
+    bool m_mediaLiveConnectorPipelineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   class ParticipantCapabilities
   {
   public:
-    AWS_CONNECT_API ParticipantCapabilities();
+    AWS_CONNECT_API ParticipantCapabilities() = default;
     AWS_CONNECT_API ParticipantCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ParticipantCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>The configuration having the video and screen sharing capabilities for
      * participants over the call.</p>
      */
-    inline const VideoCapability& GetVideo() const{ return m_video; }
+    inline VideoCapability GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoCapability& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoCapability&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline ParticipantCapabilities& WithVideo(const VideoCapability& value) { SetVideo(value); return *this;}
-    inline ParticipantCapabilities& WithVideo(VideoCapability&& value) { SetVideo(std::move(value)); return *this;}
+    inline void SetVideo(VideoCapability value) { m_videoHasBeenSet = true; m_video = value; }
+    inline ParticipantCapabilities& WithVideo(VideoCapability value) { SetVideo(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The screen sharing capability that is enabled for the participant.
      * <code>SEND</code> indicates the participant can share their screen.</p>
      */
-    inline const ScreenShareCapability& GetScreenShare() const{ return m_screenShare; }
+    inline ScreenShareCapability GetScreenShare() const { return m_screenShare; }
     inline bool ScreenShareHasBeenSet() const { return m_screenShareHasBeenSet; }
-    inline void SetScreenShare(const ScreenShareCapability& value) { m_screenShareHasBeenSet = true; m_screenShare = value; }
-    inline void SetScreenShare(ScreenShareCapability&& value) { m_screenShareHasBeenSet = true; m_screenShare = std::move(value); }
-    inline ParticipantCapabilities& WithScreenShare(const ScreenShareCapability& value) { SetScreenShare(value); return *this;}
-    inline ParticipantCapabilities& WithScreenShare(ScreenShareCapability&& value) { SetScreenShare(std::move(value)); return *this;}
+    inline void SetScreenShare(ScreenShareCapability value) { m_screenShareHasBeenSet = true; m_screenShare = value; }
+    inline ParticipantCapabilities& WithScreenShare(ScreenShareCapability value) { SetScreenShare(value); return *this;}
     ///@}
   private:
 
-    VideoCapability m_video;
+    VideoCapability m_video{VideoCapability::NOT_SET};
     bool m_videoHasBeenSet = false;
 
-    ScreenShareCapability m_screenShare;
+    ScreenShareCapability m_screenShare{ScreenShareCapability::NOT_SET};
     bool m_screenShareHasBeenSet = false;
   };
 

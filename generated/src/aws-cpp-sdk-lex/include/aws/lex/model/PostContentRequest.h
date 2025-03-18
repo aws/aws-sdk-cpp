@@ -22,7 +22,7 @@ namespace Model
   class PostContentRequest : public StreamingLexRuntimeServiceRequest
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API PostContentRequest();
+    AWS_LEXRUNTIMESERVICE_API PostContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>Name of the Amazon Lex bot.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline PostContentRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline PostContentRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline PostContentRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    PostContentRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Alias of the Amazon Lex bot.</p>
      */
-    inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
     inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-    inline void SetBotAlias(const Aws::String& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
-    inline void SetBotAlias(const char* value) { m_botAliasHasBeenSet = true; m_botAlias.assign(value); }
-    inline PostContentRequest& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-    inline PostContentRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-    inline PostContentRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+    template<typename BotAliasT = Aws::String>
+    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
+    template<typename BotAliasT = Aws::String>
+    PostContentRequest& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * versions, for example, while testing, include the bot alias in the user ID to
      * separate the two conversations.</p> </li> </ul>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline PostContentRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline PostContentRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline PostContentRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    PostContentRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
-    inline const Aws::String& GetSessionAttributes() const{ return m_sessionAttributes; }
+    inline const Aws::String& GetSessionAttributes() const { return m_sessionAttributes; }
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
-    inline void SetSessionAttributes(const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
-    inline void SetSessionAttributes(const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.assign(value); }
-    inline PostContentRequest& WithSessionAttributes(const Aws::String& value) { SetSessionAttributes(value); return *this;}
-    inline PostContentRequest& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline PostContentRequest& WithSessionAttributes(const char* value) { SetSessionAttributes(value); return *this;}
+    template<typename SessionAttributesT = Aws::String>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::String>
+    PostContentRequest& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
-    inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
+    inline const Aws::String& GetRequestAttributes() const { return m_requestAttributes; }
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
-    inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
-    inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
-    inline void SetRequestAttributes(const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.assign(value); }
-    inline PostContentRequest& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
-    inline PostContentRequest& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
-    inline PostContentRequest& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
+    template<typename RequestAttributesT = Aws::String>
+    void SetRequestAttributes(RequestAttributesT&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::forward<RequestAttributesT>(value); }
+    template<typename RequestAttributesT = Aws::String>
+    PostContentRequest& WithRequestAttributes(RequestAttributesT&& value) { SetRequestAttributes(std::forward<RequestAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +144,12 @@ namespace Model
      * charset=utf-8</p> </li> <li> <p>audio/ * (defaults to mpeg)</p> </li> </ul> </li>
      * </ul>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline PostContentRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline PostContentRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline PostContentRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    PostContentRequest& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +160,12 @@ namespace Model
      * of contexts for the session. If you specify an empty list, all contexts for the
      * session are cleared.</p>
      */
-    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+    inline const Aws::String& GetActiveContexts() const { return m_activeContexts; }
     inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
-    inline void SetActiveContexts(const Aws::String& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::String&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
-    inline void SetActiveContexts(const char* value) { m_activeContextsHasBeenSet = true; m_activeContexts.assign(value); }
-    inline PostContentRequest& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
-    inline PostContentRequest& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline PostContentRequest& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+    template<typename ActiveContextsT = Aws::String>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::String>
+    PostContentRequest& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
     ///@}
   private:
 

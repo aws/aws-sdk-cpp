@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableFastSnapshotRestoresResponse::EnableFastSnapshotRestoresResponse()
-{
-}
-
 EnableFastSnapshotRestoresResponse::EnableFastSnapshotRestoresResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ EnableFastSnapshotRestoresResponse& EnableFastSnapshotRestoresResponse::operator
     if(!successfulNode.IsNull())
     {
       XmlNode successfulMember = successfulNode.FirstChild("item");
+      m_successfulHasBeenSet = !successfulMember.IsNull();
       while(!successfulMember.IsNull())
       {
         m_successful.push_back(successfulMember);
         successfulMember = successfulMember.NextNode("item");
       }
 
+      m_successfulHasBeenSet = true;
     }
     XmlNode unsuccessfulNode = resultNode.FirstChild("unsuccessful");
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");
+      m_unsuccessfulHasBeenSet = !unsuccessfulMember.IsNull();
       while(!unsuccessfulMember.IsNull())
       {
         m_unsuccessful.push_back(unsuccessfulMember);
         unsuccessfulMember = unsuccessfulMember.NextNode("item");
       }
 
+      m_unsuccessfulHasBeenSet = true;
     }
   }
 
@@ -67,6 +67,7 @@ EnableFastSnapshotRestoresResponse& EnableFastSnapshotRestoresResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableFastSnapshotRestoresResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

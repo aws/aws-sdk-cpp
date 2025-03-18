@@ -46,7 +46,7 @@ namespace Model
   class ProcessingJob
   {
   public:
-    AWS_SAGEMAKER_API ProcessingJob();
+    AWS_SAGEMAKER_API ProcessingJob() = default;
     AWS_SAGEMAKER_API ProcessingJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,147 +56,136 @@ namespace Model
     /**
      * <p>List of input configurations for the processing job.</p>
      */
-    inline const Aws::Vector<ProcessingInput>& GetProcessingInputs() const{ return m_processingInputs; }
+    inline const Aws::Vector<ProcessingInput>& GetProcessingInputs() const { return m_processingInputs; }
     inline bool ProcessingInputsHasBeenSet() const { return m_processingInputsHasBeenSet; }
-    inline void SetProcessingInputs(const Aws::Vector<ProcessingInput>& value) { m_processingInputsHasBeenSet = true; m_processingInputs = value; }
-    inline void SetProcessingInputs(Aws::Vector<ProcessingInput>&& value) { m_processingInputsHasBeenSet = true; m_processingInputs = std::move(value); }
-    inline ProcessingJob& WithProcessingInputs(const Aws::Vector<ProcessingInput>& value) { SetProcessingInputs(value); return *this;}
-    inline ProcessingJob& WithProcessingInputs(Aws::Vector<ProcessingInput>&& value) { SetProcessingInputs(std::move(value)); return *this;}
-    inline ProcessingJob& AddProcessingInputs(const ProcessingInput& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(value); return *this; }
-    inline ProcessingJob& AddProcessingInputs(ProcessingInput&& value) { m_processingInputsHasBeenSet = true; m_processingInputs.push_back(std::move(value)); return *this; }
+    template<typename ProcessingInputsT = Aws::Vector<ProcessingInput>>
+    void SetProcessingInputs(ProcessingInputsT&& value) { m_processingInputsHasBeenSet = true; m_processingInputs = std::forward<ProcessingInputsT>(value); }
+    template<typename ProcessingInputsT = Aws::Vector<ProcessingInput>>
+    ProcessingJob& WithProcessingInputs(ProcessingInputsT&& value) { SetProcessingInputs(std::forward<ProcessingInputsT>(value)); return *this;}
+    template<typename ProcessingInputsT = ProcessingInput>
+    ProcessingJob& AddProcessingInputs(ProcessingInputsT&& value) { m_processingInputsHasBeenSet = true; m_processingInputs.emplace_back(std::forward<ProcessingInputsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ProcessingOutputConfig& GetProcessingOutputConfig() const{ return m_processingOutputConfig; }
+    inline const ProcessingOutputConfig& GetProcessingOutputConfig() const { return m_processingOutputConfig; }
     inline bool ProcessingOutputConfigHasBeenSet() const { return m_processingOutputConfigHasBeenSet; }
-    inline void SetProcessingOutputConfig(const ProcessingOutputConfig& value) { m_processingOutputConfigHasBeenSet = true; m_processingOutputConfig = value; }
-    inline void SetProcessingOutputConfig(ProcessingOutputConfig&& value) { m_processingOutputConfigHasBeenSet = true; m_processingOutputConfig = std::move(value); }
-    inline ProcessingJob& WithProcessingOutputConfig(const ProcessingOutputConfig& value) { SetProcessingOutputConfig(value); return *this;}
-    inline ProcessingJob& WithProcessingOutputConfig(ProcessingOutputConfig&& value) { SetProcessingOutputConfig(std::move(value)); return *this;}
+    template<typename ProcessingOutputConfigT = ProcessingOutputConfig>
+    void SetProcessingOutputConfig(ProcessingOutputConfigT&& value) { m_processingOutputConfigHasBeenSet = true; m_processingOutputConfig = std::forward<ProcessingOutputConfigT>(value); }
+    template<typename ProcessingOutputConfigT = ProcessingOutputConfig>
+    ProcessingJob& WithProcessingOutputConfig(ProcessingOutputConfigT&& value) { SetProcessingOutputConfig(std::forward<ProcessingOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the processing job.</p>
      */
-    inline const Aws::String& GetProcessingJobName() const{ return m_processingJobName; }
+    inline const Aws::String& GetProcessingJobName() const { return m_processingJobName; }
     inline bool ProcessingJobNameHasBeenSet() const { return m_processingJobNameHasBeenSet; }
-    inline void SetProcessingJobName(const Aws::String& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = value; }
-    inline void SetProcessingJobName(Aws::String&& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = std::move(value); }
-    inline void SetProcessingJobName(const char* value) { m_processingJobNameHasBeenSet = true; m_processingJobName.assign(value); }
-    inline ProcessingJob& WithProcessingJobName(const Aws::String& value) { SetProcessingJobName(value); return *this;}
-    inline ProcessingJob& WithProcessingJobName(Aws::String&& value) { SetProcessingJobName(std::move(value)); return *this;}
-    inline ProcessingJob& WithProcessingJobName(const char* value) { SetProcessingJobName(value); return *this;}
+    template<typename ProcessingJobNameT = Aws::String>
+    void SetProcessingJobName(ProcessingJobNameT&& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = std::forward<ProcessingJobNameT>(value); }
+    template<typename ProcessingJobNameT = Aws::String>
+    ProcessingJob& WithProcessingJobName(ProcessingJobNameT&& value) { SetProcessingJobName(std::forward<ProcessingJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProcessingResources& GetProcessingResources() const{ return m_processingResources; }
+    inline const ProcessingResources& GetProcessingResources() const { return m_processingResources; }
     inline bool ProcessingResourcesHasBeenSet() const { return m_processingResourcesHasBeenSet; }
-    inline void SetProcessingResources(const ProcessingResources& value) { m_processingResourcesHasBeenSet = true; m_processingResources = value; }
-    inline void SetProcessingResources(ProcessingResources&& value) { m_processingResourcesHasBeenSet = true; m_processingResources = std::move(value); }
-    inline ProcessingJob& WithProcessingResources(const ProcessingResources& value) { SetProcessingResources(value); return *this;}
-    inline ProcessingJob& WithProcessingResources(ProcessingResources&& value) { SetProcessingResources(std::move(value)); return *this;}
+    template<typename ProcessingResourcesT = ProcessingResources>
+    void SetProcessingResources(ProcessingResourcesT&& value) { m_processingResourcesHasBeenSet = true; m_processingResources = std::forward<ProcessingResourcesT>(value); }
+    template<typename ProcessingResourcesT = ProcessingResources>
+    ProcessingJob& WithProcessingResources(ProcessingResourcesT&& value) { SetProcessingResources(std::forward<ProcessingResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProcessingStoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
+    inline const ProcessingStoppingCondition& GetStoppingCondition() const { return m_stoppingCondition; }
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
-    inline void SetStoppingCondition(const ProcessingStoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
-    inline void SetStoppingCondition(ProcessingStoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
-    inline ProcessingJob& WithStoppingCondition(const ProcessingStoppingCondition& value) { SetStoppingCondition(value); return *this;}
-    inline ProcessingJob& WithStoppingCondition(ProcessingStoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
+    template<typename StoppingConditionT = ProcessingStoppingCondition>
+    void SetStoppingCondition(StoppingConditionT&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::forward<StoppingConditionT>(value); }
+    template<typename StoppingConditionT = ProcessingStoppingCondition>
+    ProcessingJob& WithStoppingCondition(StoppingConditionT&& value) { SetStoppingCondition(std::forward<StoppingConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AppSpecification& GetAppSpecification() const{ return m_appSpecification; }
+    inline const AppSpecification& GetAppSpecification() const { return m_appSpecification; }
     inline bool AppSpecificationHasBeenSet() const { return m_appSpecificationHasBeenSet; }
-    inline void SetAppSpecification(const AppSpecification& value) { m_appSpecificationHasBeenSet = true; m_appSpecification = value; }
-    inline void SetAppSpecification(AppSpecification&& value) { m_appSpecificationHasBeenSet = true; m_appSpecification = std::move(value); }
-    inline ProcessingJob& WithAppSpecification(const AppSpecification& value) { SetAppSpecification(value); return *this;}
-    inline ProcessingJob& WithAppSpecification(AppSpecification&& value) { SetAppSpecification(std::move(value)); return *this;}
+    template<typename AppSpecificationT = AppSpecification>
+    void SetAppSpecification(AppSpecificationT&& value) { m_appSpecificationHasBeenSet = true; m_appSpecification = std::forward<AppSpecificationT>(value); }
+    template<typename AppSpecificationT = AppSpecification>
+    ProcessingJob& WithAppSpecification(AppSpecificationT&& value) { SetAppSpecification(std::forward<AppSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sets the environment variables in the Docker container.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline ProcessingJob& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline ProcessingJob& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline ProcessingJob& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline ProcessingJob& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ProcessingJob& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ProcessingJob& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProcessingJob& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ProcessingJob& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ProcessingJob& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    ProcessingJob& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    ProcessingJob& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const NetworkConfig& GetNetworkConfig() const{ return m_networkConfig; }
+    inline const NetworkConfig& GetNetworkConfig() const { return m_networkConfig; }
     inline bool NetworkConfigHasBeenSet() const { return m_networkConfigHasBeenSet; }
-    inline void SetNetworkConfig(const NetworkConfig& value) { m_networkConfigHasBeenSet = true; m_networkConfig = value; }
-    inline void SetNetworkConfig(NetworkConfig&& value) { m_networkConfigHasBeenSet = true; m_networkConfig = std::move(value); }
-    inline ProcessingJob& WithNetworkConfig(const NetworkConfig& value) { SetNetworkConfig(value); return *this;}
-    inline ProcessingJob& WithNetworkConfig(NetworkConfig&& value) { SetNetworkConfig(std::move(value)); return *this;}
+    template<typename NetworkConfigT = NetworkConfig>
+    void SetNetworkConfig(NetworkConfigT&& value) { m_networkConfigHasBeenSet = true; m_networkConfig = std::forward<NetworkConfigT>(value); }
+    template<typename NetworkConfigT = NetworkConfig>
+    ProcessingJob& WithNetworkConfig(NetworkConfigT&& value) { SetNetworkConfig(std::forward<NetworkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the role used to create the processing job.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ProcessingJob& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ProcessingJob& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ProcessingJob& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ProcessingJob& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
+    inline const ExperimentConfig& GetExperimentConfig() const { return m_experimentConfig; }
     inline bool ExperimentConfigHasBeenSet() const { return m_experimentConfigHasBeenSet; }
-    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = value; }
-    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::move(value); }
-    inline ProcessingJob& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
-    inline ProcessingJob& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+    template<typename ExperimentConfigT = ExperimentConfig>
+    void SetExperimentConfig(ExperimentConfigT&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::forward<ExperimentConfigT>(value); }
+    template<typename ExperimentConfigT = ExperimentConfig>
+    ProcessingJob& WithExperimentConfig(ExperimentConfigT&& value) { SetExperimentConfig(std::forward<ExperimentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the processing job.</p>
      */
-    inline const Aws::String& GetProcessingJobArn() const{ return m_processingJobArn; }
+    inline const Aws::String& GetProcessingJobArn() const { return m_processingJobArn; }
     inline bool ProcessingJobArnHasBeenSet() const { return m_processingJobArnHasBeenSet; }
-    inline void SetProcessingJobArn(const Aws::String& value) { m_processingJobArnHasBeenSet = true; m_processingJobArn = value; }
-    inline void SetProcessingJobArn(Aws::String&& value) { m_processingJobArnHasBeenSet = true; m_processingJobArn = std::move(value); }
-    inline void SetProcessingJobArn(const char* value) { m_processingJobArnHasBeenSet = true; m_processingJobArn.assign(value); }
-    inline ProcessingJob& WithProcessingJobArn(const Aws::String& value) { SetProcessingJobArn(value); return *this;}
-    inline ProcessingJob& WithProcessingJobArn(Aws::String&& value) { SetProcessingJobArn(std::move(value)); return *this;}
-    inline ProcessingJob& WithProcessingJobArn(const char* value) { SetProcessingJobArn(value); return *this;}
+    template<typename ProcessingJobArnT = Aws::String>
+    void SetProcessingJobArn(ProcessingJobArnT&& value) { m_processingJobArnHasBeenSet = true; m_processingJobArn = std::forward<ProcessingJobArnT>(value); }
+    template<typename ProcessingJobArnT = Aws::String>
+    ProcessingJob& WithProcessingJobArn(ProcessingJobArnT&& value) { SetProcessingJobArn(std::forward<ProcessingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the processing job.</p>
      */
-    inline const ProcessingJobStatus& GetProcessingJobStatus() const{ return m_processingJobStatus; }
+    inline ProcessingJobStatus GetProcessingJobStatus() const { return m_processingJobStatus; }
     inline bool ProcessingJobStatusHasBeenSet() const { return m_processingJobStatusHasBeenSet; }
-    inline void SetProcessingJobStatus(const ProcessingJobStatus& value) { m_processingJobStatusHasBeenSet = true; m_processingJobStatus = value; }
-    inline void SetProcessingJobStatus(ProcessingJobStatus&& value) { m_processingJobStatusHasBeenSet = true; m_processingJobStatus = std::move(value); }
-    inline ProcessingJob& WithProcessingJobStatus(const ProcessingJobStatus& value) { SetProcessingJobStatus(value); return *this;}
-    inline ProcessingJob& WithProcessingJobStatus(ProcessingJobStatus&& value) { SetProcessingJobStatus(std::move(value)); return *this;}
+    inline void SetProcessingJobStatus(ProcessingJobStatus value) { m_processingJobStatusHasBeenSet = true; m_processingJobStatus = value; }
+    inline ProcessingJob& WithProcessingJobStatus(ProcessingJobStatus value) { SetProcessingJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -204,14 +193,12 @@ namespace Model
      * <p>A string, up to one KB in size, that contains metadata from the processing
      * container when the processing job exits.</p>
      */
-    inline const Aws::String& GetExitMessage() const{ return m_exitMessage; }
+    inline const Aws::String& GetExitMessage() const { return m_exitMessage; }
     inline bool ExitMessageHasBeenSet() const { return m_exitMessageHasBeenSet; }
-    inline void SetExitMessage(const Aws::String& value) { m_exitMessageHasBeenSet = true; m_exitMessage = value; }
-    inline void SetExitMessage(Aws::String&& value) { m_exitMessageHasBeenSet = true; m_exitMessage = std::move(value); }
-    inline void SetExitMessage(const char* value) { m_exitMessageHasBeenSet = true; m_exitMessage.assign(value); }
-    inline ProcessingJob& WithExitMessage(const Aws::String& value) { SetExitMessage(value); return *this;}
-    inline ProcessingJob& WithExitMessage(Aws::String&& value) { SetExitMessage(std::move(value)); return *this;}
-    inline ProcessingJob& WithExitMessage(const char* value) { SetExitMessage(value); return *this;}
+    template<typename ExitMessageT = Aws::String>
+    void SetExitMessage(ExitMessageT&& value) { m_exitMessageHasBeenSet = true; m_exitMessage = std::forward<ExitMessageT>(value); }
+    template<typename ExitMessageT = Aws::String>
+    ProcessingJob& WithExitMessage(ExitMessageT&& value) { SetExitMessage(std::forward<ExitMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,62 +206,60 @@ namespace Model
      * <p>A string, up to one KB in size, that contains the reason a processing job
      * failed, if it failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline ProcessingJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline ProcessingJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline ProcessingJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    ProcessingJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the processing job ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetProcessingEndTime() const{ return m_processingEndTime; }
+    inline const Aws::Utils::DateTime& GetProcessingEndTime() const { return m_processingEndTime; }
     inline bool ProcessingEndTimeHasBeenSet() const { return m_processingEndTimeHasBeenSet; }
-    inline void SetProcessingEndTime(const Aws::Utils::DateTime& value) { m_processingEndTimeHasBeenSet = true; m_processingEndTime = value; }
-    inline void SetProcessingEndTime(Aws::Utils::DateTime&& value) { m_processingEndTimeHasBeenSet = true; m_processingEndTime = std::move(value); }
-    inline ProcessingJob& WithProcessingEndTime(const Aws::Utils::DateTime& value) { SetProcessingEndTime(value); return *this;}
-    inline ProcessingJob& WithProcessingEndTime(Aws::Utils::DateTime&& value) { SetProcessingEndTime(std::move(value)); return *this;}
+    template<typename ProcessingEndTimeT = Aws::Utils::DateTime>
+    void SetProcessingEndTime(ProcessingEndTimeT&& value) { m_processingEndTimeHasBeenSet = true; m_processingEndTime = std::forward<ProcessingEndTimeT>(value); }
+    template<typename ProcessingEndTimeT = Aws::Utils::DateTime>
+    ProcessingJob& WithProcessingEndTime(ProcessingEndTimeT&& value) { SetProcessingEndTime(std::forward<ProcessingEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the processing job started.</p>
      */
-    inline const Aws::Utils::DateTime& GetProcessingStartTime() const{ return m_processingStartTime; }
+    inline const Aws::Utils::DateTime& GetProcessingStartTime() const { return m_processingStartTime; }
     inline bool ProcessingStartTimeHasBeenSet() const { return m_processingStartTimeHasBeenSet; }
-    inline void SetProcessingStartTime(const Aws::Utils::DateTime& value) { m_processingStartTimeHasBeenSet = true; m_processingStartTime = value; }
-    inline void SetProcessingStartTime(Aws::Utils::DateTime&& value) { m_processingStartTimeHasBeenSet = true; m_processingStartTime = std::move(value); }
-    inline ProcessingJob& WithProcessingStartTime(const Aws::Utils::DateTime& value) { SetProcessingStartTime(value); return *this;}
-    inline ProcessingJob& WithProcessingStartTime(Aws::Utils::DateTime&& value) { SetProcessingStartTime(std::move(value)); return *this;}
+    template<typename ProcessingStartTimeT = Aws::Utils::DateTime>
+    void SetProcessingStartTime(ProcessingStartTimeT&& value) { m_processingStartTimeHasBeenSet = true; m_processingStartTime = std::forward<ProcessingStartTimeT>(value); }
+    template<typename ProcessingStartTimeT = Aws::Utils::DateTime>
+    ProcessingJob& WithProcessingStartTime(ProcessingStartTimeT&& value) { SetProcessingStartTime(std::forward<ProcessingStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the processing job was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline ProcessingJob& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ProcessingJob& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ProcessingJob& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the processing job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ProcessingJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ProcessingJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ProcessingJob& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -282,14 +267,12 @@ namespace Model
      * <p>The ARN of a monitoring schedule for an endpoint associated with this
      * processing job.</p>
      */
-    inline const Aws::String& GetMonitoringScheduleArn() const{ return m_monitoringScheduleArn; }
+    inline const Aws::String& GetMonitoringScheduleArn() const { return m_monitoringScheduleArn; }
     inline bool MonitoringScheduleArnHasBeenSet() const { return m_monitoringScheduleArnHasBeenSet; }
-    inline void SetMonitoringScheduleArn(const Aws::String& value) { m_monitoringScheduleArnHasBeenSet = true; m_monitoringScheduleArn = value; }
-    inline void SetMonitoringScheduleArn(Aws::String&& value) { m_monitoringScheduleArnHasBeenSet = true; m_monitoringScheduleArn = std::move(value); }
-    inline void SetMonitoringScheduleArn(const char* value) { m_monitoringScheduleArnHasBeenSet = true; m_monitoringScheduleArn.assign(value); }
-    inline ProcessingJob& WithMonitoringScheduleArn(const Aws::String& value) { SetMonitoringScheduleArn(value); return *this;}
-    inline ProcessingJob& WithMonitoringScheduleArn(Aws::String&& value) { SetMonitoringScheduleArn(std::move(value)); return *this;}
-    inline ProcessingJob& WithMonitoringScheduleArn(const char* value) { SetMonitoringScheduleArn(value); return *this;}
+    template<typename MonitoringScheduleArnT = Aws::String>
+    void SetMonitoringScheduleArn(MonitoringScheduleArnT&& value) { m_monitoringScheduleArnHasBeenSet = true; m_monitoringScheduleArn = std::forward<MonitoringScheduleArnT>(value); }
+    template<typename MonitoringScheduleArnT = Aws::String>
+    ProcessingJob& WithMonitoringScheduleArn(MonitoringScheduleArnT&& value) { SetMonitoringScheduleArn(std::forward<MonitoringScheduleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -297,28 +280,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AutoML job associated with this
      * processing job.</p>
      */
-    inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
+    inline const Aws::String& GetAutoMLJobArn() const { return m_autoMLJobArn; }
     inline bool AutoMLJobArnHasBeenSet() const { return m_autoMLJobArnHasBeenSet; }
-    inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = value; }
-    inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::move(value); }
-    inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn.assign(value); }
-    inline ProcessingJob& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
-    inline ProcessingJob& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
-    inline ProcessingJob& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
+    template<typename AutoMLJobArnT = Aws::String>
+    void SetAutoMLJobArn(AutoMLJobArnT&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::forward<AutoMLJobArnT>(value); }
+    template<typename AutoMLJobArnT = Aws::String>
+    ProcessingJob& WithAutoMLJobArn(AutoMLJobArnT&& value) { SetAutoMLJobArn(std::forward<AutoMLJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the training job associated with this processing job.</p>
      */
-    inline const Aws::String& GetTrainingJobArn() const{ return m_trainingJobArn; }
+    inline const Aws::String& GetTrainingJobArn() const { return m_trainingJobArn; }
     inline bool TrainingJobArnHasBeenSet() const { return m_trainingJobArnHasBeenSet; }
-    inline void SetTrainingJobArn(const Aws::String& value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn = value; }
-    inline void SetTrainingJobArn(Aws::String&& value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn = std::move(value); }
-    inline void SetTrainingJobArn(const char* value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn.assign(value); }
-    inline ProcessingJob& WithTrainingJobArn(const Aws::String& value) { SetTrainingJobArn(value); return *this;}
-    inline ProcessingJob& WithTrainingJobArn(Aws::String&& value) { SetTrainingJobArn(std::move(value)); return *this;}
-    inline ProcessingJob& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
+    template<typename TrainingJobArnT = Aws::String>
+    void SetTrainingJobArn(TrainingJobArnT&& value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn = std::forward<TrainingJobArnT>(value); }
+    template<typename TrainingJobArnT = Aws::String>
+    ProcessingJob& WithTrainingJobArn(TrainingJobArnT&& value) { SetTrainingJobArn(std::forward<TrainingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -328,14 +307,14 @@ namespace Model
      * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
      * Management User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ProcessingJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ProcessingJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ProcessingJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ProcessingJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ProcessingJob& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ProcessingJob& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -372,7 +351,7 @@ namespace Model
     Aws::String m_processingJobArn;
     bool m_processingJobArnHasBeenSet = false;
 
-    ProcessingJobStatus m_processingJobStatus;
+    ProcessingJobStatus m_processingJobStatus{ProcessingJobStatus::NOT_SET};
     bool m_processingJobStatusHasBeenSet = false;
 
     Aws::String m_exitMessage;
@@ -381,16 +360,16 @@ namespace Model
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_processingEndTime;
+    Aws::Utils::DateTime m_processingEndTime{};
     bool m_processingEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_processingStartTime;
+    Aws::Utils::DateTime m_processingStartTime{};
     bool m_processingStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_monitoringScheduleArn;

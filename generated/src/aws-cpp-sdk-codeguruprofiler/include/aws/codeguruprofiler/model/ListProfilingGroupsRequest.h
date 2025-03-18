@@ -29,7 +29,7 @@ namespace Model
   class ListProfilingGroupsRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API ListProfilingGroupsRequest();
+    AWS_CODEGURUPROFILER_API ListProfilingGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,7 +51,7 @@ namespace Model
      * information about profiling groups is returned. If <code>false</code>, then a
      * list of profiling group names is returned.</p>
      */
-    inline bool GetIncludeDescription() const{ return m_includeDescription; }
+    inline bool GetIncludeDescription() const { return m_includeDescription; }
     inline bool IncludeDescriptionHasBeenSet() const { return m_includeDescriptionHasBeenSet; }
     inline void SetIncludeDescription(bool value) { m_includeDescriptionHasBeenSet = true; m_includeDescription = value; }
     inline ListProfilingGroupsRequest& WithIncludeDescription(bool value) { SetIncludeDescription(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * <code>ListProfilingGroups</code> request with the returned
      * <code>nextToken</code> value. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListProfilingGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,21 +83,19 @@ namespace Model
      * used to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListProfilingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProfilingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProfilingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProfilingGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_includeDescription;
+    bool m_includeDescription{false};
     bool m_includeDescriptionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

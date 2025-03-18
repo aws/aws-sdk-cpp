@@ -27,7 +27,7 @@ namespace Model
   class DeregisterInstancesFromLoadBalancerRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerRequest();
+    AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the instances.</p>
      */
-    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+    inline const Aws::Vector<Instance>& GetInstances() const { return m_instances; }
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
-    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
-    inline DeregisterInstancesFromLoadBalancerRequest& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-    inline DeregisterInstancesFromLoadBalancerRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-    inline DeregisterInstancesFromLoadBalancerRequest& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
-    inline DeregisterInstancesFromLoadBalancerRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    DeregisterInstancesFromLoadBalancerRequest& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = Instance>
+    DeregisterInstancesFromLoadBalancerRequest& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
   private:
 

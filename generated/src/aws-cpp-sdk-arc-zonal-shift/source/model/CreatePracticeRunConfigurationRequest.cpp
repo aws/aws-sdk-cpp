@@ -12,15 +12,6 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePracticeRunConfigurationRequest::CreatePracticeRunConfigurationRequest() : 
-    m_blockedDatesHasBeenSet(false),
-    m_blockedWindowsHasBeenSet(false),
-    m_blockingAlarmsHasBeenSet(false),
-    m_outcomeAlarmsHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreatePracticeRunConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

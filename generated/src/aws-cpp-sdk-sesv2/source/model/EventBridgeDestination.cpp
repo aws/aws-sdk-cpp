@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EventBridgeDestination::EventBridgeDestination() : 
-    m_eventBusArnHasBeenSet(false)
-{
-}
-
 EventBridgeDestination::EventBridgeDestination(JsonView jsonValue)
-  : EventBridgeDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventBridgeDestination& EventBridgeDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventBusArn"))
   {
     m_eventBusArn = jsonValue.GetString("EventBusArn");
-
     m_eventBusArnHasBeenSet = true;
   }
-
   return *this;
 }
 

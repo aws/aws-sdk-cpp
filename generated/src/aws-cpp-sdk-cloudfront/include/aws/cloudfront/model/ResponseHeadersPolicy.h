@@ -42,7 +42,7 @@ namespace Model
   class ResponseHeadersPolicy
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicy();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicy() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,45 +53,43 @@ namespace Model
     /**
      * <p>The identifier for the response headers policy.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResponseHeadersPolicy& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResponseHeadersPolicy& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResponseHeadersPolicy& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResponseHeadersPolicy& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the response headers policy was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline ResponseHeadersPolicy& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ResponseHeadersPolicy& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ResponseHeadersPolicy& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A response headers policy configuration.</p>
      */
-    inline const ResponseHeadersPolicyConfig& GetResponseHeadersPolicyConfig() const{ return m_responseHeadersPolicyConfig; }
+    inline const ResponseHeadersPolicyConfig& GetResponseHeadersPolicyConfig() const { return m_responseHeadersPolicyConfig; }
     inline bool ResponseHeadersPolicyConfigHasBeenSet() const { return m_responseHeadersPolicyConfigHasBeenSet; }
-    inline void SetResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = value; }
-    inline void SetResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = std::move(value); }
-    inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(const ResponseHeadersPolicyConfig& value) { SetResponseHeadersPolicyConfig(value); return *this;}
-    inline ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig&& value) { SetResponseHeadersPolicyConfig(std::move(value)); return *this;}
+    template<typename ResponseHeadersPolicyConfigT = ResponseHeadersPolicyConfig>
+    void SetResponseHeadersPolicyConfig(ResponseHeadersPolicyConfigT&& value) { m_responseHeadersPolicyConfigHasBeenSet = true; m_responseHeadersPolicyConfig = std::forward<ResponseHeadersPolicyConfigT>(value); }
+    template<typename ResponseHeadersPolicyConfigT = ResponseHeadersPolicyConfig>
+    ResponseHeadersPolicy& WithResponseHeadersPolicyConfig(ResponseHeadersPolicyConfigT&& value) { SetResponseHeadersPolicyConfig(std::forward<ResponseHeadersPolicyConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;

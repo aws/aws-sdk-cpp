@@ -12,11 +12,6 @@ using namespace Aws::HealthLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFHIRDatastoreRequest::DescribeFHIRDatastoreRequest() : 
-    m_datastoreIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFHIRDatastoreRequest::SerializePayload() const
 {
   JsonValue payload;

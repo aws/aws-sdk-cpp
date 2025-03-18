@@ -18,24 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-ContentSummary::ContentSummary() : 
-    m_contentArnHasBeenSet(false),
-    m_contentIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_status(ContentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 ContentSummary::ContentSummary(JsonView jsonValue)
-  : ContentSummary()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentArn"))
   {
     m_contentArn = jsonValue.GetString("contentArn");
-
     m_contentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentId"))
   {
     m_contentId = jsonValue.GetString("contentId");
-
     m_contentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -86,28 +59,21 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ContentStatusMapper::GetContentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -117,14 +83,11 @@ ContentSummary& ContentSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

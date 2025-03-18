@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataMigrationRequest::DeleteDataMigrationRequest() : 
-    m_dataMigrationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataMigrationRequest::SerializePayload() const
 {
   JsonValue payload;

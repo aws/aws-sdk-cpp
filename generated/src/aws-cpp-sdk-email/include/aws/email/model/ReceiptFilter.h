@@ -36,7 +36,7 @@ namespace Model
   class ReceiptFilter
   {
   public:
-    AWS_SES_API ReceiptFilter();
+    AWS_SES_API ReceiptFilter() = default;
     AWS_SES_API ReceiptFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ReceiptFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ReceiptFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ReceiptFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ReceiptFilter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ReceiptFilter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * <p>A structure that provides the IP addresses to block or allow, and whether to
      * block or allow incoming mail from them.</p>
      */
-    inline const ReceiptIpFilter& GetIpFilter() const{ return m_ipFilter; }
+    inline const ReceiptIpFilter& GetIpFilter() const { return m_ipFilter; }
     inline bool IpFilterHasBeenSet() const { return m_ipFilterHasBeenSet; }
-    inline void SetIpFilter(const ReceiptIpFilter& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
-    inline void SetIpFilter(ReceiptIpFilter&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = std::move(value); }
-    inline ReceiptFilter& WithIpFilter(const ReceiptIpFilter& value) { SetIpFilter(value); return *this;}
-    inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(std::move(value)); return *this;}
+    template<typename IpFilterT = ReceiptIpFilter>
+    void SetIpFilter(IpFilterT&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = std::forward<IpFilterT>(value); }
+    template<typename IpFilterT = ReceiptIpFilter>
+    ReceiptFilter& WithIpFilter(IpFilterT&& value) { SetIpFilter(std::forward<IpFilterT>(value)); return *this;}
     ///@}
   private:
 

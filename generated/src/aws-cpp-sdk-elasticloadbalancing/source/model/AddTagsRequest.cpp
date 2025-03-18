@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-AddTagsRequest::AddTagsRequest() : 
-    m_loadBalancerNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

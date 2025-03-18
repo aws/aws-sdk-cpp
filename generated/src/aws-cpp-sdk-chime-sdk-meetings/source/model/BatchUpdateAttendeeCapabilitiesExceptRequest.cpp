@@ -12,13 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateAttendeeCapabilitiesExceptRequest::BatchUpdateAttendeeCapabilitiesExceptRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_excludedAttendeeIdsHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateAttendeeCapabilitiesExceptRequest::SerializePayload() const
 {
   JsonValue payload;

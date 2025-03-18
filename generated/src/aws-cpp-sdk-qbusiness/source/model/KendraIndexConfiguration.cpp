@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-KendraIndexConfiguration::KendraIndexConfiguration() : 
-    m_indexIdHasBeenSet(false)
-{
-}
-
 KendraIndexConfiguration::KendraIndexConfiguration(JsonView jsonValue)
-  : KendraIndexConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KendraIndexConfiguration& KendraIndexConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   return *this;
 }
 

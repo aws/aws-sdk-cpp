@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteUserRequest::DeleteUserRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserRequest::SerializePayload() const
 {
   JsonValue payload;

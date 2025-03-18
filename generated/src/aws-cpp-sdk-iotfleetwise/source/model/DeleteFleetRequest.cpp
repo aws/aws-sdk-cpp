@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFleetRequest::DeleteFleetRequest() : 
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetRequest::SerializePayload() const
 {
   JsonValue payload;

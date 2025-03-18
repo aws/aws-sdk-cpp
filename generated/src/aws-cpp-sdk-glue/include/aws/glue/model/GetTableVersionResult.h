@@ -28,7 +28,7 @@ namespace Model
   class GetTableVersionResult
   {
   public:
-    AWS_GLUE_API GetTableVersionResult();
+    AWS_GLUE_API GetTableVersionResult() = default;
     AWS_GLUE_API GetTableVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetTableVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The requested table version.</p>
      */
-    inline const TableVersion& GetTableVersion() const{ return m_tableVersion; }
-    inline void SetTableVersion(const TableVersion& value) { m_tableVersion = value; }
-    inline void SetTableVersion(TableVersion&& value) { m_tableVersion = std::move(value); }
-    inline GetTableVersionResult& WithTableVersion(const TableVersion& value) { SetTableVersion(value); return *this;}
-    inline GetTableVersionResult& WithTableVersion(TableVersion&& value) { SetTableVersion(std::move(value)); return *this;}
+    inline const TableVersion& GetTableVersion() const { return m_tableVersion; }
+    template<typename TableVersionT = TableVersion>
+    void SetTableVersion(TableVersionT&& value) { m_tableVersionHasBeenSet = true; m_tableVersion = std::forward<TableVersionT>(value); }
+    template<typename TableVersionT = TableVersion>
+    GetTableVersionResult& WithTableVersion(TableVersionT&& value) { SetTableVersion(std::forward<TableVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TableVersion m_tableVersion;
+    bool m_tableVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

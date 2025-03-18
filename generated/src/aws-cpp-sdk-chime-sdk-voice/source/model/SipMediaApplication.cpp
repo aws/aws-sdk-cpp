@@ -18,19 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipMediaApplication::SipMediaApplication() : 
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_sipMediaApplicationArnHasBeenSet(false)
-{
-}
-
 SipMediaApplication::SipMediaApplication(JsonView jsonValue)
-  : SipMediaApplication()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ SipMediaApplication& SipMediaApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SipMediaApplicationId"))
   {
     m_sipMediaApplicationId = jsonValue.GetString("SipMediaApplicationId");
-
     m_sipMediaApplicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
@@ -67,28 +49,21 @@ SipMediaApplication& SipMediaApplication::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SipMediaApplicationArn"))
   {
     m_sipMediaApplicationArn = jsonValue.GetString("SipMediaApplicationArn");
-
     m_sipMediaApplicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

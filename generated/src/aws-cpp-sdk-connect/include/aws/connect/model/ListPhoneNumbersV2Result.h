@@ -29,7 +29,7 @@ namespace Model
   class ListPhoneNumbersV2Result
   {
   public:
-    AWS_CONNECT_API ListPhoneNumbersV2Result();
+    AWS_CONNECT_API ListPhoneNumbersV2Result() = default;
     AWS_CONNECT_API ListPhoneNumbersV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListPhoneNumbersV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPhoneNumbersV2Result& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPhoneNumbersV2Result& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPhoneNumbersV2Result& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPhoneNumbersV2Result& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
      * instances or traffic distribution groups.</p>
      */
-    inline const Aws::Vector<ListPhoneNumbersSummary>& GetListPhoneNumbersSummaryList() const{ return m_listPhoneNumbersSummaryList; }
-    inline void SetListPhoneNumbersSummaryList(const Aws::Vector<ListPhoneNumbersSummary>& value) { m_listPhoneNumbersSummaryList = value; }
-    inline void SetListPhoneNumbersSummaryList(Aws::Vector<ListPhoneNumbersSummary>&& value) { m_listPhoneNumbersSummaryList = std::move(value); }
-    inline ListPhoneNumbersV2Result& WithListPhoneNumbersSummaryList(const Aws::Vector<ListPhoneNumbersSummary>& value) { SetListPhoneNumbersSummaryList(value); return *this;}
-    inline ListPhoneNumbersV2Result& WithListPhoneNumbersSummaryList(Aws::Vector<ListPhoneNumbersSummary>&& value) { SetListPhoneNumbersSummaryList(std::move(value)); return *this;}
-    inline ListPhoneNumbersV2Result& AddListPhoneNumbersSummaryList(const ListPhoneNumbersSummary& value) { m_listPhoneNumbersSummaryList.push_back(value); return *this; }
-    inline ListPhoneNumbersV2Result& AddListPhoneNumbersSummaryList(ListPhoneNumbersSummary&& value) { m_listPhoneNumbersSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListPhoneNumbersSummary>& GetListPhoneNumbersSummaryList() const { return m_listPhoneNumbersSummaryList; }
+    template<typename ListPhoneNumbersSummaryListT = Aws::Vector<ListPhoneNumbersSummary>>
+    void SetListPhoneNumbersSummaryList(ListPhoneNumbersSummaryListT&& value) { m_listPhoneNumbersSummaryListHasBeenSet = true; m_listPhoneNumbersSummaryList = std::forward<ListPhoneNumbersSummaryListT>(value); }
+    template<typename ListPhoneNumbersSummaryListT = Aws::Vector<ListPhoneNumbersSummary>>
+    ListPhoneNumbersV2Result& WithListPhoneNumbersSummaryList(ListPhoneNumbersSummaryListT&& value) { SetListPhoneNumbersSummaryList(std::forward<ListPhoneNumbersSummaryListT>(value)); return *this;}
+    template<typename ListPhoneNumbersSummaryListT = ListPhoneNumbersSummary>
+    ListPhoneNumbersV2Result& AddListPhoneNumbersSummaryList(ListPhoneNumbersSummaryListT&& value) { m_listPhoneNumbersSummaryListHasBeenSet = true; m_listPhoneNumbersSummaryList.emplace_back(std::forward<ListPhoneNumbersSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPhoneNumbersV2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPhoneNumbersV2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPhoneNumbersV2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPhoneNumbersV2Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListPhoneNumbersSummary> m_listPhoneNumbersSummaryList;
+    bool m_listPhoneNumbersSummaryListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

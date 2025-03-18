@@ -21,7 +21,7 @@ namespace Model
   class DescribeExecutionRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API DescribeExecutionRequest();
+    AWS_TRANSFER_API DescribeExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>A unique identifier for the execution of a workflow.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline DescribeExecutionRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline DescribeExecutionRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline DescribeExecutionRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    DescribeExecutionRequest& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline DescribeExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline DescribeExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline DescribeExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    DescribeExecutionRequest& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
   private:
 

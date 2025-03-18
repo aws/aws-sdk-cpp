@@ -29,7 +29,7 @@ namespace Model
   class ScaleInPolicyUpdate
   {
   public:
-    AWS_KAFKACONNECT_API ScaleInPolicyUpdate();
+    AWS_KAFKACONNECT_API ScaleInPolicyUpdate() = default;
     AWS_KAFKACONNECT_API ScaleInPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API ScaleInPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>The target CPU utilization percentage threshold at which you want connector
      * scale in to be triggered.</p>
      */
-    inline int GetCpuUtilizationPercentage() const{ return m_cpuUtilizationPercentage; }
+    inline int GetCpuUtilizationPercentage() const { return m_cpuUtilizationPercentage; }
     inline bool CpuUtilizationPercentageHasBeenSet() const { return m_cpuUtilizationPercentageHasBeenSet; }
     inline void SetCpuUtilizationPercentage(int value) { m_cpuUtilizationPercentageHasBeenSet = true; m_cpuUtilizationPercentage = value; }
     inline ScaleInPolicyUpdate& WithCpuUtilizationPercentage(int value) { SetCpuUtilizationPercentage(value); return *this;}
     ///@}
   private:
 
-    int m_cpuUtilizationPercentage;
+    int m_cpuUtilizationPercentage{0};
     bool m_cpuUtilizationPercentageHasBeenSet = false;
   };
 

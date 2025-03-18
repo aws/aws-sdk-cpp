@@ -30,7 +30,7 @@ namespace Model
   class AxisDisplayMinMaxRange
   {
   public:
-    AWS_QUICKSIGHT_API AxisDisplayMinMaxRange();
+    AWS_QUICKSIGHT_API AxisDisplayMinMaxRange() = default;
     AWS_QUICKSIGHT_API AxisDisplayMinMaxRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AxisDisplayMinMaxRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The minimum setup for an axis display range.</p>
      */
-    inline double GetMinimum() const{ return m_minimum; }
+    inline double GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
     inline AxisDisplayMinMaxRange& WithMinimum(double value) { SetMinimum(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum setup for an axis display range.</p>
      */
-    inline double GetMaximum() const{ return m_maximum; }
+    inline double GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
     inline AxisDisplayMinMaxRange& WithMaximum(double value) { SetMaximum(value); return *this;}
     ///@}
   private:
 
-    double m_minimum;
+    double m_minimum{0.0};
     bool m_minimumHasBeenSet = false;
 
-    double m_maximum;
+    double m_maximum{0.0};
     bool m_maximumHasBeenSet = false;
   };
 

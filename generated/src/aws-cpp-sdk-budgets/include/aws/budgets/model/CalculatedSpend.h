@@ -38,7 +38,7 @@ namespace Model
   class CalculatedSpend
   {
   public:
-    AWS_BUDGETS_API CalculatedSpend();
+    AWS_BUDGETS_API CalculatedSpend() = default;
     AWS_BUDGETS_API CalculatedSpend(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API CalculatedSpend& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>The amount of cost, usage, RI units, or Savings Plans units that you
      * used.</p>
      */
-    inline const Spend& GetActualSpend() const{ return m_actualSpend; }
+    inline const Spend& GetActualSpend() const { return m_actualSpend; }
     inline bool ActualSpendHasBeenSet() const { return m_actualSpendHasBeenSet; }
-    inline void SetActualSpend(const Spend& value) { m_actualSpendHasBeenSet = true; m_actualSpend = value; }
-    inline void SetActualSpend(Spend&& value) { m_actualSpendHasBeenSet = true; m_actualSpend = std::move(value); }
-    inline CalculatedSpend& WithActualSpend(const Spend& value) { SetActualSpend(value); return *this;}
-    inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(std::move(value)); return *this;}
+    template<typename ActualSpendT = Spend>
+    void SetActualSpend(ActualSpendT&& value) { m_actualSpendHasBeenSet = true; m_actualSpend = std::forward<ActualSpendT>(value); }
+    template<typename ActualSpendT = Spend>
+    CalculatedSpend& WithActualSpend(ActualSpendT&& value) { SetActualSpend(std::forward<ActualSpendT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>The amount of cost, usage, RI units, or Savings Plans units that you're
      * forecasted to use.</p>
      */
-    inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
+    inline const Spend& GetForecastedSpend() const { return m_forecastedSpend; }
     inline bool ForecastedSpendHasBeenSet() const { return m_forecastedSpendHasBeenSet; }
-    inline void SetForecastedSpend(const Spend& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = value; }
-    inline void SetForecastedSpend(Spend&& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = std::move(value); }
-    inline CalculatedSpend& WithForecastedSpend(const Spend& value) { SetForecastedSpend(value); return *this;}
-    inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(std::move(value)); return *this;}
+    template<typename ForecastedSpendT = Spend>
+    void SetForecastedSpend(ForecastedSpendT&& value) { m_forecastedSpendHasBeenSet = true; m_forecastedSpend = std::forward<ForecastedSpendT>(value); }
+    template<typename ForecastedSpendT = Spend>
+    CalculatedSpend& WithForecastedSpend(ForecastedSpendT&& value) { SetForecastedSpend(std::forward<ForecastedSpendT>(value)); return *this;}
     ///@}
   private:
 

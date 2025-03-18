@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddressTransfer::AddressTransfer() : 
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_transferAccountIdHasBeenSet(false),
-    m_transferOfferExpirationTimestampHasBeenSet(false),
-    m_transferOfferAcceptedTimestampHasBeenSet(false),
-    m_addressTransferStatus(AddressTransferStatus::NOT_SET),
-    m_addressTransferStatusHasBeenSet(false)
-{
-}
-
 AddressTransfer::AddressTransfer(const XmlNode& xmlNode)
-  : AddressTransfer()
 {
   *this = xmlNode;
 }
@@ -76,7 +64,7 @@ AddressTransfer& AddressTransfer::operator =(const XmlNode& xmlNode)
     XmlNode addressTransferStatusNode = resultNode.FirstChild("addressTransferStatus");
     if(!addressTransferStatusNode.IsNull())
     {
-      m_addressTransferStatus = AddressTransferStatusMapper::GetAddressTransferStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressTransferStatusNode.GetText()).c_str()).c_str());
+      m_addressTransferStatus = AddressTransferStatusMapper::GetAddressTransferStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressTransferStatusNode.GetText()).c_str()));
       m_addressTransferStatusHasBeenSet = true;
     }
   }

@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogKafkaSource::CatalogKafkaSource() : 
-    m_nameHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
-{
-}
-
 CatalogKafkaSource::CatalogKafkaSource(JsonView jsonValue)
-  : CatalogKafkaSource()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ CatalogKafkaSource& CatalogKafkaSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowSize"))
   {
     m_windowSize = jsonValue.GetInteger("WindowSize");
-
     m_windowSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectSchema"))
   {
     m_detectSchema = jsonValue.GetBool("DetectSchema");
-
     m_detectSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingOptions"))
   {
     m_streamingOptions = jsonValue.GetObject("StreamingOptions");
-
     m_streamingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPreviewOptions"))
   {
     m_dataPreviewOptions = jsonValue.GetObject("DataPreviewOptions");
-
     m_dataPreviewOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

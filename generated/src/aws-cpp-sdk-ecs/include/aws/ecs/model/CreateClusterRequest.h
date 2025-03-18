@@ -27,7 +27,7 @@ namespace Model
   class CreateClusterRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API CreateClusterRequest();
+    AWS_ECS_API CreateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * create a cluster that's named <code>default</code>. Up to 255 letters (uppercase
      * and lowercase), numbers, underscores, and hyphens are allowed. </p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CreateClusterRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CreateClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CreateClusterRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,14 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateClusterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateClusterRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,26 +92,26 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
-    inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
+    inline const Aws::Vector<ClusterSetting>& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline CreateClusterRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
-    inline CreateClusterRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
-    inline CreateClusterRequest& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
+    template<typename SettingsT = Aws::Vector<ClusterSetting>>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Vector<ClusterSetting>>
+    CreateClusterRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
+    template<typename SettingsT = ClusterSetting>
+    CreateClusterRequest& AddSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings.emplace_back(std::forward<SettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>execute</code> command configuration for the cluster.</p>
      */
-    inline const ClusterConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ClusterConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ClusterConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ClusterConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateClusterRequest& WithConfiguration(const ClusterConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateClusterRequest& WithConfiguration(ClusterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ClusterConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ClusterConfiguration>
+    CreateClusterRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,15 +135,14 @@ namespace Model
      * API operation is used to update the list of available capacity providers for a
      * cluster after the cluster is created.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCapacityProviders() const{ return m_capacityProviders; }
+    inline const Aws::Vector<Aws::String>& GetCapacityProviders() const { return m_capacityProviders; }
     inline bool CapacityProvidersHasBeenSet() const { return m_capacityProvidersHasBeenSet; }
-    inline void SetCapacityProviders(const Aws::Vector<Aws::String>& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = value; }
-    inline void SetCapacityProviders(Aws::Vector<Aws::String>&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = std::move(value); }
-    inline CreateClusterRequest& WithCapacityProviders(const Aws::Vector<Aws::String>& value) { SetCapacityProviders(value); return *this;}
-    inline CreateClusterRequest& WithCapacityProviders(Aws::Vector<Aws::String>&& value) { SetCapacityProviders(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddCapacityProviders(const Aws::String& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(value); return *this; }
-    inline CreateClusterRequest& AddCapacityProviders(Aws::String&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(std::move(value)); return *this; }
-    inline CreateClusterRequest& AddCapacityProviders(const char* value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(value); return *this; }
+    template<typename CapacityProvidersT = Aws::Vector<Aws::String>>
+    void SetCapacityProviders(CapacityProvidersT&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = std::forward<CapacityProvidersT>(value); }
+    template<typename CapacityProvidersT = Aws::Vector<Aws::String>>
+    CreateClusterRequest& WithCapacityProviders(CapacityProvidersT&& value) { SetCapacityProviders(std::forward<CapacityProvidersT>(value)); return *this;}
+    template<typename CapacityProvidersT = Aws::String>
+    CreateClusterRequest& AddCapacityProviders(CapacityProvidersT&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.emplace_back(std::forward<CapacityProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +159,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
      * API operation.</p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetDefaultCapacityProviderStrategy() const{ return m_defaultCapacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetDefaultCapacityProviderStrategy() const { return m_defaultCapacityProviderStrategy; }
     inline bool DefaultCapacityProviderStrategyHasBeenSet() const { return m_defaultCapacityProviderStrategyHasBeenSet; }
-    inline void SetDefaultCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = value; }
-    inline void SetDefaultCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = std::move(value); }
-    inline CreateClusterRequest& WithDefaultCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetDefaultCapacityProviderStrategy(value); return *this;}
-    inline CreateClusterRequest& WithDefaultCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetDefaultCapacityProviderStrategy(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddDefaultCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(value); return *this; }
-    inline CreateClusterRequest& AddDefaultCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename DefaultCapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = std::forward<DefaultCapacityProviderStrategyT>(value); }
+    template<typename DefaultCapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    CreateClusterRequest& WithDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { SetDefaultCapacityProviderStrategy(std::forward<DefaultCapacityProviderStrategyT>(value)); return *this;}
+    template<typename DefaultCapacityProviderStrategyT = CapacityProviderStrategyItem>
+    CreateClusterRequest& AddDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.emplace_back(std::forward<DefaultCapacityProviderStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -190,12 +187,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const ClusterServiceConnectDefaultsRequest& GetServiceConnectDefaults() const{ return m_serviceConnectDefaults; }
+    inline const ClusterServiceConnectDefaultsRequest& GetServiceConnectDefaults() const { return m_serviceConnectDefaults; }
     inline bool ServiceConnectDefaultsHasBeenSet() const { return m_serviceConnectDefaultsHasBeenSet; }
-    inline void SetServiceConnectDefaults(const ClusterServiceConnectDefaultsRequest& value) { m_serviceConnectDefaultsHasBeenSet = true; m_serviceConnectDefaults = value; }
-    inline void SetServiceConnectDefaults(ClusterServiceConnectDefaultsRequest&& value) { m_serviceConnectDefaultsHasBeenSet = true; m_serviceConnectDefaults = std::move(value); }
-    inline CreateClusterRequest& WithServiceConnectDefaults(const ClusterServiceConnectDefaultsRequest& value) { SetServiceConnectDefaults(value); return *this;}
-    inline CreateClusterRequest& WithServiceConnectDefaults(ClusterServiceConnectDefaultsRequest&& value) { SetServiceConnectDefaults(std::move(value)); return *this;}
+    template<typename ServiceConnectDefaultsT = ClusterServiceConnectDefaultsRequest>
+    void SetServiceConnectDefaults(ServiceConnectDefaultsT&& value) { m_serviceConnectDefaultsHasBeenSet = true; m_serviceConnectDefaults = std::forward<ServiceConnectDefaultsT>(value); }
+    template<typename ServiceConnectDefaultsT = ClusterServiceConnectDefaultsRequest>
+    CreateClusterRequest& WithServiceConnectDefaults(ServiceConnectDefaultsT&& value) { SetServiceConnectDefaults(std::forward<ServiceConnectDefaultsT>(value)); return *this;}
     ///@}
   private:
 

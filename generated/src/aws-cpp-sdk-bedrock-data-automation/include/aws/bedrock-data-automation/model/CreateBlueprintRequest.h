@@ -30,7 +30,7 @@ namespace Model
   class CreateBlueprintRequest : public BedrockDataAutomationRequest
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintRequest();
+    AWS_BEDROCKDATAAUTOMATION_API CreateBlueprintRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,90 +43,80 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetBlueprintName() const{ return m_blueprintName; }
+    inline const Aws::String& GetBlueprintName() const { return m_blueprintName; }
     inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
-    inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
-    inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
-    inline void SetBlueprintName(const char* value) { m_blueprintNameHasBeenSet = true; m_blueprintName.assign(value); }
-    inline CreateBlueprintRequest& WithBlueprintName(const Aws::String& value) { SetBlueprintName(value); return *this;}
-    inline CreateBlueprintRequest& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
-    inline CreateBlueprintRequest& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
+    template<typename BlueprintNameT = Aws::String>
+    void SetBlueprintName(BlueprintNameT&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::forward<BlueprintNameT>(value); }
+    template<typename BlueprintNameT = Aws::String>
+    CreateBlueprintRequest& WithBlueprintName(BlueprintNameT&& value) { SetBlueprintName(std::forward<BlueprintNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateBlueprintRequest& WithType(const Type& value) { SetType(value); return *this;}
-    inline CreateBlueprintRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateBlueprintRequest& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlueprintStage& GetBlueprintStage() const{ return m_blueprintStage; }
+    inline BlueprintStage GetBlueprintStage() const { return m_blueprintStage; }
     inline bool BlueprintStageHasBeenSet() const { return m_blueprintStageHasBeenSet; }
-    inline void SetBlueprintStage(const BlueprintStage& value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = value; }
-    inline void SetBlueprintStage(BlueprintStage&& value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = std::move(value); }
-    inline CreateBlueprintRequest& WithBlueprintStage(const BlueprintStage& value) { SetBlueprintStage(value); return *this;}
-    inline CreateBlueprintRequest& WithBlueprintStage(BlueprintStage&& value) { SetBlueprintStage(std::move(value)); return *this;}
+    inline void SetBlueprintStage(BlueprintStage value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = value; }
+    inline CreateBlueprintRequest& WithBlueprintStage(BlueprintStage value) { SetBlueprintStage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSchema() const{ return m_schema; }
+    inline const Aws::String& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-    inline CreateBlueprintRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline CreateBlueprintRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline CreateBlueprintRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    CreateBlueprintRequest& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateBlueprintRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateBlueprintRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateBlueprintRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateBlueprintRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline CreateBlueprintRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline CreateBlueprintRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    CreateBlueprintRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateBlueprintRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateBlueprintRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateBlueprintRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateBlueprintRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBlueprintRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBlueprintRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_blueprintName;
     bool m_blueprintNameHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    BlueprintStage m_blueprintStage;
+    BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
     bool m_blueprintStageHasBeenSet = false;
 
     Aws::String m_schema;

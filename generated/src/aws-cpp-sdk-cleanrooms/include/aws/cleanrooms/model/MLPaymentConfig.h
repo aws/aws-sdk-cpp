@@ -33,7 +33,7 @@ namespace Model
   class MLPaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API MLPaymentConfig();
+    AWS_CLEANROOMS_API MLPaymentConfig() = default;
     AWS_CLEANROOMS_API MLPaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MLPaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The payment responsibilities accepted by the member for model training.</p>
      */
-    inline const ModelTrainingPaymentConfig& GetModelTraining() const{ return m_modelTraining; }
+    inline const ModelTrainingPaymentConfig& GetModelTraining() const { return m_modelTraining; }
     inline bool ModelTrainingHasBeenSet() const { return m_modelTrainingHasBeenSet; }
-    inline void SetModelTraining(const ModelTrainingPaymentConfig& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = value; }
-    inline void SetModelTraining(ModelTrainingPaymentConfig&& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = std::move(value); }
-    inline MLPaymentConfig& WithModelTraining(const ModelTrainingPaymentConfig& value) { SetModelTraining(value); return *this;}
-    inline MLPaymentConfig& WithModelTraining(ModelTrainingPaymentConfig&& value) { SetModelTraining(std::move(value)); return *this;}
+    template<typename ModelTrainingT = ModelTrainingPaymentConfig>
+    void SetModelTraining(ModelTrainingT&& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = std::forward<ModelTrainingT>(value); }
+    template<typename ModelTrainingT = ModelTrainingPaymentConfig>
+    MLPaymentConfig& WithModelTraining(ModelTrainingT&& value) { SetModelTraining(std::forward<ModelTrainingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment responsibilities accepted by the member for model inference.</p>
      */
-    inline const ModelInferencePaymentConfig& GetModelInference() const{ return m_modelInference; }
+    inline const ModelInferencePaymentConfig& GetModelInference() const { return m_modelInference; }
     inline bool ModelInferenceHasBeenSet() const { return m_modelInferenceHasBeenSet; }
-    inline void SetModelInference(const ModelInferencePaymentConfig& value) { m_modelInferenceHasBeenSet = true; m_modelInference = value; }
-    inline void SetModelInference(ModelInferencePaymentConfig&& value) { m_modelInferenceHasBeenSet = true; m_modelInference = std::move(value); }
-    inline MLPaymentConfig& WithModelInference(const ModelInferencePaymentConfig& value) { SetModelInference(value); return *this;}
-    inline MLPaymentConfig& WithModelInference(ModelInferencePaymentConfig&& value) { SetModelInference(std::move(value)); return *this;}
+    template<typename ModelInferenceT = ModelInferencePaymentConfig>
+    void SetModelInference(ModelInferenceT&& value) { m_modelInferenceHasBeenSet = true; m_modelInference = std::forward<ModelInferenceT>(value); }
+    template<typename ModelInferenceT = ModelInferencePaymentConfig>
+    MLPaymentConfig& WithModelInference(ModelInferenceT&& value) { SetModelInference(std::forward<ModelInferenceT>(value)); return *this;}
     ///@}
   private:
 

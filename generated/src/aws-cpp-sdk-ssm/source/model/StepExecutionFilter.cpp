@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-StepExecutionFilter::StepExecutionFilter() : 
-    m_key(StepExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 StepExecutionFilter::StepExecutionFilter(JsonView jsonValue)
-  : StepExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ StepExecutionFilter& StepExecutionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = StepExecutionFilterKeyMapper::GetStepExecutionFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ StepExecutionFilter& StepExecutionFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

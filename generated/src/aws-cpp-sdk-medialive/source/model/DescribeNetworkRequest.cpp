@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNetworkRequest::DescribeNetworkRequest() : 
-    m_networkIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNetworkRequest::SerializePayload() const
 {
   return {};

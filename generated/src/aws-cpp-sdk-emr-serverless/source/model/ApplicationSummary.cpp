@@ -18,24 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(ApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ApplicationStateMapper::GetApplicationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("architecture"));
-
     m_architectureHasBeenSet = true;
   }
-
   return *this;
 }
 

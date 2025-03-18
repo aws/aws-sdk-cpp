@@ -18,13 +18,7 @@ namespace PinpointSMSVoice
 namespace Model
 {
 
-SnsDestination::SnsDestination() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 SnsDestination::SnsDestination(JsonView jsonValue)
-  : SnsDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnsDestination& SnsDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

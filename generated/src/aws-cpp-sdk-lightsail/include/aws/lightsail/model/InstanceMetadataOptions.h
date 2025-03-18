@@ -34,7 +34,7 @@ namespace Model
   class InstanceMetadataOptions
   {
   public:
-    AWS_LIGHTSAIL_API InstanceMetadataOptions();
+    AWS_LIGHTSAIL_API InstanceMetadataOptions() = default;
     AWS_LIGHTSAIL_API InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * the new selection.</p> </li> <li> <p> <code>applied</code> - The metadata
      * options have been successfully applied to the instance.</p> </li> </ul>
      */
-    inline const InstanceMetadataState& GetState() const{ return m_state; }
+    inline InstanceMetadataState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const InstanceMetadataState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(InstanceMetadataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InstanceMetadataOptions& WithState(const InstanceMetadataState& value) { SetState(value); return *this;}
-    inline InstanceMetadataOptions& WithState(InstanceMetadataState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(InstanceMetadataState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InstanceMetadataOptions& WithState(InstanceMetadataState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
      * Guide</i>.</p> 
      */
-    inline const HttpTokens& GetHttpTokens() const{ return m_httpTokens; }
+    inline HttpTokens GetHttpTokens() const { return m_httpTokens; }
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-    inline void SetHttpTokens(const HttpTokens& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-    inline void SetHttpTokens(HttpTokens&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-    inline InstanceMetadataOptions& WithHttpTokens(const HttpTokens& value) { SetHttpTokens(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpTokens(HttpTokens&& value) { SetHttpTokens(std::move(value)); return *this;}
+    inline void SetHttpTokens(HttpTokens value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
+    inline InstanceMetadataOptions& WithHttpTokens(HttpTokens value) { SetHttpTokens(value); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * disabled.</p> <p>If the value is <code>disabled</code>, you cannot access your
      * instance metadata.</p>
      */
-    inline const HttpEndpoint& GetHttpEndpoint() const{ return m_httpEndpoint; }
+    inline HttpEndpoint GetHttpEndpoint() const { return m_httpEndpoint; }
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-    inline void SetHttpEndpoint(const HttpEndpoint& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-    inline void SetHttpEndpoint(HttpEndpoint&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-    inline InstanceMetadataOptions& WithHttpEndpoint(const HttpEndpoint& value) { SetHttpEndpoint(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpEndpoint(HttpEndpoint&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+    inline void SetHttpEndpoint(HttpEndpoint value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
+    inline InstanceMetadataOptions& WithHttpEndpoint(HttpEndpoint value) { SetHttpEndpoint(value); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +96,7 @@ namespace Model
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. A
      * larger number means that the instance metadata requests can travel farther.</p>
      */
-    inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
+    inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
     inline InstanceMetadataOptions& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
@@ -113,28 +107,26 @@ namespace Model
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
      * enabled or disabled.</p>
      */
-    inline const HttpProtocolIpv6& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+    inline HttpProtocolIpv6 GetHttpProtocolIpv6() const { return m_httpProtocolIpv6; }
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
-    inline void SetHttpProtocolIpv6(const HttpProtocolIpv6& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
-    inline void SetHttpProtocolIpv6(HttpProtocolIpv6&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
-    inline InstanceMetadataOptions& WithHttpProtocolIpv6(const HttpProtocolIpv6& value) { SetHttpProtocolIpv6(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpProtocolIpv6(HttpProtocolIpv6&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+    inline void SetHttpProtocolIpv6(HttpProtocolIpv6 value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+    inline InstanceMetadataOptions& WithHttpProtocolIpv6(HttpProtocolIpv6 value) { SetHttpProtocolIpv6(value); return *this;}
     ///@}
   private:
 
-    InstanceMetadataState m_state;
+    InstanceMetadataState m_state{InstanceMetadataState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    HttpTokens m_httpTokens;
+    HttpTokens m_httpTokens{HttpTokens::NOT_SET};
     bool m_httpTokensHasBeenSet = false;
 
-    HttpEndpoint m_httpEndpoint;
+    HttpEndpoint m_httpEndpoint{HttpEndpoint::NOT_SET};
     bool m_httpEndpointHasBeenSet = false;
 
-    int m_httpPutResponseHopLimit;
+    int m_httpPutResponseHopLimit{0};
     bool m_httpPutResponseHopLimitHasBeenSet = false;
 
-    HttpProtocolIpv6 m_httpProtocolIpv6;
+    HttpProtocolIpv6 m_httpProtocolIpv6{HttpProtocolIpv6::NOT_SET};
     bool m_httpProtocolIpv6HasBeenSet = false;
   };
 

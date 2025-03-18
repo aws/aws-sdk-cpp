@@ -18,13 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-ServiceSettings::ServiceSettings() : 
-    m_explorerEnablingRoleArnHasBeenSet(false)
-{
-}
-
 ServiceSettings::ServiceSettings(JsonView jsonValue)
-  : ServiceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceSettings& ServiceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExplorerEnablingRoleArn"))
   {
     m_explorerEnablingRoleArn = jsonValue.GetString("ExplorerEnablingRoleArn");
-
     m_explorerEnablingRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

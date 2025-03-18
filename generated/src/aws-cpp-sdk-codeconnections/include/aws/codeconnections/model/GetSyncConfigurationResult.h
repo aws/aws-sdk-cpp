@@ -28,7 +28,7 @@ namespace Model
   class GetSyncConfigurationResult
   {
   public:
-    AWS_CODECONNECTIONS_API GetSyncConfigurationResult();
+    AWS_CODECONNECTIONS_API GetSyncConfigurationResult() = default;
     AWS_CODECONNECTIONS_API GetSyncConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECONNECTIONS_API GetSyncConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The details about the sync configuration for which you want to retrieve
      * information.</p>
      */
-    inline const SyncConfiguration& GetSyncConfiguration() const{ return m_syncConfiguration; }
-    inline void SetSyncConfiguration(const SyncConfiguration& value) { m_syncConfiguration = value; }
-    inline void SetSyncConfiguration(SyncConfiguration&& value) { m_syncConfiguration = std::move(value); }
-    inline GetSyncConfigurationResult& WithSyncConfiguration(const SyncConfiguration& value) { SetSyncConfiguration(value); return *this;}
-    inline GetSyncConfigurationResult& WithSyncConfiguration(SyncConfiguration&& value) { SetSyncConfiguration(std::move(value)); return *this;}
+    inline const SyncConfiguration& GetSyncConfiguration() const { return m_syncConfiguration; }
+    template<typename SyncConfigurationT = SyncConfiguration>
+    void SetSyncConfiguration(SyncConfigurationT&& value) { m_syncConfigurationHasBeenSet = true; m_syncConfiguration = std::forward<SyncConfigurationT>(value); }
+    template<typename SyncConfigurationT = SyncConfiguration>
+    GetSyncConfigurationResult& WithSyncConfiguration(SyncConfigurationT&& value) { SetSyncConfiguration(std::forward<SyncConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSyncConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSyncConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSyncConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSyncConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SyncConfiguration m_syncConfiguration;
+    bool m_syncConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

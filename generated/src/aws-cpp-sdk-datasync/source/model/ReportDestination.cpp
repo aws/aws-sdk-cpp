@@ -18,13 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ReportDestination::ReportDestination() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 ReportDestination::ReportDestination(JsonView jsonValue)
-  : ReportDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReportDestination& ReportDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

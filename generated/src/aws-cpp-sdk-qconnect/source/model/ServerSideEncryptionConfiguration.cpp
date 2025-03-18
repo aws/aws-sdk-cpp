@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
-  : ServerSideEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

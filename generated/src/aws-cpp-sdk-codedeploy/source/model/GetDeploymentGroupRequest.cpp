@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentGroupRequest::GetDeploymentGroupRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;

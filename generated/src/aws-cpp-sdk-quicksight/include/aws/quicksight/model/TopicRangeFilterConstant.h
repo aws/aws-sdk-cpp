@@ -33,7 +33,7 @@ namespace Model
   class TopicRangeFilterConstant
   {
   public:
-    AWS_QUICKSIGHT_API TopicRangeFilterConstant();
+    AWS_QUICKSIGHT_API TopicRangeFilterConstant() = default;
     AWS_QUICKSIGHT_API TopicRangeFilterConstant(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicRangeFilterConstant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The data type of the constant value that is used in a range filter. Valid
      * values for this structure are <code>RANGE</code>.</p>
      */
-    inline const ConstantType& GetConstantType() const{ return m_constantType; }
+    inline ConstantType GetConstantType() const { return m_constantType; }
     inline bool ConstantTypeHasBeenSet() const { return m_constantTypeHasBeenSet; }
-    inline void SetConstantType(const ConstantType& value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
-    inline void SetConstantType(ConstantType&& value) { m_constantTypeHasBeenSet = true; m_constantType = std::move(value); }
-    inline TopicRangeFilterConstant& WithConstantType(const ConstantType& value) { SetConstantType(value); return *this;}
-    inline TopicRangeFilterConstant& WithConstantType(ConstantType&& value) { SetConstantType(std::move(value)); return *this;}
+    inline void SetConstantType(ConstantType value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
+    inline TopicRangeFilterConstant& WithConstantType(ConstantType value) { SetConstantType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p>The value of the constant that is used to specify the endpoints of a range
      * filter.</p>
      */
-    inline const RangeConstant& GetRangeConstant() const{ return m_rangeConstant; }
+    inline const RangeConstant& GetRangeConstant() const { return m_rangeConstant; }
     inline bool RangeConstantHasBeenSet() const { return m_rangeConstantHasBeenSet; }
-    inline void SetRangeConstant(const RangeConstant& value) { m_rangeConstantHasBeenSet = true; m_rangeConstant = value; }
-    inline void SetRangeConstant(RangeConstant&& value) { m_rangeConstantHasBeenSet = true; m_rangeConstant = std::move(value); }
-    inline TopicRangeFilterConstant& WithRangeConstant(const RangeConstant& value) { SetRangeConstant(value); return *this;}
-    inline TopicRangeFilterConstant& WithRangeConstant(RangeConstant&& value) { SetRangeConstant(std::move(value)); return *this;}
+    template<typename RangeConstantT = RangeConstant>
+    void SetRangeConstant(RangeConstantT&& value) { m_rangeConstantHasBeenSet = true; m_rangeConstant = std::forward<RangeConstantT>(value); }
+    template<typename RangeConstantT = RangeConstant>
+    TopicRangeFilterConstant& WithRangeConstant(RangeConstantT&& value) { SetRangeConstant(std::forward<RangeConstantT>(value)); return *this;}
     ///@}
   private:
 
-    ConstantType m_constantType;
+    ConstantType m_constantType{ConstantType::NOT_SET};
     bool m_constantTypeHasBeenSet = false;
 
     RangeConstant m_rangeConstant;

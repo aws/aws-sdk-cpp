@@ -18,13 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ResourceARNDetail::ResourceARNDetail() : 
-    m_aRNHasBeenSet(false)
-{
-}
-
 ResourceARNDetail::ResourceARNDetail(JsonView jsonValue)
-  : ResourceARNDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceARNDetail& ResourceARNDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

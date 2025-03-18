@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveSourceServerActionRequest::RemoveSourceServerActionRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_actionIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String RemoveSourceServerActionRequest::SerializePayload() const
 {
   JsonValue payload;

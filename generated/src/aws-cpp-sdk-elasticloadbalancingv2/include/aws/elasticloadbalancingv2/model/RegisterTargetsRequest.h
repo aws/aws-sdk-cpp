@@ -23,7 +23,7 @@ namespace Model
   class RegisterTargetsRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsRequest();
+    AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline RegisterTargetsRequest& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline RegisterTargetsRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline RegisterTargetsRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    RegisterTargetsRequest& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The targets.</p>
      */
-    inline const Aws::Vector<TargetDescription>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<TargetDescription>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<TargetDescription>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline RegisterTargetsRequest& WithTargets(const Aws::Vector<TargetDescription>& value) { SetTargets(value); return *this;}
-    inline RegisterTargetsRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(std::move(value)); return *this;}
-    inline RegisterTargetsRequest& AddTargets(const TargetDescription& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline RegisterTargetsRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    template<typename TargetsT = Aws::Vector<TargetDescription>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<TargetDescription>>
+    RegisterTargetsRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = TargetDescription>
+    RegisterTargetsRequest& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
   private:
 

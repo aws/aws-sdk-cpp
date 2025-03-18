@@ -33,7 +33,7 @@ namespace Model
   class EncodingParameters
   {
   public:
-    AWS_MEDIACONNECT_API EncodingParameters();
+    AWS_MEDIACONNECT_API EncodingParameters() = default;
     AWS_MEDIACONNECT_API EncodingParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API EncodingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * XS protocol, with a flow source that uses the CDI protocol. Valid values are
      * floating point numbers in the range of 3.0 to 10.0, inclusive.
      */
-    inline double GetCompressionFactor() const{ return m_compressionFactor; }
+    inline double GetCompressionFactor() const { return m_compressionFactor; }
     inline bool CompressionFactorHasBeenSet() const { return m_compressionFactorHasBeenSet; }
     inline void SetCompressionFactor(double value) { m_compressionFactorHasBeenSet = true; m_compressionFactor = value; }
     inline EncodingParameters& WithCompressionFactor(double value) { SetCompressionFactor(value); return *this;}
@@ -59,19 +59,17 @@ namespace Model
      * applies to video media streams associated with outputs that use the ST 2110 JPEG
      * XS protocol, with a flow source that uses the CDI protocol.
      */
-    inline const EncoderProfile& GetEncoderProfile() const{ return m_encoderProfile; }
+    inline EncoderProfile GetEncoderProfile() const { return m_encoderProfile; }
     inline bool EncoderProfileHasBeenSet() const { return m_encoderProfileHasBeenSet; }
-    inline void SetEncoderProfile(const EncoderProfile& value) { m_encoderProfileHasBeenSet = true; m_encoderProfile = value; }
-    inline void SetEncoderProfile(EncoderProfile&& value) { m_encoderProfileHasBeenSet = true; m_encoderProfile = std::move(value); }
-    inline EncodingParameters& WithEncoderProfile(const EncoderProfile& value) { SetEncoderProfile(value); return *this;}
-    inline EncodingParameters& WithEncoderProfile(EncoderProfile&& value) { SetEncoderProfile(std::move(value)); return *this;}
+    inline void SetEncoderProfile(EncoderProfile value) { m_encoderProfileHasBeenSet = true; m_encoderProfile = value; }
+    inline EncodingParameters& WithEncoderProfile(EncoderProfile value) { SetEncoderProfile(value); return *this;}
     ///@}
   private:
 
-    double m_compressionFactor;
+    double m_compressionFactor{0.0};
     bool m_compressionFactorHasBeenSet = false;
 
-    EncoderProfile m_encoderProfile;
+    EncoderProfile m_encoderProfile{EncoderProfile::NOT_SET};
     bool m_encoderProfileHasBeenSet = false;
   };
 

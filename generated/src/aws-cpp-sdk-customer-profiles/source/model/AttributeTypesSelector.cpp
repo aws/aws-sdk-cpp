@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AttributeTypesSelector::AttributeTypesSelector() : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 AttributeTypesSelector::AttributeTypesSelector(JsonView jsonValue)
-  : AttributeTypesSelector()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ AttributeTypesSelector& AttributeTypesSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("AttributeMatchingModel"));
-
     m_attributeMatchingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     Aws::Utils::Array<JsonView> addressJsonList = jsonValue.GetArray("Address");
@@ -51,7 +39,6 @@ AttributeTypesSelector& AttributeTypesSelector::operator =(JsonView jsonValue)
     }
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     Aws::Utils::Array<JsonView> phoneNumberJsonList = jsonValue.GetArray("PhoneNumber");
@@ -61,7 +48,6 @@ AttributeTypesSelector& AttributeTypesSelector::operator =(JsonView jsonValue)
     }
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     Aws::Utils::Array<JsonView> emailAddressJsonList = jsonValue.GetArray("EmailAddress");
@@ -71,7 +57,6 @@ AttributeTypesSelector& AttributeTypesSelector::operator =(JsonView jsonValue)
     }
     m_emailAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

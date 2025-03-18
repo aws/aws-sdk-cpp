@@ -21,7 +21,7 @@ namespace Model
   class DisassociateResourceFromProfileRequest : public Route53ProfilesRequest
   {
   public:
-    AWS_ROUTE53PROFILES_API DisassociateResourceFromProfileRequest();
+    AWS_ROUTE53PROFILES_API DisassociateResourceFromProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p> The ID of the Profile. </p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline DisassociateResourceFromProfileRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline DisassociateResourceFromProfileRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline DisassociateResourceFromProfileRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    DisassociateResourceFromProfileRequest& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource. </p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline DisassociateResourceFromProfileRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline DisassociateResourceFromProfileRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline DisassociateResourceFromProfileRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DisassociateResourceFromProfileRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

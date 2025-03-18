@@ -10,14 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreatePlatformEndpointRequest::CreatePlatformEndpointRequest() : 
-    m_platformApplicationArnHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_customUserDataHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlatformEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

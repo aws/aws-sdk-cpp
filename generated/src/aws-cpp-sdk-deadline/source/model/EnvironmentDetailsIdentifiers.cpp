@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-EnvironmentDetailsIdentifiers::EnvironmentDetailsIdentifiers() : 
-    m_jobIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 EnvironmentDetailsIdentifiers::EnvironmentDetailsIdentifiers(JsonView jsonValue)
-  : EnvironmentDetailsIdentifiers()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EnvironmentDetailsIdentifiers& EnvironmentDetailsIdentifiers::operator =(JsonVie
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-AccountJiraConfigurationOutput::AccountJiraConfigurationOutput() : 
-    m_integrationStatus(IntegrationStatus::NOT_SET),
-    m_integrationStatusHasBeenSet(false),
-    m_issueManagementStatus(AccountJiraIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 AccountJiraConfigurationOutput::AccountJiraConfigurationOutput(JsonView jsonValue)
-  : AccountJiraConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AccountJiraConfigurationOutput& AccountJiraConfigurationOutput::operator =(JsonV
   if(jsonValue.ValueExists("IntegrationStatus"))
   {
     m_integrationStatus = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("IntegrationStatus"));
-
     m_integrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueManagementStatus"))
   {
     m_issueManagementStatus = AccountJiraIssueManagementStatusMapper::GetAccountJiraIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
-
     m_issueManagementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueManagementType"))
   {
     m_issueManagementType = IssueManagementTypeMapper::GetIssueManagementTypeForName(jsonValue.GetString("IssueManagementType"));
-
     m_issueManagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subdomain"))
   {
     m_subdomain = jsonValue.GetString("Subdomain");
-
     m_subdomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraProjectKey"))
   {
     m_jiraProjectKey = jsonValue.GetString("JiraProjectKey");
-
     m_jiraProjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

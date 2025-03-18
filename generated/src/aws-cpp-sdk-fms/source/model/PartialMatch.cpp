@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-PartialMatch::PartialMatch() : 
-    m_referenceHasBeenSet(false),
-    m_targetViolationReasonsHasBeenSet(false)
-{
-}
-
 PartialMatch::PartialMatch(JsonView jsonValue)
-  : PartialMatch()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PartialMatch& PartialMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Reference"))
   {
     m_reference = jsonValue.GetString("Reference");
-
     m_referenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetViolationReasons"))
   {
     Aws::Utils::Array<JsonView> targetViolationReasonsJsonList = jsonValue.GetArray("TargetViolationReasons");
@@ -48,7 +39,6 @@ PartialMatch& PartialMatch::operator =(JsonView jsonValue)
     }
     m_targetViolationReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

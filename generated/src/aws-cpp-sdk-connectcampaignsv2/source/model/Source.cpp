@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-Source::Source() : 
-    m_customerProfilesSegmentArnHasBeenSet(false),
-    m_eventTriggerHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerProfilesSegmentArn"))
   {
     m_customerProfilesSegmentArn = jsonValue.GetString("customerProfilesSegmentArn");
-
     m_customerProfilesSegmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTrigger"))
   {
     m_eventTrigger = jsonValue.GetObject("eventTrigger");
-
     m_eventTriggerHasBeenSet = true;
   }
-
   return *this;
 }
 

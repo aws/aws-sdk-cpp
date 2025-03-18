@@ -35,7 +35,7 @@ namespace Model
   class RateLimitQueryString
   {
   public:
-    AWS_WAFV2_API RateLimitQueryString();
+    AWS_WAFV2_API RateLimitQueryString() = default;
     AWS_WAFV2_API RateLimitQueryString(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateLimitQueryString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the transformed component contents. </p>
      */
-    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
+    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const { return m_textTransformations; }
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
-    inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
-    inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
-    inline RateLimitQueryString& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
-    inline RateLimitQueryString& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
-    inline RateLimitQueryString& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
-    inline RateLimitQueryString& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    void SetTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::forward<TextTransformationsT>(value); }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    RateLimitQueryString& WithTextTransformations(TextTransformationsT&& value) { SetTextTransformations(std::forward<TextTransformationsT>(value)); return *this;}
+    template<typename TextTransformationsT = TextTransformation>
+    RateLimitQueryString& AddTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.emplace_back(std::forward<TextTransformationsT>(value)); return *this; }
     ///@}
   private:
 

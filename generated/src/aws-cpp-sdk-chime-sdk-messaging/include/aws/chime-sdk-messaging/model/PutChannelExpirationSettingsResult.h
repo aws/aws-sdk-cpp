@@ -28,7 +28,7 @@ namespace Model
   class PutChannelExpirationSettingsResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API PutChannelExpirationSettingsResult();
+    AWS_CHIMESDKMESSAGING_API PutChannelExpirationSettingsResult() = default;
     AWS_CHIMESDKMESSAGING_API PutChannelExpirationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API PutChannelExpirationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The channel ARN.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-    inline PutChannelExpirationSettingsResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline PutChannelExpirationSettingsResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline PutChannelExpirationSettingsResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    PutChannelExpirationSettingsResult& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings that control the interval after which a channel is deleted.</p>
      */
-    inline const ExpirationSettings& GetExpirationSettings() const{ return m_expirationSettings; }
-    inline void SetExpirationSettings(const ExpirationSettings& value) { m_expirationSettings = value; }
-    inline void SetExpirationSettings(ExpirationSettings&& value) { m_expirationSettings = std::move(value); }
-    inline PutChannelExpirationSettingsResult& WithExpirationSettings(const ExpirationSettings& value) { SetExpirationSettings(value); return *this;}
-    inline PutChannelExpirationSettingsResult& WithExpirationSettings(ExpirationSettings&& value) { SetExpirationSettings(std::move(value)); return *this;}
+    inline const ExpirationSettings& GetExpirationSettings() const { return m_expirationSettings; }
+    template<typename ExpirationSettingsT = ExpirationSettings>
+    void SetExpirationSettings(ExpirationSettingsT&& value) { m_expirationSettingsHasBeenSet = true; m_expirationSettings = std::forward<ExpirationSettingsT>(value); }
+    template<typename ExpirationSettingsT = ExpirationSettings>
+    PutChannelExpirationSettingsResult& WithExpirationSettings(ExpirationSettingsT&& value) { SetExpirationSettings(std::forward<ExpirationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutChannelExpirationSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutChannelExpirationSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutChannelExpirationSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutChannelExpirationSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
+    bool m_channelArnHasBeenSet = false;
 
     ExpirationSettings m_expirationSettings;
+    bool m_expirationSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-PolicyStatus::PolicyStatus() : 
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false)
-{
-}
-
 PolicyStatus::PolicyStatus(const XmlNode& xmlNode)
-  : PolicyStatus()
 {
   *this = xmlNode;
 }

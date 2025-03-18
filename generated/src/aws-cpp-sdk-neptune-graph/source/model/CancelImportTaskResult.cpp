@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelImportTaskResult::CancelImportTaskResult() : 
-    m_format(Format::NOT_SET),
-    m_parquetType(ParquetType::NOT_SET),
-    m_status(ImportTaskStatus::NOT_SET)
-{
-}
-
 CancelImportTaskResult::CancelImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelImportTaskResult()
 {
   *this = result;
 }
@@ -36,51 +28,45 @@ CancelImportTaskResult& CancelImportTaskResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("graphId"))
   {
     m_graphId = jsonValue.GetString("graphId");
-
+    m_graphIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
+    m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
-
+    m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquetType"))
   {
     m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
-
+    m_parquetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImportTaskStatusMapper::GetImportTaskStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

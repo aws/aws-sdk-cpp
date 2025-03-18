@@ -35,7 +35,7 @@ namespace Model
   class CaptionSelector
   {
   public:
-    AWS_MEDIACONVERT_API CaptionSelector();
+    AWS_MEDIACONVERT_API CaptionSelector() = default;
     AWS_MEDIACONVERT_API CaptionSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CaptionSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * PID field); there is no way to extract a specific language with pass-through
      * captions.
      */
-    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+    inline const Aws::String& GetCustomLanguageCode() const { return m_customLanguageCode; }
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
-    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
-    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
-    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
-    inline CaptionSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
-    inline CaptionSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
-    inline CaptionSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+    template<typename CustomLanguageCodeT = Aws::String>
+    void SetCustomLanguageCode(CustomLanguageCodeT&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::forward<CustomLanguageCodeT>(value); }
+    template<typename CustomLanguageCodeT = Aws::String>
+    CaptionSelector& WithCustomLanguageCode(CustomLanguageCodeT&& value) { SetCustomLanguageCode(std::forward<CustomLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * field (and PID field); there is no way to extract a specific language with
      * pass-through captions.
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline CaptionSelector& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline CaptionSelector& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CaptionSelector& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +80,19 @@ namespace Model
      * specify the URI of the input captions source file. If your input captions are
      * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
-    inline const CaptionSourceSettings& GetSourceSettings() const{ return m_sourceSettings; }
+    inline const CaptionSourceSettings& GetSourceSettings() const { return m_sourceSettings; }
     inline bool SourceSettingsHasBeenSet() const { return m_sourceSettingsHasBeenSet; }
-    inline void SetSourceSettings(const CaptionSourceSettings& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = value; }
-    inline void SetSourceSettings(CaptionSourceSettings&& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = std::move(value); }
-    inline CaptionSelector& WithSourceSettings(const CaptionSourceSettings& value) { SetSourceSettings(value); return *this;}
-    inline CaptionSelector& WithSourceSettings(CaptionSourceSettings&& value) { SetSourceSettings(std::move(value)); return *this;}
+    template<typename SourceSettingsT = CaptionSourceSettings>
+    void SetSourceSettings(SourceSettingsT&& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = std::forward<SourceSettingsT>(value); }
+    template<typename SourceSettingsT = CaptionSourceSettings>
+    CaptionSelector& WithSourceSettings(SourceSettingsT&& value) { SetSourceSettings(std::forward<SourceSettingsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customLanguageCode;
     bool m_customLanguageCodeHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
     CaptionSourceSettings m_sourceSettings;

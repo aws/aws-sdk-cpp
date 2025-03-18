@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicConstantValue::TopicConstantValue() : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_minimumHasBeenSet(false),
-    m_maximumHasBeenSet(false),
-    m_valueListHasBeenSet(false)
-{
-}
-
 TopicConstantValue::TopicConstantValue(JsonView jsonValue)
-  : TopicConstantValue()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TopicConstantValue& TopicConstantValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConstantType"))
   {
     m_constantType = ConstantTypeMapper::GetConstantTypeForName(jsonValue.GetString("ConstantType"));
-
     m_constantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minimum"))
   {
     m_minimum = jsonValue.GetString("Minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Maximum"))
   {
     m_maximum = jsonValue.GetString("Maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueList"))
   {
     Aws::Utils::Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
@@ -73,7 +54,6 @@ TopicConstantValue& TopicConstantValue::operator =(JsonView jsonValue)
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

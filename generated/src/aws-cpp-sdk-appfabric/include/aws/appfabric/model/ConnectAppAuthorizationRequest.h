@@ -22,7 +22,7 @@ namespace Model
   class ConnectAppAuthorizationRequest : public AppFabricRequest
   {
   public:
-    AWS_APPFABRIC_API ConnectAppAuthorizationRequest();
+    AWS_APPFABRIC_API ConnectAppAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app bundle that contains the app authorization to use for the request.</p>
      */
-    inline const Aws::String& GetAppBundleIdentifier() const{ return m_appBundleIdentifier; }
+    inline const Aws::String& GetAppBundleIdentifier() const { return m_appBundleIdentifier; }
     inline bool AppBundleIdentifierHasBeenSet() const { return m_appBundleIdentifierHasBeenSet; }
-    inline void SetAppBundleIdentifier(const Aws::String& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = value; }
-    inline void SetAppBundleIdentifier(Aws::String&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::move(value); }
-    inline void SetAppBundleIdentifier(const char* value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier.assign(value); }
-    inline ConnectAppAuthorizationRequest& WithAppBundleIdentifier(const Aws::String& value) { SetAppBundleIdentifier(value); return *this;}
-    inline ConnectAppAuthorizationRequest& WithAppBundleIdentifier(Aws::String&& value) { SetAppBundleIdentifier(std::move(value)); return *this;}
-    inline ConnectAppAuthorizationRequest& WithAppBundleIdentifier(const char* value) { SetAppBundleIdentifier(value); return *this;}
+    template<typename AppBundleIdentifierT = Aws::String>
+    void SetAppBundleIdentifier(AppBundleIdentifierT&& value) { m_appBundleIdentifierHasBeenSet = true; m_appBundleIdentifier = std::forward<AppBundleIdentifierT>(value); }
+    template<typename AppBundleIdentifierT = Aws::String>
+    ConnectAppAuthorizationRequest& WithAppBundleIdentifier(AppBundleIdentifierT&& value) { SetAppBundleIdentifier(std::forward<AppBundleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the
      * app authorization to use for the request.</p>
      */
-    inline const Aws::String& GetAppAuthorizationIdentifier() const{ return m_appAuthorizationIdentifier; }
+    inline const Aws::String& GetAppAuthorizationIdentifier() const { return m_appAuthorizationIdentifier; }
     inline bool AppAuthorizationIdentifierHasBeenSet() const { return m_appAuthorizationIdentifierHasBeenSet; }
-    inline void SetAppAuthorizationIdentifier(const Aws::String& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = value; }
-    inline void SetAppAuthorizationIdentifier(Aws::String&& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = std::move(value); }
-    inline void SetAppAuthorizationIdentifier(const char* value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier.assign(value); }
-    inline ConnectAppAuthorizationRequest& WithAppAuthorizationIdentifier(const Aws::String& value) { SetAppAuthorizationIdentifier(value); return *this;}
-    inline ConnectAppAuthorizationRequest& WithAppAuthorizationIdentifier(Aws::String&& value) { SetAppAuthorizationIdentifier(std::move(value)); return *this;}
-    inline ConnectAppAuthorizationRequest& WithAppAuthorizationIdentifier(const char* value) { SetAppAuthorizationIdentifier(value); return *this;}
+    template<typename AppAuthorizationIdentifierT = Aws::String>
+    void SetAppAuthorizationIdentifier(AppAuthorizationIdentifierT&& value) { m_appAuthorizationIdentifierHasBeenSet = true; m_appAuthorizationIdentifier = std::forward<AppAuthorizationIdentifierT>(value); }
+    template<typename AppAuthorizationIdentifierT = Aws::String>
+    ConnectAppAuthorizationRequest& WithAppAuthorizationIdentifier(AppAuthorizationIdentifierT&& value) { SetAppAuthorizationIdentifier(std::forward<AppAuthorizationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * authorization for the request is configured with an OAuth2 (<code>oauth2</code>)
      * authorization type.</p>
      */
-    inline const AuthRequest& GetAuthRequest() const{ return m_authRequest; }
+    inline const AuthRequest& GetAuthRequest() const { return m_authRequest; }
     inline bool AuthRequestHasBeenSet() const { return m_authRequestHasBeenSet; }
-    inline void SetAuthRequest(const AuthRequest& value) { m_authRequestHasBeenSet = true; m_authRequest = value; }
-    inline void SetAuthRequest(AuthRequest&& value) { m_authRequestHasBeenSet = true; m_authRequest = std::move(value); }
-    inline ConnectAppAuthorizationRequest& WithAuthRequest(const AuthRequest& value) { SetAuthRequest(value); return *this;}
-    inline ConnectAppAuthorizationRequest& WithAuthRequest(AuthRequest&& value) { SetAuthRequest(std::move(value)); return *this;}
+    template<typename AuthRequestT = AuthRequest>
+    void SetAuthRequest(AuthRequestT&& value) { m_authRequestHasBeenSet = true; m_authRequest = std::forward<AuthRequestT>(value); }
+    template<typename AuthRequestT = AuthRequest>
+    ConnectAppAuthorizationRequest& WithAuthRequest(AuthRequestT&& value) { SetAuthRequest(std::forward<AuthRequestT>(value)); return *this;}
     ///@}
   private:
 

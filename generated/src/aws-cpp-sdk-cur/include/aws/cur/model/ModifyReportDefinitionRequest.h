@@ -22,7 +22,7 @@ namespace Model
   class ModifyReportDefinitionRequest : public CostandUsageReportServiceRequest
   {
   public:
-    AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionRequest();
+    AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetReportName() const{ return m_reportName; }
+    inline const Aws::String& GetReportName() const { return m_reportName; }
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-    inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-    inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-    inline ModifyReportDefinitionRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-    inline ModifyReportDefinitionRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-    inline ModifyReportDefinitionRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
+    template<typename ReportNameT = Aws::String>
+    void SetReportName(ReportNameT&& value) { m_reportNameHasBeenSet = true; m_reportName = std::forward<ReportNameT>(value); }
+    template<typename ReportNameT = Aws::String>
+    ModifyReportDefinitionRequest& WithReportName(ReportNameT&& value) { SetReportName(std::forward<ReportNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
+    inline const ReportDefinition& GetReportDefinition() const { return m_reportDefinition; }
     inline bool ReportDefinitionHasBeenSet() const { return m_reportDefinitionHasBeenSet; }
-    inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
-    inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::move(value); }
-    inline ModifyReportDefinitionRequest& WithReportDefinition(const ReportDefinition& value) { SetReportDefinition(value); return *this;}
-    inline ModifyReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
+    template<typename ReportDefinitionT = ReportDefinition>
+    void SetReportDefinition(ReportDefinitionT&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::forward<ReportDefinitionT>(value); }
+    template<typename ReportDefinitionT = ReportDefinition>
+    ModifyReportDefinitionRequest& WithReportDefinition(ReportDefinitionT&& value) { SetReportDefinition(std::forward<ReportDefinitionT>(value)); return *this;}
     ///@}
   private:
 

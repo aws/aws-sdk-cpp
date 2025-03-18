@@ -35,7 +35,7 @@ namespace Model
   class OpenSearchApplication
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchApplication();
+    AWS_CLOUDWATCHLOGS_API OpenSearchApplication() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,36 @@ namespace Model
     /**
      * <p>The endpoint of the application.</p>
      */
-    inline const Aws::String& GetApplicationEndpoint() const{ return m_applicationEndpoint; }
+    inline const Aws::String& GetApplicationEndpoint() const { return m_applicationEndpoint; }
     inline bool ApplicationEndpointHasBeenSet() const { return m_applicationEndpointHasBeenSet; }
-    inline void SetApplicationEndpoint(const Aws::String& value) { m_applicationEndpointHasBeenSet = true; m_applicationEndpoint = value; }
-    inline void SetApplicationEndpoint(Aws::String&& value) { m_applicationEndpointHasBeenSet = true; m_applicationEndpoint = std::move(value); }
-    inline void SetApplicationEndpoint(const char* value) { m_applicationEndpointHasBeenSet = true; m_applicationEndpoint.assign(value); }
-    inline OpenSearchApplication& WithApplicationEndpoint(const Aws::String& value) { SetApplicationEndpoint(value); return *this;}
-    inline OpenSearchApplication& WithApplicationEndpoint(Aws::String&& value) { SetApplicationEndpoint(std::move(value)); return *this;}
-    inline OpenSearchApplication& WithApplicationEndpoint(const char* value) { SetApplicationEndpoint(value); return *this;}
+    template<typename ApplicationEndpointT = Aws::String>
+    void SetApplicationEndpoint(ApplicationEndpointT&& value) { m_applicationEndpointHasBeenSet = true; m_applicationEndpoint = std::forward<ApplicationEndpointT>(value); }
+    template<typename ApplicationEndpointT = Aws::String>
+    OpenSearchApplication& WithApplicationEndpoint(ApplicationEndpointT&& value) { SetApplicationEndpoint(std::forward<ApplicationEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline OpenSearchApplication& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline OpenSearchApplication& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline OpenSearchApplication& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    OpenSearchApplication& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline OpenSearchApplication& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline OpenSearchApplication& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline OpenSearchApplication& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    OpenSearchApplication& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <p>This structure contains information about the status of this OpenSearch
      * Service resource.</p>
      */
-    inline const OpenSearchResourceStatus& GetStatus() const{ return m_status; }
+    inline const OpenSearchResourceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OpenSearchResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OpenSearchResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OpenSearchApplication& WithStatus(const OpenSearchResourceStatus& value) { SetStatus(value); return *this;}
-    inline OpenSearchApplication& WithStatus(OpenSearchResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OpenSearchResourceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OpenSearchResourceStatus>
+    OpenSearchApplication& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

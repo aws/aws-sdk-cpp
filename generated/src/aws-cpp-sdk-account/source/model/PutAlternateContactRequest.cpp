@@ -12,17 +12,6 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAlternateContactRequest::PutAlternateContactRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_alternateContactType(AlternateContactType::NOT_SET),
-    m_alternateContactTypeHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Aws::String PutAlternateContactRequest::SerializePayload() const
 {
   JsonValue payload;

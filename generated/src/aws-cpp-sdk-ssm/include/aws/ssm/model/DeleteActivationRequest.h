@@ -21,7 +21,7 @@ namespace Model
   class DeleteActivationRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DeleteActivationRequest();
+    AWS_SSM_API DeleteActivationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
-    inline const Aws::String& GetActivationId() const{ return m_activationId; }
+    inline const Aws::String& GetActivationId() const { return m_activationId; }
     inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
-    inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
-    inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = std::move(value); }
-    inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
-    inline DeleteActivationRequest& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
-    inline DeleteActivationRequest& WithActivationId(Aws::String&& value) { SetActivationId(std::move(value)); return *this;}
-    inline DeleteActivationRequest& WithActivationId(const char* value) { SetActivationId(value); return *this;}
+    template<typename ActivationIdT = Aws::String>
+    void SetActivationId(ActivationIdT&& value) { m_activationIdHasBeenSet = true; m_activationId = std::forward<ActivationIdT>(value); }
+    template<typename ActivationIdT = Aws::String>
+    DeleteActivationRequest& WithActivationId(ActivationIdT&& value) { SetActivationId(std::forward<ActivationIdT>(value)); return *this;}
     ///@}
   private:
 

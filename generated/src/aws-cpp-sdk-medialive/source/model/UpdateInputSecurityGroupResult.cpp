@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateInputSecurityGroupResult::UpdateInputSecurityGroupResult()
-{
-}
-
 UpdateInputSecurityGroupResult::UpdateInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateInputSecurityGroupResult& UpdateInputSecurityGroupResult::operator =(const
   if(jsonValue.ValueExists("securityGroup"))
   {
     m_securityGroup = jsonValue.GetObject("securityGroup");
-
+    m_securityGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

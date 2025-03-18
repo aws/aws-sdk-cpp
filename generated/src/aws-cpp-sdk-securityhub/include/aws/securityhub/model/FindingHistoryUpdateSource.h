@@ -33,7 +33,7 @@ namespace Model
   class FindingHistoryUpdateSource
   {
   public:
-    AWS_SECURITYHUB_API FindingHistoryUpdateSource();
+    AWS_SECURITYHUB_API FindingHistoryUpdateSource() = default;
     AWS_SECURITYHUB_API FindingHistoryUpdateSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FindingHistoryUpdateSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
      * <code>BatchUpdateFindings</code> </a> (by a Security Hub customer). </p>
      */
-    inline const FindingHistoryUpdateSourceType& GetType() const{ return m_type; }
+    inline FindingHistoryUpdateSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FindingHistoryUpdateSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FindingHistoryUpdateSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FindingHistoryUpdateSource& WithType(const FindingHistoryUpdateSourceType& value) { SetType(value); return *this;}
-    inline FindingHistoryUpdateSource& WithType(FindingHistoryUpdateSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FindingHistoryUpdateSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FindingHistoryUpdateSource& WithType(FindingHistoryUpdateSourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,18 +60,16 @@ namespace Model
      * example, the Amazon Resource Name (ARN) of a partner that calls
      * BatchImportFindings or of a customer that calls BatchUpdateFindings. </p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline FindingHistoryUpdateSource& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline FindingHistoryUpdateSource& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline FindingHistoryUpdateSource& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    FindingHistoryUpdateSource& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
   private:
 
-    FindingHistoryUpdateSourceType m_type;
+    FindingHistoryUpdateSourceType m_type{FindingHistoryUpdateSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_identity;

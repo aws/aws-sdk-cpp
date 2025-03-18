@@ -12,16 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServiceVersionsRequest::ListServiceVersionsRequest() : 
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_dependentServicesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

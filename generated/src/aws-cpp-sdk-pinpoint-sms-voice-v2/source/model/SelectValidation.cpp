@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SelectValidation::SelectValidation() : 
-    m_minChoices(0),
-    m_minChoicesHasBeenSet(false),
-    m_maxChoices(0),
-    m_maxChoicesHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 SelectValidation::SelectValidation(JsonView jsonValue)
-  : SelectValidation()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ SelectValidation& SelectValidation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinChoices"))
   {
     m_minChoices = jsonValue.GetInteger("MinChoices");
-
     m_minChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxChoices"))
   {
     m_maxChoices = jsonValue.GetInteger("MaxChoices");
-
     m_maxChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
@@ -58,7 +44,6 @@ SelectValidation& SelectValidation::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

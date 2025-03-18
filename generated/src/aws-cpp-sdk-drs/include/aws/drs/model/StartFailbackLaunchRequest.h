@@ -23,7 +23,7 @@ namespace Model
   class StartFailbackLaunchRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API StartFailbackLaunchRequest();
+    AWS_DRS_API StartFailbackLaunchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,34 +39,30 @@ namespace Model
      * <p>The IDs of the Recovery Instance whose failback launch we want to
      * request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecoveryInstanceIDs() const{ return m_recoveryInstanceIDs; }
+    inline const Aws::Vector<Aws::String>& GetRecoveryInstanceIDs() const { return m_recoveryInstanceIDs; }
     inline bool RecoveryInstanceIDsHasBeenSet() const { return m_recoveryInstanceIDsHasBeenSet; }
-    inline void SetRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = value; }
-    inline void SetRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = std::move(value); }
-    inline StartFailbackLaunchRequest& WithRecoveryInstanceIDs(const Aws::Vector<Aws::String>& value) { SetRecoveryInstanceIDs(value); return *this;}
-    inline StartFailbackLaunchRequest& WithRecoveryInstanceIDs(Aws::Vector<Aws::String>&& value) { SetRecoveryInstanceIDs(std::move(value)); return *this;}
-    inline StartFailbackLaunchRequest& AddRecoveryInstanceIDs(const Aws::String& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
-    inline StartFailbackLaunchRequest& AddRecoveryInstanceIDs(Aws::String&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(std::move(value)); return *this; }
-    inline StartFailbackLaunchRequest& AddRecoveryInstanceIDs(const char* value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.push_back(value); return *this; }
+    template<typename RecoveryInstanceIDsT = Aws::Vector<Aws::String>>
+    void SetRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs = std::forward<RecoveryInstanceIDsT>(value); }
+    template<typename RecoveryInstanceIDsT = Aws::Vector<Aws::String>>
+    StartFailbackLaunchRequest& WithRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { SetRecoveryInstanceIDs(std::forward<RecoveryInstanceIDsT>(value)); return *this;}
+    template<typename RecoveryInstanceIDsT = Aws::String>
+    StartFailbackLaunchRequest& AddRecoveryInstanceIDs(RecoveryInstanceIDsT&& value) { m_recoveryInstanceIDsHasBeenSet = true; m_recoveryInstanceIDs.emplace_back(std::forward<RecoveryInstanceIDsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags to be associated with the failback launch Job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartFailbackLaunchRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartFailbackLaunchRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartFailbackLaunchRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartFailbackLaunchRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartFailbackLaunchRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartFailbackLaunchRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

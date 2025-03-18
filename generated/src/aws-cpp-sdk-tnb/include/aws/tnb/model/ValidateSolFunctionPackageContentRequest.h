@@ -22,7 +22,7 @@ namespace Model
   class ValidateSolFunctionPackageContentRequest : public StreamingTnbRequest
   {
   public:
-    AWS_TNB_API ValidateSolFunctionPackageContentRequest();
+    AWS_TNB_API ValidateSolFunctionPackageContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,14 +35,12 @@ namespace Model
     /**
      * <p>Function package ID.</p>
      */
-    inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
+    inline const Aws::String& GetVnfPkgId() const { return m_vnfPkgId; }
     inline bool VnfPkgIdHasBeenSet() const { return m_vnfPkgIdHasBeenSet; }
-    inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = value; }
-    inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::move(value); }
-    inline void SetVnfPkgId(const char* value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId.assign(value); }
-    inline ValidateSolFunctionPackageContentRequest& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-    inline ValidateSolFunctionPackageContentRequest& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-    inline ValidateSolFunctionPackageContentRequest& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
+    template<typename VnfPkgIdT = Aws::String>
+    void SetVnfPkgId(VnfPkgIdT&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::forward<VnfPkgIdT>(value); }
+    template<typename VnfPkgIdT = Aws::String>
+    ValidateSolFunctionPackageContentRequest& WithVnfPkgId(VnfPkgIdT&& value) { SetVnfPkgId(std::forward<VnfPkgIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeReservedElasticsearchInstancesRequest::DescribeReservedElasticsearchInstancesRequest() : 
-    m_reservedElasticsearchInstanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedElasticsearchInstancesRequest::SerializePayload() const
 {
   return {};

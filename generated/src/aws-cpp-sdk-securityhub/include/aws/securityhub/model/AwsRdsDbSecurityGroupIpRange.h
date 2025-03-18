@@ -32,7 +32,7 @@ namespace Model
   class AwsRdsDbSecurityGroupIpRange
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupIpRange();
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupIpRange() = default;
     AWS_SECURITYHUB_API AwsRdsDbSecurityGroupIpRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbSecurityGroupIpRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Specifies the IP range.</p>
      */
-    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+    inline const Aws::String& GetCidrIp() const { return m_cidrIp; }
     inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-    inline AwsRdsDbSecurityGroupIpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-    inline AwsRdsDbSecurityGroupIpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-    inline AwsRdsDbSecurityGroupIpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+    template<typename CidrIpT = Aws::String>
+    void SetCidrIp(CidrIpT&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::forward<CidrIpT>(value); }
+    template<typename CidrIpT = Aws::String>
+    AwsRdsDbSecurityGroupIpRange& WithCidrIp(CidrIpT&& value) { SetCidrIp(std::forward<CidrIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the status of the IP range.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRdsDbSecurityGroupIpRange& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRdsDbSecurityGroupIpRange& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRdsDbSecurityGroupIpRange& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRdsDbSecurityGroupIpRange& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyDBProxyEndpointResult::ModifyDBProxyEndpointResult()
-{
-}
-
 ModifyDBProxyEndpointResult::ModifyDBProxyEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyDBProxyEndpointResult& ModifyDBProxyEndpointResult::operator =(const Aws::
     if(!dBProxyEndpointNode.IsNull())
     {
       m_dBProxyEndpoint = dBProxyEndpointNode;
+      m_dBProxyEndpointHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyDBProxyEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

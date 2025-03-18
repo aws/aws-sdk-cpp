@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPackageVersionsRequest::ListPackageVersionsRequest() : 
-    m_packageNameHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPackageVersionsRequest::SerializePayload() const
 {
   return {};

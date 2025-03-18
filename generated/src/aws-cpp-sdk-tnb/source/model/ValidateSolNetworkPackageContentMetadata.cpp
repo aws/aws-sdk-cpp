@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ValidateSolNetworkPackageContentMetadata::ValidateSolNetworkPackageContentMetadata() : 
-    m_nsdHasBeenSet(false)
-{
-}
-
 ValidateSolNetworkPackageContentMetadata::ValidateSolNetworkPackageContentMetadata(JsonView jsonValue)
-  : ValidateSolNetworkPackageContentMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ValidateSolNetworkPackageContentMetadata& ValidateSolNetworkPackageContentMetada
   if(jsonValue.ValueExists("nsd"))
   {
     m_nsd = jsonValue.GetObject("nsd");
-
     m_nsdHasBeenSet = true;
   }
-
   return *this;
 }
 

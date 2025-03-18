@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImportedKeyMaterialRequest::DeleteImportedKeyMaterialRequest() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImportedKeyMaterialRequest::SerializePayload() const
 {
   JsonValue payload;

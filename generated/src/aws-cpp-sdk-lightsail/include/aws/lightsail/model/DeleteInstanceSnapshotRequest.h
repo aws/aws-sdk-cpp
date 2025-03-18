@@ -21,7 +21,7 @@ namespace Model
   class DeleteInstanceSnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteInstanceSnapshotRequest();
+    AWS_LIGHTSAIL_API DeleteInstanceSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the snapshot to delete.</p>
      */
-    inline const Aws::String& GetInstanceSnapshotName() const{ return m_instanceSnapshotName; }
+    inline const Aws::String& GetInstanceSnapshotName() const { return m_instanceSnapshotName; }
     inline bool InstanceSnapshotNameHasBeenSet() const { return m_instanceSnapshotNameHasBeenSet; }
-    inline void SetInstanceSnapshotName(const Aws::String& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
-    inline void SetInstanceSnapshotName(Aws::String&& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = std::move(value); }
-    inline void SetInstanceSnapshotName(const char* value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName.assign(value); }
-    inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(const Aws::String& value) { SetInstanceSnapshotName(value); return *this;}
-    inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(Aws::String&& value) { SetInstanceSnapshotName(std::move(value)); return *this;}
-    inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(const char* value) { SetInstanceSnapshotName(value); return *this;}
+    template<typename InstanceSnapshotNameT = Aws::String>
+    void SetInstanceSnapshotName(InstanceSnapshotNameT&& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = std::forward<InstanceSnapshotNameT>(value); }
+    template<typename InstanceSnapshotNameT = Aws::String>
+    DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(InstanceSnapshotNameT&& value) { SetInstanceSnapshotName(std::forward<InstanceSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

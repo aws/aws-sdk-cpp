@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Sheet::Sheet() : 
-    m_sheetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imagesHasBeenSet(false)
-{
-}
-
 Sheet::Sheet(JsonView jsonValue)
-  : Sheet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Sheet& Sheet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SheetId"))
   {
     m_sheetId = jsonValue.GetString("SheetId");
-
     m_sheetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Images"))
   {
     Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("Images");
@@ -56,7 +44,6 @@ Sheet& Sheet::operator =(JsonView jsonValue)
     }
     m_imagesHasBeenSet = true;
   }
-
   return *this;
 }
 

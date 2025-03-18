@@ -23,7 +23,7 @@ namespace Model
   class EnableFastLaunchRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableFastLaunchRequest();
+    AWS_EC2_API EnableFastLaunchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Specify the ID of the image for which to enable Windows fast launch.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline EnableFastLaunchRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline EnableFastLaunchRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline EnableFastLaunchRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    EnableFastLaunchRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * launch. Supported values include: <code>snapshot</code>, which is the default
      * value.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline EnableFastLaunchRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline EnableFastLaunchRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline EnableFastLaunchRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    EnableFastLaunchRequest& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * for pre-provisioning the AMI for Windows fast launch. The associated
      * <code>ResourceType</code> must be <code>snapshot</code>.</p>
      */
-    inline const FastLaunchSnapshotConfigurationRequest& GetSnapshotConfiguration() const{ return m_snapshotConfiguration; }
+    inline const FastLaunchSnapshotConfigurationRequest& GetSnapshotConfiguration() const { return m_snapshotConfiguration; }
     inline bool SnapshotConfigurationHasBeenSet() const { return m_snapshotConfigurationHasBeenSet; }
-    inline void SetSnapshotConfiguration(const FastLaunchSnapshotConfigurationRequest& value) { m_snapshotConfigurationHasBeenSet = true; m_snapshotConfiguration = value; }
-    inline void SetSnapshotConfiguration(FastLaunchSnapshotConfigurationRequest&& value) { m_snapshotConfigurationHasBeenSet = true; m_snapshotConfiguration = std::move(value); }
-    inline EnableFastLaunchRequest& WithSnapshotConfiguration(const FastLaunchSnapshotConfigurationRequest& value) { SetSnapshotConfiguration(value); return *this;}
-    inline EnableFastLaunchRequest& WithSnapshotConfiguration(FastLaunchSnapshotConfigurationRequest&& value) { SetSnapshotConfiguration(std::move(value)); return *this;}
+    template<typename SnapshotConfigurationT = FastLaunchSnapshotConfigurationRequest>
+    void SetSnapshotConfiguration(SnapshotConfigurationT&& value) { m_snapshotConfigurationHasBeenSet = true; m_snapshotConfiguration = std::forward<SnapshotConfigurationT>(value); }
+    template<typename SnapshotConfigurationT = FastLaunchSnapshotConfigurationRequest>
+    EnableFastLaunchRequest& WithSnapshotConfiguration(SnapshotConfigurationT&& value) { SetSnapshotConfiguration(std::forward<SnapshotConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * pre-provisioned snapshots. Launch template parameters can include either the
      * name or ID of the launch template, but not both.</p>
      */
-    inline const FastLaunchLaunchTemplateSpecificationRequest& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const FastLaunchLaunchTemplateSpecificationRequest& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const FastLaunchLaunchTemplateSpecificationRequest& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(FastLaunchLaunchTemplateSpecificationRequest&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline EnableFastLaunchRequest& WithLaunchTemplate(const FastLaunchLaunchTemplateSpecificationRequest& value) { SetLaunchTemplate(value); return *this;}
-    inline EnableFastLaunchRequest& WithLaunchTemplate(FastLaunchLaunchTemplateSpecificationRequest&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = FastLaunchLaunchTemplateSpecificationRequest>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = FastLaunchLaunchTemplateSpecificationRequest>
+    EnableFastLaunchRequest& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +98,7 @@ namespace Model
      * to create pre-provisioned snapshots for Windows fast launch. Value must be
      * <code>6</code> or greater.</p>
      */
-    inline int GetMaxParallelLaunches() const{ return m_maxParallelLaunches; }
+    inline int GetMaxParallelLaunches() const { return m_maxParallelLaunches; }
     inline bool MaxParallelLaunchesHasBeenSet() const { return m_maxParallelLaunchesHasBeenSet; }
     inline void SetMaxParallelLaunches(int value) { m_maxParallelLaunchesHasBeenSet = true; m_maxParallelLaunches = value; }
     inline EnableFastLaunchRequest& WithMaxParallelLaunches(int value) { SetMaxParallelLaunches(value); return *this;}
@@ -115,7 +111,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableFastLaunchRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -134,10 +130,10 @@ namespace Model
     FastLaunchLaunchTemplateSpecificationRequest m_launchTemplate;
     bool m_launchTemplateHasBeenSet = false;
 
-    int m_maxParallelLaunches;
+    int m_maxParallelLaunches{0};
     bool m_maxParallelLaunchesHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -19,19 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-IntegrationResponse::IntegrationResponse() : 
-    m_statusCodeHasBeenSet(false),
-    m_selectionPatternHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 IntegrationResponse::IntegrationResponse(JsonView jsonValue)
-  : IntegrationResponse()
 {
   *this = jsonValue;
 }
@@ -41,17 +29,13 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectionPattern"))
   {
     m_selectionPattern = jsonValue.GetString("selectionPattern");
-
     m_selectionPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -61,7 +45,6 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
     }
     m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseTemplates"))
   {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
@@ -71,14 +54,11 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
     }
     m_responseTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentHandling"))
   {
     m_contentHandling = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandling"));
-
     m_contentHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

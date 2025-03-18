@@ -10,12 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

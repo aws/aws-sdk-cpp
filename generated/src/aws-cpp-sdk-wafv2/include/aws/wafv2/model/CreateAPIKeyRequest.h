@@ -23,7 +23,7 @@ namespace Model
   class CreateAPIKeyRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API CreateAPIKeyRequest();
+    AWS_WAFV2_API CreateAPIKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CreateAPIKeyRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline CreateAPIKeyRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline CreateAPIKeyRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,18 @@ namespace Model
      * <p>Public suffixes aren't allowed. For example, you can't use
      * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
+    inline const Aws::Vector<Aws::String>& GetTokenDomains() const { return m_tokenDomains; }
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
-    inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
-    inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
-    inline CreateAPIKeyRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
-    inline CreateAPIKeyRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
-    inline CreateAPIKeyRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
-    inline CreateAPIKeyRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
-    inline CreateAPIKeyRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+    template<typename TokenDomainsT = Aws::Vector<Aws::String>>
+    void SetTokenDomains(TokenDomainsT&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::forward<TokenDomainsT>(value); }
+    template<typename TokenDomainsT = Aws::Vector<Aws::String>>
+    CreateAPIKeyRequest& WithTokenDomains(TokenDomainsT&& value) { SetTokenDomains(std::forward<TokenDomainsT>(value)); return *this;}
+    template<typename TokenDomainsT = Aws::String>
+    CreateAPIKeyRequest& AddTokenDomains(TokenDomainsT&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.emplace_back(std::forward<TokenDomainsT>(value)); return *this; }
     ///@}
   private:
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokenDomains;

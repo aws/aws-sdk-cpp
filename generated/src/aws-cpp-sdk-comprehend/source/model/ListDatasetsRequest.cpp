@@ -12,15 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDatasetsRequest::ListDatasetsRequest() : 
-    m_flywheelArnHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDatasetsRequest::SerializePayload() const
 {
   JsonValue payload;

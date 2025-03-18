@@ -34,7 +34,7 @@ namespace Model
   class GetRoleResult
   {
   public:
-    AWS_IAM_API GetRoleResult();
+    AWS_IAM_API GetRoleResult() = default;
     AWS_IAM_API GetRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p>A structure containing details about the IAM role.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
-    inline void SetRole(const Role& value) { m_role = value; }
-    inline void SetRole(Role&& value) { m_role = std::move(value); }
-    inline GetRoleResult& WithRole(const Role& value) { SetRole(value); return *this;}
-    inline GetRoleResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline const Role& GetRole() const { return m_role; }
+    template<typename RoleT = Role>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Role>
+    GetRoleResult& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetRoleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetRoleResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Role m_role;
+    bool m_roleHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

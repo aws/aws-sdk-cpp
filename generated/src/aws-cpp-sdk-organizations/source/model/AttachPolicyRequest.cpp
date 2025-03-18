@@ -12,12 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachPolicyRequest::AttachPolicyRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
-{
-}
-
 Aws::String AttachPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

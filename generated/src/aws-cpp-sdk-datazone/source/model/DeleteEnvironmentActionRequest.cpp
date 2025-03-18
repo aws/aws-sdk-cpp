@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentActionRequest::DeleteEnvironmentActionRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentActionRequest::SerializePayload() const
 {
   return {};

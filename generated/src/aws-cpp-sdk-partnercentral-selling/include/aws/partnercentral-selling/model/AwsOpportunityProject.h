@@ -33,7 +33,7 @@ namespace Model
   class AwsOpportunityProject
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsOpportunityProject();
+    AWS_PARTNERCENTRALSELLING_API AwsOpportunityProject() = default;
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityProject(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityProject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * annual recurring revenue (ARR) is available, distribute it across 12 months to
      * provide an average monthly value.</p>
      */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const{ return m_expectedCustomerSpend; }
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
     inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    inline void SetExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = value; }
-    inline void SetExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::move(value); }
-    inline AwsOpportunityProject& WithExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { SetExpectedCustomerSpend(value); return *this;}
-    inline AwsOpportunityProject& WithExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { SetExpectedCustomerSpend(std::move(value)); return *this;}
-    inline AwsOpportunityProject& AddExpectedCustomerSpend(const ExpectedCustomerSpend& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(value); return *this; }
-    inline AwsOpportunityProject& AddExpectedCustomerSpend(ExpectedCustomerSpend&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(std::move(value)); return *this; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    AwsOpportunityProject& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    AwsOpportunityProject& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
     ///@}
   private:
 

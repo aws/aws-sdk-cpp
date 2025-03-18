@@ -25,7 +25,7 @@ namespace Model
   class CreateManagedPrefixListRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateManagedPrefixListRequest();
+    AWS_EC2_API CreateManagedPrefixListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateManagedPrefixListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,35 +58,33 @@ namespace Model
      * <p>A name for the prefix list.</p> <p>Constraints: Up to 255 characters in
      * length. The name cannot start with <code>com.amazonaws</code>.</p>
      */
-    inline const Aws::String& GetPrefixListName() const{ return m_prefixListName; }
+    inline const Aws::String& GetPrefixListName() const { return m_prefixListName; }
     inline bool PrefixListNameHasBeenSet() const { return m_prefixListNameHasBeenSet; }
-    inline void SetPrefixListName(const Aws::String& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = value; }
-    inline void SetPrefixListName(Aws::String&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::move(value); }
-    inline void SetPrefixListName(const char* value) { m_prefixListNameHasBeenSet = true; m_prefixListName.assign(value); }
-    inline CreateManagedPrefixListRequest& WithPrefixListName(const Aws::String& value) { SetPrefixListName(value); return *this;}
-    inline CreateManagedPrefixListRequest& WithPrefixListName(Aws::String&& value) { SetPrefixListName(std::move(value)); return *this;}
-    inline CreateManagedPrefixListRequest& WithPrefixListName(const char* value) { SetPrefixListName(value); return *this;}
+    template<typename PrefixListNameT = Aws::String>
+    void SetPrefixListName(PrefixListNameT&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::forward<PrefixListNameT>(value); }
+    template<typename PrefixListNameT = Aws::String>
+    CreateManagedPrefixListRequest& WithPrefixListName(PrefixListNameT&& value) { SetPrefixListName(std::forward<PrefixListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more entries for the prefix list.</p>
      */
-    inline const Aws::Vector<AddPrefixListEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<AddPrefixListEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<AddPrefixListEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<AddPrefixListEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline CreateManagedPrefixListRequest& WithEntries(const Aws::Vector<AddPrefixListEntry>& value) { SetEntries(value); return *this;}
-    inline CreateManagedPrefixListRequest& WithEntries(Aws::Vector<AddPrefixListEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline CreateManagedPrefixListRequest& AddEntries(const AddPrefixListEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline CreateManagedPrefixListRequest& AddEntries(AddPrefixListEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<AddPrefixListEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<AddPrefixListEntry>>
+    CreateManagedPrefixListRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = AddPrefixListEntry>
+    CreateManagedPrefixListRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of entries for the prefix list.</p>
      */
-    inline int GetMaxEntries() const{ return m_maxEntries; }
+    inline int GetMaxEntries() const { return m_maxEntries; }
     inline bool MaxEntriesHasBeenSet() const { return m_maxEntriesHasBeenSet; }
     inline void SetMaxEntries(int value) { m_maxEntriesHasBeenSet = true; m_maxEntries = value; }
     inline CreateManagedPrefixListRequest& WithMaxEntries(int value) { SetMaxEntries(value); return *this;}
@@ -96,14 +94,14 @@ namespace Model
     /**
      * <p>The tags to apply to the prefix list during creation.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateManagedPrefixListRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateManagedPrefixListRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateManagedPrefixListRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateManagedPrefixListRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateManagedPrefixListRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateManagedPrefixListRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,14 +109,12 @@ namespace Model
      * <p>The IP address type.</p> <p>Valid Values: <code>IPv4</code> |
      * <code>IPv6</code> </p>
      */
-    inline const Aws::String& GetAddressFamily() const{ return m_addressFamily; }
+    inline const Aws::String& GetAddressFamily() const { return m_addressFamily; }
     inline bool AddressFamilyHasBeenSet() const { return m_addressFamilyHasBeenSet; }
-    inline void SetAddressFamily(const Aws::String& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
-    inline void SetAddressFamily(Aws::String&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::move(value); }
-    inline void SetAddressFamily(const char* value) { m_addressFamilyHasBeenSet = true; m_addressFamily.assign(value); }
-    inline CreateManagedPrefixListRequest& WithAddressFamily(const Aws::String& value) { SetAddressFamily(value); return *this;}
-    inline CreateManagedPrefixListRequest& WithAddressFamily(Aws::String&& value) { SetAddressFamily(std::move(value)); return *this;}
-    inline CreateManagedPrefixListRequest& WithAddressFamily(const char* value) { SetAddressFamily(value); return *this;}
+    template<typename AddressFamilyT = Aws::String>
+    void SetAddressFamily(AddressFamilyT&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::forward<AddressFamilyT>(value); }
+    template<typename AddressFamilyT = Aws::String>
+    CreateManagedPrefixListRequest& WithAddressFamily(AddressFamilyT&& value) { SetAddressFamily(std::forward<AddressFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,18 +124,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p> <p>Constraints: Up to 255 UTF-8 characters in length.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateManagedPrefixListRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateManagedPrefixListRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateManagedPrefixListRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateManagedPrefixListRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_prefixListName;
@@ -148,7 +142,7 @@ namespace Model
     Aws::Vector<AddPrefixListEntry> m_entries;
     bool m_entriesHasBeenSet = false;
 
-    int m_maxEntries;
+    int m_maxEntries{0};
     bool m_maxEntriesHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;

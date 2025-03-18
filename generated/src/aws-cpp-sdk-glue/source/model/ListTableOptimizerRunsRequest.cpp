@@ -12,18 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTableOptimizerRunsRequest::ListTableOptimizerRunsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTableOptimizerRunsRequest::SerializePayload() const
 {
   JsonValue payload;

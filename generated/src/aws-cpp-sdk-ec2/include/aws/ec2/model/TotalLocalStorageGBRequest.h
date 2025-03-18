@@ -30,7 +30,7 @@ namespace Model
   class TotalLocalStorageGBRequest
   {
   public:
-    AWS_EC2_API TotalLocalStorageGBRequest();
+    AWS_EC2_API TotalLocalStorageGBRequest() = default;
     AWS_EC2_API TotalLocalStorageGBRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TotalLocalStorageGBRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
      * <p>The minimum amount of total local storage, in GB. To specify no minimum
      * limit, omit this parameter.</p>
      */
-    inline double GetMin() const{ return m_min; }
+    inline double GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
     inline TotalLocalStorageGBRequest& WithMin(double value) { SetMin(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p>The maximum amount of total local storage, in GB. To specify no maximum
      * limit, omit this parameter.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline TotalLocalStorageGBRequest& WithMax(double value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    double m_min;
+    double m_min{0.0};
     bool m_minHasBeenSet = false;
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
   };
 

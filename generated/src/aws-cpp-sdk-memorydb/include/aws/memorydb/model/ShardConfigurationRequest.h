@@ -30,7 +30,7 @@ namespace Model
   class ShardConfigurationRequest
   {
   public:
-    AWS_MEMORYDB_API ShardConfigurationRequest();
+    AWS_MEMORYDB_API ShardConfigurationRequest() = default;
     AWS_MEMORYDB_API ShardConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ShardConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of shards in the cluster</p>
      */
-    inline int GetShardCount() const{ return m_shardCount; }
+    inline int GetShardCount() const { return m_shardCount; }
     inline bool ShardCountHasBeenSet() const { return m_shardCountHasBeenSet; }
     inline void SetShardCount(int value) { m_shardCountHasBeenSet = true; m_shardCount = value; }
     inline ShardConfigurationRequest& WithShardCount(int value) { SetShardCount(value); return *this;}
     ///@}
   private:
 
-    int m_shardCount;
+    int m_shardCount{0};
     bool m_shardCountHasBeenSet = false;
   };
 

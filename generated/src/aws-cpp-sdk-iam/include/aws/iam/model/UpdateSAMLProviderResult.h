@@ -34,7 +34,7 @@ namespace Model
   class UpdateSAMLProviderResult
   {
   public:
-    AWS_IAM_API UpdateSAMLProviderResult();
+    AWS_IAM_API UpdateSAMLProviderResult() = default;
     AWS_IAM_API UpdateSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API UpdateSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
      */
-    inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
-    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
-    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = std::move(value); }
-    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
-    inline UpdateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-    inline UpdateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-    inline UpdateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    inline const Aws::String& GetSAMLProviderArn() const { return m_sAMLProviderArn; }
+    template<typename SAMLProviderArnT = Aws::String>
+    void SetSAMLProviderArn(SAMLProviderArnT&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::forward<SAMLProviderArnT>(value); }
+    template<typename SAMLProviderArnT = Aws::String>
+    UpdateSAMLProviderResult& WithSAMLProviderArn(SAMLProviderArnT&& value) { SetSAMLProviderArn(std::forward<SAMLProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdateSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdateSAMLProviderResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sAMLProviderArn;
+    bool m_sAMLProviderArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

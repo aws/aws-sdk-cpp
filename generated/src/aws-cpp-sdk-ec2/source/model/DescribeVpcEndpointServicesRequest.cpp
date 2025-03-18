@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeVpcEndpointServicesRequest::DescribeVpcEndpointServicesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceNamesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_serviceRegionsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpcEndpointServicesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

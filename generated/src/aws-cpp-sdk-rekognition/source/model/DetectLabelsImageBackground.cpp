@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DetectLabelsImageBackground::DetectLabelsImageBackground() : 
-    m_qualityHasBeenSet(false),
-    m_dominantColorsHasBeenSet(false)
-{
-}
-
 DetectLabelsImageBackground::DetectLabelsImageBackground(JsonView jsonValue)
-  : DetectLabelsImageBackground()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DetectLabelsImageBackground& DetectLabelsImageBackground::operator =(JsonView js
   if(jsonValue.ValueExists("Quality"))
   {
     m_quality = jsonValue.GetObject("Quality");
-
     m_qualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DominantColors"))
   {
     Aws::Utils::Array<JsonView> dominantColorsJsonList = jsonValue.GetArray("DominantColors");
@@ -48,7 +39,6 @@ DetectLabelsImageBackground& DetectLabelsImageBackground::operator =(JsonView js
     }
     m_dominantColorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeElasticGpusResponse::DescribeElasticGpusResponse() : 
-    m_maxResults(0)
-{
-}
-
 DescribeElasticGpusResponse::DescribeElasticGpusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeElasticGpusResponse()
 {
   *this = result;
 }
@@ -44,22 +38,26 @@ DescribeElasticGpusResponse& DescribeElasticGpusResponse::operator =(const Aws::
     if(!elasticGpuSetNode.IsNull())
     {
       XmlNode elasticGpuSetMember = elasticGpuSetNode.FirstChild("item");
+      m_elasticGpuSetHasBeenSet = !elasticGpuSetMember.IsNull();
       while(!elasticGpuSetMember.IsNull())
       {
         m_elasticGpuSet.push_back(elasticGpuSetMember);
         elasticGpuSetMember = elasticGpuSetMember.NextNode("item");
       }
 
+      m_elasticGpuSetHasBeenSet = true;
     }
     XmlNode maxResultsNode = resultNode.FirstChild("maxResults");
     if(!maxResultsNode.IsNull())
     {
       m_maxResults = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxResultsNode.GetText()).c_str()).c_str());
+      m_maxResultsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -68,6 +66,7 @@ DescribeElasticGpusResponse& DescribeElasticGpusResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeElasticGpusResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

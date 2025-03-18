@@ -31,7 +31,7 @@ namespace Model
   class AudioWatermarkSettings
   {
   public:
-    AWS_MEDIALIVE_API AudioWatermarkSettings();
+    AWS_MEDIALIVE_API AudioWatermarkSettings() = default;
     AWS_MEDIALIVE_API AudioWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * Settings to configure Nielsen Watermarks in the audio encode
      */
-    inline const NielsenWatermarksSettings& GetNielsenWatermarksSettings() const{ return m_nielsenWatermarksSettings; }
+    inline const NielsenWatermarksSettings& GetNielsenWatermarksSettings() const { return m_nielsenWatermarksSettings; }
     inline bool NielsenWatermarksSettingsHasBeenSet() const { return m_nielsenWatermarksSettingsHasBeenSet; }
-    inline void SetNielsenWatermarksSettings(const NielsenWatermarksSettings& value) { m_nielsenWatermarksSettingsHasBeenSet = true; m_nielsenWatermarksSettings = value; }
-    inline void SetNielsenWatermarksSettings(NielsenWatermarksSettings&& value) { m_nielsenWatermarksSettingsHasBeenSet = true; m_nielsenWatermarksSettings = std::move(value); }
-    inline AudioWatermarkSettings& WithNielsenWatermarksSettings(const NielsenWatermarksSettings& value) { SetNielsenWatermarksSettings(value); return *this;}
-    inline AudioWatermarkSettings& WithNielsenWatermarksSettings(NielsenWatermarksSettings&& value) { SetNielsenWatermarksSettings(std::move(value)); return *this;}
+    template<typename NielsenWatermarksSettingsT = NielsenWatermarksSettings>
+    void SetNielsenWatermarksSettings(NielsenWatermarksSettingsT&& value) { m_nielsenWatermarksSettingsHasBeenSet = true; m_nielsenWatermarksSettings = std::forward<NielsenWatermarksSettingsT>(value); }
+    template<typename NielsenWatermarksSettingsT = NielsenWatermarksSettings>
+    AudioWatermarkSettings& WithNielsenWatermarksSettings(NielsenWatermarksSettingsT&& value) { SetNielsenWatermarksSettings(std::forward<NielsenWatermarksSettingsT>(value)); return *this;}
     ///@}
   private:
 

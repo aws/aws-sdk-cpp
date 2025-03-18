@@ -18,13 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-AssociationListing::AssociationListing() : 
-    m_resourceHasBeenSet(false)
-{
-}
-
 AssociationListing::AssociationListing(JsonView jsonValue)
-  : AssociationListing()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssociationListing& AssociationListing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = jsonValue.GetString("Resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

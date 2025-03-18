@@ -29,7 +29,7 @@ namespace Model
   class ListChannelNamespacesResult
   {
   public:
-    AWS_APPSYNC_API ListChannelNamespacesResult();
+    AWS_APPSYNC_API ListChannelNamespacesResult() = default;
     AWS_APPSYNC_API ListChannelNamespacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API ListChannelNamespacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The <code>ChannelNamespace</code> objects.</p>
      */
-    inline const Aws::Vector<ChannelNamespace>& GetChannelNamespaces() const{ return m_channelNamespaces; }
-    inline void SetChannelNamespaces(const Aws::Vector<ChannelNamespace>& value) { m_channelNamespaces = value; }
-    inline void SetChannelNamespaces(Aws::Vector<ChannelNamespace>&& value) { m_channelNamespaces = std::move(value); }
-    inline ListChannelNamespacesResult& WithChannelNamespaces(const Aws::Vector<ChannelNamespace>& value) { SetChannelNamespaces(value); return *this;}
-    inline ListChannelNamespacesResult& WithChannelNamespaces(Aws::Vector<ChannelNamespace>&& value) { SetChannelNamespaces(std::move(value)); return *this;}
-    inline ListChannelNamespacesResult& AddChannelNamespaces(const ChannelNamespace& value) { m_channelNamespaces.push_back(value); return *this; }
-    inline ListChannelNamespacesResult& AddChannelNamespaces(ChannelNamespace&& value) { m_channelNamespaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChannelNamespace>& GetChannelNamespaces() const { return m_channelNamespaces; }
+    template<typename ChannelNamespacesT = Aws::Vector<ChannelNamespace>>
+    void SetChannelNamespaces(ChannelNamespacesT&& value) { m_channelNamespacesHasBeenSet = true; m_channelNamespaces = std::forward<ChannelNamespacesT>(value); }
+    template<typename ChannelNamespacesT = Aws::Vector<ChannelNamespace>>
+    ListChannelNamespacesResult& WithChannelNamespaces(ChannelNamespacesT&& value) { SetChannelNamespaces(std::forward<ChannelNamespacesT>(value)); return *this;}
+    template<typename ChannelNamespacesT = ChannelNamespace>
+    ListChannelNamespacesResult& AddChannelNamespaces(ChannelNamespacesT&& value) { m_channelNamespacesHasBeenSet = true; m_channelNamespaces.emplace_back(std::forward<ChannelNamespacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which you can use to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListChannelNamespacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChannelNamespacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChannelNamespacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChannelNamespacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListChannelNamespacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListChannelNamespacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListChannelNamespacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListChannelNamespacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChannelNamespace> m_channelNamespaces;
+    bool m_channelNamespacesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

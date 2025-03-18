@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeleteEventsByEventTypeStatusRequest::GetDeleteEventsByEventTypeStatusRequest() : 
-    m_eventTypeNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDeleteEventsByEventTypeStatusRequest::SerializePayload() const
 {
   JsonValue payload;

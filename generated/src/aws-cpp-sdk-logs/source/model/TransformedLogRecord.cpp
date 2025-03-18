@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-TransformedLogRecord::TransformedLogRecord() : 
-    m_eventNumber(0),
-    m_eventNumberHasBeenSet(false),
-    m_eventMessageHasBeenSet(false),
-    m_transformedEventMessageHasBeenSet(false)
-{
-}
-
 TransformedLogRecord::TransformedLogRecord(JsonView jsonValue)
-  : TransformedLogRecord()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TransformedLogRecord& TransformedLogRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventNumber"))
   {
     m_eventNumber = jsonValue.GetInt64("eventNumber");
-
     m_eventNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventMessage"))
   {
     m_eventMessage = jsonValue.GetString("eventMessage");
-
     m_eventMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformedEventMessage"))
   {
     m_transformedEventMessage = jsonValue.GetString("transformedEventMessage");
-
     m_transformedEventMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

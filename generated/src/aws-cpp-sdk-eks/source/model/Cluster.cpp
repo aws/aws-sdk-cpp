@@ -18,39 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_resourcesVpcConfigHasBeenSet(false),
-    m_kubernetesNetworkConfigHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_status(ClusterStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificateAuthorityHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false),
-    m_connectorConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_healthHasBeenSet(false),
-    m_outpostConfigHasBeenSet(false),
-    m_accessConfigHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false),
-    m_zonalShiftConfigHasBeenSet(false),
-    m_remoteNetworkConfigHasBeenSet(false),
-    m_computeConfigHasBeenSet(false),
-    m_storageConfigHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -60,101 +28,73 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesVpcConfig"))
   {
     m_resourcesVpcConfig = jsonValue.GetObject("resourcesVpcConfig");
-
     m_resourcesVpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesNetworkConfig"))
   {
     m_kubernetesNetworkConfig = jsonValue.GetObject("kubernetesNetworkConfig");
-
     m_kubernetesNetworkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logging"))
   {
     m_logging = jsonValue.GetObject("logging");
-
     m_loggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identity"))
   {
     m_identity = jsonValue.GetObject("identity");
-
     m_identityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateAuthority"))
   {
     m_certificateAuthority = jsonValue.GetObject("certificateAuthority");
-
     m_certificateAuthorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
     m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformVersion"))
   {
     m_platformVersion = jsonValue.GetString("platformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -164,7 +104,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionConfig"))
   {
     Aws::Utils::Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
@@ -174,77 +113,56 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_encryptionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorConfig"))
   {
     m_connectorConfig = jsonValue.GetObject("connectorConfig");
-
     m_connectorConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = jsonValue.GetObject("health");
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outpostConfig"))
   {
     m_outpostConfig = jsonValue.GetObject("outpostConfig");
-
     m_outpostConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessConfig"))
   {
     m_accessConfig = jsonValue.GetObject("accessConfig");
-
     m_accessConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upgradePolicy"))
   {
     m_upgradePolicy = jsonValue.GetObject("upgradePolicy");
-
     m_upgradePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalShiftConfig"))
   {
     m_zonalShiftConfig = jsonValue.GetObject("zonalShiftConfig");
-
     m_zonalShiftConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteNetworkConfig"))
   {
     m_remoteNetworkConfig = jsonValue.GetObject("remoteNetworkConfig");
-
     m_remoteNetworkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeConfig"))
   {
     m_computeConfig = jsonValue.GetObject("computeConfig");
-
     m_computeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageConfig"))
   {
     m_storageConfig = jsonValue.GetObject("storageConfig");
-
     m_storageConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

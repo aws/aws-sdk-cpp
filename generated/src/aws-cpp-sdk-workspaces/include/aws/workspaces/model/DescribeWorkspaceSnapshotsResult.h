@@ -29,7 +29,7 @@ namespace Model
   class DescribeWorkspaceSnapshotsResult
   {
   public:
-    AWS_WORKSPACES_API DescribeWorkspaceSnapshotsResult();
+    AWS_WORKSPACES_API DescribeWorkspaceSnapshotsResult() = default;
     AWS_WORKSPACES_API DescribeWorkspaceSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeWorkspaceSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
      * These snapshots include the user volume.</p>
      */
-    inline const Aws::Vector<Snapshot>& GetRebuildSnapshots() const{ return m_rebuildSnapshots; }
-    inline void SetRebuildSnapshots(const Aws::Vector<Snapshot>& value) { m_rebuildSnapshots = value; }
-    inline void SetRebuildSnapshots(Aws::Vector<Snapshot>&& value) { m_rebuildSnapshots = std::move(value); }
-    inline DescribeWorkspaceSnapshotsResult& WithRebuildSnapshots(const Aws::Vector<Snapshot>& value) { SetRebuildSnapshots(value); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& WithRebuildSnapshots(Aws::Vector<Snapshot>&& value) { SetRebuildSnapshots(std::move(value)); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& AddRebuildSnapshots(const Snapshot& value) { m_rebuildSnapshots.push_back(value); return *this; }
-    inline DescribeWorkspaceSnapshotsResult& AddRebuildSnapshots(Snapshot&& value) { m_rebuildSnapshots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Snapshot>& GetRebuildSnapshots() const { return m_rebuildSnapshots; }
+    template<typename RebuildSnapshotsT = Aws::Vector<Snapshot>>
+    void SetRebuildSnapshots(RebuildSnapshotsT&& value) { m_rebuildSnapshotsHasBeenSet = true; m_rebuildSnapshots = std::forward<RebuildSnapshotsT>(value); }
+    template<typename RebuildSnapshotsT = Aws::Vector<Snapshot>>
+    DescribeWorkspaceSnapshotsResult& WithRebuildSnapshots(RebuildSnapshotsT&& value) { SetRebuildSnapshots(std::forward<RebuildSnapshotsT>(value)); return *this;}
+    template<typename RebuildSnapshotsT = Snapshot>
+    DescribeWorkspaceSnapshotsResult& AddRebuildSnapshots(RebuildSnapshotsT&& value) { m_rebuildSnapshotsHasBeenSet = true; m_rebuildSnapshots.emplace_back(std::forward<RebuildSnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p>Information about the snapshots that can be used to restore a WorkSpace.
      * These snapshots include both the root volume and the user volume.</p>
      */
-    inline const Aws::Vector<Snapshot>& GetRestoreSnapshots() const{ return m_restoreSnapshots; }
-    inline void SetRestoreSnapshots(const Aws::Vector<Snapshot>& value) { m_restoreSnapshots = value; }
-    inline void SetRestoreSnapshots(Aws::Vector<Snapshot>&& value) { m_restoreSnapshots = std::move(value); }
-    inline DescribeWorkspaceSnapshotsResult& WithRestoreSnapshots(const Aws::Vector<Snapshot>& value) { SetRestoreSnapshots(value); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& WithRestoreSnapshots(Aws::Vector<Snapshot>&& value) { SetRestoreSnapshots(std::move(value)); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& AddRestoreSnapshots(const Snapshot& value) { m_restoreSnapshots.push_back(value); return *this; }
-    inline DescribeWorkspaceSnapshotsResult& AddRestoreSnapshots(Snapshot&& value) { m_restoreSnapshots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Snapshot>& GetRestoreSnapshots() const { return m_restoreSnapshots; }
+    template<typename RestoreSnapshotsT = Aws::Vector<Snapshot>>
+    void SetRestoreSnapshots(RestoreSnapshotsT&& value) { m_restoreSnapshotsHasBeenSet = true; m_restoreSnapshots = std::forward<RestoreSnapshotsT>(value); }
+    template<typename RestoreSnapshotsT = Aws::Vector<Snapshot>>
+    DescribeWorkspaceSnapshotsResult& WithRestoreSnapshots(RestoreSnapshotsT&& value) { SetRestoreSnapshots(std::forward<RestoreSnapshotsT>(value)); return *this;}
+    template<typename RestoreSnapshotsT = Snapshot>
+    DescribeWorkspaceSnapshotsResult& AddRestoreSnapshots(RestoreSnapshotsT&& value) { m_restoreSnapshotsHasBeenSet = true; m_restoreSnapshots.emplace_back(std::forward<RestoreSnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorkspaceSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorkspaceSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorkspaceSnapshotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Snapshot> m_rebuildSnapshots;
+    bool m_rebuildSnapshotsHasBeenSet = false;
 
     Aws::Vector<Snapshot> m_restoreSnapshots;
+    bool m_restoreSnapshotsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

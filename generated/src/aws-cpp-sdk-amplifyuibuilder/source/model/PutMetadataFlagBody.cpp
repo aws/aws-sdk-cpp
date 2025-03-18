@@ -18,13 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-PutMetadataFlagBody::PutMetadataFlagBody() : 
-    m_newValueHasBeenSet(false)
-{
-}
-
 PutMetadataFlagBody::PutMetadataFlagBody(JsonView jsonValue)
-  : PutMetadataFlagBody()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PutMetadataFlagBody& PutMetadataFlagBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("newValue"))
   {
     m_newValue = jsonValue.GetString("newValue");
-
     m_newValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRelayResult::CreateRelayResult()
-{
-}
-
 CreateRelayResult::CreateRelayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRelayResult& CreateRelayResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("RelayId"))
   {
     m_relayId = jsonValue.GetString("RelayId");
-
+    m_relayIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

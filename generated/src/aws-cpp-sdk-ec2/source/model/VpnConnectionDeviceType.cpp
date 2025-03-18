@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnectionDeviceType::VpnConnectionDeviceType() : 
-    m_vpnConnectionDeviceTypeIdHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_softwareHasBeenSet(false)
-{
-}
-
 VpnConnectionDeviceType::VpnConnectionDeviceType(const XmlNode& xmlNode)
-  : VpnConnectionDeviceType()
 {
   *this = xmlNode;
 }

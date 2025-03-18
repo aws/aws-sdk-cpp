@@ -27,7 +27,7 @@ namespace Model
   class CreateResolverRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API CreateResolverRequest();
+    AWS_APPSYNC_API CreateResolverRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>The ID for the GraphQL API for which the resolver is being created.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline CreateResolverRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline CreateResolverRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    CreateResolverRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>Type</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline CreateResolverRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline CreateResolverRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    CreateResolverRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the field to attach the resolver to.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline CreateResolverRequest& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline CreateResolverRequest& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    CreateResolverRequest& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data source for which the resolver is being created.</p>
      */
-    inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+    inline const Aws::String& GetDataSourceName() const { return m_dataSourceName; }
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-    inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-    inline void SetDataSourceName(const char* value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName.assign(value); }
-    inline CreateResolverRequest& WithDataSourceName(const Aws::String& value) { SetDataSourceName(value); return *this;}
-    inline CreateResolverRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+    template<typename DataSourceNameT = Aws::String>
+    void SetDataSourceName(DataSourceNameT&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::forward<DataSourceNameT>(value); }
+    template<typename DataSourceNameT = Aws::String>
+    CreateResolverRequest& WithDataSourceName(DataSourceNameT&& value) { SetDataSourceName(std::forward<DataSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,28 +95,24 @@ namespace Model
      * Lambda data source. For all other data sources, VTL request and response mapping
      * templates are required.</p>
      */
-    inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
+    inline const Aws::String& GetRequestMappingTemplate() const { return m_requestMappingTemplate; }
     inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
-    inline void SetRequestMappingTemplate(const Aws::String& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = value; }
-    inline void SetRequestMappingTemplate(Aws::String&& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = std::move(value); }
-    inline void SetRequestMappingTemplate(const char* value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate.assign(value); }
-    inline CreateResolverRequest& WithRequestMappingTemplate(const Aws::String& value) { SetRequestMappingTemplate(value); return *this;}
-    inline CreateResolverRequest& WithRequestMappingTemplate(Aws::String&& value) { SetRequestMappingTemplate(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithRequestMappingTemplate(const char* value) { SetRequestMappingTemplate(value); return *this;}
+    template<typename RequestMappingTemplateT = Aws::String>
+    void SetRequestMappingTemplate(RequestMappingTemplateT&& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = std::forward<RequestMappingTemplateT>(value); }
+    template<typename RequestMappingTemplateT = Aws::String>
+    CreateResolverRequest& WithRequestMappingTemplate(RequestMappingTemplateT&& value) { SetRequestMappingTemplate(std::forward<RequestMappingTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mapping template to use for responses from the data source.</p>
      */
-    inline const Aws::String& GetResponseMappingTemplate() const{ return m_responseMappingTemplate; }
+    inline const Aws::String& GetResponseMappingTemplate() const { return m_responseMappingTemplate; }
     inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
-    inline void SetResponseMappingTemplate(const Aws::String& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = value; }
-    inline void SetResponseMappingTemplate(Aws::String&& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = std::move(value); }
-    inline void SetResponseMappingTemplate(const char* value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate.assign(value); }
-    inline CreateResolverRequest& WithResponseMappingTemplate(const Aws::String& value) { SetResponseMappingTemplate(value); return *this;}
-    inline CreateResolverRequest& WithResponseMappingTemplate(Aws::String&& value) { SetResponseMappingTemplate(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithResponseMappingTemplate(const char* value) { SetResponseMappingTemplate(value); return *this;}
+    template<typename ResponseMappingTemplateT = Aws::String>
+    void SetResponseMappingTemplate(ResponseMappingTemplateT&& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = std::forward<ResponseMappingTemplateT>(value); }
+    template<typename ResponseMappingTemplateT = Aws::String>
+    CreateResolverRequest& WithResponseMappingTemplate(ResponseMappingTemplateT&& value) { SetResponseMappingTemplate(std::forward<ResponseMappingTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,24 +124,22 @@ namespace Model
      * <code>Function</code> objects in a serial manner. You can use a pipeline
      * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
-    inline const ResolverKind& GetKind() const{ return m_kind; }
+    inline ResolverKind GetKind() const { return m_kind; }
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
-    inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
-    inline void SetKind(ResolverKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
-    inline CreateResolverRequest& WithKind(const ResolverKind& value) { SetKind(value); return *this;}
-    inline CreateResolverRequest& WithKind(ResolverKind&& value) { SetKind(std::move(value)); return *this;}
+    inline void SetKind(ResolverKind value) { m_kindHasBeenSet = true; m_kind = value; }
+    inline CreateResolverRequest& WithKind(ResolverKind value) { SetKind(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>PipelineConfig</code>.</p>
      */
-    inline const PipelineConfig& GetPipelineConfig() const{ return m_pipelineConfig; }
+    inline const PipelineConfig& GetPipelineConfig() const { return m_pipelineConfig; }
     inline bool PipelineConfigHasBeenSet() const { return m_pipelineConfigHasBeenSet; }
-    inline void SetPipelineConfig(const PipelineConfig& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = value; }
-    inline void SetPipelineConfig(PipelineConfig&& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = std::move(value); }
-    inline CreateResolverRequest& WithPipelineConfig(const PipelineConfig& value) { SetPipelineConfig(value); return *this;}
-    inline CreateResolverRequest& WithPipelineConfig(PipelineConfig&& value) { SetPipelineConfig(std::move(value)); return *this;}
+    template<typename PipelineConfigT = PipelineConfig>
+    void SetPipelineConfig(PipelineConfigT&& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = std::forward<PipelineConfigT>(value); }
+    template<typename PipelineConfigT = PipelineConfig>
+    CreateResolverRequest& WithPipelineConfig(PipelineConfigT&& value) { SetPipelineConfig(std::forward<PipelineConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,31 +147,31 @@ namespace Model
      * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
      * source.</p>
      */
-    inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
+    inline const SyncConfig& GetSyncConfig() const { return m_syncConfig; }
     inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
-    inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
-    inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
-    inline CreateResolverRequest& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
-    inline CreateResolverRequest& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
+    template<typename SyncConfigT = SyncConfig>
+    void SetSyncConfig(SyncConfigT&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::forward<SyncConfigT>(value); }
+    template<typename SyncConfigT = SyncConfig>
+    CreateResolverRequest& WithSyncConfig(SyncConfigT&& value) { SetSyncConfig(std::forward<SyncConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The caching configuration for the resolver.</p>
      */
-    inline const CachingConfig& GetCachingConfig() const{ return m_cachingConfig; }
+    inline const CachingConfig& GetCachingConfig() const { return m_cachingConfig; }
     inline bool CachingConfigHasBeenSet() const { return m_cachingConfigHasBeenSet; }
-    inline void SetCachingConfig(const CachingConfig& value) { m_cachingConfigHasBeenSet = true; m_cachingConfig = value; }
-    inline void SetCachingConfig(CachingConfig&& value) { m_cachingConfigHasBeenSet = true; m_cachingConfig = std::move(value); }
-    inline CreateResolverRequest& WithCachingConfig(const CachingConfig& value) { SetCachingConfig(value); return *this;}
-    inline CreateResolverRequest& WithCachingConfig(CachingConfig&& value) { SetCachingConfig(std::move(value)); return *this;}
+    template<typename CachingConfigT = CachingConfig>
+    void SetCachingConfig(CachingConfigT&& value) { m_cachingConfigHasBeenSet = true; m_cachingConfig = std::forward<CachingConfigT>(value); }
+    template<typename CachingConfigT = CachingConfig>
+    CreateResolverRequest& WithCachingConfig(CachingConfigT&& value) { SetCachingConfig(std::forward<CachingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum batching size for a resolver.</p>
      */
-    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+    inline int GetMaxBatchSize() const { return m_maxBatchSize; }
     inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
     inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
     inline CreateResolverRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
@@ -193,12 +179,12 @@ namespace Model
 
     ///@{
     
-    inline const AppSyncRuntime& GetRuntime() const{ return m_runtime; }
+    inline const AppSyncRuntime& GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const AppSyncRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(AppSyncRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline CreateResolverRequest& WithRuntime(const AppSyncRuntime& value) { SetRuntime(value); return *this;}
-    inline CreateResolverRequest& WithRuntime(AppSyncRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+    template<typename RuntimeT = AppSyncRuntime>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = AppSyncRuntime>
+    CreateResolverRequest& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +193,12 @@ namespace Model
      * functions. When code is used, the <code>runtime</code> is required. The
      * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline CreateResolverRequest& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline CreateResolverRequest& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline CreateResolverRequest& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    CreateResolverRequest& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +213,10 @@ namespace Model
      * <code>metricsConfig</code> can be <code>ENABLED</code> or
      * <code>DISABLED</code>.</p>
      */
-    inline const ResolverLevelMetricsConfig& GetMetricsConfig() const{ return m_metricsConfig; }
+    inline ResolverLevelMetricsConfig GetMetricsConfig() const { return m_metricsConfig; }
     inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
-    inline void SetMetricsConfig(const ResolverLevelMetricsConfig& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = value; }
-    inline void SetMetricsConfig(ResolverLevelMetricsConfig&& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = std::move(value); }
-    inline CreateResolverRequest& WithMetricsConfig(const ResolverLevelMetricsConfig& value) { SetMetricsConfig(value); return *this;}
-    inline CreateResolverRequest& WithMetricsConfig(ResolverLevelMetricsConfig&& value) { SetMetricsConfig(std::move(value)); return *this;}
+    inline void SetMetricsConfig(ResolverLevelMetricsConfig value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = value; }
+    inline CreateResolverRequest& WithMetricsConfig(ResolverLevelMetricsConfig value) { SetMetricsConfig(value); return *this;}
     ///@}
   private:
 
@@ -256,7 +238,7 @@ namespace Model
     Aws::String m_responseMappingTemplate;
     bool m_responseMappingTemplateHasBeenSet = false;
 
-    ResolverKind m_kind;
+    ResolverKind m_kind{ResolverKind::NOT_SET};
     bool m_kindHasBeenSet = false;
 
     PipelineConfig m_pipelineConfig;
@@ -268,7 +250,7 @@ namespace Model
     CachingConfig m_cachingConfig;
     bool m_cachingConfigHasBeenSet = false;
 
-    int m_maxBatchSize;
+    int m_maxBatchSize{0};
     bool m_maxBatchSizeHasBeenSet = false;
 
     AppSyncRuntime m_runtime;
@@ -277,7 +259,7 @@ namespace Model
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
-    ResolverLevelMetricsConfig m_metricsConfig;
+    ResolverLevelMetricsConfig m_metricsConfig{ResolverLevelMetricsConfig::NOT_SET};
     bool m_metricsConfigHasBeenSet = false;
   };
 

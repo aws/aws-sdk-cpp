@@ -22,7 +22,7 @@ namespace Model
   class ReplaceImageCriteriaInAllowedImagesSettingsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ReplaceImageCriteriaInAllowedImagesSettingsRequest();
+    AWS_EC2_API ReplaceImageCriteriaInAllowedImagesSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,14 @@ namespace Model
      * discoverable and usable in the account in the specified Amazon Web Services
      * Region.</p>
      */
-    inline const Aws::Vector<ImageCriterionRequest>& GetImageCriteria() const{ return m_imageCriteria; }
+    inline const Aws::Vector<ImageCriterionRequest>& GetImageCriteria() const { return m_imageCriteria; }
     inline bool ImageCriteriaHasBeenSet() const { return m_imageCriteriaHasBeenSet; }
-    inline void SetImageCriteria(const Aws::Vector<ImageCriterionRequest>& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria = value; }
-    inline void SetImageCriteria(Aws::Vector<ImageCriterionRequest>&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria = std::move(value); }
-    inline ReplaceImageCriteriaInAllowedImagesSettingsRequest& WithImageCriteria(const Aws::Vector<ImageCriterionRequest>& value) { SetImageCriteria(value); return *this;}
-    inline ReplaceImageCriteriaInAllowedImagesSettingsRequest& WithImageCriteria(Aws::Vector<ImageCriterionRequest>&& value) { SetImageCriteria(std::move(value)); return *this;}
-    inline ReplaceImageCriteriaInAllowedImagesSettingsRequest& AddImageCriteria(const ImageCriterionRequest& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria.push_back(value); return *this; }
-    inline ReplaceImageCriteriaInAllowedImagesSettingsRequest& AddImageCriteria(ImageCriterionRequest&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria.push_back(std::move(value)); return *this; }
+    template<typename ImageCriteriaT = Aws::Vector<ImageCriterionRequest>>
+    void SetImageCriteria(ImageCriteriaT&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria = std::forward<ImageCriteriaT>(value); }
+    template<typename ImageCriteriaT = Aws::Vector<ImageCriterionRequest>>
+    ReplaceImageCriteriaInAllowedImagesSettingsRequest& WithImageCriteria(ImageCriteriaT&& value) { SetImageCriteria(std::forward<ImageCriteriaT>(value)); return *this;}
+    template<typename ImageCriteriaT = ImageCriterionRequest>
+    ReplaceImageCriteriaInAllowedImagesSettingsRequest& AddImageCriteria(ImageCriteriaT&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria.emplace_back(std::forward<ImageCriteriaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReplaceImageCriteriaInAllowedImagesSettingsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     Aws::Vector<ImageCriterionRequest> m_imageCriteria;
     bool m_imageCriteriaHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_recommendationTextHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recommendationText"))
   {
     m_recommendationText = jsonValue.GetString("recommendationText");
-
     m_recommendationTextHasBeenSet = true;
   }
-
   return *this;
 }
 

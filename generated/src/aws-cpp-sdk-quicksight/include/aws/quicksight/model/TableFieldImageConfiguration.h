@@ -31,7 +31,7 @@ namespace Model
   class TableFieldImageConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API TableFieldImageConfiguration();
+    AWS_QUICKSIGHT_API TableFieldImageConfiguration() = default;
     AWS_QUICKSIGHT_API TableFieldImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableFieldImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The sizing options for the table image configuration.</p>
      */
-    inline const TableCellImageSizingConfiguration& GetSizingOptions() const{ return m_sizingOptions; }
+    inline const TableCellImageSizingConfiguration& GetSizingOptions() const { return m_sizingOptions; }
     inline bool SizingOptionsHasBeenSet() const { return m_sizingOptionsHasBeenSet; }
-    inline void SetSizingOptions(const TableCellImageSizingConfiguration& value) { m_sizingOptionsHasBeenSet = true; m_sizingOptions = value; }
-    inline void SetSizingOptions(TableCellImageSizingConfiguration&& value) { m_sizingOptionsHasBeenSet = true; m_sizingOptions = std::move(value); }
-    inline TableFieldImageConfiguration& WithSizingOptions(const TableCellImageSizingConfiguration& value) { SetSizingOptions(value); return *this;}
-    inline TableFieldImageConfiguration& WithSizingOptions(TableCellImageSizingConfiguration&& value) { SetSizingOptions(std::move(value)); return *this;}
+    template<typename SizingOptionsT = TableCellImageSizingConfiguration>
+    void SetSizingOptions(SizingOptionsT&& value) { m_sizingOptionsHasBeenSet = true; m_sizingOptions = std::forward<SizingOptionsT>(value); }
+    template<typename SizingOptionsT = TableCellImageSizingConfiguration>
+    TableFieldImageConfiguration& WithSizingOptions(SizingOptionsT&& value) { SetSizingOptions(std::forward<SizingOptionsT>(value)); return *this;}
     ///@}
   private:
 

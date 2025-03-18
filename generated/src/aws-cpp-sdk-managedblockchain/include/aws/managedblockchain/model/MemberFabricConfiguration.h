@@ -33,7 +33,7 @@ namespace Model
   class MemberFabricConfiguration
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration() = default;
     AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The user name for the member's initial administrative user.</p>
      */
-    inline const Aws::String& GetAdminUsername() const{ return m_adminUsername; }
+    inline const Aws::String& GetAdminUsername() const { return m_adminUsername; }
     inline bool AdminUsernameHasBeenSet() const { return m_adminUsernameHasBeenSet; }
-    inline void SetAdminUsername(const Aws::String& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = value; }
-    inline void SetAdminUsername(Aws::String&& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = std::move(value); }
-    inline void SetAdminUsername(const char* value) { m_adminUsernameHasBeenSet = true; m_adminUsername.assign(value); }
-    inline MemberFabricConfiguration& WithAdminUsername(const Aws::String& value) { SetAdminUsername(value); return *this;}
-    inline MemberFabricConfiguration& WithAdminUsername(Aws::String&& value) { SetAdminUsername(std::move(value)); return *this;}
-    inline MemberFabricConfiguration& WithAdminUsername(const char* value) { SetAdminUsername(value); return *this;}
+    template<typename AdminUsernameT = Aws::String>
+    void SetAdminUsername(AdminUsernameT&& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = std::forward<AdminUsernameT>(value); }
+    template<typename AdminUsernameT = Aws::String>
+    MemberFabricConfiguration& WithAdminUsername(AdminUsernameT&& value) { SetAdminUsername(std::forward<AdminUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
-    inline const Aws::String& GetAdminPassword() const{ return m_adminPassword; }
+    inline const Aws::String& GetAdminPassword() const { return m_adminPassword; }
     inline bool AdminPasswordHasBeenSet() const { return m_adminPasswordHasBeenSet; }
-    inline void SetAdminPassword(const Aws::String& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = value; }
-    inline void SetAdminPassword(Aws::String&& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = std::move(value); }
-    inline void SetAdminPassword(const char* value) { m_adminPasswordHasBeenSet = true; m_adminPassword.assign(value); }
-    inline MemberFabricConfiguration& WithAdminPassword(const Aws::String& value) { SetAdminPassword(value); return *this;}
-    inline MemberFabricConfiguration& WithAdminPassword(Aws::String&& value) { SetAdminPassword(std::move(value)); return *this;}
-    inline MemberFabricConfiguration& WithAdminPassword(const char* value) { SetAdminPassword(value); return *this;}
+    template<typename AdminPasswordT = Aws::String>
+    void SetAdminPassword(AdminPasswordT&& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = std::forward<AdminPasswordT>(value); }
+    template<typename AdminPasswordT = Aws::String>
+    MemberFabricConfiguration& WithAdminPassword(AdminPasswordT&& value) { SetAdminPassword(std::forward<AdminPasswordT>(value)); return *this;}
     ///@}
   private:
 

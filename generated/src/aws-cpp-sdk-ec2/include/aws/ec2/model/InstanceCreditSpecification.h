@@ -32,7 +32,7 @@ namespace Model
   class InstanceCreditSpecification
   {
   public:
-    AWS_EC2_API InstanceCreditSpecification();
+    AWS_EC2_API InstanceCreditSpecification() = default;
     AWS_EC2_API InstanceCreditSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceCreditSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline InstanceCreditSpecification& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline InstanceCreditSpecification& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline InstanceCreditSpecification& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    InstanceCreditSpecification& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
      * <code>standard</code> | <code>unlimited</code> </p>
      */
-    inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
+    inline const Aws::String& GetCpuCredits() const { return m_cpuCredits; }
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
-    inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
-    inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
-    inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
-    inline InstanceCreditSpecification& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
-    inline InstanceCreditSpecification& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
-    inline InstanceCreditSpecification& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
+    template<typename CpuCreditsT = Aws::String>
+    void SetCpuCredits(CpuCreditsT&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::forward<CpuCreditsT>(value); }
+    template<typename CpuCreditsT = Aws::String>
+    InstanceCreditSpecification& WithCpuCredits(CpuCreditsT&& value) { SetCpuCredits(std::forward<CpuCreditsT>(value)); return *this;}
     ///@}
   private:
 

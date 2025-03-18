@@ -28,7 +28,7 @@ namespace Model
   class DeleteACLResult
   {
   public:
-    AWS_MEMORYDB_API DeleteACLResult();
+    AWS_MEMORYDB_API DeleteACLResult() = default;
     AWS_MEMORYDB_API DeleteACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API DeleteACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Access Control List object that has been deleted.</p>
      */
-    inline const ACL& GetACL() const{ return m_aCL; }
-    inline void SetACL(const ACL& value) { m_aCL = value; }
-    inline void SetACL(ACL&& value) { m_aCL = std::move(value); }
-    inline DeleteACLResult& WithACL(const ACL& value) { SetACL(value); return *this;}
-    inline DeleteACLResult& WithACL(ACL&& value) { SetACL(std::move(value)); return *this;}
+    inline const ACL& GetACL() const { return m_aCL; }
+    template<typename ACLT = ACL>
+    void SetACL(ACLT&& value) { m_aCLHasBeenSet = true; m_aCL = std::forward<ACLT>(value); }
+    template<typename ACLT = ACL>
+    DeleteACLResult& WithACL(ACLT&& value) { SetACL(std::forward<ACLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteACLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteACLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteACLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteACLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ACL m_aCL;
+    bool m_aCLHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

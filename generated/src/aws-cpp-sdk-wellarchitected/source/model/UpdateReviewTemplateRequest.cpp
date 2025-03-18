@@ -12,16 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReviewTemplateRequest::UpdateReviewTemplateRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_lensesToAssociateHasBeenSet(false),
-    m_lensesToDisassociateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReviewTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

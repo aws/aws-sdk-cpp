@@ -20,18 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-DBSubnetGroup::DBSubnetGroup() : 
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_dBSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_dBSubnetGroupArnHasBeenSet(false)
-{
-}
-
 DBSubnetGroup::DBSubnetGroup(const XmlNode& xmlNode)
-  : DBSubnetGroup()
 {
   *this = xmlNode;
 }
@@ -70,6 +59,7 @@ DBSubnetGroup& DBSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("Subnet");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);

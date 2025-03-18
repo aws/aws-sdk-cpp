@@ -12,13 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePrincipalMappingRequest::DescribePrincipalMappingRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePrincipalMappingRequest::SerializePayload() const
 {
   JsonValue payload;

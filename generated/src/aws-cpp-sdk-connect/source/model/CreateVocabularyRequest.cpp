@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVocabularyRequest::CreateVocabularyRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_instanceIdHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

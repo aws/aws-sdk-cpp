@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBatchInferenceJobRequest::DescribeBatchInferenceJobRequest() : 
-    m_batchInferenceJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBatchInferenceJobRequest::SerializePayload() const
 {
   JsonValue payload;

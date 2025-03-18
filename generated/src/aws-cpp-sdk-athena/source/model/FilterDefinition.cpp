@@ -18,13 +18,7 @@ namespace Athena
 namespace Model
 {
 
-FilterDefinition::FilterDefinition() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 FilterDefinition::FilterDefinition(JsonView jsonValue)
-  : FilterDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilterDefinition& FilterDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

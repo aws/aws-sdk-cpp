@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopySnapshotResponse::CopySnapshotResponse()
-{
-}
-
 CopySnapshotResponse::CopySnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ CopySnapshotResponse& CopySnapshotResponse::operator =(const Aws::AmazonWebServi
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
+      m_tagsHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ CopySnapshotResponse& CopySnapshotResponse::operator =(const Aws::AmazonWebServi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CopySnapshotResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

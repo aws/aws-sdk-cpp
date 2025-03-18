@@ -12,12 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateClusterRequest::BatchUpdateClusterRequest() : 
-    m_clusterNamesHasBeenSet(false),
-    m_serviceUpdateHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

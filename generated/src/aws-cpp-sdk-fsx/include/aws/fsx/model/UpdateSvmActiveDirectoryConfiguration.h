@@ -34,7 +34,7 @@ namespace Model
   class UpdateSvmActiveDirectoryConfiguration
   {
   public:
-    AWS_FSX_API UpdateSvmActiveDirectoryConfiguration();
+    AWS_FSX_API UpdateSvmActiveDirectoryConfiguration() = default;
     AWS_FSX_API UpdateSvmActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateSvmActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const SelfManagedActiveDirectoryConfigurationUpdates& GetSelfManagedActiveDirectoryConfiguration() const{ return m_selfManagedActiveDirectoryConfiguration; }
+    inline const SelfManagedActiveDirectoryConfigurationUpdates& GetSelfManagedActiveDirectoryConfiguration() const { return m_selfManagedActiveDirectoryConfiguration; }
     inline bool SelfManagedActiveDirectoryConfigurationHasBeenSet() const { return m_selfManagedActiveDirectoryConfigurationHasBeenSet; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = value; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::move(value); }
-    inline UpdateSvmActiveDirectoryConfiguration& WithSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { SetSelfManagedActiveDirectoryConfiguration(value); return *this;}
-    inline UpdateSvmActiveDirectoryConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryConfigurationUpdates>
+    void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::forward<SelfManagedActiveDirectoryConfigurationT>(value); }
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryConfigurationUpdates>
+    UpdateSvmActiveDirectoryConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { SetSelfManagedActiveDirectoryConfiguration(std::forward<SelfManagedActiveDirectoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * <p>Specifies an updated NetBIOS name of the AD computer object
      * <code>NetBiosName</code> to which an SVM is joined.</p>
      */
-    inline const Aws::String& GetNetBiosName() const{ return m_netBiosName; }
+    inline const Aws::String& GetNetBiosName() const { return m_netBiosName; }
     inline bool NetBiosNameHasBeenSet() const { return m_netBiosNameHasBeenSet; }
-    inline void SetNetBiosName(const Aws::String& value) { m_netBiosNameHasBeenSet = true; m_netBiosName = value; }
-    inline void SetNetBiosName(Aws::String&& value) { m_netBiosNameHasBeenSet = true; m_netBiosName = std::move(value); }
-    inline void SetNetBiosName(const char* value) { m_netBiosNameHasBeenSet = true; m_netBiosName.assign(value); }
-    inline UpdateSvmActiveDirectoryConfiguration& WithNetBiosName(const Aws::String& value) { SetNetBiosName(value); return *this;}
-    inline UpdateSvmActiveDirectoryConfiguration& WithNetBiosName(Aws::String&& value) { SetNetBiosName(std::move(value)); return *this;}
-    inline UpdateSvmActiveDirectoryConfiguration& WithNetBiosName(const char* value) { SetNetBiosName(value); return *this;}
+    template<typename NetBiosNameT = Aws::String>
+    void SetNetBiosName(NetBiosNameT&& value) { m_netBiosNameHasBeenSet = true; m_netBiosName = std::forward<NetBiosNameT>(value); }
+    template<typename NetBiosNameT = Aws::String>
+    UpdateSvmActiveDirectoryConfiguration& WithNetBiosName(NetBiosNameT&& value) { SetNetBiosName(std::forward<NetBiosNameT>(value)); return *this;}
     ///@}
   private:
 

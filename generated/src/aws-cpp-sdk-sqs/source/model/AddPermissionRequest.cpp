@@ -12,14 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddPermissionRequest::AddPermissionRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_aWSAccountIdsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 Aws::String AddPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

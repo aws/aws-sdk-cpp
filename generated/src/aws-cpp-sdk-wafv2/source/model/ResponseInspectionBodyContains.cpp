@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ResponseInspectionBodyContains::ResponseInspectionBodyContains() : 
-    m_successStringsHasBeenSet(false),
-    m_failureStringsHasBeenSet(false)
-{
-}
-
 ResponseInspectionBodyContains::ResponseInspectionBodyContains(JsonView jsonValue)
-  : ResponseInspectionBodyContains()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ResponseInspectionBodyContains& ResponseInspectionBodyContains::operator =(JsonV
     }
     m_successStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureStrings"))
   {
     Aws::Utils::Array<JsonView> failureStringsJsonList = jsonValue.GetArray("FailureStrings");
@@ -51,7 +43,6 @@ ResponseInspectionBodyContains& ResponseInspectionBodyContains::operator =(JsonV
     }
     m_failureStringsHasBeenSet = true;
   }
-
   return *this;
 }
 

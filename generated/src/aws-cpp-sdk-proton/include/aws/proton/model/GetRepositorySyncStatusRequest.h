@@ -23,7 +23,7 @@ namespace Model
   class GetRepositorySyncStatusRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API GetRepositorySyncStatusRequest();
+    AWS_PROTON_API GetRepositorySyncStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,52 +40,44 @@ namespace Model
     /**
      * <p>The repository branch.</p>
      */
-    inline const Aws::String& GetBranch() const{ return m_branch; }
+    inline const Aws::String& GetBranch() const { return m_branch; }
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-    inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
-    inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-    inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
-    inline GetRepositorySyncStatusRequest& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
-    inline GetRepositorySyncStatusRequest& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
-    inline GetRepositorySyncStatusRequest& WithBranch(const char* value) { SetBranch(value); return *this;}
+    template<typename BranchT = Aws::String>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Aws::String>
+    GetRepositorySyncStatusRequest& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline GetRepositorySyncStatusRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline GetRepositorySyncStatusRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline GetRepositorySyncStatusRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    GetRepositorySyncStatusRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository provider.</p>
      */
-    inline const RepositoryProvider& GetRepositoryProvider() const{ return m_repositoryProvider; }
+    inline RepositoryProvider GetRepositoryProvider() const { return m_repositoryProvider; }
     inline bool RepositoryProviderHasBeenSet() const { return m_repositoryProviderHasBeenSet; }
-    inline void SetRepositoryProvider(const RepositoryProvider& value) { m_repositoryProviderHasBeenSet = true; m_repositoryProvider = value; }
-    inline void SetRepositoryProvider(RepositoryProvider&& value) { m_repositoryProviderHasBeenSet = true; m_repositoryProvider = std::move(value); }
-    inline GetRepositorySyncStatusRequest& WithRepositoryProvider(const RepositoryProvider& value) { SetRepositoryProvider(value); return *this;}
-    inline GetRepositorySyncStatusRequest& WithRepositoryProvider(RepositoryProvider&& value) { SetRepositoryProvider(std::move(value)); return *this;}
+    inline void SetRepositoryProvider(RepositoryProvider value) { m_repositoryProviderHasBeenSet = true; m_repositoryProvider = value; }
+    inline GetRepositorySyncStatusRequest& WithRepositoryProvider(RepositoryProvider value) { SetRepositoryProvider(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository sync type.</p>
      */
-    inline const SyncType& GetSyncType() const{ return m_syncType; }
+    inline SyncType GetSyncType() const { return m_syncType; }
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-    inline void SetSyncType(const SyncType& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-    inline void SetSyncType(SyncType&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-    inline GetRepositorySyncStatusRequest& WithSyncType(const SyncType& value) { SetSyncType(value); return *this;}
-    inline GetRepositorySyncStatusRequest& WithSyncType(SyncType&& value) { SetSyncType(std::move(value)); return *this;}
+    inline void SetSyncType(SyncType value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
+    inline GetRepositorySyncStatusRequest& WithSyncType(SyncType value) { SetSyncType(value); return *this;}
     ///@}
   private:
 
@@ -95,10 +87,10 @@ namespace Model
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet = false;
 
-    RepositoryProvider m_repositoryProvider;
+    RepositoryProvider m_repositoryProvider{RepositoryProvider::NOT_SET};
     bool m_repositoryProviderHasBeenSet = false;
 
-    SyncType m_syncType;
+    SyncType m_syncType{SyncType::NOT_SET};
     bool m_syncTypeHasBeenSet = false;
   };
 

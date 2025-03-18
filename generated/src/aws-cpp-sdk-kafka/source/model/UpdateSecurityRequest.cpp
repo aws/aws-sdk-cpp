@@ -12,14 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSecurityRequest::UpdateSecurityRequest() : 
-    m_clientAuthenticationHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSecurityRequest::SerializePayload() const
 {
   JsonValue payload;

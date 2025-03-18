@@ -18,19 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-BillingRecord::BillingRecord() : 
-    m_domainNameHasBeenSet(false),
-    m_operation(OperationType::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_invoiceIdHasBeenSet(false),
-    m_billDateHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false)
-{
-}
-
 BillingRecord::BillingRecord(JsonView jsonValue)
-  : BillingRecord()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ BillingRecord& BillingRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Operation"));
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvoiceId"))
   {
     m_invoiceId = jsonValue.GetString("InvoiceId");
-
     m_invoiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillDate"))
   {
     m_billDate = jsonValue.GetDouble("BillDate");
-
     m_billDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Price"))
   {
     m_price = jsonValue.GetDouble("Price");
-
     m_priceHasBeenSet = true;
   }
-
   return *this;
 }
 

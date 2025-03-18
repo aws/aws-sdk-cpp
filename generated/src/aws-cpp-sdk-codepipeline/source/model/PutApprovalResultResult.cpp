@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutApprovalResultResult::PutApprovalResultResult()
-{
-}
-
 PutApprovalResultResult::PutApprovalResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutApprovalResultResult& PutApprovalResultResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("approvedAt"))
   {
     m_approvedAt = jsonValue.GetDouble("approvedAt");
-
+    m_approvedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

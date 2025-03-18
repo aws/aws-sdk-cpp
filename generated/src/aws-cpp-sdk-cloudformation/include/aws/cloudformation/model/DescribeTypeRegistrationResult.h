@@ -29,7 +29,7 @@ namespace Model
   class DescribeTypeRegistrationResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeTypeRegistrationResult();
+    AWS_CLOUDFORMATION_API DescribeTypeRegistrationResult() = default;
     AWS_CLOUDFORMATION_API DescribeTypeRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeTypeRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,24 +38,20 @@ namespace Model
     /**
      * <p>The current status of the extension registration request.</p>
      */
-    inline const RegistrationStatus& GetProgressStatus() const{ return m_progressStatus; }
-    inline void SetProgressStatus(const RegistrationStatus& value) { m_progressStatus = value; }
-    inline void SetProgressStatus(RegistrationStatus&& value) { m_progressStatus = std::move(value); }
-    inline DescribeTypeRegistrationResult& WithProgressStatus(const RegistrationStatus& value) { SetProgressStatus(value); return *this;}
-    inline DescribeTypeRegistrationResult& WithProgressStatus(RegistrationStatus&& value) { SetProgressStatus(std::move(value)); return *this;}
+    inline RegistrationStatus GetProgressStatus() const { return m_progressStatus; }
+    inline void SetProgressStatus(RegistrationStatus value) { m_progressStatusHasBeenSet = true; m_progressStatus = value; }
+    inline DescribeTypeRegistrationResult& WithProgressStatus(RegistrationStatus value) { SetProgressStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the extension registration request.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeTypeRegistrationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeTypeRegistrationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeTypeRegistrationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeTypeRegistrationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,13 +60,11 @@ namespace Model
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
-    inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
-    inline void SetTypeArn(const Aws::String& value) { m_typeArn = value; }
-    inline void SetTypeArn(Aws::String&& value) { m_typeArn = std::move(value); }
-    inline void SetTypeArn(const char* value) { m_typeArn.assign(value); }
-    inline DescribeTypeRegistrationResult& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
-    inline DescribeTypeRegistrationResult& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
-    inline DescribeTypeRegistrationResult& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
+    inline const Aws::String& GetTypeArn() const { return m_typeArn; }
+    template<typename TypeArnT = Aws::String>
+    void SetTypeArn(TypeArnT&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::forward<TypeArnT>(value); }
+    template<typename TypeArnT = Aws::String>
+    DescribeTypeRegistrationResult& WithTypeArn(TypeArnT&& value) { SetTypeArn(std::forward<TypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,34 +74,37 @@ namespace Model
      * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
      * <code>null</code>.</p>
      */
-    inline const Aws::String& GetTypeVersionArn() const{ return m_typeVersionArn; }
-    inline void SetTypeVersionArn(const Aws::String& value) { m_typeVersionArn = value; }
-    inline void SetTypeVersionArn(Aws::String&& value) { m_typeVersionArn = std::move(value); }
-    inline void SetTypeVersionArn(const char* value) { m_typeVersionArn.assign(value); }
-    inline DescribeTypeRegistrationResult& WithTypeVersionArn(const Aws::String& value) { SetTypeVersionArn(value); return *this;}
-    inline DescribeTypeRegistrationResult& WithTypeVersionArn(Aws::String&& value) { SetTypeVersionArn(std::move(value)); return *this;}
-    inline DescribeTypeRegistrationResult& WithTypeVersionArn(const char* value) { SetTypeVersionArn(value); return *this;}
+    inline const Aws::String& GetTypeVersionArn() const { return m_typeVersionArn; }
+    template<typename TypeVersionArnT = Aws::String>
+    void SetTypeVersionArn(TypeVersionArnT&& value) { m_typeVersionArnHasBeenSet = true; m_typeVersionArn = std::forward<TypeVersionArnT>(value); }
+    template<typename TypeVersionArnT = Aws::String>
+    DescribeTypeRegistrationResult& WithTypeVersionArn(TypeVersionArnT&& value) { SetTypeVersionArn(std::forward<TypeVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTypeRegistrationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTypeRegistrationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTypeRegistrationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    RegistrationStatus m_progressStatus;
+    RegistrationStatus m_progressStatus{RegistrationStatus::NOT_SET};
+    bool m_progressStatusHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_typeArn;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::String m_typeVersionArn;
+    bool m_typeVersionArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

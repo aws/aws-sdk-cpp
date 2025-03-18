@@ -18,20 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-CalculateRouteSummary::CalculateRouteSummary() : 
-    m_routeBBoxHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false)
-{
-}
-
 CalculateRouteSummary::CalculateRouteSummary(JsonView jsonValue)
-  : CalculateRouteSummary()
 {
   *this = jsonValue;
 }
@@ -47,35 +34,26 @@ CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
     }
     m_routeBBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetDouble("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationSeconds"))
   {
     m_durationSeconds = jsonValue.GetDouble("DurationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DistanceUnit"))
   {
     m_distanceUnit = DistanceUnitMapper::GetDistanceUnitForName(jsonValue.GetString("DistanceUnit"));
-
     m_distanceUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

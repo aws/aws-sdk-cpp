@@ -32,7 +32,7 @@ namespace Model
   class CostDifference
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API CostDifference();
+    AWS_BCMPRICINGCALCULATOR_API CostDifference() = default;
     AWS_BCMPRICINGCALCULATOR_API CostDifference(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API CostDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p> The historical cost amount. </p>
      */
-    inline const CostAmount& GetHistoricalCost() const{ return m_historicalCost; }
+    inline const CostAmount& GetHistoricalCost() const { return m_historicalCost; }
     inline bool HistoricalCostHasBeenSet() const { return m_historicalCostHasBeenSet; }
-    inline void SetHistoricalCost(const CostAmount& value) { m_historicalCostHasBeenSet = true; m_historicalCost = value; }
-    inline void SetHistoricalCost(CostAmount&& value) { m_historicalCostHasBeenSet = true; m_historicalCost = std::move(value); }
-    inline CostDifference& WithHistoricalCost(const CostAmount& value) { SetHistoricalCost(value); return *this;}
-    inline CostDifference& WithHistoricalCost(CostAmount&& value) { SetHistoricalCost(std::move(value)); return *this;}
+    template<typename HistoricalCostT = CostAmount>
+    void SetHistoricalCost(HistoricalCostT&& value) { m_historicalCostHasBeenSet = true; m_historicalCost = std::forward<HistoricalCostT>(value); }
+    template<typename HistoricalCostT = CostAmount>
+    CostDifference& WithHistoricalCost(HistoricalCostT&& value) { SetHistoricalCost(std::forward<HistoricalCostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The estimated cost amount. </p>
      */
-    inline const CostAmount& GetEstimatedCost() const{ return m_estimatedCost; }
+    inline const CostAmount& GetEstimatedCost() const { return m_estimatedCost; }
     inline bool EstimatedCostHasBeenSet() const { return m_estimatedCostHasBeenSet; }
-    inline void SetEstimatedCost(const CostAmount& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = value; }
-    inline void SetEstimatedCost(CostAmount&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::move(value); }
-    inline CostDifference& WithEstimatedCost(const CostAmount& value) { SetEstimatedCost(value); return *this;}
-    inline CostDifference& WithEstimatedCost(CostAmount&& value) { SetEstimatedCost(std::move(value)); return *this;}
+    template<typename EstimatedCostT = CostAmount>
+    void SetEstimatedCost(EstimatedCostT&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::forward<EstimatedCostT>(value); }
+    template<typename EstimatedCostT = CostAmount>
+    CostDifference& WithEstimatedCost(EstimatedCostT&& value) { SetEstimatedCost(std::forward<EstimatedCostT>(value)); return *this;}
     ///@}
   private:
 

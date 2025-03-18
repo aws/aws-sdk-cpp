@@ -32,20 +32,18 @@ namespace Model
   class DescribeBandwidthRateLimitResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult();
+    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult() = default;
     AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeBandwidthRateLimitResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeBandwidthRateLimitResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeBandwidthRateLimitResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeBandwidthRateLimitResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,8 +51,8 @@ namespace Model
      * <p>The average upload bandwidth rate limit in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.</p>
      */
-    inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
-    inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSec = value; }
+    inline long long GetAverageUploadRateLimitInBitsPerSec() const { return m_averageUploadRateLimitInBitsPerSec; }
+    inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSecHasBeenSet = true; m_averageUploadRateLimitInBitsPerSec = value; }
     inline DescribeBandwidthRateLimitResult& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
     ///@}
 
@@ -63,30 +61,32 @@ namespace Model
      * <p>The average download bandwidth rate limit in bits per second. This field does
      * not appear in the response if the download rate limit is not set.</p>
      */
-    inline long long GetAverageDownloadRateLimitInBitsPerSec() const{ return m_averageDownloadRateLimitInBitsPerSec; }
-    inline void SetAverageDownloadRateLimitInBitsPerSec(long long value) { m_averageDownloadRateLimitInBitsPerSec = value; }
+    inline long long GetAverageDownloadRateLimitInBitsPerSec() const { return m_averageDownloadRateLimitInBitsPerSec; }
+    inline void SetAverageDownloadRateLimitInBitsPerSec(long long value) { m_averageDownloadRateLimitInBitsPerSecHasBeenSet = true; m_averageDownloadRateLimitInBitsPerSec = value; }
     inline DescribeBandwidthRateLimitResult& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBandwidthRateLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBandwidthRateLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBandwidthRateLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBandwidthRateLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
-    long long m_averageUploadRateLimitInBitsPerSec;
+    long long m_averageUploadRateLimitInBitsPerSec{0};
+    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
-    long long m_averageDownloadRateLimitInBitsPerSec;
+    long long m_averageDownloadRateLimitInBitsPerSec{0};
+    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

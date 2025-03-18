@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHubResult::DescribeHubResult() : 
-    m_hubStatus(HubStatus::NOT_SET)
-{
-}
-
 DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeHubResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ DescribeHubResult& DescribeHubResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("HubName"))
   {
     m_hubName = jsonValue.GetString("HubName");
-
+    m_hubNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubArn"))
   {
     m_hubArn = jsonValue.GetString("HubArn");
-
+    m_hubArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubDisplayName"))
   {
     m_hubDisplayName = jsonValue.GetString("HubDisplayName");
-
+    m_hubDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubDescription"))
   {
     m_hubDescription = jsonValue.GetString("HubDescription");
-
+    m_hubDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubSearchKeywords"))
   {
     Aws::Utils::Array<JsonView> hubSearchKeywordsJsonList = jsonValue.GetArray("HubSearchKeywords");
@@ -62,44 +52,40 @@ DescribeHubResult& DescribeHubResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_hubSearchKeywords.push_back(hubSearchKeywordsJsonList[hubSearchKeywordsIndex].AsString());
     }
+    m_hubSearchKeywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3StorageConfig"))
   {
     m_s3StorageConfig = jsonValue.GetObject("S3StorageConfig");
-
+    m_s3StorageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubStatus"))
   {
     m_hubStatus = HubStatusMapper::GetHubStatusForName(jsonValue.GetString("HubStatus"));
-
+    m_hubStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

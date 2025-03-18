@@ -20,47 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_snapshotNameHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupDescriptionHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_snapshotStatusHasBeenSet(false),
-    m_snapshotSourceHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_cacheClusterCreateTimeHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_numNodeGroups(0),
-    m_numNodeGroupsHasBeenSet(false),
-    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverHasBeenSet(false),
-    m_nodeSnapshotsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(const XmlNode& xmlNode)
-  : Snapshot()
 {
   *this = xmlNode;
 }
@@ -212,13 +172,14 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
     if(!automaticFailoverNode.IsNull())
     {
-      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()).c_str());
+      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()));
       m_automaticFailoverHasBeenSet = true;
     }
     XmlNode nodeSnapshotsNode = resultNode.FirstChild("NodeSnapshots");
     if(!nodeSnapshotsNode.IsNull())
     {
       XmlNode nodeSnapshotsMember = nodeSnapshotsNode.FirstChild("NodeSnapshot");
+      m_nodeSnapshotsHasBeenSet = !nodeSnapshotsMember.IsNull();
       while(!nodeSnapshotsMember.IsNull())
       {
         m_nodeSnapshots.push_back(nodeSnapshotsMember);
@@ -242,7 +203,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
     if(!dataTieringNode.IsNull())
     {
-      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()));
       m_dataTieringHasBeenSet = true;
     }
   }

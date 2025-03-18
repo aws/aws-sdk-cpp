@@ -21,7 +21,7 @@ namespace Model
   class UpdateExperimentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateExperimentRequest();
+    AWS_SAGEMAKER_API UpdateExperimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the experiment to update.</p>
      */
-    inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
+    inline const Aws::String& GetExperimentName() const { return m_experimentName; }
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
-    inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
-    inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
-    inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
-    inline UpdateExperimentRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
-    inline UpdateExperimentRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
-    inline UpdateExperimentRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
+    template<typename ExperimentNameT = Aws::String>
+    void SetExperimentName(ExperimentNameT&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::forward<ExperimentNameT>(value); }
+    template<typename ExperimentNameT = Aws::String>
+    UpdateExperimentRequest& WithExperimentName(ExperimentNameT&& value) { SetExperimentName(std::forward<ExperimentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,28 +52,24 @@ namespace Model
      * If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is
      * displayed.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateExperimentRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateExperimentRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateExperimentRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateExperimentRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the experiment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateExperimentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateExperimentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateExperimentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateExperimentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

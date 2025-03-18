@@ -20,21 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary() : 
-    m_stackIdHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdContextHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_propertyDifferencesHasBeenSet(false),
-    m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
-    m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary(const XmlNode& xmlNode)
-  : StackInstanceResourceDriftsSummary()
 {
   *this = xmlNode;
 }
@@ -67,6 +53,7 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
     if(!physicalResourceIdContextNode.IsNull())
     {
       XmlNode physicalResourceIdContextMember = physicalResourceIdContextNode.FirstChild("member");
+      m_physicalResourceIdContextHasBeenSet = !physicalResourceIdContextMember.IsNull();
       while(!physicalResourceIdContextMember.IsNull())
       {
         m_physicalResourceIdContext.push_back(physicalResourceIdContextMember);
@@ -85,6 +72,7 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
     if(!propertyDifferencesNode.IsNull())
     {
       XmlNode propertyDifferencesMember = propertyDifferencesNode.FirstChild("member");
+      m_propertyDifferencesHasBeenSet = !propertyDifferencesMember.IsNull();
       while(!propertyDifferencesMember.IsNull())
       {
         m_propertyDifferences.push_back(propertyDifferencesMember);
@@ -96,7 +84,7 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
     if(!stackResourceDriftStatusNode.IsNull())
     {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()).c_str());
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()));
       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");

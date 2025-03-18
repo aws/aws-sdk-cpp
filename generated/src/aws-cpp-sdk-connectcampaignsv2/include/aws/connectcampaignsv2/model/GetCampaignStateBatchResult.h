@@ -35,50 +35,51 @@ namespace Model
   class GetCampaignStateBatchResult
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API GetCampaignStateBatchResult();
+    AWS_CONNECTCAMPAIGNSV2_API GetCampaignStateBatchResult() = default;
     AWS_CONNECTCAMPAIGNSV2_API GetCampaignStateBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCAMPAIGNSV2_API GetCampaignStateBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<SuccessfulCampaignStateResponse>& GetSuccessfulRequests() const{ return m_successfulRequests; }
-    inline void SetSuccessfulRequests(const Aws::Vector<SuccessfulCampaignStateResponse>& value) { m_successfulRequests = value; }
-    inline void SetSuccessfulRequests(Aws::Vector<SuccessfulCampaignStateResponse>&& value) { m_successfulRequests = std::move(value); }
-    inline GetCampaignStateBatchResult& WithSuccessfulRequests(const Aws::Vector<SuccessfulCampaignStateResponse>& value) { SetSuccessfulRequests(value); return *this;}
-    inline GetCampaignStateBatchResult& WithSuccessfulRequests(Aws::Vector<SuccessfulCampaignStateResponse>&& value) { SetSuccessfulRequests(std::move(value)); return *this;}
-    inline GetCampaignStateBatchResult& AddSuccessfulRequests(const SuccessfulCampaignStateResponse& value) { m_successfulRequests.push_back(value); return *this; }
-    inline GetCampaignStateBatchResult& AddSuccessfulRequests(SuccessfulCampaignStateResponse&& value) { m_successfulRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulCampaignStateResponse>& GetSuccessfulRequests() const { return m_successfulRequests; }
+    template<typename SuccessfulRequestsT = Aws::Vector<SuccessfulCampaignStateResponse>>
+    void SetSuccessfulRequests(SuccessfulRequestsT&& value) { m_successfulRequestsHasBeenSet = true; m_successfulRequests = std::forward<SuccessfulRequestsT>(value); }
+    template<typename SuccessfulRequestsT = Aws::Vector<SuccessfulCampaignStateResponse>>
+    GetCampaignStateBatchResult& WithSuccessfulRequests(SuccessfulRequestsT&& value) { SetSuccessfulRequests(std::forward<SuccessfulRequestsT>(value)); return *this;}
+    template<typename SuccessfulRequestsT = SuccessfulCampaignStateResponse>
+    GetCampaignStateBatchResult& AddSuccessfulRequests(SuccessfulRequestsT&& value) { m_successfulRequestsHasBeenSet = true; m_successfulRequests.emplace_back(std::forward<SuccessfulRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FailedCampaignStateResponse>& GetFailedRequests() const{ return m_failedRequests; }
-    inline void SetFailedRequests(const Aws::Vector<FailedCampaignStateResponse>& value) { m_failedRequests = value; }
-    inline void SetFailedRequests(Aws::Vector<FailedCampaignStateResponse>&& value) { m_failedRequests = std::move(value); }
-    inline GetCampaignStateBatchResult& WithFailedRequests(const Aws::Vector<FailedCampaignStateResponse>& value) { SetFailedRequests(value); return *this;}
-    inline GetCampaignStateBatchResult& WithFailedRequests(Aws::Vector<FailedCampaignStateResponse>&& value) { SetFailedRequests(std::move(value)); return *this;}
-    inline GetCampaignStateBatchResult& AddFailedRequests(const FailedCampaignStateResponse& value) { m_failedRequests.push_back(value); return *this; }
-    inline GetCampaignStateBatchResult& AddFailedRequests(FailedCampaignStateResponse&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedCampaignStateResponse>& GetFailedRequests() const { return m_failedRequests; }
+    template<typename FailedRequestsT = Aws::Vector<FailedCampaignStateResponse>>
+    void SetFailedRequests(FailedRequestsT&& value) { m_failedRequestsHasBeenSet = true; m_failedRequests = std::forward<FailedRequestsT>(value); }
+    template<typename FailedRequestsT = Aws::Vector<FailedCampaignStateResponse>>
+    GetCampaignStateBatchResult& WithFailedRequests(FailedRequestsT&& value) { SetFailedRequests(std::forward<FailedRequestsT>(value)); return *this;}
+    template<typename FailedRequestsT = FailedCampaignStateResponse>
+    GetCampaignStateBatchResult& AddFailedRequests(FailedRequestsT&& value) { m_failedRequestsHasBeenSet = true; m_failedRequests.emplace_back(std::forward<FailedRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCampaignStateBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCampaignStateBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCampaignStateBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCampaignStateBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuccessfulCampaignStateResponse> m_successfulRequests;
+    bool m_successfulRequestsHasBeenSet = false;
 
     Aws::Vector<FailedCampaignStateResponse> m_failedRequests;
+    bool m_failedRequestsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

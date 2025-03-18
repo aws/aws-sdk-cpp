@@ -18,16 +18,7 @@ namespace FIS
 namespace Model
 {
 
-CreateExperimentTemplateExperimentOptionsInput::CreateExperimentTemplateExperimentOptionsInput() : 
-    m_accountTargeting(AccountTargeting::NOT_SET),
-    m_accountTargetingHasBeenSet(false),
-    m_emptyTargetResolutionMode(EmptyTargetResolutionMode::NOT_SET),
-    m_emptyTargetResolutionModeHasBeenSet(false)
-{
-}
-
 CreateExperimentTemplateExperimentOptionsInput::CreateExperimentTemplateExperimentOptionsInput(JsonView jsonValue)
-  : CreateExperimentTemplateExperimentOptionsInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CreateExperimentTemplateExperimentOptionsInput& CreateExperimentTemplateExperime
   if(jsonValue.ValueExists("accountTargeting"))
   {
     m_accountTargeting = AccountTargetingMapper::GetAccountTargetingForName(jsonValue.GetString("accountTargeting"));
-
     m_accountTargetingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emptyTargetResolutionMode"))
   {
     m_emptyTargetResolutionMode = EmptyTargetResolutionModeMapper::GetEmptyTargetResolutionModeForName(jsonValue.GetString("emptyTargetResolutionMode"));
-
     m_emptyTargetResolutionModeHasBeenSet = true;
   }
-
   return *this;
 }
 

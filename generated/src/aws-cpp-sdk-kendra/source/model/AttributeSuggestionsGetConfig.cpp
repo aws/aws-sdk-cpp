@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AttributeSuggestionsGetConfig::AttributeSuggestionsGetConfig() : 
-    m_suggestionAttributesHasBeenSet(false),
-    m_additionalResponseAttributesHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_userContextHasBeenSet(false)
-{
-}
-
 AttributeSuggestionsGetConfig::AttributeSuggestionsGetConfig(JsonView jsonValue)
-  : AttributeSuggestionsGetConfig()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ AttributeSuggestionsGetConfig& AttributeSuggestionsGetConfig::operator =(JsonVie
     }
     m_suggestionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalResponseAttributes"))
   {
     Aws::Utils::Array<JsonView> additionalResponseAttributesJsonList = jsonValue.GetArray("AdditionalResponseAttributes");
@@ -53,21 +43,16 @@ AttributeSuggestionsGetConfig& AttributeSuggestionsGetConfig::operator =(JsonVie
     }
     m_additionalResponseAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeFilter"))
   {
     m_attributeFilter = jsonValue.GetObject("AttributeFilter");
-
     m_attributeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserContext"))
   {
     m_userContext = jsonValue.GetObject("UserContext");
-
     m_userContextHasBeenSet = true;
   }
-
   return *this;
 }
 

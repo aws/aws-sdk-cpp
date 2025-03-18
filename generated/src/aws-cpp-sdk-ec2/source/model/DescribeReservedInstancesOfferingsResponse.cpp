@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedInstancesOfferingsResponse::DescribeReservedInstancesOfferingsResponse()
-{
-}
-
 DescribeReservedInstancesOfferingsResponse::DescribeReservedInstancesOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeReservedInstancesOfferingsResponse& DescribeReservedInstancesOfferingsRe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode reservedInstancesOfferingsNode = resultNode.FirstChild("reservedInstancesOfferingsSet");
     if(!reservedInstancesOfferingsNode.IsNull())
     {
       XmlNode reservedInstancesOfferingsMember = reservedInstancesOfferingsNode.FirstChild("item");
+      m_reservedInstancesOfferingsHasBeenSet = !reservedInstancesOfferingsMember.IsNull();
       while(!reservedInstancesOfferingsMember.IsNull())
       {
         m_reservedInstancesOfferings.push_back(reservedInstancesOfferingsMember);
         reservedInstancesOfferingsMember = reservedInstancesOfferingsMember.NextNode("item");
       }
 
+      m_reservedInstancesOfferingsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeReservedInstancesOfferingsResponse& DescribeReservedInstancesOfferingsRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReservedInstancesOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

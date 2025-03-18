@@ -12,19 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TranslatePinDataRequest::TranslatePinDataRequest() : 
-    m_incomingKeyIdentifierHasBeenSet(false),
-    m_outgoingKeyIdentifierHasBeenSet(false),
-    m_incomingTranslationAttributesHasBeenSet(false),
-    m_outgoingTranslationAttributesHasBeenSet(false),
-    m_encryptedPinBlockHasBeenSet(false),
-    m_incomingDukptAttributesHasBeenSet(false),
-    m_outgoingDukptAttributesHasBeenSet(false),
-    m_incomingWrappedKeyHasBeenSet(false),
-    m_outgoingWrappedKeyHasBeenSet(false)
-{
-}
-
 Aws::String TranslatePinDataRequest::SerializePayload() const
 {
   JsonValue payload;

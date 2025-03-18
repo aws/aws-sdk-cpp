@@ -33,7 +33,7 @@ namespace Model
   class FlowInput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowInput();
+    AWS_BEDROCKAGENTRUNTIME_API FlowInput() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>Contains information about an input into the prompt flow.</p>
      */
-    inline const FlowInputContent& GetContent() const{ return m_content; }
+    inline const FlowInputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const FlowInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(FlowInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline FlowInput& WithContent(const FlowInputContent& value) { SetContent(value); return *this;}
-    inline FlowInput& WithContent(FlowInputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = FlowInputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = FlowInputContent>
+    FlowInput& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the input from the flow input node.</p>
      */
-    inline const Aws::String& GetNodeInputName() const{ return m_nodeInputName; }
+    inline const Aws::String& GetNodeInputName() const { return m_nodeInputName; }
     inline bool NodeInputNameHasBeenSet() const { return m_nodeInputNameHasBeenSet; }
-    inline void SetNodeInputName(const Aws::String& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = value; }
-    inline void SetNodeInputName(Aws::String&& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = std::move(value); }
-    inline void SetNodeInputName(const char* value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName.assign(value); }
-    inline FlowInput& WithNodeInputName(const Aws::String& value) { SetNodeInputName(value); return *this;}
-    inline FlowInput& WithNodeInputName(Aws::String&& value) { SetNodeInputName(std::move(value)); return *this;}
-    inline FlowInput& WithNodeInputName(const char* value) { SetNodeInputName(value); return *this;}
+    template<typename NodeInputNameT = Aws::String>
+    void SetNodeInputName(NodeInputNameT&& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = std::forward<NodeInputNameT>(value); }
+    template<typename NodeInputNameT = Aws::String>
+    FlowInput& WithNodeInputName(NodeInputNameT&& value) { SetNodeInputName(std::forward<NodeInputNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the flow input node that begins the prompt flow.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline FlowInput& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline FlowInput& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline FlowInput& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowInput& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>The name of the output from the flow input node that begins the prompt
      * flow.</p>
      */
-    inline const Aws::String& GetNodeOutputName() const{ return m_nodeOutputName; }
+    inline const Aws::String& GetNodeOutputName() const { return m_nodeOutputName; }
     inline bool NodeOutputNameHasBeenSet() const { return m_nodeOutputNameHasBeenSet; }
-    inline void SetNodeOutputName(const Aws::String& value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName = value; }
-    inline void SetNodeOutputName(Aws::String&& value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName = std::move(value); }
-    inline void SetNodeOutputName(const char* value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName.assign(value); }
-    inline FlowInput& WithNodeOutputName(const Aws::String& value) { SetNodeOutputName(value); return *this;}
-    inline FlowInput& WithNodeOutputName(Aws::String&& value) { SetNodeOutputName(std::move(value)); return *this;}
-    inline FlowInput& WithNodeOutputName(const char* value) { SetNodeOutputName(value); return *this;}
+    template<typename NodeOutputNameT = Aws::String>
+    void SetNodeOutputName(NodeOutputNameT&& value) { m_nodeOutputNameHasBeenSet = true; m_nodeOutputName = std::forward<NodeOutputNameT>(value); }
+    template<typename NodeOutputNameT = Aws::String>
+    FlowInput& WithNodeOutputName(NodeOutputNameT&& value) { SetNodeOutputName(std::forward<NodeOutputNameT>(value)); return *this;}
     ///@}
   private:
 

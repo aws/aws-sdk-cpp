@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDocumentationPartsRequest::GetDocumentationPartsRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_type(DocumentationPartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameQueryHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_locationStatus(LocationStatusType::NOT_SET),
-    m_locationStatusHasBeenSet(false)
-{
-}
-
 Aws::String GetDocumentationPartsRequest::SerializePayload() const
 {
   return {};

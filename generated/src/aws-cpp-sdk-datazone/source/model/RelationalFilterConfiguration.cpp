@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RelationalFilterConfiguration::RelationalFilterConfiguration() : 
-    m_databaseNameHasBeenSet(false),
-    m_filterExpressionsHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 RelationalFilterConfiguration::RelationalFilterConfiguration(JsonView jsonValue)
-  : RelationalFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RelationalFilterConfiguration& RelationalFilterConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterExpressions"))
   {
     Aws::Utils::Array<JsonView> filterExpressionsJsonList = jsonValue.GetArray("filterExpressions");
@@ -49,14 +39,11 @@ RelationalFilterConfiguration& RelationalFilterConfiguration::operator =(JsonVie
     }
     m_filterExpressionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   return *this;
 }
 

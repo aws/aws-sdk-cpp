@@ -18,27 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_lambdaFunctionHasBeenSet(false),
-    m_ecsServiceHasBeenSet(false),
-    m_ec2InstanceHasBeenSet(false),
-    m_ebsVolumeHasBeenSet(false),
-    m_ec2AutoScalingGroupHasBeenSet(false),
-    m_ec2ReservedInstancesHasBeenSet(false),
-    m_rdsReservedInstancesHasBeenSet(false),
-    m_elastiCacheReservedInstancesHasBeenSet(false),
-    m_openSearchReservedInstancesHasBeenSet(false),
-    m_redshiftReservedInstancesHasBeenSet(false),
-    m_ec2InstanceSavingsPlansHasBeenSet(false),
-    m_computeSavingsPlansHasBeenSet(false),
-    m_sageMakerSavingsPlansHasBeenSet(false),
-    m_rdsDbInstanceHasBeenSet(false),
-    m_rdsDbInstanceStorageHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -48,108 +28,78 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lambdaFunction"))
   {
     m_lambdaFunction = jsonValue.GetObject("lambdaFunction");
-
     m_lambdaFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsService"))
   {
     m_ecsService = jsonValue.GetObject("ecsService");
-
     m_ecsServiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2Instance"))
   {
     m_ec2Instance = jsonValue.GetObject("ec2Instance");
-
     m_ec2InstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsVolume"))
   {
     m_ebsVolume = jsonValue.GetObject("ebsVolume");
-
     m_ebsVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2AutoScalingGroup"))
   {
     m_ec2AutoScalingGroup = jsonValue.GetObject("ec2AutoScalingGroup");
-
     m_ec2AutoScalingGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2ReservedInstances"))
   {
     m_ec2ReservedInstances = jsonValue.GetObject("ec2ReservedInstances");
-
     m_ec2ReservedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsReservedInstances"))
   {
     m_rdsReservedInstances = jsonValue.GetObject("rdsReservedInstances");
-
     m_rdsReservedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elastiCacheReservedInstances"))
   {
     m_elastiCacheReservedInstances = jsonValue.GetObject("elastiCacheReservedInstances");
-
     m_elastiCacheReservedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openSearchReservedInstances"))
   {
     m_openSearchReservedInstances = jsonValue.GetObject("openSearchReservedInstances");
-
     m_openSearchReservedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftReservedInstances"))
   {
     m_redshiftReservedInstances = jsonValue.GetObject("redshiftReservedInstances");
-
     m_redshiftReservedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceSavingsPlans"))
   {
     m_ec2InstanceSavingsPlans = jsonValue.GetObject("ec2InstanceSavingsPlans");
-
     m_ec2InstanceSavingsPlansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeSavingsPlans"))
   {
     m_computeSavingsPlans = jsonValue.GetObject("computeSavingsPlans");
-
     m_computeSavingsPlansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sageMakerSavingsPlans"))
   {
     m_sageMakerSavingsPlans = jsonValue.GetObject("sageMakerSavingsPlans");
-
     m_sageMakerSavingsPlansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbInstance"))
   {
     m_rdsDbInstance = jsonValue.GetObject("rdsDbInstance");
-
     m_rdsDbInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbInstanceStorage"))
   {
     m_rdsDbInstanceStorage = jsonValue.GetObject("rdsDbInstanceStorage");
-
     m_rdsDbInstanceStorageHasBeenSet = true;
   }
-
   return *this;
 }
 

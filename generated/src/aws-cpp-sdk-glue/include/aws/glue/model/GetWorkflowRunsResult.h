@@ -29,7 +29,7 @@ namespace Model
   class GetWorkflowRunsResult
   {
   public:
-    AWS_GLUE_API GetWorkflowRunsResult();
+    AWS_GLUE_API GetWorkflowRunsResult() = default;
     AWS_GLUE_API GetWorkflowRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetWorkflowRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of workflow run metadata objects.</p>
      */
-    inline const Aws::Vector<WorkflowRun>& GetRuns() const{ return m_runs; }
-    inline void SetRuns(const Aws::Vector<WorkflowRun>& value) { m_runs = value; }
-    inline void SetRuns(Aws::Vector<WorkflowRun>&& value) { m_runs = std::move(value); }
-    inline GetWorkflowRunsResult& WithRuns(const Aws::Vector<WorkflowRun>& value) { SetRuns(value); return *this;}
-    inline GetWorkflowRunsResult& WithRuns(Aws::Vector<WorkflowRun>&& value) { SetRuns(std::move(value)); return *this;}
-    inline GetWorkflowRunsResult& AddRuns(const WorkflowRun& value) { m_runs.push_back(value); return *this; }
-    inline GetWorkflowRunsResult& AddRuns(WorkflowRun&& value) { m_runs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkflowRun>& GetRuns() const { return m_runs; }
+    template<typename RunsT = Aws::Vector<WorkflowRun>>
+    void SetRuns(RunsT&& value) { m_runsHasBeenSet = true; m_runs = std::forward<RunsT>(value); }
+    template<typename RunsT = Aws::Vector<WorkflowRun>>
+    GetWorkflowRunsResult& WithRuns(RunsT&& value) { SetRuns(std::forward<RunsT>(value)); return *this;}
+    template<typename RunsT = WorkflowRun>
+    GetWorkflowRunsResult& AddRuns(RunsT&& value) { m_runsHasBeenSet = true; m_runs.emplace_back(std::forward<RunsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A continuation token, if not all requested workflow runs have been
      * returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetWorkflowRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetWorkflowRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetWorkflowRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetWorkflowRunsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkflowRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkflowRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkflowRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkflowRunsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkflowRun> m_runs;
+    bool m_runsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcEndpointRequest::CreateVpcEndpointRequest() : 
-    m_nameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

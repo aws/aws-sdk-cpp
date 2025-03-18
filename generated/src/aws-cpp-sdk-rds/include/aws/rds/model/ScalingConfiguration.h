@@ -35,7 +35,7 @@ namespace Model
   class ScalingConfiguration
   {
   public:
-    AWS_RDS_API ScalingConfiguration();
+    AWS_RDS_API ScalingConfiguration() = default;
     AWS_RDS_API ScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API ScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,7 +54,7 @@ namespace Model
      * <code>64</code>, <code>192</code>, and <code>384</code>.</p> <p>The minimum
      * capacity must be less than or equal to the maximum capacity.</p>
      */
-    inline int GetMinCapacity() const{ return m_minCapacity; }
+    inline int GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ScalingConfiguration& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
      * <code>64</code>, <code>192</code>, and <code>384</code>.</p> <p>The maximum
      * capacity must be greater than or equal to the minimum capacity.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ScalingConfiguration& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * snapshot. In this case, the DB cluster is restored when there is a request to
      * connect to it.</p> 
      */
-    inline bool GetAutoPause() const{ return m_autoPause; }
+    inline bool GetAutoPause() const { return m_autoPause; }
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
     inline ScalingConfiguration& WithAutoPause(bool value) { SetAutoPause(value); return *this;}
@@ -97,7 +97,7 @@ namespace Model
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
      * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
      */
-    inline int GetSecondsUntilAutoPause() const{ return m_secondsUntilAutoPause; }
+    inline int GetSecondsUntilAutoPause() const { return m_secondsUntilAutoPause; }
     inline bool SecondsUntilAutoPauseHasBeenSet() const { return m_secondsUntilAutoPauseHasBeenSet; }
     inline void SetSecondsUntilAutoPause(int value) { m_secondsUntilAutoPauseHasBeenSet = true; m_secondsUntilAutoPause = value; }
     inline ScalingConfiguration& WithSecondsUntilAutoPause(int value) { SetSecondsUntilAutoPause(value); return *this;}
@@ -118,14 +118,12 @@ namespace Model
      * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
+    inline const Aws::String& GetTimeoutAction() const { return m_timeoutAction; }
     inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
-    inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
-    inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
-    inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
-    inline ScalingConfiguration& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
-    inline ScalingConfiguration& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
-    inline ScalingConfiguration& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
+    template<typename TimeoutActionT = Aws::String>
+    void SetTimeoutAction(TimeoutActionT&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::forward<TimeoutActionT>(value); }
+    template<typename TimeoutActionT = Aws::String>
+    ScalingConfiguration& WithTimeoutAction(TimeoutActionT&& value) { SetTimeoutAction(std::forward<TimeoutActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,29 +132,29 @@ namespace Model
      * scaling point to perform seamless scaling before enforcing the timeout action.
      * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
      */
-    inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
+    inline int GetSecondsBeforeTimeout() const { return m_secondsBeforeTimeout; }
     inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
     inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
     inline ScalingConfiguration& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
     ///@}
   private:
 
-    int m_minCapacity;
+    int m_minCapacity{0};
     bool m_minCapacityHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
-    bool m_autoPause;
+    bool m_autoPause{false};
     bool m_autoPauseHasBeenSet = false;
 
-    int m_secondsUntilAutoPause;
+    int m_secondsUntilAutoPause{0};
     bool m_secondsUntilAutoPauseHasBeenSet = false;
 
     Aws::String m_timeoutAction;
     bool m_timeoutActionHasBeenSet = false;
 
-    int m_secondsBeforeTimeout;
+    int m_secondsBeforeTimeout{0};
     bool m_secondsBeforeTimeoutHasBeenSet = false;
   };
 

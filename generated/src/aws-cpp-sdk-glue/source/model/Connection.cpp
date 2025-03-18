@@ -18,33 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Connection::Connection() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_sparkPropertiesHasBeenSet(false),
-    m_athenaPropertiesHasBeenSet(false),
-    m_pythonPropertiesHasBeenSet(false),
-    m_physicalConnectionRequirementsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastConnectionValidationTimeHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_connectionSchemaVersion(0),
-    m_connectionSchemaVersionHasBeenSet(false),
-    m_compatibleComputeEnvironmentsHasBeenSet(false)
-{
-}
-
 Connection::Connection(JsonView jsonValue)
-  : Connection()
 {
   *this = jsonValue;
 }
@@ -54,24 +28,18 @@ Connection& Connection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchCriteria"))
   {
     Aws::Utils::Array<JsonView> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
@@ -81,7 +49,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_matchCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionProperties"))
   {
     Aws::Map<Aws::String, JsonView> connectionPropertiesJsonMap = jsonValue.GetObject("ConnectionProperties").GetAllObjects();
@@ -91,7 +58,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_connectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SparkProperties"))
   {
     Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("SparkProperties").GetAllObjects();
@@ -101,7 +67,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_sparkPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AthenaProperties"))
   {
     Aws::Map<Aws::String, JsonView> athenaPropertiesJsonMap = jsonValue.GetObject("AthenaProperties").GetAllObjects();
@@ -111,7 +76,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_athenaPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PythonProperties"))
   {
     Aws::Map<Aws::String, JsonView> pythonPropertiesJsonMap = jsonValue.GetObject("PythonProperties").GetAllObjects();
@@ -121,70 +85,51 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_pythonPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhysicalConnectionRequirements"))
   {
     m_physicalConnectionRequirements = jsonValue.GetObject("PhysicalConnectionRequirements");
-
     m_physicalConnectionRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("LastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastConnectionValidationTime"))
   {
     m_lastConnectionValidationTime = jsonValue.GetDouble("LastConnectionValidationTime");
-
     m_lastConnectionValidationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationConfiguration"))
   {
     m_authenticationConfiguration = jsonValue.GetObject("AuthenticationConfiguration");
-
     m_authenticationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionSchemaVersion"))
   {
     m_connectionSchemaVersion = jsonValue.GetInteger("ConnectionSchemaVersion");
-
     m_connectionSchemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompatibleComputeEnvironments"))
   {
     Aws::Utils::Array<JsonView> compatibleComputeEnvironmentsJsonList = jsonValue.GetArray("CompatibleComputeEnvironments");
@@ -194,7 +139,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_compatibleComputeEnvironmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

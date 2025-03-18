@@ -37,7 +37,7 @@ namespace Model
   class IoTJobAbortCriteria
   {
   public:
-    AWS_GREENGRASSV2_API IoTJobAbortCriteria();
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria() = default;
     AWS_GREENGRASSV2_API IoTJobAbortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API IoTJobAbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,20 @@ namespace Model
     /**
      * <p>The type of job deployment failure that can cancel a job.</p>
      */
-    inline const IoTJobExecutionFailureType& GetFailureType() const{ return m_failureType; }
+    inline IoTJobExecutionFailureType GetFailureType() const { return m_failureType; }
     inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
-    inline void SetFailureType(const IoTJobExecutionFailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
-    inline void SetFailureType(IoTJobExecutionFailureType&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::move(value); }
-    inline IoTJobAbortCriteria& WithFailureType(const IoTJobExecutionFailureType& value) { SetFailureType(value); return *this;}
-    inline IoTJobAbortCriteria& WithFailureType(IoTJobExecutionFailureType&& value) { SetFailureType(std::move(value)); return *this;}
+    inline void SetFailureType(IoTJobExecutionFailureType value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
+    inline IoTJobAbortCriteria& WithFailureType(IoTJobExecutionFailureType value) { SetFailureType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action to perform when the criteria are met.</p>
      */
-    inline const IoTJobAbortAction& GetAction() const{ return m_action; }
+    inline IoTJobAbortAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const IoTJobAbortAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(IoTJobAbortAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline IoTJobAbortCriteria& WithAction(const IoTJobAbortAction& value) { SetAction(value); return *this;}
-    inline IoTJobAbortCriteria& WithAction(IoTJobAbortAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(IoTJobAbortAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline IoTJobAbortCriteria& WithAction(IoTJobAbortAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>,
      * but not <code>10.999</code>).</p>
      */
-    inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
+    inline double GetThresholdPercentage() const { return m_thresholdPercentage; }
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
     inline IoTJobAbortCriteria& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
@@ -85,23 +81,23 @@ namespace Model
      * <p>The minimum number of things that receive the configuration before the job
      * can cancel.</p>
      */
-    inline int GetMinNumberOfExecutedThings() const{ return m_minNumberOfExecutedThings; }
+    inline int GetMinNumberOfExecutedThings() const { return m_minNumberOfExecutedThings; }
     inline bool MinNumberOfExecutedThingsHasBeenSet() const { return m_minNumberOfExecutedThingsHasBeenSet; }
     inline void SetMinNumberOfExecutedThings(int value) { m_minNumberOfExecutedThingsHasBeenSet = true; m_minNumberOfExecutedThings = value; }
     inline IoTJobAbortCriteria& WithMinNumberOfExecutedThings(int value) { SetMinNumberOfExecutedThings(value); return *this;}
     ///@}
   private:
 
-    IoTJobExecutionFailureType m_failureType;
+    IoTJobExecutionFailureType m_failureType{IoTJobExecutionFailureType::NOT_SET};
     bool m_failureTypeHasBeenSet = false;
 
-    IoTJobAbortAction m_action;
+    IoTJobAbortAction m_action{IoTJobAbortAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    double m_thresholdPercentage;
+    double m_thresholdPercentage{0.0};
     bool m_thresholdPercentageHasBeenSet = false;
 
-    int m_minNumberOfExecutedThings;
+    int m_minNumberOfExecutedThings{0};
     bool m_minNumberOfExecutedThingsHasBeenSet = false;
   };
 

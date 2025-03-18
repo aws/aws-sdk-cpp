@@ -18,16 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Authentication::Authentication() : 
-    m_type(AuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordCount(0),
-    m_passwordCountHasBeenSet(false)
-{
-}
-
 Authentication::Authentication(JsonView jsonValue)
-  : Authentication()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Authentication& Authentication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PasswordCount"))
   {
     m_passwordCount = jsonValue.GetInteger("PasswordCount");
-
     m_passwordCountHasBeenSet = true;
   }
-
   return *this;
 }
 

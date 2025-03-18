@@ -18,26 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ColumnStatisticsTaskSettings::ColumnStatisticsTaskSettings() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_columnNameListHasBeenSet(false),
-    m_catalogIDHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sampleSize(0.0),
-    m_sampleSizeHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_scheduleType(ScheduleType::NOT_SET),
-    m_scheduleTypeHasBeenSet(false),
-    m_settingSource(SettingSource::NOT_SET),
-    m_settingSourceHasBeenSet(false),
-    m_lastExecutionAttemptHasBeenSet(false)
-{
-}
-
 ColumnStatisticsTaskSettings::ColumnStatisticsTaskSettings(JsonView jsonValue)
-  : ColumnStatisticsTaskSettings()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ ColumnStatisticsTaskSettings& ColumnStatisticsTaskSettings::operator =(JsonView 
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnNameList"))
   {
     Aws::Utils::Array<JsonView> columnNameListJsonList = jsonValue.GetArray("ColumnNameList");
@@ -74,56 +49,41 @@ ColumnStatisticsTaskSettings& ColumnStatisticsTaskSettings::operator =(JsonView 
     }
     m_columnNameListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogID"))
   {
     m_catalogID = jsonValue.GetString("CatalogID");
-
     m_catalogIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleSize"))
   {
     m_sampleSize = jsonValue.GetDouble("SampleSize");
-
     m_sampleSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfiguration"))
   {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
-
     m_securityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleType"))
   {
     m_scheduleType = ScheduleTypeMapper::GetScheduleTypeForName(jsonValue.GetString("ScheduleType"));
-
     m_scheduleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SettingSource"))
   {
     m_settingSource = SettingSourceMapper::GetSettingSourceForName(jsonValue.GetString("SettingSource"));
-
     m_settingSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionAttempt"))
   {
     m_lastExecutionAttempt = jsonValue.GetObject("LastExecutionAttempt");
-
     m_lastExecutionAttemptHasBeenSet = true;
   }
-
   return *this;
 }
 

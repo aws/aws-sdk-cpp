@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ResourceTags::ResourceTags() : 
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ResourceTags::ResourceTags(JsonView jsonValue)
-  : ResourceTags()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResourceTags& ResourceTags::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -48,7 +39,6 @@ ResourceTags& ResourceTags::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

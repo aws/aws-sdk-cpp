@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConnectorsResult::DescribeConnectorsResult()
-{
-}
-
 DescribeConnectorsResult::DescribeConnectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeConnectorsResult& DescribeConnectorsResult::operator =(const Aws::Amazon
     {
       m_connectorConfigurations[ConnectorTypeMapper::GetConnectorTypeForName(connectorConfigurationsItem.first)] = connectorConfigurationsItem.second.AsObject();
     }
+    m_connectorConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectors"))
   {
     Aws::Utils::Array<JsonView> connectorsJsonList = jsonValue.GetArray("connectors");
@@ -45,20 +41,20 @@ DescribeConnectorsResult& DescribeConnectorsResult::operator =(const Aws::Amazon
     {
       m_connectors.push_back(connectorsJsonList[connectorsIndex].AsObject());
     }
+    m_connectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

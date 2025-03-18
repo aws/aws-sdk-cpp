@@ -31,7 +31,7 @@ namespace Model
   class JobRunDetails
   {
   public:
-    AWS_DATAZONE_API JobRunDetails();
+    AWS_DATAZONE_API JobRunDetails() = default;
     AWS_DATAZONE_API JobRunDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API JobRunDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The data lineage details of a job run.</p>
      */
-    inline const LineageRunDetails& GetLineageRunDetails() const{ return m_lineageRunDetails; }
+    inline const LineageRunDetails& GetLineageRunDetails() const { return m_lineageRunDetails; }
     inline bool LineageRunDetailsHasBeenSet() const { return m_lineageRunDetailsHasBeenSet; }
-    inline void SetLineageRunDetails(const LineageRunDetails& value) { m_lineageRunDetailsHasBeenSet = true; m_lineageRunDetails = value; }
-    inline void SetLineageRunDetails(LineageRunDetails&& value) { m_lineageRunDetailsHasBeenSet = true; m_lineageRunDetails = std::move(value); }
-    inline JobRunDetails& WithLineageRunDetails(const LineageRunDetails& value) { SetLineageRunDetails(value); return *this;}
-    inline JobRunDetails& WithLineageRunDetails(LineageRunDetails&& value) { SetLineageRunDetails(std::move(value)); return *this;}
+    template<typename LineageRunDetailsT = LineageRunDetails>
+    void SetLineageRunDetails(LineageRunDetailsT&& value) { m_lineageRunDetailsHasBeenSet = true; m_lineageRunDetails = std::forward<LineageRunDetailsT>(value); }
+    template<typename LineageRunDetailsT = LineageRunDetails>
+    JobRunDetails& WithLineageRunDetails(LineageRunDetailsT&& value) { SetLineageRunDetails(std::forward<LineageRunDetailsT>(value)); return *this;}
     ///@}
   private:
 

@@ -37,7 +37,7 @@ namespace Model
   class OidcIdentityProviderConfigRequest
   {
   public:
-    AWS_EKS_API OidcIdentityProviderConfigRequest();
+    AWS_EKS_API OidcIdentityProviderConfigRequest() = default;
     AWS_EKS_API OidcIdentityProviderConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API OidcIdentityProviderConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the OIDC provider configuration.</p>
      */
-    inline const Aws::String& GetIdentityProviderConfigName() const{ return m_identityProviderConfigName; }
+    inline const Aws::String& GetIdentityProviderConfigName() const { return m_identityProviderConfigName; }
     inline bool IdentityProviderConfigNameHasBeenSet() const { return m_identityProviderConfigNameHasBeenSet; }
-    inline void SetIdentityProviderConfigName(const Aws::String& value) { m_identityProviderConfigNameHasBeenSet = true; m_identityProviderConfigName = value; }
-    inline void SetIdentityProviderConfigName(Aws::String&& value) { m_identityProviderConfigNameHasBeenSet = true; m_identityProviderConfigName = std::move(value); }
-    inline void SetIdentityProviderConfigName(const char* value) { m_identityProviderConfigNameHasBeenSet = true; m_identityProviderConfigName.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithIdentityProviderConfigName(const Aws::String& value) { SetIdentityProviderConfigName(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithIdentityProviderConfigName(Aws::String&& value) { SetIdentityProviderConfigName(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithIdentityProviderConfigName(const char* value) { SetIdentityProviderConfigName(value); return *this;}
+    template<typename IdentityProviderConfigNameT = Aws::String>
+    void SetIdentityProviderConfigName(IdentityProviderConfigNameT&& value) { m_identityProviderConfigNameHasBeenSet = true; m_identityProviderConfigName = std::forward<IdentityProviderConfigNameT>(value); }
+    template<typename IdentityProviderConfigNameT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithIdentityProviderConfigName(IdentityProviderConfigNameT&& value) { SetIdentityProviderConfigName(std::forward<IdentityProviderConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
      */
-    inline const Aws::String& GetIssuerUrl() const{ return m_issuerUrl; }
+    inline const Aws::String& GetIssuerUrl() const { return m_issuerUrl; }
     inline bool IssuerUrlHasBeenSet() const { return m_issuerUrlHasBeenSet; }
-    inline void SetIssuerUrl(const Aws::String& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = value; }
-    inline void SetIssuerUrl(Aws::String&& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = std::move(value); }
-    inline void SetIssuerUrl(const char* value) { m_issuerUrlHasBeenSet = true; m_issuerUrl.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithIssuerUrl(const Aws::String& value) { SetIssuerUrl(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithIssuerUrl(Aws::String&& value) { SetIssuerUrl(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithIssuerUrl(const char* value) { SetIssuerUrl(value); return *this;}
+    template<typename IssuerUrlT = Aws::String>
+    void SetIssuerUrl(IssuerUrlT&& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = std::forward<IssuerUrlT>(value); }
+    template<typename IssuerUrlT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithIssuerUrl(IssuerUrlT&& value) { SetIssuerUrl(std::forward<IssuerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>This is also known as <i>audience</i>. The ID for the client application that
      * makes authentication requests to the OIDC identity provider.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
-    inline const Aws::String& GetUsernameClaim() const{ return m_usernameClaim; }
+    inline const Aws::String& GetUsernameClaim() const { return m_usernameClaim; }
     inline bool UsernameClaimHasBeenSet() const { return m_usernameClaimHasBeenSet; }
-    inline void SetUsernameClaim(const Aws::String& value) { m_usernameClaimHasBeenSet = true; m_usernameClaim = value; }
-    inline void SetUsernameClaim(Aws::String&& value) { m_usernameClaimHasBeenSet = true; m_usernameClaim = std::move(value); }
-    inline void SetUsernameClaim(const char* value) { m_usernameClaimHasBeenSet = true; m_usernameClaim.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithUsernameClaim(const Aws::String& value) { SetUsernameClaim(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithUsernameClaim(Aws::String&& value) { SetUsernameClaim(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithUsernameClaim(const char* value) { SetUsernameClaim(value); return *this;}
+    template<typename UsernameClaimT = Aws::String>
+    void SetUsernameClaim(UsernameClaimT&& value) { m_usernameClaimHasBeenSet = true; m_usernameClaim = std::forward<UsernameClaimT>(value); }
+    template<typename UsernameClaimT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithUsernameClaim(UsernameClaimT&& value) { SetUsernameClaim(std::forward<UsernameClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,28 +113,24 @@ namespace Model
      * <code>issuerurl#</code>. You can use the value <code>-</code> to disable all
      * prefixing.</p>
      */
-    inline const Aws::String& GetUsernamePrefix() const{ return m_usernamePrefix; }
+    inline const Aws::String& GetUsernamePrefix() const { return m_usernamePrefix; }
     inline bool UsernamePrefixHasBeenSet() const { return m_usernamePrefixHasBeenSet; }
-    inline void SetUsernamePrefix(const Aws::String& value) { m_usernamePrefixHasBeenSet = true; m_usernamePrefix = value; }
-    inline void SetUsernamePrefix(Aws::String&& value) { m_usernamePrefixHasBeenSet = true; m_usernamePrefix = std::move(value); }
-    inline void SetUsernamePrefix(const char* value) { m_usernamePrefixHasBeenSet = true; m_usernamePrefix.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithUsernamePrefix(const Aws::String& value) { SetUsernamePrefix(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithUsernamePrefix(Aws::String&& value) { SetUsernamePrefix(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithUsernamePrefix(const char* value) { SetUsernamePrefix(value); return *this;}
+    template<typename UsernamePrefixT = Aws::String>
+    void SetUsernamePrefix(UsernamePrefixT&& value) { m_usernamePrefixHasBeenSet = true; m_usernamePrefix = std::forward<UsernamePrefixT>(value); }
+    template<typename UsernamePrefixT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithUsernamePrefix(UsernamePrefixT&& value) { SetUsernamePrefix(std::forward<UsernamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JWT claim that the provider uses to return your groups.</p>
      */
-    inline const Aws::String& GetGroupsClaim() const{ return m_groupsClaim; }
+    inline const Aws::String& GetGroupsClaim() const { return m_groupsClaim; }
     inline bool GroupsClaimHasBeenSet() const { return m_groupsClaimHasBeenSet; }
-    inline void SetGroupsClaim(const Aws::String& value) { m_groupsClaimHasBeenSet = true; m_groupsClaim = value; }
-    inline void SetGroupsClaim(Aws::String&& value) { m_groupsClaimHasBeenSet = true; m_groupsClaim = std::move(value); }
-    inline void SetGroupsClaim(const char* value) { m_groupsClaimHasBeenSet = true; m_groupsClaim.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithGroupsClaim(const Aws::String& value) { SetGroupsClaim(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithGroupsClaim(Aws::String&& value) { SetGroupsClaim(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithGroupsClaim(const char* value) { SetGroupsClaim(value); return *this;}
+    template<typename GroupsClaimT = Aws::String>
+    void SetGroupsClaim(GroupsClaimT&& value) { m_groupsClaimHasBeenSet = true; m_groupsClaim = std::forward<GroupsClaimT>(value); }
+    template<typename GroupsClaimT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithGroupsClaim(GroupsClaimT&& value) { SetGroupsClaim(std::forward<GroupsClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +140,12 @@ namespace Model
      * oidc:</code> will create group names like <code>oidc:engineering</code> and
      * <code>oidc:infra</code>.</p>
      */
-    inline const Aws::String& GetGroupsPrefix() const{ return m_groupsPrefix; }
+    inline const Aws::String& GetGroupsPrefix() const { return m_groupsPrefix; }
     inline bool GroupsPrefixHasBeenSet() const { return m_groupsPrefixHasBeenSet; }
-    inline void SetGroupsPrefix(const Aws::String& value) { m_groupsPrefixHasBeenSet = true; m_groupsPrefix = value; }
-    inline void SetGroupsPrefix(Aws::String&& value) { m_groupsPrefixHasBeenSet = true; m_groupsPrefix = std::move(value); }
-    inline void SetGroupsPrefix(const char* value) { m_groupsPrefixHasBeenSet = true; m_groupsPrefix.assign(value); }
-    inline OidcIdentityProviderConfigRequest& WithGroupsPrefix(const Aws::String& value) { SetGroupsPrefix(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithGroupsPrefix(Aws::String&& value) { SetGroupsPrefix(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithGroupsPrefix(const char* value) { SetGroupsPrefix(value); return *this;}
+    template<typename GroupsPrefixT = Aws::String>
+    void SetGroupsPrefix(GroupsPrefixT&& value) { m_groupsPrefixHasBeenSet = true; m_groupsPrefix = std::forward<GroupsPrefixT>(value); }
+    template<typename GroupsPrefixT = Aws::String>
+    OidcIdentityProviderConfigRequest& WithGroupsPrefix(GroupsPrefixT&& value) { SetGroupsPrefix(std::forward<GroupsPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,19 +156,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
      * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequiredClaims() const{ return m_requiredClaims; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequiredClaims() const { return m_requiredClaims; }
     inline bool RequiredClaimsHasBeenSet() const { return m_requiredClaimsHasBeenSet; }
-    inline void SetRequiredClaims(const Aws::Map<Aws::String, Aws::String>& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims = value; }
-    inline void SetRequiredClaims(Aws::Map<Aws::String, Aws::String>&& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims = std::move(value); }
-    inline OidcIdentityProviderConfigRequest& WithRequiredClaims(const Aws::Map<Aws::String, Aws::String>& value) { SetRequiredClaims(value); return *this;}
-    inline OidcIdentityProviderConfigRequest& WithRequiredClaims(Aws::Map<Aws::String, Aws::String>&& value) { SetRequiredClaims(std::move(value)); return *this;}
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(const Aws::String& key, const Aws::String& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(key, value); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(Aws::String&& key, const Aws::String& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(std::move(key), value); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(const Aws::String& key, Aws::String&& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(key, std::move(value)); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(Aws::String&& key, Aws::String&& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(std::move(key), std::move(value)); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(const char* key, Aws::String&& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(key, std::move(value)); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(Aws::String&& key, const char* value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(std::move(key), value); return *this; }
-    inline OidcIdentityProviderConfigRequest& AddRequiredClaims(const char* key, const char* value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(key, value); return *this; }
+    template<typename RequiredClaimsT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequiredClaims(RequiredClaimsT&& value) { m_requiredClaimsHasBeenSet = true; m_requiredClaims = std::forward<RequiredClaimsT>(value); }
+    template<typename RequiredClaimsT = Aws::Map<Aws::String, Aws::String>>
+    OidcIdentityProviderConfigRequest& WithRequiredClaims(RequiredClaimsT&& value) { SetRequiredClaims(std::forward<RequiredClaimsT>(value)); return *this;}
+    template<typename RequiredClaimsKeyT = Aws::String, typename RequiredClaimsValueT = Aws::String>
+    OidcIdentityProviderConfigRequest& AddRequiredClaims(RequiredClaimsKeyT&& key, RequiredClaimsValueT&& value) {
+      m_requiredClaimsHasBeenSet = true; m_requiredClaims.emplace(std::forward<RequiredClaimsKeyT>(key), std::forward<RequiredClaimsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

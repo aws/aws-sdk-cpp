@@ -31,7 +31,7 @@ namespace Model
   class Grant
   {
   public:
-    AWS_S3CRT_API Grant();
+    AWS_S3CRT_API Grant() = default;
     AWS_S3CRT_API Grant(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Grant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,31 +42,29 @@ namespace Model
     /**
      * <p>The person being granted permissions.</p>
      */
-    inline const Grantee& GetGrantee() const{ return m_grantee; }
+    inline const Grantee& GetGrantee() const { return m_grantee; }
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
-    inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
-    inline void SetGrantee(Grantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
-    inline Grant& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
-    inline Grant& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+    template<typename GranteeT = Grantee>
+    void SetGrantee(GranteeT&& value) { m_granteeHasBeenSet = true; m_grantee = std::forward<GranteeT>(value); }
+    template<typename GranteeT = Grantee>
+    Grant& WithGrantee(GranteeT&& value) { SetGrantee(std::forward<GranteeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the permission given to the grantee.</p>
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline Grant& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline Grant& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline Grant& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
   private:
 
     Grantee m_grantee;
     bool m_granteeHasBeenSet = false;
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
   };
 

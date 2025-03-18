@@ -18,16 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-Resource::Resource() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_detailUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detailUrl"))
   {
     m_detailUrl = jsonValue.GetString("detailUrl");
-
     m_detailUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -64,7 +49,6 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreSnapshotTierResponse::RestoreSnapshotTierResponse() : 
-    m_restoreDuration(0),
-    m_isPermanentRestore(false)
-{
-}
-
 RestoreSnapshotTierResponse::RestoreSnapshotTierResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RestoreSnapshotTierResponse()
 {
   *this = result;
 }
@@ -45,21 +38,25 @@ RestoreSnapshotTierResponse& RestoreSnapshotTierResponse::operator =(const Aws::
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
     XmlNode restoreStartTimeNode = resultNode.FirstChild("restoreStartTime");
     if(!restoreStartTimeNode.IsNull())
     {
       m_restoreStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_restoreStartTimeHasBeenSet = true;
     }
     XmlNode restoreDurationNode = resultNode.FirstChild("restoreDuration");
     if(!restoreDurationNode.IsNull())
     {
       m_restoreDuration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreDurationNode.GetText()).c_str()).c_str());
+      m_restoreDurationHasBeenSet = true;
     }
     XmlNode isPermanentRestoreNode = resultNode.FirstChild("isPermanentRestore");
     if(!isPermanentRestoreNode.IsNull())
     {
       m_isPermanentRestore = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPermanentRestoreNode.GetText()).c_str()).c_str());
+      m_isPermanentRestoreHasBeenSet = true;
     }
   }
 
@@ -68,6 +65,7 @@ RestoreSnapshotTierResponse& RestoreSnapshotTierResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RestoreSnapshotTierResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

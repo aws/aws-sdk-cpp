@@ -36,7 +36,7 @@ namespace Model
   class DescribeExpressionsResult
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeExpressionsResult();
+    AWS_CLOUDSEARCH_API DescribeExpressionsResult() = default;
     AWS_CLOUDSEARCH_API DescribeExpressionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DescribeExpressionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
     /**
      * <p>The expressions configured for the domain.</p>
      */
-    inline const Aws::Vector<ExpressionStatus>& GetExpressions() const{ return m_expressions; }
-    inline void SetExpressions(const Aws::Vector<ExpressionStatus>& value) { m_expressions = value; }
-    inline void SetExpressions(Aws::Vector<ExpressionStatus>&& value) { m_expressions = std::move(value); }
-    inline DescribeExpressionsResult& WithExpressions(const Aws::Vector<ExpressionStatus>& value) { SetExpressions(value); return *this;}
-    inline DescribeExpressionsResult& WithExpressions(Aws::Vector<ExpressionStatus>&& value) { SetExpressions(std::move(value)); return *this;}
-    inline DescribeExpressionsResult& AddExpressions(const ExpressionStatus& value) { m_expressions.push_back(value); return *this; }
-    inline DescribeExpressionsResult& AddExpressions(ExpressionStatus&& value) { m_expressions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExpressionStatus>& GetExpressions() const { return m_expressions; }
+    template<typename ExpressionsT = Aws::Vector<ExpressionStatus>>
+    void SetExpressions(ExpressionsT&& value) { m_expressionsHasBeenSet = true; m_expressions = std::forward<ExpressionsT>(value); }
+    template<typename ExpressionsT = Aws::Vector<ExpressionStatus>>
+    DescribeExpressionsResult& WithExpressions(ExpressionsT&& value) { SetExpressions(std::forward<ExpressionsT>(value)); return *this;}
+    template<typename ExpressionsT = ExpressionStatus>
+    DescribeExpressionsResult& AddExpressions(ExpressionsT&& value) { m_expressionsHasBeenSet = true; m_expressions.emplace_back(std::forward<ExpressionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeExpressionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeExpressionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeExpressionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ExpressionStatus> m_expressions;
+    bool m_expressionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class PolicyDetails
   {
   public:
-    AWS_MACIE2_API PolicyDetails();
+    AWS_MACIE2_API PolicyDetails() = default;
     AWS_MACIE2_API PolicyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API PolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The action that produced the finding.</p>
      */
-    inline const FindingAction& GetAction() const{ return m_action; }
+    inline const FindingAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const FindingAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(FindingAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline PolicyDetails& WithAction(const FindingAction& value) { SetAction(value); return *this;}
-    inline PolicyDetails& WithAction(FindingAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = FindingAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = FindingAction>
+    PolicyDetails& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity that performed the action that produced the finding.</p>
      */
-    inline const FindingActor& GetActor() const{ return m_actor; }
+    inline const FindingActor& GetActor() const { return m_actor; }
     inline bool ActorHasBeenSet() const { return m_actorHasBeenSet; }
-    inline void SetActor(const FindingActor& value) { m_actorHasBeenSet = true; m_actor = value; }
-    inline void SetActor(FindingActor&& value) { m_actorHasBeenSet = true; m_actor = std::move(value); }
-    inline PolicyDetails& WithActor(const FindingActor& value) { SetActor(value); return *this;}
-    inline PolicyDetails& WithActor(FindingActor&& value) { SetActor(std::move(value)); return *this;}
+    template<typename ActorT = FindingActor>
+    void SetActor(ActorT&& value) { m_actorHasBeenSet = true; m_actor = std::forward<ActorT>(value); }
+    template<typename ActorT = FindingActor>
+    PolicyDetails& WithActor(ActorT&& value) { SetActor(std::forward<ActorT>(value)); return *this;}
     ///@}
   private:
 

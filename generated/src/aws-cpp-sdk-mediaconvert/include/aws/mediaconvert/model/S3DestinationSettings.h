@@ -33,7 +33,7 @@ namespace Model
   class S3DestinationSettings
   {
   public:
-    AWS_MEDIACONVERT_API S3DestinationSettings();
+    AWS_MEDIACONVERT_API S3DestinationSettings() = default;
     AWS_MEDIACONVERT_API S3DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API S3DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * outputs in this output group. When you don't use this setting, S3 automatically
      * applies the default access control list PRIVATE.
      */
-    inline const S3DestinationAccessControl& GetAccessControl() const{ return m_accessControl; }
+    inline const S3DestinationAccessControl& GetAccessControl() const { return m_accessControl; }
     inline bool AccessControlHasBeenSet() const { return m_accessControlHasBeenSet; }
-    inline void SetAccessControl(const S3DestinationAccessControl& value) { m_accessControlHasBeenSet = true; m_accessControl = value; }
-    inline void SetAccessControl(S3DestinationAccessControl&& value) { m_accessControlHasBeenSet = true; m_accessControl = std::move(value); }
-    inline S3DestinationSettings& WithAccessControl(const S3DestinationAccessControl& value) { SetAccessControl(value); return *this;}
-    inline S3DestinationSettings& WithAccessControl(S3DestinationAccessControl&& value) { SetAccessControl(std::move(value)); return *this;}
+    template<typename AccessControlT = S3DestinationAccessControl>
+    void SetAccessControl(AccessControlT&& value) { m_accessControlHasBeenSet = true; m_accessControl = std::forward<AccessControlT>(value); }
+    template<typename AccessControlT = S3DestinationAccessControl>
+    S3DestinationSettings& WithAccessControl(AccessControlT&& value) { SetAccessControl(std::forward<AccessControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * Settings for how your job outputs are encrypted as they are uploaded to Amazon
      * S3.
      */
-    inline const S3EncryptionSettings& GetEncryption() const{ return m_encryption; }
+    inline const S3EncryptionSettings& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const S3EncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(S3EncryptionSettings&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline S3DestinationSettings& WithEncryption(const S3EncryptionSettings& value) { SetEncryption(value); return *this;}
-    inline S3DestinationSettings& WithEncryption(S3EncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = S3EncryptionSettings>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = S3EncryptionSettings>
+    S3DestinationSettings& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,10 @@ namespace Model
      * about S3 storage classes, see
      * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
-    inline const S3StorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline S3StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const S3StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(S3StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline S3DestinationSettings& WithStorageClass(const S3StorageClass& value) { SetStorageClass(value); return *this;}
-    inline S3DestinationSettings& WithStorageClass(S3StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(S3StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline S3DestinationSettings& WithStorageClass(S3StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +86,7 @@ namespace Model
     S3EncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet = false;
 
-    S3StorageClass m_storageClass;
+    S3StorageClass m_storageClass{S3StorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
   };
 

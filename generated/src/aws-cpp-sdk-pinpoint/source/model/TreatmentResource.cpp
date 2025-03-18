@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TreatmentResource::TreatmentResource() : 
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sizePercent(0),
-    m_sizePercentHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
-{
-}
-
 TreatmentResource::TreatmentResource(JsonView jsonValue)
-  : TreatmentResource()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ TreatmentResource& TreatmentResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
   {
     m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
-
     m_customDeliveryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageConfiguration"))
   {
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
-
     m_messageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizePercent"))
   {
     m_sizePercent = jsonValue.GetInteger("SizePercent");
-
     m_sizePercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateConfiguration"))
   {
     m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
-
     m_templateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentDescription"))
   {
     m_treatmentDescription = jsonValue.GetString("TreatmentDescription");
-
     m_treatmentDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentName"))
   {
     m_treatmentName = jsonValue.GetString("TreatmentName");
-
     m_treatmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 
